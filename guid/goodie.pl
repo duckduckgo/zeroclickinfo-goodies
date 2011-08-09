@@ -7,6 +7,10 @@ my $q_check_lc = 'guid';
 my $answer_results = '';
 my $answer_type = 'guid';
 
+# This goodie will fire based on these keywords.
+# We're using a lower case variable check, so all of these are lower case.
+# We're also passing a 0 or 1 to use for varying types of results,
+# in this case uuid vs guid but that could easily be undef.
 my %guid = (
     'guid' => 0,
     'uuid' => 1,
@@ -15,6 +19,9 @@ my %guid = (
     'rfc 4122' => 0,
     );
 
+# If it matches the check, 
+# which may be a regular expression or other type of 
+# more complicated check, then we move on to calculating the answer.
 if (exists $guid{$q_check_lc}) {
 
     # For debugging.
@@ -22,6 +29,9 @@ if (exists $guid{$q_check_lc}) {
 
     use Data::GUID;
 
+
+    # We formulate the answer based upon potential subtypes.
+    # In this case, we're distinguishing between UUIDs and GUIDs.
     if (my $guid = Data::GUID->new) {
 	if ($guid{$q_check_lc}) {
 	    $guid = lc $guid;
