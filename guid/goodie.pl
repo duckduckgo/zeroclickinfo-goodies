@@ -19,12 +19,12 @@ my %guid = (
     'rfc 4122' => 0,
     );
 
-# If it matches the check, 
-# which may be a regular expression or other type of 
+# If it matches the check,
+# which may be a regular expression or other type of
 # more complicated check, then we move on to calculating the answer.
 if (exists $guid{$q_check_lc}) {
 
-    # For debugging.
+# For debugging.
 #    warn $q_check_lc;
 
     use Data::GUID;
@@ -33,14 +33,14 @@ if (exists $guid{$q_check_lc}) {
     # We formulate the answer based upon potential subtypes.
     # In this case, we're distinguishing between UUIDs and GUIDs.
     if (my $guid = Data::GUID->new) {
-	if ($guid{$q_check_lc}) {
-	    $guid = lc $guid;
-	} else {
-	    $guid = qq({$guid});
-	}
-	
-	$answer_results = $guid;
-	$answer_type = 'guid';
+        if ($guid{$q_check_lc}) {
+            $guid = lc $guid;
+        } else {
+            $guid = qq({$guid});
+        }
+
+        $answer_results = $guid;
+        $answer_type = 'guid';
     }
 }
 
