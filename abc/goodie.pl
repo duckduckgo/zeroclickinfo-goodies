@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# Choose between the values stored in @choices
+# Choose between the values matched between 'or' in input
 
 use strict;
 use warnings;
