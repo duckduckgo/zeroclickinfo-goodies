@@ -1,6 +1,12 @@
 # Google Public DNS
+##IPv4 addresses
+
 	8.8.8.8
-	4.4.4.4
+	8.8.4.4
+
+##IPv6 addresses
+	2001:4860:4860::8888
+	2001:4860:4860::8844
 [info][1]
 
 # OpenDNS
@@ -26,3 +32,4 @@
 [2]: http://opendns.com/
 [3]: http://nortondns.com
 [4]: http://dnsadvantage.com
+[5]: 
