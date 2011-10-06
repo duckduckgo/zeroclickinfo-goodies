@@ -1341,7 +1341,7 @@
 21223 cobol
 21224 cobra
 21225 coca
-21226 cock
+21226 cockatrice
 21231 cockle
 21232 cocky
 21233 coco
@@ -3634,7 +3634,7 @@
 35564 lab
 35565 laban
 35566 label
-35611 labia
+35611 labor
 35612 labile
 35613 lac
 35614 lace
@@ -5731,8 +5731,8 @@
 53421 severe
 53422 sew
 53423 sewn
-53424 sex
-53425 sexy
+53424 sewing
+53425 sewer
 53426 sf
 53431 sg
 53432 sh
