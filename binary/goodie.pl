@@ -5,7 +5,7 @@ my $q_check_lc = 'binary Hello. My name is Inigo Montoya. You killed my father. 
 my $answer_results = '';
 my $answer_type = 'binary';
 
-if ($q_check_lc =~ m/^binary (.*)$/) {
+if ($q_check_lc =~ m/^binary (.*)$/i) {
 	
 	sub bin {
 		my @tex = shift;
