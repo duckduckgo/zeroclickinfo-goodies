@@ -5,13 +5,13 @@ my $q_check_lc = "passphrase $ARGV[$1] words";
 my $answer_results = '';
 my $answer_type = 'passphrase';
 
-if ($q_check_lc =~ m/^passphrase ([1-9]+) word|words$/) {
+if ($q_check_lc =~ m/^passphrase ([1-9]+) word|words$/i) {
     open(IN, 'list.txt');
     my %shows = ();
     while (my $line = <IN>) {
 	chomp($line);
 	my @res = split(/ /, $line);
-	$shows{lc $res[0]} = $res[1];
+	$shows{$res[0]} = $res[1];
 	
     }
     close(IN);
