@@ -15,11 +15,11 @@ if ( $q_check =~ m/^\!?\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
     my @choices = split(/\s+or\s+/, $q_check);
     my $choice = int(rand(@choices));
 
-    $answer_results = $choices[$choice];
-    $answer_results .= ' (random)';
-    $answer_results = 'duckduckgo (not random)' if grep { $_ eq 'duckduckgo' } @choices;
-    $answer_results = 'duck (not random)' if grep { $_ eq 'duck' } @choices;
-    $answer_results = 'ddg (not random)' if grep { $_ eq 'ddg' } @choices;
+    if ( my @duck = grep { $_ eq 'duckduckgo' or $_ eq 'duck' or $_ eq 'ddg' } @choices ) { $answer_results = $duck[0].' (not random)' }
+    else {
+        $answer_results = $choices[$choice];
+        $answer_results .= ' (random)';
+    }
     $answer_type = 'rand';
 }
 
