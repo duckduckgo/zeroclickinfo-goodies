@@ -3,7 +3,7 @@ use strict;
 
 my $q_check_lc = 'binary Hello. My name is Inigo Montoya. You killed my father. Prepare to die.';
 my $answer_results = '';
-my $answer_type = 'binary';
+my $answer_type = '';
 
 if ($q_check_lc =~ m/^binary (.*)$/i) {
 	
@@ -13,11 +13,12 @@ if ($q_check_lc =~ m/^binary (.*)$/i) {
 		for(my $x = 0; $x <= $#tex; $x++) {
 			$bin .= unpack("B*", $tex[$x]);
 		}
-		$answer_results = $bin;
+		return $bin;
 	}
 	
 	my @tex = $1;
-	bin(@tex);
+	$answer_results = bin(@tex);
+	$answer_type = 'binary';
 }
 
 print qq($answer_type\t$answer_results\n);
