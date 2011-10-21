@@ -4,8 +4,11 @@ use strict;
 use warnings;
 
 my $q_check_lc = 'guid';
+
 my $answer_results = '';
-my $answer_type = 'guid';
+my $answer_type = '';
+my $type = '';
+my $is_memcached = 1;
 
 # This goodie will fire based on these keywords.
 # We're using a lower case variable check, so all of these are lower case.
@@ -22,7 +25,7 @@ my %guid = (
 # If it matches the check,
 # which may be a regular expression or other type of
 # more complicated check, then we move on to calculating the answer.
-if (exists $guid{$q_check_lc}) {
+if ($type ne 'E' && exists $guid{$q_check_lc}) {
 
 # For debugging.
 #    warn $q_check_lc;
@@ -41,6 +44,8 @@ if (exists $guid{$q_check_lc}) {
 
         $answer_results = $guid;
         $answer_type = 'guid';
+	$type = 'E';
+	$is_memcached = 0;
     }
 }
 
