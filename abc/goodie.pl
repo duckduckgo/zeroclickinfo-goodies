@@ -3,11 +3,7 @@
 # Must be alphabetic values
 #
 
-# sample queries:
-# this or that or none
-# duckduckgo or google or bing or something
-
-if ( $q_check =~ m/^\!?\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
+if (($q_internal eq 'yes or no' || $q_internal eq 'heads or tails' || !$type) && $q_check =~ m/^\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
     my @choices = split(/\s+or\s+/, $q_check);
     my $choice = int(rand(@choices));
         

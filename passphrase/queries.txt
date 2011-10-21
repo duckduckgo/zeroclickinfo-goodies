@@ -1,0 +1,3 @@
+passphrase 4
+passphrase 1 word
+passphrase 3 words

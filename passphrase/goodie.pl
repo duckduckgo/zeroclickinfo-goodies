@@ -1,15 +1,6 @@
-#!/usr/bin/perl
-use strict;
-
-my $q_check_lc = "passphrase $ARGV[$1] words";
-
-my $answer_results = '';
-my $answer_type = '';
-my $type = '';
-my $is_memcached = '';
 
 my %passphrase = ();
-open(IN, '<goodie.txt');
+open(IN, '<passphrase/goodie.txt');
 while (my $line = <IN>) {
     chomp($line);
     my @res = split(/ /, $line);
@@ -40,5 +31,3 @@ if ($type ne 'E' && $q_check_lc =~ m/^passphrase ([1-9]+)(?: word| words|)$/i) {
     $type = 'E';
 
 }
-
-print qq($answer_type\t$answer_results\n);

@@ -1,14 +1,3 @@
-#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-my $q_check_lc = 'guid';
-
-my $answer_results = '';
-my $answer_type = '';
-my $type = '';
-my $is_memcached = 1;
 
 # This goodie will fire based on these keywords.
 # We're using a lower case variable check, so all of these are lower case.
@@ -48,6 +37,3 @@ if ($type ne 'E' && exists $guid{$q_check_lc}) {
 	$is_memcached = 0;
     }
 }
-
-
-print qq($answer_type\t$answer_results\n);

@@ -1,13 +1,3 @@
-#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-my $q_check_lc = 'public dns';
-
-my $answer_results = '';
-my $answer_type = '';
-my $type = '';
 
 my %public_dns = (
     'public dns' => '',
@@ -30,7 +20,7 @@ my %public_dns = (
 
 if ($type ne 'E' && exists $public_dns{$q_check_lc}) {
 
-    open(IN,"<goodie.html");
+    open(IN,"<public_dns/goodie.html");
     while (my $line = <IN>) {
 	$answer_results .= $line;
     }
@@ -41,6 +31,3 @@ if ($type ne 'E' && exists $public_dns{$q_check_lc}) {
 	$type = 'E';
     }
 }
-
-
-print qq($answer_type\t$answer_results\n);

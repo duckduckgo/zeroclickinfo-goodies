@@ -1,13 +1,3 @@
-#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-my $q_check_lc = 'private network';
-
-my $answer_results = '';
-my $answer_type = '';
-my $type = '';
 
 my %private_network = map { $_ => undef } (
     'private network',
@@ -25,7 +15,7 @@ my %private_network = map { $_ => undef } (
 
 if ($type ne 'E' && exists $private_network{$q_check_lc}) {
 
-    open(IN,"<goodie.html");
+    open(IN,"<private_network/goodie.html");
     while (my $line = <IN>) {
 	$answer_results .= $line;
     }
@@ -36,6 +26,3 @@ if ($type ne 'E' && exists $private_network{$q_check_lc}) {
 	$type = 'E';
     }
 }
-
-
-print qq($answer_type\t$answer_results\n);

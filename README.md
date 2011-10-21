@@ -20,9 +20,38 @@ Thank you!
 
 Each goodie has its own directory. Some of the directories are in use on the live system, and some are still in development.
 
-Each directory has a Perl script in it called goodie.pl, which is a working example of that goodie that can be directly inserted into the live system.
+Each directory has a structure like this:
 
-Within the goodie file, a few things are happening, and here is an overview that references live examples, which you can review:
+```txt
+# Perl file that can be directly inserted into the live system.
+goodie.pl 
+
+# List of test queries, one per line.
+queries.txt
+
+# OPTIONAL: helper files as needed
+goodie.txt
+goodie.html
+```
+
+### Testing
+
+You can test your goodie via the goodie-test.pl script in the top level directory.
+
+```
+# Test a particular query.
+# Replace goodie with the name of your directory.
+# Replace query with your query.
+./goodie-test.pl goodie query
+
+# Test the queries in queries.txt
+# Replace goodie with the name of your directory.
+./goodie-test.pl -t goodie
+```
+
+
+### goodie.pl
+Within the goodie.pl file, a few things are happening, and here is an overview that references live examples, which you can review:
 
 
 1) There are some variables that are used in the system that operate outside the goodie, but which the goodie uses. Every goodie will use:
@@ -71,17 +100,6 @@ my $q = 'Example query';
 my $q_internal = 'example query';
 ```
 
-The external variables used in the goodie get defined at the top of the script. See [dice](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/dice/goodie.pl) for a good example.
-
-```perl
-my $q_check_lc = 'roll 5 dice';
-
-my $answer_results = '';
-my $answer_type = '';
-my $type = '';
-my $is_memcached = 1;
-```
-
 
 2) The goodie needs to know when to be called. This involves some kind of conditional statement that first involves the $type variable.
 
@@ -128,7 +146,7 @@ if (!$type && $q_check_lc =~ m/^binary (.*)$/i) {
 }
 ```
 
-For regular expressions, we need to watch out for false positives and speed.
+For regular expressions, we need to watch out for false positives and speed. You can do this easily by adding a lot of queries to queries.txt
 
 
 3) Once inside the conditional, the goodie formulates the answer. This could vary slightly depending on input, but results in setting the $answer_results variable. Here's what [abc](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/abc/abc.pl) looks like.
@@ -145,13 +163,15 @@ if (!$type && $q_check =~ m/^\!?\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
 ```
 
 
+### Notes
+
 And here are some other things to keep in mind:
 
-4) If you need a helper file, name it goodie.txt or goodie.html as needed. If you need to read in that file to be used over and over again, do it outside the conditional. For example [passphrase](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/passphrase/goodie.pl) reads in a list at the top.
+1) If you need a helper file, name it goodie.txt or goodie.html as needed. If you need to read in that file to be used over and over again, do it outside the conditional. For example [passphrase](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/passphrase/goodie.pl) reads in a list at the top.
 
 ```perl
 my %passphrase = ();
-open(IN, '<goodie.txt');
+open(IN, '<passphrase/goodie.txt');
 while (my $line = <IN>) {
     chomp($line);
     my @res = split(/ /, $line);
@@ -164,7 +184,7 @@ close(IN);
 Whereas if you need to read in a file for output, do it inside the conditional. For example, [public_dns](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/public_dns/goodie.pl) reads in a list inside.
 
 ```perl
-    open(IN,"<goodie.html");
+    open(IN,"<public_dns/goodie.html");
     while (my $line = <IN>) {
     $answer_results .= $line;
     }
@@ -172,7 +192,7 @@ Whereas if you need to read in a file for output, do it inside the conditional. 
 ```
 
 
-5) If it is possible that the conditional gets called, but $answer_results still may not be set, then wrap $answer_type (and possibly other variables) in a separate conditional like in [private_network](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/private_network/goodie.pl).
+2) If it is possible that the conditional gets called, but $answer_results still may not be set, then wrap $answer_type (and possibly other variables) in a separate conditional like in [private_network](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/private_network/goodie.pl).
 
 ```perl
     if ($answer_results) {
