@@ -1,0 +1,14 @@
+golden ratio 1:?
+golden ratio 2.5:?
+golden ratio 450:?
+golden ratio 900:?
+golden ratio 1024.56:?
+golden ratio ?:900
+golden ratio ?:768.5
+golden ratio ?:1680.12345678
+golden ratio 1 : ?
+golden ratio 1 :?
+golden ratio 1: ?
+golden ratio ? : 9
+golden ratio ? :9
+golden ratio ?: 9
