@@ -38,7 +38,7 @@ goodie.html
 
 ### Testing
 
-You MUST test your goodie via the goodie-test.pl script in the top level directory. We only can assure you that you didnt made anything wrong, if you do so. It can produce big overhead on our side, if you send us a pull request without testing with this script.
+**Please, please test your goodie via the goodie-test.pl script in the top level directory before making a pull request. We developed this script to make sure integration goes smoothly.**
 
 ```
 # Test a particular query.
