@@ -2,10 +2,12 @@
 use strict;
 
 my $q_check_lc = 'binary Hello. My name is Inigo Montoya. You killed my father. Prepare to die.';
+
 my $answer_results = '';
 my $answer_type = '';
+my $type = '';
 
-if ($q_check_lc =~ m/^binary (.*)$/i) {
+if (!$type && $q_check_lc =~ m/^binary (.*)$/i) {
 	
 	sub bin {
 		my @tex = shift;
@@ -18,7 +20,12 @@ if ($q_check_lc =~ m/^binary (.*)$/i) {
 	
 	my @tex = $1;
 	$answer_results = bin(@tex);
-	$answer_type = 'binary';
+
+
+	if ($answer_results) {
+	    $answer_type = 'binary';
+	    $type = 'E';
+	}
 }
 
 print qq($answer_type\t$answer_results\n);

@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 my $q_check_lc = 'public dns';
+
 my $answer_results = '';
 my $answer_type = '';
 my $type = '';
@@ -29,7 +30,7 @@ my %public_dns = (
 
 if ($type ne 'E' && exists $public_dns{$q_check_lc}) {
 
-    open(IN,"<publicdns.html");
+    open(IN,"<goodie.html");
     while (my $line = <IN>) {
 	$answer_results .= $line;
     }
