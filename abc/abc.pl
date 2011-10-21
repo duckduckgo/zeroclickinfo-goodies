@@ -16,4 +16,3 @@ if ( $q_check =~ m/^\!?\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
     $answer_type = 'rand';
 }
 
-1;
