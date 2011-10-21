@@ -10,6 +10,9 @@ my $type = '';
 
 my %private_network = map { $_ => undef } (
     'private network',
+    'private networks',
+    'private network ip',
+    'private network ips',
     'private network address',
     'private network addresses',
     'private ip',
