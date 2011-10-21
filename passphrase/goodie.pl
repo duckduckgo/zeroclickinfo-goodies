@@ -2,11 +2,14 @@
 use strict;
 
 my $q_check_lc = "passphrase $ARGV[$1] words";
+
 my $answer_results = '';
 my $answer_type = '';
+my $type = '';
+my $is_memcached = '';
 
 my %passphrase = ();
-open(IN, '<passphrase.txt');
+open(IN, '<goodie.txt');
 while (my $line = <IN>) {
     chomp($line);
     my @res = split(/ /, $line);
@@ -16,7 +19,7 @@ while (my $line = <IN>) {
 close(IN);
 
 
-if ($q_check_lc =~ m/^passphrase ([1-9]+)(?: word| words|)$/i) {
+if ($type ne 'E' && $q_check_lc =~ m/^passphrase ([1-9]+)(?: word| words|)$/i) {
 
     for (my $count = 0; $count < int($1); $count++) {
 	my $ref_num = '';
