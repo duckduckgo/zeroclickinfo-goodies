@@ -24,6 +24,8 @@ Each directory has a structure like this:
 
 ```txt
 # Perl file that can be directly inserted into the live system.
+# This file is included, so does not need a shebang 
+# or a use warnings/strict line.
 goodie.pl 
 
 # List of test queries, one per line.
@@ -36,7 +38,7 @@ goodie.html
 
 ### Testing
 
-You can test your goodie via the goodie-test.pl script in the top level directory.
+You should test your goodie via the goodie-test.pl script in the top level directory.
 
 ```
 # Test a particular query.
@@ -201,4 +203,5 @@ Whereas if you need to read in a file for output, do it inside the conditional. 
     }
 ```
 
+3) Goodies should only display results when they are better than algorithmic results.
 
