@@ -3,18 +3,20 @@ use strict;
 
 my $q_check_lc = "passphrase $ARGV[$1] words";
 my $answer_results = '';
-my $answer_type = 'passphrase';
+my $answer_type = '';
+
+my %passphrase = ();
+open(IN, '<passphrase.txt');
+while (my $line = <IN>) {
+    chomp($line);
+    my @res = split(/ /, $line);
+    $passphrase{$res[0]} = $res[1];
+    
+}
+close(IN);
+
 
 if ($q_check_lc =~ m/^passphrase ([1-9]+) word|words$/i) {
-    open(IN, 'list.txt');
-    my %shows = ();
-    while (my $line = <IN>) {
-	chomp($line);
-	my @res = split(/ /, $line);
-	$shows{$res[0]} = $res[1];
-	
-    }
-    close(IN);
 
     for (my $count = 0; $count < int($1); $count++) {
 	my $ref_num = '';
@@ -23,10 +25,13 @@ if ($q_check_lc =~ m/^passphrase ([1-9]+) word|words$/i) {
 	    $ref_num .= int(rand(6)) + 1;
 	}
 
-	$answer_results .= "$shows{$ref_num} ";
+	$answer_results .= "$passphrase{$ref_num} ";
     }
+
+    # Remove the trailing space
+    chop $answer_results;
+    
+    $answer_type = 'passphrase';
 }
 
-# Remove the trailing space
-chop $answer_results;
 print qq($answer_type\t$answer_results\n);
