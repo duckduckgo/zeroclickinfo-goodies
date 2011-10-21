@@ -149,7 +149,7 @@ if (!$type && $q_check_lc =~ m/^binary (.*)$/i) {
 For regular expressions, we need to watch out for false positives and speed. You can do this easily by adding a lot of queries to queries.txt
 
 
-3) Once inside the conditional, the goodie formulates the answer. This could vary slightly depending on input, but results in setting the $answer_results variable. Here's what [abc](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/abc/abc.pl) looks like.
+3) Once inside the conditional, the goodie formulates the answer. This could vary slightly depending on input, but results in setting the $answer_results variable. Here's what [abc](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/abc/goodie.pl) looks like.
 
 ```perl
 if (!$type && $q_check =~ m/^\!?\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
