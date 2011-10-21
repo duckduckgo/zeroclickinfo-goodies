@@ -16,7 +16,7 @@ while (my $line = <IN>) {
 close(IN);
 
 
-if ($q_check_lc =~ m/^passphrase ([1-9]+) word|words$/i) {
+if ($q_check_lc =~ m/^passphrase ([1-9]+)(?: word| words|)$/i) {
 
     for (my $count = 0; $count < int($1); $count++) {
 	my $ref_num = '';
@@ -30,8 +30,12 @@ if ($q_check_lc =~ m/^passphrase ([1-9]+) word|words$/i) {
 
     # Remove the trailing space
     chop $answer_results;
-    
+    $answer_results = qq(random passphrase: $answer_results);
+
     $answer_type = 'passphrase';
+    $is_memcached = 0;
+    $type = 'E';
+
 }
 
 print qq($answer_type\t$answer_results\n);
