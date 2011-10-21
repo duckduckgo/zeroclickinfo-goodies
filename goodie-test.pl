@@ -20,6 +20,12 @@ if ($opts{f} and $opts{t}) {
 my @goodies;
 my @queries;
 
+my $argv_goodie = shift @ARGV;
+if (!$argv_goodie and !$opts{a}) {
+	print "Please give a name of the goodie you want to test or use -a to test all!\n";
+	exit 1;
+}
+
 if (@ARGV) {
 	push @queries, join(' ',@ARGV);
 } elsif ($opts{f}) {
@@ -29,7 +35,6 @@ if (@ARGV) {
 		push @queries, $_;
 	}
 	close FILE;
-} elsif ($opts{t}) {
 }
 
 if ($opts{a}) {
@@ -44,12 +49,7 @@ if ($opts{a}) {
 		}
 	}
 } else {
-	my $argv_goodie = shift @ARGV;
-	if (!$argv_goodie) {
-		print "Please give a name of the goodie you want to test or use -a to test all!\n";
-		exit 1;
-	}
-	if (!@queries) {
+	if (!@queries and !$opts{t}) {
 		print "Please give a query to test ".$argv_goodie." goodie or a file with queries via -f or make execute the goodie testset with -t!\n";
 		exit 1;
 	}
