@@ -6,16 +6,18 @@
 use strict;
 use warnings;
 
-my $q_check_lc = 'this or 2 or none';
+#my $q_check_lc = 'this or 2 or none';
+my $q_check = 'this or that or none';
 my $answer_results = '';
 my $answer_type = '';
 
-if ( $q_check_lc =~ m/^\s*[a-z]+(\s+or\s+[a-z]+)+\s*$/ ) {
-    my @choices = split(/\s+or\s+/, $q_check_lc);
+if ( $q_check =~ m/^\!?\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
+    my @choices = split(/\s+or\s+/, $q_check);
     my $choice = int(rand(@choices));
 
     $answer_results = $choices[$choice];
-    $answer_type = 'choice';
+    $answer_results .= ' (random)';
+    $answer_type = 'rand';
 }
 
 print qq($answer_type\t$answer_results\n);
