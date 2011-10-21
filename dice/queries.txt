@@ -1,0 +1,3 @@
+roll 5 dice
+throw die
+throw dice

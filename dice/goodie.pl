@@ -1,15 +1,4 @@
-#!/usr/bin/perl
-# Throw 6 sided die
 
-use strict;
-use warnings;
-
-my $q_check_lc = 'roll 5 dice';
-
-my $answer_results = '';
-my $answer_type = '';
-my $type = '';
-my $is_memcached = 1;
 
 if (!$type && $q_check_lc =~ m/^(?:roll|throw)(?:\sdie|(\d{0,2}\s)*dice)$/ ) {
     my $rolls = 1;  # If "die" is entered
@@ -33,5 +22,3 @@ if (!$type && $q_check_lc =~ m/^(?:roll|throw)(?:\sdie|(\d{0,2}\s)*dice)$/ ) {
     $answer_type = 'dice';
     $is_memcached = 0;
 }
-
-print qq($answer_type\t$answer_results\n);

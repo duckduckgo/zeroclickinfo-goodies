@@ -59,8 +59,16 @@ my $code = join("", <FILE>);
 close FILE;
 
 for (@queries) {
-	my $q_check = $_;
-	my $q_internal = '';
+
+    my $q = $_;
+    next if !$q;
+
+    my $q_check = $q;
+    my $q_check_lc = lc $q_check;
+    my $q_internal = $q_check_lc;
+    my $q = $q_check;
+    my $type = '';
+    my $is_memcached = 1;
 
 	my $answer_results;
 	my $answer_type;
