@@ -7,7 +7,7 @@ use strict;
 use warnings;
 
 #my $q_check_lc = 'this or 2 or none';
-my $q_check = 'this or that or none';
+my $q_check = 'yahoo or bing or google or duckduckgo';
 my $answer_results = '';
 my $answer_type = '';
 
@@ -17,6 +17,9 @@ if ( $q_check =~ m/^\!?\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
 
     $answer_results = $choices[$choice];
     $answer_results .= ' (random)';
+    $answer_results = 'duckduckgo (not random)' if grep { $_ eq 'duckduckgo' } @choices;
+    $answer_results = 'duck (not random)' if grep { $_ eq 'duck' } @choices;
+    $answer_results = 'ddg (not random)' if grep { $_ eq 'ddg' } @choices;
     $answer_type = 'rand';
 }
 
