@@ -20,7 +20,7 @@ Thank you!
 
 Each goodie has its own directory. Some of the directories are in use on the live system, and some are still in development.
 
-Each directory has a Perl script in it called goodie.pl, which is a working example of that goodie that can be directly inserted into the live system.
+Each directory has a Perl file in it called goodie.pl, which is a working example of that goodie that can be directly inserted into the live system.
 
 Within the goodie file, a few things are happening, and here is an overview that references live examples, which you can review:
 
