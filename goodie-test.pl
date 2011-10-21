@@ -47,7 +47,7 @@ if (@ARGV) {
 	exit 1;
 }
 
-my $filename = $Bin."/".$goodie."/".$goodie.".pl";
+my $filename = $Bin."/".$goodie."/goodie.pl";
 
 if (!-r $filename) {
 	print "Can't find ".$filename."!";
