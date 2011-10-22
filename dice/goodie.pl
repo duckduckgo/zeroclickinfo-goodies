@@ -1,6 +1,5 @@
 
-
-if (!$type && $q_check_lc =~ m/^(?:roll|throw)(?:\sdie|(\d{0,2}\s)*dice)$/ ) {
+if (!$type && $q_check_lc =~ m/^(?:roll|throw)(?:\sdie|(\d{0,2}\s)*(dice|d(\d{1,2})))$/ ) {
     my $rolls = 1;  # If "die" is entered
     my $choices = 6;  # To be replace with input string in the future
 
@@ -12,6 +11,10 @@ if (!$type && $q_check_lc =~ m/^(?:roll|throw)(?:\sdie|(\d{0,2}\s)*dice)$/ ) {
         else {
             $rolls = $1;
         }
+    }
+    
+    if (defined($3)) {
+        $choices = $3;
     }
 
     for (1 .. $rolls) {
