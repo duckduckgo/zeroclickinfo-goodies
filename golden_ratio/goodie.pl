@@ -1,10 +1,7 @@
-#!/usr/bin/perl
-
-use strict; 
  
 # Calculates the Golden Ratio A:B given either A or B.
 
-if ($q_check_lc =~ m/^golden ratio (?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/i) {
+if (!$type && $q =~ m/^golden ratio (?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/i) {
   my $golden_ratio = (1 + sqrt(5)) / 2;
   my $result = 0; 
    
@@ -17,8 +14,10 @@ if ($q_check_lc =~ m/^golden ratio (?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\
     $result = $3 * $golden_ratio; 
     $answer_results = "$3 : $result";
   } 
-  
-  $answer_type = "goldenratio";
-  $is_memcached = 1;   
+
+  if ($answer_results) {
+      $answer_results = qq(Golden raito: $answer_results);
+      $answer_type = "golden_ratio";
+  }
 } 
 
