@@ -24,6 +24,8 @@ Each directory has a structure like this:
 
 ```txt
 # Perl file that can be directly inserted into the live system.
+# This file is included, so does not need a shebang 
+# or a use warnings/strict line.
 goodie.pl 
 
 # List of test queries, one per line.
@@ -36,7 +38,7 @@ goodie.html
 
 ### Testing
 
-You can test your goodie via the goodie-test.pl script in the top level directory.
+**Please, please test your goodie via the goodie-test.pl script in the top level directory before making a pull request. We developed this script to make sure integration goes smoothly.**
 
 ```
 # Test a particular query.
@@ -149,7 +151,7 @@ if (!$type && $q_check_lc =~ m/^binary (.*)$/i) {
 For regular expressions, we need to watch out for false positives and speed. You can do this easily by adding a lot of queries to queries.txt
 
 
-3) Once inside the conditional, the goodie formulates the answer. This could vary slightly depending on input, but results in setting the $answer_results variable. Here's what [abc](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/abc/abc.pl) looks like.
+3) Once inside the conditional, the goodie formulates the answer. This could vary slightly depending on input, but results in setting the $answer_results variable. Here's what [abc](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/abc/goodie.pl) looks like.
 
 ```perl
 if (!$type && $q_check =~ m/^\!?\s*[A-Za-z]+(\s+or\s+[A-Za-z]+)+\s*$/ ) {
@@ -201,4 +203,5 @@ Whereas if you need to read in a file for output, do it inside the conditional. 
     }
 ```
 
+3) Goodies should only display results when they are better than algorithmic results.
 

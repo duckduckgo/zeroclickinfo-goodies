@@ -10,7 +10,7 @@ my $goodie_filename = 'goodie.pl';
 
 my %opts;
 
-getopts('f:ta',\%opts);
+getopts('f:tab',\%opts);
 
 if ($opts{f} and $opts{t}) {
 	print "Please just use -f or -t not both at once\n";
@@ -83,14 +83,13 @@ for my $goodie (@goodies) {
 		close FILE;
 	}
 	
-	for (@goodie_queries) {
+	for my $q (@goodie_queries) {
 
-		next if !$_;
+		next if !$q;
 
-		my $q_check = $_;
+		my $q_check = $q;
 		my $q_check_lc = lc $q_check;
 		my $q_internal = $q_check_lc;
-		my $q = $q_check;
 		my $type = '';
 		my $is_memcached = 1;
 
@@ -100,20 +99,36 @@ for my $goodie (@goodies) {
 		eval $code;
 		
 		print "\n";
+		
+		print $goodie.': "'.$q.'"'."\n" if $opts{b};
 
 		if ($answer_results and !$answer_type) {
-			print 'The goodie doesnt set $answer_type, but has $answer_results on "'.$_.'". You must give back $answer_results!'."\n";
+			if ($opts{b}) {
+				print '$answer_type and !$answer_results'."\n";
+			} else {
+				print 'The goodie doesnt set $answer_type, but has $answer_results on "'.$q.'". You must give back $answer_results!'."\n";
+			}
 		} 
 
 		if ($answer_results and $answer_type) {
-			print 'The goodie '.$goodie.' gives back the following on the query "'.$q_check.'":'."\n";
-			print 'Answer Type: '.$answer_type."\n";
-			print 'Answer Type: '.$answer_results."\n";
+			if ($opts{b}) {
+				print "\t".($is_memcached ? "YES" : "NO")."\n";
+				print "\t".$answer_type."\n";
+				for (split("\n",$answer_results)) {
+					print "\t".$_;
+				}
+			} else {
+				print 'The goodie '.$goodie.' gives back the following on the query "'.$q_check.'":'."\n";
+				print 'Cached: '.($is_memcached ? "YES" : "NO")."\n";
+				print 'Answer Type: '.$answer_type."\n";
+				print 'Answer Result: '.$answer_results."\n";
+			}
 		} else {
-			print 'The goodie '.$goodie.' gave no result on "'.$q_check.'"!'."\n";
+			print 'The goodie '.$goodie.' gave no result on "'.$q_check.'"!'."\n" if $opts{b};
 		}
-	}
 
-	print "\n";
+		print "\n";
+
+	}
 
 }
