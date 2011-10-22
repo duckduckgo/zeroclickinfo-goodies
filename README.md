@@ -205,3 +205,5 @@ Whereas if you need to read in a file for output, do it inside the conditional. 
 
 3) Goodies should only display results when they are better than algorithmic results.
 
+4) It generally helps to give a bit of context around the answer_results, e.g. '(random password)' after a random password or 'Answer:' before.
+
