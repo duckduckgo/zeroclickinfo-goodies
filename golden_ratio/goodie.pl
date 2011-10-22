@@ -16,7 +16,7 @@ if (!$type && $q =~ m/^golden ratio (?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:
   } 
 
   if ($answer_results) {
-      $answer_results = qq(Golden raito: $answer_results);
+      $answer_results = qq(Golden ratio: $answer_results);
       $answer_type = "golden_ratio";
   }
 } 
