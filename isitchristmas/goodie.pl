@@ -7,7 +7,7 @@ if ($type ne "E" && $q_check =~ m/^is (it|today) christmas.*$/i) {
     }
     $is_memcached = 1;
     my $response = yn;
-    my $phrase = ($response eq "No. ") ? "It's not Christmas. No gifts for you." : "It's Christmas!!!";
+    my $phrase = ($response ne "No. ") ? "It's Christmas!!!" : "It's not Christmas. No gifts for you.";
     $answer_results = ($response .= $phrase);
     if ($answer_results) {
 	$answer_type = "yes/no";
