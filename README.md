@@ -16,7 +16,25 @@ We also maintain a list of [requested goodies](https://github.com/duckduckgo/duc
 Contributing
 ------------
 
-Thank you!
+First off, thank you!
+
+
+### Process
+
+1) Make sure you're in the right place. This repo is for standalone Perl blocks that do not require any HTTP calls and where the answer is generated based on the input. For HTTP calls you probably want the [spice repo](https://github.com/duckduckgo/zeroclickinfo-spice).
+
+2) Develop goodie using the Structure below in either a fork or a branch (if a collaborator).
+
+3) Test goodie via Testing procedure below.
+
+4) Submit a pull request.
+
+Feel free to ask questions!
+
+
+
+### Structure
+
 
 Each goodie has its own directory. Some of the directories are in use on the live system, and some are still in development.
 
