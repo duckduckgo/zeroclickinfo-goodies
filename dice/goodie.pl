@@ -25,7 +25,7 @@ if (!$type && $q_check_lc =~ m/^(?:roll|throw)/) {
 	$is_memcached = 0;
 	
     } elsif (!$type && $q_check_lc =~ m/^(?:roll|throw)\s(\d{0,2})d(\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
-	my $number_of_dice = $1;
+	my $number_of_dice = $1 || 1;
 	my $number_of_faces = $2;
 	my @rolls;
 	for (1 .. $number_of_dice) {
