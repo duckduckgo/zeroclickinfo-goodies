@@ -20,6 +20,7 @@ if (!$type && $q_check_lc =~ m/^(?:roll|throw)/) {
     my $number_of_dice = $1 || 1;
     my $number_of_faces = $2;
     my @rolls;
+    my $sum = 0;
     for (1 .. $number_of_dice) {
       push(@rolls, int(rand($number_of_faces)) + 1);
     }
@@ -28,17 +29,22 @@ if (!$type && $q_check_lc =~ m/^(?:roll|throw)/) {
       if ($3 eq '-' && ($4 eq 'l' || $4 eq 'h')) {
         @rolls = sort(@rolls);
         if ($4 eq 'l') {
-          shift(@rolls);
+          push(@rolls, -(shift(@rolls)));
         } else {
-          pop(@rolls);
+          push(@rolls, -(pop(@rolls)));
         }
       } else {
         push(@rolls, int("$3$4"));
       }
     }
-    $answer_results = 0;
     for (@rolls) {
-      $answer_results += $_;
+      $sum += $_;
+    }
+    if (@rolls > 1) {
+      $answer_results = join(' ', @rolls);
+      $answer_results .= " = $sum";
+    } else {
+      $answer_results = $sum;
     }
     $answer_type = 'dice';
     $is_memcached = 0;
