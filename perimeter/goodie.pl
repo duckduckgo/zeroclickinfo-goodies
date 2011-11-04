@@ -1,28 +1,26 @@
-# Calculates the perimiter of a square, rectangle, triangle, regular pentagon, regular hexagon, 
+# Calculates the perimeter of a square, rectangle, triangle, regular pentagon, regular hexagon, 
 # regular octagon or the circumference of a circle with given specified edges/radius.
 use Math::Trig;
 
-if (!$type && $q_check_lc =~ m/^(perimeter) (?:of\s|)(?:(rectangle) (\d+(\.\d+)?)\s(\d+(\.\d+)?))$/ ||
- $q_check_lc =~ m/^(perimeter) (?:of\s|)(?:(triangle) (\d+(\.\d+)?)\s(\d+(\.\d+)?)\s(\d+(\.\d+)?))$/ ||
- $q_check_lc =~ m/^(perimeter) (?:of\s|)(?:(square|circle|pentagon|hexagon|octagon) (\d+(\.\d+)?))$/ ||
- $q_check_lc =~ m/^(circumference) (?:(?:of\s|)circle\s)?(\d+(\.\d+)?)$/) {
+if (!$type && $q_check_lc =~ m/^(?:circumference (?:of\scircle\s|)(?:circle\s|)(\d+(?:\.\d+)?))|(?:(perimeter) (?:of\s|)(?:(square|circle|pentagon|hexagon|octagon) (\d+(?:\.\d+)?)|(rectangle) (\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)|(triangle) (\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)))$/) {
 	my %polygons = ("pentagon" => 5, "hexagon" => 6, "octagon" => 8);
-    my $shape = $1 eq "circumference" ? "circle" : $2;
-    my $answerPrefix = "Perimeter of $shape: ";
+    my $shape = $1 ? "circle" : $3 || $5 || $8;
+	
+	my $answerPrefix = "Perimeter of $shape: ";
     my $answer;
 
     if ($shape eq "square") {
-        $answer = $3 * 4;
+        $answer = $4 * 4;
     } elsif ($shape eq "rectangle") {
-        $answer = ($3 * 2) + ($5 * 2)
+        $answer = ($6 * 2) + ($7 * 2)
     } elsif ($shape eq "triangle") {
-        $answer = $3 + $5 + $7;
+        $answer = $9 + $10 + $11;
     } elsif ($shape eq "circle") {
         $answerPrefix = "Circumference: ";
-        $answer = (2 * pi) * ($1 eq "perimeter" ? $3 : $2);
+        $answer = (2 * pi) * ($1 || $4);
     } else {
 		if (substr $shape, index($shape, "agon") eq "agon") {
-			$answer = $3 * $polygons{$shape};
+			$answer = $4 * $polygons{$shape};
 		}
 	}
 
