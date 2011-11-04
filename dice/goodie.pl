@@ -41,7 +41,8 @@ if (!$type && $q_check_lc =~ m/^(?:roll|throw)/) {
       $sum += $_;
     }
     if (@rolls > 1) {
-      $answer_results = join(' ', @rolls);
+      $answer_results = join(' + ', @rolls);
+      $answer_results =~ s/\+\s\-/\- /g;
       $answer_results .= " = $sum";
     } else {
       $answer_results = $sum;
