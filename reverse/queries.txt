@@ -1,0 +1,4 @@
+reverse abc
+reverse Abcd
+reverse ABCDEF
+reverse one two three four five
