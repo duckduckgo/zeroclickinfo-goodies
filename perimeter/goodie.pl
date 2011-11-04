@@ -1,12 +1,14 @@
 # Calculates the perimeter of a square, rectangle, triangle, regular pentagon, regular hexagon, 
 # regular octagon or the circumference of a circle with given specified edges/radius.
-use Math::Trig;
 
-if (!$type && $q_check_lc =~ m/^(?:circumference (?:of\scircle\s|)(?:circle\s|)(\d+(?:\.\d+)?))|(?:(perimeter) (?:of\s|)(?:(square|circle|pentagon|hexagon|octagon) (\d+(?:\.\d+)?)|(rectangle) (\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)|(triangle) (\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)))$/) {
-	my %polygons = ("pentagon" => 5, "hexagon" => 6, "octagon" => 8);
+# Since seemingly only used for pi, I just put pi in manually.
+#use Math::Trig;
+
+if (!$type && $q_check_lc =~ m/^(?:circumference (?:of\s|)(?:circle\s|)(\d+(?:\.\d+)?))|(?:(perimeter) (?:of\s|)(?:(square|circle|pentagon|hexagon|octagon) (\d+(?:\.\d+)?)|(rectangle) (\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)|(triangle) (\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)\s(\d+(?:\.\d+)?)))$/) {
+    my %polygons = ("pentagon" => 5, "hexagon" => 6, "octagon" => 8);
     my $shape = $1 ? "circle" : $3 || $5 || $8;
 	
-	my $answerPrefix = "Perimeter of $shape: ";
+    my $answerPrefix = "Perimeter of $shape: ";
     my $answer;
 
     if ($shape eq "square") {
@@ -17,13 +19,15 @@ if (!$type && $q_check_lc =~ m/^(?:circumference (?:of\scircle\s|)(?:circle\s|)(
         $answer = $9 + $10 + $11;
     } elsif ($shape eq "circle") {
         $answerPrefix = "Circumference: ";
-        $answer = (2 * pi) * ($1 || $4);
+        $answer = (2 * 3.14159265358979323846) * ($1 || $4);
     } else {
-		if (substr $shape, index($shape, "agon") eq "agon") {
-			$answer = $4 * $polygons{$shape};
-		}
+	if (substr $shape, index($shape, "agon") eq "agon") {
+	    $answer = $4 * $polygons{$shape};
 	}
+    }
 
+    
     $answer_results = $answerPrefix.$answer;
     $answer_type = "perimeter";
+    $type = 'E';
 }
