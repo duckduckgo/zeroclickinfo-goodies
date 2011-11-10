@@ -1,6 +1,5 @@
-# Calculates em or px when given the other.
+# Calculates em to px -or- px to em
 
-#if (!$type && $q =~ m/^em to px (?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/i) {
 if (!$type && $q =~ m/^(\d+[.]\d*|\d*[.]\d+|\d+)\s*(em|px)\s+(in|to)\s+(em|px)$/i) {
   my $result = 0;
 
