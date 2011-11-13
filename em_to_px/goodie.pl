@@ -14,7 +14,7 @@ if (!$type && $q =~ m/^(\d+[.]\d*|\d*[.]\d+|\d+)\s*(em|px)\s+(in|to)\s+(em|px)$/
   }
 
   if ($answer_results) {
-      $answer_results = qq($answer_results);
-      $answer_type = "em_to_px";
+      $answer_results = qq($answer_results (with a base font size of 16px));
+      $answer_type = "convert";
   }
 }
