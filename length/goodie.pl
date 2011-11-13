@@ -6,10 +6,10 @@ if (!$type && $q_check =~ m/^length (.+)$/i) {
         use Encode;
         $answer_results = length decode_utf8($1);
       }
-	if ($answer_results) {
+        if ($answer_results) {
                 $answer_results = qq(Length: $answer_results);
-		$answer_type = 'length';
-		$type = 'E';
-	}
+                $answer_type = 'length';
+                $type = 'E';
+        }
 }
 
