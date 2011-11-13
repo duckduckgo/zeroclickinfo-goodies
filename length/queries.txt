@@ -1,0 +1,3 @@
+length hello world!
+length thisisareallylongsentencehowdid∞gethere
+length 答えは42です。
