@@ -18,6 +18,7 @@ way?
  * Mimic unix cal command, e.g. cal 1 2012
  * Roman numerals.
  * Ideas here: http://www.soople.com/
+ * Moon phases.
 
 ### Being Worked on
  * BEING WORKED ON em to px converter 
