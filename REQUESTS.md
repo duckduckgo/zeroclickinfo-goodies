@@ -19,6 +19,7 @@ way?
  * Roman numerals.
  * Ideas here: http://www.soople.com/
  * Moon phases.
+ * You have a "binary that" feature, it'd be cool to have the opposite to (binary to normal text).
 
 ### Being Worked on
  * BEING WORKED ON em to px converter 
