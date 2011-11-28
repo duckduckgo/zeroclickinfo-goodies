@@ -12,6 +12,8 @@ if ($type ne 'E' && $q_check_lc =~ m/^passphrase ([1-9]+)(?: word| words|)$/i) {
     my $word = splice @words, (int(rand @words)), 1;
     $answer_results .= "$word ";
   }
+  # Remove the trailing space
+  chop $answer_results;
   $answer_results = qq(random passphrase: $answer_results);
   $answer_type = 'passphrase';
   $is_memcached = 0;
