@@ -20,6 +20,8 @@ way?
  * Ideas here: http://www.soople.com/
  * Moon phases.
  * You have a "binary that" feature, it'd be cool to have the opposite to (binary to normal text).
+ * Averages of numbers
+ * It would be awesome to have a !net or !subnet or something of the sort, or just a simple match on an ip with a subnet to get all the information one may need from it: mask bits, address range, broadcast id, wildcard mask, # of host addresses, host address range, address space, class, ipv6 translation, subnet owner and location, binary representation, CIDR and dotted representations, etc (though not sure about too much else that you could derive from it)
 
 ### Being Worked on
  * BEING WORKED ON em to px converter 
