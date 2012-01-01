@@ -28,8 +28,12 @@ if (!$type && $q_check =~ m/^(?:avg|average) {?([\-?0-9.,?;? ?]*)}?$/i) {
 	# get the middle number
 	$med = $nums[int($len/2)]
     }
+    my $rms = 0;
+    $rms += ($_ ** 2) for @nums;
+    $rms /= $len;
+    $rms = sqrt $rms;
     # set the results
-    $answer_results = qq(Mean: $mean\nMedian: $med);
+    $answer_results = qq(Mean: $mean\nMedian: $med\nRoot Mean Square: $rms);
     if ($answer_results) {
 	$answer_type = 'average';
 	$type = 'E';
