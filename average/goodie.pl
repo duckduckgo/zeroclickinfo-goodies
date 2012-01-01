@@ -1,9 +1,13 @@
 
 # Outputs the mean and median of the queried numbers.
 
-if (!$type && $q_check =~ m/^(?:avg|average) ([\-\?0-9. ]*)$/i) {
+if (!$type && $q_check =~ m/^(?:avg|average) {?([\-?0-9.,?;? ?]*)}?$/i) {
     # get an array of the entered numbers
-    my @nums = split(" ", $1);
+    my @nums = split(m/(?:, ?| |; ?)/, $1);
+    my $item;
+    foreach $item (@nums) {
+	$item =~ s/[;,]//g;
+    }
     # initialize the sum
     my $sum = 0;
     # calculate the sum
