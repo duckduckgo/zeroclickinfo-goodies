@@ -1,7 +1,7 @@
 
 # Outputs the percent-error of the given values.
 
-if (!$type && $q_check =~ m/^(?:percent|%)(?: |-|)(?:err|error) {?([\-?0-9.]+)(?:, ?| |; ?)([\-?0-9.]+)}?$/i) {
+if (!$type && $q_check =~ m/^(?:percent|%)(?: |-|)(?:err|error) {?(-?\d+(?:\.\d+)?)(?:, ?| |; ?)(-?\d+(?:\.\d+)?)}?$/i) {
     my $acc = $1;
     my $exp = $2;
     my $diff = abs $acc - $exp;
