@@ -1,16 +1,11 @@
-DuckDuckGo ZeroClickInfo Goodies
+Goodies Zero-click Info Plugins
 =================================
-
-About
------
 
 See [the contribution page](https://github.com/duckduckgo/duckduckgo/wiki) for a general overview on contributing to DuckDuckGo.
 
-This repository is for contributing goodies, which are special tools that reveal instant answers at the top of search results, e.g. calculations or throwing dice.
+This repository is for contributing Perl-based Zero-click Info plugins. Each goodie plugin reacts to a set of queries and produces instant answers at the top of search results, e.g. calculations or throwing dice.
 
-Most of the existing goodies are listed on the [goodies page](http://duckduckgo.com/goodies.html) and [tech goodies page](http://duckduckgo.com/tech.html).
-
-We also maintain a list of [requested goodies](https://github.com/duckduckgo/duckduckgo/wiki/Goodies), but whatever you want to attempt is welcome.
+We maintain a list of requested goodie plugins, which are colored yellow on [the Trello board](https://trello.com/board/duckduckgo-open-source-plugins/4f08e96d947729b526070890), but whatever you want to attempt is welcome!
 
 
 Contributing
@@ -21,15 +16,13 @@ First off, thank you!
 
 ### Process
 
-1) Make sure you're in the right place. This repo is for standalone Perl blocks that do not require any HTTP calls and where the answer is generated based on the input. For HTTP calls you probably want the [spice repo](https://github.com/duckduckgo/zeroclickinfo-spice).
+1) Develop your plugin using the Structure below in either a fork or a branch (if a collaborator).
 
-2) Develop goodie using the Structure below in either a fork or a branch (if a collaborator).
+2) Test your plugin via Testing procedure below.
 
-3) Test goodie via Testing procedure below.
+3) Submit a pull request.
 
-4) Submit a pull request.
-
-Feel free to ask questions!
+Feel free to [ask questions](http://webchat.freenode.net/?channels=duckduckgo)!
 
 
 
@@ -87,7 +80,7 @@ my $answer_results = '';
 my $answer_type = '';
 
 # This is defined external to the goodie and tells you 
-# whether there is other Zero-click info, and if so, 
+# whether there is other Zero-click Info, and if so, 
 # what type is it (C for category page, etc.).
 my $type = '';
 ```
@@ -125,14 +118,14 @@ my $q_internal = 'example query';
 
 ```perl
 
-# If there is no 0-click.
+# If there is no Zero-click.
 if (!$type) {
 
 }
 
 
 # If there is no other goodie. 
-# Will kill other 0-click info, e.g. Wikipedia. 
+# Will kill other Zero-click Info, e.g. Wikipedia. 
 if ($type ne 'E') {
 
 }
