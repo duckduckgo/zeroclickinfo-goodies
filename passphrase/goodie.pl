@@ -1,20 +1,16 @@
-my %passphrase = ();
+my @words = [];
 open(IN, '<passphrase/goodie.txt');
 while (my $line = <IN>) {
   chomp($line);
-  my @res = split(/ /, $line);
-  $passphrase{$res[0]} = $res[1];
+  push(@words, $line);
 }
 close(IN);
 
 if ($type ne 'E' && $q_check_lc =~ m/^passphrase ([1-9]+)(?: word| words|)$/i) {
-  for (my $count = 0; $count < int($1); $count++) {
-    my $ref_num = '';
-    for (my $num = 0; $num < 5; $num++) {
-      # alea iacta est!!!
-      $ref_num .= int(rand(6)) + 1;
-    }
-    $answer_results .= "$passphrase{$ref_num} ";
+  my $word_count = int($1);
+  for (my $count = 0; $count < $word_count; $count++) {
+    my $word = splice @words, (int(rand @words)), 1;
+    $answer_results .= "$word ";
   }
   # Remove the trailing space
   chop $answer_results;
