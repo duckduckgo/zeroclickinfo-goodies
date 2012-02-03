@@ -1,15 +1,16 @@
 
-# Takes two numbers and does a bitwise exclusive-or on them.
+# Takes given numbers and does a bitwise exclusive-or on them.
 
-if (!$type && $q_check =~ m/^(\d+) *(xor|⊕) *(\d+)$/i) {
+if (!$type && $q_check =~ m/^[0-9]+\s*(\s+(xor|⊕)\s*[0-9]+)+\s*$/i) {
     
-    if ($2 && $3) {
-        $answer_results = ord(chr($1)^chr($3));
+    my $num = 0;
+    my @numbers = grep(!/(xor|⊕)/, split(/\s+(xor|⊕)\s+/, $q_check));
+    foreach (@numbers) {
+        $num ^= ord(chr($_)); 
     }
-    
+    $answer_results = qq($num);
     if ($answer_results) {
-        $answer_results = qq($1 xor $3 = $answer_results);
         $answer_type = 'xor';
         $type = 'E';
-        }
+    }
 }
