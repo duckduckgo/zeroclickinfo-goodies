@@ -1,7 +1,6 @@
-
 # Outputs the query in binary format.
 
-if (!$type && $q_check =~ m/^binary (.*)$/i) {
+if (!$type && $q_check =~ m/^(.*) (?:in|to) binary$/i) {
 	
     sub bin {
 	my @tex = shift;
