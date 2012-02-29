@@ -8,7 +8,7 @@ if (!$type && $q_check =~ m/^[0-9]+\s*(\s+(xor|⊕)\s*[0-9]+)+\s*$/i) {
     foreach (@numbers) {
         $num ^= ord(chr($_)); 
     }
-    $answer_results = qq($num);
+    $answer_results = qq(Answer: <a href="javascript:;" onclick="document.x.q.value='$num';document.x.q.focus();">$num</a>);
     if ($answer_results) {
         $answer_type = 'xor';
         $type = 'E';
