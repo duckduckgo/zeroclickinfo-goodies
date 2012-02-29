@@ -1,0 +1,36 @@
+package DDG::Goodie::SigFigs;
+
+use DDG::Goodie;
+
+triggers start => 'sigfigs', 'sigdigs', 'sf', 'df', 'significant';
+
+handle remainder => sub {
+    $_ =~ s/^(figures|digits)\s*//g;
+    return unless $_ =~ /^-?\d+(?:\.(?:\d+)?)?$/;
+    $_ =~ s/-//;
+    $_ =~ s/^0+//;
+    my @arr = split('\\.', $_);
+    my $v = @arr;
+    my $len = 0;
+    # there's a decimal
+    unless ($v eq 1) {
+        # the string doesn't have integers on the left
+        # this means we can strip the leading zeros on the right
+        if ($_ < 1) {
+            $arr[1] =~ s/^0+//;
+            $len = length $arr[1];
+        }
+        #there are integers on the left
+        else {
+            $len = length($arr[0]) + length($arr[1]);
+        }
+    }
+    # no decimal
+    else {
+        # lose the trailing zeros and count
+        $_ =~ s/\.?0*$//;
+        $len = length $_;
+    }
+    return "Significant figures: $len";
+};
+1;
