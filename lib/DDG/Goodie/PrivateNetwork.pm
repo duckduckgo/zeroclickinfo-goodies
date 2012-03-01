@@ -13,10 +13,8 @@ zci answer_type => 'network';
 handle sub {
     my $sharedir = dist_dir('zeroclickinfo-goodies');
 
-    my @lines = io("$sharedir/privatenetwork/privatenetwork.html")->slurp;
+    my $lines = io("$sharedir/privatenetwork/privatenetwork.html")->slurp;
     
-    my $output;
-    $output .= $_ for @lines;
-    return $output;
+    return $lines;
 };
 1;

@@ -13,11 +13,9 @@ zci answer_type => 'dns';
 handle sub {
     my $sharedir = dist_dir('zeroclickinfo-goodies');
 
-    my @lines = io("$sharedir/publicdns/publicdns.html")->slurp;
+    my $lines = io("$sharedir/publicdns/publicdns.html")->slurp;
     
-    my $output;
-    $output .= $_ for @lines;
-    return $output;
+    return $lines;
 };
 
 1;
