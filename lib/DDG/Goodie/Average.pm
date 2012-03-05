@@ -2,7 +2,7 @@ package DDG::Goodie::Average;
 
 use DDG::Goodie;
 
-triggers startend => "avg", "average", "mean";
+triggers startend => "avg", "average", "mean", "median";
 
 zci is_cached => 1;
 
