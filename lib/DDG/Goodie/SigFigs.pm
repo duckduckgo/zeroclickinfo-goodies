@@ -2,7 +2,7 @@ package DDG::Goodie::SigFigs;
 
 use DDG::Goodie;
 
-triggers start => 'sigfigs', 'sigdigs', 'sf', 'df', 'significant';
+triggers start => 'sigfigs', 'sigdigs', 'sf', 'sd', 'significant';
 
 handle remainder => sub {
     $_ =~ s/^(figures|digits)\s*//g;
