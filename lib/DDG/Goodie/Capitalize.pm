@@ -1,9 +1,11 @@
 package DDG::Goodie::Capitalize;
 
 use DDG::Goodie;
-use utf8;
 
-triggers start => 'capitalize', 'uppercase';
+zci is_cached => 1;
 
-handle remainder => sub { uc($_) };
+triggers startend => 'capitalize', 'uppercase';
+
+handle remainder => sub { uc join(' ', split(/ /,$_)) };
+
 1;
