@@ -6,6 +6,6 @@ zci is_cached => 1;
 
 triggers startend => 'capitalize', 'uppercase';
 
-handle remainder => sub { uc join(' ', split(/ /,$_)) };
+handle remainder => sub { uc ($_) };
 
 1;
