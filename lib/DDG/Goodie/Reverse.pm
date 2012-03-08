@@ -7,6 +7,6 @@ zci is_cached => 1;
 
 triggers startend => 'reverse';
 
-handle remainder => sub { reverse $_ };
+handle remainder => sub { join('',reverse split(//,$_)) };
 
 1;
