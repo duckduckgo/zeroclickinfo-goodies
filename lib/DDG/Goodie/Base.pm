@@ -8,7 +8,7 @@ use DDG::Goodie;
 triggers any => qw/hex hexadecimal octal oct binary base/;
 
 handle query_clean => sub {
-    return unless  /^([0-9]+)\s*(?:in|as)\s+(hex|hexadecimal|octal|oct|binary|base\s*([0-9]+))$/;
+    return unless  /^([0-9]+)\s*(?:(?:in|as)\s+)?(hex|hexadecimal|octal|oct|binary|base\s*([0-9]+))$/;
     my $number = $1;
     my $base = $3;
     unless (defined $base) {
