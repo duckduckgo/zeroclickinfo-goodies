@@ -13,11 +13,11 @@ handle query_clean => sub {
     my $base = $3;
     unless (defined $base) {
         given ($2) {
-            when ('hex'        ) { $base = 16 }
-            when ('hexadecimal') { $base = 16 }
-            when ('oct'        ) { $base =  8 }
-            when ('octal'      ) { $base =  8 }
-            when ('binary'     ) { $base =  2 }
+            $base = 16 when 'hex';
+            $base = 16 when 'hexadecimal';
+            $base =  8 when 'oct';
+            $base =  8 when 'octal';
+            $base =  2 when 'binary';
         }
     }
     return if $base < 2 || $base > 36;
