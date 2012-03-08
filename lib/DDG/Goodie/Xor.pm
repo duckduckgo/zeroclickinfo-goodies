@@ -10,8 +10,8 @@ handle query_raw => sub {
     my @nums = grep(!/(xor|⊕)/, split(/\s+(⊕|xor)\s+/i, $_));
     my $num = 0;
     foreach (@nums) {
-        $num ^= ord(chr($_)) if $_ =~ /^\d+$/;
-        return unless $_ =~ /^\d+$/;
+        $num ^= ord(chr($_)) if /^\d+$/;
+        return unless /^\d+$/;
     }
     return "$num" if $num;
     return;

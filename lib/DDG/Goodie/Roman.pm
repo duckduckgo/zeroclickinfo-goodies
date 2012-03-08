@@ -8,7 +8,7 @@ triggers start => "roman", "arabic";
 zci is_cached => 1;
 
 handle remainder => sub {
-    return uc(roman($_)) if $_ =~ /^\d+$/ && roman($_);
+    return uc(roman($_)) if /^\d+$/ && roman($_);
     return arabic $_ if lc($_) =~ /^[mdclxvi]+$/ && arabic($_);
     return;
 };

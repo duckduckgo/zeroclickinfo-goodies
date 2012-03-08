@@ -6,7 +6,7 @@ triggers start => 'sigfigs', 'sigdigs', 'sf', 'sd', 'significant';
 
 handle remainder => sub {
     $_ =~ s/^(figures|digits)\s*//g;
-    return unless $_ =~ /^-?\d+(?:\.(?:\d+)?)?$/;
+    return unless /^-?\d+(?:\.(?:\d+)?)?$/;
     $_ =~ s/-//;
     $_ =~ s/^0+//;
     my @arr = split('\\.', $_);

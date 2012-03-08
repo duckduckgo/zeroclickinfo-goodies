@@ -10,7 +10,7 @@ zci answer_type => "convert";
 zci is_cached => 1;
 
 handle remainder => sub {
-    return decode_base64($_) if $_ =~ /^[A-Za-z0-9+=]+$/;
+    return decode_base64($_) if /^[A-Za-z0-9+=]+$/;
     return;
 };
 1;

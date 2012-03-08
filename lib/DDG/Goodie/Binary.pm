@@ -10,6 +10,8 @@ sub bin {
     my @tex = shift;
     my $bin;
     for(my $x = 0; $x <= $#tex; $x++) {
+        print "$x: ";
+        p($tex[$x]);
         $bin .= unpack("B*", $tex[$x]);
     }
     return $bin;
@@ -17,6 +19,6 @@ sub bin {
 
 
 handle remainder => sub {
-    return bin($1) if $_ =~ /^(.*)\s+(in|to)$/;
+    return bin($1) if /^(.*)\s+(in|to)$/;
     return;
 }
