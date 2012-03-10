@@ -25,6 +25,8 @@ handle sub {
             $extra{script} = $i{script};
         }
     }
+    $extra{decimal} = $c;
+    $extra{HTML}    = "&#$c;";
     if ($i{decomposition}) {
         ($extra{decomposition} = $i{decomposition}) =~ s/\b([0-9a-fA-F]{4,6})\b/U+$1/;
     }
@@ -36,7 +38,7 @@ handle sub {
         $extra{$_} = 'U+' . $i{$_} if length $i{$_};
     }
 
-    for (qw/script block decomposition title upper lower/) {
+    for (qw/decimal HTML script block decomposition title upper lower/) {
         $info_str .= ", $_: $extra{$_}" if exists $extra{$_};
     }
     return $info_str;
