@@ -2,6 +2,7 @@ package DDG::Goodie::Unicode;
 
 use DDG::Goodie;
 use Unicode::UCD qw/charinfo/;
+use Encode qw/encode_utf8/;
 
 triggers query_raw => qr/^\s*u\+[a-f0-9]{4,6}\s*$/i;
 
@@ -27,6 +28,10 @@ handle sub {
     }
     $extra{decimal} = $c;
     $extra{HTML}    = "&#$c;";
+    $extra{'UTF-8'} = join ' ',
+                      map { sprintf '0x%02X', ord $_ }
+                      split //, encode_utf8(chr($c));
+
     if ($i{decomposition}) {
         ($extra{decomposition} = $i{decomposition}) =~ s/\b([0-9a-fA-F]{4,6})\b/U+$1/;
     }
@@ -38,7 +43,7 @@ handle sub {
         $extra{$_} = 'U+' . $i{$_} if length $i{$_};
     }
 
-    for (qw/decimal HTML script block decomposition title upper lower/) {
+    for (qw/decimal HTML UTF-8 script block decomposition title upper lower/) {
         $info_str .= ", $_: $extra{$_}" if exists $extra{$_};
     }
     return $info_str;
