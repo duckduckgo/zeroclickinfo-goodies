@@ -33,7 +33,7 @@ handle sub {
                       split //, encode_utf8(chr($c));
 
     if ($i{decomposition}) {
-        ($extra{decomposition} = $i{decomposition}) =~ s/\b([0-9a-fA-F]{4,6})\b/U+$1/;
+        ($extra{decomposition} = $i{decomposition}) =~ s/\b(?<!<)([0-9a-fA-F]{4,6})\b(?!>)/U+$1/g;
     }
     $extra{block} = $i{block};
 
