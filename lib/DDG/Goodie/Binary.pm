@@ -10,8 +10,6 @@ sub bin {
     my @tex = shift;
     my $bin;
     for(my $x = 0; $x <= $#tex; $x++) {
-        print "$x: ";
-        p($tex[$x]);
         $bin .= unpack("B*", $tex[$x]);
     }
     return $bin;
