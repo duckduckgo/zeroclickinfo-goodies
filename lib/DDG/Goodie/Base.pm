@@ -7,19 +7,18 @@ use DDG::Goodie;
 
 triggers any => qw/hex hexadecimal octal oct binary base/;
 
+my %base_map = (
+    hex         => 16,
+    hexadecimal => 16,
+    oct         =>  8,
+    octal       =>  8,
+    binary      =>  2,
+);
+
 handle query_clean => sub {
     return unless  /^([0-9]+)\s*(?:(?:in|as)\s+)?(hex|hexadecimal|octal|oct|binary|base\s*([0-9]+))$/;
     my $number = $1;
-    my $base = $3;
-    unless (defined $base) {
-        given ($2) {
-            $base = 16 when 'hex';
-            $base = 16 when 'hexadecimal';
-            $base =  8 when 'oct';
-            $base =  8 when 'octal';
-            $base =  2 when 'binary';
-        }
-    }
+    my $base = $3 // $base_map{$2};
     return if $base < 2 || $base > 36;
     my $based = int2base($number, $base);
     return "$number in base $base is $based";
