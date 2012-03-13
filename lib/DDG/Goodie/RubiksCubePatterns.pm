@@ -2,6 +2,8 @@ package DDG::Goodie::RubiksCubePatterns;
 
 use DDG::Goodie;
 
+# Create interesting patterns from a solved Rubik's Cube.
+
 triggers start => "rcube";
 
 zci is_cached => 1;
