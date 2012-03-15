@@ -88,7 +88,7 @@ my %charMap = (
 
 handle remainder => sub {
 	my @string = split(//,reverse $_);
-	my $flippedString = ""; 
+	my $flippedString; 
 
 	foreach $char (@string) {
 
