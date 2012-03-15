@@ -61,12 +61,12 @@ my %charMap = (
 	"Z" => "Z",
 	"0" => "0",
 	"1" => "\x{0196}",
-#	"2" => "\x{1105}",
+#	"2" => "\x{1105}", Doesn't display in tests
 	"3" => "\x{0190}",
-#	"4" => "\x{3123}",
+#	"4" => "\x{3123}", Doesn't display in tests
 	"5" => "\x{03DB}",
 	"6" => "9",
-#	"7" => "\x{3125}",
+#	"7" => "\x{3125}", Doesn't display in tests
 	"8" => "8",
 	"9" => "6",
 	"," => "'",
@@ -91,7 +91,8 @@ handle remainder => sub {
 	my $flippedString = ""; 
 
 	foreach $char (@string) {
-		
+
+		# Not all uppercase letters can be flipped
 		$char = lc($char);
 
 		if ( exists $charMap{$char}) {
