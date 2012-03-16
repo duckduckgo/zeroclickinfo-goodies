@@ -24,7 +24,7 @@ handle remainder => sub {
         }
         return join(' ', @output) if @output;
     }
-    elsif ($_ =~ /^(\d{0,2})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
+    elsif ($_ =~ /^(\d{0,4})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
         my $output;
         my $number_of_dice = $1 || 1;
         my $number_of_faces = $2;
@@ -42,7 +42,7 @@ handle remainder => sub {
                 } else {
                     push(@rolls, -(pop(@rolls)));
                 }
-            } elsif ($3 eq '+' && ($4 eq 'l' || $4 eq 'h')) { 
+            } elsif ($3 eq '+' && ($4 eq 'l' || $4 eq 'h')) {
                 return;
             } else {
                 push(@rolls, int("$3$4"));
