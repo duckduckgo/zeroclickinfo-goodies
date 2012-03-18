@@ -8,7 +8,7 @@ zci answer_type => "PercentError";
 
 handle query_parts => sub {
     shift;
-    shift if @_[0] =~ /(?: |-|)error/ || @_[0] =~ /(?: |-|)err/;
+    shift if @_[0] eq 'error' || @_[0] eq 'err';
 
     my $length = @_;
     print "$length\n";
