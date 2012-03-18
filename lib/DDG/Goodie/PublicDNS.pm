@@ -10,6 +10,9 @@ zci is_cached => 1;
 
 zci answer_type => 'dns';
 
-handle sub { scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/publicdns/publicdns.html')->slurp };
+handle sub {
+	scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/publicdns/publicdns.txt')->slurp,
+	html => scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/publicdns/publicdns.html')->slurp
+};
 
 1;
