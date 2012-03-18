@@ -12,8 +12,8 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::Chars
         )],
-        'chars test' => test_zci('4'),
-        'chars this is a test' => test_zci('14'),
+        'chars test' => test_zci('Chars: 4'),
+        'chars this is a test' => test_zci('Chars: 14'),
 );
 
 done_testing;
