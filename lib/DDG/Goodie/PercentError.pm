@@ -2,7 +2,7 @@ package DDG::Goodie::PercentError;
 
 use DDG::Goodie;
 
-triggers start => "percent", "%", "percent-error";
+triggers start => "percent", "%", "percent-error", "% error", "%err";
 
 zci answer_type => "PercentError";
 
@@ -18,7 +18,6 @@ handle query_parts => sub {
     $acc =~ s/[{},;\s]+//g;
     $exp =~ s/[{},;\s]+//g;
     
-    return if $acc =~ m/[^0-9\.\-]/ || $exp =~ m/[^0-9\.\-]/;
 
     my $diff = abs $acc - $exp;
     my $err = abs ($diff/$acc*100);
