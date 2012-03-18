@@ -2,7 +2,7 @@ package DDG::Goodie::PercentError;
 
 use DDG::Goodie;
 
-triggers start => "percent", "%", "percent-error";
+triggers start => "percent", "%err", "percent-error", "% error";
 
 zci answer_type => "percent-error";
 
