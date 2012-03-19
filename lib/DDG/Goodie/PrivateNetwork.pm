@@ -11,10 +11,8 @@ zci is_cached => 1;
 zci answer_type => 'network';
 
 handle sub {
-    my $sharedir = dist_dir('zeroclickinfo-goodies');
-
-    my $lines = io("$sharedir/privatenetwork/privatenetwork.html")->slurp;
-    
-    return $lines;
+	scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/privatenetwork/privatenetwork.txt')->slurp,
+	html => scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/privatenetwork/privatenetwork.html')->slurp
 };
+
 1;
