@@ -12,7 +12,7 @@ handle query_parts => sub {
     my ( $word_count, $descriptor ) = @_[ 1, 2 ]; 
     return if $word_count < 1;
 
-    my $sharedir = dist_dir('zeroclickinfo-goodies');
+    my $sharedir = dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo');
 
     my @words = io("$sharedir/passphrase/words.txt")->slurp;
 
@@ -27,4 +27,5 @@ handle query_parts => sub {
     return "random passphrase: $output";
     return;
 };
+
 1;

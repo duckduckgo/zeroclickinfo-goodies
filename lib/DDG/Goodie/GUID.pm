@@ -21,6 +21,7 @@ handle query_lc => sub {
         } else {
             $guid = qq({$guid});
         }
+	$guid .= ' (randomly generated)';
         return $guid;
     }
     return;

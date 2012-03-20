@@ -11,11 +11,8 @@ zci is_cached => 1;
 zci answer_type => 'dns';
 
 handle sub {
-    my $sharedir = dist_dir('zeroclickinfo-goodies');
-
-    my $lines = io("$sharedir/publicdns/publicdns.html")->slurp;
-    
-    return $lines;
+	scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/publicdns/publicdns.txt')->slurp,
+	html => scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/publicdns/publicdns.html')->slurp
 };
 
 1;
