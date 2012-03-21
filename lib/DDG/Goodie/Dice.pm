@@ -3,7 +3,7 @@ package DDG::Goodie::Dice;
 use DDG::Goodie;
 
 triggers start => "roll", "throw";
-zci answer_type => "Dice";
+zci answer_type => "dice_roll";
 handle remainder => sub {
     if ($_ =~ /^(?:die|(\d{0,2})\s*dice)$/) {
         my @output;

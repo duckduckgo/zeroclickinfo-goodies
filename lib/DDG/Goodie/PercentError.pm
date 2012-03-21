@@ -4,7 +4,7 @@ use DDG::Goodie;
 
 triggers start => "percent", "%", "percent-error", "% error", "%err";
 
-zci answer_type => "PercentError";
+zci answer_type => "percent_error";
 zci is_cached => 1;
 handle query_parts => sub {
     shift;

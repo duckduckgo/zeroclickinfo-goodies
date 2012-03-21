@@ -5,7 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'BinaryConversion';
+zci answer_type => 'binary_conversion';
 zci is_cached => 1;
 
 ddg_goodie_test(

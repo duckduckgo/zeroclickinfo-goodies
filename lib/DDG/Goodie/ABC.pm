@@ -4,7 +4,7 @@ use DDG::Goodie;
 
 triggers any => "or";
 
-zci answer_type => "Rand";
+zci answer_type => "rand";
 
 handle query_parts => sub { 
     my @choices;

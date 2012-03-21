@@ -4,7 +4,7 @@ package DDG::Goodie::Reverse;
 use DDG::Goodie;
 
 zci is_cached => 1;
-zci answer_type => "Reverse";
+zci answer_type => "reverse";
 triggers startend => "reverse";
 
 handle remainder => sub { join('',reverse split(//,$_)) };

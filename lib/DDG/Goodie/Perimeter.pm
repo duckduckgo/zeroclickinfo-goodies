@@ -5,7 +5,7 @@ use DDG::Goodie;
 triggers start => "perimeter", "circumference";
 
 zci is_cached => 1;
-zci answer_type => "Perimeter";
+zci answer_type => "perimeter";
 handle query_lc => sub {
     if ($_ =~ m/^(?:circumference (?:of\s|)(?:circle\s|)(\d+(?:\.\d+)?))|(?:(perimeter) (?:of\s|)(?:(square|circle|pentagon|hexagon|octagon) (\d+(?:\.\d+)?)|(rectangle) (\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)|(triangle) (\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)))$/) {
         my %polygons = ("pentagon" => 5, "hexagon" => 6, "octagon" => 8);

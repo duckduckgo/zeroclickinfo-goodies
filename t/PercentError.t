@@ -5,7 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'PercentError';
+zci answer_type => 'percent_error';
 zci is_cached => 1;
 
 ddg_goodie_test(

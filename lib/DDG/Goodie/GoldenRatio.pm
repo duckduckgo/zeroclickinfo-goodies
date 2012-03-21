@@ -2,7 +2,7 @@ package DDG::Goodie::GoldenRatio;
 
 use DDG::Goodie;
 
-zci answer_type => "GoldenRatio";
+zci answer_type => "golden_ratio";
 
 zci is_cached => 1;
 
