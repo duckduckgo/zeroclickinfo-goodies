@@ -17,7 +17,6 @@ handle remainder => sub {
                 $rolls = $1;
             }
         }
-        print "$rolls\n";
         for (1 .. $rolls) {
             my $roll = int(rand($choices)) + 1;
             push @output, $roll;

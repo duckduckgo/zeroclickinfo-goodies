@@ -11,7 +11,6 @@ handle query_parts => sub {
     shift if @_[0] eq 'error' || @_[0] eq 'err';
 
     my $length = @_;
-    print "$length\n";
     return unless $length == 2;
 
     my ( $acc, $exp ) = @_;
