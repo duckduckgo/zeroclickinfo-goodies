@@ -8,7 +8,7 @@ triggers query_raw => qr/^\s*u\+[a-f0-9]{4,6}\s*$/i;
 
 zci is_cached => 1;
 
-zci answer_type => 'unicode';
+zci answer_type => "Unicode";
 
 handle sub {
     /([a-f0-9]+)/i or return;

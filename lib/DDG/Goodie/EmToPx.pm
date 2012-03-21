@@ -3,7 +3,7 @@ package DDG::Goodie::EmToPx;
 use DDG::Goodie;
 
 zci is_cached => 1;
-
+zci answer_type => "Conversion";
 triggers end => "em", "px";
 
 handle query_parts => sub {

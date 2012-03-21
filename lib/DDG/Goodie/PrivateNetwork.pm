@@ -8,7 +8,7 @@ triggers query_clean => qr/^private (?:network|ip)s?\s*(?:(?:ips?|addresse?s?))?
 
 zci is_cached => 1;
 
-zci answer_type => 'network';
+zci answer_type => "PrivateNetwork";
 
 handle sub {
 	scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/privatenetwork/privatenetwork.txt')->slurp,

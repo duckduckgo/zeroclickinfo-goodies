@@ -5,6 +5,7 @@ use DDG::Goodie;
 triggers startend => "flip";
 
 zci is_cached => 1;
+zci answer_type => "FlipText";
 
 my %charMap = (
 	"a" => "\x{0250}",
