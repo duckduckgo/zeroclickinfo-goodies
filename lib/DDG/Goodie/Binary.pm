@@ -3,7 +3,7 @@ package DDG::Goodie::Binary;
 use DDG::Goodie;
 
 zci is_cached => 1;
-
+zci answer_type => "binary_conversion";
 triggers end => "binary";
 
 sub bin {

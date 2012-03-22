@@ -3,7 +3,7 @@ package DDG::Goodie::Dice;
 use DDG::Goodie;
 
 triggers start => "roll", "throw";
-
+zci answer_type => "dice_roll";
 handle remainder => sub {
     if ($_ =~ /^(?:die|(\d{0,2})\s*dice)$/) {
         my @output;
@@ -17,7 +17,6 @@ handle remainder => sub {
                 $rolls = $1;
             }
         }
-        print "$rolls\n";
         for (1 .. $rolls) {
             my $roll = int(rand($choices)) + 1;
             push @output, $roll;

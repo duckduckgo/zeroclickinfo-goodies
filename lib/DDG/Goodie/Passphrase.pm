@@ -5,7 +5,7 @@ use File::ShareDir::ProjectDistDir;
 use IO::All;
 
 triggers start => "passphrase";
-
+zci answer_type => "passphrase";
 handle query_parts => sub {
     my $count = @_;
     return unless $count == 3;

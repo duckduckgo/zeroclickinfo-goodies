@@ -3,7 +3,7 @@ package DDG::Goodie::SigFigs;
 use DDG::Goodie;
 
 triggers start => 'sigfigs', 'sigdigs', 'sf', 'sd', 'significant';
-
+zci answer_type => "sig_figs";
 handle remainder => sub {
     $_ =~ s/^(figures|digits)\s*//g;
     return unless /^-?\d+(?:\.(?:\d+)?)?$/;

@@ -6,7 +6,7 @@ use Math::Int2Base qw/int2base/;
 use DDG::Goodie;
 
 triggers any => qw/hex hexadecimal octal oct binary base/;
-
+zci answer_type => "conversion";
 my %base_map = (
     hex         => 16,
     hexadecimal => 16,

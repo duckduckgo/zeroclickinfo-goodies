@@ -4,7 +4,7 @@ use DDG::Goodie;
 use Data::GUID;
 
 triggers start => 'globally', 'universally', 'rfc', 'guid', 'uuid';
-
+zci answer_type => "guid";
 my %guid = (
     'guid' => 0,
     'uuid' => 1,
