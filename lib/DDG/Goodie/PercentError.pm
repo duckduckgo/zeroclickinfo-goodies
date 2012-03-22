@@ -16,6 +16,7 @@ handle query_parts => sub {
     my ( $acc, $exp ) = @_;
     $acc =~ s/[{},;\s]+//g;
     $exp =~ s/[{},;\s]+//g;
+    return unless $acc =~ /^\d$/ && $exp =~ /^\d$/;
 
     my $diff = abs $acc - $exp;
     my $err = abs ($diff/$acc*100);
