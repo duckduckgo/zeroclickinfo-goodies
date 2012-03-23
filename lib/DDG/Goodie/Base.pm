@@ -7,6 +7,7 @@ use DDG::Goodie;
 
 triggers any => qw/hex hexadecimal octal oct binary base/;
 zci answer_type => "conversion";
+zci is_cached => 1;
 my %base_map = (
     hex         => 16,
     hexadecimal => 16,
