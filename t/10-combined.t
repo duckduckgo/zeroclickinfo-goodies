@@ -52,7 +52,6 @@ ddg_goodie_test(
     'throw dice'                      => test_zci(qr/\d \d/, answer_type => 'dice_roll', is_cached => 0),
     '%err 45.125 44.992'              => test_zci(qr/Error:/, html => qr/Error:/, answer_type => 'percent_error', is_cached => 1),
     'chars hello'                     => test_zci('Chars: 5', answer_type => 'chars', is_cached => 1),
-    'reverse this phrase'             => test_zci('esarhp siht', answer_type => 'reverse', is_cached => 1),
     'md5 this'                        => test_zci('9e925e9341b490bfd3b4c4ca3b0c1ef2', answer_type => 'conversion', is_cached => 1),
     );
 
