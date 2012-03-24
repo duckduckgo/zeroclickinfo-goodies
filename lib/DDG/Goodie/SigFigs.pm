@@ -4,6 +4,7 @@ use DDG::Goodie;
 
 triggers start => 'sigfigs', 'sigdigs', 'sf', 'sd', 'significant';
 zci answer_type => "sig_figs";
+zci is_cached => 1;
 handle remainder => sub {
     $_ =~ s/^(figures|digits)\s*//g;
     return unless /^-?\d+(?:\.(?:\d+)?)?$/;
