@@ -54,6 +54,7 @@ ddg_goodie_test(
     'chars hello'                     => test_zci('Chars: 5', answer_type => 'chars', is_cached => 1),
     'that to binary'                  => test_zci('01110100011010000110000101110100', answer_type => 'binary_conversion', is_cached => 1),
     'uuid'                            => test_zci(qr/\(randomly generated\)/, answer_type => 'guid', is_cached => 0),
+    'avg 12 45 78'                    => test_zci(qr/Mean: 45/, answer_type => 'average', is_cached => 1),
     );
 
 done_testing;
