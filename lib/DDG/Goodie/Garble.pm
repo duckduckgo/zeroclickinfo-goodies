@@ -14,7 +14,7 @@ handle remainder => sub {
   return $garbledAnswer; 
 };
 
-zci is_cached => 1;
+zci is_cached => 0;
 
 1;
   
