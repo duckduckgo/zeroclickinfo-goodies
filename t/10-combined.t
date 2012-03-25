@@ -10,7 +10,7 @@ ddg_goodie_test(
 	DDG::Goodie::ABC
 	DDG::Goodie::Average
         DDG::Goodie::Base
-	DDG::Goodie::Base32
+	DDG::Goodie::Base64
 	DDG::Goodie::Binary
 	DDG::Goodie::Capitalize
 	DDG::Goodie::Chars
@@ -55,6 +55,7 @@ ddg_goodie_test(
     'that to binary'                  => test_zci('01110100011010000110000101110100', answer_type => 'binary_conversion', is_cached => 1),
     'uuid'                            => test_zci(qr/\(randomly generated\)/, answer_type => 'guid', is_cached => 0),
     'avg 12 45 78'                    => test_zci(qr/Mean: 45/, answer_type => 'average', is_cached => 1),
+		'base64 encode this text',				=> test_zci(qr/Base64 encoded: dGhpcyB0ZXh0/, answer_type => 'base64_conversion', is_cached => 1),
     );
 
 done_testing;
