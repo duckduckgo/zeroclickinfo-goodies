@@ -1,8 +1,6 @@
 package DDG::Goodie::PrivateNetwork;
 
 use DDG::Goodie;
-use File::ShareDir::ProjectDistDir;
-use IO::All;
 
 triggers query_clean => qr/^private (?:network|ip)s?\s*(?:(?:ips?|addresse?s?))?$/i;
 
@@ -11,8 +9,8 @@ zci is_cached => 1;
 zci answer_type => "private_network";
 
 handle sub {
-	scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/privatenetwork/privatenetwork.txt')->slurp,
-	html => scalar io(dist_dir('DDG-GoodieBundle-OpenSourceDuckDuckGo').'/privatenetwork/privatenetwork.html')->slurp
+	scalar share('private_network.txt')->slurp,
+	html => scalar share('private_network.html')->slurp;
 };
 
 1;
