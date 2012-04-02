@@ -8,8 +8,8 @@ triggers end => "ascii";
 
 
 handle remainder => sub {
-
-    return pack("B*", $1) if /^(([0-1]{8})*)\s+(in|to)$/;
+    my $ascii = pack("B*", $1) if /^(([0-1]{8})*)\s+(in|to)$/; 
+    return $ascii if $ascii;
     return;
 }
 
