@@ -22,7 +22,7 @@ handle query_parts => sub {
     my $per = abs ($diff/$acc);
     my $err = $per*100;
 
-    my $html = qq(Accepted: <a href="javascript:;" onclick="document.x.q.value='$acc';document.x.q.focus();">$acc</a> Experimental: <a href="javascript:;" onclick="document.x.q.value='$exp';document.x.q.focus();">$exp</a> Error: <a href="javascript:;" onclick="document.x.q.value='$per';document.x.q.focus();">$err%</a>);
+    my $html = qq(Accepted: $acc Experimental: $exp Error: <a href="javascript:;" onclick="document.x.q.value='$per';document.x.q.focus();">$err%</a>);
     
     return "Accepted: $acc Experimental: $exp Error: $err%", html => $html;
 };
