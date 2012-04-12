@@ -1,7 +1,7 @@
 package DDG::Goodie::CurrencyIn;
 # ABSTRACT: Return currency type(s) in given country
 
-# It is using output of following parser:
+# It is using output of the following parser:
 # https://github.com/Alchymista/zeroclickinfo-fathead/tree/master/currency_in_country
 
 # TODO: Maybe improve hash.txt or at least place it to share directory
@@ -40,8 +40,8 @@ handle remainder => sub {
 			my $count = $#{$currencies{$country}} + 1;
 			my $result = "";
 			my $html = "";	
-			my $output_country = $country;			# Pass it to the output
-			$output_country =~ s/\b(\w)/\U$1/g; 	# so it can by capitalized
+			my $output_country = $country;			# Pass country to the output_country
+			$output_country =~ s/\b(\w)/\U$1/g; 	# so it can be capitalized
 			if ($count == 1) {
 				$result .= "Currency in $output_country is ";
 				$html .= "Currency in $output_country is ";
@@ -50,7 +50,7 @@ handle remainder => sub {
 				$html .= "Currencies in $output_country are:<br />";
 			}
 			
-			# List all currencies
+			# Push all currencies into result
 			for $i (0.. $#{$currencies{$country}}){
 				$result .= "$currencies{$country}[$i] \n";
 				$html .= "$currencies{$country}[$i] <br />";
