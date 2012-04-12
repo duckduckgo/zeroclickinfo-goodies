@@ -1,6 +1,9 @@
 package DDG::Goodie::CurrencyIn;
 # ABSTRACT: Return currency type(s) in given country
 
+# It is using output of following parser:
+# https://github.com/Alchymista/zeroclickinfo-fathead/tree/master/currency_in_country
+
 # TODO: Maybe improve hash.txt or at least place it to share directory
 
 # TODO: At the moment it return value only if user input the whole country name...
