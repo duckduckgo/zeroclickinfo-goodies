@@ -3,11 +3,6 @@ package DDG::Goodie::CurrencyIn;
 
 # TODO: At the moment it return value only if user inputs the whole country name...
 #     ...if user types "Salvador" instead of "El Salvador" then no results...
-# TODO: Search pattern is "currency" and "in/of/for" words but when user types
-#     query with two words like "what type {of} currency do I need {for} Russia" then 
-#     word "of" is found first and it doesn't continue to "for" in front of Russia..
-#     maybe it should start looking for words after word "currency" but 
-#     how can I get position of "currency" when it is not passed into subrutine?..
 # TODO: think about how often currency in countries changes - what then? 
 #     Parse text (parser already build) from Wikipedia and manually copy paste?
 
@@ -20,6 +15,7 @@ package DDG::Goodie::CurrencyIn;
 # What currency will I need for Zimbabwe
 # What is the currency used in Slovakia
 # currency in Russia
+# What type of currency do I need for Russia?
 
 use DDG::Goodie;
 
@@ -281,23 +277,11 @@ sub clearCountryName {	# Query may end with "?". If so take it away.
 }
 
 handle remainder => sub {
-	if ($_ =~ /(in\s*.*|of\s*.*|for\s*.*)/) {
+	# If there is 'in', 'of' or 'for' keyword then get country name - after the last appearance of keyword
+	if ($_ =~ /^.*(?:in|of|for)\s(.*?)$/) {
 		
-		# My not very effective way of looking for position of the country name
-		my $position = 0;
-		if ($_ =~ /(in\s*.*)/) {
-			$position = index($_, "in ") + 3;
-		} elsif ($_ =~ /(of\s*.*)/) {
-			$position = index($_, "of ") + 3;
-		} elsif ($_ =~ /(for\s*.*)/) {
-			$position = index($_, "for ") + 4;
-		} else {
-			return;
-		}	
-		
-		$country = lc(substr($_, $position));		# Get lowercased country from position calculated above
-		
-		$country = clearCountryName($country);
+		$country = lc($1);							# Country name is result of previous regexp - make it lowercased
+		$country = clearCountryName($country); 		# Clear country name - white spaces, question mark..
 		
 		if (exists $currencies{$country}){
 			my $count = $#{$currencies{$country}} + 1;
