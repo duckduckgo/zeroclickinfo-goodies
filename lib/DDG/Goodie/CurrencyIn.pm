@@ -281,7 +281,6 @@ sub clearCountryName {	# Query may end with "?". If so take it away.
 }
 
 handle remainder => sub {
-	#print $_;
 	if ($_ =~ /(in\s*.*|of\s*.*|for\s*.*)/) {
 		
 		# My not very effective way of looking for position of the country name
@@ -299,7 +298,6 @@ handle remainder => sub {
 		$country = lc(substr($_, $position));		# Get lowercased country from position calculated above
 		
 		$country = clearCountryName($country);
-		print $country;
 		
 		if (exists $currencies{$country}){
 			my $count = $#{$currencies{$country}} + 1;
