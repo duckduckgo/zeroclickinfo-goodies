@@ -19,4 +19,6 @@ sub bin {
 handle remainder => sub {
     return bin($1) if /^(.*)\s+(in|to)$/;
     return;
-}
+};
+
+1;

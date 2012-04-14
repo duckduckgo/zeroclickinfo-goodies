@@ -16,4 +16,6 @@ handle query_raw => sub {
     }
     return "$num" if $num;
     return;
-}
+};
+
+1;
