@@ -278,7 +278,7 @@ sub clearCountryName {	# Query may end with "?". If so take it away.
 
 handle remainder => sub {
 	# If there is 'in', 'of' or 'for' keyword then get country name - after the last appearance of keyword
-	if ($_ =~ /^.*(?:in|of|for)\s(.*?)$/) {
+	if (/^.*(?:in|of|for)\s(.*?)$/) {
 		
 		$country = lc($1);							# Country name is result of previous regexp - make it lowercased
 		$country = clearCountryName($country); 		# Clear country name - white spaces, question mark..
