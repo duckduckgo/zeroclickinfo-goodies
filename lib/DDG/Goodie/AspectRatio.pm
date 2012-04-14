@@ -15,15 +15,15 @@ handle query_parts => sub {
     my $result = 0;
     my $ratio = 0;
 
-    if ($input =~ /^(\.\d+)\s*\:\s*(\.\d+)\s*(?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/){
+    if ($input =~ /^(\d+(?:\.\d+)?)\s*\:\s*(\d+(?:\.\d+)?)\s*(?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/){
         $ratio = $1 / $2;
 
         if ($6 && $6 eq "?") {
             $result = $5 / $ratio;
-            return "Aspect ratio $1:$2 -> $5:$result";
+            return "Aspect ratio: $5:$result ($1:$2)";
         } elsif ($3 && $3 eq "?") {
             $result = $4 * $ratio;
-            return "Aspect ratio $1:$2 -> $result:$4";
+            return "Aspect ratio: $result:$4 ($1:$2)";
         }
     }
     return;
