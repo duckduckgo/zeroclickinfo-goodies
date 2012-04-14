@@ -31,7 +31,6 @@ ddg_goodie_test(
 	DDG::Goodie::PrivateNetwork
 	DDG::Goodie::PublicDNS
     )],
-
     'reverse bla'                     => test_zci('alb', answer_type => 'reverse', is_cached => 1 ),
     'apples or oranges or cherries'   => test_zci(qr/(random)/, answer_type => 'rand', is_cached => 0),
     'chars hello'                     => test_zci('Chars: 5', answer_type => 'chars', is_cached => 1),
