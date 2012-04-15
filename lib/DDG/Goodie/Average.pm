@@ -3,18 +3,18 @@ package DDG::Goodie::Average;
 use DDG::Goodie;
 
 triggers startend => "avg", "average", "mean", "median";
+triggers start => "root";
 
 zci is_cached => 1;
 zci answer_type => "average";
 
-handle query_parts => sub {
-    my @nums;
-    for (@_) {
-        if ($_ =~ /-?\d+/) { 
-            $_ =~ s/[;,]//g;
-            push @nums, $_;
-        }
-    }
+handle query => sub {
+    return if $_ =~ /^root/i && $_ !~ /^root mean square/i;
+
+    s/[a-zA-Z]//g; s/[;,\s]+/ /g;
+    return unless /^\s*(?:\d+(?:.\d+)?\s?)*$/;
+
+    my @nums = split ' ', $_;
     return unless @nums;
     # initialize the sum
     my $sum;
