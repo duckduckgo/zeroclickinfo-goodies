@@ -11,8 +11,8 @@ zci answer_type => "average";
 handle query => sub {
     return if $_ =~ /^root/i && $_ !~ /^root mean square/i;
 
-    s/[a-zA-Z]//g; s/[;,\s]+/ /g;
-    return unless /^\s*(?:\d+(?:.\d+)?\s?)*$/;
+    s/^[a-zA-Z\s]+//; s/\s+[a-zA-Z]+$//; s/[;,\s]+/ /g;
+    return unless /^\s*(?:\d+(?:\.\d+)?\s?)*$/;
 
     my @nums = split ' ', $_;
     return unless @nums;
