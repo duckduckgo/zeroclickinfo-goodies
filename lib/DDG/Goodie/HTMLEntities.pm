@@ -14,7 +14,10 @@ handle query_nowhitespace => sub {
     s/^(?:html)?(?:entity)?//i;
     s/;?$/;/; # append a semicolon (some entities like &mdash do not work without one)
     my $decoded = decode_entities($_);
-    return "Decoded HTML Entity: " . $decoded . ", decimal: " . ord($decoded) unless $_ eq $decoded; # decode_entities will return the input if it cannot be decoded
+    my $decimal = ord($decoded);
+    my $hex = sprintf("%04x", $decimal);
+    return "Decoded HTML Entity: $decoded, decimal: $decimal, hexadecimal: $hex", 
+           html => "Decoded HTML Entity: $decoded, decimal: $decimal, hexadecimal: <a href=\"/?q=U%2B$hex\">$hex</a>" unless $_ eq $decoded; # decode_entities will return the input if it cannot be decoded
     return;
 };
 1;

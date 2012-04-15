@@ -12,9 +12,9 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::HTMLEntities
 	)],
-	'&#33;' => test_zci("Decoded HTML Entity: !, decimal: 33"),
-	'&#x21' => test_zci("Decoded HTML Entity: !, decimal: 33"),
-	'html entity &amp;' => test_zci("Decoded HTML Entity: &, decimal: 38"),
+	'&#33;' => test_zci("Decoded HTML Entity: !, decimal: 33, hexadecimal: 0021", html => "Decoded HTML Entity: !, decimal: 33, hexadecimal: <a href=\"/?q=U%2B0021\">0021</a>"),
+	'&#x21' => test_zci("Decoded HTML Entity: !, decimal: 33, hexadecimal: 0021", html => "Decoded HTML Entity: !, decimal: 33, hexadecimal: <a href=\"/?q=U%2B0021\">0021</a>"),
+	'html entity &amp;' => test_zci("Decoded HTML Entity: &, decimal: 38, hexadecimal: 0026", html => "Decoded HTML Entity: &, decimal: 38, hexadecimal: <a href=\"/?q=U%2B0026\">0026</a>"),
 );
 
 done_testing;
