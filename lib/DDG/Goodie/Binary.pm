@@ -42,5 +42,6 @@ handle remainder => sub {
     return hex2bin($1) if /^([0-9a-fA-F]+)\s+(in|to)$/;
     return '\"'.$1.'\" as a string is '.bin($1).' in binary.' if /^(.*)\s+(in|to)$/;
     return;
-}
+};
 
+1;

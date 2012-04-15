@@ -105,3 +105,5 @@ handle remainder => sub {
 	}
 	return $flippedString;
 };
+
+1;
