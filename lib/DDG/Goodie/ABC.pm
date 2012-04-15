@@ -21,8 +21,7 @@ handle query_parts => sub {
         }
     }
     push @choices, join(' ', @collected_parts) if @choices && @collected_parts;
-    my $length = @collected_parts;
-    return if $length > 1;
+    return if scalar(@choices) <= 1;
     my $choice = int(rand(@choices));
 
     if (my @duck = grep { $_ eq 'duckduckgo' || $_ eq 'duck' || $_ eq 'ddg' } @choices) {
