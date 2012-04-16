@@ -17,7 +17,7 @@ my %base_map = (
 );
 
 handle query_clean => sub {
-    return unless  /^([0-9]+)\s*(?:(?:in|as)\s+)?(hex|hexadecimal|octal|oct|binary|base\s*([0-9]+))$/;
+    return unless  /^([0-9]+)\s*(?:(?:in|as|to)\s+)?(hex|hexadecimal|octal|oct|binary|base\s*([0-9]+))$/;
     my $number = $1;
     my $base = $3 // $base_map{$2};
     return if $base < 2 || $base > 36;
