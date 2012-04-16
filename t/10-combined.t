@@ -22,6 +22,7 @@ ddg_goodie_test(
 	DDG::Goodie::GUID
 	DDG::Goodie::GoldenRatio
     DDG::Goodie::HTMLEntities
+    DDG::Goodie::NLetterWords
 	DDG::Goodie::Passphrase
 	DDG::Goodie::PercentError
 	DDG::Goodie::Perimeter
@@ -84,6 +85,11 @@ ddg_goodie_test(
 	'&#33;'                           => test_zci("Decoded HTML Entity: !, decimal: 33, hexadecimal: 0021", html => "Decoded HTML Entity: !, decimal: 33, hexadecimal: <a href=\"/?q=U%2B0021\">0021</a>", answer_type => 'html_entity', is_cached => 1),
 	'&#x21'                           => test_zci("Decoded HTML Entity: !, decimal: 33, hexadecimal: 0021", html => "Decoded HTML Entity: !, decimal: 33, hexadecimal: <a href=\"/?q=U%2B0021\">0021</a>", answer_type => 'html_entity', is_cached => 1),
 	'html entity &amp;'               => test_zci("Decoded HTML Entity: &, decimal: 38, hexadecimal: 0026", html => "Decoded HTML Entity: &, decimal: 38, hexadecimal: <a href=\"/?q=U%2B0026\">0026</a>", answer_type => 'html_entity', is_cached => 1),
+
+    # NLetterWords
+    '1 letter words'                  => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 1),
+    '1 char words'                    => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 1),
+    '1 character words'               => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 1),
 
     # Passphrase
     'passphrase 4 words'              => test_zci(qr/random passphrase:/, answer_type => 'passphrase', is_cached => 0),
