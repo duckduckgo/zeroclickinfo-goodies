@@ -17,11 +17,16 @@ sub bin {
 
 sub dec2bin {
     my @dec = shift;
-    my $str = unpack("B*", pack("N", $dec[0] ));
-    $str =~ s/^0+(?=\d)//;   # first suppress leading zeros
-# Then add some more ...    
-    return ('0' x (8 - (length($str) % 8))) . $str if (length($str)%8 > 0); 
-    return $str
+    my $str;
+    for(my $x=0; $x<= $#dec; $x++) {
+	my $dig = unpack("B*", pack("N", $dec[$x] ));
+	# first suppress leading zeros
+    	$dig =~ s/^0+(?=\d)//;
+	# Then add some more ...    
+    	$dig = ('0' x (8 - (length($dig) % 8))) . $dig if (length($dig)%8 > 0); 
+	$str .= " ".$dig;
+    }
+    return $str;
 }
 
 sub hex2bin {
@@ -40,7 +45,7 @@ handle remainder => sub {
     return hex2bin($2) if /^(0x|Ox|x)([0-9a-fA-F]+)\s+(in|to)$/;
     return dec2bin($1) if /^([0-9 ]+)\s+(in|to)$/;
     return hex2bin($1) if /^([0-9a-fA-F]+)\s+(in|to)$/;
-    return '\"'.$1.'\" as a string is '.bin($1).' in binary.' if /^(.*)\s+(in|to)$/;
+    return '"'.$1.'" as a string is '.bin($1).' in binary.' if /^(.*)\s+(in|to)$/;
     return;
 }
 
