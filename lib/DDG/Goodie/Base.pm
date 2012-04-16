@@ -5,7 +5,6 @@ use warnings;
 use Math::Int2Base qw/int2base/;
 use DDG::Goodie;
 
-triggers any => qw/hex hexadecimal octal oct binary base/;
 zci answer_type => "conversion";
 zci is_cached => 1;
 my %base_map = (
@@ -15,6 +14,7 @@ my %base_map = (
     octal       =>  8,
     binary      =>  2,
 );
+triggers any => 'base', keys %base_map;
 
 handle query_clean => sub {
     return unless  /^([0-9]+)\s*(?:(?:in|as|to)\s+)?(hex|hexadecimal|octal|oct|binary|base\s*([0-9]+))$/;
