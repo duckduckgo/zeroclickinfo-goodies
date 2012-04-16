@@ -87,9 +87,9 @@ ddg_goodie_test(
 	'html entity &amp;'               => test_zci("Decoded HTML Entity: &, decimal: 38, hexadecimal: 0026", html => "Decoded HTML Entity: &, decimal: 38, hexadecimal: <a href=\"/?q=U%2B0026\">0026</a>", answer_type => 'html_entity', is_cached => 1),
 
     # NLetterWords
-    '1 letter words'                  => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 1),
-    '1 char words'                    => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 1),
-    '1 character words'               => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 1),
+    '1 letter words'                  => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 0),
+    '1 char words'                    => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 0),
+    '1 character word'               => test_zci('1 letter words: a, I', answer_type => 'nletterwords', is_cached => 0),
 
     # Passphrase
     'passphrase 4 words'              => test_zci(qr/random passphrase:/, answer_type => 'passphrase', is_cached => 0),

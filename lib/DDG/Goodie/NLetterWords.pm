@@ -3,7 +3,7 @@ package DDG::Goodie::NLetterWords;
 use DDG::Goodie;
 
 triggers end => "words", "word";
-zci is_cached => 1;
+zci is_cached => 0;
 
 handle query_parts => sub {
     return unless /^([0-9]{1,50}) (letter|char|character) words?$/;
@@ -16,16 +16,20 @@ handle query_parts => sub {
         chomp($_);
         if (length($_) == $length) { push(@words, $_); }
     }
-    return unless scalar(@words) >= 1;
+    return unless @words;
 
-    my $output = "$length letter words: ";
-
-    foreach (@words) {
-        $output = $output . $_ . ", ";
+    my @randomwords;
+    if (scalar(@words) > 30) {
+        while (scalar(@randomwords) < 30) {
+            $rand = int(rand(scalar(@words)));
+            if (@words[$rand]) {
+                push(@randomwords, @words[$rand]);
+                @words[$rand] = 0;
+            }
+        }
+        @words = @randomwords;
     }
-
-    chop($output);
-    chop($output);
+    my $output = "$length letter words: " . join ', ', @words;
 
     return $output;
 };

@@ -6,7 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'nletterwords';
-zci is_cached => 1;
+zci is_cached => 0;
 
 ddg_goodie_test(
         [qw(
@@ -14,7 +14,7 @@ ddg_goodie_test(
         )],
         '1 letter words' => test_zci('1 letter words: a, I'),
         '1 char words' => test_zci('1 letter words: a, I'),
-        '1 character words' => test_zci('1 letter words: a, I'),
+        '1 character word' => test_zci('1 letter words: a, I'),
 );
 
 done_testing;
