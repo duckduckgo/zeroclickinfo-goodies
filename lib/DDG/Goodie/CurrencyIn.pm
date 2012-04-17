@@ -19,7 +19,7 @@ package DDG::Goodie::CurrencyIn;
 
 use DDG::Goodie;
 
-triggers any => 'currency';			# User typed currency...
+triggers any => 'currency';	# User typed currency...
 
 # Countries are lowercased but input from user, too ... so those always match...
 # ...country is capitalized on output...
@@ -36,21 +36,21 @@ sub clearCountryName {
 handle remainder => sub {
 
 	if (/^.*(?:in|of|for)\s(.*?)$/) {
-		$country = lc($1);							# Country name is result of previous regexp - make it lowercased
+		$country = lc($1);				# Country name is result of previous regexp - make it lowercased
 		$country = clearCountryName($country); 		# Clear country name - white spaces, question mark..
-		$country = $country . "\n"; 				# At the moment share() function parsing names with "\n" so match user input..
+		$country = $country . "\n"; 			# At the moment share() function parsing names with "\n" so match user input..
 		
 		if (exists $countries{$country}){
-			my $string_currency = $countries{$country};				# Load currencies as string (one line from .txt)
-			my @currencies =  split(',', $string_currency);			# Split currencies into array
-			chomp($country);										# Get rid of the end of the line character
+			my $string_currency = $countries{$country};	# Load currencies as string (one line from .txt)
+			my @currencies =  split(',', $string_currency);	# Split currencies into array
+			chomp($country);				# Get rid of the end of the line character
 			
 			my $count = $#currencies + 1;			# Get number of currencies
-			my $result = "";						# Store text result
-			my $html = "";							# Store html result
+			my $result = "";				# Store text result
+			my $html = "";					# Store html result
 			my $output_country = $country;			# Pass country name to the output_country
-			$output_country =~ s/\b(\w)/\U$1/g; 	# so it can by capitalized			
-			if ($count == 1) {						# In number of currencies == 1
+			$output_country =~ s/\b(\w)/\U$1/g; 		# so it can by capitalized			
+			if ($count == 1) {				# In number of currencies == 1
 				$result .= "Currency in $output_country is ";
 				$html .= "Currency in $output_country is ";
 			} else {
