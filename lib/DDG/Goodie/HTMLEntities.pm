@@ -20,4 +20,5 @@ handle query_nowhitespace => sub {
            html => "Decoded HTML Entity: $decoded, decimal: $decimal, hexadecimal: <a href=\"/?q=U%2B$hex\">$hex</a>" unless $_ eq $decoded; # decode_entities will return the input if it cannot be decoded
     return;
 };
+
 1;

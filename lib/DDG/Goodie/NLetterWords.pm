@@ -22,9 +22,9 @@ handle query_parts => sub {
     if (scalar(@words) > 30) {
         while (scalar(@randomwords) < 30) {
             $rand = int(rand(scalar(@words)));
-            if (@words[$rand]) {
-                push(@randomwords, @words[$rand]);
-                @words[$rand] = 0;
+            if ($words[$rand]) {
+                push(@randomwords, $words[$rand]);
+                $words[$rand] = 0;
             }
         }
         @words = @randomwords;
