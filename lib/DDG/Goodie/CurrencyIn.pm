@@ -34,14 +34,8 @@ sub clearCountryName {
 }
 
 handle remainder => sub {
-<<<<<<< HEAD
 
 	if (/^.*(?:in|of|for)\s(.*?)$/) {
-=======
-	# If there is 'in', 'of' or 'for' keyword then get country name - after the last appearance of keyword
-	if (/^.*(?:in|of|for)\s(.*?)$/) {
-		
->>>>>>> 5d98bac7cb8a6982abc4b62a25fe2314749e50b4
 		$country = lc($1);							# Country name is result of previous regexp - make it lowercased
 		$country = clearCountryName($country); 		# Clear country name - white spaces, question mark..
 		$country = $country . "\n"; 				# At the moment share() function parsing names with "\n" so match user input..
