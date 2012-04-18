@@ -43,7 +43,7 @@ handle remainder => sub {
 		if (exists $countries{$country}){
 			my $string_currency = $countries{$country};	# Load currencies as string (one line from .txt)
 			my @currencies =  split(',', $string_currency);	# Split currencies into array
-			chomp($country);				# Get rid of the end of the line character
+			$country =~ s/\n//g;				# Get rid of the end of the line character
 			
 			my $count = $#currencies + 1;			# Get number of currencies
 			my $result = "";				# Store text result
@@ -51,8 +51,8 @@ handle remainder => sub {
 			my $output_country = $country;			# Pass country name to the output_country
 			$output_country =~ s/\b(\w)/\U$1/g; 		# so it can by capitalized			
 			if ($count == 1) {				# In number of currencies == 1
-				$result .= "Currency in $output_country is ";
-				$html .= "Currency in $output_country is ";
+				$result .= "The currency in $output_country is the ";
+				$html .= "The urrency in $output_country is the ";
 			} else {
 				$result .= "Currencies in $output_country are: \n";
 				$html .= "Currencies in $output_country are:<br />";
@@ -60,7 +60,7 @@ handle remainder => sub {
 			
 			# Append result with all currencies
 			foreach $i (@currencies){
-				chomp($i);	# Get rid of the end of the line character
+				$i =~ s/\n//g;	# Get rid of the end of the line character
 				$result .= "$i\n";
 				$html .= "$i <br />";
 			}
