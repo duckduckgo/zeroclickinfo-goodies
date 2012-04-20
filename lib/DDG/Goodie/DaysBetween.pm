@@ -5,13 +5,14 @@ use DDG::Goodie;
 use Date::Calc qw( Date_to_Days); 
 use Time::localtime;
 
-triggers startend => "days between", "daysbetween", "days_between";
+triggers startend => "days", "daysbetween", "days_between";
 zci is_cached => 1;
 zci answer_type => "days_between";
 
 
 handle remainder => sub {
 
+	return unless s/^between//;
 	@dates = $_ =~ m#([01]?[0-9])/([0-3]?[0-9])/([0-9]{4}(?=\s|$))#g;
 
 	if(scalar(@dates) == 3) {
