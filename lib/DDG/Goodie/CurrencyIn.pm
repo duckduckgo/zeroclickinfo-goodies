@@ -19,6 +19,9 @@ package DDG::Goodie::CurrencyIn;
 
 use DDG::Goodie;
 
+zci is_cached => 1;
+zci answer_type => "currency_in";
+
 triggers any => 'currency';	# User typed currency...
 
 # Countries are lowercased but input from user, too ... so those always match...
@@ -59,14 +62,12 @@ handle remainder => sub {
 			}
 			
 			# Append result with all currencies
-			foreach $i (@currencies){
-				$i =~ s/\n//g;	# Get rid of the end of the line character
-				$result .= "$i\n";
-				$html .= "$i <br />";
+			foreach $currency (@currencies){
+                chomp($currency);
+                $result .= $currency;
+				$html .= "$currency<br />";
 			}
 			
-			zci is_cached => 1;
-			zci answer_type => "currency_in";
 			return $result, html=>$html			
 		}		
 	}
