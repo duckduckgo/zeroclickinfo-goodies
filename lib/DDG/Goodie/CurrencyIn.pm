@@ -52,7 +52,7 @@ handle remainder => sub {
 			$output_country =~ s/\b(\w)/\U$1/g; 		# so it can by capitalized			
 			if ($count == 1) {				# In number of currencies == 1
 				$result .= "The currency in $output_country is the ";
-				$html .= "The urrency in $output_country is the ";
+				$html .= "The currency in $output_country is the ";
 			} else {
 				$result .= "Currencies in $output_country are: \n";
 				$html .= "Currencies in $output_country are:<br />";
