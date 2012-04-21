@@ -16,6 +16,8 @@ ddg_goodie_test(
 	DDG::Goodie::Binary
 	DDG::Goodie::Capitalize
 	DDG::Goodie::Chars
+	DDG::Goodie::CurrencyIn
+	DDG::Goodie::DaysBetween
 	DDG::Goodie::Dice
 	DDG::Goodie::EmToPx
 	DDG::Goodie::FlipText
@@ -67,6 +69,13 @@ ddg_goodie_test(
 
     # Chars
     'chars hello'                     => test_zci('Chars: 5', answer_type => 'chars', is_cached => 1),
+
+    # CurrencyIn
+    'currency in australia' => test_zci('The currency in Australia is the Australian dollar (AUD)', html => 'The currency in Australia is the Australian dollar (AUD)<br />', answer_type => 'currency_in', is_cached => 1),
+
+    # DaysBetween
+    'days between 01/01/2000 01/01/2001' => test_zci('366 days between', answer_type => 'days_between', is_cached => 1),
+    'days between 01/01/2000 01/01/2001 inclusive' => test_zci('367 days between', answer_type => 'days_between', is_cached => 1),
 
     # Dice
     'throw dice'                      => test_zci(qr/\d \d/, answer_type => 'dice_roll', is_cached => 0),
