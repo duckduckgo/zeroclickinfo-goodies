@@ -12,8 +12,8 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::DaysBetween
         )],
-        'days between 01/01/2000 01/01/2001' => test_zci('366 days between'),
-        'days between 01/01/2000 01/01/2001 inclusive' => test_zci('367 days between'),
+        'days between 01/01/2000 01/01/2001' => test_zci('There are 366 days between 01/01/2000 and 01/01/2001.'),
+        'days between 1/1/2000 and 1/1/2001 inclusive' => test_zci('There are 367 days between 1/1/2000 and 1/1/2001, inclusive.'),
 );
 
 done_testing;
