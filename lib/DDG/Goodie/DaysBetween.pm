@@ -30,8 +30,13 @@ handle remainder => sub {
 			return;
 		}
 		$daysBetween = abs($days2 - $days1);
-		$daysBetween = (/inclusive/) ? $daysBetween + 1 : $daysBetween;
-		return $daysBetween ." days between";
+        if(/inclusive/) {
+            $daysBetween += 1;
+            $inclusive = ', inclusive';
+        }
+        $startDate = @dates[0] . '/' . @dates[1] . '/' . @dates[2];
+        $endDate = @dates[3] . '/' . @dates[4] . '/' . @dates[5];
+		return 'There are ' . $daysBetween ." days between ". $startDate . ' and ' . $endDate . $inclusive . '.';
 	}
 	return;
 };
