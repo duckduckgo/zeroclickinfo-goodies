@@ -1,5 +1,5 @@
 package DDG::Goodie::DaysBetween;
-# ABSTRACT: Give the number of characters (length) of the query.
+# ABSTRACT: Give the number of days between two given dates.
 
 use DDG::Goodie;
 use Date::Calc qw( Date_to_Days); 
