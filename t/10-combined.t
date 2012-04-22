@@ -61,7 +61,7 @@ ddg_goodie_test(
     'avg 12 45 78'                    => test_zci(qr/Mean: 45/, answer_type => 'average', is_cached => 1),
 
     # Binary
-    'that to binary'                  => test_zci('\"that\" as a string is 01110100011010000110000101110100 in binary.', answer_type => 'binary_conversion', is_cached => 1),
+    'that to binary'                  => test_zci('"that" as a string is "01110100011010000110000101110100" in binary.', answer_type => 'binary_conversion', is_cached => 1),
 
     # Base64
     'base64 encode this text'         => test_zci(qr/Base64 encoded: dGhpcyB0ZXh0/, answer_type => 'base64_conversion', is_cached => 1),

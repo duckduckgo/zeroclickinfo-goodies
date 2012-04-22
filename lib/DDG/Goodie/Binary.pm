@@ -43,7 +43,7 @@ handle remainder => sub {
     @out = (dec2bin($1), "decimal", "binary")   if /^([0-9 ]+)\s+(in|to)$/ && !@out;
     @out = (hex2bin($1), "hex", "binary")       if /^([0-9a-fA-F]+)\s+(in|to)$/ && !@out;
     @out = (bin($1), "a string", "binary")      if /^(.*)\s+(in|to)$/ && !@out;
-    return qq/"$1" as $out[1] is "$out[0]" in $out[2]/;
+    return qq/"$1" as $out[1] is "$out[0]" in $out[2]./;
 };
 
 1;
