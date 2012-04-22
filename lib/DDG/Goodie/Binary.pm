@@ -1,6 +1,7 @@
 package DDG::Goodie::Binary;
 
 use DDG::Goodie;
+use HTML::Entities;
 
 zci is_cached => 1;
 zci answer_type => "binary_conversion";
@@ -36,12 +37,13 @@ sub bin2dec {
 
 
 handle remainder => sub {
-    return bin2dec($1) if /^[^01]*([01]+)\s+(from)?$/;
-    return hex2bin($2) if /^(0x|Ox|x)([0-9a-fA-F]+)\s+(in|to)$/;
-    return dec2bin($1) if /^([0-9 ]+)\s+(in|to)$/;
-    return hex2bin($1) if /^([0-9a-fA-F]+)\s+(in|to)$/;
-    return '\"'.$1.'\" as a string is '.bin($1).' in binary.' if /^(.*)\s+(in|to)$/;
-    return;
+    my @out;
+    @out = (bin2dec($1), "binary", "decimal")   if /^[^01]*([01]+)\s+(from)?$/;
+    @out = (hex2bin($2), "hex", "binary")       if /^(0x|Ox|x)([0-9a-fA-F]+)\s+(in|to)$/ && !@out;
+    @out = (dec2bin($1), "decimal", "binary")   if /^([0-9 ]+)\s+(in|to)$/ && !@out;
+    @out = (hex2bin($1), "hex", "binary")       if /^([0-9a-fA-F]+)\s+(in|to)$/ && !@out;
+    @out = (bin($1), "a string", "binary")      if /^(.*)\s+(in|to)$/ && !@out;
+    return qq/"$1" as $out[1] is "$out[0]" in $out[2]/;
 };
 
 1;
