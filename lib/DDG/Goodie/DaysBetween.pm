@@ -13,29 +13,30 @@ zci answer_type => "days_between";
 handle query_lc => sub {
 
 	s/^days(?:\s|_)*between//;
-	@dates = $_ =~ m#([01]?[0-9])/([0-3]?[0-9])/([0-9]{4}(?=\s|$))#g;
+	my @dates = $_ =~ m#([01]?[0-9])/([0-3]?[0-9])/([0-9]{4}(?=\s|$))#g;
 
 	if(scalar(@dates) == 3) {
-		$tm=localtime;
+		my $tm = localtime;
 		push(@dates, $tm->mon + 1, $tm->mday, $tm->year + 1900);
 	}
 
 	if(scalar(@dates) == 6) {
+        my $inclusive, $days1, $days2;
 
 		eval {
-			$days1 = Date_to_Days(@dates[2], @dates[0], @dates[1]);
-			$days2 = Date_to_Days(@dates[5], @dates[3], @dates[4]);
+			$days1 = Date_to_Days(@dates[2,0,1]);
+			$days2 = Date_to_Days(@dates[5,3,4]);
 		};
 		if ($@) {
 			return;
 		}
-		$daysBetween = abs($days2 - $days1);
+		my $daysBetween = abs($days2 - $days1);
         if(/inclusive/) {
             $daysBetween += 1;
             $inclusive = ', inclusive';
         }
-        $startDate = @dates[0] . '/' . @dates[1] . '/' . @dates[2];
-        $endDate = @dates[3] . '/' . @dates[4] . '/' . @dates[5];
+        my $startDate = join '/', @dates[0,1,2];
+        my $endDate = join '/', @dates[3,4,5];
 		return 'There are ' . $daysBetween ." days between ". $startDate . ' and ' . $endDate . $inclusive . '.';
 	}
 	return;
