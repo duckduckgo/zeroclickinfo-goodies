@@ -29,7 +29,8 @@ handle query_parts => sub {
         }
         @words = @randomwords;
     }
-    my $output = "$length letter words: " . join ', ', @words;
+    my $output = "Random $length letter words: " . join ', ', @words;
+    $output .= ".";
 
     return $output;
 };
