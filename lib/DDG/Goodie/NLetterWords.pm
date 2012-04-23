@@ -2,11 +2,14 @@ package DDG::Goodie::NLetterWords;
 
 use DDG::Goodie;
 
+use Lingua::EN::Numericalize;
+
 triggers end => "words", "word";
 zci is_cached => 0;
 
 handle query_parts => sub {
-    return unless /^([0-9]{1,50}) (letter|char|character) words?$/;
+    my $numericalized = str2nbr($_);
+    return unless $numericalized =~ /^(\d{1,50}) (letter|char|character) words?$/;
 
     my $length = $1;
     my @allwords = share('words.txt')->slurp;
