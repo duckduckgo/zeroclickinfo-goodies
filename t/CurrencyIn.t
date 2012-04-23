@@ -12,7 +12,7 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::CurrencyIn
         )],
-        'currency in australia' => test_zci('The currency in Australia is the Australian dollar (AUD)', html => 'The currency in Australia is the Australian dollar (AUD)<br />'),
+        'currency in australia' => test_zci('The currency in Australia is the Australian dollar (AUD)', html => 'The currency in Australia is the Australian dollar (AUD)'),
 );
 
 done_testing;
