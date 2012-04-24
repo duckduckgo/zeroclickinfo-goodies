@@ -7,6 +7,6 @@ zci is_cached => 1;
 zci answer_type => "reverse";
 triggers startend => "reverse";
 
-handle remainder => sub { scalar reverse };
+handle remainder => sub { qq|Reversed "$_": | . scalar reverse };
 
 1;
