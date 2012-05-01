@@ -1,6 +1,5 @@
 package DDG::Goodie::Palindrome;
 # ABSTRACT: Return if the a string is a palindrome, formatted like: is <string> a palindrome
-# TODO: Add flexibility to query. Regex? (^is\s)|\s((a|an)\s)|(palindrome\?$|palindrome$)|(^isPalindrome)
 
 use DDG::Goodie;
 
@@ -18,9 +17,10 @@ handle query_clean => sub {
 	$rev = (scalar reverse $query);
 
 	$resp = $query . " is not a palindrome.";
+
+	#Check to see if it is a palindrome.
 	$resp = $query . " is a palindrome!" if ($query eq $rev);
     return $resp;
-    return;
 };
 
 zci is_cached => 1;
