@@ -4,24 +4,15 @@ package DDG::Goodie::Palindrome;
 
 use DDG::Goodie;
 
-triggers query_clean => qr/(^is\s)|\s((a|an)\s)(palindrome\?$|palindrome$)|(^isPalindrome)/i;
+triggers any => 'palindrome';
 
 handle query_clean => sub {
 
 	#Remove the trigger text from the query.
-	$query = $_ if $_ =~ s/(^is\s)|\s((a|an)\s)(palindrome\?$|palindrome$)|(^isPalindrome)//g;
-
-	#Return if no parameter is passed/matched.
-	return if !$query;
-
-	#Reverse the string.
-	$rev = (scalar reverse $query);
-
-	$resp = $query . " is not a palindrome.";
+	return unless /^is \s+ (\S+) \s+ an? \s* palindrome\??$/ix;
 
 	#Check to see if it is a palindrome.
-	$resp = $query . " is a palindrome!" if ($query eq $rev);
-	return $resp;
+	return ($1 eq scalar reverse $1) ? "$1 is a palindrome." : "$1 is not a palindrome.";
 };
 
 zci is_cached => 1;
