@@ -7,7 +7,7 @@ zci answer_type => "conversion";
 triggers any => "em", "px";
 
 handle query_raw => sub {
-    return unless /^(\d+\.\d*|\d*\.\d+|\d+)\s*(em|px)\s+(?:in|to)\s+(em|px)(?:\s+(?:with|at|using|assuming)(?:\s+an?)?\s+(\d+\.\d*|\d*\.\d+|\d+)\s*px)?/i;
+    return unless /^(?:convert|change|what\s+(?:is|are)\s+)(\d+\.\d*|\d*\.\d+|\d+)\s*(em|px)\s+(?:in|to)\s+(em|px)(?:\s+(?:with|at|using|assuming)(?:\s+an?)?\s+(\d+\.\d*|\d*\.\d+|\d+)\s*px)?/i;
     my $target = lc($3);
     my $num = $1;
     my $source = lc($2);
