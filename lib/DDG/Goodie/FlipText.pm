@@ -91,16 +91,16 @@ handle remainder => sub {
 	my @string = split(//,reverse $_);
 	my $flippedString; 
 
-	foreach $char (@string) {
+	for (@string) {
 
 		# Not all uppercase letters can be flipped
-		$char = lc($char);
+		$_ = lc;
 
-		if ( exists $charMap{$char}) {
-			$flippedString .= $charMap{$char};
+		if ( exists $charMap{$_}) {
+			$flippedString .= $charMap{$_};
 		}
 		else {
-			$flippedString .= $char;
+			$flippedString .= $_;
 		}
 	}
 	return $flippedString;
