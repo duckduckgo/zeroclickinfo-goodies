@@ -66,7 +66,7 @@ sub codepoint_description {
     delete $i{title} if $i{title} eq $i{upper};
 
     for (qw/upper title lower/) {
-        $extra{$_} = 'U+' . $i{$_} if length $i{$_};
+        $extra{$_} = 'U+' . $i{$_} if exists $i{$_} && length $i{$_};
     }
 
     for (qw/decimal HTML UTF-8 script block decomposition title upper lower/) {
