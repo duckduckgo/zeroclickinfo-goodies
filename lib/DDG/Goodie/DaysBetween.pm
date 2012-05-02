@@ -21,7 +21,8 @@ handle query_lc => sub {
 	}
 
 	if(scalar(@dates) == 6) {
-        my ($inclusive, $days1, $days2);
+        my ($days1, $days2);
+        my $inclusive = '';
 
 		eval {
 			$days1 = Date_to_Days(@dates[2,0,1]);

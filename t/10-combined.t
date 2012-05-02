@@ -40,7 +40,7 @@ ddg_goodie_test(
     )],
 
     # ABC
-    'reverse bla'                     => test_zci('alb', answer_type => 'reverse', is_cached => 1 ),
+    'reverse bla'                     => test_zci('Reversed "bla": alb', answer_type => 'reverse', is_cached => 1 ),
     'apples or oranges or cherries'   => test_zci(qr/(random)/, answer_type => 'rand', is_cached => 0),
     'yes or no'                       => test_zci(qr/\w \(random\)/, answer_type => 'rand', is_cached => 0),
     'this or that or none'            => test_zci(qr/\w \(random\)/, answer_type => 'rand', is_cached => 0),
