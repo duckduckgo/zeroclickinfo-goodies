@@ -26,6 +26,7 @@ ddg_goodie_test(
 	DDG::Goodie::GoldenRatio
     DDG::Goodie::HTMLEntities
     DDG::Goodie::NLetterWords
+    DDG::Goodie::Palindrome
 	DDG::Goodie::Passphrase
 	DDG::Goodie::PercentError
 	DDG::Goodie::Perimeter
@@ -102,7 +103,12 @@ ddg_goodie_test(
     # NLetterWords
     '1 letter words'                  => test_zci('Random 1 letter words: a, I.', answer_type => 'nletterwords', is_cached => 0),
     '1 char words'                    => test_zci('Random 1 letter words: a, I.', answer_type => 'nletterwords', is_cached => 0),
-    '1 character word'               => test_zci('Random 1 letter words: a, I.', answer_type => 'nletterwords', is_cached => 0),
+    '1 character word'                => test_zci('Random 1 letter words: a, I.', answer_type => 'nletterwords', is_cached => 0),
+
+    # Palindrome
+    'is foo a palindrome?'            => test_zci('foo is not a palindrome.', answer_type=>'palindrome', is_cached=>1),
+    'is foof a palindrome?'           => test_zci('foof is a palindrome.', answer_type=>'palindrome', is_cached=>1),
+    
 
     # Passphrase
     'passphrase 4 words'              => test_zci(qr/random passphrase:/, answer_type => 'passphrase', is_cached => 0),
