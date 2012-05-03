@@ -17,7 +17,7 @@ handle query_parts => sub {
 
     my $html = HTML::Barcode::QRCode->new(text => $str)->render;
 
-    $html = qq( <div style="float:left;margin-right:10px;">$html</div> A QR code that says '$str'. <div class="clear"></div>);
+    $html = qq( <div style="float:left;margin-right:10px;">$html</div> A QR code that means '$str'. <div class="clear"></div>);
 
     return '', html => $html;
 };
