@@ -15,7 +15,7 @@ handle query_parts => sub {
     my @allwords = share('words.txt')->slurp;
     my @words;
 
-    foreach (@allwords) {
+    for (@allwords) {
         chomp($_);
         if (length($_) == $length) { push(@words, $_); }
     }
@@ -24,7 +24,7 @@ handle query_parts => sub {
     my @randomwords;
     if (scalar(@words) > 30) {
         while (scalar(@randomwords) < 30) {
-            $rand = int(rand(scalar(@words)));
+            my $rand = int(rand(scalar(@words)));
             if ($words[$rand]) {
                 push(@randomwords, $words[$rand]);
                 $words[$rand] = 0;

@@ -1,2 +1,4 @@
-flip this_text right HerE.
-This_text! Right here? flip
+flip this text
+this text flip
+mirror this text
+this text mirror

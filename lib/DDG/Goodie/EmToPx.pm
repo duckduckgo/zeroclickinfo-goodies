@@ -4,23 +4,22 @@ use DDG::Goodie;
 
 zci is_cached => 1;
 zci answer_type => "conversion";
-triggers end => "em", "px";
+triggers any => "em", "px";
 
-handle query_parts => sub {
-    my $target = lc($_[-1]);
-    my $num = $_[0];
+handle query_raw => sub {
+    return unless /^(?:convert|change|what\s+(?:is|are)\s+)(\d+\.\d*|\d*\.\d+|\d+)\s*(em|px)\s+(?:in|to)\s+(em|px)(?:\s+(?:with|at|using|assuming)(?:\s+an?)?\s+(\d+\.\d*|\d*\.\d+|\d+)\s*px)?/i;
+    my $target = lc($3);
+    my $num = $1;
+    my $source = lc($2);
 
-    my @lt = split(//,$num);
-    my $source = ($num =~ /(px|em)$/i) ? lc(join('',@lt[-2,-1])) : lc($_[1]);
-    $num =~ s/(em|px)//gi;
-    return unless join(' ', @_) =~ /^(\d+[.]\d*|\d*[.]\d+|\d+)\s*(em|px)\s+(in|to)\s+(em|px)$/i;
-    return unless $num && $target && $source;
+    my $fontsize = ( defined $4 ) ? $4 : 16;
 
     my $result;
-    $result = $num * 16 if $target eq 'px' && $source eq 'em';
-    $result = $num / 16 if $target eq 'em' && $source eq 'px';
+    $result = $num * $fontsize if $target eq 'px' && $source eq 'em';
+    $result = $num / $fontsize if $target eq 'em' && $source eq 'px';
+    my $plur = $result == 1 ? "is" : "are";
 
-    return "$result $target in $num $source" if $result;
+    return "There $plur $result $target in $num $source (assuming a ${fontsize}px font size)";
     return;
 };
 

@@ -19,6 +19,7 @@ ddg_goodie_test(
 	DDG::Goodie::CurrencyIn
 	DDG::Goodie::DaysBetween
 	DDG::Goodie::Dice
+    DDG::Goodie::DuckDuckGo
 	DDG::Goodie::EmToPx
 	DDG::Goodie::FlipText
 	DDG::Goodie::GUID
@@ -40,7 +41,7 @@ ddg_goodie_test(
     )],
 
     # ABC
-    'reverse bla'                     => test_zci('alb', answer_type => 'reverse', is_cached => 1 ),
+    'reverse bla'                     => test_zci('Reversed "bla": alb', answer_type => 'reverse', is_cached => 1 ),
     'apples or oranges or cherries'   => test_zci(qr/(random)/, answer_type => 'rand', is_cached => 0),
     'yes or no'                       => test_zci(qr/\w \(random\)/, answer_type => 'rand', is_cached => 0),
     'this or that or none'            => test_zci(qr/\w \(random\)/, answer_type => 'rand', is_cached => 0),
@@ -79,6 +80,9 @@ ddg_goodie_test(
 
     # Dice
     'throw dice'                      => test_zci(qr/\d \d/, answer_type => 'dice_roll', is_cached => 0),
+
+    # DuckDuckGo
+    'zero click info'                 => test_zci("Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results.", is_cached => 1, answer_type => 'duckduckgo'),
 
     # EmToPx
     '10 px to em'                     => test_zci('0.625 em in 10 px', answer_type => 'conversion', is_cached => 1),

@@ -2,7 +2,7 @@ package DDG::Goodie::FlipText;
 
 use DDG::Goodie;
 
-triggers startend => "flip";
+triggers startend => "flip", "mirror";
 
 zci is_cached => 1;
 zci answer_type => "flip_text";
@@ -87,22 +87,36 @@ my %charMap = (
 	"<" => ">",
 	"_" => "\x{203E}");
 
-handle remainder => sub {
-	my @string = split(//,reverse $_);
+handle query => sub {
+
+	$_ =~ s/^(\s*flip\s*)//;
+	$_ =~ s/(\s*flip\s*)$//;
+
+	if ($_ =~ /^(\s*mirror\s*)/ || $_ =~ /(\s*mirror\s*)/) {
+		$_ =~ s/^(\s*mirror\s*)//;
+		$_ =~ s/(\s*mirror\s*)$//;
+
+		$_ = reverse $_;
+	}
+
+	my @string = split(//, $_);
 	my $flippedString; 
 
-	foreach $char (@string) {
+	for (@string) {
 
 		# Not all uppercase letters can be flipped
-		$char = lc($char);
+		$_ = lc;
 
-		if ( exists $charMap{$char}) {
-			$flippedString .= $charMap{$char};
+		if ( exists $charMap{$_}) {
+			$flippedString .= $charMap{$_};
 		}
 		else {
-			$flippedString .= $char;
+			$flippedString .= $_;
 		}
 	}
+
+	
+
 	return $flippedString;
 };
 
