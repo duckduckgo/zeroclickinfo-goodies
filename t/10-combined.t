@@ -85,7 +85,7 @@ ddg_goodie_test(
     'zero click info'                 => test_zci("Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results.", is_cached => 1, answer_type => 'duckduckgo'),
 
     # EmToPx
-    '10 px to em'                     => test_zci('0.625 em in 10 px', answer_type => 'conversion', is_cached => 1),
+    '10 px to em'                     => test_zci('There are 0.625 em in 10 px (assuming a 16px font size)', answer_type => 'conversion', is_cached => 1),
 
     # GUID
     'guid'                            => test_zci(qr/\(randomly generated\)/, answer_type => 'guid', is_cached => 0),
