@@ -6,11 +6,13 @@ use DDG::Goodie;
 my %data = (
     zeroclickinfo       => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results.",
     zeroclick           => \"zeroclickinfo",
+    '0click'            => \"zeroclickinfo",
+    '0clickinfo'        => \"zeroclickinfo",
     help                => "DuckDuckGo's help website: http://help.duckduckgo.com/",
     help_html           => "DuckDuckGo's help website: <a href='http://help.duckduckgo.com/'>http://help.duckduckgo.com/</a>",
 );
 
-triggers start => keys %data, qw/zero/;
+triggers start => keys %data, qw/zero 0/;
 
 zci is_cached => 1;
 

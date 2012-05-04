@@ -87,7 +87,7 @@ my %charMap = (
 	"<" => ">",
 	"_" => "\x{203E}");
 
-handle query => sub {
+handle sub {
 
 	$_ =~ s/^(\s*flip\s*)//;
 	$_ =~ s/(\s*flip\s*)$//;
