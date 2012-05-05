@@ -34,6 +34,7 @@ ddg_goodie_test(
 	DDG::Goodie::PublicDNS
 	DDG::Goodie::Reverse
 	DDG::Goodie::Roman
+	DDG::Goodie::Rot13
 	DDG::Goodie::SigFigs
 	DDG::Goodie::TitleCase
 	DDG::Goodie::Unicode
@@ -129,6 +130,9 @@ ddg_goodie_test(
 
     # Roman
     'roman 155'                       => test_zci('CLV (roman numeral conversion)', answer_type => 'roman_numeral_conversion', is_cached => 1),
+
+    # Rot13
+    'rot13 This is a test.'                       => test_zci('ROT13: Guvf vf n grfg.', answer_type => 'rot13', is_cached => 1),
 
     # SigFigs
     'sf 78'                           => test_zci('Significant figures: 2', answer_type => 'sig_figs', is_cached => 1),
