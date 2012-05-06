@@ -8,10 +8,12 @@ use constant WPHREF => "http://en.wikipedia.org/wiki/List_of_UN_numbers_%04d_to_
 
 triggers start => 'un';
 
+zci answer_type => 'united_nations';
+
 handle remainder => sub {
   my $num = shift or return;
   my %un = get_un($num) or return;
-  return sprintf qq(%s (<a href="%s">UN Number %04d</a>)), $un{description}, wphref($num), $num;
+  return (sprintf qq(%s (UN Number %04d)), $un{description}, $num), html => sprintf qq(%s (<a href="%s">UN Number %04d</a>)), $un{description}, wphref($num), $num;
 };
 
 # Wikipedia attribution per CC-BY-SA
