@@ -9,16 +9,21 @@ handle remainder => sub {
     if ($_)
     {
 	my %freq;
-	
-	my $lower = lc;
-	my @chars = split //,$lower;
-	
-	foreach my $char (@chars)
+	my @chars = split //, "\L$_";
+
+	foreach (@chars)
 	{
-	    ++$freq{$char} unless $_ eq ' ';
+	    ++$freq{$_} if $_ =~ /[a-z]/i;
 	};
 	
-	return "FREQUENCY: " . keys %freq if $_;
+	my @out;
+	foreach my $key (keys %freq)
+	{
+	    push @out, (join ":",$key,$freq{$key});
+	    print "$freq{$key}\n";
+	};
+
+	return "FREQUENCY: " . join ' ',sort(@out) if @out;
     };
 
     return;
