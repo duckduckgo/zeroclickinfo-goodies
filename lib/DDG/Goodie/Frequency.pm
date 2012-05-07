@@ -17,7 +17,7 @@ handle remainder => sub {
 	{
 	    if ($_ =~ /[a-z]/i)
 	    {
-		++$freq{$_} if $_;
+		++$freq{$_};
 		++$count;
 	    };
 	};
