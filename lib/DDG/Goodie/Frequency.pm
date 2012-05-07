@@ -9,9 +9,8 @@ handle remainder => sub {
     if ($_)
     {
 	my %freq;
-	my %perc;
-	my @chars = split //, "\L$_";
 	my $count = 0;
+	my @chars = split //, "\L$_";
 
 	foreach (@chars)
 	{
@@ -25,8 +24,6 @@ handle remainder => sub {
 	my @out;
 	foreach my $key (keys %freq)
 	{
-	    #$perc{$key} = $freq{$key} / $count;
-	    #my $rec = join ":", $key, $freq{$key};
 	    push @out, join " ", (join ":", $key, $freq{$key}),  ($freq{$key} / $count);
 	};
 
