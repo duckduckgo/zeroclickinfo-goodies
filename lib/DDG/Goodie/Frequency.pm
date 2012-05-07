@@ -9,18 +9,25 @@ handle remainder => sub {
     if ($_)
     {
 	my %freq;
+	my %perc;
 	my @chars = split //, "\L$_";
+	my $count = 0;
 
 	foreach (@chars)
 	{
-	    ++$freq{$_} if $_ =~ /[a-z]/i;
+	    if ($_ =~ /[a-z]/i)
+	    {
+		++$freq{$_} if $_;
+		++$count;
+	    };
 	};
 	
 	my @out;
 	foreach my $key (keys %freq)
 	{
-	    push @out, (join ":",$key,$freq{$key});
-	    print "$freq{$key}\n";
+	    #$perc{$key} = $freq{$key} / $count;
+	    #my $rec = join ":", $key, $freq{$key};
+	    push @out, join " ", (join ":", $key, $freq{$key}),  ($freq{$key} / $count);
 	};
 
 	return "FREQUENCY: " . join ' ',sort(@out) if @out;
