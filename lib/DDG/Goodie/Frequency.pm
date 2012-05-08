@@ -1,9 +1,9 @@
 package DDG::Goodie::Frequency;
-# ABSTRACT: Displays frequency of each character
+# ABSTRACT: Displays frequency of alphabet character (a-z)
 
 use DDG::Goodie;
 
-triggers start => 'frequency';
+triggers start => 'frequency', 'freq';
 
 handle remainder => sub {
     if ($_)
@@ -24,7 +24,7 @@ handle remainder => sub {
 	my @out;
 	foreach my $key (keys %freq)
 	{
-	    push @out, join " ", (join ":", $key, $freq{$key}),  ($freq{$key} / $count);
+	    push @out, join ":", $key, $freq{$key} . "/" . $count;
 	};
 
 	return "FREQUENCY: " . join ' ',sort(@out) if @out;
