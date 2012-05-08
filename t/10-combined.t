@@ -27,6 +27,7 @@ ddg_goodie_test(
     DDG::Goodie::HTMLEntities
     DDG::Goodie::NLetterWords
     DDG::Goodie::Palindrome
+    DDG::Goodie::ParseCron
 	DDG::Goodie::Passphrase
 	DDG::Goodie::PercentError
 	DDG::Goodie::Perimeter
@@ -110,6 +111,8 @@ ddg_goodie_test(
     'is foo a palindrome?'            => test_zci('foo is not a palindrome.', answer_type=>'palindrome', is_cached=>1),
     'is foof a palindrome?'           => test_zci('foof is a palindrome.', answer_type=>'palindrome', is_cached=>1),
     
+    # ParseCron
+	'crontab * */3 * * *'             => test_zci(qr/^Event will start next at \d{2}:\d{2}:\d{2} on \d{1,2} [a-zA-Z]{3}, \d{4}$/, answer_type=>'parsecron', is_cached=>0),
 
     # Passphrase
     'passphrase 4 words'              => test_zci(qr/random passphrase:/, answer_type => 'passphrase', is_cached => 0),
