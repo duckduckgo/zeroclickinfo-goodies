@@ -25,7 +25,7 @@ handle remainder => sub {
 	my $newday=$_+1;
 	$crontab =~ s/$day[$_]/$newday/;
     }
-    my $cron = new Schedule::Cron::Events($crontab) or return;
+    my $cron = Schedule::Cron::Events->new($crontab) or return;
     my ($sec, $min, $hour, $day, $month, $year) = $cron->nextEvent;
     $year = $year+1900;
     my $text = sprintf qq(Cron will start this event next at %02d:%02d:%02d on %d %s, %d), $hour, $min, $sec, $day, $mon[$month], $year;
