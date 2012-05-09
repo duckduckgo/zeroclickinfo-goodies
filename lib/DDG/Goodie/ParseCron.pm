@@ -28,7 +28,8 @@ handle remainder => sub {
     my $cron = new Schedule::Cron::Events($crontab) or return;
     my ($sec, $min, $hour, $day, $month, $year) = $cron->nextEvent;
     $year = $year+1900;
-    my $text = sprintf qq(Cron will start this event next at %02d:%02d:%02d on %d %s, %d), $hour, $min, $sec, $day, $mon[$month], $year . '.';
+    my $text = sprintf qq(Cron will start this event next at %02d:%02d:%02d on %d %s, %d), $hour, $min, $sec, $day, $mon[$month], $year;
+    $text .= '.';
     return $text if $_;
     return;
 };

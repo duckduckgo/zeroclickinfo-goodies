@@ -13,7 +13,8 @@ zci answer_type => 'united_nations';
 handle remainder => sub {
   my $num = shift or return;
   my %un = get_un($num) or return;
-  return (sprintf qq(%s (UN Number %04d)), $un{description}, $num), html => sprintf qq(%s (<a href="%s">UN Number %04d</a>)), $un{description}, wphref($num), $num;
+  $un{description} =~ s/\.$//;
+  return (sprintf qq(UN Number %04d - %s.), $num, $un{description}), html => sprintf qq(<a href="%s">UN Number %04d</a> - %s.), wphref($num), $num, $un{description};
 };
 
 # Wikipedia attribution per CC-BY-SA
