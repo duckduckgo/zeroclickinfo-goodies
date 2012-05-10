@@ -2,7 +2,7 @@ package DDG::Goodie::DateMath;
 # ABSTRACT add/subtract days/weeks/months/years to/from a date
 
 use DDG::Goodie;
-use Date::Calc qw( Add_Delta_Days Add_Delta_YM This_Year );
+use Date::Calc qw( Add_Delta_Days Add_Delta_YM Decode_Date_US This_Year );
 
 triggers any => qw( plus minus + - );
 zci is_cached => 1;
@@ -10,27 +10,26 @@ zci answer_type => 'date_math';
 
 handle query_lc => sub {
     my @param = split /\s+/;
-    return unless scalar @param == 4;
 
-    my ( $date, $action, $number, $unit ) = @param;
+    my ( $input_action, $input_number, $unit ) = @param[-3..-1];
 
-    # check/tweak input
+    my ( $input_date, $date, $date_param_count ) = get_date_info( @param );
 
-    # default to this year:
-    my $md_re = '[01]?[0-9]/[0-3]?[0-9]';
-    $date .= '/' . This_Year() if $date =~ /^$md_re$/;
-    return unless $date =~ /^$md_re\/[0-9]{4}$/;
+    # make sure we got a result and that there aren't unnecessary words in
+    # between the date and the action/number/unit
+    return unless $date_param_count && scalar @param == $date_param_count + 3;
 
+    # check/tweak other (non-date) input
     my %action_map = (
         plus  => '+',
         '+'   => '+',
         minus => '-',
         '-'   => '-',
     );
-    $action = $action_map{$action} || return;
+    my $action = $action_map{$input_action} || return;
 
-    return unless $number =~ /^\d+$/;
-    $number = 0 - $number if $action eq '-';
+    return unless $input_number =~ /^\d+$/;
+    my $number = $action eq '-' ? 0 - $input_number : $input_number;
 
     $unit =~ s/s$//g;
 
@@ -62,12 +61,49 @@ handle query_lc => sub {
     };
     return if $@;
 
-    # output, using original @param
-    $param[0] = $date; # include the optional year
-    $param[3] = $unit;
-    $param[3] .= 's' if $param[2] > 1; # plural?
-    return "@param is $answer";
+    # output
+    $unit .= 's' if $input_number > 1; # plural?
+    return "$input_date $input_action $input_number $unit is $answer";
 };
+
+sub get_date_info
+{
+    # get the input date and calculated/verified date (m/d/y) from search terms
+    my @param = @_;
+
+    # try to figure out what params to use and if to default to the current year
+    my @date_param;
+    my $date_param_count = 1; # count how many of their words make up the date
+    if ( $param[0] =~ /\d+\/\d+/ )
+    {
+        # 5/1, 5/1/2012
+        $param[0] .= '/' . This_Year() unless $param[0] =~ /^\d+\/\d+\/\d+$/;
+        @date_param = $param[0];
+    }
+    elsif ( $param[2] =~ /^\d{4}$/ )
+    {
+        # May 1 2012
+        @date_param = @param[0..2];
+        $date_param_count = 3;
+    }
+    else
+    {
+        # May 1
+        @date_param = ( @param[0..1], This_Year() );
+        $date_param_count = 2;
+    }
+
+    # is it a date?
+    my @ymd = Decode_Date_US( join ' ', @date_param );
+    return unless @ymd;
+
+    my $mdy = "$ymd[1]/$ymd[2]/$ymd[0]";
+
+    $date_param[0] = ucfirst $date_param[0]; # in case month is a string
+    my $input_date = join ' ', @date_param;  # similar to what they input
+
+    return ( $input_date, $mdy, $date_param_count );
+}
 
 sub mdy_to_ymd_array
 {
