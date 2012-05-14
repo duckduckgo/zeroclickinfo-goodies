@@ -1,6 +1,7 @@
 package DDG::Goodie::UnixTime;
 
 use DDG::Goodie;
+use DateTime;
 
 zci answer_type => "time_conversion";
 zci is_cached => 1;
@@ -8,13 +9,22 @@ triggers startend => "unixtime", "time", "timestamp", "datetime", "epoch";
 
 handle remainder => sub {
 
-	my $time_input = int(length ($_) >= 13 ? ($_ / 1000) : ($_ + 0));
+    my $time_input = 0;
+    eval {
+	    $time_input = int(length ($_) >= 13 ? ($_ / 1000) : ($_ + 0));
+    };
+    if ($@) { return; }
 
 	if ($time_input >= 0){
-	
-		my $my_time = localtime($time_input);
 
-		return "Unix Time Conversion: " . $my_time if $my_time;
+		my $my_time = DateTime->from_epoch(
+            epoch => $time_input,
+            time_zone => "UTC"
+          );
+
+        my $time_utc = $my_time->strftime("%a %b %m %T %Y %z");
+
+		return "Unix Time Conversion: " . $time_utc if $time_utc;
 	
 	}
 
