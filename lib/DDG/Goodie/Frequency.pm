@@ -6,7 +6,7 @@ use DDG::Goodie;
 triggers start => 'frequency', 'freq';
 
 handle remainder => sub {
-    if ($_ =~ /^of ([a-z]|all) in (.*)/i)
+    if ($_ =~ /^of ([a-z]|all(?: (?:letters|characters|chars))?) in (.+)/i)
     {
 	my $collect = lc $1;
 	my $target_str = lc $2;
@@ -33,7 +33,7 @@ handle remainder => sub {
 	    push @out, join ":", $key, $freq{$key} . "/" . $count;
 	};
 
-	return "FREQUENCY: " . join ' ',sort(@out) if @out;
+	return "Frequency: " . join ' ',sort(@out) if @out;
     };
 
     return;
