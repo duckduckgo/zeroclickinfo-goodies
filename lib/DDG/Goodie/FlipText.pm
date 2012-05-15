@@ -87,19 +87,9 @@ my %charMap = (
 	"<" => ">",
 	"_" => "\x{203E}");
 
-handle sub {
+handle remainder => sub {
 
-	$_ =~ s/^(\s*flip\s*)//;
-	$_ =~ s/(\s*flip\s*)$//;
-
-	if ($_ =~ /^(\s*mirror\s*)/ || $_ =~ /(\s*mirror\s*)/) {
-		$_ =~ s/^(\s*mirror\s*)//;
-		$_ =~ s/(\s*mirror\s*)$//;
-
-		$_ = reverse $_;
-	}
-
-	my @string = split(//, $_);
+	my @string = split(//, reverse $_);
 	my $flippedString; 
 
 	for (@string) {
