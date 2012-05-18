@@ -8,7 +8,7 @@ use Encode qw/encode_utf8/;
 use constant {
     CODEPOINT_RE => qr/^ \s* U \+ (?<codepoint> [a-f0-9]{4,6}) \s* $/xi,
     NAME_RE      => qr/^ (?<name> [A-Z][A-Z\s]+) $/xi,
-    CHAR_RE      => qr/^ \s* (?<char> .) \s* $}x,
+    CHAR_RE      => qr/^ \s* (?<char> .) \s* $/x,
     UNICODE_RE   => qr/^ unicode \s+ (.+) $/xi,
     CODEPOINT    => 1,
     NAME         => 2,
@@ -33,7 +33,7 @@ handle sub {
     }
 
     return codepoint_description($term);
-}
+};
 
 sub codepoint_description {
     my $term = $_[0];
