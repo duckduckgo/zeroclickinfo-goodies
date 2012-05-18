@@ -2,8 +2,12 @@ package DDG::Goodie::JSKeycodes;
 # ABSTRACT: Give the equivelant JavaScript Keycode.
 
 use DDG::Goodie;
+my $html;
+my $text;
+my $key;
+my $value;
 
-triggers startend => 'keycode', 'charcode';
+triggers startend => 'keycode', 'charcode', 'charcodes';
 
 my %keys = ('backspace' => '8',
 		'tab' => '9', 
@@ -61,32 +65,6 @@ my %keys = ('backspace' => '8',
 		'x' => '88',
 		'y' => '89',
 		'z' => '90',
-		'A' => '65',
-		'B' => '66',
-		'C' => '67',
-		'D' => '68',
-		'E' => '69',
-		'F' => '70',
-		'G' => '71',
-		'H' => '73',
-		'I' => '73',
-		'J' => '74',
-		'K' => '75',
-		'L' => '76',
-		'M' => '77',
-		'N' => '78',
-		'O' => '79',
-		'P' => '80',
-		'Q' => '81',
-		'R' => '82',
-		'S' => '83',
-		'T' => '84',
-		'U' => '85',
-		'V' => '86',
-		'W' => '87',
-		'X' => '88',
-		'Y' => '89',
-		'Z' => '90',
 		'space' => '32',
 		'numpad 0' => '96',
 		'numpad 1' => '97',
@@ -122,13 +100,23 @@ my %keys = ('backspace' => '8',
 		'(' => '219',
 		')' => '221',
 		'quote' => '222');
+		
          
 handle remainder => sub {
-	return unless exists $keys{$_};
+	return unless exists $keys{$_} or $_ eq "JavaScript" or $_ eq "javascript";
 	if (exists $keys{$_}) {
-		return 'Keycode: ' . $keys{$_} . ' (JavaScript)'
+		$html = '<table><thead><tr><th>Key</th><th>Character Code</th></tr></thead><tbody><tr><td><b>' . $_ . '</b></td><td><b>' . $keys{$_} . '</b></td>';
+	} else {
+		$html = '<table><thead><tr><th>Key</th><th>Character Code</th></tr></thead><tbody>'
 	}
+	
+	while (($key, $value) = each(%keys)){
+    	$html .= '<tr><td>' . $key . '</td><td>'. $value . "</td></tr>" unless $key eq $_ ;
+    };
     
+    $html .= '</tbody></table>';
+	$text = 'Keycode: ' . $keys{$_} . ' (JavaScript)' unless $_ eq "JavaScript" or $_ eq "javascript";
+    return $text, html => $html;
     return;
 };
 
