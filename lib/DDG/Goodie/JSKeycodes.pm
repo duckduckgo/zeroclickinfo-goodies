@@ -7,6 +7,9 @@ my $text;
 my $key;
 my $value;
 
+my $header = share('header.txt')->slurp;
+my $footer = share('footer.txt')->slurp;
+
 triggers startend => 'keycode', 'charcode', 'charcodes';
 
 my %keys = ('backspace' => '8',
@@ -104,17 +107,14 @@ my %keys = ('backspace' => '8',
          
 handle remainder => sub {
 	return unless exists $keys{$_} or $_ eq "JavaScript" or $_ eq "javascript";
-	if (exists $keys{$_}) {
-		$html = '<table><thead><tr><th>Key</th><th>Character Code</th></tr></thead><tbody><tr><td><b>' . $_ . '</b></td><td><b>' . $keys{$_} . '</b></td>';
-	} else {
-		$html = '<table><thead><tr><th>Key</th><th>Character Code</th></tr></thead><tbody>'
-	}
+	$html .= $header;
+	$html .= '<tr><td class="c1"><b>' . $_ . '</b></td><td class="c2"><b>' . $keys{$_} . '</b></td>' 	if (exists $keys{$_});
 	
-	while (($key, $value) = each(%keys)){
-    	$html .= '<tr><td>' . $key . '</td><td>'. $value . "</td></tr>" unless $key eq $_ ;
+	foreach $key (sort keys %keys){
+    	$html .= '<tr><td class="c1">' . $key . '</td><td class="c2">'. $keys{$key} . "</td></tr>" unless $key eq $_ ;
     };
     
-    $html .= '</tbody></table>';
+    $html .= $footer;
 	$text = 'Keycode: ' . $keys{$_} . ' (JavaScript)' unless $_ eq "JavaScript" or $_ eq "javascript";
     return $text, html => $html;
     return;
