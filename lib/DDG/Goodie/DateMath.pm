@@ -30,10 +30,6 @@ handle query_lc => sub {
 
     my ( $input_date, $date, $date_param_count ) = get_date_info( split(' ',$indate), $input_action, $input_number, $unit );
 
-    # make sure we got a result and that there aren't unnecessary words in
-    # between the date and the action/number/unit
-    return unless $date_param_count; 
-
     # check/tweak other (non-date) input
     my %action_map = (
         plus  => '+',
@@ -43,7 +39,6 @@ handle query_lc => sub {
     );
     my $action = $action_map{$input_action} || return;
 
-    return unless $input_number =~ /^\d+$/;
     my $number = $action eq '-' ? 0 - $input_number : $input_number;
 
     $unit =~ s/s$//g;
