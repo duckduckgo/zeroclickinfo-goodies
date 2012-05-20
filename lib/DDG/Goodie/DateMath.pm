@@ -3,6 +3,7 @@ package DDG::Goodie::DateMath;
 
 use DDG::Goodie;
 use Date::Calc qw( Add_Delta_Days Add_Delta_YM Decode_Date_US This_Year );
+use Lingua::EN::Numericalize;
 
 triggers any => qw( plus minus + - );
 zci is_cached => 1;
@@ -10,14 +11,28 @@ zci answer_type => 'date_math';
 
 handle query_lc => sub {
     my @param = split /\s+/;
+    return unless @param >= 4;
 
-    my ( $input_action, $input_number, $unit ) = @param[-3..-1];
+    my $unit = pop @param;
+    return unless join(' ',@param) =~ qr!^ ([a-z]+ \s ( \d{1,2} | [a-z\s-]+ ) (?:st|nd|rd|th)?,? (?:\s \d{2,4})? |
+                                         \d{1,4}/\d{1,4}(?:/\d{1,4})? )
+                                         \s(plus|\+|\-|minus)\s(\d+|[a-z\s-]+)$!x;
+    my $input_number = str2nbr($4);
+    my $input_action = $3;
 
-    my ( $input_date, $date, $date_param_count ) = get_date_info( @param );
+    my $indate = $1;
+    my $innum = $4;
+    if ( defined $2 ) {
+        $innum = $2;
+        my $num = $innum =~ /^\d+$/ ? $innum : str2nbr($innum);
+        $indate =~ s/$innum/$num/;
+    } 
+
+    my ( $input_date, $date, $date_param_count ) = get_date_info( split(' ',$indate), $input_action, $input_number, $unit );
 
     # make sure we got a result and that there aren't unnecessary words in
     # between the date and the action/number/unit
-    return unless $date_param_count && scalar @param == $date_param_count + 3;
+    return unless $date_param_count; 
 
     # check/tweak other (non-date) input
     my %action_map = (
