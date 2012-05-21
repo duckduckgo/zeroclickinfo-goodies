@@ -111,14 +111,14 @@ handle remainder => sub {
     my $footer = share('footer.txt')->slurp;
 
 	$html .= $header;
-	$html .= '<tr><td class="c1"><b>' . $_ . '</b></td><td class="c2"><b>' . $keys{$_} . '</b></td>' 	if (exists $keys{$_});
+	$html .= '<tr><td class="c1"><b>' . $_ . '</b></td><td class="c2"><b>' . $keys{$_} . '</b></td>' if (exists $keys{$_});
 	
 	foreach $key (sort keys %keys){
-    	$html .= '<tr><td class="c1">' . $key . '</td><td class="c2">'. $keys{$key} . "</td></tr>" unless $key eq $_ ;
+    	$html .= '<tr><td class="c1">' . $key . '</td><td class="c2">'. $keys{$key} . "</td></tr>" unless $key eq $_;
     };
     
     $html .= $footer;
-	$text = 'Keycode: ' . $keys{$_} . ' (JavaScript)' unless $_ eq "JavaScript" or $_ eq "javascript";
+	$text = 'Keycode: ' . $keys{$_} . ' (JavaScript)' unless not exists $keys{$_} or $_ eq "JavaScript" or $_ eq "javascript";
     return $text, html => $html;
     return;
 };
