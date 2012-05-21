@@ -8,14 +8,17 @@ use Encode qw/encode_utf8/;
 use constant {
     CODEPOINT_RE => qr/^ \s* U \+ (?<codepoint> [a-f0-9]{4,6}) \s* $/xi,
     NAME_RE      => qr/^ (?<name> [A-Z][A-Z\s]+) $/xi,
+    CHAR_RE      => qr/^ \s* (?<char> .) \s* $/x,
+    UNICODE_RE   => qr/^ unicode \s+ (.+) $/xi,
     CODEPOINT    => 1,
     NAME         => 2,
+    CHAR         => 3,
 };
 
 triggers query_raw => CODEPOINT_RE;
 
 # Also allows open-ended queries like: "LATIN SMALL LETTER X"
-triggers query_raw => qr{^unicode \s+ (.+) $}xi;
+triggers query_raw => UNICODE_RE;
 
 zci is_cached => 1;
 
@@ -24,7 +27,8 @@ zci answer_type => "unicode_conversion";
 handle sub {
     my $term = $_[0];
 
-    if ($term =~ m{^unicode \s+ (.+) $}x) {
+    # Search term starts with "unicode "
+    if ($term =~ UNICODE_RE) {
         return unicode_lookup($1);
     }
 
@@ -99,6 +103,10 @@ sub input_type ($) {
         $input = $+{name};
         $type = NAME;
     }
+    elsif ($input =~ CHAR_RE) {
+        $input = $+{char};
+        $type = CHAR;
+    }
 
     return ($input, $type);
 }
@@ -130,6 +138,10 @@ sub unicode_lookup {
     elsif ($type == NAME) {
         my $char = name_to_char($term);
         my $cp = char_to_codepoint($char);
+        $result = codepoint_description($cp);
+    }
+    elsif ($type == CHAR) {
+        my $cp = char_to_codepoint($term);
         $result = codepoint_description($cp);
     }
 

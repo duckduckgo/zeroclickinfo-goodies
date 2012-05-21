@@ -14,6 +14,7 @@ ddg_goodie_test(
         )],
     'frequency of all in test' => test_zci('Frequency: e:1/4 s:1/4 t:2/4'),
     'frequency of all letters in test' => test_zci('Frequency: e:1/4 s:1/4 t:2/4'),
+    'frequency of letters in test' => test_zci('Frequency: e:1/4 s:1/4 t:2/4'),
     'frequency of all characters in test' => test_zci('Frequency: e:1/4 s:1/4 t:2/4'),
     'frequency of all chars in test' => test_zci('Frequency: e:1/4 s:1/4 t:2/4'),
     'frequency of all in testing 1234 ABC!' => test_zci('Frequency: a:1/10 b:1/10 c:1/10 e:1/10 g:1/10 i:1/10 n:1/10 s:1/10 t:2/10'),
