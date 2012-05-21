@@ -7,7 +7,7 @@ my $text;
 my $key;
 my $value;
 
-triggers startend => 'keycode', 'charcode', 'charcodes';
+triggers startend => 'keycode', 'keycodes', 'chars', 'charcode', 'charcodes';
 
 my %keys = ('backspace' => '8',
 		'tab' => '9', 
