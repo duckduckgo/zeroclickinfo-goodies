@@ -1,14 +1,11 @@
-package DDG::Goodie::JSKeycodes;
-# ABSTRACT: Give the equivelant JavaScript Keycode.
+package DDG::Goodie::JsKeycodes;
+# ABSTRACT: Give the equivalent JavaScript Keycode.
 
 use DDG::Goodie;
 my $html;
 my $text;
 my $key;
 my $value;
-
-my $header = share('header.txt')->slurp;
-my $footer = share('footer.txt')->slurp;
 
 triggers startend => 'keycode', 'charcode', 'charcodes';
 
@@ -107,6 +104,9 @@ my %keys = ('backspace' => '8',
          
 handle remainder => sub {
 	return unless exists $keys{$_} or $_ eq "JavaScript" or $_ eq "javascript";
+    my $header = share('header.txt')->slurp;
+    my $footer = share('footer.txt')->slurp;
+
 	$html .= $header;
 	$html .= '<tr><td class="c1"><b>' . $_ . '</b></td><td class="c2"><b>' . $keys{$_} . '</b></td>' 	if (exists $keys{$_});
 	

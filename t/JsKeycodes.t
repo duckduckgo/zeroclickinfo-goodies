@@ -10,7 +10,7 @@ zci answer_type => 'jskeycodes';
 
 ddg_goodie_test(
         [qw(
-                DDG::Goodie::JSKeycodes
+                DDG::Goodie::JsKeycodes
         )],
         'charCode backspace' => test_zci('Keycode: 8 (JavaScript)'),
         'charcode tab' => test_zci('Keycode: 9 (JavaScript)'),
