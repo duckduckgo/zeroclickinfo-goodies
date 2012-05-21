@@ -103,7 +103,10 @@ my %keys = ('backspace' => '8',
 		
          
 handle remainder => sub {
-	return unless exists $keys{$_} or $_ eq "JavaScript" or $_ eq "javascript";
+	return unless exists $keys{$_}
+        or $_ eq "JavaScript"
+        or $_ eq "javascript"
+        or $_ eq "js";
     my $header = share('header.txt')->slurp;
     my $footer = share('footer.txt')->slurp;
 
