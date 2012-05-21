@@ -12,7 +12,7 @@ use Schedule::Cron::Events;
 my @mon = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
 my @day = qw(Mon Tue Wed Thu Fri Sat Sun);
 
-triggers start => 'crontab';
+triggers start => 'crontab', 'cron', 'cronjob';
 zci is_cached => 0;
 handle remainder => sub {
     my $crontab = $_;
