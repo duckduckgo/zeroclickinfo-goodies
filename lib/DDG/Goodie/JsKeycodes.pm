@@ -7,7 +7,7 @@ my $text;
 my $key;
 my $value;
 
-triggers startend => 'keycode', 'keycodes', 'chars', 'charcode', 'charcodes';
+triggers any => 'keycode', 'keycodes', 'char', 'chars', 'charcode', 'charcodes';
 
 my %keys = ('backspace' => '8',
 		'tab' => '9', 
@@ -103,22 +103,26 @@ my %keys = ('backspace' => '8',
 		
          
 handle remainder => sub {
-	return unless exists $keys{$_}
-        or $_ eq "JavaScript"
-        or $_ eq "javascript"
-        or $_ eq "js";
-    my $header = share('header.txt')->slurp;
-    my $footer = share('footer.txt')->slurp;
+    my $query = lc($_);
+	return unless exists $keys{$query}
+        or $query =~ s/ *JavaScript *//
+        or $query =~ s/ *javascript *//
+        or $query =~ s/ *js *//;
 
-	$html .= $header;
-	$html .= '<tr><td class="c1"><b>' . $_ . '</b></td><td class="c2"><b>' . $keys{$_} . '</b></td>' if (exists $keys{$_});
+	$html .= share('header.txt')->slurp;
+    $html .= "\n<tr><td class='c1'><b>$query</b></td>"
+             . "\n<td class='c2'><b>$keys{$query}</b></td></tr>"
+             if exists $keys{$query};
 	
 	foreach $key (sort keys %keys){
-    	$html .= '<tr><td class="c1">' . $key . '</td><td class="c2">'. $keys{$key} . "</td></tr>" unless $key eq $_;
+    	$html .= "\n<tr><td class='c1'>$key</td>"
+                 . "\n<td class='c2'>$keys{$key}</td></tr>"
+                 unless $key eq $query;
     };
     
-    $html .= $footer;
-	$text = 'Keycode: ' . $keys{$_} . ' (JavaScript)' unless not exists $keys{$_} or $_ eq "JavaScript" or $_ eq "javascript";
+    $html .=  share('footer.txt')->slurp;
+    $text = "Keycode for $query: $keys{$query} (JavaScript)"
+            unless not exists $keys{$query};
     return $text, html => $html;
     return;
 };
