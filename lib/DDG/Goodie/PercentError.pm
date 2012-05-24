@@ -9,9 +9,9 @@ zci is_cached => 1;
 
 handle remainder => sub {
     my $length = length($_);
-    return unless $length == 2;
+#return unless $length == 2;
 
-    my ( $acc, $exp ) = @_;
+    my ( $acc, $exp ) = split ' ', $_;
     $acc =~ s/[{},;\s]+//g;
     $exp =~ s/[{},;\s]+//g;
     return unless $acc =~ /^-?\d+?(?:\.\d+|)$/ && $exp =~ /^-?\d+?(?:\.\d+|)$/;
