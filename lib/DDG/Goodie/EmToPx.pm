@@ -2,9 +2,10 @@ package DDG::Goodie::EmToPx;
 
 use DDG::Goodie;
 
+triggers any => "em", "px";
+
 zci is_cached => 1;
 zci answer_type => "conversion";
-triggers any => "em", "px";
 
 handle query_raw => sub {
     s/(?![\.\s])\W//g;

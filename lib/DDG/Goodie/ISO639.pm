@@ -6,10 +6,10 @@ use Locale::Language;
 
 use constant WPHREF => "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes";
 
-zci answer_type => "iso639";
+triggers start => "iso 639", "iso639";
 
-# TODO: support "iso 639" and "iso-639"
-triggers start => "iso639";
+zci answer_type => "iso639";
+zci is_cached => 1;
 
 handle remainder => sub {
   my ($lang, $code) = langpair(shift) or return;
@@ -31,7 +31,5 @@ sub langpair {
   }
   return;
 }
-
-zci is_cached => 1;
 
 1;

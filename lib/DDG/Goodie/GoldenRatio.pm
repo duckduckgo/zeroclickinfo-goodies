@@ -6,12 +6,10 @@ zci answer_type => "golden_ratio";
 
 zci is_cached => 1;
 
-triggers start => "golden"; # should be "golden ratio"
+triggers start => "golden ratio";
 
-handle query_parts => sub {
-    shift;
-    return unless lc(shift) eq "ratio";
-    my $input = join(' ', @_);
+handle remainder => sub {
+    my $input = $_;
     my $golden_ratio = (1 + sqrt(5)) / 2;
     my $result = 0; 
 

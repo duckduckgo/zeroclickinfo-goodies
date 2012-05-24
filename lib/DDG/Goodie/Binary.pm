@@ -1,11 +1,11 @@
 package DDG::Goodie::Binary;
 
 use DDG::Goodie;
-use HTML::Entities;
+
+triggers end => "binary";
 
 zci is_cached => 1;
 zci answer_type => "binary_conversion";
-triggers end => "binary";
 
 sub bin {
     my @tex = shift;

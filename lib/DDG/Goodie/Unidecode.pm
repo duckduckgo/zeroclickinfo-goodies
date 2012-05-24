@@ -4,9 +4,10 @@ package DDG::Goodie::Unidecode;
 use DDG::Goodie;
 use Text::Unidecode;
 
-zci is_cached => 1;
-zci answer_type => "convert to ascii";
 triggers startend => "unidecode";
+
+zci is_cached => 1;
+zci answer_type => "convert_to_ascii";
 
 handle remainder => sub {
     my $u = unidecode $_;

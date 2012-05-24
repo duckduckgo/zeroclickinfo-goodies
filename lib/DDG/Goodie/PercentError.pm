@@ -2,15 +2,13 @@ package DDG::Goodie::PercentError;
 
 use DDG::Goodie;
 
-triggers start => "percent", "%", "percent-error", "% error", "%err";
+triggers start => "percent error", "% error", "%err", "%error", "percenterror";
 
 zci answer_type => "percent_error";
 zci is_cached => 1;
-handle query_parts => sub {
-    shift;
-    shift if $_[0] eq 'error' || $_[0] eq 'err';
 
-    my $length = @_;
+handle remainder => sub {
+    my $length = length($_);
     return unless $length == 2;
 
     my ( $acc, $exp ) = @_;

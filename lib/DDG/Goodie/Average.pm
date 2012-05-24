@@ -45,7 +45,6 @@ handle query => sub {
     $rms /= $len;
     $rms = sqrt $rms;
     return "Mean: $mean\nMedian: $med\nRoot Mean Square: $rms";
-
 };
 
 1;

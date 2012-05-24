@@ -2,13 +2,15 @@ package DDG::Goodie::JsKeycodes;
 # ABSTRACT: Give the equivalent JavaScript Keycode.
 
 use DDG::Goodie;
+
+triggers any => 'keycode', 'keycodes', 'char', 'chars', 'charcode', 'charcodes';
+
+zci is_cached => 1;
+
 my $html;
 my $text;
 my $key;
 my $value;
-
-triggers any => 'keycode', 'keycodes', 'char', 'chars', 'charcode', 'charcodes';
-
 my %keys = ('backspace' => '8',
 		'tab' => '9', 
 		'enter' => '13', 
@@ -126,7 +128,5 @@ handle remainder => sub {
     return $text, html => $html;
     return;
 };
-
-zci is_cached => 1;
 
 1;

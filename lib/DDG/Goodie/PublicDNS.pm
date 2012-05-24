@@ -7,7 +7,6 @@ use IO::All;
 triggers query_clean => qr/^(?:google|opendns|norton|dns advantage)?\s*public dns\s*(?:servers?)?$/i;
 
 zci is_cached => 1;
-
 zci answer_type => "public_dns";
 
 handle sub {

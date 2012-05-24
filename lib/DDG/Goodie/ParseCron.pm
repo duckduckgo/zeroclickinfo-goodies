@@ -13,7 +13,9 @@ my @mon = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
 my @day = qw(Mon Tue Wed Thu Fri Sat Sun);
 
 triggers start => 'crontab', 'cron', 'cronjob';
+
 zci is_cached => 0;
+
 handle remainder => sub {
     my $crontab = $_;
     # We replace Jan,Feb.. and Mon,Tue.. with 1,2..

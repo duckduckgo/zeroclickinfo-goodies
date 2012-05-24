@@ -5,7 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'convert to ascii';
+zci answer_type => 'convert_to_ascii';
 zci is_cached => 1;
 
 
