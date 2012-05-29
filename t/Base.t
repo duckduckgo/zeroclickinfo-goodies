@@ -17,6 +17,7 @@ ddg_goodie_test(
         '42 in binary'   => test_zci('42 in base 2 is 101010'),
         '42 in base 2'   => test_zci('42 in base 2 is 101010'),
         '42 to hex',     => test_zci('42 in base 16 is 2A'),
+        '10 in base 3'   => test_zci('10 in base 3 is 101'),
 );
 
 done_testing;

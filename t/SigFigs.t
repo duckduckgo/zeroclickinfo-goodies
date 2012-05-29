@@ -13,6 +13,11 @@ ddg_goodie_test(
                 DDG::Goodie::SigFigs
         )],
         'sf 78' => test_zci('Significant figures: 2'),
+        "sigfigs 10.12404" => test_zci("Significant figures: 7"),
+        "sigdigs 3030." => test_zci("Significant figures: 4"),
+        "significant figures 0.0100235" => test_zci("Significant figures: 6"),
+        "sf 302.056" => test_zci("Significant figures: 6"),
+        "sd 045.30" => test_zci("Significant figures: 4"),
 );
 
 done_testing;

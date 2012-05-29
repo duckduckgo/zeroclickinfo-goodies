@@ -22,11 +22,13 @@ handle remainder => sub {
 
 			$str = decode_base64($str);
 			$str = decode( "UTF-8", $str );
+            chomp $str;
 
 			return "Base64 decoded: $str"; 
 		}
 		else {
 			$str = encode_base64( encode( "UTF-8", $str ) );
+            chomp $str;
 
 			return "Base64 encoded: $str";
 		}
