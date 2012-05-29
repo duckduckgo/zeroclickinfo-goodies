@@ -29,6 +29,11 @@ triggers query_raw => qr/^
 zci is_cached => 1;
 zci answer_type => 'color_code';
 
+attribution 
+    twitter => 'crazedpsyc',
+    cpan    => 'CRZEDPSYC'
+;
+
 handle matches => sub {
     my $type;
     my $color;
