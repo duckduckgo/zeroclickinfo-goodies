@@ -1,4 +1,5 @@
 package DDG::Goodie::ABC;
+# ABSTRACT: Randomly pick one of different choices splitted by "or"
 
 use DDG::Goodie;
 

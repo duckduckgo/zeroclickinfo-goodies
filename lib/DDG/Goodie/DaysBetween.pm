@@ -6,9 +6,9 @@ use Date::Calc qw( Date_to_Days);
 use Time::localtime;
 
 triggers start => "days", "daysbetween", "days_between";
+
 zci is_cached => 1;
 zci answer_type => "days_between";
-
 
 handle query_lc => sub {
 

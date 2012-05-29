@@ -2,7 +2,10 @@ package DDG::Goodie::Phonetic;
 # ABSTRACT: Take a string and spell it out phonetically using the NATO alphabet
 
 use DDG::Goodie;
+
 triggers start => 'phonetic';
+
+zci is_cached => 1;
 
 handle remainder => sub {
   sub components {
@@ -57,7 +60,5 @@ handle remainder => sub {
   }
   return;
 };
-
-zci is_cached => 1;
 
 1;

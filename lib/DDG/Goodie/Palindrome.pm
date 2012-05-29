@@ -6,8 +6,9 @@ use DDG::Goodie;
 
 triggers any => 'palindrome';
 
-handle query => sub {
+zci is_cached => 1;
 
+handle query => sub {
 	#Remove the trigger text from the query.
 	return unless /^(?:is\s+|)(.*?)\s+an?\s*palindrome\??$/i;
 
@@ -24,7 +25,5 @@ handle query => sub {
 	#Check to see if it is a palindrome.
 	return $is_palindrome ? qq("$palindrome" is a palindrome.) : qq("$palindrome" is not a palindrome.);
 };
-
-zci is_cached => 1;
 
 1;

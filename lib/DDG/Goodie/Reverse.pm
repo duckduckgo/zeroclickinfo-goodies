@@ -3,9 +3,10 @@ package DDG::Goodie::Reverse;
 
 use DDG::Goodie;
 
+triggers startend => "reverse";
+
 zci is_cached => 1;
 zci answer_type => "reverse";
-triggers startend => "reverse";
 
 handle remainder => sub { qq|Reversed "$_": | . scalar reverse };
 

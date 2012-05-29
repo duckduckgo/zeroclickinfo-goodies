@@ -3,9 +3,10 @@ package DDG::Goodie::UnixTime;
 use DDG::Goodie;
 use DateTime;
 
+triggers startend => "unixtime", "time", "timestamp", "datetime", "epoch", "unix time", "unix epoch";
+
 zci answer_type => "time_conversion";
 zci is_cached => 1;
-triggers startend => "unixtime", "time", "timestamp", "datetime", "epoch";
 
 handle remainder => sub {
 

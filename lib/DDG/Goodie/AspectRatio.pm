@@ -3,15 +3,13 @@ package DDG::Goodie::AspectRatio;
 
 use DDG::Goodie;
 
+triggers start => "aspect ratio";
 
 zci is_cached => 1;
 zci answer_type => "aspect_ratio";
-triggers start => "aspect";
 
-handle query_parts => sub {
-    shift;
-    return unless lc(shift) eq "ratio";
-    my $input = join(' ', @_);
+handle remainder => sub {
+    my $input = $_;
     my $result = 0;
     my $ratio = 0;
 

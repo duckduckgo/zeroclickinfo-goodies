@@ -21,7 +21,6 @@ triggers query_raw => CODEPOINT_RE;
 triggers query_raw => UNICODE_RE;
 
 zci is_cached => 1;
-
 zci answer_type => "unicode_conversion";
 
 handle sub {

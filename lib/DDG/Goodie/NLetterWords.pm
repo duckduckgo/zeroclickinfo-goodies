@@ -1,10 +1,10 @@
 package DDG::Goodie::NLetterWords;
 
 use DDG::Goodie;
-
 use Lingua::EN::Numericalize;
 
 triggers end => "words", "word";
+
 zci is_cached => 0;
 
 handle query_parts => sub {
