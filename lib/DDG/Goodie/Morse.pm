@@ -10,7 +10,7 @@ attribution
   github  => 'und3f',
   cpan    => 'UNDEF';
 
-triggers start => 'morse';
+triggers startend => 'morse';
 
 zci is_cached => 1;
 zci answer_type => 'chars';
