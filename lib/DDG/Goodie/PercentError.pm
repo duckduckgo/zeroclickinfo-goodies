@@ -2,7 +2,7 @@ package DDG::Goodie::PercentError;
 
 use DDG::Goodie;
 
-triggers start => "percent error", "% error", "%err", "%error", "percenterror";
+triggers start => "percent error", "% error", "%err", "%error", "percenterror", "percent err";
 
 zci answer_type => "percent_error";
 zci is_cached => 1;
@@ -11,9 +11,7 @@ handle remainder => sub {
     my $length = length($_);
 #return unless $length == 2;
 
-    my ( $acc, $exp ) = split ' ', $_;
-    $acc =~ s/[{},;\s]+//g;
-    $exp =~ s/[{},;\s]+//g;
+    my ( $acc, $exp ) = split /\s*[\s;,]\s*/, $_;
     return unless $acc =~ /^-?\d+?(?:\.\d+|)$/ && $exp =~ /^-?\d+?(?:\.\d+|)$/;
 
     my $diff = abs $acc - $exp;
