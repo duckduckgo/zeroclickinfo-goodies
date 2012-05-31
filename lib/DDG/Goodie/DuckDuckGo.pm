@@ -8,6 +8,10 @@ my %data = (
     zeroclick           => \"zeroclickinfo",
     '0click'            => \"zeroclickinfo",
     '0clickinfo'        => \"zeroclickinfo",
+    'goodies'           => "DuckDuckGo's <a href='http://github.com/duckduckgo/zeroclickinfo-goodies'>goodie repository</a>",
+    'spice'             => "DuckDuckGo's <a href='http://help.duckduckgo.com/'>goodie repository</a>",
+    'longtail'          => "DuckDuckGo's <a href='http://help.duckduckgo.com/'>longtail repository</a>",
+    'fathead'           => "DuckDuckGo's <a href='http://help.duckduckgo.com/'>fathead repository</a>",
     help                => "DuckDuckGo's help website: http://help.duckduckgo.com/",
     help_html           => "DuckDuckGo's help website: <a href='http://help.duckduckgo.com/'>http://help.duckduckgo.com/</a>",
 );
