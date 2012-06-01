@@ -44,7 +44,7 @@ handle query => sub {
     $rms += ($_ ** 2) for @nums;
     $rms /= $len;
     $rms = sqrt $rms;
-    return "Mean: $mean\nMedian: $med\nRoot Mean Square: $rms";
+    return "Mean: $mean | Median: $med | Root Mean Square: $rms", html => "<b>Mean:</b> $mean | <b>Median:</b> $med | <b>Root Mean Square:</b> $rms";
 };
 
 1;
