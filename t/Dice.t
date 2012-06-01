@@ -18,7 +18,7 @@ ddg_goodie_test(
         "roll 2d6" => test_zci(qr/^\d \+ \d = \d+$/),
         "roll 3d12 + 4" => test_zci(qr/^\d{1,2} \+ \d{1,2} \+ \d{1,2} \+ \d{1,2} = \d{1,2}$/),
         "throw 1d20" => test_zci(qr/\d{1,2}$/),
-        "roll 3d8 - 8" => test_zci(qr/^\d \+ \d \+ \d - \d = \d$/),
+        "roll 3d8 - 8" => test_zci(qr/^\d \+ \d \+ \d - \d = \d+$/),
         "roll d20" => test_zci(qr/^\d{1,2}$/),
 );
 
