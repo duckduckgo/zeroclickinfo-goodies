@@ -14,7 +14,17 @@ ddg_goodie_test(
                 DDG::Goodie::Morse
         )],
         'morse ... --- ...' => test_zci('Morse code: SOS'),
+        'morse SOS' =>
+          test_zci('Morse code: ... --- ...'),
+        'morse code SOS' =>
+          test_zci('Morse code: ... --- ...'),
+        'SOS morse' =>
+          test_zci('Morse code: ... --- ...'),
+        'SOS morse code' =>
+          test_zci('Morse code: ... --- ...'),
         'morse hello, duck' =>
+          test_zci('Morse code: .... . .-.. .-.. --- --..--  -.. ..- -.-. -.-'),
+        'morse code hello, duck' =>
           test_zci('Morse code: .... . .-.. .-.. --- --..--  -.. ..- -.-. -.-'),
 );
 
