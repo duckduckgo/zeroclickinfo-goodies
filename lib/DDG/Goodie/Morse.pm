@@ -19,7 +19,7 @@ handle remainder => sub {
     return unless $_;
 
     my $convertor = is_morse($_) ? \&as_ascii : \&as_morse;
-    return "Morse: " . $convertor->($_);
+    return "Morse code: " . $convertor->($_);
 };
 
 1;
