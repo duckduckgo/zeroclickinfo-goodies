@@ -8,12 +8,18 @@ my %data = (
     zeroclick           => \"zeroclickinfo",
     '0click'            => \"zeroclickinfo",
     '0clickinfo'        => \"zeroclickinfo",
-    'goodies'           => "DuckDuckGo's <a href='http://github.com/duckduckgo/zeroclickinfo-goodies'>goodie repository</a>",
-    'spice'             => "DuckDuckGo's <a href='http://help.duckduckgo.com/'>goodie repository</a>",
-    'longtail'          => "DuckDuckGo's <a href='http://help.duckduckgo.com/'>longtail repository</a>",
-    'fathead'           => "DuckDuckGo's <a href='http://help.duckduckgo.com/'>fathead repository</a>",
+    goodies             => "DuckDuckGo's goodie repository: https://github.com/duckduckgo/zeroclickinfo-goodies",
+    spice               => "DuckDuckGo's spice repository: https://github.com/duckduckgo/zeroclickinfo-spice",
+    longtail            => "DuckDuckGo's longtail repository: https://github.com/duckduckgo/zeroclickinfo-longtail",
+    fathead             => "DuckDuckGo's fathead repository: https://github.com/duckduckgo/zeroclickinfo-fathead",
+    goodies_html        => "DuckDuckGo's <a href='https://github.com/duckduckgo/zeroclickinfo-goodies'>goodie repository</a>",
+    spice_html          => "DuckDuckGo's <a href='https://github.com/duckduckgo/zeroclickinfo-spice'>spice repository</a>",
+    longtail_html       => "DuckDuckGo's <a href='https://github.com/duckduckgo/zeroclickinfo-longtail'>longtail repository</a>",
+    fathead_html        => "DuckDuckGo's <a href='https://github.com/duckduckgo/zeroclickinfo-fathead'>fathead repository</a>",
     help                => "DuckDuckGo's help website: http://help.duckduckgo.com/",
     help_html           => "DuckDuckGo's help website: <a href='http://help.duckduckgo.com/'>http://help.duckduckgo.com/</a>",
+    roboduck_html       => "DuckDuckGo's official <a href='https://en.wikipedia.org/wiki/IRC_Bot'>IRC bot</a>: <a href='https://github.com/Getty/duckduckgo-roboduck'>https://github.com/Getty/duckduckgo-roboduck</a>",
+    roboduck            => "DuckDuckGo's official IRC bot: https://github.com/Getty/duckduckgo-roboduck",
 );
 
 triggers start => keys %data, qw/zero 0/;
