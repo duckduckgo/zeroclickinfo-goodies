@@ -6,13 +6,13 @@ use Convert::Color::Library;
 use Math::Round;
 
 my %types = ( # hash of keyword => Convert::Color prefix
-        vga     => 'vga',
         rgb     => 'rgb8',
         hex     => 'rgb8',
         html    => 'rgb8',
         css     => 'rgb8',
         hsl     => 'hsl',
         hsv     => 'hsv',
+        cmy     => 'cmy',
         cmyk    => 'cmyk',
         cmyb    => 'cmyk',
         );
@@ -88,7 +88,7 @@ handle matches => sub {
 
     my $rgb = $col->as_rgb8;
     my $hsl = $col->as_hsl;
-    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", '#'.$rgb->hex, $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb), round($hsl->hue), percentify($hsl->saturation, $hsl->lightness), percentify($col->as_cmyk->cmyk));
+    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", '#'.$rgb->hex, $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb), round($hsl->hue), percentify($hsl->saturation, $hsl->lightness, $col->as_cmyk->cmyk));
     return $text, html => '<div style="background:#'.$rgb->hex.';border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>'.$text;
 };
 

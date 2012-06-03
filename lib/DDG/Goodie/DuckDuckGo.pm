@@ -22,13 +22,16 @@ my %data = (
     roboduck            => "DuckDuckGo's official IRC bot: https://github.com/Getty/duckduckgo-roboduck",
 );
 
-triggers start => keys %data, qw/zero 0/;
+triggers any => keys %data, qw/zero 0/;
 
 zci is_cached => 1;
 
 handle query_nowhitespace_nodash => sub {
     $_ = lc;
     s/\W//g;
+    s/^duckduckgo//i;
+    s/repo(?:sitory)?//i;
+    p($_);
     return unless exists $data{$_};
     my $answer = $data{$_};
     my $answerhtml = exists $data{"${_}_html"} ? $data{"${_}_html"} : 0;
