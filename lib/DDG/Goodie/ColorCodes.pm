@@ -8,15 +8,13 @@ use Math::Round;
 my %types = ( # hash of keyword => Convert::Color prefix
         vga     => 'vga',
         rgb     => 'rgb8',
-        hsv     => 'hsv',
         hex     => 'rgb8',
         html    => 'rgb8',
         css     => 'rgb8',
         hsl     => 'hsl',
         hsv     => 'hsv',
-        cmy     => 'cmy',
         cmyk    => 'cmyk',
-        cmyb    => 'cmyb',
+        cmyb    => 'cmyk',
         );
 
 my $typestr = join '|', keys %types;
