@@ -16,9 +16,11 @@ my %types = ( # hash of keyword => Convert::Color prefix
         cmy     => 'cmy',
         cmyk    => 'cmyk',
         cmyb    => 'cmyb',
+        '#'     => 'rgb8',
         );
 
 my $typestr = join '|', keys %types;
+$typestr =~ s/([#\^\$\*\+\?])/\\$1/g;
 
 triggers query_raw => qr/^
     (?:(.+)\s+(.+)\s+colou?r(?:\s+code)|           # handles "rgb red color code", "red rgb color code", etc
