@@ -57,7 +57,6 @@ handle matches => sub {
     for (@colorin) {
         # handle percents
         if (/(\d+(?:\.\d+)?)%$/) {
-            print "$1\n";
             my $num = $1;
             $num =~ s/\.//;
             my $len = length($num);
