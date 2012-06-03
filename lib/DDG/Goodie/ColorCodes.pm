@@ -3,6 +3,7 @@ package DDG::Goodie::ColorCodes;
 use DDG::Goodie;
 use Convert::Color;
 use Convert::Color::Library;
+use Math::Round;
 
 my %types = ( # hash of keyword => Convert::Color prefix
         vga     => 'vga',
@@ -16,7 +17,6 @@ my %types = ( # hash of keyword => Convert::Color prefix
         cmy     => 'cmy',
         cmyk    => 'cmyk',
         cmyb    => 'cmyb',
-        '#'     => 'rgb8',
         );
 
 my $typestr = join '|', keys %types;
@@ -25,7 +25,8 @@ $typestr =~ s/([#\^\$\*\+\?])/\\$1/g;
 triggers query_raw => qr/^
     (?:(.+)\s+(.+)\s+colou?r(?:\s+code)|           # handles "rgb red color code", "red rgb color code", etc
     (.+)\s+colou?r(?:\s+code)?(?:\s+for)?\s+(.+)|  # handles "rgb color code for red", "red color code for html", etc
-    ($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?)           # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+    ($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+    \#([0-9a-f]{3,6}))                             # handles #00f, #0000ff, etc
     $/ix;
 
 zci is_cached => 1;
@@ -36,6 +37,12 @@ attribution
     cpan    => 'CRZEDPSYC'
 ;
 
+sub percentify {
+    my @out;
+    push @out, ($_ <= 1 ? round(($_ * 100))."%" : round($_)) for @_;
+    return @out;
+}
+
 handle matches => sub {
     my $type;
     my $color;
@@ -45,9 +52,36 @@ handle matches => sub {
         $type = $types{$q} if exists $types{$q};
         $color = $q unless defined $type && exists $types{$q};
     }
-    return unless $type && $color;
 
-    $color =~ s/,?\s+/,/g;
+    my @colorin = split /(?:,\s*|\s+)/, $color;
+    my @colorout;
+
+    for (@colorin) {
+        # handle percents
+        if (/(\d+(?:\.\d+)?)%$/) {
+            print "$1\n";
+            my $num = $1;
+            $num =~ s/\.//;
+            my $len = length($num);
+            return unless $len > 0 && $len <= 3;
+            push @colorout, "0.0$num" if $len == 1;
+            push @colorout, "0.$num" if $len == 2;
+            push @colorout, "$num" if $len == 3;
+            $type = 'rgb' if $type eq 'rgb8';
+        }
+        else { push @colorout, $_; }
+    }
+    $color = join ',', @colorout;
+
+    if ($color =~ /^([0-9a-f]{3,6})$/) {
+        if(length($color) == 3) { 
+            $color = '';
+            $color .= $_.$_ for split '', $1;
+        }
+        $type = 'rgb8';
+    }
+
+    return unless $type && $color;
 
     eval { $color = join(',',Convert::Color::Library->new($color)->as_rgb8->hex); $type = 'rgb8'; };
 
@@ -57,7 +91,7 @@ handle matches => sub {
 
     my $rgb = $col->as_rgb8;
     my $hsl = $col->as_hsl;
-    my $text = sprintf("Hex: %s, Red: %d, Green: %d, Blue: %d ~ Hue: %d, Saturation: %.2f, Value: %.2f ~ Cyan: %.2f, Magenta: %.2f, Yellow: %.2f, Black: %.2f", '#'.$rgb->hex, $col->as_rgb8->rgb8, $hsl->hue, $hsl->saturation, $hsl->lightness, $col->as_cmyk->cmyk);
+    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", '#'.$rgb->hex, $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb), round($hsl->hue), percentify($hsl->saturation, $hsl->lightness), percentify($col->as_cmyk->cmyk));
     return $text, html => '<div style="background:#'.$rgb->hex.';border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>'.$text;
 };
 
