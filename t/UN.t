@@ -16,6 +16,7 @@ ddg_goodie_test(
     'un 9' => test_zci('UN Number 0009 - Ammunition, incendiary with or without burster, expelling charge, or propelling charge.', html => '<a href="http://en.wikipedia.org/wiki/List_of_UN_numbers_0001_to_0100">UN Number 0009</a> - Ammunition, incendiary with or without burster, expelling charge, or propelling charge.', answer_type => "united_nations"),
     'un number 9' => test_zci('UN Number 0009 - Ammunition, incendiary with or without burster, expelling charge, or propelling charge.', html => '<a href="http://en.wikipedia.org/wiki/List_of_UN_numbers_0001_to_0100">UN Number 0009</a> - Ammunition, incendiary with or without burster, expelling charge, or propelling charge.', answer_type => "united_nations"),
     'un 1993'   => test_zci('UN Number 1993 - Combustible liquids, n.o.s.', html => '<a href="http://en.wikipedia.org/wiki/List_of_UN_numbers_1901_to_2000">UN Number 1993</a> - Combustible liquids, n.o.s.', answer_type => "united_nations"),
+    'un number foo' => undef,
 
 );
 

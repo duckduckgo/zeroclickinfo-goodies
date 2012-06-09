@@ -14,6 +14,7 @@ zci answer_type => 'united_nations';
 handle remainder => sub {
   my $num = shift or return;
   $num =~ s/^number\s+//gi;
+  return unless $num =~ /^\d+$/;
 
   my %un = get_un($num) or return;
   $un{description} =~ s/\.$//;
