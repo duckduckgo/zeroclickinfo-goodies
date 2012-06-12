@@ -28,11 +28,13 @@ handle remainder => sub {
 	$crontab =~ s/$day[$_]/$newday/;
     }
     my $cron = Schedule::Cron::Events->new($crontab) or return;
-    my ($sec, $min, $hour, $day, $month, $year) = $cron->nextEvent;
-    $year = $year+1900;
-    my $text = sprintf qq(Cron will start this event next at %02d:%02d:%02d on %d %s, %d), $hour, $min, $sec, $day, $mon[$month], $year;
-    $text .= '.';
-    return $text if $_;
+    my $text;
+    # Fix for issue #95: Show the next 3 events instead of just one.
+    for (my $count=1;$count<=3;$count++) {
+      my ($sec, $min, $hour, $day, $month, $year) = $cron->nextEvent;
+      $text .= sprintf("%2d:%02d:%02d on %d %s, %d\n", $hour, $min, $sec, $day, $mon[$month], ($year+1900));
+    }
+    return "Cron will schedule the job at this frequency: \n$text" if $_;
     return;
 };
 1;
