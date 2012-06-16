@@ -11,6 +11,11 @@ zci is_cached => 1;
 
 triggers query_nowhitespace => qr/^(?:html|entity|htmlentity)?(&#?\w+;?)$/i;
 
+attribution 
+    twitter => 'crazedpsyc',
+    cpan    => 'CRZEDPSYC'
+;
+
 handle matches => sub {
     my $entity = $_[0];
     $entity =~ s/;?$/;/; # append a semicolon (some entities like &mdash do not work without one)
