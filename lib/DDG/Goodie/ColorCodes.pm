@@ -89,7 +89,7 @@ handle matches => sub {
     my $rgb = $col->as_rgb8;
     my $hsl = $col->as_hsl;
     my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", '#'.$rgb->hex, $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb), round($hsl->hue), percentify($hsl->saturation, $hsl->lightness, $col->as_cmyk->cmyk));
-    return $text, html => '<div style="background:#'.$rgb->hex.';border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>'.$text;
+    return $text, html => '<div style="background:#'.$rgb->hex.';border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>'.$text." [<a href='http://labs.tineye.com/multicolr#colors=".$rgb->hex.";weights=100;'>Images</a>]";
 };
 
 1;
