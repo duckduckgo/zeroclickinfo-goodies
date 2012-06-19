@@ -23,7 +23,7 @@ handle remainder => sub {
             time_zone => "UTC"
           );
 
-        my $time_utc = $my_time->strftime("%a %b %m %T %Y %z");
+        my $time_utc = $my_time->strftime("%a %b %d %T %Y %z");
 
 		return "Unix Time Conversion: " . $time_utc if $time_utc;
 	
