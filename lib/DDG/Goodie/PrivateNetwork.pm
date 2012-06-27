@@ -2,7 +2,7 @@ package DDG::Goodie::PrivateNetwork;
 
 use DDG::Goodie;
 
-triggers query_clean => qr/^private (?:network|ip)s?\s*(?:(?:ips?|addresse?s?))?$/i;
+triggers start => "private network", "private ip", "private networks", "private ips";
 
 zci is_cached => 1;
 zci answer_type => "private_network";

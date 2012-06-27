@@ -10,6 +10,7 @@ my %types = ( # hash of keyword => Convert::Color prefix
         hex     => 'rgb8',
         html    => 'rgb8',
         css     => 'rgb8',
+        color   => 'rgb8',
         hsl     => 'hsl',
         hsv     => 'hsv',
         cmy     => 'cmy',
