@@ -32,7 +32,6 @@ handle query_nowhitespace_nodash => sub {
     s/\W//g;
     s/^duckduckgo//i;
     s/repo(?:sitory)?//i;
-    p($_);
     return unless exists $data{$_};
     my $answer = $data{$_};
     my $answerhtml = exists $data{"${_}_html"} ? $data{"${_}_html"} : 0;
