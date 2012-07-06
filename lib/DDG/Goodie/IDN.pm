@@ -10,7 +10,7 @@ attribution web => ['http://7bits.nl/', 'Peter van Dijk'],
             github => ['https://github.com/habbie', 'habbie'],
             twitter => ['https://twitter.com/habbie', 'habbie'];
 
-triggers startend => 'idn';
+triggers startend => 'idn', 'international domain', 'internationalized domain';
 
 handle remainder => sub {
 	if(/^xn--/) {
