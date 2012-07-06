@@ -5,6 +5,11 @@ use DDG::Goodie;
 use Net::IDN::Encode ':all';
 use HTML::Entities;
 
+attribution web => ['http://7bits.nl/','Peter van Dijk'],
+            email => ['peter@7bits.nl','Peter van Dijk'],
+            github => ['habbie'],
+            twitter => ['habbie'];
+
 triggers start => 'idn';
 
 handle remainder => sub {
