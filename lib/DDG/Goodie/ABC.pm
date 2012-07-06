@@ -25,7 +25,7 @@ handle query_parts => sub {
     return if scalar(@choices) <= 1;
     my $choice = int(rand(@choices));
 
-    if (my @duck = grep { $_ eq 'duckduckgo' || $_ eq 'duck' || $_ eq 'ddg' } @choices) {
+    if (my @duck = grep { / \A (?: duck (?: duckgo )? | ddg ) \z /ix } @choices) {
         return $duck[0]." (not random)", answer_type => 'egg';
     }
 
