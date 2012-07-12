@@ -4388,8 +4388,8 @@ handle query => sub {
             return "Default login for the $router: "
                  . "Username: $username "
                  . "Password: $password",
-                    html => "Default login for the $router: "
-                          . "<i>Username</i>: $username "
+                    html => "Default login for the $router:<br>"
+                          . "<i>Username</i>: $username<br>"
                           . "<i>Password</i>: $password";
         }
     }
