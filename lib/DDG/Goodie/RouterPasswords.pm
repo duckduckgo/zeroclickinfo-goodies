@@ -3,4351 +3,4351 @@ package DDG::Goodie::RouterPasswords;
 use DDG::Goodie;
 
 my %routers = (
-    "2WIRE HOMEPORTAL Rev. SBC YAHOO! DSL" => {
+    "2wire homeportal rev. sbc yahoo! dsl" => {
         "username" => "2Wire",
         "password" => "password"
     },
-    "2WIRE ALL WIFI ROUTERS" => {
+    "2wire all wifi routers" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "3COM COREBUILDER Rev. 7000/6000/3500/2500" => {
+    "3com corebuilder rev. 7000/6000/3500/2500" => {
         "username" => "debug",
         "password" => "password"
     },
-    "3COM COREBUILDER Rev. 7000/6000/3500/2500" => {
+    "3com corebuilder rev. 7000/6000/3500/2500" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM HIPERARC Rev. V4.1.X" => {
+    "3com hiperarc rev. v4.1.x" => {
         "username" => "adm",
         "password" => "password"
     },
-    "3COM LANPLEX Rev. 2500" => {
+    "3com lanplex rev. 2500" => {
         "username" => "debug",
         "password" => "password"
     },
-    "3COM LANPLEX Rev. 2500" => {
+    "3com lanplex rev. 2500" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM LINKSWITCH Rev. 2000/2700" => {
+    "3com linkswitch rev. 2000/2700" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM NETBUILDER" => {
+    "3com netbuilder" => {
         "username" => "",
         "password" => "password"
     },
-    "3COM NETBUILDER" => {
+    "3com netbuilder" => {
         "username" => "",
         "password" => "password"
     },
-    "3COM NETBUILDER" => {
+    "3com netbuilder" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM OFFICE CONNECT ISDN ROUTERS Rev. 5X0" => {
+    "3com office connect isdn routers rev. 5x0" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "3COM SUPERSTACK II SWITCH Rev. 2200" => {
+    "3com superstack ii switch rev. 2200" => {
         "username" => "debug",
         "password" => "password"
     },
-    "3COM SUPERSTACK II SWITCH Rev. 2700" => {
+    "3com superstack ii switch rev. 2700" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM OFFICECONNECT 812 ADSL" => {
+    "3com officeconnect 812 adsl" => {
         "username" => "adminttd",
         "password" => "password"
     },
-    "3COM WIRELESS AP Rev. ANY" => {
+    "3com wireless ap rev. any" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM HIPERARC Rev. V4.1.X" => {
+    "3com hiperarc rev. v4.1.x" => {
         "username" => "adm",
         "password" => "password"
     },
-    "3COM LANPLEX Rev. 2500" => {
+    "3com lanplex rev. 2500" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM CELLPLEX" => {
+    "3com cellplex" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM SUPERSTACK II SWITCH Rev. 2700" => {
+    "3com superstack ii switch rev. 2700" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "root",
         "password" => "password"
     },
-    "3COM HIPERACT Rev. V4.1.X" => {
+    "3com hiperact rev. v4.1.x" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM SUPERSTACK 3 Rev. 4XXX" => {
+    "3com superstack 3 rev. 4xxx" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM SUPERSTACK 3 Rev. 4XXX" => {
+    "3com superstack 3 rev. 4xxx" => {
         "username" => "monitor",
         "password" => "password"
     },
-    "3COM SUPERSTACK 3 Rev. 4400-49XX" => {
+    "3com superstack 3 rev. 4400-49xx" => {
         "username" => "manager",
         "password" => "password"
     },
-    "3COM NETBUILDER" => {
+    "3com netbuilder" => {
         "username" => "Root",
         "password" => "password"
     },
-    "3COM 3C16450" => {
+    "3com 3c16450" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM 3C16406" => {
+    "3com 3c16406" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM OFFICE CONNECT ISDN ROUTERS Rev. 5X0" => {
+    "3com office connect isdn routers rev. 5x0" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "3COM COREBUILDER Rev. 7000/6000/3500/2500" => {
+    "3com corebuilder rev. 7000/6000/3500/2500" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "3COM COREBUILDER Rev. 7000/6000/3500/2500" => {
+    "3com corebuilder rev. 7000/6000/3500/2500" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "3COM OFFICECONNECT ADSL WIRELESS 11G FIREWALL ROUTER Rev. 3CRWDR100-72" => {
+    "3com officeconnect adsl wireless 11g firewall router rev. 3crwdr100-72" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "3COM INTERNET FIREWALL Rev. 3C16770" => {
+    "3com internet firewall rev. 3c16770" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM SHARK FIN Rev. COMCAST-SUPPLIED" => {
+    "3com shark fin rev. comcast-supplied" => {
         "username" => "User",
         "password" => "password"
     },
-    "3COM 812" => {
+    "3com 812" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "operator",
         "password" => "password"
     },
-    "3COM 3COM SUPERSTACK 3 SWITCH 3300XM" => {
+    "3com 3com superstack 3 switch 3300xm" => {
         "username" => "security",
         "password" => "password"
     },
-    "3COM SUPERSTACK II Rev. 1100/3300" => {
+    "3com superstack ii rev. 1100/3300" => {
         "username" => "3comcso",
         "password" => "password"
     },
-    "3COM NETBUILDER" => {
+    "3com netbuilder" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM SUPER" => {
+    "3com super" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "root",
         "password" => "password"
     },
-    "3COM NETBUILDER" => {
+    "3com netbuilder" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "operator",
         "password" => "password"
     },
-    "3COM OFFICECONNECT 812 ADSL Rev. 01.50-01" => {
+    "3com officeconnect 812 adsl rev. 01.50-01" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM CELLPLEX" => {
+    "3com cellplex" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM HIPERACT Rev. V4.1.X" => {
+    "3com hiperact rev. v4.1.x" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM 3C16405" => {
+    "3com 3c16405" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "3COM 3C16405" => {
+    "3com 3c16405" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "3COM SWITCH Rev. 3300XM" => {
+    "3com switch rev. 3300xm" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM SS III SWITCH Rev. 4XXX (4900 - SURE)" => {
+    "3com ss iii switch rev. 4xxx (4900 - sure)" => {
         "username" => "recovery",
         "password" => "password"
     },
-    "3COM OFFICECONNECT WIRELESS 11G CABLE/DSL GATEWAY" => {
+    "3com officeconnect wireless 11g cable/dsl gateway" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "3COM 3C16405" => {
+    "3com 3c16405" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM OFFICECONNECT 812 ADSL Rev. 01.50-01" => {
+    "3com officeconnect 812 adsl rev. 01.50-01" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM CELLPLEX" => {
+    "3com cellplex" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "3COM CELLPLEX" => {
+    "3com cellplex" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM HIPERACT Rev. V4.1.X" => {
+    "3com hiperact rev. v4.1.x" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM 3C16405" => {
+    "3com 3c16405" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "3COM CELLPLEX Rev. 7000" => {
+    "3com cellplex rev. 7000" => {
         "username" => "tech",
         "password" => "password"
     },
-    "3COM SWITCH Rev. 3300XM" => {
+    "3com switch rev. 3300xm" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM SS III SWITCH Rev. 4XXX (4900 - SURE)" => {
+    "3com ss iii switch rev. 4xxx (4900 - sure)" => {
         "username" => "recovery",
         "password" => "password"
     },
-    "3COM OFFICECONNECT WIRELESS 11G CABLE/DSL GATEWAY" => {
+    "3com officeconnect wireless 11g cable/dsl gateway" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "3COM 3CRADSL72 Rev. 1.2" => {
+    "3com 3cradsl72 rev. 1.2" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "3COM CB9000 / 4007 Rev. 3" => {
+    "3com cb9000 / 4007 rev. 3" => {
         "username" => "Type User: FORCE",
         "password" => "password"
     },
-    "3COM OFFICECONNECT" => {
+    "3com officeconnect" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "3COM SUPERSTACK II NETBUILDER Rev. 11.1" => {
+    "3com superstack ii netbuilder rev. 11.1" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "3COM OFFICECONNECT" => {
+    "3com officeconnect" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3COM OFFICE CONNECT Rev. 11G" => {
+    "3com office connect rev. 11g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "3M VOL-0215 ETC." => {
+    "3m vol-0215 etc." => {
         "username" => "volition",
         "password" => "password"
     },
-    "3WARE 3DM" => {
+    "3ware 3dm" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "ACCELERATED NETWORKS DSL CPE AND DSLAM" => {
+    "accelerated networks dsl cpe and dslam" => {
         "username" => "sysadm",
         "password" => "password"
     },
-    "ACCONET ROUTER" => {
+    "acconet router" => {
         "username" => "Admin",
         "password" => "password"
     },
-    "ACCTON WIRELESSROUTER Rev. T-ONLINE" => {
+    "accton wirelessrouter rev. t-online" => {
         "username" => "none",
         "password" => "password"
     },
-    "ACCTON T-ONLINE ACCTON" => {
+    "accton t-online accton" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ACCTON T-ONLINE ACCTON" => {
+    "accton t-online accton" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ACEEX MODEM ADSL ROUTER" => {
+    "aceex modem adsl router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ACEEX MODEM ADSL ROUTER" => {
+    "aceex modem adsl router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ACTIONTEC GE344000-01" => {
+    "actiontec ge344000-01" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ACTIONTEC W1424WR" => {
+    "actiontec w1424wr" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ACTIONTEC R1520SU" => {
+    "actiontec r1520su" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ACTIONTEC GT704-WG" => {
+    "actiontec gt704-wg" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ADC KENTROX PACESETTER ROUTER" => {
+    "adc kentrox pacesetter router" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADIC SCALAR 100/1000" => {
+    "adic scalar 100/1000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ADIC SCALAR I2000" => {
+    "adic scalar i2000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ADTRAN MX2800" => {
+    "adtran mx2800" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN SMART 16/16E" => {
+    "adtran smart 16/16e" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN ATLAS 800/800PLUS/810PLUS/550" => {
+    "adtran atlas 800/800plus/810plus/550" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN SMART 16/16E" => {
+    "adtran smart 16/16e" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN NXIQ" => {
+    "adtran nxiq" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN TSU IQ/DSU IQ" => {
+    "adtran tsu iq/dsu iq" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN EXPRESS 5110/5200/5210" => {
+    "adtran express 5110/5200/5210" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN AGENT CARD" => {
+    "adtran agent card" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN TSU ROUTER MODULE/L128/L768/1.5" => {
+    "adtran tsu router module/l128/l768/1.5" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADTRAN T3SU 300" => {
+    "adtran t3su 300" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ADVANTEK NETWORKS WIRELESS LAN 802.11 G/B" => {
+    "advantek networks wireless lan 802.11 g/b" => {
         "username" => "admin",
         "password" => "password"
     },
-    "AETHRA STARBRIDGE EU" => {
+    "aethra starbridge eu" => {
         "username" => "admin",
         "password" => "password"
     },
-    "AIRTIES ALL" => {
+    "airties all" => {
         "username" => "(blank)",
         "password" => "password"
     },
-    "ALAXALA AX7800R" => {
+    "alaxala ax7800r" => {
         "username" => "operator",
         "password" => "password"
     },
-    "ALCATEL 4400" => {
+    "alcatel 4400" => {
         "username" => "mtcl",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "kermit",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "dhs3mt",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "at4400",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "mtch",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "mtcl",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "root",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "dhs3pms",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "adfexc",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "client",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "install",
         "password" => "password"
     },
-    "ALCATEL PBX Rev. 4400" => {
+    "alcatel pbx rev. 4400" => {
         "username" => "halt",
         "password" => "password"
     },
-    "ALCATEL OFFICE 4200" => {
+    "alcatel office 4200" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ALCATEL OMNISTACK 6024" => {
+    "alcatel omnistack 6024" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ALCATEL OMNISTACK/OMNISWITCH" => {
+    "alcatel omnistack/omniswitch" => {
         "username" => "diag",
         "password" => "password"
     },
-    "ALCATEL OMNISTACK/OMNISWITCH" => {
+    "alcatel omnistack/omniswitch" => {
         "username" => "diag",
         "password" => "password"
     },
-    "ALCATEL TIMESTEP VPN 1520 Rev. 3.00.026" => {
+    "alcatel timestep vpn 1520 rev. 3.00.026" => {
         "username" => "root",
         "password" => "password"
     },
-    "ALCATEL OXO Rev. 1.3" => {
+    "alcatel oxo rev. 1.3" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ALCATEL OMNIPCX OFFICE Rev. 4.1" => {
+    "alcatel omnipcx office rev. 4.1" => {
         "username" => "ftp_inst",
         "password" => "password"
     },
-    "ALCATEL OMNIPCX OFFICE Rev. 4.1" => {
+    "alcatel omnipcx office rev. 4.1" => {
         "username" => "ftp_admi",
         "password" => "password"
     },
-    "ALCATEL OMNIPCX OFFICE Rev. 4.1" => {
+    "alcatel omnipcx office rev. 4.1" => {
         "username" => "ftp_oper",
         "password" => "password"
     },
-    "ALCATEL OMNIPCX OFFICE Rev. 4.1" => {
+    "alcatel omnipcx office rev. 4.1" => {
         "username" => "ftp_nmc",
         "password" => "password"
     },
-    "ALLIED TELESYN" => {
+    "allied telesyn" => {
         "username" => "manager",
         "password" => "password"
     },
-    "ALLIED TELESYN AT-8024(GB)" => {
+    "allied telesyn at-8024(gb)" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ALLIED TELESYN AT-8024(GB)" => {
+    "allied telesyn at-8024(gb)" => {
         "username" => "manager",
         "password" => "password"
     },
-    "ALLIED TELESYN AT ROUTER" => {
+    "allied telesyn at router" => {
         "username" => "root",
         "password" => "password"
     },
-    "ALLIED TELESYN ALAT8326GB" => {
+    "allied telesyn alat8326gb" => {
         "username" => "manager",
         "password" => "password"
     },
-    "ALLIED TELESYN AT8016F" => {
+    "allied telesyn at8016f" => {
         "username" => "manager",
         "password" => "password"
     },
-    "ALLIED TELESYN AT-AR130 (U) -10" => {
+    "allied telesyn at-ar130 (u) -10" => {
         "username" => "Manager",
         "password" => "password"
     },
-    "ALLNET T-DSL MODEM Rev. SOFTWARE VERSION: V1.51" => {
+    "allnet t-dsl modem rev. software version: v1.51" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ALLNET ALL0275 802.11G AP Rev. 1.0.6" => {
+    "allnet all0275 802.11g ap rev. 1.0.6" => {
         "username" => "none",
         "password" => "password"
     },
-    "ALTEON ACEDIRECTOR3" => {
+    "alteon acedirector3" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ALTEON ACESWITCH Rev. 180E" => {
+    "alteon aceswitch rev. 180e" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ALTEON ACESWITCH Rev. 180E" => {
+    "alteon aceswitch rev. 180e" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ALTEON ACESWITCH Rev. 180E" => {
+    "alteon aceswitch rev. 180e" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ALTEON AD4 Rev. 9" => {
+    "alteon ad4 rev. 9" => {
         "username" => "admin",
         "password" => "password"
     },
-    "AMBIT ADSL" => {
+    "ambit adsl" => {
         "username" => "root",
         "password" => "password"
     },
-    "AMBIT CABLE MODEM 60678EU Rev. 1.12" => {
+    "ambit cable modem 60678eu rev. 1.12" => {
         "username" => "root",
         "password" => "password"
     },
-    "AMBIT CABLE MODEM" => {
+    "ambit cable modem" => {
         "username" => "root",
         "password" => "password"
     },
-    "AMBIT NTL:HOME 200 Rev. 2.67.1011" => {
+    "ambit ntl:home 200 rev. 2.67.1011" => {
         "username" => "root",
         "password" => "password"
     },
-    "AMBIT U10C019" => {
+    "ambit u10c019" => {
         "username" => "user",
         "password" => "password"
     },
-    "AMITECH WIRELESS ROUTER AND ACCESS POINT 802.11G 802.11B Rev. ANY" => {
+    "amitech wireless router and access point 802.11g 802.11b rev. any" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ANDOVER CONTROLS INFINITY Rev. ANY" => {
+    "andover controls infinity rev. any" => {
         "username" => "acc",
         "password" => "password"
     },
-    "AOC ZENWORKS 4.0" => {
+    "aoc zenworks 4.0" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "APC 9606 SMART SLOT" => {
+    "apc 9606 smart slot" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "APC USV NETWORK MANAGEMENT CARD" => {
+    "apc usv network management card" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "APC UPSES (WEB/SNMP MGMT CARD)" => {
+    "apc upses (web/snmp mgmt card)" => {
         "username" => "device",
         "password" => "password"
     },
-    "APC SMART UPS" => {
+    "apc smart ups" => {
         "username" => "apc",
         "password" => "password"
     },
-    "APC SMARTUPS 3000" => {
+    "apc smartups 3000" => {
         "username" => "apc",
         "password" => "password"
     },
-    "APPLE AIRPORT BASE STATION (GRAPHITE) Rev. 2" => {
+    "apple airport base station (graphite) rev. 2" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "APPLE AIRPORT BASE STATION (DUAL ETHERNET) Rev. 2" => {
+    "apple airport base station (dual ethernet) rev. 2" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "APPLE AIRPORT EXTREME BASE STATION Rev. 2" => {
+    "apple airport extreme base station rev. 2" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "APPLE AIRPORT5 Rev. 1.0.09" => {
+    "apple airport5 rev. 1.0.09" => {
         "username" => "root",
         "password" => "password"
     },
-    "APPLE IPHONE IOS4.X Rev. ALL" => {
+    "apple iphone ios4.x rev. all" => {
         "username" => "root",
         "password" => "password"
     },
-    "ARECA RAID CONTROLLERS" => {
+    "areca raid controllers" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ARESCOM MODEM/ROUTER Rev. 10XX" => {
+    "arescom modem/router rev. 10xx" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ARESCOM ROUTER Rev. ANY" => {
+    "arescom router rev. any" => {
         "username" => "",
         "password" => "password"
     },
-    "ARTEM COMPOINT - CPD-XT-B Rev. CPD-XT-B" => {
+    "artem compoint - cpd-xt-b rev. cpd-xt-b" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ASANTE INTRASWITCH" => {
+    "asante intraswitch" => {
         "username" => "IntraSwitch",
         "password" => "password"
     },
-    "ASANTE INTRASTACK" => {
+    "asante intrastack" => {
         "username" => "IntraStack",
         "password" => "password"
     },
-    "ASANTE FM2008" => {
+    "asante fm2008" => {
         "username" => "superuser",
         "password" => "password"
     },
-    "ASANTE FM2008" => {
+    "asante fm2008" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASCEND YURIE" => {
+    "ascend yurie" => {
         "username" => "readonly",
         "password" => "password"
     },
-    "ASCEND ROUTER" => {
+    "ascend router" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ASCEND SAHARA" => {
+    "ascend sahara" => {
         "username" => "root",
         "password" => "password"
     },
-    "ASCOM ASCOTEL PBX Rev. ALL" => {
+    "ascom ascotel pbx rev. all" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ASMACK ROUTER Rev. AR804U" => {
+    "asmack router rev. ar804u" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASMAX AR701U / ASMAX AR6024" => {
+    "asmax ar701u / asmax ar6024" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASMAX AR800C2" => {
+    "asmax ar800c2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASMAX AR800C2" => {
+    "asmax ar800c2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASMAX AR-804U" => {
+    "asmax ar-804u" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASPECT ACD Rev. 6" => {
+    "aspect acd rev. 6" => {
         "username" => "customer",
         "password" => "password"
     },
-    "ASPECT ACD Rev. 6" => {
+    "aspect acd rev. 6" => {
         "username" => "DTA",
         "password" => "password"
     },
-    "ASPECT ACD Rev. 7" => {
+    "aspect acd rev. 7" => {
         "username" => "DTA",
         "password" => "password"
     },
-    "ASPECT ACD Rev. 8" => {
+    "aspect acd rev. 8" => {
         "username" => "DTA",
         "password" => "password"
     },
-    "ASUS WL-500G Rev. 1.7.5.6" => {
+    "asus wl-500g rev. 1.7.5.6" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASUS WL503G Rev. ALL" => {
+    "asus wl503g rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASUS WL500 Rev. ALL" => {
+    "asus wl500 rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASUS WL300 Rev. ALL" => {
+    "asus wl300 rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASUS WL500G DELUXE" => {
+    "asus wl500g deluxe" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ASUS P5P800" => {
+    "asus p5p800" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ASUS WL500G" => {
+    "asus wl500g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ATLANTIS A02-RA141" => {
+    "atlantis a02-ra141" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ATLANTIS I-STORM LAN ROUTER ADSL" => {
+    "atlantis i-storm lan router adsl" => {
         "username" => "admin",
         "password" => "password"
     },
-    "AVAYA G3R Rev. V6" => {
+    "avaya g3r rev. v6" => {
         "username" => "root",
         "password" => "password"
     },
-    "AVAYA CAJUN P33X Rev. FIRMWARE BEFORE 3.11.0" => {
+    "avaya cajun p33x rev. firmware before 3.11.0" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "AVAYA DEFINITY Rev. G3SI" => {
+    "avaya definity rev. g3si" => {
         "username" => "craft",
         "password" => "password"
     },
-    "AVAYA CAJUN PXXX" => {
+    "avaya cajun pxxx" => {
         "username" => "root",
         "password" => "password"
     },
-    "AVAYA CAJUN Rev. P550R P580 P880 AND P882" => {
+    "avaya cajun rev. p550r p580 p880 and p882" => {
         "username" => "diag",
         "password" => "password"
     },
-    "AVAYA CAJUN Rev. P550R P580 P880 AND P882" => {
+    "avaya cajun rev. p550r p580 p880 and p882" => {
         "username" => "manuf",
         "password" => "password"
     },
-    "AVAYA PXXX Rev. 5.2.14" => {
+    "avaya pxxx rev. 5.2.14" => {
         "username" => "diag",
         "password" => "password"
     },
-    "AVAYA PXXX Rev. 5.2.14" => {
+    "avaya pxxx rev. 5.2.14" => {
         "username" => "manuf",
         "password" => "password"
     },
-    "AVAYA DEFINITY Rev. UP TO REV. 6" => {
+    "avaya definity rev. up to rev. 6" => {
         "username" => "craft",
         "password" => "password"
     },
-    "AVAYA CMS SUPERVISOR Rev. 11" => {
+    "avaya cms supervisor rev. 11" => {
         "username" => "root",
         "password" => "password"
     },
-    "AVAYA DEFINITY" => {
+    "avaya definity" => {
         "username" => "dadmin",
         "password" => "password"
     },
-    "AXIS NETCAM Rev. 200/240" => {
+    "axis netcam rev. 200/240" => {
         "username" => "root",
         "password" => "password"
     },
-    "AXIS ALL AXIS PRINTSERVER Rev. ALL" => {
+    "axis all axis printserver rev. all" => {
         "username" => "root",
         "password" => "password"
     },
-    "AXIS WEBCAMS" => {
+    "axis webcams" => {
         "username" => "root",
         "password" => "password"
     },
-    "AXIS 540/542 PRINT SERVER" => {
+    "axis 540/542 print server" => {
         "username" => "root",
         "password" => "password"
     },
-    "AXIS NETCAM Rev. 200/240" => {
+    "axis netcam rev. 200/240" => {
         "username" => "root",
         "password" => "password"
     },
-    "AXIS 2100" => {
+    "axis 2100" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "AXUS AXUS YOTTA" => {
+    "axus axus yotta" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "AZTECH DSL-600E" => {
+    "aztech dsl-600e" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BAUSCH DATACOM PROXIMA PRI ADSL PSTN ROUTER4 WIRELESS" => {
+    "bausch datacom proxima pri adsl pstn router4 wireless" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BAY NETWORKS SWITCH Rev. 350T" => {
+    "bay networks switch rev. 350t" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BAY NETWORKS SUPERSTACK II" => {
+    "bay networks superstack ii" => {
         "username" => "security",
         "password" => "password"
     },
-    "BAY NETWORKS ROUTER" => {
+    "bay networks router" => {
         "username" => "User",
         "password" => "password"
     },
-    "BAY NETWORKS ROUTER" => {
+    "bay networks router" => {
         "username" => "Manager",
         "password" => "password"
     },
-    "BAY NETWORKS ROUTER" => {
+    "bay networks router" => {
         "username" => "User",
         "password" => "password"
     },
-    "BAY NETWORKS SUPERSTACK II" => {
+    "bay networks superstack ii" => {
         "username" => "security",
         "password" => "password"
     },
-    "BAY NETWORKS SWITCH Rev. 350T" => {
+    "bay networks switch rev. 350t" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BBR-4MG AND BBR-4HG BUFFALO Rev. ALL" => {
+    "bbr-4mg and bbr-4hg buffalo rev. all" => {
         "username" => "root",
         "password" => "password"
     },
-    "BELKIN F5D6130" => {
+    "belkin f5d6130" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "BELKIN F5D7150 Rev. FB" => {
+    "belkin f5d7150 rev. fb" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BELKIN F5D8233-4" => {
+    "belkin f5d8233-4" => {
         "username" => "(blank)",
         "password" => "password"
     },
-    "BELKIN F5D7231" => {
+    "belkin f5d7231" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BENQ AWL 700 WIRELESS ROUTER Rev. 1.3.6 BETA-002" => {
+    "benq awl 700 wireless router rev. 1.3.6 beta-002" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BILLION BIPAC 5100" => {
+    "billion bipac 5100" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BILLION BIPAC-640 AC Rev. 640AE100" => {
+    "billion bipac-640 ac rev. 640ae100" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "BINTEC BIANCA/BRICK Rev. XM-5.1" => {
+    "bintec bianca/brick rev. xm-5.1" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BINTEC X1200 Rev. 37834" => {
+    "bintec x1200 rev. 37834" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BINTEC X2300I Rev. 37834" => {
+    "bintec x2300i rev. 37834" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BINTEC X3200 Rev. 37834" => {
+    "bintec x3200 rev. 37834" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BINTEC BIANKA ROUTERS" => {
+    "bintec bianka routers" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BLUE COAT SYSTEMS PROXYSG Rev. 3.X" => {
+    "blue coat systems proxysg rev. 3.x" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BMC PATROL Rev. 6" => {
+    "bmc patrol rev. 6" => {
         "username" => "patrol",
         "password" => "password"
     },
-    "BMC SOFTWARE PATROL Rev. ALL" => {
+    "bmc software patrol rev. all" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "BREEZECOM BREEZECOM ADAPTERS Rev. 3.X" => {
+    "breezecom breezecom adapters rev. 3.x" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BREEZECOM BREEZECOM ADAPTERS Rev. 2.X" => {
+    "breezecom breezecom adapters rev. 2.x" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BREEZECOM BREEZECOM ADAPTERS Rev. 4.4.X" => {
+    "breezecom breezecom adapters rev. 4.4.x" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BREEZECOM BREEZECOM ADAPTERS Rev. 4.X" => {
+    "breezecom breezecom adapters rev. 4.x" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BREEZECOM BREEZECOM ADAPTERS Rev. 3.X" => {
+    "breezecom breezecom adapters rev. 3.x" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BREEZECOM BREEZECOM ADAPTERS Rev. 2.X" => {
+    "breezecom breezecom adapters rev. 2.x" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BROADLOGIC XLT ROUTER" => {
+    "broadlogic xlt router" => {
         "username" => "webadmin",
         "password" => "password"
     },
-    "BROADLOGIC XLT ROUTER" => {
+    "broadlogic xlt router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BROADLOGIC XLT ROUTER" => {
+    "broadlogic xlt router" => {
         "username" => "installer",
         "password" => "password"
     },
-    "BROCADE FABRIC OS Rev. ALL" => {
+    "brocade fabric os rev. all" => {
         "username" => "root",
         "password" => "password"
     },
-    "BROCADE SILKWORM Rev. ALL" => {
+    "brocade silkworm rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BROCADE FABRIC OS" => {
+    "brocade fabric os" => {
         "username" => "admin",
         "password" => "password"
     },
-    "BROTHER NC-3100H" => {
+    "brother nc-3100h" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "BROTHER NC-4100H" => {
+    "brother nc-4100h" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "BROTHER HL-1270N" => {
+    "brother hl-1270n" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "BUFFALO WIRELESS BROADBAND BASE STATION-G Rev. WLA-G54 WBR-G54" => {
+    "buffalo wireless broadband base station-g rev. wla-g54 wbr-g54" => {
         "username" => "root",
         "password" => "password"
     },
-    "CABLE AND WIRELESS ADSL MODEM/ROUTER" => {
+    "cable and wireless adsl modem/router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CABLETRON NETGEAR MODEM/ROUTER AND SSR" => {
+    "cabletron netgear modem/router and ssr" => {
         "username" => "netman",
         "password" => "password"
     },
-    "CANYON ROUTER" => {
+    "canyon router" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "CAYMAN CAYMAN DSL" => {
+    "cayman cayman dsl" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "CELERITY MEDIATOR Rev. MULTI" => {
+    "celerity mediator rev. multi" => {
         "username" => "mediator",
         "password" => "password"
     },
-    "CELERITY MEDIATOR" => {
+    "celerity mediator" => {
         "username" => "root",
         "password" => "password"
     },
-    "CELLIT CCPRO" => {
+    "cellit ccpro" => {
         "username" => "cellit",
         "password" => "password"
     },
-    "CHECKPOINT SECUREPLATFORM Rev. NG FP3" => {
+    "checkpoint secureplatform rev. ng fp3" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CIPHERTRUST IRONMAIL Rev. ANY" => {
+    "ciphertrust ironmail rev. any" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CISCO CACHE ENGINE" => {
+    "cisco cache engine" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CISCO CONFIGMAKER" => {
+    "cisco configmaker" => {
         "username" => "cmaker",
         "password" => "password"
     },
-    "CISCO CNR Rev. ALL" => {
+    "cisco cnr rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CISCO NETRANGER/SECURE IDS" => {
+    "cisco netranger/secure ids" => {
         "username" => "netrangr",
         "password" => "password"
     },
-    "CISCO BBSM Rev. 5.0 AND 5.1" => {
+    "cisco bbsm rev. 5.0 and 5.1" => {
         "username" => "bbsd-client",
         "password" => "password"
     },
-    "CISCO BBSD MSDE CLIENT Rev. 5.0 AND 5.1" => {
+    "cisco bbsd msde client rev. 5.0 and 5.1" => {
         "username" => "bbsd-client",
         "password" => "password"
     },
-    "CISCO BBSM ADMINISTRATOR Rev. 5.0 AND 5.1" => {
+    "cisco bbsm administrator rev. 5.0 and 5.1" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "CISCO NETRANGER/SECURE IDS Rev. 3.0(5)S17" => {
+    "cisco netranger/secure ids rev. 3.0(5)s17" => {
         "username" => "root",
         "password" => "password"
     },
-    "CISCO BBSM MSDE ADMINISTRATOR Rev. 5.0 AND 5.1" => {
+    "cisco bbsm msde administrator rev. 5.0 and 5.1" => {
         "username" => "sa",
         "password" => "password"
     },
-    "CISCO CATALYST 4000/5000/6000 Rev. ALL" => {
+    "cisco catalyst 4000/5000/6000 rev. all" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "CISCO PIX FIREWALL" => {
+    "cisco pix firewall" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "CISCO VPN CONCENTRATOR 3000 SERIES Rev. 3" => {
+    "cisco vpn concentrator 3000 series rev. 3" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CISCO CONTENT ENGINE" => {
+    "cisco content engine" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CISCO AP1200 Rev. IOS" => {
+    "cisco ap1200 rev. ios" => {
         "username" => "Cisco",
         "password" => "password"
     },
-    "CISCO CISCOWORKS 2000" => {
+    "cisco ciscoworks 2000" => {
         "username" => "guest",
         "password" => "password"
     },
-    "CISCO CISCOWORKS 2000" => {
+    "cisco ciscoworks 2000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CISCO CONFIGMAKER" => {
+    "cisco configmaker" => {
         "username" => "cmaker",
         "password" => "password"
     },
-    "CISCO CISO AIRONET 1100 SERIES Rev. REV. 01" => {
+    "cisco ciso aironet 1100 series rev. rev. 01" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "CISCO AIRONET" => {
+    "cisco aironet" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "CISCO AIRONET" => {
+    "cisco aironet" => {
         "username" => "Cisco",
         "password" => "password"
     },
-    "CISCO HSE" => {
+    "cisco hse" => {
         "username" => "root",
         "password" => "password"
     },
-    "CISCO HSE" => {
+    "cisco hse" => {
         "username" => "hsa",
         "password" => "password"
     },
-    "CISCO WLSE" => {
+    "cisco wlse" => {
         "username" => "root",
         "password" => "password"
     },
-    "CISCO WLSE" => {
+    "cisco wlse" => {
         "username" => "wlse",
         "password" => "password"
     },
-    "CISCO AIRONET 1200" => {
+    "cisco aironet 1200" => {
         "username" => "root",
         "password" => "password"
     },
-    "CISCO CVA 122" => {
+    "cisco cva 122" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CISCO 3600" => {
+    "cisco 3600" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "CISCO 1" => {
+    "cisco 1" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CISCO 2600" => {
+    "cisco 2600" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "CISCO CISCO ATA-186 (VONAGE)" => {
+    "cisco cisco ata-186 (vonage)" => {
         "username" => "(blank)",
         "password" => "password"
     },
-    "CISCO 3700" => {
+    "cisco 3700" => {
         "username" => "cisco",
         "password" => "password"
     },
-    "CISCO-ARROWPOINT ARROWPOINT" => {
+    "cisco-arrowpoint arrowpoint" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CNET CNET 4PORT ADSL MODEM Rev. CNAD NF400" => {
+    "cnet cnet 4port adsl modem rev. cnad nf400" => {
         "username" => "admin",
         "password" => "password"
     },
-    "COM3 OLE" => {
+    "com3 ole" => {
         "username" => "admin",
         "password" => "password"
     },
-    "COMPAQ INSIGHT MANAGER" => {
+    "compaq insight manager" => {
         "username" => "administrator",
         "password" => "password"
     },
-    "COMPAQ INSIGHT MANAGER" => {
+    "compaq insight manager" => {
         "username" => "anonymous",
         "password" => "password"
     },
-    "COMPAQ INSIGHT MANAGER" => {
+    "compaq insight manager" => {
         "username" => "user",
         "password" => "password"
     },
-    "COMPAQ INSIGHT MANAGER" => {
+    "compaq insight manager" => {
         "username" => "operator",
         "password" => "password"
     },
-    "COMPAQ INSIGHT MANAGER" => {
+    "compaq insight manager" => {
         "username" => "user",
         "password" => "password"
     },
-    "COMPAQ INSIGHT MANAGER" => {
+    "compaq insight manager" => {
         "username" => "PFCUser",
         "password" => "password"
     },
-    "COMTREND CT536+" => {
+    "comtrend ct536+" => {
         "username" => "admin",
         "password" => "password"
     },
-    "COMTREND CT-536+" => {
+    "comtrend ct-536+" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CONEXANT ROUTER" => {
+    "conexant router" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "CONEXANT ROUTER" => {
+    "conexant router" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "CONEXANT ACCESS RUNNER ADSL CONSOLE PORT 3.27" => {
+    "conexant access runner adsl console port 3.27" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "CORECESS CORECESS 3112" => {
+    "corecess corecess 3112" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "CORECESS 6808 APC" => {
+    "corecess 6808 apc" => {
         "username" => "corecess",
         "password" => "password"
     },
-    "CORECESS 3113" => {
+    "corecess 3113" => {
         "username" => "admin",
         "password" => "password"
     },
-    "CREATIVE 2015U" => {
+    "creative 2015u" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "CTC UNION ATU-R130 Rev. 81001A" => {
+    "ctc union atu-r130 rev. 81001a" => {
         "username" => "root",
         "password" => "password"
     },
-    "CYBERGUARD ALL FIREWALLS Rev. ALL" => {
+    "cyberguard all firewalls rev. all" => {
         "username" => "cgadmin",
         "password" => "password"
     },
-    "CYCLADES PR 1000" => {
+    "cyclades pr 1000" => {
         "username" => "super",
         "password" => "password"
     },
-    "CYCLADES TS800" => {
+    "cyclades ts800" => {
         "username" => "root",
         "password" => "password"
     },
-    "D-LINK DSL-G664T Rev. A1" => {
+    "d-link dsl-g664t rev. a1" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK HUBS/SWITCHES" => {
+    "d-link hubs/switches" => {
         "username" => "D-Link",
         "password" => "password"
     },
-    "D-LINK DI-704 Rev. REV A" => {
+    "d-link di-704 rev. rev a" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "D-LINK DI-804 Rev. V2.03" => {
+    "d-link di-804 rev. v2.03" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DWL 900AP" => {
+    "d-link dwl 900ap" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "D-LINK DI-614+" => {
+    "d-link di-614+" => {
         "username" => "user",
         "password" => "password"
     },
-    "D-LINK DWL-614+ Rev. REV A REV B" => {
+    "d-link dwl-614+ rev. rev a rev b" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK D-704P Rev. REV B" => {
+    "d-link d-704p rev. rev b" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-604 Rev. REV A REV B REV C REV E" => {
+    "d-link di-604 rev. rev a rev b rev c rev e" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DWL-614+ Rev. 2.03" => {
+    "d-link dwl-614+ rev. 2.03" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK D-704P" => {
+    "d-link d-704p" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DWL-900+" => {
+    "d-link dwl-900+" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-704" => {
+    "d-link di-704" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "D-LINK DI-604 Rev. 1.62B+" => {
+    "d-link di-604 rev. 1.62b+" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-624 Rev. ALL" => {
+    "d-link di-624 rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-624 Rev. ALL" => {
+    "d-link di-624 rev. all" => {
         "username" => "User",
         "password" => "password"
     },
-    "D-LINK DI-604 Rev. 2.02" => {
+    "d-link di-604 rev. 2.02" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DWL 1000" => {
+    "d-link dwl 1000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-514" => {
+    "d-link di-514" => {
         "username" => "user",
         "password" => "password"
     },
-    "D-LINK DI-614+ Rev. ANY" => {
+    "d-link di-614+ rev. any" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DWL 2100AP" => {
+    "d-link dwl 2100ap" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DSL-302G" => {
+    "d-link dsl-302g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-624+ Rev. A3" => {
+    "d-link di-624+ rev. a3" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DWL-2000AP+ Rev. 1.13" => {
+    "d-link dwl-2000ap+ rev. 1.13" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-614+" => {
+    "d-link di-614+" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DSL-300G+ Rev. TEO" => {
+    "d-link dsl-300g+ rev. teo" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "D-LINK DSL-300G+ Rev. TEO" => {
+    "d-link dsl-300g+ rev. teo" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-524 Rev. ALL" => {
+    "d-link di-524 rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK FIREWALL Rev. DFL-200" => {
+    "d-link firewall rev. dfl-200" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-524 Rev. ALL" => {
+    "d-link di-524 rev. all" => {
         "username" => "user",
         "password" => "password"
     },
-    "D-LINK DWL-900AP+ Rev. REV A REV B REV C" => {
+    "d-link dwl-900ap+ rev. rev a rev b rev c" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DSL500G" => {
+    "d-link dsl500g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DSL-504T" => {
+    "d-link dsl-504t" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DSL-G604T" => {
+    "d-link dsl-g604t" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-707P ROUTER" => {
+    "d-link di-707p router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI624 Rev. C3" => {
+    "d-link di624 rev. c3" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK 604" => {
+    "d-link 604" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "D-LINK DSL-500" => {
+    "d-link dsl-500" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK 504G ADSL ROUTER" => {
+    "d-link 504g adsl router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK DI-524" => {
+    "d-link di-524" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK ADSL" => {
+    "d-link adsl" => {
         "username" => "admin",
         "password" => "password"
     },
-    "D-LINK VWR (VONAGE) Rev. WIRELESS BROADBAND ROUTER" => {
+    "d-link vwr (vonage) rev. wireless broadband router" => {
         "username" => "user",
         "password" => "password"
     },
-    "D-LINK DGL4300 Rev. D-LINK'S DGL-4300 GAME SERIES ROUTER" => {
+    "d-link dgl4300 rev. d-link's dgl-4300 game series router" => {
         "username" => "Admin",
         "password" => "password"
     },
-    "D-LINK VTA (VONAGE)" => {
+    "d-link vta (vonage)" => {
         "username" => "user",
         "password" => "password"
     },
-    "DALLAS SEMICONDUCTORS TINI EMBEDDED JAVA MODULE Rev. <= 1.0" => {
+    "dallas semiconductors tini embedded java module rev. <= 1.0" => {
         "username" => "root",
         "password" => "password"
     },
-    "DATACOM BSASX/101" => {
+    "datacom bsasx/101" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "DATAWIZARD.NET FTPXQ SERVER" => {
+    "datawizard.net ftpxq server" => {
         "username" => "anonymous",
         "password" => "password"
     },
-    "DAVOX UNISON" => {
+    "davox unison" => {
         "username" => "root",
         "password" => "password"
     },
-    "DAVOX UNISON" => {
+    "davox unison" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DAVOX UNISON" => {
+    "davox unison" => {
         "username" => "davox",
         "password" => "password"
     },
-    "DAVOX UNISON" => {
+    "davox unison" => {
         "username" => "sa",
         "password" => "password"
     },
-    "DD-WRT DD-WRT V23 SP2 (09/15/06)" => {
+    "dd-wrt dd-wrt v23 sp2 (09/15/06)" => {
         "username" => "root",
         "password" => "password"
     },
-    "DEERFIELD MDAEMON" => {
+    "deerfield mdaemon" => {
         "username" => "MDaemon",
         "password" => "password"
     },
-    "DELL LASER PRINTER 3000CN / 3100CN" => {
+    "dell laser printer 3000cn / 3100cn" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DELL REMOTE ACCESS CARD" => {
+    "dell remote access card" => {
         "username" => "root",
         "password" => "password"
     },
-    "DEMARC NETWORK MONITOR" => {
+    "demarc network monitor" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DEUTSCH TELEKOMM T-SINUS 130 DSL" => {
+    "deutsch telekomm t-sinus 130 dsl" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "DEUTSCHE TELEKOM T-SINUS DSL 130" => {
+    "deutsche telekom t-sinus dsl 130" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DEUTSCHE TELEKOM T-SINUS 154 DSL Rev. 13.9.38" => {
+    "deutsche telekom t-sinus 154 dsl rev. 13.9.38" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "DEUTSCHE TELEKOM SPEEDPORT W701" => {
+    "deutsche telekom speedport w701" => {
         "username" => "",
         "password" => "password"
     },
-    "DEVELCON ORBITOR DEFAULT CONSOLE" => {
+    "develcon orbitor default console" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "DEVELCON ORBITOR DEFAULT CONSOLE" => {
+    "develcon orbitor default console" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "DICTAPHONE PROLOG" => {
+    "dictaphone prolog" => {
         "username" => "PBX",
         "password" => "password"
     },
-    "DICTAPHONE PROLOG" => {
+    "dictaphone prolog" => {
         "username" => "NETWORK",
         "password" => "password"
     },
-    "DICTAPHONE PROLOG" => {
+    "dictaphone prolog" => {
         "username" => "NETOP",
         "password" => "password"
     },
-    "DIGICOM MICHELANGELO" => {
+    "digicom michelangelo" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DIGICOM MICHELANGELO" => {
+    "digicom michelangelo" => {
         "username" => "user",
         "password" => "password"
     },
-    "DIGICORP VIPER" => {
+    "digicorp viper" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "DIGICORP VIPER" => {
+    "digicorp viper" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "DIGICORP ROUTER" => {
+    "digicorp router" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "DIGICORP ROUTER" => {
+    "digicorp router" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "DRAYTEK VIGOR Rev. ALL" => {
+    "draytek vigor rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DRAYTEK VIGOR 2600" => {
+    "draytek vigor 2600" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DRAYTEK VIGOR 2900+" => {
+    "draytek vigor 2900+" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DRAYTEK 2800" => {
+    "draytek 2800" => {
         "username" => "(blank)",
         "password" => "password"
     },
-    "DRAYTEK VIGOR 3300" => {
+    "draytek vigor 3300" => {
         "username" => "draytek",
         "password" => "password"
     },
-    "DYNALINK RTA230" => {
+    "dynalink rta230" => {
         "username" => "admin",
         "password" => "password"
     },
-    "DYNALINK RTA700W" => {
+    "dynalink rta700w" => {
         "username" => "admin",
         "password" => "password"
     },
-    "E-CON ECON DSL ROUTER" => {
+    "e-con econ dsl router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "E-TECH ADSL ETHERNET ROUTER Rev. ANNEX A V2" => {
+    "e-tech adsl ethernet router rev. annex a v2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "E-TECH WIRELESS 11MBPS ROUTER MODEL:WLRT03" => {
+    "e-tech wireless 11mbps router model:wlrt03" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "E-TECH ROUTER Rev. RTBR03" => {
+    "e-tech router rev. rtbr03" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "EDIMAX BROADBAND ROUTER Rev. HARDWARE: REV A. BOOT CODE: 1.0 RUNTIME CODE 2.63" => {
+    "edimax broadband router rev. hardware: rev a. boot code: 1.0 runtime code 2.63" => {
         "username" => "admin",
         "password" => "password"
     },
-    "EDIMAX EW-7205APL Rev. FIRMWARE RELEASE 2.40A-00" => {
+    "edimax ew-7205apl rev. firmware release 2.40a-00" => {
         "username" => "guest",
         "password" => "password"
     },
-    "EDIMAX ES-5224RXM" => {
+    "edimax es-5224rxm" => {
         "username" => "admin",
         "password" => "password"
     },
-    "EDIMAX WIRELESS ADSL ROUTER Rev. AR-7024" => {
+    "edimax wireless adsl router rev. ar-7024" => {
         "username" => "admin",
         "password" => "password"
     },
-    "EFFICIENT SPEEDSTREAM DSL" => {
+    "efficient speedstream dsl" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "EFFICIENT 5871 DSL ROUTER Rev. V 5.3.3-0" => {
+    "efficient 5871 dsl router rev. v 5.3.3-0" => {
         "username" => "login",
         "password" => "password"
     },
-    "EFFICIENT 5851" => {
+    "efficient 5851" => {
         "username" => "login",
         "password" => "password"
     },
-    "EFFICIENT SPEEDSTREAM DSL" => {
+    "efficient speedstream dsl" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "EFFICIENT NETWORKS SPEEDSTREAM 5711 Rev. TELEDANMARK VERSION (ONLY .DK)" => {
+    "efficient networks speedstream 5711 rev. teledanmark version (only .dk)" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "EFFICIENT NETWORKS EN 5861" => {
+    "efficient networks en 5861" => {
         "username" => "login",
         "password" => "password"
     },
-    "EFFICIENT NETWORKS 5851 SDSL ROUTER Rev. N/A" => {
+    "efficient networks 5851 sdsl router rev. n/a" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ELSA LANCOM OFFICE ISDN ROUTER Rev. 800/1000/1100" => {
+    "elsa lancom office isdn router rev. 800/1000/1100" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ENTERASYS ANG-1105 Rev. UNKNOWN" => {
+    "enterasys ang-1105 rev. unknown" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ENTERASYS ANG-1105 Rev. UNKNOWN" => {
+    "enterasys ang-1105 rev. unknown" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ENTERASYS VERTICAL HORIZON Rev. ANY" => {
+    "enterasys vertical horizon rev. any" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ENTERASYS VERTICAL HORIZON Rev. VH-2402S" => {
+    "enterasys vertical horizon rev. vh-2402s" => {
         "username" => "tiger",
         "password" => "password"
     },
-    "ENTRUST GETACCESS Rev. 4.X AND 7.X" => {
+    "entrust getaccess rev. 4.x and 7.x" => {
         "username" => "websecadm",
         "password" => "password"
     },
-    "ERICSSON ERICSSON ACC" => {
+    "ericsson ericsson acc" => {
         "username" => "netman",
         "password" => "password"
     },
-    "ERICSSON ERICSSON ACC" => {
+    "ericsson ericsson acc" => {
         "username" => "netman",
         "password" => "password"
     },
-    "ERICSSON MD110 PABX Rev. UP-TO-BC9" => {
+    "ericsson md110 pabx rev. up-to-bc9" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ERICSSON ERICSSON ACC" => {
+    "ericsson ericsson acc" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ERICSSON ACC TIGRIS PLATFORM Rev. ALL" => {
+    "ericsson acc tigris platform rev. all" => {
         "username" => "public",
         "password" => "password"
     },
-    "ESP DIGIVIEW PRO4N" => {
+    "esp digiview pro4n" => {
         "username" => "1111",
         "password" => "password"
     },
-    "EVERFOCUS POWERPLEX Rev. EDR1600" => {
+    "everfocus powerplex rev. edr1600" => {
         "username" => "admin",
         "password" => "password"
     },
-    "EVERFOCUS POWERPLEX Rev. EDR1600" => {
+    "everfocus powerplex rev. edr1600" => {
         "username" => "supervisor",
         "password" => "password"
     },
-    "EVERFOCUS POWERPLEX Rev. EDR1600" => {
+    "everfocus powerplex rev. edr1600" => {
         "username" => "operator",
         "password" => "password"
     },
-    "EXABYTE MAGNUM20" => {
+    "exabyte magnum20" => {
         "username" => "anonymous",
         "password" => "password"
     },
-    "EXTREME NETWORKS ALL SWITCHES" => {
+    "extreme networks all switches" => {
         "username" => "admin",
         "password" => "password"
     },
-    "F5 BIGIP 540" => {
+    "f5 bigip 540" => {
         "username" => "root",
         "password" => "password"
     },
-    "F5-NETWORKS BIGIP" => {
+    "f5-networks bigip" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "FLOWPOINT 2200 SDSL" => {
+    "flowpoint 2200 sdsl" => {
         "username" => "admin",
         "password" => "password"
     },
-    "FLOWPOINT DSL" => {
+    "flowpoint dsl" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "FLOWPOINT 100 IDSN" => {
+    "flowpoint 100 idsn" => {
         "username" => "admin",
         "password" => "password"
     },
-    "FLOWPOINT 40 IDSL" => {
+    "flowpoint 40 idsl" => {
         "username" => "admin",
         "password" => "password"
     },
-    "FLOWPOINT FLOWPOINT DSL" => {
+    "flowpoint flowpoint dsl" => {
         "username" => "admin",
         "password" => "password"
     },
-    "FORTINET FORTIGATE" => {
+    "fortinet fortigate" => {
         "username" => "admin",
         "password" => "password"
     },
-    "FOUNDRY NETWORKS IRONVIEW NETWORK MANAGER Rev. VERSION 01.6.00A(SERVICE PACK) 0620031754" => {
+    "foundry networks ironview network manager rev. version 01.6.00a(service pack) 0620031754" => {
         "username" => "admin",
         "password" => "password"
     },
-    "FREETECH PC BIOS" => {
+    "freetech pc bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "FREETECH BIOS" => {
+    "freetech bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "FUJITSU SIEMENS ROUTERS" => {
+    "fujitsu siemens routers" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "FUNK SOFTWARE STEEL BELTED RADIUS Rev. 3.X" => {
+    "funk software steel belted radius rev. 3.x" => {
         "username" => "admin",
         "password" => "password"
     },
-    "GERICOM PHOENIX" => {
+    "gericom phoenix" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "GIGA 8IPPRO1000" => {
+    "giga 8ippro1000" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "GVC E800/RB4" => {
+    "gvc e800/rb4" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "HP ISEE" => {
+    "hp isee" => {
         "username" => "admin",
         "password" => "password"
     },
-    "HP POWER MANAGER Rev. 3" => {
+    "hp power manager rev. 3" => {
         "username" => "admin",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "OPERATOR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "OPERATOR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "OPERATOR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "OPERATOR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "OPERATOR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "PCUSER",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "RSBCMON",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "SPOOLMAN",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "WP",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "ADVMAIL",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "ADVMAIL",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "FIELD",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "FIELD",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "FIELD",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "FIELD",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "FIELD",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "FIELD",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "FIELD",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "FIELD",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "HELLO",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "HELLO",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "HELLO",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "HELLO",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MAIL",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MAIL",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MAIL",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MAIL",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MAIL",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MANAGER",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MANAGER",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MANAGER",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MANAGER",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MANAGER",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MANAGER",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MANAGER",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP HP 2000/3000 MPE/XX" => {
+    "hp hp 2000/3000 mpe/xx" => {
         "username" => "MGR",
         "password" => "password"
     },
-    "HP LASERJET NET PRINTERS Rev. ONES WITH JETDIRECT ON THEM" => {
+    "hp laserjet net printers rev. ones with jetdirect on them" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "HP LASERJET NET PRINTERS Rev. ONES WITH JETDIRECT ON THEM" => {
+    "hp laserjet net printers rev. ones with jetdirect on them" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "HP LASERJET NET PRINTERS Rev. ONES WITH JETDIRECT ON THEM" => {
+    "hp laserjet net printers rev. ones with jetdirect on them" => {
         "username" => "Anonymous",
         "password" => "password"
     },
-    "HP LASERJET NET PRINTERS Rev. ONES WITH JETDIRECT ON THEM" => {
+    "hp laserjet net printers rev. ones with jetdirect on them" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "HP WEBMIN Rev. 0.84" => {
+    "hp webmin rev. 0.84" => {
         "username" => "admin",
         "password" => "password"
     },
-    "HP SA7200" => {
+    "hp sa7200" => {
         "username" => "admin",
         "password" => "password"
     },
-    "HP SA7200" => {
+    "hp sa7200" => {
         "username" => "admin",
         "password" => "password"
     },
-    "HUAWEI MT880R" => {
+    "huawei mt880r" => {
         "username" => "TMAR#HWMT8007079",
         "password" => "password"
     },
-    "HUAWEI MT882 ADSL2+" => {
+    "huawei mt882 adsl2+" => {
         "username" => "admin",
         "password" => "password"
     },
-    "IBLITZZ BWA711/ALL MODELS Rev. ALL" => {
+    "iblitzz bwa711/all models rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "IBM ASCEND OEM ROUTERS" => {
+    "ibm ascend oem routers" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "IBM A21M" => {
+    "ibm a21m" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "IBM 390E" => {
+    "ibm 390e" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "IBM TOTALSTORAGE ENTERPRISE SERVER" => {
+    "ibm totalstorage enterprise server" => {
         "username" => "storwatch",
         "password" => "password"
     },
-    "IBM 8239 TOKEN RING HUB Rev. 2.5" => {
+    "ibm 8239 token ring hub rev. 2.5" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "IBM 8224 HUB" => {
+    "ibm 8224 hub" => {
         "username" => "vt100",
         "password" => "password"
     },
-    "IBM 3534 F08 FIBRE SWITCH" => {
+    "ibm 3534 f08 fibre switch" => {
         "username" => "admin",
         "password" => "password"
     },
-    "IBM SWITCH Rev. 8275-217" => {
+    "ibm switch rev. 8275-217" => {
         "username" => "admin",
         "password" => "password"
     },
-    "IBM DIRECTORY - WEB ADMINISTRATION TOOL Rev. 5.1" => {
+    "ibm directory - web administration tool rev. 5.1" => {
         "username" => "superadmin",
         "password" => "password"
     },
-    "IBM HARDWARE MANAGEMENT CONSOLE Rev. 3" => {
+    "ibm hardware management console rev. 3" => {
         "username" => "hscroot",
         "password" => "password"
     },
-    "IBM 3583 TAPE LIBRARY" => {
+    "ibm 3583 tape library" => {
         "username" => "admin",
         "password" => "password"
     },
-    "IBM INFOPRINT 6700 Rev. HTTP://WWW.PHENOELIT.DE/DPL/DPL.HTML" => {
+    "ibm infoprint 6700 rev. http://www.phenoelit.de/dpl/dpl.html" => {
         "username" => "root",
         "password" => "password"
     },
-    "IBM T20" => {
+    "ibm t20" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "IBM IBM" => {
+    "ibm ibm" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "IBM REMOTE SUPERVISOR ADAPTER (RSA)" => {
+    "ibm remote supervisor adapter (rsa)" => {
         "username" => "USERID",
         "password" => "password"
     },
-    "IBM BLADECENTER MGMT CONSOLE" => {
+    "ibm bladecenter mgmt console" => {
         "username" => "USERID",
         "password" => "password"
     },
-    "IBM T42" => {
+    "ibm t42" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "IBM A20M" => {
+    "ibm a20m" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "IHOI OIHOH Rev. LKNLKN" => {
+    "ihoi oihoh rev. lknlkn" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "IMAI TRAFFIC SHAPER Rev. TS-1012" => {
+    "imai traffic shaper rev. ts-1012" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "INCHON INCHON Rev. INCHON" => {
+    "inchon inchon rev. inchon" => {
         "username" => "admin",
         "password" => "password"
     },
-    "INFOSMART SOHO ROUTER" => {
+    "infosmart soho router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "INTEGRAL TECHNOLOGIES REMOTEVIEW Rev. 4" => {
+    "integral technologies remoteview rev. 4" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "INTEL SHIVA" => {
+    "intel shiva" => {
         "username" => "root",
         "password" => "password"
     },
-    "INTEL EXPRESS 9520 ROUTER" => {
+    "intel express 9520 router" => {
         "username" => "NICONEX",
         "password" => "password"
     },
-    "INTEL EXPRESS 520T SWITCH" => {
+    "intel express 520t switch" => {
         "username" => "setup",
         "password" => "password"
     },
-    "INTEL WIRELESS AP 2011 Rev. 2.21" => {
+    "intel wireless ap 2011 rev. 2.21" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "INTEL WIRELESS GATEWAY Rev. 3.X" => {
+    "intel wireless gateway rev. 3.x" => {
         "username" => "intel",
         "password" => "password"
     },
-    "INTEL SHIVA" => {
+    "intel shiva" => {
         "username" => "Guest",
         "password" => "password"
     },
-    "INTEL SHIVA" => {
+    "intel shiva" => {
         "username" => "root",
         "password" => "password"
     },
-    "INTEL NETSTRUCTURE Rev. 480T" => {
+    "intel netstructure rev. 480t" => {
         "username" => "admin",
         "password" => "password"
     },
-    "INTERBASE INTERBASE DATABASE SERVER Rev. ALL" => {
+    "interbase interbase database server rev. all" => {
         "username" => "SYSDBA",
         "password" => "password"
     },
-    "INTERMEC MOBILE LAN Rev. 5.25" => {
+    "intermec mobile lan rev. 5.25" => {
         "username" => "intermec",
         "password" => "password"
     },
-    "INTERSHOP INTERSHOP Rev. 4" => {
+    "intershop intershop rev. 4" => {
         "username" => "operator",
         "password" => "password"
     },
-    "INTERSYSTEMS CACHE POST-RDMS" => {
+    "intersystems cache post-rdms" => {
         "username" => "system",
         "password" => "password"
     },
-    "INTEX ORGANIZER" => {
+    "intex organizer" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "INVENTEL LIVEBOX" => {
+    "inventel livebox" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ION NELU Rev. NEL" => {
+    "ion nelu rev. nel" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ION NELU Rev. NEL" => {
+    "ion nelu rev. nel" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "IPSTAR IPSTAR SATELLITE ROUTER/RADIO Rev. V2" => {
+    "ipstar ipstar satellite router/radio rev. v2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "IPSTAR IPSTAR NETWORK BOX Rev. V.2+" => {
+    "ipstar ipstar network box rev. v.2+" => {
         "username" => "admin",
         "password" => "password"
     },
-    "IRONPORT MESSAGING GATEWAY APPLIANCE" => {
+    "ironport messaging gateway appliance" => {
         "username" => "admin",
         "password" => "password"
     },
-    "JAHT ADSL ROUTER Rev. AR41/2A" => {
+    "jaht adsl router rev. ar41/2a" => {
         "username" => "admin",
         "password" => "password"
     },
-    "JD EDWARDS WORLDVISION/ONEWORLD Rev. ALL(?)" => {
+    "jd edwards worldvision/oneworld rev. all(?)" => {
         "username" => "JDE",
         "password" => "password"
     },
-    "JDE WORLDVISION/ONEWORLD" => {
+    "jde worldvision/oneworld" => {
         "username" => "PRODDTA",
         "password" => "password"
     },
-    "JDS MICROPROCESSING HYDRA 3000 Rev. R2.02" => {
+    "jds microprocessing hydra 3000 rev. r2.02" => {
         "username" => "hydrasna",
         "password" => "password"
     },
-    "JUNIPER ISG2000" => {
+    "juniper isg2000" => {
         "username" => "netscreen",
         "password" => "password"
     },
-    "KALATEL CALIBUR DSR-2000E" => {
+    "kalatel calibur dsr-2000e" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "KALATEL CALIBUR DSR-2000E" => {
+    "kalatel calibur dsr-2000e" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "KONICA MINOLTA MAGICOLOR 2300 DL" => {
+    "konica minolta magicolor 2300 dl" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "KONICA MINOLTA MAGICOLOR 2430DL Rev. ALL" => {
+    "konica minolta magicolor 2430dl rev. all" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "KTI KS-2260" => {
+    "kti ks-2260" => {
         "username" => "superuser",
         "password" => "password"
     },
-    "KTI KS2600" => {
+    "kti ks2600" => {
         "username" => "admin",
         "password" => "password"
     },
-    "KTI KS2260" => {
+    "kti ks2260" => {
         "username" => "admin",
         "password" => "password"
     },
-    "KYOCERA ECOLINK Rev. 7.2" => {
+    "kyocera ecolink rev. 7.2" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "KYOCERA TELNET SERVER IB-20/21" => {
+    "kyocera telnet server ib-20/21" => {
         "username" => "root",
         "password" => "password"
     },
-    "KYOCERA INTERMATE LAN FS PRO 10/100 Rev. K82_0371" => {
+    "kyocera intermate lan fs pro 10/100 rev. k82_0371" => {
         "username" => "admin",
         "password" => "password"
     },
-    "KYOCERA KR1" => {
+    "kyocera kr1" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LANCOM IL11" => {
+    "lancom il11" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONICS LANTRONICS TERMINAL SERVER" => {
+    "lantronics lantronics terminal server" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONICS LANTRONICS TERMINAL SERVER" => {
+    "lantronics lantronics terminal server" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONIX LANTRONIX TERMINAL" => {
+    "lantronix lantronix terminal" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONIX SCS1620" => {
+    "lantronix scs1620" => {
         "username" => "sysadmin",
         "password" => "password"
     },
-    "LANTRONIX SCS3200" => {
+    "lantronix scs3200" => {
         "username" => "login",
         "password" => "password"
     },
-    "LANTRONIX SCS400" => {
+    "lantronix scs400" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONIX SCS200" => {
+    "lantronix scs200" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONIX SCS100" => {
+    "lantronix scs100" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONIX ETS4P" => {
+    "lantronix ets4p" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONIX ETS16P" => {
+    "lantronix ets16p" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONIX ETS32PR" => {
+    "lantronix ets32pr" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LANTRONIX ETS422PR" => {
+    "lantronix ets422pr" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LATIS NETWORK BORDER GUARD" => {
+    "latis network border guard" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LG ARIA IPECS Rev. ALL" => {
+    "lg aria ipecs rev. all" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "LG LAM200E / LAM200R" => {
+    "lg lam200e / lam200r" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS WAP11" => {
+    "linksys wap11" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LINKSYS DSL" => {
+    "linksys dsl" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LINKSYS ETHERFAST CABLE/DSL ROUTER" => {
+    "linksys etherfast cable/dsl router" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "LINKSYS LINKSYS ROUTER DSL/CABLE" => {
+    "linksys linksys router dsl/cable" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "LINKSYS BEFW11S4 Rev. 1" => {
+    "linksys befw11s4 rev. 1" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS BEFSR41 Rev. 2" => {
+    "linksys befsr41 rev. 2" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "LINKSYS WRT54G" => {
+    "linksys wrt54g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS WAG54G" => {
+    "linksys wag54g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS LINKSYS DSL" => {
+    "linksys linksys dsl" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LINKSYS WAP54G Rev. 2.0" => {
+    "linksys wap54g rev. 2.0" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "LINKSYS WRT54G Rev. ALL REVISIONS" => {
+    "linksys wrt54g rev. all revisions" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "LINKSYS MODEL WRT54GC COMPACT WIRELESS-G BROADBAND ROUTER" => {
+    "linksys model wrt54gc compact wireless-g broadband router" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "LINKSYS AG 241 - ADSL2 GATEWAY WITH 4-PORT SWITCH" => {
+    "linksys ag 241 - adsl2 gateway with 4-port switch" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS COMCAST Rev. COMCAST-SUPPLIED" => {
+    "linksys comcast rev. comcast-supplied" => {
         "username" => "comcast",
         "password" => "password"
     },
-    "LINKSYS WAG54GS" => {
+    "linksys wag54gs" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS AP 1120" => {
+    "linksys ap 1120" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LINKSYS PAP2 / PAP2V2 (VONAGE)" => {
+    "linksys pap2 / pap2v2 (vonage)" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS RT31P2 (VONAGE)" => {
+    "linksys rt31p2 (vonage)" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS RTP300 (VONAGE)" => {
+    "linksys rtp300 (vonage)" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS WRT54GP2 (VONAGE)" => {
+    "linksys wrt54gp2 (vonage)" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LINKSYS WRTP54G (VONAGE)" => {
+    "linksys wrtp54g (vonage)" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LIVINGSTON IRX ROUTER" => {
+    "livingston irx router" => {
         "username" => "!root",
         "password" => "password"
     },
-    "LIVINGSTON LIVINGSTON PORTMASTER 3" => {
+    "livingston livingston portmaster 3" => {
         "username" => "!root",
         "password" => "password"
     },
-    "LIVINGSTON OFFICEROUTER" => {
+    "livingston officerouter" => {
         "username" => "!root",
         "password" => "password"
     },
-    "LIVINGSTONE PORTMASTER 2R" => {
+    "livingstone portmaster 2r" => {
         "username" => "root",
         "password" => "password"
     },
-    "LOCKDOWN NETWORKS ALL LOCKDOWN PRODUCTS Rev. UP TO 2.7" => {
+    "lockdown networks all lockdown products rev. up to 2.7" => {
         "username" => "setup",
         "password" => "password"
     },
-    "LOGITECH LOGITECH MOBILE HEADSET" => {
+    "logitech logitech mobile headset" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "LONGSHINE ISSCFG" => {
+    "longshine isscfg" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LOOPCOM " => {
+    "loopcom " => {
         "username" => "admin",
         "password" => "password"
     },
-    "LUCENT M770" => {
+    "lucent m770" => {
         "username" => "super",
         "password" => "password"
     },
-    "LUCENT B-STDX9000" => {
+    "lucent b-stdx9000" => {
         "username" => "(any 3 characters)",
         "password" => "password"
     },
-    "LUCENT B-STDX9000" => {
+    "lucent b-stdx9000" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LUCENT B-STDX9000 Rev. ALL" => {
+    "lucent b-stdx9000 rev. all" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LUCENT CBX 500" => {
+    "lucent cbx 500" => {
         "username" => "(any 3 characters)",
         "password" => "password"
     },
-    "LUCENT CBX 500" => {
+    "lucent cbx 500" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LUCENT GX 550" => {
+    "lucent gx 550" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "LUCENT MAX-TNT" => {
+    "lucent max-tnt" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LUCENT PSAX 1200 AND BELOW" => {
+    "lucent psax 1200 and below" => {
         "username" => "root",
         "password" => "password"
     },
-    "LUCENT PSAX 1250 AND ABOVE" => {
+    "lucent psax 1250 and above" => {
         "username" => "readwrite",
         "password" => "password"
     },
-    "LUCENT PSAX 1250 AND ABOVE" => {
+    "lucent psax 1250 and above" => {
         "username" => "readonly",
         "password" => "password"
     },
-    "LUCENT ANYMEDIA" => {
+    "lucent anymedia" => {
         "username" => "LUCENT01",
         "password" => "password"
     },
-    "LUCENT ANYMEDIA" => {
+    "lucent anymedia" => {
         "username" => "LUCENT02",
         "password" => "password"
     },
-    "LUCENT PACKETSTAR" => {
+    "lucent packetstar" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "LUCENT CELLPIPE 22A-BX-AR USB D" => {
+    "lucent cellpipe 22a-bx-ar usb d" => {
         "username" => "admin",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "bciim",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "bcim",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "bcms",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "bcnas",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "blue",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "browse",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "browse",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "craft",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "craft",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "cust",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "enquiry",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "field",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "inads",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "inads",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "init",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "locate",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "maint",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "maint",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "nms",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "rcust",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "support",
         "password" => "password"
     },
-    "LUCENT SYSTEM 75" => {
+    "lucent system 75" => {
         "username" => "tech",
         "password" => "password"
     },
-    "MARCONI FORE ATM SWITCHES" => {
+    "marconi fore atm switches" => {
         "username" => "ami",
         "password" => "password"
     },
-    "MAXDATA MS2137" => {
+    "maxdata ms2137" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "MCAFEE SCM 3100 Rev. 4.1" => {
+    "mcafee scm 3100 rev. 4.1" => {
         "username" => "scmadmin",
         "password" => "password"
     },
-    "MCDATA FC SWITCHES/DIRECTORS" => {
+    "mcdata fc switches/directors" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "MEDIATRIX 2102 MEDIATRIX 2102" => {
+    "mediatrix 2102 mediatrix 2102" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MEDION ROUTERS" => {
+    "medion routers" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "MEGASTAR BIOS" => {
+    "megastar bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "MENTEC MICRO/RSX" => {
+    "mentec micro/rsx" => {
         "username" => "MICRO",
         "password" => "password"
     },
-    "MENTEC MICRO/RSX" => {
+    "mentec micro/rsx" => {
         "username" => "MICRO",
         "password" => "password"
     },
-    "MERCURY 234234 Rev. 234234" => {
+    "mercury 234234 rev. 234234" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "MERCURY KT133A/686B" => {
+    "mercury kt133a/686b" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "MERIDIAN PBX Rev. ANY" => {
+    "meridian pbx rev. any" => {
         "username" => "service",
         "password" => "password"
     },
-    "MICRONET ACCESS POINT Rev. SP912" => {
+    "micronet access point rev. sp912" => {
         "username" => "root",
         "password" => "password"
     },
-    "MICRONET MICRONET SP5002" => {
+    "micronet micronet sp5002" => {
         "username" => "mac",
         "password" => "password"
     },
-    "MICRONET 3351 / 3354" => {
+    "micronet 3351 / 3354" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MICRONET SP918GK" => {
+    "micronet sp918gk" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MICROPLEX PRINT SERVER" => {
+    "microplex print server" => {
         "username" => "root",
         "password" => "password"
     },
-    "MICROROUTER 900I" => {
+    "microrouter 900i" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "MICROSOFT MN-SERIES" => {
+    "microsoft mn-series" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "MIKROTIK ROUTER OS Rev. ALL" => {
+    "mikrotik router os rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MIKROTIK ROUTER OS Rev. 2.9.17" => {
+    "mikrotik router os rev. 2.9.17" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MILAN MIL-SM801P" => {
+    "milan mil-sm801p" => {
         "username" => "root",
         "password" => "password"
     },
-    "MINOLTA QMS MAGICOLOR 3100 Rev. 3.0.0" => {
+    "minolta qms magicolor 3100 rev. 3.0.0" => {
         "username" => "operator",
         "password" => "password"
     },
-    "MINOLTA QMS MAGICOLOR 3100 Rev. 3.0.0" => {
+    "minolta qms magicolor 3100 rev. 3.0.0" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MINTEL MINTEL PBX" => {
+    "mintel mintel pbx" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "MINTEL MINTEL PBX" => {
+    "mintel mintel pbx" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "MITEL 3300 ICP Rev. ALL" => {
+    "mitel 3300 icp rev. all" => {
         "username" => "system",
         "password" => "password"
     },
-    "MITEL SX2000 Rev. ALL" => {
+    "mitel sx2000 rev. all" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "MOTOROLA CABLEROUTER" => {
+    "motorola cablerouter" => {
         "username" => "cablecom",
         "password" => "password"
     },
-    "MOTOROLA WR850G Rev. 4.03" => {
+    "motorola wr850g rev. 4.03" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MOTOROLA WIRELESS ROUTER Rev. WR850G" => {
+    "motorola wireless router rev. wr850g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MOTOROLA SBG900" => {
+    "motorola sbg900" => {
         "username" => "admin",
         "password" => "password"
     },
-    "MOTOROLA MOTOROLA CABLEROUTER" => {
+    "motorola motorola cablerouter" => {
         "username" => "cablecom",
         "password" => "password"
     },
-    "MOTOROLA VANGUARD" => {
+    "motorola vanguard" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "MOTOROLA VT1005 (VONAGE)" => {
+    "motorola vt1005 (vonage)" => {
         "username" => "(blank)",
         "password" => "password"
     },
-    "MOTOROLA VT2142 (VONAGE)" => {
+    "motorola vt2142 (vonage)" => {
         "username" => "router",
         "password" => "password"
     },
-    "MOTOROLA VT2442 (VONAGE)" => {
+    "motorola vt2442 (vonage)" => {
         "username" => "router",
         "password" => "password"
     },
-    "MOTOROLA VT2542 (VONAGE)" => {
+    "motorola vt2542 (vonage)" => {
         "username" => "router",
         "password" => "password"
     },
-    "MRO SOFTWARE MAXIMO Rev. V4.1" => {
+    "mro software maximo rev. v4.1" => {
         "username" => "SYSADM",
         "password" => "password"
     },
-    "MUTARE SOFTWARE EVM ADMIN Rev. ALL" => {
+    "mutare software evm admin rev. all" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NAI INTRUSHIELD IPS Rev. 1200/2600/4000" => {
+    "nai intrushield ips rev. 1200/2600/4000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NAI ENTERCEPT" => {
+    "nai entercept" => {
         "username" => "GlobalAdmin",
         "password" => "password"
     },
-    "NEC WARPSTAR-BASESTATION" => {
+    "nec warpstar-basestation" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NETCOMM NB1300" => {
+    "netcomm nb1300" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETCOMM NB5" => {
+    "netcomm nb5" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR RM356 Rev. NONE" => {
+    "netgear rm356 rev. none" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NETGEAR WGT624 Rev. 2" => {
+    "netgear wgt624 rev. 2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR COMCAST Rev. COMCAST-SUPPLIED" => {
+    "netgear comcast rev. comcast-supplied" => {
         "username" => "comcast",
         "password" => "password"
     },
-    "NETGEAR FR314" => {
+    "netgear fr314" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR MR-314 Rev. 3.26" => {
+    "netgear mr-314 rev. 3.26" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR RT314" => {
+    "netgear rt314" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR RP614" => {
+    "netgear rp614" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR RP114 Rev. 3.26" => {
+    "netgear rp114 rev. 3.26" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NETGEAR WG602 Rev. FIRMWARE VERSION 1.04.0" => {
+    "netgear wg602 rev. firmware version 1.04.0" => {
         "username" => "super",
         "password" => "password"
     },
-    "NETGEAR WG602 Rev. FIRMWARE VERSION 1.7.14" => {
+    "netgear wg602 rev. firmware version 1.7.14" => {
         "username" => "superman",
         "password" => "password"
     },
-    "NETGEAR WG602 Rev. FIRMWARE VERSION 1.5.67" => {
+    "netgear wg602 rev. firmware version 1.5.67" => {
         "username" => "super",
         "password" => "password"
     },
-    "NETGEAR MR814" => {
+    "netgear mr814" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR FVS318" => {
+    "netgear fvs318" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR DM602" => {
+    "netgear dm602" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR FR114P" => {
+    "netgear fr114p" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR ME102" => {
+    "netgear me102" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NETGEAR WGR614 Rev. V4" => {
+    "netgear wgr614 rev. v4" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR RP114 Rev. 3.20-3.26" => {
+    "netgear rp114 rev. 3.20-3.26" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR DG834G" => {
+    "netgear dg834g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR ROUTER/MODEM" => {
+    "netgear router/modem" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR MR314" => {
+    "netgear mr314" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR GSM7224" => {
+    "netgear gsm7224" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR ADSL MODEM DG632 Rev. V3.3.0A_CX" => {
+    "netgear adsl modem dg632 rev. v3.3.0a_cx" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR WGT634U" => {
+    "netgear wgt634u" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR FWG114P" => {
+    "netgear fwg114p" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NETGEAR GS724T Rev. V1.0.1_1104" => {
+    "netgear gs724t rev. v1.0.1_1104" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NETGEAR FM114P" => {
+    "netgear fm114p" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NETGEAR DG834" => {
+    "netgear dg834" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR WNR834 BV2" => {
+    "netgear wnr834 bv2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR WNR834BV2" => {
+    "netgear wnr834bv2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGEAR WPN824 / WPN824V2" => {
+    "netgear wpn824 / wpn824v2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETGENESIS NETANALYSIS WEB REPORTING" => {
+    "netgenesis netanalysis web reporting" => {
         "username" => "naadmin",
         "password" => "password"
     },
-    "NETOPIA NETOPIA 9500" => {
+    "netopia netopia 9500" => {
         "username" => "netopia",
         "password" => "password"
     },
-    "NETOPIA R910" => {
+    "netopia r910" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETOPIA 3351" => {
+    "netopia 3351" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NETOPIA 4542" => {
+    "netopia 4542" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETOPIA NETOPIA 7100" => {
+    "netopia netopia 7100" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NETOPIA NETOPIA 9500" => {
+    "netopia netopia 9500" => {
         "username" => "netopia",
         "password" => "password"
     },
-    "NETPORT EXPRESS 10/100" => {
+    "netport express 10/100" => {
         "username" => "setup",
         "password" => "password"
     },
-    "NETSCREEN FIREWALL" => {
+    "netscreen firewall" => {
         "username" => "netscreen",
         "password" => "password"
     },
-    "NETSCREEN FIREWALL" => {
+    "netscreen firewall" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "NETSCREEN FIREWALL" => {
+    "netscreen firewall" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETSCREEN FIREWALL" => {
+    "netscreen firewall" => {
         "username" => "operator",
         "password" => "password"
     },
-    "NETSCREEN FIREWALL" => {
+    "netscreen firewall" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "NETSTAR NETPILOT" => {
+    "netstar netpilot" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETWORK APPLIANCE NETCACHE Rev. ANY" => {
+    "network appliance netcache rev. any" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NETWORK ASSOCIATES WEBSHIELD SECURITY APPLIANCE E500" => {
+    "network associates webshield security appliance e500" => {
         "username" => "e500",
         "password" => "password"
     },
-    "NETWORK ASSOCIATES WEBSHIELD SECURITY APPLIANCE E250" => {
+    "network associates webshield security appliance e250" => {
         "username" => "e250",
         "password" => "password"
     },
-    "NETWORK EVERYWHERE NWR11B" => {
+    "network everywhere nwr11b" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NEXXT SOLUTIONS NW230NXT14" => {
+    "nexxt solutions nw230nxt14" => {
         "username" => "guest",
         "password" => "password"
     },
-    "NGSEC NGSECUREWEB" => {
+    "ngsec ngsecureweb" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NGSEC NGSECUREWEB" => {
+    "ngsec ngsecureweb" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NIKSUN NETDETECTOR" => {
+    "niksun netdetector" => {
         "username" => "vcr",
         "password" => "password"
     },
-    "NIMBLE PC BIOS" => {
+    "nimble pc bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NIMBLE BIOS" => {
+    "nimble bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NOKIA 7360" => {
+    "nokia 7360" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NOKIA DSL ROUTER M1122 Rev. 1.1 - 1.2" => {
+    "nokia dsl router m1122 rev. 1.1 - 1.2" => {
         "username" => "m1122",
         "password" => "password"
     },
-    "NOKIA MW1122" => {
+    "nokia mw1122" => {
         "username" => "telecom",
         "password" => "password"
     },
-    "NORTEL MERIDIAN LINK" => {
+    "nortel meridian link" => {
         "username" => "disttech",
         "password" => "password"
     },
-    "NORTEL MERIDIAN LINK" => {
+    "nortel meridian link" => {
         "username" => "maint",
         "password" => "password"
     },
-    "NORTEL MERIDIAN LINK" => {
+    "nortel meridian link" => {
         "username" => "mlusr",
         "password" => "password"
     },
-    "NORTEL REMOTE OFFICE 9150" => {
+    "nortel remote office 9150" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NORTEL ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES" => {
+    "nortel accelar (passport) 1000 series routing switches" => {
         "username" => "l2",
         "password" => "password"
     },
-    "NORTEL ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES" => {
+    "nortel accelar (passport) 1000 series routing switches" => {
         "username" => "l3",
         "password" => "password"
     },
-    "NORTEL ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES" => {
+    "nortel accelar (passport) 1000 series routing switches" => {
         "username" => "ro",
         "password" => "password"
     },
-    "NORTEL ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES" => {
+    "nortel accelar (passport) 1000 series routing switches" => {
         "username" => "rw",
         "password" => "password"
     },
-    "NORTEL ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES" => {
+    "nortel accelar (passport) 1000 series routing switches" => {
         "username" => "rwa",
         "password" => "password"
     },
-    "NORTEL EXTRANET SWITCHES" => {
+    "nortel extranet switches" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NORTEL BAYSTACK 350-24T" => {
+    "nortel baystack 350-24t" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NORTEL MERIDIAN PBX" => {
+    "nortel meridian pbx" => {
         "username" => "login",
         "password" => "password"
     },
-    "NORTEL MERIDIAN PBX" => {
+    "nortel meridian pbx" => {
         "username" => "login",
         "password" => "password"
     },
-    "NORTEL MERIDIAN PBX" => {
+    "nortel meridian pbx" => {
         "username" => "login",
         "password" => "password"
     },
-    "NORTEL MERIDIAN PBX" => {
+    "nortel meridian pbx" => {
         "username" => "spcl",
         "password" => "password"
     },
-    "NORTEL MERIDIAN MAX" => {
+    "nortel meridian max" => {
         "username" => "service",
         "password" => "password"
     },
-    "NORTEL MERIDIAN MAX" => {
+    "nortel meridian max" => {
         "username" => "root",
         "password" => "password"
     },
-    "NORTEL MATRA 6501 PBX" => {
+    "nortel matra 6501 pbx" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NORTEL MERIDIAN MAX" => {
+    "nortel meridian max" => {
         "username" => "maint",
         "password" => "password"
     },
-    "NORTEL MERIDIAN CCR" => {
+    "nortel meridian ccr" => {
         "username" => "service",
         "password" => "password"
     },
-    "NORTEL MERIDIAN CCR" => {
+    "nortel meridian ccr" => {
         "username" => "disttech",
         "password" => "password"
     },
-    "NORTEL MERIDIAN CCR" => {
+    "nortel meridian ccr" => {
         "username" => "maint",
         "password" => "password"
     },
-    "NORTEL MERIDIAN CCR" => {
+    "nortel meridian ccr" => {
         "username" => "ccrusr",
         "password" => "password"
     },
-    "NORTEL MERIDIAN" => {
+    "nortel meridian" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NORTEL MERIDIAN LINK" => {
+    "nortel meridian link" => {
         "username" => "service",
         "password" => "password"
     },
-    "NORTEL CONTIVITY Rev. EXTRANET/VPN SWITCHES" => {
+    "nortel contivity rev. extranet/vpn switches" => {
         "username" => "admin",
         "password" => "password"
     },
-    "NORTEL BUSINESS COMMUNICATIONS MANAGER / BCM400 3.6 / BCM Rev. 3.5 AND 3.6. YOU CAN ALSO ACCESS THESE SYSTEMS FRO" => {
+    "nortel business communications manager / bcm400 3.6 / bcm rev. 3.5 and 3.6. you can also access these systems fro" => {
         "username" => "supervisor",
         "password" => "password"
     },
-    "NORTEL PHONE SYSTEM Rev. ALL" => {
+    "nortel phone system rev. all" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NORTEL NORSTAR" => {
+    "nortel norstar" => {
         "username" => "266344",
         "password" => "password"
     },
-    "NORTEL DMS" => {
+    "nortel dms" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NORTEL P8600" => {
+    "nortel p8600" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "NORTEL BCM50 RELEASE 2.0 Rev. YOU CAN ALSO ACCESS THESE SYSTEMS FROM THE PHONE B" => {
+    "nortel bcm50 release 2.0 rev. you can also access these systems from the phone b" => {
         "username" => "supervisor",
         "password" => "password"
     },
-    "NRG OR RICOH DSC338 PRINTER Rev. 1.19" => {
+    "nrg or ricoh dsc338 printer rev. 1.19" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "NULLSOFT SHOUTCAST Rev. 1.9.5" => {
+    "nullsoft shoutcast rev. 1.9.5" => {
         "username" => "admin",
         "password" => "password"
     },
-    "OKI C5700" => {
+    "oki c5700" => {
         "username" => "root",
         "password" => "password"
     },
-    "OLITEC SX 200 ADSL MODEM ROUTER" => {
+    "olitec sx 200 adsl modem router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "OLITEC (TRENDCHIP) SX 202 ADSL MODEM ROUTER" => {
+    "olitec (trendchip) sx 202 adsl modem router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "OMNITRONIX DATA-LINK Rev. DL150" => {
+    "omnitronix data-link rev. dl150" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "OMNITRONIX DATA-LINK Rev. DL150" => {
+    "omnitronix data-link rev. dl150" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "OMRON MR104FH" => {
+    "omron mr104fh" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ONIXON DSL X402" => {
+    "onixon dsl x402" => {
         "username" => "root",
         "password" => "password"
     },
-    "OPENCONNECT OC://WEBCONNECT PRO" => {
+    "openconnect oc://webconnect pro" => {
         "username" => "admin",
         "password" => "password"
     },
-    "OPENCONNECT OC://WEBCONNECT PRO" => {
+    "openconnect oc://webconnect pro" => {
         "username" => "adminstat",
         "password" => "password"
     },
-    "OPENCONNECT OC://WEBCONNECT PRO" => {
+    "openconnect oc://webconnect pro" => {
         "username" => "adminview",
         "password" => "password"
     },
-    "OPENCONNECT OC://WEBCONNECT PRO" => {
+    "openconnect oc://webconnect pro" => {
         "username" => "adminuser",
         "password" => "password"
     },
-    "OPENCONNECT OC://WEBCONNECT PRO" => {
+    "openconnect oc://webconnect pro" => {
         "username" => "adminview",
         "password" => "password"
     },
-    "OPENCONNECT OC://WEBCONNECT PRO" => {
+    "openconnect oc://webconnect pro" => {
         "username" => "helpdesk",
         "password" => "password"
     },
-    "OPENWAVE WAP GATEWAY Rev. ANY" => {
+    "openwave wap gateway rev. any" => {
         "username" => "sys",
         "password" => "password"
     },
-    "OPENWAVE MSP Rev. ANY" => {
+    "openwave msp rev. any" => {
         "username" => "cac_admin",
         "password" => "password"
     },
-    "ORACLE ORACLE RDBMS Rev. ANY" => {
+    "oracle oracle rdbms rev. any" => {
         "username" => "system/manager",
         "password" => "password"
     },
-    "ORANGE LIVEBOX" => {
+    "orange livebox" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ORIGO " => {
+    "origo " => {
         "username" => "admin",
         "password" => "password"
     },
-    "OSICOM NETPRINT Rev. 500 1000 1500 AND 2000 SERIES" => {
+    "osicom netprint rev. 500 1000 1500 and 2000 series" => {
         "username" => "Manager",
         "password" => "password"
     },
-    "OSICOM NETPRINT AND JETX PRINT Rev. 500 1000 1500 AND 2000 SERIES" => {
+    "osicom netprint and jetx print rev. 500 1000 1500 and 2000 series" => {
         "username" => "sysadm",
         "password" => "password"
     },
-    "OSICOM OSICOM PLUS T1/PLUS 56K" => {
+    "osicom osicom plus t1/plus 56k" => {
         "username" => "write",
         "password" => "password"
     },
-    "OSICOM NETCOMMUTER REMOTE ACCESS SERVER" => {
+    "osicom netcommuter remote access server" => {
         "username" => "debug",
         "password" => "password"
     },
-    "OSICOM NETCOMMUTER REMOTE ACCESS SERVER" => {
+    "osicom netcommuter remote access server" => {
         "username" => "echo",
         "password" => "password"
     },
-    "OSICOM NETCOMMUTER REMOTE ACCESS SERVER" => {
+    "osicom netcommuter remote access server" => {
         "username" => "guest",
         "password" => "password"
     },
-    "OSICOM NETCOMMUTER REMOTE ACCESS SERVER" => {
+    "osicom netcommuter remote access server" => {
         "username" => "Manager",
         "password" => "password"
     },
-    "OSICOM NETCOMMUTER REMOTE ACCESS SERVER" => {
+    "osicom netcommuter remote access server" => {
         "username" => "sysadm",
         "password" => "password"
     },
-    "OSICOM OSICOM PLUS T1/PLUS 56K" => {
+    "osicom osicom plus t1/plus 56k" => {
         "username" => "write",
         "password" => "password"
     },
-    "OSICOM NETCOMMUTER REMOTE ACCESS SERVER" => {
+    "osicom netcommuter remote access server" => {
         "username" => "sysadm",
         "password" => "password"
     },
-    "OSICOM JETXPRINT Rev. 1000E/B" => {
+    "osicom jetxprint rev. 1000e/b" => {
         "username" => "sysadm",
         "password" => "password"
     },
-    "OSICOM JETXPRINT Rev. 1000E/N" => {
+    "osicom jetxprint rev. 1000e/n" => {
         "username" => "sysadm",
         "password" => "password"
     },
-    "OSICOM JETXPRINT Rev. 1000T/N" => {
+    "osicom jetxprint rev. 1000t/n" => {
         "username" => "sysadm",
         "password" => "password"
     },
-    "OSICOM JETXPRINT Rev. 500 E/B" => {
+    "osicom jetxprint rev. 500 e/b" => {
         "username" => "sysadm",
         "password" => "password"
     },
-    "OSICOM NETPRINT Rev. 500" => {
+    "osicom netprint rev. 500" => {
         "username" => "1500",
         "password" => "password"
     },
-    "OVISLINK WL-1120AP" => {
+    "ovislink wl-1120ap" => {
         "username" => "root",
         "password" => "password"
     },
-    "PACIFIC MICRO DATA MAST 9500 UNIVERSAL DISK ARRAY Rev. ESM VER. 2.11 / 1" => {
+    "pacific micro data mast 9500 universal disk array rev. esm ver. 2.11 / 1" => {
         "username" => "pmd",
         "password" => "password"
     },
-    "PANASONIC CF-28" => {
+    "panasonic cf-28" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "PANASONIC CF-45" => {
+    "panasonic cf-45" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "PANASONIC KXTD1232" => {
+    "panasonic kxtd1232" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PANASONIC CF 27 Rev. 4" => {
+    "panasonic cf 27 rev. 4" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "PENRIL DATABILITY VCP300 TERMINAL SERVER" => {
+    "penril datability vcp300 terminal server" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "PENTAGRAM CERBERUS ADSL MODEM + ROUTER" => {
+    "pentagram cerberus adsl modem + router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PENTAOFFICE SAT ROUTER" => {
+    "pentaoffice sat router" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "PENTASAFE VIGILENT SECURITY MANAGER Rev. 3" => {
+    "pentasafe vigilent security manager rev. 3" => {
         "username" => "PSEAdmin",
         "password" => "password"
     },
-    "PERLE CS9000 Rev. ANY" => {
+    "perle cs9000 rev. any" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PHOENIX V1.14 PHOENIX V1.14" => {
+    "phoenix v1.14 phoenix v1.14" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "PIRELLI PIRELLI ROUTER" => {
+    "pirelli pirelli router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PIRELLI PIRELLI ROUTER" => {
+    "pirelli pirelli router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PIRELLI PIRELLI ROUTER" => {
+    "pirelli pirelli router" => {
         "username" => "user",
         "password" => "password"
     },
-    "PIRELLI PIRELLI AGE-SB" => {
+    "pirelli pirelli age-sb" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PIRELLI AGE ADSL ROUTER" => {
+    "pirelli age adsl router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PIRELLI AGE ADSL ROUTER" => {
+    "pirelli age adsl router" => {
         "username" => "user",
         "password" => "password"
     },
-    "PLANET WAP-1900/1950/2000 Rev. 2.5.0" => {
+    "planet wap-1900/1950/2000 rev. 2.5.0" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "PLANET ADE-4110" => {
+    "planet ade-4110" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PLANET XRT-401D" => {
+    "planet xrt-401d" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PLANET ADE-4000" => {
+    "planet ade-4000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "PLANET AKCESS POINT" => {
+    "planet akcess point" => {
         "username" => "admin",
         "password" => "password"
     },
-    "POLYCOM SOUNDPOINT VOIP PHONES" => {
+    "polycom soundpoint voip phones" => {
         "username" => "Polycom",
         "password" => "password"
     },
-    "POLYCOM VIEWSTATION 4000 Rev. 3.5" => {
+    "polycom viewstation 4000 rev. 3.5" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "POLYCOM IPOWER 9000" => {
+    "polycom ipower 9000" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "PRESTIGIO NOBILE Rev. 156" => {
+    "prestigio nobile rev. 156" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "PROXIM ORINOCO 600/2000 Rev. ALL" => {
+    "proxim orinoco 600/2000 rev. all" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "PROXIM TSUNAMI MP.11 5054-R" => {
+    "proxim tsunami mp.11 5054-r" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "PROXIM AP-4000" => {
+    "proxim ap-4000" => {
         "username" => "",
         "password" => "password"
     },
-    "PSION TEKLOGIX 9150" => {
+    "psion teklogix 9150" => {
         "username" => "support",
         "password" => "password"
     },
-    "PYRAMID COMPUTER BENHUR Rev. ALL" => {
+    "pyramid computer benhur rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "QUINTUM TECHNOLOGIES INC. TENOR SERIES Rev. ALL" => {
+    "quintum technologies inc. tenor series rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "RADWARE LINKPROOF" => {
+    "radware linkproof" => {
         "username" => "lp",
         "password" => "password"
     },
-    "RADWARE LINKPROOF Rev. 3.73.03" => {
+    "radware linkproof rev. 3.73.03" => {
         "username" => "radware",
         "password" => "password"
     },
-    "RAIDZONE RAID ARRAYS" => {
+    "raidzone raid arrays" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "RAMP NETWORKS WEBRAMP" => {
+    "ramp networks webramp" => {
         "username" => "wradmin",
         "password" => "password"
     },
-    "RAMP NETWORKS WEBRAMP" => {
+    "ramp networks webramp" => {
         "username" => "wradmin",
         "password" => "password"
     },
-    "REDHAT REDHAT 6.2" => {
+    "redhat redhat 6.2" => {
         "username" => "piranha",
         "password" => "password"
     },
-    "REDHAT REDHAT 6.2" => {
+    "redhat redhat 6.2" => {
         "username" => "piranha",
         "password" => "password"
     },
-    "RESEARCH PC BIOS" => {
+    "research pc bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "RESEARCH BIOS" => {
+    "research bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "RICOH AFICIO Rev. AP3800C" => {
+    "ricoh aficio rev. ap3800c" => {
         "username" => "sysadmin",
         "password" => "password"
     },
-    "RICOH AFICIO 2228C" => {
+    "ricoh aficio 2228c" => {
         "username" => "sysadmin",
         "password" => "password"
     },
-    "RICOH AFICIO AP3800C Rev. 2.17" => {
+    "ricoh aficio ap3800c rev. 2.17" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "RICOH AFICIO 2232C" => {
+    "ricoh aficio 2232c" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "RICOH AP410N Rev. 1.13" => {
+    "ricoh ap410n rev. 1.13" => {
         "username" => "admin",
         "password" => "password"
     },
-    "RICOH AFICIO 2020D" => {
+    "ricoh aficio 2020d" => {
         "username" => "admin",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "setup",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "teacher",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "temp1",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "admin",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "admin2",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "adminstrator",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "deskalt",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "deskman",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "desknorm",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "deskres",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "guest",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "replicator",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "RMUser1",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "topicalt",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "topicnorm",
         "password" => "password"
     },
-    "RM RM CONNECT" => {
+    "rm rm connect" => {
         "username" => "topicres",
         "password" => "password"
     },
-    "ROAMABOUT ROAMABOUT R2 WIRELESS ACCESS PLATFORM" => {
+    "roamabout roamabout r2 wireless access platform" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SAGEM FAST 1400" => {
+    "sagem fast 1400" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SAGEM FAST 1200 (FAST 1200)" => {
+    "sagem fast 1200 (fast 1200)" => {
         "username" => "root",
         "password" => "password"
     },
-    "SAGEM FAST 1400W" => {
+    "sagem fast 1400w" => {
         "username" => "root",
         "password" => "password"
     },
-    "SAGEM LIVEBOX" => {
+    "sagem livebox" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SAMSUNG MAGICLAN SWL-3500RG Rev. 2.15" => {
+    "samsung magiclan swl-3500rg rev. 2.15" => {
         "username" => "public",
         "password" => "password"
     },
-    "SAMSUNG N620" => {
+    "samsung n620" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SAMSUNG MODEM/ROUTER Rev. AHT-E300" => {
+    "samsung modem/router rev. aht-e300" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SCIENTIFIC ATLANTA DPX2100 Rev. COMCAST-SUPPLIED" => {
+    "scientific atlanta dpx2100 rev. comcast-supplied" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SENAO 2611CB3+D (802.11B WIRELESS AP)" => {
+    "senao 2611cb3+d (802.11b wireless ap)" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SERVER TECHNOLOGY SENTRY REMOTE POWER MANAGER" => {
+    "server technology sentry remote power manager" => {
         "username" => "GEN1",
         "password" => "password"
     },
-    "SERVER TECHNOLOGY SENTRY REMOTE POWER MANAGER" => {
+    "server technology sentry remote power manager" => {
         "username" => "GEN2",
         "password" => "password"
     },
-    "SERVER TECHNOLOGY SENTRY REMOTE POWER MANAGER" => {
+    "server technology sentry remote power manager" => {
         "username" => "ADMN",
         "password" => "password"
     },
-    "SHARP AR-407/S402" => {
+    "sharp ar-407/s402" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SIEMENS SE515" => {
+    "siemens se515" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SIEMENS ROLM PBX" => {
+    "siemens rolm pbx" => {
         "username" => "op",
         "password" => "password"
     },
-    "SIEMENS ROLM PBX" => {
+    "siemens rolm pbx" => {
         "username" => "su",
         "password" => "password"
     },
-    "SIEMENS PHONEMAIL" => {
+    "siemens phonemail" => {
         "username" => "poll",
         "password" => "password"
     },
-    "SIEMENS PHONEMAIL" => {
+    "siemens phonemail" => {
         "username" => "sysadmin",
         "password" => "password"
     },
-    "SIEMENS ROLM PBX" => {
+    "siemens rolm pbx" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SIEMENS PHONEMAIL" => {
+    "siemens phonemail" => {
         "username" => "tech",
         "password" => "password"
     },
-    "SIEMENS 5940 T1E1 ROUTER Rev. 5940-001 V6.0.180-2" => {
+    "siemens 5940 t1e1 router rev. 5940-001 v6.0.180-2" => {
         "username" => "superuser",
         "password" => "password"
     },
-    "SIEMENS PHONEMAIL" => {
+    "siemens phonemail" => {
         "username" => "poll",
         "password" => "password"
     },
-    "SIEMENS PHONEMAIL" => {
+    "siemens phonemail" => {
         "username" => "sysadmin",
         "password" => "password"
     },
-    "SIEMENS PHONEMAIL" => {
+    "siemens phonemail" => {
         "username" => "tech",
         "password" => "password"
     },
-    "SIEMENS ROLM PBX" => {
+    "siemens rolm pbx" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SIEMENS ROLM PBX" => {
+    "siemens rolm pbx" => {
         "username" => "eng",
         "password" => "password"
     },
-    "SIEMENS ROLM PBX" => {
+    "siemens rolm pbx" => {
         "username" => "op",
         "password" => "password"
     },
-    "SIEMENS ROLM PBX" => {
+    "siemens rolm pbx" => {
         "username" => "op",
         "password" => "password"
     },
-    "SIEMENS ROLM PBX" => {
+    "siemens rolm pbx" => {
         "username" => "su",
         "password" => "password"
     },
-    "SIEMENS SPEEDSTREAM 4100" => {
+    "siemens speedstream 4100" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SIEMENS HIPATH" => {
+    "siemens hipath" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SIEMENS NIXDORF PC BIOS" => {
+    "siemens nixdorf pc bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SIEMENS NIXDORF BIOS" => {
+    "siemens nixdorf bios" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SIEMENS PRO C5 SIEMENS" => {
+    "siemens pro c5 siemens" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SIGMA SIGMACOMA IPSHARE Rev. SIGMACOM ROUTER V1.0" => {
+    "sigma sigmacoma ipshare rev. sigmacom router v1.0" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SIIPS TROJAN Rev. 8974202" => {
+    "siips trojan rev. 8974202" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "SILEX TECHNOLOGY PRICOM (PRINTSERVER)" => {
+    "silex technology pricom (printserver)" => {
         "username" => "root",
         "password" => "password"
     },
-    "SITARA QOSWORKS" => {
+    "sitara qosworks" => {
         "username" => "root",
         "password" => "password"
     },
-    "SITECOM ALL WIFI ROUTERS" => {
+    "sitecom all wifi routers" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "SITECOM DC-202" => {
+    "sitecom dc-202" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SMARTSWITCH ROUTER 250 SSR2500 Rev. V3.0.9" => {
+    "smartswitch router 250 ssr2500 rev. v3.0.9" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SMC BARRICADE 7004 AWBR" => {
+    "smc barricade 7004 awbr" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SMC ROUTER Rev. ALL" => {
+    "smc router rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SMC SMC BROADBAND ROUTER" => {
+    "smc smc broadband router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SMC SMC2804WBR Rev. V.1" => {
+    "smc smc2804wbr rev. v.1" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "SMC WIFI ROUTER Rev. ALL" => {
+    "smc wifi router rev. all" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SMC SMB2804WBR Rev. V2" => {
+    "smc smb2804wbr rev. v2" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "SMC 7401BRA Rev. 1" => {
+    "smc 7401bra rev. 1" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SMC 7401BRA Rev. 2" => {
+    "smc 7401bra rev. 2" => {
         "username" => "smc",
         "password" => "password"
     },
-    "SMC BARRICADE7204BRB" => {
+    "smc barricade7204brb" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SMC 2804WR" => {
+    "smc 2804wr" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "SMC ROUTER/MODEM Rev. BR7401" => {
+    "smc router/modem rev. br7401" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SMC SMCWBR14-G Rev. SMCWBR14-G" => {
+    "smc smcwbr14-g rev. smcwbr14-g" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "SMC MODEM/ROUTER" => {
+    "smc modem/router" => {
         "username" => "cusadmin",
         "password" => "password"
     },
-    "SMC 7204BRA" => {
+    "smc 7204bra" => {
         "username" => "smc",
         "password" => "password"
     },
-    "SMC SMCWBR14-G" => {
+    "smc smcwbr14-g" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SMC SMC 7904BRA" => {
+    "smc smc 7904bra" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "SNAPGEAR PRO Rev. LITE" => {
+    "snapgear pro rev. lite" => {
         "username" => "1.79 +",
         "password" => "password"
     },
-    "SOLUTION 6 VIZTOPIA ACCOUNTS" => {
+    "solution 6 viztopia accounts" => {
         "username" => "aaa",
         "password" => "password"
     },
-    "SONIC-X SONICANIME Rev. ON" => {
+    "sonic-x sonicanime rev. on" => {
         "username" => "root",
         "password" => "password"
     },
-    "SONICWALL ALL Rev. ALL" => {
+    "sonicwall all rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SOPHIA (SCHWEIZ) AG PROTECTOR" => {
+    "sophia (schweiz) ag protector" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SOPHIA (SCHWEIZ) AG PROTECTOR" => {
+    "sophia (schweiz) ag protector" => {
         "username" => "root",
         "password" => "password"
     },
-    "SORENSON SR-200" => {
+    "sorenson sr-200" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "SPEEDCOM " => {
+    "speedcom " => {
         "username" => "admin",
         "password" => "password"
     },
-    "SPEEDSTREAM 5660" => {
+    "speedstream 5660" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SPEEDSTREAM 5861 SMT ROUTER" => {
+    "speedstream 5861 smt router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SPEEDSTREAM 5871 IDSL ROUTER" => {
+    "speedstream 5871 idsl router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SPEEDSTREAM ROUTER 250 SSR250" => {
+    "speedstream router 250 ssr250" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SPEEDSTREAM DSL" => {
+    "speedstream dsl" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SPEEDSTREAM 5667 Rev. R4.0.1" => {
+    "speedstream 5667 rev. r4.0.1" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "SPEEDXESS HASE-120" => {
+    "speedxess hase-120" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "SPHAIRON AR860" => {
+    "sphairon ar860" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SPIKE CPE" => {
+    "spike cpe" => {
         "username" => "enable",
         "password" => "password"
     },
-    "SUN JAVAWEBSERVER Rev. 1.X 2.X" => {
+    "sun javawebserver rev. 1.x 2.x" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SUN COBALT" => {
+    "sun cobalt" => {
         "username" => "admin",
         "password" => "password"
     },
-    "SUN MICROSYSTEMS ILOM OF X4100 Rev. 1.0" => {
+    "sun microsystems ilom of x4100 rev. 1.0" => {
         "username" => "root",
         "password" => "password"
     },
-    "SWEEX WIRELESS ADSL 2/2+ MODEM/ROUTER 54MBPS" => {
+    "sweex wireless adsl 2/2+ modem/router 54mbps" => {
         "username" => "Sweex",
         "password" => "password"
     },
-    "SWISSVOICE IP 10S" => {
+    "swissvoice ip 10s" => {
         "username" => "target",
         "password" => "password"
     },
-    "SYBASE EASERVER" => {
+    "sybase easerver" => {
         "username" => "jagadmin",
         "password" => "password"
     },
-    "SYMBOL SPECTRUM Rev. SERIES 4100-4121" => {
+    "symbol spectrum rev. series 4100-4121" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SYMBOL AP-2412" => {
+    "symbol ap-2412" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SYMBOL AP-3020" => {
+    "symbol ap-3020" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SYMBOL AP-4111" => {
+    "symbol ap-4111" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SYMBOL AP-4121" => {
+    "symbol ap-4121" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "SYMBOL AP-4131" => {
+    "symbol ap-4131" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "T-COMFORT ROUTERS" => {
+    "t-comfort routers" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "TANDBERG TANDBERG Rev. 8000" => {
+    "tandberg tandberg rev. 8000" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "TANDBERG DATA DLT8000 AUTOLOADER 10X" => {
+    "tandberg data dlt8000 autoloader 10x" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "TANDEM TACL" => {
+    "tandem tacl" => {
         "username" => "super.super",
         "password" => "password"
     },
-    "TANDEM TACL" => {
+    "tandem tacl" => {
         "username" => "super.super",
         "password" => "password"
     },
-    "TEAM XODUS XENIUMOS Rev. 2.3" => {
+    "team xodus xeniumos rev. 2.3" => {
         "username" => "xbox",
         "password" => "password"
     },
-    "TEKLOGIX ACCESSPOINT" => {
+    "teklogix accesspoint" => {
         "username" => "Administrator",
         "password" => "password"
     },
-    "TELCO SYSTEMS EDGE LINK 100" => {
+    "telco systems edge link 100" => {
         "username" => "telco",
         "password" => "password"
     },
-    "TELEDAT ROUTERS" => {
+    "teledat routers" => {
         "username" => "admin",
         "password" => "password"
     },
-    "TELETRONICS WL-CPE-ROUTER Rev. 3.05.2" => {
+    "teletronics wl-cpe-router rev. 3.05.2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "TELEWELL TW-EA200" => {
+    "telewell tw-ea200" => {
         "username" => "admin",
         "password" => "password"
     },
-    "TELINDUS 1124" => {
+    "telindus 1124" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "TELINDUS SHDSL1421 Rev. YES" => {
+    "telindus shdsl1421 rev. yes" => {
         "username" => "admin",
         "password" => "password"
     },
-    "TELINDUS TELINDUS Rev. 2002" => {
+    "telindus telindus rev. 2002" => {
         "username" => "admin",
         "password" => "password"
     },
-    "TELLABS TITAN 5500 Rev. FP 6.X" => {
+    "tellabs titan 5500 rev. fp 6.x" => {
         "username" => "tellabs",
         "password" => "password"
     },
-    "TELLABS 7120" => {
+    "tellabs 7120" => {
         "username" => "root",
         "password" => "password"
     },
-    "TERAYON UNKNOWN Rev. COMCAST-SUPPLIED" => {
+    "terayon unknown rev. comcast-supplied" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "TERAYON UNKNOWN Rev. COMCAST-SUPPLIED" => {
+    "terayon unknown rev. comcast-supplied" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "TIARA 1400 Rev. 3.X" => {
+    "tiara 1400 rev. 3.x" => {
         "username" => "tiara",
         "password" => "password"
     },
-    "TOPSEC FIREWALL" => {
+    "topsec firewall" => {
         "username" => "superman",
         "password" => "password"
     },
-    "TRENDNET TEW-435BRM" => {
+    "trendnet tew-435brm" => {
         "username" => "admin",
         "password" => "password"
     },
-    "TROY EXTENDNET 100ZX" => {
+    "troy extendnet 100zx" => {
         "username" => "admin",
         "password" => "password"
     },
-    "TVT SYSTEM EXPRESSE G5" => {
+    "tvt system expresse g5" => {
         "username" => "craft",
         "password" => "password"
     },
-    "TVT SYSTEM EXPRESSE G5 DS1 MODULE" => {
+    "tvt system expresse g5 ds1 module" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "U.S. ROBOTICS SURECONNECT 9003 ADSL ETHERNET/USB ROUTER" => {
+    "u.s. robotics sureconnect 9003 adsl ethernet/usb router" => {
         "username" => "root",
         "password" => "password"
     },
-    "U.S. ROBOTICS SURECONNECT 9105 ADSL 4-PORT ROUTER" => {
+    "u.s. robotics sureconnect 9105 adsl 4-port router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "U.S. ROBOTICS 6000 CABLE MODEM" => {
+    "u.s. robotics 6000 cable modem" => {
         "username" => "cablemodem",
         "password" => "password"
     },
-    "U.S. ROBOTICS USR8054 Rev. ALL" => {
+    "u.s. robotics usr8054 rev. all" => {
         "username" => "admin",
         "password" => "password"
     },
-    "UNEX ROUTERS" => {
+    "unex routers" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "UNIDEN UIP1869V (VONAGE)" => {
+    "uniden uip1869v (vonage)" => {
         "username" => "admin",
         "password" => "password"
     },
-    "UNISYS CLEARPATH MCP" => {
+    "unisys clearpath mcp" => {
         "username" => "NAU",
         "password" => "password"
     },
-    "UNISYS CLEARPATH MCP" => {
+    "unisys clearpath mcp" => {
         "username" => "ADMINISTRATOR",
         "password" => "password"
     },
-    "UNISYS CLEARPATH MCP" => {
+    "unisys clearpath mcp" => {
         "username" => "HTTP",
         "password" => "password"
     },
-    "US ROBOTICS ADSL ETHERNET MODEM" => {
+    "us robotics adsl ethernet modem" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "US ROBOTICS USR8000 Rev. 1.23 / 1.25" => {
+    "us robotics usr8000 rev. 1.23 / 1.25" => {
         "username" => "root",
         "password" => "password"
     },
-    "US ROBOTICS USR8550 Rev. 3.0.5" => {
+    "us robotics usr8550 rev. 3.0.5" => {
         "username" => "Any",
         "password" => "password"
     },
-    "US ROBOTICS SURECONNECT ADSL Rev. SURECONNECT ADSL" => {
+    "us robotics sureconnect adsl rev. sureconnect adsl" => {
         "username" => "support",
         "password" => "password"
     },
-    "US ROBOTICS ADSL GATEWAY WIRELESS ROUTER" => {
+    "us robotics adsl gateway wireless router" => {
         "username" => "support",
         "password" => "password"
     },
-    "US21100060 HP OMIBOOK 6100" => {
+    "us21100060 hp omibook 6100" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "V-TECH IP8100" => {
+    "v-tech ip8100" => {
         "username" => "VTech",
         "password" => "password"
     },
-    "VASCO VACMAN MIDDLEWARE Rev. 2.X" => {
+    "vasco vacman middleware rev. 2.x" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VERIFONE VERIFONE JUNIOR Rev. 2.05" => {
+    "verifone verifone junior rev. 2.05" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "VERILINK NE6100-4 NETENGINE Rev. IAD 3.4.8" => {
+    "verilink ne6100-4 netengine rev. iad 3.4.8" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "VIRGIN MEDIA NETGEAR SUPERHUB" => {
+    "virgin media netgear superhub" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VISUAL NETWORKS VISUAL UPTIME T1 CSU/DSU Rev. 1" => {
+    "visual networks visual uptime t1 csu/dsu rev. 1" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VONAGE D-LINK VTA" => {
+    "vonage d-link vta" => {
         "username" => "user",
         "password" => "password"
     },
-    "VONAGE D-LINK VWR" => {
+    "vonage d-link vwr" => {
         "username" => "user",
         "password" => "password"
     },
-    "VONAGE LINKSYS PAP2/PAP2V2" => {
+    "vonage linksys pap2/pap2v2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VONAGE LINKSYS RT31P2" => {
+    "vonage linksys rt31p2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VONAGE LINKSYS RTP300" => {
+    "vonage linksys rtp300" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VONAGE LINKSYS WRT54GP2" => {
+    "vonage linksys wrt54gp2" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VONAGE LINKSYS WRTP54G" => {
+    "vonage linksys wrtp54g" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VONAGE MOTOROLA VT1005" => {
+    "vonage motorola vt1005" => {
         "username" => "(blank)",
         "password" => "password"
     },
-    "VONAGE MOTOROLA VT2142" => {
+    "vonage motorola vt2142" => {
         "username" => "router",
         "password" => "password"
     },
-    "VONAGE MOTOROLA VT2442" => {
+    "vonage motorola vt2442" => {
         "username" => "router",
         "password" => "password"
     },
-    "VONAGE MOTOROLA VT2542" => {
+    "vonage motorola vt2542" => {
         "username" => "router",
         "password" => "password"
     },
-    "VONAGE UNIDEN UIP1869V" => {
+    "vonage uniden uip1869v" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VONAGE V-TECH IP8100" => {
+    "vonage v-tech ip8100" => {
         "username" => "VTech",
         "password" => "password"
     },
-    "VONAGE CISCO ATA-186" => {
+    "vonage cisco ata-186" => {
         "username" => "(blank)",
         "password" => "password"
     },
-    "VONAGE VDV21-VD" => {
+    "vonage vdv21-vd" => {
         "username" => "router",
         "password" => "password"
     },
-    "VXWORKS MISC" => {
+    "vxworks misc" => {
         "username" => "admin",
         "password" => "password"
     },
-    "VXWORKS MISC" => {
+    "vxworks misc" => {
         "username" => "guest",
         "password" => "password"
     },
-    "WANADOO LIVEBOX" => {
+    "wanadoo livebox" => {
         "username" => "admin",
         "password" => "password"
     },
-    "WANG WANG" => {
+    "wang wang" => {
         "username" => "CSG",
         "password" => "password"
     },
-    "WATCHGUARD FIREBOX 1000" => {
+    "watchguard firebox 1000" => {
         "username" => "admin",
         "password" => "password"
     },
-    "WATCHGUARD SOHO AND SOHO6 Rev. ALL VERSIONS" => {
+    "watchguard soho and soho6 rev. all versions" => {
         "username" => "user",
         "password" => "password"
     },
-    "WESTELL VERSALINK 327" => {
+    "westell versalink 327" => {
         "username" => "admin",
         "password" => "password"
     },
-    "WESTELL WIRESPEED" => {
+    "westell wirespeed" => {
         "username" => "admin",
         "password" => "password"
     },
-    "WESTELL WANG" => {
+    "westell wang" => {
         "username" => "CSG",
         "password" => "password"
     },
-    "WESTELL WIRESPEED WIRELESS ROUTER" => {
+    "westell wirespeed wireless router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "WESTELL 2200" => {
+    "westell 2200" => {
         "username" => "admin",
         "password" => "password"
     },
-    "WYSE WINTERM Rev. 5440XL" => {
+    "wyse winterm rev. 5440xl" => {
         "username" => "root",
         "password" => "password"
     },
-    "WYSE WINTERM Rev. 5440XL" => {
+    "wyse winterm rev. 5440xl" => {
         "username" => "VNC",
         "password" => "password"
     },
-    "WYSE WINTERM Rev. 9455XL" => {
+    "wyse winterm rev. 9455xl" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "WYSE WINTERM" => {
+    "wyse winterm" => {
         "username" => "root",
         "password" => "password"
     },
-    "WYSE RAPPORT Rev. 4.4" => {
+    "wyse rapport rev. 4.4" => {
         "username" => "rapport",
         "password" => "password"
     },
-    "WYSE WINTERM 3150" => {
+    "wyse winterm 3150" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "X-MICRO X-MICRO WLAN 11B BROADBAND ROUTER Rev. 1.2.2 1.2.2.3 1.2.2.4 1.6.0.0" => {
+    "x-micro x-micro wlan 11b broadband router rev. 1.2.2 1.2.2.3 1.2.2.4 1.6.0.0" => {
         "username" => "super",
         "password" => "password"
     },
-    "X-MICRO X-MICRO WLAN 11B BROADBAND ROUTER Rev. 1.6.0.1" => {
+    "x-micro x-micro wlan 11b broadband router rev. 1.6.0.1" => {
         "username" => "1502",
         "password" => "password"
     },
-    "X-MICRO WLAN 11B ACCESS POINT Rev. 1.2.2" => {
+    "x-micro wlan 11b access point rev. 1.2.2" => {
         "username" => "super",
         "password" => "password"
     },
-    "XAVI 7000-ABA-ST1" => {
+    "xavi 7000-aba-st1" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XAVI 7001" => {
+    "xavi 7001" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XD XDD Rev. XDDD" => {
+    "xd xdd rev. xddd" => {
         "username" => "xd",
         "password" => "password"
     },
-    "XEROX MULTI FUNCTION EQUIPMENT" => {
+    "xerox multi function equipment" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XEROX WORKCENTER PRO 428" => {
+    "xerox workcenter pro 428" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XEROX DOCUMENT CENTRE 425" => {
+    "xerox document centre 425" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XEROX DOCUCENTRE 425" => {
+    "xerox docucentre 425" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XEROX DOCUMENT CENTRE 405 Rev. -" => {
+    "xerox document centre 405 rev. -" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XEROX XEROX" => {
+    "xerox xerox" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XEROX XEROX" => {
+    "xerox xerox" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XEROX WORK CENTRE PRO 35" => {
+    "xerox work centre pro 35" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XYLAN OMNISWITCH" => {
+    "xylan omniswitch" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XYLAN OMNISWITCH" => {
+    "xylan omniswitch" => {
         "username" => "diag",
         "password" => "password"
     },
-    "XYLAN OMNISWITCH" => {
+    "xylan omniswitch" => {
         "username" => "admin",
         "password" => "password"
     },
-    "XYPLEX ROUTERS" => {
+    "xyplex routers" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XYPLEX TERMINAL SERVER" => {
+    "xyplex terminal server" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XYPLEX TERMINAL SERVER" => {
+    "xyplex terminal server" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XYPLEX ROUTERS" => {
+    "xyplex routers" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XYPLEX ROUTERS" => {
+    "xyplex routers" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XYPLEX TERMINAL SERVER" => {
+    "xyplex terminal server" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XYPLEX TERMINAL SERVER" => {
+    "xyplex terminal server" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "XYPLEX SWITCH Rev. 3.2" => {
+    "xyplex switch rev. 3.2" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "YAKUMO ROUTERS" => {
+    "yakumo routers" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ZCOM WIRELESS" => {
+    "zcom wireless" => {
         "username" => "root",
         "password" => "password"
     },
-    "ZEBRA 10/100 PRINT SERVER" => {
+    "zebra 10/100 print server" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ZOOM ZOOM ADSL MODEM" => {
+    "zoom zoom adsl modem" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ZXDSL ZXDSL 831" => {
+    "zxdsl zxdsl 831" => {
         "username" => "ZXDSL",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE" => {
+    "zyxel prestige" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE" => {
+    "zyxel prestige" => {
         "username" => "root",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE" => {
+    "zyxel prestige" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE 643" => {
+    "zyxel prestige 643" => {
         "username" => "(none)",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE 652HW-31 ADSL ROUTER" => {
+    "zyxel prestige 652hw-31 adsl router" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE 100IH" => {
+    "zyxel prestige 100ih" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE 650" => {
+    "zyxel prestige 650" => {
         "username" => "1234",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE 900" => {
+    "zyxel prestige 900" => {
         "username" => "webadmin",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE 645" => {
+    "zyxel prestige 645" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE P660HW" => {
+    "zyxel prestige p660hw" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ZYXEL ZYWALL 2" => {
+    "zyxel zywall 2" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ZYXEL ADSL ROUTERS Rev. ALL ZYNOS FIRMWARES" => {
+    "zyxel adsl routers rev. all zynos firmwares" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ZYXEL PRESTIGE 660HW" => {
+    "zyxel prestige 660hw" => {
         "username" => "admin",
         "password" => "password"
     },
-    "ZYXEL P-660HW-61 Rev. PRESTIGE 660HW-61" => {
+    "zyxel p-660hw-61 rev. prestige 660hw-61" => {
         "username" => "n/a",
         "password" => "password"
     },
-    "ZYXEL ZYWALL SERIES PRESTIGE 660R-61C" => {
+    "zyxel zywall series prestige 660r-61c" => {
         "username" => "n/a",
         "password" => "password"
     },
@@ -4359,21 +4359,38 @@ zci is_cached => 1;
 zci answer_type => "password";
 
 handle query => sub {
-    return unless /^(?:(.*)\ )?
-                    (?:default\ password|password\ default|password)
-                    (?:\ (.*))?$
-                    |(.*)$
+    return unless my @matches = $_ =~
+                  /
+                   # default $brand password $model
+                   # password $model password $brand
+                   ^(?:(?:default|password)\ )(.+)(?:\ (?:default|password))(?:\ (.+))$
+                   # default $router password
+                   |^(?:(?:default|password)\ )(.+)(?:\ (?:default|password))$
+                   # $router default password
+                   # default password $router 
+                   |^(?:(.+)\ )?(?:default\ password|password\ default)(?:\ (.+))?$
+                   # password $router 
+                   # $router password 
+                   |^(?:(.+)\ )?(?:password)(?:\ (.+))?$
+                   # $router
+                   |^(.+)$
                   /ix;
-    # must somehow cycle between match permutations while
-    # avoiding undefs
-    for my $router ( "$1" ) {
-        $router = uc $router;
+    @matches = map {lc} grep {defined} @matches;
+    if (exists $matches[0] and $matches[1]) {
+        push @matches, "$matches[0] $matches[1]";
+        push @matches, "$matches[1] $matches[0]";
+    }
+    for my $router ( @matches ) {
         if (exists $routers{$router}) {
             my $username = $routers{$router}{"username"};
             my $password = $routers{$router}{"password"};
+            $router = uc $router;
             return "Default login for the $router: "
-                . "<i>Username</i>: $username\t"
-                . "<i>Password</i>: $password";
+                 . "Username: $username "
+                 . "Password: $password",
+                    html => "Default login for the $router: "
+                          . "<i>Username</i>: $username "
+                          . "<i>Password</i>: $password";
         }
     }
     return;
