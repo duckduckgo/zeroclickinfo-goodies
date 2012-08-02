@@ -5,6 +5,9 @@ use DDG::Goodie;
 use Try::Tiny;
 use XML::Simple;
 
+attribution github  => ['https://github.com/AlexBio', 'AlexBio'  ],
+            web     => ['http://ghedini.me', 'Alessandro Ghedini'];
+
 zci answer_type => 'isvalid';
 zci is_cached   => 1;
 

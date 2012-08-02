@@ -5,6 +5,9 @@ use DDG::Goodie;
 use Try::Tiny;
 use JSON qw(from_json);
 
+attribution github  => ['https://github.com/AlexBio', 'AlexBio'  ],
+            web     => ['http://ghedini.me', 'Alessandro Ghedini'];
+
 zci answer_type => 'isvalid';
 zci is_cached   => 1;
 
