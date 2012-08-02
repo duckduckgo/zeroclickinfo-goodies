@@ -19,4 +19,14 @@ ddg_goodie_test(
 	'is valid json {"test" "lol"}' => test_zci('Your JSON is invalid!'),
 );
 
+ddg_goodie_test(
+	[qw(DDG::Goodie::IsValid::XML)],
+	'is valid xml <test></test>' => test_zci('Your XML is valid!'),
+);
+
+ddg_goodie_test(
+	[qw(DDG::Goodie::IsValid::XML)],
+	'is valid xml <test>lol' => test_zci('Your XML is invalid!'),
+);
+
 done_testing;
