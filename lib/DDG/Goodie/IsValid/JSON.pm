@@ -19,10 +19,16 @@ handle remainder => sub {
 		from_json($_);
 		return 'valid';
 	} catch {
-		return 'invalid';
+		$_ =~ /^(.* at character offset \d+ .*) at/;
+
+		if ($1) {
+			return "invalid: $1"
+		} else {
+			return "invalid"
+		}
 	};
 
-	return "Your JSON is $result!";
+	return "Your JSON is $result!"
 };
 
 1;

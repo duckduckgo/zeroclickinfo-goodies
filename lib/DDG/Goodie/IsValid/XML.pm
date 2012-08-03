@@ -19,7 +19,13 @@ handle remainder => sub {
 		XMLin($_);
 		return 'valid';
 	} catch {
-		return 'invalid';
+		$_ =~ /^\n(.* at line \d+, column \d+, byte \d+) at/;
+
+		if ($1) {
+			return "invalid: $1"
+		} else {
+			return "invalid"
+		}
 	};
 
 	return "Your XML is $result!";

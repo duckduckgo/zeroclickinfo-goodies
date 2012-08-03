@@ -16,7 +16,7 @@ ddg_goodie_test(
 
 ddg_goodie_test(
 	[qw(DDG::Goodie::IsValid::JSON)],
-	'is valid json {"test" "lol"}' => test_zci('Your JSON is invalid!'),
+	'is valid json {"test" "lol"}' => test_zci('Your JSON is invalid: \':\' expected, at character offset 8 (before ""lol"}")!'),
 );
 
 ddg_goodie_test(
@@ -26,7 +26,7 @@ ddg_goodie_test(
 
 ddg_goodie_test(
 	[qw(DDG::Goodie::IsValid::XML)],
-	'is valid xml <test>lol' => test_zci('Your XML is invalid!'),
+	'is valid xml <test>lol' => test_zci('Your XML is invalid: no element found at line 1, column 9, byte 9!'),
 );
 
 done_testing;
