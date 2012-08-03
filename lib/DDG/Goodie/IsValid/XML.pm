@@ -1,4 +1,5 @@
 package DDG::Goodie::IsValid::XML;
+# ABSTRACT: Check whether the submitted data is valid XML.
 
 use DDG::Goodie;
 

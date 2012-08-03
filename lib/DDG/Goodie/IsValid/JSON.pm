@@ -1,4 +1,5 @@
 package DDG::Goodie::IsValid::JSON;
+# ABSTRACT: Check whether the submitted data is valid JSON.
 
 use DDG::Goodie;
 
