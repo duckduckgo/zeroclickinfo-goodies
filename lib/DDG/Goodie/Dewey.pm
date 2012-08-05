@@ -3,7 +3,7 @@ package DDG::Goodie::Dewey;
 
 use DDG::Goodie;
 
-triggers startend => 'dewey';
+triggers any => 'dewey';
 
 zci answer_type => 'dewey_decimal';
 
@@ -38,7 +38,7 @@ handle remainder => sub {
 
     unless ($multi) { 
         $out .= "$_ is " . lc((get_info($_) or return));
-        $out .= " in the Dewey Decimal System";
+        $out .= " in the Dewey Decimal System.";
         $out_html = $out;
     }
     elsif (/\d00/) {
@@ -52,8 +52,8 @@ handle remainder => sub {
         }
     }
     
-    $out_html =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1" class='1'>$2<\/a>/g;
-    $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1" class='2'>$1<\/a>/g;
+    $out_html =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
+    $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
     $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
     $out =~ s/\[\[(.+?)\]\]/$1/g;
     return $multi ? "" : $out, html => $multi ? "<table>$out_html</table>" : $out_html;
