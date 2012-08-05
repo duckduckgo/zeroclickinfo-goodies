@@ -52,8 +52,8 @@ handle remainder => sub {
         }
     }
     
-    $out_html =~ s/\[\[(.+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
-    $out_html =~ s/\[\[(.+?)\]\]/<a href="$1">$1<\/a>/g;
+    $out_html =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1" class='1'>$2<\/a>/g;
+    $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1" class='2'>$1<\/a>/g;
     $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
     $out =~ s/\[\[(.+?)\]\]/$1/g;
     return $multi ? "" : $out, html => $multi ? "<table>$out_html</table>" : $out_html;
