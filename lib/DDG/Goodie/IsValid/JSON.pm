@@ -12,11 +12,13 @@ attribution github  => ['https://github.com/AlexBio', 'AlexBio'  ],
 zci answer_type => 'isvalid';
 zci is_cached   => 1;
 
-triggers start => 'is valid json', 'validate json';
+triggers any => 'json';
 
 handle remainder => sub {
+	return unless $_ =~ /valid\s*(.*)$/;
+
 	my $result = try {
-		from_json($_);
+		from_json($1);
 		return 'valid';
 	} catch {
 		$_ =~ /^(.* at character offset \d+ .*) at/;

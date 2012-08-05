@@ -12,9 +12,11 @@ attribution github  => ['https://github.com/AlexBio', 'AlexBio'  ],
 zci answer_type => 'isvalid';
 zci is_cached   => 1;
 
-triggers start => 'is valid xml', 'validate xml';
+triggers any => 'xml';
 
 handle remainder => sub {
+	return unless $_ =~ /valid\s*(.*)$/;
+
 	my $result = try {
 		XMLin($_);
 		return 'valid';
