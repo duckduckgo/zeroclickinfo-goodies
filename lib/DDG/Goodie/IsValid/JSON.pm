@@ -19,18 +19,19 @@ handle remainder => sub {
 
 	my $result = try {
 		from_json($1);
-		return 'valid';
+		return 'valid!';
 	} catch {
 		$_ =~ /^(.* at character offset \d+ .*) at/;
 
 		if ($1) {
-			return "invalid: $1"
+			my $css = "font-size:12px;display:inline;";
+			return "invalid: <pre style=\"$css\">$1</pre>"
 		} else {
 			return "invalid"
 		}
 	};
 
-	return "Your JSON is $result!"
+	return "Your JSON is $result"
 };
 
 1;

@@ -18,19 +18,20 @@ handle remainder => sub {
 	return unless $_ =~ /valid\s*(.*)$/;
 
 	my $result = try {
-		XMLin($_);
-		return 'valid';
+		XMLin($1);
+		return 'valid!';
 	} catch {
 		$_ =~ /^\n(.* at line \d+, column \d+, byte \d+) at/;
 
 		if ($1) {
-			return "invalid: $1"
+			my $css = "font-size:12px;display:inline;";
+			return "invalid: <pre style=\"$css\">$1</pre>"
 		} else {
 			return "invalid"
 		}
 	};
 
-	return "Your XML is $result!";
+	return "Your XML is $result"
 };
 
 1;
