@@ -17,21 +17,22 @@ triggers any => 'json';
 handle remainder => sub {
 	return unless $_ =~ /valid\s*(.*)$/;
 
-	my $result = try {
+	my ($result, $error) = try {
 		from_json($1);
 		return 'valid!';
 	} catch {
 		$_ =~ /^(.* at character offset \d+ .*) at/;
 
-		if ($1) {
-			my $css = "font-size:12px;display:inline;";
-			return "invalid: <pre style=\"$css\">$1</pre>"
-		} else {
-			return "invalid"
-		}
+		return ('invalid: ', $1);
 	};
 
-	return "Your JSON is $result"
+	my $answer      = "Your JSON is $result";
+	my $answer_html = $answer;
+
+	$answer      .= $error if $error;
+	$answer_html .= "<pre style=\"font-size:12px\">$error</pre>" if $error;
+
+	return $answer, html => $answer_html
 };
 
 1;
