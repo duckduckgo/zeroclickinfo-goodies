@@ -15,14 +15,13 @@ zci is_cached   => 1;
 triggers any => 'json';
 
 handle remainder => sub {
-	return unless $_ =~ /valid\s*(.*)$/;
+	return unless s/ ?(is )?valid\?? ?//gi;
 
 	my ($result, $error) = try {
-		from_json($1);
+		from_json $_;
 		return 'valid!';
 	} catch {
 		$_ =~ /^(.* at character offset \d+ .*) at/;
-
 		return ('invalid: ', $1);
 	};
 

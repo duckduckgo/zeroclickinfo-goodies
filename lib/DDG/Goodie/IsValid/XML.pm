@@ -15,10 +15,10 @@ zci is_cached   => 1;
 triggers any => 'xml';
 
 handle remainder => sub {
-	return unless $_ =~ /valid\s*(.*)$/;
+	return unless s/ ?(is )?valid\?? ?//gi;
 
 	my ($result, $error) = try {
-		XMLin($1);
+		XMLin $_;
 		return 'valid!';
 	} catch {
 		$_ =~ /^\n(.* at line \d+, column \d+, byte \d+) at/;
