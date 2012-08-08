@@ -29,7 +29,8 @@ handle remainder => sub {
 	my $answer_html = $answer;
 
 	$answer      .= $error if $error;
-	$answer_html .= "<pre style=\"font-size:12px\">$error</pre>" if $error;
+	$answer_html .= "<pre style=\"font-size:12px;"
+                 .  "margin-top:5px;\">$error</pre>" if $error;
 
 	return $answer, html => $answer_html
 };
