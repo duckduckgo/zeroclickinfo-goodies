@@ -10,7 +10,6 @@ sub itemify{
 
 triggers start => 'dessert', 'desserts';
 handle remainder => sub{
-	#return unless /^s? (?:that)? ?(?:start|beginn?)(?:ing)? ?(?:with)? ([a-zA-Z])$/i;
 	if(lc $_ =~ m/(?:that)? ?(?:start|beginn?)s?(?:ing)? ?(?:with)? ([a-zA-Z])/i){
 		my $in = lc $1;
 		my $output = 'A Desert beginning with ' . (uc $in) . ' is ';
