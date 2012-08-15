@@ -1,0 +1,1844 @@
+000
+[[Outline of computer science|Computer science]], [[Outline of knowledge|knowledge]] & [[system]]s
+000
+[[Outline of computer science|Computer science]], [[Outline of knowledge|knowledge]] & general works
+001
+[[Outline of knowledge|Knowledge]]
+002
+The [[book]] (i.e. [[Meta]] writings about books)
+003
+[[System]]s
+004
+[[Computer data processing|Data processing]] & [[Outline of computer science|computer science]]
+005
+[[Outline of computer programming|Computer programming]], [[Computer software|programs]] & [[Data (computing)|data]]
+006
+[[Application software|Special computer methods]]
+007
+Unassigned
+008
+Unassigned
+009
+Unassigned
+010
+[[Bibliography]]
+011
+Bibliographies
+012
+Bibliographies of individuals
+013
+Unassigned
+014
+Bibliographies of anonymous & pseudonymous works
+015
+Bibliographies of works from specific places
+016
+Bibliographies of works on specific subjects
+017
+General subject catalogs
+018
+Catalogs arranged by author, date, etc.
+019
+[[Dictionary catalog]]s
+020
+[[Outline of library science|Library & information sciences]]
+021
+Library relationships
+022
+Administration of physical plant
+023
+Personnel management
+024
+No longer used, formerly Regulations for readers
+025
+[[Library management|Library operations]]
+026
+Libraries for specific subjects
+027
+General libraries
+028
+Reading & use of other information media
+029
+No longer used, formerly Literary methods
+030
+General [[encyclopedic]] works 
+031
+Encyclopedias in American English
+032
+Encyclopedias in English
+033
+In other Germanic languages
+034
+Encyclopedias in French, Occitan & Catalan
+035
+Encyclopedias in Italian, Romanian & related languages
+036
+Encyclopedias in Spanish & Portuguese
+037
+Encyclopedias in Slavic languages
+038
+Encyclopedias in Scandinavian languages
+039
+Encyclopedias in other languages
+040
+040-049 all unassigned, formerly Collected essays by language
+041
+Unassigned
+042
+Unassigned
+043
+Unassigned
+044
+Unassigned
+045
+Unassigned
+046
+Unassigned
+047
+Unassigned
+048
+Unassigned
+049
+Unassigned
+050
+General serial publications
+051
+Serials in American English
+052
+Serials in English
+053
+Serials in other Germanic languages
+054
+Serials in French, Occitan & Catalan
+055
+In Italian, Romanian & related languages
+056
+Serials in Spanish & Portuguese
+057
+Serials in Slavic languages
+058
+Serials in Scandinavian languages
+059
+Serials in other languages
+060
+General organizations & museology
+061
+Organizations in North America
+062
+Organizations in British Isles; in England
+063
+Organizations in central Europe; in Germany
+064
+Organizations in France & Monaco
+065
+Organizations in Italy & adjacent islands
+066
+In Iberian Peninsula & adjacent islands
+067
+Organizations in eastern Europe; in Russia
+068
+Organizations in other geographic areas
+069
+Museum science
+070
+News media, journalism & publishing
+071
+Newspapers in North America
+072
+Newspapers in British Isles; in England
+073
+Newspapers in central Europe; in Germany
+074
+Newspapers in France & Monaco
+075
+Newspapers in Italy & adjacent islands
+076
+In Iberian Peninsula & adjacent islands
+077
+Newspapers in eastern Europe; in Russia
+078
+Newspapers in Scandinavia
+079
+Newspapers in other geographic areas
+080
+General collections
+081
+Collections in American English
+082
+Collections in English
+083
+Collections in other Germanic languages
+084
+Collections in French, Occitan & Catalan
+085
+In Italian, Romanian & related languages
+086
+Collections in Spanish & Portuguese
+087
+Collections in Slavic languages
+088
+Collections in Scandinavian languages
+089
+Collections in other languages
+090
+[[Manuscript]]s & rare books
+091
+Manuscripts
+092
+[[Block books]]
+093
+[[Incunabula]]
+094
+Printed books
+095
+Books notable for bindings
+096
+Books notable for illustrations
+097
+Books notable for ownership or origin
+098
+Prohibited works, forgeries & hoaxes
+099
+Books notable for format
+100
+Philosophy and psychology
+101
+[[Philosophical method|Theory of philosophy]]
+102
+Miscellany of philosophy
+103
+Dictionaries and encyclopedias of philosophy
+104
+No longer usedÃ¢formerly Essays
+105
+Serial publications of philosophy
+106
+[[List of philosophical organizations|Organizations]] and management of philosophy
+107
+Education, research, and related topics of philosophy
+108
+Kinds of [[List of philosophers|persons]] treatment of philosophy
+109
+[[History of philosophy|Historical]] and collected persons treatment of philosophy
+110
+Metaphysics
+111
+[[Ontology]]
+112
+No longer usedÃ¢formerly [[Methodology]] 
+113
+[[Cosmology]] ([[Philosophy of nature]])
+114
+[[Philosophy of space and time|Space]]
+115
+[[Philosophy of space and time|Time]]
+116
+[[Identity and change|Change]]
+117
+Structure
+118
+Force and energy
+119
+Number and quantity
+120
+Epistemology, causation, and humankind
+121
+Epistemology
+122
+Causation
+123
+[[Determinism]] and [[indeterminism]]
+124
+[[Teleology]]
+125
+No longer usedÃ¢formerly [[Infinity]]
+126
+[[Outline of self|The self]]
+127
+The unconscious and the subconscious
+128
+[[Humankind]]
+129
+Origin and destiny of individual souls
+130
+Parapsychology and occultism
+131
+Parapsychological and occult methods
+132
+No longer usedÃ¢formerly Mental derangements
+133
+Specific topics in parapsychology and occultism
+134
+No longer usedÃ¢formerly [[Mesmerism]] and [[Clairvoyance]]
+135
+[[Dream]]s and mysteries
+136
+No longer usedÃ¢formerly Mental characteristics
+137
+Divinatory [[graphology]]
+138
+[[Physiognomy]]
+139
+[[Phrenology]]
+140
+Specific philosophical schools
+141
+[[Idealism]] and related systems
+142
+[[Critical philosophy]]
+143
+[[Henri Bergson|Bergsonism]] and [[intuitionism]]
+144
+[[Outline of humanism|Humanism]] and related systems
+145
+Sensationalism
+146
+[[Naturalism (philosophy)|Naturalism]] and related systems
+147
+[[Pantheism]] and related systems
+148
+[[Liberalism]], [[eclecticism]], and [[Traditionalist School|traditionalism]]
+149
+Other philosophical systems
+150
+Psychology
+151
+No longer usedÃ¢formerly Intellect 
+152
+[[Perception]], [[Motion (physics)|movement]], [[emotion]]s, and [[Motivation|drive]]s
+153
+Mental processes and [[intelligence]]
+154
+[[Subconscious]] and [[Altered state of consciousness|altered state]]s
+155
+[[Differential psychology|Differential]] and [[developmental psychology]]
+156
+[[Comparative psychology]]
+157
+No longer usedÃ¢formerly [[Emotion]]s
+158
+[[Applied psychology]]
+159
+No longer usedÃ¢formerly Will 
+160
+Logic
+161
+[[Inductive reasoning|Induction]]
+162
+[[Deductive reasoning|Deduction]]
+163
+Not assigned or no longer used 
+164
+Not assigned or no longer used 
+165
+[[fallacy|Fallacies]] and sources of error
+166
+[[Syllogism]]s
+167
+[[Hypothesis|Hypotheses]]
+168
+[[Logical argument|Argument]] and [[persuasion]]
+169
+[[Analogy]]
+170
+Ethics
+171
+Ethical systems
+172
+[[Political]] ethics
+173
+Ethics of [[family relationships]]
+174
+Occupational ethics
+175
+Ethics of [[recreation]] and [[leisure]]
+176
+Ethics of [[sex]] and [[reproduction]]
+177
+Ethics of [[social relations]]
+178
+Ethics of [[Consumption (economics)|consumption]]
+179
+Other ethical norms
+180
+Ancient, medieval, and Eastern philosophy
+181
+Eastern philosophy
+182
+[[Pre-Socratic philosophy|Pre-Socratic Greek philosophies]]
+183
+[[Socrates|Socratic]] and related philosophies
+184
+[[Platonic philosophy]]
+185
+[[Aristotelian philosophy]]
+186
+[[Philosophical skepticism|Skeptic]] and [[Neoplatonism|Neoplatonic philosophies]]
+187
+[[Epicureanism|Epicurean philosophy]]
+188
+[[Stoicism|Stoic philosophy]]
+189
+Medieval Western philosophy
+190
+Modern Western philosophy
+191
+[[American philosophy#19th century|Modern Western philosophy of the United States]] and Canada
+192
+[[British philosophy#19th century|Modern Western philosophy of the British Isles]]
+193
+[[German philosophy#19th century|Modern Western philosophy of Germany]] and Austria
+194
+[[French philosophy#19th century|Modern Western philosophy of France]]
+195
+[[Italian philosophy#Modern, contemporary and 20th century philosophy|Modern Western philosophy of Italy]]
+196
+Modern Western philosophy of Spain and Portugal
+197
+[[Philosophy in the Soviet Union|Modern Western philosophy of the former Soviet Union]]
+198
+Modern Western philosophy of Scandinavia
+199
+Modern Western philosophy in other geographic areas
+200
+Religion
+201
+Religious [[mythology]], general classes of religion, interreligious relations and attitudes, social theology
+202
+[[Doctrine]]s
+203
+Public [[worship]] and other practices
+204
+Religious experience, life, practice
+205
+Religious ethics
+206
+Leaders and organization
+207
+Missions and [[religious education]]
+208
+Sources
+209
+[[Sect]]s and reform movements
+211
+[[Conceptions of God|Concepts of God]]
+212
+[[Existence of God|Existence]], attributes of God
+213
+[[Creation myth|Creation]]
+214
+[[Theodicy]]
+215
+[[Relationship between religion and science|Science & religion]]
+216
+No longer usedÃ¢formerly Evil 
+217
+No longer usedÃ¢formerly Prayer
+218
+Humankind
+219
+No longer usedÃ¢formerly Analogies
+221
+[[Old Testament]]
+222
+Historical books of Old Testament
+223
+Poetic books of Old Testament
+224
+Prophetic books of Old Testament
+225
+[[New Testament]]
+226
+[[Gospel]]s & [[Acts of the Apostles|Acts]]
+227
+[[Epistles]]
+228
+[[Book of Revelation|Revelation]] (Apocalypse)
+229
+[[Apocrypha]] & [[List of Old Testament Pseudepigrapha|pseudepigrapha]]
+231
+[[God]]
+232
+[[Jesus]] Christ & his family
+233
+Humankind
+234
+[[Salvation]] ([[Soteriology]]) & grace
+235
+Spiritual beings
+236
+[[Christian eschatology|Eschatology]]
+237
+No longer usedÃ¢formerly Future state 
+238
+[[Creed]]s & [[catechism]]s
+239
+[[Christian apologetics|Apologetics]] & polemics
+241
+[[Moral theology]]
+242
+Devotional literature
+243
+[[Evangelism|Evangelistic]] writings for individuals
+244
+No longer usedÃ¢formerly [[Religious fiction]]
+245
+No longer usedÃ¢formerly [[Hymnology]]
+246
+Use of [[Christian art|art in Christianity]]
+247
+[[church (building)|Church]] furnishings & articles
+248
+[[Christian worship|Christian experience, practice, life]]
+249
+Christian observances in family life
+251
+Preaching ([[Homiletics]])
+252
+Texts of [[sermon]]s
+253
+Pastoral office ([[Pastoral theology]])
+254
+[[Parish]] government & administration
+255
+[[Congregation (catholic)|Religious congregations]] & orders
+256
+No longer usedÃ¢formerly Religious societies 
+257
+No longer usedÃ¢formerly Parochial schools, libraries, etc.
+258
+No longer usedÃ¢formerly Parochial medicine 
+259
+Activities of the local church
+261
+Social theology
+262
+[[Ecclesiology]]
+263
+Times, places of [[Liturgical year|religious observance]]
+264
+Public worship
+265
+[[Sacrament]]s, other rites & acts
+266
+[[Mission (Christian)|Missions]]
+267
+Associations for religious work
+268
+[[Religious education]]
+269
+Spiritual renewal
+271
+Religious orders in church history
+272
+[[Persecution]]s in church history
+273
+[[heresy|Heresies]] in church history
+274
+[[Christianity in Europe|Christian church in Europe]]
+275
+[[Christianity in Asia|Christian church in Asia]]
+276
+[[Christianity in Africa|Christian church in Africa]]
+277
+[[:Category:Christianity in North America|Christian church in North America]]
+278
+[[:Category:Christianity in South America|Christian church in South America]]
+279
+Christian church in other areas
+281
+[[Early Christianity|Early church]] & [[Eastern Christianity|Eastern churches]]
+282
+[[Roman catholicism|Roman Catholic]] Church
+283
+[[Anglicanism|Anglican]] churches
+284
+[[Protestantism|Protestants]] of Continental origin
+285
+[[presbyterianism|Presbyterian]], [[Reformed Church|Reformed]], [[Congregational church|Congregational]]
+286
+[[Baptist]], [[Disciples of Christ]], [[Adventist]]
+287
+[[Methodist]] & related churches
+288
+No longer usedÃ¢formerly [[Unitarianism|Unitarian]] 
+289
+Other denominations & sects
+291
+Comparative religion
+292
+Classical ([[Ancient Greek religion|Greek]] & [[Religion in ancient Rome|Roman]]) religion
+293
+[[Germanic paganism|Germanic religion]]
+294
+[[Indian religion|Religions of Indian origin]]
+295
+[[Zoroastrianism]] (Mazdaism, Parseeism)
+296
+[[Judaism]]
+297
+[[Islam]], [[BÃÂ¡bism]] & [[BahÃÂ¡'ÃÂ­ Faith]]
+298
+No longer usedÃ¢formerly [[Mormonism]] 
+299
+Other religions
+300
+The social sciences
+301
+[[Sociology]] & [[anthropology]]
+302
+[[Social interaction]]
+303
+Social processes
+304
+Factors affecting social behavior
+305
+[[Social group]]s
+306
+[[Culture]] & [[institution]]s
+307
+[[Communities]]
+308
+No longer usedÃ¢formerly [[Polygraphy]]
+309
+No longer usedÃ¢formerly [[History of sociology]]
+311
+No longer usedÃ¢formerly Theory and methods
+312
+No longer usedÃ¢formerly Population
+313
+No longer usedÃ¢formerly Special topics
+314
+General statistics Of Europe
+315
+General statistics Of Asia
+316
+General statistics Of Africa
+317
+General statistics Of North America
+318
+General statistics Of South America
+319
+General statistics Of other parts of the world
+321
+[[Form of government|Systems of governments]] & states
+322
+Relation of [[Sovereign state|state]] to organized groups
+323
+[[Civil rights|Civil]] & [[political rights]]
+324
+The [[politics|political]] process
+325
+International [[Human migration|migration]] & [[colonisation|colonization]]
+326
+[[Slavery]] & [[political emancipation|emancipation]]
+327
+[[International relations]]
+328
+The [[legislation|legislative]] process
+329
+Not assigned or no longer used
+331
+[[Labor economics]]
+332
+[[Financial economics]]
+333
+[[Land economics]]
+334
+[[Cooperative]]s
+335
+[[Socialism]] & related systems
+336
+[[Public finance]]
+337
+[[International economics]]
+338
+[[economic production|Production]]
+339
+[[Macroeconomics]] & related topics
+341
+[[International law]]
+342
+[[constitutional law|Constitutional]] & [[administrative law]]
+343
+[[military law|Military]], [[tax law|tax]], [[trade law|trade]], [[industrial law]]
+344
+[[social law|Social]], [[labor law|labor]], [[welfare law|welfare]], & related law
+345
+[[Criminal law]]
+346
+[[Private law]]
+347
+[[Civil procedure]] & [[court]]s
+348
+[[Law]] (Statutes), [[regulation]]s, [[court case|case]]s
+349
+[[:Category:Law by country|Law of specific jurisdictions & areas]]
+351
+Of central governments
+352
+Of local governments
+353
+Of U.S. federal & state governments
+354
+Of specific central governments
+355
+[[Outline of military science and technology|Military science]]
+356
+[[infantry|Foot forces]] & warfare
+357
+[[Mounted infantry|Mounted forces]] & warfare
+358
+Other specialized forces & services
+359
+[[Navy|Sea (Naval) forces]] & warfare
+361
+General social problems
+362
+[[Social welfare]] problems & services
+363
+Other social problems & services
+364
+[[Criminology]]
+365
+[[penal system|Penal]] & related institutions
+366
+[[Voluntary association|Association]]
+367
+General [[club]]s
+368
+[[Insurance]]
+369
+Miscellaneous kinds of associations
+371
+School management; special education
+372
+[[Elementary education]]
+373
+[[Secondary education]]
+374
+[[Adult education]]
+375
+[[Curriculum]]s
+376
+No longer usedÃ¢formerly Education of women 
+377
+No longer usedÃ¢formerly Ethical education 
+378
+[[Higher education]]
+379
+Government regulation, control, support
+381
+Internal commerce ([[Domestic trade]])
+382
+[[international trade|International commerce]] (Foreign trade)
+383
+[[postal system|Postal communication]]
+384
+Communications; [[Telecommunication]]
+385
+[[rail transportation|Railroad transportation]]
+386
+Inland [[waterway]] & [[ferry]] transportation
+387
+[[ship transport|Water]], [[aviation|air]], [[space transport]]ation
+388
+Transportation; Ground transportation
+389
+[[Metrology]] & [[standardization]]
+391
+[[Tradition|Costume]] & [[personal appearance]]
+392
+Customs of life cycle & domestic life
+393
+[[Funeral|Death customs]]
+394
+[[Norm (sociology)|General customs]]
+395
+Etiquette ([[Manners]])
+396
+No longer usedÃ¢formerly Women's position and treatment
+397
+No longer usedÃ¢formerly [[Outcast (person)|outcast]] studies 
+398
+[[Folklore]]
+399
+Customs of war & [[diplomacy]]
+400
+Language
+401
+[[Philosophy of language|Philosophy]] & theory
+402
+Miscellany
+403
+[[Dictionary|Dictionaries]] & encyclopedias
+404
+Special topics
+405
+Serial publications
+406
+Organizations & management
+407
+[[language education|Education]], research, related topics
+408
+With respect to kinds of persons
+409
+Geographical & persons treatment
+411
+[[Writing system]]s
+412
+[[Etymology]]
+413
+[[lexicology|Dictionaries]]
+414
+[[Phonology]]
+415
+Structural systems ([[Grammar]])
+416
+No longer usedÃ¢formerly [[Prosody (linguistics)]] 
+417
+[[Dialectology]] & [[historical linguistics]]
+418
+Standard usage; [[Applied linguistics]]
+419
+Verbal language not spoken or written
+421
+English [[English spelling|writing system]] & [[English phonology|phonology]]
+422
+English etymology
+423
+English dictionaries
+424
+No longer usedÃ¢formerly English [[thesaurus]]es
+425
+[[English grammar]]
+426
+No longer usedÃ¢formerly English prosodies
+427
+[[dialects of English|English language variations]]
+428
+Standard English usage
+429
+Old English (Anglo-Saxon)
+431
+[[German orthography|German writing system]] & [[German phonology|phonology]]
+432
+German etymology
+433
+German dictionaries
+434
+Not assigned or no longer used 
+435
+[[German grammar]]
+436
+Not assigned or no longer used 
+437
+[[German dialects|German language variations]]
+438
+Standard German usage
+439
+Other Germanic languages
+441
+[[French orthography|French writing system]] & [[French phonology|phonology]]
+442
+French etymology
+443
+French dictionaries
+444
+Not assigned or no longer used 
+445
+[[French grammar]]
+446
+Not assigned or no longer used 
+447
+[[Dialects of French|French language variations]]
+448
+Standard French usage
+449
+[[ProvenÃÂ§al language|ProvenÃÂ§al]] & [[Catalan language|Catalan]]
+451
+Italian writing system & [[Italian phonology|phonology]]
+452
+Italian etymology
+453
+Italian dictionaries
+454
+Not assigned or no longer used 
+455
+[[Italian grammar]]
+456
+Not assigned or no longer used 
+457
+[[Italian dialects|Italian language variations]]
+458
+Standard Italian usage
+459
+Romanian & Rhaeto-Romanic
+461
+Spanish [[Spanish orthography|writing system]] & [[Spanish phonology|phonology]]
+462
+Spanish etymology
+463
+Spanish dictionaries
+464
+Not assigned or no longer used 
+465
+[[Spanish grammar]]
+466
+Not assigned or no longer used 
+467
+[[Spanish dialects and varieties|Spanish language variations]]
+468
+Standard Spanish usage
+469
+Portuguese
+471
+[[Classical Latin]] writing & phonology
+472
+[[Latin spelling and pronunciation|Classical Latin etymology & phonology]]
+473
+Classical Latin dictionaries
+474
+Not assigned or no longer used 
+475
+Classical [[Latin grammar]]
+476
+Not assigned or no longer used 
+477
+[[old Latin|Old]], Postclassical, [[Vulgar Latin]]
+478
+Classical Latin usage
+479
+Other Italic languages
+481
+Classical Greek writing & [[Ancient Greek phonology|phonology]]
+482
+Classical Greek etymology
+483
+Classical Greek dictionaries
+484
+Not assigned or no longer used 
+485
+Classical Greek grammar
+486
+Not assigned or no longer used 
+487
+Preclassical & postclassical Greek
+488
+Classical Greek usage
+489
+Other Hellenic languages
+491
+East Indo-European & [[Celtic languages]]
+492
+[[Afro-Asiatic languages]]; [[Semitic languages|Semitic]]
+493
+Non-Semitic Afro-Asiatic languages
+494
+[[UralÃ¢Altaic languages|UralÃ¢Altaic]], [[paleosiberian languages|Paleosiberian]], [[Dravidian languages|Dravidian]]
+495
+Languages of East & Southeast Asia
+496
+[[Languages of Africa|African languages]]
+497
+[[Indigenous languages of the Americas|North American native languages]]
+498
+[[Indigenous languages of the Americas|South American native languages]]
+499
+Miscellaneous languages
+500
+Natural sciences & mathematics
+501
+Philosophy & theory
+502
+Miscellany
+503
+Dictionaries & encyclopedias
+504
+Not assigned or no longer used 
+505
+Serial publications
+506
+Organizations & management
+507
+Education, research, related topics
+508
+[[Natural history]]
+509
+[[History of science|Historical]], [[:Category:Science and technology by country|geographic]], persons treatment
+511
+General principles
+512
+[[Topic outline of algebra|Algebra]] & [[number theory]]
+513
+[[Topic outline of arithmetic|Arithmetic]]
+514
+[[Topology]]
+515
+[[Mathematical analysis|Analysis]]
+516
+[[Topic outline of geometry|Geometry]]
+517
+Not assigned or no longer used 
+518
+[[Numerical analysis]]
+519
+[[Probabilities]] & [[applied mathematics]]
+521
+[[Celestial mechanics]]
+522
+Techniques, equipment, materials
+523
+Specific celestial bodies & phenomena
+524
+Not assigned or no longer used 
+525
+[[Earth]] (Astronomical geography)
+526
+Mathematical geography
+527
+[[Celestial navigation]]
+528
+[[Ephemerides]]
+529
+[[Chronology]]
+531
+Classical [[mechanics]]; [[Solid mechanics]]
+532
+[[Fluid mechanics]]; [[Liquid mechanics]]
+533
+Gas mechanics
+534
+[[Sound]] & related [[vibrations]]
+535
+[[Light]] & paraphotic phenomena
+536
+[[Heat]]
+537
+[[Electricity]] & [[electronics]]
+538
+[[Magnetism]]
+539
+Modern physics
+541
+[[physical chemistry|Physical]] & [[theoretical chemistry]]
+542
+Techniques, equipment, materials
+543
+[[Analytical chemistry]]
+544
+[[Qualitative analysis]]
+545
+[[Quantitative analysis (chemistry)|Quantitative analysis]]
+546
+[[Inorganic chemistry]]
+547
+[[Organic chemistry]]
+548
+[[Crystallography]]
+549
+[[Mineralogy]]
+551
+[[Outline of geology|Geology]], [[hydrology]], [[meteorology]]
+552
+[[Petrology]]
+553
+[[Economic geology]]
+554
+Earth sciences of Europe
+555
+Earth sciences of Asia
+556
+Earth sciences of Africa
+557
+Earth sciences of North America
+558
+Earth sciences of South America
+559
+Earth sciences of other areas
+561
+[[Paleobotany]]
+562
+[[Fossil]] invertebrates
+563
+Fossil primitive phyla
+564
+Fossil Mollusca & Molluscoidea
+565
+Other fossil invertebrates
+566
+Fossil Vertebrata (Fossil Craniata)
+567
+Fossil cold-blooded vertebrates
+568
+Fossil Aves (Fossil birds)
+569
+Fossil Mammalia
+571
+[[Physiology]]
+572
+[[Outline of biochemistry|Biochemistry]]
+573
+Physiological systems of [[animal]]s
+574
+Not assigned or no longer used
+575
+[[Plant physiology|Physiological systems of plants]]
+576
+[[Outline of genetics|Genetics]] and [[evolution]]
+577
+[[Outline of ecology|Ecology]]
+578
+[[Natural history]] of [[organism]]s
+579
+[[Microbiology|Microorganisms]], [[fungus|fungi]], [[algae]]
+581
+[[Botany]]
+582
+[[Plant]]s noted for specific vegetative characteristics and [[flower]]s
+583
+[[Dicotyledon]]es
+584
+[[Monocotyledon]]es
+585
+[[Gymnosperm]]ae ([[Pinophyta]])
+586
+[[Cryptogams|Cryptogamia]] (Seedless plants)
+587
+[[Pteridophyta]] (Vascular cryptogams)
+588
+[[Bryophyte|Bryophyta]]
+589
+Forestry 
+591
+[[Outline of zoology|Zoology]]
+592
+[[Invertebrate]]s
+593
+[[Protozoa]], [[Echinoderm]]ata, related phyla
+594
+[[Mollusc]]a & Molluscoidea
+595
+Other [[invertebrate]]s
+596
+Vertebrata ([[Craniata]], [[Vertebrate]]s)
+597
+Cold-blooded vertebrates, [[fish]]es
+598
+[[bird|Aves]] (Birds)
+599
+[[Mammal]]ia (Mammals)
+600
+Technology
+601
+Philosophy & theory
+602
+Miscellany
+603
+Dictionaries & encyclopedias
+604
+Special topics
+605
+Serial publications
+606
+Organizations
+607
+Education, research, related topics
+608
+[[Invention]] & [[patent]]s
+609
+[[History of technology|Historical]], geographic, persons treatmentt
+611
+[[Outline of human anatomy|Human anatomy]], [[cell biology|cytology]], [[histology]]
+612
+[[Human physiology]]
+613
+Personal [[health]] & safety
+614
+Incidence & prevention of disease
+615
+[[Pharmacology]] and [[therapeutics]]
+616
+[[Diseases]]
+617
+[[Surgery]] & related medical specialties
+618
+[[Gynecology]] & other medical specialties
+619
+[[Experimental medicine]]
+621
+[[Applied physics]]
+622
+[[Outline of mining|Mining]] & related operations
+623
+[[Military engineer|Military]] & [[nautical engineering]]
+624
+[[Civil engineering]]
+625
+Engineering of [[railroad]]s, [[road]]s
+626
+Not assigned or no longer used 
+627
+[[Hydraulic engineering]]
+628
+Sanitary & municipal engineering
+629
+Other branches of engineering
+631
+Techniques, [[:Category:Agricultural machinery|equipment]], materials
+632
+Plant injuries, [[:Category:Plant pathogens and diseases|diseases]], [[Pest (organism)|pest]]s
+633
+[[Field (agriculture)|Field]] & plantation [[crop (agriculture)|crop]]s
+634
+[[Orchard]]s, [[fruit]]s, [[forestry]]
+635
+Garden crops ([[Horticulture]])
+636
+[[Animal husbandry]]
+637
+Processing [[dairy]] & related products
+638
+Insect culture
+639
+[[Hunting]], [[fishing]], [[Wildlife conservation|conservation]]
+641
+[[Food]] & [[drink]]
+642
+[[Meal]]s & table service
+643
+[[House|Housing]] & household equipment
+644
+[[Household]] utilities
+645
+[[Furniture|Household furnishings]]
+646
+[[Sewing]], [[clothing]], personal living
+647
+[[Household management|Management of public household]]s
+648
+[[Household chore|Housekeeping]]
+649
+[[Child rearing]] & [[home care]] of sick
+651
+[[Office]] services
+652
+Processes of written communication
+653
+[[Shorthand]]
+654
+Not assigned or no longer used 
+655
+Not assigned or no longer used 
+656
+Not assigned or no longer used 
+657
+[[Accounting]]
+658
+General management
+659
+[[Advertising]] & [[public relations]]
+661
+Industrial chemicals technology
+662
+[[Explosives]], [[fuels]] technology
+663
+Beverage technology
+664
+[[Food technology]]
+665
+Industrial [[oil]]s, [[fat]]s, [[wax]]es, gases
+666
+[[Ceramic]] & allied technologies
+667
+[[washing|Cleaning]], [[pigment|color]], related technologies
+668
+Technology of other organic products
+669
+[[Metallurgy]]
+671
+[[Metalworking]] & metal products
+672
+[[Iron]], [[steel]], other [[:Category:Ferrous alloys|iron alloy]]s
+673
+Nonferrous [[metal]]s
+674
+[[Timber|Lumber]] processing, [[wood]] products, [[cork (material)|cork]]
+675
+[[Leather]] & [[fur]] processing
+676
+[[Pulp and paper industry|Pulp & paper technology]]
+677
+[[Textile]]s
+678
+[[Elastomer]]s & elastomer products
+679
+Other products of specific materials
+681
+[[Precision instrument]]s & other devices
+682
+Small [[forge]] work ([[Blacksmith]]ing)
+683
+[[Household hardware]] & [[:category:Home appliances|household appliances]]
+684
+Furnishings & home [[workshop]]s
+685
+Leather, fur, related products
+686
+[[Printing]] & related activities
+687
+Clothing
+688
+Other final products & [[packaging]]
+689
+Not assigned or no longer used 
+691
+Building [[material]]s
+692
+Auxiliary construction practices
+693
+Specific materials & purposes
+694
+Wood construction; [[Carpentry]]
+695
+[[Roof]] covering
+696
+Utilities
+697
+[[HVAC|Heating]], [[ventilating]], [[air-conditioning]]
+698
+Detail finishing
+699
+Not assigned or no longer used
+700
+The Arts; fine & decorative arts
+701
+[[Philosophy of art|Philosophy]] & [[Aesthetics|theory]]
+702
+Miscellany
+703
+Dictionaries & encyclopedias
+704
+Special topics
+705
+[[:Category:Art magazines|Serial publications]]
+706
+Organizations & management
+707
+Education, research, related topics
+708
+[[:Category:Art museums and galleries|Galleries, museums, private collections]]
+709
+[[Art history|Historical]], areas, persons treatment
+711
+[[urbanism|Area planning]] (Civic art)
+712
+[[Landscape architecture]]
+713
+Landscape architecture of trafficways
+714
+[[water body|Water]] features
+715
+[[tree|Woody plants]]
+716
+[[Herbaceous]] plants
+717
+Structures
+718
+Landscape design of cemeteries
+719
+Natural [[landscape]]s
+721
+[[building|Architectural structure]]
+722
+Architecture to ca. 300
+723
+Architecture from ca. 300 to 1399
+724
+Architecture from 1400
+725
+Public structures
+726
+[[religious architecture|Buildings for religious purposes]]
+727
+Buildings for education & research
+728
+[[house|Residential & related buildings]]
+729
+[[Design]] & [[Painter and decorator|decoration]]
+731
+Processes, forms, subjects of sculpture
+732
+Sculpture to ca. 500
+733
+[[Classical sculpture|Greek, Etruscan, Roman sculpture]]
+734
+Sculpture from ca. 500 to 1399
+735
+Sculpture from 1400
+736
+[[Stone carving|Carving]] & carvings
+737
+[[Numismatics]] & [[sigillography]]
+738
+[[Ceramics (art)|Ceramic arts]]
+739
+Art metalwork
+741
+Drawing & drawings
+742
+[[Perspective (graphical)]]
+743
+Drawing & drawings by subject
+744
+Not assigned or no longer used 
+745
+Decorative arts
+746
+[[Textile art]]s
+747
+[[Interior decoration]]
+748
+[[Glass]]
+749
+[[Furniture]] & accessories
+751
+Techniques, equipment, forms
+752
+[[Color]]
+753
+[[Symbol]]ism, [[allegory]], [[mythology]], [[legend]]
+754
+[[Painting style|Genre paintings]]
+755
+[[iconography|Religion & religious symbolism]]
+756
+Not assigned or no longer used 
+757
+Human figures & their parts
+758
+Other subjects
+759
+Geographical, [[History of painting|historical]], areas, persons treatment
+761
+Relief processes ([[Block printing]])
+762
+Not assigned or no longer used 
+763
+[[lithography|Lithographic]] (Planographic) processes
+764
+[[Chromolithography]] & [[serigraphy]]
+765
+Metal [[engraving]]
+766
+[[Mezzotint]]ing & related processes
+767
+[[Etching]] & [[drypoint]]
+768
+Not assigned or no longer used 
+769
+Prints
+771
+[[:Category:Photographic techniques|Techniques]], [[:Category:Photography equipment|equipment]], materials
+772
+Metallic salt processes
+773
+Pigment processes of printing
+774
+[[Holography]]
+775
+[[Digital photography]]
+776
+[[Computer art]]
+777
+[[Cinematography]] and [[Videography]] <ref>{{cite web|title=WebDewey 2.0 installs DDC 23!|url=http://www.oclc.org/uk/en/news/announcements/2011/announcement39.htm|work=WebDewey 2.0|publisher=OCLC Online Computer Library Center, Inc.|accessdate=02/13/2012}}</ref>ref> 
+778
+[[:Category:Photography by genre|Fields & kinds of photography]]
+779
+[[:Category:Photographs|Photographs]]
+781
+[[Music theory|General principles]] & [[musical form]]s
+782
+[[Vocal music]]
+783
+Music for single voices; The [[human voice|voice]]
+784
+[[musical instrument|Instrument]]s & [[Musical ensemble|Instrumental ensembles]]
+785
+[[Chamber music]]
+786
+[[keyboard instrument|Keyboard]] & other instruments
+787
+[[String instrument|Stringed instruments]] (Chordophones)
+788
+[[Wind instrument]]s (Aerophones)
+789
+Not assigned or no longer used 
+791
+Public performances
+792
+Stage presentations
+793
+[[Indoor game]]s & amusements
+794
+Indoor games of skill
+795
+Games of chance
+796
+Athletic & outdoor sports & games
+797
+Aquatic & air sports
+798
+[[Equestrian sports]] & animal racing
+799
+[[Fishing]], [[hunting]], [[shooting]]
+800
+Literature & rhetoric
+801
+Philosophy & theory
+802
+Miscellany
+803
+Dictionaries & encyclopedias
+804
+Not assigned or no longer used 
+805
+[[Literary magazine|Serial publications]]
+806
+Organizations
+807
+Education, research, related topics
+808
+Rhetoric & collections of literature
+809
+[[history of literature|Literary history]] & [[literary criticism|criticism]]
+811
+[[Poetry of the United States|Poetry]]
+812
+Drama
+813
+Fiction
+814
+Essays
+815
+Speeches
+816
+Letters
+817
+Satire & humor
+818
+Miscellaneous writings
+819
+Not assigned or no longer used 
+821
+[[English poetry]]
+822
+[[English drama]]
+823
+English fiction
+824
+English essays
+825
+English speeches
+826
+English letters
+827
+English satire & humor
+828
+English miscellaneous writings
+829
+Old English (Anglo-Saxon)
+831
+[[German poetry]]
+832
+German drama
+833
+German fiction
+834
+German essays
+835
+German speeches
+836
+German letters
+837
+German satire & humor
+838
+German miscellaneous writings
+839
+Other Germanic literatures
+841
+[[French poetry]]
+842
+French drama
+843
+French fiction
+844
+French essays
+845
+French speeches
+846
+French letters
+847
+French satire & humor
+848
+French miscellaneous writings
+849
+[[Occitan literature|Occitan]] & [[Catalan literature|Catalan]] literatures
+851
+[[Italian poetry]]
+852
+Italian drama
+853
+Italian fiction
+854
+Italian essays
+855
+Italian speeches
+856
+Italian letters
+857
+Italian satire & humor
+858
+Italian miscellaneous writings
+859
+Romanian & Rhaeto-Romanic
+861
+[[Spanish poetry]]
+862
+Spanish drama
+863
+Spanish fiction
+864
+Spanish essays
+865
+Spanish speeches
+866
+Spanish letters
+867
+Spanish satire & humor
+868
+Spanish miscellaneous writings
+869
+[[Portuguese literature]]
+871
+[[Latin poetry]]
+872
+Latin dramatic poetry & drama
+873
+Latin epic poetry & fiction
+874
+Latin lyric poetry
+875
+Latin speeches
+876
+Latin letters
+877
+Latin satire & humor
+878
+Latin miscellaneous writings
+879
+Literatures of other Italic languages
+881
+Classical Greek poetry
+882
+Classical Greek drama
+883
+Classical Greek epic poetry & fiction
+884
+Classical Greek lyric poetry
+885
+Classical Greek speeches
+886
+Classical Greek letters
+887
+Classical Greek satire & humor
+888
+Classical Greek miscellaneous writings
+889
+[[Modern Greek literature]]
+891
+East Indo-European & [[Celtic literature|Celtic]]
+892
+Afro-Asiatic literatures [[Semitic languages|Semitic]]
+893
+Non-Semitic [[Afro-Asiatic languages|Afro-Asiatic]] literatures
+894
+[[UralÃ¢Altaic]], [[Paleosiberian]], [[Dravidian peoples|Dravidian]]
+895
+Literatures of East & Southeast Asia
+896
+African literatures
+897
+North American native literatures
+898
+South American native literatures
+899
+Other literatures
+900
+History & geography
+901
+Philosophy & theory
+902
+unassigned
+903
+Dictionaries & encyclopedias
+904
+Collected accounts of events
+905
+Serial publications
+906
+Organizations & management
+907
+Education, research, related topics
+908
+With respect to kinds of persons
+909
+[[World history]]
+911
+[[Historical geography]]
+912
+[[map|Graphic representations of earth]]
+913
+[[Ancient world]]
+914
+[[Outline of Europe|Europe]]
+915
+[[Outline of Asia|Asia]]
+916
+[[Outline of Africa|Africa]]
+917
+[[Outline of North America|North America]]
+918
+[[Outline of South America|South America]]
+919
+Other areas
+921-928
+This range is reserved as an optional location for biographies, which are shelved alphabetically by subject's last name.
+929
+Genealogy, [[name]]s, insignia
+931
+History of ancient world; [[Ancient China|China]]
+932
+History of ancient world; [[Ancient Egypt|Egypt]]
+933
+History of ancient world; [[History of Palestine|Palestine]]
+934
+History of ancient world; [[History of India|India]]
+935
+History of ancient world; [[Mesopotamia]] & [[History of Iran|Iranian Plateau]]
+936
+History of ancient world; [[Prehistoric Europe|Europe north & west of Italy]]
+937
+History of ancient world; [[Ancient Rome|Italy & adjacent territories]]
+938
+History of ancient world; [[Ancient Greece|Greece]]
+939
+History of ancient world; Other parts of ancient world
+941
+General history of Europe; [[History of the British Isles|British Isles]]
+942
+General history of Europe; [[History of England|England]] & [[History of Wales|Wales]]
+943
+General history of Europe; [[Central Europe]]; [[History of Germany|Germany]]
+944
+General history of Europe; [[History of France|France]] & [[History of Monaco|Monaco]]
+945
+General history of Europe; [[History of Italy|Italian Peninsula]] & adjacent islands
+946
+General history of Europe; [[Iberian Peninsula#History|Iberian Peninsula]] & adjacent islands
+947
+General history of Europe; [[Eastern Europe]]; [[Russia]]
+948
+General history of Europe; [[Northern Europe]]; [[History of Scandinavia|Scandinavia]]
+949
+General history of Europe; Other parts of Europe
+951
+General history of Asia; [[History of China|China]] & adjacent areas
+952
+General history of Asia; [[History of Japan|Japan]]
+953
+General history of Asia; [[Arabian Peninsula]] & adjacent areas
+954
+General history of Asia; [[History of South Asia|South Asia]]; [[History of India|India]]
+955
+General history of Asia; [[History of Iran|Iran]]
+956
+General history of Asia; [[History of the Middle East|Middle East]] (Near East)
+957
+General history of Asia; [[History of Siberia|Siberia]] (Asiatic Russia)
+958
+General history of Asia; [[History of Central Asia|Central Asia]]
+959
+General history of Asia; [[History of Southeast Asia|Southeast Asia]]
+961
+General history of Africa; [[History of Tunisia|Tunisia]] & [[History of Libya|Libya]]
+962
+General history of Africa; [[History of Egypt|Egypt]] & [[History of Sudan|Sudan]]
+963
+General history of Africa; [[History of Ethiopia|Ethiopia]]
+964
+General history of Africa; [[History of Morocco|Morocco]] & [[Canary Islands#History|Canary Islands]]
+965
+General history of Africa; [[History of Algeria|Algeria]]
+966
+General history of Africa; [[History of West Africa|West Africa]] & offshore islands
+967
+General history of Africa; [[Central Africa]] & offshore islands
+968
+General history of Africa; [[Southern Africa]]
+969
+General history of Africa; South [[Indian Ocean]] islands
+971
+General history of North America; [[History of Canada|Canada]]
+972
+General history of North America; [[History of Central America|Middle America]]; [[History of Mexico|Mexico]]
+973
+General history of North America; [[History of the United States|United States]]
+974
+General history of North America; [[Northeastern United States#History|Northeastern United States]]
+975
+General history of North America; Southeastern United States
+976
+General history of North America; South central United States
+977
+General history of North America; North central United States
+978
+General history of North America; Western United States
+979
+General history of North America; Great Basin & Pacific Slope
+981
+General history of South America; [[History of Brazil|Brazil]]
+982
+General history of South America; [[History of Argentina|Argentina]]
+983
+General history of South America; [[History of Chile|Chile]]
+984
+General history of South America; [[History of Bolivia|Bolivia]]
+985
+General history of South America; [[History of Peru|Peru]]
+986
+General history of South America; [[History of Colombia|Colombia]] & [[History of Ecuador|Ecuador]]
+987
+General history of South America; [[History of Venezuela|Venezuela]]
+988
+General history of South America; [[History of Guyana|Guiana]]
+989
+General history of South America; [[history of Paraguay|Paraguay]] & [[History of Uruguay|Uruguay]]
+991
+Not assigned or no longer used 
+992
+Not assigned or no longer used 
+993
+General history of other areas; [[History of New Zealand|New Zealand]]
+994
+General history of other areas; [[History of Australia|Australia]]
+995
+General history of other areas; [[Melanesia]]; [[History of Papua New Guinea|New Guinea]]
+996
+General history of other areas; Other parts of Pacific [[Polynesia]]
+997
+General history of other areas; Atlantic Ocean islands
+998
+General history of other areas; Arctic islands & [[History of Antarctica|Antarctica]]
+999
+Extraterrestrial worlds
