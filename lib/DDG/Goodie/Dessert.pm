@@ -3,101 +3,78 @@ package DDG::Goodie::Dessert;
 use DDG::Goodie;
 
 sub itemify{
-	return '<li><a href="http://duckduckgo.com?q=' . $_[0] . '">' . $_[0] . '</a></li>';
+	my @a = $_[0];
+	my @i = rand scalar @a;
+	return '<a href="http://duckduckgo.com?q=' . @a[@i] . '">' . @a[@i] . '</a>';
 };
 
-triggers start => 'desserts beginning with';
+triggers start => 'dessert', 'desserts';
 handle remainder => sub{
-	if(length($_) == 1){
-		my $in = lc $_;
-		my $output = 'Deserts beginning with ' . $in . ' are:<ul>';
+	#return unless /^s? (?:that)? ?(?:start|beginn?)(?:ing)? ?(?:with)? ([a-zA-Z])$/i;
+	if(lc $_ =~ m/(?:that)? ?(?:start|beginn?)s?(?:ing)? ?(?:with)? ([a-zA-Z])/i){
+		my $in = lc $1;
+		my $output = 'A Desert beginning with ' . (uc $in) . ' is ';
+		my @items;
 		if($in eq "a"){
-			$output .= itemify('Apple Turnover');
+			@items = ('Apple Turnover');
 		} elsif($in eq "b"){
-			$output .= itemify('Banana Split');
-			$output .= itemify('Biscuits');
+			@items = ('Banana Split', 'Biscuits');
 		} elsif($in eq "c"){
-			$output .= itemify('Cherry Pie');
-			$output .= itemify('Cupcake');
-			$output .= itemify('Chocolate');
+			@items = ('Cherry Pie', 'Cupcake', 'Chocolate');
 		} elsif($in eq "d"){
-			$output .= itemify('Donut');
+			@items = ('Donut');
 		} elsif($in eq "e"){
-			$output .= itemify('Eclair');
+			@items = ('Eclair');
 		} elsif($in eq "f"){
-			$output .= itemify('Froyo');
-			$output .= itemify('Fudge');
+			@items = ('Froyo', 'Fudge');
 		} elsif($in eq "g"){
-			$output .= itemify('Gingerbread');
+			@items = ('Gingerbread');
 		} elsif($in eq "h"){
-			$output .= itemify('Honeycomb');
+			@items = ('Honeycomb');
 		} elsif($in eq "i"){
-			$output .= itemify('Ice Cream Sandwhich');
-			$output .= itemify('Ice Cream');
+			@items = ('Ice Cream Sandwhich', 'Ice Cream');
 		} elsif($in eq "j"){
-			$output .= itemify('Jam Rolly Polly');
-			$output .= itemify('Jelly Bean');
-			$output .= itemify('Jelly');
+			@items = ('Jam Rolly Polly','Jelly Bean','Jelly');
 		} elsif($in eq "k"){
-			$output .= itemify('Key Lime Pie');
+			@items = ('Key Lime Pie');
 		} elsif($in eq "l"){
-			$output .= itemify('Lollipop');
-			$output .= itemify('Liqourice');
+			@items = ('Lollipop','Liqourice');
 		} elsif($in eq "m"){
-			$output .= itemify('Macaroons');
-			$output .= itemify('Meringues');
-			$output .= itemify('Marshmallow');
-			$output .= itemify('Muffin');
+			@items = ('Macaroons','Meringues','Marshmallow','Muffin');
 		} elsif($in eq "n"){
-			$output .= itemify('Nougat');
-			$output .= itemify('Nutella');
+			@items = ('Nougat','Nutella');
 		} elsif($in eq "o"){
-			$output .= itemify('Oatmeal Pie');
-			$output .= itemify('Oreos');
+			@items = ('Oatmeal Pie','Oreos');
 		} elsif($in eq "p"){
-			$output .= itemify('Profiteroles');
-			$output .= itemify('Pop Tart');
+			@items = ('Profiteroles','Pop Tart');
 		} elsif($in eq "q"){
-			$output .= itemify('Quiche');
+			@items = ('Quiche');
 		} elsif($in eq "r"){
-			$output .= itemify('Rocky Road');
-			$output .= itemify('Red Velvet Cake');
-			$output .= itemify('Ruhbarb and Custard');
+			@items = ('Rocky Road','Red Velvet Cake','Ruhbarb and Custard');
 		} elsif($in eq "s"){
-			$output .= itemify('Sundae');
-			$output .= itemify('Strudel');
-			$output .= itemify('Strawberries and Cream');
-			$output .= itemify('Souflle');
+			@items = ('Sundae','Strudel','Strawberries and Cream','Souflle');
 		} elsif($in eq "t"){
-			$output .= itemify('Tiramisu');
-			$output .= itemify('Trifle');
-			$output .= itemify('Twinkies');
-			$output .= itemify('Taffy');
-			$output .= itemify('Toffee');
+			@items = ('Tiramisu','Trifle','Twinkies','Taffy','Toffee');
 		} elsif($in eq "u"){
-			$output .= itemify('Unicorn Cake');
-			$output .= itemify('Upside-down cake');
+			@items = ('Unicorn Cake','Upside-down cake');
 		} elsif($in eq "v"){
-			$output .= itemify('Vanilla Swirl');
+			@items = ('Vanilla Swirl');
 		} elsif($in eq "w"){
-			$output .= itemify('Waffles');
-			$output .= itemify('Watermelon');
-			$output .= itemify('White Chocolate');
+			@items = ('Waffles','Watermelon','White Chocolate');
 		} elsif($in eq "x"){
-			$output .= itemify('Xmas Cake');
+			@items = ('Xmas Cake');
 		} elsif($in eq "y"){
-			$output .= itemify('Yoghurt');
+			@items = ('Yoghurt');
 		} elsif($in eq "z"){
-			$output .= itemify('Zepolli');
-			$output .= itemify('Zucchinni Pie');
+			@items = ('Zepolli','Zucchinni Pie');
 		} else{
 			return;
 		}
-		$output .= '</ul>';
+		$output .= itemify(@items);
 		return $output;
 	}
 	return;
 };
 
-zci is_cached => 1;
+zci is_cached => 0;
 1;
