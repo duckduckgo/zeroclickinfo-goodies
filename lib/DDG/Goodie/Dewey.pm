@@ -31,10 +31,12 @@ sub line {
 }
 
 handle remainder => sub {
-    return unless s/^(?:decimal)?\s*(?:system)?\s*(\d{3})(?:\.\d+)?(s)?\s*(?:decimal)?\s*(?:system)?$/$1/;
+    return unless s/^(?:the)?\s*(?:decimal)?\s*(?:system)?\s*(?:numbers?|#)?\s*(\d{1,3})(?:\.\d+)?(s)?\s*(?:in)?\s*(?:the)?\s*(?:decimal)?\s*(?:system)?$/$1/;
     my ($out_html, $out) = ("","");
 
     my $multi = $2;
+
+    $_ = "0" x (3 - length($2) - length($1)) . $_ if $_ =~ /^(0{0,2})([1-9]{0,3})$/;
 
     unless ($multi) { 
         $out .= "$_ is " . lc((get_info($_) or return));
