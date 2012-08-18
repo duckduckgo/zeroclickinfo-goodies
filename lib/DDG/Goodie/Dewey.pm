@@ -36,7 +36,7 @@ handle remainder => sub {
 
     my $multi = $2;
 
-    $_ = "0" x (3 - length($2) - length($1)) . $_ if $_ =~ /^(0{0,2})([1-9]{0,3})$/;
+    $_ = sprintf "%03d", $_;
 
     unless ($multi) { 
         $out .= "$_ is " . lc((get_info($_) or return));
