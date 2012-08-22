@@ -1,8 +1,8 @@
 package DDG::Goodie::Gravatar;
 # ABSTRACT: Return Gravatar image given an email address 
 
-use CGI qw/img/;
 use DDG::Goodie;
+use CGI qw/img/;
 use Email::Valid;
 use Gravatar::URL;
 
