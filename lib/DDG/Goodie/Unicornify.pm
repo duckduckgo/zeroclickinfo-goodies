@@ -15,10 +15,10 @@ handle remainder => sub {
 		s/[\s\t]+//g; # strip whitespace from the remainder, we just need the email address.
 		
 		return  $_ . '\'s unicorn:', 
-		html => '<br /><a href="' . unicornify_url(email => $_, size => 128) .'"><img src="' . 
-		unicornify_url(email => $_, size => "100")
-		. '" /></a><br /><a href="' . $link . 
-		'">Learn more at unicornify.appspot.com</a>';
+		html => $_.'\'s unicorn:'
+		.'<br /><a href="' . unicornify_url(email => $_, size => 128) .'">'
+		.'<img src="'.unicornify_url(email => $_, size => "100").'" /></a>'
+		.'<br /><a href="'.$link.'">Learn more at unicornify.appspot.com</a>';
 	}
 	return;
 };
