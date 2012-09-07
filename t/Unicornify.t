@@ -17,6 +17,6 @@ ddg_goodie_test(
 		test_zci('bob@bob.com\'s unicorn:', 
 			html => 'bob@bob.com\'s unicorn <a href="http://unicornify.appspot.com/">(Learn more at unicornify.appspot.com)</a>:<br />'
 			.'<a href="'.unicornify_url(email => 'bob@bob.com', size => 128).'">'
-			.'<img src="'.unicornify_url(email=>'bob@bob.com', size => 100).'" style="margin: auto;" /></a>'));
+			.'<img src="'.unicornify_url(email=>'bob@bob.com', size => 100).'" style="margin: auto; border-radius: 8px;" /></a>'));
 
 done_testing;

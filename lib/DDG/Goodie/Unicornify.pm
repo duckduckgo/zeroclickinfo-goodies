@@ -16,7 +16,7 @@ handle remainder => sub {
 		return  $_ . '\'s unicorn:', 
 		html => $_ . '\'s unicorn <a href="'.$link.'">(Learn more at unicornify.appspot.com)</a>:'
 		.'<br /><a href="' . unicornify_url(email => $_, size => 128) .'">'
-		.'<img src="'.unicornify_url(email => $_, size => "100").'" style="margin: auto;" /></a>';
+		.'<img src="'.unicornify_url(email => $_, size => "100").'" style="margin: auto; border-radius: 8px;" /></a>';
 	}
 	return;
 };
