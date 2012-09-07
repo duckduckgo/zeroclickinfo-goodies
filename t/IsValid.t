@@ -36,8 +36,8 @@ ddg_goodie_test(
 ddg_goodie_test(
 	[qw(DDG::Goodie::IsValid::XML)],
 	'is valid xml <test>lol' => test_zci(
-		'Your XML is invalid: no element found at line 1, column 9, byte 9',
-		html => 'Your XML is invalid: <pre style="font-size:12px;margin-top:5px;">no element found at line 1, column 9, byte 9</pre>'
+		'Your XML is invalid: no element found at line 1, column 10, byte 9',
+		html => 'Your XML is invalid: <pre style="font-size:12px;margin-top:5px;">no element found at line 1, column 10, byte 9</pre>'
 	)
 );
 
