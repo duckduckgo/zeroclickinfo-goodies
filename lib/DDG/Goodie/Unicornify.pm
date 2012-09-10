@@ -14,13 +14,13 @@ handle remainder => sub {
 	if (Email::Valid->address($_)) {
 		s/[\s\t]+//g; # strip whitespace from the remainder, we just need the email address.
 		my $answer = 'This is a unique unicorn for ' . $_ . ':' . "\nLearn more at unicornify.appspot.com"; 
-		my $header =  $_ . '(Unicornify)';
+		my $heading =  $_ . ' (Unicornify)';
 		my $html = 'This is a unique unicorn for ' . $_ . ':'
 		.'<br /><a href="' . unicornify_url(email => $_, size => 128) .'">'
 		.'<img src="'.unicornify_url(email => $_, size => "100").'" style="margin: 10px 0px 10px 20px; border-radius: 8px;" /></a>'
-		. '<br /><a href="'.$link.'">Learn more at unicornify.appspot.com</a>';
+		. 'Learn more at <a href="'.$link.'">unicornify.appspot.com</a>';
 		
-		return $answer, header => $header, html => $html;
+		return $answer, heading => $heading, html => $html;
 	}
 	return;
 };
