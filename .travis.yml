@@ -6,6 +6,8 @@ perl:
    - "5.10"
 
 install:
+   # This appears to be needed for DistZilla
+   - cpanm --quiet --notest --skip-satisfied inc::Module::Package
    # Deal with all of the DZIL dependancies, quickly and quietly
    - cpanm --quiet --notest --skip-satisfied Dist::Zilla
    - dzil authordeps | grep -vP '[^\w:]' | cpanm --quiet --notest --skip-satisfied
