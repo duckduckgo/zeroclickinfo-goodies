@@ -12,7 +12,7 @@ install:
 
    - dzil listdeps | grep -vP '[^\w:]' | cpanm --verbose
    # And install DuckPAN
-   - cpanm --verbose App::DuckPAN
+   - yes '' | cpanm --verbose App::DuckPAN
    - duckpan DDG::Test::Goodie
 script:
    - dzil smoke --release --author
