@@ -89,6 +89,7 @@ my %charMap = (
 
 handle remainder => sub {
 
+    my %reverseCharMap = reverse %charMap;
 	my @string = split(//, reverse $_);
 	my $flippedString; 
 
@@ -99,8 +100,9 @@ handle remainder => sub {
 
 		if ( exists $charMap{$_}) {
 			$flippedString .= $charMap{$_};
-		}
-		else {
+		} elsif (exists $reverseCharMap{$_}) {
+            $flippedString .= $reverseCharMap{$_};
+        } else {
 			$flippedString .= $_;
 		}
 	}
