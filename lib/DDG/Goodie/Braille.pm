@@ -9,7 +9,7 @@ zci is_cached => 1;
 
 handle query_raw => sub {
     s/ in braille$//;
-    return 'Braille: ' . brailleAsciiToUnicode(uc $_);
+    return brailleAsciiToUnicode(uc $_) . ' (Braille)';
 };
 
 1;
