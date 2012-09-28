@@ -12,7 +12,7 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::ZappBrannigan
         )],
-        'zapp brannigan quote' => test_zci(qr/^Captain Zapp Brannigan: /),
+        'zapp brannigan quote' => test_zci(qr/Captain Zapp Brannigan: /),
 );
 
 done_testing;
