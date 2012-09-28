@@ -5,7 +5,6 @@ use strict;
 use warnings;
 use DDG::Goodie;
 use POSIX qw(fmod);
-use Time::Piece;
 
 triggers any => qw(in into);
 
