@@ -60,8 +60,9 @@ sub parse_timezone(_) {
     return $timezones{$name} + $modifier + $minutes / 60;
 }
 
-sub to_time(_) {
-    my $hours = shift;
+sub to_time {
+    my ($hours, $american) = @_;
+    my $pm = "";
     my $seconds = 3600 * fmod $hours, 1 / 60;
 
     # I'm using floating point numbers. They sometimes don't do what I want.
@@ -71,14 +72,21 @@ sub to_time(_) {
     my $minutes
         = ( $hours - int $hours ) * 60 - sprintf( '%.4f', $seconds ) / 60;
     my $seconds_format = int $seconds ? ':%02.0f' : "";
-    sprintf "%i:%02.0f$seconds_format", $hours, $minutes, $seconds;
+    if ($american) {
+        $pm = ' A.M.';
+        if ($hours >= 12) {
+            $pm = ' P.M.';
+            $hours -= 12;
+        }
+    }
+    sprintf "%i:%02.0f$seconds_format$pm", $hours, $minutes, $seconds;
 }
 
 handle query => sub {
     my $timezone = qr/(\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?)?/;
     my (
         # Time
-        $hour, $minutes, $seconds, $pm,
+        $hour, $minutes, $seconds, $american, $pm,
 
         # Timezones
         $input_timezone, $output_timezone,
@@ -99,7 +107,7 @@ handle query => sub {
           # Optional spaces between tokens
           \s*
           # AM/PM
-          (?:(?:A|(P))\.?M\.?)?
+          ((?:A|(P))\.?M\.?)?
         # Spaces between tokens
         \s* \b
         # Optional input timezone
@@ -128,7 +136,7 @@ handle query => sub {
     my $gmt_output_timezone = parse_timezone $output_timezone;
     $modifier += $gmt_output_timezone - $gmt_input_timezone;
     for ( $gmt_input_timezone, $gmt_output_timezone ) {
-        $_ = to_time;
+        $_ = to_time $_;
         s/\A\b/+/;
         s/:00\z//;
     }
@@ -151,7 +159,7 @@ handle query => sub {
             $days = sprintf ', %i day%s after', $_ / 24, $s;
         }
         $_ = fmod $_, 24;
-        $_ = to_time . $days;
+        $_ = to_time($_, $american) . $days;
     }
 
     my ( $input_format, $output_format ) = ('%s, UTC%s') x 2;
