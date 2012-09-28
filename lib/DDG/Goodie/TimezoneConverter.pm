@@ -75,6 +75,7 @@ sub to_time(_) {
 }
 
 handle query => sub {
+    my $timezone = qr/(\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?)?/;
     my (
         # Time
         $hour, $minutes, $seconds, $pm,
@@ -102,7 +103,7 @@ handle query => sub {
         # Spaces between tokens
         \s* \b
         # Optional input timezone
-        (\w+ (?: \s* [+-]\d+ (?: : \d\d )? )? )?
+        $timezone
         # Spaces
         \s+
         # in keywords
@@ -110,7 +111,7 @@ handle query => sub {
         # Spaces
         \s+
         # Output timezone
-        (\w+ (?: \s* [+-]\d+ (?: : \d\d )? )? )?
+        $timezone
         \s* \z
     }x or return;
 
