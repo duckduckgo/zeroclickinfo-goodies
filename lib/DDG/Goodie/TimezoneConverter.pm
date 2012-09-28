@@ -6,7 +6,7 @@ use warnings;
 use DDG::Goodie;
 use POSIX qw(fmod);
 
-triggers any => qw(in into);
+triggers any => qw(in into to);
 
 zci is_cached   => 1;
 zci answer_type => 'timezone_converter';
@@ -106,7 +106,7 @@ handle query => sub {
         # Spaces
         \s+
         # in keywords
-        (?: IN (?: TO )? )
+        (?: IN (?: TO )? | TO )
         # Spaces
         \s+
         # Output timezone
