@@ -6,7 +6,7 @@ use warnings;
 use DDG::Goodie;
 use POSIX qw(fmod);
 
-triggers any => qw(in into);
+triggers any => qw(in into to);
 
 zci is_cached   => 1;
 zci answer_type => 'timezone_converter';
@@ -75,6 +75,7 @@ sub to_time(_) {
 }
 
 handle query => sub {
+    my $timezone = qr/(\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?)?/;
     my (
         # Time
         $hour, $minutes, $seconds, $pm,
@@ -102,15 +103,15 @@ handle query => sub {
         # Spaces between tokens
         \s* \b
         # Optional input timezone
-        (\w+ (?: \s* [+-]\d+ (?: : \d\d )? )? )?
+        $timezone
         # Spaces
         \s+
         # in keywords
-        (?: IN (?: TO )? )
+        (?: IN (?: TO )? | TO )
         # Spaces
         \s+
         # Output timezone
-        (\w+ (?: \s* [+-]\d+ (?: : \d\d )? )? )?
+        $timezone
         \s* \z
     }x or return;
 

@@ -10,9 +10,9 @@ zci is_cached => 1;
 
 ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
-    '3:14 into GMT' =>
+    '3:14 in GMT' =>
         test_zci('3:14 (UTC) is 3:14 (GMT).'),
-    '8:10 A.M. AZOST into CAT' =>
+    '8:10 A.M. AZOST to CAT' =>
         test_zci('8:10 (AZOST, UTC-1) is 11:10 (CAT, UTC+2).'),
     '1pm EDT into UTC+2' =>
         test_zci('13:00 (EDT, UTC-4) is 19:00 (UTC+2).'),
