@@ -1,10 +1,10 @@
 package DDG::Goodie::Tips;
 use DDG::Goodie;
 
-triggers query_lc => qr/^(\d{1,3})(?: ?%| percent) (?:(tip (?:on|for))|of)(?: an?)? ([\$\-]?)(\d+(\.?)(?(5)\d+))(?: bill)?$/i;
+triggers any => 'tip', 'tips', '%';
 
-handle matches => sub {
-    my ($p, $is_tip, $sign,$num) = @_;
+handle query_lc => sub {
+    return unless my ($p, $is_tip, $sign,$num) = $_ =~/^(\d{1,3})(?: ?%| percent) (?:(tip (?:on|for))|of)(?: an?)? ([\$\-]?)(\d+(\.?)(?(5)\d+))(?: bill)?$/;
     $p /= 100;
     my $t = $p*$num;
     my $tot;
