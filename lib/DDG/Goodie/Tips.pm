@@ -1,7 +1,7 @@
 package DDG::Goodie::Tips;
 use DDG::Goodie;
 
-triggers query_lc => qr/^(\d{1,3})(?: ?%| percent) (?:(tip (?:on|for))|of) ([\$\-]?)(\d+(\.?)(?(5)\d+))$/i;
+triggers query_lc => qr/^(\d{1,3})(?: ?%| percent) (?:(tip (?:on|for))|of)(?: an?)? ([\$\-]?)(\d+(\.?)(?(5)\d+))(?: bill)?$/i;
 
 handle matches => sub {
     my ($p, $is_tip, $sign,$num) = @_;
