@@ -34,7 +34,7 @@ my %timezones = qw(
     NFT    11.5 NPT    5.75 NST    -3.5 NT     -3.5 NUT   -11.5 NZDT     13
     NZST     12 OMST      6 ORAT     -5 PDT      -7 PET      -5 PETT     12
     PGT      10 PHOT     13 PHT       8 PKT       5 PMDT      8 PMST      8
-    PONT     11 PST       8 RET       4 ROTT     -3 SAKT     11 SAMT      4
+    PONT     11 PST      -8 RET       4 ROTT     -3 SAKT     11 SAMT      4
     SAST      2 SBT      11 SCT       4 SGT       8 SLT     5.5 SRT      -3
     SST     -11 SYOT      3 TAHT    -10 TFT       5 THA       7 TJT       5
     TKT      14 TLT       9 TMT       5 TOT      13 TVT      12 UCT       0
