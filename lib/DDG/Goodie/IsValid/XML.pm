@@ -24,7 +24,7 @@ handle remainder => sub {
 
 #	    warn $_;
 
-		$_ =~ /^\n?(.* at line \d+, column \d+, byte \d+) at/;
+		$_ =~ /\n?(.* at line \d+, column \d+, byte \d+) at/;
 
 		return ('invalid: ', $1);
 	};
