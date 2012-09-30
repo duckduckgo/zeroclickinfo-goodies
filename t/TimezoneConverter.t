@@ -16,6 +16,10 @@ ddg_goodie_test(
         test_zci('8:10 A.M. (AZOST, UTC-1) is 11:10 A.M. (CAT, UTC+2).'),
     '1pm EDT into UTC+2' =>
         test_zci('1:00 P.M. (EDT, UTC-4) is 7:00 P.M. (UTC+2).'),
+    '0pm into GMT' =>
+        test_zci('Noon (UTC) is noon (GMT).'),
+    '0am into UTC' =>
+        test_zci('Midnight (UTC) is midnight (UTC).'),
     '1 into UTC -2 ' =>
         test_zci('1:00 (UTC) is 23:00, 1 day prior (UTC-2).'),
     ' 1 into UTC-1' =>
