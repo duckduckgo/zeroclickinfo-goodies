@@ -73,8 +73,11 @@ sub to_time {
         = ( $hours - int $hours ) * 60 - sprintf( '%.4f', $seconds ) / 60;
     my $seconds_format = int $seconds ? ':%02.0f' : "";
     if ($american) {
+        # Special case certain hours
+        return 'midnight' if $hours == 0;
+        return 'noon'     if $hours == 12;
         $pm = ' A.M.';
-        if ($hours >= 12) {
+        if ($hours > 12) {
             $pm = ' P.M.';
             $hours -= 12;
         }
@@ -176,7 +179,7 @@ handle query => sub {
         pop @output_timezones;
     }
     sprintf "%s ($input_format) is %s ($output_format).",
-        $input_time,  @input_timezones,
+        ucfirst $input_time, @input_timezones,
         $output_time, @output_timezones;
 };
 
