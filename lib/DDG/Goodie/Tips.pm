@@ -18,7 +18,7 @@ handle query_lc => sub {
 
     if ($tot) {
 	zci answer_type => 'tip';
-	return "Tip: \$$t  Total: \$$tot";
+	return "Tip: \$$t; Total: \$$tot";
     }
     $t = $sign . $t;
     $tot = $sign . $tot if $tot;
