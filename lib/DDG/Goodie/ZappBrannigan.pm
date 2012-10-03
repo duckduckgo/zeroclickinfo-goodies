@@ -12,7 +12,8 @@ handle query => sub {
     my $rand = int(rand(scalar(@quotes)));
     my $quote = $quotes[$rand];
     chomp $quote;
-    return $quote;
+    (my $text = $quote) =~ s/<br>/\n/g;
+    return $text, html => $quote;
 };
 
 1;
