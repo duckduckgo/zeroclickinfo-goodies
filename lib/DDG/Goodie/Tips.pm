@@ -4,7 +4,7 @@ use DDG::Goodie;
 triggers any => 'tip', 'tips', '%';
 
 handle query_lc => sub {
-    return unless my ($p, $is_tip, $sign,$num) = $_ =~/^(\d{1,3})(?: ?%| percent) (?:(tip (?:on|for))|of)(?: an?)? ([\$\-]?)(\d+(\.?)(?(5)\d+))(?: bill)?$/;
+    return unless my ($p, $is_tip, $sign,$num) = $_ =~/^(\d{1,3})(?: ?%| percent) (?:(tip (?:on|for|of))|of)(?: an?)? ([\$\-]?)(\d+(\.?)(?(5)\d+))(?: bill)?$/;
     $p /= 100;
     my $t = $p*$num;
     my $tot;
