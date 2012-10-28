@@ -4,6 +4,10 @@ use DDG::Goodie;
 
 use Acme::rafl::Everywhere;
 
+attribution
+  web     => 'http://stephen.scaffidi.net',
+  github  => 'Hercynium';
+
 triggers any => 'rafl';
 
 handle remainder => sub {
