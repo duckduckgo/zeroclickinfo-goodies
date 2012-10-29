@@ -16,7 +16,7 @@ handle remainder => sub {
 	return "No Anagrams Found."
     }
 
-    my $json = read_file(share('words.json'), { binmode => ':raw' }) or die("Unable to open words file");
+    my $json = scalar share('words.json')->slurp;
 
     my %wordHash = %{decode_json($json)};
 
