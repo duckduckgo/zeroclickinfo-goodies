@@ -9,7 +9,7 @@ zci is_cached => 1;
 triggers start => "find anagrams";
 
 
-my $json = scalar share('words.json')->slurp;
+my $json = share('words.json')->slurp;
 
 my %wordHash = %{decode_json($json)};
 
