@@ -8,7 +8,7 @@ use Data::Dumper;
 
 zci is_cached => 1;
 
-triggers start => "fingali";
+triggers start => "find anagrams";
 
 handle remainder => sub {
 
