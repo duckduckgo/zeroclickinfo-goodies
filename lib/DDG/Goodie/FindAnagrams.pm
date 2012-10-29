@@ -8,17 +8,19 @@ zci is_cached => 1;
 
 triggers start => "find anagrams";
 
+
+my $json = scalar share('words.json')->slurp;
+
+my %wordHash = %{decode_json($json)};
+
+#print Dumper(\%wordHash);
+
+
 handle remainder => sub {
 
     if ($_ eq ""){
 	return "No Anagrams Found."
     }
-
-    my $json = scalar share('words.json')->slurp;
-
-    my %wordHash = %{decode_json($json)};
-
-    #print Dumper(\%wordHash);
 
 # Format string to look like hash key by making it lowercase then splitting the string into chars, sort them and finally  join back into sorted string
     my $sorted_string = join("",sort(split(//,lc($_))));
