@@ -4,7 +4,7 @@ use DDG::Goodie;
 use File::Slurp qw(read_file write_file);
 use File::ShareDir::ProjectDistDir;
 use JSON;
-use Data::Dumper;
+#use Data::Dumper;
 
 zci is_cached => 1;
 
