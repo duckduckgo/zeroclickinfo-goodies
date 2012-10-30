@@ -12,7 +12,7 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::Rafl
         )],
-        'rafl' => test_zci(qr/rafl/),
+        'rafl' => test_zci(qr/rafl is so everywhere, .+/),
 );
 
 done_testing;
