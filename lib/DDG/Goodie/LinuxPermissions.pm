@@ -5,10 +5,9 @@ use DDG::Goodie;
 triggers query_lc => qr/^([0|1|2|4]{1}[0-7]{3})$/;
 
 zci is_cached => 1;
-zci answer_type => "linux_permission";
+zci answer_type => "linux_permissions";
 
 sub calcperms {
-      print "  In calc: Parms = @_ \n";
 	if($_[0] == 7) {
             return "Read, Write, and Execute";
              }
