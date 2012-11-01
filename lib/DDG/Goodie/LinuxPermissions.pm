@@ -2,30 +2,76 @@ package DDG::Goodie::LinuxPermissions;
 
 use DDG::Goodie;
 
-triggers query_lc => qr/^([0|1|2|4]{1}][0-7]{3}$/
+triggers query_lc => qr/^([0|1|2|4]{1}[0-7]{3})$/;
 
-handle matches => sub {
-	@perm = split(//);
-	my ($result) = @_ . "\n\nUser: " . &calculate(@_[1]) . "\n";
-	$result .= "Group: " . &calculate(@_[2]) . "\n";
-	$result .= "Others: " . &calculate(@_[3]);
-	return $result;
-}
+zci is_cached => 1;
+zci answer_type => "linux_permission";
 
-sub calculate {
-	if($_[0] == 7)
-		return "Read, Write, and Execute";
-	else if($_[0] == 6)
+sub calcperms {
+      print "  In calc: Parms = @_ \n";
+	if($_[0] == 7) {
+            return "Read, Write, and Execute";
+             }
+	elsif($_[0] == 6){
 		return "Read and Write";
-	else if($_[0] == 5)
+             }
+	elsif($_[0] == 5){
 		return "Read and Execute";
-	else if($_[0] == 4)
+             }
+	elsif($_[0] == 4) {
 		return "Read";
-	else if($_[0] == 3)
+             }
+	elsif($_[0] == 3){
 		return "Write and Execute";
-	else if($_[0] == 2)
+             }
+	elsif($_[0] == 2){
 		return "Write";
-	else if($_[0] == 1)
+             }
+	elsif($_[0] == 1){
 		return "Execute";
-	else return "No access";
+             }
+	else{ return "No access"};
 }
+
+sub calcenglish {
+   my ($result);
+   if($_[0] == 0) {
+      for(my($i)= 1;$i<4;$i++){
+         if($_[$i] == 7) {
+            $result .= "rwx";
+         }
+         elsif($_[$i] == 6) {
+            $result .= "rw-";
+         }
+         elsif($_[$i] == 5) {
+            $result .= "r-x";
+         }
+         elsif($_[$i] == 4) {
+            $result .= "r--";
+         }
+         elsif($_[$i] == 3) {
+            $result .= "-wx";
+         }
+         elsif($_[$i] == 2) {
+            $result .= "-w-";
+         }
+         elsif($_[$i] == 1) {
+            $result .= "--x";
+         }
+         else {
+            $result .= "---";
+         }
+      }
+   }
+   return $result;
+}
+
+    handle matches => sub {
+      my (@perm) = split(//);
+      my ($result) = "User: " . calcperms($perm[1]) . "\n";
+      $result .= "Group: " . calcperms($perm[2]) . "\n";
+      $result .= "Others: " . calcperms($perm[3]);
+      $result .= "\n\n" . calcenglish($perm[0], $perm[1], $perm[2], $perm[3]);
+      return $result;
+   };
+1;
