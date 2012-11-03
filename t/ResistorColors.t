@@ -95,7 +95,7 @@ ddg_goodie_test(
           . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 4px;border-radius:4px;"
           . "-webkit-border-radius:4px;-moz-border-radius:4px;'>yellow</span>"
           . "<br/><span style='font-size:92.8%;color:#333'>Followed by a gap and tolerance color "
-          . "[<a href='http://resisto.rs/#1.58M'>more at resisto.rs</a>]</span>"),
+          . "[<a href='http://resisto.rs/#1.58M'>More at resisto.rs</a>]</span>"),
 
 );
 
