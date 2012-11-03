@@ -131,7 +131,7 @@ sub render {
         }
     }
     $html .= "<br/><span style='font-size:92.8%;color:#333'>Followed by a gap and tolerance color "
-        . "[<a href='http://resisto.rs/#$formatted_value'>more at resisto.rs</a>]</span>";
+        . "[<a href='http://resisto.rs/#$formatted_value'>More at resisto.rs</a>]</span>";
 
     return $text, html => $html;
 };
