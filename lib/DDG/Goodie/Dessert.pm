@@ -4,7 +4,7 @@ use DDG::Goodie;
 
 sub itemify{
 	my $i = rand scalar @_;
-	return '<a href="http://duckduckgo.com?q=' . $_[$i] . '">' . $_[$i] . '</a>';
+	return '<a href="http://duckduckgo.com/2/' . $_[$i] . '">' . $_[$i] . '</a> <a style="font-size: 10px;" href="http://duckduckgo.com/?q=' . $_[$i] . '+recipe">(recipes)</a>';
 };
 
 my %desserts = (
