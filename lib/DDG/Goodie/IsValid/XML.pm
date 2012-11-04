@@ -21,7 +21,10 @@ handle remainder => sub {
 		XMLin $_;
 		return 'valid!';
 	} catch {
-		$_ =~ /^\n(.* at line \d+, column \d+, byte \d+) at/;
+
+#	    warn $_;
+
+		$_ =~ /\n?(.* at line \d+, column \d+, byte \d+) at/;
 
 		return ('invalid: ', $1);
 	};

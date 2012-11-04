@@ -2,7 +2,7 @@ package DDG::Goodie::FlipText;
 
 use DDG::Goodie;
 
-triggers startend => "flip", "mirror";
+triggers startend => "flip", "mirror", "spin", "rotate";
 
 zci is_cached => 1;
 zci answer_type => "flip_text";
@@ -89,6 +89,7 @@ my %charMap = (
 
 handle remainder => sub {
 
+    my %reverseCharMap = reverse %charMap;
 	my @string = split(//, reverse $_);
 	my $flippedString; 
 
@@ -99,8 +100,9 @@ handle remainder => sub {
 
 		if ( exists $charMap{$_}) {
 			$flippedString .= $charMap{$_};
-		}
-		else {
+		} elsif (exists $reverseCharMap{$_}) {
+            $flippedString .= $reverseCharMap{$_};
+        } else {
 			$flippedString .= $_;
 		}
 	}
