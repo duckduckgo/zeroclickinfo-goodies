@@ -6,6 +6,16 @@ use warnings;
 use DDG::Goodie;
 use POSIX qw(fmod);
 
+attribution github => ['https://github.com/GlitchMr', 'GlitchMr'];
+
+primary_example_queries '10:00AM MST to PST';
+secondary_example_queries '19:00 UTC to EST', '1am UTC to PST';
+description 'convert times between timezones';
+name 'Timezone Converter';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/TimezoneConverter.pm';
+category 'calculations';
+topics 'travel';
+
 triggers any => qw(in into to);
 
 zci is_cached   => 1;

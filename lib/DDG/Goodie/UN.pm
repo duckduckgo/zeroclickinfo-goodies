@@ -4,6 +4,15 @@ package DDG::Goodie::UN;
 use DDG::Goodie;
 use Number::UN 'get_un';
 
+attribution github => ['https://github.com/tantalor', 'tantalor'];
+
+primary_example_queries 'UN Number 0009';
+description 'gives a description for a given UN number';
+name 'UN Number';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UN.pm';
+category 'facts';
+topics 'everyday';
+
 use constant WPHREF => "http://en.wikipedia.org/wiki/List_of_UN_numbers_%04d_to_%04d";
 
 triggers start => 'un';

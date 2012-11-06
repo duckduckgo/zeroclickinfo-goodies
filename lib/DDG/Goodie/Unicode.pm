@@ -8,6 +8,8 @@ use Encode qw/encode_utf8/;
 attribution github => ['https://github.com/cosimo', 'cosimo'];
 primary_example_queries 'U+590c';
 secondary_example_queries 'unicode white smiling face';
+description 'get information about a unicode character';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Unicode.pm'
 name 'Unicode';
 category 'computing';
 topics 'programming';
