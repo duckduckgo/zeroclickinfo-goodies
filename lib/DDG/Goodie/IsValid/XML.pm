@@ -24,9 +24,9 @@ handle remainder => sub {
 
 #	    warn $_;
 
-		$_ =~ /\n?(.* at line \d+, column \d+, byte \d+) at/;
+		$_ =~ /\n?(.* at line \d+, column \d+, byte \d+) at|parser error : (.*)/;
 
-		return ('invalid: ', $1);
+		return ('invalid: ', $1 ? $1 : $2);
 	};
 
 	my $answer      = "Your XML is $result";
