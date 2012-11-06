@@ -7,6 +7,16 @@ triggers any => "or";
 
 zci answer_type => "rand";
 
+primary_example_queries 'yes or no';
+secondary_example_queries 'this or that or none';
+description 'make a random choice';
+name 'ABC';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
+category 'random';
+topics 'trivia';
+attribution twitter => 'crazedpsyc',
+            cpan    => 'CRZEDPSYC' ;
+
 handle query_parts => sub { 
     my @choices;
     my @collected_parts;
