@@ -6,6 +6,16 @@ triggers start => "roll", "throw";
 
 zci answer_type => "dice_roll";
 
+primary_example_queries 'throw dice';
+secondary_example_queries 'roll 5 dice', 'roll 3d12';
+description 'give the results of a random die throw';
+name 'Dice';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Dice.pm';
+category 'random';
+topics 'math';
+attribution twitter => 'crazedpsyc',
+            cpan    => 'CRZEDPSYC' ;
+
 handle remainder => sub {
     if ($_ =~ /^(?:die|(\d{0,2})\s*dice)$/) {
         my @output;
