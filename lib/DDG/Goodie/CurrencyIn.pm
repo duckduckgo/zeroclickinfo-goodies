@@ -23,6 +23,15 @@ use Locale::SubCountry;
 zci is_cached => 1;
 zci answer_type => "currency_in";
 
+primary_example_queries 'currency in australia';
+secondary_example_queries 'currency in AU';
+description 'find the official currency of a country';
+name 'CurrencyIn';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CurrencyIn.pm';
+category 'facts';
+topics 'travel';
+attribution github => ['http://github.com/Alchymista', 'Alchymista'];
+
 triggers any => 'currency', 'currencies';    # User typed currency...
 
 # Countries are lowercased but input from user, too ... so those always match...
