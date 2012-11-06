@@ -4,9 +4,17 @@ use DDG::Goodie;
 
 use Acme::rafl::Everywhere;
 
+primary_example_queries 'rafl is everywhere';
+secondary_example_queries 'where is rafl?';
+description 'rafl is everywhere!';
+name 'rafl';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/.pm';
+category 'ids';
+topics 'social';
+
 attribution
   web     => 'http://stephen.scaffidi.net',
-  github  => 'Hercynium';
+  github  => ['https://github.com/Hercynium', 'Hercynium'];
 
 triggers any => 'rafl';
 

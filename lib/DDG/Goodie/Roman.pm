@@ -3,6 +3,16 @@ package DDG::Goodie::Roman;
 use DDG::Goodie;
 use Roman;
 
+primary_example_queries 'roman numeral MCCCXXXVII';
+secondary_example_queries 'roman 1337', 'roman IV';
+description 'convert between Roman and Arabic numerals';
+name 'Roman Numerals';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Roman.pm';
+category 'conversions';
+topics 'cryptography';
+
+attribution github => ['https://github.com/mrshu', 'mrshu'];
+
 triggers any => "roman", "arabic";
 
 zci is_cached => 1;
