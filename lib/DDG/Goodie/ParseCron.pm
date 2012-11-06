@@ -16,6 +16,16 @@ triggers start => 'crontab', 'cron', 'cronjob';
 
 zci is_cached => 0;
 
+primary_example_queries 'crontab * */3 * * *';
+secondary_example_queries 'crontab 42 12 3 Feb Sat';
+description 'show the next occurance of a cron job in human-readable form';
+name 'ParseCron';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ParseCron.pm';
+category 'computing_info';
+topics 'sysadmin';
+attribution web     => [ 'http://indeliblestamp.com', 'Arun S' ],
+            github  => [ 'http://github.com/indeliblestamp', 'IndelibleStamp' ] ;
+
 handle remainder => sub {
     my $crontab = $_;
     # We replace Jan,Feb.. and Mon,Tue.. with 1,2..
