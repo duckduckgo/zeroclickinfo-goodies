@@ -9,7 +9,7 @@ secondary_example_queries 'morse SOS';
 description 'convert to and from morse code';
 name 'Morse';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Morse.pm';
-category 'conversion';
+category 'conversions';
 topics 'special_interest';
 attribution
   web     => 'http://und3f.com',
