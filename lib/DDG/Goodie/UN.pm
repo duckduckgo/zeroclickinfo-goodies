@@ -11,7 +11,7 @@ description 'gives a description for a given UN number';
 name 'UN Number';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UN.pm';
 category 'facts';
-topics 'everyday';
+topics 'everyday_goodies';
 
 use constant WPHREF => "http://en.wikipedia.org/wiki/List_of_UN_numbers_%04d_to_%04d";
 

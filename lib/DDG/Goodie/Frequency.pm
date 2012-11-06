@@ -12,7 +12,7 @@ name 'Frequency';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Frequency.pm';
 category 'calculations';
 topics 'geek';
-attribution github => [ 'http://github.com/unlisted', 'Morgan'],
+attribution github => [ 'http://github.com/unlisted', 'Morgan' ];
 
 handle remainder => sub {
     if ($_ =~ /^of ([a-z]|(?:all ?|)(?:letters|characters|chars|)) in (.+)/i)

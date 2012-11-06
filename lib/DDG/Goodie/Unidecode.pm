@@ -3,6 +3,7 @@ package DDG::Goodie::Unidecode;
 
 use DDG::Goodie;
 use Text::Unidecode;
+use utf8;
 
 triggers startend => "unidecode";
 
@@ -10,11 +11,11 @@ zci is_cached => 1;
 zci answer_type => "convert_to_ascii";
 
 attribution github => ['https://github.com/moritz', 'moritz'];
-primary_example_queries => 'unidecode møæp';
-secondary_example_queries => "unidecode åäº°";
+primary_example_queries 'unidecode møæp';
+secondary_example_queries "unidecode åäº°";
 description 'decode special non-latin characters';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Unidecode.pm';
-category 'computing';
+category 'computing_tools';
 topics 'programming';
 
 handle remainder => sub {
