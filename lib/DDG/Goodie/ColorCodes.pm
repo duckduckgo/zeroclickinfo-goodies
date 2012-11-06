@@ -31,10 +31,15 @@ triggers query_raw => qr/^
 zci is_cached => 1;
 zci answer_type => 'color_code';
 
-attribution 
-    twitter => 'crazedpsyc',
-    cpan    => 'CRZEDPSYC'
-;
+primary_example_queries 'hex color code for cyan';
+secondary_example_queries 'rgb(173,216,230)', 'hsl 194 0.53 0.79', 'cmyk(0.12, 0, 0, 0)', '#00ff00';
+description 'get hex, RGB, HSL and CMYB values for a color';
+name 'ColorCodes';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ColorCodes.pm';
+category 'conversions';
+topics 'programming';
+attribution twitter => 'crazedpsyc',
+            cpan    => 'CRZEDPSYC' ;
 
 sub percentify {
     my @out;
