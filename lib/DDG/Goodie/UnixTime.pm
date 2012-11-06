@@ -8,6 +8,15 @@ triggers startend => "unixtime", "time", "timestamp", "datetime", "epoch", "unix
 zci answer_type => "time_conversion";
 zci is_cached => 1;
 
+attribution github => ['https://github.com/codejoust', 'codejoust'];
+
+primary_example_queries 'unix time 0000000000000';
+secondary_example_queries 'epoch 0', 'epoch 2147483647';
+description 'convert a unix epoch to human-readable time';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UnixTime.pm';
+category 'calculations';
+topics 'sysadmin';
+
 handle remainder => sub {
 
     my $time_input = 0;

@@ -9,6 +9,14 @@ triggers startend => "unidecode";
 zci is_cached => 1;
 zci answer_type => "convert_to_ascii";
 
+attribution github => ['https://github.com/moritz', 'moritz'];
+primary_example_queries => 'unidecode møæp';
+secondary_example_queries => "unidecode åäº°";
+description 'decode special non-latin characters';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Unidecode.pm';
+category 'computing';
+topics 'programming';
+
 handle remainder => sub {
     my $u = unidecode $_;
     # unidecode output sometimes contains trailing spaces
