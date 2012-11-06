@@ -7,6 +7,16 @@ triggers start => 'globally', 'universally', 'rfc', 'guid', 'uuid';
 
 zci answer_type => "guid";
 
+primary_example_queries 'guid';
+secondary_example_queries 'uuid';
+description 'generate a unique indentifier';
+name 'GUID';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/GUID.pm';
+category 'computing_tools';
+topics 'programming';
+attribution twitter => 'crazedpsyc',
+            cpan    => 'CRZEDPSYC' ;
+
 my %guid = (
     'guid' => 0,
     'uuid' => 1,
