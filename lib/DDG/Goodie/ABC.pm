@@ -3,7 +3,7 @@ package DDG::Goodie::ABC;
 
 use DDG::Goodie;
 
-triggers any => "or";
+triggers startend => "choose";
 
 zci answer_type => "rand";
 
@@ -18,9 +18,11 @@ attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
 handle query_parts => sub { 
+    return unless /or/;
     my @choices;
     my @collected_parts;
     while (my $part = shift) {
+        next if $part eq 'choose';
         if ( lc($part) eq 'or' ) {
             return unless @collected_parts;
             push @choices, join(' ', @collected_parts);

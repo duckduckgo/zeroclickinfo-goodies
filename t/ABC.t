@@ -12,10 +12,10 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::ABC
 	)],
-	'yes or no' => test_zci(qr/(yes|no) \(random\)/),
-    "this or that or none" => test_zci(qr/(this|that|none) \(random\)/),
-    "duckduckgo or google or bing or something" => test_zci("duckduckgo (not random)", answer_type => 'egg'),
-    "DuckDuckGo OR Google OR Bing or SOMETHING" => test_zci("DuckDuckGo (not random)", answer_type => 'egg'),
+	'choose yes or no' => test_zci(qr/(yes|no) \(random\)/),
+    'choose this or that or none' => test_zci(qr/(this|that|none) \(random\)/),
+    'choose duckduckgo or google or bing or something' => test_zci("duckduckgo (not random)", answer_type => 'egg'),
+    'choose DuckDuckGo OR Google OR Bing or SOMETHING' => test_zci("DuckDuckGo (not random)", answer_type => 'egg'),
 );
 
 done_testing;
