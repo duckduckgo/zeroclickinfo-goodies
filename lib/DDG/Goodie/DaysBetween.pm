@@ -16,7 +16,7 @@ description 'calculate the number of days between two dates';
 name 'DaysBetween';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DaysBetween.pm';
 category 'calculations';
-topics 'everyday_goodies';
+topics 'everyday';
 attribution github => ['http://github.com/JetFault', 'JetFault'];
 
 

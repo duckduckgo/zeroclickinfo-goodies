@@ -33,7 +33,7 @@ description 'take the average of a list of numbers';
 name 'DuckDuckGo';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
 category 'cheat_sheets';
-topics 'everyday_goodies';
+topics 'everyday';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 

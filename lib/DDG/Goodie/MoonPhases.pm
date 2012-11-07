@@ -14,7 +14,7 @@ description  "Lunar phase";
 
 name "MoonPhases";
 
-topics "special_interest", "everyday_goodies";
+topics "special_interest", "everyday";
 
 category "random";
 

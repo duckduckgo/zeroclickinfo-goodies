@@ -9,7 +9,7 @@ description 'calculate a total including a percentage tip';
 name 'Tips';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Tips.pm';
 category 'calculations';
-topics 'everyday_goodies';
+topics 'everyday';
 attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
 
 handle query_lc => sub {

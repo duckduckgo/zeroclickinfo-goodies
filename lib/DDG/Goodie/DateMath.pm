@@ -16,7 +16,7 @@ description 'calculate the date with an offset';
 name 'DateMath';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DateMath.pm';
 category 'time_sensitive';
-topics 'everyday_goodies';
+topics 'everyday';
 attribution github => ['http://github.com/cj01101', 'cj01101'];
 
 
