@@ -3,9 +3,9 @@ package DDG::Goodie::MoonPhases;
 use DDG::Goodie;
 use Astro::MoonPhase;
 
-primary_example_queries => "lunar phase";
+primary_example_queries "lunar phase";
 
-secondary_example_queries =>
+secondary_example_queries
     "moon phase",
     "phase of the moon",
     "what is the current lunar phase";
@@ -14,9 +14,9 @@ description  "Lunar phase";
 
 name "MoonPhases";
 
-topics => "special_interest", "everyday_goodies";
+topics "special_interest", "everyday_goodies";
 
-category => "random";
+category "random";
 
 attribution
     github => ['https://github.com/rpicard', 'rpicard'],

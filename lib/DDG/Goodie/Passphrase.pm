@@ -8,7 +8,7 @@ primary_example_queries 'passphrase 3';
 description 'generate a random passphrase';
 name 'Passphrase';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Passphrase.pm';
-category 'computing';
+category 'computing_tools';
 topics 'cryptography';
 
 attribution github => ['https://github.com/hunterlang', 'hunterlang'];
