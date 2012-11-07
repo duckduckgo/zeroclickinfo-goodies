@@ -6,13 +6,13 @@ use Net::IDN::Encode ':all';
 use HTML::Entities;
 use utf8;
 
-primary_example_queries => 'idn exämple.com';
-secondary_example_queries => 'idn xn--exmple-cua.com';
+primary_example_queries 'idn exämple.com';
+secondary_example_queries 'idn xn--exmple-cua.com';
 description 'encode and decode internationalized domain names';
 name 'IDN';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IDN.pm';
-topics => 'computing_tools';
-categories => 'travel';
+topics 'travel';
+category 'computing_tools';
 attribution web => ['http://7bits.nl/', 'Peter van Dijk'],
             email => ['peter@7bits.nl', 'Peter van Dijk'],
             github => ['https://github.com/habbie', 'habbie'],
