@@ -12,7 +12,7 @@ secondary_example_queries 'private ips';
 description 'show private IP blocks';
 name 'PrivateNetwork';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PrivateNetwork.pm';
-category 'cheat_sheet';
+category 'cheat_sheets';
 topics 'sysadmin';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
