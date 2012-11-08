@@ -10,15 +10,23 @@ use DDG::Goodie;
 use Math::Round;
 use POSIX qw(abs floor log10 pow);
 
-attribution twitter => 'joewalnes',
-            web => ['http://joewalnes.com', 'joewalnes.com'],
-            email => ['joe@walnes.com', 'Joe Walnes'];
-
 # \x{2126} is the unicode ohm symbol
 triggers query_nowhitespace => qr/^(.*)(ohm|ohms|\x{2126})/i;
 
 zci is_cached => 1;
 zci answer_type => 'resistor_colors';
+
+primary_example_queries '4.7k ohm';
+secondary_example_queries '1\x{2126}';
+description 'find resistor color bands';
+name 'ResistorColors';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ResistorColors.pm';
+category 'conversions';
+topics 'science';
+
+attribution twitter => 'joewalnes',
+            web => ['http://joewalnes.com', 'joewalnes.com'],
+            email => ['joe@walnes.com', 'Joe Walnes'];
 
 # These hex codes came from
 # http://en.wikipedia.org/wiki/Electronic_color_code
