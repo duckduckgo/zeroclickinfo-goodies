@@ -10,6 +10,16 @@ triggers any => qw( plus minus + - );
 zci is_cached => 1;
 zci answer_type => 'date_math';
 
+primary_example_queries 'Jan 1 2012 plus 32 days';
+secondary_example_queries '1/1/2012 plus 5 months', 'January first minus ten days';
+description 'calculate the date with an offset';
+name 'DateMath';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DateMath.pm';
+category 'time_sensitive';
+topics 'everyday';
+attribution github => ['http://github.com/cj01101', 'cj01101'];
+
+
 handle query_lc => sub {
     my @param = split /\s+/;
     return unless @param >= 4;

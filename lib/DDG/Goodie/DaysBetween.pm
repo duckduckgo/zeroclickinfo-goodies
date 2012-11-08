@@ -10,6 +10,16 @@ triggers start => "days", "daysbetween", "days_between";
 zci is_cached => 1;
 zci answer_type => "days_between";
 
+primary_example_queries 'days between 01/01/2000 01/01/2001';
+secondary_example_queries 'days between 01/01/2000 01/01/2001 inclusive';
+description 'calculate the number of days between two dates';
+name 'DaysBetween';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DaysBetween.pm';
+category 'calculations';
+topics 'everyday';
+attribution github => ['http://github.com/JetFault', 'JetFault'];
+
+
 handle query_lc => sub {
 
 	s/^days(?:\s|_)*between//;

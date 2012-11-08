@@ -3,14 +3,26 @@ package DDG::Goodie::ABC;
 
 use DDG::Goodie;
 
-triggers any => "or";
+triggers startend => "choose";
 
 zci answer_type => "rand";
 
+primary_example_queries 'yes or no';
+secondary_example_queries 'this or that or none';
+description 'make a random choice';
+name 'ABC';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
+category 'random';
+topics 'trivia';
+attribution twitter => 'crazedpsyc',
+            cpan    => 'CRZEDPSYC' ;
+
 handle query_parts => sub { 
+    return unless /or/;
     my @choices;
     my @collected_parts;
     while (my $part = shift) {
+        next if $part eq 'choose';
         if ( lc($part) eq 'or' ) {
             return unless @collected_parts;
             push @choices, join(' ', @collected_parts);

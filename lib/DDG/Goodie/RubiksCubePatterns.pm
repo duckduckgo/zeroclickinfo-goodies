@@ -4,6 +4,16 @@ use DDG::Goodie;
 
 # Create interesting patterns from a solved Rubik's Cube.
 
+primary_example_queries 'rcube stripes';
+secondary_example_queries 'rcube cube in a cube', 'rcube swap centers';
+description 'create interesting patterns from a solved Rubik\'s Cube';
+name 'Rubiks Cube';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RubiksCubePatterns.pm';
+category 'random';
+topics 'special_interest';
+
+attribution web => ['robert.io', 'Robert Picard'], twitter => '__rlp', github => ['https://github.com/rpicard', 'rpicard'];
+
 triggers start => "rcube";
 
 zci is_cached => 1;

@@ -7,6 +7,17 @@ triggers startend => "flip", "mirror", "spin", "rotate";
 zci is_cached => 1;
 zci answer_type => "flip_text";
 
+primary_example_queries 'flip text';
+secondary_example_queries 'mirror text';
+description 'flip and mirror text';
+name 'FlipText';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FlipText.pm';
+category 'conversions';
+topics 'geek';
+attribution web => [ 'robert.io', 'Robert Picard' ],
+            github => [ 'http://github.com/rpicard', 'rpicard'],
+            twitter => ['http://twitter.com/__rlp', '__rlp'];
+
 my %charMap = (
 	"a" => "\x{0250}",
 	"b" => "q",

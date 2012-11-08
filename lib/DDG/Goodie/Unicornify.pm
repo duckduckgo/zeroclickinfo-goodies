@@ -7,7 +7,7 @@ use Email::Valid;
 use Unicornify::URL;
 
 triggers start => 'unicornify';
-
+attribution github => ['https://github.com/flaming-toast', 'flaming-toast'];
 
 handle remainder => sub {
 	my $link = 'http://unicornify.appspot.com/';

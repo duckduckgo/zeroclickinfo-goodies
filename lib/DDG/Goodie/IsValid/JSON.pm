@@ -6,6 +6,14 @@ use DDG::Goodie;
 use Try::Tiny;
 use JSON qw(from_json);
 
+primary_example_queries 'is valid {"test": "json"}';
+secondary_example_queries 'valid? ["test", "json"]';
+description 'validate JSON data';
+name 'IsValid::JSON';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsValid/JSON.pm';
+category 'programming';
+topics 'programming';
+
 attribution github  => ['https://github.com/ghedo', 'ghedo'      ],
             web     => ['http://ghedini.me', 'Alessandro Ghedini'];
 

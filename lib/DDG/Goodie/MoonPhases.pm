@@ -3,6 +3,27 @@ package DDG::Goodie::MoonPhases;
 use DDG::Goodie;
 use Astro::MoonPhase;
 
+primary_example_queries "lunar phase";
+
+secondary_example_queries
+    "moon phase",
+    "phase of the moon",
+    "what is the current lunar phase";
+
+description  "Lunar phase";
+
+name "MoonPhases";
+
+topics "special_interest", "everyday";
+
+category "random";
+
+attribution
+    github => ['https://github.com/rpicard', 'rpicard'],
+    twitter => ['https://twitter.com/__rlp', '__rlp'],
+    web => ['http://robert.io', 'Robert Picard'];
+
+
 triggers any => 'moon', 'lunar';
 
 my %triggerQueries = (

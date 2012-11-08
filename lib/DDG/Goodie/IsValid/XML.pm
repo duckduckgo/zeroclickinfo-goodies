@@ -6,6 +6,14 @@ use DDG::Goodie;
 use Try::Tiny;
 use XML::Simple;
 
+primary_example_queries 'is valid <test>xml</test>';
+secondary_example_queries 'valid? <test type="xml"></test>';
+description 'validate XML data';
+name 'IsValid::XML';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsValid/XML.pm';
+category 'programming';
+topics 'programming';
+
 attribution github  => ['https://github.com/ghedo', 'ghedo'      ],
             web     => ['http://ghedini.me', 'Alessandro Ghedini'];
 
@@ -24,9 +32,9 @@ handle remainder => sub {
 
 #	    warn $_;
 
-		$_ =~ /\n?(.* at line \d+, column \d+, byte \d+) at/;
+		$_ =~ /\n?(.* at line \d+, column \d+, byte \d+) at|parser error : (.*)/;
 
-		return ('invalid: ', $1);
+		return ('invalid: ', $1 ? $1 : $2);
 	};
 
 	my $answer      = "Your XML is $result";

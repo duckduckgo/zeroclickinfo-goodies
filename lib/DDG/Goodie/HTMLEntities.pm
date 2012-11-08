@@ -11,10 +11,15 @@ zci is_cached => 1;
 
 triggers query_nowhitespace => qr/^(?:html|entity|htmlentity)?(&#?\w+;?)$/i;
 
-attribution 
-    twitter => 'crazedpsyc',
-    cpan    => 'CRZEDPSYC'
-;
+primary_example_queries '&#33;';
+secondary_example_queries 'html entity &amp;';
+description 'decode HTML entities';
+name 'HTMLEntities';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HTMLEntities.pm';
+category 'computing_tools';
+topics 'programming';
+attribution twitter => 'crazedpsyc',
+            cpan    => 'CRZEDPSYC' ;
 
 handle matches => sub {
     my $entity = $_[0];

@@ -2,6 +2,16 @@ package DDG::Goodie::SigFigs;
 
 use DDG::Goodie;
 
+primary_example_queries 'sigfigs 01.1234000';
+secondary_example_queries 'significant figures 000123000';
+description 'return the count of significant figures in a number';
+name 'Significant Figures';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SigFigs.pm';
+category 'calculations';
+topics 'math';
+
+attribution github => ['https://github.com/hunterlang', 'hunterlang'];
+
 triggers start => 'sigfigs', 'sigdigs', 'sf', 'sd', 'significant';
 
 zci answer_type => "sig_figs";

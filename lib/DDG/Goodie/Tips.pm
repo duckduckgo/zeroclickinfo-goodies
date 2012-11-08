@@ -3,6 +3,15 @@ use DDG::Goodie;
 
 triggers any => 'tip', 'tips', '%';
 
+primary_example_queries '20% tip on $21.63';
+secondary_example_queries '20 percent tip for a $20 bill', 'root mean square 1,2,3';
+description 'calculate a total including a percentage tip';
+name 'Tips';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Tips.pm';
+category 'calculations';
+topics 'everyday';
+attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
+
 handle query_lc => sub {
     return unless my ($p, $is_tip, $sign,$num) = $_ =~/^(\d{1,3})(?: ?%| percent) (?:(tip (?:on|for|of))|of)(?: an?)? ([\$\-]?)(\d+(\.?)(?(5)\d+))(?: bill)?$/;
     $p /= 100;

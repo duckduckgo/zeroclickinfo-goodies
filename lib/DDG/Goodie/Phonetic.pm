@@ -7,6 +7,15 @@ triggers start => 'phonetic';
 
 zci is_cached => 1;
 
+primary_example_queries 'phonetic what duck';
+description 'spell a string phonetically with the NATO alphabet';
+name 'Phonetic';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Phonetic.pm';
+category 'reference';
+topics 'special_interest';
+attribution github    => [ 'http://github.com/robotmay', 'Robert May' ],
+            twitter => [ 'http://twitter.com/robotmay', 'robotmay' ];
+
 handle remainder => sub {
   sub components {
     $_ = lc($_);
