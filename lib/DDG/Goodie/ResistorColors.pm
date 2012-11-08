@@ -4,7 +4,9 @@ package DDG::Goodie::ResistorColors;
 
 # Ideas for future improvements
 # - reverse query (e.g. "yellow purple black brown" -> "4.7K ohms"
+# - show 4 and 5 band markings
 # - show surface mount resistor markings
+# - detect if query contains tolerance (e.g. 10%) and use appropriate color
 
 use DDG::Goodie;
 use Math::Round;
@@ -31,18 +33,18 @@ attribution twitter => 'joewalnes',
 # These hex codes came from
 # http://en.wikipedia.org/wiki/Electronic_color_code
 my %digits_to_colors = (
-    -1 => { hex => '#cfb53b', label => '#000', name => 'gold' },
-    -2 => { hex => '#c0c0c0', label => '#000', name => 'silver' },
-    0  => { hex => '#000000', label => '#fff', name => 'black' },
-    1  => { hex => '#964b00', label => '#fff', name => 'brown' },
-    2  => { hex => '#ff0000', label => '#fff', name => 'red' },
-    3  => { hex => '#ffa500', label => '#000', name => 'orange' },
-    4  => { hex => '#ffff00', label => '#000', name => 'yellow' },
-    5  => { hex => '#9acd32', label => '#000', name => 'green' },
-    6  => { hex => '#6495ed', label => '#000', name => 'blue' },
-    7  => { hex => '#ee82ee', label => '#000', name => 'purple' },
-    8  => { hex => '#a0a0a0', label => '#000', name => 'gray' },
-    9  => { hex => '#ffffff', label => '#000', name => 'white' },
+    -2 => { hex => '#c0c0c0', label => '#000', name => 'silver', multiplier => '0.01'},
+    -1 => { hex => '#cfb53b', label => '#000', name => 'gold'  , multiplier => '0.1'},
+    0  => { hex => '#000000', label => '#fff', name => 'black' , multiplier => '1'},
+    1  => { hex => '#964b00', label => '#fff', name => 'brown' , multiplier => '10'},
+    2  => { hex => '#ff0000', label => '#fff', name => 'red'   , multiplier => '100'},
+    3  => { hex => '#ffa500', label => '#000', name => 'orange', multiplier => '1K'},
+    4  => { hex => '#ffff00', label => '#000', name => 'yellow', multiplier => '10K'},
+    5  => { hex => '#9acd32', label => '#000', name => 'green' , multiplier => '100K'},
+    6  => { hex => '#6495ed', label => '#000', name => 'blue'  , multiplier => '1M'},
+    7  => { hex => '#ee82ee', label => '#000', name => 'purple', multiplier => '10M'},
+    8  => { hex => '#a0a0a0', label => '#000', name => 'gray'  , multiplier => '100M'},
+    9  => { hex => '#ffffff', label => '#000', name => 'white' , multiplier => '1000M'},
 );
 
 handle matches => sub {
@@ -125,7 +127,7 @@ sub render {
     my $text = "$formatted_value\x{2126} ($ohms) resistor colors:";
     my $html = "$formatted_value&#x2126; ($ohms) resistor colors:";
 
-    foreach my $digit (@$digits) {
+    while (my ($index, $digit) = each @$digits) {
         if (exists $digits_to_colors{$digit}) {
             my $name  = $digits_to_colors{$digit}{name};
             my $hex   = $digits_to_colors{$digit}{hex};
@@ -133,8 +135,14 @@ sub render {
             my $style = "display:inline-block;background-color:$hex;color:$label;"
                 . "border:1px solid #c8c8c8;margin-top:-1px;padding:0px 4px;"
                 . "border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;";
-            $text .= " $name";
-            $html .= " <span style='$style'>$name</span>";
+            if ($index == scalar(@$digits) - 1) {
+                my $multiplier = $digits_to_colors{$digit}{multiplier};
+                $text .= " $name (\x{00D7}$multiplier)";
+                $html .= " <span style='$style'>$name (&times;$multiplier)</span>";
+            } else {
+                $text .= " $name ($digit),";
+                $html .= " <span style='$style'>$name ($digit)</span>";
+            }
         } else {
             return;
         }
