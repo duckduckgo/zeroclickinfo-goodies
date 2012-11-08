@@ -113,8 +113,9 @@ sub format_value {
 sub render {
     my ($value, $digits) = @_;
     my $formatted_value = format_value($value);
-    my $text = "$formatted_value\x{2126} resistor colors:";
-    my $html = "<b>$formatted_value&#x2126; resistor colors:</b>";
+    my $ohms = $formatted_value eq '1' ? 'ohm' : 'ohms';
+    my $text = "$formatted_value\x{2126} ($ohms) resistor colors:";
+    my $html = "$formatted_value&#x2126; ($ohms) resistor colors:";
 
     foreach my $digit (@$digits) {
         if (exists $digits_to_colors{$digit}) {
