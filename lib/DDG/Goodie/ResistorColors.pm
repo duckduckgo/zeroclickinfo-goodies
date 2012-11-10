@@ -50,8 +50,8 @@ my %digits_to_colors = (
 handle matches => sub {
     my $input = shift;
     my $value = parse_value($input);
-    if (defined $value) {
-        $value = round_to_significant_places($value, 3);
+    if (defined $value && ($value == 0 || ($value <= 99900000000 && $value >= 1))) {
+        $value = round_to_significant_places($value, 2);
         my @digits = number_to_color_digits($value);
         return render($value, \@digits);
     }
@@ -97,13 +97,12 @@ sub round_to_significant_places {
 # array of color digits (e.g. 4, 7, 0, 3). See %digits_to_colors.
 sub number_to_color_digits {
     my $value = shift;
-    return (0, 0, 0, 0) if $value == 0; # special case
+    return (0, 0, 0) if $value == 0; # special case
     my @value_digits = split(//, $value * 100);
     return (
         $value_digits[0] || 0,
         $value_digits[1] || 0,
-        $value_digits[2] || 0,
-        scalar(@value_digits) - 5);
+        scalar(@value_digits) - 4);
 };
 
 # Given a numeric value, format it like '3.2M' etc.
@@ -147,8 +146,9 @@ sub render {
             return;
         }
     }
-    $html .= "<br/><span style='font-size:92.8%;color:#333'>Followed by a gap and tolerance color. "
-        . "<a href='http://resisto.rs/#$formatted_value'>More at resisto.rs</a></span>";
+    $html .= "<br/>"
+        . "<a href='http://resisto.rs/#$formatted_value' style='font-size:92.8%'>"
+        . "More at resisto.rs</a>";
 
     return $text, html => $html;
 };
