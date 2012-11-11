@@ -33,26 +33,29 @@ attribution twitter => 'joewalnes',
 # These hex codes came from
 # http://en.wikipedia.org/wiki/Electronic_color_code
 my %digits_to_colors = (
-    -2 => { hex => '#c0c0c0', label => '#000', name => 'silver', multiplier => '0.01'},
-    -1 => { hex => '#cfb53b', label => '#000', name => 'gold'  , multiplier => '0.1'},
-    0  => { hex => '#000000', label => '#fff', name => 'black' , multiplier => '1'},
-    1  => { hex => '#964b00', label => '#fff', name => 'brown' , multiplier => '10'},
-    2  => { hex => '#ff0000', label => '#fff', name => 'red'   , multiplier => '100'},
-    3  => { hex => '#ffa500', label => '#000', name => 'orange', multiplier => '1K'},
-    4  => { hex => '#ffff00', label => '#000', name => 'yellow', multiplier => '10K'},
-    5  => { hex => '#9acd32', label => '#000', name => 'green' , multiplier => '100K'},
-    6  => { hex => '#6495ed', label => '#000', name => 'blue'  , multiplier => '1M'},
-    7  => { hex => '#ee82ee', label => '#000', name => 'purple', multiplier => '10M'},
-    8  => { hex => '#a0a0a0', label => '#000', name => 'gray'  , multiplier => '100M'},
-    9  => { hex => '#ffffff', label => '#000', name => 'white' , multiplier => '1000M'},
+    -2 => { hex => '#c0c0c0', label => '#000', name => 'silver', multiplier => '0.01' , tolerance => '10%'   },
+    -1 => { hex => '#cfb53b', label => '#000', name => 'gold'  , multiplier => '0.1'  , tolerance => '5%'    },
+    0  => { hex => '#000000', label => '#fff', name => 'black' , multiplier => '1'    , tolerance => undef   },
+    1  => { hex => '#964b00', label => '#fff', name => 'brown' , multiplier => '10'   , tolerance => '1%'    },
+    2  => { hex => '#ff0000', label => '#fff', name => 'red'   , multiplier => '100'  , tolerance => '2%'    },
+    3  => { hex => '#ffa500', label => '#000', name => 'orange', multiplier => '1K'   , tolerance => undef   },
+    4  => { hex => '#ffff00', label => '#000', name => 'yellow', multiplier => '10K'  , tolerance => undef   },
+    5  => { hex => '#9acd32', label => '#000', name => 'green' , multiplier => '100K' , tolerance => '0.5%'  },
+    6  => { hex => '#6495ed', label => '#000', name => 'blue'  , multiplier => '1M'   , tolerance => '0.25%' },
+    7  => { hex => '#ee82ee', label => '#000', name => 'purple', multiplier => '10M'  , tolerance => '0.1%'  },
+    8  => { hex => '#a0a0a0', label => '#000', name => 'gray'  , multiplier => '100M' , tolerance => '0.05%' },
+    9  => { hex => '#ffffff', label => '#000', name => 'white' , multiplier => '1000M', tolerance => undef   },
 );
+
+my $default_tolerance = -1; # 5% / gold
 
 handle matches => sub {
     my $input = shift;
     my $value = parse_value($input);
     if (defined $value && ($value == 0 || ($value <= 99900000000 && $value >= 1))) {
         $value = round_to_significant_places($value, 2);
-        my @digits = number_to_color_digits($value);
+        my $tolerance = $default_tolerance; # Currently always 5%.
+        my @digits = number_to_color_digits($value, $tolerance);
         return render($value, \@digits);
     }
     return;
@@ -93,16 +96,17 @@ sub round_to_significant_places {
   return nearest(pow(10, int(floor(log10(abs($value))) - ($significant - 1))), $value);
 }
 
-# Given ohm rating as integer (e.g. 470000), return
-# array of color digits (e.g. 4, 7, 0, 3). See %digits_to_colors.
+# Given ohm rating as integer, and tolerance digit (e.g. 470000, -1), return
+# array of color digits (e.g. 4, 7, 0, 3, -1). See %digits_to_colors.
 sub number_to_color_digits {
-    my $value = shift;
-    return (0, 0, 0) if $value == 0; # special case
+    my ($value, $tolerance) = @_;
+    return (0, 0, 0, $tolerance) if $value == 0; # special case
     my @value_digits = split(//, $value * 100);
     return (
         $value_digits[0] || 0,
         $value_digits[1] || 0,
-        scalar(@value_digits) - 4);
+        scalar(@value_digits) - 4,
+        $tolerance);
 };
 
 # Given a numeric value, format it like '3.2M' etc.
@@ -134,14 +138,28 @@ sub render {
             my $style = "display:inline-block;background-color:$hex;color:$label;"
                 . "border:1px solid #c8c8c8;margin-top:-1px;padding:0px 4px;"
                 . "border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;";
-            if ($index == scalar(@$digits) - 1) {
-                my $multiplier = $digits_to_colors{$digit}{multiplier};
-                $text .= " $name (\x{00D7}$multiplier)";
-                $html .= " <span style='$style'>$name (&times;$multiplier)</span>";
+            my ($text_prefix, $html_prefix, $display_digit);
+            if ($index == scalar(@$digits) - 2) {
+                # multiplier digit
+                $text_prefix = "\x{00D7}";
+                $html_prefix = '&times;';
+                $display_digit = $digits_to_colors{$digit}{multiplier};
+            } elsif ($index == scalar(@$digits) - 1) {
+                # tolerance digit
+                $text_prefix = "\x{00B1}";
+                $html_prefix = '&plusmn;';
+                $display_digit = $digits_to_colors{$digit}{tolerance};
             } else {
-                $text .= " $name ($digit),";
-                $html .= " <span style='$style'>$name ($digit)</span>";
+                # numeric digits
+                $text_prefix = '';
+                $html_prefix = '';
+                $display_digit = $digit;
             }
+            $text .= " $name ($text_prefix$display_digit)";
+            if ($index != scalar(@$digits - 1)) {
+                $text .= ','; # Comma delimit all but last
+            }
+            $html .= " <span style='$style'>$name ($html_prefix$display_digit)</span>";
         } else {
             return;
         }
