@@ -21,6 +21,8 @@ my %data = (
     roboduck_html       => "DuckDuckGo's official <a href='https://en.wikipedia.org/wiki/IRC_Bot'>IRC bot</a>: <a href='https://github.com/Getty/duckduckgo-roboduck'>https://github.com/Getty/duckduckgo-roboduck</a>",
     roboduck            => "DuckDuckGo's official IRC bot: https://github.com/Getty/duckduckgo-roboduck",
     quackandhack        => "QUACK!",
+    duck                => "I am the duck. Dax the duck.",
+    duck_html           => "<img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.",
 );
 
 triggers any => keys %data, qw/zero 0/;
