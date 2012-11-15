@@ -23,6 +23,8 @@ my %data = (
     quackandhack        => "QUACK!",
     duck                => "I am the duck. Dax the duck.",
     duck_html           => "<img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.",
+    dax                => "I am the duck. Dax the duck.",
+    dax_html           => "<img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.",
 );
 
 triggers any => keys %data, qw/zero 0/;
