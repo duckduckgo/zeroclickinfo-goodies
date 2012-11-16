@@ -130,7 +130,9 @@ sub render {
     my $text = "$formatted_value\x{2126} ($ohms) resistor colors:";
     my $html = "$formatted_value&#x2126; ($ohms) resistor colors:";
 
-    while (my ($index, $digit) = each @$digits) {
+    #while (my ($index, $digit) = each @$digits) {
+    my $index = 0;
+    foreach my $digit (@$digits) {
         if (exists $digits_to_colors{$digit}) {
             my $name  = $digits_to_colors{$digit}{name};
             my $hex   = $digits_to_colors{$digit}{hex};
@@ -163,6 +165,7 @@ sub render {
         } else {
             return;
         }
+        $index++;
     }
     $html .= "<br/>"
         . "<a href='http://resisto.rs/#$formatted_value' style='font-size:92.8%'>"
