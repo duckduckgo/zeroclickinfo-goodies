@@ -128,7 +128,8 @@ sub render {
     my $formatted_value = format_value($value);
     my $ohms = $formatted_value eq '1' ? 'ohm' : 'ohms';
     my $text = "$formatted_value\x{2126} ($ohms) resistor colors:";
-    my $html = "$formatted_value&#x2126; ($ohms) resistor colors:";
+    my $html = "<span style='margin-right:4px;'>"
+             . "$formatted_value&#x2126; ($ohms) resistor colors:</span>";
 
     #while (my ($index, $digit) = each @$digits) {
     my $index = 0;
@@ -138,7 +139,7 @@ sub render {
             my $hex   = $digits_to_colors{$digit}{hex};
             my $label = $digits_to_colors{$digit}{label};
             my $style = "display:inline-block;background-color:$hex;color:$label;"
-                . "border:1px solid #c8c8c8;margin-top:-1px;padding:0px 4px;"
+                . "border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;"
                 . "border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;";
             my ($text_prefix, $html_prefix, $display_digit);
             if ($index == scalar(@$digits) - 2) {

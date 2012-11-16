@@ -81,18 +81,18 @@ ddg_goodie_test(
 
     # Check the HTML. Just once.
     "1.5m ohm" => test_zci("1.5M\x{2126} (ohms) resistor colors: brown (1), green (5), green (\x{00D7}100K), gold (\x{00B1}5%)", html =>
-          "1.5M&#x2126; (ohms) resistor colors: "
+          "<span style='margin-right:4px;'>1.5M&#x2126; (ohms) resistor colors:</span> "
           . "<span style='display:inline-block;background-color:#964b00;"
-          . "color:#fff;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 4px;border-radius:4px;"
+          . "color:#fff;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;"
           . "-webkit-border-radius:4px;-moz-border-radius:4px;'>brown (1)</span> "
           . "<span style='display:inline-block;background-color:#9acd32;"
-          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 4px;border-radius:4px;"
+          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;"
           . "-webkit-border-radius:4px;-moz-border-radius:4px;'>green (5)</span> "
           . "<span style='display:inline-block;background-color:#9acd32;"
-          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 4px;border-radius:4px;"
+          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;"
           . "-webkit-border-radius:4px;-moz-border-radius:4px;'>green (&times;100K)</span> "
           . "<span style='display:inline-block;background-color:#cfb53b;"
-          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 4px;border-radius:4px;"
+          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;"
           . "-webkit-border-radius:4px;-moz-border-radius:4px;'>gold (&plusmn;5%)</span>"
           . "<br/><a href='http://resisto.rs/#1.5M' style='font-size:92.8%'>More at resisto.rs</a>"),
 
