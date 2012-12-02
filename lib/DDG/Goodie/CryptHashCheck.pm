@@ -4,7 +4,6 @@ package DDG::Goodie::CryptHashCheck;
 use DDG::Goodie;
 
 zci is_cached => 1;
-zci answer_type => 'crypt_hash_check';
 
 triggers start => "hash","md5","sha";
 
@@ -21,17 +20,17 @@ attribution github => ['https://github.com/digit4lfa1l', 'digit4lfa1l'];
 
 handle remainder => sub {
 	my ($md5) = /^[0-9a-f]{32}$/i;
-		return 'This is MD5 cryptographic hash function.' if $md5;
+		return 'This is a MD5 cryptographic hash.' if $md5;
 	my ($sha1)  = /^[0-9a-f]{40}$/i;
-		return 'This is SHA-1/40 cryptographic hash function.' if $sha1;
+		return 'This is a SHA-1/40 cryptographic hash.' if $sha1;
 	my ($sha224) = /^[0-9a-f]{56}$/i;
-		return 'This is SHA-2/224 cryptographic hash function.' if $sha224;
+		return 'This is a SHA-2/224 cryptographic hash.' if $sha224;
 	my ($sha256) = /^[0-9a-f]{64}$/i;
-		return 'This is SHA-2/256 cryptographic hash function.' if $sha256;
+		return 'This is a SHA-2/256 cryptographic hash.' if $sha256;
 	my ($sha384) = /^[0-9a-f]{96}$/i;
-		return 'This is SHA-2/384 cryptographic hash function.' if $sha384;
+		return 'This is a SHA-2/384 cryptographic hash.' if $sha384;
 	my ($sha512) = /^[0-9a-f]{128}$/i;
-		return 'This is SHA-2/512 cryptographic hash function.' if $sha512; 
+		return 'This is a SHA-2/512 cryptographic hash.' if $sha512; 
 	return;	
 };
 
