@@ -35,12 +35,12 @@ handle remainder => sub {
            return if $hex <= 0x1F || $hex >= 0x7F;
            $string .= chr $hex;
        }
-       $string =~ s/\n/ /g;
        # Don't let long strings make the output untidy
        if (length($string) > MAX_OUTPUT_LEN) {
            $string = substr($string, 0, MAX_OUTPUT_LEN - 3) . '...';
        }
-       return "ASCII: $string";
+       $string =~ s/\n/ /g;
+       return "$string (ASCII)";
     }
     return;
 };

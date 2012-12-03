@@ -12,8 +12,8 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::HexToASCII
         )],
-        'ascii 0x74657374' => test_zci('ASCII: test'),
-        'ascii 0x5468697320697320612074657374' => test_zci('ASCII: This is a test'),
+        'ascii 0x74657374' => test_zci('test (ASCII)'),
+        'ascii 0x5468697320697320612074657374' => test_zci('This is a test (ASCII)'),
 );
 
 done_testing;
