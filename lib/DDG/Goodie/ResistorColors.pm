@@ -11,6 +11,7 @@ package DDG::Goodie::ResistorColors;
 use DDG::Goodie;
 use Math::Round;
 use POSIX qw(abs floor log10 pow);
+use utf8;
 
 # \x{2126} is the unicode ohm symbol
 triggers query_nowhitespace => qr/^(.*)(ohm|ohms|\x{2126})/i;
@@ -19,7 +20,7 @@ zci is_cached => 1;
 zci answer_type => 'resistor_colors';
 
 primary_example_queries '4.7k ohm';
-secondary_example_queries '1\x{2126}';
+secondary_example_queries '1Ω';
 description 'find resistor color bands';
 name 'ResistorColors';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ResistorColors.pm';
