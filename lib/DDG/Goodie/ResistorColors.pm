@@ -24,7 +24,7 @@ secondary_example_queries '1Ω';
 description 'find resistor color bands';
 name 'ResistorColors';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ResistorColors.pm';
-category 'conversions';
+category 'reference';
 topics 'science';
 
 attribution twitter => 'joewalnes',
