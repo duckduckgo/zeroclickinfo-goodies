@@ -38,7 +38,7 @@ handle remainder => sub {
             @numbers = @numbers[0..MAX_LIST_SIZE - 1];
         }
         my @sorted = sort { $ascending ? $a <=> $b : $b <=> $a } @numbers;
-        my $list = join(' ', @sorted);
+        my $list = join(', ', @sorted);
         return sprintf("$list (Sorted %s)", $ascending ? 'ascendingly' : 'descendingly');
     }
     return;
