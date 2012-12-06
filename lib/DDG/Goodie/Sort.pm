@@ -6,6 +6,8 @@ use strict;
 use DDG::Goodie;
 # Used to restrict long inputs
 use constant MAX_LIST_SIZE => 32;
+# Whether to convert numbers from strings to real numbers (1) or not (0)
+use constant NORMALIZE => 1;
 
 triggers start => 'sort';
 
@@ -28,15 +30,16 @@ handle remainder => sub {
     $input =~ s/[\s,;]+$//;
     my $number_re = qr/[-+]?(?:\d+|(?:\d*\.\d+))/;
     my $ascending = 1;
-    if ($input =~ /^(?:asc|desc)(?:ending)?/i) {
+    if ($input =~ /^(?:asc|desc)(?:ending(?:ly)?)?/i) {
         $ascending = 0 if $input =~ /^desc/i;
-        $input =~ s/^(?:asc|desc)(?:ending)?\s*//i;
+        $input =~ s/^(?:asc|desc)(?:ending(?:ly)?)?\s*//i;
     }
     if ($input =~ /^$number_re(?:[\s,;]+$number_re)+$/) {
         my @numbers = split /[\s,;]+/, $input;
         if (scalar @numbers > MAX_LIST_SIZE) {
             @numbers = @numbers[0..MAX_LIST_SIZE - 1];
         }
+        @numbers = map {$_ + 0} @numbers if NORMALIZE;
         my @sorted = sort { $ascending ? $a <=> $b : $b <=> $a } @numbers;
         my $list = join(', ', @sorted);
         return sprintf("$list (Sorted %s)", $ascending ? 'ascendingly' : 'descendingly');
