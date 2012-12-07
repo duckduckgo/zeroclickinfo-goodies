@@ -26,8 +26,7 @@ attribution github => ['https://github.com/koosha--', 'koosha--'],
 
 handle remainder => sub {
     my $input = $_;
-    $input =~ s/^\s+//;
-    $input =~ s/[\s,;]+$//;
+    $input =~ s/^\s+|[\s,;]+$|\s+[({[]+|[})]]\s+$//;
     my $number_re = qr/[-+]?(?:\d+|(?:\d*\.\d+))/;
     my $ascending = 1;
     if ($input =~ /^(?:asc|desc)(?:ending(?:ly)?)?/i) {
