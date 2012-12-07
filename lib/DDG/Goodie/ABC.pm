@@ -7,8 +7,8 @@ triggers startend => "choose";
 
 zci answer_type => "rand";
 
-primary_example_queries 'yes or no';
-secondary_example_queries 'this or that or none';
+primary_example_queries 'choose yes or no';
+secondary_example_queries 'choose heads or tails', 'choose this or that or none';
 description 'make a random choice';
 name 'ABC';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
