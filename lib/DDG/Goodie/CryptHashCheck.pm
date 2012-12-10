@@ -5,9 +5,9 @@ use DDG::Goodie;
 
 # A comprehensive reference for hashing functions from Wikipedia.
 
-use constant MD5HERF =>  "http://en.wikipedia.org/wiki/MD5#MD5_hashes";
-use constant SHA1HREF => "http://en.wikipedia.org/wiki/SHA-1#Example_hashes";
-use constant SHA2HREF => "http://en.wikipedia.org/wiki/SHA-2#Examples_of_SHA-2_variants";
+use constant MD5HERF =>  "http://en.wikipedia.org/wiki/MD5";
+use constant SHA1HREF => "http://en.wikipedia.org/wiki/SHA-1";
+use constant SHA2HREF => "http://en.wikipedia.org/wiki/SHA-2";
 
 zci is_cached => 1;
 
@@ -29,48 +29,48 @@ attribution github => ['https://github.com/digit4lfa1l', 'digit4lfa1l'];
 handle remainder => sub {
 	my ($md5) = /^[0-9a-f]{32}$/i;
 		if ($md5){
-		  	my $text = sprintf qq(This is a MD5 cryptographic hash.);
-  			my $html = sprintf qq(This is a <a href="%s">MD5</a> cryptographic hash.),MD5HERF;	
+		  	my $text = sprintf qq(This is a 128 bit MD5 cryptographic hash.);
+  			my $html = sprintf qq(This is a 128 bit <a href="%s">MD5</a> cryptographic hash.),MD5HERF;	
 			
 			return $text, html => $html;			
 		}
 
 	my ($sha1)  = /^[0-9a-f]{40}$/i;
 		if ($sha1){
-		  	my $text = sprintf qq(This is a SHA-1/40 cryptographic hash.);
-  			my $html = sprintf qq(This is a <a href="%s">SHA-1/40</a> cryptographic hash.),SHA1HREF;	
+		  	my $text = sprintf qq(This is a 160 bit SHA-1 cryptographic hash.);
+  			my $html = sprintf qq(This is a 160 bit <a href="%s">SHA-1</a> cryptographic hash.),SHA1HREF;	
 			
 			return $text, html => $html;			
 		}
 		
 	my ($sha224) = /^[0-9a-f]{56}$/i;
 		if ($sha224){
-		  	my $text = sprintf qq(This is a SHA-2/224 cryptographic hash.);
-  			my $html = sprintf qq(This is a <a href="%s">SHA-2/224</a> cryptographic hash.),SHA2HREF;	
+		  	my $text = sprintf qq(This is a 224 bit SHA-2 cryptographic hash.);
+  			my $html = sprintf qq(This is a 224 bit <a href="%s">SHA-2</a> cryptographic hash.),SHA2HREF;	
 			
 			return $text, html => $html;			
 		}
 
 	my ($sha256) = /^[0-9a-f]{64}$/i;
 		if ($sha256){
-		  	my $text = sprintf qq(This is a SHA-2/256 cryptographic hash.);
-  			my $html = sprintf qq(This is a <a href="%s">SHA-2/256</a> cryptographic hash.),SHA2HREF;	
+		  	my $text = sprintf qq(This is a 256 bit SHA-2 cryptographic hash.);
+  			my $html = sprintf qq(This is a 256 bit <a href="%s">SHA-2</a> cryptographic hash.),SHA2HREF;	
 			
 			return $text, html => $html;			
 		}
 
 	my ($sha384) = /^[0-9a-f]{96}$/i;
 		if ($sha384){
-		  	my $text = sprintf qq(This is a SHA-2/384 cryptographic hash.);
-  			my $html = sprintf qq(This is a <a href="%s">SHA-2/384</a> cryptographic hash.),SHA2HREF;	
+		  	my $text = sprintf qq(This is a 384 bit SHA-2 cryptographic hash.);
+  			my $html = sprintf qq(This is a 384 bit <a href="%s">SHA-2</a> cryptographic hash.),SHA2HREF;	
 			
 			return $text, html => $html;			
 		}
 
 	my ($sha512) = /^[0-9a-f]{128}$/i;
 		if ($sha512){
-		  	my $text = sprintf qq(This is a SHA-2/512 cryptographic hash.);
-  			my $html = sprintf qq(This is a <a href="%s">SHA-2/512</a> cryptographic hash.),SHA2HREF;	
+		  	my $text = sprintf qq(This is a 512 bit SHA-2 cryptographic hash.);
+  			my $html = sprintf qq(This is a 512 bit <a href="%s">SHA-2</a> cryptographic hash.),SHA2HREF;	
 			
 			return $text, html => $html;			
 		}
