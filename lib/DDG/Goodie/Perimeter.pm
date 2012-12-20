@@ -7,7 +7,7 @@ triggers start => "perimeter", "circumference";
 zci is_cached => 1;
 zci answer_type => "perimeter";
 
-primary_example_queries 'circumferance circle 1';
+primary_example_queries 'circumference circle 1';
 secondary_example_queries 'perimeter hexagon 45', 'perimeter of triangle 1.5 2 3.2', 'perimeter of rectangle 1 2', 'perimeter of square 3';
 description 'find the perimeter of a geometric shape';
 name 'Perimeter';
