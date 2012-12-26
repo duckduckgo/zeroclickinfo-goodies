@@ -1,6 +1,7 @@
 package DDG::Goodie::Xor;
 
 use DDG::Goodie;
+use utf8;
 
 triggers any => 'xor', '⊕';
 

@@ -1,4 +1,4 @@
-DuckDuckGo Goodie Plugins
+ DuckDuckGo Goodie Plugins
 =================================
 
 See [DuckDuckHack](http://duckduckhack.com/) for documentation (including a tutorial and step by step instructions).
