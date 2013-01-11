@@ -15,6 +15,7 @@ ddg_goodie_test(
     "anagram stop"  => test_zci("Post, opts, post, pots, spot, tops"),
     "anagrams lost" => test_zci("lots, slot"),  
     "anagram lost"  => test_zci("lots, slot"), 
+    "anagram of lost"  => test_zci("lots, slot"), 
 );
 
 done_testing;

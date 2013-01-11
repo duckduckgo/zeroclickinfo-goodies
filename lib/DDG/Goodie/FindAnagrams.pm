@@ -17,6 +17,8 @@ my %wordHash = %{decode_json($json)};
 
 handle remainder => sub {
 
+    s/of //g;
+
     # Format string to look like hash key by making it lowercase
     # then splitting the string into chars, sort them and finally
     # join back into sorted string
