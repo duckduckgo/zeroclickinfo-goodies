@@ -11,10 +11,10 @@ zci is_cached => 1;
 ddg_goodie_test(
 	[qw(DDG::Goodie::FindAnagrams)],
 
-    "Find Anagrams"   => test_zci("No Anagrams Found."),
-    "Find Anagrams <>"   => test_zci("No Anagrams Found."),
-     "Find Anagrams stop"   => test_zci("Post,opts,post,pots,spot,tops"),
-    "Find Anagrams lost" => test_zci("lots,slot"),
+    "anagrams stop" => test_zci("Post, opts, post, pots, spot, tops"),
+    "anagram stop"  => test_zci("Post, opts, post, pots, spot, tops"),
+    "anagrams lost" => test_zci("lots, slot"),  
+    "anagram lost"  => test_zci("lots, slot"), 
 );
 
 done_testing;

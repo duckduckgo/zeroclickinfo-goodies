@@ -6,8 +6,7 @@ use JSON;
 
 zci is_cached => 1;
 
-triggers start => "find anagrams";
-
+triggers start => "anagram", "anagrams";
 
 my $json = share('words.json')->slurp;
 
@@ -18,19 +17,17 @@ my %wordHash = %{decode_json($json)};
 
 handle remainder => sub {
 
-    if ($_ eq ""){
-	return "No Anagrams Found."
-    }
-
-# Format string to look like hash key by making it lowercase then splitting the string into chars, sort them and finally  join back into sorted string
+    # Format string to look like hash key by making it lowercase
+    # then splitting the string into chars, sort them and finally
+    # join back into sorted string
     my $sorted_string = join("",sort(split(//,lc($_))));
 
     my @resultArray = ();
 
     if (exists $wordHash{$sorted_string}) {
-	push(@resultArray, @{$wordHash{$sorted_string}});
+        push(@resultArray, @{$wordHash{$sorted_string}});
     } else {
-	return "No Anagrams Found.";
+        return;
     }
 
     my $index = 0;
@@ -39,9 +36,9 @@ handle remainder => sub {
 
     splice(@resultArray, $index, 1);
 
-    my $result_string = join(",",@resultArray);
+    my $result_string = join(", ",@resultArray);
 
-    return (($result_string eq "") ? "No Anagrams Found!" : $result_string);
+    return $result_string unless $result_string eq "";
 };
 
 1;
