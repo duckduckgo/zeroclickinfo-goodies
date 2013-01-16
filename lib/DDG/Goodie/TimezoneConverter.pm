@@ -146,7 +146,12 @@ handle query => sub {
         s/\s+//g;
     }
     my $gmt_input_timezone  = parse_timezone $input_timezone;
+    # parse_timezone returns undef if the timezone name parsed
+    # from #input_timezone is not found in %timezones
+    return unless defined $gmt_input_timezone;
+
     my $gmt_output_timezone = parse_timezone $output_timezone;
+
     $modifier += $gmt_output_timezone - $gmt_input_timezone;
     for ( $gmt_input_timezone, $gmt_output_timezone ) {
         $_ = to_time $_;
