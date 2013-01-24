@@ -31,8 +31,8 @@ handle remainder => sub {
         $fib[$i] = $fib[$i - 1] + $fib[$i - 2];
     }
     my $suf = ordsuf($_);
-    return "The $1$suf fibonacci number is  ${fib[$1]} (assuming f(0) = 0).",
-           html => "The $1<sup>$suf</sup> fibonacci number is  ${fib[$1]} (assuming f(0) = 0).";
+    return "The $1$suf fibonacci number is ${fib[$1]} (assuming f(0) = 0).",
+           html => "The $1<sup>$suf</sup> fibonacci number is ${fib[$1]} (assuming f(0) = 0).";
 };
 
 1;
