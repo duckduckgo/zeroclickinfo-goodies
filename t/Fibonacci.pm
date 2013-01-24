@@ -1,5 +1,8 @@
-use strict;
+#!/usr/bin/env perl
 
+use strict;
+use warnings;
+use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'fibonacci';
