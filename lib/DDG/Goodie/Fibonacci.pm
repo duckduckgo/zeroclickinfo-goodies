@@ -20,9 +20,9 @@ topics 'math';
 handle remainder => sub {
     s/^\s+//;
     s/\s+$//;
-    return unless /^\d+$/ && $_ <= 1470;
+    return unless /^(?:what is the )?(\d+)(?:(?:th|rd|st)? number\??)?$/ && $1 <= 1470;
     my @fib;
-    $#fib = $_;
+    $#fib = $1;
     $fib[0] = 0;
     $fib[1] = 1;
     # Instead of calling a typical recursive function,
@@ -31,8 +31,8 @@ handle remainder => sub {
         $fib[$i] = $fib[$i - 1] + $fib[$i - 2];
     }
     my $suf = ordsuf($_);
-    return "The $_$suf fibonacci number is  ${fib[$_]} (assuming f(0) = 0).",
-           html => "The $_<sup>$suf</sup> fibonacci number is  ${fib[$_]} (assuming f(0) = 0).";
+    return "The $1$suf fibonacci number is  ${fib[$1]} (assuming f(0) = 0).",
+           html => "The $1<sup>$suf</sup> fibonacci number is  ${fib[$1]} (assuming f(0) = 0).";
 };
 
 1;
