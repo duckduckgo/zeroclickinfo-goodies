@@ -22,7 +22,8 @@ handle remainder => sub {
     s/\s+$//;
     return unless /^(?:what(?:'s| is) the )?(\d+)(?:th|rd|st)?(?: number)?(?: in the (?:series|sequence))?\??$/ && $1 <= 1470;
     my @fib;
-    $#fib = $1;
+    my $n = $1;
+    $#fib = $n;
     $fib[0] = 0;
     $fib[1] = 1;
     # Instead of calling a typical recursive function,
@@ -31,8 +32,8 @@ handle remainder => sub {
         $fib[$i] = $fib[$i - 1] + $fib[$i - 2];
     }
     my $suf = ordsuf($_);
-    return "The $1$suf fibonacci number is ${fib[$1]} (assuming f(0) = 0).",
-           html => "The $1<sup>$suf</sup> fibonacci number is ${fib[$1]} (assuming f(0) = 0).";
+    return "The $n$suf fibonacci number is ${fib[$n]} (assuming f(0) = 0).",
+           html => "The $n<sup>$suf</sup> fibonacci number is ${fib[$n]} (assuming f(0) = 0).";
 };
 
 1;
