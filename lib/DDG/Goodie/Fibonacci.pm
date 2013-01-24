@@ -20,7 +20,7 @@ topics 'math';
 handle remainder => sub {
     s/^\s+//;
     s/\s+$//;
-    return unless /^(?:what is the )?(\d+)(?:(?:th|rd|st)? number\??)?$/ && $1 <= 1470;
+    return unless /^(?:what(?:'s| is) the )?(\d+)(?:th|rd|st)?(?: number)?(?: in the (?:series|sequence))?\??$/ && $1 <= 1470;
     my @fib;
     $#fib = $1;
     $fib[0] = 0;
