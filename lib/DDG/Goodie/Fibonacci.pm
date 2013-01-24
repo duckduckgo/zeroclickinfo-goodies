@@ -3,6 +3,7 @@ package DDG::Goodie::Fibonacci;
 use strict;
 
 use DDG::Goodie;
+use Lingua::EN::Numbers::Ordinate qw(ordsuf);
 
 triggers any => 'fib', 'fibonacci';
 zci is_cached => 1;
@@ -29,7 +30,9 @@ handle remainder => sub {
     for my $i (2..$#fib) {
         $fib[$i] = $fib[$i - 1] + $fib[$i - 2];
     }
-    return "fib($_) = ${fib[$_]} with f(0) = 0";
+    my $suf = ordsuf($_);
+    return "The $_$suf fibonacci number is  ${fib[$_]} (assuming f(0) = 0).",
+           html => "The $_<sup>$suf</sup> fibonacci number is  ${fib[$_]} (assuming f(0) = 0).";
 };
 
 1;
