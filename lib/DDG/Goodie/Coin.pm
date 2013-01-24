@@ -4,25 +4,26 @@ use DDG::Goodie;
 
 triggers start => 'flip', 'coin';
 
-handle remainder => sub {
+handle query_lc => sub {
   return unless my ($a, $n) = $_ =~ /^(flip a coin|flip (\d{0,2}) coins?)$/;
 	my @output;
-	my @ht = ('heads', 'tails');
+	my @ht = ("heads", "tails");
 	my $flips = 1;
-	my $option = 2;
 	my $flip;
+	my $b = "flip a coin";
+	my $count;
 
-	if($a == "flip a coin" || "heads or tails") {
+	if($a eq $b) {
 		$n = 1;
 	}
 
 	if($n >= 1) {
-
-		for (1 .. $n) {
-			$flip = int(rand(@ht));
-			#$flip = $a[int rand($#a)];
+		for ($count = 1; $count <= $n; $count++) {
+			$flip = $ht[int rand @ht];
 			push @output, $flip;
 		}
 	}
 	return join(' ', @output) if @output;
-}
+};
+
+1;
