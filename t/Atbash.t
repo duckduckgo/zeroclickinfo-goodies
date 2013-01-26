@@ -15,6 +15,7 @@ ddg_goodie_test(
         'atbash test' => test_zci('Atbash: gvhg'),
         'atbash This is a test' => test_zci('Atbash: Gsrh rh z gvhg'),
         'atbash Gonna party like it\'s 1999!' => test_zci('Atbash: Tlmmz kzigb orpv rg\'h 1999!'),
+        'Atbash abcdefghijklmnopqrstuvwxyz' => test_zci('Atbash: zyxwvutsrqponmlkjihgfedcba'),
 );
 
 done_testing;
