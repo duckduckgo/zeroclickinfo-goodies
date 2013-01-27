@@ -12,9 +12,9 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::Coin
 	)],
-	'flip a coin' => test_zci(qr/(heads|tails)/),
-     'flip 1 coin' => test_zci(qr/(heads|tails)/),
-     'flip 2 coins' => test_zci(qr/(heads|tails) (heads|tails)/),
+     'flip a coin' => test_zci(qr/(heads|tails) \(random\)/),
+     'flip 1 coin' => test_zci(qr/(heads|tails) \(random\)/),
+     'flip 2 coins' => test_zci(qr/(heads|tails) (heads|tails) \(random\)/),
 );
 
 done_testing;

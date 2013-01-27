@@ -2,7 +2,7 @@ package DDG::Goodie::Coin;
 
 use DDG::Goodie;
 
-triggers start => 'flip', 'coin';
+triggers start => 'flip', 'coin', 'coins';
 
 handle query_lc => sub {
   return unless my ($a, $n) = $_ =~ /^(flip a coin|flip (\d{0,2}) coins?)$/;
@@ -23,7 +23,7 @@ handle query_lc => sub {
 			push @output, $flip;
 		}
 	}
-	return join(' ', @output) if @output;
+	return join(' ', @output, '(random)') if @output;
 };
 
 1;
