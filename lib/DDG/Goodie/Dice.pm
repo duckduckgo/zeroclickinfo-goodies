@@ -17,7 +17,7 @@ attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
 handle remainder => sub {
-    if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
+    if ($_ =~ /^(?:die|(\d{0,2})\s*dice)$/) {
         my @output;
         my $rolls = 1;  # If "die" is entered
         my $choices = 6;  # To be replace with input string in the future
@@ -29,11 +29,11 @@ handle remainder => sub {
                 $rolls = $1;
             }
         }
-        for (1 .. $rolls) {
+	for (1 .. $rolls) {
             my $roll = int(rand($choices)) + 1;
             push @output, $roll;
         }
-        return join(' ', @output, '(random)') if @output;
+        return join(' ', @output) if @output;
     }
     elsif ($_ =~ /^(\d{0,4})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
         my $output;
