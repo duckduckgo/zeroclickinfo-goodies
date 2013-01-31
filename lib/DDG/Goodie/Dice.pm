@@ -41,7 +41,6 @@ handle remainder => sub {
         my $number_of_faces = $2;
         my @rolls;
         my $sum = 0;
-	my @output;
         for (1 .. $number_of_dice) {
             push(@rolls, int(rand($number_of_faces)) + 1);
         }
@@ -70,8 +69,7 @@ handle remainder => sub {
         } else {
             $output = $sum;
         }
-	@output = $output;
-        return join('',@output, ' (random)') if $output;
+        return join('',$output, ' (random)') if $output;
     }
     return;
 };
