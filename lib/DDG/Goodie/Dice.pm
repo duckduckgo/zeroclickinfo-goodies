@@ -17,7 +17,7 @@ attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
 handle remainder => sub {
-    if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
+    if ($_ =~ /^(?:die|(\d{0,2})\s*dice)$/) {
         my @output;
         my $rolls = 1;  # If "die" is entered
         my $choices = 6;  # To be replace with input string in the future
@@ -33,7 +33,7 @@ handle remainder => sub {
             my $roll = int(rand($choices)) + 1;
             push @output, $roll;
         }
-        return join(' ', @output, '(random)') if @output;
+        return join(' ', @output) if @output;
     }
     elsif ($_ =~ /^(\d{0,4})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
         my $output;
@@ -41,7 +41,6 @@ handle remainder => sub {
         my $number_of_faces = $2;
         my @rolls;
         my $sum = 0;
-	my @output;
         for (1 .. $number_of_dice) {
             push(@rolls, int(rand($number_of_faces)) + 1);
         }
@@ -70,8 +69,7 @@ handle remainder => sub {
         } else {
             $output = $sum;
         }
-	@output = $output;
-        return join('',@output, ' (random)') if $output;
+        return $output if $output;
     }
     return;
 };
