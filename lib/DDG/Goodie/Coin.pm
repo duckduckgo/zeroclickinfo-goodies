@@ -5,7 +5,7 @@ use DDG::Goodie;
 triggers start => 'flip', 'toss', 'coin';
 
 handle query_lc => sub {
-  return unless my ($a, $z, $y, $n) = $_ =~ /^((flip|toss) a coin|(flip|toss) (\d{0,2}) coins?)$/;
+  return unless my ($a, $n) = $_ =~ /^((?:flip|toss) a coin|(?:flip|toss) (\d{0,2}) coins?)$/;
 	my @output;
 	my @ht = ("heads", "tails");
 	my $flips = 1;
