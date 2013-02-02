@@ -14,9 +14,7 @@ handle query_lc => sub {
 	my $c = "choose a card";
 	my $count;
 
-	if($a eq $b||$a eq $c) {
-		$n = 1;
-	}
+	$n = 1 if($a eq $b||$a eq $c);
 
 	if($n >= 1) {
 		for ($count = 1; $count <= $n; $count++) {
