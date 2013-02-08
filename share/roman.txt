@@ -1,5 +1,0 @@
-roman xii
-roman mmcml
-roman 2344
-arabic cccxlvi
-mcmiv

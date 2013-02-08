@@ -1,5 +1,0 @@
-sigfigs 10.12404
-sigdigs 3030.
-significant figures 0.0100235
-sf 302.056
-sd 045.30

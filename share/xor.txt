@@ -1,4 +1,0 @@
-4 xor 5
-5 ⊕ 79
-4 xor 3 xor 1
-9489 xor 394 xor 9349 xor 39 xor 29 xor 4967 xor 3985

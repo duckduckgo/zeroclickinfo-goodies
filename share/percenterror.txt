@@ -1,6 +1,0 @@
-% err 52.69 52.02
-%-error 2.88 2.82
-% error 45.12 45.798
-percent err -45.12 -50.00
-percent-error 1;1
-%err {15.12, 45.0}

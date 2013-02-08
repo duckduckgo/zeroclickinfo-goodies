@@ -1,4 +1,0 @@
-unicode U+0100
-unicode U+590c
-unicode black smiling face
-unicode latin small letter z with circumflex
