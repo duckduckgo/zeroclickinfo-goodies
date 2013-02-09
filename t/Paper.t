@@ -5,17 +5,18 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'tip';
+zci answer_type => 'paper';
 zci is_cached => 0;
 
 ddg_goodie_test(
-        [qw(
-                DDG::Goodie::Tips
-        )],
-        '20% tip on $20' => test_zci('Tip: $4.00; Total: $24.00'),
-        '20% tip on $20 bill' => test_zci('Tip: $4.00; Total: $24.00'),
-        '20% tip for a $20 bill' => test_zci('Tip: $4.00; Total: $24.00'),
-        '20 percent tip on $20' => test_zci('Tip: $4.00; Total: $24.00'),
+	[qw(
+		DDG::Goodie::Paper
+	)],
+	'a0 paper size' => test_zci('841mm x 1189mm  (33.11in x 46.81in)'),
+	'c10 paper dimension' => test_zci('28mm x 40mm  (1.10in x 1.57in)'),
+	'b10 paper dimensions' => test_zci('31mm x 44mm  (1.22in x 1.73in)'),
+	'letter paper size' => test_zci('210mm x 279mm  (8.27in x 11in)'),
+	'legal paper dimensions' => test_zci('216mm x 336mm  (8.5in x 14in)'),
 );
 
 done_testing;
