@@ -14,10 +14,10 @@ ddg_goodie_test(
 	)],
      'flip a coin' => test_zci(qr/(heads|tails) \(random\)/),
      'flip 1 coin' => test_zci(qr/(heads|tails) \(random\)/),
-     'flip 2 coins' => test_zci(qr/(heads|tails) (heads|tails) \(random\)/),
+     'flip 2 coins' => test_zci(qr/(heads|tails), (heads|tails) \(random\)/),
      'toss a coin' => test_zci(qr/(heads|tails) \(random\)/),
      'toss 1 coin' => test_zci(qr/(heads|tails) \(random\)/),
-     'toss 2 coins' => test_zci(qr/(heads|tails) (heads|tails) \(random\)/),
+     'toss 2 coins' => test_zci(qr/(heads|tails), (heads|tails) \(random\)/),
 );
 
 done_testing;

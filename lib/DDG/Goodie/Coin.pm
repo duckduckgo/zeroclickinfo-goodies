@@ -22,7 +22,7 @@ handle query_lc => sub {
 			push @output, $flip;
 		}
 	}
-	return join(' ', @output, '(random)') if @output;
+	return join(', ', @output) .  ' (random)' if @output;
 };
 
 1;
