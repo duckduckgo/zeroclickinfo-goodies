@@ -5,7 +5,7 @@ use DDG::Goodie;
 triggers any => 'paper', 'size';
 
 handle query_lc => sub {
-	return unless my ($s, $l, $n) = $_ =~ /^((?:(a|b|c)(\d{0,2}))|legal|letter) paper (?:size|dimensions?)$/i;
+	return unless my ($s, $l, $n) = $_ =~ /^((?:(a|b|c)(\d{0,2}))|legal|letter|junior\s*legal|ledger|tabloid)\s+paper\s+(?:size|dimm?ensions?)$/i;
 	if ($n){
 		last if($n > 10);
 	}
@@ -14,7 +14,10 @@ handle query_lc => sub {
 
 	my %hash = (
 		"letter" => "210mm x 279mm  (8.27in x 11in)",
-		"legal" => "216mm x 336mm  (8.5in x 14in)",
+		"legal" => "216mm x 356mm  (8.5in x 14in)",
+		"junior legal" => "203mm x 127mm  (8in x 5in)",
+		"ledger" => "432mm x 279mm  (17in x 11in)",
+		"tabloid" => "279mm x 432mm  (11in x 17in)",
 		"a0" => "841mm x 1189mm  (33.11in x 46.81in)",
 		"a1" => "594mm x 841mm  (23.39in x 33.11in)",
 		"a2" => "420mm x 594mm  (16.54in x 23.39in)",
