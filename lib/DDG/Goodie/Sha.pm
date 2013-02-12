@@ -3,6 +3,19 @@ package DDG::Goodie::Sha;
 use DDG::Goodie;
 use Digest::SHA;
 
+zci is_cached => 1;
+zci answer_type => "sha";
+
+primary_example_queries 'sha la la la la';
+secondary_example_queries 'sha512 that';
+description 'SHA hash cryptography';
+name 'SHA';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Sha.pm';
+category 'calculations';
+topics 'math';
+attribution twitter => 'duckduckgo';
+
+
 triggers query_lc => qr/^sha(1|224|256|384|512|)(?:sum|) (hex|base64|)\s*(.*)$/i;
 
 handle query => sub {
