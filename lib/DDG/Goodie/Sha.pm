@@ -1,0 +1,37 @@
+package DDG::Goodie::Sha;
+
+use DDG::Goodie;
+use Digest::SHA;
+
+triggers query_lc => qr/^sha(1|224|256|384|512|)(?:sum|) (hex|base64|)\s*(.*)$/i;
+
+handle query => sub {
+	my $command1 = $1 || '';
+	my $command2 = $2 || '';
+	my $str      = $3 || '';
+
+	if($str) {
+		if ( $command1 eq '224' ) {
+		    $str = $command2 eq 'base64' ? Digest::SHA::sha224_base64($str) : Digest::SHA::sha224_hex($str);
+		}
+		elsif ( $command1 eq '256' ) {
+		    $str = $command2 eq 'base64' ? Digest::SHA::sha256_base64($str) : Digest::SHA::sha256_hex($str);
+		}
+		elsif ( $command1 eq '384' ) {
+		    $str = $command2 eq 'base64' ? Digest::SHA::sha384_base64($str) : Digest::SHA::sha384_hex($str);
+		}
+		elsif ( $command1 eq '512' ) {
+		    $str = $command2 eq 'base64' ? Digest::SHA::sha512_base64($str) : Digest::SHA::sha512_hex($str);
+		}
+		else {
+		    $command1 = '1';
+		    $str = $command2 eq 'base64' ? Digest::SHA::sha1_base64($str) : Digest::SHA::sha1_hex($str);
+		}
+
+		return qq($str (SHA-$command1 hash));
+	}
+
+	return;
+};
+
+1;
