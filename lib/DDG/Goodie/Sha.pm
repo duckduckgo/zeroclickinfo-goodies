@@ -13,7 +13,9 @@ name 'SHA';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Sha.pm';
 category 'calculations';
 topics 'math';
-attribution twitter => 'duckduckgo';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 
 triggers query_lc => qr/^sha(1|224|256|384|512|)(?:sum|) (hex|base64|)\s*(.*)$/i;
