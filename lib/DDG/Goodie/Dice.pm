@@ -33,7 +33,7 @@ handle remainder => sub {
             my $roll = int(rand($choices)) + 1;
             push @output, $roll;
         }
-        return join(' ', @output, '(random)') if @output;
+        return join(', ', @output) . ' (random)' if @output;
     }
     elsif ($_ =~ /^(\d{0,4})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
         my $output;
@@ -69,7 +69,7 @@ handle remainder => sub {
         } else {
             $output = $sum;
         }
-        return join('',$output, ' (random)') if $output;
+        return join('', $output, ' (random)') if $output;
     }
     return;
 };
