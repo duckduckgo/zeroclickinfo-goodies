@@ -6,7 +6,7 @@ use Digest::SHA;
 zci is_cached => 1;
 zci answer_type => "sha";
 
-primary_example_queries 'sha la la la la';
+primary_example_queries 'sha lalalala';
 secondary_example_queries 'sha512 that';
 description 'SHA hash cryptography';
 name 'SHA';
