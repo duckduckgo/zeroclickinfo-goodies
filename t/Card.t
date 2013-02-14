@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use utf8;
 
 zci answer_type => 'card';
 zci is_cached => 0;
