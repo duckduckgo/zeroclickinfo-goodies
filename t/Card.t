@@ -12,15 +12,15 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::Card
 	)],
-     'pick a card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
-     'pick 1 card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
-     'pick 2 cards' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts), (\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
-     'choose a card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
-     'choose 1 card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
-     'choose 2 cards' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts), (\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
-     'pull a card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
-     'pull 1 card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
-     'pull 2 cards' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts), (\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) \(random\)/),
+     'pick a card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
+     'pick 1 card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
+     'pick 2 cards' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞], (\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
+     'choose a card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
+     'choose 1 card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
+     'choose 2 cards' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞], (\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
+     'pull a card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
+     'pull 1 card' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
+     'pull 2 cards' => test_zci(qr/(\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞], (\d|ace|jack|queen|king) of (clubs|spades|diamonds|hearts) [🂡-🃞] \(random\)/),
 
 );
 
