@@ -6,6 +6,16 @@ use Date::Calc qw(Today_and_Now Mktime);
 zci is_cached => 1;
 zci answer_type => "epoch";
 
+primary_example_queries 'epoch';
+description 'Time since the Unix epoch';
+name 'epoch';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Epoch.pm';
+category 'computing_tools';
+topics 'sysadmin';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+
 triggers query_lc => qr/^epoch$/i;
 
 handle query => sub {
