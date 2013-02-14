@@ -10,7 +10,7 @@ primary_example_queries 'regexp /(.*)/ ddg';
 description 'Regular expressions';
 name 'regexp';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Regexp.pm';
-category 'computing';
+category 'computing_tools';
 topics 'programming', 'sysadmin';
 attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
