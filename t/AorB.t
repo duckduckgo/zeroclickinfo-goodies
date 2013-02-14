@@ -19,7 +19,7 @@ ddg_goodie_test(
 	'pick a or b' => test_zci(qr/(a|b) \(random\)/),
 	'pick a b or c' => test_zci(qr/(a|b|c) \(random\)/),
 	'@#$ or 1i4' => test_zci(qr/(\@\#\$|1i4) \(random\)/),
-
+	'duckduckgo or google' => test_zci("duckduckgo (not random)", answer_type => 'egg'),
 );
 
 done_testing;

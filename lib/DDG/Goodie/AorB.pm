@@ -16,6 +16,9 @@ handle query_lc => sub {
 		splice(@query, $_-$a, 1);
 		$a++;
 	}
+	if (my @duck = grep { / \A (?: duck (?: duckgo )? | ddg ) \z /ix } @query) {
+	return $duck[0]." (not random)", answer_type => 'egg';
+	}
 
 	$pick = $query[int rand @query];
 	return $pick." (random)";
