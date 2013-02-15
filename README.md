@@ -128,10 +128,10 @@ Before heading to the sections below, jump on over to the page that covers [test
 
 #### "I came here to write Spice!": 
 
-Cool! You're done the basic tutorial. Now check out the section on [Spice handle functions](http://duckduckhack.com/#spice-handle-functions) in the zeroclickinfo-spice repository.
+Cool! You're done the basic tutorial. Now check out the section on [Spice handle functions](https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/README.md#spice-handle-functions) in the zeroclickinfo-spice repository.
 
 ## Advanced Triggers
-In the [Basic tutorial](README.md#basic-tutorial) we walked through a one word trigger and in the [Spice handle functions](http://duckduckhack.com/#spice-handle-functions) section we walked through a simple regexp trigger.
+In the [Basic tutorial](README.md#basic-tutorial) we walked through a one word trigger and in the [Spice handle functions](https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/README.md#spice-handle-functions) section we walked through a simple regexp trigger.
 
 Here are some more advanced trigger techniques you may need to use:
 
@@ -155,7 +155,7 @@ triggers any => "drink", "make", "mix", "recipe", "ingredients";
 triggers start => "mixing", "making";
 ```
 
-**Regular Expressions.** &nbsp;As we walked through in the [Spice handle functions](http://duckduckhack.com/#spice-handle-functions) section you can also trigger on a regular expression.
+**Regular Expressions.** &nbsp;As we walked through in the [Spice handle functions](https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/README.md#spice-handle-functions) section you can also trigger on a regular expression.
 
 ```perl
 triggers query_lc => qr/^@([^\s]+)$/;
@@ -186,7 +186,7 @@ triggers query_lc => qr/cost of living/;
 
 ## Advanced Handle Functions
 
-In the [Basic tutorial](README.md#basic-tutorial) we walked through a simple query transformation and in the [Spice handle functions](http://duckduckhack.com/#spice-handle-function) section we walked through a simple return of the query.
+In the [Basic tutorial](README.md#basic-tutorial) we walked through a simple query transformation and in the [Spice handle functions](https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/README.md#spice-handle-function) section we walked through a simple return of the query.
 
 Here are some more advanced handle techniques you may need to use:
 
