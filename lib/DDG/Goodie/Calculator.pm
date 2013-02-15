@@ -7,8 +7,8 @@ zci answer_type => "calculator";
 
 primary_example_queries '$3.43+$34.45';
 secondary_example_queries '64*343';
-description 'SHA hash cryptography';
-name 'SHA';
+description 'Basic calculations';
+name 'Calculator';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
 category 'calculations';
 topics 'math';
