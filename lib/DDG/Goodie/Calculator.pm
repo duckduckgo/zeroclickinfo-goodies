@@ -5,6 +5,18 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "calculator";
 
+primary_example_queries '$3.43+$34.45';
+secondary_example_queries '64*343';
+description 'SHA hash cryptography';
+name 'SHA';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
+category 'calculations';
+topics 'math';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+
+
 triggers query_nowhitespace => qr/^!?[\(\)xX\*\%\+\-\/\^\$]*(?:[0-9\.\,]+|[0-9\.\,]*)(?:gross|dozen|pi|(e)|c|)(?(1)(?:-?[0-9\.\,]+|)|)(?:[\(\)xX\*\%\+\-\/\^\$]|times|dividedby|plus|minus)+(?:[0-9\.\,]+|[0-9\.\,]*)(?:gross|dozen|pi|e|c|)[\(\)xX\*\%\+\-\/\^0-9\.\,\$]*=?$/i; 
 
 handle query_nowhitespace => sub {
