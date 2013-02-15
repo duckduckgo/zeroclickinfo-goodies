@@ -90,8 +90,8 @@ handle query_nowhitespace => sub {
             $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
 
             # Superscript (before spacing).
-            #$tmp_q =~ s/\^\(([^\)]+)\)/<sup>$1<\/sup>/g unless $data->{no_html};
-            #$tmp_q =~ s/\^(\d+|\b(?:e|c)\b)/<sup>$1<\/sup>/g unless $data->{no_html};
+            $tmp_q =~ s/\^\(([^\)]+)\)/<sup>$1<\/sup>/g;
+            $tmp_q =~ s/\^(\d+|\b(?:e|c)\b)/<sup>$1<\/sup>/g;
 
             # Add spacing.
             $tmp_q =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
