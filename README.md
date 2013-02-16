@@ -24,6 +24,14 @@ Next, type the following [use statement](https://duckduckgo.com/?q=perl+use) to 
 use DDG::Goodie;
 ```
 
+---
+
+#### A Note on Modules
+Right after the above line, you should include any Perl modules that you'll be leveraging to help generate the answer. Make sure you add those modules to the dist.ini file in this repository.
+If you're not using any additional modules, carry on!
+
+----
+
 Now here's where it gets interesting. Type:
 
 ```perl
