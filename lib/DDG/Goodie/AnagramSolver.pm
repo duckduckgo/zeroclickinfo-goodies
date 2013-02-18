@@ -23,11 +23,10 @@ handle remainder => sub {
 	}
     }
 
-    # this dictionary access is potentially crap, but useful
-    # for testing
-    open INF, "<", "/usr/share/dict/words" or die $!; # PLACEHOLDER
+    my $fileobj = share("words");
+    open INF, "<", $fileobj->stringify or return;
     my @output;
-    while (<INF>) { # PLACEHOLDER
+    while (<INF>) {
 	if ($word and /^[$word]{$n}$/) {
 	    chomp;
 	    my %f;
