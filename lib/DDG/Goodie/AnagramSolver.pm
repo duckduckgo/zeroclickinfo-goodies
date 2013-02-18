@@ -7,7 +7,8 @@ triggers start => "flargblarg";
 
 handle remainder => sub {
     /^\s*([a-zA-Z]+)\s*([0-9]+)\s*$/;
-    my $word = lc $1;
+    my $word = 0;
+    $word = lc($1) if $word;
     my $n = 0;
     $n = $2 if $2;    
 
@@ -25,7 +26,7 @@ handle remainder => sub {
     open INF, "<", "/usr/share/dict/words" or die $!; # PLACEHOLDER
     my @output;
     while (<INF>) { # PLACEHOLDER
-	if (/^[$word]{$n}$/) {
+	if ($word and /^[$word]{$n}$/) {
 	    chomp;
 	    my %f;
 	    for (split //, $_) {
