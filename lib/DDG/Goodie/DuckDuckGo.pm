@@ -33,7 +33,7 @@ zci is_cached => 1;
 
 primary_example_queries 'help';
 secondary_example_queries 'Zero-Click Info', 'zeroclick';
-description 'take the average of a list of numbers';
+description 'DuckDuckGo help and facts';
 name 'DuckDuckGo';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
 category 'cheat_sheets';
