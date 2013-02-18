@@ -8,7 +8,7 @@ triggers start => "flargblarg";
 handle remainder => sub {
     /^\s*([a-zA-Z]+)\s*([0-9]+)\s*$/;
     my $word = 0;
-    $word = lc($1) if $word;
+    $word = lc($1) if $1;
     my $n = 0;
     $n = $2 if $2;    
 
