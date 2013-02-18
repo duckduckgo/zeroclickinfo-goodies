@@ -6,6 +6,8 @@ use DDG::Goodie;
 triggers start => "flargblarg";
 
 handle remainder => sub {
+    # maybe just split input and then test for validity
+    # to make it more robust
     /^\s*([a-zA-Z]+)\s*([0-9]+)\s*$/;
     my $word = 0;
     $word = lc($1) if $1;
