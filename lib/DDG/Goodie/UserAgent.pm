@@ -4,12 +4,33 @@ use DDG::Goodie;
 use CGI::Simple;
 
 zci answer_type => "user-agent";
+triggers query_lc => qr/user(\s+|\-)?agent/i;
 
-triggers query_lc => qr/^user(\s+|\-)?agent(\s+me)?$/i;
+handle query_lc => sub {
+	my %user_agent_qr = (
+		'useragent',
+		'useragent me',
+		'show useragent',
+		'my useragent',
+		'what is my useragent',
+		'what\'s my useragent',
+		'user agent',
+		'user agent me',
+		'show user agent',
+		'my user agent',
+		'what is my user agent',
+		'what\'s my user agent',
+		'user-agent',
+		'user-agent me',
+		'show user-agent',
+		'my user-agent',
+		'what is my user-agent',
+		'what\'s my user-agent',
+	);
+	# Return if it doesn't exist in the dictionary.
+	return unless exists $user_agent_qr{$_};
 
-handle query => sub {
-	my $query = new CGI::Simple;
-	my $user_agent = $query->user_agent() || '';
+	return $user_agent;
 };
 
 1;
