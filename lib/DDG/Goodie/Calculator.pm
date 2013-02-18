@@ -26,7 +26,8 @@ handle query_nowhitespace => sub {
         return scalar reverse $text;
     }
 
-    my $results;
+    my $results_html;
+    my $results_no_html;
     my ($query) = @_;
     if($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
         my $tmp_result = '';
@@ -98,30 +99,37 @@ handle query_nowhitespace => sub {
 
             # Drop equals.
             $tmp_q =~ s/\=$//;
-
             $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
 
-            # Superscript (before spacing).
-            $tmp_q =~ s/\^\(([^\)]+)\)/<sup>$1<\/sup>/g;
-            $tmp_q =~ s/\^(\d+|\b(?:e|c)\b)/<sup>$1<\/sup>/g;
+            # Copy
+            $results_no_html = $results_html = $tmp_q;
 
-            # Add spacing.
-            $tmp_q =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
-            $tmp_q =~ s/dividedby/divided by/ig;
-            $tmp_q =~ s/(\d+?)((?:dozen|pi|gross|e|c))/$1 $2/ig;
-            $tmp_q =~ s/\bc\b/speed of light/ig;
-    
+            # Superscript (before spacing).
+            $results_html =~ s/\^\(([^\)]+)\)/<sup>$1<\/sup>/g;
+            $results_html =~ s/\^(\d+|\b(?:e|c)\b)/<sup>$1<\/sup>/g;
+
+            ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
+
             # Add commas.
             $tmp_result = &commify($tmp_result);
 
             # Now add it back.
-            $tmp_q .= ' = ';
+            $results_no_html .= ' = ';
+            $results_html .= ' = ';
 
-            # Add as first result (up to this point).
-            #   unshift(@results_main,qq($tmp_q<a href="javascript:;" onClick="document.x.q.value='$tmp_result'">$tmp_result</a>));
-            $results = qq(<div>$tmp_q<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
-            return html => $results;
+            $results_html = qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
+            return $results_no_html . $tmp_result, html => $results_html;
         }
+    }
+
+    sub spacing {
+        my $text = shift;
+        $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
+        $text =~ s/dividedby/divided by/ig;
+        $text =~ s/(\d+?)((?:dozen|pi|gross|e|c))/$1 $2/ig;
+        $text =~ s/\bc\b/speed of light/ig;
+
+        return $text;
     }
 
     return;
