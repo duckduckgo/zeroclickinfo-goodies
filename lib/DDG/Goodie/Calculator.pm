@@ -26,6 +26,16 @@ handle query_nowhitespace => sub {
         return scalar reverse $text;
     }
 
+    sub spacing {
+        my $text = shift;
+        $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
+        $text =~ s/dividedby/divided by/ig;
+        $text =~ s/(\d+?)((?:dozen|pi|gross|e|c))/$1 $2/ig;
+        $text =~ s/\bc\b/speed of light/ig;
+
+        return $text;
+    }
+    
     my $results_html;
     my $results_no_html;
     my ($query) = @_;
@@ -120,16 +130,6 @@ handle query_nowhitespace => sub {
             $results_html = qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
             return $results_no_html . $tmp_result, html => $results_html;
         }
-    }
-
-    sub spacing {
-        my $text = shift;
-        $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
-        $text =~ s/dividedby/divided by/ig;
-        $text =~ s/(\d+?)((?:dozen|pi|gross|e|c))/$1 $2/ig;
-        $text =~ s/\bc\b/speed of light/ig;
-
-        return $text;
     }
 
     return;
