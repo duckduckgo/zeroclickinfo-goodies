@@ -3,7 +3,7 @@ package DDG::Goodie::Calculator;
 use DDG::Goodie;
 
 zci is_cached => 1;
-zci answer_type => "calculator";
+zci answer_type => "calc";
 
 primary_example_queries '$3.43+$34.45';
 secondary_example_queries '64*343';
@@ -35,7 +35,7 @@ handle query_nowhitespace => sub {
 
         return $text;
     }
-    
+
     my $results_html;
     my $results_no_html;
     my ($query) = @_;
