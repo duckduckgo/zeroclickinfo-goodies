@@ -4,7 +4,7 @@ package DDG::Goodie::Anagram;
 use DDG::Goodie;
 use List::Util 'shuffle'; 
 
-triggers start => "anagram";
+triggers start => "randagram";
 
 handle remainder => sub {
   my @chars = split(//, $_); #convert each character of the query to an array element
