@@ -30,6 +30,9 @@ handle query_lc => sub {
 	# Return if it doesn't exist in the dictionary.
 	return unless exists $user_agent_qr{$_};
 
+	my $q = new CGI::Simple;
+	my $user_agent = $q->user_agent() || '';
+
 	return $user_agent;
 };
 
