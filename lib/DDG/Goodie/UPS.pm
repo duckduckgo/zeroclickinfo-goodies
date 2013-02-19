@@ -20,10 +20,13 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
 my $ups_qr = qr/ups/i;
 
 triggers query_nowhitespace_nodash => qr/
-                                        ^$ups_qr.*?(\d{9,})$|
-                                        ^(\d{9,}).*?$ups_qr$|
-                                        (1Z[\dA-Z]{16})
+                                        ^$ups_qr.*?(1Z[0-9A-Z]{16})$|
+                                        ^(1Z[0-9A-Z]{16}).*$ups_qr$|
+                                        (1Z[0-9A-Z]{16})
                                         /xi;
+
+# See http://answers.google.com/answers/main?cmd=threadview&id=207899.
+# fixme: 1Z9999W99999999999 from http://lifehacker.com/124236/google-numbers doesn't work.
 
 handle query_nowhitespace_nodash => sub {
     # If a UPS package number (2 for exclusively).
