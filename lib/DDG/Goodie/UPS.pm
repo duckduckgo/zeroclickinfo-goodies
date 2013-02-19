@@ -2,7 +2,19 @@ package DDG::Goodie::UPS;
 
 use DDG::Goodie;
 
+zci is_cached => 1;
 zci answer_type => "ups";
+
+primary_example_queries '1Z0884XV0399906189';
+secondary_example_queries 'ups 1Z0884XV0399906189';
+description 'Track a UPS package';
+name 'SHA';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UPS.pm';
+category 'ids';
+topics 'special_interest';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 # Regex for ups.
 my $ups_qr = qr/ups/i;
