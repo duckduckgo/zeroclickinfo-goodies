@@ -93,7 +93,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_fedex) {
-        return qq(<a class="large" icon="y" href="http://fedex.com/Tracking?tracknumbers=$package_number&action=track">FedEx</a>);
+        return heading => 'FedEx Shipment Tracking', html => qq(Track this shipment at <a class="large" icon="y" href="http://fedex.com/Tracking?tracknumbers=$package_number&action=track">FedEx</a>);
     }
 
     return;
