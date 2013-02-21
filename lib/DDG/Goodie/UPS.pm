@@ -104,7 +104,7 @@ handle query_nowhitespace_nodash => sub {
         }
     }
     if($is_ups == 2 ) {
-        return heading => 'UPS Shipment Tracking', html => qq(Track this shipment at <a class="large" href="http://wwwapps.ups.com/WebTracking/processInputRequest?sort_by=status&tracknums_displayed=1&TypeOfInquiryNumber=T&loc=en_US&InquiryNumber1=$package_number&track.x=0&track.y=0">UPS</a>.);
+        return heading => 'UPS Shipment Tracking', html => qq(Track this shipment at <a href="http://wwwapps.ups.com/WebTracking/processInputRequest?sort_by=status&tracknums_displayed=1&TypeOfInquiryNumber=T&loc=en_US&InquiryNumber1=$package_number&track.x=0&track.y=0">UPS</a>.);
     }
     return;
 };

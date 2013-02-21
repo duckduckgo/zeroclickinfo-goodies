@@ -60,7 +60,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_dhl) {
-        return heading => "DHL Shipment Tracking", html => "Track this shipment at <a class='large' href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number'>DHL</a>.";
+        return heading => "DHL Shipment Tracking", html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number'>DHL</a>.";
     }
 
     return;
