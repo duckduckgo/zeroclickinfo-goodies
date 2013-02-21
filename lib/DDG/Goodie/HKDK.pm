@@ -25,7 +25,7 @@ handle query_nowhitespace_nodash => sub {
         return heading => 'Hongkong Post Shipment Tracking', html => qq(Track this shipment at <a href="http://app3.hongkongpost.com/CGI/mt/genresult.jsp?tracknbr=$package_number">Hongkong Post</a>.);
     }
     elsif ( $package_number =~ /dk$/i ) {
-        return heading => 'Post Danmark Shipment Tracking', html => qq(Track this shipment at <a href="http://www.postdanmark.dk/tracktrace/TrackTrace.do?i_stregkode=$package_number">Post Norden</a>.);
+        return heading => 'Post Norden Shipment Tracking', html => qq(Track this shipment at <a href="http://www.postdanmark.dk/tracktrace/TrackTrace.do?i_stregkode=$package_number">Post Norden</a>.);
     }
 
     return;
