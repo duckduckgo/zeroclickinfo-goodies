@@ -77,6 +77,8 @@ handle query_nowhitespace_nodash => sub {
     if ($is_usps) {
         return header => "UPS Shipment Tracking", html => qq(Track this shipment at <a class="large" icon="y" href="http://trkcnfrm1.smi.usps.com/PTSInternetWeb/InterLabelInquiry.do?origTrackNum=$package_number">USPS</a>.);
     }
+
+    return;
 };
 
 1;
