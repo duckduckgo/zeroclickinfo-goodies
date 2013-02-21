@@ -16,6 +16,9 @@ triggers query_nowhitespace_nodash => qr/
                                         ^(?:$tracking_qr|$fedex_qr|)*?(\d*?)([\d]{12})(?:$tracking_qr|$fedex_qr|)*$
                                         /xio;
 
+# Fedex package tracking.
+# See http://answers.google.com/answers/main?cmd=threadview&id=207899
+# See http://images.fedex.com/us/solutions/ppe/FedEx_Ground_Label_Layout_Specification.pdf
 handle query_nowhitespace_nodash => sub {
     # If a Fedex package number (2 for exclusively).
     my $is_fedex = 0;
@@ -86,7 +89,7 @@ handle query_nowhitespace_nodash => sub {
             $checksum = ( $sum % 11 ) % 10 if $sum;
         }
 
-        if ( ( $length == 15 && $checksum eq $chars[-1] ) || ( $length != 15 && $checksum eq $chars[11] ) ) {
+        if (($length == 15 && $checksum eq $chars[-1]) || ($length != 15 && $checksum eq $chars[11])) {
             $is_fedex = 1;
             $package_number = qq($package_beg$package_number) if $package_beg;
         }
