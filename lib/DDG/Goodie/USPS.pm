@@ -5,6 +5,17 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "usps";
 
+primary_example_queries 'EA 000 000 000 US';
+secondary_example_queries 'package 7000 0000 0000 0000 0000';
+description 'Track a USPS package';
+name 'USPS';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/USPS.pm';
+category 'ids';
+topics 'special_interest';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+
 # Regex for usps.
 my $usps_qr = qr/u(?:nited|)s(?:states|)(?:p(?:ostal|)s(?:ervice|)|)/io;
 my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
