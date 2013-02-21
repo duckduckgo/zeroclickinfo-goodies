@@ -7,7 +7,7 @@ zci answer_type => "hkdk";
 
 primary_example_queries 'CU123456789DK';
 secondary_example_queries 'EE123456789HK';
-description 'Track a USPS package';
+description 'Track a package from Hongkong Post or Post Danmark';
 name 'USPS';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HKDK.pm';
 category 'ids';
@@ -22,10 +22,10 @@ handle query_nowhitespace_nodash => sub {
     my $package_number = $1;
 
     if ( $package_number =~ /hk$/i ) {
-        return heading => 'Hongkong Post Shipment Tracking', html => qq(Track this shipment at <a href="http://app3.hongkongpost.com/CGI/mt/genresult.jsp?tracknbr=$package_number">Hongkong Post</a>);
+        return heading => 'Hongkong Post Shipment Tracking', html => qq(Track this shipment at <a href="http://app3.hongkongpost.com/CGI/mt/genresult.jsp?tracknbr=$package_number">Hongkong Post</a>.);
     }
     elsif ( $package_number =~ /dk$/i ) {
-        return heading => 'Post Danmark Shipment Tracking', html => qq(Track this shipment at <a href="http://www.postdanmark.dk/tracktrace/TrackTrace.do?i_stregkode=$package_number">Post Norden</a>);
+        return heading => 'Post Danmark Shipment Tracking', html => qq(Track this shipment at <a href="http://www.postdanmark.dk/tracktrace/TrackTrace.do?i_stregkode=$package_number">Post Norden</a>.);
     }
 
     return;
