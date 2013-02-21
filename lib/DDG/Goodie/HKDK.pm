@@ -8,7 +8,7 @@ zci answer_type => "hkdk";
 primary_example_queries 'CU123456789DK';
 secondary_example_queries 'EE123456789HK';
 description 'Track a package from Hongkong Post or Post Danmark';
-name 'USPS';
+name 'HK/DK';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HKDK.pm';
 category 'ids';
 topics 'special_interest';
