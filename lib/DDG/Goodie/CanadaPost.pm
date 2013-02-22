@@ -16,6 +16,17 @@ triggers query_nowhitespace_nodash => qr/^$capost_qr.*?([\d]{9,})$|
 # Canada post package tracking.
 # See http://en.wikipedia.org/wiki/Canada_Post
 handle query_nowhitespace_nodash => sub {
+    my %capost_checksum = (
+        '1' => 8,
+        '2' => 6,
+        '3' => 4,
+        '4' => 2,
+        '5' => 3,
+        '6' => 5,
+        '7' => 9,
+        '8' => 7,
+    );
+
     # If a Canada Post package number (2 for exclusively).
     my $is_capost = 0;
 
@@ -40,7 +51,7 @@ handle query_nowhitespace_nodash => sub {
 
             next if $char_count < 3;
 
-            my $weight = $data->{capost_checksum}->{ $char_count - 2 };
+            my $weight = $capost_checksum{$char_count - 2};
             $sum += $char * $weight;
             last if $char_count == 10;
         }
@@ -54,7 +65,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     # Only exclusive results right now for CA Post.
-    if ( $is_capost == 2 ) {
+    if ($is_capost == 2) {
         @results_main = ( l('%s shipment tracking',qq(<a class="large" href="http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=$package_number">Canada Post</a> )) );
     }
     return;
