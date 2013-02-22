@@ -8,13 +8,15 @@ zci answer_type => "canadapost";
 # Regex for Canada Post.
 my $capost_qr = qr/ca(?:nada|)post(?:es|)/io;
 
-triggers query_nowhitespace_nodash => qr/^$capost_qr.*?([\d]{9,})$|
-                                         ^([\d]{9,}).*?$capost_qr$|
-                                         ([A-Z]{2}[\d]{9}CA)
+triggers query_nowhitespace_nodash => qr/
+                                         (?:^$capost_qr.*?([\d]{9,})$)|
+                                         (?:^([\d]{9,}).*?$capost_qr$)|
+                                         (?:^([A-Z]{2}[\d]{9}CA)$)
                                         /xio;
 
 # Canada post package tracking.
 # See http://en.wikipedia.org/wiki/Canada_Post
+# See http://www.canadapost.ca/cpotools/apps/track/personal/usingTrack?execution=e3s1#Formats
 handle query_nowhitespace_nodash => sub {
     my %capost_checksum = (
         '1' => 8,
@@ -42,12 +44,13 @@ handle query_nowhitespace_nodash => sub {
         $package_number = uc $3;
 
         my $checksum   = 0;
-        my @chars      = split( //, $package_number );
+        my @chars      = split(//, $package_number);
         my $length     = scalar(@chars);
         my $char_count = 0;
         my $sum        = 0;
+        
         foreach my $char (@chars) {
-            $char_count++;
+            $char_count++;  
 
             next if $char_count < 3;
 
@@ -55,18 +58,20 @@ handle query_nowhitespace_nodash => sub {
             $sum += $char * $weight;
             last if $char_count == 10;
         }
-        $checksum = 11 - ( $sum % 11 );
+        $checksum = 11 - ($sum % 11);
         $checksum = 0 if $checksum == 10;
         $checksum = 5 if $checksum == 11;
 
-        if ( $checksum eq $chars[10] ) {
+        if ($checksum eq $chars[10]) {
             $is_capost = 2;
         }
     }
 
+    warn "$is_capost";
+
     # Only exclusive results right now for CA Post.
     if ($is_capost == 2) {
-        @results_main = ( l('%s shipment tracking',qq(<a class="large" href="http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=$package_number">Canada Post</a> )) );
+        return heading => 'Canada Post Shipment Tracking', html => qq(Track this shipment at <a href="http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=$package_number">Canada Post</a>.);
     }
     return;
 };
