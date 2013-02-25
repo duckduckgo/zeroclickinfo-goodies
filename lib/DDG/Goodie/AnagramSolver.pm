@@ -68,7 +68,8 @@ handle remainder => sub {
 	}
 	return $garbledAnswer;
     }
-    return "Anagrams of $in of size $n: ".join(', ', @output);
+    return "Anagrams of $in of size $n: ".join(', ', @output) if @output;
+    return $garbledAnswer;
 };
 
 zci is_cached => 0;
