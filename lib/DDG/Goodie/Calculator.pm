@@ -128,7 +128,7 @@ handle query_nowhitespace => sub {
             $results_html .= ' = ';
 
             $results_html = qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
-            return $results_no_html . $tmp_result, html => $results_html;
+            return $results_no_html . $tmp_result, html => $results_html, heading => "Calculator";
         }
     }
 
