@@ -6,7 +6,7 @@ zci is_cached => 1;
 zci answer_type => "vin";
 
 primary_example_queries '1g8gg35m1g7123101';
-secondary_example_queries 'vin 1g8gg35m1g7123101', '1g8gg35m1g7123101 vehicle identification number';
+secondary_example_queries 'vin 1g8gg35m1g7123101', '1g8gg35m1g7123101 vehicle identification number', '1g8gg35m1g7123101 tracking';
 description 'Automobile VIN lookup';
 name 'VIN';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/VIN.pm';
