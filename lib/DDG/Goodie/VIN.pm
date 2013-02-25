@@ -125,7 +125,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_vin) {
-        return heading => "CarFax", html => qq(CarFax <a href="http://www.carfax.com/cfm/check_order.cfm?VIN=$vin_number&PopUpStatus=0">CarFax</a>.);
+        return heading => "CarFax", html => qq(Check the automobile's VIN at <a href="http://www.carfax.com/cfm/check_order.cfm?VIN=$vin_number&PopUpStatus=0">CarFax</a>.);
     }
 
     return;
