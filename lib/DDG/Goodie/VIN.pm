@@ -74,6 +74,12 @@ my %vin_checksum_weight = (
     '17' => 2,
 );
 
+# VIN numbers.
+# 2008.07.29 force some letters because
+# "Alvin and the Chipmunks songs" passes checksum.
+# See http://en.wikipedia.org/wiki/Vehicle_identification_number#Check_digit_calculation
+# 2012.03.22 remove ^ and $ from 2nd regex term to also allow
+# 'vin <vin>, etc' -- a regular vin just triggers w.js?
 handle query_nowhitespace_nodash => sub {
     my ($query) = @_;
 
