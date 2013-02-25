@@ -8,12 +8,16 @@ triggers start => "anagram", "anagrams";
 handle remainder => sub {
 
     my $in = $_;
+    my $n;
     my @output;
+    my $full_word = 1;
 
     if(/^\s*([a-zA-Z]+)\s*([0-9]+)?\s*$/) {
 	my $word = lc($1);
-	my $n = length $word;
-	$n = $2 if $2 and ($2 <= $n && $2 > 0);
+	$in = $word;
+	$n = length $word;
+	$n = $2 if ($2 && $2 <= $n && $2 > 0);
+	$full_word = 0 if $n != length($word);
 
 	my %freq;
 	for (split //, $word) {
@@ -50,12 +54,21 @@ handle remainder => sub {
 	    }
 	}
     }
-    return join(", ", @output) if @output; 
-
+    # copied verbatim from Anagram.pm
     my @chars = split(//, $in); #convert each character of the query to an array element
-    my @garbledChars = shuffle(@chars); #randomly reorder the array
-    my $garbledAnswer = join('',@garbledChars); #convert array to string
-    return $garbledAnswer; 
+    @chars = shuffle(@chars); #randomly reorder the array
+    my $garbledAnswer = '"'.$in.'" garbled: '.join('',@chars);
+    # end Anagram.pm
+
+    if($full_word) {
+	if(@output) {
+	    my $ana = "anagram: ";
+	    $ana = "anagrams: " if scalar(@output) > 1;
+	    return $garbledAnswer.", with proper ".$ana.join(', ', @output);
+	}
+	return $garbledAnswer;
+    }
+    return "Anagrams of $in of size $n: ".join(', ', @output);
 };
 
 zci is_cached => 0;
