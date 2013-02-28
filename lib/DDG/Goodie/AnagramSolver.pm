@@ -7,6 +7,7 @@ triggers start => "anagram", "anagrams";
 
 handle remainder => sub {
 
+    s/^of\s(.*)/$1/i;
     my $in = $_;
     my $n;
     my @output;
@@ -31,11 +32,11 @@ handle remainder => sub {
 	my $fileobj = share("words");
 	open INF, "<", $fileobj->stringify or return;
 	while (<INF>) {
-	    if ($word and /^[$word]{$n}$/) {
+	    if ($word and /^[$word]{$n}$/i) {
 		chomp;
-		next if $_ eq $word;
+		next if lc($_) eq lc($word);
 		my %f;
-		for (split //, $_) {
+		for (split //, lc($_)) {
 		    if ($f{$_}) {
 			$f{$_} += 1;
 		    } else {
@@ -55,16 +56,16 @@ handle remainder => sub {
 	}
     }
     # copied verbatim from Anagram.pm
-    my @chars = split(//, $in); #convert each character of the query to an array element
-    @chars = shuffle(@chars); #randomly reorder the array
-    my $garbledAnswer = '"'.$in.'" garbled: '.join('',@chars);
+    my @chars = split(//, $in);
+    @chars = shuffle(@chars);
+    my $garbledAnswer = '"'.$in.'" scrambled: '.join('',@chars);
     # end Anagram.pm
 
     if($full_word) {
 	if(@output) {
 	    my $ana = "anagram: ";
 	    $ana = "anagrams: " if scalar(@output) > 1;
-	    return $garbledAnswer.", with proper ".$ana.join(', ', @output);
+	    return $ana.join(', ', @output);
 	}
 	return $garbledAnswer;
     }
