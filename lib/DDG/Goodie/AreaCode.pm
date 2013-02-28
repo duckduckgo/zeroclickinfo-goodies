@@ -26,10 +26,6 @@ foreach my $area (@areas) {
 }
 
 handle query_nowhitespace => sub {
-    # This function parses the database
-    # area code location field into a readable location.
-    # Yes, the DB format could be cleaned up--it came
-    # from an Excel file.
     sub area_code_location {
         my ($str, $state_names_ref) = @_;
 
