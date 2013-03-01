@@ -5,6 +5,19 @@ use List::Util 'shuffle';
 
 triggers start => "anagram", "anagrams";
 
+zci is_cached => 0;
+zci answer_type => "anagram";
+
+primary_example_queries "anagram of filter";
+secondary_example_queries "anagram filter 5";
+description "find the anagram(s) of your query";
+name "Anagram";
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Anagram.pm";
+category "transformations";
+topics "words_and_games";
+
+attribution github => ["https://github.com/beardlybread", "beardlybread"];
+
 handle remainder => sub {
 
     s/^of\s(.*)/$1/i;
@@ -55,11 +68,11 @@ handle remainder => sub {
 	    }
 	}
     }
-    # copied verbatim from Anagram.pm
+    # copied verbatim from Randagram.pm
     my @chars = split(//, $in);
     @chars = shuffle(@chars);
     my $garbledAnswer = '"'.$in.'" scrambled: '.join('',@chars);
-    # end Anagram.pm
+    # end Randagram.pm
 
     if($full_word) {
 	if(@output) {
@@ -72,7 +85,5 @@ handle remainder => sub {
     return "Anagrams of $in of size $n: ".join(', ', @output) if @output;
     return $garbledAnswer;
 };
-
-zci is_cached => 0;
 
 1;
