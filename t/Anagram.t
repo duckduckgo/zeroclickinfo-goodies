@@ -8,8 +8,6 @@ use DDG::Test::Goodie;
 zci answer_type => 'anagram';
 zci is_cached => 0;
 
-# the regexps are kind of a hack, but it seemed better than not testing
-# it at all
 ddg_goodie_test(
     [qw(DDG::Goodie::Anagram)],
     'anagram filter' => test_zci("anagram: trifle"),

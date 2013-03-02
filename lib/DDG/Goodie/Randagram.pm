@@ -23,7 +23,7 @@ handle remainder => sub {
     my @chars = split(//, $_); #convert each character of the query to an array element
     my @garbledChars = shuffle(@chars); #randomly reorder the array
     my $garbledAnswer = join('',@garbledChars); #convert array to string
-    return $garbledAnswer; 
+    return "randagram: $garbledAnswer";
 };
 
 zci is_cached => 0;
