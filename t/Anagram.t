@@ -18,7 +18,12 @@ ddg_goodie_test(
     'anagram filter 5' => test_zci('Anagrams of "filter" of size 5: filet, flier, flirt, lifer, liter, refit, rifle'),
     'anagram times' => test_zci('Anagrams of "times": emits, items, mites, smite'),
     'anagram Mixing it up' => test_zci(qr/"Mixing it up" scrambled: [ Mixngtup]{12}/),
-    'anagram algorithm 14' => test_zci('Anagram of "algorithm": logarithm')
+    'anagram algorithm 14' => test_zci('Anagram of "algorithm": logarithm'),
+    "anagrams stop" => test_zci('Anagrams of "stop": Post, opts, post, pots, spot, tops'),
+    "anagram stop"  => test_zci('Anagrams of "stop": Post, opts, post, pots, spot, tops'),
+    "anagrams lost" => test_zci('Anagrams of "lost": lots, slot'),  
+    "anagram lost"  => test_zci('Anagrams of "lost": lots, slot'), 
+    "anagram of lost"  => test_zci('Anagrams of "lost": lots, slot'), 
     );
 
 done_testing;
