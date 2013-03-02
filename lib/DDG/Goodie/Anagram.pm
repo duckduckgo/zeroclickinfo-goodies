@@ -76,13 +76,13 @@ handle remainder => sub {
 
     if($full_word) {
 	if(@output) {
-	    my $ana = "anagram: ";
-	    $ana = "anagrams: " if scalar(@output) > 1;
+	    my $ana = "Anagram of \"$in\": ";
+	    $ana = "Anagrams of \"$in\": " if scalar(@output) > 1;
 	    return $ana.join(', ', @output);
 	}
 	return $garbledAnswer;
     }
-    return "Anagrams of $in of size $n: ".join(', ', @output) if @output;
+    return "Anagrams of \"$in\" of size $n: ".join(', ', @output) if @output;
     return $garbledAnswer;
 };
 
