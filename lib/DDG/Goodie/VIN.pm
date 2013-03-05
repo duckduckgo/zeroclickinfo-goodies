@@ -7,6 +7,7 @@ zci answer_type => "vin";
 
 primary_example_queries '1g8gg35m1g7123101';
 secondary_example_queries 'vin 1g8gg35m1g7123101', '1g8gg35m1g7123101 vehicle identification number', '1g8gg35m1g7123101 tracking';
+
 description 'Automobile VIN lookup';
 name 'VIN';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/VIN.pm';
@@ -96,11 +97,10 @@ handle query_nowhitespace_nodash => sub {
         $vin_number = uc $1;
         $is_vin     = 2;
 
-        # No exclusive trigger, do checksum.
-        # Since the vin numbers are just numbers,
-        # we are more strict in regex (e.g. than UPS).
-    }
-    elsif($query =~ /^(?:$tracking_qr|$vin_qr|)*([A-Z\d]{17}?)(?:$tracking_qr|$vin_qr|)*$/io || $query =~ /(?:$tracking_qr|$vin_qr|)*([A-Z\d]{17})(?:$tracking_qr|$vin_qr|)*$/io) {
+    # No exclusive trigger, do checksum.
+    # Since the vin numbers are just numbers,
+    # we are more strict in regex (e.g. than UPS).
+    } elsif($query =~ /^(?:$tracking_qr|$vin_qr|)*([A-Z\d]{17}?)(?:$tracking_qr|$vin_qr|)*$/io || $query =~ /(?:$tracking_qr|$vin_qr|)*([A-Z\d]{17})(?:$tracking_qr|$vin_qr|)*$/io) {
         $vin_number = uc $1;
 
         my $checksum   = 0;
@@ -125,16 +125,11 @@ handle query_nowhitespace_nodash => sub {
                 last;
             }
 
-            # For debugging.
-            #       warn "$char_count\t$char\t$char_num\t$vin_checksum_weight{$char_count}";
-
             # Use weight.
             $sum += $char_num * $vin_checksum_weight{$char_count};
         }
         $checksum = $sum % 11;
         $checksum = 'X' if $checksum == 10;
-
-        #       warn "VIN $vin_number\t$sum\t$checksum\t$chars[8]";
 
         if ($checksum eq $chars[8] && $letter_count > 3) {
             $is_vin = 1;
@@ -142,7 +137,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_vin) {
-        return heading => "CarFax", html => qq(Check the automobile's VIN at <a href="http://www.carfax.com/cfm/check_order.cfm?VIN=$vin_number&PopUpStatus=0">CarFax</a>.);
+        return $vin_number, heading => "CarFax", html => qq(Check the automobile's VIN at <a href='http://www.carfax.com/cfm/check_order.cfm?VIN=$vin_number&PopUpStatus=0'>CarFax</a>.);
     }
 
     return;
