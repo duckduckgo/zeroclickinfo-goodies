@@ -16,6 +16,15 @@ topics 'math';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
+my %utf8_dice = (
+    1 => "\x{2680}",
+    2 => "\x{2681}",
+    3 => "\x{2682}",
+    4 => "\x{2683}",
+    5 => "\x{2684}",
+    6 => "\x{2685}",
+);
+
 handle remainder => sub {
     if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
         my @output;
@@ -31,9 +40,9 @@ handle remainder => sub {
         }
         for (1 .. $rolls) {
             my $roll = int(rand($choices)) + 1;
-            push @output, $roll;
+            push @output, $utf8_dice{$roll};
         }
-        return join(', ', @output) . ' (random)' if @output;
+        return join(', ', @output) . ' (random)', html => '<span style="font-size:14pt;">' . join(', ', @output) . ' (random)</span>' if @output;
     }
     elsif ($_ =~ /^(\d{0,4})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
         my $output;
@@ -42,7 +51,7 @@ handle remainder => sub {
         my @rolls;
         my $sum = 0;
         for (1 .. $number_of_dice) {
-            push(@rolls, int(rand($number_of_faces)) + 1);
+            push @rolls, int(rand($number_of_faces)) + 1;
         }
         if (defined($3) && defined($4)) {
             # handle special case of " - L" or " - H"
@@ -69,7 +78,7 @@ handle remainder => sub {
         } else {
             $output = $sum;
         }
-        return join('', $output, ' (random)') if $output;
+        return '' . $output . ' (random)' if $output;
     }
     return;
 };
