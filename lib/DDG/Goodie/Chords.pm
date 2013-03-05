@@ -81,12 +81,13 @@ sub chord {
     my @chord;
     for (@intervals) {
         if ($_ !~ /-$/) {
+            $_ = $_ - @$scale if $_ >= @$scale; # wrap it around to the length of the scale
             push @chord, ucfirst flat_to_sharp($rkeys{$$scale[$_]});
         }
         else {
             $_ =~ s/-$//;
-            my $note = $keys{wrap($_-0.5)};
-            push @chord, ucfirst(flat_to_sharp($rkeys{$note})) . " (\u$note)";
+            my $note = $rkeys{wrap($_-0.5)};
+            push @chord, ucfirst(flat_to_sharp($note)) . " (\u$note)";
         }
     }
     return @chord;
@@ -133,8 +134,11 @@ handle query_lc => sub {
     
     my ($piano_gif, $guitar_gif);
     eval { # quietly fail if this doesn't work...
-        $piano_gif = encode_base64($piano->chord(ucfirst($base))->gif); $piano_gif =~ s/\n//g; 
-        $guitar_gif = encode_base64($guitar->chord(ucfirst($base))->gif); $guitar_gif =~ s/\n//g; 
+        my $ext_chord_pattern = $chord_pattern;
+        $ext_chord_pattern = '' if $ext_chord_pattern eq 'major';
+        $ext_chord_pattern = 'm' if $ext_chord_pattern eq 'minor';
+        $piano_gif = encode_base64($piano->chord(ucfirst($base.$ext_chord_pattern))->gif); $piano_gif =~ s/\n//g; 
+        $guitar_gif = encode_base64($guitar->chord(ucfirst($base.$ext_chord_pattern))->gif); $guitar_gif =~ s/\n//g; 
     }; 
 
     my $answer = "\u$base \u$pattern scale: ". join(', ',@{$scale}) . " ~ Relative $rel_term: \u$relative $rel_term ~ \u$full Chord: " . join(', ',@{$chord});
