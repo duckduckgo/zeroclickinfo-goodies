@@ -80,14 +80,19 @@ sub chord {
     shift @intervals;
     my @chord;
     for (@intervals) {
-        if ($_ !~ /-$/) {
-            $_ = $_ - @$scale if $_ >= @$scale; # wrap it around to the length of the scale
-            push @chord, ucfirst flat_to_sharp($rkeys{$$scale[$_]});
+        if ($_ =~ /^(.+)([-+])$/) {
+            $_ = $1;
+            my $note;
+            if ($2 eq '-') {
+                $note = $rkeys{wrap($$scale[$_]-0.5)};
+            } else {
+                $note = $rkeys{wrap($$scale[$_]+0.5)};
+            }
+            push @chord, ucfirst(flat_to_sharp($note)) . ($note =~ /.b$/ ? " (\u$note)" : '');
         }
         else {
-            $_ =~ s/-$//;
-            my $note = $rkeys{wrap($_-0.5)};
-            push @chord, ucfirst(flat_to_sharp($note)) . " (\u$note)";
+            $_ = $_ - @$scale if $_ >= @$scale; # wrap it around to the length of the scale
+            push @chord, ucfirst flat_to_sharp($rkeys{$$scale[$_]});
         }
     }
     return @chord;
