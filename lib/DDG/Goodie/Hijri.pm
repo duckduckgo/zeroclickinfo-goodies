@@ -9,7 +9,6 @@ triggers any => 'hijri', 'gregorian';
 
 handle query_lc => sub {
 
-#	return unless my ($gd, $gm, $gy, $gh) = $_ =~ /^(?:convert)?\s*(\d{0,2})(?:\/|\,)(\d{0,2})(?:\/|\,)(\d{3,4})\s*(?:to|in)\s*(hijri|gregorian)?\s*(?:years|date?)?$/;
 	return unless my ($gd, $gm, $gy, $gh) = $_ =~ /^(\d{0,2})(?:\/|\,)(\d{0,2})(?:\/|\,)(\d{3,4})\s+(?:on\s+the|in)\s+(?:gregorian|hijri)\s+(?:calendar|date|time)\s+is\s+(?:on\s+the|in)\s+(gregorian|hijri)\s+(?:calendar|date|time)$/;
 	last if($gd>31);
 	last if($gm>12);
