@@ -3,6 +3,11 @@ package DDG::Goodie::AltCalendars;
 
 use DDG::Goodie;
 
+#use constant MD5HERF =>  "http://en.wikipedia.org/wiki/MD5";
+#use constant SHA1HREF => "http://en.wikipedia.org/wiki/SHA-1";
+#use constant SHA2HREF => "http://en.wikipedia.org/wiki/SHA-2";
+#use constant SHA3HREF => "http://en.wikipedia.org/wiki/SHA-3";
+
 primary_example_queries 'heisei 24';
 secondary_example_queries 'meiji 1';
 description 'Convert non-Gregorian years to the Gregorian calendar';
@@ -15,33 +20,45 @@ attribution web => ['http://kyokodaniel.com/tech/', 'Daniel Davis'],
             github => ['https://github.com/tagawa', 'tagawa'],
             twitter => ['https://twitter.com/ourmaninjapan', 'ourmaninjapan'];
 
-triggers start => 'juche', 'minguo', 'meiji', 'taisho', 'taishou', 'showa', 'shouwa', 'heisei';
+triggers any => 'juche', 'minguo', 'meiji', 'taisho', 'taishou', 'showa', 'shouwa', 'heisei';
 
 zci answer_type => 'date_conversion';
 zci is_cached => 1;
 
 handle query_parts => sub {
-    return unless scalar(@_) == 2;
+    # Ignore single word queries
+    return unless scalar(@_) > 1;
     
-    my $year = $_[1];
-    if ($year =~ /\d*[1-9]\d*/) {
-        my $era = lc($_[0]);
-        my %eras = (
-            'meiji' => 1867, # Japanese Meiji era
-            'taisho' => 1911, # Japanese Taisho era
-            'taishou' => 1911, # Alternative spelling of "taisho"
-            'showa' => 1925, # Japanese Showa era
-            'shouwa' => 1925, # Alternative spelling of "showa"
-            'heisei' => 1988, # Japanese Heisei era
-            'juche' => 1911, # North Korean Juche era
-            'minguo' => 1911, # ROC (Taiwanese) Minguo era
-        );
+    my %eras = (
+        'Meiji' => [1867, 'Meiji_period'], # Japanese Meiji era
+        'Taisho' => [1911, 'Taisho_period'], # Japanese Taisho era
+        'Taishou' => [1911, 'Taisho_period'], # Alternative spelling of "Taisho"
+        'Showa' => [1925, 'Showa_period'], # Japanese Showa era
+        'Shouwa' => [1925, 'Showa_period'], # Alternative spelling of "Showa"
+        'Heisei' => [1988, 'Heisei_period'], # Japanese Heisei era
+        'Juche' => [1911, 'North_Korean_calendar'], # North Korean Juche era
+        'Minguo' => [1911, 'Minguo_calendar'], # ROC (Taiwanese) Minguo era
+    );
+    
+    if ($_ =~ /^(.*\b)(meiji|taisho|taishou|showa|shouwa|heisei|juche|minguo)\s+(\d*[1-9]\d*)(\b.*)$/i) {
+        my $era_name = ucfirst($2);
+        my $era_year = $3;
+        my $year = $eras{$era_name}[0] + $era_year;
+        my $result = $1.$year.$4;
+        my $wiki = 'https://en.wikipedia.org/wiki/';
+        my $answer;
         
-        return unless exists $eras{$era};
+        if ($result =~ /^[0-9]{4}$/) {
+            $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
+        } else {
+            $answer = "$result ($era_name $era_year is equivalent to $year in the Gregorian Calendar)";
+        }
         
-        return $year + $eras{$era};
-    }
-
+        my $answer_html = $answer.'<br><a href="'.$wiki.$eras{$era_name}[1].'">More at Wikipedia</a>';
+        
+        return $answer, html => $answer_html;
+    };
+    
     return ;
 };
 
