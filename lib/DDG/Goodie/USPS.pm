@@ -6,7 +6,7 @@ zci is_cached => 1;
 zci answer_type => "usps";
 
 primary_example_queries 'EA 000 000 000 US';
-secondary_example_queries 'package 7000 0000 0000 0000 0000';
+secondary_example_queries 'usps 7000 0000 0000 0000 0000';
 description 'Track a USPS package';
 name 'USPS';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/USPS.pm';
@@ -86,7 +86,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_usps) {
-        return heading => "UPS Shipment Tracking", html => qq(Track this shipment at <a href="http://trkcnfrm1.smi.usps.com/PTSInternetWeb/InterLabelInquiry.do?origTrackNum=$package_number">USPS</a>.);
+        return $package_number, heading => "USPS Shipment Tracking", html => qq(Track this shipment at <a href="http://trkcnfrm1.smi.usps.com/PTSInternetWeb/InterLabelInquiry.do?origTrackNum=$package_number">USPS</a>.);
     }
 
     return;
