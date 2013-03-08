@@ -6,6 +6,7 @@ zci is_cached => 1;
 zci answer_type => "fedex";
 
 primary_example_queries "fedex 9241990100130206401644";
+secondary_example_queries "federal express 9241990100130206401644";
 
 description "Track a FedEx package";
 name "FedEx";
@@ -109,7 +110,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_fedex) {
-        return heading => 'FedEx Shipment Tracking', html => qq(Track this shipment at <a href="http://fedex.com/Tracking?tracknumbers=$package_number&action=track">FedEx</a>.);
+        return $package_number, heading => 'FedEx Shipment Tracking', html => qq(Track this shipment at <a href="http://fedex.com/Tracking?tracknumbers=$package_number&action=track">FedEx</a>.);
     }
 
     return;
