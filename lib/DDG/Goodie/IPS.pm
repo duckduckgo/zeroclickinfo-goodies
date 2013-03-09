@@ -23,7 +23,7 @@ handle query_nowhitespace_nodash => sub {
         $tmp_link = "http://mailtracking.gov.bm/IPSWeb_item_events.asp?itemid=$package_number&Submit=Submit+Query";
     }
     if ($tmp_link) {
-        return heading => "IPS Shipment Tracking", html => qq(Track this shipment at <a href="$tmp_link">IPS</a>.);
+        return $package_number, heading => "IPS Shipment Tracking", html => qq(Track this shipment at <a href="$tmp_link">IPS</a>.);
     }
 
     return;
