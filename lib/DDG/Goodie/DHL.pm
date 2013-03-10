@@ -5,6 +5,17 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "dhl";
 
+primary_example_queries 'DHL 123456789';
+secondary_example_queries 'tracking 1234567891';
+description 'Track a package from DHL';
+name 'DHL';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DHL.pm';
+category 'ids';
+topics 'special_interest';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+
 # Regex for usps.
 my $dhl_qr = qr/dhl/io;
 my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
@@ -60,7 +71,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_dhl) {
-        return heading => "DHL Shipment Tracking", html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number'>DHL</a>.";
+        return $package_number, heading => "DHL Shipment Tracking", html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number'>DHL</a>.";
     }
 
     return;
