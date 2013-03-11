@@ -268,3 +268,20 @@ return $text, html => $html
 ```perl
 zci answer_type => "golden_ratio";
 ```
+
+## Location API
+Sometimes, all a plugin needs is the user's location. This is where the Location API comes in. An example is the [Is it snowing?](https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/Snow.pm) plugin:
+
+```perl
+# Phoenixville, Pennsylvania, United States
+my $location = join(" ", $loc->city . ', ', $loc->region_name . ', ', $loc->country_name);
+```
+
+When testing on `duckpan`, the plugin will always point you to "Phoenixville, Pennsylvania, United States," but don't worry because it will show the real location once its live.
+And it isn't limited to just the city, the state, and the country, either. [Location.pm](https://github.com/duckduckgo/duckduckgo/blob/master/lib/DDG/Location.pm#L6) lists all the things that you can possibly use:
+
+```perl
+my @geo_ip_record_attrs = qw( country_code country_code3 country_name region
+    region_name city postal_code latitude longitude time_zone area_code
+	continent_code metro_code );
+```
