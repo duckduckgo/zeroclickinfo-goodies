@@ -16,7 +16,7 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
-triggers query_lc => qr/^regexp [\/\\](.*?)[\/\\] (.*)$/i;
+triggers query_lc => qr/^regexp [\/\\](.+?)[\/\\] (.+)$/i;
 
 handle query => sub {
     my $regexp = $1;
