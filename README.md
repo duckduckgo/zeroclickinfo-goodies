@@ -277,7 +277,7 @@ Sometimes, all a plugin needs is the user's location. This is where the Location
 my $location = join(" ", $loc->city . ', ', $loc->region_name . ', ', $loc->country_name);
 ```
 
-When testing on `duckpan`, the plugin will always point you to "Phoenixville, Pennsylvania, United States," but don't worry because it will show the real location once its live.
+When testing on `duckpan`, the plugin will always point you to "Phoenixville, Pennsylvania, United States," but don't worry, because it will show the real location once it's live.
 And it isn't limited to just the city, the state, and the country, either. [Location.pm](https://github.com/duckduckgo/duckduckgo/blob/master/lib/DDG/Location.pm#L6) lists all the things that you can possibly use:
 
 ```perl
