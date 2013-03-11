@@ -2,8 +2,21 @@ package DDG::Goodie::AreaCode;
 
 use DDG::Goodie;
 
+zci is_cached => 1;
+zci answer_type => "areacode";
+
 # Regexp for AreaCode.
 my $area_code_qr = qr/areacode/io;
+
+primary_example_queries 'area codes 209';
+description 'Find the telephone area code';
+name 'Area Code';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/AreaCode.pm';
+category 'geography';
+topics 'everyday', 'geography';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 triggers query_nowhitespace => qr/$area_code_qr.*(?<!\d)([\d]{3}?)(?!\d)|([\d]{3}?)(?!\d).*$area_code_qr/o;
 
