@@ -84,8 +84,10 @@ handle query_nowhitespace => sub {
             $map = qq(<a href="http://open.mapquest.com/?q=$sub_country_escape">) . 'Map' . '</a>';
         }
 
-        return heading => "Area Codes ($area_code_location)", html => "$area_code is an area code in $area_code_location" . " - " . $map;    
+        return "$area_code is an area code in $area_code_location", heading => "Area Codes ($area_code_location)", html => "$area_code is an area code in $area_code_location" . " - " . $map;    
     }
+
+    return;
 };
 
 1;
