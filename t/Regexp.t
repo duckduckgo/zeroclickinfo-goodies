@@ -10,12 +10,15 @@ zci is_cached => 1;
 
 ddg_goodie_test(
         [qw( DDG::Goodie::Regexp )],
-        'regexp /(hello)/ hello probably' => test_zci(
-            "hello",
+        'regexp /(hello\s)/ hello probably' => test_zci(
+        	"hello ",
+        	heading => 'Regexp Result',
         ),
         'regexp /(dd)/ ddg' => test_zci(
-            "dd",
+        	"dd",
+        	heading => 'Regexp Result',
         ),
 );
 
 done_testing;
+
