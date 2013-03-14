@@ -285,3 +285,21 @@ my @geo_ip_record_attrs = qw( country_code country_code3 country_name region
     region_name city postal_code latitude longitude time_zone area_code
 	continent_code metro_code );
 ```
+
+Sample contents of `$loc`:
+
+```perl
+longitude => -75.5385
+country_name => United States
+area_code => 610
+region_name => Pennsylvania
+country_code => US
+region => PA
+continent_code => NA
+city => Phoenixville
+postal_code => 19460
+latitude => 40.1246
+time_zone => America/New_York
+metro_code => 504
+country_code3 => USA
+```
