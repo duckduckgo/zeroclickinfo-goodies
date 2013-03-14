@@ -274,7 +274,7 @@ Sometimes, all a plugin needs is the user's location. This is where the Location
 
 ```perl
 # Phoenixville, Pennsylvania, United States
-my $location = join(" ", $loc->city . ', ', $loc->region_name . ', ', $loc->country_name);
+my $location = join(", ", $loc->city, $loc->region_name, $loc->country_name);
 ```
 
 When testing on `duckpan`, the plugin will always point you to "Phoenixville, Pennsylvania, United States," but don't worry, because it will show the real location once it's live.
