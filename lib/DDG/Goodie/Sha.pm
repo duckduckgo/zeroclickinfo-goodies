@@ -43,7 +43,7 @@ handle query => sub {
 		    $str = $command2 eq 'base64' ? Digest::SHA::sha1_base64($str) : Digest::SHA::sha1_hex($str);
 		}
 
-		return qq($str (SHA-$command1 hash));
+		return $str, heading => "SHA-$command1 hash";
 	}
 
 	return;
