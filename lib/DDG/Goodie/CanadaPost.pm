@@ -67,8 +67,6 @@ handle query_nowhitespace_nodash => sub {
         }
     }
 
-    warn "$is_capost";
-
     # Only exclusive results right now for CA Post.
     if ($is_capost == 2) {
         return heading => 'Canada Post Shipment Tracking', html => qq(Track this shipment at <a href="http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=$package_number">Canada Post</a>.);
