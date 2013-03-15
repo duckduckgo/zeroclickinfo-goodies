@@ -23,7 +23,7 @@ my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
 triggers query_nowhitespace_nodash => qr/^
                                          $usps_qr.*?([\d]{9,})\s*$|
                                          ^([\d]{9,}).*?$usps_qr$|
-                                         ^([a-z]{2}\d{9}us)$|
+                                         ^$usps_qr?([a-z]{2}\d{9}us)$usps_qr?$|
                                          ^(?:$tracking_qr|$usps_qr|)*([\d]{20,30})(?:$tracking_qr|$usps_qr|)*$
                                         /xio;
 
