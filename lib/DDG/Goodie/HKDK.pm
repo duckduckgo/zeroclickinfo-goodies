@@ -16,7 +16,7 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
-triggers query_nowhitespace_nodash => qr/^([a-z]{2}\d{9}(?:hk|dk))$/xi;
+triggers query_nowhitespace_nodash => qr/([a-z]{2}\d{9}(?:hk|dk))/i;
 
 handle query_nowhitespace_nodash => sub {
     my $package_number = $1;
