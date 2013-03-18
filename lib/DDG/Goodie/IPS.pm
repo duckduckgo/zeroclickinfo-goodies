@@ -5,7 +5,17 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "ips";
 
-triggers query_nowhitespace_nodash => qr/^(E[MA]\d{9})(IN|HR|)$/xi;
+primary_example_queries 'EM999999999IN';
+description 'Track a package from IPS';
+name 'IPS';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IPS.pm';
+category 'ids';
+topics 'special_interest';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+
+triggers query_nowhitespace_nodash => qr/(E[MA]\d{9})(IN|HR|)/xi;
 
 handle query_nowhitespace_nodash => sub {
     my $package_number = $1 . $2;
