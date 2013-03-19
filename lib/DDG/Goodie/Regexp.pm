@@ -34,7 +34,8 @@ handle query => sub {
 		@results = $str =~ compile_re($regexp, $compiler);
     };
 
-    return join( ' | ', @results ), heading => 'Regexp Result';
+    return join( ' | ', @results ), heading => 'Regexp Result' if @results;
+    return;
 };
 
 1;
