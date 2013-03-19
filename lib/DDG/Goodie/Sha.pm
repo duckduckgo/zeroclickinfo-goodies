@@ -3,6 +3,21 @@ package DDG::Goodie::Sha;
 use DDG::Goodie;
 use Digest::SHA;
 
+zci is_cached => 1;
+zci answer_type => "sha";
+
+primary_example_queries 'sha lalalala';
+secondary_example_queries 'sha512 that';
+description 'SHA hash cryptography';
+name 'SHA';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Sha.pm';
+category 'calculations';
+topics 'math';
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
+            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+
+
 triggers query_lc => qr/^sha(1|224|256|384|512|)(?:sum|) (hex|base64|)\s*(.*)$/i;
 
 handle query => sub {
@@ -28,7 +43,7 @@ handle query => sub {
 		    $str = $command2 eq 'base64' ? Digest::SHA::sha1_base64($str) : Digest::SHA::sha1_hex($str);
 		}
 
-		return qq($str (SHA-$command1 hash));
+		return $str, heading => "SHA-$command1 hash";
 	}
 
 	return;
