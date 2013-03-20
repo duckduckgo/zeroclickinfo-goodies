@@ -13,7 +13,7 @@ category 'random';
 topics 'words_and_games';
 attribution github => ['https://github.com/frncscgmz', 'frncscgmz'];
 
-zci is_cached => 1;
+zci is_cached => 0;
 zci answer_type => "fortune";
 
 handle remainder => sub {
