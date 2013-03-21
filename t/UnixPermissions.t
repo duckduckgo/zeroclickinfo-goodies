@@ -20,7 +20,7 @@ More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_p
 
     html => '755 (octal)<br>rwxr-xr-x (symbolic)<br>User: Read, write and execute<br>Group: Read and execute<br>Others: Read and execute<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>',
 
-    heading => 'Unix Permissions'),
+    heading => 'chmod 755 (Unix Permissions)'),
 
     'permission 0644' => test_zci(
 '644 (octal)
@@ -32,7 +32,7 @@ More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_p
 
     html => '644 (octal)<br>rw-r--r-- (symbolic)<br>User: Read and write<br>Group: Read<br>Others: Read<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>',
 
-    heading => 'Unix Permissions')
+    heading => 'permission 0644 (Unix Permissions)')
 );
 
 done_testing;

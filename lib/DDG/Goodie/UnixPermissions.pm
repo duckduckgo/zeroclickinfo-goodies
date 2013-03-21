@@ -16,9 +16,9 @@ attribution github => ['https://github.com/koosha--', 'koosha--'],
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UnixPermissions.pm';
 category 'computing_tools';
 
-handle remainder => sub {
-    s/^\s+//;
-    s/\s+$//;
+handle query => sub {
+    my $query = $_;
+    s/\s*(chmod|permissions?)\s*//g;
     return unless /^(?:0|1|2|4)?([0-7]{3})$/;
 
     my @modes_desc = (
@@ -44,7 +44,7 @@ handle remainder => sub {
     $plain_output .= 'More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions';
     $html_output  .= 'More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>';
 
-    return $plain_output, html => $html_output, heading => "Unix Permissions";
+    return $plain_output, html => $html_output, heading => "$query (Unix Permissions)";
 };
 
 1;
