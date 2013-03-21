@@ -42,7 +42,7 @@ handle query => sub {
     (my $html_output = $plain_output) =~ s/\n/<br>/g;
 
     $plain_output .= 'More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions';
-    $html_output  .= 'More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>';
+    $html_output  .= 'More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">Wikipedia (notation of traditional Unix permissions)</a>';
 
     return $plain_output, html => $html_output, heading => "$query (Unix Permissions)";
 };
