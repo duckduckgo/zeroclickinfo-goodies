@@ -34,16 +34,17 @@ handle remainder => sub {
 
     my @digits = split '', $1;
     my @modes = qw(--- --x -w- -wx r-- r-x rw- rwx);
-    my $plain_output = join('', map($modes[$_], @digits))   . "\n" .
+    my $plain_output  = "$1 (octal)\n";
+       $plain_output .= join('', map($modes[$_], @digits))   . " (symbolic)\n" .
                        'User: '   . $modes_desc[$digits[0]] . "\n" .
                        'Group: '  . $modes_desc[$digits[1]] . "\n" .
                        'Others: ' . $modes_desc[$digits[2]] . "\n";
     (my $html_output = $plain_output) =~ s/\n/<br>/g;
 
-    $plain_output .= 'Find out more on this: https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions';
-    $html_output  .= 'Find out more on this: <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>';
+    $plain_output .= 'More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions';
+    $html_output  .= 'More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>';
 
-    return $plain_output, html => $html_output;
+    return $plain_output, html => $html_output, heading => "Unix Permissions";
 };
 
 1;

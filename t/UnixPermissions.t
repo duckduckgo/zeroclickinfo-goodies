@@ -11,21 +11,28 @@ ddg_goodie_test(
         DDG::Goodie::UnixPermissions
     )],
     'chmod 755' => test_zci(
-'rwxr-xr-x
+'755 (octal)
+rwxr-xr-x (symbolic)
 User: Read, write and execute
 Group: Read and execute
 Others: Read and execute
-Find out more on this: https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
-        html =>
-        'rwxr-xr-x<br>User: Read, write and execute<br>Group: Read and execute<br>Others: Read and execute<br>Find out more on this: <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>'),
+More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
+
+    html => '755 (octal)<br>rwxr-xr-x (symbolic)<br>User: Read, write and execute<br>Group: Read and execute<br>Others: Read and execute<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>',
+
+    heading => 'Unix Permissions'),
+
     'permission 0644' => test_zci(
-'rw-r--r--
+'644 (octal)
+rw-r--r-- (symbolic)
 User: Read and write
 Group: Read
 Others: Read
-Find out more on this: https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
-        html =>
-        'rw-r--r--<br>User: Read and write<br>Group: Read<br>Others: Read<br>Find out more on this: <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>')
+More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
+
+    html => '644 (octal)<br>rw-r--r-- (symbolic)<br>User: Read and write<br>Group: Read<br>Others: Read<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions</a>',
+
+    heading => 'Unix Permissions')
 );
 
 done_testing;
