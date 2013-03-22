@@ -13,24 +13,24 @@ ddg_goodie_test(
     'chmod 755' => test_zci(
 '755 (octal)
 rwxr-xr-x (symbolic)
-User: Read, write and execute
-Group: Read and execute
-Others: Read and execute
+User: read, write and execute
+Group: read and execute
+Others: read and execute
 More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
 
-    html => '755 (octal)<br>rwxr-xr-x (symbolic)<br>User: Read, write and execute<br>Group: Read and execute<br>Others: Read and execute<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">Wikipedia (notation of traditional Unix permissions)</a>',
+    html => '755 (octal)<br>rwxr-xr-x (symbolic)<br>User: read, write and execute<br>Group: read and execute<br>Others: read and execute<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">Wikipedia (notation of traditional Unix permissions)</a>',
 
     heading => 'chmod 755 (Unix Permissions)'),
 
     'permission 0644' => test_zci(
 '644 (octal)
 rw-r--r-- (symbolic)
-User: Read and write
-Group: Read
-Others: Read
+User: read and write
+Group: read
+Others: read
 More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
 
-    html => '644 (octal)<br>rw-r--r-- (symbolic)<br>User: Read and write<br>Group: Read<br>Others: Read<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">Wikipedia (notation of traditional Unix permissions)</a>',
+    html => '644 (octal)<br>rw-r--r-- (symbolic)<br>User: read and write<br>Group: read<br>Others: read<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">Wikipedia (notation of traditional Unix permissions)</a>',
 
     heading => 'permission 0644 (Unix Permissions)')
 );

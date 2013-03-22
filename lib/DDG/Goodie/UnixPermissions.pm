@@ -22,14 +22,14 @@ handle query => sub {
     return unless /^(?:0|1|2|4)?([0-7]{3})$/;
 
     my @modes_desc = (
-        'No permission',
-        'Execute',
-        'Write',
-        'Write and execute',
-        'Read',
-        'Read and execute',
-        'Read and write',
-        'Read, write and execute'
+        'no permission',
+        'execute',
+        'write',
+        'write and execute',
+        'read',
+        'read and execute',
+        'read and write',
+        'read, write and execute'
     );
 
     my @digits = split '', $1;
