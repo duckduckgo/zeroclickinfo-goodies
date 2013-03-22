@@ -8,6 +8,7 @@ zci answer_type => "ups";
 primary_example_queries '1Z0884XV0399906189';
 secondary_example_queries 'ups 1Z0884XV0399906189';
 description 'Track a UPS package';
+icon_url "/i/www.ups.com.ico";
 name 'UPS';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UPS.pm';
 category 'ids';
