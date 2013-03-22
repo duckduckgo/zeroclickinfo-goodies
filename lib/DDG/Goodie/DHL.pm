@@ -9,6 +9,7 @@ primary_example_queries 'DHL 123456789';
 secondary_example_queries 'tracking 1234567891';
 description 'Track a package from DHL';
 name 'DHL';
+icon_url "/i/www.dhl.com.ico";
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DHL.pm';
 category 'ids';
 topics 'special_interest';
