@@ -6,8 +6,8 @@ use Digest::SHA;
 zci is_cached => 1;
 zci answer_type => "sha";
 
-primary_example_queries 'sha lalalala';
-secondary_example_queries 'sha512 that';
+primary_example_queries 'SHA this';
+secondary_example_queries 'sha-512 that', 'sha512sum dim-dims';
 description 'SHA hash cryptography';
 name 'SHA';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Sha.pm';
@@ -18,7 +18,7 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 
-triggers query_lc => qr/^sha(1|224|256|384|512|)(?:sum|) (hex|base64|)\s*(.*)$/i;
+triggers query_lc => qr/^sha\-?(1|224|256|384|512|)(?:sum|) (hex|base64|)\s*(.*)$/i;
 
 handle query => sub {
 	my $command1 = $1 || '';
