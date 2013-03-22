@@ -18,8 +18,13 @@ category 'computing_tools';
 
 handle query => sub {
     my $query = $_;
+
     s/\s*(chmod|permissions?)\s*//g;
-    return unless /^(?:0|1|2|4)?([0-7]{3})$/;
+    return unless /^(0|1|2|4|6|7)?([0-7]{3})$/;
+
+    my $plain_output;
+
+    my @modes = qw(--- --x -w- -wx r-- r-x rw- rwx);
 
     my @modes_desc = (
         'no permission',
@@ -32,13 +37,51 @@ handle query => sub {
         'read, write and execute'
     );
 
-    my $octal = $1;
-    my @digits = split '', $octal;
-    my @modes = qw(--- --x -w- -wx r-- r-x rw- rwx);
-    my $plain_output .= join('', map($modes[$_], @digits))   . " (symbolic)\n" .
-                       'User: '   . $modes_desc[$digits[0]] . "\n" .
-                       'Group: '  . $modes_desc[$digits[1]] . "\n" .
-                       'Others: ' . $modes_desc[$digits[2]] . "\n";
+    my %attributes = (
+        0 => 'no special attributes',
+        1 => 'sticky',
+        2 => 'setuid',
+        3 => 'setuid and sticky',
+        4 => 'setgid',
+        5 => 'setgid and sticky',
+        6 => 'setuid and setgid',
+        7 => 'sticky, setuid and setgid',
+    );
+
+    my $attributes = ($1 ? $1 : '');
+    my $octal = $2;
+
+    my @digits = split '', $2;
+
+    my $symbolic = join '', map { $modes[$_] } @digits;
+
+    if ($attributes ne '') {
+        $octal = "$attributes$octal";
+        $plain_output = "Attributes: $attributes{$1}\n";
+        my @symbolic = split '', $symbolic;
+        if ($attributes >= 4) {
+            $attributes -= 4;
+            if ($symbolic[5] eq 'x') { $symbolic[5] = 's'; }
+            else { $symbolic[5] = 'S'; }
+        }
+        if ($attributes >= 2) {
+            $attributes -= 2;
+            if ($symbolic[2] eq 'x') { $symbolic[2] = 's'; }
+            else { $symbolic[2] = 'S'; }
+        }
+        if ($attributes >= 1) {
+            $attributes -= 1;
+            if ($symbolic[8] eq 'x') { $symbolic[2] = 't'; }
+            else { $symbolic[8] = 'T'; }
+        }
+        $symbolic = join '', @symbolic;
+    }
+
+    $plain_output = "$symbolic (symbolic)\n" .
+                    'User: '   . $modes_desc[$digits[0]] . "\n" .
+                    'Group: '  . $modes_desc[$digits[1]] . "\n" .
+                    'Others: ' . $modes_desc[$digits[2]] . "\n" .
+                    ($plain_output ? $plain_output : '');
     (my $html_output = $plain_output) =~ s/\n/<br>/g;
 
     $plain_output  = "$octal (octal)\n$plain_output" . 'More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions';

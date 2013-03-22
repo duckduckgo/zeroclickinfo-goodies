@@ -18,9 +18,10 @@ Group: read and execute
 Others: read and execute
 More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
 
-    html => 'rwxr-xr-x (symbolic)<br>User: read, write and execute<br>Group: read and execute<br>Others: read and execute<br><a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>',
+        html => 'rwxr-xr-x (symbolic)<br>User: read, write and execute<br>Group: read and execute<br>Others: read and execute<br><a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>',
 
-    heading => 'chmod 755 (Unix Permissions)'),
+        heading => 'chmod 755 (Unix Permissions)'
+    ),
 
     'permission 0644' => test_zci(
 '644 (octal)
@@ -30,9 +31,25 @@ Group: read
 Others: read
 More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
 
-    html => 'rw-r--r-- (symbolic)<br>User: read and write<br>Group: read<br>Others: read<br><a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>',
+        html => 'rw-r--r-- (symbolic)<br>User: read and write<br>Group: read<br>Others: read<br><a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>',
 
-    heading => 'permission 0644 (Unix Permissions)')
+        heading => 'permission 0644 (Unix Permissions)'
+    ),
+
+    'permission 7644' => test_zci(
+'7644 (octal)
+rwSr-Sr-T (symbolic)
+User: read and write
+Group: read
+Others: read
+Attributes: sticky, setuid and setgid
+More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
+
+        html => 'rwSr-Sr-T (symbolic)<br>User: read and write<br>Group: read<br>Others: read<br>Attributes: sticky, setuid and setgid<br><a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>',
+
+        heading => 'permission 7644 (Unix Permissions)'
+    ),
+
+    'permission 9644' => undef,
 );
-
 done_testing;
