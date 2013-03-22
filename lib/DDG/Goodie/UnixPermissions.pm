@@ -32,17 +32,17 @@ handle query => sub {
         'read, write and execute'
     );
 
-    my @digits = split '', $1;
+    my $octal = $1;
+    my @digits = split '', $octal;
     my @modes = qw(--- --x -w- -wx r-- r-x rw- rwx);
-    my $plain_output  = "$1 (octal)\n";
-       $plain_output .= join('', map($modes[$_], @digits))   . " (symbolic)\n" .
+    my $plain_output .= join('', map($modes[$_], @digits))   . " (symbolic)\n" .
                        'User: '   . $modes_desc[$digits[0]] . "\n" .
                        'Group: '  . $modes_desc[$digits[1]] . "\n" .
                        'Others: ' . $modes_desc[$digits[2]] . "\n";
     (my $html_output = $plain_output) =~ s/\n/<br>/g;
 
-    $plain_output .= 'More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions';
-    $html_output  .= 'More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">Wikipedia (notation of traditional Unix permissions)</a>';
+    $plain_output  = "$octal (octal)\n$plain_output" . 'More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions';
+    $html_output  .= '<a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>';
 
     return $plain_output, html => $html_output, heading => "$query (Unix Permissions)";
 };

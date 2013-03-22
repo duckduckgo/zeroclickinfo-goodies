@@ -18,7 +18,7 @@ Group: read and execute
 Others: read and execute
 More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
 
-    html => '755 (octal)<br>rwxr-xr-x (symbolic)<br>User: read, write and execute<br>Group: read and execute<br>Others: read and execute<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">Wikipedia (notation of traditional Unix permissions)</a>',
+    html => 'rwxr-xr-x (symbolic)<br>User: read, write and execute<br>Group: read and execute<br>Others: read and execute<br><a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>',
 
     heading => 'chmod 755 (Unix Permissions)'),
 
@@ -30,7 +30,7 @@ Group: read
 Others: read
 More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions',
 
-    html => '644 (octal)<br>rw-r--r-- (symbolic)<br>User: read and write<br>Group: read<br>Others: read<br>More at <a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">Wikipedia (notation of traditional Unix permissions)</a>',
+    html => 'rw-r--r-- (symbolic)<br>User: read and write<br>Group: read<br>Others: read<br><a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>',
 
     heading => 'permission 0644 (Unix Permissions)')
 );
