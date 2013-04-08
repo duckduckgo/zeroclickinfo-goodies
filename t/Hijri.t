@@ -6,7 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 use Date::Hijri;
 
-zci answer_type => 'date';
+zci answer_type => 'conversion';
 zci is_cached => 0;
 
 ddg_goodie_test(
