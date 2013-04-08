@@ -4,6 +4,14 @@ package DDG::Goodie::Braille;
 use DDG::Goodie;
 use utf8;
 
+attribution github => ['https://github.com/teamnigel', 'teamnigel'];
+primary_example_queries 'braille DuckDuckGo is awesome!';
+description 'Changes a text string into Unicode Braille';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Braille.pm';
+name 'Braille';
+category 'words_and_games';
+topics 'language';
+
 triggers start => 'braille';
 
 zci is_cached => 1;
@@ -31,7 +39,7 @@ handle remainder => sub {
 			if ($curChar eq '/') { $result .= "⠌"; }
 			if ($curChar eq '-') { $result .= "⠤"; }
 			if ($curChar eq '—') { $result .= "⠤⠤⠤"; }
-			if ((uc $curChar eq $curChar) && ($curChar =~ /[A-Z]/)) { $result .= "⠠"; }
+			if (uc $curChar eq $curChar ) { $result .= "⠠"; }
 			if (uc $curChar eq "A") { $result .= "⠁"; }
 			if (uc $curChar eq "B") { $result .= "⠃"; }
 			if (uc $curChar eq "C") { $result .= "⠉"; }
