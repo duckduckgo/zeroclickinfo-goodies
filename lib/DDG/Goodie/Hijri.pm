@@ -3,7 +3,15 @@ package DDG::Goodie::Hijri;
 use DDG::Goodie;
 use Date::Hijri;
 
-zci answer_type => "date";
+zci answer_type => "conversion";
+primary_example_queries '22/8/2003 to the hijri calendar';
+secondary_example_queries '23/6/1424 to gregorian';
+description 'convert dates from the Gregorian calendar to the Hijri calendar and back';
+name 'Hijri';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Hijri.pm';
+category 'dates';
+topics 'special_interest';
+attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
 
 triggers any => 'hijri', 'gregorian';
 
