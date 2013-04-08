@@ -19,6 +19,12 @@ ddg_goodie_test(
       . 'is 23/6/1424 on the '
       . '<a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>'
     ),
+	'22/8/2003 to the hijri calendar' => test_zci(
+        '22/8/2003 on the '
+      . '<a href = "https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a> '
+      . 'is 23/6/1424 on the '
+      . '<a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>'
+    ),
     '22,8,2003 to hijri' => test_zci(
         '22/8/2003 on the '
       . '<a href = "https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a> '
