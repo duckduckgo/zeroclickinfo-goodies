@@ -126,7 +126,7 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
                  "      R/r means rook\n" .
                  "      P/p means pawn";
     my $position_lc = lc $position;
-    my $html = "<img src='http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0&w=8&h=8'/>";
+    my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0&w=8&h=8'/>";
 
     return $output, html => $html, heading => "Chess960 Random Starting Position";
 };
