@@ -4,7 +4,7 @@ use strict;
 
 use DDG::Goodie;
 
-triggers any => 'chess', 'chess960';
+triggers any => 'random', 'chess960';
 zci is_cached => 0;
 zci answer_type => 'chess960_position';
 
@@ -14,7 +14,10 @@ attribution github  => 'https://github.com/koosha--',
             twitter => 'https://twitter.com/_koosha_';
 
 handle query => sub {
-
+    my $query = $_;
+    my $pos = undef;
+    return unless ($query =~ /\bchess960\b/i && 
+            ($query =~ /\brandom\b/i || (($pos) = $query =~ /\b(\d+)\b/))) ;
     my @all_positions = qw(
 BBQNNRKR BQNBNRKR BQNNRBKR BQNNRKRB QBBNNRKR QNBBNRKR QNBNRBKR QNBNRKRB QBNNBRKR QNNBBRKR
 QNNRBBKR QNNRBKRB QBNNRKBR QNNBRKBR QNNRKBBR QNNRKRBB BBNQNRKR BNQBNRKR BNQNRBKR BNQNRKRB
@@ -114,7 +117,10 @@ RBKRNQBN RKRBNQBN RKRNQBBN RKRNQNBB BBRKRNNQ BRKBRNNQ BRKRNBNQ BRKRNNQB RBBKRNNQ
 RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ RKRNNQBB
 );
 
-    my $position = $all_positions[int rand @all_positions];
+    my $position = ($pos && 1 <= $pos && $pos <= 960) ? 
+                    $all_positions[$pos - 1] : 
+                    $all_positions[int rand @all_positions];
+
     my $output = "White: " . join(" ", split("", $position)) . "\n" .
                  "       " . "P " x 7 . "P\n" .
                  "Black: " . join(" ", split("", lc $position)) . "\n" .
@@ -128,7 +134,7 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
     my $position_lc = lc $position;
     my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0&w=8&h=8'/>";
 
-    return $output, html => $html, heading => "Chess960 Random Starting Position";
+    return $output, html => $html, heading => "$query (Chess960 Starting Position)";
 };
 
 1;
