@@ -3,6 +3,8 @@ DuckDuckHack Goodies
 This documentation walks you through the process of writing a DuckDuckHack Goodie plugin.
 Before reading this section, make sure you've read the [DuckDuckHack Intro Site](http://duckduckhack.com) and the [DuckDuckHack Developer's Overview](https://github.com/duckduckgo/duckduckgo/blob/master/README.md). If you're here to brush up on Goodie info, scroll down. If you're here to learn how to write Goodie Plugins, check out the [Goodies Overview](https://github.com/duckduckgo/duckduckgo#goodies-overview).
 
+### Example
+![morse code example](https://s3.amazonaws.com/ddg-assets/docs/goodie_example.png)
 
 ## Advanced Goodies
 These advanced handle techniques are specific to Goodie plugins:
