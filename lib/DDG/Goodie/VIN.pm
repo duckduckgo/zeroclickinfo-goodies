@@ -92,15 +92,13 @@ handle query_nowhitespace_nodash => sub {
 
     # Exclsuive trigger.
     if ($query =~ /^$vin_qr.*?([A-Z\d]{17,})$/i || $query =~ /^([A-Z\d]{17,}).*?$vin_qr$/i) {
-
-        #   warn "test\n";
         $vin_number = uc $1;
         $is_vin     = 2;
 
     # No exclusive trigger, do checksum.
     # Since the vin numbers are just numbers,
     # we are more strict in regex (e.g. than UPS).
-    } elsif($query =~ /^(?:$tracking_qr|$vin_qr|)*([A-Z\d]{17}?)(?:$tracking_qr|$vin_qr|)*$/io || $query =~ /(?:$tracking_qr|$vin_qr|)*([A-Z\d]{17})(?:$tracking_qr|$vin_qr|)*$/io) {
+    } elsif($query =~ /^(?:$tracking_qr|$vin_qr|)*([A-Z\d]{17}?)(?:$tracking_qr|$vin_qr|)*$/io || $query =~ /^(?:$tracking_qr|$vin_qr|)*([A-Z\d]{17})(?:$tracking_qr|$vin_qr|)*$/io) {
         $vin_number = uc $1;
 
         my $checksum   = 0;
