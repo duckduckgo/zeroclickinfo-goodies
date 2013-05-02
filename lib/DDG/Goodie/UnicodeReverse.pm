@@ -18,8 +18,8 @@ secondary_example_queries "unicode 2665";
 name 'Reverse Unicode Search';
 description 'returns unicode symbols matching the input';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UnicodeReverse.pm';
-# category 'computing_tools';
-# topics 'programming';
+category 'computing_info';
+topics 'programming';
 
 handle remainder => sub {
     return unless $_;
