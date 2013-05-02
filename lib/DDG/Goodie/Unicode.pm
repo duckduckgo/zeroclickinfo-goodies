@@ -46,6 +46,7 @@ handle sub {
 
 sub codepoint_description {
     my $term = $_[0];
+    return unless $term;
 
     if ($term !~ m{([a-f0-9]+)}i) {
         return;
@@ -61,15 +62,15 @@ sub codepoint_description {
         my $s = $i{script};
         $s =~ tr/_/ /;
         if ($s ne 'Common' && $s ne 'Inherited' && $s  ne 'Unknown'
-                    && $i{name} !~ /$s/i) {
+            && $i{name} !~ /$s/i) {
             $extra{script} = $i{script};
         }
     }
     $extra{decimal} = $c;
     $extra{HTML}    = "&#$c;";
     $extra{'UTF-8'} = join ' ',
-                      map { sprintf '0x%02X', ord $_ }
-                      split //, encode_utf8(chr($c));
+    map { sprintf '0x%02X', ord $_ }
+    split //, encode_utf8(chr($c));
 
     if ($i{decomposition}) {
         ($extra{decomposition} = $i{decomposition}) =~ s/\b(?<!<)([0-9a-fA-F]{4,6})\b(?!>)/U+$1/g;
@@ -118,7 +119,7 @@ sub input_type ($) {
     }
 
     return ($input, $type);
-}
+                }
 
 sub name_to_char {
     my $name = $_[0];
