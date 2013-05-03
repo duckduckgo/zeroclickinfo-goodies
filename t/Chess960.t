@@ -26,7 +26,7 @@ Black: ([BKNQRP] ?){1,8}
 
     html => qr|<img src='/iu/\?u=http://www\.apronus\.com/chess/stilldiagram\.php\?d=[BKNQRPbknqrp]{0,16}PPPPPPPP________________________________pppppppp[bknqrpBKNQRP]{0,16}0&w=8&h=8'/>|,
 
-    heading => 'random chess960 position (Chess960 Starting Position)'
+    heading => 'random position (Chess960)'
     )
 );
 

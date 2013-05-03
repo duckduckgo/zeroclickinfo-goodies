@@ -134,7 +134,8 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
     my $position_lc = lc $position;
     my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0&w=8&h=8'/>";
 
-    return $output, html => $html, heading => "$query (Chess960 Starting Position)";
+    $query =~ s/^ chess960|chess960 $|chess960 //i;
+    return $output, html => $html, heading => "$query (Chess960)";
 };
 
 1;
