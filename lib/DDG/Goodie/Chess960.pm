@@ -123,14 +123,14 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
 
     my $output = "White: " . join(" ", split("", $position)) . "\n" .
                  "       " . "P " x 7 . "P\n" .
-                 "Black: " . join(" ", split("", lc $position)) . "\n" .
+                 "Black: " . join(" ", split("", $position)) . "\n" .
                  "       " . "p " x 7 . "p\n\n" .
-                 "Where B/b means bishop\n" .
-                 "      K/k means king\n" .
-                 "      N/n means knight\n" .
-                 "      Q/q means queen\n" .
-                 "      R/r means rook\n" .
-                 "      P/p means pawn";
+                 "(where B is for bishop,\n" .
+                 "       K is for king,\n" .
+                 "       N is for knight,\n" .
+                 "       Q is for queen,\n" .
+                 "       R is for rook, and\n" .
+                 "       P is for pawn)";
     my $position_lc = lc $position;
     my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0&w=8&h=8'/>";
 
