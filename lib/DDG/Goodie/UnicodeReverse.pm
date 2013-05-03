@@ -24,13 +24,11 @@ topics 'programming';
 handle remainder => sub {
     return unless $_;
 
-    my $pattern = uc join(' ', $_);
-    my @matches =
-        grep { /^[^;]*;?[^;]*$pattern/ }
-    split /\n/,
-    share("UnicodeData.txt")->slurp;
+    my $pattern = uc join('.*', $_);
+    my @lines = split /\n/, share("UnicodeData.txt")->slurp;
+    my @matches = grep { /^[^;]*;?[^;]*$pattern/ } @lines;
 
-    return unless (scalar @matches > 0 && scalar @matches < 15);
+    return unless (scalar @matches > 0 && scalar @matches < 50);
 
     @matches = map {
         (my $code, my $name) = split /;/;
