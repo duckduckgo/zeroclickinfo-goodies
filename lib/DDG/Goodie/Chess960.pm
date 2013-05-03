@@ -122,9 +122,9 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
                     $all_positions[int rand @all_positions];
 
     my $output = "White: " . join(" ", split("", $position)) . "\n" .
-                 "       " . "P " x 7 . "P\n" .
+                 "       " . "P " x 8 . "\n" .
                  "Black: " . join(" ", split("", $position)) . "\n" .
-                 "       " . "p " x 7 . "p\n\n" .
+                 "       " . "P " x 8 . "\n\n" .
                  "(where B is for bishop,\n" .
                  "       K is for king,\n" .
                  "       N is for knight,\n" .
