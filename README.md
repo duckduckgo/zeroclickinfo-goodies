@@ -10,7 +10,7 @@ Before reading this section, make sure you've read the [DuckDuckHack Intro Site]
 
 Every goodie includes a test file in the `t` directory. For example, the **RouterPasswords** goodie uses the the test file `t/RouterPasswords.t`. This test file includes sample queries and answers, and is run automatically before every release to ensure that all goodies are triggering properly with correct answers. The test file is a Perl program that uses the Perl packages `DDG::Test::Goodie` and `Test::More` to function. Here's an annotated excerpt from `t/RouterPasswords.t` that you can use as a base:
 
-```
+```perl
 #!/usr/bin/env perl
 
 use strict;
