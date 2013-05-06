@@ -16,23 +16,22 @@ topics 'special_interest', 'entertainment';
 category 'random';
 attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
 
+my %birthstones = ( 
+	"january" => "Garnet",
+	"february" => "Amethyst",
+	"march" => "Aquamarine",
+	"april" => "Diamond",
+	"may" => "Emerald",
+	"june" => "Pearl",
+	"july" => "Ruby",
+	"august" => "Peridot",
+	"september" => "Sapphire",
+	"october" => "Opal",
+	"november" => "Topaz",
+	"december" => "Turquoise"
+);
+
 handle remainder => sub {
-
-	my %birthstones = ( 
-		"january" => "Garnet",
-		"february" => "Amethyst",
-		"march" => "Aquamarine",
-		"april" => "Diamond",
-		"may" => "Emerald",
-		"june" => "Pearl",
-		"july" => "Ruby",
-		"august" => "Peridot",
-		"september" => "Sapphire",
-		"october" => "Opal",
-		"november" => "Topaz",
-		"december" => "Turquoise"
-	);
-
 	my $stone;
 	my $month = lc($_);
 	$stone = $birthstones{$month};
