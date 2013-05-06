@@ -1,17 +1,15 @@
 package DDG::Goodie::BirthStone;
 #Returns the birthstone of the queried month
 
-#Written by Austin Heimark
-
 use DDG::Goodie;
-use Switch;
 
 triggers startend => 'birthstone', 'birth stone';
 
+zci answer_type => "BirthStone";
 zci is_cached => 1;
 
 primary_example_queries 'birthstone april';
-primary_example_queries 'may birth stone';
+secondary_example_queries 'may birth stone';
 description 'returns the birth stone of the specified month';
 name 'BirthStone';
 topics 'special_interest', 'entertainment';
@@ -19,27 +17,31 @@ category 'random';
 attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
 
 handle remainder => sub {
+
+	my %birthstones = ( 
+		"january" => "Garnet",
+		"february" => "Amethyst",
+		"march" => "Aquamarine",
+		"april" => "Diamond",
+		"may" => "Emerald",
+		"june" => "Pearl",
+		"july" => "Ruby",
+		"august" => "Peridot",
+		"september" => "Sapphire",
+		"october" => "Opal",
+		"november" => "Topaz",
+		"december" => "Turquoise"
+	);
+
 	my $stone;
 	my $month = lc($_);
+	$stone = $birthstones{$month};
 
-	switch ($month)
-	{
-		case('january') {$stone = "Garnet";}
-		case('february') {$stone = "Amethyst";}
-		case('march') {$stone = "Aquamarine";}
-		case('april') {$stone = "Diamond";}
-		case('may') {$stone = "Emerald";}
-		case('june') {$stone = "Pearl";}
-		case('july') {$stone = "Ruby";}
-		case('august') {$stone = "Peridot";}
-		case('september') {$stone = "Sapphire";}
-		case('october')	{$stone = "Opal";}
-		case('november') {$stone = "Topaz";}
-		case('december') {$stone = "Turquoise";}
-		else {return;}
+	if ($stone) {
+		return ucfirst($month) . " birthstone: " . $stone;
+	} else { 
+		return;
 	}
-
-	return ucfirst($month) . " birthstone: " . $stone;
 };
 
 1;
