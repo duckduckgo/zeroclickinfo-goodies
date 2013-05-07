@@ -1,4 +1,4 @@
-package DDG::Goodie::UnicodeReverse;
+package DDG::Goodie::UnicodeFuzzySearch;
 # ABSTRACT: returns unicode symbols matching the input
 
 use DDG::Goodie;
@@ -6,7 +6,6 @@ use DDG::Goodie;
 triggers startend => "unicode";
 
 zci is_cached => 1;
-# zci answer_type => "convert_to_ascii";
 
 attribution
     github => "konr",
@@ -23,10 +22,22 @@ topics 'programming';
 
 handle remainder => sub {
     return unless $_;
-
     my $pattern = uc join('.*', $_);
+
+    # UnicodeData.txt is a semicolon-separated file.
+    # Uploaded file version: 6.3.0, obtained from
+    # ftp://ftp.unicode.org/Public/6.3.0/ucd/
     my @lines = split /\n/, share("UnicodeData.txt")->slurp;
-    my @matches = grep { /^[^;]*;?[^;]*$pattern/ } @lines;
+
+    # 1st column = number ; 2nd column = name. See
+    # http://www.unicode.org/draft/ucd/UnicodeData.html
+    my @matches;
+
+    # AS FUZZY AS POSSIBLE BUT NOT MORE - It's either (a) number (no ';'
+    # before) or (b) part of the name or, when there are way too many
+    # matches for the result to be helpful, (c) isolated words.
+    @matches = grep { /^[^;]*;?[^;]*$pattern/ } @lines;
+    @matches = grep { /\b$pattern\b/ } @lines if (scalar @matches >= 50);
 
     return unless (scalar @matches > 0 && scalar @matches < 50);
 
@@ -36,7 +47,6 @@ handle remainder => sub {
          code => $code,
          name => $name};
     } @matches;
-
 
     my @results = map {sprintf('%s: %s (U+%s)', @{$_}{qw/name symbol code/})} @matches;
 
