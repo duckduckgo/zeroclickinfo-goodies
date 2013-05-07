@@ -1,5 +1,4 @@
 #!/usr/bin/env perl
-#use encoding "utf8";
 
 use strict;
 use warnings;
