@@ -19,7 +19,7 @@ zci answer_type => "minecraft skin";
 
 handle remainder => sub {
 	return if ($_ =~ m/[^a-zA-Z0-9]/);
-	return html => '<img src="https://minotar.net/avatar/' . $_ . '/64.png"> <img src="https://minotar.net/skin/' . $_ . '">';
+	return $_, html => '<img src="https://minotar.net/avatar/' . $_ . '/64.png"> <img src="https://minotar.net/skin/' . $_ . '">';
 	return;
 };
 
