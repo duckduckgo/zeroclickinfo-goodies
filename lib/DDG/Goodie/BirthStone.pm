@@ -32,15 +32,10 @@ my %birthstones = (
 );
 
 handle remainder => sub {
-	my $stone;
-	my $month = lc($_);
-	$stone = $birthstones{$month};
-
-	if ($stone) {
-		return ucfirst($month) . " birthstone: " . $stone;
-	} else { 
-		return;
-	}
+	my $month = lc $_;
+	my $stone = $birthstones{$month};
+	return ucfirst $month . " birthstone: $stone" if $stone;
+	return;
 };
 
 1;
