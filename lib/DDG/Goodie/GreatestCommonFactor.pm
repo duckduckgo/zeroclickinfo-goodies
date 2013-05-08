@@ -24,7 +24,6 @@ handle remainder => sub {
 	}
 
 	return 'Greatest common factor of ' . $1 . ' and ' . $2 . ' is ' . gcf($1,$2) if
-	($_ =~ /^(\d+)\s(\d+)$/);
 	return;
 }
 	
