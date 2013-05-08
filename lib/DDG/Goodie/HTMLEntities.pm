@@ -32,6 +32,10 @@ handle matches => sub {
     if( $$info{name} eq '<control>' ) {
         $decoded_html = "<a href='https://en.wikipedia.org/wiki/Unicode_control_characters'>Unicode control character</a> (no visual representation)";
         $decoded = "Unicode control character (no visual representation)";
+    } 
+    elsif(substr($$info{category},0,1) eq 'C') {
+        $decoded = "Special character (no visual representation)";
+        $decoded_html = "Special character (no visual representation)";
     }
     
 

@@ -66,7 +66,7 @@ sub codepoint_description {
         }
     }
     $extra{decimal} = $c;
-    $extra{HTML}    = "&#$c;";
+    $extra{HTML}    = substr($i{category},0,1) eq 'C' ? "No visual representation" : "&#$c;";
     $extra{'UTF-8'} = join ' ',
                       map { sprintf '0x%02X', ord $_ }
                       split //, encode_utf8(chr($c));

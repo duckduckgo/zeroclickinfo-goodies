@@ -1,0 +1,20 @@
+---
+before_install:
+  - export AUTOMATED_TESTING=1 HARNESS_OPTIONS=j10:c HARNESS_TIMER=1
+  - rm .travis.yml
+  - git config --global user.name "Dist Zilla Plugin TravisCI"
+  - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
+install:
+  - cpanm  --quiet  --notest --skip-satisfied Dist::Zilla
+  - "dzil authordeps | grep -vP '[^\\w:]' | xargs -n 5 -P 10 cpanm  --quiet   --notest  --skip-satisfied"
+  - "dzil listdeps | grep -vP '[^\\w:]' | cpanm  --quiet   --notest  --skip-satisfied"
+  - cpanm  --quiet   --notest  App::DuckPAN
+  - duckpan DDG
+language: perl
+perl:
+  - 5.16
+  - 5.14
+  - 5.12
+  - 5.10
+script:
+  - dzil smoke --release --author
