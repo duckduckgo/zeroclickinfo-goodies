@@ -23,10 +23,9 @@ handle remainder => sub {
 		return $x;	
 	}
 
-	if ($_ =~ /^(\d+)\s(\d+)$/) {
-		return 'Greatest common factor of ' . $1 . ' and ' . $2 . ': ' . gcf($1,$2);	
-	} else {
-		return;
+	return 'Greatest common factor of ' . $1 . ' and ' . $2 . ' is ' . gcf($1,$2) if
+	($_ =~ /^(\d+)\s(\d+)$/);
+	return;
 }
 	
 };
