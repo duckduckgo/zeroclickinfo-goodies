@@ -23,10 +23,8 @@ handle remainder => sub {
 		return $x;	
 	}
 
-	return 'Greatest common factor of ' . $1 . ' and ' . $2 . ' is ' . gcf($1,$2) if
-	return;
-}
-	
+	my $result = ' of ' . $1 . ' and ' . $2 . ' is ' . gcf($1,$2) . '.' if /^(\d+)\s(\d+)$/;
+	return html => qq(<a href="https://en.wikipedia.org/wiki/Greatest_common_factor">Greatest common factor</a>, $result) if $result; 	
 };
 
 1;
