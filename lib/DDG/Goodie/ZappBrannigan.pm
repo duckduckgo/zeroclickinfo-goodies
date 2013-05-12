@@ -16,9 +16,10 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'entertainment';
 topics 'entertainment';
 
+my @quotes = share('quotes.txt')->slurp;
+
 handle query => sub {
     return if $_ !~ m/quotes?/;
-    my @quotes = share('quotes.txt')->slurp;
     my $rand = int(rand(scalar(@quotes)));
     my $quote = $quotes[$rand];
     chomp $quote;
