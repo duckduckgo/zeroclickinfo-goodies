@@ -20,14 +20,14 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_info';
 topics 'programming';
 
+# UnicodeData.txt is a semicolon-separated file.
+# Uploaded file version: 6.3.0, obtained from
+# ftp://ftp.unicode.org/Public/6.3.0/ucd/
+my @lines = split /\n/, share("UnicodeData.txt")->slurp;
+
 handle remainder => sub {
     return unless $_;
     my $pattern = uc join('.*', $_);
-
-    # UnicodeData.txt is a semicolon-separated file.
-    # Uploaded file version: 6.3.0, obtained from
-    # ftp://ftp.unicode.org/Public/6.3.0/ucd/
-    my @lines = split /\n/, share("UnicodeData.txt")->slurp;
 
     # 1st column = number ; 2nd column = name. See
     # http://www.unicode.org/draft/ucd/UnicodeData.html
