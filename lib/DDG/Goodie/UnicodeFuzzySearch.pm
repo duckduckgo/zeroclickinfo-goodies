@@ -50,7 +50,10 @@ handle remainder => sub {
 
     my @results = map {sprintf('%s: %s (U+%s)', @{$_}{qw/name symbol code/})} @matches;
 
-    return join("\n", @results), html => join("<br>", @results);
+    my $html = scalar @results > 1 ?
+		'<ul>' . join('', map {"<li>$_</li>"} @results) . '</ul>' : $results[0];
+
+    return join("\n", @results), html => $html;
 
 };
 
