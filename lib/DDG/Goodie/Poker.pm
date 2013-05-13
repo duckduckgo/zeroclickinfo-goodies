@@ -58,14 +58,28 @@ my %probability = (
 	"high card" => "50.1",
 );
 
+my %webaddresses = (
+	"royal flush" => "Royal_flush",
+	"straight flush" => "Straight_flush",
+	"four of a kind" => "Four_of_a_kind",
+	"full house" => "Full_house",
+	"flush" => "Flush",
+	"straight" => "Straight",
+	"three of a kind" => "Three_of_a_kind",
+	"two pair" => "Two_pair",
+	"one pair" => "One_pair",
+	"no pair" => "High_card",
+	"high card" => "High_card",
+);
+
 handle remainder => sub {
 	#make sure the reuqested hand is listed
-	return unless /^(frequency|probability|odds)\s(.+)$/i && ($odds{lc($2)});
-
+	return unless /^(frequency|probability|odds)\s(.+)$/i && ($odds{lc$2});
 	my $hand = lc $2;
-	return "The odds of getting a $hand in poker are $odds{$hand} : 1." if lc($1) eq 'odds';
-	return "The frequency of a $hand in poker is $frequency{$hand} out of 2,598,960." if lc($1) eq 'frequency';
-	return "The probability of getting a $hand in poker is $probability{$hand}%." if lc($1) eq 'probability';
+
+	return "The odds of getting a $hand in poker are $odds{$hand} : 1.", html => qq(More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#$webaddresses{$hand}">Wikipedia</a>.) if lc($1) eq 'odds';
+	return "The frequency of a $hand in poker is $frequency{$hand} out of 2,598,960.", html => qq(More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#$webaddresses{$hand}">Wikipedia</a>.) if lc($1) eq 'frequency';
+	return "The probability of getting a $hand in poker is $probability{$hand}%.", html => qq(More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#$webaddresses{$hand}">Wikipedia</a>.) if lc($1) eq 'probability';
 
 	return;
 };
