@@ -116,7 +116,7 @@ handle query_nowhitespace => sub {
             $results_no_html = $results_html = $tmp_q;
 
             # Superscript (before spacing).
-            $results_html =~ s/\^\(([^\)]+)\)/<sup>$1<\/sup>/g;
+            $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
             $results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
 
             ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));

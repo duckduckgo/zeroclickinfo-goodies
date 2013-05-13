@@ -50,6 +50,16 @@ ddg_goodie_test(
             heading => 'Calculator',
             html => qq(<div>2<sup>dozen</sup> = <a href="javascript:;" onClick="document.x.q.value='4,096';document.x.q.focus();">4,096</a></div>)
         ),
+        '2^2' => test_zci(
+            "2 ^ 2 = 4",
+            heading => 'Calculator',
+            html => qq(<div>2<sup>2</sup> = <a href="javascript:;" onClick="document.x.q.value='4';document.x.q.focus();">4</a></div>)
+        ),
+        '2^0.2' => test_zci(
+            "2 ^ 0.2 = 1.14869835499704",
+            heading => 'Calculator',
+            html => qq(<div>2<sup>0.2</sup> = <a href="javascript:;" onClick="document.x.q.value='1.14869835499704';document.x.q.focus();">1.14869835499704</a></div>)
+        ),
 );
 
 done_testing;
