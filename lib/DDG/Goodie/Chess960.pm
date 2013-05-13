@@ -133,7 +133,7 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
                  "       R is for rook, and\n" .
                  "       P is for pawn)";
     my $position_lc = lc $position;
-    my $html = "<span>Position " . ($index + 1) . "</span><br><img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/>";
+    my $html = "<a href='https://en.wikipedia.org/wiki/Chess960_numbering_scheme'>Position " . ($index + 1) . "</a><br><img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/>";
 
     $query =~ s/^ chess960|chess960 $|chess960 //i;
     return $output, html => $html, heading => "$query (Chess960)";
