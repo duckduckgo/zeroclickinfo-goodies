@@ -16,9 +16,11 @@ triggers end => "public dns", "dns servers";
 zci is_cached => 1;
 zci answer_type => "public_dns";
 
+my $text = share('publicdns.txt')->slurp;
+my $html = share('publicdns.html')->slurp;
+
 handle sub {
-	scalar share('publicdns.txt')->slurp,
-	html => scalar share('publicdns.html')->slurp;
+    $text, html => $html;
 };
 
 1;
