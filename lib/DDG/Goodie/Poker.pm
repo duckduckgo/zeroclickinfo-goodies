@@ -62,9 +62,10 @@ handle remainder => sub {
 	#make sure the reuqested hand is listed
 	return unless /^(frequency|probability|odds)\s(.+)$/i && ($odds{lc($2)});
 
-	return "The odds of getting a $2 in poker are $odds{lc($2)} : 1." if lc($1) eq 'odds';
-	return "The frequency of a $2 in poker is $frequency{lc($2)} out of 2,598,960." if lc($1) eq 'frequency';
-	return "The probability of getting a $2 in poker is $probability{lc($2)}%." if lc($1) eq 'probability';
+	my $hand = lc $2;
+	return "The odds of getting a $hand in poker are $odds{$hand} : 1." if lc($1) eq 'odds';
+	return "The frequency of a $hand in poker is $frequency{$hand} out of 2,598,960." if lc($1) eq 'frequency';
+	return "The probability of getting a $hand in poker is $probability{$hand}%." if lc($1) eq 'probability';
 
 	return;
 };
