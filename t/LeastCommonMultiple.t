@@ -12,9 +12,10 @@ ddg_goodie_test(
     [qw(
 	DDG::Goodie::LeastCommonMultiple
     )],
-	'lcm 12 57' => test_zci('Least common multiple of 12 and 57: 228'),
-	'1000 100 least common multiple' => test_zci('Least common multiple of 1000 and 100: 1000'),
-	'LCM 19 22' => test_zci('Least common multiple of 19 and 22: 418'),
+	'lcm 12 57' => test_zci('Least common multiple of 12 and 57 is 228.', html => 'More at <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Wikipedia</a>.'),
+	'1000 100 least common multiple' => test_zci('Least common multiple of 1000 and 100 is 1000.', html => 'More at <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Wikipedia</a>.'),
+	'LCM 19 22' => test_zci('Least common multiple of 19 and 22 is 418.', html => 'More at <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Wikipedia</a>.'),
+
 );
 
 done_testing;

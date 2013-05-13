@@ -27,11 +27,8 @@ handle remainder => sub {
 		return($_[0] * $_[1] / gcf($_[0], $_[1]));
 	}
 
-	if ($_ =~ /^(\d+)\s(\d+)$/) {
-		return 'Least common multiple of ' . $1 . ' and ' . $2 . ': ' . lcm($1,$2);	
-	} else {
-		return;
-}
+	my $result = 'Least common multiple of ' . $1 . ' and ' . $2 . ' is ' . lcm($1,$2) . '.' if  /^(\d+)\s(\d+)$/;
+	return $result, html => qq(More at <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Wikipedia</a>.) if $result;
 
 };
 
