@@ -117,11 +117,12 @@ RBKRNQBN RKRBNQBN RKRNQBBN RKRNQNBB BBRKRNNQ BRKBRNNQ BRKRNBNQ BRKRNNQB RBBKRNNQ
 RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ RKRNNQBB
 );
 
-    my $position = ($pos && 1 <= $pos && $pos <= 960) ? 
-                    $all_positions[$pos - 1] : 
-                    $all_positions[int rand @all_positions];
+    my $index = ($pos && 1 <= $pos && $pos <= 960) ? $pos - 1 : int rand @all_positions;
 
-    my $output = "White: " . join(" ", split("", $position)) . "\n" .
+    my $position = $all_positions[$index];
+
+    my $output = "Position " . ($index + 1) . ":\n" .
+                 "White: " . join(" ", split("", $position)) . "\n" .
                  "       " . "P " x 8 . "\n" .
                  "Black: " . join(" ", split("", $position)) . "\n" .
                  "       " . "P " x 8 . "\n\n" .
@@ -132,7 +133,7 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
                  "       R is for rook, and\n" .
                  "       P is for pawn)";
     my $position_lc = lc $position;
-    my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/>";
+    my $html = "<a href='https://en.wikipedia.org/wiki/Chess960_numbering_scheme'>Position " . ($index + 1) . "</a><br><img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/>";
 
     $query =~ s/^ chess960|chess960 $|chess960 //i;
     return $output, html => $html, heading => "$query (Chess960)";
