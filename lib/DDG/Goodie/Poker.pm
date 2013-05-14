@@ -73,13 +73,25 @@ my %webaddresses = (
 );
 
 handle remainder => sub {
-	#make sure the reuqested hand is listed
+	#make sure the requested hand is listed
 	return unless /^(frequency|probability|odds)\s(.+)$/i && ($odds{lc$2});
-	my $hand = lc $2;
 
-	return "The odds of getting a $hand in poker are $odds{$hand} : 1.", html => qq(More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#$webaddresses{$hand}">Wikipedia</a>.) if lc($1) eq 'odds';
-	return "The frequency of a $hand in poker is $frequency{$hand} out of 2,598,960.", html => qq(More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#$webaddresses{$hand}">Wikipedia</a>.) if lc($1) eq 'frequency';
-	return "The probability of getting a $hand in poker is $probability{$hand}%.", html => qq(More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#$webaddresses{$hand}">Wikipedia</a>.) if lc($1) eq 'probability';
+    my $query = lc $1;
+	my $hand  = lc $2;
+
+    my $odds = "The odds of getting a $hand in poker are $odds{$hand} : 1.";
+    my $freq = "The frequency of a $hand in poker is $frequency{$hand} out of 2,598,960.";
+    my $prob = "The probability of getting a $hand in poker is $probability{$hand}%.";
+
+    my $link = qq(More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#$webaddresses{$hand}">Wikipedia</a>.);
+
+    my %answer = (
+        'odds'        => [$odds, 'html' => "$odds $link"],
+        'frequency'   => [$freq, 'html' => "$freq $link"],
+        'probability' => [$prob, 'html' => "$prob $link"],
+    );
+
+    return @{$answer{$query}} if exists $answer{$query};
 
 	return;
 };
