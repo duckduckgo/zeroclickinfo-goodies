@@ -17,9 +17,11 @@ topics 'sysadmin';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
+my $text = scalar share('private_network.txt')->slurp,
+my $html = scalar share('private_network.html')->slurp;
+
 handle sub {
-	scalar share('private_network.txt')->slurp,
-	html => scalar share('private_network.html')->slurp;
+    $text, html => $html;
 };
 
 1;

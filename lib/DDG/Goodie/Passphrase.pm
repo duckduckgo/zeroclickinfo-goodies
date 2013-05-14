@@ -13,13 +13,13 @@ topics 'cryptography';
 
 attribution github => ['https://github.com/hunterlang', 'hunterlang'];
 
+my @words = share('words.txt')->slurp;
+
 handle query_parts => sub {
     my $count = @_;
     return unless $count == 3;
     my ( $word_count, $descriptor ) = @_[ 1, 2 ]; 
     return if $word_count < 1;
-
-    my @words = share('words.txt')->slurp;
 
     my $output = "random passphrase: ";
     for (1..$word_count) {

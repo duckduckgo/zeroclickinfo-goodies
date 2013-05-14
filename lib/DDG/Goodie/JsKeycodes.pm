@@ -102,7 +102,9 @@ my %keys = ('backspace' => '8',
 		'(' => '219',
 		')' => '221',
 		'quote' => '222');
-		
+
+my $header = share('header.txt')->slurp;
+my $footer = share('footer.txt')->slurp;
          
 handle remainder => sub {
     my $query = lc($_);
@@ -111,7 +113,7 @@ handle remainder => sub {
         or $query =~ s/ *javascript *//
         or $query =~ s/ *js *//;
 
-	$html .= share('header.txt')->slurp;
+	$html .= $header;
     $html .= "\n<tr><td class='c1'><b>$query</b></td>"
              . "\n<td class='c2'><b>$keys{$query}</b></td></tr>"
              if exists $keys{$query};
@@ -122,7 +124,7 @@ handle remainder => sub {
                  unless $key eq $query;
     };
     
-    $html .=  share('footer.txt')->slurp;
+    $html .=  $footer;
     $text = "Keycode for $query: $keys{$query} (JavaScript)"
             unless not exists $keys{$query};
     return $text, html => $html;
