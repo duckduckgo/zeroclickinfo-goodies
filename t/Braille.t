@@ -15,6 +15,11 @@ ddg_goodie_test(
                 DDG::Goodie::Braille
         )],
         'hello in braille' => test_zci("⠓⠑⠇⠇⠕ (Braille)"),
+        '⠓⠑⠇⠇⠕' => test_zci("hello (Braille)"),
+	'translate to braille translate to braille' => test_zci("⠞⠗⠁⠝⠎⠇⠁⠞⠑⠀⠞⠕⠀⠃⠗⠁⠊⠇⠇⠑ (Braille)"),
+	'⠞⠗⠁⠝⠎⠇⠁⠞⠑⠀⠞⠕⠀⠃⠗⠁⠊⠇⠇⠑' => test_zci("translate to braille (Braille)"),
+	'braille asdf k' => test_zci("⠁⠎⠙⠋⠀⠅ (Braille)"),
+	'⠁⠎⠙⠋⠀⠅' => test_zci("asdf k (Braille)")
 );
 
 done_testing;

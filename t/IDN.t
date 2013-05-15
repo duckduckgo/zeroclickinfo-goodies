@@ -13,8 +13,17 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::IDN
 	)],
-	'idn exämple.com' => test_zci('Encoded IDN: xn--exmple-cua.com'),
-	'idn xn--exmple-cua.com' => test_zci('Decoded IDN: ex&auml;mple.com'),
+	'idn exämple.com' =>
+        test_zci('Encoded IDN: xn--exmple-cua.com'),
+        #########
+	'internationalize domain  exämple.com' =>
+        test_zci('Encoded internationalized domain: xn--exmple-cua.com'),
+	'idn xn--exmple-cua.com' =>
+        test_zci('Decoded IDN: ex&auml;mple.com'),
+	'international domain xn--exmple-cua.com' =>
+        test_zci('Decoded international domain: ex&auml;mple.com'),
+	'internationalized domain xn--exmple-cua.com' =>
+        test_zci('Decoded internationalized domain: ex&auml;mple.com'),
 );
 
 done_testing;
