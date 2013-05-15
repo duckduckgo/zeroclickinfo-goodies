@@ -60,6 +60,21 @@ ddg_goodie_test(
             heading => 'Calculator',
             html => qq(<div>2<sup>0.2</sup> = <a href="javascript:;" onClick="document.x.q.value='1.14869835499704';document.x.q.focus();">1.14869835499704</a></div>)
         ),
+        'cos(0)' => test_zci(
+            "cos(0) = 1",
+            heading => 'Calculator',
+            html => qq(<div>cos(0) = <a href="javascript:;" onClick="document.x.q.value='1';document.x.q.focus();">1</a></div>)
+        ),
+        'tan(1)' => test_zci(
+            "tan(1) = 1.5574077246549",
+            heading => 'Calculator',
+            html => qq(<div>tan(1) = <a href="javascript:;" onClick="document.x.q.value='1.5574077246549';document.x.q.focus();">1.5574077246549</a></div>)
+        ),
+        'sin(1)' => test_zci(
+            "sin(1) = 0.841470984807897",
+            heading => 'Calculator',
+            html => qq(<div>sin(1) = <a href="javascript:;" onClick="document.x.q.value='0.841470984807897';document.x.q.focus();">0.841470984807897</a></div>)
+        )
 );
 
 done_testing;
