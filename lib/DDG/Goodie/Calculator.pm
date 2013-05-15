@@ -17,15 +17,35 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 
-triggers query_nowhitespace => qr/^(whatis)?!?[\(\)xX\*\%\+\-\/\^\$]*(?:[0-9\.\,]+|[0-9\.\,]*)(?:gross|dozen|pi|(e)|c|)(?(1)(?:-?[0-9\.\,]+|)|)(?:[\(\)xX\*\%\+\-\/\^\$]|times|dividedby|plus|minus)+(?:[0-9\.\,]+|[0-9\.\,]*)(?:gross|dozen|pi|e|c|)[\(\)xX\*\%\+\-\/\^0-9\.\,\$]*=?$/i; 
+triggers query_nowhitespace => qr/^(whatis)?!?[\(\)xX\*\%\+\-\/\^\$]*(?:[0-9\.\,]+|[0-9\.\,]*)(?:gross|dozen|pi|(e)|c|)(?(1)(?:-?[0-9\.\,]+|)|)(?:[\(\)xX\*\%\+\-\/\^\$]|times|dividedby|plus|minus|cos|sin|tan|cotan|log|ln|log10|exp)+(?:[0-9\.\,]+|[0-9\.\,]*)(?:gross|dozen|pi|e|c|)[\(\)xX\*\%\+\-\/\^0-9\.\,\$]*=?$/i; 
 
 handle query_nowhitespace => sub {
+    #extra maths functions
+    sub tan {
+        my $x = $_[0];
+        return sin($x)/cos($x);
+    }
+
+    sub cotan {
+        my $x = $_[0];
+        return cos($x)/sin($x);
+    }
+
+    sub log10 {
+        my $x = $_[0];
+        return log($x)/log(10);
+    }
+    
+    #function to add a comma every 3 digits
+    #commify '12345'  -> '12,345'
     sub commify {
         my $text = reverse $_[0];
         $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
         return scalar reverse $text;
     }
 
+    #separates symbols with a space
+    #spacing '1+1'  ->  '1 + 1'
     sub spacing {
         my $text = shift;
         $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
@@ -46,6 +66,13 @@ handle query_nowhitespace => sub {
         # Grab expression.
         my $tmp_expr = $query;
 
+
+        #do the following substitutions in $tmp_expr:
+        #^ -> **
+        #x|times -> *
+        #minus ->  -
+        #plus -> +
+        #dividedby -> /
         $tmp_expr =~ s/\^/**/g;
         $tmp_expr =~ s/(?:x|times)/*/ig;
         $tmp_expr =~ s/minus/-/ig;
