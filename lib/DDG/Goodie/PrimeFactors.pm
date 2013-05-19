@@ -20,7 +20,11 @@ attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
 handle remainder => sub {
 	return unless /^\d+$/;
 	my @factors = factor($_);
-	return "Prime factors of $_: @factors";
+
+	my $link = qq(More at <a href="https://en.wikipedia.org/wiki/Prime_factor">Wikipedia</a>.);
+	my $result = "Prime factors of $_: @factors.";
+	
+	return $result, 'html' => "$result $link";
 };
 
 1;
