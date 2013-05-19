@@ -28,8 +28,10 @@ handle remainder => sub {
 	}
 
 	my $result = 'Least common multiple of ' . $1 . ' and ' . $2 . ' is ' . lcm($1,$2) . '.' if  /^(\d+)\s(\d+)$/;
-	return $result, html => qq(More at <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Wikipedia</a>.) if $result;
+	my $link = qq(More at <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Wikipedia</a>.);
 
+	return $result, 'html' => "$result $link" if $result;
+	return;
 };
 
 1;
