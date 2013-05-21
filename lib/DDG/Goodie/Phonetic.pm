@@ -16,9 +16,7 @@ topics 'special_interest';
 attribution github    => [ 'http://github.com/robotmay', 'Robert May' ],
             twitter => [ 'http://twitter.com/robotmay', 'robotmay' ];
 
-handle remainder => sub {
-  sub components {
-    $_ = lc($_);
+sub components {
     my %nato = (
       a => "Alfa",
       b => "Bravo",
@@ -57,17 +55,17 @@ handle remainder => sub {
       9 => "Nine",
       0 => "Zero"
     );
-    my @chars = grep { $_ ~~ %nato } split(//, $_);
-    my @components = map { $nato{ $_ } } @chars;
-    return join("-", @components);
-  }
 
-  if ($_) {
+    my @components = map { defined $nato{$_} ? ($nato{$_}) : () } split //, $_;
+    return join("-", @components);
+}
+
+handle remainder => sub {
+    return unless $_;
+    $_ = lc;
     my @words = split(/\s+/, $_);
     my @phonetics = map { components($_) } @words;
     return "Phonetic: " . join(" ", @phonetics);
-  }
-  return;
 };
 
 1;

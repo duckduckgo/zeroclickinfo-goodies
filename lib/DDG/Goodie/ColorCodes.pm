@@ -18,7 +18,7 @@ my %types = ( # hash of keyword => Convert::Color prefix
         cmyb    => 'cmyk',
         );
 
-my $typestr = join '|', keys %types;
+my $typestr = join '|', sort { length $b <=> length $a } keys %types;
 $typestr =~ s/([#\^\$\*\+\?])/\\$1/g;
 
 triggers query_raw => qr/^
@@ -52,7 +52,7 @@ handle matches => sub {
     my $color;
     for (@_) {
         next unless defined $_;
-        my $q = lc($_);
+        my $q = lc;
         $type = $types{$q} if exists $types{$q};
         $color = $q unless defined $type && exists $types{$q};
     }
