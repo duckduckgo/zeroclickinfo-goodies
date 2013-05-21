@@ -13,7 +13,7 @@ primary_example_queries 'red yellow white gold resistor';
 secondary_example_queries 'resistor red yellow white';
 description 'find resistance based on colour bands';
 name 'ReverseResistorColours';
-#code_url '';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/lib/DDG/Goodie/ReverseResistorColours.pm';
 category 'reference';
 topics 'science';
 
