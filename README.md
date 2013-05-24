@@ -53,7 +53,7 @@ These advanced handle techniques are specific to Goodie plugins:
 **Returning HTML**. &nbsp;Goodies return text instant answers by default, but can return simple HTML as well. In that case, simply attach the html version to the end of the return statement.
 
 ```perl
-return $text, html => $html
+return $text, html => $html;
 ```
 
 **Other zci keywords**. &nbsp;The Chars example sets the **is_cached** zci keyword. You can find other settable attributes in the [object documentation](https://metacpan.org/module/WWW::DuckDuckGo::ZeroClickInfo). For example, the [GoldenRatio Goodie](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/GoldenRatio.pm) sets the **answer_type** variable, which gets returned in the API.
