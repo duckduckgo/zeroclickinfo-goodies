@@ -13,7 +13,7 @@ category 'random';
 topics 'programming';
 primary_example_queries 'random person';
 secondary_example_queries 'random name';
-
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RandomPerson.pm';
 attribution github  => ['https://github.com/stelim', 'Stelim'],
             twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
 
