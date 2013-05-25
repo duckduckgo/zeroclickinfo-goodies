@@ -20,7 +20,7 @@ attribution github  => ['https://github.com/stelim', 'Stelim'],
 handle remainder => sub {
     if ($_ = m{(person|name)}xmsi) {
         my $person = Data::RandomPerson->new()->create();
-        return "$person->{firstname} $person->{lastname}";
+        return "$person->{title} $person->{firstname} $person->{lastname} $person->{age} $person->{dob}";
     }
     return;
 };
