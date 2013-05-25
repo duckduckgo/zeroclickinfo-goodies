@@ -4,11 +4,11 @@ use DDG::Goodie;
 use Data::RandomPerson;
 
 triggers start  => 'random';
-zci answer_type => "rand";
+zci answer_type => 'rand';
 
 
 name 'RandomPerson';
-description 'returns a random (title) first and last name (and birthday)';
+description 'returns a random person';
 category 'random';
 topics 'programming';
 primary_example_queries 'random person';
