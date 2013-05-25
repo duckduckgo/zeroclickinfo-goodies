@@ -4,6 +4,15 @@ use DDG::Goodie;
 
 triggers start => 'flip', 'toss', 'coin';
 
+primary_example_queries 'flip a coin', 'toss a coin';
+secondary_example_queries 'flip 4 coins';
+description 'flip a coin';
+name 'Coin Flip';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Coin.pm';
+topics 'trivia';
+category 'random';
+attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
+
 handle query_lc => sub {
 	return unless my ($a, $n) = $_ =~ /^((?:flip|toss) a coin|(?:flip|toss) (\d{0,2}) coins?)$/;
 	my @output;
