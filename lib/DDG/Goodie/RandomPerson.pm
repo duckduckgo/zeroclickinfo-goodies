@@ -8,7 +8,7 @@ zci answer_type => "rand";
 
 
 name 'RandomPerson';
-description 'returns a random first and last name';
+description 'returns a random (title) first and last name (and birthday)';
 category 'random';
 topics 'programming';
 primary_example_queries 'random person';
@@ -18,11 +18,17 @@ attribution github  => ['https://github.com/stelim', 'Stelim'],
             twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
 
 handle remainder => sub {
-    if ($_ = m{(person|name)}xmsi) {
-        my $person = Data::RandomPerson->new()->create();
-        return "$person->{title} $person->{firstname} $person->{lastname} $person->{age} $person->{dob}";
+    my $person = Data::RandomPerson->new()->create();
+
+    if ($_ =~ m{name}xmsi) {    
+        return "$person->{firstname} $person->{lastname}";
     }
-    return;
+    elsif ($_ =~ m{person}xmsi) {
+        return "$person->{title}. $person->{firstname} $person->{lastname}, born $person->{dob}";
+    }
+    else {
+        return;
+    }
 };
 
 

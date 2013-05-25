@@ -12,10 +12,10 @@ ddg_goodie_test(
     [
         'DDG::Goodie::RandomPerson'
     ],
-    'random name'   => test_zci (qr/\w \w/),
-    'random Name'   => test_zci (qr/\w+/),
-    'random person' => test_zci (qr/\w+/),
-    'random Person' => test_zci (qr/\w+/),
+    'random name'   => test_zci (qr/\w+ \w+/),
+    'random Name'   => test_zci (qr/\w+ \w+/),
+    'random person' => test_zci (qr/\w+\. \w+ \w+, born \d+-\d+-\d+/),
+    'random Person' => test_zci (qr/\w+\. \w+ \w+, born \d+-\d+-\d+/),
 
 
 );
