@@ -8,14 +8,13 @@ zci answer_type => 'jira';
 
 primary_example_queries 'ACE-230';
 secondary_example_queries '[blah blah] ACE-230 [blah]';
-description 'Track Apache JIRA bug tickets';
-name 'Apache JIRA';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ApacheJIRA.pm';
+description 'Track Apache and Codehaus JIRA bug tickets';
+name 'Jira';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Jira.pm';
 category 'programming';
 topics 'programming';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github => [ 'https://github.com/arroway', 'arroway'],
+            twitter => ['http://twitter.com/steph_ouillon', 'steph_ouillon'];
 
 # Hash referencing Apache JIRA projects (KEY, PROJECT_NAME).
 # reference: https://issues.apache.org/jira/secure/BrowseProjects.jspa#all
