@@ -16,6 +16,7 @@ attribution github => ['https://github.com/koosha--', 'koosha--'],
 			twitter => '_koosha_';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Fibonacci.pm';
 topics 'math';
+category 'calculations';
 
 handle remainder => sub {
     s/^\s+//;
