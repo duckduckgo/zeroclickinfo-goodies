@@ -14,6 +14,7 @@ description 'Returns the textual description of file modes in UNIX';
 attribution github => ['https://github.com/koosha--', 'koosha--'],
             twitter => '_koosha_';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UnixPermissions.pm';
+topics 'sysadmin';
 category 'computing_tools';
 
 handle query => sub {

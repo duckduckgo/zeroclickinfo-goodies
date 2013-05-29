@@ -10,6 +10,8 @@ zci answer_type => 'chess960_position';
 
 primary_example_queries 'chess960';
 description 'Generates a random starting position for Chess960';
+topics 'gaming', 'entertainment';
+category 'random';
 attribution github  => 'https://github.com/koosha--',
             twitter => 'https://twitter.com/_koosha_';
 
