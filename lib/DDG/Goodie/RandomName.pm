@@ -10,7 +10,7 @@ zci answer_type => 'rand';
 name 'RandomName';
 description 'returns a random and fictive title, first- and lastname and day of birth';
 category 'random';
-topics 'programming';
+topics 'words_and_games';
 primary_example_queries 'random name';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RandomName.pm';
 attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
