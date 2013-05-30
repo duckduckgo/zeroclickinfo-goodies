@@ -20,7 +20,7 @@ handle remainder => sub {
     my $person = Data::RandomPerson->new()->create();
 
     if ($_ =~ m{name}xmsi) {    
-        return "$person->{title}. $person->{firstname} $person->{lastname}, born $person->{dob}";
+        return "$person->{firstname} $person->{lastname}";
     }
     else {
         return;
