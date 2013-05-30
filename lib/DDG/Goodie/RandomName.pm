@@ -17,14 +17,9 @@ attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
             twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
 
 handle remainder => sub {
+    return unless m{name}i;
     my $person = Data::RandomPerson->new()->create();
-
-    if ($_ =~ m{name}xmsi) {    
-        return "$person->{firstname} $person->{lastname}";
-    }
-    else {
-        return;
-    }
+    return "$person->{firstname} $person->{lastname} (random)";
 };
 
 

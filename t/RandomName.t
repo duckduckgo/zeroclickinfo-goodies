@@ -12,10 +12,8 @@ ddg_goodie_test(
     [
         'DDG::Goodie::RandomName'
     ],
-    'random Name' => test_zci (qr/\w \w/),
-    'random name' => test_zci (qr/\w \w/),
-
-
+    'random Name' => test_zci (qr/\w\w \(random\)/),
+    'random name' => test_zci (qr/\w\w \(random\)/),
 );
 
 done_testing;
