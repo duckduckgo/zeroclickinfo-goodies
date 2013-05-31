@@ -4,7 +4,7 @@ use DDG::Goodie;
 
 primary_example_queries 'belkin f5d6130 default password';
 secondary_example_queries 'alcatel office 4200';
-description 'find words of a certain length';
+description 'default router passwords';
 name 'RouterPasswords';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RouterPasswords.pm';
 topics 'sysadmin';
