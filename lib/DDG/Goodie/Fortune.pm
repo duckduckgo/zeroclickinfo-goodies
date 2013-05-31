@@ -5,7 +5,7 @@ use Fortune;
 
 triggers any => 'unix fortune','unix fortune!','fortune cookie','fortune cookie!';
 
-primary_example_queries 'fortune';
+primary_example_queries 'unix fortune cookie';
 name 'Fortune';
 description 'get a random phrase from the original fortunes file';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Fortune.pm';
