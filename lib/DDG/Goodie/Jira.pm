@@ -40,7 +40,7 @@ handle query => sub {
 	# Dealing with the case where two projects on different bugtrackers have the same project key
         $html_return .= qq(Apache JIRA Bugtracker: see ticket <a href="https://issues.apache.org/jira/browse/$apacheTicket">$apacheTicket</a>.<br>) if $apacheTicket;
         $html_return .= qq(Codehaus JIRA Bugtracker: see ticket <a href="https://jira.codehaus.org/browse/$codehausTicket">$codehausTicket</a>.) if $codehausTicket;
-        return '', heading => 'JIRA Bugtracker', html => $html_return;
+        return '', html => $html_return;
     }
 
     return;
