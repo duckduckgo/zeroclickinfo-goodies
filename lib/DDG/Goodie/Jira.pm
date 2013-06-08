@@ -44,14 +44,16 @@ handle query => sub {
  
 	  # Dealing with the case where two projects on different bugtrackers have the same project key
     if ($apacheKey){
-        my $apacheTicket = $apacheKey . "-" . $apacheTicketID;
-        my $apacheProject = $Apache_JIRA_projects{$apacheKey}; 
+        my $uKey = uc $apacheKey;
+        my $apacheTicket = $uKey . "-" . $apacheTicketID;
+        my $apacheProject = $Apache_JIRA_projects{$uKey}; 
         $html_return .= qq($apacheProject (Apache JIRA Bugtracker): see ticket <a href="https://issues.apache.org/jira/browse/$apacheTicket">$apacheTicket</a>.<br>);
     }
 
     if ($codehausKey){
-        my $codehausTicket = $codehausKey . "-" . $codehausTicketID;
-        my $codehausProject = $Codehaus_JIRA_projects{$codehausKey}; 
+        my $uKey = uc $codehausKey;
+        my $codehausTicket = uc $uKey . "-" . $codehausTicketID;
+        my $codehausProject = $Codehaus_JIRA_projects{$uKey}; 
 
         $html_return .= qq($codehausProject (Codehaus JIRA Bugtracker): see ticket <a href="https://jira.codehaus.org/browse/$codehausTicket">$codehausTicket</a>.) if $codehausTicket;
     }
