@@ -47,7 +47,8 @@ handle query => sub {
         my $uKey = uc $apacheKey;
         my $apacheTicket = $uKey . "-" . $apacheTicketID;
         my $apacheProject = $Apache_JIRA_projects{$uKey}; 
-        $html_return .= qq($apacheProject (Apache JIRA Bugtracker): see ticket <a href="https://issues.apache.org/jira/browse/$apacheTicket">$apacheTicket</a>.<br>);
+        $html_return .= qq($apacheProject (Apache JIRA Bugtracker): see ticket <a href="https://issues.apache.org/jira/browse/$apacheTicket">$apacheTicket</a>.);
+        $html_return .= '<br>' if $codehausKey;
     }
 
     if ($codehausKey){
