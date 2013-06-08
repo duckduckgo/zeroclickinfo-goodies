@@ -74,7 +74,9 @@ ddg_goodie_test(
             "sin(1) = 0.841470984807897",
             heading => 'Calculator',
             html => qq(<div>sin(1) = <a href="javascript:;" onClick="document.x.q.value='0.841470984807897';document.x.q.focus();">0.841470984807897</a></div>)
-        )
+        ),
+        '//' => undef,
+        dividedbydividedby => undef,
 );
 
 done_testing;

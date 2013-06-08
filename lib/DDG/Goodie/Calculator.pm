@@ -17,49 +17,27 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 
-triggers query_nowhitespace => qr/^(whatis)?!?[\(\)xX\*\%\+\-\/\^\$]*(?:[0-9\.\,]+|[0-9\.\,]*)(?:gross|dozen|pi|(e)|c|)(?(1)(?:-?[0-9\.\,]+|)|)(?:[\(\)xX\*\%\+\-\/\^\$]|times|dividedby|plus|minus|cos|sin|tan|cotan|log|ln|log10|exp)+(?:[0-9\.\,]+|[0-9\.\,]*)(?:gross|dozen|pi|e|c|)[\(\)xX\*\%\+\-\/\^0-9\.\,\$]*=?$/i; 
+triggers query_nowhitespace => qr<
+        ^
+        ( what is )? !?
+
+        [\( \) x X * % + / \^ \$ -]*
+        (?: [0-9 \. ,]* (?: gross | dozen | pi | e | c |) )
+        (?(1) (?: -? [0-9 \. ,]+ |) |)
+        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log10 | exp )+
+        (?: [0-9 \. ,]+ | (?: gross | dozen | pi | e | c) )
+        [\( \) x X * % + / \^ 0-9 \. , \$ -]* =? 
+
+        $
+        >ix;
 
 handle query_nowhitespace => sub {
-    #extra maths functions
-    sub tan {
-        my $x = $_[0];
-        return sin($x)/cos($x);
-    }
-
-    sub cotan {
-        my $x = $_[0];
-        return cos($x)/sin($x);
-    }
-
-    sub log10 {
-        my $x = $_[0];
-        return log($x)/log(10);
-    }
-    
-    #function to add a comma every 3 digits
-    #commify '12345'  -> '12,345'
-    sub commify {
-        my $text = reverse $_[0];
-        $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
-        return scalar reverse $text;
-    }
-
-    #separates symbols with a space
-    #spacing '1+1'  ->  '1 + 1'
-    sub spacing {
-        my $text = shift;
-        $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
-        $text =~ s/dividedby/divided by/ig;
-        $text =~ s/(\d+?)((?:dozen|pi|gross|e|c))/$1 $2/ig;
-        $text =~ s/\bc\b/speed of light/ig;
-
-        return $text;
-    }
-
     my $results_html;
     my $results_no_html;
     my $query = $_;
+
     $query =~ s/^whatis//;
+
     if($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
         my $tmp_result = '';
 
@@ -73,27 +51,27 @@ handle query_nowhitespace => sub {
         #minus ->  -
         #plus -> +
         #dividedby -> /
-        $tmp_expr =~ s/\^/**/g;
-        $tmp_expr =~ s/(?:x|times)/*/ig;
-        $tmp_expr =~ s/minus/-/ig;
-        $tmp_expr =~ s/plus/+/ig;
-        $tmp_expr =~ s/dividedby/\//ig;
+        $tmp_expr =~ s# \^          # ** #xg;
+        $tmp_expr =~ s# (?:x|times) # *  #xig;
+        $tmp_expr =~ s# minus       # -  #xig;
+        $tmp_expr =~ s# plus        # +  #xig;
+        $tmp_expr =~ s# dividedby   # \/ #xig;
 
         # sub in constants
         # e sub is lowercase only because E == *10^n
-        $tmp_expr =~ s/((?:\d+?|\s))E(-?\d+)([^\d])/\($1 * 10**$2\)$3/g;
-        $tmp_expr =~ s/(\d+?)e([^A-Za-z])/$1 * 2.71828182845904523536028747135266249 $2/g;
-        $tmp_expr =~ s/([^A-Za-z])e([^A-Za-z])/$1 2.71828182845904523536028747135266249 $2/g;
-        $tmp_expr =~ s/\be\b/2.71828182845904523536028747135266249/g;
-        $tmp_expr =~ s/(\d+?)c([^A-Za-z])/$1 * 299792458 $2/ig;
-        $tmp_expr =~ s/([^A-Za-z])c([^A-Za-z])/$1 299792458 $2/ig;
-        $tmp_expr =~ s/\bc\b/299792458/ig;
-        $tmp_expr =~ s/(\d+?)pi/$1 * 3.14159265358979323846264338327950288/ig;
-        $tmp_expr =~ s/pi/3.14159265358979323846264338327950288/ig;
-        $tmp_expr =~ s/(\d+?)gross/$1 * 144/ig;
-        $tmp_expr =~ s/(\d+?)dozen/$1 * 12/ig;
-        $tmp_expr =~ s/dozen/12/ig;
-        $tmp_expr =~ s/gross/144/ig;
+        $tmp_expr =~ s/ ((?:\d+?|\s))E(-?\d+)([^\d]) /\($1 * 10**$2\)$3                             /xg;
+        $tmp_expr =~ s/ (\d+?)e([^A-Za-z])           /$1 * 2.71828182845904523536028747135266249 $2 /xg;
+        $tmp_expr =~ s/ ([^A-Za-z])e([^A-Za-z])      /$1 2.71828182845904523536028747135266249 $2   /xg;
+        $tmp_expr =~ s/ \be\b                        /2.71828182845904523536028747135266249         /xg;
+        $tmp_expr =~ s/ (\d+?)c([^A-Za-z])           /$1 * 299792458 $2                             /xig;
+        $tmp_expr =~ s/ ([^A-Za-z])c([^A-Za-z])      /$1 299792458 $2                               /xig;
+        $tmp_expr =~ s/ \bc\b                        /299792458                                     /xig;
+        $tmp_expr =~ s/ (\d+?)pi                     /$1 * 3.14159265358979323846264338327950288    /xig;
+        $tmp_expr =~ s/ pi                           /3.14159265358979323846264338327950288         /xig;
+        $tmp_expr =~ s/ (\d+?)gross                  /$1 * 144                                      /xig;
+        $tmp_expr =~ s/ (\d+?)dozen                  /$1 * 12                                       /xig;
+        $tmp_expr =~ s/ dozen                        /12                                            /xig;
+        $tmp_expr =~ s/ gross                        /144                                           /xig;
 
         # Commas into periods.
         $tmp_expr =~ s/(\d+),(\d{1,2})(?!\d)/$1.$2/g;
@@ -107,6 +85,8 @@ handle query_nowhitespace => sub {
         # Drop leading 0s.
         # 2011.11.09 fix for 21 + 15 x 0 + 5
         $tmp_expr =~ s/(?<!\.)(?<![0-9])0([1-9])/$1/;
+
+        return if $tmp_expr =~ /^\s/;
 
         eval {
             $tmp_result = eval($tmp_expr);
@@ -162,5 +142,42 @@ handle query_nowhitespace => sub {
 
     return;
 };
+
+#extra math functions
+sub tan {
+    my $x = $_[0];
+    return sin($x)/cos($x);
+}
+
+sub cotan {
+    my $x = $_[0];
+    return cos($x)/sin($x);
+}
+
+sub log10 {
+    my $x = $_[0];
+    return log($x)/log(10);
+}
+
+#function to add a comma every 3 digits
+#commify '12345'  -> '12,345'
+sub commify {
+    my $text = reverse $_[0];
+    $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
+    return scalar reverse $text;
+}
+
+#separates symbols with a space
+#spacing '1+1'  ->  '1 + 1'
+sub spacing {
+    my $text = shift;
+    $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
+    $text =~ s/dividedby/divided by/ig;
+    $text =~ s/(\d+?)((?:dozen|pi|gross|e|c))/$1 $2/ig;
+    $text =~ s/\bc\b/speed of light/ig;
+
+    return $text;
+}
+    
 
 1;
