@@ -58,7 +58,7 @@ handle query => sub {
         $html_return .= qq($codehausProject (Codehaus JIRA Bugtracker): see ticket <a href="https://jira.codehaus.org/browse/$codehausTicket">$codehausTicket</a>.) if $codehausTicket;
     }
 
-    return '', html => $html_return if $html_return;
+    return undef, html => $html_return if $html_return;
 };
 
 1;
