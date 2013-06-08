@@ -22,10 +22,16 @@ triggers query_nowhitespace => qr<
         ( what is )? !?
 
         [\( \) x X * % + / \^ \$ -]*
-        (?: [0-9 \. ,]* (?: gross | dozen | pi | e | c |) )
+
+        (?: [0-9 \. ,]* )
+        (?: gross | dozen | pi | e | c |)
+
         (?(1) (?: -? [0-9 \. ,]+ |) |)
         (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log10 | exp )+
-        (?: [0-9 \. ,]+ | (?: gross | dozen | pi | e | c) )
+
+        (?: [0-9 \. ,]* )
+        (?: gross | dozen | pi | e | c |)
+
         [\( \) x X * % + / \^ 0-9 \. , \$ -]* =? 
 
         $
@@ -86,8 +92,6 @@ handle query_nowhitespace => sub {
         # 2011.11.09 fix for 21 + 15 x 0 + 5
         $tmp_expr =~ s/(?<!\.)(?<![0-9])0([1-9])/$1/;
 
-        return if $tmp_expr =~ /^\s/;
-
         eval {
             $tmp_result = eval($tmp_expr);
         };
@@ -127,9 +131,10 @@ handle query_nowhitespace => sub {
             $results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
 
             ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
+            return if $results_no_html =~ /^\s/;
 
             # Add commas.
-            $tmp_result = &commify($tmp_result);
+            $tmp_result = commify($tmp_result);
 
             # Now add it back.
             $results_no_html .= ' = ';

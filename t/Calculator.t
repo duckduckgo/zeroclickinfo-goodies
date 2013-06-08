@@ -35,6 +35,11 @@ ddg_goodie_test(
             heading => 'Calculator',
             html => qq(<div>1 dozen * 2 = <a href="javascript:;" onClick="document.x.q.value='24';document.x.q.focus();">24</a></div>)
         ),
+        'dozen + dozen' => test_zci(
+            "dozen + dozen = 24",
+            heading => 'Calculator',
+            html => qq(<div>dozen + dozen = <a href="javascript:;" onClick="document.x.q.value='24';document.x.q.focus();">24</a></div>)
+        ),
         '2divided by 4' => test_zci(
             "2 divided by 4 = 0.5",
             heading => 'Calculator',
