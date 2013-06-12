@@ -6,8 +6,8 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => 'jira';
 
-primary_example_queries 'ACE-230';
-secondary_example_queries '[blah blah] ACE-230 [blah]';
+primary_example_queries 'SOLR-4530';
+secondary_example_queries 'IdentityHtmlMapper solr-4530';
 description 'Track Apache and Codehaus JIRA bug tickets';
 name 'Jira';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Jira.pm';
