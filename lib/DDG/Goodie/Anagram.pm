@@ -43,8 +43,8 @@ handle remainder => sub {
 	}
 
 	my $fileobj = share("words");
-	open INF, "<", $fileobj->stringify or return;
-	while (<INF>) {
+	open my $INF, "<", $fileobj->stringify or return;
+	while (<$INF>) {
 	    if ($word and /^[$word]{$n}$/i) {
 		chomp;
 		next if lc($_) eq lc($word);
