@@ -84,7 +84,7 @@ handle query => sub {
         my $uKey = uc $apacheKey;
         my $apacheTicket = $uKey . "-" . $apacheTicketID;
         my $apacheProject = $Apache_JIRA_projects{$uKey}; 
-        $html_return .= qq($apacheProject (Apache JIRA Bugtracker): see ticket <a href="$apacheJiraUrl$apacheTicket">$apacheTicket</a>.) if $apacheTicket;
+        $html_return .= qq($apacheProject (Apache JIRA bug tracker): see ticket <a href="$apacheJiraUrl$apacheTicket">$apacheTicket</a>.) if $apacheTicket;
         $html_return .= '<br>' if $codehausKey;
     }
 
@@ -93,7 +93,7 @@ handle query => sub {
         my $codehausTicket = uc $uKey . "-" . $codehausTicketID;
         my $codehausProject = $Codehaus_JIRA_projects{$uKey}; 
 
-        $html_return .= qq($codehausProject (Codehaus JIRA Bugtracker): see ticket <a href="$codehausJiraUrl$codehausTicket">$codehausTicket</a>.) if $codehausTicket;
+        $html_return .= qq($codehausProject (Codehaus JIRA bug tracker): see ticket <a href="$codehausJiraUrl$codehausTicket">$codehausTicket</a>.) if $codehausTicket;
     }
 
     if ($debbugTicketID) {

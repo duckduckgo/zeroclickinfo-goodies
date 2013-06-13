@@ -13,19 +13,19 @@ ddg_goodie_test(
     [qw( DDG::Goodie::Jira)],
     'ACE-230' => test_zci(
       undef,
-      html => qq(ACE (Apache JIRA Bugtracker): see ticket <a href="https://issues.apache.org/jira/browse/ACE-230">ACE-230</a>.)
+      html => qq(ACE (Apache JIRA bug tracker): see ticket <a href="https://issues.apache.org/jira/browse/ACE-230">ACE-230</a>.)
     ),
     'ace-230' => test_zci(
       undef,
-      html => qq(ACE (Apache JIRA Bugtracker): see ticket <a href="https://issues.apache.org/jira/browse/ACE-230">ACE-230</a>.)
+      html => qq(ACE (Apache JIRA bug tracker): see ticket <a href="https://issues.apache.org/jira/browse/ACE-230">ACE-230</a>.)
     ),
     'jira random AJLIB-230 bug random' => test_zci(
       undef,
-      html => qq(ajlib incubator (Codehaus JIRA Bugtracker): see ticket <a href="https://jira.codehaus.org/browse/AJLIB-230">AJLIB-230</a>.)
+      html => qq(ajlib incubator (Codehaus JIRA bug tracker): see ticket <a href="https://jira.codehaus.org/browse/AJLIB-230">AJLIB-230</a>.)
     ),
     'jira random ajlib-230 bug random' => test_zci(
       undef,
-      html => qq(ajlib incubator (Codehaus JIRA Bugtracker): see ticket <a href="https://jira.codehaus.org/browse/AJLIB-230">AJLIB-230</a>.)
+      html => qq(ajlib incubator (Codehaus JIRA bug tracker): see ticket <a href="https://jira.codehaus.org/browse/AJLIB-230">AJLIB-230</a>.)
     ),
     'random debbug #638225 random' => test_zci(
       undef,
