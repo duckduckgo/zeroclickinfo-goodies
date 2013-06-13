@@ -38,13 +38,17 @@ my $debbugUrl = 'http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=';
 my $mozilla = qr/mozilla|firefox|gecko|firefoxOS|thunderbird|seamonkey|firefox marketplace/i;
 my $mozillaUrl = 'https://bugzilla.mozilla.org/show_bug.cgi?id=';
 
+my $linux = qr/linux|kernel/i;
+my $linuxUrl = 'https://bugzilla.kernel.org/show_bug.cgi?id=';
+
 my $jira_number = qr/[\d]{1,}/i;
 
 triggers query => qr/
                      ^(.*\s)*($Apache_JIRA_keys)\-($jira_number)\s*(.*)$|
                      ^(.*\s)*($Codehaus_JIRA_keys)\-($jira_number)\s*(.*)$|
                      ^(.*\s)*($debbug)\s*(.*)\#([\d]+)\s*(.*)$|
-                     ^(.*\s)*($mozilla)\s*(.*)\#([\d]+)\s*(.*)$
+                     ^(.*\s)*($mozilla)\s*(.*)\#([\d]+)\s*(.*)$|
+                     ^(.*\s)*($linux)\s*(.*)\#([\d]+)\s*(.*)$
                      /ix;
 
 handle query => sub {
@@ -56,6 +60,7 @@ handle query => sub {
     my $codehausTicketID = $7 || '';
     my $debbugTicketID = $12 || '';
     my $mozillaTicketID = $17 || '';
+    my $linuxTicketID = $22 || '';
 
     my $html_return = '';
  
@@ -82,6 +87,10 @@ handle query => sub {
     
     if ($mozillaTicketID) {
         $html_return .= qq(Mozilla bug tracker: see ticket <a href="$mozillaUrl$mozillaTicketID">#$mozillaTicketID</a>.);
+    }
+    
+    if ($linuxTicketID) {
+        $html_return .= qq(Linux kernel bug tracker: see ticket <a href="$linuxUrl$linuxTicketID">#$linuxTicketID</a>.);
     }
 
     return undef, html => $html_return if $html_return;

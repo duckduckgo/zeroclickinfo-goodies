@@ -38,6 +38,10 @@ ddg_goodie_test(
     'random mozilla bug #638225 random' => test_zci(
       undef,
       html => qq(Mozilla bug tracker: see ticket <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=638225">#638225</a>.)
+    ),
+    'random Linux kernel #1234 random' => test_zci(
+      undef,
+      html => qq(Linux kernel bug tracker: see ticket <a href="https://bugzilla.kernel.org/show_bug.cgi?id=1234">#1234</a>.)
     )
 );
 
