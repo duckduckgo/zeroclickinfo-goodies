@@ -26,6 +26,14 @@ ddg_goodie_test(
     'jira random ajlib-230 bug random' => test_zci(
       undef,
       html => qq(ajlib incubator (Codehaus JIRA Bugtracker): see ticket <a href="https://jira.codehaus.org/browse/AJLIB-230">AJLIB-230</a>.)
+    ),
+    'random debbug #638225 random' => test_zci(
+      undef,
+      html => qq(Debian bug tracker: see ticket <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=638225">#638225</a>.)
+    ),
+    'random debian bug #638225 random' => test_zci(
+      undef,
+      html => qq(Debian bug tracker: see ticket <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=638225">#638225</a>.)
     )
 );
 
