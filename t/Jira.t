@@ -42,6 +42,14 @@ ddg_goodie_test(
     'random Linux kernel #1234 random' => test_zci(
       undef,
       html => qq(Linux kernel bug tracker: see ticket <a href="https://bugzilla.kernel.org/show_bug.cgi?id=1234">#1234</a>.)
+    ),
+    'random jetty #234 random' => test_zci(
+      undef,
+      html => qq(jetty (Eclipse bug tracker): see ticket <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=234">#234</a>.)
+    ),
+    'random bug LibreOffice #24 random' => test_zci(
+      undef,
+      html => qq(LibreOffice (LibreOffice bug tracker): see ticket <a href="https://www.libreoffice.org/bugzilla/show_bug.cgi?id=24">#24</a>.)
     )
 );
 

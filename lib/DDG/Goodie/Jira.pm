@@ -41,6 +41,12 @@ my $mozillaUrl = 'https://bugzilla.mozilla.org/show_bug.cgi?id=';
 my $linux = qr/linux|kernel/i;
 my $linuxUrl = 'https://bugzilla.kernel.org/show_bug.cgi?id=';
 
+my $eclipse = qr/ACTF|AJDT|AMP|ATF|Aether|Amalgam|Apricot|AspectJ|BIRT|BPEL|BPMN2Modeler|Babel|Buckminster|CBI|CDT|Community|DLTK|Damos|Dash|Drupal|EBR|ECF|EDT|EGit|EMF|EMFCompare|EMFT|EPF|EPP|ERCP|EclipseLink|Efxclipse|Epsilon|Equinox|Examples|GEF|GEF3D|GMP|GMT|Gemini|Gyrex|Higgins|Hudson|IDE4EDU|IMP|Incquery|Incubator|JDT|JGit|JSDT|JWT|Jetty|Jubula|Koneki|LTS|Libra|Lyo|M2T|MAT|MDT|MMT|MPC|MTJ|Magrove|Mihini|Modeling|Mylyn|NatTable|Nebula|OSEE|Objectteams|Orbit|Orion|PDE|PDT|PTP|Paho|Platform|RAP|RTP|RTSC|Recommenders|Remus|Riena|SCA|SOA|STEM|SWTBot|Sapphire|Scout|Sequoyah|Sirius|Sisu|Skalli|Sketch|Smila|Stardust|Subversive|Swordfish|TCF|TMF|TMW|Tigerstripe|Tools|Tycho|UOMo|UPR|VTP|Virgo|Vjet|WindowBuilder|Woolsey|XWT|Xtend|e4|eBAM|eBPM|gEclipse|m2e|z_Archived/i;
+my $eclipseUrl = 'https://bugs.eclipse.org/bugs/show_bug.cgi?id=';
+
+my $libreOffice = qr/Androgenizer|Bustle|ConsoleKit|DRI|Debrix|DejaVu|Farstream|FriBidi|GLU3|Galago|GeoClue|Gypsy|HarfBuzz|Hieroglyph|LDTP|LTSP|LibreOffice|MPRIS|Mesa|OHM|OpenRaster|Orc|PackageKit|PolicyKit|Portland|PulseAudio|PyXDG|Rarian|STSF|Spam|Specifications|Spice|SyncEvolution|Telepathy|UIM|Wayland|Wocky|XCB|XStandards|Xtests|Ytstenut|Zeitgeist|accountsservice|apoc|avahi|burn|cairo|cairomm|ccss|colord|create|dbus|dolt|evemu|evtest|exempi|fontconfig|freedrtools|freetype|ghns|gstreamer|hal|kmscon|libasyncns|libatasmart|libbacklight|libbsd|libcanberra|libdlo|libfprint|libjpeg|libmbim|libminidump|liboil|libopenraw|libqmi|libspectre|libva|libxkbcommon|libxklavier|nice|nickle|openfontlibrary|papyon|piglit|pixman|plymouth|poppler|pycairo|realmd|roadster|scim|swfdec|systemd|tango|tinderbox|udisks|upower|xdgmime|xesam|xorg|xprint/i;
+my $libreOfficeUrl = 'https://www.libreoffice.org/bugzilla/show_bug.cgi?id=';
+
 my $jira_number = qr/[\d]{1,}/i;
 
 triggers query => qr/
@@ -48,19 +54,28 @@ triggers query => qr/
                      ^(.*\s)*($Codehaus_JIRA_keys)\-($jira_number)\s*(.*)$|
                      ^(.*\s)*($debbug)\s*(.*)\#([\d]+)\s*(.*)$|
                      ^(.*\s)*($mozilla)\s*(.*)\#([\d]+)\s*(.*)$|
-                     ^(.*\s)*($linux)\s*(.*)\#([\d]+)\s*(.*)$
+                     ^(.*\s)*($linux)\s*(.*)\#([\d]+)\s*(.*)$|
+                     ^(.*\s)*($eclipse)\s*(.*)\#([\d]+)\s*(.*)$|
+                     ^(.*\s)*($libreOffice)\s*(.*)\#([\d]+)\s*(.*)$
                      /ix;
 
 handle query => sub {
 
     my $apacheKey = $2 || '';
-    my $codehausKey = $6 || '';
-    
     my $apacheTicketID = $3 || '';
+    
+    my $codehausKey = $6 || '';
     my $codehausTicketID = $7 || '';
+
     my $debbugTicketID = $12 || '';
     my $mozillaTicketID = $17 || '';
     my $linuxTicketID = $22 || '';
+
+    my $eclipseProject = $25 || '';
+    my $eclipseTicketID = $27 || '';
+    
+    my $libreOfficeProject = $30 || '';
+    my $libreOfficeTicketID = $32 || '';
 
     my $html_return = '';
  
@@ -93,6 +108,14 @@ handle query => sub {
         $html_return .= qq(Linux kernel bug tracker: see ticket <a href="$linuxUrl$linuxTicketID">#$linuxTicketID</a>.);
     }
 
+    if ($eclipseTicketID and $eclipseProject) {
+        $html_return .= qq($eclipseProject (Eclipse bug tracker): see ticket <a href="$eclipseUrl$eclipseTicketID">#$eclipseTicketID</a>.);
+    }
+    
+    if ($libreOfficeTicketID and $libreOfficeProject) {
+        $html_return .= qq($libreOfficeProject (LibreOffice bug tracker): see ticket <a href="$libreOfficeUrl$libreOfficeTicketID">#$libreOfficeTicketID</a>.);
+    
+    }
     return undef, html => $html_return if $html_return;
 };
 
