@@ -45,9 +45,9 @@ ddg_goodie_test(
     ),
     'random jetty #234 random' => test_zci(
       undef,
-      html => qq(jetty (Eclipse bug tracker): see ticket <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=234">#234</a>.)
+      html => qq(Jetty (Eclipse bug tracker): see ticket <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=234">#234</a>.)
     ),
-    'random bug LibreOffice #24 random' => test_zci(
+    'random bug libreoffice #24 random' => test_zci(
       undef,
       html => qq(LibreOffice (LibreOffice bug tracker): see ticket <a href="https://www.libreoffice.org/bugzilla/show_bug.cgi?id=24">#24</a>.)
     )
