@@ -96,7 +96,7 @@ handle query => sub {
 
     if ($codehausKey){
         my $uKey = uc $codehausKey;
-        my $codehausTicket = uc $uKey . "-" . $codehausTicketID;
+        my $codehausTicket = $uKey . "-" . $codehausTicketID;
         my $codehausProject = $Codehaus_JIRA_projects{$uKey}; 
 
         $html_return .= qq($codehausProject (Codehaus JIRA bug tracker): see ticket <a href="$codehausJiraUrl$codehausTicket">$codehausTicket</a>.) if $codehausTicket;
