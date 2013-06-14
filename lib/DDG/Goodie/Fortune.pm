@@ -18,7 +18,7 @@ zci answer_type => "fortune";
 
 handle remainder => sub {
    my $ffile = share('fortunes');
-   my $fortune_file = new Fortune($ffile);
+   my $fortune_file = Fortune->new($ffile);
    $fortune_file->read_header();
    my $output = $fortune_file->get_random_fortune();
    $output =~ s/\n//g;
