@@ -1,4 +1,4 @@
-package DDG::Goodie::Jira;
+package DDG::Goodie::Bugtracker;
 # ABSTRACT returns the URL of bug ticket according to its identifier
 # (for Apache, Codehause, Mozilla, Linux kernel, Debian, Eclipse, Libre Office projects)
 

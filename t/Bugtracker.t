@@ -10,7 +10,7 @@ zci is_cached => 1;
 
 ddg_goodie_test(
 
-    [qw( DDG::Goodie::Jira)],
+    [qw( DDG::Goodie::Bugtracker)],
     'ACE-230' => test_zci(
       undef,
       html => qq(ACE (Apache JIRA bug tracker): see ticket <a href="https://issues.apache.org/jira/browse/ACE-230">ACE-230</a>.)
