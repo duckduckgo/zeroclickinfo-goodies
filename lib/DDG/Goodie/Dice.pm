@@ -25,7 +25,7 @@ my %utf8_dice = (
     6 => "\x{2685}",
 );
 
-handle remainder => sub {
+handle remainder_lc => sub {
     if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
         my @output;
         my $rolls = 1;  # If "die" is entered
