@@ -33,7 +33,7 @@ handle remainder => sub {
         }
         return $1 . " choose " . $2 . " = " . $combi;
     }
-    return $_;
+    return;
 };
 
 1;
