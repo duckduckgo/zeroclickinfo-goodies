@@ -23,7 +23,7 @@ handle remainder => sub {
         }
         my $n = $1; 
 
-        my $k = $2;
+        my $k = ($1 - $2 > $2 ? $1 - $2 : $2);
         my $combi = 1;
         for my $i (($k+1)..$n) {
             $combi *= $i;
@@ -31,7 +31,8 @@ handle remainder => sub {
         for my $j (1..($n-$k)){
             $combi /= $j
         }
-        return $n . " choose " . $k . " = " . $combi;
+        return $1
+         . " choose " . $2 . " = " . $combi;
     }
     return $_;
 };
