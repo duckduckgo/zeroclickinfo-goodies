@@ -24,7 +24,7 @@ ddg_goodie_test(
     map {(
         DDG::Request->new(
             query_raw => "$queries[$_]",
-            location => test_location($locations[$_])
+            location => test_location("$locations[$_]")
         ),
         test_zci(qr/24 Hour Suicide Hotline: [\d\-){7}]/),
     )} 0 .. scalar @queries - 1
