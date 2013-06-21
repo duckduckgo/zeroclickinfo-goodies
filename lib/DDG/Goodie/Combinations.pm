@@ -31,8 +31,7 @@ handle remainder => sub {
         for my $j (1..($n-$k)){
             $combi /= $j
         }
-        return $1
-         . " choose " . $2 . " = " . $combi;
+        return $1 . " choose " . $2 . " = " . $combi;
     }
     return $_;
 };
