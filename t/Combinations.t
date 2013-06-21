@@ -16,7 +16,7 @@ ddg_goodie_test(
     ' 5 choose 3 ' => test_zci('5 choose 3 = 10'),
     '7 choose 0' => test_zci('7 choose 0 = 1'),
     '0 choose 3' => test_zci('0 choose 3 = 0'),
-    "-1 choose -2" =>
-);
+    "-1 choose -2" =
+>);
 
 done_testing;
