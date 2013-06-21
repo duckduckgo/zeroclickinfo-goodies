@@ -1,4 +1,4 @@
-package DDG::Goodie::Helpline;
+package DDG::Goodie::HelpLine;
 
 use DDG::Goodie;
 
@@ -11,13 +11,15 @@ attribution github => ['https://github.com/conorfl', 'conorfl'],
 twitter => '@areuhappylucia';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Helpline.pm';
 topics 'everyday';
-category 'assistance';
+category 'special';
+
+my %helpline = (
+    'US' => '1-800-273-TALK (8255)',
+);
 
 handle remainder => sub {
-    if($loc->country_code eq "US"){
-        return "24 Hour Suicide Hotline: 1-800-273-TALK (8255)"
-    }
-    return;
+    return "24 Hour Suicide Hotline: $helpline{$loc->country_code}"
+        if exists $helpline{$loc->country_code};
 };
 
 1;
