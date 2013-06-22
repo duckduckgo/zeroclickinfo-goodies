@@ -8,7 +8,7 @@ triggers any => 'random', 'chess960';
 zci is_cached => 0;
 zci answer_type => 'chess960_position';
 
-primary_example_queries 'chess960';
+primary_example_queries 'chess960 random';
 description 'Generates a random starting position for Chess960';
 topics 'gaming', 'entertainment';
 category 'random';
