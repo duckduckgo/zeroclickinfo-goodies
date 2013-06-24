@@ -63,7 +63,7 @@ zci answer_type => "golden_ratio";
 ```
 
 ## Location API
-Sometimes, all a plugin needs is the user's location. This is where the Location API comes in. An example is the [Is it snowing?](https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/Snow.pm) plugin:
+Sometimes, a plugin needs the user's location. This is where the Location API comes in. An example is the [Is it snowing?](https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/Snow.pm) plugin:
 
 ```perl
 # Phoenixville, Pennsylvania, United States
@@ -95,4 +95,40 @@ latitude => 40.1246
 time_zone => America/New_York
 metro_code => 504
 country_code3 => USA
+```
+
+## Testing the Location API
+
+To write a test for a location aware Goodie, you'll need to pass `ddg_goodie_test` an extra parameter, a `DDG::Request` object, with the location specified. To do this, you'll need to `use DDG::Test::Location` and `use DDG::Request`. Here is a working annotated example excerpted from `t/Helpline.t`.
+
+```perl
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use Test::More;
+use DDG::Test::Goodie;
+
+# These two modules are only necessary when testing with the Location API.
+use DDG::Test::Location;
+use DDG::Request;
+
+zci answer_type => 'helpline';
+
+ddg_goodie_test(
+	[qw(
+		DDG::Goodie::HelpLine
+	)],
+    # This optional argument to ddg_goodie_test is a DDG::Request object.
+    # The object constructor takes two arguments of its own:
+    # the query (usually specified in the test_zci),
+    # and a location object - created by test_location (with a country code).
+    DDG::Request->new(
+        query_raw => "suicide",
+        location => test_location("us")
+    ),
+    test_zci(qr/24 Hour Suicide Hotline: [\d\-){7}]/),
+);
+
+done_testing;
 ```
