@@ -26,13 +26,13 @@ zci answer_type => 'password';
 zci is_cached => 1;
 
 ddg_goodie_test(
-	[
+    [
         # This is the name of the goodie that will be loaded to test.
-		'DDG::Goodie::RouterPasswords'
+        'DDG::Goodie::RouterPasswords'
     ],
     # This is a sample query, just like the user will enter into the DuckDuckGo
     # search box.
-	'Belkin f5d6130' =>
+    'Belkin f5d6130' =>
         test_zci(
             # The first argument to test_zci is the plain text (default)
             # returned from a goodie.  If your goodie also returns an HTML
@@ -76,12 +76,13 @@ my $location = join(", ", $loc->city, $loc->region_name, $loc->country_name);
 ```
 
 When testing on `duckpan`, the plugin will always point you to "Phoenixville, Pennsylvania, United States," but don't worry, because it will show the real location once it's live.
-And it isn't limited to just the city, the state, and the country, either. [Location.pm](https://github.com/duckduckgo/duckduckgo/blob/master/lib/DDG/Location.pm#L6) lists all the things that you can possibly use:
+
+It isn't limited to just the city, the state, and the country. [Location.pm](https://github.com/duckduckgo/duckduckgo/blob/master/lib/DDG/Location.pm#L6) lists all the things that you can possibly use:
 
 ```perl
 my @geo_ip_record_attrs = qw( country_code country_code3 country_name region
     region_name city postal_code latitude longitude time_zone area_code
-	continent_code metro_code );
+    continent_code metro_code );
 ```
 
 Sample contents of `$loc`:
@@ -106,34 +107,44 @@ country_code3 => USA
 
 To write a test for a location aware Goodie, you'll need to pass `ddg_goodie_test` an extra parameter, a `DDG::Request` object, with the location specified. To do this, you'll need to `use DDG::Test::Location` and `use DDG::Request`. Here is a working annotated example excerpted from `t/Helpline.t`.
 
+Note that only a small set of locations are available to be simulated for testing. They are defined in [DDG::Test::Location.pm](https://github.com/duckduckgo/duckduckgo/blob/master/lib/DDG/Test/Location.pm#L18).
+
 ```perl
 #!/usr/bin/env perl
 
 use strict;
 use warnings;
 use Test::More;
-use DDG::Test::Goodie;
+use DDG::Test::Spice;
 
 # These two modules are only necessary when testing with the Location API.
 use DDG::Test::Location;
 use DDG::Request;
 
-zci answer_type => 'helpline';
-
-ddg_goodie_test(
-	[qw(
-		DDG::Goodie::HelpLine
-	)],
+ddg_spice_test(
+    [qw( DDG::Spice::Snow )],
     # This optional argument to ddg_goodie_test is a DDG::Request object.
     # The object constructor takes two arguments of its own:
     # the query (usually specified in the test_zci),
     # and a location object - created by test_location (with a country code).
     DDG::Request->new(
-        query_raw => "suicide",
-        location => test_location("us")
+        query_raw => "is it snowing?",
+        location => test_location("de")
+    ) => test_spice(
+        '/js/spice/snow/'
+        .'M%C3%B6nchengladbach%2C%20%20Nordrhein-Westfalen%2C%20%20Germany',
+        call_type => 'include',
+        caller => 'DDG::Spice::Snow',
     ),
-    test_zci(qr/24 Hour Suicide Hotline: [\d\-){7}]/),
+    # The DDG::Request is used in place of a query string, and isn't necessary
+    # to be used with every test passed to ddg_spice_test.
+    'is it snowing in new york?' => test_spice(
+        '/js/spice/snow/new%20york',
+        call_type => 'include',
+        caller => 'DDG::Spice::Snow',
+    )
 );
 
 done_testing;
+
 ```
