@@ -52,10 +52,6 @@ ddg_goodie_test(
 done_testing;
 ```
 
-### Spice
-
-Once you've written a test file, you can test it on it's own with `perl -Ilib t/GoodieName.t`.
-
 ## Advanced Goodies
 These advanced handle techniques are specific to Goodie plugins:
 
