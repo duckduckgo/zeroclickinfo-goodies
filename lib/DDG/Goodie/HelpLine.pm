@@ -2,7 +2,19 @@ package DDG::Goodie::HelpLine;
 
 use DDG::Goodie;
 
-triggers any => 'suicide';
+my @triggers = (
+    'suicide',
+    'kill myself',
+    'suicidal thoughts',
+    'end my life',
+);
+
+my @skip_triggers = (
+    'lyrics',
+);
+
+triggers any => @triggers;
+
 zci answer_type => 'helpline';
 
 primary_example_queries 'suicide hotline';
@@ -17,7 +29,9 @@ my %helpline = (
     'US' => '1-800-273-TALK (8255)',
 );
 
-handle remainder => sub {
+handle query_lc => sub {
+    my $query = shift;
+    return if grep {$query =~ /$_/} @skip_triggers;
     return "24 Hour Suicide Hotline: $helpline{$loc->country_code}"
         if exists $helpline{$loc->country_code};
 };
