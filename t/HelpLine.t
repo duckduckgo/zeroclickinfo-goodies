@@ -22,6 +22,7 @@ my @skip_queries = (
 
 my @locations = (
     'us',
+    'in',
 );
 
 ddg_goodie_test(
@@ -35,7 +36,7 @@ ddg_goodie_test(
                 query_raw => "$query",
                 location => test_location("$locations[$_]")
             ),
-            test_zci(qr/24 Hour Suicide Hotline: [\d\-){7}]/),
+            test_zci(qr/24 Hour Suicide Hotline: [\d\- ){7,}]/),
         } 0 .. scalar @locations - 1
     } 0 .. scalar @queries - 1),
     (map {
