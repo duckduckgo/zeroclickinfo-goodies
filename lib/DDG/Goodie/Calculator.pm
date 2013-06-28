@@ -19,7 +19,7 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
 
 triggers query_nowhitespace => qr<
         ^
-        ( what is )? !?
+        ( what is | calculate | math )? !?
 
         [\( \) x X * % + / \^ \$ -]*
 
@@ -35,14 +35,14 @@ triggers query_nowhitespace => qr<
         [\( \) x X * % + / \^ 0-9 \. , \$ -]* =? 
 
         $
-        >ix;
+        >xi;
 
 handle query_nowhitespace => sub {
     my $results_html;
     my $results_no_html;
     my $query = $_;
 
-    $query =~ s/^whatis//;
+    $query =~ s/^(?:whatis|calculate|math)//;
 
     if($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
         my $tmp_result = '';

@@ -13,7 +13,7 @@ primary_example_queries 'fib 7';
 secondary_example_queries 'fibonacci 33';
 description 'Returns the n-th element of Fibonacci sequence';
 attribution github => ['https://github.com/koosha--', 'koosha--'],
-			twitter => '_koosha_';
+            twitter => ['https://github.com/_koosha_', '_koosha_'];
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Fibonacci.pm';
 topics 'math';
 category 'calculations';
