@@ -10,10 +10,10 @@ zci is_cached => 1;
 
 ddg_goodie_test(
         [qw( DDG::Goodie::Calculator )],
-        'what is 2+2' => test_zci(
-            "2 + 2 = 4",
+        'what is 2-2' => test_zci(
+            "2 - 2 = 0",
             heading => 'Calculator',
-            html => qq(<div>2 + 2 = <a href="javascript:;" onClick="document.x.q.value='4';document.x.q.focus();">4</a></div>)
+            html => qq(<div>2 - 2 = <a href="javascript:;" onClick="document.x.q.value='0';document.x.q.focus();">0</a></div>)
         ),
         '2+2' => test_zci(
             "2 + 2 = 4",

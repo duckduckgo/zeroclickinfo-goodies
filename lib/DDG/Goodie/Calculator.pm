@@ -97,7 +97,7 @@ handle query_nowhitespace => sub {
         };
 
         # 0-9 check for http://yegg.duckduckgo.com/?q=%243.43%20%2434.45&format=json
-        if ($tmp_result && $tmp_result ne 'inf' && $tmp_result =~ /^(?:\-|)[0-9\.]+$/) {
+        if (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result =~ /^(?:\-|)[0-9\.]+$/) {
             # Precisian.
             my $precisian = 0;
 
