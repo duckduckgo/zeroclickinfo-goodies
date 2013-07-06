@@ -4,10 +4,6 @@ package DDG::Goodie::DuckDuckGo;
 use DDG::Goodie;
 
 my %data = (
-    zeroclickinfo       => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results.",
-    zeroclick           => \"zeroclickinfo",
-    '0click'            => \"zeroclickinfo",
-    '0clickinfo'        => \"zeroclickinfo",
     goodies             => "DuckDuckGo's goodie repository: https://github.com/duckduckgo/zeroclickinfo-goodies",
     spice               => "DuckDuckGo's spice repository: https://github.com/duckduckgo/zeroclickinfo-spice",
     longtail            => "DuckDuckGo's longtail repository: https://github.com/duckduckgo/zeroclickinfo-longtail",
@@ -23,8 +19,13 @@ my %data = (
     quackandhack        => "QUACK!",
     duck                => "I am the duck. Dax the duck.",
     duck_html           => "<img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.",
-    dax                => "I am the duck. Dax the duck.",
-    dax_html           => "<img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.",
+    dax                 => "I am the duck. Dax the duck.",
+    dax_html            => "<img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.",
+    irc                 => "DuckDuckGo's official IRC channel is #duckduckgo on irc.freenode.net",
+    irc_html            => "DuckDuckGo's official IRC channel is <a href='http://webchat.freenode.net/?channels=duckduckgo'>#duckduckgo</a> on <a href='http://freenode.net/'>irc.freenode.net</a>",
+    (map {
+        $_              => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results.",
+        } qw/zeroclickinfo zeroclick 0click 0clickinfo/),
 );
 
 triggers any => keys %data, qw/zero 0/;
@@ -41,22 +42,13 @@ topics 'everyday';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
-handle query_nowhitespace_nodash => sub {
-    $_ = lc;
+handle query_lc => sub {
     s/\W//g;
-    s/^duckduckgo//i;
-    s/repo(?:sitory)?//i;
-    return unless exists $data{$_};
-    my $answer = $data{$_};
-    my $answerhtml = exists $data{"${_}_html"} ? $data{"${_}_html"} : 0;
-
-    if (ref $answer eq 'SCALAR') {
-        $answer = $data{$$answer};
-        $answerhtml = exists $data{"${answer}_html"} ? $data{"${answer}_html"} : 0;
-    }
-
-    return $answer unless $answerhtml;
-    return $answer, html => $answerhtml;
+    return if $_ eq 'irc';
+    s/^duckduckgo|repo(?:sitory)?//g;
+    return unless exists $data{$_} and my $answer = $data{$_};
+    return $answer unless exists $data{"${_}_html"};
+    return $answer, html => $data{"${_}_html"};
 };
 
 1;
