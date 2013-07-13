@@ -4,26 +4,26 @@ use DDG::Goodie;
 
 triggers start => 'bio';
 handle remainder => sub {
-	unless (/(\S*?)\s+(\S*)/) {
-		return "Uh, I don't see a function and sequence seperated by a space, like so: \"rc ATCG\", try again.";
+	unless (/(\S+)\s+(.*)/) {
+		return "I don't see a function and sequence seperated by a space, like so: \"bio rc ATCG\", try again. Try \"bio h\" or \"bio help\" to get more possible functions.";
 	}
 	my $function = lc($1);
 	my $sequence = uc($2);
-	return "That sequence has non-\"AUCGT\" characters...?\n" if $sequence =~ /[^TUACG]/;
+	$sequence =~ s/\s//;
+	return "That sequence has non-\"AUCGT\" characters...?" if $sequence =~ /[^TUACG]/;
 	my %complement = (	"A" => "T",
-					"U" => "A",
-					"T" => "A",
-					"C" => "G",
-					"G" => "C"
-					);
+						"U" => "A",
+						"T" => "A",
+						"C" => "G",
+						"G" => "C");
 	
-	if ("h" eq $function | "help" eq $function) {
+	if ("h" eq $function | "help" eq $function | "halp" eq $function | "fuck" eq $function) {
 		return "Help function activated. So this DDG Goodie does a couple of things:
 	r		Reverse the sequence
 	c		Complement the sequence
 	rc		Reverse and complement the sequence
 	tln		Translate the sequence in three frames using standard table
-	temp	Calculate a rough melting temperature for the sequence";
+	#PLANNED	temp	Calculate a rough melting temperature for the sequence";
 	}
 	if ("tln" eq $function) {
 		$sequence =~ tr/T/U/;			#Assume that all Ts should be Us
@@ -91,36 +91,38 @@ handle remainder => sub {
 							"GGU"	=>	"G",
 							"GGC"	=>	"G",
 							"GGA"	=>	"G",
-							"GGG"	=>	"G",
-							);
+							"GGG"	=>	"G");
 			my @frame;						#Make the three frames
 			$frame[0] = $sequence;			#1st
 			$frame[1] = $frame[0];			#
 			$frame[1] =~ s/^.//;			#Second is delete first character
 			$frame[2] = $frame[1];			#
 			$frame[2] =~ s/^.//;			#Third is delete first character
-			
-			my @tln = ("","","");			#Space for translation
+			my @tln;# = ("","","");			#Space for translation
 			my $start = 0;					#Are we started translating yet?
 			
-			foreach my $frame (0..(scalar @frame)) {	#For each of the frames
+			foreach my $frame (0..$#frame) {	#For each of the frames
 				$start = 0;					#We're not starting quite yet
 				while ($frame[$frame]) {							#If there's still seq
 					last unless $frame[$frame] =~ s/^(\w\w\w)//;	#Take first 3
-					$start = 1 if $tln_table{$1} eq "M";			#Start if start codon
-					last if $tln_table{$1} eq "X";					#Stop if stop codon
-					$tln[$frame] .= $tln_table{$1} if $start;		#Add the amino acid if we're in frame
+					if ($tln_table{$1} eq "X") {
+						$tln[$frame] .= " {STOP} ";
+						$start = 0;
+						next;
+					}
+					$tln[$frame] .= " {START} " and $start = 1 if !$start & $tln_table{$1} eq "M";
+					$tln[$frame] .= $tln_table{$1};
 				}
 			}
-			my $report = "Translated ".$sequence.", got:\n";		#make a report to return
-			$report .= "\tFrame 1: $tln[0]\n" if $tln[0];
-			$report .= "\tFrame 2: $tln[1]\n" if $tln[1];
-			$report .= "\tFrame 3: $tln[2]\n" if $tln[2];
+			my $report = "Translated, got:";		#make a report to return
+			foreach my $frame (0..$#frame) {
+				$report .= "\n\n\tFrame ".($frame+1).": $tln[$frame]" if $tln[$frame];
+			}
 			return $report;
 		}
 	if ("c" eq $function) {
-		my @sequence = split "", $sequence;
 		my $report = "";
+		my @sequence = split "", $sequence;
 		foreach (@sequence) {
 			$report .= $complement{$_};
 		}
@@ -130,8 +132,8 @@ handle remainder => sub {
 		return "Reverse sequence: ".scalar reverse $sequence;
 	}
 	if ("rc" eq $function) {
-		my @sequence = split "", $sequence;
 		my $report = "";
+		my @sequence = split "", $sequence;
 		foreach (@sequence) {
 			$report .= $complement{$_};
 		}
@@ -140,6 +142,7 @@ handle remainder => sub {
 	if ("temp" eq $function) {
 		return "Temperature calc not written yet...\n";
 	}
+	return "I didn't recognize that bio function, why don't you try \"bio h\" for help.";
 };
 
 zci is_cached => 1;
