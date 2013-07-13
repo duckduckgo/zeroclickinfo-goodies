@@ -28,8 +28,7 @@ ddg_goodie_test(
 	r		Reverse the sequence
 	c		Complement the sequence
 	rc		Reverse and complement the sequence
-	tln		Translate the sequence in three frames using standard table
-	#PLANNED	temp	Calculate a rough melting temperature for the sequence"),
+	tln		Translate the sequence in three frames using standard table"),
 	
 	'bio herp derp'	=> test_zci("That sequence has non-\"AUCGT\" characters...?"),
 	
