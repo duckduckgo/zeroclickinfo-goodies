@@ -96,6 +96,7 @@ handle remainder => sub {
 	}
 	
 	sub temp {
+		return "[ERROR: Non-nucleotide characters detected]" if $_[0] =~ /[^ATCGU]/;
 		my $gc_count = $_[0] =~ tr/CG/CG/;
 		return (4 * $gc_count + 2 * ((scalar length $_[0]) - $gc_count)) if (scalar length $_[0]) < 14;
 		return (64.9 + 41 * ($gc_count - 16.4) / scalar length $_[0]);
@@ -104,6 +105,7 @@ handle remainder => sub {
 	}
 	
 	sub weight {
+		return "[ERROR: Non-nucleotide characters detected]" if $_[0] =~ /[^ATCGU]/;
 		my $g = $_[0] =~ tr/G/G/;
 		my $c = $_[0] =~ tr/C/C/;
 		my $a = $_[0] =~ tr/A/A/;
