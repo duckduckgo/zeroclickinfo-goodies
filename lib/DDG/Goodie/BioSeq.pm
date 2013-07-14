@@ -2,7 +2,21 @@ package DDG::Goodie::BioSeq;
 # ABSTRACT: Does several simple string manipulations and transliterations, for the convienence of biologists designing primers and other simple tasks. Takes as arguments several functions, the shorthand of which is in the help.
 use DDG::Goodie;
 
-triggers start => 'bioseq';
+triggers start => 'bioseq', 'bio';	#Can I have the bio trigger word for now?
+
+zci is_cached => 1;
+zci answer_type => 'bioseq';
+
+#Modified metadata from "Average" package, METADATA readme is lost
+primary_example_queries 'bioseq rc ATCG';
+secondary_example_queries 'bioseq tln ATGAAACCCGGGTAG', 'bioseq temp TAATACGACTCACTATAGGG';
+description 'simple string manipulations and calculations for lazy biologists, try bioseq help';
+name 'BioSeq';
+#code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/lib/DDG/Goodie/BioSeq.pm';	#Where is it gonna be?
+category 'calculations';
+topics 'science';
+attribution email => 'chreod@lavabit.com';
+
 handle remainder => sub {
 	
 	my $help = "To use the \"bioseq\" DDGoodie, enter a function name then the nucleotide or amino acid sequence.";
@@ -119,7 +133,5 @@ handle remainder => sub {
 		#http://www.promega.com/techserv/tools/biomath/calc11.htm
 	}
 };
-
-zci is_cached => 1;
 
 1;
