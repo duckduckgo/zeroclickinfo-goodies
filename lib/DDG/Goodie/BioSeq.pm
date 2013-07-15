@@ -26,6 +26,8 @@ my $help = "To use the \"bioseq\" DDGoodie, enter a function name then the nucle
          . "\n	w	estimate the DNA weight of sequence as DNA"
          . "\nFor example, \"bioseq rc ATCGCGATUCGAT\" would return the reversed complementary sequence."
          . "\nFor example, \"bioseq tln ATCGCGATUCGAT\" would return the translation of the sequence.";
+my $help_html = $help;
+$help_html =~ s/\n/<br>/g;
 
 my $nucleotides = "ATCGU";
 my $amino_acids = "FLSYCWPHQRIMTNKVADEG";
@@ -125,10 +127,11 @@ sub weight {
     # http://www.promega.com/techserv/tools/biomath/calc11.htm
 }
 
+
 handle remainder => sub {
 	my @args = split /\s+/;
 	my $function = lc shift @args;
-    return $help if $function eq 'help' or $function eq 'h';
+    return $help, html => $help_html if $function eq 'help' or $function eq 'h';
 	
 	my $sequence = uc join "", @args if @args;    # The rest of argument should be seq, even with whitespace errors
 	return unless $sequence;                      # If no sequence, then quit and return nothing
