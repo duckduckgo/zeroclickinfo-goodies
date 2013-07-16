@@ -1,3 +1,4 @@
+package DDG::Goodie::Or; 
 
 use DDG::Goodie;
 use utf8;
