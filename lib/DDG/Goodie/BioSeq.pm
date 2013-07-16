@@ -14,7 +14,7 @@ name 'BioSeq';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/lib/DDG/Goodie/BioSeq.pm';
 category 'calculations';
 topics 'science';
-email => ['chreod@lavabit.com', 'Darach Miller'];
+attribution email => ['chreod@lavabit.com', 'Darach Miller'];
 
 my $help = "To use the \"bioseq\" DDGoodie, enter a function name then the nucleotide or amino acid sequence."
          . "\n	r	reverse the sequence, return DNA"
@@ -29,7 +29,6 @@ my $help = "To use the \"bioseq\" DDGoodie, enter a function name then the nucle
 my $help_html = $help;
 $help_html =~ s/\n/<br>/g;
 
-my $nucleotides = "ATCGU";
 my %tln_table = (
     #Each amino acid is on a row, with codons that map to it
     #Stop codon is X
@@ -57,11 +56,10 @@ my %tln_table = (
     "GAA"	=>	"E",	"GAG"	=>	"E",
     "GGU"	=>	"G",	"GGC"	=>	"G",	"GGA"	=>	"G",	"GGG"	=>	"G"
 );
-my $amino_acids = join("", values(%tln_table));	# aka "FLSYCWPHQRIMTNKVADEG"
-$amino_acids =~ s/X//g;	#Two steps so that if we use a non-canonical table above, we can still get our string of possible nucleotides
 my %amino_acid_weight = (
 	#I know the three significant figures are ridiculous, but that was how I found the values:
 	#http://web.expasy.org/protscale/pscale/Molecularweight.html
+	#These weights are off...
 	"A"	=>	89.000,
 	"R"	=>	174.000,
 	"N"	=>	132.000,
@@ -86,10 +84,13 @@ my %amino_acid_weight = (
 my %nucleotide_weight = (
 	"A"	=>	313.2,
 	"T"	=>	304.2,
-	#"U"	=>	?????,	#Look up
+	#"U"	=>	?????,	#Look up later for dUTP applications
 	"G"	=>	329.2,
 	"C"	=>	289.2
 );
+my $amino_acids = join("", values(%tln_table));	# aka "FLSYCWPHQRIMTNKVADEG"
+$amino_acids =~ s/X//g;	#Two steps so that if we use a non-canonical table above, we can still get our string of possible nucleotides
+my $nucleotides = "ATCGU";
 
 my %functions = (
     "reverse"            => sub { "Reversed: ".reverse },
@@ -142,13 +143,15 @@ sub temp {
 	return "BioSeq Error: Can't calculate temperature for non-nucleotide sequence (doesn't support IUPAC codes)" if $_[0] =~ /[^ATCGU]/;
 	#I can only calculate temperature for nucleotides
 	my $gc_count = $_[0] =~ tr/CG/CG/;	#Count all the Gs and Cs
+	my $temperature;
 	if ((scalar length $_[0]) < 14) {
-		my $temperature = (4 * $gc_count + 2 * ((scalar length $_[0]) - $gc_count));
+		$temperature = (4 * $gc_count + 2 * ((scalar length $_[0]) - $gc_count));
 		# The above is for less than 14 length, below is for 14 or more
 	} else {
-		my $temperature = (64.9 + 41 * ($gc_count - 16.4) / scalar length $_[0]);
+		$temperature = (64.9 + 41 * ($gc_count - 16.4) / scalar length $_[0]);
 	}
-	$temperature =. "Estimated melting temperature of ";
+	$temperature = sprintf("%.2f", $temperature);
+	$temperature = "Estimated melting temperature of ".$temperature;
 	$temperature .= " Celsius, supposing 50mM monovalent cations.";
 	return $temperature;
 	# This formula is as cited in Promega's biomath page
@@ -160,19 +163,16 @@ sub weight {
 	my $weight = 0;
 	if ($weighing_seq =~ /[^ATCGU]/) {
 		#If it has non-nucleotides, it must be a protein, so use a different table
-		foreach (split("",$amino_acids)) {
-			my $count = $weighing_seq =~ tr/$_/$_/;
-			$weight += $count * $amino_acid_weight{$_};
+		foreach (split(//, $weighing_seq)) {
+			$weight += $amino_acid_weight{$_};
 		}
-		$weight =. "That amino acid sequence weighs about ";
+		$weight = "That amino acid sequence weighs about ".$weight;
 		$weight	.= " dalton";
 	} else {
-		foreach (split("",$nucleotides)) {
-			if $_ eq "U" next;	#For now, need to look up the weight of dUTP
-			my $count = $weighing_seq =~ tr/$_/$_/;
-			$weight += $count * $nucleotide_weight{$_};
+		foreach (split(//, $weighing_seq)) {
+			$weight += $nucleotide_weight{$_};
 		}
-		$weight =. "That amino acid sequence weighs about ";
+		$weight = "That amino acid sequence weighs about ".$weight;
 		$weight	.= " grams per mole";
 	}
 	return $weight;
@@ -193,7 +193,8 @@ handle remainder => sub {
 						      #  also, T is an amino acid, U isn't
 	for ($sequence) {
 		my $return_value = $functions{$function}->() if exists $functions{$function};
-		my $return_value_html =~ tr/\n/<br>/g;
+		my $return_value_html = $return_value;
+		$return_value_html =~ s/\n/<br>/g;
 		return $return_value, html => $return_value_html;
 	}
 };
