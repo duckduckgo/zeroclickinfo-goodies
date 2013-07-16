@@ -9,7 +9,7 @@ zci is_cached => 1;
 zci answer_type => "and";
 
 attribution
-    github => ['https://github.com/MithrandirAgain', 'MithrandirAgain'];
+    github => ['https://github.com/Spixi', 'Spixi (based on Xor.pm by MithrandirAgain)'];
 
 primary_example_queries '4 and 5';
 secondary_example_queries '5 ∧ 79', '7607 and 13444 and 5831 and 11077';
