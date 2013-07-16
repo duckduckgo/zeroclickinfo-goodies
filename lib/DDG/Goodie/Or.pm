@@ -9,7 +9,7 @@ zci is_cached => 1;
 zci answer_type => "or";
 
 attribution
-    github => ['https://github.com/Spixi', 'Spixi (based on Xor.pm of MithrandirAgain)'];
+    github => ['https://github.com/Spixi', 'Spixi (based on Xor.pm by MithrandirAgain)'];
 
 primary_example_queries '9 or 5';
 secondary_example_queries '5 ∨ 59', '86 or 8209 or 4293 or 4129';
