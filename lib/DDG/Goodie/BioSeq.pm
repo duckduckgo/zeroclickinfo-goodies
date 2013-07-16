@@ -95,11 +95,11 @@ my $nucleotides = "ATCGU";
 my %functions = (
     "reverse"            => sub { "Reversed: ".reverse },
     "r"                  => sub { "Reversed: ".reverse },
-    "complement"         => sub { tr/ATCGU/TAGCA/; "Complement: $_" },
-    "c"                  => sub { tr/ATCGU/TAGCA/; "Complement: $_" },
-    "reverse-complement" => sub { tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
-    "rc"                 => sub { tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
-    "tu"                 => sub { tr/T/U/; "T's turned to U's: $_" },
+    "complement"         => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Complement: $_" },
+    "c"                  => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Complement: $_" },
+    "reverse-complement" => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
+    "rc"                 => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
+    "tu"                 => sub { return if /[^ATCG]/; tr/T/U/; "T's turned to U's: $_" },
     "translate"          => sub { translate($_) },
     "tln"                => sub { translate($_) },    
     "temp"               => sub { temp($_) },
@@ -152,7 +152,7 @@ sub temp {
 	}
 	$temperature = sprintf("%.2f", $temperature);
 	$temperature = "Estimated melting temperature of ".$temperature;
-	$temperature .= " Celsius, supposing 50mM monovalent cations.";
+	$temperature .= " Celsius, supposing 50mM monovalent cations";
 	return $temperature;
 	# This formula is as cited in Promega's biomath page
 	# http://www.promega.com/techserv/tools/biomath/calc11.htm
@@ -166,13 +166,15 @@ sub weight {
 		foreach (split(//, $weighing_seq)) {
 			$weight += $amino_acid_weight{$_};
 		}
+		$weight = sprintf("%.2f", $weight);
 		$weight = "That amino acid sequence weighs about ".$weight;
 		$weight	.= " dalton";
 	} else {
 		foreach (split(//, $weighing_seq)) {
 			$weight += $nucleotide_weight{$_};
 		}
-		$weight = "That amino acid sequence weighs about ".$weight;
+		$weight = sprintf("%.2f", $weight);
+		$weight = "That nucleotide sequence weighs about ".$weight;
 		$weight	.= " grams per mole";
 	}
 	return $weight;
@@ -194,7 +196,7 @@ handle remainder => sub {
 	for ($sequence) {
 		my $return_value = $functions{$function}->() if exists $functions{$function};
 		my $return_value_html = $return_value;
-		$return_value_html =~ s/\n/<br>/g;
+		$return_value_html =~ s/\n/<br>/g if $return_value_html;
 		return $return_value, html => $return_value_html;
 	}
 };
