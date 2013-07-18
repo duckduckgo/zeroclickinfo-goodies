@@ -31,13 +31,13 @@ $help_html =~ s/\n/<br>/g;
 
 my %tln_table = (
     #Each amino acid is on a row, with codons that map to it
-    #Stop codon is X
+    #Stop codon is ampersand
     #Need to add attribution for the codon table to IUPAC website
     "UUU"	=>	"F",	"UUC"	=>	"F",
     "UUA"	=>	"L",	"UUG"	=>	"L",
     "UCU"	=>	"S",	"UCC"	=>	"S",	"UCA"	=>	"S",	"UCG"	=>	"S", "AGU"	=>	"S",	"AGC"	=>	"S",
     "UAU"	=>	"Y",	"UAC"	=>	"Y",
-    "UAA"	=>	"X",	"UAG"	=>	"X",	"UGA"	=>	"X",
+    "UAA"	=>	"@",	"UAG"	=>	"@",	"UGA"	=>	"@",
     "UGU"	=>	"C",	"UGC"	=>	"C",
     "UGG"	=>	"W",
     "CUU"	=>	"L",	"CUC"	=>	"L",	"CUA"	=>	"L",	"CUG"	=>	"L",
@@ -57,40 +57,49 @@ my %tln_table = (
     "GGU"	=>	"G",	"GGC"	=>	"G",	"GGA"	=>	"G",	"GGG"	=>	"G"
 );
 my %amino_acid_weight = (
-	#I know the three significant figures are ridiculous, but that was how I found the values:
-	#http://web.expasy.org/protscale/pscale/Molecularweight.html
-	#These weights are off...
-	"A"	=>	89.000,
-	"R"	=>	174.000,
-	"N"	=>	132.000,
-	"D"	=>	133.000,
-	"C"	=>	121.000,
-	"Q"	=>	146.000,
-	"E"	=>	147.000,
-	"G"	=>	75.000,
-	"H"	=>	155.000,
-	"I"	=>	131.000,
-	"L"	=>	131.000,
-	"K"	=>	146.000,
-	"M"	=>	149.000,
-	"F"	=>	165.000,
-	"P"	=>	115.000,
-	"S"	=>	105.000,
-	"T"	=>	119.000,
-	"W"	=>	204.000,
-	"Y"	=>	181.000,
-	"V"	=>	117.000
+	#http://web.expasy.org/findmod/findmod_masses.html#AA
+	#Water is already removed in this list
+	"A"	=>	71.0788,
+	"R"	=>	156.1875,
+	"N"	=>	114.1038,
+	"D"	=>	115.0886,
+	"C"	=>	103.1388,
+	"E"	=>	129.1155,
+	"Q"	=>	128.1307,
+	"G"	=>	57.0519,
+	"H"	=>	137.1411,
+	"I"	=>	113.1594,
+	"L"	=>	113.1594,
+	"K"	=>	128.1741,
+	"M"	=>	131.1926,
+	"F"	=>	147.1766,
+	"P"	=>	97.1167,
+	"S"	=>	87.0782,
+	"T"	=>	101.1051,
+	"W"	=>	186.2132,
+	"Y"	=>	163.1760,
+	"V"	=>	99.1326,
+	"U"	=>	150.0388,
+	"O"	=>	237.3018
 );
 my %nucleotide_weight = (
-	"A"	=>	313.2,
-	"T"	=>	304.2,
-	#"U"	=>	?????,	#Look up later for dUTP applications
-	"G"	=>	329.2,
-	"C"	=>	289.2
+	#From wikipedia chemical box
+	"dA"	=>	331.222,	#d is for deoxy, so dna
+	"dT"	=>	322.208,
+	"dU"	=>	308.182,
+	"dG"	=>	347.2243,
+	"dC"	=>	307.197,
+	"A"	=>	0,
+	"T"	=>	0,
+	"U"	=>	0,
+	"G"	=>	0,
+	"C"	=>	0,
 );
-my $amino_acids = join("", values(%tln_table));	# aka "FLSYCWPHQRIMTNKVADEG"
+my $amino_acids = join("", keys(%amino_acid_weight));	# aka "FLSYCWPHQRIMTNKVADEG"
 $amino_acids =~ s/X//g;	#Two steps so that if we use a non-canonical table above, we can still get our string of possible nucleotides
-my $nucleotides = "ATCGU";
+my $nucleotides = join("", keys(%nucleotide_weight));
+#apply nucleotides to below ^ statements?
+#how complement I
 
 my %functions = (
     "reverse"            => sub { "Reversed: ".reverse },
@@ -99,7 +108,8 @@ my %functions = (
     "c"                  => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Complement: $_" },
     "reverse-complement" => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
     "rc"                 => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
-    "tu"                 => sub { return if /[^ATCG]/; tr/T/U/; "T's turned to U's: $_" },
+    "tu"                 => sub { return if /[^$nucleotides]/; tr/T/U/; "T's turned to U's: $_" },
+    "ut"                 => sub { return if /[^$nucleotides]/; tr/U/T/; "U's turned to T's: $_" },
     "translate"          => sub { translate($_) },
     "tln"                => sub { translate($_) },    
     "temp"               => sub { temp($_) },
@@ -109,7 +119,7 @@ my %functions = (
 );
 
 sub translate {
-    return "BioSeq Error: Can't translate non-nucleotide characters" if $_[0] =~ /[^ATCGU]/;
+    return "BioSeq Error: Can't translate non-nucleotide characters" if $_[0] =~ /[^$nucleotides]/;
     $_[0] =~ tr/T/U/; # Turn DNA to RNA for lookup table
     my @frame;        # Make the three frames of reference
     $frame[0] = $frame[1] = $frame[2] = $_[0];
@@ -121,7 +131,7 @@ sub translate {
         $start = 0;                                      # We don't start until we see a start codon
         while ($frame[$frame]) {                         # If there's still seq
             last unless $frame[$frame] =~ s/^(\w\w\w)//; # Take 3 off the top
-            if ($tln_table{$1} eq "X") {                 # If stop indicated
+            if ($tln_table{$1} eq "@") {                 # If stop indicated
                 $tln[$frame] .= " {STOP} ";              # print stop
                 $start = 0;                              # and stop
                 next;                                    # goto next codon
@@ -156,25 +166,31 @@ sub temp {
 	return $temperature;
 	# This formula is as cited in Promega's biomath page
 	# http://www.promega.com/techserv/tools/biomath/calc11.htm
+	#Should upgrade to dope formula
+	#http://www.idtdna.com/Analyzer/Applications/Instructions/Default.aspx
 }
 
 sub weight {
 	my $weighing_seq = $_[0];
 	my $weight = 0;
-	if ($weighing_seq =~ /[^ATCGU]/) {
+	if ($weighing_seq =~ /[^$nucleotides]/) {
 		#If it has non-nucleotides, it must be a protein, so use a different table
 		foreach (split(//, $weighing_seq)) {
-			$weight += $amino_acid_weight{$_};
+			$weight += $amino_acid_weight{$_};	#Water already removed in table
 		}
+		$weight += 18.01528;	#Adding the ends back on
 		$weight = sprintf("%.2f", $weight);
 		$weight = "That amino acid sequence weighs about ".$weight;
 		$weight	.= " dalton";
+	} elsif (/DERP/) {	#assume rna?
+		
 	} else {
 		foreach (split(//, $weighing_seq)) {
-			$weight += $nucleotide_weight{$_};
+			$weight += $nucleotide_weight{"d".$_} - 18.01528;	#Removing H0 from phosphate and hydrogen from 3' hydroxl
 		}
+		$weight += 18.01528 - 63.98 + 2.016;	#Adding 5' OH and 3' H back on, removing 5' phosphate
 		$weight = sprintf("%.2f", $weight);
-		$weight = "That nucleotide sequence weighs about ".$weight;
+		$weight = "That 5' phosphorylated nucleotide sequence weighs about ".$weight;
 		$weight	.= " grams per mole";
 	}
 	return $weight;
