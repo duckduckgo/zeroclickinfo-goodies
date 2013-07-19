@@ -6,6 +6,16 @@ use Scalar::Util qw(looks_like_number);
 
 triggers start => 'POTUS', 'potus';
 
+name 'POTUS';
+description 'returns the President of the United States';
+category 'reference';
+topics 'trivia';
+primary_example_queries 'potus 16';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/POTUS.pm';
+attribution github  => ['https://github.com/numbertheory', 'John-Peter Etcheber'],
+            twitter => ['http://twitter.com/jpscribbles', 'John-Peter Etcheber'];
+
+
 handle remainder => sub {
   if (looks_like_number($_) == 0) {
 		return;
