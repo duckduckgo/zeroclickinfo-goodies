@@ -17,7 +17,8 @@ attribution github  => ['https://github.com/numbertheory', 'John-Peter Etcheber'
 
 
 handle remainder => sub {
-  if (looks_like_number($_) == 0) {
+ 	#Make sure the argument is a number
+ 	if (looks_like_number($_) == 0) {
 		return;
 		}	
 	#Don't use negative numbers	
