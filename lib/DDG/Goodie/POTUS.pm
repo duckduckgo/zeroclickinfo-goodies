@@ -1,0 +1,83 @@
+package DDG::Goodie::POTUS;
+# ABSTRACT: Returns requested President of the United States
+
+use DDG::Goodie;
+use Scalar::Util qw(looks_like_number);
+
+triggers start => 'POTUS', 'potus';
+
+handle remainder => sub {
+  if (looks_like_number($_) == 0) {
+		return;
+		}	
+	#Don't use negative numbers	
+	if ($_ < 1) {
+		return;
+		}
+	#There are only 44 Presidents so far
+	if ($_ > 44) {
+		return;
+		}
+		
+	my $num = $_ - 1;
+	my @prez = (
+			"George Washington",
+			"John Adams",
+			"Thomas Jefferson",
+			"James Madison",
+			"James Monroe",
+			"John Quincy Adams",
+			"Andrew Jackson",
+			"Martin Van Buren",
+			"William Henry Harrison",
+			"John Tyler",
+			"James K. Polk",
+			"Zachary Taylor",
+			"Millard Fillmore",
+			"Franklin Pierce",
+			"James Buchanan",
+			"Abraham Lincoln",
+			"Andrew Johnson",
+			"Ulysses S. Grant",
+			"Rutherfod B. Hayes",
+			"James A. Garfield",
+			"Chester A. Arthur",
+			"Grover Cleveland",
+			"Benjamin Harrison",
+			"Grover Cleveland",
+			"William McKinley",
+			"Theodore Roosevelt",
+			"William Howard Taft",
+			"Woodrow Wilson",
+			"Warren G. Harding",
+			"Calvin Coolidge",
+			"Herbert Hoover",
+			"Franklin D. Roosevelt",
+			"Harry S. Truman",
+			"Dwight D. Eisenhower",
+			"John F. Kennedy",
+			"Lyndon B. Johnson",
+			"Richard Nixon",
+			"Gerald Ford",
+			"Jimmy Carter",
+			"Ronald Reagan",
+			"George H.W. Bush",
+			"Bill Clinton",
+			"George W. Bush",
+			"Barack Obama"
+				);
+	my @label = ( "th","st","nd","rd","th","th","th","th","th","th",
+		   "th","th","th","th","th","th","th","th","th","th",
+		   "th","st","nd","rd","th","th","th","th","th","th",
+		   "th","st","nd","rd","th","th","th","th","th","th",
+		   "th","st","nd","rd","th"
+			);
+	my $verb = " was";
+	if (($num+1) == 44){$verb = " is";}
+	return $prez[$num] . $verb . " the " . ($num+1) . $label[$num+1] . " President of the United States.";
+	return;
+};
+
+zci is_cached => 1;
+
+1;
