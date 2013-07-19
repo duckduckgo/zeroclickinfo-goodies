@@ -14,7 +14,7 @@ name 'BioSeq';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/lib/DDG/Goodie/BioSeq.pm';
 category 'calculations';
 topics 'science';
-attribution email => ['chreod@lavabit.com', 'Darach Miller'];
+attribution email => ['chreod@lavabit.com', 'chreod'];
 
 my $help = "To use the \"bioseq\" DDGoodie, enter a function name then the nucleotide or amino acid sequence."
          . "\n	r	reverse the sequence, return DNA"
@@ -31,13 +31,13 @@ $help_html =~ s/\n/<br>/g;
 
 my %tln_table = (
     #Each amino acid is on a row, with codons that map to it
-    #Stop codon is ampersand
+    #Stop codon is Z
     #Need to add attribution for the codon table to IUPAC website
     "UUU"	=>	"F",	"UUC"	=>	"F",
     "UUA"	=>	"L",	"UUG"	=>	"L",
     "UCU"	=>	"S",	"UCC"	=>	"S",	"UCA"	=>	"S",	"UCG"	=>	"S", "AGU"	=>	"S",	"AGC"	=>	"S",
     "UAU"	=>	"Y",	"UAC"	=>	"Y",
-    "UAA"	=>	"@",	"UAG"	=>	"@",	"UGA"	=>	"@",
+    "UAA"	=>	"Z",	"UAG"	=>	"Z",	"UGA"	=>	"Z",
     "UGU"	=>	"C",	"UGC"	=>	"C",
     "UGG"	=>	"W",
     "CUU"	=>	"L",	"CUC"	=>	"L",	"CUA"	=>	"L",	"CUG"	=>	"L",
@@ -104,10 +104,10 @@ my $nucleotides = join("", keys(%nucleotide_weight));
 my %functions = (
     "reverse"            => sub { "Reversed: ".reverse },
     "r"                  => sub { "Reversed: ".reverse },
-    "complement"         => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Complement: $_" },
-    "c"                  => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Complement: $_" },
-    "reverse-complement" => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
-    "rc"                 => sub { return if /[^ATCG]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
+    "complement"         => sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Complement: $_" },
+    "c"                  => sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Complement: $_" },
+    "reverse-complement" => sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
+    "rc"                 => sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
     "tu"                 => sub { return if /[^$nucleotides]/; tr/T/U/; "T's turned to U's: $_" },
     "ut"                 => sub { return if /[^$nucleotides]/; tr/U/T/; "U's turned to T's: $_" },
     "translate"          => sub { translate($_) },
@@ -131,7 +131,7 @@ sub translate {
         $start = 0;                                      # We don't start until we see a start codon
         while ($frame[$frame]) {                         # If there's still seq
             last unless $frame[$frame] =~ s/^(\w\w\w)//; # Take 3 off the top
-            if ($tln_table{$1} eq "@") {                 # If stop indicated
+            if ($tln_table{$1} eq "Z") {                 # If stop indicated
                 $tln[$frame] .= " {STOP} ";              # print stop
                 $start = 0;                              # and stop
                 next;                                    # goto next codon
@@ -182,11 +182,10 @@ sub weight {
 		$weight = sprintf("%.2f", $weight);
 		$weight = "That amino acid sequence weighs about ".$weight;
 		$weight	.= " dalton";
-	} elsif (/DERP/) {	#assume rna?
-		
-	} else {
+	}
+	else {
 		foreach (split(//, $weighing_seq)) {
-			$weight += $nucleotide_weight{"d".$_} - 18.01528;	#Removing H0 from phosphate and hydrogen from 3' hydroxl
+			$weight += $nucleotide_weight{'d'.$_} - 18.01528;	#Removing H0 from phosphate and hydrogen from 3' hydroxl
 		}
 		$weight += 18.01528 - 63.98 + 2.016;	#Adding 5' OH and 3' H back on, removing 5' phosphate
 		$weight = sprintf("%.2f", $weight);
@@ -201,6 +200,7 @@ sub weight {
 
 handle remainder => sub {
 	my @args = split /\s+/;
+	return unless @args;
 	my $function = lc shift @args;
 	return $help, html => $help_html if $function eq 'help' or $function eq 'h';
 	
