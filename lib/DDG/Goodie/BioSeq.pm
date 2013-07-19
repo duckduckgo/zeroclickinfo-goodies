@@ -1,8 +1,8 @@
 package DDG::Goodie::BioSeq;
-# ABSTRACT: Does several simple string manipulations and transliterations, for the convienence of biologists designing primers and other simple tasks. Takes as arguments several functions, the shorthand of which is in the help.
+# ABSTRACT: Does several simple string manipulations, transliterations, and calculations, for the convienence of biologists designing primers and other simple tasks. Takes as arguments several functions, the shorthand of which is in the help.
 use DDG::Goodie;
 
-triggers start => 'bioseq', 'bio';
+triggers start => 'bioseq';
 
 zci is_cached => 1;
 zci answer_type => 'bioseq';
@@ -16,49 +16,47 @@ category 'calculations';
 topics 'science';
 attribution email => ['chreod@lavabit.com', 'chreod'];
 
-my $help = "To use the \"bioseq\" DDGoodie, enter a function name then the nucleotide or amino acid sequence."
-         . "\n	r	reverse the sequence, return DNA"
-         . "\n	c	complement the sequence, return DNA"
-         . "\n	rc	reverse-complement the sequence, return DNA"
-         . "\n	tu	replace all T with U"
-         . "\n	tln	translate nucleotides to amino acids in three frames"
-         . "\n	t	estimate the melting temperature of sequence as DNA"
-         . "\n	w	estimate the weight of sequence of nucleotides or protein"
-         . "\nFor example, \"bioseq rc ATCGCGATUCGAT\" would return the reversed complementary sequence."
-         . "\nFor example, \"bioseq tln ATCGCGATUCGAT\" would return the translation of the sequence.";
+my $help = "To use the \"bioseq\" DDGoodie, type a function nickname, then the nucleotide or amino acid sequence."
+	."\n	r	reverse the sequence, return DNA"
+	."\n	c	complement the sequence, return DNA"
+	."\n	rc	reverse-complement the sequence, return DNA"
+	."\n	tu	replace all T with U"
+	."\n	ut	replace all U with T"
+	."\n	tln	translate nucleotides to amino acids in three frames"
+	."\n	t	estimate the melting temperature of sequence as DNA"
+	."\n	w	estimate the weight of sequence of nucleotides or protein"
+	."\nFor example, \"bioseq rc ATCGCGATUCGAT\" would return the reversed complementary sequence."
+	."\nFor example, \"bioseq tln ATCGCGATUCGAT\" would return the translation of the sequence.";
 my $help_html = $help;
 $help_html =~ s/\n/<br>/g;
 
 my %tln_table = (
-    #Each amino acid is on a row, with codons that map to it
-    #Stop codon is Z
-    #Need to add attribution for the codon table to IUPAC website
-    "UUU"	=>	"F",	"UUC"	=>	"F",
-    "UUA"	=>	"L",	"UUG"	=>	"L",
-    "UCU"	=>	"S",	"UCC"	=>	"S",	"UCA"	=>	"S",	"UCG"	=>	"S", "AGU"	=>	"S",	"AGC"	=>	"S",
-    "UAU"	=>	"Y",	"UAC"	=>	"Y",
-    "UAA"	=>	"Z",	"UAG"	=>	"Z",	"UGA"	=>	"Z",
-    "UGU"	=>	"C",	"UGC"	=>	"C",
-    "UGG"	=>	"W",
-    "CUU"	=>	"L",	"CUC"	=>	"L",	"CUA"	=>	"L",	"CUG"	=>	"L",
-    "CCU"	=>	"P",	"CCC"	=>	"P",	"CCA"	=>	"P",	"CCG"	=>	"P",
-    "CAU"	=>	"H",	"CAC"	=>	"H",
-    "CAA"	=>	"Q",	"CAG"	=>	"Q",
-    "CGU"	=>	"R",	"CGC"	=>	"R",	"CGA"	=>	"R",	"CGG"	=>	"R", "AGA"	=>	"R",	"AGG"	=>	"R",
-    "AUU"	=>	"I",	"AUC"	=>	"I",	"AUA"	=>	"I",
-    "AUG"	=>	"M",
-    "ACU"	=>	"T",	"ACC"	=>	"T",	"ACA"	=>	"T",	"ACG"	=>	"T",
-    "AAU"	=>	"N",	"AAC"	=>	"N",
-    "AAA"	=>	"K",	"AAG"	=>	"K",
-    "GUU"	=>	"V",	"GUC"	=>	"V",	"GUA"	=>	"V",	"GUG"	=>	"V",
-    "GCU"	=>	"A",	"GCC"	=>	"A",	"GCA"	=>	"A",	"GCG"	=>	"A",
-    "GAU"	=>	"D",	"GAC"	=>	"D",
-    "GAA"	=>	"E",	"GAG"	=>	"E",
-    "GGU"	=>	"G",	"GGC"	=>	"G",	"GGA"	=>	"G",	"GGG"	=>	"G"
+	"UUU"	=>	"F",	"UUC"	=>	"F",
+	"UUA"	=>	"L",	"UUG"	=>	"L",
+	"UCU"	=>	"S",	"UCC"	=>	"S",	"UCA"	=>	"S",	"UCG"	=>	"S", "AGU"	=>	"S",	"AGC"	=>	"S",
+	"UAU"	=>	"Y",	"UAC"	=>	"Y",
+	"UAA"	=>	"Z",	"UAG"	=>	"Z",	"UGA"	=>	"Z",	#Stop codon is Z
+	"UGU"	=>	"C",	"UGC"	=>	"C",
+	"UGG"	=>	"W",
+	"CUU"	=>	"L",	"CUC"	=>	"L",	"CUA"	=>	"L",	"CUG"	=>	"L",
+	"CCU"	=>	"P",	"CCC"	=>	"P",	"CCA"	=>	"P",	"CCG"	=>	"P",
+	"CAU"	=>	"H",	"CAC"	=>	"H",
+	"CAA"	=>	"Q",	"CAG"	=>	"Q",
+	"CGU"	=>	"R",	"CGC"	=>	"R",	"CGA"	=>	"R",	"CGG"	=>	"R", "AGA"	=>	"R",	"AGG"	=>	"R",
+	"AUU"	=>	"I",	"AUC"	=>	"I",	"AUA"	=>	"I",
+	"AUG"	=>	"M",
+	"ACU"	=>	"T",	"ACC"	=>	"T",	"ACA"	=>	"T",	"ACG"	=>	"T",
+	"AAU"	=>	"N",	"AAC"	=>	"N",
+	"AAA"	=>	"K",	"AAG"	=>	"K",
+	"GUU"	=>	"V",	"GUC"	=>	"V",	"GUA"	=>	"V",	"GUG"	=>	"V",
+	"GCU"	=>	"A",	"GCC"	=>	"A",	"GCA"	=>	"A",	"GCG"	=>	"A",
+	"GAU"	=>	"D",	"GAC"	=>	"D",
+	"GAA"	=>	"E",	"GAG"	=>	"E",
+	"GGU"	=>	"G",	"GGC"	=>	"G",	"GGA"	=>	"G",	"GGG"	=>	"G"
 );
 my %amino_acid_weight = (
 	#http://web.expasy.org/findmod/findmod_masses.html#AA
-	#Water is already removed in this list
+	#Water from hydrolysis is already removed in this list
 	"A"	=>	71.0788,
 	"R"	=>	156.1875,
 	"N"	=>	114.1038,
@@ -83,70 +81,70 @@ my %amino_acid_weight = (
 	"O"	=>	237.3018
 );
 my %nucleotide_weight = (
-	#From wikipedia chemical box
 	"dA"	=>	331.222,	#d is for deoxy, so dna
 	"dT"	=>	322.208,
-	"dU"	=>	308.182,
+	"dU"	=>	308.182,	#even dUMP
 	"dG"	=>	347.2243,
 	"dC"	=>	307.197,
-	"A"	=>	0,
-	"T"	=>	0,
-	"U"	=>	0,
-	"G"	=>	0,
-	"C"	=>	0,
+	"A"	=>	347.22,
+	"U"	=>	324.181,
+	"G"	=>	363.22,
+	"C"	=>	323.20,
 );
 my $amino_acids = join("", keys(%amino_acid_weight));	# aka "FLSYCWPHQRIMTNKVADEG"
-$amino_acids =~ s/X//g;	#Two steps so that if we use a non-canonical table above, we can still get our string of possible nucleotides
 my $nucleotides = join("", keys(%nucleotide_weight));
-#apply nucleotides to below ^ statements?
-#how complement I
 
 my %functions = (
-    "reverse"            => sub { "Reversed: ".reverse },
-    "r"                  => sub { "Reversed: ".reverse },
-    "complement"         => sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Complement: $_" },
-    "c"                  => sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Complement: $_" },
-    "reverse-complement" => sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
-    "rc"                 => sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
-    "tu"                 => sub { return if /[^$nucleotides]/; tr/T/U/; "T's turned to U's: $_" },
-    "ut"                 => sub { return if /[^$nucleotides]/; tr/U/T/; "U's turned to T's: $_" },
-    "translate"          => sub { translate($_) },
-    "tln"                => sub { translate($_) },    
-    "temp"               => sub { temp($_) },
-    "t"                  => sub { temp($_) },
-    "weight"             => sub { weight($_) },
-    "w"                  => sub { weight($_) },
+	"reverse"		=> sub { "Reversed: ".reverse },
+	"r"			=> sub { "Reversed: ".reverse },
+	"complement"		=> sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Complement: $_" },
+	"c"			=> sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Complement: $_" },
+	"reverse-complement"	=> sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
+	"rc"			=> sub { return if /[^ATCGU]/; tr/ATCGU/TAGCA/; "Reversed complement: ".reverse },
+	"tu"			=> sub { return if /[^ATCGU]/; tr/T/U/; "T's turned to U's: $_" },
+	"ut"			=> sub { return if /[^ATCGU]/; tr/U/T/; "U's turned to T's: $_" },
+	"translate"		=> sub { translate($_) },
+	"tln"			=> sub { translate($_) },	
+	"temp"			=> sub { temp($_) },
+	"t"			=> sub { temp($_) },
+	"weight"		=> sub { weight($_) },
+	"w"			=> sub { weight($_) },
+);
+
+my %html_references = (
+	"temp"		=> '<br><a href="http://www.promega.com/techserv/tools/biomath/calc11.htm">Temperature formula from Promega</a>',
+	"t"		=> '<br><a href="http://www.promega.com/techserv/tools/biomath/calc11.htm">Temperature formula from Promega</a>',
 );
 
 sub translate {
-    return "BioSeq Error: Can't translate non-nucleotide characters" if $_[0] =~ /[^$nucleotides]/;
-    $_[0] =~ tr/T/U/; # Turn DNA to RNA for lookup table
-    my @frame;        # Make the three frames of reference
-    $frame[0] = $frame[1] = $frame[2] = $_[0];
-    $frame[1] =~ s/^.//;  # Offset one by deletion
-    $frame[2] =~ s/^..//; # Offset two by deletion
-    my @tln;
-    my $start = 0;                                       # Frame currently open?
-    foreach my $frame (0..$#frame) {                     # For each of the frames
-        $start = 0;                                      # We don't start until we see a start codon
-        while ($frame[$frame]) {                         # If there's still seq
-            last unless $frame[$frame] =~ s/^(\w\w\w)//; # Take 3 off the top
-            if ($tln_table{$1} eq "Z") {                 # If stop indicated
-                $tln[$frame] .= " {STOP} ";              # print stop
-                $start = 0;                              # and stop
-                next;                                    # goto next codon
-            }
-            $tln[$frame] .= " {START} " and $start = 1   # start if we haven't yet
-                if !$start & $tln_table{$1} eq "M";
-            $tln[$frame] .= $tln_table{$1};              # If we're not changing start status, we're normal, just add the amino acid
-        }
-    }
-    my $report = "Translated your input sequence to amino acid sequence:";
-    foreach my $frame (0..$#frame) {
-        # Give me the title and the translation string, if it exists
-        $report .= "\nFrame ".($frame+1).": $tln[$frame]" if $tln[$frame];
-    }
-    return $report;
+	return "BioSeq Error: Can't translate non-nucleotide characters" if $_[0] =~ /[^$nucleotides]/;
+	$_[0] =~ tr/T/U/; # Turn DNA to RNA for lookup table
+	my @frame;		# Make the three frames of reference
+	$frame[0] = $frame[1] = $frame[2] = $_[0];
+	$frame[1] =~ s/^.//;  # Offset one by deletion
+	$frame[2] =~ s/^..//; # Offset two by deletion
+	my @tln;
+	my $start;				#Start with frame stopped
+	foreach my $frame (0..$#frame) {	#For each of the frames
+		$start = 0;			#We don't start until we see a start codon
+		while ($frame[$frame]) {	#If there's still seq
+			last unless $frame[$frame] =~ s/^(\w\w\w)//;	#Take 3 off the top
+			if ($tln_table{$1} eq "Z") {			#If stop indicated
+				$tln[$frame] .= " {STOP} ";		#	and print stop
+				$start = 0;				#	and stop
+				next;					#	goto next codon
+			}
+			$tln[$frame] .= " {START} " and $start = 1   	#Start if we haven't yet
+				if !$start & $tln_table{$1} eq "M";
+			$tln[$frame] .= $tln_table{$1};			# If we're not changing start status, we're normal, just add the amino acid
+		}
+	}
+	my $report = "Translated your input sequence to amino acid sequence:";
+	foreach my $frame (0..$#frame) {
+		# Give me the title and the translation string, if it exists
+		$report .= "\nFrame ".($frame+1).": $tln[$frame]" if $tln[$frame];
+	}
+	return $report;
 }
 	
 sub temp {
@@ -164,56 +162,59 @@ sub temp {
 	$temperature = "Estimated melting temperature of ".$temperature;
 	$temperature .= " Celsius, supposing 50mM monovalent cations";
 	return $temperature;
-	# This formula is as cited in Promega's biomath page
-	# http://www.promega.com/techserv/tools/biomath/calc11.htm
-	#Should upgrade to dope formula
-	#http://www.idtdna.com/Analyzer/Applications/Instructions/Default.aspx
+	#This formula is as cited in Promega's biomath page
+	#	http://www.promega.com/techserv/tools/biomath/calc11.htm
+	#Should upgrade to this more detailed model
+	#	http://www.idtdna.com/Analyzer/Applications/Instructions/Default.aspx
 }
 
 sub weight {
 	my $weighing_seq = $_[0];
 	my $weight = 0;
-	if ($weighing_seq =~ /[^$nucleotides]/) {
-		#If it has non-nucleotides, it must be a protein, so use a different table
+	if ($weighing_seq =~ /[^$nucleotides]/) {	#If it has non-nucleotides, it must be a protein, so use a different table
 		foreach (split(//, $weighing_seq)) {
 			$weight += $amino_acid_weight{$_};	#Water already removed in table
 		}
-		$weight += 18.01528;	#Adding the ends back on
+		$weight += 18.01528;	#Adding the ends back on, weight of water
 		$weight = sprintf("%.2f", $weight);
 		$weight = "That amino acid sequence weighs about ".$weight;
 		$weight	.= " dalton";
-	}
-	else {
+	} elsif ($weighing_seq =~ /[T]/) {	#If it has at least one T, then it must be DNA, even with dU's
 		foreach (split(//, $weighing_seq)) {
-			$weight += $nucleotide_weight{'d'.$_} - 18.01528;	#Removing H0 from phosphate and hydrogen from 3' hydroxl
+			$weight += $nucleotide_weight{'d'.$_} - 18.01528;	#Removing H0 from 5' phosphate and H from 3' hydroxl
 		}
 		$weight += 18.01528 - 63.98 + 2.016;	#Adding 5' OH and 3' H back on, removing 5' phosphate
 		$weight = sprintf("%.2f", $weight);
-		$weight = "That 5' phosphorylated nucleotide sequence weighs about ".$weight;
+		$weight = "That 5' unphosphorylated single stranded DNA sequence weighs about ".$weight;
+		$weight	.= " grams per mole";
+	}
+	else {	#If it only has AUCG, then it must be RNA, right?
+		foreach (split(//, $weighing_seq)) {
+			$weight += $nucleotide_weight{$_} - 18.01528;	#Removing H0 from 5' phosphate and hydrogen from 3' hydroxl
+		}
+		$weight += 18.01528 + 159.957418;	#Adding 5' OH and 3' H back on, adding 5' triphosphate
+		$weight = sprintf("%.2f", $weight);
+		$weight = "That 5' triphosphorylated single stranded RNA sequence weighs about ".$weight;
 		$weight	.= " grams per mole";
 	}
 	return $weight;
-	#This formula is as cited in Promega's biomath page
-	#http://www.promega.com/techserv/tools/biomath/calc11.htm
 }
-
 
 handle remainder => sub {
 	my @args = split /\s+/;
 	return unless @args;
 	my $function = lc shift @args;
 	return $help, html => $help_html if $function eq 'help' or $function eq 'h';
-	
-	my $sequence = uc join "", @args if @args;    # The rest of argument should be seq, even with whitespace mistakes
-	return unless $sequence;                      # If no sequence, then quit and return nothing
-	$sequence =~ s/[^$nucleotides$amino_acids]//; # Delete all non-amino_acid/non-nucleotide characters
-	$sequence =~ tr/U/T/;                         # Make to DNA, for standardization, and since tu provides return to RNA
-						      #  also, T is an amino acid, U isn't
+	my $sequence = uc join "", @args if @args;	# The rest of argument should be seq, even with whitespace mistakes
+	return unless $sequence;			# If no sequence, then quit and return nothing
+	$sequence =~ s/\s//g;				# Delete all whitespace
+	return if $sequence =~ /[^$nucleotides$amino_acids]/i;	#Shouldn't have anything else in there
 	for ($sequence) {
 		my $return_value = $functions{$function}->() if exists $functions{$function};
 		my $return_value_html = $return_value;
 		$return_value_html =~ s/\n/<br>/g if $return_value_html;
-		return $return_value, html => $return_value_html;
+		$return_value_html .= $html_references{$function} if defined $html_references{$function};
+		return $return_value, html => $return_value_html if $return_value;
 	}
 };
 
