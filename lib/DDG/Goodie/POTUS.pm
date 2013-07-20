@@ -5,32 +5,24 @@ use DDG::Goodie;
 use Scalar::Util qw(looks_like_number);
 
 triggers start => 'POTUS', 'potus';
-
-name 'POTUS';
-description 'returns the President of the United States';
-category 'reference';
-topics 'trivia';
-primary_example_queries 'potus 16';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/POTUS.pm';
-attribution github  => ['https://github.com/numbertheory', 'John-Peter Etcheber'],
-            twitter => ['http://twitter.com/jpscribbles', 'John-Peter Etcheber'];
-
+triggers any => 'president of the united states';
 
 handle remainder => sub {
- 	#Make sure the argument is a number
- 	if (looks_like_number($_) == 0) {
-		return;
+	my $num = $_;
+	$num =~ s/\D+//g;
+	if (looks_like_number($num) == 0) {
+		$num = 44;
 		}	
 	#Don't use negative numbers	
-	if ($_ < 1) {
+	if ($num < 1) {
 		return;
 		}
 	#There are only 44 Presidents so far
-	if ($_ > 44) {
+	if ($num > 44) {
 		return;
 		}
 		
-	my $num = $_ - 1;
+	$num = $num - 1;
 	my @prez = (
 			"George Washington",
 			"John Adams",
