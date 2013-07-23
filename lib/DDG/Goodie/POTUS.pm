@@ -3,6 +3,7 @@ package DDG::Goodie::POTUS;
 
 use DDG::Goodie;
 use Scalar::Util qw(looks_like_number);
+use Lingua::EN::Numbers::Ordinate;
 
 triggers start => 'POTUS', 'potus';
 triggers any => 'president of the united states';
@@ -16,23 +17,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github  => ['https://github.com/numbertheory', 'John-Peter Etcheber'],
             twitter => ['http://twitter.com/jpscribbles', 'John-Peter Etcheber'];
 
-
 handle remainder => sub {
-	my $num = $_;
-	$num =~ s/\D+//g;
-	if (looks_like_number($num) == 0) {
-		$num = 44;
-		}	
-	#Don't use negative numbers	
-	if ($num < 1) {
-		return;
-		}
-	#There are only 44 Presidents so far
-	if ($num > 44) {
-		return;
-		}
-		
-	$num = $num - 1;
+	#For maintenance, just add the president to the end of this array	
 	my @prez = (
 			"George Washington",
 			"John Adams",
@@ -77,17 +63,27 @@ handle remainder => sub {
 			"George H.W. Bush",
 			"Bill Clinton",
 			"George W. Bush",
-			"Barack Obama"
+			"Barack Obama",
 				);
-	my @label = ( "th","st","nd","rd","th","th","th","th","th","th",
-		   "th","th","th","th","th","th","th","th","th","th",
-		   "th","st","nd","rd","th","th","th","th","th","th",
-		   "th","st","nd","rd","th","th","th","th","th","th",
-		   "th","st","nd","rd","th"
-			);
+		
+	my $num = $_;
+	$num =~ s/\D+//g;
+	if (looks_like_number($num) == 0) {
+		$num = scalar @prez;
+		}	
+	#Don't use negative numbers	
+	if ($num < 1) {
+		return;
+		}
+	#Don't answer who is the 300th president of the United States
+	if ($num > scalar @prez) {
+		return;
+		}
+		
+	$num = $num - 1;
 	my $verb = " was";
-	if (($num+1) == 44){$verb = " is";}
-	return $prez[$num] . $verb . " the " . ($num+1) . $label[$num+1] . " President of the United States.";
+	if (($num+1) == scalar @prez){$verb = " is";}
+	return $prez[$num], html=> "<a href=\"http://en.wikipedia.org/wiki/". $prez[$num] ."\">" . $prez[$num] . "</a>" . $verb . " the " . ordinate($num+1) . " President of the United States.";
 	return;
 };
 
