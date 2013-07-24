@@ -21,7 +21,6 @@ ddg_goodie_test(
 	'who is the nineteenth president of the united states' => test_zci(
         'Rutherford B. Hayes was the 19th President of the United States.',
         html => '<a href="https://en.wikipedia.org/wiki/Rutherford%20B.%20Hayes">Rutherford B. Hayes</a> was the 19th President of the United States.'),
-		
 	'who was the 1st president of the united states' => test_zci(
         'George Washington was the 1st President of the United States.',
         html => '<a href="https://en.wikipedia.org/wiki/George%20Washington">George Washington</a> was the 1st President of the United States.'),
@@ -37,6 +36,9 @@ ddg_goodie_test(
 	'POTUS 24', => test_zci(
         'Grover Cleveland was the 24th President of the United States.',
         html => '<a href="https://en.wikipedia.org/wiki/Grover%20Cleveland">Grover Cleveland</a> was the 24th President of the United States.'),
+	'who was the twenty-second POTUS?' => test_zci(
+        'Grover Cleveland was the 22nd President of the United States.',
+        html => '<a href="https://en.wikipedia.org/wiki/Grover%20Cleveland">Grover Cleveland</a> was the 22nd President of the United States.'),
 
 
 );

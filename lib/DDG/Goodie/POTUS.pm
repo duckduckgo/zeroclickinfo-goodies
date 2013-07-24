@@ -3,9 +3,10 @@ package DDG::Goodie::POTUS;
 
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate;
+use Lingua::EN::Words2Nums;
 use URI::Escape;
 
-triggers start => 'potus';
+triggers startend => 'potus';
 triggers any => 'president of the united states', 'president of the us';
 
 zci is_cached => 1;
@@ -68,18 +69,14 @@ my @presidents = (
 );
 		
 handle remainder => sub {
-	my @natnums = ('first','second', 'third', 'fourth', 'fifth', 'sixth',
-		       'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth',
-		       'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth',
-		       'eighteenth', 'nineteenth', 'twentieth');
-	my $i = 0;
-	my $text = '';
-	foreach $text (@natnums){
-	$i = $i + 1;        
-	$_ =~ s/$text/$i/gi;
-	}
-	s/\D+//g;
-	my $num = $_;
+	s/
+      |who\s+(is|was)\s+the\s+
+      |^POTUS\s+
+      |\s+(POTUS|president\s+of\s+the\s+united\s+states)$
+      |^(POTUS|president\s+of\s+the\s+united\s+states)\s+
+    //gix;
+
+    my $num = /\d/ ? $_ : words2nums $_;
     $num = scalar @presidents if not $num;
     return if --$num < 0 or $num > scalar @presidents;
 
