@@ -39,7 +39,7 @@ my @presidents = (
     "Abraham Lincoln",
     "Andrew Johnson",
     "Ulysses S. Grant",
-    "Rutherfod B. Hayes",
+    "Rutherford B. Hayes",
     "James A. Garfield",
     "Chester A. Arthur",
     "Grover Cleveland",
@@ -68,8 +68,18 @@ my @presidents = (
 );
 		
 handle remainder => sub {
+	my @natnums = ('first','second', 'third', 'fourth', 'fifth', 'sixth',
+		       'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth',
+		       'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth',
+		       'eighteenth', 'nineteenth', 'twentieth');
+	my $i = 0;
+	my $text = '';
+	foreach $text (@natnums){
+	$i = $i + 1;        
+	$_ =~ s/$text/$i/gi;
+	}
 	s/\D+//g;
-    my $num = $_;
+	my $num = $_;
     $num = scalar @presidents if not $num;
     return if --$num < 0 or $num > scalar @presidents;
 
@@ -84,3 +94,4 @@ handle remainder => sub {
 };
 
 1;
+

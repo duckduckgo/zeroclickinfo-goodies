@@ -15,6 +15,13 @@ ddg_goodie_test(
 	'who is president of the united states' => test_zci(
         'Barack Obama is the 44th President of the United States.',
         html => '<a href="https://en.wikipedia.org/wiki/Barack%20Obama">Barack Obama</a> is the 44th President of the United States.'),
+	'who is the fourth president of the united states' => test_zci(
+        'James Madison was the 4th President of the United States.',
+        html => '<a href="https://en.wikipedia.org/wiki/James%20Madison">James Madison</a> was the 4th President of the United States.'),
+	'who is the nineteenth president of the united states' => test_zci(
+        'Rutherford B. Hayes was the 19th President of the United States.',
+        html => '<a href="https://en.wikipedia.org/wiki/Rutherford%20B.%20Hayes">Rutherford B. Hayes</a> was the 19th President of the United States.'),
+		
 	'who was the 1st president of the united states' => test_zci(
         'George Washington was the 1st President of the United States.',
         html => '<a href="https://en.wikipedia.org/wiki/George%20Washington">George Washington</a> was the 1st President of the United States.'),
