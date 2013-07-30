@@ -1,71 +1,90 @@
 package DDG::Goodie::Shortcut;
-# ABSTRACT: Display keyboard shortcut for an action or display action invoked by a key combination.
+# ABSTRACT: Display keyboard shortcut for an action.
 
 use DDG::Goodie;
+use LWP::UserAgent;
+use HTML::TreeBuilder;
 
-triggers any => 'shortcut','keyboard shortcut';
+triggers any => 'shortcut','keyboard shortcut', 'key combination';
 
 zci is_cached => 1;
 zci answer_type => 'shortcut';
 
-primary_example_queries   "rename shortcut";
-secondary_example_queries "f11 shortcut", "paste shortcut";
-description "keyboard shortcuts";
-name "Shortcut";
-topics "computing";
-category "computing_info";
+primary_example_queries 'windows show desktop shortcut';
+secondary_example_queries 'ubuntu shortcut new folder', 'paste keyboard shortcut';
+description 'keyboard shortcuts';
+name 'Shortcut';
+topics 'computing';
+category 'computing_info';
 attribution github => ['https://github.com/dariog88a','dariog88a'],
+            email => [ 'mailto:dariog88@gmail.com', 'dariog88' ],
             twitter => ['http://twitter.com/dariog88','dariog88'];
 
-# not using query_lc because I need to keep the whitespace
-handle remainder => sub {
+handle remainder_lc => sub {
+    #replace all OS words with starting char
+    s/windows|win|xp|vista|seven/W/gi;
+    s/mac|osx/M/gi;
+    s/linux|ubuntu|debian|fedora|kde|gnome/L/gi;
 
-    my $search = lc $_;
+    sub trim($) {
+        my $s = shift;
+        $s =~ s/ +/ /gs;
+        $s =~ s/^\s+|\s+$//g; 
+        return $s;
+    }
 
-    my %keys = (
-        'undo' => 'ctrl z',
-        'redo' => 'ctrl y', #[qw('ctrl y' 'ctrl shift z')],
-        'cut' => 'ctrl x',
-        'copy' => 'ctrl c',
-        'paste' => 'ctrl v',
-        'select all' => 'ctrl a',
-        'new' => 'ctrl n',
-        'open' => 'ctrl o',
-        'close' => 'alt f4',
-        'save' => 'ctrl s',
-        'print' => 'ctrl p',
-        'bold' => 'ctrl b',
-        'italic' => 'ctrl i',
-        'underline' => 'ctrl u',
-        'help' => 'f1',
-        'rename' => 'f2',
-        'find' => 'f3', #[qw('f3' 'ctrl f')],
-        'refresh' => 'f5',
-        'reload' => 'ctrl r',
-        'address bar' => 'f6',
-        'location bar' => 'ctrl l',
-        'fullscreen' => 'f11'
+    #get OS char (if any)
+    my $search = $_;
+    $search =~ s/[WML]//g; #remove all OS chars from search
+    my $os = substr($_,0,1); #save first char
+    $os =~ s/[^WML]//g; #remove if not an OS char
+    $search = trim($search);
+
+    #get wikipedia page content
+    my $url = 'https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts';
+    my $content = LWP::UserAgent->new()->get($url)->content;
+    defined $content or return;
+
+    #find the first row that starts with the searched action
+    my $tree = HTML::TreeBuilder->new_from_content($content);
+    my $heading = $tree->look_down(
+        _tag => 'th',
+        sub {
+            $_[0]->as_trimmed_text() =~ /^$search/i #matches only the start
+        }
     );
-    my %actions = reverse %keys;
 
-    my @answer;
-    my $char;
-    if (exists $actions{$search}) {
-        @answer = split(' ',$actions{$search});
-        $char = ' ';
+    #return if no row was found
+    if (!defined $heading) { return; }
+
+    my %columns = (W=>'Windows',M=>'Mac OS',L=>'KDE/GNOME');
+    my $answer = 'The shortcut for ' . $heading->as_trimmed_text();
+    my $keys;
+
+    #get the (not empty) column content for the searched OS or for all of them if OS not specified
+    if ($os eq 'W') {
+        $keys = $heading->right()->as_trimmed_text();
+        if (!$keys) { return; }
+    } elsif ($os eq 'M') {
+        $keys = $heading->right()->right()->as_trimmed_text();
+        if (!$keys) { return; }
+    } elsif ($os eq 'L') {
+        $keys = $heading->right()->right()->right()->as_trimmed_text();
+        if (!$keys) { return; }
+    } else {
+        $answer .= ' is:';
+        $keys = $heading->right()->as_trimmed_text();
+        if ($keys) { $answer .= "\n" . $columns{W} . ': ' . $keys; }
+        $keys = $heading->right()->right()->as_trimmed_text();
+        if ($keys) { $answer .= "\n" . $columns{M} . ': ' . $keys; }
+        $keys = $heading->right()->right()->right()->as_trimmed_text();
+        if ($keys) { $answer .= "\n" . $columns{L} . ': ' . $keys; }
     }
 
-    if (exists $keys{$search}) {
-        @answer = split(' ',$keys{$search});
-        $char = '+';
-    }
+    if ($os) { $answer .= ' in ' . $columns{$os} . ' is ' . $keys; }
 
-    foreach(@answer) {
-        $_ = ucfirst $_;
-    }
-
-    return join($char,@answer) if @answer;
-    return;
+    my $source = "\n" . '<a href="' . $url . '">More at Wikipedia</a>';
+    return $answer, html => "$answer $source";
 };
 
 1;
