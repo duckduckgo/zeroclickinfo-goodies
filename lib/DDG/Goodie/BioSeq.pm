@@ -184,11 +184,11 @@ handle query_clean => sub {
 	my $query = lc $_;	#query is now lower cased input, raw
 	my $sequence;
 	my $seq_type;		#What kind of sequence?
-	if ($query =~ /(protein)|(amino\s*acid)/) {	#We look for override keywords
+	if ($query =~ /\b(protein)|(amino\s*acid)\b/) {	#We look for override keywords
 		$seq_type = "Amino Acid";
-	} elsif ($query =~ /rna[\s$]/) {
+	} elsif ($query =~ /\brna\b/) {
 		$seq_type = "RNA";
-	} elsif ($query =~ /dna[\s$]/) {
+	} elsif ($query =~ /\bdna\b/) {
 		$seq_type = "DNA";
 	}
 	#$query =~ s/\s//g;	#We're smushing everything together
@@ -222,7 +222,8 @@ handle query_clean => sub {
 	$answer .= "Recognized $seq_type sequence...\n";
 	if ($seq_type ne "Amino Acid") {
 		$answer .="Reversed: ".(uc reverse $sequence)."\n";
-		$sequence =~ tr/atcgu/tagct/;	#Complement
+		$sequence =~ tr/atcgu/tagct/ if $seq_type eq "DNA";	#Complement
+		$sequence =~ tr/atcgu/uagca/ if $seq_type eq "RNA";	#Complement
 		$answer .="Complement: ".(uc $sequence)."\n"
 			."Reverse Complement: ".(uc reverse $sequence)."\n";
 		$sequence =~ tr/atcgu/tagct/;	#Put back to original
