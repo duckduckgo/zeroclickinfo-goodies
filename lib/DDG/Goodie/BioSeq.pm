@@ -176,7 +176,9 @@ sub weight {
 	return $weight."\n";
 }
 
-triggers query_clean => qr/[$valid]{6,}/i;
+$valid .= uc $valid;
+
+triggers query_lc => qr/[$valid]+/i;
 	#qr found in another goodie, right usage?
 	#Also, we could use some better regex examples
 
@@ -191,7 +193,6 @@ handle query_clean => sub {
 	} elsif ($query =~ /\bdna\b/) {
 		$seq_type = "DNA";
 	}
-	#$query =~ s/\s//g;	#We're smushing everything together
 	if (defined $seq_type) {	#If we found a keyword, we use that seq_type
 		$query =~ /([$amino_acids]{6,})/ if $seq_type eq "Amino Acid";
 		$query =~ /([$deoxy_nucleotides]{6,})/ if $seq_type eq "DNA";
@@ -204,11 +205,9 @@ handle query_clean => sub {
 			$sequence =~ tr/u/t/ if $seq_type eq "DNA";
 			$sequence =~ tr/t/u/ if $seq_type eq "RNA";
 		}
-		return unless $sequence;
 	} else {	#Otherwise, we find the first possible sequence >= 6
 		$query =~ /([$valid]{6,})/;
-		$sequence = $1 if $1;		# and infer the seq_type
-		return unless $sequence;
+		$sequence = $1;		# and infer the seq_type
 		if ($sequence =~ /[^$nucleotides]/) {
 			$seq_type = "Amino Acid";
 		} elsif ($sequence =~ /u/) {
@@ -217,7 +216,7 @@ handle query_clean => sub {
 			$seq_type = "DNA";
 		}	# and then find that contiguous sequence
 	}
-
+	
 	my $answer;		#Now we start building our answer
 	$answer .= "Recognized $seq_type sequence...\n";
 	if ($seq_type ne "Amino Acid") {
