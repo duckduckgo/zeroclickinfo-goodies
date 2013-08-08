@@ -20,6 +20,7 @@ ddg_goodie_test(
         "throw 1d20" => test_zci(qr/\d{1,2} \(random\)$/),
         "roll 3d8 - 8" => test_zci(qr/^\d (\+|-) \d (\+|-) \d (\+|-) \d = -?\d+ \(random\)$/),
         "roll d20" => test_zci(qr/^\d{1,2} \(random\)$/),
+        "roll 4d6-l" => test_zci(qr/^([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2} \(random\)$/),
 );
 
 done_testing;

@@ -45,22 +45,23 @@ handle remainder_lc => sub {
         return join(', ', @output) . ' (random)', html => '<span style="font-size:14pt;">' . join(', ', @output) . ' (random)</span>' if @output;
     }
     elsif ($_ =~ /^(\d{0,4})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
-        my $output;
+        my (@rolls, $output);
         my $number_of_dice = $1 || 1;
-        my $number_of_faces = $2;
-        my @rolls;
-        my $sum = 0;
+        my $lowest = my $number_of_faces = $2;
+        my $highest = my $sum = 0;
         for (1 .. $number_of_dice) {
-            push @rolls, int(rand($number_of_faces)) + 1;
+            my $roll = int(rand($number_of_faces)) + 1;
+            $lowest = $roll if $roll < $lowest;
+            $highest = $roll if $roll > $highest;
+            push @rolls, $roll;
         }
         if (defined($3) && defined($4)) {
             # handle special case of " - L" or " - H"
             if ($3 eq '-' && ($4 eq 'l' || $4 eq 'h')) {
-                @rolls = sort(@rolls);
                 if ($4 eq 'l') {
-                    push(@rolls, -(shift(@rolls)));
+                    push(@rolls, -$lowest);
                 } else {
-                    push(@rolls, -(pop(@rolls)));
+                    push(@rolls, -$highest);
                 }
             } elsif ($3 eq '+' && ($4 eq 'l' || $4 eq 'h')) {
                 return;
