@@ -44,7 +44,7 @@ handle remainder => sub {
 		
 	}
 
-	elsif ($input =~ /^(\d{1,2})\s+(\d{4})$/) {
+	elsif ($input =~ /^(\d{1,2})\s+(\d{1-4})$/) {
 
 		my $week_num = $1;
 		my $year = $2;
@@ -67,5 +67,3 @@ zci is_cached => 1;
 zci answer_type => "week";
 
 1;
-
-
