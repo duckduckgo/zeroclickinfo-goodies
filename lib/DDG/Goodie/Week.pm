@@ -6,15 +6,26 @@ use DDG::Goodie;
 # My imports
 use strict;
 use warnings;
-use DateTime; # Already in dist.ini
-use Date::Calc qw(:all); # Already in dist.ini
+use DateTime;
+use Date::Calc qw(:all);
+
+# File metadata
+primary_example_queries "week current";
+secondary_example_queries "week 8", "week 14 1988";
+description "find the current week number or when a random week began";
+name "Week";
+code_url "https://github.com/gsquire/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Week.pm";
+category "dates";
+topics "everyday", "special_interest";
+attribution twitter => "garrettsquire",
+						github => "gsquire";
 
 triggers start => "week";
 
 handle remainder => sub {
 	
 	my $input = $_; # Named variables are better
-	my $dt = DateTime->now(time_zone => "local"); # Local to sub
+	my $dt = DateTime->now(time_zone => "local");
 
 	if ($input eq "current") {
 		return "We are in week number " . $dt->week_number;
@@ -53,6 +64,7 @@ handle remainder => sub {
 };
 
 zci is_cached => 1;
+zci answer_type => "week";
 
 1;
 

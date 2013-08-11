@@ -15,9 +15,9 @@ ddg_goodie_test(
                 DDG::Goodie::Week
         )],
 
-        # "week current" => test_zci("We are in week number 32"),
+        "week current" => test_zci(qr/We are in week number \d+/),
 
-        # "week 6" => test_zci("Week 6 started on 2-4 in 2013"),
+        "week 6" => test_zci(qr/Week \d+ started on \d+-\d+ in \d+/),
 
         "week 43 1984" => test_zci("Week 43 started on 10-22 of 1984"),
 
