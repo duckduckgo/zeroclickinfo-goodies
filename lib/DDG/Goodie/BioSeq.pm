@@ -1,22 +1,22 @@
 package DDG::Goodie::BioSeq;
-# ABSTRACT: Does several simple string manipulations, transliterations, and calculations, for the convienence of biologists designing primers and other simple tasks. Takes as arguments several functions, the shorthand of which is in the help.
+# ABSTRACT: Does several simple string manipulations, transliterations, and calculations, for lazy biologists designing primers and doing simple things. Takes as arguments several functions, the shorthand of which is in the help.
 use DDG::Goodie;
 
-#Trigger is after these data tables
+#Trigger is just before the handle function
 
 zci is_cached => 1;
 zci answer_type => 'bioseq';
 
-#primary_example_queries 'bioseq rc ATCG';
-#secondary_example_queries 'bioseq tln ATGAAACCCGGGTAG', 'bioseq temp TAATACGACTCACTATAGGG';
-#description 'simple string manipulations and calculations for lazy biologists, try bioseq help';#put help in description
+primary_example_queries 'ATGAAACCCGGGTAG';
+secondary_example_queries 'AUGAUGUUCGGGUAG', 'QVRGLINE';
+description 'Simple string manipulations and calculations for lazy biologists, requires 6 or more valid characters to start';
 name 'BioSeq';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/lib/DDG/Goodie/BioSeq.pm';
 category 'calculations';
 topics 'science';
-attribution email => ['chreod@lavabit.com', 'chreod'];
+attribution email => ['chreod@???.???', 'chreod'];
 
-my %tln_table = (	#IUPAC reference
+my %tln_table = (	
 	"UUU"	=>	"F",	"UUC"	=>	"F",
 	"UUA"	=>	"L",	"UUG"	=>	"L",
 	"UCU"	=>	"S",	"UCC"	=>	"S",	"UCA"	=>	"S",	"UCG"	=>	"S", "AGU"	=>	"S",	"AGC"	=>	"S",
@@ -73,19 +73,19 @@ my %oxy_nucleotide_weight = (	#RNA
 my %deoxy_nucleotide_weight = (	#DNA
 	"A"	=>	331.222,	
 	"T"	=>	322.208,
-	#"U"	=>	308.182,	#dUMP for handling oligos?
+	"U"	=>	308.182,	#dUMP for handling oligos during library prep
 	"G"	=>	347.2243,
 	"C"	=>	307.197,
 );
 my $amino_acids = lc(join("", keys(%amino_acid_weight)));	# aka lc "FLSYCWPHQRIMTNKVADEG"
 my $oxy_nucleotides = lc(join("", keys(%oxy_nucleotide_weight)));
 my $deoxy_nucleotides = lc(join("", keys(%deoxy_nucleotide_weight)));
-my %tmphash;
+my %tmphash;	#Use a hash to find uniques
 @tmphash{(keys(%amino_acid_weight),keys(%oxy_nucleotide_weight),keys(%deoxy_nucleotide_weight))} = ();
-my $valid = lc(join("", sort keys %tmphash));
+my $valid = lc(join("", sort keys %tmphash));	#This is all the unique valid characters
 undef %tmphash;
 @tmphash{(keys(%oxy_nucleotide_weight),keys(%deoxy_nucleotide_weight))} = ();
-my $nucleotides = lc(join("", sort keys %tmphash));
+my $nucleotides = lc(join("", sort keys %tmphash));	#This is all the unique valid nucleotide characters
 undef %tmphash;
 
 my %html_references = (
@@ -93,7 +93,7 @@ my %html_references = (
 );
 
 sub translate {
-	return if $_[0] =~ /[^$deoxy_nucleotides$oxy_nucleotides]/;
+	return if $_[0] =~ /[^$nucleotides]/i;
 	$_[0] = uc $_[0];	#Because I don't want to rewrite the codon table
 	$_[0] =~ tr/T/U/; 	#Turn DNA to RNA for lookup table
 	my @frame;		#Make the three frames of reference
@@ -124,8 +124,8 @@ sub translate {
 	return $report."\n";
 }
 	
-sub temp {
-	return if $_[0] =~ /[^atcg]/;	#I only calculate for DNA
+sub temp {					#Temperature
+	return if $_[0] =~ /[^atcg]/;		#I only calculate for DNA
 	my $gc_count = $_[0] =~ tr/cg/cg/;	#Count all the Gs and Cs
 	my $temperature;
 	if ((scalar length $_[0]) < 14) {
@@ -146,8 +146,9 @@ sub temp {
 
 sub weight {
 	my $weighing_seq = $_[0];
+	my $seq_type = $_[1] if $_[1];	#get type override if there
 	my $weight = 0;
-	if ($weighing_seq =~ /[^$deoxy_nucleotides$oxy_nucleotides]/) {	#If it has non-nucleotides, it must be a protein, so use a different table
+	if ($weighing_seq =~ /[^$nucleotides]/ or $seq_type eq "Amino Acid") {	#If it has non-nucleotides, it must be a protein, so use a different table
 		foreach (split(//, $weighing_seq)) {
 			$weight += $amino_acid_weight{uc $_};	#Water already removed in table
 		}
@@ -155,7 +156,7 @@ sub weight {
 		$weight = sprintf("%.2f", $weight);
 		$weight = "That amino acid sequence weighs about ".$weight;
 		$weight	.= " dalton";
-	} elsif ($weighing_seq =~ /t/) {	#If it has at least one T, then it must be DNA, even with dU's
+	} elsif ($weighing_seq =~ /t/i or $seq_type eq "DNA") {	#If it has at least one T, then it must be DNA, even with dU's
 		foreach (split(//, $weighing_seq)) {
 			$weight += $deoxy_nucleotide_weight{uc $_} - 18.01528;	#Removing H0 from 5' phosphate and H from 3' hydroxl
 		}
@@ -176,21 +177,18 @@ sub weight {
 	return $weight."\n";
 }
 
-$valid .= uc $valid;
-
-triggers query_lc => qr/[$valid]+/i;
-	#qr found in another goodie, right usage?
+triggers query_clean => qr/[$valid]{6}/i;
 	#Also, we could use some better regex examples
 
 handle query_clean => sub {
 	my $query = lc $_;	#query is now lower cased input, raw
 	my $sequence;
 	my $seq_type;		#What kind of sequence?
-	if ($query =~ /\b(protein)|(amino\s*acid)\b/) {	#We look for override keywords
+	if ($query =~ s/(?:\bprotein\b)|(?:\bamino\s*acid\b)//gi) {	#We look for override keywords  
 		$seq_type = "Amino Acid";
-	} elsif ($query =~ /\brna\b/) {
+	} elsif ($query =~ s/(?:\brna\b)//gi) {
 		$seq_type = "RNA";
-	} elsif ($query =~ /\bdna\b/) {
+	} elsif ($query =~ s/(?:\bdna\b)//gi) {
 		$seq_type = "DNA";
 	}
 	if (defined $seq_type) {	#If we found a keyword, we use that seq_type
@@ -199,7 +197,7 @@ handle query_clean => sub {
 		$query =~ /([$oxy_nucleotides]{6,})/ if $seq_type eq "RNA";
 		$sequence = $1 if $1;	# and find the first contiguous sequence
 		unless ($sequence) {
-			$query =~ /([$nucleotides]{6,})/;
+			$query =~ /([$valid]{6,})/;
 			return unless $1;
 			$sequence = $1;
 			$sequence =~ tr/u/t/ if $seq_type eq "DNA";
@@ -216,18 +214,19 @@ handle query_clean => sub {
 			$seq_type = "DNA";
 		}	# and then find that contiguous sequence
 	}
-	
+	$sequence =~ tr/atcgu/atcgt/ if $seq_type eq "DNA";	#Complement
+	$sequence =~ tr/atcgu/aucgu/ if $seq_type eq "RNA";	#Complement
 	my $answer;		#Now we start building our answer
-	$answer .= "Recognized $seq_type sequence...\n";
+	$answer .= "Recognized $seq_type sequence ".(uc $sequence)."...\n";
 	if ($seq_type ne "Amino Acid") {
 		$answer .="Reversed: ".(uc reverse $sequence)."\n";
-		$sequence =~ tr/atcgu/tagct/ if $seq_type eq "DNA";	#Complement
+		$sequence =~ tr/atcgu/tagca/ if $seq_type eq "DNA";	#Complement
 		$sequence =~ tr/atcgu/uagca/ if $seq_type eq "RNA";	#Complement
 		$answer .="Complement: ".(uc $sequence)."\n"
 			."Reverse Complement: ".(uc reverse $sequence)."\n";
 		$sequence =~ tr/atcgu/tagct/;	#Put back to original
 	}
-	$answer .= weight($sequence);
+	$answer .= weight($sequence, $seq_type);
 	$answer .= temp($sequence) if $seq_type eq "DNA";
 	
 	$answer .= translate($sequence) if $query =~ /(translat)|(tln)/;
