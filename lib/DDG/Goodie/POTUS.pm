@@ -2,7 +2,7 @@ package DDG::Goodie::POTUS;
 # ABSTRACT: Returns requested President of the United States
 
 use DDG::Goodie;
-use Lingua::EN::Numbers::Ordinate;
+use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
 use Lingua::EN::Words2Nums;
 use URI::Escape;
 
@@ -80,14 +80,16 @@ handle remainder => sub {
     $num = scalar @presidents if not $num;
     return if --$num < 0 or $num > scalar @presidents;
 
-    my $fact = ($num + 1 == scalar @presidents ? 'is' : 'was')
-             . " the " . ordinate($num + 1) . " President of the United States.";
+    my $fact = ($num + 1 == scalar @presidents ? 'is' : 'was') . ' the';
+
+    my $POTUS = 'President of the United States.';
 
     my $link = '<a href="https://en.wikipedia.org/wiki/'
              . uri_escape($presidents[$num]) .'">'
-             . $presidents[$num] . '</a>';
+             . "$presidents[$num]</a>";
 
-	return "$presidents[$num] $fact", html => "$link $fact";
+	return "$presidents[$num] $fact " . ordinate($num + 1) . " $POTUS",
+        html => "$link $fact " . ($num + 1) . '<sup>' . ordsuf($num + 1) . "</sup> $POTUS";
 };
 
 1;
