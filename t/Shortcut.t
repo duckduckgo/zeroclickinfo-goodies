@@ -10,18 +10,18 @@ zci is_cached => 1;
 
 my $start = 'The shortcut for ';
 my $link = '<a href="https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts">More at Wikipedia</a>';
-my $first = 'Show desktop in Windows is ⊞ Win+D or⊞ Win+M (then use ⊞ Win+⇧ Shift+M to bring back all windows)';
-my $second = 'New folder in KDE/GNOME is Ctrl+⇧ Shift+N';
-my $third = "Paste contents of clipboard at cursor is:\nWindows: Ctrl+V, or ⇧ Shift+Ins\nMac OS: ⌘ Cmd+V\nKDE/GNOME: Ctrl+V";
-my $fourth = "Paste special is:\nWindows: Ctrl+Alt+V\nKDE/GNOME: Ctrl+⇧ Shift+V";
+my $first = 'Show desktop in Windows is ⊞Win+D or ⊞Win+M (then use ⊞Win+⇧Shift+M to bring back all windows)';
+my $second = 'New folder in KDE/GNOME is Ctrl+⇧Shift+N';
+my $third = "Redo in Mac OS is ⇧Shift+⌘Cmd+Z";
+my $fourth = "Paste special in KDE/GNOME is Ctrl+⇧Shift+V";
 
 ddg_goodie_test(
         [qw(    DDG::Goodie::Shortcut
         )],
         'windows show desktop shortcut' => test_zci($start . $first, html => $start . $first ." \n" . $link),
         'ubuntu shortcut new folder' => test_zci($start . $second, html => $start . $second . " \n" . $link),
-        'paste keyboard shortcut' => test_zci($start . $third, html => $start . $third . " \n" . $link),
-        'paste special shortcut' => test_zci($start . $fourth, html => $start . $fourth . " \n" . $link)
+        'redo shortcut mac' => test_zci($start . $third, html => $start . $third . " \n" . $link),
+        'paste special shortcut' => undef #test_zci($start . $fourth, html => $start . $fourth . " \n" . $link)
 );
 
 done_testing;

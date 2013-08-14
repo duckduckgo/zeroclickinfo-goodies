@@ -2,8 +2,6 @@ package DDG::Goodie::Shortcut;
 # ABSTRACT: Display keyboard shortcut for an action.
 
 use DDG::Goodie;
-use LWP::UserAgent;
-use HTML::TreeBuilder;
 
 triggers any => 'shortcut','keyboard shortcut', 'key combination';
 
@@ -35,55 +33,46 @@ handle remainder_lc => sub {
 
     #get OS char (if any)
     my $search = $_;
-    $search =~ s/[WML]//g; #remove all OS chars from search
-    my $os = substr($_,0,1); #save first char
-    $os =~ s/[^WML]//g; #remove if not an OS char
+    $search =~ /(W|M|L)/;
+    my $os = $1; #save OS char
+    $search =~ tr/[WML]//d; #remove all OS chars from search
     $search = trim($search);
 
-    #get wikipedia page content
-    my $url = 'https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts';
-    my $content = LWP::UserAgent->new()->get($url)->content;
-    defined $content or return;
-
-    #find the first row that starts with the searched action
-    my $tree = HTML::TreeBuilder->new_from_content($content);
-    my $heading = $tree->look_down(
-        _tag => 'th',
-        sub {
-            $_[0]->as_trimmed_text() =~ /^$search/i #matches only the start
+    my $line;
+    my @shortcuts = share('shortcuts.txt')->slurp;
+    foreach (@shortcuts) {
+        if($_ =~ /^$search/i) { #matches only the start
+            $line = $_;
+            last;
         }
-    );
-
-    #return if no row was found
-    if (!defined $heading) { return; }
-
-    my %columns = (W=>'Windows',M=>'Mac OS',L=>'KDE/GNOME');
-    my $answer = 'The shortcut for ' . $heading->as_trimmed_text();
-    my $keys;
-
-    #get the (not empty) column content for the searched OS or for all of them if OS not specified
-    if ($os eq 'W') {
-        $keys = $heading->right()->as_trimmed_text();
-        if (!$keys) { return; }
-    } elsif ($os eq 'M') {
-        $keys = $heading->right()->right()->as_trimmed_text();
-        if (!$keys) { return; }
-    } elsif ($os eq 'L') {
-        $keys = $heading->right()->right()->right()->as_trimmed_text();
-        if (!$keys) { return; }
-    } else {
-        $answer .= ' is:';
-        $keys = $heading->right()->as_trimmed_text();
-        if ($keys) { $answer .= "\n" . $columns{W} . ': ' . $keys; }
-        $keys = $heading->right()->right()->as_trimmed_text();
-        if ($keys) { $answer .= "\n" . $columns{M} . ': ' . $keys; }
-        $keys = $heading->right()->right()->right()->as_trimmed_text();
-        if ($keys) { $answer .= "\n" . $columns{L} . ': ' . $keys; }
     }
 
-    if ($os) { $answer .= ' in ' . $columns{$os} . ' is ' . $keys; }
+    #return if no row was found
+    if (!defined $line) { return; }
+    my @columns = split('\|',$line);
 
-    my $source = "\n" . '<a href="' . $url . '">More at Wikipedia</a>';
+    my %systems = (W=>'Windows',M=>'Mac OS',L=>'KDE/GNOME');
+    my $answer = 'The shortcut for ' . $columns[0];
+    my $keys;
+
+if(!$os) {$os='';} #line added to avoid error, remove when UA detection added.
+
+    #get the column content for the searched OS
+    if ($os eq 'W') {
+        $keys = $columns[1];
+    } elsif ($os eq 'M') {
+        $keys = $columns[2];
+    } elsif ($os eq 'L') {
+        $keys = $columns[3];
+        $keys =~ s/\R//g; #remove line break
+    }
+
+    #return if the column is empty
+    if (!$keys) { return; }
+
+    if ($os) { $answer .= ' in ' . $systems{$os} . ' is ' . $keys; }
+
+    my $source = "\n" . '<a href="https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts">More at Wikipedia</a>';
     return $answer, html => "$answer $source";
 };
 
