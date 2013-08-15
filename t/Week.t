@@ -15,15 +15,20 @@ ddg_goodie_test(
                 DDG::Goodie::Week
         )],
 
-        "week current" => test_zci(qr/We are in week number \d+/),
+        "what is the current week" => 
+          test_zci(qr/We are in currently in the \d+\w+ week of \d+/),
 
-        "week 6" => test_zci(qr/Week \d+ started on \d+-\d+ in \d+/),
+        "what was the 5th week of this year" => 
+          test_zci(qr/The \d+\w+ week of \d+ began on January \d+\w+/),
 
-        "week 43 1984" => test_zci("Week 43 started on 10-22 of 1984"),
+        "what was the 43rd week of 1984" => 
+          test_zci("The 43rd week of 1984 began on October 22nd"),
 
-        "week 8 1956" => test_zci("Week 8 started on 2-20 of 1956"),
+        "what was the 8th week of 1956" => 
+          test_zci("The 8th week of 1956 began on February 20th"),
 
-        "week 21 1987" => test_zci("Week 21 started on 5-18 of 1987"),
+        "what was the 21st week of 1987" => 
+          test_zci("The 21st week of 1987 began on May 18th"),
 );
 
 done_testing;
