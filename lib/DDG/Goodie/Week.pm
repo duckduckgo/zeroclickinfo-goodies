@@ -66,7 +66,11 @@ handle remainder => sub {
 		
 	}
 
+<<<<<<< HEAD
 	elsif ($input =~ /(\d{1,2})(?:rd|nd|st|th)$var_st(\d{1,4})/) {
+=======
+	elsif ($input =~ /^(\d{1,2})\s+(\d{1-4})$/) {
+>>>>>>> b132dc1c2bc1fc4afba72bc00cb0a926a1ff3973
 
 		my $week_num = $1;
 		my $year = $2;
