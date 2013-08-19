@@ -6,7 +6,7 @@ use DDG::Goodie;
 # My imports
 use strict;
 use warnings;
-use Lingua::EN::Numbers::Ordinate;
+use Lingua::EN::Numbers::Ordinate qw/ordinate ordsuf/;
 use DateTime;
 use Date::Calc qw(:all);
 
@@ -43,38 +43,40 @@ my @months = qw/
 /;
 
 handle query_raw => sub {
-    return unless /
-        what(?:'?s|\sis|\swas)\s
-        the\s
-        (current|(\d{1,2})(?:nd|th|rd|st)?)\s
+    return unless /^\s*
+        what(?:'?s|\sis|\swas)\s+
+        the\s+
+        (current|(\d{1,2})(?:nd|th|rd|st)?)\s+
         week
         (
-            \sof\s
-            (?:(?:the|this)\s)?
+            \s+of\s+
+            (?:(?:the|this)\s+)?
             (year|\d{4})
         )?\??
-    /x;
+    \s*$/x;
 
     my $week = $1;
     my $year = defined $4 ? ($4 eq 'year' ? 'current' : $4) : 'current';
 
     return if $week =~ s/(nd|th|rd|st)$// and $week > 52;
 
-    my $dt = DateTime->now(time_zone => $loc->time_zone);
+    my $dt = DateTime->now(time_zone => $loc->time_zone)
+        if ($week eq 'current' or $year eq 'current');
 
     if ($week eq 'current' and $year eq 'current') {
         return "We are in currently in the " . ordinate($dt->week_number) .
-            " week of $dt->year";
+                ' week of ' . $dt->year . '.',
+            html => 'We are in currently in the ' . $dt->week_number
+                    . '<sup>' . ordsuf($dt->week_number) . '</sup>'
+                    . ' week of ' . $dt->year . '.';
     } elsif ($year eq 'current') {
         $year = $dt->year();
-        my (undef, $month, $day) = Monday_of_Week($week, $year);
-        return "The " . ordinate($week) . " week of $year began on " .
-            "$months[--$month] " . ordinate($day);
-    } else {
-        my (undef, $month, $day) = Monday_of_Week($week, $year);
-        return "The " . ordinate($week) . " week of $year began on " .
-            "$months[--$month] " . ordinate($day);
     }
+    my (undef, $month, $day) = Monday_of_Week($week, $year);
+    return "The " . ordinate($week) . " week of $year began on " .
+        "$months[--$month] " . ordinate($day) . '.',
+        html =>"The $week<sup>" . ordsuf($week) . "</sup> week of $year began on " .
+            "$months[$month] $day<sup>" . ordsuf($day) . '</sup>.';
 };
 
 1;
