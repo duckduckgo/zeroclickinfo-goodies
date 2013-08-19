@@ -15,6 +15,10 @@ ddg_goodie_test(
                 DDG::Goodie::Week
         )],
 
+        "what week is this?" => test_zci(
+            qr/We are in currently in the \d+\w+ week of \d+\./,
+            html => qr:We are in currently in the \d+<sup>\w+</sup> week of \d+\.:),
+
         "what is the current week" => test_zci(
             qr/We are in currently in the \d+\w+ week of \d+\./,
             html => qr:We are in currently in the \d+<sup>\w+</sup> week of \d+\.:),

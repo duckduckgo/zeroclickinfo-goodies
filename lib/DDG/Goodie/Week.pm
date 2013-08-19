@@ -44,19 +44,22 @@ my @months = qw/
 
 handle query_raw => sub {
     return unless /^\s*
-        what(?:'?s|\sis|\swas)\s+
-        the\s+
-        (current|(\d{1,2})(?:nd|th|rd|st)?)\s+
+        what(?:'?s|\sis|\swas)?\s+
+        (?:the\s+)?
+        (?:(current|(\d{1,2})(?:nd|th|rd|st)?)\s+)?
         week
         (
             \s+of\s+
             (?:(?:the|this)\s+)?
             (year|\d{4})
+            |
+            \s+is\s+this
         )?\??
     \s*$/x;
 
     my $week = $1;
     my $year = defined $4 ? ($4 eq 'year' ? 'current' : $4) : 'current';
+    ($week, $year) = qw/current current/ if (not defined $week);
 
     return if $week =~ s/(nd|th|rd|st)$// and $week > 52;
 
