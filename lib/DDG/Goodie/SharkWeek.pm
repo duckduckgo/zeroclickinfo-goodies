@@ -1,7 +1,7 @@
 package DDG::Goodie::SharkWeek;
 
 use DDG::Goodie;
-use JSON::XS;
+use JSON;
 use DateTime;
 
 zci answer_type => 'schedule';
