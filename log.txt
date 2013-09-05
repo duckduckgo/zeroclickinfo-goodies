@@ -1,0 +1,27 @@
+
+Found a dist.ini, suggesting a Dist::Zilla distribution
+
+--> Working on Dist::Zilla::Plugin::Git::NextVersion
+Fetching http://www.cpan.org/authors/id/C/CJ/CJM/Dist-Zilla-Plugin-Git-2.014.tar.gz ... OK
+Configuring Dist-Zilla-Plugin-Git-2.014 ... OK
+==> Found dependencies: MooseX::AttributeShortcuts
+--> Working on MooseX::AttributeShortcuts
+Fetching http://www.cpan.org/authors/id/R/RS/RSRCHBOY/MooseX-AttributeShortcuts-0.020.tar.gz ... OK
+Configuring MooseX-AttributeShortcuts-0.020 ... OK
+==> Found dependencies: MooseX::CoercePerAttribute
+--> Working on MooseX::CoercePerAttribute
+Fetching http://www.cpan.org/authors/id/M/MR/MRF/MooseX-CoercePerAttribute-1.000.tar.gz ... OK
+Configuring MooseX-CoercePerAttribute-1.000 ... OK
+Building and testing MooseX-CoercePerAttribute-1.000 ... FAIL
+--> Working on Dist::Zilla::Plugin::GithubMeta
+Fetching http://www.cpan.org/authors/id/B/BI/BINGOS/Dist-Zilla-Plugin-GithubMeta-0.34.tar.gz ... FAIL
+
+[ERROR] Failure on installation of modules!
+
+This could have several reasons, for first you can just restart this installer,
+cause it could be a pure download problem. If this isnt the case, please read
+the build.log mentioned on the errors and see if you can fix the problem
+yourself. Otherwise, please report the problem via email to use at
+open@duckduckgo.com with the build.log attached. If there is no build.log
+mentioned, just attach the output you see.
+
