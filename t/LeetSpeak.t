@@ -7,7 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'leetspeak';
-zci is_cached => 0;
+zci is_cached => 1;
 
 ddg_goodie_test(
 	[ 'DDG::Goodie::LeetSpeak'],
