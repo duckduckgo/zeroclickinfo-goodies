@@ -5,7 +5,7 @@ use DDG::Goodie;
 
 triggers startend => 'leetspeak', 'l33tsp34k', 'l33t', 'leet speak', 'l33t sp34k';
 primary_example_queries 'leetspeak hello world !';
-description 'translates into leetspeak';
+description 'Translate the query into leet speak.';
 topics 'geek';
 category 'conversions';
 name 'LeetSpeak';
@@ -13,28 +13,45 @@ code_url 'https://github.com/antoine-vugliano/zeroclickinfo-goodies/blob/master/
 attribution github => ['https://github.com/antoine-vugliano', 'antoine-vugliano'],
 	web => ['http://antoine.vugliano.free.fr', 'Antoine Vugliano'];
 
-my @alphabet = (
-	'/-\\','|3','(','|)','3','|=','6','|-|','1','_|','|<','|_','|\/|','|\|','0','|D','(,)','|2','5',"']['",'|_|','\/','\^/','><',"`/",'2'
-	);
+zci is_cached => 1;
+
+my %alphabet = (
+    a => '/-\\',
+    b => '|3',
+    c => '(',
+    d => '|)',
+    e => '3',
+    f => '|=',
+    g => '6',
+    h => '|-|',
+    i => '1',
+    j => '_|',
+    k => '|<',
+    l => '|_',
+    m => '|\/|',
+    n => '|\|',
+    o => '0',
+    p => '|D',
+    q => '(,)',
+    r => '|2',
+    s => '5',
+    t => "']['",
+    u => '|_|',
+    v => '\/',
+    w => '\^/',
+    x => '><',
+    y => "`/",
+    z => '2'
+);
 
 handle remainder => sub {
-	if(not $_) { return; }
+    return unless $_;
 
-	my $res = "";
-	my $l = 0;
+    my $translation = join '', map {
+        exists $alphabet{$_} ?  $alphabet{$_} : $_
+    } split //, lc;
 
-	my $A = ord 'A';
-	my $Z = ord 'Z';
-
-	foreach my $letter (split //, uc $_)
-	{
-		$l = ord $letter;
-		if ($l ~~ [$A..$Z]) { $res .= $alphabet[$l - $A]; }
-		else { $res .= $letter; }
-	}
-
-	return "Leet Speak: $res";
+    return "Leet Speak: $translation";
 };
 
-zci is_cached => 1;
 1;
