@@ -18,6 +18,7 @@ ddg_goodie_test(
 	'what is l33t'            => test_zci("Leet Speak: \\^/|-|/-\\'][' 15"),
 	'leet speak leetspeak'    => test_zci("Leet Speak: |_33']['5|D3/-\\|<"),
 	'l33t sp34k /!§ ;€'       => test_zci("Leet Speak: /!§ ;€"),
+	'l33tsp34k'               => undef,
 );
 
 done_testing;
