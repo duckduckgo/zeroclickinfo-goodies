@@ -7,7 +7,7 @@ use warnings;
 use DDG::Goodie;
 
 # TODO: This (sh|c)ould be re-written to be more precise
-triggers query => qr_^([0-9]{1,3}\.){3}([0-9]{1,3})[\s/](([1-3]?[0-9])|(([0-9]{1,3}\.){3}([0-9]{1,3})))$_;
+triggers query => qr`^([0-9]{1,3}\.){3}([0-9]{1,3})[\s/](([1-3]?[0-9])|(([0-9]{1,3}\.){3}([0-9]{1,3})))$`;
 
 zci answer_type => "subnet_info";
 zci is_cached => 1;
@@ -29,7 +29,7 @@ handle query => sub {
 	}
 
 	my ($input) = @_;
-	my ($address,$cidr) = split qr_[\s/]_, $input;
+	my ($address,$cidr) = split qr`[\s/]`, $input;
 	
 	my @octlets = split /\./,$address;
 	for (@octlets) {
@@ -70,6 +70,12 @@ handle query => sub {
 	my $broadcast = $network+$wildcard_mask;
 	my $host_count = 1+$end-$start;
 	
+	my $class = "A";
+	$class = "E (reserved)" if (($network>>28 & 0x0F) == 0x0F);
+	$class = "D (multicast)" if (($network>>28 & 0x0F) == 0x0E);
+	$class = "C" if (($network>>29 & 0x07) == 0x06);
+	$class = "B" if (($network>>30 & 0x03) == 0x02);
+	
 	my $which_specified = "Host #".($host);
 	$which_specified = "Network" if ($host==0);
 	$which_specified = "Broadcast" if ($host==$host_count+1);
@@ -78,10 +84,11 @@ handle query => sub {
 	
 	my $output_str =	"Network: ".int_to_str($network)."/$cidr,".
 					" Netmask: ".int_to_str($mask).",".
-					" $which_specified specified";
+					" $which_specified specified,".
+					" Class: $class";
 	$output_str .=	", Host Address Range: ".int_to_str($start)."-".int_to_str($end).",".
 					" $host_count Usable Addresses,".
-					" Broadcast: ".int_to_str($broadcast) 
+					" Broadcast: ".int_to_str($broadcast)
 					unless($cidr > 30);
 	return $output_str;
 
