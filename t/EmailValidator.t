@@ -14,10 +14,12 @@ ddg_goodie_test(
     ],
     'validate foo' => undef,
     'validate my email foo@example.com' => test_zci (qr/seems to be valid/),
+    'validate my email foo+abc@example.com' => test_zci (qr/seems to be valid/),
+    'validate my email foo.bar@example.com' => test_zci (qr/seems to be valid/),
+    'validate user@exampleaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com' => test_zci (qr/Please check the address/),
     'validate foo@example.com' => test_zci (qr/seems to be valid/),
-    'validate foo@!!!.com' => test_zci(qr/is not valid/),
-    'validate foo@zzzyyy6yyyxxxx5zzz9zz.org' => test_zci(qr/please check the hostname/),
-    'validate foo@example.xyz' => test_zci(qr/please check the top-level domain/),
+    'validate foo@!!!.com' => test_zci(qr/Please check the full qualified domain name/),
+    'validate foo@example.xyz' => test_zci(qr/Please check the top-level domain/),
 );
 
 done_testing;
