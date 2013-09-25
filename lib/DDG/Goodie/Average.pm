@@ -21,7 +21,7 @@ attribution twitter => 'crazedpsyc',
 handle query => sub {
     return if $_ =~ /^root/i && $_ !~ /^root mean square/i;
 
-    s/^[a-zA-Z\s]+//; s/\s+[a-zA-Z]+$//; s/[;,\s]+/ /g;
+    s/^[a-zA-Z\s]+//; s/\s+[a-zA-Z]+$//; s/[;,\s{}\[\]\(\)]+/ /g;
     return unless /^\s*(?:\d+(?:\.\d+)?\s?)*$/;
 
     my @nums = split ' ', $_;
