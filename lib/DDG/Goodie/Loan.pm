@@ -33,6 +33,9 @@ my %country_to_currency;
 # A map of currency symbol to currency code, filled in below
 my %symbol_to_currency = ( );
 
+# A map of all the known currency codes, filled in below
+my %supported_currency_codes = ( );
+
 # From the symbol used, guess the currency (this will override any location data that comes in with the user). 
 # This is pretty imprecise. Assume USD if a $ is used. More assumptions can be added here later to priorize 
 # currency guessing. Perhaps location data can be used to break ties. 
@@ -67,16 +70,19 @@ handle remainder => sub {
 	my $query = $_;
 	
 	# At a minimum, query should contain some amount of money and a percent interest rate
-	if ($query =~ /^(\p{Currency_Symbol})?([\d\.,]+)\s(at\s)?(\d+.?\d*)%/) {
+	if ($query =~ /^(\p{Currency_Symbol})?([\d\.,]+)\s?([A-Z]{3})?\s(at\s)?(\d+.?\d*)%/) {
 		my $symbol = $1;
 		my $principal = $2;
-		my $rate = $4;
+		my $input_currency_code = $3;
+		my $rate = $5;
 		my $downpayment = 0;
 		my $years = 30;
 
 		# Apply localization, default to US if unknown
 		my $currency_code = "USD";
-		if (defined $symbol) {
+		if (defined $input_currency_code && exists $supported_currency_codes{$input_currency_code}) {
+			$currency_code = $input_currency_code;
+		} elsif (defined $symbol) {
 			$currency_code = convert_symbol_to_currency($symbol);
 		} elsif (defined $loc->country_code) {
 			$currency_code = $country_to_currency{$loc->country_code} || $country_to_currency{"us"};
@@ -88,8 +94,8 @@ handle remainder => sub {
 		$principal = normalize_formatted_currency_string($principal, $currency_code);
 
 		# Check if query contains downpayment information
-		if ($query =~ /(\p{Currency_Symbol})?(\d+)(%)? down/) {
-			my $downpayment_is_in_cash = ! (defined $3);
+		if ($query =~ /(\p{Currency_Symbol})?(\d+)\s?([A-Z]{3})?(%)? down/) {
+			my $downpayment_is_in_cash = ! (defined $4);
 			my $downpayment_without_units = $2;
 			if ($downpayment_is_in_cash) {
 				# Downpayment expresses in an amount of currency
@@ -368,6 +374,7 @@ handle remainder => sub {
 
 # Build the mapping of symbol to currency name
 foreach my $code (values %country_to_currency) {
+	$supported_currency_codes{$code} = 1;
 	my $symbol_for_code = currency_symbol($code);
 	if (defined $symbol_for_code) {
 		$symbol_to_currency{$symbol_for_code} = $code;

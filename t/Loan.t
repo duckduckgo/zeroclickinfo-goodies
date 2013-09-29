@@ -37,11 +37,18 @@ ddg_goodie_test (
 		test_zci('Monthly Payment is $2,026.74 for 30 years. Total interest paid is $329,626.85'),
 	'loan €250.000,00 3% interest 15 years' =>
 		test_zci('Monthly Payment is €1.726,45 for 15 years. Total interest paid is €60.761,74'),
+	'loan 250.000,00 EUR 3% interest 15 years' =>
+		test_zci('Monthly Payment is €1.726,45 for 15 years. Total interest paid is €60.761,74'),
+	'loan 500000 EUR at 4.5% 100000 EUR down' =>
+		test_zci('Monthly Payment is €2.026,74 for 30 years. Total interest paid is €329.626,85'),
 	# Test a few cases of inferring user's location
 	DDG::Request->new(query_raw => "loan 400000 4.5%", location => test_location("de")) =>
 		test_zci('Monthly Payment is €2.026,74 for 30 years. Total interest paid is €329.626,85'),
 	DDG::Request->new(query_raw => "loan 400000 4.5%", location => test_location("in")) =>
 		test_zci('Monthly Payment is ₨2,026.74 for 30 years. Total interest paid is ₨329,626.85'),
+	# Malaysia has no symbol, just the currency code after the amounts
+	DDG::Request->new(query_raw => "loan 400000 MYR at 4.5%", location => test_location("my")) =>
+		test_zci('Monthly Payment is 2,026.74 MYR for 30 years. Total interest paid is 329,626.85 MYR'),
 	DDG::Request->new(query_raw => "loan 400000 4.5%", location => test_location("my")) =>
 		test_zci('Monthly Payment is 2,026.74 MYR for 30 years. Total interest paid is 329,626.85 MYR'),
 	# Test that symbol overrides user's location
