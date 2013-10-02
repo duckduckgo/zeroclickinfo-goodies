@@ -20,12 +20,14 @@ category 'computing_tools';
 topics 'sysadmin';
 
 handle query => sub {
-    sub int_to_str() {
+    # Convert an integer into an IP address.
+    sub int_to_str {
         my ($ip) = @_;
         sprintf "%u.%u.%u.%u", $ip >> 24 & 0xff, $ip >> 16 & 0xff, $ip >> 8 & 0xff, $ip & 0xff;
     }
 
-    sub ip_to_int() {
+    # Convert an IP address into an integer.
+    sub ip_to_int {
         (int($_[0]) << 24) + (int($_[1]) << 16) + (int($_[2]) << 8) + int($_[3]);
     }
 
@@ -45,18 +47,29 @@ handle query => sub {
     if ($cidr =~ /^[0-9]+$/) {
         return if ($cidr > 32 || $cidr < 1);
         $wildcard_mask = 2**(32-$cidr) - 1;     
+        
+        # Flip the bits.
         $mask = 0xffffffff ^ $wildcard_mask;
     } elsif ($cidr =~ /([0-9]{1,3}\.){3}([0-9]{1,3})/) {
         my @cidr_octlets = split /\./, $cidr;
+
+        # An octlet cannot be over 255.
         for(@cidr_octlets) {
             return if int($_) > 255;
         }
         
         $mask = ip_to_int(@cidr_octlets);
+        # Convert the integer into its binary representation.
         my $mask_binary = sprintf("%b", $mask);
+        
+        # The mask cannot have alternating 1s and 0s.
         return unless ($mask_binary =~ /^1+0*$/);
+
+        # Flip the bits.
         $wildcard_mask = 0xffffffff ^ $mask;
-        $cidr = ($mask_binary =~ tr/1//);       #count number of 1's
+        
+        # Count the number of 1s.
+        $cidr = ($mask_binary =~ tr/1//);
     } else {
         return;
     }
@@ -68,7 +81,8 @@ handle query => sub {
     my $end = $network + ($wildcard_mask - 1);
     my $broadcast = $network + $wildcard_mask;
     my $host_count = 1 + $end - $start;
-        
+    
+    # Check the class type of the IP address.
     my $class = "A";
     $class = "E (reserved)" if (($network >> 28 & 0x0F) == 0x0F);
     $class = "D (multicast)" if (($network >> 28 & 0x0F) == 0x0E);
