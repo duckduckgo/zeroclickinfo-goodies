@@ -18,15 +18,7 @@ attribution github => ['https://github.com/dariog88a','dariog88a'],
             email => [ 'mailto:dariog88@gmail.com', 'dariog88' ],
             twitter => ['http://twitter.com/dariog88','dariog88'];
 
-#removes leading and trailing whitespace, and leaves just one blank between words
-sub trim($) {
-    my $s = shift;
-    $s =~ s/ +/ /gs;
-    $s =~ s/^\s+|\s+$//g; 
-    return $s;
-}
-
-my @shortcuts = share('shortcuts.csv')->slurp;
+my @shortcuts = share('shortcuts.csv')->slurp(iomode => '<:encoding(UTF-8)');
 
 handle remainder_lc => sub {
     #replace all OS words with starting char
@@ -39,7 +31,8 @@ handle remainder_lc => sub {
     $search =~ /(W|M|L)/;
     my $os = $1; #save OS char
     $search =~ tr/[WML]//d; #remove all OS chars from search
-    $search = trim($search);
+    $search =~ tr/ / /s; #leave just one blank between words
+    $search =~ s/^\s+|\s+$//g; #trim
 
     my $line;
     foreach (@shortcuts) {
