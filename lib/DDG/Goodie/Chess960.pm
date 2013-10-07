@@ -15,12 +15,8 @@ category 'random';
 attribution github  => 'https://github.com/koosha--',
             twitter => 'https://twitter.com/_koosha_';
 
-handle query => sub {
-    my $query = $_;
-    my $pos = undef;
-    return unless ($query =~ /\bchess960\b/i && 
-            ($query =~ /\brandom\b/i || (($pos) = $query =~ /\b(\d+)\b/))) ;
-    my @all_positions = qw(
+
+my @all_positions = qw(
 BBQNNRKR BQNBNRKR BQNNRBKR BQNNRKRB QBBNNRKR QNBBNRKR QNBNRBKR QNBNRKRB QBNNBRKR QNNBBRKR
 QNNRBBKR QNNRBKRB QBNNRKBR QNNBRKBR QNNRKBBR QNNRKRBB BBNQNRKR BNQBNRKR BNQNRBKR BNQNRKRB
 NBBQNRKR NQBBNRKR NQBNRBKR NQBNRKRB NBQNBRKR NQNBBRKR NQNRBBKR NQNRBKRB NBQNRKBR NQNBRKBR
@@ -119,11 +115,20 @@ RBKRNQBN RKRBNQBN RKRNQBBN RKRNQNBB BBRKRNNQ BRKBRNNQ BRKRNBNQ BRKRNNQB RBBKRNNQ
 RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ RKRNNQBB
 );
 
+handle query => sub {
+    my $query = $_;
+    my $pos = undef;
+    return unless ($query =~ /\bchess960\b/i && 
+            ($query =~ /\brandom\b/i || (($pos) = $query =~ /\b(\d+)\b/))) ;
+
+
     my $index = ($pos && 1 <= $pos && $pos <= 960) ? $pos - 1 : int rand @all_positions;
 
     my $position = $all_positions[$index];
 
-    my $output = "Position " . ($index + 1) . ":\n" .
+    my $position_num = $index + 1;
+
+    my $output = "Position " . $position_num . ":\n" .
                  "White: " . join(" ", split("", $position)) . "\n" .
                  "       " . "P " x 8 . "\n" .
                  "Black: " . join(" ", split("", $position)) . "\n" .
@@ -135,10 +140,10 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
                  "       R is for rook, and\n" .
                  "       P is for pawn)";
     my $position_lc = lc $position;
-    my $html = "<a href='https://en.wikipedia.org/wiki/Chess960_numbering_scheme'>Position " . ($index + 1) . "</a><br><img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/>";
+    my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/><a href='https://en.wikipedia.org/wiki/Chess960_numbering_scheme'>More at Wikipedia</a>";
 
     $query =~ s/^ chess960|chess960 $|chess960 //i;
-    return $output, html => $html, heading => "$query (Chess960)";
+    return $output, html => $html, heading => "Position $position_num (Chess960)";
 };
 
 1;
