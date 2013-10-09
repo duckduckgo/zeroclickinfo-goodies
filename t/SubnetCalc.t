@@ -15,16 +15,16 @@ ddg_goodie_test(
         'DDG::Goodie::SubnetCalc'
     ],
     "10.0.0.0/24" => test_zci(
-	"Network: 10.0.0.0/24\nSpecified: Network\nClass: A\nHost Address Range: 10.0.0.1-10.0.0.254 (254 hosts)\nBroadcast: 10.0.0.255\n",
-	html => "<div><i>Network: </i>10.0.0.0/24</div><div><i>Specified: </i>Network</div><div><i>Class: </i>A</div><div><i>Host Address Range: </i>10.0.0.1-10.0.0.254 (254 hosts)</div><div><i>Broadcast: </i>10.0.0.255</div>",
+	"Network: 10.0.0.0/24 (Class A)\nSpecified: Network\nHost Address Range: 10.0.0.1-10.0.0.254 (254 hosts)\nBroadcast: 10.0.0.255\n",
+	html => "<div><i>Network: </i>10.0.0.0/24 (Class A)</div><div><i>Specified: </i>Network</div><div><i>Host Address Range: </i>10.0.0.1-10.0.0.254 (254 hosts)</div><div><i>Broadcast: </i>10.0.0.255</div>",
     ),
     "192.168.0.0/24" => test_zci(
-	"Network: 192.168.0.0/24\nSpecified: Network\nClass: C\nHost Address Range: 192.168.0.1-192.168.0.254 (254 hosts)\nBroadcast: 192.168.0.255\n",
-	html => "<div><i>Network: </i>192.168.0.0/24</div><div><i>Specified: </i>Network</div><div><i>Class: </i>C</div><div><i>Host Address Range: </i>192.168.0.1-192.168.0.254 (254 hosts)</div><div><i>Broadcast: </i>192.168.0.255</div>",
+	"Network: 192.168.0.0/24 (Class C)\nSpecified: Network\nHost Address Range: 192.168.0.1-192.168.0.254 (254 hosts)\nBroadcast: 192.168.0.255\n",
+	html => "<div><i>Network: </i>192.168.0.0/24 (Class C)</div><div><i>Specified: </i>Network</div><div><i>Host Address Range: </i>192.168.0.1-192.168.0.254 (254 hosts)</div><div><i>Broadcast: </i>192.168.0.255</div>",
     ),
     "8.8.8.8 255.255.224.0" => test_zci(
-	"Network: 8.8.0.0/19\nSpecified: Host #2056\nClass: A\nHost Address Range: 8.8.0.1-8.8.31.254 (8190 hosts)\nBroadcast: 8.8.31.255\n",
-	html => "<div><i>Network: </i>8.8.0.0/19</div><div><i>Specified: </i>Host #2056</div><div><i>Class: </i>A</div><div><i>Host Address Range: </i>8.8.0.1-8.8.31.254 (8190 hosts)</div><div><i>Broadcast: </i>8.8.31.255</div>",
+	"Network: 8.8.0.0/19 (Class A)\nSpecified: Host #2056\nHost Address Range: 8.8.0.1-8.8.31.254 (8190 hosts)\nBroadcast: 8.8.31.255\n",
+	html => "<div><i>Network: </i>8.8.0.0/19 (Class A)</div><div><i>Specified: </i>Host #2056</div><div><i>Host Address Range: </i>8.8.0.1-8.8.31.254 (8190 hosts)</div><div><i>Broadcast: </i>8.8.31.255</div>",
     ),
 );
 
