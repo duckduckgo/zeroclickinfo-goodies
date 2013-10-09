@@ -114,13 +114,12 @@ handle query => sub {
     # We're putting them into an array because we want the output to be sorted.
     my @output = (
 	["Network", int_to_str($network) . "/$cidr"],
-	["Type", "$which_specified"],
+	["Specified", "$which_specified"],
 	["Class", "$class"],
     );
     
     unless($cidr > 30) {
-	push @output, (["Host Address Range", int_to_str($start) . "-" . int_to_str($end)],
-		       ["Usable Addresses", "$host_count"],
+	push @output, (["Host Address Range", int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)"],
 		       ["Broadcast", int_to_str($broadcast)]);
     }
     
