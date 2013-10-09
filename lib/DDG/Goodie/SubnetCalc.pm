@@ -4,7 +4,6 @@ package DDG::Goodie::SubnetCalc;
 use strict;
 use warnings;
 
-use Data::Dumper;
 use DDG::Goodie;
 
 # TODO: This (sh|c)ould be re-written to be more precise
@@ -112,6 +111,7 @@ handle query => sub {
 	return $results;
     }
 
+    # We're putting them into an array because we want the output to be sorted.
     my @output = (
 	["Network", int_to_str($network) . "/$cidr"],
 	["Type", "$which_specified"],
