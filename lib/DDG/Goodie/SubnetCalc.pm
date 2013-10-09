@@ -4,6 +4,7 @@ package DDG::Goodie::SubnetCalc;
 use strict;
 use warnings;
 
+use Data::Dumper;
 use DDG::Goodie;
 
 # TODO: This (sh|c)ould be re-written to be more precise
@@ -94,17 +95,36 @@ handle query => sub {
     $which_specified = "Broadcast" if ($host == $host_count+1);
     $which_specified = "Point-To-Point (".int_to_str($end).", ".int_to_str($start).")" if ($cidr == 31);
     $which_specified = "Host Only" if ($cidr == 32);
-        
-    my $output_str = "Network: " . int_to_str($network) . "/$cidr,".
-        " Netmask: " . int_to_str($mask) . ",".
-        " $which_specified specified,".
-        " Class: $class";
-    $output_str .= ", Host Address Range: " . int_to_str($start) . "-" . int_to_str($end) . "," .
-        " $host_count Usable Addresses," .
-        " Broadcast: " . int_to_str($broadcast)
-        unless($cidr > 30);
     
-    return $output_str;
+    sub to_html {
+	my $results = "";
+	foreach my $result (@_) {
+	    $results .= "<div><i>$result->[0]: </i>$result->[1]</div>";
+	}
+	return $results;
+    }
+
+    sub to_text {
+	my $results = "";
+	foreach my $result (@_) {
+	    $results .= "$result->[0]: $result->[1]\n";
+	}
+	return $results;
+    }
+
+    my @output = (
+	["Network", int_to_str($network) . "/$cidr"],
+	["Type", "$which_specified"],
+	["Class", "$class"],
+    );
+    
+    unless($cidr > 30) {
+	push @output, (["Host Address Range", int_to_str($start) . "-" . int_to_str($end)],
+		       ["Usable Addresses", "$host_count"],
+		       ["Broadcast", int_to_str($broadcast)]);
+    }
+    
+    return answer => to_text(@output), html => to_html(@output);
 };
 
 1;
