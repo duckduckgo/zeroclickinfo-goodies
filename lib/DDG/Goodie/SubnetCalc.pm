@@ -114,6 +114,7 @@ handle query => sub {
     # We're putting them into an array because we want the output to be sorted.
     my @output = (
 	["Network", int_to_str($network) . "/$cidr (Class $class)"],
+	["Netmask", int_to_str($mask)],
 	["Specified", "$which_specified"],
     );
     
