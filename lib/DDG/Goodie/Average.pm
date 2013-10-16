@@ -5,7 +5,6 @@ use DDG::Goodie;
 triggers startend => "avg", "average", "mean", "median";
 triggers start => "root";
 
-zci is_cached => 1;
 zci answer_type => "average";
 
 primary_example_queries 'average 12, 45, 78, 1234';

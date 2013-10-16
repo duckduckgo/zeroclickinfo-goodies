@@ -4,7 +4,6 @@ use DDG::Goodie;
 
 zci answer_type => "golden_ratio";
 
-zci is_cached => 1;
 
 triggers start => "golden ratio";
 

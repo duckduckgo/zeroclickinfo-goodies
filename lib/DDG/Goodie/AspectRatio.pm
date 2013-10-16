@@ -5,7 +5,6 @@ use DDG::Goodie;
 
 triggers start => "aspect ratio";
 
-zci is_cached => 1;
 zci answer_type => "aspect_ratio";
 
 primary_example_queries 'aspect ratio 4:3 640:?';

@@ -4,7 +4,6 @@ use DDG::Goodie;
 
 triggers any => "em", "px";
 
-zci is_cached => 1;
 zci answer_type => "conversion";
 
 primary_example_queries '10 px to em';

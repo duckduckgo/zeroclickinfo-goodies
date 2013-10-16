@@ -13,7 +13,6 @@ topics 'words_and_games';
 
 attribution github => ['https://github.com/moollaza', 'moollaza'];
 
-zci is_cached => 1;
 zci answer_type => "title_case";
 
 handle remainder => sub { join(' ', map { ucfirst $_ } split(/ /, $_))};

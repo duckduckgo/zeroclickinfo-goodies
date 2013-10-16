@@ -3,7 +3,6 @@ package DDG::Goodie::Epoch;
 use DDG::Goodie;
 use Date::Calc qw(Today_and_Now Mktime);
 
-zci is_cached => 1;
 zci answer_type => "epoch";
 
 primary_example_queries 'epoch';

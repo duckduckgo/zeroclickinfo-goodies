@@ -16,7 +16,6 @@ use utf8;
 # \x{2126} is the unicode ohm symbol
 triggers query_nowhitespace => qr/^(.*)(ohm|ohms|\x{2126})/i;
 
-zci is_cached => 1;
 zci answer_type => 'resistor_colors';
 
 primary_example_queries '4.7k ohm';

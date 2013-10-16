@@ -9,7 +9,6 @@ use URI::Escape;
 triggers startend => 'potus';
 triggers any => 'president of the united states', 'president of the us';
 
-zci is_cached => 1;
 
 name 'POTUS';
 description 'returns the President of the United States';

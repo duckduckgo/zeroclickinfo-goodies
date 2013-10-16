@@ -6,7 +6,6 @@ use utf8;
 
 triggers query_raw => qr/^resistors?|resistors?$/i;
 
-zci is_cached => 1;
 zci answer_type => 'ohms';
 
 primary_example_queries 'red yellow white gold resistor';

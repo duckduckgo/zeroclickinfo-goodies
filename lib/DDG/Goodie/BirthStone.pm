@@ -6,7 +6,6 @@ use DDG::Goodie;
 triggers startend => 'birthstone', 'birth stone';
 
 zci answer_type => "BirthStone";
-zci is_cached => 1;
 
 primary_example_queries 'birthstone april';
 secondary_example_queries 'may birth stone';

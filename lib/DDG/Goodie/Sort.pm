@@ -11,7 +11,6 @@ use constant NORMALIZE => 1;
 
 triggers start => 'sort';
 
-zci is_cached => 1;
 zci answer_type => 'sort';
 
 primary_example_queries 'sort -3 -10 56 10';

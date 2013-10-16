@@ -5,7 +5,6 @@ use strict;
 use DDG::Goodie;
 
 triggers any => 'chmod', 'permission', 'permissions';
-zci is_cached => 1;
 zci answer_type => 'unix_permissions';
 
 primary_example_queries 'chmod 755';

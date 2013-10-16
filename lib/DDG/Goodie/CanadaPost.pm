@@ -13,7 +13,6 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
-zci is_cached => 1;
 zci answer_type => "canadapost";
 
 # Regex for Canada Post.

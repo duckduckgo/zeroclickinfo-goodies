@@ -2,7 +2,6 @@ package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "calc";
 
 primary_example_queries '$3.43+$34.45';

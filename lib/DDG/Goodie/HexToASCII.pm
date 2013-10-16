@@ -9,7 +9,6 @@ use constant MAX_OUTPUT_LEN => 256;
 
 triggers start => 'ascii';
 
-zci is_cached => 1;
 zci answer_type => 'ascii';
 
 primary_example_queries 'ascii 0x74657374';

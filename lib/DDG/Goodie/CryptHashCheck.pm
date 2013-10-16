@@ -10,7 +10,6 @@ use constant SHA1HREF => "http://en.wikipedia.org/wiki/SHA-1";
 use constant SHA2HREF => "http://en.wikipedia.org/wiki/SHA-2";
 use constant SHA3HREF => "http://en.wikipedia.org/wiki/SHA-3";
 
-zci is_cached => 1;
 
 # Only one trigger enabled.
 triggers start => "hash";

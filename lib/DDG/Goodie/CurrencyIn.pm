@@ -20,7 +20,6 @@ package DDG::Goodie::CurrencyIn;
 use DDG::Goodie;
 use Locale::SubCountry;
 
-zci is_cached => 1;
 zci answer_type => "currency_in";
 
 primary_example_queries 'currency in australia';

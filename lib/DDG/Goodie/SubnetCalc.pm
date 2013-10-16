@@ -10,7 +10,6 @@ use DDG::Goodie;
 triggers query => qr#^([0-9]{1,3}\.){3}([0-9]{1,3})[\s/](([1-3]?[0-9])|(([0-9]{1,3}\.){3}([0-9]{1,3})))$#;
 
 zci answer_type => "subnet_info";
-zci is_cached => 1;
 
 attribution github => ['https://github.com/mintsoft', 'mintsoft'];
 

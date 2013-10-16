@@ -50,6 +50,5 @@ handle remainder => sub {
     return;
 };
 
-zci is_cached => 1;
 
 1;

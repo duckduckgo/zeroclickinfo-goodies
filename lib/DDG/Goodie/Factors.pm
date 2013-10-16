@@ -5,7 +5,6 @@ use DDG::Goodie;
 use Math::Prime::Util 'all_factors';
 
 zci answer_type => "factors";
-zci is_cached => 1;
 
 triggers startend => 'factors', 'factors of';
 

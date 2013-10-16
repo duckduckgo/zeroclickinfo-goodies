@@ -28,7 +28,6 @@ triggers query_raw => qr/^
     \#?([0-9a-f]{6})|\#([0-9a-f]{3}))              # handles #00f, #0000ff, etc
     $/ix;
 
-zci is_cached => 1;
 zci answer_type => 'color_code';
 
 primary_example_queries 'hex color code for cyan';

@@ -4,7 +4,6 @@ use DDG::Goodie;
 
 triggers end => "binary";
 
-zci is_cached => 1;
 zci answer_type => "binary_conversion";
 
 primary_example_queries 'foo in binary';

@@ -7,7 +7,6 @@ use Lingua::EN::Numericalize;
 
 triggers any => qw( plus minus + - );
 
-zci is_cached => 1;
 zci answer_type => 'date_math';
 
 primary_example_queries 'Jan 1 2012 plus 32 days';

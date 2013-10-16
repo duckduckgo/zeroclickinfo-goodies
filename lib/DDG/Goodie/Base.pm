@@ -15,7 +15,6 @@ my %base_map = (
 triggers any => 'base', keys %base_map;
 
 zci answer_type => "conversion";
-zci is_cached => 1;
 
 primary_example_queries '255 in hex';
 secondary_example_queries '255 in base 16', '42 in binary';

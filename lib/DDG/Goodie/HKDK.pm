@@ -2,7 +2,6 @@ package DDG::Goodie::HKDK;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "hkdk";
 
 primary_example_queries 'CU123456789DK';

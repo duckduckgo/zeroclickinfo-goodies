@@ -4,7 +4,6 @@ use DDG::Goodie;
 
 triggers start => "perimeter", "circumference";
 
-zci is_cached => 1;
 zci answer_type => "perimeter";
 
 primary_example_queries 'circumference circle 1';

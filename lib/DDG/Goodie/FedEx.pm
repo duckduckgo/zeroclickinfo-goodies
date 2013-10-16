@@ -2,7 +2,6 @@ package DDG::Goodie::FedEx;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "fedex";
 
 primary_example_queries "fedex 9241990100130206401644";

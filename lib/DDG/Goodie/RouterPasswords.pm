@@ -4365,7 +4365,6 @@ my %routers = (
 
 triggers any => keys %routers, "default", "password";
 
-zci is_cached => 1;
 zci answer_type => "password";
 
 handle query => sub {

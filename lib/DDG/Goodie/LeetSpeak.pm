@@ -13,7 +13,6 @@ code_url 'https://github.com/antoine-vugliano/zeroclickinfo-goodies/blob/master/
 attribution github => ['https://github.com/antoine-vugliano', 'antoine-vugliano'],
 	web => ['http://antoine.vugliano.free.fr', 'Antoine Vugliano'];
 
-zci is_cached => 1;
 
 my %alphabet = (
     a => '/-\\',

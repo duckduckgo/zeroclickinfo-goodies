@@ -14,7 +14,6 @@ attribution github => ['https://github.com/Getty', 'Getty'], cpan => 'GETTY';
 
 triggers startend => "reverse";
 
-zci is_cached => 1;
 zci answer_type => "reverse";
 
 handle remainder => sub { qq|Reversed "$_": | . scalar reverse };
