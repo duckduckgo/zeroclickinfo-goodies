@@ -1,8 +1,8 @@
 package DDG::Goodie::$plugin_name.pm;
 # ABSTRACT: Write and abstract here
-
+# Start at https://dukgo.com/duckduckhack/goodie_overview if you are new
+# to plugin development
 use DDG::Goodie;
-use URI::Escape;
 
 #Attribution
 primary_example_queries "Provide an second example query";
@@ -18,9 +18,10 @@ attribution github => ["https://github.com/", ""],
             twitter => ["https://twitter.com/", ""];
 
 # Triggers
-
-triggers query_lc => qr//;
-
+# Example Regex Tigger
+#triggers query_lc => qr//;
+# Example Word Trigger
+triggers any => 'example';
 
 # Handle statement
 handle query_lc => sub {
