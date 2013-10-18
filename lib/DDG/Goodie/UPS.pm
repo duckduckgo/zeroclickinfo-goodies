@@ -5,8 +5,8 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "ups";
 
-primary_example_queries '1Z0884XV0399906189';
-secondary_example_queries 'ups 1Z0884XV0399906189';
+primary_example_queries '1Z2807700371226497';
+secondary_example_queries 'ups 1Z2807700371226497';
 description 'Track a UPS package';
 icon_url "/i/www.ups.com.ico";
 name 'UPS';
