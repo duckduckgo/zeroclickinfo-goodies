@@ -1,4 +1,4 @@
-package DDG::Goodie::%(plugin_name)s.pm;
+package DDG::Goodie::%(plugin_name)s;
 # ABSTRACT: Write and abstract here
 # Start at https://dukgo.com/duckduckhack/goodie_overview if you are new
 # to plugin development
