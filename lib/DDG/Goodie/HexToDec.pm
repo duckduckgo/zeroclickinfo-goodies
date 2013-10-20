@@ -10,7 +10,7 @@ primary_example_queries 'hextodec ff';
 
 description 'Convert hexadecimal number to decimal number';
 name 'HexToDec';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/hexToDec.pm';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HexToDec.pm';
 category 'conversions';
 topics 'math';
 attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
