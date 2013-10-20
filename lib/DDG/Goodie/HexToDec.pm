@@ -1,10 +1,10 @@
 package DDG::Goodie::HexToDec;
 
-# ABSTRACT: hexadecimal number to decimal
+# ABSTRACT: Hexadecimal number to decimal
 
 use DDG::Goodie;
 zci is_cached => 1;
-zci answer_type => "hexadecimal conversion";
+zci answer_type => "hexadecimal_conversion";
 
 primary_example_queries 'hextodec ff';
 
