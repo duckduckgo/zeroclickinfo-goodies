@@ -12,7 +12,7 @@ ddg_goodie_test(
         [qw(
 DDG::Goodie::HexToDec
 )],
-        'hextodec ff' => test_zci('Decimal Value: 255'),
+        'hextodec ff' => test_zci("Decimal Value: 255"),
         "hextodec f1" => test_zci("Decimal Value: 241"),
         "hextodec a" => test_zci("Decimal Value: 10"),
 );
