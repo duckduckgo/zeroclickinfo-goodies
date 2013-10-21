@@ -7,52 +7,20 @@ use DDG::Goodie;
 use Net::IP;
 use Math::BaseConvert;
 
-=keyword primary_example_queries
-
-"teredo 2001:0000:4136:e378:8000:63bf:3fff:fdd2";
-"teredo 2001::CE49:7601:E866:EFFF:62C3:FFFE";
-
-=cut
-
-=keyword description
-
-"Teredo address analyzer";
-
-=cut
-
-=keyword name
-
-"Teredo extractor";
-
-=cut
-
-=keyword code_url
-
-"https://github.com/duckduckgo/lib/DDG/Goodie/Teredo.pm";
-
-=cut
-
-=keyword topics
-
-"sysadmin";
-
-=cut
-
-=keyword category
-
-"transformations";
-
-=cut
-
-=keyword attribution
-
-github => ['https://github.com/seanheaton','seanheaton'],
-twitter => ['http://twitter.com/seanograph','@seanograph'],
-email => ['mailto:seanoftime@gmail.com','seanoftime@gmail.com'];
-
-=cut
 
 triggers start => 'teredo';
+
+
+primary_example_queries 'teredo 2001:0000:4136:e378:8000:63bf:3fff:fdd2';
+description 'Teredo address analyzer';
+name 'Teredo extractor';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Teredo.pm';
+topics 'sysadmin';
+category 'transformations';
+attribution github => ['https://github.com/seanheaton','seanheaton'],
+	twitter => ['http://twitter.com/seanograph','@seanograph'],
+	email => ['mailto:seanoftime@gmail.com','seanoftime@gmail.com'];
+
 
 handle remainder => sub {
 
