@@ -10,7 +10,7 @@ use DDG::Test::Goodie;
 # Populate it with more useful tests
 ddg_goodie_test(
         [qw(
-                DDG::Goodie::%(plugin_name)s
+                DDG::Goodie::<: $ia_name :>
         )],
         'example this' => test_zci('this')
 );
