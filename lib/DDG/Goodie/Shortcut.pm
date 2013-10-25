@@ -5,7 +5,6 @@ use DDG::Goodie;
 
 triggers any => 'shortcut','keyboard shortcut', 'key combination';
 
-zci is_cached => 1;
 zci answer_type => 'shortcut';
 
 primary_example_queries 'windows show desktop shortcut';
@@ -21,9 +20,11 @@ attribution github => ['https://github.com/dariog88a','dariog88a'],
 my @shortcuts = share('shortcuts.csv')->slurp(iomode => '<:encoding(UTF-8)');
 
 handle remainder_lc => sub {
+    #leave only letters and spaces (avoid version numbers)
+    s/[^a-z ]//gi;
     #replace all OS words with starting char
-    s/windows|win|xp|vista|seven/W/gi;
-    s/mac|osx/M/gi;
+    s/windows|win|xp|vista|seven|eight/W/gi;
+    s/mac|os[ ]*x/M/gi;
     s/linux|ubuntu|debian|fedora|kde|gnome/L/gi;
 
     #get OS char (if any)
@@ -42,17 +43,16 @@ handle remainder_lc => sub {
         }
     }
 
-    #return if no row was found
-    if (!defined $line) { return; }
-    my @columns = split('\|',$line);
+    return if !defined $line;
 
+    my @columns = split('\|',$line);
     my %systems = (W=>'Windows',M=>'Mac OS',L=>'KDE/GNOME');
     my $answer = 'The shortcut for ' . $columns[0];
     my $keys;
 
 if(!$os) {$os='';} #line added to avoid error, remove when UA detection added.
 
-    #get the column content for the searched OS
+    #get column content for searched OS
     if ($os eq 'W') {
         $keys = $columns[1];
     } elsif ($os eq 'M') {
@@ -62,12 +62,11 @@ if(!$os) {$os='';} #line added to avoid error, remove when UA detection added.
         $keys =~ s/\R//g; #remove line break
     }
 
-    #return if the column is empty
-    if (!$keys) { return; }
+    return if !$keys;
 
     if ($os) { $answer .= ' in ' . $systems{$os} . ' is ' . $keys; }
 
-    my $source = "\n" . '<a href="https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts">More at Wikipedia</a>';
+    my $source = '<br/><a href="https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts">More at Wikipedia</a>';
     return $answer, html => "$answer $source";
 };
 
