@@ -1,5 +1,5 @@
 package DDG::Goodie::EmailValidator;
-# ABSTRACT: checks givven email
+# ABSTRACT: Checks given email address
 
 use DDG::Goodie;
 use Email::Valid;
@@ -7,6 +7,7 @@ use Email::Valid;
 topics 'sysadmin';
 category 'computing_info';
 
+zci is_cached => 0;
 triggers start => 'validate';
 
 primary_example_queries 'validate foo@example.com';
@@ -16,9 +17,9 @@ attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
 
 my $message_part = {
 	tldcheck 		 => 'top-level domain',
-	fqdn			 => 'full qualified domain name',
+	fqdn			 => 'fully qualified domain name',
 	localpart		 => 'localpart',
-	address_too_long => 'address, it\'s too long (max 254 chars)',
+	address_too_long => 'address length',
 };
 
 handle remainder => sub {
@@ -28,22 +29,22 @@ handle remainder => sub {
 	my $address = $1;
 
 	return if !$address;
-	my $email_valid = Email::Valid->new;
-	unless($email_valid->address(
-			-address  => $address,
-			-rfc822   => 1,
-			-tldcheck => 1,
-		)) {
+	
+	my $email_valid = Email::Valid->new(
+		-tldcheck => 1,
+	);
+	
+	my $result = $email_valid->address($address);
+	
+	if (! $result) {
 
-	  	my $message =  "$address is invalid. Please check the " . $message_part->{$email_valid->details} 
+	  	my $message =  "$address is invalid. Please check the " . $message_part->{$email_valid->details} . "."
 	  		if defined $message_part->{$email_valid->details};
 	  	
-	  	return $message || "mail address $address is not valid. ${\$email_valid->details} (see also: RFC 822)";
+	  	return $message || "E-mail address $address is not valid. ${\$email_valid->details} (see also: RFC 822)";
 	}
 
 	return "$address seems to be valid.";
 };
-
-zci is_cached => 0;
 
 1;
