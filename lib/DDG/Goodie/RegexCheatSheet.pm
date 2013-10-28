@@ -9,16 +9,16 @@ use DDG::Goodie;
 
 zci answer_type => "regex_cheat";
 
-triggers start =>	"regex cheatsheet", "regex cheat sheet", "regex help", 
-					"regexp cheatsheet", "regexp cheat sheet", "regexp help",
-					"regex symbols", "regex symbol",
-					"regexp symbols", "regexp symbol",
-					"regex chars", "regex char",
-					"regexp chars", "regexp char",
-					"regex characters", "regex character",
-					"regexp characters", "regexp character", 
-					"regex", "regular expressions",
-					"regular expression";
+triggers start => "regex cheatsheet", "regex cheat sheet", "regex help", 
+		  "regexp cheatsheet", "regexp cheat sheet", "regexp help",
+		  "regex symbols", "regex symbol",
+                  "regexp symbols", "regexp symbol",
+		  "regex chars", "regex char",
+	      	  "regexp chars", "regexp char",
+		  "regex characters", "regex character",
+		  "regexp characters", "regexp character", 
+                  "regex", "regular expressions",
+                  "regular expression";
 
 triggers end => "regex";
 
@@ -196,7 +196,7 @@ handle remainder => sub {
     # Content of the div column wrapper.
     my @html_columns = ();
 	
-
+    # Add a helper function for adding the <td> tag.
     sub add_table_data {
 	my ($text, $is_code) = @_;
 	if($is_code) {
@@ -226,7 +226,7 @@ handle remainder => sub {
     my $html_output = "<div style='$div_wrapper_style'><div style='$div_column_style'>";
     $html_output .= join ("</div><div style='$div_column_style'>", @html_columns);
     $html_output .= "</div></div>";
-    return $text_output, html => $html_output;
+    return answer => $text_output, html => $html_output;
 };
 
 1;
