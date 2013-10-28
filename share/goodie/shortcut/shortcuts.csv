@@ -1,0 +1,78 @@
+File menu|Alt+F, or F10 then F|Ctrl+F2, then F (requires full keyboard access active, using System Preferences > Keyboard > Keyboard Shortcuts > Full Keyboard Access > All Controls. Alternatively use Ctrl+F1 to toggle this setting.)|Alt+F
+Edit menu|Alt+E|Ctrl+F2, then E|Alt+E
+View menu|Alt+V|Ctrl+F2, then V|Alt+V
+Undo|Ctrl+Z, or Alt+←Backspace|⌘Cmd+Z|Ctrl+Z
+Redo|Ctrl+Y|⇧Shift+⌘Cmd+Z|⇧Shift+Ctrl+Z, or Ctrl+Y
+Cut|Ctrl+X, or ⇧Shift+Del|⌘Cmd+X|Ctrl+X
+Copy|Ctrl+C, or Ctrl+Ins|⌘Cmd+C|Ctrl+C
+Paste|Ctrl+V, or ⇧Shift+Ins|⌘Cmd+V|Ctrl+V
+Paste special|Ctrl+Alt+V||Ctrl+⇧Shift+V
+Select all|Ctrl+A|⌘Cmd+A|Ctrl+A
+New folder|Ctrl+⇧Shift+N|⇧Shift+⌘Cmd+N|Ctrl+⇧Shift+N
+Applications menu|⊞Win or Ctrl+Esc||Alt + "n" e.g. for _File_ Alt + F
+Lock desktop|⊞Win+L|Ctrl+⇧Shift+Eject or MBR Ctrl+⇧Shift+Pwr (If "Require password after sleep or screen saver" is enabled in "System Preferences — Security & Privacy")|Ctrl+Alt+L
+Show desktop|⊞Win+D or ⊞Win+M (then use ⊞Win+⇧Shift+M to bring back all windows)|F11|Ctrl+Alt+D
+Log out user||⇧Shift+⌘Cmd+Q|Ctrl+Alt+Delete
+Switch user|⊞Win+L||
+Task manager|Ctrl+⇧Shift+Esc or Ctrl+Alt+Delete|Alt+⌘Cmd+Esc|Ctrl+Esc
+Rename object|F2|↵Enter|F2
+Open file or program|↵Enter|⌘Cmd+O|↵Enter
+Switch window (next/previous)|Alt+Tab↹ / ⇧Shift+Alt+Tab↹|⌘Cmd+Tab↹ / ⇧Shift+⌘Cmd+Tab↹|Alt+Tab↹ / Alt+⇧Shift+Tab↹
+Switch window without dialog (next/previous)|Alt+Esc / ⇧Shift+Alt+Esc|⌘Cmd+` / ⌘Cmd+~ Only works within single Applications|
+Run application|⊞Win, enter executable name or ⊞Win+R, enter executable name|⌘Cmd+Space, enter executable name|Alt+F2, enter executable name
+Search|⊞Win, enter search or ⊞Win+F|⌘Cmd+Space / Alt+F |
+Save screenshot of entire screen as file|Windows+Print Screen|⇧Shift+⌘Cmd+3|Print Screen set the name and click "Save".
+Copy screenshot of entire screen to clipboard|Print Screen or Ctrl+Print Screen|Ctrl+⇧Shift+⌘Cmd+3|Print Screen click "Copy to Clipboard".
+Save screenshot of window as file||⇧Shift+⌘Cmd+4 then Space|Alt+Print Screen set the name and click "Save". GNOME
+Copy screenshot of window to clipboard|Alt+Print Screen|Ctrl+⇧Shift+⌘Cmd+4 then Space|Alt+Print Screen click "Copy to Clipboard". GNOME
+Delete char to the right of cursor|Del or Fn+←Backspace|Del, or Ctrl+d, or Fn+←Backspace |
+Delete word to the right of cursor|Ctrl+Del|⌥Opt+Del or ⌥Opt+Fn+←Backspace|Ctrl+Del
+Delete word to the left of cursor|Ctrl+←Backspace|⌥Opt+←Backspace|Ctrl+←Backspace
+Start of line|Home, or Fn+←|⌘Cmd+← or Ctrl+A|Home
+End of line|End, or Fn+→|⌘Cmd+→ or Ctrl+E|End
+Start of document|Ctrl + Home|⌘Cmd+↑|Ctrl + Home
+End of document|Ctrl + End|⌘Cmd+↓|Ctrl + End
+Previous word|Ctrl+←|⌥Opt+←|Ctrl+←
+Next word|Ctrl+→|⌥Opt+→|Ctrl+→
+Previous line|↑|↑, or Ctrl+p|↑
+Next line|↓|↓, or Ctrl+n|↓
+Previous line break (paragraph)|Ctrl+↑|⌥Opt+↑|Ctrl+↑ (kword or GNOME)
+Next line break|Ctrl+↓|⌥Opt+↓|Ctrl+↓ (kword or GNOME)
+Move the cursor down the length of the viewport|Page Down|Fn+↓|Page Down
+Move the cursor up the length of the viewport|Page Up|Fn+↑|Page Up
+Find|Ctrl+F|⌘Cmd+F, ⌘Cmd+E (Search with current selection)|Ctrl+F, Ctrl+K (GNOME; interactive search)
+Next search result|F3|⌘Cmd+G|Ctrl+G (GNOME) or F3 (KDE)
+Previous search result|⇧Shift+F3|⇧Shift+⌘Cmd+G|⇧Shift+Ctrl+G (GNOME) or ⇧Shift+F3 (KDE)
+Search and replace|Ctrl+H|⌘Cmd+F|Ctrl+H (GNOME) or Ctrl+R (KDE)
+Bold|Ctrl+B|⌘Cmd+B|Ctrl+B
+Underline|Ctrl+U|⌘Cmd+U|Ctrl+U
+Italic|Ctrl+I|⌘Cmd+I|Ctrl+I
+Uppercase|⇧Shift+F3|⌥Opt+⌘Cmd+C|⇧Shift+F3
+Lowercase|⇧Shift+F3|⌥Opt+⌘Cmd+C|⇧Shift+F3
+Superscript|Ctrl+⇧Shift++|Ctrl+⌘Cmd++ (Pages and Adobe Applications only?)|Ctrl+⇧Shift+P
+Subscript|Ctrl+=|Ctrl+⌘Cmd+- (Pages and Adobe Applications only?)|Ctrl+⇧Shift+B
+Previous location in history|Alt+← or ←Backspace|⌘Cmd+ ⌘Cmd+←|Alt+←
+Next location in history|Alt+→ or ⇧Shift+←Backspace (web browser only)|⌘Cmd+] or ⌘Cmd+→|Alt+→
+Go up one level in the navigation hierarchy|Alt+↑(Vista, 7 or 8 only) or ←Backspace(Windows Explorer)|⌘Cmd+↑|Alt+↑
+Startup page|Alt+Home|⌘Cmd+Home|Ctrl+Home (KDE) / Alt+Home (GNOME)
+Bookmarks menu|Ctrl+B|⌘Cmd+B (Firefox)|Alt+B
+URL Shortcuts (Adds www. + .com)|Ctrl+↵Enter|⌘Cmd+↵Enter (Firefox) or Ctrl+↵Enter (Chrome)|Ctrl+↵Enter
+URL Shortcuts (Adds www. + .org)|Ctrl+⇧Shift+↵Enter|⇧Shift+⌘Cmd+↵Enter (Firefox)|Ctrl+⇧Shift+↵Enter
+URL Shortcuts (Adds www. + .net)|⇧Shift +↵Enter|⇧Shift +↵Enter (Firefox)|⇧Shift +↵Enter
+Bookmark page|Ctrl+D|⌘Cmd+D|Ctrl+B / Ctrl+D
+Manage bookmarks|Ctrl+B|⌘Cmd+⌥Opt+B (Chrome/Safari) or ⌘Cmd+⇧Shift+B (Firefox)|Ctrl+⇧Shift+R / Ctrl+B
+Address bar|Ctrl+L or F6 or Alt+D|⌘Cmd+L|Ctrl+L or Alt+D or F6
+Search bar|Ctrl+E|⌘Cmd+E (Opera) or ⌘Cmd+K (Firefox) or ⌥Opt+⌘Cmd+F (Safari)|Ctrl+K
+Refresh a webpage|F5 or Ctrl+R|⌘Cmd+R|F5 or Ctrl+R
+New window|Ctrl+N|⌘Cmd+N (Chrome)|Ctrl+N
+Zoom in|Ctrl++|⌘Cmd++|Ctrl++
+Zoom out|Ctrl+-|⌘Cmd+-|Ctrl+-
+Zoom 100%|Ctrl+0|⌘Cmd+0|Ctrl+0
+New tab|Ctrl+T|⌘Cmd+T|Ctrl+⇧Shift+N or Ctrl+⇧Shift+T or Ctrl+T
+Close tab|Ctrl+W|⌘Cmd+W|Ctrl+W or Ctrl+F4
+Close other tabs||⌘Cmd+⌥Opt+W (Safari)|
+Next tab|Ctrl+Tab↹|Control+Tab↹ or ⌘Cmd+⇧Shift+→ (Safari)|Ctrl+PageDown or Ctrl+Tab↹ or Ctrl+.
+Previous tab|Ctrl+⇧Shift+Tab↹|⇧Shift+Control+Tab↹ or ⌘Cmd+⇧Shift+← (Safari)|Ctrl+PageUp or Ctrl+⇧Shift+Tab↹ or Ctrl+,
+Go to tab-n|Ctrl+n (Chrome/Firefox)|⌘Cmd+n (Chrome)|Alt+n (Chrome/Firefox) or Ctrl+n (Chrome)
+Reopen closed tab|Ctrl+⇧Shift+T|⌘Cmd+⇧Shift+T (Firefox/Opera/Chrome)|Ctrl+⇧Shift+T (Firefox/Opera/Chrome)
+Reopen closed window|Ctrl+⇧Shift+N (Firefox)| |
