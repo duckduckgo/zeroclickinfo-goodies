@@ -34,7 +34,8 @@ handle remainder => sub {
 		-tldcheck => 1,
 	);
 	
-	my $result = $email_valid->address($address);
+	# Danger: address returns possible modified string!
+	my $result = $email_valid->address($address); 
 	
 	if (! $result) {
 
@@ -44,7 +45,7 @@ handle remainder => sub {
 	  	return $message || "E-mail address $address is not valid. ${\$email_valid->details} (see also: RFC 822)";
 	}
 
-	return "$address seems to be valid.";
+	return "$result seems to be valid.";
 };
 
 1;
