@@ -8,8 +8,8 @@ triggers any => 'shortcut','keyboard shortcut', 'key combination';
 zci answer_type => 'shortcut';
 
 primary_example_queries 'windows show desktop shortcut';
-secondary_example_queries 'ubuntu shortcut new folder', 'paste keyboard shortcut';
-description 'keyboard shortcuts';
+secondary_example_queries 'ubuntu shortcut new folder';
+description 'Keyboard shortcuts';
 name 'Shortcut';
 topics 'computing';
 category 'computing_info';
