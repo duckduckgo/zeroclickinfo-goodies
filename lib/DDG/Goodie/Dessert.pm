@@ -16,7 +16,7 @@ my %desserts = (
 	f => ['Froyo', 'Fudge'],
 	g => ['Gingerbread'],
 	h => ['Honeycomb'],
-	i => ['Ice Cream Sandwhich', 'Ice Cream'],
+	i => ['Ice Cream Sandwich', 'Ice Cream'],
 	j => ['Jam Rolly Polly','Jelly Bean','Jelly'],
 	k => ['Key Lime Pie'],
 	l => ['Lollipop','Liqourice'],
@@ -26,20 +26,20 @@ my %desserts = (
 	p => ['Profiteroles','Pop Tart'],
 	q => ['Quiche'],
 	r => ['Rocky Road','Red Velvet Cake','Ruhbarb and Custard'],
-	s => ['Sundae','Strudel','Strawberries and Cream','Souflle'],
+	s => ['Sundae','Strudel','Strawberries and Cream','Souffle'],
 	t => ['Tiramisu','Trifle','Twinkies','Taffy','Toffee'],
 	u => ['Unicorn Cake','Upside-down cake'],
 	v => ['Vanilla Swirl'],
 	w => ['Waffles','Watermelon','White Chocolate'],
 	x => ['Xmas Cake'],
-	z => ['Zepolli','Zucchinni Pie'],
+	z => ['Zepolle','Zucchini Pie'],
 );
 
 triggers start => 'dessert', 'desserts';
 handle remainder => sub{
     if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? ([a-zA-Z])$/i){
 	my $in = lc $1;
-	my $output = 'A Desert beginning with ' . (uc $in) . ' is ';
+	my $output = 'A desert beginning with ' . (uc $in) . ' is ';
 	
 	my $items = $desserts{lc $in};
 	$output .= itemify(@{$items});
