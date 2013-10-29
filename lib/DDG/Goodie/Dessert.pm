@@ -39,7 +39,7 @@ triggers start => 'dessert', 'desserts';
 handle remainder => sub{
     if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? ([a-zA-Z])$/i){
 	my $in = lc $1;
-	my $output = 'A desert beginning with ' . (uc $in) . ' is ';
+	my $output = 'A dessert beginning with ' . (uc $in) . ' is ';
 	
 	my $items = $desserts{lc $in};
 	$output .= itemify(@{$items});
