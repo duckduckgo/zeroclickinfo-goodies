@@ -37,15 +37,15 @@ my %desserts = (
 
 triggers start => 'dessert', 'desserts';
 handle remainder => sub{
-	if(lc $_ =~ m/(?:that)? ?(?:start|beginn?)s?(?:ing)? ?(?:with)? ([a-zA-Z])/i){
-		my $in = lc $1;
-		my $output = 'A Desert beginning with ' . (uc $in) . ' is ';
-		
-		my $items = $desserts{lc $in};
-		$output .= itemify(@{$items});
-		return $output;
-	}
-	return;
+    if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? ([a-zA-Z])$/i){
+	my $in = lc $1;
+	my $output = 'A Desert beginning with ' . (uc $in) . ' is ';
+	
+	my $items = $desserts{lc $in};
+	$output .= itemify(@{$items});
+	return $output;
+    }
+    return;
 };
 
 zci is_cached => 0;
