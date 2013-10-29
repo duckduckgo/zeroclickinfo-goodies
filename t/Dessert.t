@@ -12,13 +12,14 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::Dessert
         )],
-        'desserts beginning with a'   => test_zci( qr/A dessert beginning with A is (.*)/ ),
-        'dessert start with a'   => test_zci( qr/A dessert beginning with A is (.*)/ ),
-	'desserts starting with a'   => test_zci( qr/A dessert beginning with A is (.*)/ ),
-	'dessert starts with a'   => test_zci( qr/A dessert beginning with A is (.*)/ ),
+        'desserts beginning with a'   => test_zci( qr/(.*?) is a dessert that begins with the letter A.$/ ),
+        'dessert start with a'   => test_zci( qr/(.*?) is a dessert that begins with the letter A.$/ ),
+	'desserts starting with a'   => test_zci( qr/(.*?) is a dessert that begins with the letter A$./ ),
+	'dessert starts with a'   => test_zci( qr/(.*?) is a dessert that begins with the letter A.$/ ),
 
-	'desserts beginning with A'   => test_zci( qr/A dessert beginning with A is (.*)/ ),
-	'desserts beginning with z'   => test_zci( qr/A dessert beginning with Z is (.*)/ )
+	'desserts beginning with A'   => test_zci( qr/(.*?) is a dessert that begins with the letter A.$/ ),
+	'desserts beginning with z'   => test_zci( qr/(.*?) is a dessert that begins with the letter Z.$/ ),
+        'a dessert that begins with the letter a' => test_zci( qr/(.*?) is a dessert that begins with the letter A.$/ ),
 );
 
 done_testing;

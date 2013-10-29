@@ -4,7 +4,10 @@ use DDG::Goodie;
 
 sub itemify{
 	my $i = rand scalar @_;
-	return '<a href="http://duckduckgo.com/2/' . $_[$i] . '">' . $_[$i] . '</a> <a style="font-size: 10px;" href="http://duckduckgo.com/?q=' . $_[$i] . '+recipe">(recipes)</a>';
+	my $dessert = $_[$i];
+	$dessert =~ s/\s/+/g;
+
+	return "<a href='http://duckduckgo.com/?q=$dessert+recipe'>$_[$i]</a>";
 };
 
 my %desserts = (
@@ -35,14 +38,13 @@ my %desserts = (
 	z => ['Zepolle','Zucchini Pie'],
 );
 
-triggers start => 'dessert', 'desserts';
+triggers start => 'dessert', 'desserts', 'a dessert';
 handle remainder => sub{
-    if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? ([a-zA-Z])$/i){
+    if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? (?:the letter )?([a-zA-Z])$/i){
 	my $in = lc $1;
-	my $output = 'A dessert beginning with ' . (uc $in) . ' is ';
-	
 	my $items = $desserts{lc $in};
-	$output .= itemify(@{$items});
+
+	my $output = itemify(@{$items}) . " is a dessert that begins with the letter " . uc $in . '.';
 	return $output;
     }
     return;
