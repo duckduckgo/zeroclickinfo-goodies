@@ -2,7 +2,6 @@ package DDG::Goodie::USPS;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "usps";
 
 primary_example_queries 'EA 000 000 000 US';

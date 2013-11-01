@@ -19,7 +19,6 @@ attribution
 
 triggers startend => 'morse', 'morse code';
 
-zci is_cached => 1;
 zci answer_type => 'chars';
 
 handle remainder => sub {

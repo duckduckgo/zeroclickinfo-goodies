@@ -24,7 +24,6 @@ attribution twitter => "garrettsquire",
 
 triggers any => 'week';
 
-zci is_cached => 1;
 zci answer_type => "week";
 
 my @months = qw/

@@ -30,7 +30,6 @@ my %data = (
 
 triggers any => keys %data, qw/zero 0/;
 
-zci is_cached => 1;
 
 primary_example_queries 'help';
 secondary_example_queries 'Zero-Click Info', 'zeroclick';

@@ -39,6 +39,5 @@ handle query_lc => sub {
 	return;
 };
 
-zci is_cached => 1;
 
 1;

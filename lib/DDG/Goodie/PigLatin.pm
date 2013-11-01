@@ -5,7 +5,6 @@ use Lingua::PigLatin 'piglatin';
 
 triggers startend => 'pig latin', 'piglatin';
 
-zci is_cached => 1;
 zci answer_type => "translation";
 
 attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],

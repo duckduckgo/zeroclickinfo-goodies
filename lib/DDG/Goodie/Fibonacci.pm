@@ -6,7 +6,6 @@ use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf);
 
 triggers any => 'fib', 'fibonacci';
-zci is_cached => 1;
 zci answer_type => 'fibonacci';
 
 primary_example_queries 'fib 7';

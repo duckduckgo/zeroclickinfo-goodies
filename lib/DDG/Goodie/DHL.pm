@@ -2,7 +2,6 @@ package DDG::Goodie::DHL;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "dhl";
 
 primary_example_queries 'DHL 123456789';

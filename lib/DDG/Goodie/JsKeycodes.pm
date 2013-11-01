@@ -5,7 +5,6 @@ use DDG::Goodie;
 
 triggers any => 'keycode', 'keycodes', 'char', 'chars', 'charcode', 'charcodes';
 
-zci is_cached => 1;
 
 my $html;
 my $text;

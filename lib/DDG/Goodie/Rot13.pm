@@ -15,7 +15,6 @@ attribution github => ['https://github.com/unlisted', 'unlisted'];
 
 triggers start => 'rot13';
 
-zci is_cached => 1;
 
 handle remainder => sub {
     if ($_) {

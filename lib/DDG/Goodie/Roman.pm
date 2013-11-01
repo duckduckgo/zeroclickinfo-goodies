@@ -15,7 +15,6 @@ attribution github => ['https://github.com/mrshu', 'mrshu'];
 
 triggers any => "roman", "arabic";
 
-zci is_cached => 1;
 zci answer_type => "roman_numeral_conversion";
 
 handle remainder => sub {

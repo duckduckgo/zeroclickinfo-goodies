@@ -6,7 +6,6 @@ use DDG::Goodie;
 triggers any => 'poker';
 
 zci answer_type => "poker";
-zci is_cached => 1;
 
 primary_example_queries 'poker odds three of a kind';
 secondary_example_queries 'probability poker flush';

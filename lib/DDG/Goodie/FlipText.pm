@@ -4,7 +4,6 @@ use DDG::Goodie;
 
 triggers startend => "flip", "mirror", "spin", "rotate";
 
-zci is_cached => 1;
 zci answer_type => "flip_text";
 
 primary_example_queries 'flip my sentence';

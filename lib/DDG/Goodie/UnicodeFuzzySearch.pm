@@ -5,7 +5,6 @@ use DDG::Goodie;
 
 triggers startend => "unicode";
 
-zci is_cached => 1;
 
 attribution
     github => "konr",

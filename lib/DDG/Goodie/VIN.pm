@@ -2,7 +2,6 @@ package DDG::Goodie::VIN;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "vin";
 
 primary_example_queries '1g8gg35m1g7123101';

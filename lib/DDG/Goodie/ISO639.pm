@@ -9,7 +9,6 @@ use constant WPHREF => "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes";
 triggers start => "iso 639", "iso639";
 
 zci answer_type => "iso639";
-zci is_cached => 1;
 
 primary_example_queries 'iso639 english';
 secondary_example_queries 'iso639 ab';

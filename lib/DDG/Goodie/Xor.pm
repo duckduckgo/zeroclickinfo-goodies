@@ -5,7 +5,6 @@ use utf8;
 
 triggers any => 'xor', '⊕';
 
-zci is_cached => 1;
 zci answer_type => "xor";
 
 attribution

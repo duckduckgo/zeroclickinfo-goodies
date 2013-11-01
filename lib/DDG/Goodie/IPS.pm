@@ -2,7 +2,6 @@ package DDG::Goodie::IPS;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "ips";
 
 primary_example_queries 'EM999999999IN';

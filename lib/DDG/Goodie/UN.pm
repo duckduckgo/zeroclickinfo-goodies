@@ -17,7 +17,6 @@ use constant WPHREF => "http://en.wikipedia.org/wiki/List_of_UN_numbers_%04d_to_
 
 triggers start => 'un';
 
-zci is_cached => 1;
 zci answer_type => 'united_nations';
 
 handle remainder => sub {

@@ -5,7 +5,6 @@ use DDG::Goodie;
 
 triggers start => 'phonetic';
 
-zci is_cached => 1;
 
 primary_example_queries 'phonetic what duck';
 description 'spell a string phonetically with the NATO alphabet';

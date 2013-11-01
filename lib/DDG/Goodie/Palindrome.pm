@@ -6,7 +6,6 @@ use DDG::Goodie;
 
 triggers any => 'palindrome';
 
-zci is_cached => 1;
 
 primary_example_queries 'is a dank, sad nap. eels sleep and ask nada. a palindrome?';
 secondary_example_queries 'is foo a palindrome?', 'is dad a palindrome?';

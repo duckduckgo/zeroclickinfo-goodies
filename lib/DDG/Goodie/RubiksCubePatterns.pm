@@ -16,7 +16,6 @@ attribution web => ['robert.io', 'Robert Picard'], twitter => '__rlp', github =>
 
 triggers start => "rcube", "rubik cube", "rubiks cube", "rubic cube", "rubics cube";
 
-zci is_cached => 1;
 zci answer_type => "rubiks_cube";
 
 handle remainder => sub {

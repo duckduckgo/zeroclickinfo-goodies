@@ -7,7 +7,6 @@ triggers any => 'dewey';
 
 zci answer_type => 'dewey_decimal';
 
-zci is_cached => 1;
 
 primary_example_queries 'dewey 644';
 secondary_example_queries 'etymology in the dewey decimal system', 'dewey decimal system 640s', 'dewey decimal system naturalism';

@@ -6,7 +6,6 @@ use utf8;
 
 triggers query_raw => qr/\p{Braille}|braille/i;
 
-zci is_cached => 1;
 
 handle query_raw => sub {
     s/translate to braille |( in)? braille$|^braille //;

@@ -17,7 +17,6 @@ attribution web => ['http://kyokodaniel.com/tech/', 'Daniel Davis'],
 
 triggers start => 'atbash';
 
-zci is_cached => 1;
 
 handle remainder => sub {
     if ($_) {

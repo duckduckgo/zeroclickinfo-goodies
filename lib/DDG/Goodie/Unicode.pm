@@ -30,7 +30,6 @@ triggers query_raw => CODEPOINT_RE;
 # Also allows open-ended queries like: "LATIN SMALL LETTER X"
 triggers query_raw => UNICODE_RE;
 
-zci is_cached => 1;
 zci answer_type => "unicode_conversion";
 
 handle sub {

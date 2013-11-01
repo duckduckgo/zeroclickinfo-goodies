@@ -3,7 +3,6 @@ package DDG::Goodie::Sha;
 use DDG::Goodie;
 use Digest::SHA;
 
-zci is_cached => 1;
 zci answer_type => "sha";
 
 primary_example_queries 'SHA this';

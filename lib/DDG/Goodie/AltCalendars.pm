@@ -23,7 +23,6 @@ attribution web => ['http://kyokodaniel.com/tech/', 'Daniel Davis'],
 triggers any => 'juche', 'minguo', 'meiji', 'taisho', 'taishou', 'showa', 'shouwa', 'heisei';
 
 zci answer_type => 'date_conversion';
-zci is_cached => 1;
 
 handle query_parts => sub {
     # Ignore single word queries

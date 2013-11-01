@@ -7,7 +7,6 @@ use utf8;
 
 triggers startend => "unidecode";
 
-zci is_cached => 1;
 zci answer_type => "convert_to_ascii";
 
 attribution github => ['https://github.com/moritz', 'moritz'];

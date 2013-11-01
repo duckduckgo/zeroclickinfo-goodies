@@ -3,7 +3,6 @@ package DDG::Goodie::Regexp;
 use DDG::Goodie;
 use Safe;
 
-zci is_cached => 1;
 zci answer_type => "regexp";
 
 primary_example_queries 'regexp /(.*)/ ddg';

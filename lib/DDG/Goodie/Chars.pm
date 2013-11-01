@@ -5,7 +5,6 @@ use DDG::Goodie;
 
 triggers start => 'chars';
 
-zci is_cached => 1;
 zci answer_type => "chars";
 
 primary_example_queries 'chars test';

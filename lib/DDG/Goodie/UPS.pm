@@ -2,7 +2,6 @@ package DDG::Goodie::UPS;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "ups";
 
 primary_example_queries '1Z2807700371226497';

@@ -5,7 +5,6 @@ use DDG::Goodie;
 triggers start => "percent error", "% error", "%err", "%error", "percenterror", "percent err", "%-error";
 
 zci answer_type => "percent_error";
-zci is_cached => 1;
 
 primary_example_queries 'percent-error 34.5 35';
 secondary_example_queries '%err 41 43', '%-error 2.88 2.82';

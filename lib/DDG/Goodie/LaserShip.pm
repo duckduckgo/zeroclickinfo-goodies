@@ -2,7 +2,6 @@ package DDG::Goodie::LaserShip;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
 zci answer_type => "lasership";
 
 primary_example_queries 'LL12345678';

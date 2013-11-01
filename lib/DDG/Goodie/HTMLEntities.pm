@@ -7,7 +7,6 @@ use Unicode::UCD 'charinfo';
 
 zci answer_type => 'html_entity';
 
-zci is_cached => 1;
 
 triggers query_nowhitespace => qr/^(?:html|entity|htmlentity)?(&#?\w+;?)$/i;
 

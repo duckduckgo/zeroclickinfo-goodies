@@ -8,7 +8,6 @@ triggers startend => "base64";
 
 zci answer_type => "base64_conversion";
 
-zci is_cached => 1;
 
 primary_example_queries 'base64 encode foo';
 secondary_example_queries 'base64 decode dGhpcyB0ZXh0';
