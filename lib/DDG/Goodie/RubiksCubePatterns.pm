@@ -43,7 +43,7 @@ handle remainder => sub {
 	
 	sub render_html($) {
 		my $name = pop;
-		return "<p><i>$name</i>: $patterns{$name}</p>\n"
+		return "<div><i>$name</i>: $patterns{$name}</div>\n"
 	}
 
 	#support British English!
