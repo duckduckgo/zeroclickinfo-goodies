@@ -48,7 +48,10 @@ handle remainder => sub {
 
 	#support British English!
 	s/centre/center/;
-	
+
+	#hack for the trigger "rubiks cube in a cube" 
+	s/^in a cube/cube in a cube/;
+
 	#show answer
 	return render_text($_), html => render_html($_) if ($patterns{$_});
 
