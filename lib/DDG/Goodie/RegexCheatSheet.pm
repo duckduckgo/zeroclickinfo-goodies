@@ -17,7 +17,7 @@ triggers start =>	"regex cheatsheet", "regex cheat sheet", "regex help",
 					"regexp chars", "regexp char",
 					"regex characters", "regex character",
 					"regexp characters", "regexp character", 
-					"regex", "regular expressions",
+					"regex", "regexp", "regular expressions",
 					"regular expression";
 
 triggers end => "regex";

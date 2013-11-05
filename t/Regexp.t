@@ -6,7 +6,6 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'regexp';
-zci is_cached => 1;
 
 ddg_goodie_test(
         [qw( DDG::Goodie::Regexp )],
@@ -16,6 +15,10 @@ ddg_goodie_test(
         ),
         'regexp /(dd)/ ddg' => test_zci(
         	"dd",
+        	heading => 'Regexp Result',
+        ),
+        'regex /(poss)/ many possibilities' => test_zci(
+        	"poss",
         	heading => 'Regexp Result',
         ),
 );
