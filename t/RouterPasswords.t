@@ -30,7 +30,7 @@ ddg_goodie_test(
             html => 'Default login for the BELKIN F5D6130:<br><i>Username</i>: (none)<br><i>Password</i>: password'
         ),
     # You should include more test cases here. Try to think of ways that your
-    # plugin might break, and add them here to ensure they won't. Here are a
+    # instant answer might break, and add them here to ensure they won't. Here are a
     # few others that were thought of for this goodie.
     'Belkin f5d6130 password default' =>
         test_zci('Default login for the BELKIN F5D6130: Username: (none) Password: password',
