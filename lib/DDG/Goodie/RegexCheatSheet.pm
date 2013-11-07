@@ -8,16 +8,16 @@ use DDG::Goodie;
 
 zci answer_type => "regex_cheat";
 
-triggers start => "regex cheatsheet", "regex cheat sheet", "regex help", 
-		  "regexp cheatsheet", "regexp cheat sheet", "regexp help",
-		  "regex symbols", "regex symbol",
-                  "regexp symbols", "regexp symbol",
-		  "regex chars", "regex char",
-	      	  "regexp chars", "regexp char",
-		  "regex characters", "regex character",
-		  "regexp characters", "regexp character", 
-                  "regex", "regular expressions",
-                  "regular expression";
+triggers start =>	"regex cheatsheet", "regex cheat sheet", "regex help", 
+					"regexp cheatsheet", "regexp cheat sheet", "regexp help",
+					"regex symbols", "regex symbol",
+					"regexp symbols", "regexp symbol",
+					"regex chars", "regex char",
+					"regexp chars", "regexp char",
+					"regex characters", "regex character",
+					"regexp characters", "regexp character", 
+					"regex", "regexp", "regular expressions",
+					"regular expression";
 
 triggers end => "regex";
 

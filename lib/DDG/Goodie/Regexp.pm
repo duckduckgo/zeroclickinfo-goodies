@@ -3,7 +3,6 @@ package DDG::Goodie::Regexp;
 use DDG::Goodie;
 use Safe;
 
-zci is_cached => 1;
 zci answer_type => "regexp";
 
 primary_example_queries 'regexp /(.*)/ ddg';
@@ -16,7 +15,7 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
-triggers query_lc => qr/^regexp [\/\\](.+?)[\/\\] (.+)$/i;
+triggers query_lc => qr/^regex[p]? [\/\\](.+?)[\/\\] (.+)$/i;
 
 handle query => sub {
     my $regexp = $1;
