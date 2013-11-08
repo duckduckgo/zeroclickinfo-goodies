@@ -44,10 +44,10 @@ handle remainder => sub {
 	    $message = "$address is invalid. Please check the " . $message_part->{$email_valid->details} . ".";
 	}
 
-	return $message || "E-mail address $address is not valid. ${\$email_valid->details} (see also: RFC 822)";
+	return $message || "E-mail address $address is not valid.";
     }
 
-    return "$result seems to be valid.";
+    return "$result is valid.";
 };
 
 1;
