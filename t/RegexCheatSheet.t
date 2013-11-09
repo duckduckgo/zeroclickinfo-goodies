@@ -29,7 +29,19 @@ ddg_goodie_test(
 	'regexp \s' => test_zci(
 		'\s - Whitespace',
 		html => '<code> \s </code> - Whitespace'
-	)
+	),
+	'regular expression [a-e]' => test_zci(
+		'[a-e] - Single character range (a or b ... or e)',
+		html => '<code> [a-e] </code> - Single character range (a or b ... or e)'
+	),
+	'regular expression [M-Y]' => test_zci(
+		'[M-Y] - Single character range (M or N ... or Y)',
+		html => '<code> [M-Y] </code> - Single character range (M or N ... or Y)'
+	),
+	'regex [1-2]' => test_zci(
+		'[1-2] - Single character range (1 or 2)',
+		html => '<code> [1-2] </code> - Single character range (1 or 2)'
+	),
 );
 
 done_testing;

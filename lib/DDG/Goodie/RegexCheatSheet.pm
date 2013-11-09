@@ -151,82 +151,116 @@ our %syntax_map = (
 	'$&'		=>	'Entire matched string',
 );
 
+sub are_same_case($$) {
+	my ($a, $b) = @_;
+	my $both_uc = $a eq uc($a) && $b eq uc($b);
+	my $both_lc = $a eq lc($a) && $b eq lc($b);
+	return ($both_uc || $both_lc);
+}
+
+sub are_valid_char_classes($$) {
+	my ($a, $b) = @_;
+	# must be both numbers or both lowercase or both uppercase
+	if ($a =~ /[0-9]/ && $b =~ /[0-9]/ || $a =~ /[a-z]/ && $b =~ /[a-z]/ || $a =~ /[A-Z]/ && $b =~ /[A-Z]/) {
+		return $b gt $a;
+	}
+	return;
+}
+
+sub difference_between($$) {
+	my ($a, $b) = @_;
+	return ord($b) - ord($a);
+}
+
 handle remainder => sub {
 		
-    # If the user has requested information on a specific pattern.
-    if (length $_ > 0) {
-	my $syntax_key = $_;
+	# If the user has requested information on a specific pattern.
+	if (length $_ > 0) {
+		my $syntax_key = $_;
 
-	# Let the user provide a number for the {n} pattern, e.g., {5} would say "Exactly 5 occurrences".
-	if ($_ =~ /\{([0-9]+)\}/) {
-	    return answer => "$_ - Exactly $1 occurrences", 
-	           html => "<code>" . encode_entities($_) . "</code> - Exactly " .  encode_entities($_) . " occurrences";
+		# Let the user provide [a-e], [1-2], nice simple examples only!
+		if ($_ =~ /\[([a-zA-Z0-9])\-([a-zA-Z0-9])\]/) {
+			return unless are_same_case($1, $2) && are_valid_char_classes($1, $2);
+			#if there are < 3 between them then output all between them, otherwise "0 or 1 .. or 9" style
+			my $range_string = "";
+			if (difference_between($1, $2) < 3) {
+				$range_string = join(" or ", ($1..$2));
+			}
+			else {
+				$range_string = join(" or ", ($1..$2)[0,1]) . " ... or $2";
+			}
+			return answer => "$_ - Single character range ($range_string)",
+				html => "<code> $_ </code> - Single character range ($range_string)";
+		}
+		# Let the user provide a number for the {n} pattern, e.g., {5} would say "Exactly 5 occurrences".
+		elsif ($_ =~ /\{([0-9]+)\}/) {
+			return answer => "$_ - Exactly $1 occurrences",
+				html => "<code>" . encode_entities($_) . "</code> - Exactly " .  encode_entities($_) . " occurrences";
+		}
+		# Let the user provide numbers for {n,} and {n,m}, e.g., {4,} would say "4 or more occurrences".
+		elsif ($_ =~ /\{([0-9]+),([0-9]+)?\}/) {
+			if ($2) {
+				return unless ($1 < $2);
+				return answer => "$_ - Between $1 and $2 occurrences", 
+						html => "<code>" . encode_entities($_) . "</code> - Between $1 and $2 occurrences";
+			}
+			return answer => "$_ - $1 or more", 
+		    		html =>  "<code> " . encode_entities($_) . " </code> - $1 or more occurrences";
+		}
+		# Check our map if it's in our list of regex patterns.
+		return unless $syntax_map{$syntax_key};
+	
+		my $text_output = "$_ - $syntax_map{$syntax_key}";
+		my $html_output = "<code> " . encode_entities($_) . " </code> - " . encode_entities($syntax_map{$syntax_key});
+		return answer => $text_output, html => $html_output;
 	}
-	# Let the user provide numbers for {n,} and {n,m}, e.g., {4,} would say "4 or more occurrences".
-	elsif ($_ =~ /\{([0-9]+),([0-9]+)?\}/) {
-	    if ($2) {
-		return unless ($1 < $2);
-		return answer => "$_ - Between $1 and $2 occurrences", 
-		       html => "<code>" . encode_entities($_) . "</code> - Between $1 and $2 occurrences";
-	    }
-	    return answer => "$_ - $1 or more", 
-	    	   html =>  "<code> " . encode_entities($_) . " </code> - $1 or more occurrences";
-	}
-	# Check our map if it's in our list of regex patterns.
-	return unless $syntax_map{$syntax_key};
 	
-	my $text_output = "$_ - $syntax_map{$syntax_key}";
-	my $html_output = "<code> " . encode_entities($_) . " </code> - " . encode_entities($syntax_map{$syntax_key});
-	return answer => $text_output, html => $html_output;
-    }
+	# Otherwise display the complete tabular output, into n columns in the order specified.
 	
-    # Otherwise display the complete tabular output, into n columns in the order specified.
+	my $text_output = '';
 	
-    my $text_output = '';
+	# Style assigned to the outside wrapper div (around all content).
+	my $div_wrapper_style = 'max-height: 45ex; overflow-y: scroll; overflow-x: hidden';
 	
-    # Style assigned to the outside wrapper div (around all content).
-    my $div_wrapper_style = 'max-height: 45ex; overflow-y: scroll; overflow-x: hidden';
+	# Style assigned to the wrapper column divs
+	my $div_column_style = 'width: 48%; display: inline-block; vertical-align: top;';
 	
-    # Style assigned to the wrapper column divs
-    my $div_column_style = 'width: 48%; display: inline-block; vertical-align: top;';
-	
-    # Style assigned to each table of results (Anchors, Quantifiers etc)
-    my $table_style = 'width: 100%; margin-bottom: 1ex;';
+	# Style assigned to each table of results (Anchors, Quantifiers etc)
+	my $table_style = 'width: 100%; margin-bottom: 1ex;';
 		
-    # Content of the div column wrapper.
-    my @html_columns = ();
+	# Content of the div column wrapper.
+	my @html_columns = ();
 	
-    # Add a helper function for adding the <td> tag.
-    sub add_table_data {
-	my ($text, $is_code) = @_;
-	if($is_code) {
-	    return "<td><code>" . encode_entities($text) . "</code></td>";
+	# Add a helper function for adding the <td> tag.
+	sub add_table_data {
+		my ($text, $is_code) = @_;
+		if($is_code) {
+			return "<td><code>" . encode_entities($text) . "</code></td>";
+		}
+		return "<td>" . encode_entities($text) . "</tb>";
 	}
-	return "<td>" . encode_entities($text) . "</tb>";
-    }
 
-    for(my $column = 0; $column < scalar(@category_column); ++$column) {
-	for my $category  (@{$category_column[$column]}) {
-	    my $new_table = "<table style='$table_style'><b>$category</b>";
+	for(my $column = 0; $column < scalar(@category_column); ++$column) {
+		for my $category  (@{$category_column[$column]}) {
+	    	my $new_table = "<table style='$table_style'><b>$category</b>";
 
-	    $text_output .= "$category\n";
+			$text_output .= "$category\n";
 
-	    for my $syntax_object (@{$categories{$category}}) {
-		$new_table .= "<tr>" . add_table_data($syntax_object, 1) . add_table_data($syntax_map{$syntax_object}, 0) . "</tr>\n";
-		$text_output .= "\t$syntax_object - $syntax_map{$syntax_object}\n";
-	    }
+			for my $syntax_object (@{$categories{$category}}) {
+				$new_table .= "<tr>" . add_table_data($syntax_object, 1) . add_table_data($syntax_map{$syntax_object}, 0) . "</tr>\n";
+				$text_output .= "\t$syntax_object - $syntax_map{$syntax_object}\n";
+			}
 			
-	    $text_output .= "\n";                 
-	    $new_table .= "</table>\n";
-	    
-	    $html_columns[$column] .= $new_table;
+			$text_output .= "\n";                 
+			$new_table .= "</table>\n";
+	    	$html_columns[$column] .= $new_table;
+		}
 	}
-    }
 	
-    my $html_output = "<div style='$div_wrapper_style'><div style='$div_column_style'>";
-    $html_output .= join ("</div><div style='$div_column_style'>", @html_columns);
-    $html_output .= "</div></div>";
-    return answer => $text_output, html => $html_output;
+	my $html_output = "<div style='$div_wrapper_style'><div style='$div_column_style'>";
+	$html_output .= join ("</div><div style='$div_column_style'>", @html_columns);
+	$html_output .= "</div></div>";
+	return answer => $text_output, html => $html_output;
 };
 
 1;
