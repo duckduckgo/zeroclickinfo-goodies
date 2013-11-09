@@ -4,7 +4,7 @@ package DDG::Goodie::Loan;
 use DDG::Goodie;
 use Locale::Currency::Format;
 
-triggers start => 'loan';
+triggers any => 'loan';
 
 zci is_cached => 1;
 zci answer_type => 'loan';
@@ -66,17 +66,57 @@ sub normalize_formatted_currency_string {
 	return $str;
 }
 
+# Attempt to extract terms of a loan from the input query. Interest rate and principal must be found in the 
+# query, downpayment and years of the loan are optional and will default to 0 and 30, respectively. This 
+# method first looks for years, interest rate, and downpayment numbers and removes them from the query
+# string so they are not confused for the principal loan amount, which may be present simply as a raw
+# number. 
 handle remainder => sub {
 	my $query = $_;
 	
-	# At a minimum, query should contain some amount of money and a percent interest rate
-	if ($query =~ /^(\p{Currency_Symbol})?([\d\.,]+)\s?([A-Z]{3})?\s(at\s)?(\d+.?\d*)%/) {
+	# Loan rate is required, query will be ignored if it is missing
+	my $rate = 0;
+
+	# Years in the query is optional, it will be assumed to be 30 if not present
+	my $years = 30;
+
+	# Check if query contains number of years for loan, if so, save value and remove it
+	if ($query =~ /(\d+) years?/) {
+		$years = $1;
+		$query =~ s/(\d+) years?//;
+	}
+
+	# Try to extract the interest rate and remove it. Interest rate is required.
+	if ($query =~ /(\d+\.?\d*)%/) {
+		$rate = $1;
+		$query =~ s/(\d+\.?\d*)%//;
+	} else {
+		return;
+	}
+
+	# Downpayment information that may be discovered. It will be combined with the discovered currency. 
+	my $downpayment_in_query = 0;
+	my $downpayment_is_in_cash = 0;
+	my $downpayment_without_units = 0;
+
+	# Check if query contains downpayment information
+	if ($query =~ /(\p{Currency_Symbol})?(\d+)\s?([A-Za-z]{3})?(%)? down/) {
+		$downpayment_in_query = 1;
+		$downpayment_is_in_cash = ! (defined $4);
+		$downpayment_without_units = $2;
+		$query =~ s/(\p{Currency_Symbol})?(\d+)\s?([A-Za-z]{3})?(%)? down//;
+	}
+
+	# At a minimum, query should contain some amount of money
+	if ($query =~ /(\p{Currency_Symbol})?([\d\.,]+)\s?([A-Za-z]{3})?/) {
 		my $symbol = $1;
 		my $principal = $2;
-		my $input_currency_code = $3;
-		my $rate = $5;
-		my $downpayment = 0;
-		my $years = 30;
+		my $input_currency_code = $3;		
+		my $downpayment = 0;		
+
+		if (defined $input_currency_code) {
+			$input_currency_code = uc($input_currency_code);
+		}
 
 		# Apply localization, default to US if unknown
 		my $currency_code = "USD";
@@ -93,10 +133,8 @@ handle remainder => sub {
 		# to a useable number. 
 		$principal = normalize_formatted_currency_string($principal, $currency_code);
 
-		# Check if query contains downpayment information
-		if ($query =~ /(\p{Currency_Symbol})?(\d+)\s?([A-Z]{3})?(%)? down/) {
-			my $downpayment_is_in_cash = ! (defined $4);
-			my $downpayment_without_units = $2;
+		# Deal with downpayment information if it was found in the query
+		if ($downpayment_in_query) {
 			if ($downpayment_is_in_cash) {
 				# Downpayment expresses in an amount of currency
 				$downpayment = normalize_formatted_currency_string($downpayment_without_units, $currency_code);
@@ -105,12 +143,7 @@ handle remainder => sub {
 				$downpayment = $principal * .01 * $downpayment_without_units;
 			}
 		}
-
-		# Check if query contains number of years for loan
-		if ($query =~ /(\d+) years?/) {
-			$years = $1;
-		}
-
+		
 		my $loan_amount = $principal - $downpayment;
 		my $monthly_payment = loan_monthly_payment($loan_amount, $rate / 12 * .01, $years * 12);
 		my $total_interest = ($monthly_payment * 12 * $years) - $loan_amount;

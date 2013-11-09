@@ -41,6 +41,16 @@ ddg_goodie_test (
 		test_zci('Monthly Payment is €1.726,45 for 15 years. Total interest paid is €60.761,74'),
 	'loan 500000 EUR at 4.5% 100000 EUR down' =>
 		test_zci('Monthly Payment is €2.026,74 for 30 years. Total interest paid is €329.626,85'),
+	'loan for 23000 with 5000 down and 12% interest' =>
+		test_zci('Monthly Payment is $185.15 for 30 years. Total interest paid is $48,654.10'),
+	'loan 50000 usd at 1% 1 usd down' =>
+		test_zci('Monthly Payment is $160.82 for 30 years. Total interest paid is $7,894.96'),
+	'loan 5 usd at 1% 1 usd down' =>
+		test_zci('Monthly Payment is $0.01 for 30 years. Total interest paid is $0.63'),
+	'5 year loan with 3% interest on $23,000 1000 down' =>
+		test_zci('Monthly Payment is $395.31 for 5 years. Total interest paid is $1,718.67'),
+	'loan with $1000 down at 3% for $23,000 for 5 years' =>
+		test_zci('Monthly Payment is $395.31 for 5 years. Total interest paid is $1,718.67'),
 	# Test a few cases of inferring user's location
 	DDG::Request->new(query_raw => "loan 400000 4.5%", location => test_location("de")) =>
 		test_zci('Monthly Payment is €2.026,74 for 30 years. Total interest paid is €329.626,85'),
