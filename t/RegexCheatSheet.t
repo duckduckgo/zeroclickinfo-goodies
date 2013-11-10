@@ -26,6 +26,10 @@ ddg_goodie_test(
 		'$ - End of string or line',
 		html => '<code> $ </code> - End of string or line'
 	),
+	'regexp \s' => test_zci(
+		'\s - Whitespace',
+		html => '<code> \s </code> - Whitespace'
+	)
 );
 
 done_testing;
