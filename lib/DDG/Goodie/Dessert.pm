@@ -3,6 +3,7 @@ package DDG::Goodie::Dessert;
 use DDG::Goodie;
 
 zci answer_type => 'dessert';
+zci is_cached => 0;
 
 primary_example_queries 'a dessert that starts with the letter a';
 secondary_example_queries 'dessert that begins with the letter z';
