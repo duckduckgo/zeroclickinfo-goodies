@@ -16,20 +16,26 @@ attribution github => ['https://github.com/kennydude', 'kennydude'];
 
 triggers start => 'dessert', 'desserts', 'a dessert';
 
+# This function picks a dessert from our lists.
 sub itemify {
+    # This has our list of desserts.
     my @dessert_list = @{$_[0]};
+    # This tells us if we should add an anchor tag or not.
+    # We do this because we have two different outputs: HTML and plain text.
     my $is_html = $_[1];
 
     my $i = rand scalar @dessert_list;
     my $dessert = $dessert_list[$i];
 
     if($is_html) {
+	# Encode spaces so that we can use it as a link.
 	$dessert =~ s/\s/+/g;
 	return "<a href='http://duckduckgo.com/?q=$dessert+recipe'>" . $dessert_list[$i] . "</a>";
     }
     return $dessert;
 };
 
+# This is our list of desserts.
 my %desserts = (
 	a => ['Apple Turnover'],
 	b => ['Banana Split', 'Biscuits'],
@@ -59,7 +65,7 @@ my %desserts = (
 );
 
 handle remainder => sub {
-    if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? (?:the letter )?([a-zA-Z])$/i){
+    if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? (?:the letter )?([a-zA-Z])$/i) {
 	my $in = lc $1;
 	my $items = $desserts{lc $in};
 
