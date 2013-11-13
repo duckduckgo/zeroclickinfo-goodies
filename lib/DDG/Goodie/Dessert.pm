@@ -2,7 +2,17 @@ package DDG::Goodie::Dessert;
 
 use DDG::Goodie;
 
-zci is_cached => 0;
+zci answer_type => 'dessert';
+
+primary_example_queries 'a dessert that starts with the letter a';
+secondary_example_queries 'dessert that begins with the letter z';
+description 'Returns a dessert given a letter.';
+name 'Dessert';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Dessert.pm';
+category 'food';
+topics 'food_and_drink', 'special_interest';
+attribution github => ['https://github.com/kennydude', 'kennydude'];
+
 triggers start => 'dessert', 'desserts', 'a dessert';
 
 sub itemify {
