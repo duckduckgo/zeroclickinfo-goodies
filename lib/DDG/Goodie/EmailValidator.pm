@@ -11,7 +11,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 topics 'sysadmin';
 category 'computing_info';
 
-triggers start => 'validate';
+triggers start => 'validate', 'validate my email', 'validate my e-mail';
 
 attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
             twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
@@ -26,28 +26,28 @@ my $message_part = {
 handle remainder => sub {
     return if !$_;
 
-    $_ =~ /\b([^\s]+@[^\s]+)\b/g ;
+    $_ =~ /^([^\s]+@[^\s]+)$/g;
     my $address = $1;
-    
+
     return if !$address;
-	
+
     my $email_valid = Email::Valid->new(
 	-tldcheck => 1,
     );
-	
+
     # Danger: address returns possible modified string!
     my $result = $email_valid->address($address); 
-    
+
     if (!$result) {
 	my $message = '';
 	if(defined $message_part->{$email_valid->details}) {
 	    $message = "$address is invalid. Please check the " . $message_part->{$email_valid->details} . ".";
 	}
 
-	return $message || "E-mail address $address is not valid. ${\$email_valid->details} (see also: RFC 822)";
+	return $message || "E-mail address $address is invalid."
     }
 
-    return "$result seems to be valid.";
+    return "$address is valid.";
 };
 
 1;
