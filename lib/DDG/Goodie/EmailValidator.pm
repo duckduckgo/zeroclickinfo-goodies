@@ -11,7 +11,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 topics 'sysadmin';
 category 'computing_info';
 
-triggers start => 'validate';
+triggers start => 'validate', 'validate my email', 'validate my e-mail';
 
 attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
             twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
