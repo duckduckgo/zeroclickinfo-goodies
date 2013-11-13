@@ -2,12 +2,21 @@ package DDG::Goodie::Dessert;
 
 use DDG::Goodie;
 
-sub itemify{
-	my $i = rand scalar @_;
-	my $dessert = $_[$i];
-	$dessert =~ s/\s/+/g;
+zci is_cached => 0;
+triggers start => 'dessert', 'desserts', 'a dessert';
 
-	return "<a href='http://duckduckgo.com/?q=$dessert+recipe'>$_[$i]</a>";
+sub itemify {
+    my @dessert_list = @{$_[0]};
+    my $is_html = $_[1];
+
+    my $i = rand scalar @dessert_list;
+    my $dessert = $dessert_list[$i];
+
+    if($is_html) {
+	$dessert =~ s/\s/+/g;
+	return "<a href='http://duckduckgo.com/?q=$dessert+recipe'>" . $dessert_list[$i] . "</a>";
+    }
+    return $dessert;
 };
 
 my %desserts = (
@@ -38,17 +47,19 @@ my %desserts = (
 	z => ['Zepolle','Zucchini Pie'],
 );
 
-triggers start => 'dessert', 'desserts', 'a dessert';
-handle remainder => sub{
+handle remainder => sub {
     if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? (?:the letter )?([a-zA-Z])$/i){
 	my $in = lc $1;
 	my $items = $desserts{lc $in};
 
-	my $output = itemify(@{$items}) . " is a dessert that begins with the letter " . uc $in . '.';
-	return $output;
+	my $end = " is a dessert that begins with the letter " . uc $in . '.';
+
+	my $html_output = itemify($items, 1) . $end;
+	my $text_output = itemify($items, 0) . $end;
+	
+	return $text_output, html => $html_output;
     }
     return;
 };
 
-zci is_cached => 0;
 1;
