@@ -26,18 +26,18 @@ my $message_part = {
 handle remainder => sub {
     return if !$_;
 
-    $_ =~ /\b([^\s]+@[^\s]+)\b/g ;
+    $_ =~ /^([^\s]+@[^\s]+)$/g;
     my $address = $1;
-    
+
     return if !$address;
-	
+
     my $email_valid = Email::Valid->new(
 	-tldcheck => 1,
     );
-	
+
     # Danger: address returns possible modified string!
     my $result = $email_valid->address($address); 
-    
+
     if (!$result) {
 	my $message = '';
 	if(defined $message_part->{$email_valid->details}) {
@@ -47,7 +47,7 @@ handle remainder => sub {
 	return $message || "E-mail address $address is invalid."
     }
 
-    return "$result seems to be valid.";
+    return "$address is valid.";
 };
 
 1;
