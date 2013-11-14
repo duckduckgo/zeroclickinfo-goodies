@@ -172,7 +172,7 @@ handle remainder => sub {
 		my $syntax_key = $_;
 
 		# Let the user provide [a-e], [1-2], nice simple examples only!
-		if ($_ =~ /\[([a-zA-Z0-9])\-([a-zA-Z0-9])\]/) {
+		if ($_ =~ /^\[([a-zA-Z0-9])\-([a-zA-Z0-9])\]$/) {
 			return unless are_valid_char_classes($1, $2);
 			#if there are < 3 between them then output all between them, otherwise "0 or 1 .. or 9" style
 			my $range_string = "";
