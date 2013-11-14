@@ -6,7 +6,7 @@ use DateTime;
 triggers startend => "unixtime", "time", "timestamp", "datetime", "epoch", "unix time", "unix epoch";
 
 zci answer_type => "time_conversion";
-zci is_cached => 1;
+zci is_cached => 0;
 
 attribution github => ['https://github.com/codejoust', 'codejoust'];
 
