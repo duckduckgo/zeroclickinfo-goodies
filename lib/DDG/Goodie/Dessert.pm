@@ -61,7 +61,7 @@ my %desserts = (
 	v => ['Vanilla Swirl'],
 	w => ['Waffles','Watermelon','White Chocolate'],
 	x => ['Xmas Cake'],
-	z => ['Zepolle','Zucchini Pie'],
+	z => ['Zeppole','Zucchini Pie'],
 );
 
 handle remainder => sub {
