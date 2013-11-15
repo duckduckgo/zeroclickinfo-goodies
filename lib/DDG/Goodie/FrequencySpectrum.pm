@@ -13,7 +13,7 @@ primary_example_queries '50 hz';
 secondary_example_queries '400 thz';
 description 'Returns information about light, radio, and sound frequencies';
 name 'FrequencySpectrum';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Wave.pm';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FrequencySpectrum.pm';
 category 'physical_properties';
 topics 'science';
 attribution web => "https://machinepublishers.com",
