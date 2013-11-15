@@ -25,32 +25,42 @@ handle query => sub {
 
   my $freq_hz;
   my $hz_abbrev;
-  my $freq_truncated;
-  if($freq =~ m/^(.+?)\s\w+$/i){
-    $freq_truncated = int($1);
-  }
+  my $freq_formatted;
   
   if($freq =~ m/^(.+?)\s(?:hz|hertz)$/i){
     $freq_hz = $1;
-    $hz_abbrev = "Hz";
   }elsif($freq =~ m/^(.+?)\s(?:khz|kilohertz)$/i){
     $freq_hz = $1 * 1000;
-    $hz_abbrev = "kHz";
   }elsif($freq =~ m/^(.+?)\s(?:mhz|megahertz)$/i){
     $freq_hz = $1 * 1000000;
-    $hz_abbrev = "MHz";
   }elsif($freq =~ m/^(.+?)\s(?:ghz|gigahertz)$/i){
     $freq_hz = $1 * 1000000000;
-    $hz_abbrev = "GHz";
   }elsif($freq =~ m/^(.+?)\s(?:thz|terahertz)$/i){
     $freq_hz = $1 * 1000000000000;
-    $hz_abbrev = "THz";
   }else{
     #unexpected case
     return;
   }
   
-  $freq = $freq_truncated . " " . $hz_abbrev;
+  if($freq_hz >= 1000000000000){
+    $hz_abbrev = "THz";
+    $freq_formatted = $freq_hz / 1000000000000;
+  }elsif($freq_hz >= 1000000){
+    $hz_abbrev = "GHz";
+    $freq_formatted = $freq_hz / 1000000;
+  }elsif($freq_hz >= 1000000){
+    $hz_abbrev = "MHz";
+    $freq_formatted = $freq_hz / 1000000;
+  }elsif($freq_hz >= 1000){
+    $hz_abbrev = "kHz";
+    $freq_formatted = $freq_hz / 1000;
+  }else{
+    $hz_abbrev = "Hz";
+    $freq_formatted = $freq_hz;
+  }
+  
+  
+  $freq = $freq_formatted . " " . $hz_abbrev;
   
   return prepare_result($freq, $freq_hz);
 };
@@ -91,8 +101,8 @@ sub normalize_freq{
 sub prepare_result{
   my $freq = $_[0];
   my $freq_hz = $_[1];
-  my $color = match_in_ranges($freq_hz, color_ranges());
-  my $radio = match_in_ranges($freq_hz, radio_ranges()) unless $color;
+  my $color = match_in_ranges(int($freq_hz), color_ranges());
+  my $radio = match_in_ranges(int($freq_hz), radio_ranges()) unless $color;
   my $instruments = matches_in_ranges($freq_hz, instrument_ranges()) unless $color;
   my $text_result = "";
   if($radio){
@@ -178,7 +188,7 @@ sub instrument_ranges(){
 };
 
 sub match_in_ranges{
-  my $freq = int($_[0]);
+  my $freq = $_[0];
   my $ranges = $_[1];
   
   foreach my $range (@$ranges){
@@ -190,7 +200,7 @@ sub match_in_ranges{
 };
 
 sub matches_in_ranges{
-  my $freq = int($_[0]);
+  my $freq = $_[0];
   my $ranges = $_[1];
   my @matches;
   foreach my $range (@$ranges){
