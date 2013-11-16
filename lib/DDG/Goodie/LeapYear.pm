@@ -2,6 +2,8 @@ package DDG::Goodie::LeapYear;
 # ABSTRACT: Check if a year is leap year
 use DDG::Goodie;
 use Date::Leapyear;
+use strict;
+use warnings;
 
 zci answer_type => "leap_year";
 
@@ -14,17 +16,41 @@ category 'calculations';
 topics 'everyday';
 attribution github => [ 'https://github.com/tophattedcoder', 'Tom Bebbington'];
 
-triggers startend => 'leap year';
+triggers startend => 'leap years', 'leap year';
 handle remainder => sub {
     my ($second, $minute, $hour, $dayOfMonth, $month, $partyear, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
-    my $year = $partyear + 1900; 
-    if (index($_, "next") != -1) {
+    my $year = $partyear + 1900;
+    if ($_ =~ /(last|previous) ([0-9]?[0-9])/) {
+        my @years = ();
+        my $numdone = 0;
+        $year --;
+        while($numdone < $2) {
+            while(!isleap($year)) {
+                $year--;
+            }
+            $years[$numdone++] = $year--;
+        }
+        my @pretty_years = join(', ', @years);
+        return "The last $2 leap years were @pretty_years";
+    } elsif ($_ =~ /next ([0-9]?[0-9])/) {
+        my @years = ();
+        my $numdone = 0;
+        $year ++;
+        while($numdone < $1) {
+            while(!isleap($year)) {
+                $year++;
+            }
+            $years[$numdone++] = $year++;
+        }
+        my @pretty_years = join(', ', @years);
+        return "The next $1 leap years are @pretty_years";
+    } elsif ($_ =~ /next/) {
         $year ++;
         while(!isleap($year)) {
             $year ++;
         }
         return "$year is the next leap year";
-    } elsif (index($_, "last") != -1) {
+    } elsif ($_ =~ /last|previous/) {
         $year --;
         while(!isleap($year)) {
             $year--;
