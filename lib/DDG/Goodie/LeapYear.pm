@@ -32,30 +32,30 @@ handle remainder => sub {
         }
         my @pretty_years = join(', ', @years);
         return "The last $2 leap years were @pretty_years";
-    } elsif ($_ =~ /next ([0-9]?[0-9])/) {
+    } elsif ($_ =~ /(next|future) ([0-9]?[0-9])/) {
         my @years = ();
         my $numdone = 0;
         $year ++;
-        while($numdone < $1) {
+        while($numdone < $2) {
             while(!isleap($year)) {
                 $year++;
             }
             $years[$numdone++] = $year++;
         }
         my @pretty_years = join(', ', @years);
-        return "The next $1 leap years are @pretty_years";
-    } elsif ($_ =~ /next/) {
+        return "The $1 $2 leap years will be @pretty_years";
+    } elsif ($_ =~ /(next|future|upcoming)/) {
         $year ++;
         while(!isleap($year)) {
             $year ++;
         }
-        return "$year is the next leap year";
-    } elsif ($_ =~ /last|previous/) {
+        return "$year will be the $1 leap year";
+    } elsif ($_ =~ /(last|previous|most recent)/) {
         $year --;
         while(!isleap($year)) {
             $year--;
         }
-        return "$year was the last leap year";
+        return "$year was the $1 leap year";
     } elsif($_ =~ /([0-9]+) ?(ad|bce|bc|ce)?/i) {
         my $cyear = $1;
         my $postfix = $2;
@@ -72,7 +72,7 @@ handle remainder => sub {
         } else {
             return "$format_year $postfix is not a leap year";
         }
-    } else {
+    } elsif($_ =~ /currently|now|this year|is it a|are we in a/) {
         if(isleap($year)) {
             return "$year is a leap year";
         } else {
