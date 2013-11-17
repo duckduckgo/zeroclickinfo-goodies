@@ -17,6 +17,16 @@ topics 'everyday';
 attribution github => [ 'https://github.com/tophattedcoder', 'Tom Bebbington'];
 
 triggers startend => 'leap years', 'leap year';
+my %is_tense = (
+    past => 'was',
+    present => 'is',
+    future => 'will be',
+);
+my %is_not_tense = (
+    past => 'was not',
+    present => 'is not',
+    future => 'will not be',
+);
 handle remainder => sub {
     my ($second, $minute, $hour, $dayOfMonth, $month, $partyear, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
     my $year = $partyear + 1900;
@@ -56,7 +66,7 @@ handle remainder => sub {
             $year--;
         }
         return "$year was the $1 leap year";
-    } elsif($_ =~ /([0-9]+) ?(ad|bce|bc|ce)?/i) {
+    } elsif($_ =~ /(\-?[0-9]+) ?(ad|bce|bc|ce)?/i) {
         my $cyear = $1;
         my $postfix = $2;
         if(! defined($2) || $postfix =~ /(ce|ad)/i) {
@@ -67,10 +77,16 @@ handle remainder => sub {
         }
         my $format_year = abs($cyear);
         $postfix = uc($postfix);
+        my $tense = "present";
+        if($cyear < $year) {
+            $tense = "past";
+        } elsif($cyear > $year) {
+            $tense = "future";
+        }
         if(isleap($cyear)) {
-            return "$format_year $postfix is a leap year";
+            return "$format_year $postfix $is_tense{$tense} a leap year";
         } else {
-            return "$format_year $postfix is not a leap year";
+            return "$format_year $postfix $is_not_tense{$tense} a leap year";
         }
     } elsif($_ =~ /currently|now|this year|is it a|are we in a/) {
         if(isleap($year)) {
