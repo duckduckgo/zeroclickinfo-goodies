@@ -27,72 +27,90 @@ my %is_not_tense = (
     present => 'is not',
     future => 'will not be',
 );
-handle remainder => sub {
-    my ($second, $minute, $hour, $dayOfMonth, $month, $partyear, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
-    my $year = $partyear + 1900;
-    if ($_ =~ /(last|previous) ([0-9]?[0-9])/) {
-        my @years = ();
-        my $numdone = 0;
-        $year --;
-        while($numdone < $2) {
-            while(!isleap($year)) {
-                $year--;
-            }
-            $years[$numdone++] = $year--;
+my ($second, $minute, $hour, $dayOfMonth, $month, $partyear, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
+my $year = $partyear + 1900;
+sub search_leaps {
+    my $num = shift;
+    my $direction = shift;
+    my $include_curr = shift;
+    my @years = ();
+    my $numdone = 0;
+    my $cyear = $year;
+    if($include_curr eq 0) {
+        $cyear += $direction;
+    }
+    while($numdone < $num) {
+        while(!isleap($cyear)) {
+            $cyear += $direction;
         }
+        $years[$numdone++] = $cyear;
+        $cyear += $direction;
+    }
+    return @years;
+}
+sub find_tense {
+    my $cyear = shift;
+    if($cyear < $year) {
+        return "past";
+    } elsif($cyear > $year) {
+        return "future";
+    } else {
+        return "present";
+    }
+}
+sub format_year {
+    my $cyear = shift;
+    if(!defined($cyear)) {
+        $cyear = $_;
+    }
+    if($cyear < 0) {
+        $cyear = abs($cyear);
+        return "$cyear BCE";
+    } else {
+        return "$cyear CE";
+    }
+}
+handle remainder => sub {
+    if ($_ =~ /(last|previous) ([0-9]+)/) {
+        my @years = search_leaps($2, -1, 0);
+        @years = map(format_year, @years);
         my @pretty_years = join(', ', @years);
         return "The last $2 leap years were @pretty_years";
-    } elsif ($_ =~ /(next|future) ([0-9]?[0-9])/) {
-        my @years = ();
-        my $numdone = 0;
-        $year ++;
-        while($numdone < $2) {
-            while(!isleap($year)) {
-                $year++;
-            }
-            $years[$numdone++] = $year++;
-        }
+    } elsif ($_ =~ /(next|future) ([0-9]+)/) {
+        my @years = search_leaps($2, 1, 0);
+        @years = map(format_year, @years);
         my @pretty_years = join(', ', @years);
         return "The $1 $2 leap years will be @pretty_years";
     } elsif ($_ =~ /(next|future|upcoming)/) {
-        $year ++;
-        while(!isleap($year)) {
-            $year ++;
-        }
-        return "$year will be the $1 leap year";
-    } elsif ($_ =~ /(last|previous|most recent)/) {
-        $year --;
-        while(!isleap($year)) {
-            $year--;
-        }
-        return "$year was the $1 leap year";
+        my ($nyear) = search_leaps(1, 1, 0);
+        $nyear = format_year($nyear);
+        return "$nyear will be the $1 leap year";
+    } elsif ($_ =~ /(latest|last|previous)/) {
+        my ($pyear) = search_leaps(1, -1, 0);
+        $pyear = format_year($pyear);
+        return "$pyear was the $1 leap year";
+    } elsif ($_ =~ /(most recent)/) {
+        my ($ryear) = search_leaps(1, -1, 1);
+        $ryear = format_year($ryear);
+        return "$ryear is the $1 leap year";
     } elsif($_ =~ /(\-?[0-9]+) ?(ad|bce|bc|ce)?/i) {
         my $cyear = $1;
-        my $postfix = $2;
-        if(! defined($2) || $postfix =~ /(ce|ad)/i) {
-            $postfix = "CE";
-        } elsif($postfix =~ /(bce|bc)/i) {
-            $postfix = "BCE";
+        if(defined($2) && $2 =~ /(bce|bc)/i) {
             $cyear = -$cyear;
         }
-        my $format_year = abs($cyear);
-        $postfix = uc($postfix);
-        my $tense = "present";
-        if($cyear < $year) {
-            $tense = "past";
-        } elsif($cyear > $year) {
-            $tense = "future";
-        }
+        my $fyear = format_year($cyear);
+        my $tense = find_tense($cyear);
         if(isleap($cyear)) {
-            return "$format_year $postfix $is_tense{$tense} a leap year";
+            return "$fyear $is_tense{$tense} a leap year";
         } else {
-            return "$format_year $postfix $is_not_tense{$tense} a leap year";
+            return "$fyear $is_not_tense{$tense} a leap year";
         }
-    } elsif($_ =~ /currently|now|this year|is it a|are we in a/) {
+    } elsif($_ =~ /current|now|this year|is it (currently )?a|are we in a/) {
+        my $fyear = format_year($year);
         if(isleap($year)) {
-            return "$year is a leap year";
+            return "$fyear is a leap year";
         } else {
-            return "$year is not a leap year";
+            return "$fyear is not a leap year";
         }
     }
     return;
