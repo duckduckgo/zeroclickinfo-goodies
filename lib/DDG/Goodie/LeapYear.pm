@@ -80,6 +80,7 @@ handle remainder => sub {
         return "The $1 $2 leap years will be @pretty_years";
     } elsif ($_ =~ /^(after|before) ([0-9]+) ?(ad|bce|bc|ce)?$/) {
         my $cyear = $2;
+        my $direction = $1;
         if(defined($3) && $3 =~ /^(bce|bc)$/i) {
             $cyear = -$cyear;
         }
@@ -91,7 +92,7 @@ handle remainder => sub {
         @years = map(format_year, @years);
         my @pretty_years = join(', ', @years);
         my $pretty_year = format_year($cyear);
-        return "The 5 leap years $1 $cyear are @pretty_years";
+        return "The 5 leap years $direction $pretty_year are @pretty_years";
     } elsif ($_ =~ /(next|future|upcoming)$/i) {
         my ($nyear) = search_leaps(1, 1, 0, $year);
         $nyear = format_year($nyear);
