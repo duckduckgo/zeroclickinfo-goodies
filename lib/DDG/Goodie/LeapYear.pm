@@ -30,26 +30,23 @@ my %is_not_tense = (
 my ($second, $minute, $hour, $dayOfMonth, $month, $partyear, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
 my $year = $partyear + 1900;
 sub search_leaps {
-    my $num = shift;
-    my $direction = shift;
-    my $include_curr = shift;
+    my ($num, $direction, $include_curr) = @_;
     my @years = ();
-    my $numdone = 0;
     my $cyear = $year;
     if($include_curr eq 0) {
         $cyear += $direction;
     }
-    while($numdone < $num) {
+    while($#years < $num) {
         while(!isleap($cyear)) {
             $cyear += $direction;
         }
-        $years[$numdone++] = $cyear;
+        push @years, ($cyear);
         $cyear += $direction;
     }
     return @years;
 }
 sub find_tense {
-    my $cyear = shift;
+    my ($cyear) = @_;
     if($cyear < $year) {
         return "past";
     } elsif($cyear > $year) {
@@ -71,7 +68,6 @@ sub format_year {
     }
 }
 handle remainder => sub {
-    print "\n\n$_\n\n";
     if ($_ =~ /(last|previous) ([0-9]+)$/i) {
         my @years = search_leaps($2, -1, 0);
         @years = map(format_year, @years);
