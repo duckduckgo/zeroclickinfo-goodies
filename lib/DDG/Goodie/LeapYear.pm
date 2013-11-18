@@ -6,6 +6,7 @@ use strict;
 use warnings;
 
 zci answer_type => "leap_year";
+zci is_cached => 1;
 
 primary_example_queries 'is it a leap year';
 secondary_example_queries 'when were the last 50 leap years';
@@ -17,18 +18,22 @@ topics 'everyday';
 attribution github => [ 'https://github.com/tophattedcoder', 'Tom Bebbington'];
 
 triggers startend => 'leap years', 'leap year';
+# 'is' in tenses
 my %is_tense = (
     past => 'was',
     present => 'is',
     future => 'will be',
 );
+# 'is not' in tenses
 my %is_not_tense = (
     past => 'was not',
     present => 'is not',
     future => 'will not be',
 );
 my ($second, $minute, $hour, $dayOfMonth, $month, $partyear, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
+# the current year
 my $year = $partyear + 1900;
+# searches for leap years
 sub search_leaps {
     my ($num, $direction, $include_curr, $curryear) = @_;
     my $cyear = $curryear;
@@ -45,6 +50,7 @@ sub search_leaps {
     }
     return @years;
 }
+# finds the matching tense for the given year
 sub find_tense {
     my ($cyear) = @_;
     if($cyear < $year) {
@@ -55,6 +61,7 @@ sub find_tense {
         return "present";
     }
 }
+# formats the year from an integer
 sub format_year {
     my ($cyear) = @_;
     if(!defined($cyear)) {
