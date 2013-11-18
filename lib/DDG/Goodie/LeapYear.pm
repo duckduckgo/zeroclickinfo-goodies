@@ -84,10 +84,12 @@ handle remainder => sub {
         if(defined($3) && $3 =~ /^(bce|bc)$/i) {
             $cyear = -$cyear;
         }
+        print "\nCyear: $cyear\n";
         my $dir = 1;
-        if($1 eq "before") {
+        if($direction eq "before") {
             $dir = -1;
         }
+        print "\nDir: $dir\n";
         my @years = search_leaps(5, $dir, 0, $cyear);
         @years = map(format_year, @years);
         my @pretty_years = join(', ', @years);
