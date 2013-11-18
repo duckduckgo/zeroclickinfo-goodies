@@ -15,7 +15,7 @@ ddg_goodie_test(
 	'will 3012 be a leap year' => test_zci('3012 CE will be a leap year'),
 	'was 1 bce a leap year' => test_zci('1 BCE was not a leap year'),
 	'leap years after 2005' => test_zci('The 5 leap years after 2005 are 2008 CE, 2012 CE, 2016 CE, 2020 CE, 2024 CE, 2028 CE'),
-	'leap years before 2 bc' => test_zci('The 5 leap years before 2 BCE are 0 CE, 4 CE, 8 CE, 12 CE, 16 CE, 20 CE'),
+	'leap years before 2 bc' => test_zci('The 5 leap years before 2 BCE are 0 BCE, 4 BCE, 8 BCE, 12 BCE, 16 BCE, 20 BCE'),
 );
 
 done_testing;
