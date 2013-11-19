@@ -50,7 +50,6 @@ sub render_text($) {
 	
 sub render_html($) {
 	my $name = pop;
-	print "yo yo: $name \n";
 	my $output = "<div><i>" . to_titlecase($name) . "</i>";
 	$output .= ": $patterns{$name}</div>\n";
 	return $output;
@@ -76,7 +75,7 @@ handle remainder => sub {
 		$html_output .= render_html($pattern);
 	}
 
-	return $output, html => "<div id='zero_click_header'>Rubik's Cube Patterns</div>"."\n".$html_output;
+	return $output, html => $html_output, heading => "Rubik's Cube Patterns";
 };
 
 1;
