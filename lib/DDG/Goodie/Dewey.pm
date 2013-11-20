@@ -32,7 +32,7 @@ sub get_info {
 sub line {
     my($num) = @_;
     chomp $num;
-    return "<td>$num</td><td>".(get_info($num) or return)."</td>";
+    return "<td>$num</td><td>&nbsp;".(get_info($num) or return)."</td>";
 }
 
 sub single_format {
@@ -91,7 +91,7 @@ handle remainder => sub {
     $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
     $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;
     $out =~ s/\[\[(.+?)\]\]/$1/g;
-    return ($multi) ? "" : $out, html => ($multi) ? "<table>$out_html</table>" : $out_html;
+    return ($multi) ? "" : $out, html => ($multi) ? "<table cellpadding=1>$out_html</table>" : $out_html;
 };
 
 1;

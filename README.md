@@ -1,12 +1,11 @@
-DuckDuckHack Goodies
-====
+# DuckDuckHack Goodie Instant Answers
 
-Goodies are DuckDuckGo plugins that work with pure [Perl](https://en.wikipedia.org/wiki/Perl).
+This repository contains all the Goodie instant answers. If you are developing a Goodie instant answer you will need to fork this repository.
+
+**If you would like to contribute to DuckDuckHack, please start by reading the [DuckDuckHack Documentation](https://dukgo.com/duckduckhack/ddh-intro).**
+
+------
+
+### Goodie Instant Answer Example
 
 ![morse code example](https://s3.amazonaws.com/ddg-assets/docs/goodie_example.png)
-
-We recommend starting at the [DuckDuckHack Intro Site](http://duckduckhack.com). If you've read that, but are still looking for more detail, checkout the [DuckDuckHack Goodie Overview](https://github.com/duckduckgo/duckduckgo/blob/master/README.md).
-
-### Writing a Goodie
-
-If you're ready to start writing a Goodie, go to the [Goodies Overview](https://github.com/duckduckgo/duckduckgo#goodies-overview).

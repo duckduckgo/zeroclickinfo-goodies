@@ -6,7 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'epoch';
-zci is_cached => 1;
+zci is_cached => 0;
 
 ddg_goodie_test(
         [qw( DDG::Goodie::Epoch )],
