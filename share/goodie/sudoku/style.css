@@ -1,4 +1,4 @@
-table.sudoku td {
+#zero_click table.sudoku td {
 	width: 1.5em;
 	height: 1.5em;
 	text-align: center;
@@ -6,17 +6,17 @@ table.sudoku td {
 	border: 1px solid rgba(136, 136, 136, 0.478);
 }
 
-table.sudoku tr:nth-of-type(3) td, table.sudoku tr:nth-of-type(6) td
+#zero_click table.sudoku tr:nth-of-type(3) td, table.sudoku tr:nth-of-type(6) td
 {
 	border-bottom: 3px solid rgba(136, 136, 136, 0.478);
 }
 
-table.sudoku td:nth-of-type(3), table.sudoku td:nth-of-type(6)
+#zero_click table.sudoku td:nth-of-type(3), table.sudoku td:nth-of-type(6)
 {
 	border-right: 3px solid rgba(136, 136, 136, 0.478);
 }
 
-table.sudoku input {
+#zero_click table.sudoku input {
 	border: 0px;
 	width: 1em;
 }

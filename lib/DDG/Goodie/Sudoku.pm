@@ -7,32 +7,27 @@ use Games::Sudoku::Component;
 use strict;
 use warnings;
 
-triggers start => 'sudoku';
-triggers end => 'sudoku';
-triggers start => "i'm bored";
-triggers start => 'i am bored';
-triggers start => 'this is boring';
+triggers startend => 'sudoku';
 
 zci is_cached => 0;
 zci answer_type => "sudoku";
 
 primary_example_queries 'sudoku easy';
-secondary_example_queries 'I am bored';
 description 'show a little sudoku you can play in the browser';
+
 name 'Sudoku';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Sudoku.pm';
 category 'random';
 attribution github => ['https://github.com/DrDub', 'DrDub'],
-            web => ['http://duboue.net/', 'Pablo Duboue'];
+            web => ['http://duboue.net/', 'Pablo Duboue'],
+            github => ['https://github.com/mintsoft', 'Rob Emery'];
 
 handle remainder => sub {
-	my($difficulty) = m/^((average)|(medium)|(hard))?$/;
+
+	return unless /^(easy|average|medium|hard|random|generate|play|)$/;
+
+	my($difficulty) = m/^(average|medium|hard)?$/;
 	$difficulty = "easy" unless ($difficulty);
 
-    if(/bored|boring/i){
-        $difficulty = "hard"; 
-    }
-    
     my $sudoku = Games::Sudoku::Component->new(size => 9);
 
     #proportion of the grid to be blank
