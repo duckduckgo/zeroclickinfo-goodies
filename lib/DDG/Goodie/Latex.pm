@@ -26,11 +26,14 @@ my %texCommands = (
 	"not" => ['logical NOT', '\neg', '$\neg B$'],
 	"less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],  
 	"less than" => ['logical less than', '<' , '$A < B$'],
+	"greater than or equal" => ['logical greater than or equal', '\geq', '$A \geq B$'],  
+	"greater than" => ['logical greater than', '>' , '$A > B$'],
 	"union" => ['union', '\cap', '$A \cap B$'],
 	"intersection" => ['intersection', '\cup', '$A \cup B$'],
 	"implication" => ['implication', '\rightarrow', '$A \rightarrow B$'],
 	"iff" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
 	"if and only if" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
+	"subset" => ['subset or subset equal', '\subset or \subseteq', '$A \subset B$'],
 
 	#math functions
 	"sum" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
@@ -60,6 +63,8 @@ my %texCommands = (
 	"subscript" => ['subscript', '_{x}', '$H_{2}O$'],
 	"superscript" => ['superscript', '^{x}', '$x^{2}$'],
 	"temperature" => ['temperature', '^{\circ}', '$25^{circ}\mathrm{c}$'],
+	"temp" => ['temperature', '^{\circ}', '$25^{circ}\mathrm{c}$'],
+	"line" => ['horizontal line', '\hrulefill', '\hrulefill'],
 );
 
 sub build_html{

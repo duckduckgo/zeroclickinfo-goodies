@@ -12,10 +12,10 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::Latex
         )],
-        'latex integral'   => test_zci('Latex integral, Command: \int_lowerbound^upperbound Usage: $\int_a^b f(x)dx$'),
-        "Latex integral" => test_zci('Latex integral, Command: \int_lowerbound^upperbound Usage: $\int_a^b f(x)dx$'),
-        "tex integral" => test_zci('Latex integral, Command: \int_lowerbound^upperbound Usage: $\int_a^b f(x)dx$'),
-	"latex integral" => test_zci('Latex integral, Command: \int_lowerbound^upperbound Usage: $\int_a^b f(x)dx$'),
+        'latex integral'   => test_zci('<i>Command:</i> \sum_{lower}^{upper} <br> <i>Usage:</i> $\sum{i=0}^{10} x^{2}$'),
+        "Latex integral" => test_zci('<i>Command:</i> \sum_{lower}^{upper} <br> <i>Usage:</i> $\sum{i=0}^{10} x^{2}$'),
+        "tex integral" => test_zci('<i>Command:</i> \sum_{lower}^{upper} <br> <i>Usage:</i> $\sum{i=0}^{10} x^{2}$'),
+	"latex integral" => test_zci('<i>Command:</i> \sum_{lower}^{upper} <br> <i>Usage:</i> $\sum{i=0}^{10} x^{2}$'),
 );
 
 done_testing;
