@@ -6,34 +6,36 @@ use DDG::Goodie;
 triggers startend => 'latex', 'Latex', 'tex';
 primary_example_queries 'latex summation';
 description 'Show the Latex command for a keyword';
-category 'programming';
-topics 'programming', 'math';
+category 'cheat_sheets';
+topics 'programming', 'math','special_interest';
 name 'Latex';
-topics 'special_interest';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Latex.pm';
 attribution
     web => ['www.transistor.io', 'Jason Dorweiler'],
     github => [ 'jdorweiler', 'Jason_Dorweiler'];
 
-zci is_cached => 1;
 zci answer_type => 'Latex';
 
 my %texCommands = (
 
 	#Math operators
-	"and" => ['logical AND', '\land', '$A \land B$'], 
+	"and" => ['logical AND', '\land', '$A \land B$'],
 	"or" =>  ['logical OR', '\lor', '$A \lor B$'],
 	"not" => ['logical NOT', '\neg', '$\neg B$'],
-	"less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],  
-	"less than" => ['logical less than', '<' , '$A < B$'],
-	"greater than or equal" => ['logical greater than or equal', '\geq', '$A \geq B$'],  
-	"greater than" => ['logical greater than', '>' , '$A > B$'],
 	"union" => ['union', '\cap', '$A \cap B$'],
 	"intersection" => ['intersection', '\cup', '$A \cup B$'],
 	"implication" => ['implication', '\rightarrow', '$A \rightarrow B$'],
 	"iff" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
 	"if and only if" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
 	"subset" => ['subset or subset equal', '\subset or \subseteq', '$A \subset B$'],
+    "less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],
+	"less than" => ['logical less than', '<' , '$A < B$'],
+    "<=" => ['logical less than or equal', '\leq', '$A \leq B$'],
+	"<" => ['logical less than', '<' , '$A < B$'],
+	"greater than or equal" => ['logical greater than or equal', '\geq', '$A \geq B$'],
+	"greater than" => ['logical greater than', '>' , '$A > B$'],
+	">=" => ['logical greater than or equal', '\geq', '$A \geq B$'],
+	">" => ['logical greater than', '>' , '$A > B$'],
 
 	#math functions
 	"sum" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
@@ -42,7 +44,6 @@ my %texCommands = (
 	"limit" => ['limit', '\lim{bound}', '$\lim{x \to +\infty} 2x^{2}$'],
 	"integral" => ['integral', '\int_lowerbound^upperbound', '$\int_a^b f(x)dx$'],
 	"square root" => ['square root', '\sqrt[n][x]', '$\sqrt[n][x]$'],
-
 
 	#math symbols
 	"infinity" => ['infinity', '\infty', '$\infty$'],
@@ -69,8 +70,8 @@ my %texCommands = (
 
 sub build_html{
 	# builds a string to display using the given $command
-	# and $usage 
-	return "<i>Command:</i> $_[0] <br> <i>Usage:</i> $_[1]";
+	# and $usage
+	return "<i>Command:</i> $_[0] <br> <i>Example Usage:</i> $_[1]";
 }
 
 handle remainder => sub {
@@ -78,13 +79,13 @@ handle remainder => sub {
 	my $command = $texCommands{$key}[1]; #get tex command from hash
 
 	if($command) { #check to see if the key was in the table
-	my $heading = $texCommands{$key}[0];	
-	my $usage = $texCommands{$key}[2];
+        my $heading = $texCommands{$key}[0];
+        my $usage = $texCommands{$key}[2];
 
-	#build the html string to display
-	my $html = build_html($command, $usage);
+        #build the html string to display
+        my $html = build_html($command, $usage);
 
-	return $heading, html => $html, heading => "Latex command ($heading)";
+        return $text, html => $html, heading => "Latex command ($heading)";
 	}
 
 	return; #return if no key was found
