@@ -24,7 +24,7 @@ my %texCommands = (
 	"not" => ['logical NOT', '\neg', '$\neg B$'],
 	"sum" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
 	"summation" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
-  	"less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],  
+	"less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],  
 	"less than" => ['logical less than', '<' , '$A < B$'],
 	"union" => ['union', '\cap', '$A \cap B$'],
 	"intersection" => ['intersection', '\cup', '$A \cup B$'],
@@ -40,23 +40,38 @@ my %texCommands = (
 	"square root" => ['square root', '\sqrt[n][x]', '$\sqrt[n][x]$'],
 	"subscript" => ['subscript', '_{x}', '$H_{2}O$'],
 	"superscript" => ['superscript', '^{x}', '$x^{2}$'],
+
+	#math symbols
 	"dot" => ['center dots', '\cdot or \cdots', '$A+ \cdots +B$'],
-     
+	"alpha" => ['alpha', '\alpha', '$\alpha$'],
+	"delta" => ['delta', '\delta (lower casee) or \Delta (upper case)', '$\delta$'],
+	"zeta" => ['zeta', '\zeta', '$\zeta$'],
+	"lambda" => ['lambda', '\lambda', '$\lambda$'],
+	"xi" => ['xi', '\xi (lower case) or \Xi (upper case)', '$\xi$'],
+	"sigma" => ['sigma', '\sigma (lower case) or \Sigma (upper case)', '$\sigma$'],
 );
 
 sub build_html{
+	# builds a string to display using the given $command
+	# and $usage 
 	return "<i>Command:</i> $_[0] <br> <i>Usage:</i> $_[1]";
 }
 
 handle remainder => sub {
 	my $key = lc $_; #set key to lower case
 	my $command = $texCommands{$key}[1]; #get tex command from hash
+
+	if($command) { #check to see if the key was in the table
 	my $heading = $texCommands{$key}[0];	
 	my $usage = $texCommands{$key}[2];
+
+	#build the html string to display
 	my $html = build_html($command, $usage);
-	#return "Latex $command" if $command;
+
 	return $heading, html => $html, heading => "Latex command ($heading)";
-	return;
+	}
+
+	return; #return if no key was found
 };
 
 1;
