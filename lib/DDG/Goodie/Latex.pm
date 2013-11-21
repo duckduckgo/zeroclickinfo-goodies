@@ -1,5 +1,5 @@
 package DDG::Goodie::Latex;
-# ABSTRACT: Shows the latex command and example usage for a keyword.
+# ABSTRACT: Translate the query into leet speak.
 
 use DDG::Goodie;
 
@@ -12,35 +12,50 @@ name 'Latex';
 topics 'special_interest';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Latex.pm';
 attribution
-    web => [ 'www.transistor.io', 'Jason Dorweiler' ],
-    github => [ 'jdorweiler', 'Jason_Dorweiler' ];
+    web => ['www.transistor.io', 'Jason Dorweiler'],
+    github => [ 'jdorweiler', 'Jason_Dorweiler'];
 
 zci is_cached => 1;
 zci answer_type => 'Latex';
 
 my %texCommands = (
-    "and" => 'logical AND, Command: \land Usage: $A \land B$',
-    "or" => 'logical OR, Command: \lor Usage: $A \lor B$',
-    "not" => 'logical NOT, Command: \neg Usage: $\neg B$',
-    "sum" => 'summation, Command: \sum_{lower}^{upper} Usage: $\sum{i=0}^{10} x^{2}$',
-    "summation" => 'summation, Command: \sum_{lower}^{upper} Usage: $\sum{i=0}^{10} x^{2}$',
-    "less than or equal" => 'logical less than or equal, Command: \leq Usage: $A \leq B$',  
-    "less than" => 'logical less than Command: <, Usage: $A < B$',
-    "union" => 'union, Command: \cap Usage: $A \cap B$',
-    "intersection" => 'intersection, Command: \cup Usage: $A \cup B$',
-    "implication" => 'implication, Command: \rightarrow Usage: $A \rightarrow B$',
-    "iff" => 'if and only if, Command: \leftrightarrow Usage: $A \leftrightarrow B$',
-    "if and only if" => 'if and only if, Command: \leftrightarrow Usage: $A \leftrightarrow B$',
-    "fraction" => 'fraction, Command: \frac{numerator}{denominator} Usage: $\frac{A}{B}$',
-    "limit" => 'limit, Command: \lim{bounds} Usage: $\lim{x \to +\infty} 2x^{2}$',
-    "infinity" => 'infinity, Command: \infty Usage: $\infty$',
-    "integral" => 'integral, Command: \int_lowerbound^upperbound Usage: $\int_a^b f(x)dx$',
+	"and" => ['logical AND', '\land', '$A \land B$'], 
+	"or" =>  ['logical OR', '\lor', '$A \lor B$'],
+	"not" => ['logical NOT', '\neg', '$\neg B$'],
+	"sum" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
+	"summation" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
+  	"less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],  
+	"less than" => ['logical less than', '<' , '$A < B$'],
+	"union" => ['union', '\cap', '$A \cap B$'],
+	"intersection" => ['intersection', '\cup', '$A \cup B$'],
+	"implication" => ['implication', '\rightarrow', '$A \rightarrow B$'],
+	"iff" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
+	"if and only if" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
+	"fraction" => ['fraction', '\frac{numerator}{denominator}', '$\frac{A}{B}$'],
+	"limit" => ['limit', '\lim{bound}', '$\lim{x \to +\infty} 2x^{2}$'],
+	"infinity" => ['infinity', '\infty', '$\infty$'],
+	"integral" => ['integral', '\int_lowerbound^upperbound', '$\int_a^b f(x)dx$'],
+	"date" => ['date', '\today', '\today'],
+	"new line" => ['new line', '\\', 'text... \\'],
+	"square root" => ['square root', '\sqrt[n][x]', '$\sqrt[n][x]$'],
+	"subscript" => ['subscript', '_{x}', '$H_{2}O$'],
+	"superscript" => ['superscript', '^{x}', '$x^{2}$'],
+	"dot" => ['center dots', '\cdot or \cdots', '$A+ \cdots +B$'],
+     
 );
 
+sub build_html{
+	return "<i>Command:</i> $_[0] <br> <i>Usage:</i> $_[1]";
+}
+
 handle remainder => sub {
-	my $key= lc $_; #set key to lower case
-	my $command = $texCommands{$key}; #get tex command from hash
-	return "Latex $command" if $command;
+	my $key = lc $_; #set key to lower case
+	my $command = $texCommands{$key}[1]; #get tex command from hash
+	my $heading = $texCommands{$key}[0];	
+	my $usage = $texCommands{$key}[2];
+	my $html = build_html($command, $usage);
+	#return "Latex $command" if $command;
+	return $heading, html => $html, heading => "Latex command ($heading)";
 	return;
 };
 
