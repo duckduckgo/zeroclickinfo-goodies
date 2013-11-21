@@ -80,13 +80,13 @@ handle remainder => sub {
 
 	if($command) { #check to see if the key was in the table
                 my $heading = $texCommands{$key}[0];
-       	        my $usage = $texCommands{$key}[2];
+                my $usage = $texCommands{$key}[2];
 		my $text = "Command: $command\nExample Usage: $usage";
 
         	#build the html string to display
         	my $html = build_html($command, $usage);
 
-       	        return $text, html => $html, heading => "Latex command ($heading)";
+                return $text, html => $html, heading => "Latex command ($heading)";
 	}
 	return; #return if no key was found
 };
