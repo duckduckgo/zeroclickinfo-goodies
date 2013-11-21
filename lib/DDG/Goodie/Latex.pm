@@ -47,17 +47,19 @@ my %texCommands = (
 	"alpha" => ['alpha', '\alpha', '$\alpha$'],
 	"delta" => ['delta', '\delta (lower casee) or \Delta (upper case)', '$\delta$'],
 	"zeta" => ['zeta', '\zeta', '$\zeta$'],
-	"lambda" => ['lambda', '\lambda', '$\lambda$'],
+	"lambda" => ['lambda', '\lambda (lower case) or \Lambda (upper case)', '$\lambda$'],
 	"xi" => ['xi', '\xi (lower case) or \Xi (upper case)', '$\xi$'],
 	"sigma" => ['sigma', '\sigma (lower case) or \Sigma (upper case)', '$\sigma$'],
 	"phi" => ['phi', '\phi (lower case) or \Phi (upper case)', '$\phi$'],
 	"omega" => ['omega', '\omega (lower case) or \Omega (upper case)', '$\omega$'],
+	"theta" => ['theta', '\theta (lower case) or \Theta (upper case)', '$\theta$'],
 
 	#other
 	"date" => ['date', '\today', '\today'],
 	"new line" => ['new line', '\\', 'text... \\'],
 	"subscript" => ['subscript', '_{x}', '$H_{2}O$'],
 	"superscript" => ['superscript', '^{x}', '$x^{2}$'],
+	"temperature" => ['temperature', '^{\circ}', '$25^{circ}\mathrm{c}$'],
 );
 
 sub build_html{
