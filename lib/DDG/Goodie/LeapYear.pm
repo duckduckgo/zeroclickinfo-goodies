@@ -38,7 +38,7 @@ sub search_leaps {
     my ($num, $direction, $include_curr, $curryear) = @_;
     my $cyear = $curryear;
     my @years = ();
-    if($include_curr eq 0) {
+    if($include_curr == 0) {
         $cyear += $direction;
     }
     while($#years + 1 <= $num) {
@@ -92,7 +92,7 @@ handle remainder => sub {
             $cyear = -$cyear;
         }
         my $dir = 1;
-        if($direction eq "before") {
+        if($direction == "before") {
             $dir = -1;
         }
         my @years = search_leaps(5, $dir, 0, $cyear);
