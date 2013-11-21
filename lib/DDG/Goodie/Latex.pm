@@ -28,9 +28,9 @@ my %texCommands = (
 	"iff" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
 	"if and only if" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
 	"subset" => ['subset or subset equal', '\subset or \subseteq', '$A \subset B$'],
-    	"less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],
+        "less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],
 	"less than" => ['logical less than', '<' , '$A < B$'],
-    	"<=" => ['logical less than or equal', '\leq', '$A \leq B$'],
+        "<=" => ['logical less than or equal', '\leq', '$A \leq B$'],
 	"<" => ['logical less than', '<' , '$A < B$'],
 	"greater than or equal" => ['logical greater than or equal', '\geq', '$A \geq B$'],
 	"greater than" => ['logical greater than', '>' , '$A > B$'],
@@ -79,14 +79,14 @@ handle remainder => sub {
 	my $command = $texCommands{$key}[1]; #get tex command from hash
 
 	if($command) { #check to see if the key was in the table
-        	my $heading = $texCommands{$key}[0];
-       		my $usage = $texCommands{$key}[2];
+                my $heading = $texCommands{$key}[0];
+       	        my $usage = $texCommands{$key}[2];
 		my $text = "Command: $command\nExample Usage: $usage";
 
         	#build the html string to display
         	my $html = build_html($command, $usage);
 
-       		return $text, html => $html, heading => "Latex command ($heading)";
+       	        return $text, html => $html, heading => "Latex command ($heading)";
 	}
 	return; #return if no key was found
 };
