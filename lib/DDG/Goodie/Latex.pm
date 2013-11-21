@@ -12,8 +12,8 @@ name 'Latex';
 topics 'special_interest';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Latex.pm';
 attribution
-    web => ['www.transistor.io', 'Jason Dorweiler'],
-    github => [ 'jdorweiler', 'Jason_Dorweiler'];
+    web => [ 'www.transistor.io', 'Jason Dorweiler' ],
+    github => [ 'jdorweiler', 'Jason_Dorweiler' ];
 
 zci is_cached => 1;
 zci answer_type => 'Latex';
