@@ -1,5 +1,5 @@
 package DDG::Goodie::Latex;
-# ABSTRACT: Translate the query into leet speak.
+# ABSTRACT: Show the Latex command for a keyword
 
 use DDG::Goodie;
 
@@ -19,11 +19,11 @@ zci is_cached => 1;
 zci answer_type => 'Latex';
 
 my %texCommands = (
+
+	#Math operators
 	"and" => ['logical AND', '\land', '$A \land B$'], 
 	"or" =>  ['logical OR', '\lor', '$A \lor B$'],
 	"not" => ['logical NOT', '\neg', '$\neg B$'],
-	"sum" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
-	"summation" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
 	"less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],  
 	"less than" => ['logical less than', '<' , '$A < B$'],
 	"union" => ['union', '\cap', '$A \cap B$'],
@@ -31,17 +31,18 @@ my %texCommands = (
 	"implication" => ['implication', '\rightarrow', '$A \rightarrow B$'],
 	"iff" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
 	"if and only if" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
+
+	#math functions
+	"sum" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
+	"summation" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
 	"fraction" => ['fraction', '\frac{numerator}{denominator}', '$\frac{A}{B}$'],
 	"limit" => ['limit', '\lim{bound}', '$\lim{x \to +\infty} 2x^{2}$'],
-	"infinity" => ['infinity', '\infty', '$\infty$'],
 	"integral" => ['integral', '\int_lowerbound^upperbound', '$\int_a^b f(x)dx$'],
-	"date" => ['date', '\today', '\today'],
-	"new line" => ['new line', '\\', 'text... \\'],
 	"square root" => ['square root', '\sqrt[n][x]', '$\sqrt[n][x]$'],
-	"subscript" => ['subscript', '_{x}', '$H_{2}O$'],
-	"superscript" => ['superscript', '^{x}', '$x^{2}$'],
+
 
 	#math symbols
+	"infinity" => ['infinity', '\infty', '$\infty$'],
 	"dot" => ['center dots', '\cdot or \cdots', '$A+ \cdots +B$'],
 	"alpha" => ['alpha', '\alpha', '$\alpha$'],
 	"delta" => ['delta', '\delta (lower casee) or \Delta (upper case)', '$\delta$'],
@@ -49,6 +50,14 @@ my %texCommands = (
 	"lambda" => ['lambda', '\lambda', '$\lambda$'],
 	"xi" => ['xi', '\xi (lower case) or \Xi (upper case)', '$\xi$'],
 	"sigma" => ['sigma', '\sigma (lower case) or \Sigma (upper case)', '$\sigma$'],
+	"phi" => ['phi', '\phi (lower case) or \Phi (upper case)', '$\phi$'],
+	"omega" => ['omega', '\omega (lower case) or \Omega (upper case)', '$\omega$'],
+
+	#other
+	"date" => ['date', '\today', '\today'],
+	"new line" => ['new line', '\\', 'text... \\'],
+	"subscript" => ['subscript', '_{x}', '$H_{2}O$'],
+	"superscript" => ['superscript', '^{x}', '$x^{2}$'],
 );
 
 sub build_html{
