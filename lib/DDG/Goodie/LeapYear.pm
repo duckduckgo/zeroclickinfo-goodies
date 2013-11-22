@@ -2,20 +2,18 @@ package DDG::Goodie::LeapYear;
 # ABSTRACT: Check if a year is leap year
 use DDG::Goodie;
 use Date::Leapyear;
-use strict;
-use warnings;
 
 zci answer_type => "leap_year";
-zci is_cached => 1;
 
 primary_example_queries 'is it a leap year';
 secondary_example_queries 'when were the last 50 leap years';
 description 'Check if it is a leap year';
 name 'Leap year';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/LeapYear.pm';
-category 'calculations';
+category 'dates';
 topics 'everyday';
-attribution github => [ 'https://github.com/tophattedcoder', 'Tom Bebbington'];
+attribution github => [ 'https://github.com/tophattedcoder', 'Tom Bebbington'],
+twitter => '@tophattedcoder';
 
 triggers startend => 'leap years', 'leap year';
 # 'is' in tenses
@@ -124,7 +122,7 @@ handle remainder => sub {
         } else {
             return "$fyear $is_not_tense{$tense} a leap year";
         }
-    } elsif($_ =~ /^is it( now | currently)? a$/i) {
+    } elsif($_ =~ /^is it( now | currently)? a|are we in a$/i) {
         my $fyear = format_year($year);
         if(isleap($year)) {
             return "$fyear is a leap year";
