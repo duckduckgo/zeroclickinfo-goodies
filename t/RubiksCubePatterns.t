@@ -31,6 +31,11 @@ ddg_goodie_test(
         	"Cube in a Cube in a Cube: U' L' U' F' R2 B' R F U B2 U B' L U' F U R F' \n",
         	"html" => "<div><i>Cube in a Cube in a Cube</i>: U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'</div>\n"
         ),
+        "rubik's cube patterns" => test_zci(
+        	qr/.+: .+/s,
+        	"html" => qr{<div><i>.+</i>: .+</div>}s,
+        	"heading" => "Rubik's Cube Patterns"
+        ),
 );
 
 done_testing;

@@ -16,7 +16,8 @@ attribution web => ['robert.io', 'Robert Picard'], twitter => '__rlp', github =>
 
 triggers start =>	"rcube", "rubik", "rubiks", "rubix", 
 					"rubicks", "rubik's", "rubic's", "rubick's", 
-					"rubik cube", "rubiks cube", "rubic cube", "rubics cube";
+					"rubik cube", "rubiks cube", "rubic cube", "rubics cube",
+					"rubik's cube patterns", "rubiks cube patterns";
 
 zci answer_type => "rubiks_cube";
 
