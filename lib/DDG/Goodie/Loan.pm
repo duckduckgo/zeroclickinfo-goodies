@@ -6,7 +6,6 @@ use Locale::Currency::Format;
 
 triggers any => 'loan';
 
-zci is_cached => 1;
 zci answer_type => 'loan';
 
 primary_example_queries 'loan $500000 at 4.5% with 20% down';
