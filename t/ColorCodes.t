@@ -36,6 +36,14 @@ ddg_goodie_test(
     	'Hex: #00ff00 ~ rgb(0, 255, 0) ~ rgb(0%, 100%, 0%) ~ hsl(120, 100%, 50%) ~ cmyb(100%, 0%, 100%, 0%)', 
     	html => qq(<div style="background:#00ff00;border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>Hex: #00ff00 ~ rgb(0, 255, 0) ~ rgb(0%, 100%, 0%) ~ hsl(120, 100%, 50%) ~ cmyb(100%, 0%, 100%, 0%) [<a href='http://labs.tineye.com/multicolr#colors=00ff00;weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/00ff00' title='Tints, information and similar colors on color-hex.com'>Info</a>])
     ),
+    'inverse of the color red' => test_zci(
+        'Hex: #00ffff ~ rgb(0, 255, 255) ~ rgb(0%, 100%, 100%) ~ hsl(180, 100%, 50%) ~ cmyb(100%, 0%, 0%, 0%)',
+        html => qq(<div style="background:#00ffff;border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>Hex: #00ffff ~ rgb(0, 255, 255) ~ rgb(0%, 100%, 100%) ~ hsl(180, 100%, 50%) ~ cmyb(100%, 0%, 0%, 0%) [<a href='http://labs.tineye.com/multicolr#colors=00ffff;weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/00ffff' title='Tints, information and similar colors on color-hex.com'>Info</a>]),
+    ),
+    'rgb(0 255 0)\'s inverse' => test_zci(
+        'Hex: #ff00ff ~ rgb(255, 0, 255) ~ rgb(100%, 0%, 100%) ~ hsl(300, 100%, 50%) ~ cmyb(0%, 100%, 0%, 0%)',
+        html => qq(<div style="background:#ff00ff;border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>Hex: #ff00ff ~ rgb(255, 0, 255) ~ rgb(100%, 0%, 100%) ~ hsl(300, 100%, 50%) ~ cmyb(0%, 100%, 0%, 0%) [<a href='http://labs.tineye.com/multicolr#colors=ff00ff;weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/ff00ff' title='Tints, information and similar colors on color-hex.com'>Info</a>]),
+    ),
 );
 
 done_testing;

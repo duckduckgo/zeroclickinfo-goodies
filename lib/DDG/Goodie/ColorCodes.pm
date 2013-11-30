@@ -3,6 +3,7 @@ package DDG::Goodie::ColorCodes;
 use DDG::Goodie;
 use Convert::Color;
 use Convert::Color::Library;
+use Convert::Color::RGB8;
 use Math::Round;
 
 my %types = ( # hash of keyword => Convert::Color prefix
@@ -22,10 +23,15 @@ my $typestr = join '|', sort { length $b <=> length $a } keys %types;
 $typestr =~ s/([#\^\$\*\+\?])/\\$1/g;
 
 triggers query_raw => qr/^
-    (?:(.+)\s+(.+)\s+colou?r(?:\s+code)?|          # handles "rgb red color code", "red rgb color code", etc
-    (.+)\s+colou?r(?:\s+code)?(?:\s+for)?\s+(.+)|  # handles "rgb color code for red", "red color code for html", etc
-    ($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
-    \#?([0-9a-f]{6})|\#([0-9a-f]{3}))              # handles #00f, #0000ff, etc
+    (?:what(?:\si|'?)s \s* (?:the)? \s+)? # what's the, whats the, what is the, what's, what is, whats
+    (?:(inverse|negative|opposite)\s+(?:of)?)?
+    (?:
+        (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|             # handles "rgb red color code", "red rgb color code", etc
+        (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|  # handles "rgb color code for red", "red color code for html", etc
+        (.*?)($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        \#?([0-9a-f]{6})|\#([0-9a-f]{3})               # handles #00f, #0000ff, etc
+    )
+    (?:(?:'?s)?\s+(inverse|negative|opposite))?
     $/ix;
 
 zci is_cached => 1;
@@ -50,12 +56,22 @@ sub percentify {
 handle matches => sub {
     my $type;
     my $color;
+    my $inverse;
+
     for (@_) {
         next unless defined $_;
         my $q = lc;
         $type = $types{$q} if exists $types{$q};
-        $color = $q unless defined $type && exists $types{$q};
+
+        if ($q =~ /\b(?:inverse|negative|opposite|code)\b/) {
+            $inverse = 1;
+        } 
+        
+        else {
+            $color = $q unless defined $type && exists $types{$q};
+        }
     }
+    $type //= 'rgb8';
 
     my @colorin = split /(?:,\s*|\s+)/, $color;
     my @colorout;
@@ -91,6 +107,11 @@ handle matches => sub {
     my $col;
     eval { $col = Convert::Color->new("$type:$color"); };
     return if $@;
+
+    if ($inverse) {
+        my $rgb = $col->as_rgb8;
+        $col = Convert::Color::RGB8->new(255 - $rgb->red, 255 - $rgb->green, 255 - $rgb->blue);
+    }
 
     my $rgb = $col->as_rgb8;
     my $hsl = $col->as_hsl;
