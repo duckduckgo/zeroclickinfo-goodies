@@ -1,6 +1,7 @@
 package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
+use bignum;
 
 zci is_cached => 1;
 zci answer_type => "calc";
@@ -110,7 +111,7 @@ handle query_nowhitespace => sub {
 
                 $tmp_result = sprintf( '%0.' . $precisian . 'f', $tmp_result ) if $precisian;
             }
-        
+
             # Dollars.
             if ($query =~ /^\$/) {
                 $tmp_result = qq(\$$tmp_result);
