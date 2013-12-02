@@ -6,7 +6,6 @@ use DDG::Goodie;
 
 triggers end => "hz","khz","mhz","ghz","thz","hertz","kilohertz","gigahertz","megahertz","terahertz";
 
-zci is_cached => 1;
 zci answer_type => "frequency_spectrum";
 
 primary_example_queries '50 hz';
@@ -19,6 +18,11 @@ topics 'science';
 attribution web => "https://machinepublishers.com",
             twitter => 'machinepub';
 
+use constant THOUSAND => 1000;
+use constant MILLION => 1000000;
+use constant BILLION => 1000000000;
+use constant TRILLION => 1000000000000;
+
 handle query => sub {
   return unless $_ =~ m/^[\d,.]+\s\w+$/;
   return unless my $freq = normalize_freq($_);
@@ -30,30 +34,30 @@ handle query => sub {
   if($freq =~ m/^(.+?)\s(?:hz|hertz)$/i){
     $freq_hz = $1;
   }elsif($freq =~ m/^(.+?)\s(?:khz|kilohertz)$/i){
-    $freq_hz = $1 * 1000;
+    $freq_hz = $1 * THOUSAND;
   }elsif($freq =~ m/^(.+?)\s(?:mhz|megahertz)$/i){
-    $freq_hz = $1 * 1000000;
+    $freq_hz = $1 * MILLION;
   }elsif($freq =~ m/^(.+?)\s(?:ghz|gigahertz)$/i){
-    $freq_hz = $1 * 1000000000;
+    $freq_hz = $1 * BILLION;
   }elsif($freq =~ m/^(.+?)\s(?:thz|terahertz)$/i){
-    $freq_hz = $1 * 1000000000000;
+    $freq_hz = $1 * TRILLION;
   }else{
     #unexpected case
     return;
   }
   
-  if($freq_hz >= 1000000000000){
+  if($freq_hz >= TRILLION){
     $hz_abbrev = "THz";
-    $freq_formatted = $freq_hz / 1000000000000;
-  }elsif($freq_hz >= 1000000000){
+    $freq_formatted = $freq_hz / TRILLION;
+  }elsif($freq_hz >= BILLION){
     $hz_abbrev = "GHz";
-    $freq_formatted = $freq_hz / 1000000000;
-  }elsif($freq_hz >= 1000000){
+    $freq_formatted = $freq_hz / BILLION;
+  }elsif($freq_hz >= MILLION){
     $hz_abbrev = "MHz";
-    $freq_formatted = $freq_hz / 1000000;
-  }elsif($freq_hz >= 1000){
+    $freq_formatted = $freq_hz / MILLION;
+  }elsif($freq_hz >= THOUSAND){
     $hz_abbrev = "kHz";
-    $freq_formatted = $freq_hz / 1000;
+    $freq_formatted = $freq_hz / THOUSAND;
   }else{
     $hz_abbrev = "Hz";
     $freq_formatted = $freq_hz;
@@ -67,7 +71,10 @@ handle query => sub {
 
 sub normalize_freq{
   my $freq = $_;
-  if($freq =~ m/^[\d]+(\.\d+)?\s\w+$/){
+  if($freq =~ m/(?:\.\.)|(?:,,)/){
+    #consecutive dots or commas are not allowed
+    return;
+  }elsif($freq =~ m/^[\d]+(\.\d+)?\s\w+$/){
     #only digits and one dot are present,
     #presume they're in perl number notation and do nothing
   }elsif($freq =~ m/^[\d]+(,\d+)?\s\w+$/){
@@ -106,12 +113,12 @@ sub prepare_result{
   my $instruments = matches_in_ranges($freq_hz, instrument_ranges()) unless $color;
   my $text_result = "";
   if($radio){
-    $text_result = $freq . " is a radio frequency in the " . $radio . " band.";
+    $text_result = $freq . " is a radio frequency in the " . $radio;
   }elsif($color){
     $text_result = $freq . " is an electromagnetic frequency of " . $color . " light.";
   }
   if($instruments){
-    $instruments =~ s/,\s(\w+)$/, and $1/;
+    $instruments =~ s/,\s([a-zA-Z\s-]+)$/, and $1/;
     if($radio){
       $text_result = $text_result . "\n" . $freq . " is also an audible frequency which can be produced by " . $instruments . ".";
     }else{
@@ -130,18 +137,18 @@ sub prepare_result{
 sub radio_ranges(){
   #reference: https://en.wikipedia.org/wiki/Radio_spectrum
   return [
-    [ "3", "29", "ELF" ],
-    [ "30", "299", "SLF" ],
-    [ "300", "2999", "ULF" ],
-    [ "3000", "29999", "VLF" ],
-    [ "30000", "299999", "LF" ],
-    [ "300000", "2999999", "MF" ],
-    [ "3000000", "29999999", "HF" ],
-    [ "30000000", "299999999", "VHF" ],
-    [ "300000000", "2999999999", "UHF" ],
-    [ "3000000000", "29999999999", "SHF" ],
-    [ "30000000000", "299999999999", "EHF" ],
-    [ "300000000000", "3000000000000", "THF" ],
+    [ "3", "29", "ELF band used by pipeline inspection gauges."],
+    [ "30", "299", "SLF band used by submarine communication systems."],
+    [ "300", "2999", "ULF band used by mine cave communication systems."],
+    [ "3000", "29999", "VLF band used by government time stations and navigation systems."],
+    [ "30000", "299999", "LF band used by AM broadcasts, government time stations, navigation systems, and weather alert systems."],
+    [ "300000", "2999999", "MF band used by AM broadcasts, navigation systems, and ship-to-shore communication systems."],
+    [ "3000000", "29999999", "HF band used by international shortwave broadcasts, aviation systems, government time stations, weather stations, and amateur radio."],
+    [ "30000000", "299999999", "VHF band used by FM broadcasts, televisions, amateur radio, marine communication systems, and air traffic control."],
+    [ "300000000", "2999999999", "UHF band used by televisions, cordless phones, cell phones, pagers, walkie-talkies, and satellites."],
+    [ "3000000000", "29999999999", "SHF band used by microwave ovens, wireless LANs, cell phones, and satellites."],
+    [ "30000000000", "299999999999", "EHF band used by radio telescopes, security screening systems, and point-to-point high-bandwidth devices."],
+    [ "300000000000", "3000000000000", "THF band used by satellites and radio telescopes."],
     ];
 };
 
