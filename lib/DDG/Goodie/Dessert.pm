@@ -13,6 +13,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'food';
 topics 'food_and_drink', 'special_interest';
 attribution github => ['https://github.com/kennydude', 'kennydude'];
+source 'http://food.sulekha.com/dishes/course/desserts/alphabets/a.htm';
 
 triggers start => 'dessert', 'desserts', 'a dessert';
 
