@@ -1,6 +1,7 @@
 package DDG::Goodie::Dessert;
 
 use DDG::Goodie;
+use utf8;
 
 zci answer_type => 'dessert';
 zci is_cached => 0;
