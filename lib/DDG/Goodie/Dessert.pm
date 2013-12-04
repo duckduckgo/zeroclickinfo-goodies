@@ -38,12 +38,12 @@ sub itemify {
 
 # This is our list of desserts.
 my %desserts = (
-	a => ['Apple Turnover'],
-	b => ['Banana Split', 'Biscuits'],
-	c => ['Cherry Pie', 'Cupcake', 'Chocolate'],
-	d => ['Donut'],
-	e => ['Eclair'],
-	f => ['Froyo', 'Fudge'],
+	a => ['Apple Turnover', 'Apple Almond Pancake', 'Amaretto Pumpkin Pie', 'Apple Ice Cream', 'Almond Banana Pie', 'Apricot Cherry Compote', 'Autumn Maple Cutout Cookies', 'Apricot Glaze'],
+	b => ['Banana Split', 'Banana Fritters', 'Butterscotch Ice Cream', 'Baklava', 'Brazo de Mercedes', 'Black Forest Trifles', 'Brownie Pie', 'Bibingka', 'Button Cookies', 'Buttermilk Pancake'],
+	c => ['Cherry Pie', 'Cupcake', 'Chocolate Sundae', 'Caramelized Apple Pie', 'Coffee Walnut Cake', 'Chiffon Cake', 'Cream Puffs', 'Cherry Crunch', 'Creme Brulee', 'Chocolate Mousse'],
+	d => ['Dark Chocolate Souffle', 'Doughnut', 'Date Pudding', 'Date and Walnut Cookies', 'Double-Vanilla Meringue Cookies'],
+	e => ['Eclair', 'Espresso Cake', 'Easter Bunny Cake', 'Espresso Meringue'],
+	f => ['Froyo', 'Fudge Rolls', 'Fig and Honey Ice Cream', 'Fruit Salad', 'Frozen Mango Yogurt', 'Fuzzy Navel Cake', 'Fruit Bar', 'Fried Ice Cream', 'Fruit Flan', 'Fresh Cream Pineapple'],
 	g => ['Gingerbread'],
 	h => ['Hazelnut Torte'],
 	i => ['Ice Cream Sandwich', 'Ice Cream'],
