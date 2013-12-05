@@ -183,8 +183,13 @@ sub difference_between($$) {
 	return ord($b) - ord($a);
 }
 
-handle remainder => sub {
-		
+sub append_css {
+    my $html = shift;
+    my $css = scalar share("style.css")->slurp;
+    return "<style type='text/css'>$css</style>\n" . $html;
+}
+
+handle remainder => sub {		
 	# If the user has requested information on a specific pattern.
 	if (length $_ > 0) {
 		my $syntax_key = $_;
@@ -230,15 +235,6 @@ handle remainder => sub {
 	
 	my $text_output = '';
 	
-	# Style assigned to the outside wrapper div (around all content).
-	my $div_wrapper_style = 'max-height: 45ex; overflow-y: scroll; overflow-x: hidden';
-	
-	# Style assigned to the wrapper column divs
-	my $div_column_style = 'width: 48%; display: inline-block; vertical-align: top;';
-	
-	# Style assigned to each table of results (Anchors, Quantifiers etc)
-	my $table_style = 'width: 100%; margin-bottom: 1ex;';
-		
 	# Content of the div column wrapper.
 	my @html_columns = ();
 	
@@ -253,7 +249,7 @@ handle remainder => sub {
 
 	for(my $column = 0; $column < scalar(@category_column); ++$column) {
 		for my $category  (@{$category_column[$column]}) {
-	    	my $new_table = "<table style='$table_style'><b>$category</b>";
+	    	my $new_table = "<table class='regex-table'><b>$category</b>";
 
 			$text_output .= "$category\n";
 
@@ -268,10 +264,10 @@ handle remainder => sub {
 		}
 	}
 	
-	my $html_output = "<div style='$div_wrapper_style'><div style='$div_column_style'>";
-	$html_output .= join ("</div><div style='$div_column_style'>", @html_columns);
+	my $html_output = "<div id='regex-container'><div class='regex-column'>";
+	$html_output .= join ("</div><div class='regex-column'>", @html_columns);
 	$html_output .= "</div></div>";
-	return answer => $text_output, html => $html_output;
+	return answer => $text_output, html => append_css($html_output);
 };
 
 1;
