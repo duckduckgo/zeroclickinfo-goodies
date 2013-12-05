@@ -38,7 +38,7 @@ triggers start =>
     'regex reference',
     'regular expression reference';
 
-triggers end => "regex";
+triggers end => "regex", "regexp";
 
 attribution github => ['https://github.com/mintsoft', 'mintsoft'];
 primary_example_queries 'regex';
