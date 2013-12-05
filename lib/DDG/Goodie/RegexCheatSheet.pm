@@ -189,7 +189,9 @@ sub append_css {
     return "<style type='text/css'>$css</style>\n" . $html;
 }
 
-handle remainder => sub {		
+handle remainder => sub {
+        my $heading = 'Regex Cheat Sheet';
+
 	# If the user has requested information on a specific pattern.
 	if (length $_ > 0) {
 		my $syntax_key = $_;
@@ -206,29 +208,33 @@ handle remainder => sub {
 				$range_string = join(" or ", ($1..$2)[0,1]) . " ... or $2";
 			}
 			return answer => "$_ - Single character range ($range_string)",
-				html => "<code> $_ </code> - Single character range ($range_string)";
+			       html => "<code> $_ </code> - Single character range ($range_string)",
+			       heading => $heading;
 		}
 		# Let the user provide a number for the {n} pattern, e.g., {5} would say "Exactly 5 occurrences".
 		elsif ($_ =~ /\{([0-9]+)\}/) {
 			return answer => "$_ - Exactly $1 occurrences",
-				html => "<code>" . encode_entities($_) . "</code> - Exactly " .  encode_entities($_) . " occurrences";
+			       html => "<code>" . encode_entities($_) . "</code> - Exactly " .  encode_entities($_) . " occurrences",
+			       heading => $heading;
 		}
 		# Let the user provide numbers for {n,} and {n,m}, e.g., {4,} would say "4 or more occurrences".
 		elsif ($_ =~ /\{([0-9]+),([0-9]+)?\}/) {
 			if ($2) {
 				return unless ($1 < $2);
 				return answer => "$_ - Between $1 and $2 occurrences", 
-						html => "<code>" . encode_entities($_) . "</code> - Between $1 and $2 occurrences";
+				       html => "<code>" . encode_entities($_) . "</code> - Between $1 and $2 occurrences",
+				       heading => $heading;
 			}
 			return answer => "$_ - $1 or more", 
-		    		html =>  "<code> " . encode_entities($_) . " </code> - $1 or more occurrences";
+		    	       html =>  "<code> " . encode_entities($_) . " </code> - $1 or more occurrences",
+			       heading => $heading;
 		}
 		# Check our map if it's in our list of regex patterns.
 		return unless $syntax_map{$syntax_key};
 	
 		my $text_output = "$_ - $syntax_map{$syntax_key}";
 		my $html_output = "<code> " . encode_entities($_) . " </code> - " . encode_entities($syntax_map{$syntax_key});
-		return answer => $text_output, html => $html_output;
+		return answer => $text_output, html => $html_output, heading => $heading;
 	}
 	
 	# Otherwise display the complete tabular output, into n columns in the order specified.
@@ -267,7 +273,7 @@ handle remainder => sub {
 	my $html_output = "<div id='regex-container'><div class='regex-column'>";
 	$html_output .= join ("</div><div class='regex-column'>", @html_columns);
 	$html_output .= "</div></div>";
-	return answer => $text_output, html => append_css($html_output), heading => 'Regex Cheat Sheet';
+	return answer => $text_output, html => append_css($html_output), heading => $heading;
 };
 
 1;
