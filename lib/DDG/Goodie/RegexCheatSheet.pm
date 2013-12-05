@@ -267,7 +267,7 @@ handle remainder => sub {
 	my $html_output = "<div id='regex-container'><div class='regex-column'>";
 	$html_output .= join ("</div><div class='regex-column'>", @html_columns);
 	$html_output .= "</div></div>";
-	return answer => $text_output, html => append_css($html_output);
+	return answer => $text_output, html => append_css($html_output), heading => 'Regex Cheat Sheet';
 };
 
 1;

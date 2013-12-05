@@ -24,3 +24,9 @@
     width: 100%;
     margin-bottom: 1ex;
 }
+
+@media (max-width: 380px) {
+    #zero_click_abstract .regex-column {
+	width: 100%;
+    }
+}
