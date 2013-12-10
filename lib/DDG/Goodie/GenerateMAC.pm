@@ -12,7 +12,8 @@ primary_example_queries 'please generate mac';
 description 'generates a MAC address';
 name "GenerateMAC";
 
-attribution github => [ 'https://github.com/UnGround', 'Charlie Belmer' ];
+attribution github => [ 'https://github.com/UnGround', 'Charlie Belmer' ],
+			web => ['http://www.charliebelmer.com','Charlie Belmer'];;
 
 handle remainder => sub {
 	my $address = join(':', map {sprintf '%0.2X', rand(255)}(1..6));
