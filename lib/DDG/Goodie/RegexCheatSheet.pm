@@ -212,13 +212,13 @@ handle remainder => sub {
 			       heading => $heading;
 		}
 		# Let the user provide a number for the {n} pattern, e.g., {5} would say "Exactly 5 occurrences".
-		elsif ($_ =~ /\{([0-9]+)\}/) {
+		elsif ($_ =~ /^\{([0-9]+)\}$/) {
 			return answer => "$_ - Exactly $1 occurrences",
 			       html => "<code>" . encode_entities($_) . "</code> - Exactly " .  encode_entities($_) . " occurrences",
 			       heading => $heading;
 		}
 		# Let the user provide numbers for {n,} and {n,m}, e.g., {4,} would say "4 or more occurrences".
-		elsif ($_ =~ /\{([0-9]+),([0-9]+)?\}/) {
+		elsif ($_ =~ /^\{([0-9]+),([0-9]+)?\}$/) {
 			if ($2) {
 				return unless ($1 < $2);
 				return answer => "$_ - Between $1 and $2 occurrences", 
