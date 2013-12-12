@@ -2,10 +2,14 @@ package DDG::Goodie::Dessert;
 
 use DDG::Goodie;
 use utf8;
+use warnings;
+use strict;
 
 zci answer_type => 'dessert';
+# We add is_cached so that we get different results for the same query.
 zci is_cached => 0;
 
+# Metadata for our instant answer.
 primary_example_queries 'a dessert that starts with the letter a';
 secondary_example_queries 'dessert that begins with the letter z';
 description 'Returns a dessert given a letter.';
