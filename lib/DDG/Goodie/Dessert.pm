@@ -75,7 +75,7 @@ sub begins_with {
 
     # We're getting the first letter, and we're going to use that as our key.
     # This should be faster since we don't go through every dessert in the hash.
-    my $letter = substr($query, 0, 1);
+    my $letter = lc substr($query, 0, 1);
 
     # Check if a value exists given our key.
     if(exists $desserts{$letter}) {
