@@ -2,10 +2,14 @@ package DDG::Goodie::Dessert;
 
 use DDG::Goodie;
 use utf8;
+use warnings;
+use strict;
 
 zci answer_type => 'dessert';
+# We add is_cached so that we get different results for the same query.
 zci is_cached => 0;
 
+# Metadata for our instant answer.
 primary_example_queries 'a dessert that starts with the letter a';
 secondary_example_queries 'dessert that begins with the letter z';
 description 'Returns a dessert given a letter.';
@@ -18,23 +22,24 @@ source 'http://food.sulekha.com/dishes/course/desserts/alphabets/a.htm';
 
 triggers start => 'dessert', 'desserts', 'a dessert';
 
+# Returns HTML version of our dessert.
+sub to_html {
+    my $dessert_name = shift;
+    my $dessert_link = $dessert_name;
+    $dessert_link =~ s/\s/+/g;
+
+    return "<a href='http://duckduckgo.com/?q=$dessert_link+recipe'>" . $dessert_name . "</a>";
+}
+
 # This function picks a dessert from our lists.
 sub itemify {
     # This has our list of desserts.
-    my @dessert_list = @{$_[0]};
-    # This tells us if we should add an anchor tag or not.
-    # We do this because we have two different outputs: HTML and plain text.
-    my $is_html = $_[1];
+    my ($dessert_list, $end) = @_;
 
-    my $i = rand scalar @dessert_list;
-    my $dessert = $dessert_list[$i];
+    my $i = rand scalar @{$dessert_list};
+    my $dessert = $dessert_list->[$i];
 
-    if($is_html) {
-	# Encode spaces so that we can use it as a link.
-	$dessert =~ s/\s/+/g;
-	return "<a href='http://duckduckgo.com/?q=$dessert+recipe'>" . $dessert_list[$i] . "</a>";
-    }
-    return $dessert;
+    return $dessert . $end, html => to_html($dessert) . $end;
 };
 
 # This is our list of desserts.
@@ -56,7 +61,7 @@ my %desserts = (
 	o => ['Oatmeal Pie', 'Oreos', 'Orange Muffins', 'Oreo Cookie Cheesecake', 'Orange Chiffon Cake', 'Olympic Gold Medal Cookies'],
 	p => ['Profiteroles', 'Pop Tart', 'Pumpkin Pie', 'Pineapple Cake', 'Pistachio Ice Cream', 'Peanut Butter Cupcakes', 'Plum Pudding', 'Pumpkin Fudge'],
 	q => ['Quiche', 'Quinoa Apple Pie', 'Queen of Puddings', 'Quebec Sugar Pie'],
-	r => ['Rocky Road','Red Velvet Cake','Rhubarb and Custard', 'Raisin Muffins', 'Raspberry Jam Hearts', 'Rainbow Cake', 'Rice Pudding', 'Rum Cake'],
+	r => ['Rocky Road','Red Velvet Cake','Rhubarb and Custard', 'Raisin Muffins', 'Raspberry Jam Hearts', 'Rainbow Cake', 'Rice Pudding', 'Rum Cake', 'Rugelach'],
 	s => ['Sundae', 'Strudel', 'Strawberries and Cream', 'Soufflé', 'Sponge Cake', 'Strawberry Trifle', 'Sweet Potato Pudding', 'Stuffed Granny Smiths'],
 	t => ['Tiramisu', 'Trifle', 'Twinkies', 'Taffy', 'Toffee Bars', 'Tropical Paradise Pancakes', 'Tangerine Creme Brulee', 'Tres Leches Cake', 'Tea Cake'],
 	u => ['Upside-down cake', 'Unbaked Chocolate Cookies', 'Ultimate Chocolate Cake', 'Upside Down Orange Cake'],
@@ -67,18 +72,42 @@ my %desserts = (
 	z => ['Zeppole', 'Zucchini Cake', 'Zebra-Stripe Cheesecake'],
 );
 
-handle remainder => sub {
-    if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? ?(?:with)? (?:the letter )?([a-zA-Z])$/i) {
-	my $in = lc $1;
-	my $items = $desserts{lc $in};
+# This function checks if the query string matches the beginning of one of the desserts.
+sub begins_with {
+    my @items = ();
+    my $query = shift;
 
-	my $end = " is a dessert that begins with the letter " . uc $in . '.';
+    # We're getting the first letter, and we're going to use that as our key.
+    # This should be faster since we don't go through every dessert in the hash.
+    my $letter = lc substr($query, 0, 1);
 
-	my $html_output = itemify($items, 1) . $end;
-	my $text_output = itemify($items, 0) . $end;
-	
-	return $text_output, html => $html_output;
+    # Check if a value exists given our key.
+    if(exists $desserts{$letter}) {
+	my $value = $desserts{$letter};
+
+	# Check if a certain dessert begins with our query string.
+	for my $dessert (@{$value}) {
+	    if($dessert =~ /^$query/i) {
+		push @items, $dessert;
+	    }
+	}
     }
+
+    return @items;
+}
+
+handle remainder => sub {
+    # Check the query. See if it matches this regular expression.
+    if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? (?:with)? (the letter )?([a-z].*)$/i) {
+	# Check which desserts begin with this letter (or word).
+	my @items = begins_with($2);
+
+	# Check if we found any results.
+	if(@items > 0) {
+	    return itemify(\@items, " is a dessert that begins with '$2'.");
+	}
+    }
+
     return;
 };
 
