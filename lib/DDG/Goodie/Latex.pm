@@ -3,7 +3,7 @@ package DDG::Goodie::Latex;
 
 use DDG::Goodie;
 
-triggers startend => 'latex', 'Latex', 'tex';
+triggers startend => 'latex', 'tex';
 primary_example_queries 'latex summation';
 description 'Show the Latex command for a keyword';
 category 'cheat_sheets';
