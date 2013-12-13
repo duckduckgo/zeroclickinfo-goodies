@@ -39,12 +39,14 @@ my %supported_currency_codes = ( );
 # This is pretty imprecise. Assume USD if a $ is used. More assumptions can be added here later to priorize 
 # currency guessing. Perhaps location data can be used to break ties. 
 sub convert_symbol_to_currency {
-	my $symbol = shift;
-	if ($symbol eq "\$") {
-		return "USD";
-	} else {
-		return $symbol_to_currency{$symbol};
-	}
+	my ($symbol, $country) = @_;
+	my @syms = @{$symbol_to_currency{$symbol} // []};
+	return "USD" unless @syms;
+	return $syms[0] if @syms == 1 or !$country;
+
+	my @matches = grep { $_ eq $country_to_currency{$country} } @syms;
+	return $matches[0] if @matches;
+	return $syms[0];
 }
 
 # Given the country code and currency formatting rules, the input can be made ready to convert
@@ -54,8 +56,8 @@ sub convert_symbol_to_currency {
 sub normalize_formatted_currency_string {
 	my ($str, $currency_code) = @_;
 	
-	my $thousands_separator = thousands_separator($currency_code);
-	my $decimal_separator = decimal_separator($currency_code);
+	my $thousands_separator = thousands_separator($currency_code) // ',';
+	my $decimal_separator = decimal_separator($currency_code) // '.';
 	
 	$str =~ s/\Q$thousands_separator//g;
 	if ($decimal_separator ne ".") {
@@ -122,9 +124,9 @@ handle remainder => sub {
 		if (defined $input_currency_code && exists $supported_currency_codes{$input_currency_code}) {
 			$currency_code = $input_currency_code;
 		} elsif (defined $symbol) {
-			$currency_code = convert_symbol_to_currency($symbol);
+			$currency_code = convert_symbol_to_currency($symbol, lc $loc->country_code);
 		} elsif (defined $loc->country_code) {
-			$currency_code = $country_to_currency{$loc->country_code} || $country_to_currency{"us"};
+			$currency_code = $country_to_currency{lc $loc->country_code} || $country_to_currency{"us"};
 			$symbol = currency_symbol($currency_code);
 		}
 
@@ -404,21 +406,244 @@ handle remainder => sub {
 	'zr' => 'XAF',
 	'zw' => 'ZWD');
 
-# Build the mapping of symbol to currency name
+%symbol_to_currency = (
+	"\x{20a1}" => [
+		"CRC",
+	],
+	"Ls" => [
+		"LVL",
+	],
+	"TT\$" => [
+		"TTD",
+	],
+	"\x{20ae}" => [
+		"MNT",
+	],
+	"\x{043b}\x{0432}" => [
+		"BGN",
+		"KZT",
+		"KGS",
+		"UZS",
+	],
+	"Z\$" => [
+		"ZWD",
+	],
+	"\x{0e3f}" => [
+		"THB",
+	],
+	"CHF" => [
+		"CHF",
+	],
+	"\x{0434}\x{0435}\x{043d}" => [
+		"MKD",
+	],
+	"p." => [
+		"BYR",
+	],
+	"\x{20a9}" => [
+		"KPW",
+		"KRW",
+		"KPW",
+		"KRW",
+	],
+	"S/." => [
+		"PEN",
+	],
+	"NT\$" => [
+		"TWD",
+	],
+	"\x{0414}\x{0438}\x{043d}." => [
+		"RSD",
+	],
+	"Bs" => [
+		"VEF",
+	],
+	"K\x{010d}" => [
+		"CZK",
+	],
+	"\x{fdfc}" => [
+		"IRR",
+		"OMR",
+		"QAR",
+		"SAR",
+		"YER",
+	],
+	"J\$" => [
+		"JMD",
+	],
+	"\x{00a2}" => [
+		"GHC",
+	],
+	"\x{17db}" => [
+		"KHR",
+	],
+	"lei" => [
+		"RON",
+	],
+	"R" => [
+		"ZAR",
+	],
+	"\x{043c}\x{0430}\x{043d}" => [
+		"AZN",
+	],
+	"\x{20b1}" => [
+		"CUP",
+		"PHP",
+	],
+	"Gs" => [
+		"PYG",
+	],
+	"\$" => [
+		"USD",
+		"ARS",
+		"AUD",
+		"BSD",
+		"BBD",
+		"BMD",
+		"BND",
+		"CAD",
+		"KYD",
+		"CLP",
+		"COP",
+		"XCD",
+		"SVC",
+		"FJD",
+		"GYD",
+		"HKD",
+		"LRD",
+		"MXN",
+		"NAD",
+		"NZD",
+		"SGD",
+		"SBD",
+		"SRD",
+		"TVD",
+	],
+	"\x{20a6}" => [
+		"NGN",
+	],
+	"kn" => [
+		"HRK",
+	],
+	"\x{0192}" => [
+		"AWG",
+		"ANG",
+	],
+	"kr" => [
+		"DKK",
+		"EEK",
+		"ISK",
+		"NOK",
+		"SEK",
+	],
+	"S" => [
+		"SOS",
+	],
+	"\x{20ab}" => [
+		"VND",
+	],
+	"Lek" => [
+		"ALL",
+	],
+	"P" => [
+		"BWP",
+	],
+	"BZ\$" => [
+		"BZD",
+	],
+	"R\$" => [
+		"BRL",
+	],
+	"\x{20aa}" => [
+		"ILS",
+	],
+	"MT" => [
+		"MZN",
+	],
+	"Rp" => [
+		"IDR",
+	],
+	"\$b" => [
+		"BOB",
+	],
+	"Lt" => [
+		"LTL",
+	],
+	"Ft" => [
+		"HUF",
+	],
+	"C\$" => [
+		"NIO",
+	],
+	"\x{00a3}" => [
+		"GBP",
+		"EGP",
+		"FKP",
+		"GIP",
+		"GGP",
+		"IMP",
+		"JEP",
+		"LBP",
+		"SHP",
+		"SYP",
+	],
+	"\x{20a8}" => [
+		"MUR",
+		"NPR",
+		"PKR",
+		"SCR",
+		"LKR",
+	],
+	"\x{00a5}" => [
+		"CNY",
+		"JPY",
+	],
+	"\x{20ad}" => [
+		"LAK",
+	],
+	"z\x{0142}" => [
+		"PLN",
+	],
+	"\x{20b4}" => [
+		"UAH",
+	],
+	"B/." => [
+		"PAB",
+	],
+	"\x{060b}" => [
+		"AFN",
+	],
+	"\x{20ac}" => [
+		"EUR",
+	],
+	"L" => [
+		"HNL",
+	],
+	"RD\$" => [
+		"DOP",
+	],
+	"KM" => [
+		"BAM",
+	],
+	"\$U" => [
+		"UYU",
+	],
+	"\x{20a4}" => [
+		"TRL",
+	],
+	"Q" => [
+		"GTQ",
+	],
+	"RM" => [
+		"MYR",
+	],
+	"\x{0440}\x{0443}\x{0431}" => [
+		"RUB",
+	],
+);
+
 foreach my $code (values %country_to_currency) {
 	$supported_currency_codes{$code} = 1;
-	my $symbol_for_code = currency_symbol($code);
-	if (defined $symbol_for_code) {
-		$symbol_to_currency{$symbol_for_code} = $code;
-	}
 }
-
-# Add in uppercase version of country code to be safe
-my %uc_country_to_currency_map = ( );
-while (my($k, $v) = each %country_to_currency) {
-	$uc_country_to_currency_map{uc $k} = $v;
-}
-
-@country_to_currency{keys %uc_country_to_currency_map} = values %uc_country_to_currency_map;
 
 1;

@@ -55,6 +55,9 @@ ddg_goodie_test (
 		test_zci('Monthly Payment is €2.026,74 for 30 years. Total interest paid is €329.626,85'),
 	DDG::Request->new(query_raw => "loan 400000 4.5%", location => test_location("in")) =>
 		test_zci('Monthly Payment is ₨2,026.74 for 30 years. Total interest paid is ₨329,626.85'),
+        # Given a common currency symbol and location, make sure we get the correct currency
+	DDG::Request->new(query_raw => "loan \$400000 4.5%", location => test_location("au")) =>
+		test_zci('Monthly Payment is $2 026.74 for 30 years. Total interest paid is $329 626.85'),
 	# Malaysia has no symbol, just the currency code after the amounts
 	DDG::Request->new(query_raw => "loan 400000 MYR at 4.5%", location => test_location("my")) =>
 		test_zci('Monthly Payment is 2,026.74 MYR for 30 years. Total interest paid is 329,626.85 MYR'),
