@@ -18,10 +18,67 @@ topics 'science';
 attribution web => "https://machinepublishers.com",
             twitter => 'machinepub';
 
-use constant THOUSAND => 1000;
-use constant MILLION => 1000000;
-use constant BILLION => 1000000000;
-use constant TRILLION => 1000000000000;
+sub THOUSAND { 1000 };
+sub MILLION { 1000000 };
+sub BILLION { 1000000000 };
+sub TRILLION { 1000000000000 };
+
+#reference: https://en.wikipedia.org/wiki/Radio_spectrum
+my $radio_ranges =
+  [
+    [ "3", "29", "ELF band used by pipeline inspection gauges."],
+    [ "30", "299", "SLF band used by submarine communication systems."],
+    [ "300", "2999", "ULF band used by mine cave communication systems."],
+    [ "3000", "29999", "VLF band used by government time stations and navigation systems."],
+    [ "30000", "299999", "LF band used by AM broadcasts, government time stations, navigation systems, and weather alert systems."],
+    [ "300000", "2999999", "MF band used by AM broadcasts, navigation systems, and ship-to-shore communication systems."],
+    [ "3000000", "29999999", "HF band used by international shortwave broadcasts, aviation systems, government time stations, weather stations, and amateur radio."],
+    [ "30000000", "299999999", "VHF band used by FM broadcasts, televisions, amateur radio, marine communication systems, and air traffic control."],
+    [ "300000000", "2999999999", "UHF band used by televisions, cordless phones, cell phones, pagers, walkie-talkies, and satellites."],
+    [ "3000000000", "29999999999", "SHF band used by microwave ovens, wireless LANs, cell phones, and satellites."],
+    [ "30000000000", "299999999999", "EHF band used by radio telescopes, security screening systems, and point-to-point high-bandwidth devices."],
+    [ "300000000000", "3000000000000", "THF band used by satellites and radio telescopes."],
+  ];
+
+#reference: https://en.wikipedia.org/wiki/Color
+my $color_ranges =
+  [
+    [ "400000000000000", "479999999999999", "red" ],
+    [ "480000000000000", "504999999999999", "orange" ],
+    [ "505000000000000", "524999999999999", "yellow" ],
+    [ "525000000000000", "574999999999999", "green" ],
+    [ "575000000000000", "609999999999999", "cyan" ],
+    [ "610000000000000", "667999999999999", "blue" ],
+    [ "668000000000000", "714999999999999", "indigo" ],
+    [ "715000000000000", "800000000000000", "violet" ],
+  ];
+
+# reference: https://en.wikipedia.org/wiki/Musical_acoustics
+my $instrument_ranges =
+  [
+    [ "87", "1046", "human voice" ],
+    [ "82.407", "329.63", "bass vocalists" ],
+    [ "87.307", "349.23", "baritone vocalists" ],
+    [ "130.81", "440.00", "tenor vocalists" ],
+    [ "196.00", "698.46", "alto vocalists" ],
+    [ "220.00", "880.00", "mezzo-soprano vocalists" ],
+    [ "261.63", "880.00", "soprano vocalists" ],
+    [ "41.203", "523.25", "double-bass" ],
+    [ "130.81", "1760.00", "viola" ],
+    [ "196.00", "2637.00", "violin" ],
+    [ "82.41", "1046.5", "guitar" ],
+    [ "196.00", "1396.9", "mandolin" ],
+    [ "130.81", "1046.5", "banjo" ],
+    [ "27.500", "4186.0", "piano" ],
+    [ "38.891", "440.00", "tuba" ],
+    [ "82.407", "523.25", "trombone" ],
+    [ "164.81", "932.33", "trumpet" ],
+    [ "207.65", "1244.5", "saxophone" ],
+    [ "261.63", "2093.0", "flute" ],
+    [ "146.83", "1864.7", "clarinet" ],
+    [ "58.270", "783.99", "bassoon" ],
+    [ "233.08", "1760.0", "oboe" ],
+  ];
 
 handle query => sub {
   return unless $_ =~ m/^[\d,.]+\s\w+$/;
@@ -62,7 +119,6 @@ handle query => sub {
     $hz_abbrev = "Hz";
     $freq_formatted = $freq_hz;
   }
-  
   
   $freq = $freq_formatted . " " . $hz_abbrev;
   
@@ -108,9 +164,9 @@ sub normalize_freq{
 sub prepare_result{
   my $freq = $_[0];
   my $freq_hz = $_[1];
-  my $color = match_in_ranges(int($freq_hz), color_ranges());
-  my $radio = match_in_ranges(int($freq_hz), radio_ranges()) unless $color;
-  my $instruments = matches_in_ranges($freq_hz, instrument_ranges()) unless $color;
+  my $color = match_in_ranges(int($freq_hz), $color_ranges);
+  my $radio = match_in_ranges(int($freq_hz), $radio_ranges) unless $color;
+  my $instruments = matches_in_ranges($freq_hz, $instrument_ranges) unless $color;
   my $text_result = "";
   if($radio){
     $text_result = $freq . " is a radio frequency in the " . $radio;
@@ -132,66 +188,6 @@ sub prepare_result{
     return $text_result, html => $html_result, heading => "$freq (Frequency Spectrum)";
   }
   return;
-};
-
-sub radio_ranges(){
-  #reference: https://en.wikipedia.org/wiki/Radio_spectrum
-  return [
-    [ "3", "29", "ELF band used by pipeline inspection gauges."],
-    [ "30", "299", "SLF band used by submarine communication systems."],
-    [ "300", "2999", "ULF band used by mine cave communication systems."],
-    [ "3000", "29999", "VLF band used by government time stations and navigation systems."],
-    [ "30000", "299999", "LF band used by AM broadcasts, government time stations, navigation systems, and weather alert systems."],
-    [ "300000", "2999999", "MF band used by AM broadcasts, navigation systems, and ship-to-shore communication systems."],
-    [ "3000000", "29999999", "HF band used by international shortwave broadcasts, aviation systems, government time stations, weather stations, and amateur radio."],
-    [ "30000000", "299999999", "VHF band used by FM broadcasts, televisions, amateur radio, marine communication systems, and air traffic control."],
-    [ "300000000", "2999999999", "UHF band used by televisions, cordless phones, cell phones, pagers, walkie-talkies, and satellites."],
-    [ "3000000000", "29999999999", "SHF band used by microwave ovens, wireless LANs, cell phones, and satellites."],
-    [ "30000000000", "299999999999", "EHF band used by radio telescopes, security screening systems, and point-to-point high-bandwidth devices."],
-    [ "300000000000", "3000000000000", "THF band used by satellites and radio telescopes."],
-    ];
-};
-
-sub color_ranges(){
-  #reference: https://en.wikipedia.org/wiki/Color
-  return [
-    [ "400000000000000", "479999999999999", "red" ],
-    [ "480000000000000", "504999999999999", "orange" ],
-    [ "505000000000000", "524999999999999", "yellow" ],
-    [ "525000000000000", "574999999999999", "green" ],
-    [ "575000000000000", "609999999999999", "cyan" ],
-    [ "610000000000000", "667999999999999", "blue" ],
-    [ "668000000000000", "714999999999999", "indigo" ],
-    [ "715000000000000", "800000000000000", "violet" ],
-    ];
-};
-
-sub instrument_ranges(){
-  # reference: https://en.wikipedia.org/wiki/Musical_acoustics
-  return [
-    [ "87", "1046", "human voice" ],
-    [ "82.407", "329.63", "bass vocalists" ],
-    [ "87.307", "349.23", "baritone vocalists" ],
-    [ "130.81", "440.00", "tenor vocalists" ],
-    [ "196.00", "698.46", "alto vocalists" ],
-    [ "220.00", "880.00", "mezzo-soprano vocalists" ],
-    [ "261.63", "880.00", "soprano vocalists" ],
-    [ "41.203", "523.25", "double-bass" ],
-    [ "130.81", "1760.00", "viola" ],
-    [ "196.00", "2637.00", "violin" ],
-    [ "82.41", "1046.5", "guitar" ],
-    [ "196.00", "1396.9", "mandolin" ],
-    [ "130.81", "1046.5", "banjo" ],
-    [ "27.500", "4186.0", "piano" ],
-    [ "38.891", "440.00", "tuba" ],
-    [ "82.407", "523.25", "trombone" ],
-    [ "164.81", "932.33", "trumpet" ],
-    [ "207.65", "1244.5", "saxophone" ],
-    [ "261.63", "2093.0", "flute" ],
-    [ "146.83", "1864.7", "clarinet" ],
-    [ "58.270", "783.99", "basoon" ],
-    [ "233.08", "1760.0", "oboe" ],
-    ];
 };
 
 sub match_in_ranges{
