@@ -3,7 +3,7 @@ package DDG::Goodie::Latex;
 
 use DDG::Goodie;
 
-triggers startend => 'latex', 'Latex', 'tex';
+triggers startend => 'latex', 'tex';
 primary_example_queries 'latex summation';
 description 'Show the Latex command for a keyword';
 category 'cheat_sheets';
@@ -71,7 +71,7 @@ my %texCommands = (
 sub build_html{
 	# builds a string to display using the given $command
 	# and $usage
-	return "<i>Command:</i> $_[0] <br> <i>Example Usage:</i> $_[1]";
+	return "<i>Command:</i> <pre style='display: inline; padding: 1px;'>$_[0]</pre> <br> <i>Example Usage:</i> <pre style='display: inline; padding: 1px'>$_[1]</pre>";
 }
 
 handle remainder => sub {

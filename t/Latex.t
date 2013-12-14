@@ -14,17 +14,17 @@ ddg_goodie_test(
         )],
 	"latex integral" => test_zci('Command: \int_lowerbound^upperbound
 Example Usage: $\int_a^b f(x)dx$',
-    		html => '<i>Command:</i> \int_lowerbound^upperbound <br> <i>Example Usage:</i> $\int_a^b f(x)dx$',
+    		html => qr/\\int_lowerbound\^upperbound/,
 		heading => 'Latex command (integral)'),
 
 	"Latex integral" => test_zci('Command: \int_lowerbound^upperbound
 Example Usage: $\int_a^b f(x)dx$',
-    		html => '<i>Command:</i> \int_lowerbound^upperbound <br> <i>Example Usage:</i> $\int_a^b f(x)dx$',
+		html => qr/\\int_lowerbound\^upperbound/,
 		heading => 'Latex command (integral)'),
 
 	"tex integral" => test_zci('Command: \int_lowerbound^upperbound
 Example Usage: $\int_a^b f(x)dx$',
-    		html => '<i>Command:</i> \int_lowerbound^upperbound <br> <i>Example Usage:</i> $\int_a^b f(x)dx$',
+		html => qr/\\int_lowerbound\^upperbound/,
 		heading => 'Latex command (integral)'),
 );
 
