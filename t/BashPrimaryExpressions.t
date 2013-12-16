@@ -21,6 +21,9 @@ ddg_goodie_test(
 	),
 	'bash [ ! hello == world ]' => test_zci(
 		'[ ! hello == world ] - False if the strings hello and world are equal'
+	),
+	'bash [[ /tmp/hello -nt /etc/test ]]' => test_zci (
+		'[[ /tmp/hello -nt /etc/test ]] - True if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not'
 	)
 );
 

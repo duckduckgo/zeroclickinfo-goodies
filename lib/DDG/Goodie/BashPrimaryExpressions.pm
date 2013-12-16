@@ -47,8 +47,10 @@ our %if_description = (
 	'-lt' => "True if ARG1 is numerically less than ARG2",
 	'-le' => "True if ARG1 is numerically less than or equal to ARG2",
 	'-gt' => "True if ARG1 is numerically greater than ARG2",
-	'-ge' => ,"True if ARG1 is numerically greater than or euqal to ARG2"
-
+	'-ge' => "True if ARG1 is numerically greater than or equal to ARG2",
+	'-nt' => "True if ARG1 has been changed more recently than ARG2 or if ARG1 exists and ARG2 does not",
+	'-ot' => "True if ARG1 is older than ARG2 or ARG2 exists and ARG1 does not",
+	'-ef' => "True if ARG1 and ARG2 refer to the same device and inode numbers"
 );
 
 handle remainder => sub {
@@ -58,8 +60,8 @@ handle remainder => sub {
 	return unless $if_description{$op};
 	
 	my $text_output = $if_description{$op};
-	$text_output =~ s/ARG1/$left_arg/ if $left_arg;	
-	$text_output =~ s/ARG2/$right_arg/;
+	$text_output =~ s/ARG1/$left_arg/g if $left_arg;	
+	$text_output =~ s/ARG2/$right_arg/g;
 	$text_output =~ s/^True/False/ if $not;
 	return "$_ - $text_output";
 };
