@@ -4,14 +4,17 @@ use DDG::Goodie;
 use strict;
 use warnings;
 
-triggers start => 'bash if', 'bash';
+triggers startend => 'bash if', 'bash';
+primary_example_queries 'bash [ -z hello]';
+secondary_example_queries 'bash if [[ "abc" -lt "cba" ]]';
 
-primary_example_queries 'bash if statement';
-
-description 'Bash Primary Expressions';
+description 'Bash Primary Expressions Help';
 name 'Bash Help';
 source 'http://tille.garrels.be/training/bash/ch07.html';
 attribution github => [ 'http://github.com/mintsoft', 'mintsoft' ];
+
+category 'computing_tools';
+topics 'sysadmin';
 
 our %if_description = (
 	'-a' => "True if ARG2 exists",
