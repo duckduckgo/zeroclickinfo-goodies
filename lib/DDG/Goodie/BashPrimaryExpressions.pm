@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 triggers startend => 'bash if', 'bash';
-primary_example_queries 'bash [ -z hello]';
+primary_example_queries 'bash [ -z hello ]';
 secondary_example_queries 'bash if [[ "abc" -lt "cba" ]]';
 
 description 'Bash Primary Expressions Help';
