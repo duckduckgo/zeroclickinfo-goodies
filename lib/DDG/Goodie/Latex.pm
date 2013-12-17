@@ -68,10 +68,14 @@ my %texCommands = (
 	"line" => ['horizontal line', '\hrulefill', '\hrulefill'],
 );
 
-sub build_html{
+sub more_at {
+    return '<br><a href="http://www.ctan.org/pkg/latexcheat">More at CTAN</a>';
+}
+
+sub build_html {
 	# builds a string to display using the given $command
 	# and $usage
-	return "<i>Command:</i> <pre style='display: inline; padding: 1px;'>$_[0]</pre> <br> <i>Example Usage:</i> <pre style='display: inline; padding: 1px'>$_[1]</pre>";
+	return "<i>Command:</i> <pre style='display: inline; padding: 1px;'>$_[0]</pre> <br> <i>Example Usage:</i> <pre style='display: inline; padding: 1px'>$_[1]</pre>" . more_at;
 }
 
 handle remainder => sub {
