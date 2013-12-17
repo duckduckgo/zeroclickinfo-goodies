@@ -69,7 +69,7 @@ my %texCommands = (
 );
 
 sub more_at {
-    return "<br><a href='$_[0]'>More at WikiBooks</a>";
+    return "<br><a href='$_[0]'>More at Wikibooks</a>";
 }
 
 sub build_html {
