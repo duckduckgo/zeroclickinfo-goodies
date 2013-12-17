@@ -17,12 +17,22 @@ ddg_goodie_test (
 	[
 		'DDG::Goodie::GenerateMAC'
 	],
-	'generate mac' => 
+	'generate mac address' => 
 		test_zci(
 			qr/^$mac_regxp$/, 
 			html => qr//,
 		),
-	'random mac' => 
+	'generate mac addr' => 
+		test_zci(
+			qr/^$mac_regxp$/, 
+			html => qr//,
+		),
+	'random mac address' => 
+		test_zci(
+			qr/^$mac_regxp$/, 
+			html => qr//,
+		),
+	'random mac addr' => 
 		test_zci(
 			qr/^$mac_regxp$/, 
 			html => qr//,
