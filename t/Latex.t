@@ -15,12 +15,12 @@ ddg_goodie_test(
 	"latex integral" => test_zci('LaTeX command: \int_lowerbound^upperbound
 Example: $\int_a^b f(x)dx$',
     		html => qr/\\int_lowerbound\^upperbound/,
-		heading => 'integral (LaTeX)'),
+		heading => 'Integral (LaTeX)'),
 
 	"tex integral" => test_zci('LaTeX command: \int_lowerbound^upperbound
 Example: $\int_a^b f(x)dx$',
 		html => qr/\\int_lowerbound\^upperbound/,
-		heading => 'integral (LaTeX)'),
+		heading => 'Integral (LaTeX)'),
 );
 
 done_testing;
