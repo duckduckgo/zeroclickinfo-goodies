@@ -75,7 +75,7 @@ sub more_at {
 sub build_html {
 	# builds a string to display using the given $command
 	# and $usage
-	return "<i>Command:</i> <pre style='display: inline; padding: 1px;'>$_[0]</pre> <br> <i>Example Usage:</i> <pre style='display: inline; padding: 1px'>$_[1]</pre>" . more_at($_[2]);
+	return "<i>LaTeX command:</i> <pre style='display: inline; padding: 1px;'>$_[0]</pre> <br> <i>Example:</i> <pre style='display: inline; padding: 1px'>$_[1]</pre>" . more_at($_[2]);
 }
 
 handle remainder => sub {
@@ -86,12 +86,12 @@ handle remainder => sub {
                 my $heading = $texCommands{$key}[0];
                 my $usage = $texCommands{$key}[2];
 		my $more = $texCommands{$key}[3];
-		my $text = "Command: $command\nExample Usage: $usage";
+		my $text = "LaTeX command: $command\nExample: $usage";
 
         	#build the html string to display
         	my $html = build_html($command, $usage, $more);
 
-                return $text, html => $html, heading => "Latex command ($heading)";
+                return $text, html => $html, heading => "$heading (LaTeX)";
 	}
 	return; #return if no key was found
 };
