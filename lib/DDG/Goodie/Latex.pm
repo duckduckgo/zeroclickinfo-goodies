@@ -19,63 +19,63 @@ zci answer_type => 'Latex';
 my %texCommands = (
 
 	#Math operators
-	"and" => ['logical AND', '\land', '$A \land B$'],
-	"or" =>  ['logical OR', '\lor', '$A \lor B$'],
-	"not" => ['logical NOT', '\neg', '$\neg B$'],
-	"union" => ['union', '\cap', '$A \cap B$'],
-	"intersection" => ['intersection', '\cup', '$A \cup B$'],
-	"implication" => ['implication', '\rightarrow', '$A \rightarrow B$'],
-	"iff" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
-	"if and only if" => ['if and only if', '\leftrightarrow', '$A \leftrightarrow B$'],
-	"subset" => ['subset or subset equal', '\subset or \subseteq', '$A \subset B$'],
-        "less than or equal" => ['logical less than or equal', '\leq', '$A \leq B$'],
-	"less than" => ['logical less than', '<' , '$A < B$'],
-        "<=" => ['logical less than or equal', '\leq', '$A \leq B$'],
-	"<" => ['logical less than', '<' , '$A < B$'],
-	"greater than or equal" => ['logical greater than or equal', '\geq', '$A \geq B$'],
-	"greater than" => ['logical greater than', '>' , '$A > B$'],
-	">=" => ['logical greater than or equal', '\geq', '$A \geq B$'],
-	">" => ['logical greater than', '>' , '$A > B$'],
+	"and" => ['Logical AND', '\land', '$A \land B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"or" =>  ['Logical OR', '\lor', '$A \lor B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"not" => ['Logical NOT', '\neg', '$\neg B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"union" => ['Union', '\cap', '$A \cap B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"intersection" => ['Intersection', '\cup', '$A \cup B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"implication" => ['Implication', '\rightarrow', '$A \rightarrow B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"iff" => ['If and Only If', '\leftrightarrow', '$A \leftrightarrow B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"if and only if" => ['If and Only If', '\leftrightarrow', '$A \leftrightarrow B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"subset" => ['Subset or Subset Equal', '\subset or \subseteq', '$A \subset B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+        "less than or equal" => ['Logical Less Than or Equal', '\leq', '$A \leq B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"less than" => ['Logical Less Than', '<' , '$A < B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Symbols'],
+        "<=" => ['Logical Less Than or Equal', '\leq', '$A \leq B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Symbols'],
+	"<" => ['Logical Less Than', '<' , '$A < B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Symbols'],
+	"greater than or equal" => ['Logical Greater Than or Equal', '\geq', '$A \geq B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"greater than" => ['Logical Greater Than', '>' , '$A > B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Symbols'],
+	">=" => ['Logical Greater Than or Equal', '\geq', '$A \geq B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	">" => ['Logical Greater Than', '>' , '$A > B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Symbols'],
 
 	#math functions
-	"sum" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
-	"summation" => ['summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$'],
-	"fraction" => ['fraction', '\frac{numerator}{denominator}', '$\frac{A}{B}$'],
-	"limit" => ['limit', '\lim{bound}', '$\lim{x \to +\infty} 2x^{2}$'],
-	"integral" => ['integral', '\int_lowerbound^upperbound', '$\int_a^b f(x)dx$'],
-	"square root" => ['square root', '\sqrt[n][x]', '$\sqrt[n][x]$'],
+	"sum" => ['Summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
+	"summation" => ['Summation', '\sum_{lower}^{upper}', '$\sum{i=0}^{10} x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
+	"fraction" => ['Fraction', '\frac{numerator}{denominator}', '$\frac{A}{B}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials'],
+	"limit" => ['Limit', '\lim{bound}', '$\lim{x \to +\infty} 2x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Operators'],
+	"integral" => ['Integral', '\int_lowerbound^upperbound', '$\int_a^b f(x)dx$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Sums_and_integrals'],
+	"square root" => ['Square Root', '\sqrt[n][x]', '$\sqrt[n][x]$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Roots'],
 
 	#math symbols
-	"infinity" => ['infinity', '\infty', '$\infty$'],
-	"dot" => ['center dots', '\cdot or \cdots', '$A+ \cdots +B$'],
-	"alpha" => ['alpha', '\alpha', '$\alpha$'],
-	"delta" => ['delta', '\delta (lower casee) or \Delta (upper case)', '$\delta$'],
-	"zeta" => ['zeta', '\zeta', '$\zeta$'],
-	"lambda" => ['lambda', '\lambda (lower case) or \Lambda (upper case)', '$\lambda$'],
-	"xi" => ['xi', '\xi (lower case) or \Xi (upper case)', '$\xi$'],
-	"sigma" => ['sigma', '\sigma (lower case) or \Sigma (upper case)', '$\sigma$'],
-	"phi" => ['phi', '\phi (lower case) or \Phi (upper case)', '$\phi$'],
-	"omega" => ['omega', '\omega (lower case) or \Omega (upper case)', '$\omega$'],
-	"theta" => ['theta', '\theta (lower case) or \Theta (upper case)', '$\theta$'],
+	"infinity" => ['Infinity', '\infty', '$\infty$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Operators'],
+	"dot" => ['Center Dots', '\cdot or \cdots', '$A+ \cdots +B$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Dots'],
+	"alpha" => ['Alpha', '\alpha', '$\alpha$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
+	"delta" => ['Delta', '\delta (lowercase) or \Delta (uppercase)', '$\delta$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
+	"zeta" => ['Zeta', '\zeta', '$\zeta$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
+	"lambda" => ['Lambda', '\lambda (lowercase) or \Lambda (uppercase)', '$\lambda$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
+	"xi" => ['Xi', '\xi (lowercase) or \Xi (uppercase)', '$\xi$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
+	"sigma" => ['Sigma', '\sigma (lowercase) or \Sigma (uppercase)', '$\sigma$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
+	"phi" => ['Phi', '\phi (lowercase) or \Phi (uppercase)', '$\phi$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
+	"omega" => ['Omega', '\omega (lowercase) or \Omega (uppercase)', '$\omega$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
+	"theta" => ['Theta', '\theta (lowercase) or \Theta (uppercase)', '$\theta$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Greek_letters'],
 
 	#other
-	"date" => ['date', '\today', '\today'],
-	"new line" => ['new line', '\\', 'text... \\'],
-	"subscript" => ['subscript', '_{x}', '$H_{2}O$'],
-	"superscript" => ['superscript', '^{x}', '$x^{2}$'],
-	"temperature" => ['temperature', '^{\circ}', '$25^{circ}\mathrm{c}$'],
-	"temp" => ['temperature', '^{\circ}', '$25^{circ}\mathrm{c}$'],
-	"line" => ['horizontal line', '\hrulefill', '\hrulefill'],
+	"date" => ['Date', '\today', '\today', 'https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Top_matter'],
+	"new line" => ['Newline', '\\', 'text... \\', 'https://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting#Manual_breaks'],
+	"subscript" => ['Subscript', '_{x}', '$H_{2}O$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Powers_and_indices'],
+	"superscript" => ['Superscript', '^{x}', '$x^{2}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#Powers_and_indices'],
+	"temperature" => ['Temperature', '^{\circ}', '$25^{circ}\mathrm{c}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"temp" => ['Temperature', '^{\circ}', '$25^{circ}\mathrm{c}$', 'https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols'],
+	"line" => ['Horizontal Line', '\hrulefill', '\hrulefill', 'https://en.wikibooks.org/wiki/LaTeX/Lengths#Fill_the_rest_of_the_line'],
 );
 
 sub more_at {
-    return '<br><a href="http://www.ctan.org/pkg/latexcheat">More at CTAN</a>';
+    return "<br><a href='$_[0]'>More at Wikibooks</a>";
 }
 
 sub build_html {
 	# builds a string to display using the given $command
 	# and $usage
-	return "<i>Command:</i> <pre style='display: inline; padding: 1px;'>$_[0]</pre> <br> <i>Example Usage:</i> <pre style='display: inline; padding: 1px'>$_[1]</pre>" . more_at;
+	return "<i>LaTeX command:</i> <pre style='display: inline; padding: 1px;'>$_[0]</pre> <br> <i>Example:</i> <pre style='display: inline; padding: 1px'>$_[1]</pre>" . more_at($_[2]);
 }
 
 handle remainder => sub {
@@ -85,12 +85,13 @@ handle remainder => sub {
 	if($command) { #check to see if the key was in the table
                 my $heading = $texCommands{$key}[0];
                 my $usage = $texCommands{$key}[2];
-		my $text = "Command: $command\nExample Usage: $usage";
+		my $more = $texCommands{$key}[3];
+		my $text = "LaTeX command: $command\nExample: $usage";
 
         	#build the html string to display
-        	my $html = build_html($command, $usage);
+        	my $html = build_html($command, $usage, $more);
 
-                return $text, html => $html, heading => "Latex command ($heading)";
+                return $text, html => $html, heading => "$heading (LaTeX)";
 	}
 	return; #return if no key was found
 };
