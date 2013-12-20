@@ -1,5 +1,6 @@
 package DDG::Goodie::BashPrimaryExpressions;
 
+use HTML::Entities;
 use DDG::Goodie;
 use strict;
 use warnings;
@@ -63,10 +64,22 @@ handle remainder => sub {
 	return unless $if_description{$op};
 	
 	my $text_output = $if_description{$op};
-	$text_output =~ s/ARG1/$left_arg/g if $left_arg;	
-	$text_output =~ s/ARG2/$right_arg/g;
 	$text_output =~ s/^True/False/ if $not;
-	return "$_ - $text_output";
+	
+	my $html_output = encode_entities($text_output);
+	my $html_right_arg = encode_entities($right_arg);
+	
+	if ($left_arg)
+	{
+		my $html_left_arg = encode_entities($left_arg);
+		$text_output =~ s/ARG1/$left_arg/g;
+		$html_output =~ s/ARG1/<code>$html_left_arg<\/code>/g;	
+	}
+	
+	$text_output =~ s/ARG2/$right_arg/g;
+	$html_output =~ s/ARG2/<code>$html_right_arg<\/code>/g;
+	
+	return "$_ - $text_output", html => "<code>" . encode_entities($_) . "</code> - $html_output";
 };
 
 1;
