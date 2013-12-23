@@ -20,6 +20,7 @@ my %calendars = (
     'hijri' => ['Hijri calendar','<a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>'],
 );
 
+# This function returns either the HTML version of the output or the text version.
 sub output {
     my ($calendar_first, $calendar_second, $input_date, $converted_date, $is_html) = @_;
 
@@ -44,13 +45,14 @@ handle query_lc => sub {
         $/x;
 	
 	return unless ($gd < 31 and $gm < 12);
-	
+
 	my $is_hijri = $requested_calendar eq 'hijri';
 
 	my ($hd, $hm, $hy) = $is_hijri ? g2h($gd, $gm, $gy) : h2g($gd, $gm, $gy);
 	my $input_date     = "$gd/$gm/$gy";
 	my $converted_date = "$hd/$hm/$hy";
 
+	# Check if the user wants to convert to either Hijri or Gregorian.
 	if($is_hijri) {
 	    return output('gregorian', 'hijri', $input_date, $converted_date, 0), 
 	    html => output('gregorian', 'hijri', $input_date, $converted_date, 1);  
