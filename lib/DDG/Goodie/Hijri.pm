@@ -15,13 +15,18 @@ attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
 
 triggers any => 'hijri', 'gregorian';
 
-my $gregorian_calendar_wiki =
-    '<a href = "https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a>';
-my $hijri_calendar_wiki =
-    '<a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>';
+my %calendars = (
+    'gregorian' => ['Gregorian calendar', '<a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a>'],
+    'hijri' => ['Hijri calendar','<a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>'],
+);
+
+sub output {
+    my ($calendar_first, $calendar_second, $input_date, $converted_date, $is_html) = @_;
+
+    return "$input_date on the " . $calendars{$calendar_first}[$is_html] . " is $converted_date on the " . $calendars{$calendar_second}[$is_html] . '.';
+}
 
 handle query_lc => sub {
-
 	return unless my ($gd, $gm, $gy, $requested_calendar) = $_ =~
         /^
             (\d{0,2})(?:\/|,)(\d{0,2})(?:\/|,)(\d{3,4})\s+
@@ -37,16 +42,21 @@ handle query_lc => sub {
             (gregorian|hijri)\s*
             (?:calendar|date|time|years|months|days)?
         $/x;
-	return unless ($gd<31 and $gm<12);
-	my ($hd, $hm, $hy) = $requested_calendar eq 'hijri' ?
-        g2h($gd, $gm, $gy) : h2g($gd, $gm, $gy);
-    my $input_date     = "$gd/$gm/$gy";
-    my $converted_date = "$hd/$hm/$hy";
-	return "$input_date on the "
-            . ($requested_calendar eq 'hijri' ?
-                "$gregorian_calendar_wiki is $converted_date on the $hijri_calendar_wiki" :
-                "$hijri_calendar_wiki is $converted_date on the $gregorian_calendar_wiki");
+	
+	return unless ($gd < 31 and $gm < 12);
+	
+	my $is_hijri = $requested_calendar eq 'hijri';
 
+	my ($hd, $hm, $hy) = $is_hijri ? g2h($gd, $gm, $gy) : h2g($gd, $gm, $gy);
+	my $input_date     = "$gd/$gm/$gy";
+	my $converted_date = "$hd/$hm/$hy";
+
+	if($is_hijri) {
+	    return output('gregorian', 'hijri', $input_date, $converted_date, 0), 
+	    html => output('gregorian', 'hijri', $input_date, $converted_date, 1);  
+	}
+	return output('hijri', 'gregorian', $input_date, $converted_date, 0),
+	html => output('hijri', 'gregorian', $input_date, $converted_date, 1);
 };
 
 1;
