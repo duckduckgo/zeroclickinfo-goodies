@@ -8,8 +8,6 @@ use DDG::Test::Location;
 use DDG::Request;
 use utf8;
 
-Test::More->import(skip_all => 'broken au test');
-
 zci answer_type => 'loan';
 
 ddg_goodie_test (
