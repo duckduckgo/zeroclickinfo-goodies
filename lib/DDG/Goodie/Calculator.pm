@@ -1,7 +1,6 @@
 package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
-use bignum;
 
 zci is_cached => 1;
 zci answer_type => "calc";
@@ -93,57 +92,61 @@ handle query_nowhitespace => sub {
         # 2011.11.09 fix for 21 + 15 x 0 + 5
         $tmp_expr =~ s/(?<!\.)(?<![0-9])0([1-9])/$1/;
 
-        eval {
-            $tmp_result = eval($tmp_expr);
-        };
+	{
+	    use bignum;
 
-        # 0-9 check for http://yegg.duckduckgo.com/?q=%243.43%20%2434.45&format=json
-        if (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result =~ /^(?:\-|)[0-9\.]+$/) {
-            # Precisian.
-            my $precisian = 0;
+	    eval {
+		$tmp_result = eval($tmp_expr);
+	    };
+	    
+	    # 0-9 check for http://yegg.duckduckgo.com/?q=%243.43%20%2434.45&format=json
+	    if (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result =~ /^(?:\-|)[0-9\.]+$/) {
+		# Precisian.
+		my $precisian = 0;
+		
+		# too clever -- .5 ^ 2 not working right.
+		if (0) {
+		    while ($query =~ /\.(\d+)/g) {
+			my $decimal = length($1);
+			$precisian = $decimal if $decimal > $precisian;
+		    }
+		    
+		    $tmp_result = sprintf( '%0.' . $precisian . 'f', $tmp_result ) if $precisian;
+		}
+		
+		# Dollars.
+		if ($query =~ /^\$/) {
+		    $tmp_result = qq(\$$tmp_result);
+		}
+		
+		# Query for display.
+		my $tmp_q = $query;
 
-            # too clever -- .5 ^ 2 not working right.
-            if (0) {
-                while ($query =~ /\.(\d+)/g) {
-                    my $decimal = length($1);
-                    $precisian = $decimal if $decimal > $precisian;
-                }
+		# Drop equals.
+		$tmp_q =~ s/\=$//;
+		$tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
+		
+		# Copy
+		$results_no_html = $results_html = $tmp_q;
+		
+		# Superscript (before spacing).
+		$results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
+		$results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
+		
+		($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
+		return if $results_no_html =~ /^\s/;
 
-                $tmp_result = sprintf( '%0.' . $precisian . 'f', $tmp_result ) if $precisian;
-            }
-
-            # Dollars.
-            if ($query =~ /^\$/) {
-                $tmp_result = qq(\$$tmp_result);
-            }
-
-            # Query for display.
-            my $tmp_q = $query;
-
-            # Drop equals.
-            $tmp_q =~ s/\=$//;
-            $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
-
-            # Copy
-            $results_no_html = $results_html = $tmp_q;
-
-            # Superscript (before spacing).
-            $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
-            $results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
-
-            ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
-            return if $results_no_html =~ /^\s/;
-
-            # Add commas.
-            $tmp_result = commify($tmp_result);
-
-            # Now add it back.
-            $results_no_html .= ' = ';
-            $results_html .= ' = ';
-
-            $results_html = qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
-            return $results_no_html . $tmp_result, html => $results_html, heading => "Calculator";
-        }
+		# Add commas.
+		$tmp_result = commify($tmp_result);
+		
+		# Now add it back.
+		$results_no_html .= ' = ';
+		$results_html .= ' = ';
+		
+		$results_html = qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
+		return $results_no_html . $tmp_result, html => $results_html, heading => "Calculator";
+	    }
+	}
     }
 
     return;
