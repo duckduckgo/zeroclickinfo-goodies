@@ -1,7 +1,6 @@
 package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
-use bignum;
 
 zci is_cached => 1;
 zci answer_type => "calc";
