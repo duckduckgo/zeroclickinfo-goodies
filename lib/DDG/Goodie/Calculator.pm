@@ -94,6 +94,8 @@ handle query_nowhitespace => sub {
         $tmp_expr =~ s/(?<!\.)(?<![0-9])0([1-9])/$1/;
 
 	eval {
+	    # e.g. sin(100000)/100000 completely makes this go haywire.
+	    alarm(1);
 	    $tmp_result = eval($tmp_expr);
 	};
 	
