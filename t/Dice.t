@@ -26,7 +26,7 @@ ddg_goodie_test(
         "roll 2d6 and 3d12 - 4" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)$/),
         "throw 3d12 - 4 and 2d6" => test_zci(qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)\s\d (\+|-) \d = \d+ \(random\)$/),
         "throw 2d6 and 3d12 + 4" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)$/),
-        "roll 2d6 and 4d6-l" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2} \(random\)$/)
+        "roll 2d6 and 4d6-l" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2} \(random\)$/),
 );
 
 done_testing;
