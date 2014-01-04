@@ -52,7 +52,7 @@ my %invisibles = (
     0x01 => { abbr => 'SOH', desc => 'start of heading' },
     0x02 => { abbr => 'STX', desc => 'start of text' },
     0x03 => { abbr => 'ETX', desc => 'end of text' },
-    0x04 => { abbr => 'EOT', desc => 'end of tranmision' },
+    0x04 => { abbr => 'EOT', desc => 'end of transmission' },
     0x05 => { abbr => 'ENQ', desc => 'enquiry' },
     0x06 => { abbr => 'ACK', desc => 'acknowledge' },
     0x07 => { abbr => 'BEL', desc => 'bell', },
