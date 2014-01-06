@@ -26,9 +26,7 @@ handle remainder => sub {
     my $value = $_;
     $value =~ s/^\s+//;
     $value =~ s/\s+$//;
-    if (   $value =~ /^(?:[0\\]x)?([0-9a-f]+)$/i
-        or $value =~ /^([0-9a-f]+)h?$/i)
-    {
+    if ($value =~ /^(?:[0\\]x)?([0-9a-f]+)$/i or $value =~ /^([0-9a-f]+)h?$/i) {
         my @digits = $1 =~ /(..)/g;
         my @chars;
         foreach my $digit (@digits) {
@@ -38,9 +36,15 @@ handle remainder => sub {
         }
         # Don't let long strings make the output untidy
         if (scalar @chars > MAX_INPUT_CHARS) {
-            @chars = (@chars[0 .. MAX_INPUT_CHARS], '...');
+            @chars = (
+                @chars[0 .. MAX_INPUT_CHARS],
+                {
+                    pure => '...',
+                    html => '&hellip;',
+                });
         }
-        return join('', @chars) . " (ASCII)";
+        my $addendum = ' (ASCII)';
+        return join('', map { $_->{pure} } @chars) . $addendum, html => join('', map { $_->{html} } @chars) . $addendum;
     }
     return;
 };
@@ -86,14 +90,15 @@ my %invisibles = (
 sub printable_chr {
     my ($hex) = @_;
 
-    my $printable;
+    my $representation;
     if (my $char_info = $invisibles{$hex}) {
-        $printable = '<span style="background-color: #ddd" title="' . $char_info->{desc} . '">[' . $char_info->{abbr} . ']</span>';
+        $representation->{html} = '<code title="' . $char_info->{desc} . '">[' . $char_info->{abbr} . ']</code>';
+        $representation->{pure} = '';    # Don't want to add any printable whitespace and wonder what happened.
     } else {
-        $printable = chr $hex;
+        $representation->{html} = $representation->{pure} = chr $hex;
     }
 
-    return $printable;
+    return $representation;
 }
 
 1;
