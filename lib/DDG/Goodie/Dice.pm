@@ -15,8 +15,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'random';
 topics 'math';
 attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
-attribution twitter => 'loganmccamon',
+            cpan    => 'CRZEDPSYC',
+            twitter => 'loganmccamon',
             github => 'loganom' ;
 
 my %utf8_dice = (
