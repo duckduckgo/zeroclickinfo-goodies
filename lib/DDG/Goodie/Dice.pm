@@ -29,7 +29,10 @@ my %utf8_dice = (
 
 handle remainder_lc => sub {
     my @values = split(' and ', $_);
-    my $result;
+    my $values = @values; # size of @values;
+    my $result = '';
+    my $header = "Random Dice Roll<br/>";
+    my $total; # total of all dice rolls (for "roll 2d5" form)
     foreach my $_ (@values) {
         if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
             my @output;
@@ -47,11 +50,14 @@ handle remainder_lc => sub {
                 my $roll = int(rand($choices)) + 1;
                 push @output, $utf8_dice{$roll};
             }
-            return join(', ', @output) . ' (random)', html => '<span style="font-size:14pt;">' . join(', ', @output) . ' (random)</span> ' if @output;
+            return join(', ', @output) , html => '<span style="font-size:14pt;">' . join(', ', @output) . '</span> ' if @output;
         }
-        elsif ($_ =~ /^(\d{0,2})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
+        elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
             my (@rolls, $output);
             my $number_of_dice = $1 || 1;
+            if( $number_of_dice >= 100){
+                return; # do not continue
+            }
             my $lowest = my $number_of_faces = $2;
             my $highest = my $sum = 0;
             for (1 .. $number_of_dice) {
@@ -84,12 +90,21 @@ handle remainder_lc => sub {
             } else {
                 $output = $sum;
             }
-            $result .= '' . $output . " (random)<br/>" if $output;
+            $result .= $output . '<br/>'; # add output to our result
+            $total += $sum; # add the local sum to the total
         }
     }
-    $result =~ s/<br\/>$//g if $result;
-    return $result if $result;
-    return;
+    if($values > 1) {
+        # display total sum if more than one value was specified
+        $result .= 'Total: ' . $total;
+    }
+    if($result eq ''){
+        return; # nothing to return
+    }else{
+        $result = $header . $result; # add header
+        $result =~ s/<br\/>$//g; # remove trailing newline 
+        return $result;
+    }
 };
 
 1;
