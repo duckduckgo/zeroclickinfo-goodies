@@ -18,11 +18,23 @@ zci is_cached => 1;
 zci answer_type => "title_case";
 
 # http://blog.apastyle.org/apastyle/2012/03/title-case-and-sentence-case-capitalization-in-apa-style.html
-my @exceptions = ("a", "an", "the", "by", "but", "for", "or", "nor", "yet", "so", "as", "at", "in", "of", "on", "per", "to");
+my @exceptions = ("a", "an", "and", "the", "by", "but", "for", "or", "nor", "yet", "so", "as", "at", "in", "of", "on", "per", "to");
 
 handle remainder => sub {
     my @words = split(/ /, $_);
-    @words = map { $_ == 0 ? ucfirst $words[$_] : $words[$_] ~~ @exceptions ? $words[$_] : join('-', map { ucfirst $_ } split(/-/, $words[$_]) ) } 0 .. $#words;
+
+    @words = map {
+        if ($_ == 0) {
+            ucfirst $words[$_] # Capitalize first word
+        } else {
+            if ($words[$_] ~~ @exceptions) {
+                $words[$_] # Don't capitalize minor words
+            } else {
+                join('-', map { ucfirst $_ } split(/-/, $words[$_]) ) # Capitalize every part of a hyphenated word
+            }
+        }
+    } 0 .. $#words;
+    
     return join(' ', @words);
 };
 
