@@ -1,7 +1,6 @@
 package DDG::Goodie::Dice;
 
 use DDG::Goodie;
-use Text::Trim;
 
 triggers start => "roll", "throw";
 
@@ -50,7 +49,7 @@ handle remainder_lc => sub {
             }
             return join(', ', @output) . ' (random)', html => '<span style="font-size:14pt;">' . join(', ', @output) . ' (random)</span> ' if @output;
         }
-        elsif ($_ =~ /^(\d{0,4})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
+        elsif ($_ =~ /^(\d{0,2})[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
             my (@rolls, $output);
             my $number_of_dice = $1 || 1;
             my $lowest = my $number_of_faces = $2;
@@ -85,10 +84,12 @@ handle remainder_lc => sub {
             } else {
                 $output = $sum;
             }
-            $result .= '' . $output . ' (random) ' if $output;
+            $result .= '' . $output . " (random)<br/>" if $output;
         }
     }
-    return rtrim($result) if $result;
+    $result =~ s/<br\/>$//g if $result;
+    return $result if $result;
+    return;
 };
 
 1;
