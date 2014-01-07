@@ -21,12 +21,16 @@ ddg_goodie_test(
         "roll 3d8 - 8" => test_zci(qr/^\d (\+|-) \d (\+|-) \d (\+|-) \d = -?\d+ \(random\)$/),
         "roll d20" => test_zci(qr/^\d{1,2} \(random\)$/),
         "roll 4d6-l" => test_zci(qr/^([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2} \(random\)$/),
-        "roll 2d6 and d20" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s\d{1,2} \(random\)$/),
-        "roll 2d6 and 3d12 + 4" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)$/),
-        "roll 2d6 and 3d12 - 4" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)$/),
-        "throw 3d12 - 4 and 2d6" => test_zci(qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)\s\d (\+|-) \d = \d+ \(random\)$/),
-        "throw 2d6 and 3d12 + 4" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)$/),
-        "roll 2d6 and 4d6-l" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)\s([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2} \(random\)$/),
+        "roll 2d6 and d20" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)<br\/>\d{1,2} \(random\)$/),
+        "roll 2d6 and 3d12 + 4" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)$/),
+        "roll 2d6 and 3d12 - 4" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)$/),
+        "throw 3d12 - 4 and 2d6" => test_zci(qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)<br\/>\d (\+|-) \d = \d+ \(random\)$/),
+        "throw 2d6 and 3d12 + 4" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2} \(random\)$/),
+        "roll 2d6 and 4d6-l" => test_zci(qr/^\d (\+|-) \d = \d+ \(random\)<br\/>([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2} \(random\)$/),
+        "roll the ball" => undef,
+        "throw the ball" => undef,
+        "roll " => undef,
+        "roll over" => undef,
 );
 
 done_testing;
