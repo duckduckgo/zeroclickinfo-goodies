@@ -34,6 +34,10 @@ handle remainder_lc => sub {
     my $header = "Random Dice Roll<br/>";
     my $total; # total of all dice rolls (for "roll 2d5" form)
     foreach my $_ (@values) {
+        if( $_ =~ /\d\s\d/ ) {
+            # watches for "roll 2d3 2d5 and 2d6"
+            return;
+        }
         if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
             my @output;
             my $rolls = 1;  # If "die" is entered
