@@ -29,6 +29,7 @@ ddg_goodie_test(
         "throw 3d12 - 4 and 2d6" => test_zci(qr/^$header\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2}<br\/>\d (\+|-) \d = \d+<br\/>Total: \d+$/),
         "throw 2d6 and 3d12 + 4" => test_zci(qr/^$header\d (\+|-) \d = \d+<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+<br\/>Total: \d+$/),
         "roll 2d6 and 4d6-l" => test_zci(qr/^$header\d (\+|-) \d = \d+<br\/>([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2}<br\/>Total: \d+$/),
+        "roll 2d3 2d6 and 3d3" => undef,
         "roll 222d3 and 3d2" => undef,
         "roll the ball" => undef,
         "throw the ball" => undef,
