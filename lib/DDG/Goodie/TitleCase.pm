@@ -21,6 +21,8 @@ zci answer_type => "title_case";
 my @exceptions = ("a", "an", "and", "the", "by", "but", "for", "or", "nor", "yet", "so", "as", "at", "in", "of", "on", "per", "to");
 
 handle remainder => sub {
+    return unless $_;
+
     my @words = split(/ /, $_);
 
     @words = map {
@@ -34,7 +36,7 @@ handle remainder => sub {
             }
         }
     } 0 .. $#words;
-    
+
     return join(' ', @words);
 };
 
