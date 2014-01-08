@@ -13,6 +13,9 @@ ddg_goodie_test(
 		DDG::Goodie::TitleCase
 	)],
 	'titlecase test this out' => test_zci('Test This Out'),
+	'titlecase this is a walk in the park' => test_zci('This Is a Walk in the Park'),
+	'titlecase a good day to die hard' => test_zci('A Good Day to Die Hard'),
+	'titlecase here i am testing-hyphenated-words' => test_zci('Here I Am Testing-Hyphenated-Words'),
 );
 
 done_testing;
