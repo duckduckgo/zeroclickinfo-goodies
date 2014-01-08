@@ -24,6 +24,7 @@ sub BILLION { 1000000000 };
 sub TRILLION { 1000000000000 };
 
 #reference: https://en.wikipedia.org/wiki/Radio_spectrum
+#Radio spectrum ranges along with example uses
 my $radio_ranges =
   [
     [ "3", "29", "ELF band used by pipeline inspection gauges."],
@@ -41,6 +42,7 @@ my $radio_ranges =
   ];
 
 #reference: https://en.wikipedia.org/wiki/Color
+#Color ranges. Some colors are controversial but these are fairly well accepted.
 my $color_ranges =
   [
     [ "400000000000000", "479999999999999", "red" ],
@@ -54,6 +56,7 @@ my $color_ranges =
   ];
 
 # reference: https://en.wikipedia.org/wiki/Musical_acoustics
+#Ranges for common instruments 
 my $instrument_ranges =
   [
     [ "87", "1046", "human voice" ],
@@ -80,6 +83,8 @@ my $instrument_ranges =
     [ "233.08", "1760.0", "oboe" ],
   ];
 
+#Query is intitially processed here. First normalize the query format,
+#normalize the units, and then calculate information about the frequency range.
 handle query => sub {
   return unless $_ =~ m/^[\d,.]+\s\w+$/;
   return unless my $freq = normalize_freq($_);
@@ -125,6 +130,8 @@ handle query => sub {
   return prepare_result($freq, $freq_hz);
 };
 
+#Normalize the frequency, attempting to discern between region differences
+#in number formatting. Filter out clearly invalid queries.
 sub normalize_freq{
   my $freq = $_;
   if($freq =~ m/(?:\.\.)|(?:,,)/){
@@ -161,6 +168,8 @@ sub normalize_freq{
   return $freq;
 };
 
+#Take the frequency and look at which ranges it falls in.
+#Build up the result string.
 sub prepare_result{
   my $freq = $_[0];
   my $freq_hz = $_[1];
@@ -190,6 +199,7 @@ sub prepare_result{
   return;
 };
 
+#Find which single range applies.
 sub match_in_ranges{
   my $freq = $_[0];
   my $ranges = $_[1];
@@ -202,6 +212,7 @@ sub match_in_ranges{
   return "";
 };
 
+#Find any number of ranges which apply.
 sub matches_in_ranges{
   my $freq = $_[0];
   my $ranges = $_[1];
