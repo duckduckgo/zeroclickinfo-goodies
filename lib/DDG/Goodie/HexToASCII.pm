@@ -28,23 +28,24 @@ handle remainder => sub {
     $value =~ s/\s+$//;
     if ($value =~ /^(?:[0\\]x)?([0-9a-f]+)$/i or $value =~ /^([0-9a-f]+)h?$/i) {
         my @digits = $1 =~ /(..)/g;
-        my @chars;
-        foreach my $digit (@digits) {
-            my $hex = hex $digit;
-            return if $hex > 0x7F;
-            push @chars, printable_chr($hex);
+        my ($pure, $html, $count);
+        # Now convert them one by one, until it seems like there might be too many.
+        while (my $digit = shift @digits and $count++ <= MAX_INPUT_CHARS) {
+            my $printable = printable_chr(hex $digit);
+            return unless $printable;
+            $pure .= $printable->{pure};
+            $html .= $printable->{html};
         }
-        # Don't let long strings make the output untidy
-        if (scalar @chars > MAX_INPUT_CHARS) {
-            @chars = (
-                @chars[0 .. MAX_INPUT_CHARS],
-                {
-                    pure => '...',
-                    html => '&hellip;',
-                });
+
+        # If they gave us more input than we're willing to handle, throw in
+        # an appropriate ellipsis for their output type and call it done.
+        if (scalar @digits) {
+            $pure .= '...';
+            $html .= '&hellip;';
         }
+
         my $addendum = ' (ASCII)';
-        return join('', map { $_->{pure} } @chars) . $addendum, html => join('', map { $_->{html} } @chars) . $addendum;
+        return $pure . $addendum, html => $html . $addendum;
     }
     return;
 };
@@ -87,14 +88,22 @@ my %invisibles = (
     0x7F => { abbr => 'DEL', desc => 'delete', },
 );
 
+# The actual hex to ASCII conversion.
+# Returns a hashref with a 'pure' and 'html' representation.
+# The html representation includes tagged information on invisible
+# characters (defined as non-printable + non-space whitespace.)
+# The pure ASCII representation elides the invisible characters.
 sub printable_chr {
     my ($hex) = @_;
 
+    # Looks like non-ASCII, don't give them anything.
+    return if ($hex > 0x7F);
     my $representation;
     if (my $char_info = $invisibles{$hex}) {
         $representation->{html} = '<code title="' . $char_info->{desc} . '">[' . $char_info->{abbr} . ']</code>';
         $representation->{pure} = '';    # Don't want to add any printable whitespace and wonder what happened.
     } else {
+        # This must be a printable character, so just let chr figure it out
         $representation->{html} = $representation->{pure} = chr $hex;
     }
 
