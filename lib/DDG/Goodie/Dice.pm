@@ -56,8 +56,9 @@ handle remainder_lc => sub {
                 my $roll = int(rand($choices)) + 1;
                 push @output, $utf8_dice{$roll};
             }
+            my $html_output = '<span style="font-size:14pt;">' . join(', ', @output) . '</span> ';
             return  answer => join(', ', @output) ,
-                    html => '<span style="font-size:14pt;">' . join(', ', @output) . '</span> ',
+                    html => append_css($html_output),
                     heading => $heading;
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
