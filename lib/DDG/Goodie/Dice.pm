@@ -27,17 +27,19 @@ my %utf8_dice = (
     6 => "\x{2685}",
 );
 
+sub append_css {
+    my $html = shift;
+    my $css = scalar share("style.css")->slurp;
+    return "<style type='text/css'>$css</style>\n" . $html;
+}
+
 handle remainder_lc => sub {
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
-    my $result = '';
-    my $header = "Random Dice Roll<br/>";
+    my $text_output = '';
+    my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls (for "roll 2d5" form)
     foreach my $_ (@values) {
-        if( $_ =~ /\d\s\d/ ) {
-            # watches for "roll 2d3 2d5 and 2d6"
-            return;
-        }
         if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
             my @output;
             my $rolls = 1;  # If "die" is entered
@@ -54,7 +56,9 @@ handle remainder_lc => sub {
                 my $roll = int(rand($choices)) + 1;
                 push @output, $utf8_dice{$roll};
             }
-            return join(', ', @output) , html => '<span style="font-size:14pt;">' . join(', ', @output) . '</span> ' if @output;
+            return  answer => join(', ', @output) ,
+                    html => '<span style="font-size:14pt;">' . join(', ', @output) . '</span> ',
+                    heading => $heading;
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
             my (@rolls, $output);
@@ -88,26 +92,31 @@ handle remainder_lc => sub {
                 $sum += $_;
             }
             if (@rolls > 1) {
-                $output = join(' + ', @rolls);
-                $output =~ s/\+\s\-/\- /g;
-                $output .= " = $sum";
+                $output = join(' + ', @rolls); # append current roll to output
+                $output =~ s/\+\s\-/\- /g; 
+                $output .= " = $sum"; # append sum of rolls to output
             } else {
-                $output = $sum;
+                $output = $sum; # output is roll value if we have just one roll
             }
-            $result .= $output . '<br/>'; # add output to our result
+            $text_output .= $output . '<br/>'; # add output to our result
             $total += $sum; # add the local sum to the total
+        }else{
+            # an element of @value was not valid
+            return;
         }
     }
     if($values > 1) {
         # display total sum if more than one value was specified
-        $result .= 'Total: ' . $total;
+        $text_output .= 'Total: ' . $total;
     }
-    if($result eq ''){
+    if($text_output eq ''){
         return; # nothing to return
     }else{
-        $result = $header . $result; # add header
-        $result =~ s/<br\/>$//g; # remove trailing newline 
-        return $result;
+        $text_output =~ s/<br\/>$//g; # remove trailing newline 
+
+        return  answer => $text_output,
+                html => append_css($text_output),
+                heading => $heading;
     }
 };
 
