@@ -27,12 +27,6 @@ my %utf8_dice = (
     6 => "\x{2685}",
 );
 
-sub append_css {
-    my $html = shift;
-    my $css = scalar share("style.css")->slurp;
-    return "<style type='text/css'>$css</style>\n" . $html;
-}
-
 handle remainder_lc => sub {
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
@@ -56,9 +50,8 @@ handle remainder_lc => sub {
                 my $roll = int(rand($choices)) + 1;
                 push @output, $utf8_dice{$roll};
             }
-            my $html_output = '<span style="font-size:14pt;">' . join(', ', @output) . '</span> ';
-            return  answer => join(', ', @output) ,
-                    html => append_css($html_output),
+            return  answer => join(', ', @output), 
+                    html => '<span style="font-size:14pt;">' . join(', ', @output) . '</span>',
                     heading => $heading;
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
@@ -116,7 +109,6 @@ handle remainder_lc => sub {
         $text_output =~ s/<br\/>$//g; # remove trailing newline 
 
         return  answer => $text_output,
-                html => append_css($text_output),
                 heading => $heading;
     }
 };
