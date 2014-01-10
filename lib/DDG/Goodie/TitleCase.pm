@@ -26,13 +26,14 @@ handle remainder => sub {
     my @words = split(/ /, $_);
 
     @words = map {
+        my $word = $words[$_];
         if ($_ == 0) {
-            ucfirst $words[$_] # Capitalize first word
+            ucfirst $word # Capitalize first word
         } else {
-            if ($words[$_] ~~ @exceptions) {
-                $words[$_] # Don't capitalize minor words
+            if (grep { $_ eq $word } @exceptions) {
+                $word # Don't capitalize minor words
             } else {
-                join('-', map { ucfirst $_ } split(/-/, $words[$_]) ) # Capitalize every part of a hyphenated word
+                join('-', map { ucfirst $_ } split(/-/, $word) ) # Capitalize every part of a hyphenated word
             }
         }
     } 0 .. $#words;
