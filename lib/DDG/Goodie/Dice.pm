@@ -30,12 +30,14 @@ my %utf8_dice = (
 handle remainder_lc => sub {
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
-    my $text_output = '';
+    my $roll_output = '';
+    my $html_output = ''; 
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls (for "roll 2d5" form)
     foreach my $_ (@values) {
         if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
             my @output;
+            my $sum = 0;
             my $rolls = 1;  # If "die" is entered
             my $choices = 6;  # To be replace with input string in the future
             if (defined($1)) {    # Not defined if number of "dice" not specified
@@ -48,11 +50,12 @@ handle remainder_lc => sub {
             }
             for (1 .. $rolls) {
                 my $roll = int(rand($choices)) + 1;
+                $sum += $roll;
                 push @output, $utf8_dice{$roll};
             }
-            return  answer => join(', ', @output), 
-                    html => '<span style="font-size:14pt;">' . join(', ', @output) . '</span>',
-                    heading => $heading;
+            $total += $sum;
+            $roll_output .= join(', ', @output) . '<br/>';
+            $html_output .= '<span style="font-size:14pt;">' . join(', ', @output) . '</span> = ' . $sum .'<br/>';
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # 'w' is the German form
             my (@rolls, $output);
@@ -92,7 +95,8 @@ handle remainder_lc => sub {
             } else {
                 $output = $sum; # output is roll value if we have just one roll
             }
-            $text_output .= $output . '<br/>'; # add output to our result
+            $roll_output .= $output . '<br/>'; # add output to our result
+            $html_output .= $output . '<br/>'; # add output to our html result
             $total += $sum; # add the local sum to the total
         }else{
             # an element of @value was not valid
@@ -101,14 +105,15 @@ handle remainder_lc => sub {
     }
     if($values > 1) {
         # display total sum if more than one value was specified
-        $text_output .= 'Total: ' . $total;
+        $roll_output .= 'Total: ' . $total;
+        $html_output .= 'Total: ' . $total;
     }
-    if($text_output eq ''){
+    $roll_output =~ s/<br\/>$//g; # remove trailing newline 
+    if($roll_output eq ''){
         return; # nothing to return
     }else{
-        $text_output =~ s/<br\/>$//g; # remove trailing newline 
-
-        return  answer => $text_output,
+        return  answer => $roll_output,
+                html => $html_output,
                 heading => $heading;
     }
 };
