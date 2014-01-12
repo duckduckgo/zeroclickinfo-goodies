@@ -26,40 +26,56 @@ ddg_goodie_test(
                 html => qr//, 
                 heading => $heading
         ),
+        "throw 2 dice and 3 dice" => test_zci(qr/., .<br\/>., ., .<br\/>Total: \d+$/,
+                html => qr//,
+                heading => $heading
+        ),
         "roll 2d6" => test_zci(qr/^\d (\+|-) \d = \d+$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll 3d12 + 4" => test_zci(qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2}$/,
+                html => qr//,
                 heading => $heading
         ),
         "throw 1d20" => test_zci(qr/^\d{1,2}$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll 3d8 - 8" => test_zci(qr/^\d (\+|-) \d (\+|-) \d (\+|-) \d = -?\d+$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll d20" => test_zci(qr/^\d{1,2}$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll 4d6-l" => test_zci(qr/^([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2}$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll 2d6 and d20" => test_zci(qr/^\d (\+|-) \d = \d+<br\/>\d+<br\/>Total: \d+$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll 2d6 and 3d12 + 4" => test_zci(qr/^\d (\+|-) \d = \d+<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+<br\/>Total: \d+$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll 2d6 and 3d12 - 4" => test_zci(qr/^\d (\+|-) \d = \d+<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+<br\/>Total: \d+$/,
+                html => qr//,
                 heading => $heading
         ),
         "throw 3d12 - 4 and 2d6" => test_zci(qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2}<br\/>\d (\+|-) \d = \d+<br\/>Total: \d+$/,
+                html => qr//,
                 heading => $heading
         ),
         "throw 2d6 and 3d12 + 4" => test_zci(qr/^\d (\+|-) \d = \d+<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+<br\/>Total: \d+$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll 2d6 and 4d6-l" => test_zci(qr/^\d (\+|-) \d = \d+<br\/>([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2}<br\/>Total: \d+$/,
+                html => qr//,
                 heading => $heading
         ),
         "roll 2d3 2d6 and 3d3" => undef,
