@@ -31,8 +31,22 @@ handle remainder => sub {
     }
 
     my $inclusive = '';
-    my $start = Date_to_Days(@dates[2,0,1]);
-    my $end = Date_to_Days(@dates[5,3,4]);
+
+    my @date1 = @dates[2,0,1];
+    my @date2 = @dates[5,3,4];
+
+    my $start = Date_to_Days(@date1);
+    my $end = Date_to_Days(@date2);
+
+    if ($start > $end) {
+        my $temp = $start;
+        $start = $end;
+        $end = $temp;
+
+        my @temp_date = @date1;
+        @date1 = @date2;
+        @date2 = @date1;
+    }
 
     my $total_days = $end - $start;
     my $num_weeks = $total_days / 7;
@@ -40,8 +54,8 @@ handle remainder => sub {
     # Subtract 2 days (Saturday and Sunday), for every week.
     my $workdays = $total_days - ($num_weeks * 2);
 
-    my $weekday_start = Day_of_Week(@dates[2,0,1]);
-    my $weekday_end = Day_of_Week(@dates[5,3,4]);
+    my $weekday_start = Day_of_Week(@date1);
+    my $weekday_end = Day_of_Week(@date2);
 
     my $remainder = $total_days % 7;
     my $start_plus_remainder = $weekday_start + $remainder;
