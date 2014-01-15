@@ -67,10 +67,14 @@ handle remainder => sub {
     my $query = shift;
 
     my ($dialing_code, @countries);
+
+    $query =~ s/^\s+//;  # trim leading white space
+    $query =~ s/\s+$//;  # trim trailing white space
+    $query =~ s/\s+/ /g; # remove extra white space
    
-    if ($query =~ /^\+?\d+$/) {
+    if ($query =~ /^\+?(\d+)/) {
         # $query looks like a phone number. eg +65
-        ($dialing_code, @countries) = number_to_country($query);
+        ($dialing_code, @countries) = number_to_country($1);
     }
     elsif ($query =~ /^\w+/) {
         # $query looks like a country name or country code. eg Brazil or Br
@@ -110,9 +114,6 @@ sub list2string {
 sub number_to_country {
     my $number = shift;
 
-    # clean up
-    $number =~ s/\+//;
-
     my $telephony     = Telephony::CountryDialingCodes->new;
     my @country_codes = $telephony->country_codes($number);
     my $dialing_code  = $telephony->extract_dialing_code($number);
@@ -126,6 +127,7 @@ sub country_to_calling_code {
     my $country = shift;
 
     # clean up
+    $country =~ s/^to\s+//;
     $country =~ s/^for\s+//;
     $country =~ s/^the\s+//;
 
