@@ -21,6 +21,7 @@ ddg_goodie_test(
         'dialing code Singapore'     => test_zci('+65 is the international calling code for Singapore'),
         'dialing code for Singapore' => test_zci('+65 is the international calling code for Singapore'),
         'dialing code for US'        => test_zci('+1 is the international calling code for the United States'),
+        'calling code for america'   => test_zci('+1 is the international calling code for the United States'),
         'dialing code for UK'        => test_zci('+44 is the international calling code for the United Kingdom'),
         'calling code for the UK'    => test_zci('+44 is the international calling code for the United Kingdom'),
         'uk calling code'            => test_zci('+44 is the international calling code for the United Kingdom'),

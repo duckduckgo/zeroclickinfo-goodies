@@ -56,12 +56,13 @@ Locale::Country::add_country_alias('Russian Federation'   => 'Russia');
 Locale::Country::add_country_alias('Virgin Islands, U.S.' => 'US Virgin Islands');
 
 # Source: http://www.bbc.co.uk/news/magazine-18233844
-Locale::Country::add_country_alias('Argentina' => 'the Argentine');
-Locale::Country::add_country_alias('Congo'     => 'the Congo');
-Locale::Country::add_country_alias('Lebanon'   => 'the Lebanon');
-Locale::Country::add_country_alias('Sudan'     => 'the Sudan');
-Locale::Country::add_country_alias('Ukraine'   => 'the Ukraine');
-Locale::Country::add_country_alias('Yemen'     => 'the Yemen');
+Locale::Country::add_country_alias('Argentina'     => 'the Argentine');
+Locale::Country::add_country_alias('Congo'         => 'the Congo');
+Locale::Country::add_country_alias('Lebanon'       => 'the Lebanon');
+Locale::Country::add_country_alias('Sudan'         => 'the Sudan');
+Locale::Country::add_country_alias('Ukraine'       => 'the Ukraine');
+Locale::Country::add_country_alias('United States' => 'America');
+Locale::Country::add_country_alias('Yemen'         => 'the Yemen');
 
 handle remainder => sub {
     my $query = shift;
