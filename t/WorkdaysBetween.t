@@ -60,6 +60,12 @@ ddg_goodie_test(
     'workdays between 01/01/2014 01/01/2015 inclusive' =>
         test_zci('There are 262 workdays between 01/01/2014 and 01/01/2015, inclusive.'),
 
+    # Business Days
+    'business days between 01/06/2014 01/10/2014' =>
+        test_zci('There are 4 workdays between 01/06/2014 and 01/10/2014.'),
+    'business days between 01/06/2014 01/10/2014 inclusive' =>
+        test_zci('There are 5 workdays between 01/06/2014 and 01/10/2014, inclusive.'),
+
     # Invalid input
     'workdays between 01/2014 01/2015' => undef,
     'workdays between 01/2014/01' => undef,

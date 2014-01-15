@@ -7,7 +7,7 @@ package DDG::Goodie::WorkdaysBetween;
 use DDG::Goodie;
 use Date::Calc::Object qw( Date_to_Days Day_of_Week );
 
-triggers start => "workdays between";
+triggers start => "workdays between", "business days between";
 
 zci answer_type => "workdays_between";
 
