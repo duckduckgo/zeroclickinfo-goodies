@@ -6,7 +6,6 @@ package DDG::Goodie::WorkdaysBetween;
 
 use DDG::Goodie;
 use Date::Calc::Object qw( Date_to_Days Day_of_Week );
-use integer;
 
 triggers start => "workdays between";
 
@@ -48,7 +47,8 @@ handle remainder => sub {
     my @end_date = $end->date();
 
     my $total_days = Date_to_Days( @end_date ) - Date_to_Days( @start_date );
-    my $num_weeks = $total_days / 7;
+
+    my $num_weeks = int($total_days / 7);
 
     # Subtract 2 days (Saturday and Sunday), for every week.
     my $workdays = $total_days - ($num_weeks * 2);
