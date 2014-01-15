@@ -7,7 +7,6 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'calling_codes';
-zci is_cached => 1;
 
 ddg_goodie_test(
         [qw( DDG::Goodie::CallingCodes )],
@@ -24,7 +23,7 @@ ddg_goodie_test(
         'calling code for the UK'    => test_zci('+44 is the international calling code for the United Kingdom'),
         'uk calling code'            => test_zci('+44 is the international calling code for the United Kingdom'),
         'gb calling code'            => test_zci('+44 is the international calling code for the United Kingdom'),
-        'country code +1'            => test_zci('+1 is the international calling code for Antigua and Barbuda, Anguilla, American Samoa, Barbados, Bermuda, Bahamas, Canada, Dominica, the Dominican Republic, Grenada, Guam, Jamaica, Saint Lucia, Saint Kitts and Nevis, the Cayman Islands, the Northern Mariana Islands, Montserrat, Puerto Rico, Turks and Caicos Islands, Trinidad and Tobago, the United States, Saint Vincent and the Grenadines, the British Virgin Islands, and the US Virgin Islands'),
+        'country code +1'            => test_zci('+1 is the international calling code for Antigua and Barbuda, Anguilla, American Samoa, Barbados, Bermuda, The Bahamas, Canada, Dominica, the Dominican Republic, Grenada, Guam, Jamaica, Saint Lucia, Saint Kitts and Nevis, the Cayman Islands, the Northern Mariana Islands, Montserrat, Puerto Rico, Turks and Caicos Islands, Trinidad and Tobago, the United States, Saint Vincent and the Grenadines, the British Virgin Islands, and the US Virgin Islands'),
         'calling code +7'            => test_zci('+7 is the international calling code for the Russian Federation and Kazakhstan'),
         'calling code for russia'    => test_zci('+7 is the international calling code for the Russian Federation'),
 );
