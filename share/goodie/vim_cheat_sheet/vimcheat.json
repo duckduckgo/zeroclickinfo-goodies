@@ -1,0 +1,682 @@
+[
+   [
+      {
+         "name" : "Cursor movement",
+         "rows" : [
+            {
+               "help" : "move left",
+               "cmds" : [
+                  "h"
+               ]
+            },
+            {
+               "cmds" : [
+                  "j"
+               ],
+               "help" : "move down"
+            },
+            {
+               "help" : "move up",
+               "cmds" : [
+                  "k"
+               ]
+            },
+            {
+               "cmds" : [
+                  "l"
+               ],
+               "help" : "move right"
+            },
+            {
+               "cmds" : [
+                  "w"
+               ],
+               "help" : "jump by start of words (punctuation considered words)"
+            },
+            {
+               "cmds" : [
+                  "W"
+               ],
+               "help" : "jump by words (spaces separate words)"
+            },
+            {
+               "cmds" : [
+                  "e"
+               ],
+               "help" : "jump to end of words (punctuation considered words)"
+            },
+            {
+               "cmds" : [
+                  "E"
+               ],
+               "help" : "jump to end of words (no punctuation)"
+            },
+            {
+               "cmds" : [
+                  "b"
+               ],
+               "help" : "jump backward by words (punctuation considered words)"
+            },
+            {
+               "cmds" : [
+                  "B"
+               ],
+               "help" : "jump backward by words (no punctuation)"
+            },
+            {
+               "cmds" : [
+                  "0"
+               ],
+               "help" : "(zero) start of line"
+            },
+            {
+               "cmds" : [
+                  "^"
+               ],
+               "help" : "first non-blank character of line"
+            },
+            {
+               "help" : "end of line",
+               "cmds" : [
+                  "$"
+               ]
+            },
+            {
+               "cmds" : [
+                  "G"
+               ],
+               "help" : "Go To command (prefix with number"
+            }
+         ]
+      },
+      {
+         "name" : "Insert Mode - Inserting/Appending text",
+         "rows" : [
+            {
+               "cmds" : [
+                  "i"
+               ],
+               "help" : "start insert mode at cursor"
+            },
+            {
+               "cmds" : [
+                  "I"
+               ],
+               "help" : "insert at the beginning of the line"
+            },
+            {
+               "cmds" : [
+                  "a"
+               ],
+               "help" : "append after the cursor"
+            },
+            {
+               "help" : "append at the end of the line",
+               "cmds" : [
+                  "A"
+               ]
+            },
+            {
+               "help" : "open (append) blank line below current line (no need to press return)",
+               "cmds" : [
+                  "o"
+               ]
+            },
+            {
+               "cmds" : [
+                  "O"
+               ],
+               "help" : "open blank line above current line"
+            },
+            {
+               "help" : "append at end of word",
+               "cmds" : [
+                  "ea"
+               ]
+            },
+            {
+               "help" : "exit insert mode",
+               "cmds" : [
+                  "Esc"
+               ]
+            }
+         ]
+      },
+      {
+         "name" : "Editing",
+         "rows" : [
+            {
+               "cmds" : [
+                  "r"
+               ],
+               "help" : "replace a single character (does not use insert mode)"
+            },
+            {
+               "cmds" : [
+                  "J"
+               ],
+               "help" : "join line below to the current one"
+            },
+            {
+               "cmds" : [
+                  "cc"
+               ],
+               "help" : "change (replace) an entire line"
+            },
+            {
+               "help" : "change (replace) to the end of word",
+               "cmds" : [
+                  "cw"
+               ]
+            },
+            {
+               "cmds" : [
+                  "c$"
+               ],
+               "help" : "change (replace) to the end of line"
+            },
+            {
+               "help" : "delete character at cursor and substitute text",
+               "cmds" : [
+                  "s"
+               ]
+            },
+            {
+               "help" : "delete line at cursor and substitute text (same as cc)",
+               "cmds" : [
+                  "S"
+               ]
+            },
+            {
+               "help" : "transpose two letter (delete and paste, technically)",
+               "cmds" : [
+                  "xp"
+               ]
+            },
+            {
+               "help" : "undo",
+               "cmds" : [
+                  "u"
+               ]
+            },
+            {
+               "help" : "redo",
+               "cmds" : [
+                  "Ctrl + r"
+               ]
+            },
+            {
+               "help" : "repeat last command",
+               "cmds" : [
+                  "."
+               ]
+            }
+         ]
+      },
+      {
+         "rows" : [
+            {
+               "cmds" : [
+                  "v"
+               ],
+               "help" : "start visual mode, mark lines, then do command (such as y-yank)"
+            },
+            {
+               "help" : "start Linewise visual mode",
+               "cmds" : [
+                  "V"
+               ]
+            },
+            {
+               "help" : "move to other end of marked area",
+               "cmds" : [
+                  "o"
+               ]
+            },
+            {
+               "cmds" : [
+                  "Ctrl + v"
+               ],
+               "help" : "start visual block mode"
+            },
+            {
+               "help" : "move to Other corner of block",
+               "cmds" : [
+                  "O"
+               ]
+            },
+            {
+               "help" : "mark a word",
+               "cmds" : [
+                  "aw"
+               ]
+            },
+            {
+               "help" : "a () block (with braces)",
+               "cmds" : [
+                  "ab"
+               ]
+            },
+            {
+               "help" : "a {} block (with brackets)",
+               "cmds" : [
+                  "aB"
+               ]
+            },
+            {
+               "cmds" : [
+                  "ib"
+               ],
+               "help" : "inner () block"
+            },
+            {
+               "cmds" : [
+                  "iB"
+               ],
+               "help" : "inner {} block"
+            },
+            {
+               "help" : "exit visual mode",
+               "cmds" : [
+                  "Esc"
+               ]
+            }
+         ],
+         "name" : "Marking text (visual mode)"
+      },
+      {
+         "rows" : [
+            {
+               "help" : "shift right",
+               "cmds" : [
+                  ">"
+               ]
+            },
+            {
+               "cmds" : [
+                  "<"
+               ],
+               "help" : "shift left"
+            },
+            {
+               "help" : "yank (copy) marked text",
+               "cmds" : [
+                  "y"
+               ]
+            },
+            {
+               "cmds" : [
+                  "d"
+               ],
+               "help" : "delete marked text"
+            },
+            {
+               "help" : "switch case",
+               "cmds" : [
+                  "~"
+               ]
+            }
+         ],
+         "name" : "Visual commands"
+      },
+      {
+         "rows" : [
+            {
+               "help" : "yank (copy) a line",
+               "cmds" : [
+                  "yy"
+               ]
+            },
+            {
+               "cmds" : [
+                  "2yy"
+               ],
+               "help" : "yank 2 lines"
+            },
+            {
+               "help" : "yank word",
+               "cmds" : [
+                  "yw"
+               ]
+            },
+            {
+               "cmds" : [
+                  "y$"
+               ],
+               "help" : "yank to end of line"
+            },
+            {
+               "help" : "put (paste) the clipboard after cursor",
+               "cmds" : [
+                  "p"
+               ]
+            },
+            {
+               "cmds" : [
+                  "P"
+               ],
+               "help" : "put (paste) before cursor"
+            },
+            {
+               "help" : "delete (cut) a line",
+               "cmds" : [
+                  "dd"
+               ]
+            },
+            {
+               "help" : "delete (cut) 2 lines",
+               "cmds" : [
+                  "2dd"
+               ]
+            },
+            {
+               "help" : "delete (cut) the current word",
+               "cmds" : [
+                  "dw"
+               ]
+            },
+            {
+               "cmds" : [
+                  "D"
+               ],
+               "help" : "delete (cut) to the end of line"
+            },
+            {
+               "help" : "delete (cut) to the end of the line",
+               "cmds" : [
+                  "d$"
+               ]
+            },
+            {
+               "cmds" : [
+                  "x"
+               ],
+               "help" : "delete (cut) current character"
+            }
+         ],
+         "name" : "Cut and Paste"
+      }
+   ],
+   [
+      {
+         "rows" : [
+            {
+               "help" : "yank (copy) a line",
+               "cmds" : [
+                  "yy"
+               ]
+            },
+            {
+               "cmds" : [
+                  "2yy"
+               ],
+               "help" : "yank 2 lines"
+            },
+            {
+               "help" : "yank word",
+               "cmds" : [
+                  "yw"
+               ]
+            },
+            {
+               "cmds" : [
+                  "y$"
+               ],
+               "help" : "yank to end of line"
+            },
+            {
+               "help" : "put (paste) the clipboard after cursor",
+               "cmds" : [
+                  "p"
+               ]
+            },
+            {
+               "cmds" : [
+                  "P"
+               ],
+               "help" : "put (paste) before cursor"
+            },
+            {
+               "help" : "delete (cut) a line",
+               "cmds" : [
+                  "dd"
+               ]
+            },
+            {
+               "help" : "delete (cut) 2 lines",
+               "cmds" : [
+                  "2dd"
+               ]
+            },
+            {
+               "help" : "delete (cut) the current word",
+               "cmds" : [
+                  "dw"
+               ]
+            },
+            {
+               "cmds" : [
+                  "D"
+               ],
+               "help" : "delete (cut) to the end of line"
+            },
+            {
+               "help" : "delete (cut) to the end of the line",
+               "cmds" : [
+                  "d$"
+               ]
+            },
+            {
+               "cmds" : [
+                  "x"
+               ],
+               "help" : "delete (cut) current character"
+            }
+         ],
+         "name" : "Cut and Paste"
+      },
+      {
+         "rows" : [
+            {
+               "cmds" : [
+                  ":w"
+               ],
+               "help" : "write (save) the file, but don't exit"
+            },
+            {
+               "cmds" : [
+                  ":wq"
+               ],
+               "help" : "write (save) and quit"
+            },
+            {
+               "cmds" : [
+                  ":x"
+               ],
+               "help" : "write (save) and quit"
+            },
+            {
+               "cmds" : [
+                  ":q"
+               ],
+               "help" : "quit (fails if anything has changed)"
+            },
+            {
+               "cmds" : [
+                  ":q!"
+               ],
+               "help" : "quit and throw away changes"
+            }
+         ],
+         "name" : "Exiting"
+      },
+      {
+         "name" : "Search/Replace",
+         "rows" : [
+            {
+               "cmds" : [
+                  "/pattern"
+               ],
+               "help" : "search for pattern"
+            },
+            {
+               "help" : "search backward for pattern",
+               "cmds" : [
+                  "?pattern"
+               ]
+            },
+            {
+               "help" : "repeat search in same direction",
+               "cmds" : [
+                  "n"
+               ]
+            },
+            {
+               "help" : "repeat search in opposite direction",
+               "cmds" : [
+                  "N"
+               ]
+            },
+            {
+               "help" : "replace all old with new throughout file",
+               "cmds" : [
+                  ":%s/old/new/g"
+               ]
+            },
+            {
+               "help" : "replace all old with new throughout file with confirmations",
+               "cmds" : [
+                  ":%s/old/new/gc"
+               ]
+            }
+         ]
+      },
+      {
+         "name" : "Working with multiple files",
+         "rows" : [
+            {
+               "cmds" : [
+                  ":e filename"
+               ],
+               "help" : "Edit a file in a new buffer"
+            },
+            {
+               "cmds" : [
+                  ":bnext",
+                  ":bn"
+               ],
+               "help" : "go to next buffer"
+            },
+            {
+               "cmds" : [
+                  ":bprev",
+                  ":bp"
+               ],
+               "help" : "go to previous buffer"
+            },
+            {
+               "cmds" : [
+                  ":bd"
+               ],
+               "help" : "delete a buffer (close a file)"
+            },
+            {
+               "help" : "Open a file in a new buffer and split window",
+               "cmds" : [
+                  ":sp filename"
+               ]
+            },
+            {
+               "help" : "Open a file in a new buffer and vertically split window ",
+               "cmds" : [
+                  ":vsp filename"
+               ]
+            },
+            {
+               "help" : "Split windows",
+               "cmds" : [
+                  "Ctrl + ws"
+               ]
+            },
+            {
+               "cmds" : [
+                  "Ctrl + ww"
+               ],
+               "help" : "switch windows"
+            },
+            {
+               "cmds" : [
+                  "Ctrl + wq"
+               ],
+               "help" : "Quit a window"
+            },
+            {
+               "cmds" : [
+                  "Ctrl + wv"
+               ],
+               "help" : "split windows vertically"
+            }
+         ]
+      },
+      {
+         "rows" : [
+            {
+               "cmds" : [
+                  ":tabnew filename",
+                  ":tabn filename"
+               ],
+               "help" : "open file in a new tab"
+            },
+            {
+               "help" : "move current split window into its own tab",
+               "cmds" : [
+                  "Ctrl+W T"
+               ]
+            },
+            {
+               "cmds" : [
+                  "gt",
+                  ":tabnext",
+                  ":tabn"
+               ],
+               "help" : "move to next tab"
+            },
+            {
+               "cmds" : [
+                  "gT",
+                  ":tabprev",
+                  ":tabp"
+               ],
+               "help" : "move to previous tab"
+            },
+            {
+               "cmds" : [
+                  "#gt"
+               ],
+               "help" : "move to tab number #"
+            },
+            {
+               "cmds" : [
+                  ":tabmove #"
+               ],
+               "help" : "move current tab to the #th position (indexed from 0)"
+            },
+            {
+               "cmds" : [
+                  ":tabclose",
+                  ":tabc"
+               ],
+               "help" : "close the current tab and all its windows"
+            },
+            {
+               "help" : "close all other tabs except for the current one",
+               "cmds" : [
+                  ":tabonly",
+                  ":tabo"
+               ]
+            }
+         ],
+         "name" : "Tabs"
+      }
+   ]
+]
