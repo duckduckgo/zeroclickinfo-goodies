@@ -86,10 +86,10 @@ handle remainder => sub {
 #
 # On failure this function returns nothing.
 sub get_dates {
-    my @date_strings = $_ =~ m#(\d{2}/\d{2}/\d{4}|\w{3} \d{1,2} \d{4})#g;
+    my @date_strings = $_ =~ m#(\d{2}/\d{2}/\d{4}|\w{3} \d{1,2},? \d{4})#g;
 
     # A list of date formats to try sequentially.
-    my @date_formats = ( "%m/%d/%Y", "%d/%m/%Y", "%b %d %Y" );
+    my @date_formats = ( "%m/%d/%Y", "%d/%m/%Y", "%b %d %Y", "%b %d, %Y" );
 
     # If we don't have two dates matching the correct format, return nothing.
     if (scalar(@date_strings) != 2) {
