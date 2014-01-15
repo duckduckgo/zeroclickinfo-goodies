@@ -1,7 +1,8 @@
 use strict;
 
 package DDG::Goodie::WorkdaysBetween;
-# ABSTRACT: Give the number of work days between two given dates.
+# ABSTRACT: Give the number of work days between two given dates. Does not
+# consider holidays.
 
 use DDG::Goodie;
 use Date::Calc::Object qw( Date_to_Days Day_of_Week );
@@ -14,7 +15,7 @@ zci answer_type => "workdays_between";
 
 primary_example_queries 'workdays between 01/31/2000 01/31/2001';
 secondary_example_queries 'workdays between 01/31/2000 01/31/2001 inclusive';
-description 'calculate the number of days between two dates';
+description 'Calculate the number of workdays between two dates. Does not consider holidays.';
 name 'WorkDaysBetween';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WorkdaysBetween.pm';
 category 'calculations';
