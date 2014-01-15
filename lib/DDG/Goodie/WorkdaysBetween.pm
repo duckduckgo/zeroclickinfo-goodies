@@ -4,7 +4,7 @@ package DDG::Goodie::WorkdaysBetween;
 # ABSTRACT: Give the number of work days between two given dates.
 
 use DDG::Goodie;
-use Date::Calc qw( Date_to_Days Day_of_Week );
+use Date::Calc::Object qw( Date_to_Days Day_of_Week );
 use integer;
 
 triggers start => "workdays between";
@@ -32,30 +32,29 @@ handle remainder => sub {
 
     my $inclusive = '';
 
-    my @date1 = @dates[2,0,1];
-    my @date2 = @dates[5,3,4];
+    my $date1 = Date::Calc->new(@dates[2,0,1]);
+    my $date2 = Date::Calc->new(@dates[5,3,4]);
 
-    my $start = Date_to_Days(@date1);
-    my $end = Date_to_Days(@date2);
-
-    if ($start > $end) {
-        my $temp = $start;
-        $start = $end;
-        $end = $temp;
-
-        my @temp_date = @date1;
-        @date1 = @date2;
-        @date2 = @date1;
+    my ($start, $end);
+    if ($date1 < $date2) {
+        $start = $date1;
+        $end = $date2;
+    } else {
+        $start = $date2;
+        $end = $date1;
     }
 
-    my $total_days = $end - $start;
+    my @start_date = $start->date();
+    my @end_date = $end->date();
+
+    my $total_days = Date_to_Days( @end_date ) - Date_to_Days( @start_date );
     my $num_weeks = $total_days / 7;
 
     # Subtract 2 days (Saturday and Sunday), for every week.
     my $workdays = $total_days - ($num_weeks * 2);
 
-    my $weekday_start = Day_of_Week(@date1);
-    my $weekday_end = Day_of_Week(@date2);
+    my $weekday_start = Day_of_Week( @start_date );
+    my $weekday_end = Day_of_Week( @end_date );
 
     my $remainder = $total_days % 7;
     my $start_plus_remainder = $weekday_start + $remainder;
@@ -78,11 +77,11 @@ handle remainder => sub {
         $inclusive = ', inclusive';
     }
 
-    my $start_date = join '/', @dates[0,1,2];
-    my $end_date = join '/', @dates[3,4,5];
+    my $start_str = $start->month() . '/' . $start->day() . '/' . $start->year();
+    my $end_str = $end->month() . '/' . $end->day() . '/' . $end->year();
 
-    return 'There are ' . $workdays . " workdays between " . $start_date .
-        ' and ' . $end_date . $inclusive . '.';
+    return 'There are ' . $workdays . " workdays between " . $start_str .
+        ' and ' . $end_str . $inclusive . '.';
 };
 
 1;
