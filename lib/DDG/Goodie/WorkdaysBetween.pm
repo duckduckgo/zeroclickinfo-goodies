@@ -39,13 +39,18 @@ handle remainder => sub {
 
     my $num_weeks = int($total_days / 7);
 
-    # Subtract 2 days (Saturday and Sunday), for every week.
+    # For every 7 days there will always be 1 Saturday and 1 Sunday, therefore
+    # we subtract 2 days for every full week in the range.
     my $workdays = $total_days - ($num_weeks * 2);
 
-    my $weekday_start = Day_of_Week( @start_date );
-    my $weekday_end = Day_of_Week( @end_date );
-
+    # Find the remaining number of days that didn't fall into the full weeks
+    # we already counted.
     my $remainder = $total_days % 7;
+
+    # Adding the starting weekday to the number of remainder days allows us to
+    # determine whether or not the remainder days contain a Saturday and/or a
+    # Sunday.
+    my $weekday_start = Day_of_Week( @start_date );
     my $start_plus_remainder = $weekday_start + $remainder;
 
     # If the remaining days contain a Sunday we need to remove it from
