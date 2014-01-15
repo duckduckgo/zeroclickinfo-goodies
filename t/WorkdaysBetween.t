@@ -76,6 +76,8 @@ ddg_goodie_test(
     'workdays between 01/01/2014 inclusive' => undef,
     'workdays between 01/01/2014' => undef,
     'workdays between 20/01/2014 inclusive' => undef,
+    'workdays between 19/19/2014 20/24/2015' => undef,
+    'workdays between 19/19/2014 20/24/2015 inclusive' => undef,
 );
 
 done_testing;
