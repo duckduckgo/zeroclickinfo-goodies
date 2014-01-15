@@ -6,6 +6,8 @@ package DDG::Goodie::WorkdaysBetween;
 
 use DDG::Goodie;
 use Date::Calc::Object qw( Date_to_Days Day_of_Week );
+use Time::Piece;
+use List::Util qw( min max );
 
 triggers start => "workdays between", "business days between";
 
@@ -21,27 +23,14 @@ topics 'everyday';
 attribution github => ['http://github.com/mgarriott', 'mgarriott'];
 
 handle remainder => sub {
+    my ($start, $end) = get_dates($_);
 
-    my @dates = $_ =~ m#([01]?[0-9])/([0-3]?[0-9])/([0-9]{4}(?=\s|$))#g;
-
-    if (scalar(@dates) != 6) {
-        # Abandon, we don't know how to parse this
+    # If get_dates failed, return nothing.
+    unless ($start && $end) {
         return;
     }
 
     my $inclusive = '';
-
-    my $date1 = Date::Calc->new(@dates[2,0,1]);
-    my $date2 = Date::Calc->new(@dates[5,3,4]);
-
-    my ($start, $end);
-    if ($date1 < $date2) {
-        $start = $date1;
-        $end = $date2;
-    } else {
-        $start = $date2;
-        $end = $date1;
-    }
 
     my @start_date = $start->date();
     my @end_date = $end->date();
@@ -83,5 +72,46 @@ handle remainder => sub {
     return 'There are ' . $workdays . " workdays between " . $start_str .
         ' and ' . $end_str . $inclusive . '.';
 };
+
+# Given a string containing two dates, parse out the dates, and return them in
+# chronological order.
+#
+# On success this subroutine returns a two element array of
+# Date::Calc::Objects in the following format ( $start_date, $end_date )
+#
+# On failure this function returns nothing.
+sub get_dates {
+    my @date_strings = $_ =~ m#(\d{2}/\d{2}/\d{4})#g;
+
+    # If we don't have two dates matching the correct format, return nothing.
+    if (scalar(@date_strings) != 2) {
+        return;
+    }
+
+    # Populate the @dates array. With Date::Calc::Objects
+    my @dates;
+    foreach (@date_strings) {
+        my $date_string = $_;
+        eval {
+            # Attempt to parse the date here.
+            my $time = Time::Piece->strptime($date_string, "%m/%d/%Y");
+
+            # If the format was acceptable, add the date to the @dates array
+            push(@dates,
+                Date::Calc->new($time->year, $time->mon, $time->mday));
+        };
+    }
+
+    # Bail out if we don't have exactly two dates.
+    if (scalar(@dates) != 2) {
+        return;
+    }
+
+    # Find the start and end dates.
+    my $start = min(@dates);
+    my $end = max(@dates);
+
+    return ($start, $end);
+}
 
 1;
