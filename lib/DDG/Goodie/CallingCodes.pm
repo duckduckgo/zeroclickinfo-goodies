@@ -20,8 +20,16 @@ secondary_example_queries "dialing code +55", "country calling code 55";
 attribution github  => ["kablamo",            "Eric Johnson"],
             web     => ["http://kablamo.org", "Eric Johnson"];
 
-triggers startend => "country code", "country calling code", "calling code",
-                     "dialing code", "country dialing code";
+triggers startend => 
+    "calling code",
+    "country calling code", 
+    "country code", 
+    "country dialing code", 
+    "dial in code",
+    "dialing code", 
+    "international calling code", 
+    "international dial in code",
+    "international dialing code"; 
 
 Locale::Country::rename_country('ae' => 'the United Arab Emirates');
 Locale::Country::rename_country('do' => 'the Dominican Republic');
