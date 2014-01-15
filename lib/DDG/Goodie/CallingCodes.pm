@@ -61,11 +61,13 @@ handle remainder => sub {
 
     my ($dialing_code, @countries);
    
-    if ($query =~ /^\+?[\d|\s]+/) {
-        ($dialing_code, @countries) = to_country($query);
+    if ($query =~ /^\+?\d+$/) {
+        # $query looks like a phone number. eg +65
+        ($dialing_code, @countries) = number_to_country($query);
     }
     elsif ($query =~ /^\w+/) {
-        ($dialing_code, @countries) = to_calling_code($query);
+        # $query looks like a country name or country code. eg Brazil or Br
+        ($dialing_code, @countries) = country_to_calling_code($query);
     }
 
     return unless $dialing_code && @countries;
@@ -77,6 +79,7 @@ handle remainder => sub {
 	return $answer;
 };
 
+# Convert a list of country names to a single human readable English string.
 sub list2string {
     my @countries = @_;
     my $string;
@@ -96,7 +99,8 @@ sub list2string {
     return $string;
 }
 
-sub to_country {
+# Deduce the country from a number.
+sub number_to_country {
     my $number = shift;
 
     # clean up
@@ -110,7 +114,8 @@ sub to_country {
     return ($dialing_code, @countries);
 }
 
-sub to_calling_code {
+# Deduce the calling code from a country name or country code.
+sub country_to_calling_code {
     my $country = shift;
 
     # clean up
