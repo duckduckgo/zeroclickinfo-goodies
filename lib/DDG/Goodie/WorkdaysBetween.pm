@@ -83,6 +83,9 @@ handle remainder => sub {
 sub get_dates {
     my @date_strings = $_ =~ m#(\d{2}/\d{2}/\d{4})#g;
 
+    # A list of date formats to try sequentially.
+    my @date_formats = ( "%m/%d/%Y", "%d/%m/%Y" );
+
     # If we don't have two dates matching the correct format, return nothing.
     if (scalar(@date_strings) != 2) {
         return;
@@ -92,14 +95,20 @@ sub get_dates {
     my @dates;
     foreach (@date_strings) {
         my $date_string = $_;
-        eval {
-            # Attempt to parse the date here.
-            my $time = Time::Piece->strptime($date_string, "%m/%d/%Y");
+        foreach (@date_formats) {
+            local $@;
+            eval {
+                # Attempt to parse the date here.
+                my $time = Time::Piece->strptime($date_string, $_);
 
-            # If the format was acceptable, add the date to the @dates array
-            push(@dates,
-                Date::Calc->new($time->year, $time->mon, $time->mday));
-        };
+                # If the format was acceptable, add the date to the @dates array
+                push(@dates,
+                    Date::Calc->new($time->year, $time->mon, $time->mday));
+            };
+
+            # Break the loop unless we had an eval error
+            unless ($@) { last; }
+        }
     }
 
     # Bail out if we don't have exactly two dates.
