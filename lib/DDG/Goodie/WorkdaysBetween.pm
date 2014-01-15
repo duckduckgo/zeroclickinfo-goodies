@@ -10,7 +10,6 @@ use integer;
 
 triggers start => "workdays between";
 
-zci is_cached => 1;
 zci answer_type => "workdays_between";
 
 primary_example_queries 'workdays between 01/31/2000 01/31/2001';
