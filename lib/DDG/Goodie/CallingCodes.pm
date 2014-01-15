@@ -31,13 +31,30 @@ Locale::Country::rename_country('kp' => "the Republic of Korea");
 Locale::Country::rename_country('kr' => "the Democratic People's Republic of Korea");
 Locale::Country::rename_country('ky' => 'the Cayman Islands');
 Locale::Country::rename_country('mp' => 'the Northern Mariana Islands');
+Locale::Country::rename_country('nl' => 'the Netherlands');
+Locale::Country::rename_country('ph' => 'the Philippines');
 Locale::Country::rename_country('ru' => 'the Russian Federation');
 Locale::Country::rename_country('tw' => 'Taiwan');
 Locale::Country::rename_country('us' => 'the United States');
 Locale::Country::rename_country('vg' => 'the British Virgin Islands');
 Locale::Country::rename_country('vi' => 'the US Virgin Islands');
+Locale::Country::rename_country('vi' => 'the US Virgin Islands');
+
+# These are the only 2 countries which officially have 'The' in their name
+# Source: http://www.bbc.co.uk/news/magazine-18233844
+Locale::Country::rename_country('gm' => 'The Gambia');
+Locale::Country::rename_country('bs' => 'The Bahamas');
+
 Locale::Country::add_country_alias('Russian Federation'   => 'Russia');
 Locale::Country::add_country_alias('Virgin Islands, U.S.' => 'US Virgin Islands');
+
+# Source: http://www.bbc.co.uk/news/magazine-18233844
+Locale::Country::add_country_alias('Argentina' => 'the Argentine');
+Locale::Country::add_country_alias('Congo'     => 'the Congo');
+Locale::Country::add_country_alias('Lebanon'   => 'the Lebanon');
+Locale::Country::add_country_alias('Sudan'     => 'the Sudan');
+Locale::Country::add_country_alias('Ukraine'   => 'the Ukraine');
+Locale::Country::add_country_alias('Yemen'     => 'the Yemen');
 
 handle remainder => sub {
     my $query = shift;
