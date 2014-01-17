@@ -66,8 +66,9 @@ handle remainder => sub {
         $inclusive = ', inclusive';
     }
 
-    my $start_str = $start->mon . '/' . $start->mday . '/' . $start->year;
-    my $end_str = $end->mon . '/' . $end->mday . '/' . $end->year;
+    my $date_format = "%b %d, %Y";
+    my $start_str = $start->strftime($date_format);
+    my $end_str = $end->strftime($date_format);
 
     return 'There are ' . $workdays . " workdays between " . $start_str .
         ' and ' . $end_str . $inclusive . '.';
