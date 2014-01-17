@@ -71,7 +71,7 @@ ddg_goodie_test(
         test_zci('There are 4 workdays between 6/16/2014 and 6/20/2014.'),
 
     # Single digit days and months
-    'workdays between 1/6/2014 1/10/20146' =>
+    'workdays between 1/6/2014 1/10/2014' =>
         test_zci('There are 4 workdays between 1/6/2014 and 1/10/2014.'),
     'workdays between 1/6/2014 1/10/2014 inclusive' =>
         test_zci('There are 5 workdays between 1/6/2014 and 1/10/2014, inclusive.'),

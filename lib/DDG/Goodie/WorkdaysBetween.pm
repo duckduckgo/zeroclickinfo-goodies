@@ -5,7 +5,6 @@ package DDG::Goodie::WorkdaysBetween;
 # consider holidays.
 
 use DDG::Goodie;
-use Date::Calc::Object qw( Date_to_Days Day_of_Week );
 use Time::Piece;
 use List::Util qw( min max );
 
@@ -32,11 +31,7 @@ handle remainder => sub {
 
     my $inclusive = '';
 
-    my @start_date = $start->date();
-    my @end_date = $end->date();
-
-    my $total_days = Date_to_Days( @end_date ) - Date_to_Days( @start_date );
-
+    my $total_days = int( $end->mjd ) - int( $start->mjd );
     my $num_weeks = int($total_days / 7);
 
     # For every 7 days there will always be 1 Saturday and 1 Sunday, therefore
@@ -50,7 +45,7 @@ handle remainder => sub {
     # Adding the starting weekday to the number of remainder days allows us to
     # determine whether or not the remainder days contain a Saturday and/or a
     # Sunday.
-    my $weekday_start = Day_of_Week( @start_date );
+    my $weekday_start = $start->_wday;
     my $start_plus_remainder = $weekday_start + $remainder;
 
     # If the remaining days contain a Sunday we need to remove it from
@@ -66,13 +61,13 @@ handle remainder => sub {
     # Ignore 'inclusive' if the start date is a Saturday or Sunday.
     # Otherwise we will add 1 day to the total, and include the
     # 'inclusive' note in the resulting string.
-    if ($weekday_start < 6 && /inclusive/) {
+    if ($weekday_start != 0 && $weekday_start != 6 && /inclusive/) {
         $workdays += 1;
         $inclusive = ', inclusive';
     }
 
-    my $start_str = $start->month() . '/' . $start->day() . '/' . $start->year();
-    my $end_str = $end->month() . '/' . $end->day() . '/' . $end->year();
+    my $start_str = $start->mon . '/' . $start->mday . '/' . $start->year;
+    my $end_str = $end->mon . '/' . $end->mday . '/' . $end->year;
 
     return 'There are ' . $workdays . " workdays between " . $start_str .
         ' and ' . $end_str . $inclusive . '.';
@@ -82,7 +77,7 @@ handle remainder => sub {
 # chronological order.
 #
 # On success this subroutine returns a two element array of
-# Date::Calc::Objects in the following format ( $start_date, $end_date )
+# Time::Piece in the following format ( $start_date, $end_date )
 #
 # On failure this function returns nothing.
 sub get_dates {
@@ -96,7 +91,7 @@ sub get_dates {
         return;
     }
 
-    # Populate the @dates array. With Date::Calc::Objects
+    # Populate the @dates array. With Time::Piece
     my @dates;
     foreach (@date_strings) {
         my $date_string = $_;
@@ -107,8 +102,7 @@ sub get_dates {
                 my $time = Time::Piece->strptime($date_string, $_);
 
                 # If the format was acceptable, add the date to the @dates array
-                push(@dates,
-                    Date::Calc->new($time->year, $time->mon, $time->mday));
+                push(@dates, $time);
             };
 
             # Break the loop unless we had an eval error
