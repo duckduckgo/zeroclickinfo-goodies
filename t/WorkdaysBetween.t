@@ -78,6 +78,10 @@ ddg_goodie_test(
     # Month and Date are backwards
     'workdays between 16/06/2014 20/06/2014' =>
         test_zci("There are 4 workdays between $JUN_ABBREV 16, 2014 and $JUN_ABBREV 20, 2014."),
+    'workdays between 5/06/2014 20/06/2014' =>
+        test_zci("There are 11 workdays between $JUN_ABBREV 05, 2014 and $JUN_ABBREV 20, 2014."),
+    'workdays between 20/06/2014 5/06/2014' =>
+        test_zci("There are 11 workdays between $JUN_ABBREV 05, 2014 and $JUN_ABBREV 20, 2014."),
 
     # Single digit days and months
     'workdays between 1/6/2014 1/10/2014' =>

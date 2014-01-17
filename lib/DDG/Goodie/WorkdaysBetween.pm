@@ -84,30 +84,57 @@ handle remainder => sub {
 sub get_dates {
     my @date_strings = $_ =~ m#(\d{1,2}/\d{1,2}/\d{4}|\w{3} \d{1,2},? \d{4})#g;
 
-    # A list of date formats to try sequentially.
-    my @date_formats = ( "%m/%d/%Y", "%d/%m/%Y", "%b %d %Y", "%b %d, %Y" );
-
     # If we don't have two dates matching the correct format, return nothing.
     if (scalar(@date_strings) != 2) {
         return;
     }
 
+    # A list of date formats to try sequentially.
+    my $day_first_format = "%d/%m/%Y";
+    my @date_formats = ( "%m/%d/%Y", $day_first_format, "%b %d %Y", "%b %d, %Y" );
+
+    # Flag that determines if we are using the DD/MM/YYYY format
+    my $day_is_first = 0;
+
     # Populate the @dates array. With Time::Piece
     my @dates;
-    foreach (@date_strings) {
-        my $date_string = $_;
+    for (my $i = 0; $i < scalar(@date_strings); $i++) {
+        my $date_string = $date_strings[$i];
         foreach (@date_formats) {
             local $@;
+
+            my $time;
             eval {
                 # Attempt to parse the date here.
-                my $time = Time::Piece->strptime($date_string, $_);
+                $time = Time::Piece->strptime($date_string, $_);
+            };
+
+            # If we didn't get an error parsing the time...
+            unless ($@) {
+
+                # If a date matches the DD/MM/YYYY format we want to ensure
+                # that all the XX/XX/XXXX dates match that specific format.
+                # Therefore, we remove the MM/DD/YYYY format from the
+                # dates_format array, clear the dates array, and restart the
+                # loop. This way all XX/XX/XXXX dates will match only the
+                # DD/MM/YYYY format.
+                if ( $_ eq $day_first_format && !$day_is_first ) {
+                    # Set the flag indicating that we are using DD/MM/YYYY
+                    $day_is_first = 1;
+                    # Remove the MM/DD/YYYY format from the date_formats array
+                    shift(@date_formats);
+                    # Empty the @dates array
+                    undef @dates;
+                    # Reset the loop index
+                    $i = -1;
+                    # Restart the loop iteration
+                    next;
+                }
 
                 # If the format was acceptable, add the date to the @dates array
                 push(@dates, $time);
-            };
-
-            # Break the loop unless we had an eval error
-            unless ($@) { last; }
+                last;
+            }
         }
     }
 
