@@ -68,10 +68,6 @@ handle remainder => sub {
     my $query = shift;
 
     my ($dialing_code, @countries);
-
-    $query =~ s/^\s+//;  # trim leading white space
-    $query =~ s/\s+$//;  # trim trailing white space
-    $query =~ s/\s+/ /g; # remove extra white space
    
     if ($query =~ /^\+?(\d+)/) {
         # $query looks like a phone number. eg +65
