@@ -12,9 +12,12 @@ ddg_goodie_test(
     [
         'DDG::Goodie::SumOfNaturalNumbers'
     ],
-    'sum 1 to 10' => test_zci('Sum: 55'),
-    'sum 55 to 63' => test_zci('Sum: 531'),
-    'add 33 to 100' => test_zci('Sum: 4522'),
+    'sum 1 to 10' => test_zci('Sum of natural numbers from 1 to 10: 55'),
+    'sum 55 to 63' => test_zci('Sum of natural numbers from 55 to 63: 531'),
+    'add 33 to 100' => test_zci('Sum of natural numbers from 33 to 100: 4522'),
+    'sum 1-10' => test_zci('Sum of natural numbers from 1 to 10: 55'),
+    'sum from 1 to 10' => test_zci('Sum of natural numbers from 1 to 10: 55'),
+    '1-10 sum' => test_zci('Sum of natural numbers from 1 to 10: 55'),
 );
 
 done_testing;

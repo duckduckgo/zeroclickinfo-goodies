@@ -2,9 +2,10 @@ package DDG::Goodie::SumOfNaturalNumbers;
 # ABSTRACT: Returns the sum of the numbers between the first and second provided integers
 
 use DDG::Goodie;
-use List::Util qw(reduce);
+use List::Util 'sum';
 
-triggers start => "sum", "add";
+triggers start => "sum", "add", "sum from";
+triggers end => "sum";
 
 zci is_cached => 1;
 zci answer_type => "sum";
@@ -18,13 +19,12 @@ category 'calculations';
 topics 'math';
 
 handle remainder => sub {
-  return unless $_ =~ /^(\d+)\s+\bto\b\s+(\d+)/i;
-  if ($1 > $2) {
+  return unless $_ =~ /^(\d+)\s*( to )?-?\s*(\d+)/i;
+  if ($1 > $3) {
     return;
   } else {
-    my @numberArray = ($1..$2);
-    my $sum = reduce { $a + $b } @numberArray;
-    return "Sum: $sum";
+    my $sum = sum($1..$3);
+    return "Sum of natural numbers from $1 to $3: $sum";
   }
 };
 
