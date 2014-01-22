@@ -15,7 +15,9 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'programming';
 attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+            cpan    => 'CRZEDPSYC' ,
+            twitter => 'loganmccamon',
+            github => 'loganom';
 
 my %guid = (
     'guid' => 0,
@@ -31,10 +33,11 @@ handle query_lc => sub {
         if ($guid{$_}) {
             $guid = lc $guid;
         } else {
-            $guid = qq({$guid});
+            $guid = qq($guid);
         }
-	$guid .= ' (randomly generated)';
-        return $guid;
+        return answer => $guid,
+                html => qq(<input type="text" onclick='this.select();' size="36" value="$guid"/>),
+                heading => 'Random GUID';
     }
     return;
 };
