@@ -32,11 +32,10 @@ handle query_lc => sub {
     if (my $guid = Data::GUID->new) {
         if ($guid{$_}) {
             $guid = lc $guid;
-        } else {
-            $guid = qq($guid);
         }
-        return answer => $guid,
-                html => qq(<input type="text" onclick='this.select();' size="36" value="$guid"/>),
+
+        return  answer => qq($guid),
+                html => qq(<input type="text" onclick='this.select();' size="45" value="$guid"/>),
                 heading => 'Random GUID';
     }
     return;
