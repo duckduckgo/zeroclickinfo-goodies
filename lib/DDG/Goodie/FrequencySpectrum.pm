@@ -93,17 +93,17 @@ handle query => sub {
   my $hz_abbrev;
   my $freq_formatted;
   
-  if($freq =~ m/^(.+?)\s(?:hz|hertz)$/i){
+  if($freq =~ m/^(.+?)\s(?:hz|hertz)$/i) {
     $freq_hz = $1;
-  }elsif($freq =~ m/^(.+?)\s(?:khz|kilohertz)$/i){
+  } elsif($freq =~ m/^(.+?)\s(?:khz|kilohertz)$/i) {
     $freq_hz = $1 * THOUSAND;
-  }elsif($freq =~ m/^(.+?)\s(?:mhz|megahertz)$/i){
+  } elsif($freq =~ m/^(.+?)\s(?:mhz|megahertz)$/i) {
     $freq_hz = $1 * MILLION;
-  }elsif($freq =~ m/^(.+?)\s(?:ghz|gigahertz)$/i){
+  } elsif($freq =~ m/^(.+?)\s(?:ghz|gigahertz)$/i) {
     $freq_hz = $1 * BILLION;
-  }elsif($freq =~ m/^(.+?)\s(?:thz|terahertz)$/i){
+  } elsif($freq =~ m/^(.+?)\s(?:thz|terahertz)$/i) {
     $freq_hz = $1 * TRILLION;
-  }else{
+  } else {
     #unexpected case
     return;
   }
@@ -111,16 +111,16 @@ handle query => sub {
   if($freq_hz >= TRILLION){
     $hz_abbrev = "THz";
     $freq_formatted = $freq_hz / TRILLION;
-  }elsif($freq_hz >= BILLION){
+  } elsif($freq_hz >= BILLION) {
     $hz_abbrev = "GHz";
     $freq_formatted = $freq_hz / BILLION;
-  }elsif($freq_hz >= MILLION){
+  } elsif($freq_hz >= MILLION) {
     $hz_abbrev = "MHz";
     $freq_formatted = $freq_hz / MILLION;
-  }elsif($freq_hz >= THOUSAND){
+  } elsif($freq_hz >= THOUSAND) {
     $hz_abbrev = "kHz";
     $freq_formatted = $freq_hz / THOUSAND;
-  }else{
+  } else {
     $hz_abbrev = "Hz";
     $freq_formatted = $freq_hz;
   }
@@ -134,34 +134,34 @@ handle query => sub {
 #in number formatting. Filter out clearly invalid queries.
 sub normalize_freq{
   my $freq = $_;
-  if($freq =~ m/(?:\.\.)|(?:,,)/){
+  if($freq =~ m/(?:\.\.)|(?:,,)/) {
     #consecutive dots or commas are not allowed
     return;
-  } elsif($freq =~ m/^[\d]+(\.\d+)?\s\w+$/){
+  } elsif($freq =~ m/^[\d]+(\.\d+)?\s\w+$/) {
     #only digits and one dot are present,
     #presume they're in perl number notation and do nothing
-  } elsif($freq =~ m/^[\d]+(,\d+)?\s\w+$/){
+  } elsif($freq =~ m/^[\d]+(,\d+)?\s\w+$/) {
     #only digits and one comma are present,
     #presume the comma is a decimal separator
     $freq =~ s/,/./g; 
-  } elsif($freq =~ m/^[\d.]+\s\w+$/){
+  } elsif($freq =~ m/^[\d.]+\s\w+$/) {
     #digits and multiple dots are present,
     #presume dots are thousands separators
     $freq =~ s/\.//g;
-  } elsif($freq =~ m/^[\d,]+\s\w+$/){
+  } elsif($freq =~ m/^[\d,]+\s\w+$/) {
     #digits and multiple commas are present,
     #presume commas are thousands separators
     $freq =~ s/,//g;
-  } elsif($freq =~ m/^(?:\d+\.)+\d+,\d+\s\w+$/){
+  } elsif($freq =~ m/^(?:\d+\.)+\d+,\d+\s\w+$/) {
     #dot occurs before comma,
     #presumed that thousands separator is dot and decimal separator is comma
     $freq =~ s/\.//g;
     $freq =~ s/,/./g;
-  } elsif($freq =~ m/^(?:\d+,)+\d+\.\d+\s\w+$/){
+  } elsif($freq =~ m/^(?:\d+,)+\d+\.\d+\s\w+$/) {
     #comma occurs before dot,
     #presumed that thousands separator is comma and decimal separator is dot
     $freq =~ s/,//g;
-  } else{
+  } else {
     #unexpected format
     return;
   }
@@ -170,30 +170,35 @@ sub normalize_freq{
 
 #Take the frequency and look at which ranges it falls in.
 #Build up the result string.
-sub prepare_result{
+sub prepare_result {
     my $freq = $_[0];
     my $freq_hz = $_[1];
     my $color = match_in_ranges(int($freq_hz), $color_ranges);
     my $radio = match_in_ranges(int($freq_hz), $radio_ranges) unless $color;
     my $instruments = matches_in_ranges($freq_hz, $instrument_ranges) unless $color;
     my $text_result = "";
-    if($radio){
+    my $more_at = '';
+    if($radio) {
 	$text_result = $freq . " is a radio frequency in the " . $radio;
-    } elsif($color){
+	$more_at = 'https://en.wikipedia.org/wiki/Radio_spectrum';
+    } elsif($color) {
 	$text_result = $freq . " is an electromagnetic frequency of " . $color . " light.";
+	$more_at = 'https://en.wikipedia.org/wiki/Color';
     }
-    if($instruments){
+    if($instruments) {
+	$more_at = 'https://en.wikipedia.org/wiki/Musical_acoustics';
 	$instruments =~ s/,\s([a-zA-Z\s-]+)$/, and $1/;
-	if($radio){
+	if($radio) {
 	    $text_result = $text_result . "\n" . $freq . " is also an audible frequency which can be produced by " . $instruments . ".";
-	} else{
+	} else {
 	    $text_result = $freq . " is an audible frequency which can be produced by " . $instruments . ".";
 	}
     }
-    if($text_result){
+
+    if($text_result) {
 	(my $html_result = $text_result) =~ s/\n/<br>/g;
-	$html_result .= '<br><a href="https://en.wikipedia.org/wiki/Frequency_spectrum">More at Wikipedia</a>';
-	$text_result .= "\nMore at https://en.wikipedia.org/wiki/Frequency_spectrum";
+	$html_result .= "<br><a href='$more_at'>More at Wikipedia</a>";
+	$text_result .= "\nMore at $more_at";
 	return $text_result, html => $html_result, heading => "$freq (Frequency Spectrum)";
     }
 
@@ -201,11 +206,11 @@ sub prepare_result{
 };
 
 #Find which single range applies.
-sub match_in_ranges{
+sub match_in_ranges {
     my $freq = $_[0];
     my $ranges = $_[1];
 
-    foreach my $range (@$ranges){
+    foreach my $range (@$ranges) {
 	if($freq >= $range->[0] && $freq <= $range->[1]){
 	    return $range->[2];
 	}
@@ -215,12 +220,12 @@ sub match_in_ranges{
 };
 
 #Find any number of ranges which apply.
-sub matches_in_ranges{
+sub matches_in_ranges {
     my $freq = $_[0];
     my $ranges = $_[1];
     my @matches;
-    foreach my $range (@$ranges){
-	if($freq >= $range->[0] && $freq <= $range->[1]){
+    foreach my $range (@$ranges) {
+	if($freq >= $range->[0] && $freq <= $range->[1]) {
 	    push(@matches, $range->[2]);
 	}
     }
