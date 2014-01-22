@@ -137,31 +137,31 @@ sub normalize_freq{
   if($freq =~ m/(?:\.\.)|(?:,,)/){
     #consecutive dots or commas are not allowed
     return;
-  }elsif($freq =~ m/^[\d]+(\.\d+)?\s\w+$/){
+  } elsif($freq =~ m/^[\d]+(\.\d+)?\s\w+$/){
     #only digits and one dot are present,
     #presume they're in perl number notation and do nothing
-  }elsif($freq =~ m/^[\d]+(,\d+)?\s\w+$/){
+  } elsif($freq =~ m/^[\d]+(,\d+)?\s\w+$/){
     #only digits and one comma are present,
     #presume the comma is a decimal separator
     $freq =~ s/,/./g; 
-  }elsif($freq =~ m/^[\d.]+\s\w+$/){
+  } elsif($freq =~ m/^[\d.]+\s\w+$/){
     #digits and multiple dots are present,
     #presume dots are thousands separators
     $freq =~ s/\.//g;
-  }elsif($freq =~ m/^[\d,]+\s\w+$/){
+  } elsif($freq =~ m/^[\d,]+\s\w+$/){
     #digits and multiple commas are present,
     #presume commas are thousands separators
     $freq =~ s/,//g;
-  }elsif($freq =~ m/^(?:\d+\.)+\d+,\d+\s\w+$/){
+  } elsif($freq =~ m/^(?:\d+\.)+\d+,\d+\s\w+$/){
     #dot occurs before comma,
     #presumed that thousands separator is dot and decimal separator is comma
     $freq =~ s/\.//g;
     $freq =~ s/,/./g;
-  }elsif($freq =~ m/^(?:\d+,)+\d+\.\d+\s\w+$/){
+  } elsif($freq =~ m/^(?:\d+,)+\d+\.\d+\s\w+$/){
     #comma occurs before dot,
     #presumed that thousands separator is comma and decimal separator is dot
     $freq =~ s/,//g;
-  }else{
+  } else{
     #unexpected format
     return;
   }
@@ -171,58 +171,61 @@ sub normalize_freq{
 #Take the frequency and look at which ranges it falls in.
 #Build up the result string.
 sub prepare_result{
-  my $freq = $_[0];
-  my $freq_hz = $_[1];
-  my $color = match_in_ranges(int($freq_hz), $color_ranges);
-  my $radio = match_in_ranges(int($freq_hz), $radio_ranges) unless $color;
-  my $instruments = matches_in_ranges($freq_hz, $instrument_ranges) unless $color;
-  my $text_result = "";
-  if($radio){
-    $text_result = $freq . " is a radio frequency in the " . $radio;
-  }elsif($color){
-    $text_result = $freq . " is an electromagnetic frequency of " . $color . " light.";
-  }
-  if($instruments){
-    $instruments =~ s/,\s([a-zA-Z\s-]+)$/, and $1/;
+    my $freq = $_[0];
+    my $freq_hz = $_[1];
+    my $color = match_in_ranges(int($freq_hz), $color_ranges);
+    my $radio = match_in_ranges(int($freq_hz), $radio_ranges) unless $color;
+    my $instruments = matches_in_ranges($freq_hz, $instrument_ranges) unless $color;
+    my $text_result = "";
     if($radio){
-      $text_result = $text_result . "\n" . $freq . " is also an audible frequency which can be produced by " . $instruments . ".";
-    }else{
-      $text_result = $freq . " is an audible frequency which can be produced by " . $instruments . ".";
+	$text_result = $freq . " is a radio frequency in the " . $radio;
+    } elsif($color){
+	$text_result = $freq . " is an electromagnetic frequency of " . $color . " light.";
     }
-  }
-  if($text_result){
-    (my $html_result = $text_result) =~ s/\n/<br>/g;
-    $html_result .= '<br><a href="https://en.wikipedia.org/wiki/Frequency_spectrum">More at Wikipedia</a>';
-    $text_result .= "\nMore at https://en.wikipedia.org/wiki/Frequency_spectrum";
-    return $text_result, html => $html_result, heading => "$freq (Frequency Spectrum)";
-  }
-  return;
+    if($instruments){
+	$instruments =~ s/,\s([a-zA-Z\s-]+)$/, and $1/;
+	if($radio){
+	    $text_result = $text_result . "\n" . $freq . " is also an audible frequency which can be produced by " . $instruments . ".";
+	} else{
+	    $text_result = $freq . " is an audible frequency which can be produced by " . $instruments . ".";
+	}
+    }
+    if($text_result){
+	(my $html_result = $text_result) =~ s/\n/<br>/g;
+	$html_result .= '<br><a href="https://en.wikipedia.org/wiki/Frequency_spectrum">More at Wikipedia</a>';
+	$text_result .= "\nMore at https://en.wikipedia.org/wiki/Frequency_spectrum";
+	return $text_result, html => $html_result, heading => "$freq (Frequency Spectrum)";
+    }
+
+    return;
 };
 
 #Find which single range applies.
 sub match_in_ranges{
-  my $freq = $_[0];
-  my $ranges = $_[1];
-  
-  foreach my $range (@$ranges){
-    if($freq >= $range->[0] && $freq <= $range->[1]){
-      return $range->[2];
+    my $freq = $_[0];
+    my $ranges = $_[1];
+
+    foreach my $range (@$ranges){
+	if($freq >= $range->[0] && $freq <= $range->[1]){
+	    return $range->[2];
+	}
     }
-  }
-  return "";
+
+    return "";
 };
 
 #Find any number of ranges which apply.
 sub matches_in_ranges{
-  my $freq = $_[0];
-  my $ranges = $_[1];
-  my @matches;
-  foreach my $range (@$ranges){
-    if($freq >= $range->[0] && $freq <= $range->[1]){
-      push(@matches, $range->[2]);
+    my $freq = $_[0];
+    my $ranges = $_[1];
+    my @matches;
+    foreach my $range (@$ranges){
+	if($freq >= $range->[0] && $freq <= $range->[1]){
+	    push(@matches, $range->[2]);
+	}
     }
-  }
-  return join(", ", @matches);
+
+    return join(", ", @matches);
 };
 
 1;
