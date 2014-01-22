@@ -35,7 +35,7 @@ ddg_goodie_test(
 
   	# Check the HTML. Just once.
   	'guid' => test_zci(qr/^([a-zA-Z]|\d){8}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){12}$/,
-  		html => qr/^<input type="text" onclick='this.select\(\);' size="36" value="([a-zA-Z]|\d){8}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){12}"\/>$/,
+  		html => qr/^<input type="text" onclick='this.select\(\);' size="45" value="([a-zA-Z]|\d){8}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){4}-([a-zA-Z]|\d){12}"\/>$/,
   		heading => $heading
   	),
 );
