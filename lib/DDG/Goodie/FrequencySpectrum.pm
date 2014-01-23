@@ -134,16 +134,15 @@ handle query => sub {
 #in number formatting. Filter out clearly invalid queries.
 sub normalize_freq{
   my $freq = $_;
+
+  print $freq;
+
   if($freq =~ m/(?:\.\.)|(?:,,)/) {
     #consecutive dots or commas are not allowed
     return;
   } elsif($freq =~ m/^[\d]+(\.\d+)?\s\w+$/) {
     #only digits and one dot are present,
-    #presume they're in perl number notation and do nothing
-  } elsif($freq =~ m/^[\d]+(,\d+)?\s\w+$/) {
-    #only digits and one comma are present,
-    #presume the comma is a decimal separator
-    $freq =~ s/,/./g; 
+    #presume they're in perl number notation and do nothing 
   } elsif($freq =~ m/^[\d.]+\s\w+$/) {
     #digits and multiple dots are present,
     #presume dots are thousands separators
@@ -165,6 +164,8 @@ sub normalize_freq{
     #unexpected format
     return;
   }
+
+  print $freq;
   return $freq;
 };
 
