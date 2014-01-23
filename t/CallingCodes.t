@@ -10,6 +10,12 @@ zci answer_type => 'calling_codes';
 
 ddg_goodie_test(
         [qw( DDG::Goodie::CallingCodes )],
+        'calling code for the moon'  => undef,
+        'calling code +3boop'        => undef,
+        'calling code 55'            => test_zci('+55 is the international calling code for Brazil'),
+        'country code brazil'        => test_zci('+55 is the international calling code for Brazil'),
+        'dialing code +55'           => test_zci('+55 is the international calling code for Brazil'),
+        'country calling code 55'    => test_zci('+55 is the international calling code for Brazil'),
         'calling code 65'            => test_zci('+65 is the international calling code for Singapore'),
         'calling code +65'           => test_zci('+65 is the international calling code for Singapore'),
         'dialing code +65'           => test_zci('+65 is the international calling code for Singapore'),
