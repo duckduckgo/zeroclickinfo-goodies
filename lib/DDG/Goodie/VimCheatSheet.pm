@@ -15,10 +15,10 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/
 category "cheat_sheets";
 topics "computing", "geek", "programming", "sysadmin";
 
-primary_example_queries 'vim help';
-secondary_example_queries 'vi quick reference';
+primary_example_queries 'vim help', 'vim cheat sheet', 'vim commands';
+secondary_example_queries 'vi quick reference', 'vi commands', 'vi guide';
 
-triggers startend => 
+triggers startend => (
     'vi cheat sheet', 
     'vi cheatsheet', 
     'vi commands',
@@ -33,7 +33,7 @@ triggers startend =>
     'vim help',
     'vim quick reference',
     'vim reference',
-    ;
+);
 
 attribution github  => ["kablamo",            "Eric Johnson"],
             twitter => ["kablamo_",           "Eric Johnson"],
