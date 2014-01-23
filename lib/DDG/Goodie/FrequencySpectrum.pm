@@ -135,8 +135,6 @@ handle query => sub {
 sub normalize_freq{
   my $freq = $_;
 
-  print $freq;
-
   if($freq =~ m/(?:\.\.)|(?:,,)/) {
     #consecutive dots or commas are not allowed
     return;
@@ -165,7 +163,6 @@ sub normalize_freq{
     return;
   }
 
-  print $freq;
   return $freq;
 };
 
