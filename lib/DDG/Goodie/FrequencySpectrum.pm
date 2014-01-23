@@ -135,33 +135,12 @@ handle query => sub {
 sub normalize_freq{
   my $freq = $_;
 
-  if($freq =~ m/(?:\.\.)|(?:,,)/) {
-    #consecutive dots or commas are not allowed
-    return;
-  } elsif($freq =~ m/^[\d]+(\.\d+)?\s\w+$/) {
-    #only digits and one dot are present,
-    #presume they're in perl number notation and do nothing 
-  } elsif($freq =~ m/^[\d.]+\s\w+$/) {
-    #digits and multiple dots are present,
-    #presume dots are thousands separators
-    $freq =~ s/\.//g;
-  } elsif($freq =~ m/^[\d,]+\s\w+$/) {
-    #digits and multiple commas are present,
-    #presume commas are thousands separators
-    $freq =~ s/,//g;
-  } elsif($freq =~ m/^(?:\d+\.)+\d+,\d+\s\w+$/) {
-    #dot occurs before comma,
-    #presumed that thousands separator is dot and decimal separator is comma
-    $freq =~ s/\.//g;
-    $freq =~ s/,/./g;
-  } elsif($freq =~ m/^(?:\d+,)+\d+\.\d+\s\w+$/) {
-    #comma occurs before dot,
-    #presumed that thousands separator is comma and decimal separator is dot
-    $freq =~ s/,//g;
-  } else {
-    #unexpected format
-    return;
+  if($freq =~ /(\d+\.){2,}|([.]{2,})|([,]{2,})/) {
+      return;
   }
+
+  # Remove commas.
+  $freq =~ s/,//g;
 
   return $freq;
 };
