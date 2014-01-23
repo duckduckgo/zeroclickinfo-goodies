@@ -3,38 +3,45 @@
 use strict;
 use warnings;
 
-use Web::Scraper;
 use Path::Class;
-use JSON;
+use Text::Xslate;
+use Web::Scraper;
 
 
 {
-    my $data   = parse_html();
-    my $tables = $data->{tables};
-    my $names  = $data->{names};
+    my $src_file  = file('download/vimcheat.html'); # in
+    my $html_file = file('vim_cheat_sheet.html');   # out
+    my $text_file = file('vim_cheat_sheet.txt');    # out
 
-    cleanup_tables_data( $tables );
-    merge_names_and_tables( $names, $tables );
-    my $columns = split_into_two_columns( $tables );
-    my $json    = JSON->new->pretty->utf8->encode( $columns );
+    my $data = parse_html($src_file);
 
-    file('vimcheat.json')->spew( iomode => '>:encoding(UTF-8)', $json );
+    generate_html_cheat_sheet($data => $html_file);
+    generate_text_cheat_sheet($data => $text_file);
 }
 
 
 # Returns a data structure which looks like:
 #
-# { names  => ['Cursor movement', 'Insert Mode', ...],
-#   tables => [
-#     {rows => [ {help => 'h - move left'}, {help => 'j - move down'}, ... ]},
-#     {rows => [ {help => 'i - start insert mode'}, ...                    ]},
-#     ...
-#   ],
-# }
+# [
+#    [  # column 1
+#       {  name => 'first table name',
+#          rows => [ {cmds => ['h'], help => 'move left'}, ... ]
+#       },
+#       {  name => 'second table name',
+#          rows => [ {cmds => ['i'], help => 'start insert mode'}, ... ]
+#       },
+#       ...
+#    ],
+#    [  # column 2
+#       ...
+#    ]
+# ]
 #
 sub parse_html {
+    my $file = shift;
+
     my $scraper = scraper {
-        process "h2", "names[]" => 'TEXT';
+        process "h2", "names[]"  => 'TEXT';
         process "ul", "tables[]" => scraper {
             process "li", "rows[]" => scraper {
                 process "li", "help" => 'TEXT';
@@ -42,10 +49,15 @@ sub parse_html {
         };
     };
 
-    my $string = scalar file('download/vimcheat.html')
-        ->slurp(iomode => '<:encoding(UTF-8)');
+    my $string = $file->slurp(iomode => '<:encoding(UTF-8)');
+    my $data   = $scraper->scrape($string);
 
-    return $scraper->scrape($string);
+    my $tables = $data->{tables};
+    my $names  = $data->{names};
+
+    cleanup_tables_data( $tables );
+    merge_names_and_tables( $names, $tables );
+    return split_into_two_columns( $tables );
 }
 
 # Alters each $table->{rows} so it looks like this:
@@ -78,8 +90,7 @@ sub cleanup_tables_data {
 
 # Alters $tables so it looks like this:
 #
-# [
-#   {name => 'Cursor movement', rows => [...]},
+# [ {name => 'Cursor movement', rows => [...]},
 #   {name => 'Insert Mode',     rows => [...]},
 #   ...
 # ]
@@ -101,11 +112,52 @@ sub merge_names_and_tables {
 #
 sub split_into_two_columns {
     my $tables = shift;
+
     my $length = scalar @$tables;
-    my $half = int( $length / 2 );
+    my $half   = int( $length / 2 );
+
     my @column1 = @$tables[0..$half];
     my @column2 = @$tables[$half .. $length - 1];
-    return [ \@column1, \@column2 ];
 
+    return [ \@column1, \@column2 ];
+}
+
+# Generates an html answer from $data and saves the answer to $file.
+sub generate_html_cheat_sheet {
+    my $data = shift;
+    my $file = shift;
+
+    my $css  = file("style.css")->slurp;
+    my $html = "<style type='text/css'>\n\n$css\n</style>\n\n";
+
+    my $vars  = { columns => $data };
+    $html    .= Text::Xslate->new()->render('template.tx', $vars);
+
+    $file->spew(iomode => '>:encoding(UTF-8)', $html);
+}
+
+# Generates a plain text answer from $data and saves the answer to $file.
+sub generate_text_cheat_sheet {
+    my $data = shift;
+    my $file = shift;
+    my $answer = '';
+
+    foreach my $tables (@$data) {
+        foreach my $table (@$tables) {
+            $answer .= $table->{name} . "\n\n";
+            foreach my $row (@{ $table->{rows} }) {
+                my $cmds = $row->{cmds};
+                my $left = join ' or ', @$cmds;
+
+                $answer .= sprintf('%-35s ', $left);
+                $answer .= $row->{help};
+                $answer .= "\n";
+            }
+            $answer .= "\n";
+        }
+        $answer .= "\n";
+    }
+
+    $file->spew(iomode => '>:encoding(UTF-8)', $answer);
 }
 

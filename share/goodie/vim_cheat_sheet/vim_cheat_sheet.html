@@ -1,0 +1,733 @@
+<style type='text/css'>
+
+#zero_click_plus_wrapper {
+    display: none;
+}
+
+#zero_click_wrapper #zero_click #zero_click_abstract {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#zero_click_abstract #vim-container {
+    max-height: 45ex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#zero_click_abstract .vim-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#zero_click_abstract table.vim-table {
+    width: 100%;
+    margin-bottom: 1ex;
+}
+
+#zero_click_abstract table.vim-table td {
+    padding-right: 1ex;
+    vertical-align: top;
+}
+#zero_click_abstract table.vim-table td code {
+    white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+    #zero_click_abstract .vim-column {
+	width: 100%;
+    }
+}
+
+</style>
+
+<div id="vim-container">
+
+  <div class="vim-column">
+
+    <b>Cursor movement</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>h</code><br>
+        </td>
+        <td>move left</td>
+      </tr>
+      <tr>
+        <td>
+            <code>j</code><br>
+        </td>
+        <td>move down</td>
+      </tr>
+      <tr>
+        <td>
+            <code>k</code><br>
+        </td>
+        <td>move up</td>
+      </tr>
+      <tr>
+        <td>
+            <code>l</code><br>
+        </td>
+        <td>move right</td>
+      </tr>
+      <tr>
+        <td>
+            <code>w</code><br>
+        </td>
+        <td>jump by start of words (punctuation considered words)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>W</code><br>
+        </td>
+        <td>jump by words (spaces separate words)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>e</code><br>
+        </td>
+        <td>jump to end of words (punctuation considered words)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>E</code><br>
+        </td>
+        <td>jump to end of words (no punctuation)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>b</code><br>
+        </td>
+        <td>jump backward by words (punctuation considered words)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>B</code><br>
+        </td>
+        <td>jump backward by words (no punctuation)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>0</code><br>
+        </td>
+        <td>(zero) start of line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>^</code><br>
+        </td>
+        <td>first non-blank character of line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>$</code><br>
+        </td>
+        <td>end of line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>G</code><br>
+        </td>
+        <td>Go To command (prefix with number</td>
+      </tr>
+
+    </table>
+    <b>Insert Mode - Inserting/Appending text</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>i</code><br>
+        </td>
+        <td>start insert mode at cursor</td>
+      </tr>
+      <tr>
+        <td>
+            <code>I</code><br>
+        </td>
+        <td>insert at the beginning of the line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>a</code><br>
+        </td>
+        <td>append after the cursor</td>
+      </tr>
+      <tr>
+        <td>
+            <code>A</code><br>
+        </td>
+        <td>append at the end of the line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>o</code><br>
+        </td>
+        <td>open (append) blank line below current line (no need to press return)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>O</code><br>
+        </td>
+        <td>open blank line above current line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>ea</code><br>
+        </td>
+        <td>append at end of word</td>
+      </tr>
+      <tr>
+        <td>
+            <code>Esc</code><br>
+        </td>
+        <td>exit insert mode</td>
+      </tr>
+
+    </table>
+    <b>Editing</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>r</code><br>
+        </td>
+        <td>replace a single character (does not use insert mode)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>J</code><br>
+        </td>
+        <td>join line below to the current one</td>
+      </tr>
+      <tr>
+        <td>
+            <code>cc</code><br>
+        </td>
+        <td>change (replace) an entire line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>cw</code><br>
+        </td>
+        <td>change (replace) to the end of word</td>
+      </tr>
+      <tr>
+        <td>
+            <code>c$</code><br>
+        </td>
+        <td>change (replace) to the end of line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>s</code><br>
+        </td>
+        <td>delete character at cursor and substitute text</td>
+      </tr>
+      <tr>
+        <td>
+            <code>S</code><br>
+        </td>
+        <td>delete line at cursor and substitute text (same as cc)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>xp</code><br>
+        </td>
+        <td>transpose two letter (delete and paste, technically)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>u</code><br>
+        </td>
+        <td>undo</td>
+      </tr>
+      <tr>
+        <td>
+            <code>Ctrl + r</code><br>
+        </td>
+        <td>redo</td>
+      </tr>
+      <tr>
+        <td>
+            <code>.</code><br>
+        </td>
+        <td>repeat last command</td>
+      </tr>
+
+    </table>
+    <b>Marking text (visual mode)</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>v</code><br>
+        </td>
+        <td>start visual mode, mark lines, then do command (such as y-yank)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>V</code><br>
+        </td>
+        <td>start Linewise visual mode</td>
+      </tr>
+      <tr>
+        <td>
+            <code>o</code><br>
+        </td>
+        <td>move to other end of marked area</td>
+      </tr>
+      <tr>
+        <td>
+            <code>Ctrl + v</code><br>
+        </td>
+        <td>start visual block mode</td>
+      </tr>
+      <tr>
+        <td>
+            <code>O</code><br>
+        </td>
+        <td>move to Other corner of block</td>
+      </tr>
+      <tr>
+        <td>
+            <code>aw</code><br>
+        </td>
+        <td>mark a word</td>
+      </tr>
+      <tr>
+        <td>
+            <code>ab</code><br>
+        </td>
+        <td>a () block (with braces)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>aB</code><br>
+        </td>
+        <td>a {} block (with brackets)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>ib</code><br>
+        </td>
+        <td>inner () block</td>
+      </tr>
+      <tr>
+        <td>
+            <code>iB</code><br>
+        </td>
+        <td>inner {} block</td>
+      </tr>
+      <tr>
+        <td>
+            <code>Esc</code><br>
+        </td>
+        <td>exit visual mode</td>
+      </tr>
+
+    </table>
+    <b>Visual commands</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>&gt;</code><br>
+        </td>
+        <td>shift right</td>
+      </tr>
+      <tr>
+        <td>
+            <code>&lt;</code><br>
+        </td>
+        <td>shift left</td>
+      </tr>
+      <tr>
+        <td>
+            <code>y</code><br>
+        </td>
+        <td>yank (copy) marked text</td>
+      </tr>
+      <tr>
+        <td>
+            <code>d</code><br>
+        </td>
+        <td>delete marked text</td>
+      </tr>
+      <tr>
+        <td>
+            <code>~</code><br>
+        </td>
+        <td>switch case</td>
+      </tr>
+
+    </table>
+    <b>Cut and Paste</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>yy</code><br>
+        </td>
+        <td>yank (copy) a line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>2yy</code><br>
+        </td>
+        <td>yank 2 lines</td>
+      </tr>
+      <tr>
+        <td>
+            <code>yw</code><br>
+        </td>
+        <td>yank word</td>
+      </tr>
+      <tr>
+        <td>
+            <code>y$</code><br>
+        </td>
+        <td>yank to end of line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>p</code><br>
+        </td>
+        <td>put (paste) the clipboard after cursor</td>
+      </tr>
+      <tr>
+        <td>
+            <code>P</code><br>
+        </td>
+        <td>put (paste) before cursor</td>
+      </tr>
+      <tr>
+        <td>
+            <code>dd</code><br>
+        </td>
+        <td>delete (cut) a line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>2dd</code><br>
+        </td>
+        <td>delete (cut) 2 lines</td>
+      </tr>
+      <tr>
+        <td>
+            <code>dw</code><br>
+        </td>
+        <td>delete (cut) the current word</td>
+      </tr>
+      <tr>
+        <td>
+            <code>D</code><br>
+        </td>
+        <td>delete (cut) to the end of line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>d$</code><br>
+        </td>
+        <td>delete (cut) to the end of the line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>x</code><br>
+        </td>
+        <td>delete (cut) current character</td>
+      </tr>
+
+    </table>
+
+  </div>
+  <div class="vim-column">
+
+    <b>Cut and Paste</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>yy</code><br>
+        </td>
+        <td>yank (copy) a line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>2yy</code><br>
+        </td>
+        <td>yank 2 lines</td>
+      </tr>
+      <tr>
+        <td>
+            <code>yw</code><br>
+        </td>
+        <td>yank word</td>
+      </tr>
+      <tr>
+        <td>
+            <code>y$</code><br>
+        </td>
+        <td>yank to end of line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>p</code><br>
+        </td>
+        <td>put (paste) the clipboard after cursor</td>
+      </tr>
+      <tr>
+        <td>
+            <code>P</code><br>
+        </td>
+        <td>put (paste) before cursor</td>
+      </tr>
+      <tr>
+        <td>
+            <code>dd</code><br>
+        </td>
+        <td>delete (cut) a line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>2dd</code><br>
+        </td>
+        <td>delete (cut) 2 lines</td>
+      </tr>
+      <tr>
+        <td>
+            <code>dw</code><br>
+        </td>
+        <td>delete (cut) the current word</td>
+      </tr>
+      <tr>
+        <td>
+            <code>D</code><br>
+        </td>
+        <td>delete (cut) to the end of line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>d$</code><br>
+        </td>
+        <td>delete (cut) to the end of the line</td>
+      </tr>
+      <tr>
+        <td>
+            <code>x</code><br>
+        </td>
+        <td>delete (cut) current character</td>
+      </tr>
+
+    </table>
+    <b>Exiting</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>:w</code><br>
+        </td>
+        <td>write (save) the file, but don&#39;t exit</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:wq</code><br>
+        </td>
+        <td>write (save) and quit</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:x</code><br>
+        </td>
+        <td>write (save) and quit</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:q</code><br>
+        </td>
+        <td>quit (fails if anything has changed)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:q!</code><br>
+        </td>
+        <td>quit and throw away changes</td>
+      </tr>
+
+    </table>
+    <b>Search/Replace</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>/pattern</code><br>
+        </td>
+        <td>search for pattern</td>
+      </tr>
+      <tr>
+        <td>
+            <code>?pattern</code><br>
+        </td>
+        <td>search backward for pattern</td>
+      </tr>
+      <tr>
+        <td>
+            <code>n</code><br>
+        </td>
+        <td>repeat search in same direction</td>
+      </tr>
+      <tr>
+        <td>
+            <code>N</code><br>
+        </td>
+        <td>repeat search in opposite direction</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:%s/old/new/g</code><br>
+        </td>
+        <td>replace all old with new throughout file</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:%s/old/new/gc</code><br>
+        </td>
+        <td>replace all old with new throughout file with confirmations</td>
+      </tr>
+
+    </table>
+    <b>Working with multiple files</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>:e filename</code><br>
+        </td>
+        <td>Edit a file in a new buffer</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:bnext</code><br>
+            <code>:bn</code><br>
+        </td>
+        <td>go to next buffer</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:bprev</code><br>
+            <code>:bp</code><br>
+        </td>
+        <td>go to previous buffer</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:bd</code><br>
+        </td>
+        <td>delete a buffer (close a file)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:sp filename</code><br>
+        </td>
+        <td>Open a file in a new buffer and split window</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:vsp filename</code><br>
+        </td>
+        <td>Open a file in a new buffer and vertically split window </td>
+      </tr>
+      <tr>
+        <td>
+            <code>Ctrl + ws</code><br>
+        </td>
+        <td>Split windows</td>
+      </tr>
+      <tr>
+        <td>
+            <code>Ctrl + ww</code><br>
+        </td>
+        <td>switch windows</td>
+      </tr>
+      <tr>
+        <td>
+            <code>Ctrl + wq</code><br>
+        </td>
+        <td>Quit a window</td>
+      </tr>
+      <tr>
+        <td>
+            <code>Ctrl + wv</code><br>
+        </td>
+        <td>split windows vertically</td>
+      </tr>
+
+    </table>
+    <b>Tabs</b>
+    <table class="vim-table">
+
+      <tr>
+        <td>
+            <code>:tabnew filename</code><br>
+            <code>:tabn filename</code><br>
+        </td>
+        <td>open file in a new tab</td>
+      </tr>
+      <tr>
+        <td>
+            <code>Ctrl+W T</code><br>
+        </td>
+        <td>move current split window into its own tab</td>
+      </tr>
+      <tr>
+        <td>
+            <code>gt</code><br>
+            <code>:tabnext</code><br>
+            <code>:tabn</code><br>
+        </td>
+        <td>move to next tab</td>
+      </tr>
+      <tr>
+        <td>
+            <code>gT</code><br>
+            <code>:tabprev</code><br>
+            <code>:tabp</code><br>
+        </td>
+        <td>move to previous tab</td>
+      </tr>
+      <tr>
+        <td>
+            <code>#gt</code><br>
+        </td>
+        <td>move to tab number #</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:tabmove #</code><br>
+        </td>
+        <td>move current tab to the #th position (indexed from 0)</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:tabclose</code><br>
+            <code>:tabc</code><br>
+        </td>
+        <td>close the current tab and all its windows</td>
+      </tr>
+      <tr>
+        <td>
+            <code>:tabonly</code><br>
+            <code>:tabo</code><br>
+        </td>
+        <td>close all other tabs except for the current one</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>

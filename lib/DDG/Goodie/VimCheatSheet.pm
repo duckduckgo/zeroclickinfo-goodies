@@ -1,10 +1,7 @@
 package DDG::Goodie::VimCheatSheet;
 # ABSTRACT: Provide a cheatsheet for common vim syntax
 
-use HTML::Entities;
 use DDG::Goodie;
-use Text::Xslate;
-use JSON;
 
 zci answer_type => "vim_cheat";
 
@@ -40,86 +37,26 @@ attribution github  => ["kablamo",            "Eric Johnson"],
             web     => ["http://kablamo.org", "Eric Johnson"];
 
 handle remainder => sub {
-
-    # retrieve data from a file
-    my $json     = share("vimcheat.json")->slurp(iomode => '<:encoding(UTF-8)');
-    my $columns  = JSON->new->utf8->decode($json);
-
     return 
         heading => 'Vim Cheat Sheet',
-        html    => html($columns), 
-        answer  => answer($columns);
+        html    => html_cheat_sheet(),
+        answer  => text_cheat_sheet(),
 };
 
-# Generate an html answer from $columns. Returns a string.
-sub html {
-    my $columns = shift;
+my $HTML;
 
-    my $css      = share("style.css")->slurp;
-    my $html     = "<style type='text/css'>$css</style>\n";
-
-    my $template = template();
-    my $vars     = { columns => $columns };
-    $html       .= Text::Xslate->new()->render_string($template, $vars);
-
-    return $html;
+sub html_cheat_sheet {
+    $HTML //= share("vim_cheat_sheet.html")
+        ->slurp(iomode => '<:encoding(UTF-8)');
+    return $HTML;
 }
 
-sub template {
-    return <<'EOF';
-<div id="vim-container">
+my $TEXT;
 
-  : for $columns -> $tables {
-  <div class="vim-column">
-
-    : for $tables -> $table {
-    <b><: $table.name :></b>
-    <table class="vim-table">
-
-      : for $table.rows -> $row {
-      <tr>
-        <td>
-            : for $row.cmds -> $cmd {
-            <code><: $cmd :></code><br>
-            : }
-        </td>
-        <td><: $row.help :></td>
-      </tr>
-      : }
-
-    </table>
-    : }
-
-  </div>
-  : }
-
-</div>
-EOF
+sub text_cheat_sheet {
+    $TEXT //= share("vim_cheat_sheet.txt")
+        ->slurp(iomode => '<:encoding(UTF-8)');
+    return $TEXT;
 }
-
-# Generate a plain text answer from $columns. Returns a string.
-sub answer {
-    my $columns = shift;
-    my $answer = '';
-
-    foreach my $tables (@$columns) {
-        foreach my $table (@$tables) {
-            $answer .= $table->{name} . "\n\n";
-            foreach my $row (@{ $table->{rows} }) {
-                my $cmds = $row->{cmds};
-                my $left = join ' or ', @$cmds;
-
-                $answer .= sprintf('%-35s ', $left);
-                $answer .= $row->{help};
-                $answer .= "\n";
-            }
-            $answer .= "\n";
-        }
-        $answer .= "\n";
-    }
-
-    return $answer;
-}
-
 
 1;
