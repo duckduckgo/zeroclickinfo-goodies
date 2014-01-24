@@ -53,15 +53,15 @@ ddg_goodie_test(
 
     # Starting on a Saturday
     'workdays between 01/11/2014 01/14/2014' =>
-        test_zci("There are 2 workdays between $JAN_ABBREV 11, 2014 and $JAN_ABBREV 14, 2014."),
+        test_zci("There are 1 workdays between $JAN_ABBREV 11, 2014 and $JAN_ABBREV 14, 2014."),
     'workdays between 01/11/2014 01/14/2014 inclusive' =>
-        test_zci("There are 2 workdays between $JAN_ABBREV 11, 2014 and $JAN_ABBREV 14, 2014."),
+        test_zci("There are 2 workdays between $JAN_ABBREV 11, 2014 and $JAN_ABBREV 14, 2014, inclusive."),
 
     # Starting on a Sunday
     'workdays between 01/12/2014 01/14/2014' =>
-        test_zci("There are 2 workdays between $JAN_ABBREV 12, 2014 and $JAN_ABBREV 14, 2014."),
+        test_zci("There are 1 workdays between $JAN_ABBREV 12, 2014 and $JAN_ABBREV 14, 2014."),
     'workdays between 01/12/2014 01/14/2014 inclusive' =>
-        test_zci("There are 2 workdays between $JAN_ABBREV 12, 2014 and $JAN_ABBREV 14, 2014."),
+        test_zci("There are 2 workdays between $JAN_ABBREV 12, 2014 and $JAN_ABBREV 14, 2014, inclusive."),
 
     # Workdays in a year
     'workdays between 01/01/2014 01/01/2015' =>
