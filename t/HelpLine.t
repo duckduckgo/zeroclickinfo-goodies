@@ -28,7 +28,6 @@ my @queries = (
 
 my @locations = (
     'au',
-    'ca',
     'us',
 );
 
