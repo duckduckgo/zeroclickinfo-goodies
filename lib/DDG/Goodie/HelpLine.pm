@@ -13,7 +13,7 @@ my @triggers = (
     'suicidal ideation',
     'i want to kill myself',
     'commit suicide',
-    'suicide pills'
+    'suicide pills',
     'suicide pill',
     'suicide prevention',
     'kill myself',

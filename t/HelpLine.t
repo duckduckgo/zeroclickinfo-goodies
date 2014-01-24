@@ -11,18 +11,30 @@ zci answer_type => 'helpline';
 
 my @queries = (
     'suicide',
+    'suicide hotline',
+    'kill myself',
     'suicidal thoughts',
-    'i want to commit suicide',
-    'i want to end my life',
-);
-
-my @skip_queries = (
-    'suicidal thoughts lyrics',
+    'end my life',
+    'suicidal thoughts',
+    'suicidal',
+    'suicidal ideation',
+    'i want to kill myself',
+    'commit suicide',
+    'suicide pills',
+    'suicide pill',
+    'suicide prevention',
+    'kill myself',
 );
 
 my @locations = (
+    'au',
+    'ca',
     'us',
-    'in',
+);
+
+my @ok_queries = (
+    'suicide girls',
+    'suicide silence',
 );
 
 ddg_goodie_test(
@@ -36,11 +48,11 @@ ddg_goodie_test(
                 query_raw => "$query",
                 location => test_location("$locations[$_]")
             ),
-            test_zci(qr/24 Hour Suicide Hotline: [\d\- ){7,}]/),
+            test_zci(qr/24 Hour Suicide Hotline: /),
         } 0 .. scalar @locations - 1
     } 0 .. scalar @queries - 1),
     (map {
-        my $query = $skip_queries[$_];
+        my $query = $ok_queries[$_];
         map {
             DDG::Request->new(
                 query_raw => "$query",
@@ -48,10 +60,10 @@ ddg_goodie_test(
             ),
             undef
         } 0 .. scalar @locations - 1
-    } 0 .. scalar @skip_queries - 1),
+    } 0 .. scalar @ok_queries - 1),
 );
 
 done_testing(
     (scalar @queries * scalar @locations * 2) +
-    (scalar @skip_queries * scalar @locations)
+    (scalar @ok_queries * scalar @locations)
 );
