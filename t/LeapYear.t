@@ -7,7 +7,6 @@ use DDG::Test::Goodie;
 
 zci answer_type => 'leap_year';
 zci is_cached => 1;
-
 ddg_goodie_test(
 	[qw(
 		DDG::Goodie::LeapYear
@@ -19,4 +18,4 @@ ddg_goodie_test(
 	'leap years before 2 bc' => test_zci('The 5 leap years before 2 BCE are 4 BCE, 8 BCE, 12 BCE, 16 BCE, 20 BCE, 24 BCE'),
 );
 
-done_testing;
+done_testing();
