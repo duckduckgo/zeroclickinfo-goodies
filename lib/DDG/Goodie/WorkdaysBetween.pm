@@ -52,35 +52,51 @@ handle remainder => sub {
     }
 
     my $start_plus_remainder = $weekday_start + $remainder;
-
-    # If the remaining days contain a Saturday we need to remove it from
-    # the count. But only if Saturday isn't the starting date, else it
-    # won't be included by default.
-    $workdays-- if $weekday_start < 6 && ($start_plus_remainder) > 5;
-
-    # If the remaining days contain a Sunday we need to remove it from
-    # the count. However, we only want to remove this if the starting date
-    # is NOT a Sunday.
-    $workdays-- if $weekday_start < 7 && ($start_plus_remainder) > 6;
     
-    if($weekday_start == 6 || $weekday_start == 7) {
-	$workdays--;
+    # We only regard something as 'inclusive' if the day
+    # ends on a weekday.
+    if(/inclusive/ && ($start_plus_remainder % 7) < 6) {
+	$inclusive = ', inclusive';
+	$workdays++;
     }
 
-    # Ignore 'inclusive' if the start date is a Saturday or Sunday.
-    # Otherwise we will add 1 day to the total, and include the
-    # 'inclusive' note in the resulting string.
-    if (/inclusive/) {
-        $workdays += 1;
-        $inclusive = ', inclusive';
+    # Problems only arise when we deal with remainders.
+    if($remainder > 0) {
+	# What happens if we land on a weekend?
+	if($start_plus_remainder % 7 == 0) {
+	    $workdays -= 2;
+	}
+
+	if($start_plus_remainder % 7 == 6) {
+	    $workdays -= 1;
+	}
+
+	# What happens if we start on a weekend?
+	if($weekday_start == 6) {
+	    $workdays -= 2;
+	}
+
+	if($weekday_start == 7) {
+	    $workdays -= 1;
+	}
+
+	# What happens if the weekend is in the middle?
+	if($weekday_start < 6 && $start_plus_remainder > 7) {
+	    $workdays -= 2;
+	}
+
+	if($workdays < 0) {
+	    $workdays = 0;
+	}
     }
 
     my $date_format = "%b %d, %Y";
     my $start_str = $start->strftime($date_format);
     my $end_str = $end->strftime($date_format);
 
-    return 'There are ' . $workdays . " workdays between " . $start_str .
-        ' and ' . $end_str . $inclusive . '.';
+    my $verb = $workdays == 1 ? 'is' : 'are';
+
+    return "There $verb $workdays workdays between $start_str and $end_str$inclusive.";
 };
 
 # Given a string containing two dates, parse out the dates, and return them in
@@ -91,7 +107,7 @@ handle remainder => sub {
 #
 # On failure this function returns nothing.
 sub get_dates {
-    my @date_strings = $_ =~ m#(\d{1,2}/\d{1,2}/\d{4}|\w{3} \d{1,2},? \d{4})#g;
+    my @date_strings = $_ =~ m#(\d{1,2}/\d{1,2}/\d{4}|\w{3} \d{1,2},? \d{4})#gi;
 
     # If we don't have two dates matching the correct format, return nothing.
     if (scalar(@date_strings) != 2) {
