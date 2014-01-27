@@ -98,7 +98,7 @@ my $xray_ranges =
 # Reference: 
 my $gamma_ranges = 
     [
-     [ 10**19, 10**24, "Gamma rays are ionizing radiation, and are thus biologically hazardous. They are classically produced by the decay from high energy states of atomic nuclei (gamma decay), but are also created by other processes." ],
+     [ 10**19, 10**24, "Gamma rays are can be used to treat cancer and for diagnostic purposes." ],
     ];
 
 #Query is intitially processed here. First normalize the query format,
@@ -205,7 +205,7 @@ sub prepare_result {
     }
     if($gamma) {
 	$more_at = 'https://en.wikipedia.org/wiki/Gamma_ray';
-	$text_result = "$gamma $xray";
+	$text_result = "$gamma\n$xray";
     }
 
     if($text_result) {
