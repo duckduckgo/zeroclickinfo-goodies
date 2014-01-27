@@ -83,6 +83,24 @@ my $instrument_ranges =
     [ "233.08", "1760.0", "oboe" ],
   ];
 
+# Reference: https://en.wikipedia.org/wiki/Ultraviolet
+my $ultraviolet_ranges = 
+    [
+     [ 7.495*(10**14), 3*(10**16), "UV light is found in sunlight and is emitted by electric arcs and specialized lights such as mercury lamps and black lights." ],
+    ];
+
+# Reference: https://en.wikipedia.org/wiki/X-ray
+my $xray_ranges = 
+    [
+     [ 3*(10**16), 3*(10**19), "X-rays are used for various medical and industrial uses such as radiographs and CT scans. "],
+    ];
+
+# Reference: 
+my $gamma_ranges = 
+    [
+     [ 10**19, 10**24, "Gamma rays are ionizing radiation, and are thus biologically hazardous. They are classically produced by the decay from high energy states of atomic nuclei (gamma decay), but are also created by other processes." ],
+    ];
+
 #Query is intitially processed here. First normalize the query format,
 #normalize the units, and then calculate information about the frequency range.
 handle query => sub {
@@ -153,6 +171,11 @@ sub prepare_result {
     my $color = match_in_ranges(int($freq_hz), $color_ranges);
     my $radio = match_in_ranges(int($freq_hz), $radio_ranges) unless $color;
     my $instruments = matches_in_ranges($freq_hz, $instrument_ranges) unless $color;
+
+    my $ultraviolet = matches_in_ranges($freq_hz, $ultraviolet_ranges);
+    my $xray = matches_in_ranges($freq_hz, $xray_ranges);
+    my $gamma = matches_in_ranges($freq_hz, $gamma_ranges);
+
     my $text_result = "";
     my $more_at = '';
     if($radio) {
@@ -170,6 +193,10 @@ sub prepare_result {
 	} else {
 	    $text_result = $freq . " is an audible frequency which can be produced by " . $instruments . ".";
 	}
+    }
+
+    if($ultraviolet || $xray || $gamma) {
+	$text_result = "$ultraviolet$xray$gamma";
     }
 
     if($text_result) {
