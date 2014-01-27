@@ -95,8 +95,9 @@ handle remainder => sub {
     my $end_str = $end->strftime($date_format);
 
     my $verb = $workdays == 1 ? 'is' : 'are';
+    my $number = $workdays == 1 ? 'workday' : 'workdays';
 
-    return "There $verb $workdays workdays between $start_str and $end_str$inclusive.";
+    return "There $verb $workdays $number between $start_str and $end_str$inclusive.";
 };
 
 # Given a string containing two dates, parse out the dates, and return them in
