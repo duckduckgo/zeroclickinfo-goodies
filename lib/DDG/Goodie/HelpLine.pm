@@ -38,6 +38,9 @@ my @triggers = (
     'i want to end my life',
     'suicide help',
     'suicide intervention',
+    'suicide method',
+    'suicide methods',
+    'how to kill myself'
 );
 
 triggers any => @triggers;
