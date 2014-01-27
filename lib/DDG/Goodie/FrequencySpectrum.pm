@@ -195,8 +195,17 @@ sub prepare_result {
 	}
     }
 
-    if($ultraviolet || $xray || $gamma) {
-	$text_result = "$ultraviolet$xray$gamma";
+    if($ultraviolet) {
+	$more_at = 'https://en.wikipedia.org/wiki/Ultraviolet';
+	$text_result = $ultraviolet;
+    }
+    if($xray) {
+	$more_at = 'https://en.wikipedia.org/wiki/X-ray';
+	$text_result = $xray;
+    }
+    if($gamma) {
+	$more_at = 'https://en.wikipedia.org/wiki/Gamma_ray';
+	$text_result = "$gamma $xray";
     }
 
     if($text_result) {
