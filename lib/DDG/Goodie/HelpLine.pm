@@ -55,7 +55,7 @@ my %helpline = (
     # http://www.lifeline.org.au/Get-Help/I-Need-Help-Now and http://www.kidshelp.com.au/grownups/about-this-site.php
     AU => '13 11 14 or 1800 55 1800 (kids)',
     # http://www.suicidepreventionlifeline.org/ and http://org.kidshelpphone.ca/en
-    CA => '1-800-273-8255 or 1 800 668 6868 (kids)',
+    CA => '1-800-273-8255 or 1-800-668-6868 (kids)',
     # http://www.samaritans.org/how-we-can-help-you/contact-us
     IE => '1850 60 90 90',
     # http://www.lifeline.org.nz/corp_Home_378_2001.aspx
