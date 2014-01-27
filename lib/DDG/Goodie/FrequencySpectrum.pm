@@ -205,7 +205,7 @@ sub prepare_result {
     }
     if($gamma) {
 	$more_at = 'https://en.wikipedia.org/wiki/Gamma_ray';
-	$text_result = "$gamma\n$xray";
+	$text_result = $gamma;
     }
 
     if($text_result) {
