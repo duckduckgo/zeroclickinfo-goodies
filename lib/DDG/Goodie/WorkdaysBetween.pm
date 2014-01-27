@@ -108,7 +108,7 @@ handle remainder => sub {
 #
 # On failure this function returns nothing.
 sub get_dates {
-    my @date_strings = $_ =~ m#(\d{1,2}/\d{1,2}/\d{4}|\w{3} \d{1,2},? \d{4})#gi;
+    my @date_strings = $_ =~ m#(\d{1,2}/\d{1,2}/\d{2,4}|\w{3} \d{1,2},? \d{2,4})#gi;
 
     # If we don't have two dates matching the correct format, return nothing.
     if (scalar(@date_strings) != 2) {
@@ -116,8 +116,8 @@ sub get_dates {
     }
 
     # A list of date formats to try sequentially.
-    my $day_first_format = "%d/%m/%Y";
-    my @date_formats = ( "%m/%d/%Y", $day_first_format, "%b %d %Y", "%b %d, %Y" );
+    my $day_first_format = "%d/%m/";
+    my @date_formats = ( "%m/%d/", $day_first_format, "%b %d ", "%b %d, ");
 
     # Flag that determines if we are using the DD/MM/YYYY format
     my $day_is_first = 0;
@@ -129,10 +129,16 @@ sub get_dates {
         foreach (@date_formats) {
             local $@;
 
+	    # Check to see if we're using the shortened year format or not.
+	    my $year_format = '%y';
+	    if($date_string =~ /\d{4}$/) {
+		$year_format = '%Y';
+	    }
+
             my $time;
             eval {
                 # Attempt to parse the date here.
-                $time = Time::Piece->strptime($date_string, $_);
+                $time = Time::Piece->strptime($date_string, "$_$year_format");
             };
 
             # If we didn't get an error parsing the time...
@@ -144,7 +150,7 @@ sub get_dates {
                 # dates_format array, clear the dates array, and restart the
                 # loop. This way all XX/XX/XXXX dates will match only the
                 # DD/MM/YYYY format.
-                if ( $_ eq $day_first_format && !$day_is_first ) {
+                if ( "$_$year_format" eq "$day_first_format$year_format" && !$day_is_first ) {
                     # Set the flag indicating that we are using DD/MM/YYYY
                     $day_is_first = 1;
                     # Remove the MM/DD/YYYY format from the date_formats array
