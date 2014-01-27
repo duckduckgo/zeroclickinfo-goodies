@@ -40,7 +40,8 @@ my @triggers = (
     'suicide intervention',
     'suicide method',
     'suicide methods',
-    'how to kill myself'
+    'how to kill myself',
+    'ways to kill myself',
 );
 
 triggers any => @triggers;
