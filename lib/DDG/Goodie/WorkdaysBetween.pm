@@ -8,7 +8,7 @@ use DDG::Goodie;
 use Time::Piece;
 use List::Util qw( min max );
 
-triggers start => "workdays between", "business days between", "work days between";
+triggers start => "workdays between", "business days between", "work days between", "working days";
 
 zci answer_type => "workdays_between";
 
