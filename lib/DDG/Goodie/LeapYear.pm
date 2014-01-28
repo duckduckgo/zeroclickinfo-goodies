@@ -77,13 +77,13 @@ handle remainder => sub {
     if ($_ =~ /(last|previous) ([0-9][0-9]?)$/i) {
         my @years = search_leaps($2, -1, 0, $year);
         @years = map(format_year, @years);
-        my @pretty_years = join(', ', @years);
-        return "The last $2 leap years were @pretty_years";
+        my $pretty_years = join(', ', @years);
+        return "The last $2 leap years were $pretty_years";
     } elsif ($_ =~ /(next|future) ([0-9][0-9]?)$/i) {
         my @years = search_leaps($2, 1, 0, $year);
         @years = map(format_year, @years);
-        my @pretty_years = join(', ', @years);
-        return "The $1 $2 leap years will be @pretty_years";
+        my $pretty_years = join(', ', @years);
+        return "The $1 $2 leap years will be $pretty_years";
     } elsif ($_ =~ /^(after|before) ([0-9]+) ?(ad|bce|bc|ce)?$/) {
         my $cyear = $2;
         my $direction = $1;
@@ -96,9 +96,9 @@ handle remainder => sub {
         }
         my @years = search_leaps(5, $dir, 0, $cyear);
         @years = map(format_year, @years);
-        my @pretty_years = join(', ', @years);
+        my $pretty_years = join(', ', @years);
         my $pretty_year = format_year($cyear);
-        return "The 5 leap years $direction $pretty_year are @pretty_years";
+        return "The 5 leap years $direction $pretty_year are $pretty_years";
     } elsif ($_ =~ /(next|future|upcoming)$/i) {
         my ($nyear) = search_leaps(1, 1, 0, $year);
         $nyear = format_year($nyear);
