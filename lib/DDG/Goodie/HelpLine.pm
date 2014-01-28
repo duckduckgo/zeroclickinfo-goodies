@@ -59,17 +59,17 @@ source 'https://en.wikipedia.org/wiki/List_of_suicide_crisis_lines';
 
 my %helpline = (
     # http://www.lifeline.org.au/Get-Help/I-Need-Help-Now and http://www.kidshelp.com.au/grownups/about-this-site.php
-    AU => '13 11 14 or 1800 55 1800 (kids)',
+    AU => ['13 11 14 or 1800 55 1800 (kids)', 'Australia'],
     # http://www.suicidepreventionlifeline.org/ and http://org.kidshelpphone.ca/en
-    CA => '1-800-273-8255 or 1-800-668-6868 (kids)',
+    CA => ['1-800-273-8255 or 1-800-668-6868 (kids)', 'Canada'],
     # http://www.samaritans.org/how-we-can-help-you/contact-us
-    IE => '1850 60 90 90',
+    IE => ['1850 60 90 90', 'Ireland'],
     # http://www.lifeline.org.nz/corp_Home_378_2001.aspx
-    NZ => '0800 543 354',
+    NZ => ['0800 543 354', 'New Zealand'],
     # http://www.papyrus-uk.org/, http://www.samaritans.org/, and http://www.thecalmzone.net/help/helpline/helpline-nationwide/
-    GB => '0800 068 41 41, 08457 90 90 90, or 0800 58 58 58',
+    GB => ['0800 068 41 41, 08457 90 90 90, or 0800 58 58 58', 'the UK'],
     # http://www.suicidepreventionlifeline.org/
-    US => '1-800-273-TALK (8255)',
+    US => ['1-800-273-TALK (8255)', 'the US'],
 );
 
 handle query_lc => sub {
@@ -80,8 +80,9 @@ handle query_lc => sub {
     return unless exists $suicide_phrases{$query};
 
     # Display the result.
-    return "24 Hour Suicide Hotline: $helpline{$loc->country_code}"
-        if exists $helpline{$loc->country_code};
+    my $code = $loc->country_code;
+    return "24 Hour Suicide Hotline in " .  $helpline{$code}[1] . ": " . $helpline{$code}[0]
+        if exists $helpline{$code}[0];
 };
 
 1;
