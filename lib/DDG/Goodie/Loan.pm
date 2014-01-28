@@ -82,9 +82,9 @@ handle remainder => sub {
     my $years = 30;
 
     # Check if query contains number of years for loan, if so, save value and remove it
-    if ($query =~ /(\d+) years?/) {
+    if ($query =~ /(\d+) ?(?:year|yr)s?/) {
 	$years = $1;
-	$query =~ s/(\d+) years?//;
+	$query =~ s/(\d+) ?(?:year|yr)s?//;
     }
 
     # Try to extract the interest rate and remove it. Interest rate is required.
