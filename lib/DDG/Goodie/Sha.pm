@@ -18,12 +18,13 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 
-triggers query_lc => qr/^sha\-?(1|224|256|384|512|)(?:sum|) (hex|base64|)\s*(.*)$/i;
+triggers query => qr/^sha\-?(1|224|256|384|512|)(?:sum|) (hex|base64|)\s*(.*)$/i;
 
 handle query => sub {
 	my $command1 = $1 || '';
 	my $command2 = $2 || '';
 	my $str      = $3 || '';
+	#warn "CMD 1: '$command1'\tCMD 2: '$command2'\tSTR: '$str'\n";
 
 	if($str) {
 		if ( $command1 eq '224' ) {
