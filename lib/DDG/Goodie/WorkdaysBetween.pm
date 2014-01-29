@@ -108,7 +108,7 @@ handle remainder => sub {
 #
 # On failure this function returns nothing.
 sub get_dates {
-    my @date_strings = $_ =~ m#(\d{1,2}/\d{1,2}/\d{2,4}|\w{3} \d{1,2},? \d{2,4}|\d{1,2}-\d{1,2}-\d{2,4})#gi;
+    my @date_strings = $_ =~ m#(\d{1,2}/\d{1,2}/\d{2,4}|\w{0,9} \d{1,2},? \d{2,4}|\d{1,2}-\d{1,2}-\d{2,4})#gi;
 
     # If we don't have two dates matching the correct format, return nothing.
     if (scalar(@date_strings) != 2) {
@@ -118,7 +118,7 @@ sub get_dates {
     # A list of date formats to try sequentially.
     my $day_first_format_slash = "%d/%m/";
     my $day_first_format_dash = "%d-%m-";
-    my @date_formats = ( "%m/%d/", "%m-%d-", $day_first_format_slash, $day_first_format_dash, "%b %d ", "%b %d, ");
+    my @date_formats = ( "%m/%d/", "%m-%d-", $day_first_format_slash, $day_first_format_dash, "%b %d ", "%b %d, ", "%B %d ", "%B %d, ");
 
     # Flag that determines if we are using the DD/MM/YYYY format
     my $day_is_first = 0;
