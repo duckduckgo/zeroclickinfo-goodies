@@ -22,8 +22,8 @@ attribution github  => [ 'https://github.com/mmattozzi', 'mmattozzi' ];
 
 # Monthly payment calculation from http://en.wikipedia.org/wiki/Mortgage_calculator
 sub loan_monthly_payment {
-	my ($p, $r, $n) = @_;
-	return ($r / (1 - (1 + $r)**(-1 * $n))) * $p;
+    my ($p, $r, $n) = @_;
+    return ($r / (1 - (1 + $r)**(-1 * $n))) * $p;
 }
 
 # A map of country code to currency code, filled in below
@@ -39,14 +39,14 @@ my %supported_currency_codes = ( );
 # This is pretty imprecise. Assume USD if a $ is used. More assumptions can be added here later to priorize 
 # currency guessing. Perhaps location data can be used to break ties. 
 sub convert_symbol_to_currency {
-	my ($symbol, $country) = @_;
-	my @syms = @{$symbol_to_currency{$symbol} // []};
-	return "USD" unless @syms;
-	return $syms[0] if @syms == 1 or !$country;
+    my ($symbol, $country) = @_;
+    my @syms = @{$symbol_to_currency{$symbol} // []};
+    return "USD" unless @syms;
+    return $syms[0] if @syms == 1 or !$country;
 
-	my @matches = grep { $_ eq $country_to_currency{$country} } @syms;
-	return $matches[0] if @matches;
-	return $syms[0];
+    my @matches = grep { $_ eq $country_to_currency{$country} } @syms;
+    return $matches[0] if @matches;
+    return $syms[0];
 }
 
 # Given the country code and currency formatting rules, the input can be made ready to convert
@@ -54,17 +54,17 @@ sub convert_symbol_to_currency {
 # In USD: 400,000 => 400000
 # In EUR: 400.000,00 => 400000.00
 sub normalize_formatted_currency_string {
-	my ($str, $currency_code) = @_;
+    my ($str, $currency_code) = @_;
 	
-	my $thousands_separator = thousands_separator($currency_code) // ',';
-	my $decimal_separator = decimal_separator($currency_code) // '.';
+    my $thousands_separator = thousands_separator($currency_code) // ',';
+    my $decimal_separator = decimal_separator($currency_code) // '.';
 	
-	$str =~ s/\Q$thousands_separator//g;
-	if ($decimal_separator ne ".") {
-		$str =~ s/\Q$decimal_separator/\./g;
-	}
+    $str =~ s/\Q$thousands_separator//g;
+    if ($decimal_separator ne ".") {
+	$str =~ s/\Q$decimal_separator/\./g;
+    }
 	
-	return $str;
+    return $str;
 }
 
 # Attempt to extract terms of a loan from the input query. Interest rate and principal must be found in the 
@@ -73,88 +73,88 @@ sub normalize_formatted_currency_string {
 # string so they are not confused for the principal loan amount, which may be present simply as a raw
 # number. 
 handle remainder => sub {
-	my $query = $_;
+    my $query = $_;
 	
-	# Loan rate is required, query will be ignored if it is missing
-	my $rate = 0;
+    # Loan rate is required, query will be ignored if it is missing
+    my $rate = 0;
 
-	# Years in the query is optional, it will be assumed to be 30 if not present
-	my $years = 30;
+    # Years in the query is optional, it will be assumed to be 30 if not present
+    my $years = 30;
 
-	# Check if query contains number of years for loan, if so, save value and remove it
-	if ($query =~ /(\d+) years?/) {
-		$years = $1;
-		$query =~ s/(\d+) years?//;
-	}
+    # Check if query contains number of years for loan, if so, save value and remove it
+    if ($query =~ /(\d+) ?(?:year|yr)s?/) {
+	$years = $1;
+	$query =~ s/(\d+) ?(?:year|yr)s?//;
+    }
 
-	# Try to extract the interest rate and remove it. Interest rate is required.
-	if ($query =~ /(\d+\.?\d*)%/) {
-		$rate = $1;
-		$query =~ s/(\d+\.?\d*)%//;
-	} else {
-		return;
-	}
-
-	# Downpayment information that may be discovered. It will be combined with the discovered currency. 
-	my $downpayment_in_query = 0;
-	my $downpayment_is_in_cash = 0;
-	my $downpayment_without_units = 0;
-
-	# Check if query contains downpayment information
-	if ($query =~ /(\p{Currency_Symbol})?(\d+)\s?([A-Za-z]{3})?(%)? down/) {
-		$downpayment_in_query = 1;
-		$downpayment_is_in_cash = ! (defined $4);
-		$downpayment_without_units = $2;
-		$query =~ s/(\p{Currency_Symbol})?(\d+)\s?([A-Za-z]{3})?(%)? down//;
-	}
-
-	# At a minimum, query should contain some amount of money
-	if ($query =~ /(\p{Currency_Symbol})?([\d\.,]+)\s?([A-Za-z]{3})?/) {
-		my $symbol = $1;
-		my $principal = $2;
-		my $input_currency_code = $3;		
-		my $downpayment = 0;		
-
-		if (defined $input_currency_code) {
-			$input_currency_code = uc($input_currency_code);
-		}
-
-		# Apply localization, default to US if unknown
-		my $currency_code = "USD";
-		if (defined $input_currency_code && exists $supported_currency_codes{$input_currency_code}) {
-			$currency_code = $input_currency_code;
-		} elsif (defined $symbol) {
-			$currency_code = convert_symbol_to_currency($symbol, lc $loc->country_code);
-		} elsif (defined $loc->country_code) {
-			$currency_code = $country_to_currency{lc $loc->country_code} || $country_to_currency{"us"};
-			$symbol = currency_symbol($currency_code);
-		}
-
-		# Given the country code and currency formatting rules, the input can be made ready to convert
-		# to a useable number. 
-		$principal = normalize_formatted_currency_string($principal, $currency_code);
-
-		# Deal with downpayment information if it was found in the query
-		if ($downpayment_in_query) {
-			if ($downpayment_is_in_cash) {
-				# Downpayment expresses in an amount of currency
-				$downpayment = normalize_formatted_currency_string($downpayment_without_units, $currency_code);
-			} else {
-				# Downpayment expressed as a percentage of principal
-				$downpayment = $principal * .01 * $downpayment_without_units;
-			}
-		}
-		
-		my $loan_amount = $principal - $downpayment;
-		my $monthly_payment = loan_monthly_payment($loan_amount, $rate / 12 * .01, $years * 12);
-		my $total_interest = ($monthly_payment * 12 * $years) - $loan_amount;
-
-		return "Monthly Payment is " . currency_format($currency_code, $monthly_payment, FMT_SYMBOL) . 
-			" for $years years. Total interest paid is " . 
-			currency_format($currency_code, $total_interest, FMT_SYMBOL); 
-			
-	}
+    # Try to extract the interest rate and remove it. Interest rate is required.
+    if ($query =~ /(\d+\.?\d*)%/) {
+	$rate = $1;
+	$query =~ s/(\d+\.?\d*)%//;
+    } else {
 	return;
+    }
+
+    # Downpayment information that may be discovered. It will be combined with the discovered currency. 
+    my $downpayment_in_query = 0;
+    my $downpayment_is_in_cash = 0;
+    my $downpayment_without_units = 0;
+
+    # Check if query contains downpayment information
+    if ($query =~ /(\p{Currency_Symbol})?(\d+)\s?([A-Za-z]{3})?(%)? down/) {
+	$downpayment_in_query = 1;
+	$downpayment_is_in_cash = ! (defined $4);
+	$downpayment_without_units = $2;
+	$query =~ s/(\p{Currency_Symbol})?(\d+)\s?([A-Za-z]{3})?(%)? down//;
+    }
+
+    # At a minimum, query should contain some amount of money
+    if ($query =~ /(\p{Currency_Symbol})?([\d\.,]+)\s?([A-Za-z]{3})?/) {
+	my $symbol = $1;
+	my $principal = $2;
+	my $input_currency_code = $3;		
+	my $downpayment = 0;		
+	
+	if (defined $input_currency_code) {
+	    $input_currency_code = uc($input_currency_code);
+	}
+
+	# Apply localization, default to US if unknown
+	my $currency_code = "USD";
+	if (defined $input_currency_code && exists $supported_currency_codes{$input_currency_code}) {
+	    $currency_code = $input_currency_code;
+	} elsif (defined $symbol) {
+	    $currency_code = convert_symbol_to_currency($symbol, lc $loc->country_code);
+	} elsif (defined $loc->country_code) {
+	    $currency_code = $country_to_currency{lc $loc->country_code} || $country_to_currency{"us"};
+	    $symbol = currency_symbol($currency_code);
+	}
+
+	# Given the country code and currency formatting rules, the input can be made ready to convert
+	# to a useable number. 
+	$principal = normalize_formatted_currency_string($principal, $currency_code);
+
+	# Deal with downpayment information if it was found in the query
+	if ($downpayment_in_query) {
+	    if ($downpayment_is_in_cash) {
+		# Downpayment expresses in an amount of currency
+		$downpayment = normalize_formatted_currency_string($downpayment_without_units, $currency_code);
+	    } else {
+		# Downpayment expressed as a percentage of principal
+		$downpayment = $principal * .01 * $downpayment_without_units;
+	    }
+	}
+		
+	my $loan_amount = $principal - $downpayment;
+	my $monthly_payment = loan_monthly_payment($loan_amount, $rate / 12 * .01, $years * 12);
+	my $total_interest = ($monthly_payment * 12 * $years) - $loan_amount;
+
+	return "Monthly Payment is " . currency_format($currency_code, $monthly_payment, FMT_SYMBOL) . 
+	    " for $years years. Total interest paid is " . 
+	    currency_format($currency_code, $total_interest, FMT_SYMBOL); 
+			
+    }
+    return;
 };
 
 # A map of 2 letter country code to 3 letter currency code. Copied from Locale::Object perl module 
@@ -643,7 +643,7 @@ handle remainder => sub {
 );
 
 foreach my $code (values %country_to_currency) {
-	$supported_currency_codes{$code} = 1;
+    $supported_currency_codes{$code} = 1;
 }
 
 1;
