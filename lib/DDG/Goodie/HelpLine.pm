@@ -69,7 +69,7 @@ my %helpline = (
     # http://www.papyrus-uk.org/, http://www.samaritans.org/, and http://www.thecalmzone.net/help/helpline/helpline-nationwide/
     GB => ['0800 068 41 41, 08457 90 90 90, or 0800 58 58 58', 'the UK'],
     # http://www.suicidepreventionlifeline.org/
-    US => ['1-800-273-TALK (8255)', 'the US'],
+    US => ['1-800-273-TALK (8255)', 'the U.S.'],
 );
 
 handle query_lc => sub {
