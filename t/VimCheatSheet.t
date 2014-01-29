@@ -5,7 +5,6 @@ use warnings;
 
 use Test::More;
 use DDG::Test::Goodie;
-use Carp::Always;
 
 zci answer_type => 'vim_cheat';
 
