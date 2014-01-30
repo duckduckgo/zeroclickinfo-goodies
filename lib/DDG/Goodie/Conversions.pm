@@ -133,7 +133,7 @@ sub doConversion {
                 $args[$required] = $conversionFactor->{'multiple'};
 
                 $found = 1;
-            } # if 1st arg good, but 2nd arg bogus, this fails ... 
+            } 
         }
         
         if (!$found) {
