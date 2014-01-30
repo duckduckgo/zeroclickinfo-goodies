@@ -24,13 +24,20 @@ triggers startend =>
     "calling code",
     "calling codes",
     "country calling code", 
+    "country calling codes", 
     "country code", 
     "country dialing code", 
+    "country dialing codes", 
     "dial in code",
+    "dial in codes",
     "dialing code", 
+    "dialing codes", 
     "international calling code", 
+    "international calling codes", 
     "international dial in code",
+    "international dial in codes",
     "international dialing code"; 
+    "international dialing codes"; 
 
 Locale::Country::rename_country('ae' => 'the United Arab Emirates');
 Locale::Country::rename_country('do' => 'the Dominican Republic');
