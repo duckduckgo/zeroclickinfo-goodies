@@ -4,13 +4,44 @@ use DDG::Goodie;
 
 my @triggers = (
     'suicide',
+    'suicide hotline',
     'kill myself',
     'suicidal thoughts',
     'end my life',
-);
-
-my @skip_triggers = (
-    'lyrics',
+    'suicidal thoughts',
+    'suicidal',
+    'suicidal ideation',
+    'i want to kill myself',
+    'commit suicide',
+    'suicide pills',
+    'suicide pill',
+    'suicide prevention',
+    'kill myself',
+    'suicide phone number',
+    'suicide hot line',
+    'suicide lifeline',
+    'suicide life line',
+    'crisis intervention',
+    'i want to die',
+    'committing suicide',
+    'killing myself',
+    'hang myself',
+    'shoot myself',
+    'fastest way to kill myself',
+    'i\'m suicidal',
+    'how to make suicide pill',
+    'how to make suicide pills',
+    'make suicide pills',
+    'make suicide pill',
+    'best way to kill myself',
+    'easiest suicide method',
+    'i want to end my life',
+    'suicide help',
+    'suicide intervention',
+    'suicide method',
+    'suicide methods',
+    'how to kill myself',
+    'ways to kill myself',
 );
 
 triggers any => @triggers;
@@ -24,35 +55,34 @@ twitter => '@areuhappylucia';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Helpline.pm';
 topics 'everyday';
 category 'special';
+source 'https://en.wikipedia.org/wiki/List_of_suicide_crisis_lines';
 
 my %helpline = (
-    AU => '08 9381 5555',
-    BE => '02/6499555',
-    CN => '(852) 2896 0000',
-    CY => '77777267',
-    ES => '902 88 35 35',
-    FR => '01 46 21 46 46',
-    GB => '0 987 654 3210',
-    HU => '06 80 820 111',
-    IN => '04 42 464 0050',
-    IT => '800 860022',
-    KE => '(020) 205 1323',
-    LT => '8 800 2 8888',
-    MY => '607 331 2300',
-    NO => '00 47 815 33 300',
-    NZ => '06 368 3096',
-    PT => '00 351 225 50 60 70',
-    SE => '(46) (0) 31 711 24 00',
-    SG => '1 800 221 4444',
-    TH => '27136793',
-    US => '1-800-273-TALK (8255)',
+    # http://www.lifeline.org.au/Get-Help/I-Need-Help-Now and http://www.kidshelp.com.au/grownups/about-this-site.php
+    AU => ['13 11 14 or 1800 55 1800 (kids)', 'Australia'],
+    # http://www.suicidepreventionlifeline.org/ and http://org.kidshelpphone.ca/en
+    CA => ['1-800-273-8255 or 1-800-668-6868 (kids)', 'Canada'],
+    # http://www.samaritans.org/how-we-can-help-you/contact-us
+    IE => ['1850 60 90 90', 'Ireland'],
+    # http://www.lifeline.org.nz/corp_Home_378_2001.aspx
+    NZ => ['0800 543 354', 'New Zealand'],
+    # http://www.papyrus-uk.org/, http://www.samaritans.org/, and http://www.thecalmzone.net/help/helpline/helpline-nationwide/
+    GB => ['0800 068 41 41, 08457 90 90 90, or 0800 58 58 58', 'the UK'],
+    # http://www.suicidepreventionlifeline.org/
+    US => ['1-800-273-TALK (8255)', 'the U.S.'],
 );
 
 handle query_lc => sub {
     my $query = shift;
-    return if grep {$query =~ /$_/} @skip_triggers;
-    return "24 Hour Suicide Hotline: $helpline{$loc->country_code}"
-        if exists $helpline{$loc->country_code};
+
+    # Check if the query matches exatly the trigger word.
+    my %suicide_phrases = map { $_ => 1 } @triggers;
+    return unless exists $suicide_phrases{$query};
+
+    # Display the result.
+    my $code = $loc->country_code;
+    return "24 Hour Suicide Hotline in " .  $helpline{$code}[1] . ": " . $helpline{$code}[0]
+        if exists $helpline{$code}[0];
 };
 
 1;
