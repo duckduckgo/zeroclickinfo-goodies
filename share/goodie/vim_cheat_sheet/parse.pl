@@ -116,7 +116,7 @@ sub split_into_two_columns {
     my $length = scalar @$tables;
     my $half   = int( $length / 2 );
 
-    my @column1 = @$tables[0..$half];
+    my @column1 = @$tables[0 .. $half - 1];
     my @column2 = @$tables[$half .. $length - 1];
 
     return [ \@column1, \@column2 ];

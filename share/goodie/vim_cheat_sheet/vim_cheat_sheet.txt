@@ -62,21 +62,6 @@ y                                   yank (copy) marked text
 d                                   delete marked text
 ~                                   switch case
 
-Cut and Paste
-
-yy                                  yank (copy) a line
-2yy                                 yank 2 lines
-yw                                  yank word
-y$                                  yank to end of line
-p                                   put (paste) the clipboard after cursor
-P                                   put (paste) before cursor
-dd                                  delete (cut) a line
-2dd                                 delete (cut) 2 lines
-dw                                  delete (cut) the current word
-D                                   delete (cut) to the end of line
-d$                                  delete (cut) to the end of the line
-x                                   delete (cut) current character
-
 
 Cut and Paste
 
