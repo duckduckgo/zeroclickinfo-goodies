@@ -5,7 +5,7 @@ use DDG::Goodie;
 
 zci is_cached => 0;
 
-triggers startend => 'where am i', 'my location';
+triggers start => 'where am i', 'my location';
 
 primary_example_queries 'Where am I?';
 secondary_example_queries 'my location';
@@ -20,7 +20,6 @@ attribution twitter => 'crazedpsyc',
 handle remainder => sub {
     return if length($_) or !$loc or !$loc->city;
 
-    p $loc;
     my $answer = 'You appear to be in ' .
         $loc->city.', '.
         ($loc->region_name ? $loc->region_name.', ' : '').
