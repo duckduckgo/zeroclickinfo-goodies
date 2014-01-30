@@ -83,6 +83,7 @@ handle remainder => sub {
     my $answer = "+" . $dialing_code;
     $answer .= " is the international calling code for ";
     $answer .= list2string(@countries);
+    $answer .= ".";
 
 	return $answer;
 };
