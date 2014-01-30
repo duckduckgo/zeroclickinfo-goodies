@@ -22,6 +22,7 @@ attribution github  => ["kablamo",            "Eric Johnson"],
 
 triggers startend => 
     "calling code",
+    "calling codes",
     "country calling code", 
     "country code", 
     "country dialing code", 
@@ -125,6 +126,7 @@ sub country_to_calling_code {
     # clean up
     $country =~ s/^to\s+//;
     $country =~ s/^for\s+//;
+    $country =~ s/^in\s+//;
     $country =~ s/^the\s+//;
 
     my $country_code = country2code($country);
