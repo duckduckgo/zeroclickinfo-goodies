@@ -46,11 +46,6 @@ sub doConversion {
     my $result = '';
     my $hasErrors = 0;
 
-    my %errors = (
-        'factor'    => 'ERROR :: Cannot convert [QQQQQ] :: NaN.',
-        'units'     => 'ERROR :: Cannot convert [QQQQQ] :: Unknown units.',
-    );
-    
     my @required = qw/1 3/;     # 1 = fromUnits, 2 = toUnits
 
     # add new units for conversion here.
@@ -138,24 +133,16 @@ sub doConversion {
         
         if (!$found) {
             $hasErrors = 1;
-
-            #$result .= ($errors{'units'} =~ s/QQQQQ/$args[$required]/);
-            $errors{'units'} =~ s/QQQQQ/$args[$required]/;
-            $result .= $errors{'units'};
+            
+            $result = '';
         }
-
-        $errors{'units'} = 'ERROR :: Cannot convert [QQQQQ] :: Unknown units.';
     }
 
     # $args[0] must be a number:
     if ($hasErrors || !looks_like_number($args[0])) {
         if (!looks_like_number($args[0])) {
-            # keeping errors in order:
-            $errors{'factor'} =~ s/QQQQQ/$args[0]/;
-            $result = ($errors{'factor'} . $result);
+            $result = '';
         }
-            
-        #$result =~ s/ERROR/\nERROR/g;
     }
 
     else {  # run the conversion:
@@ -186,8 +173,6 @@ sub doConversion {
 
         $result = "$origArgs[0] $origArgs[1] is $result $origArgs[3].";
     }
-
-    #$result =~ s/^\n//;
 
     return $result;
 }

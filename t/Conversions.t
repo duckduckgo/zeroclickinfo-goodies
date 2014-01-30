@@ -17,37 +17,37 @@ ddg_goodie_test(
     # [ 1]: good $factor, bad $toUnits, bad $fromUnits
     'convert 12 pipes to tokes' =>
         test_zci(
-            'ERROR :: Cannot convert [pipes] :: Unknown units.ERROR :: Cannot convert [tokes] :: Unknown units.',
+            '',
         );
     
     # [ 2]: good $factor, bad $toUnits, good $fromUnits
     'convert 0.99 dogs to ounces' =>
         test_zci(
-            'ERROR :: Cannot convert [dogs] :: Unknown units.',
+            '',
         );
     
     # [ 3]: good $factor, good $toUnits, bad $fromUnits
     'convert 1 ton to kitty litter' =>
         test_zci(
-            'ERROR :: Cannot convert [kitty] :: Unknown units.',
+            '',
         );
     
     # [ 4]: bad $factor, bad $toUnits, bad $fromUnits
     'convert bradley david to andersen' =>
         test_zci(
-            'ERROR :: Cannot convert [bradley] :: NaN.ERROR :: Cannot convert [david] :: Unknown units.ERROR :: Cannot convert [andersen] :: Unknown units.',
+            '',
         );
     
     # [ 5]: bad $factor, bad $toUnits, good $fromUnits
     'convert ddg ducks to metric tons' =>
         test_zci(
-            'ERROR :: Cannot convert [ddg] :: NaN.ERROR :: Cannot convert [ducks] :: Unknown units.',
+            '',
         );
     
     # [ 6]: bad $factor, good $toUnits, bad $fromUnits
     'convert soil grams to beans' =>
         test_zci(
-            'ERROR :: Cannot convert [soil] :: NaN.ERROR :: Cannot convert [beans] :: Unknown units.',
+            '',
         );
 
     # and now a few success cases ... let's round it up to 10:
