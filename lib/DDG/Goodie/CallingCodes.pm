@@ -45,7 +45,6 @@ Locale::Country::rename_country('tw' => 'Taiwan');
 Locale::Country::rename_country('us' => 'the United States');
 Locale::Country::rename_country('vg' => 'the British Virgin Islands');
 Locale::Country::rename_country('vi' => 'the US Virgin Islands');
-Locale::Country::rename_country('vi' => 'the US Virgin Islands');
 
 # These are the only 2 countries which officially have 'The' in their name
 # Source: http://www.bbc.co.uk/news/magazine-18233844
