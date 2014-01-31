@@ -79,9 +79,7 @@ handle query_nowhitespace => sub {
         $tmp_expr =~ s/ dozen                        /12                                            /xig;
         $tmp_expr =~ s/ gross                        /144                                           /xig;
 
-        # Commas into periods.
-        $tmp_expr =~ s/(\d+),(\d{1,2})(?!\d)/$1.$2/g;
-
+        # 2014.01.30 Fixed logic to return correct answer with imporperly commified input
         # Drop commas.
         $tmp_expr =~ s/[\,\$]//g;
 
