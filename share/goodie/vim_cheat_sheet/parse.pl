@@ -73,6 +73,10 @@ sub cleanup_tables_data {
     foreach my $table (@$tables) {
         foreach my $row (@{ $table->{rows} }) {
 
+            # remove spaces around +
+            # this is to make commands like 'Ctrl + v' less wide
+            $row->{help} =~ s/ \+ /+/g; 
+
             # $row->{help} looks like: "gt or :tabnext or :tabn - move to next tab"
 
             # The code below puts everything to the right of the ' - ' into
