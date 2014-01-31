@@ -1,181 +1,125 @@
 package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various weights and measures
-#
-# available conversion units       same as google
-# conversion multiples             same as google
-# if no preposition, doesn't work, same as google
 
-# Ns.B.: funny spacing? Trying to avoid > 80 width lines
-#        code clarity > unreadable regexen
-
-# @todo: significant digits
-# @todo: handle stuff like no preposition, 'factorfromUnit'
-# @todo: handle multi-word $fromUnits ?
+# @todo: set significant digits
+# @todo: handle multi-word units
+# @todo: handle plural units
 
 use DDG::Goodie;
 use Scalar::Util qw(looks_like_number);
 
-triggers start => 'convert';    # @todo: beef this up! (regex-ify?)
-
-zci is_cached => 1;
-
-# <metadata>
-name 'Conversions';
-description 'convert between various weights and measures';
-category 'calculations';
-topics 'computing', 'math';
-primary_example_queries 'convert 5 oz to grams';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
-attribution github  => ['https://github.com/elohmrow', '/bda'],
-            email   => ['bradley@pvnp.us'];
-# </metadata>
-
-handle remainder => sub {
-    return doConversion($_);
-};
-
-sub doConversion {
-    my $args = shift;
-    
-    my @args = split(/\s+/, $args);
-    # @args = [factor, fromUnits, preposition, toUnits]
-    #   e.g.  '3 pounds to kilos'
-
-    my @origArgs = @args;
-
-    my $result = '';
-    my $hasErrors = 0;
-
-    my @required = qw/1 3/;     # 1 = fromUnits, 2 = toUnits
-
-    # add new units for conversion here.
-    # these are all based on 'metric ton'.  
-    # known SI units and abbreviations / plurals / common uses:
-    my @conversionFactors = (
-            {
-                'unit'          => 'metric ton',
-                'multiple'      => '1',
-                'abbreviations' => ['tonne', 'tonnes', 't', 'mt', 'te', 
-                                    'metric'],
-            },  # 'metric ton'
-            { 
-                'unit'          => 'kilogram',
-                'multiple'      => '1000',
-                'abbreviations' => ['kilo', 'kilos', 'kg', 'kgs', 'kilogramme', 
-                                    'kilogrammes', 'kilogram', 'kilograms'],
-            }, 
-            {
-                'unit'          => 'gram',
-                'multiple'      => '1000000',
-                'abbreviations' => ['gram', 'grams', 'g', 'gm', 'grammes', 
-                                    'gramme'],
-            },
-            {
-                'unit'          => 'milligram',
-                'multiple'      => '1000000000',
-                'abbreviations' => ['milligram', 'mg', 'mgs', 'milligrams'],
-            },
-            {
-                'unit'          => 'microgram',
-                'multiple'      => '1000000000000',
-                'abbreviations' => ['microgram', 'micrograms', 'mcg', 'mcgs'],
-            },
-            {
-                'unit'          => 'long ton',
-                'multiple'      => '0.984207',
-                'abbreviations' => ['long', 'weight', 'imperial'],
-            },  # 'long ton', 'weight ton', 'imperial ton', 'long tons', 
-                # 'weight tons', 'imperial tons' 
-            {
-                'unit'          => 'short ton', 
-                'multiple'      => '1.10231',
-                'abbreviations' => ['ton', 'tons', 'short'],
-            },  # 'short ton', 'short tons'
-            {
-                'unit'          => 'stone',
-                'multiple'      => '157.473',
-                'abbreviations' => ['st', 'stone'],
-            },
-            {
-                'unit'          => 'pound',
-                'multiple'      => '2204.62',
-                'abbreviations' => ['lb', 'lbs', 'pound', 'pounds', 'lbm', 
-                                    'lbms'],
-            },  # 'pound mass'
-            {
-                'unit'          => 'ounce',
-                'multiple'      => '35274',
-                'abbreviations' => ['ounce', 'ounces', 'oz', 'ozs'],
-            },
-    );
-    #
-    # ^ due to the way args come in only space-delimited, can't reliably 
-    #   search on multi-word units like 'imperial ton'.  user could 
-    #   issue a command to convert 'imperial troopers to ounces' - that would
-    #   be difficult, and would be translated to 'imperial ton to ounces'
-    #   
-    # ^ for some units, plural = singular - listing them all out = clear
-    #   es.g.: 'tes', 'gs', 'ts' don't mean anything
-    #
-
-    foreach my $required (@required) {
-        my $found = 0;
-
-        # convert user input into standard conversion factors:
-        foreach my $conversionFactor (@conversionFactors) {
-            if (lc($args[$required]) ~~ @{$conversionFactor->{'abbreviations'}})
-            {
-                $args[$required] = $conversionFactor->{'multiple'};
-
-                $found = 1;
-            } 
-        }
-        
-        if (!$found) {
-            $hasErrors = 1;
-            
-            $result = '';
-        }
-    }
-
-    # $args[0] must be a number:
-    if ($hasErrors || !looks_like_number($args[0])) {
-        if (!looks_like_number($args[0])) {
-            $result = '';
-        }
-    }
-
-    else {  # run the conversion:
-        if ($args[1] > 1) {
-            $result = (1 / $args[1]) * $args[3] * $args[0];
-        }
-        else {
-            $result =      $args[1]  * $args[3] * $args[0];
-        }
+# known SI units and aliases / plurals / common uses:
+my @units = (
+        {
+            'unit'          => 'metric ton',
+            'multiple'      => '1',
+            'aliases'       => ['tonne', 't', 'mt', 'te', 'metric'],
+        },  
+        { 
+            'unit'          => 'kilogram',
+            'multiple'      => '1000',  
+            'aliases'       => ['kilo', 'kg', 'kilogramme', 'kilogram'],
+        }, 
+        {
+            'unit'          => 'gram',                          # units
+            'multiple'      => '1000000',                       # number of units in 1 metric ton
+            'aliases'       => ['gram', 'g', 'gm', 'gramme'],   # alternate units
+        },
+        {
+            'unit'          => 'milligram',
+            'multiple'      => '1000000000',
+            'aliases'       => ['milligram', 'mg'],
+        },
+        {
+            'unit'          => 'microgram',
+            'multiple'      => '1000000000000',
+            'aliases'       => ['microgram', 'mcg'],
+        },
+        {
+            'unit'          => 'long ton',
+            'multiple'      => '0.984207',
+            'aliases'       => ['long', 'weight', 'imperial'],
+        },  
+        {
+            'unit'          => 'short ton', 
+            'multiple'      => '1.10231',
+            'aliases'       => ['ton',  'short'],
+        },  
+        {
+            'unit'          => 'stone',
+            'multiple'      => '157.473',
+            'aliases'       => ['st', 'stone'],
+        },
+        {
+            'unit'          => 'pound',
+            'multiple'      => '2204.62',
+            'aliases'       => ['lb', 'pound', 'lbm'], 
+        }, 
+        {
+            'unit'          => 'ounce',
+            'multiple'      => '35274',
+            'aliases'       => ['ounce', 'oz'],
+        },
+);
+# to limit math, convert entered unit to metric ton, then multiply factor
        
-        if ($origArgs[1] =~/long|weight|imperial|metric|short/i) {
-            $origArgs[1] .= ' ton';
+# build triggers based on available conversion units:
+my @triggers = ();
+foreach my $unit (@units) {
+    push(@triggers, @{$unit->{'aliases'}});
+}
+
+triggers startend => @triggers;
+
+name                      'Conversions';
+description               'convert between various weights and measures';
+category                  'calculations';
+topics                    'computing', 'math';
+primary_example_queries   'convert 5 oz to grams';
+secondary_example_queries '5 ounces to g';
+code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
+attribution                github  => ['https://github.com/elohmrow', '/bda'],
+                           email   => ['bradley@pvnp.us'];
+
+handle query => sub {
+    my @args = split(/\s+/, $_);
+    
+    ###
+    ###my %args = map { $_ => 1 } @args;
+    ###@args{@args} = undef;
+    ###my @matches = grep { exists $args{$_} } @triggers;
+    ###
+    ###return unless scalar @matches == 2;
+    ###
+
+    my @matches = ();
+    my $factor = 1;
+    foreach my $arg (@args) {
+        if (lc($arg) ~~ @triggers) {
+            push(@matches, lc($arg));
         }
-
-        if ($origArgs[3] =~/long|weight|imperial|metric|short/i) {
-            $origArgs[3] .= ' ton';
+        if (looks_like_number($arg)) {
+            $factor = $arg;
         }
+    }
+    
+    return unless scalar @matches == 2; # minimum conversion requires two @triggers
 
-        # formatting:
-        ($origArgs[0] > 1)     ? $origArgs[1] .= 's' 
-                               : $origArgs[1]  = $origArgs[1]; 
-        ($result > 1)          ? $origArgs[3] .= 's' 
-                               : $origArgs[3]  = $origArgs[3];
-
-        $origArgs[1] =~ s/ss$/s/;
-        $origArgs[3] =~ s/ss$/s/;
-
-
-        $result = "$origArgs[0] $origArgs[1] is $result $origArgs[3].";
+    # either pass over array again here, or %units must contain all aliases as keys.
+    my $fromMultiple = 1;
+    my $toMultiple = 1;
+    foreach my $unit (@units) {
+        if ($matches[0] ~~ @{$unit->{'aliases'}}) {
+            $fromMultiple = $unit->{'multiple'}; 
+        }
+        if ($matches[1] ~~ @{$unit->{'aliases'}}) {
+            $toMultiple = $unit->{'multiple'}; 
+        }
     }
 
-    return $result;
-}
+    # run the conversion:
+    return "$factor $matches[0] is " . $factor * ($toMultiple / $fromMultiple) . " $matches[1]";
+};
 
 
 
