@@ -2,6 +2,7 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various weights and measures
 
 # @todo: set significant digits
+# @todo: handle multi-word units
 # @todo: handle plural units
 
 use DDG::Goodie;
@@ -11,7 +12,7 @@ use Scalar::Util qw(looks_like_number);
 # known SI units and aliases / plurals / common uses:
 my %units = (
     # metric ton:
-    'metric ton'   => '1',
+    #'metric ton'   => '1',
     'tonne'        => '1',
     't'            => '1',
     'mt'           => '1',
@@ -38,12 +39,12 @@ my %units = (
     'mcg'          => '1000000000',
     
     # long ton:
-    'long ton'     => '0.984207',
-    'weight ton'   => '0.984207',
-    'imperial ton' => '0.984207',
+    #'long ton'     => '0.984207',
+    #'weight ton'   => '0.984207',
+    #'imperial ton' => '0.984207',
     
     # short ton:
-    'short ton'    => '1.10231',
+    #'short ton'    => '1.10231',
     'ton'          => '1.10231',
 
     # stone:
@@ -54,7 +55,7 @@ my %units = (
     'pound'        => '2204.62',
     'lb'           => '2204.62',
     'lbm'          => '2204.62',
-    'pound mass'   => '2204.62',
+    #'pound mass'   => '2204.62',
 
     # ounce:
     'ounce'        => '35274',
