@@ -36,7 +36,7 @@ triggers startend =>
     "international calling codes", 
     "international dial in code",
     "international dial in codes",
-    "international dialing code"; 
+    "international dialing code",
     "international dialing codes"; 
 
 Locale::Country::rename_country('ae' => 'the United Arab Emirates');
