@@ -22,7 +22,9 @@ ddg_goodie_test(
         test_zci(
             'Okay.',
             html => 'Okay. <a href="http://xkcd.com/149/">XKCD</a>'
-        ),     
+        ),
+    'blahblah make me a sandwich' => undef,
+    '0 make me a sandwich' => undef,  
 );
 
 done_testing;

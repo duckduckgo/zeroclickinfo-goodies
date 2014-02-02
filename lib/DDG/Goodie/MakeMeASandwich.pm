@@ -20,7 +20,7 @@ handle remainder => sub {
     return 'Okay.', 
         html => 'Okay. <a href="http://xkcd.com/149/">XKCD</a>' if $_ eq 'sudo';
     return 'What? Make it yourself.', 
-        html => 'What? Make it yourself. <a href="http://xkcd.com/149/">XKCD</a>' if not $_;
+        html => 'What? Make it yourself. <a href="http://xkcd.com/149/">XKCD</a>' if $_ eq '';
     return;
 };
 
