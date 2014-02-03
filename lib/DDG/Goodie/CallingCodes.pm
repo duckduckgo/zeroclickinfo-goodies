@@ -1,5 +1,5 @@
 package DDG::Goodie::CallingCodes;
-# ABSTRACT: Matches country names to calling codes
+# ABSTRACT: Matches country names to international calling codes
 
 use DDG::Goodie;
 use Locale::Country qw/country2code code2country/;
