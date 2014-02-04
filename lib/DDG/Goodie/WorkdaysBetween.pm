@@ -8,6 +8,9 @@ use DDG::Goodie;
 use Time::Piece;
 use List::Util qw( min max );
 
+use Date::Calendar;
+use Date::Calendar::Profiles qw($Profiles);
+
 triggers start => "workdays between", "business days between", "work days between", "working days";
 
 zci answer_type => "workdays_between";
@@ -24,52 +27,15 @@ attribution github => ['http://github.com/mgarriott', 'mgarriott'];
 handle remainder => sub {
     my ($start, $end) = get_dates($_);
 
-    # If get_dates failed, return nothing.
+    # If get_dates failed, return nothing.                                                                                                                                                                                                                                                                                                                                  
     unless ($start && $end) {
         return;
     }
 
-    my $inclusive = '';
+    my $inclusive_flag = /inclusive/ ? 1 : 0;
 
-    my $total_days = int( $end->mjd ) - int( $start->mjd );
-    my $num_weeks = int($total_days / 7);
-
-    # For every 7 days there will always be 1 Saturday and 1 Sunday, therefore
-    # we subtract 2 days for every full week in the range.
-    my $workdays = $total_days - ($num_weeks * 2);
-
-    # Find the remaining number of days that didn't fall into the full weeks
-    # we already counted.
-    my $remainder = $total_days % 7;
-
-    # Adding the starting weekday to the number of remainder days allows us to
-    # determine whether or not the remainder days contain a Saturday and/or a
-    # Sunday.
-    
-    my $weekday_start = $start->_wday;
-    if($start->_wday == 0) {
-	$weekday_start = 7;
-    }
-
-    my $start_plus_remainder = $weekday_start + $remainder;
-    
-    # If the remaining days contain a Sunday we need to remove it from
-    # the count. But only if Saturday isn't the starting date, else it
-    # won't be included by default
-    $workdays-- if $weekday_start < 6 && ($start_plus_remainder) > 5;
-
-    # If the remaining days contain a Sunday we need to remove it from
-    # the count. However, we only want to remove this if the starting date
-    # is NOT a Sunday.
-    $workdays-- if $weekday_start < 7 && ($start_plus_remainder) > 6;
-
-    # Ignore 'inclusive' if the start date is a Saturday or Sunday.
-    # Otherwise we will add 1 day to the total, and include the
-    # 'inclusive' note in the resulting string.
-    if ($weekday_start != 0 && $weekday_start < 6 && /inclusive/) {
-        $workdays += 1;
-        $inclusive = ', inclusive';
-    }
+    my $calendar = Date::Calendar->new($Profiles->{US});
+    my $workdays = $calendar->delta_workdays($start->year, $start->mon, $start->mday, $end->year, $end->mon, $end->mday, 1, $inclusive_flag);
 
     my $date_format = "%b %d, %Y";
     my $start_str = $start->strftime($date_format);
@@ -78,7 +44,7 @@ handle remainder => sub {
     my $verb = $workdays == 1 ? 'is' : 'are';
     my $number = $workdays == 1 ? 'workday' : 'workdays';
 
-    return "There $verb $workdays $number between $start_str and $end_str$inclusive.";
+    return "There $verb $workdays $number between $start_str and $end_str.";
 };
 
 # Given a string containing two dates, parse out the dates, and return them in
