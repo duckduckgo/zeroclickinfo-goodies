@@ -53,41 +53,22 @@ handle remainder => sub {
 
     my $start_plus_remainder = $weekday_start + $remainder;
     
-    # We only regard something as 'inclusive' if the day
-    # ends on a weekday.
-    if(/inclusive/ && ($start_plus_remainder % 7) < 6) {
-	$inclusive = ', inclusive';
-	$workdays++;
-    }
+    # If the remaining days contain a Sunday we need to remove it from
+    # the count. But only if Saturday isn't the starting date, else it
+    # won't be included by default
+    $workdays-- if $weekday_start < 6 && ($start_plus_remainder) > 5;
 
-    # Problems only arise when we deal with remainders.
-    if($remainder > 0) {
-	# What happens if we land on a weekend?
-	if($start_plus_remainder % 7 == 0) {
-	    $workdays -= 2;
-	}
+    # If the remaining days contain a Sunday we need to remove it from
+    # the count. However, we only want to remove this if the starting date
+    # is NOT a Sunday.
+    $workdays-- if $weekday_start < 7 && ($start_plus_remainder) > 6;
 
-	if($start_plus_remainder % 7 == 6) {
-	    $workdays -= 1;
-	}
-
-	# What happens if we start on a weekend?
-	if($weekday_start == 6) {
-	    $workdays -= 2;
-	}
-
-	if($weekday_start == 7) {
-	    $workdays -= 1;
-	}
-
-	# What happens if the weekend is in the middle?
-	if($weekday_start < 6 && $start_plus_remainder > 7) {
-	    $workdays -= 2;
-	}
-
-	if($workdays < 0) {
-	    $workdays = 0;
-	}
+    # Ignore 'inclusive' if the start date is a Saturday or Sunday.
+    # Otherwise we will add 1 day to the total, and include the
+    # 'inclusive' note in the resulting string.
+    if ($weekday_start != 0 && $weekday_start < 6 && /inclusive/) {
+        $workdays += 1;
+        $inclusive = ', inclusive';
     }
 
     my $date_format = "%b %d, %Y";
