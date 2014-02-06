@@ -15,7 +15,7 @@ attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
 
 zci answer_type => 'kernel_taint';
 
-triggers any => "kernel taint";
+triggers any => 'kernel taint', 'linux taint', 'linux kernel taint', 'taint kernel' , 'taint linux', 'taint linux kernel', '/proc/sys/kernel/tainted', 'proc sys kernel tainted';
 
 my %descriptions = (
     1    => 'A module with a non-GPL license has been loaded, this includes modules with no license. Set by modutils >= 2.4.9 and module-init-tools.',
