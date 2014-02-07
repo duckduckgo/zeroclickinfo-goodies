@@ -9,12 +9,10 @@ triggers any => 'loan', 'mortgage', 'borrow';
 zci answer_type => 'loan';
 
 primary_example_queries 'loan $500000 at 4.5% with 20% down';
-	
 secondary_example_queries 
 	'loan $500000 at 4.5% with 20% down 15 years',
 	'borrow $500000 4.5%',
 	'mortgage $500000 4.5% 20% down 15 years';
-
 description 'Calculate monthly payment and total interest for conventional mortgage';
 name 'Loan';
 category 'finance';
