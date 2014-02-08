@@ -10,9 +10,12 @@
       : for $table.rows -> $row {
       <tr>
         <td>
-            : for $row.cmds -> $cmd {
-            <code><: $cmd :></code><br>
-            : }
+        : for $row.cmds -> $cmd {
+          <code><: $cmd :></code>
+          : if $~cmd.index != $~cmd.max_index {
+          <br>
+          : }
+        : }
         </td>
         <td><: $row.help :></td>
       </tr>
