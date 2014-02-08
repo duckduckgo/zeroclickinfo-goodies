@@ -52,138 +52,144 @@
 
       <tr>
         <td>
-            <code>h</code><br>
+          <code>h</code>
         </td>
-        <td>move left</td>
+        <td>move cursor left</td>
       </tr>
       <tr>
         <td>
-            <code>j</code><br>
+          <code>j</code>
         </td>
-        <td>move down</td>
+        <td>move cursor down</td>
       </tr>
       <tr>
         <td>
-            <code>k</code><br>
+          <code>k</code>
         </td>
-        <td>move up</td>
+        <td>move cursor up</td>
       </tr>
       <tr>
         <td>
-            <code>l</code><br>
+          <code>l</code>
         </td>
-        <td>move right</td>
+        <td>move cursor right</td>
       </tr>
       <tr>
         <td>
-            <code>w</code><br>
+          <code>w</code>
         </td>
-        <td>jump by start of words (punctuation considered words)</td>
+        <td>jump forwards to the start of a word</td>
       </tr>
       <tr>
         <td>
-            <code>W</code><br>
+          <code>W</code>
         </td>
-        <td>jump by words (spaces separate words)</td>
+        <td>jump forwards to the start of a word (words can contain punctuation)</td>
       </tr>
       <tr>
         <td>
-            <code>e</code><br>
+          <code>e</code>
         </td>
-        <td>jump to end of words (punctuation considered words)</td>
+        <td>jump forwards to the end of a word</td>
       </tr>
       <tr>
         <td>
-            <code>E</code><br>
+          <code>E</code>
         </td>
-        <td>jump to end of words (no punctuation)</td>
+        <td>jump forwards to the end of a word (words can contain punctuation)</td>
       </tr>
       <tr>
         <td>
-            <code>b</code><br>
+          <code>b</code>
         </td>
-        <td>jump backward by words (punctuation considered words)</td>
+        <td>jump backwards to the start of a word</td>
       </tr>
       <tr>
         <td>
-            <code>B</code><br>
+          <code>B</code>
         </td>
-        <td>jump backward by words (no punctuation)</td>
+        <td>jump backwards to the start of a word (words can contain punctuation)</td>
       </tr>
       <tr>
         <td>
-            <code>0</code><br>
+          <code>0</code>
         </td>
-        <td>(zero) start of line</td>
+        <td>jump to the start of the line</td>
       </tr>
       <tr>
         <td>
-            <code>^</code><br>
+          <code>^</code>
         </td>
-        <td>first non-blank character of line</td>
+        <td>jump to the first non-blank character of the line</td>
       </tr>
       <tr>
         <td>
-            <code>$</code><br>
+          <code>$</code>
         </td>
-        <td>end of line</td>
+        <td>jump to the end of the line</td>
       </tr>
       <tr>
         <td>
-            <code>G</code><br>
+          <code>G</code>
         </td>
-        <td>Go To command (prefix with number</td>
+        <td>go to the last line of the document</td>
+      </tr>
+      <tr>
+        <td>
+          <code>5G</code>
+        </td>
+        <td>go to line 5</td>
       </tr>
 
     </table>
-    <b>Insert Mode - Inserting/Appending text</b>
+    <b>Insert mode - inserting/appending text</b>
     <table class="vim-table">
 
       <tr>
         <td>
-            <code>i</code><br>
+          <code>i</code>
         </td>
-        <td>start insert mode at cursor</td>
+        <td>insert before the cursor</td>
       </tr>
       <tr>
         <td>
-            <code>I</code><br>
+          <code>I</code>
         </td>
         <td>insert at the beginning of the line</td>
       </tr>
       <tr>
         <td>
-            <code>a</code><br>
+          <code>a</code>
         </td>
-        <td>append after the cursor</td>
+        <td>insert (append) after the cursor</td>
       </tr>
       <tr>
         <td>
-            <code>A</code><br>
+          <code>A</code>
         </td>
-        <td>append at the end of the line</td>
+        <td>insert (append) at the end of the line</td>
       </tr>
       <tr>
         <td>
-            <code>o</code><br>
+          <code>o</code>
         </td>
-        <td>open (append) blank line below current line (no need to press return)</td>
+        <td>append (open) a new line below the current line</td>
       </tr>
       <tr>
         <td>
-            <code>O</code><br>
+          <code>O</code>
         </td>
-        <td>open blank line above current line</td>
+        <td>append (open) a new line above the current line</td>
       </tr>
       <tr>
         <td>
-            <code>ea</code><br>
+          <code>ea</code>
         </td>
-        <td>append at end of word</td>
+        <td>insert (append) at the end of the word</td>
       </tr>
       <tr>
         <td>
-            <code>Esc</code><br>
+          <code>Esc</code>
         </td>
         <td>exit insert mode</td>
       </tr>
@@ -194,67 +200,67 @@
 
       <tr>
         <td>
-            <code>r</code><br>
+          <code>r</code>
         </td>
-        <td>replace a single character (does not use insert mode)</td>
+        <td>replace a single character</td>
       </tr>
       <tr>
         <td>
-            <code>J</code><br>
+          <code>J</code>
         </td>
         <td>join line below to the current one</td>
       </tr>
       <tr>
         <td>
-            <code>cc</code><br>
+          <code>cc</code>
         </td>
-        <td>change (replace) an entire line</td>
+        <td>change (replace) entire line</td>
       </tr>
       <tr>
         <td>
-            <code>cw</code><br>
+          <code>cw</code>
         </td>
-        <td>change (replace) to the end of word</td>
+        <td>change (replace) to the end of the word</td>
       </tr>
       <tr>
         <td>
-            <code>c$</code><br>
+          <code>c$</code>
         </td>
-        <td>change (replace) to the end of line</td>
+        <td>change (replace) to the end of the line</td>
       </tr>
       <tr>
         <td>
-            <code>s</code><br>
+          <code>s</code>
         </td>
-        <td>delete character at cursor and substitute text</td>
+        <td>delete character and substitute text</td>
       </tr>
       <tr>
         <td>
-            <code>S</code><br>
+          <code>S</code>
         </td>
-        <td>delete line at cursor and substitute text (same as cc)</td>
+        <td>delete line and substitute text (same as cc)</td>
       </tr>
       <tr>
         <td>
-            <code>xp</code><br>
+          <code>xp</code>
         </td>
-        <td>transpose two letter (delete and paste, technically)</td>
+        <td>transpose two letters (delete and paste)</td>
       </tr>
       <tr>
         <td>
-            <code>u</code><br>
+          <code>u</code>
         </td>
         <td>undo</td>
       </tr>
       <tr>
         <td>
-            <code>Ctrl + r</code><br>
+          <code>Ctrl+r</code>
         </td>
         <td>redo</td>
       </tr>
       <tr>
         <td>
-            <code>.</code><br>
+          <code>.</code>
         </td>
         <td>repeat last command</td>
       </tr>
@@ -265,67 +271,67 @@
 
       <tr>
         <td>
-            <code>v</code><br>
+          <code>v</code>
         </td>
-        <td>start visual mode, mark lines, then do command (such as y-yank)</td>
+        <td>start visual mode, mark lines, then do a command (like y-yank)</td>
       </tr>
       <tr>
         <td>
-            <code>V</code><br>
+          <code>V</code>
         </td>
-        <td>start Linewise visual mode</td>
+        <td>start linewise visual mode</td>
       </tr>
       <tr>
         <td>
-            <code>o</code><br>
+          <code>o</code>
         </td>
         <td>move to other end of marked area</td>
       </tr>
       <tr>
         <td>
-            <code>Ctrl + v</code><br>
+          <code>Ctrl+v</code>
         </td>
         <td>start visual block mode</td>
       </tr>
       <tr>
         <td>
-            <code>O</code><br>
+          <code>O</code>
         </td>
-        <td>move to Other corner of block</td>
+        <td>move to other corner of block</td>
       </tr>
       <tr>
         <td>
-            <code>aw</code><br>
+          <code>aw</code>
         </td>
         <td>mark a word</td>
       </tr>
       <tr>
         <td>
-            <code>ab</code><br>
+          <code>ab</code>
         </td>
-        <td>a () block (with braces)</td>
+        <td>a block with ()</td>
       </tr>
       <tr>
         <td>
-            <code>aB</code><br>
+          <code>aB</code>
         </td>
-        <td>a {} block (with brackets)</td>
+        <td>a block with {}</td>
       </tr>
       <tr>
         <td>
-            <code>ib</code><br>
+          <code>ib</code>
         </td>
-        <td>inner () block</td>
+        <td>inner block with ()</td>
       </tr>
       <tr>
         <td>
-            <code>iB</code><br>
+          <code>iB</code>
         </td>
-        <td>inner {} block</td>
+        <td>inner block with {}</td>
       </tr>
       <tr>
         <td>
-            <code>Esc</code><br>
+          <code>Esc</code>
         </td>
         <td>exit visual mode</td>
       </tr>
@@ -336,110 +342,33 @@
 
       <tr>
         <td>
-            <code>&gt;</code><br>
+          <code>&gt;</code>
         </td>
-        <td>shift right</td>
+        <td>shift text right</td>
       </tr>
       <tr>
         <td>
-            <code>&lt;</code><br>
+          <code>&lt;</code>
         </td>
-        <td>shift left</td>
+        <td>shift text left</td>
       </tr>
       <tr>
         <td>
-            <code>y</code><br>
+          <code>y</code>
         </td>
         <td>yank (copy) marked text</td>
       </tr>
       <tr>
         <td>
-            <code>d</code><br>
+          <code>d</code>
         </td>
         <td>delete marked text</td>
       </tr>
       <tr>
         <td>
-            <code>~</code><br>
+          <code>~</code>
         </td>
         <td>switch case</td>
-      </tr>
-
-    </table>
-    <b>Cut and Paste</b>
-    <table class="vim-table">
-
-      <tr>
-        <td>
-            <code>yy</code><br>
-        </td>
-        <td>yank (copy) a line</td>
-      </tr>
-      <tr>
-        <td>
-            <code>2yy</code><br>
-        </td>
-        <td>yank 2 lines</td>
-      </tr>
-      <tr>
-        <td>
-            <code>yw</code><br>
-        </td>
-        <td>yank word</td>
-      </tr>
-      <tr>
-        <td>
-            <code>y$</code><br>
-        </td>
-        <td>yank to end of line</td>
-      </tr>
-      <tr>
-        <td>
-            <code>p</code><br>
-        </td>
-        <td>put (paste) the clipboard after cursor</td>
-      </tr>
-      <tr>
-        <td>
-            <code>P</code><br>
-        </td>
-        <td>put (paste) before cursor</td>
-      </tr>
-      <tr>
-        <td>
-            <code>dd</code><br>
-        </td>
-        <td>delete (cut) a line</td>
-      </tr>
-      <tr>
-        <td>
-            <code>2dd</code><br>
-        </td>
-        <td>delete (cut) 2 lines</td>
-      </tr>
-      <tr>
-        <td>
-            <code>dw</code><br>
-        </td>
-        <td>delete (cut) the current word</td>
-      </tr>
-      <tr>
-        <td>
-            <code>D</code><br>
-        </td>
-        <td>delete (cut) to the end of line</td>
-      </tr>
-      <tr>
-        <td>
-            <code>d$</code><br>
-        </td>
-        <td>delete (cut) to the end of the line</td>
-      </tr>
-      <tr>
-        <td>
-            <code>x</code><br>
-        </td>
-        <td>delete (cut) current character</td>
       </tr>
 
     </table>
@@ -447,80 +376,80 @@
   </div>
   <div class="vim-column">
 
-    <b>Cut and Paste</b>
+    <b>Cut and paste</b>
     <table class="vim-table">
 
       <tr>
         <td>
-            <code>yy</code><br>
+          <code>yy</code>
         </td>
         <td>yank (copy) a line</td>
       </tr>
       <tr>
         <td>
-            <code>2yy</code><br>
+          <code>2yy</code>
         </td>
-        <td>yank 2 lines</td>
+        <td>yank (copy) 2 lines</td>
       </tr>
       <tr>
         <td>
-            <code>yw</code><br>
+          <code>yw</code>
         </td>
-        <td>yank word</td>
+        <td>yank (copy) word</td>
       </tr>
       <tr>
         <td>
-            <code>y$</code><br>
+          <code>y$</code>
         </td>
-        <td>yank to end of line</td>
+        <td>yank (copy) to end of line</td>
       </tr>
       <tr>
         <td>
-            <code>p</code><br>
+          <code>p</code>
         </td>
         <td>put (paste) the clipboard after cursor</td>
       </tr>
       <tr>
         <td>
-            <code>P</code><br>
+          <code>P</code>
         </td>
         <td>put (paste) before cursor</td>
       </tr>
       <tr>
         <td>
-            <code>dd</code><br>
+          <code>dd</code>
         </td>
         <td>delete (cut) a line</td>
       </tr>
       <tr>
         <td>
-            <code>2dd</code><br>
+          <code>2dd</code>
         </td>
         <td>delete (cut) 2 lines</td>
       </tr>
       <tr>
         <td>
-            <code>dw</code><br>
+          <code>dw</code>
         </td>
-        <td>delete (cut) the current word</td>
+        <td>delete (cut) word</td>
       </tr>
       <tr>
         <td>
-            <code>D</code><br>
-        </td>
-        <td>delete (cut) to the end of line</td>
-      </tr>
-      <tr>
-        <td>
-            <code>d$</code><br>
+          <code>D</code>
         </td>
         <td>delete (cut) to the end of the line</td>
       </tr>
       <tr>
         <td>
-            <code>x</code><br>
+          <code>d$</code>
         </td>
-        <td>delete (cut) current character</td>
+        <td>delete (cut) to the end of the line</td>
+      </tr>
+      <tr>
+        <td>
+          <code>x</code>
+        </td>
+        <td>delete (cut) character</td>
       </tr>
 
     </table>
@@ -529,72 +458,72 @@
 
       <tr>
         <td>
-            <code>:w</code><br>
+          <code>:w</code>
         </td>
         <td>write (save) the file, but don&#39;t exit</td>
       </tr>
       <tr>
         <td>
-            <code>:wq</code><br>
+          <code>:wq</code>
         </td>
         <td>write (save) and quit</td>
       </tr>
       <tr>
         <td>
-            <code>:x</code><br>
+          <code>:x</code>
         </td>
         <td>write (save) and quit</td>
       </tr>
       <tr>
         <td>
-            <code>:q</code><br>
+          <code>:q</code>
         </td>
-        <td>quit (fails if anything has changed)</td>
+        <td>quit (fails if there are unsaved changes)</td>
       </tr>
       <tr>
         <td>
-            <code>:q!</code><br>
+          <code>:q!</code>
         </td>
-        <td>quit and throw away changes</td>
+        <td>quit and throw away unsaved changes</td>
       </tr>
 
     </table>
-    <b>Search/Replace</b>
+    <b>Search and replace</b>
     <table class="vim-table">
 
       <tr>
         <td>
-            <code>/pattern</code><br>
+          <code>/pattern</code>
         </td>
         <td>search for pattern</td>
       </tr>
       <tr>
         <td>
-            <code>?pattern</code><br>
+          <code>?pattern</code>
         </td>
         <td>search backward for pattern</td>
       </tr>
       <tr>
         <td>
-            <code>n</code><br>
+          <code>n</code>
         </td>
         <td>repeat search in same direction</td>
       </tr>
       <tr>
         <td>
-            <code>N</code><br>
+          <code>N</code>
         </td>
         <td>repeat search in opposite direction</td>
       </tr>
       <tr>
         <td>
-            <code>:%s/old/new/g</code><br>
+          <code>:%s/old/new/g</code>
         </td>
         <td>replace all old with new throughout file</td>
       </tr>
       <tr>
         <td>
-            <code>:%s/old/new/gc</code><br>
+          <code>:%s/old/new/gc</code>
         </td>
         <td>replace all old with new throughout file with confirmations</td>
       </tr>
@@ -605,65 +534,67 @@
 
       <tr>
         <td>
-            <code>:e filename</code><br>
+          <code>:e filename</code>
         </td>
-        <td>Edit a file in a new buffer</td>
+        <td>edit a file in a new buffer</td>
       </tr>
       <tr>
         <td>
-            <code>:bnext</code><br>
-            <code>:bn</code><br>
+          <code>:bnext</code>
+          <br>
+          <code>:bn</code>
         </td>
-        <td>go to next buffer</td>
+        <td>go to the next buffer</td>
       </tr>
       <tr>
         <td>
-            <code>:bprev</code><br>
-            <code>:bp</code><br>
+          <code>:bprev</code>
+          <br>
+          <code>:bp</code>
         </td>
-        <td>go to previous buffer</td>
+        <td>go to the previous buffer</td>
       </tr>
       <tr>
         <td>
-            <code>:bd</code><br>
+          <code>:bd</code>
         </td>
         <td>delete a buffer (close a file)</td>
       </tr>
       <tr>
         <td>
-            <code>:sp filename</code><br>
+          <code>:sp filename</code>
         </td>
-        <td>Open a file in a new buffer and split window</td>
+        <td>open a file in a new buffer and split window</td>
       </tr>
       <tr>
         <td>
-            <code>:vsp filename</code><br>
+          <code>:vsp filename</code>
         </td>
-        <td>Open a file in a new buffer and vertically split window </td>
+        <td>open a file in a new buffer and vertically split window </td>
       </tr>
       <tr>
         <td>
-            <code>Ctrl + ws</code><br>
+          <code>Ctrl+ws</code>
         </td>
-        <td>Split windows</td>
+        <td>split window</td>
       </tr>
       <tr>
         <td>
-            <code>Ctrl + ww</code><br>
+          <code>Ctrl+ww</code>
         </td>
         <td>switch windows</td>
       </tr>
       <tr>
         <td>
-            <code>Ctrl + wq</code><br>
+          <code>Ctrl+wq</code>
         </td>
-        <td>Quit a window</td>
+        <td>quit a window</td>
       </tr>
       <tr>
         <td>
-            <code>Ctrl + wv</code><br>
+          <code>Ctrl+wv</code>
         </td>
-        <td>split windows vertically</td>
+        <td>split window vertically</td>
       </tr>
 
     </table>
@@ -672,58 +603,65 @@
 
       <tr>
         <td>
-            <code>:tabnew filename</code><br>
-            <code>:tabn filename</code><br>
+          <code>:tabnew filename</code>
+          <br>
+          <code>:tabn filename</code>
         </td>
-        <td>open file in a new tab</td>
+        <td>open a file in a new tab</td>
       </tr>
       <tr>
         <td>
-            <code>Ctrl+W T</code><br>
+          <code>Ctrl+wt</code>
         </td>
-        <td>move current split window into its own tab</td>
+        <td>move the current split window into its own tab</td>
       </tr>
       <tr>
         <td>
-            <code>gt</code><br>
-            <code>:tabnext</code><br>
-            <code>:tabn</code><br>
+          <code>gt</code>
+          <br>
+          <code>:tabnext</code>
+          <br>
+          <code>:tabn</code>
         </td>
-        <td>move to next tab</td>
+        <td>move to the next tab</td>
       </tr>
       <tr>
         <td>
-            <code>gT</code><br>
-            <code>:tabprev</code><br>
-            <code>:tabp</code><br>
+          <code>gT</code>
+          <br>
+          <code>:tabprev</code>
+          <br>
+          <code>:tabp</code>
         </td>
-        <td>move to previous tab</td>
+        <td>move to the previous tab</td>
       </tr>
       <tr>
         <td>
-            <code>#gt</code><br>
+          <code>#gt</code>
         </td>
         <td>move to tab number #</td>
       </tr>
       <tr>
         <td>
-            <code>:tabmove #</code><br>
+          <code>:tabmove #</code>
         </td>
         <td>move current tab to the #th position (indexed from 0)</td>
       </tr>
       <tr>
         <td>
-            <code>:tabclose</code><br>
-            <code>:tabc</code><br>
+          <code>:tabclose</code>
+          <br>
+          <code>:tabc</code>
         </td>
         <td>close the current tab and all its windows</td>
       </tr>
       <tr>
         <td>
-            <code>:tabonly</code><br>
-            <code>:tabo</code><br>
+          <code>:tabonly</code>
+          <br>
+          <code>:tabo</code>
         </td>
-        <td>close all other tabs except for the current one</td>
+        <td>close all tabs except for the current one</td>
       </tr>
 
     </table>

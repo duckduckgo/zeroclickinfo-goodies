@@ -73,6 +73,10 @@ sub cleanup_tables_data {
     foreach my $table (@$tables) {
         foreach my $row (@{ $table->{rows} }) {
 
+            # remove spaces around +
+            # this is to make commands like 'Ctrl + v' less wide
+            $row->{help} =~ s/ \+ /+/g; 
+
             # $row->{help} looks like: "gt or :tabnext or :tabn - move to next tab"
 
             # The code below puts everything to the right of the ' - ' into
@@ -116,7 +120,7 @@ sub split_into_two_columns {
     my $length = scalar @$tables;
     my $half   = int( $length / 2 );
 
-    my @column1 = @$tables[0..$half];
+    my @column1 = @$tables[0 .. $half - 1];
     my @column2 = @$tables[$half .. $length - 1];
 
     return [ \@column1, \@column2 ];

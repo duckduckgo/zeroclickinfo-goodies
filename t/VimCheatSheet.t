@@ -10,7 +10,7 @@ zci answer_type => 'vim_cheat';
 
 # This goodie always returns the same answer whenever its triggered
 my $test_zci = test_zci(
-        qr/^Cursor movement.*Insert Mode.*Editing.*Marking text.*/s,
+        qr/^Cursor movement.*Insert mode.*Editing.*Marking text.*/s,
 	    heading => 'Vim Cheat Sheet',
 		html => qr#<div(.*<table.*<tr.*<td.*</table.*)+</div>$#s,
 );
