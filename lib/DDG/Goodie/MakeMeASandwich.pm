@@ -12,15 +12,13 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution twitter => 'mattr555',
             github => ['https://github.com/mattr555/', 'Matt Ramina'];
 
-zci is_cached => 1;
-
 triggers end => 'make me a sandwich';
 
 handle remainder => sub {
     return 'Okay.', 
-        html => 'Okay. <a href="http://xkcd.com/149/">XKCD</a>' if $_ eq 'sudo';
+        html => 'Okay. <br>(<a href="http://xkcd.com/149/">xkcd</a>)' if $_ eq 'sudo';
     return 'What? Make it yourself.', 
-        html => 'What? Make it yourself. <a href="http://xkcd.com/149/">XKCD</a>' if $_ eq '';
+        html => 'What? Make it yourself. <br>(<a href="http://xkcd.com/149/">xkcd</a>)' if $_ eq '';
     return;
 };
 
