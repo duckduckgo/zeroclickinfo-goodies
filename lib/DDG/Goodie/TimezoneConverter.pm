@@ -151,6 +151,7 @@ handle query => sub {
     return unless defined $gmt_input_timezone;
 
     my $gmt_output_timezone = parse_timezone $output_timezone;
+    return unless defined($gmt_output_timezone);
 
     $modifier += $gmt_output_timezone - $gmt_input_timezone;
     for ( $gmt_input_timezone, $gmt_output_timezone ) {

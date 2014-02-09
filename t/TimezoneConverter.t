@@ -37,6 +37,8 @@ ddg_goodie_test(
         test_zci('19:42:42 (BIT, UTC-12) is 11:42:42, 5 days after (GMT+100).'),
     '19:42:42 CHADT into GMT-100' =>
         test_zci('19:42:42 (CHADT, UTC+13:45) is 1:57:42, 4 days prior (GMT-100).'),   
+    '12 in binary' =>
+	undef,
 );
 
 done_testing;
