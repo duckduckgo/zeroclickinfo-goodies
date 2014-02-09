@@ -20,7 +20,7 @@ attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
 handle remainder => sub {
 	return unless /^\d+$/; 
 	my @factors = all_factors($_);
-	return "Factors of $_: @factors $_";
+	return "Factors of $_: @factors";
 };
 
 1;
