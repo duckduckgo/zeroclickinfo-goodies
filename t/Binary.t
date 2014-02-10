@@ -22,7 +22,8 @@ ddg_goodie_test(
         'xa1 to binary'  => test_zci('"xa1" as hex is "10100001" in binary.'),
         'ffff to binary' => test_zci('"ffff" as hex is "1111111111111111" in binary.'),
         'FEFE to binary' => test_zci('"FEFE" as hex is "1111111011111110" in binary.'),
-        '0 to binary' => test_zci('"0" as decimal is "00000000" in binary.')
+        '0 to binary' => test_zci('"0" as decimal is "00000000" in binary.'),
+        'foo in binary' => test_zci('"foo" as a string is "011001100110111101101111" in binary.'),
 );
 
 done_testing;

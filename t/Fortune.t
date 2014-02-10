@@ -16,6 +16,7 @@ ddg_goodie_test(
     'gimmie a unix fortune' => test_zci(qr/.+/),
 	'give me a fortune cookie!' => test_zci(qr/.+/),
     'give me a unix fortune!' => test_zci(qr/.+/),
+    'unix fortune cookie' => test_zci(qr/.+/),
 );
 
 done_testing;

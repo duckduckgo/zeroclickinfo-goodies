@@ -18,6 +18,7 @@ ddg_goodie_test(
     '#1 in the dewey decimal system' => test_zci("001 is knowledge in the Dewey Decimal System.", html => '001 is <a href="/?q=outline of knowledge">knowledge</a> in the Dewey Decimal System.'),
     'dewey decimal system naturalism' => test_zci("146 is naturalism and related systems in the Dewey Decimal System.", html => '146 is <a href="/?q=naturalism (philosophy)">naturalism</a> and related systems in the Dewey Decimal System.'),
     'etymology in the dewey decimal system' => test_zci("", html => qr{^<table cellpadding=1>.*</table>$}),
+    'dewey 644' => test_zci('644 is household utilities in the Dewey Decimal System.', html => '644 is <a href="/?q=household">household</a> utilities in the Dewey Decimal System.'),
 );
 
 done_testing;

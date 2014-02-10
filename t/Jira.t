@@ -26,7 +26,15 @@ ddg_goodie_test(
     'jira random ajlib-230 bug random' => test_zci(
       undef,
       html => qq(ajlib incubator (Codehaus JIRA Bugtracker): see ticket <a href="https://jira.codehaus.org/browse/AJLIB-230">AJLIB-230</a>.)
-    )
+    ),
+    'SOLR-4530' => test_zci(
+      undef, 
+      html => 'Solr (Apache JIRA Bugtracker): see ticket <a href="https://issues.apache.org/jira/browse/SOLR-4530">SOLR-4530</a>.'
+    ),
+    'IdentityHtmlMapper solr-4530' => test_zci(
+      undef, 
+      html => 'Solr (Apache JIRA Bugtracker): see ticket <a href="https://issues.apache.org/jira/browse/SOLR-4530">SOLR-4530</a>.'
+    ),
 );
 
 done_testing;

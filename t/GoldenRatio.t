@@ -26,6 +26,7 @@ ddg_goodie_test(
         "golden ratio ? : 9" => test_zci("Golden ratio: 5.56230589874905 : 9"),
         "golden ratio ? :9" => test_zci("Golden ratio: 5.56230589874905 : 9"),
         "golden ratio ?: 9" => test_zci("Golden ratio: 5.56230589874905 : 9"),
+        'golden ratio ?:123.345' => test_zci('Golden ratio: 76.2314023423558 : 123.345'),
 );
 
 done_testing;

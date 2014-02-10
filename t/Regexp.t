@@ -21,6 +21,10 @@ ddg_goodie_test(
         	"poss",
         	heading => 'Regexp Result',
         ),
+        'regexp /(.*)/ ddg' => test_zci(
+            'ddg', 
+            heading => 'Regexp Result'
+        ),
 );
 
 done_testing;
