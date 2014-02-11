@@ -11,7 +11,7 @@ use List::Util qw( min max );
 use Date::Calendar;
 use Date::Calendar::Profiles qw($Profiles);
 
-triggers start => "workdays between", "business days between", "work days between", "working days";
+triggers start => "workdays between", "business days between", "work days between", "working days", "workdays from";
 
 zci answer_type => "workdays_between";
 
