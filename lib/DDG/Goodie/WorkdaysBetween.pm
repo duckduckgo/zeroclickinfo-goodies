@@ -32,10 +32,8 @@ handle remainder => sub {
         return;
     }
 
-    my $inclusive_flag = /inclusive/ ? 1 : 0;
-
     my $calendar = Date::Calendar->new($Profiles->{US});
-    my $workdays = $calendar->delta_workdays($start->year, $start->mon, $start->mday, $end->year, $end->mon, $end->mday, 1, $inclusive_flag);
+    my $workdays = $calendar->delta_workdays($start->year, $start->mon, $start->mday, $end->year, $end->mon, $end->mday, 1, 1);
 
     my $date_format = "%b %d, %Y";
     my $start_str = $start->strftime($date_format);
