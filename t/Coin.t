@@ -20,6 +20,12 @@ ddg_goodie_test(
      'toss 2 coins' => test_zci(qr/(heads|tails), (heads|tails) \(random\)/),
      'heads or tails' => test_zci(qr/(heads|tails) \(random\)/),
      'heads or tails?' => test_zci(qr/(heads|tails) \(random\)/),
+     
+     # Russian translation
+     # 'орёл или решка' => test_zci(qr/(орёл|решка) \(random\)/),
+     # 'орёл или решка?' => test_zci(qr/(орёл|решка) \(random\)/),
+     # 'орел или решка' => test_zci(qr/(орёл|решка) \(random\)/),
+     # 'орел или решка?' => test_zci(qr/(орёл|решка) \(random\)/),
 );
 
 done_testing;
