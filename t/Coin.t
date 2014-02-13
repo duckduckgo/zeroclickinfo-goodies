@@ -22,10 +22,10 @@ ddg_goodie_test(
      'heads or tails?' => test_zci(qr/(heads|tails) \(random\)/),
      
      # Russian translation
-     # 'орёл или решка' => test_zci(qr/(орёл|решка) \(random\)/),
-     # 'орёл или решка?' => test_zci(qr/(орёл|решка) \(random\)/),
-     # 'орел или решка' => test_zci(qr/(орёл|решка) \(random\)/),
-     # 'орел или решка?' => test_zci(qr/(орёл|решка) \(random\)/),
+     'орёл или решка' => test_zci(qr/(орёл|решка) \(random\)/),
+     'орёл или решка?' => test_zci(qr/(орёл|решка) \(random\)/),
+     'орел или решка' => test_zci(qr/(орёл|решка) \(random\)/),
+     'орел или решка?' => test_zci(qr/(орёл|решка) \(random\)/),
 );
 
 done_testing;
