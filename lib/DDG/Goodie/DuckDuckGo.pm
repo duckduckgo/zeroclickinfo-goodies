@@ -46,6 +46,8 @@ my %data = (
     short url           => "DuckDuckGo's short URL: http://ddg.gg/ which will take you to https://duckduckgo.com/",
     short domain        => "DuckDuckGo's short URL: http://ddg.gg/ which will take you to https://duckduckgo.com/",
     instant answers     => "DuckDuckGo's instant answers display helpful information at the top of the search page (like this box). Suggest or develop them at: http://duckduckhack.com/ and see all the current instant answers at: https://duckduckgo.com/goodies",
+    ia                  => \"instant answers",
+    instantanswers      => \"instant answers",
     hiring              => "Check out the DuckDuckGo hiring article: https://duck.co/help/company/hiring",
     job                 => \"hiring",
     jobs                => \"hiring",
@@ -68,7 +70,7 @@ my %data = (
     removal             => \"remove",
     (map {
         $_              => "Zero Click Info is another term for our instant answers (this box is one of them), which often provide useful information above traditional results. Read more about that here: http://duckduckhack.com/",
-        } qw/zeroclickinfo zeroclick 0click 0clickinfo/),
+        } qw/zeroclickinfo zeroclick 0click 0clickinfo zci/),
 );
 
 triggers any => keys %data, qw/zero 0/;
