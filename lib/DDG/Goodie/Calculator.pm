@@ -96,6 +96,7 @@ handle query_nowhitespace => sub {
 	    # e.g. sin(100000)/100000 completely makes this go haywire.
 	    alarm(1);
 	    $tmp_result = eval($tmp_expr);
+	    alarm(0);
 	};
 	
 	# 0-9 check for http://yegg.duckduckgo.com/?q=%243.43%20%2434.45&format=json
