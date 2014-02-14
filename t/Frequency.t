@@ -22,7 +22,8 @@ ddg_goodie_test(
     'frequency of a in Atlantic Ocean' => test_zci('Frequency: a:3/13'),
     'freq of B in battle' => test_zci('Frequency: b:1/6'),
     'freq of s in Spoons' => test_zci('Frequency: s:2/6'),
-
+    'frequency of all characters in testing' => test_zci('Frequency: e:1/7 g:1/7 i:1/7 n:1/7 s:1/7 t:2/7'),
+    'frequency of B in battle' => test_zci('Frequency: b:1/6'),
 );
 
 done_testing;

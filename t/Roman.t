@@ -17,6 +17,9 @@ ddg_goodie_test(
         "roman mmcml" => test_zci("2950 (roman numeral conversion)"),
         "roman 2344" => test_zci("MMCCCXLIV (roman numeral conversion)"),
         "arabic cccxlvi" => test_zci("346 (roman numeral conversion)"),
+        'roman numeral MCCCXXXVII' => test_zci('1337 (roman numeral conversion)'),
+        'roman 1337' => test_zci('MCCCXXXVII (roman numeral conversion)'),
+        'roman IV' => test_zci('4 (roman numeral conversion)'),
 );
 
 done_testing;

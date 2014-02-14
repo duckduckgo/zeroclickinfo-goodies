@@ -12,6 +12,9 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::UnixTime
 	)],
+    'unix time 0000000000000' => test_zci('Unix Time Conversion: Thu Jan 01 00:00:00 1970 +0000'),
+    'epoch 0' => test_zci('Unix Time Conversion: Thu Jan 01 00:00:00 1970 +0000'),
+    'epoch 2147483647' => test_zci('Unix Time Conversion: Tue Jan 19 03:14:07 2038 +0000'),
     map {
         "$_ 0" => test_zci('Unix Time Conversion: Thu Jan 01 00:00:00 1970 +0000'),
     }, [ 'unixtime', 'time', 'timestamp', 'datetime', 'epoch', 'unix time', 'unix epoch' ]

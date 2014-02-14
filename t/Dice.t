@@ -121,6 +121,21 @@ ddg_goodie_test(
                 heading => $heading
         ),
         
+        'roll 3d12' => test_zci(
+            qr/\d{1,2} \+ \d{1,2} \+ \d{1,2} = \d+/,
+            heading => $heading,
+            html => qr/./,
+        ),
+        'roll 3d12 and 2d4' => test_zci(
+            qr/\d{1,2} \+ \d{1,2} \+ \d{1,2} = \d+<br\/>[1-4]+ \+ [1-4]+ = \d<br\/>Total: \d+/,
+            heading => $heading,
+            html => qr/./,
+        ),
+        'roll 2 dice and 3d5' => test_zci(
+            qr/<br\/>[1-5]+ \+ [1-5]+ \+ [1-5]+ = \d+<br\/>Total: \d+/,
+            heading => $heading,
+            html => qr/./,
+        ),
 );
 
 done_testing;

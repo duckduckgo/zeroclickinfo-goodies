@@ -35,6 +35,10 @@ ddg_goodie_test(
 	),
 	"sudoku party" => undef,
 	"sudoku toys" => undef,
+    'sudoku easy' => test_zci(
+        qr/[0-9_].*[0-9_]$/s,
+        html => qr/.*\<table.*\<\/table\>.*/s,
+    ),
 );
 
 done_testing;

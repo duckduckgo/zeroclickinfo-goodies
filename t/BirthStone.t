@@ -15,6 +15,8 @@ ddg_goodie_test(
 	'april birth stone' => test_zci('April birthstone: Diamond'),
 	'birthstone JUNE' => test_zci('June birthstone: Pearl'),
 	'DecEmber birthstone' => test_zci('December birthstone: Turquoise'),
+    'birthstone april' => test_zci('April birthstone: Diamond'),
+    'may birth stone' => test_zci('May birthstone: Emerald'),
 );
 
 done_testing;

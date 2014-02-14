@@ -16,6 +16,7 @@ ddg_goodie_test(
     'choose this or that or none' => test_zci(qr/(this|that|none) \(random\)/),
     'choose duckduckgo or google or bing or something' => test_zci("duckduckgo (not random)", answer_type => 'egg'),
     'choose DuckDuckGo OR Google OR Bing or SOMETHING' => test_zci("DuckDuckGo (not random)", answer_type => 'egg'),
+    'choose heads or tails' => test_zci(qr/(heads|tails) \(random\)/),
 );
 
 done_testing;
