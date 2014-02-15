@@ -30,6 +30,12 @@ ddg_goodie_test(
     '1 ton to kilos'               => test_zci('1 ton is 907.186 kilos',),
     '3.9 oz g'                     => test_zci('3.9 oz is 110.563 g',),
     'convert -9 g to ozs'          => undef,
+    'convert 5 oz to yards'        => undef,
+    '2 miles to km'                => test_zci('2 miles is 3.219 km',),
+    'millimeter centimeters'       => test_zci('1 millimeter is 0.100 centimeters',),
+    'convert 5 feet to in'         => test_zci('5 feet is 60.000 in',),
+    '0.5 nautical mile to klick'   => test_zci('0.5 nautical mile is 0.926 klick',),
+    'meter meter'                  => test_zci('1 meter is 1.000 meter',),
 );
 
 done_testing;
