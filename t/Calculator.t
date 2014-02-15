@@ -120,6 +120,21 @@ ddg_goodie_test(
             heading => 'Calculator',
             html => qq(<div>2 / (1  *  10<sup>2</sup>) = <a href="javascript:;" onClick="document.x.q.value='0.02';document.x.q.focus();">0.02</a></div>),
         ),
+        '424334+2253828' => test_zci(
+            '424334 + 2253828 = 2,678,162',
+            heading => 'Calculator',
+            html => qq(<div>424334 + 2253828 = <a href="javascript:;" onClick="document.x.q.value='2,678,162';document.x.q.focus();">2,678,162</a></div>),
+        ),
+        '4,24,334+22,53,828' => test_zci(
+            '4,24,334 + 22,53,828 = 2,678,162',
+            heading => 'Calculator',
+            html => qq(<div>4,24,334 + 22,53,828 = <a href="javascript:;" onClick="document.x.q.value='2,678,162';document.x.q.focus();">2,678,162</a></div>),
+        ),
+        '4.243,34+22.538,28' => test_zci(
+            '4.243,34 + 22.538,28 = 26.781,62',
+            heading => 'Calculator',
+            html => qq(<div>4.243,34 + 22.538,28 = <a href="javascript:;" onClick="document.x.q.value='26.781,62';document.x.q.focus();">26.781,62</a></div>),
+        ),
         '//' => undef,
         dividedbydividedby => undef,
 );

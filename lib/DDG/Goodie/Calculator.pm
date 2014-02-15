@@ -1,4 +1,5 @@
 package DDG::Goodie::Calculator;
+# ABSTRACT: do simple arthimetical calculations
 
 use DDG::Goodie;
 
@@ -80,11 +81,15 @@ handle query_nowhitespace => sub {
         $tmp_expr =~ s/ dozen                        /12                                            /xig;
         $tmp_expr =~ s/ gross                        /144                                           /xig;
 
-        # Commas into periods.
-        $tmp_expr =~ s/(\d+),(\d{1,2})(?!\d)/$1.$2/g;
-
-        # Drop commas.
-        $tmp_expr =~ s/[\,\$]//g;
+        my $euro_style;
+        if ($tmp_expr =~ /\.\d+,\d+/) {
+            $euro_style = 1;    # Looks like euro-style numbers.
+                                # There may be other cases, but they will be hard to distinguish without more context.
+            $tmp_expr =~ s/[\.\$]//g;    # Drop periods as thousand seperators.
+            $tmp_expr =~ s/,/\./g;       # Recognize commas as decimal seperators.
+        } else {
+            $tmp_expr =~ s/[\,\$]//g;    # Drop commas as thousands seperators.
+        }
 
         # Drop =.
         $tmp_expr =~ s/=$//;
@@ -137,7 +142,7 @@ handle query_nowhitespace => sub {
 	    return if $results_no_html =~ /^\s/;
 	    
 	    # Add commas.
-	    $tmp_result = commify($tmp_result);
+	    $tmp_result = commify($tmp_result, $euro_style);
 	    
 	    # Now add it back.
 	    $results_no_html .= ' = ';
@@ -167,11 +172,18 @@ sub log10 {
     return log($x)/log(10);
 }
 
-#function to add a comma every 3 digits
-#commify '12345'  -> '12,345'
+#function to add appropriate thousands and decimal seperators
 sub commify {
-    my $text = reverse $_[0];
+    my ($text, $euro_style) = @_;
+
+    $text = reverse $text;
     $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
+    if ($euro_style) {
+        $text =~ s/,/_/g;     # Move thousands commas out of the way.
+        $text =~ s/\./,/g;    # Use comma for decimal seperator.
+        $text =~ s/_/./g;     # Use period for thousands seperator.
+    }
+
     return scalar reverse $text;
 }
 
