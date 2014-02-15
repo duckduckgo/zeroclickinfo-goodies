@@ -25,6 +25,7 @@ triggers query_nowhitespace => qr<
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c |)
+        [\( \) x X * % + / \^ 0-9 \. , \$ -]*
 
         (?(1) (?: -? [0-9 \. ,]+ |) |)
         (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log10 | exp )+

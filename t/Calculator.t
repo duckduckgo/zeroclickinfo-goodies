@@ -90,6 +90,36 @@ ddg_goodie_test(
             heading => 'Calculator',
             html => qq(<div>64 * 343 = <a href="javascript:;" onClick="document.x.q.value='21,952';document.x.q.focus();">21,952</a></div>), 
         ),
+        '1E2 + 1' => test_zci(
+            '(1  *  10 ^ 2) + 1 = 101',
+            heading => 'Calculator',
+            html => qq(<div>(1  *  10<sup>2</sup>) + 1 = <a href="javascript:;" onClick="document.x.q.value='101';document.x.q.focus();">101</a></div>),
+        ),
+        '1 + 1E2' => test_zci(
+            '1 + (1  *  10 ^ 2) = 101',
+            heading => 'Calculator',
+            html => qq(<div>1 + (1  *  10<sup>2</sup>) = <a href="javascript:;" onClick="document.x.q.value='101';document.x.q.focus();">101</a></div>),
+        ),
+        '2 * 3 + 1E2' => test_zci(
+            '2 * 3 + (1  *  10 ^ 2) = 106',
+            heading => 'Calculator',
+            html => qq(<div>2 * 3 + (1  *  10<sup>2</sup>) = <a href="javascript:;" onClick="document.x.q.value='106';document.x.q.focus();">106</a></div>),
+        ),
+        '1E2 + 2 * 3' => test_zci(
+            '(1  *  10 ^ 2) + 2 * 3 = 106',
+            heading => 'Calculator',
+            html => qq(<div>(1  *  10<sup>2</sup>) + 2 * 3 = <a href="javascript:;" onClick="document.x.q.value='106';document.x.q.focus();">106</a></div>),
+        ),
+        '1E2 / 2' => test_zci(
+            '(1  *  10 ^ 2) / 2 = 50',
+            heading => 'Calculator',
+            html => qq(<div>(1  *  10<sup>2</sup>) / 2 = <a href="javascript:;" onClick="document.x.q.value='50';document.x.q.focus();">50</a></div>),
+        ),
+        '2 / 1E2' => test_zci(
+            '2 / (1  *  10 ^ 2) = 0.02',
+            heading => 'Calculator',
+            html => qq(<div>2 / (1  *  10<sup>2</sup>) = <a href="javascript:;" onClick="document.x.q.value='0.02';document.x.q.focus();">0.02</a></div>),
+        ),
         '//' => undef,
         dividedbydividedby => undef,
 );
