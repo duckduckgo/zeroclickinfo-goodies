@@ -44,7 +44,7 @@ handle remainder => sub {
     } (0..(scalar keys %descriptions)-1);
 
     return join("\n", map { "- $_" } @taints), html => '<ul>' . join('', map { "<li>$_</li>" } @taints). '</ul><br>'
-        . '<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/sysctl/kernel.txt">Documentation</a>';
+        . '<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/sysctl/kernel.txt">Read more</a>';
 };
 
 1;
