@@ -16,7 +16,8 @@ triggers end => 'stopwatch';
 my $html = share('stopwatch.html')->slurp;
 
 handle remainder => sub {
-    return 'stopwatch', html => $html if $_ eq '';
+    return 'Stopwatch', html => $html if $_ eq '';
+    return;
 };
 
 1;
