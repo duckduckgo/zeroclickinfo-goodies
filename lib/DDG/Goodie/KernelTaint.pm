@@ -43,8 +43,8 @@ handle remainder => sub {
         $mask & 1<<$_ ? "$descriptions{2**$_}" : '';
     } (0..(scalar keys %descriptions)-1);
 
-    return join("\n", @taints), html => join '<br>', @taints
-        , '<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/sysctl/kernel.txt">Documentation</a>';
+    return join("\n", map { "- $_" } @taints), html => '<ul>' . join('', map { "<li>$_</li>" } @taints). '</ul><br>'
+        . '<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/sysctl/kernel.txt">Documentation</a>';
 };
 
 1;
