@@ -80,7 +80,7 @@ handle remainder => sub {
 
   for my $dayHeading (@weekDays) {
     $rText.= "$dayHeading ";
-    $rHtml.= '<th style="width:30px; text-align:center;">'.$dayHeading.'</th>';
+    $rHtml.= '<th style="width:40px; text-align:center;">'.$dayHeading.'</th>';
   }
   $rText.= "     ".$firstDay->strftime("%B %Y")."\n";
   $rHtml.= "</tr><tr><td>&nbsp;</td>";
