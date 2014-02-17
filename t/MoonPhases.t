@@ -16,9 +16,9 @@ ddg_goodie_test(
     	qr/The current lunar phase is/,
     	html => qr/The current lunar phase is/
     ),
-    'lunar phase' => test_zci('The current lunar phase is: Waxing Gibbous', html => 'The current lunar phase is: <a href="?q=Waxing+Gibbous">Waxing Gibbous</a>'),
-    'phase of the moon' => test_zci('The current lunar phase is: Waxing Gibbous', html => 'The current lunar phase is: <a href="?q=Waxing+Gibbous">Waxing Gibbous</a>'),
-    'what is the current lunar phase' => test_zci('The current lunar phase is: Waxing Gibbous', html => 'The current lunar phase is: <a href="?q=Waxing+Gibbous">Waxing Gibbous</a>'),
+    'lunar phase' => test_zci(qr/The current lunar phase is/, html => qr/The current lunar phase is/),
+    'phase of the moon' => test_zci(qr/The current lunar phase is/, html => qr/The current lunar phase is/),
+    'what is the current lunar phase' => test_zci(qr/The current lunar phase is:/, html => qr/The current lunar phase is/),
 );
 
 done_testing;
