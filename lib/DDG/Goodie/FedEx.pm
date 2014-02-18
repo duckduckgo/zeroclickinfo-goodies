@@ -24,10 +24,10 @@ my $fedex_qr = qr/fed(?:eral|)ex(?:press|)/io;
 my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
 
 triggers query_nowhitespace_nodash => qr/
-                                        ^$fedex_qr.*?([\d]{9,})$|
-                                        ^([\d]{9,}).*?$fedex_qr$|
-                                        ^(?:$tracking_qr|$fedex_qr|)*?(\d*?)([\d]{15,20})(?:$tracking_qr|$fedex_qr|)*$|
-                                        ^(?:$tracking_qr|$fedex_qr|)*?(\d*?)([\d]{12})(?:$tracking_qr|$fedex_qr|)*$
+                                        ^$fedex_qr.*?(?<the_number>[\d]{9,})$|
+                                        ^(?<the_number>[\d]{9,}).*?$fedex_qr$|
+                                        ^(?:$tracking_qr|$fedex_qr|)*?(?<extra_numbers>\d*?)(?<to_checksum>[\d]{15,20})(?:$tracking_qr|$fedex_qr|)*$|
+                                        ^(?:$tracking_qr|$fedex_qr|)*?(?<extra_numbers>\d*?)(?<to_checksum>[\d]{12})(?:$tracking_qr|$fedex_qr|)*$
                                         /xio;
 
 # Fedex package tracking.
@@ -40,9 +40,9 @@ handle query_nowhitespace_nodash => sub {
     # Tracking number.
     my $package_number = '';
 
-    # Exclsuive trigger.
-    if ($1 || $2) {
-        $package_number = $1 || $2;
+    # Exclusive trigger.
+    if ($+{the_number}) {
+        $package_number = $+{the_number};
         $is_fedex       = 2;
 
         # No exclusive trigger, do checksum.
@@ -50,9 +50,9 @@ handle query_nowhitespace_nodash => sub {
         # we are more strict in regex (e.g. than UPS).
         # 15 has to be before 12 or it will block.
     }
-    elsif (($3 && $4) || ($5 && $6)) {
-        my $package_beg = $3 || $5;
-        $package_number = $4 || $6;
+    elsif ($+{to_checksum}) {
+        my $package_beg =  $+{some_numbers};
+        $package_number = $+{to_checksum};
 
         my $checksum   = -1;
         my @chars      = split( //, $package_number );
