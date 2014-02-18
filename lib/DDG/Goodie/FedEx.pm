@@ -51,7 +51,7 @@ handle query_nowhitespace_nodash => sub {
         # 15 has to be before 12 or it will block.
     }
     elsif ($+{to_checksum}) {
-        my $package_beg =  $+{some_numbers};
+        my $package_beg =  $+{extra_numbers};
         $package_number = $+{to_checksum};
 
         my $checksum   = -1;
