@@ -20,6 +20,11 @@ ddg_goodie_test(
         	heading => 'FedEx Shipment Tracking',
         	html => qq(Track this shipment at <a href="http://fedex.com/Tracking?tracknumbers=9241990100130206401644&action=track">FedEx</a>.)
         ),
+        '178440515632684' => test_zci(
+            "178440515632684",
+            heading => 'FedEx Shipment Tracking',
+            html    => qq(Track this shipment at <a href="http://fedex.com/Tracking?tracknumbers=178440515632684&action=track">FedEx</a>.)
+    ),
 );
 
 done_testing;
