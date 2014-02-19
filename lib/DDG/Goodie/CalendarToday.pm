@@ -14,7 +14,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "dates";
 topics "everyday";
 attribution email   => ['webmaster@quovadit.org'];
-triggers start => 'calendar';
+triggers startend => 'calendar';
 
 
 # define days & months
@@ -54,10 +54,10 @@ handle remainder => sub {
     }
     
     # lookup month name
-    if($monthsShort{$givenMonth}) { 
+    if(exists $monthsShort{$givenMonth}) { 
       $month = $monthsShort{$givenMonth}; 
       $day = 0;
-    } elsif($monthsLong{$givenMonth}) { 
+    } elsif(exists $monthsLong{$givenMonth}) { 
       $month = $monthsLong{$givenMonth}; 
       $day = 0;
     } else {
