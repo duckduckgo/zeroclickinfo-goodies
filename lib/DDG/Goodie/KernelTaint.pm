@@ -3,7 +3,7 @@ package DDG::Goodie::KernelTaint;
 
 use DDG::Goodie;
 
-primary_example_queries 'kernel taint 5121', 'kernel taint 2';
+primary_example_queries 'kernel taint 5121', 'kernel taint description 2';
 description 'Parses and explains the OR\'d values of /proc/sys/kernel/tainted';
 name 'KernelTaint';
 source 'https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/sysctl/kernel.txt';
@@ -35,7 +35,9 @@ my %descriptions = (
 
 handle remainder => sub {
 
-	return unless qr/^\d+$/;
+    s/description|error|\s+//g;
+
+	return unless /^\d+$/;
 
     my $mask = shift;
 
