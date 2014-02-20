@@ -37,6 +37,13 @@ ddg_goodie_test(
         test_zci('19:42:42 (BIT, UTC-12) is 11:42:42, 5 days after (GMT+100).'),
     '19:42:42 CHADT into GMT-100' =>
         test_zci('19:42:42 (CHADT, UTC+13:45) is 1:57:42, 4 days prior (GMT-100).'),   
+    '12 in binary' => undef,
+    '10:00AM MST to PST' => 
+        test_zci('10:00 A.M. (MST, UTC-7) is 9:00 A.M. (PST, UTC-8).'),
+    '19:00 UTC to EST' => 
+        test_zci('19:00 (UTC) is 14:00 (EST, UTC-5).'),
+    '1am UTC to PST' => 
+        test_zci('1:00 A.M. (UTC) is 5:00 P.M., 1 day prior (PST, UTC-8).'),
 );
 
 done_testing;

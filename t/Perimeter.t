@@ -37,6 +37,7 @@ ddg_goodie_test(
         "circumference 1" => test_zci("Circumference: 6.28318530717959"),
         "circumference 1.5" => test_zci("Circumference: 9.42477796076938"),
         "circumference of circle 1" => test_zci("Circumference: 6.28318530717959"),
+        'perimeter of square 3' => test_zci('Perimeter of square: 12'),
 );
 
 done_testing;

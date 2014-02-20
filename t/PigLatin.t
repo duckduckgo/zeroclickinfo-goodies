@@ -14,6 +14,7 @@ ddg_goodie_test(
 	)],
 	'pig latin will this work?' => test_zci('Pig Latin: illway isthay orkway?'),
 	'piglatin i love duckduckgo' => test_zci('Pig Latin: iway ovelay uckduckgoday'),
+    'pig latin i love duckduckgo' => test_zci('Pig Latin: iway ovelay uckduckgoday'),
 );
 
 done_testing;

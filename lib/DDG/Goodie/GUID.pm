@@ -15,7 +15,9 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'programming';
 attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+            cpan    => 'CRZEDPSYC' ,
+            twitter => 'loganmccamon',
+            github => 'loganom';
 
 my %guid = (
     'guid' => 0,
@@ -28,13 +30,11 @@ my %guid = (
 handle query_lc => sub {
     return unless exists $guid{$_};
     if (my $guid = Data::GUID->new) {
-        if ($guid{$_}) {
-            $guid = lc $guid;
-        } else {
-            $guid = qq({$guid});
-        }
-	$guid .= ' (randomly generated)';
-        return $guid;
+        my $guid_string = $guid->as_string;
+
+        return  answer => $guid_string,
+                html => qq(<input type="text" onclick='this.select();' size="45" value="$guid"/>),
+                heading => 'Random GUID';
     }
     return;
 };
