@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 package DDG::Goodie::BinaryLogic;
 
 use DDG::Goodie;
@@ -8,11 +10,13 @@ use Marpa::R2;
 # TODO: - need a way to trigger a line containing only i.e. '¬1'.
 #         otherwise the ¬ character works.
 triggers any => 'xor', 'and', 'or', 'not';
-# triggers any => '⊕', '∧', '∨', '¬'; # symbols for 'xor', 'and', 
-                                      # 'or' and 'not'
+
+# Unicode symbols don't trigger yet.
+#triggers any => '⊕', '∧', '∨', '¬'; # symbols for 'xor', 'and', 
+                                   # 'or' and 'not'
 
 zci is_cached => 1;
-zci answer_type => "binary_logic";
+zci answer_type => "binary_logic"; 
 
 attribution
     github => ['https://github.com/MithrandirAgain', 'MithrandirAgain'],
@@ -21,12 +25,9 @@ attribution
 
 primary_example_queries '4 xor 5', '3 and 2', '1 or 1234';
 secondary_example_queries 
-    '5 ⊕ 79', 
     '9489 xor 394 xor 9349 xor 39 xor 29 xor 4967 xor 3985', 
     '10 and 12',
-    '12 ∧ 23',
     '34 or 100',
-    '4567 ∨ 2311',
     '10 and (30 or 128)',
     '0x01 or not 0X100';
 description 'take two numbers and do bitwise logical operations (exclusive-or, or, and, not) on them';
@@ -55,10 +56,13 @@ Term ::=
 Number ::= 
        '0x' HexDigits action => hex_number
      | '0X' HexDigits action => hex_number
+     | '0b' BinaryDigits action => bin_number
+     | '0B' BinaryDigits action => bin_number
      | DecimalDigits
 
 DecimalDigits ~ [\d]+
 HexDigits ~ [\dA-Fa-f]+
+BinaryDigits ~ [01]+
 
 :discard ~ whitespace
 whitespace ~ [\s]+
@@ -108,8 +112,6 @@ handle query_raw => sub {
     $input =~ s/∧/and/;
     $input =~ s/∨/or/;
     $input =~ s/¬/not /;
-
-    print $input . '\n';
 
     # using eval to catch possible errors with $@
     eval { $recce->read( \$input ) };
