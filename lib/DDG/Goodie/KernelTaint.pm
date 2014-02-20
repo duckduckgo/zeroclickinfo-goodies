@@ -45,7 +45,7 @@ handle remainder => sub {
         $mask & 1<<$_ ? "$descriptions{2**$_}" : '';
     } (0..(scalar keys %descriptions)-1);
 
-    return join("\n", map { "- $_" } @taints), html => '<ul>' . join('', map { "<li>$_</li>" } @taints). '</ul><br>'
+    return join("\n", map { "- $_" } @taints), html => '<ul>' . join('', map { "<li>$_</li>" } @taints). '</ul>'
         . '<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/sysctl/kernel.txt">Read more</a>';
 };
 
