@@ -37,7 +37,14 @@ ddg_goodie_test(
 	html		=>	qq(This is a 224 bit <a href="http://en.wikipedia.org/wiki/SHA-2">SHA-2</a>/<a href="http://en.wikipedia.org/wiki/SHA-3">SHA-3</a> cryptographic hash.),
 	answer_type	=> 	"crypthashcheck"
 	),
-	
+    'hash 624d420035fc9471f6e16766b7132dd6bb34ea62' => test_zci(
+        'This is a 160 bit SHA-1 cryptographic hash.', 
+        html => 'This is a 160 bit <a href="http://en.wikipedia.org/wiki/SHA-1">SHA-1</a> cryptographic hash.'
+    ),
+    'hash 1f9b59a2390bb77d2c446837d6aeab067f01b05732735f47099047cd7d3e9f85' => test_zci(
+        'This is a 256 bit SHA-2/SHA-3 cryptographic hash.', 
+        html => 'This is a 256 bit <a href="http://en.wikipedia.org/wiki/SHA-2">SHA-2</a>/<a href="http://en.wikipedia.org/wiki/SHA-3">SHA-3</a> cryptographic hash.'
+    ),
 );
 
 done_testing;

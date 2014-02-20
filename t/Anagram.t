@@ -24,6 +24,7 @@ ddg_goodie_test(
     "anagrams lost" => test_zci('Anagrams of "lost": lots, slot'),  
     "anagram lost"  => test_zci('Anagrams of "lost": lots, slot'), 
     "anagram of lost"  => test_zci('Anagrams of "lost": lots, slot'), 
-    );
+    'anagram of filter' => test_zci('Anagram of "filter": trifle'),
+);
 
 done_testing;

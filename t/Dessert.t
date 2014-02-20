@@ -40,6 +40,14 @@ ddg_goodie_test(
 	qr/(.*?) is a dessert that begins with 'a'\.$/,
 	html => qr/(.*?) is a dessert that begins with 'a'\.$/
     ),
+    'a dessert that starts with the letter a' => test_zci(
+    qr/(.*?) is a dessert that begins with 'a'\.$/, 
+    html => qr/(.*?) is a dessert that begins with 'a'\.$/
+    ),
+    'dessert that begins with the letter z' => test_zci(
+    qr/(.*?) is a dessert that begins with 'z'\.$/, 
+    html => qr/(.*?) is a dessert that begins with 'z'\.$/
+    ),
 );
 
 done_testing;

@@ -13,6 +13,8 @@ ddg_goodie_test(
                 DDG::Goodie::Rafl
         )],
         'rafl' => test_zci(qr/rafl is so everywhere, .+/),
+        'rafl is everywhere' => test_zci(qr/rafl is so everywhere, .+/),
+        'where is rafl?' => test_zci(qr/rafl is so everywhere, .+/),
 );
 
 done_testing;

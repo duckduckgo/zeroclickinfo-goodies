@@ -48,7 +48,7 @@ Unique local addresses: fd00::/8
 <br>Private network IPv6 addresses (<a href="https://www.ietf.org/rfc/rfc4193.txt">rfc4193</a>):
 <br>Unique local addresses: fd00::/8
 '
-)) } ( 'private network' ) #, 'private networks', 'private ip', 'private ips' )
+)) } ( 'private network', 'private networks', 'private ips' )
 );
 
 done_testing;

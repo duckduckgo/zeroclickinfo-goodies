@@ -14,6 +14,7 @@ ddg_goodie_test(
 	)],
 	'reverse bla' => test_zci('Reversed "bla": alb'),
 	'reverse blabla' => test_zci('Reversed "blabla": albalb'),
+    'reverse esrever' => test_zci('Reversed "esrever": reverse'),
 );
 
 done_testing;
