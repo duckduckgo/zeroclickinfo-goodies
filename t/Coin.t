@@ -20,6 +20,7 @@ ddg_goodie_test(
      'toss 2 coins' => test_zci(qr/(heads|tails), (heads|tails) \(random\)/),
      'heads or tails' => test_zci(qr/(heads|tails) \(random\)/),
      'heads or tails?' => test_zci(qr/(heads|tails) \(random\)/),
+     'flip 4 coins' => test_zci(qr/((heads|tails),? ){4}\(random\)/),
 );
 
 done_testing;

@@ -28,6 +28,7 @@ ddg_goodie_test(
 	'01/01/2012 + 1 day'            => test_zci( '01/01/2012 + 1 day is 1/2/2012' ),
 	'1/1/2012 minus ten days'       => test_zci( '1/1/2012 minus 10 days is 12/22/2011' ),
     'January First plus ten days'   => test_zci( "January 1 $year plus 10 days is 1/11/$year" ),
+    'January first minus ten days' => test_zci('January 1 2014 minus 10 days is 12/22/2013'),
 );
 
 done_testing;

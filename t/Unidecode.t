@@ -15,7 +15,7 @@ ddg_goodie_test(
 	)],
 	'unidecode møæp'   => test_zci('moaep'),
     "unidecode \x{5317}\x{4EB0}" => test_zci('Bei Jing'),
-
+    'unidecode åäº°' => test_zci('aaodeg'),
 );
 
 done_testing;

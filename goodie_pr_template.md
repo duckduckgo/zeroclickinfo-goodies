@@ -34,7 +34,7 @@ We ask that you please use this template when submitting an instant answer pull 
 **\*\*Note:** Please attach a screenshot for new instant answer pull requests, and for pull requests which modify the look/design of existing instant answers.
 
 ##Checklist
-Please place a ✔ where appropriate.
+Please place an 'X' where appropriate.
 
 ```
 [] Added metadata and attribution information
