@@ -65,7 +65,7 @@ handle remainder => sub {
 
   prepare_returntext();
 
-  return $rText, html => $rHtml;
+  return $rText, html => append_css($rHtml);
 };
 
 
@@ -102,12 +102,12 @@ sub readYear {
 sub prepare_returntext {
   # Print heading
   $rText = "\n";
-  $rHtml = '<table style="text-align:center;"><tr><th style="width:150px; text-align:left;">';
+  $rHtml = '<table><tr><th class="header">';
   $rHtml.=$firstDay->strftime("%B %Y").'</th>';
 
   for my $dayHeading (@weekDays) {
     $rText.= "$dayHeading ";
-    $rHtml.= '<th style="width:40px; text-align:center;">'.$dayHeading.'</th>';
+    $rHtml.= '<th>'.$dayHeading.'</th>';
   }
   $rText.= "     ".$firstDay->strftime("%B %Y")."\n";
   $rHtml.= "</tr><tr><td>&nbsp;</td>";
@@ -123,7 +123,7 @@ sub prepare_returntext {
   for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
     if($dayNum == $day) { 
       $rText.= "|"; 
-      $rHtml.= '<td style="color:white; background-color: #808080;">'.$dayNum.'</td>';
+      $rHtml.= '<td class="today">'.$dayNum.'</td>';
     } else {
       $rText.=" "; 
     }
@@ -157,6 +157,14 @@ sub prepare_returntext {
   $rHtml.="</tr></table>";
 
 }
+
+sub append_css {
+    my $html = shift;
+    my $css = scalar share("style.css")->slurp;
+    return "<style type='text/css'>$css</style>\n" . $html;
+}
+
+
 
 
 1;

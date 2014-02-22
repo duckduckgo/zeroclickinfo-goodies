@@ -1,0 +1,4 @@
+table { text-align: center; }
+th { width:40px; text-align:center; }
+th.header { width:150px; text-align:left; }
+td.today { color:white; background-color: #808080; }
