@@ -14,67 +14,95 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "dates";
 topics "everyday";
 attribution email   => ['webmaster@quovadit.org'];
-triggers startend => 'calendar';
+triggers startend => 'calendar', 'cal';
 
 
-# define days & months
+# define variables
+my $day;
+my $month;
+my $year;
+my $firstDay;
+my $firstWeekDayId;
+my $lastDay;
+my $rText;
+my $rHtml;
+
 my @weekDays = ("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
-my %monthsShort = ("jan" => 1, "feb" => 2, "mar" => 3, "apr" => 4, "may" => 5, "jun" => 6, 
-	"jul" => 7, "aug" => 8, "sep" => 9, "oct" => 10, "nov" => 11, "dec" => 12);
   
-my %monthsLong = ("january" => 1, "february" => 2, "march" => 3, "april" => 4, "may" => 5, "june" => 6, 
-	"july" => 7, "august" => 8, "september" => 9, "october" => 10, "november" => 11, "december" => 12);
 
 handle remainder => sub {
   
   # Default: today
-  my ($day, $monthId, $yearOffset) = (localtime)[3,4,5];
-  my $month = 1 + $monthId;
-  my $year = 1900 + $yearOffset;
-  
-  
+  my $t = localtime;
+  $day = $t->mday;
+  $month = $t->mon;
+  $year = $t->year;
+
+
   # if valid input in remainder -> override year/month and unset day
-  if ($_) { 
-    my $givenMonth = "";
-    my $givenYear = "";
-    my $whiteSpace = index($_, " ");
-    
-    # more than one parameter (month + year)
-    if($whiteSpace > 0) {
-      $givenMonth = substr $_, 0, $whiteSpace;
-      $givenYear = substr $_, $whiteSpace+1, 4;
-      
-      if(is_integer($givenYear) && $givenYear > 1900 && $givenYear < 2100) { 
-        $year = $givenYear; 
-        $day = 0;
-      }
-    # only one parameter (month)
+  my ($par1, $par2) = split (' ', $_);
+
+  # two parameters in remainder (month + year)
+  if ($par2) {
+    if(readYear($par2)) {
+      return if (!readMonth($par1));
     } else {
-      $givenMonth = $_;
+      readYear($par1);
+      return if (!readMonth($par2));
     }
     
-    # lookup month name
-    if(exists $monthsShort{$givenMonth}) { 
-      $month = $monthsShort{$givenMonth}; 
-      $day = 0;
-    } elsif(exists $monthsLong{$givenMonth}) { 
-      $month = $monthsLong{$givenMonth}; 
-      $day = 0;
-    } else {
-      return;
-    }
+  # only one parameter (month)
+  } elsif ($par1) {
+      return if (!readMonth($par1));
   }
 
 
   # calculate first/last day
-  my $firstDay = Time::Piece->strptime("$year/$month/1", "%Y/%m/%d");
-  my $firstWeekDayId = $firstDay->day_of_week;
-  my $lastDay = $firstDay->month_last_day;
+  $firstDay = Time::Piece->strptime("$year/$month/1", "%Y/%m/%d");
+  $firstWeekDayId = $firstDay->day_of_week;
+  $lastDay = $firstDay->month_last_day;
 
 
+  prepare_returntext();
+
+  return $rText, html => $rHtml;
+};
+
+
+
+
+# functions:
+
+# check if par is a valid month
+sub readMonth {
+    my @monthPatterns = ('%b', '%B', '%h');
+
+    for my $monthPattern (@monthPatterns) {
+      return 1 if(eval {
+        my $validDate = Time::Piece->strptime("2000/$_[0]/1", "%Y/".$monthPattern."/%d");
+        $day = 0;
+        $month = $validDate->mon;
+      })
+    }
+}
+
+# check if par is a valid year
+sub readYear {
+    my @yearPatterns = ('%y', '%Y');
+
+    for my $yearPattern (@yearPatterns) {
+      return 1 if(eval {
+        my $validDate = Time::Piece->strptime("$_[0]/1/1", "".$yearPattern."/%m/%d");
+        $year = $validDate->year;
+      })
+    }
+}
+
+# prepare text and html to be returned
+sub prepare_returntext {
   # Print heading
-  my $rText = "\n";
-  my $rHtml = '<table style="text-align:center;"><tr><th style="width:150px; text-align:left;">';
+  $rText = "\n";
+  $rHtml = '<table style="text-align:center;"><tr><th style="width:150px; text-align:left;">';
   $rHtml.=$firstDay->strftime("%B %Y").'</th>';
 
   for my $dayHeading (@weekDays) {
@@ -128,13 +156,7 @@ handle remainder => sub {
   $rText.= "\n";
   $rHtml.="</tr></table>";
 
-
-  return $rText, html => $rHtml;
-};
-
-
-sub is_integer {
-   defined $_[0] && $_[0] =~ /^[+-]?\d+$/;
 }
+
 
 1;
