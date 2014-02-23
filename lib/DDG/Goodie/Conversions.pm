@@ -2,7 +2,6 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
-
 ###@todo
 ###    --  1 -- include more unit types
 ###             see: https://github.com/duckduckgo/zeroclickinfo-goodies/issues/318
@@ -159,7 +158,11 @@ zci answer_type => 'conversions';
 
 handle query => sub {
     my @matches = ($_ =~ /\b($keys)\b/gi);
-   
+ 
+   	# hack/handle the special case of "X in Y":
+   	if ((scalar @matches == 3) && $matches[1] eq "in") {
+   	    @matches = ($matches[0], $matches[2]);
+  	}
     return unless scalar @matches == 2; # conversion requires two triggers
 
     my ($match_types, $factors) = get_types_and_factors(\@matches);
@@ -168,7 +171,9 @@ handle query => sub {
     
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($match_types[0] ne $match_types[1]);
-
+	
+	# normalize the whitespace, 25cm should work for example:
+	
     # get factor:
     my @args = split(/\s+/, $_);
     my $factor = 1;
