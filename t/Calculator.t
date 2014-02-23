@@ -80,6 +80,16 @@ ddg_goodie_test(
             heading => 'Calculator',
             html => qq(<div>sin(1) = <a href="javascript:;" onClick="document.x.q.value='0.841470984807897';document.x.q.focus();">0.841470984807897</a></div>)
         ),
+        '$3.43+$34.45' => test_zci(
+            '$3.43 + $34.45 = $37.88', 
+            heading => 'Calculator',
+            html => qq(<div>\$3.43 + \$34.45 = <a href="javascript:;" onClick="document.x.q.value='\$37.88';document.x.q.focus();">\$37.88</a></div>)
+        ),
+        '64*343' => test_zci(
+            '64 * 343 = 21,952', 
+            heading => 'Calculator',
+            html => qq(<div>64 * 343 = <a href="javascript:;" onClick="document.x.q.value='21,952';document.x.q.focus();">21,952</a></div>), 
+        ),
         '//' => undef,
         dividedbydividedby => undef,
 );

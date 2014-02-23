@@ -39,8 +39,9 @@ ddg_goodie_test(
 	'who was the twenty-second POTUS?' => test_zci(
         'Grover Cleveland was the 22nd President of the United States.',
         html => '<a href="https://en.wikipedia.org/wiki/Grover%20Cleveland">Grover Cleveland</a> was the 22<sup>nd</sup> President of the United States.'),
-
-
+    'potus 16' => test_zci(
+        'Abraham Lincoln was the 16th President of the United States.',
+        html => '<a href="https://en.wikipedia.org/wiki/Abraham%20Lincoln">Abraham Lincoln</a> was the 16<sup>th</sup> President of the United States.'),
 );
 
 done_testing;

@@ -21,6 +21,10 @@ Example: $\int_a^b f(x)dx$',
 Example: $\int_a^b f(x)dx$',
 		html => qr/\\int_lowerbound\^upperbound/,
 		heading => 'Integral (LaTeX)'),
+    'latex summation' => test_zci('LaTeX command: \sum_{lower}^{upper}
+Example: $\sum{i=0}^{10} x^{2}$', 
+		html => qr/\\sum_\{lower\}\^\{upper\}/,
+        heading => 'Summation (LaTeX)'),
 );
 
 done_testing;

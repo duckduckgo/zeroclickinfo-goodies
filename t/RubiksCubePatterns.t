@@ -36,6 +36,18 @@ ddg_goodie_test(
         	"html" => qr{<div><i>.+</i>: .+</div>}s,
         	"heading" => "Rubik's Cube Patterns"
         ),
+        'rcube stripes' => test_zci(
+            "Stripes: F U F R L2 B D' R D2 L D' B R2 L F U F \n",
+            html => "<div><i>Stripes</i>: F U F R L2 B D' R D2 L D' B R2 L F U F</div>\n",
+        ),
+        'rcube cube in a cube' => test_zci(
+            "Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
+            html => "<div><i>Cube in a Cube</i>: F L F U' R U F2 L2 U' L' B D' B' L2 U</div>\n",
+        ),
+        'rcube swap centers' => test_zci(
+            "Swap Centers: U D' R L' F B' U D' \n",
+            html => "<div><i>Swap Centers</i>: U D' R L' F B' U D'</div>\n",
+        ),
 );
 
 done_testing;
