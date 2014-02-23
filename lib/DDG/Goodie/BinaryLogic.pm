@@ -118,8 +118,12 @@ handle query_raw => sub {
     my $value_ref = $recce->value();
 
     return if not defined $value_ref;
-
-    return ${$value_ref};
+    
+    my $text_output = ${$value_ref};
+    my $html_output = "<div>Result: <b>" . ${$value_ref} . "</b></div>";
+    my $heading = "Binary Logic: '" . $_ . "'";
+    
+    return answer => $text_output, html => $html_output, heading => $heading;
 };
 
 1;
