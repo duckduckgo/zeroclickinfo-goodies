@@ -130,6 +130,24 @@ my @length = (
         'aliases'   => ['nautical miles', 'n', 'ns', 'nm', 'nms', 'nmi', 'nmis'],
         'type'      => 'length',
     },
+    {
+        'unit'      => 'light year',
+        'factor'    => (1/9460730472580800),
+        'aliases'   => ['light years', 'ly', 'lys'],
+        'type'      => 'length',
+    },
+    {
+        'unit'      => 'parsec',
+        'factor'    => (1/30856776376340067),
+        'aliases'   => ['parsecs', 'pc', 'pcs'],
+        'type'      => 'length',
+    },
+    {
+        'unit'      => 'astronomical unit',
+        'factor'    => (1/149597870700),
+        'aliases'   => ['astronomical units', 'au', 'aus'],
+        'type'      => 'length',
+    },
 );
 
 my @durations = (
