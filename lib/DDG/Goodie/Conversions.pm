@@ -157,7 +157,7 @@ attribution                github  => ['https://github.com/elohmrow', '/bda'],
 zci answer_type => 'conversions';
 
 handle query => sub {
-    my @matches = ($_ =~ /\b($keys)\b/gi);
+    my @matches = ($_ =~ /(?:[0-9]|\b)($keys)\b/gi);
  
    	# hack/handle the special case of "X in Y":
    	if ((scalar @matches == 3) && $matches[1] eq "in") {
@@ -172,7 +172,8 @@ handle query => sub {
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($match_types[0] ne $match_types[1]);
 	
-	# normalize the whitespace, 25cm should work for example:
+	# normalize the whitespace, "25cm" should work for example
+	s/([0-9])([a-zA-Z])/$1 $2/;
 	
     # get factor:
     my @args = split(/\s+/, $_);

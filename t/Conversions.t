@@ -38,8 +38,10 @@ ddg_goodie_test(
     'meter meter'                  => test_zci('1 meter is 1.000 meter',),
     '500 miles in metres'          => test_zci('500 miles is 804672.249 metres',),
     '25 cm in'                     => test_zci('25 cm is 9.843 in',),
-    '1760 yards to miles'           => test_zci('1760 yards is 1.000 miles',),
-#    '3520yards to miles'           => test_zci('3520 yards is 2.000 miles',),
+    '1760 yards to miles'          => test_zci('1760 yards is 1.000 miles',),
+    '3520yards to miles'           => test_zci('3520 yards is 2.000 miles',),
+    'convert 1stone to lbs'        => test_zci('1 stone is 14.000 lbs',),
+    '30cm in in'                   => test_zci('30 cm is 11.811 in',),
 );
 
 done_testing;
