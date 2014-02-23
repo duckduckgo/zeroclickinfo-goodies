@@ -7,15 +7,13 @@ use utf8;
 
 use Marpa::R2;
 
-# TODO: - need a way to trigger a line containing only i.e. '¬1'.
-#         otherwise the ¬ character works.
-triggers any => 'xor', 'and', 'or', 'not';
+# Regexp triggers are used to find cases where the logical symbol
+# for 'not' is at the beginning of the query (e.g. the case '¬1')
+triggers query_raw => qr/.*\s+(and|or|xor|⊕|∧|∨)\s+.*/;
+triggers query_raw => qr/not\s+.*/;
+triggers query_raw => qr/¬.*/;
 
-# Unicode symbols don't trigger yet.
-#triggers any => '⊕', '∧', '∨', '¬'; # symbols for 'xor', 'and', 
-                                   # 'or' and 'not'
-
-zci is_cached => 1;
+# zci is_cached => 1;
 zci answer_type => "binary_logic"; 
 
 attribution
@@ -105,10 +103,10 @@ handle query_raw => sub {
     
     # Substitute the unicode characters. The parser does not seem to 
     # like unicode.
-    $input =~ s/⊕/xor/;
-    $input =~ s/∧/and/;
-    $input =~ s/∨/or/;
-    $input =~ s/¬/not /;
+    $input =~ s/⊕/ xor /;
+    $input =~ s/∧/ and /;
+    $input =~ s/∨/ or /;
+    $input =~ s/¬/ not /;
 
     # using eval to catch possible errors with $@
     eval { $recce->read( \$input ) };
