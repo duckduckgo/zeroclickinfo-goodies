@@ -56,8 +56,6 @@ Term ::=
 Number ::= 
        '0x' HexDigits action => hex_number
      | '0X' HexDigits action => hex_number
-     | '0b' BinaryDigits action => bin_number
-     | '0B' BinaryDigits action => bin_number
      | DecimalDigits
 
 DecimalDigits ~ [\d]+
