@@ -60,7 +60,6 @@ Number ::=
 
 DecimalDigits ~ [\d]+
 HexDigits ~ [\dA-Fa-f]+
-BinaryDigits ~ [01]+
 
 :discard ~ whitespace
 whitespace ~ [\s]+
