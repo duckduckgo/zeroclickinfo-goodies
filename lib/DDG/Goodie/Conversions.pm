@@ -2,6 +2,7 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
+use Data::Dump qw(dump);
 ###@todo
 ###    --  1 -- include more unit types
 ###             see: https://github.com/duckduckgo/zeroclickinfo-goodies/issues/318
@@ -13,61 +14,61 @@ my @mass = (
     {
         'unit'    => 'metric ton',
         'factor'  => '1',
-        'aliases' => ['metric ton', 'tonne', 't', 'mt', 'te', 'metric tons', 'tonnes', 'ts', 'mts', 'tes'],
+        'aliases' => ['tonne', 't', 'mt', 'te', 'metric tons', 'tonnes', 'ts', 'mts', 'tes'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'ounce',
         'factor'  => '35274',
-        'aliases' => ['ounce', 'oz', 'ounces', 'ozs'],
+        'aliases' => ['oz', 'ounces', 'ozs'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'pound',
         'factor'  => '2204.62',
-        'aliases' => ['pound', 'lb', 'lbm', 'pound mass', 'pounds', 'lbs', 'lbms', 'pounds mass'],
+        'aliases' => ['lb', 'lbm', 'pound mass', 'pounds', 'lbs', 'lbms', 'pounds mass'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'stone',
         'factor'  => '157.473',
-        'aliases' => ['stone', 'st', 'stones', 'sts'],
+        'aliases' => ['st', 'stones', 'sts'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'long ton',
         'factor'  => '0.984207',
-        'aliases' => ['long ton', 'weight ton', 'imperial ton', 'long tons', 'weight tons', 'imperial tons'],
+        'aliases' => ['weight ton', 'imperial ton', 'long tons', 'weight tons', 'imperial tons'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'microgram',
         'factor'  => '1000000000',
-        'aliases' => ['microgram', 'mcg', 'micrograms', 'mcgs'],
+        'aliases' => ['mcg', 'micrograms', 'mcgs'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'kilogram',
         'factor'  => '1000',
-        'aliases' => ['kilogram', 'kg', 'kilo', 'kilogramme', 'kilograms', 'kgs', 'kilos', 'kilogrammes'],
+        'aliases' => ['kg', 'kilo', 'kilogramme', 'kilograms', 'kgs', 'kilos', 'kilogrammes'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'gram',
         'factor'  => '1000000',
-        'aliases' => ['gram', 'g', 'gm', 'gramme', 'grams', 'gs', 'gms', 'grammes'],
+        'aliases' => ['g', 'gm', 'gramme', 'grams', 'gs', 'gms', 'grammes'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'milligram',
         'factor'  => '1000000000',
-        'aliases' => ['milligram', 'mg', 'milligrams', 'mgs'],
+        'aliases' => ['mg', 'milligrams', 'mgs'],
         'type'    => 'mass',
     },
     {
         'unit'    => 'short ton',
         'factor'  => '1.10231',
-        'aliases' => ['short ton', 'ton', 'short tons', 'tons'],
+        'aliases' => ['ton', 'short tons', 'tons'],
         'type'    => 'mass',
     },
 );
@@ -78,55 +79,55 @@ my @length = (
     {
         'unit'      => 'meter',
         'factor'    => '1',
-        'aliases'   => ['meter', 'meters', 'metre', 'metres', 'm', 'ms'],
+        'aliases'   => ['meters', 'metre', 'metres', 'm', 'ms'],
         'type'      => 'length',
     },
     {
         'unit'      => 'kilometer',
         'factor'    => '0.001',
-        'aliases'   => ['kilometer', 'kilometers', 'kilometre', 'kilometres', 'km', 'kms', 'klick', 'klicks'],
+        'aliases'   => ['kilometers', 'kilometre', 'kilometres', 'km', 'kms', 'klick', 'klicks'],
         'type'      => 'length',
     },
     {
         'unit'      => 'centimeter',
         'factor'    => '100',
-        'aliases'   => ['centimeter', 'centimeters', 'centimetre', 'centimetres', 'cm', 'cms'],
+        'aliases'   => ['centimeters', 'centimetre', 'centimetres', 'cm', 'cms'],
         'type'      => 'length',
     },
     {
         'unit'      => 'millimeter',
         'factor'    => '1000',
-        'aliases'   => ['millimeter', 'millimeters', 'millimetre', 'millimetres', 'mm', 'mms'],
+        'aliases'   => ['millimeters', 'millimetre', 'millimetres', 'mm', 'mms'],
         'type'      => 'length',
     },
     {
         'unit'      => 'mile',
         'factor'    => '0.000621371',
-        'aliases'   => ['mile', 'miles', 'statute mile', 'statute miles', 'land mile', 'land miles'],
+        'aliases'   => ['miles', 'statute mile', 'statute miles', 'land mile', 'land miles'],
         'type'      => 'length',
     },
     {
         'unit'      => 'yard',
         'factor'    => '1.09361',
-        'aliases'   => ['yard', 'yards', 'yd', 'yds'],
+        'aliases'   => ['yards', 'yd', 'yds'],
         'type'      => 'length',
     },
     {
         'unit'      => 'foot',
         'factor'    => '3.28084',
-        'aliases'   => ['foot', 'feet', 'ft', 'international foot', 'international feet', 'survey foot', 'survey feet'],
+        'aliases'   => ['feet', 'ft', 'international foot', 'international feet', 'survey foot', 'survey feet'],
         'type'      => 'length',
     },
     {
         'unit'      => 'inch',
         'factor'    => '39.3701',
-        'aliases'   => ['inch', 'inches', 'in', 'ins'],
+        'aliases'   => ['inches', 'in', 'ins'],
         'type'      => 'length',
     },
     {
         'unit'      => 'nautical mile',
         'factor'    => '0.000539957',
-        'aliases'   => ['nautical mile', 'nautical miles', 'n', 'ns', 'nm', 'nms', 'nmi', 'nmis'],
+        'aliases'   => ['nautical miles', 'n', 'ns', 'nm', 'nms', 'nmi', 'nmis'],
         'type'      => 'length',
     },
 );
@@ -198,6 +199,7 @@ my @durations = (
 my @types = (@mass, @length, @durations);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
+    push(@units, $type->{'unit'});
     push(@units, @{$type->{'aliases'}});
 }
 
@@ -277,7 +279,7 @@ sub get_types_and_factors {
     
     foreach my $match (@matches) {
         foreach my $type (@types) {
-            if (grep { $_ eq $match } @{$type->{'aliases'}}) {
+            if ($match eq $type->{'unit'} || grep { $_ eq $match } @{$type->{'aliases'}}) {
                 push(@match_types, $type->{'type'});
                 push(@factors, $type->{'factor'});
             }
@@ -286,7 +288,4 @@ sub get_types_and_factors {
 
     return (\@match_types, \@factors);
 }
-
-
-
 1;
