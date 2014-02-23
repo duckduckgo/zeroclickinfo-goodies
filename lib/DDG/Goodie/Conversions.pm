@@ -131,8 +131,71 @@ my @length = (
     },
 );
 
+my @durations = (
+    {
+        'unit'      => 'day',
+        'factor'    => '1',
+        'aliases'   => ['days', 'dy', 'dys', 'd'],
+        'type'      => 'duration',
+    },
+    {
+        'unit'      => 'second',
+        'factor'    => '86400',
+        'aliases'   => ['seconds', 'sec', 's'],
+        'type'      => 'duration',
+    },
+	{
+        'unit'      => 'millisecond',
+        'factor'    => '86400000',
+        'aliases'   => ['milliseconds', 'millisec', 'millisecs', 'ms'],
+        'type'      => 'duration',
+    },
+	{
+        'unit'      => 'microsecond',
+        'factor'    => '86400000',
+        'aliases'   => ['microseconds', 'microsec', 'microsecs', 'us', 'µs'],
+        'type'      => 'duration',
+    },
+    {
+        'unit'      => 'minute',
+        'factor'    => '1440',
+        'aliases'   => ['minutes', 'min', 'mins'],
+        'type'      => 'duration',
+    },
+    {
+        'unit'      => 'hour',
+        'factor'    => '24',
+        'aliases'   => ['hours', 'hr', 'hrs', 'h'],
+        'type'      => 'duration',
+    },
+    {
+        'unit'      => 'week',
+        'factor'    => '0.1428571428571429',
+        'aliases'   => ['weeks', 'wks', 'wk'],
+        'type'      => 'duration',
+    },
+    {
+        'unit'      => 'fortnight',
+        'factor'    => '0.0714285714285714',
+        'aliases'   => [],
+        'type'      => 'duration',
+    },
+    {    # a month being defined as an average earth month (30.42)
+        'unit'      => 'month',
+        'factor'    => '0.0328731097961867',
+        'aliases'   => ['months', 'mons', 'mns', 'mn'],
+        'type'      => 'duration',
+    },
+    {
+        'unit'      => 'year',
+        'factor'    => '0.0027397260273973',
+        'aliases'   => ['years', 'yr', 'yrs'],
+        'type'      => 'duration',
+    },
+);
+
 # build the keys:
-my @types = (@mass, @length);    # unit types available for conversion
+my @types = (@mass, @length, @durations);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
     push(@units, @{$type->{'aliases'}});
