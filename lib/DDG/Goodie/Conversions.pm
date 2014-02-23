@@ -153,7 +153,7 @@ my @durations = (
 	{
         'unit'      => 'microsecond',
         'factor'    => '86400000',
-        'aliases'   => ['microseconds', 'microsec', 'microsecs', 'us', 'µs'],
+        'aliases'   => ['microseconds', 'microsec', 'microsecs', 'us'],
         'type'      => 'duration',
     },
     {
