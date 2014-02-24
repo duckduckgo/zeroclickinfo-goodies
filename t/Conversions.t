@@ -36,6 +36,7 @@ ddg_goodie_test(
     'convert 5 feet to in'         => test_zci('5 feet is 60.000 in',),
     '0.5 nautical mile to klick'   => test_zci('0.5 nautical mile is 0.926 klick',),
     'meter meter'                  => test_zci('1 meter is 1.000 meter',),
+    '6^2 oz to grams'              => undef,
 );
 
 done_testing;
