@@ -51,6 +51,7 @@ Locale::Country::rename_country('ph' => 'the Philippines');
 Locale::Country::rename_country('ru' => 'the Russian Federation');
 Locale::Country::rename_country('tw' => 'Taiwan');
 Locale::Country::rename_country('us' => 'the United States');
+Locale::Country::rename_country('va' => 'the Holy See (Vatican City State)');
 Locale::Country::rename_country('vg' => 'the British Virgin Islands');
 Locale::Country::rename_country('vi' => 'the US Virgin Islands');
 
@@ -59,7 +60,12 @@ Locale::Country::rename_country('vi' => 'the US Virgin Islands');
 Locale::Country::rename_country('gm' => 'The Gambia');
 Locale::Country::rename_country('bs' => 'The Bahamas');
 
+Locale::Country::add_country_alias('Antigua and Barbuda'  => 'Antigua');
+Locale::Country::add_country_alias('Antigua and Barbuda'  => 'Barbuda');
 Locale::Country::add_country_alias('Russian Federation'   => 'Russia');
+Locale::Country::add_country_alias('Trinidad and Tobago'  => 'Tobago');
+Locale::Country::add_country_alias('Trinidad and Tobago'  => 'Trinidad');
+Locale::Country::add_country_alias('Vatican City'         => 'Vatican');
 Locale::Country::add_country_alias('Virgin Islands, U.S.' => 'US Virgin Islands');
 
 # Source: http://www.bbc.co.uk/news/magazine-18233844
@@ -70,6 +76,12 @@ Locale::Country::add_country_alias('Sudan'         => 'the Sudan');
 Locale::Country::add_country_alias('Ukraine'       => 'the Ukraine');
 Locale::Country::add_country_alias('United States' => 'America');
 Locale::Country::add_country_alias('Yemen'         => 'the Yemen');
+
+# Easter eggs
+Locale::Country::add_country_alias('Russian Federation' => 'the Kremlin');
+Locale::Country::add_country_alias('United States' => 'murica');
+Locale::Country::add_country_alias('Canada' => 'Canadia'); 
+Locale::Country::add_country_alias('Australia' => 'down under');
 
 handle remainder => sub {
     my $query = shift;
