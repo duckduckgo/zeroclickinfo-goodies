@@ -153,7 +153,7 @@ my @length = (
     },
 );
 
-my @durations = (
+my @time = (
     {
         'unit'      => 'day',
         'factor'    => '1',
@@ -217,7 +217,7 @@ my @durations = (
 );
 
 # build the keys:
-my @types = (@mass, @length, @durations);    # unit types available for conversion
+my @types = (@mass, @length, @time);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
