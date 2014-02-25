@@ -45,6 +45,7 @@ ddg_goodie_test(
     '36 months to years'           => test_zci('36 months is 3.000 years',),
     '43200 seconds in hours'       => test_zci('43200 seconds is 12.000 hours',),
     '4 hours to minutes'           => test_zci('4 hours is 240.000 minutes',),
+    '6^2 oz to grams'              => undef,
 );
 
 done_testing;

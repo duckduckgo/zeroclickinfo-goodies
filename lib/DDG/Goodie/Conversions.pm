@@ -3,10 +3,13 @@ package DDG::Goodie::Conversions;
 
 use DDG::Goodie;
 use Data::Dump qw(dump);
+use Scalar::Util qw/looks_like_number/;
+
 ###@todo
 ###    --  1 -- include more unit types
 ###             see: https://github.com/duckduckgo/zeroclickinfo-goodies/issues/318
-###    --  4 -- think about special ways feet-inches can be written (2'-4", etc.)
+###    --  2 -- think about special ways feet-inches can be written (2'-4", etc.)
+###    --  3 -- would like to handle things like "6^2 g to oz"
 
 # metric ton is base unit for mass
 # known SI units and aliases / plurals
@@ -239,55 +242,11 @@ attribution                github  => ['https://github.com/elohmrow', '/bda'],
 
 zci answer_type => 'conversions';
 
-handle query => sub {
-    my @matches = ($_ =~ /(?:[0-9]|\b)($keys)\b/gi);
- 
-   	# hack/handle the special case of "X in Y":
-   	if ((scalar @matches == 3) && $matches[1] eq "in") {
-   	    @matches = ($matches[0], $matches[2]);
-  	}
-    return unless scalar @matches == 2; # conversion requires two triggers
-
-    my ($match_types, $factors) = get_types_and_factors(\@matches);
-    my @match_types = @{$match_types};
-    my @factors = @{$factors};
-    
-    # matches must be of the same type (e.g., can't convert mass to length):
-    return if ($match_types[0] ne $match_types[1]);
-	
-	# normalize the whitespace, "25cm" should work for example
-	s/([0-9])([a-zA-Z])/$1 $2/;
-	
-    # get factor:
-    my @args = split(/\s+/, $_);
-    my $factor = 1;
-    foreach my $arg (@args) {
-        if (looks_like_number($arg)) {
-            $factor = $arg unless $factor != 1;     # drop n > 1 #s
-
-            if ($match_types[0] !~ /temperature|pressure/) { # for when temp/pressure added in future
-                return if $factor < 0;  # negative weights, etc. seem impossible :)
-            }
-        }
-    }
-
-    # run the conversion:
-    return "$factor $matches[0] is " . sprintf("%.3f", $factor * ($factors[1] / $factors[0])) . " $matches[1]";
-};
-
-# from the source ...
-sub looks_like_number {
-  local $_ = shift;
-
-  # checks from perlfaq4
-  return 1 unless defined;
-  return 1 if (/^[+-]?\d+$/); # is a +/- integer
-  return 1 if (/^([+-]?)(?=\d|\.\d)\d*(\.\d*)?([Ee]([+-]?\d+))?$/); # a C float
-  return 1 if ($] >= 5.008 and /^(Inf(inity)?|NaN)$/i) or ($] >= 5.006001 and /^Inf$/i);
-
-  0;
-}
-
+#
+#   helper function:
+#       [1] get factors for later calculating conversion
+#       [2] get trigger 'types' to determine if we can perform a calculation in the first place
+#
 sub get_types_and_factors {
     my $matches = shift;
     my @matches = @{$matches};
@@ -306,4 +265,42 @@ sub get_types_and_factors {
 
     return (\@match_types, \@factors);
 }
+
+handle query => sub {
+    my @matches = ($_ =~ /(?:[0-9]|\b)($keys)\b/gi);
+ 
+   	# hack/handle the special case of "X in Y":
+   	if ((scalar @matches == 3) && $matches[1] eq "in") {
+   	    @matches = ($matches[0], $matches[2]);
+  	}
+    return unless scalar @matches == 2; # conversion requires two triggers
+
+    my ($match_types, $factors) = get_types_and_factors(\@matches);
+    my @match_types = @{$match_types};
+    my @factors = @{$factors};
+    print "\t debug: ".dump(@match_types);
+    # matches must be of the same type (e.g., can't convert mass to length):
+    return if ($match_types[0] ne $match_types[1]);
+	
+	# normalize the whitespace, "25cm" should work for example
+	s/([0-9])([a-zA-Z])/$1 $2/;
+	
+    # get factor:
+    my @args = split(/\s+/, $_);
+    my $factor = 1;
+    foreach my $arg (@args) {
+        return if $arg =~ /\D/;     # see @todo #3
+        if (looks_like_number($arg)) {
+            $factor = $arg unless $factor != 1;     # drop n > 1 #s
+
+            if ($match_types[0] !~ /temperature|pressure/) { # for when temp/pressure added in future
+                return if $factor < 0;  # negative weights, etc. seem impossible :)
+            }
+        }
+    }
+    
+    # run the conversion:
+    return "$factor $matches[0] is " . sprintf("%.3f", $factor * ($factors[1] / $factors[0])) . " $matches[1]";
+};
+
 1;
