@@ -5,8 +5,10 @@ use DDG::Goodie;
 use Time::Piece;
 
 primary_example_queries "calendar";
-secondary_example_queries "calendar april",
-                          "calendar sep 2015";
+secondary_example_queries "calendar november 2015", 
+                          "cal nov 2015", 
+                          "cal nov", 
+                          "cal next nov";
 
 description "Print calendar of current / given month and highlight today";
 name "Calendar Today";
@@ -18,9 +20,12 @@ triggers startend => 'calendar', 'cal';
 
 
 # define variables
-my $day;
-my $month;
-my $year;
+my $currentDay;
+my $currentMonth;
+my $currentYear;
+my $givenDay;
+my $givenMonth;
+my $givenYear;
 my $firstDay;
 my $firstWeekDayId;
 my $lastDay;
@@ -34,9 +39,9 @@ handle remainder => sub {
   
   # Default: today
   my $t = localtime;
-  $day = $t->mday;
-  $month = $t->mon;
-  $year = $t->year;
+  $currentDay = $t->mday;
+  $currentMonth = $t->mon;
+  $currentYear = $t->year;
 
 
   # if valid input in remainder -> override year/month and unset day
@@ -47,18 +52,36 @@ handle remainder => sub {
     if(readYear($par2)) {
       return if (!readMonth($par1));
     } else {
-      readYear($par1);
       return if (!readMonth($par2));
+      if (!readYear($par1)) {
+        if($par1 eq "last") {
+          lastMonth();
+        } elsif($par1 eq "next") {
+          nextMonth();
+        } else {
+          return;
+        }
+      }
     }
     
   # only one parameter (month)
   } elsif ($par1) {
-      return if (!readMonth($par1));
+      if (readMonth($par1)) {
+        nearestMonth();
+      } else {
+        return;
+      }
+
+  # no parameter
+  } else {
+    $givenDay = $currentDay;
+    $givenMonth = $currentMonth;
+    $givenYear = $currentYear;
   }
 
 
   # calculate first/last day
-  $firstDay = Time::Piece->strptime("$year/$month/1", "%Y/%m/%d");
+  $firstDay = Time::Piece->strptime("$givenYear/$givenMonth/1", "%Y/%m/%d");
   $firstWeekDayId = $firstDay->day_of_week;
   $lastDay = $firstDay->month_last_day;
 
@@ -75,42 +98,85 @@ handle remainder => sub {
 
 # check if par is a valid month
 sub readMonth {
-    my @monthPatterns = ('%b', '%B', '%h');
+  my @monthPatterns = ('%b', '%B', '%h');
 
-    for my $monthPattern (@monthPatterns) {
-      return 1 if(eval {
-        my $validDate = Time::Piece->strptime("2000/$_[0]/1", "%Y/".$monthPattern."/%d");
-        $day = 0;
-        $month = $validDate->mon;
-      })
-    }
+  for my $monthPattern (@monthPatterns) {
+    return 1 if(eval {
+      my $validDate = Time::Piece->strptime("2000/$_[0]/1", "%Y/".$monthPattern."/%d");
+      $givenDay = 0;
+      $givenMonth = $validDate->mon;
+    })
+  }
 }
 
 # check if par is a valid year
 sub readYear {
-    my @yearPatterns = ('%y', '%Y');
+  my @yearPatterns = ('%y', '%Y');
 
-    for my $yearPattern (@yearPatterns) {
-      return 1 if(eval {
-        my $validDate = Time::Piece->strptime("$_[0]/1/1", "".$yearPattern."/%m/%d");
-        $year = $validDate->year;
-      })
+  for my $yearPattern (@yearPatterns) {
+    return 1 if(eval {
+      my $validDate = Time::Piece->strptime("$_[0]/1/1", "".$yearPattern."/%m/%d");
+      $givenYear = $validDate->year;
+    })
+  }
+}
+
+# find last month
+sub lastMonth {
+
+  if($givenMonth < $currentMonth) {
+    $givenYear = $currentYear;
+    return ($currentMonth - $givenMonth);
+  } else { 
+    $givenYear = $currentYear-1;
+    return ($currentMonth+(12-$givenMonth));
+  }
+  
+}
+
+# find next month
+sub nextMonth {
+
+  if($givenMonth > $currentMonth) {
+    $givenYear = $currentYear;
+    return ($givenMonth - $currentMonth);
+  } else { 
+    $givenYear = $currentYear+1;
+    return ($givenMonth+(12-$currentMonth));
+  }
+
+}
+
+# find nearest month
+sub nearestMonth {
+  if($givenMonth == $currentMonth) {
+    $givenYear = $currentYear;
+  } elsif(lastMonth() < nextMonth()) {
+    lastMonth();
+  } elsif(lastMonth() > nextMonth()) {
+    nextMonth();
+  } elsif(lastMonth() == nextMonth()) {
+    if($currentDay<($lastDay/2)) {
+      lastMonth();
+    } else {
+      nextMonth();
     }
+  } 
 }
 
 # prepare text and html to be returned
 sub prepare_returntext {
   # Print heading
   $rText = "\n";
-  $rHtml = '<table><tr><th class="header">';
+  $rHtml = '<table><tr><th class="header" rowspan="6">';
   $rHtml.=$firstDay->strftime("%B %Y").'</th>';
 
   for my $dayHeading (@weekDays) {
     $rText.= "$dayHeading ";
-    $rHtml.= '<th>'.$dayHeading.'</th>';
+    $rHtml.= '<th>&nbsp;'.$dayHeading.'</th>';
   }
   $rText.= "     ".$firstDay->strftime("%B %Y")."\n";
-  $rHtml.= "</tr><tr><td>&nbsp;</td>";
+  $rHtml.= "</tr><tr>";
    
 
   # Skip to the first day of the week
@@ -121,7 +187,7 @@ sub prepare_returntext {
   
   # Printing the month
   for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
-    if($dayNum == $day) { 
+    if($dayNum == $givenDay) { 
       $rText.= "|"; 
       $rHtml.= '<td class="today">'.$dayNum.'</td>';
     } else {
@@ -133,11 +199,11 @@ sub prepare_returntext {
     }
 
     $rText.= "$dayNum";
-    if($dayNum != $day ) {
+    if($dayNum != $givenDay ) {
       $rHtml.= "<td>$dayNum</td>";
     }
     
-    if($dayNum == $day) { 
+    if($dayNum == $givenDay) { 
       $rText.= "|"; 
       $rHtml.= "</div>";
     } else {
@@ -149,7 +215,7 @@ sub prepare_returntext {
     if ($weekDayNum == 7) {
       $weekDayNum = 0;
       $rText.= "\n";
-      $rHtml.= "</tr><tr><td>&nbsp;</td>";
+      $rHtml.= "</tr><tr>";
     }
   }
 
@@ -159,9 +225,9 @@ sub prepare_returntext {
 }
 
 sub append_css {
-    my $html = shift;
-    my $css = scalar share("style.css")->slurp;
-    return "<style type='text/css'>$css</style>\n" . $html;
+  my $html = shift;
+  my $css = scalar share("style.css")->slurp;
+  return "<style type='text/css'>$css</style>\n" . $html;
 }
 
 
