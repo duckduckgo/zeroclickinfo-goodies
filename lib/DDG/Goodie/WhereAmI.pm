@@ -5,7 +5,7 @@ use DDG::Goodie;
 
 zci is_cached => 0;
 
-triggers start => 'where am i', 'my location';
+triggers start => 'where am i', 'my location', 'current location', 'my current location';
 
 primary_example_queries 'Where am I?';
 secondary_example_queries 'my location';
