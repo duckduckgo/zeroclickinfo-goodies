@@ -20,7 +20,7 @@ secondary_example_queries "dialing code +55", "country calling code 55";
 attribution github  => ["kablamo",            "Eric Johnson"],
             web     => ["http://kablamo.org", "Eric Johnson"];
 
-triggers startend => 
+triggers any => 
     "calling code",
     "calling codes",
     "country calling code", 
@@ -87,7 +87,7 @@ handle remainder => sub {
     my $query = shift;
 
     my ($dialing_code, @countries);
-   
+
     if ($query =~ /^\+?(\d+)/) {
         # $query looks like a phone number. eg +65
         ($dialing_code, @countries) = number_to_country($1);
@@ -148,6 +148,8 @@ sub country_to_calling_code {
     $country =~ s/^for\s+//;
     $country =~ s/^in\s+//;
     $country =~ s/^the\s+//;
+    $country =~ s/\s+\+?\d+$//; # remove trailing phone code. for queries
+                                # like 'calling code for brazil +55'
 
     my $country_code = country2code($country);
 
