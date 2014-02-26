@@ -10,8 +10,8 @@ zci is_cached => 0;
 
 ddg_goodie_test(
 	[qw(DDG::Goodie::WhereAmI)],
-        'where am I?' => test_zci(qr/^You appear to be in [A-Z]\w+, .+\(Lat:-?\d+\.\d+, Lon:-?\d+\.\d+\)\./, html => qr{<br/><i>This is the perceived source of your connection\. It is never saved here!</i>$}),
-        'my location' => test_zci(qr/^You appear to be in [A-Z]\w+, .+\(Lat:-?\d+\.\d+, Lon:-?\d+\.\d+\)\./, html => qr{<br/><i>This is the perceived source of your connection\. It is never saved here!</i>$}),
+        'where am I?' => test_zci(qr/^You appear to be in [A-Z]\w+, .+\(Lat: -?\d+\.\d+, Lon: -?\d+\.\d+\)\./, html => qr{<br/><i>This is the perceived source of your connection\. It is never saved here!</i>$}),
+        'my location' => test_zci(qr/^You appear to be in [A-Z]\w+, .+\(Lat: -?\d+\.\d+, Lon: -?\d+\.\d+\)\./, html => qr{<br/><i>This is the perceived source of your connection\. It is never saved here!</i>$}),
         'my location is nowhere!' => undef,
 );
 

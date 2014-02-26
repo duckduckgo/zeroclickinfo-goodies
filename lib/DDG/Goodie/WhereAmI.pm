@@ -23,11 +23,11 @@ handle remainder => sub {
     my $answer = 'You appear to be in ' .
         $loc->city.', '.
         ($loc->region_name ? $loc->region_name.', ' : '').
-        $loc->country_name.
-        ' (Lat:'.$loc->latitude.', Lon:'.$loc->longitude.').'
+        $loc->country_name
         ;
+    my $coords = 'Lat: '.$loc->latitude.', Lon: '.$loc->longitude;
 
-    return $answer, html => $answer . '<br/><i>This is the perceived source of your connection. It is never saved here!</i>'
+    return $answer . " ($coords).", html => $answer . ".<br/>$coords." . '<br/><i>This is the perceived source of your connection. It is never saved here!</i>'
 };
 
 1;
