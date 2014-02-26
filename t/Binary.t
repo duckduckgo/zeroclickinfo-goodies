@@ -33,6 +33,10 @@ ddg_goodie_test(
     '12 from binary'       => undef,
     'decimal 12 binary'    => undef,
     'hex 12 binary'        => undef,
+    'Cyngus X-1 binary'    => undef,
+    'Cygnus X-1 as binary' => test_zci(
+        'Binary conversion: "Cygnus X-1" (string) = 01000011011110010110011101101110011101010111001100100000010110000010110100110001 (binary)'),
+    'to binary' => undef,
 );
 
 done_testing;

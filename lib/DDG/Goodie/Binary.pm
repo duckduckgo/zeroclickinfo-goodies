@@ -48,7 +48,7 @@ sub bin2dec {
 handle remainder => sub {
     my @out;
 
-    if (/^[^01]*([01]+)(\s+from)?$/) {
+    if (/^([01]+)(\s+from)?$/) {
         # Looks like they gave us some binary, let's turn it into decimal!
         @out = ($1, bin2dec($1), "binary", "decimal");
     } elsif (s/\s+(in|to|into|as)$//) {
