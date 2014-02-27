@@ -27,7 +27,7 @@ handle remainder => sub {
         ;
     my $coords = 'Lat: '.$loc->latitude.', Lon: '.$loc->longitude;
 
-    return $answer . " ($coords).", html => $answer . ".<br/>$coords." . '<br/><i>This is the perceived source of your connection. It is never saved here!</i>'
+    return $answer . " ($coords).", html => $answer . ".<br/>$coords.";
 };
 
 1;
