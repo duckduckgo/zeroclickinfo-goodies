@@ -5,12 +5,14 @@ use DDG::Goodie;
 use Time::Piece;
 
 primary_example_queries "calendar";
-secondary_example_queries "calendar november 2015", 
-                          "cal nov 2015", 
-                          "cal nov", 
-                          "cal next nov";
+secondary_example_queries "calendar november", 
+                          "calendar next november", 
+                          "calendar november 2015", 
+                          "cal 29 nov 1980", 
+                          "cal 29.11.1980", 
+                          "cal 1980-11-29";
 
-description "Print calendar of current / given month and highlight today";
+description "Print calendar of current / given month and highlight (to)day";
 name "Calendar Today";
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CalendarToday.pm';
 category "dates";
@@ -20,74 +22,34 @@ triggers startend => 'calendar', 'cal';
 
 
 # define variables
-my $currentDay;
-my $currentMonth;
-my $currentYear;
-my $givenDay;
-my $givenMonth;
-my $givenYear;
-my $firstDay;
-my $firstWeekDayId;
-my $lastDay;
-my $rText;
-my $rHtml;
-
+my $parameter1, my $parameter2, my $parameter3;
+my $currentDay, my $currentMonth, my $currentYear;
+my $givenDay, my $givenMonth, my $givenYear;
+my $validMonthPattern, my $validYearPattern;
+my $firstDay, my $firstWeekDayId, my $lastDay;
+my $rText, my $rHtml;
 my @weekDays = ("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
   
 
 handle remainder => sub {
   
-  # Default: today
+  # check current date
   my $t = localtime;
   $currentDay = $t->mday;
   $currentMonth = $t->mon;
   $currentYear = $t->year;
 
-
-  # if valid input in remainder -> override year/month and unset day
-  my ($par1, $par2) = split (' ', $_);
-
-  # two parameters in remainder (month + year)
-  if ($par2) {
-    if(readYear($par2)) {
-      return if (!readMonth($par1));
-    } else {
-      return if (!readMonth($par2));
-      if (!readYear($par1)) {
-        if($par1 eq "last") {
-          lastMonth();
-        } elsif($par1 eq "next") {
-          nextMonth();
-        } else {
-          return;
-        }
-      }
-    }
-    
-  # only one parameter (month)
-  } elsif ($par1) {
-      if (readMonth($par1)) {
-        nearestMonth();
-      } else {
-        return;
-      }
-
-  # no parameter
-  } else {
-    $givenDay = $currentDay;
-    $givenMonth = $currentMonth;
-    $givenYear = $currentYear;
-  }
-
+  # read parameters - do not trigger if invalid parameters are found (delimiters: - / . ' ')
+  ($parameter1, $parameter2, $parameter3) = split (/[-\/\. ]/, $_);
+  return if (!readParameters());
 
   # calculate first/last day
   $firstDay = Time::Piece->strptime("$givenYear/$givenMonth/1", "%Y/%m/%d");
   $firstWeekDayId = $firstDay->day_of_week;
   $lastDay = $firstDay->month_last_day;
 
-
+  # return calendar
   prepare_returntext();
-
   return $rText, html => append_css($rHtml);
 };
 
@@ -96,9 +58,73 @@ handle remainder => sub {
 
 # functions:
 
-# check if par is a valid month
+
+# read up to 3 parameters, return 1 (OK) if valid date-combination is found
+sub readParameters {
+
+  # three parameters:
+  if ($parameter3) {
+    # e.g. "calendar 29 nov 1980"
+    return 1 if((readYear($parameter3)) && (readMonth($parameter2)) && (readDay($parameter1)));
+    # e.g. "calendar 1980 nov 29"
+    return 1 if((readYear($parameter1)) && (readMonth($parameter2)) && (readDay($parameter3)));
+    # e.g. "calendar nov 29 1980"
+    return 1 if((readYear($parameter3)) && (readMonth($parameter1)) && (readDay($parameter2)));
+    # e.g. "calendar 1980 29 nov"
+    return 1 if((readYear($parameter1)) && (readMonth($parameter3)) && (readDay($parameter2)));
+    # e.g. "calendar nov 1980 29"
+    return 1 if((readYear($parameter2)) && (readMonth($parameter1)) && (readDay($parameter3)));
+    # e.g. "calendar 29 1980 nov"
+    return 1 if((readYear($parameter2)) && (readMonth($parameter3)) && (readDay($parameter1)));
+
+  # two parameters:
+  } elsif ($parameter2) {
+    # e.g. "calendar next november"
+    if (($parameter1 eq "next") && (readMonth($parameter2))) {
+      nextMonth();
+      return 1;
+    } 
+    # e.g. "calendar last november"
+    if (($parameter1 eq "last") && (readMonth($parameter2))) {
+      lastMonth();
+      return 1;
+    }
+    # e.g. "calendar november 2015"
+    return 1 if((readMonth($parameter1)) && (readYear($parameter2)));
+
+    # e.g. "calendar 2015 november"
+    return 1 if((readMonth($parameter2)) && (readYear($parameter1)));
+  
+  # only one parameter
+  } elsif ($parameter1) {
+      # e.g. "calendar november"
+      if (readMonth($parameter1)) {
+        nearestMonth();
+        return 1;
+      # "calendar today"
+      } elsif ($parameter1 eq "today") {
+        useToday();
+        return 1;
+      } else {
+        return;
+      }
+
+  # no parameter -> "calendar"
+  } else {
+    useToday();
+    return 1;
+  }
+
+  # no valid parameter-combination found
+  return;
+
+}
+
+
+# check if parameter is a valid month (using strptime to allow different notations)
 sub readMonth {
-  my @monthPatterns = ('%b', '%B', '%h');
+  # month name as full name (April), in abbreviated form (Apr) or as 2 digit (04) 
+  my @monthPatterns = ('%B', '%b', '%m');
 
   for my $monthPattern (@monthPatterns) {
     return 1 if(eval {
@@ -109,8 +135,9 @@ sub readMonth {
   }
 }
 
-# check if par is a valid year
+# check if parameter is a valid year (starting with 1900)
 sub readYear {
+  # year within century (2 digits) or including century (4 digits)
   my @yearPatterns = ('%y', '%Y');
 
   for my $yearPattern (@yearPatterns) {
@@ -121,7 +148,30 @@ sub readYear {
   }
 }
 
-# find last month
+# check if parameter is a valid day (fitting given year+month)
+sub readDay {
+    return 1 if(eval {
+      # prevent using 4digit year as day (cal 2012 11 10 -> 20th Nov 2010)
+      return 0 if($_[0] > 31);
+
+      # check if day exists (e.g. 29.2.2014: mday=1)
+      my $validDate = Time::Piece->strptime("$givenYear/$givenMonth/$_[0]", "%Y/%m/%d");
+      return 0 if($validDate->mday != $_[0]);
+
+      $givenDay = $_[0];
+
+    })
+
+}
+
+# use today as givenDay
+sub useToday {
+  $givenDay = $currentDay;
+  $givenMonth = $currentMonth;
+  $givenYear = $currentYear;
+}
+
+# find last month (searching for 'last january' in december 2014 gives 'january 2014')
 sub lastMonth {
 
   if($givenMonth < $currentMonth) {
@@ -134,7 +184,7 @@ sub lastMonth {
   
 }
 
-# find next month
+# find next month (searching for 'next january' in december 2014 gives 'january 2015')
 sub nextMonth {
 
   if($givenMonth > $currentMonth) {
@@ -147,7 +197,7 @@ sub nextMonth {
 
 }
 
-# find nearest month
+# find nearest month (searching for 'january' in december 2014 gives 'january 2015' = nextMonth)
 sub nearestMonth {
   if($givenMonth == $currentMonth) {
     $givenYear = $currentYear;
@@ -168,7 +218,7 @@ sub nearestMonth {
 sub prepare_returntext {
   # Print heading
   $rText = "\n";
-  $rHtml = '<table><tr><th class="header" rowspan="6">';
+  $rHtml = '<table><tr><th class="header" rowspan="7">';
   $rHtml.=$firstDay->strftime("%B %Y").'</th>';
 
   for my $dayHeading (@weekDays) {
@@ -223,6 +273,7 @@ sub prepare_returntext {
   $rHtml.="</tr></table>";
 
 }
+
 
 sub append_css {
   my $html = shift;
