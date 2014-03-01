@@ -25,12 +25,9 @@ ddg_goodie_test(
     'stone pound'                  => test_zci('1 stone is 14.000 pound',),
     'gram pound convert'           => test_zci('1 gram is 0.002 pound',),
     "convert 1 ton to long ton"    => test_zci('1 ton is 0.893 long ton',),
-    'puff toke to kludge'          => undef,
     '2 tons to kg'                 => test_zci('2 tons is 1814.372 kg',),
     '1 ton to kilos'               => test_zci('1 ton is 907.186 kilos',),
     '3.9 oz g'                     => test_zci('3.9 oz is 110.563 g',),
-    'convert -9 g to ozs'          => undef,
-    'convert 5 oz to yards'        => undef,
     '2 miles to km'                => test_zci('2 miles is 3.219 km',),
     'millimeter centimeters'       => test_zci('1 millimeter is 0.100 centimeters',),
     'convert 5 feet to in'         => test_zci('5 feet is 60.000 in',),
@@ -46,6 +43,12 @@ ddg_goodie_test(
     '43200 seconds in hours'       => test_zci('43200 seconds is 12.000 hours',),
     '4 hours to minutes'           => test_zci('4 hours is 240.000 minutes',),
     '6^2 oz to grams'              => undef,
+    'NaN oz to stones'             => undef,
+    '45x10 oz to stones'           => undef,
+    'convert -9 g to ozs'          => undef,
+    'convert 5 oz to yards'        => undef,
+    'puff toke to kludge'          => undef,
+    'Inf oz to stones'             => undef,
 );
 
 done_testing;

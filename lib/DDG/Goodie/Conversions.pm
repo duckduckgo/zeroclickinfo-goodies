@@ -4,12 +4,14 @@ package DDG::Goodie::Conversions;
 use DDG::Goodie;
 use Data::Dump qw(dump);
 use Scalar::Util qw/looks_like_number/;
+use Data::Float qw/float_is_infinite float_is_nan/;
 
 ###@todo
 ###    --  1 -- include more unit types
 ###             see: https://github.com/duckduckgo/zeroclickinfo-goodies/issues/318
 ###    --  2 -- think about special ways feet-inches can be written (2'-4", etc.)
-###    --  3 -- would like to handle things like "6^2 g to oz"
+###    --  3 -- would like to handle things like "6^2 g to oz" (present undef;)
+###    --  4 -- would like to handle things like "5yds to km" (present undef;)
 
 # metric ton is base unit for mass
 # known SI units and aliases / plurals
@@ -289,18 +291,26 @@ handle query => sub {
     my @args = split(/\s+/, $_);
     my $factor = 1;
     foreach my $arg (@args) {
-        return if $arg =~ /\D/;     # see @todo #3
         if (looks_like_number($arg)) {
+            # looks_like_number thinks 'Inf' and 'NaN' are numbers:
+            return if float_is_infinite($arg) || float_is_nan($arg);
+
             $factor = $arg unless $factor != 1;     # drop n > 1 #s
 
             if ($match_types[0] !~ /temperature|pressure/) { # for when temp/pressure added in future
                 return if $factor < 0;  # negative weights, etc. seem impossible :)
             }
         }
+        else {
+            # if it doesn't look like a number, and it contains a number (e.g., '6^2'):
+            return if $arg =~ /\d/;
+        }
     }
-    
+
     # run the conversion:
     return "$factor $matches[0] is " . sprintf("%.3f", $factor * ($factors[1] / $factors[0])) . " $matches[1]";
 };
+
+
 
 1;
