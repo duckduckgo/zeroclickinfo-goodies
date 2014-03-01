@@ -114,7 +114,7 @@ my @length = (
     {
         'unit'      => 'yard',
         'factor'    => '1.09361',
-        'aliases'   => ['yards', 'yd', 'yds'],
+        'aliases'   => ['yards', 'yd', 'yds', 'yrds'],
         'type'      => 'length',
     },
     {
@@ -194,32 +194,83 @@ my @time = (
     },
     {
         'unit'      => 'week',
-        'factor'    => '0.1428571428571429',
+        'factor'    => 1/7,
         'aliases'   => ['weeks', 'wks', 'wk'],
         'type'      => 'duration',
     },
     {
         'unit'      => 'fortnight',
-        'factor'    => '0.0714285714285714',
+        'factor'    => 1/14,
         'aliases'   => [],
         'type'      => 'duration',
     },
     {    # a month being defined as an average earth month (30.42)
         'unit'      => 'month',
-        'factor'    => '0.0328731097961867',
+        'factor'    => 1/30.42,
         'aliases'   => ['months', 'mons', 'mns', 'mn'],
         'type'      => 'duration',
     },
     {
         'unit'      => 'year',
-        'factor'    => '0.0027397260273973',
+        'factor'    => 1/365,
         'aliases'   => ['years', 'yr', 'yrs'],
+        'type'      => 'duration',
+    },
+    {
+        'unit'      => 'leap year',
+        'factor'    => 1/366,
+        'aliases'   => ['leap years', 'leapyear', 'leapyr', 'leapyrs'],
         'type'      => 'duration',
     },
 );
 
+my @pressure = (
+	{
+		'unit'      => 'pascal',
+		'factor'	=> 1,
+		'aliases'   => ['pascals', 'pa', 'pas'],
+		'type'		=> 'pressure',
+	},
+	{
+		'unit'      => 'kilopascal',
+		'factor'	=> (1/1000),
+		'aliases'   => ['kilopascals', 'kpa', 'kpas'],
+		'type'		=> 'pressure',
+	},
+	{
+		'unit'      => 'megapascal',
+		'factor'	=> (1/1_000_000),
+		'aliases'   => ['megapascals', 'megapa', 'megapas'],
+		'type'		=> 'pressure',
+	},
+	{
+		'unit'      => 'gigapascal',
+		'factor'	=> (1/1_000_000_000),
+		'aliases'   => ['gigapascals', 'gpa', 'gpas'],
+		'type'		=> 'pressure',
+	},
+	{
+		'unit'      => 'bar',
+		'factor'	=> 1/(100_000),
+		'aliases'   => ['bars', 'pa', 'pas'],
+		'type'		=> 'pressure',
+	},
+	{
+		'unit'      => 'atmosphere',
+		'factor'	=> 1/(101_325),
+		'aliases'   => ['atmospheres', 'atm', 'atms'],
+		'type'		=> 'pressure',
+	},
+	{
+		'unit'      => 'psi',
+		'factor'	=> 1/6894.8,
+		'aliases'   => ['psis', 'pounds per square inch', 'lbs/inch^2', 'p.s.i.', 'p.s.i'],
+		'type'		=> 'pressure',
+	},
+);
+
 # build the keys:
-my @types = (@mass, @length, @time);    # unit types available for conversion
+my @types = (@mass, @length, @time, @pressure);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});

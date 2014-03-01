@@ -13,8 +13,6 @@ ddg_goodie_test(
         'DDG::Goodie::Conversions'
     ],
     
-    # @todo: could create a complete test suite for all toUnits->fromUnits
-
     'convert 5 oz to g'            => test_zci('5 oz is 141.747 g',),
     'convert 1 ton to long ton'    => test_zci('1 ton is 0.893 long ton',),
     'convert 158 ounce to lbm'     => test_zci('158 ounce is 9.875 lbm',),
@@ -49,6 +47,10 @@ ddg_goodie_test(
     'convert 5 oz to yards'        => undef,
     'puff toke to kludge'          => undef,
     'Inf oz to stones'             => undef,
+    '1 bar to pascal'              => test_zci('1 bar is 100000.000 pascal',),
+    '1 kilopascal to psi'          => test_zci('1 kilopascal is 0.145 psi',),
+    '1 atm to kpa'                 => test_zci('1 atm is 101.325 kpa',),
+    '5yrds to km'                  => test_zci('5 yrds is 0.005 km'),
 );
 
 done_testing;
