@@ -20,7 +20,7 @@ attribution twitter => 'crazedpsyc',
 handle remainder => sub {
     return if length($_) or !$loc or !$loc->city;
 
-    my $answer = 'You appear to be in ' .
+    my $answer = 'You appear to be near ' .
         $loc->city.', '.
         ($loc->region_name ? $loc->region_name.', ' : '').
         $loc->country_name
