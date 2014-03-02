@@ -57,7 +57,9 @@ ddg_goodie_test(
 	'2500kcal in tons of tnt'      => test_zci('2500 kcal is 0.003 tons of tnt'),
 	'90 ps in watts'               => test_zci('90 ps is 66194.888 watts'),
 	'1 gigawatt in horsepower'     => test_zci('1 gigawatt is 1341022.090 horsepower'),
-	
+	'180 degrees in radians'       => test_zci('180 degrees is 3.142 radians'),
+	'270 degrees in quadrants'     => test_zci('270 degrees is 3.000 quadrants'),
+	'180 degrees in grads'         => test_zci('180 degrees is 200.000 grads'),
 );
 
 done_testing;

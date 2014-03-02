@@ -453,9 +453,49 @@ my @power = (
 	},
 );
 
+my @angle = (
+	{
+		'unit'      => 'degree',
+		'factor'	=> 1,
+		'aliases'   => ['degrees', 'deg', 'degs'],
+		'type'		=> 'angle',
+	},
+	{
+		'unit'      => 'radian',
+		'factor'	=> 3.14159265358979323/180,
+		'aliases'   => ['radians', 'rad', 'rads'],
+		'type'		=> 'angle',
+	},
+	{
+		'unit'      => 'gradian',
+		'factor'	=> 10/9,
+		'aliases'   => ['gradians', 'grad', 'grads', 'gon', 'gons', 'grade', 'grades'],
+		'type'		=> 'angle',
+	},
+	
+	{
+		'unit'      => 'quadrant',
+		'factor'	=> 1/90,
+		'aliases'   => ['quadrants', 'quads', 'quad'],
+		'type'		=> 'angle',
+	},
+	{
+		'unit'      => 'semi-circle',
+		'factor'	=> 1/180,
+		'aliases'   => ['semi circle', 'semicircle','semi circles', 'semicircles', 'semi-circles'],
+		'type'		=> 'angle',
+	},
+	{
+		'unit'      => 'revolution',
+		'factor'	=> 1/360,
+		'aliases'   => ['revolutions', 'circle', 'circles', 'revs'],
+		'type'		=> 'angle',
+	},
+	
+);
 
 # build the keys:
-my @types = (@mass, @length, @time, @pressure, @energy, @power);    # unit types available for conversion
+my @types = (@mass, @length, @time, @pressure, @energy, @power, @angle);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
