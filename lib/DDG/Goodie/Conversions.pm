@@ -2,7 +2,6 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
-use Data::Dump qw(dump);
 use Scalar::Util qw/looks_like_number/;
 use Data::Float qw/float_is_infinite float_is_nan/;
 
@@ -11,7 +10,6 @@ use Data::Float qw/float_is_infinite float_is_nan/;
 ###             see: https://github.com/duckduckgo/zeroclickinfo-goodies/issues/318
 ###    --  2 -- think about special ways feet-inches can be written (2'-4", etc.)
 ###    --  3 -- would like to handle things like "6^2 g to oz" (present undef;)
-###    --  4 -- would like to handle things like "5yds to km" (present undef;)
 
 # metric ton is base unit for mass
 # known SI units and aliases / plurals
@@ -331,7 +329,7 @@ handle query => sub {
     my ($match_types, $factors) = get_types_and_factors(\@matches);
     my @match_types = @{$match_types};
     my @factors = @{$factors};
-    print "\t debug: ".dump(@match_types);
+
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($match_types[0] ne $match_types[1]);
 	

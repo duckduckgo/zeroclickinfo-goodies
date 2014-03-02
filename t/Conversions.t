@@ -9,10 +9,7 @@ use DDG::Test::Goodie;
 zci answer_type => 'conversions';
 
 ddg_goodie_test(
-    [
-        'DDG::Goodie::Conversions'
-    ],
-    
+    ['DDG::Goodie::Conversions'],    
     'convert 5 oz to g'            => test_zci('5 oz is 141.747 g',),
     'convert 1 ton to long ton'    => test_zci('1 ton is 0.893 long ton',),
     'convert 158 ounce to lbm'     => test_zci('158 ounce is 9.875 lbm',),
