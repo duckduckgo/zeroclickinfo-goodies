@@ -55,6 +55,9 @@ ddg_goodie_test(
     'convert 25 inches into feet'  => test_zci('25 inches is 2.083 feet'),
 	'42 kilowatt hours in joules'  => test_zci('42 kilowatt hours is 151200000.000 joules'),
 	'2500kcal in tons of tnt'      => test_zci('2500 kcal is 0.003 tons of tnt'),
+	'90 ps in watts'               => test_zci('90 ps is 66194.888 watts'),
+	'1 gigawatt in horsepower'     => test_zci('1 gigawatt is 1341022.090 horsepower'),
+	
 );
 
 done_testing;

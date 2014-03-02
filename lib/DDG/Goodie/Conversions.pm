@@ -313,7 +313,7 @@ my @energy = (
 	{
 		'unit'      => 'joule',
 		'factor'	=> 1,
-		'aliases'   => ['joules', 'J', 'js'],
+		'aliases'   => ['joules', 'j', 'js'],
 		'type'		=> 'energy',
 	},
 	{
@@ -372,9 +372,90 @@ my @energy = (
 	}
 );
 
+my @power = (
+	{
+		'unit'      => 'watt',
+		'factor'	=> 1,
+		'aliases'   => ['watts', 'w'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'kilowatt',
+		'factor'	=> 1/1000,
+		'aliases'   => ['kilowatts', 'kw'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'megawatt',
+		'factor'	=> 1/1_000_000,
+		'aliases'   => ['megawatts', 'mw'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'gigawatt',
+		'factor'	=> 1/1_000_000_000,
+		'aliases'   => ['gigawatts', 'jiggawatts', 'gw'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'terawatt',
+		'factor'	=> 1/1_000_000_000_000,
+		'aliases'   => ['terawatts', 'tw'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'petawatt',
+		'factor'	=> 1/1_000_000_000_000_000,
+		'aliases'   => ['petawatts', 'pw'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'milliwatt',
+		'factor'	=> 1000,
+		'aliases'   => ['milliwatts'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'microwatt',
+		'factor'	=> 1_000_000,
+		'aliases'   => ['microwatts'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'nanowatt',
+		'factor'	=> 1_000_000_000,
+		'aliases'   => ['nanowatts', 'nw'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'picowatt',
+		'factor'	=> 1_000_000_000_000,
+		'aliases'   => ['picowatts', 'pw'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'metric horsepower',
+		'factor'	=> (1/735.49875),
+		'aliases'   => ['metric horsepowers', 'mhp', 'hp', 'ps', 'cv', 'hk', 'ks', 'ch'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'horsepower',
+		'factor'	=> (1/745.69987158227022),
+		'aliases'   => ['mechnical horsepower', 'horsepower', 'hp', 'hp', 'bhp'],
+		'type'		=> 'power',
+	},
+	{
+		'unit'      => 'electical horsepower',
+		'factor'	=> (1/746),
+		'aliases'   => ['electical horsepowers', 'hp', 'hp'],
+		'type'		=> 'power',
+	},
+);
+
 
 # build the keys:
-my @types = (@mass, @length, @time, @pressure, @energy);    # unit types available for conversion
+my @types = (@mass, @length, @time, @pressure, @energy, @power);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
