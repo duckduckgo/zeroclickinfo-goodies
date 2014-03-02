@@ -279,7 +279,7 @@ foreach my $type (@types) {
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
 
 # build triggers based on available conversion units:
-triggers startend => @units;
+triggers end => @units;
 
 name                      'Conversions';
 description               'convert between various units of measurement';
@@ -318,10 +318,12 @@ sub get_types_and_factors {
 }
 
 handle query => sub {
-
-	#Hack around issues with feet and inches for now
+	# hack around issues with feet and inches for now
 	s/"/inches/;
 	s/'/feet/;
+	
+	# guard the query from spurious matches
+	return unless /^(convert\s)?[0-9\.]+\s?($keys)\s?(in|to|from)\s?[0-9\.]*\s?($keys)+$/;
 	
     my @matches = ($_ =~ /(?:[0-9]|\b)($keys)\b/gi);
     
