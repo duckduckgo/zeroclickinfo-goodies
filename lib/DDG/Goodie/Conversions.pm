@@ -133,6 +133,42 @@ my @length = (
         'aliases'   => ['nautical miles', 'n', 'ns', 'nm', 'nms', 'nmi', 'nmis'],
         'type'      => 'length',
     },
+	{
+		'unit'      => 'furlong',
+        'factor'    => (1/201.168),
+        'aliases'   => ['furlongs'],
+        'type'      => 'length',
+	},
+	{
+		'unit'      => 'chain',
+        'factor'    => (1/20.1168),
+        'aliases'   => ["gunter's chains", 'chains'],
+        'type'      => 'length',
+	},
+	{
+		'unit'      => 'link',
+        'factor'    => (1/0.201168),
+        'aliases'   => ["gunter's links", 'links'],
+        'type'      => 'length',
+	},
+	{
+		'unit'      => 'rod',
+        'factor'    => 1/(5.0292),
+        'aliases'   => ['rods'],
+        'type'      => 'length',
+	},
+	{
+		'unit'      => 'fathom',
+        'factor'    => 1/(1.853184),
+        'aliases'   => ['fathoms', 'ftm', 'ftms'],
+        'type'      => 'length',
+	},
+	{
+		'unit'      => 'cable',
+        'factor'    => 1/(185.3184),
+        'aliases'   => ['cables'],
+        'type'      => 'length',
+	},
     {
         'unit'      => 'light year',
         'factor'    => (1/9460730472580800),
