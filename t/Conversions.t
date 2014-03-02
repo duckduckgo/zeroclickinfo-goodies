@@ -53,6 +53,8 @@ ddg_goodie_test(
     '5yrds to km'                  => test_zci('5 yrds is 0.005 km'),
     '12" to cm'                    => test_zci('12 inches is 30.480 cm'),
     'convert 25 inches into feet'  => test_zci('25 inches is 2.083 feet'),
+	'42 kilowatt hours in joules'  => test_zci('42 kilowatt hours is 151200000.000 joules'),
+	'2500kcal in tons of tnt'      => test_zci('2500 kcal is 0.003 tons of tnt'),
 );
 
 done_testing;

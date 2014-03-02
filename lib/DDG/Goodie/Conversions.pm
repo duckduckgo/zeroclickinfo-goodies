@@ -309,8 +309,72 @@ my @pressure = (
 	},
 );
 
+my @energy = (
+	{
+		'unit'      => 'joule',
+		'factor'	=> 1,
+		'aliases'   => ['joules', 'J', 'js'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'watt-second',
+		'factor'	=> (1),
+		'aliases'   => ['watt second', 'watt seconds', 'ws'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'watt-hour',
+		'factor'	=> (1/3600),
+		'aliases'   => ['watt hour', 'watt hours', 'wh'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'kilowatt-hour',
+		'factor'	=> (1/3_600_000),
+		'aliases'   => ['kilowatt hour', 'kilowatt hours', 'kwh'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'erg',
+		'factor'	=> (1/10_000_000),
+		'aliases'   => ['ergon', 'ergs', 'ergons'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'electron volt',
+		'factor'	=> (6.2415096e+18),
+		'aliases'   => ['electronvolt', 'electron volts', 'ev', 'evs'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'thermochemical gram calorie',
+		'factor'	=> (1/4.184),
+		'aliases'   => ['small calories', 'thermochemical gram calories', 'chemical calorie', 'chemical calories'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'large calorie',
+		'factor'	=> (1/4184),
+		'aliases'   => ['large calories', 'food calorie', 'food calories', 'kcals', 'kcal'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'british thermal unit',
+		'factor'	=> (1/1054.5),
+		'aliases'   => ['british thermal units', 'btu', 'btus'],
+		'type'		=> 'energy',
+	},
+	{
+		'unit'      => 'ton of TNT',
+		'factor'	=> (1/4.184e+9),
+		'aliases'   => ['tnt equivilent', 'tonnes of tnt', 'tnt', 'tons of tnt'],
+		'type'		=> 'energy',
+	}
+);
+
+
 # build the keys:
-my @types = (@mass, @length, @time, @pressure);    # unit types available for conversion
+my @types = (@mass, @length, @time, @pressure, @energy);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
