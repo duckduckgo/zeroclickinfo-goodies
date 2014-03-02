@@ -42,8 +42,8 @@ triggers any =>
 Locale::Country::rename_country('ae' => 'the United Arab Emirates');
 Locale::Country::rename_country('do' => 'the Dominican Republic');
 Locale::Country::rename_country('gb' => 'the United Kingdom');
-Locale::Country::rename_country('kp' => "the Republic of Korea");
-Locale::Country::rename_country('kr' => "the Democratic People's Republic of Korea");
+Locale::Country::rename_country('kr' => "the Republic of Korea");                     # South Korea
+Locale::Country::rename_country('kp' => "the Democratic People's Republic of Korea"); # North Korea
 Locale::Country::rename_country('ky' => 'the Cayman Islands');
 Locale::Country::rename_country('mp' => 'the Northern Mariana Islands');
 Locale::Country::rename_country('nl' => 'the Netherlands');
@@ -111,6 +111,8 @@ handle remainder => sub {
 sub list2string {
     my @countries = @_;
     my $string;
+
+    $_ =~ s/^The /the / for @countries;
 
     if (scalar @countries == 1) {
         $string = $countries[0];
