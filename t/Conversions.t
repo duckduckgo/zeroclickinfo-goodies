@@ -52,6 +52,7 @@ ddg_goodie_test(
     '1 atm to kpa'                 => test_zci('1 atm is 101.325 kpa',),
     '5yrds to km'                  => test_zci('5 yrds is 0.005 km'),
     '12" to cm'                    => test_zci('12 inches is 30.480 cm'),
+    'convert 25 inches into feet'  => test_zci('25 inches is 2.083 feet'),
 );
 
 done_testing;

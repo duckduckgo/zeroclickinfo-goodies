@@ -323,7 +323,7 @@ handle query => sub {
 	s/'/feet/;
 	
 	# guard the query from spurious matches
-	return unless /^(convert\s)?[0-9\.]+\s?($keys)\s?(in|to|from)\s?[0-9\.]*\s?($keys)+$/;
+	return unless /^(convert\s)?[0-9\.]+\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
 	
     my @matches = ($_ =~ /(?:[0-9]|\b)($keys)\b/gi);
     
