@@ -2,13 +2,13 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
+use Data::Dump qw(dump);
 use Scalar::Util qw/looks_like_number/;
 use Data::Float qw/float_is_infinite float_is_nan/;
 
 ###@todo
 ###    --  1 -- include more unit types
 ###             see: https://github.com/duckduckgo/zeroclickinfo-goodies/issues/318
-###    --  2 -- think about special ways feet-inches can be written (2'-4", etc.)
 ###    --  3 -- would like to handle things like "6^2 g to oz" (present undef;)
 
 # metric ton is base unit for mass
@@ -318,8 +318,13 @@ sub get_types_and_factors {
 }
 
 handle query => sub {
+
+	#Hack around issues with feet and inches for now
+	s/"/inches/;
+	s/'/feet/;
+	
     my @matches = ($_ =~ /(?:[0-9]|\b)($keys)\b/gi);
- 
+    
    	# hack/handle the special case of "X in Y":
    	if ((scalar @matches == 3) && $matches[1] eq "in") {
    	    @matches = ($matches[0], $matches[2]);
