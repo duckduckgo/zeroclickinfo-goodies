@@ -164,6 +164,12 @@ my @length = (
         'type'      => 'length',
 	},
 	{
+		'unit'      => 'league',
+        'factor'    => 1/(4828.032),
+        'aliases'   => ['leagues'],
+        'type'      => 'length',
+	},
+	{
 		'unit'      => 'cable',
         'factor'    => 1/(185.3184),
         'aliases'   => ['cables'],
