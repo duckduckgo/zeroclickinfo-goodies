@@ -60,6 +60,8 @@ ddg_goodie_test(
 	'180 degrees in radians'       => test_zci('180 degrees is 3.142 radians'),
 	'270 degrees in quadrants'     => test_zci('270 degrees is 3.000 quadrants'),
 	'180 degrees in grads'         => test_zci('180 degrees is 200.000 grads'),
+	'45 newtons to pounds force'   => test_zci('45 newtons is 10.116 pounds force'),
+	'8 poundal to newtons'         => test_zci('8 poundal is 1.106 newtons')
 );
 
 done_testing;

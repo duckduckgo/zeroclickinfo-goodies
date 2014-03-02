@@ -2,7 +2,6 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
-use Data::Dump qw(dump);
 use Scalar::Util qw/looks_like_number/;
 use Data::Float qw/float_is_infinite float_is_nan/;
 
@@ -472,7 +471,6 @@ my @angle = (
 		'aliases'   => ['gradians', 'grad', 'grads', 'gon', 'gons', 'grade', 'grades'],
 		'type'		=> 'angle',
 	},
-	
 	{
 		'unit'      => 'quadrant',
 		'factor'	=> 1/90,
@@ -491,11 +489,67 @@ my @angle = (
 		'aliases'   => ['revolutions', 'circle', 'circles', 'revs'],
 		'type'		=> 'angle',
 	},
-	
+);
+
+my @force = (
+	{
+		'unit'      => 'newton',
+		'factor'	=> 1,
+		'aliases'   => ['newtons', 'n'],
+		'type'		=> 'force',
+	},
+	{
+		'unit'      => 'kilonewton',
+		'factor'	=> 1/1000,
+		'aliases'   => ['kilonewtons', 'kn'],
+		'type'		=> 'force',
+	},
+	{
+		'unit'      => 'meganewton',
+		'factor'	=> 1/1_000_000,
+		'aliases'   => ['meganewtons', 'mn'],
+		'type'		=> 'force',
+	},
+	{
+		'unit'      => 'giganewton',
+		'factor'	=> 1/1_000_000_000,
+		'aliases'   => ['giganewtons', 'gn'],
+		'type'		=> 'force',
+	},
+	{
+		'unit'      => 'dyne',
+		'factor'	=> 1/100000,
+		'aliases'   => ['dynes'],
+		'type'		=> 'force',
+	},
+	{
+		'unit'      => 'kilodyne',
+		'factor'	=> 1/100,
+		'aliases'   => ['kilodynes'],
+		'type'		=> 'force',
+	},
+	{
+		'unit'      => 'megadyne',
+		'factor'	=> 10,
+		'aliases'   => ['megadynes'],
+		'type'		=> 'force',
+	},
+	{
+		'unit'      => 'lbs force',
+		'factor'	=> 1/4.4482216152605,
+		'aliases'   => ['lbs force', 'pounds force'],
+		'type'		=> 'force',
+	},
+	{
+		'unit'      => 'poundal',
+		'factor'	=> 1/0.138254954376,
+		'aliases'   => ['poundals', 'pdl'],
+		'type'		=> 'force',
+	},
 );
 
 # build the keys:
-my @types = (@mass, @length, @time, @pressure, @energy, @power, @angle);    # unit types available for conversion
+my @types = (@mass, @length, @time, @pressure, @energy, @power, @angle, @force);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
