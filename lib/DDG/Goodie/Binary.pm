@@ -1,4 +1,5 @@
 package DDG::Goodie::Binary;
+# ABSTRACT Convert decimal, hex and string to binary.
 
 use DDG::Goodie;
 
@@ -7,7 +8,7 @@ triggers end => "binary";
 zci is_cached => 1;
 zci answer_type => "binary_conversion";
 
-primary_example_queries 'foo in binary';
+primary_example_queries 'foo in binary', '12 as binary', 'hex 0xffff into binary';
 secondary_example_queries '0x1e to binary';
 description 'convert ASCII, numbers, and hex to binary';
 name 'Binary';
@@ -46,12 +47,26 @@ sub bin2dec {
 
 handle remainder => sub {
     my @out;
-    @out = (bin2dec($1), "binary", "decimal")   if /^[^01]*([01]+)\s+(from)?$/;
-    @out = (hex2bin($2), "hex", "binary")       if /^(0x|Ox|x)([0-9a-fA-F]+)\s+(in|to)$/ && !@out;
-    @out = (dec2bin($1), "decimal", "binary")   if /^([0-9 ]+)\s+(in|to)$/ && !@out;
-    @out = (hex2bin($1), "hex", "binary")       if /^([0-9a-fA-F]+)\s+(in|to)$/ && !@out;
-    @out = (bin($1), "a string", "binary")      if /^(.*)\s+(in|to)$/ && !@out;
-    return qq/"$1" as $out[1] is "$out[0]" in $out[2]./;
+
+    if (/^([01]+)(\s+from)?$/) {
+        # Looks like they gave us some binary, let's turn it into decimal!
+        @out = ($1, bin2dec($1), "binary", "decimal");
+    } elsif (s/\s+(in|to|into|as)$//) {
+        # Looks like they are asking for a conversion to binary
+        # So, try to figure out what they've got.
+        # They can either tell us explicitly or we can try to just work it out.
+        if (/^(?:decimal\s+)?([0-9]+)$/) {
+            @out = ($1, dec2bin($1), "decimal", "binary");
+        } elsif (/^(?:hex\s+)?(?:0x|Ox|x)?([0-9a-fA-F]+)$/) {
+            # Normalize the hex output with lowercase and a prepended '0x'.
+            @out = ('0x' . lc $1, hex2bin($1), "hex", "binary");
+        } else {
+            # We didn't match anything else, so just convert whatever string is left.
+            @out = ('"' . $_ . '"', bin($_), "string", "binary");
+        }
+    }
+    return unless (@out);    # Didn't hit any conditions, must not be us.
+    return qq/Binary conversion: $out[0] ($out[2]) = $out[1] ($out[3])/;
 };
 
 1;
