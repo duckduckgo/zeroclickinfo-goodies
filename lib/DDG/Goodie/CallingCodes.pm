@@ -39,26 +39,26 @@ triggers any =>
     "international dialing code",
     "international dialing codes"; 
 
-Locale::Country::rename_country('ae' => 'the United Arab Emirates');
-Locale::Country::rename_country('do' => 'the Dominican Republic');
-Locale::Country::rename_country('gb' => 'the United Kingdom');
-Locale::Country::rename_country('kr' => "the Republic of Korea");                     # South Korea
-Locale::Country::rename_country('kp' => "the Democratic People's Republic of Korea"); # North Korea
-Locale::Country::rename_country('ky' => 'the Cayman Islands');
-Locale::Country::rename_country('mp' => 'the Northern Mariana Islands');
-Locale::Country::rename_country('nl' => 'the Netherlands');
-Locale::Country::rename_country('ph' => 'the Philippines');
-Locale::Country::rename_country('ru' => 'the Russian Federation');
+Locale::Country::rename_country('ae' => 'United Arab Emirates');
+Locale::Country::rename_country('do' => 'Dominican Republic');
+Locale::Country::rename_country('gb' => 'United Kingdom');
+Locale::Country::rename_country('kr' => "Republic of Korea");                     # South Korea
+Locale::Country::rename_country('kp' => "Democratic People's Republic of Korea"); # North Korea
+Locale::Country::rename_country('ky' => 'Cayman Islands');
+Locale::Country::rename_country('mp' => 'Northern Mariana Islands');
+Locale::Country::rename_country('nl' => 'Netherlands');
+Locale::Country::rename_country('ph' => 'Philippines');
+Locale::Country::rename_country('ru' => 'Russian Federation');
 Locale::Country::rename_country('tw' => 'Taiwan');
-Locale::Country::rename_country('us' => 'the United States');
-Locale::Country::rename_country('va' => 'the Holy See (Vatican City State)');
-Locale::Country::rename_country('vg' => 'the British Virgin Islands');
-Locale::Country::rename_country('vi' => 'the US Virgin Islands');
+Locale::Country::rename_country('us' => 'United States');
+Locale::Country::rename_country('va' => 'Holy See (Vatican City State)');
+Locale::Country::rename_country('vg' => 'British Virgin Islands');
+Locale::Country::rename_country('vi' => 'US Virgin Islands');
 
 # These are the only 2 countries which officially have 'The' in their name
 # Source: http://www.bbc.co.uk/news/magazine-18233844
-Locale::Country::rename_country('gm' => 'The Gambia');
-Locale::Country::rename_country('bs' => 'The Bahamas');
+Locale::Country::rename_country('gm' => 'Gambia');
+Locale::Country::rename_country('bs' => 'Bahamas');
 
 Locale::Country::add_country_alias('Antigua and Barbuda'  => 'Antigua');
 Locale::Country::add_country_alias('Antigua and Barbuda'  => 'Barbuda');
@@ -69,16 +69,16 @@ Locale::Country::add_country_alias('Vatican City'         => 'Vatican');
 Locale::Country::add_country_alias('Virgin Islands, U.S.' => 'US Virgin Islands');
 
 # Source: http://www.bbc.co.uk/news/magazine-18233844
-Locale::Country::add_country_alias('Argentina'     => 'the Argentine');
-Locale::Country::add_country_alias('Congo'         => 'the Congo');
-Locale::Country::add_country_alias('Lebanon'       => 'the Lebanon');
-Locale::Country::add_country_alias('Sudan'         => 'the Sudan');
-Locale::Country::add_country_alias('Ukraine'       => 'the Ukraine');
+Locale::Country::add_country_alias('Argentina'     => 'Argentine');
+Locale::Country::add_country_alias('Congo'         => 'Congo');
+Locale::Country::add_country_alias('Lebanon'       => 'Lebanon');
+Locale::Country::add_country_alias('Sudan'         => 'Sudan');
+Locale::Country::add_country_alias('Ukraine'       => 'Ukraine');
 Locale::Country::add_country_alias('United States' => 'America');
-Locale::Country::add_country_alias('Yemen'         => 'the Yemen');
+Locale::Country::add_country_alias('Yemen'         => 'Yemen');
 
 # Easter eggs
-Locale::Country::add_country_alias('Russian Federation' => 'the Kremlin');
+Locale::Country::add_country_alias('Russian Federation' => 'Kremlin');
 Locale::Country::add_country_alias('United States' => 'murica');
 Locale::Country::add_country_alias('Canada' => 'Canadia'); 
 Locale::Country::add_country_alias('Australia' => 'down under');
