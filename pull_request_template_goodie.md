@@ -1,6 +1,6 @@
 # Goodie Pull Request Template
 
-We ask that you please use this template when submitting an instant answer pull request so we can better understand it and help you along when necessary.
+Using this template will help us better understand your Instant Answer and assist you when necessary.  Simply copy and paste the markdown below into the description of your GitHub pull request and complete as appropriate.
 
 **What does your instant answer do?**
 
