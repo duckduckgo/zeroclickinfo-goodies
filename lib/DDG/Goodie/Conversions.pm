@@ -4,10 +4,12 @@ package DDG::Goodie::Conversions;
 use DDG::Goodie;
 use Scalar::Util qw/looks_like_number/;
 use Data::Float qw/float_is_infinite float_is_nan/;
+use Math::Round qw/nearest/;
 
 ###@todo
 ###    --  1 -- include more unit types
 ###             see: https://github.com/duckduckgo/zeroclickinfo-goodies/issues/318
+###             + currently missing only [area/volume] and [velocity]
 ###    --  3 -- would like to handle things like "6^2 g to oz" (present undef;)
 
 # metric ton is base unit for mass
@@ -68,9 +70,9 @@ my @mass = (
         'type'    => 'mass',
     },
     {
-        'unit'    => 'short ton',
+        'unit'    => 'ton',
         'factor'  => '1.10231',
-        'aliases' => ['ton', 'short tons', 'tons'],
+        'aliases' => ['short ton', 'short tons', 'tons'],
         'type'    => 'mass',
     },
 );
@@ -194,6 +196,8 @@ my @length = (
     },
 );
 
+# day is base unit for time
+# known SI units and aliases / plurals
 my @time = (
     {
         'unit'      => 'day',
@@ -263,6 +267,8 @@ my @time = (
     },
 );
 
+# pascal is base unit for pressure
+# known SI units and aliases / plurals
 my @pressure = (
 	{
 		'unit'      => 'pascal',
@@ -301,13 +307,15 @@ my @pressure = (
 		'type'		=> 'pressure',
 	},
 	{
-		'unit'      => 'psi',
+		'unit'      => 'pounds per square inch',
 		'factor'	=> 1/6894.8,
-		'aliases'   => ['psis', 'pounds per square inch', 'lbs/inch^2', 'p.s.i.', 'p.s.i'],
+		'aliases'   => ['psis', 'psi', 'lbs/inch^2', 'p.s.i.', 'p.s.i'],
 		'type'		=> 'pressure',
 	},
 );
 
+# joule is base unit for energy
+# known SI units and aliases / plurals
 my @energy = (
 	{
 		'unit'      => 'joule',
@@ -371,6 +379,8 @@ my @energy = (
 	}
 );
 
+# watt is base unit for power
+# known SI units and aliases / plurals
 my @power = (
 	{
 		'unit'      => 'watt',
@@ -452,6 +462,8 @@ my @power = (
 	},
 );
 
+# degree is base unit for angles
+# known SI units and aliases / plurals
 my @angle = (
 	{
 		'unit'      => 'degree',
@@ -491,6 +503,8 @@ my @angle = (
 	},
 );
 
+# newton is base unit for force
+# known SI units and aliases / plurals
 my @force = (
 	{
 		'unit'      => 'newton',
@@ -535,7 +549,7 @@ my @force = (
 		'type'		=> 'force',
 	},
 	{
-		'unit'      => 'lbs force',
+		'unit'      => 'pounds force',
 		'factor'	=> 1/4.4482216152605,
 		'aliases'   => ['lbs force', 'pounds force'],
 		'type'		=> 'force',
@@ -548,8 +562,43 @@ my @force = (
 	},
 );
 
+# fahrenheit is base unit for temperature
+# known SI units and aliases / plurals
+my @temperature = (
+	{   
+		'unit'      => 'fahrenheit',
+		'factor'	=> 1,           # all '1' because un-used
+		'aliases'   => ['f'],     
+		'type'		=> 'temperature',
+	},
+	{   
+		'unit'      => 'celsius',
+		'factor'	=> 1,           
+		'aliases'   => ['c'],
+		'type'		=> 'temperature',
+	},
+	{
+		'unit'      => 'kelvin',
+		'factor'	=> 1,
+		'aliases'   => ['k'],       # be careful ... other units could use 'K'
+		'type'		=> 'temperature',       
+	},
+	{
+		'unit'      => 'rankine',
+		'factor'	=> 1,
+		'aliases'   => ['r'],    
+		'type'		=> 'temperature',
+	},
+	{
+		'unit'      => 'reaumur',
+		'factor'	=> 1,
+		'aliases'   => ['re'],      # also can be 'R', but that's being used for rankine    
+		'type'		=> 'temperature',
+	},
+);  
+
 # build the keys:
-my @types = (@mass, @length, @time, @pressure, @energy, @power, @angle, @force);    # unit types available for conversion
+my @types = (@mass, @length, @time, @pressure, @energy, @power, @angle, @force, @temperature);    # unit types available for conversion
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
@@ -558,6 +607,19 @@ foreach my $type (@types) {
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
+
+# exceptions for pluralized forms:
+my %plural_exceptions = (
+    'stone'                  => 'stone',
+    'foot'                   => 'feet',
+    'inch'                   => 'inches',
+    'pounds per square inch' => 'pounds per square inch',
+    'ton of TNT'             => 'tons of TNT',
+    'metric horsepower'      => 'metric horsepower',
+    'horsepower'             => 'horsepower',
+    'electrical horsepower'  => 'electrical horsepower',
+    'pounds force'           => 'pounds force',
+);
 
 # build triggers based on available conversion units:
 triggers end => @units;
@@ -569,7 +631,7 @@ topics                    'computing', 'math';
 primary_example_queries   'convert 5 oz to grams';
 secondary_example_queries '5 ounces to g', '0.5 nautical mile to klick';
 code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
-attribution                github  => ['https://github.com/elohmrow', '/bda'],
+attribution                github  => ['https://github.com/elohmrow'],
                            email   => ['bradley@pvnp.us'];
 
 zci answer_type => 'conversions';
@@ -578,24 +640,61 @@ zci answer_type => 'conversions';
 #   helper function:
 #       [1] get factors for later calculating conversion
 #       [2] get trigger 'types' to determine if we can perform a calculation in the first place
+#       [3] get canoncial units for massaging output
 #
-sub get_types_and_factors {
+sub get_types_and_factors_and_units {
     my $matches = shift;
     my @matches = @{$matches};
 
     my @match_types = ();
     my @factors = ();
+    my @units = ();
     
     foreach my $match (@matches) {
         foreach my $type (@types) {
             if ($match eq $type->{'unit'} || grep { $_ eq $match } @{$type->{'aliases'}}) {
                 push(@match_types, $type->{'type'});
                 push(@factors, $type->{'factor'});
+                push(@units, $type->{'unit'});
             }
         }
     }
 
-    return (\@match_types, \@factors);
+    return (\@match_types, \@factors, \@units);
+}
+
+sub convert_temperatures {
+    # ##
+    # F  = (C * 1.8) + 32            # celsius to fahrenheit
+    # F  = 1.8 * (K - 273.15) + 32   # kelvin  to fahrenheit
+    # F  = R - 459.67                # rankine to fahrenheit
+    # F  = (Ra * 2.25) + 32          # reaumur to fahrenheit
+    #
+    # C  = (F - 32) * 0.555          # fahrenheit to celsius
+    # K  = (F + 459.67) * 0.555      # fahrenheit to kelvin
+    # R  = F + 459.67                # fahrenheit to rankine
+    # Ra = (F - 32) * 0.444          # fahrenheit to reaumur
+    # ##
+
+    my $from = shift;
+    my $to = shift;
+    my $factor = shift;
+
+    # convert $from to fahrenheit:
+    if    ($from =~ /fahrenheit|f/i) { $factor = $factor;                       }
+    elsif ($from =~ /celsius|c/i)    { $factor = ($factor * 1.8) + 32;          }
+    elsif ($from =~ /kelvin|k/i)     { $factor = 1.8 * ($factor - 273.15) + 32; }
+    elsif ($from =~ /rankine|r/i)    { $factor = $factor - 459.67;              }
+    else                             { $factor = ($factor * 2.25) + 32;         }    # reaumur 
+    
+    # convert fahrenheit $to:
+    if    ($to   =~ /fahrenheit|f/i) { $factor = $factor;                       }
+    elsif ($to   =~ /celsius|c/i)    { $factor = ($factor - 32) * 0.555;        }
+    elsif ($to   =~ /kelvin|k/i)     { $factor = ($factor + 459.67) * 0.555;    }
+    elsif ($to   =~ /rankine|r/i)    { $factor = $factor + 459.67;              }
+    else                             { $factor = ($factor - 32) * 0.444;        }    # reaumur 
+
+    return $factor;
 }
 
 handle query => sub {
@@ -614,9 +713,10 @@ handle query => sub {
   	}
     return unless scalar @matches == 2; # conversion requires two triggers
 
-    my ($match_types, $factors) = get_types_and_factors(\@matches);
+    my ($match_types, $factors, $units) = get_types_and_factors_and_units(\@matches);
     my @match_types = @{$match_types};
     my @factors = @{$factors};
+    my @units = @{$units};
 
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($match_types[0] ne $match_types[1]);
@@ -634,8 +734,13 @@ handle query => sub {
 
             $factor = $arg unless $factor != 1;     # drop n > 1 #s
 
-            if ($match_types[0] !~ /temperature|pressure/) { # for when temp/pressure added in future
+            if ($match_types[0] !~ /temperature|pressure/) {
                 return if $factor < 0;  # negative weights, etc. seem impossible :)
+            }
+            
+            if ($match_types[0] =~ /temperature|pressure/) {
+                # kelvin and rankine cannot be negative:
+                return if ($factor < 0 && $matches[0] =~ /kelvin|rankine|k|r/i);
             }
         }
         else {
@@ -645,7 +750,36 @@ handle query => sub {
     }
 
     # run the conversion:
-    return "$factor $matches[0] is " . sprintf("%.3f", $factor * ($factors[1] / $factors[0])) . " $matches[1]";
+    # temperatures don't have 1:1 conversions, so they get special treatment:
+    if ($match_types[0] eq 'temperature') {
+        return "$factor degrees $units[0] is " . sprintf("%.3f", convert_temperatures($matches[0], $matches[1], $factor)) . " degrees $units[1]";
+    }
+    else {
+        # handle plurals:
+        my $result = $factor * ($factors[1] / $factors[0]);
+        # if $result = 1.00000 .. 000n, where n <> 0 then $result > 1 and throws off pluralization, so:
+        $result = nearest(.001, $result);   # .001 to match sprintf "%.3f" below
+
+        if ($factor > 1) {
+            if (exists $plural_exceptions{$units[0]}) {
+                $units[0] = $plural_exceptions{$units[0]};
+            }
+            else {
+                $units[0] .= 's';
+            }
+        }
+        
+        if ($result > 1) { 
+            if (exists $plural_exceptions{$units[1]}) {
+                $units[1] = $plural_exceptions{$units[1]};
+            }
+            else {
+                $units[1] .= 's';
+            }
+        }
+
+        return "$factor $units[0] is " . sprintf("%.3f", $result) . " $units[1]";
+    }
 };
 
 
