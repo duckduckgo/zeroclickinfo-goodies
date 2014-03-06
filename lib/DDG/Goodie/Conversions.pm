@@ -617,6 +617,9 @@ foreach my $type (@types) {
     push(@units, @{$type->{'aliases'}});
 }
 
+# build triggers based on available conversion units:
+triggers end => @units;
+
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
 
@@ -636,9 +639,6 @@ my %plural_exceptions = (
     'electrical horsepower'  => 'electrical horsepower',
     'pounds force'           => 'pounds force',
 );
-
-# build triggers based on available conversion units:
-triggers end => @units;
 
 #
 #   helper function:
@@ -758,32 +758,25 @@ handle query => sub {
     if ($match_types[0] eq 'temperature') {
         return "$factor degrees $units[0] is " . sprintf("%.3f", convert_temperatures($matches[0], $matches[1], $factor)) . " degrees $units[1]";
     }
-    else {
-        # handle plurals:
-        my $result = $factor * ($factors[1] / $factors[0]);
-        # if $result = 1.00000 .. 000n, where n <> 0 then $result > 1 and throws off pluralization, so:
-        $result = nearest(.001, $result);   # .001 to match sprintf "%.3f" below
 
-        if ($factor > 1) {
-            if (exists $plural_exceptions{$units[0]}) {
-                $units[0] = $plural_exceptions{$units[0]};
-            }
-            else {
-                $units[0] .= 's';
-            }
-        }
-        
-        if ($result > 1) { 
-            if (exists $plural_exceptions{$units[1]}) {
-                $units[1] = $plural_exceptions{$units[1]};
-            }
-            else {
-                $units[1] .= 's';
-            }
-        }
-
-        return "$factor $units[0] is " . sprintf("%.3f", $result) . " $units[1]";
+    # handle plurals:
+    my $result = $factor * ($factors[1] / $factors[0]);
+    # if $result = 1.00000 .. 000n, where n <> 0 then $result > 1 and throws off pluralization, so:
+    $result = nearest(.001, $result);   # .001 to match sprintf "%.3f" below
+	
+	my ($source_unit, $target_unit) = ($units[0], $units[1]);
+	
+    if ($factor > 1) {
+        $source_unit = $units[0].'s';
+        $source_unit = $plural_exceptions{$units[0]} if (exists $plural_exceptions{$units[0]});
     }
+    
+    if ($result > 1) {
+        $target_unit = $units[1].'s';
+        $target_unit = $plural_exceptions{$units[1]} if (exists $plural_exceptions{$units[1]});
+    }
+
+    return "$factor $source_unit is " . sprintf("%.3f", $result) . " $target_unit";
 };
 
 
