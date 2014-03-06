@@ -68,6 +68,10 @@ Locale::Country::add_country_alias('Trinidad and Tobago'  => 'Trinidad');
 Locale::Country::add_country_alias('Vatican City'         => 'Vatican');
 Locale::Country::add_country_alias('Virgin Islands, U.S.' => 'US Virgin Islands');
 
+# Source: http://www.bbc.co.uk/news/magazine-18233844
+Locale::Country::add_country_alias('United States' => 'America');
+
+
 # Easter eggs
 Locale::Country::add_country_alias('Russian Federation' => 'Kremlin');
 Locale::Country::add_country_alias('United States' => 'murica');
