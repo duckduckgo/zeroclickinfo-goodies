@@ -68,15 +68,6 @@ Locale::Country::add_country_alias('Trinidad and Tobago'  => 'Trinidad');
 Locale::Country::add_country_alias('Vatican City'         => 'Vatican');
 Locale::Country::add_country_alias('Virgin Islands, U.S.' => 'US Virgin Islands');
 
-# Source: http://www.bbc.co.uk/news/magazine-18233844
-Locale::Country::add_country_alias('Argentina'     => 'Argentine');
-Locale::Country::add_country_alias('Congo'         => 'Congo');
-Locale::Country::add_country_alias('Lebanon'       => 'Lebanon');
-Locale::Country::add_country_alias('Sudan'         => 'Sudan');
-Locale::Country::add_country_alias('Ukraine'       => 'Ukraine');
-Locale::Country::add_country_alias('United States' => 'America');
-Locale::Country::add_country_alias('Yemen'         => 'Yemen');
-
 # Easter eggs
 Locale::Country::add_country_alias('Russian Federation' => 'Kremlin');
 Locale::Country::add_country_alias('United States' => 'murica');
