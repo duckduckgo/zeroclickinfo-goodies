@@ -608,6 +608,10 @@ foreach my $type (@types) {
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
 
+# guards and matches regex
+my $guard = qr/^(convert\s)?[0-9\.]+\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
+my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
+
 # exceptions for pluralized forms:
 my %plural_exceptions = (
     'stone'                  => 'stone',
@@ -703,9 +707,9 @@ handle query => sub {
 	s/'/feet/;
 	
 	# guard the query from spurious matches
-	return unless /^(convert\s)?[0-9\.]+\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
+	return unless /$guard/;
 	
-    my @matches = ($_ =~ /(?:[0-9]|\b)($keys)\b/gi);
+    my @matches = ($_ =~ /$match_regex/gi);
     
    	# hack/handle the special case of "X in Y":
    	if ((scalar @matches == 3) && $matches[1] eq "in") {
