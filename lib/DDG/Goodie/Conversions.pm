@@ -12,6 +12,18 @@ use Math::Round qw/nearest/;
 ###             + currently missing only [area/volume] and [velocity]
 ###    --  3 -- would like to handle things like "6^2 g to oz" (present undef;)
 
+name                      'Conversions';
+description               'convert between various units of measurement';
+category                  'calculations';
+topics                    'computing', 'math';
+primary_example_queries   'convert 5 oz to grams';
+secondary_example_queries '5 ounces to g', '0.5 nautical mile to klick';
+code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
+attribution                github  => ['https://github.com/elohmrow'],
+                           email   => ['bradley@pvnp.us'];
+
+zci answer_type => 'conversions';
+
 # metric ton is base unit for mass
 # known SI units and aliases / plurals
 my @mass = (
@@ -627,18 +639,6 @@ my %plural_exceptions = (
 
 # build triggers based on available conversion units:
 triggers end => @units;
-
-name                      'Conversions';
-description               'convert between various units of measurement';
-category                  'calculations';
-topics                    'computing', 'math';
-primary_example_queries   'convert 5 oz to grams';
-secondary_example_queries '5 ounces to g', '0.5 nautical mile to klick';
-code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
-attribution                github  => ['https://github.com/elohmrow'],
-                           email   => ['bradley@pvnp.us'];
-
-zci answer_type => 'conversions';
 
 #
 #   helper function:
