@@ -231,7 +231,7 @@ my @time = (
     },
 	{
         'unit'      => 'microsecond',
-        'factor'    => '86400000',
+        'factor'    => '86400000000',
         'aliases'   => ['microseconds', 'microsec', 'microsecs', 'us'],
         'type'      => 'duration',
     },
