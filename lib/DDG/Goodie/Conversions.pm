@@ -12,6 +12,18 @@ use Math::Round qw/nearest/;
 ###             + currently missing only [area/volume] and [velocity]
 ###    --  3 -- would like to handle things like "6^2 g to oz" (present undef;)
 
+name                      'Conversions';
+description               'convert between various units of measurement';
+category                  'calculations';
+topics                    'computing', 'math';
+primary_example_queries   'convert 5 oz to grams';
+secondary_example_queries '5 ounces to g', '0.5 nautical mile to klick';
+code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
+attribution                github  => ['https://github.com/elohmrow'],
+                           email   => ['bradley@pvnp.us'];
+
+zci answer_type => 'conversions';
+
 # metric ton is base unit for mass
 # known SI units and aliases / plurals
 my @mass = (
@@ -134,48 +146,48 @@ my @length = (
         'aliases'   => ['nautical miles', 'n', 'ns', 'nm', 'nms', 'nmi', 'nmis'],
         'type'      => 'length',
     },
-	{
-		'unit'      => 'furlong',
+    {
+        'unit'      => 'furlong',
         'factor'    => (1/201.168),
         'aliases'   => ['furlongs'],
         'type'      => 'length',
-	},
-	{
-		'unit'      => 'chain',
+    },
+    {
+        'unit'      => 'chain',
         'factor'    => (1/20.1168),
         'aliases'   => ["gunter's chains", 'chains'],
         'type'      => 'length',
-	},
-	{
-		'unit'      => 'link',
+    },
+    {
+        'unit'      => 'link',
         'factor'    => (1/0.201168),
         'aliases'   => ["gunter's links", 'links'],
         'type'      => 'length',
-	},
-	{
-		'unit'      => 'rod',
+    },
+    {
+        'unit'      => 'rod',
         'factor'    => 1/(5.0292),
         'aliases'   => ['rods'],
         'type'      => 'length',
-	},
-	{
-		'unit'      => 'fathom',
+    },
+    {
+        'unit'      => 'fathom',
         'factor'    => 1/(1.853184),
         'aliases'   => ['fathoms', 'ftm', 'ftms'],
         'type'      => 'length',
-	},
-	{
-		'unit'      => 'league',
+    },
+    {
+        'unit'      => 'league',
         'factor'    => 1/(4828.032),
         'aliases'   => ['leagues'],
         'type'      => 'length',
-	},
-	{
-		'unit'      => 'cable',
+    },
+    {
+        'unit'      => 'cable',
         'factor'    => 1/(185.3184),
         'aliases'   => ['cables'],
         'type'      => 'length',
-	},
+    },
     {
         'unit'      => 'light year',
         'factor'    => (1/9460730472580800),
@@ -211,15 +223,15 @@ my @time = (
         'aliases'   => ['seconds', 'sec', 's'],
         'type'      => 'duration',
     },
-	{
+    {
         'unit'      => 'millisecond',
         'factor'    => '86400000',
         'aliases'   => ['milliseconds', 'millisec', 'millisecs', 'ms'],
         'type'      => 'duration',
     },
-	{
+    {
         'unit'      => 'microsecond',
-        'factor'    => '86400000',
+        'factor'    => '86400000000',
         'aliases'   => ['microseconds', 'microsec', 'microsecs', 'us'],
         'type'      => 'duration',
     },
@@ -270,331 +282,334 @@ my @time = (
 # pascal is base unit for pressure
 # known SI units and aliases / plurals
 my @pressure = (
-	{
-		'unit'      => 'pascal',
-		'factor'	=> 1,
-		'aliases'   => ['pascals', 'pa', 'pas'],
-		'type'		=> 'pressure',
-	},
-	{
-		'unit'      => 'kilopascal',
-		'factor'	=> (1/1000),
-		'aliases'   => ['kilopascals', 'kpa', 'kpas'],
-		'type'		=> 'pressure',
-	},
-	{
-		'unit'      => 'megapascal',
-		'factor'	=> (1/1_000_000),
-		'aliases'   => ['megapascals', 'megapa', 'megapas'],
-		'type'		=> 'pressure',
-	},
-	{
-		'unit'      => 'gigapascal',
-		'factor'	=> (1/1_000_000_000),
-		'aliases'   => ['gigapascals', 'gpa', 'gpas'],
-		'type'		=> 'pressure',
-	},
-	{
-		'unit'      => 'bar',
-		'factor'	=> 1/(100_000),
-		'aliases'   => ['bars', 'pa', 'pas'],
-		'type'		=> 'pressure',
-	},
-	{
-		'unit'      => 'atmosphere',
-		'factor'	=> 1/(101_325),
-		'aliases'   => ['atmospheres', 'atm', 'atms'],
-		'type'		=> 'pressure',
-	},
-	{
-		'unit'      => 'pounds per square inch',
-		'factor'	=> 1/6894.8,
-		'aliases'   => ['psis', 'psi', 'lbs/inch^2', 'p.s.i.', 'p.s.i'],
-		'type'		=> 'pressure',
-	},
+    {
+        'unit'      => 'pascal',
+        'factor'    => 1,
+        'aliases'   => ['pascals', 'pa', 'pas'],
+        'type'      => 'pressure',
+    },
+    {
+        'unit'      => 'kilopascal',
+        'factor'    => (1/1000),
+        'aliases'   => ['kilopascals', 'kpa', 'kpas'],
+        'type'      => 'pressure',
+    },
+    {
+        'unit'      => 'megapascal',
+        'factor'    => (1/1_000_000),
+        'aliases'   => ['megapascals', 'megapa', 'megapas'],
+        'type'      => 'pressure',
+    },
+    {
+        'unit'      => 'gigapascal',
+        'factor'    => (1/1_000_000_000),
+        'aliases'   => ['gigapascals', 'gpa', 'gpas'],
+        'type'      => 'pressure',
+    },
+    {
+        'unit'      => 'bar',
+        'factor'    => 1/(100_000),
+        'aliases'   => ['bars', 'pa', 'pas'],
+        'type'      => 'pressure',
+    },
+    {
+        'unit'      => 'atmosphere',
+        'factor'    => 1/(101_325),
+        'aliases'   => ['atmospheres', 'atm', 'atms'],
+        'type'      => 'pressure',
+    },
+    {
+        'unit'      => 'pounds per square inch',
+        'factor'    => 1/6894.8,
+        'aliases'   => ['psis', 'psi', 'lbs/inch^2', 'p.s.i.', 'p.s.i'],
+        'type'      => 'pressure',
+    },
 );
 
 # joule is base unit for energy
 # known SI units and aliases / plurals
 my @energy = (
-	{
-		'unit'      => 'joule',
-		'factor'	=> 1,
-		'aliases'   => ['joules', 'j', 'js'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'watt-second',
-		'factor'	=> (1),
-		'aliases'   => ['watt second', 'watt seconds', 'ws'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'watt-hour',
-		'factor'	=> (1/3600),
-		'aliases'   => ['watt hour', 'watt hours', 'wh'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'kilowatt-hour',
-		'factor'	=> (1/3_600_000),
-		'aliases'   => ['kilowatt hour', 'kilowatt hours', 'kwh'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'erg',
-		'factor'	=> (1/10_000_000),
-		'aliases'   => ['ergon', 'ergs', 'ergons'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'electron volt',
-		'factor'	=> (6.2415096e+18),
-		'aliases'   => ['electronvolt', 'electron volts', 'ev', 'evs'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'thermochemical gram calorie',
-		'factor'	=> (1/4.184),
-		'aliases'   => ['small calories', 'thermochemical gram calories', 'chemical calorie', 'chemical calories'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'large calorie',
-		'factor'	=> (1/4184),
-		'aliases'   => ['large calories', 'food calorie', 'food calories', 'kcals', 'kcal'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'british thermal unit',
-		'factor'	=> (1/1054.5),
-		'aliases'   => ['british thermal units', 'btu', 'btus'],
-		'type'		=> 'energy',
-	},
-	{
-		'unit'      => 'ton of TNT',
-		'factor'	=> (1/4.184e+9),
-		'aliases'   => ['tnt equivilent', 'tonnes of tnt', 'tnt', 'tons of tnt'],
-		'type'		=> 'energy',
-	}
+    {
+        'unit'      => 'joule',
+        'factor'    => 1,
+        'aliases'   => ['joules', 'j', 'js'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'watt-second',
+        'factor'    => (1),
+        'aliases'   => ['watt second', 'watt seconds', 'ws'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'watt-hour',
+        'factor'    => (1/3600),
+        'aliases'   => ['watt hour', 'watt hours', 'wh'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'kilowatt-hour',
+        'factor'    => (1/3_600_000),
+        'aliases'   => ['kilowatt hour', 'kilowatt hours', 'kwh'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'erg',
+        'factor'    => (1/10_000_000),
+        'aliases'   => ['ergon', 'ergs', 'ergons'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'electron volt',
+        'factor'    => (6.2415096e+18),
+        'aliases'   => ['electronvolt', 'electron volts', 'ev', 'evs'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'thermochemical gram calorie',
+        'factor'    => (1/4.184),
+        'aliases'   => ['small calories', 'thermochemical gram calories', 'chemical calorie', 'chemical calories'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'large calorie',
+        'factor'    => (1/4184),
+        'aliases'   => ['large calories', 'food calorie', 'food calories', 'kcals', 'kcal'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'british thermal unit',
+        'factor'    => (1/1054.5),
+        'aliases'   => ['british thermal units', 'btu', 'btus'],
+        'type'      => 'energy',
+    },
+    {
+        'unit'      => 'ton of TNT',
+        'factor'    => (1/4.184e+9),
+        'aliases'   => ['tnt equivilent', 'tonnes of tnt', 'tnt', 'tons of tnt'],
+        'type'      => 'energy',
+    }
 );
 
 # watt is base unit for power
 # known SI units and aliases / plurals
 my @power = (
-	{
-		'unit'      => 'watt',
-		'factor'	=> 1,
-		'aliases'   => ['watts', 'w'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'kilowatt',
-		'factor'	=> 1/1000,
-		'aliases'   => ['kilowatts', 'kw'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'megawatt',
-		'factor'	=> 1/1_000_000,
-		'aliases'   => ['megawatts', 'mw'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'gigawatt',
-		'factor'	=> 1/1_000_000_000,
-		'aliases'   => ['gigawatts', 'jiggawatts', 'gw'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'terawatt',
-		'factor'	=> 1/1_000_000_000_000,
-		'aliases'   => ['terawatts', 'tw'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'petawatt',
-		'factor'	=> 1/1_000_000_000_000_000,
-		'aliases'   => ['petawatts', 'pw'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'milliwatt',
-		'factor'	=> 1000,
-		'aliases'   => ['milliwatts'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'microwatt',
-		'factor'	=> 1_000_000,
-		'aliases'   => ['microwatts'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'nanowatt',
-		'factor'	=> 1_000_000_000,
-		'aliases'   => ['nanowatts', 'nw'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'picowatt',
-		'factor'	=> 1_000_000_000_000,
-		'aliases'   => ['picowatts', 'pw'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'metric horsepower',
-		'factor'	=> (1/735.49875),
-		'aliases'   => ['metric horsepowers', 'mhp', 'hp', 'ps', 'cv', 'hk', 'ks', 'ch'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'horsepower',
-		'factor'	=> (1/745.69987158227022),
-		'aliases'   => ['mechnical horsepower', 'horsepower', 'hp', 'hp', 'bhp'],
-		'type'		=> 'power',
-	},
-	{
-		'unit'      => 'electical horsepower',
-		'factor'	=> (1/746),
-		'aliases'   => ['electical horsepowers', 'hp', 'hp'],
-		'type'		=> 'power',
-	},
+    {
+        'unit'      => 'watt',
+        'factor'    => 1,
+        'aliases'   => ['watts', 'w'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'kilowatt',
+        'factor'    => 1/1000,
+        'aliases'   => ['kilowatts', 'kw'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'megawatt',
+        'factor'    => 1/1_000_000,
+        'aliases'   => ['megawatts', 'mw'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'gigawatt',
+        'factor'    => 1/1_000_000_000,
+        'aliases'   => ['gigawatts', 'jiggawatts', 'gw'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'terawatt',
+        'factor'    => 1/1_000_000_000_000,
+        'aliases'   => ['terawatts', 'tw'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'petawatt',
+        'factor'    => 1/1_000_000_000_000_000,
+        'aliases'   => ['petawatts', 'pw'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'milliwatt',
+        'factor'    => 1000,
+        'aliases'   => ['milliwatts'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'microwatt',
+        'factor'    => 1_000_000,
+        'aliases'   => ['microwatts'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'nanowatt',
+        'factor'    => 1_000_000_000,
+        'aliases'   => ['nanowatts', 'nw'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'picowatt',
+        'factor'    => 1_000_000_000_000,
+        'aliases'   => ['picowatts', 'pw'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'metric horsepower',
+        'factor'    => (1/735.49875),
+        'aliases'   => ['metric horsepowers', 'mhp', 'hp', 'ps', 'cv', 'hk', 'ks', 'ch'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'horsepower',
+        'factor'    => (1/745.69987158227022),
+        'aliases'   => ['mechnical horsepower', 'horsepower', 'hp', 'hp', 'bhp'],
+        'type'      => 'power',
+    },
+    {
+        'unit'      => 'electical horsepower',
+        'factor'    => (1/746),
+        'aliases'   => ['electical horsepowers', 'hp', 'hp'],
+        'type'      => 'power',
+    },
 );
 
 # degree is base unit for angles
 # known SI units and aliases / plurals
 my @angle = (
-	{
-		'unit'      => 'degree',
-		'factor'	=> 1,
-		'aliases'   => ['degrees', 'deg', 'degs'],
-		'type'		=> 'angle',
-	},
-	{
-		'unit'      => 'radian',
-		'factor'	=> 3.14159265358979323/180,
-		'aliases'   => ['radians', 'rad', 'rads'],
-		'type'		=> 'angle',
-	},
-	{
-		'unit'      => 'gradian',
-		'factor'	=> 10/9,
-		'aliases'   => ['gradians', 'grad', 'grads', 'gon', 'gons', 'grade', 'grades'],
-		'type'		=> 'angle',
-	},
-	{
-		'unit'      => 'quadrant',
-		'factor'	=> 1/90,
-		'aliases'   => ['quadrants', 'quads', 'quad'],
-		'type'		=> 'angle',
-	},
-	{
-		'unit'      => 'semi-circle',
-		'factor'	=> 1/180,
-		'aliases'   => ['semi circle', 'semicircle','semi circles', 'semicircles', 'semi-circles'],
-		'type'		=> 'angle',
-	},
-	{
-		'unit'      => 'revolution',
-		'factor'	=> 1/360,
-		'aliases'   => ['revolutions', 'circle', 'circles', 'revs'],
-		'type'		=> 'angle',
-	},
+    {
+        'unit'      => 'degree',
+        'factor'    => 1,
+        'aliases'   => ['degrees', 'deg', 'degs'],
+        'type'      => 'angle',
+    },
+    {
+        'unit'      => 'radian',
+        'factor'    => 3.14159265358979323/180,
+        'aliases'   => ['radians', 'rad', 'rads'],
+        'type'      => 'angle',
+    },
+    {
+        'unit'      => 'gradian',
+        'factor'    => 10/9,
+        'aliases'   => ['gradians', 'grad', 'grads', 'gon', 'gons', 'grade', 'grades'],
+        'type'      => 'angle',
+    },
+    {
+        'unit'      => 'quadrant',
+        'factor'    => 1/90,
+        'aliases'   => ['quadrants', 'quads', 'quad'],
+        'type'      => 'angle',
+    },
+    {
+        'unit'      => 'semi-circle',
+        'factor'    => 1/180,
+        'aliases'   => ['semi circle', 'semicircle','semi circles', 'semicircles', 'semi-circles'],
+        'type'      => 'angle',
+    },
+    {
+        'unit'      => 'revolution',
+        'factor'    => 1/360,
+        'aliases'   => ['revolutions', 'circle', 'circles', 'revs'],
+        'type'      => 'angle',
+    },
 );
 
 # newton is base unit for force
 # known SI units and aliases / plurals
 my @force = (
-	{
-		'unit'      => 'newton',
-		'factor'	=> 1,
-		'aliases'   => ['newtons', 'n'],
-		'type'		=> 'force',
-	},
-	{
-		'unit'      => 'kilonewton',
-		'factor'	=> 1/1000,
-		'aliases'   => ['kilonewtons', 'kn'],
-		'type'		=> 'force',
-	},
-	{
-		'unit'      => 'meganewton',
-		'factor'	=> 1/1_000_000,
-		'aliases'   => ['meganewtons', 'mn'],
-		'type'		=> 'force',
-	},
-	{
-		'unit'      => 'giganewton',
-		'factor'	=> 1/1_000_000_000,
-		'aliases'   => ['giganewtons', 'gn'],
-		'type'		=> 'force',
-	},
-	{
-		'unit'      => 'dyne',
-		'factor'	=> 1/100000,
-		'aliases'   => ['dynes'],
-		'type'		=> 'force',
-	},
-	{
-		'unit'      => 'kilodyne',
-		'factor'	=> 1/100,
-		'aliases'   => ['kilodynes'],
-		'type'		=> 'force',
-	},
-	{
-		'unit'      => 'megadyne',
-		'factor'	=> 10,
-		'aliases'   => ['megadynes'],
-		'type'		=> 'force',
-	},
-	{
-		'unit'      => 'pounds force',
-		'factor'	=> 1/4.4482216152605,
-		'aliases'   => ['lbs force', 'pounds force'],
-		'type'		=> 'force',
-	},
-	{
-		'unit'      => 'poundal',
-		'factor'	=> 1/0.138254954376,
-		'aliases'   => ['poundals', 'pdl'],
-		'type'		=> 'force',
-	},
+    {
+        'unit'      => 'newton',
+        'factor'    => 1,
+        'aliases'   => ['newtons', 'n'],
+        'type'      => 'force',
+    },
+    {
+        'unit'      => 'kilonewton',
+        'factor'    => 1/1000,
+        'aliases'   => ['kilonewtons', 'kn'],
+        'type'      => 'force',
+    },
+    {
+        'unit'      => 'meganewton',
+        'factor'    => 1/1_000_000,
+        'aliases'   => ['meganewtons', 'mn'],
+        'type'      => 'force',
+    },
+    {
+        'unit'      => 'giganewton',
+        'factor'    => 1/1_000_000_000,
+        'aliases'   => ['giganewtons', 'gn'],
+        'type'      => 'force',
+    },
+    {
+        'unit'      => 'dyne',
+        'factor'    => 1/100000,
+        'aliases'   => ['dynes'],
+        'type'      => 'force',
+    },
+    {
+        'unit'      => 'kilodyne',
+        'factor'    => 1/100,
+        'aliases'   => ['kilodynes'],
+        'type'      => 'force',
+    },
+    {
+        'unit'      => 'megadyne',
+        'factor'    => 10,
+        'aliases'   => ['megadynes'],
+        'type'      => 'force',
+    },
+    {
+        'unit'      => 'pounds force',
+        'factor'    => 1/4.4482216152605,
+        'aliases'   => ['lbs force', 'pounds force'],
+        'type'      => 'force',
+    },
+    {
+        'unit'      => 'poundal',
+        'factor'    => 1/0.138254954376,
+        'aliases'   => ['poundals', 'pdl'],
+        'type'      => 'force',
+    },
 );
 
 # fahrenheit is base unit for temperature
 # known SI units and aliases / plurals
 my @temperature = (
-	{   
-		'unit'      => 'fahrenheit',
-		'factor'	=> 1,           # all '1' because un-used
-		'aliases'   => ['f'],     
-		'type'		=> 'temperature',
-	},
-	{   
-		'unit'      => 'celsius',
-		'factor'	=> 1,           
-		'aliases'   => ['c'],
-		'type'		=> 'temperature',
-	},
-	{
-		'unit'      => 'kelvin',
-		'factor'	=> 1,
-		'aliases'   => ['k'],       # be careful ... other units could use 'K'
-		'type'		=> 'temperature',       
-	},
-	{
-		'unit'      => 'rankine',
-		'factor'	=> 1,
-		'aliases'   => ['r'],    
-		'type'		=> 'temperature',
-	},
-	{
-		'unit'      => 'reaumur',
-		'factor'	=> 1,
-		'aliases'   => ['re'],      # also can be 'R', but that's being used for rankine    
-		'type'		=> 'temperature',
-	},
+    {   
+        'unit'            => 'fahrenheit',
+        'factor'          => 1,           # all '1' because un-used
+        'aliases'         => ['f'],     
+        'type'            => 'temperature',
+        'can_be_negative' => 1,
+    },
+    {   
+        'unit'            => 'celsius',
+        'factor'          => 1,           
+        'aliases'         => ['c'],
+        'type'            => 'temperature',
+        'can_be_negative' => 1,
+    },
+    {
+        'unit'            => 'kelvin',
+        'factor'          => 1,
+        'aliases'         => ['k'],       # be careful ... other units could use 'K'
+        'type'            => 'temperature',       
+    },
+    {
+        'unit'            => 'rankine',
+        'factor'          => 1,
+        'aliases'         => ['r'],    
+        'type'            => 'temperature',
+    },
+    {
+        'unit'            => 'reaumur',
+        'factor'          => 1,
+        'aliases'         => ['re'],      # also can be 'R', but that's being used for rankine    
+        'type'            => 'temperature',
+        'can_be_negative' => 1,
+    },
 );  
 
 # build the keys:
@@ -605,8 +620,15 @@ foreach my $type (@types) {
     push(@units, @{$type->{'aliases'}});
 }
 
+# build triggers based on available conversion units:
+triggers end => @units;
+
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
+
+# guards and matches regex
+my $guard = qr/^(convert\s)?[0-9\.]+\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
+my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
 
 # exceptions for pluralized forms:
 my %plural_exceptions = (
@@ -621,34 +643,21 @@ my %plural_exceptions = (
     'pounds force'           => 'pounds force',
 );
 
-# build triggers based on available conversion units:
-triggers end => @units;
-
-name                      'Conversions';
-description               'convert between various units of measurement';
-category                  'calculations';
-topics                    'computing', 'math';
-primary_example_queries   'convert 5 oz to grams';
-secondary_example_queries '5 ounces to g', '0.5 nautical mile to klick';
-code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
-attribution                github  => ['https://github.com/elohmrow'],
-                           email   => ['bradley@pvnp.us'];
-
-zci answer_type => 'conversions';
-
 #
 #   helper function:
 #       [1] get factors for later calculating conversion
 #       [2] get trigger 'types' to determine if we can perform a calculation in the first place
 #       [3] get canoncial units for massaging output
+#       [4] determine if a unit may be negative 
 #
-sub get_types_and_factors_and_units {
+sub get_matches {
     my $matches = shift;
     my @matches = @{$matches};
 
     my @match_types = ();
     my @factors = ();
     my @units = ();
+    my @can_be_negative = ();
     
     foreach my $match (@matches) {
         foreach my $type (@types) {
@@ -656,11 +665,28 @@ sub get_types_and_factors_and_units {
                 push(@match_types, $type->{'type'});
                 push(@factors, $type->{'factor'});
                 push(@units, $type->{'unit'});
+                push(@can_be_negative, $type->{'can_be_negative'} || '0');
             }
         }
     }
+   
+    return if scalar(@match_types) != 2; 
+    return if scalar(@factors) != 2;
+    return if scalar(@units) != 2;
+    return if scalar(@can_be_negative) != 2;
+    
+    my %matches = (
+        'type_1'            => $match_types[0],
+        'type_2'            => $match_types[1],
+        'factor_1'          => $factors[0],
+        'factor_2'          => $factors[1],
+        'from_unit'         => $units[0],
+        'to_unit'           => $units[1],
+        'can_be_negative_1' => $can_be_negative[0],
+        'can_be_negative_2' => $can_be_negative[1],
+    );
 
-    return (\@match_types, \@factors, \@units);
+    return \%matches;
 }
 
 sub convert_temperatures {
@@ -679,7 +705,7 @@ sub convert_temperatures {
     my $from = shift;
     my $to = shift;
     my $factor = shift;
-
+    
     # convert $from to fahrenheit:
     if    ($from =~ /fahrenheit|f/i) { $factor = $factor;                       }
     elsif ($from =~ /celsius|c/i)    { $factor = ($factor * 1.8) + 32;          }
@@ -698,32 +724,26 @@ sub convert_temperatures {
 }
 
 handle query => sub {
-	# hack around issues with feet and inches for now
-	s/"/inches/;
-	s/'/feet/;
-	
-	# guard the query from spurious matches
-	return unless /^(convert\s)?[0-9\.]+\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
-	
-    my @matches = ($_ =~ /(?:[0-9]|\b)($keys)\b/gi);
+    # hack around issues with feet and inches for now
+    s/"/inches/;
+    s/'/feet/;
     
-   	# hack/handle the special case of "X in Y":
-   	if ((scalar @matches == 3) && $matches[1] eq "in") {
-   	    @matches = ($matches[0], $matches[2]);
-  	}
+    # guard the query from spurious matches
+    return unless /$guard/;
+    
+    my @matches = ($_ =~ /$match_regex/gi);
+    
+    # hack/handle the special case of "X in Y":
+    if ((scalar @matches == 3) && $matches[1] eq "in") {
+        @matches = ($matches[0], $matches[2]);
+    }
     return unless scalar @matches == 2; # conversion requires two triggers
 
-    my ($match_types, $factors, $units) = get_types_and_factors_and_units(\@matches);
-    my @match_types = @{$match_types};
-    my @factors = @{$factors};
-    my @units = @{$units};
-
-    # matches must be of the same type (e.g., can't convert mass to length):
-    return if ($match_types[0] ne $match_types[1]);
-	
-	# normalize the whitespace, "25cm" should work for example
-	s/([0-9])([a-zA-Z])/$1 $2/;
-	
+    my $matches = get_matches(\@matches);
+    
+    # normalize the whitespace, "25cm" should work for example
+    s/([0-9])([a-zA-Z])/$1 $2/;
+    
     # get factor:
     my @args = split(/\s+/, $_);
     my $factor = 1;
@@ -733,15 +753,8 @@ handle query => sub {
             return if float_is_infinite($arg) || float_is_nan($arg);
 
             $factor = $arg unless $factor != 1;     # drop n > 1 #s
-
-            if ($match_types[0] !~ /temperature|pressure/) {
-                return if $factor < 0;  # negative weights, etc. seem impossible :)
-            }
             
-            if ($match_types[0] =~ /temperature|pressure/) {
-                # kelvin and rankine cannot be negative:
-                return if ($factor < 0 && $matches[0] =~ /kelvin|rankine|k|r/i);
-            }
+            return if $factor < 0 && !($matches->{'can_be_negative_1'} && $matches->{'can_be_negative_2'}); 
         }
         else {
             # if it doesn't look like a number, and it contains a number (e.g., '6^2'):
@@ -749,37 +762,29 @@ handle query => sub {
         }
     }
 
+    # matches must be of the same type (e.g., can't convert mass to length):
+    return if ($matches->{'type_1'} ne $matches->{'type_2'});
+    
     # run the conversion:
     # temperatures don't have 1:1 conversions, so they get special treatment:
-    if ($match_types[0] eq 'temperature') {
-        return "$factor degrees $units[0] is " . sprintf("%.3f", convert_temperatures($matches[0], $matches[1], $factor)) . " degrees $units[1]";
+    if ($matches->{'type_1'} eq 'temperature') {
+        return "$factor degrees $matches->{'from_unit'} is " . sprintf("%.3f", convert_temperatures($matches->{'from_unit'}, $matches->{'to_unit'}, $factor)) . " degrees $matches->{'to_unit'}";
     }
-    else {
-        # handle plurals:
-        my $result = $factor * ($factors[1] / $factors[0]);
-        # if $result = 1.00000 .. 000n, where n <> 0 then $result > 1 and throws off pluralization, so:
-        $result = nearest(.001, $result);   # .001 to match sprintf "%.3f" below
 
-        if ($factor > 1) {
-            if (exists $plural_exceptions{$units[0]}) {
-                $units[0] = $plural_exceptions{$units[0]};
-            }
-            else {
-                $units[0] .= 's';
-            }
-        }
-        
-        if ($result > 1) { 
-            if (exists $plural_exceptions{$units[1]}) {
-                $units[1] = $plural_exceptions{$units[1]};
-            }
-            else {
-                $units[1] .= 's';
-            }
-        }
-
-        return "$factor $units[0] is " . sprintf("%.3f", $result) . " $units[1]";
+    # handle plurals:
+    my $result = $factor * ($matches->{'factor_2'} / $matches->{'factor_1'});
+    # if $result = 1.00000 .. 000n, where n <> 0 then $result > 1 and throws off pluralization, so:
+    $result = nearest(.001, $result);   # .001 to match sprintf "%.3f" below
+    
+    if ($factor > 1) {
+        $matches->{'from_unit'} = (exists $plural_exceptions{$matches->{'from_unit'}}) ? $plural_exceptions{$matches->{'from_unit'}} : $matches->{'from_unit'} . 's'; 
     }
+    
+    if ($result > 1) {
+        $matches->{'to_unit'} = (exists $plural_exceptions{$matches->{'to_unit'}}) ? $plural_exceptions{$matches->{'to_unit'}} : $matches->{'to_unit'} . 's'; 
+    }
+
+    return "$factor $matches->{'from_unit'} is " . sprintf("%.3f", $result) . " $matches->{'to_unit'}";
 };
 
 
