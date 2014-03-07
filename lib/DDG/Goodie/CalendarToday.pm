@@ -1,5 +1,5 @@
 package DDG::Goodie::CalendarToday;
-# ABSTRACT: Print calendar of current / given month and highlight today
+# ABSTRACT: Print calendar of current / given month and highlight (to)day
 
 use DDG::Goodie;
 use Time::Piece;
@@ -40,8 +40,13 @@ handle remainder => sub {
   $currentYear = $t->year;
 
   # read parameters - do not trigger if invalid parameters are found (delimiters: - / . ' ')
-  ($parameter1, $parameter2, $parameter3) = split (/[-\/\. ]/, $_);
+  ($parameter1, $parameter2, $parameter3) = split (/[-\/. ]/, $_);
   return if (!readParameters());
+
+  # hightlight today if current month is given
+  if(($givenYear eq $currentYear) && ($givenMonth eq $currentMonth)) {
+    $givenDay = $currentDay;
+  }
 
   # calculate first/last day
   $firstDay = Time::Piece->strptime("$givenYear/$givenMonth/1", "%Y/%m/%d");
@@ -90,10 +95,10 @@ sub readParameters {
       return 1;
     }
     # e.g. "calendar november 2015"
-    return 1 if((readMonth($parameter1)) && (readYear($parameter2)));
+    return 1 if(readMonth($parameter1) && readYear($parameter2));
 
     # e.g. "calendar 2015 november"
-    return 1 if((readMonth($parameter2)) && (readYear($parameter1)));
+    return 1 if(readMonth($parameter2) && readYear($parameter1));
   
   # only one parameter
   } elsif ($parameter1) {
