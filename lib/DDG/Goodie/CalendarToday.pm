@@ -30,6 +30,9 @@ my $firstDay, my $firstWeekDayId, my $lastDay;
 my $rText, my $rHtml;
 my @weekDays = ("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
   
+# read in css-file only once
+my $css = share("style.css")->slurp;
+
 
 handle remainder => sub {
   
@@ -282,7 +285,6 @@ sub prepare_returntext {
 
 sub append_css {
   my $html = shift;
-  my $css = scalar share("style.css")->slurp;
   return "<style type='text/css'>$css</style>\n" . $html;
 }
 
