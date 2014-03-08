@@ -1,0 +1,32 @@
+<div id="readline-container">
+
+  : for $columns -> $tables {
+  <div class="readline-column">
+
+    : for $tables -> $table {
+    <b><: $table.name :></b>
+    <table class="readline-table">
+
+      : for $table.rows -> $row {
+      <tr>
+        <td>
+        : for $row.cmds -> $cmd {
+          <code><: $cmd :></code>
+          : if $~cmd.index != $~cmd.max_index {
+          <br>
+          : }
+        : }
+        </td>
+        <td><: $row.help :></td>
+      </tr>
+      : }
+
+    </table>
+    : }
+
+  </div>
+  : }
+
+  <i>Source: <a href="http://readline.kablamo.org/<: $type :>.html">http:/readline.kablamo.org/<: $type :>.html</a></i>
+
+</div>

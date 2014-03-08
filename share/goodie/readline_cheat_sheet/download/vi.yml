@@ -1,0 +1,172 @@
+---
+-
+  - name: Entering command mode
+    rows:
+      - cmds:
+          - Ctrl-[
+          - Esc
+        help: Start command mode.
+  - name: Entering insert mode
+    rows:
+      - cmds:
+          - i
+        help: Insert before the cursor.
+      - cmds:
+          - a
+        help: Insert (append) after the cursor.
+      - cmds:
+          - I
+        help: Insert at the beginning of the line.
+      - cmds:
+          - A
+        help: Insert (append) at the end of the line.
+      - cmds:
+          - r
+        help: Replace the character under the cursor.
+      - cmds:
+          - R
+        help: Replace characters under the cursor.
+      - cmds:
+          - v
+        help: Edit the command with $VISUAL, $EDITOR, or vi.
+  - name: Deleting (command mode)
+    rows:
+      - cmds:
+          - d<movement>
+        help: Delete from the current character to the end of the <movement>.
+      - cmds:
+          - D
+          - d$
+        help: Delete to the end of the line.
+      - cmds:
+          - dd
+          - 0d$
+        help: Delete the current line.
+  - name: Moving (command mode)
+    rows:
+      - cmds:
+          - 0
+        help: Move to the start of the current line.
+      - cmds:
+          - $
+        help: Move to the end of the line.
+      - cmds:
+          - l
+          - Space
+        help: Move forward a character.
+      - cmds:
+          - h
+        help: Move back a character.
+      - cmds:
+          - e
+        help: Move forward to the end of the next word.  Words are alphanumeric.
+      - cmds:
+          - b
+        help: Move back to the start of the current or previous word.  Words are alphanumeric.
+      - cmds:
+          - %
+        help: Move cursor to a matching (,),[,],{, or }.
+  - name: Cutting and pasting (command mode)
+    rows:
+      - cmds:
+          - y<movement>
+        help: Copy (yank) from the current character to the end of the <movement>.
+      - cmds:
+          - yy
+        help: Copy (yank) the current line.
+      - cmds:
+          - p
+        help: Paste after the cursor.
+      - cmds:
+          - P
+        help: Paste before the cursor.
+  - name: Undo and Repeat (command mode)
+    rows:
+      - cmds:
+          - u
+        help: Incrementally undo the last action.
+      - cmds:
+          - U
+        help: Undo all actions.
+      - cmds:
+          - .
+        help: Repeat the last action.
+-
+  - name: History (command mode)
+    rows:
+      - cmds:
+          - k
+          - Ctrl-p
+          - "-"
+        help: Fetch the previous command from the history list.
+      - cmds:
+          - j
+          - +
+        help: Fetch the next command from the history list.
+      - cmds:
+          - G
+        help: Go to the most recent line in the history list.
+      - cmds:
+          - 15G
+        help: Go to line 15 in the history list.
+      - cmds:
+          - Ctrl-r
+        help: Incremental search backward through history.
+      - cmds:
+          - /
+        help: Search backward through history for a string.
+      - cmds:
+          - ?
+        help: Search forward through history for a string.
+      - cmds:
+          - n
+        help: Repeat the search in the same direction.
+      - cmds:
+          - N
+        help: Repeat the search in the opposite direction.
+  - name: Marks (command mode)
+    rows:
+      - cmds:
+          - m<letter>
+        help: Set a mark named <letter>
+      - cmds:
+          - "`<letter>"
+        help: Jump to the mark named <letter>
+  - name: Completing (insert mode)
+    rows:
+      - cmds:
+          - Tab
+        help: Autocomplete.
+  - name: Completing (command mode)
+    rows:
+      - cmds:
+          - "="
+        help: Autocomplete.
+      - cmds:
+          - "*"
+        help: Insert all possible completions.
+  - name: Miscellaneous (insert mode)
+    rows:
+      - cmds:
+          - Ctrl-d
+        help: EOF or exit.
+      - cmds:
+          - Ctrl-_
+        help: Undo the last action.
+      - cmds:
+          - Ctrl-u
+        help: Discard the line
+      - cmds:
+          - Ctrl-t
+        help: Transpose characters.
+  - name: Miscellaneous (command mode)
+    rows:
+      - cmds:
+          - Ctrl-l
+        help: Clear the screen.
+      - cmds:
+          - "#"
+        help: Insert a comment at the beginning of the line, add the line to the history, then start a new line.
+      - cmds:
+          - "~"
+        help: Change case.

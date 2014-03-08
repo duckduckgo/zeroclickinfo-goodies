@@ -1,0 +1,409 @@
+<style type='text/css'>
+
+#zero_click_plus_wrapper {
+    display: none;
+}
+
+#zero_click_wrapper #zero_click #zero_click_abstract {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#zero_click_abstract #readline-container {
+    max-height: 45ex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#zero_click_abstract .readline-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#zero_click_abstract table.readline-table {
+    width: 100%;
+    margin-bottom: 1ex;
+}
+
+#zero_click_abstract table.readline-table td {
+    padding-right: 1ex;
+    vertical-align: top;
+}
+#zero_click_abstract table.readline-table td code {
+    white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+    #zero_click_abstract .readline-column {
+	width: 100%;
+    }
+}
+
+</style>
+
+<div id="readline-container">
+
+  <div class="readline-column">
+
+    <b>Entering command mode</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-[</code>
+          <br>
+          <code>Esc</code>
+        </td>
+        <td>Start command mode.</td>
+      </tr>
+
+    </table>
+    <b>Entering insert mode</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>i</code>
+        </td>
+        <td>Insert before the cursor.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>a</code>
+        </td>
+        <td>Insert (append) after the cursor.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>I</code>
+        </td>
+        <td>Insert at the beginning of the line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>A</code>
+        </td>
+        <td>Insert (append) at the end of the line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>r</code>
+        </td>
+        <td>Replace the character under the cursor.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>R</code>
+        </td>
+        <td>Replace characters under the cursor.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>v</code>
+        </td>
+        <td>Edit the command with $VISUAL, $EDITOR, or vi.</td>
+      </tr>
+
+    </table>
+    <b>Deleting (command mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>d&lt;movement&gt;</code>
+        </td>
+        <td>Delete from the current character to the end of the &lt;movement&gt;.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>D</code>
+          <br>
+          <code>d$</code>
+        </td>
+        <td>Delete to the end of the line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>dd</code>
+          <br>
+          <code>0d$</code>
+        </td>
+        <td>Delete the current line.</td>
+      </tr>
+
+    </table>
+    <b>Moving (command mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>0</code>
+        </td>
+        <td>Move to the start of the current line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>$</code>
+        </td>
+        <td>Move to the end of the line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>l</code>
+          <br>
+          <code>Space</code>
+        </td>
+        <td>Move forward a character.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>h</code>
+        </td>
+        <td>Move back a character.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>e</code>
+        </td>
+        <td>Move forward to the end of the next word.  Words are alphanumeric.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>b</code>
+        </td>
+        <td>Move back to the start of the current or previous word.  Words are alphanumeric.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>%</code>
+        </td>
+        <td>Move cursor to a matching (,),[,],{, or }.</td>
+      </tr>
+
+    </table>
+    <b>Cutting and pasting (command mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>y&lt;movement&gt;</code>
+        </td>
+        <td>Copy (yank) from the current character to the end of the &lt;movement&gt;.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>yy</code>
+        </td>
+        <td>Copy (yank) the current line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>p</code>
+        </td>
+        <td>Paste after the cursor.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>P</code>
+        </td>
+        <td>Paste before the cursor.</td>
+      </tr>
+
+    </table>
+    <b>Undo and Repeat (command mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>u</code>
+        </td>
+        <td>Incrementally undo the last action.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>U</code>
+        </td>
+        <td>Undo all actions.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>.</code>
+        </td>
+        <td>Repeat the last action.</td>
+      </tr>
+
+    </table>
+
+  </div>
+  <div class="readline-column">
+
+    <b>History (command mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>k</code>
+          <br>
+          <code>Ctrl-p</code>
+          <br>
+          <code>-</code>
+        </td>
+        <td>Fetch the previous command from the history list.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>j</code>
+          <br>
+          <code>+</code>
+        </td>
+        <td>Fetch the next command from the history list.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>G</code>
+        </td>
+        <td>Go to the most recent line in the history list.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>15G</code>
+        </td>
+        <td>Go to line 15 in the history list.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-r</code>
+        </td>
+        <td>Incremental search backward through history.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>/</code>
+        </td>
+        <td>Search backward through history for a string.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>?</code>
+        </td>
+        <td>Search forward through history for a string.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>n</code>
+        </td>
+        <td>Repeat the search in the same direction.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>N</code>
+        </td>
+        <td>Repeat the search in the opposite direction.</td>
+      </tr>
+
+    </table>
+    <b>Marks (command mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>m&lt;letter&gt;</code>
+        </td>
+        <td>Set a mark named &lt;letter&gt;</td>
+      </tr>
+      <tr>
+        <td>
+          <code>`&lt;letter&gt;</code>
+        </td>
+        <td>Jump to the mark named &lt;letter&gt;</td>
+      </tr>
+
+    </table>
+    <b>Completing (insert mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Tab</code>
+        </td>
+        <td>Autocomplete.</td>
+      </tr>
+
+    </table>
+    <b>Completing (command mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>=</code>
+        </td>
+        <td>Autocomplete.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>*</code>
+        </td>
+        <td>Insert all possible completions.</td>
+      </tr>
+
+    </table>
+    <b>Miscellaneous (insert mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-d</code>
+        </td>
+        <td>EOF or exit.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-_</code>
+        </td>
+        <td>Undo the last action.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-u</code>
+        </td>
+        <td>Discard the line</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-t</code>
+        </td>
+        <td>Transpose characters.</td>
+      </tr>
+
+    </table>
+    <b>Miscellaneous (command mode)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-l</code>
+        </td>
+        <td>Clear the screen.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>#</code>
+        </td>
+        <td>Insert a comment at the beginning of the line, add the line to the history, then start a new line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>~</code>
+        </td>
+        <td>Change case.</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+  <i>Source: <a href="http://readline.kablamo.org/vi.html">http:/readline.kablamo.org/vi.html</a></i>
+
+</div>
