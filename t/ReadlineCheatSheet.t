@@ -10,12 +10,12 @@ zci answer_type => 'readline_cheat';
 
 # This goodie always returns one of two possible answers
 my $emacs_answer = test_zci(
-        qr/Moving.*History.*Changing.*Killing.*/s,
+        qr/Moving.*History.*Changing.*Killing/s,
 	    heading => 'Readline Cheat Sheet - Emacs Editing Mode',
 		html => qr#<div(.*<table.*<tr.*<td.*</table.*)+</div>$#s,
 );
 my $vi_answer = test_zci(
-        qr/History.*Cutting.*Undo.*Marks.*/s,
+        qr/Cutting.*Undo.*History.*Marks/s,
 	    heading => 'Readline Cheat Sheet - Vi Editing Mode',
 		html => qr#<div(.*<table.*<tr.*<td.*</table.*)+</div>$#s,
 );
