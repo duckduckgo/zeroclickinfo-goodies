@@ -1,5 +1,5 @@
 package DDG::Goodie::ABC;
-# ABSTRACT: Randomly pick one of different choices splitted by "or"
+# ABSTRACT: Randomly pick one of several different choices delimited by "or"
 
 use DDG::Goodie;
 
@@ -17,12 +17,18 @@ topics 'trivia';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
-handle query_parts => sub { 
-    return unless /or/;
+handle query_parts => sub {
+    my @parts = @_; # $query split on word boundaries; includes triggers
+    my $query = $_; # the entire query
+
+    return unless $query =~ /or/;
+
     my @choices;
     my @collected_parts;
-    while (my $part = shift) {
+
+    foreach my $part (@parts) {
         next if $part eq 'choose';
+
         if ( lc($part) eq 'or' ) {
             return unless @collected_parts;
             push @choices, join(' ', @collected_parts);
@@ -33,6 +39,7 @@ handle query_parts => sub {
             push @collected_parts, $part;
         }
     }
+
     push @choices, join(' ', @collected_parts) if @choices && @collected_parts;
     return if scalar(@choices) <= 1;
     my $choice = int(rand(@choices));
