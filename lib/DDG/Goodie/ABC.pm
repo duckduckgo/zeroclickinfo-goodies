@@ -18,38 +18,51 @@ attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
 handle query_parts => sub {
-    my @parts = @_; # $query split on word boundaries; includes triggers
-    my $query = $_; # the entire query
+    my @query_parts = @_; # query split on word boundaries; includes triggers
+    my $query       = $_; # the entire query
 
-    return unless $query =~ /or/;
+    # Remove the trigger word
+    @query_parts = grep { lc $_ ne 'choose' } @query_parts;
 
-    my @choices;
-    my @collected_parts;
+    # Return if the query is malformed
+    return if query_is_malformed(\@query_parts, $query);
 
-    foreach my $part (@parts) {
-        next if $part eq 'choose';
+    # Gather choices
+    my @choices = grep { lc $_ ne 'or' } @query_parts;
 
-        if ( lc($part) eq 'or' ) {
-            return unless @collected_parts;
-            push @choices, join(' ', @collected_parts);
-            my $length = @collected_parts;
-            return if $length > 1;
-            @collected_parts = ();
-        } elsif ( $part ) {
-            push @collected_parts, $part;
-        }
-    }
-
-    push @choices, join(' ', @collected_parts) if @choices && @collected_parts;
-    return if scalar(@choices) <= 1;
-    my $choice = int(rand(@choices));
-
+    # Easter egg. For queries like:
+    #   'choose duckduckgo or google or bing or something'
     if (my @duck = grep { / \A (?: duck (?: duckgo )? | ddg ) \z /ix } @choices) {
         return $duck[0]." (not random)", answer_type => 'egg';
     }
 
-    return $choices[$choice]." (random)";
-    return;
+    # Choose randomly
+    my $index = int rand scalar @choices;
+    return $choices[$index]." (random)";
 };
+
+# The query -- minus the trigger word -- must look like 
+#     '<choice> or <choice> or <choice>'
+#
+# Note this method also prevents choices from being > 1 word long as this
+# generates too many false positives.
+#
+# Returns 1 if the query looks good
+# Returns 0 if the query looks malformed
+sub query_is_malformed {
+    my $query_parts = shift;
+    my $query       = shift;
+
+    return 1 unless $query =~ /or/i; # handle a query like 'i choose'
+    return 1 if @$query_parts <= 1;  # handle a query like 'choose or'
+
+    # Ensure every other element of @$query_parts is 'or'
+    foreach my $i (1..$#$query_parts) {
+        next if $i % 2 == 0; # skip even indices
+        return 1 if lc $query_parts->[$i] ne 'or';
+    }
+
+    return 0;
+}
 
 1;
