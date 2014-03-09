@@ -42,13 +42,14 @@ handle query_parts => sub {
 };
 
 # The query -- minus the trigger word -- must look like 
-#     '<choice> or <choice> or <choice>'
+#   '<choice> or <choice> or <choice>'
 #
 # Note this method also prevents choices from being > 1 word long as this
-# generates too many false positives.
+# generates false positives for queries such as
+#   'choose from a selection of products like venison, turkey, quail, or fish'
 #
-# Returns 1 if the query looks good
-# Returns 0 if the query looks malformed
+# Returns 0 if the query looks good
+# Returns 1 if the query looks malformed
 sub query_is_malformed {
     my $query_parts = shift;
     my $query       = shift;
