@@ -2,8 +2,10 @@ package DDG::Goodie::ABC;
 # ABSTRACT: Randomly pick one of several different choices delimited by "or"
 
 use DDG::Goodie;
+use List::AllUtils qw/none/;
 
-triggers startend => "choose", "pick";
+my @TRIGGERS = qw/choose pick select/;
+triggers startend => @TRIGGERS;
 
 zci answer_type => "rand";
 
@@ -18,14 +20,8 @@ attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
 handle query_parts => sub {
-    my @query_parts = @_; # query split on word boundaries; includes triggers
+    my @query_parts = remove_trigger(@_); # query split on word boundaries
     my $query       = $_; # the entire query
-
-    # Remove the trigger word
-    @query_parts = grep { 
-        lc $_ ne 'choose' && 
-        lc $_ ne 'pick' 
-    } @query_parts;
 
     return if query_is_malformed(\@query_parts, $query);
 
@@ -41,6 +37,14 @@ handle query_parts => sub {
     my $index = int rand scalar @choices;
     return $choices[$index]." (random)";
 };
+
+# Returns the list of @query_parts minus any trigger words.
+sub remove_trigger {
+    return grep { 
+        my $part = lc $_;
+        none { $part eq $_ } @TRIGGERS;
+    } @_;
+}
 
 # The query -- minus the trigger word -- must look like 
 #   '<choice> or <choice> or <choice>'
