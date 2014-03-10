@@ -3,12 +3,12 @@ package DDG::Goodie::ABC;
 
 use DDG::Goodie;
 
-triggers startend => "choose";
+triggers startend => "choose", "pick";
 
 zci answer_type => "rand";
 
 primary_example_queries 'choose yes or no';
-secondary_example_queries 'choose heads or tails', 'choose this or that or none';
+secondary_example_queries 'choose heads or tails', 'pick this or that or none';
 description 'make a random choice';
 name 'ABC';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
@@ -22,12 +22,13 @@ handle query_parts => sub {
     my $query       = $_; # the entire query
 
     # Remove the trigger word
-    @query_parts = grep { lc $_ ne 'choose' } @query_parts;
+    @query_parts = grep { 
+        lc $_ ne 'choose' && 
+        lc $_ ne 'pick' 
+    } @query_parts;
 
-    # Return if the query is malformed
     return if query_is_malformed(\@query_parts, $query);
 
-    # Gather choices
     my @choices = grep { lc $_ ne 'or' } @query_parts;
 
     # Easter egg. For queries like:

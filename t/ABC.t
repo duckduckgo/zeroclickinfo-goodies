@@ -19,6 +19,7 @@ ddg_goodie_test(
     'choose from products like turkey or venison' => undef,
 	'choose yes or no'              => test_zci(qr/(yes|no) \(random\)/),
     'choose this or that or none'   => test_zci(qr/(this|that|none) \(random\)/),
+    'pick this or that or none'     => test_zci(qr/(this|that|none) \(random\)/),
     'choose heads or tails'         => test_zci(qr/(heads|tails) \(random\)/),
     'choose duckduckgo or google or bing or something' => test_zci("duckduckgo (not random)", answer_type => 'egg'),
     'choose DuckDuckGo OR Google OR Bing OR SOMETHING' => test_zci("DuckDuckGo (not random)", answer_type => 'egg'),
