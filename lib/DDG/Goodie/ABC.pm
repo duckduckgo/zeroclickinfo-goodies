@@ -20,8 +20,8 @@ attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
 handle query_parts => sub {
-    my @query_parts = remove_trigger(@_); # query split on word boundaries
-    my $query       = $_; # the entire query
+    my @query_parts = remove_trigger(@_); # the query split on word boundaries
+    my $query       = $_;                 # the query as a string
 
     return if query_is_malformed(\@query_parts, $query);
 
