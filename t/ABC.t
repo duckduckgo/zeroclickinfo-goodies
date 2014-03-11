@@ -17,6 +17,7 @@ ddg_goodie_test(
     'choose his or her house'                     => undef,
     'choose his or or her house'                  => undef,
     'choose from products like turkey or venison' => undef,
+	'choose pick or axe'            => test_zci(qr/(pick|axe) \(random\)/),
 	'choose yes or no'              => test_zci(qr/(yes|no) \(random\)/),
     'choose this or that or none'   => test_zci(qr/(this|that|none) \(random\)/),
     'pick this or that or none'     => test_zci(qr/(this|that|none) \(random\)/),
