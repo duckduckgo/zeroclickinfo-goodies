@@ -773,14 +773,14 @@ handle query => sub {
 
     # handle plurals:
     my $result = $factor * ($matches->{'factor_2'} / $matches->{'factor_1'});
-    # if $result = 1.00000 .. 000n, where n <> 0 then $result > 1 and throws off pluralization, so:
+    # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result = nearest(.001, $result);   # .001 to match sprintf "%.3f" below
     
-    if ($factor > 1) {
+    if ($factor != 1) {
         $matches->{'from_unit'} = (exists $plural_exceptions{$matches->{'from_unit'}}) ? $plural_exceptions{$matches->{'from_unit'}} : $matches->{'from_unit'} . 's'; 
     }
     
-    if ($result > 1) {
+    if ($result != 1) {
         $matches->{'to_unit'} = (exists $plural_exceptions{$matches->{'to_unit'}}) ? $plural_exceptions{$matches->{'to_unit'}} : $matches->{'to_unit'} . 's'; 
     }
 
