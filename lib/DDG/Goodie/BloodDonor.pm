@@ -3,27 +3,32 @@ package DDG::Goodie::BloodDonor;
 
 use DDG::Goodie;
 
-triggers start => 'donor';
-zci is_cached => 1;
+triggers start => 'donor', 'donors for', 'blood donor', 'blood donors for';
 zci answer_type => "blood_donor";
 
-primary_example_queries 'donor 0+';
+primary_example_queries 'donor O+';
 secondary_example_queries 'donor AB+';
-description 'Return donor types for a given blood type';
+description 'Donor types for a given blood type';
 name 'BloodDonor';
-code_url 'http://github.com';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/BloodDonor.pm';
 category 'special';
 topics 'everyday';
 attribution github => ['https://github.com/faraday', 'faraday'];
 
-my %typeMap = ( "0" , "0",
-              "A" , "A,0",
-              "B" , "B,0",
-              "AB", "AB,A,B,0"
-            );
+my %typeMap = (
+   'A' => 'A,O',
+   'O' => 'O',
+   'AB' => 'AB,A,B,O',
+   'B' => 'B,O',
+);
+
+sub table_data {
+  my ($label, $value) = @_;
+  return '<tr><td>' . $label . '&nbsp;&nbsp;&nbsp;</td><td>' . $value . "</td></tr>";
+}
 
 handle remainder => sub {
-    if ($_ =~ /(0|A|B|AB)(\-|\+)/g) {
+    if ($_ =~ /^(O|A|B|AB)(\-|\+)$/i) {
       my $type = $1;
       my $rh = $2;
 
@@ -45,13 +50,11 @@ handle remainder => sub {
       my $criticalStr = join(' or ', @criticalResults);
       $output .= "Ideal donor: " . $_ . "\n";
       $output .= "Other donors: " . $idealStr . "\n";
-      $html .= '<tr><td>Ideal donor:&nbsp;&nbsp;&nbsp;</td><td>' . $_ . "</td></tr>";
-      $html .= '<tr><td>Other donors:&nbsp;&nbsp;&nbsp;</td><td>' 
-        . $idealStr . "</td></tr>";
+      $html .= table_data("Ideal donor:", $_);
+      $html .= table_data("Other donors:", $idealStr);
       if($rh eq '+') {
         $output .= "Only if no Rh(+) found: " . $criticalStr . "\n";
-        $html .= '<tr><td><b>Only if</b> no Rh(+) found:&nbsp;&nbsp;&nbsp;</td><td>' 
-          . $criticalStr . "</td></tr>";
+        $html .= table_data("<b>Only if</b> no Rh(+) found:", $criticalStr);
       }
       $html .= '</table>';
       return $output, html => $html, heading => "Donors for blood type $_";
