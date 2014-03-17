@@ -1,6 +1,16 @@
 package DDG::Goodie::DuckDuckGo;
 # ABSTRACT: Return hard-coded descriptions for DuckDuckGo terms
 
+primary_example_queries 'help';
+secondary_example_queries 'Zero-Click Info', 'zeroclick';
+description 'DuckDuckGo help and quick links';
+name 'DuckDuckGo';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
+category 'cheat_sheets';
+topics 'everyday';
+attribution twitter => 'crazedpsyc',
+            cpan    => 'CRZEDPSYC' ;
+
 use DDG::Goodie;
 
 my %data = (
@@ -14,20 +24,20 @@ my %data = (
     xmpp                => "DuckDuckGo's XMPP service: https://duck.co/blog/using-pidgin-with-xmpp-jabber",
     tor                 => "DuckDuckGo's TOR hidden service: https://3g2upl4pq6kufc4m.onion",
     tor_html            => qq(DuckDuckGo's TOR hidden service: <a href="https://3g2upl4pq6kufc4m.onion">https://3g2upl4pq6kufc4m.onion</a>),
-    hidden service      => \"tor",
+    hiddenservice       => \"tor",
     hidden_service_html => \"tor_html",
-    tor hidden service  => \"tor",
+    torhiddenservice    => \"tor",
     tor_hidden_service_html => \"tor_html",
     contributing        => "Contributing to DuckDuckGo: https://duck.co/help/community/contributing",
-    open source         => "DuckDuckGo's open source projects: https://duck.co/help/open-source/opensource-overview",
-    business model      => "Advertising and Affiliates on DuckDuckGo: https://duck.co/help/company/advertising-and-affiliates",
+    opensource          => "DuckDuckGo's open source projects: https://duck.co/help/open-source/opensource-overview",
+    businessmodel       => "Advertising and Affiliates on DuckDuckGo: https://duck.co/help/company/advertising-and-affiliates",
     advertisements      => "DuckDuckGo's official IRC bot: https://github.com/Getty/duckduckgo-roboduck",
     press               => "DuckDuckGo's press page: https://duck.co/help/company/press",
     traffic             => "DuckDuckGo's traffic is public at: https://duckduckgo.com/traffic.html",
     firefox             => "DuckDuckGo's Firefox help page: https://duck.co/help/desktop/firefox",
     chrome              => "DuckDuckGo's Chrome help page: https://duck.co/help/desktop/chrome",
     safari              => "DuckDuckGo's Safari help page: https://duck.co/help/desktop/safari",
-    internet explorer   => "DuckDuckGo's Internet Explorer help page: https://duck.co/help/desktop/internet-explorer",
+    internetexplorer    => "DuckDuckGo's Internet Explorer help page: https://duck.co/help/desktop/internet-explorer",
     internet_explorer_html => qq(DuckDuckGo's Internet Explorer <a href="https://duck.co/help/desktop/internet-explorer">Internet Explorer help page</a>),    
     ie                  => \"internet explorer",
     ie_html             => \"internet_explorer_html",
@@ -52,9 +62,9 @@ my %data = (
     partnerships        => "Partnering with DuckDuckGo: https://duck.co/help/company/partnerships",
     api                 => "DuckDuckGo's API: https://duckduckgo.com/api",
     about               => "DuckDuckGo's about page: https://duckduckgo.com/about",
-    short url           => "DuckDuckGo's short URL: http://ddg.gg/ which will take you to https://duckduckgo.com/",
-    short domain        => "DuckDuckGo's short URL: http://ddg.gg/ which will take you to https://duckduckgo.com/",
-    instant answers     => "DuckDuckGo's instant answers display helpful information at the top of the search page (like this box). Suggest or develop them at: http://duckduckhack.com/ and see all the current instant answers at: https://duckduckgo.com/goodies",
+    shorturl            => "DuckDuckGo's short URL: http://ddg.gg/ which will take you to https://duckduckgo.com/",
+    shortdomain         => "DuckDuckGo's short URL: http://ddg.gg/ which will take you to https://duckduckgo.com/",
+    instantanswers      => "DuckDuckGo's instant answers display helpful information at the top of the search page (like this box). Suggest or develop them at: http://duckduckhack.com/ and see all the current instant answers at: https://duckduckgo.com/goodies",
     instant_answers_html => qq(DuckDuckGo's instant answers display helpful information at the top of the search page (like this box). <br/><a href="http://duckduckhack.com/">Develop them!</a><br/><a href="https://duck.co/ideas">Suggest them!</a><br/><a href="https://duckduckgo.com/goodies">See all available Instant Answers</a>),    
     ia                  => \"instant answers",
     ia_html             => \"instant_answers_html",
@@ -100,16 +110,6 @@ my %data = (
 triggers any => keys %data, qw/zero 0/;
 
 zci is_cached => 1;
-
-primary_example_queries 'help';
-secondary_example_queries 'Zero-Click Info', 'zeroclick';
-description 'DuckDuckGo help and quick links';
-name 'DuckDuckGo';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
-category 'cheat_sheets';
-topics 'everyday';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
 
 handle query_lc => sub {
     s/\W//g;
