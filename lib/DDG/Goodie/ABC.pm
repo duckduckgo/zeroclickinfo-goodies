@@ -19,13 +19,16 @@ topics 'trivia';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
-handle query_parts => sub {
-    my @query_parts = remove_trigger(@_); # the query split on word boundaries
-    my $query       = $_;                 # the query as a string
+handle remainder => sub {
+    my $query = $_;
 
-    return if query_is_malformed(\@query_parts, $query);
+    # split the query on whitespace and rm whitespace
+    my @words = grep { length } split /\s+/, $query; 
 
-    my @choices = grep { lc $_ ne 'or' } @query_parts;
+    return if query_is_malformed(@words);
+
+    # rm every 'or' from the list
+    my @choices = grep { lc $_ ne 'or' } @words;
 
     # Easter egg. For queries like:
     #   'choose duckduckgo or google or bing or something'
@@ -38,15 +41,7 @@ handle query_parts => sub {
     return $choices[$index]." (random)";
 };
 
-# Returns the list of @query_parts minus any trigger words.
-sub remove_trigger {
-    return grep { 
-        my $part = lc $_;
-        none { $part eq $_ } @TRIGGERS;
-    } @_;
-}
-
-# The query -- minus the trigger word -- must look like 
+# The query must look like 
 #   '<choice> or <choice> or <choice>'
 #
 # Note this method also prevents choices from being > 1 word long as this
@@ -56,16 +51,15 @@ sub remove_trigger {
 # Returns 0 if the query looks good
 # Returns 1 if the query looks malformed
 sub query_is_malformed {
-    my $query_parts = shift;
-    my $query       = shift;
+    my @words = @_;
 
-    return 1 unless $query =~ /or/i; # handle a query like 'i choose'
-    return 1 if @$query_parts <= 1;  # handle a query like 'choose or'
+    return 1 if none { lc $_ eq 'or' } @words;  # ignore queries like 'i choose'
+    return 1 if @words <= 1;                    # ignore queries like 'choose or'
 
-    # Ensure every other element of @$query_parts is 'or'
-    foreach my $i (1..$#$query_parts) {
+    # Ensure every other element of @$words is 'or'
+    foreach my $i (1..$#words) {
         next if $i % 2 == 0; # skip even indices
-        return 1 if lc $query_parts->[$i] ne 'or';
+        return 1 if lc $words[$i] ne 'or';
     }
 
     return 0;
