@@ -30,6 +30,14 @@ ddg_goodie_test(
 	'resistor yellow green' => undef,
 	'resistor red orange blue red green' => undef,
 	'resistor red banana orangutan' => undef,
+    'red yellow white gold resistor' => test_zci(
+        'A red yellow white gold resistor has a resistance of 24 GΩ ± 5%.',
+        html => 'A red yellow white gold resistor has a resistance of 24 GΩ ± 5%. <a href="https://en.wikipedia.org/wiki/Electronic_color_code">More at Wikipedia</a>'
+    ),
+    'resistor red yellow white' => test_zci(
+        'A red yellow white resistor has a resistance of 24 GΩ ± 20%.',
+        html => 'A red yellow white resistor has a resistance of 24 GΩ ± 20%. <a href="https://en.wikipedia.org/wiki/Electronic_color_code">More at Wikipedia</a>'
+    ),
 );
 
 done_testing;

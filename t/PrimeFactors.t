@@ -14,6 +14,10 @@ ddg_goodie_test(
 	)],
 		'72 prime factors' => test_zci('Prime factors of 72: 2 2 2 3 3.', html => 'Prime factors of 72: 2 2 2 3 3. More at <a href="https://en.wikipedia.org/wiki/Prime_factor">Wikipedia</a>.'),
 		'prime factors of 111' => test_zci('Prime factors of 111: 3 37.', html => 'Prime factors of 111: 3 37. More at <a href="https://en.wikipedia.org/wiki/Prime_factor">Wikipedia</a>.'),
-);
+        'prime factors of 30' => test_zci(
+            'Prime factors of 30: 2 3 5.', 
+            html => 'Prime factors of 30: 2 3 5. More at <a href="https://en.wikipedia.org/wiki/Prime_factor">Wikipedia</a>.'
+        ),
+    );
 
 done_testing;

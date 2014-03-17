@@ -47,6 +47,14 @@ ddg_goodie_test(
     'password bELKIN default f5d6130' =>
         test_zci('Default login for the BELKIN F5D6130: Username: (none) Password: password',
             html => 'Default login for the BELKIN F5D6130:<br><i>Username</i>: (none)<br><i>Password</i>: password'),
+    'belkin f5d6130 default password' => test_zci(
+        'Default login for the BELKIN F5D6130: Username: (none) Password: password',
+        html => 'Default login for the BELKIN F5D6130:<br><i>Username</i>: (none)<br><i>Password</i>: password'
+    ),
+    'alcatel office 4200' => test_zci(
+        'Default login for the ALCATEL OFFICE 4200: Username: n/a Password: password',
+        html => 'Default login for the ALCATEL OFFICE 4200:<br><i>Username</i>: n/a<br><i>Password</i>: password'
+    ),
 );
 
 # This function call is expected by Test::More. It makes sure the program

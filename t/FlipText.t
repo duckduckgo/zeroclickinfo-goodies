@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use utf8;
 use Test::More;
 use DDG::Test::Goodie;
 
@@ -14,6 +15,8 @@ ddg_goodie_test(
         )],
         'flip test' => test_zci("\x{0287}\x{0073}\x{01DD}\x{0287}"),
         'mirror test' => test_zci("\x{0287}\x{0073}\x{01DD}\x{0287}"),
+        'flip my sentence' => test_zci('ǝɔuǝʇuǝs ʎɯ'),
+        'mirror text' => test_zci('ʇxǝʇ'),
 );
 
 done_testing;
