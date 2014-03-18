@@ -4,8 +4,7 @@ package DDG::Goodie::ABC;
 use DDG::Goodie;
 use List::AllUtils qw/none/;
 
-my @TRIGGERS = qw/choose pick select/;
-triggers startend => @TRIGGERS;
+triggers startend => qw/choose pick select/;
 
 zci answer_type => "rand";
 
@@ -17,7 +16,11 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'random';
 topics 'trivia';
 attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+            cpan    => 'CRZEDPSYC',
+            twitter => 'kablamo_',
+            cpan    => 'KABLAMO',
+            github  => 'kablamo',
+            web     => ["http://kablamo.org", "Eric Johnson"] ;
 
 handle remainder => sub {
     my $query = $_;
