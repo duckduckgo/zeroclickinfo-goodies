@@ -16,6 +16,8 @@ primary_example_queries 'vim help', 'vim cheat sheet', 'vim commands';
 secondary_example_queries 'vi quick reference', 'vi commands', 'vi guide';
 
 triggers startend => (
+    'vim cheat-sheet',
+    'vi cheat-sheet',
     'vi cheat sheet', 
     'vi cheatsheet', 
     'vi commands',
