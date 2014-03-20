@@ -40,43 +40,53 @@ ddg_goodie_test(
 | |_| | (_) |
  \____|\___/ 
              
-</pre>',
+</pre><span>&quot;DuckDuckGo&quot; rendered in FIGlet font &quot;standard&quot;.</span>',
             ),
 
-        'figlet wow DuckDuckGo' =>
+        'figlet mini DDG' =>
             test_zci(
-                '][_) ][_][ << ][< ][_) ][_][ << ][< ((6 
-[[]] 
+                ' _   _   __ 
+| \ | \ /__ 
+|_/ |_/ \_| 
+            
 ',
-                html => '<pre>][_) ][_][ << ][< ][_) ][_][ << ][< ((6 
-[[]] 
-</pre>',
+                html => '<pre> _   _   __ 
+| \ | \ /__ 
+|_/ |_/ \_| 
+            
+</pre><span>&quot;DDG&quot; rendered in FIGlet font &quot;mini&quot;.</span>',
             ),
         
-        'figlet wow wow' =>
+        'figlet-mini DDG' =>
             test_zci(
-                '\\\/\\\/ [[]] \\\/\\\/ 
+                ' _   _   __ 
+| \ | \ /__ 
+|_/ |_/ \_| 
+            
 ',
-                html => '<pre>\\\/\\\/ [[]] \\\/\\\/ 
-</pre>',
+                html => '<pre> _   _   __ 
+| \ | \ /__ 
+|_/ |_/ \_| 
+            
+</pre><span>&quot;DDG&quot; rendered in FIGlet font &quot;mini&quot;.</span>',
             ),
 
-        'wow figlet' =>
+        'figlet-stop' =>
             test_zci(
-                '                       
-__      _______      __
-\ \ /\ / / _ \ \ /\ / /
- \ V  V | (_) \ V  V / 
-  \_/\_/ \___/ \_/\_/  
-                       
+                '     _              
+ ___| |_ ___  _ __  
+/ __| __/ _ \| \'_ \ 
+\__ | || (_) | |_) |
+|___/\__\___/| .__/ 
+             |_|    
 ',
-                html => '<pre>                       
-__      _______      __
-\ \ /\ / / _ \ \ /\ / /
- \ V  V | (_) \ V  V / 
-  \_/\_/ \___/ \_/\_/  
-                       
-</pre>',
+                html => '<pre>     _              
+ ___| |_ ___  _ __  
+/ __| __/ _ \| \'_ \ 
+\__ | || (_) | |_) |
+|___/\__\___/| .__/ 
+             |_|    
+</pre><span>&quot;stop&quot; rendered in FIGlet font &quot;standard&quot;.</span>',
             ),
 );
 

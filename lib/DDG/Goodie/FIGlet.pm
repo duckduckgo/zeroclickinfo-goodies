@@ -4,9 +4,9 @@ package DDG::Goodie::FIGlet;
 use DDG::Goodie;
 use Text::FIGlet;
 
-triggers startend => 'figlet';
+triggers query => qr/^figlet(?:\-|\s+)(.*)/;
 primary_example_queries 'figlet DuckDuckGo';
-secondary_example_queries 'figlet graceful DuckDuckGo';
+secondary_example_queries 'figlet computer DuckDuckGo';
 
 name 'FIGlet';
 description 'Uses FIGlet to make large letters out of ordinary text.';
@@ -20,22 +20,45 @@ attribution
 zci answer_type => 'figlet';
 zci is_cached => 1;
 
-my @fonts = share()->children;
-my $figlet;
 my $width = 60;
 
-handle remainder => sub {
-    m/^\s*(\w+)/;
+# Renders a figlet.
+sub render_figlet {
+    my ($font, $text) = @_;
 
-    # Checks if the first word is a font and uses it if it's not the only
-    # word to figify. Else uses the standard font.
-    if ($1 && $_ ne $1 && grep /\b$1\b/i, @fonts) {
-        $figlet = Text::FIGlet->new(-f=>lc $1, -d=>share())->figify(-w=>$width, -A=>substr $_, length($1)+1, length $_);
-    } elsif ($_) {
-        $figlet = Text::FIGlet->new(-d=>share())->figify(-w=>$width, -A=>$_);
+    if ($font) {
+        return Text::FIGlet->new(-f=>$font, -d=>share())->figify(-w=>$width, -A=>$text);
+    } else {
+        return Text::FIGlet->new(-d=>share())->figify(-w=>$width, -A=>$text);
+    }
+}
+
+handle query => sub {
+    my $font;
+    my $text;
+    my $figlet;
+
+    # Fetch available fonts.
+    opendir DIR, share();
+    my @fonts = readdir(DIR);
+    closedir DIR;
+
+    # Check for a font indication in the query.
+    $text = $1;
+    $1 =~ m/^\s*(\w+)/;
+    $font = lc $1 if grep /\b$1\b/i, @fonts;
+
+    # Strip the font from the text to render if we're using a font.
+    if ($font && $font ne $text) {
+        $text = substr $text, length ($font)+1, length $text;
+    } else {
+        $font = "standard";
     }
     
-    return $figlet, html => "<pre>$figlet</pre>" if $figlet;
+    # Render the FIGlet
+    $figlet = render_figlet($font, $text);
+
+    return $figlet, html => "<pre>$figlet</pre><span>&quot;$text&quot; rendered in FIGlet font &quot;$font&quot;.</span>" if $figlet;
     return;
 };
 
