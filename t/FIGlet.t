@@ -43,7 +43,7 @@ ddg_goodie_test(
 </pre><span>&quot;DuckDuckGo&quot; rendered in FIGlet font &quot;standard&quot;.</span>',
             ),
 
-        'figlet mini DDG' =>
+        'bigtext mini DDG' =>
             test_zci(
                 ' _   _   __ 
 | \ | \ /__ 
