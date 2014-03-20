@@ -4,7 +4,7 @@ package DDG::Goodie::FIGlet;
 use DDG::Goodie;
 use Text::FIGlet;
 
-triggers query => qr/^figlet(?:\-|\s+)(.*)/;
+triggers query => qr/^(?:figlet|bigtext)(?:\-|\s+)(.*)/;
 primary_example_queries 'figlet DuckDuckGo';
 secondary_example_queries 'figlet computer DuckDuckGo';
 
@@ -22,6 +22,11 @@ zci is_cached => 1;
 
 my $width = 60;
 
+# Fetch available fonts.
+opendir DIR, share();
+my @fonts = readdir(DIR);
+closedir DIR;
+
 # Renders a figlet.
 sub render_figlet {
     my ($font, $text) = @_;
@@ -38,10 +43,6 @@ handle query => sub {
     my $text;
     my $figlet;
 
-    # Fetch available fonts.
-    opendir DIR, share();
-    my @fonts = readdir(DIR);
-    closedir DIR;
 
     # Check for a font indication in the query.
     $text = $1;
