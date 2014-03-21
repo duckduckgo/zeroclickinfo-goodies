@@ -74,19 +74,19 @@ my %data_html = (
     stickers			=> "Thanks for the support! Check out the <a href='https://duck.co/help/community/swag'>DuckDuckGo store</a> for t-shirts, stickers, and other items.",
     duck			=> "<img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.",
     dax				=> "<img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.",
-    irc				=> "DuckDuckGo's official IRC channel is #duckduckgo on irc.freenode.net",
+    irc				=> "DuckDuckGo's official IRC channel is <a href='http://webchat.freenode.net/?channels=duckduckgo'>#duckduckgo</a> on <a href='http://freenode.net/'>irc.freenode.net</a>",
     remove			=> "To remove DuckDuckGo from your browser, take a look <a href='https://duck.co/help/desktop'>here</a>. Please <a href='https://duckduckgo.com/feedback'>let us know</a> why you are leaving!",
     removing			=> "To remove DuckDuckGo from your browser, take a look <a href='https://duck.co/help/desktop'>here</a>. Please <a href='https://duckduckgo.com/feedback'>let us know</a> why you are leaving!",
     removal			=> "To remove DuckDuckGo from your browser, take a look <a href='https://duck.co/help/desktop'>here</a>. Please <a href='https://duckduckgo.com/feedback'>let us know</a> why you are leaving!",
     (map {
         $_ => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results.",
-     } "zeroclickinfo", "zeroclick", "0click", "0clickinfo", "zero 0")
+     } "zeroclickinfo", "zeroclick", "0click", "0clickinfo", "zero 0", "zero click info", "zero-click info")
 );
 
 zci is_cached => 1;
 handle remainder => sub {
-    if(defined $data_html{$_}) {
-	return "", html => $data_html{$_};
+    if(defined $data_html{lc $_}) {
+	return "", html => $data_html{lc $_};
     }
     return;
 };
