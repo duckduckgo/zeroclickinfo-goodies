@@ -1,6 +1,8 @@
 package DDG::Goodie::DuckDuckGo;
 # ABSTRACT: Return hard-coded descriptions for DuckDuckGo terms
 
+use DDG::Goodie;
+
 primary_example_queries 'help';
 secondary_example_queries 'Zero-Click Info', 'zeroclick';
 description 'DuckDuckGo help and quick links';
@@ -10,8 +12,6 @@ category 'cheat_sheets';
 topics 'everyday';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
-
-use DDG::Goodie;
 
 my %data = (
     goodies             => "DuckDuckGo's goodie repository: https://github.com/duckduckgo/zeroclickinfo-goodies",
