@@ -17,9 +17,9 @@ description               'convert between various units of measurement';
 category                  'calculations';
 topics                    'computing', 'math';
 primary_example_queries   'convert 5 oz to grams';
-secondary_example_queries '5 ounces to g', '0.5 nautical mile to klick';
+secondary_example_queries '5 ounces to g', '0.5 nautical miles in km';
 code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
-attribution                github  => ['https://github.com/elohmrow'],
+attribution                github  => ['https://github.com/elohmrow', 'https://github.com/mintsoft'],
                            email   => ['bradley@pvnp.us'];
 
 zci answer_type => 'conversions';
@@ -723,7 +723,7 @@ sub convert_temperatures {
     return $factor;
 }
 
-handle query => sub {
+handle query_lc => sub {
     # hack around issues with feet and inches for now
     s/"/inches/;
     s/'/feet/;
@@ -773,14 +773,14 @@ handle query => sub {
 
     # handle plurals:
     my $result = $factor * ($matches->{'factor_2'} / $matches->{'factor_1'});
-    # if $result = 1.00000 .. 000n, where n <> 0 then $result > 1 and throws off pluralization, so:
+    # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result = nearest(.001, $result);   # .001 to match sprintf "%.3f" below
     
-    if ($factor > 1) {
+    if ($factor != 1) {
         $matches->{'from_unit'} = (exists $plural_exceptions{$matches->{'from_unit'}}) ? $plural_exceptions{$matches->{'from_unit'}} : $matches->{'from_unit'} . 's'; 
     }
     
-    if ($result > 1) {
+    if ($result != 1) {
         $matches->{'to_unit'} = (exists $plural_exceptions{$matches->{'to_unit'}}) ? $plural_exceptions{$matches->{'to_unit'}} : $matches->{'to_unit'} . 's'; 
     }
 
