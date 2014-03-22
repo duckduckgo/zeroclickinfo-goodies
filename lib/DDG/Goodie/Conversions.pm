@@ -10,7 +10,10 @@ use Math::Round qw/nearest/;
 ###    --  1 -- include more unit types
 ###             see: https://github.com/duckduckgo/zeroclickinfo-goodies/issues/318
 ###             + currently missing only [area/volume] and [velocity]
-###    --  3 -- would like to handle things like "6^2 g to oz" (present undef;)
+###    --  2 -- would like to handle things like "6^2 g to oz" (present undef;)
+###    --  3 -- later use Convert::Pluggable:
+###             https://metacpan.org/pod/release/ELOHMROW/Convert-Pluggable-0.012/lib/Convert/Pluggable.pm
+###    --  4 -- handle digital info 'smarter' 
 
 name                      'Conversions';
 description               'convert between various units of measurement';
@@ -233,6 +236,12 @@ my @time = (
         'unit'      => 'microsecond',
         'factor'    => '86400000000',
         'aliases'   => ['microseconds', 'microsec', 'microsecs', 'us'],
+        'type'      => 'duration',
+    },
+    {
+        'unit'      => 'nanosecond',
+        'factor'    => '86400000000000',
+        'aliases'   => ['nanoseconds', 'nanosec', 'nanosecs', 'ns'],
         'type'      => 'duration',
     },
     {
@@ -612,8 +621,219 @@ my @temperature = (
     },
 );  
 
+# bit is base unit for digital
+# while not absolutely correct, a byte is defined as 8 bits herein.
+# known SI units and aliases / plurals
+my @digital = (
+    {   
+        'unit'            => 'bit',
+        'factor'          => 1,           
+        'aliases'         => ['bits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'kilobit',
+        'factor'          => 1/1_000,           
+        'aliases'         => ['kbit', 'kbits', 'kilobits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'megabit',
+        'factor'          => 1/1_000_000,           
+        'aliases'         => ['mbit', 'mbits', 'megabits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'gigabit',
+        'factor'          => 1/1_000_000_000,           
+        'aliases'         => ['gbit', 'gigabits', 'gbits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'terabit',
+        'factor'          => 1/1_000_000_000_000,           
+        'aliases'         => ['tbit', 'tbits', 'terabits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'petabit',
+        'factor'          => 1/1_000_000_000_000_000,           
+        'aliases'         => ['pbit', 'pbits', 'petabits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'exabit',
+        'factor'          => 1/1_000_000_000_000_000_000,           
+        'aliases'         => ['ebit', 'ebits', 'exabits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'zettabit',
+        'factor'          => 1/1_000_000_000_000_000_000_000,           
+        'aliases'         => ['zbit', 'zbits', 'zettabits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'yottabit',
+        'factor'          => 1/1_000_000_000_000_000_000_000_000,           
+        'aliases'         => ['ybit', 'ybits', 'yottabits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'kibibit',
+        'factor'          => 1/1024,           
+        'aliases'         => ['kibit', 'kibits', 'kibibits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'mebibit',
+        'factor'          => 1/1024**2,           
+        'aliases'         => ['mibit', 'mibits', 'mebibits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'gibibit',
+        'factor'          => 1/1024**3,           
+        'aliases'         => ['gibit', 'gibits', 'gibibits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'tebibit',
+        'factor'          => 1/1024**4,           
+        'aliases'         => ['tibit', 'tibits', 'tebibits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'pebibit',
+        'factor'          => 1/1024**5,           
+        'aliases'         => ['pibit', 'pibits', 'pebibits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'exbibit',
+        'factor'          => 1/1024**6,           
+        'aliases'         => ['eibit', 'eibits', 'exbibits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'zebibit',
+        'factor'          => 1/1024**7,           
+        'aliases'         => ['zibit', 'zibits', 'zebibits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'yobibit',
+        'factor'          => 1/1024**8,           
+        'aliases'         => ['yibit', 'yibits', 'yobibits'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'byte',
+        'factor'          => 1/8,           
+        'aliases'         => ['bytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'kilobyte',
+        'factor'          => 1/8_000,           
+        'aliases'         => ['kb', 'kbs', 'kilobytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'megabyte',
+        'factor'          => 1/8_000_000,           
+        'aliases'         => ['mb', 'mbs', 'megabytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'gigabyte',
+        'factor'          => 1/8_000_000_000,           
+        'aliases'         => ['gb', 'gbs', 'gigabytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'terabyte',
+        'factor'          => 1/8_000_000_000_000,           
+        'aliases'         => ['tb', 'tbs', 'terabytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'petabyte',
+        'factor'          => 1/8_000_000_000_000_000,           
+        'aliases'         => ['pb', 'pbs', 'petabytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'exabyte',
+        'factor'          => 1/8_000_000_000_000_000_000,           
+        'aliases'         => ['eb', 'ebs', 'exabytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'zettabyte',
+        'factor'          => 1/8_000_000_000_000_000_000_000,           
+        'aliases'         => ['zb', 'zbs', 'zettabytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'yottabyte',
+        'factor'          => 1/8_000_000_000_000_000_000_000_000,           
+        'aliases'         => ['yb', 'ybs', 'yottabytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'kibibyte',
+        'factor'          => 1/8192,           
+        'aliases'         => ['kib', 'kibs', 'kibibytes'],       # KB     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'mebibyte',
+        'factor'          => 1/8388608,           
+        'aliases'         => ['mib', 'mibs', 'mebibytes'],       # MB
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'gibibyte',
+        'factor'          => 1/8589934592,                       # 1/8*1024**3 ...           
+        'aliases'         => ['gib', 'gibs', 'gibibytes'],       # GB ...
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'tebibyte',
+        'factor'          => 1/8796093022208,           
+        'aliases'         => ['tib', 'tibs', 'tebibytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'pebibyte',
+        'factor'          => 1/9007199254740992,                 # 1/8*1024**5 ...           
+        'aliases'         => ['pib', 'pibs', 'pebibytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'exbibyte',
+        'factor'          => 1/9.22337203685478e+18,           
+        'aliases'         => ['eib', 'eibs', 'exbibytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'zebibyte',
+        'factor'          => 1/9.44473296573929e+21,           
+        'aliases'         => ['zib', 'zibs', 'zebibytes'],     
+        'type'            => 'digital',
+    },
+    {   
+        'unit'            => 'yobibyte',
+        'factor'          => 1/9.67140655691703e+24,           
+        'aliases'         => ['yib', 'yibs', 'yobibytes'],     
+        'type'            => 'digital',
+    },
+);
+
 # build the keys:
-my @types = (@mass, @length, @time, @pressure, @energy, @power, @angle, @force, @temperature);    # unit types available for conversion
+# unit types available for conversion
+my @types = (@mass, @length, @time, @pressure, @energy, @power, @angle, @force, @temperature, @digital);    
 my @units = ();
 foreach my $type (@types) {
     push(@units, $type->{'unit'});
@@ -732,7 +952,11 @@ handle query_lc => sub {
     return unless /$guard/;
     
     my @matches = ($_ =~ /$match_regex/gi);
-    
+   
+    my $precision = 3;  # later, Convert::Pluggable will handle this
+    my $result;
+    my $f_result;
+
     # hack/handle the special case of "X in Y":
     if ((scalar @matches == 3) && $matches[1] eq "in") {
         @matches = ($matches[0], $matches[2]);
@@ -768,14 +992,43 @@ handle query_lc => sub {
     # run the conversion:
     # temperatures don't have 1:1 conversions, so they get special treatment:
     if ($matches->{'type_1'} eq 'temperature') {
-        return "$factor degrees $matches->{'from_unit'} is " . sprintf("%.3f", convert_temperatures($matches->{'from_unit'}, $matches->{'to_unit'}, $factor)) . " degrees $matches->{'to_unit'}";
+        $result = convert_temperatures($matches->{'from_unit'}, $matches->{'to_unit'}, $factor);
+    
+        $result = nearest(.001, $result);   # later use $precision
+
+        if ($result == 0 || length($result) > 2*$precision + 1) {
+            # '10 mg to tons'                 => [0] , [1.10231e-08]
+            # '10000 minutes in microseconds' => [600000000000]
+            # '2500kcal in tons of tnt'       => [66194.888]
+
+            if ($result == 0) {
+                # rounding error
+                $result = convert_temperatures($matches->{'from_unit'}, $matches->{'to_unit'}, $factor);
+            }
+
+            $f_result = (sprintf "%.${precision}g", $result);
+        }
+
+        $result = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result);
+
+        return "$factor degrees $matches->{'from_unit'} is $result degrees $matches->{'to_unit'}";
     }
 
     # handle plurals:
-    my $result = $factor * ($matches->{'factor_2'} / $matches->{'factor_1'});
+    $result = $factor * ($matches->{'factor_2'} / $matches->{'factor_1'});
+
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
-    $result = nearest(.001, $result);   # .001 to match sprintf "%.3f" below
-    
+    $result = nearest(.001, $result);   # later use $precision
+        
+    if ($result == 0 || length($result) > 2*$precision + 1) {
+        if ($result == 0) {
+            # rounding error
+            $result = $factor * ($matches->{'factor_2'} / $matches->{'factor_1'});
+        }
+
+        $f_result = (sprintf "%.${precision}g", $result);
+    }
+
     if ($factor != 1) {
         $matches->{'from_unit'} = (exists $plural_exceptions{$matches->{'from_unit'}}) ? $plural_exceptions{$matches->{'from_unit'}} : $matches->{'from_unit'} . 's'; 
     }
@@ -784,7 +1037,9 @@ handle query_lc => sub {
         $matches->{'to_unit'} = (exists $plural_exceptions{$matches->{'to_unit'}}) ? $plural_exceptions{$matches->{'to_unit'}} : $matches->{'to_unit'} . 's'; 
     }
 
-    return "$factor $matches->{'from_unit'} is " . sprintf("%.3f", $result) . " $matches->{'to_unit'}";
+    $result = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result);
+
+    return "$factor $matches->{'from_unit'} is $result $matches->{'to_unit'}";
 };
 
 
