@@ -3,6 +3,8 @@ package DDG::Goodie::CalendarToday;
 
 use DDG::Goodie;
 use Time::Piece;
+use DateTime;
+use DateTime::TimeZone; 
 
 primary_example_queries "calendar";
 secondary_example_queries "calendar november", 
@@ -36,8 +38,9 @@ my $css = share("style.css")->slurp;
 
 handle remainder => sub {
   
-  # check current date
-  my $t = localtime;
+  # check current date in users timezone
+  my $t = DateTime->now; 
+  $t->set_time_zone($loc->time_zone);
   $currentDay = $t->mday;
   $currentMonth = $t->mon;
   $currentYear = $t->year;
