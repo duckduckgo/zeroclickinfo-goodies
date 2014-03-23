@@ -21,6 +21,7 @@ ddg_goodie_test(
         'Heisei 12 was a leap year' => test_zci('2000 was a leap year (Heisei 12 is equivalent to 2000 in the Gregorian Calendar)', html => '2000 was a leap year (Heisei 12 is equivalent to 2000 in the Gregorian Calendar)<br><a href="https://en.wikipedia.org/wiki/Heisei_period">More at Wikipedia</a>'),
         'it\'s heisei 25 now' => test_zci('it\'s 2013 now (Heisei 25 is equivalent to 2013 in the Gregorian Calendar)', html => 'it\'s 2013 now (Heisei 25 is equivalent to 2013 in the Gregorian Calendar)<br><a href="https://en.wikipedia.org/wiki/Heisei_period">More at Wikipedia</a>'),
         'January 1st Meiji 33' => test_zci('January 1st 1900 (Meiji 33 is equivalent to 1900 in the Gregorian Calendar)', html => 'January 1st 1900 (Meiji 33 is equivalent to 1900 in the Gregorian Calendar)<br><a href="https://en.wikipedia.org/wiki/Meiji_period">More at Wikipedia</a>'),
+        'heisei 24' => test_zci('Heisei 24 is equivalent to 2012 in the Gregorian Calendar', html => 'Heisei 24 is equivalent to 2012 in the Gregorian Calendar<br><a href="https://en.wikipedia.org/wiki/Heisei_period">More at Wikipedia</a>'),
 );
 
 done_testing;

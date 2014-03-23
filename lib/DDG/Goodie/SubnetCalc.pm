@@ -14,7 +14,8 @@ zci is_cached => 1;
 
 attribution github => ['https://github.com/mintsoft', 'mintsoft'];
 
-secondary_example_queries '46.51.197.88/255.255.254.0', '176.34.131.233/32';
+primary_example_queries '10.92.24.0/22';
+secondary_example_queries '46.51.197.88 255.255.254.0', '176.34.131.233/32';
 
 category 'computing_tools';
 topics 'sysadmin';

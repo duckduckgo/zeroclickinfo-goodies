@@ -17,6 +17,8 @@ ddg_goodie_test(
     'is foof a palindrome?' => test_zci('"foof" is a palindrome.'),
     'foof a palindrome?' => test_zci('"foof" is a palindrome.'),
     'is A dank, sad nap. Eels sleep and ask nada. a palindrome?' => test_zci('"A dank, sad nap. Eels sleep and ask nada." is a palindrome.'),
+    'is a dank, sad nap. eels sleep and ask nada. a palindrome?' => test_zci('"a dank, sad nap. eels sleep and ask nada." is a palindrome.'),
+    'is dad a palindrome?' => test_zci('"dad" is a palindrome.'),
 );
 
 done_testing;

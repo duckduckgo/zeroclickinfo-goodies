@@ -19,7 +19,7 @@ category 'calculations';
 topics 'math';
 
 handle remainder => sub {
-  return unless $_ =~ /^(\d+)\s*( to )?-?\s*(\d+)/i;
+  return unless $_ =~ /^(\d+)\s*(to|-)\s*(\d+)/i;
   if ($1 > $3) {
     return;
   } else {

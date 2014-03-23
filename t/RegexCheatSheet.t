@@ -66,6 +66,11 @@ ddg_goodie_test(
 	'regex [a-]' => undef,
 	'regex [4-8] fo sho!' => undef,
 	'regex foop [1-3]' => undef,
+    'regexp $' => test_zci(
+        '$ - End of string or line', 
+        html => '<code> $ </code> - End of string or line', 
+        heading => 'Regex Cheat Sheet'
+    ),
 );
 
 done_testing;
