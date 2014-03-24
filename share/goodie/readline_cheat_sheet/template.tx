@@ -27,6 +27,6 @@
   </div>
   : }
 
-  <i>Source: <a href="http://readline.kablamo.org/<: $type :>.html">http:/readline.kablamo.org/<: $type :>.html</a></i>
+  <i>More at <a href="http://readline.kablamo.org/<: $type :>.html">http:/readline.kablamo.org/<: $type :>.html</a></i>
 
 </div>
