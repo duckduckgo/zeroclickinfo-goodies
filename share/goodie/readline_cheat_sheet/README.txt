@@ -1,7 +1,7 @@
 SYNOPSIS
 
     fetch.sh 
-    parser.pl
+    parse.pl
 
 
 DESCRIPTION
