@@ -3,7 +3,7 @@ package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
 
-zci is_cached => 1;
+zci is_cached   => 1;
 zci answer_type => "calc";
 
 primary_example_queries '$3.43+$34.45';
@@ -13,10 +13,10 @@ name 'Calculator';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
 category 'calculations';
 topics 'math';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
-
+attribution
+  web     => ['https://www.duckduckgo.com',    'DuckDuckGo'],
+  github  => ['https://github.com/duckduckgo', 'duckduckgo'],
+  twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 triggers query_nowhitespace => qr<
         ^
@@ -46,12 +46,11 @@ handle query_nowhitespace => sub {
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
-    if($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
+    if ($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
         my $tmp_result = '';
 
         # Grab expression.
         my $tmp_expr = $query;
-
 
         #do the following substitutions in $tmp_expr:
         #^ -> **
@@ -98,59 +97,62 @@ handle query_nowhitespace => sub {
         # 2011.11.09 fix for 21 + 15 x 0 + 5
         $tmp_expr =~ s/(?<!\.)(?<![0-9])0([1-9])/$1/;
 
-	eval {
-	    # e.g. sin(100000)/100000 completely makes this go haywire.
-	    alarm(1);
-	    $tmp_result = eval($tmp_expr);
-	};
-	
-	# 0-9 check for http://yegg.duckduckgo.com/?q=%243.43%20%2434.45&format=json
-	if (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result =~ /^(?:\-|)[0-9\.]+$/) {
-	    # Precisian.
-	    my $precisian = 0;
-	    
-	    # too clever -- .5 ^ 2 not working right.
-	    if (0) {
-		while ($query =~ /\.(\d+)/g) {
-		    my $decimal = length($1);
-		    $precisian = $decimal if $decimal > $precisian;
-		}
-		
-		$tmp_result = sprintf( '%0.' . $precisian . 'f', $tmp_result ) if $precisian;
-	    }
-	    
-	    # Dollars.
-	    if ($query =~ /^\$/) {
-		$tmp_result = qq(\$$tmp_result);
-	    }
-	    
-	    # Query for display.
-	    my $tmp_q = $query;
-	    
-	    # Drop equals.
-	    $tmp_q =~ s/\=$//;
-	    $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
-	    
-	    # Copy
-	    $results_no_html = $results_html = $tmp_q;
-	    
-	    # Superscript (before spacing).
-	    $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
-	    $results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
-	    
-	    ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
-	    return if $results_no_html =~ /^\s/;
-	    
-	    # Add commas.
-	    $tmp_result = commify($tmp_result, $euro_style);
-	    
-	    # Now add it back.
-	    $results_no_html .= ' = ';
-	    $results_html .= ' = ';
-	    
-	    $results_html = qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
-	    return $results_no_html . $tmp_result, html => $results_html, heading => "Calculator";
-	}
+        eval {
+            # e.g. sin(100000)/100000 completely makes this go haywire.
+            alarm(1);
+            $tmp_result = eval($tmp_expr);
+        };
+
+        # 0-9 check for http://yegg.duckduckgo.com/?q=%243.43%20%2434.45&format=json
+        if (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result =~ /^(?:\-|)[0-9\.]+$/) {
+            # Precisian.
+            my $precisian = 0;
+
+            # too clever -- .5 ^ 2 not working right.
+            if (0) {
+                while ($query =~ /\.(\d+)/g) {
+                    my $decimal = length($1);
+                    $precisian = $decimal if $decimal > $precisian;
+                }
+
+                $tmp_result = sprintf('%0.' . $precisian . 'f', $tmp_result) if $precisian;
+            }
+
+            # Dollars.
+            if ($query =~ /^\$/) {
+                $tmp_result = qq(\$$tmp_result);
+            }
+
+            # Query for display.
+            my $tmp_q = $query;
+
+            # Drop equals.
+            $tmp_q =~ s/\=$//;
+            $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
+
+            # Copy
+            $results_no_html = $results_html = $tmp_q;
+
+            # Superscript (before spacing).
+            $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
+            $results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
+
+            ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
+            return if $results_no_html =~ /^\s/;
+
+            # Add commas.
+            $tmp_result = commify($tmp_result, $euro_style);
+
+            # Now add it back.
+            $results_no_html .= ' = ';
+            $results_html    .= ' = ';
+
+            $results_html =
+              qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
+            return $results_no_html . $tmp_result,
+              html    => $results_html,
+              heading => "Calculator";
+        }
     }
 
     return;
@@ -159,17 +161,17 @@ handle query_nowhitespace => sub {
 #extra math functions
 sub tan {
     my $x = $_[0];
-    return sin($x)/cos($x);
+    return sin($x) / cos($x);
 }
 
 sub cotan {
     my $x = $_[0];
-    return cos($x)/sin($x);
+    return cos($x) / sin($x);
 }
 
 sub log10 {
     my $x = $_[0];
-    return log($x)/log(10);
+    return log($x) / log(10);
 }
 
 #function to add appropriate thousands and decimal seperators
@@ -198,6 +200,5 @@ sub spacing {
 
     return $text;
 }
-    
 
 1;
