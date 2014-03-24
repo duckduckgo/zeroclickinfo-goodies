@@ -16,6 +16,13 @@ primary_example_queries 'readline help', 'readline cheat sheet', 'readline comma
 secondary_example_queries 'bash quick reference', 'bash commands', 'bash guide';
 
 triggers startend => (
+    'read line cheat sheet', 
+    'read line cheatsheet', 
+    'read line commands',
+    'read line guide',
+    'read line help',
+    'read line quick reference',
+    'read line reference',
     'readline cheat sheet', 
     'readline cheatsheet', 
     'readline commands',
