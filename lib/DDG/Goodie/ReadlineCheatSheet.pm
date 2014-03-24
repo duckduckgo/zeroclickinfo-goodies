@@ -1,5 +1,5 @@
 package DDG::Goodie::ReadlineCheatSheet;
-# ABSTRACT: Provide a cheatsheet for common vim syntax
+# ABSTRACT: Provide a cheatsheet for readline shortcuts
 
 use DDG::Goodie;
 
