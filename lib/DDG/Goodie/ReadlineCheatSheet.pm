@@ -48,7 +48,7 @@ handle remainder => sub {
     my $edit_mode = $query =~ /vim?/i ? 'Vi' : 'Emacs';
 
     return 
-        heading => "Readline Cheat Sheet - $edit_mode Editing Mode",
+        heading => "Readline Cheat Sheet ($edit_mode Mode)",
         html    => html($edit_mode),
         answer  => text($edit_mode);
 };
