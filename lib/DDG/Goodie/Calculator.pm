@@ -3,6 +3,8 @@ package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
 
+use List::Util qw( all );
+
 zci is_cached   => 1;
 zci answer_type => "calc";
 
@@ -38,6 +40,29 @@ triggers query_nowhitespace => qr<
 
         $
         >xi;
+
+# This is probably YAGNI territory, but since I have to reference it in two places
+# and there are a multitude of other notation systems (although some break the
+# 'thousands' assumption) I am going to pretend that I do need it.
+sub known_styles {
+    return (
+        perl => {
+            decimal       => qr/\./,
+            sub_decimal   => '.',
+            thousands     => qr/,/,
+            sub_thousands => ',',
+        },
+        euro => {
+            decimal       => qr/,/,
+            sub_decimal   => ',',
+            thousands     => qr/\./,
+            sub_thousands => '.',
+        },
+    );
+}
+my %known_styles   = known_styles();        # This bit of indirection is to make testing easier for now.
+my $default_style  = $known_styles{perl};
+my $safe_thousands = '_';
 
 handle query_nowhitespace => sub {
     my $results_html;
@@ -80,15 +105,13 @@ handle query_nowhitespace => sub {
         $tmp_expr =~ s/ dozen                        /12                                            /xig;
         $tmp_expr =~ s/ gross                        /144                                           /xig;
 
-        my $euro_style;
-        if ($tmp_expr =~ /\.\d+,\d+/) {
-            $euro_style = 1;    # Looks like euro-style numbers.
-                                # There may be other cases, but they will be hard to distinguish without more context.
-            $tmp_expr =~ s/[\.\$]//g;    # Drop periods as thousand seperators.
-            $tmp_expr =~ s/,/\./g;       # Recognize commas as decimal seperators.
-        } else {
-            $tmp_expr =~ s/[\,\$]//g;    # Drop commas as thousands seperators.
-        }
+        $tmp_expr =~ s/\$//g;    # Remove $s.
+                                 # To be converted to display_style upon refactoring.
+        my $style = $known_styles{determine_number_style($tmp_expr) // 'perl'};
+        my ($decimal, $thousands) = @{$style}{qw(decimal thousands)};    #Unpack for easier regex-building
+        $tmp_expr =~ s/$thousands/$safe_thousands/g;                     # Convert thousands seperators to something safe for perl to ignore;
+        my $perl_dec = $known_styles{perl}->{sub_decimal};
+        $tmp_expr =~ s/$decimal/$perl_dec/g;                             # Make sure decimal mark is something perl knows how to use.
 
         # Drop =.
         $tmp_expr =~ s/=$//;
@@ -141,7 +164,7 @@ handle query_nowhitespace => sub {
             return if $results_no_html =~ /^\s/;
 
             # Add commas.
-            $tmp_result = commify($tmp_result, $euro_style);
+            $tmp_result = commify($tmp_result, $style);
 
             # Now add it back.
             $results_no_html .= ' = ';
@@ -176,15 +199,14 @@ sub log10 {
 
 #function to add appropriate thousands and decimal seperators
 sub commify {
-    my ($text, $euro_style) = @_;
+    my ($text, $style) = @_;
 
+    my ($decimal, $sub_decimal, $sub_thousands) =
+      @{$style}{qw(decimal sub_decimal sub_thousands)};    #Unpack for easier regex-building
+    my $perl_dec = $known_styles{perl}->{decimal};
     $text = reverse $text;
-    $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
-    if ($euro_style) {
-        $text =~ s/,/_/g;     # Move thousands commas out of the way.
-        $text =~ s/\./,/g;    # Use comma for decimal seperator.
-        $text =~ s/_/./g;     # Use period for thousands seperator.
-    }
+    $text =~ s/$perl_dec/$sub_decimal/g;                   # Give them the decimal they expect
+    $text =~ s/(\d\d\d)(?=\d)(?!\d*$decimal)/$1$sub_thousands/g;
 
     return scalar reverse $text;
 }
@@ -199,6 +221,68 @@ sub spacing {
     $text =~ s/\bc\b/speed of light/ig;
 
     return $text;
+}
+
+# This looks at a single number and determines the style in which it was entered.
+# If it is ambiguous, then it returns undef.
+sub determine_number_style {
+    my $number = shift;
+
+    my $disambiguated;
+    my @styles = keys %known_styles;    # We need to do this here, because we are going shift off.
+
+    while (not $disambiguated and my $test_style = shift @styles) {
+        my ($decimal, $thousands) = @{$known_styles{$test_style}}{qw(decimal thousands)};    #Unpack for easier regex-building
+        if ((
+                ($number =~ /$thousands\d+$decimal/)
+                # They are both present in the right order so we have an easy match.
+                || (   $number !~ /$thousands/
+                    && $number =~ /$decimal/
+                    && $number !~ /$decimal\d{3}$/)
+                # No thousands sep, a decimal sep, but not with exactly 3 numbers after.
+                || ($number !~ /$decimal/ && $number =~ /$thousands\d+?$thousands/)
+                # No decimal seperator, multiple thousands seperators.
+                || ($number =~ /^$decimal/)
+                # Starts with a decimal, no leading 0
+            )
+            && $number !~ /\d+?$decimal\d+?($decimal|$thousands)/
+            # Sanity-check: cannot have more than one decimal mark or have thousands after the decimal
+          )
+        {
+            $disambiguated = $test_style;
+        }
+    }
+
+    return $disambiguated;
+}
+
+# Takes an array of numbers and returns which format to use for display
+# If there are conflicting answers among the array, will return undef.
+# If they are all ambiguous, will return the default style.
+
+sub display_style {
+    my @numbers = @_;
+
+    my $style;
+    # undef is ambiguous, we'll worry about that below
+    my @used_styles = grep { $_ } map { determine_number_style($_) } @numbers;
+    my $unambig_count = scalar @used_styles;
+
+    if ($unambig_count == 0) {
+        # everything was ambiguous, use the default style
+        $style = $default_style;
+    } elsif ($unambig_count == 1) {
+        # Only one is unambiguous, so use that format.
+        $style = $known_styles{$used_styles[0]};
+    } else {
+        my $first_style = shift @used_styles;
+        if (all { $_ eq $first_style } @used_styles) {
+            # They all match, so we can pick it.
+            $style = $known_styles{$first_style};
+        }
+    }
+
+    return $style;
 }
 
 1;

@@ -4,9 +4,51 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use DDG::Goodie::Calculator;    # For function subtests.
 
 zci answer_type => 'calc';
 zci is_cached   => 1;
+
+subtest 'decimal mark checker' => sub {
+    my $dns_name   = 'DDG::Goodie::Calculator::determine_number_style';
+    my $dns        = \&$dns_name;
+    my %test_cases = (
+        '4,321.00'  => 'perl',
+        '4.321,00'  => 'euro',
+        '4321,00'   => 'euro',
+        '4,321,000' => 'perl',
+        '4.321.000' => 'euro',
+        '4,321'     => undef,
+        '4.321'     => undef,
+        '4.3210'    => 'perl',
+        '4,3210'    => 'euro',
+        '4.32'      => 'perl',
+        '.321'      => 'perl',
+        ',321'      => 'euro',
+        '0.1'       => 'perl',
+        '0,1'       => 'euro',
+    );
+    foreach my $to_test (sort keys %test_cases) {
+        is($dns->($to_test), $test_cases{$to_test}, $to_test . ' looks like ' . ($test_cases{$to_test} // 'ambiguous') . ' style');
+    }
+};
+
+subtest 'display format selection' => sub {
+    my $dsk_name     = 'DDG::Goodie::Calculator::display_style';
+    my $dsk          = \&$dsk_name;
+    my %known_styles = DDG::Goodie::Calculator::known_styles();
+
+    is_deeply($dsk->('4,431', '4.321'), $known_styles{perl}, '4,321 and 4.321 is wholly ambig; use the default style');
+    is_deeply($dsk->('4,431', '4.32'),  $known_styles{perl}, '4,321 and 4.32 is perl');
+    is_deeply($dsk->('4,431', '4,32'),  $known_styles{euro}, '4,321 and 4,32 is euro');
+    is_deeply($dsk->('4,431', '4,32',    '4.32'), undef,               '4,321 and 4,32 and 4.32 is confusingly ambig; no style');
+    is_deeply($dsk->('4,431', '4,32',    '5,42'), $known_styles{euro}, '4,321 and 4,32 and 5,42 is nicely euro-style');
+    is_deeply($dsk->('4,431', '4.32',    '5.42'), $known_styles{perl}, '4,321 and 4.32 and 5.42 is nicely perl-style');
+    is_deeply($dsk->('4,431', '4.32.10', '5.42'), undef,               '4,321 and 4.32.10 is hard to figure; no style');
+    is_deeply($dsk->('4,431', '4,32,100', '5.42'),
+        $known_styles{perl}, '4,321 and 4,32,100 and 5.42 looks goofy, but close enough to call it perl-style');
+    is_deeply($dsk->('4,431', '4,32,100', '5,42'), undef, '4,321 and 4,32,100 and 5,42 is too crazy to work out; no style');
+};
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
