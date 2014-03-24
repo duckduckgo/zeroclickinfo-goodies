@@ -47,6 +47,7 @@ ddg_goodie_test(
     'readline help vim'                => $vi_answer,
     'read line reference vi'           => $vi_answer,
     'readline help emacs'              => $emacs_answer,
+    'word bash help'                   => undef,
 );
 
 done_testing;
