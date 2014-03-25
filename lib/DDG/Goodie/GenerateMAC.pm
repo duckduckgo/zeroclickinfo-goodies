@@ -4,9 +4,11 @@ package DDG::Goodie::GenerateMAC;
 use DDG::Goodie;
 
 triggers startend => "generate mac addr", 
-					 "generate mac address", 
-					 "random mac addr",
-					 "random mac address",;
+                     "generate mac address", 
+                     "random mac addr",
+                     "random mac address",
+                     "mac address generator",
+                     "mac address random";
 
 zci answer_type => "MAC Address";
 zci is_cached => 0;
