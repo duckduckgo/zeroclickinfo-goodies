@@ -2,10 +2,9 @@ package DDG::Goodie::SumOfNaturalNumbers;
 # ABSTRACT: Returns the sum of the numbers between the first and second provided integers
 
 use DDG::Goodie;
-use List::Util 'sum';
 
-triggers start => "sum", "add", "sum from";
-triggers end => "sum";
+triggers start => "add", "sum from";
+triggers startend => "sum";
 
 zci is_cached => 1;
 zci answer_type => "sum";
