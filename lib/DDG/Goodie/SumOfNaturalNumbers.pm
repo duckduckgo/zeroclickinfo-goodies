@@ -20,7 +20,7 @@ attribution github => ['https://github.com/JulianGindi', 'JulianGindi'],
             github => ['https://github.com/navneet35371', 'navneet35371'];
 
 handle remainder => sub {
-  return unless $_ =~ /^(\d+)\s*(to|-)\s*(\d+)$/i;
+  return unless $_ =~ /^(?:from )?(\d+)\s*(to|-)\s*(\d+)$/i;
   if ($1 > $3) {
     return;
   } else {

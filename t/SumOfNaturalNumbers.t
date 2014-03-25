@@ -18,6 +18,7 @@ ddg_goodie_test(
     'sum 1-10' => test_zci('Sum of natural numbers from 1 to 10: 55'),
     'sum from 1 to 10' => test_zci('Sum of natural numbers from 1 to 10: 55'),
     '1-10 sum' => test_zci('Sum of natural numbers from 1 to 10: 55'),
+    'add from 1 to 100' => test_zci('Sum of natural numbers from 1 to 100: 5050'),
 
     # Invalid Input
     'sum 1 --- 10' => undef,
