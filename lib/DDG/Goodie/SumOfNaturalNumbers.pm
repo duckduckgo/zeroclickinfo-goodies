@@ -16,13 +16,15 @@ name 'SumOfNaturalNumbers';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SumOfNaturalNumbers.pm';
 category 'calculations';
 topics 'math';
+attribution github => ['https://github.com/JulianGindi', 'JulianGindi'],
+            github => ['https://github.com/navneet35371', 'navneet35371'];
 
 handle remainder => sub {
-  return unless $_ =~ /^(\d+)\s*(to|-)\s*(\d+)/i;
+  return unless $_ =~ /^(\d+)\s*(to|-)\s*(\d+)$/i;
   if ($1 > $3) {
     return;
   } else {
-    my $sum = sum($1..$3);
+    my $sum = ((($3 * ($3 + 1)) / 2)-(($1 * ($1 - 1)) / 2));
     return "Sum of natural numbers from $1 to $3: $sum";
   }
 };
