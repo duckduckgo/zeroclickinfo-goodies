@@ -21,7 +21,7 @@ handle remainder => sub {
 	return unless /^\d+$/;
 	my @factors = factor($_);
 
-	my $result = "Prime factors of $_: @factors.";
+	my $result = "Prime factors of $_ is @factors.";
 	
 	return $result, 'html' => "$result";
 };
