@@ -21,10 +21,9 @@ handle remainder => sub {
 	return unless /^\d+$/;
 	my @factors = factor($_);
 
-	my $link = qq(More at <a href="https://en.wikipedia.org/wiki/Prime_factor">Wikipedia</a>.);
 	my $result = "Prime factors of $_: @factors.";
 	
-	return $result, 'html' => "$result $link";
+	return $result, 'html' => "$result";
 };
 
 1;
