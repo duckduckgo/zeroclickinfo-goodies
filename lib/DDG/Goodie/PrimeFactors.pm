@@ -7,7 +7,7 @@ use Math::Prime::Util 'factor';
 zci answer_type => "prime_factors";
 zci is_cached => 1;
 
-triggers startend => 'prime factors', 'prime factors of';
+triggers startend => 'prime factors', 'prime factors of', 'the prime factors of';
 
 primary_example_queries 'prime factors of 30';
 secondary_example_queries '72 prime factors';
@@ -21,7 +21,12 @@ handle remainder => sub {
 	return unless /^\d+$/;
 	my @factors = factor($_);
 
-	my $result = "Prime factors of $_ is @factors.";
+	my $result;
+	if(@factors == 1) {
+	    $result = "The number $_ is a prime.";
+	} else {
+	    $result = "The prime factors of $_ are " . join(', ', @factors) . '.';
+	}
 	
 	return $result, 'html' => "$result";
 };
