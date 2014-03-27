@@ -15,7 +15,7 @@ category 'ids';
 topics 'special_interest';
 attribution
     github  => [ 'https://github.com/TopHattedCoder', 'Tom Bebbington' ],
-    twitter => [ 'http://twitter.com/TopHattedCoder', '@Tom Bebbington' ];
+    twitter => [ 'http://twitter.com/TopHattedCoder', '@TopHattedCoder' ];
 
 # Regex for royal mail.
 my $rm_qr = qr/royalmail|parcelforce/io;
