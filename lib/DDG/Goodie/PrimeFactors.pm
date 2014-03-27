@@ -32,7 +32,7 @@ handle remainder => sub {
 	
 	# If it has only one factor then it is a prime. Except if it's 0 or 1.
 	if(@factors == 1 && $_ > 1) {
-	    $result = "The number $_ is a prime.";
+	    $result = "$_ is a prime number.";
 	} else {
 	    $result = "The prime factors of $_ are " . join(', ', @factors) . '.';
 	}
