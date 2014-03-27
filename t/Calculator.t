@@ -41,13 +41,15 @@ subtest 'display format selection' => sub {
     is_deeply($dsk->('4,431', '4.321'), $known_styles{perl}, '4,321 and 4.321 is wholly ambig; use the default style');
     is_deeply($dsk->('4,431', '4.32'),  $known_styles{perl}, '4,321 and 4.32 is perl');
     is_deeply($dsk->('4,431', '4,32'),  $known_styles{euro}, '4,321 and 4,32 is euro');
-    is_deeply($dsk->('4,431', '4,32',    '4.32'), undef,               '4,321 and 4,32 and 4.32 is confusingly ambig; no style');
-    is_deeply($dsk->('4,431', '4,32',    '5,42'), $known_styles{euro}, '4,321 and 4,32 and 5,42 is nicely euro-style');
-    is_deeply($dsk->('4,431', '4.32',    '5.42'), $known_styles{perl}, '4,321 and 4.32 and 5.42 is nicely perl-style');
-    is_deeply($dsk->('4,431', '4.32.10', '5.42'), undef,               '4,321 and 4.32.10 is hard to figure; no style');
-    is_deeply($dsk->('4,431', '4,32,100', '5.42'),
-        $known_styles{perl}, '4,321 and 4,32,100 and 5.42 looks goofy, but close enough to call it perl-style');
-    is_deeply($dsk->('4,431', '4,32,100', '5,42'), undef, '4,321 and 4,32,100 and 5,42 is too crazy to work out; no style');
+    #TODO: when display_style is used in the code, make adding the two numbers below a test case for "cannot answer"
+    is_deeply($dsk->('5234534.34.54', '1',), undef, '5234534.34.54 and 1 has a mal-formed number, so we cannot proceed');
+    is_deeply($dsk->('4534,345.0', '1',), $known_styles{perl}, '4534,345.0 should have another comma, not enforced; call it perl.');
+    is_deeply($dsk->('4,431', '4,32',     '4.32'), undef,               '4,321 and 4,32 and 4.32 is confusingly ambig; no style');
+    is_deeply($dsk->('4,431', '4,32',     '5,42'), $known_styles{euro}, '4,321 and 4,32 and 5,42 is nicely euro-style');
+    is_deeply($dsk->('4,431', '4.32',     '5.42'), $known_styles{perl}, '4,321 and 4.32 and 5.42 is nicely perl-style');
+    is_deeply($dsk->('4,431', '4.32.10',  '5.42'), undef,               '4,321 and 4.32.10 is hard to figure; no style');
+    is_deeply($dsk->('4,431', '4,32,100', '5.42'), undef,               '4,321 and 4,32,100 and 5.42 has a mal-formed number, so no go.');
+    is_deeply($dsk->('4,431', '4,32,100', '5,42'), undef,               '4,321 and 4,32,100 and 5,42 is too crazy to work out; no style');
 };
 
 ddg_goodie_test(

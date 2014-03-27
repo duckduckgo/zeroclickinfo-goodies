@@ -108,9 +108,8 @@ handle query_nowhitespace => sub {
         $tmp_expr =~ s/\$//g;    # Remove $s.
                                  # To be converted to display_style upon refactoring.
         my $style = $known_styles{determine_number_style($tmp_expr) // 'perl'};
-        my ($decimal, $thousands) = @{$style}{qw(decimal thousands)};    #Unpack for easier regex-building
-        $tmp_expr =~ s/$thousands/$safe_thousands/g;                     # Convert thousands seperators to something safe for perl to ignore;
-        my $perl_dec = $known_styles{perl}->{sub_decimal};
+        my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $known_styles{perl}->{sub_decimal});
+        $tmp_expr =~ s/$thousands/$safe_thousands/g;                     # Convert thousands separators to something safe for perl to ignore;
         $tmp_expr =~ s/$decimal/$perl_dec/g;                             # Make sure decimal mark is something perl knows how to use.
 
         # Drop =.
@@ -197,13 +196,12 @@ sub log10 {
     return log($x) / log(10);
 }
 
-#function to add appropriate thousands and decimal seperators
+#function to add appropriate thousands and decimal separators
 sub commify {
     my ($text, $style) = @_;
 
-    my ($decimal, $sub_decimal, $sub_thousands) =
-      @{$style}{qw(decimal sub_decimal sub_thousands)};    #Unpack for easier regex-building
-    my $perl_dec = $known_styles{perl}->{decimal};
+    my ($decimal, $sub_decimal, $sub_thousands, $perl_dec) =
+      (@{$style}{qw(decimal sub_decimal sub_thousands)},  $known_styles{perl}->{decimal});    #Unpack for easier regex-building
     $text = reverse $text;
     $text =~ s/$perl_dec/$sub_decimal/g;                   # Give them the decimal they expect
     $text =~ s/(\d\d\d)(?=\d)(?!\d*$decimal)/$1$sub_thousands/g;
@@ -234,14 +232,15 @@ sub determine_number_style {
     while (not $disambiguated and my $test_style = shift @styles) {
         my ($decimal, $thousands) = @{$known_styles{$test_style}}{qw(decimal thousands)};    #Unpack for easier regex-building
         if ((
-                ($number =~ /$thousands\d+$decimal/)
-                # They are both present in the right order so we have an easy match.
+                ( $number =~ /^\d{1,3}($thousands\d{3})+$decimal/)
+                # All thousands appear to be separating thousands and
+                # both present in the right order so we have an easy match.
                 || (   $number !~ /$thousands/
                     && $number =~ /$decimal/
                     && $number !~ /$decimal\d{3}$/)
                 # No thousands sep, a decimal sep, but not with exactly 3 numbers after.
                 || ($number !~ /$decimal/ && $number =~ /$thousands\d+?$thousands/)
-                # No decimal seperator, multiple thousands seperators.
+                # No decimal separator, multiple thousands separators.
                 || ($number =~ /^$decimal/)
                 # Starts with a decimal, no leading 0
             )
@@ -282,7 +281,34 @@ sub display_style {
         }
     }
 
+    if ($style) {
+        # We've decided that everything unambiguous fits the style.
+        # Now we need to make sure that all of the numbers are well-formed
+        # under this style.
+        my $fits_style = _well_formed_for_style_func($style);
+        $style = undef unless (all { $fits_style->($_) } @numbers);
+        # Considering the above line and all the 'not'ing in the func I think
+        # I may have missed out on one of DeMorgan's Laws somewhere
+    }
+
     return $style;
+}
+
+sub _well_formed_for_style_func {
+    my $style = shift;
+    my ($decimal, $thousands) = ($style->{decimal}, $style->{thousands});
+    return sub {
+        my $number = shift;
+        return (
+            $number =~ /^[\d$thousands$decimal]+$/
+              # Only contains things we understand.
+              && ($number !~ /$thousands/ || ($number !~ /$thousands\d{1,2}\b/ && $number !~ /$thousands\d{4,}/))
+              # You can leave out thousands breaks, but the ones you put in must be in the right place.
+              # Note that this does not confirm that they put all the 'required' ones in.
+              && ($number !~ /$decimal/ || $number !~ /$decimal(?:.*)?(?:$decimal|$thousands)/)
+              # You can not have a decimal but if you do it cannot be followed by another decimal or thousands
+        ) ? 1 : 0;
+    };
 }
 
 1;
