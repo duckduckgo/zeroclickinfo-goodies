@@ -6,6 +6,7 @@ zci is_cached   => 1;
 zci answer_type => "royal_mail";
 
 primary_example_queries 'royal mail RU401513974GB';
+secondary_example_queries 'track parcelforce PBTM8237263001';
 description 'Track a Royal Mail / Parcelforce parcel';
 icon_url "/i/www.royalmail.com.ico";
 name 'Royal Mail';
