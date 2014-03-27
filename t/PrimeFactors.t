@@ -18,6 +18,9 @@ ddg_goodie_test(
 				       html => 'The prime factors of 111 are 3, 37.'),
     'prime factors of 30' => test_zci('The prime factors of 30 are 2, 3, 5.', 
 				      html => 'The prime factors of 30 are 2, 3, 5.'),
+    'prime factorization of 45' => test_zci('The prime factors of 45 are 3, 3, 5.',
+					    html => 'The prime factors of 45 are 3, 3, 5.'),
+    'optimus prime 45' => undef,
 );
 
 done_testing;
