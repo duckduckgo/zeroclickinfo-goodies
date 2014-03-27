@@ -57,6 +57,12 @@ our %if_description = (
 	'-ef' => "True if ARG1 and ARG2 refer to the same device and inode numbers"
 );
 
+my $css = share("style.css")->slurp();
+sub append_css {
+    my $html = shift;
+    return "<style type='text/css'>$css</style>\n" . $html;
+}
+
 handle remainder => sub {
 	my ($not, $left_arg, $op, $right_arg) = ($_ =~ qr#^[\[]{1,2} ([!] )?(?:(.+?) )?(-[a-zA-Z]{1,2}|[<>]|[!=]{1,2}) (.+) [\]]{1,2}$#);	
 
@@ -73,13 +79,13 @@ handle remainder => sub {
 	{
 		my $html_left_arg = encode_entities($left_arg);
 		$text_output =~ s/ARG1/$left_arg/g;
-		$html_output =~ s/ARG1/<code>$html_left_arg<\/code>/g;	
+		$html_output =~ s/ARG1/<pre>$html_left_arg<\/pre>/g;	
 	}
 	
 	$text_output =~ s/ARG2/$right_arg/g;
-	$html_output =~ s/ARG2/<code>$html_right_arg<\/code>/g;
+	$html_output =~ s/ARG2/<pre>$html_right_arg<\/pre>/g;
 	
-	return "$_ - $text_output", html => "<code>" . encode_entities($_) . "</code> - $html_output";
+	return "$text_output", html => append_css($html_output), heading => "$_ (Bash)";
 };
 
 1;
