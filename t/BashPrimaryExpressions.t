@@ -18,7 +18,7 @@ ddg_goodie_test(
 	'bash [[ "abc" < "cba" ]]' => test_zci(
 	    'True if "abc" string-sorts before "cba" in the current locale',
 	    html => qr/.+/,
-	    heading => '[[ "abc" < "cba" ]] (Bash)',
+	    heading => '[[ &quot;abc&quot; &lt; &quot;cba&quot; ]] (Bash)',
 	),
 	'bash [ 2 -gt 1 ]' => test_zci(
 	    'True if 2 is numerically greater than 1',
@@ -43,7 +43,7 @@ ddg_goodie_test(
     'bash if [[ "abc" -lt "cba" ]]' => test_zci(
         'True if "abc" is numerically less than "cba"', 
         html => qr/.+/,
-	heading => '[[ "abc" -lt "cba" ]] (Bash)',
+	heading => '[[ &quot;abc&quot; -lt &quot;cba&quot; ]] (Bash)',
     ),
 );
 

@@ -85,7 +85,7 @@ handle remainder => sub {
 	$text_output =~ s/ARG2/$right_arg/g;
 	$html_output =~ s/ARG2/<pre>$html_right_arg<\/pre>/g;
 	
-	return "$text_output", html => append_css($html_output), heading => "$_ (Bash)";
+	return "$text_output", html => append_css($html_output), heading => encode_entities($_) . " (Bash)";
 };
 
 1;
