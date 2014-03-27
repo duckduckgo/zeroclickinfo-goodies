@@ -64,7 +64,7 @@ sub append_css {
 }
 
 handle remainder => sub {
-	my ($not, $left_arg, $op, $right_arg) = ($_ =~ qr#^[\[]{1,2} ([!] )?(?:(.+?) )?(-[a-zA-Z]{1,2}|[<>]|[!=]{1,2}) (.+) [\]]{1,2}$#);	
+	my ($not, $left_arg, $op, $right_arg) = ($_ =~ qr#^(?:if )?[\[]{1,2} ([!] )?(?:(.+?) )?(-[a-zA-Z]{1,2}|[<>]|[!=]{1,2}) (.+) [\]]{1,2}$#);	
 
 	return unless ($op && $right_arg);
 	return unless $if_description{$op};
