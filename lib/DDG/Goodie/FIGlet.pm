@@ -38,11 +38,17 @@ sub render_figlet {
     }
 }
 
+# Apply CSS.
+sub apply_css {
+    my ($html) = @_;
+    my $css = share("style.css")->slurp;
+    return "<style type='text/css'>$css</style>\n" . $html;
+}
+
 handle query => sub {
     my $font;
     my $text;
     my $figlet;
-
 
     # Check for a font indication in the query.
     $text = $1;
@@ -59,7 +65,7 @@ handle query => sub {
     # Render the FIGlet
     $figlet = render_figlet($font, $text);
 
-    return $figlet, html => "<pre>$figlet</pre><span>&quot;$text&quot; rendered in FIGlet font &quot;$font&quot;.</span>" if $figlet;
+    return $figlet, html => apply_css("<div id='figlet-wrapper'><pre>$figlet</pre></div><span>&quot;$text&quot; rendered in FIGlet font &quot;$font&quot;.</span>") if $figlet;
     return;
 };
 

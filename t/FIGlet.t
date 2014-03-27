@@ -28,7 +28,23 @@ ddg_goodie_test(
  \____|\___/ 
              
 ',
-                html => '<pre> ____             _    ____             _    
+                html => '<style type=\'text/css\'>#figlet-wrapper {
+    overflow: auto;
+}
+
+@media screen and (max-width:768px) {
+    #figlet-wrapper {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #figlet-wrapper {
+        font-size: 5px;
+    }
+}
+</style>
+<div id=\'figlet-wrapper\'><pre> ____             _    ____             _    
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ /
 | |_| | |_| | (__|   <| |_| | |_| | (__|   < 
@@ -40,7 +56,7 @@ ddg_goodie_test(
 | |_| | (_) |
  \____|\___/ 
              
-</pre><span>&quot;DuckDuckGo&quot; rendered in FIGlet font &quot;standard&quot;.</span>',
+</pre></div><span>&quot;DuckDuckGo&quot; rendered in FIGlet font &quot;standard&quot;.</span>',
             ),
 
         'bigtext mini DDG' =>
@@ -50,11 +66,27 @@ ddg_goodie_test(
 |_/ |_/ \_| 
             
 ',
-                html => '<pre> _   _   __ 
+                html => '<style type=\'text/css\'>#figlet-wrapper {
+    overflow: auto;
+}
+
+@media screen and (max-width:768px) {
+    #figlet-wrapper {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #figlet-wrapper {
+        font-size: 5px;
+    }
+}
+</style>
+<div id=\'figlet-wrapper\'><pre> _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
-</pre><span>&quot;DDG&quot; rendered in FIGlet font &quot;mini&quot;.</span>',
+</pre></div><span>&quot;DDG&quot; rendered in FIGlet font &quot;mini&quot;.</span>',
             ),
         
         'figlet-mini DDG' =>
@@ -64,11 +96,27 @@ ddg_goodie_test(
 |_/ |_/ \_| 
             
 ',
-                html => '<pre> _   _   __ 
+                html => '<style type=\'text/css\'>#figlet-wrapper {
+    overflow: auto;
+}
+
+@media screen and (max-width:768px) {
+    #figlet-wrapper {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #figlet-wrapper {
+        font-size: 5px;
+    }
+}
+</style>
+<div id=\'figlet-wrapper\'><pre> _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
-</pre><span>&quot;DDG&quot; rendered in FIGlet font &quot;mini&quot;.</span>',
+</pre></div><span>&quot;DDG&quot; rendered in FIGlet font &quot;mini&quot;.</span>',
             ),
 
         'figlet-stop' =>
@@ -80,13 +128,29 @@ ddg_goodie_test(
 |___/\__\___/| .__/ 
              |_|    
 ',
-                html => '<pre>     _              
+                html => '<style type=\'text/css\'>#figlet-wrapper {
+    overflow: auto;
+}
+
+@media screen and (max-width:768px) {
+    #figlet-wrapper {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #figlet-wrapper {
+        font-size: 5px;
+    }
+}
+</style>
+<div id=\'figlet-wrapper\'><pre>     _              
  ___| |_ ___  _ __  
 / __| __/ _ \| \'_ \ 
 \__ | || (_) | |_) |
 |___/\__\___/| .__/ 
              |_|    
-</pre><span>&quot;stop&quot; rendered in FIGlet font &quot;standard&quot;.</span>',
+</pre></div><span>&quot;stop&quot; rendered in FIGlet font &quot;standard&quot;.</span>',
             ),
 );
 

@@ -1,0 +1,15 @@
+#figlet-wrapper {
+    overflow: auto;
+}
+
+@media screen and (max-width:768px) {
+    #figlet-wrapper {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #figlet-wrapper {
+        font-size: 5px;
+    }
+}
