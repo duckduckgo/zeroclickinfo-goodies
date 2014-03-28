@@ -2,6 +2,10 @@
     overflow: auto;
 }
 
+#figlet-wrapper pre {
+    background-color: inherit;
+}
+
 @media screen and (max-width:768px) {
     #figlet-wrapper {
         font-size: 10px;

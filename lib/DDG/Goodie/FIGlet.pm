@@ -4,7 +4,7 @@ package DDG::Goodie::FIGlet;
 use DDG::Goodie;
 use Text::FIGlet;
 
-triggers query => qr/^(?:figlet|bigtext)(?:\-|\s+)(.*)/;
+triggers startend => "figlet", "bigtext";
 primary_example_queries 'figlet DuckDuckGo';
 secondary_example_queries 'figlet computer DuckDuckGo';
 
@@ -49,10 +49,15 @@ handle query => sub {
     my $font;
     my $text;
     my $figlet;
+	my $html;
 
-    # Check for a font indication in the query.
-    $text = $1;
-    $1 =~ m/^\s*(\w+)/;
+	# Parse query.
+	$_ =~ m/^(?:figlet|bigtext)(?:\-|\s+)(.*)|(.*)\s+(?:figlet|bigtext)$/;
+	$text = $1 if $1;
+	$text = $2 if $2;
+
+    # Checks if the first word is a font.
+    $text =~ m/^\s*(\w+)/;
     $font = lc $1 if grep /\b$1\b/i, @fonts;
 
     # Strip the font from the text to render if we're using a font.
@@ -64,8 +69,9 @@ handle query => sub {
     
     # Render the FIGlet
     $figlet = render_figlet($font, $text);
+	$html = "<div id='zero_click_header'>$text (FIGlet)</div><div id='figlet-wrapper'><pre>$figlet</pre></div>";
 
-    return $figlet, html => apply_css("<div id='figlet-wrapper'><pre>$figlet</pre></div><span>&quot;$text&quot; rendered in FIGlet font &quot;$font&quot;.</span>") if $figlet;
+    return $figlet, html => apply_css($html) if $figlet;
     return;
 };
 
