@@ -9,47 +9,22 @@ use DDG::Goodie::Calculator;    # For function subtests.
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
-subtest 'decimal mark checker' => sub {
-    my $dns_name   = 'DDG::Goodie::Calculator::determine_number_style';
-    my $dns        = \&$dns_name;
-    my %test_cases = (
-        '4,321.00'  => 'perl',
-        '4.321,00'  => 'euro',
-        '4321,00'   => 'euro',
-        '4,321,000' => 'perl',
-        '4.321.000' => 'euro',
-        '4,321'     => undef,
-        '4.321'     => undef,
-        '4.3210'    => 'perl',
-        '4,3210'    => 'euro',
-        '4.32'      => 'perl',
-        '.321'      => 'perl',
-        ',321'      => 'euro',
-        '0.1'       => 'perl',
-        '0,1'       => 'euro',
-    );
-    foreach my $to_test (sort keys %test_cases) {
-        is($dns->($to_test), $test_cases{$to_test}, $to_test . ' looks like ' . ($test_cases{$to_test} // 'ambiguous') . ' style');
-    }
-};
-
 subtest 'display format selection' => sub {
-    my $dsk_name     = 'DDG::Goodie::Calculator::display_style';
-    my $dsk          = \&$dsk_name;
-    my %known_styles = DDG::Goodie::Calculator::known_styles();
+    my $ds_name = 'DDG::Goodie::Calculator::display_style';
+    my $ds      = \&$ds_name;
 
-    is_deeply($dsk->('4,431', '4.321'), $known_styles{perl}, '4,321 and 4.321 is wholly ambig; use the default style');
-    is_deeply($dsk->('4,431', '4.32'),  $known_styles{perl}, '4,321 and 4.32 is perl');
-    is_deeply($dsk->('4,431', '4,32'),  $known_styles{euro}, '4,321 and 4,32 is euro');
-    #TODO: when display_style is used in the code, make adding the two numbers below a test case for "cannot answer"
-    is_deeply($dsk->('5234534.34.54', '1',), undef, '5234534.34.54 and 1 has a mal-formed number, so we cannot proceed');
-    is_deeply($dsk->('4534,345.0', '1',), $known_styles{perl}, '4534,345.0 should have another comma, not enforced; call it perl.');
-    is_deeply($dsk->('4,431', '4,32',     '4.32'), undef,               '4,321 and 4,32 and 4.32 is confusingly ambig; no style');
-    is_deeply($dsk->('4,431', '4,32',     '5,42'), $known_styles{euro}, '4,321 and 4,32 and 5,42 is nicely euro-style');
-    is_deeply($dsk->('4,431', '4.32',     '5.42'), $known_styles{perl}, '4,321 and 4.32 and 5.42 is nicely perl-style');
-    is_deeply($dsk->('4,431', '4.32.10',  '5.42'), undef,               '4,321 and 4.32.10 is hard to figure; no style');
-    is_deeply($dsk->('4,431', '4,32,100', '5.42'), undef,               '4,321 and 4,32,100 and 5.42 has a mal-formed number, so no go.');
-    is_deeply($dsk->('4,431', '4,32,100', '5,42'), undef,               '4,321 and 4,32,100 and 5,42 is too crazy to work out; no style');
+    is($ds->('4,431',      '4.321')->{id}, 'perl', '4,321 and 4.321 is perl');
+    is($ds->('4,431',      '4.32')->{id},  'perl', '4,321 and 4.32 is perl');
+    is($ds->('4,431',      '4,32')->{id},  'euro', '4,321 and 4,32 is euro');
+    is($ds->('4534,345.0', '1',)->{id},    'perl', '4534,345.0 should have another comma, not enforced; call it perl.');
+    is($ds->('4,431', '4,32', '5,42')->{id}, 'euro', '4,321 and 4,32 and 5,42 is nicely euro-style');
+    is($ds->('4,431', '4.32', '5.42')->{id}, 'perl', '4,321 and 4.32 and 5.42 is nicely perl-style');
+
+    is($ds->('5234534.34.54', '1',), undef, '5234534.34.54 and 1 has a mal-formed number, so we cannot proceed');
+    is($ds->('4,431', '4,32',     '4.32'), undef, '4,321 and 4,32 and 4.32 is confusingly ambig; no style');
+    is($ds->('4,431', '4.32.10',  '5.42'), undef, '4,321 and 4.32.10 is hard to figure; no style');
+    is($ds->('4,431', '4,32,100', '5.42'), undef, '4,321 and 4,32,100 and 5.42 has a mal-formed number, so no go.');
+    is($ds->('4,431', '4,32,100', '5,42'), undef, '4,321 and 4,32,100 and 5,42 is too crazy to work out; no style');
 };
 
 ddg_goodie_test(
@@ -175,20 +150,16 @@ ddg_goodie_test(
         heading => 'Calculator',
         html => qq(<div>424334 + 2253828 = <a href="javascript:;" onClick="document.x.q.value='2,678,162';document.x.q.focus();">2,678,162</a></div>),
     ),
-    '4,24,334+22,53,828' => test_zci(
-        '4,24,334 + 22,53,828 = 2,678,162',
-        heading => 'Calculator',
-        html =>
-          qq(<div>4,24,334 + 22,53,828 = <a href="javascript:;" onClick="document.x.q.value='2,678,162';document.x.q.focus();">2,678,162</a></div>),
-    ),
     '4.243,34+22.538,28' => test_zci(
         '4.243,34 + 22.538,28 = 26.781,62',
         heading => 'Calculator',
         html =>
           qq(<div>4.243,34 + 22.538,28 = <a href="javascript:;" onClick="document.x.q.value='26.781,62';document.x.q.focus();">26.781,62</a></div>),
     ),
-    '//'               => undef,
-    dividedbydividedby => undef,
+    '4,24,334+22,53,828' => undef,
+    '5234534.34.54+1'    => undef,
+    '//'                 => undef,
+    dividedbydividedby   => undef,
 );
 
 done_testing;

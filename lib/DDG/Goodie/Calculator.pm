@@ -3,7 +3,7 @@ package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
 
-use List::Util qw( all );
+use List::Util qw( all first );
 
 zci is_cached   => 1;
 zci answer_type => "calc";
@@ -44,25 +44,34 @@ triggers query_nowhitespace => qr<
 # This is probably YAGNI territory, but since I have to reference it in two places
 # and there are a multitude of other notation systems (although some break the
 # 'thousands' assumption) I am going to pretend that I do need it.
-sub known_styles {
-    return (
-        perl => {
-            decimal       => qr/\./,
-            sub_decimal   => '.',
-            thousands     => qr/,/,
-            sub_thousands => ',',
-        },
-        euro => {
-            decimal       => qr/,/,
-            sub_decimal   => ',',
-            thousands     => qr/\./,
-            sub_thousands => '.',
-        },
-    );
+#  If it could fit more than one the first in order gets preference.
+my @known_styles = ({
+        id            => 'perl',
+        decimal       => qr/\./,
+        sub_decimal   => '.',
+        thousands     => qr/,/,
+        sub_thousands => ',',
+    },
+    {
+        id            => 'euro',
+        decimal       => qr/,/,
+        sub_decimal   => ',',
+        thousands     => qr/\./,
+        sub_thousands => '.',
+    },
+);
+
+my $perl_style = first { $_->{id} eq 'perl' } @known_styles;
+foreach my $style (@known_styles) {
+    $style->{fit_check}   = _well_formed_for_style_func($style);
+    $style->{make_safe}   = _prepare_for_computation_func($style, $perl_style);
+    $style->{make_pretty} = _display_style_func($style, $perl_style);
 }
-my %known_styles   = known_styles();        # This bit of indirection is to make testing easier for now.
-my $default_style  = $known_styles{perl};
-my $safe_thousands = '_';
+
+# This is not as good an idea as I might think.
+# Luckily it will someday be able to be tokenized so this won't apply.
+my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
+my $numbery = qr/^[\d$all_seps]+$/;
 
 handle query_nowhitespace => sub {
     my $results_html;
@@ -107,10 +116,10 @@ handle query_nowhitespace => sub {
 
         $tmp_expr =~ s/\$//g;    # Remove $s.
                                  # To be converted to display_style upon refactoring.
-        my $style = $known_styles{determine_number_style($tmp_expr) // 'perl'};
-        my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $known_styles{perl}->{sub_decimal});
-        $tmp_expr =~ s/$thousands/$safe_thousands/g;                     # Convert thousands separators to something safe for perl to ignore;
-        $tmp_expr =~ s/$decimal/$perl_dec/g;                             # Make sure decimal mark is something perl knows how to use.
+        my @numbers = grep { $_ =~ $numbery } (split /\s+/, spacing($tmp_expr));
+        my $style = display_style(@numbers);
+        return unless $style;
+        $tmp_expr = $style->{make_safe}->($tmp_expr);
 
         # Drop =.
         $tmp_expr =~ s/=$//;
@@ -163,7 +172,7 @@ handle query_nowhitespace => sub {
             return if $results_no_html =~ /^\s/;
 
             # Add commas.
-            $tmp_result = commify($tmp_result, $style);
+            $tmp_result = $style->{make_pretty}->($tmp_result);
 
             # Now add it back.
             $results_no_html .= ' = ';
@@ -196,19 +205,6 @@ sub log10 {
     return log($x) / log(10);
 }
 
-#function to add appropriate thousands and decimal separators
-sub commify {
-    my ($text, $style) = @_;
-
-    my ($decimal, $sub_decimal, $sub_thousands, $perl_dec) =
-      (@{$style}{qw(decimal sub_decimal sub_thousands)},  $known_styles{perl}->{decimal});    #Unpack for easier regex-building
-    $text = reverse $text;
-    $text =~ s/$perl_dec/$sub_decimal/g;                   # Give them the decimal they expect
-    $text =~ s/(\d\d\d)(?=\d)(?!\d*$decimal)/$1$sub_thousands/g;
-
-    return scalar reverse $text;
-}
-
 #separates symbols with a space
 #spacing '1+1'  ->  '1 + 1'
 sub spacing {
@@ -221,82 +217,30 @@ sub spacing {
     return $text;
 }
 
-# This looks at a single number and determines the style in which it was entered.
-# If it is ambiguous, then it returns undef.
-sub determine_number_style {
-    my $number = shift;
-
-    my $disambiguated;
-    my @styles = keys %known_styles;    # We need to do this here, because we are going shift off.
-
-    while (not $disambiguated and my $test_style = shift @styles) {
-        my ($decimal, $thousands) = @{$known_styles{$test_style}}{qw(decimal thousands)};    #Unpack for easier regex-building
-        if ((
-                ( $number =~ /^\d{1,3}($thousands\d{3})+$decimal/)
-                # All thousands appear to be separating thousands and
-                # both present in the right order so we have an easy match.
-                || (   $number !~ /$thousands/
-                    && $number =~ /$decimal/
-                    && $number !~ /$decimal\d{3}$/)
-                # No thousands sep, a decimal sep, but not with exactly 3 numbers after.
-                || ($number !~ /$decimal/ && $number =~ /$thousands\d+?$thousands/)
-                # No decimal separator, multiple thousands separators.
-                || ($number =~ /^$decimal/)
-                # Starts with a decimal, no leading 0
-            )
-            && $number !~ /\d+?$decimal\d+?($decimal|$thousands)/
-            # Sanity-check: cannot have more than one decimal mark or have thousands after the decimal
-          )
-        {
-            $disambiguated = $test_style;
-        }
-    }
-
-    return $disambiguated;
-}
-
-# Takes an array of numbers and returns which format to use for display
+# Takes an array of numbers and returns which style to use for parse and display
 # If there are conflicting answers among the array, will return undef.
-# If they are all ambiguous, will return the default style.
-
 sub display_style {
     my @numbers = @_;
 
-    my $style;
-    # undef is ambiguous, we'll worry about that below
-    my @used_styles = grep { $_ } map { determine_number_style($_) } @numbers;
-    my $unambig_count = scalar @used_styles;
+    my $style;    # By default, assume we don't understand the numbers.
 
-    if ($unambig_count == 0) {
-        # everything was ambiguous, use the default style
-        $style = $default_style;
-    } elsif ($unambig_count == 1) {
-        # Only one is unambiguous, so use that format.
-        $style = $known_styles{$used_styles[0]};
-    } else {
-        my $first_style = shift @used_styles;
-        if (all { $_ eq $first_style } @used_styles) {
-            # They all match, so we can pick it.
-            $style = $known_styles{$first_style};
+    STYLE:
+    foreach my $test_style (@known_styles) {
+        if (all { $test_style->{fit_check}->($_) } @numbers) {
+            # All of our numbers fit this style.  Since we have them in preference order
+            # we can pick it and move on.
+            $style = $test_style;
+            last STYLE;
         }
     }
-
-    if ($style) {
-        # We've decided that everything unambiguous fits the style.
-        # Now we need to make sure that all of the numbers are well-formed
-        # under this style.
-        my $fits_style = _well_formed_for_style_func($style);
-        $style = undef unless (all { $fits_style->($_) } @numbers);
-        # Considering the above line and all the 'not'ing in the func I think
-        # I may have missed out on one of DeMorgan's Laws somewhere
-    }
-
     return $style;
 }
 
+# Returns a function which evaluates whether a number fits a certain style.
 sub _well_formed_for_style_func {
     my $style = shift;
     my ($decimal, $thousands) = ($style->{decimal}, $style->{thousands});
+
     return sub {
         my $number = shift;
         return (
@@ -308,6 +252,36 @@ sub _well_formed_for_style_func {
               && ($number !~ /$decimal/ || $number !~ /$decimal(?:.*)?(?:$decimal|$thousands)/)
               # You can not have a decimal but if you do it cannot be followed by another decimal or thousands
         ) ? 1 : 0;
+    };
+}
+
+# Returns function which given a number in a certain style, makes it nice for human eyes.
+sub _display_style_func {
+    my ($style, $perl_style) = @_;
+    my ($decimal, $sub_decimal, $sub_thousands, $perl_dec) =
+      (@{$style}{qw(decimal sub_decimal sub_thousands)}, $perl_style->{decimal});    # Unpacked for easier regex-building
+
+    return sub {
+        my $text = shift;
+        $text = reverse $text;
+        $text =~ s/$perl_dec/$sub_decimal/g;
+        $text =~ s/(\d\d\d)(?=\d)(?!\d*$decimal)/$1$sub_thousands/g;
+
+        return scalar reverse $text;
+    };
+}
+
+# Returns function which given a number in a certain style, makes it safe for perl eval.
+sub _prepare_for_computation_func {
+    my ($style, $perl_style) = @_;
+    my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $perl_style->{sub_decimal});
+
+    return sub {
+        my $number_text = shift;
+        $number_text =~ s/$thousands//g;           # Remove thousands seps, since they are just visual.
+        $number_text =~ s/$decimal/$perl_dec/g;    # Make sure decimal mark is something perl knows how to use.
+
+        return $number_text;
     };
 }
 
