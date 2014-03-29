@@ -47,16 +47,16 @@ triggers query_nowhitespace => qr<
 #  If it could fit more than one the first in order gets preference.
 my @known_styles = ({
         id            => 'perl',
-        decimal       => qr/\./,
+        decimal       => '\.',
         sub_decimal   => '.',
-        thousands     => qr/,/,
+        thousands     => ',',
         sub_thousands => ',',
     },
     {
         id            => 'euro',
-        decimal       => qr/,/,
+        decimal       => ',',
         sub_decimal   => ',',
-        thousands     => qr/\./,
+        thousands     => '\.',
         sub_thousands => '.',
     },
 );
@@ -71,6 +71,7 @@ foreach my $style (@known_styles) {
 # This is not as good an idea as I might think.
 # Luckily it will someday be able to be tokenized so this won't apply.
 my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
+
 my $numbery = qr/^[\d$all_seps]+$/;
 
 handle query_nowhitespace => sub {
@@ -116,7 +117,7 @@ handle query_nowhitespace => sub {
 
         $tmp_expr =~ s/\$//g;    # Remove $s.
                                  # To be converted to display_style upon refactoring.
-        my @numbers = grep { $_ =~ $numbery } (split /\s+/, spacing($tmp_expr));
+        my @numbers = grep { $_ =~ $numbery } (split /\s+/, spacing($tmp_expr, 1));
         my $style = display_style(@numbers);
         return unless $style;
         $tmp_expr = $style->{make_safe}->($tmp_expr);
@@ -208,11 +209,13 @@ sub log10 {
 #separates symbols with a space
 #spacing '1+1'  ->  '1 + 1'
 sub spacing {
-    my $text = shift;
+    my ($text, $space_parens) = @_;
+
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/dividedby/divided by/ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|e|c))/$1 $2/ig;
     $text =~ s/\bc\b/speed of light/ig;
+    $text =~ s/([\(\)])/ $1 /g if ($space_parens);
 
     return $text;
 }

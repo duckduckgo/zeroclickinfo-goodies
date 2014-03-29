@@ -156,6 +156,13 @@ ddg_goodie_test(
         html =>
           qq(<div>4.243,34 + 22.538,28 = <a href="javascript:;" onClick="document.x.q.value='26.781,62';document.x.q.focus();">26.781,62</a></div>),
     ),
+    'sin(1,0) + 1,05' => test_zci(
+        'sin(1,0) + 1,05 = 1,8914709848079',
+        heading => 'Calculator',
+        html =>
+          qq(<div>sin(1,0) + 1,05 = <a href="javascript:;" onClick="document.x.q.value='1,8914709848079';document.x.q.focus();">1,8914709848079</a></div>),
+    ),
+    'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,
     '//'                 => undef,
