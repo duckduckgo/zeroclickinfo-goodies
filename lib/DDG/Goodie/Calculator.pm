@@ -74,6 +74,23 @@ my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
 
 my $numbery = qr/^[\d$all_seps]+$/;
 
+my %named_operations = (
+    '\^'          => '**',
+    'x'           => '*',
+    'times'       => '*',
+    'minus'       => '-',
+    'plus'        => '+',
+    'divided\sby' => '/',
+);
+
+my @named_constants = (
+    # Ordering is important because we use regex, bah.
+    [dozen => 12],
+    [e     => 2.71828182845904523536028747135266249],    # The next couple should be computed.
+    [pi    => 3.14159265358979323846264338327950288],
+    [gross => 144],
+);
+
 handle query_nowhitespace => sub {
     my $results_html;
     my $results_no_html;
@@ -85,49 +102,28 @@ handle query_nowhitespace => sub {
         my $tmp_result = '';
 
         # Grab expression.
-        my $tmp_expr = $query;
+        my $tmp_expr = spacing($query, 1);
 
-        #do the following substitutions in $tmp_expr:
-        #^ -> **
-        #x|times -> *
-        #minus ->  -
-        #plus -> +
-        #dividedby -> /
-        $tmp_expr =~ s# \^          # ** #xg;
-        $tmp_expr =~ s# (?:x|times) # *  #xig;
-        $tmp_expr =~ s# minus       # -  #xig;
-        $tmp_expr =~ s# plus        # +  #xig;
-        $tmp_expr =~ s# dividedby   # \/ #xig;
+        # First replace named operations with their computable equivalents.
+        while (my ($name, $operation) = each %named_operations) {
+            $tmp_expr =~ s# $name # $operation #xig;
+        }
 
-        # sub in constants
-        # e sub is lowercase only because E == *10^n
-        $tmp_expr =~ s/ ((?:\d+?|\s))E(-?\d+)([^\d]) /\($1 * 10**$2\)$3                             /xg;
-        $tmp_expr =~ s/ (\d+?)e([^A-Za-z])           /$1 * 2.71828182845904523536028747135266249 $2 /xg;
-        $tmp_expr =~ s/ ([^A-Za-z])e([^A-Za-z])      /$1 2.71828182845904523536028747135266249 $2   /xg;
-        $tmp_expr =~ s/ \be\b                        /2.71828182845904523536028747135266249         /xg;
-        $tmp_expr =~ s/ (\d+?)c([^A-Za-z])           /$1 * 299792458 $2                             /xig;
-        $tmp_expr =~ s/ ([^A-Za-z])c([^A-Za-z])      /$1 299792458 $2                               /xig;
-        $tmp_expr =~ s/ \bc\b                        /299792458                                     /xig;
-        $tmp_expr =~ s/ (\d+?)pi                     /$1 * 3.14159265358979323846264338327950288    /xig;
-        $tmp_expr =~ s/ pi                           /3.14159265358979323846264338327950288         /xig;
-        $tmp_expr =~ s/ (\d+?)gross                  /$1 * 144                                      /xig;
-        $tmp_expr =~ s/ (\d+?)dozen                  /$1 * 12                                       /xig;
-        $tmp_expr =~ s/ dozen                        /12                                            /xig;
-        $tmp_expr =~ s/ gross                        /144                                           /xig;
+        $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/xg;    # E == *10^n
+        $tmp_expr =~ s/\$//g;                                              # Remove $s.
+        $tmp_expr =~ s/=$//;                                               # Drop =.
 
-        $tmp_expr =~ s/\$//g;    # Remove $s.
-                                 # To be converted to display_style upon refactoring.
-        my @numbers = grep { $_ =~ $numbery } (split /\s+/, spacing($tmp_expr, 1));
+        # Now sub in constants
+        foreach (@named_constants) {
+            my ($name, $constant) = @{$_};
+            $tmp_expr =~ s# (\d+?)\s+$name # $1 * $constant #xig;
+            $tmp_expr =~ s# $name #  $constant #xig;
+        }
+
+        my @numbers = grep { $_ =~ $numbery } (split /\s+/, $tmp_expr);
         my $style = display_style(@numbers);
         return unless $style;
         $tmp_expr = $style->{make_safe}->($tmp_expr);
-
-        # Drop =.
-        $tmp_expr =~ s/=$//;
-
-        # Drop leading 0s.
-        # 2011.11.09 fix for 21 + 15 x 0 + 5
-        $tmp_expr =~ s/(?<!\.)(?<![0-9])0([1-9])/$1/;
 
         eval {
             # e.g. sin(100000)/100000 completely makes this go haywire.
@@ -209,13 +205,13 @@ sub log10 {
 #separates symbols with a space
 #spacing '1+1'  ->  '1 + 1'
 sub spacing {
-    my ($text, $space_parens) = @_;
+    my ($text, $space_for_parse) = @_;
 
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
-    $text =~ s/dividedby/divided by/ig;
-    $text =~ s/(\d+?)((?:dozen|pi|gross|e|c))/$1 $2/ig;
-    $text =~ s/\bc\b/speed of light/ig;
-    $text =~ s/([\(\)])/ $1 /g if ($space_parens);
+    $text =~ s/\s*dividedby\s*/ divided by /ig;
+    $text =~ s/(\d+?)((?:dozen|pi|gross))/$1 $2/ig;
+    $text =~ s/(\d+?)e/$1 e/g;    # E == *10^n
+    $text =~ s/([\(\)\$])/ $1 /g if ($space_for_parse);
 
     return $text;
 }
@@ -225,7 +221,7 @@ sub spacing {
 sub display_style {
     my @numbers = @_;
 
-    my $style;    # By default, assume we don't understand the numbers.
+    my $style;                    # By default, assume we don't understand the numbers.
 
     STYLE:
     foreach my $test_style (@known_styles) {
@@ -281,6 +277,7 @@ sub _prepare_for_computation_func {
 
     return sub {
         my $number_text = shift;
+
         $number_text =~ s/$thousands//g;           # Remove thousands seps, since they are just visual.
         $number_text =~ s/$decimal/$perl_dec/g;    # Make sure decimal mark is something perl knows how to use.
 

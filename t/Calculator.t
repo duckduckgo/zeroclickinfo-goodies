@@ -64,12 +64,6 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qq(<div>2 divided by 4 = <a href="javascript:;" onClick="document.x.q.value='0.5';document.x.q.focus();">0.5</a></div>)
     ),
-    '(2c) + pi' => test_zci(
-        "(2 speed of light) + pi = 599,584,919.141593",
-        heading => 'Calculator',
-        html =>
-          qq(<div>(2 speed of light) + pi = <a href="javascript:;" onClick="document.x.q.value='599,584,919.141593';document.x.q.focus();">599,584,919.141593</a></div>)
-    ),
     '2^dozen' => test_zci(
         "2 ^ dozen = 4,096",
         heading => 'Calculator',
@@ -161,6 +155,11 @@ ddg_goodie_test(
         heading => 'Calculator',
         html =>
           qq(<div>sin(1,0) + 1,05 = <a href="javascript:;" onClick="document.x.q.value='1,8914709848079';document.x.q.focus();">1,8914709848079</a></div>),
+    ),
+    '21 + 15 x 0 + 5' => => test_zci(
+        '21 + 15 x 0 + 5 = 26',
+        heading => 'Calculator',
+        html    => qq(<div>21 + 15 x 0 + 5 = <a href="javascript:;" onClick="document.x.q.value='26';document.x.q.focus();">26</a></div>),
     ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
