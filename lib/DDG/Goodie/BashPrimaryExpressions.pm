@@ -64,13 +64,16 @@ sub append_css {
 }
 
 handle remainder => sub {
+        # This checks if our arguments in the `if` statement are valid.
+        my $re_args = '[^\[\]\s]+|".+"|\'.+\'';
     	my $re = qr/^
                     (?:if\s)?				# Match `if` if there is one.
                     [\[]{1,2}\s 			# Match `[[` inside the `if` statement.
                     ([!]\s)?     			# Capture the `!` in queries such as `bash if [ ! "something" -gt "150" ]`
-                    (?:(.+?)\s)? 			# Capture the first argument in the `if`
+                    (?:($re_args)\s)? 			# Capture the first argument in the `if`
                     (-[a-zA-Z]{1,2}|[<>]|[!=]{1,2})\s	# Capture the options such as `-lt` for less than.
-                    (.+)\s[\]]{1,2}			# Capture the second argument
+                    ($re_args)\s			# Capture the second argument.
+                    [\]]{1,2}				# Match `]]` that ends the `if` statement.
                    $/x;
 
 	my ($not, $left_arg, $op, $right_arg) = ($_ =~ $re);
