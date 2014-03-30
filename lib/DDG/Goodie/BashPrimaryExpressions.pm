@@ -64,7 +64,16 @@ sub append_css {
 }
 
 handle remainder => sub {
-	my ($not, $left_arg, $op, $right_arg) = ($_ =~ qr#^(?:if )?[\[]{1,2} ([!] )?(?:(.+?) )?(-[a-zA-Z]{1,2}|[<>]|[!=]{1,2}) (.+) [\]]{1,2}$#);	
+    	my $re = qr/^
+                    (?:if\s)?				# Match `if` if there is one.
+                    [\[]{1,2}\s 			# Match `[[` inside the `if` statement.
+                    ([!]\s)?     			# Capture the `!` in queries such as `bash if [ ! "something" -gt "150" ]`
+                    (?:(.+?)\s)? 			# Capture the first argument in the `if`
+                    (-[a-zA-Z]{1,2}|[<>]|[!=]{1,2})\s	# Capture the options such as `-lt` for less than.
+                    (.+)\s[\]]{1,2}			# Capture the second argument
+                   $/x;
+
+	my ($not, $left_arg, $op, $right_arg) = ($_ =~ $re);
 
 	return unless ($op && $right_arg);
 	return unless $if_description{$op};
