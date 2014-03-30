@@ -102,6 +102,21 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qq(<div>\$3.43 + \$34.45 = <a href="javascript:;" onClick="document.x.q.value='\$37.88';document.x.q.focus();">\$37.88</a></div>)
     ),
+    '$3.45+$34.45' => test_zci(
+        '$3.45 + $34.45 = $37.90',
+        heading => 'Calculator',
+        html    => qq(<div>\$3.45 + \$34.45 = <a href="javascript:;" onClick="document.x.q.value='\$37.90';document.x.q.focus();">\$37.90</a></div>)
+    ),
+    '$3+$34' => test_zci(
+        '$3 + $34 = $37',
+        heading => 'Calculator',
+        html    => qq(<div>\$3 + \$34 = <a href="javascript:;" onClick="document.x.q.value='\$37';document.x.q.focus();">\$37</a></div>)
+    ),
+    '$3,4+$34,4' => test_zci(
+        '$3,4 + $34,4 = $37,8',
+        heading => 'Calculator',
+        html    => qq(<div>\$3,4 + \$34,4 = <a href="javascript:;" onClick="document.x.q.value='\$37,8';document.x.q.focus();">\$37,8</a></div>)
+    ),
     '64*343' => test_zci(
         '64 * 343 = 21,952',
         heading => 'Calculator',
@@ -156,10 +171,20 @@ ddg_goodie_test(
         html =>
           qq(<div>sin(1,0) + 1,05 = <a href="javascript:;" onClick="document.x.q.value='1,8914709848079';document.x.q.focus();">1,8914709848079</a></div>),
     ),
-    '21 + 15 x 0 + 5' => => test_zci(
+    '21 + 15 x 0 + 5' => test_zci(
         '21 + 15 x 0 + 5 = 26',
         heading => 'Calculator',
         html    => qq(<div>21 + 15 x 0 + 5 = <a href="javascript:;" onClick="document.x.q.value='26';document.x.q.focus();">26</a></div>),
+    ),
+    '0.8158 - 0.8157' => test_zci(
+        '0.8158 - 0.8157 = 0.0001',
+        heading => 'Calculator',
+        html    => qq(<div>0.8158 - 0.8157 = <a href="javascript:;" onClick="document.x.q.value='0.0001';document.x.q.focus();">0.0001</a></div>),
+    ),
+    '2,90 + 4,6' => test_zci(
+        '2,90 + 4,6 = 7,50',
+        heading => 'Calculator',
+        html    => qq(<div>2,90 + 4,6 = <a href="javascript:;" onClick="document.x.q.value='7,50';document.x.q.focus();">7,50</a></div>),
     ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,

@@ -3,7 +3,7 @@ package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
 
-use List::Util qw( all first );
+use List::Util qw( all first max);
 
 zci is_cached   => 1;
 zci answer_type => "calc";
@@ -64,6 +64,7 @@ my @known_styles = ({
 my $perl_style = first { $_->{id} eq 'perl' } @known_styles;
 foreach my $style (@known_styles) {
     $style->{fit_check}   = _well_formed_for_style_func($style);
+    $style->{precision}   = _precision_for_style_func($style);
     $style->{make_safe}   = _prepare_for_computation_func($style, $perl_style);
     $style->{make_pretty} = _display_style_func($style, $perl_style);
 }
@@ -73,6 +74,7 @@ foreach my $style (@known_styles) {
 my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
 
 my $numbery = qr/^[\d$all_seps]+$/;
+my $funcy   = qr/(cos|sin|tan|log10|log|cotan)\(|\^/;    # Things which cause "non-precise" answers.
 
 my %named_operations = (
     '\^'          => '**',
@@ -123,7 +125,9 @@ handle query_nowhitespace => sub {
         my @numbers = grep { $_ =~ $numbery } (split /\s+/, $tmp_expr);
         my $style = display_style(@numbers);
         return unless $style;
+
         $tmp_expr = $style->{make_safe}->($tmp_expr);
+        my $precision = ($query =~ $funcy) ? undef : max(map { $style->{precision}->($_) } @numbers);
 
         eval {
             # e.g. sin(100000)/100000 completely makes this go haywire.
@@ -131,56 +135,46 @@ handle query_nowhitespace => sub {
             $tmp_result = eval($tmp_expr);
         };
 
+        # Guard against non-result results
+        return unless (defined $tmp_result && $tmp_result ne 'inf');
+        # Guard against very small floats which will not be rounded.
         # 0-9 check for http://yegg.duckduckgo.com/?q=%243.43%20%2434.45&format=json
-        if (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result =~ /^(?:\-|)[0-9\.]+$/) {
-            # Precisian.
-            my $precisian = 0;
+        return unless (defined $precision || ($tmp_result =~ /^(?:\-|)[0-9\.]+$/));
 
-            # too clever -- .5 ^ 2 not working right.
-            if (0) {
-                while ($query =~ /\.(\d+)/g) {
-                    my $decimal = length($1);
-                    $precisian = $decimal if $decimal > $precisian;
-                }
+        # Ok, this might be overkill on flexibility.
+        $tmp_result = sprintf('%0' . $perl_style->{sub_decimal} . $precision . 'f', $tmp_result) if ($precision);
+        # Dollars.
+        $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
 
-                $tmp_result = sprintf('%0.' . $precisian . 'f', $tmp_result) if $precisian;
-            }
+        # Query for display.
+        my $tmp_q = $query;
 
-            # Dollars.
-            if ($query =~ /^\$/) {
-                $tmp_result = qq(\$$tmp_result);
-            }
+        # Drop equals.
+        $tmp_q =~ s/\=$//;
+        $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
 
-            # Query for display.
-            my $tmp_q = $query;
+        # Copy
+        $results_no_html = $results_html = $tmp_q;
 
-            # Drop equals.
-            $tmp_q =~ s/\=$//;
-            $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
+        # Superscript (before spacing).
+        $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
+        $results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
 
-            # Copy
-            $results_no_html = $results_html = $tmp_q;
+        ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
+        return if $results_no_html =~ /^\s/;
 
-            # Superscript (before spacing).
-            $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
-            $results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
+        # Add proper separators.
+        $tmp_result = $style->{make_pretty}->($tmp_result);
 
-            ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
-            return if $results_no_html =~ /^\s/;
+        # Now add = back.
+        $results_no_html .= ' = ';
+        $results_html    .= ' = ';
 
-            # Add commas.
-            $tmp_result = $style->{make_pretty}->($tmp_result);
-
-            # Now add it back.
-            $results_no_html .= ' = ';
-            $results_html    .= ' = ';
-
-            $results_html =
-              qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
-            return $results_no_html . $tmp_result,
-              html    => $results_html,
-              heading => "Calculator";
-        }
+        $results_html =
+          qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
+        return $results_no_html . $tmp_result,
+          html    => $results_html,
+          heading => "Calculator";
     }
 
     return;
@@ -282,6 +276,18 @@ sub _prepare_for_computation_func {
         $number_text =~ s/$decimal/$perl_dec/g;    # Make sure decimal mark is something perl knows how to use.
 
         return $number_text;
+    };
+}
+
+# Returns function which given a number in a certain style, determines the number of places after the decimal.
+sub _precision_for_style_func {
+    my ($style) = @_;
+    my $decimal = $style->{decimal};
+
+    return sub {
+        my $number_text = shift;
+
+        return ($number_text =~ /$decimal(\d+)/) ? length($1) : 0;
     };
 }
 
