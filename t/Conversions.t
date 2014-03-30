@@ -66,6 +66,7 @@ ddg_goodie_test(
     '0.013 mb in bits'                => test_zci('0.013 megabytes is 104000.000 bits'),
     '1 exabyte to pib'                => test_zci('1 exabyte is 888.178 pebibytes'),
     'convert 1 yb to yib'             => test_zci('1 yottabyte is 0.827 yobibytes'),
+    '16 years in months'              => test_zci('16 years is 192 months'),
 );
 
 done_testing;

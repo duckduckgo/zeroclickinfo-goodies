@@ -270,7 +270,7 @@ my @time = (
     },
     {    # a month being defined as an average earth month (30.42)
         'unit'      => 'month',
-        'factor'    => 1/30.42,
+        'factor'    => 12/365,
         'aliases'   => ['months', 'mons', 'mns', 'mn'],
         'type'      => 'duration',
     },
