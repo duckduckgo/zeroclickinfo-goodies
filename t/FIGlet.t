@@ -28,27 +28,31 @@ ddg_goodie_test(
  \____|\___/ 
              
 ',
-                html => '<style type=\'text/css\'>#figlet-wrapper {
+                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper {
     overflow: auto;
 }
 
-#figlet-wrapper pre {
+#zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
 }
 
+#zero_click_wrapper #figlet-wrapper span pre {
+    display: inline-block;
+}
+
 @media screen and (max-width:768px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 5px;
     }
 }
 </style>
-<div id=\'zero_click_header\'>DuckDuckGo (FIGlet)</div><div id=\'figlet-wrapper\'><pre> ____             _    ____             _    
+<div id=\'figlet-wrapper\'><span>Font: <pre>standard</pre></span><pre> ____             _    ____             _    
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ /
 | |_| | |_| | (__|   <| |_| | |_| | (__|   < 
@@ -61,6 +65,7 @@ ddg_goodie_test(
  \____|\___/ 
              
 </pre></div>',
+		heading => 'DuckDuckGo (FIGlet)',
             ),
 
         'bigtext mini DDG' =>
@@ -70,31 +75,36 @@ ddg_goodie_test(
 |_/ |_/ \_| 
             
 ',
-                html => '<style type=\'text/css\'>#figlet-wrapper {
+                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper {
     overflow: auto;
 }
 
-#figlet-wrapper pre {
+#zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
 }
 
+#zero_click_wrapper #figlet-wrapper span pre {
+    display: inline-block;
+}
+
 @media screen and (max-width:768px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 5px;
     }
 }
 </style>
-<div id=\'zero_click_header\'>DDG (FIGlet)</div><div id=\'figlet-wrapper\'><pre> _   _   __ 
+<div id=\'figlet-wrapper\'><span>Font: <pre>mini</pre></span><pre> _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
 </pre></div>',
+		heading => 'DDG (FIGlet)',
             ),
         
         'figlet-mini DDG' =>
@@ -104,31 +114,36 @@ ddg_goodie_test(
 |_/ |_/ \_| 
             
 ',
-                html => '<style type=\'text/css\'>#figlet-wrapper {
+                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper {
     overflow: auto;
 }
 
-#figlet-wrapper pre {
+#zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
 }
 
+#zero_click_wrapper #figlet-wrapper span pre {
+    display: inline-block;
+}
+
 @media screen and (max-width:768px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 5px;
     }
 }
 </style>
-<div id=\'zero_click_header\'>DDG (FIGlet)</div><div id=\'figlet-wrapper\'><pre> _   _   __ 
+<div id=\'figlet-wrapper\'><span>Font: <pre>mini</pre></span><pre> _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
 </pre></div>',
+		heading => 'DDG (FIGlet)',
             ),
 
         'figlet-stop' =>
@@ -140,33 +155,38 @@ ddg_goodie_test(
 |___/\__\___/| .__/ 
              |_|    
 ',
-                html => '<style type=\'text/css\'>#figlet-wrapper {
+                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper {
     overflow: auto;
 }
 
-#figlet-wrapper pre {
+#zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
 }
 
+#zero_click_wrapper #figlet-wrapper span pre {
+    display: inline-block;
+}
+
 @media screen and (max-width:768px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 5px;
     }
 }
 </style>
-<div id=\'zero_click_header\'>stop (FIGlet)</div><div id=\'figlet-wrapper\'><pre>     _              
+<div id=\'figlet-wrapper\'><span>Font: <pre>standard</pre></span><pre>     _              
  ___| |_ ___  _ __  
 / __| __/ _ \| \'_ \ 
 \__ | || (_) | |_) |
 |___/\__\___/| .__/ 
              |_|    
 </pre></div>',
+		heading => 'stop (FIGlet)',
             ),
 
 		'DuckDuckGo bigtext' =>
@@ -184,27 +204,31 @@ ddg_goodie_test(
  \____|\___/ 
              
 ',
-                html => '<style type=\'text/css\'>#figlet-wrapper {
+                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper {
     overflow: auto;
 }
 
-#figlet-wrapper pre {
+#zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
 }
 
+#zero_click_wrapper #figlet-wrapper span pre {
+    display: inline-block;
+}
+
 @media screen and (max-width:768px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 5px;
     }
 }
 </style>
-<div id=\'zero_click_header\'>DuckDuckGo (FIGlet)</div><div id=\'figlet-wrapper\'><pre> ____             _    ____             _    
+<div id=\'figlet-wrapper\'><span>Font: <pre>standard</pre></span><pre> ____             _    ____             _    
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ /
 | |_| | |_| | (__|   <| |_| | |_| | (__|   < 
@@ -217,6 +241,7 @@ ddg_goodie_test(
  \____|\___/ 
              
 </pre></div>',
+		heading => 'DuckDuckGo (FIGlet)',
             ),
 
 );

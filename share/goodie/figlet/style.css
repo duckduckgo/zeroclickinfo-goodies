@@ -1,19 +1,23 @@
-#figlet-wrapper {
+#zero_click_wrapper #figlet-wrapper {
     overflow: auto;
 }
 
-#figlet-wrapper pre {
+#zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
 }
 
+#zero_click_wrapper #figlet-wrapper span pre {
+    display: inline-block;
+}
+
 @media screen and (max-width:768px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper {
         font-size: 5px;
     }
 }
