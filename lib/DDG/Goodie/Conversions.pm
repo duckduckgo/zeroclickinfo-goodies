@@ -4,7 +4,7 @@ package DDG::Goodie::Conversions;
 use DDG::Goodie;
 use Math::Round qw/nearest/;
 use Scalar::Util qw/looks_like_number/;
-use Convert::Pluggable 0.017;     
+use Convert::Pluggable 0.018;     
 # ^^ mass, length, time, pressure, energy, power, angle, force, temperature, digital 
 
 name                      'Conversions';
@@ -117,6 +117,7 @@ handle query_lc => sub {
     }
 
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
+    $result->{'result'} =~ s/\.0{$precision}$//;
 
     #my $temperature_label = ($result->{'type_1'} eq 'temperature') ? 'degrees' : '';
     if ($result->{'type_1'} eq 'temperature') {
