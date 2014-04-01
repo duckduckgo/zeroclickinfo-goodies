@@ -46,6 +46,10 @@ ddg_goodie_test(
         "what was the 21st week of 1987" => test_zci(
             "The 21st week of 1987 began on May 18th.",
             html => "The 21<sup>st</sup> week of 1987 began on May 18<sup>th</sup>."),
+        'what was the 5th week of 1944' => test_zci(
+            'The 5th week of 1944 began on January 31st.', 
+            html => 'The 5<sup>th</sup> week of 1944 began on January 31<sup>st</sup>.'
+        ),
 );
 
 done_testing;

@@ -29,7 +29,15 @@ ddg_goodie_test(
 	'bash [[ /tmp/hello -nt /etc/test ]]' => test_zci (
 		'[[ /tmp/hello -nt /etc/test ]] - True if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not',
 		html => "<code>[[ /tmp/hello -nt /etc/test ]]</code> - True if <code>/tmp/hello</code> has been changed more recently than <code>/etc/test</code> or if <code>/tmp/hello</code> exists and <code>/etc/test</code> does not"
-	)
+	),
+    'bash [ -z hello ]' => test_zci(
+        "[ -z hello ] - True if the length of 'hello' is zero", 
+        html => '<code>[ -z hello ]</code> - True if the length of &#39;<code>hello</code>&#39; is zero'
+    ),
+    'bash if [[ "abc" -lt "cba" ]]' => test_zci(
+        '[[ "abc" -lt "cba" ]] - True if "abc" is numerically less than "cba"', 
+        html => '<code>[[ &quot;abc&quot; -lt &quot;cba&quot; ]]</code> - True if <code>&quot;abc&quot;</code> is numerically less than <code>&quot;cba&quot;</code>'
+    ),
 );
 
 done_testing;

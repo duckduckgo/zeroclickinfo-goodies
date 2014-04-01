@@ -24,6 +24,14 @@ ddg_goodie_test(
             'The frequency of a royal flush in poker is 4 out of 2,598,960.',
             html => 'The frequency of a royal flush in poker is 4 out of 2,598,960. More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#Royal_flush">Wikipedia</a>.'
         ),
+        'poker odds three of a kind' => test_zci(
+            'The odds of getting a three of a kind in poker are 46.3 : 1.',
+            html => 'The odds of getting a three of a kind in poker are 46.3 : 1. More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#Three_of_a_kind">Wikipedia</a>.'
+        ),
+        'probability poker flush' => test_zci(
+            'The probability of getting a flush in poker is 0.197%.', 
+            html => 'The probability of getting a flush in poker is 0.197%. More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#Flush">Wikipedia</a>.'
+        ),
 );
 
 done_testing;

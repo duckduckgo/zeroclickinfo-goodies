@@ -16,7 +16,7 @@ ddg_goodie_test(
         '00111001 to ascii' => test_zci('00111001 in binary is "9" in ASCII'),
         '01110100011010000110100101110011 in ascii' => test_zci('01110100011010000110100101110011 in binary is "this" in ASCII'),
         '01110100011010000110000101110100 to ascii' => test_zci('01110100011010000110000101110100 in binary is "that" in ASCII'),
-
+        '0110100001100101011011000110110001101111 to ascii' => test_zci('0110100001100101011011000110110001101111 in binary is "hello" in ASCII'),
 );
 
 done_testing;

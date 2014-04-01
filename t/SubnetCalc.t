@@ -26,6 +26,14 @@ ddg_goodie_test(
 	"Network: 8.8.0.0/19 (Class A)\nNetmask: 255.255.224.0\nSpecified: Host #2056\nHost Address Range: 8.8.0.1-8.8.31.254 (8190 hosts)\nBroadcast: 8.8.31.255\n",
 	html => "<div><i>Network: </i>8.8.0.0/19 (Class A)</div><div><i>Netmask: </i>255.255.224.0</div><div><i>Specified: </i>Host #2056</div><div><i>Host Address Range: </i>8.8.0.1-8.8.31.254 (8190 hosts)</div><div><i>Broadcast: </i>8.8.31.255</div>",
     ),
+    '46.51.197.88/255.255.254.0' => test_zci(
+        "Network: 46.51.196.0/23 (Class A)\nNetmask: 255.255.254.0\nSpecified: Host #344\nHost Address Range: 46.51.196.1-46.51.197.254 (510 hosts)\nBroadcast: 46.51.197.255\n",
+        html => '<div><i>Network: </i>46.51.196.0/23 (Class A)</div><div><i>Netmask: </i>255.255.254.0</div><div><i>Specified: </i>Host #344</div><div><i>Host Address Range: </i>46.51.196.1-46.51.197.254 (510 hosts)</div><div><i>Broadcast: </i>46.51.197.255</div>',
+    ),
+    '176.34.131.233/32' => test_zci(
+        "Network: 176.34.131.233/32 (Class B)\nNetmask: 255.255.255.255\nSpecified: Host Only\n",
+        html => '<div><i>Network: </i>176.34.131.233/32 (Class B)</div><div><i>Netmask: </i>255.255.255.255</div><div><i>Specified: </i>Host Only</div>'
+    ),
 );
 
 done_testing;
