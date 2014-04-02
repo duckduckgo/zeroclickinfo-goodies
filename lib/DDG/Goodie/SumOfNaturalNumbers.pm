@@ -25,7 +25,7 @@ handle remainder => sub {
     return;
   } else {
     my $sum = ((($3 * ($3 + 1)) / 2)-(($1 * ($1 - 1)) / 2));
-    return "Sum of natural numbers from $1 to $3 is $sum";
+    return "Sum of natural numbers from $1 to $3 is $sum.";
   }
 };
 
