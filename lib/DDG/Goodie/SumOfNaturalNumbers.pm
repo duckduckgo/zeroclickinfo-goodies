@@ -24,6 +24,7 @@ attribution github => ['https://github.com/JulianGindi', 'JulianGindi'],
 # It converts 10000000 to 10,000,000.
 # It was copied from http://perldoc.perl.org/perlfaq5.html#How-can-I-output-my-numbers-with-commas-added%3f
 sub commify {
+    # Disable bigint in this function. It interferes with `1 while ...`.
     no bigint;
     local $_  = shift;
     1 while s/^([-+]?\d+)(\d{3})/$1,$2/;
