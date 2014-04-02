@@ -2,6 +2,7 @@ package DDG::Goodie::SumOfNaturalNumbers;
 # ABSTRACT: Returns the sum of the numbers between the first and second provided integers
 
 use DDG::Goodie;
+use bignum;
 
 triggers start => "add", "sum from";
 triggers startend => "sum";
