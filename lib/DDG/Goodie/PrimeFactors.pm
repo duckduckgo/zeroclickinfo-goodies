@@ -3,6 +3,8 @@ package DDG::Goodie::PrimeFactors;
 
 use DDG::Goodie;
 use Math::Prime::Util 'factor_exp', 'is_prime';
+
+use bignum;
 use utf8;
 
 zci answer_type => "prime_factors";
@@ -59,6 +61,7 @@ sub format_prime {
 # It converts 10000000 to 10,000,000.
 # It was copied from http://perldoc.perl.org/perlfaq5.html#How-can-I-output-my-numbers-with-commas-added%3f
 sub commify {
+    no bignum;
     local $_  = shift;
     1 while s/^([-+]?\d+)(\d{3})/$1,$2/;
     return $_;
@@ -68,7 +71,20 @@ handle remainder => sub {
     # Exit if it's not a digit.
     # TODO: We should accept different number formats.
     return unless /^\d+$/;
-    my @factors = factor_exp($_);
+
+    my $start_time = time();
+    my @factors = ();
+    
+    # Provide only one second for computing the factors.
+    eval {
+	alarm(1);
+	@factors = factor_exp($_);
+    };
+    # Exit if we didn't find anything.
+    if(@factors == 0) {
+	return;
+    }
+
     my $formatted = commify($_);
 
     # If it has only one factor then it is a prime. Except if it's 0 or 1.
