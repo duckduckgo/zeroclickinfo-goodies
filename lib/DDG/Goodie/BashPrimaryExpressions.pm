@@ -96,7 +96,7 @@ handle remainder => sub {
 	$text_output =~ s/ARG2/$right_arg/g;
 	$html_output =~ s/ARG2/<pre>$html_right_arg<\/pre>/g;
 	
-	my $intro = "The expression <pre>" . encode_entities($_) . "</pre> results to";
+	my $intro = "The Bash expression <pre>" . encode_entities($_) . "</pre> results to";
 	return "$intro $text_output.", html => append_css("$intro $html_output."), heading => encode_entities($_) . " (Bash)";
 };
 
