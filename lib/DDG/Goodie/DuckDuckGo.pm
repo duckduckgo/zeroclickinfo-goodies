@@ -15,6 +15,76 @@ attribution twitter => 'crazedpsyc',
 
 triggers startend => "duckduckgo", "ddg", "zeroclickinfo";
 
+zci is_cached => 1;
+
+my %data = (
+    goodies			=> "DuckDuckGo's Goodie repository: https://github.com/duckduckgo/zeroclickinfo-goodies",
+    spice			=> "DuckDuckGo's Spice repository: https://github.com/duckduckgo/zeroclickinfo-spice",
+    longtail			=> "DuckDuckGo's Longtail repository: https://github.com/duckduckgo/zeroclickinfo-longtail",
+    fathead			=> "DuckDuckGo's Fathead repository: https://github.com/duckduckgo/zeroclickinfo-fathead",
+    help			=> "Need help? Visit our help page: http://dukgo.com/help/",
+    roboduck			=> "DuckDuckGo's official IRC bot: https://github.com/Getty/duckduckgo-roboduck",
+    privacy			=> "DuckDuckGo's privacy policy: https://duckduckgo.com/privacy",
+    xmpp			=> "DuckDuckGo's XMPP service: https://duck.co/blog/using-pidgin-with-xmpp-jabber",
+    tor				=> "DuckDuckGo's Tor hidden service: https://3g2upl4pq6kufc4m.onion",
+    'hidden service'		=> "DuckDuckGo's Tor hidden service: https://3g2upl4pq6kufc4m.onion",
+    'tor hidden service'	=> "DuckDuckGo's Tor hidden service: https://3g2upl4pq6kufc4m.onion",
+    contributing		=> "Contributing to DuckDuckGo: https://duck.co/help/community/contributing",
+    'open source'		=> "DuckDuckGo's open source projects: https://duck.co/help/open-source/opensource-overview",
+    'business model'		=> "Advertising and Affiliates on DuckDuckGo: https://duck.co/help/company/advertising-and-affiliates",
+    advertisements		=> "Advertising and Affiliates on DuckDuckGo: https://duck.co/help/company/advertising-and-affiliates",
+    ads				=> "Advertising and Affiliates on DuckDuckGo: https://duck.co/help/company/advertising-and-affiliates",
+    press			=> "DuckDuckGo's press page: https://duck.co/help/company/press",
+    traffic			=> "DuckDuckGo's traffic page: https://duckduckgo.com/traffic.html",
+    firefox			=> "DuckDuckGo's Firefox help page: https://duck.co/help/desktop/firefox",
+    chrome			=> "DuckDuckGo's Chrome help page: https://duck.co/help/desktop/chrome",
+    safari			=> "DuckDuckGo's Safari help page: https://duck.co/help/desktop/safari",
+    'internet explorer'		=> "DuckDuckGo's Internet Explorer help page: https://duck.co/help/desktop/internet-explorer",
+    ie				=> "DuckDuckGo's Internet Explorer help page: https://duck.co/help/desktop/internet-explorer",
+    opera			=> "DuckDuckGo's Opera help page: https://duck.co/help/desktop/opera",
+    spread			=> "DuckDuckGo's Spread page: https://duckduckgo.com/supportus.html",
+    syntax			=> "DuckDuckGo's available search syntax: https://duck.co/help/results/syntax",
+    app				=> "DuckDuckGo's mobile app: https://duckduckgo.com/app/",
+    ios				=> "DuckDuckGo's mobile app: https://duckduckgo.com/app/",
+    android			=> "DuckDuckGo's mobile app: https://duckduckgo.com/app/",
+    mobile			=> "DuckDuckGo's mobile app: https://duckduckgo.com/app/",
+    blog			=> "DuckDuckGo's official blog: https://duck.co/blog",
+    translation			=> "Help translate DuckDuckGo (https://duck.co/translate) or adjust your language in the settings menu (https://duckduckgo.com/settings).",
+    translations		=> "Help translate DuckDuckGo (https://duck.co/translate) or adjust your language in the settings menu (https://duckduckgo.com/settings).",
+    language			=> "Help translate DuckDuckGo (https://duck.co/translate) or adjust your language in the settings menu (https://duckduckgo.com/settings).",
+    languages			=> "Help translate DuckDuckGo (https://duck.co/translate) or adjust your language in the settings menu (https://duckduckgo.com/settings).",
+    settings			=> "DuckDuckGo's settings: https://duckduckgo.com/settings",
+    partnership			=> "Partnering with DuckDuckGo: https://duck.co/help/company/partnerships",
+    api				=> "DuckDuckGo's API: https://duckduckgo.com/api",
+    about			=> "DuckDuckGo's about page: https://duckduckgo.com/about",
+    'short url'			=> "DuckDuckGo's short URL: http://ddg.gg/",
+    'short domain'		=> "DuckDuckGo's short URL: http://ddg.gg/",
+    'instant answers'		=> "DuckDuckGo's instant answers display helpful information at the top of the search page (like this box).\nSuggest or develop them on http://duckduckhack.com and see all the current instant answers on the Goodies page (https://duckduckgo.com/goodies).",
+    ia				=> "DuckDuckGo's instant answers display helpful information at the top of the search page (like this box).\nSuggest or develop them on http://duckduckhack.com and see all the current instant answers on the Goodies page (https://duckduckgo.com/goodies).",
+    hiring			=> "Check out the DuckDuckGo hiring article: https://duck.co/help/company/hiring",
+    job				=> "Check out the DuckDuckGo hiring article: https://duck.co/help/company/hiring",
+    jobs			=> "Check out the DuckDuckGo hiring article: https://duck.co/help/company/hiring",
+    twitter			=> 'Follow us on @duckduckgo',
+    facebook			=> "Like us on https://www.facebook.com/duckduckgo",
+    community			=> "Join our growing community: https://duck.co/",
+    doodle			=> "Take a look at our holiday logos! https://duck.co/help/settings/holiday-logos",
+    swag			=> "Thanks for the support! Check out the DuckDuckGo store for t-shirts, stickers, and other items. https://duck.co/help/community/swag",
+    merch			=> "Thanks for the support! Check out the DuckDuckGo store for t-shirts, stickers, and other items. https://duck.co/help/community/swag",
+    merchandise			=> "Thanks for the support! Check out the DuckDuckGo store for t-shirts, stickers, and other items. https://duck.co/help/community/swag",
+    shirt			=> "Thanks for the support! Check out the DuckDuckGo store for t-shirts, stickers, and other items. https://duck.co/help/community/swag",
+    sticker			=> "Thanks for the support! Check out the DuckDuckGo store for t-shirts, stickers, and other items. https://duck.co/help/community/swag",
+    stickers			=> "Thanks for the support! Check out the DuckDuckGo store for t-shirts, stickers, and other items. https://duck.co/help/community/swag",
+    duck			=> "I am the duck. Dax the duck.",
+    dax				=> "I am the duck. Dax the duck.",
+    irc				=> "DuckDuckGo's official IRC channel is #duckduckgo on irc.freenode.net.",
+    remove			=> "To remove DuckDuckGo from your browser, take a look at https://duck.co/help/desktop. Please let us know why you are leaving at https://duckduckgo.com/feedback!",
+    removing			=> "To remove DuckDuckGo from your browser, take a look at https://duck.co/help/desktop. Please let us know why you are leaving at https://duckduckgo.com/feedback!",
+    removal			=> "To remove DuckDuckGo from your browser, take a look at https://duck.co/help/desktop. Please let us know why you are leaving at https://duckduckgo.com/feedback!",
+    (map {
+        $_ => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results.",
+     } "zeroclickinfo", "zeroclick", "0click", "0clickinfo", "zero 0", "zero click info", "zero-click info")
+);
+
 my %data_html = (
     goodies			=> "DuckDuckGo's <a href='https://github.com/duckduckgo/zeroclickinfo-goodies'>Goodie repository</a>",
     spice			=> "DuckDuckGo's <a href='https://github.com/duckduckgo/zeroclickinfo-spice'>Spice repository</a>",
@@ -63,7 +133,7 @@ my %data_html = (
     job				=> "Check out the <a href='https://duck.co/help/company/hiring'>DuckDuckGo hiring article</a>.",
     jobs			=> "Check out the <a href='https://duck.co/help/company/hiring'>DuckDuckGo hiring article</a>.",
     twitter			=> "Follow us on <a href='https://twitter.com/duckduckgo'>\@duckduckgo</a>.",
-    facebook			=> "Like us on <a href='https://twitter.com/duckduckgo'>Facebook</a>.",
+    facebook			=> "Like us on <a href='https://www.facebook.com/duckduckgo'>Facebook</a>.",
     community			=> "Join our <a href='https://duck.co/'>growing community</a>!",
     doodle			=> "Take a look at our <a href='https://duck.co/help/settings/holiday-logos'>holiday logos</a>!",
     swag			=> "Thanks for the support! Check out the <a href='https://duck.co/help/community/swag'>DuckDuckGo store</a> for t-shirts, stickers, and other items.",
@@ -83,10 +153,9 @@ my %data_html = (
      } "zeroclickinfo", "zeroclick", "0click", "0clickinfo", "zero 0", "zero click info", "zero-click info")
 );
 
-zci is_cached => 1;
 handle remainder => sub {
-    if(defined $data_html{lc $_}) {
-	return "", html => $data_html{lc $_};
+    if(defined $data_html{lc $_} && defined $data{lc $_}) {
+	return $data{lc $_}, html => $data_html{lc $_};
     }
     return;
 };
