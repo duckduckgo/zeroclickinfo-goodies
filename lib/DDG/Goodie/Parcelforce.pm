@@ -1,24 +1,24 @@
-package DDG::Goodie::RoyalMail;
+package DDG::Goodie::Parcelforce;
 
 use DDG::Goodie;
 
 zci is_cached   => 1;
-zci answer_type => "royal_mail";
+zci answer_type => "parcelforce";
 
 primary_example_queries 'royal mail RU401513974GB';
 secondary_example_queries 'track parcelforce PBTM8237263001';
-description 'Track a Royal Mail / Parcelforce parcel';
-icon_url "/i/www.royalmail.com.ico";
-name 'Royal Mail';
+description 'Track a Parcelforce / Royal Mail parcel';
+icon_url "/i/www.parcelforce.com.ico";
+name 'Parcelforce';
 code_url
-    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RoyalMail.pm';
+    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Parcelforce.pm';
 category 'ids';
 topics 'special_interest';
 attribution
     github  => [ 'https://github.com/TopHattedCoder', 'Tom Bebbington' ],
     twitter => [ 'http://twitter.com/TopHattedCoder', 'TopHattedCoder' ];
 
-# Regex for royal mail.
+# Regex for parcelforce / royal mail
 my $rm_qr = qr/royalmail|parcelforce/io;
 
 my $tracking_qr = qr/package|parcel|track(?:ing|)|num(?:ber|)|\#/i;
@@ -35,9 +35,9 @@ triggers query_nowhitespace_nodash => qr/
 handle query_nowhitespace_nodash => sub {
     my $parcel_number = $+{parcel_number};
     return $parcel_number,
-        heading => 'Royal Mail / Parcelforce Tracking',
+        heading => 'Parcelforce Tracking',
         html =>
-        qq(Track this parcel at <a href="http://www.royalmail.com/portal/rm/track?trackNumber=$parcel_number">Royal Mail</a> or <a href="http://www.parcelforce.com/track-trace?trackNumber=$parcel_number">Parcelforce</a>.);
+        qq(Track this parcel at <a href="http://www.parcelforce.com/track-trace?trackNumber=$parcel_number">Parcelforce</a>.);
 };
 
 1;
