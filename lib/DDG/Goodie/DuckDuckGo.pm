@@ -17,6 +17,8 @@ triggers startend => "duckduckgo", "ddg", "zeroclickinfo";
 
 zci is_cached => 1;
 
+# TODO: Merge these into just one hash. It's easier to work with it that way.
+# This contains all of the responses in plain text.
 my %data = (
     goodies			=> "DuckDuckGo's Goodie repository: https://github.com/duckduckgo/zeroclickinfo-goodies",
     spice			=> "DuckDuckGo's Spice repository: https://github.com/duckduckgo/zeroclickinfo-spice",
@@ -86,6 +88,7 @@ my %data = (
      } "zeroclickinfo", "zeroclick", "0click", "0clickinfo", "zero 0", "zero click info", "zero-click info")
 );
 
+# This contains all of the responses in HTML format.
 my %data_html = (
     goodies			=> "DuckDuckGo's <a href='https://github.com/duckduckgo/zeroclickinfo-goodies'>Goodie repository</a>",
     spice			=> "DuckDuckGo's <a href='https://github.com/duckduckgo/zeroclickinfo-spice'>Spice repository</a>",
@@ -163,6 +166,7 @@ handle remainder => sub {
 
 	# Either both of them are references ...
 	if(ref($data_html{$key}) && ref($data{$key})) {
+	    # This 
 	    $key = ${$data{$key}};
 	    return $data{$key}, html => $data_html{$key};
 	}
