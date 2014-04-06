@@ -20,7 +20,7 @@ attribution
 zci answer_type => 'figlet';
 zci is_cached => 1;
 
-my $width = 60;
+my $width = 800;
 
 # Fetch available fonts.
 opendir DIR, share();

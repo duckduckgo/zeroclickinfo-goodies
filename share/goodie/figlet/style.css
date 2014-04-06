@@ -4,6 +4,8 @@
 
 #zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
+    word-wrap: normal;
+    white-space: pre;
 }
 
 #zero_click_wrapper #figlet-wrapper span pre {

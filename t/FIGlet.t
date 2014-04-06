@@ -15,18 +15,12 @@ ddg_goodie_test(
         ],
         'figlet DuckDuckGo' =>
             test_zci(
-                ' ____             _    ____             _    
-|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __
-| | | | | | |/ __| |/ | | | | | | |/ __| |/ /
-| |_| | |_| | (__|   <| |_| | |_| | (__|   < 
-|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\
-                                             
-  ____       
- / ___| ___  
-| |  _ / _ \ 
-| |_| | (_) |
- \____|\___/ 
-             
+                ' ____             _    ____             _     ____       
+|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
+| | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
+| |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
+|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
+                                                         
 ',
                 html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper {
     overflow: auto;
@@ -34,6 +28,8 @@ ddg_goodie_test(
 
 #zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
+    word-wrap: normal;
+    white-space: pre;
 }
 
 #zero_click_wrapper #figlet-wrapper span pre {
@@ -52,18 +48,12 @@ ddg_goodie_test(
     }
 }
 </style>
-<div id=\'figlet-wrapper\'><span>Font: <pre>standard</pre></span><pre> ____             _    ____             _    
-|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __
-| | | | | | |/ __| |/ | | | | | | |/ __| |/ /
-| |_| | |_| | (__|   <| |_| | |_| | (__|   < 
-|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\
-                                             
-  ____       
- / ___| ___  
-| |  _ / _ \ 
-| |_| | (_) |
- \____|\___/ 
-             
+<div id=\'figlet-wrapper\'><span>Font: <pre>standard</pre></span><pre> ____             _    ____             _     ____       
+|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
+| | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
+| |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
+|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
+                                                         
 </pre></div>',
 		heading => 'DuckDuckGo (FIGlet)',
             ),
@@ -81,6 +71,8 @@ ddg_goodie_test(
 
 #zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
+    word-wrap: normal;
+    white-space: pre;
 }
 
 #zero_click_wrapper #figlet-wrapper span pre {
@@ -120,6 +112,8 @@ ddg_goodie_test(
 
 #zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
+    word-wrap: normal;
+    white-space: pre;
 }
 
 #zero_click_wrapper #figlet-wrapper span pre {
@@ -161,6 +155,8 @@ ddg_goodie_test(
 
 #zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
+    word-wrap: normal;
+    white-space: pre;
 }
 
 #zero_click_wrapper #figlet-wrapper span pre {
@@ -190,19 +186,12 @@ ddg_goodie_test(
             ),
 
 		'DuckDuckGo bigtext' =>
-            test_zci(
-                ' ____             _    ____             _    
-|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __
-| | | | | | |/ __| |/ | | | | | | |/ __| |/ /
-| |_| | |_| | (__|   <| |_| | |_| | (__|   < 
-|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\
-                                             
-  ____       
- / ___| ___  
-| |  _ / _ \ 
-| |_| | (_) |
- \____|\___/ 
-             
+            test_zci(' ____             _    ____             _     ____       
+|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
+| | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
+| |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
+|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
+                                                         
 ',
                 html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper {
     overflow: auto;
@@ -210,6 +199,8 @@ ddg_goodie_test(
 
 #zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
+    word-wrap: normal;
+    white-space: pre;
 }
 
 #zero_click_wrapper #figlet-wrapper span pre {
@@ -228,18 +219,12 @@ ddg_goodie_test(
     }
 }
 </style>
-<div id=\'figlet-wrapper\'><span>Font: <pre>standard</pre></span><pre> ____             _    ____             _    
-|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __
-| | | | | | |/ __| |/ | | | | | | |/ __| |/ /
-| |_| | |_| | (__|   <| |_| | |_| | (__|   < 
-|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\
-                                             
-  ____       
- / ___| ___  
-| |  _ / _ \ 
-| |_| | (_) |
- \____|\___/ 
-             
+<div id=\'figlet-wrapper\'><span>Font: <pre>standard</pre></span><pre> ____             _    ____             _     ____       
+|  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
+| | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
+| |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
+|____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
+                                                         
 </pre></div>',
 		heading => 'DuckDuckGo (FIGlet)',
             ),
