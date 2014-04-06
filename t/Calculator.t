@@ -91,11 +91,40 @@ ddg_goodie_test(
         html =>
           qq(<div>tan(1) = <a href="javascript:;" onClick="document.x.q.value='1.5574077246549';document.x.q.focus();">1.5574077246549</a></div>)
     ),
+    'tanh(1)' => test_zci(
+        "tanh(1) = 0.761594155955765",
+        heading => 'Calculator',
+        html =>
+          qq(<div>tanh(1) = <a href="javascript:;" onClick="document.x.q.value='0.761594155955765';document.x.q.focus();">0.761594155955765</a></div>)
+    ),
+    'cotan(1)' => test_zci(
+        "cotan(1) = 0.642092615934331",
+        heading => 'Calculator',
+        html =>
+          qq(<div>cotan(1) = <a href="javascript:;" onClick="document.x.q.value='0.642092615934331';document.x.q.focus();">0.642092615934331</a></div>)
+    ),
     'sin(1)' => test_zci(
         "sin(1) = 0.841470984807897",
         heading => 'Calculator',
         html =>
           qq(<div>sin(1) = <a href="javascript:;" onClick="document.x.q.value='0.841470984807897';document.x.q.focus();">0.841470984807897</a></div>)
+    ),
+    'csc(1)' => test_zci(
+        "csc(1) = 1.18839510577812",
+        heading => 'Calculator',
+        html =>
+          qq(<div>csc(1) = <a href="javascript:;" onClick="document.x.q.value='1.18839510577812';document.x.q.focus();">1.18839510577812</a></div>)
+    ),
+    'sec(1)' => test_zci(
+        "sec(1) = 1.85081571768093",
+        heading => 'Calculator',
+        html =>
+          qq(<div>sec(1) = <a href="javascript:;" onClick="document.x.q.value='1.85081571768093';document.x.q.focus();">1.85081571768093</a></div>)
+    ),
+    'log10(100.00)' => test_zci(
+        "log10(100.00) = 2",
+        heading => 'Calculator',
+        html    => qq(<div>log10(100.00) = <a href="javascript:;" onClick="document.x.q.value='2';document.x.q.focus();">2</a></div>)
     ),
     '$3.43+$34.45' => test_zci(
         '$3.43 + $34.45 = $37.88',
@@ -186,6 +215,13 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qq(<div>2,90 + 4,6 = <a href="javascript:;" onClick="document.x.q.value='7,50';document.x.q.focus();">7,50</a></div>),
     ),
+    '2,90 + sec(4,6)' => test_zci(
+        '2,90 + sec(4,6) = -6,01642861135959',
+        heading => 'Calculator',
+        html =>
+          qq(<div>2,90 + sec(4,6) = <a href="javascript:;" onClick="document.x.q.value='-6,01642861135959';document.x.q.focus();">-6,01642861135959</a></div>),
+    ),
+
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,

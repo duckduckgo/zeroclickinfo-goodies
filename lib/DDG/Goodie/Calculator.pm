@@ -4,6 +4,7 @@ package DDG::Goodie::Calculator;
 use DDG::Goodie;
 
 use List::Util qw( all first max);
+use Math::Trig;
 
 zci is_cached   => 1;
 zci answer_type => "calc";
@@ -31,7 +32,7 @@ triggers query_nowhitespace => qr<
         [\( \) x X * % + / \^ 0-9 \. , \$ -]*
 
         (?(1) (?: -? [0-9 \. ,]+ |) |)
-        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log10 | exp )+
+        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log10 | exp | tanh | sec | csc)+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c |)
@@ -74,7 +75,7 @@ foreach my $style (@known_styles) {
 my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
 
 my $numbery = qr/^[\d$all_seps]+$/;
-my $funcy   = qr/(cos|sin|tan|log10|log|cotan)\(|\^/;    # Things which cause "non-precise" answers.
+my $funcy   = qr/[[a-z]+\(|log10\(|\^/;    # Stuff that looks like functions.
 
 my %named_operations = (
     '\^'          => '**',
@@ -88,8 +89,8 @@ my %named_operations = (
 my @named_constants = (
     # Ordering is important because we use regex, bah.
     [dozen => 12],
-    [e     => 2.71828182845904523536028747135266249],    # The next couple should be computed.
-    [pi    => 3.14159265358979323846264338327950288],
+    [e     => 2.71828182845904523536028747135266249],    # This should be computed.
+    [pi    => pi],                                       # pi constant from Math::Trig
     [gross => 144],
 );
 
@@ -119,7 +120,7 @@ handle query_nowhitespace => sub {
         foreach (@named_constants) {
             my ($name, $constant) = @{$_};
             $tmp_expr =~ s# (\d+?)\s+$name # $1 * $constant #xig;
-            $tmp_expr =~ s# $name #  $constant #xig;
+            $tmp_expr =~ s#\b$name\b# $constant #ig;
         }
 
         my @numbers = grep { $_ =~ $numbery } (split /\s+/, $tmp_expr);
@@ -127,6 +128,7 @@ handle query_nowhitespace => sub {
         return unless $style;
 
         $tmp_expr = $style->{make_safe}->($tmp_expr);
+        # Using functions makes us want answers with more precision than our inputs indicate.
         my $precision = ($query =~ $funcy) ? undef : max(map { $style->{precision}->($_) } @numbers);
 
         eval {
@@ -180,17 +182,7 @@ handle query_nowhitespace => sub {
     return;
 };
 
-#extra math functions
-sub tan {
-    my $x = $_[0];
-    return sin($x) / cos($x);
-}
-
-sub cotan {
-    my $x = $_[0];
-    return cos($x) / sin($x);
-}
-
+#extra math function
 sub log10 {
     my $x = $_[0];
     return log($x) / log(10);
