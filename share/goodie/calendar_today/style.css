@@ -1,4 +1,4 @@
 #zero_click_abstract table { text-align: center; }
 #zero_click_abstract th { width:40px; text-align:center; }
-#zero_click_abstract th.header { width:150px; text-align:left; vertical-align: top; }
-#zero_click_abstract td.today { color:white; background-color: #808080; }
+#zero_click_abstract th.zero_click_abstract_header { width:150px; text-align:left; vertical-align: top; }
+#zero_click_abstract td.zero_click_abstract_today { color:white; background-color: #808080; }
