@@ -229,7 +229,7 @@ sub nearestMonth {
 sub prepare_returntext {
   # Print heading
   $rText = "\n";
-  $rHtml = '<table><tr><th class="header" rowspan="7">';
+  $rHtml = '<table><tr><th class="zero_click_abstract_header" rowspan="7">';
   $rHtml.=$firstDay->strftime("%B %Y").'</th>';
 
   for my $dayHeading (@weekDays) {
@@ -250,7 +250,7 @@ sub prepare_returntext {
   for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
     if($dayNum == $givenDay) { 
       $rText.= "|"; 
-      $rHtml.= '<td class="today">'.$dayNum.'</td>';
+      $rHtml.= '<td class="zero_click_abstract_today">'.$dayNum.'</td>';
     } else {
       $rText.=" "; 
     }
