@@ -17,7 +17,7 @@ Other donors: A+ or O+
 Only if no Rh(+) found: A- or O-
 END
 ,
-	html => "<table><tr><td>Ideal donor:&nbsp;&nbsp;&nbsp;</td><td>A+</td></tr><tr><td>Other donors:&nbsp;&nbsp;&nbsp;</td><td>A+ or O+</td></tr><tr><td><b>Only if</b> no Rh(+) found:&nbsp;&nbsp;&nbsp;</td><td>A- or O-</td></tr></table>",
+	html => "<table><tr><td>Ideal donor:</td><td>A+</td></tr><tr><td>Other donors:</td><td>A+ or O+</td></tr><tr><td><i>Only if</i> no Rh(+) found:</td><td>A- or O-</td></tr></table>",
 	heading => "Donors for blood type A+"
 		),
 	'donors for A+' => test_zci(<<END
@@ -26,7 +26,7 @@ Other donors: A+ or O+
 Only if no Rh(+) found: A- or O-
 END
 ,
-	html => "<table><tr><td>Ideal donor:&nbsp;&nbsp;&nbsp;</td><td>A+</td></tr><tr><td>Other donors:&nbsp;&nbsp;&nbsp;</td><td>A+ or O+</td></tr><tr><td><b>Only if</b> no Rh(+) found:&nbsp;&nbsp;&nbsp;</td><td>A- or O-</td></tr></table>",
+	html => "<table><tr><td>Ideal donor:</td><td>A+</td></tr><tr><td>Other donors:</td><td>A+ or O+</td></tr><tr><td><i>Only if</i> no Rh(+) found:</td><td>A- or O-</td></tr></table>",
 	heading => "Donors for blood type A+"
 		),
 	'blood donor A+' => test_zci(<<END
@@ -35,7 +35,7 @@ Other donors: A+ or O+
 Only if no Rh(+) found: A- or O-
 END
 ,
-	html => "<table><tr><td>Ideal donor:&nbsp;&nbsp;&nbsp;</td><td>A+</td></tr><tr><td>Other donors:&nbsp;&nbsp;&nbsp;</td><td>A+ or O+</td></tr><tr><td><b>Only if</b> no Rh(+) found:&nbsp;&nbsp;&nbsp;</td><td>A- or O-</td></tr></table>",
+	html => "<table><tr><td>Ideal donor:</td><td>A+</td></tr><tr><td>Other donors:</td><td>A+ or O+</td></tr><tr><td><i>Only if</i> no Rh(+) found:</td><td>A- or O-</td></tr></table>",
 	heading => "Donors for blood type A+"
 		),
 	'blood donors for A+' => test_zci(<<END
@@ -44,7 +44,7 @@ Other donors: A+ or O+
 Only if no Rh(+) found: A- or O-
 END
 ,
-	html => "<table><tr><td>Ideal donor:&nbsp;&nbsp;&nbsp;</td><td>A+</td></tr><tr><td>Other donors:&nbsp;&nbsp;&nbsp;</td><td>A+ or O+</td></tr><tr><td><b>Only if</b> no Rh(+) found:&nbsp;&nbsp;&nbsp;</td><td>A- or O-</td></tr></table>",
+	html => "<table><tr><td>Ideal donor:</td><td>A+</td></tr><tr><td>Other donors:</td><td>A+ or O+</td></tr><tr><td><i>Only if</i> no Rh(+) found:</td><td>A- or O-</td></tr></table>",
 	heading => "Donors for blood type A+"
 		),
 );

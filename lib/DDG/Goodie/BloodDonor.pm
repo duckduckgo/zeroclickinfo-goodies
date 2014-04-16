@@ -24,7 +24,7 @@ my %typeMap = (
 
 sub table_data {
   my ($label, $value) = @_;
-  return '<tr><td>' . $label . '&nbsp;&nbsp;&nbsp;</td><td>' . $value . "</td></tr>";
+  return '<tr><td>' . $label . '</td><td>' . $value . "</td></tr>";
 }
 
 handle remainder => sub {
@@ -35,8 +35,10 @@ handle remainder => sub {
       my @idealResults = ();
       my @criticalResults = ();
 
+      return unless defined $typeMap{$type};
+      
       # ideally same Rh
-      foreach our $donorType (split(",",$typeMap{$type})) {
+      foreach our $donorType (split(",", $typeMap{uc $type})) {
           push(@idealResults, $donorType . $rh);
           if($rh eq '+') {
             # only when access to same Rh is impossible
@@ -54,7 +56,7 @@ handle remainder => sub {
       $html .= table_data("Other donors:", $idealStr);
       if($rh eq '+') {
         $output .= "Only if no Rh(+) found: " . $criticalStr . "\n";
-        $html .= table_data("<b>Only if</b> no Rh(+) found:", $criticalStr);
+        $html .= table_data("<i>Only if</i> no Rh(+) found:", $criticalStr);
       }
       $html .= '</table>';
       return $output, html => $html, heading => "Donors for blood type $_";
