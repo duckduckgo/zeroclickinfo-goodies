@@ -166,7 +166,6 @@ handle remainder => sub {
 
 	# Either both of them are references ...
 	if(ref($data_html{$key}) && ref($data{$key})) {
-	    # This 
 	    $key = ${$data{$key}};
 	    return $data{$key}, html => $data_html{$key};
 	}
