@@ -164,16 +164,13 @@ handle remainder => sub {
     # Make sure that it exists in both hashes.
     if(defined $data_html{$key} && defined $data{$key}) {
 
-	# Either both of them are references ...
+	# Both of them should be references.
 	if(ref($data_html{$key}) && ref($data{$key})) {
 	    $key = ${$data{$key}};
 	    return $data{$key}, html => $data_html{$key};
 	}
 
-	# Or neither of them are references.
-	if(!ref($data_html{$key}) && !ref($data{$key})) {
-	    return $data{$key}, html => $data_html{$key};
-	}
+	return $data{$key}, html => $data_html{$key};
     }
 
     return;
