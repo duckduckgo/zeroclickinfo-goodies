@@ -3,7 +3,7 @@ package DDG::Goodie::BloodDonor;
 
 use DDG::Goodie;
 
-triggers start => 'donor', 'donors for', 'blood donor', 'blood donors for';
+triggers startend => 'donor compatibility', 'donor', 'donors for', 'blood donor', 'blood donors for', 'blood type', 'blood compatibility', 'compatibility', 'blood donor compatibility';
 zci answer_type => "blood_donor";
 
 primary_example_queries 'donor O+';
