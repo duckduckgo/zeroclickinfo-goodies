@@ -35,7 +35,7 @@ handle remainder => sub {
       my @idealResults = ();
       my @criticalResults = ();
 
-      return unless defined $typeMap{$type};
+      return unless defined $typeMap{uc $type};
       
       # ideally same Rh
       foreach our $donorType (split(",", $typeMap{uc $type})) {

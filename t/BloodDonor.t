@@ -47,6 +47,10 @@ END
 	html => "<table><tr><td>Ideal donor:</td><td>A+</td></tr><tr><td>Other donors:</td><td>A+ or O+</td></tr><tr><td><i>Only if</i> no Rh(+) found:</td><td>A- or O-</td></tr></table>",
 	heading => "Donors for blood type A+"
 		),
+	'donor o+' => test_zci("Ideal donor: o+\nOther donors: O+\nOnly if no Rh(+) found: O-\n",
+		html => "<table><tr><td>Ideal donor:</td><td>o+</td></tr><tr><td>Other donors:</td><td>O+</td></tr><tr><td><i>Only if</i> no Rh(+) found:</td><td>O-</td></tr></table>",
+		heading => "Donors for blood type o+"
+	),
 );
 
 done_testing;
