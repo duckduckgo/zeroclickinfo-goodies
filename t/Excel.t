@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
-use DDG::Test::Spice;
+use DDG::Test::Goodie;
 
 zci answer_type => 'excel';
 zci is_cached  => 1;
