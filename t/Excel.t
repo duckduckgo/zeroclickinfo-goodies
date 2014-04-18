@@ -10,7 +10,10 @@ zci is_cached  => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Excel )],
-    'excel sum' => test_zci('SUM function: Adds its arguments')
+    'excel sum' => test_zci('SUM function: Adds its arguments'),
+    'sum excel' => test_zci('SUM function: Adds its arguments'),
+    'excel 2013' => undef,
+    'microsoft excel' => undef
 );
 
 done_testing;
