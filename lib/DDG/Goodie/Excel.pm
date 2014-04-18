@@ -7,7 +7,7 @@ description 'Shows the description of an Excel function';
 primary_example_queries 'sum excel';
 category 'reference';
 topics 'everyday';
-code_url 'https://github.com/yzwx/zeroclickinfo-goodie/blob/excel/lib/DDG/Goodie/Excel.pm';
+code_url 'https://github.com/yzwx/zeroclickinfo-goodies/blob/excel/lib/DDG/Goodie/Excel.pm';
 attribution github => ['https://github.com/yzwx', 'yzwx'];
 
 triggers startend => 'excel';
