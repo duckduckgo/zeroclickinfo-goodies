@@ -480,7 +480,8 @@ handle remainder => sub {
     my $func = uc $_;
     my $desc = $descs{$func};
 
-    return $func . ' function: ' . $desc, html => '<i>' . $func . ' function</i>: ' . $desc if $desc;
+    return unless defined $desc;
+    return $func . ' function: ' . $desc, html => '<i>' . $func . ' function</i>: ' . $desc;
     return;
 };
 
