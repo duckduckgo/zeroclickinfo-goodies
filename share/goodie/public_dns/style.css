@@ -1,0 +1,11 @@
+#zero_click_abstract table.publicdns td {
+    white-space: nowrap;
+    padding: 0.5ex;
+    border: 1px solid #ddd;
+}
+
+#zero_click_abstract table.publicdns th {
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #ddd;
+}
