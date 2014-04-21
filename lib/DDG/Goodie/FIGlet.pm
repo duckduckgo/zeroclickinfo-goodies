@@ -4,7 +4,7 @@ package DDG::Goodie::FIGlet;
 use DDG::Goodie;
 use Text::FIGlet;
 
-triggers startend => "figlet", "bigtext";
+triggers startend => "figlet", "bigtext", "big text";
 primary_example_queries 'figlet DuckDuckGo';
 secondary_example_queries 'figlet computer DuckDuckGo';
 
@@ -53,10 +53,10 @@ handle query => sub {
 	my $heading;
 
 	# Return if no input provided.
-	return if (($_ eq 'figlet') || ($_ eq 'bigtext'));
+	return if (($_ eq 'figlet') || ($_ eq 'bigtext') || ($_ eq 'big text'));
 
 	# Parse query.
-	$_ =~ m/^(?:figlet|bigtext)(?:\-|\s+)(.*)|(.*)\s+(?:figlet|bigtext)$/;
+	$_ =~ m/^(?:figlet|bigtext|big text)(?:\-|\s+)(.*)|(.*)\s+(?:figlet|bigtext|big text)$/;
 	$text = $1 if $1;
 	$text = $2 if $2;
 
@@ -74,7 +74,7 @@ handle query => sub {
 	# Render the FIGlet
 	$figlet = render_figlet($font, $text);
 	$heading = $text . " (FIGlet)";
-	$html = "<div id='figlet-wrapper'><span>Font: <pre>$font</pre></span><pre>$figlet</pre></div>";
+	$html = "<div id='figlet-wrapper'><span>Font: <pre>$font</pre></span><textarea>$figlet</textarea></div>";
 
 	return $figlet, html => apply_css($html), heading => $heading if $figlet;
 	return;

@@ -4,8 +4,16 @@
 
 #zero_click_wrapper #figlet-wrapper pre {
     background-color: inherit;
+}
+
+#zero_click_wrapper #figlet-wrapper textarea {
+    display: block;
     word-wrap: normal;
     white-space: pre;
+    font-family: monospace;
+    border: 0;
+    height: 175px;
+    width: 100%;
 }
 
 #zero_click_wrapper #figlet-wrapper span pre {
