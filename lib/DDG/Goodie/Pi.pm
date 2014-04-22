@@ -21,7 +21,7 @@ handle remainder => sub {
 	my $random = int(rand(1000)) + 1;
 
     return substr $pi, 0, $_ + 1 if $_ =~ /^\d+$/ && $_ >= 3 && $_ <= 1000; # Integer
-    return $pi if $_ eq ''; # "digits of pi"
+    return $pi . '...' if $_ eq ''; # "digits of pi"
     return substr $pi, 0, 4 if lc $_ eq 'random' && $random < 3; # Random integer <3
     return substr $pi, 0, $random + 1 if lc $_ eq 'random'; # Random integer ≥3 but ≤1000
     return;
