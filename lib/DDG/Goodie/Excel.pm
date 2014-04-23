@@ -481,7 +481,7 @@ handle remainder => sub {
     my $desc = $descs{$func};
 
     return unless defined $desc;
-    return 'Excel ' . $func . ' function: ' . $desc, html => '<i>Excel</i> <code>' . $func . '</code> <i>function</i>: ' . $desc;
+    return html => '<span style="color: gray">Excel ' . $func . ' function:</span> ' . $desc;
     return;
 };
 
