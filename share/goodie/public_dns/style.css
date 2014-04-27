@@ -1,11 +1,20 @@
+#zero_click_abstract table.publicdns {
+    font-family: Consolas,"Anonymous Pro",Anonymous,"Courier New",monospace;
+    font-size: 12px;
+    line-height: 14px;
+}
+
 #zero_click_abstract table.publicdns td {
     white-space: nowrap;
-    padding: 0.5ex;
-    border: 1px solid #ddd;
+    padding: 2px 4px;
+    border: 2px solid #fff;
 }
 
 #zero_click_abstract table.publicdns th {
     font-weight: bold;
     text-align: center;
-    border: 1px solid #ddd;
+    background-color: #888;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 2px 4px;
 }

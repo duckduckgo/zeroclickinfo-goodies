@@ -13,7 +13,9 @@ zci is_cached   => 1;
 # Hopefully, some one has eyeballed the output to make sure its got the right data.
 my $text_table = qr#^\+-+.*-+\+#m;
 my $html_table = qr#<table class="publicdns">.*</table>$#m;
+my $heading    = 'Public DNS Servers';
 
-ddg_goodie_test([qw( DDG::Goodie::PublicDNS)], map { ("$_" => test_zci($text_table, html => $html_table,)) } ('public dns', 'dns servers',));
+ddg_goodie_test([qw( DDG::Goodie::PublicDNS)],
+    map { ("$_" => test_zci($text_table, html => $html_table, heading => $heading,)) } ('public dns', 'dns servers',));
 
 done_testing;

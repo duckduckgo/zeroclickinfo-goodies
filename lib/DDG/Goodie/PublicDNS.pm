@@ -1,4 +1,5 @@
 package DDG::Goodie::PublicDNS;
+# ABSTRACT: Display a list of DNS servers which accept public queries.
 
 use DDG::Goodie;
 
@@ -124,8 +125,12 @@ foreach my $server (@ordered_servers) {
 $text .= $table_spacer;
 $html .= '</table>';
 
+my $heading = 'Public DNS Servers';
+
 handle sub {
-    $text, html => $html;
+    $text,
+      html    => $html,
+      heading => $heading;
 };
 
 sub _max_str_len {
