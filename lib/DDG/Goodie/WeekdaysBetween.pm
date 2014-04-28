@@ -4,9 +4,10 @@ package DDG::Goodie::WeekdaysBetween;
 # ABSTRACT: Give the number of week days between two given dates.
 
 use DDG::Goodie;
+use List::Util qw( min max );
 use Date::Calc qw(Delta_Days Day_of_Week);
 
-triggers start => "weekdays between", "week days between";
+triggers start => "weekdays between", "week days between", "weekdays from";
 
 zci is_cached => 1;
 zci answer_type => "weekdays_between"; # what is this?
@@ -27,7 +28,7 @@ handle remainder => sub {
         return;
     }
 
-    my $weekdays =  delta_weekdays($start->year, $start->mon, $start->mday, $end->year, $end->mon, $end->mday)
+    my $weekdays = delta_weekdays($start->year, $start->mon, $start->mday, $end->year, $end->mon, $end->mday);
 	# if nothing is return, return nothing.    
 	unless ($weekdays) {
         return;
@@ -46,9 +47,9 @@ handle remainder => sub {
 sub delta_weekdays {
   my(@date1) = ($_[0], $_[1], $_[2]);
   my(@date2) = ($_[3], $_[4], $_[5]);
-  my($day_count,$result,$dow1,$dow2);
+  my($day_count,$result,$dow1,$dow2,$wholeweeks,$temp);
 
-  $day_count = Delta_Days(@date1, @date2);
+  $day_count = Delta_Days(@date1, @date2) + 1; # always inclusive
   if ($day_count != 0) {
         if ($day_count < 0) {
           return;
