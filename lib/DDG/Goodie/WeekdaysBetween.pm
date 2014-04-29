@@ -9,7 +9,6 @@ use Date::Calc qw(Delta_Days Day_of_Week);
 
 triggers start => "weekdays between", "week days between", "weekdays from";
 
-zci is_cached => 1;
 zci answer_type => "weekdays_between";
 
 primary_example_queries 'weekdays between 01/31/2000 01/31/2001';
@@ -29,10 +28,6 @@ handle remainder => sub {
     }
 
     my $weekdays = delta_weekdays($start->year, $start->mon, $start->mday, $end->year, $end->mon, $end->mday);
-	# if nothing is return, return nothing.    
-	unless ($weekdays) {
-        return;
-    }
     
     my $date_format = "%b %d, %Y";
     my $start_str = $start->strftime($date_format);
