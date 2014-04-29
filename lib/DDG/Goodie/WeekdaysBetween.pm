@@ -10,7 +10,7 @@ use Date::Calc qw(Delta_Days Day_of_Week);
 triggers start => "weekdays between", "week days between", "weekdays from";
 
 zci is_cached => 1;
-zci answer_type => "weekdays_between"; # what is this?
+zci answer_type => "weekdays_between";
 
 primary_example_queries 'weekdays between 01/31/2000 01/31/2001';
 description 'Calculate the number of weekdays between two dates.';
@@ -82,6 +82,7 @@ sub delta_weekdays {
   return  $result;
 }
 
+# Copied from https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WorkdaysBetween.pm#L48-#L132
 # Given a string containing two dates, parse out the dates, and return them in
 # chronological order.
 #
