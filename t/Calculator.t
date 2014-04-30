@@ -221,7 +221,11 @@ ddg_goodie_test(
         html =>
           qq(<div>2,90 + sec(4,6) = <a href="javascript:;" onClick="document.x.q.value='-6,01642861135959';document.x.q.focus();">-6,01642861135959</a></div>),
     ),
-
+    '100 - 96.54' => test_zci(
+        '100 - 96.54 = 3.46',
+        heading => 'Calculator',
+        html    => qq(<div>100 - 96.54 = <a href="javascript:;" onClick="document.x.q.value='3.46';document.x.q.focus();">3.46</a></div>),
+    ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,
@@ -230,4 +234,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-
