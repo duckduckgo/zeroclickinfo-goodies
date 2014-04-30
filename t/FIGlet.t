@@ -45,13 +45,13 @@ ddg_goodie_test(
 }
 
 @media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 5px;
     }
 }
@@ -96,13 +96,13 @@ ddg_goodie_test(
 }
 
 @media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 5px;
     }
 }
@@ -145,13 +145,13 @@ ddg_goodie_test(
 }
 
 @media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 5px;
     }
 }
@@ -196,13 +196,13 @@ ddg_goodie_test(
 }
 
 @media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 5px;
     }
 }
@@ -248,13 +248,13 @@ ddg_goodie_test(
 }
 
 @media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 5px;
     }
 }
@@ -300,13 +300,13 @@ ddg_goodie_test(
 }
 
 @media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper {
+    #zero_click_wrapper #figlet-wrapper textarea {
         font-size: 5px;
     }
 }
