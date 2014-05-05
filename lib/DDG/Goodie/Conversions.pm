@@ -38,7 +38,7 @@ triggers end => @units;
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
 
 # guards and matches regex
-my $guard = qr/^(convert\s)?[0-9\.]+\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
+my $guard = qr/^(convert\s)?[0-9\.]*\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
 my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
 
 # exceptions for pluralized forms:
