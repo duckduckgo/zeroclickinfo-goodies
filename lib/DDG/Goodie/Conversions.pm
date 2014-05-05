@@ -4,6 +4,7 @@ package DDG::Goodie::Conversions;
 use DDG::Goodie;
 use Math::Round qw/nearest/;
 use Scalar::Util qw/looks_like_number/;
+use bignum;
 use Convert::Pluggable 0.018;     
 # ^^ mass, length, time, pressure, energy, power, angle, force, temperature, digital 
 
@@ -108,24 +109,26 @@ handle query_lc => sub {
         $f_result = (sprintf "%.${precision}g", $result->{'result'});
     }
 
-    if ($factor != 1 && $result->{'type_1'} ne 'temperature') {
-        $result->{'from_unit'} = (exists $plural_exceptions{$result->{'from_unit'}}) ? $plural_exceptions{$result->{'from_unit'}} : $result->{'from_unit'} . 's'; 
-    }
+	# handle pluralisation of units
+	# however temperature is never plural and does require "degrees" to be prepended
+	if ($result->{'type_1'} ne 'temperature') {
+		if ($factor != 1) {
+	        $result->{'from_unit'} = (exists $plural_exceptions{$result->{'from_unit'}}) ? $plural_exceptions{$result->{'from_unit'}} : $result->{'from_unit'} . 's'; 
+	    }
     
-    if ($result->{'result'} != 1 && $result->{'type_1'} ne 'temperature') {
-        $result->{'to_unit'} = (exists $plural_exceptions{$result->{'to_unit'}}) ? $plural_exceptions{$result->{'to_unit'}} : $result->{'to_unit'} . 's'; 
-    }
+	    if ($result->{'result'} != 1) {
+	        $result->{'to_unit'} = (exists $plural_exceptions{$result->{'to_unit'}}) ? $plural_exceptions{$result->{'to_unit'}} : $result->{'to_unit'} . 's'; 
+	    }
+	}
+	else {
+		$result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
+		$result->{'to_unit'} = "degrees $result->{'to_unit'}" if ($result->{'to_unit'} ne "kelvin");
+	}
 
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
     $result->{'result'} =~ s/\.0{$precision}$//;
 
-    #my $temperature_label = ($result->{'type_1'} eq 'temperature') ? 'degrees' : '';
-    if ($result->{'type_1'} eq 'temperature') {
-        return "$factor degrees $result->{'from_unit'} is $result->{'result'} degrees $result->{'to_unit'}";
-    }
-    else {
-        return "$factor $result->{'from_unit'} is $result->{'result'} $result->{'to_unit'}";
-    }
+    return "$factor $result->{'from_unit'} is $result->{'result'} $result->{'to_unit'}";
 };
 
 

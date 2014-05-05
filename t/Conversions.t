@@ -31,7 +31,7 @@ ddg_goodie_test(
     '36 months to years'              => test_zci('36 months is 3 years',),
     '43200 seconds in hours'          => test_zci('43200 seconds is 12 hours',),
     '4 hours to minutes'              => test_zci('4 hours is 240 minutes',),
-    'convert 5 kelvin to fahrenheit'  => test_zci('5 degrees kelvin is -450.670 degrees fahrenheit'),
+    'convert 5 kelvin to fahrenheit'  => test_zci('5 kelvin is -450.670 degrees fahrenheit'),
     '1 bar to pascal'                 => test_zci('1 bar is 100000 pascals',),
     '1 kilopascal to psi'             => test_zci('1 kilopascal is 0.145 pounds per square inch',),
     '1 atm to kpa'                    => test_zci('1 atmosphere is 101.325 kilopascals',),
