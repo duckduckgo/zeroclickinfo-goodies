@@ -72,7 +72,10 @@ ddg_goodie_test(
     'convert km to cm'                => test_zci('1 kilometer is 100000 centimeters'),
 #    'convert 10ms to km'			  => undef,
 #    'convert 10ms to seconds'         => test_zci('10 milliseconds is 0.02 seconds'),	#this appears to be an issue in Convert::Pluggable
-    
+    'what is 1 inch in cm'            => test_zci('1 inch is 2.540 centimeters'),
+    'what are 10 yards in metres'     => test_zci('10 yards is 9.144 meters'),
+    'how long is 42 days in mins'     => test_zci('42 days is 60480 minutes'),
+    'how much is 40 kelvin in celsius' => test_zci('40 kelvin is -233 degrees celsius'),
 );
 
 done_testing;

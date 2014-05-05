@@ -37,9 +37,9 @@ triggers end => @units;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
-
+my $question_prefix = qr/(convert|what (is|are|does)|how (much|many|long) (is|are))?\s?/;
 # guards and matches regex
-my $guard = qr/^(convert\s)?[0-9\.]*\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
+my $guard = qr/^$question_prefix[0-9\.]*\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
 my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
 
 # exceptions for pluralized forms:
