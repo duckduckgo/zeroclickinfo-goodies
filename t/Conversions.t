@@ -67,7 +67,8 @@ ddg_goodie_test(
     '1 exabyte to pib'                => test_zci('1 exabyte is 888.178 pebibytes'),
     'convert 1 yb to yib'             => test_zci('1 yottabyte is 0.827 yobibytes'),
     '16 years in months'              => test_zci('16 years is 192 months'),
-    '1 year in months'                => test_zci('1 year is 12 months')
+    '1 year in months'                => test_zci('1 year is 12 months'),
+    '360 degrees in revolutions'      => test_zci('360 degrees is 1 revolution')
 );
 
 done_testing;
