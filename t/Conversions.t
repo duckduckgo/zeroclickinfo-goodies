@@ -69,7 +69,10 @@ ddg_goodie_test(
     '16 years in months'              => test_zci('16 years is 192 months'),
     '1 year in months'                => test_zci('1 year is 12 months'),
     '360 degrees in revolutions'      => test_zci('360 degrees is 1 revolution'),
-    'convert km to cm'                => test_zci('1 kilometer is 100000 centimeters')
+    'convert km to cm'                => test_zci('1 kilometer is 100000 centimeters'),
+#    'convert 10ms to km'			  => undef,
+#    'convert 10ms to seconds'         => test_zci('10 milliseconds is 0.02 seconds'),	#this appears to be an issue in Convert::Pluggable
+    
 );
 
 done_testing;
