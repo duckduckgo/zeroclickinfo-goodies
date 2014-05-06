@@ -1,4 +1,6 @@
-#zero_click_abstract table { text-align: center; }
-#zero_click_abstract th { width:40px; text-align:center; }
-#zero_click_abstract th.zero_click_abstract_header { width:150px; text-align:left; vertical-align: top; }
-#zero_click_abstract td.zero_click_abstract_today { color:white; background-color: #808080; }
+table.calendar { text-align: center; }
+
+	.calendar th, .calendar td { width:2.5em; text-align:center; }
+
+	.calendar__header { vertical-align: top; height: 2em; font-size: 1.25em; }
+	.calendar__today { color:white; background-color: #808080; }
