@@ -1,24 +1,18 @@
-.zci--answer table { 
+.zci--answer table.calendar { 
 	text-align: center; 
 }
 
-.zci--answer th { 
-	width:40px; 
+.zci--answer .calendar th, .calendar td { 
+	width:2.5em; 
 	text-align:center; 
 }
 
-.zci--answer th.zero_click_abstract_header { 
-	width:150px; 
-	text-align:left; 
+.zci--answer .calendar__header { 
 	vertical-align: top; 
+	height: 2em; 
+	font-size: 1.25em; 
 }
-
-.zci--answer  td.zero_click_abstract_today { 
-	text-align: center; 
+.zci--answer .calendar__today { 
 	color:white; 
 	background-color: #808080; 
-}
-
-.zci--answer td.zero_click_abstract_day { 
-	text-align: center;
 }
