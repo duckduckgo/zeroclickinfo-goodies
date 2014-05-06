@@ -68,6 +68,7 @@ handle remainder => sub {
 	    }
 	}
     }
+
     # copied verbatim from Randagram.pm
     my @chars = split(//, $in);
     @chars = shuffle(@chars);
@@ -80,10 +81,12 @@ handle remainder => sub {
 	    $ana = "Anagrams of \"$in\": " if scalar(@output) > 1;
 	    return $ana.join(', ', @output);
 	}
-	return $garbledAnswer;
+	return $garbledAnswer if $in;
     }
     return "Anagrams of \"$in\" of size $n: ".join(', ', @output) if @output;
-    return $garbledAnswer;
+    return $garbledAnswer if $in;
+
+    return;
 };
 
 1;
