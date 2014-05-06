@@ -1,6 +1,5 @@
-table.calendar { text-align: center; }
-
-	.calendar th, .calendar td { width:2.5em; text-align:center; }
-
-	.calendar__header { vertical-align: top; height: 2em; font-size: 1.25em; }
-	.calendar__today { color:white; background-color: #808080; }
+.zci__body table { text-align: center; }
+.zci__body th { width:40px; text-align:center; }
+.zci__body th.zero_click_abstract_header { width:150px; text-align:left; vertical-align: top; }
+.zci__body td.zero_click_abstract_today { text-align: center; color:white; background-color: #808080; }
+.zci__body td.zero_click_abstract_day { text-align: center;}

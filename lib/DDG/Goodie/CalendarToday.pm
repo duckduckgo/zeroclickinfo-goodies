@@ -30,7 +30,7 @@ my $givenDay, my $givenMonth, my $givenYear;
 my $validMonthPattern, my $validYearPattern;
 my $firstDay, my $firstWeekDayId, my $lastDay;
 my $rText, my $rHtml;
-my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
+my @weekDays = ("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
   
 # read in css-file only once
 my $css = share("style.css")->slurp;
@@ -229,12 +229,12 @@ sub nearestMonth {
 sub prepare_returntext {
   # Print heading
   $rText = "\n";
-  $rHtml = '<table class="calendar"><tr><th class="calendar__header" colspan="7"><b>';
-  $rHtml.=$firstDay->strftime("%B %Y").'</b></th></tr><tr>';
+  $rHtml = '<table><tr><th class="zero_click_abstract_header" rowspan="7">';
+  $rHtml.=$firstDay->strftime("%B %Y").'</th>';
 
   for my $dayHeading (@weekDays) {
     $rText.= "$dayHeading ";
-    $rHtml.= '<th>'.$dayHeading.'</th>';
+    $rHtml.= '<th>&nbsp;'.$dayHeading.'</th>';
   }
   $rText.= "     ".$firstDay->strftime("%B %Y")."\n";
   $rHtml.= "</tr><tr>";
@@ -250,7 +250,7 @@ sub prepare_returntext {
   for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
     if($dayNum == $givenDay) { 
       $rText.= "|"; 
-      $rHtml.= '<td><span class="class="calendar__today  circle">'.$dayNum.'</span></td>';
+      $rHtml.= '<td class="zero_click_abstract_today">'.$dayNum.'</td>';
     } else {
       $rText.=" "; 
     }
@@ -261,7 +261,7 @@ sub prepare_returntext {
 
     $rText.= "$dayNum";
     if($dayNum != $givenDay ) {
-      $rHtml.= "<td>$dayNum</td>";
+      $rHtml.= '<td class="zero_click_abstract_day">'.$dayNum.'</td>';
     }
     
     if($dayNum == $givenDay) { 
