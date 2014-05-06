@@ -1,5 +1,24 @@
-.zci__body table { text-align: center; }
-.zci__body th { width:40px; text-align:center; }
-.zci__body th.zero_click_abstract_header { width:150px; text-align:left; vertical-align: top; }
-.zci__body td.zero_click_abstract_today { text-align: center; color:white; background-color: #808080; }
-.zci__body td.zero_click_abstract_day { text-align: center;}
+.zci--answer table { 
+	text-align: center; 
+}
+
+.zci--answer th { 
+	width:40px; 
+	text-align:center; 
+}
+
+.zci--answer th.zero_click_abstract_header { 
+	width:150px; 
+	text-align:left; 
+	vertical-align: top; 
+}
+
+.zci--answer  td.zero_click_abstract_today { 
+	text-align: center; 
+	color:white; 
+	background-color: #808080; 
+}
+
+.zci--answer td.zero_click_abstract_day { 
+	text-align: center;
+}

@@ -250,7 +250,7 @@ sub prepare_returntext {
   for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
     if($dayNum == $givenDay) { 
       $rText.= "|"; 
-      $rHtml.= '<td class="zero_click_abstract_today">'.$dayNum.'</td>';
+      $rHtml.= "<td class='zero_click_abstract_today'>$dayNum</td>";
     } else {
       $rText.=" "; 
     }
@@ -261,7 +261,7 @@ sub prepare_returntext {
 
     $rText.= "$dayNum";
     if($dayNum != $givenDay ) {
-      $rHtml.= '<td class="zero_click_abstract_day">'.$dayNum.'</td>';
+      $rHtml.= "<td class='zero_click_abstract_day'>$dayNum</td>";
     }
     
     if($dayNum == $givenDay) { 
