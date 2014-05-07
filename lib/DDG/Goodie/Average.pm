@@ -18,6 +18,12 @@ topics 'math';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
+my $css = share("style.css")->slurp();
+sub append_css {
+    my $html = shift;
+    return "<style type='text/css'>$css</style>\n" . $html;
+}
+
 handle query => sub {
     return if $_ =~ /^root/i && $_ !~ /^root mean square/i;
 
@@ -54,7 +60,7 @@ handle query => sub {
     $rms += ($_ ** 2) for @nums;
     $rms /= $len;
     $rms = sqrt $rms;
-    return "Mean: $mean; Median: $med; Root Mean Square: $rms", html => "Mean: <b>$mean</b>; Median: <b>$med</b>; Root Mean Square: <b>$rms</b>";
+    return "Mean: $mean; Median: $med; Root Mean Square: $rms", html => append_css("<div class='average--container'><div><span class='average--key'>Mean:</span> <span class='average--value'>$mean</span></div> <div><span class='average--key'>Median:</span> <span class='average--value'>$med</span></div> <div><span class='average--key'>Root Mean Square:</span> <span class='average--value'>$rms</span></div></div>");
 };
 
 1;
