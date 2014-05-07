@@ -250,7 +250,7 @@ sub prepare_returntext {
   for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
     if($dayNum == $givenDay) { 
       $rText.= "|"; 
-      $rHtml.= '<td><span class="class="calendar__today  circle">'.$dayNum.'</span></td>';
+      $rHtml.= '<td><span class="calendar__today  circle">'.$dayNum.'</span></td>';
     } else {
       $rText.=" "; 
     }
