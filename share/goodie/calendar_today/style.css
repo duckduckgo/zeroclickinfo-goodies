@@ -1,6 +1,1 @@
-table.calendar { text-align: center; }
-
-	.calendar th, .calendar td { width:2.5em; text-align:center; }
-
-	.calendar__header { vertical-align: top; height: 2em; font-size: 1.25em; }
-	.calendar__today { color:white; background-color: #808080; }
+table.calendar { text-align: center; }.calendar th, .calendar td { width:2.5em; text-align:center; }.calendar__header { vertical-align: top; height: 2em; font-size: 1.25em; }.calendar__today { color:white; background-color: #808080; }
