@@ -140,7 +140,7 @@ handle query => sub {
                  "       R is for rook, and\n" .
                  "       P is for pawn)";
     my $position_lc = lc $position;
-    my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/><a href='https://en.wikipedia.org/wiki/Chess960_numbering_scheme'>More at Wikipedia</a>";
+    my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/>";
 
     $query =~ s/^ chess960|chess960 $|chess960 //i;
     return $output, html => $html, heading => "Position $position_num (Chess960)";

@@ -25,7 +25,7 @@ Black: ([BKNQRP] ?){1,8}
        Q is for queen,
        R is for rook, and
        P is for pawn\)$/,
-            html    => qr|^<img src='/iu/\?u=http://www\.apronus\.com/chess/stilldiagram.php\?d=[KNQRPB]{17}________________________________[knqrpb]{16}0\.jpg&w=8&h=8'/><a href='https://en\.wikipedia\.org/wiki/Chess960_numbering_scheme'>More at Wikipedia</a>$|,
+            html    => qr|^<img src='/iu/\?u=http://www\.apronus\.com/chess/stilldiagram.php\?d=[KNQRPB]{17}________________________________[knqrpb]{16}0\.jpg&w=8&h=8'/>$|,
             heading => qr/^Position \d+ \(Chess960\)$/,
         )
     } ('random chess960 position', 'chess960 random')
