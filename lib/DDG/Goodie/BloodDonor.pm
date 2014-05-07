@@ -24,7 +24,7 @@ my %typeMap = (
 
 sub table_data {
   my ($label, $value) = @_;
-  return '<tr><td>' . $label . '</td><td>' . $value . "</td></tr>";
+  return "<tr><td style='padding-right: 1em;'>$label</td><td>$value</td></tr>";
 }
 
 handle remainder => sub {
