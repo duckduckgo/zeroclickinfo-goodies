@@ -1,0 +1,11 @@
+.zci--answer .latex--key {
+    color: #777;
+}
+
+.zci--answer .latex--value {
+    color: #292929;
+}
+
+.zci--answer .latex--link {
+    padding-top: 0.5em;
+}
