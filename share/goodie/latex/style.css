@@ -6,7 +6,7 @@
     color: #292929;
 }
 
-.zci--answer .zci--body {
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
+.zci--answer .zci__body, .zero_click_answer {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
