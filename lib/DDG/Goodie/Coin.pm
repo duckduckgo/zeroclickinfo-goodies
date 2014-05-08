@@ -14,6 +14,12 @@ topics 'trivia';
 category 'random';
 attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
 
+my $css = share("style.css")->slurp();
+sub append_css {
+    my $html = shift;
+    return "<style type='text/css'>$css</style>\n" . $html;
+}
+
 handle query_lc => sub {
 	my $flips;
 	if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) a coin)$/) {
@@ -33,7 +39,9 @@ handle query_lc => sub {
 		push @output, $flip;
 	}
 
-	return join(', ', @output) .  ' (random)' if @output;
+	my $result = join(', ', @output) .  ' (random)' if @output;
+	return ($result, html => append_css($result)) if @output;
+	return;
 };
 
 1;
