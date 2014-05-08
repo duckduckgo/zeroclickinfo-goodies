@@ -19,10 +19,10 @@ secondary_example_queries 	"31 Dec starsign","1st Jan 1981 star sign","zodiac si
 description					"Find the Zodiac Sign for the Respective Date given as Input based on Tropical Zodiac(2011) Source : https://en.wikipedia.org/wiki/Zodiac";
 name						"zodiac";
 category					"special";
-topics						"science";
+topics						"special_interest";
 attribution					email		=> 'nomady@zoho.com',
 							github 		=> ['https://github.com/n0mady','NOMADY'];
-triggers					startend	=> "zodiac","zodiac sign,""starsign","star sign";
+triggers					startend	=> "zodiac","zodiac sign","starsign","star sign";
 			
 			 
 handle remainder => sub {
