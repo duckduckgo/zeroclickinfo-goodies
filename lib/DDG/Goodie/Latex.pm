@@ -69,7 +69,7 @@ my %texCommands = (
 );
 
 sub more_at {
-    return "<a href='$_[0]' class='latex--link'>More at Wikibooks</a>";
+    return "<a href='$_[0]' class='zci__more-at--info'>More at Wikibooks</a>";
 }
 
 my $css = share("style.css")->slurp();
