@@ -6,40 +6,41 @@ use DDG::Goodie;
 #My Imports
 use strict;
 use warnings;
-use Date::Manip qw(ParseDate Date_Cmp);							#Import the Date Manipulation Module
+
+#Import the Date Manipulation Module
+use Date::Manip qw(ParseDate Date_Cmp);							
 
 zci answer_type => "zodiac";
 zci is_cached => 1;
 
 #File MetaData
 primary_example_queries 	"zodiac 21st June";
-secondary_example_queries 	"31 Dec starsign",
-						  	"1st Jan 1981 star sign";
-description					"
-							 Find the Zodiac Sign for the Respective Date given as Input 
-							 based on Tropical Zodiac(2011)
-			 
-			 				 Source : https://en.wikipedia.org/wiki/Zodiac
-							";
+secondary_example_queries 	"31 Dec starsign","1st Jan 1981 star sign","zodiac sign 1 Nov";
+description					"Find the Zodiac Sign for the Respective Date given as Input based on Tropical Zodiac(2011) Source : https://en.wikipedia.org/wiki/Zodiac";
 name						"zodiac";
 category					"special";
 topics						"science";
 attribution					email		=> 'nomady@zoho.com',
 							github 		=> ['https://github.com/n0mady','NOMADY'];
-triggers					startend	=> "zodiac","starsign","star sign";
+triggers					startend	=> "zodiac","zodiac sign,""starsign","star sign";
 			
 			 
 handle remainder => sub {
+	
+		#User Entered Date/Query
+		my $Query=$_;								
 		
-		my $Query=$_;							#User Entered Date/Query
+		#Parse the Given Date String
+		my $Date=&ParseDate($Query);			
 	
-		my $Date=&ParseDate($Query);			#Parse the Given Date String
-
-		my $Year=substr($Date,0,4);				#Extract the Year from the Date String for Further Comparison
-	
+		#Extract the Year from the Date String for Further Comparison
+		my $Year=substr($Date,0,4);					
+		
+		#Initialize the Star Sign to Nothing
 		my $Star_Sign="";
 
-		if($Date eq ""){return;} 				#Return Nothing if the User Provided Date is Invalid			
+		#Return Nothing if the User Provided Date is Invalid	
+		if($Date eq ""){return;} 						
 
 		#Define the Date Ranges for the Respective Star Signs
 		my %Star_Sign_Dates=(
