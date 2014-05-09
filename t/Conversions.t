@@ -75,6 +75,8 @@ ddg_goodie_test(
     'what are 10 yards in metres'     => test_zci('10 yards is 9.144 meters'),
     'how long is 42 days in mins'     => test_zci('42 days is 60480 minutes'),
     'how much is 40 kelvin in celsius' => test_zci('40 kelvin is -233 degrees celsius'),
+    '12 degrees Celsius to Fahrenheit' => test_zci('12 degrees celsius is 53.600 degrees fahrenheit'),
+    '1 degrees Fahrenheit to celsius' => test_zci('1 degrees fahrenheit is -17.205 degrees celsius')
 );
 
 done_testing;

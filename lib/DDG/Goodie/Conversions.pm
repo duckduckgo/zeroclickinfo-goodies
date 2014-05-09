@@ -5,7 +5,7 @@ use DDG::Goodie;
 use Math::Round qw/nearest/;
 use Scalar::Util qw/looks_like_number/;
 use bignum;
-use Convert::Pluggable 0.020; 
+use Convert::Pluggable 0.020;     
 # ^^ mass, length, time, pressure, energy, power, angle, force, temperature, digital 
 
 name                      'Conversions';
@@ -59,6 +59,9 @@ handle query_lc => sub {
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
     $_ =~ s/'/feet/;
+
+	# hack support for "degrees" prefix on temperatures
+	$_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
 
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
