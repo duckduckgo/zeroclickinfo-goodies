@@ -60,6 +60,9 @@ handle query_lc => sub {
     $_ =~ s/"/inches/;
     $_ =~ s/'/feet/;
 
+	# hack support for "degrees" prefix on temperatures
+	$_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
+
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
     
