@@ -11,16 +11,18 @@ zci answer_type => "prime_factors";
 zci is_cached => 1;
 
 triggers startend => (
-    'prime factors', 
-    'prime factors of', 
-    'the prime factors of', 
-    'factorization of', 
+    'prime factors',
+    'prime factors of',
+    'the prime factors of',
+    'factorization of',
     'prime factorization',
-    'prime factorization of'
+    'prime factorization of',
+    'factorize',
+    'prime factorize',
 );
 
 primary_example_queries 'prime factors of 30';
-secondary_example_queries '72 prime factors';
+secondary_example_queries '72 prime factors', 'factorize 128';
 description 'Returns the prime factors of the entered number';
 name 'PrimeFactors';
 topics 'math';
