@@ -31,8 +31,13 @@ triggers query_nowhitespace_nodash => qr/
                                         /xio;
 
 # Fedex package tracking.
-# See http://answers.google.com/answers/main?cmd=threadview&id=207899
-# See http://images.fedex.com/us/solutions/ppe/FedEx_Ground_Label_Layout_Specification.pdf
+#
+# For detailed specification: 
+# http://images.fedex.com/us/solutions/ppe/FedEx_Ground_Label_Layout_Specification.pdf
+#
+# For brief description see:
+# http://answers.google.com/answers/main?cmd=threadview&id=207899
+#
 handle query_nowhitespace_nodash => sub {
     # If a Fedex package number (2 for exclusively).
     my $is_fedex = 0;
