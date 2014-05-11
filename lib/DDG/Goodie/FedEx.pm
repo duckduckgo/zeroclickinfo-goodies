@@ -26,7 +26,7 @@ my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
 triggers query_nowhitespace_nodash => qr/
                                         ^$fedex_qr.*?(?<the_number>[\d]{9,})$|
                                         ^(?<the_number>[\d]{9,}).*?$fedex_qr$|
-                                        ^(?:$tracking_qr|$fedex_qr|)*?(?<extra_numbers>\d*?)(?<to_checksum>[\d]{15,20})(?:$tracking_qr|$fedex_qr|)*$|
+                                        ^(?:$tracking_qr|$fedex_qr|)*?(?<extra_numbers>\d*?)(?<to_checksum>[\d]{15})(?:$tracking_qr|$fedex_qr|)*$|
                                         ^(?:$tracking_qr|$fedex_qr|)*?(?<extra_numbers>\d*?)(?<to_checksum>[\d]{12})(?:$tracking_qr|$fedex_qr|)*$
                                         /xio;
 
@@ -51,6 +51,7 @@ handle query_nowhitespace_nodash => sub {
         # 15 has to be before 12 or it will block.
     }
     elsif ($+{to_checksum}) {
+    	print "\t Within checksumming  ".$+{to_checksum}." ".$+{extra_numbers}."\n";
         my $package_beg =  $+{extra_numbers};
         $package_number = $+{to_checksum};
 

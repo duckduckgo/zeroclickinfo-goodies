@@ -24,8 +24,13 @@ ddg_goodie_test(
             "178440515632684",
             heading => 'FedEx Shipment Tracking',
             html    => qq(Track this shipment at <a href="http://fedex.com/Tracking?tracknumbers=178440515632684&action=track">FedEx</a>.)
-    ),
+	    ),
         '178440515682684' => undef, # Transcription error turns a 3 into an 8. Fails checksum; not a tracking number.
+        '9612804882227378545377' => test_zci(
+        	"9612804882227378545377",
+        	heading => 'FedEx Shipment Tracking',
+        	html => qq(Track this shipment at <a href="http://fedex.com/Tracking?tracknumbers=9612804882227378545377&action=track">FedEx</a>.)
+        )
 );
 
 done_testing;
