@@ -4,6 +4,7 @@ package DDG::Goodie::PublicDNS;
 use DDG::Goodie;
 
 use List::Util qw(max);
+use YAML qw( Load );
 
 primary_example_queries 'public dns';
 description 'list common public DNS servers and their IP addresses';
@@ -19,42 +20,20 @@ triggers end => "public dns", "dns servers";
 zci is_cached   => 1;
 zci answer_type => "public_dns";
 
-# Let them add new entries anywhere, but store them lexically.
-# Done like this to allow for manual (or other) sorting should the
-# need arise.
-my @ordered_servers = sort { $a->{provider} cmp $b->{provider} } ({
-        provider => 'Comodo Secure DNS',
-        ip4      => ['8.26.56.26', '8.20.247.20'],
-        ip6      => [],
-        info_url => 'http://www.comodo.com/secure-dns/',
-    },
-    {
-        provider => 'DNS Advantage',
-        ip4      => ['156.154.70.1', '156.154.71.1'],
-        ip6      => [],
-        info_url => 'http://dnsadvantage.com',
-    },
-    {
-        provider => 'Google Public DNS',
-        ip4      => ['8.8.8.8', '8.8.4.4'],
-        ip6      => ['2001:4860:4860::8888', '2001:4860:4860::8844'],
-        info_url => 'http://code.google.com/speed/public-dns/',
-    },
-    {
-        provider => 'Norton DNS',
-        ip4      => ['198.153.192.1', '198.153.194.1'],
-        ip6      => [],
-        info_url => 'http://dns.norton.com',
-    },
-    {
-        provider => 'OpenDNS',
-        ip4      => ['208.67.222.222', '208.67.220.220'],
-        ip6      => [],
-        info_url => 'http://opendns.com/',
-    },
-);
+my $providers = Load(scalar share('providers.yml')->slurp);
 
-# Today we could just change and use the key names, but I have no idea what the future holds.
+my @ordered_servers;
+# Alphabetize the output while making the structure
+# Easier to use below.  The YAML is for human editing.
+foreach my $provider (sort keys %$providers) {
+    my $info = $providers->{$provider};
+    $info->{provider} = $provider;
+    push @ordered_servers, $info;
+}
+
+undef $providers;    # We're done with this now.
+
+# Let the YAML stay the same, even if column ordering or titling changes.
 my @display_cols = ({
         key   => 'provider',
         title => 'Provider',
@@ -96,8 +75,7 @@ my $table_spacer =
 
 # Actually build the output.. finally!
 my $text = $table_spacer;
-my $css  = share("style.css")->slurp;
-my $html = '<style type="text/css">' . $css . '</style><table class="publicdns">';
+my $html = '<style type="text/css">' . scalar share("style.css")->slurp . '</style><table class="publicdns">';
 
 # First the headers
 $text .= join('', map { $_->{text_spacer}->($_->{title}) } @display_cols);

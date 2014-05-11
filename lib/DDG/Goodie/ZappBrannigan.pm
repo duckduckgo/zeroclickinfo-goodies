@@ -1,7 +1,6 @@
 package DDG::Goodie::ZappBrannigan;
 
 use DDG::Goodie;
-use YAML qw( LoadFile );
 
 triggers any => "zapp", "brannigan";
 zci is_cached => 0;
