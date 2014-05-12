@@ -26,13 +26,18 @@ my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
 triggers query_nowhitespace_nodash => qr/
                                         ^$fedex_qr.*?(?<the_number>[\d]{9,})$|
                                         ^(?<the_number>[\d]{9,}).*?$fedex_qr$|
-                                        ^(?:$tracking_qr|$fedex_qr|)*?(?<extra_numbers>\d*?)(?<to_checksum>[\d]{15,20})(?:$tracking_qr|$fedex_qr|)*$|
+                                        ^(?:$tracking_qr|$fedex_qr|)*?(?<extra_numbers>\d*?)(?<to_checksum>[\d]{15})(?:$tracking_qr|$fedex_qr|)*$|
                                         ^(?:$tracking_qr|$fedex_qr|)*?(?<extra_numbers>\d*?)(?<to_checksum>[\d]{12})(?:$tracking_qr|$fedex_qr|)*$
                                         /xio;
 
 # Fedex package tracking.
-# See http://answers.google.com/answers/main?cmd=threadview&id=207899
-# See http://images.fedex.com/us/solutions/ppe/FedEx_Ground_Label_Layout_Specification.pdf
+#
+# For detailed specification: 
+# http://images.fedex.com/us/solutions/ppe/FedEx_Ground_Label_Layout_Specification.pdf
+#
+# For brief description see:
+# http://answers.google.com/answers/main?cmd=threadview&id=207899
+#
 handle query_nowhitespace_nodash => sub {
     # If a Fedex package number (2 for exclusively).
     my $is_fedex = 0;
