@@ -27,7 +27,7 @@ triggers query_raw => qr/^
     (?:(inverse|negative|opposite)\s+(?:of)?)?
     (?:
         (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|             # handles "rgb red color code", "red rgb color code", etc
-        (.*?)\s*(.+?)\brgb(?:\s+code)?|             # "red rgb code", etc
+        (.*?)\s*(.+?)\brgb(?:\s+code)?|             # handles "red rgb code", etc
         (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|  # handles "rgb color code for red", "red color code for html", etc
         (.*?)($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})               # handles #00f, #0000ff, etc
@@ -110,7 +110,6 @@ handle matches => sub {
     return if $@;
 
     if ($inverse) {
-       
         my $rgb = $col->as_rgb8;
         $col = Convert::Color::RGB8->new(255 - $rgb->red, 255 - $rgb->green, 255 - $rgb->blue);
     }
