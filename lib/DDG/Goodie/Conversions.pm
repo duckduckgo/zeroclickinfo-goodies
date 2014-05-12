@@ -1,115 +1,89 @@
 package DDG::Goodie::Conversions;
-# ABSTRACT: convert between various weights and measures
+# ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
-use Scalar::Util qw(looks_like_number);
-
-# metric ton is base unit
-# known SI units and aliases / plurals
-my %units = (
-    # metric ton:
-    'metric ton'    => '1',
-    'tonne'         => '1',
-    't'             => '1',
-    'mt'            => '1',
-    'te'            => '1',
-    'metric tons'   => '1',
-    'tonnes'        => '1',
-    'ts'            => '1',
-    'mts'           => '1',
-    'tes'           => '1',
-    
-    # kilogram:
-    'kilogram'      => '1000',
-    'kg'            => '1000',
-    'kilo'          => '1000',
-    'kilogramme'    => '1000',
-    'kilograms'     => '1000',
-    'kgs'           => '1000',
-    'kilos'         => '1000',
-    'kilogrammes'   => '1000',
-     
-    # gram:
-    'gram'          => '1000000',
-    'g'             => '1000000',
-    'gm'            => '1000000',
-    'gramme'        => '1000000',
-    'grams'         => '1000000',
-    'gs'            => '1000000',
-    'gms'           => '1000000',
-    'grammes'       => '1000000',
-    
-    # milligram:
-    'milligram'     => '1000000000',
-    'mg'            => '1000000000',
-    'milligrams'    => '1000000000',
-    'mgs'           => '1000000000',
-    
-    # microgram:
-    'microgram'     => '1000000000',
-    'mcg'           => '1000000000',
-    'micrograms'    => '1000000000',
-    'mcgs'          => '1000000000',
-    
-    # long ton:
-    'long ton'      => '0.984207',
-    'weight ton'    => '0.984207',
-    'imperial ton'  => '0.984207',
-    'long tons'     => '0.984207',
-    'weight tons'   => '0.984207',
-    'imperial tons' => '0.984207',
-    
-    # short ton:
-    'short ton'     => '1.10231',
-    'ton'           => '1.10231',
-    'short tons'    => '1.10231',
-    'tons'          => '1.10231',
-
-    # stone:
-    'stone'         => '157.473',
-    'st'            => '157.473',
-    'stones'        => '157.473',
-    'sts'           => '157.473',
- 
-    # pound:
-    'pound'         => '2204.62',
-    'lb'            => '2204.62',
-    'lbm'           => '2204.62',
-    'pound mass'    => '2204.62',
-    'pounds'        => '2204.62',
-    'lbs'           => '2204.62',
-    'lbms'          => '2204.62',
-    'pounds mass'   => '2204.62',
-
-    # ounce:
-    'ounce'        => '35274',
-    'oz'           => '35274',
-    'ounces'       => '35274',
-    'ozs'          => '35274',
-);
-    
-# match longest possible key (some keys are sub-keys of other keys):
-my $keys = join '|', reverse sort { length($a) <=> length($b) } keys %units;
-
-# build triggers based on available conversion units:
-triggers startend => keys %units;
+use Math::Round qw/nearest/;
+use Scalar::Util qw/looks_like_number/;
+use bignum;
+use Convert::Pluggable 0.020;     
+# ^^ mass, length, time, pressure, energy, power, angle, force, temperature, digital 
 
 name                      'Conversions';
-description               'convert between various weights and measures';
+description               'convert between various units of measurement';
 category                  'calculations';
 topics                    'computing', 'math';
 primary_example_queries   'convert 5 oz to grams';
-secondary_example_queries '5 ounces to g', 'metric ton stone';
+secondary_example_queries '5 ounces to g', '0.5 nautical miles in km';
 code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
-attribution                github  => ['https://github.com/elohmrow', '/bda'],
+attribution                github  => ['https://github.com/elohmrow', 'https://github.com/mintsoft'],
                            email   => ['bradley@pvnp.us'];
 
 zci answer_type => 'conversions';
 
-handle query => sub {
-    my @matches = ($_ =~ /\b($keys)\b/gi);
+# build the keys:
+# unit types available for conversion
+my $c = new Convert::Pluggable();
+my @types = @{$c->get_units()};
+
+my @units = ();
+
+foreach my $type (@types) {
+    push(@units, $type->{'unit'});
+    push(@units, @{$type->{'aliases'}});
+}
+
+# build triggers based on available conversion units:
+triggers end => @units;
+
+# match longest possible key (some keys are sub-keys of other keys):
+my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
+my $question_prefix = qr/(convert|what (is|are|does)|how (much|many|long) (is|are))?\s?/;
+# guards and matches regex
+my $guard = qr/^$question_prefix[0-9\.]*\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
+my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
+
+# exceptions for pluralized forms:
+my %plural_exceptions = (
+    'stone'                  => 'stone',
+    'foot'                   => 'feet',
+    'inch'                   => 'inches',
+    'pounds per square inch' => 'pounds per square inch',
+    'ton of TNT'             => 'tons of TNT',
+    'metric horsepower'      => 'metric horsepower',
+    'horsepower'             => 'horsepower',
+    'electrical horsepower'  => 'electrical horsepower',
+    'pounds force'           => 'pounds force',
+);
+
+handle query_lc => sub {
+    # hack around issues with feet and inches for now
+    $_ =~ s/"/inches/;
+    $_ =~ s/'/feet/;
+
+	# hack support for "degrees" prefix on temperatures
+	$_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
+
+    # guard the query from spurious matches
+    return unless $_ =~ /$guard/;
     
+    my @matches = ($_ =~ /$match_regex/gi);
+
+    # hack/handle the special case of "X in Y":
+    if ((scalar @matches == 3) && $matches[1] eq "in") {
+        @matches = ($matches[0], $matches[2]);
+    }
     return unless scalar @matches == 2; # conversion requires two triggers
+
+    # normalize the whitespace, "25cm" should work for example
+    $_ =~ s/([0-9])([a-zA-Z])/$1 $2/;
+
+    # fix precision and rounding:
+    my $precision = 3;
+    my $nearest = '1';
+    for my $i (1 .. $precision - 1) {
+        $nearest = '0' . $nearest;
+    }
+    $nearest = '.' . $nearest;
 
     # get factor:
     my @args = split(/\s+/, $_);
@@ -117,13 +91,47 @@ handle query => sub {
     foreach my $arg (@args) {
         if (looks_like_number($arg)) {
             $factor = $arg unless $factor != 1;     # drop n > 1 #s
-
-            return if $factor < 0;  # negative weights seem impossible :)
         }
     }
+   
+    my $result = $c->convert( { 'factor' => $factor, 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
+
+    return if !$result->{'result'};
+
+    my $f_result;
+
+    # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
+    $result->{'result'} = nearest($nearest, $result->{'result'});   
+        
+    if ($result->{'result'} == 0 || length($result->{'result'}) > 2*$precision + 1) {
+        if ($result->{'result'} == 0) {
+            # rounding error
+            $result = $c->convert( { 'factor' => $factor, 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
+        }
+
+        $f_result = (sprintf "%.${precision}g", $result->{'result'});
+    }
+
+	# handle pluralisation of units
+	# however temperature is never plural and does require "degrees" to be prepended
+	if ($result->{'type_1'} ne 'temperature') {
+		if ($factor != 1) {
+	        $result->{'from_unit'} = (exists $plural_exceptions{$result->{'from_unit'}}) ? $plural_exceptions{$result->{'from_unit'}} : $result->{'from_unit'} . 's'; 
+	    }
     
-    # run the conversion:
-    return "$factor $matches[0] is " . sprintf("%.3f", $factor * ($units{$matches[1]} / $units{$matches[0]})) . " $matches[1]";
+	    if ($result->{'result'} != 1) {
+	        $result->{'to_unit'} = (exists $plural_exceptions{$result->{'to_unit'}}) ? $plural_exceptions{$result->{'to_unit'}} : $result->{'to_unit'} . 's'; 
+	    }
+	}
+	else {
+		$result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
+		$result->{'to_unit'} = "degrees $result->{'to_unit'}" if ($result->{'to_unit'} ne "kelvin");
+	}
+
+    $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
+    $result->{'result'} =~ s/\.0{$precision}$//;
+
+    return "$factor $result->{'from_unit'} is $result->{'result'} $result->{'to_unit'}";
 };
 
 
