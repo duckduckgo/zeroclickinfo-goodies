@@ -21,11 +21,13 @@ zci answer_type => 'figlet';
 zci is_cached => 1;
 
 my $width = 800;
+my $css = share("style.css")->slurp;
 
 # Fetch available fonts.
 opendir DIR, share();
 my @fonts = readdir(DIR);
 closedir DIR;
+
 
 # Renders a figlet.
 sub render_figlet {
@@ -41,7 +43,6 @@ sub render_figlet {
 # Apply CSS.
 sub apply_css {
 	my ($html) = @_;
-	my $css = share("style.css")->slurp;
 	return "<style type='text/css'>$css</style>\n" . $html;
 }
 
@@ -53,10 +54,10 @@ handle query => sub {
 	my $heading;
 
 	# Return if no input provided.
-	return if (($_ eq 'figlet') || ($_ eq 'bigtext') || ($_ eq 'big text'));
+	return if ((lc $_ eq 'figlet') || (lc $_ eq 'bigtext') || (lc $_ eq 'big text'));
 
 	# Parse query.
-	$_ =~ m/^(?:figlet|bigtext|big text)(?:\-|\s+)(.*)|(.*)\s+(?:figlet|bigtext|big text)$/;
+	$_ =~ m/^(?:figlet|bigtext|big text)(?:\-|\s+)(.*)|(.*)\s+(?:figlet|bigtext|big text)$/i;
 	$text = $1 if $1;
 	$text = $2 if $2;
 
