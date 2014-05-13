@@ -103,7 +103,7 @@ ddg_goodie_test(
         'ln(20)' => test_zci(
             'ln(20) = 2.99573227355399', 
             heading => 'Calculator',
-            html => qq(<div>log(20) = <a href="javascript:;" onClick="document.x.q.value='1.30102999566398';document.x.q.focus();">1.30102999566398</a></div>), 
+            html => qq(<div>ln(20) = <a href="javascript:;" onClick="document.x.q.value='2.99573227355399';document.x.q.focus();">2.99573227355399</a></div>), 
         ),
         '//' => undef,
         dividedbydividedby => undef,
