@@ -5,7 +5,7 @@ use DDG::Goodie;
 use Math::Round qw/nearest/;
 use Scalar::Util qw/looks_like_number/;
 use bignum;
-use Convert::Pluggable 0.020;     
+use Convert::Pluggable;
 # ^^ mass, length, time, pressure, energy, power, angle, force, temperature, digital 
 
 name                      'Conversions';
