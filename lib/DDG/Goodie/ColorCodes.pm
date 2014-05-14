@@ -27,7 +27,8 @@ triggers query_raw => qr/^
     (?:(inverse|negative|opposite)\s+(?:of)?)?
     (?:
         (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|             # handles "rgb red color code", "red rgb color code", etc
-        (.*?)\s*(.+?)\brgb(?:\s+code)?|             # handles "red rgb code", etc
+        (.*?)\s*(.+?)\brgb(?:\s+code)?|                 # handles "red rgb code"
+        (.*?)\s*\brgb(.*?)\s*\bcode?|                   # handles "rgb red code"
         (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|  # handles "rgb color code for red", "red color code for html", etc
         (.*?)($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})               # handles #00f, #0000ff, etc
@@ -63,8 +64,7 @@ handle matches => sub {
         next unless defined $_;
         my $q = lc;
         $type = $types{$q} if exists $types{$q};
-       
-        if ($q =~ /\b(?:inverse|negative|opposite|code)\b/) {
+        if ($q =~ /\b(?:inverse|negative|opposite)\b/) {
             $inverse = 1;
         } 
         
