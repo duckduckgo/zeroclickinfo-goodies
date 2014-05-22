@@ -90,6 +90,21 @@ ddg_goodie_test(
             heading => 'Calculator',
             html => qq(<div>64 * 343 = <a href="javascript:;" onClick="document.x.q.value='21,952';document.x.q.focus();">21,952</a></div>), 
         ),
+        'log(10)' => test_zci(
+            'log(10) = 1', 
+            heading => 'Calculator',
+            html => qq(<div>log(10) = <a href="javascript:;" onClick="document.x.q.value='1';document.x.q.focus();">1</a></div>), 
+        ),
+        'log(20)' => test_zci(
+            'log(20) = 1.30102999566398', 
+            heading => 'Calculator',
+            html => qq(<div>log(20) = <a href="javascript:;" onClick="document.x.q.value='1.30102999566398';document.x.q.focus();">1.30102999566398</a></div>), 
+        ),
+        'ln(20)' => test_zci(
+            'ln(20) = 2.99573227355399', 
+            heading => 'Calculator',
+            html => qq(<div>ln(20) = <a href="javascript:;" onClick="document.x.q.value='2.99573227355399';document.x.q.focus();">2.99573227355399</a></div>), 
+        ),
         '//' => undef,
         dividedbydividedby => undef,
 );

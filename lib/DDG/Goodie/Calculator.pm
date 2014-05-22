@@ -95,6 +95,10 @@ handle query_nowhitespace => sub {
 	eval {
 	    # e.g. sin(100000)/100000 completely makes this go haywire.
 	    alarm(1);
+		#Forcing the Default Log Calculation to base 10
+		$tmp_expr=~s/log/log10/g;
+		#Forcing the ln Calculation to Log to base e
+		$tmp_expr=~s/ln/log/g;
 	    $tmp_result = eval($tmp_expr);
 	};
 	
