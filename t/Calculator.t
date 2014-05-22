@@ -121,10 +121,44 @@ ddg_goodie_test(
         html =>
           qq(<div>sec(1) = <a href="javascript:;" onClick="document.x.q.value='1.85081571768093';document.x.q.focus();">1.85081571768093</a></div>)
     ),
+    'log(3)' => test_zci(
+        "log(3) = 1.09861228866811",
+        heading => 'Calculator',
+        html =>
+          qq(<div>log(3) = <a href="javascript:;" onClick="document.x.q.value='1.09861228866811';document.x.q.focus();">1.09861228866811</a></div>)
+    ),
+    'ln(3)' => test_zci(
+        "ln(3) = 1.09861228866811",
+        heading => 'Calculator',
+        html =>
+          qq(<div>ln(3) = <a href="javascript:;" onClick="document.x.q.value='1.09861228866811';document.x.q.focus();">1.09861228866811</a></div>)
+    ),
     'log10(100.00)' => test_zci(
         "log10(100.00) = 2",
         heading => 'Calculator',
         html    => qq(<div>log10(100.00) = <a href="javascript:;" onClick="document.x.q.value='2';document.x.q.focus();">2</a></div>)
+    ),
+    'log_10(100.00)' => test_zci(
+        "log_10(100.00) = 2",
+        heading => 'Calculator',
+        html    => qq(<div>log_10(100.00) = <a href="javascript:;" onClick="document.x.q.value='2';document.x.q.focus();">2</a></div>)
+    ),
+    'log_2(16)' => test_zci(
+        "log_2(16) = 4",
+        heading => 'Calculator',
+        html    => qq(<div>log_2(16) = <a href="javascript:;" onClick="document.x.q.value='4';document.x.q.focus();">4</a></div>)
+    ),
+    'log_23(25)' => test_zci(
+        "log_23(25) = 1.0265928122321",
+        heading => 'Calculator',
+        html =>
+          qq(<div>log_23(25) = <a href="javascript:;" onClick="document.x.q.value='1.0265928122321';document.x.q.focus();">1.0265928122321</a></div>)
+    ),
+    'log23(25)' => test_zci(
+        "log23(25) = 1.0265928122321",
+        heading => 'Calculator',
+        html =>
+          qq(<div>log23(25) = <a href="javascript:;" onClick="document.x.q.value='1.0265928122321';document.x.q.focus();">1.0265928122321</a></div>)
     ),
     '$3.43+$34.45' => test_zci(
         '$3.43 + $34.45 = $37.88',
@@ -225,6 +259,11 @@ ddg_goodie_test(
         '100 - 96.54 = 3.46',
         heading => 'Calculator',
         html    => qq(<div>100 - 96.54 = <a href="javascript:;" onClick="document.x.q.value='3.46';document.x.q.focus();">3.46</a></div>),
+    ),
+    '1. + 1.' => test_zci(
+        '1. + 1. = 2',
+        heading => 'Calculator',
+        html    => qq(<div>1. + 1. = <a href="javascript:;" onClick="document.x.q.value='2';document.x.q.focus();">2</a></div>),
     ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,

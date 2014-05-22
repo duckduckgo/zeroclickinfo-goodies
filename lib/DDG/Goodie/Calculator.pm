@@ -3,7 +3,7 @@ package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
 
-use List::Util qw( all first max);
+use List::Util qw( all first max );
 use Math::Trig;
 
 zci is_cached   => 1;
@@ -32,7 +32,7 @@ triggers query_nowhitespace => qr<
         [\( \) x X * % + / \^ 0-9 \. , \$ -]*
 
         (?(1) (?: -? [0-9 \. ,]+ |) |)
-        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log10 | exp | tanh | sec | csc)+
+        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc)+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c |)
@@ -75,7 +75,7 @@ foreach my $style (@known_styles) {
 my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
 
 my $numbery = qr/^[\d$all_seps]+$/;
-my $funcy   = qr/[[a-z]+\(|log10\(|\^/;    # Stuff that looks like functions.
+my $funcy   = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^/;    # Stuff that looks like functions.
 
 my %named_operations = (
     '\^'          => '**',
@@ -112,6 +112,8 @@ handle query_nowhitespace => sub {
             $tmp_expr =~ s# $name # $operation #xig;
         }
 
+        $tmp_expr =~ s/ln/log/xg;                                          # Alias ln to log
+        $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
         $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/xg;    # E == *10^n
         $tmp_expr =~ s/\$//g;                                              # Remove $s.
         $tmp_expr =~ s/=$//;                                               # Drop =.
@@ -182,12 +184,6 @@ handle query_nowhitespace => sub {
     return;
 };
 
-#extra math function
-sub log10 {
-    my $x = $_[0];
-    return log($x) / log(10);
-}
-
 #separates symbols with a space
 #spacing '1+1'  ->  '1 + 1'
 sub spacing {
@@ -235,7 +231,7 @@ sub _well_formed_for_style_func {
               # You can leave out thousands breaks, but the ones you put in must be in the right place.
               # Note that this does not confirm that they put all the 'required' ones in.
               && ($number !~ /$decimal/ || $number !~ /$decimal(?:.*)?(?:$decimal|$thousands)/)
-              # You can not have a decimal but if you do it cannot be followed by another decimal or thousands
+              # You can omit the decimal but you cannot have another decimal or thousands after:
         ) ? 1 : 0;
     };
 }
