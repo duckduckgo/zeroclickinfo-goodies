@@ -4,8 +4,6 @@ use strict;
 use warnings;
 
 use Test::More;
-use lib '/home/pixel/perl5/lib/perl5/';
-use lib '/home/pixel/Geometry/lib/';
 use DDG::Test::Goodie;
 
 zci answer_type => 'geometry';

@@ -145,18 +145,6 @@ handle remainder => sub {
     }
    }
   }
-#  #match the shape / body
-#  if($_ =~ /ball/){
-#   my $r = getParameter('radius|r', $_);
-#   $r = getParameter('diameter|d', $_) / 2 unless $r;
-#   if($_ =~ /volume/){
-#    return 'V = '.(4 / 3 * pi * $r ** 3) if $r;
-#    return 'V = 4/3'.chr(960).'r'.chr(179);
-#   } elsif($_ =~ /area|surface/){
-#    return 'A = '.(4 * pi * $r ** 2) if $r;
-#    return 'A = 4'.chr(960).'r'.chr(178);
-#   }
-#  }
  }
 
  return;
