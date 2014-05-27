@@ -36,23 +36,11 @@ handle remainder => sub {
    'area' => ['area|fläche', 'A'],
    'surface' => ['area|surface|fläche', 'A'],
    'perimeter' => ['perimeter|umfang', 'u'],
-   'diagonal' => ['diagonal', 'd']
+   'diagonal' => ['diagonal', 'e']
   );
   #schema: <name> => [<trigger>, [hash]<formulas>, [sub]<parameter>]
   #schema of <formula>: <name> => [string representing formula, sub calculating formula]
   my %shapes = (
-   'circle' => ['circle|kreis', {
-    'area' => [chr(960).'r'.chr(178), sub {
-     return pi * $_[0] ** 2;
-    }],
-    'perimeter' => ['2'.chr(960).'r', sub {
-     return 2 * pi * $_[0];
-    }]
-   }, sub {
-    my $r = getParameter('radius|r', $_[0]);
-    $r = getParameter('diameter|d', $_[0]) / 2 unless $r;
-    return $r if $r;
-   }],
    'square' => ['square|quadrat', {
     'area' => ['a'.chr(178), sub {
      return $_[0] ** 2;
@@ -91,6 +79,18 @@ handle remainder => sub {
     }]
    }, sub {
     return getParameter('a|length|size', $_[0]);
+   }],
+   'circle' => ['circle|kreis', {
+    'area' => [chr(960).'r'.chr(178), sub {
+     return pi * $_[0] ** 2;
+    }],
+    'perimeter' => ['2'.chr(960).'r', sub {
+     return 2 * pi * $_[0];
+    }]
+   }, sub {
+    my $r = getParameter('radius|r', $_[0]);
+    $r = getParameter('diameter|d', $_[0]) / 2 unless $r;
+    return $r if $r;
    }],
    'cube' => ['cube|würfel', {
     'volume' => ['a'.chr(179), sub {
@@ -135,14 +135,19 @@ handle remainder => sub {
 
   for my $s(keys %shapes){
    if($_ =~ /$shapes{$s}[0]/i){
+    my $r = '';
+    my @p = $shapes{$s}[2]($_);
     for my $f(keys $shapes{$s}[1]){
      if($_ =~ /$formulas{$f}[0]/i){
-      my @p = $shapes{$s}[2]($_);
-      my $r = $formulas{$f}[1].' = ';
-      return $r.$shapes{$s}[1]{$f}[0] if $p[0] == 0;
-      return $r.$shapes{$s}[1]{$f}[1](@p);
+      $r = $formulas{$f}[1].' = '.$shapes{$s}[1]{$f}[0];
+      $r .= ' = '.$shapes{$s}[1]{$f}[1](@p) if $p[0] != 0;
+      return $r;
      }
+     $r .= ', ' if $r;
+     $r .= $formulas{$f}[1].' = '.$shapes{$s}[1]{$f}[0];
+     $r .= ' = '.$shapes{$s}[1]{$f}[1](@p) if $p[0] != 0;
     }
+    return $r;
    }
   }
  }
