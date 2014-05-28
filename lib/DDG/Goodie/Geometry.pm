@@ -1,7 +1,8 @@
 package DDG::Goodie::Geometry;
+# ABSTRACT: Provides a formula shower / calculator for geometry
+
 use Math::Trig;
 use DDG::Goodie;
-use Data::Dumper;
 
 triggers startend => 'geometry', 'formula', 'calc';
 
