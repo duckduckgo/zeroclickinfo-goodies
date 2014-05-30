@@ -150,7 +150,7 @@ tor:
     - hiddenservice
     - torhiddenservice
   base_format: "DuckDuckGo's [Tor hidden service]"
-  info_url: https://3g2upl4pq6kufc4m.onion
+  info_url: http://3g2upl4pq6kufc4m.onion
 traffic:
   base_format: "DuckDuckGo's [traffic page]"
   info_url: https://duckduckgo.com/traffic.html
