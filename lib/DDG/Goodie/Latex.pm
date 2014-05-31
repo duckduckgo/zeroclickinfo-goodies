@@ -69,13 +69,19 @@ my %texCommands = (
 );
 
 sub more_at {
-    return "<br><a href='$_[0]'>More at Wikibooks</a>";
+    return "<a href='$_[0]' class='zci__more-at--info'>More at Wikibooks</a>";
+}
+
+my $css = share("style.css")->slurp();
+sub append_css {
+    my $html = shift;
+    return "<style type='text/css'>$css</style>\n" . $html;
 }
 
 sub build_html {
 	# builds a string to display using the given $command
 	# and $usage
-	return "<i>LaTeX command:</i> <pre style='display: inline; padding: 1px;'>$_[0]</pre> <br> <i>Example:</i> <pre style='display: inline; padding: 1px'>$_[1]</pre>" . more_at($_[2]);
+	return "<div><span class='latex--key'>LaTeX command:</span> <pre class='latex--value'>$_[0]</pre></div><div><span class='latex--key'>Example:</span> <pre class='latex--value'>$_[1]</pre></div>" . more_at($_[2]);
 }
 
 handle remainder => sub {
@@ -91,7 +97,7 @@ handle remainder => sub {
         	#build the html string to display
         	my $html = build_html($command, $usage, $more);
 
-                return $text, html => $html, heading => "$heading (LaTeX)";
+                return $text, html => append_css($html), heading => "$heading (LaTeX)";
 	}
 	return; #return if no key was found
 };

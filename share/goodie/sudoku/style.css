@@ -1,4 +1,4 @@
-#zero_click table.sudoku td {
+.zci--answer table.sudoku td {
 	width: 1.5em;
 	height: 1.5em;
 	text-align: center;
@@ -6,19 +6,19 @@
 	border: 1px solid rgba(136, 136, 136, 0.478);
 }
 
-#zero_click table.sudoku tr:nth-of-type(3) td, 
-#zero_click table.sudoku tr:nth-of-type(6) td
+.zci--answer table.sudoku tr:nth-of-type(3) td, 
+.zci--answer table.sudoku tr:nth-of-type(6) td
 {
 	border-bottom: 3px solid rgba(136, 136, 136, 0.478);
 }
 
-#zero_click table.sudoku td:nth-of-type(3), 
-#zero_click table.sudoku td:nth-of-type(6)
+.zci--answer table.sudoku td:nth-of-type(3), 
+.zci--answer table.sudoku td:nth-of-type(6)
 {
 	border-right: 3px solid rgba(136, 136, 136, 0.478);
 }
 
-#zero_click table.sudoku input {
+.zci--answer table.sudoku input {
 	border: 0px;
 	width: 1em;
 	text-align: center;

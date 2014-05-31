@@ -12,15 +12,42 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::Coin
 	)],
-     'flip a coin' => test_zci(qr/(heads|tails) \(random\)/),
-     'flip 1 coin' => test_zci(qr/(heads|tails) \(random\)/),
-     'flip 2 coins' => test_zci(qr/(heads|tails), (heads|tails) \(random\)/),
-     'toss a coin' => test_zci(qr/(heads|tails) \(random\)/),
-     'toss 1 coin' => test_zci(qr/(heads|tails) \(random\)/),
-     'toss 2 coins' => test_zci(qr/(heads|tails), (heads|tails) \(random\)/),
-     'heads or tails' => test_zci(qr/(heads|tails) \(random\)/),
-     'heads or tails?' => test_zci(qr/(heads|tails) \(random\)/),
-     'flip 4 coins' => test_zci(qr/((heads|tails),? ){4}\(random\)/),
+    'flip a coin' => test_zci(
+	qr/(heads|tails) \(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
+    'flip 1 coin' => test_zci(
+	qr/(heads|tails) \(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
+    'flip 2 coins' => test_zci(
+	qr/(heads|tails), (heads|tails) \(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
+    'toss a coin' => test_zci(
+	qr/(heads|tails) \(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
+    'toss 1 coin' => test_zci(
+	qr/(heads|tails) \(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
+    'toss 2 coins' => test_zci(
+	qr/(heads|tails), (heads|tails) \(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
+    'heads or tails' => test_zci(
+	qr/(heads|tails) \(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
+    'heads or tails?' => test_zci(
+	qr/(heads|tails) \(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
+    'flip 4 coins' => test_zci(
+	qr/((heads|tails),? ){4}\(random\)/,
+	html => qr/(heads|tails) \(random\)/,
+    ),
 );
 
 done_testing;

@@ -1,0 +1,20 @@
+.zci--answer  table.publicdns {
+    font-family: Consolas,"Anonymous Pro",Anonymous,"Courier New",monospace;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.zci--answer table.publicdns td {
+    white-space: nowrap;
+    padding: 2px 4px;
+    border: 2px solid #fff;
+}
+
+.zci--answer table.publicdns th {
+    font-weight: bold;
+    text-align: center;
+    background-color: #888;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 2px 4px;
+}

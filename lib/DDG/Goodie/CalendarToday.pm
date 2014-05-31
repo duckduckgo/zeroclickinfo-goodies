@@ -30,7 +30,7 @@ my $givenDay, my $givenMonth, my $givenYear;
 my $validMonthPattern, my $validYearPattern;
 my $firstDay, my $firstWeekDayId, my $lastDay;
 my $rText, my $rHtml;
-my @weekDays = ("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
   
 # read in css-file only once
 my $css = share("style.css")->slurp;
@@ -229,12 +229,12 @@ sub nearestMonth {
 sub prepare_returntext {
   # Print heading
   $rText = "\n";
-  $rHtml = '<table><tr><th class="header" rowspan="7">';
-  $rHtml.=$firstDay->strftime("%B %Y").'</th>';
+  $rHtml = '<table class="calendar"><tr><th class="calendar__header" colspan="7"><b>';
+  $rHtml.=$firstDay->strftime("%B %Y").'</b></th></tr><tr>';
 
   for my $dayHeading (@weekDays) {
     $rText.= "$dayHeading ";
-    $rHtml.= '<th>&nbsp;'.$dayHeading.'</th>';
+    $rHtml.= '<th>'.$dayHeading.'</th>';
   }
   $rText.= "     ".$firstDay->strftime("%B %Y")."\n";
   $rHtml.= "</tr><tr>";
@@ -250,7 +250,7 @@ sub prepare_returntext {
   for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
     if($dayNum == $givenDay) { 
       $rText.= "|"; 
-      $rHtml.= '<td class="today">'.$dayNum.'</td>';
+      $rHtml.= '<td><span class="calendar__today circle">'.$dayNum.'</span></td>';
     } else {
       $rText.=" "; 
     }

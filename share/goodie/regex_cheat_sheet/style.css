@@ -1,32 +1,22 @@
-#zero_click_plus_wrapper {
-    display: none;
-}
-
-#zero_click_wrapper #zero_click #zero_click_abstract {
-    padding-left: 0px !important;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-}
-
-#zero_click_abstract #regex-container {
+.zci--answer .regex-container {
     max-height: 45ex;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
-#zero_click_abstract .regex-column {
+.zci--answer .regex-container .regex-column {
     width: 48%;
     display: inline-block;
     vertical-align: top;
 }
 
-#zero_click_abstract table.regex-table {
+.zci--answer .regex-container table.regex-table {
     width: 100%;
     margin-bottom: 1ex;
 }
 
 @media (max-width: 380px) {
-    #zero_click_abstract .regex-column {
+    .zci--answer .regex-container .regex-column {
 	width: 100%;
     }
 }

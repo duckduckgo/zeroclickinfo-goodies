@@ -22,6 +22,10 @@ ddg_goodie_test(
 				      html => 'The prime factorization of 30 is 2 × 3 × 5'),
     'prime factorization of 45' => test_zci('The prime factorization of 45 is 3^2 × 5',
 					    html => 'The prime factorization of 45 is 3<sup>2</sup> × 5'),
+    'factorize 128' => test_zci('The prime factorization of 128 is 2^7',
+					    html => 'The prime factorization of 128 is 2<sup>7</sup>'),
+    '42 prime factorize' => test_zci('The prime factorization of 42 is 2 × 3 × 7',
+					    html => 'The prime factorization of 42 is 2 × 3 × 7'),
     'optimus prime 45' => undef,
 );
 
