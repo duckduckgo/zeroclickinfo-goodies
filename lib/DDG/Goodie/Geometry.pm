@@ -1,9 +1,12 @@
 package DDG::Goodie::Geometry;
 # ABSTRACT: Provides a formula shower / calculator for geometry
 
+use utf8;
 use Math::Trig;
 use DDG::Goodie;
 
+primary_example_queries 'geometry square';
+secondary_example_queries 'formula for circle area', 'geometry cube volume size: 4';
 triggers startend => 'geometry', 'formula', 'calc';
 
 name 'Geometry';
@@ -14,17 +17,30 @@ sub getParameter {
  my ($m, $s, $n) = @_;
  unless($n){
   if($s =~ /(?:$m)\s?[=:]?\s?(\d+((\.|,)\d+)?)/){
+   #(?:$m)\s?[=:]?\s? => matches the name of the formula, following by optional whitespace, = or :, whitespace
+   #(\d+((\.|,)\d+)?) => matches the number, optional with a decimal point (point or comma) and numbers after it
+   #store the number in $r
    my $r = $1;
+   #changes a comma to a point because in some countrys people use a comma instead a point as a decimal point
    $r =~ s/,/\./;
    return $r;
+   #return the number as scalar
   }
  } elsif($s =~ /($m)\s?[=:]?\s?\d+((\.|,)\d+)?(,\s\d+([.,]\d+)?){$n}/){
+  #there schould be $n + 1 numbers defined
+  #(?:$m)\s?[=:]?\s? => matches the name of the formula, following by optional whitespace, = or :, whitespace
+  #(\d+((\.|,)\d+)?) => matches the first number, optional with a decimal point (point or comma) and numbers after it
+  #(,\s\d+([.,]\d+)?){$n} => matches all other numbers, optional with a decimal point (point or comma) and numbers after it
   my @r = split(/,\s/, $&);
+  #splits the numbers
   $r[0] =~ s/($m)\s?[=:]?\s?//;
+  #removes the name of the formula, following by optional whitespace, = or :, whitespace
   for(my $i = 0; $i <= $n; ++$i){
    $r[$i] =~ s/,/\./;
+   #changes a comma to a point because in some countrys people use a comma instead a point as a decimal point for each number
   }
   return @r;
+  #return the numbers as array
  }
  return 0;
 }
@@ -136,18 +152,27 @@ handle remainder => sub {
 
   for my $s(keys %shapes){
    if($_ =~ /$shapes{$s}[0]/i){
+    #is it the shape wanted?
     my $r = '';
     my @p = $shapes{$s}[2]($_);
+    #get the parameter
     for my $f(keys $shapes{$s}[1]){
+     #is it the formula wanted?
      if($_ =~ /$formulas{$f}[0]/i){
+      #Yes, return the formula symbol + formula
       $r = $formulas{$f}[1].' = '.$shapes{$s}[1]{$f}[0];
+      # + result if paremters are defined
       $r .= ' = '.$shapes{$s}[1]{$f}[1](@p) if $p[0] != 0;
       return $r;
      }
+     #No, append the formula symbol + formula
      $r .= ', ' if $r;
      $r .= $formulas{$f}[1].' = '.$shapes{$s}[1]{$f}[0];
+     # + result if paremters are defined
      $r .= ' = '.$shapes{$s}[1]{$f}[1](@p) if $p[0] != 0;
+     #to $r
     }
+    #return $r. $r should be something like: 'A = ab, u = 2(a + b), e = chr(8730).'a'.chr(178).'+b'.chr(178)' for query geometry rect
     return $r;
    }
   }
