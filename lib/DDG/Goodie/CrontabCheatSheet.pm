@@ -43,8 +43,12 @@ handle remainder => sub {
         answer  => text_cheat_sheet(),
 };
 
+my $HTML;
+
 sub html_cheat_sheet {
-    return "<pre><code>" . text_cheat_sheet() . "</code></pre>";
+    $HTML //= share("crontab_cheat_sheet.html")
+        ->slurp(iomode => '<:encoding(UTF-8)');
+    return $HTML;
 }
 
 my $TEXT;
