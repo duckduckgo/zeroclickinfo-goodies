@@ -84,15 +84,17 @@ my %named_operations = (
     'minus'       => '-',
     'plus'        => '+',
     'divided\sby' => '/',
+    'ln'          => 'log',                         # perl log() is natural log.
 );
 
-my @named_constants = (
-    # Ordering is important because we use regex, bah.
-    [dozen => 12],
-    [e     => 2.71828182845904523536028747135266249],    # This should be computed.
-    [pi    => pi],                                       # pi constant from Math::Trig
-    [gross => 144],
+my %named_constants = (
+    dozen => 12,
+    e     => 2.71828182845904523536028747135266249,    # This should be computed.
+    pi    => pi,                                       # pi constant from Math::Trig
+    gross => 144,
 );
+
+my $ored_constants = join('|', keys %named_constants);    # For later substitutions
 
 handle query_nowhitespace => sub {
     my $results_html;
@@ -112,15 +114,13 @@ handle query_nowhitespace => sub {
             $tmp_expr =~ s# $name # $operation #xig;
         }
 
-        $tmp_expr =~ s/ln/log/xg;                                          # Alias ln to log
         $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
         $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/xg;    # E == *10^n
         $tmp_expr =~ s/\$//g;                                              # Remove $s.
         $tmp_expr =~ s/=$//;                                               # Drop =.
 
         # Now sub in constants
-        foreach (@named_constants) {
-            my ($name, $constant) = @{$_};
+        while (my ($name, $constant) = each %named_constants) {
             $tmp_expr =~ s# (\d+?)\s+$name # $1 * $constant #xig;
             $tmp_expr =~ s#\b$name\b# $constant #ig;
         }
@@ -162,9 +162,9 @@ handle query_nowhitespace => sub {
 
         # Superscript (before spacing).
         $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
-        $results_html =~ s/\^(\d+|\b(?:e|c|dozen|gross|pi)\b)/<sup>$1<\/sup>/g;
+        $results_html =~ s/\^(\d+|\b(?:$ored_constants)\b)/<sup>$1<\/sup>/g;
 
-        ($results_no_html, $results_html) = (spacing($results_no_html), spacing($results_html));
+        ($results_no_html, $results_html) = map { spacing($_) } ($results_no_html, $results_html);
         return if $results_no_html =~ /^\s/;
 
         # Add proper separators.
@@ -267,7 +267,7 @@ sub _prepare_for_computation_func {
     };
 }
 
-# Returns function which given a number in a certain style, determines the number of places after the decimal.
+# Returns function which given a number, determines the number of places after the decimal.
 sub _precision_for_style_func {
     my ($style) = @_;
     my $decimal = $style->{decimal};
