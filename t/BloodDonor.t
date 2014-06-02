@@ -25,9 +25,9 @@ ddg_goodie_test(
 		html => "<table><tr><td style='padding-right: 1em;'>Ideal donor:</td><td>A+</td></tr><tr><td style='padding-right: 1em;'>Other donors:</td><td>A+ or O+</td></tr><tr><td style='padding-right: 1em;'><i>Only if</i> no Rh(+) found:</td><td>A- or O-</td></tr></table>",
 		heading => "Donors for blood type A+"
 		),
-	'donor o+' => test_zci("Ideal donor: o+\nOther donors: O+\nOnly if no Rh(+) found: O-\n",
-		html => "<table><tr><td style='padding-right: 1em;'>Ideal donor:</td><td>o+</td></tr><tr><td style='padding-right: 1em;'>Other donors:</td><td>O+</td></tr><tr><td style='padding-right: 1em;'><i>Only if</i> no Rh(+) found:</td><td>O-</td></tr></table>",
-		heading => "Donors for blood type o+"
+	'donor o+' => test_zci("Ideal donor: O+\nOther donors: O+\nOnly if no Rh(+) found: O-\n",
+		html => "<table><tr><td style='padding-right: 1em;'>Ideal donor:</td><td>O+</td></tr><tr><td style='padding-right: 1em;'>Other donors:</td><td>O+</td></tr><tr><td style='padding-right: 1em;'><i>Only if</i> no Rh(+) found:</td><td>O-</td></tr></table>",
+		heading => "Donors for blood type O+"
 	),
 );
 

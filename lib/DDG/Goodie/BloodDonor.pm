@@ -32,16 +32,16 @@ sub table_data {
 
 handle remainder => sub {
     if ($_ =~ /^(O|A|B|AB)(\-|\+)$/i) {
-      my $type = $1;
+      my $type = uc $1;
       my $rh = $2;
 
       my @idealResults = ();
       my @criticalResults = ();
 
-      return unless defined $typeMap{uc $type};
+      return unless defined $typeMap{$type};
       
       # ideally same Rh
-      foreach our $donorType (split(",", $typeMap{uc $type})) {
+      foreach our $donorType (split(",", $typeMap{$type})) {
           push(@idealResults, $donorType . $rh);
           if($rh eq '+') {
             # only when access to same Rh is impossible
@@ -53,16 +53,16 @@ handle remainder => sub {
       my $html = '<table>';
       my $idealStr = join(' or ', @idealResults);
       my $criticalStr = join(' or ', @criticalResults);
-      $output .= "Ideal donor: " . $_ . "\n";
+      $output .= "Ideal donor: " . uc($_) . "\n";
       $output .= "Other donors: " . $idealStr . "\n";
-      $html .= table_data("Ideal donor:", $_);
+      $html .= table_data("Ideal donor:", uc($_));
       $html .= table_data("Other donors:", $idealStr);
       if($rh eq '+') {
         $output .= "Only if no Rh(+) found: " . $criticalStr . "\n";
         $html .= table_data("<i>Only if</i> no Rh(+) found:", $criticalStr);
       }
       $html .= '</table>';
-      return $output, html => $html, heading => "Donors for blood type $_";
+      return $output, html => $html, heading => "Donors for blood type ".uc($_);
     }
 
     return;
