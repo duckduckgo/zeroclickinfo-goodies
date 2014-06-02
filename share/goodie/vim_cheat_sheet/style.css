@@ -1,0 +1,36 @@
+.zci--answer .zero_click_wrapper .zero_click {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.zci--answer .vim-container {
+    max-height: 45ex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.zci--answer .vim-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.zci--answer  table.vim-table {
+    width: 100%;
+    margin-bottom: 1ex;
+}
+
+.zci--answer  table.vim-table td {
+    padding-right: 1ex;
+    vertical-align: top;
+}
+.zci--answer  table.vim-table td code {
+    white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+    .zci--answer .vim-column {
+	width: 100%;
+    }
+}
