@@ -109,7 +109,11 @@ handle query_lc => sub {
             $result = $c->convert( { 'factor' => $factor, 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
         }
 
-        $f_result = (sprintf "%.${precision}g", $result->{'result'});
+        if($result->{'result'} > 1000000 || $result->{'result'} < 1) {
+            $f_result = (sprintf "%.${precision}g", $result->{'result'});
+        } else {
+            $f_result = (sprintf "%.${precision}f", $result->{'result'});
+        }
     }
 
 	# handle pluralisation of units
