@@ -2,13 +2,13 @@ package DDG::Goodie::FlipText;
 
 use DDG::Goodie;
 
-triggers startend => "flip", "mirror", "spin", "rotate";
+triggers startend => "flip text", "mirror text", "spin text", "rotate text";
 
 zci is_cached => 1;
 zci answer_type => "flip_text";
 
-primary_example_queries 'flip my sentence';
-secondary_example_queries 'mirror text';
+primary_example_queries 'flip text sentence';
+secondary_example_queries 'mirror text hello';
 description 'flip and mirror text';
 name 'FlipText';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FlipText.pm';
