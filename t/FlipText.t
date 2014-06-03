@@ -13,10 +13,10 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::FlipText
         )],
-        'flip test' => test_zci("\x{0287}\x{0073}\x{01DD}\x{0287}"),
-        'mirror test' => test_zci("\x{0287}\x{0073}\x{01DD}\x{0287}"),
-        'flip my sentence' => test_zci('ǝɔuǝʇuǝs ʎɯ'),
-        'mirror text' => test_zci('ʇxǝʇ'),
+        'flip text test' => test_zci("\x{0287}\x{0073}\x{01DD}\x{0287}"),
+        'mirror text test' => test_zci("\x{0287}\x{0073}\x{01DD}\x{0287}"),
+        'flip text my sentence' => test_zci('ǝɔuǝʇuǝs ʎɯ'),
+        'mirror text text' => test_zci('ʇxǝʇ'),
 );
 
 done_testing;
