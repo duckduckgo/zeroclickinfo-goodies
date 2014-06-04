@@ -3,7 +3,7 @@ package DDG::Goodie::ReverseComplement;
 
 use DDG::Goodie;
 
-triggers start => 'reverse complement', 'revcomp';
+triggers startend => 'reverse complement', 'revcomp';
 zci is_cached => 0;
 
 name 'Reverse Complement';

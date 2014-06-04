@@ -14,9 +14,9 @@ ddg_goodie_test(
 	)],
 
   #Basic DNA reverse complements, all possible trigger combinations
-	'reverse complement AAAACCCGGT' => test_zci("DNA reverse complement:\nACCGGGTTTT"),
+	'AAAACCCGGT reverse complement' => test_zci("DNA reverse complement:\nACCGGGTTTT"),
 	'reverse complement of TTTGATCATGGCTCAGGACGAACGCTGGCGGCGT' => test_zci("DNA reverse complement:\nACGCCGCCAGCGTTCGTCCTGAGCCATGATCAAA"),
-	'revcomp AAAACCCGGT' => test_zci("DNA reverse complement:\nACCGGGTTTT"),
+	'AAAACCCGGT revcomp' => test_zci("DNA reverse complement:\nACCGGGTTTT"),
 	'revcomp of AAAACCCGGT' => test_zci("DNA reverse complement:\nACCGGGTTTT"),
 
   #RNA reverse complement with acceptable spacing characters
