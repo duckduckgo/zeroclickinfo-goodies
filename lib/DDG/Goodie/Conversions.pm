@@ -55,6 +55,14 @@ my %plural_exceptions = (
     'pounds force'           => 'pounds force',
 );
 
+# This function adds some HTML and styling to our output
+# so that we can make it prettier.
+my $css = share("style.css")->slurp;
+sub wrap_html {
+    my $output = shift;
+    return "<style type='text/css'>$css</style><div class='zci--conversions'>$output</div>";
+}
+
 handle query_lc => sub {
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
@@ -131,7 +139,8 @@ handle query_lc => sub {
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
     $result->{'result'} =~ s/\.0{$precision}$//;
 
-    return "$factor $result->{'from_unit'} is $result->{'result'} $result->{'to_unit'}";
+    my $output = "$factor $result->{'from_unit'} is $result->{'result'} $result->{'to_unit'}";
+    return $output, html => wrap_html($output);
 };
 
 
