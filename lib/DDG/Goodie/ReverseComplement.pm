@@ -39,7 +39,7 @@ handle remainder => sub {
     #Reverse
     $sequence = reverse($sequence);
 
-    return 'DNA reverse complement of "' . $_ . '": ' . $sequence;
+    return "DNA reverse complement:\n\n" . $sequence;
 };
 
 1;
