@@ -2,6 +2,8 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
+
+use HTML::Entities;
 use Math::Round qw/nearest/;
 use Scalar::Util qw/looks_like_number/;
 use bignum;
@@ -65,8 +67,8 @@ sub append_css {
 
 sub wrap_html {
     my ($factor, $result) = @_;
-    my $from = "$factor <span class='unit'>$result->{'from_unit'}</span>";
-    my $to = "$result->{'result'} <span class='unit'>$result->{'to_unit'}</span>";
+    my $from = encode_entities($factor) . " <span class='unit'>" . encode_entities($result->{'from_unit'}) . "</span>";
+    my $to = encode_entities($result->{'result'}) . " <span class='unit'>" . encode_entities($result->{'to_unit'}) . "</span>";
     return append_css("<div class='zci--conversions'>$from = $to</div>");
 }
 
