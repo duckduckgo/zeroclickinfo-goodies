@@ -265,6 +265,31 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qq(<div>1. + 1. = <a href="javascript:;" onClick="document.x.q.value='2';document.x.q.focus();">2</a></div>),
     ),
+    '1 + sin(pi)' => test_zci(
+        '1 + sin(pi) = 1',
+        heading => 'Calculator',
+        html    => qq(<div>1 + sin(pi) = <a href="javascript:;" onClick="document.x.q.value='1';document.x.q.focus();">1</a></div>),
+    ),
+    '1 - 1' => test_zci(
+        '1 - 1 = 0',
+        heading => 'Calculator',
+        html    => qq(<div>1 - 1 = <a href="javascript:;" onClick="document.x.q.value='0';document.x.q.focus();">0</a></div>),
+    ),
+    'sin(pi/2)' => test_zci(
+        'sin(pi / 2) = 1',
+        heading => 'Calculator',
+        html    => qq(<div>sin(pi / 2) = <a href="javascript:;" onClick="document.x.q.value='1';document.x.q.focus();">1</a></div>),
+    ),
+    'sin(pi)' => test_zci(
+        'sin(pi) = 0',
+        heading => 'Calculator',
+        html    => qq(<div>sin(pi) = <a href="javascript:;" onClick="document.x.q.value='0';document.x.q.focus();">0</a></div>),
+    ),
+    'cos(2pi)' => test_zci(
+        'cos(2 pi) = 1',
+        heading => 'Calculator',
+        html    => qq(<div>cos(2 pi) = <a href="javascript:;" onClick="document.x.q.value='1';document.x.q.focus();">1</a></div>),
+    ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,
