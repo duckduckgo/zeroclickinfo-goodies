@@ -27,14 +27,14 @@ handle remainder => sub {
 
     #Return nothing if sequence contains characters
     # other than DNA/RNA bases or standard IUPAC ambiguity codes
-    return if $sequence =~ /[^ATCGURYKMSWBVDH]/;
+    return if $sequence =~ /[^ATCGURYKMSWBVDHN]/;
 
     #Return nothing if sequence contains both
     # thymine and uracil (more likely an error than a real molecule)
     return if $sequence =~ /T/ && $sequence =~ /U/;
 
     #Complement
-    $sequence =~ tr/ATUCGRYKMSWBVHD/TAAGCYRMKSWVBDH/;
+    $sequence =~ tr/ATUCGRYKMBVHD/TAAGCYRMKVBDH/;
 
     #Reverse
     $sequence = reverse($sequence);
