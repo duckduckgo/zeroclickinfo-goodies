@@ -23,7 +23,7 @@ ddg_goodie_test(
         'chars in         my string    ' => test_zci('"my string" is 9 characters long.'),
 
         # one character strings should say '1 character long' instead of '1 characters long'
-        'chars in "my string"' => test_zci('"my string" is 9 characters long.'),
+        'chars in "1"' => test_zci('"1" is 1 character long.'),
 
         # check each trigger
         'chars "my string"' => test_zci('"my string" is 9 characters long.'),
