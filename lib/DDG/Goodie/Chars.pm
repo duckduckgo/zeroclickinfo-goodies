@@ -3,19 +3,16 @@ package DDG::Goodie::Chars;
 
 use DDG::Goodie;
 
-triggers start => 'chars';
-triggers start => 'chars in';
-triggers startend => 'num chars';
-triggers start => 'num chars in';
-triggers startend => 'num characters';
-triggers start => 'num characters in';
-triggers startend => 'char count';
-triggers start => 'char count in';
-triggers startend => 'character count';
-triggers start => 'character count in';
-triggers startend => 'length of string';
-triggers startend => 'length in characters';
-triggers startend => 'length in chars';
+triggers startend =>
+    'chars',
+    'num chars',
+    'num characters',
+    'char count',
+    'character count',
+    'characters count',
+    'length of string',
+    'length in characters',
+    'length in chars';
 
 zci is_cached => 1;
 zci answer_type => "chars";
@@ -31,21 +28,25 @@ handle remainder => sub {
     my ($str) = @_;
     return if !$str;
 
-    # trim spaces
+    # remove leading word 'in',
+    # e.g. 'chars in mississippi' would just count the string 'mississippi'.
+    $str =~ s/^in\s//;
+
+    # trim spaces at beg and end of string
     $str =~ s/^\s*//;
     $str =~ s/\s*$//;
 
-    # if string has quotation marks, use that only the portion between the quotes
-    if ($str =~ /\"(.*)\"/) {
-	$str = $1;
-    }
+    # if surrounded by quotation marks, either ' or ",
+    # remove so we don't include in the count
+    $str =~ s/^["'](.*)["']$/$1/;
 
     # get the length of the string in characters
     my $len = length($str);
 
-    # correctly pluralize the word 'characters' depending on the string length,
-    # i.e. '1 character' vs. '2 characters'.
+    # pluralize the word 'character' unless length is 1
     my $characters_pluralized = 'character' . (length($str) > 1 ? 's' : '');
+
+    # build the output string
     my $text_out = qq("$str" is $len $characters_pluralized long.);
 
     return $text_out;
