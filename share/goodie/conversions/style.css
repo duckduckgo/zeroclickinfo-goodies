@@ -1,6 +1,8 @@
 .zci--answer .zci--conversions {
     font-size: 1.5em;
     font-weight: 300;
+    padding-top: .25em;
+    padding-bottom: .25em;
 }
 
 .zci--answer .zci--conversions .unit {
