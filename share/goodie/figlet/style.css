@@ -1,33 +1,27 @@
-#zero_click_wrapper #figlet-wrapper {
-    overflow: auto;
-}
-
 #zero_click_wrapper #figlet-wrapper pre {
-    background-color: inherit;
-}
-
-#zero_click_wrapper #figlet-wrapper textarea {
     display: block;
     word-wrap: normal;
     white-space: pre;
+    overflow: auto;
     font-family: monospace;
+    background-color: inherit;
     border: 0;
-    height: 175px;
+    height: auto;
     width: 100%;
 }
 
-#zero_click_wrapper #figlet-wrapper span pre {
-    display: inline-block;
+#zero_click_wrapper #figlet-wrapper #figlet-font {
+    font-family: monospace;
 }
 
 @media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper textarea {
+    #zero_click_wrapper #figlet-wrapper pre {
         font-size: 10px;
     }
 }
 
 @media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper textarea {
+    #zero_click_wrapper #figlet-wrapper pre {
         font-size: 5px;
     }
 }

@@ -28,16 +28,10 @@ opendir DIR, share();
 my @fonts = readdir(DIR);
 closedir DIR;
 
-
 # Renders a figlet.
 sub render_figlet {
 	my ($font, $text) = @_;
-
-	if ($font) {
-		return Text::FIGlet->new(-f=>$font, -d=>share())->figify(-w=>$width, -A=>$text);
-	} else {
-		return Text::FIGlet->new(-d=>share())->figify(-w=>$width, -A=>$text);
-	}
+	return Text::FIGlet->new(-f=>$font, -d=>share())->figify(-w=>$width, -A=>$text);
 }
 
 # Apply CSS.
@@ -51,7 +45,6 @@ handle query => sub {
 	my $text;
 	my $figlet;
 	my $html;
-	my $heading;
 
 	# Return if no input provided.
 	return if ((lc $_ eq 'figlet') || (lc $_ eq 'bigtext') || (lc $_ eq 'big text'));
@@ -74,10 +67,10 @@ handle query => sub {
 
 	# Render the FIGlet
 	$figlet = render_figlet($font, $text);
-	$heading = $text . " (FIGlet)";
-	$html = "<div id='figlet-wrapper'><span>Font: <pre>$font</pre></span><textarea>$figlet</textarea></div>";
 
-	return $figlet, html => apply_css($html), heading => $heading if $figlet;
+	$html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font</span><pre contenteditable='true'>$figlet</pre></div>";
+
+	return $figlet, html => apply_css($html) if $figlet;
 	return;
 };
 
