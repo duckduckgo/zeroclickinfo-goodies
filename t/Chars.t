@@ -31,6 +31,12 @@ ddg_goodie_test(
         # one character strings should say '1 character long' instead of '1 characters long'
         'chars in "1"' => test_zci('"1" is 1 character long.'),
 
+        # trigger plus empty quotes should return a length of 0.
+        'chars in ""' => test_zci('"" is 0 characters long.'),,
+
+        #####
+        # triggers that SHOULD NOT load the IA
+
         # a trigger query with no text should not trigger the IA
         'chars' => undef,
 
@@ -40,10 +46,18 @@ ddg_goodie_test(
         # a trigger query plus the word 'in' and spaces should not trigger the IA
         'chars in      ' => undef,
 
-        # trigger plus empty quotes should return a length of 0.
-        'chars in ""' => test_zci('"" is 0 characters long.'),,
+        # searches for TV characters should not load the IA
+        'Sopranos characters' => undef,
+        'characters in the Sopranos' => undef,
 
-        # check each trigger
+        # generic length searches should not load the IA
+        'length of the Nile River' => undef,
+        'Titanic movie length' => undef,
+
+
+        #####
+        # triggers that SHOULD load the IA
+
         'chars "my string"' => test_zci('"my string" is 9 characters long.'),
         'chars in "my string"' => test_zci('"my string" is 9 characters long.'),
         'num chars "my string"' => test_zci('"my string" is 9 characters long.'),
