@@ -1,0 +1,11 @@
+.zci--answer .zci--conversions {
+    font-size: 1.5em;
+    font-weight: 300;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    color: #393939;
+}
+
+.zci--answer .zci--conversions .unit {
+    color: #808080;
+}

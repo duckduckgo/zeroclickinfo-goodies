@@ -2,6 +2,8 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
+
+use HTML::Entities;
 use Math::Round qw/nearest/;
 use Scalar::Util qw/looks_like_number/;
 use bignum;
@@ -54,6 +56,21 @@ my %plural_exceptions = (
     'electrical horsepower'  => 'electrical horsepower',
     'pounds force'           => 'pounds force',
 );
+
+# This function adds some HTML and styling to our output
+# so that we can make it prettier.
+my $css = share("style.css")->slurp;
+sub append_css {
+    my $html = shift;
+    return "<style type='text/css'>$css</style>$html";
+}
+
+sub wrap_html {
+    my ($factor, $result) = @_;
+    my $from = encode_entities($factor) . " <span class='unit'>" . encode_entities($result->{'from_unit'}) . "</span>";
+    my $to = encode_entities($result->{'result'}) . " <span class='unit'>" . encode_entities($result->{'to_unit'}) . "</span>";
+    return append_css("<div class='zci--conversions'>$from = $to</div>");
+}
 
 handle query_lc => sub {
     # hack around issues with feet and inches for now
@@ -137,7 +154,8 @@ handle query_lc => sub {
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
     $result->{'result'} =~ s/\.0{$precision}$//;
 
-    return "$factor $result->{'from_unit'} is $result->{'result'} $result->{'to_unit'}";
+    my $output = "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
+    return $output, html => wrap_html($factor, $result);
 };
 
 
