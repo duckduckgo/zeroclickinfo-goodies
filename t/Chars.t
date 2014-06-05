@@ -13,8 +13,11 @@ ddg_goodie_test(
                 DDG::Goodie::Chars
         )],
 
-        # string can be inside quotes, and quotes shouldn't be counted as characters
+        # string can be inside double quotes, and quotes shouldn't be counted as characters
         'chars in "my string"' => test_zci('"my string" is 9 characters long.'),
+
+        # string can be inside single quotes, and single quotes shouldn't be counted as characters
+        "chars in 'my string'" => test_zci('"my string" is 9 characters long.'),
 
         # string shouldn't need quotes
         'chars in my string' => test_zci('"my string" is 9 characters long.'),
@@ -22,8 +25,23 @@ ddg_goodie_test(
         # extra spaces shouldn't be counted
         'chars in         my string    ' => test_zci('"my string" is 9 characters long.'),
 
+        # extra spaces before 'in' should still trigger
+        'chars     in my string' => test_zci('"my string" is 9 characters long.'),
+
         # one character strings should say '1 character long' instead of '1 characters long'
         'chars in "1"' => test_zci('"1" is 1 character long.'),
+
+        # a trigger query with no text should not trigger the IA
+        'chars' => undef,
+
+        # a trigger query plus the word 'in' should not trigger the IA
+        'chars in' => undef,
+
+        # a trigger query plus the word 'in' and spaces should not trigger the IA
+        'chars in      ' => undef,
+
+        # trigger plus empty quotes should return a length of 0.
+        'chars in ""' => test_zci('"" is 0 characters long.'),,
 
         # check each trigger
         'chars "my string"' => test_zci('"my string" is 9 characters long.'),
@@ -50,3 +68,4 @@ ddg_goodie_test(
  );
 
 done_testing;
+
