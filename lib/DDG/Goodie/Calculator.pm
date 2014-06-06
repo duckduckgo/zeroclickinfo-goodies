@@ -5,8 +5,8 @@ use DDG::Goodie;
 
 use List::Util qw( all first max );
 use Math::Trig;
+use Data::Dumper;
 
-zci is_cached   => 1;
 zci answer_type => "calc";
 
 primary_example_queries '$3.43+$34.45';
@@ -176,9 +176,8 @@ handle query_nowhitespace => sub {
 
         $results_html =
           qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
-        return $results_no_html . $tmp_result,
-          html    => $results_html,
-          heading => "Calculator";
+
+        return $tmp_result, html => $results_html, {heading => 'Calculator'};
     }
 
     return;

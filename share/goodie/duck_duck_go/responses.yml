@@ -40,6 +40,13 @@ contributing:
 doodle:
   base_format: 'Take a look at our [holiday logos]'
   info_url: https://duck.co/help/settings/holiday-logos
+documentation:
+  aliases:
+    - docs
+    - duckduckhackdocs
+    - duckduckhackdocumentation
+  base_format: 'Looking for the DuckDuckHack Documentation? You can find our documentation [on our community platform]'
+  info_url: https://duck.com/duckduckhack
 duck:
   aliases:
     - dax
