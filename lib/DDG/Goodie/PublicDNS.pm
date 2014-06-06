@@ -15,7 +15,7 @@ topics 'sysadmin';
 
 attribution github => ['https://github.com/warthurton', 'warthurton'];
 
-triggers end => "public dns", "dns servers";
+triggers end => "public dns", "dns server", "dns servers";
 
 zci is_cached   => 1;
 zci answer_type => "public_dns";
