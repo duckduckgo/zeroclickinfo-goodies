@@ -5,6 +5,8 @@ use DDG::Goodie;
 
 triggers startend =>
     'chars',
+    'number of characters',
+    'number of chars',
     'num chars',
     'num characters',
     'char count',

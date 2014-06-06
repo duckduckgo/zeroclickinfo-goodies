@@ -60,6 +60,10 @@ ddg_goodie_test(
 
         'chars "my string"' => test_zci('"my string" is 9 characters long.'),
         'chars in "my string"' => test_zci('"my string" is 9 characters long.'),
+        'number of chars in "my string"' => test_zci('"my string" is 9 characters long.'),
+        '"my string" number of chars' => test_zci('"my string" is 9 characters long.'),
+        'number of characters in "my string"' => test_zci('"my string" is 9 characters long.'),
+        '"my string" number of characters' => test_zci('"my string" is 9 characters long.'),
         'num chars "my string"' => test_zci('"my string" is 9 characters long.'),
         '"my string" num chars' => test_zci('"my string" is 9 characters long.'),
         'num chars in "my string"' => test_zci('"my string" is 9 characters long.'),
