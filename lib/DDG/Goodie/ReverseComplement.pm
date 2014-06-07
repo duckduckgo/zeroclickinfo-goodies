@@ -39,7 +39,20 @@ handle remainder => sub {
     #Reverse
     $sequence = reverse($sequence);
 
-    return "DNA reverse complement:\n" . $sequence;
+    return $sequence, html => wrap_html('DNA reverse complement:', $sequence);
 };
 
+# This function adds some HTML and styling to our output
+# so that we can make it prettier (copied from the Conversions
+# goodie)
+sub append_css {
+  my $html = shift;
+  my $css = share("style.css")->slurp;
+  return "<style type='text/css'>$css</style>$html";
+}
+
+sub wrap_html {
+  my ($label, $sequence) = @_;
+  return append_css("<div class='zci--reversecomplement'><span class='label'>$label</span> $sequence</div>");
+}
 1;
