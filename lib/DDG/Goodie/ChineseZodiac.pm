@@ -5,8 +5,8 @@ use DDG::Goodie;
 use DateTime::Calendar::Chinese;
 use DateTime::Event::Chinese qw(chinese_new_year_before chinese_new_year_after);
 use utf8;
+use feature 'state';
 
-triggers startend => 'chinese zodiac';
 triggers any => 'chinese zodiac';
 zci is_cached => 1;
 
@@ -106,7 +106,7 @@ sub format_datetime {
 # goodie)
 sub append_css {
   my $html = shift;
-  my $css = share("style.css")->slurp;
+  state $css = share("style.css")->slurp;
   return "<style type='text/css'>$css</style>$html";
 }
 
