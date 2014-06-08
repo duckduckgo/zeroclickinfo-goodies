@@ -19,34 +19,19 @@ topics 'special_interest';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ChineseZodiac.pm';
 attribution github => ['http://github.com/wilkox', 'wilkox'];
 
-my %standard = (
-  'hare' => 'Rabbit',
-  'dragon' => 'Dragon',
-  'snake' => 'Snake',
-  'horse' => 'Horse',
-  'sheep' => 'Goat',
-  'monkey' => 'Monkey',
-  'fowl' => 'Rooster',
-  'dog' => 'Dog',
-  'pig' => 'Pig',
-  'rat' => 'Rat',
-  'ox' => 'Ox',
-  'tiger' => 'Tiger'
-);
-
-my %character = (
-  'Rabbit' => "\x{5154}",
-  'Dragon' => "\x{9F99}",
-  'Snake' => "\x{86C7}",
-  'Horse' => "\x{9A6C}",
-  'Goat' => "\x{7F8A}",
-  'Monkey' => "\x{7334}",
-  'Rooster' => "\x{9E21}",
-  'Dog' => "\x{72D7}",
-  'Pig' => "\x{732A}",
-  'Rat' => "\x{9F20}",
-  'Ox' => "\x{725B}",
-  'Tiger' => "\x{864E}"
+my %animal_to_language = (
+  'hare' => { en => 'Rabbit', zh => '兔' },
+  'dragon' => { en => 'Dragon', zh => '龙' },
+  'snake' => { en => 'Snake', zh => '蛇' },
+  'horse' => { en => 'Horse', zh => '马' },
+  'sheep' => { en => 'Goat', zh => '羊' },
+  'monkey' => { en => 'Monkey', zh => '猴' },
+  'fowl' => { en => 'Rooster', zh => '鸡' },
+  'dog' => { en => 'Dog', zh => '狗' },
+  'pig' => { en => 'Pig', zh => '猪' },
+  'rat' => { en => 'Rat', zh => '鼠' },
+  'ox' => { en => 'Ox', zh => '牛' },
+  'tiger' => { en => 'Tiger', zh => '虎' }
 );
 
 handle remainder => sub {
@@ -86,12 +71,13 @@ handle remainder => sub {
   my $year_start = chinese_new_year_before($year_gregorian)->set_time_zone('Asia/Shanghai');
   my $year_end = chinese_new_year_after($year_gregorian)->subtract(days => 1)->set_time_zone('Asia/Shanghai');
 
-  my $animal = $standard{$year_chinese->zodiac_animal};
-  my $character = $character{$animal};
+  my $animal = $year_chinese->zodiac_animal;
+  my $english = $animal_to_language{$animal}{'en'};
+  my $character = $animal_to_language{$animal}{'zh'};
 
   my $statement = 'Chinese zodiac animal for ' . format_datetime($year_start) . "\x{2013}" . format_datetime($year_end);
 
-  return answer => $animal, html => wrap_html($character, $animal, $statement);
+  return answer => $english, html => wrap_html($character, $english, $statement);
 };
 
 sub format_datetime {
@@ -111,8 +97,8 @@ sub append_css {
 }
 
 sub wrap_html {
-  my ($character, $animal, $statement) = @_;
-  return append_css("<div class='zci--chinesezodiac'><div class='zodiaccharacter'>$character ($animal)</div><span class='statement'>$statement</span></div>");
+  my ($character, $english, $statement) = @_;
+  return append_css("<div class='zci--chinesezodiac'><div class='zodiaccharacter'>$character ($english)</div><span class='statement'>$statement</span></div>");
 }
 
 1;
