@@ -13,7 +13,7 @@ zci is_cached => 1;
 name 'Chinese Zodiac';
 description 'Return the Chinese zodiac animal for a given year';
 primary_example_queries 'chinese zodiac for 1969';
-secondary_example_queries '2004 chinese zodiac animal', 'what was the chinese zodiac animal in 1992', 'what will the chinese zodiac animal be for 2056';
+secondary_example_queries '2004 chinese zodiac animal', 'what was the chinese zodiac animal in 1992', 'what will the chinese zodiac animal be for 2056', 'last year\'s chinese zodiac';
 category 'dates';
 topics 'special_interest';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ChineseZodiac.pm';
@@ -36,32 +36,28 @@ my %animal_to_language = (
 
 handle remainder => sub {
 
-  #Remove extra words if supplied
-  $_ =~ s/(what)?
-          (is)?
-          (was)?
-          (will)?
-          (the)?
-          (be)?
-          (animal)?
-          (for)?
-          (of)?
-          (a)?
-          (people|someone|person)?
-          (born)?
-          (in)?
-          (year)?
-        //gix;
+  #Figure out what year the user is interested in
+  my $year_gregorian;
 
-  #Remove whitespace
-  $_ =~ s/\s//g;
+  #Parse out a relative year expression if it was supplied
+  if (/this\syear('s)?/) { 
+    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai');
+  } elsif (/next\syear('s)?/) {
+    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->add(years => 1);
+  } elsif (/last\syear('s)?/) {
+    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->subtract(years => 1);
 
-  #Must be a year in the current era (0-9999)
-  return unless $_ =~ /^\d{1,4}$/;
+  #If no relative year was supplied, look for an explicit year
+  } elsif (/\b(\d{1,4})\b/) {
+    $year_gregorian = DateTime->new(year => $1, month => 6, time_zone => 'Asia/Shanghai');
+
+  #Otherwise, default to now
+  } else {
+    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai');
+  }
 
   #Find the Chinese year that aligns 
   # with the query (presumed Gregorian) year
-  my $year_gregorian = DateTime->new(year => $_, month => 6, time_zone => 'Asia/Shanghai');
   my $year_chinese = DateTime::Calendar::Chinese->from_object(object => $year_gregorian);
 
   #Get the inclusive Gregorian date range for the Chinese year
