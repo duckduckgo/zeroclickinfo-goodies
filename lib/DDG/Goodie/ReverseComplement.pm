@@ -2,6 +2,7 @@ package DDG::Goodie::ReverseComplement;
 # ABSTRACT: Give the DNA reverse complement of a DNA or RNA sequence.
 
 use DDG::Goodie;
+use feature 'state';
 
 triggers startend => 'reverse complement', 'revcomp';
 zci is_cached => 0;
@@ -47,7 +48,7 @@ handle remainder => sub {
 # goodie)
 sub append_css {
   my $html = shift;
-  my $css = share("style.css")->slurp;
+  state $css = share("style.css")->slurp;
   return "<style type='text/css'>$css</style>$html";
 }
 
