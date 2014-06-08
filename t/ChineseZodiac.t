@@ -57,6 +57,7 @@ ddg_goodie_test(
   'chinese zodiac animal for 2041' => test_zci('Rooster', html => qr/Feb\s1,\s2041.Jan\s21,\s2042/),
 
   #Should not trigger
+  'wikipedia chinese zodiac' => undef,
   'what is my zodiac sign' => undef,
   'what is the chinese word for duck' => undef,
   'buy an inflatable zodiac chinese online store' => undef,

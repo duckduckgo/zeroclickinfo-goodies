@@ -51,9 +51,15 @@ handle remainder => sub {
   } elsif (/\b(\d{1,4})\b/) {
     $year_gregorian = DateTime->new(year => $1, month => 6, time_zone => 'Asia/Shanghai');
 
-  #Otherwise, default to now
-  } else {
+  #Otherwise, default to now if it seems like the user is
+  # asking a question about the current zodiac animal
+  } elsif (/(what|which|year|animal|current|now|today|this)/)  {
     $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai');
+  
+  #Don't want to show instant answer if user is just looking for
+  # general information on the chinese zodiac
+  } else {
+    return;
   }
 
   #Find the Chinese year that aligns 
