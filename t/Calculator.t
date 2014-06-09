@@ -290,6 +290,26 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qq(<div>cos(2 pi) = <a href="javascript:;" onClick="document.x.q.value='1';document.x.q.focus();">1</a></div>),
     ),
+    '5 squared' => test_zci(
+        '5 squared = 25',
+        heading => 'Calculator',
+        html    => qq(<div>5 squared = <a href="javascript:;" onClick="document.x.q.value='25';document.x.q.focus();">25</a></div>),
+    ),
+    '1.0 + 5 squared' => test_zci(
+        '1.0 + 5 squared = 26.0',
+        heading => 'Calculator',
+        html    => qq(<div>1.0 + 5 squared = <a href="javascript:;" onClick="document.x.q.value='26.0';document.x.q.focus();">26.0</a></div>),
+    ),
+    '3 squared + 4 squared' => test_zci(
+        '3 squared + 4 squared = 25',
+        heading => 'Calculator',
+        html    => qq(<div>3 squared + 4 squared = <a href="javascript:;" onClick="document.x.q.value='25';document.x.q.focus();">25</a></div>),
+    ),
+    '2,2 squared' => test_zci(
+        '2,2 squared = 4,8',
+        heading => 'Calculator',
+        html    => qq(<div>2,2 squared = <a href="javascript:;" onClick="document.x.q.value='4,8';document.x.q.focus();">4,8</a></div>),
+    ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,
