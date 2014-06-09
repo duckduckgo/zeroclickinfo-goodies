@@ -5,7 +5,7 @@ use DDG::Goodie;
 use feature 'state';
 
 triggers startend => 'reverse complement', 'revcomp';
-zci is_cached => 0;
+zci is_cached => 1;
 
 name 'Reverse Complement';
 description 'Give the DNA reverse complement of a DNA or RNA sequence';
@@ -30,11 +30,14 @@ handle remainder => sub {
     # other than DNA/RNA bases or standard IUPAC ambiguity codes
     return if $sequence =~ /[^ATCGURYKMSWBVDHN]/;
 
-    #Return nothing if sequence contains both
-    # thymine and uracil (more likely an error than a real molecule)
+    #DNA contains thymine (T) but not uracil (U);
+    # RNA contains U but not T (with some extremely
+    # rare exceptions). Hence, if the sequence
+    # contains both U and T it's more likely to be an
+    # error than a real molecule so should return nothing.
     return if $sequence =~ /T/ && $sequence =~ /U/;
 
-    #Complement
+    #Complement, using standard IUPAC codes
     $sequence =~ tr/ATUCGRYKMBVHD/TAAGCYRMKVBDH/;
 
     #Reverse
