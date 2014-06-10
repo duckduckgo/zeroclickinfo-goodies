@@ -50,32 +50,26 @@ my %codes = (
 	# Symbols
 	'ampersand' => [['Ampersand','amp']],
 	'copyright' => [['Copyright', '#169']],
-	'copyright symbol' => [['Copyright', '#169']],
 	'recording copyright' => [['Recording copyright','#8471']],
 	'registered' => [['Registered', '#174']],
-	'trademark sign' => [['Trademark','#8482']],
-	'trademark symbol' => [['Trademark','#8482']],
 	'trademark' => [['Trademark','#8482']],
 	'rx' => [['Prescription sign','#8478']],
-	'prescription sign' => [['Prescription sign','#8478']],
+	'prescription' => [['Prescription sign','#8478']],
 	'numero' => [['Numero sign', '#8470']],
 	'hash' => [['Number sign','#35']], # same as number sign (below)
-	'number sign' => [['Number sign','#35']], # same as hash (above)
+	'number' => [['Number sign','#35']], # same as hash (above)
 	'backslash' => [['Backslash','#92']],
 	'hat' => [['Hat', '#94']], # x-post with caret
 	'broken vertical bar' => [['Broken vertical bar','brvbar']],
-	'pipe sign' => [['Pipe', '#8214']],
 	'pipe' => [['Pipe', '#8214']],
 	'dagger' => [['Dagger','dagger']],
 
 	# Special/misc.
 	'macron' => [['Macron', '#175']],
 	'diaeresis' => [['Diaeresis','#168']],
-	'female sign' => [['Female sign', '#9792']],
-	'male sign' => [['Male sign','#9794']],
+	'female' => [['Female sign', '#9792']],
+	'male' => [['Male sign','#9794']],
 	'phone' => [['Phone sign','#9742']],
-	'phone sign' => [['Phone sign','#9742']],
-	'phone symbol' => [['Phone sign','#9742']],
 	'checkmark' => [['Checkmark','#10003']],
 	'cross' => [['Cross (straight)', '#10799'],['Cross (slanted)','#10007']],
 	'caret' => [['Caret','#8257'],['Hat', '#94']],
@@ -93,11 +87,10 @@ my %codes = (
 	# Currency
 	'cent' => [['Cent','cent']],
 	'dollar' => [['Dollar','#36']],
-	'dollar sign' => [['Dollar','#36']],
 	'yen' => [['Yen', 'yen']],
 	'japanese yen' => [['Yen', 'yen']],
 	'euro' => [['Euro','euro']],
-	'currency sign' => [['Currency sign','curren']],
+	'currency' => [['Currency sign','curren']],
 	'british pound' => [['British Pound Sterling','pound']],
 	'british pound sterling' => [['British Pound Sterling','pound']],
 	'pound' => [['British Pound Sterling','pound'],['Number sign','#35']], # x-post with number sign
@@ -118,7 +111,6 @@ my %codes = (
 	'per mille' => [['Per mil','permil']],
 	'per ten thousand' => [['Per ten thousand','#8241']],
 	'degree' => [['Degree sign','#176']],
-	'degree sign' => [['Degree sign','#176']],
 	'perpendicular' => [['Perpendicular', '#8869']],
 	'parallel' => [['Parallel', '#8741']],
 	'non parallel' => [['Non parallel', '#8742']],
@@ -129,7 +121,7 @@ my %codes = (
 	'contour integral' => [['Contour integral','#8750']], # same as contour integral (above)
 	'therefore' => [['Therefore (mathematics)','#8756']],
 	'infinity' => [['Infinity','infin']],
-	'radical sign' => [['Radical sign','#8730']],
+	'radical' => [['Radical sign','#8730']],
 	'square root' => [['Square root','#8730']],
 	'not equal' => [['Not equal','#8800']],
 	'equivalent' => [['Equivalent','#8801']], # same entity as congruent (below)
@@ -151,7 +143,7 @@ my %codes = (
 	# Typography
 	'middle dot' => [['Middle dot', 'middot']],
 	'pilcrow' => [['Pilcrow', '#182']],
-	'paragraph sign' => [['Paragraph sign', '#182']],
+	'paragraph' => [['Paragraph sign', '#182']],
 	'section' => [['Section', '#167']],
 	'section s' => [['Section', '#167']],
 	'ellipsis' => [['Horizontal ellipsis','#8230']],
@@ -250,10 +242,23 @@ sub make_html {
 handle remainder => sub {
 	my $key;
 	my $value;
-	if (/^((a|A|e|E|i|I|o|O|u|U)( )+(grave|acute))$/) { # search query is for an accented character
+	if (/^(a|A|e|E|i|I|o|O|u|U) +(grave|acute)$/) { # search query is for an accented character
 		$key = $_; # capitalization matters for accented characters lookup
 		$value = $accented_chars{$key};
 	} else {
+		# substring replace: change '-' to ' '
+		my $find = "-";
+		my $replace = " ";
+		$_ =~ s/$find/$replace/g;
+		# substring replace: change ' symbol' to ''
+		$find = " symbol";
+		$replace = "";
+		$_ =~ s/$find/$replace/g;
+		# substring replace: change ' sign' to ''
+		$find = " sign";
+		$replace = "";
+		$_ =~ s/$find/$replace/g;
+
 		$key = lc $_;
 		$value = $codes{$key};
 	}
