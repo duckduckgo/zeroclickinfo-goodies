@@ -33,6 +33,7 @@ ddg_goodie_test(
     height: auto;
     width: 100%;
     padding-left: 0px;
+    outline: none;
 }
 
 #zero_click_wrapper #figlet-wrapper #figlet-font {
@@ -78,6 +79,7 @@ ddg_goodie_test(
     height: auto;
     width: 100%;
     padding-left: 0px;
+    outline: none;
 }
 
 #zero_click_wrapper #figlet-wrapper #figlet-font {
@@ -121,6 +123,7 @@ ddg_goodie_test(
     height: auto;
     width: 100%;
     padding-left: 0px;
+    outline: none;
 }
 
 #zero_click_wrapper #figlet-wrapper #figlet-font {
@@ -166,6 +169,7 @@ ddg_goodie_test(
     height: auto;
     width: 100%;
     padding-left: 0px;
+    outline: none;
 }
 
 #zero_click_wrapper #figlet-wrapper #figlet-font {
@@ -212,6 +216,7 @@ ddg_goodie_test(
     height: auto;
     width: 100%;
     padding-left: 0px;
+    outline: none;
 }
 
 #zero_click_wrapper #figlet-wrapper #figlet-font {
@@ -258,6 +263,7 @@ ddg_goodie_test(
     height: auto;
     width: 100%;
     padding-left: 0px;
+    outline: none;
 }
 
 #zero_click_wrapper #figlet-wrapper #figlet-font {
