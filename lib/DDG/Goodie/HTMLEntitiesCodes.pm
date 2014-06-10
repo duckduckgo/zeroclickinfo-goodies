@@ -5,24 +5,6 @@ use DDG::Goodie;
 use warnings;
 use strict;
 
-# The existing HTML entity decoder (HTMLEntities.pm) and this module have the same triggers but different input queries.
-# HTMLEntities.pm performs entity (query) --> name (answer); this module performs name (query) --> entity (answer).
-triggers startend => 'html', 'html code', 'html entity', 'html code for', 'html entity for';
-primary_example_queries 'html em dash';
-secondary_example_queries 'html code for middle dot', 'html entity yen', 'a acute html';
-
-name 'HTMLEntitiesCodes';
-description 'Displays the HTML entity code for the query name';
-category 'cheat_sheets';
-topics 'programming', 'web_design';
-attribution web => ["http://nishanths.github.io", "Nishanth Shanmugham"],
-    		github => [ "https://github.com/nishanths", "Nishanth Shanmugham"],
-    		twitter => ["nshanmugham", "Nishanth Shanmugham"];
-code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/HTMLEntitiesCodes.pm";
-zci answer_type => 'HTML_Entity';
-
-my $url = "http://dev.w3.org/html5/html-author/charref";
-
 # '&' and ';' not included in the hash value -- they are added in make_text and make_html
 my %codes = (
 	# Punctuation
@@ -220,8 +202,27 @@ my %accented_chars = (
 	'o acute' => [['o-acute','oacute']],
 	'O acute' => [['O-acute','Oacute']],
 	'u acute' => [['u-acute','iacute']],
-	'U acute' => [['U acute','Uacute']],
+	'U acute' => [['U-acute','Uacute']],
 );
+
+# The existing HTML entity decoder (HTMLEntities.pm) and this module have the same triggers but different input queries.
+# HTMLEntities.pm performs entity (query) --> name (answer); this module performs name (query) --> entity (answer).
+triggers startend => 'html reference', 'html code', 'html entity';
+triggers start => 'html encode', 'html reference for', 'html code for', 'html entity for';
+primary_example_queries 'html reference em dash';
+secondary_example_queries 'html code for middle dot', 'html entity yen', 'a acute html entity';
+
+name 'HTMLEntitiesCodes';
+description 'Displays the HTML entity code for the query name';
+category 'cheat_sheets';
+topics 'programming', 'web_design';
+attribution web => ["http://nishanths.github.io", "Nishanth Shanmugham"],
+    		github => [ "https://github.com/nishanths", "Nishanth Shanmugham"],
+    		twitter => ["nshanmugham", "Nishanth Shanmugham"];
+code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/HTMLEntitiesCodes.pm";
+zci answer_type => 'HTML_Entity';
+
+my $url = "http://dev.w3.org/html5/html-author/charref";
 
 sub make_text {
 	# Returns a text string containing the HTML character name and entity

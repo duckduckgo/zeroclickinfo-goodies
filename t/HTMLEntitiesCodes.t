@@ -10,7 +10,7 @@ zci answer_type => 'HTML_Entity';
 ddg_goodie_test(
 	[qw(DDG::Goodie::HTMLEntitiesCodes)],
 	# Test 1
-	'html em dash' => test_zci(
+	'html reference em dash' => test_zci(
 		"Em dash: &mdash;",
 		html => "<div>(&mdash;) Em dash: &<span>mdash</span>;&nbsp;&nbsp;<a href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
 	),
@@ -25,7 +25,7 @@ ddg_goodie_test(
 		html => "<div>(&yen;) Yen: &<span>yen</span>;&nbsp;&nbsp;<a href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
 	),
 	# Test 4
-	'a acute html' => test_zci(
+	'a acute html entity' => test_zci(
 		"a-acute: &aacute;",
 		html => "<div>(&aacute;) a-acute: &<span>aacute</span>;&nbsp;&nbsp;<a href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
 	),
