@@ -117,7 +117,7 @@ ddg_goodie_test(
 
         # Check the HTML. Just once for a longhand query.
         "throw die" => test_zci(qr/^.$/,
-                html =>  qr/<span style="font-size:14pt;">.<\/span> = \d+<br\/>/,
+                html =>  qr/<span style="font-size:2em;">.<\/span><span style="white-space: nowrap; font-size:2em;"> = \d+<\/span><\/br>/,
                 heading => $heading
         ),
         
