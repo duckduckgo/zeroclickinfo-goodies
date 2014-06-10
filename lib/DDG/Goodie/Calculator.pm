@@ -126,6 +126,7 @@ handle query_nowhitespace => sub {
             # e.g. sin(100000)/100000 completely makes this go haywire.
             alarm(1);
             $tmp_result = eval($tmp_expr);
+            alarm(0);    # Assume the string processing will be "fast enough"
         };
 
         # Guard against non-result results

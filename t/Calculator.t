@@ -316,6 +316,22 @@ ddg_goodie_test(
         html =>
           qq(<div>0.8<sup>2</sup> + 0.6<sup>2</sup> = <a href="javascript:;" onClick="document.x.q.value='1';document.x.q.focus();">1</a></div>),
     ),
+    '0.8^2 + 0.6^2' => test_zci(
+        '0.8 ^ 2 + 0.6 ^ 2 = 1',
+        heading => 'Calculator',
+        html =>
+          qq(<div>0.8<sup>2</sup> + 0.6<sup>2</sup> = <a href="javascript:;" onClick="document.x.q.value='1';document.x.q.focus();">1</a></div>),
+    ),
+    '2 squared ^ 3' => test_zci(
+        '2 squared ^ 3 = 256',
+        heading => 'Calculator',
+        html    => qq(<div>2 squared<sup>3</sup> = <a href="javascript:;" onClick="document.x.q.value='256';document.x.q.focus();">256</a></div>),
+    ),
+    '2^3 squared' => test_zci(
+        '2 ^ 3 squared = 512',
+        heading => 'Calculator',
+        html    => qq(<div>2<sup>3</sup>squared = <a href="javascript:;" onClick="document.x.q.value='512';document.x.q.focus();">512</a></div>),
+    ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,
