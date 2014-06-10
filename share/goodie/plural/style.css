@@ -1,0 +1,15 @@
+.zci--answer .zci--plural {
+  font-size: 1.5em;
+  font-weight: 300;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
+.zci--answer .zci--plural .label {
+  color: #808080;
+}
+
+.zci--answer .zci--plural .source {
+  color: #808080;
+  font-size: 0.5em;
+}
