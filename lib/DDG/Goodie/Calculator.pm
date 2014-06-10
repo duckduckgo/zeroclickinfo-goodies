@@ -53,7 +53,7 @@ foreach my $style (@known_styles) {
 # Luckily it will someday be able to be tokenized so this won't apply.
 my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
 
-my $numbery = qr/^[\d$all_seps]+$/;
+my $numbery = qr/[\d$all_seps]+/;
 my $funcy   = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^/;    # Stuff that looks like functions.
 
 my %named_operations = (
@@ -114,7 +114,7 @@ handle query_nowhitespace => sub {
             $tmp_expr =~ s#\b$name\b# $constant #ig;
         }
 
-        my @numbers = grep { $_ =~ $numbery } (split /\s+/, $tmp_expr);
+        my @numbers = grep { $_ =~ /^$numbery$/ } (split /\s+/, $tmp_expr);
         my $style = display_style(@numbers);
         return unless $style;
 
@@ -154,8 +154,7 @@ handle query_nowhitespace => sub {
         $results_no_html = $results_html = $tmp_q;
 
         # Superscript (before spacing).
-        $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
-        $results_html =~ s/\^(\d+|\b(?:$ored_constants)\b)/<sup>$1<\/sup>/g;
+        $results_html =~ s/\^($numbery|\b$ored_constants\b)/<sup>$1<\/sup>/g;
 
         ($results_no_html, $results_html) = map { spacing($_) } ($results_no_html, $results_html);
         return if $results_no_html =~ /^\s/;
