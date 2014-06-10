@@ -1,6 +1,8 @@
 package DDG::Goodie::Calculator;
 # ABSTRACT: do simple arthimetical calculations
 
+use feature 'state';
+
 use DDG::Goodie;
 
 use List::Util qw( all first max );
@@ -165,17 +167,28 @@ handle query_nowhitespace => sub {
 
         # Now add = back.
         $results_no_html .= ' = ';
-        $results_html    .= ' = ';
 
-        $results_html =
-          qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
         return $results_no_html . $tmp_result,
-          html    => $results_html,
+          html    => wrap_html($results_html, $tmp_result),
           heading => "Calculator";
     }
 
     return;
 };
+
+# Add some HTML and styling to our output
+# so that we can make it prettier (unabashedly stolen from
+# the ReverseComplement goodie.)
+sub append_css {
+    my $html = shift;
+    state $css = share("style.css")->slurp;
+    return "<style type='text/css'>$css</style>$html";
+}
+
+sub wrap_html {
+    my ($entered, $result) = @_;
+    return append_css("<div class='zci--calculator'>$entered = $result</div>");
+}
 
 #separates symbols with a space
 #spacing '1+1'  ->  '1 + 1'
