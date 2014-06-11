@@ -174,35 +174,34 @@ my %codes = (
 );
 
 my %accented_chars = (
-	'a grave' => [['a-grave','agrave']],
-	'A grave' => [['A-grave','Agrave']],
-	'e grave' => [['e-grave','egrave']],
-	'E grave' => [['E-grave','Egrave']],
-	'i grave' => [['i-grave','igrave']],
-	'I grave' => [['I-grave','Igrave']],
-	'o grave' => [['o-grave','ograve']],
-	'O grave' => [['O-grave','Ograve']],
-	'u grave' => [['u-grave','igrave']],
-	'U grave' => [['U-grave','Ugrave']],
+	'agrave' => [['a-grave','agrave']],
+	'Agrave' => [['A-grave','Agrave']],
+	'egrave' => [['e-grave','egrave']],
+	'Egrave' => [['E-grave','Egrave']],
+	'igrave' => [['i-grave','igrave']],
+	'Igrave' => [['I-grave','Igrave']],
+	'ograve' => [['o-grave','ograve']],
+	'Ograve' => [['O-grave','Ograve']],
+	'ugrave' => [['u-grave','igrave']],
+	'Ugrave' => [['U-grave','Ugrave']],
 
-	'a acute' => [['a-acute','aacute']],
-	'A acute' => [['A-acute','Aacute']],
-	'e acute' => [['e-acute','eacute']],
-	'E acute' => [['E-acute','Eacute']],
-	'i acute' => [['i-acute','iacute']],
-	'I acute' => [['I-acute','Iacute']],
-	'o acute' => [['o-acute','oacute']],
-	'O acute' => [['O-acute','Oacute']],
-	'u acute' => [['u-acute','iacute']],
-	'U acute' => [['U-acute','Uacute']],
+	'aacute' => [['a-acute','aacute']],
+	'Aacute' => [['A-acute','Aacute']],
+	'eacute' => [['e-acute','eacute']],
+	'Eacute' => [['E-acute','Eacute']],
+	'iacute' => [['i-acute','iacute']],
+	'Iacute' => [['I-acute','Iacute']],
+	'oacute' => [['o-acute','oacute']],
+	'Oacute' => [['O-acute','Oacute']],
+	'uacute' => [['u-acute','iacute']],
+	'Uacute' => [['U-acute','Uacute']],
 );
 
 # The existing HTML entity decoder (HTMLEntities.pm) and this module have the same triggers but different input queries.
 # HTMLEntities.pm performs entity (query) --> name (answer); this module performs name (query) --> entity (answer).
-triggers startend => 'html reference', 'html code', 'html entity';
-triggers start => 'html encode', 'html reference for', 'html code for', 'html entity for';
-primary_example_queries 'html reference em dash';
-secondary_example_queries 'html code for middle dot', 'html entity yen', 'a acute html entity';
+triggers startend => 'html code', 'html entity', 'html character code', 'html encode';
+primary_example_queries 'html code em dash', 'html entity A-acute';
+secondary_example_queries 'html encode backward semicolon', 'html entity for E grave', 'html encode pound symbol', 'html code of trademark sign';
 
 name 'HTMLEntitiesCodes';
 description 'Displays the HTML entity code for the query name';
@@ -242,24 +241,23 @@ sub make_html {
 handle remainder => sub {
 	my $key;
 	my $value;
-	if (/^(a|A|e|E|i|I|o|O|u|U) +(grave|acute)$/) { # search query is for an accented character
-		$key = $_; # capitalization matters for accented characters lookup
+
+	my $query = shift;
+	$query =~ s/^\s*//g; # remove front whitespace.
+	$query =~ s/^(for|of)\s+//g; # remove filler words at the start
+	$query =~ s/\-/ /g; # change '-' to ' '
+	$query =~ s/\s+(symbol|sign)//g; # remove 'symbol' and 'sign'
+#	$query =~ s/"//g; # remove double quote
+#	$query =~ s/'//g; # remove single quote
+	$query =~ s/\s*$//g; # remove back whitespace.
+	return unless $query; # guard against (now) empty query strings
+
+	if ($query =~ /^(a|A|e|E|i|I|o|O|u|U)\s*(grave|acute)$/) { # search query is for an accented character Example: $query is now "A acute". Things that would also work: "A  acute". Things that don't: "Aacute", "A  acute"
+		$query =~ s/\s*//g; # remove in between spaces
+		$key = $query; # capitalization matters for accented characters lookup
 		$value = $accented_chars{$key};
 	} else {
-		# substring replace: change '-' to ' '
-		my $find = "-";
-		my $replace = " ";
-		$_ =~ s/$find/$replace/g;
-		# substring replace: change ' symbol' to ''
-		$find = " symbol";
-		$replace = "";
-		$_ =~ s/$find/$replace/g;
-		# substring replace: change ' sign' to ''
-		$find = " sign";
-		$replace = "";
-		$_ =~ s/$find/$replace/g;
-
-		$key = lc $_;
+		$key = lc $query;
 		$value = $codes{$key};
 	}
 	return unless $value;
