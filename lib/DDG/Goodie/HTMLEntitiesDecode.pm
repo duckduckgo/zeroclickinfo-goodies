@@ -31,14 +31,18 @@ handle remainder => sub {
     return unless $_; # guard against (now) empty string
 
     if ( (/^(&?#?(?:[0-9]+(?!_))+;?)$/) || (/^(&?(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#?x{1}(?:[0-9A-Fa-f]+(?!_))+;?)$/) ) { # Regex guard - capture if there is only one entity (examples: &#8271; , &bsol;, but NOT: &#54h;) in the query, otherwise our ia may be a false positive
-    	my $entity = $1; # &#8271; # INPUT
+    	my $entity = $1; 
         $entity =~ s/^&?/&/; # append an ampersand in front (better decode_entities results and more freedom in input)
     	$entity =~ s/;?$/;/; # append a semicolon (some entities like &mdash do not work without one) (also better decode_entities results and more freedom in input)
-        my $decoded = decode_entities($entity); # decode_entities will return the input if it cannot be decoded
+        
+        # decode_entities will return the input if it cannot be decoded
+        my $decoded = decode_entities($entity);
         my $decimal = ord($decoded);
         my $hex = sprintf("%04x", $decimal);
 
-        my $info = charinfo($decimal);
+        # $decoded is used in text output, $entity is used in html output
+
+        my $info = charinfo($decimal); # charinfo() returns undef if input is not a "real" character
         return unless (defined $info);
 
         # Check if $decoded is an invisible character, and if it is, then provide a link instead of printing it on screen 
@@ -53,7 +57,7 @@ handle remainder => sub {
         }
 
         return $label . "$decoded, decimal: $decimal, hexadecimal: $hex",
-               html => $label . $entity . ", decimal: $decimal, hexadecimal: <a href=\"/?q=U%2B$hex\">$hex</a>" unless $entity eq $decoded;
+               html => $label . $entity . ", decimal: $decimal, hexadecimal: <a href=\"/?q=U%2B$hex\">$hex</a>" unless (lc $entity eq lc $decoded);
     }
 
     return;
