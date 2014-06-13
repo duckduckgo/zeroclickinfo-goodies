@@ -41,20 +41,22 @@ handle remainder => sub {
 
   #Parse out a relative year expression if it was supplied
   if (/this\syear('s)?/) { 
-    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai');
+    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai') or return;
   } elsif (/next\syear('s)?/) {
-    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->add(years => 1);
+    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->add(years => 1) or return;
   } elsif (/last\syear('s)?/) {
-    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->subtract(years => 1);
+    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->subtract(years => 1) or return;
 
   #If no relative year was supplied, look for an explicit year
-  } elsif (/\b(\d{1,4})\b/) {
+  # DateTime::Event::SolarTerm only supports 1900--2069
+  } elsif (/\b(\d{4})\b/) {
+    return unless 1900 le $1 && $1 le 2069;
     $year_gregorian = DateTime->new(year => $1, month => 6, time_zone => 'Asia/Shanghai');
 
   #Otherwise, default to now if it seems like the user is
   # asking a question about the current zodiac animal
   } elsif (/(what|which|year|animal|current|now|today|this)/)  {
-    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai');
+    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai') or return;
   
   #Don't want to show instant answer if user is just looking for
   # general information on the chinese zodiac

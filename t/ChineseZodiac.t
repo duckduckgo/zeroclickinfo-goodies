@@ -62,6 +62,12 @@ ddg_goodie_test(
   'what is the chinese word for duck' => undef,
   'buy an inflatable zodiac chinese online store' => undef,
 
+  #No support currently for years outside 1900--2069
+  'chinese zodiac 1899' => undef,
+  'chinese zodiac 1900' => test_zci('Rat', html => qr/Rat/),
+  'chinese zodiac 2069' => test_zci('Ox', html => qr/Ox/),
+  'chinese zodiac 2070' => undef,
+
 );
 
 done_testing;
