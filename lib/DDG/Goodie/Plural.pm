@@ -29,10 +29,10 @@ handle remainder => sub {
   return if $term =~ /\bwikipedia\b/;
 
   #Clean up the query
-  $term =~ s/^(what\sis\s|what'?s\s)the\s(correct\s)?//i;
+  $term =~ s/^(what\sis\s|what\sare\s|what'?s\s)the\s(correct\s)?//i;
   $term =~ s/^how\s(do\syou\s|to\s)(correctly\s)?//i;
   $term =~ s/the\s(english\s)?(word|term)\s//i;
-  $term =~ s/(form\s)?(inflection\s)?of\s//gi;
+  $term =~ s/(forms?\s)?(inflections?\s)?of\s//i;
 
   #Look for the term in Wiktionary
   my $plural;
