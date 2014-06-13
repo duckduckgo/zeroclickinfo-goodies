@@ -32,7 +32,7 @@ my %papers = (
 );
 
 handle remainder => sub {
-	#make sure the requested hand is listed
+	#make sure the requested paper is listed
 	return unless /^(size|dimension|dimensions)\s(.+)$/i && ($papers{lc$2});
 
     my $query = lc $1;
