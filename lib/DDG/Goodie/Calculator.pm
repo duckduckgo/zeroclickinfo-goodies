@@ -23,6 +23,27 @@ attribution
   github  => ['https://github.com/duckduckgo', 'duckduckgo'],
   twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
+triggers query_nowhitespace => qr<
+        ^
+       ( what is | calculate | solve | math )? !?
+
+        [\( \) x X * % + / \^ \$ -]*
+
+        (?: [0-9 \. ,]* )
+        (?: gross | dozen | pi | e | c |)
+        [\( \) x X * % + / \^ 0-9 \. , \$ -]*
+
+        (?(1) (?: -? [0-9 \. ,]+ |) |)
+        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc)+
+
+        (?: [0-9 \. ,]* )
+        (?: gross | dozen | pi | e | c |)
+
+        [\( \) x X * % + / \^ 0-9 \. , \$ -]* =? 
+
+        $
+        >xi;
+
 # This is probably YAGNI territory, but since I have to reference it in two places
 # and there are a multitude of other notation systems (although some break the
 # 'thousands' assumption) I am going to pretend that I do need it.
@@ -66,10 +87,7 @@ my %named_operations = (
     'plus'        => '+',
     'divided\sby' => '/',
     'ln'          => 'log',                         # perl log() is natural log.
-    'squared'     => '**2',
 );
-
-my $ored_operations = join('|', keys %named_operations);
 
 my %named_constants = (
     dozen => 12,
@@ -80,19 +98,12 @@ my %named_constants = (
 
 my $ored_constants = join('|', keys %named_constants);    # For later substitutions
 
-my $extra_trigger_words = qr/^(?:whatis|calculate|solve|math)/;
-triggers query_nowhitespace => qr<
-        $extra_trigger_words?
-        (\s|$funcy|$ored_constants|$ored_operations|$numbery)*
-        $
-        >xi;
-
 handle query_nowhitespace => sub {
     my $results_html;
     my $results_no_html;
     my $query = $_;
 
-    $query =~ s/$extra_trigger_words//;
+    $query =~ s/^(?:whatis|calculate|solve|math)//;
 
     if ($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
         my $tmp_result = '';
@@ -197,7 +208,7 @@ sub spacing {
 
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
-    $text =~ s/(\d+?)((?:dozen|pi|gross|squared))/$1 $2/ig;
+    $text =~ s/(\d+?)((?:dozen|pi|gross))/$1 $2/ig;
     $text =~ s/(\d+?)e/$1 e/g;    # E == *10^n
     $text =~ s/([\(\)\$])/ $1 /g if ($space_for_parse);
 
