@@ -274,41 +274,6 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr/./,
     ),
-    '5 squared' => test_zci(
-        '5 squared = 25',
-        heading => 'Calculator',
-        html    => qr/./,
-    ),
-    '1.0 + 5 squared' => test_zci(
-        '1.0 + 5 squared = 26.0',
-        heading => 'Calculator',
-        html    => qr/./,
-    ),
-    '3 squared + 4 squared' => test_zci(
-        '3 squared + 4 squared = 25',
-        heading => 'Calculator',
-        html    => qr/./,
-    ),
-    '2,2 squared' => test_zci(
-        '2,2 squared = 4,8',
-        heading => 'Calculator',
-        html    => qr/./,
-    ),
-    '0.8^2 + 0.6^2' => test_zci(
-        '0.8 ^ 2 + 0.6 ^ 2 = 1',
-        heading => 'Calculator',
-        html    => qr#0.8<sup>2</sup> \+ 0.6<sup>2</sup> = 1#,
-    ),
-    '2 squared ^ 3' => test_zci(
-        '2 squared ^ 3 = 256',
-        heading => 'Calculator',
-        html    => qr#2 squared<sup>3</sup> = 256#,
-    ),
-    '2^3 squared' => test_zci(
-        '2 ^ 3 squared = 512',
-        heading => 'Calculator',
-        html    => qr#2<sup>3</sup>squared = 512#,
-    ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,
