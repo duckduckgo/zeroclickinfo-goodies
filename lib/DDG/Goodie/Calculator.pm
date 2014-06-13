@@ -1,6 +1,8 @@
 package DDG::Goodie::Calculator;
 # ABSTRACT: do simple arthimetical calculations
 
+use feature 'state';
+
 use DDG::Goodie;
 
 use List::Util qw( all first max );
@@ -20,27 +22,6 @@ attribution
   web     => ['https://www.duckduckgo.com',    'DuckDuckGo'],
   github  => ['https://github.com/duckduckgo', 'duckduckgo'],
   twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
-
-triggers query_nowhitespace => qr<
-        ^
-       ( what is | calculate | solve | math )? !?
-
-        [\( \) x X * % + / \^ \$ -]*
-
-        (?: [0-9 \. ,]* )
-        (?: gross | dozen | pi | e | c |)
-        [\( \) x X * % + / \^ 0-9 \. , \$ -]*
-
-        (?(1) (?: -? [0-9 \. ,]+ |) |)
-        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc)+
-
-        (?: [0-9 \. ,]* )
-        (?: gross | dozen | pi | e | c |)
-
-        [\( \) x X * % + / \^ 0-9 \. , \$ -]* =? 
-
-        $
-        >xi;
 
 # This is probably YAGNI territory, but since I have to reference it in two places
 # and there are a multitude of other notation systems (although some break the
@@ -74,7 +55,7 @@ foreach my $style (@known_styles) {
 # Luckily it will someday be able to be tokenized so this won't apply.
 my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
 
-my $numbery = qr/^[\d$all_seps]+$/;
+my $numbery = qr/[\d$all_seps]+/;
 my $funcy   = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^/;    # Stuff that looks like functions.
 
 my %named_operations = (
@@ -85,7 +66,10 @@ my %named_operations = (
     'plus'        => '+',
     'divided\sby' => '/',
     'ln'          => 'log',                         # perl log() is natural log.
+    'squared'     => '**2',
 );
+
+my $ored_operations = join('|', keys %named_operations);
 
 my %named_constants = (
     dozen => 12,
@@ -96,12 +80,19 @@ my %named_constants = (
 
 my $ored_constants = join('|', keys %named_constants);    # For later substitutions
 
+my $extra_trigger_words = qr/^(?:whatis|calculate|solve|math)/;
+triggers query_nowhitespace => qr<
+        $extra_trigger_words?
+        (\s|$funcy|$ored_constants|$ored_operations|$numbery)*
+        $
+        >xi;
+
 handle query_nowhitespace => sub {
     my $results_html;
     my $results_no_html;
     my $query = $_;
 
-    $query =~ s/^(?:whatis|calculate|solve|math)//;
+    $query =~ s/$extra_trigger_words//;
 
     if ($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
         my $tmp_result = '';
@@ -125,7 +116,7 @@ handle query_nowhitespace => sub {
             $tmp_expr =~ s#\b$name\b# $constant #ig;
         }
 
-        my @numbers = grep { $_ =~ $numbery } (split /\s+/, $tmp_expr);
+        my @numbers = grep { $_ =~ /^$numbery$/ } (split /\s+/, $tmp_expr);
         my $style = display_style(@numbers);
         return unless $style;
 
@@ -137,6 +128,7 @@ handle query_nowhitespace => sub {
             # e.g. sin(100000)/100000 completely makes this go haywire.
             alarm(1);
             $tmp_result = eval($tmp_expr);
+            alarm(0);    # Assume the string processing will be "fast enough"
         };
 
         # Guard against non-result results
@@ -165,8 +157,7 @@ handle query_nowhitespace => sub {
         $results_no_html = $results_html = $tmp_q;
 
         # Superscript (before spacing).
-        $results_html =~ s/\^([^\)]+)/<sup>$1<\/sup>/g;
-        $results_html =~ s/\^(\d+|\b(?:$ored_constants)\b)/<sup>$1<\/sup>/g;
+        $results_html =~ s/\^($numbery|\b$ored_constants\b)/<sup>$1<\/sup>/g;
 
         ($results_no_html, $results_html) = map { spacing($_) } ($results_no_html, $results_html);
         return if $results_no_html =~ /^\s/;
@@ -176,17 +167,28 @@ handle query_nowhitespace => sub {
 
         # Now add = back.
         $results_no_html .= ' = ';
-        $results_html    .= ' = ';
 
-        $results_html =
-          qq(<div>$results_html<a href="javascript:;" onClick="document.x.q.value='$tmp_result';document.x.q.focus();">$tmp_result</a></div>);
         return $results_no_html . $tmp_result,
-          html    => $results_html,
+          html    => wrap_html($results_html, $tmp_result),
           heading => "Calculator";
     }
 
     return;
 };
+
+# Add some HTML and styling to our output
+# so that we can make it prettier (unabashedly stolen from
+# the ReverseComplement goodie.)
+sub append_css {
+    my $html = shift;
+    state $css = share("style.css")->slurp;
+    return "<style type='text/css'>$css</style>$html";
+}
+
+sub wrap_html {
+    my ($entered, $result) = @_;
+    return append_css("<div class='zci--calculator'>$entered = $result</div>");
+}
 
 #separates symbols with a space
 #spacing '1+1'  ->  '1 + 1'
@@ -195,7 +197,7 @@ sub spacing {
 
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
-    $text =~ s/(\d+?)((?:dozen|pi|gross))/$1 $2/ig;
+    $text =~ s/(\d+?)((?:dozen|pi|gross|squared))/$1 $2/ig;
     $text =~ s/(\d+?)e/$1 e/g;    # E == *10^n
     $text =~ s/([\(\)\$])/ $1 /g if ($space_for_parse);
 
