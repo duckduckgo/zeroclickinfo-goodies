@@ -5,13 +5,17 @@ use DDG::Goodie;
 
 triggers start => 'tell';
 
-primary_example_queries 'A4 size';
-secondary_example_queries 'A4 dimensions';
+zci is_cached => 1;
+
+primary_example_queries 'tell a4 size';
+secondary_example_queries 'tell a4 dimensions';
 description 'display various paper sizes';
 name 'PaperSizes';
-code_url '';
-category '';
-topics '';
+code_url 'https://github.com/xKripz/zeroclickinfo-goodies';
+category 'random';
+topics 'random';
+
+attribution github => [ 'https://github.com/xKripz', 'xKripz' ];
 
 my %papers = (
 	"a0" => "841 × 1189",
