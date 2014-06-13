@@ -30,7 +30,7 @@ handle remainder => sub {
     $_ =~ s/\s*$//g; # remove back whitespace.
     return unless $_; # guard against (now) empty string
 
-    if ( (/^(&?#?(?:[0-9]+(?!_))+;?)$/) || (/^(&?(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#?x{1}(?:[0-9A-Fa-f]+(?!_))+;?)$/) ) { # Regex guard - capture if there is only one entity (examples: &#8271; , &bsol;, but NOT: &#54h;) in the query, otherwise our ia may be a false positive
+    if ( (/^(&?#?(?:[0-9]+(?!_))+;?)$/) || (/^(&?(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#?(?:0)?[xX](?:[0-9A-Fa-f]+(?!_))+;?)$/) ) { # Regex guard - capture if there is only one entity (examples: &#8271; , &bsol;, but NOT: &#54h;) in the query, otherwise our ia may be a false positive
     	my $entity = $1; 
         $entity =~ s/^&?/&/; # append an ampersand in front (better decode_entities results and more freedom in input)
     	$entity =~ s/;?$/;/; # append a semicolon (some entities like &mdash do not work without one) (also better decode_entities results and more freedom in input)
