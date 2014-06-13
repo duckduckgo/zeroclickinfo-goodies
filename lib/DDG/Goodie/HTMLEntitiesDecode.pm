@@ -9,7 +9,7 @@ use strict;
 
 zci answer_type => 'html_entity';
 primary_example_queries 'html decode &#33;', 'html decode &amp';
-secondary_example_queries 'html decode &#x21' , '#36 html decode';
+secondary_example_queries 'html decode &#x21' , '#36 html entity';
 description 'Decode HTML entities';
 name 'HTMLEntitiesDecode';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HTMLEntitiesDecode.pm';
@@ -21,7 +21,7 @@ attribution twitter => 'crazedpsyc',
             web => ['http://nishanths.github.io', 'Nishanth Shanmugham'],
             github => ['https://github.com/nishanths', 'Nishanth Shanmugham'];
 
-triggers startend => 'html decode', 'decode html';
+triggers startend => 'html decode', 'decode html', 'html entity';
 
 my $label = "Decoded HTML Entity: ";
 handle remainder => sub {

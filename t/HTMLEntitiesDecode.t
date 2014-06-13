@@ -16,7 +16,7 @@ ddg_goodie_test(
 	# Test 3
 		'&#x21 decode html' => test_zci("Decoded HTML Entity: !, decimal: 33, hexadecimal: 0021", html => "<div>Decoded HTML Entity: &#x21;, decimal: 33, hexadecimal: <a href=\"/?q=U%2B0021\">0021</a></div>"),
 	# Test 4
-		'#36 html decode' => test_zci("Decoded HTML Entity: \$, decimal: 36, hexadecimal: 0024", html => "<div>Decoded HTML Entity: &#36;, decimal: 36, hexadecimal: <a href=\"/?q=U%2B0024\">0024</a></div>"),
+		'#36 html entity' => test_zci("Decoded HTML Entity: \$, decimal: 36, hexadecimal: 0024", html => "<div>Decoded HTML Entity: &#36;, decimal: 36, hexadecimal: <a href=\"/?q=U%2B0024\">0024</a></div>"),
 );
 
 done_testing;
