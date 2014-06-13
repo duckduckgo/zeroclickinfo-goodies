@@ -57,7 +57,7 @@ handle remainder => sub {
         }
 
         return $label . "$decoded, decimal: $decimal, hexadecimal: $hex",
-               html => $label . $entity . ", decimal: $decimal, hexadecimal: <a href=\"/?q=U%2B$hex\">$hex</a>" unless (lc $entity eq lc $decoded);
+               html => "<div>" . $label . $entity . ", decimal: $decimal, hexadecimal: <a href=\"/?q=U%2B$hex\">$hex</a></div>" unless (lc $entity eq lc $decoded);
     }
 
     return;
