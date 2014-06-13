@@ -1,7 +1,8 @@
-package DDG::Goodie::HTMLEntitiesCodes;
+package DDG::Goodie::HTMLEntitiesEncode;
 # ABSTRACT: Displays the HTML entity code for the query name.
 
 use DDG::Goodie;
+use HTML::Entities qw(encode_entities);
 use warnings;
 use strict;
 
@@ -86,7 +87,8 @@ my %codes = (
 
 	# Currency
 	'cent' => [['Cent','cent']],
-	'dollar' => [['Dollar','#36']],
+	'dollar' => [['Dollar sign','#36']],
+	'peso' => [['Peso','#36']],
 	'yen' => [['Yen', 'yen']],
 	'japanese yen' => [['Yen', 'yen']],
 	'euro' => [['Euro','euro']],
@@ -107,6 +109,7 @@ my %codes = (
 	'plus/minus' => [['Plus/minus','#177']],
 	'+-' => => [['Plus/minus','#177']],
 	'percent' => [['Percent sign','#37']],
+	'percentage' => [['Percent sign','#37']],
 	'per mil' => [['Per mil','permil']],
 	'per mille' => [['Per mil','permil']],
 	'per ten thousand' => [['Per ten thousand','#8241']],
@@ -130,7 +133,7 @@ my %codes = (
 	'not congruent' => [['Not congruent','#8802']],
 	'sum' => [['Summation (mathematics)','#8721']],
 	'summation' => [['Summation (mathematics)','#8721']],
-	'pi' => [['pi (mathematics)','#960']],
+	'pi' => [['Pi','#960']],
 	'reals' => [['Reals (mathematics)','#8477']],
 	'complexes' => [['Complexes','#8450']],
 	'imaginary' => [['Imaginary (mathematics)','#8520']],
@@ -197,21 +200,18 @@ my %accented_chars = (
 	'Uacute' => [['U-acute','Uacute']],
 );
 
-# The existing HTML entity decoder (HTMLEntities.pm) and this module have the same triggers but different input queries.
-# HTMLEntities.pm performs entity (query) --> name (answer); this module performs name (query) --> entity (answer).
-triggers startend => 'html code', 'html entity', 'html character code', 'html encode';
-primary_example_queries 'html code em dash', 'html entity A-acute';
-secondary_example_queries 'html encode backward semicolon', 'html entity for E grave', 'html encode pound symbol', 'html code of trademark sign';
-
-name 'HTMLEntitiesCodes';
+triggers startend => 'html code', 'html entity', 'html character code', 'html encode', 'encode html';
+primary_example_queries 'html code em dash', 'html entity A-acute', 'html encode &';
+secondary_example_queries 'html code em-dash', 'html entity for E grave', 'html entity $', 'html encode pound sign', 'html character code for trademark symbol';
+name 'HTMLEntitiesEncode';
 description 'Displays the HTML entity code for the query name';
 category 'cheat_sheets';
 topics 'programming', 'web_design';
 attribution web => ["http://nishanths.github.io", "Nishanth Shanmugham"],
     		github => [ "https://github.com/nishanths", "Nishanth Shanmugham"],
     		twitter => ["nshanmugham", "Nishanth Shanmugham"];
-code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/HTMLEntitiesCodes.pm";
-zci answer_type => 'HTML_Entity';
+code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/HTMLEntitiesEncode.pm";
+zci answer_type => 'html_entity';
 
 my $url = "http://dev.w3.org/html5/html-author/charref";
 
@@ -228,12 +228,12 @@ sub make_html {
 	# Returns a html formatted string containing the HTML character name, entity, and a link
 	my $html = "";
 	if (scalar(@{$_[0]}) == 1) { # single line answer
-		$html = "<div>(&$_[0][0][1];) $_[0][0][0]: &<span>$_[0][0][1]</span>;&nbsp;&nbsp;<a href=\"$_[1]\">More at W3</a></div>" ; # link in the same line for single line answers
+		$html = "<div>$_[0][0][0] (&$_[0][0][1];): &<span>$_[0][0][1]</span>;&nbsp;&nbsp;<a href=\"$url\">More at W3</a></div>" ; # link in the same line for single line answers
 	} else {
 		foreach my $i (0 .. scalar(@{$_[0]}) - 1) { # multiple line answer
-			$html = "$html" . "<div>(&$_[0][$i][1];) $_[0][$i][0]: &<span>$_[0][$i][1]</span>;</div>";
+			$html = "$html" . "<div>$_[0][$i][0] (&$_[0][$i][1];): &<span>$_[0][$i][1]</span>;</div>";
 		}
-		$html = "$html" . "<div><a href=\"$_[1]\">More at W3</a></div>";
+		$html = "$html" . "<div><a href=\"$url\">More at W3</a></div>";
 	}	
 	return $html;
 };
@@ -242,28 +242,52 @@ handle remainder => sub {
 	my $key;
 	my $value;
 
-	my $query = shift;
-	$query =~ s/^\s*//g; # remove front whitespace.
-	$query =~ s/^(for|of)\s+//g; # remove filler words at the start
-	$query =~ s/\-/ /g; # change '-' to ' '
-	$query =~ s/\s+(symbol|sign)//g; # remove 'symbol' and 'sign'
-#	$query =~ s/"//g; # remove double quote
-#	$query =~ s/'//g; # remove single quote
-	$query =~ s/\s*$//g; # remove back whitespace.
-	return unless $query; # guard against (now) empty query strings
+	$_ =~ s/^\s*//g; # remove front whitespace
+	$_ =~ s/\s*$//g; # remove back whitespace.
 
-	if ($query =~ /^(a|A|e|E|i|I|o|O|u|U)\s*(grave|acute)$/) { # search query is for an accented character Example: $query is now "A acute". Things that would also work: "A  acute". Things that don't: "Aacute", "A  acute"
-		$query =~ s/\s*//g; # remove in between spaces
-		$key = $query; # capitalization matters for accented characters lookup
-		$value = $accented_chars{$key};
-	} else {
-		$key = lc $query;
-		$value = $codes{$key};
+	# HASHES LOOKUP
+	my $hashes_query = $_;
+	$hashes_query =~ s/^(for|of)\s+//g; # remove filler words at the start
+	$hashes_query =~ s/\s+(symbol|sign)//g; # remove 'symbol' and 'sign'
+	
+	$hashes_query =~ s/\-/ /g; # change '-' to ' '
+	$hashes_query =~ s/"//g; # remove double quote
+	$hashes_query =~ s/'//g; # remove single quote
+	# If a string still exists after the stripping, lookup the accented_chars hash if it's an accented character query and if it's not an accented char look up the codes hash
+	if ($hashes_query) {
+		if ($hashes_query =~ /^(a|A|e|E|i|I|o|O|u|U)\s*(grave|acute)$/) { # search query is for an accented character
+			$hashes_query =~ s/\s*//g; # remove in between spaces
+			$key = $hashes_query; # capitalization matters for accented characters lookup
+			$value = $accented_chars{$key};
+		} else { # not an accented char -- so lookup codes hash
+			$key = lc $hashes_query;
+			$value = $codes{$key};
+		}
+		# If a we found a value in the hashes, we have a positive hit. Return.
+		if (defined $value) {
+			my $text = make_text($value);
+			my $html = make_html($value);
+			return $text, html => $html;
+		}
 	}
-	return unless $value;
-	my $text = make_text($value);
-	my $html = make_html($value, $url);
-	return $text, html => $html;
+
+	# SINGLE CHARACTER ENCODING
+	# If we have gotten this far, there were no hits above
+	# Use the encode function of HTML::Entities
+	if (length($_) == 1){
+		my $entity = encode_entities($_);
+	    if ($entity eq $_) { # encode_entities returns the same if it fails
+	    	$entity = ord($_); # get the decimal
+	    	$entity = '#' . $entity; # dress it up like a decimal
+	    }
+	    $entity =~ s/^&//;
+	    $entity =~ s/;$//;
+	    my $text = "Encoded HTML Entity: &$entity;";
+	    my $html = "<div>Encoded HTML Entity (&$entity;): &<span>$entity</span>;&nbsp;&nbsp;<a href=\"$url\">More at W3</a></div>";
+	    return $text, html => $html;
+	}
+
+	return;
 };
 
 1;
