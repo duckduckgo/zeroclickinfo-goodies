@@ -6,9 +6,11 @@
 }
 
 .zci--answer .zci--chinesezodiac .zodiaccharacter {
-  font-size: 2em;
+  font-size: 1.5em;
+  /*color: #393939;*/
 }
 
 .zci--answer .zci--chinesezodiac .statement {
-  color: #808080;
+  font-size: 1em;
+  color: #747474;
 }
