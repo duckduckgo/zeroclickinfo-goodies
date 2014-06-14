@@ -3,6 +3,8 @@ package DDG::Goodie::Plural;
 
 use DDG::Goodie;
 use Lingua::EN::Inflect qw(WORDLIST);
+use JSON::XS qw(decode_json);
+use File::Slurp qw(read_file);
 use feature 'state';
 
 primary_example_queries 'pluralise starfish';
@@ -19,6 +21,9 @@ triggers any => 'plural', 'pluralise', 'pluralize', 'pluralisation', 'pluralizat
 
 zci is_cached => 1;
 
+#Load Wiktionary plurals
+our %plurals = %{decode_json(read_file(share('plurals.json')->stringify))};
+
 handle remainder => sub {
 
   my $term = $_;
@@ -34,20 +39,14 @@ handle remainder => sub {
   $term =~ s/the\s(english\s)?(word|term)\s//i;
   $term =~ s/(forms?\s)?(inflections?\s)?of\s//i;
 
-  #Look for the term in Wiktionary
-  my $plural;
-	open PLURALS, "<", share('plurals.txt')->stringify or return;
-  while (<PLURALS>) {
-    ($plural) = $_ =~ /^$term\t(.+)\n$/i;
-    last if $plural;
-  }
-  close PLURAL;
-  return unless $plural;
+  #Check that the term is in Wiktionary
+  return unless exists $plurals{lc($term)};
 
-  my @forms = split(/\t/, $plural);
+  #Get the plural forms
+  my @pluralForms = keys %{$plurals{lc($term)}};
   
-  return WORDLIST(@forms, {conj => 'or'}), 
-         html => wrap_html($term, @forms) if @forms;
+  return WORDLIST(@pluralForms, {conj => 'or'}), 
+         html => wrap_html($term, @pluralForms);
   return;
 };
 
@@ -56,12 +55,12 @@ sub wrap_html {
   state $css = share('style.css')->slurp;
   my $html = "<style type='text/css'>$css</style>";
 
-  (my $term, my @forms) = @_;
+  (my $term, my @pluralForms) = @_;
 
-  @forms = map { "<span class='plural'><a href='" . wiktionary_URL($_) . "'>" . $_ . "</a></span>" } @forms;
+  @pluralForms = map { "<span class='plural'><a href='" . wiktionary_URL($_) . "'>" . $_ . "</a></span>" } @pluralForms;
 
   #Convert to a natual English list
-  my $natural = WORDLIST(@forms, {conj => "<span class='label'>or</span>"});
+  my $natural = WORDLIST(@pluralForms, {conj => "<span class='label'>or</span>"});
 
   $html .= "<div class='zci--plural'>";
   $html .= "<span class='label'>The plural of $term is</span> $natural";

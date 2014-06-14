@@ -2,6 +2,8 @@
 
 use Modern::Perl 2014;
 use autodie;
+use JSON::XS qw(encode_json);
+use File::Slurp qw(write_file);
 use utf8;
 $|++;
 
@@ -10,7 +12,7 @@ my $unsanitary = qr/[^\p{L}\s\-']/;
 my $dictionaryFile = 'enwiktionary-20140522-pages-articles.xml';
 open DICT, "<:utf8", $dictionaryFile;
 
-my %terms;
+my %plurals;
 my $term;
 my $ns;
 my $is_English;
@@ -76,7 +78,7 @@ while (<DICT>) {
     #If no plural form information is given,
     # the plural form is '-s'
     if (! $+{plurals}) {
-      $terms{$termKey}{$term . 's'}++;
+      $plurals{$termKey}{$term . 's'} = undef;;
       next; 
     }
 
@@ -92,7 +94,7 @@ while (<DICT>) {
       #Tilde indicates countable and uncountable, with -s
       # pluralisation unless an alternative is specified
       } elsif ($form eq '~') {
-        $terms{$termKey}{$term . 's'}++ if @forms == 1;
+        $plurals{$termKey}{$term . 's'} = undef if @forms == 1;
 
       #Exclamation point indicates an unattested plural,
       # question mark indicates uncertain or unknown;
@@ -104,19 +106,19 @@ while (<DICT>) {
       } elsif ($form eq 's' || $form eq 'es') {
         warn('Form ' . $form . ' looks unsanitary') if $form =~ /$unsanitary/;
         next if $form =~ /$unsanitary/;
-        $terms{$termKey}{$term . $form}++;
+        $plurals{$termKey}{$term . $form} = undef;
 
       #Markup in square brackets is used for multi-word
       # terms, with -s pluralisation unless an alternative
       # is specified
       } elsif ($form =~ /\[|\]/) {
-        $terms{$termKey}{$term . 's'}++ if @forms == 1;
+        $plurals{$termKey}{$term . 's'} = undef;
       
       #Anything else is an explicit specification of a
       # plural form, usuall irregular
       } else {
         next if $form =~ /$unsanitary/;
-        $terms{$termKey}{$form}++;
+        $plurals{$termKey}{$form} = undef;
       }
     }
   }
@@ -125,12 +127,6 @@ say "\r$. lines processed";
 close DICT;
 
 say "Writing plurals.txt...";
-open PLURALS, ">:utf8", "plurals.txt";
-foreach my $term (sort keys(%terms)) {
-
-  next unless $terms{$term};
-  say PLURALS $term . "\t" . join("\t", keys %{$terms{$term}});
-
-}
-close PLURALS;
+my $json = encode_json \%plurals;
+write_file('plurals.json', { binmode => ':raw' }, $json);
 say "Done";
