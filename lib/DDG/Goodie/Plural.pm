@@ -6,6 +6,7 @@ use Lingua::EN::Inflect qw(WORDLIST);
 use JSON::XS qw(decode_json);
 use File::Slurp qw(read_file);
 use feature 'state';
+use URI::Escape qw(uri_escape_utf8);
 
 primary_example_queries 'pluralise starfish';
 secondary_example_queries 'pluralize fungus', 'what is the plural form of cul-de-sac', 'how do you pluralise radius', 'what is the correct pluralization of medium', 'pluralise the word plethora', 'plural inflection of bacterium';
@@ -75,7 +76,7 @@ sub wrap_html {
 sub wiktionary_URL {
 
   my $term = shift;
-  $term =~ s/\s/_/g;
+  $term = uri_escape_utf8($term);
   return 'https://en.wiktionary.org/wiki/' . $term;
 
 }
