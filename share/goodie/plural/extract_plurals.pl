@@ -112,7 +112,7 @@ while (<DICT>) {
       # terms, with -s pluralisation unless an alternative
       # is specified
       } elsif ($form =~ /\[|\]/) {
-        $plurals{$termKey}{$term . 's'} = undef;
+        $plurals{$termKey}{$term . 's'} = undef if @forms == 1;
       
       #Anything else is an explicit specification of a
       # plural form, usuall irregular
