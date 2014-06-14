@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use utf8;
 
 zci answer_type => 'plural';
 zci is_cached => 1;
@@ -29,6 +30,10 @@ ddg_goodie_test(
   'how to pluralize color' => test_zci('colors', html => qr/colors/),
   'what is the correct plural of story' => test_zci('stories', html => qr/stories/),
   'storey plural' => test_zci('storeys', html => qr/storeys/),
+
+  #Non-ASCII characters
+  'what is the plural of café' => test_zci('cafés', html => qr/cafés/),
+  'pluralize œsophagus' => test_zci('œsophagi', html => qr/œsophagi/),
 
   #I LIKE CAPS LOCK
   'What Is The Plural Of Octopus' => test_zci(qr/octop(i|odes|uses)/, html => qr/octop(i|odes|uses)/),
