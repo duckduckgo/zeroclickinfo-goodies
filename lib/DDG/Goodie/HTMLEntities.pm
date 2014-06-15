@@ -1,5 +1,6 @@
-package DDG::Goodie::HTMLEntitiesDecode;
+package DDG::Goodie::HTMLEntities;
 # ABSTRACT: Decode HTML Entities.
+# HTML entity encoding has been branched to a separate module
 
 use DDG::Goodie;
 use HTML::Entities 'decode_entities';
@@ -11,13 +12,13 @@ zci answer_type => 'html_entity';
 primary_example_queries 'html decode &#33;', 'html decode &amp';
 secondary_example_queries 'html decode &#x21' , '#36 html entity';
 description 'Decode HTML entities';
-name 'HTMLEntitiesDecode';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HTMLEntitiesDecode.pm';
+name 'HTMLEntities';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HTMLEntities.pm';
 category 'computing_tools';
 topics 'programming';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ,
-            twitter => ['nshanmugham', 'Nishanth Shanmugham'],
+            twitter => ['https://twitter.com/nshanmugham', 'Nishanth Shanmugham'],
             web => ['http://nishanths.github.io', 'Nishanth Shanmugham'],
             github => ['https://github.com/nishanths', 'Nishanth Shanmugham'];
 
@@ -25,9 +26,9 @@ triggers startend => 'html decode', 'decode html', 'html entity';
 
 my $label = "Decoded HTML Entity: ";
 handle remainder => sub {
-    $_ =~ s/^\s*//g; # remove front whitespace
-    $_ =~ s/^(for|of)\s+//g; # remove filler words at the start
-    $_ =~ s/\s*$//g; # remove back whitespace.
+    $_ =~ s/^\s*//; # remove front whitespace
+    $_ =~ s/^(for|of)\s+//; # remove filler words at the start
+    $_ =~ s/\s*$//; # remove back whitespace.
     return unless $_; # guard against (now) empty string
 
     if ( (/^(&?#?(?:[0-9]+(?!_))+;?)$/) || (/^(&?(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#?(?:0)?[xX](?:[0-9A-Fa-f]+(?!_))+;?)$/) ) { # Regex guard - capture if there is only one entity (examples: &#8271; , &bsol;, but NOT: &#54h;) in the query, otherwise our ia may be a false positive

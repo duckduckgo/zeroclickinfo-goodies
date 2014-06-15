@@ -209,7 +209,9 @@ category 'cheat_sheets';
 topics 'programming', 'web_design';
 attribution web => ["http://nishanths.github.io", "Nishanth Shanmugham"],
     		github => [ "https://github.com/nishanths", "Nishanth Shanmugham"],
-    		twitter => ["nshanmugham", "Nishanth Shanmugham"];
+    		twitter => ["https://twitter.com/nshanmugham", "Nishanth Shanmugham"],
+    		twitter => 'crazedpsyc',
+            cpan    => 'CRZEDPSYC' ;
 code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/HTMLEntitiesEncode.pm";
 zci answer_type => 'html_entity';
 
@@ -242,17 +244,17 @@ handle remainder => sub {
 	my $key;
 	my $value;
 
-	$_ =~ s/^\s*//g; # remove front whitespace
-	$_ =~ s/\s*$//g; # remove back whitespace.
+	$_ =~ s/^\s*//; # remove front whitespace
+	$_ =~ s/\s*$//; # remove back whitespace.
 
 	# HASHES LOOKUP
 	my $hashes_query = $_;
 	$hashes_query =~ s/^(for|of)\s+//g; # remove filler words at the start
 	$hashes_query =~ s/\s+(symbol|sign)//g; # remove 'symbol' and 'sign'
 	
-	$hashes_query =~ s/\-/ /g; # change '-' to ' '
-	$hashes_query =~ s/"//g; # remove double quote
-	$hashes_query =~ s/'//g; # remove single quote
+	$hashes_query =~ s/\-/ /; # change '-' to ' '
+	$hashes_query =~ s/"//; # remove double quote
+	$hashes_query =~ s/'//; # remove single quote
 	# If a string still exists after the stripping, lookup the accented_chars hash if it's an accented character query and if it's not an accented char look up the codes hash
 	if ($hashes_query) {
 		if ($hashes_query =~ /^(a|A|e|E|i|I|o|O|u|U)\s*(grave|acute)$/) { # search query is for an accented character

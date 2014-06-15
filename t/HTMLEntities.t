@@ -8,7 +8,7 @@ use DDG::Test::Goodie;
 zci answer_type => 'html_entity';
 
 ddg_goodie_test(
-	[qw(DDG::Goodie::HTMLEntitiesDecode)],
+	[qw(DDG::Goodie::HTMLEntities)],
 	# Test 1
 		'html decode &#33;' => test_zci("Decoded HTML Entity: !, decimal: 33, hexadecimal: 0021", html => "<div>Decoded HTML Entity: &#33;, decimal: 33, hexadecimal: <a href=\"/?q=U%2B0021\">0021</a></div>"),
 	# Test 2
