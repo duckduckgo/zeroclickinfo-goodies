@@ -78,7 +78,7 @@ while (<DICT>) {
     #If no plural form information is given,
     # the plural form is '-s'
     if (! $+{plurals}) {
-      $plurals{$termKey}{$term . 's'} = undef;;
+      $plurals{$termKey}{$term}{$term . 's'} = undef;;
       next; 
     }
 
@@ -94,7 +94,7 @@ while (<DICT>) {
       #Tilde indicates countable and uncountable, with -s
       # pluralisation unless an alternative is specified
       } elsif ($form eq '~') {
-        $plurals{$termKey}{$term . 's'} = undef if @forms == 1;
+        $plurals{$termKey}{$term}{$term . 's'} = undef if @forms == 1;
 
       #Exclamation point indicates an unattested plural,
       # question mark indicates uncertain or unknown;
@@ -106,19 +106,19 @@ while (<DICT>) {
       } elsif ($form eq 's' || $form eq 'es') {
         warn('Form ' . $form . ' looks unsanitary') if $form =~ /$unsanitary/;
         next if $form =~ /$unsanitary/;
-        $plurals{$termKey}{$term . $form} = undef;
+        $plurals{$termKey}{$term}{$term . $form} = undef;
 
       #Markup in square brackets is used for multi-word
       # terms, with -s pluralisation unless an alternative
       # is specified
       } elsif ($form =~ /\[|\]/) {
-        $plurals{$termKey}{$term . 's'} = undef if @forms == 1;
+        $plurals{$termKey}{$term}{$term . 's'} = undef if @forms == 1;
       
       #Anything else is an explicit specification of a
       # plural form, usuall irregular
       } else {
         next if $form =~ /$unsanitary/;
-        $plurals{$termKey}{$form} = undef;
+        $plurals{$termKey}{$term}{$form} = undef;
       }
     }
   }

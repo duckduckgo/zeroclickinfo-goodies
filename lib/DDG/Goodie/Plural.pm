@@ -44,29 +44,58 @@ handle remainder => sub {
   return unless exists $plurals{lc($term)};
 
   #Get the plural forms
-  my @pluralForms = keys %{$plurals{lc($term)}};
+  my %pluralForms = %{$plurals{lc($term)}};
   
-  return WORDLIST(@pluralForms, {conj => 'or'}), 
-         html => wrap_html($term, @pluralForms);
+  return natural_list(nested_forms(%pluralForms)),
+         html => wrap_html(lc($term), %pluralForms);
   return;
 };
 
+sub natural_list {
+
+  my @items = @_;
+  return WORDLIST(sort @items, {conj => "<span class='label'>or</span>"});
+
+}
+
+sub nested_forms {
+
+  my %hash = @_;
+  my @forms;
+  foreach my $key (keys %hash) {
+    push(@forms, $_) for keys %{$hash{$key}};
+  }
+  return sort @forms;
+
+}
+
 sub wrap_html {
 
+  (my $lc, my %pluralForms) = @_;
+
+  #Inject CSS and open div
   state $css = share('style.css')->slurp;
   my $html = "<style type='text/css'>$css</style>";
-
-  (my $term, my @pluralForms) = @_;
-
-  @pluralForms = map { "<span class='plural'><a href='" . wiktionary_URL($_) . "'>" . $_ . "</a></span>" } @pluralForms;
-
-  #Convert to a natual English list
-  my $natural = WORDLIST(@pluralForms, {conj => "<span class='label'>or</span>"});
-
   $html .= "<div class='zci--plural'>";
-  $html .= "<span class='label'>The plural of $term is</span> $natural";
-  $html .= "<span class='label'> (did you mean</span> <a href=\"http://en.wikipedia.org/wiki/Pleural_fluid#Pleural_fluid\">pleural fluid</a><span class='label'>)?</span>" if $term eq "fluid";
-  $html .= "<div class='source'><a href='" . wiktionary_URL($term) ."'>More at Wiktionary</a></div>";
+
+  #For each matching caseform, construct a natural-language
+  # statment of the plural forms with links to Wiktionary
+  my @statements;
+  foreach my $caseForm (sort keys %pluralForms) {
+    my @pluralForms = map { "<span class='plural'><a href='" . wiktionary_URL($_) . "'>" . $_ . "</a></span>" } keys %{$pluralForms{$caseForm}};
+    my $article = @statements == 0 ? 'The' : 'the';
+    my $statement = "<span class='label'>$article plural of $caseForm is</span> " . natural_list(@pluralForms);
+    push(@statements, $statement);
+  }
+
+  #Join the statements together and capitalise
+  # the first word
+  my $statement = join("<span class='label'>; </span>", @statements);
+  $statement = ucfirst($statement);
+  $html .= $statement;
+  
+  #Link back to Wiktionary and close off
+  $html .= "<div class='source'><a href='" . wiktionary_URL($lc) ."'>More at Wiktionary</a></div>";
   $html .= "</div>";
 
   return $html;
