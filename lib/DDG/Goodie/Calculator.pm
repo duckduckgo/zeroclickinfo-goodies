@@ -200,7 +200,7 @@ sub append_css {
 
 sub wrap_html {
     my ($entered, $result) = @_;
-    return append_css("<div class='zci--calculator'>$entered = $result</div>");
+    return append_css("<div class='zci--calculator'>$entered = <a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>$result</a></div>");
 }
 
 #separates symbols with a space
