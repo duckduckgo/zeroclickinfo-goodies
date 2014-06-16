@@ -2,7 +2,7 @@ package DDG::Goodie::Uppercase;
 
 use DDG::Goodie;
 
-triggers startend => 'uppercase', 'upper case';
+triggers startend => 'uppercase', 'upper case', 'allcaps', 'all caps';
 
 zci is_cached => 1;
 zci answer_type => "uppercase";

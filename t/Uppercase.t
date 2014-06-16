@@ -14,6 +14,9 @@ ddg_goodie_test(
 	)],
 	'upper case this' => test_zci('THIS'),
 	'uppercase that' => test_zci('THAT'),
+        'allcaps this string' => test_zci('THIS STRING'),
+        'that string all caps' => test_zci('THAT STRING'),
+        'is this uppercase, sir?' => undef,
 );
 
 done_testing;
