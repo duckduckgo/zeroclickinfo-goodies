@@ -230,12 +230,12 @@ sub make_html {
 	# Returns a html formatted string containing the HTML character name, entity, and a link
 	my $html = "";
 	if (scalar(@{$_[0]}) == 1) { # single line answer
-		$html = "<div>$_[0][0][0] (&$_[0][0][1];): &<span>$_[0][0][1]</span>;&nbsp;&nbsp;<a href=\"$url\">More at W3</a></div>" ; # link in the same line for single line answers
+		$html = "<div>$_[0][0][0] (&$_[0][0][1];): &<span>$_[0][0][1]</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"$url\">More at W3</a></div>" ; # link in the same line for single line answers
 	} else {
 		foreach my $i (0 .. scalar(@{$_[0]}) - 1) { # multiple line answer
 			$html = "$html" . "<div>$_[0][$i][0] (&$_[0][$i][1];): &<span>$_[0][$i][1]</span>;</div>";
 		}
-		$html = "$html" . "<div><a href=\"$url\">More at W3</a></div>";
+		$html = "$html" . "<div><a class=\"zci__more-at\" href=\"$url\">More at W3</a></div>";
 	}	
 	return $html;
 };
@@ -255,6 +255,7 @@ handle remainder => sub {
 	$hashes_query =~ s/\-/ /; # change '-' to ' '
 	$hashes_query =~ s/"//; # remove double quote
 	$hashes_query =~ s/'//; # remove single quote
+
 	# If a string still exists after the stripping, lookup the accented_chars hash if it's an accented character query and if it's not an accented char look up the codes hash
 	if ($hashes_query) {
 		if ($hashes_query =~ /^(a|A|e|E|i|I|o|O|u|U)\s*(grave|acute)$/) { # search query is for an accented character
@@ -285,7 +286,7 @@ handle remainder => sub {
 	    $entity =~ s/^&//;
 	    $entity =~ s/;$//;
 	    my $text = "Encoded HTML Entity: &$entity;";
-	    my $html = "<div>Encoded HTML Entity (&$entity;): &<span>$entity</span>;&nbsp;&nbsp;<a href=\"$url\">More at W3</a></div>";
+	    my $html = "<div>Encoded HTML Entity: &<span>$entity</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"$url\">More at W3</a></div>";
 	    return $text, html => $html;
 	}
 

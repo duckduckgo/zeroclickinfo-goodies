@@ -22,6 +22,6 @@ triggers startend => 'url encode', 'encode url', 'urlencode', 'encodeurl', 'urle
 my $url = "https://en.wikipedia.org/wiki/Url_encoding";
 handle remainder => sub {
 	my $holder = uri_encode($_);
-	return "Encoded URL: $holder", html => "<div>Encoded URL: $holder</div><div>More at <a href=\"$url\">Wikipedia</a></div>";
+	return "Encoded URL: $holder", html => "<div>Encoded URL: $holder</div><div><a class=\"zci__more-at\" href=\"$url\">More at Wikipedia</a></div>";
 };
 1;
