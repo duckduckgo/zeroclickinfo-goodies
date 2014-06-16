@@ -99,9 +99,9 @@ handle query => sub {
     sub to_html {
 	my $results = "";
 	foreach my $result (@_) {
-	    $results .= "<div><i>$result->[0]: </i>$result->[1]</div>";
+	    $results .= "<div><span class=\"subnet__label\">$result->[0]: </span>$result->[1]</div>";
 	}
-	return $results;
+	return $results . "<style> .zci--answer .subnet__label {color: #808080;}</style>";
     }
 
     sub to_text {
