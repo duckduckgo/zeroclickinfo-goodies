@@ -22,7 +22,7 @@ attribution twitter => 'crazedpsyc',
             web => ['http://nishanths.github.io', 'Nishanth Shanmugham'],
             github => ['https://github.com/nishanths', 'Nishanth Shanmugham'];
 
-triggers startend => 'html decode', 'decode html', 'html entity';
+triggers startend => 'html decode', 'decode html', 'html entity', 'htmldecode', 'decodehtml';
 
 my $label = "Decoded HTML Entity: ";
 handle remainder => sub {

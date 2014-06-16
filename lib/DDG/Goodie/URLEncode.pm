@@ -18,7 +18,7 @@ attribution twitter => ['nshanmugham', 'Nishanth Shanmugham'],
             web => ['http://nishanths.github.io', 'Nishanth Shanmugham'],
             github => ['https://github.com/nishanths', 'Nishanth Shanmugham'];
 
-triggers startend => 'url encode', 'encode url';
+triggers startend => 'url encode', 'encode url', 'urlencode', 'encodeurl', 'urlescape';
 my $url = "https://en.wikipedia.org/wiki/Url_encoding";
 handle remainder => sub {
 	my $holder = uri_encode($_);
