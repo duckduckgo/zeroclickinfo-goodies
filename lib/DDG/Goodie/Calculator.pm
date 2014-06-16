@@ -30,14 +30,14 @@ triggers query_nowhitespace => qr<
         [\( \) x X * % + / \^ \$ -]*
 
         (?: [0-9 \. ,]* )
-        (?: gross | dozen | pi | e | c |)
+        (?: gross | dozen | pi | e | c | squared | score |)
         [\( \) x X * % + / \^ 0-9 \. , \$ -]*
 
         (?(1) (?: -? [0-9 \. ,]+ |) |)
-        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc)+
+        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared )+
 
         (?: [0-9 \. ,]* )
-        (?: gross | dozen | pi | e | c |)
+        (?: gross | dozen | pi | e | c | squared | score |)
 
         [\( \) x X * % + / \^ 0-9 \. , \$ -]* =? 
 
@@ -87,6 +87,7 @@ my %named_operations = (
     'plus'        => '+',
     'divided\sby' => '/',
     'ln'          => 'log',                         # perl log() is natural log.
+    'squared'     => '**2',
 );
 
 my %named_constants = (
@@ -94,6 +95,7 @@ my %named_constants = (
     e     => 2.71828182845904523536028747135266249,    # This should be computed.
     pi    => pi,                                       # pi constant from Math::Trig
     gross => 144,
+    score => 20,
 );
 
 my $ored_constants = join('|', keys %named_constants);    # For later substitutions
@@ -208,7 +210,7 @@ sub spacing {
 
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
-    $text =~ s/(\d+?)((?:dozen|pi|gross))/$1 $2/ig;
+    $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/(\d+?)e/$1 e/g;    # E == *10^n
     $text =~ s/([\(\)\$])/ $1 /g if ($space_for_parse);
 
