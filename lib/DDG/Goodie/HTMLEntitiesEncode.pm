@@ -200,7 +200,7 @@ my %accented_chars = (
 	'Uacute' => [['U-acute','Uacute']],
 );
 
-triggers startend => 'html code', 'html entity', 'html character code', 'html encode', 'encode html', 'htmlencode', 'encodehtml', 'html escape', 'htmlescape';
+triggers startend => 'html code', 'html entity', 'html character code', 'html encode', 'encode html', 'htmlencode', 'encodehtml', 'html escape', 'htmlescape', 'escape html', 'escapehtml';
 primary_example_queries 'html code em dash', 'html entity A-acute', 'html encode &';
 secondary_example_queries 'html code em-dash', 'html entity for E grave', 'html entity $', 'html encode pound sign', 'html character code for trademark symbol';
 name 'HTMLEntitiesEncode';
