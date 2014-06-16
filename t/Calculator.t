@@ -297,17 +297,17 @@ ddg_goodie_test(
     '0.8^2 + 0.6^2' => test_zci(
         '0.8 ^ 2 + 0.6 ^ 2 = 1',
         heading => 'Calculator',
-        html    => qr#0.8<sup>2</sup> \+ 0.6<sup>2</sup> = 1#,
+        html    => qr#0.8<sup>2</sup> \+ 0.6<sup>2</sup> = #,
     ),
     '2 squared ^ 3' => test_zci(
         '2 squared ^ 3 = 256',
         heading => 'Calculator',
-        html    => qr#2 squared<sup>3</sup> = 256#,
+        html    => qr#2 squared<sup>3</sup> = #,
     ),
     '2^3 squared' => test_zci(
         '2 ^ 3 squared = 512',
         heading => 'Calculator',
-        html    => qr#2<sup>3</sup>squared = 512#,
+        html    => qr#2<sup>3</sup>squared = #,
     ),
     '4 score + 7' => test_zci(
         '4 score + 7 = 87',
