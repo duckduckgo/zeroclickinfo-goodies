@@ -16,23 +16,23 @@ ddg_goodie_test(
     ],
     "10.0.0.0/24" => test_zci(
 	"Network: 10.0.0.0/24 (Class A)\nNetmask: 255.255.255.0\nSpecified: Network\nHost Address Range: 10.0.0.1-10.0.0.254 (254 hosts)\nBroadcast: 10.0.0.255\n",
-	html => "<div><span class=\"subnet__label\">Network: </span>10.0.0.0/24 (Class A)</div><div><span class=\"subnet__label\">Netmask: </span>255.255.255.0</div><div><span class=\"subnet__label\">Specified: </span>Network</div><div><span class=\"subnet__label\">Host Address Range: </span>10.0.0.1-10.0.0.254 (254 hosts)</div><div><span class=\"subnet__label\">Broadcast: </span>10.0.0.255</div><style> .zci--answer .subnet__label {color: #808080;}</style>",
+	html => "<table><tr><td class=\"subnet__label\">Network: </td><td>10.0.0.0/24 (Class A)</td></tr><tr><td class=\"subnet__label\">Netmask: </td><td>255.255.255.0</td></tr><tr><td class=\"subnet__label\">Specified: </td><td>Network</td></tr><tr><td class=\"subnet__label\">Host Address Range: </td><td>10.0.0.1-10.0.0.254 (254 hosts)</td></tr><tr><td class=\"subnet__label\">Broadcast: </td><td>10.0.0.255</td></tr></table><style> .zci--answer .subnet__label {color: #808080; padding-right: 10px;}</style>",
     ),
     "192.168.0.0/24" => test_zci(
 	"Network: 192.168.0.0/24 (Class C)\nNetmask: 255.255.255.0\nSpecified: Network\nHost Address Range: 192.168.0.1-192.168.0.254 (254 hosts)\nBroadcast: 192.168.0.255\n",
-	html => "<div><span class=\"subnet__label\">Network: </span>192.168.0.0/24 (Class C)</div><div><span class=\"subnet__label\">Netmask: </span>255.255.255.0</div><div><span class=\"subnet__label\">Specified: </span>Network</div><div><span class=\"subnet__label\">Host Address Range: </span>192.168.0.1-192.168.0.254 (254 hosts)</div><div><span class=\"subnet__label\">Broadcast: </span>192.168.0.255</div><style> .zci--answer .subnet__label {color: #808080;}</style>",
+	html => "<table><tr><td class=\"subnet__label\">Network: </td><td>192.168.0.0/24 (Class C)</td></tr><tr><td class=\"subnet__label\">Netmask: </td><td>255.255.255.0</td></tr><tr><td class=\"subnet__label\">Specified: </td><td>Network</td></tr><tr><td class=\"subnet__label\">Host Address Range: </td><td>192.168.0.1-192.168.0.254 (254 hosts)</td></tr><tr><td class=\"subnet__label\">Broadcast: </td><td>192.168.0.255</td></tr></table><style> .zci--answer .subnet__label {color: #808080; padding-right: 10px;}</style>",
     ),
     "8.8.8.8 255.255.224.0" => test_zci(
 	"Network: 8.8.0.0/19 (Class A)\nNetmask: 255.255.224.0\nSpecified: Host #2056\nHost Address Range: 8.8.0.1-8.8.31.254 (8190 hosts)\nBroadcast: 8.8.31.255\n",
-	html => "<div><span class=\"subnet__label\">Network: </span>8.8.0.0/19 (Class A)</div><div><span class=\"subnet__label\">Netmask: </span>255.255.224.0</div><div><span class=\"subnet__label\">Specified: </span>Host #2056</div><div><span class=\"subnet__label\">Host Address Range: </span>8.8.0.1-8.8.31.254 (8190 hosts)</div><div><span class=\"subnet__label\">Broadcast: </span>8.8.31.255</div><style> .zci--answer .subnet__label {color: #808080;}</style>",
+	html => "<table><tr><td class=\"subnet__label\">Network: </td><td>8.8.0.0/19 (Class A)</td></tr><tr><td class=\"subnet__label\">Netmask: </td><td>255.255.224.0</td></tr><tr><td class=\"subnet__label\">Specified: </td><td>Host #2056</td></tr><tr><td class=\"subnet__label\">Host Address Range: </td><td>8.8.0.1-8.8.31.254 (8190 hosts)</td></tr><tr><td class=\"subnet__label\">Broadcast: </td><td>8.8.31.255</td></tr></table><style> .zci--answer .subnet__label {color: #808080; padding-right: 10px;}</style>",
     ),
     '46.51.197.88/255.255.254.0' => test_zci(
         "Network: 46.51.196.0/23 (Class A)\nNetmask: 255.255.254.0\nSpecified: Host #344\nHost Address Range: 46.51.196.1-46.51.197.254 (510 hosts)\nBroadcast: 46.51.197.255\n",
-        html => "<div><span class=\"subnet__label\">Network: </span>46.51.196.0/23 (Class A)</div><div><span class=\"subnet__label\">Netmask: </span>255.255.254.0</div><div><span class=\"subnet__label\">Specified: </span>Host #344</div><div><span class=\"subnet__label\">Host Address Range: </span>46.51.196.1-46.51.197.254 (510 hosts)</div><div><span class=\"subnet__label\">Broadcast: </span>46.51.197.255</div><style> .zci--answer .subnet__label {color: #808080;}</style>",
+        html => "<table><tr><td class=\"subnet__label\">Network: </td><td>46.51.196.0/23 (Class A)</td></tr><tr><td class=\"subnet__label\">Netmask: </td><td>255.255.254.0</td></tr><tr><td class=\"subnet__label\">Specified: </td><td>Host #344</td></tr><tr><td class=\"subnet__label\">Host Address Range: </td><td>46.51.196.1-46.51.197.254 (510 hosts)</td></tr><tr><td class=\"subnet__label\">Broadcast: </td><td>46.51.197.255</td></tr></table><style> .zci--answer .subnet__label {color: #808080; padding-right: 10px;}</style>",
     ),
     '176.34.131.233/32' => test_zci(
         "Network: 176.34.131.233/32 (Class B)\nNetmask: 255.255.255.255\nSpecified: Host Only\n",
-        html => "<div><span class=\"subnet__label\">Network: </span>176.34.131.233/32 (Class B)</div><div><span class=\"subnet__label\">Netmask: </span>255.255.255.255</div><div><span class=\"subnet__label\">Specified: </span>Host Only</div><style> .zci--answer .subnet__label {color: #808080;}</style>"
+        html => "<table><tr><td class=\"subnet__label\">Network: </td><td>176.34.131.233/32 (Class B)</td></tr><tr><td class=\"subnet__label\">Netmask: </td><td>255.255.255.255</td></tr><tr><td class=\"subnet__label\">Specified: </td><td>Host Only</td></tr></table><style> .zci--answer .subnet__label {color: #808080; padding-right: 10px;}</style>"
     ),
 );
 

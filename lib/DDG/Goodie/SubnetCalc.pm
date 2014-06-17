@@ -97,11 +97,11 @@ handle query => sub {
     $which_specified = "Host Only" if ($cidr == 32);
     
     sub to_html {
-	my $results = "";
+	my $results = "<table>";
 	foreach my $result (@_) {
-	    $results .= "<div><span class=\"subnet__label\">$result->[0]: </span>$result->[1]</div>";
+	    $results .= "<tr><td class=\"subnet__label\">$result->[0]: </td><td>$result->[1]</td></tr>";
 	}
-	return $results . "<style> .zci--answer .subnet__label {color: #808080;}</style>";
+	return $results . "</table><style> .zci--answer .subnet__label {color: #808080; padding-right: 10px;}</style>";
     }
 
     sub to_text {
