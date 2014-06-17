@@ -26,9 +26,9 @@ triggers startend => 'html decode', 'decode html', 'html entity', 'htmldecode', 
 
 my $label = "Decoded HTML Entity: ";
 handle remainder => sub {
-    $_ =~ s/^\s*//; # remove front whitespace
-    $_ =~ s/^(for|of)\s+//; # remove filler words at the start
-    $_ =~ s/\s*$//; # remove back whitespace.
+    $_ =~ s/^\s*//g; # remove front whitespace
+    $_ =~ s/^(for|of)\s+//g; # remove filler words at the start
+    $_ =~ s/\s*$//g; # remove back whitespace.
     return unless $_; # guard against (now) empty string
 
     if ( (/^(&?#?(?:[0-9]+(?!_))+;?)$/) || (/^(&?(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#?[xX](?:[0-9A-Fa-f]+(?!_))+;?)$/) ) {

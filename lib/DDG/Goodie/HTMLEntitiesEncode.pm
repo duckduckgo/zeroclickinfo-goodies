@@ -244,17 +244,17 @@ handle remainder => sub {
 	my $key;
 	my $value;
 
-	$_ =~ s/^\s*//; # remove front whitespace
-	$_ =~ s/\s*$//; # remove back whitespace.
+	$_ =~ s/^\s*//g; # remove front whitespace
+	$_ =~ s/\s*$//g; # remove back whitespace.
 
 	# HASHES LOOKUP
 	my $hashes_query = $_;
 	$hashes_query =~ s/^(for|of)\s+//g; # remove filler words at the start
 	$hashes_query =~ s/\s+(symbol|sign)//g; # remove 'symbol' and 'sign'
 	
-	$hashes_query =~ s/\-/ /; # change '-' to ' '
-	$hashes_query =~ s/"//; # remove double quote
-	$hashes_query =~ s/'//; # remove single quote
+	$hashes_query =~ s/\-/ /g; # change '-' to ' '
+	$hashes_query =~ s/"//g; # remove double quote
+	$hashes_query =~ s/'//g; # remove single quote
 
 	# If a string still exists after the stripping, lookup the accented_chars hash if it's an accented character query and if it's not an accented char look up the codes hash
 	if ($hashes_query) {
@@ -283,8 +283,8 @@ handle remainder => sub {
 	    	$entity = ord($_); # get the decimal
 	    	$entity = '#' . $entity; # dress it up like a decimal
 	    }
-	    $entity =~ s/^&//;
-	    $entity =~ s/;$//;
+	    $entity =~ s/^&//g; # remove & from the output of the function, it will be added as necessary in html formatting
+	    $entity =~ s/;$//g; # same as above for ;
 	    my $text = "Encoded HTML Entity: &$entity;";
 	    my $html = "<div>Encoded HTML Entity: &<span>$entity</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"$url\">More at W3</a></div>";
 	    return $text, html => $html;
