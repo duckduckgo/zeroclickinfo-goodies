@@ -57,6 +57,6 @@ sub append_css {
 
 sub wrap_html {
   my ($label, $sequence) = @_;
-  return append_css("<div class='zci--reversecomplement'><span class='label'>$label</span> $sequence</div>");
+  return append_css("<div class='zci--reversecomplement'><div class='label'>$label</div><div class='sequence'>$sequence</div></div>");
 }
 1;

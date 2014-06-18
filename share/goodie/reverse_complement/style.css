@@ -1,12 +1,15 @@
 .zci--answer .zci--reversecomplement {
-    font-size: 1.5em;
     font-weight: 300;
     padding-top: .25em;
     padding-bottom: .25em;
-    /*color: #393939;*/
-    word-wrap: break-word;
 }
 
 .zci--answer .zci--reversecomplement .label {
+    font-size: 1.1em;
     color: #808080;
+}
+
+.zci--answer .zci--reversecomplement .sequence {
+    font-size: 1.5em;
+    word-wrap: break-word;
 }
