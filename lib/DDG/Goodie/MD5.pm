@@ -31,7 +31,7 @@ handle remainder => sub {
         else {
             $str = md5_hex (encode "utf8", $str);
         }
-        return qq($str);
+        return qq(Md5: $str);
     }
     return;
 };
