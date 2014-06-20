@@ -49,18 +49,14 @@ triggers query_nowhitespace => qr<
 # 'thousands' assumption) I am going to pretend that I do need it.
 #  If it could fit more than one the first in order gets preference.
 my @known_styles = ({
-        id            => 'perl',
-        decimal       => '\.',
-        sub_decimal   => '.',
-        thousands     => ',',
-        sub_thousands => ',',
+        id        => 'perl',
+        decimal   => '.',
+        thousands => ',',
     },
     {
-        id            => 'euro',
-        decimal       => ',',
-        sub_decimal   => ',',
-        thousands     => '\.',
-        sub_thousands => '.',
+        id        => 'euro',
+        decimal   => ',',
+        thousands => '.',
     },
 );
 
@@ -155,7 +151,7 @@ handle query_nowhitespace => sub {
         return unless (defined $precision || ($tmp_result =~ /^(?:\-|)[0-9\.]+$/));
 
         # Ok, this might be overkill on flexibility.
-        $tmp_result = sprintf('%0' . $perl_style->{sub_decimal} . $precision . 'f', $tmp_result) if ($precision);
+        $tmp_result = sprintf('%0' . $perl_style->{decimal} . $precision . 'f', $tmp_result) if ($precision);
         # Dollars.
         $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
 
@@ -244,13 +240,13 @@ sub _well_formed_for_style_func {
     return sub {
         my $number = shift;
         return (
-            $number =~ /^[\d$thousands$decimal]+$/
+            $number =~ /^(\d|\Q$thousands\E|\Q$decimal\E)+$/
               # Only contains things we understand.
-              && ($number !~ /$thousands/ || ($number !~ /$thousands\d{1,2}\b/ && $number !~ /$thousands\d{4,}/ && $number !~ /^0\Q$thousands\E/))
+              && ($number !~ /\Q$thousands\E/ || ($number !~ /\Q$thousands\E\d{1,2}\b/ && $number !~ /\Q$thousands\E\d{4,}/ && $number !~ /^0\Q$thousands\E/))
               # You can leave out thousands breaks, but the ones you put in must be in the right place
               # which does not include following an initial 0.
               # Note that this does not confirm that they put all the 'required' ones in.
-              && ($number !~ /$decimal/ || $number !~ /$decimal(?:.*)?(?:$decimal|$thousands)/)
+              && ($number !~ /\Q$decimal\E/ || $number !~ /\Q$decimal\E(?:.*)?(?:\Q$decimal\E|\Q$thousands\E)/)
               # You can omit the decimal but you cannot have another decimal or thousands after:
         ) ? 1 : 0;
     };
@@ -259,14 +255,13 @@ sub _well_formed_for_style_func {
 # Returns function which given a number in a certain style, makes it nice for human eyes.
 sub _display_style_func {
     my ($style, $perl_style) = @_;
-    my ($decimal, $sub_decimal, $sub_thousands, $perl_dec) =
-      (@{$style}{qw(decimal sub_decimal sub_thousands)}, $perl_style->{decimal});    # Unpacked for easier regex-building
+    my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $perl_style->{decimal});    # Unpacked for easier regex-building
 
     return sub {
         my $text = shift;
         $text = reverse $text;
-        $text =~ s/$perl_dec/$sub_decimal/g;
-        $text =~ s/(\d\d\d)(?=\d)(?!\d*$decimal)/$1$sub_thousands/g;
+        $text =~ s/\Q$perl_dec\E/$decimal/g;
+        $text =~ s/(\d\d\d)(?=\d)(?!\d*\Q$decimal\E)/$1$thousands/g;
 
         return scalar reverse $text;
     };
@@ -275,13 +270,13 @@ sub _display_style_func {
 # Returns function which given a number in a certain style, makes it safe for perl eval.
 sub _prepare_for_computation_func {
     my ($style, $perl_style) = @_;
-    my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $perl_style->{sub_decimal});
+    my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $perl_style->{decimal});
 
     return sub {
         my $number_text = shift;
 
-        $number_text =~ s/$thousands//g;           # Remove thousands seps, since they are just visual.
-        $number_text =~ s/$decimal/$perl_dec/g;    # Make sure decimal mark is something perl knows how to use.
+        $number_text =~ s/\Q$thousands\E//g;           # Remove thousands seps, since they are just visual.
+        $number_text =~ s/\Q$decimal\E/$perl_dec/g;    # Make sure decimal mark is something perl knows how to use.
 
         return $number_text;
     };
@@ -295,7 +290,7 @@ sub _precision_for_style_func {
     return sub {
         my $number_text = shift;
 
-        return ($number_text =~ /$decimal(\d+)/) ? length($1) : 0;
+        return ($number_text =~ /\Q$decimal\E(\d+)/) ? length($1) : 0;
     };
 }
 
