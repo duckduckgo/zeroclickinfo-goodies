@@ -155,48 +155,59 @@ handle query_nowhitespace => sub {
         # Dollars.
         $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
 
-        # Query for display.
-        my $tmp_q = $query;
-
-        # Drop equals.
-        $tmp_q =~ s/\=$//;
-        $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
-
-        # Copy
-        $results_no_html = $results_html = $tmp_q;
-
-        # Superscript (before spacing).
-        $results_html =~ s/\^($numbery|\b$ored_constants\b)/<sup>$1<\/sup>/g;
-
-        ($results_no_html, $results_html) = map { spacing($_) } ($results_no_html, $results_html);
-        return if $results_no_html =~ /^\s/;
-
         # Add proper separators.
         $tmp_result = $style->{make_pretty}->($tmp_result);
 
-        # Now add = back.
-        $results_no_html .= ' = ';
+        my $results = prepare_for_display($query, $tmp_result);
 
-        return $results_no_html . $tmp_result,
-          html    => wrap_html($results_html, $tmp_result),
+        return if $results->{text} =~ /^\s/;
+        return $results->{text},
+          html    => $results->{html},
           heading => "Calculator";
     }
 
     return;
 };
 
-# Add some HTML and styling to our output
-# so that we can make it prettier (unabashedly stolen from
-# the ReverseComplement goodie.)
-sub append_css {
-    my $html = shift;
-    state $css = share("style.css")->slurp;
-    return "<style type='text/css'>$css</style>$html";
+sub prepare_for_display {
+    my ($query, $result) = @_;
+
+    # Equals varies by output type.
+    $query =~ s/\=$//;
+    # Show them how 'E' was interpreted.
+    $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
+
+    return {
+        text => format_text($query, $result),
+        html => format_html($query, $result),
+    };
 }
 
-sub wrap_html {
-    my ($entered, $result) = @_;
-    return append_css("<div class='zci--calculator'>$entered = <a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>$result</a></div>");
+# Format query for HTML
+sub format_html {
+    my ($query, $result) = @_;
+
+    state $css = '<style type="text/css">' . share("style.css")->slurp . '</style>';
+
+    if ($query =~ /\^/) {
+        $query =~ s/\^($numbery|\b$ored_constants\b)/<sup>$1<\/sup>/g;
+        $query =~ s/\^\(([^\)]+)\)/<sup>($1)<\/sup>/g;
+    }
+
+    return
+        $css
+      . "<div class='zci--calculator'>"
+      . spacing($query)
+      . " = <a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>"
+      . $result
+      . "</a></div>";
+}
+
+# Format query for text
+sub format_text {
+    my ($query, $result) = @_;
+
+    return spacing($query) . ' = ' . $result;
 }
 
 #separates symbols with a space
