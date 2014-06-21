@@ -305,6 +305,11 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr#2 squared<sup>3</sup> = #,
     ),
+    '2 squared ^ 3.06' => test_zci(
+        '2 squared ^ 3.06 = 323.972172143725',
+        heading => 'Calculator',
+        html    => qr#2 squared<sup>3\.06</sup> = #,
+    ),
     '2^3 squared' => test_zci(
         '2 ^ 3 squared = 512',
         heading => 'Calculator',
@@ -324,6 +329,41 @@ ddg_goodie_test(
         '418.005 / 8 = 52.250625',
         heading => 'Calculator',
         html    => qr/./,
+    ),
+    '(pi^4+pi^5)^(1/6)' => test_zci(
+        '(pi ^ 4 + pi ^ 5) ^ (1 / 6) = 2.71828180861191',
+        heading => 'Calculator',
+        html    => qr#\(pi<sup>4</sup> \+ pi<sup>5</sup>\)<sup>\(1 / 6\)</sup> =#,
+    ),
+    '(pi^4+pi^5)^(1/6)+1' => test_zci(
+        '(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1 = 3.71828180861191',
+        heading => 'Calculator',
+        html    => qr#\(pi<sup>4</sup> \+ pi<sup>5</sup>\)<sup>\(1 / 6\)</sup> \+ 1 =#,
+    ),
+    '(pi^4.1^(5-4)+pi^(5-(4^2 -8)))^(1/6)+1' => test_zci(
+        '(pi ^ 4.1 ^ (5 - 4) + pi ^ (5 - (4 ^ 2 - 8))) ^ (1 / 6) + 1 = 3.18645452799383',
+        heading => 'Calculator',
+        html    => qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1 =#,
+    ),
+    '5^4^(3-2)^1' => test_zci(
+        '5 ^ 4 ^ (3 - 2) ^ 1 = 625',
+        heading => 'Calculator',
+        html    => qr#5<sup>4<sup>\(3 - 2\)<sup>1</sup></sup></sup> =#,
+    ),
+    '(5-4)^(3-2)^1' => test_zci(
+        '(5 - 4) ^ (3 - 2) ^ 1 = 1',
+        heading => 'Calculator',
+        html    => qr#\(5 - 4\)<sup>\(3 - 2\)<sup>1</sup></sup> =#,
+    ),
+    '(5+4-3)^(2-1)' => test_zci(
+        '(5 + 4 - 3) ^ (2 - 1) = 6',
+        heading => 'Calculator',
+        html    => qr#\(5 \+ 4 - 3\)<sup>\(2 - 1\)</sup> =#,
+    ),
+    '5^((4-3)*(2+1))+6' => test_zci(
+        '5 ^ ((4 - 3) * (2 + 1)) + 6 = 131',
+        heading => 'Calculator',
+        html    => qr#5<sup>\(\(4 - 3\) \* \(2 \+ 1\)\)</sup> \+ 6 =#,
     ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,

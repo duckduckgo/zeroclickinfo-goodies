@@ -189,10 +189,7 @@ sub format_html {
 
     state $css = '<style type="text/css">' . share("style.css")->slurp . '</style>';
 
-    if ($query =~ /\^/) {
-        $query =~ s/\^($numbery|\b$ored_constants\b)/<sup>$1<\/sup>/g;
-        $query =~ s/\^\(([^\)]+)\)/<sup>($1)<\/sup>/g;
-    }
+    $query = _add_html_exponents($query);
 
     return
         $css
@@ -201,6 +198,61 @@ sub format_html {
       . " = <a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>"
       . $result
       . "</a></div>";
+}
+
+sub _add_html_exponents {
+
+    my $string = shift;
+
+    return $string if ($string !~ /\^/ or $string =~ /^\^|\^$/);    # Give back the same thing if we won't deal with it properly.
+
+    my @chars = split //, $string;
+    my ($start_tag, $end_tag) = ('<sup>', '</sup>');
+    my ($newly_up, $in_exp_number, $in_exp_parens, %power_parens);
+    my ($parens_count, $number_up) = (0, 0);
+
+    # because of associativity and power-to-power, we need to scan nearly the whole thing
+    for my $index (1 .. $#chars - 1) {
+        my $this_char = $chars[$index];
+        if ($this_char =~ $numbery) {
+            if ($newly_up) {
+                $in_exp_number = 1;
+                $newly_up      = 0;
+            }
+        } elsif ($this_char eq '(') {
+            $parens_count += 1;
+            $in_exp_number = 0;
+            if ($newly_up) {
+                $in_exp_parens += 1;
+                $power_parens{$parens_count} = 1;
+                $newly_up = 0;
+            }
+        } elsif ($this_char eq '^') {
+            $chars[$index - 1] =~ s/$end_tag$//;    # Added too soon!
+            $number_up += 1;
+            $newly_up      = 1;
+            $chars[$index] = $start_tag;            # Replace ^ with the tag.
+        } elsif ($in_exp_number) {
+            $in_exp_number = 0;
+            $number_up -= 1;
+            $chars[$index] = $end_tag . $chars[$index];
+        } elsif ($number_up && !$in_exp_parens) {
+            # Must have ended another term or more
+            $chars[$index] = ($end_tag x ($number_up - 1)) . $chars[$index];
+            $number_up = 0;
+        } elsif ($this_char eq ')') {
+            # We just closed a set of parens, see if it closes one of our things
+            if ($in_exp_parens && $power_parens{$parens_count}) {
+                $chars[$index] .= $end_tag;
+                delete $power_parens{$parens_count};
+                $in_exp_parens -= 1;
+            }
+            $parens_count -= 1;
+        }
+    }
+    $chars[-1] .= $end_tag x $number_up if ($number_up);
+
+    return join('', @chars);
 }
 
 # Format query for text
