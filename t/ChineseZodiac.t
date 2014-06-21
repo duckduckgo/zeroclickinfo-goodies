@@ -61,6 +61,9 @@ ddg_goodie_test(
   'what is my zodiac sign' => undef,
   'what is the chinese word for duck' => undef,
   'buy an inflatable zodiac chinese online store' => undef,
+  'chinese zodiac 20 march 1997' => undef,
+  'chinese zodiac 1997-03-20' => undef,
+  'what was the chinese zodiac animal on the 3rd of april 1945' => undef,
 
   #No support currently for years outside 1900--2069
   'chinese zodiac 1899' => undef,

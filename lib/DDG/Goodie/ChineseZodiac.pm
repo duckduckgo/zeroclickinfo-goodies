@@ -39,6 +39,10 @@ handle remainder => sub {
   #Figure out what year the user is interested in
   my $year_gregorian;
 
+  #Return if more than one number has been included;
+  # this IA only supports years (for now)
+  return if /\d+[^\d]+\d+/;
+
   #Parse out a relative year expression if it was supplied
   if (/this\syear('s)?/) { 
     $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai') or return;
