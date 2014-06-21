@@ -48,9 +48,10 @@ handle remainder => sub {
     $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->subtract(years => 1) or return;
 
   #If no relative year was supplied, look for an explicit year
-  # DateTime::Event::SolarTerm only supports 1900--2069
-  } elsif (/\b(\d{4})\b/) {
-    return unless 1900 le $1 && $1 le 2069;
+  # DateTime::Event::SolarTerm only supports 1900--2069, so 
+  # return nothing if the user provides a year outside this range
+  } elsif (/\b(\d+)\b/) {
+    return unless $1 >= 1900 && $1 <= 2069;
     $year_gregorian = DateTime->new(year => $1, month => 6, time_zone => 'Asia/Shanghai');
 
   #Otherwise, default to now if it seems like the user is

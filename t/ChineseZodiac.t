@@ -67,6 +67,7 @@ ddg_goodie_test(
   'chinese zodiac 1900' => test_zci('Rat', html => qr/Rat/),
   'chinese zodiac 2069' => test_zci('Ox', html => qr/Ox/),
   'chinese zodiac 2070' => undef,
+  'chinese zodiac 2000000000000' => undef,
 
 );
 
