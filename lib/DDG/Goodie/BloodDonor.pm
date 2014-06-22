@@ -3,9 +3,12 @@ package DDG::Goodie::BloodDonor;
 
 use DDG::Goodie;
 
-triggers startend =>	'donor compatibility', 'donor', 'donors for', 
-						'blood donor', 'blood donors for', 'blood donor for',
-						'blood type', 'blood compatibility', 'compatibility', 'blood donor compatibility';
+use strict;
+use warnings;
+
+triggers startend =>    'donor compatibility', 'donor', 'donors for', 
+                        'blood donor', 'blood donors for', 'blood donor for',
+                        'blood type', 'blood compatibility', 'compatibility', 'blood donor compatibility';
 
 zci answer_type => "blood_donor";
 
@@ -19,52 +22,62 @@ topics 'everyday';
 attribution github => ['https://github.com/faraday', 'faraday'];
 
 my %typeMap = (
-   'A' => 'A,O',
-   'O' => 'O',
-   'AB' => 'AB,A,B,O',
-   'B' => 'B,O',
+    'A' => 'A,O',
+    'O' => 'O',
+    'AB' => 'AB,A,B,O',
+    'B' => 'B,O',
 );
 
+sub apply_css($)
+{
+    my ($html) = @_;
+    my $css = scalar share('style.css')->slurp;
+    return "<style type='text/css'>$css</style>\n$html";
+}
+
 sub table_data {
-  my ($label, $value) = @_;
-  return "<tr><td style='padding-right: 1em;'>$label</td><td>$value</td></tr>";
+    my ($label, $value) = @_;
+    return "<tr><td class='label'>$label</td><td class='value'>$value</td></tr>";
 }
 
 handle remainder => sub {
     if ($_ =~ /^(O|A|B|AB)(\-|\+)$/i) {
-      my $type = uc $1;
-      my $rh = $2;
+        my $type = uc $1;
+        my $rh = $2;
 
-      my @idealResults = ();
-      my @criticalResults = ();
+        my @idealResults = ();
+        my @criticalResults = ();
 
-      return unless defined $typeMap{$type};
+        return unless defined $typeMap{$type};
       
-      # ideally same Rh
-      foreach our $donorType (split(",", $typeMap{$type})) {
-          push(@idealResults, $donorType . $rh);
-          if($rh eq '+') {
-            # only when access to same Rh is impossible
-            push(@criticalResults, $donorType . '-');
-          }
-      }
+        # ideally same Rh
+        foreach our $donorType (split(",", $typeMap{$type})) {
+            push(@idealResults, $donorType . $rh);
+            if($rh eq '+') {
+                # only when access to same Rh is impossible
+                push(@criticalResults, $donorType . '-');
+            }
+        }
 
-      my $output = '';
-      my $html = '<table>';
-      my $idealStr = join(' or ', @idealResults);
-      my $criticalStr = join(' or ', @criticalResults);
-      $output .= "Ideal donor: " . uc($_) . "\n";
-      $output .= "Other donors: " . $idealStr . "\n";
-      $html .= table_data("Ideal donor:", uc($_));
-      $html .= table_data("Other donors:", $idealStr);
-      if($rh eq '+') {
-        $output .= "Only if no Rh(+) found: " . $criticalStr . "\n";
-        $html .= table_data("<i>Only if</i> no Rh(+) found:", $criticalStr);
-      }
-      $html .= '</table>';
-      return $output, html => $html, heading => "Donors for blood type ".uc($_);
+        my $output = '';
+        my $html = "<table class='blooddonor'>";
+        
+        my $idealStr = join(' or ', @idealResults);
+        my $criticalStr = join(' or ', @criticalResults);
+        
+        $output .= "Ideal donor: " . uc($_) . "\n";
+        $output .= "Other donors: " . $idealStr . "\n";
+        $html .= table_data("Ideal donor:", uc($_));
+        $html .= table_data("Other donors:", $idealStr);
+        
+        if($rh eq '+') {
+            $output .= "Only if no Rh(+) found: " . $criticalStr . "\n";
+            $html .= table_data("<i>Only if</i> no Rh(+) found:", $criticalStr);
+        }
+        
+        $html .= '</table>';
+        return $output, html => apply_css($html), heading => "Donors for blood type ".uc($_);
     }
-
     return;
 };
 1;

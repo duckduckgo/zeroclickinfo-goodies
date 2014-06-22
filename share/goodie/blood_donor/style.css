@@ -1,0 +1,26 @@
+.zci--answer .blooddonor
+{
+	font-size: 1.1em;
+	line-height: 1.5em;
+}
+
+.zci--answer .blooddonor .label
+{
+	padding-right: 1em;
+	color: #595959;
+}
+
+.zci--answer .blooddonor .value
+{
+	color: #292929;
+}
+
+.zci--answer .blooddonor tr
+{
+	border-top: 1px solid #ddd;
+}
+
+.zci--answer .blooddonor tr:nth-of-type(1)
+{
+	border-top: 0px;
+}
