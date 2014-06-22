@@ -12,9 +12,9 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::MD5
     )],
-    'md5 digest this string' => test_zci('Md5: ad9b1db35500418a04eb2abe40e0ab7b'),
-    'md5sum digest that string' => test_zci('Md5: 0f814a4d82d8426b97d21815a2d463e3'),
-    'md5 base64 I want it encoded in base64' => test_zci('Md5: z2YyIzNWn3lbsjdyg9IQUA'),
+    'md5 digest this!' => test_zci('Md5: 3838c8fb10a114e6d21203359ef147ad'),
+    'md5 hex gimme the hex digest' => test_zci('Md5: 0ce78eeb15abe053207d79f9b8e5cbab'),
+    'md5sum base64 gimme the digest encoded in base64' => test_zci('Md5: INa7hD+ZcscImFVGHvnuvQ'),
 );
 
 done_testing;
