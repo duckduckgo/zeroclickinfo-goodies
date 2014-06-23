@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use utf8;
 
 zci answer_type => 'chinesezodiac';
 zci is_cached => 1;
@@ -28,6 +29,12 @@ ddg_goodie_test(
   'what will the chinese zodiac animal be for people born in the year 1969' => test_zci('Rooster', html => qr/Rooster/),
   'chinese zodiac for a person born in 1969' => test_zci('Rooster', html => qr/Rooster/),
   'chinese zodiac of 1969' => test_zci('Rooster', html => qr/Rooster/),
+
+  #Alternative triggers
+  '1969 shēngxiào' => test_zci('Rooster', html => qr/Rooster/),
+  'shengxiao animal 1969' => test_zci('Rooster', html => qr/Rooster/),
+  'shēng xiào for 1969' => test_zci('Rooster', html => qr/Rooster/),
+  'i was born in 1969 what is my sheng xiao' => test_zci('Rooster', html => qr/Rooster/),
 
   #Test some different years
   # Taken from http://www.chinesezodiac.com/calculator.php

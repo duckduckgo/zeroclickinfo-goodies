@@ -7,7 +7,7 @@ use DateTime::Event::Chinese qw(chinese_new_year_before chinese_new_year_after);
 use utf8;
 use feature 'state';
 
-triggers any => 'chinese zodiac';
+triggers any => 'chinese zodiac', 'shēngxiào', 'shengxiao', 'shēng xiào', 'sheng xiao';
 zci is_cached => 1;
 
 name 'Chinese Zodiac';
