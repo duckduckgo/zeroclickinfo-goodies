@@ -20,15 +20,22 @@ category 'transformations';
 triggers start => 'md5', 'md5sum';
 
 handle remainder => sub {
+    # Exit unless a string is found after the mode (if any)
     if (/^(hex|base64|)\s*(.*)$/i) {
         my $command = $1 || '';
         my $str     = $2 || '';
         return unless $str;
 
         if ($command && $command eq 'base64') {
+            # Calculate the md5 of the string and return it in base64 if that
+            # is the selected mode.
+            # The string is encoded to get the utf8 representation instead of
+            # perls internal representation of strings, before it's passed to
+            # the md5 subroutine.
             $str = md5_base64 (encode "utf8", $str);
         }
         else {
+            # Defaults to hex encoding when no other mode was selected.
             $str = md5_hex (encode "utf8", $str);
         }
         return qq(Md5: $str);
