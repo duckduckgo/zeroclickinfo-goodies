@@ -8,62 +8,58 @@ use DDG::Test::Goodie;
 zci answer_type => 'html_entity';
 
 ddg_goodie_test(
-	[qw(DDG::Goodie::HTMLEntitiesEncode)],
-	# Test 1
-		'html code em dash' => test_zci(
-		"Em dash: &mdash;",
-		html => "<div>Em dash (&mdash;): &<span>mdash</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 2 - querying accented chars
-		'html entity A-acute' => test_zci(
-		"A-acute: &Aacute;",
-		html => "<div>A-acute (&Aacute;): &<span>Aacute</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 3
-		'html encode &' => test_zci(
-		"Encoded HTML Entity: &amp;",
-		html => "<div>Encoded HTML Entity: &<span>amp</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 4 - hyphens in between don't matter
-		'html code em-dash' => test_zci(
-		"Em dash: &mdash;",
-		html => "<div>Em dash (&mdash;): &<span>mdash</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 5 - variety in querying accented chars
-		'html entity for E grave' => test_zci(
-		"E-grave: &Egrave;",
-		html => "<div>E-grave (&Egrave;): &<span>Egrave</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 6
-		'html encode $' => test_zci(
-		"Encoded HTML Entity: &#36;",
-		html => "<div>Encoded HTML Entity: &<span>#36</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 7 - two entities returned
-		'html encode pound symbol' => test_zci(
-		"British Pound Sterling: &pound;\nNumber sign: &#35;",
-		html => "<div>British Pound Sterling (&pound;): &<span>pound</span>;</div><div>Number sign (&#35;): &<span>#35</span>;</div><div><a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 8 - extra words like 'for' and 'sign' can be typed in, and are taken care of in the code / new trigger
-		'htmlencode pilcrow sign' => test_zci(
-		"Pilcrow: &#182;",
-		html => "<div>Pilcrow (&#182;): &<span>#182</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 9 - new trigger
-		'html escape greater than symbol' => test_zci(
-		"Greater than: &gt;",
-		html => "<div>Greater than (&gt;): &<span>gt</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 10 - handling too much space / new trigger
-		'space   encodehtml' => test_zci(
-		"Non-breaking space: &nbsp;",
-		html => "<div>Non-breaking space (&nbsp;): &<span>nbsp</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
-	# Test 11 - standardized output / new trigger
-		'ApoSTrophe escapehtml' => test_zci(
-		"Apostrophe: &#39;",
-		html => "<div>Apostrophe (&#39;): &<span>#39</span>;&nbsp;&nbsp;<a class=\"zci__more-at\" href=\"http://dev.w3.org/html5/html-author/charref\">More at W3</a></div>",
-	),
+    [qw(DDG::Goodie::HTMLEntitiesEncode)],
+
+    # A simple test
+    'html code em dash' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/),
+
+    # Hyphens in-between don't matter
+    'html code em-dash' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/),
+
+    # Quotes don't matter
+    'html encode "em-dash"' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/),
+
+    # Variety in querying accented chars #1
+    'html entity A-acute' => test_zci("Encoded HTML Entity: &Aacute;",html => qr/Aacute/),
+
+    # Variety in querying accented chars #2
+    'html entity for E grave' => test_zci("Encoded HTML Entity: &Egrave;", html => qr/Egrave/),
+
+    # Query is a single typed-in character to encode
+    'html escape &' => test_zci("Encoded HTML Entity: &amp;", html => qr/amp/),
+
+    # Single typed-in character query with (ignored) 'sign' 
+    '$ sign htmlentity' => test_zci("Encoded HTML Entity: &#36;", html => qr/#36/),
+
+    # Return two matching entities for ambiguous query
+    'pound symbol html encode ' => test_zci("Encoded HTML Entity: &pound;\nEncoded HTML Entity: &#35;", html => qr/pound.*#35|#35.*pound/),
+
+    # Ignore both 'of' and 'sign'
+    'html code of pilcrow sign' => test_zci("Encoded HTML Entity: &#182;", html => qr/#182/),
+
+    # Ignore 'symbol'
+    'html escape greater than symbol' => test_zci("Encoded HTML Entity: &gt;", html => qr/gt/),
+
+    # Handle extra space
+    'space    html character code' => test_zci("Encoded HTML Entity: &nbsp;", html => qr/nbsp/),
+
+    # Mixed cases in query
+    'ApoSTrophe escapehtml' => test_zci("Encoded HTML Entity: &#39;", html => qr/#39/),
+
+    # 'right angle brackets' should work even though the defined key contains the singular 'bracket'
+    'right angle brackets htmlencode' => test_zci("Encoded HTML Entity: &rsaquo;\nEncoded HTML Entity: &raquo;", html => qr/rsaquo.*raquo|raquo.*rsaquo/),
+
+    # 'double quotes' should work even though the defined key contains the singular 'quote'
+    'double quotes htmlescape' => test_zci("Encoded HTML Entity: &quot;", html => qr/quot/),
+
+    # Should not work (would make sense to decode the query though!)
+    'html encode &#43;' => undef,
+
+    # Should not work (would make sense to decode the query though!)
+    'html entity &amp;' => undef,
+
+    # Should not work
+    'html encode is it magic' => undef,
 );
 
 done_testing;
