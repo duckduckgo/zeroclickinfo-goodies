@@ -278,7 +278,7 @@ handle remainder => sub {
     $_ =~ s/^\s*//g; # remove front whitespace
     $_ =~ s/\s*$//g; # remove back whitespace
     $_ =~ s/^(for|of)\s+//g; # remove filler words at the start (note: this will remove 'for' in "for euro sign", but not 'for' in "formula sign")
-    $_ =~ s/\s+(symbol|sign)\s+//g; # remove 'symbol' and 'sign'
+    $_ =~ s/(symbol|sign)//g; # remove 'symbol' and 'sign'
     $_ =~ s/^\s*//g; # remove front whitespace again that may show up after removing the words above
     $_ =~ s/\s*$//g; # remove back whitespace again that may show up after removing the words above
 
