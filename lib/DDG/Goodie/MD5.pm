@@ -19,6 +19,17 @@ category 'transformations';
 
 triggers start => 'md5', 'md5sum';
 
+my $css = share('style.css')->slurp;
+
+sub html_output {
+    my $md5 = shift;
+    return "<style type='text/css'>$css</style>"
+          ."<div class='zci--md5'>"
+          ."<span class='text--secondary'>Md5:</span>"
+          ."<span class='text--primary'> $md5</span>"
+          ."</div>";
+}
+
 handle remainder => sub {
     # Exit unless a string is found after the mode (if any)
     if (/^(hex|base64|)\s*(.*)$/i) {
@@ -38,7 +49,7 @@ handle remainder => sub {
             # Defaults to hex encoding when no other mode was selected.
             $str = md5_hex (encode "utf8", $str);
         }
-        return qq(Md5: $str);
+        return $str, html => html_output $str;
     }
     return;
 };
