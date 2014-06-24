@@ -13,6 +13,7 @@ subtest 'display format selection' => sub {
     my $ds_name = 'DDG::Goodie::Calculator::display_style';
     my $ds      = \&$ds_name;
 
+    is($ds->('0,013')->{id}, 'euro', '0,013 is euro');
     is($ds->('4,431',      '4.321')->{id}, 'perl', '4,431 and 4.321 is perl');
     is($ds->('4,431',      '4.32')->{id},  'perl', '4,431 and 4.32 is perl');
     is($ds->('4,431',      '4,32')->{id},  'euro', '4,431 and 4,32 is euro');

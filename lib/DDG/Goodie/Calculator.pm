@@ -246,8 +246,9 @@ sub _well_formed_for_style_func {
         return (
             $number =~ /^[\d$thousands$decimal]+$/
               # Only contains things we understand.
-              && ($number !~ /$thousands/ || ($number !~ /$thousands\d{1,2}\b/ && $number !~ /$thousands\d{4,}/))
-              # You can leave out thousands breaks, but the ones you put in must be in the right place.
+              && ($number !~ /$thousands/ || ($number !~ /$thousands\d{1,2}\b/ && $number !~ /$thousands\d{4,}/ && $number !~ /^0\Q$thousands\E/))
+              # You can leave out thousands breaks, but the ones you put in must be in the right place
+              # which does not include following an initial 0.
               # Note that this does not confirm that they put all the 'required' ones in.
               && ($number !~ /$decimal/ || $number !~ /$decimal(?:.*)?(?:$decimal|$thousands)/)
               # You can omit the decimal but you cannot have another decimal or thousands after:
