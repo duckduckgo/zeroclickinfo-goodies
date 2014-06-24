@@ -30,7 +30,7 @@ handle remainder => sub {
     my $encoded_url = uri_encode($_);
 
     my $text = "Percent-encoded URL: $encoded_url";
-    my $html = qq(<div class="zci--urlencode"><span class="label">Percent-encoded URL: <span class="url">$encoded_url</span></span></div>);
+    my $html = qq(<div class="zci--urlencode"><span class="text--secondary">Percent-encoded URL: </span><span class="text--primary">$encoded_url</span></div>);
     $html = append_css($html);
 
     return $text, html => $html;

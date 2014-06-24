@@ -62,7 +62,7 @@ handle remainder => sub {
 
     # Make answer
     return "Decoded HTML Entity: $decoded, decimal: $decimal, hexadecimal: $hex",
-           html => append_css(qq(<div class="zci--htmlentitiesdecode"><span class="line">Decoded HTML Entity: <span class="entity">$entity</span>, decimal: <span class="entity">$decimal</span>, hexadecimal: <span class="entity">$hex</span></span></div>));
+           html => append_css(qq(<div class="zci--htmlentitiesdecode"><span class="text--secondary">Decoded HTML Entity: <span class="text--primary">$entity</span>, decimal: <span class="text--primary">$decimal</span>, hexadecimal: <span class="text--primary">$hex</span></span></div>));
 };
 
 1;

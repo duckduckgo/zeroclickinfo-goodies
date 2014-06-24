@@ -5,13 +5,8 @@
 .zci--answer .zci--htmlentitiesencode .line-single {
     font-weight: 300;
     font-size: 1.5em;
-    color: #808080;
 }
 .zci--answer .zci--htmlentitiesencode .line-multiple {
     font-weight: 300;
     font-size: 1.5em;
-    color: #808080;
-}
-.zci--answer .zci--htmlentitiesencode .entity {
-    color: #393939;
 }
