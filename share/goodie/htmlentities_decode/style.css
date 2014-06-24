@@ -1,0 +1,12 @@
+.zci--answer .zci--htmlentitiesdecode {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
+.zci--answer .zci--htmlentitiesdecode .line {
+    font-weight: 300;
+    font-size: 1.5em;
+    color: #808080;
+}
+.zci--answer .zci--htmlentitiesdecode .entity {
+    color: #393939;
+}

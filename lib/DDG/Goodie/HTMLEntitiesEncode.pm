@@ -205,29 +205,10 @@ my %accented_chars = (
     'Uacute' => [['U-acute','Uacute']],
 );
 
-my $css = qq(<style type='text/css'>
-    .zci--answer .zci--htmlentitiesencode {
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
-    }
-    .zci--answer .zci--htmlentitiesencode .line-single {
-        font-weight: 300;
-        font-size: 1.5em;
-        color: #808080;
-    }
-    .zci--answer .zci--htmlentitiesencode .line-multiple {
-        font-weight: 300;
-        font-size: 1.5em;
-        color: #808080;
-    }
-    .zci--answer .zci--htmlentitiesencode .entity {
-        color: #393939;
-    }
-    </style>);
-
+my $css = share("style.css")->slurp();
 sub append_css {
     my $html = shift;
-    return $css . $html;
+    return "<style type='text/css'>$css</style>\n" . $html;
 };
 
 sub make_text {

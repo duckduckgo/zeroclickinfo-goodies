@@ -24,24 +24,10 @@ attribution twitter =>      'crazedpsyc',
             web     =>      ['http://nishanths.github.io', 'Nishanth Shanmugham'],
             github  =>      ['https://github.com/nishanths', 'Nishanth Shanmugham'];
 
-my $css = qq(<style type='text/css'>
-    .zci--answer .zci--htmlentitiesdecode {
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
-    }
-    .zci--answer .zci--htmlentitiesdecode .line {
-        font-weight: 300;
-        font-size: 1.5em;
-        color: #808080;
-    }
-    .zci--answer .zci--htmlentitiesdecode .entity {
-        color: #393939;
-    }
-    </style>);
-
+my $css = share("style.css")->slurp();
 sub append_css {
     my $html = shift;
-    return $css . $html;
+    return "<style type='text/css'>$css</style>\n" . $html;
 };
 
 handle remainder => sub {

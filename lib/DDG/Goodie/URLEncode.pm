@@ -20,25 +20,10 @@ attribution twitter =>      ['nshanmugham', 'Nishanth Shanmugham'],
 
 triggers startend   =>      'url encode', 'encode url', 'urlencode', 'encodeurl', 'url escape', 'urlescape';
 
-
-my $css = qq(<style type='text/css'>
-    .zci--answer .zci--urlencode {
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
-    }
-    .zci--answer .zci--urlencode .label {
-        font-weight: 300;
-        font-size: 1.5em;
-        color: #808080;
-    }
-    .zci--answer .zci--urlencode .url {
-        color: #393939;
-    }
-    </style>);
-
+my $css = share("style.css")->slurp();
 sub append_css {
     my $html = shift;
-    return $css . $html;
+    return "<style type='text/css'>$css</style>\n" . $html;
 };
 
 handle remainder => sub {
