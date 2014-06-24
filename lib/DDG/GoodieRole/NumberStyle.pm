@@ -16,8 +16,9 @@ sub understands {
     return (
         $number =~ /^(\d|\Q$thousands\E|\Q$decimal\E)+$/
           # Only contains things we understand.
-          && ($number !~ /\Q$thousands\E/ || ($number !~ /\Q$thousands\E\d{1,2}\b/ && $number !~ /\Q$thousands\E\d{4,}/))
-          # You can leave out thousands breaks, but the ones you put in must be in the right place.
+          && ($number !~ /\Q$thousands\E/
+            || ($number !~ /\Q$thousands\E\d{1,2}\b/ && $number !~ /\Q$thousands\E\d{4,}/ && $number !~ /^0\Q$thousands\E/))
+          # You can leave out thousands breaks, but the ones you put in must be in the right place, never following an initial 0.
           # Note that this does not confirm that they put all the 'required' ones in.
           && ($number !~ /\Q$decimal\E/ || $number !~ /\Q$decimal\E(?:.*)?(?:\Q$decimal\E|\Q$thousands\E)/)
           # You can omit the decimal but you cannot have another decimal or thousands after:

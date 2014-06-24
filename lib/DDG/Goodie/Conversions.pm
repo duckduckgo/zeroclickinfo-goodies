@@ -2,6 +2,7 @@ package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
 use DDG::Goodie;
+with 'DDG::GoodieRole::NumberStyler';
 
 use HTML::Entities;
 use Math::Round qw/nearest/;
@@ -41,7 +42,8 @@ triggers end => @units;
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
 my $question_prefix = qr/(convert|what (is|are|does)|how (much|many|long) (is|are))?\s?/;
 # guards and matches regex
-my $guard = qr/^$question_prefix[0-9\.]*\s?($keys)\s?(in|to|into|from)\s?[0-9\.]*\s?($keys)+$/;
+my $numbery = number_style_regex();
+my $guard = qr/^$question_prefix$numbery*\s?($keys)\s?(in|to|into|from)\s?$numbery*\s?($keys)+$/;
 my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
 
 # exceptions for pluralized forms:
@@ -106,12 +108,15 @@ handle query_lc => sub {
     my @args = split(/\s+/, $_);
     my $factor = 1;
     foreach my $arg (@args) {
-        if (looks_like_number($arg)) {
+        if ($arg =~ $numbery) {
             $factor = $arg unless $factor != 1;     # drop n > 1 #s
         }
     }
-   
-    my $result = $c->convert( { 'factor' => $factor, 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
+
+    my $styler = number_style_for($factor);
+    return unless $styler;
+
+    my $result = $c->convert( { 'factor' => $styler->for_computation($factor), 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
 
     return if !$result->{'result'};
 
@@ -123,7 +128,7 @@ handle query_lc => sub {
     if ($result->{'result'} == 0 || length($result->{'result'}) > 2*$precision + 1) {
         if ($result->{'result'} == 0) {
             # rounding error
-            $result = $c->convert( { 'factor' => $factor, 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
+            $result = $c->convert( { 'factor' => $styler->for_computation($factor), 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
         }
 
 	# We only display it in exponent form if it's above a certain number.
@@ -153,6 +158,7 @@ handle query_lc => sub {
 
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
     $result->{'result'} =~ s/\.0{$precision}$//;
+    $result->{'result'} = $styler->for_display($result->{'result'});
 
     my $output = "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
     return $output, html => wrap_html($factor, $result);
