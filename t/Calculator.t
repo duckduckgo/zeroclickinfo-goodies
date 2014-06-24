@@ -314,6 +314,16 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr/./,
     ),
+    '418.1 / 2' => test_zci(
+        '418.1 / 2 = 209.05',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '418.005 / 8' => test_zci(
+        '418.005 / 8 = 52.250625',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,

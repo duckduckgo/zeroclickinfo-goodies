@@ -77,7 +77,7 @@ foreach my $style (@known_styles) {
 my $all_seps = join('', map { $_->{decimal} . $_->{thousands} } @known_styles);
 
 my $numbery = qr/[\d$all_seps]+/;
-my $funcy   = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^/;    # Stuff that looks like functions.
+my $funcy   = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\/|\*/;    # Stuff that looks like functions.
 
 my %named_operations = (
     '\^'          => '**',
