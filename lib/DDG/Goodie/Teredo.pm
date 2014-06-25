@@ -49,7 +49,10 @@ handle remainder => sub {
 
     # Params: server, port, client
     sub to_html {
-	return "<div><i>Teredo Server IPv4: </i>" . $_[0]->ip() . "</div><div><i>NAT Public IPv4: </i>" . $_[2]->ip() . "</div><div><i>Client Port: </i>" . $_[1] . "</div>";
+	return "<div><span class=\"teredo__label\">Teredo Server IPv4: </span><span>" . $_[0]->ip() 
+	. "</span></div><div><span class=\"teredo__label\">NAT Public IPv4: </span><span>" . $_[2]->ip() 
+	. "</span></div><div><span class=\"teredo__label\">Client Port: </span><span>" . $_[1] . "</span></div>"
+	. "<style> .zci--answer .teredo__label {color: #808080; display: inline-block; min-width: 130px}</style>";
     }
 };
 
