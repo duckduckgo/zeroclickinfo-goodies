@@ -31,9 +31,9 @@ sub append_css {
 };
 
 handle remainder => sub {
-    $_ =~ s/^\s*//g; # remove front whitespace
+    $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
     $_ =~ s/^(for|of)\s+//g; # remove filler words at the start
-    $_ =~ s/\s*$//g; # remove back whitespace
+    $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may show up after removing the filler words
     return unless ((/^(&?#(?:[0-9]+(?!_))+;?)$/) || (/^(&(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#[xX](?:[0-9A-Fa-f]+(?!_))+;?)$/)); # decimal (&#39;) || text with no underscores (&cent;) || hex (&#x27;)
                                                                                                                                 # "&" optional for all
                                                                                                                                 # ";" optional except in text type

@@ -35,6 +35,9 @@ ddg_goodie_test(
 
     'www.heroku.com/{rawwr!@#$%^&*()+=__} escapeurl' => test_zci("Percent-encoded URL: www.heroku.com%2F%7Brawwr!%40%23%24%25%5E%26*()%2B%3D__%7D",
     html => qr/www.heroku.com%2F\%7Brawwr\!%40%23%24%25%5E%26\*\(\)%2B%3D__\%7D/),
+
+    'hello there escapeurl' => test_zci("Percent-encoded URL: hello%20there",
+    html => qr/hello%20there/),
 );
 
 done_testing;

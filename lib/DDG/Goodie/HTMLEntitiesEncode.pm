@@ -256,38 +256,35 @@ attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"
 handle remainder => sub {
 
     # General query cleanup
-    $_ =~ s/^\s*//g; # remove front whitespace
-    $_ =~ s/\s*$//g; # remove back whitespace
+    $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
     $_ =~ s/^(for|of)\s+//g; # remove filler words at the start (note: this will remove 'for' in "for euro sign", but not 'for' in "formula sign")
     $_ =~ s/(symbol|sign)//g; # remove 'symbol' and 'sign'
-    $_ =~ s/^\s*//g; # remove front whitespace again that may show up after removing the words above
-    $_ =~ s/\s*$//g; # remove back whitespace again that may show up after removing the words above
+    $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may show up after removing the words above
 
     # Hash-specific query cleanup for better hits
     my $hashes_query = $_;
     $hashes_query =~ s/\-/ /g; # change '-' to ' '
-    $hashes_query =~ s/"//g; # remove double quote
-    $hashes_query =~ s/'//g; # remove single quote
+    $hashes_query =~ s/"|'//g; # remove double and single quotes
 
     # Hashes lookup
     if ($hashes_query) {
         my $key;
         my $value;
         # Query is for accented character
-        if ($hashes_query =~ /^(a|A|e|E|i|I|o|O|u|U)\s*(grave|acute)$/) {
-            $hashes_query =~ s/\s*//g; # remove in-between spaces
-            $key = $hashes_query; # capitalization matters for accented characters lookup
+        if ($hashes_query =~ /^([a-zA-Z])\s*(grave|acute)$/i) {
+            $hashes_query = $1 . lc $2; # $1's capitalization matters for accented characters lookup, lc $2 allows for more freedom in queries
+            $key = $hashes_query;
             $value = $accented_chars{$key};
         # Not an accented character -- lookup the $codes hash instead
         } else { 
             $key = lc $hashes_query;
             $value = $codes{$key};
-            # Try again after substitutions if there is no hit
-            unless (defined $value) {
-                $key =~ s/brackets/bracket/g;
-                $key =~ s/quotes/quote/g;
-                $value = $codes{$key};
-            }
+        }
+        # Try again after substitutions if there is no hit
+        unless (defined $value) {
+            $key =~ s/brackets/bracket/g;
+            $key =~ s/quotes/quote/g;
+            $value = $codes{$key};
         }
         # Make final answer
         if (defined $value) {

@@ -23,7 +23,7 @@ ddg_goodie_test(
     'html entity A-acute' => test_zci("Encoded HTML Entity: &Aacute;",html => qr/Aacute/),
 
     # Variety in querying accented chars #2
-    'html entity for E grave' => test_zci("Encoded HTML Entity: &Egrave;", html => qr/Egrave/),
+    'html entity for E Grave' => test_zci("Encoded HTML Entity: &Egrave;", html => qr/Egrave/),
 
     # Query is a single typed-in character to encode
     'html escape &' => test_zci("Encoded HTML Entity: &amp;", html => qr/amp/),
