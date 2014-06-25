@@ -52,7 +52,8 @@ my %codes = (
     'ampersand' => [['Ampersand','amp']],
     'copyright' => [['Copyright', '#169']],
     'recording copyright' => [['Recording copyright','#8471']],
-    'registered' => [['Registered', '#174']],
+    'registered' => [['Registered trademark', '#174']],
+    'registered trademark' => [['Registered', '#174']],
     'trademark' => [['Trademark','#8482']],
     'rx' => [['Prescription sign','#8478']],
     'prescription' => [['Prescription sign','#8478']],
@@ -93,6 +94,7 @@ my %codes = (
     # Currency
     'cent' => [['Cent','cent']],
     'dollar' => [['Dollar','#36']],
+    'us dollar' => [['Dollar','#36']],
     'peso' => [['Peso','#36']],
     'yen' => [['Yen', 'yen']],
     'japanese yen' => [['Yen', 'yen']],
@@ -100,7 +102,7 @@ my %codes = (
     'currency' => [['Currency sign','curren']],
     'british pound' => [['British Pound Sterling','pound']],
     'british pound sterling' => [['British Pound Sterling','pound']],
-    'pound' => [['British Pound Sterling','pound'],['Number sign','#35']], # x-post with number sign
+    'pound' => [['British Pound Sterling','pound'],['Number sign','#35']], # x-post with number sign, hash
 
     # Math
     'divide' => [['Divide','#247']],
@@ -190,7 +192,7 @@ my %accented_chars = (
     'Igrave' => [['I-grave','Igrave']],
     'ograve' => [['o-grave','ograve']],
     'Ograve' => [['O-grave','Ograve']],
-    'ugrave' => [['u-grave','igrave']],
+    'ugrave' => [['u-grave','ugrave']],
     'Ugrave' => [['U-grave','Ugrave']],
 
     'aacute' => [['a-acute','aacute']],
@@ -201,7 +203,7 @@ my %accented_chars = (
     'Iacute' => [['I-acute','Iacute']],
     'oacute' => [['o-acute','oacute']],
     'Oacute' => [['O-acute','Oacute']],
-    'uacute' => [['u-acute','iacute']],
+    'uacute' => [['u-acute','uacute']],
     'Uacute' => [['U-acute','Uacute']],
 );
 
@@ -263,7 +265,7 @@ handle remainder => sub {
 
     # Hash-specific query cleanup for better hits
     my $hashes_query = $_;
-    $hashes_query =~ s/\-/ /g; # change '-' to ' '
+    $hashes_query =~ s/\-+/ /g; # change '-' to ' '
     $hashes_query =~ s/"|'//g; # remove double and single quotes
 
     # Hashes lookup
