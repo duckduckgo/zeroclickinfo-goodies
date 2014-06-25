@@ -9,8 +9,8 @@ zci answer_type => 'md5';
 zci is_cached => 1;
 
 primary_example_queries 'md5 digest this!';
-secondary_example_queries 'md5 hex gimme the hex digest',
-                          'md5sum base64 gimme the digest encoded in base64';
+secondary_example_queries 'duckduckgo md5',
+                          'md5sum the sum of a string';
 
 name 'MD5';
 description 'Calculate the MD5 digest of a string.';
