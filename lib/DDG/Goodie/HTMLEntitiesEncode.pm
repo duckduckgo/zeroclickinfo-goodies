@@ -224,10 +224,11 @@ sub make_text {
 
 sub make_html {
     # Returns a html formatted string with css class names (no inline styles)
+    my $html;
     if (scalar(@{$_[0]}) == 1) { # single line answer
-        my $html = qq(<div class="zci--htmlentitiesencode"><span class="text--secondary">Encoded HTML Entity (&$_[0][0][1];): </span><span class="text--primary">&<span>$_[0][0][1]</span>;</span></div>) ; # link in the same line for single line answers
+        $html = qq(<div class="zci--htmlentitiesencode"><span class="text--secondary">Encoded HTML Entity (&$_[0][0][1];): </span><span class="text--primary">&<span>$_[0][0][1]</span>;</span></div>) ; # link in the same line for single line answers
     } else {
-        my $html = qq(<div class="zci--htmlentitiesencode">);
+        $html = qq(<div class="zci--htmlentitiesencode">);
         foreach my $i (0 .. scalar(@{$_[0]}) - 1) { # multiple line answer
             $html = $html . qq(<div><span class="text--secondary">$_[0][$i][0] (&$_[0][$i][1];): </span><span class="text--primary">&<span>$_[0][$i][1]</span>;</span></div>);
         }
