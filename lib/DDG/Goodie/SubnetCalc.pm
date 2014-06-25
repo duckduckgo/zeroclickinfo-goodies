@@ -97,11 +97,13 @@ handle query => sub {
     $which_specified = "Host Only" if ($cidr == 32);
     
     sub to_html {
-	my $results = "<table>";
+	my $results = "";
+    my $minwidth = "70px";
 	foreach my $result (@_) {
-	    $results .= "<tr><td class=\"subnet__label\">$result->[0]: </td><td>$result->[1]</td></tr>";
+	    $results .= "<div><span class=\"subnet__label\">$result->[0]: </span><span>$result->[1]</span></div>";
+        $minwidth = "140px" if $result->[0] eq "Host Address Range";
 	}
-	return $results . "</table><style> .zci--answer .subnet__label {color: #808080; padding-right: 10px;}</style>";
+	return $results . "<style> .zci--answer .subnet__label {color: #808080; display: inline-block; min-width: $minwidth}</style>";
     }
 
     sub to_text {
