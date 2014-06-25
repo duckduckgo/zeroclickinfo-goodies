@@ -25,7 +25,7 @@ sub html_output {
     my $md5 = shift;
     return "<style type='text/css'>$css</style>"
           ."<div class='zci--md5'>"
-          ."<span class='text--secondary'>Md5:</span>"
+          ."<span class='text--secondary'>MD5:</span>"
           ."<span class='text--primary'> $md5</span>"
           ."</div>";
 }
