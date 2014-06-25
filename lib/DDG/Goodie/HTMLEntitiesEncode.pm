@@ -233,6 +233,7 @@ sub make_html {
         }
         $html = $html . "</div>";
     }
+    return $html;
 };
 
 triggers startend =>        'html encode','encode html','html escape','escape html','html entity','html code','html character code', 
