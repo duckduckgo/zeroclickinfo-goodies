@@ -6,7 +6,7 @@ use DDG::Goodie;
 use strict;
 use warnings;
 
-# '&' and ';' not included in the hash value -- they are added in make_text and make_html
+# '&' and ';' not included in the hash value -- they are added in make_text() and make_html()
 my %codes = (
     # Punctuation
     'en dash' => [['En dash', 'ndash']],
@@ -69,7 +69,7 @@ my %codes = (
     'pipe' => [['Pipe', '#8214']],
     'pipes' => [['Pipe', '#8214']],
     'dagger' => [['Dagger','dagger']],
-
+    'bullet' => [['Bullet','#8226']],
 
     # Special/misc.
     'macron' => [['Macron', '#175']],
@@ -223,16 +223,16 @@ sub make_text {
 };
 
 sub make_html {
-    # Returns a html formatted string with .class names only (no styles)
+    # Returns a html formatted string with css class names (no inline styles)
     my $html = qq(<div class="zci--htmlentitiesencode">);
     if (scalar(@{$_[0]}) == 1) { # single line answer
-        $html = qq(<div class="zci--htmlentitiesencode"><div><span class="line-single"><span class="text--secondary">Encoded HTML Entity (&$_[0][0][1];): </span><span class="text--primary">&<span>$_[0][0][1]</span>;</span></span></div></div>) ; # link in the same line for single line answers
+        $html = qq(<div class="line-single"><span class="text--secondary">Encoded HTML Entity (&$_[0][0][1];): </span><span class="text--primary">&<span>$_[0][0][1]</span>;</span></div>) ; # link in the same line for single line answers
     } else {
         foreach my $i (0 .. scalar(@{$_[0]}) - 1) { # multiple line answer
-            $html = "$html" . qq(<div><span class="line-multiple"><span class="text--secondary">$_[0][$i][0] (&$_[0][$i][1];): </span><span class="text--primary">&<span>$_[0][$i][1]</span>;</span></span></div>);
+            $html = "$html" . qq(<div class="line-multiple"><span class="text--secondary">$_[0][$i][0] (&$_[0][$i][1];): </span><span class="text--primary">&<span>$_[0][$i][1]</span>;</span></div>);
         }
-        $html = $html . "</div>"
-    }   
+    }
+    $html = $html . "</div>"   
 };
 
 triggers startend =>        'html encode','encode html','html escape','escape html','html entity','html code','html character code', 
@@ -254,9 +254,7 @@ attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"
             twitter =>      'crazedpsyc',
             cpan    =>      'CRZEDPSYC' ;
 
-
 handle remainder => sub {
-
     # General query cleanup
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
     $_ =~ s/^(for|of)\s+//g; # remove filler words at the start (note: this will remove 'for' in "for euro sign", but not 'for' in "formula sign")
@@ -298,7 +296,7 @@ handle remainder => sub {
     }
 
     # Query maybe a single typed-in character to encode
-    # No hits above if we got this far, try encode_entities() of HTML::Entities now
+    # No hits above if we got this far, use encode_entities() of HTML::Entities
     if (length($_) == 1){
         my $entity = encode_entities($_);
         if ($entity eq $_) { # encode_entities() was unsuccessful and returned the input itself
