@@ -4,15 +4,9 @@
 	line-height: 1.5em;
 }
 
-.zci--answer .blooddonor .label
+.zci--answer .blooddonor .text--secondary
 {
 	padding-right: 1em;
-	color: #595959;
-}
-
-.zci--answer .blooddonor .value
-{
-	color: #292929;
 }
 
 .zci--answer .blooddonor tr

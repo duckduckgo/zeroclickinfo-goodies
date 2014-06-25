@@ -37,7 +37,7 @@ sub apply_css($)
 
 sub table_data {
     my ($label, $value) = @_;
-    return "<tr><td class='label'>$label</td><td class='value'>$value</td></tr>";
+    return "<tr><td class='text--secondary'>$label</td><td class='text--primary'>$value</td></tr>";
 }
 
 handle remainder => sub {
