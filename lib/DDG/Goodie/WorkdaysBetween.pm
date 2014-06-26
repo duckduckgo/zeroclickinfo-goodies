@@ -27,7 +27,7 @@ attribution github => ['http://github.com/mgarriott', 'mgarriott'];
 handle remainder => sub {
     my ($start, $end) = get_dates($_);
 
-    # If get_dates failed, return nothing.                                                                                                                                                                                                                                                                                                                                  
+    # If get_dates failed, return nothing.
     unless ($start && $end) {
         return;
     }
