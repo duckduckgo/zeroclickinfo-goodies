@@ -263,7 +263,7 @@ handle remainder => sub {
     $_ =~ s/(\bwhat\s*is\s*(the)?)//ig; # remove "what is the" (optional: the)
     $_ =~ s/(\bhow\s*do\s*(i|you|we))//ig; # remove "how do i|you|we"
     $_ =~ s/(\bhow\s*to)//ig; # remove "how to"
-    $_ =~ s/\b(an|the|for|of|in|is|sign|symbol|character|code|encode|encoded|entity|escape|put|embed|get|insert|my|(a(?![\s\-*](grave|acute))))\b//ig; # remove filler words (the word boundary anchors ensure 'for' is not removed from "formula")
+    $_ =~ s/\b(an|the|for|of|in|is|sign|symbol|character|code|encode|encoded|entity|escape|put|embed|get|insert|display|my|(a(?![\s\-*](grave|acute))))\b//ig; # remove filler words (the word boundary anchors ensure 'for' is not removed from "formula")
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may now show up after removing the words above
 
     # Hash-specific query cleanup for better hits
