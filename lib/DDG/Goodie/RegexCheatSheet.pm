@@ -209,7 +209,7 @@ handle remainder => sub {
 				$range_string = join(" or ", ($1..$2)[0,1]) . " ... or $2";
 			}
 			return answer => "$_ - Single character range ($range_string)",
-			       html => "<code> $_ </code> - Single character range ($range_string)",
+			       html => "<code>$_</code> - Single character range ($range_string)",
 			       heading => $heading;
 		}
 		# Let the user provide a number for the {n} pattern, e.g., {5} would say "Exactly 5 occurrences".
@@ -227,14 +227,14 @@ handle remainder => sub {
 				       heading => $heading;
 			}
 			return answer => "$_ - $1 or more", 
-		    	       html =>  "<code> " . encode_entities($_) . " </code> - $1 or more occurrences",
+		    	       html =>  "<code>" . encode_entities($_) . "</code> - $1 or more occurrences",
 			       heading => $heading;
 		}
 		# Check our map if it's in our list of regex patterns.
 		return unless $syntax_map{$syntax_key};
 	
 		my $text_output = "$_ - $syntax_map{$syntax_key}";
-		my $html_output = "<code> " . encode_entities($_) . " </code> - " . encode_entities($syntax_map{$syntax_key});
+		my $html_output = "<code>" . encode_entities($_) . "</code> - " . encode_entities($syntax_map{$syntax_key});
 		return answer => $text_output, html => $html_output, heading => $heading;
 	}
 	
