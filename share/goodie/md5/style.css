@@ -2,4 +2,5 @@
     font-size: 1.5em;
     font-weight: 300;
     padding: .25em 0;
+    word-wrap: break-word;
 }
