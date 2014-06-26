@@ -76,16 +76,23 @@ sub get_dates {
         foreach (@date_formats) {
             local $@;
 
-	    # Check to see if we're using the shortened year format or not.
-	    my $year_format = '%y';
-	    if($date_string =~ /\d{4}$/) {
-		$year_format = '%Y';
-	    }
+            # Check to see if we're using the shortened year format or not.
+            my $year_format = '%y';
+            if($date_string =~ /\d{4}$/) {
+                $year_format = '%Y';
+            }
 
             my $time;
             eval {
                 # Attempt to parse the date here.
-                $time = Time::Piece->strptime($date_string, "$_$year_format");
+                my $parsing_format = "$_$year_format";
+                $time = Time::Piece->strptime( $date_string, $parsing_format );
+
+                # When we parse date like Feb 30th, Time::Piece will automatically correct to Mar 2nd
+                # which we don't want it to happen, preventing by comparing string before and after parsing
+                my $before_parsing = formatter( $date_string );
+                my $after_parsing = formatter( $time->strftime($parsing_format) );
+                die 'Found invalid date' if $before_parsing ne $after_parsing;
             };
 
             # If we didn't get an error parsing the time...
@@ -129,6 +136,25 @@ sub get_dates {
     my $end = max(@dates);
 
     return ($start, $end);
+}
+
+# This submodule intends to compare $time like 6/4/2014 with 06/04/2014 easier
+# What it does is
+# - Pad 0 for single number
+# - Convert str to lowercase since strftime() return capitalized month
+sub formatter {
+    my $str_time = shift;
+    my @dt = split( /,|-|\s|\//, $str_time );
+
+    for ( my $i = 0; $i < scalar @dt; $i++ ) {
+        my $item = $dt[$i];
+
+        if( $item =~ /^\d{1}$/ ) {
+            $dt[$i] = "0$item";
+        }
+    }
+
+    return lc join( '-', @dt );
 }
 
 1;
