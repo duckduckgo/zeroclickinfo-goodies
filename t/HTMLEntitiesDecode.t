@@ -46,9 +46,11 @@ ddg_goodie_test(
     'html decode apostrophe' => undef,
 
     # natural querying
-    'what is the decoded html entity for &#960;' => test_zci(qr/decimal: 960, hexadecimal: 03c0/, html => qr/&#960;/),
+    'What is the decoded html entity for &#960;?' => test_zci(qr/decimal: 960, hexadecimal: 03c0/, html => qr/&#960;/),
     # natural querying
-    'whatis html entity for &#333;' => test_zci(qr/decimal: 333, hexadecimal: 014d/, html => qr/&#333;/),
+    'what is decoded html entity for #960 ?' => test_zci(qr/decimal: 960, hexadecimal: 03c0/, html => qr/&#960;/),
+    # no "html" in query
+    'the decoded entity for &#333; is?' => test_zci(qr/decimal: 333, hexadecimal: 014d/, html => qr/&#333;/),
 );
 
 done_testing;

@@ -238,11 +238,11 @@ sub make_html {
     return $html;
 };
 
-triggers any =>             'html encode','encode html','html escape','escape html','html entity','html code','html character code', 'encoded html',
-                            'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
+triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
 
-primary_example_queries     'html code em dash', 'html entity A-acute', 'html escape &';
-secondary_example_queries   'html code em-dash', 'html entity for E grave', '$ sign htmlentity', 'pound sign html encode', 'html character code for trademark symbol', 'what is the html entity for greater than sign';
+primary_example_queries     'html em dash', 'html entity A-acute', 'html escape &';
+secondary_example_queries   'html code em-dash', 'html entity for E grave', '$ sign htmlentity', 'pound sign html encode', 'html character code for trademark symbol',
+                            'what is the html entity for greater than sign', 'how to encode an apostrophe in html';
 
 name                        'HTMLEntitiesEncode';
 description                 'Displays the HTML entity code for the query name';
@@ -260,15 +260,17 @@ attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"
 handle remainder => sub {
     # General query cleanup
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
-    $_ =~ s/(?:\bwhat\s*is\s*(?:the)?)//g; # remove "what is the" (optional: the)
-    $_ =~ s/\b(?:the|for|of|sign|symbol|code|entity)\b//g; # remove filler words (the word boundary anchors ensure 'for' is not removed from "formula")
+    $_ =~ s/(\bwhat\s*is\s*(the)?)//ig; # remove "what is the" (optional: the)
+    $_ =~ s/(\bhow\s*do\s*(i|you|we))//ig; # remove "how do i|you|we"
+    $_ =~ s/(\bhow\s*to)//ig; # remove "how to"
+    $_ =~ s/\b(an|the|for|of|in|is|sign|symbol|character|code|encode|encoded|entity|escape|put|embed|get|insert|my|(a(?![\s\-*](grave|acute))))\b//ig; # remove filler words (the word boundary anchors ensure 'for' is not removed from "formula")
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may now show up after removing the words above
 
     # Hash-specific query cleanup for better hits
     my $hashes_query = $_;
     $hashes_query =~ s/\-+/ /g; # change '-' to ' '
     $hashes_query =~ s/"|'//g; # remove double and single quotes
-
+    $hashes_query =~ s/\s*\?$//g; # remove ending question mark
     # Hashes lookup
     if ($hashes_query) {
         my $key;
@@ -300,10 +302,10 @@ handle remainder => sub {
 
     # Query maybe a single typed-in character to encode
     # No hits above if we got this far, use encode_entities() of HTML::Entities
-    if (length($_) == 1){
-        my $entity = encode_entities($_);
-        if ($entity eq $_) { # encode_entities() was unsuccessful and returned the input itself
-            $entity = ord($_); # get the decimal
+    if ((/^(?:")(.)(?:")\s*\??$/) || (/^(?:'')(.)(?:'')\s*\??$/) || (/^(.)\s*\??$/)) { # a (captured) single character within double quotes or within single quotes or stand-alone
+        my $entity = encode_entities($1);
+        if ($entity eq $1) { # encode_entities() was unsuccessful and returned the input itself
+            $entity = ord($1); # get the decimal
             $entity = '#' . $entity; # dress it up like a decimal
         }
         # Remove '&' and ';' from the output of encode_entities(), these will be added in html

@@ -9,8 +9,7 @@ use warnings;
 use strict;
 
 zci answer_type =>          'html_entity';
-triggers any =>             'html decode', 'decode html', 'html entity', 'decoded html',
-                            'htmldecode', 'decodehtml', 'htmlentity';
+triggers any =>             'html', 'entity', 'htmldecode', 'decodehtml', 'htmlentity';
 primary_example_queries     'html decode &#33;', 'html decode &amp';
 secondary_example_queries   'html entity &#x21' , '#36 decode html', 'what is the decoded html entity of &#36;';
 description                 'Decode HTML entities';
@@ -32,12 +31,14 @@ sub append_css {
 
 handle remainder => sub {
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
-    $_ =~ s/(?:\bwhat\s*is\s*(?:the)?)//g; # remove "what is the" (optional: the)
-    $_ =~ s/\b(?:the|for|of|entity)\b//g; # remove filler words
+    $_ =~ s/(\bwhat\s*is\s*(the)?)//ig; # remove "what is the" (optional: the)
+    $_ =~ s/\b(the|for|of|is|entity|decode|decoded|code|character)\b//ig; # remove filler words
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may show up after removing the filler words
+    $_ =~ s/\s*\?$//g; # remove ending question mark
     return unless ((/^(&?#(?:[0-9]+(?!_))+;?)$/) || (/^(&(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#[xX](?:[0-9A-Fa-f]+(?!_))+;?)$/)); # decimal (&#39;) || text with no underscores (&cent;) || hex (&#x27;)
                                                                                                                                 # "&" optional for all
                                                                                                                                 # ";" optional except in text type
+                                                                                                                                # "?" optional: question-like queries
 
     # Standardize the query so it works well with library decoding functions
     my $entity = $1;

@@ -10,63 +10,67 @@ zci answer_type => 'html_entity';
 ddg_goodie_test(
     [qw(DDG::Goodie::HTMLEntitiesEncode)],
 
-    # A simple test
+    # Simple tests
     'html code em dash' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/),
+    'html em dash' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/),
+    'em-dash html' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/), # hyphens ignored
+    'html encode "em-dash"' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/), # quotes ignored
+    'ApoSTrophe escapehtml' => test_zci("Encoded HTML Entity: &#39;", html => qr/#39/), # mixed cases in query
 
-    # Hyphens in-between don't matter
-    'html code em-dash' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/),
-
-    # Quotes don't matter
-    'html encode "em-dash"' => test_zci("Encoded HTML Entity: &mdash;", html => qr/mdash/),
-
-    # Variety in querying accented chars #1
+    # Basic varieties in querying accented chars
     'html entity A-acute' => test_zci("Encoded HTML Entity: &Aacute;",html => qr/Aacute/),
-
-    # Variety in querying accented chars #2
     'html entity for E Grave' => test_zci("Encoded HTML Entity: &Egrave;", html => qr/Egrave/),
+    'html Ograve' => test_zci("Encoded HTML Entity: &Ograve;", html => qr/Ograve/),
 
-    # Query is a single typed-in character to encode
-    'html escape &' => test_zci("Encoded HTML Entity: &amp;", html => qr/amp/),
-
-    # Single typed-in character query with (ignored) 'sign' 
-    '$ sign htmlentity' => test_zci("Encoded HTML Entity: &#36;", html => qr/#36/),
+    # Single typed-in character queries
+    'html escape &' => test_zci("Encoded HTML Entity: &amp;", html => qr/amp/), # &
+    'html escape "' => test_zci("Encoded HTML Entity: &quot;", html => qr/quot/), # "
+    'how to html escape &?' => test_zci("Encoded HTML Entity: &amp;", html => qr/amp/), # ?
+    'how to html escape "&"?' => test_zci("Encoded HTML Entity: &amp;", html => qr/amp/), # &
+    'how to html escape ??' => test_zci("Encoded HTML Entity: &#63;", html => qr/#63/), # ?
+    'how do you html escape a "?"?' => test_zci("Encoded HTML Entity: &#63;", html => qr/#63/), # ?
+    'html escape """' => test_zci("Encoded HTML Entity: &quot;", html => qr/quot/), # "
+    '$ sign htmlentity' => test_zci("Encoded HTML Entity: &#36;", html => qr/#36/), # $
 
     # Return two matching entities for ambiguous query
     'pound symbol html encode ' => test_zci("Encoded HTML Entity: &pound;\nEncoded HTML Entity: &#35;", html => qr/pound.*#35|#35.*pound/),
 
-    # Ignore both 'of' and 'sign'
-    'html code of pilcrow sign' => test_zci("Encoded HTML Entity: &#182;", html => qr/#182/),
+    # Ignore words and whitespace
+    'html code of pilcrow sign' => test_zci("Encoded HTML Entity: &#182;", html => qr/#182/), # of, sign
+    'html escape greater than symbol' => test_zci("Encoded HTML Entity: &gt;", html => qr/gt/), # symbol
+    'space    html character code' => test_zci("Encoded HTML Entity: &nbsp;", html => qr/nbsp/), # Ignore extra whitespace
 
-    # Ignore 'symbol'
-    'html escape greater than symbol' => test_zci("Encoded HTML Entity: &gt;", html => qr/gt/),
-
-    # Handle extra space
-    'space    html character code' => test_zci("Encoded HTML Entity: &nbsp;", html => qr/nbsp/),
-
-    # Mixed cases in query
-    'ApoSTrophe escapehtml' => test_zci("Encoded HTML Entity: &#39;", html => qr/#39/),
-
+    # Better hash hits substitutions
     # 'right angle brackets' should work even though the defined key contains the singular 'bracket'
     'right angle brackets htmlencode' => test_zci("Encoded HTML Entity: &rsaquo;\nEncoded HTML Entity: &raquo;", html => qr/rsaquo.*raquo|raquo.*rsaquo/),
-
     # 'double quotes' should work even though the defined key contains the singular 'quote'
     'double quotes htmlescape' => test_zci("Encoded HTML Entity: &quot;", html => qr/quot/),
 
-    # Should not work (would make sense to decode the query though!)
+    # Should not work (would make sense to decode theese queries though!)
     'html encode &#43;' => undef,
-
-    # Should not work (would make sense to decode the query though!)
     'html entity &amp;' => undef,
+    # Should also not work
+    'html encode is it magic' => undef, # most certainly, it is
 
-    # Should not work
-    'html encode is it magic' => undef,
+    # Natural querying
+    'What is the html character code for pi' => test_zci("Encoded HTML Entity: &#960;", html => qr/#960/),
+    'whatis html entity for en-dash' => test_zci("Encoded HTML Entity: &ndash;", html => qr/ndash/), # whatis spelling
+    'how do I escape the greater-than symbol html' => test_zci("Encoded HTML Entity: &gt;", html => qr/gt/),
 
-    # natural querying
-    'what is the html character code for pi' => test_zci("Encoded HTML Entity: &#960;", html => qr/#960/),
-    # more natural querying (whatis spelling)
-    'whatis html entity for en-dash' => test_zci("Encoded HTML Entity: &ndash;", html => qr/ndash/),
-    # more natural querying
-    'what is the encoded html entity of apostrophe' => test_zci("Encoded HTML Entity: &#39;", html => qr/#39/),
+    # the "a/A" belonging to "acute" matters, but the "a" immediately after "character" is removed
+    'How to get the character a a acute in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
+    'how to get the character a a-acute in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
+    'how to get the character a aacute in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
+    'how to get the character a A acute in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),    
+    'how to get the character a A-acute in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
+    'how to get the character a Aacute in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
+
+    # Question marks ignored
+    'the encoded html entity of apostrophe is?' => test_zci("Encoded HTML Entity: &#39;", html => qr/#39/),
+    'how to encode an apostrophe in html ? ' => test_zci("Encoded HTML Entity: &#39;", html => qr/#39/), # spaces around the end
+
+    # Question mark matters
+    'how to encode "?" in html' => test_zci("Encoded HTML Entity: &#63;", html => qr/#63/),
 );
 
 done_testing;
