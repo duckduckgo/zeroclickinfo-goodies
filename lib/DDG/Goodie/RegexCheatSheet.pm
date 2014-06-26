@@ -183,9 +183,10 @@ sub difference_between($$) {
 	return ord($b) - ord($a);
 }
 
+our $css = scalar share("style.css")->slurp;
+
 sub append_css {
     my $html = shift;
-    my $css = scalar share("style.css")->slurp;
     return "<style type='text/css'>$css</style>\n" . $html;
 }
 
