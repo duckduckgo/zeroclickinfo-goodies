@@ -9,10 +9,10 @@ use warnings;
 use strict;
 
 zci answer_type =>          'html_entity';
-triggers startend =>        'html decode', 'decode html', 'html entity',
+triggers any =>             'html decode', 'decode html', 'html entity', 'decoded html',
                             'htmldecode', 'decodehtml', 'htmlentity';
 primary_example_queries     'html decode &#33;', 'html decode &amp';
-secondary_example_queries   'html entity &#x21' , '#36 decode html';
+secondary_example_queries   'html entity &#x21' , '#36 decode html', 'what is the decoded html entity of &#36;';
 description                 'Decode HTML entities';
 name                        'HTMLEntitiesDecode';
 code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HTMLEntitiesDecode.pm';
@@ -32,7 +32,8 @@ sub append_css {
 
 handle remainder => sub {
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
-    $_ =~ s/^(for|of)\s+//g; # remove filler words at the start
+    $_ =~ s/(?:\bwhat\s*is\s*(?:the)?)//g; # remove "what is the" (optional: the)
+    $_ =~ s/\b(?:the|for|of|entity)\b//g; # remove filler words
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may show up after removing the filler words
     return unless ((/^(&?#(?:[0-9]+(?!_))+;?)$/) || (/^(&(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#[xX](?:[0-9A-Fa-f]+(?!_))+;?)$/)); # decimal (&#39;) || text with no underscores (&cent;) || hex (&#x27;)
                                                                                                                                 # "&" optional for all

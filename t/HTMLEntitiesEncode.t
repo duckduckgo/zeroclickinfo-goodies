@@ -60,6 +60,13 @@ ddg_goodie_test(
 
     # Should not work
     'html encode is it magic' => undef,
+
+    # natural querying
+    'what is the html character code for pi' => test_zci("Encoded HTML Entity: &#960;", html => qr/#960/),
+    # more natural querying (whatis spelling)
+    'whatis html entity for en-dash' => test_zci("Encoded HTML Entity: &ndash;", html => qr/ndash/),
+    # more natural querying
+    'what is the encoded html entity of apostrophe' => test_zci("Encoded HTML Entity: &#39;", html => qr/#39/),
 );
 
 done_testing;

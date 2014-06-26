@@ -106,6 +106,7 @@ my %codes = (
 
     # Math
     'divide' => [['Divide','#247']],
+    'division' => [['Divide','#247']],
     'greater than' => [['Greater than','gt']],
     'less than' => [['Less than','lt']],
     'greater than or equal to' => [['Greater than or equal to','#8805']],
@@ -237,11 +238,11 @@ sub make_html {
     return $html;
 };
 
-triggers startend =>        'html encode','encode html','html escape','escape html','html entity','html code','html character code', 
+triggers any =>             'html encode','encode html','html escape','escape html','html entity','html code','html character code', 'encoded html',
                             'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
 
 primary_example_queries     'html code em dash', 'html entity A-acute', 'html escape &';
-secondary_example_queries   'html code em-dash', 'html entity for E grave', '$ sign htmlentity', 'pound sign html encode', 'html character code for trademark symbol';
+secondary_example_queries   'html code em-dash', 'html entity for E grave', '$ sign htmlentity', 'pound sign html encode', 'html character code for trademark symbol', 'what is the html entity for greater than sign';
 
 name                        'HTMLEntitiesEncode';
 description                 'Displays the HTML entity code for the query name';
@@ -259,9 +260,9 @@ attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"
 handle remainder => sub {
     # General query cleanup
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
-    $_ =~ s/^(for|of)\s+//g; # remove filler words at the start (note: this will remove 'for' in "for euro sign", but not 'for' in "formula sign")
-    $_ =~ s/(symbol|sign)//g; # remove 'symbol' and 'sign'
-    $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may show up after removing the words above
+    $_ =~ s/(?:\bwhat\s*is\s*(?:the)?)//g; # remove "what is the" (optional: the)
+    $_ =~ s/\b(?:the|for|of|sign|symbol|code|entity)\b//g; # remove filler words (the word boundary anchors ensure 'for' is not removed from "formula")
+    $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may now show up after removing the words above
 
     # Hash-specific query cleanup for better hits
     my $hashes_query = $_;
