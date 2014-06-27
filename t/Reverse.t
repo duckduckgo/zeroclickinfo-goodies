@@ -14,7 +14,11 @@ ddg_goodie_test(
 	)],
 	'reverse bla' => test_zci('Reversed "bla": alb'),
 	'reverse blabla' => test_zci('Reversed "blabla": albalb'),
-    'reverse esrever' => test_zci('Reversed "esrever": reverse'),
+  'reverse esrever' => test_zci('Reversed "esrever": reverse'),
+
+  #Should not trigger on a request for DNA/RNA reverse complement
+  'reverse complement of ATG-CTA-GGG-GCT' => undef,
+  'reverse complement gacuacgaucgagkmanscuag' => undef
 );
 
 done_testing;

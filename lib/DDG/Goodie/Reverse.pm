@@ -17,6 +17,13 @@ triggers startend => "reverse";
 zci is_cached => 1;
 zci answer_type => "reverse";
 
-handle remainder => sub { qq|Reversed "$_": | . scalar reverse };
+handle remainder => sub {
+
+  #Filter out requests for DNA/RNA reverse complements, handled
+  # by the ReverseComplement goodie
+  return if $_ =~ /^complement\s(of )?[ATCGURYKMSWBVDHN\s-]+$/i;
+
+  return qq|Reversed "$_": | . scalar reverse;
+};
 
 1;
