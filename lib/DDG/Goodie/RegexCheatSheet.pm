@@ -46,13 +46,13 @@ secondary_example_queries 'regexp $';
 category 'computing_tools';
 
 # The order to display each category and in which columns
-our @category_column = (
+my @category_column = (
     ['Anchors', 'Character Classes', 'POSIX Classes', 'Pattern Modifiers', 'Escape Sequences'],
     ['Quantifiers', 'Groups and Ranges', 'Assertions', 'Special Characters', 'String Replacement']
 );
 
 # Titles of tables and the symbols to explain
-our %categories = (
+my %categories = (
     'Anchors' => [
         '^', '\A', '$', '\Z', '\b', '\B', '\<', '\>'
     ],
@@ -88,7 +88,7 @@ our %categories = (
 );
 
 # Symbols and their explanation/description
-our %syntax_map = (
+my %syntax_map = (
     '.'      => 'Any character except newline (\n)',
     '(a|b)'      => 'a or b',
     '(...)'      => 'Group',
@@ -183,7 +183,7 @@ sub difference_between($$) {
     return ord($b) - ord($a);
 }
 
-our $css = scalar share("style.css")->slurp;
+my $css = scalar share("style.css")->slurp;
 
 sub append_css {
     my $html = shift;
