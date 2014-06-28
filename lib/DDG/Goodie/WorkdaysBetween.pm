@@ -90,8 +90,8 @@ sub get_dates {
 
                 # When we parse date like Feb 30th, Time::Piece will automatically correct to Mar 2nd
                 # which we don't want it to happen, preventing by comparing string before and after parsing
-                my $before_parsing = formatter( $date_string );
-                my $after_parsing = formatter( $time->strftime($parsing_format) );
+                my $before_parsing = normalizer( $date_string );
+                my $after_parsing = normalizer( $time->strftime($parsing_format) );
                 die 'Found invalid date' if $before_parsing ne $after_parsing;
             };
 
@@ -142,7 +142,7 @@ sub get_dates {
 # What it does is
 # - Pad 0 for single number
 # - Convert str to lowercase since strftime() return capitalized month
-sub formatter {
+sub normalizer {
     my $str_time = shift;
     my @dt = split( /,|-|\s|\//, $str_time );
 
