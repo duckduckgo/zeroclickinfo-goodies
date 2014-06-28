@@ -149,7 +149,7 @@ sub normalizer {
     for ( my $i = 0; $i < scalar @dt; $i++ ) {
         my $item = $dt[$i];
 
-        if( $item =~ /^\d{1}$/ ) {
+        if( $item =~ /^\d$/ ) {
             $dt[$i] = "0$item";
         }
     }
