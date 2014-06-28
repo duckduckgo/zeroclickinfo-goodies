@@ -302,10 +302,12 @@ handle remainder => sub {
 
     # Query maybe a single typed-in character to encode
     # No hits above if we got this far, use encode_entities() of HTML::Entities
-    if ((/^(?:")(.)(?:")\s*\??$/) || (/^(?:'')(.)(?:'')\s*\??$/) || (/^(.)\s*\??$/)) { # a (captured) single character within double quotes or within single quotes or stand-alone
-        my $entity = encode_entities($1);
-        if ($entity eq $1) { # encode_entities() was unsuccessful and returned the input itself
-            $entity = ord($1); # get the decimal
+    if (   (/^(?:")(?<char>.)(?:")\s*\??$/)     # a (captured) single character within double quotes
+        || (/^(?:'')(?<char>.)(?:'')\s*\??$/)   # or within single quotes
+        || (/^(?<char>.)\s*\??$/)) {            # or stand-alone
+        my $entity = encode_entities($+{char});
+        if ($entity eq $+{char}) { # encode_entities() was unsuccessful and returned the input itself
+            $entity = ord($+{char}); # get the decimal
             $entity = '#' . $entity; # dress it up like a decimal
         }
         # Remove '&' and ';' from the output of encode_entities(), these will be added in html

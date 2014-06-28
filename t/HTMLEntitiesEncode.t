@@ -58,12 +58,12 @@ ddg_goodie_test(
     'how do I escape the greater-than symbol html' => test_zci("Encoded HTML Entity: &gt;", html => qr/gt/),
 
     # the "a/A" belonging to "acute" matters, but the "a" immediately after "character" is removed
-    'How to get the character a a acute in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
-    'how to get the character a a-acute in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
-    'how to get the character a aacute in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
-    'how to get the character a A acute in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),    
-    'how to get the character a A-acute in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
-    'how to get the character a Aacute in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
+    'How to get a a acute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
+    'how to get a a-acute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
+    'how to get a aacute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
+    'how to get a A acute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),    
+    'how to get a A-acute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
+    'how to get a Aacute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
 
     # Question marks ignored
     'the encoded html entity of apostrophe is?' => test_zci("Encoded HTML Entity: &#39;", html => qr/#39/),
