@@ -22,11 +22,11 @@ triggers startend => 'md5', 'md5sum';
 my $css = share('style.css')->slurp;
 
 sub html_output {
-    my $md5 = shift;
+    my ($md5, $str) = @_;
     return "<style type='text/css'>$css</style>"
           ."<div class='zci--md5'>"
-          ."<span class='text--secondary'>MD5:</span>"
-          ."<span class='text--primary'> $md5</span>"
+          ."<span class='text--secondary'>MD5 of \"$str\"</span><br/>"
+          ."<span class='text--primary'>$md5</span>"
           ."</div>";
 }
 
@@ -38,7 +38,7 @@ handle remainder => sub {
         # perls internal representation of strings, before it's passed to
         # the md5 subroutine.
         my $str = md5_hex (encode "utf8", $1);
-        return $str, html => html_output $str;
+        return $str, html => html_output ($str, $1);
     }
 };
 

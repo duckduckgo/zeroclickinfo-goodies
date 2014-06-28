@@ -1,6 +1,9 @@
 .zci--answer .zci--md5 {
-    font-size: 1.5em;
     font-weight: 300;
     padding: .25em 0;
+}
+
+.zci--md5 .text--primary {
+    font-size: 1.5em;
     word-wrap: break-word;
 }
