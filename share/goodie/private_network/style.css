@@ -1,0 +1,11 @@
+.private_network .left-column {
+    vertical-align: top;
+    display: inline-block;
+    width: 30%;
+}
+
+.private_network .right-column {
+    vertical-align: top;
+    display: inline-block;
+    width: 70%;
+}
