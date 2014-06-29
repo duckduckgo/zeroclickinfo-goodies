@@ -42,8 +42,8 @@ triggers end => @units;
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
 my $question_prefix = qr/(convert|what (is|are|does)|how (much|many|long) (is|are))?\s?/;
 # guards and matches regex
-my $numbery = number_style_regex();
-my $guard = qr/^$question_prefix$numbery*\s?($keys)\s?(in|to|into|from)\s?$numbery*\s?($keys)+$/;
+my $number_re = number_style_regex();
+my $guard = qr/^$question_prefix$number_re*\s?($keys)\s?(in|to|into|from)\s?$number_re*\s?($keys)+$/;
 my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
 
 # exceptions for pluralized forms:
@@ -108,7 +108,7 @@ handle query_lc => sub {
     my @args = split(/\s+/, $_);
     my $factor = 1;
     foreach my $arg (@args) {
-        if ($arg =~ $numbery) {
+        if ($arg =~ $number_re) {
             $factor = $arg unless $factor != 1;     # drop n > 1 #s
         }
     }

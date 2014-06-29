@@ -45,8 +45,8 @@ triggers query_nowhitespace => qr<
         $
         >xi;
 
-my $numbery = number_style_regex();
-my $funcy   = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\//;    # Stuff that looks like functions.
+my $number_re = number_style_regex();
+my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\//;    # Stuff that looks like functions.
 
 my %named_operations = (
     '\^'          => '**',
@@ -55,19 +55,19 @@ my %named_operations = (
     'minus'       => '-',
     'plus'        => '+',
     'divided\sby' => '/',
-    'ln'          => 'log',                               # perl log() is natural log.
+    'ln'          => 'log',                                 # perl log() is natural log.
     'squared'     => '**2',
 );
 
 my %named_constants = (
     dozen => 12,
-    e     => 2.71828182845904523536028747135266249,       # This should be computed.
-    pi    => pi,                                          # pi constant from Math::Trig
+    e     => 2.71828182845904523536028747135266249,         # This should be computed.
+    pi    => pi,                                            # pi constant from Math::Trig
     gross => 144,
     score => 20,
 );
 
-my $ored_constants = join('|', keys %named_constants);    # For later substitutions
+my $ored_constants = join('|', keys %named_constants);      # For later substitutions
 
 handle query_nowhitespace => sub {
     my $results_html;
@@ -98,7 +98,7 @@ handle query_nowhitespace => sub {
             $tmp_expr =~ s#\b$name\b# $constant #ig;
         }
 
-        my @numbers = grep { $_ =~ /^$numbery$/ } (split /\s+/, $tmp_expr);
+        my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
         my $style = number_style_for(@numbers);
         return unless $style;
 
@@ -186,7 +186,7 @@ sub _add_html_exponents {
     # because of associativity and power-to-power, we need to scan nearly the whole thing
     for my $index (1 .. $#chars - 1) {
         my $this_char = $chars[$index];
-        if ($this_char =~ $numbery) {
+        if ($this_char =~ $number_re) {
             if ($newly_up) {
                 $in_exp_number = 1;
                 $newly_up      = 0;
