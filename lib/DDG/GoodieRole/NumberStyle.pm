@@ -13,16 +13,27 @@ sub understands {
     my ($self, $number) = @_;
     my ($decimal, $thousands) = ($self->decimal, $self->thousands);
 
+    # How do we know if a number is reasonable for this style?
     return (
         $number =~ /^(\d|\Q$thousands\E|\Q$decimal\E)+$/
-          # Only contains things we understand.
-          && ($number !~ /\Q$thousands\E/
-            || ($number !~ /\Q$thousands\E\d{1,2}\b/ && $number !~ /\Q$thousands\E\d{4,}/ && $number !~ /^0\Q$thousands\E/))
-          # You can leave out thousands breaks, but the ones you put in must be in the right place, never following an initial 0.
-          # Note that this does not confirm that they put all the 'required' ones in.
-          && ($number !~ /\Q$decimal\E/ || $number !~ /\Q$decimal\E(?:.*)?(?:\Q$decimal\E|\Q$thousands\E)/)
-          # You can omit the decimal but you cannot have another decimal or thousands after:
-    ) ? 1 : 0;
+          # The number must contain only things we understand: numerals and separators for this style.
+          && (
+            $number !~ /\Q$thousands\E/
+            # The number is permitted not to contain thousands separators
+            || (
+                   $number !~ /\Q$thousands\E\d{1,2}\b/
+                && $number !~ /\Q$thousands\E\d{4,}/
+                # But if the number does contain thousands separators, they must delimit exactly 3 numerals.
+                && $number !~ /^0\Q$thousands\E/
+                # And they cannot follow a leading zero
+            ))
+          # Note: this does not confirm that they put all of the 'required' thousands separators in the number.
+          && (
+            $number !~ /\Q$decimal\E/
+            # The number is permitted not to include decimal separators
+            || $number !~ /\Q$decimal\E(?:.*)?(?:\Q$decimal\E|\Q$thousands\E)/
+            # But if one is included, it cannot be followed by another separator, whether decimal or thousands.
+          )) ? 1 : 0;
 }
 
 sub precision_of {
