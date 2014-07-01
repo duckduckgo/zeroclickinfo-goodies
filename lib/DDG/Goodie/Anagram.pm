@@ -27,13 +27,15 @@ handle remainder => sub {
     my @output;
     my $full_word = 1;
 
-	# when our input is "anagram filter #"
+	# when our input is "anagram word #"
     if(/^\s*([a-zA-Z]+)\s*([0-9]+)?\s*$/) {
-    	#convert the word to lowercase
+    	# convert the word to lowercase
         my $word = lc($1);
-        $lc_word = $word;
+        $in = $word;
         $n = length $word;
+        # when the # entered is less than the length of the word
         $n = $2 if ($2 && $2 <= $n && $2 > 0);
+        # set a control var when we aren't using the full word for the anagram
         $full_word = 0 if $n != length($word);
 
         my %freq;
@@ -45,14 +47,14 @@ handle remainder => sub {
             }
         }
 
-        my $fileobj = share("words");
-        open my $INF, "<", $fileobj->stringify or return;
-        while (<$INF>) {
+        my $fileobj = share("words"); # list of words
+        open my $INF, "<", $fileobj->stringify or return; #read in the words file
+        while (<$INF>) { # while we have more input
             if ($word and /^[$word]{$n}$/i) {
             	chomp;
             	next if lc($_) eq lc($word);
-            	my %f;
                 
+            	my %f;
                 for (split //, lc($_)) {
                     if ($f{$_}) {
                         $f{$_} += 1;
@@ -74,9 +76,9 @@ handle remainder => sub {
     }
 
     # copied verbatim from Randagram.pm
-    my @chars = split(//, $lc_word);
+    my @chars = split(//, $in);
     @chars = shuffle(@chars);
-    my $garbledAnswer = '"'.$lc_word.'" scrambled: '.join('',@chars);
+    my $garbledAnswer = '"'.$in.'" scrambled: '.join('',@chars);
     # end Randagram.pm
 
     if($full_word) {
