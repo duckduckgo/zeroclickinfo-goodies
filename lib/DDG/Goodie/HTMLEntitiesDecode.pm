@@ -63,8 +63,8 @@ handle remainder => sub {
     }
 
     # Make answer
-    return "Decoded HTML Entity: $decoded, decimal: $decimal, hexadecimal: $hex",
-           html => append_css(qq(<div class="zci--htmlentitiesdecode"><span class="text--secondary">Decoded HTML Entity: <span class="text--primary">$entity</span>, decimal: <span class="text--primary">$decimal</span>, hexadecimal: <span class="text--primary">$hex</span></span></div>));
+    return "Decoded HTML Entity: $decoded, Decimal: $decimal, Hexadecimal: $hex",
+           html => append_css(qq(<div class="zci--htmlentitiesdecode"><div class="large"><span class="text--secondary">Decoded HTML Entity: </span><span class="text--primary">$entity</span></div><div class="small"><span class="text--secondary">Decimal: <span class="text--primary">$decimal</span>, Hexadecimal: <span class="text--primary">$hex</span></div></div></div>));
 };
 
 1;
