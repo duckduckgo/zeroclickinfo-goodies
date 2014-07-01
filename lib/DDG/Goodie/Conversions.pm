@@ -67,9 +67,9 @@ sub append_css {
 
 sub wrap_html {
     my ($factor, $result) = @_;
-    my $from = encode_entities($factor) . " <span class='unit'>" . encode_entities($result->{'from_unit'}) . "</span>";
-    my $to = encode_entities($result->{'result'}) . " <span class='unit'>" . encode_entities($result->{'to_unit'}) . "</span>";
-    return append_css("<div class='zci--conversions'>$from = $to</div>");
+    my $from = encode_entities($factor) . " <span class='text--secondary'>" . encode_entities($result->{'from_unit'}) . "</span>";
+    my $to = encode_entities($result->{'result'}) . " <span class='text--secondary'>" . encode_entities($result->{'to_unit'}) . "</span>";
+    return append_css("<div class='zci--conversions text--primary'>$from = $to</div>");
 }
 
 handle query_lc => sub {

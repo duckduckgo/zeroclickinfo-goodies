@@ -8,4 +8,4 @@ This repository contains all the Goodie instant answers. If you are developing a
 
 ### Goodie Instant Answer Example
 
-![morse code example](https://s3.amazonaws.com/ddg-assets/docs/goodie_example.png)
+![Unit Conversion Example](https://raw.githubusercontent.com/duckduckgo/duckduckgo-documentation/master/duckduckhack/assets/goodie_readme_example.png)

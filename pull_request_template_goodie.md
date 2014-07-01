@@ -33,7 +33,7 @@ Using this template will help us better understand your Instant Answer and assis
 
 **\*\*Note:** Please attach a screenshot for new instant answer pull requests, and for pull requests which modify the look/design of existing instant answers.
 
-##Checklist
+## Checklist
 Please place an 'X' where appropriate.
 
 ```
