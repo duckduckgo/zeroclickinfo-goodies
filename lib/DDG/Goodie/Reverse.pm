@@ -19,6 +19,7 @@ zci answer_type => "reverse";
 
 handle remainder => sub {
 
+  return unless $_; # Guard against empty query.
   #Filter out requests for DNA/RNA reverse complements, handled
   # by the ReverseComplement goodie
   return if $_ =~ /^complement\s(of )?[ATCGURYKMSWBVDHN\s-]+$/i;
