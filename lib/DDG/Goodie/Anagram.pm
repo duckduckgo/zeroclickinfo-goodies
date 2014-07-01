@@ -31,7 +31,7 @@ handle remainder => sub {
     if(/^\s*([a-zA-Z]+)\s*([0-9]+)?\s*$/) {
     	#convert the word to lowercase
         my $word = lc($1);
-        $in = $word;
+        $lc_word = $word;
         $n = length $word;
         $n = $2 if ($2 && $2 <= $n && $2 > 0);
         $full_word = 0 if $n != length($word);
@@ -74,9 +74,9 @@ handle remainder => sub {
     }
 
     # copied verbatim from Randagram.pm
-    my @chars = split(//, $in);
+    my @chars = split(//, $lc_word);
     @chars = shuffle(@chars);
-    my $garbledAnswer = '"'.$in.'" scrambled: '.join('',@chars);
+    my $garbledAnswer = '"'.$lc_word.'" scrambled: '.join('',@chars);
     # end Randagram.pm
 
     if($full_word) {
