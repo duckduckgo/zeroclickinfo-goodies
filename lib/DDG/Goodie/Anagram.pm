@@ -51,11 +51,14 @@ handle remainder => sub {
         my $fileobj = share("words"); # list of words
         open my $INF, "<", $fileobj->stringify or return; #read in the words file
         while (<$INF>) { # while we have more input
+        	# if $word has a value and the text input contains characters from our word and is the correct length
             if ($word and /^[$word]{$n}$/i) {
             	chomp;
+                # skip if the word we see is the original word
             	next if lc($_) eq lc($word);
                 
                 # split the word by character, counting frequency of each character
+                # the words here come from the list of words file
             	my %f;
                 for (split //, lc($_)) {
                     if ($f{$_}) {
@@ -69,8 +72,8 @@ handle remainder => sub {
                 my $it_works = 1;
                 for (keys %f) {
                     if ($f{$_} >  $freq{$_}) {
-                    # if the frequency of a character in the lowercase word is greater than the original
-                    # then it did not work
+                    # if the frequency of a character in the lowercase word is greater than the original word
+                    # then it did not work. We are comparing words to see if they are a valid combination of letters.
                         $it_works = 0;
                         last;
                     }
