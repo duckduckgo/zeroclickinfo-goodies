@@ -16,7 +16,8 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "transformations";
 topics "words_and_games";
 
-attribution github => ["https://github.com/beardlybread", "beardlybread"];
+attribution github => 'loganom',
+			github => ["https://github.com/beardlybread", "beardlybread"];
 
 handle remainder => sub {
 
@@ -26,47 +27,50 @@ handle remainder => sub {
     my @output;
     my $full_word = 1;
 
+	# when our input is "anagram filter #"
     if(/^\s*([a-zA-Z]+)\s*([0-9]+)?\s*$/) {
-	my $word = lc($1);
-	$in = $word;
-	$n = length $word;
-	$n = $2 if ($2 && $2 <= $n && $2 > 0);
-	$full_word = 0 if $n != length($word);
+    	#convert the word to lowercase
+        my $word = lc($1);
+        $in = $word;
+        $n = length $word;
+        $n = $2 if ($2 && $2 <= $n && $2 > 0);
+        $full_word = 0 if $n != length($word);
 
-	my %freq;
-	for (split //, $word) {
-	    if ($freq{$_}) {
-		$freq{$_} += 1;
-	    } else {
-		$freq{$_} = 1;
-	    }
-	}
+        my %freq;
+        for (split //, $word) {
+            if ($freq{$_}) {
+            	$freq{$_} += 1;
+            } else {
+            	$freq{$_} = 1;
+            }
+        }
 
-	my $fileobj = share("words");
-	open my $INF, "<", $fileobj->stringify or return;
-	while (<$INF>) {
-	    if ($word and /^[$word]{$n}$/i) {
-		chomp;
-		next if lc($_) eq lc($word);
-		my %f;
-		for (split //, lc($_)) {
-		    if ($f{$_}) {
-			$f{$_} += 1;
-		    } else {
-			$f{$_} = 1;
-		    }
-		}
-		
-		my $it_works = 1;
-		for (keys %f) {
-		    if ($f{$_} >  $freq{$_}) {
-			$it_works = 0;
-			last;
-		    }
-		}
-		push(@output, $_) if $it_works;
-	    }
-	}
+        my $fileobj = share("words");
+        open my $INF, "<", $fileobj->stringify or return;
+        while (<$INF>) {
+            if ($word and /^[$word]{$n}$/i) {
+            	chomp;
+            	next if lc($_) eq lc($word);
+            	my %f;
+                
+                for (split //, lc($_)) {
+                    if ($f{$_}) {
+                        $f{$_} += 1;
+                    } else {
+                        $f{$_} = 1;
+                    }
+                }
+
+                my $it_works = 1;
+                for (keys %f) {
+                    if ($f{$_} >  $freq{$_}) {
+                        $it_works = 0;
+                        last;
+                    }
+                }
+            	push(@output, $_) if $it_works;
+            }
+        }
     }
 
     # copied verbatim from Randagram.pm
@@ -76,12 +80,12 @@ handle remainder => sub {
     # end Randagram.pm
 
     if($full_word) {
-	if(@output) {
-	    my $ana = "Anagram of \"$in\": ";
-	    $ana = "Anagrams of \"$in\": " if scalar(@output) > 1;
-	    return $ana.join(', ', @output);
-	}
-	return $garbledAnswer if $in;
+        if(@output) {
+            my $ana = "Anagram of \"$in\": ";
+            $ana = "Anagrams of \"$in\": " if scalar(@output) > 1;
+            return $ana.join(', ', @output);
+        }
+		return $garbledAnswer if $in;
     }
     return "Anagrams of \"$in\" of size $n: ".join(', ', @output) if @output;
     return $garbledAnswer if $in;
