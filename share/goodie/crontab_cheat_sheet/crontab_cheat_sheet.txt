@@ -1,0 +1,37 @@
+# Commands are executed by cron when the minute, hour, and month of year 
+# fields match the current time, and at least one of the two day fields 
+# (day of month, or day of week) match the current time. A field may be
+# an asterisk (*), which will always match.
+# 
+# Fields in order:
+#   minute          (0-59)
+#   hour            (0-23)
+#   day of month    (1-31)
+#   month           (1-12 or first three letters)
+#   day of week     (0-7 or first three letters; 0 or 7 is Sunday)
+
+# Run every Tuesday at 2:30am
+30 2 * * tue    /path/to/command
+# or
+30 2 * * 2      /path/to/command
+
+# Run every 10 minutes
+*/10 * * * *    /path/to/command
+
+# Run every 2 hours, on the half-hour
+30 */2 * * *    /path/to/command
+
+# Run every 2 hours on the half hour, but only on weekdays
+30 */2 * * 1-5  /path/to/command
+
+# Run at 12:05, 13:05, ..., and 18:05
+5 12-18 * * *   /path/to/command
+
+# Run at 12:05, 14:05, 16:05, and 18:05
+5 12-18/2 * * * /path/to/command
+
+# Run on the first day of every month, at 12:00am
+0 0 1 * *       /path/to/command
+
+# Run on the first day of every third month, at 12:00am
+0 0 1 */3 *     /path/to/command
