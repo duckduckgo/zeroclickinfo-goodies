@@ -1,4 +1,5 @@
 package DDG::Goodie::Anagram;
+# ABSTRACT: Returns an anagram based on the word and length of word supplied
 
 use DDG::Goodie;
 use List::Util 'shuffle'; 
@@ -17,7 +18,7 @@ category "transformations";
 topics "words_and_games";
 
 attribution github => ["https://github.com/loganom", 'loganom'],
-			github => ["https://github.com/beardlybread", "beardlybread"];
+            github => ["https://github.com/beardlybread", "beardlybread"];
 
 handle remainder => sub {
 
@@ -27,9 +28,9 @@ handle remainder => sub {
     my @output;
     my $full_word = 1;
 
-	# when our input is "anagram word #"
+    # when our input is "anagram word #"
     if(/^\s*([a-zA-Z]+)\s*([0-9]+)?\s*$/) {
-    	# convert the word to lowercase
+        # convert the word to lowercase
         my $word = lc($1);
         $in = $word;
         $n = length $word;
@@ -38,28 +39,28 @@ handle remainder => sub {
         # set a control var when we aren't using the full word for the anagram
         $full_word = 0 if $n != length($word);
 
-		# split the word by character, counting frequency of each character
+        # split the word by character, counting frequency of each character
         my %freq;
         for (split //, $word) {
             if ($freq{$_}) {
-            	$freq{$_} += 1;
+                $freq{$_} += 1;
             } else {
-            	$freq{$_} = 1;
+                $freq{$_} = 1;
             }
         }
 
         my $fileobj = share("words"); # list of words
         open my $INF, "<", $fileobj->stringify or return; #read in the words file
         while (<$INF>) { # while we have more input
-        	# if $word has a value and the text input contains characters from our word and is the correct length
+            # if $word has a value and the text input contains characters from our word and is the correct length
             if ($word and /^[$word]{$n}$/i) {
-            	chomp;
+                chomp;
                 # skip if the word we see is the original word
-            	next if lc($_) eq lc($word);
+                next if lc($_) eq lc($word);
                 
                 # split the word by character, counting frequency of each character
                 # the words here come from the list of words file
-            	my %f;
+                my %f;
                 for (split //, lc($_)) {
                     if ($f{$_}) {
                         $f{$_} += 1;
@@ -68,7 +69,7 @@ handle remainder => sub {
                     }
                 }
 
-				# initialize it_works
+                # initialize it_works
                 my $it_works = 1;
                 for (keys %f) {
                     if ($f{$_} >  $freq{$_}) {
@@ -79,7 +80,7 @@ handle remainder => sub {
                     }
                 }
                 # if it works, push the output onto output array
-            	push(@output, $_) if $it_works;
+                push(@output, $_) if $it_works;
             }
         }
     }
@@ -96,7 +97,7 @@ handle remainder => sub {
             $ana = "Anagrams of \"$in\": " if scalar(@output) > 1;
             return $ana.join(', ', @output);
         }
-		return $garbledAnswer if $in;
+        return $garbledAnswer if $in;
     }
     return "Anagrams of \"$in\" of size $n: ".join(', ', @output) if @output;
     return $garbledAnswer if $in;
