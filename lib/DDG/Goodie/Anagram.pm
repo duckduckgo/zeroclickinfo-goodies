@@ -16,7 +16,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "transformations";
 topics "words_and_games";
 
-attribution github => 'loganom',
+attribution github => ["https://github.com/loganom", 'loganom'],
 			github => ["https://github.com/beardlybread", "beardlybread"];
 
 handle remainder => sub {
@@ -38,6 +38,7 @@ handle remainder => sub {
         # set a control var when we aren't using the full word for the anagram
         $full_word = 0 if $n != length($word);
 
+		# split the word by character, counting frequency of each character
         my %freq;
         for (split //, $word) {
             if ($freq{$_}) {
@@ -54,6 +55,7 @@ handle remainder => sub {
             	chomp;
             	next if lc($_) eq lc($word);
                 
+                # split the word by character, counting frequency of each character
             	my %f;
                 for (split //, lc($_)) {
                     if ($f{$_}) {
@@ -63,13 +65,17 @@ handle remainder => sub {
                     }
                 }
 
+				# initialize it_works
                 my $it_works = 1;
                 for (keys %f) {
                     if ($f{$_} >  $freq{$_}) {
+                    # if the frequency of a character in the lowercase word is greater than the original
+                    # then it did not work
                         $it_works = 0;
                         last;
                     }
                 }
+                # if it works, push the output onto output array
             	push(@output, $_) if $it_works;
             }
         }
