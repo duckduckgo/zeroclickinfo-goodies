@@ -100,10 +100,10 @@ handle query => sub {
 	my $results = "";
     my $minwidth = "70px";
 	foreach my $result (@_) {
-	    $results .= "<div><span class=\"subnet__label\">$result->[0]: </span><span>$result->[1]</span></div>";
+	    $results .= "<div><span class=\"subnet__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
         $minwidth = "140px" if $result->[0] eq "Host Address Range";
 	}
-	return $results . "<style> .zci--answer .subnet__label {color: #808080; display: inline-block; min-width: $minwidth}</style>";
+	return $results . "<style> .zci--answer .subnet__label {display: inline-block; min-width: $minwidth}</style>";
     }
 
     sub to_text {
