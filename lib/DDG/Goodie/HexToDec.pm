@@ -22,10 +22,14 @@ attribution cpan   => 'majuscule',
 my $css = share("style.css")->slurp;
 
 sub wrap_html {
-    my ($hex, $decimal) = @_;
+    my ($decimal, $octal, $bin) = @_;
     return "<style type='text/css'>$css</style>" .
            "<div class='zci--conversions text--primary'>" .
-           "$hex <sub>16</sub> = $decimal <sub>10</sub>" .
+               "$decimal <sub>10</sub>" .
+               "<div style='font-size:75%'>" .
+                   "<span class='text--secondary'>Binary: </span> $bin " .
+                   "<span class='text--secondary'>Octal: </span> $octal" .
+               "</div>";
            "</div>";
 }
 
@@ -33,8 +37,12 @@ handle query_raw => sub {
     m/\b0x([0-9a-fA-F]+)\b/;
     my $hex = $1;
     my $decimal = sprintf "%lu", hex $hex;
-    return "$hex base 16 = $decimal base 10",
-           html => wrap_html($hex, $decimal);
+    my $octal = sprintf "%lo", hex $hex;
+    my $bin = sprintf "%b", hex $hex;
+    return "$hex base 16 = $decimal base 10 == " .
+           "$octal base 8 == " .
+           "$bin base 2",
+           html => wrap_html($decimal, $octal, $bin);
 };
 
 0x41414141;
