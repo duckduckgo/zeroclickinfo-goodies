@@ -56,6 +56,9 @@ ddg_goodie_test(
   'attack of the 50\' 4" woman' => undef,
   'is 39.75 degrees a fever' => undef,
 
+  #Check for css
+	'71° 10\' 3" in decimal' => test_zci(qr/./, html => qr/css/),
+
 );
 
 done_testing;

@@ -4,7 +4,6 @@ package DDG::Goodie::ConvertLatLon;
 use DDG::Goodie;
 use utf8;
 use Geo::Coordinates::DecimalDegrees;
-use feature 'state';
 use HTML::Entities;
 use Math::SigFigs qw(:all);
 use Math::Round;
@@ -20,6 +19,9 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ['http://github.com/wilkox', 'wilkox'];
 
 triggers any => "convert", "dms", "decimal", "latitude", "longitude", "minutes", "seconds";
+
+#Load the CSS
+my $css = share("style.css")->slurp;
 
 #Regexes for latitude/longitude, in either dms or decimal format
 # http://msdn.microsoft.com/en-us/library/aa578799.aspx has a good
@@ -231,7 +233,6 @@ sub format_decimal {
 # Conversions Goodie to use the latest and greatest technology
 # as implemented in PR #511
 sub append_css {
-  state $css = share("style.css")->slurp;
   my $html = shift;
   return "<style type='text/css'>$css</style>$html";
 }
