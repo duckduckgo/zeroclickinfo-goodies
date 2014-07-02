@@ -1,5 +1,5 @@
 package DDG::Goodie::Mailto;
-# supplies mailto: link
+# ABSTRACT: supplies mailto: link
 
 use DDG::Goodie;
 use HTML::Entities;
