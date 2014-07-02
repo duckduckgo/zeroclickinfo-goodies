@@ -26,33 +26,33 @@ triggers any => "convert", "dms", "decimal", "latitude", "longitude", "minutes",
 # overview of the most common representations of latitude/longitude
 
 #Potential Unicode and other representations of "degrees"
-state $degQR = qr/
+my $degQR = qr/
   [º°⁰]|
   ((arc[-]?)?deg(ree)?s?)
   /ix;
 
 #Potential Unicode and other representations of "minutes"
-state $minQR = qr/
+my $minQR = qr/
   ['`ʹ′‵‘’‛]|
   ((arc[-]?)?min(ute)?s?)
   /ix;
 
 #Potential Unicode and other representations of "seconds"
-state $secQR = qr/
+my $secQR = qr/
   ["″″‶“”〝〞‟]|
   $minQR{2}|
   (arc[-]?)?sec(ond)?s?
   /ix;
 
 #Match a decimal or integer number
-state $numQR = qr/[\d\.]+/;
+my $numQR = qr/[\d\.]+/;
 
 #Match a minus sign or attempt at minus sign or word processor
 # interpretation of minus sign
-state $minusQR = qr/[-−﹣－‒–—‐]/;
+my $minusQR = qr/[-−﹣－‒–—‐]/;
 
 #Match a latitude/longitude representation
-state $latLonQR = qr/
+my $latLonQR = qr/
   (?<minus>$minusQR)?
   (?<degrees>$numQR)$degQR
   ((?<minutes>$numQR)$minQR
@@ -60,15 +60,14 @@ state $latLonQR = qr/
   (?<cardinal>[NSEW]|(north)|(south)|(east)|(west))?
   /ix;
 
-our %cardinalSign = (
+my %cardinalSign = (
   N => 1,
   S => -1,
   E => 1,
   W => -1,
 );
 
-our %cardinalName = (
-
+my %cardinalName = (
   n => 'N',
   north => 'N',
   s => 'S',
@@ -77,7 +76,6 @@ our %cardinalName = (
   east => 'E',
   w => 'W',
   west => 'W'
-
 );
 
 handle query_nowhitespace => sub {
