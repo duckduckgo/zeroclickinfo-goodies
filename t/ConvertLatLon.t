@@ -51,6 +51,10 @@ ddg_goodie_test(
   'convert 61.01º farenheit to celcius' => undef,
   'how many degrees in a 12-sided polygon internal angles' => undef,
   'convert 61.125 degrees to radians' => undef,
+  'are there more than 100 seconds in a day' => undef,
+  'convert 4 minute mile to kilometers' => undef,
+  'attack of the 50\' 4" woman' => undef,
+  'is 39.75 degrees a fever' => undef,
 
 );
 
