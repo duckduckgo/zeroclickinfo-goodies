@@ -16,6 +16,12 @@ ddg_goodie_test(
             'kappa@yandex.com',
             html => qr/<a href="mailto:kappa\@yandex\.com">kappa\@yandex\.com<\/a>/,
         ),
+        'mail press@duckduckgo.com' => test_zci(
+            'press@duckduckgo.com',
+            html => qr/<a href="mailto:press\@duckduckgo\.com">press\@duckduckgo\.com<\/a>/,
+        ),
+        'mail box' => undef,
+        'mail tracking' => undef,
 );
 
 done_testing;
