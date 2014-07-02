@@ -19,6 +19,12 @@ attribution github => ['https://github.com/seanheaton','seanheaton'],
 	twitter => ['http://twitter.com/seanograph','@seanograph'],
 	email => ['mailto:seanoftime@gmail.com','seanoftime@gmail.com'];
 
+my $css = share('style.css')->slurp;
+sub append_css {
+	my $html = shift;
+	return "<style type='text/css'>$css</style>$html";
+}
+
 handle remainder => sub {
     my @output = ();
 	
@@ -49,10 +55,9 @@ handle remainder => sub {
 
     # Params: server, port, client
     sub to_html {
-	return "<div><span class=\"teredo__label\">Teredo Server IPv4: </span><span>" . $_[0]->ip() 
-	. "</span></div><div><span class=\"teredo__label\">NAT Public IPv4: </span><span>" . $_[2]->ip() 
-	. "</span></div><div><span class=\"teredo__label\">Client Port: </span><span>" . $_[1] . "</span></div>"
-	. "<style> .zci--answer .teredo__label {color: #808080; display: inline-block; min-width: 130px}</style>";
+	return append_css("<div><span class=\"teredo__label text--secondary\">Teredo Server IPv4: </span><span class=\"text--primary\">" . $_[0]->ip() 
+	. "</span></div><div><span class=\"teredo__label text--secondary\">NAT Public IPv4: </span><span class=\"text--primary\">" . $_[2]->ip() 
+	. "</span></div><div><span class=\"teredo__label text--secondary\">Client Port: </span><span class=\"text--primary\">" . $_[1] . "</span></div>");
     }
 };
 
