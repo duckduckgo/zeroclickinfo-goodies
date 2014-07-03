@@ -49,18 +49,14 @@ triggers query_nowhitespace => qr<
 # 'thousands' assumption) I am going to pretend that I do need it.
 #  If it could fit more than one the first in order gets preference.
 my @known_styles = ({
-        id            => 'perl',
-        decimal       => '\.',
-        sub_decimal   => '.',
-        thousands     => ',',
-        sub_thousands => ',',
+        id        => 'perl',
+        decimal   => '.',
+        thousands => ',',
     },
     {
-        id            => 'euro',
-        decimal       => ',',
-        sub_decimal   => ',',
-        thousands     => '\.',
-        sub_thousands => '.',
+        id        => 'euro',
+        decimal   => ',',
+        thousands => '.',
     },
 );
 
@@ -155,52 +151,115 @@ handle query_nowhitespace => sub {
         return unless (defined $precision || ($tmp_result =~ /^(?:\-|)[0-9\.]+$/));
 
         # Ok, this might be overkill on flexibility.
-        $tmp_result = sprintf('%0' . $perl_style->{sub_decimal} . $precision . 'f', $tmp_result) if ($precision);
+        $tmp_result = sprintf('%0' . $perl_style->{decimal} . $precision . 'f', $tmp_result) if ($precision);
         # Dollars.
         $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
-
-        # Query for display.
-        my $tmp_q = $query;
-
-        # Drop equals.
-        $tmp_q =~ s/\=$//;
-        $tmp_q =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
-
-        # Copy
-        $results_no_html = $results_html = $tmp_q;
-
-        # Superscript (before spacing).
-        $results_html =~ s/\^($numbery|\b$ored_constants\b)/<sup>$1<\/sup>/g;
-
-        ($results_no_html, $results_html) = map { spacing($_) } ($results_no_html, $results_html);
-        return if $results_no_html =~ /^\s/;
 
         # Add proper separators.
         $tmp_result = $style->{make_pretty}->($tmp_result);
 
-        # Now add = back.
-        $results_no_html .= ' = ';
+        my $results = prepare_for_display($query, $tmp_result);
 
-        return $results_no_html . $tmp_result,
-          html    => wrap_html($results_html, $tmp_result),
+        return if $results->{text} =~ /^\s/;
+        return $results->{text},
+          html    => $results->{html},
           heading => "Calculator";
     }
 
     return;
 };
 
-# Add some HTML and styling to our output
-# so that we can make it prettier (unabashedly stolen from
-# the ReverseComplement goodie.)
-sub append_css {
-    my $html = shift;
-    state $css = share("style.css")->slurp;
-    return "<style type='text/css'>$css</style>$html";
+sub prepare_for_display {
+    my ($query, $result) = @_;
+
+    # Equals varies by output type.
+    $query =~ s/\=$//;
+    # Show them how 'E' was interpreted.
+    $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
+
+    return {
+        text => format_text($query, $result),
+        html => format_html($query, $result),
+    };
 }
 
-sub wrap_html {
-    my ($entered, $result) = @_;
-    return append_css("<div class='zci--calculator'>$entered = <a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>$result</a></div>");
+# Format query for HTML
+sub format_html {
+    my ($query, $result) = @_;
+
+    state $css = '<style type="text/css">' . share("style.css")->slurp . '</style>';
+
+    $query = _add_html_exponents($query);
+
+    return
+        $css
+      . "<div class='zci--calculator'>"
+      . spacing($query)
+      . " = <a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>"
+      . $result
+      . "</a></div>";
+}
+
+sub _add_html_exponents {
+
+    my $string = shift;
+
+    return $string if ($string !~ /\^/ or $string =~ /^\^|\^$/);    # Give back the same thing if we won't deal with it properly.
+
+    my @chars = split //, $string;
+    my ($start_tag, $end_tag) = ('<sup>', '</sup>');
+    my ($newly_up, $in_exp_number, $in_exp_parens, %power_parens);
+    my ($parens_count, $number_up) = (0, 0);
+
+    # because of associativity and power-to-power, we need to scan nearly the whole thing
+    for my $index (1 .. $#chars - 1) {
+        my $this_char = $chars[$index];
+        if ($this_char =~ $numbery) {
+            if ($newly_up) {
+                $in_exp_number = 1;
+                $newly_up      = 0;
+            }
+        } elsif ($this_char eq '(') {
+            $parens_count += 1;
+            $in_exp_number = 0;
+            if ($newly_up) {
+                $in_exp_parens += 1;
+                $power_parens{$parens_count} = 1;
+                $newly_up = 0;
+            }
+        } elsif ($this_char eq '^') {
+            $chars[$index - 1] =~ s/$end_tag$//;    # Added too soon!
+            $number_up += 1;
+            $newly_up      = 1;
+            $chars[$index] = $start_tag;            # Replace ^ with the tag.
+        } elsif ($in_exp_number) {
+            $in_exp_number = 0;
+            $number_up -= 1;
+            $chars[$index] = $end_tag . $chars[$index];
+        } elsif ($number_up && !$in_exp_parens) {
+            # Must have ended another term or more
+            $chars[$index] = ($end_tag x ($number_up - 1)) . $chars[$index];
+            $number_up = 0;
+        } elsif ($this_char eq ')') {
+            # We just closed a set of parens, see if it closes one of our things
+            if ($in_exp_parens && $power_parens{$parens_count}) {
+                $chars[$index] .= $end_tag;
+                delete $power_parens{$parens_count};
+                $in_exp_parens -= 1;
+            }
+            $parens_count -= 1;
+        }
+    }
+    $chars[-1] .= $end_tag x $number_up if ($number_up);
+
+    return join('', @chars);
+}
+
+# Format query for text
+sub format_text {
+    my ($query, $result) = @_;
+
+    return spacing($query) . ' = ' . $result;
 }
 
 #separates symbols with a space
@@ -244,13 +303,13 @@ sub _well_formed_for_style_func {
     return sub {
         my $number = shift;
         return (
-            $number =~ /^[\d$thousands$decimal]+$/
+            $number =~ /^(\d|\Q$thousands\E|\Q$decimal\E)+$/
               # Only contains things we understand.
-              && ($number !~ /$thousands/ || ($number !~ /$thousands\d{1,2}\b/ && $number !~ /$thousands\d{4,}/ && $number !~ /^0\Q$thousands\E/))
+              && ($number !~ /\Q$thousands\E/ || ($number !~ /\Q$thousands\E\d{1,2}\b/ && $number !~ /\Q$thousands\E\d{4,}/ && $number !~ /^0\Q$thousands\E/))
               # You can leave out thousands breaks, but the ones you put in must be in the right place
               # which does not include following an initial 0.
               # Note that this does not confirm that they put all the 'required' ones in.
-              && ($number !~ /$decimal/ || $number !~ /$decimal(?:.*)?(?:$decimal|$thousands)/)
+              && ($number !~ /\Q$decimal\E/ || $number !~ /\Q$decimal\E(?:.*)?(?:\Q$decimal\E|\Q$thousands\E)/)
               # You can omit the decimal but you cannot have another decimal or thousands after:
         ) ? 1 : 0;
     };
@@ -259,14 +318,13 @@ sub _well_formed_for_style_func {
 # Returns function which given a number in a certain style, makes it nice for human eyes.
 sub _display_style_func {
     my ($style, $perl_style) = @_;
-    my ($decimal, $sub_decimal, $sub_thousands, $perl_dec) =
-      (@{$style}{qw(decimal sub_decimal sub_thousands)}, $perl_style->{decimal});    # Unpacked for easier regex-building
+    my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $perl_style->{decimal});    # Unpacked for easier regex-building
 
     return sub {
         my $text = shift;
         $text = reverse $text;
-        $text =~ s/$perl_dec/$sub_decimal/g;
-        $text =~ s/(\d\d\d)(?=\d)(?!\d*$decimal)/$1$sub_thousands/g;
+        $text =~ s/\Q$perl_dec\E/$decimal/g;
+        $text =~ s/(\d\d\d)(?=\d)(?!\d*\Q$decimal\E)/$1$thousands/g;
 
         return scalar reverse $text;
     };
@@ -275,13 +333,13 @@ sub _display_style_func {
 # Returns function which given a number in a certain style, makes it safe for perl eval.
 sub _prepare_for_computation_func {
     my ($style, $perl_style) = @_;
-    my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $perl_style->{sub_decimal});
+    my ($decimal, $thousands, $perl_dec) = (@{$style}{qw(decimal thousands)}, $perl_style->{decimal});
 
     return sub {
         my $number_text = shift;
 
-        $number_text =~ s/$thousands//g;           # Remove thousands seps, since they are just visual.
-        $number_text =~ s/$decimal/$perl_dec/g;    # Make sure decimal mark is something perl knows how to use.
+        $number_text =~ s/\Q$thousands\E//g;           # Remove thousands seps, since they are just visual.
+        $number_text =~ s/\Q$decimal\E/$perl_dec/g;    # Make sure decimal mark is something perl knows how to use.
 
         return $number_text;
     };
@@ -295,7 +353,7 @@ sub _precision_for_style_func {
     return sub {
         my $number_text = shift;
 
-        return ($number_text =~ /$decimal(\d+)/) ? length($1) : 0;
+        return ($number_text =~ /\Q$decimal\E(\d+)/) ? length($1) : 0;
     };
 }
 
