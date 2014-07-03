@@ -20,6 +20,8 @@ topics "words_and_games";
 attribution github => ["https://github.com/loganom", 'loganom'],
             github => ["https://github.com/beardlybread", "beardlybread"];
 
+my @words = share('words')->slurp;
+
 handle remainder => sub {
 
     s/^of\s(.*)/$1/i;
@@ -49,19 +51,17 @@ handle remainder => sub {
             }
         }
 
-        my $fileobj = share("words"); # list of words
-        open my $INF, "<", $fileobj->stringify or return; #read in the words file
-        while (<$INF>) { # while we have more input
+        foreach (@words) { # while we have more input
             # if $word has a value and the text input contains characters from our word and is the correct length
             if ($word and /^[$word]{$n}$/i) {
                 chomp;
                 # skip if the word we see is the original word
-                next if lc($_) eq lc($word);
+                next if lc eq lc($word);
                 
                 # split the word by character, counting frequency of each character
                 # the words here come from the list of words file
                 my %f;
-                for (split //, lc($_)) {
+                for (split //, lc) {
                     if ($f{$_}) {
                         $f{$_} += 1;
                     } else {
