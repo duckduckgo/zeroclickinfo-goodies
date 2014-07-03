@@ -9,3 +9,7 @@
     display: inline-block;
     width: 70%;
 }
+
+.private_network .record__highlight:nth-of-type(2n) {
+	background: rgba(150,150,150,0.3);
+}
