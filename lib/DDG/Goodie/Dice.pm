@@ -5,6 +5,7 @@ use DDG::Goodie;
 triggers start => "roll", "throw";
 
 zci answer_type => "dice_roll";
+zci is_cached => 0;
 
 primary_example_queries 'throw dice';
 secondary_example_queries 'roll 5 dice', 'roll 3d12', 'roll 3d12 and 2d4', 'roll 2 dice and 3d5';

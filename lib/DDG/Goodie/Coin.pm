@@ -2,6 +2,8 @@ package DDG::Goodie::Coin;
 
 use DDG::Goodie;
 
+zci is_cached => 0;
+
 triggers start => 'flip', 'toss', 'coin', 'heads';
 
 primary_example_queries 'flip a coin', 'toss a coin';
