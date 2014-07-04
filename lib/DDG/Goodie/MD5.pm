@@ -31,6 +31,7 @@ sub html_output {
 }
 
 handle remainder => sub {
+    s/of "?([^"]*)"?/$1/;
     if (/^\s*(.*)\s*$/) {
         # Exit unless a string is found
         return unless $1;
