@@ -97,6 +97,9 @@ sub begins_with {
 }
 
 handle remainder => sub {
+	# Ensure rand is seeded for each process
+	srand();
+
     # Check the query. See if it matches this regular expression.
     if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? (?:with)? (the letter )?([a-z].*)$/i) {
 	# Check which desserts begin with this letter (or word).

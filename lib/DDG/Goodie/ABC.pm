@@ -23,6 +23,9 @@ attribution twitter => 'crazedpsyc',
             web     => ["http://kablamo.org", "Eric Johnson"] ;
 
 handle remainder => sub {
+    # Ensure rand is seeded for each process
+    srand();
+
     my $query = $_;
 
     # split the query on whitespace and rm whitespace

@@ -73,6 +73,7 @@ sub shorthand_roll_output {
 handle remainder_lc => sub {
     # Ensure rand is seeded for each process
     srand();
+
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
     my $out = '';

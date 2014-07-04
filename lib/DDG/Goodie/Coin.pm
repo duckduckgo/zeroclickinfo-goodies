@@ -21,6 +21,9 @@ sub append_css {
 }
 
 handle query_lc => sub {
+	# Ensure rand is seeded for each process
+	srand();
+
 	my $flips;
 	if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) a coin)$/) {
 		$flips = 1;
