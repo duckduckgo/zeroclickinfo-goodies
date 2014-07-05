@@ -10,39 +10,32 @@ zci answer_type => 'frequency_spectrum';
 
 ddg_goodie_test(
     ['DDG::Goodie::FrequencySpectrum'],
+
+    #Primary example
     '50 hz' => test_zci(
-	'50 Hz is a radio frequency in the SLF band used by submarine communication systems.
-50 Hz is also an audible frequency which can be produced by double-bass, piano, and tuba.
-More at https://en.wikipedia.org/wiki/Musical_acoustics',
-	html => "50 Hz is a radio frequency in the SLF band used by submarine communication systems.<br>50 Hz is also an audible frequency which can be produced by double-bass, piano, and tuba.<br><a href='https://en.wikipedia.org/wiki/Musical_acoustics'>More at Wikipedia</a>",
-	heading => '50 Hz (Frequency Spectrum)'
+        qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
+        html => qr/radio/
     ),
 
+    #Secondary example
     '400 thz' => test_zci(
-	'400 THz is an electromagnetic frequency of red light.
-More at https://en.wikipedia.org/wiki/Color',
-	html => "400 THz is an electromagnetic frequency of red light.<br><a href='https://en.wikipedia.org/wiki/Color'>More at Wikipedia</a>",
-	heading => '400 THz (Frequency Spectrum)'
+        qr/visible.+red/,
+        html => qr/visible.+red/
     ),
 
-    '4 thz' => undef,
-
+    #Misc
     '1,000 hz' => test_zci(
-	'1 kHz is a radio frequency in the ULF band used by mine cave communication systems.
-1 kHz is also an audible frequency which can be produced by human voice, viola, violin, guitar, mandolin, banjo, piano, saxophone, flute, clarinet, and oboe.
-More at https://en.wikipedia.org/wiki/Musical_acoustics',
-	html => "1 kHz is a radio frequency in the ULF band used by mine cave communication systems.<br>1 kHz is also an audible frequency which can be produced by human voice, viola, violin, guitar, mandolin, banjo, piano, saxophone, flute, clarinet, and oboe.<br><a href='https://en.wikipedia.org/wiki/Musical_acoustics'>More at Wikipedia</a>",
-	heading => '1 kHz (Frequency Spectrum)'
+        qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
+        html => qr/radio.+/
     ),
-
     '1000000.99 hz' => test_zci(
-	'1.00000099 MHz is a radio frequency in the MF band used by AM broadcasts, navigation systems, and ship-to-shore communication systems.
-More at https://en.wikipedia.org/wiki/Radio_spectrum',
-	html => "1.00000099 MHz is a radio frequency in the MF band used by AM broadcasts, navigation systems, and ship-to-shore communication systems.<br><a href='https://en.wikipedia.org/wiki/Radio_spectrum'>More at Wikipedia</a>",
-	heading => '1.00000099 MHz (Frequency Spectrum)',
+        qr/radio.+MF/,
+        html => qr/radio.+MF/
     ),
 
+    #Should not trigger
     '1000.000..99 hz' => undef,
+    '4 thz' => undef,
 );
 
 done_testing;

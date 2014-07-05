@@ -1,0 +1,50 @@
+.zci--answer .zci--conversions {
+    font-size: 1.5em;
+    font-weight: 300;
+    padding-top: .25em;
+    padding-bottom: .25em;
+}
+
+.zci--plot {
+    width: 90%;
+    height: 50;
+}
+
+.plot_panel {
+    fill: #ccc;
+}
+
+.x_axis_tick {
+    stroke: #aaa;
+}
+
+.x_axis_text {
+    font-size: 0.7em;
+    fill: #888;
+}
+
+.x_axis_label {
+    font-size: 0.8em;
+    fill: #888;
+}
+
+.x_axis_gridline {
+    stroke: #eee;
+}
+
+.major_range {
+    fill: #4682B4;
+}
+
+.major_range_label {
+    font-size: 0.7em;
+}
+
+.minor_range {
+    fill: #80C4DE;
+}
+
+.marker {
+    stroke: #000;
+    stroke-width: 2px;
+}

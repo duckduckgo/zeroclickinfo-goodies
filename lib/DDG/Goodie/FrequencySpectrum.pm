@@ -1,8 +1,10 @@
 package DDG::Goodie::FrequencySpectrum;
+# ABSTRACT: Return information about light, radio and sound frequencies
 
 use strict;
-
+use SVG;
 use DDG::Goodie;
+use Lingua::EN::Inflect qw(WORDLIST);
 
 triggers end => "hz","khz","mhz","ghz","thz","hertz","kilohertz","gigahertz","megahertz","terahertz";
 
@@ -15,133 +17,98 @@ name 'FrequencySpectrum';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FrequencySpectrum.pm';
 category 'physical_properties';
 topics 'science';
-attribution web => "https://machinepublishers.com",
-            twitter => 'machinepub';
+attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 
 sub THOUSAND { 1000 };
 sub MILLION { 1000000 };
 sub BILLION { 1000000000 };
 sub TRILLION { 1000000000000 };
 
-#reference: https://en.wikipedia.org/wiki/Radio_spectrum
-#Radio spectrum ranges along with example uses
-my $radio_ranges =
-  [
-    [ "3", "29", "ELF band used by pipeline inspection gauges."],
-    [ "30", "299", "SLF band used by submarine communication systems."],
-    [ "300", "2999", "ULF band used by mine cave communication systems."],
-    [ "3000", "29999", "VLF band used by government time stations and navigation systems."],
-    [ "30000", "299999", "LF band used by AM broadcasts, government time stations, navigation systems, and weather alert systems."],
-    [ "300000", "2999999", "MF band used by AM broadcasts, navigation systems, and ship-to-shore communication systems."],
-    [ "3000000", "29999999", "HF band used by international shortwave broadcasts, aviation systems, government time stations, weather stations, and amateur radio."],
-    [ "30000000", "299999999", "VHF band used by FM broadcasts, televisions, amateur radio, marine communication systems, and air traffic control."],
-    [ "300000000", "2999999999", "UHF band used by televisions, cordless phones, cell phones, pagers, walkie-talkies, and satellites."],
-    [ "3000000000", "29999999999", "SHF band used by microwave ovens, wireless LANs, cell phones, and satellites."],
-    [ "30000000000", "299999999999", "EHF band used by radio telescopes, security screening systems, and point-to-point high-bandwidth devices."],
-    [ "300000000000", "3000000000000", "THF band used by satellites and radio telescopes."],
-  ];
+#Load the CSS
+#Much styling for the plots was taken from http://bl.ocks.org/mbostock/4061961
+my $css = share("style.css")->slurp;
 
-#reference: https://en.wikipedia.org/wiki/Color
-#Color ranges. Some colors are controversial but these are fairly well accepted.
-my $color_ranges =
-  [
-    [ "400000000000000", "479999999999999", "red" ],
-    [ "480000000000000", "504999999999999", "orange" ],
-    [ "505000000000000", "524999999999999", "yellow" ],
-    [ "525000000000000", "574999999999999", "green" ],
-    [ "575000000000000", "609999999999999", "cyan" ],
-    [ "610000000000000", "667999999999999", "blue" ],
-    [ "668000000000000", "714999999999999", "indigo" ],
-    [ "715000000000000", "800000000000000", "violet" ],
-  ];
+#Load electromagnetic frequency ranges
+# References: 
+# https://en.wikipedia.org/wiki/Radio_spectrum
+# https://en.wikipedia.org/wiki/Ultraviolet
+# https://en.wikipedia.org/wiki/X-ray
+# https://en.wikipedia.org/wiki/Color
+my @electromagnetic;
+foreach (split /\n/, share("electromagnetic.txt")->slurp) {
+    my @range = split /\t/, $_;
+    push @electromagnetic, {
+        subspectrum => $range[0],
+        min => $range[1],
+        max => $range[2],
+        description => $range[3]
+    };
+}
 
-# reference: https://en.wikipedia.org/wiki/Musical_acoustics
-#Ranges for common instruments 
-my $instrument_ranges =
-  [
-    [ "87", "1046", "human voice" ],
-    [ "82.407", "329.63", "bass vocalists" ],
-    [ "87.307", "349.23", "baritone vocalists" ],
-    [ "130.81", "440.00", "tenor vocalists" ],
-    [ "196.00", "698.46", "alto vocalists" ],
-    [ "220.00", "880.00", "mezzo-soprano vocalists" ],
-    [ "261.63", "880.00", "soprano vocalists" ],
-    [ "41.203", "523.25", "double-bass" ],
-    [ "130.81", "1760.00", "viola" ],
-    [ "196.00", "2637.00", "violin" ],
-    [ "82.41", "1046.5", "guitar" ],
-    [ "196.00", "1396.9", "mandolin" ],
-    [ "130.81", "1046.5", "banjo" ],
-    [ "27.500", "4186.0", "piano" ],
-    [ "38.891", "440.00", "tuba" ],
-    [ "82.407", "523.25", "trombone" ],
-    [ "164.81", "932.33", "trumpet" ],
-    [ "207.65", "1244.5", "saxophone" ],
-    [ "261.63", "2093.0", "flute" ],
-    [ "146.83", "1864.7", "clarinet" ],
-    [ "58.270", "783.99", "bassoon" ],
-    [ "233.08", "1760.0", "oboe" ],
-  ];
+#Frequency ranges for EM subspectra
+my %emSubspectrum = (
 
-# Reference: https://en.wikipedia.org/wiki/Ultraviolet
-my $ultraviolet_ranges = 
-    [
-     [ 7.495*(10**14), 3*(10**16), "UV light is found in sunlight and is emitted by electric arcs and specialized lights such as mercury lamps and black lights." ],
-    ];
+    'radio' => [ 0, 3000000000000 ],
+    'visible light' => [ 400000000000000, 800000000000000 ],
+    'ultraviolet' => [ 749500000000000, 30000000000000000 ],
+    'x-ray' => [ 30000000000000000, 30000000000000000000 ],
+    'gamma' => [ 30000000000000000000, 3000000000000000000000000 ] 
 
-# Reference: https://en.wikipedia.org/wiki/X-ray
-my $xray_ranges = 
-    [
-     [ 3*(10**16), 3*(10**19), "X-rays are used for various medical and industrial uses such as radiographs and CT scans. "],
-    ];
+);
 
-# Reference: 
-my $gamma_ranges = 
-    [
-     [ 10**19, 10**24, "Gamma rays are can be used to treat cancer and for diagnostic purposes." ],
-    ];
+#Load audible frequency ranges
+#Reference: https://en.wikipedia.org/wiki/Musical_acoustics
+my @audible;
+foreach (split /\n/, share("audible.txt")->slurp) {
+    my @range = split /\t/, $_;
+    push @audible, {
+        min => $range[0],
+        max => $range[1],
+        produced_by => $range[2]
+    };
+}
 
 #Query is intitially processed here. First normalize the query format,
 #normalize the units, and then calculate information about the frequency range.
 handle query => sub {
-  return unless $_ =~ m/^[\d,.]+\s\w+$/;
-  return unless my $freq = normalize_freq($_);
 
-  my $freq_hz;
-  my $hz_abbrev;
-  my $freq_formatted;
+    return unless $_ =~ m/^[\d,.]+\s\w+$/;
+    return unless my $freq = normalize_freq($_);
+
+    my $freq_hz;
+    my $hz_abbrev;
+    my $freq_formatted;
   
-  if($freq =~ m/^(.+?)\s(?:hz|hertz)$/i) {
-    $freq_hz = $1;
-  } elsif($freq =~ m/^(.+?)\s(?:khz|kilohertz)$/i) {
-    $freq_hz = $1 * THOUSAND;
-  } elsif($freq =~ m/^(.+?)\s(?:mhz|megahertz)$/i) {
-    $freq_hz = $1 * MILLION;
-  } elsif($freq =~ m/^(.+?)\s(?:ghz|gigahertz)$/i) {
-    $freq_hz = $1 * BILLION;
-  } elsif($freq =~ m/^(.+?)\s(?:thz|terahertz)$/i) {
-    $freq_hz = $1 * TRILLION;
-  } else {
-    #unexpected case
-    return;
-  }
+    if ($freq =~ m/^(.+?)\s(?:hz|hertz)$/i) {
+        $freq_hz = $1;
+    } elsif ($freq =~ m/^(.+?)\s(?:khz|kilohertz)$/i) {
+        $freq_hz = $1 * THOUSAND;
+    } elsif ($freq =~ m/^(.+?)\s(?:mhz|megahertz)$/i) {
+        $freq_hz = $1 * MILLION;
+    } elsif ($freq =~ m/^(.+?)\s(?:ghz|gigahertz)$/i) {
+        $freq_hz = $1 * BILLION;
+    } elsif ($freq =~ m/^(.+?)\s(?:thz|terahertz)$/i) {
+        $freq_hz = $1 * TRILLION;
+    } else {
+        return;
+    }
   
-  if($freq_hz >= TRILLION){
-    $hz_abbrev = "THz";
-    $freq_formatted = $freq_hz / TRILLION;
-  } elsif($freq_hz >= BILLION) {
-    $hz_abbrev = "GHz";
-    $freq_formatted = $freq_hz / BILLION;
-  } elsif($freq_hz >= MILLION) {
-    $hz_abbrev = "MHz";
-    $freq_formatted = $freq_hz / MILLION;
-  } elsif($freq_hz >= THOUSAND) {
-    $hz_abbrev = "kHz";
-    $freq_formatted = $freq_hz / THOUSAND;
-  } else {
-    $hz_abbrev = "Hz";
-    $freq_formatted = $freq_hz;
-  }
+    if ($freq_hz >= TRILLION){
+        $hz_abbrev = "THz";
+        $freq_formatted = $freq_hz / TRILLION;
+    } elsif ($freq_hz >= BILLION) {
+        $hz_abbrev = "GHz";
+        $freq_formatted = $freq_hz / BILLION;
+    } elsif ($freq_hz >= MILLION) {
+        $hz_abbrev = "MHz";
+        $freq_formatted = $freq_hz / MILLION;
+    } elsif ($freq_hz >= THOUSAND) {
+        $hz_abbrev = "kHz";
+        $freq_formatted = $freq_hz / THOUSAND;
+    } else {
+        $hz_abbrev = "Hz";
+        $freq_formatted = $freq_hz;
+    }
   
   $freq = $freq_formatted . " " . $hz_abbrev;
   
@@ -150,7 +117,7 @@ handle query => sub {
 
 #Normalize the frequency, attempting to discern between region differences
 #in number formatting. Filter out clearly invalid queries.
-sub normalize_freq{
+sub normalize_freq {
   my $freq = $_;
 
   if($freq =~ /(\d+\.){2,}|([.]{2,})|([,]{2,})/) {
@@ -166,84 +133,353 @@ sub normalize_freq{
 #Take the frequency and look at which ranges it falls in.
 #Build up the result string.
 sub prepare_result {
-    my $freq = $_[0];
-    my $freq_hz = $_[1];
-    my $color = match_in_ranges(int($freq_hz), $color_ranges);
-    my $radio = match_in_ranges(int($freq_hz), $radio_ranges) unless $color;
-    my $instruments = matches_in_ranges($freq_hz, $instrument_ranges) unless $color;
 
-    my $ultraviolet = matches_in_ranges($freq_hz, $ultraviolet_ranges);
-    my $xray = matches_in_ranges($freq_hz, $xray_ranges);
-    my $gamma = matches_in_ranges($freq_hz, $gamma_ranges);
+    (my $freq, my $freq_hz) = @_;
 
-    my $text_result = "";
-    my $more_at = '';
-    if($radio) {
-	$text_result = $freq . " is a radio frequency in the " . $radio;
-	$more_at = 'https://en.wikipedia.org/wiki/Radio_spectrum';
-    } elsif($color) {
-	$text_result = $freq . " is an electromagnetic frequency of " . $color . " light.";
-	$more_at = 'https://en.wikipedia.org/wiki/Color';
-    }
-    if($instruments) {
-	$more_at = 'https://en.wikipedia.org/wiki/Musical_acoustics';
-	$instruments =~ s/,\s([a-zA-Z\s-]+)$/, and $1/;
-	if($radio) {
-	    $text_result = $text_result . "\n" . $freq . " is also an audible frequency which can be produced by " . $instruments . ".";
-	} else {
-	    $text_result = $freq . " is an audible frequency which can be produced by " . $instruments . ".";
-	}
-    }
+    my $answer;
+    my $html;
 
-    if($ultraviolet) {
-	$more_at = 'https://en.wikipedia.org/wiki/Ultraviolet';
-	$text_result = $ultraviolet;
-    }
-    if($xray) {
-	$more_at = 'https://en.wikipedia.org/wiki/X-ray';
-	$text_result = $xray;
-    }
-    if($gamma) {
-	$more_at = 'https://en.wikipedia.org/wiki/Gamma_ray';
-	$text_result = $gamma;
-    }
+    #Look for a match in the electromagnetic spectrum
+    my $emMatch = match_electromagnetic($freq_hz);
+    if ($emMatch) {
 
-    if($text_result) {
-	(my $html_result = $text_result) =~ s/\n/<br>/g;
-	$html_result .= "<br><a href='$more_at'>More at Wikipedia</a>";
-	$text_result .= "\nMore at $more_at";
-	return $text_result, html => $html_result, heading => "$freq (Frequency Spectrum)";
+        my $emDescription = $freq . ' is a ' . $$emMatch{'subspectrum'} . ' frequency' . $$emMatch{'description'} . '.';
+    
+        $answer .= $emDescription;
+        $html .= $emDescription;
+
+        #Add a plot to the html
+        #Prepare parameters
+        my $rangeMin = 0;
+        my $rangeMax = 10000000000000000000000000;
+        my $subspectrumMin = $emSubspectrum{$$emMatch{'subspectrum'}}[0];
+        my $subspectrumMax = $emSubspectrum{$$emMatch{'subspectrum'}}[1];
+        my $subspectrum = $$emMatch{'subspectrum'};
+        my $bandMin = $$emMatch{'min'};
+        my $bandMax = $$emMatch{'max'};
+
+        #Set up the plot panel
+        (my $plot, my $transform) = generate_panel($rangeMin, $rangeMax, 1);
+
+        #Add a major range for the subspectrum (e.g. radio or UV)
+        $plot = add_major_range($plot, $transform, $subspectrumMin, $subspectrumMax, $subspectrum, 1);
+
+        #If there is a band within the subspectrum, add a minor range
+        # for the band
+        if (! ($subspectrumMin == $bandMin && $subspectrumMax == $bandMax)) {
+            $plot = add_minor_range($plot, $transform, $bandMin, $bandMax, 1);
+        }
+
+        #Add a marker for the query frequency
+        $plot = add_marker($plot, $transform, $freq_hz, 1);
+
+        #Generate the SVG
+        $html .= $plot->xmlify;
+
     }
 
+    #Look for matches in the audible spectrum
+    my @audibleMatches = @{match_audible($freq_hz)};
+    if (@audibleMatches) {
+
+        my $audibleDescription = $freq . ' is';
+        $audibleDescription .= ' also' if $emMatch;
+        $audibleDescription .= ' an audible frequency which can be produced by ';
+
+        my @producers;
+        push @producers, $$_{'produced_by'} for @audibleMatches;
+        $audibleDescription .= WORDLIST(@producers, {cong => 'and'});
+        $audibleDescription .= '.';
+
+        $answer .= $audibleDescription;
+        $html .= $audibleDescription;
+
+        #Add a plot to the HTML
+        #Basic plot parameters
+        my $rangeMin = 10;
+        my $rangeMax = 10000;
+
+        #Set up the background panel
+        # A 'track' is a row in the plot/categorical variable on the y axis
+        (my $plot, my $transform) = generate_panel($rangeMin, $rangeMax, scalar @audibleMatches);
+
+        #Add a track with a major range for each producer
+        my $track = 0;
+        foreach my $match (@audibleMatches) {
+            ++$track;
+            my $freqRangeMin = $$match{'min'};
+            my $freqRangeMax = $$match{'max'};
+            my $label = $$match{'produced_by'};
+            $plot = add_major_range($plot, $transform, $freqRangeMin, $freqRangeMax, $label, $track);
+        }
+
+        #Add a marker for the query frequency
+        $plot = add_marker($plot, $transform, $freq_hz, scalar @audibleMatches);
+
+        #Generate the SVG
+        $html .= $plot->xmlify;
+    }
+
+    return $answer, html => wrap_html($html) if $answer;
     return;
 };
 
-#Find which single range applies.
-sub match_in_ranges {
-    my $freq = $_[0];
-    my $ranges = $_[1];
-
-    foreach my $range (@$ranges) {
-	if($freq >= $range->[0] && $freq <= $range->[1]){
-	    return $range->[2];
-	}
+#Find match in the electromagnetic spectrum
+sub match_electromagnetic {
+    my $freq_hz = shift;
+    foreach (@electromagnetic) {
+        return $_ if ($$_{'min'} <= $freq_hz) && ($$_{'max'} >= $freq_hz);
     }
+    return;
+}
 
-    return "";
-};
-
-#Find any number of ranges which apply.
-sub matches_in_ranges {
-    my $freq = $_[0];
-    my $ranges = $_[1];
+#Find matches in the audible spectrum
+sub match_audible {
+    my $freq_hz = shift;
     my @matches;
-    foreach my $range (@$ranges) {
-	if($freq >= $range->[0] && $freq <= $range->[1]) {
-	    push(@matches, $range->[2]);
-	}
+    foreach (@audible) {
+        push @matches, $_ if ($$_{'min'} <= $freq_hz) && ($$_{'max'} >= $freq_hz);
+    }
+    return \@matches;
+}
+
+sub generate_panel {
+
+    (my $rangeMin, my $rangeMax, my $tracks) = @_;
+
+    #Width is dynamic, always expressed as percentage
+    my $width = 100;
+
+    #Height is fixed
+    my $height = (25 * $tracks) + 45;
+
+    #Padding
+    my $leftGutter = 5;
+    my $rightGutter = 5;
+
+    my $svg = SVG->new(height => $height, class => 'zci-plot');
+
+    #If the difference betweeen the range
+    # minimum and maximum is two orders of
+    # magnitude or greater, use a log10 scale
+    my $log10 = int(log10($rangeMax)) - int(log10($rangeMin)) >= 2 ? 1 : 0;
+
+    #Build a transformation function to map values to
+    # x coordinates
+    my $transform;
+    if ($log10) {
+        $transform = sub {
+            my $value = shift;
+            my $unit = ($width - $leftGutter - $rightGutter) / (log10($rangeMax) - log10($rangeMin));
+            return $leftGutter + ((log10($value) - log10($rangeMin)) * $unit);
+        };
+    
+    } else {
+        $transform = sub {
+            my $value = shift;
+            my $unit = ($width - $leftGutter - $rightGutter) / ($rangeMax - $rangeMin);
+            return $leftGutter + (($value - $rangeMin) * $unit);
+        };
     }
 
-    return join(", ", @matches);
-};
+    #Add panel background
+    $svg->group(
+        class => 'plot_panel',
+    )->rect(
+        width => ($width - $leftGutter - $rightGutter) . '%', 
+        height => 25 * $tracks, 
+        x => $leftGutter . '%',
+        rx => 2,
+        ry => 2
+    );
+
+    #Calculate x-axis tick locations
+    my @ticks;
+    # If we're using a log10 scale, put a tick at
+    # each power of 10 between range min and max
+    if ($log10) {
+        @ticks = map { 10 ** $_ } int(log10($rangeMin)) .. int(log10($rangeMax));
+
+    #If we're using a linear scale, put a tick at every
+    # integer multiple at the order of magnitude of
+    # range max 
+    } else {
+        my $order = 10 ** int(log10($rangeMax));
+        @ticks = map { $_ * $order } int($rangeMin / $order) + 1 .. int($rangeMax / $order);
+        unshift(@ticks, $rangeMin) unless $ticks[0] == $rangeMin;
+        push(@ticks, $rangeMax) unless $ticks[-1] == $rangeMax;
+    }
+
+    #If there are more than 10 ticks, remove every
+    # second tick until there are 10 or fewer
+    while (scalar @ticks > 10) {
+        @ticks = @ticks[grep !($_ % 2), 0..$#ticks];
+    }
+
+    #Draw ticks
+    my $xAxis = $svg->group (
+        id => 'x_axis',
+    );
+    foreach (@ticks) {
+
+        my $x = $transform->($_);
+
+        #Draw tick line
+        my $tick = $xAxis->group();
+        $tick->line(
+            x1 => $x . '%',
+            x2 => $x . '%',
+            y1 => 25 * $tracks, 
+            y2 => (25 * $tracks) + 4,
+            class => 'x_axis_tick'
+        );
+
+        #Annotate tick
+        my $text = $xAxis->text(
+            dy => '1em', 
+            x => $x . '%', 
+            y => (25 * $tracks) + 4, 
+            'text-anchor' => 'middle',
+            class => 'x_axis_text'
+        );
+        if ($log10) {
+            $text->tag('tspan', -cdata => '10');
+            $text->tag(
+                'tspan', 
+                'baseline-shift' => 'super',
+                dx => '-0.5em', #Bring superscript close to parent
+                -cdata => log10($_),
+                style => { 'font-size' => '0.5em' },
+            );
+        } else {
+            $text->tag('tspan', -cdata => $_);
+        }
+    }
+
+    #Add x-axis gridlines
+    my $gridlines = $svg->group (
+        class => 'x_axis_gridline',
+    );
+    foreach (@ticks) {
+        my $x = $transform->($_);
+        my $line = $gridlines->group();
+        $line->line(
+            x1 => $x . '%',
+            x2 => $x . '%',
+            y1 => 0, 
+            y2 => 25 * $tracks
+        );
+    }
+
+    #Add a label to the x-axis
+    my $xAxisLabel = $xAxis->text(
+        dy => '1em', 
+        x => '50%', 
+        y => (25 * $tracks) + 25, 
+        'text-anchor' => 'middle',
+        class => 'x_axis_label'
+    );
+    $xAxisLabel->tag('tspan', -cdata => 'Frequency (Hz)');
+
+    return($svg, $transform);
+}
+
+#Add a minor range to a plot panel
+sub add_minor_range {
+
+    (my $svg, my $transform, my $rangeMin, my $rangeMax, my $track) = @_;
+
+    #Add rectangle for range
+    my $minorRange = $svg->group(id => 'minor_range_' . $track);
+    my $minorRangeRect = $minorRange->group();
+    $minorRangeRect->rect(
+        class => 'minor_range',
+        x => $transform->($rangeMin) . '%', 
+        width => $transform->($rangeMax) - $transform->($rangeMin) . '%',
+        y => (15 * ($track - 1)) + 5,
+        height => 15,
+        rx => 2,
+        ry => 2
+    ); 
+
+    return $svg;
+}
+
+#Add a major frequency range to a plot panel
+sub add_major_range {
+
+    (my $svg, my $transform, my $rangeMin, my $rangeMax, my $label, my $track) = @_;
+
+    #Add rectangle for range
+    my $majorRange = $svg->group(id => 'major_range_' . $label);
+    my $majorRangeRect = $majorRange->group();
+    $majorRangeRect->rect(
+        class => 'major_range',
+        x => $transform->($rangeMin) . '%', 
+        width => $transform->($rangeMax) - $transform->($rangeMin) . '%',
+        y => (25 * ($track - 1)) + 5,
+        height => 15,
+        rx => 2,
+        ry => 2
+    ); 
+
+    #Add label for range
+    #Place the label on the side of the band with more space
+    my $x;
+    my $anchor;
+    if ($transform->($rangeMin) > 100 - ($transform->($rangeMax))) {
+        $x = $transform->($rangeMin) - 1;
+        $anchor = 'end';
+    } else {
+        $x = $transform->($rangeMax) + 1;
+        $anchor = 'start';
+    }
+    my $majorRangeLabel = $majorRange->group();
+    my $majorRangeLabelText = $majorRangeLabel->text(
+        x => $x . '%', 
+        y => (25 * ($track - 1)) + 10, 
+        dy => '0.5em',
+        'text-anchor' => $anchor,
+        class => 'major_range_label'
+    );
+    $majorRangeLabel->tag('tspan', -cdata => ucfirst($label));
+
+    return $svg;
+}
+
+#Add a marker (vertical line) to a plot panel
+sub add_marker {
+
+    (my $svg, my $transform, my $markerValue, my $tracks) = @_;
+
+    #Add marker
+    $svg->group(
+        class => 'marker'
+    )->line(
+        x1 => $transform->($markerValue) . '%', 
+        x2 => $transform->($markerValue) . '%', 
+        y1 => 3,
+        y2 => (25 * $tracks) - 3,
+    );
+
+    return $svg;
+}
+
+#Wrap html
+sub wrap_html {
+    return append_css("<div class='zci--conversions text--primary'>$_[0]</div>");
+}
+
+#Get log10 of a number
+sub log10 {
+    my $n = shift;
+    return 0 if $n == 0;
+    return log($n)/log(10);
+}
+
+sub append_css {
+    my $html = shift;
+    return "<style type='text/css'>$css</style>$html";
+}
 
 1;
