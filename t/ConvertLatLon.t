@@ -51,6 +51,7 @@ ddg_goodie_test(
     'convert 4 minute mile to kilometers' => undef,
     'attack of the 50\' 4" woman' => undef,
     'is 39.75 degrees a fever' => undef,
+    'convert 39.75 degrees to farenheit' => undef,
 
     #Check for css
     '71° 10\' 3" in decimal' => test_zci(qr/./, html => qr/css/),
@@ -58,7 +59,6 @@ ddg_goodie_test(
     #Check for to-format name
     '16.5° S, 68.15° W dms' => test_zci(qr/./, html => qr/DMS/),
     '16° 30′ S, 68° 9′ W decimal' => test_zci(qr/./, html => qr/decimal/),
-
 );
 
 done_testing;
