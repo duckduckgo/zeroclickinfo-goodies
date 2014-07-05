@@ -19,22 +19,18 @@ ddg_goodie_test(
 
     #Secondary examples
     '71 degrees 10 minutes 3 seconds east in decimal' => test_zci('71.1675°', html => qr/71\.1675/),
+    '- 16º 30\' 0" - 68º 9\' 0" as decimal' => test_zci('−16.5° −68.15°', html => qr/&minus;16\.5.+&minus;68\.15/),
 
     #Latitudes and longitudes of cities, various trigger combinations
     #Values from Wikipedia/GeoHack toolserver
     #Sydney
-    'convert 151.2094° E to degrees minutes seconds' => test_zci('151° 12′ 34″ E', html => qr/151.+12.+34.+E/),
+    'convert 33.859972º S 151.2094° E to degrees minutes seconds' => test_zci('33° 51′ 36″ S 151° 12′ 34″ E', html => qr/33.+51.+36.+S.+151.+12.+34.+E/),
     #Moscow
-    '55° 45′ 00″ in decimal' => test_zci('55.75°', html => qr/55.75/),
+    '55° 45′ 0″ 37° 37′ 0″ in decimal' => test_zci('55.75° 37.616667°', html => qr/55\.75.+37\.616667/),
     #Kinshasha
-    'kinshasha is 15.322222 degrees east convert to dms' => test_zci('15° 19′ 20″ E', html => qr/15.+19.+20.+E/),
+    'kinshasha is 4.325 degrees south 15.322222 degrees east convert to dms' => test_zci('4° 19′ 30″ S 15° 19′ 20″ E', html => qr/4.+19.+30.+S.+15.+19.+20.+E/),
     #Copenhagen
     '55.676111° latitude' => test_zci('55° 40′ 34″', html => qr/55.+40.+34/),
-    #La Paz
-    '- 68º 9\' 0" as decimal' => test_zci('−68.15°', html => qr/&minus;68.15/),
-
-    #If two coordinates are given (e.g. lat/lon), only the first will be converted
-    '20 º 10 \' 0 " S, 57 deg 31 min 0 sec E convert' => test_zci('−20.166667°', html => qr/&minus;20\.166667/),
 
     #Make sure "plural S" works
     "68 degrees 9 minutes S in decimal form" => test_zci('−68.15°', html => qr/&minus;68.15/),
@@ -58,6 +54,10 @@ ddg_goodie_test(
 
     #Check for css
     '71° 10\' 3" in decimal' => test_zci(qr/./, html => qr/css/),
+
+    #Check for to-format name
+    '16.5° S, 68.15° W dms' => test_zci(qr/./, html => qr/DMS/),
+    '16° 30′ S, 68° 9′ W decimal' => test_zci(qr/./, html => qr/decimal/),
 
 );
 
