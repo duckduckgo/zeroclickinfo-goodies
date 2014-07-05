@@ -85,16 +85,14 @@ handle query_nowhitespace => sub {
 
     return unless /$latLonQR/;
 
-    my @queries;
-    my @results;
-
-    my $toFormat;
-
     #Loop over all provided latitudes/longitudes
     # Not going to try and enforce strict latitude/longitude
     # pairing — if the user wants to pass in a long list
     # of latitudes or a single longitude, no problem as long
     # as they're all in the same format
+    my @queries;
+    my @results;
+    my $toFormat;
     while (/$latLonQR/g) {
 
         my $minus = $+{minus};
@@ -159,7 +157,7 @@ handle query_nowhitespace => sub {
 
             #Format nicely
             my $formattedDMS = format_dms($dmsDegrees, $dmsMinutes, $dmsSeconds, $dmsSign, $cardinal);
-            my $formattedQuery = format_decimal(($degrees * $sign));
+            my $formattedQuery = format_decimal(($degrees * $sign), $cardinal);
 
             push(@queries, $formattedQuery);
             push(@results, $formattedDMS);
@@ -204,7 +202,7 @@ handle query_nowhitespace => sub {
             }
 
             #Format nicely
-            my $formattedDec = format_decimal($decDegrees);
+            my $formattedDec = format_decimal($decDegrees, $cardinal);
             my $formattedQuery = format_dms($degrees, $minutes, $seconds, $sign, $cardinal);
 
             push(@queries, $formattedQuery);
@@ -244,14 +242,14 @@ sub format_dms {
 #Format a decimal expression
 sub format_decimal {
 
-    (my $decDegrees) = @_;
+    (my $decDegrees, my $cardinal) = @_;
 
     my $formatted = abs($decDegrees) . '°';
 
-    #Add a minus sign if negative (decimal format
-    # never uses cardial notation)
-    # TODO this is incorrect change this
-    if ($decDegrees / abs($decDegrees) == -1) {
+    #If a cardinal direction was supplied, use the cardinal
+    if ($cardinal) {
+        $formatted .= ' ' . uc($cardinal);
+    } elsif ($decDegrees / abs($decDegrees) == -1) {
         $formatted = '−' . $formatted;
     }
 
@@ -274,7 +272,6 @@ sub wrap_secondary {
 
 sub wrap_html {
 
-    #TODO can we use prototypes in this version of perl?
     my @queries = @{$_[0]};
     my @results = @{$_[1]};
     my $toFormat = $_[2];

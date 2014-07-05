@@ -18,7 +18,7 @@ ddg_goodie_test(
 	'71° 10\' 3" in decimal' => test_zci('71.1675°', html => qr/71\.1675/),
 
     #Secondary examples
-    '71 degrees 10 minutes 3 seconds east in decimal' => test_zci('71.1675°', html => qr/71\.1675/),
+    '71 degrees 10 minutes 3 seconds east in decimal' => test_zci('71.1675° E', html => qr/71\.1675.+E/),
     '- 16º 30\' 0" - 68º 9\' 0" as decimal' => test_zci('−16.5° −68.15°', html => qr/&minus;16\.5.+&minus;68\.15/),
 
     #Latitudes and longitudes of cities, various trigger combinations
@@ -33,7 +33,7 @@ ddg_goodie_test(
     '55.676111° latitude' => test_zci('55° 40′ 34″', html => qr/55.+40.+34/),
 
     #Make sure "plural S" works
-    "68 degrees 9 minutes S in decimal form" => test_zci('−68.15°', html => qr/&minus;68.15/),
+    "68 degrees 9 minutes S in decimal form" => test_zci('68.15° S', html => qr/68\.15.+S/),
 
     #Should not trigger for impossible latitudes and longitudes
     '95º 4\' N as decimal' => undef,
