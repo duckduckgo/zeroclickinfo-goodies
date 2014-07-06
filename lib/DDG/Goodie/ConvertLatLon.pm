@@ -138,7 +138,7 @@ handle query_nowhitespace => sub {
 
             #Validation: if only degrees were provided, make sure
             # the user isn't looking for a temperature or trigonometric conversion
-            my $rejectQR = qr/temperature|farenheit|celcius|radians|kelvin|centigrade|\b$degQR\s?[FCK]/i;
+            my $rejectQR = qr/temperature|farenheit|celsius|radians|kelvin|centigrade|\b$degQR\s?[FCK]/i;
             return if $_ =~ /$rejectQR/i;
 
             #Validation: can't exceed 90 degrees (if latitude) or 180 degrees
