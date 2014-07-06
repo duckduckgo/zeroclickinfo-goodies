@@ -46,14 +46,32 @@ foreach (split /\n/, share("electromagnetic.txt")->slurp) {
 }
 
 #Frequency ranges for EM subspectra
-my %emSubspectrum = (
-
-    'radio' => [ 0, 3000000000000 ],
-    'visible light' => [ 400000000000000, 800000000000000 ],
-    'ultraviolet' => [ 749500000000000, 30000000000000000 ],
-    'x-ray' => [ 30000000000000000, 30000000000000000000 ],
-    'gamma' => [ 30000000000000000000, 3000000000000000000000000 ] 
-
+my %emSpectrum = (
+    'radio' => {
+        min => 0, 
+        max => 3000000000000,
+        track => 1
+    },
+    'visible light' => {
+        min => 400000000000000, 
+        max => 800000000000000,
+        track => 2
+    },
+    'ultraviolet' => {
+        min => 749500000000000, 
+        max => 30000000000000000,
+        track => 3
+    },
+    'x-ray' => {
+        min => 30000000000000000, 
+        max => 30000000000000000000,
+        track => 4
+    },
+    'gamma' => {
+        min => 30000000000000000000, 
+        max => 3000000000000000000000000,
+        track => 5
+    }
 );
 
 #Load audible frequency ranges
@@ -152,26 +170,26 @@ sub prepare_result {
         #Prepare parameters
         my $rangeMin = 0;
         my $rangeMax = 10000000000000000000000000;
-        my $subspectrumMin = $emSubspectrum{$$emMatch{'subspectrum'}}[0];
-        my $subspectrumMax = $emSubspectrum{$$emMatch{'subspectrum'}}[1];
-        my $subspectrum = $$emMatch{'subspectrum'};
         my $bandMin = $$emMatch{'min'};
         my $bandMax = $$emMatch{'max'};
+        my $subspectrum = $$emMatch{'subspectrum'};
+        my $tracks = scalar keys %emSpectrum;
 
         #Set up the plot panel
-        (my $plot, my $transform) = generate_panel($rangeMin, $rangeMax, 1);
+        (my $plot, my $transform) = generate_panel($rangeMin, $rangeMax, $tracks);
 
-        #Add a major range for the subspectrum (e.g. radio or UV)
-        $plot = add_major_range($plot, $transform, $subspectrumMin, $subspectrumMax, $subspectrum, 1);
+        #Add a major range for each subspectrum (e.g. radio or UV)
+        foreach (sort {$emSpectrum{$a}{'track'} <=> $emSpectrum{$b}{'track'} } keys %emSpectrum) {
+            $plot = add_major_range($plot, $transform, $emSpectrum{$_}{'min'}, $emSpectrum{$_}{'max'}, $_, $emSpectrum{$_}{'track'});
+        }
 
-        #If there is a band within the subspectrum, add a minor range
-        # for the band
-        if (! ($subspectrumMin == $bandMin && $subspectrumMax == $bandMax)) {
-            $plot = add_minor_range($plot, $transform, $bandMin, $bandMax, 1);
+        #Add a minor range for the band (unless the band is the subspectrum)
+        if (! ($emSpectrum{$subspectrum}{'min'} == $bandMin && $emSpectrum{$subspectrum}{'max'} == $bandMax)) {
+            $plot = add_minor_range($plot, $transform, $bandMin, $bandMax, $emSpectrum{$subspectrum}{'track'});
         }
 
         #Add a marker for the query frequency
-        $plot = add_marker($plot, $transform, $freq_hz, 1);
+        $plot = add_marker($plot, $transform, $freq_hz, $tracks);
 
         #Generate the SVG
         $html .= $plot->xmlify;
