@@ -92,11 +92,13 @@ handle remainder => sub {
     }
 
     unless (@output) {
-        # copied verbatim from Randagram.pm
-        my @chars = split(//, $word);
-        @chars = shuffle(@chars);
-        return '"'.$word.'" scrambled: '.join('',@chars);
-        # end Randagram.pm
+        my @chars;
+        my $w;
+        do {
+            @chars = shuffle split (//, $word);
+            $w = join '', @chars;
+        } while ($w eq $word);
+        return "\"$word\" scrambled: $w";
     }
 
     if($full_word) {
