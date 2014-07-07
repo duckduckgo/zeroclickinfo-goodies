@@ -31,7 +31,8 @@ sub html_output {
 }
 
 handle remainder => sub {
-    s/^of "?([^"]*)"?$/$1/;
+    s/^of (.*)$/$1/; # Remove 'of ' in queries like 'md5 of this'
+    s/^"(.*)"$/$1/; # Remove quotes
     if (/^\s*(.*)\s*$/) {
         # Exit unless a string is found
         return unless $1;
