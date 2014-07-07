@@ -20,6 +20,18 @@ topics "words_and_games";
 attribution github => ["https://github.com/loganom", 'loganom'],
             github => ["https://github.com/beardlybread", "beardlybread"];
 
+my $css = share('style.css')->slurp;
+
+sub html_output {
+    my ($str, @anagrams) = @_;
+    my $list = join ', ', @anagrams;
+    return "<style type='text/css'>$css</style>"
+          ."<div class='zci--anagrams'>"
+          ."<span class='text--secondary'>$str</span><br/>"
+          ."<span class='text--primary'>$list</span>"
+          ."</div>";
+}
+
 sub calc_freq {
     my ($str, $ref) = @_;
     for (split //, $str) {
@@ -98,17 +110,16 @@ handle remainder => sub {
             @chars = shuffle split (//, $word);
             $w = join '', @chars;
         } while ($w eq $word);
-        return "\"$word\" scrambled: $w";
+        push (@output, $w);
+        return $word, html => html_output ("\"$word\" scrambled", @output);
     }
 
-    if($full_word) {
-        if(@output) {
-            my $ana = "Anagram of \"$word\": ";
-            $ana = "Anagrams of \"$word\": " if scalar(@output) > 1;
-            return $ana.join(', ', @output);
-        }
+    my $response = join ', ', @output;
+    my $output_str = "Anagrams of \"$word\"";
+    unless ($full_word) {
+        $output_str .= " of length $len";
     }
-    return "Anagrams of \"$word\" of size $len: ".join(', ', @output) if @output;
+    return $response, html => html_output ($output_str, @output);
 };
 
 1;
