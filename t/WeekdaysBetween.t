@@ -55,11 +55,11 @@ ddg_goodie_test(
 
     # Invalid input    
     'weekdays between 01/2013 and 01/2014' => undef,
-    'weekdays between feb 30, 2014 to mar 3, 2014' => undef
+    'weekdays between feb 30, 2014 to mar 3, 2014' => undef,
     'weekdays between 01/01/2012' => undef,
     'workdays between 18/17/2013 21/23/2015' => undef,
     'weekdays between 01/2013 and 01/2014 inclusive' => undef,
-    'weekdays between feb 30, 2014 mar 3, 2014 inclusive' => undef
+    'weekdays between feb 30, 2014 mar 3, 2014 inclusive' => undef,
     'weekdays between 01/01/2012 to' => undef,
     'workdays between 18/17/2013 and 21/23/2015 inclusive' => undef,
 );
