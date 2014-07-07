@@ -39,6 +39,7 @@ ddg_goodie_test(
     
     # Invalid input    
     'weekdays between 01/2014 01/2015' => undef,
+    'weekdays between feb 30, 2014 to mar 3, 2014' => undef
 );
 
 done_testing;
