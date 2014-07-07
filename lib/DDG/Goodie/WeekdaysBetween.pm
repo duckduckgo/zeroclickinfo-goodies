@@ -37,6 +37,7 @@ handle remainder => sub {
     return "There $verb $weekdays $number between $start_str and $end_str.";
 };
 
+# It calculates the number of weekdays between two given dates, both inclusive.
 sub delta_weekdays {
   my(@date1) = ($_[0], $_[1], $_[2]);
   my(@date2) = ($_[3], $_[4], $_[5]);
