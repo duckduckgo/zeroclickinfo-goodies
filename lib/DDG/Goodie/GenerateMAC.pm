@@ -21,8 +21,11 @@ attribution github => [ 'https://github.com/UnGround', 'Charlie Belmer' ],
 			web => ['http://www.charliebelmer.com','Charlie Belmer'];
 
 handle remainder => sub {
+	# Ensure rand is seeded for each process
+	srand();
+
 	my $address = join(':', map {sprintf '%0.2X', rand(255)}(1..6));
-	
+
 	my $text_response = "Here's a random MAC address: $address";
 	my $html_response = "<i>Here's a random MAC address: </i>$address";
 	return $text_response, html => $html_response;
