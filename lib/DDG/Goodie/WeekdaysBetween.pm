@@ -23,9 +23,7 @@ handle remainder => sub {
     my ($start, $end) = get_dates($_);
 
     # If get_dates failed, return nothing.                                                                                                                                                                                                                                                                                                                                  
-    unless ($start && $end) {
-        return;
-    }
+    return unless ($start && $end);
 
     my $weekdays = delta_weekdays($start->year, $start->mon, $start->mday, $end->year, $end->mon, $end->mday);
     
