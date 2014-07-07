@@ -26,6 +26,9 @@ ddg_goodie_test(
         test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
     'week days from 01/06/2014 01/10/2014' =>
         test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
+    'weekdays from 01/06/2014 01/10/2014' =>
+        test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
+
 
     # Standard work week
     'weekdays between 01/06/2014 01/10/2014' =>

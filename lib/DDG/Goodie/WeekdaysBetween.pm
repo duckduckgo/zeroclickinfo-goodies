@@ -7,7 +7,7 @@ use DDG::Goodie;
 use List::Util qw( min max );
 use Date::Calc qw(Delta_Days Day_of_Week);
 
-triggers start => "weekdays between", "week days between", "weekdays from";
+triggers start => "weekdays between", "week days between", "weekdays from", "week days from";
 
 zci answer_type => "weekdays_between";
 
