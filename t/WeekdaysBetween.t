@@ -25,6 +25,14 @@ ddg_goodie_test(
     'weekdays between 01/06/2014 01/10/2014' =>
         test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
     
+     # Ending date first
+    'weekdays between 01/10/2014 01/06/2014'  =>
+        test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
+
+    # Including the weekend -- Backwards
+    'weekdays between 01/13/2014 01/06/2014' =>
+        test_zci("There are 6 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 13, 2014."),
+
     # Weekend in the middle
     'weekdays between jan 3, 2014 jan 6, 2014' =>
         test_zci("There are 2 weekdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
@@ -37,9 +45,23 @@ ddg_goodie_test(
     'weekdays between jan 4, 2014 jan 4, 2014' =>
         test_zci("There are 0 weekdays between $JAN_ABBREV 04, 2014 and $JAN_ABBREV 04, 2014."),
     
+    # Starting on a Saturday
+    'weekdays between 01/11/2014 01/14/2014' =>
+        test_zci("There are 2 weekdays between $JAN_ABBREV 11, 2014 and $JAN_ABBREV 14, 2014."),
+
+    # Starting on a Sunday
+    'weekdays between 01/12/2014 01/17/2014' =>
+        test_zci("There are 5 weekdays between $JAN_ABBREV 12, 2014 and $JAN_ABBREV 17, 2014."),
+
     # Invalid input    
-    'weekdays between 01/2014 01/2015' => undef,
+    'weekdays between 01/2013 and 01/2014' => undef,
     'weekdays between feb 30, 2014 to mar 3, 2014' => undef
+    'weekdays between 01/01/2012' => undef,
+    'workdays between 18/17/2013 21/23/2015' => undef,
+    'weekdays between 01/2013 and 01/2014 inclusive' => undef,
+    'weekdays between feb 30, 2014 mar 3, 2014 inclusive' => undef
+    'weekdays between 01/01/2012 to' => undef,
+    'workdays between 18/17/2013 and 21/23/2015 inclusive' => undef,
 );
 
 done_testing;
