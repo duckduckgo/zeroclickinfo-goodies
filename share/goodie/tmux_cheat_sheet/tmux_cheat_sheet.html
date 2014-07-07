@@ -1,0 +1,174 @@
+<style type='text/css'>
+
+.zci--answer .zero_click_wrapper .zero_click {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.zci--answer .tmux-container {
+    max-height: 45ex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.zci--answer .tmux-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.zci--answer  table.tmux-table {
+    width: 100%;
+    margin-bottom: 1ex;
+}
+
+.zci--answer  table.tmux-table td {
+    padding-right: 1ex;
+    vertical-align: top;
+}
+.zci--answer  table.tmux-table td code {
+    white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+    .zci--answer .tmux-column {
+  width: 100%;
+    }
+}
+
+}
+
+</style>
+
+<div class="tmux-container">
+
+  <div class="tmux-column">
+
+    <b>Session Control (from the command line)</b>
+    <table class="tmux-table">
+      <tr>
+        <td>
+          <code>tmux</code>
+        </td>
+        <td>Start a new session</td>
+      </tr>
+      <tr>
+        <td>
+          <code>tmux attach</code>
+        </td>
+        <td>re-attach a detached session</td>
+      </tr>
+      <tr>
+        <td>
+          <code>tmux attach -d</code>
+        </td>
+        <td>re-attach a detached session (and detach it from elsewhere)</td>
+      </tr>
+    </table>
+    <b>Window Control</b>
+    <table class="tmux-table">
+      <tr>
+        <td>
+          <code>Ctrl-B, D</code>
+        </td>
+        <td>Detach from session</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, :rename-window</code>
+        </td>
+        <td>Rename a window</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, W</code>
+        </td>
+        <td>List windows</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, <i>[number]</i></code>
+        </td>
+        <td>Goes to window with corresponding number</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, N</code>
+        </td>
+        <td>Go to next window</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, P</code>
+        </td>
+        <td>Go to previous window</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, ?</code>
+        </td>
+        <td>See all keybindings</td>
+      </tr>
+    </table>
+    <b>Pane Control</b>
+    <table class="tmux-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-B, "</code>
+        </td>
+        <td>Split pane horizontally</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, %</code>
+        </td>
+        <td>Split pane vertically</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, O</code>
+        </td>
+        <td>Next pane</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, ;</code>
+        </td>
+        <td>Previous pane</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, X</code>
+        </td>
+        <td>Kill current pane</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, !</code>
+        </td>
+        <td>Kill all panes but the current one</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, Ctrl-O</code>
+        </td>
+        <td>Swap panes</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, t</code>
+        </td>
+        <td>Display clock</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B, q</code>
+        </td>
+        <td>transpose two letters (delete and paste)</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
