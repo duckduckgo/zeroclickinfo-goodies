@@ -21,6 +21,12 @@ ddg_goodie_test(
         'DDG::Goodie::WeekdaysBetween'
     ],
 
+    # Test different trigger words
+    'week days between 01/06/2014 01/10/2014' =>
+        test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
+    'week days from 01/06/2014 01/10/2014' =>
+        test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
+
     # Standard work week
     'weekdays between 01/06/2014 01/10/2014' =>
         test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
@@ -32,6 +38,22 @@ ddg_goodie_test(
     # Including the weekend -- Backwards
     'weekdays between 01/13/2014 01/06/2014' =>
         test_zci("There are 6 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 13, 2014."),
+
+    # Weekdays in a year - Dash format
+    'weekdays between 01-01-2014 01-01-2015' =>
+        test_zci("There are 262 weekdays between $JAN_ABBREV 01, 2014 and $JAN_ABBREV 01, 2015."),
+
+     # Single digit days and months - Dash format
+    'weekdays between 1-6-2014 1-10-2014' =>
+        test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
+
+    # Unambiguous date format
+    'weekdays between jan 6 2014 jan 10 2014' =>
+        test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
+
+    # Unambiguous date format with comma separator
+    'weekdays between jan 6, 2014 jan 10, 2014' =>
+        test_zci("There are 5 weekdays between $JAN_ABBREV 06, 2014 and $JAN_ABBREV 10, 2014."),
 
     # Weekend in the middle
     'weekdays between jan 3, 2014 jan 6, 2014' =>
@@ -57,11 +79,11 @@ ddg_goodie_test(
     'weekdays between 01/2013 and 01/2014' => undef,
     'weekdays between feb 30, 2014 to mar 3, 2014' => undef,
     'weekdays between 01/01/2012' => undef,
-    'workdays between 18/17/2013 21/23/2015' => undef,
+    'weekdays between 18/17/2013 21/23/2015' => undef,
     'weekdays between 01/2013 and 01/2014 inclusive' => undef,
     'weekdays between feb 30, 2014 mar 3, 2014 inclusive' => undef,
     'weekdays between 01/01/2012 to' => undef,
-    'workdays between 18/17/2013 and 21/23/2015 inclusive' => undef,
+    'weekdays between 18/17/2013 and 21/23/2015 inclusive' => undef,
 );
 
 done_testing;
