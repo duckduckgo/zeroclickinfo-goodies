@@ -19,12 +19,13 @@ ddg_goodie_test(
     'anagram times' => test_zci('emits, items, mites, smite', html => qr/.*/),
     'anagram Mixing it up' => test_zci(qr/[ Mixngtup]{12}/, html => qr/.*/),
     'anagram algorithm 14' => test_zci('logarithm', html => qr/.*/),
-    "anagrams stop" => test_zci('Post, opts, post, pots, spot, tops', html => qr/.*/),
-    "anagram stop"  => test_zci('Post, opts, post, pots, spot, tops', html => qr/.*/),
-    "anagrams lost" => test_zci('lots, slot', html => qr/.*/),
-    "anagram lost"  => test_zci('lots, slot', html => qr/.*/),
-    "anagram of lost"  => test_zci('lots, slot', html => qr/.*/),
+    'anagrams stop' => test_zci('Post, opts, post, pots, spot, tops', html => qr/.*/),
+    'anagram stop'  => test_zci('Post, opts, post, pots, spot, tops', html => qr/.*/),
+    'anagrams lost' => test_zci('lots, slot', html => qr/.*/),
+    'anagram lost'  => test_zci('lots, slot', html => qr/.*/),
+    'anagram of lost'  => test_zci('lots, slot', html => qr/.*/),
     'anagram of filter' => test_zci('trifle', html => qr/.*/),
+    'anagram of Filter' => test_zci('trifle', html => qr/.*/),
 );
 
 done_testing;

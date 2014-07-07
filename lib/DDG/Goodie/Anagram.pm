@@ -50,6 +50,7 @@ handle remainder => sub {
     my @output;
 
     s/^of\s+(.+)/$1/i;
+    s/^"(.*)"$/$1/;
     my $len;
     my $word;
     my $full_word = 1;
@@ -75,7 +76,7 @@ handle remainder => sub {
 
     # Calculate the frequency of the characters of the query
     my %query_freq;
-    calc_freq $word, \%query_freq;
+    calc_freq lc $word, \%query_freq;
 
     unless ($multiple_words) {
         foreach (@words) {
@@ -104,10 +105,9 @@ handle remainder => sub {
     }
 
     unless (@output) {
-        my @chars;
         my $w;
         do {
-            @chars = shuffle split (//, $word);
+            my @chars = shuffle split (//, $word);
             $w = join '', @chars;
         } while ($w eq $word);
         push (@output, $w);
