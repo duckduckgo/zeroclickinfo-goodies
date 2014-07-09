@@ -24,6 +24,7 @@ attribution github => ["https://github.com/loganom", 'loganom'],
 
 my $css = share('style.css')->slurp;
 
+# Wrap the response in html so that it can be styled with css
 sub html_output {
     my ($str, @anagrams) = @_;
     my $list = join ', ', @anagrams;
@@ -34,6 +35,7 @@ sub html_output {
           ."</div>";
 }
 
+# Calculate the frequency of the characters in a string
 sub calc_freq {
     my ($str, $ref) = @_;
     for (split //, $str) {
@@ -58,6 +60,7 @@ handle remainder => sub {
     my $full_word = 1;
     my $multiple_words = 0;
 
+    # If the query is of type "word length", where 'length' is not required
     if (/^([a-zA-Z]+)\s*([0-9]+)?\s*$/) {
         $word = $1;
         $word =~ s/\s+$//;
@@ -106,6 +109,9 @@ handle remainder => sub {
         }
     }
 
+    # If the query is multiple words long or there are no anagrams for its
+    # single word, the query will be scrambled, as there is no other possible
+    # response
     unless (@output) {
         my $w;
         do {
