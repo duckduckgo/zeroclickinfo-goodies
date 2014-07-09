@@ -375,16 +375,22 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr/./,
     ),
-    '83.166.167.160/27'  => undef,
-    '9 + 0 x 07'         => undef,
-    '0x07'               => undef,
-    'sin(1.0) + 1,05'    => undef,
-    '4,24,334+22,53,828' => undef,
-    '5234534.34.54+1'    => undef,
-    '//'                 => undef,
-    dividedbydividedby   => undef,
-    time                 => undef,    # We eval perl directly, only do whitelisted stuff!
-    'four squared'       => undef,
+    '123.123.123.123/255.255.255.256' => test_zci(
+        '123.123.123.123 / 255.255.255.256 = 0,482352941174581',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '123.123.123.123/255.255.255.255' => undef,
+    '83.166.167.160/27'               => undef,
+    '9 + 0 x 07'                      => undef,
+    '0x07'                            => undef,
+    'sin(1.0) + 1,05'                 => undef,
+    '4,24,334+22,53,828'              => undef,
+    '5234534.34.54+1'                 => undef,
+    '//'                              => undef,
+    dividedbydividedby                => undef,
+    time                              => undef,    # We eval perl directly, only do whitelisted stuff!
+    'four squared'                    => undef,
 );
 
 done_testing;

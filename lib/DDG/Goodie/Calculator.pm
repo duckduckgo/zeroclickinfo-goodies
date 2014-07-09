@@ -96,18 +96,18 @@ my %named_constants = (
 
 my $ored_constants = join('|', keys %named_constants);    # For later substitutions
 
-my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;        # Each octet should look like a number between 0 and 255.
-my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;        # There should be 4 of them separated by 3 dots.
-my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;              # 0-32
-my $cidr      = qr#^$ip4_regex\s*/\s*$up_to_32\s*$#;      # Looks like CIDR notation.
+my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                     # Each octet should look like a number between 0 and 255.
+my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                     # There should be 4 of them separated by 3 dots.
+my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                           # 0-32
+my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;    # Looks like network notation, either CIDR or subnet mask
 
 handle query_nowhitespace => sub {
     my $results_html;
     my $results_no_html;
     my $query = $_;
 
-    return if ($query =~ /\b0x/);    # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
-    return if ($query =~ $cidr);     # Probably want to talk about addresses, not calculations.
+    return if ($query =~ /\b0x/);      # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+    return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
