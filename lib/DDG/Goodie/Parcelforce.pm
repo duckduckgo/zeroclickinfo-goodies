@@ -34,17 +34,15 @@ triggers query_nowhitespace_nodash => qr/
 
 handle query_nowhitespace_nodash => sub {
     my $parcel_number = $+{parcel_number};
-   
-    # Exit if $parcel_number doesn't exist.
-    return unless $parcel_number;
     
-    # Exit if $parcel_number starts with ISBN.
-    return if $parcel_number =~ /^isbn/i;
+    if ($parcel_number && $parcel_number !~ /^isbn/i) {
     
-    return $parcel_number,
-        heading => 'Parcelforce Tracking',
-        html =>
-        qq(Track this parcel at <a href="http://www.parcelforce.com/track-trace?trackNumber=$parcel_number">Parcelforce</a>.);
-};
+        return $parcel_number,
+            heading => 'Parcelforce Tracking',
+            html =>
+            qq(Track this parcel at <a href="http://www.parcelforce.com/track-trace?trackNumber=$parcel_number">Parcelforce</a>.);
 
+    };
+    return;
+};
 1;
