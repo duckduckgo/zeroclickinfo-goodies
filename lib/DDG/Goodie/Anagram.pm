@@ -78,6 +78,10 @@ handle remainder => sub {
     # Return if there is no word
     return unless $word;
 
+    if (lc $word eq 'voldemort' and $full_word) {
+        return 'Tom Riddle', html => html_output ("Anagrams of \"$word\"", 'Tom Riddle');
+    }
+
     # Calculate the frequency of the characters of the query
     my %query_freq;
     calc_freq lc $word, \%query_freq;
