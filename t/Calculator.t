@@ -365,6 +365,13 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr#5<sup>\(\(4 - 3\) \* \(2 \+ 1\)\)</sup> \+ 6 =#,
     ),
+    '20x07' => test_zci(
+        '20 x 07 = 140',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '9 + 0 x 07'         => undef,
+    '0x07'               => undef,
     'sin(1.0) + 1,05'    => undef,
     '4,24,334+22,53,828' => undef,
     '5234534.34.54+1'    => undef,

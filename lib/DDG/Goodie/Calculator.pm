@@ -101,6 +101,8 @@ handle query_nowhitespace => sub {
     my $results_no_html;
     my $query = $_;
 
+    return if ($query =~ /\b0x/);    # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
     if ($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
