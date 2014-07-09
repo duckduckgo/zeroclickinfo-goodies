@@ -18,7 +18,9 @@ category "transformations";
 topics "words_and_games";
 
 attribution github => ["https://github.com/loganom", 'loganom'],
-            github => ["https://github.com/beardlybread", "beardlybread"];
+            github => ["https://github.com/beardlybread", "beardlybread"],
+            github => ['https://github.com/gdrooid', 'gdrooid'],
+            email  => ['gdrooid@openmailbox.org', 'gdrooid'];
 
 my $css = share('style.css')->slurp;
 
