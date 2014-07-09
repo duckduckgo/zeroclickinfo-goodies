@@ -26,8 +26,7 @@ my $css = share('style.css')->slurp;
 
 # Wrap the response in html so that it can be styled with css
 sub html_output {
-    my ($str, @anagrams) = @_;
-    my $list = join ', ', @anagrams;
+    my ($str, $list) = @_;
     return "<style type='text/css'>$css</style>"
           ."<div class='zci--anagrams'>"
           ."<span class='text--secondary'>$str</span><br/>"
@@ -118,8 +117,7 @@ handle remainder => sub {
             my @chars = shuffle split (//, $word);
             $w = join '', @chars;
         } while ($w eq $word);
-        push (@output, $w);
-        return $word, html => html_output ("\"$word\" scrambled", @output);
+        return $word, html => html_output ("\"$word\" scrambled", $w);
     }
 
     my $response = join ', ', @output;
@@ -127,7 +125,7 @@ handle remainder => sub {
     unless ($full_word) {
         $output_str .= " of length $len";
     }
-    return $response, html => html_output ($output_str, @output);
+    return $response, html => html_output ($output_str, $response);
 };
 
 1;
