@@ -370,6 +370,12 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr/./,
     ),
+    '83.166.167.160/33' => test_zci(
+        '83.166.167.160 / 33 = 2.520.186.883,63636',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '83.166.167.160/27'  => undef,
     '9 + 0 x 07'         => undef,
     '0x07'               => undef,
     'sin(1.0) + 1,05'    => undef,
