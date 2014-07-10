@@ -1,15 +1,11 @@
-.private_network .left-column {
-    vertical-align: top;
-    display: inline-block;
-    width: 30%;
+.zci--answer .private_network .record__cell__key {
+    padding: 0.4em;
 }
 
-.private_network .right-column {
-    vertical-align: top;
-    display: inline-block;
-    width: 70%;
+.zci--answer .private_network .record__cell__value {
+    padding: 0.4em;
 }
 
-.private_network .record__highlight:nth-of-type(2n) {
-	background: rgba(150,150,150,0.3);
+.zci--answer .private_network p {
+    padding: 0;
 }
