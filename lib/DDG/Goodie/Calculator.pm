@@ -82,24 +82,32 @@ my %named_operations = (
     'minus'       => '-',
     'plus'        => '+',
     'divided\sby' => '/',
-    'ln'          => 'log',                         # perl log() is natural log.
+    'ln'          => 'log',                               # perl log() is natural log.
     'squared'     => '**2',
 );
 
 my %named_constants = (
     dozen => 12,
-    e     => 2.71828182845904523536028747135266249,    # This should be computed.
-    pi    => pi,                                       # pi constant from Math::Trig
+    e     => 2.71828182845904523536028747135266249,       # This should be computed.
+    pi    => pi,                                          # pi constant from Math::Trig
     gross => 144,
     score => 20,
 );
 
 my $ored_constants = join('|', keys %named_constants);    # For later substitutions
 
+my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                     # Each octet should look like a number between 0 and 255.
+my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                     # There should be 4 of them separated by 3 dots.
+my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                           # 0-32
+my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;    # Looks like network notation, either CIDR or subnet mask
+
 handle query_nowhitespace => sub {
     my $results_html;
     my $results_no_html;
     my $query = $_;
+
+    return if ($query =~ /\b0x/);      # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+    return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
@@ -305,7 +313,8 @@ sub _well_formed_for_style_func {
         return (
             $number =~ /^(\d|\Q$thousands\E|\Q$decimal\E)+$/
               # Only contains things we understand.
-              && ($number !~ /\Q$thousands\E/ || ($number !~ /\Q$thousands\E\d{1,2}\b/ && $number !~ /\Q$thousands\E\d{4,}/ && $number !~ /^0\Q$thousands\E/))
+              && ($number !~ /\Q$thousands\E/
+                || ($number !~ /\Q$thousands\E\d{1,2}\b/ && $number !~ /\Q$thousands\E\d{4,}/ && $number !~ /^0\Q$thousands\E/))
               # You can leave out thousands breaks, but the ones you put in must be in the right place
               # which does not include following an initial 0.
               # Note that this does not confirm that they put all the 'required' ones in.
