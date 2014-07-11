@@ -121,7 +121,7 @@ handle remainder => sub {
             my @chars = shuffle split (//, $word);
             $w = join '', @chars;
         } while ($w eq $word);
-        return $word, html => html_output ("\"$word\" scrambled", $w);
+        return $word, html => html_output ("Sorry, we found no anagrams for \"$word\". We scrambled it for you:", $w);
     }
 
     my $response = join ', ', @output;
