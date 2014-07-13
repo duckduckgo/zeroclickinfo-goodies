@@ -30,7 +30,7 @@ sub html_output {
           ."</div>";
 }
 
-handle remainder => sub {    
+handle remainder => sub {
     s/^hash\s+(.*\S+)/$1/; # Remove 'hash' in queries like 'md5 hash this'
     s/^of\s+(.*\S+)/$1/; # Remove 'of' in queries like 'md5 hash of this'
     s/^"(.*)"$/$1/; # Remove quotes
