@@ -1,6 +1,7 @@
 package DDG::Goodie::ColorCodes;
 
 use DDG::Goodie;
+use Color::Library;
 use Convert::Color;
 use Convert::Color::Library;
 use Convert::Color::RGB8;
@@ -18,6 +19,11 @@ my %types = ( # hash of keyword => Convert::Color prefix
         cmyk    => 'cmyk',
         cmyb    => 'cmyk',
         );
+
+# Eliminate NBS_ISCC sub-dictionaries from our lookups.
+# They contain "idiosyncratic" color names (including 'email' in NBS_ISCC::M) which will
+# otherwise cause this to return answers for which no one was looking.
+my $color_dictionaries = join(',', grep { $_ !~ /^nbs-iscc-/ } map { $_->id } Color::Library->dictionaries);
 
 my $typestr = join '|', sort { length $b <=> length $a } keys %types;
 $typestr =~ s/([#\^\$\*\+\?])/\\$1/g;
@@ -103,7 +109,7 @@ handle matches => sub {
 
     return unless $type && $color;
 
-    eval { $color = join(',',Convert::Color::Library->new($color)->as_rgb8->hex); $type = 'rgb8'; };
+    eval { $color = join(',',Convert::Color::Library->new($color_dictionaries.'/'.$color)->as_rgb8->hex); $type = 'rgb8'; };
 
     my $col;
     eval { $col = Convert::Color->new("$type:$color"); };

@@ -1,4 +1,5 @@
 package DDG::Goodie::Anagram;
+# ABSTRACT: Returns an anagram based on the word and length of word supplied
 
 use DDG::Goodie;
 use List::Util 'shuffle'; 
@@ -16,7 +17,8 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "transformations";
 topics "words_and_games";
 
-attribution github => ["https://github.com/beardlybread", "beardlybread"];
+attribution github => ["https://github.com/loganom", 'loganom'],
+            github => ["https://github.com/beardlybread", "beardlybread"];
 
 handle remainder => sub {
 
@@ -26,47 +28,61 @@ handle remainder => sub {
     my @output;
     my $full_word = 1;
 
+    # when our input is "anagram word #"
     if(/^\s*([a-zA-Z]+)\s*([0-9]+)?\s*$/) {
-	my $word = lc($1);
-	$in = $word;
-	$n = length $word;
-	$n = $2 if ($2 && $2 <= $n && $2 > 0);
-	$full_word = 0 if $n != length($word);
+        # convert the word to lowercase
+        my $word = lc($1);
+        $in = $word;
+        $n = length $word;
+        # when the # entered is less than the length of the word
+        $n = $2 if ($2 && $2 <= $n && $2 > 0);
+        # set a control var when we aren't using the full word for the anagram
+        $full_word = 0 if $n != length($word);
 
-	my %freq;
-	for (split //, $word) {
-	    if ($freq{$_}) {
-		$freq{$_} += 1;
-	    } else {
-		$freq{$_} = 1;
-	    }
-	}
+        # split the word by character, counting frequency of each character
+        my %freq;
+        for (split //, $word) {
+            if ($freq{$_}) {
+                $freq{$_} += 1;
+            } else {
+                $freq{$_} = 1;
+            }
+        }
 
-	my $fileobj = share("words");
-	open my $INF, "<", $fileobj->stringify or return;
-	while (<$INF>) {
-	    if ($word and /^[$word]{$n}$/i) {
-		chomp;
-		next if lc($_) eq lc($word);
-		my %f;
-		for (split //, lc($_)) {
-		    if ($f{$_}) {
-			$f{$_} += 1;
-		    } else {
-			$f{$_} = 1;
-		    }
-		}
-		
-		my $it_works = 1;
-		for (keys %f) {
-		    if ($f{$_} >  $freq{$_}) {
-			$it_works = 0;
-			last;
-		    }
-		}
-		push(@output, $_) if $it_works;
-	    }
-	}
+        my $fileobj = share("words"); # list of words
+        open my $INF, "<", $fileobj->stringify or return; #read in the words file
+        while (<$INF>) { # while we have more input
+            # if $word has a value and the text input contains characters from our word and is the correct length
+            if ($word and /^[$word]{$n}$/i) {
+                chomp;
+                # skip if the word we see is the original word
+                next if lc($_) eq lc($word);
+                
+                # split the word by character, counting frequency of each character
+                # the words here come from the list of words file
+                my %f;
+                for (split //, lc($_)) {
+                    if ($f{$_}) {
+                        $f{$_} += 1;
+                    } else {
+                        $f{$_} = 1;
+                    }
+                }
+
+                # initialize it_works
+                my $it_works = 1;
+                for (keys %f) {
+                    if ($f{$_} >  $freq{$_}) {
+                    # if the frequency of a character in the lowercase word is greater than the original word
+                    # then it did not work. We are comparing words to see if they are a valid combination of letters.
+                        $it_works = 0;
+                        last;
+                    }
+                }
+                # if it works, push the output onto output array
+                push(@output, $_) if $it_works;
+            }
+        }
     }
 
     # copied verbatim from Randagram.pm
@@ -76,12 +92,12 @@ handle remainder => sub {
     # end Randagram.pm
 
     if($full_word) {
-	if(@output) {
-	    my $ana = "Anagram of \"$in\": ";
-	    $ana = "Anagrams of \"$in\": " if scalar(@output) > 1;
-	    return $ana.join(', ', @output);
-	}
-	return $garbledAnswer if $in;
+        if(@output) {
+            my $ana = "Anagram of \"$in\": ";
+            $ana = "Anagrams of \"$in\": " if scalar(@output) > 1;
+            return $ana.join(', ', @output);
+        }
+        return $garbledAnswer if $in;
     }
     return "Anagrams of \"$in\" of size $n: ".join(', ', @output) if @output;
     return $garbledAnswer if $in;
