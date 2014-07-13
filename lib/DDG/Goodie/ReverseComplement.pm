@@ -45,7 +45,10 @@ handle remainder => sub {
 
   #Reverse
   $sequence = reverse($sequence);
-
+  
+  #Return if we get no sequence
+  return if(!$sequence);
+  
   return $sequence, html => wrap_html('DNA reverse complement:', $sequence);
 };
 
