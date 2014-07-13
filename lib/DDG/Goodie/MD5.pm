@@ -30,24 +30,19 @@ sub html_output {
           ."</div>";
 }
 
-handle remainder => sub {
-    my $bool = s/^hash(\s*)(.*)$/$2/; # Remove 'hash' in queries like 'md5 hash of this'
-    # Check if we dont have any non-white space characters if hash is found
-    if ($bool && !($2)) {
-        # Encode "hash" with any white space if found and return value
-        my $str = md5_hex (encode "utf8", "hash".$1); 
-        return $str, html => html_output ($str, "hash".$1);
-    }
-    s/^of (.*)$/$1/; # Remove 'of ' in queries like 'md5 of this'
+handle remainder => sub {    
+    s/^hash\s+(.*\S+)/$1/; # Remove 'hash' in queries like 'md5 hash this'
+    s/^of\s+(.*\S+)/$1/; # Remove 'of' in queries like 'md5 hash of this'
     s/^"(.*)"$/$1/; # Remove quotes
-    if (/^\s*(.*)\s*$/) {
-        # Exit unless a string is found
-        return unless $1;
+    if (/^\s*(.*\S+)/) {
         # The string is encoded to get the utf8 representation instead of
         # perls internal representation of strings, before it's passed to
         # the md5 subroutine.
-        my $str = md5_hex (encode "utf8", $_);
-        return $str, html => html_output ($str, $_);
+        my $str = md5_hex (encode "utf8", $1);
+        return $str, html => html_output ($str, $1);
+    } else {
+        # Exit unless a string is found
+	return;
     }
 };
 

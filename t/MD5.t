@@ -18,6 +18,10 @@ ddg_goodie_test(
     'md5 of password' => test_zci('5f4dcc3b5aa765d61d8327deb882cf99', html=>qr/.*/),
     'md5sum of "this"' => test_zci('9e925e9341b490bfd3b4c4ca3b0c1ef2', html=>qr/.*/),
     'md5 of "this' => test_zci('53d3e72f097a74f6d439fa88b91d5a71', html=>qr/.*/),
+    'md5 hash' => test_zci('0800fc577294c34e0b28ad2839435945', html=>qr/.*/),
+    'md5 hash         ' => test_zci('0800fc577294c34e0b28ad2839435945', html=>qr/.*/),
+    'md5 hash of' => test_zci('8bf8854bebe108183caeb845c7676ae4', html=>qr/.*/),
+    'md5 hash of  password ' => test_zci('5f4dcc3b5aa765d61d8327deb882cf99', html=>qr/.*/),
 );
 
 done_testing;
