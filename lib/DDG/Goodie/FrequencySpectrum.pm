@@ -19,7 +19,7 @@ attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 
 #Regex to match a valid query
 # Used for trigger and later for parsing
-my $frequencySpectrumQR = qr/^(?<quantity>\d+([\.,]?\d+))\s?(?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)$/;
+my $frequencySpectrumQR = qr/^(?<quantity>[\d,]+(\.\d+)?)\s?(?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)$/;
 triggers query_raw => qr/$frequencySpectrumQR/i;
 
 #SI prefixes
@@ -116,7 +116,7 @@ handle query => sub {
     my $html;
 
     #Extract frequency and unit
-    if ($query =~ /^(?<quantity>\d+([\.,]?\d+))\s?(?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)$/i) {
+    if ($query =~ /$frequencySpectrumQR/i) {
         my $prefix = $+{factor} ? lc substr($+{factor}, 0, 1) : 0;
         my $factor = $+{factor} ? $factors{$prefix}{'multiplier'} : 1;
         my $quantity = $+{quantity};

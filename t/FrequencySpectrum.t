@@ -43,6 +43,12 @@ ddg_goodie_test(
         html => qr/visible.+red/
     ),
 
+    #Commas in number
+    '1,000,000.99 hz' => test_zci(
+        qr/radio.+MF/,
+        html => qr/radio.+MF/
+    ),
+
     #Should not trigger
     '1000.000..99 hz' => undef,
     '4 thz' => undef,
