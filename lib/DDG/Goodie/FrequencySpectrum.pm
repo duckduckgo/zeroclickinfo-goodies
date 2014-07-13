@@ -6,8 +6,6 @@ use SVG;
 use DDG::Goodie;
 use Lingua::EN::Inflect qw(WORDLIST);
 
-triggers end => "hz","khz","mhz","ghz","thz","hertz","kilohertz","gigahertz","megahertz","terahertz";
-
 zci answer_type => "frequency_spectrum";
 
 primary_example_queries '50 hz';
@@ -19,10 +17,30 @@ category 'physical_properties';
 topics 'science';
 attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 
-sub THOUSAND { 1000 };
-sub MILLION { 1000000 };
-sub BILLION { 1000000000 };
-sub TRILLION { 1000000000000 };
+#Regex to match a valid query
+# Used for trigger and later for parsing
+my $frequencySpectrumQR = qr/^(?<quantity>\d+([\.,]?\d+))\s?(?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)$/;
+triggers query_raw => qr/$frequencySpectrumQR/i;
+
+#SI prefixes
+my %factors = ( 
+    k => {
+        multiplier => 1e3,
+        cased => 'k'
+    },
+    m => {
+        multiplier => 1e6,
+        cased => 'M'
+    },
+    g => {
+        multiplier => 1e9,
+        cased => 'G'
+    },
+    t => {
+        multiplier => 1e12,
+        cased => 'T'
+    }
+);
 
 #Load the CSS
 #Much styling for the plots was taken from http://bl.ocks.org/mbostock/4061961
@@ -87,82 +105,36 @@ foreach (split /\n/, share("audible.txt")->slurp) {
 }
 
 #Query is intitially processed here. First normalize the query format,
-#normalize the units, and then calculate information about the frequency range.
+# normalize the units, and then calculate information about the frequency range.
 handle query => sub {
 
-    return unless $_ =~ m/^[\d,.]+\s\w+$/;
-    return unless my $freq = normalize_freq($_);
+    my $query = shift;
 
     my $freq_hz;
-    my $hz_abbrev;
     my $freq_formatted;
-  
-    if ($freq =~ m/^(.+?)\s(?:hz|hertz)$/i) {
-        $freq_hz = $1;
-    } elsif ($freq =~ m/^(.+?)\s(?:khz|kilohertz)$/i) {
-        $freq_hz = $1 * THOUSAND;
-    } elsif ($freq =~ m/^(.+?)\s(?:mhz|megahertz)$/i) {
-        $freq_hz = $1 * MILLION;
-    } elsif ($freq =~ m/^(.+?)\s(?:ghz|gigahertz)$/i) {
-        $freq_hz = $1 * BILLION;
-    } elsif ($freq =~ m/^(.+?)\s(?:thz|terahertz)$/i) {
-        $freq_hz = $1 * TRILLION;
+    my $answer;
+    my $html;
+
+    #Extract frequency and unit
+    if ($query =~ /^(?<quantity>\d+([\.,]?\d+))\s?(?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)$/i) {
+        my $prefix = $+{factor} ? lc substr($+{factor}, 0, 1) : 0;
+        my $factor = $+{factor} ? $factors{$prefix}{'multiplier'} : 1;
+        my $quantity = $+{quantity};
+        $quantity =~ s/,//g;
+        $freq_hz = $quantity * $factor;
+        my $hz_formatted = $prefix ? $factors{$prefix}{'cased'} . 'Hz' : 'Hz';
+        $freq_formatted = $quantity . ' ' . $hz_formatted;
+
     } else {
         return;
     }
-  
-    if ($freq_hz >= TRILLION){
-        $hz_abbrev = "THz";
-        $freq_formatted = $freq_hz / TRILLION;
-    } elsif ($freq_hz >= BILLION) {
-        $hz_abbrev = "GHz";
-        $freq_formatted = $freq_hz / BILLION;
-    } elsif ($freq_hz >= MILLION) {
-        $hz_abbrev = "MHz";
-        $freq_formatted = $freq_hz / MILLION;
-    } elsif ($freq_hz >= THOUSAND) {
-        $hz_abbrev = "kHz";
-        $freq_formatted = $freq_hz / THOUSAND;
-    } else {
-        $hz_abbrev = "Hz";
-        $freq_formatted = $freq_hz;
-    }
-  
-  $freq = $freq_formatted . " " . $hz_abbrev;
-  
-  return prepare_result($freq, $freq_hz);
-};
-
-#Normalize the frequency, attempting to discern between region differences
-#in number formatting. Filter out clearly invalid queries.
-sub normalize_freq {
-  my $freq = $_;
-
-  if($freq =~ /(\d+\.){2,}|([.]{2,})|([,]{2,})/) {
-      return;
-  }
-
-  # Remove commas.
-  $freq =~ s/,//g;
-
-  return $freq;
-};
-
-#Take the frequency and look at which ranges it falls in.
-#Build up the result string.
-sub prepare_result {
-
-    (my $freq, my $freq_hz) = @_;
-
-    my $answer;
-    my $html;
 
     #Look for a match in the electromagnetic spectrum
     my $emMatch = match_electromagnetic($freq_hz);
     if ($emMatch) {
 
-        my $emDescription = $freq . ' is a ' . $$emMatch{'subspectrum'} . ' frequency' . $$emMatch{'description'} . '.';
-    
+        my $emDescription = $freq_formatted . ' is a ' . $$emMatch{'subspectrum'} . ' frequency' . $$emMatch{'description'} . '.';
+
         $answer .= $emDescription;
         $html .= $emDescription;
 
@@ -200,7 +172,7 @@ sub prepare_result {
     my @audibleMatches = @{match_audible($freq_hz)};
     if (@audibleMatches) {
 
-        my $audibleDescription = $freq . ' is';
+        my $audibleDescription = $freq_formatted . ' is';
         $audibleDescription .= ' also' if $emMatch;
         $audibleDescription .= ' an audible frequency which can be produced by ';
 
@@ -291,7 +263,7 @@ sub generate_panel {
             my $unit = ($width - $leftGutter - $rightGutter) / (log10($rangeMax) - log10($rangeMin));
             return $leftGutter + ((log10($value) - log10($rangeMin)) * $unit);
         };
-    
+
     } else {
         $transform = sub {
             my $value = shift;
@@ -318,9 +290,9 @@ sub generate_panel {
     if ($log10) {
         @ticks = map { 10 ** $_ } int(log10($rangeMin)) .. int(log10($rangeMax));
 
-    #If we're using a linear scale, put a tick at every
-    # integer multiple at the order of magnitude of
-    # range max 
+        #If we're using a linear scale, put a tick at every
+        # integer multiple at the order of magnitude of
+        # range max 
     } else {
         my $order = 10 ** int(log10($rangeMax));
         @ticks = map { $_ * $order } int($rangeMin / $order) + 1 .. int($rangeMax / $order);

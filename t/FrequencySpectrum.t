@@ -33,6 +33,16 @@ ddg_goodie_test(
         html => qr/radio.+MF/
     ),
 
+    #No whitespace between number and unit
+    '50hz' => test_zci(
+        qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
+        html => qr/radio/
+    ),
+    '400terahertz' => test_zci(
+        qr/visible.+red/,
+        html => qr/visible.+red/
+    ),
+
     #Should not trigger
     '1000.000..99 hz' => undef,
     '4 thz' => undef,
