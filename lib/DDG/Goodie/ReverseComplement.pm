@@ -29,7 +29,7 @@ handle remainder => sub {
   $sequence = uc($sequence);
   #Return nothing if sequence does not contains characters or contains characters
   # other than DNA/RNA bases or standard IUPAC ambiguity codes
-  return if (!$sequence || $sequence =~ /[^ATCGURYKMSWBVDHN]/);
+  return unless ($sequence =~ /^[ATCGURYKMSWBVDHN]+$/);
   #DNA contains thymine (T) but not uracil (U);
   # RNA contains U but not T (with some extremely
   # rare exceptions). Hence, if the sequence
