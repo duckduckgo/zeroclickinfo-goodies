@@ -45,6 +45,13 @@ sub getParameter {
 	return 0;
 }
 
+my $markup = scalar share("markup.html")->slurp;
+
+sub makehtml {
+	my ($html, $svg) = @_;
+	return $markup.$svg.'</svg><div id="zci--geometry-formulas"><div>'.$html.'</div></div>';
+}
+
 #schema: <name> => [<trigger>, <symbol>]
 my %formulas = (
 	'volume' => ['volume', 'V'],
@@ -53,10 +60,13 @@ my %formulas = (
 	'perimeter' => ['perimeter|umfang', 'u'],
 	'diagonal' => ['diagonal', 'e']
 );
-#schema: <name> => [<trigger>, [hash]<formulas>, [sub]<parameter>]
+#schema: <name> => [<trigger>, svg, [hash]<formulas>, [sub]<parameter>]
 #schema of <formula>: <name> => [string representing formula, html representing formula, sub calculating formula]
 my %shapes = (
-	'square' => ['square|quadrat', {
+	'square' => ['square|quadrat',
+		'<path d="M 55,20 h 70 v 70 h -70 z" class="fill" data-formula="A"></path>
+			<path d="M 55,20 h 70 v 70 h -70 z" class="stroke" data-formula="u"></path>
+			<path d="M 55,20 l 70,70" class="stroke special" data-formula="e"></path>', {
 		'area' => ['a'.chr(178), 'a<sup>2</sup>', sub {
 			return $_[0] ** 2;
 		}],
@@ -69,7 +79,10 @@ my %shapes = (
 	}, sub {
 		return getParameter('a|length|size', $_[0]);
 	}],
-	'rect' => ['rect|rechteck', {
+	'rect' => ['rect|rechteck',
+		'<path d="M 20,20 h 100 v 70 h -100 z" class="fill" data-formula="A"></path>
+			<path d="M 20,20 h 100 v 70 h -100 z" class="stroke" data-formula="u"></path>
+			<path d="M 20,20 l 100,70" class="stroke special" data-formula="e"></path>', {
 		'area' => ['ab', 'ab', sub {
 			return $_[0] * $_[1];
 		}],
@@ -85,7 +98,9 @@ my %shapes = (
 		$b = getParameter('b', $_[0]) unless $b;
 		return ($a, $b) if $a and $b;
 	}],
-	'equilateral triangle' => ['equilateral triangle|gleichseitiges dreieck', {
+	'equilateral triangle' => ['equilateral triangle|gleichseitiges dreieck',
+		'<path d="M 70,20 l 40,70 h -80 z" class="stroke" data-formula="u"></path>
+			<path d="M 70,20 l 40,70 h -80 z" class="fill" data-formula="A"></path>', {
 		'area' => ['(a'.chr(178).'*'.chr(8730).'3)/4', '(a<sup>2</sup>*&radic;3)/4', sub {
 			return $_[0] / 4 * sqrt(3);
 		}],
@@ -95,7 +110,9 @@ my %shapes = (
 	}, sub {
 		return getParameter('a|length|size', $_[0]);
 	}],
-	'circle' => ['circle|kreis', {
+	'circle' => ['circle|kreis',
+		'<circle cx="70" cy="55" r="35" class="fill" data-formula="A"></circle>
+			<circle cx="70" cy="55" r="35" class="stroke" data-formula="u"></circle>', {
 		'area' => [chr(960).'r'.chr(178), '&pi;r<sup>2</sup>', sub {
 			return pi * $_[0] ** 2;
 		}],
@@ -107,7 +124,12 @@ my %shapes = (
 		$r = getParameter('diameter|d', $_[0]) / 2 unless $r;
 		return $r if $r;
 	}],
-	'cube' => ['cube|würfel', {
+	'cube' => ['cube|würfel',
+		'<path d="M 37,88 v -44 l 22,-22 h 44 v 44 l -22 22 z" class="fill" data-formula="A"></path>
+			<path d="M 37,88 l 22,-22 v -44 v 44 h 44" class="stroke backface"></path>
+			<path d="M 37,44 l 66,22" class="stroke special" data-formula="e"></path>
+			<path d="M 37,88 v -44 l 22,-22 h 44 v 44 l -22 22 z" class="fill" data-formula="V"></path>
+			<path d="M 37,44 h 44 v 44 h -44 v -44 l 22,-22 h 44 v 44 l -22,22 v -44 l 22,-22" class="stroke"></path>', {
 		'volume' => ['a'.chr(179), 'a<sup>3</sup>', sub {
 			return $_[0] ** 3;
 		}],
@@ -120,11 +142,19 @@ my %shapes = (
 	}, sub {
 		return getParameter('a|length|size', $_[0]);
 	}],
-	'cuboid' => ['cuboid|quader', {
+	'cuboid' => ['cuboid|quader',
+		'<path d="M 20,90 v -50 l 20,-20 h 80 v 50 l -20 20 z" class="fill" data-formula="A"></path>
+			<path d="M 20,90 l 20,-20 v -50 v 50 h 80" class="stroke backface"></path>
+			<path d="M 20,40 l 100,30" class="stroke special" data-formula="e"></path>
+			<path d="M 20,90 v -50 l 20,-20 h 80 v 50 l -20 20 z" class="fill" data-formula="V"></path>
+			<path d="M 20,40 h 80 v 50 h -80 v -50 l 20,-20 h 80 v 50 l -20,20 v -50 l 20,-20" class="stroke"></path>', {
 		'volume' => ['abc', 'abc',  sub {
 			return $_[0] * $_[1] * $_[2];
 		}],
 		'surface' => ['2(ab + ac + bc)', '2(ab + ac + bc)', sub {
+			return 2 * ($_[0] * $_[1] + $_[0] * $_[2] + $_[1] * $_[2]);
+		}],
+		'diagonal' => [chr(8730).'(a'.chr(178).' + b'.chr(178).' + c'.chr(178).')', '&radic;(a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup>)', sub {
 			return 2 * ($_[0] * $_[1] + $_[0] * $_[2] + $_[1] * $_[2]);
 		}]
 	}, sub {
@@ -134,7 +164,11 @@ my %shapes = (
 		$c = getParameter('c', $_[0]) unless $c;
 		return ($a, $b, $c) if $a and $b and $c;
 	}],
-	'ball' => ['ball|kugel', {
+	'ball' => ['ball|kugel',
+		'<circle class="fill" cx="70" cy="55" r="35" data-formula="A"></circle>
+			<path d="M 35,55 a 35 10 0 0 1 70,0" class="stroke backface"></path>
+			<circle class="fill" cx="70" cy="55" r="35" data-formula="V"></circle>
+			<path d="M 35,55 a 35 10 0 1 0 70,0 a 35 35 0 0 0 -70,0 a 35 35 0 0 0 70,0" class="stroke"></path>', {
 		'volume' => ['4/3'.chr(960).'r'.chr(179), '4/3&pi;r<sup>3</sup>', sub {
 			return 4 / 3 * pi * $_[0] ** 3;
 		}],
@@ -154,11 +188,11 @@ handle remainder => sub {
 			if($_ =~ /$shape[0][0]/i){
 				#is it the shape wanted?
 				my ($text, $html) = '';
-				my @parameter = $shape[0][2]($_);
+				my @parameter = $shape[0][3]($_);
 				#get the parameter
-				while(my($type, @formula) = each $shape[0][1]){
+				while(my($type, @formula) = each $shape[0][2]){
 					#is it the formula wanted?
-			 	if($_ =~ /$formulas{$type}[0]/i){
+					if($_ =~ /$formulas{$type}[0]/i){
 						#Yes, return the formula symbol + formula
 						$text = $formulas{$type}[1].' = '.$formula[0][0];
 						$html = $formulas{$type}[1].' = '.$formula[0][1];
@@ -168,33 +202,33 @@ handle remainder => sub {
 							$html .= ' = '.$formula[0][2](@parameter);
 						}
 						#resets the iterators
-						keys $shape[0][1];
+						keys $shape[0][2];
 						keys %shapes;
-						return $text, html => $html;
+						return $text, html => makehtml($html, $shape[0][1]);
 					}
 					#No, append the formula symbol + formula
 					if($text){
 						$text .= ', ';
-						$html .= '<br />';
+						$html .= '</div><div>';
 					}
 					$text .= $formulas{$type}[1].' = '.$formula[0][0];
 					$html .= $formulas{$type}[1].' = '.$formula[0][1];
-					# + result if paremters are defined
+					# + result if parameters are defined
 					if($parameter[0] != 0){
-					 $text .= ' = '.$formula[0][2](@parameter);
-					 $html .= ' = '.$formula[0][2](@parameter);
-				 }
+						$text .= ' = '.$formula[0][2](@parameter);
+						$html .= ' = '.$formula[0][2](@parameter);
+					}
 					#to $result
 				}
 				#resets the iterators
-				keys $shape[0][1];
+				keys $shape[0][2];
 				keys %shapes;
 				#$result should be something like: 'A = ab, u = 2(a + b), e = chr(8730).'a'.chr(178).'+b'.chr(178)' (query: geometry rect)
-				return $text, html => $html;
+				return $text, html => makehtml($html, $shape[0][1]);
 			}
 		}
 	}
 
-	return '', html => '<div>Lorem Ipsum</div><svg width="100" height="100"><rect x="0" y="0" width="100" height="100"></rect></svg><span>foobar</span>';
+	return;
 };
 1;

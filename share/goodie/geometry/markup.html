@@ -1,0 +1,44 @@
+<style type="text/css">
+	#zci--geometry-svg{float: right; fill: transparent}
+	#zci--geometry-svg:hover text{fill: black; text-anchor: middle}
+	#zci--geometry-svg .stroke{stroke: black; stroke-width: 1.8; stroke-linejoin: round}
+	#zci--geometry-svg .stroke.backface{stroke-width: 1}
+	#zci--geometry-svg .stroke.special{stroke-dasharray: 5,5}
+	#zci--geometry-svg .stroke[data-formula]:hover, #zci--geometry-svg .stroke.hover{stroke: #1168CE}
+	#zci--geometry-svg .stroke.special:hover, #zci--geometry-svg .stroke.special.hover{stroke-dasharray: none}
+	#zci--geometry-svg .fill:hover, #zci--geometry-svg .fill.hover{fill: #4C96EE}
+
+	#zci--geometry-formulas div:hover, #zci--geometry-formulas div.hover{color: #1168CE}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	//get all formulas
+	$("#zci--geometry-formulas div").each(function(){
+		//get the svg shape (it has the data-formula attribute with the first letter of the formula)
+		var svg = $("#zci--geometry-svg [data-formula=" + $(this).text()[0] + "]");
+		var formula = this;
+		//No svg shape for this formula
+		if(!svg.length) return;
+		//this is for the double-hover effect
+		//if the formula is hovered, the class hover is added to the svg shape
+		$(this).hover(function(){
+			svg.each(function(){
+				this.classList.add("hover");
+			});
+		}, function(){
+			svg.each(function(){
+				this.classList.remove("hover");
+			});
+		});
+
+		//if the svg shape is hovered, the class hover is added to the formula
+		svg.hover(function(){
+			formula.classList.add("hover");
+		}, function(){
+			formula.classList.remove("hover");
+		});
+	});
+});
+</script>
+<!-- Note: this SVG tag is closed by the goodie -->
+<svg id="zci--geometry-svg" width="140" height="110">
