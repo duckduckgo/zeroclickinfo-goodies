@@ -14,7 +14,7 @@ attribution github  => ["DavidMascio"];
 zci is_cached => 1;
 zci answer_type => "lowercase";
 
-triggers start => 'lowercase', 'lower case';
+triggers start => 'lowercase', 'lower case', 'lc', 'strtolower', 'tolower';
 
 handle remainder => sub {
     return lc $_ if $_;
