@@ -19,6 +19,16 @@ ddg_goodie_test(
         test_zci('foo'),
     'lowercase john Doe' =>
         test_zci('john doe'),
+    'lowercase GitHub' =>
+        test_zci('github'),
+    'lower case GitHub' =>
+        test_zci('github'),
+    'lc GitHub' =>
+        test_zci('github'),
+    'strtolower GitHub' =>
+        test_zci('github'),
+    'tolower GitHub' =>
+        test_zci('github'),
 );
 
 done_testing;
