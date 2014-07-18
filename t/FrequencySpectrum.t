@@ -52,6 +52,10 @@ ddg_goodie_test(
     #Should not trigger
     '1000.000..99 hz' => undef,
     '4 thz' => undef,
+    '15 kilo hertz' => undef,
+    '100,123 jiggahz' => undef,
+    'hertz' => undef,
+    'terahz' => undef,
 );
 
 done_testing;
