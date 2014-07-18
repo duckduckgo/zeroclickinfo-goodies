@@ -31,16 +31,18 @@ sub html_output {
 }
 
 handle remainder => sub {
-    s/^of (.*)$/$1/; # Remove 'of ' in queries like 'md5 of this'
+    s/^hash\s+(.*\S+)/$1/; # Remove 'hash' in queries like 'md5 hash this'
+    s/^of\s+(.*\S+)/$1/; # Remove 'of' in queries like 'md5 hash of this'
     s/^"(.*)"$/$1/; # Remove quotes
-    if (/^\s*(.*)\s*$/) {
-        # Exit unless a string is found
-        return unless $1;
+    if (/^\s*(.*\S+)/) {
         # The string is encoded to get the utf8 representation instead of
         # perls internal representation of strings, before it's passed to
         # the md5 subroutine.
         my $str = md5_hex (encode "utf8", $1);
         return $str, html => html_output ($str, $1);
+    } else {
+        # Exit unless a string is found
+	return;
     }
 };
 
