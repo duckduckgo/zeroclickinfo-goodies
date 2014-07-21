@@ -5,6 +5,7 @@ use strict;
 use SVG;
 use DDG::Goodie;
 use Lingua::EN::Inflect qw(WORDLIST);
+use Math::SigFigs qw(:all);
 
 zci answer_type => "frequency_spectrum";
 
@@ -19,8 +20,12 @@ attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 
 #Regex to match a valid query
 # Used for trigger and later for parsing
-my $frequencySpectrumQR = qr/^(?<quantity>[\d,]+(\.\d+)?)\s?(?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)$/;
+my $frequencySpectrumQR = qr/^(?<quantity>[\d,]+(\.\d+)?)\s?((?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)|(?<wavelength>nanom(et(er|re)s?)?|nm))$/;
 triggers query_raw => qr/$frequencySpectrumQR/i;
+
+#The distance light travels in a vacuum in one second,
+# expressed in nanometres
+my $nanometreLightSecond = 2.99792458 * (10 ** 17);
 
 #SI prefixes
 my %factors = ( 
@@ -117,13 +122,25 @@ handle query => sub {
 
     #Extract frequency and unit
     if ($query =~ /$frequencySpectrumQR/i) {
-        my $prefix = $+{factor} ? lc substr($+{factor}, 0, 1) : 0;
-        my $factor = $+{factor} ? $factors{$prefix}{'multiplier'} : 1;
+
         my $quantity = $+{quantity};
         $quantity =~ s/,//g;
-        $freq_hz = $quantity * $factor;
-        my $hz_formatted = $prefix ? $factors{$prefix}{'cased'} . 'Hz' : 'Hz';
-        $freq_formatted = $quantity . ' ' . $hz_formatted;
+
+        #If wavelength provided, convert to frequency in hz
+        if ($+{wavelength}) {
+            $freq_hz = $nanometreLightSecond / $quantity;
+            my $freq_thz = FormatSigFigs($freq_hz / $factors{'t'}{'multiplier'}, 5);
+            $freq_formatted = "$freq_thz THz (wavelength $quantity nm)";
+
+        #If frequency provided, convert to hz
+        } else {
+            my $prefix = $+{factor} ? lc substr($+{factor}, 0, 1) : 0;
+            my $factor = $+{factor} ? $factors{$prefix}{'multiplier'} : 1;
+            $freq_hz = $quantity * $factor;
+            my $hz_formatted = $prefix ? $factors{$prefix}{'cased'} . 'Hz' : 'Hz';
+            $freq_formatted = $quantity . ' ' . $hz_formatted;
+        }
+
 
     } else {
         return;
@@ -132,6 +149,12 @@ handle query => sub {
     #Look for a match in the electromagnetic spectrum
     my $emMatch = match_electromagnetic($freq_hz);
     if ($emMatch) {
+
+        #Don't show result for wavelengths outside the
+        # visual spectrum
+        if ($+{wavelength}) {
+            return unless $$emMatch{'subspectrum'} eq 'visible light';
+        }
 
         my $emDescription = $freq_formatted . ' is a ' . $$emMatch{'subspectrum'} . ' frequency' . $$emMatch{'description'} . '.';
 

@@ -49,13 +49,47 @@ ddg_goodie_test(
         html => qr/radio.+MF/
     ),
 
-    #Should not trigger
+    #Can you test with all the colours of the wind?
+    '650 nm' => test_zci(
+        qr/visible.+red/,
+        html => qr/visible.+red/
+    ),
+    '610 nanometers' => test_zci(
+        qr/visible.+orange/,
+        html => qr/visible.+orange/
+    ),
+    '580 nanometres' => test_zci(
+        qr/visible.+yellow/,
+        html => qr/visible.+yellow/
+    ),
+    '536 nanometer' => test_zci(
+        qr/visible.+green/,
+        html => qr/visible.+green/
+    ),
+    '478.1 nm' => test_zci(
+        qr/visible.+blue/,
+        html => qr/visible.+blue/
+    ),
+    '380.000000000 nanometres' => test_zci(
+        qr/visible.+violet/,
+        html => qr/visible.+violet/
+    ),
+
+    #Only visible light wavelengths should trigger 
+    '0.1 nm' => undef,
+    '100 nm' => undef,
+    '800 nm' => undef,
+    '100000 nm' => undef,
+
+    #Malformed frequencies/wavelengths should not trigger
     '1000.000..99 hz' => undef,
     '4 thz' => undef,
     '15 kilo hertz' => undef,
     '100,123 jiggahz' => undef,
     'hertz' => undef,
     'terahz' => undef,
+    '10000 nm' => undef,
+    '600 nmeters' => undef,
 );
 
 done_testing;
