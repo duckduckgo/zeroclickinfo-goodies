@@ -120,6 +120,8 @@ handle query => sub {
     my $answer;
     my $html;
 
+    my $wavelength;
+
     #Extract frequency and unit
     if ($query =~ /$frequencySpectrumQR/i) {
 
@@ -128,7 +130,8 @@ handle query => sub {
 
         #If wavelength provided, convert to frequency in hz
         if ($+{wavelength}) {
-            $freq_hz = $nanometreLightSecond / $quantity;
+            $wavelength = $quantity;
+            $freq_hz = $nanometreLightSecond / $wavelength;
             my $freq_thz = FormatSigFigs($freq_hz / $factors{'t'}{'multiplier'}, 5);
             $freq_formatted = "$freq_thz THz (wavelength $quantity nm)";
 
@@ -152,7 +155,7 @@ handle query => sub {
 
         #Don't show result for wavelengths outside the
         # visual spectrum
-        if ($+{wavelength}) {
+        if ($wavelength) {
             return unless $$emMatch{'subspectrum'} eq 'visible light';
         }
 
@@ -184,7 +187,14 @@ handle query => sub {
         }
 
         #Add a marker for the query frequency
-        $plot = add_marker($plot, $transform, $freq_hz, $tracks);
+        # Colour the marker if frequency is in visible spectrum
+        my $markerRGB;
+        if ($$emMatch{'subspectrum'} eq 'visible light') {
+            $markerRGB = frequency_to_RGB($freq_hz);
+        } else {
+            $markerRGB = '#000';
+        }
+        $plot = add_marker($plot, $transform, $freq_hz, $tracks, $markerRGB);
 
         #Generate the SVG
         $html .= $plot->xmlify;
@@ -227,7 +237,7 @@ handle query => sub {
         }
 
         #Add a marker for the query frequency
-        $plot = add_marker($plot, $transform, $freq_hz, scalar @audibleMatches);
+        $plot = add_marker($plot, $transform, $freq_hz, scalar @audibleMatches, '#000');
 
         #Generate the SVG
         $html .= $plot->xmlify;
@@ -463,7 +473,7 @@ sub add_major_range {
 #Add a marker (vertical line) to a plot panel
 sub add_marker {
 
-    (my $svg, my $transform, my $markerValue, my $tracks) = @_;
+    (my $svg, my $transform, my $markerValue, my $tracks, my $RGB) = @_;
 
     #Add marker
     $svg->group(
@@ -473,6 +483,7 @@ sub add_marker {
         x2 => $transform->($markerValue) . '%', 
         y1 => 3,
         y2 => (25 * $tracks) - 3,
+        style => { 'stroke' => $RGB },
     );
 
     return $svg;
@@ -493,6 +504,54 @@ sub log10 {
 sub append_css {
     my $html = shift;
     return "<style type='text/css'>$css</style>$html";
+}
+
+#Convert a visible light wavelength in nanometers to RGB
+# Adapted from http://www.efg2.com/Lab/ScienceAndEngineering/Spectra.htm
+sub frequency_to_RGB {
+
+    my $frequency = shift;
+    my $wavelength = $nanometreLightSecond / $frequency;
+    my @RGB;
+
+    if ($wavelength ge 380 and $wavelength le 439) {
+        @RGB = (
+            -($wavelength - 440) / (440 - 380),
+            0,
+            1,
+        );
+    } elsif ($wavelength ge 440 and $wavelength le 489) {
+        @RGB = (
+            0,
+            ($wavelength - 440) / (490 - 440),
+            1,
+        );
+    } elsif ($wavelength ge 490 and $wavelength le 509) {
+        @RGB = (
+            0,
+            1,
+            -($wavelength - 510) / (510 - 490),
+        );
+    } elsif ($wavelength ge 510 and $wavelength le 579) {
+        @RGB = (
+            ($wavelength - 510) / (580 - 510),
+            1,
+            0,
+        );
+    } elsif ($wavelength ge 580 and $wavelength le 644) {
+        @RGB = (
+            1,
+            -($wavelength - 645) / (645 - 580),
+            0,
+        );
+    } elsif ($wavelength ge 645 and $wavelength le 780) {
+        @RGB = (1, 0, 0);
+    } else {
+        @RGB = (0, 0, 0);
+    }
+
+    #Convert to hex
+    return '#' . join('', map { sprintf "%02x", $_ * 255 } @RGB);
 }
 
 1;
