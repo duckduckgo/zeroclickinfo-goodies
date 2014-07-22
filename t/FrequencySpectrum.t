@@ -43,6 +43,17 @@ ddg_goodie_test(
         html => qr/visible.+red/
     ),
 
+    #Mixed case
+    '400 THz' => test_zci(
+        qr/visible.+red/,
+        html => qr/visible.+red/
+    ),
+
+    '1000 HZ' => test_zci(
+        qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
+        html => qr/radio.+/
+    ),
+
     #Commas in number
     '1,000,000.99 hz' => test_zci(
         qr/radio.+MF/,

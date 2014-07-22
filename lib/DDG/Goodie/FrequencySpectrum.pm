@@ -20,7 +20,7 @@ attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 
 #Regex to match a valid query
 # Used for trigger and later for parsing
-my $frequencySpectrumQR = qr/^(?<quantity>[\d,]+(\.\d+)?)\s?((?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)|(?<wavelength>nanom(et(er|re)s?)?|nm))$/;
+my $frequencySpectrumQR = qr/^(?<quantity>[\d,]+(\.\d+)?)\s?((?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)|(?<wavelength>nanom(et(er|re)s?)?|nm))$/i;
 triggers query_raw => qr/$frequencySpectrumQR/i;
 
 #The distance light travels in a vacuum in one second,
@@ -506,7 +506,7 @@ sub append_css {
     return "<style type='text/css'>$css</style>$html";
 }
 
-#Convert a visible light wavelength in nanometers to RGB
+#Convert a visible light frequency in Hz to RGB
 # Adapted from http://www.efg2.com/Lab/ScienceAndEngineering/Spectra.htm
 sub frequency_to_RGB {
 
@@ -514,37 +514,37 @@ sub frequency_to_RGB {
     my $wavelength = $nanometreLightSecond / $frequency;
     my @RGB;
 
-    if ($wavelength ge 380 and $wavelength le 439) {
+    if (($wavelength >= 380) && ($wavelength < 440)) {
         @RGB = (
             -($wavelength - 440) / (440 - 380),
             0,
             1,
         );
-    } elsif ($wavelength ge 440 and $wavelength le 489) {
+    } elsif (($wavelength >= 440) && ($wavelength < 490)) {
         @RGB = (
             0,
             ($wavelength - 440) / (490 - 440),
             1,
         );
-    } elsif ($wavelength ge 490 and $wavelength le 509) {
+    } elsif (($wavelength >= 490) && ($wavelength < 510)) {
         @RGB = (
             0,
             1,
             -($wavelength - 510) / (510 - 490),
         );
-    } elsif ($wavelength ge 510 and $wavelength le 579) {
+    } elsif (($wavelength >= 510) && ($wavelength < 580)) {
         @RGB = (
             ($wavelength - 510) / (580 - 510),
             1,
             0,
         );
-    } elsif ($wavelength ge 580 and $wavelength le 644) {
+    } elsif (($wavelength >= 580) && ($wavelength < 645)) {
         @RGB = (
             1,
             -($wavelength - 645) / (645 - 580),
             0,
         );
-    } elsif ($wavelength ge 645 and $wavelength le 780) {
+    } elsif (($wavelength >= 645) && ($wavelength <= 780)) {
         @RGB = (1, 0, 0);
     } else {
         @RGB = (0, 0, 0);
