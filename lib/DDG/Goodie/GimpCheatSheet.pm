@@ -16,13 +16,13 @@ topics "computing";
 primary_example_queries "gimp help", "gimp cheat sheet", "gimp shortcuts";
 
 triggers startend => (
-    "gimp cheat sheet", 
-    "gimp cheatsheet", 
-    "gimp help",
-    "gimp quick reference",
-    "gimp reference",
-    "gimp shortcut",
-    "gimp shortcuts"
+    "gimp cheat sheet", "cheat sheet gimp",
+    "gimp cheatsheet", "cheatsheet gimp",
+    "gimp help", "help gimp",
+    "gimp quick reference", "quick reference gimp",
+    "gimp reference", "reference gimp",
+    "gimp shortcut", "shortcut gimp",
+    "gimp shortcuts", "shortcuts gimp"
 );
 
 attribution github  => ["elebow", "Eddie Lebow"];
