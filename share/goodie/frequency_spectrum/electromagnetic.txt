@@ -9,7 +9,8 @@ radio	30000000	299999999	 in the VHF band used by FM broadcasts, televisions, am
 radio	300000000	2999999999	 in the UHF band used by televisions, cordless phones, cell phones, pagers, walkie-talkies, and satellites
 radio	3000000000	29999999999	 in the SHF band used by microwave ovens, wireless LANs, cell phones, and satellites
 radio	30000000000	299999999999	 in the EHF band used by radio telescopes, security screening systems, and point-to-point high-bandwidth devices
-radio	300000000000	3000000000000	 in the THF band used by satellites and radio telescopes
+radio	300000000000	2999999999999	 in the THF band used by satellites and radio telescopes
+infrared	3000000000000	 399999999999999	. Infrared light is found in sunlight and has a variety of industrial, commercial, scientific and household uses
 visible light	400000000000000	479999999999999	 corresponding to the color red
 visible light	480000000000000	504999999999999	 corresponding to the color orange
 visible light	505000000000000	524999999999999	 corresponding to the color yellow

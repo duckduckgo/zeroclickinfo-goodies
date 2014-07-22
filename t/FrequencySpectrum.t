@@ -90,16 +90,14 @@ ddg_goodie_test(
     '0.1 nm' => undef,
     '100 nm' => undef,
     '800 nm' => undef,
-    '100000 nm' => undef,
+    '10000 nm' => undef,
 
     #Malformed frequencies/wavelengths should not trigger
     '1000.000..99 hz' => undef,
-    '4 thz' => undef,
     '15 kilo hertz' => undef,
     '100,123 jiggahz' => undef,
     'hertz' => undef,
     'terahz' => undef,
-    '10000 nm' => undef,
     '600 nmeters' => undef,
 );
 

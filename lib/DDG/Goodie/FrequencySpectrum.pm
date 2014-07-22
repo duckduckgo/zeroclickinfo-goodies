@@ -72,28 +72,33 @@ foreach (split /\n/, share("electromagnetic.txt")->slurp) {
 my %emSpectrum = (
     'radio' => {
         min => 0, 
-        max => 3000000000000,
+        max => 2999999999999,
         track => 1
+    },
+    'infrared' => {
+        min => 3000000000000,
+        max => 399999999999999,
+        track => 2
     },
     'visible light' => {
         min => 400000000000000, 
         max => 800000000000000,
-        track => 2
+        track => 3
     },
     'ultraviolet' => {
         min => 749500000000000, 
         max => 30000000000000000,
-        track => 3
+        track => 4
     },
     'x-ray' => {
         min => 30000000000000000, 
         max => 30000000000000000000,
-        track => 4
+        track => 5
     },
     'gamma' => {
         min => 30000000000000000000, 
         max => 3000000000000000000000000,
-        track => 5
+        track => 6
     }
 );
 
