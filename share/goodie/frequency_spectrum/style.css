@@ -5,46 +5,46 @@
     padding-bottom: .25em;
 }
 
-.zci--plot {
+.zci--conversions {
     width: 90%;
     height: 50;
 }
 
-.plot_panel {
+.zci--conversions .plot_panel {
     fill: #ccc;
 }
 
-.x_axis_tick {
+.zci--conversions .x_axis_tick {
     stroke: #aaa;
 }
 
-.x_axis_text {
+.zci--conversions .x_axis_text {
     font-size: 0.7em;
     fill: #888;
 }
 
-.x_axis_label {
+.zci--conversions .x_axis_label {
     font-size: 0.8em;
     fill: #888;
 }
 
-.x_axis_gridline {
+.zci--conversions .x_axis_gridline {
     stroke: #eee;
 }
 
-.major_range {
+.zci--conversions .major_range {
     fill: #4682B4;
 }
 
-.major_range_label {
+.zci--conversions .major_range_label {
     font-size: 0.7em;
 }
 
-.minor_range {
+.zci--conversions .minor_range {
     fill: #80C4DE;
 }
 
-.marker {
+.zci--conversions .marker {
     stroke-width: 2px;
     stroke-opacity: 0.5;
 }
