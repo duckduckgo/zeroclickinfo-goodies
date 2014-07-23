@@ -20,7 +20,17 @@ attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 
 #Regex to match a valid query
 # Used for trigger and later for parsing
-my $frequencySpectrumQR = qr/^(?<quantity>[\d,]+(\.\d+)?)\s?((?<factor>k|kilo|m|mega|g|giga|t|tera)?(?:hz|hertz)|(?<wavelength>nanom(et(er|re)s?)?|nm))$/i;
+my $frequencySpectrumQR = qr/
+    ^(?<quantity>[\d,]+(\.\d+)?)                #Number, maybe with commas, maybe a decimal
+    \s?                                         #Optional space between number and unit
+    (                                           #Unit can be frequency (Hz) or wavelength (nm)
+        (?<factor>k|kilo|m|mega|g|giga|t|tera)? #Optional SI prefix for Hz
+        (?:hz|hertz)                            #Hz
+    |
+        (?<wavelength>nanom(et(er|re)s?)?|nm)   #nm
+    )
+$/ix;
+
 triggers query_raw => qr/$frequencySpectrumQR/i;
 
 #The distance light travels in a vacuum in one second,
@@ -69,15 +79,16 @@ foreach (split /\n/, share("electromagnetic.txt")->slurp) {
 }
 
 #Frequency ranges for EM subspectra
+# Hardcoded to control graphical layout
 my %emSpectrum = (
     'radio' => {
         min => 0, 
-        max => 2999999999999,
+        max => 3000000000000,
         track => 1
     },
     'infrared' => {
         min => 3000000000000,
-        max => 399999999999999,
+        max => 400000000000000,
         track => 2
     },
     'visible light' => {
@@ -114,44 +125,33 @@ foreach (split /\n/, share("audible.txt")->slurp) {
     };
 }
 
-#Query is intitially processed here. First normalize the query format,
-# normalize the units, and then calculate information about the frequency range.
 handle query => sub {
 
-    my $query = shift;
+    #Query components
+    (my $quantity = $+{quantity}) =~ s/,//g;
+    my $factor = $+{factor} || 0;
+    my $wavelength = $+{wavelength} || 0;
 
+    #Answer components
     my $freq_hz;
     my $freq_formatted;
     my $answer;
     my $html;
 
-    my $wavelength;
+    #If wavelength provided, convert to frequency in hz
+    if ($wavelength) {
+        $wavelength = $quantity;
+        $freq_hz = $nanometreLightSecond / $wavelength;
+        my $freq_thz = FormatSigFigs($freq_hz / $factors{'t'}{'multiplier'}, 5);
+        $freq_formatted = "$freq_thz THz (wavelength $quantity nm)";
 
-    #Extract frequency and unit
-    if ($query =~ /$frequencySpectrumQR/i) {
-
-        my $quantity = $+{quantity};
-        $quantity =~ s/,//g;
-
-        #If wavelength provided, convert to frequency in hz
-        if ($+{wavelength}) {
-            $wavelength = $quantity;
-            $freq_hz = $nanometreLightSecond / $wavelength;
-            my $freq_thz = FormatSigFigs($freq_hz / $factors{'t'}{'multiplier'}, 5);
-            $freq_formatted = "$freq_thz THz (wavelength $quantity nm)";
-
-        #If frequency provided, convert to hz
-        } else {
-            my $prefix = $+{factor} ? lc substr($+{factor}, 0, 1) : 0;
-            my $factor = $+{factor} ? $factors{$prefix}{'multiplier'} : 1;
-            $freq_hz = $quantity * $factor;
-            my $hz_formatted = $prefix ? $factors{$prefix}{'cased'} . 'Hz' : 'Hz';
-            $freq_formatted = $quantity . ' ' . $hz_formatted;
-        }
-
-
+    #If frequency provided, convert to hz
     } else {
-        return;
+        my $prefix = $factor ? lc substr($factor, 0, 1) : 0;
+        my $factor = $factor ? $factors{$prefix}{'multiplier'} : 1;
+        $freq_hz = $quantity * $factor;
+        my $hz_formatted = $prefix ? $factors{$prefix}{'cased'} . 'Hz' : 'Hz';
+        $freq_formatted = $quantity . ' ' . $hz_formatted;
     }
 
     #Look for a match in the electromagnetic spectrum
@@ -160,11 +160,9 @@ handle query => sub {
 
         #Don't show result for wavelengths outside the
         # visual spectrum
-        if ($wavelength) {
-            return unless $$emMatch{'subspectrum'} eq 'visible light';
-        }
+        return if $wavelength and not $emMatch->{subspectrum} eq 'visible light';
 
-        my $emDescription = $freq_formatted . ' is a ' . $$emMatch{'subspectrum'} . ' frequency' . $$emMatch{'description'} . '.';
+        my $emDescription = $freq_formatted . ' is a ' . $emMatch->{subspectrum} . ' frequency' . $emMatch->{description} . '.';
 
         $answer .= $emDescription;
         $html .= $emDescription;
@@ -173,9 +171,9 @@ handle query => sub {
         #Prepare parameters
         my $rangeMin = 0;
         my $rangeMax = 10000000000000000000000000;
-        my $bandMin = $$emMatch{'min'};
-        my $bandMax = $$emMatch{'max'};
-        my $subspectrum = $$emMatch{'subspectrum'};
+        my $bandMin = $emMatch->{min};
+        my $bandMax = $emMatch->{max};
+        my $subspectrum = $emMatch->{subspectrum};
         my $tracks = scalar keys %emSpectrum;
 
         #Set up the plot panel
@@ -194,7 +192,7 @@ handle query => sub {
         #Add a marker for the query frequency
         # Colour the marker if frequency is in visible spectrum
         my $markerRGB;
-        if ($$emMatch{'subspectrum'} eq 'visible light') {
+        if ($emMatch->{subspectrum} eq 'visible light') {
             $markerRGB = frequency_to_RGB($freq_hz);
         } else {
             $markerRGB = '#000';
@@ -215,7 +213,7 @@ handle query => sub {
         $audibleDescription .= ' an audible frequency which can be produced by ';
 
         my @producers;
-        push @producers, $$_{'produced_by'} for @audibleMatches;
+        push @producers, $_->{produced_by} for @audibleMatches;
         $audibleDescription .= WORDLIST(@producers, {cong => 'and'});
         $audibleDescription .= '.';
 
@@ -235,9 +233,9 @@ handle query => sub {
         my $track = 0;
         foreach my $match (@audibleMatches) {
             ++$track;
-            my $freqRangeMin = $$match{'min'};
-            my $freqRangeMax = $$match{'max'};
-            my $label = $$match{'produced_by'};
+            my $freqRangeMin = $match->{min};
+            my $freqRangeMax = $match->{max};
+            my $label = $match->{produced_by};
             $plot = add_major_range($plot, $transform, $freqRangeMin, $freqRangeMax, $label, $track);
         }
 
@@ -256,7 +254,7 @@ handle query => sub {
 sub match_electromagnetic {
     my $freq_hz = shift;
     foreach (@electromagnetic) {
-        return $_ if ($$_{'min'} <= $freq_hz) && ($$_{'max'} >= $freq_hz);
+        return $_ if ($_->{min} <= $freq_hz) && ($_->{max} >= $freq_hz);
     }
     return;
 }
@@ -266,7 +264,7 @@ sub match_audible {
     my $freq_hz = shift;
     my @matches;
     foreach (@audible) {
-        push @matches, $_ if ($$_{'min'} <= $freq_hz) && ($$_{'max'} >= $freq_hz);
+        push @matches, $_ if ($_->{min} <= $freq_hz) && ($_->{max} >= $freq_hz);
     }
     return \@matches;
 }
