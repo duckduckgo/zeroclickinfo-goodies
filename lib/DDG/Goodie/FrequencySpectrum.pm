@@ -368,7 +368,7 @@ sub generate_panel {
             'text-anchor' => 'middle',
             class => 'x_axis_text'
         );
-        if ($log10) {
+        if ($log10 && $_ > 10) {
             $text->tag('tspan', -cdata => '10');
             $text->tag(
                 'tspan', 
