@@ -19,8 +19,8 @@ ddg_goodie_test(
 
     #Secondary example
     '400 thz' => test_zci(
-        qr/visible.+red/,
-        html => qr/visible.+red/
+        qr/infrared/,
+        html => qr/infrared/
     ),
 
     #Misc
@@ -32,6 +32,10 @@ ddg_goodie_test(
         qr/radio.+MF/,
         html => qr/radio.+MF/
     ),
+    '29.1 hz' => test_zci(
+        qr/radio.+ELF/,
+        html => qr/radio.+ELF/
+    ),
 
     #No whitespace between number and unit
     '50hz' => test_zci(
@@ -39,14 +43,14 @@ ddg_goodie_test(
         html => qr/radio/
     ),
     '400terahertz' => test_zci(
-        qr/visible.+red/,
-        html => qr/visible.+red/
+        qr/infrared/,
+        html => qr/infrared/
     ),
 
     #Mixed case
     '400 THz' => test_zci(
-        qr/visible.+red/,
-        html => qr/visible.+red/
+        qr/infrared/,
+        html => qr/infrared/
     ),
 
     '1000 HZ' => test_zci(
