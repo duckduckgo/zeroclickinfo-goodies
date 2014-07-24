@@ -2,8 +2,7 @@ package DDG::Goodie::Average;
 
 use DDG::Goodie;
 
-triggers startend => "avg", "average", "mean", "median";
-triggers start => "root";
+triggers startend => "avg", "average", "mean", "median", "root mean square";
 
 zci is_cached => 1;
 zci answer_type => "average";
@@ -25,13 +24,23 @@ sub append_css {
 }
 
 handle query => sub {
-    return if $_ =~ /^root/i && $_ !~ /^root mean square/i;
 
-    s/^[a-zA-Z\s]+//; s/\s+[a-zA-Z]+$//; s/[;,\s{}\[\]\(\)]+/ /g;
+    #Remove leading/trailing text from list of numbers
+    s/^[a-zA-Z\s]+//;
+    s/\s+[a-zA-Z]+$//;
+
+    #Ensure numbers are space-delimited
+    s/[;,\s{}\[\]\(\)]+/ /g;
+
+    #Return unless only left with space-delimited list of numbers
     return unless /^\s*(?:\d+(?:\.\d+)?\s?)*$/;
 
+    #Get numbers into an array
     my @nums = split ' ', $_;
-    return unless @nums;
+
+    #Must have at least two numbers
+    return unless @nums > 1;
+
     # initialize the sum
     my $sum;
 
