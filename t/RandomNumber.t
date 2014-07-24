@@ -14,6 +14,6 @@ ddg_goodie_test(
 		DDG::Goodie::RandomNumber
 	)],
 	'random number between 12 and 45' => test_zci( qr/\d{2} \(random number\)/),
-	'random number' => test_zci( qr/\d{1}\.\d{15} \(random number\)/)
+	'random number' => test_zci( qr/\d{1}\.\d+ \(random number\)/)
 );
 done_testing
