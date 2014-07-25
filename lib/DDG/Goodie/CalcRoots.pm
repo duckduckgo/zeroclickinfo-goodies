@@ -3,6 +3,14 @@ package DDG::Goodie::CalcRoots;
 use DDG::Goodie;
 use Lingua::EN::Numericalize;
 
+primary_example_queries 'square root of 9';
+description 'calculate the nth root';
+name 'CalcRoots';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodie/blob/master/lib/DDG/Goodie/CalcRoots.pm';
+attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
+category 'calculations';
+topics 'math';
+
 triggers any => 'root';
 
 zci is_cached => 1;

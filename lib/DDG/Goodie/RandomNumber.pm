@@ -2,6 +2,16 @@ package DDG::Goodie::RandomNumber;
 
 use DDG::Goodie;
 
+primary_example_queries 'random number between 1 and 12', 'random number';
+description 'generates a random number';
+name 'RandomNumber';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/RandomNumber.pm';
+category 'computing_tools';
+topics 'cryptography';
+attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
+
+zci type => 'E';
+
 zci answer_type => 'rand';
 zci type => 'E';
 
