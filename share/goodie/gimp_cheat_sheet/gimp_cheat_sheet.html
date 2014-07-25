@@ -16,11 +16,16 @@
     width: 48%;
     display: inline-block;
     vertical-align: top;
+    margin-right: 2%;
 }
 
 .zci--answer  table.gimp-table {
     width: 100%;
-    margin-bottom: 1ex;
+    margin-bottom: 3ex;
+}
+
+.zci--answer  .gimp-subsection td {
+    padding-top: 1ex;
 }
 
 .zci--answer  table.gimp-table td {
@@ -73,7 +78,7 @@
             <tr><td><code>S</code></td><td>Smudge</td></tr>
             <tr><td><code>Shift + D</code></td><td>Dodge/Burn</td></tr>
 
-            <tr><td><b>Context</b></td></tr>
+            <tr class="gimp-subsection"><td>Context</td></tr>
 
             <tr><td><code>X</code></td><td>Swap Colors</td></tr>
             <tr><td><code>D</code></td><td>Default Colors</td></tr>
@@ -104,19 +109,19 @@
 
         <b>Dialogs</b>
         <table class="gimp-table">
-            <tr><td>Dockable Dialogs</td></tr>
+            <tr class="gimp-subsection"><td>Dockable Dialogs</td></tr>
             <tr><td><code>Ctrl + L</code></td><td>Layers</td></tr>
             <tr><td><code>Shift + Ctrl + B</code></td><td>Brushes</td></tr>
             <tr><td><code>Shift + Ctrl + P</code></td><td>Patterns</td></tr>
             <tr><td><code>Ctrl + G</code></td><td>Gradients</td></tr>
-            <tr><td>Within a Dialog</td></tr>
+            <tr class="gimp-subsection"><td>Within a Dialog</td></tr>
             <tr><td><code>Alt + F4</code>, <code>Ctrl + W</code></td><td>Close the window</td></tr>
             <tr><td><code>Tab</code></td><td>Jump to next widget</td></tr>
             <tr><td><code>Shift + Tab</code></td><td>Jump to previous widget</td></tr>
             <tr><td><code>Enter</code></td><td>Set the new value</td></tr>
             <tr><td><code>Space</code>, <code>Enter</code></td><td>Activate current button or list</td></tr>
             <tr><td><code>Ctrl + Alt + PgUp</code>, <code>Ctrl + Alt + PgDn</code></td><td>In a multi-tab dialog, switch tabs</td></tr>
-            <tr><td>Within a File Dialog</td></tr>
+            <tr class="gimp-subsection"><td>Within a File Dialog</td></tr>
             <tr><td><code>Shift + L</code></td><td>Open Location</td></tr>
             <tr><td><code>Alt + Up</code></td><td>Up-Folder</td></tr>
             <tr><td><code>Alt + Down</code></td><td>Down-Folder</td></tr>
@@ -128,18 +133,18 @@
     <div class="gimp-column">
         <b>View</b>
         <table class="gimp-table">
-            <tr><td>Window</td></tr>
+            <tr class="gimp-subsection"><td>Window</td></tr>
             <tr><td><code>F10</code></td><td>Main Menu</td></tr>
             <tr><td><code>Shift + F10</code>, <code>right click</code></td><td>Drop-down Menu</td></tr>
             <tr><td><code>F11</code></td><td>Toggle fullscreen</td></tr>
             <tr><td><code>Shift + Q</code></td><td>Toggle quickmask</td></tr>
             <tr><td><code>Ctrl + W</code></td><td>Close document window</td></tr>
-            <tr><td>Zoom</td></tr>
+            <tr class="gimp-subsection"><td>Zoom</td></tr>
             <tr><td><code>+</code></td><td>Zoom in</td></tr>
             <tr><td><code>-</code></td><td>Zoom out</td></tr>
             <tr><td><code>1</code></td><td>Zoom 1:1</td></tr>
             <tr><td><code>Ctrl + E</code></td><td>Shrink wrap</td></tr>
-            <tr><td>Rulers and Guides</td></tr>
+            <tr class="gimp-subsection"><td>Rulers and Guides</td></tr>
             <tr><td><code>mouse drag</code></td><td>Drag off a ruler to create guide</td></tr>
             <tr><td><code>Ctrl + mouse drag</code></td><td>Drag a sample point out of the rulers</td></tr>
             <tr><td><code>Shift + Ctrl + R</code></td><td>Toggle rulers</td></tr>
@@ -148,10 +153,10 @@
 
         <b>Edit</b>
         <table class="gimp-table">
-            <tr><td>Undo/redo</td></tr>
+            <tr class="gimp-subsection"><td>Undo/redo</td></tr>
             <tr><td><code>Ctrl + Z</code></td><td>Undo</td></tr>
             <tr><td><code>Ctrl + Y</code></td><td>Redo</td></tr>
-            <tr><td>Clipboard</td></tr>
+            <tr class="gimp-subsection"><td>Clipboard</td></tr>
             <tr><td><code>Ctrl + C</code></td><td>Copy selection</td></tr>
             <tr><td><code>Ctrl + X</code></td><td>Cut selection</td></tr>
             <tr><td><code>Ctrl + V</code></td><td>Paste clipboard</td></tr>
@@ -159,7 +164,7 @@
             <tr><td><code>Shift + Ctrl + C</code></td><td>Named copy selection</td></tr>
             <tr><td><code>Shift + Ctrl + X</code></td><td>Named cut selection</td></tr>
             <tr><td><code>Shift + Ctrl + V</code></td><td>Named paste clipboard</td></tr>
-            <tr><td>Fill</td></tr>
+            <tr class="gimp-subsection"><td>Fill</td></tr>
             <tr><td><code>Ctrl + ,</code></td><td>Fill with FG Color</td></tr>
             <tr><td><code>Ctrl + .</code></td><td>Fill with BG Color</td></tr>
             <tr><td><code>Ctrl + ;</code></td><td>Fill with Pattern</td></tr>
