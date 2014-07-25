@@ -18,9 +18,13 @@
     vertical-align: top;
 }
 
+.tmux-column:first-child {
+    margin-right: 1em;
+}
+
 .zci--answer  table.tmux-table {
     width: 100%;
-    margin-bottom: 1ex;
+    margin-bottom: 3ex;
 }
 
 .zci--answer  table.tmux-table td {
@@ -32,11 +36,9 @@
 }
 
 @media (max-width: 380px) {
-    .zci--answer .tmux-column {
-  width: 100%;
-    }
-}
-
+  .zci--answer .tmux-column {
+    width: 100%;
+  }
 }
 
 </style>
@@ -57,13 +59,13 @@
         <td>
           <code>tmux attach</code>
         </td>
-        <td>re-attach a detached session</td>
+        <td>Re-attach a detached session</td>
       </tr>
       <tr>
         <td>
           <code>tmux attach -d</code>
         </td>
-        <td>re-attach a detached session (and detach it from elsewhere)</td>
+        <td>Re-attach a detached session (and detach it from elsewhere)</td>
       </tr>
     </table>
     <b>Pane Control</b>
@@ -83,7 +85,7 @@
       </tr>
       <tr>
         <td>
-          <code>Ctrl-B O</code>
+          <code>Ctrl-B o</code>
         </td>
         <td>Next pane</td>
       </tr>
@@ -95,7 +97,7 @@
       </tr>
       <tr>
         <td>
-          <code>Ctrl-B X</code>
+          <code>Ctrl-B x</code>
         </td>
         <td>Kill current pane</td>
       </tr>
@@ -113,15 +115,15 @@
       </tr>
       <tr>
         <td>
-          <code>Ctrl-B T</code>
+          <code>Ctrl-B t</code>
         </td>
         <td>Display clock</td>
       </tr>
       <tr>
         <td>
-          <code>Ctrl-B Q</code>
+          <code>Ctrl-B q</code>
         </td>
-        <td>transpose two letters (delete and paste)</td>
+        <td>Transpose two letters (delete and paste)</td>
       </tr>
     </table>
   </div>
@@ -131,7 +133,13 @@
     <table class="tmux-table">
       <tr>
         <td>
-          <code>Ctrl-B D</code>
+          <code>Ctrl-B c</code>
+        </td>
+        <td>Create new window</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B d</code>
         </td>
         <td>Detach from session</td>
       </tr>
@@ -143,33 +151,125 @@
       </tr>
       <tr>
         <td>
-          <code>Ctrl-B, W</code>
+          <code>Ctrl-B w</code>
         </td>
         <td>List windows</td>
       </tr>
+    </table>
+
+    <b>Copy-Mode (Emacs)</b>
+    <table class="tmux-table">
       <tr>
         <td>
-          <code>Ctrl-B <i>[number]</i></code>
+          <code>Ctrl-B [</code>
         </td>
-        <td>Goes to window with corresponding number</td>
+        <td>Enter copy mode</td>
       </tr>
       <tr>
         <td>
-          <code>Ctrl-B N</code>
+          <code>Ctrl-B M-<</code>
         </td>
-        <td>Go to next window</td>
+        <td>Bottom of history</td>
       </tr>
       <tr>
         <td>
-          <code>Ctrl-B P</code>
+          <code>Ctrl-B M-></code>
         </td>
-        <td>Go to previous window</td>
+        <td>Top of histroy</td>
       </tr>
       <tr>
         <td>
-          <code>Ctrl-B ?</code>
+          <code>Ctrl-B M-w</code>
         </td>
-        <td>See all keybindings</td>
+        <td>Copy selection</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B M-y</code>
+        </td>
+        <td>Paste selection</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B Up</code>
+        </td>
+        <td>Cursor Up</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B Down</code>
+        </td>
+        <td>Cursor Down</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B Left</code>
+        </td>
+        <td>Cursor Left</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B Right</code>
+        </td>
+        <td>Cursor Right</td>
+      </tr>
+    </table>
+
+    <b>Copy-Mode (vi)</b>
+    <table class="tmux-table">
+      <tr>
+        <td>
+          <code>Ctrl-B [</code>
+        </td>
+        <td>Enter copy mode</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B G</code>
+        </td>
+        <td>Bottom of history</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B g</code>
+        </td>
+        <td>Top of histroy</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B Enter</code>
+        </td>
+        <td>Copy selection</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B p</code>
+        </td>
+        <td>Paste selection</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B k</code>
+        </td>
+        <td>Cursor Up</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B j</code>
+        </td>
+        <td>Cursor Down</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B h</code>
+        </td>
+        <td>Cursor Left</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-B l</code>
+        </td>
+        <td>Cursor Right</td>
       </tr>
     </table>
   </div>
