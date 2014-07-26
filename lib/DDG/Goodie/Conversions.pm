@@ -6,10 +6,8 @@ with 'DDG::GoodieRole::NumberStyler';
 
 use HTML::Entities;
 use Math::Round qw/nearest/;
-use Scalar::Util qw/looks_like_number/;
 use bignum;
 use Convert::Pluggable;
-# ^^ mass, length, time, pressure, energy, power, angle, force, temperature, digital 
 
 name                      'Conversions';
 description               'convert between various units of measurement';
@@ -41,6 +39,7 @@ triggers end => @units;
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
 my $question_prefix = qr/(convert|what (is|are|does)|how (much|many|long) (is|are))?\s?/;
+
 # guards and matches regex
 my $number_re = number_style_regex();
 my $guard = qr/^$question_prefix$number_re*\s?($keys)\s?(in|to|into|from)\s?$number_re*\s?($keys)+$/;
@@ -116,7 +115,12 @@ handle query_lc => sub {
     my $styler = number_style_for($factor);
     return unless $styler;
 
-    my $result = $c->convert( { 'factor' => $styler->for_computation($factor), 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
+    my $result = $c->convert( { 
+        'factor' => $styler->for_computation($factor), 
+        'from_unit' => $matches[0], 
+        'to_unit' => $matches[1], 
+        'precision' => $precision, 
+    } );
 
     return if !$result->{'result'};
 
@@ -128,12 +132,17 @@ handle query_lc => sub {
     if ($result->{'result'} == 0 || length($result->{'result'}) > 2*$precision + 1) {
         if ($result->{'result'} == 0) {
             # rounding error
-            $result = $c->convert( { 'factor' => $styler->for_computation($factor), 'from_unit' => $matches[0], 'to_unit' => $matches[1], 'precision' => $precision, } );
+            $result = $c->convert( { 
+                'factor' => $styler->for_computation($factor), 
+                'from_unit' => $matches[0], 
+                'to_unit' => $matches[1], 
+                'precision' => $precision, 
+            } );
         }
 
 	# We only display it in exponent form if it's above a certain number.
 	# We also want to display numbers from 0 to 1 in exponent form.
-        if($result->{'result'} > 1000000 || $result->{'result'} < 1) {
+        if($result->{'result'} > 1_000_000 || $result->{'result'} < 1) {
             $f_result = (sprintf "%.${precision}g", $result->{'result'});
         } else {
             $f_result = (sprintf "%.${precision}f", $result->{'result'});
@@ -163,7 +172,5 @@ handle query_lc => sub {
     my $output = "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
     return $output, html => wrap_html($factor, $result);
 };
-
-
 
 1;
