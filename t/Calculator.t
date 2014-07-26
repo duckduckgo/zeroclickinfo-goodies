@@ -9,25 +9,6 @@ use DDG::Goodie::Calculator;    # For function subtests.
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
-subtest 'display format selection' => sub {
-    my $ds_name = 'DDG::Goodie::Calculator::display_style';
-    my $ds      = \&$ds_name;
-
-    is($ds->('0,013')->{id}, 'euro', '0,013 is euro');
-    is($ds->('4,431',      '4.321')->{id}, 'perl', '4,431 and 4.321 is perl');
-    is($ds->('4,431',      '4.32')->{id},  'perl', '4,431 and 4.32 is perl');
-    is($ds->('4,431',      '4,32')->{id},  'euro', '4,431 and 4,32 is euro');
-    is($ds->('4534,345.0', '1',)->{id},    'perl', '4534,345.0 should have another comma, not enforced; call it perl.');
-    is($ds->('4,431', '4,32', '5,42')->{id}, 'euro', '4,431 and 4,32 and 5,42 is nicely euro-style');
-    is($ds->('4,431', '4.32', '5.42')->{id}, 'perl', '4,431 and 4.32 and 5.42 is nicely perl-style');
-
-    is($ds->('5234534.34.54', '1',), undef, '5234534.34.54 and 1 has a mal-formed number, so we cannot proceed');
-    is($ds->('4,431', '4,32',     '4.32'), undef, '4,431 and 4,32 and 4.32 is confusingly ambig; no style');
-    is($ds->('4,431', '4.32.10',  '5.42'), undef, '4,431 and 4.32.10 is hard to figure; no style');
-    is($ds->('4,431', '4,32,100', '5.42'), undef, '4,431 and 4,32,100 and 5.42 has a mal-formed number, so no go.');
-    is($ds->('4,431', '4,32,100', '5,42'), undef, '4,431 and 4,32,100 and 5,42 is too crazy to work out; no style');
-};
-
 ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
     'what is 2-2' => test_zci(
