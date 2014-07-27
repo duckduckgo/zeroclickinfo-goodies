@@ -23,7 +23,7 @@ sub append_css {
     return "<style type='text/css'>$css</style>\n" . $html;
 }
 
-handle query => sub {
+handle remainder => sub {
 
     #Remove leading/trailing text from list of numbers
     s/^[a-zA-Z\s]+//;
