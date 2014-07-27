@@ -5,7 +5,7 @@ use warnings;
 
 use Moo;
 
-has [qw(id decimal thousands)] => (
+has [qw(id decimal thousands exponential)] => (
     is => 'ro',
 );
 
@@ -14,6 +14,7 @@ sub understands {
     my ($decimal, $thousands) = ($self->decimal, $self->thousands);
 
     # How do we know if a number is reasonable for this style?
+    # This assumes the exponentials are not included to give better answers.
     return (
         # The number must contain only things we understand: numerals and separators for this style.
         $number =~ /^(\d|\Q$thousands\E|\Q$decimal\E)+$/
@@ -44,23 +45,33 @@ sub precision_of {
 
 sub for_computation {
     my ($self, $number_text) = @_;
-    my ($decimal, $thousands) = ($self->decimal, $self->thousands);
+    my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
     $number_text =~ s/\Q$thousands\E//g;    # Remove thousands seps, since they are just visual.
     $number_text =~ s/\Q$decimal\E/./g;     # Make sure decimal mark is something perl knows how to use.
+    if ($number_text =~ s/\Q$exponential\E/e/ig) {
+        # Convert to perl style exponentials and then make into human-style floats.
+        $number_text = sprintf('%f', $number_text);
+    }
 
     return $number_text;
 }
 
 sub for_display {
     my ($self, $number_text) = @_;
-    my ($decimal, $thousands) = ($self->decimal, $self->thousands);    # Unpacked for easier regex-building
+    my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
-    $number_text = reverse $number_text;
-    $number_text =~ s/\./$decimal/g;    # Perl decimal mark to whatever we need.
-    $number_text =~ s/(\d\d\d)(?=\d)(?!\d*\Q$decimal\E)/$1$thousands/g;
+    if ($number_text =~ /(.*)\Q$exponential\E(.*)/) {
+        my $norm_exp = ($2 == int $2) ? int $2 : $2;
+        $number_text = $self->for_display($1) . ' * 10^' . $self->for_display($norm_exp);
+    } else {
+        $number_text = reverse $number_text;
+        $number_text =~ s/\./$decimal/g;    # Perl decimal mark to whatever we need.
+        $number_text =~ s/(\d\d\d)(?=\d)(?!\d*\Q$decimal\E)/$1$thousands/g;
+        $number_text = reverse $number_text;
+    }
 
-    return scalar reverse $number_text;
+    return $number_text;
 }
 
 1;

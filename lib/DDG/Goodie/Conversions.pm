@@ -93,7 +93,7 @@ handle query_lc => sub {
     return unless scalar @matches == 2; # conversion requires two triggers
 
     # normalize the whitespace, "25cm" should work for example
-    $_ =~ s/([0-9])([a-zA-Z])/$1 $2/;
+    $_ =~ s/([0-9])([a-df-zA-DF-Z])/$1 $2/; # Skip 'e' to handle exponentials.
 
     # fix precision and rounding:
     my $precision = 3;
@@ -107,7 +107,7 @@ handle query_lc => sub {
     my @args = split(/\s+/, $_);
     my $factor = 1;
     foreach my $arg (@args) {
-        if ($arg =~ $number_re) {
+        if ($arg =~ /^$number_re$/) {
             $factor = $arg unless $factor != 1;     # drop n > 1 #s
         }
     }

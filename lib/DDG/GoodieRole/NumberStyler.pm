@@ -11,22 +11,24 @@ use List::Util qw( all first );
 # If it could fit more than one the first in order gets preference.
 my @known_styles = (
     DDG::GoodieRole::NumberStyle->new({
-            id        => 'perl',
-            decimal   => '.',
-            thousands => ','
+            id          => 'perl',
+            decimal     => '.',
+            thousands   => ',',
+            exponential => 'e',
         }
     ),
     DDG::GoodieRole::NumberStyle->new({
-            id        => 'euro',
-            decimal   => ',',
-            thousands => '.',
+            id          => 'euro',
+            decimal     => ',',
+            thousands   => '.',
+            exponential => 'e',
         }
     ),
 );
 
 # This is not as good an idea as I might think.
 # Luckily it will someday be able to be tokenized so this won't apply.
-my $all_seps = join('', map { $_->decimal . $_->thousands } @known_styles);
+my $all_seps = join('', map { $_->decimal . $_->thousands . $_->exponential } @known_styles);
 
 sub number_style_regex {
     return qr/[\d$all_seps]+/;
@@ -41,7 +43,8 @@ sub number_style_for {
 
     STYLE:
     foreach my $test_style (@known_styles) {
-        if (all { $test_style->understands($_) } @numbers) {
+        my $exponential = lc $test_style->exponential;    # Allow for arbitrary casing.
+        if (all { $test_style->understands($_) } map { split /$exponential/, lc $_ } @numbers) {
             # All of our numbers fit this style.  Since we have them in preference order
             # we can pick it and move on.
             $style = $test_style;
