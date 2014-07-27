@@ -168,6 +168,7 @@ handle query_lc => sub {
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
     $result->{'result'} =~ s/\.0{$precision}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
+    $factor = $styler->for_display($factor); # Done using it for math, make it pretty.
 
     my $output = "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
     return $output, html => wrap_html($factor, $result);
