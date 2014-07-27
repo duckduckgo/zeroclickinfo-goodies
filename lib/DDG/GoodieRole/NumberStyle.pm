@@ -49,7 +49,7 @@ sub for_computation {
 
     $number_text =~ s/\Q$thousands\E//g;    # Remove thousands seps, since they are just visual.
     $number_text =~ s/\Q$decimal\E/./g;     # Make sure decimal mark is something perl knows how to use.
-    if ($number_text =~ s/\Q$exponential\E/e/ig) {
+    if ($number_text =~ s/^([\d$decimal$thousands]+)\Q$exponential\E([\d$decimal$thousands]+)$/$1e$2/ig) {
         # Convert to perl style exponentials and then make into human-style floats.
         $number_text = sprintf('%f', $number_text);
     }
@@ -61,7 +61,7 @@ sub for_display {
     my ($self, $number_text) = @_;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
-    if ($number_text =~ /(.*)\Q$exponential\E(.*)/) {
+    if ($number_text =~ /(.*)\Q$exponential\E(.*)/i) {
         my $norm_exp = ($2 == int $2) ? int $2 : $2;
         $number_text = $self->for_display($1) . ' * 10^' . $self->for_display($norm_exp);
     } else {

@@ -154,8 +154,8 @@ sub prepare_for_display {
 
     # Equals varies by output type.
     $query =~ s/\=$//;
-    # Show them how 'E' was interpreted.
-    $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/;
+    # Show them how 'E' was interpreted. This should use the number styler, too.
+    $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
 
     return {
         text => format_text($query, $result),
@@ -250,7 +250,7 @@ sub spacing {
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
-    $text =~ s/(\d+?)e/$1 e/g;    # E == *10^n
+ #   $text =~ s/(\d+?)e/$1 e/g;    # E == *10^n
     $text =~ s/([\(\)\$])/ $1 /g if ($space_for_parse);
 
     return $text;

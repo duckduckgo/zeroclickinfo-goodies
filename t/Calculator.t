@@ -361,6 +361,16 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr/./,
     ),
+    '4E5 +1 ' => test_zci(
+        '(4  *  10 ^ 5) + 1 = 400,001',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '4e5 +1 ' => test_zci(
+        '(4  *  10 ^ 5) + 1 = 400,001',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,
