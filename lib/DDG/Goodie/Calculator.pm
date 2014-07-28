@@ -55,14 +55,14 @@ my %named_operations = (
     'minus'       => '-',
     'plus'        => '+',
     'divided\sby' => '/',
-    'ln'          => 'log',                               # perl log() is natural log.
+    'ln'          => 'log',                                 # perl log() is natural log.
     'squared'     => '**2',
 );
 
 my %named_constants = (
     dozen => 12,
-    e     => 2.71828182845904523536028747135266249,       # This should be computed.
-    pi    => pi,                                          # pi constant from Math::Trig
+    e     => 2.71828182845904523536028747135266249,         # This should be computed.
+    pi    => pi,                                            # pi constant from Math::Trig
     gross => 144,
     score => 20,
 );
@@ -135,10 +135,7 @@ handle query_nowhitespace => sub {
         # Dollars.
         $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
 
-        # Add proper separators.
-        $tmp_result = $style->for_display($tmp_result);
-
-        my $results = prepare_for_display($query, $tmp_result);
+        my $results = prepare_for_display($query, $tmp_result, $style);
 
         return if $results->{text} =~ /^\s/;
         return $results->{text},
@@ -150,7 +147,7 @@ handle query_nowhitespace => sub {
 };
 
 sub prepare_for_display {
-    my ($query, $result) = @_;
+    my ($query, $result, $style) = @_;
 
     # Equals varies by output type.
     $query =~ s/\=$//;
@@ -158,18 +155,19 @@ sub prepare_for_display {
     $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
 
     return {
-        text => format_text($query, $result),
-        html => format_html($query, $result),
+        text => format_text($query, $result, $style),
+        html => format_html($query, $result, $style),
     };
 }
 
 # Format query for HTML
 sub format_html {
-    my ($query, $result) = @_;
+    my ($query, $result, $style) = @_;
 
     state $css = '<style type="text/css">' . share("style.css")->slurp . '</style>';
 
-    $query = _add_html_exponents($query);
+    $query  = $style->with_html($query);
+    $result = $style->with_html($result);
 
     return
         $css
@@ -180,66 +178,11 @@ sub format_html {
       . "</a></div>";
 }
 
-sub _add_html_exponents {
-
-    my $string = shift;
-
-    return $string if ($string !~ /\^/ or $string =~ /^\^|\^$/);    # Give back the same thing if we won't deal with it properly.
-
-    my @chars = split //, $string;
-    my ($start_tag, $end_tag) = ('<sup>', '</sup>');
-    my ($newly_up, $in_exp_number, $in_exp_parens, %power_parens);
-    my ($parens_count, $number_up) = (0, 0);
-
-    # because of associativity and power-to-power, we need to scan nearly the whole thing
-    for my $index (1 .. $#chars - 1) {
-        my $this_char = $chars[$index];
-        if ($this_char =~ $number_re) {
-            if ($newly_up) {
-                $in_exp_number = 1;
-                $newly_up      = 0;
-            }
-        } elsif ($this_char eq '(') {
-            $parens_count += 1;
-            $in_exp_number = 0;
-            if ($newly_up) {
-                $in_exp_parens += 1;
-                $power_parens{$parens_count} = 1;
-                $newly_up = 0;
-            }
-        } elsif ($this_char eq '^') {
-            $chars[$index - 1] =~ s/$end_tag$//;    # Added too soon!
-            $number_up += 1;
-            $newly_up      = 1;
-            $chars[$index] = $start_tag;            # Replace ^ with the tag.
-        } elsif ($in_exp_number) {
-            $in_exp_number = 0;
-            $number_up -= 1;
-            $chars[$index] = $end_tag . $chars[$index];
-        } elsif ($number_up && !$in_exp_parens) {
-            # Must have ended another term or more
-            $chars[$index] = ($end_tag x ($number_up - 1)) . $chars[$index];
-            $number_up = 0;
-        } elsif ($this_char eq ')') {
-            # We just closed a set of parens, see if it closes one of our things
-            if ($in_exp_parens && $power_parens{$parens_count}) {
-                $chars[$index] .= $end_tag;
-                delete $power_parens{$parens_count};
-                $in_exp_parens -= 1;
-            }
-            $parens_count -= 1;
-        }
-    }
-    $chars[-1] .= $end_tag x $number_up if ($number_up);
-
-    return join('', @chars);
-}
-
 # Format query for text
 sub format_text {
-    my ($query, $result) = @_;
+    my ($query, $result, $style) = @_;
 
-    return spacing($query) . ' = ' . $result;
+    return spacing($query) . ' = ' . $style->for_display($result);
 }
 
 #separates symbols with a space
@@ -250,7 +193,6 @@ sub spacing {
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
- #   $text =~ s/(\d+?)e/$1 e/g;    # E == *10^n
     $text =~ s/([\(\)\$])/ $1 /g if ($space_for_parse);
 
     return $text;

@@ -67,9 +67,9 @@ sub append_css {
 }
 
 sub wrap_html {
-    my ($factor, $result) = @_;
-    my $from = encode_entities($factor) . " <span class='text--secondary'>" . encode_entities($result->{'from_unit'}) . "</span>";
-    my $to = encode_entities($result->{'result'}) . " <span class='text--secondary'>" . encode_entities($result->{'to_unit'}) . "</span>";
+    my ($factor, $result, $styler) = @_;
+    my $from = encode_entities($styler->with_html($factor)) . " <span class='text--secondary'>" . encode_entities($result->{'from_unit'}) . "</span>";
+    my $to = encode_entities($styler->with_html($result->{'result'})) . " <span class='text--secondary'>" . encode_entities($result->{'to_unit'}) . "</span>";
     return append_css("<div class='zci--conversions text--primary'>$from = $to</div>");
 }
 
@@ -168,10 +168,9 @@ handle query_lc => sub {
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
     $result->{'result'} =~ s/\.0{$precision}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
-    $factor = $styler->for_display($factor); # Done using it for math, make it pretty.
 
-    my $output = "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
-    return $output, html => wrap_html($factor, $result);
+    my $output = $styler->for_display($factor)." $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
+    return $output, html => wrap_html($factor, $result, $styler);
 };
 
 1;

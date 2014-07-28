@@ -9,6 +9,17 @@ has [qw(id decimal thousands exponential)] => (
     is => 'ro',
 );
 
+has number_regex => (
+    is => 'lazy',
+);
+
+sub _build_number_regex {
+    my $self = shift;
+    my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
+
+    return qr/[\d\Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E\d+)?/;
+}
+
 sub understands {
     my ($self, $number) = @_;
     my ($decimal, $thousands) = ($self->decimal, $self->thousands);
@@ -61,9 +72,8 @@ sub for_display {
     my ($self, $number_text) = @_;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
-    if ($number_text =~ /(.*)\Q$exponential\E(.*)/i) {
-        my $norm_exp = ($2 == int $2) ? int $2 : $2;
-        $number_text = $self->for_display($1) . ' * 10^' . $self->for_display($norm_exp);
+    if ($number_text =~ /(.*)\Q$exponential\E([+-]?\d+)/i) {
+        $number_text = $self->for_display($1) . ' * 10^' . $self->for_display(int $2);
     } else {
         $number_text = reverse $number_text;
         $number_text =~ s/\./$decimal/g;    # Perl decimal mark to whatever we need.
@@ -72,6 +82,68 @@ sub for_display {
     }
 
     return $number_text;
+}
+
+sub with_html {
+    my ($self, $number_text) = @_;
+
+    return $self->_add_html_exponents($self->for_display($number_text));
+}
+
+sub _add_html_exponents {
+
+    my ($self, $string) = @_;
+
+    return $string if ($string !~ /\^/ or $string =~ /^\^|\^$/);    # Give back the same thing if we won't deal with it properly.
+
+    my @chars = split //, $string;
+    my $number_re = $self->number_regex;
+    my ($start_tag, $end_tag) = ('<sup>', '</sup>');
+    my ($newly_up, $in_exp_number, $in_exp_parens, %power_parens);
+    my ($parens_count, $number_up) = (0, 0);
+
+    # because of associativity and power-to-power, we need to scan nearly the whole thing
+    for my $index (1 .. $#chars - 1) {
+        my $this_char = $chars[$index];
+        if ($this_char =~ $number_re) {
+            if ($newly_up) {
+                $in_exp_number = 1;
+                $newly_up      = 0;
+            }
+        } elsif ($this_char eq '(') {
+            $parens_count += 1;
+            $in_exp_number = 0;
+            if ($newly_up) {
+                $in_exp_parens += 1;
+                $power_parens{$parens_count} = 1;
+                $newly_up = 0;
+            }
+        } elsif ($this_char eq '^') {
+            $chars[$index - 1] =~ s/$end_tag$//;    # Added too soon!
+            $number_up += 1;
+            $newly_up      = 1;
+            $chars[$index] = $start_tag;            # Replace ^ with the tag.
+        } elsif ($in_exp_number) {
+            $in_exp_number = 0;
+            $number_up -= 1;
+            $chars[$index] = $end_tag . $chars[$index];
+        } elsif ($number_up && !$in_exp_parens) {
+            # Must have ended another term or more
+            $chars[$index] = ($end_tag x ($number_up - 1)) . $chars[$index];
+            $number_up = 0;
+        } elsif ($this_char eq ')') {
+            # We just closed a set of parens, see if it closes one of our things
+            if ($in_exp_parens && $power_parens{$parens_count}) {
+                $chars[$index] .= $end_tag;
+                delete $power_parens{$parens_count};
+                $in_exp_parens -= 1;
+            }
+            $parens_count -= 1;
+        }
+    }
+    $chars[-1] .= $end_tag x $number_up if ($number_up);
+
+    return join('', @chars);
 }
 
 1;
