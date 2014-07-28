@@ -93,7 +93,7 @@ handle query_lc => sub {
     return unless scalar @matches == 2; # conversion requires two triggers
 
     # normalize the whitespace, "25cm" should work for example
-    $_ =~ s/([0-9])([a-df-zA-DF-Z])/$1 $2/; # Skip 'e' to handle exponentials.
+    $_ =~ s/($number_re)($keys)/$1 $2/g;
 
     # fix precision and rounding:
     my $precision = 3;

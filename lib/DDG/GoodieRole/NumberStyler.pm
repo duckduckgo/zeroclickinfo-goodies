@@ -28,10 +28,12 @@ my @known_styles = (
 
 # This is not as good an idea as I might think.
 # Luckily it will someday be able to be tokenized so this won't apply.
-my $all_seps = join('', map { $_->decimal . $_->thousands . $_->exponential } @known_styles);
+my $all_seps = join('', map { $_->decimal . $_->thousands } @known_styles);
+my $numbers  = '[\d' . $all_seps . ']+';
+my $re_text  = join('|', $numbers, map { $numbers . $_->exponential . '\d+' } @known_styles);
 
 sub number_style_regex {
-    return qr/[\d$all_seps]+/;
+    return qr/$re_text/;
 }
 
 # Takes an array of numbers and returns which style to use for parse and display
