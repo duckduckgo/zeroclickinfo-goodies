@@ -68,8 +68,8 @@ sub append_css {
 
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
-    my $from = encode_entities($styler->with_html($factor)) . " <span class='text--secondary'>" . encode_entities($result->{'from_unit'}) . "</span>";
-    my $to = encode_entities($styler->with_html($result->{'result'})) . " <span class='text--secondary'>" . encode_entities($result->{'to_unit'}) . "</span>";
+    my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . encode_entities($result->{'from_unit'}) . "</span>";
+    my $to = $styler->with_html($result->{'result'}) . " <span class='text--secondary'>" . encode_entities($result->{'to_unit'}) . "</span>";
     return append_css("<div class='zci--conversions text--primary'>$from = $to</div>");
 }
 
