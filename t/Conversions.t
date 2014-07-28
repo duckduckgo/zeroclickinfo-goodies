@@ -26,6 +26,7 @@ ddg_goodie_test(
     '25 cm in inches' => test_zci('25 centimeters = 9.843 inches', html => qr/.*/),
     '1760 yards to miles' => test_zci('1,760 yards = 1 mile', html => qr/.*/),
     '3520yards to miles' => test_zci('3,520 yards = 2 miles', html => qr/.*/),
+    '3.5e-2 miles to inches' => test_zci('3.5 * 10^-2 miles = 2,217.602 inches', html => qr/.*/),
     'convert 1stone to lbs' => test_zci('1 stone = 14 pounds', html => qr/.*/),
     '30cm in in' => test_zci('30 centimeters = 11.811 inches', html => qr/.*/),
     '36 months to years' => test_zci('36 months = 3 years', html => qr/.*/),

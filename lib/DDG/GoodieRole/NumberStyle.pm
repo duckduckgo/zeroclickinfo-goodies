@@ -17,7 +17,7 @@ sub _build_number_regex {
     my $self = shift;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
-    return qr/[\d\Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E\d+)?/;
+    return qr/-?[\d\Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/;
 }
 
 sub understands {
@@ -28,7 +28,7 @@ sub understands {
     # This assumes the exponentials are not included to give better answers.
     return (
         # The number must contain only things we understand: numerals and separators for this style.
-        $number =~ /^(\d|\Q$thousands\E|\Q$decimal\E)+$/
+        $number =~ /^-?(|\d|\Q$thousands\E|\Q$decimal\E)+$/
           && (
             # The number is not required to contain thousands separators
             $number !~ /\Q$thousands\E/
@@ -60,7 +60,7 @@ sub for_computation {
 
     $number_text =~ s/\Q$thousands\E//g;    # Remove thousands seps, since they are just visual.
     $number_text =~ s/\Q$decimal\E/./g;     # Make sure decimal mark is something perl knows how to use.
-    if ($number_text =~ s/^([\d$decimal$thousands]+)\Q$exponential\E([\d$decimal$thousands]+)$/$1e$2/ig) {
+    if ($number_text =~ s/^([\d$decimal$thousands]+)\Q$exponential\E(-?[\d$decimal$thousands]+)$/$1e$2/ig) {
         # Convert to perl style exponentials and then make into human-style floats.
         $number_text = sprintf('%f', $number_text);
     }
@@ -105,7 +105,7 @@ sub _add_html_exponents {
     # because of associativity and power-to-power, we need to scan nearly the whole thing
     for my $index (1 .. $#chars - 1) {
         my $this_char = $chars[$index];
-        if ($this_char =~ $number_re) {
+        if ($this_char =~ $number_re or $this_char eq '-') {
             if ($newly_up) {
                 $in_exp_number = 1;
                 $newly_up      = 0;

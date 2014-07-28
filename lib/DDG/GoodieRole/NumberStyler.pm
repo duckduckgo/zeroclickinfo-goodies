@@ -51,6 +51,7 @@ sub number_style_for {
             last STYLE;
         }
     }
+
     return $style;
 }
 
