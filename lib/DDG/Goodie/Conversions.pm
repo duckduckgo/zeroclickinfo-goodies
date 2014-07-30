@@ -42,7 +42,7 @@ my $question_prefix = qr/(convert|what (is|are|does)|how (much|many|long) (is|ar
 
 # guards and matches regex
 my $number_re = number_style_regex();
-my $guard = qr/^$question_prefix$number_re*\s?($keys)\s?(in|to|into|from)\s?$number_re*\s?($keys)+$/;
+my $guard = qr/^$question_prefix$number_re*\s?($keys)\s?(in|to|into|from)\s?$number_re*\s?($keys)$/;
 my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
 
 # exceptions for pluralized forms:
