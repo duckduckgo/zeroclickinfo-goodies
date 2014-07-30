@@ -26,12 +26,9 @@ my @known_styles = (
     ),
 );
 
-# Be sure to update the below, as well, if new styles are added.
-my $perl_match = $known_styles[0]->number_regex;
-my $euro_match = $known_styles[1]->number_regex;
-
 sub number_style_regex {
-    return qr/$perl_match|$euro_match/;
+    my $return_regex = join '|', map { $_->number_regex } @known_styles;
+    return qr/$return_regex/;
 }
 
 # Takes an array of numbers and returns which style to use for parse and display
