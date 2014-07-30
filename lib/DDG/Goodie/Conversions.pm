@@ -78,8 +78,8 @@ handle query_lc => sub {
     $_ =~ s/"/inches/;
     $_ =~ s/'/feet/;
 
-	# hack support for "degrees" prefix on temperatures
-	$_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
+    # hack support for "degrees" prefix on temperatures
+    $_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
 
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
@@ -97,11 +97,7 @@ handle query_lc => sub {
 
     # fix precision and rounding:
     my $precision = 3;
-    my $nearest = '1';
-    for my $i (1 .. $precision - 1) {
-        $nearest = '0' . $nearest;
-    }
-    $nearest = '.' . $nearest;
+    my $nearest = '.' . ('0' x ($precision-1)) . '1';
 
     # get factor:
     my @args = split(/\s+/, $_);
@@ -128,7 +124,7 @@ handle query_lc => sub {
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result->{'result'} = nearest($nearest, $result->{'result'});   
-        
+
     if ($result->{'result'} == 0 || length($result->{'result'}) > 2*$precision + 1) {
         if ($result->{'result'} == 0) {
             # rounding error
@@ -140,8 +136,8 @@ handle query_lc => sub {
             } );
         }
 
-	# We only display it in exponent form if it's above a certain number.
-	# We also want to display numbers from 0 to 1 in exponent form.
+        # We only display it in exponent form if it's above a certain number.
+        # We also want to display numbers from 0 to 1 in exponent form.
         if($result->{'result'} > 1_000_000 || $result->{'result'} < 1) {
             $f_result = (sprintf "%.${precision}g", $result->{'result'});
         } else {
@@ -149,21 +145,21 @@ handle query_lc => sub {
         }
     }
 
-	# handle pluralisation of units
-	# however temperature is never plural and does require "degrees" to be prepended
-	if ($result->{'type_1'} ne 'temperature') {
-		if ($factor != 1) {
-	        $result->{'from_unit'} = (exists $plural_exceptions{$result->{'from_unit'}}) ? $plural_exceptions{$result->{'from_unit'}} : $result->{'from_unit'} . 's'; 
-	    }
+    # handle pluralisation of units
+    # however temperature is never plural and does require "degrees" to be prepended
+    if ($result->{'type_1'} ne 'temperature') {
+        if ($factor != 1) {
+            $result->{'from_unit'} = (exists $plural_exceptions{$result->{'from_unit'}}) ? $plural_exceptions{$result->{'from_unit'}} : $result->{'from_unit'} . 's'; 
+        }
     
-	    if ($result->{'result'} != 1) {
-	        $result->{'to_unit'} = (exists $plural_exceptions{$result->{'to_unit'}}) ? $plural_exceptions{$result->{'to_unit'}} : $result->{'to_unit'} . 's'; 
-	    }
-	}
-	else {
-		$result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
-		$result->{'to_unit'} = "degrees $result->{'to_unit'}" if ($result->{'to_unit'} ne "kelvin");
-	}
+        if ($result->{'result'} != 1) {
+            $result->{'to_unit'} = (exists $plural_exceptions{$result->{'to_unit'}}) ? $plural_exceptions{$result->{'to_unit'}} : $result->{'to_unit'} . 's'; 
+        }
+    }
+    else {
+        $result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
+        $result->{'to_unit'} = "degrees $result->{'to_unit'}" if ($result->{'to_unit'} ne "kelvin");
+    }
 
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
     $result->{'result'} =~ s/\.0{$precision}$//;
