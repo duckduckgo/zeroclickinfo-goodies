@@ -105,7 +105,7 @@ sub _add_html_exponents {
     # because of associativity and power-to-power, we need to scan nearly the whole thing
     for my $index (1 .. $#chars - 1) {
         my $this_char = $chars[$index];
-        if ($this_char =~ $number_re or $this_char eq '-') {
+        if ($this_char =~ $number_re or ($newly_up && $this_char eq '-')) {
             if ($newly_up) {
                 $in_exp_number = 1;
                 $newly_up      = 0;
