@@ -28,6 +28,9 @@ ddg_goodie_test(
     'hex 10 into binary'   => test_zci('Binary conversion: 0x10 (hex) = 00010000 (binary)'),
     '0xg into binary'      => test_zci('Binary conversion: "0xg" (string) = 001100000111100001100111 (binary)'),
     'hex 0xg as binary'    => test_zci('Binary conversion: "hex 0xg" (string) = 01101000011001010111100000100000001100000111100001100111 (binary)'),
+    '2336462209024 in binary' => test_zci('Binary conversion: 2336462209024 (decimal) = 000000100010000000000000000000000000000000000000 (binary)'),
+    '300000000000000 as binary' =>
+      test_zci('Binary conversion: 300000000000000 (decimal) = 00000001000100001101100100110001011011101100000000000000 (binary)'),
     'binary 10'            => undef,
     '12 binary'            => undef,
     '12 from binary'       => undef,
