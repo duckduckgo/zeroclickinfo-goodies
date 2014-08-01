@@ -14,21 +14,30 @@ ddg_goodie_test(
         'DDG::Goodie::Lowercase'
     ],
     'lowercase foo' =>
-        test_zci('foo'),
+        test_zci('foo',
+        html => qr/foo/),
     'lower case foO' =>
-        test_zci('foo'),
+        test_zci('foo',
+        html => qr/foo/),
     'lowercase john Doe' =>
-        test_zci('john doe'),
+        test_zci('john doe',
+        html => qr/john doe/),
     'lowercase GitHub' =>
-        test_zci('github'),
+        test_zci('github',
+        html => qr/github/),
     'lower case GitHub' =>
-        test_zci('github'),
+        test_zci('github',
+        html => qr/github/),
     'lc GitHub' =>
-        test_zci('github'),
+        test_zci('github',
+        html => qr/github/),
     'strtolower GitHub' =>
-        test_zci('github'),
+        test_zci('github',
+        html => qr/github/),
     'tolower GitHub' =>
-        test_zci('github'),
+        test_zci('github',
+        html => qr/github/),
+    'how to lowercase text' => undef
 );
 
 done_testing;

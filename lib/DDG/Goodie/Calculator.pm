@@ -171,9 +171,9 @@ sub format_html {
 
     return
         $css
-      . "<div class='zci--calculator'>"
+      . "<div class='zci--calculator text--primary'>"
       . spacing($query)
-      . " = <a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>"
+      . "<span class='text--secondary'> = </span><a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();' class='text--primary'>"
       . $result
       . "</a></div>";
 }

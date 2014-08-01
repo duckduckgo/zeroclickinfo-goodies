@@ -20,6 +20,9 @@ ddg_goodie_test(
     "average 12;45;78;1234.12" => test_zci("Mean: 342.28; Median: 61.5; Root Mean Square: 618.72958034993", html => qr/Mean:/),
     'average 12, 45, 78, 1234' => test_zci('Mean: 342.25; Median: 61.5; Root Mean Square: 618.669742269654', html => qr/Mean:/),
     'avg 1,2,3' => test_zci('Mean: 2; Median: 2; Root Mean Square: 2.16024689946929', html => qr/Mean:/),
+
+    #Should not trigger
+    'average temperature philadelphia 2012 january' => undef,
 );
 
 done_testing;
