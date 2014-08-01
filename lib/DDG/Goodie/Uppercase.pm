@@ -2,7 +2,8 @@ package DDG::Goodie::Uppercase;
 
 use DDG::Goodie;
 
-triggers startend => 'uppercase', 'upper case', 'allcaps', 'all caps';
+triggers startend => 'uppercase', 'upper case', 'allcaps', 'all caps', 'strtoupper', 'toupper';
+# leaving out 'uc' because of queries like "UC Berkley", etc
 
 zci is_cached => 1;
 zci answer_type => "uppercase";
@@ -19,6 +20,22 @@ topics      'programming';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
-handle remainder => sub { uc ($_) };
+my $css = share("style.css")->slurp();
+sub append_css {
+    my $html = shift;
+    return "<style type='text/css'>$css</style>\n" . $html;
+};
+
+handle remainder => sub {
+    return unless $_;
+    my $upper = uc $_;
+    my $text = "$upper";
+    my $html = qq(<div class="zci--uppercase"><span class="text--primary">$upper</span></div>);
+    $html = append_css($html);
+
+    return $text, html => $html;
+
+    return;
+};
 
 1;
