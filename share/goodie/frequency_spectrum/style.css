@@ -1,3 +1,9 @@
+/* 
+ * As IE 8 and below can't show SVG,
+ * we use the '\9' attribute suffix
+ * to suppress all SVG text elements
+*/
+
 .zci--answer .zci--conversions {
     font-size: 1.5em;
     font-weight: 300;
@@ -21,11 +27,13 @@
 .zci--conversions .x_axis_text {
     font-size: 0.7em;
     fill: #888;
+    display: none\9; /* Suppress text for IE 8 and below */
 }
 
 .zci--conversions .x_axis_label {
     font-size: 0.8em;
     fill: #888;
+    display: none\9; /* Suppress text for IE 8 and below */
 }
 
 .zci--conversions .x_axis_gridline {
@@ -38,6 +46,7 @@
 
 .zci--conversions .major_range_label {
     font-size: 0.7em;
+    display: none\9; /* Suppress text for IE 8 and below */
 }
 
 .zci--conversions .minor_range {
