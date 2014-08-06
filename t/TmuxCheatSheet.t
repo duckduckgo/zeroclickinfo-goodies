@@ -23,6 +23,12 @@ ddg_goodie_test(
     'tmux help'             => $test_zci,
     'tmux quick reference'  => $test_zci,
     'tmux reference'        => $test_zci,
+    'cheatsheet tmux'       => $test_zci,
+    'cheat sheet tmux'      => $test_zci,
+    'guide tmux',           => $test_zci,
+    'reference tmux',       => $test_zci,
+    'quick reference tmux', => $test_zci,
+    'help tmux',            => $test_zci,
 );
 
 done_testing;

@@ -24,6 +24,11 @@ triggers startend => (
     'tmux quick reference',
     'tmux reference',
     'cheatsheet tmux',
+    'cheat sheet tmux',
+    'guide tmux',
+    'reference tmux',
+    'quick reference tmux',
+    'help tmux',
 );
 
 attribution github  => ["charles-l",            "Charles Saternos"],
