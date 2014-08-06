@@ -82,7 +82,7 @@ sub for_display {
     } else {
         $number_text = reverse $number_text;
         $number_text =~ s/\./$decimal/g;    # Perl decimal mark to whatever we need.
-        $number_text =~ s/(\d\d\d)(?=\d)(?!\d*\Q$decimal\E)/$1$thousands/g;
+        $number_text =~ s/(\d{3})(?=\d)(?!\d*\Q$decimal\E)/$1$thousands/g;
         $number_text = reverse $number_text;
     }
 
