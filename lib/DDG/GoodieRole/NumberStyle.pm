@@ -5,8 +5,13 @@ use warnings;
 
 use Moo;
 
-has [qw(id decimal thousands exponential)] => (
+has [qw(id decimal thousands)] => (
     is => 'ro',
+);
+
+has exponential => (
+    is      => 'ro',
+    default => sub { 'e' },
 );
 
 has number_regex => (
