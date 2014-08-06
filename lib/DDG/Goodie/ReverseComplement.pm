@@ -24,15 +24,12 @@ handle remainder => sub {
   $sequence =~ s/\bsequence\b//gi;
   $sequence =~ s/\b[DR]NA\b//gi;
   $sequence =~ s/\bnucleotide\b//gi;
-
   #Remove whitespace and dashes and make uppercase
   $sequence =~ s/\s|-//g;
   $sequence = uc($sequence);
-
-  #Return nothing if sequence contains characters
+  #Return nothing if sequence does not contains characters or contains characters
   # other than DNA/RNA bases or standard IUPAC ambiguity codes
-  return if $sequence =~ /[^ATCGURYKMSWBVDHN]/;
-
+  return unless ($sequence =~ /^[ATCGURYKMSWBVDHN]+$/);
   #DNA contains thymine (T) but not uracil (U);
   # RNA contains U but not T (with some extremely
   # rare exceptions). Hence, if the sequence
@@ -45,7 +42,7 @@ handle remainder => sub {
 
   #Reverse
   $sequence = reverse($sequence);
-
+  
   return $sequence, html => wrap_html('DNA reverse complement:', $sequence);
 };
 

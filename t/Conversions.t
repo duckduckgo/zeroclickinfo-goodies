@@ -79,7 +79,8 @@ ddg_goodie_test(
     '1 degrees Fahrenheit to celsius' => test_zci('1 degrees fahrenheit = -17.222 degrees celsius', html => qr/.*/),
     '0 c in k' => test_zci('0 degrees celsius = 273.150 kelvin', html => qr/.*/),
     '234 f to c' => test_zci('234 degrees fahrenheit = 112.222 degrees celsius', html => qr/.*/),
-    '234 f to k' => test_zci('234 degrees fahrenheit = 385.372 kelvin', html => qr/.*/)
+    '234 f to k' => test_zci('234 degrees fahrenheit = 385.372 kelvin', html => qr/.*/),
+    '7 milligrams to micrograms' => test_zci('7 milligrams = 7000 micrograms', html => qr /.*/)
 );
 
 done_testing;

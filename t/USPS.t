@@ -13,12 +13,12 @@ ddg_goodie_test(
         'EA 000 000 000 US' => test_zci(
         	"EA000000000US",
         	heading => 'USPS Shipment Tracking',
-        	html => qq(Track this shipment at <a href="http://trkcnfrm1.smi.usps.com/PTSInternetWeb/InterLabelInquiry.do?origTrackNum=EA000000000US">USPS</a>.)
+        	html => qq(Track this shipment at <a href="https://tools.usps.com/go/TrackConfirmAction.action?tLabels=EA000000000US">USPS</a>.)
         ),
         'usps 7000 0000 0000 0000 0000' => test_zci(
         	"70000000000000000000",
         	heading => 'USPS Shipment Tracking',
-        	html => qq(Track this shipment at <a href="http://trkcnfrm1.smi.usps.com/PTSInternetWeb/InterLabelInquiry.do?origTrackNum=70000000000000000000">USPS</a>.)
+        	html => qq(Track this shipment at <a href="https://tools.usps.com/go/TrackConfirmAction.action?tLabels=70000000000000000000">USPS</a>.)
         ),
 );
 

@@ -34,10 +34,15 @@ triggers query_nowhitespace_nodash => qr/
 
 handle query_nowhitespace_nodash => sub {
     my $parcel_number = $+{parcel_number};
-    return $parcel_number,
-        heading => 'Parcelforce Tracking',
-        html =>
-        qq(Track this parcel at <a href="http://www.parcelforce.com/track-trace?trackNumber=$parcel_number">Parcelforce</a>.);
-};
+    
+    if ($parcel_number && $parcel_number !~ /^isbn/i) {
+    
+        return $parcel_number,
+            heading => 'Parcelforce Tracking',
+            html =>
+            qq(Track this parcel at <a href="http://www.parcelforce.com/track-trace?trackNumber=$parcel_number">Parcelforce</a>.);
 
+    };
+    return;
+};
 1;

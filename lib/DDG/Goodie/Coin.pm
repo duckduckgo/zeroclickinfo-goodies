@@ -2,6 +2,8 @@ package DDG::Goodie::Coin;
 
 use DDG::Goodie;
 
+zci is_cached => 0;
+
 triggers start => 'flip', 'toss', 'coin', 'heads';
 
 primary_example_queries 'flip a coin', 'toss a coin';
@@ -21,6 +23,9 @@ sub append_css {
 }
 
 handle query_lc => sub {
+	# Ensure rand is seeded for each process
+	srand();
+
 	my $flips;
 	if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) a coin)$/) {
 		$flips = 1;
