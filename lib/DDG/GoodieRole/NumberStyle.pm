@@ -5,8 +5,13 @@ use warnings;
 
 use Moo;
 
-has [qw(id decimal thousands exponential)] => (
+has [qw(id decimal thousands)] => (
     is => 'ro',
+);
+
+has exponential => (
+    is      => 'ro',
+    default => sub { 'e' },
 );
 
 has number_regex => (
@@ -84,6 +89,8 @@ sub for_display {
     return $number_text;
 }
 
+# The display version with HTML added:
+# - superscripted exponents
 sub with_html {
     my ($self, $number_text) = @_;
 

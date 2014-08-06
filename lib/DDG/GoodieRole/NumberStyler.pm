@@ -11,17 +11,15 @@ use List::Util qw( all first );
 # If it could fit more than one the first in order gets preference.
 my @known_styles = (
     DDG::GoodieRole::NumberStyle->new({
-            id          => 'perl',
-            decimal     => '.',
-            thousands   => ',',
-            exponential => 'e',
+            id        => 'perl',
+            decimal   => '.',
+            thousands => ',',
         }
     ),
     DDG::GoodieRole::NumberStyle->new({
-            id          => 'euro',
-            decimal     => ',',
-            thousands   => '.',
-            exponential => 'e',
+            id        => 'euro',
+            decimal   => ',',
+            thousands => '.',
         }
     ),
 );
