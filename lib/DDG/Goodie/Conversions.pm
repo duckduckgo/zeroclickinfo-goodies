@@ -99,15 +99,17 @@ handle query_lc => sub {
     my $precision = 3;
     my $nearest = '.' . ('0' x ($precision-1)) . '1';
 
-    # get factor:
+    # get factor and return if multiple numbers are specified
     my @args = split(/\s+/, $_);
-    my $factor = 1;
+    my $factor = "";
     foreach my $arg (@args) {
         if ($arg =~ /^$number_re$/) {
-            $factor = $arg unless $factor != 1;     # drop n > 1 #s
+            return if $factor;
+            $factor = $arg;
         }
     }
-
+    $factor = 1 if "" eq $factor;
+    
     my $styler = number_style_for($factor);
     return unless $styler;
 

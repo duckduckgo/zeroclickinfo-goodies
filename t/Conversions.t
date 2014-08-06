@@ -87,7 +87,8 @@ ddg_goodie_test(
     '234 f to c' => test_zci('234 degrees fahrenheit = 112.222 degrees celsius', html => qr/.*/),
     '234 f to k' => test_zci('234 degrees fahrenheit = 385.372 kelvin', html => qr/.*/),
     'metres from 20 yards' => test_zci('20 meters = 21.872 yards', html => qr/.*/),
-    '7 milligrams to micrograms' => test_zci('7 milligrams = 7,000 micrograms', html => qr /.*/)
+    '7 milligrams to micrograms' => test_zci('7 milligrams = 7,000 micrograms', html => qr /.*/),
+    'convert 1 cm to 2 mm' => undef,
 );
 
 done_testing;
