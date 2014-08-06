@@ -89,6 +89,8 @@ sub for_display {
     return $number_text;
 }
 
+# The display version with HTML added:
+# - superscripted exponents
 sub with_html {
     my ($self, $number_text) = @_;
 
