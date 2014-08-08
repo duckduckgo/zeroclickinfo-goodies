@@ -1,0 +1,23 @@
+.zci--answer .zci__prev,
+.zci--answer .zci__next {
+    display: inline-block;
+    color: #888;
+    font-size: 0.9167em;
+    padding-top: 1em;
+}
+.zci--answer .zci__prev:hover,
+.zci--answer .zci__next:hover {
+    color: #2f82c2;
+}
+.zci--answer .zci__prev:after {
+    content: '';
+    margin-left: 0.75em;
+    color: #888;
+}
+.is-mobile .zci--answer .zci__prev,
+.is-mobile .zci--answer .zci__next {
+    width: 45%;
+}
+.is-mobile .zci--answer .zci__prev {
+    margin-right: 5%;
+}
