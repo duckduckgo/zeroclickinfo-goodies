@@ -47,36 +47,44 @@ subtest 'NumberStyler' => sub {
 subtest 'Dates' => sub {
 
     { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
-use Data::Dump qw(dump);
+
+    use Data::Dump qw(dump);
+
     new_ok('RoleTester', [], 'Applied to an object');
     isa_ok(RoleTester::date_regex(), 'Regexp', 'date_regex()');
 
     my @dates_to_match = (
-        #Defined formats:
-        '2014-11-27',                   #ISO8601
-        'Sat, 09 Aug 2014 18:20:00',    #HTTP
-        '08-Feb-94 14:15:29 GMT',       # RFC850
+        # Defined formats:
+        #ISO8601
+        '2014-11-27',
+        '1994-02-03 14:15:29 -0100',
+        '1994-02-03 14:15:29',
+        '1994-02-03T14:15:29',
+        '19940203T141529Z',
+        '19940203',
+        #HTTP
+        'Sat, 09 Aug 2014 18:20:00',
+        # RFC850
+        '08-Feb-94 14:15:29 GMT',
         
         #Undefined/Natural formats:
         '13/12/2011',       #DMY
-        '01/01/2001',       #Ambiguous, I guess default to MDY?
+        '01/01/2001',       #Ambiguous, but valid
         '29 June 2014',     #DMY
         '05 Mar 1990',      #DMY (short)
         'June 01 2012',     #MDY
         'May 05 2011',      #MDY
         'may 01 2010',
         '1st june 1994',
+        '5 th january 1993'
     );
 
     my $test_regex = RoleTester::date_regex();
-    #print ok(0, dump($test_regex) . "\n");
     
     foreach my $test_date (@dates_to_match) {
-        like( $test_date, $test_regex, "$test_date matches");
-        
-#        if( $test_date !~ $test_regex ) {
-#            ok(0,"$test_date failed!");
-#        }
+        like( $test_date, qr/^$test_regex$/, "$test_date matches");
+        my $date_object = RoleTester::parse_string_to_date($test_date);
+        #ok(0, dump($date_object) );
     }
 };
 
