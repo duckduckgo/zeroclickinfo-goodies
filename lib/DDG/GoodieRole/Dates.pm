@@ -57,8 +57,8 @@ sub date_regex {
 }
 
 sub parse_string_to_date {
-    #TODO: Figure out $_ why is undef
-    return DateTime::Format::HTTP->parse_datetime($_);
+    my ($d) = @_;
+    return DateTime::Format::HTTP->parse_datetime($d);
 }
 
 1;
