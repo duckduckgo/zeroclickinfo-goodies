@@ -54,16 +54,16 @@ use Data::Dump qw(dump);
     my @dates_to_match = (
         #Defined formats:
         '2014-11-27',                   #ISO8601
-        'sat, 09 aug 2014 18:20:00',    #HTTP
-        '08-feb-94 14:15:29 GMT',       # RFC850
+        'Sat, 09 Aug 2014 18:20:00',    #HTTP
+        '08-Feb-94 14:15:29 GMT',       # RFC850
         
         #Undefined/Natural formats:
         '13/12/2011',       #DMY
         '01/01/2001',       #Ambiguous, I guess default to MDY?
-        '29 june 2014',     #DMY
-        '05 mar 1990',      #DMY (short)
-        'june 01 2012',      #MDY
-        'may 05 2011',      #MDY
+        '29 June 2014',     #DMY
+        '05 Mar 1990',      #DMY (short)
+        'June 01 2012',     #MDY
+        'May 05 2011',      #MDY
     );
 
     my $test_regex = RoleTester::date_regex();
