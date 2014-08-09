@@ -74,6 +74,7 @@ subtest 'Dates' => sub {
         'may 01 2010'       => 1272672000,
         '1st june 1994'     => 770428800,
         '5 th january 1993' => 726192000,
+        'JULY 4TH 1976'     => 205286400,
     );
 
     my $test_regex = RoleTester::date_regex();

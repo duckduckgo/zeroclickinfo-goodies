@@ -11,6 +11,7 @@ use DateTime::Format::HTTP;
 
 # Reused lists and components for below
 my $day_of_week = qr#Mon|Tue|Wed|Thu|Fri|Sat|Sun#i;
+my %long_to_short = map { lc $_ => substr($_, 0, 3) } qw(January February March April May June July August September October November December);
 my $short_month = qr#Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec#i;
 my $full_month = qr#January|February|March|April|May|June|July|August|September|October|November|December#i;
 my $time_24h = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
@@ -50,7 +51,7 @@ sub date_regex {
     push @regexes, qr#[0-1][0-9][\\/\,_-][0-3][0-9][\\/\,_-][0-9]{4}#i;
     push @regexes, qr#$short_month[\\/\,_-][0-3][0-9][\\/\,_-][0-9]{4}#i;
     push @regexes, qr#$full_month\\/\,_-][0-3][0-9][\\/\,_-][0-9]{4}#i;
-    push @regexes, qr#(?:$short_month|$full_month) [0-3]?[0-9] [0-9]{4}#i;
+    push @regexes, qr#(?:$short_month|$full_month) [0-3]?[0-9](?: ?$number_suffixes)? [0-9]{4}#i;
         
     my $returned_regex = join '|', @regexes;
     return qr/$returned_regex/i;
@@ -58,6 +59,9 @@ sub date_regex {
 
 sub parse_string_to_date {
     my ($d) = @_;
+
+    $d =~ s/(\d+)\s?$number_suffixes/$1/i;            # Strip ordinal text.
+    $d =~ s/($full_month)/$long_to_short{lc $1}/i;    # Parser deals better with the shorter month names.
     return DateTime::Format::HTTP->parse_datetime($d);
 }
 
