@@ -205,7 +205,11 @@ handle query => sub {
     }
 
     #Look for matches in the audible spectrum
-    my @audibleMatches = @{match_audible($freq_hz)};
+    # NOTE: Audible frequency results are currently being suppressed,
+    # as the resulting IA is too long. This will be revisited when
+    # better stying is available.
+    #my @audibleMatches = @{match_audible($freq_hz)};
+    my @audibleMatches = ();
     if (@audibleMatches) {
 
         my $audibleDescription = $freq_formatted . ' is';

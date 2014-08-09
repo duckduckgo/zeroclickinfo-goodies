@@ -1,5 +1,9 @@
 #!/usr/bin/env perl
 
+# NOTE: Audible frequency results are currently being suppressed,
+# as the resulting IA is too long. This will be revisited when
+# better stying is available.
+
 use strict;
 use warnings;
 
@@ -13,7 +17,8 @@ ddg_goodie_test(
 
     #Primary example
     '50 hz' => test_zci(
-        qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
+      #qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
+        qr/radio/,
         html => qr/radio/
     ),
 
@@ -25,7 +30,8 @@ ddg_goodie_test(
 
     #Misc
     '1,000 hz' => test_zci(
-        qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
+      #qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
+      qr/radio/,
         html => qr/radio.+/
     ),
     '1000000.99 hz' => test_zci(
@@ -39,7 +45,8 @@ ddg_goodie_test(
 
     #No whitespace between number and unit
     '50hz' => test_zci(
-        qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
+      #qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
+        qr/radio/,
         html => qr/radio/
     ),
     '400terahertz' => test_zci(
@@ -54,7 +61,8 @@ ddg_goodie_test(
     ),
 
     '1000 HZ' => test_zci(
-        qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
+      #qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
+      qr/radio/,
         html => qr/radio.+/
     ),
 
