@@ -64,13 +64,19 @@ use Data::Dump qw(dump);
         '05 Mar 1990',      #DMY (short)
         'June 01 2012',     #MDY
         'May 05 2011',      #MDY
+        'may 01 2010',
+        '1st june 1994',
     );
 
     my $test_regex = RoleTester::date_regex();
     #print ok(0, dump($test_regex) . "\n");
     
     foreach my $test_date (@dates_to_match) {
-        ok($test_date =~ qr/$test_regex/i, "$test_date matches"  );
+        like( $test_date, $test_regex, "$test_date matches");
+        
+#        if( $test_date !~ $test_regex ) {
+#            ok(0,"$test_date failed!");
+#        }
     }
 };
 
