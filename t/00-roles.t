@@ -48,8 +48,6 @@ subtest 'Dates' => sub {
 
     { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
 
-    use Data::Dump qw(dump);
-
     new_ok('RoleTester', [], 'Applied to an object');
     isa_ok(RoleTester::date_regex(), 'Regexp', 'date_regex()');
 
@@ -66,7 +64,6 @@ subtest 'Dates' => sub {
         'Sat, 09 Aug 2014 18:20:00',
         # RFC850
         '08-Feb-94 14:15:29 GMT',
-        
         #Undefined/Natural formats:
         '13/12/2011',       #DMY
         '01/01/2001',       #Ambiguous, but valid
@@ -84,7 +81,6 @@ subtest 'Dates' => sub {
     foreach my $test_date (@dates_to_match) {
         like( $test_date, qr/^$test_regex$/, "$test_date matches");
         my $date_object = RoleTester::parse_string_to_date($test_date);
-        #ok(0, dump($date_object) );
     }
 };
 
