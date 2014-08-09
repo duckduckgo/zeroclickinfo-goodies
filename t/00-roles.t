@@ -51,37 +51,39 @@ subtest 'Dates' => sub {
     new_ok('RoleTester', [], 'Applied to an object');
     isa_ok(RoleTester::date_regex(), 'Regexp', 'date_regex()');
 
-    my @dates_to_match = (
+    my %dates_to_match = (
         # Defined formats:
         #ISO8601
-        '2014-11-27',
-        '1994-02-03 14:15:29 -0100',
-        '1994-02-03 14:15:29',
-        '1994-02-03T14:15:29',
-        '19940203T141529Z',
-        '19940203',
+        '2014-11-27'                => 1417046400,
+        '1994-02-03 14:15:29 -0100' => 760288529,
+        '1994-02-03 14:15:29'       => 760284929,
+        '1994-02-03T14:15:29'       => 760284929,
+        '19940203T141529Z'          => 760284929,
+        '19940203'                  => 760233600,
         #HTTP
-        'Sat, 09 Aug 2014 18:20:00',
+        'Sat, 09 Aug 2014 18:20:00' => 1407608400,
         # RFC850
-        '08-Feb-94 14:15:29 GMT',
+        '08-Feb-94 14:15:29 GMT' => 760716929,
         #Undefined/Natural formats:
-        '13/12/2011',       #DMY
-        '01/01/2001',       #Ambiguous, but valid
-        '29 June 2014',     #DMY
-        '05 Mar 1990',      #DMY (short)
-        'June 01 2012',     #MDY
-        'May 05 2011',      #MDY
-        'may 01 2010',
-        '1st june 1994',
-        '5 th january 1993'
+        '13/12/2011'        => 1323734400,    #DMY
+        '01/01/2001'        => 978307200,     #Ambiguous, but valid
+        '29 June 2014'      => 1404000000,    #DMY
+        '05 Mar 1990'       => 636595200,     #DMY (short)
+        'June 01 2012'      => 1338508800,    #MDY
+        'May 05 2011'       => 1304553600,    #MDY
+        'may 01 2010'       => 1272672000,
+        '1st june 1994'     => 770428800,
+        '5 th january 1993' => 726192000,
     );
 
     my $test_regex = RoleTester::date_regex();
-    
-    foreach my $test_date (@dates_to_match) {
-        like( $test_date, qr/^$test_regex$/, "$test_date matches");
+
+    foreach my $test_date (keys %dates_to_match) {
+        like($test_date, qr/^$test_regex$/, "$test_date matches");
+
         my $date_object = RoleTester::parse_string_to_date($test_date);
-        ok(0, $date_object);
+        isa_ok($date_object, 'DateTime', $test_date);
+        is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
     }
 };
 
