@@ -44,4 +44,34 @@ subtest 'NumberStyler' => sub {
 
 };
 
+subtest 'Dates' => sub {
+
+    { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
+use Data::Dump qw(dump);
+    new_ok('RoleTester', [], 'Applied to an object');
+    isa_ok(RoleTester::date_regex(), 'Regexp', 'date_regex()');
+
+    my @dates_to_match = (
+        #Defined formats:
+        '2014-11-27',                   #ISO8601
+        'sat, 09 aug 2014 18:20:00',    #HTTP
+        '08-feb-94 14:15:29 GMT',       # RFC850
+        
+        #Undefined/Natural formats:
+        '13/12/2011',       #DMY
+        '01/01/2001',       #Ambiguous, I guess default to MDY?
+        '29 june 2014',     #DMY
+        '05 mar 1990',      #DMY (short)
+        'june 01 2012',      #MDY
+        'may 05 2011',      #MDY
+    );
+
+    my $test_regex = RoleTester::date_regex();
+    #print ok(0, dump($test_regex) . "\n");
+    
+    foreach my $test_date (@dates_to_match) {
+        ok($test_date =~ qr/$test_regex/i, "$test_date matches"  );
+    }
+};
+
 done_testing;
