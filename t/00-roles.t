@@ -95,12 +95,16 @@ subtest 'Dates' => sub {
     # Tests for mangled formats that shouldn't match
     my @strings_to_ignore = (
         '24/8',
-        '123'
+        '123',
+        '123-84-1',
+        '1st january',
+        '1/1/1'
     );
     
     foreach my $test_string (@strings_to_ignore) {
         unlike($test_string, qr/^$test_regex$/, "$test_string doesn't match");
     }
+
 };
 
 done_testing;

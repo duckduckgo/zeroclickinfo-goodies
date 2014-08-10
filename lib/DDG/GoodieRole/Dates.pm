@@ -25,7 +25,6 @@ my $tz_suffixes = qr#(?:[+-][0-9]{4})|ACDT|ACST|ACT|ADT|AEDT|AEST|AFT|AKDT|AKST|
 
 # These matches are for "in the right format"/"looks about right" 
 #  not "are valid dates"; expects normalised whitespace
-#  probably should be used with /i
 sub date_regex {
     my @regexes = ();
     
