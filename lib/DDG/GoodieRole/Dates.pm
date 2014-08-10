@@ -51,12 +51,12 @@ sub date_regex {
     # month-first date formats
     push @regexes, qr#$date_number$date_delim$short_month$date_delim[0-9]{4}#i;
     push @regexes, qr#$date_number$date_delim$full_month$date_delim[0-9]{4}#i;
-    push @regexes, qr#(?:$short_month|$full_month) $date_number(?: ?$number_suffixes)? [0-9]{4}#i;
+    push @regexes, qr#(?:$short_month|$full_month) $date_number(?: ?$number_suffixes)?[,]? [0-9]{4}#i;
 
     # day-first date formats
     push @regexes, qr#$short_month$date_delim$date_number$date_delim[0-9]{4}#i;
     push @regexes, qr#$full_month$date_delim$date_number$date_delim[0-9]{4}#i;
-    push @regexes, qr#$date_number(?: ?$number_suffixes)? (?:$short_month|$full_month) [0-9]{4}#i;
+    push @regexes, qr#$date_number[,]?(?: ?$number_suffixes)? (?:$short_month|$full_month)[,]? [0-9]{4}#i;
 
     ## Ambiguous, but potentially valid date formats
     push @regexes, $ambiguous_dates;
@@ -85,6 +85,7 @@ sub parse_string_to_date {
     }
 
     $d =~ s/(\d+)\s?$number_suffixes/$1/i;                                       # Strip ordinal text.
+    $d =~ s/,//i;                                                                # Strip any random commas.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
     $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    #Switching Jun-01-2012 to 01 Jun 2012
 
