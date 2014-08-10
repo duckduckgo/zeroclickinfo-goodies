@@ -91,7 +91,16 @@ subtest 'Dates' => sub {
         isa_ok($date_object, 'DateTime', $test_date);
         is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
     }
-
+    
+    # Tests for mangled formats that shouldn't match
+    my @strings_to_ignore = (
+        '24/8',
+        '123'
+    );
+    
+    foreach my $test_string (@strings_to_ignore) {
+        unlike($test_string, qr/^$test_regex$/, "$test_string doesn't match");
+    }
 };
 
 done_testing;

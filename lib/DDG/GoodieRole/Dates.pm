@@ -41,14 +41,14 @@ sub date_regex {
     
     ## acceptable date formats
     # DMY: 27/11/2014 with a variety of delimiters and month formats
-    push @regexes, qr#[0-3][0-9][\\/\._-][0-1][0-9][\\/\._-][0-9]{4}#i;
+    push @regexes, qr#[0-3]?[0-9][\\/\._-][0-1]?[0-9][\\/\._-][0-9]{4}#i;
     push @regexes, qr#[0-3][0-9][\\/\._-]$short_month[\\/\._-][0-9]{4}#i;
     push @regexes, qr#[0-3][0-9][\\/\._-]$full_month[\\/\._-][0-9]{4}#i;
     push @regexes, qr#[0-3]?[0-9](?: ?$number_suffixes)? (?:$short_month|$full_month) [0-9]{4}#i;
     
     ## fundamentally non-sensical date formats, for americans
     # MDY: 11/27/2014
-    push @regexes, qr#[0-1][0-9][\\/\,_-][0-3][0-9][\\/\,_-][0-9]{4}#i;
+    push @regexes, qr#[0-1]?[0-9][\\/\,_-][0-3]?[0-9][\\/\,_-][0-9]{4}#i;
     push @regexes, qr#$short_month[\\/\,_-][0-3][0-9][\\/\,_-][0-9]{4}#i;
     push @regexes, qr#$full_month\\/\,_-][0-3][0-9][\\/\,_-][0-9]{4}#i;
     push @regexes, qr#(?:$short_month|$full_month) [0-3]?[0-9](?: ?$number_suffixes)? [0-9]{4}#i;
@@ -61,7 +61,7 @@ sub parse_string_to_date {
     my ($d) = @_;
     
     # guesswork for ambigous DMY/MDY and switch to ISO 
-    if($d =~ qr#^([0-3][0-9])[\\/\,_-]([0-3][0-9])[\\/\,_-]([0-9]{4})$#i)
+    if($d =~ qr#^([0-3]?[0-9])[\\/\,_-]([0-3]?[0-9])[\\/\,_-]([0-9]{4})$#i)
     {
         my $month = $1;
         my $day = $2;
@@ -74,7 +74,7 @@ sub parse_string_to_date {
             $day = $month;
             $month = $tmp;
         }
-        $d = "$year-$month-$day";
+        $d = sprintf("%04d-%02d-%02d",$year,$month,$day);
     }
 
     $d =~ s/(\d+)\s?$number_suffixes/$1/i;            # Strip ordinal text.
