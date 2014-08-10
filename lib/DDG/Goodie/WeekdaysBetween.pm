@@ -59,16 +59,10 @@ sub delta_weekdays {
     $dow2 -= 7 if($dow2 > 7);
 
     for(;;) {
-        if($dow1 < 6) {
-          $result = $result + 1;
-        }
-        if($dow1 == $dow2) {
-          last;
-        }
+        $result = $result + 1 if($dow1 < 6);
+        last if($dow1 == $dow2);
         $dow1 = $dow1 + 1;
-        if($dow1 > 7) {
-          $dow1 = $dow1 - 7;
-        }
+        $dow1 = $dow1 - 7 if($dow1 > 7);
     }
     
     return $result;
