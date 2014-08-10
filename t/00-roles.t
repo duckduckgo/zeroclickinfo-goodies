@@ -92,7 +92,7 @@ subtest 'Dates' => sub {
     );
 
     my $test_regex = RoleTester::date_regex();
-use Data::Dump qw(dump);
+
     foreach my $test_date (keys %dates_to_match) {
         like($test_date, qr/^$test_regex$/, "$test_date matches");
         
