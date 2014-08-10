@@ -80,6 +80,7 @@ sub parse_string_to_date {
 
     $d =~ s/(\d+)\s?$number_suffixes/$1/i;                  # Strip ordinal text.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;    # Parser deals better with the shorter month names.
+    $d =~ s/^($short_month)$date_delim(\d{2})/$2-$1/i;      #Switching Jun-01-2012 to 01 Jun 2012
     return DateTime::Format::HTTP->parse_datetime($d);
 }
 
