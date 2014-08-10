@@ -3,11 +3,6 @@ package DDG::Goodie::AltCalendars;
 
 use DDG::Goodie;
 
-#use constant MD5HERF =>  "http://en.wikipedia.org/wiki/MD5";
-#use constant SHA1HREF => "http://en.wikipedia.org/wiki/SHA-1";
-#use constant SHA2HREF => "http://en.wikipedia.org/wiki/SHA-2";
-#use constant SHA3HREF => "http://en.wikipedia.org/wiki/SHA-3";
-
 primary_example_queries 'heisei 24';
 secondary_example_queries 'meiji 1';
 description 'Convert non-Gregorian years to the Gregorian calendar';
@@ -25,20 +20,20 @@ triggers any => 'juche', 'minguo', 'meiji', 'taisho', 'taishou', 'showa', 'shouw
 zci answer_type => 'date_conversion';
 zci is_cached => 1;
 
+my %eras = (
+    'Meiji' => [1867, 'Meiji_period'], # Japanese Meiji era
+    'Taisho' => [1911, 'Taisho_period'], # Japanese Taisho era
+    'Taishou' => [1911, 'Taisho_period'], # Alternative spelling of "Taisho"
+    'Showa' => [1925, 'Showa_period'], # Japanese Showa era
+    'Shouwa' => [1925, 'Showa_period'], # Alternative spelling of "Showa"
+    'Heisei' => [1988, 'Heisei_period'], # Japanese Heisei era
+    'Juche' => [1911, 'North_Korean_calendar'], # North Korean Juche era
+    'Minguo' => [1911, 'Minguo_calendar'], # ROC (Taiwanese) Minguo era
+);
+
 handle query_parts => sub {
     # Ignore single word queries
     return unless scalar(@_) > 1;
-    
-    my %eras = (
-        'Meiji' => [1867, 'Meiji_period'], # Japanese Meiji era
-        'Taisho' => [1911, 'Taisho_period'], # Japanese Taisho era
-        'Taishou' => [1911, 'Taisho_period'], # Alternative spelling of "Taisho"
-        'Showa' => [1925, 'Showa_period'], # Japanese Showa era
-        'Shouwa' => [1925, 'Showa_period'], # Alternative spelling of "Showa"
-        'Heisei' => [1988, 'Heisei_period'], # Japanese Heisei era
-        'Juche' => [1911, 'North_Korean_calendar'], # North Korean Juche era
-        'Minguo' => [1911, 'Minguo_calendar'], # ROC (Taiwanese) Minguo era
-    );
     
     if ($_ =~ /^(.*\b)(meiji|taisho|taishou|showa|shouwa|heisei|juche|minguo)\s+(\d*[1-9]\d*)(\b.*)$/i) {
         my $era_name = ucfirst($2);
