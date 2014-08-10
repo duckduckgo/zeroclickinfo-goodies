@@ -18,6 +18,7 @@ ddg_goodie_test(
         'days_between 3/14/2005 and 1/2/2003' => test_zci('There are 802 days between 14 Mar 2005 and 02 Jan 2003.'), 
         'days between 01/31/2000 01/31/2001' => test_zci('There are 366 days between 31 Jan 2000 and 31 Jan 2001.'),
         'days between 01/31/2000 01/31/2001 inclusive' => test_zci('There are 367 days between 31 Jan 2000 and 31 Jan 2001, inclusive.'),
+        'days between January 31st, 2000 and 31-Jan-2001 inclusive' => test_zci('There are 367 days between 31 Jan 2000 and 31 Jan 2001, inclusive.'),
 );
 
 done_testing;
