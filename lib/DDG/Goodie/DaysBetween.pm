@@ -2,10 +2,10 @@ package DDG::Goodie::DaysBetween;
 # ABSTRACT: Give the number of days between two given dates.
 
 use DDG::Goodie;
-use Date::Calc qw( Date_to_Days); 
+with 'DDG::GoodieRole::Dates';
 use Time::localtime;
 
-triggers start => "days", "daysbetween", "days_between";
+triggers start => "days between", "days", "daysbetween", "days_between";
 
 zci is_cached => 1;
 zci answer_type => "days_between";
@@ -18,39 +18,27 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'everyday';
 attribution github => ['http://github.com/JetFault', 'JetFault'];
+use Data::Dump qw(dump);
 
+my $date_regex = date_regex();
 
-handle query_lc => sub {
+handle remainder => sub {
+    return unless $_ =~ qr/^($date_regex) (?:(?:and|to) )?($date_regex)[ ]?(inclusive)?$/i;
+    
+    my $date1 = parse_string_to_date($1);
+    my $date2 = parse_string_to_date($2);
+    my $difference = $date1->delta_days($date2);
+    my $daysBetween = abs($difference->in_units('days'));
+    my $inclusive = '';
+    if(/inclusive/) {
+        $daysBetween += 1;
+        $inclusive = ', inclusive';
+    }
+    my $startDate = $date1->strftime("%d %b %Y");
+    my $endDate = $date2->strftime("%d %b %Y");
+    return 'There are ' . $daysBetween ." days between ". $startDate . ' and ' . $endDate . $inclusive . '.';
 
-	s/^days(?:\s|_)*between//;
-	my @dates = $_ =~ m#([01]?[0-9])/([0-3]?[0-9])/([0-9]{4}(?=\s|$))#g;
-
-	if(scalar(@dates) == 3) {
-		my $tm = localtime;
-		push(@dates, $tm->mon + 1, $tm->mday, $tm->year + 1900);
-	}
-
-	if(scalar(@dates) == 6) {
-        my ($days1, $days2);
-        my $inclusive = '';
-
-		eval {
-			$days1 = Date_to_Days(@dates[2,0,1]);
-			$days2 = Date_to_Days(@dates[5,3,4]);
-		};
-		if ($@) {
-			return;
-		}
-		my $daysBetween = abs($days2 - $days1);
-        if(/inclusive/) {
-            $daysBetween += 1;
-            $inclusive = ', inclusive';
-        }
-        my $startDate = join '/', @dates[0,1,2];
-        my $endDate = join '/', @dates[3,4,5];
-		return 'There are ' . $daysBetween ." days between ". $startDate . ' and ' . $endDate . $inclusive . '.';
-	}
-	return;
+    return;
 };
 
 1;
