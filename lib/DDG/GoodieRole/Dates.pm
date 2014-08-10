@@ -17,9 +17,10 @@ my $full_month = qr#January|February|March|April|May|June|July|August|September|
 my $time_24h = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 # Covering the ambiguous formats, like:
-# DMY: 27/11/2014 with a variety of delimiters and month formats
+# DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
-my $ambiguous_dates =  qr#^([0-3]?[0-9])[\\/\,_-]([0-3]?[0-9])[\\/\,_-]([0-9]{4})$#i;
+my $date_delim      = qr#[\.\\/\,_-]#;
+my $ambiguous_dates = qr#^([0-3]?[0-9])$date_delim([0-3]?[0-9])$date_delim([0-9]{4})$#i;
 
 # like: 1st 2nd 3rd 4-20,24-30th 21st 22nd 23rd 31st
 my $number_suffixes = qr#(st|nd|rd|th)#i;
@@ -43,13 +44,13 @@ sub date_regex {
     push @regexes, qr#[0-9]{2}-$short_month-([0-9]{2}|[0-9]{4}) $time_24h?( ?$tz_suffixes)#i;
 
     # month-first date formats
-    push @regexes, qr#[0-3][0-9][\\/\._-]$short_month[\\/\._-][0-9]{4}#i;
-    push @regexes, qr#[0-3][0-9][\\/\._-]$full_month[\\/\._-][0-9]{4}#i;
+    push @regexes, qr#[0-3][0-9]$date_delim$short_month$date_delim[0-9]{4}#i;
+    push @regexes, qr#[0-3][0-9]$date_delim$full_month$date_delim[0-9]{4}#i;
     push @regexes, qr#(?:$short_month|$full_month) [0-3]?[0-9](?: ?$number_suffixes)? [0-9]{4}#i;
 
     # day-first date formats
-    push @regexes, qr#$short_month[\\/\,_-][0-3][0-9][\\/\,_-][0-9]{4}#i;
-    push @regexes, qr#$full_month\\/\,_-][0-3][0-9][\\/\,_-][0-9]{4}#i;
+    push @regexes, qr#$short_month$date_delim[0-3][0-9]$date_delim[0-9]{4}#i;
+    push @regexes, qr#$full_month$date_delim[0-3][0-9]$date_delim[0-9]{4}#i;
     push @regexes, qr#[0-3]?[0-9](?: ?$number_suffixes)? (?:$short_month|$full_month) [0-9]{4}#i;
 
     ## Ambiguous, but potentially valid date formats
