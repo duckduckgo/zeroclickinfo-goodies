@@ -24,10 +24,10 @@ my $date_number         = qr#[0-3]?[0-9]#;
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
 my $date_delim      = qr#[\.\\/\,_-]#;
-my $ambiguous_dates = qr#^($date_number)$date_delim($date_number)$date_delim([0-9]{4})$#i;
+my $ambiguous_dates = qr#^(?:$date_number)$date_delim(?:$date_number)$date_delim(?:[0-9]{4})$#i;
 
 # like: 1st 2nd 3rd 4-20,24-30th 21st 22nd 23rd 31st
-my $number_suffixes = qr#(st|nd|rd|th)#i;
+my $number_suffixes = qr#(?:st|nd|rd|th)#i;
 
 # Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
 my $tz_suffixes =
@@ -40,13 +40,13 @@ sub date_regex {
 
     ## unambigous and awesome date formats:
     # ISO8601: 2014-11-27 (with a concession to single-digit month and day numbers)
-    push @regexes, qr#[0-9]{4}-?[0-1]?[0-9]-?$date_number([ T]$time_24h)?( ?$tz_suffixes)?#i;
+    push @regexes, qr#[0-9]{4}-?[0-1]?[0-9]-?$date_number(?:[ T]$time_24h)?( ?$tz_suffixes)?#i;
 
     # HTTP: Sat, 09 Aug 2014 18:20:00
     push @regexes, qr#$short_day_of_week, [0-9]{2} $short_month [0-9]{4} $time_24h?#i;
 
     # RFC850 08-Feb-94 14:15:29 GMT
-    push @regexes, qr#[0-9]{2}-$short_month-([0-9]{2}|[0-9]{4}) $time_24h?( ?$tz_suffixes)#i;
+    push @regexes, qr#[0-9]{2}-$short_month-(?:[0-9]{2}|[0-9]{4}) $time_24h?(?: ?$tz_suffixes)#i;
 
     # month-first date formats
     push @regexes, qr#$date_number$date_delim$short_month$date_delim[0-9]{4}#i;
@@ -69,7 +69,7 @@ sub parse_string_to_date {
     my ($d) = @_;
 
     return unless ($d =~ date_regex());    # Only handle white-listed strings, even if they might otherwise work.
-    if ($d =~ $ambiguous_dates) {
+    if ($d =~ qr#^($date_number)$date_delim($date_number)$date_delim([0-9]{4})$#i) {
         # guesswork for ambigous DMY/MDY and switch to ISO
         my $month = $1;                    # Assume MDY, even though it's crazy, for backward compatibility
         my $day   = $2;
