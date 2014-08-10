@@ -97,7 +97,7 @@ subtest 'Dates' => sub {
 
     my $test_regex = RoleTester::date_regex();
 
-    foreach my $test_date (keys %dates_to_match) {
+    foreach my $test_date (sort keys %dates_to_match) {
         like($test_date, qr/^$test_regex$/, "$test_date matches the date_regex");
 
         # test_regex should not contain any submatches
@@ -121,7 +121,7 @@ subtest 'Dates' => sub {
         'Feb 38th 2015' => 1,
     );
 
-    foreach my $test_string (keys %bad_strings_match) {
+    foreach my $test_string (sort keys %bad_strings_match) {
         if ($bad_strings_match{$test_string}) {
             like($test_string, qr/^$test_regex$/, "$test_string matches date_regex");
         } else {
