@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More;
+use Test::Most;
 
 subtest 'NumberStyler' => sub {
 
@@ -86,6 +86,9 @@ subtest 'Dates' => sub {
         'feb/01/2010'       => 1264982400,
         '01-jun-2012'       => 1338508800,
         '01/june/2012'      => 1338508800,
+        'JUN-1-2012'        => 1338508800,
+        '4-jUL-1976'        => 205286400,
+        '2001-1-1'          => 978307200,
     );
 
     my $test_regex = RoleTester::date_regex();
@@ -109,6 +112,9 @@ subtest 'Dates' => sub {
     
     foreach my $test_string (@strings_to_ignore) {
         unlike($test_string, qr/^$test_regex$/, "$test_string doesn't match");
+        my $result;
+        lives_ok { $result = RoleTester::parse_string_to_date($test_string) } '... nor does it kill the parser.';
+        is($result, undef, '... and returns undef to signal failure.');
     }
 
 };
