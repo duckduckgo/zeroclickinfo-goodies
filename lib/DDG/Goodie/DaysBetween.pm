@@ -3,7 +3,6 @@ package DDG::Goodie::DaysBetween;
 
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
-use Time::localtime;
 
 triggers start => "days between", "days", "daysbetween", "days_between";
 
@@ -18,12 +17,11 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'everyday';
 attribution github => ['http://github.com/JetFault', 'JetFault'];
-use Data::Dump qw(dump);
 
 my $date_regex = date_regex();
 
 handle remainder => sub {
-    return unless $_ =~ qr/^($date_regex) (?:(?:and|to) )?($date_regex)[ ]?(inclusive)?$/i;
+    return unless $_ =~ qr/^($date_regex) (?:(?:and|to) )?($date_regex)/i;
     
     my $date1 = parse_string_to_date($1);
     my $date2 = parse_string_to_date($2);
@@ -36,9 +34,7 @@ handle remainder => sub {
     }
     my $startDate = $date1->strftime("%d %b %Y");
     my $endDate = $date2->strftime("%d %b %Y");
-    return 'There are ' . $daysBetween ." days between ". $startDate . ' and ' . $endDate . $inclusive . '.';
-
-    return;
+    return "There are $daysBetween days between $startDate and $endDate$inclusive.";
 };
 
 1;
