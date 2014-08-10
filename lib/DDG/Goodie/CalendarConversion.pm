@@ -1,5 +1,5 @@
-package DDG::Goodie::Hijri;
-# ABSTRACT: convert between Gregorian and Hiriji calendars.
+package DDG::Goodie::CalendarConversion;
+# ABSTRACT: convert between various calendars.
 
 use DDG::Goodie;
 
@@ -9,8 +9,8 @@ zci answer_type => "conversion";
 primary_example_queries '22/8/2003 to the hijri calendar';
 secondary_example_queries '23/6/1424 to gregorian';
 description 'convert dates from the Gregorian calendar to the Hijri calendar and back';
-name 'Hijri';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Hijri.pm';
+name 'CalendarConversion';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CalendarConversion.pm';
 category 'dates';
 topics 'special_interest';
 attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
@@ -30,12 +30,12 @@ sub output {
 }
 
 handle query_lc => sub {
-	return unless my ($gd, $gm, $gy, $requested_calendar) = $_ =~
+	return unless my ($gd, $gm, $gy, $input_calendar, $output_calendar) = $_ =~
         /^
             (\d{0,2})(?:\/|,)(\d{0,2})(?:\/|,)(\d{3,4})\s+
             (?:
                 (?:on\s+the)\s+
-                (?:gregorian|hijri)\s+
+                ((?:gregorian|hijri)?)\s+
                 (?:calendar|date|time)\s+
                 is\s+
             )?
@@ -48,7 +48,7 @@ handle query_lc => sub {
 	
 	return unless ($gd < 31 and $gm < 12);
 
-	my $is_hijri = $requested_calendar eq 'hijri';
+	my $is_hijri = $output_calendar eq 'hijri';
 
 	my ($hd, $hm, $hy) = $is_hijri ? g2h($gd, $gm, $gy) : h2g($gd, $gm, $gy);
 	my $input_date     = "$gd/$gm/$gy";
