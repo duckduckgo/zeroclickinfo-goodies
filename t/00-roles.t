@@ -92,10 +92,15 @@ subtest 'Dates' => sub {
     );
 
     my $test_regex = RoleTester::date_regex();
-
+use Data::Dump qw(dump);
     foreach my $test_date (keys %dates_to_match) {
         like($test_date, qr/^$test_regex$/, "$test_date matches");
-
+        
+        # test_regex should not contain any submatches
+        $test_date =~ qr/^$test_regex$/;
+        is(scalar @-, 1);
+        is(scalar @+, 1);
+        
         my $date_object = RoleTester::parse_string_to_date($test_date);
         isa_ok($date_object, 'DateTime', $test_date);
         is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
@@ -109,7 +114,7 @@ subtest 'Dates' => sub {
         '1st january',
         '1/1/1'
     );
-    
+
     foreach my $test_string (@strings_to_ignore) {
         unlike($test_string, qr/^$test_regex$/, "$test_string doesn't match");
         my $result;
