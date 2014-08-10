@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More;
+use Test::Most;
 
 subtest 'NumberStyler' => sub {
 
@@ -112,6 +112,9 @@ subtest 'Dates' => sub {
     
     foreach my $test_string (@strings_to_ignore) {
         unlike($test_string, qr/^$test_regex$/, "$test_string doesn't match");
+        my $result;
+        lives_ok { $result = RoleTester::parse_string_to_date($test_string) } '... nor does it kill the parser.';
+        is($result, undef, '... and returns undef to signal failure.');
     }
 
 };

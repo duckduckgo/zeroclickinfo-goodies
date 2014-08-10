@@ -2,9 +2,11 @@ package DDG::GoodieRole::Dates;
 
 use strict;
 use warnings;
+use feature 'state';
 
 use Moo::Role;
 use DateTime;
+use Try::Tiny;
 
 # This appears to parse most/all of the big ones, however it doesn't present a regex
 use DateTime::Format::HTTP;
@@ -59,22 +61,23 @@ sub date_regex {
     ## Ambiguous, but potentially valid date formats
     push @regexes, $ambiguous_dates;
 
-    my $returned_regex = join '|', @regexes;
+    state $returned_regex = join '|', @regexes;
     return qr/$returned_regex/i;
 }
 
 sub parse_string_to_date {
     my ($d) = @_;
 
-    # guesswork for ambigous DMY/MDY and switch to ISO
+    return unless ($d =~ date_regex());    # Only handle white-listed strings, even if they might otherwise work.
     if ($d =~ $ambiguous_dates) {
-        my $month = $1;    # Assume MDY, even though it's crazy, for backward compatibility
+        # guesswork for ambigous DMY/MDY and switch to ISO
+        my $month = $1;                    # Assume MDY, even though it's crazy, for backward compatibility
         my $day   = $2;
         my $year  = $3;
 
         if ($month > 12) {
             # Months over 12 don't make any sense, so must not be MDY
-            return if ($day > 12);    # what we took as day must not be month, either.  No idea how to proceed.
+            return if ($day > 12);         # what we took as day must not be month, either.  No idea how to proceed.
             ($day, $month) = ($month, $day);    # month and day must be swapped, then.
         }
 
@@ -84,7 +87,10 @@ sub parse_string_to_date {
     $d =~ s/(\d+)\s?$number_suffixes/$1/i;                                       # Strip ordinal text.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
     $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    #Switching Jun-01-2012 to 01 Jun 2012
-    return DateTime::Format::HTTP->parse_datetime($d);
+
+    my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
+
+    return $maybe_date_object;
 }
 
 1;
