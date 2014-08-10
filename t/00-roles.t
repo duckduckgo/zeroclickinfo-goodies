@@ -47,10 +47,12 @@ subtest 'NumberStyler' => sub {
 subtest 'Dates' => sub {
 
     { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
-
+    
+    # Initialisation tests
     new_ok('RoleTester', [], 'Applied to an object');
     isa_ok(RoleTester::date_regex(), 'Regexp', 'date_regex()');
-
+    
+    # Parsing and handling tests
     my %dates_to_match = (
         # Defined formats:
         #ISO8601
@@ -75,6 +77,9 @@ subtest 'Dates' => sub {
         '1st june 1994'     => 770428800,
         '5 th january 1993' => 726192000,
         'JULY 4TH 1976'     => 205286400,
+        '07/13/1984'        => 458524800,
+        '7/13/1984'         => 458524800,
+        '13/07/1984'        => 458524800
     );
 
     my $test_regex = RoleTester::date_regex();
@@ -86,6 +91,7 @@ subtest 'Dates' => sub {
         isa_ok($date_object, 'DateTime', $test_date);
         is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
     }
+
 };
 
 done_testing;

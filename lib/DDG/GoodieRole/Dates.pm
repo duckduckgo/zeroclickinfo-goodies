@@ -10,7 +10,7 @@ use DateTime;
 use DateTime::Format::HTTP;
 
 # Reused lists and components for below
-my $day_of_week = qr#Mon|Tue|Wed|Thu|Fri|Sat|Sun#i;
+my $short_day_of_week = qr#Mon|Tue|Wed|Thu|Fri|Sat|Sun#i;
 my %long_to_short = map { lc $_ => substr($_, 0, 3) } qw(January February March April May June July August September October November December);
 my $short_month = qr#Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec#i;
 my $full_month = qr#January|February|March|April|May|June|July|August|September|October|November|December#i;
@@ -34,7 +34,7 @@ sub date_regex {
     push @regexes, qr#[0-9]{4}-?[0-1][0-9]-?[0-3][0-9]([ T]$time_24h)?( ?$tz_suffixes)?#i;
     
     # HTTP: Sat, 09 Aug 2014 18:20:00
-    push @regexes, qr#$day_of_week, [0-9]{2} $short_month [0-9]{4} $time_24h?#i;
+    push @regexes, qr#$short_day_of_week, [0-9]{2} $short_month [0-9]{4} $time_24h?#i;
     
     # RFC850 08-Feb-94 14:15:29 GMT
     push @regexes, qr#[0-9]{2}-$short_month-([0-9]{2}|[0-9]{4}) $time_24h?( ?$tz_suffixes)#i;
@@ -59,6 +59,23 @@ sub date_regex {
 
 sub parse_string_to_date {
     my ($d) = @_;
+    
+    # guesswork for ambigous DMY/MDY and switch to ISO 
+    if($d =~ qr#^([0-3][0-9])[\\/\,_-]([0-3][0-9])[\\/\,_-]([0-9]{4})$#i)
+    {
+        my $month = $1;
+        my $day = $2;
+        my $year = $3;
+        
+        return if($1 > 12 && $2 > 12);
+        #assume it's in DMY unless it's impossible
+        if($month > 12){
+            my $tmp = $day;
+            $day = $month;
+            $month = $tmp;
+        }
+        $d = "$year-$month-$day";
+    }
 
     $d =~ s/(\d+)\s?$number_suffixes/$1/i;            # Strip ordinal text.
     $d =~ s/($full_month)/$long_to_short{lc $1}/i;    # Parser deals better with the shorter month names.
