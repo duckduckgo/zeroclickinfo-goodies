@@ -40,7 +40,7 @@ sub date_regex {
 
     ## unambigous and awesome date formats:
     # ISO8601: 2014-11-27 (with a concession to single-digit month and day numbers)
-    push @regexes, qr#[0-9]{4}-?[0-1]?[0-9]-?$date_number(?:[ T]$time_24h)?( ?$tz_suffixes)?#i;
+    push @regexes, qr#[0-9]{4}-?[0-1]?[0-9]-?$date_number(?:[ T]$time_24h)?(?: ?$tz_suffixes)?#i;
 
     # HTTP: Sat, 09 Aug 2014 18:20:00
     push @regexes, qr#$short_day_of_week, [0-9]{2} $short_month [0-9]{4} $time_24h?#i;
