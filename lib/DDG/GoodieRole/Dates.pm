@@ -24,7 +24,7 @@ my $date_number         = qr#[0-3]?[0-9]#;
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
 my $date_delim      = qr#[\.\\/\,_-]#;
-my $ambiguous_dates = qr#^(?:$date_number)$date_delim(?:$date_number)$date_delim(?:[0-9]{4})$#i;
+my $ambiguous_dates = qr#(?:$date_number)$date_delim(?:$date_number)$date_delim(?:[0-9]{4})#i;
 
 # like: 1st 2nd 3rd 4-20,24-30th 21st 22nd 23rd 31st
 my $number_suffixes = qr#(?:st|nd|rd|th)#i;
