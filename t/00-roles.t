@@ -47,11 +47,11 @@ subtest 'NumberStyler' => sub {
 subtest 'Dates' => sub {
 
     { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
-    
+
     # Initialisation tests
     new_ok('RoleTester', [], 'Applied to an object');
     isa_ok(RoleTester::date_regex(), 'Regexp', 'date_regex()');
-    
+
     # Parsing and handling tests
     my %dates_to_match = (
         # Defined formats:
@@ -94,34 +94,40 @@ subtest 'Dates' => sub {
     my $test_regex = RoleTester::date_regex();
 
     foreach my $test_date (keys %dates_to_match) {
-        like($test_date, qr/^$test_regex$/, "$test_date matches");
-        
+        like($test_date, qr/^$test_regex$/, "$test_date matches the date_regex");
+
         # test_regex should not contain any submatches
         $test_date =~ qr/^$test_regex$/;
-        is(scalar @-, 1);
-        is(scalar @+, 1);
-        
+        ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
+
         my $date_object = RoleTester::parse_string_to_date($test_date);
         isa_ok($date_object, 'DateTime', $test_date);
         is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
     }
-    
-    # Tests for mangled formats that shouldn't match
-    my @strings_to_ignore = (
-        '24/8',
-        '123',
-        '123-84-1',
-        '1st january',
-        '1/1/1'
+
+    # Tests for mangled formats that shouldn't work
+    # value signals whether it passes the regex sniff-test.
+    my %bad_strings_match = (
+        '24/8'          => 0,
+        '123'           => 0,
+        '123-84-1'      => 0,
+        '1st january'   => 0,
+        '1/1/1'         => 0,
+        '2014-13-13'    => 1,
+        'Feb 38th 2015' => 1,
     );
 
-    foreach my $test_string (@strings_to_ignore) {
-        unlike($test_string, qr/^$test_regex$/, "$test_string doesn't match");
+    foreach my $test_string (keys %bad_strings_match) {
+        if ($bad_strings_match{$test_string}) {
+            like($test_string, qr/^$test_regex$/, "$test_string matches date_regex");
+        } else {
+            unlike($test_string, qr/^$test_regex$/, "$test_string does not match date_regex");
+        }
+
         my $result;
-        lives_ok { $result = RoleTester::parse_string_to_date($test_string) } '... nor does it kill the parser.';
+        lives_ok { $result = RoleTester::parse_string_to_date($test_string) } '... and does not kill the parser.';
         is($result, undef, '... and returns undef to signal failure.');
     }
-
 };
 
 done_testing;
