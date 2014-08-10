@@ -25,6 +25,7 @@ handle remainder => sub {
     
     my $date1 = parse_string_to_date($1);
     my $date2 = parse_string_to_date($2);
+    return unless ($date1 && $date2);
     my $difference = $date1->delta_days($date2);
     my $daysBetween = abs($difference->in_units('days'));
     my $inclusive = '';
