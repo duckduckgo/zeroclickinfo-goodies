@@ -153,13 +153,9 @@ subtest 'Dates' => sub {
     );
 
     foreach my $set (@date_sets) {
-        my @date_results = RoleTester::parse_all_strings_to_date(@{$set->{src}});
-        
-        for my $x (0 .. $#date_results) {
-            my $test_date = $date_results[$x];
-            isa_ok($test_date, 'DateTime');
-            is($test_date->epoch(), $set->{output}->[$x]);
-        }
+        my @source = @{$set->{src}};
+        eq_or_diff([map { $_->epoch } (RoleTester::parse_all_strings_to_date(@source))],
+            $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
     }
 
     # Tests for mangled formats that shouldn't work
@@ -193,8 +189,9 @@ subtest 'Dates' => sub {
     );
     
     foreach my $set (@invalid_date_sets) {
-        my @date_results = RoleTester::parse_all_strings_to_date(@{$set});
-        is(@date_results, 0);
+        my @source       = @$set;
+        my @date_results = RoleTester::parse_all_strings_to_date(@source);
+        is(@date_results, 0, '"' . join(', ', @source) . '": cannot be parsed in combination.');
     }
 };
 
