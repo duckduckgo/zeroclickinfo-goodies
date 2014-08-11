@@ -144,16 +144,15 @@ subtest 'Dates' => sub {
         },
     );
 
-    foreach my $set (@date_sets)
-    {
-        use Data::Dump qw(dump);
+    foreach my $set (@date_sets) {
+        my @date_results = RoleTester::parse_all_strings_to_date(@{$set->{src}});
         
-        my ($d1, $d2) = RoleTester::parse_all_strings_to_date(@{$set->{src}});
-        isa_ok($d1, 'DateTime');
-        isa_ok($d2, 'DateTime');
-        is($d1->epoch(), $set->{output}->[0]);
-        is($d2->epoch(), $set->{output}->[1]);
+        for my $x (0 .. $#date_results) {
+            my $test_date = $date_results[$x];
+            isa_ok($test_date, 'DateTime');
+            is($test_date->epoch(), $set->{output}->[$x]);
         }
+    }
 
     # Tests for mangled formats that shouldn't work
     # value signals whether it passes the regex sniff-test.

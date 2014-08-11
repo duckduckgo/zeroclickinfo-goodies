@@ -95,11 +95,13 @@ sub parse_string_to_date {
     return $maybe_date_object;
 }
 
-# parses multiple dates and guesses the consistent format over the set
+# parses multiple dates and guesses the consistent format over the set; 
+# i.e. defaults to m/d/y unless one of them is obviously d/m/y then it'll
+# treat them all as d/m/y
 sub parse_all_strings_to_date {
-    my (@dates) = @_;
+    my @dates = @_;
     
-    my $flip_d_m = 0;
+    my $flip_d_m = 0;   # flip into d/m/y
     my @dates_to_return = ();
     foreach my $date (@dates) {
         if($date =~ $ambiguous_dates_matches) {
