@@ -151,23 +151,23 @@ ddg_goodie_test(
     'workdays between jan 3, 2014 to jan 6, 2014 inclusive' =>
         test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
 
-    # Same day on a weekend - shortened year
-    'workdays between jan 4, 14 jan 4, 2014' =>
-        test_zci("There are 0 workdays between $JAN_ABBREV 04, 2014 and $JAN_ABBREV 04, 2014."),
-    'workdays between jan 4, 2014 jan 5, 14 inclusive' =>
-        test_zci("There are 0 workdays between $JAN_ABBREV 04, 2014 and $JAN_ABBREV 05, 2014."),
+#    # Same day on a weekend - shortened year
+#    'workdays between jan 4, 14 jan 4, 2014' =>
+#        test_zci("There are 0 workdays between $JAN_ABBREV 04, 2014 and $JAN_ABBREV 04, 2014."),
+#    'workdays between jan 4, 2014 jan 5, 14 inclusive' =>
+#        test_zci("There are 0 workdays between $JAN_ABBREV 04, 2014 and $JAN_ABBREV 05, 2014."),
 
-    # Weekend in the middle - shortened year
-    'workdays between jan 3, 14 jan 6, 14' =>
-        test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
-    'workdays between jan 3, 14 jan 6, 14 inclusive' =>
-        test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
+#    # Weekend in the middle - shortened year
+#    'workdays between jan 3, 14 jan 6, 14' =>
+#        test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
+#    'workdays between jan 3, 14 jan 6, 14 inclusive' =>
+#        test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
 
-    # "to" - shortened year
-    'workdays between jan 3, 14 to jan 6, 2014' =>
-        test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
-    'workdays between jan 3, 14 to jan 6, 2014 inclusive' =>
-        test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
+#    # "to" - shortened year
+#    'workdays between jan 3, 14 to jan 6, 2014' =>
+#        test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
+#    'workdays between jan 3, 14 to jan 6, 2014 inclusive' =>
+#        test_zci("There are 2 workdays between $JAN_ABBREV 03, 2014 and $JAN_ABBREV 06, 2014."),
 
 
     # Invalid input
