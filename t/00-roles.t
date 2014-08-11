@@ -109,6 +109,52 @@ subtest 'Dates' => sub {
         is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
     }
 
+    my @date_sets = (
+        {
+            src    => ['01/10/2014', '01/06/2014'],
+            output => [1389312000, 1388966400],   # 10 jan; 6 jan
+        },
+        {
+            src    => ['01/13/2014', '01/06/2014'],
+            output => [1389571200, 1388966400],   # 13 jan; 6 jan
+        },
+        {
+            src    => ['05/06/2014', '20/06/2014'],
+            output => [1401926400, 1403222400],   # 5 jun; 20 jun
+        },
+        {
+            src    => ['20/06/2014', '05/06/2014'],
+            output => [1403222400, 1401926400],   # 20 jun; 5 jun
+        },
+        {
+            src    => ['5/06/2014', '20/06/2014'],
+            output => [1401926400, 1403222400],   # 5 jun; 20 jun
+        },
+        {
+            src    => ['20/06/2014', '5/06/2014'],
+            output => [1403222400, 1401926400],   # 20 jun; 5 jun
+        },
+        {
+            src    => ['20-06-2014', '5-06-2014'],
+            output => [1403222400, 1401926400],   # 20 jun; 5 jun
+        },
+        {
+            src    => ['5-06-2014', '20-06-2014'],
+            output => [1401926400, 1403222400],   # 5 jun; 20 jun
+        },
+    );
+
+    foreach my $set (@date_sets)
+    {
+        use Data::Dump qw(dump);
+        
+        my ($d1, $d2) = RoleTester::parse_all_strings_to_date(@{$set->{src}});
+        isa_ok($d1, 'DateTime');
+        isa_ok($d2, 'DateTime');
+        is($d1->epoch(), $set->{output}->[0]);
+        is($d2->epoch(), $set->{output}->[1]);
+        }
+
     # Tests for mangled formats that shouldn't work
     # value signals whether it passes the regex sniff-test.
     my %bad_strings_match = (
