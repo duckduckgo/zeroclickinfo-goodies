@@ -142,6 +142,14 @@ subtest 'Dates' => sub {
             src    => ['5-06-2014', '20-06-2014'],
             output => [1401926400, 1403222400],   # 5 jun; 20 jun
         },
+        {
+            src    => ['5-June-2014', '20-06-2014'],
+            output => [1401926400, 1403222400],   # 5 jun; 20 jun
+        },
+        {
+            src    => ['5-06-2014', '4th January 2013', '20-06-2014'],
+            output => [1401926400, 1357257600, 1403222400],   # 5 jun; 4 jan, 20 jun
+        },
     );
 
     foreach my $set (@date_sets) {
@@ -176,6 +184,17 @@ subtest 'Dates' => sub {
         my $result;
         lives_ok { $result = RoleTester::parse_string_to_date($test_string) } '... and does not kill the parser.';
         is($result, undef, '... and returns undef to signal failure.');
+    }
+    
+    # Tests for mixed invalid formats
+    my @invalid_date_sets = (
+        ['01/13/2014', '13/06/2014'],
+        ['13/01/2014', '01/31/2014'],
+    );
+    
+    foreach my $set (@invalid_date_sets) {
+        my @date_results = RoleTester::parse_all_strings_to_date(@{$set});
+        is(@date_results, 0);
     }
 };
 
