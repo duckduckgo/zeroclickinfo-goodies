@@ -36,7 +36,7 @@ handle remainder => sub {
     my $calendar = Date::Calendar->new($Profiles->{US});
     my $workdays = $calendar->delta_workdays($start_date->year(), $start_date->month(), $start_date->day(), $end_date->year(), $end_date->month(), $end_date->day(), 1, 1);
 
-    my $date_format = "%b %d, %Y";
+    my $date_format = "%d %b %Y";
     my $start_str = $start_date->strftime($date_format);
     my $end_str = $end_date->strftime($date_format);
 
