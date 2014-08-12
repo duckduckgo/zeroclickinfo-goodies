@@ -33,8 +33,8 @@ handle remainder => sub {
         $daysBetween += 1;
         $inclusive = ', inclusive';
     }
-    my $startDate = $date1->strftime("%d %b %Y");
-    my $endDate = $date2->strftime("%d %b %Y");
+    my $startDate = date_output_string($date1);
+    my $endDate   = date_output_string($date2);
     return "There are $daysBetween days between $startDate and $endDate$inclusive.";
 };
 

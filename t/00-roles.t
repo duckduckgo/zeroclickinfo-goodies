@@ -207,7 +207,32 @@ subtest 'Dates' => sub {
             my @date_results = RoleTester::parse_all_strings_to_date(@source);
             is(@date_results, 0, '"' . join(', ', @source) . '": cannot be parsed in combination.');
         }
-      }
+    };
+
+    subtest 'Valid standard string format' => sub {
+        my %date_strings = (
+            '01 Jan 2001' => ['2001-1-1',   'January 1st, 2001', '1st January, 2001'],
+            '13 Jan 2014' => ['13/01/2014', '01/13/2014',        '13th Jan 2014'],
+        );
+
+        foreach my $result (sort keys %date_strings) {
+            foreach my $test_string (@{$date_strings{$result}}) {
+                is(RoleTester::date_output_string($test_string), $result, $test_string . ' normalizes for output as ' . $result);
+            }
+        }
+    };
+    subtest 'Invalid standard string format' => sub {
+        my %bad_stuff = (
+            'Empty string' => '',
+            'Hashref'      => {},
+            'Object'       => RoleTester->new,
+        );
+        foreach my $description (sort keys %bad_stuff) {
+            my $result;
+            lives_ok { $result = RoleTester::date_output_string($bad_stuff{$description}) } $description . ' does not kill the string output';
+            is($result, '', '... and yields an empty string as a result');
+        }
+    };
 };
 
 done_testing;

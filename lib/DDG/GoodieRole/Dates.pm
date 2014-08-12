@@ -120,4 +120,23 @@ sub parse_all_strings_to_date {
     return @dates_to_return;
 }
 
+
+# Takes a DateTime object (or a string which can be parsed into one)
+# and returns a standard formatted output string.
+sub date_output_string {
+    my $dt = shift;
+
+    my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.
+    my $string     = '';            # By default we've got nothing.
+
+    if (ref($dt) !~ /DateTime/) {
+        # They didn't give us a DateTime object, let's try to make one from whatever we got.
+        $dt = try { parse_string_to_date($dt) } catch { undef; };
+    }
+
+    $string = $dt->strftime($ddg_format) if ($dt);
+
+    return $string;
+}
+
 1;

@@ -36,9 +36,8 @@ handle remainder => sub {
     my $calendar = Date::Calendar->new($Profiles->{US});
     my $workdays = $calendar->delta_workdays($start_date->year(), $start_date->month(), $start_date->day(), $end_date->year(), $end_date->month(), $end_date->day(), 1, 1);
 
-    my $date_format = "%d %b %Y";
-    my $start_str = $start_date->strftime($date_format);
-    my $end_str = $end_date->strftime($date_format);
+    my $start_str = date_output_string($start_date);
+    my $end_str   = date_output_string($end_date);
 
     my $verb = $workdays == 1 ? 'is' : 'are';
     my $number = $workdays == 1 ? 'workday' : 'workdays';

@@ -28,10 +28,9 @@ handle remainder => sub {
     ($end, $start) = ($start, $end) if ( DateTime->compare($start, $end) == 1 );
 
     my $weekdays = delta_weekdays($start, $end);
-    
-    my $date_format = "%d %b %Y";
-    my $start_str = $start->strftime($date_format);
-    my $end_str = $end->strftime($date_format);
+
+    my $start_str = date_output_string($start);
+    my $end_str   = date_output_string($end);
 
     my $verb = $weekdays == 1 ? 'is' : 'are';
     my $number = $weekdays == 1 ? 'weekday' : 'weekdays';

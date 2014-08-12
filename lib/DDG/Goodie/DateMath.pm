@@ -60,8 +60,7 @@ handle query_lc => sub {
     my $answer = $input_date->clone->add_duration($dur);
 
     $unit .= 's' if $input_number > 1; # plural?
-    my $date_format = "%d %b %Y";
-    return $input_date->strftime($date_format)." $input_action $input_number $unit is ".$answer->strftime($date_format);
+    return date_output_string($input_date)." $input_action $input_number $unit is ".date_output_string($answer);
 };
 
 1;
