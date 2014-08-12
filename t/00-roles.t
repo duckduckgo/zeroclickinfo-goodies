@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::Most;
+use DateTime;
 
 subtest 'NumberStyler' => sub {
 
@@ -235,8 +236,8 @@ subtest 'Dates' => sub {
     };
     subtest 'Vague strings' => sub {
         my %strings = (
-            #'next december' => '',
-            #'last january'  => '',
+            'next december' => '',
+            'last january'  => '',
             #'june'          => '',
             'december 2015' => '',
             'june 2000'     => ''

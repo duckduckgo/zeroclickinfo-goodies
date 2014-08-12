@@ -158,10 +158,14 @@ sub date_output_string {
 sub parse_vague_string_to_date {
     my ($string) = @_;
     if($string =~ qr#(?:(?<q>next|last)\s(?<m1>$full_month|$short_month))|(?:(?<m2>$full_month|$short_month)\s(?<y>[0-9]{4}))|(?<m3>$full_month|$short_month)#i) {
+        my $now = DateTime->now();
         if ($+{m1} && $+{q}) {
-            # TODO: implement
-            # next january
-            # last january
+            my $tmp_date = parse_string_to_date("01 $+{m1} ".$now->year());
+            # next <month>
+            $tmp_date->add( year => 1) if ($+{q} eq "next" && DateTime->compare($tmp_date, $now) != 1);
+            # last <month>
+            $tmp_date->add( year => -1) if ($+{q} eq "last" && DateTime->compare($tmp_date, $now) != -1);
+            return $tmp_date;
         }
         elsif ($+{m2} && $+{y}) {
             return parse_string_to_date("01 $+{m2} $+{y}");
