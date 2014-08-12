@@ -162,7 +162,6 @@ sub parse_vague_string_to_date {
             # TODO: implement
             # next january
             # last january
-}
         }
         elsif ($+{m2} && $+{y}) {
             return parse_string_to_date("01 $+{m2} $+{y}");
