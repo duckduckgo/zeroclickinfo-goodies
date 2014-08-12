@@ -74,14 +74,12 @@ sub parse_string_to_date {
     return unless ($d =~ date_regex());    # Only handle white-listed strings, even if they might otherwise work.
     if ($d =~ $ambiguous_dates_matches) {
         # guesswork for ambigous DMY/MDY and switch to ISO
-        my $month = $1;                    # Assume MDY, even though it's crazy, for backward compatibility
-        my $day   = $2;
-        my $year  = $3;
+        my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});    # Assume MDY, even though it's crazy, for backward compatibility
 
         if ($month > 12) {
             # Months over 12 don't make any sense, so must not be MDY
-            return if ($day > 12);         # what we took as day must not be month, either.  No idea how to proceed.
-            ($day, $month) = ($month, $day);    # month and day must be swapped, then.
+            return if ($day > 12);                                 # what we took as day must not be month, either.  No idea how to proceed.
+            ($day, $month) = ($month, $day);                       # month and day must be swapped, then.
         }
 
         $d = sprintf("%04d-%02d-%02d", $year, $month, $day);
