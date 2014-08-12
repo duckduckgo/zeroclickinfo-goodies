@@ -26,7 +26,7 @@ attribution
 
 triggers query_nowhitespace => qr<
         ^
-       ( what is | calculate | solve | math )? !?
+       ( what is | calculate | solve | math )?
 
         [\( \) x X * % + / \^ \$ -]*
 
