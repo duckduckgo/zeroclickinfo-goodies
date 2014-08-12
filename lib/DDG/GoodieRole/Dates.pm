@@ -5,7 +5,9 @@ use warnings;
 use feature 'state';
 
 use Moo::Role;
+
 use DateTime;
+use List::Util qw( first );
 use Try::Tiny;
 
 # This appears to parse most/all of the big ones, however it doesn't present a regex
@@ -23,9 +25,9 @@ my $date_number         = qr#[0-3]?[0-9]#;
 # Covering the ambiguous formats, like:
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
-my $date_delim      = qr#[\.\\/\,_-]#;
-my $ambiguous_dates = qr#(?:$date_number)$date_delim(?:$date_number)$date_delim(?:[0-9]{4})#i;
-my $ambiguous_dates_matches = qr#^($date_number)$date_delim($date_number)$date_delim([0-9]{4})$#i;
+my $date_delim              = qr#[\.\\/\,_-]#;
+my $ambiguous_dates         = qr#(?:$date_number)$date_delim(?:$date_number)$date_delim(?:[0-9]{4})#i;
+my $ambiguous_dates_matches = qr#^(?<m>$date_number)$date_delim(?<d>$date_number)$date_delim(?<y>[0-9]{4})$#i;
 
 # like: 1st 2nd 3rd 4-20,24-30th 21st 22nd 23rd 31st
 my $number_suffixes = qr#(?:st|nd|rd|th)#i;
@@ -95,33 +97,28 @@ sub parse_string_to_date {
     return $maybe_date_object;
 }
 
-# parses multiple dates and guesses the consistent format over the set; 
+# parses multiple dates and guesses the consistent format over the set;
 # i.e. defaults to m/d/y unless one of them is obviously d/m/y then it'll
 # treat them all as d/m/y
 sub parse_all_strings_to_date {
     my @dates = @_;
-    
-    my $flip_d_m = 0;   # flip into d/m/y
-    my @dates_to_return = ();
+
+    # If there is an ambiguous date with a "month" over 12 in the set, we need to flip.
+    my $flip_d_m = first { /$ambiguous_dates_matches/ && $+{'m'} > 12 } @dates;
+
+    my @dates_to_return;
     foreach my $date (@dates) {
-        if($date =~ $ambiguous_dates_matches) {
-            my ($month, $day, $year) = ($1, $2, $3);
-            $flip_d_m = 1 if($month > 12);
-        }
-    }
-    
-    foreach my $date (@dates) {
-        if($date =~ $ambiguous_dates_matches) {
-            my ($month, $day, $year) = ($1, $2, $3);
+        if ($date =~ $ambiguous_dates_matches) {
+            my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});
             ($day, $month) = ($month, $day) if $flip_d_m;
-            return if $month > 12;  #there's a mish-mash of formats; give up
+            return if $month > 12;    #there's a mish-mash of formats; give up
             $date = "$year-$month-$day";
         }
         my $date_object = parse_string_to_date($date);
         return unless $date_object;
         push @dates_to_return, $date_object;
     }
-    
+
     return @dates_to_return;
 }
 
