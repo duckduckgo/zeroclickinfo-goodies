@@ -85,7 +85,6 @@ handle query_nowhitespace => sub {
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
     if ($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
-        my $tmp_result = '';
 
         # Grab expression.
         my $tmp_expr = spacing($query, 1);
@@ -114,6 +113,7 @@ handle query_nowhitespace => sub {
         # Using functions makes us want answers with more precision than our inputs indicate.
         my $precision = ($query =~ $funcy) ? undef : max(map { $style->precision_of($_) } @numbers);
 
+        my $tmp_result;
         eval {
             # e.g. sin(100000)/100000 completely makes this go haywire.
             alarm(1);
@@ -122,7 +122,7 @@ handle query_nowhitespace => sub {
         };
 
         # Guard against non-result results
-        return unless (defined $tmp_result && $tmp_result ne 'inf');
+        return unless (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result ne '');
         # Try to determine if the result is supposed to be 0, but isn't because of FP issues.
         # If there's a defined precision, let sprintf worry about it.
         # Otherwise, we'll say that smaller than 1e-7 was supposed to be zero.
