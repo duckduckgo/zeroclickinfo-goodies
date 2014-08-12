@@ -4,6 +4,7 @@ package DDG::Goodie::MD5;
 use DDG::Goodie;
 use Digest::MD5 qw(md5_base64 md5_hex);
 use Encode qw(encode);
+use HTML::Entities qw(encode_entities);
 
 zci answer_type => 'md5';
 zci is_cached => 1;
@@ -22,7 +23,11 @@ triggers startend => 'md5', 'md5sum';
 my $css = share('style.css')->slurp;
 
 sub html_output {
-    my ($md5, $str) = @_;
+    my ($str, $md5) = @_;
+
+    # prevent XSS
+    $str = encode_entities($str);
+
     return "<style type='text/css'>$css</style>"
           ."<div class='zci--md5'>"
           ."<span class='text--secondary'>MD5 of \"$str\"</span><br/>"
@@ -38,8 +43,9 @@ handle remainder => sub {
         # The string is encoded to get the utf8 representation instead of
         # perls internal representation of strings, before it's passed to
         # the md5 subroutine.
-        my $str = md5_hex (encode "utf8", $1);
-        return $str, html => html_output ($str, $1);
+        my $str = $1;
+        my $md5 = md5_hex(encode "utf8", $str);
+        return $md5, html => html_output($str, $md5);
     } else {
         # Exit unless a string is found
 	return;
