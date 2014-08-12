@@ -233,6 +233,19 @@ subtest 'Dates' => sub {
             is($result, '', '... and yields an empty string as a result');
         }
     };
+    subtest 'Vague strings' => sub {
+        my %strings = (
+            #'next december' => '',
+            #'last january'  => '',
+            #'june'          => '',
+            'december 2015' => '',
+            'june 2000'     => ''
+        );
+        foreach my $test_date (sort keys %strings) {
+            my $result = RoleTester::parse_vague_string_to_date($test_date);
+            isa_ok($result, 'DateTime', $test_date);
+        }
+    };
 };
 
 done_testing;

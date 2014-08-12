@@ -154,4 +154,25 @@ sub date_output_string {
     return $string;
 }
 
+# Parses a really vague description and basically guesses
+sub parse_vague_string_to_date {
+    my ($string) = @_;
+    if($string =~ qr#(?:(?<q>next|last)\s(?<m1>$full_month|$short_month))|(?:(?<m2>$full_month|$short_month)\s(?<y>[0-9]{4}))|(?<m3>$full_month|$short_month)#i) {
+        if ($+{m1} && $+{q}) {
+            # TODO: implement
+            # next january
+            # last january
+}
+        }
+        elsif ($+{m2} && $+{y}) {
+            return parse_string_to_date("01 $+{m2} $+{y}");
+        }
+        elsif ($+{m3}) {
+            # TODO: implement
+            # the nearest january
+        }
+    }
+    return;
+}
+
 1;
