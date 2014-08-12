@@ -7,7 +7,6 @@ use DDG::Test::Goodie;
 
 zci answer_type => 'pw';
 zci is_cached => 0;
-zci type => 'E';
 
 ddg_goodie_test(
 	[qw(

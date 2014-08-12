@@ -10,10 +10,7 @@ category 'computing_tools';
 topics 'cryptography';
 attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
 
-zci type => 'E';
-
 zci answer_type => 'rand';
-zci type => 'E';
 
 triggers start => 'rand','random','number';
 

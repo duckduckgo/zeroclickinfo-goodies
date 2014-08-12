@@ -10,9 +10,6 @@ attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
 category 'computing_tools';
 topics 'cryptography';
 
-zci type => 'E';
-
-zci type => 'E';
 zci answer_type => 'pw';
 
 triggers any => 'random', 'password', 'pw', 'pwgen';
