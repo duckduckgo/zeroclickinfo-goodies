@@ -162,17 +162,22 @@ sub parse_vague_string_to_date {
         if ($+{m1} && $+{q}) {
             my $tmp_date = parse_string_to_date("01 $+{m1} ".$now->year());
             # next <month>
-            $tmp_date->add( year => 1) if ($+{q} eq "next" && DateTime->compare($tmp_date, $now) != 1);
+            $tmp_date->add( years => 1) if ($+{q} eq "next" && DateTime->compare($tmp_date, $now) != 1);
             # last <month>
-            $tmp_date->add( year => -1) if ($+{q} eq "last" && DateTime->compare($tmp_date, $now) != -1);
+            $tmp_date->add( years => -1) if ($+{q} eq "last" && DateTime->compare($tmp_date, $now) != -1);
             return $tmp_date;
         }
         elsif ($+{m2} && $+{y}) {
             return parse_string_to_date("01 $+{m2} $+{y}");
         }
         elsif ($+{m3}) {
-            # TODO: implement
-            # the nearest january
+            # single named months
+            # "january" in january means the current month
+            # otherwise it always means the coming month of that name, be it this year or next year
+            return parse_string_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($+{m3});
+            my $this_years_month = parse_string_to_date("01 $+{m3} ".$now->year());
+            $this_years_month->add( years => 1 ) if (DateTime->compare($this_years_month, $now) == -1);
+            return $this_years_month;
         }
     }
     return;
