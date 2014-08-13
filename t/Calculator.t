@@ -324,7 +324,8 @@ ddg_goodie_test(
     '(pi^4.1^(5-4)+pi^(5-(4^2 -8)))^(1/6)+1' => test_zci(
         '(pi ^ 4.1 ^ (5 - 4) + pi ^ (5 - (4 ^ 2 - 8))) ^ (1 / 6) + 1 = 3.18645452799383',
         heading => 'Calculator',
-        html    => qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1<span class='text--secondary'> =#,
+        html =>
+          qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1<span class='text--secondary'> =#,
     ),
     '5^4^(3-2)^1' => test_zci(
         '5 ^ 4 ^ (3 - 2) ^ 1 = 625',
@@ -382,6 +383,7 @@ ddg_goodie_test(
     dividedbydividedby                => undef,
     time                              => undef,    # We eval perl directly, only do whitelisted stuff!
     'four squared'                    => undef,
+    '! + 1'                           => undef,    # Regression test for bad query trigger.
 );
 
 done_testing;
