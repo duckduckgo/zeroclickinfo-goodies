@@ -78,12 +78,12 @@ subtest 'Dates' => sub {
             # RFC850
             '08-Feb-94 14:15:29 GMT' => 760716929,
             #Undefined/Natural formats:
-            '13/12/2011'        => 1323734400,    #DMY
-            '01/01/2001'        => 978307200,     #Ambiguous, but valid
-            '29 June 2014'      => 1404000000,    #DMY
-            '05 Mar 1990'       => 636595200,     #DMY (short)
-            'June 01 2012'      => 1338508800,    #MDY
-            'May 05 2011'       => 1304553600,    #MDY
+            '13/12/2011'        => 1323734400,     #DMY
+            '01/01/2001'        => 978307200,      #Ambiguous, but valid
+            '29 June 2014'      => 1404000000,     #DMY
+            '05 Mar 1990'       => 636595200,      #DMY (short)
+            'June 01 2012'      => 1338508800,     #MDY
+            'May 05 2011'       => 1304553600,     #MDY
             'may 01 2010'       => 1272672000,
             '1st june 1994'     => 770428800,
             '5 th january 1993' => 726192000,
@@ -104,6 +104,8 @@ subtest 'Dates' => sub {
             '6, jan 2014'       => 1388966400,
             '6 jan, 2014'       => 1388966400,
             '29 feb, 2012'      => 1330473600,
+            '2038-01-20'        => 2147558400,     # 32-bit signed int UNIX epoch ends 2038-01-19
+            '1780-01-20'        => -5994172800,    # Way before 32-bit signed int epoch
         );
 
         foreach my $test_date (sort keys %dates_to_match) {
@@ -245,7 +247,7 @@ subtest 'Dates' => sub {
             'jan'           => qr/^01 Jan \d{4}$/,    # Is Jan too ambiguous (e.g. Jan Hammer)?
             'next jan'      => qr/^01 Jan \d{4}$/,
             'last jan'      => qr/^01 Jan \d{4}$/,
-            'jan 2015'      => qr/^01 Jan \d{4}$/,
+            'feb 2038'      => qr/^01 Feb 2038$/,
         );
         foreach my $test_date (sort keys %strings) {
             my $result = RoleTester::parse_vague_string_to_date($test_date);
