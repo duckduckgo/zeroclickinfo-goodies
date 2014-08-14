@@ -144,10 +144,8 @@ sub date_output_string {
     my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.
     my $string     = '';            # By default we've got nothing.
 
-    if (ref($dt) !~ /DateTime/) {
-        # They didn't give us a DateTime object, let's try to make one from whatever we got.
-        $dt = try { parse_string_to_date($dt) } catch { undef; };
-    }
+    # They didn't give us a DateTime object, let's try to make one from whatever we got.
+    $dt = parse_string_to_date($dt) if (ref($dt) !~ /DateTime/);
 
     $string = $dt->strftime($ddg_format) if ($dt);
 
