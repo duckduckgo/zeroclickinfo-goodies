@@ -155,25 +155,27 @@ sub date_output_string {
 # Parses a really vague description and basically guesses
 sub parse_vague_string_to_date {
     my ($string) = @_;
-    if($string =~ qr#(?:(?<q>next|last)\s(?<m1>$full_month|$short_month))|(?:(?<m2>$full_month|$short_month)\s(?<y>[0-9]{4}))|(?<m3>$full_month|$short_month)#i) {
+    if($string =~ qr#(?:(?<q>next|last)\s(?<m>$full_month|$short_month))|(?:(?<m>$full_month|$short_month)\s(?<y>[0-9]{4}))|(?<m>$full_month|$short_month)#i) {
         my $now = DateTime->now();
-        if ($+{m1} && $+{q}) {
-            my $tmp_date = parse_string_to_date("01 $+{m1} ".$now->year());
+        my $month = $+{'m'}; # Set in each alternative match.
+        if (my $relative_dir = $+{'q'}) {
+            my $tmp_date = parse_string_to_date("01 $month ".$now->year());
             # next <month>
-            $tmp_date->add( years => 1) if ($+{q} eq "next" && DateTime->compare($tmp_date, $now) != 1);
+            $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
             # last <month>
-            $tmp_date->add( years => -1) if ($+{q} eq "last" && DateTime->compare($tmp_date, $now) != -1);
+            $tmp_date->add( years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
             return $tmp_date;
         }
-        elsif ($+{m2} && $+{y}) {
-            return parse_string_to_date("01 $+{m2} $+{y}");
+        elsif (my $year = $+{'y'}) {
+            # Month and year is the first of that month.
+            return parse_string_to_date("01 $month $year");
         }
-        elsif ($+{m3}) {
+        else {
             # single named months
             # "january" in january means the current month
             # otherwise it always means the coming month of that name, be it this year or next year
-            return parse_string_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($+{m3});
-            my $this_years_month = parse_string_to_date("01 $+{m3} ".$now->year());
+            return parse_string_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($month);
+            my $this_years_month = parse_string_to_date("01 $month ".$now->year());
             $this_years_month->add( years => 1 ) if (DateTime->compare($this_years_month, $now) == -1);
             return $this_years_month;
         }

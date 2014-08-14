@@ -235,12 +235,16 @@ subtest 'Dates' => sub {
         }
     };
     subtest 'Vague strings' => sub {
-        my %strings = ( #TODO: switch these tests as they're temporal
+        my %strings = (    #TODO: switch these tests as they're temporal
             'next december' => '01 Dec 2014',
             'last january'  => '01 Jan 2014',
             'june'          => '01 Jun 2015',
             'december 2015' => '01 Dec 2015',
-            'june 2000'     => '01 Jun 2000'
+            'june 2000'     => '01 Jun 2000',
+            'jan'           => '01 Jan 2015',    # Is Jan too ambiguous (e.g. Jan Hammer)?
+            'next jan'      => '01 Jan 2015',
+            'last jan'      => '01 Jan 2014',
+            'jan 2015'      => '01 Jan 2015',
         );
         foreach my $test_date (sort keys %strings) {
             my $result = RoleTester::parse_vague_string_to_date($test_date);
