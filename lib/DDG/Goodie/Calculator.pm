@@ -125,12 +125,9 @@ handle query_nowhitespace => sub {
         return unless (defined $tmp_result && $tmp_result ne 'inf');
         # Try to determine if the result is supposed to be 0, but isn't because of FP issues.
         # If there's a defined precision, let sprintf worry about it.
-        # Otherwise, we'll say that smaller than 1e-7 was supposed to be zero.
-        $tmp_result = 0 if (not defined $precision and ($tmp_result =~ /e\-(?<exp>\d+)$/ and $+{exp} > 7));
-        # Guard against very small floats which will not be rounded.
-        # 0-9 check for http://yegg.duckduckgo.com/?q=%243.43%20%2434.45&format=json
-        return unless (defined $precision || ($tmp_result =~ /^(?:\-|)[0-9\.]+$/));
-
+        # Otherwise, we'll say that smaller than 1e-14 was supposed to be zero.
+        # -14 selected to account for the result of sin(pi)
+        $tmp_result = 0 if (not defined $precision and ($tmp_result =~ /e\-(?<exp>\d+)$/ and $+{exp} > 14));
         $tmp_result = sprintf('%0.' . $precision . 'f', $tmp_result) if ($precision);
         # Dollars.
         $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);

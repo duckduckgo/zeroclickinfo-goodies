@@ -324,7 +324,8 @@ ddg_goodie_test(
     '(pi^4.1^(5-4)+pi^(5-(4^2 -8)))^(1/6)+1' => test_zci(
         '(pi ^ 4.1 ^ (5 - 4) + pi ^ (5 - (4 ^ 2 - 8))) ^ (1 / 6) + 1 = 3.18645452799383',
         heading => 'Calculator',
-        html    => qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1<span class='text--secondary'> =#,
+        html =>
+          qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1<span class='text--secondary'> =#,
     ),
     '5^4^(3-2)^1' => test_zci(
         '5 ^ 4 ^ (3 - 2) ^ 1 = 625',
@@ -371,6 +372,17 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr/./,
     ),
+    'pi/1e9' => test_zci(
+        'pi / (1  *  10 ^ 9) = 3.14159265358979 * 10^-9',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    'pi*1e9' => test_zci(
+        'pi * (1  *  10 ^ 9) = 3,141,592,653.58979',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,
