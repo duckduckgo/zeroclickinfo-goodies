@@ -103,7 +103,7 @@ subtest 'Dates' => sub {
             'jan 6, 2014'       => 1388966400,
             '6, jan 2014'       => 1388966400,
             '6 jan, 2014'       => 1388966400,
-
+            '29 feb, 2012'      => 1330473600,
         );
 
         foreach my $test_date (sort keys %dates_to_match) {
@@ -178,6 +178,7 @@ subtest 'Dates' => sub {
             '1/1/1'         => 0,
             '2014-13-13'    => 1,
             'Feb 38th 2015' => 1,
+            '2014-02-29'    => 1,
         );
 
         foreach my $test_string (sort keys %bad_strings_match) {
