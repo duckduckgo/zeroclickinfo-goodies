@@ -122,11 +122,11 @@ handle remainder => sub {
             my @chars = shuffle split (//, $word);
             $w = join '', @chars;
         } while ($w eq $word);
-        return $word, html => html_output ('Sorry, we found no anagrams for "'.encode_entities $word.'". We scrambled it for you:', $w);
+        return $word, html => html_output ('Sorry, we found no anagrams for "'.encode_entities ($word).'". We scrambled it for you:', $w);
     }
 
     my $response = join ', ', @output;
-    my $output_str = 'Anagrams of '.encode_entities $word.'"';
+    my $output_str = 'Anagrams of '.encode_entities ($word).'"';
     unless ($full_word) {
         $output_str .= " of length $len";
     }
