@@ -2,7 +2,10 @@
 
 use strict;
 use warnings;
+
+use Test::MockTime qw( :all );
 use Test::Most;
+
 use DateTime;
 
 subtest 'NumberStyler' => sub {
@@ -238,22 +241,40 @@ subtest 'Dates' => sub {
         }
     };
     subtest 'Vague strings' => sub {
-        my %strings = (    #TODO: figure out how to know which year is correct without reimplementing the code here.
-            'next december' => qr/^01 Dec \d{4}$/,
-            'last january'  => qr/^01 Jan \d{4}$/,
-            'june'          => qr/^01 Jun \d{4}$/,
-            'december 2015' => qr/^01 Dec 2015$/,
-            'june 2000'     => qr/^01 Jun 2000$/,
-            'jan'           => qr/^01 Jan \d{4}$/,    # Is Jan too ambiguous (e.g. Jan Hammer)?
-            'next jan'      => qr/^01 Jan \d{4}$/,
-            'last jan'      => qr/^01 Jan \d{4}$/,
-            'feb 2038'      => qr/^01 Feb 2038$/,
+        my %time_strings = (
+            '2000-08-01T00:00:00Z' => {
+                'next december' => '01 Dec 2000',
+                'last january'  => '01 Jan 2000',
+                'june'          => '01 Jun 2001',
+                'december 2015' => '01 Dec 2015',
+                'june 2000'     => '01 Jun 2000',
+                'jan'           => '01 Jan 2001',
+                'next jan'      => '01 Jan 2001',
+                'last jan'      => '01 Jan 2000',
+                'feb 2038'      => '01 Feb 2038',
+            },
+            '2015-12-01T00:00:00Z' => {
+                'next december' => '01 Dec 2016',
+                'last january'  => '01 Jan 2015',
+                'june'          => '01 Jun 2016',
+                'december 2015' => '01 Dec 2015',
+                'june 2000'     => '01 Jun 2000',
+                'jan'           => '01 Jan 2016',
+                'next jan'      => '01 Jan 2016',
+                'last jan'      => '01 Jan 2015',
+                'feb 2038'      => '01 Feb 2038',
+            },
         );
-        foreach my $test_date (sort keys %strings) {
-            my $result = RoleTester::parse_vague_string_to_date($test_date);
-            isa_ok($result, 'DateTime', $test_date);
-            like(RoleTester::date_output_string($result), $strings{$test_date}, $test_date);
+        foreach my $query_time (sort keys %time_strings) {
+            set_fixed_time($query_time);
+            my %strings = %{$time_strings{$query_time}};
+            foreach my $test_date (sort keys %strings) {
+                my $result = RoleTester::parse_vague_string_to_date($test_date);
+                isa_ok($result, 'DateTime', $test_date);
+                is(RoleTester::date_output_string($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
+            }
         }
+        restore_time();
     };
 };
 
