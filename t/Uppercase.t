@@ -18,8 +18,7 @@ ddg_goodie_test(
         html => qr/THAT/),
     'allcaps this string' => test_zci('THIS STRING',
         html => qr/THIS STRING/),
-    'that string all caps' => test_zci('THAT STRING',
-        html => qr/THAT STRING/),
+    'that string all caps' => undef,
     'is this uppercase, sir?' => undef,
 );
 
