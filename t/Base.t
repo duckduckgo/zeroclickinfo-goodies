@@ -18,6 +18,8 @@ ddg_goodie_test(
         '42 in base 2'   => test_zci('42 in base 2 is 101010'),
         '42 to hex',     => test_zci('42 in base 16 is 2A'),
         '10 in base 3'   => test_zci('10 in base 3 is 101'),
+        '18442240474082181119 to hex'     => test_zci('18442240474082181119 to hex is ffefffffffffffff'),
+        '999999999999999999999999 to hex' => test_zci('999999999999999999999999 to hex is d3c21bcecceda0ffffff')
 );
 
 done_testing;
