@@ -2,7 +2,6 @@ package DDG::Goodie::CalendarToday;
 # ABSTRACT: Print calendar of current / given month and highlight (to)day
 
 use DDG::Goodie;
-use Time::Piece;
 use DateTime;
 use DateTime::TimeZone; 
 with 'DDG::GoodieRole::Dates';
@@ -24,15 +23,14 @@ attribution email   => ['webmaster@quovadit.org'];
 triggers startend => 'calendar', 'cal';
 
 # define variables
-my $currentDay, my $currentMonth, my $currentYear;
-my $givenDay = 0, my $givenMonth, my $givenYear;
-my $validMonthPattern, my $validYearPattern;
+my $givenDay = 0;
 my $firstDay, my $firstWeekDayId, my $lastDay;
 my $rText, my $rHtml;
 my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
   
 # read in css-file only once
 my $css = share("style.css")->slurp;
+
 my $month_regex = full_month_regex();
 my $date_regex = date_regex();
 
