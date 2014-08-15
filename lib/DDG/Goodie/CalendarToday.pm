@@ -42,25 +42,32 @@ handle remainder => sub {
     my $t = DateTime->now; 
     $t->set_time_zone($loc->time_zone);
     my ($currentDay, my $currentMonth, my $currentYear) = ($t->mday, $t->mon, $t->year);
+    my $date_object = DateTime->now;
+    if($query) {
+        my ($date_string, $other_format) = $query =~ qr#($date_regex)|((?:next|last )?$month_regex(?: [0-9]{4})?)#i;
+        if($date_string) {
+            $date_object = parse_string_to_date($date_string);
 
-    my ($date_string, $other_format) = $query =~ qr#($date_regex)|((?:next|last )?$month_regex(?: [0-9]{4})?)#i;
-    my $date_object = parse_string_to_date($date_string) if $date_string;
-    my $other_date_object = parsePsuedoDate($other_format) if $other_format;
+            return unless $date_object;
+            $givenDay = $date_object->day();
+        }
+        elsif($other_format) {
+            $date_object = parsePsuedoDate($other_format);
 
-    $date_object = $other_date_object if($other_date_object);
-    return unless $date_object;
-
-    # highlight today if current month is given
-    if(($date_object->year() eq $currentYear) && ($date_object->month() eq $currentMonth)) {
-        $givenDay = $currentDay;
+            return unless $date_object;
+            # highlight today if current month is given
+            if(($date_object->year() eq $currentYear) && ($date_object->month() eq $currentMonth)) {
+                $givenDay = $currentDay;
+            }
+        }
+        else {
+            return;
+        }
     }
-
     # calculate first/last day
     $firstDay = parse_string_to_date($date_object->year()."-".$date_object->month()."-1");
-    $firstWeekDayId = $firstDay->day_of_week()%7;   #compatibility with Time::Piece
-    #$lastDay = $firstDay->last_day_of_month();
+    $firstWeekDayId = $firstDay->day_of_week()%7; # 0=Sun;6=Sat
     $lastDay = DateTime->last_day_of_month( year =>$date_object->year(), month =>$date_object->month())->day();
-print "we re here - $firstDay";
 
     # return calendar
     prepare_returntext();
@@ -70,8 +77,7 @@ print "we re here - $firstDay";
 # functions:
 sub parsePsuedoDate {
     my ($string) = @_;
-    return parse_vague_string_to_date("$string") if($string =~ qr#(next|last)\s?($month_regex)\s?([0-9]{4})?#i);
-    return;
+    return parse_vague_string_to_date($string);
 }
 
 # prepare text and html to be returned
