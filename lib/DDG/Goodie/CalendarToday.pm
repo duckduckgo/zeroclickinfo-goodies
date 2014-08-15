@@ -3,7 +3,7 @@ package DDG::Goodie::CalendarToday;
 
 use DDG::Goodie;
 use DateTime;
-use DateTime::TimeZone; 
+use Try::Tiny;
 with 'DDG::GoodieRole::Dates';
 
 primary_example_queries "calendar";
@@ -37,10 +37,10 @@ my $date_regex = date_regex();
 handle remainder => sub {
     my $query = $_;
     # check current date in users timezone
-    my $t = DateTime->now; 
-    $t->set_time_zone($loc->time_zone);
+    my $t = DateTime->now;
+    try { $t->set_time_zone($loc->time_zone) }; # We'll just use our default zone if this doesn't work.
     my ($currentDay, my $currentMonth, my $currentYear) = ($t->mday, $t->mon, $t->year);
-    my $date_object = DateTime->now;
+    my $date_object = $t; # Default to now in their TZ.
     if($query) {
         my ($date_string, $other_format) = $query =~ qr#($date_regex)|((?:next|last )?$month_regex(?: [0-9]{4})?)#i;
         if($date_string) {
@@ -50,7 +50,7 @@ handle remainder => sub {
             $givenDay = $date_object->day();
         }
         elsif($other_format) {
-            $date_object = parsePsuedoDate($other_format);
+            $date_object = parse_vague_string_to_date($other_format);
 
             return unless $date_object;
             # highlight today if current month is given
@@ -71,12 +71,6 @@ handle remainder => sub {
     prepare_returntext();
     return $rText, html => append_css($rHtml);
 };
-
-# functions:
-sub parsePsuedoDate {
-    my ($string) = @_;
-    return parse_vague_string_to_date($string);
-}
 
 # prepare text and html to be returned
 sub prepare_returntext {
