@@ -3,6 +3,7 @@ package DDG::Goodie::Anagram;
 
 use DDG::Goodie;
 use List::Util 'shuffle';
+use HTML::Entities qw(encode_entities);
 
 triggers start => "anagram", "anagrams";
 
@@ -121,11 +122,11 @@ handle remainder => sub {
             my @chars = shuffle split (//, $word);
             $w = join '', @chars;
         } while ($w eq $word);
-        return $word, html => html_output ("Sorry, we found no anagrams for \"$word\". We scrambled it for you:", $w);
+        return $word, html => html_output ('Sorry, we found no anagrams for "'.encode_entities ($word).'". We scrambled it for you:', $w);
     }
 
     my $response = join ', ', @output;
-    my $output_str = "Anagrams of \"$word\"";
+    my $output_str = 'Anagrams of '.encode_entities ($word).'"';
     unless ($full_word) {
         $output_str .= " of length $len";
     }
