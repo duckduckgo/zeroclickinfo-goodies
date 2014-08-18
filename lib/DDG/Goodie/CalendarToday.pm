@@ -62,6 +62,9 @@ handle remainder => sub {
             return;
         }
     }
+    else {
+        $givenDay = $currentDay;
+    }
     # calculate first/last day
     $firstDay = parse_string_to_date($date_object->year()."-".$date_object->month()."-1");
     $firstWeekDayId = $firstDay->day_of_week()%7; # 0=Sun;6=Sat
