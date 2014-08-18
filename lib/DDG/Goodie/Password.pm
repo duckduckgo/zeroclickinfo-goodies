@@ -30,15 +30,15 @@ my %pw_strengths = (
 handle query_lc => sub {
     if ( $_ =~ /^\!?(?:(?:random |)password(?: generator|)|pw(?:gen|))(?: |)(\d+|strong|hard|weak|average|avg|)(?: |)(\d+|strong|hard|weak|average|avg|)$/i ) {
 
-	# Actually make it random.
-	srand();
+        # Actually make it random.
+        srand();
 
 
         my $var1 = $1 || '';
         my $var2 = $2 || '';
 
         # For debugging.
-        #	warn qq(VARS: $var1\t$var2\n);
+        #   warn qq(VARS: $var1\t$var2\n);
 
         my $pw_length = 8;
         $pw_length = $var1 if $var1 && $var1 =~ /^\d+$/;
@@ -47,15 +47,15 @@ handle query_lc => sub {
         $pw_length = 32    if $pw_length > 32;
 
         # For debugging.
-        #	warn $pw_length;
+        #   warn $pw_length;
 
         my $pw_strength = 'avg';
         $pw_strength = $pw_strengths{ lc $var1 } if $var1 && exists $pw_strengths{ lc $var1 };
         $pw_strength = $pw_strengths{ lc $var2 } if $var2 && exists $pw_strengths{ lc $var2 };
 
         # For debugging.
-        #	warn $pw_strength;
-        #	warn exists $data->{pw_strengths}->{lc $var1};
+        #   warn $pw_strength;
+        #   warn exists $data->{pw_strengths}->{lc $var1};
 
         # Password.
         my $pwgen = '';
@@ -106,7 +106,7 @@ handle query_lc => sub {
             my @rand2 = ( '!', '@', '#', '$', '%', '^', '&', '*', '(', ')' );
 
             # For debugging.
-            #	    warn "SPLICE $rand2", $rand2[$rand2], "\n";
+            #       warn "SPLICE $rand2", $rand2[$rand2], "\n";
 
             # Splice in number.
             $pwgen = substr( $pwgen, 0, $rand - 1 ) . $rand2[$rand2] . substr( $pwgen, $rand );
@@ -115,6 +115,7 @@ handle query_lc => sub {
         # Add password for display.
         return $pwgen." (random password)";
     }
+    
     return;
 };
 
