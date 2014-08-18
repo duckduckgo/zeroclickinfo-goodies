@@ -6,8 +6,6 @@ with 'DDG::GoodieRole::Dates';
 use DateTime::Duration;
 use Lingua::EN::Numericalize;
 
-use Data::Dump qw(dump);
-
 triggers any => qw( plus minus + - );
 
 zci is_cached => 1;
