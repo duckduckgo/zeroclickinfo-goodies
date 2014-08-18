@@ -83,6 +83,8 @@ sub date_regex {
     return qr/$returned_regex/i;
 }
 
+# Accepts a string which looks like date per the supplied date_regex (e.g. '31/10/1980')
+# Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
 sub parse_string_to_date {
     my ($d) = @_;
 
