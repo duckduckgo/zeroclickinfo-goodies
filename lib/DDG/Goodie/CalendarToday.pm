@@ -36,15 +36,11 @@ my $date_regex = date_regex();
 
 handle remainder => sub {
     my $query = $_;
-    # check current date in users timezone
-    my $t = DateTime->now; # We'll just use our default zone if this doesn't work.
-    try {
-        $t->set_time_zone($loc->time_zone) 
-    };
-    my ($currentDay, $currentMonth, $currentYear) = ($t->day(), $t->month(), $t->year());
-    my $date_object = $t; # Default to now in their TZ.
+    my $date_object = DateTime->now; 
+    my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
+
     if($query) {
-        my ($date_string, $other_format) = $query =~ qr#($date_regex)|((?:next|last )?$month_regex(?: [0-9]{4})?)#i;
+        my ($date_string, $other_format) = $query =~ qr#($date_regex)|((?:(?:next|last) )?$month_regex(?: [0-9]{4})?)#i;
         if($date_string) {
             $date_object = parse_string_to_date($date_string);
 
@@ -59,18 +55,16 @@ handle remainder => sub {
             if(($date_object->year() eq $currentYear) && ($date_object->month() eq $currentMonth)) {
                 $givenDay = $currentDay;
             }
-        }
-        else {
+        } else {
             return;
         }
-    }
-    else {
-        $givenDay = $currentDay;
+    } else {
+        #$givenDay = $currentDay;
     }
     # calculate first/last day
     $firstDay = parse_string_to_date($date_object->year()."-".$date_object->month()."-1");
     $firstWeekDayId = $firstDay->day_of_week()%7; # 0=Sun;6=Sat
-    $lastDay = DateTime->last_day_of_month( year =>$date_object->year(), month =>$date_object->month())->day();
+    $lastDay = DateTime->last_day_of_month( year =>$date_object->year(), month =>$date_object->month() )->day();
 
     # return calendar
     prepare_returntext();
@@ -79,67 +73,66 @@ handle remainder => sub {
 
 # prepare text and html to be returned
 sub prepare_returntext {
-  # Print heading
-  $rText = "\n";
-  $rHtml = '<table class="calendar"><tr><th class="calendar__header" colspan="7"><b>';
-  $rHtml .= $firstDay->strftime("%B %Y").'</b></th></tr><tr>';
+    # Print heading
+    $rText = "\n";
+    $rHtml = '<table class="calendar"><tr><th class="calendar__header" colspan="7"><b>';
+    $rHtml .= $firstDay->strftime("%B %Y").'</b></th></tr><tr>';
 
-  for my $dayHeading (@weekDays) {
-    $rText .= "$dayHeading ";
-    $rHtml .= '<th>'.$dayHeading.'</th>';
-  }
-  $rText .= "     ".$firstDay->strftime("%B %Y")."\n";
-  $rHtml .= "</tr><tr>";
-   
+    for my $dayHeading (@weekDays) {
+        $rText .= "$dayHeading ";
+        $rHtml .= '<th>'.$dayHeading.'</th>';
+    }
+    $rText .= "     ".$firstDay->strftime("%B %Y")."\n";
+    $rHtml .= "</tr><tr>";
 
-  # Skip to the first day of the week
-  $rText .= "    " x $firstWeekDayId;
-  $rHtml .= "<td>&nbsp;</td>" x $firstWeekDayId;
-  my $weekDayNum = $firstWeekDayId;
-   
-  
-  # Printing the month
-  for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
-    if($dayNum == $givenDay) { 
-      $rText .= "|"; 
-      $rHtml .= '<td><span class="calendar__today circle">'.$dayNum.'</span></td>';
-    } else {
-      $rText .=" "; 
-    }
-    
-    if($dayNum < 10) { 
-      $rText .=" "; 
+
+    # Skip to the first day of the week
+    $rText .= "    " x $firstWeekDayId;
+    $rHtml .= "<td>&nbsp;</td>" x $firstWeekDayId;
+    my $weekDayNum = $firstWeekDayId;
+
+
+    # Printing the month
+    for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
+        if($dayNum == $givenDay) { 
+            $rText .= "|"; 
+            $rHtml .= '<td><span class="calendar__today circle">'.$dayNum.'</span></td>';
+        } else {
+            $rText .=" "; 
+        }
+
+        if($dayNum < 10) { 
+            $rText .=" "; 
+        }
+
+        $rText .= "$dayNum";
+        if($dayNum != $givenDay ) {
+            $rHtml .= "<td>$dayNum</td>";
+        }
+
+        if($dayNum == $givenDay) { 
+            $rText .= "|"; 
+            $rHtml .= "</div>";
+        } else {
+            $rText .=" "; 
+        }
+
+        # next row after 7 cells
+        $weekDayNum++;
+        if ($weekDayNum == 7) {
+          $weekDayNum = 0;
+          $rText .= "\n";
+          $rHtml .= "</tr><tr>";
+        }
     }
 
-    $rText .= "$dayNum";
-    if($dayNum != $givenDay ) {
-      $rHtml .= "<td>$dayNum</td>";
-    }
-    
-    if($dayNum == $givenDay) { 
-      $rText .= "|"; 
-      $rHtml .= "</div>";
-    } else {
-      $rText .=" "; 
-    }
-    
-    # next row after 7 cells
-    $weekDayNum++;
-    if ($weekDayNum == 7) {
-      $weekDayNum = 0;
-      $rText .= "\n";
-      $rHtml .= "</tr><tr>";
-    }
-  }
-
-  $rText .= "\n";
-  $rHtml .="</tr></table>";
-
+    $rText .= "\n";
+    $rHtml .="</tr></table>";
 }
 
 sub append_css {
-  my $html = shift;
-  return "<style type='text/css'>$css</style>\n" . $html;
+    my $html = shift;
+    return "<style type='text/css'>$css</style>\n" . $html;
 }
 
 1;
