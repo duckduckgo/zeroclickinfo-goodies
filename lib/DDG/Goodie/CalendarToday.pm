@@ -39,7 +39,7 @@ handle remainder => sub {
     # check current date in users timezone
     my $t = DateTime->now;
     try { $t->set_time_zone($loc->time_zone) }; # We'll just use our default zone if this doesn't work.
-    my ($currentDay, my $currentMonth, my $currentYear) = ($t->mday, $t->mon, $t->year);
+    my ($currentDay, $currentMonth, $currentYear) = ($t->day(), $t->month(), $t->year());
     my $date_object = $t; # Default to now in their TZ.
     if($query) {
         my ($date_string, $other_format) = $query =~ qr#($date_regex)|((?:next|last )?$month_regex(?: [0-9]{4})?)#i;
