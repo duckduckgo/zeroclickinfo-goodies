@@ -184,6 +184,10 @@ ddg_goodie_test(
         test_zci("There are 253 workdays between 31 $JAN_ABBREV 2000 and 31 $JAN_ABBREV 2001."),
     'workdays between 01/31/2000 01/31/2001 inclusive' => 
         test_zci("There are 253 workdays between 31 $JAN_ABBREV 2000 and 31 $JAN_ABBREV 2001."),
+    'workdays between 01/31/2000 and 01/31/2001 inclusive' => 
+        test_zci("There are 253 workdays between 31 $JAN_ABBREV 2000 and 31 $JAN_ABBREV 2001."),
+    'workdays between jan 3 2013 and jan 4 2013' => 
+        test_zci("There are 2 workdays between 03 Jan 2013 and 04 Jan 2013."),
 );
 
 done_testing;
