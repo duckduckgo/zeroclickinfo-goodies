@@ -37,8 +37,10 @@ my $date_regex = date_regex();
 handle remainder => sub {
     my $query = $_;
     # check current date in users timezone
-    my $t = DateTime->now;
-    try { $t->set_time_zone($loc->time_zone) }; # We'll just use our default zone if this doesn't work.
+    my $t = DateTime->now; # We'll just use our default zone if this doesn't work.
+    try {
+        $t->set_time_zone($loc->time_zone) 
+    };
     my ($currentDay, $currentMonth, $currentYear) = ($t->day(), $t->month(), $t->year());
     my $date_object = $t; # Default to now in their TZ.
     if($query) {
