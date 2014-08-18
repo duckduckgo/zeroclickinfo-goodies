@@ -139,7 +139,7 @@ sub parse_all_strings_to_date {
 
 
 # Takes a DateTime object (or a string which can be parsed into one)
-# and returns a standard formatted output string.
+# and returns a standard formatted output string or an empty string if it cannot be parsed.
 sub date_output_string {
     my $dt = shift;
 
