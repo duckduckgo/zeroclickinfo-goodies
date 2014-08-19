@@ -62,7 +62,7 @@ handle remainder => sub {
     my $start = parse_string_to_date($the_year . "-" . $the_month . "-1");
     return format_result({
             first_day     => $start,
-            first_day_num => $start->day_of_week() % 7,
+            first_day_num => $start->day_of_week() % 7, # 0=Sunday
             last_day      => DateTime->last_day_of_month(
                 year  => $the_year,
                 month => $the_month,
@@ -88,12 +88,10 @@ sub format_result {
     $rText .= "     ".$firstDay->strftime("%B %Y")."\n";
     $rHtml .= "</tr><tr>";
 
-
     # Skip to the first day of the week
     $rText .= "    " x $first_day_num;
     $rHtml .= "<td>&nbsp;</td>" x $first_day_num;
     my $weekDayNum = $first_day_num;
-
 
     # Printing the month
     for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
