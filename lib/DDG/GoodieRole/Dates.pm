@@ -44,6 +44,9 @@ sub full_month_regex {
 sub short_month_regex {
     return $short_month;
 }
+sub month_regex {
+    return qr/$full_month|$short_month/;
+}
 sub full_day_of_week_regex {
     return $full_day_of_week;
 }
