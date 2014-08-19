@@ -32,7 +32,6 @@ my $month_regex = month_regex();
 my $date_regex  = date_regex();
 
 handle remainder => sub {
-    my $rText, my $rHtml;
     my $query       = $_;
     my $date_object = DateTime->now;
     my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
@@ -54,10 +53,10 @@ handle remainder => sub {
             }
         }
     } else {
-        $highlightDay = $currentDay
-}
+        $highlightDay = $currentDay;
+    }
 
-    my $the_year = $date_object->year();
+    my $the_year  = $date_object->year();
     my $the_month = $date_object->month();
     # return calendar
     my $start = parse_string_to_date($the_year . "-" . $the_month . "-1");
@@ -83,8 +82,8 @@ sub format_result {
     $rHtml .= $firstDay->strftime("%B %Y").'</b></th></tr><tr>';
 
     for my $dayHeading (@weekDays) {
-        $rText .= "$dayHeading ";
-        $rHtml .= '<th>'.$dayHeading.'</th>';
+        $rText .= $dayHeading . ' ';
+        $rHtml .= '<th>' . $dayHeading . '</th>';
     }
     $rText .= "     ".$firstDay->strftime("%B %Y")."\n";
     $rHtml .= "</tr><tr>";
@@ -99,11 +98,11 @@ sub format_result {
     # Printing the month
     for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
         my $padded_date = sprintf('%2s', $dayNum);
-        if($dayNum == $highlightDay) { 
-            $rText .= "|".$padded_date.'|';
-            $rHtml .= '<td><span class="calendar__today circle">'.$dayNum.'</span></td>';
+        if ($dayNum == $highlightDay) {
+            $rText .= '|' . $padded_date . '|';
+            $rHtml .= '<td><span class="calendar__today circle">' . $dayNum . '</span></td>';
         } else {
-            $rText .=" ".$padded_date.' '; 
+            $rText .= ' ' . $padded_date . ' ';
             $rHtml .= "<td>$dayNum</td>";
         }
 
