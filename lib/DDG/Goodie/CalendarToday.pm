@@ -32,7 +32,7 @@ my $month_regex = month_regex();
 my $date_regex  = date_regex();
 
 handle remainder => sub {
-    my $rText, my $rHtml;
+    my ($rText, $rHtml);
     my $query       = $_;
     my $date_object = DateTime->now;
     my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
@@ -55,7 +55,7 @@ handle remainder => sub {
         }
     } else {
         $highlightDay = $currentDay
-}
+    }
 
     my $the_year = $date_object->year();
     my $the_month = $date_object->month();
@@ -70,13 +70,13 @@ handle remainder => sub {
               )->day(),
             highlight => $highlightDay,
         });
-
 };
 
 # prepare text and html to be returned
 sub format_result {
     my $args = shift;
     my ($firstDay, $first_day_num, $lastDay, $highlightDay) = @{$args}{qw(first_day first_day_num last_day highlight)};
+    
     # Print heading
     my $rText = "\n";
     my $rHtml = '<table class="calendar"><tr><th class="calendar__header" colspan="7"><b>';
