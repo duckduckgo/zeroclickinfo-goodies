@@ -1,4 +1,5 @@
 package DDG::Goodie::LaserShip;
+# ABSTRACT: Track a package through Lasership
 
 use DDG::Goodie;
 

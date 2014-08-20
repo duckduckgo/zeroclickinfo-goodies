@@ -1,7 +1,8 @@
 package DDG::Goodie::Factors;
-#Returns the factors of the entered number
+# ABSTRACT: Returns the factors of the entered number
 
 use DDG::Goodie;
+
 use Math::Prime::Util 'divisors';
 
 zci answer_type => "factors";

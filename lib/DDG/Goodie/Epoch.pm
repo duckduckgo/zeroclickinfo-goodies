@@ -1,4 +1,5 @@
 package DDG::Goodie::Epoch;
+# ABSTRACT: UNIX epoch <-> human time
 
 use DDG::Goodie;
 use Date::Calc qw(Today_and_Now Mktime);

@@ -1,9 +1,10 @@
 package DDG::Goodie::Lowercase;
+# ABSTRACT: Convert a string into lowercase.
+
 use DDG::Goodie;
 
 use HTML::Entities;
 
-# ABSTRACT: Convert a string into lowercase.
 name "Lowercase";
 description "Convert a string into lowercase.";
 primary_example_queries "lowercase GitHub";

@@ -1,4 +1,5 @@
 package DDG::Goodie::Password;
+# ABSTRACT: Generate a random password.
 
 use DDG::Goodie;
 

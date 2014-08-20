@@ -1,4 +1,5 @@
 package DDG::GoodieRole::NumberStyler;
+# ABSTRACT: A role to allow Goodies to recognize and work with numbers in different notations.
 
 use strict;
 use warnings;

@@ -1,6 +1,8 @@
 package DDG::Goodie::FlipText;
+# ABSTRACT: appear to flip text upside down via UNICODE.
 
 use DDG::Goodie;
+
 use Text::UpsideDown;
 
 triggers startend => "flip text", "mirror text", "spin text", "rotate text";
