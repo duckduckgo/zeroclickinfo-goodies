@@ -7,7 +7,7 @@
 .zci--answer table.publicdns td {
     white-space: nowrap;
     padding: 4px 30px 4px 10px;
-    border: 1px solid #cfcfcf;
+    border: 0px;
 }
 
 .zci--answer table.publicdns th {
@@ -15,6 +15,6 @@
     text-align: left;
     background-color: #aaa;
     color: #fff;
-    border: 1px solid #888;
+    border: 0px;
     padding: 4px 10px;
 }
