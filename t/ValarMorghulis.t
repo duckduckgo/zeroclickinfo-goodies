@@ -14,7 +14,7 @@ ddg_goodie_test(
     ],
     'valar morghulis' =>
         test_zci(
-            'Valar Dohaeris',
+            'Valar dohaeris',
         ),
     'what is valar morghulis' => undef,
     'valar morghulis meaning' => undef,  
