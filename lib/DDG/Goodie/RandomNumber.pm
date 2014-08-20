@@ -1,4 +1,5 @@
 package DDG::Goodie::RandomNumber;
+# ABSTRACT: select a random number
 
 use DDG::Goodie;
 

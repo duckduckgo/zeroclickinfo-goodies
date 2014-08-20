@@ -1,4 +1,5 @@
 package DDG::Goodie::VIN;
+# ABSTRACT: extract information about vehicle identification numbers
 
 use DDG::Goodie;
 

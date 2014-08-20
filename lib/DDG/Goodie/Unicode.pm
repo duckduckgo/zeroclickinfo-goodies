@@ -1,6 +1,8 @@
 package DDG::Goodie::Unicode;
+# ABSTRACT: unicode character information lookup
 
 use DDG::Goodie;
+
 use Unicode::UCD qw/charinfo/;
 use Unicode::Char ();              # For name -> codepoint lookup
 use Encode qw/encode_utf8/;

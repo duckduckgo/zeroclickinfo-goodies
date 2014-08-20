@@ -1,4 +1,6 @@
 package DDG::Goodie::Uppercase;
+# ABSTRACT: uppercase a provided string.
+
 use DDG::Goodie;
 
 use HTML::Entities;

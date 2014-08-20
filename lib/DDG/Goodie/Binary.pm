@@ -1,5 +1,5 @@
 package DDG::Goodie::Binary;
-# ABSTRACT Convert decimal, hex and string to binary.
+# ABSTRACT: Convert decimal, hex and string to binary.
 
 use DDG::Goodie;
 

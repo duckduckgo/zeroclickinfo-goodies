@@ -1,4 +1,5 @@
 package DDG::Goodie::PrivateNetwork;
+# ABSTRACT: show non-Internet routable IP addresses.
 
 use DDG::Goodie;
 

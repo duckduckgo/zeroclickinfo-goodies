@@ -1,4 +1,5 @@
 package DDG::Goodie::ZappBrannigan;
+# ABSTRACT: Zapp Brannigan quotes.
 
 use DDG::Goodie;
 

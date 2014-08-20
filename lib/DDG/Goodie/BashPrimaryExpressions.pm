@@ -1,9 +1,12 @@
 package DDG::Goodie::BashPrimaryExpressions;
+# ABSTRACT: human-readable descriptions of bash shell expressions
 
-use HTML::Entities;
-use DDG::Goodie;
 use strict;
 use warnings;
+
+use DDG::Goodie;
+
+use HTML::Entities;
 
 triggers startend => 'bash if', 'bash';
 primary_example_queries 'bash [ -z hello ]';

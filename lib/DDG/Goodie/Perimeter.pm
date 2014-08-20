@@ -1,4 +1,5 @@
 package DDG::Goodie::Perimeter;
+# ABSTRACT: Compute the perimeter of basic shapes.
 
 use DDG::Goodie;
 

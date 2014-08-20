@@ -1,4 +1,5 @@
 package DDG::Goodie::UPS;
+# ABSTRACT: Track a package through United Parcel Service.
 
 use DDG::Goodie;
 
