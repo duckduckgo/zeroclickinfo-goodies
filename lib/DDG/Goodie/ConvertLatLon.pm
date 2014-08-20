@@ -4,7 +4,6 @@ package DDG::Goodie::ConvertLatLon;
 use DDG::Goodie;
 use utf8;
 use Geo::Coordinates::DecimalDegrees;
-use HTML::Entities;
 use Math::SigFigs qw(:all);
 use Math::Round;
 
@@ -280,8 +279,8 @@ sub wrap_html {
     my @results = @{$_[1]};
     my $toFormat = $_[2];
 
-    my $queries = join wrap_secondary(', '), map { encode_entities($_) } @queries;
-    my $results = join wrap_secondary(', '), map { encode_entities($_) } @results;
+    my $queries = join wrap_secondary(', '), html_enc(@queries);
+    my $results = join wrap_secondary(', '), html_enc(@results);
 
     my $html = "<div class='zci--conversions text--primary'>" . $queries . wrap_secondary(' in ' . $toFormat . ': ') . $results . "</div>";
     return append_css($html);

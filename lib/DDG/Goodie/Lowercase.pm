@@ -3,8 +3,6 @@ package DDG::Goodie::Lowercase;
 
 use DDG::Goodie;
 
-use HTML::Entities;
-
 name "Lowercase";
 description "Convert a string into lowercase.";
 primary_example_queries "lowercase GitHub";
@@ -32,7 +30,7 @@ handle remainder => sub {
     
     # Encode the variable before putting it in HTML.
     # There's no need to encode the $text variable because that gets encoded internally.
-    $lower = encode_entities($lower);
+    $lower = html_enc($lower);
     
     my $html = qq(<div class="zci--lowercase"><span class="text--primary">$lower</span></div>);
     $html = append_css($html);

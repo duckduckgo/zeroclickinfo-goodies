@@ -1,7 +1,6 @@
 package DDG::Goodie::HTMLEntitiesEncode;
 # ABSTRACT: Displays the HTML entity code for the query name.
 
-use HTML::Entities qw(encode_entities);
 use DDG::Goodie;
 use strict;
 use warnings;
@@ -301,16 +300,16 @@ handle remainder => sub {
     }
 
     # Query maybe a single typed-in character to encode
-    # No hits above if we got this far, use encode_entities() of HTML::Entities
+    # No hits above if we got this far, use html_enc()
     if (   (/^(?:")(?<char>.)(?:")\s*\??$/)     # a (captured) single character within double quotes
         || (/^(?:'')(?<char>.)(?:'')\s*\??$/)   # or within single quotes
         || (/^(?<char>.)\s*\??$/)) {            # or stand-alone
-        my $entity = encode_entities($+{char});
-        if ($entity eq $+{char}) { # encode_entities() was unsuccessful and returned the input itself
+        my $entity = html_enc($+{char});
+        if ($entity eq $+{char}) { # html_enc() was unsuccessful and returned the input itself
             $entity = ord($+{char}); # get the decimal
             $entity = '#' . $entity; # dress it up like a decimal
         }
-        # Remove '&' and ';' from the output of encode_entities(), these will be added in html
+        # Remove '&' and ';' from the output of html_enc(), these will be added in html
         $entity =~ s/^&//g; 
         $entity =~ s/;$//g;
         # Make final answer
