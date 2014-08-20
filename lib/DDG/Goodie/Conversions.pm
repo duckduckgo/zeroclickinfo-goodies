@@ -4,7 +4,6 @@ package DDG::Goodie::Conversions;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
-use HTML::Entities;
 use Math::Round qw/nearest/;
 use bignum;
 use Convert::Pluggable;
@@ -68,8 +67,8 @@ sub append_css {
 
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
-    my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . encode_entities($result->{'from_unit'}) . "</span>";
-    my $to = $styler->with_html($result->{'result'}) . " <span class='text--secondary'>" . encode_entities($result->{'to_unit'}) . "</span>";
+    my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . html_enc($result->{'from_unit'}) . "</span>";
+    my $to = $styler->with_html($result->{'result'}) . " <span class='text--secondary'>" . html_enc($result->{'to_unit'}) . "</span>";
     return append_css("<div class='zci--conversions text--primary'>$from = $to</div>");
 }
 
