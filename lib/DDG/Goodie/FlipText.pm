@@ -20,8 +20,8 @@ attribution web => [ 'robert.io', 'Robert Picard' ],
             twitter => ['http://twitter.com/__rlp', '__rlp'];
 
 handle remainder => sub {
-    return upside_down( $_ ) if $_;
-    return;
+    return unless $_;
+    return upside_down( $_ );
 };
 
 1;
