@@ -18,7 +18,7 @@ attribution
 zci answer_type => 'valarmorghulis';
 
 handle remainder => sub {
-    return 'Valar Dohaeris' if $_ eq '';
+    return 'Valar dohaeris' if $_ eq '';
     return;
 };
 
