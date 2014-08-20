@@ -1,5 +1,6 @@
 package DDG::Goodie::RegexCheatSheet;
 # ABSTRACT: Provide a cheatsheet for common Regular Expression syntax
+
 use strict;
 use warnings;
 

@@ -1,4 +1,5 @@
 package DDG::Goodie::Coin;
+# ABSTRACT: flip a (fair) coin.
 
 use DDG::Goodie;
 

@@ -1,4 +1,5 @@
 package DDG::Goodie::USPS;
+# ABSTRACT: Track a package through the US postal service.
 
 use DDG::Goodie;
 

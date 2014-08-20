@@ -1,4 +1,5 @@
 package DDG::Goodie::FrequencySpectrum;
+# ABSTRACT: describe the nature of various wave frequencies.
 
 use strict;
 

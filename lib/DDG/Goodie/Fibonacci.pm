@@ -1,4 +1,5 @@
 package DDG::Goodie::Fibonacci;
+# ABSTRACT: n-th Fibonacci number
 
 use strict;
 

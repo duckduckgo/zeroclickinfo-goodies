@@ -1,4 +1,5 @@
 package DDG::Goodie::SigFigs;
+# ABSTRACT: Count the significant figures in a number.
 
 use DDG::Goodie;
 

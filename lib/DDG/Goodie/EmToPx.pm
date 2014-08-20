@@ -1,4 +1,5 @@
 package DDG::Goodie::EmToPx;
+# ABSTRACT: em <-> px for font sizes.
 
 use DDG::Goodie;
 
