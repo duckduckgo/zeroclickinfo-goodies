@@ -1,0 +1,7 @@
+.zci--answer .zci--hextodec {
+    font-weight: 300;
+    word-break: break-word;
+}
+.zci--answer .zci--hextodec .hextodec--decimal {
+    font-size: 1.7em;
+}

@@ -1,4 +1,5 @@
 package DDG::Goodie::ZappBrannigan;
+# ABSTRACT: Zapp Brannigan quotes.
 
 use DDG::Goodie;
 
@@ -18,6 +19,9 @@ topics 'entertainment';
 my @quotes = share('quotes.txt')->slurp;
 
 handle query => sub {
+	# Ensure rand is seeded for each process
+	srand();
+	
     return if $_ !~ m/quotes?/;
     my $rand = int(rand(scalar(@quotes)));
     my $quote = $quotes[$rand];

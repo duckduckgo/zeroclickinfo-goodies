@@ -7,6 +7,7 @@ use List::AllUtils qw/none/;
 triggers startend => qw/choose pick select/;
 
 zci answer_type => "rand";
+zci is_cached => 0;
 
 primary_example_queries 'choose yes or no';
 secondary_example_queries 'choose heads or tails', 'pick this or that or none';
@@ -23,6 +24,9 @@ attribution twitter => 'crazedpsyc',
             web     => ["http://kablamo.org", "Eric Johnson"] ;
 
 handle remainder => sub {
+    # Ensure rand is seeded for each process
+    srand();
+
     my $query = $_;
 
     # split the query on whitespace and rm whitespace

@@ -1,4 +1,5 @@
 package DDG::Goodie::TitleCase;
+# ABSTRACT: Convert a string to title case.
 
 use DDG::Goodie;
 

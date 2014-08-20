@@ -1,4 +1,5 @@
 package DDG::Goodie::NLetterWords;
+# ABSTRACT: find words of a certain length
 
 use DDG::Goodie;
 use Lingua::EN::Numericalize;
@@ -18,6 +19,9 @@ attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
             web => ['http://dylansserver.com/', 'Dylan Lloyd'];
 
 handle query_parts => sub {
+    # Ensure rand is seeded for each process
+    srand();
+
     my $numericalized = str2nbr($_);
     return unless $numericalized =~ /^(\d{1,50}) (letter|char|character) words?$/;
 

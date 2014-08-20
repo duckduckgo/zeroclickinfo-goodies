@@ -1,4 +1,6 @@
 package DDG::Goodie::Tips;
+# ABSTRACT: calculate a tip on a bill
+
 use DDG::Goodie;
 
 triggers any => 'tip', 'tips', '%';

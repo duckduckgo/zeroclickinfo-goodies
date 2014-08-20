@@ -1,5 +1,5 @@
 package DDG::Goodie::DateMath;
-# ABSTRACT add/subtract days/weeks/months/years to/from a date
+# ABSTRACT: add/subtract days/weeks/months/years to/from a date
 
 use DDG::Goodie;
 use Date::Calc qw( Add_Delta_Days Add_Delta_YM Decode_Date_US This_Year );

@@ -9,25 +9,6 @@ use DDG::Goodie::Calculator;    # For function subtests.
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
-subtest 'display format selection' => sub {
-    my $ds_name = 'DDG::Goodie::Calculator::display_style';
-    my $ds      = \&$ds_name;
-
-    is($ds->('0,013')->{id}, 'euro', '0,013 is euro');
-    is($ds->('4,431',      '4.321')->{id}, 'perl', '4,431 and 4.321 is perl');
-    is($ds->('4,431',      '4.32')->{id},  'perl', '4,431 and 4.32 is perl');
-    is($ds->('4,431',      '4,32')->{id},  'euro', '4,431 and 4,32 is euro');
-    is($ds->('4534,345.0', '1',)->{id},    'perl', '4534,345.0 should have another comma, not enforced; call it perl.');
-    is($ds->('4,431', '4,32', '5,42')->{id}, 'euro', '4,431 and 4,32 and 5,42 is nicely euro-style');
-    is($ds->('4,431', '4.32', '5.42')->{id}, 'perl', '4,431 and 4.32 and 5.42 is nicely perl-style');
-
-    is($ds->('5234534.34.54', '1',), undef, '5234534.34.54 and 1 has a mal-formed number, so we cannot proceed');
-    is($ds->('4,431', '4,32',     '4.32'), undef, '4,431 and 4,32 and 4.32 is confusingly ambig; no style');
-    is($ds->('4,431', '4.32.10',  '5.42'), undef, '4,431 and 4.32.10 is hard to figure; no style');
-    is($ds->('4,431', '4,32,100', '5.42'), undef, '4,431 and 4,32,100 and 5.42 has a mal-formed number, so no go.');
-    is($ds->('4,431', '4,32,100', '5,42'), undef, '4,431 and 4,32,100 and 5,42 is too crazy to work out; no style');
-};
-
 ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
     'what is 2-2' => test_zci(
@@ -298,22 +279,22 @@ ddg_goodie_test(
     '0.8^2 + 0.6^2' => test_zci(
         '0.8 ^ 2 + 0.6 ^ 2 = 1',
         heading => 'Calculator',
-        html    => qr#0.8<sup>2</sup> \+ 0.6<sup>2</sup> = #,
+        html    => qr#0.8<sup>2</sup> \+ 0.6<sup>2</sup><span class='text--secondary'> = #,
     ),
     '2 squared ^ 3' => test_zci(
         '2 squared ^ 3 = 256',
         heading => 'Calculator',
-        html    => qr#2 squared<sup>3</sup> = #,
+        html    => qr#2 squared<sup>3</sup><span class='text--secondary'> = #,
     ),
     '2 squared ^ 3.06' => test_zci(
         '2 squared ^ 3.06 = 323.972172143725',
         heading => 'Calculator',
-        html    => qr#2 squared<sup>3\.06</sup> = #,
+        html    => qr#2 squared<sup>3\.06</sup><span class='text--secondary'> = #,
     ),
     '2^3 squared' => test_zci(
         '2 ^ 3 squared = 512',
         heading => 'Calculator',
-        html    => qr#2<sup>3</sup>squared = #,
+        html    => qr#2<sup>3</sup>squared<span class='text--secondary'> = #,
     ),
     '4 score + 7' => test_zci(
         '4 score + 7 = 87',
@@ -333,45 +314,87 @@ ddg_goodie_test(
     '(pi^4+pi^5)^(1/6)' => test_zci(
         '(pi ^ 4 + pi ^ 5) ^ (1 / 6) = 2.71828180861191',
         heading => 'Calculator',
-        html    => qr#\(pi<sup>4</sup> \+ pi<sup>5</sup>\)<sup>\(1 / 6\)</sup> =#,
+        html    => qr#\(pi<sup>4</sup> \+ pi<sup>5</sup>\)<sup>\(1 / 6\)</sup><span class='text--secondary'> =#,
     ),
     '(pi^4+pi^5)^(1/6)+1' => test_zci(
         '(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1 = 3.71828180861191',
         heading => 'Calculator',
-        html    => qr#\(pi<sup>4</sup> \+ pi<sup>5</sup>\)<sup>\(1 / 6\)</sup> \+ 1 =#,
+        html    => qr#\(pi<sup>4</sup> \+ pi<sup>5</sup>\)<sup>\(1 / 6\)</sup> \+ 1<span class='text--secondary'> =#,
     ),
     '(pi^4.1^(5-4)+pi^(5-(4^2 -8)))^(1/6)+1' => test_zci(
         '(pi ^ 4.1 ^ (5 - 4) + pi ^ (5 - (4 ^ 2 - 8))) ^ (1 / 6) + 1 = 3.18645452799383',
         heading => 'Calculator',
-        html    => qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1 =#,
+        html =>
+          qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1<span class='text--secondary'> =#,
     ),
     '5^4^(3-2)^1' => test_zci(
         '5 ^ 4 ^ (3 - 2) ^ 1 = 625',
         heading => 'Calculator',
-        html    => qr#5<sup>4<sup>\(3 - 2\)<sup>1</sup></sup></sup> =#,
+        html    => qr#5<sup>4<sup>\(3 - 2\)<sup>1</sup></sup></sup><span class='text--secondary'> =#,
     ),
     '(5-4)^(3-2)^1' => test_zci(
         '(5 - 4) ^ (3 - 2) ^ 1 = 1',
         heading => 'Calculator',
-        html    => qr#\(5 - 4\)<sup>\(3 - 2\)<sup>1</sup></sup> =#,
+        html    => qr#\(5 - 4\)<sup>\(3 - 2\)<sup>1</sup></sup><span class='text--secondary'> =#,
     ),
     '(5+4-3)^(2-1)' => test_zci(
         '(5 + 4 - 3) ^ (2 - 1) = 6',
         heading => 'Calculator',
-        html    => qr#\(5 \+ 4 - 3\)<sup>\(2 - 1\)</sup> =#,
+        html    => qr#\(5 \+ 4 - 3\)<sup>\(2 - 1\)</sup><span class='text--secondary'> =#,
     ),
     '5^((4-3)*(2+1))+6' => test_zci(
         '5 ^ ((4 - 3) * (2 + 1)) + 6 = 131',
         heading => 'Calculator',
-        html    => qr#5<sup>\(\(4 - 3\) \* \(2 \+ 1\)\)</sup> \+ 6 =#,
+        html    => qr#5<sup>\(\(4 - 3\) \* \(2 \+ 1\)\)</sup> \+ 6<span class='text--secondary'> =#,
     ),
-    'sin(1.0) + 1,05'    => undef,
-    '4,24,334+22,53,828' => undef,
-    '5234534.34.54+1'    => undef,
-    '//'                 => undef,
-    dividedbydividedby   => undef,
-    time                 => undef,    # We eval perl directly, only do whitelisted stuff!
-    'four squared'       => undef,
+    '20x07' => test_zci(
+        '20 x 07 = 140',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '83.166.167.160/33' => test_zci(
+        '83.166.167.160 / 33 = 2.520.186.883,63636',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '123.123.123.123/255.255.255.256' => test_zci(
+        '123.123.123.123 / 255.255.255.256 = 0,482352941174581',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '4E5 +1 ' => test_zci(
+        '(4  *  10 ^ 5) + 1 = 400,001',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '4e5 +1 ' => test_zci(
+        '(4  *  10 ^ 5) + 1 = 400,001',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    'pi/1e9' => test_zci(
+        'pi / (1  *  10 ^ 9) = 3.14159265358979 * 10^-9',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    'pi*1e9' => test_zci(
+        'pi * (1  *  10 ^ 9) = 3,141,592,653.58979',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+
+    '123.123.123.123/255.255.255.255' => undef,
+    '83.166.167.160/27'               => undef,
+    '9 + 0 x 07'                      => undef,
+    '0x07'                            => undef,
+    'sin(1.0) + 1,05'                 => undef,
+    '4,24,334+22,53,828'              => undef,
+    '5234534.34.54+1'                 => undef,
+    '//'                              => undef,
+    dividedbydividedby                => undef,
+    time                              => undef,    # We eval perl directly, only do whitelisted stuff!
+    'four squared'                    => undef,
+    '! + 1'                           => undef,    # Regression test for bad query trigger.
 );
 
 done_testing;

@@ -1,4 +1,5 @@
 package DDG::Goodie::Xor;
+# ABSTRACT: bitwise XOR two numbers.
 
 use DDG::Goodie;
 use utf8;

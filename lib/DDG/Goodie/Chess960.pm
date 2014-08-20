@@ -1,4 +1,5 @@
 package DDG::Goodie::Chess960;
+# ABSTRACT: return a random Chess 960 starting position.
 
 use strict;
 
@@ -116,6 +117,9 @@ RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ
 );
 
 handle query => sub {
+    # Ensure rand is seeded for each process
+    srand();
+
     my $query = $_;
     my $pos = undef;
     return unless ($query =~ /\bchess960\b/i && 

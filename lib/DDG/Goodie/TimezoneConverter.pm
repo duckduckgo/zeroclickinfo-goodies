@@ -1,4 +1,5 @@
 package DDG::Goodie::TimezoneConverter;
+# ABSTRACT: Convert times between timezones.
 
 use 5.010;
 use strict;
