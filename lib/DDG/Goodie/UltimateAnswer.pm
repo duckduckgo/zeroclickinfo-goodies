@@ -1,5 +1,5 @@
 package DDG::Goodie::UltimateAnswer;                                                                                                                                                                        
-# A Hitchhiker's Guide to the Galaxy easter egg.                                                                                                                                                            
+# ABSTRACT: A Hitchhiker's Guide to the Galaxy easter egg.                                                                                                                                                            
                                                                                                                                                                                                             
 use DDG::Goodie;                                                                                                                                                                                            
                                                                                                                                                                                                             
