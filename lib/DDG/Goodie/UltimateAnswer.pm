@@ -16,7 +16,7 @@ attribution github  => ['https://github.com/exoWM/', 'exoWM'];
 zci answer_type => 'UltimateAnswer';                                                                                                                                                                        
                                                                                                                                                                                                             
 handle remainder => sub {                                                                                                                                                                                   
-    return 'Forty-two', html => '<span style="font-size: 1.5em; fontweight: 400;"</span>' if $_ eq '';
+    return 'Forty-two', html => '<span style="font-size: 1.5em; fontweight: 400;">Forty-two</span>' if $_ eq '';
     return;
 };                                                                                                                                                                                                          
                                                                                                                                                                                                             
