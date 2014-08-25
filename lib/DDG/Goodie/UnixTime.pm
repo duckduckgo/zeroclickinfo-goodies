@@ -20,9 +20,9 @@ category 'calculations';
 topics 'sysadmin';
 
 handle remainder => sub {
+    return unless defined $_;
 
     my $time_input = shift;
-    $time_input = time if ($time_input eq '');    # Default to 'now' when empty.
     my $time_utc;
     eval {
         $time_input = int(length($time_input) >= 13 ? ($time_input / 1000) : ($time_input + 0));
