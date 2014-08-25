@@ -1,4 +1,5 @@
 package DDG::Goodie::Average;
+# ABSTRACT: take statistics for a list of numbers
 
 use DDG::Goodie;
 

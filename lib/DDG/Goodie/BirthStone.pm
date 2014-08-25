@@ -1,5 +1,5 @@
 package DDG::Goodie::BirthStone;
-#Returns the birthstone of the queried month
+# ABSTRACT: Returns the birthstone of the queried month
 
 use DDG::Goodie;
 

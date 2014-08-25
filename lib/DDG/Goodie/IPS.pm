@@ -1,4 +1,5 @@
 package DDG::Goodie::IPS;
+# ABSTRACT: track a package through IPS.
 
 use DDG::Goodie;
 

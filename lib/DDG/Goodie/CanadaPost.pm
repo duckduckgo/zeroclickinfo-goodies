@@ -1,4 +1,5 @@
 package DDG::Goodie::CanadaPost;
+# ABSTRACT: Track a package through Canada Post
 
 use DDG::Goodie;
 

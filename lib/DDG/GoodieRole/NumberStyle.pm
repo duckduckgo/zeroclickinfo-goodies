@@ -1,4 +1,5 @@
 package DDG::GoodieRole::NumberStyle;
+# ABSTRACT: An object representing a particular numerical notation.
 
 use strict;
 use warnings;

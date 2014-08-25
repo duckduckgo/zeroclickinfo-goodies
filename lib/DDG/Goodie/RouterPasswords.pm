@@ -1,4 +1,5 @@
 package DDG::Goodie::RouterPasswords;
+# ABSTRACT: Return default passwords forvarious routers.
 
 use DDG::Goodie;
 

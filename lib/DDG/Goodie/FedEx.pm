@@ -1,4 +1,5 @@
 package DDG::Goodie::FedEx;
+# ABSTRACT: Track a package through FedEx
 
 use DDG::Goodie;
 

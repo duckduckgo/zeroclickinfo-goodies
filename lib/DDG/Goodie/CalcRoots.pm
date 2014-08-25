@@ -1,4 +1,5 @@
 package DDG::Goodie::CalcRoots;
+# ABSTRACT: compute the n-th root of a number
 
 use DDG::Goodie;
 use Lingua::EN::Numericalize;

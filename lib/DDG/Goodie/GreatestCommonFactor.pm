@@ -1,5 +1,5 @@
 package DDG::Goodie::GreatestCommonFactor;
-#Returns the greatest common factor of the two numbers entered
+# ABSTRACT: Returns the greatest common factor of the two numbers entered
 
 use DDG::Goodie;
 

@@ -1,8 +1,8 @@
 package DDG::Goodie::RubiksCubePatterns;
+# ABSTRACT: Create interesting patterns from a solved Rubik's Cube.
 
 use DDG::Goodie;
 
-# Create interesting patterns from a solved Rubik's Cube.
 
 primary_example_queries 'rcube stripes';
 secondary_example_queries 'rcube cube in a cube', 'rcube swap centers';

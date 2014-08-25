@@ -6,15 +6,15 @@
 
 .zci--answer table.publicdns td {
     white-space: nowrap;
-    padding: 2px 4px;
-    border: 2px solid #fff;
+    padding: 4px 30px 4px 10px;
+    border: 0px;
 }
 
 .zci--answer table.publicdns th {
     font-weight: bold;
-    text-align: center;
-    background-color: #888;
+    text-align: left;
+    background-color: #aaa;
     color: #fff;
-    border: 2px solid #fff;
-    padding: 2px 4px;
+    border: 0px;
+    padding: 4px 10px;
 }
