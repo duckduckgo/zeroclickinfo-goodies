@@ -21,6 +21,7 @@ ddg_goodie_test([qw(
     'epoch'                   => test_zci($now_re),
     'timestamp'               => test_zci($now_re),
     'datetime'                => test_zci($now_re),
+    'time'                    => undef,
 );
 
 done_testing;

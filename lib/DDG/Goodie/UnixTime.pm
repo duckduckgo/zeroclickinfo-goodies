@@ -5,7 +5,7 @@ use DDG::Goodie;
 
 use DateTime;
 
-triggers startend => "unixtime", "time", "timestamp", "datetime", "epoch", "unix time", "unix timestamp", "unix time stamp", "unix epoch";
+triggers startend => "unixtime", "timestamp", "datetime", "epoch", "unix time", "unix timestamp", "unix time stamp", "unix epoch";
 
 zci answer_type => "time_conversion";
 zci is_cached   => 0;
