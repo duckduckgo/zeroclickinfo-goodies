@@ -72,12 +72,6 @@ sub more_at {
     return "<a href='$_[0]' class='zci__more-at--info'>More at Wikibooks</a>";
 }
 
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-}
-
 sub build_html {
 	# builds a string to display using the given $command
 	# and $usage
@@ -97,7 +91,7 @@ handle remainder => sub {
         	#build the html string to display
         	my $html = build_html($command, $usage, $more);
 
-                return $text, html => append_css($html), heading => "$heading (LaTeX)";
+                return $text, html => $html, heading => "$heading (LaTeX)";
 	}
 	return; #return if no key was found
 };

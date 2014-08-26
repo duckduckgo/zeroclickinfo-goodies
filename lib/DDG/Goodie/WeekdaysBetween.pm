@@ -18,13 +18,10 @@ code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies
 attribution                 github => ['http://github.com/syst3mw0rm'],
                             email => ['syst3m.w0rm@gmail.com'];
 
-my $css = share('style.css')->slurp;
-
-# Wrap the response in html so that it can be styled with css
+# Wrap the response in html
 sub html_output {
     my ($weekday_count, $start_end_dates) = @_;
-    return "<style type='text/css'>$css</style>"
-          ."<div class='zci--weekdaysbetween'>"
+    return "<div class='zci--weekdaysbetween'>"
           ."<span class='text--primary'>$weekday_count</span><br/>"
           ."<span class='text--secondary'>$start_end_dates</span>"
           ."</div>";

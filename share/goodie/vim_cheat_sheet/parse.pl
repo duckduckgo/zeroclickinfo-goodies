@@ -131,7 +131,7 @@ sub generate_html_cheat_sheet {
     my $data = shift;
     my $file = shift;
 
-    my $css  = file("style.css")->slurp;
+    my $css  = file("vim_cheat_sheet.css")->slurp;
     my $html = "<style type='text/css'>\n\n$css\n</style>\n\n";
 
     my $vars  = { columns => $data };

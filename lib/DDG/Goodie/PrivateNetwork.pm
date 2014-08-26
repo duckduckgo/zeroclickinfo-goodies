@@ -20,15 +20,9 @@ attribution twitter => 'crazedpsyc',
 
 my $text = scalar share('private_network.txt')->slurp,
 my $html = scalar share('private_network.html')->slurp;
-my $css = scalar share('style.css')->slurp;
 
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>$html";
-}
-        
 handle sub {
-    $text, html => append_css($html)
+    $text, html => $html
 };
 
 1;

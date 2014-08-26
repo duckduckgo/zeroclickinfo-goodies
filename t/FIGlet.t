@@ -22,37 +22,7 @@ ddg_goodie_test(
 |____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
                                                          
 ',
-                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper pre {
-    display: block;
-    word-wrap: normal;
-    white-space: pre;
-    overflow: auto;
-    font-family: monospace;
-    background-color: inherit;
-    border: 0;
-    height: auto;
-    width: 100%;
-    padding-left: 0px;
-    outline: none;
-}
-
-#zero_click_wrapper #figlet-wrapper #figlet-font {
-    font-family: monospace;
-}
-
-@media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 10px;
-    }
-}
-
-@media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 5px;
-    }
-}
-</style>
-<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
+                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
 | |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
@@ -68,37 +38,7 @@ ddg_goodie_test(
 |_/ |_/ \_| 
             
 ',
-                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper pre {
-    display: block;
-    word-wrap: normal;
-    white-space: pre;
-    overflow: auto;
-    font-family: monospace;
-    background-color: inherit;
-    border: 0;
-    height: auto;
-    width: 100%;
-    padding-left: 0px;
-    outline: none;
-}
-
-#zero_click_wrapper #figlet-wrapper #figlet-font {
-    font-family: monospace;
-}
-
-@media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 10px;
-    }
-}
-
-@media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 5px;
-    }
-}
-</style>
-<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>mini</span><pre contenteditable=\'true\'> _   _   __ 
+                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>mini</span><pre contenteditable=\'true\'> _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
@@ -112,37 +52,7 @@ ddg_goodie_test(
 |_/ |_/ \_| 
             
 ',
-                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper pre {
-    display: block;
-    word-wrap: normal;
-    white-space: pre;
-    overflow: auto;
-    font-family: monospace;
-    background-color: inherit;
-    border: 0;
-    height: auto;
-    width: 100%;
-    padding-left: 0px;
-    outline: none;
-}
-
-#zero_click_wrapper #figlet-wrapper #figlet-font {
-    font-family: monospace;
-}
-
-@media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 10px;
-    }
-}
-
-@media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 5px;
-    }
-}
-</style>
-<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>mini</span><pre contenteditable=\'true\'> _   _   __ 
+                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>mini</span><pre contenteditable=\'true\'> _   _   __ 
 | \ | \ /__ 
 |_/ |_/ \_| 
             
@@ -158,37 +68,7 @@ ddg_goodie_test(
 |___/\__\___/| .__/ 
              |_|    
 ',
-                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper pre {
-    display: block;
-    word-wrap: normal;
-    white-space: pre;
-    overflow: auto;
-    font-family: monospace;
-    background-color: inherit;
-    border: 0;
-    height: auto;
-    width: 100%;
-    padding-left: 0px;
-    outline: none;
-}
-
-#zero_click_wrapper #figlet-wrapper #figlet-font {
-    font-family: monospace;
-}
-
-@media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 10px;
-    }
-}
-
-@media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 5px;
-    }
-}
-</style>
-<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'>     _              
+                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'>     _              
  ___| |_ ___  _ __  
 / __| __/ _ \| \'_ \ 
 \__ | || (_) | |_) |
@@ -205,37 +85,7 @@ ddg_goodie_test(
 |____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
                                                          
 ',
-                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper pre {
-    display: block;
-    word-wrap: normal;
-    white-space: pre;
-    overflow: auto;
-    font-family: monospace;
-    background-color: inherit;
-    border: 0;
-    height: auto;
-    width: 100%;
-    padding-left: 0px;
-    outline: none;
-}
-
-#zero_click_wrapper #figlet-wrapper #figlet-font {
-    font-family: monospace;
-}
-
-@media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 10px;
-    }
-}
-
-@media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 5px;
-    }
-}
-</style>
-<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
+                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
 | |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |
@@ -252,37 +102,7 @@ ddg_goodie_test(
 |____/ \__,_|\___|_|\_|____/ \__,_|\___|_|\_\\\____|\___/ 
                                                          
 ',
-                html => '<style type=\'text/css\'>#zero_click_wrapper #figlet-wrapper pre {
-    display: block;
-    word-wrap: normal;
-    white-space: pre;
-    overflow: auto;
-    font-family: monospace;
-    background-color: inherit;
-    border: 0;
-    height: auto;
-    width: 100%;
-    padding-left: 0px;
-    outline: none;
-}
-
-#zero_click_wrapper #figlet-wrapper #figlet-font {
-    font-family: monospace;
-}
-
-@media screen and (max-width:768px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 10px;
-    }
-}
-
-@media screen and (max-width:500px) {
-    #zero_click_wrapper #figlet-wrapper pre {
-        font-size: 5px;
-    }
-}
-</style>
-<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
+                html => '<div id=\'figlet-wrapper\'><span>Font: </span><span id=\'figlet-font\'>standard</span><pre contenteditable=\'true\'> ____             _    ____             _     ____       
 |  _ \ _   _  ___| | _|  _ \ _   _  ___| | __/ ___| ___  
 | | | | | | |/ __| |/ | | | | | | |/ __| |/ | |  _ / _ \ 
 | |_| | |_| | (__|   <| |_| | |_| | (__|   <| |_| | (_) |

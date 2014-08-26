@@ -19,16 +19,13 @@ category 'transformations';
 
 triggers startend => 'md5', 'md5sum';
 
-my $css = share('style.css')->slurp;
-
 sub html_output {
     my ($str, $md5) = @_;
 
     # prevent XSS
     $str = html_enc($str);
 
-    return "<style type='text/css'>$css</style>"
-          ."<div class='zci--md5'>"
+    return "<div class='zci--md5'>"
           ."<span class='text--secondary'>MD5 of \"$str\"</span><br/>"
           ."<span class='text--primary'>$md5</span>"
           ."</div>";
