@@ -284,7 +284,7 @@ sub generate_plot {
       height => (25 * $_[2]) + 45,
 
       #Padding
-      leftGutter => 40,
+      leftGutter => 20,
       rightGutter => 0,
 
       #Range (passed)
@@ -466,8 +466,7 @@ sub add_major_range {
     #Add label for range on the y-axis
     my $x;
     my $anchor;
-    #$x = $plot->{transform}->($leftGutter) - 1;
-    $x = 1;
+    $x = $plot->{leftGutter} - 1;
     $anchor = 'end';
     my $majorRangeLabel = $majorRange->group();
     my $majorRangeLabelText = $majorRangeLabel->text(
