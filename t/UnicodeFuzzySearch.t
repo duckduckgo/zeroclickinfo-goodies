@@ -42,14 +42,14 @@ ROTATED HEAVY BLACK HEART BULLET: \x{2765} (U+2765)",
     # -- emoji : lower bound
     'unicode cyclone' =>
     test_zci(
-        qq|CYCLONE: <img src="http://www.emoji-cheat-sheet.com/graphics/emojis/cyclone.png" alt="\x{1F300}" width="20" style="vertical-align:bottom"/> (U+1F300)|,
-        html => qq|CYCLONE: <img src="http://www.emoji-cheat-sheet.com/graphics/emojis/cyclone.png" alt="\x{1F300}" width="20" style="vertical-align:bottom"/> (U+1F300)|
+        qq|CYCLONE: <img src="https://duckduckgo.com/iu/?u=http%3A%2F%2Fwww.emoji-cheat-sheet.com%2Fgraphics%2Femojis%2Fcyclone.png" alt="\x{1F300}" width="20" style="vertical-align:bottom"/> (U+1F300)|,
+        html => qq|CYCLONE: <img src="https://duckduckgo.com/iu/?u=http%3A%2F%2Fwww.emoji-cheat-sheet.com%2Fgraphics%2Femojis%2Fcyclone.png" alt="\x{1F300}" width="20" style="vertical-align:bottom"/> (U+1F300)|
     ),
     # -- emoji : upper bound
     'unicode left luggage' =>
     test_zci(
-        qq|LEFT LUGGAGE: <img src="http://www.emoji-cheat-sheet.com/graphics/emojis/left_luggage.png" alt="\x{1F6C5}" width="20" style="vertical-align:bottom"/> (U+1F6C5)|,
-        html => qq|LEFT LUGGAGE: <img src="http://www.emoji-cheat-sheet.com/graphics/emojis/left_luggage.png" alt="\x{1F6C5}" width="20" style="vertical-align:bottom"/> (U+1F6C5)|
+        qq|LEFT LUGGAGE: <img src="https://duckduckgo.com/iu/?u=http%3A%2F%2Fwww.emoji-cheat-sheet.com%2Fgraphics%2Femojis%2Fleft_luggage.png" alt="\x{1F6C5}" width="20" style="vertical-align:bottom"/> (U+1F6C5)|,
+        html => qq|LEFT LUGGAGE: <img src="https://duckduckgo.com/iu/?u=http%3A%2F%2Fwww.emoji-cheat-sheet.com%2Fgraphics%2Femojis%2Fleft_luggage.png" alt="\x{1F6C5}" width="20" style="vertical-align:bottom"/> (U+1F6C5)|
     )
 );
 

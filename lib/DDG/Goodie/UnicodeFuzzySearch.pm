@@ -2,6 +2,7 @@ package DDG::Goodie::UnicodeFuzzySearch;
 # ABSTRACT: returns unicode symbols matching the input
 
 use DDG::Goodie;
+use URI::Escape::XS;
 
 triggers startend => "unicode";
 
@@ -26,6 +27,7 @@ topics 'programming';
 my @lines = split /\n/, share("UnicodeData.txt")->slurp;
 
 use constant {
+    IMAGE_PROXY       => 'https://duckduckgo.com/iu/?u=',
     EMOJI_IMAGE_PATH  => 'http://www.emoji-cheat-sheet.com/graphics/emojis/<PATH>.png',
     EMOJI_LOWER_BOUND => 0x1F300,
     EMOJI_UPPER_BOUND => 0x1F6C5,
@@ -75,7 +77,7 @@ sub _make_a_result {
         ( my $image_path = EMOJI_IMAGE_PATH ) =~ s/<PATH>/$image_name/;
         $symbol = sprintf(
             '<img src="%s" alt="%s" width="%s" style="vertical-align:bottom"/>',
-            $image_path,
+            IMAGE_PROXY . encodeURIComponent( $image_path ),
             $symbol,
             EMOJI_IMAGE_SIZE,
         );
