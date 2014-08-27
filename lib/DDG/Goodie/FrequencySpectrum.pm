@@ -174,19 +174,18 @@ handle query => sub {
         my $bandMin = $emMatch->{min};
         my $bandMax = $emMatch->{max};
         my $subspectrum = $emMatch->{subspectrum};
-        my $tracks = scalar keys %emSpectrum;
 
         #Set up the plot panel
-        (my $plot, my $transform) = generate_panel($rangeMin, $rangeMax, $tracks);
+        my $plot = generate_plot($rangeMin, $rangeMax, scalar keys %emSpectrum);
 
         #Add a major range for each subspectrum (e.g. radio or UV)
         foreach (sort {$emSpectrum{$a}{'track'} <=> $emSpectrum{$b}{'track'} } keys %emSpectrum) {
-            $plot = add_major_range($plot, $transform, $emSpectrum{$_}{'min'}, $emSpectrum{$_}{'max'}, $_, $emSpectrum{$_}{'track'});
+            $plot = add_major_range($plot, $emSpectrum{$_}{'min'}, $emSpectrum{$_}{'max'}, $_, $emSpectrum{$_}{'track'});
         }
 
         #Add a minor range for the band (unless the band is the subspectrum)
         if (! ($emSpectrum{$subspectrum}{'min'} == $bandMin && $emSpectrum{$subspectrum}{'max'} == $bandMax)) {
-            $plot = add_minor_range($plot, $transform, $bandMin, $bandMax, $emSpectrum{$subspectrum}{'track'});
+            $plot = add_minor_range($plot, $bandMin, $bandMax, $emSpectrum{$subspectrum}{'track'});
         }
 
         #Add a marker for the query frequency
@@ -197,10 +196,10 @@ handle query => sub {
         } else {
             $markerRGB = '#F7614F';
         }
-        $plot = add_marker($plot, $transform, $freq_hz, $tracks, $markerRGB);
+        $plot = add_marker($plot, $freq_hz, $markerRGB);
 
         #Generate the SVG
-        $html .= $plot->xmlify;
+        $html .= $plot->{svg}->xmlify;
 
     }
 
@@ -231,7 +230,7 @@ handle query => sub {
 
         #Set up the background panel
         # A 'track' is a row in the plot/categorical variable on the y axis
-        (my $plot, my $transform) = generate_panel($rangeMin, $rangeMax, scalar @audibleMatches);
+        (my $plot, my $transform) = generate_plot($rangeMin, $rangeMax, scalar @audibleMatches);
 
         #Add a track with a major range for each producer
         my $track = 0;
@@ -273,52 +272,61 @@ sub match_audible {
     return \@matches;
 }
 
-sub generate_panel {
+sub generate_plot {
 
-    (my $rangeMin, my $rangeMax, my $tracks) = @_;
+    #Panel parameters
+    my $plot = {
 
-    #Width is dynamic, always expressed as percentage
-    my $width = 100;
+      #Width is dynamic, always expressed as percentage
+      width => 100,
 
-    #Height is fixed
-    my $height = (25 * $tracks) + 45;
+      #Height is fixed, and depends on number of tracks (passed)
+      height => (25 * $_[2]) + 45,
 
-    #Padding
-    my $leftGutter = 5;
-    my $rightGutter = 5;
+      #Padding
+      leftGutter => 40,
+      rightGutter => 0,
 
-    my $svg = SVG->new(height => $height, class => 'zci-plot');
+      #Range (passed)
+      rangeMin => $_[0],
+      rangeMax => $_[1],
+
+      #Number of tracks (passed)
+      tracks => $_[2],
+
+    };
+    $plot->{svg} = SVG->new(height => $plot->{height}, class => 'zci-plot');
 
     #If the difference betweeen the range
     # minimum and maximum is two orders of
     # magnitude or greater, use a log10 scale
-    my $log10 = int(log10($rangeMax)) - int(log10($rangeMin)) >= 2 ? 1 : 0;
+    my $log10 = int(log10($plot->{rangeMax})) - int(log10($plot->{rangeMin})) >= 2 ? 1 : 0;
 
     #Build a transformation function to map values to
     # x coordinates
     my $transform;
     if ($log10) {
-        $transform = sub {
+        $plot->{transform} = sub {
             my $value = shift;
-            my $unit = ($width - $leftGutter - $rightGutter) / (log10($rangeMax) - log10($rangeMin));
-            return $leftGutter + ((log10($value) - log10($rangeMin)) * $unit);
+            my $unit = ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) / (log10($plot->{rangeMax}) - log10($plot->{rangeMin}));
+            return $plot->{leftGutter} + ((log10($value) - log10($plot->{rangeMin})) * $unit);
         };
 
     } else {
-        $transform = sub {
+        $plot->{transform} = sub {
             my $value = shift;
-            my $unit = ($width - $leftGutter - $rightGutter) / ($rangeMax - $rangeMin);
-            return $leftGutter + (($value - $rangeMin) * $unit);
+            my $unit = ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) / ($plot->{rangeMax} - $plot->{rangeMin});
+            return $plot->{leftGutter} + (($value - $plot->{rangeMin}) * $unit);
         };
     }
 
     #Add panel background
-    $svg->group(
+    $plot->{svg}->group(
         class => 'plot_panel',
     )->rect(
-        width => ($width - $leftGutter - $rightGutter) . '%', 
-        height => 25 * $tracks, 
-        x => $leftGutter . '%',
+        width => ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) . '%', 
+        height => 25 * $plot->{tracks}, 
+        x => $plot->{leftGutter} . '%',
         rx => 2,
         ry => 2
     );
@@ -328,16 +336,16 @@ sub generate_panel {
     # If we're using a log10 scale, put a tick at
     # each power of 10 between range min and max
     if ($log10) {
-        @ticks = map { 10 ** $_ } int(log10($rangeMin)) .. int(log10($rangeMax));
+        @ticks = map { 10 ** $_ } int(log10($plot->{rangeMin})) .. int(log10($plot->{rangeMax}));
 
         #If we're using a linear scale, put a tick at every
         # integer multiple at the order of magnitude of
         # range max 
     } else {
-        my $order = 10 ** int(log10($rangeMax));
-        @ticks = map { $_ * $order } int($rangeMin / $order) + 1 .. int($rangeMax / $order);
-        unshift(@ticks, $rangeMin) unless $ticks[0] == $rangeMin;
-        push(@ticks, $rangeMax) unless $ticks[-1] == $rangeMax;
+        my $order = 10 ** int(log10($plot->{rangeMax}));
+        @ticks = map { $_ * $order } int($plot->{rangeMin} / $order) + 1 .. int($plot->{rangeMax} / $order);
+        unshift(@ticks, $plot->{rangeMin}) unless $ticks[0] == $plot->{rangeMin};
+        push(@ticks, $plot->{rangeMax}) unless $ticks[-1] == $plot->{rangeMax};
     }
 
     #If there are more than 10 ticks, remove every
@@ -347,20 +355,20 @@ sub generate_panel {
     }
 
     #Draw ticks
-    my $xAxis = $svg->group (
+    my $xAxis = $plot->{svg}->group (
         id => 'x_axis',
     );
     foreach (@ticks) {
 
-        my $x = $transform->($_);
+        my $x = $plot->{transform}->($_);
 
         #Draw tick line
         my $tick = $xAxis->group();
         $tick->line(
             x1 => $x . '%',
             x2 => $x . '%',
-            y1 => 25 * $tracks, 
-            y2 => (25 * $tracks) + 4,
+            y1 => 25 * $plot->{tracks}, 
+            y2 => (25 * $plot->{tracks}) + 4,
             class => 'x_axis_tick'
         );
 
@@ -368,7 +376,7 @@ sub generate_panel {
         my $text = $xAxis->text(
             dy => '1em', 
             x => $x . '%', 
-            y => (25 * $tracks) + 4, 
+            y => (25 * $plot->{tracks}) + 4, 
             'text-anchor' => 'middle',
             class => 'x_axis_text'
         );
@@ -387,17 +395,17 @@ sub generate_panel {
     }
 
     #Add x-axis gridlines
-    my $gridlines = $svg->group (
+    my $gridlines = $plot->{svg}->group (
         class => 'x_axis_gridline',
     );
     foreach (@ticks) {
-        my $x = $transform->($_);
+        my $x = $plot->{transform}->($_);
         my $line = $gridlines->group();
         $line->line(
             x1 => $x . '%',
             x2 => $x . '%',
             y1 => 0, 
-            y2 => 25 * $tracks
+            y2 => 25 * $plot->{tracks}
         );
     }
 
@@ -405,65 +413,62 @@ sub generate_panel {
     my $xAxisLabel = $xAxis->text(
         dy => '1em', 
         x => '50%', 
-        y => (25 * $tracks) + 25, 
+        y => (25 * $plot->{tracks}) + 25, 
         'text-anchor' => 'middle',
         class => 'x_axis_label'
     );
     $xAxisLabel->tag('tspan', -cdata => 'Frequency (Hz)');
 
-    return($svg, $transform);
+    #Return arrayref contains the SVG object, the transform
+    # function for the x axis, and the plot panel parameters
+    return($plot);
 }
 
 #Add a minor range to a plot panel
 sub add_minor_range {
 
-    (my $svg, my $transform, my $rangeMin, my $rangeMax, my $track) = @_;
+    (my $plot, my $rangeMin, my $rangeMax, my $track) = @_;
 
     #Add rectangle for range
-    my $minorRange = $svg->group(id => 'minor_range_' . $track);
+    my $minorRange = $plot->{svg}->group(id => 'minor_range_' . $track);
     my $minorRangeRect = $minorRange->group();
     $minorRangeRect->rect(
         class => 'minor_range',
-        x => $transform->($rangeMin) . '%', 
-        width => $transform->($rangeMax) - $transform->($rangeMin) . '%',
+        x => $plot->{transform}->($rangeMin) . '%', 
+        width => $plot->{transform}->($rangeMax) - $plot->{transform}->($rangeMin) . '%',
         y => (15 * ($track - 1)) + 5,
         height => 15,
         rx => 2,
         ry => 2
     ); 
 
-    return $svg;
+    return $plot;
 }
 
 #Add a major frequency range to a plot panel
 sub add_major_range {
 
-    (my $svg, my $transform, my $rangeMin, my $rangeMax, my $label, my $track) = @_;
+    (my $plot, my $rangeMin, my $rangeMax, my $label, my $track) = @_;
 
     #Add rectangle for range
-    my $majorRange = $svg->group(id => 'major_range_' . $label);
+    my $majorRange = $plot->{svg}->group(id => 'major_range_' . $label);
     my $majorRangeRect = $majorRange->group();
     $majorRangeRect->rect(
         class => 'major_range',
-        x => $transform->($rangeMin) . '%', 
-        width => $transform->($rangeMax) - $transform->($rangeMin) . '%',
+        x => $plot->{transform}->($rangeMin) . '%', 
+        width => $plot->{transform}->($rangeMax) - $plot->{transform}->($rangeMin) . '%',
         y => (25 * ($track - 1)) + 5,
         height => 15,
         rx => 2,
         ry => 2
     ); 
 
-    #Add label for range
-    #Place the label on the side of the band with more space
+    #Add label for range on the y-axis
     my $x;
     my $anchor;
-    if ($transform->($rangeMin) > 100 - ($transform->($rangeMax))) {
-        $x = $transform->($rangeMin) - 1;
-        $anchor = 'end';
-    } else {
-        $x = $transform->($rangeMax) + 1;
-        $anchor = 'start';
-    }
+    #$x = $plot->{transform}->($leftGutter) - 1;
+    $x = 1;
+    $anchor = 'end';
     my $majorRangeLabel = $majorRange->group();
     my $majorRangeLabelText = $majorRangeLabel->text(
         x => $x . '%', 
@@ -474,26 +479,26 @@ sub add_major_range {
     );
     $majorRangeLabel->tag('tspan', -cdata => ucfirst($label));
 
-    return $svg;
+    return $plot;
 }
 
 #Add a marker (vertical line) to a plot panel
 sub add_marker {
 
-    (my $svg, my $transform, my $markerValue, my $tracks, my $RGB) = @_;
+    (my $plot, my $markerValue, my $RGB) = @_;
 
     #Add marker
-    $svg->group(
+    $plot->{svg}->group(
         class => 'marker'
     )->line(
-        x1 => $transform->($markerValue) . '%', 
-        x2 => $transform->($markerValue) . '%', 
+        x1 => $plot->{transform}->($markerValue) . '%', 
+        x2 => $plot->{transform}->($markerValue) . '%', 
         y1 => 3,
-        y2 => (25 * $tracks) - 3,
+        y2 => (25 * $plot->{tracks}) - 3,
         style => { 'stroke' => $RGB },
     );
 
-    return $svg;
+    return $plot;
 }
 
 #Wrap html
