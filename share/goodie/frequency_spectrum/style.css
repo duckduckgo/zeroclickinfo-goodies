@@ -17,36 +17,34 @@
 }
 
 .zci--conversions .plot_panel {
-    fill: #ccc;
+    fill: #F6F6F6;
 }
 
 .zci--conversions .x_axis_tick {
-    stroke: #aaa;
+    stroke: #DCDCDC;
 }
 
 .zci--conversions .x_axis_text {
     font-size: 0.7em;
-    fill: #888;
-    display: none\9; /* Suppress text for IE 8 and below */
+    fill: #303030;
 }
 
 .zci--conversions .x_axis_label {
     font-size: 0.8em;
     fill: #888;
-    display: none\9; /* Suppress text for IE 8 and below */
 }
 
 .zci--conversions .x_axis_gridline {
-    stroke: #eee;
+    stroke: #DCDCDC;
 }
 
 .zci--conversions .major_range {
-    fill: #4682B4;
+    fill: #9DCFE1;
 }
 
 .zci--conversions .major_range_label {
     font-size: 0.7em;
-    display: none\9; /* Suppress text for IE 8 and below */
+    fill: #303030;
 }
 
 .zci--conversions .minor_range {
@@ -55,5 +53,5 @@
 
 .zci--conversions .marker {
     stroke-width: 2px;
-    stroke-opacity: 0.5;
+    stroke-opacity: 0.8;
 }

@@ -195,7 +195,7 @@ handle query => sub {
         if ($emMatch->{subspectrum} eq 'visible light') {
             $markerRGB = frequency_to_RGB($freq_hz);
         } else {
-            $markerRGB = '#000';
+            $markerRGB = '#F7614F';
         }
         $plot = add_marker($plot, $transform, $freq_hz, $tracks, $markerRGB);
 
