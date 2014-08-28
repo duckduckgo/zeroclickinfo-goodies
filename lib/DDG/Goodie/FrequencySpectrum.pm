@@ -185,7 +185,9 @@ handle query => sub {
 
         #Add a minor range for the band (unless the band is the subspectrum)
         if (! ($emSpectrum{$subspectrum}{'min'} == $bandMin && $emSpectrum{$subspectrum}{'max'} == $bandMax)) {
-            $plot = add_minor_range($plot, $bandMin, $bandMax, $emSpectrum{$subspectrum}{'track'});
+          # NOTE: Skipping this per @wtrsld's comp, but leaving code in 
+          # until design is finalised
+          #$plot = add_minor_range($plot, $bandMin, $bandMax, $emSpectrum{$subspectrum}{'track'});
         }
 
         #Add a marker for the query frequency
@@ -288,7 +290,7 @@ sub generate_plot {
     $plot->{trackHeight} = 25;
 
     #Height of a band
-    $plot->{bandHeight} = 15;
+    $plot->{bandHeight} = 18;
 
     #Padding between edge of band and edge of track
     $plot->{bandGutter} = ($plot->{trackHeight} - $plot->{bandHeight}) / 2;
@@ -298,7 +300,7 @@ sub generate_plot {
 
     #Padding
     $plot->{leftGutter} = 20;
-    $plot->{rightGutter} = 0;
+    $plot->{rightGutter} = 5;
     $plot->{bottomGutter} = 45;
     $plot->{topGutter} = 20;
 
@@ -335,16 +337,24 @@ sub generate_plot {
         };
     }
 
+    #Add plot background
+    $plot->{svg}->group(
+        class => 'plot_background',
+    )->rect(
+        width => '100%',
+        height => $plot->{height}, 
+        x => 0,
+        y => 0
+    );
+
     #Add panel background
     $plot->{svg}->group(
         class => 'plot_panel',
     )->rect(
         width => ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) . '%', 
-        height => 25 * $plot->{tracks}, 
+        height => $plot->{panelHeight}, 
         x => $plot->{leftGutter} . '%',
         y => $plot->{topGutter},
-        rx => 2,
-        ry => 2
     );
 
     #Calculate x-axis tick locations
@@ -379,14 +389,15 @@ sub generate_plot {
         my $x = $plot->{transform}->($_);
 
         #Draw tick line
-        my $tick = $xAxis->group();
-        $tick->line(
-            x1 => $x . '%',
-            x2 => $x . '%',
-            y1 => $plot->{panelHeight} + $plot->{topGutter}, 
-            y2 => $plot->{panelHeight} + $plot->{topGutter} + 4, 
-            class => 'x_axis_tick'
-        );
+        # NOTE: Currently skipping this per wtrsld's redesign
+        #my $tick = $xAxis->group();
+        #$tick->line(
+        #x1 => $x . '%',
+        #x2 => $x . '%',
+        #y1 => $plot->{panelHeight} + $plot->{topGutter}, 
+        #y2 => $plot->{panelHeight} + $plot->{topGutter} + 4, 
+        #class => 'x_axis_tick'
+        #);
 
         #Annotate tick
         my $text = $xAxis->text(
@@ -401,6 +412,7 @@ sub generate_plot {
             $text->tag(
                 'tspan', 
                 'baseline-shift' => 'super',
+                dy => '-0.2em', #Superscripts need an extra nudge
                 dx => '-0.5em', #Bring superscript close to parent
                 -cdata => log10($_),
                 style => { 'font-size' => '0.5em' },
@@ -411,24 +423,25 @@ sub generate_plot {
     }
 
     #Add x-axis gridlines
-    my $gridlines = $plot->{svg}->group (
-        class => 'x_axis_gridline',
-    );
-    foreach (@ticks) {
-        my $x = $plot->{transform}->($_);
-        my $line = $gridlines->group();
-        $line->line(
-            x1 => $x . '%',
-            x2 => $x . '%',
-            y1 => $plot->{topGutter}, 
-            y2 => $plot->{panelHeight} + $plot->{topGutter}
-        );
-    }
+    # NOTE: Currently skipping this per wtrsld's redesign
+    #my $gridlines = $plot->{svg}->group (
+    #class => 'x_axis_gridline',
+    #);
+    #foreach (@ticks) {
+    #my $x = $plot->{transform}->($_);
+    #my $line = $gridlines->group();
+    #$line->line(
+    #x1 => $x . '%',
+    #x2 => $x . '%',
+    #y1 => $plot->{topGutter}, 
+    #y2 => $plot->{panelHeight} + $plot->{topGutter}
+    #);
+    #}
 
     #Add a label to the x-axis
     my $xAxisLabel = $xAxis->text(
         dy => '1em', 
-        x => '50%', 
+        x => '50%',
         y => $plot->{panelHeight} + $plot->{topGutter} + 25, 
         'text-anchor' => 'middle',
         class => 'x_axis_label'
@@ -471,8 +484,6 @@ sub add_minor_range {
         width => $plot->{transform}->($rangeMax) - $plot->{transform}->($rangeMin) . '%',
         y => ($plot->{trackHeight} * ($track - 1)) + $plot->{bandGutter} + $plot->{topGutter},
         height => $plot->{bandHeight},
-        rx => 2,
-        ry => 2
     ); 
 
     return $plot;
@@ -492,8 +503,6 @@ sub add_major_range {
         width => $plot->{transform}->($rangeMax) - $plot->{transform}->($rangeMin) . '%',
         y => ($plot->{trackHeight} * ($track - 1)) + $plot->{bandGutter} + $plot->{topGutter},
         height => $plot->{bandHeight},
-        rx => 2,
-        ry => 2
     ); 
 
     #Add label for range on the y-axis
@@ -505,7 +514,7 @@ sub add_major_range {
     my $majorRangeLabelText = $majorRangeLabel->text(
         x => $x . '%', 
         y => ($plot->{trackHeight} * ($track - 1)) + (2 * $plot->{bandGutter}) + $plot->{topGutter}, 
-        dy => '0.5em',
+        dy => ($plot->{trackHeight} / 2) - 5,
         'text-anchor' => $anchor,
         class => 'major_range_label'
     );
@@ -519,28 +528,16 @@ sub add_marker {
 
     (my $plot, my $markerValue, my $RGB, my $freq_formatted) = @_;
 
-    #Add marker line
-    $plot->{svg}->group(
-        class => 'marker'
-    )->line(
-        x1 => $plot->{transform}->($markerValue) . '%', 
-        x2 => $plot->{transform}->($markerValue) . '%', 
-        y1 => 3,
-        y2 => $plot->{topGutter} + $plot->{panelHeight},
-        style => { 'stroke' => $RGB },
-    );
-
     #Add marker rect
     my $markerWidth = 1.2 * length($freq_formatted);
+    my $markerGutter = 3;
     $plot->{svg}->group(
         class => 'marker_tag',
     )->rect(
         width => $markerWidth . '%',
-        height => 15,
+        height => $plot->{topGutter} - (2 * $markerGutter),
         x => $plot->{transform}->($markerValue) - ($markerWidth / 2) . '%',
-        y => 3,
-        rx => 1,
-        ry => 1,
+        y => $markerGutter + 1, #Extra pixel to account for plot border
         style => { 'fill' => $RGB }
     );
 
@@ -553,6 +550,18 @@ sub add_marker {
         class => 'marker_label'
     );
     $markerLabel->tag('tspan', -cdata => ucfirst($freq_formatted));
+
+    #Add marker line
+    $plot->{svg}->group(
+        class => 'marker'
+    )->line(
+        x1 => $plot->{transform}->($markerValue) . '%', 
+        x2 => $plot->{transform}->($markerValue) . '%', 
+        y1 => $plot->{topGutter} - $markerGutter,
+        y2 => $plot->{topGutter} + $plot->{panelHeight},
+        style => { 'stroke' => $RGB },
+    );
+
     return $plot;
 }
 
