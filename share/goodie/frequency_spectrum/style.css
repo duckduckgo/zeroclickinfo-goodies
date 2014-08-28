@@ -20,6 +20,10 @@
     fill: #F6F6F6;
 }
 
+.zci--conversions .axis_line {
+    stroke: #DCDCDC;
+}
+
 .zci--conversions .x_axis_tick {
     stroke: #DCDCDC;
 }

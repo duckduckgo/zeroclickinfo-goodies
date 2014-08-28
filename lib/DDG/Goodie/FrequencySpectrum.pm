@@ -419,8 +419,25 @@ sub generate_plot {
     );
     $xAxisLabel->tag('tspan', -cdata => 'Frequency (Hz)');
 
-    #Return arrayref contains the SVG object, the transform
-    # function for the x axis, and the plot panel parameters
+    #Add axis lines
+    my $axislines = $plot->{svg}->group (
+        class => 'axis_line',
+    );
+    my $xaxisline = $axislines->group();
+    $xaxisline->line(
+        x1 => $plot->{transform}->(0) . '%',
+        x2 => $plot->{transform}->($plot->{rangeMax}) . '%',
+        y1 => 25 * $plot->{tracks}, 
+        y2 => 25 * $plot->{tracks}
+    );
+    my $yaxisline = $axislines->group();
+    $yaxisline->line(
+        x1 => $plot->{transform}->(0) . '%',
+        x2 => $plot->{transform}->(0) . '%',
+        y1 => 0, 
+        y2 => 25 * $plot->{tracks}
+    );
+
     return($plot);
 }
 
