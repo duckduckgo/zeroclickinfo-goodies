@@ -196,7 +196,7 @@ handle query => sub {
         } else {
             $markerRGB = '#F7614F';
         }
-        $plot = add_marker($plot, $freq_hz, $markerRGB);
+        $plot = add_marker($plot, $freq_hz, $markerRGB, $freq_formatted);
 
         #Generate the SVG
         $html .= $plot->{svg}->xmlify;
@@ -243,7 +243,7 @@ handle query => sub {
         }
 
         #Add a marker for the query frequency
-        $plot = add_marker($plot, $transform, $freq_hz, scalar @audibleMatches, '#000');
+        $plot = add_marker($plot, $freq_hz, scalar @audibleMatches, '#000', $freq_formatted);
 
         #Generate the SVG
         $html .= $plot->xmlify;
@@ -517,19 +517,42 @@ sub add_major_range {
 #Add a marker (vertical line) to a plot panel
 sub add_marker {
 
-    (my $plot, my $markerValue, my $RGB) = @_;
+    (my $plot, my $markerValue, my $RGB, my $freq_formatted) = @_;
 
-    #Add marker
+    #Add marker line
     $plot->{svg}->group(
         class => 'marker'
     )->line(
         x1 => $plot->{transform}->($markerValue) . '%', 
         x2 => $plot->{transform}->($markerValue) . '%', 
-        y1 => $plot->{topGutter} + 3,
-        y2 => $plot->{topGutter} + $plot->{panelHeight} - 3,
+        y1 => 3,
+        y2 => $plot->{topGutter} + $plot->{panelHeight},
         style => { 'stroke' => $RGB },
     );
 
+    #Add marker rect
+    my $markerWidth = 1.2 * length($freq_formatted);
+    $plot->{svg}->group(
+        class => 'marker_tag',
+    )->rect(
+        width => $markerWidth . '%',
+        height => 15,
+        x => $plot->{transform}->($markerValue) - ($markerWidth / 2) . '%',
+        y => 3,
+        rx => 1,
+        ry => 1,
+        style => { 'fill' => $RGB }
+    );
+
+    #Add marker label
+    my $markerLabel = $plot->{svg}->group();
+    my $markerLabelText = $markerLabel->text(
+        x => $plot->{transform}->($markerValue) . '%',
+        y => 15,
+        'text-anchor' => 'middle',
+        class => 'marker_label'
+    );
+    $markerLabel->tag('tspan', -cdata => ucfirst($freq_formatted));
     return $plot;
 }
 
