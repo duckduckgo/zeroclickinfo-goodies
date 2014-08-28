@@ -62,6 +62,9 @@ sub percentify {
     return @out;
 }
 
+my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
+my %trigger_ignore = map { $_ => 1 } (qw( code ));
+
 handle matches => sub {
     my $type;
     my $color;
@@ -71,12 +74,9 @@ handle matches => sub {
         next unless defined $_;
         my $q = lc;
         $type = $types{$q} if exists $types{$q};
-       
-        if ($q =~ /\b(?:inverse|negative|opposite|code)\b/) {
+        if ($trigger_invert{$q}) {
             $inverse = 1;
-        } 
-        
-        else {
+        } elsif (!$trigger_ignore{$q}) {
             $color = $q unless defined $type && exists $types{$q};
         }
     }
