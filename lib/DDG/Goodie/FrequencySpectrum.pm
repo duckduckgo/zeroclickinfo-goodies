@@ -274,27 +274,42 @@ sub match_audible {
 
 sub generate_plot {
 
-    #Panel parameters
-    my $plot = {
+    #Set up plot parameters
+    my $plot = {};
 
-      #Width is dynamic, always expressed as percentage
-      width => 100,
+    #Range (passed)
+    $plot->{rangeMin} = $_[0];
+    $plot->{rangeMax} = $_[1];
 
-      #Height is fixed, and depends on number of tracks (passed)
-      height => (25 * $_[2]) + 45,
+    #Number of tracks (passed)
+    $plot->{tracks} = $_[2];
 
-      #Padding
-      leftGutter => 20,
-      rightGutter => 0,
+    #Height of a single track
+    $plot->{trackHeight} = 25;
 
-      #Range (passed)
-      rangeMin => $_[0],
-      rangeMax => $_[1],
+    #Height of a band
+    $plot->{bandHeight} = 15;
 
-      #Number of tracks (passed)
-      tracks => $_[2],
+    #Padding between edge of band and edge of track
+    $plot->{bandGutter} = ($plot->{trackHeight} - $plot->{bandHeight}) / 2;
 
-    };
+    #Total height of panel (area where data is plotted/Cartesian plane)
+    $plot->{panelHeight} = $plot->{tracks} * $plot->{trackHeight};
+
+    #Padding
+    $plot->{leftGutter} = 20;
+    $plot->{rightGutter} = 0;
+    $plot->{bottomGutter} = 45;
+    $plot->{topGutter} = 20;
+
+    #Plot width is dynamic, always expressed as percentage
+    $plot->{width} = 100;
+
+    #Plot height is fixed, and depends on number of tracks (passed)
+    # and the track height
+    $plot->{height} = $plot->{panelHeight} + $plot->{bottomGutter} + $plot->{topGutter};
+
+    #Initialise SVG
     $plot->{svg} = SVG->new(height => $plot->{height}, class => 'zci-plot');
 
     #If the difference betweeen the range
@@ -327,6 +342,7 @@ sub generate_plot {
         width => ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) . '%', 
         height => 25 * $plot->{tracks}, 
         x => $plot->{leftGutter} . '%',
+        y => $plot->{topGutter},
         rx => 2,
         ry => 2
     );
@@ -367,8 +383,8 @@ sub generate_plot {
         $tick->line(
             x1 => $x . '%',
             x2 => $x . '%',
-            y1 => 25 * $plot->{tracks}, 
-            y2 => (25 * $plot->{tracks}) + 4,
+            y1 => $plot->{panelHeight} + $plot->{topGutter}, 
+            y2 => $plot->{panelHeight} + $plot->{topGutter} + 4, 
             class => 'x_axis_tick'
         );
 
@@ -376,7 +392,7 @@ sub generate_plot {
         my $text = $xAxis->text(
             dy => '1em', 
             x => $x . '%', 
-            y => (25 * $plot->{tracks}) + 4, 
+            y => $plot->{panelHeight} + $plot->{topGutter} + 4, 
             'text-anchor' => 'middle',
             class => 'x_axis_text'
         );
@@ -404,8 +420,8 @@ sub generate_plot {
         $line->line(
             x1 => $x . '%',
             x2 => $x . '%',
-            y1 => 0, 
-            y2 => 25 * $plot->{tracks}
+            y1 => $plot->{topGutter}, 
+            y2 => $plot->{panelHeight} + $plot->{topGutter}
         );
     }
 
@@ -413,7 +429,7 @@ sub generate_plot {
     my $xAxisLabel = $xAxis->text(
         dy => '1em', 
         x => '50%', 
-        y => (25 * $plot->{tracks}) + 25, 
+        y => $plot->{panelHeight} + $plot->{topGutter} + 25, 
         'text-anchor' => 'middle',
         class => 'x_axis_label'
     );
@@ -427,15 +443,15 @@ sub generate_plot {
     $xaxisline->line(
         x1 => $plot->{transform}->(0) . '%',
         x2 => $plot->{transform}->($plot->{rangeMax}) . '%',
-        y1 => 25 * $plot->{tracks}, 
-        y2 => 25 * $plot->{tracks}
+        y1 => $plot->{panelHeight} + $plot->{topGutter}, 
+        y2 => $plot->{panelHeight} + $plot->{topGutter}
     );
     my $yaxisline = $axislines->group();
     $yaxisline->line(
         x1 => $plot->{transform}->(0) . '%',
         x2 => $plot->{transform}->(0) . '%',
-        y1 => 0, 
-        y2 => 25 * $plot->{tracks}
+        y1 => $plot->{topGutter}, 
+        y2 => $plot->{topGutter} + $plot->{panelHeight}
     );
 
     return($plot);
@@ -453,8 +469,8 @@ sub add_minor_range {
         class => 'minor_range',
         x => $plot->{transform}->($rangeMin) . '%', 
         width => $plot->{transform}->($rangeMax) - $plot->{transform}->($rangeMin) . '%',
-        y => (15 * ($track - 1)) + 5,
-        height => 15,
+        y => ($plot->{trackHeight} * ($track - 1)) + $plot->{bandGutter} + $plot->{topGutter},
+        height => $plot->{bandHeight},
         rx => 2,
         ry => 2
     ); 
@@ -474,8 +490,8 @@ sub add_major_range {
         class => 'major_range',
         x => $plot->{transform}->($rangeMin) . '%', 
         width => $plot->{transform}->($rangeMax) - $plot->{transform}->($rangeMin) . '%',
-        y => (25 * ($track - 1)) + 5,
-        height => 15,
+        y => ($plot->{trackHeight} * ($track - 1)) + $plot->{bandGutter} + $plot->{topGutter},
+        height => $plot->{bandHeight},
         rx => 2,
         ry => 2
     ); 
@@ -488,7 +504,7 @@ sub add_major_range {
     my $majorRangeLabel = $majorRange->group();
     my $majorRangeLabelText = $majorRangeLabel->text(
         x => $x . '%', 
-        y => (25 * ($track - 1)) + 10, 
+        y => ($plot->{trackHeight} * ($track - 1)) + (2 * $plot->{bandGutter}) + $plot->{topGutter}, 
         dy => '0.5em',
         'text-anchor' => $anchor,
         class => 'major_range_label'
@@ -509,8 +525,8 @@ sub add_marker {
     )->line(
         x1 => $plot->{transform}->($markerValue) . '%', 
         x2 => $plot->{transform}->($markerValue) . '%', 
-        y1 => 3,
-        y2 => (25 * $plot->{tracks}) - 3,
+        y1 => $plot->{topGutter} + 3,
+        y2 => $plot->{topGutter} + $plot->{panelHeight} - 3,
         style => { 'stroke' => $RGB },
     );
 
