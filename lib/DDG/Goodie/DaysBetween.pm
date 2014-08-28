@@ -21,10 +21,12 @@ attribution github => ['http://github.com/JetFault', 'JetFault'];
 my $date_regex = date_regex();
 
 handle remainder => sub {
-    return unless $_ =~ qr/^($date_regex) (?:(?:and|to) )?($date_regex)/i;
+    return unless $_ =~ qr/^($date_regex) (?:(?:and|to) )?($date_regex)(?:[,]? inclusive)?$/i;
     
     my ($date1, $date2) = parse_all_strings_to_date($1, $2);
     return unless ($date1 && $date2);
+    
+    ($date1, $date2) = ($date2, $date1) if ( DateTime->compare($date1, $date2) == 1 );
     
     my $difference = $date1->delta_days($date2);
     my $daysBetween = abs($difference->in_units('days'));
