@@ -6,18 +6,21 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'time_conversion';
-zci is_cached => 0;
+zci is_cached   => 0;
+
+my $zero_re = qr/0 \(Unix time\):.+Thu Jan 01 00:00:00 1970 UTC/;
+my $now_re  = qr/\d+ \(Unix time\):.+UTC/;
 
 ddg_goodie_test([qw(
           DDG::Goodie::UnixTime
           )
     ],
-    'unix time 0000000000000' => test_zci('Unix Time: Thu Jan 01 00:00:00 1970 +0000'),
-    'epoch 0'                 => test_zci('Unix Time: Thu Jan 01 00:00:00 1970 +0000'),
-    'epoch 2147483647'        => test_zci('Unix Time: Tue Jan 19 03:14:07 2038 +0000'),
-    #'epoch'                   => test_zci(qr/Unix Time: [^\+]+\+0000/),                    # Now in UTC.
-    #'timestamp'               => test_zci(qr/Unix Time: [^\+]+\+0000/),                    # Now in UTC.
-    #'datetime'                => test_zci(qr/Unix Time: [^\+]+\+0000/),                    # Now in UTC.
+    'unix time 0000000000000' => test_zci($zero_re),
+    'epoch 0'                 => test_zci($zero_re),
+    'epoch 2147483647'        => test_zci(qr/2147483647 \(Unix time\):.+Tue Jan 19 03:14:07 2038 UTC/),
+    'epoch'                   => test_zci($now_re),
+    'timestamp'               => test_zci($now_re),
+    'datetime'                => test_zci($now_re),
 );
 
 done_testing;

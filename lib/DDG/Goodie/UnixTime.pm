@@ -8,7 +8,7 @@ use DateTime;
 triggers startend => "unixtime", "time", "timestamp", "datetime", "epoch", "unix time", "unix timestamp", "unix time stamp", "unix epoch";
 
 zci answer_type => "time_conversion";
-zci is_cached => 0;
+zci is_cached   => 0;
 
 attribution github => ['https://github.com/codejoust', 'codejoust'];
 
@@ -19,21 +19,32 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'sysadmin';
 
+my $default_tz  = 'UTC';
+my $time_format = '%a %b %d %T %Y %Z';
+
 handle remainder => sub {
     return unless defined $_;
 
     my $time_input = shift;
-    my $time_utc;
+    $time_input = time if ($time_input eq '');    # Default to 'now' when empty.
+    my $time_output;
     eval {
         $time_input = int(length($time_input) >= 13 ? ($time_input / 1000) : ($time_input + 0));
-        $time_utc = DateTime->from_epoch(
+        my $tz = $loc->time_zone || $default_tz;    # Show them local time, if we know.
+        my $dt = DateTime->from_epoch(
             epoch     => $time_input,
-            time_zone => "UTC"
-        )->strftime("%a %b %d %T %Y %z");
+            time_zone => $tz,
+        );
+        $time_output = $dt->strftime($time_format);
+        if ($tz ne $default_tz) {
+            # We'll show them both, then.
+            $dt->set_time_zone($default_tz);
+            $time_output .= ' / ' . $dt->strftime($time_format);
+        }
     };
 
-    return unless $time_utc;
-    return "Unix Time: " . $time_utc;
+    return unless $time_output;
+    return $time_input . ' (Unix time): ' . $time_output;
 };
 
 1;
