@@ -11,7 +11,7 @@ triggers query_raw => qr/.*\s+(and|or|xor|⊕|∧|∨)\s+.*/;
 triggers query_raw => qr/not\s+.*/;
 triggers query_raw => qr/¬.*/;
 
-# zci is_cached => 1;
+zci is_cached => 1;
 zci answer_type => "binary_logic"; 
 
 attribution
@@ -31,10 +31,6 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'math';
 
-# TODO: - add binary numbers. 
-#         the parser callback is already available but the 
-#         lexer grammar did not work.
-#         (BinaryLogic_Actions::bin_number)
 my $rules = <<'END_OF_GRAMMAR';
 :default ::= action => ::first
 :start ::= Expression
@@ -55,7 +51,7 @@ Number ::=
      | DecimalDigits
 
 DecimalDigits ~ [\d]+
-HexDigits ~ [\dA-Fa-f]+
+HexDigits ~ [0-9A-Fa-f]+
 
 :discard ~ whitespace
 whitespace ~ [\s]+
@@ -92,13 +88,14 @@ sub BinaryLogic_Actions::do_not {
 }
 
 handle query_raw => sub {
-    my $grammar = Marpa::R2::Scanless::G->new( { source => \$rules } );
-    my $recce = Marpa::R2::Scanless::R->new( 
-        { grammar => $grammar,
-          semantics_package => 'BinaryLogic_Actions' } );
-    
+    my $grammar = Marpa::R2::Scanless::G->new({ source => \$rules });
+    my $recce = Marpa::R2::Scanless::R->new({
+        grammar => $grammar,
+        semantics_package => 'BinaryLogic_Actions' 
+    });
+
     my $input = $_;
-    
+
     # Substitute the unicode characters. The parser does not seem to 
     # like unicode.
     $input =~ s/⊕/ xor /;
@@ -109,18 +106,16 @@ handle query_raw => sub {
     # using eval to catch possible errors with $@
     eval { $recce->read( \$input ) };
 
-    if ( $@ ) { 
-        return; 
-    }
-    
+    return if ( $@ );
+
     my $value_ref = $recce->value();
 
     return if not defined $value_ref;
-    
+
     my $text_output = ${$value_ref};
     my $html_output = "<div>Result: <b>" . ${$value_ref} . "</b></div>";
-    my $heading = "Binary Logic: '" . $_ . "'";
-    
+    my $heading = "Binary Logic";
+
     return answer => $text_output, html => $html_output, heading => $heading;
 };
 
