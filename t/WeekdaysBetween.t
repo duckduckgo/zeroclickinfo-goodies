@@ -14,7 +14,7 @@ ddg_goodie_test(
 
     # Primary query example
     'weekdays between 01/31/2000 01/31/2001' =>
-	test_zci("There are 263 weekdays between Jan 31, 2000 and Jan 31, 2001.", html => qr/.*/),
+	test_zci("There are 263 weekdays between 31 Jan 2000 and  31 Jan 2001.", html => qr/.*/),
 
     # Test different trigger words
     'week days between 01/06/2014 01/10/2014' =>
