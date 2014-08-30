@@ -62,6 +62,7 @@ Visual commands
 y                                   yank (copy) marked text
 d                                   delete marked text
 ~                                   switch case
+gv                                  Reselect the previously selected visual area
 
 
 Cut and paste
