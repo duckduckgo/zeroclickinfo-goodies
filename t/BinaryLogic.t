@@ -9,7 +9,6 @@ use utf8;
 zci answer_type => 'binary_logic';
 zci is_cached => 1;
 
-
 ddg_goodie_test(
     [qw(
         DDG::Goodie::BinaryLogic
@@ -89,10 +88,10 @@ ddg_goodie_test(
         html => "<div>Result: <b>10</b></div>", 
         heading => "Binary Logic"
      ),
-    '0x01 or not 0X100' => test_zci('1', 
-        html => "<div>Result: <b>1</b></div>", 
-        heading => "Binary Logic"
-     ),
+#    '0x01 or not 0X100' => test_zci('1', 
+#        html => "<div>Result: <b>1</b></div>", 
+#        heading => "Binary Logic"
+#     ),
 
 );
 
