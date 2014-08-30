@@ -1,4 +1,5 @@
 package DDG::Goodie::RandomNumber;
+# ABSTRACT: generate a random number in the requested range.
 
 use DDG::Goodie;
 
