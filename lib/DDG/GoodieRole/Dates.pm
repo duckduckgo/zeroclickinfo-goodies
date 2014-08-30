@@ -21,7 +21,7 @@ my %full_month_to_short = map { lc $_ => substr($_, 0, 3) } qw(January February 
 my %short_month_fix     = map { lc $_ => $_ } (values %full_month_to_short);
 my $short_month         = qr#Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec#i;
 my $full_month          = qr#January|February|March|April|May|June|July|August|September|October|November|December#i;
-my $month               = qr#$full_month|$short_month#;
+my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
@@ -38,13 +38,23 @@ my $number_suffixes = qr#(?:st|nd|rd|th)#i;
 # Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
 my $tz_suffixes = qr#(?:[+-][0-9]{4})|ACDT|ACST|ACT|ADT|AEDT|AEST|AFT|AKDT|AKST|AMST|AMT|ART|AST|AWDT|AWST|AZOST|AZT|BDT|BIOT|BIT|BOT|BRT|BST|BTT|CAT|CCT|CDT|CEDT|CEST|CET|CHADT|CHAST|CHOT|CHUT|CIST|CIT|CKT|CLST|CLT|COST|COT|CST|CT|CVT|CWST|CXT|ChST|DAVT|DDUT|DFT|EASST|EAST|EAT|ECT|EDT|EEDT|EEST|EET|EGST|EGT|EIT|EST|FET|FJT|FKST|FKT|FNT|GALT|GAMT|GET|GFT|GILT|GIT|GMT|GST|GYT|HADT|HAEC|HAST|HKT|HMT|HOVT|HST|ICT|IDT|IOT|IRDT|IRKT|IRST|IST|JST|KGT|KOST|KRAT|KST|LHST|LINT|MAGT|MART|MAWT|MDT|MEST|MET|MHT|MIST|MIT|MMT|MSK|MST|MUT|MVT|MYT|NCT|NDT|NFT|NPT|NST|NT|NUT|NZDT|NZST|OMST|ORAT|PDT|PET|PETT|PGT|PHOT|PHT|PKT|PMDT|PMST|PONT|PST|PYST|PYT|RET|ROTT|SAKT|SAMT|SAST|SBT|SCT|SGT|SLST|SRT|SST|SYOT|TAHT|TFT|THA|TJT|TKT|TLT|TMT|TOT|TVT|UCT|ULAT|UTC|UYST|UYT|UZT|VET|VLAT|VOLT|VOST|VUT|WAKT|WAST|WAT|WEDT|WEST|WET|WIT|WST|YAKT|YEKT|Z#i;
 
+# formats parsed by vague datestring, without colouring
+# the context of the code using it
+my $vague_datestring = qr#
+    (?:(?:next|last)\s(?:$month_regex)) |
+    (?:(?:$month_regex)\s(?:[0-9]{4})) |
+    (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) |
+    (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) |
+    (?:$month_regex)
+    #ix;
+
 # Used for parse_vague_string_to_date
-my $vague_datestring_regex = qr#
-    (?:(?<q>next|last)\s(?<m>$month)) |
-    (?:(?<m>$month)\s(?<y>[0-9]{4})) |
-    (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month)) |
-    (?:(?<m>$month)\s(?<d>$date_number)\s?$number_suffixes?) |
-    (?<m>$month)
+my $vague_datestring_matches = qr#
+    (?:(?<q>next|last)\s(?<m>$month_regex)) |
+    (?:(?<m>$month_regex)\s(?<y>[0-9]{4})) |
+    (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
+    (?:(?<m>$month_regex)\s(?<d>$date_number)\s?$number_suffixes?) |
+    (?<m>$month_regex)
     #ix;
 
 # Accessors for useful regexes
@@ -55,7 +65,7 @@ sub short_month_regex {
     return $short_month;
 }
 sub month_regex {
-    return $month;
+    return $month_regex;
 }
 sub full_day_of_week_regex {
     return $full_day_of_week;
@@ -64,7 +74,7 @@ sub short_day_of_week_regex {
     return $short_day_of_week;
 }
 sub vague_datestring_regex {
-    return $vague_datestring_regex;
+    return $vague_datestring;
 }
 
 
@@ -174,7 +184,7 @@ sub date_output_string {
 # Parses a really vague description and basically guesses
 sub parse_vague_string_to_date {
     my ($string) = @_;
-    if($string =~ qr/$vague_datestring_regex/) {
+    if($string =~ qr/$vague_datestring_matches/) {
         my $now = DateTime->now();
         my $month = $+{'m'}; # Set in each alternative match.
         
