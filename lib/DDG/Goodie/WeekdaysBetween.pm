@@ -9,13 +9,27 @@ with 'DDG::GoodieRole::Dates';
 triggers start => "weekdays between", "week days between", "weekdays from", "week days from";
 zci answer_type => "weekdays_between";
 
-primary_example_queries 'weekdays between 01/31/2000 01/31/2001';
-description 'Calculate the number of weekdays between two dates.';
-name 'WeekdaysBetween';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WeekdaysBetween.pm';
-category 'calculations';
-topics 'everyday';
-attribution github => ['http://github.com/syst3mw0rm', 'syst3mw0rm'];
+name                        'WeekdaysBetween';
+description                 'Calculate the number of weekdays between two dates.';
+category                    'calculations';
+topics                      'everyday';
+primary_example_queries     'weekdays between 01/31/2000 01/31/2001';
+code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WeekdaysBetween.pm';
+attribution                 github => ['http://github.com/syst3mw0rm'],
+                            email => ['syst3m.w0rm@gmail.com'];
+
+my $css = share('style.css')->slurp;
+
+# Wrap the response in html so that it can be styled with css
+sub html_output {
+    my ($weekday_count, $start_end_dates) = @_;
+    return "<style type='text/css'>$css</style>"
+          ."<div class='zci--weekdaysbetween'>"
+          ."<span class='text--primary'>$weekday_count</span><br/>"
+          ."<span class='text--secondary'>$start_end_dates</span>"
+          ."</div>";
+}
+
 
 my $date_regex = date_regex();
 
@@ -27,15 +41,17 @@ handle remainder => sub {
     # Flip if the dates are the wrong way around
     ($end, $start) = ($start, $end) if ( DateTime->compare($start, $end) == 1 );
 
-    my $weekdays = delta_weekdays($start, $end);
+    my $weekday_count = delta_weekdays($start, $end);
 
     my $start_str = date_output_string($start);
     my $end_str   = date_output_string($end);
 
-    my $verb = $weekdays == 1 ? 'is' : 'are';
-    my $number = $weekdays == 1 ? 'weekday' : 'weekdays';
+    my $verb = $weekday_count == 1 ? 'is' : 'are';
+    my $weekday_plurality = $weekday_count == 1 ? 'weekday' : 'weekdays';
 
-    return "There $verb $weekdays $number between $start_str and $end_str.";
+    my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
+
+    return $response, html => html_output("$weekday_count $weekday_plurality", "between $start_str and $end_str.");
 };
 
 # It calculates the number of weekdays between two given dates, both inclusive.
