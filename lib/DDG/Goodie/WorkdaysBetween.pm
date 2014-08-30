@@ -23,14 +23,21 @@ topics 'everyday';
 attribution github => ['http://github.com/mgarriott', 'mgarriott'];
 
 my $date_regex = date_regex();
+my $vague_date_regex = vague_datestring_regex();
 
 handle remainder => sub {
     my $query = $_;
-    return unless $query =~ qr/($date_regex) (?:(?:and|to) )?($date_regex)/i;
+    my ($start_date, $end_date);
     
-    my ($start_date, $end_date) = parse_all_strings_to_date($1, $2);
+    if ($query =~ qr/($date_regex) (?:(?:and|to) )?($date_regex)/i) {
+        ($start_date, $end_date) = parse_all_strings_to_date($1, $2);    
+    }
+    elsif ($query =~ qr/($vague_date_regex) (?:(?:and|to) )?($vague_date_regex)/i) {
+        ($start_date, $end_date) = (parse_vague_string_to_date($1), parse_vague_string_to_date($2));
+    }
+    
     return unless ($start_date && $end_date);
-
+    
     ($start_date, $end_date) = ($end_date, $start_date) if ( DateTime->compare($start_date, $end_date) == 1 );
 
     my $calendar = Date::Calendar->new($Profiles->{US});

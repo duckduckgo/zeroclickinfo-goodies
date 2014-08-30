@@ -160,6 +160,8 @@ ddg_goodie_test(
 #    'workdays between jan 3, 14 to jan 6, 2014 inclusive' =>
 #        test_zci("There are 2 workdays between 03 Jan 2014 and 06 Jan 2014."),
 
+    'business days between jan 10 and jan 20' =>
+        test_zci(qr"There are [1-9] workdays between 10 Jan [0-9]{4} and 20 Jan [0-9]{4}\."),
 
     # Invalid input
     'workdays between 01/2014 01/2015' => undef,
