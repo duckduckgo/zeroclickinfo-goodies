@@ -17,7 +17,7 @@ handle remainder => sub {
 		my $heading =  $_ . ' (Unicornify)';
 		my $html = 'This is a unique unicorn for ' . $_ . ':'
 		.'<br /><a href="' . unicornify_url(email => $_, size => 128) .'">'
-		.'<img src="/iu/?u='.unicornify_url(email => $_, size => "100").'" style="margin: 10px 0px 10px 20px; border-radius: 8px;" /></a>'
+		.'<img src="/iu/?u='.unicornify_url(email => $_, size => "100").'" class="zci--unicornify-img" /></a>'
 		. 'Learn more at <a href="'.$link.'">unicornify.appspot.com</a>';
 		
 		return $answer, heading => $heading, html => $html;
