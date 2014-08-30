@@ -21,6 +21,7 @@ my %full_month_to_short = map { lc $_ => substr($_, 0, 3) } qw(January February 
 my %short_month_fix     = map { lc $_ => $_ } (values %full_month_to_short);
 my $short_month         = qr#Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec#i;
 my $full_month          = qr#January|February|March|April|May|June|July|August|September|October|November|December#i;
+my $month               = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
@@ -38,7 +39,13 @@ my $number_suffixes = qr#(?:st|nd|rd|th)#i;
 my $tz_suffixes = qr#(?:[+-][0-9]{4})|ACDT|ACST|ACT|ADT|AEDT|AEST|AFT|AKDT|AKST|AMST|AMT|ART|AST|AWDT|AWST|AZOST|AZT|BDT|BIOT|BIT|BOT|BRT|BST|BTT|CAT|CCT|CDT|CEDT|CEST|CET|CHADT|CHAST|CHOT|CHUT|CIST|CIT|CKT|CLST|CLT|COST|COT|CST|CT|CVT|CWST|CXT|ChST|DAVT|DDUT|DFT|EASST|EAST|EAT|ECT|EDT|EEDT|EEST|EET|EGST|EGT|EIT|EST|FET|FJT|FKST|FKT|FNT|GALT|GAMT|GET|GFT|GILT|GIT|GMT|GST|GYT|HADT|HAEC|HAST|HKT|HMT|HOVT|HST|ICT|IDT|IOT|IRDT|IRKT|IRST|IST|JST|KGT|KOST|KRAT|KST|LHST|LINT|MAGT|MART|MAWT|MDT|MEST|MET|MHT|MIST|MIT|MMT|MSK|MST|MUT|MVT|MYT|NCT|NDT|NFT|NPT|NST|NT|NUT|NZDT|NZST|OMST|ORAT|PDT|PET|PETT|PGT|PHOT|PHT|PKT|PMDT|PMST|PONT|PST|PYST|PYT|RET|ROTT|SAKT|SAMT|SAST|SBT|SCT|SGT|SLST|SRT|SST|SYOT|TAHT|TFT|THA|TJT|TKT|TLT|TMT|TOT|TVT|UCT|ULAT|UTC|UYST|UYT|UZT|VET|VLAT|VOLT|VOST|VUT|WAKT|WAST|WAT|WEDT|WEST|WET|WIT|WST|YAKT|YEKT|Z#i;
 
 # Used for parse_vague_string_to_date
-my $vague_datestring_regex = qr#(?:(?<q>next|last)\s(?<m>$full_month|$short_month))|(?:(?<m>$full_month|$short_month)\s(?<y>[0-9]{4}))|(?<m>$full_month|$short_month)#i;
+my $vague_datestring_regex = qr#
+    (?:(?<q>next|last)\s(?<m>$month)) |
+    (?:(?<m>$month)\s(?<y>[0-9]{4})) |
+    (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month)) |
+    (?:(?<m>$month)\s(?<d>$date_number)\s?$number_suffixes?) |
+    (?<m>$month)
+    #ix;
 
 # Accessors for useful regexes
 sub full_month_regex {
@@ -48,7 +55,7 @@ sub short_month_regex {
     return $short_month;
 }
 sub month_regex {
-    return qr/$full_month|$short_month/;
+    return $month;
 }
 sub full_day_of_week_regex {
     return $full_day_of_week;
@@ -170,7 +177,11 @@ sub parse_vague_string_to_date {
     if($string =~ qr/$vague_datestring_regex/) {
         my $now = DateTime->now();
         my $month = $+{'m'}; # Set in each alternative match.
-        if (my $relative_dir = $+{'q'}) {
+        
+        if (my $day = $+{'d'}) {
+            return parse_string_to_date("$day $month ".$now->year());
+        }
+        elsif (my $relative_dir = $+{'q'}) {
             my $tmp_date = parse_string_to_date("01 $month ".$now->year());
             # next <month>
             $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);

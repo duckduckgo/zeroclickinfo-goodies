@@ -264,6 +264,12 @@ subtest 'Dates' => sub {
                 'last jan'      => '01 Jan 2015',
                 'feb 2038'      => '01 Feb 2038',
             },
+            '2000-01-01T00:00:00Z' => {
+                'feb 21st'       => '21 Feb 2000',
+                '11th feb'       => '11 Feb 2000',
+                'march 13'       => '13 Mar 2000',
+                '12 march'       => '12 Mar 2000',
+            }
         );
         foreach my $query_time (sort keys %time_strings) {
             set_fixed_time($query_time);
