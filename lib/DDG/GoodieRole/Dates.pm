@@ -36,6 +36,10 @@ my $number_suffixes = qr#(?:st|nd|rd|th)#i;
 
 # Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
 my $tz_suffixes = qr#(?:[+-][0-9]{4})|ACDT|ACST|ACT|ADT|AEDT|AEST|AFT|AKDT|AKST|AMST|AMT|ART|AST|AWDT|AWST|AZOST|AZT|BDT|BIOT|BIT|BOT|BRT|BST|BTT|CAT|CCT|CDT|CEDT|CEST|CET|CHADT|CHAST|CHOT|CHUT|CIST|CIT|CKT|CLST|CLT|COST|COT|CST|CT|CVT|CWST|CXT|ChST|DAVT|DDUT|DFT|EASST|EAST|EAT|ECT|EDT|EEDT|EEST|EET|EGST|EGT|EIT|EST|FET|FJT|FKST|FKT|FNT|GALT|GAMT|GET|GFT|GILT|GIT|GMT|GST|GYT|HADT|HAEC|HAST|HKT|HMT|HOVT|HST|ICT|IDT|IOT|IRDT|IRKT|IRST|IST|JST|KGT|KOST|KRAT|KST|LHST|LINT|MAGT|MART|MAWT|MDT|MEST|MET|MHT|MIST|MIT|MMT|MSK|MST|MUT|MVT|MYT|NCT|NDT|NFT|NPT|NST|NT|NUT|NZDT|NZST|OMST|ORAT|PDT|PET|PETT|PGT|PHOT|PHT|PKT|PMDT|PMST|PONT|PST|PYST|PYT|RET|ROTT|SAKT|SAMT|SAST|SBT|SCT|SGT|SLST|SRT|SST|SYOT|TAHT|TFT|THA|TJT|TKT|TLT|TMT|TOT|TVT|UCT|ULAT|UTC|UYST|UYT|UZT|VET|VLAT|VOLT|VOST|VUT|WAKT|WAST|WAT|WEDT|WEST|WET|WIT|WST|YAKT|YEKT|Z#i;
+
+# Used for parse_vague_string_to_date
+my $vague_datestring_regex = qr#(?:(?<q>next|last)\s(?<m>$full_month|$short_month))|(?:(?<m>$full_month|$short_month)\s(?<y>[0-9]{4}))|(?<m>$full_month|$short_month)#i;
+
 # Accessors for useful regexes
 sub full_month_regex {
     return $full_month;
@@ -52,6 +56,10 @@ sub full_day_of_week_regex {
 sub short_day_of_week_regex {
     return $short_day_of_week;
 }
+sub vague_datestring_regex {
+    return $vague_datestring_regex;
+}
+
 
 # These matches are for "in the right format"/"looks about right"
 #  not "are valid dates"; expects normalised whitespace
@@ -159,7 +167,7 @@ sub date_output_string {
 # Parses a really vague description and basically guesses
 sub parse_vague_string_to_date {
     my ($string) = @_;
-    if($string =~ qr#(?:(?<q>next|last)\s(?<m>$full_month|$short_month))|(?:(?<m>$full_month|$short_month)\s(?<y>[0-9]{4}))|(?<m>$full_month|$short_month)#i) {
+    if($string =~ qr/$vague_datestring_regex/) {
         my $now = DateTime->now();
         my $month = $+{'m'}; # Set in each alternative match.
         if (my $relative_dir = $+{'q'}) {
