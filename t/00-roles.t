@@ -292,6 +292,36 @@ subtest 'Dates' => sub {
         }
         restore_time();
     };
+    
+    subtest 'Valid mixture of formatted and descriptive dates' => sub {
+        set_fixed_time('2000-01-01T00:00:00Z');
+        my %mixed_dates_to_test = (
+            '2014-11-27'                => 1417046400,
+            '1994-02-03T14:15:29'       => 760284929,
+            'Sat, 09 Aug 2014 18:20:00' => 1407608400,
+            '08-Feb-94 14:15:29 GMT'    => 760716929,
+            '13/12/2011'                => 1323734400,
+            '01/01/2001'                => 978307200,
+            '29 June 2014'              => 1404000000,
+            '05 Mar 1990'               => 636595200,
+            'June 01 2012'              => 1338508800,
+            'May 05 2011'               => 1304553600,
+            'February 21st'             => 951091200,
+            '11th feb'                  => 950227200,
+            '11 march'                  => 952732800,
+            '11 mar'                    => 952732800,
+            'jun 21'                    => 961545600,
+            'next january'              => 978307200
+        );
+        
+        foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
+            my $parsed_date_object = RoleTester::parse_string_to_date($test_mixed_date);
+            isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
+            is($parsed_date_object->epoch, $mixed_dates_to_test{$test_mixed_date}, ' ... represents the correct time.');
+        }
+        
+        restore_time();
+    }
 };
 
 done_testing;
