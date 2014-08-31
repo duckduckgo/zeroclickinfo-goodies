@@ -3,7 +3,6 @@ package DDG::GoodieRole::Dates;
 
 use strict;
 use warnings;
-use feature 'state';
 
 use Moo::Role;
 
@@ -57,6 +56,8 @@ my $vague_datestring_matches = qr#
     (?<m>$month_regex)
     #ix;
 
+my $date = build_date_regex();
+
 # Accessors for useful regexes
 sub full_month_regex {
     return $full_month;
@@ -81,6 +82,10 @@ sub vague_datestring_regex {
 # These matches are for "in the right format"/"looks about right"
 #  not "are valid dates"; expects normalised whitespace
 sub date_regex {
+    return $date;
+}
+
+sub build_date_regex {
     my @regexes = ();
 
     ## unambigous and awesome date formats:
@@ -106,7 +111,7 @@ sub date_regex {
     ## Ambiguous, but potentially valid date formats
     push @regexes, $ambiguous_dates;
 
-    state $returned_regex = join '|', @regexes;
+    my $returned_regex = join '|', @regexes;
     return qr/$returned_regex/i;
 }
 
