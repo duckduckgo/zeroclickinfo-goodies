@@ -204,7 +204,7 @@ subtest 'Dates' => sub {
             }
 
             my $result;
-            lives_ok { $result = RoleTester::parse_string_to_date($test_string) } '... and does not kill the parser.';
+            lives_ok { $result = RoleTester::parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
             is($result, undef, '... and returns undef to signal failure.');
         }
     };
