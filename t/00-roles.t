@@ -124,7 +124,7 @@ subtest 'Dates' => sub {
             # test_regex should not contain any submatches
             $test_date =~ qr/^$test_date_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
-            
+
             $test_formatted_datestring_regex =~ qr/^$test_date_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
@@ -198,9 +198,9 @@ subtest 'Dates' => sub {
 
         foreach my $test_string (sort keys %bad_strings_match) {
             if ($bad_strings_match{$test_string}) {
-                like($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string matches date_regex");
+                like($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string matches formatted_date_regex");
             } else {
-                unlike($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string does not match date_regex");
+                unlike($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string does not match formatted_date_regex");
             }
 
             my $result;
