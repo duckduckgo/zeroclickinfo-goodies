@@ -129,9 +129,14 @@ sub build_date_regex {
     return qr/$returned_regex/i;
 }
 
+sub parse_string_to_date {
+    my ($d) = @_;
+    return parse_formatted_datestring_to_date($d);
+}
+
 # Accepts a string which looks like date per the supplied date_regex (e.g. '31/10/1980')
 # Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
-sub parse_string_to_date {
+sub parse_formatted_datestring_to_date {
     my ($d) = @_;
 
     return unless ($d =~ $formatted_datestring);    # Only handle white-listed strings, even if they might otherwise work.
