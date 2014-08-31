@@ -190,6 +190,11 @@ sub parse_all_strings_to_date {
 
 # Parses a really vague description and basically guesses
 sub parse_vague_string_to_date {
+    my ($d) = @_;
+    return parse_descriptive_datestring_to_date($d);
+}
+
+sub parse_descriptive_datestring_to_date {
     my ($string) = @_;
     if($string =~ qr/$descriptive_datestring_matches/) {
         my $now = DateTime->now();
