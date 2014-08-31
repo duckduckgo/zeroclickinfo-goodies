@@ -76,7 +76,6 @@ sub short_day_of_week_regex {
 }
 
 # Accessors for matching regexes
-
 # These matches are for "in the right format"/"looks about right"
 #  not "are valid dates"; expects normalised whitespace
 sub datestring_regex {
@@ -91,13 +90,22 @@ sub formatted_datestring_regex {
     return $formatted_datestring;
 }
 
+
+#
 # deprecated: for backwards compatibility
+#
 sub vague_datestring_regex {
     return descriptive_datestring_regex();
 }
 sub date_regex {
     return $formatted_datestring;
 }
+sub parse_vague_string_to_date {
+    my ($d) = @_;
+    return parse_descriptive_datestring_to_date($d);
+}
+
+
 
 sub build_date_regex {
     my @regexes = ();
@@ -129,6 +137,7 @@ sub build_date_regex {
     return qr/$returned_regex/i;
 }
 
+# Parses any string that *can* be parsed to a date object
 sub parse_string_to_date {
     my ($d) = @_;
     return parse_formatted_datestring_to_date($d);
@@ -189,11 +198,6 @@ sub parse_all_strings_to_date {
 }
 
 # Parses a really vague description and basically guesses
-sub parse_vague_string_to_date {
-    my ($d) = @_;
-    return parse_descriptive_datestring_to_date($d);
-}
-
 sub parse_descriptive_datestring_to_date {
     my ($string) = @_;
 
