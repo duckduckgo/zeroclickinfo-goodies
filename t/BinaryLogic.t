@@ -88,10 +88,10 @@ ddg_goodie_test(
         html => "<div>Result: <b>10</b></div>", 
         heading => "Binary Logic"
      ),
-#    '0x01 or not 0X100' => test_zci('1', 
-#        html => "<div>Result: <b>1</b></div>", 
-#        heading => "Binary Logic"
-#     ),
+    '0x01 or not 0X100' => test_zci('18446744073709551359', 
+        html => "<div>Result: <b>18446744073709551359</b></div>", 
+        heading => "Binary Logic"
+     ),
 
 );
 

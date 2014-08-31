@@ -40,10 +40,10 @@ Expression ::= Term
 Term ::=
        ('(') Term (')') assoc => group action => ::first
      | Number
+     | 'not' Term action => do_not
     || Term 'xor' Term action => do_xor
      | Term 'and' Term action => do_and
      | Term 'or' Term action => do_or
-     | 'not' Term action => do_not
 
 Number ::= 
        '0x' HexDigits action => hex_number
