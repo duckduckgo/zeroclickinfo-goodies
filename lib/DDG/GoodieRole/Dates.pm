@@ -140,7 +140,9 @@ sub build_date_regex {
 # Parses any string that *can* be parsed to a date object
 sub parse_string_to_date {
     my ($d) = @_;
-    return parse_formatted_datestring_to_date($d);
+    return parse_formatted_datestring_to_date($d) if ($d =~ $formatted_datestring);
+    return parse_descriptive_datestring_to_date($d) if ($d =~ $descriptive_datestring);
+    return;
 }
 
 # Accepts a string which looks like date per the supplied date_regex (e.g. '31/10/1980')
