@@ -311,7 +311,8 @@ subtest 'Dates' => sub {
             '11 march'                  => 952732800,
             '11 mar'                    => 952732800,
             'jun 21'                    => 961545600,
-            'next january'              => 978307200
+            'next january'              => 978307200,
+            'december'                  => 975628800,
         );
         
         foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {

@@ -104,6 +104,10 @@ sub parse_vague_string_to_date {
     my ($d) = @_;
     return parse_descriptive_datestring_to_date($d);
 }
+sub parse_string_to_date {
+    my ($d) = @_;
+    return parse_datestring_to_date($d);
+}
 
 
 
@@ -138,7 +142,7 @@ sub build_date_regex {
 }
 
 # Parses any string that *can* be parsed to a date object
-sub parse_string_to_date {
+sub parse_datestring_to_date {
     my ($d) = @_;
     return parse_formatted_datestring_to_date($d) if ($d =~ $formatted_datestring);
     return parse_descriptive_datestring_to_date($d) if ($d =~ $descriptive_datestring);
@@ -232,7 +236,6 @@ sub parse_descriptive_datestring_to_date {
         $this_years_month->add( years => 1 ) if (DateTime->compare($this_years_month, $now) == -1);
         return $this_years_month;
     }
-
 }
 
 # Takes a DateTime object (or a string which can be parsed into one)
