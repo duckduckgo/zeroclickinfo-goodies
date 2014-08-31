@@ -316,7 +316,7 @@ subtest 'Dates' => sub {
         );
         
         foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
-            my $parsed_date_object = RoleTester::parse_string_to_date($test_mixed_date);
+            my $parsed_date_object = RoleTester::parse_datestring_to_date($test_mixed_date);
             isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
             is($parsed_date_object->epoch, $mixed_dates_to_test{$test_mixed_date}, ' ... represents the correct time.');
         }
