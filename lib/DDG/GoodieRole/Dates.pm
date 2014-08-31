@@ -90,27 +90,7 @@ sub formatted_datestring_regex {
     return $formatted_datestring;
 }
 
-
-#
-# deprecated: for backwards compatibility
-#
-sub vague_datestring_regex {
-    return descriptive_datestring_regex();
-}
-sub date_regex {
-    return $formatted_datestring;
-}
-sub parse_vague_string_to_date {
-    my ($d) = @_;
-    return parse_descriptive_datestring_to_date($d);
-}
-sub parse_string_to_date {
-    my ($d) = @_;
-    return parse_datestring_to_date($d);
-}
-
-
-
+# Called once to build $formatted_datestring
 sub build_date_regex {
     my @regexes = ();
 
@@ -252,6 +232,26 @@ sub date_output_string {
     $string = $dt->strftime($ddg_format) if ($dt);
 
     return $string;
+}
+
+#
+# DEPRECATED: for backwards compatibility 
+#  - these needs to be ripped out of the existing goodie implementations
+#
+
+sub vague_datestring_regex {
+    return descriptive_datestring_regex();
+}
+sub date_regex {
+    return $formatted_datestring;
+}
+sub parse_vague_string_to_date {
+    my ($d) = @_;
+    return parse_descriptive_datestring_to_date($d);
+}
+sub parse_string_to_date {
+    my ($d) = @_;
+    return parse_datestring_to_date($d);
 }
 
 1;
