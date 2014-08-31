@@ -14,6 +14,7 @@ ddg_goodie_test(
     )],
     'calendar' => test_zci(qr/\nS M T W T F S[ ]+[A-Za-z]+ [0-9]{4}\n.+/, html => qr#<table class="calendar".+calendar__today.+</table>#),
     'calendar november' => test_zci(qr/\nS M T W T F S      November [0-9]{4}\n.+/, html => qr#<table class="calendar".+</table>#),
+    'calendar november 12th' => test_zci(qr/\nS M T W T F S      November [0-9]{4}\n.+/, html => qr#<table class="calendar".+</table>#),
     'calendar last november' => test_zci(qr/\nS M T W T F S      November [0-9]{4}\n.+/, html => qr#<table class="calendar".+</table>#),
     'calendar next november' => test_zci(qr/\nS M T W T F S      November [0-9]{4}\n.+/, html => qr#<table class="calendar".+</table>#),
     'calendar november 2009' => test_zci("
