@@ -110,8 +110,7 @@ handle query_raw => sub {
     my $text_output = ${$value_ref};
     my $html_output = "<div>Result: <b>" . ${$value_ref} . "</b></div>";
     my $heading = "Binary Logic";
-#my $progress_report = $recce->show_progress( 0, -1 );
-#print STDERR $progress_report;
+
     return answer => $text_output, html => $html_output, heading => $heading;
 };
 
