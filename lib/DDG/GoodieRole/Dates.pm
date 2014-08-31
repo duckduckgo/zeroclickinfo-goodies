@@ -56,7 +56,7 @@ my $vague_datestring_matches = qr#
     (?<m>$month_regex)
     #ix;
 
-my $date = build_date_regex();
+my $formatted_date = build_date_regex();
 
 # Accessors for useful regexes
 sub full_month_regex {
@@ -82,7 +82,7 @@ sub vague_datestring_regex {
 # These matches are for "in the right format"/"looks about right"
 #  not "are valid dates"; expects normalised whitespace
 sub date_regex {
-    return $date;
+    return $formatted_date;
 }
 
 sub build_date_regex {
@@ -120,7 +120,7 @@ sub build_date_regex {
 sub parse_string_to_date {
     my ($d) = @_;
 
-    return unless ($d =~ date_regex());    # Only handle white-listed strings, even if they might otherwise work.
+    return unless ($d =~ $formatted_date);    # Only handle white-listed strings, even if they might otherwise work.
     if ($d =~ $ambiguous_dates_matches) {
         # guesswork for ambigous DMY/MDY and switch to ISO
         my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});    # Assume MDY, even though it's crazy, for backward compatibility
