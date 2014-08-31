@@ -58,14 +58,14 @@ subtest 'Dates' => sub {
 
     { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
 
-    my $test_date_regex;
+    my $test_datestring_regex;
     my $test_formatted_datestring_regex;
     my $test_descriptive_datestring_regex;
 
     subtest 'Initialization' => sub {
         new_ok('RoleTester', [], 'Applied to a class');
-        $test_date_regex = RoleTester::date_regex();
-        isa_ok($test_date_regex, 'Regexp', 'date_regex()');
+        $test_datestring_regex = RoleTester::datestring_regex();
+        isa_ok($test_datestring_regex, 'Regexp', 'datestring_regex()');
         $test_formatted_datestring_regex = RoleTester::formatted_datestring_regex();
         isa_ok($test_formatted_datestring_regex, 'Regexp', 'formatted_datestring_regex()');
         $test_descriptive_datestring_regex = RoleTester::descriptive_datestring_regex();
@@ -118,14 +118,14 @@ subtest 'Dates' => sub {
         );
 
         foreach my $test_date (sort keys %dates_to_match) {
-            like($test_date, qr/^$test_date_regex$/, "$test_date matches the date_regex");
+            like($test_date, qr/^$test_datestring_regex$/, "$test_date matches the datestring_regex");
             like($test_date, qr/^$test_formatted_datestring_regex$/, "$test_date matches the formatted_datestring_regex");
 
             # test_regex should not contain any submatches
-            $test_date =~ qr/^$test_date_regex$/;
+            $test_date =~ qr/^$test_datestring_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
-            $test_formatted_datestring_regex =~ qr/^$test_date_regex$/;
+            $test_formatted_datestring_regex =~ qr/^$test_datestring_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
             my $date_object = RoleTester::parse_formatted_datestring_to_date($test_date);
@@ -179,7 +179,7 @@ subtest 'Dates' => sub {
 
         foreach my $set (@date_sets) {
             my @source = @{$set->{src}};
-            eq_or_diff([map { $_->epoch } (RoleTester::parse_all_strings_to_date(@source))],
+            eq_or_diff([map { $_->epoch } (RoleTester::parse_all_datestrings_to_date(@source))],
                 $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
         }
     };
@@ -198,9 +198,9 @@ subtest 'Dates' => sub {
 
         foreach my $test_string (sort keys %bad_strings_match) {
             if ($bad_strings_match{$test_string}) {
-                like($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string matches formatted_date_regex");
+                like($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string matches formatted_datestring_regex");
             } else {
-                unlike($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string does not match formatted_date_regex");
+                unlike($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string does not match formatted_datestring_regex");
             }
 
             my $result;
@@ -221,7 +221,7 @@ subtest 'Dates' => sub {
 
         foreach my $set (@invalid_date_sets) {
             my @source       = @$set;
-            my @date_results = RoleTester::parse_all_strings_to_date(@source);
+            my @date_results = RoleTester::parse_all_datestrings_to_date(@source);
             is(@date_results, 0, '"' . join(', ', @source) . '": cannot be parsed in combination.');
         }
     };

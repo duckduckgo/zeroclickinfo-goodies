@@ -27,7 +27,7 @@ handle query_lc => sub {
     return unless $query =~ qr!^($datestring_regex)\s+(plus|\+|\-|minus)\s+(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)$!;
     my ($input_date, $input_action, $input_number, $unit) = ($1, $2, $3, $4);
 
-    $input_date = parse_string_to_date($input_date);
+    $input_date = parse_datestring_to_date($input_date);
     $input_number = str2nbr($input_number);
 
     # check/tweak other (non-date) input

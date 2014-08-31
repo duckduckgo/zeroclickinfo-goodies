@@ -23,7 +23,7 @@ my $datestring_regex = datestring_regex();
 handle remainder => sub {
     return unless $_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)(?:[,]? inclusive)?$/i;
     
-    my ($date1, $date2) = parse_all_strings_to_date($1, $2);
+    my ($date1, $date2) = parse_all_datestrings_to_date($1, $2);
     return unless ($date1 && $date2);
     
     ($date1, $date2) = ($date2, $date1) if ( DateTime->compare($date1, $date2) == 1 );

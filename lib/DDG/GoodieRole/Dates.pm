@@ -47,7 +47,7 @@ my $descriptive_datestring = qr#
     (?:$month_regex)
     #ix;
 
-# Used for parse_vague_string_to_date
+# Used for parse_descriptive_datestring_to_date
 my $descriptive_datestring_matches = qr#
     (?:(?<q>next|last)\s(?<m>$month_regex)) |
     (?:(?<m>$month_regex)\s(?<y>[0-9]{4})) |
@@ -56,7 +56,7 @@ my $descriptive_datestring_matches = qr#
     (?<m>$month_regex)
     #ix;
 
-my $formatted_datestring = build_date_regex();
+my $formatted_datestring = build_datestring_regex();
 
 # Accessors for useful regexes
 sub full_month_regex {
@@ -91,7 +91,7 @@ sub formatted_datestring_regex {
 }
 
 # Called once to build $formatted_datestring
-sub build_date_regex {
+sub build_datestring_regex {
     my @regexes = ();
 
     ## unambigous and awesome date formats:
@@ -128,7 +128,7 @@ sub parse_datestring_to_date {
     return parse_formatted_datestring_to_date($d) // parse_descriptive_datestring_to_date($d);
 }
 
-# Accepts a string which looks like date per the supplied date_regex (e.g. '31/10/1980')
+# Accepts a string which looks like date per the supplied datestring_regex (e.g. '31/10/1980')
 # Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
 sub parse_formatted_datestring_to_date {
     my ($d) = @_;
@@ -160,7 +160,7 @@ sub parse_formatted_datestring_to_date {
 # parses multiple dates and guesses the consistent format over the set;
 # i.e. defaults to m/d/y unless one of them is obviously d/m/y then it'll
 # treat them all as d/m/y
-sub parse_all_strings_to_date {
+sub parse_all_datestrings_to_date {
     my @dates = @_;
 
     # If there is an ambiguous date with a "month" over 12 in the set, we need to flip.
@@ -192,10 +192,10 @@ sub parse_descriptive_datestring_to_date {
     my $month = $+{'m'}; # Set in each alternative match.
     
     if (my $day = $+{'d'}) {
-        return parse_string_to_date("$day $month ".$now->year());
+        return parse_datestring_to_date("$day $month ".$now->year());
     }
     elsif (my $relative_dir = $+{'q'}) {
-        my $tmp_date = parse_string_to_date("01 $month ".$now->year());
+        my $tmp_date = parse_datestring_to_date("01 $month ".$now->year());
         # next <month>
         $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
         # last <month>
@@ -204,14 +204,14 @@ sub parse_descriptive_datestring_to_date {
     }
     elsif (my $year = $+{'y'}) {
         # Month and year is the first of that month.
-        return parse_string_to_date("01 $month $year");
+        return parse_datestring_to_date("01 $month $year");
     }
     else {
         # single named months
         # "january" in january means the current month
         # otherwise it always means the coming month of that name, be it this year or next year
-        return parse_string_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($month);
-        my $this_years_month = parse_string_to_date("01 $month ".$now->year());
+        return parse_datestring_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($month);
+        my $this_years_month = parse_datestring_to_date("01 $month ".$now->year());
         $this_years_month->add( years => 1 ) if (DateTime->compare($this_years_month, $now) == -1);
         return $this_years_month;
     }
@@ -226,31 +226,11 @@ sub date_output_string {
     my $string     = '';            # By default we've got nothing.
 
     # They didn't give us a DateTime object, let's try to make one from whatever we got.
-    $dt = parse_string_to_date($dt) if (ref($dt) !~ /DateTime/);
+    $dt = parse_datestring_to_date($dt) if (ref($dt) !~ /DateTime/);
 
     $string = $dt->strftime($ddg_format) if ($dt);
 
     return $string;
-}
-
-#
-# DEPRECATED: for backwards compatibility 
-#  - these needs to be ripped out of the existing goodie implementations
-#
-
-sub vague_datestring_regex {
-    return descriptive_datestring_regex();
-}
-sub date_regex {
-    return $formatted_datestring;
-}
-sub parse_vague_string_to_date {
-    my ($d) = @_;
-    return parse_descriptive_datestring_to_date($d);
-}
-sub parse_string_to_date {
-    my ($d) = @_;
-    return parse_datestring_to_date($d);
 }
 
 1;

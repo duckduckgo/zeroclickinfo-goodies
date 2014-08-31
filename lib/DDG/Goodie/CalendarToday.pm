@@ -38,7 +38,7 @@ handle remainder => sub {
     my $highlightDay = 0;    # Initialized, but won't match, by default.
     if ($query && (my ($date_string) = $query =~ qr#($datestring_regex)#i)) {
 
-        $date_object = parse_string_to_date($date_string);
+        $date_object = parse_datestring_to_date($date_string);
 
         return unless $date_object;
         $highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex);    # They specified a date, so highlight.
@@ -49,7 +49,7 @@ handle remainder => sub {
     my $the_year  = $date_object->year();
     my $the_month = $date_object->month();
     # return calendar
-    my $start = parse_string_to_date($the_year . "-" . $the_month . "-1");
+    my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
     return format_result({
             first_day     => $start,
             first_day_num => $start->day_of_week() % 7, # 0=Sunday
