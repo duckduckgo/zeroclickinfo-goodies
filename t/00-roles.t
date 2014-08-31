@@ -119,9 +119,13 @@ subtest 'Dates' => sub {
 
         foreach my $test_date (sort keys %dates_to_match) {
             like($test_date, qr/^$test_date_regex$/, "$test_date matches the date_regex");
+            like($test_date, qr/^$test_formatted_datestring_regex$/, "$test_date matches the formatted_datestring_regex");
 
             # test_regex should not contain any submatches
             $test_date =~ qr/^$test_date_regex$/;
+            ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
+            
+            $test_formatted_datestring_regex =~ qr/^$test_date_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
             my $date_object = RoleTester::parse_formatted_datestring_to_date($test_date);
@@ -194,9 +198,9 @@ subtest 'Dates' => sub {
 
         foreach my $test_string (sort keys %bad_strings_match) {
             if ($bad_strings_match{$test_string}) {
-                like($test_string, qr/^$test_date_regex$/, "$test_string matches date_regex");
+                like($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string matches date_regex");
             } else {
-                unlike($test_string, qr/^$test_date_regex$/, "$test_string does not match date_regex");
+                unlike($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string does not match date_regex");
             }
 
             my $result;
