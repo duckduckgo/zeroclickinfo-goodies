@@ -25,74 +25,70 @@ ddg_goodie_test(
         html => "<div>Result: <b>7378</b></div>", 
         heading => "Binary Logic"
     ),
-
     '10 and 12' => test_zci('8', 
         html => "<div>Result: <b>8</b></div>", 
         heading => "Binary Logic"
-     ),
+    ),
     '10 ∧ 12' => test_zci('8', 
         html => "<div>Result: <b>8</b></div>", 
         heading => "Binary Logic"
-     ),
-
+    ),
     '52 or 100' => test_zci('116', 
         html => "<div>Result: <b>116</b></div>", 
         heading => "Binary Logic"
-     ),
+    ),
     '52 ∨ 100' => test_zci('116', 
         html => "<div>Result: <b>116</b></div>", 
         heading => "Binary Logic"
-     ),
-
+    ),
     '23 and (30 or 128)' => test_zci('22', 
         html => "<div>Result: <b>22</b></div>", 
         heading => "Binary Logic"
-     ),
+    ),
     '23 ∧ (30 ∨ 128)' => test_zci('22', 
         html => "<div>Result: <b>22</b></div>", 
         heading => "Binary Logic"
-     ),
-
+    ),
     '0x999 xor 0x589' => test_zci('3088', 
         html => "<div>Result: <b>3088</b></div>", 
         heading => "Binary Logic"
-     ),
+    ),
     '0x999 ⊕ 0x589' => test_zci('3088', 
         html => "<div>Result: <b>3088</b></div>", 
         heading => "Binary Logic"
-     ),
-
+    ),
     'not 1' => test_zci('18446744073709551614', 
         html => "<div>Result: <b>18446744073709551614</b></div>", 
         heading => "Binary Logic"
-     ),
+    ),
     '¬1' => test_zci('18446744073709551614', 
         html => "<div>Result: <b>18446744073709551614</b></div>", 
         heading => "Binary Logic"
-     ),
-    
+    ),
     '3 and 2' => test_zci('2', 
         html => "<div>Result: <b>2</b></div>", 
         heading => "Binary Logic"
-     ),
+    ),
     '1 or 1234' => test_zci('1235', 
         html => "<div>Result: <b>1235</b></div>", 
         heading => "Binary Logic"
-     ),
-    
+    ),
     '34 or 100' => test_zci('102', 
         html => "<div>Result: <b>102</b></div>", 
         heading => "Binary Logic"
-     ),
+    ),
     '10 and (30 or 128)' => test_zci('10', 
         html => "<div>Result: <b>10</b></div>", 
         heading => "Binary Logic"
-     ),
+    ),
     '0x01 or not 0X100' => test_zci('18446744073709551359', 
         html => "<div>Result: <b>18446744073709551359</b></div>", 
         heading => "Binary Logic"
-     ),
-
+    ),
+    '0x01 or 0x02' => test_zci('3',
+        html => "<div>Result: <b>3</b></div>",
+        heading => "Binary Logic"
+    ),
 );
 
 done_testing;

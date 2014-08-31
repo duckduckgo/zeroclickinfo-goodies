@@ -62,11 +62,6 @@ sub BinaryLogic_Actions::hex_number {
     return hex($t2);
 }
 
-sub BinaryLogic_Actions::bin_number {
-    my (undef, undef, $t2) = @_;
-    return oct "0b$t2";
-}
-
 sub BinaryLogic_Actions::do_and {
     my (undef, $t1, undef, $t2) = @_;
     return int($t1) & int($t2);
@@ -91,7 +86,7 @@ handle query_raw => sub {
     my $grammar = Marpa::R2::Scanless::G->new({ source => \$rules });
     my $recce = Marpa::R2::Scanless::R->new({
         grammar => $grammar,
-        semantics_package => 'BinaryLogic_Actions' 
+        semantics_package => 'BinaryLogic_Actions'
     });
 
     my $input = $_;
@@ -115,7 +110,8 @@ handle query_raw => sub {
     my $text_output = ${$value_ref};
     my $html_output = "<div>Result: <b>" . ${$value_ref} . "</b></div>";
     my $heading = "Binary Logic";
-
+#my $progress_report = $recce->show_progress( 0, -1 );
+#print STDERR $progress_report;
     return answer => $text_output, html => $html_output, heading => $heading;
 };
 
