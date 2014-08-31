@@ -39,7 +39,7 @@ my $tz_suffixes = qr#(?:[+-][0-9]{4})|ACDT|ACST|ACT|ADT|AEDT|AEST|AFT|AKDT|AKST|
 
 # formats parsed by vague datestring, without colouring
 # the context of the code using it
-my $vague_datestring = qr#
+my $descriptive_datestring = qr#
     (?:(?:next|last)\s(?:$month_regex)) |
     (?:(?:$month_regex)\s(?:[0-9]{4})) |
     (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) |
@@ -48,7 +48,7 @@ my $vague_datestring = qr#
     #ix;
 
 # Used for parse_vague_string_to_date
-my $vague_datestring_matches = qr#
+my $descriptive_datestring_matches = qr#
     (?:(?<q>next|last)\s(?<m>$month_regex)) |
     (?:(?<m>$month_regex)\s(?<y>[0-9]{4})) |
     (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
@@ -56,7 +56,7 @@ my $vague_datestring_matches = qr#
     (?<m>$month_regex)
     #ix;
 
-my $formatted_date = build_date_regex();
+my $formatted_datestring = build_date_regex();
 
 # Accessors for useful regexes
 sub full_month_regex {
@@ -74,15 +74,29 @@ sub full_day_of_week_regex {
 sub short_day_of_week_regex {
     return $short_day_of_week;
 }
-sub vague_datestring_regex {
-    return $vague_datestring;
-}
 
+# Accessors for matching regexes
 
 # These matches are for "in the right format"/"looks about right"
 #  not "are valid dates"; expects normalised whitespace
+sub datestring_regex {
+    return qr#$formatted_datestring|$descriptive_datestring#i;
+}
+
+sub descriptive_datestring_regex {
+    return $descriptive_datestring;
+}
+
+sub formatted_datestring_regex {
+    return $formatted_datestring;
+}
+
+# deprecated: for backwards compatibility
+sub vague_datestring_regex {
+    return descriptive_datestring_regex();
+}
 sub date_regex {
-    return $formatted_date;
+    return $formatted_datestring;
 }
 
 sub build_date_regex {
@@ -120,7 +134,7 @@ sub build_date_regex {
 sub parse_string_to_date {
     my ($d) = @_;
 
-    return unless ($d =~ $formatted_date);    # Only handle white-listed strings, even if they might otherwise work.
+    return unless ($d =~ $formatted_datestring);    # Only handle white-listed strings, even if they might otherwise work.
     if ($d =~ $ambiguous_dates_matches) {
         # guesswork for ambigous DMY/MDY and switch to ISO
         my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});    # Assume MDY, even though it's crazy, for backward compatibility
@@ -169,27 +183,10 @@ sub parse_all_strings_to_date {
     return @dates_to_return;
 }
 
-
-# Takes a DateTime object (or a string which can be parsed into one)
-# and returns a standard formatted output string or an empty string if it cannot be parsed.
-sub date_output_string {
-    my $dt = shift;
-
-    my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.
-    my $string     = '';            # By default we've got nothing.
-
-    # They didn't give us a DateTime object, let's try to make one from whatever we got.
-    $dt = parse_string_to_date($dt) if (ref($dt) !~ /DateTime/);
-
-    $string = $dt->strftime($ddg_format) if ($dt);
-
-    return $string;
-}
-
 # Parses a really vague description and basically guesses
 sub parse_vague_string_to_date {
     my ($string) = @_;
-    if($string =~ qr/$vague_datestring_matches/) {
+    if($string =~ qr/$descriptive_datestring_matches/) {
         my $now = DateTime->now();
         my $month = $+{'m'}; # Set in each alternative match.
         
@@ -219,6 +216,22 @@ sub parse_vague_string_to_date {
         }
     }
     return;
+}
+
+# Takes a DateTime object (or a string which can be parsed into one)
+# and returns a standard formatted output string or an empty string if it cannot be parsed.
+sub date_output_string {
+    my $dt = shift;
+
+    my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.
+    my $string     = '';            # By default we've got nothing.
+
+    # They didn't give us a DateTime object, let's try to make one from whatever we got.
+    $dt = parse_string_to_date($dt) if (ref($dt) !~ /DateTime/);
+
+    $string = $dt->strftime($ddg_format) if ($dt);
+
+    return $string;
 }
 
 1;
