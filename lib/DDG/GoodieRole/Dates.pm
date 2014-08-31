@@ -175,7 +175,7 @@ sub parse_all_strings_to_date {
             return if $month > 12;    #there's a mish-mash of formats; give up
             $date = "$year-$month-$day";
         }
-        my $date_object = parse_string_to_date($date);
+        my $date_object = parse_datestring_to_date($date);
         return unless $date_object;
         push @dates_to_return, $date_object;
     }
