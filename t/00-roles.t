@@ -58,12 +58,18 @@ subtest 'Dates' => sub {
 
     { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
 
-    my $test_regex;
+    my $test_date_regex;
+    my $test_formatted_datestring_regex;
+    my $test_descriptive_datestring_regex;
 
     subtest 'Initialization' => sub {
         new_ok('RoleTester', [], 'Applied to a class');
-        $test_regex = RoleTester::date_regex();
-        isa_ok($test_regex, 'Regexp', 'date_regex()');
+        $test_date_regex = RoleTester::date_regex();
+        isa_ok($test_date_regex, 'Regexp', 'date_regex()');
+        $test_formatted_datestring_regex = RoleTester::formatted_datestring_regex();
+        isa_ok($test_formatted_datestring_regex, 'Regexp', 'formatted_datestring_regex()');
+        $test_descriptive_datestring_regex = RoleTester::descriptive_datestring_regex();
+        isa_ok($test_descriptive_datestring_regex, 'Regexp', 'descriptive_datestring_regex()');
     };
 
     subtest 'Working single dates' => sub {
@@ -112,13 +118,13 @@ subtest 'Dates' => sub {
         );
 
         foreach my $test_date (sort keys %dates_to_match) {
-            like($test_date, qr/^$test_regex$/, "$test_date matches the date_regex");
+            like($test_date, qr/^$test_date_regex$/, "$test_date matches the date_regex");
 
             # test_regex should not contain any submatches
-            $test_date =~ qr/^$test_regex$/;
+            $test_date =~ qr/^$test_date_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
-            my $date_object = RoleTester::parse_string_to_date($test_date);
+            my $date_object = RoleTester::parse_formatted_datestring_to_date($test_date);
             isa_ok($date_object, 'DateTime', $test_date);
             is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
         }
@@ -188,9 +194,9 @@ subtest 'Dates' => sub {
 
         foreach my $test_string (sort keys %bad_strings_match) {
             if ($bad_strings_match{$test_string}) {
-                like($test_string, qr/^$test_regex$/, "$test_string matches date_regex");
+                like($test_string, qr/^$test_date_regex$/, "$test_string matches date_regex");
             } else {
-                unlike($test_string, qr/^$test_regex$/, "$test_string does not match date_regex");
+                unlike($test_string, qr/^$test_date_regex$/, "$test_string does not match date_regex");
             }
 
             my $result;
@@ -275,7 +281,7 @@ subtest 'Dates' => sub {
             set_fixed_time($query_time);
             my %strings = %{$time_strings{$query_time}};
             foreach my $test_date (sort keys %strings) {
-                my $result = RoleTester::parse_vague_string_to_date($test_date);
+                my $result = RoleTester::parse_descriptive_datestring_to_date($test_date);
                 isa_ok($result, 'DateTime', $test_date);
                 is(RoleTester::date_output_string($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
             }
