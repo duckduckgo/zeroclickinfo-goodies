@@ -39,13 +39,13 @@ my $tz_suffixes = qr#(?:[+-][0-9]{4})|ACDT|ACST|ACT|ADT|AEDT|AEST|AFT|AKDT|AKST|
 
 # formats parsed by vague datestring, without colouring
 # the context of the code using it
-my $descriptive_datestring = qr#
-    (?:(?:next|last)\s(?:$month_regex)) |
-    (?:(?:$month_regex)\s(?:[0-9]{4})) |
-    (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) |
-    (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) |
-    (?:$month_regex)
-    #ix;
+my $descriptive_datestring = qr{
+    (?:(?:next|last)\s(?:$month_regex)) |                        # next June, last jan
+    (?:(?:$month_regex)\s(?:[0-9]{4})) |                         # Jan 2014, August 2000
+    (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
+    (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
+    (?:$month_regex) |                                           # February, Aug
+    }ix;
 
 # Used for parse_descriptive_datestring_to_date
 my $descriptive_datestring_matches = qr#
