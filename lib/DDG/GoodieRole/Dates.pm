@@ -125,7 +125,7 @@ sub build_datestring_regex {
 sub parse_datestring_to_date {
     my ($d) = @_;
 
-    return parse_formatted_datestring_to_date($d) // parse_descriptive_datestring_to_date($d);
+    return parse_formatted_datestring_to_date($d) || parse_descriptive_datestring_to_date($d);
 }
 
 # Accepts a string which looks like date per the supplied datestring_regex (e.g. '31/10/1980')
