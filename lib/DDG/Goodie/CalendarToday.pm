@@ -36,7 +36,8 @@ handle remainder => sub {
     my $date_object = DateTime->now;
     my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
     my $highlightDay = 0;    # Initialized, but won't match, by default.
-    if ($query && (my ($date_string) = $query =~ qr#($datestring_regex)#i)) {
+    if ($query) {
+        my ($date_string) = $query =~ qr#($datestring_regex)#i;    # Extract any datestring from the query.
 
         $date_object = parse_datestring_to_date($date_string);
 
