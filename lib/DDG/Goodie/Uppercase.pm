@@ -1,7 +1,7 @@
 package DDG::Goodie::Uppercase;
-use DDG::Goodie;
+# ABSTRACT: uppercase a provided string.
 
-use HTML::Entities;
+use DDG::Goodie;
 
 triggers start => 'uppercase', 'upper case', 'allcaps', 'all caps', 'strtoupper', 'toupper';
 # leaving out 'uc' because of queries like "UC Berkley", etc
@@ -36,7 +36,7 @@ handle remainder => sub {
     
     # Encode the variable before putting it in HTML.
     # There's no need to encode the $text variable because that gets encoded internally.
-    $upper = encode_entities($upper);
+    $upper = html_enc($upper);
     
     my $html = qq(<div class="zci--uppercase"><span class="text--primary">$upper</span></div>);
     $html = append_css($html);

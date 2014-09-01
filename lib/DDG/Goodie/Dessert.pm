@@ -1,4 +1,5 @@
 package DDG::Goodie::Dessert;
+# ABSTRACT: find desserts starting with a given letter.
 
 use DDG::Goodie;
 use utf8;

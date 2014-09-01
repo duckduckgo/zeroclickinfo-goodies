@@ -1,8 +1,11 @@
 package DDG::Goodie::Base;
+# ABSTRACT: convert numbers between arbitrary bases
 
 use DDG::Goodie;
+
 use Math::Int2Base qw/int2base/;
 use 5.010;
+use bigint;
 
 my %base_map = (
     hex         => 16,

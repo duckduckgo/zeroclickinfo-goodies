@@ -4,7 +4,6 @@ package DDG::Goodie::MD5;
 use DDG::Goodie;
 use Digest::MD5 qw(md5_base64 md5_hex);
 use Encode qw(encode);
-use HTML::Entities qw(encode_entities);
 
 zci answer_type => 'md5';
 zci is_cached => 1;
@@ -26,7 +25,7 @@ sub html_output {
     my ($str, $md5) = @_;
 
     # prevent XSS
-    $str = encode_entities($str);
+    $str = html_enc($str);
 
     return "<style type='text/css'>$css</style>"
           ."<div class='zci--md5'>"
