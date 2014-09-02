@@ -46,20 +46,32 @@ Term ::=
      | Term 'or' Term action => do_or
 
 Number ::= 
-       '0x' HexDigits action => hex_number
-     | '0X' HexDigits action => hex_number
-     | DecimalDigits
+       HexNumber action => hex_number
+     | HexNumberCaps action => hex_number
+     | BinaryNumber action => binary_number
+     | BinaryNumberCaps action => binary_number
+     | DecimalNumber
 
-DecimalDigits ~ [\d]+
+HexNumber ~ '0x' HexDigits
+HexNumberCaps ~ '0X' HexDigits
+BinaryNumber ~ '0b' BinaryDigits
+BinaryNumberCaps ~ '0B' BinaryDigits
 HexDigits ~ [0-9A-Fa-f]+
+BinaryDigits ~ [01]+
+DecimalNumber ~ [0-9]+
 
 :discard ~ whitespace
 whitespace ~ [\s]+
 END_OF_GRAMMAR
 
 sub BinaryLogic_Actions::hex_number {
-    my (undef, undef, $t2) = @_;
-    return hex($t2);
+    my (undef, $t2) = @_;
+    return hex(lc($t2));
+}
+
+sub BinaryLogic_Actions::binary_number {
+    my (undef, $t2) = @_;
+    return oct(lc($t2));
 }
 
 sub BinaryLogic_Actions::do_and {

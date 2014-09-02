@@ -89,6 +89,14 @@ ddg_goodie_test(
         html => "<div>Result: <b>3</b></div>",
         heading => "Binary Logic"
     ),
+    '0b01 or 0b10' => test_zci('3',
+        html => "<div>Result: <b>3</b></div>",
+        heading => "Binary Logic"
+    ),
+    '0B11 xor 0B10' => test_zci('1',
+        html => "<div>Result: <b>1</b></div>",
+        heading => "Binary Logic"
+    ),
 );
 
 done_testing;
