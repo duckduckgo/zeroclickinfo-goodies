@@ -11,7 +11,10 @@ use warnings;
 use Date::Manip qw(ParseDate);							
 
 #Import the DateTime::Event::Zodiac Module
-use DateTime::Event::Zodiac qw(zodiac_date_name);
+#use DateTime::Event::Zodiac qw(zodiac_date_name);
+
+#Import the Date::Horoscope Module
+use Date::Horoscope;
 
 zci answer_type => "zodiac";
 
@@ -48,10 +51,12 @@ handle remainder => sub {
 		
 			#Extract the Day from Date String
 			day=>substr($date,6,2)		
-		);					
+		);	
+
+		my $zodiacdate=Date::Horoscope::locate($date);				
 
 		#Return the Star Sign
-		return "Star Sign : ",zodiac_date_name($zodiacdate);
+		return "Star Sign : ",$zodiacdate;
 };
 
 1;
