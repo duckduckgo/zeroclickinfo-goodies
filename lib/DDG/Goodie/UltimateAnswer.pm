@@ -16,16 +16,10 @@ attribution github  => ['https://github.com/exoWM/', 'exoWM'],
             
 zci answer_type => 'UltimateAnswer';                                                                                                                                                                        
                                                                                                                                                                                                             
-<<<<<<< HEAD
 handle remainder => sub {                                          
     return unless ($_ eq '' || $_ eq '?');
     return 'Forty-two', html => '<span style="font-size: 1.5em;">Forty-two</span>';    
-=======
-handle remainder => sub {                                                                                                                                                                                   
-    return 'Forty-two', html => '<span style="font-size: 1.5em; fontweight: 400;">Forty-two</span>' if $_ eq '';
->>>>>>> d7f48f7099adc1623d088696ca6bfa953d57ef6a
-    return;
-    
+
 };                                                                                                                                                                                                          
                                                                                                                                                                                                             
 1;            
