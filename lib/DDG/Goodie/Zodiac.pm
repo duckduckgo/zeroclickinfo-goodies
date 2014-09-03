@@ -7,12 +7,6 @@ use DDG::Goodie;
 use strict;
 use warnings;
 
-#Import the Date Manipulation Module
-use Date::Manip qw(ParseDate);							
-
-#Import the DateTime::Event::Zodiac Module
-#use DateTime::Event::Zodiac qw(zodiac_date_name);
-
 #Import the Date::Horoscope Module
 use Date::Horoscope;
 
@@ -35,28 +29,17 @@ handle remainder => sub {
 		#User Entered Date/Query
 		my $query=$_;								
 		
-		#Parse the Given Date String
-		my $date=&ParseDate($query);
-		
-		#Return Nothing if the User Provided Date is Invalid	
-		return if $date eq "";
+	        my $zodiacdate=Date::Horoscope::locate($query);				
 	
-		my $zodiacdate=DateTime->new(
-		
-			#Extract the Year from Date String
-			year=>substr($date,0,4),
+		return "Star Sign : $zodiacdate" if $zodiacdate ne "";
 
-			#Extract the Month from Date String
-			month=>substr($date,4,2),
-		
-			#Extract the Day from Date String
-			day=>substr($date,6,2)		
-		);	
+		return "";
 
-		my $zodiacdate=Date::Horoscope::locate($date);				
+		#Return Nothing if the User Provided Date is Invalid	
+		#return if $zodiacdate eq "";
 
 		#Return the Star Sign
-		return "Star Sign : ",$zodiacdate;
+		#return "Star Sign : ",$zodiacdate;
 };
 
 1;
