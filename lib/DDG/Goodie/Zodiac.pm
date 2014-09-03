@@ -35,7 +35,8 @@ handle remainder => sub {
 		return if $zodiacdate eq "";
 		
 		#Return the Star Sign
-		return "Star Sign :",ucfirst($zodiacdate);
+		$zodiacdate=ucfirst($zodiacdate);
+		return "Star Sign : $zodiacdate";
 };
 
 1;
