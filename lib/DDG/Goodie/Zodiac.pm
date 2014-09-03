@@ -31,15 +31,11 @@ handle remainder => sub {
 		
 	        my $zodiacdate=Date::Horoscope::locate($query);				
 	
-		return "Star Sign : $zodiacdate" if $zodiacdate ne "";
-
-		return "";
-
 		#Return Nothing if the User Provided Date is Invalid	
-		#return if $zodiacdate eq "";
-
+		return if $zodiacdate eq "";
+		
 		#Return the Star Sign
-		#return "Star Sign : ",$zodiacdate;
+		return "Star Sign : $zodiacdate";
 };
 
 1;
