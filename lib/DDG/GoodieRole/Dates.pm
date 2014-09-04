@@ -3,7 +3,6 @@ package DDG::GoodieRole::Dates;
 
 use strict;
 use warnings;
-use feature 'state';
 
 use Moo::Role;
 
@@ -21,6 +20,7 @@ my %full_month_to_short = map { lc $_ => substr($_, 0, 3) } qw(January February 
 my %short_month_fix     = map { lc $_ => $_ } (values %full_month_to_short);
 my $short_month         = qr#Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec#i;
 my $full_month          = qr#January|February|March|April|May|June|July|August|September|October|November|December#i;
+my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
@@ -36,6 +36,28 @@ my $number_suffixes = qr#(?:st|nd|rd|th)#i;
 
 # Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
 my $tz_suffixes = qr#(?:[+-][0-9]{4})|ACDT|ACST|ACT|ADT|AEDT|AEST|AFT|AKDT|AKST|AMST|AMT|ART|AST|AWDT|AWST|AZOST|AZT|BDT|BIOT|BIT|BOT|BRT|BST|BTT|CAT|CCT|CDT|CEDT|CEST|CET|CHADT|CHAST|CHOT|CHUT|CIST|CIT|CKT|CLST|CLT|COST|COT|CST|CT|CVT|CWST|CXT|ChST|DAVT|DDUT|DFT|EASST|EAST|EAT|ECT|EDT|EEDT|EEST|EET|EGST|EGT|EIT|EST|FET|FJT|FKST|FKT|FNT|GALT|GAMT|GET|GFT|GILT|GIT|GMT|GST|GYT|HADT|HAEC|HAST|HKT|HMT|HOVT|HST|ICT|IDT|IOT|IRDT|IRKT|IRST|IST|JST|KGT|KOST|KRAT|KST|LHST|LINT|MAGT|MART|MAWT|MDT|MEST|MET|MHT|MIST|MIT|MMT|MSK|MST|MUT|MVT|MYT|NCT|NDT|NFT|NPT|NST|NT|NUT|NZDT|NZST|OMST|ORAT|PDT|PET|PETT|PGT|PHOT|PHT|PKT|PMDT|PMST|PONT|PST|PYST|PYT|RET|ROTT|SAKT|SAMT|SAST|SBT|SCT|SGT|SLST|SRT|SST|SYOT|TAHT|TFT|THA|TJT|TKT|TLT|TMT|TOT|TVT|UCT|ULAT|UTC|UYST|UYT|UZT|VET|VLAT|VOLT|VOST|VUT|WAKT|WAST|WAT|WEDT|WEST|WET|WIT|WST|YAKT|YEKT|Z#i;
+
+# formats parsed by vague datestring, without colouring
+# the context of the code using it
+my $descriptive_datestring = qr{
+    (?:(?:next|last)\s(?:$month_regex)) |                        # next June, last jan
+    (?:(?:$month_regex)\s(?:[0-9]{4})) |                         # Jan 2014, August 2000
+    (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
+    (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
+    (?:$month_regex) |                                           # February, Aug
+    }ix;
+
+# Used for parse_descriptive_datestring_to_date
+my $descriptive_datestring_matches = qr#
+    (?:(?<q>next|last)\s(?<m>$month_regex)) |
+    (?:(?<m>$month_regex)\s(?<y>[0-9]{4})) |
+    (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
+    (?:(?<m>$month_regex)\s(?<d>$date_number)\s?$number_suffixes?) |
+    (?<m>$month_regex)
+    #ix;
+
+my $formatted_datestring = build_datestring_regex();
+
 # Accessors for useful regexes
 sub full_month_regex {
     return $full_month;
@@ -44,7 +66,7 @@ sub short_month_regex {
     return $short_month;
 }
 sub month_regex {
-    return qr/$full_month|$short_month/;
+    return $month_regex;
 }
 sub full_day_of_week_regex {
     return $full_day_of_week;
@@ -53,9 +75,23 @@ sub short_day_of_week_regex {
     return $short_day_of_week;
 }
 
+# Accessors for matching regexes
 # These matches are for "in the right format"/"looks about right"
 #  not "are valid dates"; expects normalised whitespace
-sub date_regex {
+sub datestring_regex {
+    return qr#$formatted_datestring|$descriptive_datestring#i;
+}
+
+sub descriptive_datestring_regex {
+    return $descriptive_datestring;
+}
+
+sub formatted_datestring_regex {
+    return $formatted_datestring;
+}
+
+# Called once to build $formatted_datestring
+sub build_datestring_regex {
     my @regexes = ();
 
     ## unambigous and awesome date formats:
@@ -81,16 +117,23 @@ sub date_regex {
     ## Ambiguous, but potentially valid date formats
     push @regexes, $ambiguous_dates;
 
-    state $returned_regex = join '|', @regexes;
+    my $returned_regex = join '|', @regexes;
     return qr/$returned_regex/i;
 }
 
-# Accepts a string which looks like date per the supplied date_regex (e.g. '31/10/1980')
-# Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
-sub parse_string_to_date {
+# Parses any string that *can* be parsed to a date object
+sub parse_datestring_to_date {
     my ($d) = @_;
 
-    return unless ($d =~ date_regex());    # Only handle white-listed strings, even if they might otherwise work.
+    return parse_formatted_datestring_to_date($d) || parse_descriptive_datestring_to_date($d);
+}
+
+# Accepts a string which looks like date per the supplied datestring_regex (e.g. '31/10/1980')
+# Returns a DateTime object representing that date or `undef` if the string cannot be parsed.
+sub parse_formatted_datestring_to_date {
+    my ($d) = @_;
+
+    return unless ($d =~ qr/^$formatted_datestring$/);    # Only handle white-listed strings, even if they might otherwise work.
     if ($d =~ $ambiguous_dates_matches) {
         # guesswork for ambigous DMY/MDY and switch to ISO
         my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});    # Assume MDY, even though it's crazy, for backward compatibility
@@ -117,7 +160,7 @@ sub parse_string_to_date {
 # parses multiple dates and guesses the consistent format over the set;
 # i.e. defaults to m/d/y unless one of them is obviously d/m/y then it'll
 # treat them all as d/m/y
-sub parse_all_strings_to_date {
+sub parse_all_datestrings_to_date {
     my @dates = @_;
 
     # If there is an ambiguous date with a "month" over 12 in the set, we need to flip.
@@ -131,7 +174,7 @@ sub parse_all_strings_to_date {
             return if $month > 12;    #there's a mish-mash of formats; give up
             $date = "$year-$month-$day";
         }
-        my $date_object = parse_string_to_date($date);
+        my $date_object = parse_datestring_to_date($date);
         return unless $date_object;
         push @dates_to_return, $date_object;
     }
@@ -139,6 +182,40 @@ sub parse_all_strings_to_date {
     return @dates_to_return;
 }
 
+# Parses a really vague description and basically guesses
+sub parse_descriptive_datestring_to_date {
+    my ($string) = @_;
+
+    return unless ($string =~ qr/^$descriptive_datestring_matches$/);
+
+    my $now = DateTime->now();
+    my $month = $+{'m'}; # Set in each alternative match.
+    
+    if (my $day = $+{'d'}) {
+        return parse_datestring_to_date("$day $month ".$now->year());
+    }
+    elsif (my $relative_dir = $+{'q'}) {
+        my $tmp_date = parse_datestring_to_date("01 $month ".$now->year());
+        # next <month>
+        $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
+        # last <month>
+        $tmp_date->add( years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
+        return $tmp_date;
+    }
+    elsif (my $year = $+{'y'}) {
+        # Month and year is the first of that month.
+        return parse_datestring_to_date("01 $month $year");
+    }
+    else {
+        # single named months
+        # "january" in january means the current month
+        # otherwise it always means the coming month of that name, be it this year or next year
+        return parse_datestring_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($month);
+        my $this_years_month = parse_datestring_to_date("01 $month ".$now->year());
+        $this_years_month->add( years => 1 ) if (DateTime->compare($this_years_month, $now) == -1);
+        return $this_years_month;
+    }
+}
 
 # Takes a DateTime object (or a string which can be parsed into one)
 # and returns a standard formatted output string or an empty string if it cannot be parsed.
@@ -149,42 +226,11 @@ sub date_output_string {
     my $string     = '';            # By default we've got nothing.
 
     # They didn't give us a DateTime object, let's try to make one from whatever we got.
-    $dt = parse_string_to_date($dt) if (ref($dt) !~ /DateTime/);
+    $dt = parse_datestring_to_date($dt) if (ref($dt) !~ /DateTime/);
 
     $string = $dt->strftime($ddg_format) if ($dt);
 
     return $string;
-}
-
-# Parses a really vague description and basically guesses
-sub parse_vague_string_to_date {
-    my ($string) = @_;
-    if($string =~ qr#(?:(?<q>next|last)\s(?<m>$full_month|$short_month))|(?:(?<m>$full_month|$short_month)\s(?<y>[0-9]{4}))|(?<m>$full_month|$short_month)#i) {
-        my $now = DateTime->now();
-        my $month = $+{'m'}; # Set in each alternative match.
-        if (my $relative_dir = $+{'q'}) {
-            my $tmp_date = parse_string_to_date("01 $month ".$now->year());
-            # next <month>
-            $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
-            # last <month>
-            $tmp_date->add( years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
-            return $tmp_date;
-        }
-        elsif (my $year = $+{'y'}) {
-            # Month and year is the first of that month.
-            return parse_string_to_date("01 $month $year");
-        }
-        else {
-            # single named months
-            # "january" in january means the current month
-            # otherwise it always means the coming month of that name, be it this year or next year
-            return parse_string_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($month);
-            my $this_years_month = parse_string_to_date("01 $month ".$now->year());
-            $this_years_month->add( years => 1 ) if (DateTime->compare($this_years_month, $now) == -1);
-            return $this_years_month;
-        }
-    }
-    return;
 }
 
 1;

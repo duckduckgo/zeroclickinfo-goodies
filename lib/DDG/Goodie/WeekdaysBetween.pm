@@ -31,11 +31,11 @@ sub html_output {
 }
 
 
-my $date_regex = date_regex();
+my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
-    return unless $_ =~ qr/^($date_regex) (?:(?:and|to) )?($date_regex)/i;
-    my ($start, $end) = (parse_string_to_date($1), parse_string_to_date($2));
+    return unless $_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)/i;
+    my ($start, $end) = (parse_datestring_to_date($1), parse_datestring_to_date($2));
     return unless ($start && $end);
     
     # Flip if the dates are the wrong way around

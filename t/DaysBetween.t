@@ -21,6 +21,8 @@ ddg_goodie_test(
     'days between January 31st, 2000 and 31-Jan-2001 inclusive' => test_zci('There are 367 days between 31 Jan 2000 and 31 Jan 2001, inclusive.'),
     'days between jan 1 2012 and jan 1 123456' => undef,
     'days between jan 1 2012 and jan 1 1234' => test_zci("There are 284158 days between 01 Jan 1234 and 01 Jan 2012."),
+    'days between jan 1 and jan 15 inclusive' => test_zci(qr/^There are 15 days between.+inclusive\.$/),
+    'days between jan 1 and 15th feb' => test_zci(qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/),
 );
 
 done_testing;
