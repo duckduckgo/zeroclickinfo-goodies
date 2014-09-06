@@ -1,7 +1,9 @@
 package DDG::Goodie::Binary;
-# ABSTRACT Convert decimal, hex and string to binary.
+# ABSTRACT: Convert decimal, hex and string to binary.
 
 use DDG::Goodie;
+
+use Bit::Vector;
 
 triggers end => "binary";
 
@@ -26,12 +28,14 @@ sub bin {
 }
 
 sub dec2bin {
-    my @dec = shift;
-    my $str = unpack("B*", pack("N", $dec[0] ));
-    $str =~ s/^0+(?=\d)//;   # first suppress leading zeros
-# Then add some more ...    
-    return ('0' x (8 - (length($str) % 8))) . $str if (length($str)%8 > 0); 
-    return $str
+    my $dec = shift;
+    #  Method for packing without 'q' taken from:
+    #  http://www.perlmonks.org/?node_id=163123
+    my $vec = Bit::Vector->new_Dec(64, $dec);
+    my $str = unpack("B*", pack('NN', $vec->Chunk_Read(32, 32), $vec->Chunk_Read(32, 0)));
+    $str =~ s/^0+(?=\d)//;    # first suppress leading zeros
+    my $alignment = length($str) % 8;    # Then see if we need to pad for byte-sized output.
+    return ($alignment) ? ('0' x (8 - $alignment)) . $str : $str;
 }
 
 sub hex2bin {

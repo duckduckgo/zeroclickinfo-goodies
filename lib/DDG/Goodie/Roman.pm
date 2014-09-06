@@ -1,6 +1,8 @@
 package DDG::Goodie::Roman;
+# ABSTRACT: Convert between Roman and Arabic numeral systems.
 
 use DDG::Goodie;
+
 use Roman;
 
 primary_example_queries 'roman numeral MCCCXXXVII';

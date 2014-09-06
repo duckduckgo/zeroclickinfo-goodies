@@ -1,0 +1,13 @@
+.zci--answer .zci--anagrams {
+    font-weight: 300;
+    padding: .25em 0;
+}
+
+.zci--anagrams .text--primary {
+    font-size: 1.5em;
+}
+
+.zci--anagrams .text--secondary {
+    font-weight: 400;
+    font-size: 1.1em;
+}

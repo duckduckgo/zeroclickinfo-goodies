@@ -43,7 +43,7 @@ handle remainder => sub {
 
     @matches = map {
         (my $code, my $name) = split /;/;
-        {symbol => chr hex $code,
+        {symbol => chr(hex($code)),
          code => $code,
          name => $name};
     } @matches;

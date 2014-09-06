@@ -48,6 +48,10 @@ ddg_goodie_test(
         'Hex: #202428 ~ rgb(32, 36, 40) ~ rgb(13%, 14%, 16%) ~ hsl(210, 11%, 14%) ~ cmyb(20%, 10%, 0%, 84%)',
         html => qq(<div style="background:#202428;border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>Hex: #202428 ~ rgb(32, 36, 40) ~ rgb(13%, 14%, 16%) ~ hsl(210, 11%, 14%) ~ cmyb(20%, 10%, 0%, 84%) [<a href='http://labs.tineye.com/multicolr#colors=202428;weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/202428' title='Tints, information and similar colors on color-hex.com'>Info</a>]),
     ),
+    'red html code' => test_zci(
+        'Hex: #ff0000 ~ rgb(255, 0, 0) ~ rgb(100%, 0%, 0%) ~ hsl(0, 100%, 50%) ~ cmyb(0%, 100%, 100%, 0%)',
+        html => qq(<div style="background:#ff0000;border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>Hex: #ff0000 ~ rgb(255, 0, 0) ~ rgb(100%, 0%, 0%) ~ hsl(0, 100%, 50%) ~ cmyb(0%, 100%, 100%, 0%) [<a href='http://labs.tineye.com/multicolr#colors=ff0000;weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/ff0000' title='Tints, information and similar colors on color-hex.com'>Info</a>]),
+      ),
     'bluishblack html' => undef,
     'HTML email'       => undef,
     'wield color'      => undef,

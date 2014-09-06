@@ -1,6 +1,7 @@
 #!/bin/env perl
 package DDG::Goodie::SubnetCalc;
 # ABSTRACT: Calculate IP ranges & Subnet Information from a host & CIDR or netmask 
+
 use strict;
 use warnings;
 

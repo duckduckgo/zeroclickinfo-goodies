@@ -1,7 +1,9 @@
 package DDG::Goodie::Base64;
+# ABSTRACT: Base64 <-> Unicode
 
 use DDG::Goodie;
-use MIME::Base64; 
+
+use MIME::Base64;
 use Encode;
 
 triggers startend => "base64";

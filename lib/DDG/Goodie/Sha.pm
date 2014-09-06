@@ -1,4 +1,5 @@
 package DDG::Goodie::Sha;
+# ABSTRACT: Compute a SHA sum for a provided string.
 
 use DDG::Goodie;
 use Digest::SHA;

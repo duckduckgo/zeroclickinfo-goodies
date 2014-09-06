@@ -1,5 +1,5 @@
 package DDG::Goodie::FrequencySpectrum;
-# ABSTRACT: Return information about light, radio and sound frequencies
+# ABSTRACT: describe the nature of various wave frequencies.
 
 use strict;
 use SVG;

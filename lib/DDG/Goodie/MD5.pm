@@ -22,7 +22,11 @@ triggers startend => 'md5', 'md5sum';
 my $css = share('style.css')->slurp;
 
 sub html_output {
-    my ($md5, $str) = @_;
+    my ($str, $md5) = @_;
+
+    # prevent XSS
+    $str = html_enc($str);
+
     return "<style type='text/css'>$css</style>"
           ."<div class='zci--md5'>"
           ."<span class='text--secondary'>MD5 of \"$str\"</span><br/>"
@@ -31,16 +35,19 @@ sub html_output {
 }
 
 handle remainder => sub {
-    s/^of (.*)$/$1/; # Remove 'of ' in queries like 'md5 of this'
+    s/^hash\s+(.*\S+)/$1/; # Remove 'hash' in queries like 'md5 hash this'
+    s/^of\s+(.*\S+)/$1/; # Remove 'of' in queries like 'md5 hash of this'
     s/^"(.*)"$/$1/; # Remove quotes
-    if (/^\s*(.*)\s*$/) {
-        # Exit unless a string is found
-        return unless $1;
+    if (/^\s*(.*\S+)/) {
         # The string is encoded to get the utf8 representation instead of
         # perls internal representation of strings, before it's passed to
         # the md5 subroutine.
-        my $str = md5_hex (encode "utf8", $1);
-        return $str, html => html_output ($str, $1);
+        my $str = $1;
+        my $md5 = md5_hex(encode "utf8", $str);
+        return $md5, html => html_output($str, $md5);
+    } else {
+        # Exit unless a string is found
+	return;
     }
 };
 

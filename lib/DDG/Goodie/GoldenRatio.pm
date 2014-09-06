@@ -1,4 +1,5 @@
 package DDG::Goodie::GoldenRatio;
+# ABSTRACT: find number related to the given number by the Golden Ratio.
 
 use DDG::Goodie;
 

@@ -1,4 +1,5 @@
 package DDG::Goodie::HKDK;
+# ABSTRACT: Track a package through HKDK.
 
 use DDG::Goodie;
 
