@@ -301,7 +301,7 @@ sub generate_plot {
     #Padding
     $plot->{leftGutter} = 20;
     $plot->{rightGutter} = 5;
-    $plot->{bottomGutter} = 55;
+    $plot->{bottomGutter} = 50;
     $plot->{topGutter} = 30;
 
     #Plot width is dynamic, always expressed as percentage
@@ -531,7 +531,7 @@ sub add_marker {
     #Add marker rect
     my $markerWidth = 1.2 * length($freq_formatted);
     my $markerHeight = 14;
-    my $markerGutter = 5;
+    my $markerGutter = ($plot->{topGutter} - $markerHeight - 1) / 2;
     $plot->{svg}->group(
         class => 'marker_tag',
     )->rect(
@@ -546,7 +546,7 @@ sub add_marker {
     my $markerLabel = $plot->{svg}->group();
     my $markerLabelText = $markerLabel->text(
         x => $plot->{transform}->($markerValue) . '%',
-        y => $plot->{topGutter} - ($markerHeight / 2),
+        y => $plot->{topGutter} - $markerGutter - ($markerHeight / 2) + 4,
         'text-anchor' => 'middle',
         class => 'marker_label'
     );
