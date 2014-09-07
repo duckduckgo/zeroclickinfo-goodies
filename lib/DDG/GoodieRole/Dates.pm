@@ -303,6 +303,9 @@ sub build_datestring_regex {
     # RFC850 08-Feb-94 14:15:29 GMT
     push @regexes, qr#[0-9]{2}-$short_month-(?:[0-9]{2}|[0-9]{4}) $time_24h?(?: ?$tz_suffixes)#i;
 
+    # RFC2822 Sat, 13 Mar 2010 11:29:05 -0800
+    push @regexes, qr#$short_day_of_week, $date_number $short_month [0-9]{4} $time_24h $tz_suffixes#i;
+
     # date(1) default format Sun Sep  7 15:57:56 EDT 2014
     push @regexes, $date_standard;
 
