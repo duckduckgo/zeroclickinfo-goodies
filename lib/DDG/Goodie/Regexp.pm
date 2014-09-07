@@ -1,6 +1,8 @@
 package DDG::Goodie::Regexp;
+# ABSTRACT: Parse a regexp.
 
 use DDG::Goodie;
+
 use Safe;
 
 zci answer_type => "regexp";

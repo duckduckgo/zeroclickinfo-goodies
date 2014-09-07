@@ -9,25 +9,6 @@ use DDG::Goodie::Calculator;    # For function subtests.
 zci answer_type => 'calc';
 zci is_cached   => 1;
 
-subtest 'display format selection' => sub {
-    my $ds_name = 'DDG::Goodie::Calculator::display_style';
-    my $ds      = \&$ds_name;
-
-    is($ds->('0,013')->{id}, 'euro', '0,013 is euro');
-    is($ds->('4,431',      '4.321')->{id}, 'perl', '4,431 and 4.321 is perl');
-    is($ds->('4,431',      '4.32')->{id},  'perl', '4,431 and 4.32 is perl');
-    is($ds->('4,431',      '4,32')->{id},  'euro', '4,431 and 4,32 is euro');
-    is($ds->('4534,345.0', '1',)->{id},    'perl', '4534,345.0 should have another comma, not enforced; call it perl.');
-    is($ds->('4,431', '4,32', '5,42')->{id}, 'euro', '4,431 and 4,32 and 5,42 is nicely euro-style');
-    is($ds->('4,431', '4.32', '5.42')->{id}, 'perl', '4,431 and 4.32 and 5.42 is nicely perl-style');
-
-    is($ds->('5234534.34.54', '1',), undef, '5234534.34.54 and 1 has a mal-formed number, so we cannot proceed');
-    is($ds->('4,431', '4,32',     '4.32'), undef, '4,431 and 4,32 and 4.32 is confusingly ambig; no style');
-    is($ds->('4,431', '4.32.10',  '5.42'), undef, '4,431 and 4.32.10 is hard to figure; no style');
-    is($ds->('4,431', '4,32,100', '5.42'), undef, '4,431 and 4,32,100 and 5.42 has a mal-formed number, so no go.');
-    is($ds->('4,431', '4,32,100', '5,42'), undef, '4,431 and 4,32,100 and 5,42 is too crazy to work out; no style');
-};
-
 ddg_goodie_test(
     [qw( DDG::Goodie::Calculator )],
     'what is 2-2' => test_zci(
@@ -343,7 +324,8 @@ ddg_goodie_test(
     '(pi^4.1^(5-4)+pi^(5-(4^2 -8)))^(1/6)+1' => test_zci(
         '(pi ^ 4.1 ^ (5 - 4) + pi ^ (5 - (4 ^ 2 - 8))) ^ (1 / 6) + 1 = 3.18645452799383',
         heading => 'Calculator',
-        html    => qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1<span class='text--secondary'> =#,
+        html =>
+          qr#\(pi<sup>4.1<sup>\(5 - 4\)</sup></sup> \+ pi<sup>\(5 - \(4<sup>2</sup> - 8\)\)</sup>\)<sup>\(1 / 6\)</sup> \+ 1<span class='text--secondary'> =#,
     ),
     '5^4^(3-2)^1' => test_zci(
         '5 ^ 4 ^ (3 - 2) ^ 1 = 625',
@@ -380,6 +362,27 @@ ddg_goodie_test(
         heading => 'Calculator',
         html    => qr/./,
     ),
+    '4E5 +1 ' => test_zci(
+        '(4  *  10 ^ 5) + 1 = 400,001',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    '4e5 +1 ' => test_zci(
+        '(4  *  10 ^ 5) + 1 = 400,001',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    'pi/1e9' => test_zci(
+        'pi / (1  *  10 ^ 9) = 3.14159265358979 * 10^-9',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+    'pi*1e9' => test_zci(
+        'pi * (1  *  10 ^ 9) = 3,141,592,653.58979',
+        heading => 'Calculator',
+        html    => qr/./,
+    ),
+
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,
@@ -391,6 +394,7 @@ ddg_goodie_test(
     dividedbydividedby                => undef,
     time                              => undef,    # We eval perl directly, only do whitelisted stuff!
     'four squared'                    => undef,
+    '! + 1'                           => undef,    # Regression test for bad query trigger.
 );
 
 done_testing;

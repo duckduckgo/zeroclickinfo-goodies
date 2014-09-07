@@ -121,15 +121,15 @@ handle remainder => sub {
             my @chars = shuffle split (//, $word);
             $w = join '', @chars;
         } while ($w eq $word);
-        return $word, html => html_output ("Sorry, we found no anagrams for \"$word\". We scrambled it for you:", $w);
+        return $word, html => html_output('Sorry, we found no anagrams for "'.html_enc($word).'". We scrambled it for you:', $w);
     }
 
     my $response = join ', ', @output;
-    my $output_str = "Anagrams of \"$word\"";
+    my $output_str = 'Anagrams of '.html_enc($word).'"';
     unless ($full_word) {
         $output_str .= " of length $len";
     }
-    return $response, html => html_output ($output_str, $response);
+    return $response, html => html_output($output_str, $response);
 };
 
 1;

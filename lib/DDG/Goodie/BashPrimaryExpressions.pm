@@ -1,9 +1,10 @@
 package DDG::Goodie::BashPrimaryExpressions;
+# ABSTRACT: human-readable descriptions of bash shell expressions
 
-use HTML::Entities;
-use DDG::Goodie;
 use strict;
 use warnings;
+
+use DDG::Goodie;
 
 triggers startend => 'bash if', 'bash';
 primary_example_queries 'bash [ -z hello ]';
@@ -84,11 +85,11 @@ handle remainder => sub {
 	my $text_output = $if_description{$op};
 	$text_output =~ s/^true/false/ if $not;
 	
-	my $html_output = encode_entities($text_output);
-	my $html_right_arg = encode_entities($right_arg);
+	my $html_output = html_enc($text_output);
+	my $html_right_arg = html_enc($right_arg);
 	
 	if ($left_arg) {
-	    my $html_left_arg = encode_entities($left_arg);
+	    my $html_left_arg = html_enc($left_arg);
 	    $text_output =~ s/ARG1/$left_arg/g;
 	    $html_output =~ s/ARG1/<pre>$html_left_arg<\/pre>/g;	
 	}
@@ -96,8 +97,8 @@ handle remainder => sub {
 	$text_output =~ s/ARG2/$right_arg/g;
 	$html_output =~ s/ARG2/<pre>$html_right_arg<\/pre>/g;
 	
-	my $intro = "The Bash expression <pre>" . encode_entities($_) . "</pre> results to";
-	return "$intro $text_output.", html => append_css("$intro $html_output."), heading => encode_entities($_) . " (Bash)";
+	my $intro = "The Bash expression <pre>" . html_enc($_) . "</pre> results to";
+	return "$intro $text_output.", html => append_css("$intro $html_output."), heading => html_enc($_) . " (Bash)";
 };
 
 1;

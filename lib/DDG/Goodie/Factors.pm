@@ -1,8 +1,9 @@
 package DDG::Goodie::Factors;
-#Returns the factors of the entered number
+# ABSTRACT: Returns the factors of the entered number
 
 use DDG::Goodie;
-use Math::Prime::Util 'all_factors';
+
+use Math::Prime::Util 'divisors';
 
 zci answer_type => "factors";
 zci is_cached => 1;
@@ -19,7 +20,7 @@ attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
 
 handle remainder => sub {
 	return unless /^\d+$/; 
-	my @factors = all_factors($_);
+	my @factors = divisors($_);
 	return "Factors of $_: @factors";
 };
 

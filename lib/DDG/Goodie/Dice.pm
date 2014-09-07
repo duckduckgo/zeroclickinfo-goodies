@@ -1,4 +1,5 @@
 package DDG::Goodie::Dice;
+# ABSTRACT: roll a number of (abstract) dice.
 
 use DDG::Goodie;
 

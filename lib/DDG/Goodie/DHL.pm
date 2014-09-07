@@ -1,4 +1,5 @@
 package DDG::Goodie::DHL;
+# ABSTRACT: track a package through DHL.
 
 use DDG::Goodie;
 
