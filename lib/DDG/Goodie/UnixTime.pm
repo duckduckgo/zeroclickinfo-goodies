@@ -4,6 +4,7 @@ package DDG::Goodie::UnixTime;
 use DDG::Goodie;
 
 use DateTime;
+use Try::Tiny;
 
 triggers startend => "unixtime", "timestamp", "datetime", "epoch", "unix time", "unix timestamp", "unix time stamp", "unix epoch";
 
@@ -27,21 +28,17 @@ handle remainder => sub {
 
     my $time_input = shift;
     $time_input = time if ($time_input eq '');    # Default to 'now' when empty.
+
     my $time_output;
-    eval {
-        $time_input = int(length($time_input) >= 13 ? ($time_input / 1000) : ($time_input + 0));
-        my $tz = $loc->time_zone || $default_tz;    # Show them local time, if we know.
-        my $dt = DateTime->from_epoch(
-            epoch     => $time_input,
-            time_zone => $tz,
-        );
-        $time_output = $dt->strftime($time_format);
-        if ($tz ne $default_tz) {
-            # They get the default TZ (UTC) regardless.  Either we already did it or we do it now.
-            $dt->set_time_zone($default_tz);
-            $time_output .= ' / ' . $dt->strftime($time_format);
-        }
-    };
+    my $tz = $loc->time_zone || $default_tz;      # Show them local time, otherwise the default.
+    my $dt = try { DateTime->from_epoch(epoch => $time_input, time_zone => $tz,) };
+    return unless $dt;
+    $time_output = $dt->strftime($time_format);
+    if ($tz ne $default_tz) {
+        # They get the default TZ (UTC) regardless.  Either we already did it or we do it now.
+        $dt->set_time_zone($default_tz);
+        $time_output .= ' / ' . $dt->strftime($time_format);
+    }
 
     return unless $time_output;
     return $time_input . ' (Unix time): ' . $time_output;
