@@ -44,15 +44,13 @@ ddg_goodie_test(
         'URL: www.heroku.com/{rawwr!@#$%^&*()+=__}',
         html => qr|www\.heroku\.com/\{rawwr!@#\$%\^&amp;\*\(\)\+=__\}|
     ),
-    'hello there unescapeurl' => test_zci(
-        "URL: hello there",
-        html => qr#hello there#
-    ),
+    'hello there unescapeurl' => undef,
     'urldecode %3Cscript%3Ealert(1)%3C%2Fscript%3E' => test_zci(
         "URL: <script>alert(1)</script>",
         html => qr|&lt;script&gt;alert\(1\)&lt;/script&gt;|
     ),
-       
+    'url decode tool' => undef,
+    'url decode online' => undef
 );
 
 done_testing;

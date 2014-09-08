@@ -27,6 +27,7 @@ sub append_css {
 };
 
 handle remainder => sub {
+    return unless /\+|%[0-9a-fA-F]{2}/;
     my $decoded_url = decodeURIComponent($_);
 
     my $text = "URL: $decoded_url";
