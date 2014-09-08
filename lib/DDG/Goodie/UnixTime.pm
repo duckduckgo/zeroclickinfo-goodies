@@ -37,7 +37,7 @@ handle remainder => sub {
         );
         $time_output = $dt->strftime($time_format);
         if ($tz ne $default_tz) {
-            # We'll show them both, then.
+            # They get the default TZ (UTC) regardless.  Either we already did it or we do it now.
             $dt->set_time_zone($default_tz);
             $time_output .= ' / ' . $dt->strftime($time_format);
         }
