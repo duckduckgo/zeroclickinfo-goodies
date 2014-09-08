@@ -18,7 +18,7 @@ zci answer_type => 'UltimateAnswer';
 
 handle remainder => sub {
     return unless ($_ eq '' || $_ eq '?');
-    return 'Forty-two', html => '<span style="font-size: 1.5em; font-weight: 400;">Forty-two</span>';
+    return 'Forty-two', html => '<span class="zci--ultanswer">Forty-two</span>';
 
 };
 
