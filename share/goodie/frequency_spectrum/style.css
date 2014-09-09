@@ -16,6 +16,10 @@
     height: 50;
 }
 
+.zci--plot {
+  margin-top: 1em;
+}
+
 .zci--conversions .plot_background {
     fill: #FFFFFF;
     stroke: #D1D1D1;

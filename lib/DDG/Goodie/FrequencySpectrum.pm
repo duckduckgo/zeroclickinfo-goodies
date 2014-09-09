@@ -312,7 +312,7 @@ sub generate_plot {
     $plot->{height} = $plot->{panelHeight} + $plot->{bottomGutter} + $plot->{topGutter};
 
     #Initialise SVG
-    $plot->{svg} = SVG->new(height => $plot->{height}, class => 'zci-plot');
+    $plot->{svg} = SVG->new(height => $plot->{height}, class => 'zci--plot');
 
     #If the difference betweeen the range
     # minimum and maximum is two orders of
