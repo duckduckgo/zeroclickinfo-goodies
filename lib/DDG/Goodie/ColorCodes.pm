@@ -89,7 +89,7 @@ handle matches => sub {
 
     $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
 
-    if ($color =~ /^[0-9a-f]{3,6}$/) {      # Color looks like a hex code
+    if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {    # Color looks like a hex code, strip the leading #
         $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3); # Make three char hex into six chars by repeating each in turn
         $type = 'rgb8';
     } else {
