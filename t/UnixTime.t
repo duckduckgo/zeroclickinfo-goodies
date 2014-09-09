@@ -18,10 +18,13 @@ ddg_goodie_test([qw(
     'unix time 0000000000000' => test_zci($zero_re),
     'epoch 0'                 => test_zci($zero_re),
     'epoch 2147483647'        => test_zci(qr/2147483647 \(Unix time\):.+Tue Jan 19 03:14:07 2038 UTC/),
-    'epoch'                   => test_zci($now_re),
-    'timestamp'               => test_zci($now_re),
+    'timestamp 2147483647'    => test_zci(qr/2147483647 \(Unix time\):.+Tue Jan 19 03:14:07 2038 UTC/),
     'datetime'                => test_zci($now_re),
+    'unix time'               => test_zci($now_re),
+    'unix epoch'              => test_zci($now_re),
+    'timestamp'               => undef,
     'time'                    => undef,
+    'epoch'                   => undef,
 );
 
 done_testing;

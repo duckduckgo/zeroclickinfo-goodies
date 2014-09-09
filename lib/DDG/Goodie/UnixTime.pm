@@ -6,7 +6,7 @@ use DDG::Goodie;
 use DateTime;
 use Try::Tiny;
 
-triggers startend => "unixtime", "timestamp", "datetime", "epoch", "unix time", "unix timestamp", "unix time stamp", "unix epoch";
+triggers query => qr/^(?:(?:unixtime|datetime|unix time|unix timestamp|unix time stamp|unix epoch)( \d+)?|(?:timestamp|epoch) (\d+))$/;
 
 zci answer_type => "time_conversion";
 zci is_cached   => 0;
@@ -23,14 +23,14 @@ topics 'sysadmin';
 my $default_tz  = 'UTC';
 my $time_format = '%a %b %d %T %Y %Z';
 
-handle remainder => sub {
-    return unless defined $_;
+handle matches => sub {
 
-    my $time_input = shift;
-    $time_input = time if ($time_input eq '');    # Default to 'now' when empty.
+    my @matches = grep { defined $_ } @_;
+    my $time_input = $matches[0] // time;    # If there was nothing in there, we must want now.
+    $time_input = 0 + $time_input;           # Force to number.
 
     my $time_output;
-    my $tz = $loc->time_zone || $default_tz;      # Show them local time, otherwise the default.
+    my $tz = $loc->time_zone || $default_tz;    # Show them local time, otherwise the default.
     my $dt = try { DateTime->from_epoch(epoch => $time_input, time_zone => $tz,) };
     return unless $dt;
     $time_output = $dt->strftime($time_format);
