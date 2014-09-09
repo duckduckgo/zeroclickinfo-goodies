@@ -111,17 +111,20 @@ handle matches => sub {
     my $rgb = $col->as_rgb8;
     my $hsl = $col->as_hsl;
 
-    # Create the output!
-    my $text = sprintf(
-        "Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)",
+    my @color_template_data = (
         '#' . $rgb->hex,
         $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb),
         round($hsl->hue), percentify($hsl->saturation, $hsl->lightness, $col->as_cmyk->cmyk));
+
+    # Create the output!
+    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", @color_template_data);
+    my $html_text = sprintf("Hex: %s &middot; rgb(%d, %d, %d) &middot; rgb(%s, %s, %s) <br> hsl(%d, %s, %s) &middot; cmyb(%s, %s, %s, %s) &middot;",
+        @color_template_data);
     return $text,
         html => '<div style="background:#'
       . $rgb->hex
       . ';border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>'
-      . $text
+      . $html_text
       . " [<a href='http://labs.tineye.com/multicolr#colors="
       . $rgb->hex
       . ";weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/"
