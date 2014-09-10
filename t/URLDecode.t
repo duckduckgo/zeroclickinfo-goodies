@@ -40,6 +40,10 @@ ddg_goodie_test(
         qq`URL: https://example.org/the answer to "[life], (the universe) .and. <everything>"`,
         html => qr#https://example\.org/the answer to &quot;\[life\], \(the universe\) \.and\. &lt;everything&gt;&quot;#
     ),
+    'https%3A%2F%2Fexample.org%2Fthe%20answer%20to%20%22%5Blife%5D%2C%20(the%20universe)%20.and.%20%3Ceverything%3E%22' => test_zci(
+        qq`URL: https://example.org/the answer to "[life], (the universe) .and. <everything>"`,
+        html => qr#https://example\.org/the answer to &quot;\[life\], \(the universe\) \.and\. &lt;everything&gt;&quot;#
+    ),
     'www.heroku.com%2F%7Brawwr!%40%23%24%25%5E%26*()%2B%3D__%7D unescapeurl' => test_zci(
         'URL: www.heroku.com/{rawwr!@#$%^&*()+=__}',
         html => qr|www\.heroku\.com/\{rawwr!@#\$%\^&amp;\*\(\)\+=__\}|
