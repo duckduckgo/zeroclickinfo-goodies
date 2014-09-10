@@ -1,24 +1,24 @@
 package DDG::Goodie::URLDecode;
-# ABSTRACT: Displays the decoded URL for a percent coded uri
+# ABSTRACT: Displays the decoded URL for a percent encoded uri
 
 use DDG::Goodie;
 use URI::Escape::XS qw(decodeURIComponent);
 use warnings;
 use strict;
 
-triggers startend   =>      'url decode', 'decode url', 'urldecode', 'decodeurl', 'url unescape', 'unescape url', 'urlunescape', 'unescapeurl';
+my $trigger_words = qr#urlunescape|unescapeurl|(unescape url)|decodeurl|(decode url)|urldecode|(url decode)|(url unescape)#;
 
-primary_example_queries     'url decode https%3A%2F%2Fduckduckgo.com%2F' , 'decode url xkcd.com%2Fblag';
-secondary_example_queries   'http%3A%2F%2Farstechnica.com%2F url unescape', 'linux.com%2Ftour%2F unescape url';
+triggers query => qr#%[0-9A-F]{2}#i;
+primary_example_queries 'url decode https%3A%2F%2Fduckduckgo.com%2F', 'decode url xkcd.com%2Fblag';
+secondary_example_queries 'http%3A%2F%2Farstechnica.com%2F url unescape', 'linux.com%2Ftour%2F unescape url';
 
-zci answer_type =>          'decoded_url';
+zci answer_type => 'decoded_url';
 
-name                        'URLDecode';
-description                 'Displays the uri from a percent encoded url';
-code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/URLDecode.pm';
-category                    'computing_tools';
-topics                      'programming', 'web_design';
-
+name 'URLDecode';
+description 'Displays the uri from a percent encoded url';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/URLDecode.pm';
+category 'computing_tools';
+topics 'programming', 'web_design';
 
 my $css = share("style.css")->slurp();
 sub append_css {
@@ -26,8 +26,11 @@ sub append_css {
     return "<style type='text/css'>$css</style>\n" . $html;
 };
 
-handle remainder => sub {
-    return unless /\+|%[0-9a-fA-F]{2}/;
+handle query => sub {
+    #remove triggers and trim
+    s/(^$trigger_words)|($trigger_words$)//;
+    s/(^\s+)|(\s+$)//;
+    
     my $decoded_url = decodeURIComponent($_);
 
     my $text = "URL: $decoded_url";

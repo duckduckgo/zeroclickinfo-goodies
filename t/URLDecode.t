@@ -49,6 +49,11 @@ ddg_goodie_test(
         "URL: <script>alert(1)</script>",
         html => qr|&lt;script&gt;alert\(1\)&lt;/script&gt;|
     ),
+    'https%3A%2F%2Fduckduckgo.com%2F' => test_zci(
+        "URL: https://duckduckgo.com/",
+        html => qr#https://duckduckgo\.com/#
+    ),
+    '38% of 100 GBP' => undef,
     'url decode tool' => undef,
     'url decode online' => undef
 );
