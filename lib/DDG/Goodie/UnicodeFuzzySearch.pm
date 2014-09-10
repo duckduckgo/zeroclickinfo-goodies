@@ -72,6 +72,8 @@ sub _make_a_result {
     my $decimal_code = hex $obj->{code};
     my $symbol = $obj->{symbol};
 
+    # If the code is a emoji icon, we'll serve it as a image instead
+    # because it's rendered properly on Chrome.
     if( EMOJI_LOWER_BOUND <= $decimal_code && $decimal_code <= EMOJI_UPPER_BOUND  ) {
         ( my $image_name = lc $obj->{name} ) =~ s/\s/_/g;
         ( my $image_path = EMOJI_IMAGE_PATH ) =~ s/<PATH>/$image_name/;
