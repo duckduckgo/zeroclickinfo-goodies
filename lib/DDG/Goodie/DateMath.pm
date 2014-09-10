@@ -47,7 +47,7 @@ handle query_lc => sub {
     $years = $number if $unit eq "year";
     $months = $number if $unit eq "month";
     $days = $number if $unit eq "day";
-    $days = 7*$number if $unit eq "weeks";
+    $days = 7*$number if $unit eq "week";
     
     my $dur = DateTime::Duration->new(
         years  => $years,
