@@ -52,7 +52,7 @@ ddg_goodie_test([qw(
     'red html code' => test_zci(
         'Hex: #ff0000 ~ rgb(255, 0, 0) ~ rgb(100%, 0%, 0%) ~ hsl(0, 100%, 50%) ~ cmyb(0%, 100%, 100%, 0%)',
         html =>
-          qq(<div class="zci--color-codes"><div class="colorbox" style="background:#ff0000"></div>Hex: #ff0000 &middot; rgb(255, 0, 0) &middot; rgb(100%, 0%, 0%) <br> hsl(0, 100%, 50%) &middot; cmyb(0%, 100%, 100%, 0%) &middot; [<a href='http://labs.tineye.com/multicolr#colors=ff0000;weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/ff0000' title='Tints, information and similar colors on color-hex.com'>Info</a>]</div>),
+          qq(<div class="zci--color-codes"><div class="colorcodesbox" style="background:#ff0000"></div>Hex: #ff0000 &middot; rgb(255, 0, 0) &middot; rgb(100%, 0%, 0%) <br> hsl(0, 100%, 50%) &middot; cmyb(0%, 100%, 100%, 0%) &middot; [<a href='http://labs.tineye.com/multicolr#colors=ff0000;weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/ff0000' title='Tints, information and similar colors on color-hex.com'>Info</a>]</div>),
     ),
     # Queries to ignore.
     'bluishblack html' => undef,

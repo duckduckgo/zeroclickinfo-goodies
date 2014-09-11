@@ -121,7 +121,7 @@ handle matches => sub {
     my $html_text = sprintf("Hex: %s &middot; rgb(%d, %d, %d) &middot; rgb(%s, %s, %s) <br> hsl(%d, %s, %s) &middot; cmyb(%s, %s, %s, %s) &middot;",
         @color_template_data);
     return $text,
-        html => '<div class="zci--color-codes"><div class="colorbox" style="background:#'
+        html => '<div class="zci--color-codes"><div class="colorcodesbox" style="background:#'
       . $rgb->hex
       . '"></div>'
       . $html_text

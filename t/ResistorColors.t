@@ -81,8 +81,8 @@ ddg_goodie_test(
 
     # Check the HTML. Just once.
     "4.7k ohm" => test_zci(
-        "4.7K\x{2126} (ohms) resistor colors: yellow (4), purple (7), red (\x{00D7}100), gold (\x{00B1}5%)", 
-        html => "<div class='zci--resistor-colors'><span class='resistor'>4.7K&#x2126; (ohms) resistor colors:</span> <span class='colors' style='background-color:#ffff00;color:#000;'>yellow (4)</span> <span class='colors' style='background-color:#ee82ee;color:#000;'>purple (7)</span> <span class='colors' style='background-color:#ff0000;color:#fff;'>red (&times;100)</span> <span class='colors' style='background-color:#cfb53b;color:#000;'>gold (&plusmn;5%)</span><br/><a href='http://resisto.rs/#4.7K' class='link'>More at resisto.rs</a></div>"
+        "4.7K\x{2126} (ohms) resistor colors: yellow (4), purple (7), red (\x{00D7}100), gold (\x{00B1}5%)",
+        html => "<div class='zci--resistor-colors'><span class='resistor'>4.7K&#x2126; (ohms) resistor colors:</span> <span class='resistorcolors' style='background-color:#ffff00;color:#000;'>yellow (4)</span> <span class='resistorcolors' style='background-color:#ee82ee;color:#000;'>purple (7)</span> <span class='resistorcolors' style='background-color:#ff0000;color:#fff;'>red (&times;100)</span> <span class='resistorcolors' style='background-color:#cfb53b;color:#000;'>gold (&plusmn;5%)</span><br/><a href='http://resisto.rs/#4.7K' class='resistorlink'>More at resisto.rs</a></div>"
     ),
 );
 

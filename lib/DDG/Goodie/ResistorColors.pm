@@ -161,14 +161,14 @@ sub render {
             if ($index != scalar(@$digits - 1)) {
                 $text .= ','; # Comma delimit all but last
             }
-            $html .= " <span class='colors' style='$style'>$name ($html_prefix$display_digit)</span>";
+            $html .= " <span class='resistorcolors' style='$style'>$name ($html_prefix$display_digit)</span>";
         } else {
             return;
         }
         $index++;
     }
     $html .= "<br/>"
-        . "<a href='http://resisto.rs/#$formatted_value' class='link'>"
+        . "<a href='http://resisto.rs/#$formatted_value' class='resistorlink'>"
         . "More at resisto.rs</a></div>";
 
     return $text, html => $html;
