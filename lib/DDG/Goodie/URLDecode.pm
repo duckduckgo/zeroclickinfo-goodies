@@ -20,12 +20,6 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'programming', 'web_design';
 
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-};
-
 handle query_raw => sub {
     #remove triggers and trim
     s/(^$trigger_words)|($trigger_words$)//i;
@@ -36,7 +30,7 @@ handle query_raw => sub {
     my $text = "URL: $decoded_url";
     my $html = '<div class="zci--urldecode"><span class="text--secondary">URL: </span><span class="text--primary">'.html_enc($decoded_url).'</span></div>';
 
-    return $text, html => append_css($html);
+    return $text, html => $html;
 };
 
 1;
