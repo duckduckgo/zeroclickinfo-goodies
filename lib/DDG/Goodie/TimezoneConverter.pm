@@ -90,7 +90,7 @@ sub to_time {
         $pm = ' A.M.';
         if ($hours > 12) {
             $pm = ' P.M.';
-            $hours -= 12;
+            $hours -= 12 if (int($hours) > 12);
         }
     }
     sprintf "%i:%02.0f$seconds_format$pm", $hours, $minutes, $seconds;
@@ -119,6 +119,8 @@ handle query => sub {
           (?<american>(?:A|(?<pm>P))\.?M\.?)?
         # Spaces between tokens
         \s* \b
+        # Optional "from" indicator for input timezone
+        (?:\s+FROM\s+)?
         # Optional input timezone
         (?<from_tz>$timezone_re)
         # Spaces
@@ -134,7 +136,7 @@ handle query => sub {
 
     my ($hours, $minutes, $seconds) = map { $_ // 0 } ($+{'h'}, $+{'m'}, $+{'s'});
     my $american        = $+{'american'};
-    my $pm              = $+{'pm'} ? 12 : 0;
+    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : 0;
     my $input_timezone  = $+{'from_tz'} || 'UTC';
     my $output_timezone = $+{'to_tz'};
 

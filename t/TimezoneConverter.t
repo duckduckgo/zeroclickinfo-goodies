@@ -44,6 +44,10 @@ ddg_goodie_test(
         test_zci('19:00 (UTC) is 14:00 (EST, UTC-5).'),
     '1am UTC to PST' => 
         test_zci('1:00 A.M. (UTC) is 5:00 P.M., 1 day prior (PST, UTC-8).'),
+    '12:40pm PST into JST' =>
+        test_zci('12:40 P.M. (PST, UTC-8) is 5:40 A.M., 1 day after (JST, UTC+9).'),
+    '12:40 pm from PST to JST' =>
+        test_zci('12:40 P.M. (PST, UTC-8) is 5:40 A.M., 1 day after (JST, UTC+9).'),
 );
 
 done_testing;
