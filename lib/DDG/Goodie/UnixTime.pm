@@ -4,6 +4,7 @@ package DDG::Goodie::UnixTime;
 use DDG::Goodie;
 
 use DateTime;
+use List::MoreUtils qw( uniq );
 use Try::Tiny;
 
 triggers query => qr/^(?:(?:unixtime|datetime|unix time|unix timestamp|unix time stamp|unix epoch)( \d+)?|(?:timestamp|epoch) (\d+))$/;
@@ -22,26 +23,30 @@ topics 'sysadmin';
 
 my $default_tz  = 'UTC';
 my $time_format = '%a %b %d %T %Y %Z';
+my $header_format = "Time (%s)";
 
 handle matches => sub {
 
     my @matches = grep { defined $_ } @_;
     my $time_input = $matches[0] // time;    # If there was nothing in there, we must want now.
     $time_input = 0 + $time_input;           # Force to number.
+    my @headers = ('Unix Epoch');
+    my @data = ($time_input);
 
     my $time_output;
-    my $tz = $loc->time_zone || $default_tz;    # Show them local time, otherwise the default.
-    my $dt = try { DateTime->from_epoch(epoch => $time_input, time_zone => $tz,) };
+    my $dt = try { DateTime->from_epoch(epoch => $time_input) };
     return unless $dt;
-    $time_output = $dt->strftime($time_format);
-    if ($tz ne $default_tz) {
-        # They get the default TZ (UTC) regardless.  Either we already did it or we do it now.
-        $dt->set_time_zone($default_tz);
-        $time_output .= ' / ' . $dt->strftime($time_format);
+    foreach my $tz (uniq grep { $_ } ($loc->time_zone, $default_tz)) {
+        $dt->set_time_zone($tz);
+        push @headers, sprintf($header_format, $tz);
+        push @data, $dt->strftime($time_format);
     }
-
-    return unless $time_output;
-    return $time_input . ' (Unix time): ' . $time_output;
+    return unless @data;
+    my $html_table = '<table class="unixtime">';
+    $html_table .= '<tr><th>' . join('</th><th>', @headers) . '</th></tr>';
+    $html_table .= '<tr><td>' . join('</td><td>', @data) . '</td></tr>';
+    $html_table .= '</table>';
+    return $time_input . ' (Unix epoch): ' . join(' / ', @data), html => $html_table;
 };
 
 1;
