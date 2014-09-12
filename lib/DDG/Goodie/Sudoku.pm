@@ -21,13 +21,6 @@ attribution github => ['https://github.com/DrDub', 'DrDub'],
 	web => ['http://duboue.net/', 'Pablo Duboue'],
 	github => ['https://github.com/mintsoft', 'Rob Emery'];
 
-sub apply_css($)
-{
-	my ($html_content) = @_;
-	my $stylesheet = scalar share("style.css")->slurp;
-	return "<style type='text/css'>$stylesheet</style>\n".$html_content;
-}
-
 sub parse_to_html_table(@)
 {
 	my @sudoku_lines = @_;
@@ -68,7 +61,7 @@ handle remainder => sub {
 	my @sudoku_lines = split(/\n/, $str_output);
 	my $html_table = parse_to_html_table(@sudoku_lines);
 	
-	return $str_output, html => apply_css($html_table);
+	return $str_output, html => $html_table;
 };
 
 1;

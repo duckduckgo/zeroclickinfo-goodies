@@ -21,7 +21,6 @@ zci answer_type => 'figlet';
 zci is_cached => 1;
 
 my $width = 800;
-my $css = share("style.css")->slurp;
 
 # Fetch available fonts.
 opendir DIR, share();
@@ -32,12 +31,6 @@ closedir DIR;
 sub render_figlet {
 	my ($font, $text) = @_;
 	return Text::FIGlet->new(-f=>$font, -d=>share())->figify(-w=>$width, -A=>$text);
-}
-
-# Apply CSS.
-sub apply_css {
-	my ($html) = @_;
-	return "<style type='text/css'>$css</style>\n" . $html;
 }
 
 handle query => sub {
@@ -70,7 +63,7 @@ handle query => sub {
 
 	$html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font</span><pre contenteditable='true'>$figlet</pre></div>";
 
-	return $figlet, html => apply_css($html) if $figlet;
+	return $figlet, html => $html if $figlet;
 	return;
 };
 

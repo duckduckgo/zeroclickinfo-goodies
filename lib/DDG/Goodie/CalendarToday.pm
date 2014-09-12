@@ -24,9 +24,6 @@ triggers startend => 'calendar', 'cal';
 
 # define variables
 my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
-  
-# read in css-file only once
-my $css = share("style.css")->slurp;
 
 my $datestring_regex  = datestring_regex();
 my $formatted_datestring_regex = formatted_datestring_regex();
@@ -107,12 +104,7 @@ sub format_result {
     $rText .= "\n";
     $rHtml .="</tr></table>";
 
-    return $rText, html => append_css($rHtml);
-}
-
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
+    return $rText, html => $rHtml;
 }
 
 1;

@@ -1,0 +1,8 @@
+.zci--answer .zci--dice-die {
+    font-size: 2em;
+}
+
+.zci--answer .zci--dice-sum {
+    font-size: 2em;
+    white-space: nowrap;
+}

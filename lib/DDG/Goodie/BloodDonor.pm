@@ -28,13 +28,6 @@ my %typeMap = (
     'B' => 'B,O',
 );
 
-sub apply_css($)
-{
-    my ($html) = @_;
-    my $css = scalar share('style.css')->slurp;
-    return "<style type='text/css'>$css</style>\n$html";
-}
-
 sub table_data {
     my ($label, $value) = @_;
     return "<tr><td class='text--secondary'>$label</td><td class='text--primary'>$value</td></tr>";
@@ -76,7 +69,7 @@ handle remainder => sub {
         }
         
         $html .= '</table>';
-        return $output, html => apply_css($html), heading => "Donors for blood type ".uc($_);
+        return $output, html => $html, heading => "Donors for blood type ".uc($_);
     }
     return;
 };

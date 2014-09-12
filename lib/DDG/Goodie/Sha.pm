@@ -45,7 +45,7 @@ handle query => sub {
 		    $str = $command2 eq 'base64' ? Digest::SHA::sha1_base64($str) : Digest::SHA::sha1_hex($str);
 		}
 
-		return $str, heading => "SHA-$command1 hash", html => "<div style='word-wrap: break-word'>$str</div>";
+		return $str, heading => "SHA-$command1 hash", html => "<div class='zci--sha'>$str</div>";
 	}
 
 	return;
