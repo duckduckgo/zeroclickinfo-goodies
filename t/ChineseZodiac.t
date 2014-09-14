@@ -54,23 +54,25 @@ ddg_goodie_test(
 
   #Test for correct date ranges
   # Taken from http://www.chinesezodiac.com/calculator.php
-  'chinese zodiac animal for 1925' => test_zci('Ox', html => qr/Jan\s24,\s1925.Feb\s12,\s1926/),
-  'chinese zodiac animal for 1937' => test_zci('Ox', html => qr/Feb\s11,\s1937.Jan\s30,\s1938/),
-  'chinese zodiac animal for 1953' => test_zci('Snake', html => qr/Feb\s14,\s1953.Feb\s2,\s1954/),
-  'chinese zodiac animal for 1973' => test_zci('Ox', html => qr/Feb\s3,\s1973.Jan\s22,\s1974/),
-  'chinese zodiac animal for 1997' => test_zci('Ox', html => qr/Feb\s7,\s1997.Jan\s27,\s1998/),
-  'chinese zodiac animal for 2013' => test_zci('Snake', html => qr/Feb\s10,\s2013.Jan\s30,\s2014/),
-  'chinese zodiac animal for 2017' => test_zci('Rooster', html => qr/Jan\s28,\s2017.Feb\s15,\s2018/),
-  'chinese zodiac animal for 2041' => test_zci('Rooster', html => qr/Feb\s1,\s2041.Jan\s21,\s2042/),
+  'chinese zodiac animal for 1925' => test_zci('Ox', html => qr/24\sJan\s1925.12\sFeb\s1926/),
+  'chinese zodiac animal for 1937' => test_zci('Ox', html => qr/11\sFeb\s1937.30\sJan\s1938/),
+  'chinese zodiac animal for 1953' => test_zci('Snake', html => qr/14\sFeb\s1953.02\sFeb\s1954/),
+  'chinese zodiac animal for 1973' => test_zci('Ox', html => qr/03\sFeb\s1973.22\sJan\s1974/),
+  'chinese zodiac animal for 1997' => test_zci('Ox', html => qr/07\sFeb\s1997.27\sJan\s1998/),
+  'chinese zodiac animal for 2013' => test_zci('Snake', html => qr/10\sFeb\s2013.30\sJan\s2014/),
+  'chinese zodiac animal for 2017' => test_zci('Rooster', html => qr/28\sJan\s2017.15\sFeb\s2018/),
+  'chinese zodiac animal for 2041' => test_zci('Rooster', html => qr/01\sFeb\s2041.21\sJan\s2042/),
+
+  #Handled by the date role.
+  'chinese zodiac 20 march 1997' => test_zci('Ox', html => qr/07\sFeb\s1997.27\sJan\s1998/),
+  'chinese zodiac 1997-03-20' => test_zci('Ox', html => qr/07\sFeb\s1997.27\sJan\s1998/),
+  'what was the chinese zodiac animal on the 3rd of april 1945' => test_zci('Rooster', html => qr/13\sFeb\s1945.01\sFeb\s1946/),
 
   #Should not trigger
   'wikipedia chinese zodiac' => undef,
   'what is my zodiac sign' => undef,
   'what is the chinese word for duck' => undef,
   'buy an inflatable zodiac chinese online store' => undef,
-  'chinese zodiac 20 march 1997' => undef,
-  'chinese zodiac 1997-03-20' => undef,
-  'what was the chinese zodiac animal on the 3rd of april 1945' => undef,
 
   #No support currently for years outside 1900--2069
   'chinese zodiac 1899' => undef,
