@@ -10,6 +10,9 @@ use warnings;
 #Import the Date::Horoscope Module
 use Date::Horoscope;
 
+#Import the Date::Manip Module
+use Date::Manip qw(ParseDate);
+
 zci answer_type => "zodiac";
 
 triggers startend => "zodiac","zodiac sign","starsign","star sign";
@@ -21,13 +24,19 @@ description "Find the Zodiac Sign for the Respective Date given as Input based o
 name "zodiac";
 category "special";
 topics "science";
-attribution email => 'nomady@zoho.com'
+attribution email => 'nomady@zoho.com',
             github => ['https://github.com/n0mady','NOMADY'];
 
 handle remainder => sub {
 
                     #User Entered Date/Query
                     my $query=$_;
+
+                    #Check if the User Provided Date is Valid
+                    my $datevalid=&ParseDate($query);
+
+                    #return if the given date is invalid
+                    if(not $datevalid){return};
 
                     my $zodiacdate=Date::Horoscope::locate($query);
 
