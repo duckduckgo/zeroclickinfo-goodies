@@ -80,29 +80,9 @@ ddg_goodie_test(
     "ohm ma darling" => undef,
 
     # Check the HTML. Just once.
-    "1.5m ohm" => test_zci("1.5M\x{2126} (ohms) resistor colors: brown (1), green (5), green (\x{00D7}100K), gold (\x{00B1}5%)", html =>
-          "<span style='margin-right:4px;'>1.5M&#x2126; (ohms) resistor colors:</span> "
-          . "<span style='display:inline-block;background-color:#964b00;"
-          . "color:#fff;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;"
-          . "-webkit-border-radius:4px;-moz-border-radius:4px;'>brown (1)</span> "
-          . "<span style='display:inline-block;background-color:#9acd32;"
-          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;"
-          . "-webkit-border-radius:4px;-moz-border-radius:4px;'>green (5)</span> "
-          . "<span style='display:inline-block;background-color:#9acd32;"
-          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;"
-          . "-webkit-border-radius:4px;-moz-border-radius:4px;'>green (&times;100K)</span> "
-          . "<span style='display:inline-block;background-color:#cfb53b;"
-          . "color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;"
-          . "-webkit-border-radius:4px;-moz-border-radius:4px;'>gold (&plusmn;5%)</span>"
-          . "<br/><a href='http://resisto.rs/#1.5M' style='font-size:92.8%'>More at resisto.rs</a>"),
-
     "4.7k ohm" => test_zci(
-        "4.7K\x{2126} (ohms) resistor colors: yellow (4), purple (7), red (\x{00D7}100), gold (\x{00B1}5%)", 
-        html => "<span style='margin-right:4px;'>4.7K&#x2126; (ohms) resistor colors:</span> <span style='display:inline-block;background-color:#ffff00;color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;'>yellow (4)</span> <span style='display:inline-block;background-color:#ee82ee;color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;'>purple (7)</span> <span style='display:inline-block;background-color:#ff0000;color:#fff;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;'>red (&times;100)</span> <span style='display:inline-block;background-color:#cfb53b;color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;'>gold (&plusmn;5%)</span><br/><a href='http://resisto.rs/#4.7K' style='font-size:92.8%'>More at resisto.rs</a>"
-    ),
-    "1\x{2126}" => test_zci(
-        "1\x{2126} (ohm) resistor colors: brown (1), black (0), gold (\x{00D7}0.1), gold (\x{00B1}5%)", 
-        html => "<span style='margin-right:4px;'>1&#x2126; (ohm) resistor colors:</span> <span style='display:inline-block;background-color:#964b00;color:#fff;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;'>brown (1)</span> <span style='display:inline-block;background-color:#000000;color:#fff;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;'>black (0)</span> <span style='display:inline-block;background-color:#cfb53b;color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;'>gold (&times;0.1)</span> <span style='display:inline-block;background-color:#cfb53b;color:#000;border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;'>gold (&plusmn;5%)</span><br/><a href='http://resisto.rs/#1' style='font-size:92.8%'>More at resisto.rs</a>"
+        "4.7K\x{2126} (ohms) resistor colors: yellow (4), purple (7), red (\x{00D7}100), gold (\x{00B1}5%)",
+        html => "<div class='zci--resistor-colors'><span class='resistor'>4.7K&#x2126; (ohms) resistor colors:</span> <span class='resistorcolors' style='background-color:#ffff00;color:#000;'>yellow (4)</span> <span class='resistorcolors' style='background-color:#ee82ee;color:#000;'>purple (7)</span> <span class='resistorcolors' style='background-color:#ff0000;color:#fff;'>red (&times;100)</span> <span class='resistorcolors' style='background-color:#cfb53b;color:#000;'>gold (&plusmn;5%)</span><br/><a href='http://resisto.rs/#4.7K' class='resistorlink'>More at resisto.rs</a></div>"
     ),
 );
 

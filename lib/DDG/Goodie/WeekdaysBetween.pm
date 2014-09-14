@@ -18,24 +18,21 @@ code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies
 attribution                 github => ['http://github.com/syst3mw0rm'],
                             email => ['syst3m.w0rm@gmail.com'];
 
-my $css = share('style.css')->slurp;
-
-# Wrap the response in html so that it can be styled with css
+# Wrap the response in html
 sub html_output {
     my ($weekday_count, $start_end_dates) = @_;
-    return "<style type='text/css'>$css</style>"
-          ."<div class='zci--weekdaysbetween'>"
+    return "<div class='zci--weekdaysbetween'>"
           ."<span class='text--primary'>$weekday_count</span><br/>"
           ."<span class='text--secondary'>$start_end_dates</span>"
           ."</div>";
 }
 
 
-my $date_regex = date_regex();
+my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
-    return unless $_ =~ qr/^($date_regex) (?:(?:and|to) )?($date_regex)/i;
-    my ($start, $end) = (parse_string_to_date($1), parse_string_to_date($2));
+    return unless $_ =~ qr/^($datestring_regex) (?:(?:and|to) )?($datestring_regex)/i;
+    my ($start, $end) = (parse_datestring_to_date($1), parse_datestring_to_date($2));
     return unless ($start && $end);
     
     # Flip if the dates are the wrong way around

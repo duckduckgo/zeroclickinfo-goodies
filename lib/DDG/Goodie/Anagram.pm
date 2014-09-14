@@ -22,13 +22,10 @@ attribution github => ["https://github.com/loganom", 'loganom'],
             github => ['https://github.com/gdrooid', 'gdrooid'],
             email  => ['gdrooid@openmailbox.org', 'gdrooid'];
 
-my $css = share('style.css')->slurp;
-
-# Wrap the response in html so that it can be styled with css
+# Wrap the response in html
 sub html_output {
     my ($str, $list) = @_;
-    return "<style type='text/css'>$css</style>"
-          ."<div class='zci--anagrams'>"
+    return "<div class='zci--anagrams'>"
           ."<span class='text--secondary'>$str</span><br/>"
           ."<span class='text--primary'>$list</span>"
           ."</div>";

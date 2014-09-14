@@ -57,19 +57,11 @@ my %plural_exceptions = (
     'pounds force'           => 'pounds force',
 );
 
-# This function adds some HTML and styling to our output
-# so that we can make it prettier.
-my $css = share("style.css")->slurp;
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>$html";
-}
-
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
     my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . html_enc($result->{'from_unit'}) . "</span>";
     my $to = $styler->with_html($result->{'result'}) . " <span class='text--secondary'>" . html_enc($result->{'to_unit'}) . "</span>";
-    return append_css("<div class='zci--conversions text--primary'>$from = $to</div>");
+    return "<div class='zci--conversions text--primary'>$from = $to</div>";
 }
 
 handle query_lc => sub {

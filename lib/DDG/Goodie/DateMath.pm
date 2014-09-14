@@ -20,14 +20,14 @@ category 'time_sensitive';
 topics 'everyday';
 attribution github => ['http://github.com/cj01101', 'cj01101'];
 
-my $date_regex = date_regex();
+my $datestring_regex = datestring_regex();
 
 handle query_lc => sub {
     my $query = $_;
-    return unless $query =~ qr!^($date_regex)\s+(plus|\+|\-|minus)\s+(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)$!;
+    return unless $query =~ qr!^($datestring_regex)\s+(plus|\+|\-|minus)\s+(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)$!;
     my ($input_date, $input_action, $input_number, $unit) = ($1, $2, $3, $4);
 
-    $input_date = parse_string_to_date($input_date);
+    $input_date = parse_datestring_to_date($input_date);
     $input_number = str2nbr($input_number);
 
     # check/tweak other (non-date) input
@@ -47,7 +47,7 @@ handle query_lc => sub {
     $years = $number if $unit eq "year";
     $months = $number if $unit eq "month";
     $days = $number if $unit eq "day";
-    $days = 7*$number if $unit eq "weeks";
+    $days = 7*$number if $unit eq "week";
     
     my $dur = DateTime::Duration->new(
         years  => $years,

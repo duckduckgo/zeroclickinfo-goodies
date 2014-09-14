@@ -20,9 +20,6 @@ attribution github => ['http://github.com/wilkox', 'wilkox'];
 
 triggers any => "convert", "dms", "decimal", "latitude", "longitude", "minutes", "seconds";
 
-#Load the CSS
-my $css = share("style.css")->slurp;
-
 #Regexes for latitude/longitude, in either dms or decimal format
 # http://msdn.microsoft.com/en-us/library/aa578799.aspx has a good
 # overview of the most common representations of latitude/longitude
@@ -260,14 +257,6 @@ sub format_decimal {
 
 }
 
-#CSS and HTML wrapper functions, copied from the
-# Conversions Goodie to use the latest and greatest technology
-# as implemented in PR #511
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>$html";
-}
-
 sub wrap_secondary {
     my $secondary = shift;
     return "<span class='text--secondary'>" . $secondary . "</span>";
@@ -283,7 +272,7 @@ sub wrap_html {
     my $results = join wrap_secondary(', '), html_enc(@results);
 
     my $html = "<div class='zci--conversions text--primary'>" . $queries . wrap_secondary(' in ' . $toFormat . ': ') . $results . "</div>";
-    return append_css($html);
+    return $html;
 }
 
 1;

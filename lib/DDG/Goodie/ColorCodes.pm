@@ -8,6 +8,7 @@ use Convert::Color;
 use Convert::Color::Library;
 use Convert::Color::RGB8;
 use Math::Round;
+use Try::Tiny;
 
 my %types = ( # hash of keyword => Convert::Color prefix
         rgb     => 'rgb8',
@@ -62,70 +63,73 @@ sub percentify {
     return @out;
 }
 
+my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
+my %trigger_filler = map { $_ => 1 } (qw( code ));
+
 handle matches => sub {
-    my $type;
+
     my $color;
     my $inverse;
 
-    for (@_) {
-        next unless defined $_;
-        my $q = lc;
-        $type = $types{$q} if exists $types{$q};
-       
-        if ($q =~ /\b(?:inverse|negative|opposite|code)\b/) {
-            $inverse = 1;
-        } 
-        
-        else {
-            $color = $q unless defined $type && exists $types{$q};
+    my $type    = 'rgb8';    # Default type, can be overridden below.
+    my @matches = @_;
+
+    foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
+        # $q now contains the defined normalized matches which can be:
+        if (exists $types{$q}) {
+            $type = $types{$q};    # - One of our types.
+        } elsif ($trigger_invert{$q}) {
+            $inverse = 1;          # - An inversion trigger
+        } elsif (!$trigger_filler{$q}) {    # - A filler word for more natural querying
+            $color = $q;                    # - A presumed color
         }
     }
-    $type //= 'rgb8';
 
-    my @colorin = split /(?:,\s*|\s+)/, $color;
-    my @colorout;
+    return unless $color;                   # Need a color to continue!
 
-    for (@colorin) {
-        # handle percents
-        if (/(\d+(?:\.\d+)?)%$/) {
-            my $num = $1;
-            $num =~ s/\.//;
-            my $len = length($num);
-            return unless $len > 0 && $len <= 3;
-            push @colorout, "0.0$num" if $len == 1;
-            push @colorout, "0.$num" if $len == 2;
-            push @colorout, "$num" if $len == 3;
-            $type = 'rgb' if $type eq 'rgb8';
-        }
-        else { push @colorout, $_; }
-    }
-    $color = join ',', @colorout;
+    $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
 
-    if ($color =~ /^([0-9a-f]{3,6})$/) {
-        if(length($color) == 3) { 
-            $color = '';
-            $color .= $_.$_ for split '', $1;
-        }
+    if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {    # Color looks like a hex code, strip the leading #
+        $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3); # Make three char hex into six chars by repeating each in turn
         $type = 'rgb8';
+    } else {
+        try {
+            # See if we can find the color in one of our dictionaries.
+            $color = join(',', Convert::Color::Library->new($color_dictionaries . '/' . $color)->as_rgb8->hex);
+            $type = 'rgb8';    # We asked for rgb8 from our dictionary, so make sure our type matches.
+        };
     }
 
-    return unless $type && $color;
+    my $col = try { Convert::Color->new("$type:$color") };    # Everything should be ready for conversion now.
+    return unless $col;                                       # Guess not.
 
-    eval { $color = join(',',Convert::Color::Library->new($color_dictionaries.'/'.$color)->as_rgb8->hex); $type = 'rgb8'; };
-
-    my $col;
-    eval { $col = Convert::Color->new("$type:$color"); };
-    return if $@;
-
-    if ($inverse) {
-        my $rgb = $col->as_rgb8;
-        $col = Convert::Color::RGB8->new(255 - $rgb->red, 255 - $rgb->green, 255 - $rgb->blue);
+    if ($inverse) {                                           # We triggered on the inverse, so do the flip.
+        my $orig_rgb = $col->as_rgb8;
+        $col = Convert::Color::RGB8->new(255 - $orig_rgb->red, 255 - $orig_rgb->green, 255 - $orig_rgb->blue);
     }
 
     my $rgb = $col->as_rgb8;
     my $hsl = $col->as_hsl;
-    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", '#'.$rgb->hex, $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb), round($hsl->hue), percentify($hsl->saturation, $hsl->lightness, $col->as_cmyk->cmyk));
-    return $text, html => '<div style="background:#'.$rgb->hex.';border:2px solid #999;height:30px;width:30px;margin:5px;margin-right:10px;margin-top:3px;float:left;"></div>'.$text." [<a href='http://labs.tineye.com/multicolr#colors=".$rgb->hex.";weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/".$rgb->hex."' title='Tints, information and similar colors on color-hex.com'>Info</a>]";
+
+    my @color_template_data = (
+        '#' . $rgb->hex,
+        $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb),
+        round($hsl->hue), percentify($hsl->saturation, $hsl->lightness, $col->as_cmyk->cmyk));
+
+    # Create the output!
+    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", @color_template_data);
+    my $html_text = sprintf("Hex: %s &middot; rgb(%d, %d, %d) &middot; rgb(%s, %s, %s) <br> hsl(%d, %s, %s) &middot; cmyb(%s, %s, %s, %s) &middot;",
+        @color_template_data);
+    return $text,
+        html => '<div class="zci--color-codes"><div class="colorcodesbox" style="background:#'
+      . $rgb->hex
+      . '"></div>'
+      . $html_text
+      . " [<a href='http://labs.tineye.com/multicolr#colors="
+      . $rgb->hex
+      . ";weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/"
+      . $rgb->hex
+      . "' title='Tints, information and similar colors on color-hex.com'>Info</a>]</div>";
 };
 
 1;
