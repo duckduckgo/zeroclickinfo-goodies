@@ -20,8 +20,8 @@ primary_example_queries "zodiac 21st June";
 secondary_example_queries "31 Dec starsign","1st Jan 1981 star sign","zodiac sign 1 Nov";
 description	"Find the Zodiac Sign for the Respective Date given as Input based on Tropical Zodiac(2011) Source : https://en.wikipedia.org/wiki/Zodiac";
 name "zodiac";
-category "special";
-topics "science";
+category "dates";
+topics "special_interest";
 attribution email  => 'nomady@zoho.com',
             github => ['https://github.com/n0mady','NOMADY'];
 
@@ -36,7 +36,7 @@ handle remainder => sub {
     return unless $zodiacdate;
 
     #Return the Star Sign
-    return "Star Sign : " . ucfirst(zodiac_date_name($zodiacdate));
+    return "Star Sign for ".date_output_string($zodiacdate).": ".ucfirst(zodiac_date_name($zodiacdate));
 };
 
 1;
