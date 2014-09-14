@@ -84,7 +84,7 @@ handle remainder => sub {
   my $english = $animal_to_language{$animal}{'en'};
   my $character = $animal_to_language{$animal}{'zh'};
 
-  my $statement = 'Chinese zodiac animal for ' . date_output_string($year_start) . "\x{2013}" . date_output_string($year_end);
+  my $statement = 'Chinese zodiac animal for ' . date_output_string($year_start) . "–" . date_output_string($year_end);
 
   return answer => $english, html => wrap_html($character, $english, $statement);
 };
