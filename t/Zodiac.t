@@ -40,22 +40,22 @@ ddg_goodie_test([qw(
     'Zodiac 23rd Aug 1700' => test_zci('Star Sign for 23 Aug 1700: Leo'),
 
     #Test Virgo
-    'StarSign 1 Sep' => test_zci('Star Sign for 1 Sep 2014: Virgo'),
+    'StarSign 1 Sep' => test_zci('Star Sign for 01 Sep 2014: Virgo'),
 
     #Test Libra
     '23rd Sep star sign'       => test_zci('Star Sign for 23 Sep 2014: Libra'),
     'Zodiac 24 September 2001' => test_zci('Star Sign for 24 Sep 2001: Libra'),
-    'StarSign 7th October'     => test_zci('Star Sign for 7 Oct 2014: Libra'),
+    'StarSign 7th October'     => test_zci('Star Sign for 07 Oct 2014: Libra'),
 
     #Test Scorpius
     '23 oct star sign'       => test_zci('Star Sign for 23 Oct 2014: Scorpius'),
     'Zodiac 24 October 1213' => test_zci('Star Sign for 24 Oct 1213: Scorpius'),
-    'StarSign 9th November'  => test_zci('Star Sign for 9 Nov 2014: Scorpius'),
+    'StarSign 9th November'  => test_zci('Star Sign for 09 Nov 2014: Scorpius'),
 
     #Test Sagittarius
     '22 nov star sign'   => test_zci('Star Sign for 22 Nov 2014: Sagittarius'),
     'Zodiac 23 Nov 1857' => test_zci('Star Sign for 23 Nov 1857: Sagittarius'),
-    'StarSign 6 Dec'     => test_zci('Star Sign for 6 Dec 2014: Sagittarius'),
+    'StarSign 6 Dec'     => test_zci('Star Sign for 06 Dec 2014: Sagittarius'),
     '21 Dec star sign'   => test_zci('Star Sign for 21 Dec 2014: Sagittarius'),
 
     #Test Capricornus
@@ -63,17 +63,17 @@ ddg_goodie_test([qw(
     'StarSign 23 Dec 1378' => test_zci('Star Sign for 23 Dec 1378: Capricornus'),
     'starsign 31 Dec 2009' => test_zci('Star Sign for 31 Dec 2009: Capricornus'),
     '31.12.2100 zodiac'    => test_zci('Star Sign for 31 Dec 2100: Capricornus'),
-    '1 Jan zodiac'         => test_zci('Star Sign for 1 Jan 2014: Capricornus'),
+    '1 Jan zodiac'         => test_zci('Star Sign for 01 Jan 2014: Capricornus'),
 
     #Test Aquarius
     '20 Jan star sign' => test_zci('Star Sign for 20 Jan 2014: Aquarius'),
     'Zodiac 21st Jan'  => test_zci('Star Sign for 21 Jan 2014: Aquarius'),
-    'StarSign 1st Feb' => test_zci('Star Sign for 1 Feb 2014: Aquarius'),
+    'StarSign 1st Feb' => test_zci('Star Sign for 01 Feb 2014: Aquarius'),
 
     #Test Pisces
     '19 Feb star sign'     => test_zci('Star Sign for 19 Feb 2014: Pisces'),
     'Zodiac 20th Feb 1967' => test_zci('Star Sign for 20 Feb 1967: Pisces'),
-    'StarSign 1st Mar'     => test_zci('Star Sign for 1 Mar 2014: Pisces'),
+    'StarSign 1st Mar'     => test_zci('Star Sign for 01 Mar 2014: Pisces'),
     '20 Mar star sign'     => test_zci('Star Sign for 20 Mar 2014: Pisces'),
 
     #Test Invalid Inputs
