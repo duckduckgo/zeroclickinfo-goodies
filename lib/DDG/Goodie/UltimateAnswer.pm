@@ -2,10 +2,10 @@ package DDG::Goodie::UltimateAnswer;
 # ABSTRACT: A Hitchhiker's Guide to the Galaxy easter egg.                                                                                                                                                            
                                                                                                                                                                                                             
 use DDG::Goodie;                                                                                                                                                                                            
-                                                                                                                                                                                                            
-triggers start => 'what is the ultimate answer', 'what is the ultimate answer to life the universe and everything';                                                                                                                                                            
-primary_example_queries 'what is the ultimate answer to the life universe and everything';                                                                                                
-                                                                                                                                                                                                            
+triggers start => 'what is the ultimate answer', 'what is the ultimate answer to life the universe and everything', 'what is the answer to the ultimate question of life the universe and everything';                                                                                                                                                            
+primary_example_queries 'what is the answer to the ultimate question of life the universe and everything';                   
+
+                                                                                                           
 name 'Ultimate Answer';                                                                                                                                                                                     
 description 'Hichhiker\'s Guide to the Galaxy reference.';                                                                                                                                                  
 category 'special';                                                                                                                                                                                         
@@ -21,5 +21,4 @@ handle remainder => sub {
     return 'Forty-two', html => '<span style="font-size: 1.5em; font-weight: 400;">Forty-two</span>';    
 
 };                                                                                                                                                                                                          
-                                                                                                                                                                                                            
 1;            
