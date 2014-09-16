@@ -5,6 +5,9 @@ package DDG::Goodie::<: $ia_name :>;
 
 use DDG::Goodie;
 
+zci answer_type => "<: $lia_name :>";
+zci is_cached   => 1;
+
 #Attribution
 primary_example_queries "first example query", "second example query";
 secondary_example_queries "optional -- demonstrate any additional triggers";
