@@ -103,11 +103,13 @@ Working with multiple files
 :bprev or :bp                       go to the previous buffer
 :bd                                 delete a buffer (close a file)
 :sp filename                        open a file in a new buffer and split window
-:vsp filename                       open a file in a new buffer and vertically split window 
+:vsp filename                       open a file in a new buffer and vertically split window
 Ctrl+ws                             split window
 Ctrl+ww                             switch windows
 Ctrl+wq                             quit a window
 Ctrl+wv                             split window vertically
+Ctrl+wh                             move cursor to next buffer (right)
+Ctrl+wl                             move cursor to previous buffer (left)
 
 Tabs
 
