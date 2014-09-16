@@ -15,7 +15,7 @@ ddg_goodie_test(
     
     'what is the answer to the ultimate question of life the universe and everything'=>
         test_zci(
-            'Forty-two', html => '<span style="font-size: 1.5em; font-weight: 400;">Forty-two</span>'
+            'Forty-two', html => '<span class="zci--ultanswer">Forty-two</span>'
         ),
     'what is the answer to my homework question' => undef,
     'why?' => undef,

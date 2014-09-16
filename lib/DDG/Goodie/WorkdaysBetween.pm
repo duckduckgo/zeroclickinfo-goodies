@@ -22,16 +22,17 @@ category 'calculations';
 topics 'everyday';
 attribution github => ['http://github.com/mgarriott', 'mgarriott'];
 
-my $date_regex = date_regex();
+my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
     my $query = $_;
-    return unless $query =~ qr/($date_regex) (?:(?:and|to) )?($date_regex)/i;
-    
-    my ($start_date, $end_date) = parse_all_strings_to_date($1, $2);
-    return unless ($start_date && $end_date);
 
-    ($start_date, $end_date) = ($end_date, $start_date) if ( DateTime->compare($start_date, $end_date) == 1 );
+    return unless ($query =~ qr/($datestring_regex) (?:(?:and|to) )?($datestring_regex)/i);
+    my ($start_date, $end_date) = parse_all_datestrings_to_date($1, $2);
+
+    return unless ($start_date && $end_date);
+    
+    ($start_date, $end_date) = ($end_date, $start_date) if (DateTime->compare($start_date, $end_date) == 1);
 
     my $calendar = Date::Calendar->new($Profiles->{US});
     my $workdays = $calendar->delta_workdays($start_date->year(), $start_date->month(), $start_date->day(), $end_date->year(), $end_date->month(), $end_date->day(), 1, 1);

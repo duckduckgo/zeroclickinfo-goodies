@@ -23,12 +23,6 @@ topics      'programming';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-};
-
 handle remainder => sub {
     return unless $_;
     my $upper = uc $_;
@@ -39,11 +33,8 @@ handle remainder => sub {
     $upper = html_enc($upper);
     
     my $html = qq(<div class="zci--uppercase"><span class="text--primary">$upper</span></div>);
-    $html = append_css($html);
 
     return $text, html => $html;
-
-    return;
 };
 
 1;

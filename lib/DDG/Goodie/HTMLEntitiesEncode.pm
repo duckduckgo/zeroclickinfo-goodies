@@ -207,12 +207,6 @@ my %accented_chars = (
     'Uacute' => [['U-acute','Uacute']],
 );
 
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-};
-
 sub make_text {
     # Returns a text string of the form: "Encoded HTML Entity: <<entity>>"
     my $text = "";
@@ -294,7 +288,6 @@ handle remainder => sub {
         if (defined $value) {
             my $text = make_text($value);
             my $html = make_html($value);
-            $html = append_css($html);
             return $text, html => $html;
         }
     }
@@ -316,7 +309,6 @@ handle remainder => sub {
         my $answer = [[$_, $entity]];
         my $text = make_text($answer);
         my $html = make_html($answer);
-        $html = append_css($html);
         return $text, html => $html;
     }
 

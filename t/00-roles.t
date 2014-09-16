@@ -58,12 +58,18 @@ subtest 'Dates' => sub {
 
     { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
 
-    my $test_regex;
+    my $test_datestring_regex;
+    my $test_formatted_datestring_regex;
+    my $test_descriptive_datestring_regex;
 
     subtest 'Initialization' => sub {
         new_ok('RoleTester', [], 'Applied to a class');
-        $test_regex = RoleTester::date_regex();
-        isa_ok($test_regex, 'Regexp', 'date_regex()');
+        $test_datestring_regex = RoleTester::datestring_regex();
+        isa_ok($test_datestring_regex, 'Regexp', 'datestring_regex()');
+        $test_formatted_datestring_regex = RoleTester::formatted_datestring_regex();
+        isa_ok($test_formatted_datestring_regex, 'Regexp', 'formatted_datestring_regex()');
+        $test_descriptive_datestring_regex = RoleTester::descriptive_datestring_regex();
+        isa_ok($test_descriptive_datestring_regex, 'Regexp', 'descriptive_datestring_regex()');
     };
 
     subtest 'Working single dates' => sub {
@@ -80,6 +86,12 @@ subtest 'Dates' => sub {
             'Sat, 09 Aug 2014 18:20:00' => 1407608400,
             # RFC850
             '08-Feb-94 14:15:29 GMT' => 760716929,
+            # date(1) default
+            'Sun Sep  7 15:57:56 EDT 2014' => 1410119876,
+            'Sun Sep 14 15:57:56 UTC 2014' => 1410710276,
+            'Sun Sep 7 20:11:44 BST 2014'  => 1410117104,
+            # RFC 2822
+            'Sat, 13 Mar 2010 11:29:05 -0800' => 1268508545,
             #Undefined/Natural formats:
             '13/12/2011'        => 1323734400,     #DMY
             '01/01/2001'        => 978307200,      #Ambiguous, but valid
@@ -112,13 +124,17 @@ subtest 'Dates' => sub {
         );
 
         foreach my $test_date (sort keys %dates_to_match) {
-            like($test_date, qr/^$test_regex$/, "$test_date matches the date_regex");
+            like($test_date, qr/^$test_datestring_regex$/, "$test_date matches the datestring_regex");
+            like($test_date, qr/^$test_formatted_datestring_regex$/, "$test_date matches the formatted_datestring_regex");
 
             # test_regex should not contain any submatches
-            $test_date =~ qr/^$test_regex$/;
+            $test_date =~ qr/^$test_datestring_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
-            my $date_object = RoleTester::parse_string_to_date($test_date);
+            $test_formatted_datestring_regex =~ qr/^$test_datestring_regex$/;
+            ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
+
+            my $date_object = RoleTester::parse_formatted_datestring_to_date($test_date);
             isa_ok($date_object, 'DateTime', $test_date);
             is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
         }
@@ -169,7 +185,7 @@ subtest 'Dates' => sub {
 
         foreach my $set (@date_sets) {
             my @source = @{$set->{src}};
-            eq_or_diff([map { $_->epoch } (RoleTester::parse_all_strings_to_date(@source))],
+            eq_or_diff([map { $_->epoch } (RoleTester::parse_all_datestrings_to_date(@source))],
                 $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
         }
     };
@@ -188,13 +204,13 @@ subtest 'Dates' => sub {
 
         foreach my $test_string (sort keys %bad_strings_match) {
             if ($bad_strings_match{$test_string}) {
-                like($test_string, qr/^$test_regex$/, "$test_string matches date_regex");
+                like($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string matches formatted_datestring_regex");
             } else {
-                unlike($test_string, qr/^$test_regex$/, "$test_string does not match date_regex");
+                unlike($test_string, qr/^$test_formatted_datestring_regex$/, "$test_string does not match formatted_datestring_regex");
             }
 
             my $result;
-            lives_ok { $result = RoleTester::parse_string_to_date($test_string) } '... and does not kill the parser.';
+            lives_ok { $result = RoleTester::parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
             is($result, undef, '... and returns undef to signal failure.');
         }
     };
@@ -211,7 +227,7 @@ subtest 'Dates' => sub {
 
         foreach my $set (@invalid_date_sets) {
             my @source       = @$set;
-            my @date_results = RoleTester::parse_all_strings_to_date(@source);
+            my @date_results = RoleTester::parse_all_datestrings_to_date(@source);
             is(@date_results, 0, '"' . join(', ', @source) . '": cannot be parsed in combination.');
         }
     };
@@ -264,18 +280,55 @@ subtest 'Dates' => sub {
                 'last jan'      => '01 Jan 2015',
                 'feb 2038'      => '01 Feb 2038',
             },
+            '2000-01-01T00:00:00Z' => {
+                'feb 21st'       => '21 Feb 2000',
+                '11th feb'       => '11 Feb 2000',
+                'march 13'       => '13 Mar 2000',
+                '12 march'       => '12 Mar 2000',
+            }
         );
         foreach my $query_time (sort keys %time_strings) {
             set_fixed_time($query_time);
             my %strings = %{$time_strings{$query_time}};
             foreach my $test_date (sort keys %strings) {
-                my $result = RoleTester::parse_vague_string_to_date($test_date);
+                my $result = RoleTester::parse_descriptive_datestring_to_date($test_date);
                 isa_ok($result, 'DateTime', $test_date);
                 is(RoleTester::date_output_string($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
             }
         }
         restore_time();
     };
+    
+    subtest 'Valid mixture of formatted and descriptive dates' => sub {
+        set_fixed_time('2000-01-01T00:00:00Z');
+        my %mixed_dates_to_test = (
+            '2014-11-27'                => 1417046400,
+            '1994-02-03T14:15:29'       => 760284929,
+            'Sat, 09 Aug 2014 18:20:00' => 1407608400,
+            '08-Feb-94 14:15:29 GMT'    => 760716929,
+            '13/12/2011'                => 1323734400,
+            '01/01/2001'                => 978307200,
+            '29 June 2014'              => 1404000000,
+            '05 Mar 1990'               => 636595200,
+            'June 01 2012'              => 1338508800,
+            'May 05 2011'               => 1304553600,
+            'February 21st'             => 951091200,
+            '11th feb'                  => 950227200,
+            '11 march'                  => 952732800,
+            '11 mar'                    => 952732800,
+            'jun 21'                    => 961545600,
+            'next january'              => 978307200,
+            'december'                  => 975628800,
+        );
+        
+        foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
+            my $parsed_date_object = RoleTester::parse_datestring_to_date($test_mixed_date);
+            isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
+            is($parsed_date_object->epoch, $mixed_dates_to_test{$test_mixed_date}, ' ... represents the correct time.');
+        }
+        
+        restore_time();
+    }
 };
 
 done_testing;

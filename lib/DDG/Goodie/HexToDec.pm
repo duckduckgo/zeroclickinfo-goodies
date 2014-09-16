@@ -19,12 +19,9 @@ attribution cpan   => 'majuscule',
             github => 'nospampleasemam',
             web    => ['https://dylansserver.com', 'Dylan Lloyd'] ;
 
-my $css = share("style.css")->slurp;
-
 sub wrap_html {
     my ($decimal, $octal) = @_;
-    return "<style type='text/css'>$css</style>" .
-           "<div class='zci--hextodec text--primary'>" .
+    return "<div class='zci--hextodec text--primary'>" .
                "<div class='hextodec--decimal'>" .
                    "<span class='text--secondary'>Decimal:</span> $decimal" .
                "</div>" .

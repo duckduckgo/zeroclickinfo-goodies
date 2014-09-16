@@ -20,7 +20,7 @@ zci answer_type => 'valarmorghulis';
 handle remainder => sub {
     if($_ eq '') {
         return 'Valar dohaeris',
-               html => '<span style="font-size: 1.5em; font-weight: 400;">Valar dohaeris</span>';
+               html => '<span class="zci--valarmorg">Valar dohaeris</span>';
     }
     return;
 };

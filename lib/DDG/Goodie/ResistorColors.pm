@@ -129,7 +129,7 @@ sub render {
     my $formatted_value = format_value($value);
     my $ohms = $formatted_value eq '1' ? 'ohm' : 'ohms';
     my $text = "$formatted_value\x{2126} ($ohms) resistor colors:";
-    my $html = "<span style='margin-right:4px;'>"
+    my $html = "<div class='zci--resistor-colors'><span class='resistor'>"
              . "$formatted_value&#x2126; ($ohms) resistor colors:</span>";
 
     #while (my ($index, $digit) = each @$digits) {
@@ -139,9 +139,7 @@ sub render {
             my $name  = $digits_to_colors{$digit}{name};
             my $hex   = $digits_to_colors{$digit}{hex};
             my $label = $digits_to_colors{$digit}{label};
-            my $style = "display:inline-block;background-color:$hex;color:$label;"
-                . "border:1px solid #c8c8c8;margin-top:-1px;padding:0px 5px 3px;"
-                . "border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;";
+            my $style = "background-color:$hex;color:$label;";
             my ($text_prefix, $html_prefix, $display_digit);
             if ($index == scalar(@$digits) - 2) {
                 # multiplier digit
@@ -163,15 +161,15 @@ sub render {
             if ($index != scalar(@$digits - 1)) {
                 $text .= ','; # Comma delimit all but last
             }
-            $html .= " <span style='$style'>$name ($html_prefix$display_digit)</span>";
+            $html .= " <span class='resistorcolors' style='$style'>$name ($html_prefix$display_digit)</span>";
         } else {
             return;
         }
         $index++;
     }
     $html .= "<br/>"
-        . "<a href='http://resisto.rs/#$formatted_value' style='font-size:92.8%'>"
-        . "More at resisto.rs</a>";
+        . "<a href='http://resisto.rs/#$formatted_value' class='resistorlink'>"
+        . "More at resisto.rs</a></div>";
 
     return $text, html => $html;
 };

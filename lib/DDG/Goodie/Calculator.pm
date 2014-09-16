@@ -161,14 +161,10 @@ sub prepare_for_display {
 sub format_html {
     my ($query, $result, $style) = @_;
 
-    state $css = '<style type="text/css">' . share("style.css")->slurp . '</style>';
-
     $query  = $style->with_html($query);
     $result = $style->with_html($result);
 
-    return
-        $css
-      . "<div class='zci--calculator text--primary'>"
+    return "<div class='zci--calculator text--primary'>"
       . spacing($query)
       . "<span class='text--secondary'> = </span><a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();' class='text--primary'>"
       . $result
