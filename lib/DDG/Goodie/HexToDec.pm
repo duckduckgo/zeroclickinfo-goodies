@@ -32,7 +32,7 @@ sub wrap_html {
 }
 
 handle query_raw => sub {
-    m/\b0x([0-9a-fA-F]+)\b/;
+    return unless (m/^0x([0-9a-fA-F]+)$/);
     my $hex = $1;
     my $decimal = Math::BigInt->from_hex($hex);
     my $octal = $decimal->as_oct;
