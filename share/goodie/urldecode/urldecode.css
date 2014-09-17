@@ -5,3 +5,7 @@
     font-size: 1.5em;
     word-wrap: break-word;
 }
+
+.zci--answer .zci--urldecode .url_decoded {
+    white-space: pre-wrap;
+}
