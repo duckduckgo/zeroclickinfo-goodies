@@ -27,8 +27,8 @@ handle query_raw => sub {
     
     my $decoded_url = decodeURIComponent($_);
 
-    my $text = "URL: $decoded_url";
-    my $html = '<div class="zci--urldecode"><span class="text--secondary">URL: </span><span class="text--primary">'.html_enc($decoded_url).'</span></div>';
+    my $text = "URL Decoded: $decoded_url";
+    my $html = '<div class="zci--urldecode"><span class="text--secondary">URL Decoded: </span><span class="text--primary">'.html_enc($decoded_url).'</span></div>';
 
     return $text, html => $html;
 };
