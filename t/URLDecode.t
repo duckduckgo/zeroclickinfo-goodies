@@ -57,6 +57,10 @@ ddg_goodie_test(
         "URL Decoded: https://duckduckgo.com/",
         html => qr#https://duckduckgo\.com/#
     ),
+    '%20' => test_zci(
+        'URL Decoded: Space',
+        html => qr#URL Decoded:.*Space#
+    ),
     '38% of 100 GBP' => undef,
     'url decode tool' => undef,
     'url decode online' => undef

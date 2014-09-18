@@ -25,10 +25,18 @@ handle query_raw => sub {
     s/(^$trigger_words)|($trigger_words$)//i;
     s/(^\s+)|(\s+$)//;
     
-    my $decoded_url = decodeURIComponent($_);
+    my $decoded = decodeURIComponent($_);
 
-    my $text = "URL Decoded: $decoded_url";
-    my $html = '<div class="zci--urldecode"><span class="text--secondary">URL Decoded: </span><span class="text--primary url_decoded">'.html_enc($decoded_url).'</span></div>';
+    if($decoded =~ /^\s+$/)
+    {
+        $decoded =~ s/\r/CReturn/;
+        $decoded =~ s/\n/Newline/;
+        $decoded =~ s/\t/Tab/;
+        $decoded =~ s/\s/Space/;
+    }
+
+    my $text = "URL Decoded: $decoded";
+    my $html = '<div class="zci--urldecode"><span class="text--secondary">URL Decoded: </span><span class="text--primary url_decoded">'.html_enc($decoded).'</span></div>';
 
     return $text, html => $html;
 };
