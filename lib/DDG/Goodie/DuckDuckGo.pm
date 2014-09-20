@@ -15,7 +15,9 @@ topics 'everyday';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC';
 
-triggers startend => "duckduckgo", "ddg", "zeroclickinfo";
+my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duckduckgo', 'ddg', 'duck duck go');
+
+triggers any => @ddg_aliases, "zeroclickinfo";
 
 zci is_cached => 1;
 
@@ -53,9 +55,13 @@ foreach my $keyword (keys %$responses) {
     }
 }
 
+my $skip_words_re = qr/\b(?:of|for|the)\b/;
+
 handle remainder => sub {
-    s/\W+//g;
     my $key = lc;
+
+    $key =~ s/$skip_words_re//g;
+    $key =~ s/\W+//g;
 
     my $response = $responses->{$key};
 
