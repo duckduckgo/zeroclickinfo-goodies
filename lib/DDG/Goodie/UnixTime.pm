@@ -21,8 +21,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'sysadmin';
 
-my $default_tz  = 'UTC';
-my $time_format = '%a %b %d %T %Y %Z';
+my $default_tz    = 'UTC';
+my $time_format   = '%a %b %d %T %Y %Z';
 my $header_format = "Time (%s)";
 
 handle matches => sub {
@@ -30,23 +30,31 @@ handle matches => sub {
     my @matches = grep { defined $_ } @_;
     my $time_input = $matches[0] // time;    # If there was nothing in there, we must want now.
     $time_input = 0 + $time_input;           # Force to number.
-    my @headers = ('Unix Epoch');
-    my @data = ($time_input);
 
-    my $time_output;
     my $dt = try { DateTime->from_epoch(epoch => $time_input) };
     return unless $dt;
+
+    my $time_output;
+    my @table_data = (['Unix Epoch', $time_input]);
+
     foreach my $tz (uniq grep { $_ } ($loc->time_zone, $default_tz)) {
         $dt->set_time_zone($tz);
-        push @headers, sprintf($header_format, $tz);
-        push @data, $dt->strftime($time_format);
+        push @table_data, [sprintf($header_format, $tz), $dt->strftime($time_format)];
     }
-    return unless @data;
-    my $html_table = '<table class="unixtime">';
-    $html_table .= '<tr><th>' . join('</th><th>', @headers) . '</th></tr>';
-    $html_table .= '<tr><td>' . join('</td><td>', @data) . '</td></tr>';
-    $html_table .= '</table>';
-    return $time_input . ' (Unix epoch): ' . join(' / ', @data), html => $html_table;
+
+    my $text = join(' | ', (map { join(' => ', @{$_}) } @table_data));
+    return $text, html => to_html(@table_data);
 };
+
+sub to_html {
+    my $results  = "";
+    my $minwidth = "90px";
+    foreach my $result (@_) {
+        $results .=
+          "<div><span class=\"unixtime__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
+        $minwidth = "180px" if length($result->[0]) > 10;
+    }
+    return $results . "<style> .zci--answer .unixtime__label {display: inline-block; min-width: $minwidth}</style>";
+}
 
 1;

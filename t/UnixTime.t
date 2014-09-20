@@ -8,9 +8,9 @@ use DDG::Test::Goodie;
 zci answer_type => 'time_conversion';
 zci is_cached   => 0;
 
-my @zero  = (qr/0 \(Unix epoch\):.+Thu Jan 01 00:00:00 1970 UTC/,          html => qr/Thu Jan 01 00:00:00 1970 UTC/);
-my @now   = (qr/\d+ \(Unix epoch\):.+UTC/,                                 html => qr/UTC/);
-my @later = (qr/2147483647 \(Unix epoch\):.+Tue Jan 19 03:14:07 2038 UTC/, html => qr/Tue Jan 19 03:14:07 2038 UTC/);
+my @zero  = (qr/Thu Jan 01 00:00:00 1970 UTC/,          html => qr/Thu Jan 01 00:00:00 1970 UTC/);
+my @now   = (qr/Unix Epoch.+UTC/,                                 html => qr/UTC/);
+my @later = (qr/Tue Jan 19 03:14:07 2038 UTC/, html => qr/Tue Jan 19 03:14:07 2038 UTC/);
 
 ddg_goodie_test([qw(
           DDG::Goodie::UnixTime
