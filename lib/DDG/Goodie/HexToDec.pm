@@ -6,7 +6,7 @@ use Math::BigInt;
 
 triggers query_raw => qr/^\s*0x[0-9a-fA-F]+\s*$/;
 
-zci answer_type => 'conversion';
+zci answer_type => 'hex_to_dec';
 zci is_cached   => 1;
 
 primary_example_queries '0x44696f21';
