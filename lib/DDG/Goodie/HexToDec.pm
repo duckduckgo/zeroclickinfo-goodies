@@ -4,7 +4,7 @@ package DDG::Goodie::HexToDec;
 use DDG::Goodie;
 use Math::BigInt;
 
-triggers query_raw => qr/\b0x[0-9a-fA-F]+\b/;
+triggers query_raw => qr/^\s*0x[0-9a-fA-F]+\s*$/;
 
 zci answer_type => 'conversion';
 zci is_cached   => 1;
@@ -32,7 +32,7 @@ sub wrap_html {
 }
 
 handle query_raw => sub {
-    return unless (m/^0x([0-9a-fA-F]+)$/);
+    return unless (m/0x([0-9a-fA-F]+)/);
     my $hex = $1;
     my $decimal = Math::BigInt->from_hex($hex);
     my $octal = $decimal->as_oct;
