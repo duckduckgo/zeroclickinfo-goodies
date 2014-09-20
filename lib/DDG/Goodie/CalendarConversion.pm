@@ -59,38 +59,35 @@ handle query_lc => sub {
     return unless $in_date;
     my ($d, $m, $y) = ($in_date->day, $in_date->month, $in_date->year);
 
-    return unless ($d < 32 and $m < 12);
-
     $input_calendar //= 'gregorian';    # gregorian is the default
     return if ($input_calendar eq $output_calendar);
 
-    my $input_date = "$d/$m/$y";
-    my $converted_date;
+    my ($od, $om, $oy);
 
-    if ($input_calendar eq "hijri" and $output_calendar eq "gregorian") {
-        my ($gd, $gm, $gy) = h2g($d, $m, $y);
-        $converted_date = "$gd/$gm/$gy";
-    } elsif ($input_calendar eq "gregorian" and $output_calendar eq "hijri") {
-        my ($hd, $hm, $hy) = g2h($d, $m, $y);
-        $converted_date = "$hd/$hm/$hy";
-    } elsif ($input_calendar eq "jalali" and $output_calendar eq "gregorian") {
+    if ($input_calendar eq "hijri") {
+        ($od, $om, $oy) = h2g($d, $m, $y);    # To Gregorian;
+        ($od, $om, $oy) = g2j($od, $om, $oy) if ($output_calendar eq "jalali");
+    } elsif ($input_calendar eq "gregorian") {
+        ($od, $om, $oy) = g2h($d, $m, $y) if ($output_calendar eq "hijri");
+        ($od, $om, $oy) = g2j($d, $m, $y) if ($output_calendar eq "jalali");
+    } elsif ($input_calendar eq "jalali") {
         my $t = new Date::Jalali2($y, $m, $d, 1);
-        $converted_date = $t->jal_day . "/" . $t->jal_month . "/" . $t->jal_year;
-    } elsif ($input_calendar eq "gregorian" and $output_calendar eq "jalali") {
-        my $t = new Date::Jalali2($y, $m, $d, 0);
-        $converted_date = $t->jal_day . "/" . $t->jal_month . "/" . $t->jal_year;
-    } elsif ($input_calendar eq "hijri" and $output_calendar eq "jalali") {
-        my ($gd, $gm, $gy) = h2g($d, $m, $y);
-        my $t = new Date::Jalali2($gy, $gm, $gd, 0);
-        $converted_date = $t->jal_day . "/" . $t->jal_month . "/" . $t->jal_year;
-    } elsif ($input_calendar eq "jalali" and $output_calendar eq "hijri") {
-        my $t = new Date::Jalali2($y, $m, $d, 1);
-        my ($hd, $hm, $hy) = g2h($t->jal_day, $t->jal_month, $t->jal_year);
-        $converted_date = "$hd/$hm/$hy";
+        ($od, $om, $oy) = ($t->jal_day, $t->jal_month, $t->jal_year);
+        ($od, $om, $oy) = g2h($od, $om, $oy) if ($output_calendar eq "hijri");
     }
+    my $date_format    = '%s-%02d-%02d';
+    my $input_date     = sprintf($date_format, $y, $m, $d);
+    my $converted_date = sprintf($date_format, $oy, $om, $od);
 
     return output($input_calendar, $output_calendar, $input_date, $converted_date, 0),
       html => output($input_calendar, $output_calendar, $input_date, $converted_date, 1);
 };
+
+sub g2j {
+    my ($id, $im, $iy) = @_;
+
+    my $t = new Date::Jalali2($iy, $im, $id, 0);
+    return ($t->jal_day, $t->jal_month, $t->jal_year);
+}
 
 1;
