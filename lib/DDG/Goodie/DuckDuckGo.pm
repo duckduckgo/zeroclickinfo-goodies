@@ -15,7 +15,7 @@ topics 'everyday';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC';
 
-my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duckduckgo', 'ddg', 'duck duck go');
+my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
 
 triggers any => @ddg_aliases, "zeroclickinfo";
 
