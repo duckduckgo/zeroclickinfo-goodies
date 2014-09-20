@@ -5,7 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'conversion';
+zci answer_type => 'hex_to_dec';
 zci is_cached   => 1;
 
 ddg_goodie_test(
@@ -19,6 +19,7 @@ ddg_goodie_test(
     '0xffffffffffffffffffffff' => test_zci('ffffffffffffffffffffff base 16 = 309485009821345068724781055 base 10 = 0177777777777777777777777777777 base 8',
         html => "<div class='zci--hextodec text--primary'><div class='hextodec--decimal'><span class='text--secondary'>Decimal:</span> 309485009821345068724781055</div><div><span class='text--secondary'>Octal: </span> 0177777777777777777777777777777</div></div>"),
     '0x44696f2Z' => undef,
+    'ascii 0x74657374' => undef,
 );
 
 done_testing;
