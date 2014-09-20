@@ -90,42 +90,39 @@ sub to_time {
         $pm = ' A.M.';
         if ($hours > 12) {
             $pm = ' P.M.';
-            $hours -= 12;
+            $hours -= 12 if (int($hours) > 12);
         }
     }
     sprintf "%i:%02.0f$seconds_format$pm", $hours, $minutes, $seconds;
 }
 
-handle query => sub {
-    my $timezone = qr/(\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?)?/;
-    my (
-        # Time
-        $hour, $minutes, $seconds, $american, $pm,
+my $timezone_re = qr/(?:\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?)?/;
 
-        # Timezones
-        $input_timezone, $output_timezone,
-        )
-        = uc =~ m{
+handle query => sub {
+    my $query = $_;
+    $query =~ m{
         \A \s*
         # Time
           # Hours
-          ([01]?[0-9] | 2[0-3])
+          (?<h>[01]?[0-9] | 2[0-3])
           (?:
             # Minutes
-            :([0-5] [0-9])
+            :(?<m>[0-5] [0-9])
             (?:
               # Seconds
-              :([0-5] [0-9])
+              :(?<s>[0-5] [0-9])
             )?
           )?
           # Optional spaces between tokens
           \s*
           # AM/PM
-          ((?:A|(P))\.?M\.?)?
+          (?<american>(?:A|(?<pm>P))\.?M\.?)?
         # Spaces between tokens
         \s* \b
+        # Optional "from" indicator for input timezone
+        (?:\s+FROM\s+)?
         # Optional input timezone
-        $timezone
+        (?<from_tz>$timezone_re)
         # Spaces
         \s+
         # in keywords
@@ -133,14 +130,15 @@ handle query => sub {
         # Spaces
         \s+
         # Output timezone
-        $timezone
+        (?<to_tz>$timezone_re)
         \s* \z
-    }x or return;
+    }ix or return;
 
-    $pm = $pm ? 12 : 0;
-    $input_timezone //= 'UTC';
-    $minutes        //= 0;
-    $seconds        //= 0;
+    my ($hours, $minutes, $seconds) = map { $_ // 0 } ($+{'h'}, $+{'m'}, $+{'s'});
+    my $american        = $+{'american'};
+    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : 0;
+    my $input_timezone  = $+{'from_tz'} || 'UTC';
+    my $output_timezone = $+{'to_tz'};
 
     my $modifier = 0;
     for ( $input_timezone, $output_timezone ) {
@@ -161,7 +159,7 @@ handle query => sub {
         s/:00\z//;
     }
 
-    my $input_time  = $hour + $minutes / 60 + $seconds / 3600 + $pm;
+    my $input_time  = $hours + $minutes / 60 + $seconds / 3600 + $pm;
     my $output_time = $input_time + $modifier;
     for ( $input_time, $output_time ) {
         my $days = "";
