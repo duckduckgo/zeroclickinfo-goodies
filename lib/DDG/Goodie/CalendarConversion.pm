@@ -2,6 +2,7 @@ package DDG::Goodie::CalendarConversion;
 # ABSTRACT: convert between various calendars.
 
 use DDG::Goodie;
+with 'DDG::GoodieRole::Dates';
 
 use Date::Hijri;
 use Date::Jalali2;
@@ -26,6 +27,8 @@ my %calendars = (
     'jalali'    => ['Jalali calendar',    '<a href="https://en.wikipedia.org/wiki/Jalali_calendar">Jalali calendar</a>'],
 );
 
+my $datestring_regex = datestring_regex();
+
 # This function returns either the HTML version of the output or the text version.
 sub output {
     my ($calendar_first, $calendar_second, $input_date, $converted_date, $is_html) = @_;
@@ -38,8 +41,8 @@ sub output {
 }
 
 handle query_lc => sub {
-    return unless my ($d, $m, $y, $input_calendar, $output_calendar) = $_ =~ /^
-            (\d{0,2})(?:\/|,)(\d{0,2})(?:\/|,)(\d{3,4})\s+
+    return unless my ($datestring, $input_calendar, $output_calendar) = $_ =~ /^
+            ($datestring_regex)\s+
             (?:
                 (?:(?:in|on(?:\s+the))?)\s*
                 ((?:gregorian|hijri|jalali)?)\s+
@@ -52,6 +55,9 @@ handle query_lc => sub {
             (gregorian|hijri|jalali)\s*
             (?:calendar|date|time|years|months|days)?
         $/x;
+    my $in_date = parse_datestring_to_date($datestring);
+    return unless $in_date;
+    my ($d, $m, $y) = ($in_date->day, $in_date->month, $in_date->year);
 
     return unless ($d < 32 and $m < 12);
 
