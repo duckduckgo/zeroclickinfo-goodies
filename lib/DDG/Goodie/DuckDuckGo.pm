@@ -55,11 +55,12 @@ foreach my $keyword (keys %$responses) {
     }
 }
 
-my $skip_words_re = qr/\b(?:of|for|the)\b/;
+my $skip_words_re = qr/\b(?:what|where|is|of|for|the)\b/;
 
 handle remainder => sub {
     my $key = lc;
 
+    $key =~ s/\?//g;    # Allow for questions, but don't pollute skip words.
     $key =~ s/$skip_words_re//g;
     $key =~ s/\W+//g;
 
