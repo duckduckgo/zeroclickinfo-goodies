@@ -57,7 +57,7 @@ my %formulas = (
 	'volume' => ['volume', 'V'],
 	'area' => ['area|fläche', 'A'],
 	'surface' => ['area|surface|fläche', 'A'],
-	'perimeter' => ['perimeter|umfang', 'u'],
+	'circumference' => ['perimeter|circumference|umfang', 'u'],
 	'diagonal' => ['diagonal', 'e']
 );
 #schema: <name> => [<trigger>, svg, [hash]<formulas>, [sub]<parameter>]
@@ -70,7 +70,7 @@ my %shapes = (
 		'area' => ['a'.chr(178), 'a<sup>2</sup>', sub {
 			return $_[0] ** 2;
 		}],
-		'perimeter' => ['4a', '4a', sub {
+		'circumference' => ['4a', '4a', sub {
 			return 4 * $_[0];
 		}],
 		'diagonal' => ['a'.chr(8730).'2', 'a&radic;2', sub {
@@ -86,7 +86,7 @@ my %shapes = (
 		'area' => ['ab', 'ab', sub {
 			return $_[0] * $_[1];
 		}],
-		'perimeter' => ['2(a+b)', '2(a+b)', sub {
+		'circumference' => ['2(a+b)', '2(a+b)', sub {
 			return 2 * ($_[0] + $_[1]);
 		}],
 		'diagonal' => [chr(8730).'a'.chr(178).'+b'.chr(178), '&radic;a<sup>2</sup>+b<sup>2</sup>', sub {
@@ -104,7 +104,7 @@ my %shapes = (
 		'area' => ['(a'.chr(178).'*'.chr(8730).'3)/4', '(a<sup>2</sup>*&radic;3)/4', sub {
 			return $_[0] / 4 * sqrt(3);
 		}],
-		'perimeter' => ['3a', '3a', sub {
+		'circumference' => ['3a', '3a', sub {
 			return $_[0] * 3;
 		}]
 	}, sub {
@@ -116,7 +116,7 @@ my %shapes = (
 		'area' => [chr(960).'r'.chr(178), '&pi;r<sup>2</sup>', sub {
 			return pi * $_[0] ** 2;
 		}],
-		'perimeter' => ['2'.chr(960).'r', '2&pi;r', sub {
+		'circumference' => ['2'.chr(960).'r', '2&pi;r', sub {
 			return 2 * pi * $_[0];
 		}]
 	}, sub {
