@@ -49,7 +49,7 @@ my $markup = scalar share("markup.html")->slurp;
 
 sub makehtml {
 	my ($html, $svg) = @_;
-	return $markup.$svg.'</svg><div id="zci--geometry-formulas"><div>'.$html.'</div></div>';
+	return $markup.$svg.'</svg><div id="zci--geometry-formulas">'.$html.'</div>';
 }
 
 #schema: <name> => [<trigger>, <symbol>]
@@ -207,17 +207,15 @@ handle remainder => sub {
 						return $text, html => makehtml($html, $shape[0][1]);
 					}
 					#No, append the formula symbol + formula
-					if($text){
-						$text .= ', ';
-						$html .= '</div><div>';
-					}
+					$text .= ', ' if $text;
 					$text .= $formulas{$type}[1].' = '.$formula[0][0];
-					$html .= $formulas{$type}[1].' = '.$formula[0][1];
+					$html .= '<div title="'.$type.'">'.$formulas{$type}[1].' = '.$formula[0][1];
 					# + result if parameters are defined
 					if($parameter[0] != 0){
 						$text .= ' = '.$formula[0][2](@parameter);
 						$html .= ' = '.$formula[0][2](@parameter);
 					}
+					$html .= '</div>';
 					#to $result
 				}
 				#resets the iterators
