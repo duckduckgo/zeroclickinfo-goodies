@@ -7,7 +7,8 @@ use DateTime;
 use List::MoreUtils qw( uniq );
 use Try::Tiny;
 
-triggers query => qr/^(?:(?:unixtime|datetime|unix time|unix timestamp|unix time stamp|unix epoch)( \d+)?|(?:timestamp|epoch) (\d+))$/;
+my @trigger_words = ("unixtime", "datetime", "unix timestamp", "unix time stamp", "unix epoch", "epoch", "timestamp", "unix time");
+triggers startend => @trigger_words;
 
 zci answer_type => "time_conversion";
 zci is_cached   => 0;
@@ -21,15 +22,21 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'sysadmin';
 
-my $default_tz    = 'UTC';
-my $time_format   = '%a %b %d %T %Y %Z';
-my $header_format = "Time (%s)";
+my $default_tz          = 'UTC';
+my $time_format         = '%a %b %d %T %Y %Z';
+my $header_format       = "Time (%s)";
+my %no_default_triggers = map { $_ => 1 } qw(timestamp epoch);
+my $triggers            = join('|', @trigger_words);
+my $extract_qr          = qr/^(?<trigger>$triggers)?\s*(?<epoch>-?\d+)?\s*(?<trigger>$triggers)?$/;
 
-handle matches => sub {
+handle query => sub {
 
-    my @matches = grep { defined $_ } @_;
-    my $time_input = $matches[0] // time;    # If there was nothing in there, we must want now.
-    $time_input = 0 + $time_input;           # Force to number.
+    my $query = shift;
+    $query =~ $extract_qr;
+    my $time_input = $+{'epoch'};
+    # If there was nothing in there, we must want now... unless we're not supposed to default for this trigger.
+    $time_input //= time unless ($no_default_triggers{$+{'trigger'}});
+    return unless defined $time_input;
 
     my $dt = try { DateTime->from_epoch(epoch => $time_input) };
     return unless $dt;
