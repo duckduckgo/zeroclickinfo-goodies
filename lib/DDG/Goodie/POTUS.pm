@@ -4,7 +4,7 @@ package DDG::Goodie::POTUS;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
 use Lingua::EN::Words2Nums;
-use URI::Escape;
+use URI::Escape::XS qw(uri_escape);
 
 triggers startend => 'potus';
 triggers any => 'president of the united states', 'president of the us';
