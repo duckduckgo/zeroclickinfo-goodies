@@ -48,7 +48,7 @@ handle remainder => sub {
 
     my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
 
-    return $response, html => html_output("$weekday_count $weekday_plurality", "between $start_str and $end_str.");
+    return $response, html => html_output("$weekday_count $weekday_plurality", "between $start_str and $end_str."), structured_answer=> { input => [$start_str, $end_str], operation => "$weekday_plurality between", result => $weekday_count};
 };
 
 # It calculates the number of weekdays between two given dates, both inclusive.

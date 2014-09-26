@@ -126,7 +126,7 @@ handle remainder => sub {
     unless ($full_word) {
         $output_str .= " of length $len";
     }
-    return $response, html => html_output($output_str, $response);
+    return $response, html => html_output($output_str, $response), structured_answer => { input => [html_enc($word)], operation => "anagrams of", result => $response};
 };
 
 1;

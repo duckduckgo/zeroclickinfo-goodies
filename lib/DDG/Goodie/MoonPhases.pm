@@ -72,7 +72,7 @@ handle query_lc => sub {
     my $phaseUrl = $phase;
     $phaseUrl =~ s/\s+/+/g;
     
-    return "The current lunar phase is: $phase", html => qq(The current lunar phase is: <a href="?q=$phaseUrl">$phase</a>);
+    return "The current lunar phase is: $phase", html => qq(The current lunar phase is: <a href="?q=$phaseUrl">$phase</a>), structured_answer => { input => [], result => $phase, operation => 'current luanr phase'};
 };
 
 zci is_cached => 0;
