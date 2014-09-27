@@ -15,6 +15,7 @@ attribution github  => ['https://github.com/jfeeneywm/', 'jfeeneywm'],
             twitter => ['https://twitter.com/jfeeneywm', 'jfeeneywm'];
 
 zci answer_type => 'UltimateAnswer';
+zci is_cached   => 1;
 
 handle remainder => sub {
     return unless ($_ eq '' || $_ eq '?');

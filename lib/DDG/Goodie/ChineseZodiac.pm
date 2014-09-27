@@ -7,7 +7,7 @@ use DateTime::Event::Chinese qw(chinese_new_year_before chinese_new_year_after);
 use utf8;
 
 triggers any => 'chinese zodiac', 'shēngxiào', 'shengxiao', 'shēng xiào', 'sheng xiao';
-zci is_cached => 1;
+zci is_cached => 0;
 
 name 'Chinese Zodiac';
 description 'Return the Chinese zodiac animal for a given year';

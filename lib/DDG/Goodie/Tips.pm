@@ -14,6 +14,9 @@ category 'calculations';
 topics 'everyday';
 attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
 
+zci answer_type => 'tip';
+zci is_cached   => 1;
+
 handle query_lc => sub {
     return unless my ($p, $is_tip, $sign,$num) = $_ =~/^(\d{1,3})(?: ?%| percent) (?:(tip (?:on|for|of))|of)(?: an?)? ([\$\-]?)(\d+(\.?)(?(5)\d+))(?: bill)?$/;
     $p /= 100;
@@ -28,14 +31,11 @@ handle query_lc => sub {
     $tot = sprintf "%.2f", $tot if $tot;
 
     if ($tot) {
-	zci answer_type => 'tip';
 	return "Tip: \$$t; Total: \$$tot";
     }
     $t = $sign . $t;
     $tot = $sign . $tot if $tot;
-    zci answer_type => 'percentage';
     return "$t is ".($p*100)." percent of $sign$num";
-	
 };
 
 1;

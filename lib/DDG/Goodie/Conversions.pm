@@ -19,6 +19,7 @@ attribution                github  => ['https://github.com/elohmrow', 'https://g
                            email   => ['bradley@pvnp.us'];
 
 zci answer_type => 'conversions';
+zci is_cached   => 1;
 
 # build the keys:
 # unit types available for conversion

@@ -9,6 +9,7 @@ use warnings;
 use strict;
 
 zci answer_type =>          'html_entity';
+zci is_cached   =>          1;
 triggers any =>             'html', 'entity', 'htmldecode', 'decodehtml', 'htmlentity';
 primary_example_queries     'html decode &#33;', 'html decode &amp';
 secondary_example_queries   'html entity &#x21' , '#36 decode html', 'what is the decoded html entity of &#36;';

@@ -12,6 +12,7 @@ topics 'cryptography';
 attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
 
 zci answer_type => 'rand';
+zci is_cached   => 0;
 
 triggers start => 'rand','random','number';
 

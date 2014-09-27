@@ -6,6 +6,8 @@ use DDG::Goodie;
 use Date::Hijri;
 
 zci answer_type => "conversion";
+zci is_cached   => 0;
+
 primary_example_queries '22/8/2003 to the hijri calendar';
 secondary_example_queries '23/6/1424 to gregorian';
 description 'convert dates from the Gregorian calendar to the Hijri calendar and back';

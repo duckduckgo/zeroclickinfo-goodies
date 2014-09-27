@@ -16,6 +16,7 @@ attribution
     github => [ 'larseng', 'Lars Jansøn Engvik'];
 
 zci answer_type => 'valarmorghulis';
+zci is_cached   => 1;
 
 handle remainder => sub {
     if($_ eq '') {

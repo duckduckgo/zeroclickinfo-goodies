@@ -8,6 +8,7 @@ use DDG::Goodie;
 triggers end => "hz","khz","mhz","ghz","thz","hertz","kilohertz","gigahertz","megahertz","terahertz";
 
 zci answer_type => "frequency_spectrum";
+zci is_cached   => 1;
 
 primary_example_queries '50 hz';
 secondary_example_queries '400 thz';

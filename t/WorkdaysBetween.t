@@ -6,6 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'workdays_between';
+zci is_cached   => 0;
 
 ddg_goodie_test(
     [

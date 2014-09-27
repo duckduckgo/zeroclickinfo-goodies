@@ -7,6 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => "calling_codes";
+zci is_cached   => 1;
 
 my $txt = "is the international calling code for";
 

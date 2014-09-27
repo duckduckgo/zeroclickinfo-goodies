@@ -7,6 +7,7 @@ use warnings;
 use DDG::Goodie;
 
 zci answer_type => "regex_cheat";
+zci is_cached   => 1;
 
 triggers start => 
     'regex cheatsheet', 

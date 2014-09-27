@@ -48,6 +48,7 @@ my @triggers = (
 triggers any => @triggers;
 
 zci answer_type => 'helpline';
+zci is_cached   => 0;
 
 primary_example_queries 'suicide hotline';
 description 'Checks if a query with the word "suicide" was made and returns a 24 hr suicide hotline.';

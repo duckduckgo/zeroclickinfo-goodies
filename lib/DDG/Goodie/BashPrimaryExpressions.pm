@@ -18,6 +18,9 @@ attribution github => [ 'http://github.com/mintsoft', 'mintsoft' ];
 category 'computing_tools';
 topics 'sysadmin';
 
+zci answer_type => 'expression_description';
+zci is_cached   => 1;
+
 our %if_description = (
 	'-a' => "true if ARG2 exists",
 	'-b' => "true if ARG2 exists and is a block-special file",

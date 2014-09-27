@@ -14,6 +14,7 @@ attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
                web => ['http://dylansserver.com/', 'Dylan Lloyd'];
 
 zci answer_type => 'kernel_taint';
+zci is_cached   => 1;
 
 triggers any => 'kernel taint', 'linux taint', 'linux kernel taint', 'taint kernel' , 'taint linux', 'taint linux kernel', '/proc/sys/kernel/tainted', 'proc sys kernel tainted';
 

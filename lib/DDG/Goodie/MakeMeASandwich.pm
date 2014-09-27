@@ -15,6 +15,9 @@ attribution twitter => 'mattr555',
 
 triggers end => 'make me a sandwich';
 
+zci answer_type => 'xkcd_sandwich';
+zci is_cached   => 1;
+
 handle remainder => sub {
     return 'Okay.', 
         html => 'Okay. <br><a href="http://xkcd.com/149/">More at xkcd</a>' if $_ eq 'sudo';

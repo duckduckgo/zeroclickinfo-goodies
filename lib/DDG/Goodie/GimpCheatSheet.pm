@@ -6,6 +6,7 @@ package DDG::Goodie::GimpCheatSheet;
 use DDG::Goodie;
 
 zci answer_type => "gimp_cheat";
+zci is_cached   => 1;
 
 name "GimpCheatSheet";
 description "GIMP shortcut cheat sheet";

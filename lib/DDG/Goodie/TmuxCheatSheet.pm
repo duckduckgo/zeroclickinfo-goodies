@@ -4,6 +4,7 @@ package DDG::Goodie::TmuxCheatSheet;
 use DDG::Goodie;
 
 zci answer_type => 'tmux_cheat';
+zci is_cached   => 1;
 
 name "TmuxCheatSheet";
 source "http://www.openbsd.org/cgi-bin/man.cgi?query=tmux&sektion=1";

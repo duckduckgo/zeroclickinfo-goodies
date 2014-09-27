@@ -4,6 +4,7 @@ package DDG::Goodie::VimCheatSheet;
 use DDG::Goodie;
 
 zci answer_type => "vim_cheat";
+zci is_cached   => 1;
 
 name "VimCheatSheet";
 description "Vim cheat sheet";
