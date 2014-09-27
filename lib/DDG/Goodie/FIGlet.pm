@@ -60,11 +60,28 @@ handle query => sub {
 
 	# Render the FIGlet
 	$figlet = render_figlet($font, $text);
-
-	$html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font</span><pre contenteditable='true'>$figlet</pre></div>";
+    my $font_dropdown = font_dropdown( $font );
+	$html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font_dropdown</span><pre contenteditable='true'>$figlet</pre></div>";
 
 	return $figlet, html => $html if $figlet;
 	return;
 };
+
+sub font_dropdown {
+    my $font_selected = shift;
+
+    my @options;
+    foreach my $font ( @fonts ) {
+        $font =~ m/^\s*(\w+)/;
+        my $selected ='';
+        $selected = 'selected' if $font_selected eq $1;
+
+        my $option = qq( <option value="$1" $selected>$1</option> );
+        push( @options, $option );
+    }
+    my $list = '<select id="figlet-dropdown">'.join( '', @options ).'</select>';
+
+    return  $list;
+}
 
 1;
