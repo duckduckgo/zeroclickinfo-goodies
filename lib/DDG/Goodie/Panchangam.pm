@@ -6,6 +6,7 @@ use DateTime;
 use Date::Indian;
 use Time::ParseDate;
 use utf8;
+use POSIX qw(floor);
 
 triggers startend => [
     'panchangam',
@@ -33,6 +34,9 @@ topics 'special_interest', 'everyday';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Panchangam.pm';
 attribution github => ['http://github.com/kmg', 'kmg'];
 
+# References:
+# https://en.wikipedia.org/wiki/Tithi
+# Light on Life: An Introduction to the Astrology of India, ISBN-10: 0940985691
 my $tithiid = [
     'Shukla Pratipada (Waxing Moon - 1st Day)',
     'Shukla Dvitiya (Waxing Moon - 2nd Day)',
@@ -66,6 +70,9 @@ my $tithiid = [
     'Amavasya (New Moon - 15th Day)'
 ];
 
+# References:
+# https://en.wikipedia.org/wiki/Hindu_calendar#Nak.E1.B9.A3atra
+# Light on Life: An Introduction to the Astrology of India, ISBN-10: 0940985691
 my $nkid = [
     'Ashvini (Horse-owner)',
     'Bharani (Bearer)',
@@ -96,6 +103,9 @@ my $nkid = [
     'Revati (Rich)'
 ];
 
+# References
+# https://en.wikipedia.org/wiki/Hindu_calendar#Yoga
+# Light on Life: An Introduction to the Astrology of India, ISBN-10: 0940985691
 my $yogaid = [
     'Vishkambha (Supported)',
     'Priti (Fondness)',
@@ -126,6 +136,8 @@ my $yogaid = [
     'Vaidhriti (Poor Support)'
 ];
 
+# References:
+# https://en.wikipedia.org/wiki/Hindu_calendar#Kara.E1.B9.87a
 my $karanaid = [ qw(
     Bava Balava Kaulava Taitila Gara Vanija
     Vishti/Bhadra Shakuni Chatushpada Naga Kinstughna
@@ -134,23 +146,32 @@ my $karanaid = [ qw(
 # all calculations - hms, get_tithi, get_nakshatra, get_yoga, get_karana, get_varjya etc
 # inspired from https://metacpan.org/source/SYAMAL/Date-Indian-0.01/demo/example.pl
 
-# Return hh:mm form string for the number.
+# input is time of day as floating point number like 16.9605137704264
+# output is hh:mm AM/PM like 04:58 PM
 sub hms {
-    my ($arg) = @_;
+    my ($time_f) = @_;
+
     my $sign = '';
-    $sign = '-' if $arg < 0;
-    $arg *= -1 if $arg < 0;
-    my $h = int($arg);
-    my $m = int(($arg - $h)*60.0);
-    my $s = int($arg*3600.0)%60;
+    $sign = '-' if $time_f < 0;
+    $time_f *= -1 if $time_f < 0;
+    my $h = floor($time_f);
+    my $m = floor(($time_f - $h)*60.0);
+    my $s = floor($time_f * 3600.0)%60;
+
     $m += 1 if $s >= 30;
     if ($m == 60){
-    $m = 0;
-    $h += 1;
+        $m = 0;
+        $h += 1;
     }
-    $h = '0'.$h if $h < 10;
-    $m = '0'.$m if $m < 10;
-    return $sign.$h . ':' . $m;
+
+    $h = $h%24;
+    my $period = 'AM';
+    if ($h > 11) {
+        $h = $h%12;
+        $period = 'PM';
+    }
+
+    return sprintf("%s%02d:%02d %s", $sign, $h, $m, $period);
 }
 
 # Get tithi's with ending for a particular day
@@ -160,7 +181,7 @@ sub get_tithi {
     my %th = $d->tithi_endings();
     my @tithi_arr;
     for my $t (sort keys %th) {
-    push @tithi_arr, $tithiid->[$t] . " ends at " . hms($th{$t});
+        push @tithi_arr, $tithiid->[$t] . " ends at " . hms($th{$t});
     }
     my $tithi = join ', ', @tithi_arr;
     return $tithi;
@@ -173,9 +194,9 @@ sub get_nakshatra {
     my %nk = $d->nakshyatra_endings();
     my @nakshatra_arr;
     for my $t (sort keys %nk) {
-    if ($nk{$t} > 0 && $nk{$t} <= 24.0) {
-     push @nakshatra_arr, $nkid->[$t] . " ends at " . hms($nk{$t});
-    }
+        if ($nk{$t} > 0 && $nk{$t} <= 24.0) {
+            push @nakshatra_arr, $nkid->[$t] . " ends at " . hms($nk{$t});
+        }
     }
     my $nakshatra = join ', ', @nakshatra_arr;
     return $nakshatra;
@@ -188,7 +209,7 @@ sub get_yoga {
     my %ye = $d->yoga_endings();
     my @yoga_arr;
     for my $y (sort keys %ye){
-    push @yoga_arr, $yogaid->[$y] . " ends at " . hms($ye{$y});
+        push @yoga_arr, $yogaid->[$y] . " ends at " . hms($ye{$y});
     }
     my $yoga = join ', ', @yoga_arr;
     return $yoga;
@@ -201,11 +222,11 @@ sub get_karana {
     my %ke = $d->karana_endings();
     my @karana_arr;
     for my $t (sort keys %ke){
-    my $k;
-    $k = 10 if $t == 0;
-    $k = $t - 50 if $t >= 57;
-    $k = ($t-1) % 7 if ($t >0) & ($t <57);
-    push @karana_arr, $karanaid->[$k] . " ends at " . hms($ke{$t});
+        my $k;
+        $k = 10 if $t == 0;
+        $k = $t - 50 if $t >= 57;
+        $k = ($t-1) % 7 if ($t >0) & ($t <57);
+        push @karana_arr, $karanaid->[$k] . " ends at " . hms($ke{$t});
     }
     my $karana = join ', ', @karana_arr;
     return $karana;
@@ -218,42 +239,41 @@ sub get_varjya {
     my @vj = $d->varjyam();
     my @vj_arr;
     foreach my $vs ( @vj ){
-    push @vj_arr, hms($vs) . " to " . hms($vs+1.6);
+        push @vj_arr, hms($vs) . " to " . hms($vs+1.6);
     }
     my $varjyam = join ', ', @vj_arr;
     return $varjyam;
 }
 
 handle remainder => sub {
-    # Figure out requested date using parsedate 
-    # or use today's date based on $loc->time_zone
-    # or use today's date based on UTC
-    my $dt;
-    my $remaining = $_;
-    #$remaining =~ s/^\s+//;
-    #$remaining =~ s/\s+$//;
+
     # strip on, for, in words & empty spaces in front & back to aid parsedate
-    s/^\s+//;
-    s/\s+$//;
+    s/^\s+|\s+$//;
     s/^(?:on|for|in)\s+//;
+
     # parsedate runs on UK mode,ie dates of the dd/mm/yyyy
     # since this instant answer is targeted towards the 
     # Indian demographic who use this format
     # best would be that everyone uses yyyy-mm-dd, but one can wish right :)
-
     # first parse with no relative mode to enable caching exact dates
-    my ($parsedt) = parsedate($_, UK => 1, ZONE => 'UTC', NO_RELATIVE => 1);
     my $cache_exact_date = 0;
+    my ($parsedt) = parsedate($_, UK => 1, ZONE => 'UTC', NO_RELATIVE => 1);
     if ($parsedt) {
         $cache_exact_date = 1;
     } else {
         # now parse once more with relative mode enabled
         $parsedt = parsedate($_, UK => 1, ZONE => 'UTC');
     }
+
     # dont trigger if we cant parse a date and there is some other query
-    if (!$parsedt && $remaining !~ /^\s*$/) {
+    if (!$parsedt && $_ !~ /^\s*$/) {
         return;
     }
+
+    # Figure out requested date using parsedate 
+    # or use today's date based on $loc->time_zone
+    # or use today's date based on UTC
+    my $dt;
     if ($parsedt) {
         $dt = DateTime->from_epoch(epoch => $parsedt, time_zone => 'UTC');
     } elsif ($loc && $loc->time_zone) {
