@@ -2,7 +2,6 @@ package DDG::Goodie::Cusip;
 # ABSTRACT: Validate a CUSIP ID's check digit.
 
 use DDG::Goodie;
-use v5.16.3;
 use POSIX;
 
 # metadata
@@ -58,12 +57,19 @@ handle remainder => sub {
 		# https://en.wikipedia.org/wiki/CUSIP#Check_digit_pseudocode
 		$currentCusipCharValue = 0;
 		for ($currentCusipChar) {
-        	$currentCusipCharValue = ord($currentCusipChar) - ord('0') when /[0-9]/;
-        	$currentCusipCharValue = ord($currentCusipChar) - ord('A') + 10 when /[A-Z]/;
-        	$currentCusipCharValue = 36 when $currentCusipChar eq '*';
-        	$currentCusipCharValue = 37 when $currentCusipChar eq '@';
-			$currentCusipCharValue = 38 when $currentCusipChar eq '#';
-        	default { $currentCusipCharValue = 0; }
+        	if (/[0-9]/) {
+        		$currentCusipCharValue = ord($currentCusipChar) - ord('0');
+        	} elsif (/[A-Z]/) {
+        		$currentCusipCharValue = ord($currentCusipChar) - ord('A') + 10;
+        	} elsif ($currentCusipChar eq '*') {
+        		$currentCusipCharValue = 36;
+        	} elsif ($currentCusipChar eq '@') {
+        		$currentCusipCharValue = 37;
+        	} elsif ($currentCusipChar eq '#') {
+        		$currentCusipCharValue = 38;
+        	} else {
+        		$currentCusipCharValue = 0;
+        	}
       	}
       	
 		# double the CUSIP value for every other character starting with the second
