@@ -1,6 +1,8 @@
 package DDG::Goodie::Hijri;
+# ABSTRACT: convert between Gregorian and Hiriji calendars.
 
 use DDG::Goodie;
+
 use Date::Hijri;
 
 zci answer_type => "conversion";

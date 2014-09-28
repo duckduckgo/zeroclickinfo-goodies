@@ -1,11 +1,12 @@
 package DDG::Goodie::RandomName;
 # ABSTRACT: Return random first and last name
+
 use DDG::Goodie;
+
 use Data::RandomPerson;
 
 triggers start  => 'random';
 zci answer_type => 'rand';
-
 
 name 'RandomName';
 description 'returns a random and fictive title, first- and lastname and day of birth';

@@ -1,0 +1,15 @@
+.zci--answer .zci--resistor-colors .resistor {
+    margin-right: 4px;
+}
+
+.zci--answer .zci--resistor-colors .colors {
+    display: inline-block;
+    border: 1px solid #c8c8c8;
+    margin-top: -1px;
+    padding: 0px 5px 3px;
+    border-radius: 4px;
+}
+
+.zci--answer .zci--resistor-colors .link {
+    font-size: 92.8%;
+}

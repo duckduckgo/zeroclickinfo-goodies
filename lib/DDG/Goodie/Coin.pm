@@ -1,4 +1,5 @@
 package DDG::Goodie::Coin;
+# ABSTRACT: flip a (fair) coin.
 
 use DDG::Goodie;
 
@@ -15,12 +16,6 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 topics 'trivia';
 category 'random';
 attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
-
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-}
 
 handle query_lc => sub {
 	# Ensure rand is seeded for each process
@@ -45,7 +40,7 @@ handle query_lc => sub {
 	}
 
 	my $result = join(', ', @output) .  ' (random)' if @output;
-	return ($result, html => append_css($result)) if @output;
+	return ($result, html => $result) if @output;
 	return;
 };
 

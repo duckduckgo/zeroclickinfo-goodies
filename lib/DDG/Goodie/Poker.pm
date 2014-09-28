@@ -1,5 +1,5 @@
 package DDG::Goodie::Poker;
-#Returns requested statistic for the requested poker hand
+# ABSTRACT: Returns requested statistic for the requested poker hand
 
 use DDG::Goodie;
 

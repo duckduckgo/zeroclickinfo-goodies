@@ -23,12 +23,6 @@ attribution twitter =>      'crazedpsyc',
             web     =>      ['http://nishanths.github.io', 'Nishanth Shanmugham'],
             github  =>      ['https://github.com/nishanths', 'Nishanth Shanmugham'];
 
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-};
-
 handle remainder => sub {
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
     $_ =~ s/(\bwhat\s*is\s*(the)?)//ig; # remove "what is the" (optional: the)
@@ -64,7 +58,7 @@ handle remainder => sub {
 
     # Make answer
     return "Decoded HTML Entity: $decoded, Decimal: $decimal, Hexadecimal: $hex",
-           html => append_css(qq(<div class="zci--htmlentitiesdecode"><div class="large"><span class="text--secondary">Decoded HTML Entity: </span><span class="text--primary">$entity</span></div><div class="small"><span class="text--secondary">Decimal: <span class="text--primary">$decimal</span>, Hexadecimal: <span class="text--primary">$hex</span></div></div></div>));
+           html => qq(<div class="zci--htmlentitiesdecode"><div class="large"><span class="text--secondary">Decoded HTML Entity: </span><span class="text--primary">$entity</span></div><div class="small"><span class="text--secondary">Decimal: <span class="text--primary">$decimal</span>, Hexadecimal: <span class="text--primary">$hex</span></div></div></div>);
 };
 
 1;

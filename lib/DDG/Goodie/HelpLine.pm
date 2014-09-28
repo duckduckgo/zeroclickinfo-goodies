@@ -1,4 +1,5 @@
 package DDG::Goodie::HelpLine;
+# ABSTRACT: Provide localized suicide intervention phone numbers.
 
 use DDG::Goodie;
 

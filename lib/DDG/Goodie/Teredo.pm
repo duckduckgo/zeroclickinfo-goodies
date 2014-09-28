@@ -19,12 +19,6 @@ attribution github => ['https://github.com/seanheaton','seanheaton'],
 	twitter => ['http://twitter.com/seanograph','@seanograph'],
 	email => ['mailto:seanoftime@gmail.com','seanoftime@gmail.com'];
 
-my $css = share('style.css')->slurp;
-sub append_css {
-	my $html = shift;
-	return "<style type='text/css'>$css</style>$html";
-}
-
 handle remainder => sub {
     my @output = ();
 	
@@ -43,7 +37,7 @@ handle remainder => sub {
 
 	# negation of bits 96 to 128 designate IPv4 address of NAT device
 	push @output, (new Net::IP (Net::IP::ip_bintoip(~(substr $binip, 96, 32),4)));
-	return answer => to_text(@output), html => append_css(to_html(@output));
+	return answer => to_text(@output), html => to_html(@output);
     }
     return;
 

@@ -1,9 +1,12 @@
 package DDG::Goodie::<: $ia_name :>;
-# ABSTRACT: Write and abstract here
-# Start at https://dukgo.com/duckduckhack/goodie_overview if you are new
+# ABSTRACT: Write an abstract here
+# Start at https://duck.co/duckduckhack/goodie_overview if you are new
 # to instant answer development
 
 use DDG::Goodie;
+
+zci answer_type => "<: $lia_name :>";
+zci is_cached   => 1;
 
 #Attribution
 primary_example_queries "first example query", "second example query";

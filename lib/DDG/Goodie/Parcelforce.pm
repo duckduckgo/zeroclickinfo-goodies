@@ -1,4 +1,5 @@
 package DDG::Goodie::Parcelforce;
+# ABSTRACT: track a package through Parcelforce.
 
 use DDG::Goodie;
 

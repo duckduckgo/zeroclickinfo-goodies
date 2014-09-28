@@ -1,4 +1,5 @@
 package DDG::Goodie::UnixPermissions;
+# ABSTRACT: describe UNIX file mode permissions
 
 use strict;
 

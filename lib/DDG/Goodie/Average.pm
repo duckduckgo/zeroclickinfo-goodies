@@ -1,9 +1,9 @@
 package DDG::Goodie::Average;
+# ABSTRACT: take statistics for a list of numbers
 
 use DDG::Goodie;
 
-triggers startend => "avg", "average", "mean", "median";
-triggers start => "root";
+triggers startend => "avg", "average", "mean", "median", "root mean square";
 
 zci is_cached => 1;
 zci answer_type => "average";
@@ -18,20 +18,24 @@ topics 'math';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-}
+handle remainder => sub {
 
-handle query => sub {
-    return if $_ =~ /^root/i && $_ !~ /^root mean square/i;
+    #Remove leading/trailing text from list of numbers
+    s/^[a-zA-Z\s]+//;
+    s/\s+[a-zA-Z]+$//;
 
-    s/^[a-zA-Z\s]+//; s/\s+[a-zA-Z]+$//; s/[;,\s{}\[\]\(\)]+/ /g;
+    #Ensure numbers are space-delimited
+    s/[;,\s{}\[\]\(\)]+/ /g;
+
+    #Return unless only left with space-delimited list of numbers
     return unless /^\s*(?:\d+(?:\.\d+)?\s?)*$/;
 
+    #Get numbers into an array
     my @nums = split ' ', $_;
-    return unless @nums;
+
+    #Must have at least two numbers
+    return unless @nums > 1;
+
     # initialize the sum
     my $sum;
 
@@ -60,7 +64,7 @@ handle query => sub {
     $rms += ($_ ** 2) for @nums;
     $rms /= $len;
     $rms = sqrt $rms;
-    return "Mean: $mean; Median: $med; Root Mean Square: $rms", html => append_css("<div class='average--container'><div><span class='average--key'>Mean:</span> <span class='average--value'>$mean</span></div> <div><span class='average--key'>Median:</span> <span class='average--value'>$med</span></div> <div><span class='average--key'>Root Mean Square:</span> <span class='average--value'>$rms</span></div></div>");
+    return "Mean: $mean; Median: $med; Root Mean Square: $rms", html => "<div class='average--container'><div><span class='average--key'>Mean:</span> <span class='average--value'>$mean</span></div> <div><span class='average--key'>Median:</span> <span class='average--value'>$med</span></div> <div><span class='average--key'>Root Mean Square:</span> <span class='average--value'>$rms</span></div></div>";
 };
 
 1;

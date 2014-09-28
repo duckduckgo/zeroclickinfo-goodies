@@ -1,4 +1,5 @@
 package DDG::Goodie::USPS;
+# ABSTRACT: Track a package through the US postal service.
 
 use DDG::Goodie;
 
@@ -86,7 +87,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_usps) {
-        return $package_number, heading => "USPS Shipment Tracking", html => qq(Track this shipment at <a href="http://trkcnfrm1.smi.usps.com/PTSInternetWeb/InterLabelInquiry.do?origTrackNum=$package_number">USPS</a>.);
+        return $package_number, heading => "USPS Shipment Tracking", html => qq(Track this shipment at <a href="https://tools.usps.com/go/TrackConfirmAction.action?tLabels=$package_number">USPS</a>.);
     }
 
     return;

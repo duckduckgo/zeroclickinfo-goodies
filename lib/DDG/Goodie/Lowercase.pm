@@ -1,7 +1,8 @@
 package DDG::Goodie::Lowercase;
+# ABSTRACT: Convert a string into lowercase.
+
 use DDG::Goodie;
 
-# ABSTRACT: Convert a string into lowercase.
 name "Lowercase";
 description "Convert a string into lowercase.";
 primary_example_queries "lowercase GitHub";
@@ -17,8 +18,17 @@ zci answer_type => "lowercase";
 triggers start => 'lowercase', 'lower case', 'lc', 'strtolower', 'tolower';
 
 handle remainder => sub {
-    return lc $_ if $_;
-    return;
+    return unless $_;
+    my $lower = lc $_;
+    my $text = $lower;
+    
+    # Encode the variable before putting it in HTML.
+    # There's no need to encode the $text variable because that gets encoded internally.
+    $lower = html_enc($lower);
+    
+    my $html = qq(<div class="zci--lowercase"><span class="text--primary">$lower</span></div>);
+
+    return $text, html => $html;
 };
 
 1;

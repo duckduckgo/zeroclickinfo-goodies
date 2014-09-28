@@ -1,6 +1,8 @@
 package DDG::Goodie::LeapYear;
 # ABSTRACT: Check if a year is leap year
+
 use DDG::Goodie;
+
 use Date::Leapyear;
 
 zci answer_type => "leap_year";

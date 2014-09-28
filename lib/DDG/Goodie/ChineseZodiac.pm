@@ -5,7 +5,6 @@ use DDG::Goodie;
 use DateTime::Calendar::Chinese;
 use DateTime::Event::Chinese qw(chinese_new_year_before chinese_new_year_after);
 use utf8;
-use feature 'state';
 
 triggers any => 'chinese zodiac', 'shēngxiào', 'shengxiao', 'shēng xiào', 'sheng xiao';
 zci is_cached => 1;
@@ -96,18 +95,9 @@ sub format_datetime {
   return $formatted;
 }
 
-# This function adds some HTML and styling to our output
-# so that we can make it prettier (copied from the Conversions
-# goodie)
-sub append_css {
-  my $html = shift;
-  state $css = share("style.css")->slurp;
-  return "<style type='text/css'>$css</style>$html";
-}
-
 sub wrap_html {
   my ($character, $english, $statement) = @_;
-  return append_css("<div class='zci--chinesezodiac'><div class='zodiaccharacter'>$character ($english)</div><span class='statement'>$statement</span></div>");
+  return "<div class='zci--chinesezodiac'><div class='zodiaccharacter'>$character ($english)</div><span class='statement'>$statement</span></div>";
 }
 
 1;
