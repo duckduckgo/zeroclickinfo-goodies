@@ -5,5 +5,5 @@ $('#figlet-dropdown').change( function( event ) {
     var newFont = $('#figlet-dropdown').val();
     var url = location.href.replace( currentFont, newFont )
 
-    location.href = url;
+    location.assign(url);
 });
