@@ -7,20 +7,20 @@ use DDG::Goodie;
 name "CUSIP check";
 description "Validates the check digit for a unique stock identifier based on the Committee on Uniform Securities Identification Procedures";
 primary_example_queries "cusip 037833100";
+secondary_example_queries "cusip check 38259P706", "844741108 cusip";
 category "finance";
 topics "economy_and_finance";
 code_url "https://github.com/tommytommytommy/zeroclickinfo-goodies/lib/DDG/Goodie/Cusip.pm";
 attribution github => ["https://github.com/tommytommytommy", 'tommytommytommy'];
 
-triggers startend =>
-    "cusip";
+triggers startend => "cusip", "check cusip", "cusip check";
 
 zci answer_type => "cusip";
-        
-handle remainder => sub {
 
-    # magic number to identify the length of the CUSIP ID    
-    my $CUSIPLENGTH = 9;
+# magic number to identify the length of the CUSIP ID    
+my $CUSIPLENGTH = 9;
+
+handle remainder => sub {
     
     # strip beginning and end whitespace from remainder 
     s/^\s+|\s+$//g;
@@ -38,12 +38,7 @@ handle remainder => sub {
 
     # aggregate checksum value 
     my $checksum = 0;
-
-    # index variable to track current CUSIP char   
-    my $cusipIndex = 0;
-
-    # calculate the checksum for the CUSIP ID
-    foreach (@cusipIdChars) {       
+    for (0 .. $#cusipIdChars) {       
    
         # this variable stores the integer equivalent of the CUSIP character
         my $currentCusipCharValue = 0;
@@ -51,22 +46,20 @@ handle remainder => sub {
         # map the current CUSIP character into its integer value
         # based on the pseudo algorithm provided by
         # https://en.wikipedia.org/wiki/CUSIP#Check_digit_pseudocode
-        if (m/[0-9]/) {
-            $currentCusipCharValue = ord($_) - ord('0');
-        } elsif (m/[A-Z]/) {
-            $currentCusipCharValue = ord($_) - ord('A') + 10;
-        } elsif ($_ eq '*') {
+        if ($cusipIdChars[$_] =~ m/[0-9]/) {
+            $currentCusipCharValue = ord($cusipIdChars[$_]) - ord('0');
+        } elsif ($cusipIdChars[$_] =~ m/[A-Z]/) {
+            $currentCusipCharValue = ord($cusipIdChars[$_]) - ord('A') + 10;
+        } elsif ($cusipIdChars[$_] eq '*') {
             $currentCusipCharValue = 36;
-        } elsif ($_ eq '@') {
+        } elsif ($cusipIdChars[$_] eq '@') {
             $currentCusipCharValue = 37;
-        } elsif ($_ eq '#') {
+        } elsif ($cusipIdChars[$_] eq '#') {
             $currentCusipCharValue = 38;
-        } else {
-            $currentCusipCharValue = 0;
         }
                          
         # double the CUSIP value for every other character starting with the second
-        if (($cusipIndex + 1) % 2 == 0) {
+        if (($_ + 1) % 2 == 0) {
             $currentCusipCharValue *= 2;
         } 
             
@@ -75,9 +68,6 @@ handle remainder => sub {
         # with 037833100 for AAPL and 38259P706 and 38259P508 for GOOG show
         # that the truncation is necessary
         $checksum += int($currentCusipCharValue / 10) + $currentCusipCharValue % 10;   
-        
-        # increment the character position counter
-        $cusipIndex++; 
     }
 
     # convert the checksum into a single check digit
