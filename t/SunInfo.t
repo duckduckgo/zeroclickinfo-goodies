@@ -20,14 +20,20 @@ ddg_goodie_test([qw(
           DDG::Goodie::SunInfo
           )
     ],
-    'sunrise'               => test_zci(@now),
-    'sunset'                => test_zci(@now),
-    'sunrise for aug 30'    => test_zci(@aug),
-    'sunset for aug 30'     => test_zci(@aug),
-    'sunset on 2015-01-01'  => test_zci(@exact),
-    'sunrise on 2015-01-01' => test_zci(@exact),
-    'sunset for pilly'      => undef,
-    'sunrise on mars'       => undef,
+    'sunrise'                             => test_zci(@now),
+    'what time is sunrise'                => test_zci(@now),
+    'sunset'                              => test_zci(@now),
+    'what time is sunset'                 => test_zci(@now),
+    'sunrise for aug 30'                  => test_zci(@aug),
+    'sunset for aug 30?'                  => test_zci(@aug),
+    'sunset on 2015-01-01'                => test_zci(@exact),
+    'what time is sunrise on 2015-01-01?' => test_zci(@exact),
+    'sunset for pilly'                    => undef,
+    'sunrise on mars'                     => undef,
+    'sunset boulevard'                    => undef,
+    'tequila sunrise'                     => undef,
+    'sunrise mall'                        => undef,
+    'after the sunset'                    => undef,
 );
 
 done_testing;

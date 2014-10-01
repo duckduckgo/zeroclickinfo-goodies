@@ -10,7 +10,7 @@ use Try::Tiny;
 zci answer_type => "sun_info";
 zci is_cached   => 0;
 
-triggers start => 'sunrise', 'sunset';
+triggers start => 'sunrise', 'sunset', 'what time is sunset', 'what time is sunrise';
 
 primary_example_queries 'sunrise',              'sunset';
 secondary_example_queries 'sunrise for aug 30', 'sunset on 2015-01-01';
@@ -25,7 +25,8 @@ my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
 
-    my $remainder = shift;
+    my $remainder = shift // '';
+    $remainder =~ s/\?//g; # Strip question marks.
     my ($lat, $lon, $tz) = ($loc->latitude, $loc->longitude, $loc->time_zone);
     my $where = join(', ', grep { defined $_ } ($loc->city, $loc->region_name, $loc->country_name));
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
