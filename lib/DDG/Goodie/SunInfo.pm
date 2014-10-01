@@ -20,7 +20,7 @@ category 'calculations';
 topics 'everyday';
 attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
 
-my $time_format = '%T %Z';
+my $time_format = '%l:%M%P';
 my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
