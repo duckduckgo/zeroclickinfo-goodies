@@ -48,8 +48,16 @@ handle query => sub {
         # If they guessed, we need to answer the question they asked.
         $guess_result = (!$guess) ? '' : ($guess eq $to_show) ? 'Yes, ' : 'No, ';
     }
+    my $answer = $guess_result . '12:00' . $meridian . ' is ' . $to_show . '.';
 
-    return $guess_result . '12:00' . $meridian . ' is ' . $to_show . '.';
+    return $answer, html => format_html($answer);
 };
+
+
+sub format_html {
+    my ($answer) = @_;
+
+    return "<div class='zci--twelveoclock text--primary'>" . $answer . "</div>";
+}
 
 1;

@@ -8,22 +8,29 @@ use DDG::Test::Goodie;
 zci answer_type => "twelve_oclock";
 zci is_cached   => 1;
 
+my @noon             = ('12:00pm is noon.',          html => qr/12:00pm is noon./);
+my @correct_noon     = ('Yes, 12:00pm is noon.',     html => qr/Yes, 12:00pm is noon./);
+my @wrong_noon       = ('No, 12:00pm is noon.',      html => qr/No, 12:00pm is noon./);
+my @midnight         = ('12:00am is midnight.',      html => qr/12:00am is midnight./);
+my @correct_midnight = ('Yes, 12:00am is midnight.', html => qr/Yes, 12:00am is midnight./);
+my @wrong_midnight   = ('No, 12:00am is midnight.',  html => qr/No, 12:00am is midnight./);
+
 ddg_goodie_test([qw(
           DDG::Goodie::TwelveOclock
           )
     ],
-    'is 1200a.m. noon'               => test_zci('No, 12:00am is midnight.'),
-    'is 1200pm noon?'                => test_zci('Yes, 12:00pm is noon.'),
-    'is 12:00 am midnight'           => test_zci('Yes, 12:00am is midnight.'),
-    'is 12:00 pm midnight?'          => test_zci('No, 12:00pm is noon.'),
-    'is 12:00 p.m. midnight?'        => test_zci('No, 12:00pm is noon.'),
-    'is 12:00 AM midnight?'          => test_zci('Yes, 12:00am is midnight.'),
-    'noon is 12:00 p.m.'             => test_zci('Yes, 12:00pm is noon.'),
-    'midnight is 12 AM'              => test_zci('Yes, 12:00am is midnight.'),
-    'is 12:00P.M. midnight or noon?' => test_zci('12:00pm is noon.'),
-    'is 12am noon or midnight'       => test_zci('12:00am is midnight.'),
-    'when is midnight'               => test_zci('12:00am is midnight.'),
-    'when is noon?'                  => test_zci('12:00pm is noon.'),
+    'is 1200a.m. noon'               => test_zci(@wrong_midnight),
+    'is 1200pm noon?'                => test_zci(@correct_noon),
+    'is 12:00 am midnight'           => test_zci(@correct_midnight),
+    'is 12:00 pm midnight?'          => test_zci(@wrong_noon),
+    'is 12:00 p.m. midnight?'        => test_zci(@wrong_noon),
+    'is 12:00 AM midnight?'          => test_zci(@correct_midnight),
+    'noon is 12:00 p.m.'             => test_zci(@correct_noon),
+    'midnight is 12 AM'              => test_zci(@correct_midnight),
+    'is 12:00P.M. midnight or noon?' => test_zci(@noon),
+    'is 12am noon or midnight'       => test_zci(@midnight),
+    'when is midnight'               => test_zci(@midnight),
+    'when is noon?'                  => test_zci(@noon),
     'threat level midnight'          => undef,
     '12 midnight'                    => undef,
     'midnight movies'                => undef,
