@@ -3,6 +3,9 @@ package DDG::Goodie::TwelveOclock;
 
 use DDG::Goodie;
 
+zci answer_type => "twelve_oclock";
+zci is_cached   => 1;
+
 primary_example_queries "is 12:00am noon?", "is 1200pm midnight?";
 secondary_example_queries "when is noon?", "when is midnight?";
 description "Succinct explanation of what this instant answer does";

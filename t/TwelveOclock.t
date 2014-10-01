@@ -5,7 +5,8 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => "twelveoclock";
+zci answer_type => "twelve_oclock";
+zci is_cached   => 1;
 
 ddg_goodie_test([qw(
           DDG::Goodie::TwelveOclock
