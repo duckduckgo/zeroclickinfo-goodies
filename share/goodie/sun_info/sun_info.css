@@ -1,19 +1,6 @@
-.zci--answer  table.suninfo {
-    font-family: Consolas,"Anonymous Pro",Anonymous,"Courier New",monospace;
-    font-size: 12px;
-    line-height: 14px;
-}
-
-.zci--answer table.suninfo td {
-    padding: 4px 10px 4px 10px;
-    border: 0px;
-}
-
-.zci--answer table.suninfo th {
-    font-weight: bold;
-    text-align: left;
-    background-color: #aaa;
-    color: #fff;
-    border: 0px;
-    padding: 4px 10px;
+.zci--answer .zci--suninfo {
+    font-size: 1.5em;
+    font-weight: 300;
+    padding-top: .25em;
+    padding-bottom: .25em;
 }

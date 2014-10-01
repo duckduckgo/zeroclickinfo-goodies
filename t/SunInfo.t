@@ -8,12 +8,13 @@ use DDG::Test::Goodie;
 zci answer_type => 'sun_info';
 zci is_cached   => 0;
 
-my @now = (qr/^Location => Phoenixville, PA.*pm$/, html => qr/Location:.*pm/);
-my @aug = (qr/^Location => Phoenixville, PA | Date => 30 Aug.*pm$/, html => qr/Location:.*pm/);
+# Presume sun will rise in the morning and set at night year round in PA.
+my @now = (qr/^On.*Phoenixville, PA.*am.*pm\.$/, html => qr/Phoenixville.*am.*pm/);
+my @aug = (qr/^On 30 Aug.*am.*pm\.$/,            html => qr/Phoenixville.*am.*pm/);
 my @exact = (
-    'Location => Phoenixville, PA | Date => 01 Jan 2015 | Sunrise =>  7:23am | Sunset =>  4:46pm',
+    'On 01 Jan 2015, sunrise in Phoenixville, PA is at 7:23am; sunset at 4:46pm.',
     html =>
-      '<div><span class="suninfo__label text--secondary">Location: </span><span class="text--primary">Phoenixville, PA</span></div><div><span class="suninfo__label text--secondary">Date: </span><span class="text--primary">01 Jan 2015</span></div><div><span class="suninfo__label text--secondary">Sunrise: </span><span class="text--primary"> 7:23am</span></div><div><span class="suninfo__label text--secondary">Sunset: </span><span class="text--primary"> 4:46pm</span></div><style> .zci--answer .suninfo__label {display: inline-block; min-width: 90px}</style>'
+      "<div class='zci--suninfo text--secondary'>On <span class='text--primary'>01 Jan 2015</span>, sunrise in <span class='text--primary'>Phoenixville, PA</span> is at <span class='text--primary'>7:23am</span>; sunset at <span class='text--primary'>4:46pm</span>.</div>"
 );
 
 ddg_goodie_test([qw(

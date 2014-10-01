@@ -38,21 +38,18 @@ handle remainder => sub {
     return unless $dt;                                  # Also going to need to know which day.
     $dt->set_time_zone($tz);
 
-    my @table_data = (['Location', $where]);
-
     my $sun_at_loc = DateTime::Event::Sunrise->new(
         longitude => $lon,
         latitude  => $lat,
         precise   => 1,                                 # Slower but more precise.
         silent    => 1,                                 # Don't fill up STDERR with noise, if we have trouble.
     );
-    push @table_data, ['Date', date_output_string($dt)];
 
     # We don't care for which one they asked, we compute both sunrise and sunset
-    push @table_data, ['Sunrise', $sun_at_loc->sunrise_datetime($dt)->strftime($time_format)];
-    push @table_data, ['Sunset',  $sun_at_loc->sunset_datetime($dt)->strftime($time_format)];
-    my $text = join(' | ', (map { join(' => ', @{$_}) } @table_data));
-    return $text, html => to_html(@table_data);
+    my $sunrise = $sun_at_loc->sunrise_datetime($dt)->strftime($time_format);
+    my $sunset  = $sun_at_loc->sunset_datetime($dt)->strftime($time_format);
+
+    return pretty_prose($where, date_output_string($dt), $sunrise, $sunset);
 };
 
 sub where_string {
@@ -73,15 +70,25 @@ sub where_string {
     return join(', ', @where_bits);
 }
 
-sub to_html {
-    my $results  = "";
-    my $minwidth = "90px";
-    foreach my $result (@_) {
-        $results .=
-          "<div><span class=\"suninfo__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
-        $minwidth = "180px" if length($result->[0]) > 10;
-    }
-    return $results . "<style> .zci--answer .suninfo__label {display: inline-block; min-width: $minwidth}</style>";
+sub pretty_prose {
+    my ($where, $when, $rise, $set) = @_;
+
+    $rise =~ s/^\s+//g;    # strftime puts a space in front for single-digits.
+    $set =~ s/^\s+//g;     # strftime puts a space in front for single-digits.
+
+    my $html_pl = "<div class='zci--suninfo text--secondary'>";    # Prelude
+    my $html_po = "<span class='text--primary'>";                  # Primary open
+    my $html_pc = "</span>";                                       # Primary close
+    my $html_el = "</div>";                                        # Epilogue
+
+    # Now let us horribly abuse sprintf() for fun and profit.
+    my $prose = "%sOn %s$when%s, sunrise in %s$where%s is at %s$rise%s; sunset at %s$set%s.%s";
+
+    # Also map abuse.
+    my @text_args = map { ''; } (0 .. 9);
+    my @html_args = ($html_pl, (map { ($html_po, $html_pc); } (0 .. 3)), $html_el);
+
+    return (sprintf($prose, @text_args), html => sprintf($prose, @html_args));
 }
 
 1;
