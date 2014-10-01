@@ -5,7 +5,6 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 
 use DateTime::Event::Sunrise;
-use Try::Tiny;
 
 zci answer_type => "sun_info";
 zci is_cached   => 0;
@@ -32,11 +31,13 @@ handle remainder => sub {
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
     my $dt;
     if (!$remainder) {
-        $dt = DateTime->now(time_zone => $tz);
+        $dt = DateTime->now;
     } elsif ($remainder =~ /^(?:on|for)\s+(?<when>$datestring_regex)$/) {
-        try { $dt = parse_datestring_to_date($+{'when'}); $dt->set_time_zone($tz) };
+        $dt = parse_datestring_to_date($+{'when'});
     }
     return unless $dt;                                  # Also going to need to know which day.
+    $dt->set_time_zone($tz);
+
     my @table_data = (['Location', $where]);
 
     my $sun_at_loc = DateTime::Event::Sunrise->new(
