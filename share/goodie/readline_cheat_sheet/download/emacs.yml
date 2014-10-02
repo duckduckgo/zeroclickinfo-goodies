@@ -1,0 +1,175 @@
+---
+-
+  - name: Moving
+    rows:
+      - cmds:
+          - Ctrl-a
+        help: Move to the start of the current line.
+      - cmds:
+          - Ctrl-e
+        help: Move to the end of the line.
+      - cmds:
+          - Ctrl-f
+        help: Move forward a character.
+      - cmds:
+          - Ctrl-b
+        help: Move back a character.
+      - cmds:
+          - Alt-f
+        help: Move forward to the end of the next word.  Words are alphanumeric.
+      - cmds:
+          - Alt-b
+        help: Move back to the start of the current or previous word.  Words are alphanumeric.
+      - cmds:
+          - Ctrl-l
+        help: Clear the screen.
+  - name: History
+    rows:
+      - cmds:
+          - Ctrl-p
+        help: Fetch the previous command from the history list.
+      - cmds:
+          - Ctrl-n
+        help: Fetch the next command from the history list.
+      - cmds:
+          - Alt-<
+        help: Move to the first line in the history.
+      - cmds:
+          - Alt->
+        help: Move to the last line in the history.
+      - cmds:
+          - Ctrl-r
+        help: Search backward through history.
+      - cmds:
+          - Ctrl-s
+        help: Search forward through history.
+      - cmds:
+          - Alt-p
+        help: Search backward through history for a given string.
+      - cmds:
+          - Alt-n
+        help: Search forward through history for a given string.
+      - cmds:
+          - Ctrl-Alt-y
+        help: Insert the first argument to the previous command.  With an argument n, insert the nth word from the previous command.
+      - cmds:
+          - Alt-.
+          - Alt-_
+        help: Insert the last argument to the previous command.  With an argument n, insert the nth word from the previous command.
+  - name: Changing Text
+    rows:
+      - cmds:
+          - Ctrl-d
+        help: Delete the character under the cursor.
+      - cmds:
+          - Delete
+        help: Delete the character before the cursor.
+      - cmds:
+          - Ctrl-v
+          - Ctrl-q
+        help: Add the next character you type verbatim.
+      - cmds:
+          - Ctrl-t
+        help: Transpose characters.
+      - cmds:
+          - Alt-t
+        help: Transpose words.
+      - cmds:
+          - Alt-u
+        help: Uppercase the current word.
+      - cmds:
+          - Alt-l
+        help: Lowercase the current word.
+      - cmds:
+          - Alt-c
+        help: Capitalize the current word.
+-
+  - name: Killing and Yanking (Cutting and Pasting)
+    rows:
+      - cmds:
+          - Ctrl-k
+        help: Kill (cut) forwards to the end of the line.
+      - cmds:
+          - Ctrl-u
+          - Ctrl-x Delete
+        help: Kill (cut) backwards to the start of the line.
+      - cmds:
+          - Alt-d
+        help: Kill (cut) forwards to the end of the current word.
+      - cmds:
+          - Alt-Delete
+          - Ctrl-w
+        help: Kill (cut) backwards to the start of the current word.
+      - cmds:
+          - Alt-\
+        help: Delete whitespace around the cursor.
+      - cmds:
+          - Ctrl-y
+        help: Yank (paste) the top of the kill ring.
+      - cmds:
+          - Alt-y
+        help: Rotate the kill ring, and yank (paste) the new top. Only works after a yank.
+  - name: Completing
+    rows:
+      - cmds:
+          - Tab
+        help: Autocomplete.
+      - cmds:
+          - Alt-?
+        help: List possible completions.
+      - cmds:
+          - Alt-*
+        help: Insert possible completions.
+  - name: Macros
+    rows:
+      - cmds:
+          - Ctrl-x (
+        help: Begin saving the characters typed as a macro.
+      - cmds:
+          - Ctrl-x )
+        help: Stop saving the characters typed as a macro.
+      - cmds:
+          - Ctrl-x e
+        help: Execute the most recent macro.
+  - name: Miscellaneous
+    rows:
+      - cmds:
+          - Ctrl-x Ctrl-r
+        help: Read in the contents of the inputrc file.
+      - cmds:
+          - Ctrl-g
+        help: Abort current editing command
+      - cmds:
+          - Ctrl-_
+          - Ctrl-x Ctrl-u
+        help: Incremental undo, separately remembered for each line.
+      - cmds:
+          - Alt-r
+        help: Undo all changes made to this line.  This is like executing the undo command enough times to return the line to its initial state.
+      - cmds:
+          - Alt-Space
+          - Ctrl-@
+        help: Set the mark (save this location).
+      - cmds:
+          - Ctrl-x Ctrl-x
+        help: Set the mark and jump to the previous mark.
+      - cmds:
+          - Ctrl-]
+        help: Search forwards for a single character in the current line and jump to that location.
+      - cmds:
+          - Ctrl-Alt-]
+        help: Search backwards for a single character in the current line and jump to that location.
+      - cmds:
+          - Alt-#
+        help: Comment the current line and start a new one.
+      - cmds:
+          - Ctrl-e
+        help: Enter Emacs editing mode
+      - cmds:
+          - Ctrl-Alt-j
+        help: Enter Vi editing mode
+
+
+
+
+

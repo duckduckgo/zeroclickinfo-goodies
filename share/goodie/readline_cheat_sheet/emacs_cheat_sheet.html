@@ -1,0 +1,400 @@
+<style type='text/css'>
+
+#zero_click_plus_wrapper {
+    display: none;
+}
+
+#zero_click_wrapper #zero_click #zero_click_abstract {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+#zero_click_wrapper #readline-container {
+    max-height: 45ex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#zero_click_wrapper .readline-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#zero_click_wrapper table.readline-table {
+    width: 100%;
+    margin-bottom: 1ex;
+}
+
+#zero_click_wrapper table.readline-table td {
+    padding-right: 1ex;
+    vertical-align: top;
+}
+#zero_click_wrapper table.readline-table td code {
+    white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+    #zero_click_wrapper .readline-column {
+	width: 100%;
+    }
+}
+
+</style>
+
+<div id="readline-container">
+
+  <div class="readline-column">
+
+    <b>Moving</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-a</code>
+        </td>
+        <td>Move to the start of the current line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-e</code>
+        </td>
+        <td>Move to the end of the line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-f</code>
+        </td>
+        <td>Move forward a character.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-b</code>
+        </td>
+        <td>Move back a character.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-f</code>
+        </td>
+        <td>Move forward to the end of the next word.  Words are alphanumeric.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-b</code>
+        </td>
+        <td>Move back to the start of the current or previous word.  Words are alphanumeric.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-l</code>
+        </td>
+        <td>Clear the screen.</td>
+      </tr>
+
+    </table>
+    <b>History</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-p</code>
+        </td>
+        <td>Fetch the previous command from the history list.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-n</code>
+        </td>
+        <td>Fetch the next command from the history list.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-&lt;</code>
+        </td>
+        <td>Move to the first line in the history.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-&gt;</code>
+        </td>
+        <td>Move to the last line in the history.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-r</code>
+        </td>
+        <td>Search backward through history.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-s</code>
+        </td>
+        <td>Search forward through history.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-p</code>
+        </td>
+        <td>Search backward through history for a given string.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-n</code>
+        </td>
+        <td>Search forward through history for a given string.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-Alt-y</code>
+        </td>
+        <td>Insert the first argument to the previous command.  With an argument n, insert the nth word from the previous command.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-.</code>
+          <br>
+          <code>Alt-_</code>
+        </td>
+        <td>Insert the last argument to the previous command.  With an argument n, insert the nth word from the previous command.</td>
+      </tr>
+
+    </table>
+    <b>Changing Text</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-d</code>
+        </td>
+        <td>Delete the character under the cursor.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Delete</code>
+        </td>
+        <td>Delete the character before the cursor.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-v</code>
+          <br>
+          <code>Ctrl-q</code>
+        </td>
+        <td>Add the next character you type verbatim.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-t</code>
+        </td>
+        <td>Transpose characters.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-t</code>
+        </td>
+        <td>Transpose words.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-u</code>
+        </td>
+        <td>Uppercase the current word.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-l</code>
+        </td>
+        <td>Lowercase the current word.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-c</code>
+        </td>
+        <td>Capitalize the current word.</td>
+      </tr>
+
+    </table>
+
+  </div>
+  <div class="readline-column">
+
+    <b>Killing and Yanking (Cutting and Pasting)</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-k</code>
+        </td>
+        <td>Kill (cut) forwards to the end of the line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-u</code>
+          <br>
+          <code>Ctrl-x Delete</code>
+        </td>
+        <td>Kill (cut) backwards to the start of the line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-d</code>
+        </td>
+        <td>Kill (cut) forwards to the end of the current word.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-Delete</code>
+          <br>
+          <code>Ctrl-w</code>
+        </td>
+        <td>Kill (cut) backwards to the start of the current word.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-\</code>
+        </td>
+        <td>Delete whitespace around the cursor.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-y</code>
+        </td>
+        <td>Yank (paste) the top of the kill ring.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-y</code>
+        </td>
+        <td>Rotate the kill ring, and yank (paste) the new top. Only works after a yank.</td>
+      </tr>
+
+    </table>
+    <b>Completing</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Tab</code>
+        </td>
+        <td>Autocomplete.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-?</code>
+        </td>
+        <td>List possible completions.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-*</code>
+        </td>
+        <td>Insert possible completions.</td>
+      </tr>
+
+    </table>
+    <b>Macros</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-x (</code>
+        </td>
+        <td>Begin saving the characters typed as a macro.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-x )</code>
+        </td>
+        <td>Stop saving the characters typed as a macro.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-x e</code>
+        </td>
+        <td>Execute the most recent macro.</td>
+      </tr>
+
+    </table>
+    <b>Miscellaneous</b>
+    <table class="readline-table">
+
+      <tr>
+        <td>
+          <code>Ctrl-x Ctrl-r</code>
+        </td>
+        <td>Read in the contents of the inputrc file.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-g</code>
+        </td>
+        <td>Abort current editing command</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-_</code>
+          <br>
+          <code>Ctrl-x Ctrl-u</code>
+        </td>
+        <td>Incremental undo, separately remembered for each line.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-r</code>
+        </td>
+        <td>Undo all changes made to this line.  This is like executing the undo command enough times to return the line to its initial state.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-Space</code>
+          <br>
+          <code>Ctrl-@</code>
+        </td>
+        <td>Set the mark (save this location).</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-x Ctrl-x</code>
+        </td>
+        <td>Set the mark and jump to the previous mark.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-]</code>
+        </td>
+        <td>Search forwards for a single character in the current line and jump to that location.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-Alt-]</code>
+        </td>
+        <td>Search backwards for a single character in the current line and jump to that location.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Alt-#</code>
+        </td>
+        <td>Comment the current line and start a new one.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-e</code>
+        </td>
+        <td>Enter Emacs editing mode</td>
+      </tr>
+      <tr>
+        <td>
+          <code>Ctrl-Alt-j</code>
+        </td>
+        <td>Enter Vi editing mode</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+  <i>More at <a href="http://readline.kablamo.org/emacs.html">Kablamo.org</a></i>
+
+</div>

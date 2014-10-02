@@ -26,6 +26,7 @@ ddg_goodie_test(
     'vi reference'         => $test_zci,
     'vim cheat sheet'      => $test_zci,
     'vim cheatsheet'       => $test_zci,
+    'vim cheat-sheet'      => $test_zci,
     'vim commands'         => $test_zci,
     'vim guide'            => $test_zci,
     'vim help'             => $test_zci,

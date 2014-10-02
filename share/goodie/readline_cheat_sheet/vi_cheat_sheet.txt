@@ -1,0 +1,84 @@
+Entering command mode
+
+Ctrl-[ or Esc                       Start command mode.
+
+Entering insert mode
+
+i                                   Insert before the cursor.
+a                                   Insert (append) after the cursor.
+I                                   Insert at the beginning of the line.
+A                                   Insert (append) at the end of the line.
+r                                   Replace the character under the cursor.
+R                                   Replace characters under the cursor.
+v                                   Edit the command with $VISUAL, $EDITOR, or vi.
+
+Deleting (command mode)
+
+d<movement>                         Delete from the current character to the end of the <movement>.
+D or d$                             Delete to the end of the line.
+dd or 0d$                           Delete the current line.
+
+Moving (command mode)
+
+0                                   Move to the start of the current line.
+$                                   Move to the end of the line.
+l or Space                          Move forward a character.
+h                                   Move back a character.
+e                                   Move forward to the end of the next word.  Words are alphanumeric.
+b                                   Move back to the start of the current or previous word.  Words are alphanumeric.
+%                                   Move cursor to a matching (,),[,],{, or }.
+
+Cutting and pasting (command mode)
+
+y<movement>                         Copy (yank) from the current character to the end of the <movement>.
+yy                                  Copy (yank) the current line.
+p                                   Paste after the cursor.
+P                                   Paste before the cursor.
+
+Undo and Repeat (command mode)
+
+u                                   Incrementally undo the last action.
+U                                   Undo all actions.
+.                                   Repeat the last action.
+
+
+History (command mode)
+
+k or Ctrl-p or -                    Fetch the previous command from the history list.
+j or +                              Fetch the next command from the history list.
+G                                   Go to the most recent line in the history list.
+15G                                 Go to line 15 in the history list.
+Ctrl-r                              Incremental search backward through history.
+/                                   Search backward through history for a string.
+?                                   Search forward through history for a string.
+n                                   Repeat the search in the same direction.
+N                                   Repeat the search in the opposite direction.
+
+Marks (command mode)
+
+m<letter>                           Set a mark named <letter>
+`<letter>                           Jump to the mark named <letter>
+
+Completing (insert mode)
+
+Tab                                 Autocomplete.
+
+Completing (command mode)
+
+=                                   Autocomplete.
+*                                   Insert all possible completions.
+
+Miscellaneous (insert mode)
+
+Ctrl-d                              EOF or exit.
+Ctrl-_                              Undo the last action.
+Ctrl-u                              Discard the line
+Ctrl-t                              Transpose characters.
+
+Miscellaneous (command mode)
+
+Ctrl-l                              Clear the screen.
+#                                   Insert a comment at the beginning of the line, add the line to the history, then start a new line.
+~                                   Change case.
+
+
