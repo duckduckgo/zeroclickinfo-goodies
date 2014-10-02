@@ -7,7 +7,10 @@ with 'DDG::GoodieRole::Dates';
 use Date::Hijri;
 use Date::Jalali2;
 
+use YAML::XS qw(Load);
+
 zci answer_type => "calendar_conversion";
+zci is_cached   => 0;
 
 primary_example_queries '22/8/2003 to the hijri calendar';
 secondary_example_queries '23/6/1424 hijri to gregorian';
@@ -21,23 +24,15 @@ attribution github => ['http://github.com/mattlehning', 'mattlehning'],
 
 triggers any => 'hijri', 'gregorian', 'jalali';
 
-my %calendars = (
-    'gregorian' => ['Gregorian calendar', '<a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a>'],
-    'hijri'     => ['Hijri calendar',     '<a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>'],
-    'jalali'    => ['Jalali calendar',    '<a href="https://en.wikipedia.org/wiki/Jalali_calendar">Jalali calendar</a>'],
-);
+
+my $calendars = Load(scalar share('calendars.yml')->slurp);
 
 my $datestring_regex = datestring_regex();
 
-# This function returns either the HTML version of the output or the text version.
-sub output {
-    my ($calendar_first, $calendar_second, $input_date, $converted_date, $is_html) = @_;
+sub format_date {
+    my ($d, $m, $y, $cal) = @_;
 
-    return
-        "$input_date on the "
-      . $calendars{$calendar_first}[$is_html]
-      . " is $converted_date on the "
-      . $calendars{$calendar_second}[$is_html] . '.';
+    return join(' ', $d, $calendars->{$cal}->[$m - 1], $y, '(' . ucfirst $cal . ')');
 }
 
 handle query_lc => sub {
@@ -75,12 +70,10 @@ handle query_lc => sub {
         ($od, $om, $oy) = ($t->jal_day, $t->jal_month, $t->jal_year);
         ($od, $om, $oy) = g2h($od, $om, $oy) if ($output_calendar eq "hijri");
     }
-    my $date_format    = '%s-%02d-%02d';
-    my $input_date     = sprintf($date_format, $y, $m, $d);
-    my $converted_date = sprintf($date_format, $oy, $om, $od);
+    my $input_date     = format_date($d, $m, $y, $input_calendar);
+    my $converted_date = format_date($od, $om, $oy, $output_calendar);
 
-    return output($input_calendar, $output_calendar, $input_date, $converted_date, 0),
-      html => output($input_calendar, $output_calendar, $input_date, $converted_date, 1);
+    return $input_date. ' is '. $converted_date, html => "<div class='zci--calendarconversion text--primary'>$input_date <span class='text--secondary'>is</span> $converted_date</div>";
 };
 
 sub g2j {
@@ -89,5 +82,7 @@ sub g2j {
     my $t = new Date::Jalali2($iy, $im, $id, 0);
     return ($t->jal_day, $t->jal_month, $t->jal_year);
 }
+
+
 
 1;
