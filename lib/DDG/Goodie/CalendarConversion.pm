@@ -53,14 +53,14 @@ handle query_lc => sub {
                 (?:(?:in|on|to)(?:\s+the|in)?)\s+
             )?
             (gregorian|hijri|jalali)\s*
-            (?:calendar|date|time|years|months|days)?
+            (?:calendar|date|time|years)?
         $/x;
     my $in_date = parse_datestring_to_date($datestring);
     return unless $in_date;
     my ($d, $m, $y) = ($in_date->day, $in_date->month, $in_date->year);
 
-    $input_calendar //= 'gregorian';    # gregorian is the default
-    return if ($input_calendar eq $output_calendar);
+    $input_calendar ||= 'gregorian';    # gregorian is the default
+    return if ($input_calendar eq $output_calendar || !$output_calendar);
 
     my ($od, $om, $oy);
 

@@ -65,6 +65,27 @@ ddg_goodie_test(
         html =>
           '2003-08-22 on the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a> is 1424-06-23 on the <a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>.'
     ),
+    '22/8/2003 in the hijri calendar' => test_zci(
+        '2003-08-22 on the Gregorian calendar is 1424-06-23 on the Hijri calendar.',
+        html =>
+          '2003-08-22 on the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a> is 1424-06-23 on the <a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>.'
+    ),
+    '22nd Aug 2003 in jalali' => test_zci(
+        '2003-08-22 on the Gregorian calendar is 1382-05-31 on the Jalali calendar.',
+        html =>
+          '2003-08-22 on the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a> is 1382-05-31 on the <a href="https://en.wikipedia.org/wiki/Jalali_calendar">Jalali calendar</a>.'
+    ),
+    '8-22-2003 in hijri years' => test_zci(
+        '2003-08-22 on the Gregorian calendar is 1424-06-23 on the Hijri calendar.',
+        html =>
+          '2003-08-22 on the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a> is 1424-06-23 on the <a href="https://en.wikipedia.org/wiki/Hijri_calendar">Hijri calendar</a>.'
+    ),
+    'August 22 2003 in jalali date' => test_zci(
+        '2003-08-22 on the Gregorian calendar is 1382-05-31 on the Jalali calendar.',
+        html =>
+          '2003-08-22 on the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a> is 1382-05-31 on the <a href="https://en.wikipedia.org/wiki/Jalali_calendar">Jalali calendar</a>.'
+    ),
+    '22nd Aug 2003 in gregorian time' => undef,
 );
 
 done_testing;
