@@ -3,17 +3,20 @@
 use strict;
 use warnings;
 
+use List::MoreUtils qw( firstidx );
+use LWP::Simple;
 use Path::Class;
 use Text::Xslate;
 use Web::Scraper;
 
+# Fetch the latest published HTML and parse it into our own template.
 
 {
-    my $src_file  = file('download/vimcheat.html'); # in
-    my $html_file = file('vim_cheat_sheet.html');   # out
-    my $text_file = file('vim_cheat_sheet.txt');    # out
+    my $content   = get('http://vim.rtorr.com/');    # in from network
+    my $html_file = file('vim_cheat_sheet.html');    # out
+    my $text_file = file('vim_cheat_sheet.txt');     # out
 
-    my $data = parse_html($src_file);
+    my $data = parse_html($content);
 
     generate_html_cheat_sheet($data => $html_file);
     generate_text_cheat_sheet($data => $text_file);
@@ -38,7 +41,7 @@ use Web::Scraper;
 # ]
 #
 sub parse_html {
-    my $file = shift;
+    my $string = shift;
 
     my $scraper = scraper {
         process "h2", "names[]"  => 'TEXT';
@@ -49,22 +52,38 @@ sub parse_html {
         };
     };
 
-    my $string = $file->slurp(iomode => '<:encoding(UTF-8)');
-    my $data   = $scraper->scrape($string);
+    my $data = $scraper->scrape($string);
 
-    my $tables = $data->{tables};
-    my $names  = $data->{names};
+    my @tables = @{$data->{tables}};
+    my @names  = @{$data->{names}};
 
-    cleanup_tables_data( $tables );
-    merge_names_and_tables( $names, $tables );
-    return split_into_two_columns( $tables );
+    # The 'Additional Resources' table contians links to other translations, not vim cheats.
+    my $where_to_skip = firstidx { $_ eq 'Additional Resources' } @names;
+
+    if (defined $where_to_skip) {
+          my $max_index = $#names;
+          if ($where_to_skip == 0) {
+              @tables = @tables[1 .. $max_index];
+              @names  = @names[1 .. $max_index];
+          } elsif ($where_to_skip == $max_index) {
+              @tables = @tables[0 .. $max_index - 1];
+              @names  = @names[0 .. $max_index - 1];
+          } else {
+              @tables = (@tables[0 .. $where_to_skip - 1], @tables[$where_to_skip + 1 .. $max_index]);
+              @names  = (@names[0 .. $where_to_skip - 1],  @names[$where_to_skip + 1 .. $max_index]);
+          }
+    }
+
+    cleanup_tables_data( \@tables );
+    merge_names_and_tables( \@names, \@tables );
+    return split_into_two_columns( \@tables );
 }
 
 # Alters each $table->{rows} so it looks like this:
 #
-#  [ {cmds => ['h'], help => 'move left'}, 
-#    {cmds => ['j'], help => 'move down'}, 
-#    ... 
+#  [ {cmds => ['h'], help => 'move left'},
+#    {cmds => ['j'], help => 'move down'},
+#    ...
 #  ]
 #
 sub cleanup_tables_data {
@@ -75,7 +94,7 @@ sub cleanup_tables_data {
 
             # remove spaces around +
             # this is to make commands like 'Ctrl + v' less wide
-            $row->{help} =~ s/ \+ /+/g; 
+            $row->{help} =~ s/ \+ /+/g;
 
             # $row->{help} looks like: "gt or :tabnext or :tabn - move to next tab"
 
@@ -131,11 +150,8 @@ sub generate_html_cheat_sheet {
     my $data = shift;
     my $file = shift;
 
-    my $css  = file("vim_cheat_sheet.css")->slurp;
-    my $html = "<style type='text/css'>\n\n$css\n</style>\n\n";
-
-    my $vars  = { columns => $data };
-    $html    .= Text::Xslate->new()->render('template.tx', $vars);
+    my $vars = {columns => $data};
+    my $html = Text::Xslate->new()->render('template.tx', $vars);
 
     $file->spew(iomode => '>:encoding(UTF-8)', $html);
 }
