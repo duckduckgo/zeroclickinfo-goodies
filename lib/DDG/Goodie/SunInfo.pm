@@ -49,7 +49,7 @@ handle remainder => sub {
     my $sunrise = $sun_at_loc->sunrise_datetime($dt)->strftime($time_format);
     my $sunset  = $sun_at_loc->sunset_datetime($dt)->strftime($time_format);
 
-    return pretty_prose($where, date_output_string($dt), $sunrise, $sunset);
+    return pretty_output($where, date_output_string($dt), $sunrise, $sunset);
 };
 
 sub where_string {
@@ -70,25 +70,21 @@ sub where_string {
     return join(', ', @where_bits);
 }
 
-sub pretty_prose {
+sub pretty_output {
     my ($where, $when, $rise, $set) = @_;
 
     $rise =~ s/^\s+//g;    # strftime puts a space in front for single-digits.
     $set =~ s/^\s+//g;     # strftime puts a space in front for single-digits.
 
-    my $html_pl = "<div class='zci--suninfo text--secondary'>";    # Prelude
-    my $html_po = "<span class='text--primary'>";                  # Primary open
-    my $html_pc = "</span>";                                       # Primary close
-    my $html_el = "</div>";                                        # Epilogue
+    my $text = "On $when, sunrise in $where is at $rise; sunset at $set.";
 
-    # Now let us horribly abuse sprintf() for fun and profit.
-    my $prose = "%sOn %s$when%s, sunrise in %s$where%s is at %s$rise%s; sunset at %s$set%s.%s";
+    my $html = "<div class='zci--suninfo'>";
+    $html .= "<span class='suninfo--header text--secondary'>$where on $when</span><br/>";
+    $html .= "<span class='text--primary'><img class='sunrise' src=''/>$rise</span><br/>";
+    $html .= "<span class='text--primary'><img class='sunset' src=''/>$set</span><br/>";
+    $html .= "</div>";
 
-    # Also map abuse.
-    my @text_args = map { ''; } (0 .. 9);
-    my @html_args = ($html_pl, (map { ($html_po, $html_pc); } (0 .. 3)), $html_el);
-
-    return (sprintf($prose, @text_args), html => sprintf($prose, @html_args));
+    return ($text, html => $html);
 }
 
 1;

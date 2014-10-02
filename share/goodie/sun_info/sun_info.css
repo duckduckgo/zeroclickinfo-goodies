@@ -1,6 +1,35 @@
 .zci--answer .zci--suninfo {
     font-size: 1.5em;
+    font-weight: 400;
+}
+
+.zci--answer .zci--suninfo .suninfo--header {
+    font-size: 0.75em;
     font-weight: 300;
-    padding-top: .25em;
-    padding-bottom: .25em;
+}
+
+.zci--answer .zci--suninfo .sunrise {
+    vertical-align: middle;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    height: 0px;
+    width: 0px;
+    border: 0px;
+    background-repeat: no-repeat;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAQMAAACQp+OdAAAABlBMVEUAAAD60z8BR/QoAAAAAXRSTlMAQObYZgAAAIRJREFUKM9jGISA+QDxjATmA2xgxgfmA/wgmvEH8wH5BhDjDwODPYjB8I+BoR6spk7+Rx2YYVf/rwbMkPv/vwLMYPz/vwFi8P//EKPZf8g/gDAesEMY/AeYP0AYB5uhjOaDYIb9+faHn/+gMvo/Qhnzf4IYICaEQjAwAf///x/wMQYdAADNC0LHmFDOxQAAAABJRU5ErkJggg==);
+}
+
+.zci--answer .zci--suninfo .sunset {
+    vertical-align: middle;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    height: 0px;
+    width: 0px;
+    border: 0px;
+    background-repeat: no-repeat;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAQMAAACQp+OdAAAABlBMVEUAAAD6iSIiFS0vAAAAAXRSTlMAQObYZgAAAH5JREFUKM9jGISA+QDxjATmA2xgxgfmA/wgmvEH8wH5BhDjDwODPYjB8I+BoR6spk7+Rx2YYVf/rwbMkPv/vwLMYPz/vwFi8P//EKPZf8g/gDAesEMY/P//f0Bj7P8LZtifn//z8x8wo/8jlNH+EImB6njGBiy+hpuMjzHoAABnVEQCo35oigAAAABJRU5ErkJggg==);
 }
