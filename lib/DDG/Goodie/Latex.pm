@@ -15,6 +15,7 @@ attribution
     github => [ 'jdorweiler', 'Jason_Dorweiler'];
 
 zci answer_type => 'Latex';
+zci is_cached   => 1;
 
 my %texCommands = (
 

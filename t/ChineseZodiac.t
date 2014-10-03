@@ -7,7 +7,7 @@ use DDG::Test::Goodie;
 use utf8;
 
 zci answer_type => 'chinesezodiac';
-zci is_cached => 1;
+zci is_cached   => 0;
 
 ddg_goodie_test(
 	[qw(

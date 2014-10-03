@@ -19,6 +19,9 @@ attribution
 
 triggers any => 'rafl';
 
+zci answer_type => 'rafl';
+zci is_cached   => 1;
+
 handle remainder => sub {
   return Acme::rafl::Everywhere->new->fact
 };

@@ -12,6 +12,7 @@ primary_example_queries     'url encode https://duckduckgo.com/' , 'encode url x
 secondary_example_queries   'http://arstechnica.com/ url escape', 'apple.com/mac/ escape url';
 
 zci answer_type =>          'encoded_url';
+zci is_cached   =>          1;
 
 name                        'URLEncode';
 description                 'Displays the percent-encoded url';

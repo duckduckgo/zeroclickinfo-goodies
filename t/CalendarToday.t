@@ -5,8 +5,8 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'calendartoday';
-zci is_cached => 0;
+zci answer_type => 'calendar';
+zci is_cached   => 0;
 
 ddg_goodie_test(
     [qw(

@@ -9,6 +9,7 @@ use DDG::Request;
 use utf8;
 
 zci answer_type => 'loan';
+zci is_cached   => 1;
 
 ddg_goodie_test (
 	[

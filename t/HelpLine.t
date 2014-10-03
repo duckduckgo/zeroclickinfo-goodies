@@ -8,6 +8,7 @@ use DDG::Test::Location;
 use DDG::Request;
 
 zci answer_type => 'helpline';
+zci is_cached   => 0;
 
 my @queries = (
     'suicide',

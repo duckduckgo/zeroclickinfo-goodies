@@ -6,6 +6,9 @@ use DateTime;
 use Try::Tiny;
 with 'DDG::GoodieRole::Dates';
 
+zci answer_type => 'calendar';
+zci is_cached   => 0;
+
 primary_example_queries "calendar";
 secondary_example_queries "calendar november", 
                           "calendar next november", 
