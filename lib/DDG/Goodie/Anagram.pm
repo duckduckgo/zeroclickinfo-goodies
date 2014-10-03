@@ -122,7 +122,7 @@ handle remainder => sub {
     }
 
     my $response = join ', ', @output;
-    my $output_str = 'Anagrams of '.html_enc($word).'"';
+    my $output_str = 'Anagrams of "'.html_enc($word).'"';
     unless ($full_word) {
         $output_str .= " of length $len";
     }
