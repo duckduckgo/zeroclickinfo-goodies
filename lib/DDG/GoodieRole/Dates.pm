@@ -338,7 +338,7 @@ sub parse_datestring_to_date {
 sub parse_formatted_datestring_to_date {
     my ($d) = @_;
 
-    return unless ($d =~ qr/^$formatted_datestring$/);    # Only handle white-listed strings, even if they might otherwise work.
+    return unless ($d && $d =~ qr/^$formatted_datestring$/);    # Only handle white-listed strings, even if they might otherwise work.
     if ($d =~ $ambiguous_dates_matches) {
         # guesswork for ambigous DMY/MDY and switch to ISO
         my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});    # Assume MDY, even though it's crazy, for backward compatibility
@@ -394,7 +394,7 @@ sub parse_all_datestrings_to_date {
 sub parse_descriptive_datestring_to_date {
     my ($string) = @_;
 
-    return unless ($string =~ qr/^$descriptive_datestring_matches$/);
+    return unless ($string && $string =~ qr/^$descriptive_datestring_matches$/);
 
     my $now = DateTime->now();
     my $month = $+{'m'}; # Set in each alternative match.
