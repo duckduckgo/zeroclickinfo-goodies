@@ -2,15 +2,29 @@ package DDG::Goodie::Anagram;
 # ABSTRACT: Returns an anagram based on the word and length of word supplied
 
 use DDG::Goodie;
-use List::Util 'shuffle';
+use List::Util qw( shuffle );
 
-triggers start => "anagram", "anagrams";
+my @keywords   = qw(anagram anagrams);
+my @connectors = qw(of for);
+my @commands   = qw(find show);
 
-zci is_cached => 0;
+my @triggers;
+foreach my $kw (@keywords) {
+    foreach my $con (@connectors) {
+        push @triggers, join(' ', $kw, $con);    # anagram for, anagrams of, etc.
+        foreach my $com (@commands) {
+            push @triggers, join(' ', $com, $kw, $con);    # find anagram of, show anagrams for, etc
+        }
+    }
+}
+
+triggers start => @triggers;
+
 zci answer_type => "anagram";
+zci is_cached   => 0;
 
 primary_example_queries "anagram of filter";
-secondary_example_queries "anagram filter 5";
+secondary_example_queries "show anagrams for filter";
 description "find the anagram(s) of your query";
 name "Anagram";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Anagram.pm";
