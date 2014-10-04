@@ -1,11 +1,25 @@
 .zci--answer .zci--suninfo {
     font-size: 1.5em;
     font-weight: 400;
+    max-width: 350px;
 }
 
 .zci--answer .zci--suninfo .suninfo--header {
     font-size: 0.75em;
     font-weight: 300;
+}
+
+.zci--answer .zci--suninfo .suninfo--risediv {
+    display:inline-block;
+    width:50%;
+    text-align: center;
+}
+
+.zci--answer .zci--suninfo .suninfo--setdiv {
+    display:inline-block;
+    width:49%;
+    border-left: 1px solid #ddd;
+    text-align: center;
 }
 
 .zci--answer .zci--suninfo .sunrise {

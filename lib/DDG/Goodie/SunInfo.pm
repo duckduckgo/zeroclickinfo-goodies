@@ -80,8 +80,8 @@ sub pretty_output {
 
     my $html = "<div class='zci--suninfo'>";
     $html .= "<span class='suninfo--header text--secondary'>$where on $when</span><br/>";
-    $html .= "<span class='text--primary'><img class='sunrise' src=''/>$rise</span><br/>";
-    $html .= "<span class='text--primary'><img class='sunset' src=''/>$set</span><br/>";
+    $html .= "<div class='text--primary suninfo--risediv'><img class='sunrise' src=''/>$rise</div>";
+    $html .= "<div class='text--primary suninfo--setdiv'><img class='sunset' src=''/>$set</div>";
     $html .= "</div>";
 
     return ($text, html => $html);
