@@ -63,7 +63,4 @@ ddg_goodie_test(
     } 0 .. scalar @ok_queries - 1),
 );
 
-done_testing(
-    (scalar @queries * scalar @locations * 2) +
-    (scalar @ok_queries * scalar @locations)
-);
+done_testing;
