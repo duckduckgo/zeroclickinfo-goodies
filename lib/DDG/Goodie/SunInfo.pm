@@ -79,7 +79,7 @@ sub pretty_output {
     my $text = "On $when, sunrise in $where is at $rise; sunset at $set.";
 
     my $html = "<div class='zci--suninfo'>";
-    $html .= "<span class='suninfo--header text--secondary'>$where on $when</span><br/>";
+    $html .= "<div class='suninfo--header text--secondary'><span class='ddgsi'>@</span>$where on $when</div>";
     $html .= "<div class='text--primary suninfo--risediv'><img class='sunrise' src=''/>$rise</div>";
     $html .= "<div class='text--primary suninfo--setdiv'><img class='sunset' src=''/>$set</div>";
     $html .= "</div>";

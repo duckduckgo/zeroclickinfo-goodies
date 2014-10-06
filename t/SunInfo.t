@@ -14,7 +14,7 @@ my @aug = (qr/^On 30 Aug.*am.*pm\.$/,            html => qr/Phoenixville.*am.*pm
 my @exact = (
     'On 01 Jan 2015, sunrise in Phoenixville, PA is at 7:23am; sunset at 4:46pm.',
     html =>
-      "<div class='zci--suninfo'><span class='suninfo--header text--secondary'>Phoenixville, PA on 01 Jan 2015</span><br/><div class='text--primary suninfo--risediv'><img class='sunrise' src=''/>7:23am</div><div class='text--primary suninfo--setdiv'><img class='sunset' src=''/>4:46pm</div></div>"
+      "<div class='zci--suninfo'><div class='suninfo--header text--secondary'><span class='ddgsi'>@</span>Phoenixville, PA on 01 Jan 2015</div><div class='text--primary suninfo--risediv'><img class='sunrise' src=''/>7:23am</div><div class='text--primary suninfo--setdiv'><img class='sunset' src=''/>4:46pm</div></div>"
 );
 
 ddg_goodie_test([qw(
