@@ -67,7 +67,11 @@ handle remainder => sub {
     my $response = $responses->{$key};
 
     return unless ($response);
-    return $response->{text}, html => $response->{html};
+    return $response->{text},
+      structured_answer => {
+        input     => [],
+        operation => 'DuckDuckGo info',
+        result    => $response->{html}};
 };
 
 1;
