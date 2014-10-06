@@ -18,22 +18,29 @@ attribution github => [ 'https://github.com/mrshu', 'mrshu' ],
             twitter => [ 'https://twitter.com/mr__shu', 'mr__shu' ];
 
 handle remainder => sub {
-    my $input = $_;
+    my $input  = $_;
     my $result = 0;
-    my $ratio = 0;
+    my $ratio  = 0;
 
-    if ($input =~ /^(\d+(?:\.\d+)?)\s*\:\s*(\d+(?:\.\d+)?)\s*(?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/){
+    if ($input =~ /^(\d+(?:\.\d+)?)\s*\:\s*(\d+(?:\.\d+)?)\s*(?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/) {
         $ratio = $1 / $2;
+        my $pretty_ratio = $1 . ':' . $2;
 
+        my $result;
         if ($6 && $6 eq "?") {
-            $result = $5 / $ratio;
-            return "Aspect ratio: $5:$result ($1:$2)";
+            $result = $5 . ':' . ($5 / $ratio);
         } elsif ($3 && $3 eq "?") {
-            $result = $4 * $ratio;
-            return "Aspect ratio: $result:$4 ($1:$2)";
+            $result = ($4 * $ratio) . ':' . $4;
         }
+        return unless $result;
+
+        return "Aspect ratio: $result ($pretty_ratio)",
+          structured_answer => {
+            input     => [$pretty_ratio],
+            operation => 'aspect ratio',
+            result    => $result
+          };
     }
-    return;
 };
 
 1;
