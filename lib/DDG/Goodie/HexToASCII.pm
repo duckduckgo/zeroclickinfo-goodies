@@ -44,8 +44,12 @@ handle remainder => sub {
             $html .= '&hellip;';
         }
 
-        my $addendum = ' (ASCII)';
-        return $pure . $addendum, html => $html . $addendum;
+        return $pure . ' (ASCII)',
+          structured_answer => {
+            input     => [$value],
+            operation => 'hex to ASCII',
+            result    => $html,
+          };
     }
     return;
 };
