@@ -1,131 +1,117 @@
 package DDG::Goodie::Anagram;
-# ABSTRACT: Returns an anagram based on the word and length of word supplied
+# ABSTRACT: Returns an anagram based on the supplied query.
 
 use DDG::Goodie;
-use List::Util 'shuffle';
+use List::Util qw( shuffle );
 
-triggers start => "anagram", "anagrams";
+my @keywords   = qw(anagram anagrams);
+my @connectors = qw(of for);
+my @commands   = qw(find show);
 
-zci is_cached => 0;
+my @triggers;
+foreach my $kw (@keywords) {
+    foreach my $con (@connectors) {
+        push @triggers, join(' ', $kw, $con);    # anagram for, anagrams of, etc.
+        foreach my $com (@commands) {
+            push @triggers, join(' ', $com, $kw, $con);    # find anagram of, show anagrams for, etc.
+        }
+    }
+    push @triggers, $kw;                                   # Trigger order appears to matter, so the bare keywords after the others
+}
+
+triggers start => @triggers;
+
 zci answer_type => "anagram";
+zci is_cached   => 1;
 
 primary_example_queries "anagram of filter";
-secondary_example_queries "anagram filter 5";
+secondary_example_queries "find anagram for partial men";
 description "find the anagram(s) of your query";
 name "Anagram";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Anagram.pm";
 category "transformations";
 topics "words_and_games";
 
-attribution github => ["https://github.com/loganom", 'loganom'],
+attribution github => ["https://github.com/loganom",      'loganom'],
             github => ["https://github.com/beardlybread", "beardlybread"],
-            github => ['https://github.com/gdrooid', 'gdrooid'],
-            email  => ['gdrooid@openmailbox.org', 'gdrooid'];
+            github => ['https://github.com/gdrooid',      'gdrooid'],
+            email  => ['gdrooid@openmailbox.org',         'gdrooid'];
 
 # Wrap the response in html
 sub html_output {
     my ($str, $list) = @_;
-    return "<div class='zci--anagrams'>"
-          ."<span class='text--secondary'>$str</span><br/>"
-          ."<span class='text--primary'>$list</span>"
-          ."</div>";
+    return "<div class='zci--anagrams'>" . "<span class='text--secondary'>$str</span><br/>" . "<span class='text--primary'>$list</span>" . "</div>";
 }
 
 # Calculate the frequency of the characters in a string
 sub calc_freq {
-    my ($str, $ref) = @_;
-    for (split //, $str) {
-        if ($ref->{$_}) {
-            $ref->{$_} += 1;
-        } else {
-            $ref->{$_} = 1;
-        }
+    my ($str) = @_;
+    my %freqs;
+
+    for (split //, lc $str) {
+        $freqs{$_} += 1;
     }
+
+    return \%freqs;
 }
 
-my @words = map { chomp; $_; } share('words')->slurp;
+my %words = map { chomp; ($_ => undef); } share('words')->slurp;    # This will cache letter frequencies as they get used.
 
 handle remainder => sub {
 
+    my $word = $_;
+    $word =~ s/^"(.*)"$/$1/;
+
+    return unless $word;    # Need a word.
+
+    # Do some normalization to allow for multi-word matches.
+    my $match_word = lc $word;
+    $match_word =~ s/[^a-z]//g;
+    return unless $match_word;    # Still need a word!
+
+    my $len = length $match_word;
+
+    if ($match_word eq 'voldemort') {
+        return 'Tom Riddle', html => html_output("Anagrams of \"$word\"", 'Tom Riddle');
+    }
+
+    my $query_freq = calc_freq($match_word);    # Calculate the letter-freq of the query
     my @output;
 
-    s/^of\s+(.+)/$1/i;
-    s/^"(.*)"$/$1/;
-    my $len;
-    my $word;
-    my $full_word = 1;
-    my $multiple_words = 0;
+    foreach (keys %words) {
+        if (/^[$match_word]{$len}$/i) {
+            my $w = lc;
+            next if $w eq $match_word;          # Skip word if it's the same as the query
 
-    # If the query is of type "word length", where 'length' is not required
-    if (/^([a-zA-Z]+)\s*([0-9]+)?\s*$/) {
-        $word = $1;
-        $word =~ s/\s+$//;
-        $len = length $word;
-        # If looking for anagrams shorter than the word
-        if ($2 && $2 < $len) {
-            $len = $2;
-            $full_word = 0;
-        }
-    }
-    else {
-        $word = $_;
-        $multiple_words = 1;
-    }
+            my $f = $words{$w} // calc_freq($w);    # Use cached word letter-freq or calculate new
+            $words{$w} //= $f;                      # Cache word letter-freq if we didn't have it.
 
-    # Return if there is no word
-    return unless $word;
-
-    if (lc $word eq 'voldemort' and $full_word) {
-        return 'Tom Riddle', html => html_output ("Anagrams of \"$word\"", 'Tom Riddle');
-    }
-
-    # Calculate the frequency of the characters of the query
-    my %query_freq;
-    calc_freq lc $word, \%query_freq;
-
-    unless ($multiple_words) {
-        foreach (@words) {
-            if (/^[$word]{$len}$/i) {
-                my $w = lc;
-                # Skip word if it's the same as the one in the query
-                next if $w eq lc $word;
-
-                # Calculate the frequency of the characters of a word from the list
-                my %f;
-                calc_freq lc, \%f;
-
-                my $is_anagram = 1;
-                for (keys %f) {
-                    if ($f{$_} > $query_freq{$_}) {
-                        # The frequency of the characters in a word must be equal or
-                        # less (for shorter anagrams) than that of the same
-                        # character in the query
-                        $is_anagram = 0;
-                        last;
-                    }
+            my $is_anagram = 1;
+            for (keys %$f) {
+                if ($f->{$_} != $query_freq->{$_}) {
+                    # The letter-freq in a dictionary word must equal that of the query
+                    $is_anagram = 0;
+                    last;
                 }
-                push (@output, $_) if $is_anagram;
             }
+            push(@output, $_) if $is_anagram;
         }
     }
-
-    # If the query is multiple words long or there are no anagrams for its
-    # single word, the query will be scrambled, as there is no other possible
-    # response
-    unless (@output) {
+    # Scramble when no anagram can be found.
+    if (!@output) {
         my $w;
         do {
-            my @chars = shuffle split (//, $word);
-            $w = join '', @chars;
-        } while ($w eq $word);
-        return $word, html => html_output('Sorry, we found no anagrams for "'.html_enc($word).'". We scrambled it for you:', $w);
+            $w = join '', shuffle split(//, $word);
+        } while ($w eq $match_word);
+        # Do not cache the scrambled versions since the shuffle is random.
+        return $word,
+          html      => html_output('Sorry, we found no anagrams for "' . html_enc($word) . '". We scrambled it for you:', html_enc($w)),
+          is_cached => 0;
     }
 
-    my $response = join ', ', @output;
-    my $output_str = 'Anagrams of "'.html_enc($word).'"';
-    unless ($full_word) {
-        $output_str .= " of length $len";
-    }
+    my $response = join ', ', sort { $a cmp $b } @output;
+    my $output_str = 'Anagrams of "' . html_enc($word) . '"';
+
     return $response, html => html_output($output_str, $response);
 };
 
