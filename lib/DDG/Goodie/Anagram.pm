@@ -16,6 +16,7 @@ foreach my $kw (@keywords) {
             push @triggers, join(' ', $com, $kw, $con);    # find anagram of, show anagrams for, etc.
         }
     }
+    push @triggers, $kw;                                   # Trigger order appears to matter, so the bare keywords after the others
 }
 
 triggers start => @triggers;
