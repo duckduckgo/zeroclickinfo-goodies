@@ -21,10 +21,10 @@ category 'computing_tools';
 topics 'programming', 'web_design';
 
 handle query_raw => sub {
-	# unless trigger words exist, only answer when we have a single word
-	unless (m/$trigger_words/) {
-		return if m/\s+/;
-	}
+    # unless trigger words exist, only answer when we have a single word
+    unless (m/$trigger_words/) {
+        return if m/\s+/;
+    }
     #remove triggers and trim
     s/(^$trigger_words)|($trigger_words$)//i;
     s/(^\s+)|(\s+$)//;
