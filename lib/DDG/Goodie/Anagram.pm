@@ -105,7 +105,7 @@ handle remainder => sub {
         } while ($w eq $match_word);
         # Do not cache the scrambled versions since the shuffle is random.
         return $word,
-          html      => html_output('Sorry, we found no anagrams for "' . html_enc($word) . '". We scrambled it for you:', $w),
+          html      => html_output('Sorry, we found no anagrams for "' . html_enc($word) . '". We scrambled it for you:', html_enc($w)),
           is_cached => 0;
     }
 
