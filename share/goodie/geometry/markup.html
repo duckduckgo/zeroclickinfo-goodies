@@ -3,7 +3,7 @@ $(document).ready(function(){
 	//get all formulas
 	$("#zci--geometry-formulas div").each(function(){
 		//get the svg shape (it has the data-formula attribute with the first letter of the formula)
-		var svg = $("#zci--geometry-svg [data-formula=" + $(this).text()[0] + "]");
+		var svg = $("#zci--geometry-svg [data-formula=" + $(this).text().match(/:(\w)/)[1] + "]");//matches the formula symbol
 		var formula = this;
 		//No svg shape for this formula
 		if(!svg.length) return;

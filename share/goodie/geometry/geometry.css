@@ -8,3 +8,4 @@
 #zci--geometry-svg .fill:hover, #zci--geometry-svg .fill.hover{fill: #4C96EE}
 
 #zci--geometry-formulas div:hover, #zci--geometry-formulas div.hover{color: #1168CE}
+#zci--geometry-formulas span{min-width: 100px; display: inline-block}

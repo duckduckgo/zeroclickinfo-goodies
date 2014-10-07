@@ -189,6 +189,7 @@ handle remainder => sub {
 				#is it the shape wanted?
 				my ($text, $html) = '';
 				my @parameter = $shape[0][3]($_);
+				my $typeLabel;
 				#get the parameter
 				while(my($type, @formula) = each $shape[0][2]){
 					#is it the formula wanted?
@@ -208,8 +209,12 @@ handle remainder => sub {
 					}
 					#No, append the formula symbol + formula
 					$text .= ', ' if $text;
-					$text .= $formulas{$type}[1].' = '.$formula[0][0];
-					$html .= '<div title="'.$type.'">'.$formulas{$type}[1].' = '.$formula[0][1];
+
+					$typeLabel = ucfirst($type); #Store the type with first letter as uppercase
+
+					$text .= $typeLabel.': '.$formulas{$type}[1].' = '.$formula[0][0];
+					$html .= '<div title="'.$typeLabel.'">';
+					$html .= '<span>'.$typeLabel.':</span>'.$formulas{$type}[1].' = '.$formula[0][1];
 					# + result if parameters are defined
 					if($parameter[0] != 0){
 						$text .= ' = '.$formula[0][2](@parameter);
