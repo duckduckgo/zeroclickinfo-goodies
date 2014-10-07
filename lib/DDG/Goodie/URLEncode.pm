@@ -28,7 +28,7 @@ handle remainder => sub {
     my $encoded_url = encodeURIComponent($_);
 
     my $text = "Percent-encoded URL: $encoded_url";
-    my $html = qq(<div class="zci--urlencode"><span class="text--secondary">Percent-encoded URL: </span><span class="text--primary">$encoded_url</span></div>);
+    my $html = qq(<div class="zci--urlencode"><div class="text--secondary mini-title">Percent-encoded URL: </div><div class="text--primary url_encoded">$encoded_url</div></div>);
 
     return $text, html => $html;
 };
