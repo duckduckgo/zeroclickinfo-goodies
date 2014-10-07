@@ -1,4 +1,3 @@
-<script type="text/javascript">
 $(document).ready(function(){
 	//get all formulas
 	$("#zci--geometry-formulas div").each(function(){
@@ -27,6 +26,3 @@ $(document).ready(function(){
 		});
 	});
 });
-</script>
-<!-- Note: this SVG tag is closed by the goodie -->
-<svg id="zci--geometry-svg" width="140" height="110">

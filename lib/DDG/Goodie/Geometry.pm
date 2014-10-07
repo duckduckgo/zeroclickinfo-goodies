@@ -45,11 +45,9 @@ sub getParameter {
 	return 0;
 }
 
-my $markup = scalar share("markup.html")->slurp;
-
 sub makehtml {
 	my ($html, $svg) = @_;
-	return $markup.$svg.'</svg><div id="zci--geometry-formulas">'.$html.'</div>';
+	return '<div id="zci--geometry-formulas">'.$html.'</div><svg id="zci--geometry-svg" width="140" height="110">'.$svg.'</svg>';
 }
 
 #schema: <name> => [<trigger>, <symbol>]
