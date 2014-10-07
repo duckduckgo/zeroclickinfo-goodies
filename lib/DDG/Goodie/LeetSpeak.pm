@@ -11,9 +11,10 @@ category 'conversions';
 name 'LeetSpeak';
 code_url 'https://github.com/antoine-vugliano/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/LeetSpeak.pm';
 attribution github => ['https://github.com/antoine-vugliano', 'antoine-vugliano'],
-	web => ['http://antoine.vugliano.free.fr', 'Antoine Vugliano'];
+            web    => ['http://antoine.vugliano.free.fr',     'Antoine Vugliano'];
 
-zci is_cached => 1;
+zci answer_type => 'leet_speak';
+zci is_cached   => 1;
 
 my %alphabet = (
     a => '/-\\',
@@ -45,13 +46,18 @@ my %alphabet = (
 );
 
 handle remainder => sub {
-    return unless $_;
+    my $text = shift;
 
-    my $translation = join '', map {
-        exists $alphabet{$_} ?  $alphabet{$_} : $_
-    } split //, lc;
+    return unless $text;
 
-    return "Leet Speak: $translation";
+    my $translation = join '', map { $alphabet{$_} // $_ } split //, lc $text;
+
+    return "Leet Speak: $translation",
+      structured_answer => {
+        input     => [$text],
+        operation => 'leet speak',
+        result    => $translation,
+      };
 };
 
 1;
