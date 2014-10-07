@@ -5,6 +5,7 @@
 .zci--answer .calendar th, .calendar td {
     width: 2.5em;
     text-align: center;
+    height: 1.6em;
 }
 
 .zci--answer .calendar__header {
