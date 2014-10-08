@@ -80,7 +80,8 @@ handle query_lc => sub {
 
     # hack/handle the special case of "X in Y":
     if ((scalar @matches == 3) && $matches[1] eq "in") {
-        @matches = ($matches[0], $matches[2]);
+        # If they put the number on the second term, we also need to reverse.
+        @matches = ($_ =~ /[0-9]\s+$matches[2]/) ? ($matches[2], $matches[0]) : ($matches[0], $matches[2]);
     }
     return unless scalar @matches == 2; # conversion requires two triggers
 
