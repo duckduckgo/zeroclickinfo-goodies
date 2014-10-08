@@ -273,13 +273,25 @@ subtest 'Dates' => sub {
                 'next jan'      => '01 Jan 2016',
                 'last jan'      => '01 Jan 2015',
                 'feb 2038'      => '01 Feb 2038',
+                'now'           => '01 Dec 2015',
+                'today'         => '01 Dec 2015',
             },
             '2000-01-01T00:00:00Z' => {
                 'feb 21st'       => '21 Feb 2000',
                 '11th feb'       => '11 Feb 2000',
                 'march 13'       => '13 Mar 2000',
                 '12 march'       => '12 Mar 2000',
-            }
+                'next week'      => '08 Jan 2000',
+                'last week'      => '25 Dec 1999',
+                'tomorrow'       => '02 Jan 2000',
+                'yesterday'      => '31 Dec 1999',
+            },
+            '2014-10-08T00:00:00Z' => {
+                'next week'      => '01 Oct 2014',
+                'last week'      => '15 oct 2014',
+                'next month'     => '08 Nov 2014',
+                'last month'     => '08 Sep 2014'
+            },
         );
         foreach my $query_time (sort keys %time_strings) {
             set_fixed_time($query_time);
