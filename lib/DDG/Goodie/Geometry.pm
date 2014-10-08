@@ -47,7 +47,7 @@ sub getParameter {
 
 sub makehtml {
 	my ($html, $svg) = @_;
-	return '<div id="zci--geometry-formulas" class="text--primary">'.$html.'</div><svg id="zci--geometry-svg" width="140" height="110">'.$svg.'</svg>';
+	return '<div id="zci--geometry-formulas" class="text--primary">'.$html.'</div><svg id="zci--geometry-svg" viewBox="0 0 140 110" style="display: none">'.$svg.'</svg>';
 }
 
 #schema: <name> => [<trigger>, <symbol>]

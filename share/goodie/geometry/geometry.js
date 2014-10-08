@@ -1,4 +1,5 @@
-$(document).ready(function(){
+//We must wait for geometry.css
+$(window).load(function(){
 	//get all formulas
 	$("#zci--geometry-formulas div").each(function(){
 		//get the svg shape (it has the data-formula attribute with the first letter of the formula)
@@ -25,4 +26,9 @@ $(document).ready(function(){
 			formula.classList.remove("hover");
 		});
 	});
+	var svg = $("#zci--geometry-svg");
+	//set SVG height to the same height as the formulas
+	svg.height($("#zci--geometry-formulas").height());
+	//the svg is first hidden; if the CSS is not loaded, there is a black big shape
+	svg.show();
 });
