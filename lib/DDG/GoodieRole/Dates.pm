@@ -210,28 +210,20 @@ sub parse_descriptive_datestring_to_date {
         return parse_datestring_to_date("01 $month $year");
     }
     elsif (my $relative_date = $+{'r'}) {
-        # now|today|tomorrow|yesterday|(?:current|next|previous day)|(?:next|last week|month);
         my $tmp_date = $now;
-        if ($+{'r'} =~ qr/now|today|(current day)/) {
-            return $now;
-        }
-        elsif ($+{'r'} =~ qr/tomorrow|(next day)/) {    
-            $tmp_date->add( days => 1);
-            return $tmp_date;
-        }
-        elsif ($+{'r'} =~ qr/yesterday|(previous day)/) {
-            $tmp_date->add( days => -1);
-            return $tmp_date;
-        }
-        elsif ($+{'r'} =~ qr/(next|last) (week|month)/) {
+        return $now if ($+{'r'} =~ qr/now|today|(current day)/);
+        
+        $tmp_date->add( days => 1) if ($+{'r'} =~ qr/tomorrow|(next day)/);
+        $tmp_date->add( days => -1) if ($+{'r'} =~ qr/yesterday|(previous day)/);
+        
+        if ($+{'r'} =~ qr/(next|last) (week|month)/) {
             my $num = 1;
             $num = -1 if ($1 eq "last");
             
             $tmp_date->add( days => 7*$num ) if($2 eq "week");
             $tmp_date->add( months => $num ) if($2 eq "month");
-            return $tmp_date;
         }
-        return undef;
+        return $tmp_date;
     }
     else {
         # single named months
