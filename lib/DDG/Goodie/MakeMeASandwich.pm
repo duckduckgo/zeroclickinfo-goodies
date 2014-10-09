@@ -18,12 +18,29 @@ triggers end => 'make me a sandwich';
 zci answer_type => 'xkcd_sandwich';
 zci is_cached   => 1;
 
+my $xkcd_query = 'https://duckduckgo.com/?q=' . uri_esc('xkcd 149');
+my $operation  = '<a href="' . $xkcd_query . '">xkcd 149</a>';
+
 handle remainder => sub {
-    return 'Okay.',
-        html => 'Okay. <br><a href="http://xkcd.com/149/">More at xkcd</a>' if $_ eq 'sudo';
-    return 'What? Make it yourself.',
-        html => 'What? Make it yourself. <br><a href="http://xkcd.com/149/">More at xkcd</a>' if $_ eq '';
-    return;
+
+    my $rem = lc $_;
+
+    my ($result, $input) = (undef, 'make me a sandwich');
+    if ($rem eq 'sudo') {
+        $result = 'Okay.';
+        $input  = 'sudo ' . $input;
+    } elsif ($rem eq '') {
+        $result = 'What? Make it yourself.';
+    }
+
+    return unless defined $result;
+
+    return $result,
+      structured_answer => {
+        input     => [$input],
+        operation => $operation,
+        result    => $result
+      };
 };
 
 1;
