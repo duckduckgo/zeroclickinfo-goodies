@@ -1,49 +1,36 @@
 .zci--answer .zci--suninfo {
-    font-size: 1.5em;
-    font-weight: 400;
-    max-width: 350px;
+    font-size:1.25em;
+    font-weight:400;
+    max-width:350px;
 }
 
 .zci--answer .zci--suninfo .suninfo--header {
-    font-size: 0.75em;
-    font-weight: 300;
+    font-size:0.75em;
+    font-weight:300;
 }
 
-.zci--answer .zci--suninfo .suninfo--risediv {
+.zci--answer .zci--suninfo .suninfo--timeboxes {
     display:inline-block;
-    width:50%;
-    text-align: center;
+    height:48px;
+    line-height:60px;
+    vertical-align:top;
+    padding:0 1em 0.5em;
 }
 
-.zci--answer .zci--suninfo .suninfo--setdiv {
+.zci--answer .zci--suninfo .suninfo--times {
+    height:48px;
+}
+
+.zci--answer .zci--suninfo .suninfo--setbox {
     display:inline-block;
-    width:49%;
-    border-left: 1px solid #ddd;
-    text-align: center;
+    width:48px;
+    height:48px;
+    border-left:1px solid #ccc;
+    padding: 0 0 0 0.5em;
+}
+.zci--answer .zci--suninfo .suninfo--risebox {
+    display:inline-block;
+    width:48px;
+    height:48px;
 }
 
-.zci--answer .zci--suninfo .sunrise {
-    vertical-align: middle;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    height: 0px;
-    width: 0px;
-    border: 0px;
-    background-repeat: no-repeat;
-    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAQMAAACQp+OdAAAABlBMVEUAAAD60z8BR/QoAAAAAXRSTlMAQObYZgAAAIRJREFUKM9jGISA+QDxjATmA2xgxgfmA/wgmvEH8wH5BhDjDwODPYjB8I+BoR6spk7+Rx2YYVf/rwbMkPv/vwLMYPz/vwFi8P//EKPZf8g/gDAesEMY/AeYP0AYB5uhjOaDYIb9+faHn/+gMvo/Qhnzf4IYICaEQjAwAf///x/wMQYdAADNC0LHmFDOxQAAAABJRU5ErkJggg==);
-}
-
-.zci--answer .zci--suninfo .sunset {
-    vertical-align: middle;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    height: 0px;
-    width: 0px;
-    border: 0px;
-    background-repeat: no-repeat;
-    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAQMAAACQp+OdAAAABlBMVEUAAAD6iSIiFS0vAAAAAXRSTlMAQObYZgAAAH5JREFUKM9jGISA+QDxjATmA2xgxgfmA/wgmvEH8wH5BhDjDwODPYjB8I+BoR6spk7+Rx2YYVf/rwbMkPv/vwLMYPz/vwFi8P//EKPZf8g/gDAesEMY/P//f0Bj7P8LZtifn//z8x8wo/8jlNH+EImB6njGBiy+hpuMjzHoAABnVEQCo35oigAAAABJRU5ErkJggg==);
-}

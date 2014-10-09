@@ -3,6 +3,7 @@ package DDG::Goodie::SunInfo;
 
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
+with 'DDG::GoodieRole::ImageLoader';
 
 use DateTime::Event::Sunrise;
 
@@ -19,8 +20,19 @@ category 'calculations';
 topics 'everyday';
 attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
 
-my $time_format = '%l:%M%P';
+my $time_format      = '%l:%M%P';
 my $datestring_regex = datestring_regex();
+
+my $sunrise_svg = goodie_img_tag({
+    filename => 'sunrise.svg',
+    height   => 48,
+    width    => 48,
+});
+my $sunset_svg = goodie_img_tag({
+    filename => 'sunset.svg',
+    height   => 48,
+    width    => 48,
+});
 
 handle remainder => sub {
 
@@ -80,8 +92,14 @@ sub pretty_output {
 
     my $html = "<div class='zci--suninfo'>";
     $html .= "<div class='suninfo--header text--secondary'><span class='ddgsi'>@</span>$where on $when</div>";
-    $html .= "<div class='text--primary suninfo--risediv'><img class='sunrise' src=''/>$rise</div>";
-    $html .= "<div class='text--primary suninfo--setdiv'><img class='sunset' src=''/>$set</div>";
+    $html .=
+        "<div class='suninfo--risebox'>"
+      . $sunrise_svg
+      . "</div><div class='suninfo--timeboxes'><div class='text--primary suninfo--times'>$rise</div></div>";
+    $html .=
+        "<div class='suninfo--setbox'>"
+      . $sunset_svg
+      . "</div><div class='suninfo--timeboxes'><div class='text--primary suninfo--times'>$set</div></div>";
     $html .= "</div>";
 
     return ($text, html => $html);
