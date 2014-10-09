@@ -433,10 +433,9 @@ sub parse_descriptive_datestring_to_date {
               : ($unit eq 'month') ? (months => $num)
               : ($unit eq 'year')  ? (years  => $num)
               :                      ();
-
         }
 
-        $tmp_date->add(@to_add) if (@to_add);
+        $tmp_date->add(@to_add);
         return $tmp_date;
     } else {
         # single named months
