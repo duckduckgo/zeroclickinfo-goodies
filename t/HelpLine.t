@@ -8,6 +8,7 @@ use DDG::Test::Location;
 use DDG::Request;
 
 zci answer_type => 'helpline';
+zci is_cached   => 0;
 
 my @queries = (
     'suicide',
@@ -62,7 +63,4 @@ ddg_goodie_test(
     } 0 .. scalar @ok_queries - 1),
 );
 
-done_testing(
-    (scalar @queries * scalar @locations * 2) +
-    (scalar @ok_queries * scalar @locations)
-);
+done_testing;

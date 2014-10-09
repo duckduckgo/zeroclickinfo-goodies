@@ -7,6 +7,7 @@ use Data::RandomPerson;
 
 triggers start  => 'random';
 zci answer_type => 'rand';
+zci is_cached   => 0;
 
 name 'RandomName';
 description 'returns a random and fictive title, first- and lastname and day of birth';

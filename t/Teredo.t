@@ -7,6 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'teredo';
+zci is_cached   => 1;
 
 ddg_goodie_test(
     [

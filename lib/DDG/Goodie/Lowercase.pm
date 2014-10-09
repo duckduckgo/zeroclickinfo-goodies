@@ -17,12 +17,6 @@ zci answer_type => "lowercase";
 
 triggers start => 'lowercase', 'lower case', 'lc', 'strtolower', 'tolower';
 
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-};
-
 handle remainder => sub {
     return unless $_;
     my $lower = lc $_;
@@ -33,11 +27,8 @@ handle remainder => sub {
     $lower = html_enc($lower);
     
     my $html = qq(<div class="zci--lowercase"><span class="text--primary">$lower</span></div>);
-    $html = append_css($html);
 
     return $text, html => $html;
-
-    return;
 };
 
 1;

@@ -1,4 +1,5 @@
 package DDG::Goodie::BinaryLogic;
+# ABSTRACT: bit-wise logical operations.
 
 use DDG::Goodie;
 use utf8;

@@ -46,17 +46,8 @@ handle remainder => sub {
   return $sequence, html => wrap_html('DNA reverse complement:', $sequence);
 };
 
-# This function adds some HTML and styling to our output
-# so that we can make it prettier (copied from the Conversions
-# goodie)
-sub append_css {
-  my $html = shift;
-  state $css = share("style.css")->slurp;
-  return "<style type='text/css'>$css</style>$html";
-}
-
 sub wrap_html {
   my ($label, $sequence) = @_;
-  return append_css("<div class='zci--reversecomplement'><div class='label'>$label</div><div class='sequence'>$sequence</div></div>");
+  return "<div class='zci--reversecomplement'><div class='label'>$label</div><div class='sequence'>$sequence</div></div>";
 }
 1;

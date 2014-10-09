@@ -12,6 +12,7 @@ category 'computing_tools';
 topics 'cryptography';
 
 zci answer_type => 'pw';
+zci is_cached   => 0;
 
 triggers any => 'random', 'password', 'pw', 'pwgen';
 

@@ -6,6 +6,7 @@ use Locale::Country qw/country2code code2country/;
 use Telephony::CountryDialingCodes;
 
 zci answer_type => "calling_codes";
+zci is_cached   => 1;
 
 name        "CallingCodes";
 description "Matches country names to international calling codes";

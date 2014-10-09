@@ -11,6 +11,7 @@ triggers startend =>    'donor compatibility', 'donor', 'donors for',
                         'blood type', 'blood compatibility', 'compatibility', 'blood donor compatibility';
 
 zci answer_type => "blood_donor";
+zci is_cached   => 1;
 
 primary_example_queries 'donor O+';
 secondary_example_queries 'donor AB+';
@@ -27,13 +28,6 @@ my %typeMap = (
     'AB' => 'AB,A,B,O',
     'B' => 'B,O',
 );
-
-sub apply_css($)
-{
-    my ($html) = @_;
-    my $css = scalar share('style.css')->slurp;
-    return "<style type='text/css'>$css</style>\n$html";
-}
 
 sub table_data {
     my ($label, $value) = @_;
@@ -76,7 +70,7 @@ handle remainder => sub {
         }
         
         $html .= '</table>';
-        return $output, html => apply_css($html), heading => "Donors for blood type ".uc($_);
+        return $output, html => $html, heading => "Donors for blood type ".uc($_);
     }
     return;
 };

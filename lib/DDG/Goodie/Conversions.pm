@@ -19,6 +19,7 @@ attribution                github  => ['https://github.com/elohmrow', 'https://g
                            email   => ['bradley@pvnp.us'];
 
 zci answer_type => 'conversions';
+zci is_cached   => 1;
 
 # build the keys:
 # unit types available for conversion
@@ -57,19 +58,11 @@ my %plural_exceptions = (
     'pounds force'           => 'pounds force',
 );
 
-# This function adds some HTML and styling to our output
-# so that we can make it prettier.
-my $css = share("style.css")->slurp;
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>$html";
-}
-
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
     my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . html_enc($result->{'from_unit'}) . "</span>";
     my $to = $styler->with_html($result->{'result'}) . " <span class='text--secondary'>" . html_enc($result->{'to_unit'}) . "</span>";
-    return append_css("<div class='zci--conversions text--primary'>$from = $to</div>");
+    return "<div class='zci--conversions text--primary'>$from = $to</div>";
 }
 
 handle query_lc => sub {
@@ -87,7 +80,8 @@ handle query_lc => sub {
 
     # hack/handle the special case of "X in Y":
     if ((scalar @matches == 3) && $matches[1] eq "in") {
-        @matches = ($matches[0], $matches[2]);
+        # If they put the number on the second term, we also need to reverse.
+        @matches = ($_ =~ /[0-9]\s+$matches[2]/) ? ($matches[2], $matches[0]) : ($matches[0], $matches[2]);
     }
     return unless scalar @matches == 2; # conversion requires two triggers
 

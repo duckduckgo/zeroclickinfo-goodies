@@ -6,6 +6,9 @@ use DateTime;
 use Try::Tiny;
 with 'DDG::GoodieRole::Dates';
 
+zci answer_type => 'calendar';
+zci is_cached   => 0;
+
 primary_example_queries "calendar";
 secondary_example_queries "calendar november", 
                           "calendar next november", 
@@ -24,20 +27,21 @@ triggers startend => 'calendar', 'cal';
 
 # define variables
 my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
-  
-# read in css-file only once
-my $css = share("style.css")->slurp;
 
-my $datestring_regex  = datestring_regex();
+my $filler_words_regex         = qr/(?:\b(?:on|of|for|the|a)\b)/;
+my $datestring_regex           = datestring_regex();
 my $formatted_datestring_regex = formatted_datestring_regex();
 
 handle remainder => sub {
     my $query       = $_;
     my $date_object = DateTime->now;
     my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
-    my $highlightDay = 0;    # Initialized, but won't match, by default.
+    my $highlightDay = 0;                  # Initialized, but won't match, by default.
+    $query =~ s/$filler_words_regex//g;    # Remove filler words.
+    $query =~ s/\s{2,}/ /g;                # Tighten up any extra spaces we may have left.
+    $query =~ s/^\s+|\s+$//g;              # Trim outside spaces.
     if ($query) {
-        my ($date_string) = $query =~ qr#($datestring_regex)#i;    # Extract any datestring from the query.
+        my ($date_string) = $query =~ qr#^($datestring_regex)$#i;    # Extract any datestring from the query.
 
         $date_object = parse_datestring_to_date($date_string);
 
@@ -53,7 +57,7 @@ handle remainder => sub {
     my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
     return format_result({
             first_day     => $start,
-            first_day_num => $start->day_of_week() % 7, # 0=Sunday
+            first_day_num => $start->day_of_week() % 7,                                    # 0=Sunday
             last_day      => DateTime->last_day_of_month(
                 year  => $the_year,
                 month => $the_month,
@@ -107,12 +111,7 @@ sub format_result {
     $rText .= "\n";
     $rHtml .="</tr></table>";
 
-    return $rText, html => append_css($rHtml);
-}
-
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
+    return $rText, html => $rHtml;
 }
 
 1;

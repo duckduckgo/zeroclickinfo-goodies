@@ -4,7 +4,7 @@
     margin-right: 0px !important;
 }
 
-.zci--answer .vim-container {
+.zci--answer #vim-container {
     max-height: 45ex;
     overflow-y: scroll;
     overflow-x: hidden;

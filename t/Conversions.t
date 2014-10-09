@@ -7,6 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'conversions';
+zci is_cached   => 1;
 
 ddg_goodie_test(
     ['DDG::Goodie::Conversions'],
@@ -88,6 +89,9 @@ ddg_goodie_test(
     '234 f to k' => test_zci('234 degrees fahrenheit = 385.372 kelvin', html => qr/.*/),
     'metres from 20 yards' => test_zci('20 meters = 21.872 yards', html => qr/.*/),
     '7 milligrams to micrograms' => test_zci('7 milligrams = 7,000 micrograms', html => qr /.*/),
+    'inches in 5 meters' => test_zci('5 meters = 196.851 inches', html => qr /.*/),
+    '5 inches in meters' => test_zci('5 inches = 0.127 meters', html => qr /.*/),
+    '5 inches in 5 meters' => undef,
     'convert 1 cm to 2 mm' => undef,
 );
 

@@ -6,6 +6,7 @@ use DDG::Goodie;
 use Safe;
 
 zci answer_type => "regexp";
+zci is_cached   => 1;
 
 primary_example_queries 'regexp /(.*)/ ddg';
 description 'Regular expressions';

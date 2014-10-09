@@ -7,6 +7,7 @@ use warnings;
 use DDG::Goodie;
 
 zci answer_type => "regex_cheat";
+zci is_cached   => 1;
 
 triggers start => 
     'regex cheatsheet', 
@@ -183,13 +184,6 @@ sub difference_between($$) {
     return ord($b) - ord($a);
 }
 
-my $css = scalar share("style.css")->slurp;
-
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-}
-
 handle remainder => sub {
         my $heading = 'Regex Cheat Sheet';
 
@@ -274,7 +268,7 @@ handle remainder => sub {
     my $html_output = "<div class='regex-container'><div class='regex-column'>";
     $html_output .= join ("</div><div class='regex-column'>", @html_columns);
     $html_output .= "</div></div>";
-    return answer => $text_output, html => append_css($html_output), heading => $heading;
+    return answer => $text_output, html => $html_output, heading => $heading;
 };
 
 1;
