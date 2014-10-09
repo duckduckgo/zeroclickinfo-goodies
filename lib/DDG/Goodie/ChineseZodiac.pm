@@ -34,30 +34,27 @@ my %animal_to_language = (
   'tiger' => { en => 'Tiger', zh => '虎' }
 );
 
-my $chinese_zodiac_tz = 'Asia/Shanghai';
-my $role_datestring_regex = datestring_regex();
+my $chinese_zodiac_tz            = 'Asia/Shanghai';
+my $descriptive_datestring_regex = descriptive_datestring_regex();
+my $formatted_datestring_regex   = formatted_datestring_regex();
 
 handle remainder => sub {
 
   #Figure out what date the user is interested in
   my $date_gregorian;
 
-  if (/^$role_datestring_regex$/) {
-    $date_gregorian = parse_datestring_to_date($_);
-  } elsif (/this\syear('s)?/) { #Parse out a relative year expression if it was supplied
-    $date_gregorian = DateTime->now();
-  } elsif (/next\syear('s)?/) {
-    $date_gregorian = DateTime->now()->add(years => 1);
-  } elsif (/last\syear('s)?/) {
-    $date_gregorian = DateTime->now()->subtract(years => 1);
-
-  #Look for an explicit year-only
+  if (/^$formatted_datestring_regex$/) {
+    # First look for a fully specified string
+    $date_gregorian = parse_formatted_datestring_to_date($_);
   } elsif (/\b(\d+)\b/) {
-    $date_gregorian = DateTime->new(year => $1, month => 6,);
-
-  #Otherwise, default to now if it seems like the user is
-  # asking a question about the current zodiac animal
-  } elsif (/(what|which|year|animal|current|now|today|this)/)  {
+    # Now check for bare years, as we prefer a different start time than the role.
+    $date_gregorian = DateTime->new(year  => $1, month => 6,);
+  } elsif (/^$descriptive_datestring_regex$/) {
+    # Now use the role to look for more vague date suggestions
+    $date_gregorian = parse_descriptive_datestring_to_date($_);
+  } elsif (/(what|which|year|animal|current|this)/) {
+    #Otherwise, default to now if it seems like the user is
+    # asking a question about the current zodiac animal
     $date_gregorian = DateTime->now();
   }
 
