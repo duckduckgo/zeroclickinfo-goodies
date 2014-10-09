@@ -6,16 +6,37 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'reverse';
-zci is_cached => 1;
+zci is_cached   => 1;
 
 ddg_goodie_test(
-    [qw(DDG::Goodie::Reverse)],
+    [qw( DDG::Goodie::Reverse )],
     # Primary example query
-    'reverse text esrever' => test_zci('Reversed "esrever": reverse'),
+    'reverse text esrever' => test_zci(
+        'Reversed "esrever": reverse',
+        structured_answer => {
+            input     => ['esrever'],
+            operation => 'reverse string',
+            result    => 'reverse'
+        }
+    ),
     # Other queries
-    'reverse text bla'    => test_zci('Reversed "bla": alb'),
-    'reverse text blabla' => test_zci('Reversed "blabla": albalb'),
-    'reverse'             => undef,
+    'reverse text bla' => test_zci(
+        'Reversed "bla": alb',
+        structured_answer => {
+            input     => ['bla'],
+            operation => 'reverse string',
+            result    => 'alb'
+        }
+    ),
+    'reverse text blabla' => test_zci(
+        'Reversed "blabla": albalb',
+        structured_answer => {
+            input     => ['blabla'],
+            operation => 'reverse string',
+            result    => 'albalb'
+        }
+    ),
+    'reverse' => undef,
 
     #Should not trigger on a request for DNA/RNA reverse complement
     'reverse complement of ATG-CTA-GGG-GCT'     => undef,
