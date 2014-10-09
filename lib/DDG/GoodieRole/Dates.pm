@@ -24,7 +24,7 @@ my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
-my $relative_days       = qr#now|today|tomorrow|yesterday|(?:current|previous day)|(?:next|last week|month)#i;
+my $relative_days       = qr#now|today|tomorrow|yesterday|(?:(?:current|previous|next) day)|(?:next|last) (?:week|month|year)#i;
 # Covering the ambiguous formats, like:
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
@@ -45,8 +45,8 @@ my $descriptive_datestring = qr{
     (?:(?:$month_regex)\s(?:[0-9]{4})) |                         # Jan 2014, August 2000
     (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
     (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
-    (?:$month_regex) |                                           # February, Aug
-    (?:$relative_days)
+    (?:$month_regex)                                           | # February, Aug
+    (?:$relative_days)                                           # next week, last year
     }ix;
 
 # Used for parse_descriptive_datestring_to_date
@@ -191,47 +191,52 @@ sub parse_descriptive_datestring_to_date {
 
     return unless ($string && $string =~ qr/^$descriptive_datestring_matches$/);
 
-    my $now = DateTime->now();
-    my $month = $+{'m'}; # Set in each alternative match.
-    
+    my $now   = DateTime->now();
+    my $month = $+{'m'};           # Set in each alternative match.
+
     if (my $day = $+{'d'}) {
-        return parse_datestring_to_date("$day $month ".$now->year());
-    }
-    elsif (my $relative_dir = $+{'q'}) {
-        my $tmp_date = parse_datestring_to_date("01 $month ".$now->year());
+        return parse_datestring_to_date("$day $month " . $now->year());
+    } elsif (my $relative_dir = $+{'q'}) {
+        my $tmp_date = parse_datestring_to_date("01 $month " . $now->year());
         # next <month>
-        $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
+        $tmp_date->add(years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
         # last <month>
-        $tmp_date->add( years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
+        $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
         return $tmp_date;
-    }
-    elsif (my $year = $+{'y'}) {
+    } elsif (my $year = $+{'y'}) {
         # Month and year is the first of that month.
         return parse_datestring_to_date("01 $month $year");
-    }
-    elsif (my $relative_date = $+{'r'}) {
+    } elsif (my $relative_date = $+{'r'}) {
+        return $now if ($relative_date =~ qr/now|today|(?:current day)/);
+
         my $tmp_date = $now;
-        return $now if ($+{'r'} =~ qr/now|today|(current day)/);
-        
-        $tmp_date->add( days => 1) if ($+{'r'} =~ qr/tomorrow|(next day)/);
-        $tmp_date->add( days => -1) if ($+{'r'} =~ qr/yesterday|(previous day)/);
-        
-        if ($+{'r'} =~ qr/(next|last) (week|month)/) {
-            my $num = 1;
-            $num = -1 if ($1 eq "last");
-            
-            $tmp_date->add( days => 7*$num ) if($2 eq "week");
-            $tmp_date->add( months => $num ) if($2 eq "month");
+        my @to_add;
+
+        if ($relative_date =~ qr/tomorrow|(?:next day)/) {
+            @to_add = (days => 1);
+        } elsif ($relative_date =~ qr/yesterday|(?:previous day)/) {
+            @to_add = (days => -1);
+        } elsif ($relative_date =~ qr/(?<dir>next|last) (?<unit>week|month|year)/) {
+            my $unit = $+{'unit'};
+            my $num = ($+{'dir'} eq 'next') ? 1 : -1;
+
+            @to_add =
+                ($unit eq 'week')  ? (days   => 7 * $num)
+              : ($unit eq 'month') ? (months => $num)
+              : ($unit eq 'year')  ? (years  => $num)
+              :                      ();
+
         }
+
+        $tmp_date->add(@to_add) if (@to_add);
         return $tmp_date;
-    }
-    else {
+    } else {
         # single named months
         # "january" in january means the current month
         # otherwise it always means the coming month of that name, be it this year or next year
-        return parse_datestring_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($month);
-        my $this_years_month = parse_datestring_to_date("01 $month ".$now->year());
-        $this_years_month->add( years => 1 ) if (DateTime->compare($this_years_month, $now) == -1);
+        return parse_datestring_to_date("01 " . $now->month() . " " . $now->year()) if lc($now->month_name()) eq lc($month);
+        my $this_years_month = parse_datestring_to_date("01 $month " . $now->year());
+        $this_years_month->add(years => 1) if (DateTime->compare($this_years_month, $now) == -1);
         return $this_years_month;
     }
 }
