@@ -15,6 +15,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => "mintsoft";
 
 my %hiragana = (
+    # gojuuon
     a => 'あ',     i => 'い',     u => 'う',     e => 'え',     o => 'お',
     ka => 'か',    ki => 'き',    ku => 'く',    ke => 'け',    ko => 'こ',
     sa => 'さ',    si => 'し',    su => 'す',    se => 'せ',    so => 'そ',
@@ -25,25 +26,28 @@ my %hiragana = (
     ya => 'や',                   yu => 'ゆ',                   yo => 'よ',    
     ra => 'ら',    ri => 'り',    ru => 'る',    re => 'れ',    ro => 'ろ',    
     wa => 'わ',    wi => 'ゐ',                   we => 'ゑ',    wo => 'を',
+    # yooon
+    kya => 'きゃ',                kyu => 'きゅ',                kyo => 'きょ',
+    sha => 'しゃ',                shu => 'しゅ',                sho => 'しゅ',
+    cha => 'ちゃ',                chu => 'ちゅ',                cho => 'ちょ',
+    nya => 'にゃ',                nyu => 'にゅ',                nyo =>'にょ',
+    mya => 'みゃ',                myu => 'みゅ',                myo =>'みょ',
+    rya => 'りゃ',                ryu => 'りゅ',                ryo =>'りょ',
+    # gojuuon with dakuten
+    ga => 'が',    gi => 'ぎ',    gu => 'ぐ',    ge => 'げ',    go => 'ご',
+    za => 'ざ',    zi => 'じ',    zu => 'ず',    ze => 'ぜ',    zo => 'ぞ',
+    da => 'だ',    ji => 'ぢ',    du => 'づ',    de => 'で',    do => 'ど',
+    ba => 'ば',    bi => 'び',    bu => 'ぶ',    be => 'べ',    bo => 'ぼ',
+    pa => 'ぱ',    pi => 'ぴ',    pu => 'ぷ',    pe => 'ぺ',    po => 'ぽ',
+    # yooon with dakuten
+    gya => 'ぎゃ',    gyu => 'ぎゅ',    gyo => 'ぎょ',
+    ja  => 'じゃ',    ju  => 'じゅ',    jo  => 'じょ',
+#    ja  => 'ぢゃ',    ju  => 'ぢゅ',    jo  => 'ぢょ',
+    bya => 'びゃ',    byu => 'びゅ',    byo => 'びょ',
+    pya => 'ぴゃ',    pyu => 'ぴゅ',    pyo => 'ぴょ',
+    vu => 'ゔ',
     n => 'ん'
 );
-
-=for
-
-        a   i   u   e   o
-    ∅   あ  い  う  え  お
-    k   か  き  く  け  こ
-    s   さ  し  す  せ  そ
-    t   た  ち  つ  て  と
-    n   な  に  ぬ  ね  の
-    h   は  ひ  ふ  へ  ほ
-    m   ま  み  む  め  も
-    y   や      ゆ      よ
-    r   ら  り  る  れ  ろ
-    w   わ  ゐ      ゑ  を
-    ん (N)
-
-=cut
 
 handle remainder => sub {
     return $hiragana{lc $_} if defined $hiragana{lc $_};
