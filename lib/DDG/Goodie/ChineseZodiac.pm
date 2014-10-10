@@ -52,7 +52,7 @@ handle remainder => sub {
   } elsif (/^$descriptive_datestring_regex$/) {
     # Now use the role to look for more vague date suggestions
     $date_gregorian = parse_descriptive_datestring_to_date($_);
-  } elsif (/(what|which|year|animal|current|this)/) {
+  } elsif (/(what|which|animal|current)/) {
     #Otherwise, default to now if it seems like the user is
     # asking a question about the current zodiac animal
     $date_gregorian = DateTime->now();

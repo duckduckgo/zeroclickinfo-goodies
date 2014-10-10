@@ -39,7 +39,7 @@ my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
-my $relative_days       = qr#now|today|tomorrow|yesterday|(?:(?:current|previous|next) day)|(?:next|last) (?:week|month|year)#i;
+my $relative_days       = qr#now|today|tomorrow|yesterday|(?:(?:current|previous|next) day)|(?:next|last|this) (?:week|month|year)#i;
 # Covering the ambiguous formats, like:
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
@@ -245,7 +245,7 @@ my $descriptive_datestring = qr{
     (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
     (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
     (?:$month_regex)                                           | # February, Aug
-    (?:$relative_days)                                           # next week, last year
+    (?:$relative_days)                                           # next week, last month, this year
     }ix;
 
 # Used for parse_descriptive_datestring_to_date
@@ -415,7 +415,6 @@ sub parse_descriptive_datestring_to_date {
         # Month and year is the first of that month.
         return parse_datestring_to_date("01 $month $year");
     } elsif (my $relative_date = $+{'r'}) {
-        return $now if ($relative_date =~ qr/now|today|(?:current day)/);
 
         my $tmp_date = $now;
         my @to_add;
@@ -424,9 +423,9 @@ sub parse_descriptive_datestring_to_date {
             @to_add = (days => 1);
         } elsif ($relative_date =~ qr/yesterday|(?:previous day)/) {
             @to_add = (days => -1);
-        } elsif ($relative_date =~ qr/(?<dir>next|last) (?<unit>week|month|year)/) {
+        } elsif ($relative_date =~ qr/(?<dir>next|last|this) (?<unit>week|month|year)/) {
             my $unit = $+{'unit'};
-            my $num = ($+{'dir'} eq 'next') ? 1 : -1;
+            my $num = ($+{'dir'} eq 'next') ? 1 : ($+{'dir'} eq 'last') ? -1 : 0;
 
             @to_add =
                 ($unit eq 'week')  ? (days   => 7 * $num)
@@ -434,7 +433,7 @@ sub parse_descriptive_datestring_to_date {
               : ($unit eq 'year')  ? (years  => $num)
               :                      ();
         }
-
+        # Any other cases which came through here should be today.
         $tmp_date->add(@to_add);
         return $tmp_date;
     } else {
