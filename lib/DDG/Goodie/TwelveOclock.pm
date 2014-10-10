@@ -50,14 +50,13 @@ handle query => sub {
     }
     my $answer = $guess_result . '12:00' . $meridian . ' is ' . $to_show . '.';
 
-    return $answer, html => format_html($answer);
+    return $answer,
+      structured_answer => {
+        input     => [],
+        operation => 'midnight or noon',
+        result    => $answer
+      };
 };
 
-
-sub format_html {
-    my ($answer) = @_;
-
-    return "<div class='zci--twelveoclock text--primary'>" . $answer . "</div>";
-}
 
 1;
