@@ -62,9 +62,9 @@ my %formulas = (
 #schema of <formula>: <name> => [string representing formula, html representing formula, sub calculating formula]
 my %shapes = (
 	'square' => ['square|quadrat',
-		'<path d="M 55,20 h 70 v 70 h -70 z" class="fill" data-formula="A"></path>
-			<path d="M 55,20 h 70 v 70 h -70 z" class="stroke" data-formula="u"></path>
-			<path d="M 55,20 l 70,70" class="stroke special" data-formula="e"></path>', {
+		'<path d="M 5,5 h 100 v 100 h -100 z" class="fill" data-formula="A"></path>
+			<path d="M 5,5 h 100 m 0,100 h -100 m 100,0 v -100 m -100,0 v 100" class="stroke" data-formula="u"></path>
+			<path d="M 5,5 l 100,100" class="stroke special" data-formula="e"></path>', {
 		'area' => ['a'.chr(178), 'a<sup>2</sup>', sub {
 			return $_[0] ** 2;
 		}],
@@ -78,9 +78,9 @@ my %shapes = (
 		return getParameter('a|length|size', $_[0]);
 	}],
 	'rect' => ['rect|rechteck',
-		'<path d="M 20,20 h 100 v 70 h -100 z" class="fill" data-formula="A"></path>
-			<path d="M 20,20 h 100 v 70 h -100 z" class="stroke" data-formula="u"></path>
-			<path d="M 20,20 l 100,70" class="stroke special" data-formula="e"></path>', {
+		'<path d="M 5,5 h 120 v 100 h -120 z" class="fill" data-formula="A"></path>
+			<path d="M 5,5 h 120 m 0,100 h -120 m 120,0 v -100 m -120,0 v 100" class="stroke" data-formula="u"></path>
+			<path d="M 5,5 l 120,100" class="stroke special" data-formula="e"></path>', {
 		'area' => ['ab', 'ab', sub {
 			return $_[0] * $_[1];
 		}],
@@ -97,8 +97,8 @@ my %shapes = (
 		return ($a, $b) if $a and $b;
 	}],
 	'equilateral triangle' => ['equilateral triangle|gleichseitiges dreieck',
-		'<path d="M 70,20 l 40,70 h -80 z" class="stroke" data-formula="u"></path>
-			<path d="M 70,20 l 40,70 h -80 z" class="fill" data-formula="A"></path>', {
+		'<path d="M 63,5 l 58,100 m -116,0 l 58,-100 m 58,100 h -116" class="stroke" data-formula="u"></path>
+			<path d="M 63,5 l 58,100 h -116 z" class="fill" data-formula="A"></path>', {
 		'area' => ['(a'.chr(178).'*'.chr(8730).'3)/4', '(a<sup>2</sup>*&radic;3)/4', sub {
 			return $_[0] / 4 * sqrt(3);
 		}],
@@ -109,8 +109,8 @@ my %shapes = (
 		return getParameter('a|length|size', $_[0]);
 	}],
 	'circle' => ['circle|kreis',
-		'<circle cx="70" cy="55" r="35" class="fill" data-formula="A"></circle>
-			<circle cx="70" cy="55" r="35" class="stroke" data-formula="u"></circle>', {
+		'<circle cx="55" cy="55" r="50" class="fill" data-formula="A"></circle>
+			<circle cx="55" cy="55" r="50" class="stroke" data-formula="u"></circle>', {
 		'area' => [chr(960).'r'.chr(178), '&pi;r<sup>2</sup>', sub {
 			return pi * $_[0] ** 2;
 		}],
@@ -123,11 +123,11 @@ my %shapes = (
 		return $r if $r;
 	}],
 	'cube' => ['cube|würfel',
-		'<path d="M 37,88 v -44 l 22,-22 h 44 v 44 l -22 22 z" class="fill" data-formula="A"></path>
-			<path d="M 37,88 l 22,-22 v -44 v 44 h 44" class="stroke backface"></path>
-			<path d="M 37,44 l 66,22" class="stroke special" data-formula="e"></path>
-			<path d="M 37,88 v -44 l 22,-22 h 44 v 44 l -22 22 z" class="fill" data-formula="V"></path>
-			<path d="M 37,44 h 44 v 44 h -44 v -44 l 22,-22 h 44 v 44 l -22,22 v -44 l 22,-22" class="stroke"></path>', {
+		'<path d="M 5,105 v -66 l 33,-33 h 66 v 66 l -33 33 z" class="fill" data-formula="A"></path>
+			<path d="M 5,105 l 33,-33 v -66 v 66 h 66" class="stroke backface"></path>
+			<path d="M 5,38 l 100,33" class="stroke special" data-formula="e"></path>
+			<path d="M 5,105 v -66 l 33,-33 h 66 v 66 l -33 33 z" class="fill" data-formula="V"></path>
+			<path d="M 5,38 h 66 v 66 h -66 v -66 l 33,-33 h 66 v 66 l -33,33 v -66 l 33,-33" class="stroke"></path>', {
 		'volume' => ['a'.chr(179), 'a<sup>3</sup>', sub {
 			return $_[0] ** 3;
 		}],
@@ -141,11 +141,11 @@ my %shapes = (
 		return getParameter('a|length|size', $_[0]);
 	}],
 	'cuboid' => ['cuboid|quader',
-		'<path d="M 20,90 v -50 l 20,-20 h 80 v 50 l -20 20 z" class="fill" data-formula="A"></path>
-			<path d="M 20,90 l 20,-20 v -50 v 50 h 80" class="stroke backface"></path>
-			<path d="M 20,40 l 100,30" class="stroke special" data-formula="e"></path>
-			<path d="M 20,90 v -50 l 20,-20 h 80 v 50 l -20 20 z" class="fill" data-formula="V"></path>
-			<path d="M 20,40 h 80 v 50 h -80 v -50 l 20,-20 h 80 v 50 l -20,20 v -50 l 20,-20" class="stroke"></path>', {
+		'<path d="M 5,105 v -66 l 33,-33 h 86 v 66 l -33 33 z" class="fill" data-formula="A"></path>
+			<path d="M 5,105 l 33,-33 v -66 v 66 h 86" class="stroke backface"></path>
+			<path d="M 5,38 l 120,33" class="stroke special" data-formula="e"></path>
+			<path d="M 5,105 v -66 l 33,-33 h 86 v 66 l -33 33 z" class="fill" data-formula="V"></path>
+			<path d="M 5,38 h 86 v 66 h -86 v -66 l 33,-33 h 86 v 66 l -33,33 v -66 l 33,-33" class="stroke"></path>', {
 		'volume' => ['abc', 'abc',  sub {
 			return $_[0] * $_[1] * $_[2];
 		}],
@@ -163,10 +163,10 @@ my %shapes = (
 		return ($a, $b, $c) if $a and $b and $c;
 	}],
 	'ball' => ['ball|kugel',
-		'<circle class="fill" cx="70" cy="55" r="35" data-formula="A"></circle>
-			<path d="M 35,55 a 35 10 0 0 1 70,0" class="stroke backface"></path>
-			<circle class="fill" cx="70" cy="55" r="35" data-formula="V"></circle>
-			<path d="M 35,55 a 35 10 0 1 0 70,0 a 35 35 0 0 0 -70,0 a 35 35 0 0 0 70,0" class="stroke"></path>', {
+		'<circle class="fill" cx="55" cy="55" r="50" data-formula="A"></circle>
+			<path d="M 5,55 a 25 10 0 0 1 100,0" class="stroke backface"></path>
+			<circle class="fill" cx="55" cy="55" r="50" data-formula="V"></circle>
+			<path d="M 5,55 a 25 10 0 1 0 100,0 a 25 25 0 0 0 -100,0 a 25 25 0 0 0 100,0" class="stroke"></path>', {
 		'volume' => ['4/3'.chr(960).'r'.chr(179), '4/3&pi;r<sup>3</sup>', sub {
 			return 4 / 3 * pi * $_[0] ** 3;
 		}],
