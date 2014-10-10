@@ -10,7 +10,7 @@ use DateTime::Event::Sunrise;
 zci answer_type => "sun_info";
 zci is_cached   => 0;
 
-triggers start => 'sunrise', 'sunset', 'what time is sunset', 'what time is sunrise';
+triggers startend => 'sunrise', 'sunset', 'what time is sunset', 'what time is sunrise';
 
 primary_example_queries 'sunrise',              'sunset';
 secondary_example_queries 'sunrise for aug 30', 'sunset on 2015-01-01';
@@ -44,7 +44,7 @@ handle remainder => sub {
     my $dt;
     if (!$remainder) {
         $dt = DateTime->now;
-    } elsif ($remainder =~ /^(?:on|for)\s+(?<when>$datestring_regex)$/) {
+    } elsif ($remainder =~ /^(?:on|for)?\s*(?<when>$datestring_regex)$/) {
         $dt = parse_datestring_to_date($+{'when'});
     }
     return unless $dt;                                  # Also going to need to know which day.

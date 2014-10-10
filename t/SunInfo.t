@@ -16,18 +16,19 @@ my @exact = (
     html => qr{^<div class='zci--suninfo'><div class='suninfo--header text--secondary'><span class='ddgsi'>.*4:46pm</div></div></div>$},
 );
 
-ddg_goodie_test([qw(
-          DDG::Goodie::SunInfo
-          )
-    ],
+ddg_goodie_test(
+    [qw( DDG::Goodie::SunInfo )],
     'sunrise'                             => test_zci(@now),
     'what time is sunrise'                => test_zci(@now),
     'sunset'                              => test_zci(@now),
     'what time is sunset'                 => test_zci(@now),
     'sunrise for aug 30'                  => test_zci(@aug),
+    'sunrise 30 aug'                      => test_zci(@aug),
     'sunset for aug 30?'                  => test_zci(@aug),
+    'sunset aug 30th'                     => test_zci(@aug),
     'sunset on 2015-01-01'                => test_zci(@exact),
     'what time is sunrise on 2015-01-01?' => test_zci(@exact),
+    'January 1st, 2015 sunrise'           => test_zci(@exact),
     'sunset for philly'                   => undef,
     'sunrise on mars'                     => undef,
     'sunset boulevard'                    => undef,
