@@ -49,9 +49,9 @@ handle remainder => sub {
   } elsif (/\b(\d+)\b/) {
     # Now check for bare years, as we prefer a different start time than the role.
     $date_gregorian = DateTime->new(year  => $1, month => 6,);
-  } elsif (/^$descriptive_datestring_regex$/) {
+  } elsif (/^($descriptive_datestring_regex)([']?[sS]?)$/) {
     # Now use the role to look for more vague date suggestions
-    $date_gregorian = parse_descriptive_datestring_to_date($_);
+    $date_gregorian = parse_descriptive_datestring_to_date($1);
   } elsif (/(what|which|animal|current)/) {
     #Otherwise, default to now if it seems like the user is
     # asking a question about the current zodiac animal
