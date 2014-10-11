@@ -148,8 +148,10 @@ syntax:
 tor:
   aliases:
     - hiddenservice
+    - onion
+    - onionservice
     - torhiddenservice
-  base_format: "DuckDuckGo's [Tor hidden service]"
+  base_format: "DuckDuckGo's [service on Tor]"
   info_url: http://3g2upl4pq6kufc4m.onion
 traffic:
   base_format: "DuckDuckGo's [traffic page]"

@@ -2,12 +2,13 @@ package DDG::Goodie::ChineseZodiac;
 # ABSTRACT: Return the Chinese zodiac animal for a given year.
 
 use DDG::Goodie;
+with 'DDG::GoodieRole::Dates';
 use DateTime::Calendar::Chinese;
 use DateTime::Event::Chinese qw(chinese_new_year_before chinese_new_year_after);
 use utf8;
 
 triggers any => 'chinese zodiac', 'shēngxiào', 'shengxiao', 'shēng xiào', 'sheng xiao';
-zci is_cached => 1;
+zci is_cached => 0;
 
 name 'Chinese Zodiac';
 description 'Return the Chinese zodiac animal for a given year';
@@ -33,67 +34,60 @@ my %animal_to_language = (
   'tiger' => { en => 'Tiger', zh => '虎' }
 );
 
+my $chinese_zodiac_tz = 'Asia/Shanghai';
+my $role_datestring_regex = datestring_regex();
+
 handle remainder => sub {
 
-  #Figure out what year the user is interested in
-  my $year_gregorian;
+  #Figure out what date the user is interested in
+  my $date_gregorian;
 
-  #Return if more than one number has been included;
-  # this IA only supports years (for now)
-  return if /\d+[^\d]+\d+/;
-
-  #Parse out a relative year expression if it was supplied
-  if (/this\syear('s)?/) { 
-    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai') or return;
+  if (/^$role_datestring_regex$/) {
+    $date_gregorian = parse_datestring_to_date($_);
+  } elsif (/this\syear('s)?/) { #Parse out a relative year expression if it was supplied
+    $date_gregorian = DateTime->now();
   } elsif (/next\syear('s)?/) {
-    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->add(years => 1) or return;
+    $date_gregorian = DateTime->now()->add(years => 1);
   } elsif (/last\syear('s)?/) {
-    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai')->subtract(years => 1) or return;
+    $date_gregorian = DateTime->now()->subtract(years => 1);
 
-  #If no relative year was supplied, look for an explicit year
-  # DateTime::Event::SolarTerm only supports 1900--2069, so 
-  # return nothing if the user provides a year outside this range
+  #Look for an explicit year-only
   } elsif (/\b(\d+)\b/) {
-    return unless $1 >= 1900 && $1 <= 2069;
-    $year_gregorian = DateTime->new(year => $1, month => 6, time_zone => 'Asia/Shanghai');
+    $date_gregorian = DateTime->new(year => $1, month => 6,);
 
   #Otherwise, default to now if it seems like the user is
   # asking a question about the current zodiac animal
   } elsif (/(what|which|year|animal|current|now|today|this)/)  {
-    $year_gregorian = DateTime->now(time_zone => 'Asia/Shanghai') or return;
-  
-  #Don't want to show instant answer if user is just looking for
-  # general information on the chinese zodiac
-  } else {
-    return;
+    $date_gregorian = DateTime->now();
   }
 
-  #Find the Chinese year that aligns 
+  #Don't want to show instant answer if user is just looking for
+  # general information on the chinese zodiac
+  return unless $date_gregorian;
+  $date_gregorian->set_time_zone($chinese_zodiac_tz);
+  #DateTime::Event::SolarTerm only supports 1900--2069, so
+  # return nothing if the user provides a year outside this range
+  return unless $date_gregorian->year >= 1900 && $date_gregorian->year <= 2069;
+
+  #Find the Chinese year that aligns
   # with the query (presumed Gregorian) year
-  my $year_chinese = DateTime::Calendar::Chinese->from_object(object => $year_gregorian);
+  my $year_chinese = DateTime::Calendar::Chinese->from_object(object => $date_gregorian);
 
   #Get the inclusive Gregorian date range for the Chinese year
   #Note that returned dates will be for the 'Asia/Shanghai'
   # time zone (China Standard Time/CST) as this is where
   # Chinese New Year is calculated
-  my $year_start = chinese_new_year_before($year_gregorian)->set_time_zone('Asia/Shanghai');
-  my $year_end = chinese_new_year_after($year_gregorian)->subtract(days => 1)->set_time_zone('Asia/Shanghai');
+  my $year_start = chinese_new_year_before($date_gregorian)->set_time_zone($chinese_zodiac_tz);
+  my $year_end = chinese_new_year_after($date_gregorian)->subtract(days => 1)->set_time_zone($chinese_zodiac_tz);
 
   my $animal = $year_chinese->zodiac_animal;
   my $english = $animal_to_language{$animal}{'en'};
   my $character = $animal_to_language{$animal}{'zh'};
 
-  my $statement = 'Chinese zodiac animal for ' . format_datetime($year_start) . "\x{2013}" . format_datetime($year_end);
+  my $statement = 'Chinese zodiac animal for ' . date_output_string($year_start) . "–" . date_output_string($year_end);
 
   return answer => $english, html => wrap_html($character, $english, $statement);
 };
-
-sub format_datetime {
-  my $dt = shift;
-  my $formatted = $dt->strftime('%b %e, %Y');
-  $formatted =~ s/\s\s/ /g;
-  return $formatted;
-}
 
 sub wrap_html {
   my ($character, $english, $statement) = @_;

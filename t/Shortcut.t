@@ -7,6 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'shortcut';
+zci is_cached   => 1;
 
 my $start = 'The shortcut for ';
 my $first = 'Show desktop in Windows is ⊞Win+D or ⊞Win+M (then use ⊞Win+⇧Shift+M to bring back all windows)';

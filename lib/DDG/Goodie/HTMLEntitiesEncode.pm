@@ -243,6 +243,7 @@ category                    'cheat_sheets';
 topics                      'programming', 'web_design';
 code_url                    'https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/HTMLEntitiesEncode.pm';
 zci answer_type =>          'html_entity';
+zci is_cached   =>          1;
 
 attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"],
             github  =>      ["https://github.com/nishanths", "Nishanth Shanmugham"],

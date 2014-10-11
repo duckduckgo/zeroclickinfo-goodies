@@ -19,6 +19,9 @@ attribution github => ['https://github.com/seanheaton','seanheaton'],
 	twitter => ['http://twitter.com/seanograph','@seanograph'],
 	email => ['mailto:seanoftime@gmail.com','seanoftime@gmail.com'];
 
+zci answer_type => 'teredo';
+zci is_cached   => 1;
+
 handle remainder => sub {
     my @output = ();
 	

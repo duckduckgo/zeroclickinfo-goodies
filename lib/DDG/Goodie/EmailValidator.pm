@@ -11,6 +11,9 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 topics 'sysadmin';
 category 'computing_info';
 
+zci answer_type => 'email_validation';
+zci is_cached   => 1;
+
 triggers start => 'validate', 'validate my email', 'validate my e-mail';
 
 attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],

@@ -11,6 +11,7 @@ triggers startend =>    'donor compatibility', 'donor', 'donors for',
                         'blood type', 'blood compatibility', 'compatibility', 'blood donor compatibility';
 
 zci answer_type => "blood_donor";
+zci is_cached   => 1;
 
 primary_example_queries 'donor O+';
 secondary_example_queries 'donor AB+';

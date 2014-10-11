@@ -55,7 +55,7 @@ foreach my $keyword (keys %$responses) {
     }
 }
 
-my $skip_words_re = qr/\b(?:what|where|is|of|for|the)\b/;
+my $skip_words_re = qr/\b(?:what|where|is|of|for|the|in|on)\b/;
 
 handle remainder => sub {
     my $key = lc;

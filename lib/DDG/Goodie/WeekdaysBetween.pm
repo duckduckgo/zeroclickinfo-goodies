@@ -7,7 +7,9 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 
 triggers start => "weekdays between", "week days between", "weekdays from", "week days from";
+
 zci answer_type => "weekdays_between";
+zci is_cached   => 0;
 
 name                        'WeekdaysBetween';
 description                 'Calculate the number of weekdays between two dates.';
