@@ -20,16 +20,14 @@ ddg_goodie_test(
     'panchangam 2014-08-07' => test_zci(qr/Shukla Ekadashi/, html => qr/Shukla Ekadashi/),
 
     #Secondary examples
-    'panchangam today' => test_zci(qr/Tithi/, html => qr/Tithi/, is_cached => 0),
-    'panchangam yesterday' => test_zci(qr/Tithi/, html => qr/Tithi/, is_cached => 0),
-    'panchangam tomorrow' => test_zci(qr/Tithi/, html => qr/Tithi/, is_cached => 0),
     'panchangam for 2 January 1970' => test_zci(qr/Krishna Navami/, html => qr/Krishna Navami/),
-    '1 year ago panchangam' => test_zci(qr/Tithi/, html => qr/Tithi/, is_cached => 0),
-    'panchangam on 12/12/12' => test_zci(qr/Krishna Chaturdashi/, html => qr/Krishna Chaturdashi/),
+    'panchangam on 12/12/2012' => test_zci(qr/Krishna Chaturdashi/, html => qr/Krishna Chaturdashi/),
+    'panchangam last jun' => test_zci(qr/Tithi/, html => qr/Tithi/, is_cached => 0),
+    'panchangam dec' => test_zci(qr/Tithi/, html => qr/Tithi/, is_cached => 0),
 
     #Alternative triggers
     'panjika' => test_zci(qr/Tithi/, html => qr/Tithi/, is_cached => 0),
-    'panjika on 12/12/12' => test_zci(qr/Krishna Chaturdashi/, html => qr/Krishna Chaturdashi/),
+    'panjika on 12/12/2012' => test_zci(qr/Krishna Chaturdashi/, html => qr/Krishna Chaturdashi/),
     'hindu calendar' => test_zci(qr/Tithi/, html => qr/Tithi/, is_cached => 0),
 
     #Should not trigger

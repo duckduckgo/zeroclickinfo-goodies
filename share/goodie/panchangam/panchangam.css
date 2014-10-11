@@ -1,3 +1,15 @@
+.zci__body h6 {
+  color: #333;
+}
+
+.record .record__cell__key, .record .record__cell__value {
+  padding-top: 10px;
+}
+
+.record .record__cell__value {
+  padding-left: 20px;
+}
+
 .zci--answer .zci__prev,
 .zci--answer .zci__next {
     display: inline-block;

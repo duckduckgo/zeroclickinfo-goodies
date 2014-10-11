@@ -4,9 +4,10 @@ package DDG::Goodie::Panchangam;
 use DDG::Goodie;
 use DateTime;
 use Date::Indian;
-use Time::ParseDate;
 use utf8;
 use POSIX qw(floor);
+
+with 'DDG::GoodieRole::Dates';
 
 triggers startend => [
     'panchangam',
@@ -27,8 +28,8 @@ zci is_cached => 1;
 
 name 'Vedic / Hindu Calendar (Panchangam)';
 description 'Return the Vedic / Hindu Calendar (Panchangam) for a particular day (default is today)';
-primary_example_queries 'panchangam today';
-secondary_example_queries 'panchangam tomorrow', 'next week panchangam', 'panchangam 2012-12-12', 'panchangam 01/12/2014';
+primary_example_queries 'panchangam';
+secondary_example_queries 'panchangam jan 2013', 'panchangam 2012-12-12', 'panchangam last dec';
 category 'dates';
 topics 'special_interest', 'everyday';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Panchangam.pm';
@@ -196,6 +197,8 @@ sub get_nakshatra {
     for my $t (sort keys %nk) {
         if ($nk{$t} > 0 && $nk{$t} <= 24.0) {
             push @nakshatra_arr, $nkid->[$t] . " ends at " . hms($nk{$t});
+        } elsif ($nk{$t} > 24.0) {
+            push @nakshatra_arr, $nkid->[$t] . " ends at " . hms($nk{$t}) . " next day";
         }
     }
     my $nakshatra = join ', ', @nakshatra_arr;
@@ -245,24 +248,116 @@ sub get_varjya {
     return $varjyam;
 }
 
+sub get_text_output {
+    my ($result) = @_;
+
+    my $text_output = <<TEXT;
+Hindu Panchangam for $result->{"display_day"}
+Tithi:        $result->{"tithi"}
+Nakshatra:    $result->{"nakshatra"}
+Yoga:         $result->{"yoga"}
+Karana:       $result->{"karana"}
+Rahu Kalam:   $result->{"rahu_kalam"}
+Gulika:       $result->{"gulika_kalam"}
+Yamaganda:    $result->{"yamaganda_kalam"}
+Durmuhurth:   $result->{"durmuhurtam"}
+Varjya:       $result->{"varjyam"}
+Sunrise:      $result->{"sunrise"}
+Sunset:       $result->{"sunset"}
+TEXT
+
+    return $text_output;
+}
+
+sub get_html_output {
+    my ($result) = @_;
+
+    my $html_output = <<HTML;
+<h6>Hindu Panchangam for $result->{"display_day"}</h6>
+<div class="record">
+  <table class="record__body">
+    <tbody>
+      <tr class="record__row ">
+          <td class="record__cell__key ">Tithi:</td>
+          <td class="record__cell__value">$result->{"tithi"}</td>
+      </tr>
+
+      <tr class="record__row ">
+          <td class="record__cell__key ">Nakshatra:</td>
+          <td class="record__cell__value">$result->{"nakshatra"}</td>
+      </tr>
+
+      <tr class="record__row ">
+          <td class="record__cell__key ">Yoga:</td>
+          <td class="record__cell__value">$result->{"yoga"}</td>
+      </tr>
+
+      <tr class="record__row ">
+          <td class="record__cell__key ">Karana:</td>
+          <td class="record__cell__value">$result->{"karana"}</td>
+      </tr>
+
+      <tr class="record__row ">
+        <td class="record__cell__key ">Rahu Kalam:</td>
+        <td class="record__cell__value">$result->{"rahu_kalam"}</td>
+      </tr>
+
+      <tr class="record__row ">
+        <td class="record__cell__key ">Gulika:</td>
+        <td class="record__cell__value">$result->{"gulika_kalam"}</td>
+      </tr>
+
+      <tr class="record__row ">
+        <td class="record__cell__key ">Yamaganda:</td>
+        <td class="record__cell__value">$result->{"yamaganda_kalam"}</td>
+      </tr>
+
+      <tr class="record__row ">
+        <td class="record__cell__key ">Durmuhurth:</td>
+        <td class="record__cell__value">$result->{"durmuhurtam"}</td>
+      </tr>
+
+      <tr class="record__row ">
+        <td class="record__cell__key ">Varjya:</td>
+        <td class="record__cell__value">$result->{"varjyam"}</td>
+      </tr>
+
+      <tr class="record__row ">
+        <td class="record__cell__key ">Sunrise:</td>
+        <td class="record__cell__value">$result->{"sunrise"}</td>
+      </tr>
+
+      <tr class="record__row ">
+        <td class="record__cell__key ">Sunset:</td>
+        <td class="record__cell__value">$result->{"sunset"}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="zci__links">
+  <a href="/?q=panchangam+$result->{"prev_day"}" class="zci__prev">&laquo; Previous day</a>
+  <a href="/?q=panchangam+$result->{"next_day"}" class="zci__next">Next day &raquo;</a>
+</div>
+HTML
+
+    return $html_output;
+}
+
 handle remainder => sub {
 
     # strip on, for, in words & empty spaces in front & back to aid parsedate
     s/^\s+|\s+$//;
     s/^(?:on|for|in)\s+//;
 
-    # parsedate runs on UK mode,ie dates of the dd/mm/yyyy
-    # since this instant answer is targeted towards the 
-    # Indian demographic who use this format
-    # best would be that everyone uses yyyy-mm-dd, but one can wish right :)
-    # first parse with no relative mode to enable caching exact dates
+    # first try to parse exact date strings to enable caching exact dates
     my $cache_exact_date = 0;
-    my ($parsedt) = parsedate($_, UK => 1, ZONE => 'UTC', NO_RELATIVE => 1);
+    my $parsedt = parse_formatted_datestring_to_date($_);
     if ($parsedt) {
         $cache_exact_date = 1;
     } else {
-        # now parse once more with relative mode enabled
-        $parsedt = parsedate($_, UK => 1, ZONE => 'UTC');
+        # now parse descriptive datestrings like last jun, dec
+        $parsedt = parse_descriptive_datestring_to_date($_);
     }
 
     # dont trigger if we cant parse a date and there is some other query
@@ -270,12 +365,15 @@ handle remainder => sub {
         return;
     }
 
+    my $result = {};
+
     # Figure out requested date using parsedate 
     # or use today's date based on $loc->time_zone
     # or use today's date based on UTC
     my $dt;
     if ($parsedt) {
-        $dt = DateTime->from_epoch(epoch => $parsedt, time_zone => 'UTC');
+        #$dt = DateTime->from_epoch(epoch => $parsedt, time_zone => 'UTC');
+        $dt = $parsedt;
     } elsif ($loc && $loc->time_zone) {
         $dt = DateTime->now(time_zone => $loc->time_zone);
     } else {
@@ -283,12 +381,10 @@ handle remainder => sub {
     }
     # calculate previous and next day dates in the format yyyy-mm-dd for
     # previous and next day links at the bottom of the info displayed
-    my $prev_day = $dt->clone();
-    $prev_day = $prev_day->subtract(days => 1)->ymd;
-    my $next_day = $dt->clone();
-    $next_day = $next_day->add(days => 1)->ymd;
+    $result->{"prev_day"} = ($dt->clone())->subtract(days => 1)->ymd;
+    $result->{"next_day"} = ($dt->clone())->add(days => 1)->ymd;
     # date format for title display in instant answer
-    my $display_day = $dt->strftime("%d %B %Y (%A)");
+    $result->{display_day} = $dt->strftime("%d %B %Y (%A)");
     
     # location set to Chennai, India and time zone set to IST for panchangam calculations
     my $location = '80.27E 13.05N';
@@ -300,129 +396,47 @@ handle remainder => sub {
                             );
     
     # Tithi (Lunar day)
-    my $tithi = get_tithi($d);
+    $result->{"tithi"} = get_tithi($d);
     
     # Nakshatra (Lunar constellation)
-    my $nakshatra = get_nakshatra($d);
+    $result->{"nakshatra"} = get_nakshatra($d);
     
     # Yoga (Soli-Lunar Yoga)
-    my $yoga = get_yoga($d);
+    $result->{"yoga"} = get_yoga($d);
     
     # Karana (Two divisions of a lunar day)
-    my $karana = get_karana($d);
+    $result->{"karana"} = get_karana($d);
     
     # Rahu kalam (inauspicious time)
     my ($rk_from, $rk_to) = $d->rahu_kalam();
-    my $rahu_kalam = hms($rk_from) . " to " . hms($rk_to);
+    $result->{"rahu_kalam"} = hms($rk_from) . " to " . hms($rk_to);
     
     # Gulika kalam
     my ($gk_from, $gk_to) = $d->gulika_kalam();
-    my $gulika_kalam = hms($gk_from) . " to " . hms($gk_to);
+    $result->{"gulika_kalam"} = hms($gk_from) . " to " . hms($gk_to);
     
     # Yamaganda kalam (inauspicious time)
     my ($yk_from, $yk_to) = $d->yamaganda_kalam();
-    my $yamaganda_kalam = hms($yk_from) . " to " . hms($yk_to);
+    $result->{"yamaganda_kalam"} = hms($yk_from) . " to " . hms($yk_to);
     
     # Durmuhurtas. (inauspicious time)
     my ($d1_s, $d1_e, $d2_s, $d2_e) = $d->durmuhurtam();
-    my $durmuhurtam = hms($d1_s) . " to " . hms($d1_e);
+    $result->{"durmuhurtam"} = hms($d1_s) . " to " . hms($d1_e);
     if ($d2_s) {
-        $durmuhurtam .= ', ' . hms($d2_s) . " to " . hms($d2_e);
+        $result->{"durmuhurtam"} .= ', ' . hms($d2_s) . " to " . hms($d2_e);
     }
     
     # Varjyam. (inauspicious time)
-    my $varjyam = get_varjya($d);
+    $result->{"varjyam"} = get_varjya($d);
     
     # Sunrise, Sunset on which above calculations are based
     my ($sunrise, $sunset, $fl) = $d->sunriseset();
-    $sunrise = hms($sunrise);
-    $sunset = hms($sunset);
+    $result->{"sunrise"} = hms($sunrise);
+    $result->{"sunset"} = hms($sunset);
 
-    my $text_output = <<TEXT;
-Hindu Panchangam for $display_day
-Tithi:        $tithi
-Nakshatra:    $nakshatra
-Yoga:         $yoga
-Karana:       $karana
-Rahu Kalam:   $rahu_kalam
-Gulika:       $gulika_kalam
-Yamaganda:    $yamaganda_kalam
-Durmuhurth:   $durmuhurtam
-Varjya:       $varjyam
-Sunrise:      $sunrise
-Sunset:       $sunset
-TEXT
+    my $text_output = get_text_output($result);
 
-    my $html_output = <<HTML;
-<h6>Hindu Panchangam for $display_day</h6>
-<div class="record">
-  <table class="record__body">
-    <tbody>
-      <tr class="record__row ">
-          <td class="record__cell__key ">Tithi:</td>
-          <td class="record__cell__value">$tithi</td>
-      </tr>
-
-      <tr class="record__row ">
-          <td class="record__cell__key ">Nakshatra:</td>
-          <td class="record__cell__value">$nakshatra</td>
-      </tr>
-
-      <tr class="record__row ">
-          <td class="record__cell__key ">Yoga:</td>
-          <td class="record__cell__value">$yoga</td>
-      </tr>
-
-      <tr class="record__row ">
-          <td class="record__cell__key ">Karana:</td>
-          <td class="record__cell__value">$karana</td>
-      </tr>
-
-      <tr class="record__row ">
-        <td class="record__cell__key ">Rahu Kalam:</td>
-        <td class="record__cell__value">$rahu_kalam</td>
-      </tr>
-
-      <tr class="record__row ">
-        <td class="record__cell__key ">Gulika:</td>
-        <td class="record__cell__value">$gulika_kalam</td>
-      </tr>
-
-      <tr class="record__row ">
-        <td class="record__cell__key ">Yamaganda:</td>
-        <td class="record__cell__value">$yamaganda_kalam</td>
-      </tr>
-
-      <tr class="record__row ">
-        <td class="record__cell__key ">Durmuhurth:</td>
-        <td class="record__cell__value">$durmuhurtam</td>
-      </tr>
-
-      <tr class="record__row ">
-        <td class="record__cell__key ">Varjya:</td>
-        <td class="record__cell__value">$varjyam</td>
-      </tr>
-
-      <tr class="record__row ">
-        <td class="record__cell__key ">Sunrise:</td>
-        <td class="record__cell__value">$sunrise</td>
-      </tr>
-
-      <tr class="record__row ">
-        <td class="record__cell__key ">Sunset:</td>
-        <td class="record__cell__value">$sunset</td>
-      </tr>
-
-    </tbody>
-  </table>
-</div>
-<div class="zci__links">
-  <a href="/?q=panchangam+$prev_day" class="zci__prev">&laquo; Previous day</a>
-  <a href="/?q=panchangam+$next_day" class="zci__next">Next day &raquo;</a>
-</div>
-HTML
-
-    $html_output = append_css($html_output);
+    my $html_output = get_html_output($result);
 
     if ($cache_exact_date) {
         return answer => $text_output, html => $html_output;
@@ -431,12 +445,6 @@ HTML
     }
 
 };
-
-my $css = share("style.css")->slurp;
-sub append_css {
-    my ($html) = @_;
-    return "<style type='text/css'>$css</style>$html";
-}
 
 
 1;
