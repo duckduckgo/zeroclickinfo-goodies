@@ -40,6 +40,7 @@ my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
 my $relative_dates       = qr#now|today|tomorrow|yesterday|(?:(?:current|previous|next) day)|(?:next|last|this) (?:week|month|year)#i;
+
 # Covering the ambiguous formats, like:
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
@@ -406,9 +407,11 @@ sub parse_descriptive_datestring_to_date {
         return parse_datestring_to_date("$day $month " . $now->year());
     } elsif (my $relative_dir = $+{'q'}) {
         my $tmp_date = parse_datestring_to_date("01 $month " . $now->year());
-        # next <month>
+
+        # for "next <month>" if $tmp_date is in the past then we need to add a year
         $tmp_date->add(years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
-        # last <month>
+        
+        # for "last <month>" if $tmp_date is in the future then we need to subtract a year
         $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
         return $tmp_date;
     } elsif (my $year = $+{'y'}) {
