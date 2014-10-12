@@ -332,6 +332,7 @@ subtest 'Dates' => sub {
             set_fixed_time($query_time);
             my %strings = %{$time_strings{$query_time}};
             foreach my $test_date (sort keys %strings) {
+                like($test_date, qr/^$test_descriptive_datestring_regex$/, "$test_date matches the descriptive_datestring_regex");
                 my $result = DatesRoleTester::parse_descriptive_datestring_to_date($test_date);
                 isa_ok($result, 'DateTime', $test_date);
                 is(DatesRoleTester::date_output_string($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
