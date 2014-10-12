@@ -51,6 +51,7 @@ my %hiragana = (
 
 handle remainder => sub {
     return $hiragana{lc $_} if defined $hiragana{lc $_};
+    return;
 };
 
 1;

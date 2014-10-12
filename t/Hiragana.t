@@ -14,6 +14,7 @@ ddg_goodie_test(
   	)],
 
     "hiragana a" => test_zci('あ'),
+    "what is hiragana?" => undef,
 );
 
 done_testing();
