@@ -58,7 +58,6 @@ handle remainder => sub {
     foreach my $syllable ( @keys_in_replace_order ) {
         $output_string =~ s/$syllable/$hiragana{$syllable}/gi;
     }
-    print STDERR "output: $output_string \n";
     #If there were untranslatable syllables, then it's not valid romaji
     return if $output_string =~ /[A-Za-z]/;
     return $output_string;
