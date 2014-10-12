@@ -14,7 +14,10 @@ ddg_goodie_test(
   	)],
 
     "hiragana a" => test_zci('あ'),
+    "hiragana konnichiwa"  => test_zci('こんにちわ'),
     "what is hiragana?" => undef,
+    "hiragana" => undef,
+    
 );
 
 done_testing();

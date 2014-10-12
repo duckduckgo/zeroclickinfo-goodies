@@ -50,8 +50,16 @@ my %hiragana = (
 );
 
 handle remainder => sub {
-    return $hiragana{lc $_} if defined $hiragana{lc $_};
-    return;
+    my $output_string = $_;
+    return unless $output_string;
+    
+    foreach my $syllable ( reverse sort keys %hiragana ) {
+        $output_string =~ s/$syllable/$hiragana{$syllable}/gi;
+    }
+    
+    #If there were untranslatable syllables, then it's not valid romaji
+    return if $output_string =~ /[A-Za-z]/; 
+    return $output_string;
 };
 
 1;
