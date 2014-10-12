@@ -39,7 +39,13 @@ my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
-my $relative_dates      = qr#now|today|tomorrow|yesterday|(?:(?:current|previous|next) day)|(?:next|last|this) (?:week|month|year)#i;
+my $relative_dates      = qr#
+    now | today| tomorrow | yesterday |
+    (?:(?:current|previous|next)\sday) |
+    (?:next|last|this)\s(?:week|month|year) |
+    (?:in\s(?:(?:a\s)|[0-9]+)(?:day|week|month|year)[s]?) | 
+    (?:(?:(?:a\s)|[0-9]+)(?:day|week|month|year)[s]?(?:\stime)?)
+#ix;
 
 # Covering the ambiguous formats, like:
 # DMY: 27/11/2014 with a variety of delimiters
