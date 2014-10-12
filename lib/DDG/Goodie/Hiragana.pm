@@ -18,8 +18,8 @@ my %hiragana = (
     # gojuuon
     a => 'あ',     i => 'い',     u => 'う',     e => 'え',     o => 'お',
     ka => 'か',    ki => 'き',    ku => 'く',    ke => 'け',    ko => 'こ',
-    sa => 'さ',    si => 'し',    su => 'す',    se => 'せ',    so => 'そ',
-    ta => 'た',    ti => 'ち',    tu => 'つ',    te => 'て',    to => 'と',
+    sa => 'さ',    shi => 'し',   su => 'す',    se => 'せ',    so => 'そ',
+    ta => 'た',    chi => 'ち',   tu => 'つ',    te => 'て',    to => 'と',
     na => 'な',    ni => 'に',    nu => 'ぬ',    ne => 'ね',    no => 'の',
     ha => 'は',    hi => 'ひ',    hu => 'ふ',    he => 'へ',    ho => 'ほ',
     ma => 'ま',    mi => 'み',    mu => 'む',    me => 'め',    mo => 'も',
@@ -53,12 +53,12 @@ handle remainder => sub {
     my $output_string = $_;
     return unless $output_string;
     
-    foreach my $syllable ( reverse sort keys %hiragana ) {
+    foreach my $syllable ( keys %hiragana ) {
         $output_string =~ s/$syllable/$hiragana{$syllable}/gi;
     }
-    
+    print STDERR "output: $output_string \n";
     #If there were untranslatable syllables, then it's not valid romaji
-    return if $output_string =~ /[A-Za-z]/; 
+    return if $output_string =~ /[A-Za-z]/;
     return $output_string;
 };
 
