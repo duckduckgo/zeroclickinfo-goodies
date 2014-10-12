@@ -49,11 +49,13 @@ my %hiragana = (
     n => 'ん'
 );
 
+my @keys_in_replace_order = sort { length ($b) <=> length ($a) } keys %hiragana;
+
 handle remainder => sub {
     my $output_string = $_;
     return unless $output_string;
     
-    foreach my $syllable ( keys %hiragana ) {
+    foreach my $syllable ( @keys_in_replace_order ) {
         $output_string =~ s/$syllable/$hiragana{$syllable}/gi;
     }
     print STDERR "output: $output_string \n";
