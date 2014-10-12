@@ -2,12 +2,14 @@ package DDG::Goodie::Hiragana;
 # ABSTRACT: converts romaji syllables into hiragana
 
 use DDG::Goodie;
-
 triggers startend =>'japanese hiragana','japanese','hiragana';
 zci answer_type => 'hiragana';
 
 zci is_cached => 1;
+
 primary_example_queries "hiragana a";
+secondary_example_queries "nihon hiragana";
+
 description "Converts romaji syllables into hiragana";
 name "Hiragana";
 
