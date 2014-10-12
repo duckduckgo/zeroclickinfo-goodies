@@ -1,5 +1,5 @@
 package DDG::Goodie::Hiragana;
-# ABSTRACT: translates syllables into hiragana
+# ABSTRACT: converts romaji syllables into hiragana
 
 use DDG::Goodie;
 
@@ -8,7 +8,7 @@ zci answer_type => 'hiragana';
 
 zci is_cached => 1;
 primary_example_queries "hiragana a";
-description "Translates syllables into hiragana";
+description "Converts romaji syllables into hiragana";
 name "Hiragana";
 
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Hiragana.pm';
@@ -19,7 +19,7 @@ my %hiragana = (
     a => 'あ',     i => 'い',     u => 'う',     e => 'え',     o => 'お',
     ka => 'か',    ki => 'き',    ku => 'く',    ke => 'け',    ko => 'こ',
     sa => 'さ',    shi => 'し',   su => 'す',    se => 'せ',    so => 'そ',
-    ta => 'た',    chi => 'ち',   tu => 'つ',    te => 'て',    to => 'と',
+    ta => 'た',    chi => 'ち',   tsu => 'つ',   te => 'て',    to => 'と',
     na => 'な',    ni => 'に',    nu => 'ぬ',    ne => 'ね',    no => 'の',
     ha => 'は',    hi => 'ひ',    hu => 'ふ',    he => 'へ',    ho => 'ほ',
     ma => 'ま',    mi => 'み',    mu => 'む',    me => 'め',    mo => 'も',
@@ -54,13 +54,13 @@ my @keys_in_replace_order = sort { length ($b) <=> length ($a) } keys %hiragana;
 handle remainder => sub {
     my $output_string = $_;
     return unless $output_string;
-    
     foreach my $syllable ( @keys_in_replace_order ) {
         $output_string =~ s/$syllable/$hiragana{$syllable}/gi;
     }
-    #If there were untranslatable syllables, then it's not valid romaji
+    
+    #If there were unconvertable syllables, then it's not valid romaji
     return if $output_string =~ /[A-Za-z]/;
-    return $output_string;
+    return $output_string, html => "<div class='zci--hiragana text--primary'>".$output_string."</div>";
 };
 
 1;

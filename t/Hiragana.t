@@ -13,11 +13,12 @@ ddg_goodie_test(
   		DDG::Goodie::Hiragana
   	)],
 
-    "hiragana a" => test_zci('あ'),
-    "hiragana konnichiwa"  => test_zci('こんにちわ'),
+    "hiragana a" => test_zci('あ', html => "<div class='zci--hiragana text--primary'>あ</div>"),
+    "hiragana konnichiwa"  => test_zci('こんにちわ', html => "<div class='zci--hiragana text--primary'>こんにちわ</div>"),
+    "nihon hiragana" => test_zci('にほん', html => "<div class='zci--hiragana text--primary'>にほん</div>"),
+    "hiragana tsukue no ue" => test_zci('つくえ の うえ', html => "<div class='zci--hiragana text--primary'>つくえ の うえ</div>"),
     "what is hiragana?" => undef,
-    "hiragana" => undef,
-    
+    "hiragana" => undef,    
 );
 
 done_testing();
