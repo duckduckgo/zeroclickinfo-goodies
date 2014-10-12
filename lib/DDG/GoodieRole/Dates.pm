@@ -43,8 +43,8 @@ my $relative_dates      = qr#
     now | today | tomorrow | yesterday |
     (?:(?:current|previous|next)\sday) |
     (?:next|last|this)\s(?:week|month|year) |
-    (?:in\s(?:(?:a\s)|[0-9]+)(?:day|week|month|year)[s]?) | 
-    (?:(?:(?:a\s)|[0-9]+)(?:day|week|month|year)[s]?(?:\stime)?)
+    (?:in\s(?:a|[0-9]+)\s(?:day|week|month|year)[s]?)(?:\stime)? | 
+    (?:(?:a|[0-9]+)\s(?:day|week|month|year)[s]?(?:\sago)?)
 #ix;
 
 # Covering the ambiguous formats, like:
