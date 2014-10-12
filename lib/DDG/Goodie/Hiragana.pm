@@ -13,6 +13,9 @@ secondary_example_queries "nihon hiragana";
 description "Converts romaji syllables into hiragana";
 name "Hiragana";
 
+category "language";
+topics "special_interest";
+
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Hiragana.pm';
 attribution github => "mintsoft";
 
