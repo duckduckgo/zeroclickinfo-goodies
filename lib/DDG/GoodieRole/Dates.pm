@@ -40,7 +40,7 @@ my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
 my $relative_dates      = qr#
-    now | today| tomorrow | yesterday |
+    now | today | tomorrow | yesterday |
     (?:(?:current|previous|next)\sday) |
     (?:next|last|this)\s(?:week|month|year) |
     (?:in\s(?:(?:a\s)|[0-9]+)(?:day|week|month|year)[s]?) | 
@@ -427,7 +427,6 @@ sub parse_descriptive_datestring_to_date {
         # relative dates, tomorrow, yesterday etc
         my $tmp_date = $now;
         my @to_add;
-
         if ($relative_date =~ qr/tomorrow|(?:next day)/) {
             @to_add = (days => 1);
         } elsif ($relative_date =~ qr/yesterday|(?:previous day)/) {
@@ -435,9 +434,29 @@ sub parse_descriptive_datestring_to_date {
         } elsif ($relative_date =~ qr/(?<dir>next|last|this) (?<unit>week|month|year)/) {
             my $unit = $+{'unit'};
             my $num = ($+{'dir'} eq 'next') ? 1 : ($+{'dir'} eq 'last') ? -1 : 0;
-
             @to_add =
                 ($unit eq 'week')  ? (days   => 7 * $num)
+              : ($unit eq 'month') ? (months => $num)
+              : ($unit eq 'year')  ? (years  => $num)
+              :                      ();
+        } elsif ($relative_date =~ qr/in (?<num>a|[0-9]+) (?<unit>day|week|month|year)/) {
+            my $unit = $+{'unit'};
+            my $num = $+{'num'};
+            $num = 1 if ($num eq "a");
+            @to_add = 
+                ($unit eq 'day')   ? (days => $num)
+              : ($unit eq 'week')  ? (days => 7*$num)
+              : ($unit eq 'month') ? (months => $num)
+              : ($unit eq 'year')  ? (years  => $num)
+              :                      ();  
+        } elsif ($relative_date =~ qr/(?<num>a|[0-9]+) (?<unit>day|week|month|year)(?:[s])? ago/) {
+            my $unit = $+{'unit'};
+            my $num = $+{'num'};
+            $num = 1 if ($num eq "a");
+            $num *= -1;
+            @to_add =
+                ($unit eq 'day')   ? (days => $num)
+              : ($unit eq 'week')  ? (days => 7*$num)
               : ($unit eq 'month') ? (months => $num)
               : ($unit eq 'year')  ? (years  => $num)
               :                      ();
