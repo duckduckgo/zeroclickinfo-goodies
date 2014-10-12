@@ -461,7 +461,7 @@ sub parse_descriptive_datestring_to_date {
     }
 }
 
-sub util_add_unit ($$) {
+sub util_add_unit {
     my ($unit, $num) = @_;
     my @to_add =
         ($unit eq 'day')   ? (days => $num)
