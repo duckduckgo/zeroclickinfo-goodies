@@ -365,6 +365,7 @@ subtest 'ImageLoader' => sub {
 
             package ImgShareRoleTester;
             use Moo;
+            use HTML::Entities;
             use Path::Class;    # Hopefully the real share stays implemented this way.
             use MIME::Base64;
             with 'DDG::GoodieRole::ImageLoader';
@@ -372,6 +373,7 @@ subtest 'ImageLoader' => sub {
             our $tmp_file = file(($tmp_dir->tempfile(TEMPLATE => 'img_XXXXXX', suffix   => '.gif'))[1]);
             # Always return the same file for our purposes here.
             sub share     { $tmp_file }
+            sub html_enc  { encode_entities(@_) }                                             # Deal with silly symbol table twiddling.
             sub fill_temp { $tmp_file->spew(iomode => '>:bytes', decode_base64($b64_gif)) }
             sub kill_temp { undef $tmp_file }
             sub img_wrap { shift; goodie_img_tag(@_); }
@@ -403,13 +405,12 @@ subtest 'ImageLoader' => sub {
             like($tag_content, qr/alt="Yo!"/,   '... and proper alt attribute');
             like($tag_content, qr/height="12"/, '... and proper height attribute');
             like($tag_content, qr/width="10"/,  '... and proper width attribute');
-            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, alt => 'Yo!', height => 12, width => 10, class => 'smooth'}) }
-            'Plus class';
-            like($tag_content, qr/$final_src/,     '... contains proper data');
-            like($tag_content, qr/alt="Yo!"/,      '... and proper alt attribute');
-            like($tag_content, qr/height="12"/,    '... and proper height attribute');
-            like($tag_content, qr/width="10"/,     '... and proper width attribute');
-            like($tag_content, qr/class="smooth"/, '... and proper class attribute');
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, alt => 'hello"there!', height => 12, width => 10, class => 'smooth' }); } 'Plus class';
+            like($tag_content, qr/$final_src/,              '... contains proper data');
+            like($tag_content, qr/alt="hello&quot;there!"/, '... and proper alt attribute');
+            like($tag_content, qr/height="12"/,             '... and proper height attribute');
+            like($tag_content, qr/width="10"/,              '... and proper width attribute');
+            like($tag_content, qr/class="smooth"/,          '... and proper class attribute');
             lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, atl => 'Yo!', height => 12, width => 10, class => 'smooth'}) }
             'Any mispelled does not die';
             is($tag_content, '', '... but yields an empty tag');
@@ -419,7 +420,6 @@ subtest 'ImageLoader' => sub {
             is($tag_content, '', '... but yields an empty tag');
         };
     };
-
 };
 
 done_testing;

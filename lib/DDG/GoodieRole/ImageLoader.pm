@@ -55,12 +55,11 @@ sub goodie_img_tag {
     return $cannot unless $contents;
     my $b64_contents = encode_base64($contents, '');
     return $cannot unless $b64_contents;
+    state $their_enc = _caller_to_enc(caller);
 
     my $goodie_tag = '<img src="data:' . $type . ';base64,' . $b64_contents . '"';
     foreach my $img_attr (grep { defined $request{$_} } qw(alt class height width)) {
-        my $attr_val = $request{$img_attr};
-        $attr_val =~ s/"/\\"/g;    # Adjust for quoting in the tag.
-        $goodie_tag .= ' ' . $img_attr . '="' . $attr_val . '"';
+        $goodie_tag .= ' ' . $img_attr . '="' . $their_enc->($request{$img_attr}) . '"';
     }
     $goodie_tag .= '/>';
 
@@ -68,11 +67,15 @@ sub goodie_img_tag {
 }
 
 sub _caller_to_share {
-    my $package = shift;
-
+    my $package    = shift;
     my $share_func = $package . '::share';
-
     return \&$share_func;
+}
+
+sub _caller_to_enc {
+    my $package  = shift;
+    my $enc_func = $package . '::html_enc';
+    return \&$enc_func;
 }
 
 1;
