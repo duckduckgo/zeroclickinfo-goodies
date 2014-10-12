@@ -286,8 +286,8 @@ subtest 'Dates' => sub {
                 'current day'   => '01 Dec 2015',
                 'next month'    => '01 Jan 2016',
                 'this week'     => '01 Dec 2015',
-#                '1 month ago'   => '01 Nov 2015',
-#                '2 years ago'   => '01 Dec 2013'
+                '1 month ago'   => '01 Nov 2015',
+                '2 years ago'   => '01 Dec 2013'
             },
             '2000-01-01T00:00:00Z' => {
                 'feb 21st'          => '21 Feb 2000',
