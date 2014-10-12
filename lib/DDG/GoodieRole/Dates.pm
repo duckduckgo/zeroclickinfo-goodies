@@ -39,7 +39,7 @@ my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
-my $relative_days       = qr#now|today|tomorrow|yesterday|(?:(?:current|previous|next) day)|(?:next|last|this) (?:week|month|year)#i;
+my $relative_dates       = qr#now|today|tomorrow|yesterday|(?:(?:current|previous|next) day)|(?:next|last|this) (?:week|month|year)#i;
 # Covering the ambiguous formats, like:
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
@@ -245,7 +245,7 @@ my $descriptive_datestring = qr{
     (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
     (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
     (?:$month_regex)                                           | # February, Aug
-    (?:$relative_days)                                           # next week, last month, this year
+    (?:$relative_dates)                                           # next week, last month, this year
     }ix;
 
 # Used for parse_descriptive_datestring_to_date
@@ -255,7 +255,7 @@ my $descriptive_datestring_matches = qr#
     (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
     (?:(?<m>$month_regex)\s(?<d>$date_number)\s?$number_suffixes?) |
     (?<m>$month_regex) |
-    (?<r>$relative_days)
+    (?<r>$relative_dates)
     #ix;
 
 my $formatted_datestring = build_datestring_regex();
