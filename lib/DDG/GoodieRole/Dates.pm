@@ -434,15 +434,15 @@ sub parse_descriptive_datestring_to_date {
         } elsif ($relative_date =~ qr/(?<dir>next|last|this) (?<unit>week|month|year)/) {
             my $unit = $+{'unit'};
             my $num = ($+{'dir'} eq 'next') ? 1 : ($+{'dir'} eq 'last') ? -1 : 0;
-            @to_add = util_add_unit($unit, $num);
+            @to_add = _util_add_unit($unit, $num);
         } elsif ($relative_date =~ qr/in (?<num>a|[0-9]+) (?<unit>day|week|month|year)/) {
             my $unit = $+{'unit'};
             my $num = ($+{'num'} eq "a" ? 1 : $+{'num'});
-            @to_add = util_add_unit($unit, $num);
+            @to_add = _util_add_unit($unit, $num);
         } elsif ($relative_date =~ qr/(?<num>a|[0-9]+) (?<unit>day|week|month|year)(?:[s])? ago/) {
             my $unit = $+{'unit'};
             my $num = ($+{'num'} eq "a" ? 1 : $+{'num'}) * -1;
-            @to_add = util_add_unit($unit, $num);
+            @to_add = _util_add_unit($unit, $num);
         }
         # Any other cases which came through here should be today.
         $tmp_date->add(@to_add);
@@ -458,7 +458,7 @@ sub parse_descriptive_datestring_to_date {
     }
 }
 
-sub util_add_unit {
+sub _util_add_unit {
     my ($unit, $num) = @_;
     my @to_add =
         ($unit eq 'day')   ? (days => $num)
