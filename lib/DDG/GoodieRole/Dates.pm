@@ -437,14 +437,11 @@ sub parse_descriptive_datestring_to_date {
             @to_add = util_add_unit($unit, $num);
         } elsif ($relative_date =~ qr/in (?<num>a|[0-9]+) (?<unit>day|week|month|year)/) {
             my $unit = $+{'unit'};
-            my $num = $+{'num'};
-            $num = 1 if ($num eq "a");
+            my $num = ($+{'num'} eq "a" ? 1 : $+{'num'});
             @to_add = util_add_unit($unit, $num);
         } elsif ($relative_date =~ qr/(?<num>a|[0-9]+) (?<unit>day|week|month|year)(?:[s])? ago/) {
             my $unit = $+{'unit'};
-            my $num = $+{'num'};
-            $num = 1 if ($num eq "a");
-            $num *= -1;
+            my $num = ($+{'num'} eq "a" ? 1 : $+{'num'}) * -1;
             @to_add = util_add_unit($unit, $num);
         }
         # Any other cases which came through here should be today.
