@@ -40,7 +40,7 @@ handle query_raw => sub {
     }
 
     my $text = "URL Decoded: $decoded";
-    my $html = '<div class="zci--urldecode"><div class="text--primary mini-title">URL Decoded: </div><div class="text--primary url_decoded">'.html_enc($decoded).'</div></div>';
+    my $html = '<div class="zci--urldecode"><div class="text--secondary mini-title">URL Decoded: </div><div class="text--primary url_decoded">'.html_enc($decoded).'</div></div>';
 
     return $text, html => $html;
 };
