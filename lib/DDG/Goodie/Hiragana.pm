@@ -65,7 +65,8 @@ handle remainder => sub {
     
     #If there were unconvertable syllables, then it's not valid romaji
     return if $output_string =~ /[A-Za-z]/;
-    return $output_string, html => "<div class='zci--hiragana text--primary'>".$output_string."</div>";
+    utf8::decode($output_string);
+    return $output_string, html => "<div class='zci--hiragana text--primary'>".html_enc($output_string)."</div>";
 };
 
 1;
