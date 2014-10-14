@@ -1,9 +1,11 @@
-#!/usr/bin/env perl
+﻿#!/usr/bin/env perl
 
 use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+
+use utf8;
 
 zci answer_type => 'hiragana';
 zci is_cached => 1;
