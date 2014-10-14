@@ -81,23 +81,27 @@ handle remainder => sub {
 
     my ($dialing_code, @countries);
 
+    my $in_number;
     if ($query =~ /^\+?(\d+)/) {
+        $in_number = $1;
         # $query looks like a phone number. eg +65
-        ($dialing_code, @countries) = number_to_country($1);
-    }
-    elsif ($query =~ /^\w+/) {
+        ($dialing_code, @countries) = number_to_country($in_number);
+    } elsif ($query =~ /^\w+/) {
         # $query looks like a country name or country code. eg Brazil or Br
         ($dialing_code, @countries) = country_to_calling_code($query);
     }
 
     return unless $dialing_code && @countries;
 
-    my $answer = "+" . $dialing_code;
-    $answer .= " is the international calling code for ";
-    $answer .= list2string(@countries);
-    $answer .= ".";
+    $dialing_code = '+' . $dialing_code;
+    my $country_list = list2string(@countries);
 
-	return $answer;
+    return $dialing_code . ' is the international calling code for ' . $country_list . '.',
+      structured_answer => {
+        input => [$in_number ? $dialing_code : $country_list],
+        operation => 'international calling code',
+        result    => ($in_number ? $country_list : $dialing_code),
+      };
 };
 
 # Convert a list of country names to a single human readable English string.
