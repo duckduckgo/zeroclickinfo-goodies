@@ -137,8 +137,8 @@ handle query => sub {
     my ($hours, $minutes, $seconds) = map { $_ // 0 } ($+{'h'}, $+{'m'}, $+{'s'});
     my $american        = $+{'american'};
     my $pm              = ($+{'pm'} && $hours != 12) ? 12 : 0;
-    my $input_timezone  = $+{'from_tz'} || 'UTC';
-    my $output_timezone = $+{'to_tz'};
+    my $input_timezone  = uc $+{'from_tz'} || 'UTC';
+    my $output_timezone = uc $+{'to_tz'};
 
     my $modifier = 0;
     for ( $input_timezone, $output_timezone ) {
