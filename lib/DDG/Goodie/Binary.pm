@@ -7,8 +7,8 @@ use Bit::Vector;
 
 triggers end => "binary";
 
-zci is_cached => 1;
 zci answer_type => "binary_conversion";
+zci is_cached   => 1;
 
 primary_example_queries 'foo in binary', '12 as binary', 'hex 0xffff into binary';
 secondary_example_queries '0x1e to binary';
@@ -66,11 +66,16 @@ handle remainder => sub {
             @out = ('0x' . lc $1, hex2bin($1), "hex", "binary");
         } else {
             # We didn't match anything else, so just convert whatever string is left.
-            @out = ('"' . $_ . '"', bin($_), "string", "binary");
+            @out = ($_, bin($_), "string", "binary");
         }
     }
     return unless (@out);    # Didn't hit any conditions, must not be us.
-    return qq/Binary conversion: $out[0] ($out[2]) = $out[1] ($out[3])/;
+
+    return qq/Binary conversion: $out[0] ($out[2]) = $out[1] ($out[3])/,
+      structured_answer => {
+        input     => [$out[0]],
+        operation => $out[2] . ' to ' . $out[3],
+        result    => $out[1]};
 };
 
 1;
