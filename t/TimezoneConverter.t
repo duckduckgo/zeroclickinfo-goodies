@@ -12,7 +12,7 @@ ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
     '3:14 in GMT' =>
         test_zci('3:14 (UTC) is 3:14 (GMT).', 
-            html => qr/3:14 \(UTC\) is.*3:14.*\(GMT\)./
+            html => qr/.*3:14.*\(UTC\) is.*3:14.*\(GMT\)./
         ),
     '8:10 A.M. AZOST into CAT' =>
         test_zci('8:10 A.M. (AZOST, UTC-1) is 11:10 A.M. (CAT, UTC+2).',
@@ -82,11 +82,11 @@ ddg_goodie_test(
     ),
     '12:40 pm from PST to JST' =>
         test_zci('12:40 P.M. (PST, UTC-8) is 5:40 A.M., 1 day after (JST, UTC+9).',
-        html => qr/12:40 P.M. \(PST, UTC-8\) is.*5:40 A.M., 1 day after.*\(JST, UTC\+9\)./
+        html => qr/.*12:40 P.M..*\(PST, UTC-8\) is.*5:40 A.M., 1 day after.*\(JST, UTC\+9\)./
     ),
     '11:22am est in utc' =>
         test_zci('11:22 A.M. (EST, UTC-5) is 4:22 P.M. (UTC).',
-        html => qr/11:22 A.M. \(EST, UTC-5\) is.*4:22 P.M..*\(UTC\)./
+        html => qr/.*11:22 A.M..*\(EST, UTC-5\) is.*4:22 P.M..*\(UTC\)./
     ),
 );
 
