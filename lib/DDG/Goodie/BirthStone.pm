@@ -5,8 +5,8 @@ use DDG::Goodie;
 
 triggers startend => 'birthstone', 'birth stone';
 
-zci answer_type => "BirthStone";
-zci is_cached => 1;
+zci answer_type => "birth_stone";
+zci is_cached   => 1;
 
 primary_example_queries 'birthstone april';
 secondary_example_queries 'may birth stone';
@@ -14,28 +14,36 @@ description 'returns the birth stone of the specified month';
 name 'BirthStone';
 topics 'special_interest', 'entertainment';
 category 'random';
-attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
+attribution github => ['https://github.com/austinheimark', 'austin_heimark'];
 
 my %birthstones = (
-	"january" => "Garnet",
-	"february" => "Amethyst",
-	"march" => "Aquamarine",
-	"april" => "Diamond",
-	"may" => "Emerald",
-	"june" => "Pearl",
-	"july" => "Ruby",
-	"august" => "Peridot",
-	"september" => "Sapphire",
-	"october" => "Opal",
-	"november" => "Topaz",
-	"december" => "Turquoise"
+    "January"   => "Garnet",
+    "February"  => "Amethyst",
+    "March"     => "Aquamarine",
+    "April"     => "Diamond",
+    "May"       => "Emerald",
+    "June"      => "Pearl",
+    "July"      => "Ruby",
+    "August"    => "Peridot",
+    "September" => "Sapphire",
+    "October"   => "Opal",
+    "November"  => "Topaz",
+    "December"  => "Turquoise"
 );
 
 handle remainder => sub {
-	my $month = lc $_;
-	my $stone = $birthstones{$month};
-	return ucfirst $month . " birthstone: $stone" if $stone;
-	return;
+    my $month = ucfirst lc $_;
+
+    return unless $month;
+    my $stone = $birthstones{$month};
+    return unless $stone;
+
+    return $month . " birthstone: $stone",
+      structured_answer => {
+        input     => [$month],
+        operation => 'birthstone',
+        result    => $stone
+      };
 };
 
 1;
