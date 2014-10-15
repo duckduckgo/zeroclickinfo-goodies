@@ -95,7 +95,7 @@ sub for_display {
 sub with_html {
     my ($self, $number_text) = @_;
 
-    return $self->_add_html_exponents($self->for_display($number_text));
+    return $self->_add_html_exponents($number_text);
 }
 
 sub _add_html_exponents {
