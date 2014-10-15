@@ -193,11 +193,15 @@ handle query => sub {
         $output_format = '%s';
         pop @output_timezones;
     }
+
     my $output_string = sprintf "%s ($input_format) is %s ($output_format).",
             ucfirst $input_time, @input_timezones,
             $output_time, @output_timezones;
+    my $output_html = sprintf "<div class='zci--timezone-converter text--secondary'>%s ($input_format) is <span class='text--primary'>%s</span> ($output_format).</div>",
+            ucfirst $input_time, @input_timezones,
+            $output_time, @output_timezones;
 
-    return $output_string;
+    return $output_string, html => $output_html;
 };
 
 1;
