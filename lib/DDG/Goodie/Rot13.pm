@@ -15,14 +15,23 @@ attribution github => ['https://github.com/unlisted', 'unlisted'];
 
 triggers start => 'rot13';
 
-zci is_cached => 1;
+zci answer_type => 'rot13';
+zci is_cached   => 1;
 
 handle remainder => sub {
-    if ($_) {
-        $_ =~ tr[a-zA-Z][n-za-mN-ZA-M];
-        return "ROT13: $_";
-    };
-    return;
+    my $in = shift;
+
+    return unless $in;
+    my $out = $in;
+
+    $out =~ tr[a-zA-Z][n-za-mN-ZA-M];
+
+    return "ROT13: $out",
+      structured_answer => {
+        input     => [html_enc($in)],
+        operation => 'ROT13',
+        result    => html_enc($out),
+      };
 };
 
 1;
