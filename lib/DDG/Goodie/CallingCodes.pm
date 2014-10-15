@@ -15,30 +15,27 @@ code_url    "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/D
 category    "geography";
 topics      "travel", "geography";
 
-primary_example_queries   "country code 55", "country code brazil";
+primary_example_queries   "calling code 55", "dialing code brazil";
 secondary_example_queries "dialing code +55", "country calling code 55";
 
 attribution github  => ["kablamo",            "Eric Johnson"],
             web     => ["http://kablamo.org", "Eric Johnson"];
 
-triggers any => 
-    "calling code",
-    "calling codes",
-    "country calling code", 
-    "country calling codes", 
-    "country code", 
-    "country dialing code", 
-    "country dialing codes", 
-    "dial in code",
-    "dial in codes",
-    "dialing code", 
-    "dialing codes", 
-    "international calling code", 
-    "international calling codes", 
-    "international dial in code",
-    "international dial in codes",
-    "international dialing code",
-    "international dialing codes"; 
+my @codewords   = qw(code codes);
+my @descriptors = ('calling', 'dialing', 'dial-in', 'dial in');
+my @extras      = qw(international country);
+
+my @triggers;
+foreach my $cw (@codewords) {
+    foreach my $desc (@descriptors) {
+        push @triggers, $desc . ' ' . $cw;
+        foreach my $extra (@extras) {
+            push @triggers, join(' ', $extra, $desc, $cw);
+        }
+    }
+}
+
+triggers any => @triggers;
 
 Locale::Country::rename_country('ae' => 'the United Arab Emirates');
 Locale::Country::rename_country('do' => 'the Dominican Republic');
