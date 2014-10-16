@@ -87,7 +87,7 @@ ddg_goodie_test(
     '0 c in k' => test_zci('0 degrees celsius = 273.150 kelvin', html => qr/.*/),
     '234 f to c' => test_zci('234 degrees fahrenheit = 112.222 degrees celsius', html => qr/.*/),
     '234 f to k' => test_zci('234 degrees fahrenheit = 385.372 kelvin', html => qr/.*/),
-    'metres from 20 yards' => test_zci('20 meters = 21.872 yards', html => qr/.*/),
+    'metres from 20 yards' => test_zci('20 yards = 18.288 meters', html => qr/.*/),
     '7 milligrams to micrograms' => test_zci('7 milligrams = 7,000 micrograms', html => qr /.*/),
     'inches in 5 meters' => test_zci('5 meters = 196.851 inches', html => qr /.*/),
     '5 inches in meters' => test_zci('5 inches = 0.127 meters', html => qr /.*/),
