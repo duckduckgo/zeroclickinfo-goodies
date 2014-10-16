@@ -98,7 +98,11 @@ ddg_goodie_test(
     '1 imperial gallon in litres' => test_zci('1 imperial gallon = 4.546 litres', html => qr/.*/),
     'inching towards the goal' => undef,
     'how many metres in 10 of yard?' => test_zci('10 yards = 9.144 meters', html => qr/.*/),
-    'how many metres in 10 yards?' => test_zci('10 yards = 9.144 meters', html => qr/.*/)
+    'how many metres in 10 yards?' => test_zci('10 yards = 9.144 meters', html => qr/.*/),
+    'how many metres in 10 yards?' => test_zci('10 yards = 9.144 meters', html => qr/.*/),
+    'how many pounds in 1 kilogram' => test_zci('1 kilogram = 2.205 pounds', html => qr/.*/),
+    'how many pounds in kilogram' => test_zci('1 kilogram = 2.205 pounds', html => qr/.*/),
+    'how many pounds in kilograms?' => test_zci('1 kilogram = 2.205 pounds', html => qr/.*/)
 );
 
 done_testing;
