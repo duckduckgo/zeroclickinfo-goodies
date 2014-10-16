@@ -7,6 +7,7 @@ with 'DDG::GoodieRole::NumberStyler';
 use Math::Round qw/nearest/;
 use bignum;
 use Convert::Pluggable;
+use Data::Dump qw(dump);
 
 name                      'Conversions';
 description               'convert between various units of measurement';
@@ -38,11 +39,11 @@ triggers any => @units;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(convert|what (is|are|does)|how (much|many|long) (is|are))?\s?/;
+my $question_prefix = qr/(?:convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are))?\s?/;
 
 # guards and matches regex
 my $number_re = number_style_regex();
-my $guard = qr/^$question_prefix$number_re*\s?($keys)\s?(in|to|into|from)\s?$number_re*\s?($keys)$/;
+my $guard = qr/^$question_prefix($number_re*)\s?($keys)\s?(?:in|to|into|from)\s?($number_re*)\s?($keys)$/;
 my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
 
 # exceptions for pluralized forms:
@@ -76,32 +77,20 @@ handle query_lc => sub {
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
     
-    my @matches = ($_ =~ /$match_regex/gi);
+    my @matches = ($2, $4);
+    return if ("" ne $1 && "" ne $3);
+    my $factor = $1 ne "" ? $1 : 1; 
 
-    # hack/handle the special case of "X in Y":
-    if ((scalar @matches == 3) && $matches[1] eq "in") {
-        # If they put the number on the second term, we also need to reverse.
-        @matches = ($_ =~ /[0-9]\s+$matches[2]/) ? ($matches[2], $matches[0]) : ($matches[0], $matches[2]);
+    # if the query is in the format <unit> in <num> <unit> we need to flip
+    if ("" ne $3)
+    {
+        $factor = $3;
+        @matches = ($4, $2);
     }
-    return unless scalar @matches == 2; # conversion requires two triggers
-
-    # normalize the whitespace, "25cm" should work for example
-    $_ =~ s/($number_re)($keys)/$1 $2/g;
 
     # fix precision and rounding:
     my $precision = 3;
     my $nearest = '.' . ('0' x ($precision-1)) . '1';
-
-    # get factor and return if multiple numbers are specified
-    my @args = split(/\s+/, $_);
-    my $factor = "";
-    foreach my $arg (@args) {
-        if ($arg =~ /^$number_re$/) {
-            return if $factor;
-            $factor = $arg;
-        }
-    }
-    $factor = 1 if "" eq $factor;
     
     my $styler = number_style_for($factor);
     return unless $styler;
