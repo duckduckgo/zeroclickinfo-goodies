@@ -34,7 +34,7 @@ foreach my $type (@types) {
 }
 
 # build triggers based on available conversion units:
-triggers end => @units;
+triggers any => @units;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;

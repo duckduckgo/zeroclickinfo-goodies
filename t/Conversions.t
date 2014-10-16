@@ -93,6 +93,8 @@ ddg_goodie_test(
     '5 inches in meters' => test_zci('5 inches = 0.127 meters', html => qr /.*/),
     '5 inches in 5 meters' => undef,
     'convert 1 cm to 2 mm' => undef,
+    'inching towards the goal' => undef,
+    
 );
 
 done_testing;
