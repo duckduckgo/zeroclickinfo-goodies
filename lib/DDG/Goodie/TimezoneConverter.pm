@@ -137,8 +137,8 @@ handle query => sub {
     my ($hours, $minutes, $seconds) = map { $_ // 0 } ($+{'h'}, $+{'m'}, $+{'s'});
     my $american        = $+{'american'};
     my $pm              = ($+{'pm'} && $hours != 12) ? 12 : 0;
-    my $input_timezone  = $+{'from_tz'} || 'UTC';
-    my $output_timezone = $+{'to_tz'};
+    my $input_timezone  = uc $+{'from_tz'} || 'UTC';
+    my $output_timezone = uc $+{'to_tz'};
 
     my $modifier = 0;
     for ( $input_timezone, $output_timezone ) {
@@ -193,9 +193,15 @@ handle query => sub {
         $output_format = '%s';
         pop @output_timezones;
     }
-    sprintf "%s ($input_format) is %s ($output_format).",
-        ucfirst $input_time, @input_timezones,
-        $output_time, @output_timezones;
+
+    my $output_string = sprintf "%s ($input_format) is %s ($output_format).",
+            ucfirst $input_time, @input_timezones,
+            $output_time, @output_timezones;
+    my $output_html = sprintf "<div class='zci--timezone-converter text--secondary'><span class='text--primary'>%s</span> ($input_format) is <span class='text--primary'>%s</span> ($output_format).</div>",
+            ucfirst $input_time, @input_timezones,
+            $output_time, @output_timezones;
+
+    return $output_string, html => $output_html;
 };
 
 1;
