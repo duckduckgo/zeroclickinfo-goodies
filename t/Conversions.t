@@ -94,7 +94,8 @@ ddg_goodie_test(
     '5 inches in 5 meters' => undef,
     'convert 1 cm to 2 mm' => undef,
     '100 square metres in hectares' => test_zci('100 square meters = 0.010 hectares', html => qr/.*/),
-    '1 imperial gallon in litres' => test_zci('1 imperial gallon = 4.546 litres', html => qr/.*/)
+    '1 imperial gallon in litres' => test_zci('1 imperial gallon = 4.546 litres', html => qr/.*/),
+    'inching towards the goal' => undef,
 );
 
 done_testing;
