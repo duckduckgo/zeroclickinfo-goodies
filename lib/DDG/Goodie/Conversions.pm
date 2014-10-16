@@ -43,7 +43,7 @@ my $question_prefix = qr/(?:convert|what (?:is|are|does)|how (?:much|many|long) 
 
 # guards and matches regex
 my $number_re = number_style_regex();
-my $guard = qr/^$question_prefix($number_re*)\s?($keys)\s?(?:in|to|into|from)\s?($number_re*)\s?($keys)$/;
+my $guard = qr/^$question_prefix(?<left_num>$number_re*)\s?(?<left_unit>$keys)\s?(?:in|to|into|from)\s?(?<right_num>$number_re*)\s?(?<right_unit>$keys)$/;
 my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
 
 # exceptions for pluralized forms:
@@ -77,15 +77,15 @@ handle query_lc => sub {
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
     
-    my @matches = ($2, $4);
-    return if ("" ne $1 && "" ne $3);
-    my $factor = $1 ne "" ? $1 : 1; 
+    my @matches = ($+{'left_unit'}, $+{'right_unit'});
+    return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
+    my $factor = $+{'left_num'} ne "" ? $+{'left_num'} : 1; 
 
     # if the query is in the format <unit> in <num> <unit> we need to flip
-    if ("" ne $3)
+    if ("" ne $+{'right_num'})
     {
-        $factor = $3;
-        @matches = ($4, $2);
+        $factor = $+{'right_num'};
+        @matches = ($matches[1], $matches[0]);
     }
 
     # fix precision and rounding:
