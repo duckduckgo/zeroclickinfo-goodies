@@ -39,11 +39,11 @@ triggers any => @units;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(?:convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?)?/;
+my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?)?/;
 
 # guards and matches regex
 my $number_re = number_style_regex();
-my $guard = qr/^$question_prefix\s?(?<left_num>$number_re*)\s?(?<left_unit>$keys)\s?(?:in|to|into|(?:in to)|from)?\s?(?<right_num>$number_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/;
+my $guard = qr/^$question_prefix\s?(?<left_num>$number_re*)\s?(?<left_unit>$keys)\s?(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$number_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/;
 
 # exceptions for pluralized forms:
 my %plural_exceptions = (
@@ -78,7 +78,7 @@ handle query_lc => sub {
     
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
-    my $factor = $+{'left_num'} ne "" ? $+{'left_num'} : 1; 
+    my $factor = $+{'left_num'};
 
     # if the query is in the format <unit> in <num> <unit> we need to flip
     if ("" ne $+{'right_num'})
@@ -86,7 +86,7 @@ handle query_lc => sub {
         $factor = $+{'right_num'};
         @matches = ($matches[1], $matches[0]);
     }
-
+    $factor = 1 if ("" eq $factor);
     # fix precision and rounding:
     my $precision = 3;
     my $nearest = '.' . ('0' x ($precision-1)) . '1';
