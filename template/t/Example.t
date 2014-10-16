@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
 	[qw(
-		DDG::Goodie::<: $ia_name :>
+		DDG::Goodie::<: $ia_package_name :>
 	)],
 	'example query' => test_zci('query')
 );
