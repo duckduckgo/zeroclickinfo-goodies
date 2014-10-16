@@ -82,6 +82,7 @@ ddg_goodie_test(
     'what are 10 yards in metres' => test_zci('10 yards = 9.144 meters', html => qr/.*/),
     'how long is 42 days in mins' => test_zci('42 days = 60,480 minutes', html => qr/.*/),
     'how much is 40 kelvin in celsius' => test_zci('40 kelvin = -233.150 degrees celsius', html => qr/.*/),
+    'how much is 40 kelvin in celsius?' => test_zci('40 kelvin = -233.150 degrees celsius', html => qr/.*/),
     '12 degrees Celsius to Fahrenheit' => test_zci('12 degrees celsius = 53.600 degrees fahrenheit', html => qr/.*/),
     '1 degrees Fahrenheit to celsius' => test_zci('1 degrees fahrenheit = -17.222 degrees celsius', html => qr/.*/),
     '0 c in k' => test_zci('0 degrees celsius = 273.150 kelvin', html => qr/.*/),
@@ -94,6 +95,8 @@ ddg_goodie_test(
     '5 inches in 5 meters' => undef,
     'convert 1 cm to 2 mm' => undef,
     'inching towards the goal' => undef,
+    'how many metres in 10 of yard?' => test_zci('10 yards = 9.144 meters', html => qr/.*/),
+    'how many metres in 10 yards?' => test_zci('10 yards = 9.144 meters', html => qr/.*/)
     
 );
 
