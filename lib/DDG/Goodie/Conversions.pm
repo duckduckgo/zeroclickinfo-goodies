@@ -39,12 +39,11 @@ triggers any => @units;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(?:convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are))?\s?/;
+my $question_prefix = qr/(?:convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?)?/;
 
 # guards and matches regex
 my $number_re = number_style_regex();
-my $guard = qr/^$question_prefix(?<left_num>$number_re*)\s?(?<left_unit>$keys)\s?(?:in|to|into|from)\s?(?<right_num>$number_re*)\s?(?<right_unit>$keys)$/;
-my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
+my $guard = qr/^$question_prefix\s?(?<left_num>$number_re*)\s?(?<left_unit>$keys)\s?(?:in|to|into|(?:in to)|from)?\s?(?<right_num>$number_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/;
 
 # exceptions for pluralized forms:
 my %plural_exceptions = (
