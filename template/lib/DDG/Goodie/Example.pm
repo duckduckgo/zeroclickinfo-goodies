@@ -15,7 +15,7 @@ primary_example_queries "first example query", "second example query";
 secondary_example_queries "optional -- demonstrate any additional triggers";
 category "";
 topics "";
-code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/<: $ia_path :>/<: $ia_name :>.pm";
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/<: $ia_path :>/<: $ia_name :>.pm";
 attribution github => ["GitHubAccount", "Friendly Name"],
             twitter => "twitterhandle",
 
