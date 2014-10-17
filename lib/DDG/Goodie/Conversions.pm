@@ -43,7 +43,7 @@ my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many
 
 # guards and matches regex
 my $number_re = number_style_regex();
-my $guard = qr/^$question_prefix\s?(?<left_num>$number_re*)\s?(?<left_unit>$keys)\s?(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$number_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/;
+my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$number_re*)\s?(?<left_unit>$keys)\s?(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$number_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/;
 
 # exceptions for pluralized forms:
 my %plural_exceptions = (
@@ -81,12 +81,19 @@ handle query_lc => sub {
     my $factor = $+{'left_num'};
 
     # if the query is in the format <unit> in <num> <unit> we need to flip
-    if ("" ne $+{'right_num'})
+    # also if it's like "how many cm in metres"; the "1" is implicitly metre so also flip
+    if ( "" ne $+{'right_num'} || (
+             "" eq $+{'left_num'} 
+          && "" eq $+{'right_num'} 
+          && $+{'question'} !~ qr/convert/i
+          )
+       ) 
     {
         $factor = $+{'right_num'};
         @matches = ($matches[1], $matches[0]);
     }
     $factor = 1 if ("" eq $factor);
+    
     # fix precision and rounding:
     my $precision = 3;
     my $nearest = '.' . ('0' x ($precision-1)) . '1';
