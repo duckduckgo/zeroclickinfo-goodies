@@ -99,7 +99,9 @@ ddg_goodie_test(
     'how many metres in 10 yards?' => test_zci('10 yards = 9.144 meters', html => qr/.*/),
     'how many pounds in 1 kilogram' => test_zci('1 kilogram = 2.205 pounds', html => qr/.*/),
     'how many pounds in kilogram' => test_zci('1 kilogram = 2.205 pounds', html => qr/.*/),
-    'how many pounds in kilograms?' => test_zci('1 kilogram = 2.205 pounds', html => qr/.*/)
+    'how many pounds in kilograms?' => test_zci('1 kilogram = 2.205 pounds', html => qr/.*/),
+    'how many cm in a metre?' => test_zci('1 meter = 100 centimeters', html => qr/.*/),
+    'how many cm in an inch?' => test_zci('1 inch = 2.540 centimeters', html => qr/.*/)
 );
 
 done_testing;
