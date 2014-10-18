@@ -90,8 +90,11 @@ ddg_goodie_test(
     '5,0 GB to megabyte'            => test_zci('5,0 gigabytes = 5.000 megabytes',              html => '-ANY-'),
     '3.5e-2 miles to inches'        => test_zci('3.5 * 10^-2 miles = 2,217.602 inches',         html => '-ANY-'),
     # Areas and volumes
-    '100 square metres in hectares' => test_zci('100 square meters = 0.010 hectares', html => '-ANY-'),
-    '1 imperial gallon in litres'   => test_zci('1 imperial gallon = 4.546 litres',   html => '-ANY-'),
+    '100 square metres in hectares'    => test_zci('100 square meters = 0.010 hectares', html => '-ANY-'),
+    '0.0001 hectares in square metres' => test_zci('0.0001 hectares = 1 square meter', html => '-ANY-'),
+    '1 imperial gallon in litres'      => test_zci('1 imperial gallon = 4.546 litres',   html => '-ANY-'),
+    '0.001 litres in millilitres'      => test_zci('0.001 litres = 1 millilitre', html => '-ANY-'),
+    '1 hectare in square metres'       => test_zci('1 hectare = 10,000 square meters',   html => '-ANY-'),
     # Question-style
     'what is 1 inch in cm'              => test_zci('1 inch = 2.540 centimeters',           html => '-ANY-'),
     'what are 10 yards in metres'       => test_zci('10 yards = 9.144 meters',              html => '-ANY-'),
