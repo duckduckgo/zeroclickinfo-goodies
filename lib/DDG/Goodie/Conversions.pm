@@ -57,6 +57,8 @@ my %plural_exceptions = (
     'pounds force'           => 'pounds force',
 );
 
+my %singular_exceptions = reverse %plural_exceptions;
+
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
     my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . html_enc($result->{'from_unit'}) . "</span>";
@@ -80,19 +82,21 @@ handle query_lc => sub {
     my $factor = $+{'left_num'};
 
     # if the query is in the format <unit> in <num> <unit> we need to flip
-    # also if it's like "how many cm in metres"; the "1" is implicitly metre so also flip
-    if ( "" ne $+{'right_num'} || (
-             "" eq $+{'left_num'} 
-          && "" eq $+{'right_num'} 
-          && $+{'question'} !~ qr/convert/i
-          )
-       ) 
+    # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
+    # But if the second unit is plural, assume we want the the implicit one on the first
+    # It's always ambiguous when they are both countless and plural, so shouldn't be too bad.
+    if (
+        "" ne $+{'right_num'}
+        || (   "" eq $+{'left_num'}
+            && "" eq $+{'right_num'}
+            && $+{'question'} !~ qr/convert/i
+            && !looks_plural($+{'right_unit'})))
     {
         $factor = $+{'right_num'};
         @matches = ($matches[1], $matches[0]);
     }
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/);
-    
+
     # fix precision and rounding:
     my $precision = 3;
     my $nearest = '.' . ('0' x ($precision-1)) . '1';
@@ -157,5 +161,27 @@ handle query_lc => sub {
     my $output = $styler->for_display($factor)." $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
     return $output, html => wrap_html($factor, $result, $styler);
 };
+
+sub set_unit_pluralisation {
+    my ($unit, $count) = @_;
+    my $proper_unit = $unit;    # By default, we'll leave it unchanged.
+
+    my $already_plural = looks_plural($unit);
+
+    if ($count == 1 && $already_plural) {
+        $proper_unit = $singular_exceptions{$unit} || substr($unit, 0, -1);
+    } elsif ($count != 1 && !$already_plural) {
+        $proper_unit = $plural_exceptions{$unit} || $unit . 's';
+    }
+
+    return $proper_unit;
+}
+
+sub looks_plural {
+    my $unit = shift;
+
+    my @unit_letters = split //, $unit;
+    return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
+}
 
 1;
