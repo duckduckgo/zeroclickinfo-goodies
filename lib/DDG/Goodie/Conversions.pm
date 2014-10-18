@@ -7,7 +7,6 @@ with 'DDG::GoodieRole::NumberStyler';
 use Math::Round qw/nearest/;
 use bignum;
 use Convert::Pluggable;
-use Data::Dump qw(dump);
 
 name                      'Conversions';
 description               'convert between various units of measurement';
