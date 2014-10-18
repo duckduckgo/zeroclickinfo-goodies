@@ -76,6 +76,9 @@ ddg_goodie_test(
     '7 milligrams to micrograms'       => test_zci('7 milligrams = 7,000 micrograms',                  html => '-ANY-'),
     'inches in 5 meters'               => test_zci('5 meters = 196.851 inches',                        html => '-ANY-'),
     '5 inches in meters'               => test_zci('5 inches = 0.127 meters',                          html => '-ANY-'),
+    'millilitres in a gallon'          => test_zci('1 us gallon = 3,785.412 millilitres',              html => '-ANY-'),
+    'gallons in a millilitres'         => test_zci('1 millilitre = 0.000264 us gallons',               html => '-ANY-'),
+    'feet in an inches'                => test_zci('1 inch = 0.083 feet',                              html => '-ANY-'),
     # Unusual number formats
     '3e60 degrees in revolutions'   => test_zci('3 * 10^60 degrees = 8.33 * 10^57 revolutions', html => '-ANY-'),
     '4,1E5 newtons to pounds force' => test_zci('4,1 * 10^5 newtons = 92.171,667 pounds force', html => '-ANY-'),

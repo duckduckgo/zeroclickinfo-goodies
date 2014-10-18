@@ -57,6 +57,8 @@ my %plural_exceptions = (
     'pounds force'           => 'pounds force',
 );
 
+my %singular_exceptions = reverse %plural_exceptions;
+
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
     my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . html_enc($result->{'from_unit'}) . "</span>";
@@ -137,15 +139,9 @@ handle query_lc => sub {
     # handle pluralisation of units
     # however temperature is never plural and does require "degrees" to be prepended
     if ($result->{'type_1'} ne 'temperature') {
-        if ($factor != 1) {
-            $result->{'from_unit'} = (exists $plural_exceptions{$result->{'from_unit'}}) ? $plural_exceptions{$result->{'from_unit'}} : $result->{'from_unit'} . 's'; 
-        }
-    
-        if ($result->{'result'} != 1) {
-            $result->{'to_unit'} = (exists $plural_exceptions{$result->{'to_unit'}}) ? $plural_exceptions{$result->{'to_unit'}} : $result->{'to_unit'} . 's'; 
-        }
-    }
-    else {
+        $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
+        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
+    } else {
         $result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
         $result->{'to_unit'} = "degrees $result->{'to_unit'}" if ($result->{'to_unit'} ne "kelvin");
     }
@@ -157,5 +153,22 @@ handle query_lc => sub {
     my $output = $styler->for_display($factor)." $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
     return $output, html => wrap_html($factor, $result, $styler);
 };
+
+sub set_unit_pluralisation {
+    my ($unit, $count) = @_;
+    my $proper_unit = $unit;    # By default, we'll leave it unchanged.
+
+    my @unit_letters = split //, $unit;
+    my $already_plural = exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
+
+    if ($count == 1 && $already_plural) {
+        pop @unit_letters; # Remove the 's' in case casewe need to combine.
+        $proper_unit = $singular_exceptions{$unit} || join('', @unit_letters);
+    } elsif ($count != 1 && !$already_plural) {
+        $proper_unit = $plural_exceptions{$unit} || $unit . 's';
+    }
+
+    return $proper_unit;
+}
 
 1;
