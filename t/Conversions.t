@@ -98,6 +98,9 @@ ddg_goodie_test(
     'how many pounds in kilograms?'     => test_zci('1 kilogram = 2.205 pounds',            html => '-ANY-'),
     'how many cm in a metre?'           => test_zci('1 meter = 100 centimeters',            html => '-ANY-'),
     'how many cm in an inch?'           => test_zci('1 inch = 2.540 centimeters',           html => '-ANY-'),
+    'how much is a liter in gallons?'   => test_zci('1 litre = 0.264 us gallons',           html => '-ANY-'),
+    'how much is a gallon in litres?'   => test_zci('1 us gallon = 3.785 litres',           html => '-ANY-'),
+    'how many gallons in a litre'       => test_zci('1 litre = 0.264 us gallons',           html => '-ANY-'),
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
