@@ -16,8 +16,8 @@ category 'special';
 topics 'words_and_games';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Minecraft.pm';
 attribution
-	web => ['http://engvik.nu', 'Lars Jansøn Engvik'],
-	github => [ 'larseng', 'Lars Jansøn Engvik'];
+    web => ['http://engvik.nu', 'Lars Jansøn Engvik'],
+    github => [ 'larseng', 'Lars Jansøn Engvik'];
 
 zci answer_type => 'minecraft';
 zci is_cached => 1;
