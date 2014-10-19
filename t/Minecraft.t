@@ -28,7 +28,12 @@ ddg_goodie_test(
 			'Book are made from Paper + Leather.',
 			html => '<div id="minecraft-wrapper"><h3>Book</h3><span>Used to create book and quills, bookshelfs or an enchantment table.</span><img src="http://www.minecraftxl.com/images/wiki/recipes/book-crafting.png" style="display: block; margin: 0.5em 0;" /><span>Ingredients: Paper + Leather</span></div>'
 		),
-    'craft ladder' => undef,
+    'minecraft craft activator rail' =>
+		test_zci(
+			'Activator Rail are made from Iron Ingots + Sticks + Redstone Torch.',
+			html => '<div id="minecraft-wrapper"><h3>Activator Rail</h3><span>Used to activate TNT Minecarts or Minecarts with Hoppers.</span><img src="http://www.minecraftxl.com/images/wiki/recipes/activator-rail-crafting.png" style="display: block; margin: 0.5em 0;" /><span>Ingredients: Iron Ingots + Sticks + Redstone Torch</span></div>'
+		),
+	'craft ladder' => undef,
     'make tnt' => undef,  
 );
 
