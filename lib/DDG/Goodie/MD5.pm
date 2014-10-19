@@ -39,19 +39,18 @@ handle remainder => sub {
     s/^hash\s+(.*\S+)/$1/; # Remove 'hash' in queries like 'md5 hash this'
     s/^of\s+(.*\S+)/$1/; # Remove 'of' in queries like 'md5 hash of this'
     s/^"(.*)"$/$1/; # Remove quotes
-    if (/^\s*(.*\S+)/) {
-        # The string is encoded to get the utf8 representation instead of
-        # perls internal representation of strings, before it's passed to
-        # the md5 subroutine.
-        my $str = encode("utf8",$1);
-        my $md5;
-        #use approprite output format, default to hex
-        $md5 = $format eq 'base64' ? md5_base64($str) : md5_hex($str);
-        return $md5, html => html_output($str, $md5);
-    } else {
-        # Exit unless a string is found
-        return;
-    }
+
+    # return if there is nothing left to hash
+    return unless (/^\s*(.*\S+)/);
+
+    # The string is encoded to get the utf8 representation instead of
+    # perls internal representation of strings, before it's passed to
+    # the md5 subroutine.
+    my $str = encode("utf8",$1);
+    #use approprite output format, default to hex
+    my $md5 = $format eq 'base64' ? md5_base64($str) : md5_hex($str);
+    return $md5, html => html_output($str, $md5);
+
 };
 
 1;
