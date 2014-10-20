@@ -12,6 +12,7 @@ secondary_example_queries 'tnt craft minecraft';
 
 name 'Minecraft';
 description 'Minecraft crafting recipes.';
+source 'http://thejool.com/api/crafting-guide.json';
 category 'special';
 topics 'words_and_games';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Minecraft.pm';
