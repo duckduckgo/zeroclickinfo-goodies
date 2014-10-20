@@ -66,7 +66,7 @@ handle query => sub {
 		    $sha .= '=';
 	    }
 	}
-	return $str, html => html_output($str, $sha, "SHA-$command1");
+	return $sha, html => html_output($str, $sha, "SHA-$command1");
 };
 
 1;
