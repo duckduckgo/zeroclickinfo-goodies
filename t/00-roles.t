@@ -363,7 +363,7 @@ subtest 'ImageLoader' => sub {
         our $final_src = 'src="data:image/gif;base64,' . $b64_gif;
         {
 
-            package ImgShareRoleTester;
+            package DDG::Goodie::ImgShareTester;
             use Moo;
             use HTML::Entities;
             use Path::Class;    # Hopefully the real share stays implemented this way.
@@ -382,7 +382,7 @@ subtest 'ImageLoader' => sub {
 
         my $with_share;
         subtest 'Initialization' => sub {
-            $with_share = new_ok('ImgShareRoleTester', [], 'Applied to class');
+            $with_share = new_ok('DDG::Goodie::ImgShareTester', [], 'Applied to class');
         };
 
         subtest 'tag creation' => sub {

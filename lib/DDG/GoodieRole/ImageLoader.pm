@@ -3,7 +3,6 @@ package DDG::GoodieRole::ImageLoader;
 
 use strict;
 use warnings;
-use feature 'state';
 
 use Moo::Role;
 
@@ -29,6 +28,7 @@ my $mt = MIME::Types->new(
 
 #  Returns an empty tag ('') in case of error.
 my $cannot = '';
+
 sub goodie_img_tag {
     my $req_ref = shift;
 
@@ -45,17 +45,18 @@ sub goodie_img_tag {
     my $type     = $mt->mimeTypeOf($request{filename});
     return $cannot unless ($type && (split '/', $type)[0] eq 'image');
     # Now we need to hook into the role consumer's share dir, which we do in a ugly way here.
-    state $their_share = _caller_to_share(caller);
+    my $their_share = _grab_package_function('share');
+    return $cannot unless $their_share;
     # Now we need to be sure that we can get at the file
-    # Even if they turn out not to even have a share dir.
-    my $file = try { $their_share->($filename) };
+    my $file = $their_share->($filename);
     return $cannot unless $file;
     my $contents = scalar $file->slurp(iomode => '<:bytes');
     # Reckon it's possible they tried to trick us with an empty file
     return $cannot unless $contents;
     my $b64_contents = encode_base64($contents, '');
     return $cannot unless $b64_contents;
-    state $their_enc = _caller_to_enc(caller);
+    my $their_enc = _grab_package_function('html_enc');
+    return $cannot unless $their_enc;
 
     my $goodie_tag = '<img src="data:' . $type . ';base64,' . $b64_contents . '"';
     foreach my $img_attr (grep { defined $request{$_} } qw(alt class height width)) {
@@ -66,16 +67,26 @@ sub goodie_img_tag {
     return $goodie_tag;
 }
 
-sub _caller_to_share {
-    my $package    = shift;
-    my $share_func = $package . '::share';
-    return \&$share_func;
-}
+sub _grab_package_function {
+    my $function_name = shift;
 
-sub _caller_to_enc {
-    my $package  = shift;
-    my $enc_func = $package . '::html_enc';
-    return \&$enc_func;
+    my $func = try {
+        my $hit = 0;
+        # We only care about the most recent caller who is some kinda goodie-looking thing.
+        my $frame_filter = sub {
+            my $frame_info = shift;
+            if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) { $hit++; return 1; }
+            else                                                       { return 0; }
+        };
+        my $trace = Devel::StackTrace->new(
+            frame_filter => $frame_filter,
+            no_args      => 1,
+        );
+        my $stash = Package::Stash->new($trace->frame(0)->package);    # Get the package info for our caller.
+        $stash->get_symbol('&' . $function_name);
+    };
+
+    return $func;
 }
 
 1;
