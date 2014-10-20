@@ -7,8 +7,6 @@
 .zci--answer .zci--suninfo .suninfo--header {
     font-size:0.75em;
     font-weight:300;
-    padding-bottom: 0.5em;
-    text-align: bottom;
 }
 
 .zci--answer .zci--suninfo .suninfo--row span {
@@ -32,15 +30,10 @@
     margin: 0 0.5em;
 }
 
-.zci--answer .zci--suninfo .suninfo--setbox {
+.zci--answer .zci--suninfo .suninfo--setbox,
+.zci--answer .zci--suninfo .suninfo--risebox {
     display:inline-block;
     width:48px;
     height:48px;
     padding: 0 0 0 0.5em;
 }
-.zci--answer .zci--suninfo .suninfo--risebox {
-    display:inline-block;
-    width:48px;
-    height:48px;
-}
-
