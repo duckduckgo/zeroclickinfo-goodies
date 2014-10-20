@@ -87,20 +87,23 @@ sub pretty_output {
 
     $rise =~ s/^\s+//g;    # strftime puts a space in front for single-digits.
     $set =~ s/^\s+//g;     # strftime puts a space in front for single-digits.
-
+    
+    $rise = uc $rise;
+    $set = uc $set;
+    
     my $text = "On $when, sunrise in $where is at $rise; sunset at $set.";
 
     my $html = "<div class='zci--suninfo'>";
     $html .= "<div class='suninfo--header text--secondary'><span class='ddgsi'>@</span>$where on $when</div>";
-    $html .=
-        "<div class='suninfo--risebox'>"
+    $html .= "<div class='suninfo--row'>".
+        "<span class='suninfo--risebox'>"
       . $sunrise_svg
-      . "</div><div class='suninfo--timeboxes'><div class='text--primary suninfo--times'>$rise</div></div>";
+      . "</span><span class='suninfo--timeboxes suninfo--border-right'><span class='text--primary suninfo--times'>$rise</span></span>";
     $html .=
-        "<div class='suninfo--setbox'>"
+        "<span class='suninfo--setbox'>"
       . $sunset_svg
-      . "</div><div class='suninfo--timeboxes'><div class='text--primary suninfo--times'>$set</div></div>";
-    $html .= "</div>";
+      . "</span><span class='suninfo--timeboxes'><span class='text--primary suninfo--times'>$set</span></span>";
+    $html .= "</div></div>";
 
     return ($text, html => $html);
 }

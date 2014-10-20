@@ -7,25 +7,35 @@
 .zci--answer .zci--suninfo .suninfo--header {
     font-size:0.75em;
     font-weight:300;
+    padding-bottom: 0.5em;
+    text-align: bottom;
+}
+
+.zci--answer .zci--suninfo .suninfo--row span {
+	vertical-align: middle;
+}
+
+.zci--answer .zci--suninfo .ddgsi{
+	margin-right: 0.5em;
 }
 
 .zci--answer .zci--suninfo .suninfo--timeboxes {
     display:inline-block;
-    height:48px;
-    line-height:60px;
-    vertical-align:top;
-    padding:0 1em 0.5em;
+    padding-right: 0.5em;
+}
+
+.zci--answer .zci--suninfo .suninfo--border-right {
+	border-right: 1px solid #ccc;
 }
 
 .zci--answer .zci--suninfo .suninfo--times {
-    height:48px;
+    margin: 0 0.5em;
 }
 
 .zci--answer .zci--suninfo .suninfo--setbox {
     display:inline-block;
     width:48px;
     height:48px;
-    border-left:1px solid #ccc;
     padding: 0 0 0 0.5em;
 }
 .zci--answer .zci--suninfo .suninfo--risebox {
