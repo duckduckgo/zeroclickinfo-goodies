@@ -112,6 +112,7 @@ ddg_goodie_test(
     'how much is a liter in gallons?'   => test_zci('1 litre = 0.264 us gallons',           html => '-ANY-'),
     'how much is a gallon in litres?'   => test_zci('1 us gallon = 3.785 litres',           html => '-ANY-'),
     'how many gallons in a litre'       => test_zci('1 litre = 0.264 us gallons',           html => '-ANY-'),
+    'number of cm in 100 m'             => test_zci('100 meters = 10,000 centimeters',      html => '-ANY-'),
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
