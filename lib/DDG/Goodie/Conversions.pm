@@ -34,16 +34,15 @@ foreach my $type (@types) {
 }
 
 # build triggers based on available conversion units:
-triggers end => @units;
+triggers any => @units;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
-my $question_prefix = qr/(convert|what (is|are|does)|how (much|many|long) (is|are))?\s?/;
+my $question_prefix = qr/(?<prefix>convert|what (?:is|are|does)|how (?:much|many|long) (?:is|are)?|(?:number of))?/;
 
 # guards and matches regex
-my $number_re = number_style_regex();
-my $guard = qr/^$question_prefix$number_re*\s?($keys)\s?(in|to|into|from)\s?$number_re*\s?($keys)$/;
-my $match_regex = qr/(?:[0-9]|\b)($keys)\b/;
+my $factor_re = join('|', ('a', 'an', number_style_regex()));
+my $guard = qr/^(?<question>$question_prefix)\s?(?<left_num>$factor_re*)\s?(?<left_unit>$keys)\s?(?<connecting_word>in|to|into|(?:in to)|from)?\s?(?<right_num>$factor_re*)\s?(?:of\s)?(?<right_unit>$keys)[\?]?$/i;
 
 # exceptions for pluralized forms:
 my %plural_exceptions = (
@@ -57,6 +56,8 @@ my %plural_exceptions = (
     'electrical horsepower'  => 'electrical horsepower',
     'pounds force'           => 'pounds force',
 );
+
+my %singular_exceptions = reverse %plural_exceptions;
 
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
@@ -75,33 +76,30 @@ handle query_lc => sub {
 
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-    
-    my @matches = ($_ =~ /$match_regex/gi);
 
-    # hack/handle the special case of "X in Y":
-    if ((scalar @matches == 3) && $matches[1] eq "in") {
-        # If they put the number on the second term, we also need to reverse.
-        @matches = ($_ =~ /[0-9]\s+$matches[2]/) ? ($matches[2], $matches[0]) : ($matches[0], $matches[2]);
+    my @matches = ($+{'left_unit'}, $+{'right_unit'});
+    return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
+    my $factor = $+{'left_num'};
+
+    # if the query is in the format <unit> in <num> <unit> we need to flip
+    # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
+    # But if the second unit is plural, assume we want the the implicit one on the first
+    # It's always ambiguous when they are both countless and plural, so shouldn't be too bad.
+    if (
+        "" ne $+{'right_num'}
+        || (   "" eq $+{'left_num'}
+            && "" eq $+{'right_num'}
+            && $+{'question'} !~ qr/convert/i
+            && !looks_plural($+{'right_unit'})))
+    {
+        $factor = $+{'right_num'};
+        @matches = ($matches[1], $matches[0]);
     }
-    return unless scalar @matches == 2; # conversion requires two triggers
-
-    # normalize the whitespace, "25cm" should work for example
-    $_ =~ s/($number_re)($keys)/$1 $2/g;
+    $factor = 1 if ($factor =~ qr/^(a[n]?)?$/);
 
     # fix precision and rounding:
     my $precision = 3;
     my $nearest = '.' . ('0' x ($precision-1)) . '1';
-
-    # get factor and return if multiple numbers are specified
-    my @args = split(/\s+/, $_);
-    my $factor = "";
-    foreach my $arg (@args) {
-        if ($arg =~ /^$number_re$/) {
-            return if $factor;
-            $factor = $arg;
-        }
-    }
-    $factor = 1 if "" eq $factor;
     
     my $styler = number_style_for($factor);
     return unless $styler;
@@ -143,15 +141,9 @@ handle query_lc => sub {
     # handle pluralisation of units
     # however temperature is never plural and does require "degrees" to be prepended
     if ($result->{'type_1'} ne 'temperature') {
-        if ($factor != 1) {
-            $result->{'from_unit'} = (exists $plural_exceptions{$result->{'from_unit'}}) ? $plural_exceptions{$result->{'from_unit'}} : $result->{'from_unit'} . 's'; 
-        }
-    
-        if ($result->{'result'} != 1) {
-            $result->{'to_unit'} = (exists $plural_exceptions{$result->{'to_unit'}}) ? $plural_exceptions{$result->{'to_unit'}} : $result->{'to_unit'} . 's'; 
-        }
-    }
-    else {
+        $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
+        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
+    } else {
         $result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
         $result->{'to_unit'} = "degrees $result->{'to_unit'}" if ($result->{'to_unit'} ne "kelvin");
     }
@@ -163,5 +155,27 @@ handle query_lc => sub {
     my $output = $styler->for_display($factor)." $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
     return $output, html => wrap_html($factor, $result, $styler);
 };
+
+sub set_unit_pluralisation {
+    my ($unit, $count) = @_;
+    my $proper_unit = $unit;    # By default, we'll leave it unchanged.
+
+    my $already_plural = looks_plural($unit);
+
+    if ($count == 1 && $already_plural) {
+        $proper_unit = $singular_exceptions{$unit} || substr($unit, 0, -1);
+    } elsif ($count != 1 && !$already_plural) {
+        $proper_unit = $plural_exceptions{$unit} || $unit . 's';
+    }
+
+    return $proper_unit;
+}
+
+sub looks_plural {
+    my $unit = shift;
+
+    my @unit_letters = split //, $unit;
+    return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
+}
 
 1;
