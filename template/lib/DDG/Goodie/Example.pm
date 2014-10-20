@@ -13,8 +13,9 @@ name "<: $ia_name_separated :>";
 description "Succinct explanation of what this instant answer does";
 primary_example_queries "first example query", "second example query";
 secondary_example_queries "optional -- demonstrate any additional triggers";
-# Uncomment and fill out before submitting
+# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
 # category "";
+# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
 # topics "";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/<: $ia_path :>/<: $ia_name :>.pm";
 attribution github => ["GitHubAccount", "Friendly Name"],
