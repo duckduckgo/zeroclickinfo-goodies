@@ -25,6 +25,9 @@ ddg_goodie_test(
 	'sha-512 base64 lorem ipsum' => test_zci('+A7r2aq7GhX7hp7VaNhYpcDco9XaB6QQ4b2Yh2ORjZc+NEgUYl98hEaVst42/9J68pDQ40NixR3uWUfVjUBSeg==', html=>qr/.*/),
 	'shasum hex this' => test_zci('c2543fff3bfa6f144c2f06a7de6cd10c0b650cae', html=>qr/.*/),
 	'sha224sum base64 this' => test_zci('kFct0af7OnZ8E66tO0CmyDv1uXW7nSRHon3JYg==', html=>qr/.*/),
+
+	'shasum <script>alert( "hello" )<script>' => test_zci('10c4a3b691419901a56fade7e4b5e04fe4ef6570', html=> qr/.*SHA-1 of "&lt;script&gt;alert\( &quot;hello&quot; \)&lt;script&gt;".*/),
+	'shasum script>ALERT hello script>' => test_zci('9ef5127abf5a46ef82a1bc10e6a8447a205644cd', html=>qr/.*SHA-1 of "script&gt;ALERT hello script&gt;".*/),
 );
 
 done_testing;
