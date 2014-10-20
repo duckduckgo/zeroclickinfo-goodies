@@ -6,7 +6,7 @@ use warnings;
 use Test::MockTime qw( :all );
 use Test::Most;
 
-use DateTime;
+use DDG::Test::Location;
 
 subtest 'NumberStyler' => sub {
 
@@ -370,7 +370,31 @@ subtest 'Dates' => sub {
         }
 
         restore_time();
-    }
+    };
+
+    subtest 'Relative dates with location' => sub {
+        my $test_location = test_location('in');
+        {
+            package DDG::Goodie::FakerDater;
+            use Moo;
+            with 'DDG::GoodieRole::Dates';
+            our $loc = $test_location;
+            sub pds { shift; parse_datestring_to_date(@_); }
+            1;
+        }
+
+        my $with_loc = new_ok('DDG::Goodie::FakerDater', [], 'With location');
+        set_fixed_time('2013-12-31T23:00:00Z');
+        my $today_obj;
+        lives_ok { $today_obj = $with_loc->pds('today'); } 'Parsed out today at just before midnight UTC NYE, 2013';
+        is($today_obj->time_zone_long_name, 'Asia/Kolkata', '... in our local time zone');
+        is($today_obj->year,                2014,           '... where it is already 2014');
+        is($today_obj->hms,                 '04:30:00',     '... for about 4.5 hours');
+        is($today_obj->offset / 3600,       5.5,            '... which seems just about right.');
+
+        restore_time();
+    };
+
 };
 
 subtest 'ImageLoader' => sub {
