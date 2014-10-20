@@ -6,9 +6,11 @@ use warnings;
 
 use Moo::Role;
 
+use Devel::StackTrace;
 use List::MoreUtils qw( all );
 use MIME::Base64;
 use MIME::Types;
+use Package::Stash;
 use Scalar::Util qw( reftype );
 use Try::Tiny;
 
