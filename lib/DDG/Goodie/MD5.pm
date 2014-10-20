@@ -47,8 +47,8 @@ handle remainder => sub {
     # perls internal representation of strings, before it's passed to
     # the md5 subroutine.
     my $str = encode("utf8",$1);
-    #use approprite output format, default to hex
-    my $md5 = $format eq 'base64' ? md5_base64($str) : md5_hex($str);
+    #use approprite output format, default to hex, add pading to base64
+    my $md5 = $format eq 'base64' ? md5_base64($str).'==' : md5_hex($str);
     return $md5, html => html_output($str, $md5);
 
 };
