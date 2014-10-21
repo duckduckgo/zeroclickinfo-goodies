@@ -27,7 +27,7 @@ my $json = share('independence_days.json')->slurp;
 $json = decode_json($json);
 
 # Handle statement
-handle query => sub {
+handle query_clean => sub {
 
     # delete noise from query
     s/(independence|day of|day|when|what|is|the|for|)\s*//g;
@@ -35,7 +35,8 @@ handle query => sub {
     # return if there is nothing left
     return unless $json->{$_};
 
-    return "$_ assumed independence on " . $json->{$_}->{'date'} . ", " . $json->{$_}->{'year'};
+
+    return ucfirst($_)." assumed independence on " . $json->{$_}->{'date'} . ", " . $json->{$_}->{'year'};
 
 };
 
