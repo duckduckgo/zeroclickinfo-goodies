@@ -34,39 +34,39 @@ sub html_output {
 }
 
 handle query => sub {
-	my $command1 = $1 || '';
-	my $command2 = $2 || '';
-	my $str      = $3 || '';
-	#warn "CMD 1: '$command1'\tCMD 2: '$command2'\tSTR: '$str'\n";
+    my $command1 = $1 || '';
+    my $command2 = $2 || '';
+    my $str      = $3 || '';
+    #warn "CMD 1: '$command1'\tCMD 2: '$command2'\tSTR: '$str'\n";
 
     # return if there is nothing left to hash
-	return unless ($str);
+    return unless ($str);
 
-	my $sha;
-	if ( $command1 eq '224' ) {
-	    $sha = $command2 eq 'base64' ? Digest::SHA::sha224_base64($str) : Digest::SHA::sha224_hex($str);
-	}
-	elsif ( $command1 eq '256' ) {
-	    $sha = $command2 eq 'base64' ? Digest::SHA::sha256_base64($str) : Digest::SHA::sha256_hex($str);
-	}
-	elsif ( $command1 eq '384' ) {
-	    $sha = $command2 eq 'base64' ? Digest::SHA::sha384_base64($str) : Digest::SHA::sha384_hex($str);
-	}
-	elsif ( $command1 eq '512' ) {
-	    $sha = $command2 eq 'base64' ? Digest::SHA::sha512_base64($str) : Digest::SHA::sha512_hex($str);
-	}
-	else {
-	    $command1 = '1';
-	    $sha = $command2 eq 'base64' ? Digest::SHA::sha1_base64($str) : Digest::SHA::sha1_hex($str);
-	}
+    my $sha;
+    if ( $command1 eq '224' ) {
+        $sha = $command2 eq 'base64' ? Digest::SHA::sha224_base64($str) : Digest::SHA::sha224_hex($str);
+    }
+    elsif ( $command1 eq '256' ) {
+        $sha = $command2 eq 'base64' ? Digest::SHA::sha256_base64($str) : Digest::SHA::sha256_hex($str);
+    }
+    elsif ( $command1 eq '384' ) {
+        $sha = $command2 eq 'base64' ? Digest::SHA::sha384_base64($str) : Digest::SHA::sha384_hex($str);
+    }
+    elsif ( $command1 eq '512' ) {
+        $sha = $command2 eq 'base64' ? Digest::SHA::sha512_base64($str) : Digest::SHA::sha512_hex($str);
+    }
+    else {
+        $command1 = '1';
+        $sha = $command2 eq 'base64' ? Digest::SHA::sha1_base64($str) : Digest::SHA::sha1_hex($str);
+    }
 
-	# pad with '=' until base64 output length is a multiple of 4
-	if ($command2 eq 'base64'){
-		while (length($sha) % 4) {
-		    $sha .= '=';
-	    }
-	}
-	return $sha, html => html_output($str, $sha, "SHA-$command1");
+    # pad with '=' until base64 output length is a multiple of 4
+    if ($command2 eq 'base64'){
+        while (length($sha) % 4) {
+            $sha .= '=';
+        }
+    }
+    return $sha, html => html_output($str, $sha, "SHA-$command1");
 };
 
 1;
