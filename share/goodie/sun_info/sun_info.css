@@ -1,12 +1,10 @@
 .zci--answer .zci--suninfo {
-    font-size:1.25em;
+    font-size:1.75em;
     font-weight:400;
-    max-width:350px;
 }
 
 .zci--answer .zci--suninfo .suninfo--header {
-    font-size:0.75em;
-    font-weight:300;
+    font-size:0.5em;
 }
 
 .zci--answer .zci--suninfo .suninfo--row span {
