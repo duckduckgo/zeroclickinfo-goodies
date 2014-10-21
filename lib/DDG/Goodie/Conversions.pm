@@ -62,7 +62,7 @@ my %singular_exceptions = reverse %plural_exceptions;
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
     my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . html_enc($result->{'from_unit'}) . "</span>";
-    my $to = $styler->with_html($result->{'result'}) . " <span class='text--secondary'>" . html_enc($result->{'to_unit'}) . "</span>";
+    my $to = $styler->with_html($styler->for_display($result->{'result'})) . " <span class='text--secondary'>" . html_enc($result->{'to_unit'}) . "</span>";
     return "<div class='zci--conversions text--primary'>$from = $to</div>";
 }
 
