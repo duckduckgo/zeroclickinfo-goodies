@@ -5,6 +5,8 @@
 
 .zci--answer .zci--suninfo .suninfo--header {
     font-size: 0.5em;
+    margin-bottom: 0.25em;
+    margin-top: 0.25em;
 }
 
 .zci--answer .zci--suninfo .ddgsi {
@@ -22,15 +24,18 @@
 
 .zci--answer .zci--suninfo .suninfo--timeboxes {
     display: inline-block;
-    padding-right: 0.5em;
+    height: 30px;
 }
 
 .zci--answer .zci--suninfo .suninfo--border-right {
 	border-right: 1px solid #ccc;
+	padding-right: 2px;
 }
 
 .zci--answer .zci--suninfo .suninfo--times {
     margin: 0 0.5em;
+    position: relative;
+    top: -3px;
 }
 
 .zci--answer .zci--suninfo .suninfo--setbox,
