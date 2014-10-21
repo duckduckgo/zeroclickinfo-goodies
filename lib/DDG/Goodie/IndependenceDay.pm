@@ -1,36 +1,42 @@
-package DDG::Goodie::<: $ia_package_name :>;
+package DDG::Goodie::IndependenceDay;
 # ABSTRACT: Write an abstract here
 # Start at https://duck.co/duckduckhack/goodie_overview if you are new
 # to instant answer development
 
 use DDG::Goodie;
+use JSON;
 
-zci answer_type => "<: $lia_name :>";
+zci answer_type => "independence_day";
 zci is_cached   => 1;
 
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
-name "<: $ia_name_separated :>";
+name "independence day ";
 description "Succinct explanation of what this instant answer does";
-primary_example_queries "first example query", "second example query";
+primary_example_queries "what is the independence day of turkey", "china, independence day";
 secondary_example_queries "optional -- demonstrate any additional triggers";
-category "";
-topics "";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/<: $ia_path :>/<: $ia_name :>.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle",
+category "dates";
+topics "trivia";
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IndependenceDay.pm";
+attribution github => ["jarmokivekas", "Jarmo Kivekäs"],
+            web => ["http://guttula.com", "Jarmo Kivekäs"];
 
 # Triggers
-triggers any => "triggerWord", "trigger phrase";
+triggers any => "independence day";
+
+my $json = share('independence_days.json')->slurp;
+$json = decode_json($json);
 
 # Handle statement
-handle remainder => sub {
+handle query => sub {
 
-	# optional - regex guard
-	# return unless qr/^\w+/;
+    # delete noise from query
+    s/(independence|day of|day|when|what|is|the|for|)\s*//g;
+    s/\s*$//;
+    # return if there is nothing left
+    return unless $json->{$_};
 
-	return unless $_; # Guard against "no answer"
+    return "$_ assumed independence on " . $json->{$_}->{'date'} . ", " . $json->{$_}->{'year'};
 
-	return $_;
 };
 
 1;
