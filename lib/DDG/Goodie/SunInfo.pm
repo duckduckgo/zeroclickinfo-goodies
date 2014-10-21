@@ -20,7 +20,7 @@ category 'calculations';
 topics 'everyday';
 attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
 
-my $time_format      = '%l:%M %P';
+my $time_format      = '%l:%M %p';
 my $datestring_regex = datestring_regex();
 
 my $sunrise_svg = goodie_img_tag({
@@ -86,11 +86,8 @@ sub pretty_output {
     my ($where, $when, $rise, $set) = @_;
 
     $rise =~ s/^\s+//g;    # strftime puts a space in front for single-digits.
-    $set =~ s/^\s+//g;     # strftime puts a space in front for single-digits.
-    
-    $rise = uc $rise;
-    $set = uc $set;
-    
+    $set =~ s/^\s+//g;
+
     my $text = "On $when, sunrise in $where is at $rise; sunset at $set.";
 
     my $html = "<div class='zci--suninfo'>";
