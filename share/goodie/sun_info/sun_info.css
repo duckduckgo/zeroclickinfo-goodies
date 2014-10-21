@@ -7,6 +7,11 @@
     font-size:0.5em;
 }
 
+.zci--answer .zci--suninfo .ddgsi {
+	position: relative;
+	top: 2px;
+}
+
 .zci--answer .zci--suninfo .suninfo--row span {
 	vertical-align: middle;
 }
