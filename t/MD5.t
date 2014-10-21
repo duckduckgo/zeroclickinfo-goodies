@@ -30,6 +30,10 @@ ddg_goodie_test(
     'md5 hex "duckduckgo"' => test_zci('96898bb8544fa56b03c08cdc09886c6c', html=>qr/.*/),
     'md5 hex base64' => test_zci('95a1446a7120e4af5c0c8878abb7e6d2', html=>qr/.*/),
     'md5 base64 hash of duckduckgo' => test_zci('lomLuFRPpWsDwIzcCYhsbA==', html=>qr/.*/),
+
+    'md5sum <script>alert( "hello" )<script>' => test_zci('57757f49c3ceb9d1b65c3b5ca0b5bd2d', html=>qr/.*MD5 of "&lt;script&gt;alert\( &quot;hello&quot; \)&lt;script&gt;".*/),
+    'md5sum script>ALERT hello script>' => test_zci('a5e4903040077d90e9dd32da99d01b91', html=>qr/.*MD5 of "script&gt;ALERT hello script&gt;".*/),
+    'md5sum & / " \' ; < > ' => test_zci('48ff1acf53de360edc32cabd5b30e7b4', html=>qr/.*MD5 of "&amp; \/ &quot; &#39; ; &lt; &gt;".*/),
 );
 
 done_testing;
