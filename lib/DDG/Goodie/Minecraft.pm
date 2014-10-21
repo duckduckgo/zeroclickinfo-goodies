@@ -4,11 +4,10 @@ package DDG::Goodie::Minecraft;
 use DDG::Goodie;
 use JSON;
 
-triggers start => "minecraft crafting", "minecraft craft", "minecrafting", "minecraft make";
-triggers end => "crafting minecraft", "craft minecraft", "in minecraft";
+triggers startend => "minecraft";
 
-primary_example_queries 'minecraft crafting tnt';
-secondary_example_queries 'tnt craft minecraft';
+primary_example_queries 'cake minecraft';
+secondary_example_queries 'how do i craft a cake in minecraft';
 
 name 'Minecraft';
 description 'Minecraft crafting recipes.';
@@ -23,37 +22,38 @@ attribution
 zci answer_type => 'minecraft';
 zci is_cached => 1;
 
-# Fetch recipes.
+# Fetch and store recipes in a hash.
 my $json = share('crafting-guide.json')->slurp;
 my $decoded = decode_json($json);
-my @recipes = @{ $decoded->{'items'} };
+my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
+
+my $strip_words = qr/\b\s*crafting\s*\b|\b\s*craft\s*\b|\b\s*make\s*\b|\b\s*how\s*\b|\b\s*do\s*\b|\b\s*to\s*\b|\b\s*in\s*\b|\b\s*an\s*\b|\b\s*a\s*\b|\b\s*i\s*\b/i;
 
 # Creates the HTML.
 sub make_html {
-	my ($recipe) = @_;
-	my $html = '';
+    my ($recipe) = @_;
+    my $html = '';
 
-	$html = '<div id="minecraft-wrapper">';
-	$html .= '<h3>' . $recipe->{'name'} . '</h3>';
-	$html .= '<span>' . $recipe->{'description'} . '</span>';
-	$html .= '<img src="' . $recipe->{'image'} . '" style="display: block; margin: 0.5em 0;" />';
-	$html .= '<span>Ingredients: ' . $recipe->{'ingredients'} . '</span>';
-	$html .= '</div>';
+    $html = '<div id="minecraft-wrapper">';
+    $html .= '<h3>' . $recipe->{'name'} . '</h3>';
+    $html .= '<span>' . $recipe->{'description'} . '</span>';
+    $html .= '<img src="' . $recipe->{'image'} . '" style="display: block; margin: 0.5em 0;" />';
+    $html .= '<span>Ingredients: ' . $recipe->{'ingredients'} . '</span>';
+    $html .= '</div>';
 
-	return $html;
+    return $html;
 }
 
 handle remainder => sub {
+    # Strip words we want to strip and return if what's left is not a recipe.
+    $_ =~ s/$strip_words//g;
+    my $recipe = $recipes{lc $_};
+    return unless $recipe;
 
-	# Look for a recipe and make an answer if we found it.
-	foreach my $r ( @recipes ) {
-		if (lc $r->{'name'} eq lc $_) {
-			my $plain = $r->{'name'} . ' are made from ' . $r->{'ingredients'} . '.';
-			my $html = make_html($r);
-			return $plain, html => $html;
-		}
-	}
+    my $plain = $recipe->{'name'} . ' are made from ' . $recipe->{'ingredients'} . '.';
+    my $html = make_html($recipe);
 
-	return;
+    return $plain, html => $html;
+    return;
 };
 1;
