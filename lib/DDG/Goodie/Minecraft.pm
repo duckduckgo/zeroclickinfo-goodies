@@ -37,7 +37,7 @@ sub make_html {
     $html = '<div id="minecraft-wrapper">';
     $html .= '<h3>' . $recipe->{'name'} . '</h3>';
     $html .= '<span>' . $recipe->{'description'} . '</span>';
-    $html .= '<img src="' . $recipe->{'image'} . '" style="display: block; margin: 0.5em 0;" />';
+    $html .= '<img src="https://duckduckgo.com/iu/?u=' . $recipe->{'image'} . '" style="display: block; margin: 0.5em 0;" />';
     $html .= '<span>Ingredients: ' . $recipe->{'ingredients'} . '</span>';
     $html .= '</div>';
 
