@@ -12,7 +12,7 @@ zci is_cached   => 1;
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "independence day ";
 description "Succinct explanation of what this instant answer does";
-primary_example_queries "what is the independence day of turkey", "china, independence day";
+primary_example_queries "what is the independence day of norway", "independence day, peru";
 secondary_example_queries "optional -- demonstrate any additional triggers";
 category "dates";
 topics "trivia";
@@ -21,7 +21,7 @@ attribution github => ["jarmokivekas", "Jarmo Kivekäs"],
             web => ["http://guttula.com", "Jarmo Kivekäs"];
 
 # Triggers
-triggers any => "independence day";
+triggers any => "independence day", "day of independence";
 
 my $json = share('independence_days.json')->slurp;
 $json = decode_json($json);
