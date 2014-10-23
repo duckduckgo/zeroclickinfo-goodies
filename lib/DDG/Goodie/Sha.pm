@@ -39,6 +39,9 @@ handle query => sub {
     my $str      = $3 || '';
     #warn "CMD 1: '$command1'\tCMD 2: '$command2'\tSTR: '$str'\n";
 
+    # remove quotes from the sting (e.g. sha1 "this string")
+    $str =~ s/^\"(.*)\"$/$1/;
+
     # return if there is nothing left to hash
     return unless ($str);
 

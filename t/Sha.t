@@ -26,8 +26,16 @@ ddg_goodie_test(
     'shasum hex this' => test_zci('c2543fff3bfa6f144c2f06a7de6cd10c0b650cae', html=>qr/.*/),
     'sha224sum base64 this' => test_zci('kFct0af7OnZ8E66tO0CmyDv1uXW7nSRHon3JYg==', html=>qr/.*/),
 
+    'sha1sum of "this"' => test_zci('dbe495b06de4aa7c7025751f1d86f9f5cc5f4861', html=>qr/.*SHA-1 of "of &quot;this&quot;".*/),
+    'sha "this' => test_zci('e1ea2c30284aa81804b52c034c997b06c5d7d4d9', html=>qr/.*SHA-1 of "&quot;this".*/),
+    'sha this"' => test_zci('2d9d48e524574ae527fbd5e55ea2e7dcba84d4f9', html=>qr/.*SHA-1 of "this&quot;".*/),
+    'sha "this and "that""' => test_zci('aa6b22799b19374a5d01f07167fd0f3bea897bd0', html=>qr/.*SHA-1 of "this and &quot;that&quot;".*/),
+
+
     'shasum <script>alert( "hello" )<script>' => test_zci('10c4a3b691419901a56fade7e4b5e04fe4ef6570', html=> qr/.*SHA-1 of "&lt;script&gt;alert\( &quot;hello&quot; \)&lt;script&gt;".*/),
     'shasum script>ALERT hello script>' => test_zci('9ef5127abf5a46ef82a1bc10e6a8447a205644cd', html=>qr/.*SHA-1 of "script&gt;ALERT hello script&gt;".*/),
+    'sha1 & / " \\\' ; < > ' => test_zci('58ae7fba7b9df6da46cb42e6e3ad2ddc3f6a2a58', html=>qr/.*SHA-1 of "&amp; \/ &quot; \\&#39; ; &lt; &gt;".*/),
+
 );
 
 done_testing;
