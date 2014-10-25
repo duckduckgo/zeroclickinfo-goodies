@@ -58,10 +58,6 @@ my %factors = (
     }
 );
 
-#Load the CSS
-#Much styling for the plots was taken from http://bl.ocks.org/mbostock/4061961
-my $css = share("style.css")->slurp;
-
 #Load electromagnetic frequency ranges
 # References: 
 # https://en.wikipedia.org/wiki/Radio_spectrum
@@ -569,7 +565,7 @@ sub add_marker {
 
 #Wrap html
 sub wrap_html {
-    return append_css("<div class='zci--conversions text--primary'>$_[0]</div>");
+    return "<div class='zci--conversions text--primary'>$_[0]</div>";
 }
 
 #Get log10 of a number
@@ -577,11 +573,6 @@ sub log10 {
     my $n = shift;
     return 0 if $n == 0;
     return log($n)/log(10);
-}
-
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>$html";
 }
 
 #Convert a visible light frequency in Hz to RGB
