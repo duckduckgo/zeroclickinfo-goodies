@@ -5,7 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'passphrase';
+zci answer_type => 'random_passphrase';
 zci is_cached   => 0;
 
 ddg_goodie_test(

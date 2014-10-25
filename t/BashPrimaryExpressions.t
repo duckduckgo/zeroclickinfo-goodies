@@ -4,7 +4,8 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'bashprimaryexpressions';
+zci answer_type => 'expression_description';
+zci is_cached   => 1;
 
 ddg_goodie_test(
     [

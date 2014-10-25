@@ -1,0 +1,49 @@
+Session Control (from the command line)
+
+tmux                      Start a new session
+tmux attach               Re-attach a detached session
+tmux attach -d            Re-attach a detached session (and detach it from elsewhere)
+
+Window Control
+
+Ctrl-B, c                 Create new window
+Ctrl-B, d                 Detach from session
+Ctrl-B, :rename-window    Rename a window
+Ctrl-B, w                 List windows
+Ctrl-B, [number]          Goes to window with corresponding number
+Ctrl-B, n                 Go to next window
+Ctrl-B, p                 Go to previous window
+Ctrl-B, ?                 See all keybindings
+
+Pane Control
+
+Ctrl-B, "                 Split pane horizontally
+Ctrl-B, %                 Split pane vertically
+Ctrl-B, o                 Next pane
+Ctrl-B, ;                 Previous pane
+Ctrl-B, x                 Kill current pane
+Ctrl-B, !                 Kill all panes but the current one
+Ctrl-B, Ctrl-O            Swap panes
+Ctrl-B, t                 Display clock
+
+Copy-Mode (Emacs)
+Ctrl-B, [                 Enter copy mode
+Ctrl-B, M-<               Bottom of history
+Ctrl-B, M->               Top of history
+Ctrl-B, M-w               Copy selection
+Ctrl-B, M-y               Paste selection
+Ctrl-B, Up                Cursor up
+Ctrl-B, Down              Cursor down
+Ctrl-B, Left              Cursor left
+Ctrl-B, Right             Cursor right
+
+Copy-Mode (vi)
+Ctrl-B, [                 Enter copy mode
+Ctrl-B, G                 Bottom of history
+Ctrl-B, g                 Top of history
+Ctrl-B, Enter             Copy selection
+Ctrl-B, p                 Paste selection
+Ctrl-B, k                 Cursor up
+Ctrl-B, j                 Cursor down
+Ctrl-B, h                 Cursor left
+Ctrl-B, l                 Cursor right

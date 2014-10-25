@@ -9,6 +9,7 @@ use warnings;
 use strict;
 
 zci answer_type =>          'html_entity';
+zci is_cached   =>          1;
 triggers any =>             'html', 'entity', 'htmldecode', 'decodehtml', 'htmlentity';
 primary_example_queries     'html decode &#33;', 'html decode &amp';
 secondary_example_queries   'html entity &#x21' , '#36 decode html', 'what is the decoded html entity of &#36;';
@@ -22,12 +23,6 @@ attribution twitter =>      'crazedpsyc',
             twitter =>      ['https://twitter.com/nshanmugham', 'Nishanth Shanmugham'],
             web     =>      ['http://nishanths.github.io', 'Nishanth Shanmugham'],
             github  =>      ['https://github.com/nishanths', 'Nishanth Shanmugham'];
-
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-};
 
 handle remainder => sub {
     $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
@@ -64,7 +59,7 @@ handle remainder => sub {
 
     # Make answer
     return "Decoded HTML Entity: $decoded, Decimal: $decimal, Hexadecimal: $hex",
-           html => append_css(qq(<div class="zci--htmlentitiesdecode"><div class="large"><span class="text--secondary">Decoded HTML Entity: </span><span class="text--primary">$entity</span></div><div class="small"><span class="text--secondary">Decimal: <span class="text--primary">$decimal</span>, Hexadecimal: <span class="text--primary">$hex</span></div></div></div>));
+           html => qq(<div class="zci--htmlentitiesdecode"><div class="large"><span class="text--secondary">Decoded HTML Entity: </span><span class="text--primary">$entity</span></div><div class="small"><span class="text--secondary">Decimal: <span class="text--primary">$decimal</span>, Hexadecimal: <span class="text--primary">$hex</span></div></div></div>);
 };
 
 1;

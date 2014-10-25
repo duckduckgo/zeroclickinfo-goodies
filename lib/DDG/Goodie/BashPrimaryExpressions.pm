@@ -18,6 +18,9 @@ attribution github => [ 'http://github.com/mintsoft', 'mintsoft' ];
 category 'computing_tools';
 topics 'sysadmin';
 
+zci answer_type => 'expression_description';
+zci is_cached   => 1;
+
 our %if_description = (
 	'-a' => "true if ARG2 exists",
 	'-b' => "true if ARG2 exists and is a block-special file",
@@ -58,12 +61,6 @@ our %if_description = (
 	'-ef' => "true if ARG1 and ARG2 refer to the same device and inode numbers"
 );
 
-my $css = share("style.css")->slurp();
-sub append_css {
-    my $html = shift;
-    return "<style type='text/css'>$css</style>\n" . $html;
-}
-
 handle remainder => sub {
         # This checks if our arguments in the `if` statement are valid.
         my $re_args = '[^\[\]\s]+|".+"|\'.+\'';
@@ -98,7 +95,7 @@ handle remainder => sub {
 	$html_output =~ s/ARG2/<pre>$html_right_arg<\/pre>/g;
 	
 	my $intro = "The Bash expression <pre>" . html_enc($_) . "</pre> results to";
-	return "$intro $text_output.", html => append_css("$intro $html_output."), heading => html_enc($_) . " (Bash)";
+	return "$intro $text_output.", html => "$intro $html_output.", heading => html_enc($_) . " (Bash)";
 };
 
 1;

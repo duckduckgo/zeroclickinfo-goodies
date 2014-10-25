@@ -7,6 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'vim_cheat';
+zci is_cached   => 1;
 
 # This goodie always returns the same answer whenever its triggered
 my $test_zci = test_zci(

@@ -96,8 +96,8 @@ handle remainder_lc => sub {
             }
             $total += $sum; # track total of all rolls
             $out .= join(', ', @output) . '<br/>';
-            $html .= '<span style="font-size:2em;">' . join(' ', @output).'</span>'
-                    .'<span style="white-space: nowrap; font-size:2em;">'." = ". $sum.'</span></br>';
+            $html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
+                    .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { 
             # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'

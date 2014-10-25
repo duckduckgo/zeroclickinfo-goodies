@@ -7,6 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'valarmorghulis';
+zci is_cached   => 1;
 
 ddg_goodie_test(
     [
@@ -15,7 +16,7 @@ ddg_goodie_test(
     'valar morghulis' =>
         test_zci(
             'Valar dohaeris',
-            html => '<span style="font-size: 1.5em; font-weight: 400;">Valar dohaeris</span>'
+            html => '<span class="zci--valarmorg">Valar dohaeris</span>'
         ),
     'what is valar morghulis' => undef,
     'valar morghulis meaning' => undef,  

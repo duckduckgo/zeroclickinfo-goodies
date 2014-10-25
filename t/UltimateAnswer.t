@@ -7,15 +7,16 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => "UltimateAnswer";
+zci is_cached   => 1;
 
 ddg_goodie_test(
     [
         'DDG::Goodie::UltimateAnswer'
     ],
     
-    'what is the ultimate answer to life the universe and everything'=>
+    'what is the answer to the ultimate question of life the universe and everything'=>
         test_zci(
-            'Forty-two', html => '<span style="font-size: 1.5em; font-weight: 400;">Forty-two</span>'
+            'Forty-two', html => '<span class="zci--ultanswer">Forty-two</span>'
         ),
     'what is the answer to my homework question' => undef,
     'why?' => undef,

@@ -3,6 +3,9 @@ package DDG::Goodie::Passphrase;
 
 use DDG::Goodie;
 
+zci answer_type => 'random_passphrase';
+zci is_cached   => 0;
+
 primary_example_queries 'random passphrase', '4 word random passphrase', 'pass phrase 3 words';
 description 'generate a random passphrase';
 name 'Passphrase';

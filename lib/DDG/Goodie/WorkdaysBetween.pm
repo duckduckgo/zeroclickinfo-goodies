@@ -13,6 +13,7 @@ use Date::Calendar::Profiles qw($Profiles);
 triggers start => "workdays between", "business days between", "work days between", "working days", "workdays from";
 
 zci answer_type => "workdays_between";
+zci is_cached   => 0;
 
 primary_example_queries 'workdays between 01/31/2000 01/31/2001';
 description 'Calculate the number of workdays between two dates. Does not consider holidays.';

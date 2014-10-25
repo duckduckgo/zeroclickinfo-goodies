@@ -6,6 +6,7 @@ package DDG::Goodie::CrontabCheatSheet;
 use DDG::Goodie;
 
 zci answer_type => "cron_cheat";
+zci is_cached   => 1;
 
 name "CrontabCheatSheet";
 description "Crontab cheat sheet";

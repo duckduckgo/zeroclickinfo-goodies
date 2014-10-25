@@ -6,6 +6,7 @@ use DDG::Goodie;
 triggers any => 'shortcut','keyboard shortcut', 'key combination';
 
 zci answer_type => 'shortcut';
+zci is_cached   => 1;
 
 primary_example_queries 'windows show desktop shortcut';
 secondary_example_queries 'ubuntu shortcut new folder';

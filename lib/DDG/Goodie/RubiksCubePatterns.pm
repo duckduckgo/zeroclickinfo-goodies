@@ -20,6 +20,7 @@ triggers start =>	"rcube", "rubik", "rubiks", "rubix",
 					"rubik's cube patterns", "rubiks cube patterns";
 
 zci answer_type => "rubiks_cube";
+zci is_cached   => 1;
 
 our %patterns = (
 	"stripes" => "F U F R L2 B D' R D2 L D' B R2 L F U F",

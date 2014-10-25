@@ -86,6 +86,12 @@ subtest 'Dates' => sub {
             'Sat, 09 Aug 2014 18:20:00' => 1407608400,
             # RFC850
             '08-Feb-94 14:15:29 GMT' => 760716929,
+            # date(1) default
+            'Sun Sep  7 15:57:56 EDT 2014' => 1410119876,
+            'Sun Sep 14 15:57:56 UTC 2014' => 1410710276,
+            'Sun Sep 7 20:11:44 BST 2014'  => 1410117104,
+            # RFC 2822
+            'Sat, 13 Mar 2010 11:29:05 -0800' => 1268508545,
             #Undefined/Natural formats:
             '13/12/2011'        => 1323734400,     #DMY
             '01/01/2001'        => 978307200,      #Ambiguous, but valid

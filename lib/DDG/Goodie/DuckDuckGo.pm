@@ -15,7 +15,9 @@ topics 'everyday';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC';
 
-triggers startend => "duckduckgo", "ddg", "zeroclickinfo";
+my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
+
+triggers any => @ddg_aliases, "zeroclickinfo";
 
 zci is_cached => 1;
 
@@ -53,9 +55,14 @@ foreach my $keyword (keys %$responses) {
     }
 }
 
+my $skip_words_re = qr/\b(?:what|where|is|of|for|the|in|on)\b/;
+
 handle remainder => sub {
-    s/\W+//g;
     my $key = lc;
+
+    $key =~ s/\?//g;    # Allow for questions, but don't pollute skip words.
+    $key =~ s/$skip_words_re//g;
+    $key =~ s/\W+//g;
 
     my $response = $responses->{$key};
 
