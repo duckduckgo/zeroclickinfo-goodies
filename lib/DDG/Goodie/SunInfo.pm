@@ -68,8 +68,8 @@ sub where_string {
     my @where_bits;
     if (my $city = $loc->city) {
         # If we have the city we can abbrev the region or country, if avail.
-        #  - Phoenixville, PA
-        @where_bits = ($city, $loc->region || $loc->country_code3);
+        #  - Phoenixville, Pennsylvania
+        @where_bits = ($city, $loc->region_name || $loc->country_code3);
     } elsif (my $region_name = $loc->region_name) {
         # No city, but a region name; abbreviate the country or continent
         # - Pennsylvania, USA
