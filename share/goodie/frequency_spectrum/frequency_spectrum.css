@@ -1,8 +1,7 @@
-/* 
- * As IE 8 and below can't show SVG,
- * we use the '\9' attribute suffix
- * to suppress all SVG text elements
-*/
+/* Conditional for IE8 and lower */
+.ie8-display-none {
+  display: none;
+}
 
 .zci--answer .zci--conversions {
     font-size: 1.5em;

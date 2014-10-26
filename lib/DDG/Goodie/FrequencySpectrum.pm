@@ -19,6 +19,25 @@ category 'physical_properties';
 topics 'science';
 attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 
+#Javascript to dynamically resize elements
+my $dynamicwidths = <<EOF;
+<script type="text/javascript">
+    
+    // Resize marker to fit text
+    var markerlabel, markertag
+    markerlabel = document.getElementById("marker_label")
+    bbox = markerlabel.getBBox()
+    markerlabel.setAttribute("x", bbox.x)
+    markertag = document.getElementById("marker_tag")
+    markertag.setAttribute("x", bbox.x - (bbox.width / 2))
+    markertag.setAttribute("y", bbox.y + 1)
+    markertag.setAttribute("width", bbox.width)
+    markertag.setAttribute("height", bbox.height)
+
+
+</script>
+EOF
+
 #Regex to match a valid query
 # Used for trigger and later for parsing
 my $frequencySpectrumQR = qr/
@@ -526,13 +545,14 @@ sub add_marker {
     (my $plot, my $markerValue, my $RGB, my $freq_formatted) = @_;
 
     #Add marker rect
-    my $markerWidth = 1.2 * length($freq_formatted);
+    my $markerWidth = 1; #This is dynamically resized by $dynamicwidths
     my $markerHeight = 14;
     my $markerGutter = ($plot->{topGutter} - $markerHeight - 1) / 2;
     $plot->{svg}->group(
         class => 'marker_tag',
     )->rect(
-        width => $markerWidth . '%',
+        id => 'marker_tag',
+        width => $markerWidth,
         height => $markerHeight,
         x => $plot->{transform}->($markerValue) - ($markerWidth / 2) . '%',
         y => $plot->{topGutter} - $markerGutter - $markerHeight + 1, #Extra pixel to account for plot border
@@ -547,12 +567,13 @@ sub add_marker {
         'text-anchor' => 'middle',
         class => 'marker_label'
     );
-    $markerLabel->tag('tspan', -cdata => ucfirst($freq_formatted));
+    $markerLabel->tag('tspan', id => 'marker_label', -cdata => ucfirst($freq_formatted));
 
     #Add marker line
     $plot->{svg}->group(
         class => 'marker'
     )->line(
+        id => 'marker',
         x1 => $plot->{transform}->($markerValue) . '%', 
         x2 => $plot->{transform}->($markerValue) . '%', 
         y1 => $plot->{topGutter} - $markerGutter,
@@ -565,7 +586,14 @@ sub add_marker {
 
 #Wrap html
 sub wrap_html {
-    return "<div class='zci--conversions text--primary'>$_[0]</div>";
+    return <<EOF;
+<!--[if lte IE 8]><div class="ie8-display-none">
+<![endif]-->
+<!--[if gte IE 9]><!-->        
+<div class='zci--conversions text--primary'>$_[0]</div>
+<![endif]-->
+$dynamicwidths
+EOF
 }
 
 #Get log10 of a number
