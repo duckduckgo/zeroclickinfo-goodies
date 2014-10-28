@@ -16,7 +16,11 @@ secondary_example_queries 'duckduckgo md5',
 name 'MD5';
 description 'Calculate the MD5 digest of a string.';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MD5.pm';
-category 'transformations';
+category 'calculations';
+topics 'cryptography';
+attribution web => [ 'http://www.guttula.com'],
+            github => [ 'jarmokivekas', 'Jarmo Kivekäs'];
+
 
 triggers startend => 'md5', 'md5sum';
 

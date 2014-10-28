@@ -8,12 +8,12 @@ zci is_cached => 1;
 zci answer_type => "sha";
 
 primary_example_queries 'SHA this';
-secondary_example_queries 'sha-512 that', 'sha512sum dim-dims';
+secondary_example_queries 'sha-512 that', 'sha512sum dim-dims', 'sha hash of "this and that"';
 description 'SHA hash cryptography';
 name 'SHA';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Sha.pm';
 category 'calculations';
-topics 'math';
+topics 'cryptography';
 attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
