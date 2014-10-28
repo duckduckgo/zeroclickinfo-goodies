@@ -103,9 +103,9 @@ sub to_time {
         # Special case certain hours
         return 'midnight' if $hours == 0;
         return 'noon'     if $hours == 12;
-        $pm = ' A.M.';
+        $pm = ' AM';
         if ($hours > 12) {
-            $pm = ' P.M.';
+            $pm = ' PM';
             $hours -= 12 if (int($hours) > 12);
         }
     }
