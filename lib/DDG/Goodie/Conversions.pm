@@ -100,15 +100,15 @@ handle query_lc => sub {
     # fix precision and rounding:
     my $precision = 3;
     my $nearest = '.' . ('0' x ($precision-1)) . '1';
-    
+
     my $styler = number_style_for($factor);
     return unless $styler;
 
-    my $result = $c->convert( { 
-        'factor' => $styler->for_computation($factor), 
-        'from_unit' => $matches[0], 
-        'to_unit' => $matches[1], 
-        'precision' => $precision, 
+    my $result = $c->convert( {
+        'factor' => $styler->for_computation($factor),
+        'from_unit' => $matches[0],
+        'to_unit' => $matches[1],
+        'precision' => $precision,
     } );
 
     return if !$result->{'result'};
@@ -116,16 +116,16 @@ handle query_lc => sub {
     my $f_result;
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
-    $result->{'result'} = nearest($nearest, $result->{'result'});   
+    $result->{'result'} = nearest($nearest, $result->{'result'});
 
     if ($result->{'result'} == 0 || length($result->{'result'}) > 2*$precision + 1) {
         if ($result->{'result'} == 0) {
             # rounding error
-            $result = $c->convert( { 
-                'factor' => $styler->for_computation($factor), 
-                'from_unit' => $matches[0], 
-                'to_unit' => $matches[1], 
-                'precision' => $precision, 
+            $result = $c->convert( {
+                'factor' => $styler->for_computation($factor),
+                'from_unit' => $matches[0],
+                'to_unit' => $matches[1],
+                'precision' => $precision,
             } );
         }
 

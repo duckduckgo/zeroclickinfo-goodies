@@ -31,13 +31,13 @@ handle remainder => sub {
 	{
 	    if ($_ =~ /[a-z]/)
 	    {
-		if ($collect =~ /all|letters|characters|chars/) { ++$freq{$_}; } 
+		if ($collect =~ /all|letters|characters|chars/) { ++$freq{$_}; }
 		else { ++$freq{$_} if $_ eq $collect; }
 
 		++$count;
 	    };
 	};
-	
+
 	my @out;
 	foreach my $key (keys %freq)
 	{

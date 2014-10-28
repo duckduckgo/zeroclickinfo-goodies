@@ -30,7 +30,7 @@ handle remainder => sub {
     my $err = $per*100;
 
     my $html = qq(Accepted: $acc Experimental: $exp Error: <a href="javascript:;" onclick="document.x.q.value='$per';document.x.q.focus();">$err%</a>);
-    
+
     return "Accepted: $acc Experimental: $exp Error: $err%", html => $html;
 };
 

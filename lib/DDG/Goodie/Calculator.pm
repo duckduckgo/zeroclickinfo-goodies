@@ -40,7 +40,7 @@ triggers query_nowhitespace => qr<
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
 
-        [\( \) x X * % + / \^ 0-9 \. , \$ -]* =? 
+        [\( \) x X * % + / \^ 0-9 \. , \$ -]* =?
 
         $
         >xi;

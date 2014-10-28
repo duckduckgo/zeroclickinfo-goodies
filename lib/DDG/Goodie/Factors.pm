@@ -19,7 +19,7 @@ category 'calculations';
 attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
 
 handle remainder => sub {
-	return unless /^\d+$/; 
+	return unless /^\d+$/;
 	my @factors = divisors($_);
 	return "Factors of $_: @factors";
 };

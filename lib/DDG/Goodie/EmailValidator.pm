@@ -39,7 +39,7 @@ handle remainder => sub {
     );
 
     # Danger: address returns possible modified string!
-    my $result = $email_valid->address($address); 
+    my $result = $email_valid->address($address);
 
     if (!$result) {
 	my $message = '';

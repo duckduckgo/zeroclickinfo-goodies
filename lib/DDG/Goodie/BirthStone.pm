@@ -16,7 +16,7 @@ topics 'special_interest', 'entertainment';
 category 'random';
 attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
 
-my %birthstones = ( 
+my %birthstones = (
 	"january" => "Garnet",
 	"february" => "Amethyst",
 	"march" => "Aquamarine",

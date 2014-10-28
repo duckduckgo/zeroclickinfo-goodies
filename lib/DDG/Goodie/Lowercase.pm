@@ -21,11 +21,11 @@ handle remainder => sub {
     return unless $_;
     my $lower = lc $_;
     my $text = $lower;
-    
+
     # Encode the variable before putting it in HTML.
     # There's no need to encode the $text variable because that gets encoded internally.
     $lower = html_enc($lower);
-    
+
     my $html = qq(<div class="zci--lowercase"><span class="text--primary">$lower</span></div>);
 
     return $text, html => $html;

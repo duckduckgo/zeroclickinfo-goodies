@@ -19,7 +19,7 @@ ddg_goodie_test(
             html => '<span class="zci--valarmorg">Valar dohaeris</span>'
         ),
     'what is valar morghulis' => undef,
-    'valar morghulis meaning' => undef,  
+    'valar morghulis meaning' => undef,
 );
 
 done_testing;

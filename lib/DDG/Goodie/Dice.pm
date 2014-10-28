@@ -29,7 +29,7 @@ my %utf8_dice = (
     6 => "\x{2685}",
 );
 
-# roll_dice generate pseudo random roll 
+# roll_dice generate pseudo random roll
 # param $_[0] number of faces
 # return roll
 sub roll_die {
@@ -79,11 +79,11 @@ handle remainder_lc => sub {
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
     my $out = '';
-    my $html = ''; 
+    my $html = '';
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls
     foreach (@values) {
-        if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) { 
+        if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
             # ex. 'a die', '2 dice', '5dice'
             my @output;
             my $sum = 0;
@@ -99,7 +99,7 @@ handle remainder_lc => sub {
             $html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
                     .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
         }
-        elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { 
+        elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
             # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'
             # 'w' is the German form of 'd'
             my (@rolls, $output);
@@ -148,7 +148,7 @@ handle remainder_lc => sub {
         $out .= 'Total: ' . $total;
         $html .= 'Total: ' . $total;
     }
-    $out =~ s/<br\/>$//g; # remove trailing newline 
+    $out =~ s/<br\/>$//g; # remove trailing newline
     if($out eq ''){
         return; # nothing to return
     }else{

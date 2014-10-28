@@ -2,7 +2,7 @@ package DDG::Goodie::Randagram;
 # ABSTRACT: Take a query and spit it out randomly.
 
 use DDG::Goodie;
-use List::Util 'shuffle'; 
+use List::Util 'shuffle';
 
 triggers start => "randagram";
 

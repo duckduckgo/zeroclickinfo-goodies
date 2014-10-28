@@ -23,7 +23,7 @@ handle remainder => sub {
     if ($_) {
         my $char;
         my $result;
-        
+
         while (/(.)/g) {
             if ($1 =~ /([a-z])/) {
                 # Substitute lowercase characters
@@ -36,7 +36,7 @@ handle remainder => sub {
             else { $char = $1; }
             $result .= $char;
         }
-        
+
         return "Atbash: $result";
     }
     return;

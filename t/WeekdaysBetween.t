@@ -29,7 +29,7 @@ ddg_goodie_test(
     # Standard work week
     'weekdays between 01/06/2014 01/10/2014' =>
         test_zci("There are 5 weekdays between 06 Jan 2014 and 10 Jan 2014.", html => qr/.*/),
-    
+
      # Ending date first
     'weekdays between 01/10/2014 01/06/2014'  =>
         test_zci("There are 5 weekdays between 06 Jan 2014 and 10 Jan 2014.", html => qr/.*/),
@@ -61,11 +61,11 @@ ddg_goodie_test(
     # Same day
     'weekdays between jan 3, 2014 jan 3, 2014' =>
         test_zci("There is 1 weekday between 03 Jan 2014 and 03 Jan 2014.", html => qr/.*/),
-    
+
     # Same day on a weekend
     'weekdays between jan 4, 2014 jan 4, 2014' =>
         test_zci("There are 0 weekdays between 04 Jan 2014 and 04 Jan 2014.", html => qr/.*/),
-    
+
     # Starting on a Saturday
     'weekdays between 01/11/2014 01/14/2014' =>
         test_zci("There are 2 weekdays between 11 Jan 2014 and 14 Jan 2014.", html => qr/.*/),
@@ -74,7 +74,7 @@ ddg_goodie_test(
     'weekdays between 01/12/2014 01/17/2014' =>
         test_zci("There are 5 weekdays between 12 Jan 2014 and 17 Jan 2014.", html => qr/.*/),
 
-    # Invalid input    
+    # Invalid input
     'weekdays between 01/2013 and 01/2014' => undef,
     'weekdays between feb 30, 2014 to mar 3, 2014' => undef,
     'weekdays between 01/01/2012' => undef,

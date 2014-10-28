@@ -19,9 +19,9 @@ zci answer_type => 'xkcd_sandwich';
 zci is_cached   => 1;
 
 handle remainder => sub {
-    return 'Okay.', 
+    return 'Okay.',
         html => 'Okay. <br><a href="http://xkcd.com/149/">More at xkcd</a>' if $_ eq 'sudo';
-    return 'What? Make it yourself.', 
+    return 'What? Make it yourself.',
         html => 'What? Make it yourself. <br><a href="http://xkcd.com/149/">More at xkcd</a>' if $_ eq '';
     return;
 };
