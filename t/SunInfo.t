@@ -9,11 +9,12 @@ zci answer_type => 'sun_info';
 zci is_cached   => 0;
 
 # Presume sun will rise in the morning and set at night year round in PA.
-my @now = (qr/^On.*Phoenixville, PA.*AM.*PM\.$/, html => qr/Phoenixville.*AM.*PM/);
-my @aug = (qr/^On 30 Aug.*AM.*PM\.$/,            html => qr/Phoenixville.*AM.*PM/);
+my @now = (qr/^On.*Phoenixville, Pennsylvania.*AM.*PM\.$/, html => qr/Phoenixville.*AM.*PM/);
+my @aug = (qr/^On 30 Aug.*AM.*PM\.$/, html => qr/Phoenixville.*AM.*PM/);
 my @exact = (
-    'On 01 Jan 2015, sunrise in Phoenixville, PA is at 7:23 AM; sunset at 4:46 PM.',
-    html => qr{^<div class='zci--suninfo'><div class='suninfo--header text--secondary'><span class='ddgsi'>.*<img.*4:46 PM</span></span></div></div>$},
+    'On 01 Jan 2015, sunrise in Phoenixville, Pennsylvania is at 7:23 AM; sunset at 4:46 PM.',
+    html =>
+      qr{^<div class='zci--suninfo'><div class='suninfo--header text--secondary'><span class='ddgsi'>.*<img.*4:46 PM</span></span></div></div>$},
 );
 
 ddg_goodie_test(
