@@ -8,6 +8,8 @@ use DDG::Test::Goodie;
 zci answer_type => 'timezone_converter';
 zci is_cached => 1;
 
+my $test_location_tz = qr/\(E[DS]T, UTC-[45]\)/;
+
 ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
     '3:14 in GMT' =>
@@ -87,6 +89,22 @@ ddg_goodie_test(
     '11:22am est in utc' =>
         test_zci('11:22 A.M. (EST, UTC-5) is 4:22 P.M. (UTC).',
         html => qr/.*11:22 A.M..*\(EST, UTC-5\) is.*4:22 P.M..*\(UTC\)./
+    ),
+    '13:00 GMT in my time' =>
+        test_zci(qr/13:00 \(GMT\) is 9:00 $test_location_tz/,
+        html => '-ANY-'
+    ),
+    '11:22am cest in my timezone' =>
+        test_zci(qr/11:22 A.M. \(CEST, UTC\+2\) is [54]:22 A.M. $test_location_tz/,
+        html => '-ANY-'
+    ),
+    '12pm my time in CEST' =>
+        test_zci(qr/Noon $test_location_tz is [67]:00 P.M. \(CEST, UTC\+2\)./,
+        html => '-ANY-'
+    ),
+    '12am my timezone in UTC' =>
+        test_zci(qr/Noon $test_location_tz is [45]:00 P.M. \(UTC\)./,
+        html => '-ANY-'
     ),
 );
 
