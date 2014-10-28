@@ -57,13 +57,15 @@ my %timezones = qw(
     YEKT      5
 );
 
-my $default_tz = 'UTC';
+my $default_tz   = 'UTC';
+my $localtime_re = qr/(?:(?:my|local|my local)\s*time(?:zone)?)/i;
+my $timezone_re  = qr/(?:\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?|$localtime_re)?/;
 
 sub parse_timezone {
     my $timezone = shift;
 
     # They said "my timezone" or similar.
-    if ($timezone =~ /^my time/i) {
+    if ($timezone =~ /$localtime_re/i) {
         my $dt = DateTime->now(time_zone => $loc->time_zone || $default_tz );
         return ($dt->time_zone_short_name, $dt->offset / 3600);
     }
@@ -112,8 +114,6 @@ sub to_time {
     }
     sprintf "%i:%02.0f$seconds_format$pm", $hours, $minutes, $seconds;
 }
-
-my $timezone_re = qr/(?:\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?|(?:my\s+time(?:zone)?))?/;
 
 handle query => sub {
     my $query = $_;
