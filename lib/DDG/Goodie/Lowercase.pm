@@ -10,7 +10,7 @@ secondary_example_queries "lower case GitHub";
 category 'conversions';
 topics 'programming';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Lowercase.pm';
-attribution github  => ["DavidMascio"];
+attribution github  => ["https://github.com/DavidMascio", "DavidMascio"];
 
 zci is_cached => 1;
 zci answer_type => "lowercase";
