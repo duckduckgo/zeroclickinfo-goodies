@@ -62,7 +62,7 @@ ddg_goodie_test(
     'How to get a a acute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
     'how to get a a-acute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
     'how to get a aacute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
-    'how to get a A acute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),    
+    'how to get a A acute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
     'how to get a A-acute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
     'how to get a Aacute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
 

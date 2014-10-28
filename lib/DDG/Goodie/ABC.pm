@@ -30,7 +30,7 @@ handle remainder => sub {
     my $query = $_;
 
     # split the query on whitespace and rm whitespace
-    my @words = grep { length } split /\s+/, $query; 
+    my @words = grep { length } split /\s+/, $query;
 
     return if query_is_malformed(@words);
 
@@ -48,7 +48,7 @@ handle remainder => sub {
     return $choices[$index]." (random)";
 };
 
-# The query must look like 
+# The query must look like
 #   '<choice> or <choice> or <choice>'
 #
 # Note this method also prevents choices from being > 1 word long as this

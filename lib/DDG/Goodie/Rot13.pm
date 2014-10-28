@@ -19,7 +19,7 @@ zci is_cached => 1;
 
 handle remainder => sub {
     if ($_) {
-        $_ =~ tr[a-zA-Z][n-za-mN-ZA-M]; 
+        $_ =~ tr[a-zA-Z][n-za-mN-ZA-M];
         return "ROT13: $_";
     };
     return;

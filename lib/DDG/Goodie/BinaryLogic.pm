@@ -13,7 +13,7 @@ triggers query_raw => qr/not\s+.*/;
 triggers query_raw => qr/¬.*/;
 
 zci is_cached => 1;
-zci answer_type => "binary_logic"; 
+zci answer_type => "binary_logic";
 
 attribution
     github => ['https://github.com/MithrandirAgain', 'MithrandirAgain'],
@@ -21,8 +21,8 @@ attribution
     twitter => ['https://twitter.com/Prypjat', 'Bjoern Paschen'];
 
 primary_example_queries '4 xor 5', '3 and 2', '1 or 1234';
-secondary_example_queries 
-    '9489 xor 394 xor 9349 xor 39 xor 29 xor 4967 xor 3985', 
+secondary_example_queries
+    '9489 xor 394 xor 9349 xor 39 xor 29 xor 4967 xor 3985',
     '10 and 12',
     '34 or 100',
     '10 and (30 or 128)',
@@ -46,7 +46,7 @@ Term ::=
      | Term 'and' Term action => do_and
      | Term 'or' Term action => do_or
 
-Number ::= 
+Number ::=
        HexNumber action => hex_number
      | HexNumberCaps action => hex_number
      | BinaryNumber action => binary_number
@@ -104,7 +104,7 @@ handle query_raw => sub {
 
     my $input = $_;
 
-    # Substitute the unicode characters. The parser does not seem to 
+    # Substitute the unicode characters. The parser does not seem to
     # like unicode.
     $input =~ s/⊕/ xor /;
     $input =~ s/∧/ and /;

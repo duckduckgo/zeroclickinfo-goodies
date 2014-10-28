@@ -28,7 +28,7 @@ handle query_raw => sub {
     #remove triggers and trim
     s/(^$trigger_words)|($trigger_words$)//i;
     s/(^\s+)|(\s+$)//;
-    
+
     my $decoded = decodeURIComponent($_);
 
     if($decoded =~ /^\s+$/)

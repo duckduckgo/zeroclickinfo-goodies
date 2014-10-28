@@ -73,7 +73,7 @@ Locale::Country::add_country_alias('United States' => 'America');
 # Easter eggs
 Locale::Country::add_country_alias('Russian Federation' => 'Kremlin');
 Locale::Country::add_country_alias('United States' => 'murica');
-Locale::Country::add_country_alias('Canada' => 'Canadia'); 
+Locale::Country::add_country_alias('Canada' => 'Canadia');
 Locale::Country::add_country_alias('Australia' => 'down under');
 
 handle remainder => sub {

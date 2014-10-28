@@ -14,11 +14,11 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::PrimeFactors
 	)],
-    '72 prime factors' => test_zci('The prime factorization of 72 is 2^3 × 3^2', 
+    '72 prime factors' => test_zci('The prime factorization of 72 is 2^3 × 3^2',
 				   html => 'The prime factorization of 72 is 2<sup>3</sup> × 3<sup>2</sup>'),
-    'prime factors of 111' => test_zci('The prime factorization of 111 is 3 × 37', 
+    'prime factors of 111' => test_zci('The prime factorization of 111 is 3 × 37',
 				       html => 'The prime factorization of 111 is 3 × 37'),
-    'prime factors of 30' => test_zci('The prime factorization of 30 is 2 × 3 × 5', 
+    'prime factors of 30' => test_zci('The prime factorization of 30 is 2 × 3 × 5',
 				      html => 'The prime factorization of 30 is 2 × 3 × 5'),
     'prime factorization of 45' => test_zci('The prime factorization of 45 is 3^2 × 5',
 					    html => 'The prime factorization of 45 is 3<sup>2</sup> × 5'),

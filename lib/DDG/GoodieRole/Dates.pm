@@ -398,7 +398,7 @@ sub parse_descriptive_datestring_to_date {
 
     my $now = DateTime->now();
     my $month = $+{'m'}; # Set in each alternative match.
-    
+
     if (my $day = $+{'d'}) {
         return parse_datestring_to_date("$day $month ".$now->year());
     }

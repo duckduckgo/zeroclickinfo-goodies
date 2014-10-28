@@ -67,7 +67,7 @@ my @presidents = (
     "George W. Bush",
     "Barack Obama",
 );
-		
+
 handle remainder => sub {
 	s/
       |who\s+(is|was)\s+the\s+

@@ -21,7 +21,7 @@ ddg_goodie_test(
         '10 in base 3'                    => test_zci('10 in base 3 is 101'),
         '18442240474082181119 to hex'     => test_zci('18442240474082181119 in base 16 is FFEFFFFFFFFFFFFF'),
         '999999999999999999999999 to hex' => test_zci('999999999999999999999999 in base 16 is D3C21BCECCEDA0FFFFFF')
-        
+
 );
 
 done_testing;

@@ -34,7 +34,7 @@ my %eras = (
 handle query_parts => sub {
     # Ignore single word queries
     return unless scalar(@_) > 1;
-    
+
     if ($_ =~ /^(.*\b)(meiji|taisho|taishou|showa|shouwa|heisei|juche|minguo)\s+(\d*[1-9]\d*)(\b.*)$/i) {
         my $era_name = ucfirst($2);
         my $era_year = $3;
@@ -42,18 +42,18 @@ handle query_parts => sub {
         my $result = $1.$year.$4;
         my $wiki = 'https://en.wikipedia.org/wiki/';
         my $answer;
-        
+
         if ($result =~ /^[0-9]{4}$/) {
             $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
         } else {
             $answer = "$result ($era_name $era_year is equivalent to $year in the Gregorian Calendar)";
         }
-        
+
         my $answer_html = $answer.'<br><a href="'.$wiki.$eras{$era_name}[1].'">More at Wikipedia</a>';
-        
+
         return $answer, html => $answer_html;
     };
-    
+
     return ;
 };
 

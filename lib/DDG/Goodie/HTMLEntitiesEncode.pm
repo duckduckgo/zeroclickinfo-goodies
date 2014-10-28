@@ -275,7 +275,7 @@ handle remainder => sub {
             $key = $hashes_query;
             $value = $accented_chars{$key};
         # Not an accented character -- lookup the $codes hash instead
-        } else { 
+        } else {
             $key = lc $hashes_query;
             $value = $codes{$key};
         }
@@ -304,7 +304,7 @@ handle remainder => sub {
             $entity = '#' . $entity; # dress it up like a decimal
         }
         # Remove '&' and ';' from the output of html_enc(), these will be added in html
-        $entity =~ s/^&//g; 
+        $entity =~ s/^&//g;
         $entity =~ s/;$//g;
         # Make final answer
         my $answer = [[$_, $entity]];

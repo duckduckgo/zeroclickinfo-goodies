@@ -123,7 +123,7 @@ ddg_goodie_test(
     'workdays between jan 3, 2014 jan 3, 2014' =>
         test_zci("There is 1 workday between 03 Jan 2014 and 03 Jan 2014."),
     'workdays between jan 3, 2014 jan 3, 2014 inclusive' =>
-        test_zci("There is 1 workday between 03 Jan 2014 and 03 Jan 2014."),    
+        test_zci("There is 1 workday between 03 Jan 2014 and 03 Jan 2014."),
 
     # Same day on a weekend
     'workdays between jan 4, 2014 jan 4, 2014' =>
@@ -177,13 +177,13 @@ ddg_goodie_test(
     'workdays between 19/19/2014 20/24/2015 inclusive' => undef,
     'workdays from FEB 30 2014 to March 24 2014' => undef,
 
-    'workdays between 01/31/2000 01/31/2001' => 
+    'workdays between 01/31/2000 01/31/2001' =>
         test_zci("There are 253 workdays between 31 Jan 2000 and 31 Jan 2001."),
-    'workdays between 01/31/2000 01/31/2001 inclusive' => 
+    'workdays between 01/31/2000 01/31/2001 inclusive' =>
         test_zci("There are 253 workdays between 31 Jan 2000 and 31 Jan 2001."),
-    'workdays between 01/31/2000 and 01/31/2001 inclusive' => 
+    'workdays between 01/31/2000 and 01/31/2001 inclusive' =>
         test_zci("There are 253 workdays between 31 Jan 2000 and 31 Jan 2001."),
-    'workdays between jan 3 2013 and jan 4 2013' => 
+    'workdays between jan 3 2013 and jan 4 2013' =>
         test_zci("There are 2 workdays between 03 Jan 2013 and 04 Jan 2013."),
 );
 

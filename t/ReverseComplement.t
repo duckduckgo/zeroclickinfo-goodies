@@ -33,7 +33,7 @@ ddg_goodie_test(
   #Mix of DNA and RNA bases (should return empty, as it is more likely that this
   # is an error than one of the edge cases of uracil-containing DNA)
 	'reverse complement AAATTTCCCGGGUUU' => undef,
-  
+
   #Non-nucleic acid query strings (should return empty, no idea what they wanted)
 	'reverse complement hello-this-is-DNA' => undef,
         'DNA reverse complement' => undef,

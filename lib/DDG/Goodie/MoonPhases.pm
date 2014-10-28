@@ -47,7 +47,7 @@ my %triggerQueries = (
 );
 
 handle query_lc => sub {
-   
+
     # Make sure the query is on the list
     my $queryStripped = $_;
     $queryStripped =~ s/[^a-zA-z\s]//g;
@@ -68,10 +68,10 @@ handle query_lc => sub {
     $phase = 'First Quarter' if $phaseAngle == 25;
     $phase = 'Full Moon' if $phaseAngle == 50;
     $phase = 'Third Quarter' if $phaseAngle == 75;
-    
+
     my $phaseUrl = $phase;
     $phaseUrl =~ s/\s+/+/g;
-    
+
     return "The current lunar phase is: $phase", html => qq(The current lunar phase is: <a href="?q=$phaseUrl">$phase</a>);
 };
 
