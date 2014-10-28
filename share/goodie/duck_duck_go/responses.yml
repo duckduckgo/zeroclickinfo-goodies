@@ -25,6 +25,13 @@ app:
     - mobile
   base_format: "DuckDuckGo's [mobile app]"
   info_url: https://duckduckgo.com/app/
+bangs:
+  aliases:
+    - bang
+    - newbang
+    - newbangs
+  base_format: "Learn more about DuckDuckGo's [!bangs]. You can submit new ones too!"
+  info_url: https://duck.co/help/features/bangs
 blog:
   base_format: "DuckDuckGo's [official blog]"
   info_url: https://duck.co/blog
@@ -144,12 +151,10 @@ swag:
     - merchandise
     - shirt
     - shirts
-    - t shirt
-    - t shirts
-    - t-shirt
-    - t-shirts
     - tshirt
     - tshirts
+    - t-shirt
+    - t-shirts
     - tee
     - tees
     - t
