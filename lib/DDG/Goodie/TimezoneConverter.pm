@@ -89,6 +89,7 @@ sub parse_timezone {
 
 sub to_time {
     my ($hours, $american) = @_;
+
     my $pm = "";
     my $seconds = 3600 * fmod $hours, 1 / 60;
 
@@ -152,7 +153,7 @@ handle query => sub {
 
     my ($hours, $minutes, $seconds) = map { $_ // 0 } ($+{'h'}, $+{'m'}, $+{'s'});
     my $american        = $+{'american'};
-    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : 0;
+    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : (!$+{'pm'} && $hours == 12) ? -12 : 0;
 
     # parse_timezone returns undef if the timezone cannot be parsed
     my ($input_timezone, $gmt_input_timezone) = parse_timezone($+{'from_tz'});

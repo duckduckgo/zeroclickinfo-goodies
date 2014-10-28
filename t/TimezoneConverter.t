@@ -103,7 +103,7 @@ ddg_goodie_test(
         html => '-ANY-'
     ),
     '12am my timezone in UTC' =>
-        test_zci(qr/Noon $test_location_tz is [45]:00 PM \(UTC\)./,
+        test_zci(qr/Midnight $test_location_tz is [45]:00 AM \(UTC\)./,
         html => '-ANY-'
     ),
     # Intentional non-answers
