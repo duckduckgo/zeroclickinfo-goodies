@@ -30,7 +30,7 @@ bangs:
     - bang
     - newbang
     - newbangs
-  base_format: "Learn more about DuckDuckGo's [!bangs] (you can submit new ones too!)"
+  base_format: "Learn more about DuckDuckGo's [!bangs]. You can submit new ones too!"
   info_url: https://duck.co/help/features/bangs
 blog:
   base_format: "DuckDuckGo's [official blog]"
