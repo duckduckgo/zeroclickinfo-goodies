@@ -39,17 +39,17 @@ handle remainder => sub {
     my $entity = $1;
     $entity =~ s/^&?/&/; # append '&' at the front
     $entity =~ s/;?$/;/; # append ';' at the back
-    
+
     # Attempt to decode, exit if unsuccessful
     my $decoded = decode_entities($entity); # decode_entities() returns the input if unsuccesful
     my $decimal = ord($decoded);
     my $hex = sprintf("%04x", $decimal);
     return if (lc $entity eq lc $decoded); # safety net -- makes trying to decode something not real like "&enchantedbunny;" fail
 
-    # If invisible character, provide link instead of displaying it 
+    # If invisible character, provide link instead of displaying it
     my $info = charinfo($decimal); # charinfo() returns undef if input is not a "real" character
     return unless (defined $info); # another safety net
-    if ($$info{name} eq '<control>') { 
+    if ($$info{name} eq '<control>') {
         $decoded = "Unicode control character (no visual representation)";
         $entity = "<a href='https://en.wikipedia.org/wiki/Unicode_control_characters'>Unicode control character</a> (no visual representation)";
     } elsif(substr($$info{category},0,1) eq 'C') {

@@ -11,7 +11,7 @@ zci is_cached => 1;
 ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
     '3:14 in GMT' =>
-        test_zci('3:14 (UTC) is 3:14 (GMT).', 
+        test_zci('3:14 (UTC) is 3:14 (GMT).',
             html => qr/.*3:14.*\(UTC\) is.*3:14.*\(GMT\)./
         ),
     '8:10 A.M. AZOST into CAT' =>
@@ -64,15 +64,15 @@ ddg_goodie_test(
         html => qr/./
     ),
     '12 in binary' => undef,
-    '10:00AM MST to PST' => 
+    '10:00AM MST to PST' =>
         test_zci('10:00 A.M. (MST, UTC-7) is 9:00 A.M. (PST, UTC-8).',
         html => qr/./
     ),
-    '19:00 UTC to EST' => 
+    '19:00 UTC to EST' =>
         test_zci('19:00 (UTC) is 14:00 (EST, UTC-5).',
         html => qr/./
     ),
-    '1am UTC to PST' => 
+    '1am UTC to PST' =>
         test_zci('1:00 A.M. (UTC) is 5:00 P.M., 1 day prior (PST, UTC-8).',
         html => qr/./
     ),

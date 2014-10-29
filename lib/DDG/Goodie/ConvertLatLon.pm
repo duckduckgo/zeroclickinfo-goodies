@@ -124,7 +124,7 @@ handle query_nowhitespace => sub {
         #If the degrees are expressed in decimal...
         if ($degrees =~ /\./) {
 
-            #If this isn't the first conversion, make sure the 
+            #If this isn't the first conversion, make sure the
             # user hasn't passed a mix of decimal and DMS
             return if $toFormat && ! $toFormat eq 'DMS';
             $toFormat = 'DMS';
@@ -166,7 +166,7 @@ handle query_nowhitespace => sub {
         # minutes/seconds given)
         } else {
 
-            #If this isn't the first conversion, make sure the 
+            #If this isn't the first conversion, make sure the
             # user hasn't passed a mix of decimal and DMS
             return if $toFormat && ! $toFormat eq 'decimal';
             $toFormat = 'decimal';

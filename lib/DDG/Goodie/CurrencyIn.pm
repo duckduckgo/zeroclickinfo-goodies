@@ -3,7 +3,7 @@ package DDG::Goodie::CurrencyIn;
 
 # TODO: At the moment it return value only if user inputs the whole country name...
 #     ...if user types "Salvador" instead of "El Salvador" then no results...
-# TODO: think about how often currency in countries changes? 
+# TODO: think about how often currency in countries changes?
 #     Parser (for Wikipedia) is included in share directory...
 
 # In some countries there are more than one currency.
@@ -37,9 +37,9 @@ triggers any => 'currency', 'currencies';    # User typed currency...
 # Countries are lowercased but input from user, too ... so those always match...
 # ...country is capitalized on output...
 
-my %countries = share('currency.txt')->slurp;    
+my %countries = share('currency.txt')->slurp;
 
-sub clear_country_name {        
+sub clear_country_name {
     my $txt = shift;
     $txt =~ s/^\?$|\?$//g;      # Query may end with "?". If so take it away.
     $txt =~ s/^\s+|\s+$//g;     # Trim spaces before and after the country name
@@ -58,17 +58,17 @@ handle remainder => sub {
             return if $@ || !$loc;
             $country = lc($loc->country);
         }
-        
+
         if (exists $countries{$country."\n"}){
             my $string_currency = $countries{$country."\n"};    # Load currencies as string (one line from .txt)
             my @currencies =  split(',', $string_currency);     # Split currencies into array
-            
+
             my $count = $#currencies + 1;                       # Get number of currencies
             my $output_country = $country;                      # Pass country name to the output_country
-            $output_country =~ s/\b(\w)/\U$1/g;                 # so it can by capitalized            
+            $output_country =~ s/\b(\w)/\U$1/g;                 # so it can by capitalized
 
             my $result = $count == 1 ? "The currency in $output_country is the " : "Currencies in $output_country are: \n";
-            
+
             # Append result with all currencies
             for (@currencies) {
                 chomp;
@@ -78,9 +78,9 @@ handle remainder => sub {
             chomp $result;
             my $html = $result;
             $html =~ s|\n|<br/>|g;
-            
+
             return $result, html=>$html;
-        }        
+        }
     }
 
     return;

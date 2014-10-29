@@ -42,7 +42,7 @@ handle remainder => sub {
 
   #Reverse
   $sequence = reverse($sequence);
-  
+
   return $sequence, html => wrap_html('DNA reverse complement:', $sequence);
 };
 

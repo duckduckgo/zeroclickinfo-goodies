@@ -9,7 +9,7 @@ use File::Slurp qw(read_file write_file);
 
 # open file
 open(FILE, "/usr/share/dict/words") or die("Unable to open file");
- 
+
 # read file into an array
 my %dict = ();
 
@@ -22,7 +22,7 @@ while (my $line = <FILE>) {
     unless ($amt eq '\'s'){
 
 	$lcline = lc($line);
-	
+
 	## Spliting the string with no delimeter.
 	$sorted_string = join("",sort(split("",$lcline)));
 
@@ -35,7 +35,7 @@ while (my $line = <FILE>) {
     }
 }
 
-# close file 
+# close file
 close(FILE);
 
 my $json = encode_json \%dict;

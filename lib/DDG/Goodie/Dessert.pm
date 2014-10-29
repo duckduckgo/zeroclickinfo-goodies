@@ -69,7 +69,7 @@ my %desserts = (
 	v => ['Vanilla Swirl', 'Valentine Cake', 'Vanilla Poached Peaches', 'Vanilla Pudding', 'Valentine Cupcakes'],
 	w => ['Waffles','Watermelon','White Chocolate', 'Whole Wheat Muffins', 'Walnut Fudge', 'White Chocolate Snowflakes', 'Watermelon Pie'],
 	x => ['Xmas Cake'],
-        y => ['Yellow Layer Cake', 'Yogurt Fruit Pops', 'Yogurt Sundae', 'Yogurt Cheesecake'], 
+        y => ['Yellow Layer Cake', 'Yogurt Fruit Pops', 'Yogurt Sundae', 'Yogurt Cheesecake'],
 	z => ['Zeppole', 'Zucchini Cake', 'Zebra-Stripe Cheesecake'],
 );
 

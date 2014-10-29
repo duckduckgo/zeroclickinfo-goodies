@@ -42,13 +42,13 @@ handle query_lc => sub {
     my $number = $action eq '-' ? 0 - $input_number : $input_number;
 
     $unit =~ s/s$//g;
-    
+
     my ($years, $months, $days, $weeks) = (0, 0, 0, 0);
     $years = $number if $unit eq "year";
     $months = $number if $unit eq "month";
     $days = $number if $unit eq "day";
     $days = 7*$number if $unit eq "week";
-    
+
     my $dur = DateTime::Duration->new(
         years  => $years,
         months => $months,

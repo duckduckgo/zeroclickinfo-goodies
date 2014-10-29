@@ -21,7 +21,7 @@ ddg_goodie_test(
         	html => qq(Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=1234567891'>DHL</a>.)
         ),
         'DHL 123456789' => test_zci(
-            '123456789', 
+            '123456789',
             heading => 'DHL Shipment Tracking',
             html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=123456789'>DHL</a>.",
         ),

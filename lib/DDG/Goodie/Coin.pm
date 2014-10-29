@@ -28,9 +28,9 @@ handle query_lc => sub {
 	elsif ($_ =~ /^(?:flip|toss) (\d{0,2}) coins?$/) {
 		$flips = $1;
 	}
-	
+
 	return unless ($flips);
-	
+
 	my @output;
 	my @ht = ("heads", "tails");
 
