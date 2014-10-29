@@ -58,7 +58,7 @@ my $color_ranges =
   ];
 
 # reference: https://en.wikipedia.org/wiki/Musical_acoustics
-#Ranges for common instruments 
+#Ranges for common instruments
 my $instrument_ranges =
   [
     [ "87", "1046", "human voice" ],
@@ -86,19 +86,19 @@ my $instrument_ranges =
   ];
 
 # Reference: https://en.wikipedia.org/wiki/Ultraviolet
-my $ultraviolet_ranges = 
+my $ultraviolet_ranges =
     [
      [ 7.495*(10**14), 3*(10**16), "UV light is found in sunlight and is emitted by electric arcs and specialized lights such as mercury lamps and black lights." ],
     ];
 
 # Reference: https://en.wikipedia.org/wiki/X-ray
-my $xray_ranges = 
+my $xray_ranges =
     [
      [ 3*(10**16), 3*(10**19), "X-rays are used for various medical and industrial uses such as radiographs and CT scans. "],
     ];
 
-# Reference: 
-my $gamma_ranges = 
+# Reference:
+my $gamma_ranges =
     [
      [ 10**19, 10**24, "Gamma rays are can be used to treat cancer and for diagnostic purposes." ],
     ];
@@ -112,7 +112,7 @@ handle query => sub {
   my $freq_hz;
   my $hz_abbrev;
   my $freq_formatted;
-  
+
   if($freq =~ m/^(.+?)\s(?:hz|hertz)$/i) {
     $freq_hz = $1;
   } elsif($freq =~ m/^(.+?)\s(?:khz|kilohertz)$/i) {
@@ -127,7 +127,7 @@ handle query => sub {
     #unexpected case
     return;
   }
-  
+
   if($freq_hz >= TRILLION){
     $hz_abbrev = "THz";
     $freq_formatted = $freq_hz / TRILLION;
@@ -144,9 +144,9 @@ handle query => sub {
     $hz_abbrev = "Hz";
     $freq_formatted = $freq_hz;
   }
-  
+
   $freq = $freq_formatted . " " . $hz_abbrev;
-  
+
   return prepare_result($freq, $freq_hz);
 };
 

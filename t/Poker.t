@@ -29,7 +29,7 @@ ddg_goodie_test(
             html => 'The odds of getting a three of a kind in poker are 46.3 : 1. More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#Three_of_a_kind">Wikipedia</a>.'
         ),
         'probability poker flush' => test_zci(
-            'The probability of getting a flush in poker is 0.197%.', 
+            'The probability of getting a flush in poker is 0.197%.',
             html => 'The probability of getting a flush in poker is 0.197%. More at <a href="https://en.wikipedia.org/wiki/List_of_poker_hands#Flush">Wikipedia</a>.'
         ),
 );

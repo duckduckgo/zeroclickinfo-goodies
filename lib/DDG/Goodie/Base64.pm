@@ -37,7 +37,7 @@ handle remainder => sub {
 			$str = decode( "UTF-8", $str );
             chomp $str;
 
-			return "Base64 decoded: $str"; 
+			return "Base64 decoded: $str";
 		}
 		else {
 			$str = encode_base64( encode( "UTF-8", $str ) );

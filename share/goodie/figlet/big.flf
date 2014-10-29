@@ -2193,7 +2193,7 @@ of new full-width/kern/smush alternatives, but default output is NOT changed.
   \___^___/ @
             @
             @@
--0x0005  
+-0x0005
 alpha = a, beta = b, gamma = g, delta = d, epsilon = e   @
 zeta = z, eta = h, theta = q, iota = i, lamda = l, mu = m@
 nu = n, xi = x, omicron = o, pi = p, rho = r, sigma = s  @

@@ -122,7 +122,7 @@ handle query => sub {
 
     my $query = $_;
     my $pos = undef;
-    return unless ($query =~ /\bchess960\b/i && 
+    return unless ($query =~ /\bchess960\b/i &&
             ($query =~ /\brandom\b/i || (($pos) = $query =~ /\b(\d+)\b/))) ;
 
 

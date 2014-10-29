@@ -29,7 +29,7 @@ triggers startend => (
 attribution github  => ["elebow", "Eddie Lebow"];
 
 handle remainder => sub {
-    return 
+    return
         heading => "GIMP Shortcut Cheat Sheet",
         html    => html_cheat_sheet(),
         answer  => text_cheat_sheet(),

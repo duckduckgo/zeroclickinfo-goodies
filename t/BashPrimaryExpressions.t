@@ -37,12 +37,12 @@ ddg_goodie_test(
 	heading => '[[ /tmp/hello -nt /etc/test ]] (Bash)',
     ),
     'bash [ -z hello ]' => test_zci(
-        qr/.+ true if the length of 'hello' is zero./, 
+        qr/.+ true if the length of 'hello' is zero./,
         html => qr/.+/,
 	heading => '[ -z hello ] (Bash)',
     ),
     'bash if [[ "abc" -lt "cba" ]]' => test_zci(
-        qr/.+ true if "abc" is numerically less than "cba"./, 
+        qr/.+ true if "abc" is numerically less than "cba"./,
         html => qr/.+/,
 	heading => '[[ &quot;abc&quot; -lt &quot;cba&quot; ]] (Bash)',
     ),

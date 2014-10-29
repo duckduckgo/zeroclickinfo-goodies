@@ -4378,10 +4378,10 @@ handle query => sub {
                    # default $router password
                    |^(?:(?:default|password)\ )(.+)(?:\ (?:default|password))$
                    # $router default password
-                   # default password $router 
+                   # default password $router
                    |^(?:(.+)\ )?(?:default\ password|password\ default)(?:\ (.+))?$
-                   # password $router 
-                   # $router password 
+                   # password $router
+                   # $router password
                    |^(?:(.+)\ )?(?:password)(?:\ (.+))?$
                    # $router
                    |^(.+)$
