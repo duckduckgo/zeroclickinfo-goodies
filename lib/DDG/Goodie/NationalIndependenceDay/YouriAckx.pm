@@ -9,7 +9,7 @@ zci answer_type => "national_independence_day";
 zci is_cached   => 1;
 
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
-name "NationalIndependenceDay YouriAckx";
+name "NationalIndependenceDay";
 description "Retrieve the Independence day of the given country";
 primary_example_queries "independence day belgium", "independence day cyprus";
 secondary_example_queries "national independence day belgium";
