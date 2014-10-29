@@ -19,7 +19,7 @@ ddg_goodie_test(
 	'what is the independence day of norway?' => test_zci('Norway assumed independence on May 17, 1814'),
 	# miscellaneous
 	'independence day of papua new guinea' => test_zci('Papua new guinea assumed independence on September 16, 1975'),
-	'day of independence of sri lanka' => test_zci('Sri lanka guinea assumed independence on Februaty 16, 1948'),
+	'day of independence of sri lanka' => test_zci('Sri lanka assumed independence on February 4, 1948'),
 	'when is the day of independence for norway' => test_zci('Norway assumed independence on May 17, 1814'),
 	'day of independence, norway' => test_zci('Norway assumed independence on May 17, 1814'),
 	'norway independence day' => test_zci('Norway assumed independence on May 17, 1814'),
