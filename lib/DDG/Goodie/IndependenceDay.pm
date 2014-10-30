@@ -7,7 +7,6 @@ use JSON;
 zci answer_type => "independence_day";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "independence day";
 description "Gives the date of when a nation assumed independence";
 primary_example_queries "what is the independence day of norway", "independence day, papua new guinea";
@@ -24,7 +23,7 @@ attribution github => ["jarmokivekas", "Jarmo Kivekäs"],
 triggers any => "independence day", "day of independence";
 
 
-
+# uses https://en.wikipedia.org/wiki/List_of_national_independence_days as data source
 my %data = (
     'abkhazia' => [{date => "July 4th", year => "1993"}],
     'afghanistan' => [{date => "August 19th", year => "1919"}],
