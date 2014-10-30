@@ -265,7 +265,7 @@ handle query_clean => sub {
 
 
     # html formatted answer
-    my $html = '<div class="text--secodary">' . $prolog . '</div>';
+    my $html = '<div class="text--secondary">' . $prolog . '</div>';
     $html .= '<div class="text--primary">' . $date_str . '</div>';
     # plain text answer
     my $text = $prolog  . $date_str;
