@@ -15,7 +15,7 @@ category "dates";
 topics "trivia";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IndependenceDay.pm";
 attribution github => ["jarmokivekas", "Jarmo Kivekäs"],
-            web => ["http://guttula.com", "Jarmo Kivekäs"];
+            web => ["http://guttula.com", "Jarmo Kivekäs"],
             github => ["YouriAckx", "Youri Ackx"],
             twitter => "YouriAckx";
 
@@ -237,12 +237,7 @@ handle query_clean => sub {
 
 
     # convert a possible alias into the proper name
-    my $country_key;
-    if ($alias_lookup{$_}){
-        $country_key = $alias_lookup{$_};
-    } else {
-        $country_key = $_;
-    }
+    my $country_key = $alias_lookup{$_} || $_;
 
 
     # return if the string is not one of the countries
