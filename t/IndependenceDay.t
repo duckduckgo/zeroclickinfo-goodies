@@ -17,6 +17,12 @@ ddg_goodie_test(
 	'independence day, papua new guinea' => test_zci('Papua New Guinea assumed independence on September 16th, 1975', html=>qr/.*/),
 	# question marks
 	'what is the independence day of norway?' => test_zci('Norway assumed independence on May 17th, 1814', html=>qr/.*/),
+	# some aliases
+	'when is the independence day of republic of congo' => test_zci('Republic of the Congo assumed independence on August 15th, 1960', html=>qr/.*/),
+	'when is the independence day of republic of the congo' => test_zci('Republic of the Congo assumed independence on August 15th, 1960', html=>qr/.*/),
+	'gambia independence day' => test_zci('The Gambia assumed independence on February 18th, 1965', html=>qr/.*/),
+	'the gambia independence day' => test_zci('The Gambia assumed independence on February 18th, 1965', html=>qr/.*/),
+	'usa independence day' => test_zci('United States of America assumed independence on July 4th, 1776', html=>qr/.*/),
 	# miscellaneous
 	'independence day of papua new guinea' => test_zci('Papua New Guinea assumed independence on September 16th, 1975', html=>qr/.*/),
 	'day of independence of sri lanka' => test_zci('Sri Lanka assumed independence on February 4th, 1948', html=>qr/.*/),
