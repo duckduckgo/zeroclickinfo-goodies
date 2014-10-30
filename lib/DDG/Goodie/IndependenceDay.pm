@@ -228,12 +228,12 @@ handle query_clean => sub {
     $country =~ s/Of\s/of /;
 
     # ouput string formatting
-    my $prolog = 'Independence day of ' . $country;
+    my $prolog = $country . ' assumed independence on ';
     my $date_str = $data{$_}[0]{'date'} . ', ' . $data{$_}[0]{'year'};
     my $html = '<div class="text--secodary">' . $prolog . '</div>';
     $html .= '<div class="text--primary">' . $date_str . '</div>';
 
-    my $text = $prolog . ": " . $date_str;
+    my $text = $prolog  . $date_str;
 
     +return $text, html => $html;
 
