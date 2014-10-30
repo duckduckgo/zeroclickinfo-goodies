@@ -16,9 +16,9 @@ topics "trivia";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IndependenceDay.pm";
 attribution github => ["jarmokivekas", "Jarmo Kivekäs"],
             web => ["http://guttula.com", "Jarmo Kivekäs"];
+            github => ["YouriAckx", "Youri Ackx"],
+            twitter => "YouriAckx";
 
-# attribution github => ["YouriAckx", "Youri Ackx"],
-#             twitter => "YouriAckx";
 
 # Triggers
 triggers any => "independence day", "day of independence";
