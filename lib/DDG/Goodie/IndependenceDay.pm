@@ -157,7 +157,7 @@ my %data = (
     'rwanda' => [{date => "July 1st", year => "1962"}],
     'saint kitts and nevis' => [{date => "September 19th", year => "1983"}],
     'saint lucia' => [{date => "February 22th", year => "1979"}],
-    'saint vincent and' => [{date => "October 27th", year => "1979"}],
+    'saint vincent and the grenadines' => [{date => "October 27th", year => "1979"}],
     'samoa' => [{date => "January 1st", year => "1962"}],
     'são tomé and príncipe' => [{date => "July 12th", year => "1975"}],
     'senegal' => [{date => "April 4th", year => "1960"}],
@@ -200,6 +200,31 @@ my %data = (
 );
 
 
+# define aliases for some countries to improve hit rate
+my %alias_lookup = (
+    'antigua' => 'antigua and barbuda',
+    'arab emirates' => 'united arab emirates',
+    'barbuda' => 'antigua and barbuda',
+    'bosnia' => 'bosnia and herzegovina',
+    'democratic republic of congo' => 'democratic republic of the congo',
+    'gambia' => 'the gambia',
+    'grenadines' => 'saint vincent and the grenadines',
+    'guinea bissau' => 'guinea-bissau',
+    'herzegovina' => 'bosnia and herzegovina',
+    'macedonia' => 'republic of macedonia',
+    'nevis' => 'saint kitts and nevis',
+    'principe' => 'são tomé and príncipe',
+    'republic of congo' => 'republic of the congo',
+    'saint kitts' => 'saint kitts and nevis',
+    'saint vincent' => 'saint vincent and the grenadines',
+    'sao tome and principe' => 'são tomé and príncipe',
+    'sao tome' => 'são tomé and príncipe',
+    'tobago' => 'trinidad and tobago',
+    'trinidad' => 'trinidad and tobago',
+    'united states' => 'united states of america',
+    'usa' => 'united states of america',
+);
+
 
 # Handle statement
 handle query_clean => sub {
@@ -208,26 +233,49 @@ handle query_clean => sub {
     s/(national|independence of|independence|day of|day|when|what|is the|for|)//g;
     # delete the whitespace left from query noise (spaces between words)
     s/^\s*|\s*$//g;
-    # only the name of the country should be left in the string
-    return unless $data{$_};
+    # only the name of the country should be left in the string at this point
 
-    # Format the coutry name properly
-    my $country = $_;
+
+    # convert a possible alias into the proper name
+    my $country_key;
+    if ($alias_lookup{$_}){
+        $country_key = $alias_lookup{$_};
+    } else {
+        $country_key = $_;
+    }
+
+
+    # return if the string is not one of the countries
+    return unless $data{$country_key};
+
+
+    # Format the country name properly for display
+    my $country = $country_key;
     # Title Case The Country Name
     $country =~ s/(\w\S*)/\u\L$1/g;
-    # lowercase the words 'of' and 'the'
-    $country =~ s/The\s/the /;
-    $country =~ s/Of\s/of /;
+    # lowercase the words 'of', 'the' and 'and'
+    $country =~ s/\sThe\s/ the /;
+    $country =~ s/\sOf\s/ of /;
+    $country =~ s/\sAnd\s/ and /;
+
 
     # ouput string formatting
     my $prolog = $country . ' assumed independence on ';
-    my $date_str = $data{$_}[0]{'date'} . ', ' . $data{$_}[0]{'year'};
+    # date and year of independence
+    my $date_str = $data{$country_key}[0]{'date'} . ', ' . $data{$country_key}[0]{'year'};
+    # Some coutries have two dates, add it to the answer if a second one exists.
+    if ($data{$country_key}[1]){
+        $date_str .= ' and ' . $data{$country_key}[1]{'date'} . ', ' . $data{$country_key}[1]{'year'};
+    }
+
+
+    # html formatted answer
     my $html = '<div class="text--secodary">' . $prolog . '</div>';
     $html .= '<div class="text--primary">' . $date_str . '</div>';
-
+    # plain text answer
     my $text = $prolog  . $date_str;
 
-    +return $text, html => $html;
+    return $text, html => $html;
 
 };
 
