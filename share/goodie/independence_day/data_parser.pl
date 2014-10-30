@@ -63,7 +63,7 @@ package main;
 
 my $file = "wikipedia_html_table";
 my $parser = MyParser->new;
-print "\$data = (\n";
+print "my \%data = (\n";
 $parser->parse_file( $file );
 print ");\n";
 
