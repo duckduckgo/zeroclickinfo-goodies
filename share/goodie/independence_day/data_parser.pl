@@ -14,14 +14,20 @@ sub text{
     if($field eq 'country'){
         # lowercase country names
         $origtext = lc($origtext);
-        print "},\n";
-        print "\t\"$origtext\":{ ";
+        $origtext =~ s/(.*), (.*)/$2 $1/;
+        print "\t'$origtext' => [{";
     }elsif($field eq 'date'){
         # replace html entities with regular space
         $origtext =~ s/&#160;/ /g;
-        print "\"$field\": \"$origtext\", ";
+        # add proper suffix to day number
+        $origtext =~ s/ 1$/ 1st/;
+        $origtext =~ s/ 2$/ 2nd/;
+        $origtext =~ s/ 3$/ 3rd/;
+        $origtext =~ s/( [0987654321]+)$/$1th/;
+
+        print "$field => \"$origtext\", ";
     }elsif($field eq 'year'){
-        print "\"$field\": \"$origtext\"";
+        print "$field => \"$origtext\"}],\n";
     }
     # make sure we dont print unintended data form subsequent fields
     $field = '';
@@ -57,8 +63,8 @@ package main;
 
 my $file = "wikipedia_html_table";
 my $parser = MyParser->new;
-print "{\n";
+print "\$data = (\n";
 $parser->parse_file( $file );
-print "}}\n";
+print ");\n";
 
 
