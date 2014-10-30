@@ -23,6 +23,9 @@ ddg_goodie_test(
 	'gambia independence day' => test_zci('The Gambia assumed independence on February 18th, 1965', html=>qr/.*/),
 	'the gambia independence day' => test_zci('The Gambia assumed independence on February 18th, 1965', html=>qr/.*/),
 	'usa independence day' => test_zci('United States of America assumed independence on July 4th, 1776', html=>qr/.*/),
+	# data points with two dates
+	'independence day of panama' => test_zci('Panama assumed independence on November 28th, 1821 and November 3rd, 1903', html=>qr/.*/),
+	'independence day of armenia' => test_zci('Armenia assumed independence on May 28th, 1918 and September 21th, 1991', html=>qr/.*/),
 	# miscellaneous
 	'independence day of papua new guinea' => test_zci('Papua New Guinea assumed independence on September 16th, 1975', html=>qr/.*/),
 	'day of independence of sri lanka' => test_zci('Sri Lanka assumed independence on February 4th, 1948', html=>qr/.*/),
