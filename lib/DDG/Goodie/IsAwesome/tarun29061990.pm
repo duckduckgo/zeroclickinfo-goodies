@@ -1,7 +1,4 @@
 package DDG::Goodie::IsAwesome::tarun29061990;
-# ABSTRACT: Write an abstract here
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
 
 use DDG::Goodie;
 
