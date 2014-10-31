@@ -52,7 +52,7 @@ handle remainder => sub {
     @nums = sort { $a <=> $b } @nums;
     my $med;
     if ($len % 2 eq 0) {
-        # get the two middle numbers, since the 
+        # get the two middle numbers, since the
         # length is even, and calculate their mean
         $med = ($nums[$len/2] + $nums[$len/2-1])/2;
     } else {

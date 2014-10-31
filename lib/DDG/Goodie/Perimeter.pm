@@ -22,7 +22,7 @@ handle query_lc => sub {
     if ($_ =~ m/^(?:circumference (?:of\s|)(?:circle\s|)(\d+(?:\.\d+)?))|(?:(perimeter) (?:of\s|)(?:(square|circle|pentagon|hexagon|octagon) (\d+(?:\.\d+)?)|(rectangle) (\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)|(triangle) (\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)))$/) {
         my %polygons = ("pentagon" => 5, "hexagon" => 6, "octagon" => 8);
         my $shape = $1 ? "circle" : $3 || $5 || $8;
-        
+
         my $answerPrefix = "Perimeter of $shape: ";
         my $answer;
 
@@ -41,7 +41,7 @@ handle query_lc => sub {
         }
         }
 
-        
+
         return $answerPrefix.$answer;
     }
     return;

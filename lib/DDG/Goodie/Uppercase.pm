@@ -27,11 +27,11 @@ handle remainder => sub {
     return unless $_;
     my $upper = uc $_;
     my $text = $upper;
-    
+
     # Encode the variable before putting it in HTML.
     # There's no need to encode the $text variable because that gets encoded internally.
     $upper = html_enc($upper);
-    
+
     my $html = qq(<div class="zci--uppercase"><span class="text--primary">$upper</span></div>);
 
     return $text, html => $html;

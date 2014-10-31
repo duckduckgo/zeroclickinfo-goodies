@@ -298,7 +298,7 @@ subtest 'Dates' => sub {
         }
         restore_time();
     };
-    
+
     subtest 'Valid mixture of formatted and descriptive dates' => sub {
         set_fixed_time('2000-01-01T00:00:00Z');
         my %mixed_dates_to_test = (
@@ -320,13 +320,13 @@ subtest 'Dates' => sub {
             'next january'              => 978307200,
             'december'                  => 975628800,
         );
-        
+
         foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
             my $parsed_date_object = RoleTester::parse_datestring_to_date($test_mixed_date);
             isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
             is($parsed_date_object->epoch, $mixed_dates_to_test{$test_mixed_date}, ' ... represents the correct time.');
         }
-        
+
         restore_time();
     }
 };

@@ -57,8 +57,8 @@ handle remainder => sub {
         return if lc($word) eq 'system'; # don't respond to "dewey decimal system"
         my @results = grep(/$word/i, keys %types);
         return unless @results;
-        if (@results > 1) { 
-            $out_html .= "<tr>".line($types{$_})."</tr>" for @results; 
+        if (@results > 1) {
+            $out_html .= "<tr>".line($types{$_})."</tr>" for @results;
             $multi = 1;
         } else {
             my $num = $types{$results[0]};
@@ -71,7 +71,7 @@ handle remainder => sub {
     else {
         $_ = sprintf "%03d", $_;
 
-        unless ($multi) { 
+        unless ($multi) {
             $out .= single_format $_, lc((get_info($_) or return));
             $out_html = $out;
         }
@@ -86,7 +86,7 @@ handle remainder => sub {
             }
         }
     }
-    
+
     $out_html =~ s/\[\[([^\]]+?)\|(.+?)\]\]/<a href="\/\?q=$1">$2<\/a>/g;
     $out_html =~ s/\[\[(.+?)\]\]/<a href="\/?q=$1">$1<\/a>/g;
     $out =~ s/\[\[.+?\|(.+?)\]\]/$1/g;

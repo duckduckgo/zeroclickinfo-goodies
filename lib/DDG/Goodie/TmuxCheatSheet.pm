@@ -18,7 +18,7 @@ secondary_example_queries 'tmux quick reference', 'tmux guide';
 
 triggers startend => (
     'tmux cheat sheet',
-    'tmux cheatsheet', 
+    'tmux cheatsheet',
     'tmux commands',
     'tmux guide',
     'tmux help',
@@ -37,7 +37,7 @@ attribution github  => ["charles-l",            "Charles Saternos"],
             web     => ["http://charles-l.github.io", "Charles Saternos"];
 
 handle remainder => sub {
-    return 
+    return
         heading => 'Tmux Cheat Sheet',
         html    => html_cheat_sheet(),
         answer   => text_cheat_sheet(),

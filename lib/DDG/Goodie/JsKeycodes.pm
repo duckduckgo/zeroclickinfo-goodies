@@ -12,11 +12,11 @@ my $text;
 my $key;
 my $value;
 my %keys = ('backspace' => '8',
-		'tab' => '9', 
-		'enter' => '13', 
+		'tab' => '9',
+		'enter' => '13',
 		'shift' => '16',
-		'ctrl' => '17', 
-		'alt' => '18', 
+		'ctrl' => '17',
+		'alt' => '18',
 		'pause' => '19',
 		'break' => '19',
 		'caps lock' => '20',
@@ -26,7 +26,7 @@ my %keys = ('backspace' => '8',
 		'end' => '35',
 		'home' => '36',
 		'left arrow' => '37',
-		'up arrow' => '38', 
+		'up arrow' => '38',
 		'right arrow' => '39',
 		'down arrow' => '40',
 		'insert' => '45',
@@ -105,7 +105,7 @@ my %keys = ('backspace' => '8',
 
 my $header = share('header.txt')->slurp;
 my $footer = share('footer.txt')->slurp;
-         
+
 handle remainder => sub {
     my $query = lc($_);
 	return unless exists $keys{$query}
@@ -117,13 +117,13 @@ handle remainder => sub {
     $html .= "\n<tr><td class='c1'><b>$query</b></td>"
              . "\n<td class='c2'><b>$keys{$query}</b></td></tr>"
              if exists $keys{$query};
-	
+
 	foreach $key (sort keys %keys){
     	$html .= "\n<tr><td class='c1'>$key</td>"
                  . "\n<td class='c2'>$keys{$key}</td></tr>"
                  unless $key eq $query;
     };
-    
+
     $html .=  $footer;
     $text = "Keycode for $query: $keys{$query} (JavaScript)"
             unless not exists $keys{$query};

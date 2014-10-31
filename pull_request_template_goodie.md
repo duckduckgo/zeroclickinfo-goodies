@@ -42,8 +42,8 @@ Using this template will help us better understand your Instant Answer and assis
 Please place an 'X' where appropriate.
 
 ```
-[] Added metadata and attribution information
-[] Wrote test file and added to t/ directory
+[] Added metadata and attribution information (https://duck.co/duckduckhack/metadata)
+[] Wrote test file and added to t/ directory (https://duck.co/duckduckhack/goodie_tests)
 [] Verified that instant answer adheres to design guidelines (https://duck.co/duckduckhack/design_styleguide)
 [] Verified that instant answer adheres to code styleguide (https://duck.co/duckduckhack/code_styleguide)
 [] Tested cross-browser compatibility
