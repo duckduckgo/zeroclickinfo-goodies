@@ -128,7 +128,7 @@ searchbox:
   aliases:
     - searchbar
     - sitesearch
-  base_format: "Add a DuckDuckGo [search box] to your site! "
+  base_format: "Add a DuckDuckGo [search box] to your site!"
   info_url: https://duckduckgo.com/search_box
 settings:
   base_format: 'DuckDuckGo [settings]'
