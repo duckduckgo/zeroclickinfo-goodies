@@ -17,15 +17,15 @@ primary_example_queries 'vim help', 'vim cheat sheet', 'vim commands';
 secondary_example_queries 'vi quick reference', 'vi commands', 'vi guide';
 
 triggers startend => (
-    'vi cheat sheet', 
-    'vi cheatsheet', 
+    'vi cheat sheet',
+    'vi cheatsheet',
     'vi commands',
     'vi guide',
     'vi help',
     'vi quick reference',
     'vi reference',
-    'vim cheat sheet', 
-    'vim cheatsheet', 
+    'vim cheat sheet',
+    'vim cheatsheet',
     'vim commands',
     'vim guide',
     'vim help',
@@ -38,7 +38,7 @@ attribution github  => ["kablamo",            "Eric Johnson"],
             web     => ["http://kablamo.org", "Eric Johnson"];
 
 handle remainder => sub {
-    return 
+    return
         heading => 'Vim Cheat Sheet',
         html    => html_cheat_sheet(),
         answer  => text_cheat_sheet(),

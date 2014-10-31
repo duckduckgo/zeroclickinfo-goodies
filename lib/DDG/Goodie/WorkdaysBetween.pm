@@ -32,7 +32,7 @@ handle remainder => sub {
     my ($start_date, $end_date) = parse_all_datestrings_to_date($1, $2);
 
     return unless ($start_date && $end_date);
-    
+
     ($start_date, $end_date) = ($end_date, $start_date) if (DateTime->compare($start_date, $end_date) == 1);
 
     my $calendar = Date::Calendar->new($Profiles->{US});

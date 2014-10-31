@@ -16,7 +16,7 @@ zci answer_type => "ascii_conversion";
 zci is_cached => 1;
 
 handle remainder => sub {
-    my $ascii = pack("B*", $1) if /^(([0-1]{8})*)\s+(in|to)$/; 
+    my $ascii = pack("B*", $1) if /^(([0-1]{8})*)\s+(in|to)$/;
     return "$1 in binary is \"$ascii\" in ASCII" if $ascii;
     return;
 };

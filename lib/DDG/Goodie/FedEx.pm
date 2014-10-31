@@ -33,7 +33,7 @@ triggers query_nowhitespace_nodash => qr/
 
 # Fedex package tracking.
 #
-# For detailed specification: 
+# For detailed specification:
 # http://images.fedex.com/us/solutions/ppe/FedEx_Ground_Label_Layout_Specification.pdf
 #
 # For brief description see:

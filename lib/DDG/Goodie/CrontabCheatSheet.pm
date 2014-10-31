@@ -17,16 +17,16 @@ topics "computing", "geek", "programming", "sysadmin";
 primary_example_queries 'crontab help', 'crontab cheat sheet', 'crontab example';
 
 triggers startend => (
-    'cron cheat sheet', 
-    'cron cheatsheet', 
+    'cron cheat sheet',
+    'cron cheatsheet',
     'cron guide',
     'cron help',
     'cron quick reference',
     'cron reference',
     'cron example',
     'cron examples',
-    'crontab cheat sheet', 
-    'crontab cheatsheet', 
+    'crontab cheat sheet',
+    'crontab cheatsheet',
     'crontab guide',
     'crontab help',
     'crontab quick reference',
@@ -38,7 +38,7 @@ triggers startend => (
 attribution github  => ["nkorth", "Nathan Korth"];
 
 handle remainder => sub {
-    return 
+    return
         heading => 'Cron Cheat Sheet',
         html    => html_cheat_sheet(),
         answer  => text_cheat_sheet(),

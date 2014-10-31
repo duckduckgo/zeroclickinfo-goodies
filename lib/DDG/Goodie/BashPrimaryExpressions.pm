@@ -78,22 +78,22 @@ handle remainder => sub {
 
 	return unless ($op && $right_arg);
 	return unless $if_description{$op};
-	
+
 	my $text_output = $if_description{$op};
 	$text_output =~ s/^true/false/ if $not;
-	
+
 	my $html_output = html_enc($text_output);
 	my $html_right_arg = html_enc($right_arg);
-	
+
 	if ($left_arg) {
 	    my $html_left_arg = html_enc($left_arg);
 	    $text_output =~ s/ARG1/$left_arg/g;
-	    $html_output =~ s/ARG1/<pre>$html_left_arg<\/pre>/g;	
+	    $html_output =~ s/ARG1/<pre>$html_left_arg<\/pre>/g;
 	}
-	
+
 	$text_output =~ s/ARG2/$right_arg/g;
 	$html_output =~ s/ARG2/<pre>$html_right_arg<\/pre>/g;
-	
+
 	my $intro = "The Bash expression <pre>" . html_enc($_) . "</pre> results to";
 	return "$intro $text_output.", html => "$intro $html_output.", heading => html_enc($_) . " (Bash)";
 };

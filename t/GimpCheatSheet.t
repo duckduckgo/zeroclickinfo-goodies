@@ -18,8 +18,8 @@ my $test_zci = test_zci(
 
 ddg_goodie_test(
     [ 'DDG::Goodie::GimpCheatSheet' ],
-    "gimp cheat sheet"     => $test_zci, 
-    "gimp cheatsheet"      => $test_zci, 
+    "gimp cheat sheet"     => $test_zci,
+    "gimp cheatsheet"      => $test_zci,
     "gimp help"            => $test_zci,
     "gimp quick reference" => $test_zci,
     "gimp reference"       => $test_zci,

@@ -3,8 +3,8 @@ package DDG::Goodie::GenerateMAC;
 
 use DDG::Goodie;
 
-triggers startend => "generate mac addr", 
-                     "generate mac address", 
+triggers startend => "generate mac addr",
+                     "generate mac address",
                      "random mac addr",
                      "random mac address",
                      "mac address generator",

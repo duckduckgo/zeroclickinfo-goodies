@@ -25,6 +25,13 @@ app:
     - mobile
   base_format: "DuckDuckGo's [mobile app]"
   info_url: https://duckduckgo.com/app/
+bangs:
+  aliases:
+    - bang
+    - newbang
+    - newbangs
+  base_format: "Learn more about DuckDuckGo's [!bangs]. You can submit new ones too!"
+  info_url: https://duck.co/help/features/bangs
 blog:
   base_format: "DuckDuckGo's [official blog]"
   info_url: https://duck.co/blog
@@ -117,6 +124,12 @@ roboduck:
 safari:
   base_format: "DuckDuckGo's [Safari help page]"
   info_url: https://duck.co/help/desktop/safari
+searchbox:
+  aliases:
+    - searchbar
+    - sitesearch
+  base_format: "Add a DuckDuckGo [search box] to your site!"
+  info_url: https://duckduckgo.com/search_box
 settings:
   base_format: 'DuckDuckGo [settings]'
   info_url: https://duckduckgo.com/settings
@@ -138,6 +151,13 @@ swag:
     - merchandise
     - shirt
     - shirts
+    - tshirt
+    - tshirts
+    - t-shirt
+    - t-shirts
+    - tee
+    - tees
+    - t
     - sticker
     - stickers
   base_format: 'Thanks for the support! Check out the [DuckDuckGo store] for t-shirts, stickers, and other items'

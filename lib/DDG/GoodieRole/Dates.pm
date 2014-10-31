@@ -7,7 +7,9 @@ use warnings;
 use Moo::Role;
 
 use DateTime;
+use Devel::StackTrace;
 use List::Util qw( first );
+use Package::Stash;
 use Try::Tiny;
 
 # This appears to parse most/all of the big ones, however it doesn't present a regex
@@ -400,13 +402,36 @@ sub parse_all_datestrings_to_date {
     return @dates_to_return;
 }
 
+sub _get_timezone {
+    my $default_tz = 'UTC';    # If any of the below fails for some reason, we'll go with this
+
+    my $tz = try {
+        # Dig through how we got here, ignoring
+        my $hit = 0;
+        # We only care about the most recent caller who is some kinda goodie-looking thing.
+        my $frame_filter = sub {
+            my $frame_info = shift;
+            if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) { $hit++; return 1; }
+            else                                                       { return 0; }
+        };
+        my $trace = Devel::StackTrace->new(
+            frame_filter => $frame_filter,
+            no_args      => 1,
+        );
+        my $stash = Package::Stash->new($trace->frame(0)->package);    # Get the package info for our caller.
+        ${$stash->get_symbol('$loc')}->time_zone;                      # Give back the time_zone in the $loc variable on their package
+    };
+
+    return $tz || $default_tz;
+}
+
 # Parses a really vague description and basically guesses
 sub parse_descriptive_datestring_to_date {
     my ($string) = @_;
 
     return unless (defined $string && $string =~ qr/^$descriptive_datestring_matches$/);
 
-    my $now   = DateTime->now();
+    my $now   = DateTime->now(time_zone => _get_timezone());
     my $month = $+{'m'};           # Set in each alternative match.
 
     if (my $day = $+{'d'}) {
@@ -414,9 +439,6 @@ sub parse_descriptive_datestring_to_date {
     } elsif (my $relative_dir = $+{'q'}) {
         my $tmp_date = parse_datestring_to_date("01 $month " . $now->year());
 
-        # for "next <month>" if $tmp_date is in the past then we need to add a year
-        $tmp_date->add(years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
-        
         # for "last <month>" if $tmp_date is in the future then we need to subtract a year
         $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
         return $tmp_date;

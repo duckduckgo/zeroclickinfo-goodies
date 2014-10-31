@@ -24,7 +24,7 @@ ddg_goodie_test(
             html => 'Okay. <br><a href="http://xkcd.com/149/">More at xkcd</a>'
         ),
     'blahblah make me a sandwich' => undef,
-    '0 make me a sandwich' => undef,  
+    '0 make me a sandwich' => undef,
 );
 
 done_testing;

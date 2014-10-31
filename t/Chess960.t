@@ -12,7 +12,7 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::Chess960
 	)],
-    map { 
+    map {
         $_ => test_zci(qr/^Position \d{1,3}:
 White: ([BKNQRP] ?){1,8}
        ([BKNQRP] ?){0,8}

@@ -38,7 +38,7 @@ ddg_goodie_test(
     #Should not trigger for impossible latitudes and longitudes
     '95º 4\' N as decimal' => undef,
     'convert 293.11 degrees to dms' => undef,
-    
+
     #Should not trigger for impossible combinations of sign and
     # cardinal direction
     '-71º 12\' 51" S as a decimal latitude' => undef,

@@ -13,7 +13,7 @@ ddg_goodie_test(
     [
         'DDG::Goodie::UltimateAnswer'
     ],
-    
+
     'what is the answer to the ultimate question of life the universe and everything'=>
         test_zci(
             'Forty-two', html => '<span class="zci--ultanswer">Forty-two</span>'

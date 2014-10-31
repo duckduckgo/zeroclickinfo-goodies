@@ -60,9 +60,9 @@ handle query_nowhitespace_nodash => sub {
         my $length     = scalar(@chars);
         my $char_count = 0;
         my $sum        = 0;
-        
+
         foreach my $char (@chars) {
-            $char_count++;  
+            $char_count++;
 
             next if $char_count < 3;
 

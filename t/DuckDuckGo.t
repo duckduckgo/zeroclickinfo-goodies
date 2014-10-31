@@ -32,10 +32,8 @@ my @zci_result = (
     html => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results."
 );
 
-ddg_goodie_test([qw(
-          DDG::Goodie::DuckDuckGo
-          )
-    ],
+ddg_goodie_test(
+    [qw( DDG::Goodie::DuckDuckGo )],
     'duckduckgo Zero-Click Info'            => test_zci(@zci_result),
     'ddg zeroclick'                         => test_zci(@zci_result),
     'duckduckgo help'                       => test_zci(@help_result),
@@ -56,6 +54,9 @@ ddg_goodie_test([qw(
     "tor on duck duck go"                   => test_zci(@tor_result),
     "duckduckgo onion service"              => test_zci(@tor_result),
     "ddg in tor"                            => test_zci(@tor_result),
+    'duckduckgo t-shirt'                    => test_zci(@merch_result),
+    'ddg t shirts'                          => test_zci(@merch_result),
+    'duck duck go tee'                      => test_zci(@merch_result),
     irc                                     => undef,
 );
 
