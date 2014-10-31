@@ -62,7 +62,7 @@ handle query_clean => sub {
 
 
     # ouput string formatting
-    my $prolog = $country . ' assumed independence on ';
+    my $prolog = 'Independence Day of ' . $country;
     # date and year of independence
     my $date_str = $data->{$country_key}[0]{'date'} . ', ' . $data->{$country_key}[0]{'year'};
     # Some coutries have two dates, add it to the answer if a second one exists.
@@ -72,8 +72,10 @@ handle query_clean => sub {
 
 
     # html formatted answer
-    my $html = '<div class="text--secondary">' . $prolog . '</div>';
+    my $html = '<div class="zci--independence-day">';
     $html .= '<div class="text--primary">' . $date_str . '</div>';
+    $html .= '<div class="text--secondary">' . $prolog . '</div>';
+    $html .= '</div>';
     # plain text answer
     my $text = $prolog  . $date_str;
 
