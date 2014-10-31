@@ -77,7 +77,7 @@ handle query_clean => sub {
     $html .= '<div class="text--secondary">' . $prolog . '</div>';
     $html .= '</div>';
     # plain text answer
-    my $text = $prolog  . $date_str;
+    my $text = $prolog  . ' ' . $date_str;
 
     return $text, html => $html;
 
