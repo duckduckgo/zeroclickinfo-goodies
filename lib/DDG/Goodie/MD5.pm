@@ -18,7 +18,7 @@ description 'Calculate the MD5 digest of a string.';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MD5.pm';
 category 'calculations';
 topics 'cryptography';
-attribution web => [ 'http://www.guttula.com'],
+attribution web => 'http://www.guttula.com',
             github => [ 'jarmokivekas', 'Jarmo Kivekäs'];
 
 
