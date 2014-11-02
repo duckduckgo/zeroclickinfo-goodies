@@ -39,6 +39,7 @@ handle remainder => sub {
     my $highlightDay = 0;                  # Initialized, but won't match, by default.
     $query =~ s/$filler_words_regex//g;    # Remove filler words.
     $query =~ s/\s{2,}/ /g;                # Tighten up any extra spaces we may have left.
+    $query =~ s/'s//g;                     # Remove 's for possessives.
     $query =~ s/^\s+|\s+$//g;              # Trim outside spaces.
     if ($query) {
         my ($date_string) = $query =~ qr#^($datestring_regex)$#i;    # Extract any datestring from the query.
