@@ -103,31 +103,31 @@ ddg_goodie_test(
         html => '-ANY-'
     ),
     '11:22am cest in my timezone' =>
-        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is 5:22 AM $test_location_tz/,
         html => '-ANY-'
     ),
     '11:22am cest in localtime' =>
-        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is 5:22 AM $test_location_tz/,
         html => '-ANY-'
     ),
     '11:22am cest in my local timezone' =>
-        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is 5:22 AM $test_location_tz/,
         html => '-ANY-'
     ),
     '12pm my time in CEST' =>
-        test_zci(qr/Noon $test_location_tz is [67]:00 PM \(CEST, UTC\+2\)./,
+        test_zci(qr/Noon $test_location_tz is 6:00 PM \(CEST, UTC\+2\)./,
         html => '-ANY-'
     ),
     '12pm local timezone in CEST' =>
-        test_zci(qr/Noon $test_location_tz is [67]:00 PM \(CEST, UTC\+2\)./,
+        test_zci(qr/Noon $test_location_tz is 6:00 PM \(CEST, UTC\+2\)./,
         html => '-ANY-'
     ),
     '12am my timezone in UTC' =>
-        test_zci(qr/Midnight $test_location_tz is [45]:00 AM \(UTC\)./,
+        test_zci(qr/Midnight $test_location_tz is 4:00 AM \(UTC\)./,
         html => '-ANY-'
     ),
     '12am local time in UTC' =>
-        test_zci(qr/Midnight $test_location_tz is [45]:00 AM \(UTC\)./,
+        test_zci(qr/Midnight $test_location_tz is 4:00 AM \(UTC\)./,
         html => '-ANY-'
     ),
 );
@@ -143,31 +143,31 @@ ddg_goodie_test(
         html => '-ANY-'
     ),
     '11:22am cest in my timezone' =>
-        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is 4:22 AM $test_location_tz/,
         html => '-ANY-'
     ),
     '11:22am cest in localtime' =>
-        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is 4:22 AM $test_location_tz/,
         html => '-ANY-'
     ),
     '11:22am cest in my local timezone' =>
-        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is 4:22 AM $test_location_tz/,
         html => '-ANY-'
     ),
     '12pm my time in CEST' =>
-        test_zci(qr/Noon $test_location_tz is [67]:00 PM \(CEST, UTC\+2\)./,
+        test_zci(qr/Noon $test_location_tz is 7:00 PM \(CEST, UTC\+2\)./,
         html => '-ANY-'
     ),
     '12pm local timezone in CEST' =>
-        test_zci(qr/Noon $test_location_tz is [67]:00 PM \(CEST, UTC\+2\)./,
+        test_zci(qr/Noon $test_location_tz is 7:00 PM \(CEST, UTC\+2\)./,
         html => '-ANY-'
     ),
     '12am my timezone in UTC' =>
-        test_zci(qr/Midnight $test_location_tz is [45]:00 AM \(UTC\)./,
+        test_zci(qr/Midnight $test_location_tz is 5:00 AM \(UTC\)./,
         html => '-ANY-'
     ),
     '12am local time in UTC' =>
-        test_zci(qr/Midnight $test_location_tz is [45]:00 AM \(UTC\)./,
+        test_zci(qr/Midnight $test_location_tz is 5:00 AM \(UTC\)./,
         html => '-ANY-'
     ),
 );
