@@ -439,6 +439,8 @@ sub parse_descriptive_datestring_to_date {
     } elsif (my $relative_dir = $+{'q'}) {
         my $tmp_date = parse_datestring_to_date("01 $month " . $now->year());
 
+        # for "next <month>"
+        $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
         # for "last <month>" if $tmp_date is in the future then we need to subtract a year
         $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
         return $tmp_date;
