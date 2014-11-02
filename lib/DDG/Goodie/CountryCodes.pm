@@ -24,24 +24,35 @@ attribution github  => ["killerfish", "Usman Raza"],
 
 triggers any => 'country code','iso code','iso 3166';
 
+Locale::Country::add_country_alias('Antigua and Barbuda'  => 'Antigua');
+Locale::Country::add_country_alias('Antigua and Barbuda'  => 'Barbuda');
+Locale::Country::add_country_alias('Russian Federation'   => 'Russia');
+Locale::Country::add_country_alias('Trinidad and Tobago'  => 'Tobago');
+Locale::Country::add_country_alias('Trinidad and Tobago'  => 'Trinidad');
+Locale::Country::add_country_alias('Vatican City'         => 'Vatican');
+Locale::Country::add_country_alias('Virgin Islands, U.S.' => 'US Virgin Islands');
+
 handle remainder => sub {
-    return unless /^([a-zA-Z]+)*\s*(?:(2|3|two|three)\sletter)?$|^(?:(2|3|two|three)\sletter)?\s*(?:of|for)?\s*([a-zA-Z]+)*$/;
-    
+    return unless /^([a-zA-Z]+)*\s*(((2|3|two|three)\sletter)|numerical)?$|^(((2|3|two|three)\sletter)|numerical)?\s*(?:of|for)?\s*([a-zA-Z]+)*$/;
     my (@answer, $expr);
     
     # Get the user input which could be a country or code like France or fra or fr
-    my $query = $4;
+    my $query = $8;
     $query = $1 if $1;
-
+    
     # Default to alpha-2 if user has not specified Codeset
-    $expr = '2' unless $expr = ($2 || $3);
+    $expr = '2' unless $expr = ($4 || $7 || $2 || $5);
 
-    if($expr && ($expr eq '2' || $expr eq 'two' )) {
+    if($expr && ($expr eq '2' || $expr eq 'two')) {
         @answer = result($query, "alpha-2");
     }
  
-    if($expr && ($expr eq '3' || $expr eq 'three' )) {
+    if($expr && ($expr eq '3' || $expr eq 'three')) {
         @answer = result($query, "alpha-3");
+    }
+    
+    if($expr && ($expr eq 'numerical')) {
+        @answer = result($query, "numeric");
     }
     
     # Return if user input was neither country or code
