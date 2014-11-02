@@ -473,7 +473,7 @@ sub parse_descriptive_datestring_to_date {
         # single named months
         # "january" in january means the current month
         # otherwise it always means the coming month of that name, be it this year or next year
-        return parse_datestring_to_date("01 " . $now->month() . " " . $now->year()) if lc($now->month_name()) eq lc($month);
+        return parse_datestring_to_date("01 " . $now->month_name() . " " . $now->year()) if lc($now->month_name()) eq lc($month);
         my $this_years_month = parse_datestring_to_date("01 $month " . $now->year());
         $this_years_month->add(years => 1) if (DateTime->compare($this_years_month, $now) == -1);
         return $this_years_month;
