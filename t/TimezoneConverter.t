@@ -4,11 +4,10 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use Test::MockTime qw( :all );
 
 zci answer_type => 'timezone_converter';
 zci is_cached   => 1;
-
-my $test_location_tz = qr/\(E[DS]T, UTC-[45]\)/;
 
 ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
@@ -89,6 +88,15 @@ ddg_goodie_test(
         test_zci('11:22 AM (EST, UTC-5) is 4:22 PM (UTC).',
         html => qr/.*11:22 AM.*\(EST, UTC-5\) is.*4:22 PM.*\(UTC\)./
     ),
+    # Intentional non-answers
+    '12 in binary' => undef,
+);
+
+# Summertime
+my $test_location_tz = qr/\(EDT, UTC-4\)/;
+set_fixed_time("2014-10-14T00:00:00");
+ddg_goodie_test(
+    ['DDG::Goodie::TimezoneConverter'],
     # Location-specific tests (variable with DST)
     '13:00 GMT in my time' =>
         test_zci(qr/13:00 \(GMT\) is 9:00 $test_location_tz/,
@@ -122,8 +130,47 @@ ddg_goodie_test(
         test_zci(qr/Midnight $test_location_tz is [45]:00 AM \(UTC\)./,
         html => '-ANY-'
     ),
-    # Intentional non-answers
-    '12 in binary' => undef,
+);
+restore_time();
+
+set_fixed_time("2014-11-02T11:00:00");
+$test_location_tz = qr/\(EST, UTC-5\)/;
+ddg_goodie_test(
+    ['DDG::Goodie::TimezoneConverter'],
+    # Location-specific tests (variable with DST)
+    '13:00 GMT in my time' =>
+        test_zci(qr/13:00 \(GMT\) is 8:00 $test_location_tz/,
+        html => '-ANY-'
+    ),
+    '11:22am cest in my timezone' =>
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        html => '-ANY-'
+    ),
+    '11:22am cest in localtime' =>
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        html => '-ANY-'
+    ),
+    '11:22am cest in my local timezone' =>
+        test_zci(qr/11:22 AM \(CEST, UTC\+2\) is [54]:22 AM $test_location_tz/,
+        html => '-ANY-'
+    ),
+    '12pm my time in CEST' =>
+        test_zci(qr/Noon $test_location_tz is [67]:00 PM \(CEST, UTC\+2\)./,
+        html => '-ANY-'
+    ),
+    '12pm local timezone in CEST' =>
+        test_zci(qr/Noon $test_location_tz is [67]:00 PM \(CEST, UTC\+2\)./,
+        html => '-ANY-'
+    ),
+    '12am my timezone in UTC' =>
+        test_zci(qr/Midnight $test_location_tz is [45]:00 AM \(UTC\)./,
+        html => '-ANY-'
+    ),
+    '12am local time in UTC' =>
+        test_zci(qr/Midnight $test_location_tz is [45]:00 AM \(UTC\)./,
+        html => '-ANY-'
+    ),
 );
 
+restore_time();
 done_testing;
