@@ -9,7 +9,7 @@ use DDG::Test::Goodie;
 zci answer_type => "country_codes";
 zci is_cached   => 1;
 
-my $text = "<a href=\"https://en.wikipedia.org/wiki/ISO_3166-1\">ISO 3166</a>:";
+my $text = qq(<a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>:);
 
 ddg_goodie_test(
         [ 'DDG::Goodie::CountryCodes' ],
