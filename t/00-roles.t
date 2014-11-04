@@ -6,7 +6,7 @@ use warnings;
 use Test::MockTime qw( :all );
 use Test::Most;
 
-use DateTime;
+use DDG::Test::Location;
 
 subtest 'NumberStyler' => sub {
 
@@ -261,6 +261,7 @@ subtest 'Dates' => sub {
             '2000-08-01T00:00:00Z' => {
                 'next december' => '01 Dec 2000',
                 'last january'  => '01 Jan 2000',
+                'this year'     => '01 Aug 2000',
                 'june'          => '01 Jun 2001',
                 'december 2015' => '01 Dec 2015',
                 'june 2000'     => '01 Jun 2000',
@@ -268,6 +269,7 @@ subtest 'Dates' => sub {
                 'next jan'      => '01 Jan 2001',
                 'last jan'      => '01 Jan 2000',
                 'feb 2038'      => '01 Feb 2038',
+                'next day'      => '02 Aug 2000',
             },
             '2015-12-01T00:00:00Z' => {
                 'next december' => '01 Dec 2016',
@@ -279,18 +281,58 @@ subtest 'Dates' => sub {
                 'next jan'      => '01 Jan 2016',
                 'last jan'      => '01 Jan 2015',
                 'feb 2038'      => '01 Feb 2038',
+                'now'           => '01 Dec 2015',
+                'today'         => '01 Dec 2015',
+                'current day'   => '01 Dec 2015',
+                'next month'    => '01 Jan 2016',
+                'this week'     => '01 Dec 2015',
+                '1 month ago'   => '01 Nov 2015',
+                '2 years ago'   => '01 Dec 2013'
             },
             '2000-01-01T00:00:00Z' => {
-                'feb 21st'       => '21 Feb 2000',
-                '11th feb'       => '11 Feb 2000',
-                'march 13'       => '13 Mar 2000',
-                '12 march'       => '12 Mar 2000',
-            }
+                'feb 21st'          => '21 Feb 2000',
+                '11th feb'          => '11 Feb 2000',
+                'march 13'          => '13 Mar 2000',
+                '12 march'          => '12 Mar 2000',
+                'next week'         => '08 Jan 2000',
+                'last week'         => '25 Dec 1999',
+                'tomorrow'          => '02 Jan 2000',
+                'yesterday'         => '31 Dec 1999',
+                'last year'         => '01 Jan 1999',
+                'next year'         => '01 Jan 2001',
+                'in a day'          => '02 Jan 2000',
+                'in a week'         => '08 Jan 2000',
+                'in a month'        => '01 Feb 2000',
+                'in a year'         => '01 Jan 2001',
+                'in 1 day'          => '02 Jan 2000',
+                'in 2 weeks'        => '15 Jan 2000',
+                'in 3 months'       => '01 Apr 2000',
+            },
+            '2014-10-08T00:00:00Z' => {
+                'next week'         => '15 Oct 2014',
+                'this week'         => '08 Oct 2014',
+                'last week'         => '01 Oct 2014',
+                'next month'        => '08 Nov 2014',
+                'this month'        => '08 Oct 2014',
+                'last month'        => '08 Sep 2014',
+                'next year'         => '08 Oct 2015',
+                'this year'         => '08 Oct 2014',
+                'last year'         => '08 Oct 2013',
+                'december 2015'     => '01 Dec 2015',
+                'march 13'          => '13 Mar 2014',
+                'in a weeks time'   => '15 Oct 2014',
+                'a month ago'       => '01 Dec 1999',
+                '2 months ago'      => '08 Aug 2014',
+                'in 2 years'        => '08 Oct 2016',
+                'a week ago'        => '01 Oct 2014',
+                'a month ago'       => '08 Sep 2014',
+            },
         );
         foreach my $query_time (sort keys %time_strings) {
             set_fixed_time($query_time);
             my %strings = %{$time_strings{$query_time}};
             foreach my $test_date (sort keys %strings) {
+                like($test_date, qr/^$test_descriptive_datestring_regex$/, "$test_date matches the descriptive_datestring_regex");
                 my $result = DatesRoleTester::parse_descriptive_datestring_to_date($test_date);
                 isa_ok($result, 'DateTime', $test_date);
                 is(DatesRoleTester::date_output_string($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
@@ -328,7 +370,31 @@ subtest 'Dates' => sub {
         }
 
         restore_time();
-    }
+    };
+
+    subtest 'Relative dates with location' => sub {
+        my $test_location = test_location('in');
+        {
+            package DDG::Goodie::FakerDater;
+            use Moo;
+            with 'DDG::GoodieRole::Dates';
+            our $loc = $test_location;
+            sub pds { shift; parse_datestring_to_date(@_); }
+            1;
+        }
+
+        my $with_loc = new_ok('DDG::Goodie::FakerDater', [], 'With location');
+        set_fixed_time('2013-12-31T23:00:00Z');
+        my $today_obj;
+        lives_ok { $today_obj = $with_loc->pds('today'); } 'Parsed out today at just before midnight UTC NYE, 2013';
+        is($today_obj->time_zone_long_name, 'Asia/Kolkata', '... in our local time zone');
+        is($today_obj->year,                2014,           '... where it is already 2014');
+        is($today_obj->hms,                 '04:30:00',     '... for about 4.5 hours');
+        is($today_obj->offset / 3600,       5.5,            '... which seems just about right.');
+
+        restore_time();
+    };
+
 };
 
 subtest 'ImageLoader' => sub {
