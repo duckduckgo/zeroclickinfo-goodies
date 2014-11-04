@@ -44,8 +44,8 @@ ddg_goodie_test(
     'burger minecraft' => undef,
     'crafting burgers in minecraft' => undef,
     'how do i craft a cheeseburger in minecraft' => undef,
-	'minecraft download' => undef,
-	'cool texture packs for minecraft' => undef,
+    'minecraft download' => undef,
+    'cool texture packs for minecraft' => undef,
 );
 
 done_testing;
