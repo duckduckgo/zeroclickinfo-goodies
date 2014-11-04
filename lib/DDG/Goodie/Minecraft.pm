@@ -27,25 +27,12 @@ my $json = share('crafting-guide.json')->slurp;
 my $decoded = decode_json($json);
 my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
 
-# Create a hash with good words.
-sub populate_good_words() {
-    my @good_words;
-
-    foreach my $recipe (keys %recipes) {
-        if ($recipe !~ /\s/) {
-            push (@good_words, $recipe);
-        } else {
-            my @words = split /\s+/, $recipe;
-            push (@good_words, @words);
-        }
-    }
-
-    return map { $_ => 1 } @good_words;
-}
-
-my %bad_words = qw(download server tutorial mod mods skins skin texture pack packs project projects);
-my %good_words = populate_good_words();
-my $okay_words = qr/\b\s*crafting\s*\b|\b\s*a\s*\b/i;
+# Good words: All the words that recipe names consist of.
+# Okay words: Words that are in the good words list, but also could be a part of the query.
+# Bad words: Words related to Minecraft, but not related to recipes.
+my %good_words = map { $_ => 1 } map { split /\s+/ } (keys %recipes);
+my %okay_words = map { $_ => 1 } (qw(a crafting));
+my %bad_words = map { $_ => 1 } (qw(download server tutorial mod mods skins skin texture pack packs project projects));
 
 # Creates the HTML.
 sub make_html {
@@ -64,30 +51,21 @@ sub make_html {
 
 handle remainder => sub {
     my @query = split /\s+/, lc $_; # Split on whitespaces.
-    my $lookup = '';
+    my @lookup;
 
     # Loop through the query.
     foreach (@query) {
         return if(exists($bad_words{$_})); # Not looking for a recipe.
-        $lookup .= $_ . ' ' if(exists($good_words{$_})); # Words exists in a recipe, add it.
+        push (@lookup, $_) if(exists($good_words{$_})); # Word exists in a recipe, add it.
     }
 
-    chop $lookup; # Remove trailing whitespace.
-
-    my $recipe = $recipes{$lookup}; # Check if this actually is a recipe.
-
-    # No recipe found, let's try again without the okay words.
-    if (!$recipe) {
-        $lookup =~ s/$okay_words//g;
-        $recipe = $recipes{$lookup};
-        return unless $recipe; # Definitely not a recipe.
-    }
+    my $recipe = $recipes{join(' ', @lookup)} || $recipes{join(' ', grep { !$okay_words{$_} } @lookup)};
+    return unless $recipe;
 
     # Recipe found, let's return an answer.
-    my $plain = $recipe->{'name'} . ' are made from ' . $recipe->{'ingredients'} . '.';
+    my $plain = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
     my $html = make_html($recipe);
 
     return $plain, html => $html;
-    return;
 };
 1;
