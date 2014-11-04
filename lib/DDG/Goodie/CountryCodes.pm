@@ -38,7 +38,7 @@ handle remainder => sub {
     my ($query, $expr);
 
     # For user queries like 3 letter country code of China, two letter iso code japan
-    if(/^((?:(2|3|two|three)\sletter)|numerical)?\s*(?:of|for\s+)?(\S+(?:\s+\S+)*)$/) {
+    if(/^((?:(2|3|two|three)\sletter)|numerical)?\s*(?:of|for)?\s*(\S+(?:\s+\S+)*)$/) {
 
         # Get the user entered country name or code e.g China, japan
         $query = $3;
