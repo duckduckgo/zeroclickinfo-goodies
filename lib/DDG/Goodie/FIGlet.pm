@@ -1,6 +1,6 @@
 package DDG::Goodie::FIGlet;
 # ABSTRACT: Uses FIGlet to make large letters out of ordinary text.
-
+use utf8;
 use DDG::Goodie;
 use Text::FIGlet;
 
