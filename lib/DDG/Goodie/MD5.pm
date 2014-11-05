@@ -1,5 +1,6 @@
 package DDG::Goodie::MD5;
 # ABSTRACT: Calculate the MD5 digest of a string.
+
 use utf8;
 use DDG::Goodie;
 use Digest::MD5 qw(md5_base64 md5_hex);
