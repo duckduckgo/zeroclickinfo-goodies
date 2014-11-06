@@ -3,6 +3,7 @@ package DDG::Goodie::Minecraft;
 
 use DDG::Goodie;
 use JSON;
+use utf8;
 
 triggers startend => "minecraft";
 
