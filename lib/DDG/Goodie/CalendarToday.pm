@@ -76,8 +76,8 @@ sub format_result {
 
     # Print heading
     my $rText = "\n";
-    my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="http://duckduckgo.com/?q=calendar+'.$previous->strftime("%B").'">'. html_enc("<") . '</a></span><span class="calendar__header"><b>';
-    $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="http://duckduckgo.com/?q=calendar+'.$next->strftime("%B").'">'. html_enc(">") . '</a></span></th>';
+    my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="http://duckduckgo.com/?q=calendar+'.$previous->strftime("%B %Y").'">'. html_enc("<") . '</a></span><span class="calendar__header"><b>';
+    $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="http://duckduckgo.com/?q=calendar+'.$next->strftime("%B %Y").'">'. html_enc(">") . '</a></span></th>';
     $rHtml .= '</tr><tr>';
 
     for my $dayHeading (@weekDays) {
