@@ -84,63 +84,60 @@ handle query_nowhitespace => sub {
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
-    if ($query !~ /[xX]\s*[\*\%\+\-\/\^]/ && $query !~ /^-?[\d]{2,3}\.\d+,\s?-?[\d]{2,3}\.\d+$/) {
+    # Grab expression.
+    my $tmp_expr = spacing($query, 1);
 
-        # Grab expression.
-        my $tmp_expr = spacing($query, 1);
+    return if $tmp_expr eq $query;     # If it didn't get spaced out, there are no operations to be done.
 
-        # First replace named operations with their computable equivalents.
-        while (my ($name, $operation) = each %named_operations) {
-            $tmp_expr =~ s# $name # $operation #xig;
-        }
-
-        $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
-        $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/xg;    # E == *10^n
-        $tmp_expr =~ s/\$//g;                                              # Remove $s.
-        $tmp_expr =~ s/=$//;                                               # Drop =.
-
-        # Now sub in constants
-        while (my ($name, $constant) = each %named_constants) {
-            $tmp_expr =~ s# (\d+?)\s+$name # $1 * $constant #xig;
-            $tmp_expr =~ s#\b$name\b# $constant #ig;
-        }
-
-        my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
-        my $style = number_style_for(@numbers);
-        return unless $style;
-
-        $tmp_expr = $style->for_computation($tmp_expr);
-        # Using functions makes us want answers with more precision than our inputs indicate.
-        my $precision = ($query =~ $funcy) ? undef : max(map { $style->precision_of($_) } @numbers);
-
-        my $tmp_result;
-        eval {
-            # e.g. sin(100000)/100000 completely makes this go haywire.
-            alarm(1);
-            $tmp_result = eval($tmp_expr);
-            alarm(0);    # Assume the string processing will be "fast enough"
-        };
-
-        # Guard against non-result results
-        return unless (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result ne '');
-        # Try to determine if the result is supposed to be 0, but isn't because of FP issues.
-        # If there's a defined precision, let sprintf worry about it.
-        # Otherwise, we'll say that smaller than 1e-14 was supposed to be zero.
-        # -14 selected to account for the result of sin(pi)
-        $tmp_result = 0 if (not defined $precision and ($tmp_result =~ /e\-(?<exp>\d+)$/ and $+{exp} > 14));
-        $tmp_result = sprintf('%0.' . $precision . 'f', $tmp_result) if ($precision);
-        # Dollars.
-        $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
-
-        my $results = prepare_for_display($query, $tmp_result, $style);
-
-        return if $results->{text} =~ /^\s/;
-        return $results->{text},
-          html    => $results->{html},
-          heading => "Calculator";
+    # First replace named operations with their computable equivalents.
+    while (my ($name, $operation) = each %named_operations) {
+        $tmp_expr =~ s# $name # $operation #xig;
     }
 
-    return;
+    $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
+    $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/xg;    # E == *10^n
+    $tmp_expr =~ s/\$//g;                                              # Remove $s.
+    $tmp_expr =~ s/=$//;                                               # Drop =.
+
+    # Now sub in constants
+    while (my ($name, $constant) = each %named_constants) {
+        $tmp_expr =~ s# (\d+?)\s+$name # $1 * $constant #xig;
+        $tmp_expr =~ s#\b$name\b# $constant #ig;
+    }
+
+    my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
+    my $style = number_style_for(@numbers);
+    return unless $style;
+
+    $tmp_expr = $style->for_computation($tmp_expr);
+    # Using functions makes us want answers with more precision than our inputs indicate.
+    my $precision = ($query =~ $funcy) ? undef : max(map { $style->precision_of($_) } @numbers);
+
+    my $tmp_result;
+    eval {
+        # e.g. sin(100000)/100000 completely makes this go haywire.
+        alarm(1);
+        $tmp_result = eval($tmp_expr);
+        alarm(0);    # Assume the string processing will be "fast enough"
+    };
+
+    # Guard against non-result results
+    return unless (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result ne '');
+    # Try to determine if the result is supposed to be 0, but isn't because of FP issues.
+    # If there's a defined precision, let sprintf worry about it.
+    # Otherwise, we'll say that smaller than 1e-14 was supposed to be zero.
+    # -14 selected to account for the result of sin(pi)
+    $tmp_result = 0 if (not defined $precision and ($tmp_result =~ /e\-(?<exp>\d+)$/ and $+{exp} > 14));
+    $tmp_result = sprintf('%0.' . $precision . 'f', $tmp_result) if ($precision);
+    # Dollars.
+    $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
+
+    my $results = prepare_for_display($query, $tmp_result, $style);
+
+    return if $results->{text} =~ /^\s/;
+    return $results->{text},
+      html    => $results->{html},
+      heading => "Calculator";
 };
 
 sub prepare_for_display {
@@ -186,7 +183,7 @@ sub spacing {
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
-    $text =~ s/([\(\)\$])/ $1 /g if ($space_for_parse);
+    $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);
 
     return $text;
 }

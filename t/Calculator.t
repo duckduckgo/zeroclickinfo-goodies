@@ -395,6 +395,9 @@ ddg_goodie_test(
     time                              => undef,    # We eval perl directly, only do whitelisted stuff!
     'four squared'                    => undef,
     '! + 1'                           => undef,    # Regression test for bad query trigger.
+    '$5'                              => undef,
+    'calculate 5'                     => undef,
+    'solve $50'                       => undef,
 );
 
 done_testing;
