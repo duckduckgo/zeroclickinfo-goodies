@@ -1,2 +1,10 @@
-.zci__body {background-image: url('http://i.imgur.com/W5ncrMB.png') no-repeat;
-			height: 100px;}
+.zci__body {
+	padding: 10px 30px 10px 30px;
+	background-color: #fff3cf;
+	border-top: 10px solid #d44c2a;
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	color: #333;
+	line-height: 1.37em;
+}
