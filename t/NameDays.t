@@ -16,6 +16,8 @@ ddg_goodie_test(
     'namedays dec 30' => test_zci('Dawid Eugeniusz Katarzyna Uniedrog'),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
+    'my name day' => undef,
+    'name day in Poland' => undef,
     'name day' => undef,
 );
 

@@ -43,8 +43,6 @@ sub load_days {
 
 load_days();
 
-my $datestring_regex = datestring_regex();
-
 # Handle statement
 handle remainder => sub {
 	if (exists $dates{lc($_)}) {
@@ -58,9 +56,9 @@ handle remainder => sub {
 		return join(', ', @ret);
 	}
     
-    return unless $_ =~ qr/^($datestring_regex)$/;
-
-	my $day = parse_datestring_to_date($1);
+	my $day = parse_datestring_to_date($_);
+    
+    return unless $day;
     
     $day->set_year(2000); # Any leap year here
     
