@@ -64,7 +64,9 @@ handle remainder => sub {
     
     $day->set_year(2000); # Any leap year here
     
-    my $ret = $names[$day->day_of_year()];
+    my $ret = $names[$day->day_of_year() - 1];
+    
+    $ret =~ s/\b(\w)/\u\L$1/g;
     
     chomp($ret);
     
