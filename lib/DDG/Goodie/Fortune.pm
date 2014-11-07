@@ -12,7 +12,8 @@ description 'get a random phrase from the original fortunes file';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Fortune.pm';
 category 'random';
 topics 'words_and_games';
-attribution github => ['https://github.com/frncscgmz', 'frncscgmz'];
+attribution github => ['https://github.com/frncscgmz', 'frncscgmz'],
+            github => ['https://github.com/dmschulman', 'dmschulman'];
 
 zci answer_type => "fortune";
 zci is_cached   => 0;
