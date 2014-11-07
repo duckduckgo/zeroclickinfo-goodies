@@ -1,9 +1,10 @@
 .zci__body {
 	padding: 10px 30px 10px 30px;
+	float: left;
+	margin-left: 10px;
 	background-color: #fff3cf;
 	border-top: 10px solid #d44c2a;
 	font-weight: bold;
 	text-align: center;
 	color: #333;
-	line-height: 1.37em;
 }
