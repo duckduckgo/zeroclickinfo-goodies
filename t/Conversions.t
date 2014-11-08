@@ -91,9 +91,9 @@ ddg_goodie_test(
     '3.5e-2 miles to inches'        => test_zci('3.5 * 10^-2 miles = 2,217.602 inches',         html => '-ANY-'),
     # Areas and volumes
     '100 square metres in hectares'    => test_zci('100 square meters = 0.010 hectares', html => '-ANY-'),
-    '0.0001 hectares in square metres' => test_zci('0.0001 hectares = 1 square meter', html => '-ANY-'),
+    '0.0001 hectares in square metres' => test_zci('0.0001 hectares = 1 square meter',   html => '-ANY-'),
     '1 imperial gallon in litres'      => test_zci('1 imperial gallon = 4.546 litres',   html => '-ANY-'),
-    '0.001 litres in millilitres'      => test_zci('0.001 litres = 1 millilitre', html => '-ANY-'),
+    '0.001 litres in millilitres'      => test_zci('0.001 litres = 1 millilitre',        html => '-ANY-'),
     '1 hectare in square metres'       => test_zci('1 hectare = 10,000 square meters',   html => '-ANY-'),
     # Question-style
     'what is 1 inch in cm'              => test_zci('1 inch = 2.540 centimeters',           html => '-ANY-'),
@@ -113,6 +113,8 @@ ddg_goodie_test(
     'how much is a gallon in litres?'   => test_zci('1 us gallon = 3.785 litres',           html => '-ANY-'),
     'how many gallons in a litre'       => test_zci('1 litre = 0.264 us gallons',           html => '-ANY-'),
     'number of cm in 100 m'             => test_zci('100 meters = 10,000 centimeters',      html => '-ANY-'),
+    '1 acres in square kilometers'      => test_zci('1 acre = 0.004 square kilometers',     html => '-ANY-'),
+    '1 acres in square meters'          => test_zci('1 acre = 4,046.873 square meters',     html => '-ANY-'),
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
