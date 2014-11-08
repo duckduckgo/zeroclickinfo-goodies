@@ -4,6 +4,7 @@ package DDG::Goodie::Minecraft;
 use DDG::Goodie;
 use JSON;
 use utf8;
+use URI::Escape::XS;
 
 triggers startend => "minecraft";
 
@@ -39,11 +40,12 @@ my %bad_words = map { $_ => 1 } (qw(download server tutorial mod mods skins skin
 sub make_html {
     my ($recipe) = @_;
     my $html = '';
+    my $uri = 'https://duckduckgo.com/iu/?u=' . encodeURIComponent($recipe->{'image'});
 
     $html = '<div id="minecraft-wrapper">';
     $html .= '<h3>' . $recipe->{'name'} . '</h3>';
     $html .= '<span>' . $recipe->{'description'} . '</span>';
-    $html .= '<img src="https://duckduckgo.com/iu/?u=' . $recipe->{'image'} . '" style="display: block; margin: 0.5em 0;" />';
+    $html .= '<img src="' . $uri . '" style="display: block; margin: 0.5em 0;" />';
     $html .= '<span>Ingredients: ' . $recipe->{'ingredients'} . '</span>';
     $html .= '</div>';
 
