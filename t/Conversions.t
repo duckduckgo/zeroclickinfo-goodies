@@ -132,6 +132,7 @@ ddg_goodie_test(
     'foot in both camps'              => undef,
     'Seconds'                         => undef,
     'feet'                            => undef,
+    'minutes'                         => undef,
 );
 
 done_testing;
