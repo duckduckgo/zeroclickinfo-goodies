@@ -26,6 +26,9 @@ ddg_goodie_test(
     # Alternate trigger
     'uptime of 99%' => test_zci(qr/^Uptime of 99%.*/, html=>qr/.*/),
     
+    # Startend trigger
+    '99% uptime' => test_zci(qr/^Uptime of 99%.*/, html=>qr/.*/),
+
     # Decimal separator
     'uptime 99,99%' => test_zci(qr/.*/, html=>qr/.*Uptime of 99,99%.*/),
     'uptime 99.99%' => test_zci(qr/.*/, html=>qr/.*Uptime of 99.99%.*/),

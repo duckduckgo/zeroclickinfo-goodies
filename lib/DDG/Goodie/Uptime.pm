@@ -21,7 +21,7 @@ attribution github => ["YouriAckx", "Youri Ackx"],
             twitter => "YouriAckx";
 
 # Triggers
-triggers start => "uptime", "uptime of";
+triggers startend => "uptime", start => "uptime of";
 
 # Near zero duration messages
 my $JUST_NOW_MSG = "just now";                          # from Time::Duration
