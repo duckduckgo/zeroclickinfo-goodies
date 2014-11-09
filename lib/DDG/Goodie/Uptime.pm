@@ -2,9 +2,9 @@ package DDG::Goodie::Uptime;
 # Given an uptime percentage, display various average downtime durations 
 
 use DDG::Goodie;
-use Regexp::Common;
 use Time::Duration;
 use Time::Seconds;
+with 'DDG::GoodieRole::NumberStyler';
 
 zci answer_type => "uptime";
 zci is_cached   => 1;
@@ -90,20 +90,24 @@ sub format_html {
 # Handle statement
 handle remainder => sub {
 	return unless $_;               # Guard against "no answer"
+    return unless s/%$//;           # Query should end with '%'. Test and remove it
     s/\s+//g;                       # Delete the whitespaces
-    return unless $_ =~ /%$/;       # Query should end with '%'
-    my $clean_query = $_;           # Keep a clean user query
-    chop($_);                       # Remove the '%' sign
 
-    # Check it's a valid number. Decimal separator can be either '.' or ','
-    return unless $_ =~ /$RE{num}{decimal}{-sep=>'[,.]?'}/;
-    # But internally, use only '.'
-    s/,/\./;                    
+    # Look for something that "looks like a number"
+    my $number_string = $_;
+    my $number_re = number_style_regex();
+    $number_string =~ qr/($number_re)/;
+
+    # Get an object that can handle the number
+    my $styler = number_style_for($number_string);
+    return unless $styler;  # might not be supported
+    my $perl_number = $styler->for_computation($number_string);
+    my $clean_query = $styler->for_display($perl_number) . '%';
     
     # Query value must be btw 0 and 100
-    return unless $_ >= 0 && $_ < 100;
+    return unless $perl_number >= 0 && $perl_number < 100;
     
-    my ($year, $month, $day) = compute_durations($_ / 100);
+    my ($year, $month, $day) = compute_durations($perl_number / 100);
     my $text = format_text($clean_query, $year, $month, $day);
     my $html = format_html($clean_query, $year, $month, $day);
     
