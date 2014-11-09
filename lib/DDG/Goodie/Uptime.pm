@@ -36,11 +36,7 @@ sub compute_durations {
     my $a_month = ONE_MONTH;
     my $a_year = ONE_YEAR;
     
-    return (
-        fix_just_now(duration($a_year * $downtime_percentage)),
-        fix_just_now(duration($a_month * $downtime_percentage)),
-        fix_just_now(duration($a_day * $downtime_percentage))
-    );
+    return map { fix_just_now(duration($_ * $downtime_percentage)) } (ONE_YEAR, ONE_MONTH, ONE_DAY);
 }
 
 
