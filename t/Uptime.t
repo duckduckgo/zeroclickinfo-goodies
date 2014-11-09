@@ -61,7 +61,8 @@ ddg_goodie_test(
     # Misc bad queries
     'uptime 99.99' => undef,
     'uptime ninety-nine' => undef,
-    'up time 99%' => undef
+    'up time 99%' => undef,
+    'up time 99%%' => undef
 );
 
 done_testing;
