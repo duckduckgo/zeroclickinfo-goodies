@@ -89,7 +89,7 @@ sub format_html {
 
 # Handle statement
 handle remainder => sub {
-	return unless $_;               # Guard against "no answer"
+    return unless $_;               # Guard against "no answer"
     return unless s/%$//;           # Query should end with '%'. Test and remove it
     s/\s+//g;                       # Delete the whitespaces
 
