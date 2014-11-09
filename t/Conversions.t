@@ -130,6 +130,8 @@ ddg_goodie_test(
     'use a ton of stones'             => undef,
     'shoot onself in the foot'        => undef,
     'foot in both camps'              => undef,
+    'Seconds'                         => undef,
+    'feet'                            => undef,
 );
 
 done_testing;
