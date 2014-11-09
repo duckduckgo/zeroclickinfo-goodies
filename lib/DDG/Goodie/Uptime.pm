@@ -49,7 +49,7 @@ sub compute_durations {
 # or return the duration itself otherwise.
 sub fix_just_now {
     my $duration = $_[0];
-    return $duration ne $JUST_NOW_MSG ? $duration : $LESS_THAN_ONE_SECOND_MSG;
+    return $duration eq $JUST_NOW_MSG ? $LESS_THAN_ONE_SECOND_MSG : $duration;
 }
 
 
