@@ -27,36 +27,40 @@ triggers any => "name day", "name days", "nameday", "namedays", "imieniny";
 my @names = share('Poland.txt')->slurp(iomode => '<:encoding(UTF-8)'); # Names indexed by day
 my %dates = (); # Days indexed by name
 
-sub load_days {
-	my $day_of_year = 1;
+# File format: 366 lines (one for each day of a year).
+# Each line contains names separated with a space.
 
-	# Read names for each day and add them to the hash
-	for my $names_for_date (@names) {
-		for my $name (split(' ', $names_for_date)) {
-			push(@{$dates{$name}}, $day_of_year);
-		}
-	
-		# Advance to the next day
-		$day_of_year++;
-	}
+sub load_days {
+    my $day_of_year = 1;
+
+    # Read names for each day and add them to the hash
+    for my $names_for_date (@names) {
+        $names_for_date =~ s/\|/ /;
+        for my $name (split(' ', $names_for_date)) {
+            push(@{$dates{$name}}, $day_of_year);
+        }
+    
+        # Advance to the next day
+        $day_of_year++;
+    }
 }
 
 load_days();
 
 # Handle statement
 handle remainder => sub {
-	if (exists $dates{lc($_)}) {
-		# Return all dates corresponding to this name
-		my @ret = ();
-		foreach (@{$dates{lc($_)}}) {
-			# Any leap year here, because the text file includes February, 29
-			my $d = DateTime->from_day_of_year(year => 2000, day_of_year => $_);
-			push(@ret, $d->strftime('%e %b'));
-		}
-		return join(', ', @ret);
-	}
+    if (exists $dates{lc($_)}) {
+        # Return all dates corresponding to this name
+        my @ret = ();
+        foreach (@{$dates{lc($_)}}) {
+            # Any leap year here, because the text file includes February, 29
+            my $d = DateTime->from_day_of_year(year => 2000, day_of_year => $_);
+            push(@ret, $d->strftime('%e %b'));
+        }
+        return join(', ', @ret);
+    }
     
-	my $day = parse_datestring_to_date($_);
+    my $day = parse_datestring_to_date($_);
     
     return unless $day;
     
@@ -64,7 +68,7 @@ handle remainder => sub {
     
     my $ret = $names[$day->day_of_year() - 1];
     
-    $ret =~ s/\b(\w)/\u\L$1/g;
+    $ret =~ s/\b(\w)/\u\L$1/g; # Convert the first letter to uppercase
     
     chomp($ret);
     
