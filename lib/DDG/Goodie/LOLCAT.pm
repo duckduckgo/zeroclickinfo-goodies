@@ -91,8 +91,8 @@ sub translate {
 
     $phrase =~ s/\s{2,}/ /g;
       $phrase =~ s/teh teh/teh/g; # meh, it happens sometimes.
-      if( int rand 10 == 2 ){ $phrase .= '.  kthxbye!' }
-      if( int rand 10 == 1 ){ $phrase .= '.  kthx.' }
+      $phrase .= '.  kthxbye!' if( int rand 10 == 2 );
+      $phrase .= '.  kthx.'    if( int rand 10 == 1 );
       $phrase =~ s/(\?|!|,|\.)\./$1/;
       return uc $phrase;
 }
