@@ -1,5 +1,5 @@
 package DDG::Goodie::LOLCAT;
-# ABSTRACT: Write an abstract here
+# ABSTRACT: Convert submitted text to LOLCAT language
 # Parts of the script were copied from Acme::LOLCAT on CPAN 
 
 use DDG::Goodie;
@@ -75,6 +75,7 @@ handle remainder => sub {
 };
 
 
+# Translate string to LOLCAT language
 sub translate {
   my $phrase = lc shift;
 
