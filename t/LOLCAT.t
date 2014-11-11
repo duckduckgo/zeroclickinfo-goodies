@@ -10,12 +10,8 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::LOLCAT )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => test_zci('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
+    'lolcat cheese' => test_zci(qr/CHEE/),
+    'lolcat who' => test_zci(qr/HOO/),
     'bad example query' => undef,
 );
 
