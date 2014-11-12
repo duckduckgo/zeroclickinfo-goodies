@@ -37,6 +37,8 @@ my %dates = (); # Days indexed by name
 # not shown when searching for this day, but you can search for them.
 
 sub load_days {
+    die "The text file must include 366 lines" unless scalar(@names) == 366;
+
     my $day_of_year = 1;
 
     # Read names for each day and add them to the hash
