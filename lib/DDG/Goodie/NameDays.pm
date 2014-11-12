@@ -88,13 +88,7 @@ sub parse_other_date_formats {
     if (/^([0-3]?[0-9])\s?\.\s?([0-1]?[0-9])$/) {
         return eval { new DateTime(year => 2000, day => $1, month => $2) };
     }
-    
-    # Parse_datestring_to_date uses the current year if the year is not specified, so
-    # it will not parse "29 Feb" in a non-leap year. Fix this problem here.
-    if (/^29\s?(?:th)?\s*(Feb|February)/ || /(Feb|February)\s*29\s?(?:th)?$/) {
-        return new DateTime(year => 2000, day => 29, month => 2);
-    }
-    
+        
     # Polish month names
     s/\b(styczeń|stycznia)\b/Jan/i;
     s/\b(luty|lutego)\b/Feb/i;
@@ -108,7 +102,13 @@ sub parse_other_date_formats {
     s/\b(październik|października)\b/Oct/i;
     s/\b(listopad|listopada)\b/Nov/i;
     s/\b(grudzień|grudnia)\b/Dec/i;
-        
+    
+    # Parse_datestring_to_date uses the current year if the year is not specified, so
+    # it will not parse "29 Feb" in a non-leap year. Fix this problem here.
+    if (/^29\s?(?:th)?\s*(Feb|February)/ || /(Feb|February)\s*29\s?(?:th)?$/) {
+        return new DateTime(year => 2000, day => 29, month => 2);
+    }
+    
     return parse_datestring_to_date($_);
 }
 

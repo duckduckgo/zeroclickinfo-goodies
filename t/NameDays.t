@@ -38,6 +38,7 @@ ddg_goodie_test(
     'imieniny 9 styczeń' => test_zci('Antoni Borzymir Julian Julianna'),
     'imieniny 31 Grudnia' => test_zci('Korneliusz Melania Sebastian Sylwester Tworzysław'),
     'Imieniny 31 GRUDNIA' => test_zci('Korneliusz Melania Sebastian Sylwester Tworzysław'),
+    'Imieniny 29 lutego' => test_zci('Dobronieg Roman'),
     
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
