@@ -21,7 +21,7 @@ my $result;
 triggers query_raw => qr/\%$/;
  
 handle query_raw => sub {	
-
+	return if $_;
 	return unless $_ =~ qr/(\d+)(\+|\*|\/|\-)(\d+)\%/;
 
 
