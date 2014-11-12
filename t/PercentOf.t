@@ -13,7 +13,8 @@ ddg_goodie_test(
     # At a minimum, be sure to include tests for all:
     # - primary_example_queries
     # - secondary_example_queries
-    'example query' => test_zci('query'),
+    '4+50%' => test_zci('Result: 6'),
+    '456+120%' => test_zci('Result: 1003.2'),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     'bad example query' => undef,
