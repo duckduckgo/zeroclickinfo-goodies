@@ -42,7 +42,7 @@ sub load_days {
     # Read names for each day and add them to the hash
     for (@names) {
         # Add all names, including the names after vertical bar
-        my $names_for_date = $_;
+        my $names_for_date = lc($_);
         $names_for_date =~ s/\|/ /;
         for my $name (split(' ', $names_for_date)) {
             push(@{$dates{$name}}, $day_of_year);
@@ -51,9 +51,6 @@ sub load_days {
         # Remove the names after vertical bar (|)
         chomp;
         s/\s*\|.*$//;
-        
-        # Convert the first letter to uppercase
-        s/\b(\w)/\u\L$1/g;
         
         # Advance to the next day
         $day_of_year++;
@@ -99,20 +96,20 @@ sub parse_other_date_formats {
     }
     
     # Polish month names
-    s/\b(styczeń|stycznia)\b/Jan/;
-    s/\b(luty|lutego)\b/Feb/;
-    s/\b(marzec|marca)\b/Mar/;
-    s/\b(kwiecień|kwietnia)\b/Apr/;
-    s/\b(maj|maja)\b/May/;
-    s/\b(czerwiec|czerwca)\b/Jun/;
-    s/\b(lipiec|lipca)\b/Jul/;
-    s/\b(sierpień|sierpnia)\b/Aug/;
-    s/\b(wrzesień|września)\b/Sep/;
-    s/\b(październik|października)\b/Oct/;
-    s/\b(listopad|listopada)\b/Nov/;
-    s/\b(grudzień|grudnia)\b/Dec/;
+    s/\b(styczeń|stycznia)\b/Jan/i;
+    s/\b(luty|lutego)\b/Feb/i;
+    s/\b(marzec|marca)\b/Mar/i;
+    s/\b(kwiecień|kwietnia)\b/Apr/i;
+    s/\b(maj|maja)\b/May/i;
+    s/\b(czerwiec|czerwca)\b/Jun/i;
+    s/\b(lipiec|lipca)\b/Jul/i;
+    s/\b(sierpień|sierpnia)\b/Aug/i;
+    s/\b(wrzesień|września)\b/Sep/i;
+    s/\b(październik|października)\b/Oct/i;
+    s/\b(listopad|listopada)\b/Nov/i;
+    s/\b(grudzień|grudnia)\b/Dec/i;
         
-    return parse_datestring_to_date($_)
+    return parse_datestring_to_date($_);
 }
 
 

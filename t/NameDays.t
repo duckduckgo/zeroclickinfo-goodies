@@ -16,6 +16,7 @@ ddg_goodie_test(
     '3 June name day' => test_zci('Konstantyn Leszek Paula Tamara'),
     'Name Day Tamara' => test_zci(' 3 Jun'),
     'namedays dec 30' => test_zci('Dawid Eugeniusz Katarzyna Uniedrog'),
+    'name day 1 Jan' => test_zci('Mieczysław Mieszko'),
     
     # Genetive case
     'imieniny marii' => test_zci('23 Jan,  2 Feb, 11 Feb, 25 Mar, 14 Apr, 26 Apr, 28 Apr,  3 May, 24 May, 25 May, 29 May,  2 Jun, 13 Jun, 27 Jun,  2 Jul, 16 Jul, 17 Jul, 22 Jul, 29 Jul,  2 Aug,  4 Aug,  5 Aug, 15 Aug, 22 Aug, 26 Aug,  8 Sep, 12 Sep, 15 Sep, 24 Sep,  7 Oct, 11 Oct, 16 Nov, 21 Nov,  8 Dec, 10 Dec'),
@@ -35,6 +36,8 @@ ddg_goodie_test(
     'imieniny 9.1' => test_zci('Antoni Borzymir Julian Julianna'),
     'imieniny 9 stycznia' => test_zci('Antoni Borzymir Julian Julianna'),
     'imieniny 9 styczeń' => test_zci('Antoni Borzymir Julian Julianna'),
+    'imieniny 31 Grudnia' => test_zci('Korneliusz Melania Sebastian Sylwester Tworzysław'),
+    'Imieniny 31 GRUDNIA' => test_zci('Korneliusz Melania Sebastian Sylwester Tworzysław'),
     
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
