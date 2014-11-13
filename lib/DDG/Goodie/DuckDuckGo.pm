@@ -5,8 +5,8 @@ use DDG::Goodie;
 
 use YAML qw( Load );
 
-primary_example_queries 'help';
-secondary_example_queries 'Zero-Click Info', 'zeroclick';
+primary_example_queries 'duckduckgo help';
+secondary_example_queries 'ddg tor', 'short URL for duck duck go';
 description 'DuckDuckGo help and quick links';
 name 'DuckDuckGo';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
