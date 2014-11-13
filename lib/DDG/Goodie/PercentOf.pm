@@ -9,8 +9,6 @@ zci is_cached   => 1;
 name "PercentOf";
 description "Makes Operations with percentuals";
 primary_example_queries "4-50%", "349*16%";
-secondary_example_queries "optional -- demonstrate any additional triggers";
-
 
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PercentOf/PercentOf.pm";
 attribution github => ["puskin94", "puskin"],
@@ -18,7 +16,7 @@ attribution github => ["puskin94", "puskin"],
 
 my $result;
 
-triggers query_raw => qr/\%$/;
+triggers query_raw => qr/\d{1,3}\%$/;
  
 handle query_raw => sub {	
 
@@ -26,13 +24,13 @@ handle query_raw => sub {
 
 
 	if ($2 eq '-') {
-		$result = ($1-(($1*$3)/100));
+		$result = ( $1 - (($1 * $3) / 100) );
 	} elsif ($2 eq '+') {
-		$result = ($1+(($1*$3)/100));
+		$result = ( $1 + (($1 * $3) / 100) );
 	} elsif ($2 eq '*') {
-		$result = ($1*(($1*$3)/100));
+		$result = ( $1 * (($1 * $3) / 100) );
 	} elsif ($2 eq '/') {
-		$result = ($1/(($1*$3)/100));
+		$result = ( $1 / (($1 * $3) / 100) );
 	}
 
 	return "Result: ". $result;
