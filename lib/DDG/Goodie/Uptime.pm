@@ -11,7 +11,7 @@ zci is_cached   => 1;
 
 name "Uptime";
 description "Given an uptime percentage, display various average downtime durations";
-primary_example_queries "uptime 99,99%", "uptime 99.99%";
+primary_example_queries "uptime 99,99%", "uptime 99.99%", "99.99% uptime";
 secondary_example_queries "uptime of 99.9998%";
 category "calculations";
 topics "computing";
