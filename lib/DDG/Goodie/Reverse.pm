@@ -3,7 +3,7 @@ package DDG::Goodie::Reverse;
 
 use DDG::Goodie;
 
-primary_example_queries 'reverse esrever';
+primary_example_queries 'reverse text esrever';
 description 'reverse the order of the characters in your query';
 name 'Reverse';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Reverse.pm';
