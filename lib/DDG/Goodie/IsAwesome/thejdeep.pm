@@ -6,7 +6,6 @@ use DDG::Goodie;
 zci answer_type => "is_awesome_thejdeep";
 zci is_cached   => 1;
 
-# Metadata.
 name "IsAwesome thejdeep";
 description "My first Goodie, it let's the world know that thejdeep is awesome";
 primary_example_queries "duckduckhack thejdeep";
@@ -16,10 +15,8 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/thejdeep", "thejdeep"],
             twitter => "thejdeep";
 
-# Triggers
 triggers start => "duckduckhack thejdeep";
 
-# Handle statement
 handle remainder => sub {
     return if $_;
     return "thejdeep is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
