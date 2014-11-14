@@ -72,13 +72,13 @@ sub format_html {
     my $html = '<div class="zci__caption">Uptime of ' . $uptime_percentage . "</div>";
 
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
-        $html .= '<div class="secondary--text">No downtime or less than a second during a year</div>';
+        $html .= '<div class="zci__content">No downtime or less than a second during a year</div>';
         return $html;
     }
 
-    $html .= '<div class="secondary--text">' . $downtime_day . " downtime per day</div>";
-    $html .= '<div class="secondary--text">' . $downtime_month . " downtime per month</div>";
-    $html .= '<div class="secondary--text">' . $downtime_year . " downtime per year</div>";
+    $html .= '<div class="zci__content">' . $downtime_day . " downtime per day<br>";
+    $html .= $downtime_month . " downtime per month<br>";
+    $html .= $downtime_year . " downtime per year</div>";
     return $html;
 }
 
