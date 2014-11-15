@@ -11,30 +11,28 @@ zci is_cached   => 1;
 ddg_goodie_test(
     [qw( DDG::Goodie::Uptime )],
 
-    # Remark: tests primarily focus on the html part.
-    
     # A complete text+html positive test
-    'uptime 99%' => test_zci(qr/^Uptime of 99%.*/, html=>qr/.*/),
+    'uptime 99%' => test_zci(qr/^99% uptime.*/, html=>qr/.*/),
     'uptime 99%' => test_zci(qr/.*14 minutes and 24 seconds downtime per day.*/, html=>qr/.*/),
     'uptime 99%' => test_zci(qr/.*7 hours and 18 minutes downtime per month.*/, html=>qr/.*/),
     'uptime 99%' => test_zci(qr/.*3 days and 16 hours downtime per year.*/, html=>qr/.*/),
-    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Uptime of 99%.*/),
+    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*99% uptime.*/),
     'uptime 99%' => test_zci(qr/.*/, html=>qr/.*14 minutes and 24 seconds downtime per day.*/),
     'uptime 99%' => test_zci(qr/.*/, html=>qr/.*7 hours and 18 minutes downtime per month.*/),
     'uptime 99%' => test_zci(qr/.*/, html=>qr/.*3 days and 16 hours downtime per year.*/),
 
     # Alternate trigger
-    'uptime of 99%' => test_zci(qr/^Uptime of 99%.*/, html=>qr/.*/),
+    'uptime of 99%' => test_zci(qr/^99% uptime.*/, html=>qr/.*/),
     
     # Startend trigger
-    '99% uptime' => test_zci(qr/^Uptime of 99%.*/, html=>qr/.*/),
+    '99% uptime' => test_zci(qr/^99% uptime.*/, html=>qr/.*/),
 
     # Decimal separator
-    'uptime 99,99%' => test_zci(qr/.*/, html=>qr/.*Uptime of 99,99%.*/),
-    'uptime 99.99%' => test_zci(qr/.*/, html=>qr/.*Uptime of 99.99%.*/),
+    'uptime 99,99%' => test_zci(qr/.*/, html=>qr/.*99,99% uptime.*/),
+    'uptime 99.99%' => test_zci(qr/.*/, html=>qr/.*99.99% uptime.*/),
     
     # Grouping allowed on input
-    'uptime 99.999 999 999%' => test_zci(qr/.*/, html=>qr/.*Uptime of 99.999999999%.*/),
+    'uptime 99.999 999 999%' => test_zci(qr/.*/, html=>qr/.*99.999999999% uptime.*/),
 
     # Less than 100% uptime but close to no downtime
     'uptime 99.999999999%' => test_zci(qr/.*/, html=>qr/.*No downtime or less than a second during a year.*/),
@@ -48,8 +46,8 @@ ddg_goodie_test(
     'uptime 99.99999%' => test_zci(qr/.*/, html=>qr/.*Less than one second downtime per day.*/),
 
     # Lower limit
-    'uptime 0%' => test_zci(qr/.*/, html=>qr/.*Uptime of 0%.*/),
-    'uptime 000%' => test_zci(qr/.*/, html=>qr/.*Uptime of 000%.*/),
+    'uptime 0%' => test_zci(qr/.*/, html=>qr/.*0% uptime.*/),
+    'uptime 000%' => test_zci(qr/.*/, html=>qr/.*000% uptime.*/),
 
     # Outside range
     'uptime 101%' => undef,
