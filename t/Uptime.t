@@ -13,19 +13,21 @@ ddg_goodie_test(
 
     # A complete text+html positive test
     'uptime 99%' => test_zci(qr/^99% uptime.*/, html=>qr/.*/),
-    'uptime 99%' => test_zci(qr/.*14 minutes and 24 seconds downtime per day.*/, html=>qr/.*/),
-    'uptime 99%' => test_zci(qr/.*7 hours and 18 minutes downtime per month.*/, html=>qr/.*/),
-    'uptime 99%' => test_zci(qr/.*3 days and 16 hours downtime per year.*/, html=>qr/.*/),
+    'uptime 99%' => test_zci(qr/.*Implied downtimes.*/, html=>qr/.*/),
+    'uptime 99%' => test_zci(qr/.*Daily: 14 minutes and 24 seconds.*/, html=>qr/.*/),
+    'uptime 99%' => test_zci(qr/.*Monthly: 7 hours and 18 minutes.*/, html=>qr/.*/),
+    'uptime 99%' => test_zci(qr/.*Annually: 3 days and 16 hours$/, html=>qr/.*/),
     'uptime 99%' => test_zci(qr/.*/, html=>qr/.*99% uptime.*/),
-    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*14 minutes and 24 seconds downtime per day.*/),
-    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*7 hours and 18 minutes downtime per month.*/),
-    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*3 days and 16 hours downtime per year.*/),
+    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Implied downtimes.*/),
+    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Daily: 14 minutes and 24 seconds.*/),
+    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Monthly: 7 hours and 18 minutes.*/),
+    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Annually: 3 days and 16 hours.*/),
 
     # Alternate trigger
     'uptime of 99%' => test_zci(qr/^99% uptime.*/, html=>qr/.*/),
     
     # Startend trigger
-    '99% uptime' => test_zci(qr/^99% uptime.*/, html=>qr/.*/),
+    '99% uptime' => test_zci(qr/^99% uptime$.*/, html=>qr/.*/),
 
     # Decimal separator
     'uptime 99,99%' => test_zci(qr/.*/, html=>qr/.*99,99% uptime.*/),
@@ -38,12 +40,12 @@ ddg_goodie_test(
     'uptime 99.999999999%' => test_zci(qr/.*/, html=>qr/.*No downtime or less than a second during a year.*/),
 
     # Some parts (but not all) are below 1 second
-    'uptime 99.9999%' => test_zci(qr/.*/, html=>qr/.*31 seconds downtime per year.*/),
-    'uptime 99.9999%' => test_zci(qr/.*/, html=>qr/.*2 seconds downtime per month.*/),
-    'uptime 99.9999%' => test_zci(qr/.*/, html=>qr/.*Less than one second downtime per day.*/),
-    'uptime 99.99999%' => test_zci(qr/.*/, html=>qr/.*3 seconds downtime per year.*/),
-    'uptime 99.99999%' => test_zci(qr/.*/, html=>qr/.*Less than one second downtime per month.*/),
-    'uptime 99.99999%' => test_zci(qr/.*/, html=>qr/.*Less than one second downtime per day.*/),
+    'uptime 99.9999%' => test_zci(qr/.*/, html=>qr/.*Annually: 31 seconds.*/),
+    'uptime 99.9999%' => test_zci(qr/.*/, html=>qr/.*Monthly: 2 seconds.*/),
+    'uptime 99.9999%' => test_zci(qr/.*/, html=>qr/.*Daily: less than one second.*/),
+    'uptime 99.99999%' => test_zci(qr/.*/, html=>qr/.*Annually: 3 seconds.*/),
+    'uptime 99.99999%' => test_zci(qr/.*/, html=>qr/.*Monthly: less than one second.*/),
+    'uptime 99.99999%' => test_zci(qr/.*/, html=>qr/.*Daily: less than one second.*/),
 
     # Lower limit
     'uptime 0%' => test_zci(qr/.*/, html=>qr/.*0% uptime.*/),

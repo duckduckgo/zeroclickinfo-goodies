@@ -25,7 +25,7 @@ triggers startend => "uptime", start => "uptime of";
 
 # Near zero duration messages
 my $JUST_NOW_MSG = "just now";                          # from Time::Duration
-my $LESS_THAN_ONE_SECOND_MSG = "Less than one second";  # from us
+my $LESS_THAN_ONE_SECOND_MSG = "less than one second";  # from us
 
 
 # Compute the downtime string durations (year, month, day)
@@ -49,15 +49,16 @@ sub fix_just_now {
 sub format_text {
     my ($uptime_percentage, $downtime_year, $downtime_month, $downtime_day) = @_;
     my $text = $uptime_percentage . " uptime\n";
+    $text .= "Implied downtimes\n";
     
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
-        $text .= "No downtime or less than a second during a year\n";
+        $text .= "No downtime or less than a second during a year";
         return $text;
     }
     
-    $text .= $downtime_day . " downtime per day\n";
-    $text .= $downtime_month . " downtime per month\n";
-    $text .= $downtime_year . " downtime per year\n";
+    $text .= "Daily: " . $downtime_day . "\n";
+    $text .= "Monthly: " . $downtime_month . "\n";
+    $text .= "Annually: " . $downtime_year;
     return $text;
 }
 
@@ -65,16 +66,17 @@ sub format_text {
 # Format response as HTML
 sub format_html {
     my ($uptime_percentage, $downtime_year, $downtime_month, $downtime_day) = @_;
-    my $html = '<div class="zci__caption">' . $uptime_percentage . " uptime</div>";
+    my $html = '<div class="zci__header">' . $uptime_percentage . " uptime</div>";
+    $html .= '<div class="zci__header__sub">Implied downtimes</div>';
 
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
         $html .= '<div class="zci__content">No downtime or less than a second during a year</div>';
         return $html;
     }
 
-    $html .= '<div class="zci__content">' . $downtime_day . " downtime per day<br>";
-    $html .= $downtime_month . " downtime per month<br>";
-    $html .= $downtime_year . " downtime per year</div>";
+    $html .= '<div class="zci__content"> Daily: ' . $downtime_day . '<br>';
+    $html .= 'Monthly: ' . $downtime_month . '<br>';
+    $html .= 'Annually: ' . $downtime_year . '</div>';
     return $html;
 }
 
