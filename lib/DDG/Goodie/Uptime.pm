@@ -32,10 +32,6 @@ my $LESS_THAN_ONE_SECOND_MSG = "Less than one second";  # from us
 # for the given uptime (must be btw 0 and 1)
 sub compute_durations {
     my $downtime_percentage = 1 - $_[0];
-    my $a_day = ONE_DAY;
-    my $a_month = ONE_MONTH;
-    my $a_year = ONE_YEAR;
-    
     return map { fix_just_now(duration($_ * $downtime_percentage)) } (ONE_YEAR, ONE_MONTH, ONE_DAY);
 }
 
