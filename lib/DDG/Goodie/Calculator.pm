@@ -32,15 +32,15 @@ triggers query_nowhitespace => qr<
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
-        [\( \) x X * % + / \^ 0-9 \. , \$ -]*
+        [\( \) x X * % + / \^ 0-9 \. , _ \$ -]*
 
-        (?(1) (?: -? [0-9 \. ,]+ |) |)
+        (?(1) (?: -? [0-9 \. , _ ]+ |) |)
         (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared )+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
 
-        [\( \) x X * % + / \^ 0-9 \. , \$ -]* =?
+        [\( \) x X * % + / \^ 0-9 \. , _ \$ -]* =?
 
         $
         >xi;
@@ -145,6 +145,7 @@ sub prepare_for_display {
 
     # Equals varies by output type.
     $query =~ s/\=$//;
+    $query =~ s/(\d)[ _](\d)/$1$2/g;    # Squeeze out spaces and underscores.
     # Show them how 'E' was interpreted. This should use the number styler, too.
     $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
 

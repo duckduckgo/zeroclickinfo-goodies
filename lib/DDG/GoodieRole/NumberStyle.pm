@@ -23,7 +23,7 @@ sub _build_number_regex {
     my $self = shift;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
-    return qr/-?[\d\Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/;
+    return qr/-?[\d_ \Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/;
 }
 
 sub understands {
@@ -34,7 +34,7 @@ sub understands {
     # This assumes the exponentials are not included to give better answers.
     return (
         # The number must contain only things we understand: numerals and separators for this style.
-        $number =~ /^-?(|\d|\Q$thousands\E|\Q$decimal\E)+$/
+        $number =~ /^-?(|\d|_| |\Q$thousands\E|\Q$decimal\E)+$/
           && (
             # The number is not required to contain thousands separators
             $number !~ /\Q$thousands\E/
@@ -64,6 +64,7 @@ sub for_computation {
     my ($self, $number_text) = @_;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
+    $number_text =~ s/[ _]//g;              # Remove spaces and underscores as visuals.
     $number_text =~ s/\Q$thousands\E//g;    # Remove thousands seps, since they are just visual.
     $number_text =~ s/\Q$decimal\E/./g;     # Make sure decimal mark is something perl knows how to use.
     if ($number_text =~ s/^([\d$decimal$thousands]+)\Q$exponential\E(-?[\d$decimal$thousands]+)$/$1e$2/ig) {
@@ -78,6 +79,7 @@ sub for_display {
     my ($self, $number_text) = @_;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
+    $number_text =~ s/[ _]//g;    # Remove spaces and underscores as visuals.
     if ($number_text =~ /(.*)\Q$exponential\E([+-]?\d+)/i) {
         $number_text = $self->for_display($1) . ' * 10^' . $self->for_display(int $2);
     } else {
