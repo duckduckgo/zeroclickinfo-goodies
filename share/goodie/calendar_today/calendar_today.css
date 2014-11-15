@@ -27,20 +27,27 @@
     width: 1.6em;
 }
 
-.zci--answer .calendar a{
+.zci--answer .calendar a {
     color: white;
-    font-size: 1.25em;
-    font-weight: bold;
+    font-size: 1.1em;
 }
 
-.zci--answer .calendar .t_left{
+.zci--answer .calendar .t_left {
     position: absolute;
     left:0.4em;
     background-color: #bfbfbf;
 }
 
-.zci--answer .calendar .t_right{
+.zci--answer .calendar .t_right {
     position: absolute;
     right:0.4em;
     background-color: #bfbfbf;
 }
+
+.zci--answer .ddgsi-arrow-left {
+    font-size: 0.75em;
+}
+
+.zci--answer .ddgsi-arrow-right {
+    font-size: 0.75em;
+} 
