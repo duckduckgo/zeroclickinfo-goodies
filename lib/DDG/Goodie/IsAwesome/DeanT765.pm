@@ -14,9 +14,6 @@ topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/DeanT765.pm";
 attribution github => ["https://github.com/DeanT765", "DeanT765"],
             twitter => "deanthomasson";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/DeanT765.pm";
-attribution github => ["DeanT765", "Dean Thomasson"],
-            twitter => "twitterhandle";
 
 triggers start => "duckduckhack deant765";
 
