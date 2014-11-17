@@ -11,7 +11,7 @@ description "My first Goodie, it let's the world know that GitHubUsername is awe
 primary_example_queries "duckduckhack Marneus68";
 category "special";
 topics "special_interest", "geek";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Marneus68.pm"
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Marneus68.pm";
 attribution github => ["Marneus68", "Duane Bekaert"];
 
 triggers start => "duckduckhack marneus68";
