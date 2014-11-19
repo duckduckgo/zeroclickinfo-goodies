@@ -21,10 +21,26 @@ zci is_cached => 1;
 zci answer_type => "roman_numeral_conversion";
 
 handle remainder => sub {
-    s/\s*(?:numeral|number)\s*//i;
-    return uc(roman($_)) . ' (roman numeral conversion)' if /^\d+$/ && roman($_);
-    return arabic($_) . ' (roman numeral conversion)' if lc($_) =~ /^[mdclxvi]+$/ && arabic($_);
-    return;
+    my $in = uc shift;
+    $in =~ s/\s*(?:numeral|number)\s*//i;
+
+    return unless $in;
+
+    my $out;
+    if ($in =~ /^\d+$/) {
+        $out = uc(roman($in));
+    } elsif ($in =~ /^[mdclxvi]+$/i) {
+        $in  = uc($in);
+        $out = arabic($in);
+    }
+    return unless $out;
+
+    return $out . ' (roman numeral conversion)',
+      structured_answer => {
+        input     => [$in],
+        operation => 'Roman numeral conversion',
+        result    => $out
+      };
 };
 
 1;

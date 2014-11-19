@@ -1,16 +1,14 @@
 package DDG::Goodie::Calculator;
 # ABSTRACT: do simple arthimetical calculations
 
-use feature 'state';
-
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use List::Util qw( max );
 use Math::Trig;
 
-zci is_cached   => 1;
 zci answer_type => "calc";
+zci is_cached   => 1;
 
 primary_example_queries '$3.43+$34.45';
 secondary_example_queries '64*343';
@@ -46,7 +44,7 @@ triggers query_nowhitespace => qr<
         >xi;
 
 my $number_re = number_style_regex();
-my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\//;    # Stuff that looks like functions.
+my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\/|squared|divided/;    # Stuff that looks like functions.
 
 my %named_operations = (
     '\^'          => '**',
@@ -55,28 +53,26 @@ my %named_operations = (
     'minus'       => '-',
     'plus'        => '+',
     'divided\sby' => '/',
-    'ln'          => 'log',                                 # perl log() is natural log.
+    'ln'          => 'log',                                                 # perl log() is natural log.
     'squared'     => '**2',
 );
 
 my %named_constants = (
     dozen => 12,
-    e     => 2.71828182845904523536028747135266249,         # This should be computed.
-    pi    => pi,                                            # pi constant from Math::Trig
+    e     => 2.71828182845904523536028747135266249,                         # This should be computed.
+    pi    => pi,                                                            # pi constant from Math::Trig
     gross => 144,
     score => 20,
 );
 
-my $ored_constants = join('|', keys %named_constants);      # For later substitutions
+my $ored_constants = join('|', keys %named_constants);                      # For later substitutions
 
-my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                     # Each octet should look like a number between 0 and 255.
-my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                     # There should be 4 of them separated by 3 dots.
-my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                           # 0-32
-my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;    # Looks like network notation, either CIDR or subnet mask
+my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                          # Each octet should look like a number between 0 and 255.
+my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                          # There should be 4 of them separated by 3 dots.
+my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                                # 0-32
+my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;         # Looks like network notation, either CIDR or subnet mask
 
 handle query_nowhitespace => sub {
-    my $results_html;
-    my $results_no_html;
     my $query = $_;
 
     return if ($query =~ /\b0x/);      # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
@@ -92,6 +88,7 @@ handle query_nowhitespace => sub {
     # First replace named operations with their computable equivalents.
     while (my ($name, $operation) = each %named_operations) {
         $tmp_expr =~ s# $name # $operation #xig;
+        $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
 
     $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
@@ -103,6 +100,7 @@ handle query_nowhitespace => sub {
     while (my ($name, $constant) = each %named_constants) {
         $tmp_expr =~ s# (\d+?)\s+$name # $1 * $constant #xig;
         $tmp_expr =~ s#\b$name\b# $constant #ig;
+        $query =~ s#\b$name\b#($name)#ig;
     }
 
     my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $tmp_expr);
@@ -111,7 +109,7 @@ handle query_nowhitespace => sub {
 
     $tmp_expr = $style->for_computation($tmp_expr);
     # Using functions makes us want answers with more precision than our inputs indicate.
-    my $precision = ($query =~ $funcy) ? undef : max(map { $style->precision_of($_) } @numbers);
+    my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
 
     my $tmp_result;
     eval {
@@ -136,8 +134,8 @@ handle query_nowhitespace => sub {
 
     return if $results->{text} =~ /^\s/;
     return $results->{text},
-      html    => $results->{html},
-      heading => "Calculator";
+      structured_answer => $results->{structured},
+      heading           => "Calculator";
 };
 
 sub prepare_for_display {
@@ -148,32 +146,22 @@ sub prepare_for_display {
     $query =~ s/(\d)[ _](\d)/$1$2/g;    # Squeeze out spaces and underscores.
     # Show them how 'E' was interpreted. This should use the number styler, too.
     $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
+    $query =~ s/\s*\*{2}\s*/^/g;    # Use prettier exponentiation.
+    $result = $style->for_display($result);
+    my $input = $style->with_html($query);
+    foreach my $name (keys %named_constants) {
+        $query =~ s#\($name\)#$name#xig;
+        $input =~ s#\($name\)#$name#xig;
+    }
 
-    return {
-        text => format_text($query, $result, $style),
-        html => format_html($query, $result, $style),
+    return +{
+        text       => spacing($query) . ' = ' . $result,
+        structured => {
+            input     => [spacing($input)],
+            operation => 'calculate',
+            result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
+        },
     };
-}
-
-# Format query for HTML
-sub format_html {
-    my ($query, $result, $style) = @_;
-
-    $query  = spacing($style->with_html($query));
-    $result = $style->with_html($style->for_display($result));
-
-    return "<div class='zci--calculator text--primary'>"
-      . $query
-      . "<span class='text--secondary'> = </span><a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();' class='text--primary'>"
-      . $result
-      . "</a></div>";
-}
-
-# Format query for text
-sub format_text {
-    my ($query, $result, $style) = @_;
-
-    return spacing($query) . ' = ' . $style->for_display($result);
 }
 
 #separates symbols with a space
@@ -181,6 +169,7 @@ sub format_text {
 sub spacing {
     my ($text, $space_for_parse) = @_;
 
+    $text =~ s/\s{2,}/ /g;
     $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;

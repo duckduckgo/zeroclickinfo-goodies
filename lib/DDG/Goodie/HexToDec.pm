@@ -19,25 +19,17 @@ attribution cpan   => 'majuscule',
             github => 'nospampleasemam',
             web    => ['https://dylansserver.com', 'Dylan Lloyd'] ;
 
-sub wrap_html {
-    my ($decimal, $octal) = @_;
-    return "<div class='zci--hextodec text--primary'>" .
-               "<div class='hextodec--decimal'>" .
-                   "<span class='text--secondary'>Decimal:</span> $decimal" .
-               "</div>" .
-               "<div>" .
-                   "<span class='text--secondary'>Octal: </span> $octal" .
-               "</div>" .
-           "</div>";
-}
-
 handle query_raw => sub {
     return unless (m/0x([0-9a-fA-F]+)/);
-    my $hex = $1;
+
+    my $hex     = $1;
     my $decimal = Math::BigInt->from_hex($hex);
-    my $octal = $decimal->as_oct;
-    return "$hex base 16 = $decimal base 10 = $octal base 8",
-           html => wrap_html($decimal, $octal);
+
+    return "$hex base 16 = $decimal base 10", structured_answer => {
+        input     => ['0x' . $hex],
+        operation => 'hex to decimal',
+        result    => "$decimal",         # Quoted for display precision as string.
+    };
 };
 
 0x41414141;

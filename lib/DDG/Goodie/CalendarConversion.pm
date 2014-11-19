@@ -24,7 +24,6 @@ attribution github => ['http://github.com/mattlehning', 'mattlehning'],
 
 triggers any => 'hijri', 'gregorian', 'jalali';
 
-
 my $calendars = Load(scalar share('calendars.yml')->slurp);
 
 my $datestring_regex = datestring_regex();
@@ -70,10 +69,15 @@ handle query_lc => sub {
         ($od, $om, $oy) = ($t->jal_day, $t->jal_month, $t->jal_year);
         ($od, $om, $oy) = g2h($od, $om, $oy) if ($output_calendar eq "hijri");
     }
-    my $input_date     = format_date($d, $m, $y, $input_calendar);
+    my $input_date     = format_date($d,  $m,  $y,  $input_calendar);
     my $converted_date = format_date($od, $om, $oy, $output_calendar);
 
-    return $input_date. ' is '. $converted_date, html => "<div class='zci--calendarconversion text--primary'>$input_date <span class='text--secondary'>is</span> $converted_date</div>";
+    return $input_date . ' is ' . $converted_date,
+      structured_answer => {
+        input     => [$input_date],
+        operation => 'calendar conversion',
+        result    => $converted_date
+      };
 };
 
 sub g2j {
@@ -82,7 +86,5 @@ sub g2j {
     my $t = new Date::Jalali2($iy, $im, $id, 0);
     return ($t->jal_day, $t->jal_month, $t->jal_year);
 }
-
-
 
 1;

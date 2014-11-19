@@ -59,13 +59,6 @@ my %plural_exceptions = (
 
 my %singular_exceptions = reverse %plural_exceptions;
 
-sub wrap_html {
-    my ($factor, $result, $styler) = @_;
-    my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . html_enc($result->{'from_unit'}) . "</span>";
-    my $to = $styler->with_html($styler->for_display($result->{'result'})) . " <span class='text--secondary'>" . html_enc($result->{'to_unit'}) . "</span>";
-    return "<div class='zci--conversions text--primary'>$from = $to</div>";
-}
-
 handle query_lc => sub {
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
@@ -144,16 +137,22 @@ handle query_lc => sub {
         $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
         $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
     } else {
-        $result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
-        $result->{'to_unit'} = "degrees $result->{'to_unit'}" if ($result->{'to_unit'} ne "kelvin");
+        $result->{'from_unit'} = ($factor == 1 ? 'degree' : 'degrees') . ' ' . $result->{'from_unit'} if ($result->{'from_unit'} ne "kelvin");
+        $result->{'to_unit'} = ($result->{'result'} == 1 ? 'degree' : 'degrees') . ' ' . $result->{'to_unit'} if ($result->{'to_unit'} ne "kelvin");
     }
 
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
     $result->{'result'} =~ s/\.0{$precision}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
 
-    my $output = $styler->for_display($factor)." $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
-    return $output, html => wrap_html($factor, $result, $styler);
+    $factor = $styler->for_display($factor);
+
+    return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
+      structured_answer => {
+        input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
+        operation => 'convert',
+        result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
+      };
 };
 
 sub set_unit_pluralisation {

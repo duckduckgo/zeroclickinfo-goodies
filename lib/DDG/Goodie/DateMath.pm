@@ -27,7 +27,7 @@ handle query_lc => sub {
     return unless $query =~ qr!^($datestring_regex)\s+(plus|\+|\-|minus)\s+(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)$!;
     my ($input_date, $input_action, $input_number, $unit) = ($1, $2, $3, $4);
 
-    $input_date = parse_datestring_to_date($input_date);
+    $input_date   = parse_datestring_to_date($input_date);
     $input_number = str2nbr($input_number);
 
     # check/tweak other (non-date) input
@@ -44,10 +44,10 @@ handle query_lc => sub {
     $unit =~ s/s$//g;
 
     my ($years, $months, $days, $weeks) = (0, 0, 0, 0);
-    $years = $number if $unit eq "year";
-    $months = $number if $unit eq "month";
-    $days = $number if $unit eq "day";
-    $days = 7*$number if $unit eq "week";
+    $years  = $number     if $unit eq "year";
+    $months = $number     if $unit eq "month";
+    $days   = $number     if $unit eq "day";
+    $days   = 7 * $number if $unit eq "week";
 
     my $dur = DateTime::Duration->new(
         years  => $years,
@@ -55,10 +55,17 @@ handle query_lc => sub {
         days   => $days
     );
 
-    my $answer = $input_date->clone->add_duration($dur);
+    $unit .= 's' if $input_number > 1;    # plural?
+    my $out_date   = date_output_string($input_date->clone->add_duration($dur));
+    my $in_date    = date_output_string($input_date);
+    my $out_action = "$action $input_number $unit";
 
-    $unit .= 's' if $input_number > 1; # plural?
-    return date_output_string($input_date)." $input_action $input_number $unit is ".date_output_string($answer);
+    return "$in_date $out_action is $out_date",
+      structured_answer => {
+        input     => [$in_date . ' ' . $out_action],
+        operation => 'date math',
+        result    => $out_date
+      };
 };
 
 1;

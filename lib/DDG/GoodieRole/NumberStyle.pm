@@ -113,7 +113,7 @@ sub _add_html_exponents {
     my ($parens_count, $number_up) = (0, 0);
 
     # because of associativity and power-to-power, we need to scan nearly the whole thing
-    for my $index (1 .. $#chars - 1) {
+    for my $index (1 .. $#chars) {
         my $this_char = $chars[$index];
         if ($this_char =~ $number_re or ($newly_up && $this_char eq '-')) {
             if ($newly_up) {
@@ -139,21 +139,27 @@ sub _add_html_exponents {
             $chars[$index] = $end_tag . $chars[$index];
         } elsif ($number_up && !$in_exp_parens) {
             # Must have ended another term or more
-            $chars[$index] = ($end_tag x ($number_up - 1)) . $chars[$index];
-            $number_up = 0;
+            $chars[$index] = ($end_tag x $number_up) . $chars[$index];
+            $number_up -= 1;
         } elsif ($this_char eq ')') {
             # We just closed a set of parens, see if it closes one of our things
             if ($in_exp_parens && $power_parens{$parens_count}) {
                 $chars[$index] .= $end_tag;
                 delete $power_parens{$parens_count};
                 $in_exp_parens -= 1;
+                $number_up     -= 1;
             }
             $parens_count -= 1;
         }
     }
-    $chars[-1] .= $end_tag x $number_up if ($number_up);
+    my $final = join('', @chars);
+    # We may not have added enough closing tags, because we can't "see" the end.
+    my $up_count   = () = $final =~ /$start_tag/g;
+    my $down_count = () = $final =~ /$end_tag/g;
+    # We'll assume we're just supposed to append them now
+    $final .= $end_tag x ($up_count - $down_count);
 
-    return join('', @chars);
+    return $final;
 }
 
 1;

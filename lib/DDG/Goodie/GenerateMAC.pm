@@ -17,18 +17,21 @@ primary_example_queries 'please generate mac address';
 description 'generates a MAC address';
 name "GenerateMAC";
 
-attribution github => [ 'https://github.com/UnGround', 'Charlie Belmer' ],
-			web => ['http://www.charliebelmer.com','Charlie Belmer'];
+attribution github => ['https://github.com/UnGround',  'Charlie Belmer'],
+            web    => ['http://www.charliebelmer.com', 'Charlie Belmer'];
 
 handle remainder => sub {
-	# Ensure rand is seeded for each process
-	srand();
+    # Ensure rand is seeded for each process
+    srand();
 
-	my $address = join(':', map {sprintf '%0.2X', rand(255)}(1..6));
+    my $address = join(':', map { sprintf '%0.2X', rand(255) } (1 .. 6));
 
-	my $text_response = "Here's a random MAC address: $address";
-	my $html_response = "<i>Here's a random MAC address: </i>$address";
-	return $text_response, html => $html_response;
+    return "Here's a random MAC address: $address",
+      structured_answer => {
+        input     => [],
+        operation => 'random MAC address',
+        result    => $address
+      };
 };
 
 1;

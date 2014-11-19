@@ -6,7 +6,7 @@ use DDG::Goodie;
 use Math::Prime::Util 'divisors';
 
 zci answer_type => "factors";
-zci is_cached => 1;
+zci is_cached   => 1;
 
 triggers startend => 'factors', 'factors of';
 
@@ -19,9 +19,17 @@ category 'calculations';
 attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
 
 handle remainder => sub {
-	return unless /^\d+$/;
-	my @factors = divisors($_);
-	return "Factors of $_: @factors";
+    my $query = $_;
+    return unless $query =~ /^\d+$/;
+
+    my $factors = join ', ', divisors($query);
+
+    return "Factors of $query: $factors",
+      structured_answer => {
+        input     => [$query],
+        operation => 'factors',
+        result    => $factors
+      };
 };
 
 1;

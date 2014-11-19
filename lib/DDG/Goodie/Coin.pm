@@ -18,30 +18,36 @@ category 'random';
 attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
 
 handle query_lc => sub {
-	# Ensure rand is seeded for each process
-	srand();
+    my $flips;
+    if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) a coin)$/) {
+        $flips = 1;
+    } elsif ($_ =~ /^(?:flip|toss) (\d{0,2}) coins?$/) {
+        $flips = $1;
+    }
 
-	my $flips;
-	if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) a coin)$/) {
-		$flips = 1;
-	}
-	elsif ($_ =~ /^(?:flip|toss) (\d{0,2}) coins?$/) {
-		$flips = $1;
-	}
+    return unless ($flips);
 
-	return unless ($flips);
+    # Ensure rand is seeded for each process
+    srand();
+    my @output;
 
-	my @output;
-	my @ht = ("heads", "tails");
+    my @ht = ("heads", "tails");
 
-	for (1..$flips) {
-		my $flip = $ht[int rand @ht];
-		push @output, $flip;
-	}
+    for (1 .. $flips) {
+        my $flip = $ht[int rand @ht];
+        push @output, $flip;
+    }
 
-	my $result = join(', ', @output) .  ' (random)' if @output;
-	return ($result, html => $result) if @output;
-	return;
+    return unless @output;
+
+    my $result = join(', ', @output);
+    return (
+        $result . ' (random)',
+        structured_answer => {
+            input     => [$flips],
+            operation => 'flip coin',
+            result    => $result
+        });
 };
 
 1;

@@ -25,12 +25,20 @@ attribution twitter =>      ['nshanmugham', 'Nishanth Shanmugham'],
 
 
 handle remainder => sub {
-    my $encoded_url = encodeURIComponent($_);
+    my $in = $_;
+
+    return unless $in;
+
+    my $encoded_url = encodeURIComponent($in);
 
     my $text = "Percent-encoded URL: $encoded_url";
-    my $html = qq(<div class="zci--urlencode"><div class="text--secondary mini-title">Percent-encoded URL: </div><div class="text--primary url_encoded">$encoded_url</div></div>);
 
-    return $text, html => $html;
+    return $text,
+      structured_answer => {
+        input     => [html_enc($in)],
+        operation => 'URL percent-encode',
+        result    => html_enc($encoded_url),
+      };
 };
 
 1;

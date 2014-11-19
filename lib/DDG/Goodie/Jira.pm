@@ -36,13 +36,13 @@ handle query => sub {
 
     my $ticket_key    = uc $+{ticket_key};
     my $ticket_number = $+{ticket_number};
+    my $ticket_id     = $ticket_key . '-' . $ticket_number;
 
     my $html_return = '';
 
     foreach my $project_key (@all_project_keys) {
         my $this_project = $projects->{$project_key};
         if (my $ticket_project = $this_project->{ticket_keys}{$ticket_key}) {
-            my $ticket_id = $ticket_key . '-' . $ticket_number;
             $html_return .= '<br>' if ($html_return);    # We're not first, add a line.
             $html_return .=
                 $ticket_project . ' ('
@@ -54,7 +54,14 @@ handle query => sub {
         }
     }
 
-    return undef, html => $html_return if $html_return;
+    return unless $html_return;
+
+    return undef,
+      structured_answer => {
+        input     => [$ticket_id],
+        operation => "JIRA ticket lookup",
+        result    => $html_return
+      };
 };
 
 1;

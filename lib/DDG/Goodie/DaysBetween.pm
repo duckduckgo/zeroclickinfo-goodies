@@ -37,7 +37,13 @@ handle remainder => sub {
     }
     my $startDate = date_output_string($date1);
     my $endDate   = date_output_string($date2);
-    return "There are $daysBetween days between $startDate and $endDate$inclusive.";
+
+    return "There are $daysBetween days between $startDate and $endDate$inclusive.",
+      structured_answer => {
+        input     => [$startDate, $endDate,],
+        operation => 'days between' . $inclusive,
+        result    => $daysBetween
+      };
 };
 
 1;
