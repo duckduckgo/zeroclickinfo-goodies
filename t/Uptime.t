@@ -12,22 +12,21 @@ ddg_goodie_test(
     [qw( DDG::Goodie::Uptime )],
 
     # A complete text+html positive test
-    'uptime 99%' => test_zci(qr/^99% uptime.*/, html=>qr/.*/),
-    'uptime 99%' => test_zci(qr/.*Implied downtimes.*/, html=>qr/.*/),
+    'uptime 99%' => test_zci(qr/^Implied downtimes for 99% uptime.*/, html=>qr/.*/),
     'uptime 99%' => test_zci(qr/.*Daily: 14 minutes and 24 seconds.*/, html=>qr/.*/),
     'uptime 99%' => test_zci(qr/.*Monthly: 7 hours and 18 minutes.*/, html=>qr/.*/),
     'uptime 99%' => test_zci(qr/.*Annually: 3 days and 16 hours$/, html=>qr/.*/),
     'uptime 99%' => test_zci(qr/.*/, html=>qr/.*99% uptime.*/),
-    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Implied downtimes.*/),
+    'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Implied downtimes for 99% uptime.*/),
     'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Daily: 14 minutes and 24 seconds.*/),
     'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Monthly: 7 hours and 18 minutes.*/),
     'uptime 99%' => test_zci(qr/.*/, html=>qr/.*Annually: 3 days and 16 hours.*/),
 
     # Alternate trigger
-    'uptime of 99%' => test_zci(qr/^99% uptime.*/, html=>qr/.*/),
+    'uptime of 99%' => test_zci(qr/^Implied downtimes for 99% uptime.*/, html=>qr/.*/),
     
     # Startend trigger
-    '99% uptime' => test_zci(qr/^99% uptime$.*/, html=>qr/.*/),
+    '99% uptime' => test_zci(qr/^Implied downtimes for 99% uptime.*/, html=>qr/.*/),
 
     # Decimal separator
     'uptime 99,99%' => test_zci(qr/.*/, html=>qr/.*99,99% uptime.*/),

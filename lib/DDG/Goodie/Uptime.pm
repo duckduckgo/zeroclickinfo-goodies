@@ -48,8 +48,7 @@ sub fix_just_now {
 # Format response as text
 sub format_text {
     my ($uptime_percentage, $downtime_year, $downtime_month, $downtime_day) = @_;
-    my $text = $uptime_percentage . " uptime\n";
-    $text .= "Implied downtimes\n";
+    my $text = "Implied downtimes for " . $uptime_percentage . " uptime\n";
     
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
         $text .= "No downtime or less than a second during a year";
@@ -66,8 +65,8 @@ sub format_text {
 # Format response as HTML
 sub format_html {
     my ($uptime_percentage, $downtime_year, $downtime_month, $downtime_day) = @_;
-    my $html = '<div class="zci__header">' . $uptime_percentage . " uptime</div>";
-    $html .= '<div class="zci__header__sub">Implied downtimes</div>';
+    my $html = '<div class="zci__header">Implied downtimes for ';
+    $html .= $uptime_percentage . " uptime</div>";
 
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
         $html .= '<div class="zci__content">No downtime or less than a second during a year</div>';
