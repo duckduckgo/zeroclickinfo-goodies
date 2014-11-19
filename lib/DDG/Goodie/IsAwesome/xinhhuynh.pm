@@ -19,7 +19,7 @@ triggers start => "duckduckhack xinhhuynh";
 
 handle remainder => sub {
 
-	return if $_;
+    return if $_;
     return "xinhhuynh is awesome and has successfully completed the tutorial!"; # Guard against "no answer"
 };
 
