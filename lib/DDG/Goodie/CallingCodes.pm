@@ -4,7 +4,6 @@ package DDG::Goodie::CallingCodes;
 use DDG::Goodie;
 use Locale::Country qw/country2code code2country/;
 use Telephony::CountryDialingCodes;
-
 zci answer_type => "calling_codes";
 zci is_cached   => 1;
 
@@ -90,8 +89,7 @@ handle remainder => sub {
         # $query looks like a country name or country code. eg Brazil or Br
         ($dialing_code, @countries) = country_to_calling_code($query);
     }
-
-    return unless $dialing_code && @countries;
+    return unless $dialing_code && @countries && (defined $countries[0]) ;
 
     $dialing_code = '+' . $dialing_code;
     my $country_list = list2string(@countries);
