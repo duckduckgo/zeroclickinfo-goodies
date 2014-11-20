@@ -4,6 +4,7 @@ package DDG::Goodie::CallingCodes;
 use DDG::Goodie;
 use Locale::Country qw/country2code code2country/;
 use Telephony::CountryDialingCodes;
+
 zci answer_type => "calling_codes";
 zci is_cached   => 1;
 
@@ -94,12 +95,8 @@ handle remainder => sub {
     $dialing_code = '+' . $dialing_code;
     my $country_list = list2string(@countries);
 
-    return $dialing_code . ' is the international calling code for ' . $country_list . '.',
-      structured_answer => {
-        input => [$in_number ? $dialing_code : $country_list],
-        operation => 'international calling code',
-        result    => ($in_number ? $country_list : $dialing_code),
-      };
+    my $html = '<div class="zci__caption">'. html_enc($dialing_code) .'</div><div class="zci__subheader">Country Dialing code for ' . html_enc($country_list) . '</div>';
+    return html => $html;
 };
 
 # Convert a list of country names to a single human readable English string.
