@@ -90,18 +90,13 @@ handle remainder => sub {
         # $query looks like a country name or country code. eg Brazil or Br
         ($dialing_code, @countries) = country_to_calling_code($query);
     }
-
-    return unless $dialing_code && @countries;
+    return unless $dialing_code && @countries && (defined $countries[0]) ;
 
     $dialing_code = '+' . $dialing_code;
     my $country_list = list2string(@countries);
 
-    return $dialing_code . ' is the international calling code for ' . $country_list . '.',
-      structured_answer => {
-        input => [$in_number ? $dialing_code : $country_list],
-        operation => 'international calling code',
-        result    => ($in_number ? $country_list : $dialing_code),
-      };
+    my $html = '<div class="zci__caption">'. html_enc($dialing_code) .'</div><div class="zci__subheader">Country Dialing code for ' . html_enc($country_list) . '</div>';
+    return html => $html;
 };
 
 # Convert a list of country names to a single human readable English string.
