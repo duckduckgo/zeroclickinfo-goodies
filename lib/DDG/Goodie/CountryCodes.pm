@@ -4,14 +4,12 @@ package DDG::Goodie::CountryCodes;
 use DDG::Goodie;
 use Locale::Country qw/country2code code2country/;
 
-use constant WPHREF => "https://en.wikipedia.org/wiki/ISO_3166-1";
-
 zci answer_type => "country_codes";
 zci is_cached   => 1;
 
 name        "CountryCodes";
 description "Matches country names to ISO 3166 codes";
-source      WPHREF;
+source      "https://en.wikipedia.org/wiki/ISO_3166-1";
 code_url    "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/CountryCodes.pm";
 category    "geography";
 topics      "travel", "geography";
@@ -58,7 +56,7 @@ handle remainder => sub {
     ($input, $answer[0]) = ($answer[0], $input) if $answer[1] eq 'code';
 
     my $text = sprintf qq(ISO 3166: %s - %s), ucfirst $input, $answer[0];
-    my $html = sprintf '<a href="%s">ISO 3166</a>: ' . html_enc(ucfirst $input . ' - ' . $answer[0]), WPHREF;
+    my $html = sprintf '<div class="zci__caption">'. $answer[0]  .'</div><div class="zci__subheader">ISO 3166 Country code for ' . html_enc(ucfirst $input) . '</div>';
     return $text, html => $html;
 
 };
