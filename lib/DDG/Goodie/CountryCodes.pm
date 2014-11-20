@@ -56,7 +56,7 @@ handle remainder => sub {
     ($input, $answer[0]) = ($answer[0], $input) if $answer[1] eq 'code';
 
     my $text = sprintf qq(ISO 3166: %s - %s), ucfirst $input, $answer[0];
-    my $html = sprintf '<div class="zci__caption">'. $answer[0]  .'</div><div class="zci__subheader">ISO 3166 Country code for ' . html_enc(ucfirst $input) . '</div>';
+    my $html = '<div class="zci__caption">'. html_enc($answer[0])  .'</div><div class="zci__subheader">ISO 3166 Country code for ' . html_enc(ucfirst $input) . '</div>';
     return $text, html => $html;
 
 };
