@@ -71,11 +71,14 @@ handle remainder => sub {
 sub format_result {
     my $args = shift;
     my ($firstDay, $first_day_num, $lastDay, $highlightDay) = @{$args}{qw(first_day first_day_num last_day highlight)};
+    my $previous = $firstDay->clone->subtract(months => 1);
+    my $next = $firstDay->clone->add(months => 1);
 
     # Print heading
     my $rText = "\n";
-    my $rHtml = '<table class="calendar"><tr><th class="calendar__header" colspan="7"><b>';
-    $rHtml .= $firstDay->strftime("%B %Y").'</b></th></tr><tr>';
+    my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="http://duckduckgo.com/?q=calendar+'.$previous->strftime("%B %Y").'"><span class="ddgsi ddgsi-arrow-left"></span></a></span><span class="calendar__header"><b>';
+    $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="http://duckduckgo.com/?q=calendar+'.$next->strftime("%B %Y").'"><span class="ddgsi ddgsi-arrow-right"></span></a></span></th>';
+    $rHtml .= '</tr><tr>';
 
     for my $dayHeading (@weekDays) {
         $rText .= $dayHeading . ' ';
