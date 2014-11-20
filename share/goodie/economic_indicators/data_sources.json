@@ -1,0 +1,26 @@
+{
+    "gdp": {
+        "display_name": "Gross Domestic Product",
+        "display_url": "http://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+        "download_url": "http://api.worldbank.org/v2/en/indicator/ny.gdp.mktp.cd?downloadformat=csv",
+        "source_type": "WORLD_BANK_INDICATOR",
+        "target_file": "ny.gdp.mktp.cd_Indicator_en_csv_v2.csv",
+        "relevant_year": "2013"
+    },
+    "per_capita_income": {
+        "display_name": "Per Capita Income",
+        "display_url": "http://data.worldbank.org/indicator/NY.GNP.PCAP.PP.CD",
+        "download_url": "http://api.worldbank.org/v2/en/indicator/ny.gnp.pcap.pp.cd?downloadformat=csv",
+        "source_type": "WORLD_BANK_INDICATOR",
+        "target_file": "ny.gnp.pcap.pp.cd_Indicator_en_csv_v2.csv",
+        "relevant_year": "2013"
+    },
+    "growth_rate": {
+        "display_name": "Annual Growth Rate",
+        "display_url": "http://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+        "download_url": "http://api.worldbank.org/v2/en/indicator/ny.gdp.mktp.kd.zg?downloadformat=csv",
+        "source_type": "WORLD_BANK_INDICATOR",
+        "target_file": "ny.gdp.mktp.kd.zg_Indicator_en_csv_v2.csv",
+        "relevant_year": "2013"
+    }
+}
