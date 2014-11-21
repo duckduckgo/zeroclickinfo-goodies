@@ -91,7 +91,7 @@ handle remainder => sub {
         ($dialing_code, @countries) = country_to_calling_code($query);
     }
 
-    return unless $dialing_code && @countries;
+    return unless $dialing_code && @countries && (defined $countries[0]);
 
     $dialing_code = '+' . $dialing_code;
     my $country_list = list2string(@countries);
