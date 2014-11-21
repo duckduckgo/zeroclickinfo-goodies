@@ -23,13 +23,13 @@ attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
 my $time_format      = '%l:%M %p';
 my $datestring_regex = datestring_regex();
 
-my $sunrise_svg = goodie_img_tag({
-    filename => 'sunrise.svg',
+my $sunrise_png = goodie_img_tag({
+    filename => 'sunrise.png',
     height   => 48,
     width    => 48,
 });
-my $sunset_svg = goodie_img_tag({
-    filename => 'sunset.svg',
+my $sunset_png = goodie_img_tag({
+    filename => 'sunset.png',
     height   => 48,
     width    => 48,
 });
@@ -94,11 +94,11 @@ sub pretty_output {
     $html .= "<div class='suninfo--header text--secondary'><span class='ddgsi'>@</span>$where on $when</div>";
     $html .= "<div class='suninfo--row'>".
         "<span class='suninfo--risebox'>"
-      . $sunrise_svg
+      . $sunrise_png
       . "</span><span class='suninfo--timeboxes suninfo--border-right'><span class='text--primary suninfo--times'>$rise</span></span>";
     $html .=
         "<span class='suninfo--setbox'>"
-      . $sunset_svg
+      . $sunset_png
       . "</span><span class='suninfo--timeboxes'><span class='text--primary suninfo--times'>$set</span></span>";
     $html .= "</div></div>";
 
