@@ -55,7 +55,7 @@ handle remainder => sub {
     # Swap country and code, if user had entered code
     ($input, $answer[0]) = ($answer[0], $input) if $answer[1] eq 'code';
 
-    return 'ISO 3166: '. $input .'-'. $answer[0],
+    return 'ISO 3166: '. ucfirst $input .' - '. $answer[0],
         structured_answer => {
             input => [ucfirst $input],
             operation => 'ISO 3166 Country code',
