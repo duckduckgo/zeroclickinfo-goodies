@@ -341,6 +341,7 @@ ddg_goodie_test(
     'country code +850'                => undef,
     "calling code for the moon"        => undef,
     "calling code +3boop"              => undef,
+    "calling code 599"                 => undef,
 );
 
 done_testing;
