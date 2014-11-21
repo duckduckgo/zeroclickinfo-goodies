@@ -55,10 +55,12 @@ handle remainder => sub {
     # Swap country and code, if user had entered code
     ($input, $answer[0]) = ($answer[0], $input) if $answer[1] eq 'code';
 
-    my $text = sprintf qq(ISO 3166: %s - %s), ucfirst $input, $answer[0];
-    my $html = '<div class="zci__caption">'. html_enc($answer[0])  .'</div><div class="zci__subheader">ISO 3166 Country code for ' . html_enc(ucfirst $input) . '</div>';
-    return $text, html => $html;
-
+    return 'ISO 3166: '. $input .'-'. $answer[0],
+        structured_answer => {
+            input => [ucfirst $input],
+            operation => 'ISO 3166 Country code',
+            result => ($answer[0]),
+    };
 };
 
 sub result {
