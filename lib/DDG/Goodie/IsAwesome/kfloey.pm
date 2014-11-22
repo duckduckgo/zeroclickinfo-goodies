@@ -16,10 +16,10 @@ attribution github => ["https://github.com/kfloey", "kfloey"];
 
 triggers start => "duckduckhack kfloey";
 
-# Handle statement
+
 handle remainder => sub {
     return if $_;
-	return "kfloey is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return "kfloey is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
