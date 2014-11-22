@@ -9,21 +9,22 @@ use DDG::Test::Goodie;
 zci answer_type => "name_days_w25";
 zci is_cached   => 1;
 
-my $jan_9 = "Czech Republic: Vladan\nHungary: Marcell\nPoland: Antoni Borzymir Julian Julianna";
-my $feb_29 = "Czech Republic: Horymír\nPoland: Dobronieg Roman";
-my $dec_30 = "Czech Republic: David\nHungary: Dávid\nPoland: Dawid Eugeniusz Katarzyna Uniedrog";
-my $dec_31 = "Czech Republic: Silvestr\nHungary: Szilveszter\nPoland: Korneliusz Melania Sebastian Sylwester Tworzysław";
-my $tamara = "Czech Republic:  3 Jun\nHungary: 29 Dec\nPoland:  3 Jun";
+my $jan_9 = "Czech Republic: Vladan; Hungary: Marcell; Poland: Antoni Borzymir Julian Julianna";
+my $feb_29 = "Czech Republic: Horymír; Poland: Dobronieg Roman";
+my $dec_30 = "Czech Republic: David; Hungary: Dávid; Poland: Dawid Eugeniusz Katarzyna Uniedrog";
+my $dec_31 = "Czech Republic: Silvestr; Hungary: Szilveszter; Poland: Korneliusz Melania Sebastian Sylwester Tworzysław";
+my $tamara = "Czech Republic:  3 Jun; Hungary: 29 Dec; Poland:  3 Jun";
 my $marii = 'Poland: 23 Jan,  2 Feb, 11 Feb, 25 Mar, 14 Apr, 26 Apr, 28 Apr,  3 May, 24 May, 25 May, 29 May,  2 Jun, 13 Jun, 27 Jun,  2 Jul, 16 Jul, 17 Jul, 22 Jul, 29 Jul,  2 Aug,  4 Aug,  5 Aug, 15 Aug, 22 Aug, 26 Aug,  8 Sep, 12 Sep, 15 Sep, 24 Sep,  7 Oct, 11 Oct, 16 Nov, 21 Nov,  8 Dec, 10 Dec';
 
 ddg_goodie_test(
     [qw( DDG::Goodie::NameDays )],
     'name day mieszko' => test_zci('Poland:  1 Jan'),
     'maria imieniny' => test_zci($marii),
-    '3 June name day' => test_zci("Czech Republic: Tamara\nHungary: Klotild Cecília\nPoland: Konstantyn Leszek Paula Tamara"),
+    '3 June name day' => test_zci("Czech Republic: Tamara; Hungary: Klotild Cecília; Poland: Konstantyn Leszek Paula Tamara"),
     'Name Day Tamara' => test_zci($tamara),
     'namedays dec 30' => test_zci($dec_30),
-    'name day 1 Jan' => test_zci("Hungary: Fruzsina\nPoland: Mieczysław Mieszko"),
+    'name day 1 Jan' => test_zci("Hungary: Fruzsina; Poland: Mieczysław Mieszko"),
+    'Radmila svátek' => test_zci('Czech Republic:  3 Jan'),
     
     # Genetive case
     'imieniny marii' => test_zci($marii),

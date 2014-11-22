@@ -60,7 +60,7 @@ sub load_days_file {
         chomp;
         s/\s*\|.*$//;
         if ($_) {
-            $names[$day_of_year - 1] .= "\n" if ($names[$day_of_year - 1]);
+            $names[$day_of_year - 1] .= "; " if ($names[$day_of_year - 1]);
             $names[$day_of_year - 1] .= $file_name . ': ' . $_;
         }
         
@@ -87,10 +87,10 @@ sub finish_loading {
         # Convert to string
         my $res = '';
         foreach (sort keys %dates_by_country) {
-            $res .= $_ . ': ' . $dates_by_country{$_} . "\n";
+            $res .= $_ . ': ' . $dates_by_country{$_} . "; ";
         }
         
-        chomp($res);
+        $res =~ s/; $//;
         $dates{$_} = $res;
     }
 }
