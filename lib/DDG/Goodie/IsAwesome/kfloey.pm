@@ -14,7 +14,7 @@ topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/kfloey.pm";
 attribution github => ["https://github.com/kfloey", "kfloey"];
 
-start => "duckduckhack kfloey";
+triggers start => "duckduckhack kfloey";
 
 # Handle statement
 handle remainder => sub {
