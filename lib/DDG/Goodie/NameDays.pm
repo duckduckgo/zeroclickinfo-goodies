@@ -22,7 +22,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["http://github.com/W25", "W25"];
 
 # Triggers
-triggers any => "name day", "name days", "nameday", "namedays", "imieniny";
+triggers any => "name day", "name days", "nameday", "namedays", "imieniny", "jmeniny", "svátek";
 
 
 
@@ -130,6 +130,20 @@ sub parse_other_date_formats {
     s/\b(październik|października)\b/Oct/i;
     s/\b(listopad|listopada)\b/Nov/i;
     s/\b(grudzień|grudnia)\b/Dec/i;
+    
+    # Czech month names
+    s/\b(leden|ledna)\b/Jan/i;
+    s/\b(únor|února)\b/Feb/i;
+    s/\b(březen|března)\b/Mar/i;
+    s/\b(duben|dubna)\b/Apr/i;
+    s/\b(květen|května)\b/May/i;
+    s/\b(červen|června)\b/Jun/i;
+    s/\b(červenec|července)\b/Jul/i;
+    s/\b(srpen|srpna)\b/Aug/i;
+    s/\b(září)\b/Sep/i;
+    s/\b(říjen|října)\b/Oct/i;
+    s/\b(listopad|listopadu)\b/Nov/i;
+    s/\b(prosinec|prosince)\b/Dec/i;
     
     # Parse_datestring_to_date uses the current year if the year is not specified, so
     # it will not parse "29 Feb" in a non-leap year. Fix this problem here.

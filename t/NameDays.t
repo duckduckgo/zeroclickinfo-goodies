@@ -48,6 +48,12 @@ ddg_goodie_test(
     'Imieniny 31 GRUDNIA' => test_zci($dec_31),
     'Imieniny 29 lutego' => test_zci($feb_29),
     
+    # Czech date formats
+    'svátek 9 ledna' => test_zci($jan_9),
+    'jmeniny 9 leden' => test_zci($jan_9),
+    'svátek 31 Prosince' => test_zci($dec_31),
+    'jmeniny 29 února' => test_zci($feb_29),
+    
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     'name day 12/32' => undef,
