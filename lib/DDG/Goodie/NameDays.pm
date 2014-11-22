@@ -42,6 +42,7 @@ sub load_days_file {
     my @lines = share($file_name)->slurp(iomode => '<:encoding(UTF-8)');
     
     $file_name =~ s/\.txt$//;
+    $file_name =~ s/_/ /g;
     
     die "The text file must include 366 lines" unless scalar(@lines) == 366;
 
@@ -96,7 +97,7 @@ sub finish_loading {
 }
 
 
-load_days_file('Czech Republic.txt');
+load_days_file('Czech_Republic.txt');
 load_days_file('Hungary.txt');
 load_days_file('Poland.txt');
 finish_loading();
