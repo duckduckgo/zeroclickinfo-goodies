@@ -214,6 +214,7 @@ ddg_goodie_test(
             result    => '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8'
         }
     ),
+    'shadow' => undef
 );
 
 done_testing;

@@ -19,7 +19,11 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
 
 
-triggers query => qr/^sha\-?(?<ver>1|224|256|384|512|)?(?:sum|)\s*(?<enc>hex|base64|)\s*(?<str>.*)$/i;
+triggers query => qr/^
+    sha\-?(?<ver>1|224|256|384|512|)?(?:sum|)\s*
+    (?<enc>hex|base64|)\s+
+    (?<str>.*)
+    $/ix;
 
 handle query => sub {
     my $ver = $+{'ver'}    || 1;
