@@ -27,7 +27,7 @@ triggers any => "name day", "name days", "nameday", "namedays", "imieniny";
 
 
 # Load the data file
-my @names = share('Poland.txt')->slurp(iomode => '<:encoding(UTF-8)'); # Names indexed by day
+my @names = (); # Names indexed by day
 my %dates = (); # Days indexed by name
 
 # File format: 366 lines (one for each day of a year).
@@ -36,44 +36,70 @@ my %dates = (); # Days indexed by name
 # These variations are placed after vertical bar character (|); they are
 # not shown when searching for this day, but you can search for them.
 
-sub load_days {
-    die "The text file must include 366 lines" unless scalar(@names) == 366;
+sub load_days_file {
+    my $file_name = shift();
+    
+    my @lines = share($file_name)->slurp(iomode => '<:encoding(UTF-8)');
+    
+    $file_name =~ s/\.txt$//;
+    
+    die "The text file must include 366 lines" unless scalar(@lines) == 366;
 
     my $day_of_year = 1;
 
     # Read names for each day and add them to the hash
-    for (@names) {
+    for (@lines) {
         # Add all names, including the names after vertical bar
         my $names_for_date = lc($_);
         $names_for_date =~ s/\|/ /;
         for my $name (split(' ', $names_for_date)) {
-            push(@{$dates{$name}}, $day_of_year);
+            push(@{$dates{$name}}, $file_name . '|' . $day_of_year);
         }
     
         # Remove the names after vertical bar (|)
         chomp;
         s/\s*\|.*$//;
+        if ($_) {
+            $names[$day_of_year - 1] .= "\n" if ($names[$day_of_year - 1]);
+            $names[$day_of_year - 1] .= $file_name . ': ' . $_;
+        }
         
         # Advance to the next day
         $day_of_year++;
     }
-    
+}
+
+sub finish_loading {
     # Convert the dates to string
     for (keys %dates) {
-        # Find all dates corresponding to this name
-        my @ret = ();
+        # Group the dates by country
+        my %dates_by_country = ();
         foreach (@{$dates{$_}}) {
+            die 'Internal error' unless /^(.*?)\|(\d+)$/;
             # Any leap year here, because the text file includes February, 29
-            my $d = DateTime->from_day_of_year(year => 2000, day_of_year => $_);
-            push(@ret, $d->strftime('%e %b'));
+            my $d = DateTime->from_day_of_year(year => 2000, day_of_year => $2);
+            if (exists $dates_by_country{$1}) {
+                $dates_by_country{$1} .= ', ';
+            }
+            $dates_by_country{$1} .= $d->strftime('%e %b');
         }
-        $dates{$_} = join(', ', @ret);
+        
+        # Convert to string
+        my $res = '';
+        foreach (sort keys %dates_by_country) {
+            $res .= $_ . ': ' . $dates_by_country{$_} . "\n";
+        }
+        
+        chomp($res);
+        $dates{$_} = $res;
     }
 }
 
 
-load_days();
-
+load_days_file('Czech Republic.txt');
+load_days_file('Hungary.txt');
+load_days_file('Poland.txt');
+finish_loading();
 
 
 sub parse_other_date_formats {
