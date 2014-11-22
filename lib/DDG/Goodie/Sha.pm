@@ -22,9 +22,11 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
 triggers query => qr/^sha\-?(?<ver>1|224|256|384|512|)?(?:sum|)\s*(?<enc>hex|base64|)\s*(?<str>.*)$/i;
 
 handle query => sub {
+    
     my $ver = $+{'ver'}    || 1;
     my $enc = lc $+{'enc'} || 'hex';
     my $str = $+{'str'}    || '';
+    return unless m/^sha([-\s1-9]|sum)/;     
 
     $str =~ s/^hash\s+(.*\S+)/$1/;    # Remove 'hash' in queries like 'sha hash this'
     $str =~ s/^of\s+(.*\S+)/$1/;      # Remove 'of' in queries like 'sha hash of this'
