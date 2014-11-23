@@ -7,7 +7,7 @@ with 'DDG::GoodieRole::NumberStyler';
 use Math::Round qw/nearest/;
 use bignum;
 use Convert::Pluggable;
-use Data::Dumper;
+
 name                      'Conversions';
 description               'convert between various units of measurement';
 category                  'calculations';
@@ -104,7 +104,6 @@ print $styler->for_computation($factor);
         'precision' => $precision,
     } );
     return if !$result->{'result'};
-print Dumper $result;
     my $f_result;
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
