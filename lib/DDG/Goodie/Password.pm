@@ -45,7 +45,7 @@ my $strengths = join('|', keys %pw_strengths);
 
 handle remainder => sub {
     my $query = shift;
-    return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s+(?<sw>\d+|$strengths|)$/i);
+    return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s*(?<sw>\d+|$strengths|)$/i);
 
     srand();                           # Reseed on each request.
 

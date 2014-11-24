@@ -99,6 +99,14 @@ ddg_goodie_test(
             result    => qr/^.{15}$/
         }
     ),
+    'password 15' => test_zci(
+        qr/.{15} \(random password\)/,
+        structured_answer => {
+            input     => ['15 characters', 'average strength'],
+            operation => 'random password',
+            result    => qr/^.{15}$/
+        }
+    ),
 );
 
 done_testing
