@@ -622,7 +622,7 @@
       "name": "Firework Rocket",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/firework-rocket-crafting.gif",
       "ingredients": "Gunpowder + Paper + Firework Star",
-      "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket d"
+      "description": "Firework that can be launched into the sky and explore. Adding more gunpowder increases the duration of the rocket. Up to three gunpowder can be used. Multiple firework stars can also be used, in which case all will go off simultaneously when the rocket detonates. By limiting the amount of gunpowder to one, it is possible to use up to seven firework stars."
     },
     {
       "name": "Firework Star",
