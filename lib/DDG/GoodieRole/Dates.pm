@@ -334,6 +334,9 @@ sub build_datestring_regex {
     ## Ambiguous, but potentially valid date formats
     push @regexes, $ambiguous_dates;
 
+    ## tomorrow, next week|month|year, ... etc
+    push @regexes, $relative_dates;
+
     my $returned_regex = join '|', @regexes;
     return qr/$returned_regex/i;
 }

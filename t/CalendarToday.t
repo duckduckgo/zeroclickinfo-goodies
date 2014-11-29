@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use Test::MockTime qw( :all );
 
 zci answer_type => 'calendar';
 zci is_cached   => 0;
@@ -80,6 +81,34 @@ S M T W T F S      November 2009
     "today's calendar" => test_zci(qr/\nS M T W T F S      [A-Z][a-z]+ [0-9]{4}\n.+/, html => '-ANY-'),
     "november's calendar" => test_zci(qr/\nS M T W T F S      November [0-9]{4}\n.+/, html => '-ANY-'),
 );
+
+# Special focus on relative dates, examining the "today" circle
+my $test_location_tz = qr/\(EDT, UTC-4\)/;
+set_fixed_time("2014-06-11T09:45:56");
+ddg_goodie_test(
+    [qw(
+        DDG::Goodie::CalendarToday
+    )],
+    "calendar yesterday" => test_zci(qr/June 2014.*\|10\|/s,
+				     html => qr#<span class="calendar__today circle">10</span>#),
+    "calendar today"     => test_zci(qr/June 2014.*\|11\|/s,
+				     html => qr#<span class="calendar__today circle">11</span>#),
+    "calendar tomorrow"  => test_zci(qr/June 2014.*\|12\|/s,
+				     html => qr#<span class="calendar__today circle">12</span>#),
+    "calendar 20 days ago" => test_zci(qr/May 2014.*\|22\|/s,
+				     html => qr#<span class="calendar__today circle">22</span>#),
+    "calendar in 20 days" => test_zci(qr/July 2014.*\| 1\|/s,
+				     html => qr#<span class="calendar__today circle">1</span>#),
+    "calendar last week" => test_zci(qr/June 2014.*\| 4\|/s,
+				     html => qr#<span class="calendar__today circle">4</span>#),
+    "calendar next week" => test_zci(qr/June 2014.*\|18\|/s,
+				     html => qr#<span class="calendar__today circle">18</span>#),
+    "calendar last year" => test_zci(qr/June 2013.*\|11\|/s,
+				     html => qr#<span class="calendar__today circle">11</span>#),
+    "calendar next year" => test_zci(qr/June 2015.*\|11\|/s,
+				     html => qr#<span class="calendar__today circle">11</span>#),
+);
+restore_time();
 
 done_testing;
 
