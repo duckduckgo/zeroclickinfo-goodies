@@ -7,7 +7,7 @@ with 'DDG::GoodieRole::Dates';
 use Date::Hijri;
 use Date::Jalali2;
 
-use YAML::XS qw(Load);
+use YAML qw(Load);
 
 zci answer_type => "calendar_conversion";
 zci is_cached   => 0;
