@@ -20,7 +20,7 @@ triggers start => "duckduckhack asarode";
 
 handle remainder => sub {
     return if $_;
-	return "asarode is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return "asarode is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
