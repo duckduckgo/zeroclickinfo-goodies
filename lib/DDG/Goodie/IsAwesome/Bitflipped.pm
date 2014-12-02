@@ -5,25 +5,25 @@ package DDG::Goodie::IsAwesome::Bitflipped;
 
 use DDG::Goodie;
 
-zci answer_type => "is_awesome_bitflipped";
-zci is_cached   => 1;
+zci answer_type             => "is_awesome_bitflipped";
+zci is_cached               => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
-name "IsAwesome Bitflipped";
-description "Prints nice message";
-primary_example_queries "duckduckhack bitflipped";
-secondary_example_queries "optional -- demonstrate any additional triggers";
-category "special";
-topics "special_interest", "geek";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Bitflipped.pm";
-attribution github => ["bitflipped", "Jon A"];
+# Metadata.                 See https://duck.co/duckduckhack/metadata for help in filling out this section.
+name                        "IsAwesome Bitflipped";
+description                 "Prints nice message";
+primary_example_queries     "duckduckhack bitflipped";
+secondary_example_queries   "optional -- demonstrate any additional triggers";
+category                    "special";
+topics                      "special_interest", "geek";
+code_url                    "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Bitflipped.pm";
+attribution github          => ["bitflipped", "Jon A"];
 
 
 # Triggers
-triggers start => "duckduckhack bitflipped";
+triggers start      => "duckduckhack bitflipped";
 
 # Handle statement
-handle remainder => sub {
+handle remainder    => sub {
 
 	# optional - regex guard
 	#return unless qr/^\w+/;
