@@ -28,9 +28,9 @@ secondary_example_queries   'ahiru to hiragana',
 zci is_cached   => 1;
 zci answer_type => 'kana';
 
-triggers query_lc => qr//;
+triggers query_lc => qr/^(?<text>.*?)(?: to| in)?\s+(?<syll>hiragana|katakana|romaji)$/;
 
-handle query_raw => {
+handle query_lc => {
 };
 
 1;
