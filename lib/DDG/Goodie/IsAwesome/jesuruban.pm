@@ -14,10 +14,6 @@ topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/jesuruban.pm";
 attribution github => ["https://github.com/jesuruban", "jesuruban"],        
             twitter => "jesuruban";
-            
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/jesuruban/jesuruban.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
 
 triggers start => "duckduckhack jesuruban";
 
