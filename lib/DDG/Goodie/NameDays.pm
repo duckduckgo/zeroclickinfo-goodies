@@ -87,24 +87,32 @@ sub parse_other_date_formats {
 
 # Handle statement
 handle remainder => sub {
-    # Search by name first
+    my $text;
+    
     if (exists $dates{lc($_)}) {
-        return $dates{lc($_)};
+        # Search by name first
+        $text = $dates{lc($_)};
+    } else {
+        # Then, search by date
+        my $day = parse_datestring_to_date($_);
+
+        if (!$day) {
+            $day = parse_other_date_formats($_);
+        }
+
+        return unless $day;
+
+        # Any leap year here, because the array includes February, 29
+        $day->set_year(2000);
+
+        $text = $names[$day->day_of_year() - 1];
     }
     
-    # Then, search by date
-    my $day = parse_datestring_to_date($_);
+    # Convert to HTML
+    my $html = $text;
+    $html =~ s/(^|; )(.*?:)/$1<b>$2<\/b>/g;
     
-    if (!$day) {
-        $day = parse_other_date_formats($_);
-    }
-    
-    return unless $day;
-    
-    # Any leap year here, because the array includes February, 29
-    $day->set_year(2000);
-    
-    return $names[$day->day_of_year() - 1];
+    return $text, html => $html;
 };
 
 1;
