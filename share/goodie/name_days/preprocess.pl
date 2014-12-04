@@ -39,7 +39,7 @@ sub load_days_file {
         # Remove the names after vertical bar (|)
         chomp;
         s/\s*\|.*$//;
-        
+        s/ /, /g;
         if ($_) {
             $names[$day_of_year - 1] .= "; " if ($names[$day_of_year - 1]);
             $names[$day_of_year - 1] .= $file_name . ': ' . $_;

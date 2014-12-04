@@ -9,17 +9,17 @@ use DDG::Test::Goodie;
 zci answer_type => "name_days_w25";
 zci is_cached   => 1;
 
-my $jan_9 = "Czech Republic: Vladan; Hungary: Marcell; Poland: Antoni Borzymir Julian Julianna";
-my $feb_29 = "Czech Republic: Horymír; Poland: Dobronieg Roman";
-my $dec_30 = "Czech Republic: David; Hungary: Dávid; Poland: Dawid Eugeniusz Katarzyna Uniedrog";
-my $dec_31 = "Czech Republic: Silvestr; Hungary: Szilveszter; Poland: Korneliusz Melania Sebastian Sylwester Tworzysław";
+my $jan_9 = "Czech Republic: Vladan; Hungary: Marcell; Poland: Antoni, Borzymir, Julian, Julianna";
+my $feb_29 = "Czech Republic: Horymír; Poland: Dobronieg, Roman";
+my $dec_30 = "Czech Republic: David; Hungary: Dávid; Poland: Dawid, Eugeniusz, Katarzyna, Uniedrog";
+my $dec_31 = "Czech Republic: Silvestr; Hungary: Szilveszter; Poland: Korneliusz, Melania, Sebastian, Sylwester, Tworzysław";
 my $tamara = "Czech Republic:  3 Jun; Hungary: 29 Dec; Poland:  3 Jun";
 my $marii = 'Poland: 23 Jan,  2 Feb, 11 Feb, 25 Mar, 14 Apr, 26 Apr, 28 Apr,  3 May, 24 May, 25 May, 29 May,  2 Jun, 13 Jun, 27 Jun,  2 Jul, 16 Jul, 17 Jul, 22 Jul, 29 Jul,  2 Aug,  4 Aug,  5 Aug, 15 Aug, 22 Aug, 26 Aug,  8 Sep, 12 Sep, 15 Sep, 24 Sep,  7 Oct, 11 Oct, 16 Nov, 21 Nov,  8 Dec, 10 Dec';
 
-my $jan_9_html = "<b>Czech Republic:</b> Vladan; <b>Hungary:</b> Marcell; <b>Poland:</b> Antoni Borzymir Julian Julianna";
-my $feb_29_html = "<b>Czech Republic:</b> Horymír; <b>Poland:</b> Dobronieg Roman";
-my $dec_30_html = "<b>Czech Republic:</b> David; <b>Hungary:</b> Dávid; <b>Poland:</b> Dawid Eugeniusz Katarzyna Uniedrog";
-my $dec_31_html = "<b>Czech Republic:</b> Silvestr; <b>Hungary:</b> Szilveszter; <b>Poland:</b> Korneliusz Melania Sebastian Sylwester Tworzysław";
+my $jan_9_html = "<b>Czech Republic:</b> Vladan; <b>Hungary:</b> Marcell; <b>Poland:</b> Antoni, Borzymir, Julian, Julianna";
+my $feb_29_html = "<b>Czech Republic:</b> Horymír; <b>Poland:</b> Dobronieg, Roman";
+my $dec_30_html = "<b>Czech Republic:</b> David; <b>Hungary:</b> Dávid; <b>Poland:</b> Dawid, Eugeniusz, Katarzyna, Uniedrog";
+my $dec_31_html = "<b>Czech Republic:</b> Silvestr; <b>Hungary:</b> Szilveszter; <b>Poland:</b> Korneliusz, Melania, Sebastian, Sylwester, Tworzysław";
 my $tamara_html = "<b>Czech Republic:</b>  3 Jun; <b>Hungary:</b> 29 Dec; <b>Poland:</b>  3 Jun";
 my $marii_html = '<b>Poland:</b> 23 Jan,  2 Feb, 11 Feb, 25 Mar, 14 Apr, 26 Apr, 28 Apr,  3 May, 24 May, 25 May, 29 May,  2 Jun, 13 Jun, 27 Jun,  2 Jul, 16 Jul, 17 Jul, 22 Jul, 29 Jul,  2 Aug,  4 Aug,  5 Aug, 15 Aug, 22 Aug, 26 Aug,  8 Sep, 12 Sep, 15 Sep, 24 Sep,  7 Oct, 11 Oct, 16 Nov, 21 Nov,  8 Dec, 10 Dec';
 
@@ -28,11 +28,11 @@ ddg_goodie_test(
     [qw( DDG::Goodie::NameDays )],
     'name day mieszko' => test_zci('Poland:  1 Jan', html => '<b>Poland:</b>  1 Jan'),
     'maria imieniny' => test_zci($marii, html => $marii_html),
-    '3 June name day' => test_zci("Czech Republic: Tamara; Hungary: Klotild Cecília; Poland: Konstantyn Leszek Paula Tamara",
-                          html => "<b>Czech Republic:</b> Tamara; <b>Hungary:</b> Klotild Cecília; <b>Poland:</b> Konstantyn Leszek Paula Tamara"),
+    '3 June name day' => test_zci("Czech Republic: Tamara; Hungary: Klotild, Cecília; Poland: Konstantyn, Leszek, Paula, Tamara",
+                          html => "<b>Czech Republic:</b> Tamara; <b>Hungary:</b> Klotild, Cecília; <b>Poland:</b> Konstantyn, Leszek, Paula, Tamara"),
     'Name Day Tamara' => test_zci($tamara, html => $tamara_html),
     'namedays dec 30' => test_zci($dec_30, html => $dec_30_html),
-    'name day 1 Jan' => test_zci("Hungary: Fruzsina; Poland: Mieczysław Mieszko", html => "<b>Hungary:</b> Fruzsina; <b>Poland:</b> Mieczysław Mieszko"),
+    'name day 1 Jan' => test_zci("Hungary: Fruzsina; Poland: Mieczysław, Mieszko", html => "<b>Hungary:</b> Fruzsina; <b>Poland:</b> Mieczysław, Mieszko"),
     'Radmila svátek' => test_zci('Czech Republic:  3 Jan', html => '<b>Czech Republic:</b>  3 Jan'),
     
     # Genetive case
