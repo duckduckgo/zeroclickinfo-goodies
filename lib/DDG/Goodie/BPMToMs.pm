@@ -19,7 +19,7 @@ attribution github => ["https://github.com/stefolof", "stefolof"],
 triggers end => "bpm to ms";
 
 handle remainder => sub {
-	return unless $_; # Guard against "no answer"
+    return unless $_; # Guard against "no answer"
     return unless $_ =~ /^\d+$/i; # Only integer values accepted
     
     return html => "<div class=\"record\">
