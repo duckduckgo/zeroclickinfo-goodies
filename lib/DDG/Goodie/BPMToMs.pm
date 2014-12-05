@@ -31,11 +31,11 @@ handle remainder => sub {
     my @triplet_values = map { int( 160000 / ($bpm * $_) + 0.5) } @divisors;
     my @dotted_values = map { int( 360000 / ($bpm * $_) + 0.5) } @divisors;
     
-    return html => "<div class=\"record\">
+    return html => "<div class=\"bpmto_ms record\">
                     <div>
                        $bpm BPM as quarter notes per minute corresponds to the following note lengths in milliseconds:
                     </div>
-                    <table style=\"border-spacing: 10px; border-collapse: separate;\" class=\"record__body\">
+                    <table class=\"record__body\">
                         <tr class=\"record__row record__highlight\">
                             <td>Whole Note:</td><td>" . $straight_values[0] . " ms</td>
                             <td>Triplet:</td><td>" . $triplet_values[0] . " ms</td>
