@@ -33,7 +33,7 @@ handle remainder => sub {
     
     return html => "<div class=\"record\">
                     <div>
-                       $bpm BPM as quarter notes per minute
+                       $bpm BPM as quarter notes per minute corresponds to the following note lengths in milliseconds:
                     </div>
                     <table style=\"border-spacing: 10px; border-collapse: separate;\" class=\"record__body\">
                         <tr class=\"record__row record__highlight\">
@@ -73,7 +73,8 @@ handle remainder => sub {
                         </tr>
                    </table>
                    </div>",
-                   answer => "$bpm BPM as quarter notes per minute\n" . "Whole Note: " . $straight_values[0] . " ms, Triplet: " . $triplet_values[0] . " ms, Dotted: " . $dotted_values[0] . " ms
+                   answer => "$bpm BPM as quarter notes per minute corresponds to the following note lengths in milliseconds:
+Whole Note: " . $straight_values[0] . " ms, Triplet: " . $triplet_values[0] . " ms, Dotted: " . $dotted_values[0] . " ms
 Half Note: " . $straight_values[1] . " ms, Triplet: " . $triplet_values[1] . " ms, Dotted: " . $dotted_values[1] . " ms
 Quarter Note: " . $straight_values[2] . " ms, Triplet: " . $triplet_values[2] . " ms, Dotted: " . $dotted_values[2] . " ms
 1/8 Note: " . $straight_values[3] . " ms, Triplet: " . $triplet_values[3] . " ms, Dotted: " . $dotted_values[3] . " ms

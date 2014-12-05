@@ -11,7 +11,7 @@ zci is_cached   => 1;
 ddg_goodie_test(
     [qw( DDG::Goodie::BPMToMs )],                                                                                                                                                       
     map { ("$_" => test_zci(
-'120 BPM as quarter notes per minute
+'120 BPM as quarter notes per minute corresponds to the following note lengths in milliseconds:
 Whole Note: 2000 ms, Triplet: 1333 ms, Dotted: 3000 ms
 Half Note: 1000 ms, Triplet: 667 ms, Dotted: 1500 ms
 Quarter Note: 500 ms, Triplet: 333 ms, Dotted: 750 ms
