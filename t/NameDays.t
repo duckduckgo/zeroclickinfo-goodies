@@ -9,35 +9,71 @@ use DDG::Test::Goodie;
 zci answer_type => "name_days_w25";
 zci is_cached   => 1;
 
-my $jan_9 = "Czech Republic: Vladan; Hungary: Marcell; Poland: Antoni, Borzymir, Julian, Julianna";
-my $feb_29 = "Czech Republic: Horymír; Poland: Dobronieg, Roman";
-my $dec_30 = "Czech Republic: David; Hungary: Dávid; Poland: Dawid, Eugeniusz, Katarzyna, Uniedrog";
-my $dec_31 = "Czech Republic: Silvestr; Hungary: Szilveszter; Poland: Korneliusz, Melania, Sebastian, Sylwester, Tworzysław";
-my $tamara = "Czech Republic:  3 Jun; Hungary: 29 Dec; Poland:  3 Jun";
-my $marii = 'Poland: 23 Jan,  2 Feb, 11 Feb, 25 Mar, 14 Apr, 26 Apr, 28 Apr,  3 May, 24 May, 25 May, 29 May,  2 Jun, 13 Jun, 27 Jun,  2 Jul, 16 Jul, 17 Jul, 22 Jul, 29 Jul,  2 Aug,  4 Aug,  5 Aug, 15 Aug, 22 Aug, 26 Aug,  8 Sep, 12 Sep, 15 Sep, 24 Sep,  7 Oct, 11 Oct, 16 Nov, 21 Nov,  8 Dec, 10 Dec';
+# HTML formatting
 
-my $jan_9_html = "<b>Czech Republic:</b> Vladan; <b>Hungary:</b> Marcell; <b>Poland:</b> Antoni, Borzymir, Julian, Julianna";
-my $feb_29_html = "<b>Czech Republic:</b> Horymír; <b>Poland:</b> Dobronieg, Roman";
-my $dec_30_html = "<b>Czech Republic:</b> David; <b>Hungary:</b> Dávid; <b>Poland:</b> Dawid, Eugeniusz, Katarzyna, Uniedrog";
-my $dec_31_html = "<b>Czech Republic:</b> Silvestr; <b>Hungary:</b> Szilveszter; <b>Poland:</b> Korneliusz, Melania, Sebastian, Sylwester, Tworzysław";
-my $tamara_html = "<b>Czech Republic:</b>  3 Jun; <b>Hungary:</b> 29 Dec; <b>Poland:</b>  3 Jun";
-my $marii_html = '<b>Poland:</b> 23 Jan,  2 Feb, 11 Feb, 25 Mar, 14 Apr, 26 Apr, 28 Apr,  3 May, 24 May, 25 May, 29 May,  2 Jun, 13 Jun, 27 Jun,  2 Jul, 16 Jul, 17 Jul, 22 Jul, 29 Jul,  2 Aug,  4 Aug,  5 Aug, 15 Aug, 22 Aug, 26 Aug,  8 Sep, 12 Sep, 15 Sep, 24 Sep,  7 Oct, 11 Oct, 16 Nov, 21 Nov,  8 Dec, 10 Dec';
+sub header {
+    my $query = shift();
+    return '<div class="zci__body"><span class="zci__header">' . $query . '</span>' .
+           '<span class="zci__subheader">Name days</span><div class="zci__content"><table>';
+}
+
+sub line {
+    my ($country, $result) = @_;
+    return '<tr><td style="padding-right: 10px;font-weight:bold">' . $country . '</td><td>' . $result . '</td></tr>';
+}
+
+my $footer = '</table></div></div>';
+
+
+
+my $jan_9 = 'Czech Republic: Vladan; Hungary: Marcell; Poland: Antoni, Borzymir, Julian, Julianna';
+my $feb_29 = 'Czech Republic: Horymír; Poland: Dobronieg, Roman';
+my $dec_30 = 'Czech Republic: David; Hungary: Dávid; Poland: Dawid, Eugeniusz, Katarzyna, Uniedrog';
+my $dec_31 = 'Czech Republic: Silvestr; Hungary: Szilveszter; Poland: Korneliusz, Melania, Sebastian, Sylwester, Tworzysław';
+my $tamara = 'Czech Republic:  3 Jun; Hungary: 29 Dec; Poland:  3 Jun';
+my $marii = 'Poland: 23 Jan,  2 Feb, 11 Feb, 25 Mar, 14 Apr, 26 Apr, 28 Apr,  3 May, 24 May, 25 May, 29 May,  ' .
+            '2 Jun, 13 Jun, 27 Jun,  2 Jul, 16 Jul, 17 Jul, 22 Jul, 29 Jul,  2 Aug,  4 Aug,  5 Aug, 15 Aug, 22 Aug, ' .
+            '26 Aug,  8 Sep, 12 Sep, 15 Sep, 24 Sep,  7 Oct, 11 Oct, 16 Nov, 21 Nov,  8 Dec, 10 Dec';
+
+my $jan_9_html = header('January  9th') . line('Czech Republic', 'Vladan') . line('Hungary', 'Marcell') .
+                 line('Poland', 'Antoni, Borzymir, Julian, Julianna') . $footer;
+
+my $feb_29_html = header('February 29th') . line('Czech Republic', 'Horymír') .
+                  line('Poland', 'Dobronieg, Roman') . $footer;
+
+my $dec_30_html = header('December 30th') . line('Czech Republic', 'David') .
+                  line('Hungary', 'Dávid'). line('Poland', 'Dawid, Eugeniusz, Katarzyna, Uniedrog') . $footer;
+
+my $dec_31_html = header('December 31st') . line('Czech Republic', 'Silvestr') . line('Hungary', 'Szilveszter') .
+                  line('Poland', 'Korneliusz, Melania, Sebastian, Sylwester, Tworzysław') . $footer;
+                  
+my $tamara_html = header('Tamara') . line('Czech Republic', ' 3&nbsp;Jun') . line('Hungary', '29&nbsp;Dec') .
+                  line('Poland', ' 3&nbsp;Jun') . $footer;
+my $marii_html =  line('Poland', '23&nbsp;Jan,  2&nbsp;Feb, 11&nbsp;Feb, 25&nbsp;Mar, 14&nbsp;Apr, ' .
+                 '26&nbsp;Apr, 28&nbsp;Apr,  3&nbsp;May, 24&nbsp;May, 25&nbsp;May, 29&nbsp;May,  2&nbsp;Jun, 13&nbsp;Jun, ' .
+                 '27&nbsp;Jun,  2&nbsp;Jul, 16&nbsp;Jul, 17&nbsp;Jul, 22&nbsp;Jul, 29&nbsp;Jul,  2&nbsp;Aug,  4&nbsp;Aug,  ' .
+                 '5&nbsp;Aug, 15&nbsp;Aug, 22&nbsp;Aug, 26&nbsp;Aug,  8&nbsp;Sep, 12&nbsp;Sep, 15&nbsp;Sep, 24&nbsp;Sep,  ' .
+                 '7&nbsp;Oct, 11&nbsp;Oct, 16&nbsp;Nov, 21&nbsp;Nov,  8&nbsp;Dec, 10&nbsp;Dec') . $footer;
 
 
 ddg_goodie_test(
     [qw( DDG::Goodie::NameDays )],
-    'name day mieszko' => test_zci('Poland:  1 Jan', html => '<b>Poland:</b>  1 Jan'),
-    'maria imieniny' => test_zci($marii, html => $marii_html),
-    '3 June name day' => test_zci("Czech Republic: Tamara; Hungary: Klotild, Cecília; Poland: Konstantyn, Leszek, Paula, Tamara",
-                          html => "<b>Czech Republic:</b> Tamara; <b>Hungary:</b> Klotild, Cecília; <b>Poland:</b> Konstantyn, Leszek, Paula, Tamara"),
+    'name day mieszko' => test_zci('Poland:  1 Jan', html =>
+    	header('Mieszko') . line('Poland', ' 1&nbsp;Jan') . $footer),
+    'maria imieniny' => test_zci($marii, html => header('Maria') . $marii_html),
+    '3 June name day' => test_zci('Czech Republic: Tamara; Hungary: Klotild, Cecília; Poland: Konstantyn, Leszek, Paula, Tamara',
+                          html => header('June  3rd') . line('Czech Republic', 'Tamara') .
+                          line('Hungary', 'Klotild, Cecília') . line('Poland', 'Konstantyn, Leszek, Paula, Tamara') . $footer),
     'Name Day Tamara' => test_zci($tamara, html => $tamara_html),
     'namedays dec 30' => test_zci($dec_30, html => $dec_30_html),
-    'name day 1 Jan' => test_zci("Hungary: Fruzsina; Poland: Mieczysław, Mieszko", html => "<b>Hungary:</b> Fruzsina; <b>Poland:</b> Mieczysław, Mieszko"),
-    'Radmila svátek' => test_zci('Czech Republic:  3 Jan', html => '<b>Czech Republic:</b>  3 Jan'),
+    'name day 1 Jan' => test_zci('Hungary: Fruzsina; Poland: Mieczysław, Mieszko', html =>
+    	header('January  1st') . line('Hungary', 'Fruzsina') . line('Poland', 'Mieczysław, Mieszko') . $footer),
+    'Radmila svátek' => test_zci('Czech Republic:  3 Jan', html =>
+    	header('Radmila') . line('Czech Republic', ' 3&nbsp;Jan') . $footer),
     
     # Genetive case
-    'imieniny marii' => test_zci($marii, html => $marii_html),
-    'imieniny Tamary' => test_zci("Poland:  3 Jun", html => "<b>Poland:</b>  3 Jun"),
+    'imieniny marii' => test_zci($marii, html => header('Marii') . $marii_html),
+    'imieniny Tamary' => test_zci("Poland:  3 Jun", html => header('Tamary') . line('Poland', ' 3&nbsp;Jun') . $footer),
     'imieniny Tamara' => test_zci($tamara, html => $tamara_html),
     'imieniny 29 Feb' => test_zci($feb_29, html => $feb_29_html),
     'imieniny February 29th' => test_zci($feb_29, html => $feb_29_html),
