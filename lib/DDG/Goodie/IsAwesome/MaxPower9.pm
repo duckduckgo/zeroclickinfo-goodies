@@ -21,11 +21,6 @@ triggers start => "duckduckhack maxpower9";
 
 handle remainder => sub {
 
-	# optional - regex guard
-	# return unless qr/^\w+/;
-
-	# return unless $_; # Guard against "no answer"
-
     return if $_;
     
     return "MaxPower9 is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
