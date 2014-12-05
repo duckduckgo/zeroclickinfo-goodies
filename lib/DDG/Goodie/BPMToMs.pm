@@ -1,6 +1,5 @@
 package DDG::Goodie::BPMToMs;
-# ABSTRACT: Converts Beats Per Minute to note values in milliseconds.
-# Useful when needing to calculate delay times, attack / release times of compressors, reverb lengths etc.
+# ABSTRACT: Displays common note values in milliseconds for a given tempo measured in quarter notes per minute.
 
 use DDG::Goodie;
 
@@ -20,7 +19,6 @@ triggers end => "bpm to ms", "bpm to milliseconds", "bpm to note values", "bpm t
                 "beats per minute to ms", "beats per minute to note values", "beats per minute to note lengths", "beats per minute", "beats per minute timings";
 
 handle remainder => sub {
-    return unless $_; # Guard against "no answer"
     return unless $_ =~ /^\d+$/i; # Only integer values accepted
     
     my $bpm = $_;
