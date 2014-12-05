@@ -285,6 +285,9 @@ sub full_day_of_week_regex {
 sub short_day_of_week_regex {
     return $short_day_of_week;
 }
+sub relative_dates_regex {
+    return $relative_dates;
+}
 
 # Accessors for matching regexes
 # These matches are for "in the right format"/"looks about right"
@@ -333,9 +336,6 @@ sub build_datestring_regex {
 
     ## Ambiguous, but potentially valid date formats
     push @regexes, $ambiguous_dates;
-
-    ## tomorrow, next week|month|year, ... etc
-    push @regexes, $relative_dates;
 
     my $returned_regex = join '|', @regexes;
     return qr/$returned_regex/i;
