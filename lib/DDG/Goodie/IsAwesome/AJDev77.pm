@@ -9,8 +9,7 @@ zci is_cached   => 1;
 
 name "IsAwesome AJDev77";
 description "My first Goodie, it let's the world know that AJDev77 is awesome";
-primary_example_queries "duckduckhack AJDev77
-secondary_example_queries "optional -- demonstrate any additional triggers";
+primary_example_queries "duckduckhack AJDev77";
 category "special";
 topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/AJDev77.pm";
