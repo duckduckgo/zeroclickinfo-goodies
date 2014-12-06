@@ -16,9 +16,10 @@ attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
             twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
 
 triggers start  => 'random name','random person';
+zci answer_type => "randomname";
 zci is_cached   => 0;
 
-handle remainder => sub {
+handle query => sub {
     my $person = Data::RandomPerson->new()->create();
     my $name = "$person->{firstname} $person->{lastname}";
     my %genders = (m => 'Male', f => 'Female');

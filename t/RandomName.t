@@ -5,8 +5,8 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'rand';
 zci is_cached => 0;
+zci answer_type => "randomname";
 
 ddg_goodie_test(
     [
