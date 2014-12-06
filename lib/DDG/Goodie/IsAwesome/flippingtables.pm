@@ -12,9 +12,9 @@ description "Calculates the number of days in a month";
 primary_example_queries "how many days are in january";
 secondary_example_queries "optional -- demonstrate any additional triggers";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#category
- category "dates";
+category "dates";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-# topics "math";
+topics "math";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/flippingtables.pm";
 attribution github => ["https://github.com/flippingtables", "flippingtables"];
 
