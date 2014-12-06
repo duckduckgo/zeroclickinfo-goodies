@@ -2,7 +2,7 @@ package DDG::Goodie::IsAwesome::flippingtables;
 # ABSTRACT: Calculates the number of days in a given month
 
 use DDG::Goodie;
-use Switch;
+
 zci answer_type => "days_in_month";
 zci is_cached   => 1;
 
@@ -46,21 +46,23 @@ sub calculateNumberOfDays{
 sub calculateNumberOfDaysForMonthString{
     my $month = $_[0];
     my $i;
-    switch($month){
-        case("january") {$i =     1;}
-        case("february") {$i =    2;}
-        case("march") {$i =       3;}
-        case("april") {$i =       4;}
-        case("may") {$i =         5;}
-        case("june") {$i =        6;}
-        case("july") {$i =        7;}
-        case("august") {$i =      8;}
-        case("september") {$i =   9;}
-        case("october") {$i =     10;}
-        case("november") {$i =    11;}
-        case("december") {$i =    12;}
-        else    { $i = -1; }
-    }
+    my %months = (
+        "january" =>     1,
+        "february" =>    2,
+        "march" =>       3,
+        "april" =>       4,
+        "may" =>         5,
+        "june" =>        6,
+        "july" =>        7,
+        "august" =>      8,
+        "september" =>   9,
+        "october" =>     10,
+        "november" =>    11,
+        "december" =>    12
+    );
+
+    $i = $months {lc $month} || -1;
+    
     if ($i != -1){
         return calculateNumberOfDays($i);
     } else {
