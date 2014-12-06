@@ -3,13 +3,13 @@ package DDG::Goodie::IsAwesome::flippingtables;
 
 use DDG::Goodie;
 use Switch;
-zci answer_type => "Number of days in a month";
+zci answer_type => "days_in_month";
 zci is_cached   => 1;
 
 name "Number of days in a month";
 description "Calculates the number of days in a month";
 primary_example_queries "how many days are in january";
-secondary_example_queries "optional -- demonstrate any additional triggers";
+secondary_example_queries "days in february";
 category "dates";
 topics "math";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/flippingtables.pm";
