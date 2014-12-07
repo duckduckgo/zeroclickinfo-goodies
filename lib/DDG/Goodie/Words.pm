@@ -65,7 +65,13 @@ my $MAX_WORD_LENGTH = 0;
 
 my @regular_sorted_words = sort map { chomp $_; $_ } share('enable2k.txt')->slurp;
 my @reverse_sorted_words = sort map { scalar reverse $_ } @regular_sorted_words;
-my @length_sorted_words = sort { length($a) <=> length($b) } @regular_sorted_words;
+# Sort by length, but shuffle the words of equal length. This helps return words that
+# are more random for a query having word-length criteria.
+# For example, there are too many words with 10 letters; over MAX_INITIAL_RESULTS.
+# Without shuffling, the initial results will most probably be full of words starting
+# with 'a'. With shuffling, those initial results will be more random. It's not perfect;
+# not all 10-letter words will be considered.
+my @length_sorted_words = sort { (length($a) <=> length($b)) || (rand() < 0.5 ? -1: 1) } @regular_sorted_words;
 my %regular_word_index = create_index_by_starting_letters(\@regular_sorted_words);
 my %reverse_word_index = create_index_by_starting_letters(\@reverse_sorted_words);
 my %length_word_index = create_index_by_length(\@length_sorted_words);
