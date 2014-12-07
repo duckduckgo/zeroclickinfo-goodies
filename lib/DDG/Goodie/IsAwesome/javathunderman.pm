@@ -1,5 +1,5 @@
 package DDG::Goodie::IsAwesome::javathunderman;
-ABSTRACT: javathunderman
+
 
 use DDG::Goodie;
 
