@@ -1,5 +1,5 @@
-# ABSTRACT: ilumnatr's first Goodie
 package DDG::Goodie::IsAwesome::ilumnatr;
+# ABSTRACT: ilumnatr's first Goodie
 
 use DDG::Goodie;
 
@@ -18,7 +18,7 @@ triggers start => "duckduckhack ilumnatr";
 
 handle remainder => sub {
     return if $_;
-	return "ilumnatr is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return "ilumnatr is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
