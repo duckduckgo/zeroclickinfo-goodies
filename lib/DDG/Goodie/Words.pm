@@ -197,7 +197,7 @@ sub create_index_by_length {
 
 sub parse_input
 {
-    # assumed to be lowercase, if it isn't use lc()
+    # The input is expected to be in lowercase (which it is because of 'handle query_lc')
     my $s = shift;
 
     my ($word_count, $min_word_length, $max_word_length, $verb, $pattern);
@@ -298,11 +298,16 @@ sub get_matching_words
 
     # The wordlist to use
     my $words_ref = \@regular_sorted_words;
-    # The index in @words to begin looking for matches
+
+    # The index in the wordlist to begin looking for matches
     my $start_index = 0;
-    # The index in @words after the last possible match
+
+    # The index in the wordlist after the last possible match
     my $end_index = @{$words_ref};
 
+    # Flag indicating that the pattern does not need to
+    # be matched any more (because it was implicitly matched
+    # by the use of an index)
     my $remove_pattern = 0;
 
     if ($pattern) {
@@ -373,12 +378,14 @@ sub get_matching_words
         }
 
         my $count = $max - $min;
+
         # Pick the length index if it will reduce the possible matches.
         # However, picking this will enforce pattern checking (if a pattern exists),
         # which is slower than length checking.
-
-        my $this_cost = $count * ($pattern ? 2 : 1) * ($count > MAX_MATCH_TESTS ? 4 : 1);
-        my $other_cost = $available_count * 1 + $available_count / 10 * ($pattern ? ($remove_pattern ? 0 : 2) : 0);
+        my ($PATTERN_COST, $LENGTH_CHECK_COST, $OVER_MAX_TESTS_COST, $LENGTH_MATCHES_PERCENT) = (2, 1, 4, 0.1);
+        my $this_cost = $count * ($pattern ? $PATTERN_COST : $LENGTH_CHECK_COST) * ($count > MAX_MATCH_TESTS ? $OVER_MAX_TESTS_COST : 1);
+        my $other_cost = $available_count * $LENGTH_CHECK_COST
+                        + $available_count * $LENGTH_MATCHES_PERCENT * ($pattern ? ($remove_pattern ? 0 : $PATTERN_COST) : 0);
 
         if ($this_cost < $other_cost) {
             # Use this index instead
