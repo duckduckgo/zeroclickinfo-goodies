@@ -191,7 +191,8 @@ ddg_goodie_test(
         }
     ),
     'letter words'                              => undef,
-    'words like duckduckgo'                     => undef,
+    'words like quaternion'                     => undef,
+    'words like doesnotexist'                   => undef,
     'words test what'                           => undef,
     'words'                                     => undef,
 );
