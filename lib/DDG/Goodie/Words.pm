@@ -8,6 +8,19 @@ zci answer_type => 'word_list';
 # Don't cache answers because we return random words
 zci is_cached   => 0;
 
+primary_example_queries 'words starting with duck', '9-letter words like cro*rd', '20 words', 'random words with 4 letters';
+secondary_example_queries '5 6-letter words ending in ay', 'words like cro----rd';
+description 'find words for puzzles and word games';
+name 'Words';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Words.pm';
+category 'language';
+topics 'words_and_games';
+
+attribution github => ['https://github.com/pavlos256', 'Pavlos Touboulidis'];
+
+triggers any => 'words', 'word';
+triggers startend => 'words', 'word';
+
 use constant {
     # Number of words to return if not specified
     DEFAULT_WORD_COUNT => 10,
@@ -26,19 +39,6 @@ use constant {
     # out of these matches.
     MAX_INITIAL_RESULTS => 1000
 };
-
-primary_example_queries 'words starting with duck', '9-letter words like cro*rd', '20 words', 'random words with 4 letters';
-secondary_example_queries '5 6-letter words ending in ay', 'words like cro----rd';
-description 'find words for puzzles and word games';
-name 'Words';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Words.pm';
-category 'language';
-topics 'words_and_games';
-
-attribution github => ['https://github.com/pavlos256', 'Pavlos Touboulidis'];
-
-triggers any => 'words', 'word';
-triggers startend => 'words', 'word';
 
 handle query_lc => sub {
     my $query = shift;
