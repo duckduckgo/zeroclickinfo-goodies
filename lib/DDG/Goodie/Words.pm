@@ -76,23 +76,13 @@ sub describe_input {
     my ($word_count, $min_word_length, $max_word_length, $pattern) = @_;
 
     my @a = ();
-    my $t = '';
 
     # word count
-    if ($word_count == 0) {
-        $t = 'words';
-    } elsif ($word_count == 1) {
-        push @a, 'one';
-        $t = 'word';
-    } else {
-        push @a, $word_count;
-        $t = 'words';
-    }
+    my $t = $word_count == 1 ? 'word' : 'words';
+    push @a, ($word_count == 1 ? 'one' : $word_count) unless $word_count == 0;
 
     # letter count
-    if ($min_word_length && $min_word_length == $max_word_length) {
-        push @a, "$min_word_length-letter";
-    }
+    push @a, "$min_word_length-letter" if ($min_word_length && $min_word_length == $max_word_length);
 
     # 'word'
     push @a, $t;
@@ -229,26 +219,17 @@ sub parse_input
     {
         # Word count
         my $raw_word_count = $+{'count'} || 0;
-        $word_count = 1;
-        if ($raw_word_count) {
-            $word_count = $raw_word_count;
-        } elsif ($+{'word'} eq 'words') {
-            $word_count = DEFAULT_WORD_COUNT;
-        }
-        if ($word_count > MAX_WORD_COUNT) {
-            $word_count = MAX_WORD_COUNT;
-        }
+        $word_count = ($+{'word'} eq 'words') ? DEFAULT_WORD_COUNT : 1;
+        $word_count = $raw_word_count if $raw_word_count;
+        $word_count = MAX_WORD_COUNT if $word_count > MAX_WORD_COUNT;
 
         # Word length
         my $word_length = $+{'length'} || 0;
-        $min_word_length = $word_length;
-        $max_word_length = $word_length;
+        $min_word_length = $max_word_length = $word_length;
 
         # Verb
         $verb = $+{'verb'} || '';
-        if ($verb eq 'begin') {
-            $verb = 'start';
-        }
+        $verb = 'start' if $verb eq 'begin';
 
         # Pattern
         my $raw_pattern = $+{'pattern'} || '';
@@ -278,9 +259,7 @@ sub parse_input
 
             # Since the verb is 'like',
             # we abort if there's no wildcards in the pattern
-            if (($pattern =~ tr/\*\.//) == 0) {
-                return 0;
-            }
+            return unless $pattern =~ tr/\*\.//;
 
             # If the string is just '*', clear the pattern
             if ($pattern eq '*') {
@@ -300,9 +279,7 @@ sub parse_input
         }
 
         # If there's no pattern, make sure we clear the verb too.
-        if (!$pattern) {
-            $verb = '';
-        }
+        $verb = '' unless $pattern;
 
         # Don't process too wrong or unrelated queries
         if (($raw_word_count == 0 && $min_word_length == 0 && $max_word_length == 0) && (!$verb || !$pattern)) {
@@ -391,9 +368,7 @@ sub get_matching_words
         for (my $len = $min_word_length; $len <= $max_word_length; $len++) {
             my $v = $length_word_index{$len};
             next unless $v;
-            if (!$min) {
-                $min = $v->[0];
-            }
+            $min = $v->[0] unless $min;
             $max = $v->[1];
         }
 
@@ -415,14 +390,11 @@ sub get_matching_words
             # We will check the pattern
             $remove_pattern = 0;
             # But not the length, ever again
-            $min_word_length = 0;
-            $max_word_length = 0;
+            $min_word_length = $max_word_length = 0;
         }
     }
 
-    if ($remove_pattern) {
-        $pattern = '';
-    }
+    $pattern = '' if $remove_pattern;
 
     my @matches = ();
 
@@ -431,9 +403,7 @@ sub get_matching_words
 
         # Perf: Stop searching for more matches when we have this much
         my $cut_off = MAX_INITIAL_RESULTS;
-        if ($available_count < $cut_off) {
-            $cut_off = $available_count;
-        }
+        $cut_off = $available_count if $available_count < $cut_off;
 
         my $re_pattern = $pattern =~ s/\*/.+/rg;
         my $rex = qr/^$re_pattern$/;
