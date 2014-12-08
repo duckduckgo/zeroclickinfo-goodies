@@ -76,6 +76,18 @@ ddg_goodie_test(
     ),
     '0x44696f2Z'       => undef,
     'ascii 0x74657374' => undef,
+    '0x255 hex'        => undef,
+    '0x255 hex dec'    => undef,
+    '0x255 to'         => undef,
+    '255 as base 10'   => undef,
+    'as decimal'       => undef,
+    'hex to decimal'   => undef,
+    'base10'           => undef,
+    '0x01 + 0x02'      => undef,
+    '20x40 in dec'     => undef,
+    '0x'               => undef,
+    'hex'              => undef,
+    'to'               => undef,
 );
 
 done_testing;
