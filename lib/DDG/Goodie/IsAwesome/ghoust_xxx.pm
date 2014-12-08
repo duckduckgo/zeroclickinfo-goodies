@@ -1,5 +1,5 @@
 package DDG::Goodie::IsAwesome::ghoust_xxx;
-# ABSTRACT: GitHubUsername's first Goodie
+# ABSTRACT: ghoust_xxx first Goodie
 
 use DDG::Goodie;
 
@@ -7,7 +7,7 @@ zci answer_type => "is_awesome_ghoust_xxx";
 zci is_cached   => 1;
 
 name "IsAwesome ghoust_xxx";
-description "My first Goodie, it let's the world know that GitHubUsername is awesome";
+description "My first Goodie, it let's the world know that ghoust_xxx is awesome";
 primary_example_queries "duckduckhack ghoust_xxx";
 category "special";
 topics "special_interest", "geek";
