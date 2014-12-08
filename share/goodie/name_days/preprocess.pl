@@ -110,7 +110,7 @@ finish_loading();
 
 open(my $fd, '>:encoding(UTF-8)', 'preprocessed_dates.txt') or die;
 
-for (keys %dates) {
+for (sort keys %dates) {
     print($fd $_ . "\n" . $dates{$_} . "\n");
 }
 
