@@ -51,10 +51,12 @@ sub load_days_file {
 }
 
 sub finish_loading {
+    my @month_names = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
     # Convert the dates to string
     for (keys %dates) {
         # Group the dates by country
         my %dates_by_country = ();
+        my %dates_by_country_and_month = ();
         foreach (@{$dates{$_}}) {
             die 'Internal error' unless /^(.*?)\|(\d+)$/;
             # Any leap year here, because the text file includes February, 29
@@ -63,15 +65,33 @@ sub finish_loading {
                 $dates_by_country{$1} .= ', ';
             }
             $dates_by_country{$1} .= $d->strftime('%e %b');
+            
+            if ($dates_by_country_and_month{$1}[$d->month - 1]) {
+                $dates_by_country_and_month{$1}[$d->month - 1] .= ', ';
+            }
+            $dates_by_country_and_month{$1}[$d->month - 1] .= $d->day;
         }
         
-        # Convert to string
+        # Prepare the plain-text answer
         my $res = '';
         foreach (sort keys %dates_by_country) {
             $res .= $_ . ': ' . $dates_by_country{$_} . "; ";
         }
+        $res =~ s/; $/\|/;
         
-        $res =~ s/; $//;
+        # Prepare the HTML answer
+        foreach (sort keys %dates_by_country_and_month) {
+            $res .= '<tr><td class="name-days-country">' . $_ . '</td><td>';
+            my $i = 0;
+            for (@{$dates_by_country_and_month{$_}}) {
+                $res .= '<div class="name-days-tile"><div class="name-days-tile-body">' .
+                        '<h4>' . $_ . '</h4><p>' . $month_names[$i] . '</p>' .
+                        '</div></div>' if $_;
+                $i++;
+            }
+            $res .= '</td></tr>';
+        }
+        
         $dates{$_} = $res;
     }
 }

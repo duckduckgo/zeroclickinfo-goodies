@@ -19,7 +19,13 @@ sub header {
 
 sub line {
     my ($country, $result) = @_;
-    return '<tr><td style="padding-right: 10px;font-weight:bold">' . $country . '</td><td>' . $result . '</td></tr>';
+    return '<tr><td class="name-days-country">' . $country . '</td><td>' . $result . '</td></tr>';
+}
+
+sub tile {
+    my ($days, $month) = @_;
+    return '<div class="name-days-tile"><div class="name-days-tile-body">' .
+           '<h4>' . $days . '</h4><p>' . $month . '</p></div></div>';
 }
 
 my $footer = '</table></div></div>';
@@ -47,19 +53,18 @@ my $dec_30_html = header('December 30th') . line('Czech Republic', 'David') .
 my $dec_31_html = header('December 31st') . line('Czech Republic', 'Silvestr') . line('Hungary', 'Szilveszter') .
                   line('Poland', 'Korneliusz, Melania, Sebastian, Sylwester, Tworzysław') . $footer;
                   
-my $tamara_html = header('Tamara') . line('Czech Republic', ' 3&nbsp;Jun') . line('Hungary', '29&nbsp;Dec') .
-                  line('Poland', ' 3&nbsp;Jun') . $footer;
-my $marii_html =  line('Poland', '23&nbsp;Jan,  2&nbsp;Feb, 11&nbsp;Feb, 25&nbsp;Mar, 14&nbsp;Apr, ' .
-                 '26&nbsp;Apr, 28&nbsp;Apr,  3&nbsp;May, 24&nbsp;May, 25&nbsp;May, 29&nbsp;May,  2&nbsp;Jun, 13&nbsp;Jun, ' .
-                 '27&nbsp;Jun,  2&nbsp;Jul, 16&nbsp;Jul, 17&nbsp;Jul, 22&nbsp;Jul, 29&nbsp;Jul,  2&nbsp;Aug,  4&nbsp;Aug,  ' .
-                 '5&nbsp;Aug, 15&nbsp;Aug, 22&nbsp;Aug, 26&nbsp;Aug,  8&nbsp;Sep, 12&nbsp;Sep, 15&nbsp;Sep, 24&nbsp;Sep,  ' .
-                 '7&nbsp;Oct, 11&nbsp;Oct, 16&nbsp;Nov, 21&nbsp;Nov,  8&nbsp;Dec, 10&nbsp;Dec') . $footer;
+my $tamara_html = header('Tamara') . line('Czech Republic', tile('3', 'Jun')) . line('Hungary', tile('29', 'Dec')) .
+                  line('Poland', tile('3', 'Jun')) . $footer;
+my $marii_html =  line('Poland', tile('23', 'Jan') . tile('2, 11', 'Feb') . tile('25', 'Mar') . tile('14, 26, 28', 'Apr') .
+                        tile('3, 24, 25, 29', 'May') . tile('2, 13, 27', 'Jun') . tile('2, 16, 17, 22, 29', 'Jul') .
+                        tile('2, 4, 5, 15, 22, 26', 'Aug') . tile('8, 12, 15, 24', 'Sep') .
+                        tile('7, 11', 'Oct') . tile('16, 21', 'Nov') . tile('8, 10', 'Dec')) . $footer;
 
 
 ddg_goodie_test(
     [qw( DDG::Goodie::NameDays )],
     'name day mieszko' => test_zci('Poland:  1 Jan', html =>
-    	header('Mieszko') . line('Poland', ' 1&nbsp;Jan') . $footer),
+    	header('Mieszko') . line('Poland', tile('1', 'Jan')) . $footer),
     'maria imieniny' => test_zci($marii, html => header('Maria') . $marii_html),
     '3 June name day' => test_zci('Czech Republic: Tamara; Hungary: Klotild, Cecília; Poland: Konstantyn, Leszek, Paula, Tamara',
                           html => header('June  3rd') . line('Czech Republic', 'Tamara') .
@@ -69,11 +74,11 @@ ddg_goodie_test(
     'name day 1 Jan' => test_zci('Hungary: Fruzsina; Poland: Mieczysław, Mieszko', html =>
     	header('January  1st') . line('Hungary', 'Fruzsina') . line('Poland', 'Mieczysław, Mieszko') . $footer),
     'Radmila svátek' => test_zci('Czech Republic:  3 Jan', html =>
-    	header('Radmila') . line('Czech Republic', ' 3&nbsp;Jan') . $footer),
+    	header('Radmila') . line('Czech Republic', tile('3', 'Jan')) . $footer),
     
     # Genetive case
     'imieniny marii' => test_zci($marii, html => header('Marii') . $marii_html),
-    'imieniny Tamary' => test_zci("Poland:  3 Jun", html => header('Tamary') . line('Poland', ' 3&nbsp;Jun') . $footer),
+    'imieniny Tamary' => test_zci("Poland:  3 Jun", html => header('Tamary') . line('Poland', tile('3', 'Jun')) . $footer),
     'imieniny Tamara' => test_zci($tamara, html => $tamara_html),
     'imieniny 29 Feb' => test_zci($feb_29, html => $feb_29_html),
     'imieniny February 29th' => test_zci($feb_29, html => $feb_29_html),

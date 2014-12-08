@@ -89,12 +89,13 @@ sub parse_other_date_formats {
 # Handle statement
 handle remainder => sub {
     my $text;
+    my $html;
     my $query;
     
     if (exists $dates{lc($_)}) {
         # Search by name first
         $query = ucfirst($_);
-        $text = $dates{lc($_)};
+        ($text, $html) = split('\|', $dates{lc($_)});
     } else {
         # Then, search by date
         my $day = parse_datestring_to_date($_);
@@ -110,12 +111,14 @@ handle remainder => sub {
         
         $query = time2str( '%B %o', $day->epoch() );
         $text = $names[$day->day_of_year() - 1];
+    
+        # Convert to HTML
+        $html = $text;
+        $html =~ s/(\d{1,2}) (\w{1,3})/$1&nbsp;$2/g;
+        $html =~ s@(.*?): (.*?)(?:$|; )@<tr><td class="name-days-country">$1</td><td>$2</td></tr>@g;
     }
     
-    # Convert to HTML
-    my $html = $text;
-    $html =~ s/(\d{1,2}) (\w{1,3})/$1&nbsp;$2/g;
-    $html =~ s@(.*?): (.*?)(?:$|; )@<tr><td style="padding-right: 10px;font-weight:bold">$1</td><td>$2</td></tr>@g;
+    # Add the header
     $html = '<div class="zci__body"><span class="zci__header">' . $query . '</span>' .
             '<span class="zci__subheader">Name days</span><div class="zci__content"><table>' .
             $html . '</table></div></div>';
