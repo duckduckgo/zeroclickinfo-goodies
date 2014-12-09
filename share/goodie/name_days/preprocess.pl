@@ -50,8 +50,33 @@ sub load_days_file {
     }
 }
 
-sub finish_loading {
+sub prepare_dates {
     my @month_names = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
+    my ($dates_by_country, $dates_by_country_and_month) = @_;
+    
+    # Prepare the plain-text answer
+    my $res = '';
+    foreach (sort keys %{$dates_by_country}) {
+        $res .= $_ . ': ' . $dates_by_country->{$_} . "; ";
+    }
+    $res =~ s/; $/\|/;
+
+    # Prepare the HTML answer
+    foreach (sort keys %{$dates_by_country_and_month}) {
+        $res .= '<tr><td class="name-days-country">' . $_ . '</td><td>';
+        my $i = 0;
+        for (@{$dates_by_country_and_month->{$_}}) {
+            $res .= '<div class="name-days-tile"><div class="name-days-tile-body">' .
+            '<h4>' . $_ . '</h4><p>' . $month_names[$i] . '</p>' .
+            '</div></div>' if $_;
+            $i++;
+        }
+        $res .= '</td></tr>';
+    }
+    return $res;
+}
+
+sub finish_loading {
     # Convert the dates to string
     for (keys %dates) {
         # Group the dates by country
@@ -72,27 +97,7 @@ sub finish_loading {
             $dates_by_country_and_month{$1}[$d->month - 1] .= $d->day;
         }
         
-        # Prepare the plain-text answer
-        my $res = '';
-        foreach (sort keys %dates_by_country) {
-            $res .= $_ . ': ' . $dates_by_country{$_} . "; ";
-        }
-        $res =~ s/; $/\|/;
-        
-        # Prepare the HTML answer
-        foreach (sort keys %dates_by_country_and_month) {
-            $res .= '<tr><td class="name-days-country">' . $_ . '</td><td>';
-            my $i = 0;
-            for (@{$dates_by_country_and_month{$_}}) {
-                $res .= '<div class="name-days-tile"><div class="name-days-tile-body">' .
-                        '<h4>' . $_ . '</h4><p>' . $month_names[$i] . '</p>' .
-                        '</div></div>' if $_;
-                $i++;
-            }
-            $res .= '</td></tr>';
-        }
-        
-        $dates{$_} = $res;
+        $dates{$_} = prepare_dates(\%dates_by_country, \%dates_by_country_and_month);
     }
 }
 
