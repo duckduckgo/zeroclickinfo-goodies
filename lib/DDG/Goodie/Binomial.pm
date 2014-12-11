@@ -1,5 +1,5 @@
 package DDG::Goodie::Binomial;
-# ABSTRACT: Michael Burge's first goodie
+# ABSTRACT: Calculates binomial coefficients
 
 use DDG::Goodie;
 use List::Util qw/ product /;
