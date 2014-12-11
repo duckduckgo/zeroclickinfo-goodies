@@ -31,6 +31,7 @@ triggers query_nowhitespace_nodash => qr/
 handle query_nowhitespace_nodash => sub {
     # If a Canada Post package number (2 for exclusively).
     my $is_dhl = 0;
+    # dhl = 3 ==> german DHL number
 
     # Tracking number.
     my $package_number = '';
@@ -70,9 +71,22 @@ handle query_nowhitespace_nodash => sub {
         if ($checksum eq $chars[-1]) {
             $is_dhl = 1;
         }
+        
+    }
+    
+    if (length($package_number) eq 12) {
+        $is_dhl = 3; 
+          
     }
 
-    if ($is_dhl) {
+    if ($is_dhl eq 3) {
+        return $package_number, heading => "DHL Shipment Tracking (Germany)", html => "Track this shipment at <a href='http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=$package_number'>DHL Germany</a>.";
+        
+        # I just added DHL Germany by checking for 12-char-IDs. The checksum algo for those is not known, if you know a better way to detect DHL Germany tracking IDs, please improve. 
+    
+    }
+    
+    elsif ($is_dhl) {
         return $package_number, heading => "DHL Shipment Tracking", html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number'>DHL</a>.";
     }
 
