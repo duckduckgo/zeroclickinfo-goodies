@@ -36,7 +36,7 @@ ddg_goodie_test(
     '3.9 oz in g'                      => test_zci('3.9 ounces = 110.563 grams',                       html => '-ANY-'),
     '2 miles to km'                    => test_zci('2 miles = 3.219 kilometers',                       html => '-ANY-'),
     '0.5 nautical mile to klick'       => test_zci('0.5 nautical miles = 0.926 kilometers',            html => '-ANY-'),
-    '500 miles in metres'              => test_zci('500 miles = 804,672.249 meters',                   html => '-ANY-'),
+    '500 miles in metres'              => test_zci('500 miles = 804,672 meters',                       html => '-ANY-'),
     '25 cm in inches'                  => test_zci('25 centimeters = 9.843 inches',                    html => '-ANY-'),
     '1760 yards to miles'              => test_zci('1,760 yards = 1 mile',                             html => '-ANY-'),
     '3520yards to miles'               => test_zci('3,520 yards = 2 miles',                            html => '-ANY-'),
@@ -88,7 +88,7 @@ ddg_goodie_test(
     '4,1E5 newtons to pounds force' => test_zci('4,1 * 10^5 newtons = 92.171,667 pounds force', html => '-ANY-'),
     '4E5 newtons to pounds force'   => test_zci('4 * 10^5 newtons = 89,923.577 pounds force',   html => '-ANY-'),
     '5,0 GB to megabyte'            => test_zci('5,0 gigabytes = 5.000 megabytes',              html => '-ANY-'),
-    '3.5e-2 miles to inches'        => test_zci('3.5 * 10^-2 miles = 2,217.602 inches',         html => '-ANY-'),
+    '3.5e-2 miles to inches'        => test_zci('3.5 * 10^-2 miles = 2,217.601 inches',         html => '-ANY-'),
     # Areas and volumes
     '100 square metres in hectares'    => test_zci('100 square meters = 0.010 hectares', html => '-ANY-'),
     '0.0001 hectares in square metres' => test_zci('0.0001 hectares = 1 square meter',   html => '-ANY-'),
