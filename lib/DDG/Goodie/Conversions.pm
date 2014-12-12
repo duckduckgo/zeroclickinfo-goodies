@@ -54,7 +54,6 @@ my %plural_exceptions = (
     'electrical horsepower'  => 'electrical horsepower',
     'pounds force'           => 'pounds force',
 );
-
 my %singular_exceptions = reverse %plural_exceptions;
 sub looks_plural {
     my $unit = shift;
@@ -95,10 +94,9 @@ sub convert_temperatures {
 
     return $factor;
 }
-
 sub get_matches {
-    my $matches = shift;
-    my @matches = @{$matches};
+    my $m = shift;
+    my @matches = @{$m};
 
     $matches[0] =~ s/"/inches/; 
     $matches[0] =~ s/'/feet/; 
@@ -139,13 +137,11 @@ sub get_matches {
 
     return \%matches;
 }
-
 sub parse_number {
     my $in = shift;
     my $out = ($in =~ /^(-?\d*(?:\.?\d+))\^(-?\d*(?:\.?\d+))$/) ? $1**$2 : $in;
     return 0 + $out;
 }
-
 sub convert {
     my $conversion = shift;
     my $matches = get_matches([$conversion->{'from_unit'}, $conversion->{'to_unit'}]);  
@@ -176,16 +172,12 @@ sub convert {
     }
     return $matches;
 };
-
-
-
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
     my $from = $styler->with_html($factor) . " <span class='text--secondary'>" . html_enc($result->{'from_unit'}) . "</span>";
     my $to = $styler->with_html($styler->for_display($result->{'result'})) . " <span class='text--secondary'>" . html_enc($result->{'to_unit'}) . "</span>";
     return "<div class='zci--conversions text--primary'>$from = $to</div>";
 }
-
 sub set_unit_pluralisation {
     my ($unit, $count) = @_;
     my $proper_unit = $unit;
