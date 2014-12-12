@@ -12,7 +12,7 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::DaxTheDuck
     )],
-    'Dax the Duck' => test_zci('You know, I am on the front page!'),
+    'Dax the Duck' => test_zci("Dax is DuckDuckGo's mascot. Check him out in the top left corner or at the homepage!"),
     
 );
 
