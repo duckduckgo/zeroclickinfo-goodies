@@ -21,28 +21,66 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
 # Regex for usps.
 my $dhl_qr = qr/dhl/io;
 my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
-
+                                      
 triggers query_nowhitespace_nodash => qr/
-                                        ^$dhl_qr.*?([\d]{9,})$|
-                                        ^([\d]{9,}).*?$dhl_qr$|
-                                        ^(?:$tracking_qr|$dhl_qr|)*([\d]{10})(?:$tracking_qr|$dhl_qr|)*$
-                                        /xo;
+                                      ^$dhl_qr([J][J][D][\d]{11,20})$|
+                                      ^$dhl_qr([\d]{9,})$|
+                                      ^([\d]{9,}).*?$dhl_qr$|
+                                      ^$tracking_qr([\d]{10,})*$
+                                      /xo;
+                                      
+
 
 handle query_nowhitespace_nodash => sub {
-    # If a Canada Post package number (2 for exclusively).
+
     my $is_dhl = 0;
     # dhl = 3 ==> german DHL number
 
     # Tracking number.
     my $package_number = '';
+    my $track = 1; 
 
-    # Exclsuive trigger.
-    if ($1 || $2) {
-        $package_number = $1 || $2;
-        $is_dhl         = 2;
+    if ($1) {
+        $is_dhl = 3; 
+        $package_number = $1;
+        #if (length($1) eq 23) { 
+        #    $track = 0; 
+        #}
+        
+        #Tracking numbers with "JJD" and 20 chars are mostly packages without tracking. Not 100% sure, so I commented that line out. 
+        
+        if (length($1) eq 14) {
+            $track = 1; 
+        }
+    
     }
-    elsif ($3) {
-        $package_number = $3;
+
+
+     # Exclsuive trigger.
+    if ($2 || $3) {
+        $package_number = $2 || $3;
+        $is_dhl = 2;
+        
+        if (length($package_number) eq 12) {
+            $is_dhl = 3; 
+            $track = 1; 
+        }
+        
+        if (length($package_number) eq 20) {
+        
+            if (substr($package_number, 0, 4) eq "0034") {
+                $is_dhl = 3; 
+                $track = 1; 
+            }
+        
+        
+        }
+    }
+    
+    
+    elsif ($4) {
+        
+        $package_number = $4;
 
         my $checksum   = 0;
         my @chars      = split( //, $package_number );
@@ -72,22 +110,37 @@ handle query_nowhitespace_nodash => sub {
             $is_dhl = 1;
         }
         
+        if (length($package_number) eq 12) {
+            $is_dhl = 3; 
+            $track = 1; 
+        }
+        
     }
     
-    if (length($package_number) eq 12) {
-        $is_dhl = 3; 
-          
-    }
 
     if ($is_dhl eq 3) {
-        return $package_number, heading => "DHL Shipment Tracking (Germany)", html => "Track this shipment at <a href='http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=$package_number'>DHL Germany</a>.";
-        
-        # I just added DHL Germany by checking for 12-char-IDs. The checksum algo for those is not known, if you know a better way to detect DHL Germany tracking IDs, please improve. 
     
+        if ($track eq 1) { 
+            return $package_number, heading => "DHL Shipment Tracking (Germany)", html => "Track this shipment at <a href='http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=$package_number'>DHL Germany</a>.";
+        
+        }
+        
+        elsif ($track eq 0) {
+            return $package_number, heading => "DHL Shipment Tracking (Germany)", html => "No tracking available for DHL package $package_number. "
+        
+        }
+         
+         
     }
     
     elsif ($is_dhl) {
-        return $package_number, heading => "DHL Shipment Tracking", html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number'>DHL</a>.";
+    
+        
+            return $package_number, heading => "DHL Shipment Tracking", html => "Track this shipment at <a href='http://www.dhl-usa.com/content/us/en/express/tracking.shtml?brand=DHL&AWB=$package_number'>DHL</a>.";
+        
+   
+    
+        
     }
 
     return;
