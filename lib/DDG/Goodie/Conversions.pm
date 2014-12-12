@@ -5,11 +5,10 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use Math::Round qw/nearest/;
-#use bignum;
+use bignum;
 use Scalar::Util qw/looks_like_number/;
 use Data::Float qw/float_is_infinite float_is_nan/;
-use JSON;
-use YAML qw( Load );
+use YAML qw(Load);
 
 name                      'Conversions';
 description               'convert between various units of measurement';
