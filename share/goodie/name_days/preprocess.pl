@@ -23,7 +23,7 @@ sub load_days_file {
     $file_name =~ s/\.txt$//;
     $file_name =~ s/_/ /g;
     
-    die "The text file must include 366 lines" unless scalar(@lines) == 366;
+    die "The text file $file_name must include 366 lines" unless scalar(@lines) == 366;
 
     my $day_of_year = 1;
 
@@ -104,11 +104,17 @@ sub finish_loading {
 
 # Load the source files into %dates and @names
 
-#load_days_file('Bulgaria.txt');
-#load_days_file('Croatia.txt');
+load_days_file('Bulgaria.txt');
+load_days_file('Croatia.txt');
 load_days_file('Czech_Republic.txt');
+load_days_file('Denmark.txt');
+load_days_file('France.txt');
+load_days_file('Greece.txt');
 load_days_file('Hungary.txt');
+load_days_file('Latvia.txt');
 load_days_file('Poland.txt');
+load_days_file('Slovakia.txt');
+load_days_file('Sweden.txt');
 finish_loading();
 
 
