@@ -31,7 +31,7 @@ sub load_days_file {
     for (@lines) {
         # Add all names, including the names after vertical bar
         my $names_for_date = lc($_);
-        $names_for_date =~ s/\|/ /;
+        $names_for_date =~ s/[|,]/ /g;
         for my $name (split(' ', $names_for_date)) {
             push(@{$dates{$name}}, $file_name . '|' . $day_of_year);
         }
@@ -39,7 +39,7 @@ sub load_days_file {
         # Remove the names after vertical bar (|)
         chomp;
         s/\s*\|.*$//;
-        s/ /, /g;
+
         if ($_) {
             $names[$day_of_year - 1] .= "; " if ($names[$day_of_year - 1]);
             $names[$day_of_year - 1] .= $file_name . ': ' . $_;
@@ -104,6 +104,8 @@ sub finish_loading {
 
 # Load the source files into %dates and @names
 
+#load_days_file('Bulgaria.txt');
+#load_days_file('Croatia.txt');
 load_days_file('Czech_Republic.txt');
 load_days_file('Hungary.txt');
 load_days_file('Poland.txt');

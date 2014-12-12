@@ -4,48 +4,48 @@ Czech Republic: Radmila; Hungary: Genovéva, Benjámin; Poland: Danuta, Piotr, G
 Czech Republic: Diana; Hungary: Titusz, Leona; Poland: Angelika, Aniela, Dobromir, Eugeniusz, Grzegorz, Izabela
 Czech Republic: Dalimil; Hungary: Simon; Poland: Edward, Emilian, Hania, Szymon
 Hungary: Boldizsár; Poland: Andrzej, Bolemir, Kacper, Kasper, Melchior, Baltazar
-Czech Republic: Vilma; Hungary: Attila, Ramóna; Poland: Julian, Łucjan
+Czech Republic: Vilma; Hungary: Attila, Ramóna; Poland: Julian Łucjan
 Czech Republic: Čestmír; Hungary: Gyöngyvér; Poland: Mścisław, Seweryn
 Czech Republic: Vladan; Hungary: Marcell; Poland: Antoni, Borzymir, Julian, Julianna
-Czech Republic: Břetislav; Hungary: Melánia; Poland: Dobrosław, Jan, Paweł, Wilhelm
+Czech Republic: Břetislav; Hungary: Melánia; Poland: Dobrosław, Jan, Paweł Wilhelm
 Czech Republic: Bohdana; Hungary: Ágota; Poland: Feliks, Krzesimir, Matylda
 Czech Republic: Pravoslav; Hungary: Ernő; Poland: Antoni, Arkadiusz, Benedykt, Czesław, Czesława, Ernest
-Czech Republic: Edita; Hungary: Veronika; Poland: Bogumił, Bogusława, Weronika
+Czech Republic: Edita; Hungary: Veronika; Poland: Bogumił Bogusława, Weronika
 Czech Republic: Radovan; Hungary: Bódog; Poland: Feliks, Radogost
 Czech Republic: Alice; Hungary: Lóránt, Loránd; Poland: Aleksander, Dąbrówka, Dobrawa, Domasław, Paweł
 Czech Republic: Ctirad; Hungary: Gusztáv; Poland: Marcel, Włodzimierz, Kevin
 Czech Republic: Drahoslav; Hungary: Antal, Antónia; Poland: Antoni, Jan, Rościsław
-Czech Republic: Vladislav; Hungary: Piroska; Poland: Bogumił, Jaropełk, Krystyna, Małgorzata, Piotr
+Czech Republic: Vladislav; Hungary: Piroska; Poland: Bogumił Jaropełk, Krystyna, Małgorzata, Piotr
 Czech Republic: Doubravka; Hungary: Sára, Márió; Poland: Andrzej, Bernard, Erwin, Henryk, Mariusz, Marta, Racimir, Sara
 Czech Republic: Ilona; Hungary: Fábián, Sebestyén; Poland: Dobiegniew, Fabian, Sebastian
 Czech Republic: Běla; Hungary: Ágnes; Poland: Agnieszka, Jarosław, Jarosława
-Czech Republic: Slavomír; Hungary: Vince, Artúr; Poland: Anastazy, Dobromysł, Dorian, Marta, Wincenta
+Czech Republic: Slavomír; Hungary: Vince, Artúr; Poland: Anastazy, Dobromysł Dorian, Marta, Wincenta
 Czech Republic: Zdeněk; Hungary: Zelma, Rajmund; Poland: Jan, Maria
-Czech Republic: Milena; Hungary: Timót; Poland: Felicja, Mirogniew, Rafaela, Rafał, Tymoteusz
-Czech Republic: Miloš; Hungary: Pál; Poland: Miłosz, Miłowan, Miłowit, Paweł, Tatiana
+Czech Republic: Milena; Hungary: Timót; Poland: Felicja, Mirogniew, Rafaela, Rafał Tymoteusz
+Czech Republic: Miloš; Hungary: Pál; Poland: Miłosz, Miłowan, Miłowit, Paweł Tatiana
 Czech Republic: Zora; Hungary: Vanda, Paula; Poland: Paula, Paulina, Wanda
 Czech Republic: Ingrid; Hungary: Angelika; Poland: Angelika, Ilona, Julian
 Czech Republic: Otýlie; Hungary: Károly, Karola; Poland: Agnieszka, Augustyn, Julian, Karol, Piotr, Radomir
 Czech Republic: Zdislava; Hungary: Adél; Poland: Hanna, Walerian, Zdzisław
 Czech Republic: Robin; Hungary: Martina, Gerda; Poland: Feliks, Gerard, Maciej, Marcin, Martyna, Sebastian
 Czech Republic: Marika; Hungary: Marcella; Poland: Euzebiusz, Jan, Piotr
-Czech Republic: Hynek; Hungary: Ignác; Poland: Dobrochna, Ignacy, Paweł, Siemirad, Żegota
+Czech Republic: Hynek; Hungary: Ignác; Poland: Dobrochna, Ignacy, Paweł Siemirad Żegota
 Czech Republic: Nela, Hromnice; Hungary: Karolina, Aida; Poland: Joanna, Korneliusz, Maria, Miłosław, Miłosława
 Czech Republic: Blažej; Hungary: Balázs; Poland: Błażej, Maksym, Oskar, Stefan, Telimena
 Czech Republic: Jarmila; Hungary: Ráhel, Csenge; Poland: Andrzej, Gilbert, Jan, Joanna, Józef, Weronika, Witosława
-Czech Republic: Dobromila; Hungary: Ágota, Ingrid; Poland: Aga, Agata, Jakub, Jan, Paweł, Piotr
+Czech Republic: Dobromila; Hungary: Ágota, Ingrid; Poland: Aga, Agata, Jakub, Jan, Paweł Piotr
 Czech Republic: Vanda; Hungary: Dorottya, Dóra; Poland: Antoni, Bogdan, Bohdan, Dorota, Ksenia, Szymon
 Czech Republic: Veronika; Hungary: Tódor, Rómeó; Poland: Alfons, Parteniusz, Partenia, Romeusz, Romuald, Rozalia, Ryszard, Sulisław
-Czech Republic: Milada; Hungary: Aranka; Poland: Gniewomir, Jan, Paweł, Piotr, Sebastian
+Czech Republic: Milada; Hungary: Aranka; Poland: Gniewomir, Jan, Paweł Piotr, Sebastian
 Czech Republic: Apolena; Hungary: Abigél, Alex; Poland: Bernard, Eryk, Eryka
 Czech Republic: Mojmír; Hungary: Elvira; Poland: Gabriel, Jacenty, Elwira
-Czech Republic: Božena; Hungary: Bertold, Marietta; Poland: Lucjan, Maria, Olgierd, Świętomira
+Czech Republic: Božena; Hungary: Bertold, Marietta; Poland: Lucjan, Maria, Olgierd Świętomira
 Czech Republic: Slavěna; Hungary: Lídia, Lívia; Poland: Julian, Laurenty, Nora
 Czech Republic: Věnceslav; Hungary: Ella, Linda; Poland: Grzegorz, Jordan, Katarzyna, Toligniew
 Czech Republic: Valentýn; Hungary: Bálint, Valentin; Poland: Dobiesława, Józef, Konrad, Krystyna, Lilian, Liliana, Mikołaj, Niemir, Niemira, Zenon, Cyryl
 Czech Republic: Jiřina; Hungary: Kolos, Georgina; Poland: Georgina, Jordan, Jowita, Józef, Klaudiusz
 Czech Republic: Ljuba; Hungary: Julianna, Lilla; Poland: Bernard, Dan, Danuta, Julianna
-Czech Republic: Miloslava; Hungary: Donát; Poland: Donat, Franciszek, Julian, Konstanty, Łukasz, Niegomir, Zbigniew
+Czech Republic: Miloslava; Hungary: Donát; Poland: Donat, Franciszek, Julian, Konstanty Łukasz, Niegomir, Zbigniew
 Czech Republic: Gizela; Hungary: Bernadett; Poland: Albert, Alberta, Krystiana, Więcesława, Zuzanna
 Czech Republic: Patrik; Hungary: Zsuzsanna; Poland: Arnold, Henryk, Konrad
 Czech Republic: Oldřich; Hungary: Aladár, Álmos; Poland: Leon, Ludmiła, Ludomiła
@@ -54,17 +54,17 @@ Czech Republic: Petr; Hungary: Gerzson; Poland: Marta, Małgorzata, Piotr, Wikto
 Czech Republic: Svatopluk; Hungary: Alfréd; Poland: Bądzimir, Damian, Piotr, Roma, Seweryn
 Czech Republic: Matěj; Hungary: Mátyás; Poland: Bogurad, Bogusz, Boguta, Maciej, Piotr
 Czech Republic: Liliana; Hungary: Géza; Poland: Bolebor, Cezary, Maciej, Małgorzata
-Czech Republic: Dorota; Hungary: Edina; Poland: Aleksander, Bogumił, Cezariusz, Mirosław, Ewelina
+Czech Republic: Dorota; Hungary: Edina; Poland: Aleksander, Bogumił Cezariusz, Mirosław, Ewelina
 Czech Republic: Alexandr; Hungary: Ákos, Bátor; Poland: Aleksander, Anastazja, Gabriel, Gabriela, Sierosława
 Czech Republic: Lumír; Hungary: Elemér; Poland: Józef, Roman, Lech
 Czech Republic: Horymír; Poland: Dobronieg, Roman
 Czech Republic: Bedřich; Hungary: Albin; Poland: Albin, Antoni, Antonina, Amelia, Feliks, Herakles, Joanna, Józef, Piotr
-Czech Republic: Anežka; Hungary: Lujza; Poland: Franciszek, Helena, Henryk, Krzysztof, Michał, Paweł, Piotr, Radosław
+Czech Republic: Anežka; Hungary: Lujza; Poland: Franciszek, Helena, Henryk, Krzysztof, Michał Paweł Piotr, Radosław
 Czech Republic: Kamil; Hungary: Kornélia; Poland: Hieronim, Maryna
 Czech Republic: Stela; Hungary: Kázmér; Poland: Adrian, Adrianna, Arkadiusz, Eugeniusz, Kazimierz, Lucja
 Czech Republic: Kazimír; Hungary: Adorján, Adrián; Poland: Adrian, Adrianna, Fryderyk, Jan, Wacław, Wacława
 Czech Republic: Miroslav; Hungary: Leonóra, Inez; Poland: Eugenia, Jordan, Klaudian, Róża, Wiktor, Wojsław
-Czech Republic: Tomáš; Hungary: Tamás; Poland: Felicja, Paweł, Tomasz
+Czech Republic: Tomáš; Hungary: Tamás; Poland: Felicja, Paweł Tomasz
 Czech Republic: Gabriela; Hungary: Zoltán; Poland: Beata, Jan, Julian, Miligost, Stefan
 Czech Republic: Františka; Hungary: Franciska, Fanni; Poland: Dominik, Franciszka, Katarzyna
 Czech Republic: Viktorie; Hungary: Ildikó; Poland: Aleksander, Borzysław, Cyprian
@@ -75,14 +75,14 @@ Czech Republic: Rút, Matylda; Hungary: Matild; Poland: Bożeciecha, Jakub, Leon
 Czech Republic: Ida; Hungary: Kristóf; Poland: Gościmir, Klemens, Krzysztof, Ludwika
 Czech Republic: Elena, Herbert; Hungary: Henrietta; Poland: Henryka, Herbert, Izabela
 Czech Republic: Vlastimil; Hungary: Gertrúd, Patrik; Poland: Gertruda, Jan, Patryk, Zbigniew
-Czech Republic: Eduard; Hungary: Sándor, Ede; Poland: Aleksander, Boguchwał, Cyryl, Edward
+Czech Republic: Eduard; Hungary: Sándor, Ede; Poland: Aleksander, Boguchwał Cyryl, Edward
 Czech Republic: Josef; Hungary: József, Bánk; Poland: Bogdan, Józef
 Czech Republic: Světlana; Hungary: Klaudia; Poland: Aleksander, Bogusław, Klaudia
 Czech Republic: Radek; Hungary: Benedek; Poland: Benedykt, Lubomira, Mikołaj
 Czech Republic: Leona; Hungary: Beáta, Izolda, Lea; Poland: Bogusław, Katarzyna, Kazimierz, Paweł
 Czech Republic: Ivona; Hungary: Emőke; Poland: Feliks, Katarzyna, Piotr
 Czech Republic: Gabriel; Hungary: Gábor, Karina; Poland: Gabriel, Marek, Szymon
-Czech Republic: Marián; Hungary: Irén, Írisz; Poland: Ireneusz, Łucja, Lutomysł, Maria, Wieńczysław
+Czech Republic: Marián; Hungary: Irén, Írisz; Poland: Ireneusz Łucja, Lutomysł Maria, Wieńczysław
 Czech Republic: Emanuel; Hungary: Emánuel; Poland: Emanuel, Feliks, Manuela, Teodor
 Czech Republic: Dita; Hungary: Hajnalka; Poland: Benedykt, Ernest, Jan, Lidia, Rupert
 Czech Republic: Soňa; Hungary: Gedeon, Johanna; Poland: Aniela, Antoni, Jan
@@ -94,23 +94,23 @@ Czech Republic: Erika; Hungary: Áron; Poland: Franciszek, Sądomir, Władysław
 Czech Republic: Richard; Hungary: Buda, Richárd; Poland: Antoni, Cieszygor, Jakub, Ryszard
 Czech Republic: Ivana; Hungary: Izidor; Poland: Benedykt, Izydor, Wacław, Wacława
 Czech Republic: Miroslava; Hungary: Vince; Poland: Borzywoj, Irena, Wincenty, Jam
-Czech Republic: Vendula; Hungary: Vilmos, Bíborka; Poland: Ada, Adam, Ireneusz, Katarzyna, Świętobor
+Czech Republic: Vendula; Hungary: Vilmos, Bíborka; Poland: Ada, Adam, Ireneusz, Katarzyna Świętobor
 Czech Republic: Heřman; Hungary: Herman; Poland: Donata, Przecław
 Czech Republic: Ema; Hungary: Dénes; Poland: Cezary, Radosław, Sieciesława
 Czech Republic: Dušan; Hungary: Erhard; Poland: Dobrosława, Dymitr, Maja
 Czech Republic: Darja; Hungary: Zsolt; Poland: Antoni, Daniel, Henryk, Małgorzata, Michał
 Czech Republic: Izabela; Hungary: Leó, Szaniszló; Poland: Filip, Jaromir, Leon, Marek
 Czech Republic: Julius; Hungary: Gyula; Poland: Andrzej, Iwan, Juliusz, Siemiodrog, Wiktor, Zenon
-Czech Republic: Aleš; Hungary: Ida; Poland: Jan, Justyn, Małgorzata, Marcin, Przemysł, Przemysław
+Czech Republic: Aleš; Hungary: Ida; Poland: Jan, Justyn, Małgorzata, Marcin, Przemysł Przemysław
 Czech Republic: Vincenc; Hungary: Tibor; Poland: Julianna, Justyn, Maria, Myślimir
 Czech Republic: Anastázie; Hungary: Anasztázia, Tas; Poland: Anastazja, Leonid, Wacław, Wacława
 Czech Republic: Irena; Hungary: Csongor; Poland: Erwin, Julia, Ksenia, Nikita, Nosisław
 Czech Republic: Rudolf; Hungary: Rudolf; Poland: Jakub, Józef, Klara, Radociech, Robert, Rudolf, Stefan
 Czech Republic: Valérie; Hungary: Andrea, Ilma; Poland: Bogusław, Bogusława, Gościsław
 Czech Republic: Rostislav; Hungary: Emma; Poland: Cieszyrad, Czechasz, Czesław, Leon, Tymon, Werner, Włodzimierz
-Czech Republic: Marcela; Hungary: Tivadar; Poland: Agnieszka, Czechoń, Czesław, Nawoj, Szymon, Teodor
-Czech Republic: Alexandra; Hungary: Konrád; Poland: Bartosz, Drogomił, Feliks, Konrad
-Czech Republic: Evženie; Hungary: Csilla, Noémi; Poland: Kajus, Kaja, Łukasz, Teodor
+Czech Republic: Marcela; Hungary: Tivadar; Poland: Agnieszka, Czechoń Czesław, Nawoj, Szymon, Teodor
+Czech Republic: Alexandra; Hungary: Konrád; Poland: Bartosz, Drogomił Feliks, Konrad
+Czech Republic: Evženie; Hungary: Csilla, Noémi; Poland: Kajus, Kaja Łukasz, Teodor
 Czech Republic: Vojtěch; Hungary: Béla; Poland: Gerard, Helena, Jerzy, Wojciech
 Czech Republic: Jiří; Hungary: György; Poland: Aleksander, Erwin, Grzegorz
 Czech Republic: Marek; Hungary: Márk; Poland: Jarosław, Marek
@@ -121,16 +121,16 @@ Czech Republic: Robert; Hungary: Péter; Poland: Angelina, Augustyn, Bogusław, 
 Czech Republic: Blahoslav; Hungary: Katalin, Kitti; Poland: Bartłomiej, Jakub, Katarzyna, Marian
 Hungary: Fülöp, Jakab; Poland: Aniela, Filip, Jakub, Józef, Lubomir, Maja
 Czech Republic: Zikmund; Hungary: Zsigmond; Poland: Walter, Witomir, Zygmunt, Wouter
-Czech Republic: Alexej; Hungary: Tímea, Irma; Poland: Aleksander, Antonina, Maria, Mariola, Świętosława
-Czech Republic: Květoslav; Hungary: Mónika, Flórián; Poland: Grzegorz, Michał, Monika
+Czech Republic: Alexej; Hungary: Tímea, Irma; Poland: Aleksander, Antonina, Maria, Mariola Świętosława
+Czech Republic: Květoslav; Hungary: Mónika, Flórián; Poland: Grzegorz, Michał Monika
 Czech Republic: Klaudie; Hungary: Györgyi; Poland: Irena, Teodor, Waldemar
 Czech Republic: Radoslav; Hungary: Ivett, Frida; Poland: Gościwit, Jan, Judyta
 Czech Republic: Stanislav; Hungary: Gizella; Poland: Benedykt, Bogumir, Ludmiła, Ludomiła
-Hungary: Mihály; Poland: Marek, Michał, Piotr, Stanisław
+Hungary: Mihály; Poland: Marek, Michał Piotr, Stanisław
 Czech Republic: Ctibor; Hungary: Gergely; Poland: Bożydar, Grzegorz, Karolina, Mikołaj
 Czech Republic: Blažena; Hungary: Ármin, Pálma; Poland: Częstomir, Jan
-Czech Republic: Svatava; Hungary: Ferenc; Poland: Filip, Franciszek, Iga, Ignacy, Lew, Lutogniew, Mira, Żegota
-Czech Republic: Pankrác; Hungary: Pongrác; Poland: Dominik, Jan, Joanna, Wszemił, Pankracy
+Czech Republic: Svatava; Hungary: Ferenc; Poland: Filip, Franciszek, Iga, Ignacy, Lew, Lutogniew, Mira Żegota
+Czech Republic: Pankrác; Hungary: Pongrác; Poland: Dominik, Jan, Joanna, Wszemił Pankracy
 Czech Republic: Servác; Hungary: Szervác, Imola; Poland: Andrzej, Ciechosław, Gloria, Magdalena, Piotr, Robert
 Czech Republic: Bonifác; Hungary: Bonifác; Poland: Dobiesław, Wiktor, Maciej
 Czech Republic: Žofie; Hungary: Zsófia, Szonja; Poland: Jan, Zofia
@@ -150,26 +150,26 @@ Czech Republic: Vilém; Hungary: Emil, Csanád; Poland: Augustyn, Jaromir, Wikto
 Czech Republic: Maxmilián; Hungary: Magdolna; Poland: Bogusława, Maksymilian, Maria, Magdalena, Teodor, Urszula
 Czech Republic: Ferdinand; Hungary: Janka, Zsanett; Poland: Feliks, Joanna
 Czech Republic: Kamila; Hungary: Angéla, Petronella; Poland: Aniela, Bożysława, Teodor
-Czech Republic: Laura; Hungary: Tünde; Poland: Bernard, Jakub, Konrad, Magdalena, Nikodem, Symeon, Świętopełk
+Czech Republic: Laura; Hungary: Tünde; Poland: Bernard, Jakub, Konrad, Magdalena, Nikodem, Symeon Świętopełk
 Czech Republic: Jarmil; Hungary: Kármen, Anita; Poland: Eugeniusz, Maria, Marianna, Mikołaj, Piotr, Racisław
 Czech Republic: Tamara; Hungary: Klotild, Cecília; Poland: Konstantyn, Leszek, Paula, Tamara
-Czech Republic: Dalibor; Hungary: Bulcsú; Poland: Franciszek, Gościmił, Karol
+Czech Republic: Dalibor; Hungary: Bulcsú; Poland: Franciszek, Gościmił Karol
 Czech Republic: Dobroslav; Hungary: Fatime, Fatima; Poland: Dobrociech, Dobromir, Dobrymir
 Czech Republic: Norbert; Hungary: Norbert, Cintia; Poland: Dominika, Norbert, Paulina, Więcerad
-Czech Republic: Iveta; Hungary: Róbert; Poland: Antoni, Ciechomir, Jarosław, Paweł, Robert, Wiesław, Wisław
+Czech Republic: Iveta; Hungary: Róbert; Poland: Antoni, Ciechomir, Jarosław, Paweł Robert, Wiesław, Wisław
 Czech Republic: Medard; Hungary: Medárd; Poland: Maksym, Seweryn, Wyszesław
 Czech Republic: Stanislava; Hungary: Félix; Poland: Felicjan
-Czech Republic: Gita; Hungary: Margit, Gréta; Poland: Bogumił, Edgar, Małgorzata
+Czech Republic: Gita; Hungary: Margit, Gréta; Poland: Bogumił Edgar, Małgorzata
 Czech Republic: Bruno; Hungary: Barnabás; Poland: Feliks, Radomił
 Czech Republic: Antonie; Hungary: Villő; Poland: Antonina, Jan, Leon, Wyszemir
 Czech Republic: Antonín; Hungary: Antal, Anett; Poland: Antoni, Chociemir, Lucjan, Maria, Magdalena, Tobiasz
 Czech Republic: Roland; Hungary: Vazul; Poland: Eliza, Justyn, Justyna, Ninogniew
 Czech Republic: Vít; Hungary: Jolán, Vid; Poland: Angelina, Jolanta, Witold, Witolda, Witosław
 Czech Republic: Zbyněk; Hungary: Jusztin; Poland: Alina, Aneta, Budzimir, Jan, Justyna
-Czech Republic: Adolf; Hungary: Laura, Alida; Poland: Agnieszka, Drogomysł, Franciszek, Laura, Marcjan, Radomił
+Czech Republic: Adolf; Hungary: Laura, Alida; Poland: Agnieszka, Drogomysł Franciszek, Laura, Marcjan, Radomił
 Czech Republic: Milan; Hungary: Arnold, Levente; Poland: Elżbieta, Marek, Marina, Paula
 Czech Republic: Leoš; Hungary: Gyárfás; Poland: Julianna
-Czech Republic: Květa; Hungary: Rafael; Poland: Bogna, Bogumiła, Bożena, Franciszek, Michał, Rafaela, Rafał
+Czech Republic: Květa; Hungary: Rafael; Poland: Bogna, Bogumiła, Bożena, Franciszek, Michał Rafaela, Rafał
 Czech Republic: Alois; Hungary: Alajos, Leila; Poland: Alicja, Domamir, Marta, Teodor
 Czech Republic: Pavla; Hungary: Paulina; Poland: Broniwoj, Paulina
 Czech Republic: Zdeňka; Hungary: Zoltán; Poland: Józef, Piotr, Wanda, Zenon
@@ -178,7 +178,7 @@ Czech Republic: Ivan; Hungary: Vilmos; Poland: Lucja, Tolisława
 Czech Republic: Adriana; Hungary: János, Pál, Vu, Cuda; Poland: Jan, Paweł
 Czech Republic: Ladislav; Hungary: László; Poland: Maria, Magdalena, Władysław, Władysława
 Czech Republic: Lubomír; Hungary: Levente, Irén; Poland: Ireneusz, Józef, Leon, Paweł
-Czech Republic: Petr, Pavel; Hungary: Péter, Pál; Poland: Dalebor, Paweł, Piotr
+Czech Republic: Petr, Pavel; Hungary: Péter, Pál; Poland: Dalebor, Paweł Piotr
 Czech Republic: Šárka; Hungary: Pál; Poland: Ciechosława, Emilia, Lucyna
 Czech Republic: Jaroslava; Hungary: Tihamér, Annamária; Poland: Halina, Marian
 Czech Republic: Patricie; Hungary: Ottó; Poland: Maria, Piotr, Jagoda
@@ -191,23 +191,23 @@ Czech Republic: Nora; Hungary: Ellák; Poland: Adrian, Adrianna, Chwalimir, Edga
 Czech Republic: Drahoslava; Hungary: Lukrécia; Poland: Lucja, Mikołaj, Weronika, Zenon
 Czech Republic: Libuše, Amálie; Hungary: Amália; Poland: Aleksander, Amelia, Aniela, Filip
 Czech Republic: Olga; Hungary: Nóra, Lili; Poland: Cyprian, Kalina, Olga
-Czech Republic: Bořek; Hungary: Izabella, Dalma; Poland: Andrzej, Euzebiusz, Feliks, Henryk, Paweł, Piotr, Tolimir, Weronika
+Czech Republic: Bořek; Hungary: Izabella, Dalma; Poland: Andrzej, Euzebiusz, Feliks, Henryk, Paweł Piotr, Tolimir, Weronika
 Czech Republic: Markéta; Hungary: Jenő; Poland: Ernest, Eugeniusz, Jakub, Justyna, Małgorzata, Radomiła, Sara
 Czech Republic: Karolína; Hungary: Örs, Stella; Poland: Damian, Dobrogost, Franciszek, Izabela, Marcelina
-Czech Republic: Jindřich; Hungary: Henrik, Roland, Örkény; Poland: Daniel, Dawid, Henryk, Iga, Ignacy, Lubomysł, Niecisław, Włodzimierz, Żegota
+Czech Republic: Jindřich; Hungary: Henrik, Roland, Örkény; Poland: Daniel, Dawid, Henryk, Iga, Ignacy, Lubomysł Niecisław, Włodzimierz Żegota
 Czech Republic: Luboš; Hungary: Valter; Poland: Andrzej, Maria, Magdalena, Marika, Stefan
 Czech Republic: Martina; Hungary: Endre, Elek, Dzsesszika; Poland: Aleksander, Andrzej, Bogdan, Marcelina, Maria, Magdalena, Aneta
 Czech Republic: Drahomíra; Hungary: Frigyes; Poland: Erwin, Kamil, Karolina, Robert, Szymon, Unisław
 Czech Republic: Čeněk; Hungary: Emília; Poland: Lutobor, Wincenty
-Czech Republic: Ilja; Hungary: Illés; Poland: Czechoń, Czesław, Małgorzata, Paweł
+Czech Republic: Ilja; Hungary: Illés; Poland: Czechoń Czesław, Małgorzata, Paweł
 Czech Republic: Vítězslav; Hungary: Dániel, Daniella; Poland: Andrzej, Daniel, Paulina, Stojsław, Wiktor
 Czech Republic: Magdaléna; Hungary: Magdolna; Poland: Bolesława, Bolisława, Maria, Magdalena, Milenia, Więcemiła
-Czech Republic: Libor; Hungary: Lenke; Poland: Bogna, Żelisław
+Czech Republic: Libor; Hungary: Lenke; Poland: Bogna Żelisław
 Czech Republic: Kristýna; Hungary: Kinga, Kincső; Poland: Antoni, Kinga, Krystyna, Olga, Wojciecha
 Czech Republic: Jakub; Hungary: Kristóf, Jakab; Poland: Jakub, Krzysztof, Sławosz, Walentyna
 Czech Republic: Anna; Hungary: Anna, Anikó; Poland: Anna, Baldev, Grażyna, Mirosława
 Czech Republic: Věroslav; Hungary: Olga, Liliána; Poland: Julia, Marta, Natalia, Wszebor
-Czech Republic: Viktor; Hungary: Szabolcs; Poland: Marcela, Świętomir, Wiktor
+Czech Republic: Viktor; Hungary: Szabolcs; Poland: Marcela Świętomir, Wiktor
 Czech Republic: Marta; Hungary: Márta, Flóra; Poland: Konstantyn, Maria, Marta
 Czech Republic: Bořivoj; Hungary: Judit, Xénia; Poland: Julia, Julita, Ludmiła, Maryna
 Czech Republic: Ignác; Hungary: Oszkár; Poland: Emilian, Helena, Iga, Ignacy, Ludomir
@@ -227,35 +227,35 @@ Czech Republic: Alena; Hungary: Ipoly; Poland: Diana, Helena, Jan, Kasjan, Radom
 Czech Republic: Alan; Hungary: Marcell; Poland: Dobrowoj, Euzebiusz
 Czech Republic: Hana; Hungary: Mária; Poland: Maria, Stefan
 Czech Republic: Jáchym; Hungary: Ábrahám; Poland: Domarad, Domarat, Joachim
-Czech Republic: Petra; Hungary: Jácint; Poland: Anastazja, Angelika, Anita, Eliza, Jacek, Jaczewoj, Joanna, Julianna, Miron, Żanna
+Czech Republic: Petra; Hungary: Jácint; Poland: Anastazja, Angelika, Anita, Eliza, Jacek, Jaczewoj, Joanna, Julianna, Miron Żanna
 Czech Republic: Helena; Hungary: Ilona; Poland: Bogusława, Bronisław, Bronisz, Helena, Ilona, Klara
 Czech Republic: Ludvík; Hungary: Huba; Poland: Bolesław, Emilia, Jan, Julian, Juliusz, Piotr
-Czech Republic: Bernard; Hungary: István; Poland: Jan, Samuel, Samuela, Sieciech, Sobiesław, Świeciech
+Czech Republic: Bernard; Hungary: István; Poland: Jan, Samuel, Samuela, Sieciech, Sobiesław Świeciech
 Czech Republic: Johana; Hungary: Sámuel, Hajna; Poland: Emilian, Filipina, Franciszek, Joanna, Kazimiera, Męcimir
 Czech Republic: Bohuslav; Hungary: Menyhért, Mirjam; Poland: Cezary, Dalegor, Maria, Namysław, Tymoteusz, Zygfryd
 Czech Republic: Sandra; Hungary: Bence; Poland: Filip, Laurenty
 Czech Republic: Bartoloměj; Hungary: Bertalan; Poland: Bartłomiej, Cieszymir, Jerzy, Joanna, Malina, Michalina
-Czech Republic: Radim; Hungary: Lajos, Patrícia; Poland: Grzegorz, Luiza, Michał, Sieciesław
+Czech Republic: Radim; Hungary: Lajos, Patrícia; Poland: Grzegorz, Luiza, Michał Sieciesław
 Czech Republic: Luděk; Hungary: Izsó; Poland: Dobroniega, Joanna, Konstanty, Maksym, Maria
 Czech Republic: Otakar; Hungary: Gáspár; Poland: Cezary, Józef, Monika, Małgorzata, Teodor
 Czech Republic: Augustýn; Hungary: Ágoston; Poland: Adelina, Aleksander, Aleksy, Augustyn, Patrycja, Sobiesław, Stronisław
 Czech Republic: Evelína; Hungary: Beatrix, Erna; Poland: Gita, Jan, Racibor, Sabina
 Czech Republic: Vladěna; Hungary: Rózsa; Poland: Częstowoj, Miron, Rebeka, Róża, Szczęsna, Szczęsny
-Czech Republic: Pavlína; Hungary: Erika, Bella; Poland: Bohdan, Paulina, Rajmund, Świętosław
+Czech Republic: Pavlína; Hungary: Erika, Bella; Poland: Bohdan, Paulina, Rajmund Świętosław
 Czech Republic: Linda, Samuel; Hungary: Egyed, Egon; Poland: Bronisław, Bronisława, Bronisz
 Czech Republic: Adéla; Hungary: Rebeka, Dorina; Poland: Bohdan, Czesław, Eliza, Henryk, Julian, Stefan, Tobiasz, Witomysł
 Czech Republic: Bronislav, Bronislava; Hungary: Hilda; Poland: Antoni, Bartłomiej, Bronisław, Bronisz, Izabela, Jan, Joachim, Mojmir, Szymon, Wincenty, Zenon
 Czech Republic: Jindřiška; Hungary: Rozália; Poland: Ida, Lilianna, Rościgniew, Róża, Rozalia
 Czech Republic: Boris; Hungary: Viktor, Lőrinc; Poland: Dorota, Justyna, Stronisława, Wawrzyniec
-Czech Republic: Boleslav; Hungary: Zakariás; Poland: Albin, Beata, Eugenia, Eugeniusz, Michał, Uniewit
+Czech Republic: Boleslav; Hungary: Zakariás; Poland: Albin, Beata, Eugenia, Eugeniusz, Michał Uniewit
 Czech Republic: Regina; Hungary: Regina; Poland: Domasława, Domisława, Marek, Regina, Rena, Ryszard
 Czech Republic: Mariana; Hungary: Mária, Adrienn; Poland: Adrian, Adrianna, Maria, Radosław, Radosława, Klementyna
-Czech Republic: Daniela; Hungary: Ádám; Poland: Augustyna, Aureliusz, Piotr, Ścibor, Ścibora, Sergiusz, Sobiesąd
-Czech Republic: Irma; Hungary: Nikolett, Hunor; Poland: Aldona, Łukasz, Mikołaj, Mścibor
+Czech Republic: Daniela; Hungary: Ádám; Poland: Augustyna, Aureliusz, Piotr Ścibor Ścibora, Sergiusz, Sobiesąd
+Czech Republic: Irma; Hungary: Nikolett, Hunor; Poland: Aldona Łukasz, Mikołaj, Mścibor
 Czech Republic: Denisa; Hungary: Teodóra; Poland: Feliks, Jacek, Jan, Naczesław
 Czech Republic: Marie; Hungary: Mária; Poland: Amadeusz, Maria, Piotr, Sylwin
 Czech Republic: Lubor; Hungary: Kornél; Poland: Aleksander, Eugenia, Filip, Lubor, Morzysław, Szeliga
-Czech Republic: Radka; Hungary: Szeréna, Roxána; Poland: Bernard, Cyprian, Roksana, Siemomysł, Szymon
+Czech Republic: Radka; Hungary: Szeréna, Roxána; Poland: Bernard, Cyprian, Roksana, Siemomysł Szymon
 Czech Republic: Jolana; Hungary: Enikő, Melitta; Poland: Maria, Nikodem
 Czech Republic: Ludmila; Hungary: Edit; Poland: Cyprian, Edyta, Eugenia, Franciszek, Kamila, Kornel, Lucja, Wiktor
 Czech Republic: Naděžda; Hungary: Zsófia; Poland: Drogosław, Franciszek, Justyn, Justyna, Teodora
@@ -266,11 +266,11 @@ Czech Republic: Matouš; Hungary: Máté, Mirella; Poland: Bożeciech, Bożydar,
 Czech Republic: Darina; Hungary: Móric; Poland: Joachim, Maurycy, Prosimir, Scott, Tomasz
 Czech Republic: Berta; Hungary: Tekla, Líviusz; Poland: Boguchwała, Bogusław, Elżbieta, Krzysztof, Libert, Litoriusz, Liwiusz, Piotr, Tekla, Zachariusz
 Czech Republic: Jaromír; Hungary: Gellért, Mercédesz; Poland: Gerard, Maria, Teodor, Tomir, Uniegost
-Czech Republic: Zlata; Hungary: Eufrozina, Kende; Poland: Aurelia, Franciszek, Kamil, Ładysław, Piotr, Świętopełk, Wincenty, Władysław, Władysława
-Czech Republic: Andrea; Hungary: Jusztina; Poland: Cyprian, Euzebiusz, Justyna, Łękomir
+Czech Republic: Zlata; Hungary: Eufrozina, Kende; Poland: Aurelia, Franciszek, Kamil Ładysław, Piotr Świętopełk, Wincenty, Władysław, Władysława
+Czech Republic: Andrea; Hungary: Jusztina; Poland: Cyprian, Euzebiusz, Justyna Łękomir
 Czech Republic: Jonáš; Hungary: Adalbert; Poland: Amadeusz, Damian
 Czech Republic: Václav; Hungary: Vencel; Poland: Jan, Luba, Lubosza, Marek, Nikita, Sylwin, Wacław, Wacława, Więcesław
-Czech Republic: Michal; Hungary: Mihály; Poland: Michał, Rafał, Gabriel
+Czech Republic: Michal; Hungary: Mihály; Poland: Michał Rafał Gabriel
 Czech Republic: Jeroným; Hungary: Jeromos; Poland: Grzegorz, Hieronim, Honoriusz, Imisław, Rachela, Wera, Wiera, Wiktor, Zofia
 Czech Republic: Igor; Hungary: Malvin; Poland: Danuta, Remigiusz, Cieszysław, Dan, Danisz, Danuta, Igor, Jan, Remigiusz
 Czech Republic: Olívie, Oliver; Hungary: Petra; Poland: Stanimir, Teofil
@@ -289,23 +289,23 @@ Czech Republic: Agáta; Hungary: Helén; Poland: Alan, Bernard, Dominik
 Czech Republic: Tereza; Hungary: Teréz; Poland: Jadwiga, Teresa
 Czech Republic: Havel; Hungary: Gál; Poland: Aurelia, Gerard, Grzegorz
 Czech Republic: Hedvika; Hungary: Hedvig; Poland: Lucyna, Małgorzata, Marian, Wiktor
-Czech Republic: Lukáš; Hungary: Lukács; Poland: Julian, Łukasz
+Czech Republic: Lukáš; Hungary: Lukács; Poland: Julian Łukasz
 Czech Republic: Michaela; Hungary: Nándor; Poland: Ferdynand, Piotr, Siemowit, Skarbimir, Ziemowit
 Czech Republic: Vendelín; Hungary: Vendel; Poland: Irena, Urszula
-Czech Republic: Brigita; Hungary: Orsolya; Poland: Bernard, Celina, Dobromił, Elżbieta
+Czech Republic: Brigita; Hungary: Orsolya; Poland: Bernard, Celina, Dobromił Elżbieta
 Czech Republic: Sabina; Hungary: Előd; Poland: Filip, Halka
-Czech Republic: Teodor; Hungary: Gyöngyi; Poland: Iga, Ignacy, Jan, Marlena, Roman, Seweryn, Teodor, Włościsław, Żegota
+Czech Republic: Teodor; Hungary: Gyöngyi; Poland: Iga, Ignacy, Jan, Marlena, Roman, Seweryn, Teodor, Włościsław Żegota
 Czech Republic: Nina; Hungary: Salamon; Poland: Antoni, Boleczest, Filip, Marcin, Rafaela, Rafał
 Czech Republic: Beáta; Hungary: Blanka, Bianka; Poland: Daria, Kryspin, Sambor, Taras
-Czech Republic: Erik; Hungary: Dömötör; Poland: Dymitriusz, Łucjan, Lucyna, Ludmiła, Lutosław
+Czech Republic: Erik; Hungary: Dömötör; Poland: Dymitriusz Łucjan, Lucyna, Ludmiła, Lutosław
 Czech Republic: Šarlota, Zoe; Hungary: Szabina; Poland: Iwona, Sabina, Wincenty
 Hungary: Simon, Szimonetta; Poland: Szymon, Tadeusz, Wszeciech
 Czech Republic: Silvie; Hungary: Nárcisz; Poland: Euzebia, Franciszek, Lubogost, Teodor, Wioletta
 Czech Republic: Tadeáš; Hungary: Alfonz; Poland: Edmund, Klaudiusz, Przemysław, Sądosław
-Czech Republic: Štěpánka; Hungary: Farkas; Poland: Antoni, Antonina, Godzimir, Lucylla, Łukasz, Dezemir
+Czech Republic: Štěpánka; Hungary: Farkas; Poland: Antoni, Antonina, Godzimir, Lucylla Łukasz, Dezemir
 Czech Republic: Felix; Hungary: Marianna; Poland: Andrzej, Seweryn, Warcisław, Wiktoryna
 Hungary: Achilles; Poland: Bohdana, Bożydar, Małgorzata, Stojmir, Tobiasz
-Czech Republic: Hubert; Hungary: Győző; Poland: Bogumił, Cezary, Chwalisław, Hubert, Sylwia
+Czech Republic: Hubert; Hungary: Győző; Poland: Bogumił Cezary, Chwalisław, Hubert, Sylwia
 Czech Republic: Karel; Hungary: Károly; Poland: Mściwój, Olgierd, Karol
 Czech Republic: Miriam; Hungary: Imre; Poland: Dalemir, Elżbieta, Florian, Sławomir
 Czech Republic: Liběna; Hungary: Lénárd; Poland: Feliks, Leonard, Trzebowit, Ziemowit
@@ -316,12 +316,12 @@ Czech Republic: Evžen; Hungary: Réka; Poland: Andrzej, Lena, Leon, Ludomir, St
 Czech Republic: Martin; Hungary: Márton; Poland: Anastazja, Bartłomiej, Maciej, Marcin, Spycisław, Teodor
 Czech Republic: Benedikt; Hungary: Jónás, Renátó; Poland: Cibor, Czcibor, Jonasz, Krystyn, Marcin, Renata, Witold
 Czech Republic: Tibor; Hungary: Szilvia; Poland: Arkadiusz, Eugeniusz, Jan, Mikołaj, Stanisław
-Czech Republic: Sáva; Hungary: Aliz; Poland: Aga, Agata, Damian, Elżbieta, Emil, Emiliusz, Józef, Judyta, Ścibor, Ścibora, Wszerad
+Czech Republic: Sáva; Hungary: Aliz; Poland: Aga, Agata, Damian, Elżbieta, Emil, Emiliusz, Józef, Judyta Ścibor Ścibora, Wszerad
 Czech Republic: Leopold; Hungary: Albert, Lipót; Poland: Albert, Alfons, Artur, Gurias, Idalia, Józef, Leopold, Leopoldyna, Przybygniew, Roger
-Czech Republic: Otmar; Hungary: Ödön; Poland: Edmund, Marek, Maria, Niedamir, Otomar, Paweł, Piotr
+Czech Republic: Otmar; Hungary: Ödön; Poland: Edmund, Marek, Maria, Niedamir, Otomar, Paweł Piotr
 Czech Republic: Mahulena; Hungary: Hortenzia, Gergő; Poland: Grzegorz
-Czech Republic: Romana; Hungary: Jenő; Poland: Aniela, Cieszymysł, Klaudyna, Roman, Tomasz
-Czech Republic: Alžběta; Hungary: Erzsébet; Poland: Elżbieta, Mironiega, Paweł, Seweryn
+Czech Republic: Romana; Hungary: Jenő; Poland: Aniela, Cieszymysł Klaudyna, Roman, Tomasz
+Czech Republic: Alžběta; Hungary: Erzsébet; Poland: Elżbieta, Mironiega, Paweł Seweryn
 Czech Republic: Nikola; Hungary: Jolán; Poland: Edmund, Feliks, Sędzimir
 Czech Republic: Albert; Hungary: Olivér; Poland: Janusz, Konrad, Maria, Piotr, Regina, Rena, Twardosław, Wiesław
 Czech Republic: Cecílie; Hungary: Cecília; Poland: Cecylia, Marek, Wszemiła
@@ -331,7 +331,7 @@ Czech Republic: Kateřina; Hungary: Katalin; Poland: Katarzyna, Tęgomir
 Czech Republic: Artur; Hungary: Virág; Poland: Dobiemiest, Jan, Konrad, Lechosław, Lechosława, Leonard, Sylwester
 Czech Republic: Xenie; Hungary: Virgil; Poland: Dominik, Maksymilian, Stojgniew, Walery
 Czech Republic: René; Hungary: Stefánia; Poland: Gościrad, Grzegorz, Jakub, Lesław, Lesława, Zdzisław
-Czech Republic: Zina; Hungary: Taksony; Poland: Błażej, Bolemysł, Fryderyk, Przemysł
+Czech Republic: Zina; Hungary: Taksony; Poland: Błażej, Bolemysł Fryderyk, Przemysł
 Czech Republic: Ondřej; Hungary: András, Andor; Poland: Andrzej, Justyna, Konstanty
 Czech Republic: Iva; Hungary: Elza; Poland: Blanka, Długosz, Edmund, Iwa, Natalia, Sobiesława
 Czech Republic: Blanka; Hungary: Melinda, Vivien; Poland: Aurelia, Balbina, Bibiana, Budzisław, Budzisława, Ludwina, Paulina, Sulisław, Sylweriusz, Sylwery, Wiktoryn, Zbylut
@@ -340,16 +340,16 @@ Czech Republic: Barbora; Hungary: Borbála, Barbara; Poland: Barbara, Hieronim, 
 Czech Republic: Jitka; Hungary: Vilma; Poland: Gerald, Krystyna, Pęcisława
 Czech Republic: Mikuláš; Hungary: Miklós; Poland: Emilian, Jarogniew, Mikołaj
 Czech Republic: Ambrož; Hungary: Ambrus; Poland: Marcin, Ninomysł
-Czech Republic: Květoslava; Hungary: Mária; Poland: Boguwola, Maria, Światozar
+Czech Republic: Květoslava; Hungary: Mária; Poland: Boguwola, Maria Światozar
 Czech Republic: Vratislav; Hungary: Natália; Poland: Joachim, Wielisława, Wiesław
 Czech Republic: Julie; Hungary: Judit; Poland: Andrzej, Daniel, Judyta, Julia, Maria
 Czech Republic: Dana; Hungary: Árpád, Árpádina; Poland: Daniela, Julia, Stefan, Waldemar, Wojmir
 Czech Republic: Simona; Hungary: Gabriella; Poland: Aleksander, Dagmara
 Czech Republic: Lucie; Hungary: Luca, Otília; Poland: Lucja, Otylia
 Czech Republic: Lýdie; Hungary: Szilárda; Poland: Alfred, Izydor, Sławobor
-Czech Republic: Radana; Hungary: Valér; Poland: Celina, Iga, Ignacy, Krystiana, Nina, Wolimir, Żegota
+Czech Republic: Radana; Hungary: Valér; Poland: Celina, Iga, Ignacy, Krystiana, Nina, Wolimir Żegota
 Czech Republic: Albína; Hungary: Etelka, Aletta; Poland: Alina, Zdzisława
-Czech Republic: Daniel; Hungary: Lázár, Olimpia; Poland: Florian, Jolanta, Żyrosław
+Czech Republic: Daniel; Hungary: Lázár, Olimpia; Poland: Florian, Jolanta Żyrosław
 Czech Republic: Miloslav; Hungary: Auguszta; Poland: Bogusław, Gracjan, Laurencja, Wszemir
 Czech Republic: Ester; Hungary: Viola; Poland: Beniamin, Dariusz, Gabriela, Mścigniew, Tymoteusz
 Czech Republic: Dagmar; Hungary: Teofil; Poland: Bogumiła, Dominik

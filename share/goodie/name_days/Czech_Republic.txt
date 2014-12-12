@@ -30,7 +30,7 @@ Zdislava
 Robin
 Marika
 Hynek
-Nela Hromnice
+Nela, Hromnice
 Blažej
 Jarmila
 Dobromila
@@ -71,9 +71,9 @@ Viktorie
 Anděla
 Řehoř
 Růžena
-Rút Matylda
+Rút, Matylda
 Ida
-Elena Herbert
+Elena, Herbert
 Vlastimil
 Eduard
 Josef
@@ -178,7 +178,7 @@ Ivan
 Adriana
 Ladislav
 Lubomír
-Petr Pavel
+Petr, Pavel
 Šárka
 Jaroslava
 Patricie
@@ -189,7 +189,7 @@ Prokop
 Bohuslava
 Nora
 Drahoslava
-Libuše Amálie
+Libuše, Amálie
 Olga
 Bořek
 Markéta
@@ -242,9 +242,9 @@ Augustýn
 Evelína
 Vladěna
 Pavlína
-Linda Samuel
+Linda, Samuel
 Adéla
-Bronislav Bronislava
+Bronislav, Bronislava
 Jindřiška
 Boris
 Boleslav
@@ -273,14 +273,14 @@ Václav
 Michal
 Jeroným
 Igor
-Olívie Oliver
+Olívie, Oliver
 Bohumil
 František
 Eliška
 Hanuš
 Justýna
 Věra
-Štefan Sára
+Štefan, Sára
 Marina
 Andrej
 Marcel
@@ -298,7 +298,7 @@ Teodor
 Nina
 Beáta
 Erik
-Šarlota Zoe
+Šarlota, Zoe
 
 Silvie
 Tadeáš
@@ -356,7 +356,7 @@ Dagmar
 Natálie
 Šimon
 Vlasta
-Adam Eva
+Adam, Eva
 
 Štěpán
 Žaneta

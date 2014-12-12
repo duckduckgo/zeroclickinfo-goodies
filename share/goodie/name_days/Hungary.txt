@@ -1,10 +1,10 @@
 Fruzsina
 Ábel
-Genovéva Benjámin
-Titusz Leona
+Genovéva, Benjámin
+Titusz, Leona
 Simon
 Boldizsár
-Attila Ramóna
+Attila, Ramóna
 Gyöngyvér
 Marcell
 Melánia
@@ -12,105 +12,105 @@ Melánia
 Ernő
 Veronika
 Bódog
-Lóránt Loránd
+Lóránt, Loránd
 Gusztáv
-Antal Antónia
+Antal, Antónia
 Piroska
-Sára Márió
-Fábián Sebestyén
+Sára, Márió
+Fábián, Sebestyén
 Ágnes
-Vince Artúr
-Zelma Rajmund
+Vince, Artúr
+Zelma, Rajmund
 Timót
 Pál | Paul
-Vanda Paula
+Vanda, Paula
 Angelika
-Károly Karola
+Károly, Karola
 Adél
-Martina Gerda
+Martina, Gerda
 Marcella
 Ignác
-Karolina Aida
+Karolina, Aida
 Balázs
-Ráhel Csenge
-Ágota Ingrid
-Dorottya Dóra
-Tódor Rómeó
+Ráhel, Csenge
+Ágota, Ingrid
+Dorottya, Dóra
+Tódor, Rómeó
 Aranka
-Abigél Alex
+Abigél, Alex
 Elvira
-Bertold Marietta
-Lídia Lívia
-Ella Linda
-Bálint Valentin
-Kolos Georgina
-Julianna Lilla
+Bertold, Marietta
+Lídia, Lívia
+Ella, Linda
+Bálint, Valentin
+Kolos, Georgina
+Julianna, Lilla
 Donát
 Bernadett
 Zsuzsanna
-Aladár Álmos
+Aladár, Álmos
 Eleonóra
 Gerzson
 Alfréd
 Mátyás
 Géza
 Edina
-Ákos Bátor
+Ákos, Bátor
 Elemér
 
 Albin
 Lujza
 Kornélia
 Kázmér
-Adorján Adrián
-Leonóra Inez
+Adorján, Adrián
+Leonóra, Inez
 Tamás
 Zoltán
-Franciska Fanni
+Franciska, Fanni
 Ildikó
 Szilárd
 Gergely
-Krisztián Ajtony
+Krisztián, Ajtony
 Matild
 Kristóf
 Henrietta
-Gertrúd Patrik
-Sándor Ede
-József Bánk
+Gertrúd, Patrik
+Sándor, Ede
+József, Bánk
 Klaudia
 Benedek
-Beáta Izolda Lea
+Beáta, Izolda, Lea
 Emőke
-Gábor Karina
-Irén Írisz
+Gábor, Karina
+Irén, Írisz
 Emánuel
 Hajnalka
-Gedeon Johanna
+Gedeon, Johanna
 Auguszta
 Zalán
 Árpád
 Hugó
 Áron
-Buda Richárd
+Buda, Richárd
 Izidor
 Vince
-Vilmos Bíborka
+Vilmos, Bíborka
 Herman
 Dénes
 Erhard
 Zsolt
-Leó Szaniszló
+Leó, Szaniszló
 Gyula
 Ida
 Tibor
-Anasztázia Tas
+Anasztázia, Tas
 Csongor
 Rudolf
-Andrea Ilma
+Andrea, Ilma
 Emma
 Tivadar
 Konrád
-Csilla Noémi
+Csilla, Noémi
 Béla
 György
 Márk
@@ -118,110 +118,110 @@ Ervin
 Zita
 Valéria
 Péter
-Katalin Kitti
-Fülöp Jakab
+Katalin, Kitti
+Fülöp, Jakab
 Zsigmond
-Tímea Irma
-Mónika Flórián
+Tímea, Irma
+Mónika, Flórián
 Györgyi
-Ivett Frida
+Ivett, Frida
 Gizella
 Mihály
 Gergely
-Ármin Pálma
+Ármin, Pálma
 Ferenc
 Pongrác
-Szervác Imola
+Szervác, Imola
 Bonifác
-Zsófia Szonja
-Mózes Botond
+Zsófia, Szonja
+Mózes, Botond
 Paszkál
-Erik Alexandra
-Ivó Milán
-Bernát Felícia
+Erik, Alexandra
+Ivó, Milán
+Bernát, Felícia
 Konstantin
-Júlia Rita
+Júlia, Rita
 Dezső
-Eszter Eliza
+Eszter, Eliza
 Orbán
-Fülöp Evelin
+Fülöp, Evelin
 Hella
-Emil Csanád
+Emil, Csanád
 Magdolna
-Janka Zsanett
-Angéla Petronella
+Janka, Zsanett
+Angéla, Petronella
 Tünde
-Kármen Anita
-Klotild Cecília
+Kármen, Anita
+Klotild, Cecília
 Bulcsú
-Fatime Fatima
-Norbert Cintia
+Fatime, Fatima
+Norbert, Cintia
 Róbert
 Medárd
 Félix
-Margit Gréta
+Margit, Gréta
 Barnabás
 Villő
-Antal Anett
+Antal, Anett
 Vazul
-Jolán Vid
+Jolán, Vid
 Jusztin
-Laura Alida
-Arnold Levente
+Laura, Alida
+Arnold, Levente
 Gyárfás
 Rafael
-Alajos Leila
+Alajos, Leila
 Paulina
 Zoltán
 Iván
 Vilmos
-János Pál Vu Cuda
+János, Pál, Vu, Cuda
 László
-Levente Irén
-Péter Pál
+Levente, Irén
+Péter, Pál
 Pál
-Tihamér Annamária
+Tihamér, Annamária
 Ottó
-Kornél Soma
+Kornél, Soma
 Ulrik
-Emese Sarolta
+Emese, Sarolta
 Csaba
 Apollónia
 Ellák
 Lukrécia
 Amália
-Nóra Lili
-Izabella Dalma
+Nóra, Lili
+Izabella, Dalma
 Jenő
-Örs Stella
-Henrik Roland Örkény
+Örs, Stella
+Henrik, Roland, Örkény
 Valter
-Endre Elek Dzsesszika
+Endre, Elek, Dzsesszika
 Frigyes
 Emília
 Illés
-Dániel Daniella
+Dániel, Daniella
 Magdolna
 Lenke
-Kinga Kincső
-Kristóf Jakab
-Anna Anikó
-Olga Liliána
+Kinga, Kincső
+Kristóf, Jakab
+Anna, Anikó
+Olga, Liliána
 Szabolcs
-Márta Flóra
-Judit Xénia
+Márta, Flóra
+Judit, Xénia
 Oszkár
 Boglárka
 Lehel
 Hermina
-Domonkos Dominika
+Domonkos, Dominika
 Krisztina
-Berta Bettina
+Berta, Bettina
 Ibolya
 László
 Emőd
 Lőrinc
-Zsuzsanna Tiborc
+Zsuzsanna, Tiborc
 Klára
 Ipoly
 Marcell
@@ -231,42 +231,42 @@ Jácint
 Ilona
 Huba
 István
-Sámuel Hajna
-Menyhért Mirjam
+Sámuel, Hajna
+Menyhért, Mirjam
 Bence
 Bertalan
-Lajos Patrícia
+Lajos, Patrícia
 Izsó
 Gáspár
 Ágoston
-Beatrix Erna
+Beatrix, Erna
 Rózsa
-Erika Bella
-Egyed Egon
-Rebeka Dorina
+Erika, Bella
+Egyed, Egon
+Rebeka, Dorina
 Hilda
 Rozália
-Viktor Lőrinc
+Viktor, Lőrinc
 Zakariás
 Regina
-Mária Adrienn
+Mária, Adrienn
 Ádám
-Nikolett Hunor
+Nikolett, Hunor
 Teodóra
 Mária
 Kornél
-Szeréna Roxána
-Enikő Melitta
+Szeréna, Roxána
+Enikő, Melitta
 Edit
 Zsófia
 Diána
 Vilhelmina
 Friderika
-Máté Mirella
+Máté, Mirella
 Móric
-Tekla Líviusz
-Gellért Mercédesz
-Eufrozina Kende
+Tekla, Líviusz
+Gellért, Mercédesz
+Eufrozina, Kende
 Jusztina
 Adalbert
 Vencel
@@ -277,14 +277,14 @@ Petra
 Helga
 Ferenc
 Aurél
-Brúnó Renáta
+Brúnó, Renáta
 Amália
 Koppány
 Dénes
 Gedeon
 Brigitta
 Miksa
-Kálmán Ede
+Kálmán, Ede
 Helén
 Teréz
 Gál
@@ -296,10 +296,10 @@ Orsolya
 Előd
 Gyöngyi
 Salamon
-Blanka Bianka
+Blanka, Bianka
 Dömötör
 Szabina
-Simon Szimonetta
+Simon, Szimonetta
 Nárcisz
 Alfonz
 Farkas
@@ -314,53 +314,53 @@ Zsombor
 Tivadar
 Réka
 Márton
-Jónás Renátó
+Jónás, Renátó
 Szilvia
 Aliz
-Albert Lipót
+Albert, Lipót
 Ödön
-Hortenzia Gergő
+Hortenzia, Gergő
 Jenő
 Erzsébet
 Jolán
 Olivér
 Cecília
-Kelemen Klementina
+Kelemen, Klementina
 Emma
 Katalin
 Virág
 Virgil
 Stefánia
 Taksony
-András Andor
+András, Andor
 Elza
-Melinda Vivien
+Melinda, Vivien
 Ferenc
-Borbála Barbara
+Borbála, Barbara
 Vilma
 Miklós
 Ambrus
 Mária
 Natália
 Judit
-Árpád Árpádina
+Árpád, Árpádina
 Gabriella
-Luca Otília
+Luca, Otília
 Szilárda
 Valér
-Etelka Aletta
-Lázár Olimpia
+Etelka, Aletta
+Lázár, Olimpia
 Auguszta
 Viola
 Teofil
 Tamás
 Zénó
 Viktória
-Ádám Éva
+Ádám, Éva
 Eugénia
 István
 János
 Kamilla
-Tamás Tamara
+Tamás, Tamara
 Dávid
 Szilveszter
