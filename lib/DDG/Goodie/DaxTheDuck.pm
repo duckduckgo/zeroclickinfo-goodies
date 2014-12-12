@@ -22,7 +22,7 @@ triggers any => "dax the duck";
 handle remainder => sub {
 
 
-	return "You know, I am on the front page!";
+	return "Dax is DuckDuckGo's mascot. Check him out in the top left corner or at the homepage!";
 
 	return $_;
 };
