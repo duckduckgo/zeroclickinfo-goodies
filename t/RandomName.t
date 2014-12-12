@@ -17,6 +17,9 @@ ddg_goodie_test(
     'random person' =>
         test_zci (qr/Name: [\w\s]+\nGender: (?:Male|Female)\nDate of birth: \d{4}\-\d{2}\-\d{2}\nAge: \d+/,
                   heading => 'Random Person'),
+    'random domain name' => undef,
+    'random city name' => undef,
+    'names of random people' => undef
 );
 
 done_testing;
