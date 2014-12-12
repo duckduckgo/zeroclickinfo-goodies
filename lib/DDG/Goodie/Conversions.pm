@@ -159,8 +159,6 @@ sub convert {
     else {
         # if it doesn't look like a number, and it contains a number (e.g., '6^2'):
         $conversion->{'factor'} = parse_number($conversion->{'factor'});
-
-        #return if $conversion->{'factor'} =~ /[^\d]/;
     }
     
     return if $conversion->{'factor'} =~ /[[:alpha:]]/;
@@ -176,26 +174,6 @@ sub convert {
     else {
         $matches->{'result'} = $conversion->{'factor'} * ($matches->{'factor_2'} / $matches->{'factor_1'});
     }
-
-###
-### while massaging output is left to the implementation, there are some cases
-### where answers might seem nonsensical, based on the input precision.  
-### for example, converting '10mg to tons' with a precision of '3' gives '10 milligrams is 0.000 tons'
-### the code below is one way to handle such cases:
-###
-###        if ($result == 0 || length($result) > 2*$precision + 1) {
-###            # '10 mg to tons'                 => [0] , [1.10231e-08]
-###            # '10000 minutes in microseconds' => [600000000000]
-###            # '2500kcal in tons of tnt'       => [66194.888]
-###
-###            if ($result == 0) {
-###                # rounding error
-###                $result = convert_temperatures($matches->{'from_unit'}, $matches->{'to_unit'}, $factor);
-###            }
-###
-###            $f_result = (sprintf "%.${precision}g", $result);
-###        }
-###   
     return $matches;
 };
 
@@ -210,7 +188,7 @@ sub wrap_html {
 
 sub set_unit_pluralisation {
     my ($unit, $count) = @_;
-    my $proper_unit = $unit;    # By default, we'll leave it unchanged.
+    my $proper_unit = $unit;
 
     my $already_plural = looks_plural($unit);
 
