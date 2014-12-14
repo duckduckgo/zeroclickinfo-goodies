@@ -13,6 +13,9 @@ ddg_goodie_test(
         DDG::Goodie::DaxTheDuck
     )],
     'Dax the Duck' => test_zci("Dax is DuckDuckGo's mascot. Check him out in the top left corner or at the homepage!"),
+    'who is dax the duck'=> test_zci("Dax is DuckDuckGo's mascot. Check him out in the top left corner or at the homepage!");
+    'who is dax'=> test_zci("Dax is DuckDuckGo's mascot. Check him out in the top left corner or at the homepage!");
+    'where is dax the duck'=> test_zci("Dax is DuckDuckGo's mascot. Check him out in the top left corner or at the homepage!");
     
 );
 
