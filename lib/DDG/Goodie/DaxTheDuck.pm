@@ -24,7 +24,7 @@ handle remainder => sub {
 
 	return "Dax is DuckDuckGo's mascot. Check him out in the top left corner or at the homepage!";
 
-	return $_;
+	
 };
 
 1;
