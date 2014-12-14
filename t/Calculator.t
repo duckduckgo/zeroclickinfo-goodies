@@ -33,7 +33,7 @@ ddg_goodie_test(
         "2 ^ 8 = 256",
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2<sup>8</sup>'],
+            input     => ['2 ^ 8'],
             operation => 'calculate',
             result    => qr/>256</
         }
@@ -78,7 +78,7 @@ ddg_goodie_test(
         "2 ^ 2 = 4",
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2<sup>2</sup>'],
+            input     => ['2 ^ 2'],
             operation => 'calculate',
             result    => qr/>4</
         }
@@ -87,7 +87,7 @@ ddg_goodie_test(
         "2 ^ 0.2 = 1.14869835499704",
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2<sup>0.2</sup>'],
+            input     => ['2 ^ 0.2'],
             operation => 'calculate',
             result    => qr/>1\.14869835499704</
         }
@@ -267,7 +267,7 @@ ddg_goodie_test(
         '(1  *  10 ^ 2) + 1 = 101',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(1  *  10<sup>2</sup>) + 1'],
+            input     => ['(1  *  10 ^ 2) + 1'],
             operation => 'calculate',
             result    => qr/>101</
         }
@@ -276,7 +276,7 @@ ddg_goodie_test(
         '1 + (1  *  10 ^ 2) = 101',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['1 + (1  *  10<sup>2</sup>)'],
+            input     => ['1 + (1  *  10 ^ 2)'],
             operation => 'calculate',
             result    => qr/>101</
         }
@@ -285,7 +285,7 @@ ddg_goodie_test(
         '2 * 3 + (1  *  10 ^ 2) = 106',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 * 3 + (1  *  10<sup>2</sup>)'],
+            input     => ['2 * 3 + (1  *  10 ^ 2)'],
             operation => 'calculate',
             result    => qr/>106</
         }
@@ -294,7 +294,7 @@ ddg_goodie_test(
         '(1  *  10 ^ 2) + 2 * 3 = 106',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(1  *  10<sup>2</sup>) + 2 * 3'],
+            input     => ['(1  *  10 ^ 2) + 2 * 3'],
             operation => 'calculate',
             result    => qr/>106</
         }
@@ -303,7 +303,7 @@ ddg_goodie_test(
         '(1  *  10 ^ 2) / 2 = 50',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(1  *  10<sup>2</sup>) / 2'],
+            input     => ['(1  *  10 ^ 2) / 2'],
             operation => 'calculate',
             result    => qr/>50</
         }
@@ -312,7 +312,7 @@ ddg_goodie_test(
         '2 / (1  *  10 ^ 2) = 0.02',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2 / (1  *  10<sup>2</sup>)'],
+            input     => ['2 / (1  *  10 ^ 2)'],
             operation => 'calculate',
             result    => qr/>0\.02</
         }
@@ -447,7 +447,7 @@ ddg_goodie_test(
         '5 ^ 2 = 25',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['5<sup>2</sup>'],
+            input     => ['5 ^ 2'],
             operation => 'calculate',
             result    => qr/>25</
         }
@@ -456,7 +456,7 @@ ddg_goodie_test(
         '1.0 + 5 ^ 2 = 26',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['1.0 + 5<sup>2</sup>'],
+            input     => ['1.0 + 5 ^ 2'],
             operation => 'calculate',
             result    => qr/>26</
         }
@@ -465,7 +465,7 @@ ddg_goodie_test(
         '3 ^ 2 + 4 ^ 2 = 25',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['3<sup>2</sup> + 4<sup>2</sup>'],
+            input     => ['3 ^ 2 + 4 ^ 2'],
             operation => 'calculate',
             result    => qr/>25</
         }
@@ -474,7 +474,7 @@ ddg_goodie_test(
         '2,2 ^ 2 = 4,84',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2,2<sup>2</sup>'],
+            input     => ['2,2 ^ 2'],
             operation => 'calculate',
             result    => qr/>4,84</
         }
@@ -483,7 +483,7 @@ ddg_goodie_test(
         '0.8 ^ 2 + 0.6 ^ 2 = 1',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['0.8<sup>2</sup> + 0.6<sup>2</sup>'],
+            input     => ['0.8 ^ 2 + 0.6 ^ 2'],
             operation => 'calculate',
             result    => qr/>1</,
         }
@@ -492,7 +492,7 @@ ddg_goodie_test(
         '2 ^ 2 ^ 3 = 256',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2<sup>2<sup>3</sup></sup>'],
+            input     => ['2 ^ 2 ^ 3'],
             operation => 'calculate',
             result    => qr/>256</
         }
@@ -501,7 +501,7 @@ ddg_goodie_test(
         '2 ^ 2 ^ 3.06 = 323.972172143725',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2<sup>2<sup>3.06</sup></sup>'],
+            input     => ['2 ^ 2 ^ 3.06'],
             operation => 'calculate',
             result    => qr/>323\.972172143725</
         }
@@ -510,7 +510,7 @@ ddg_goodie_test(
         '2 ^ 3 ^ 2 = 512',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['2<sup>3<sup>2</sup></sup>'],
+            input     => ['2 ^ 3 ^ 2'],
             operation => 'calculate',
             result    => qr/>512</
         }
@@ -546,7 +546,7 @@ ddg_goodie_test(
         '(pi ^ 4 + pi ^ 5) ^ (1 / 6) = 2.71828180861191',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(pi<sup>4</sup> + pi<sup>5</sup>)<sup>(1 / 6)</sup>'],
+            input     => ['(pi ^ 4 + pi ^ 5) ^ (1 / 6)'],
             operation => 'calculate',
             result    => qr/>2\.71828180861191</
         }
@@ -555,7 +555,7 @@ ddg_goodie_test(
         '(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1 = 3.71828180861191',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(pi<sup>4</sup> + pi<sup>5</sup>)<sup>(1 / 6)</sup> + 1'],
+            input     => ['(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1'],
             operation => 'calculate',
             result    => qr/>3\.71828180861191</
         }
@@ -564,7 +564,7 @@ ddg_goodie_test(
         '5 ^ 4 ^ (3 - 2) ^ 1 = 625',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['5<sup>4<sup>(3 - 2)<sup>1</sup></sup></sup>'],
+            input     => ['5 ^ 4 ^ (3 - 2) ^ 1'],
             operation => 'calculate',
             result    => qr/>625</
         }
@@ -573,7 +573,7 @@ ddg_goodie_test(
         '(5 - 4) ^ (3 - 2) ^ 1 = 1',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(5 - 4)<sup>(3 - 2)<sup>1</sup></sup>'],
+            input     => ['(5 - 4) ^ (3 - 2) ^ 1'],
             operation => 'calculate',
             result    => qr/>1</
         }
@@ -582,7 +582,7 @@ ddg_goodie_test(
         '(5 + 4 - 3) ^ (2 - 1) = 6',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(5 + 4 - 3)<sup>(2 - 1)</sup>'],
+            input     => ['(5 + 4 - 3) ^ (2 - 1)'],
             operation => 'calculate',
             result    => qr/>6</
         }
@@ -591,7 +591,7 @@ ddg_goodie_test(
         '5 ^ ((4 - 3) * (2 + 1)) + 6 = 131',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['5<sup>((4 - 3) * (2 + 1))</sup> + 6'],
+            input     => ['5 ^ ((4 - 3) * (2 + 1)) + 6'],
             operation => 'calculate',
             result    => qr/>131</
         }
@@ -627,7 +627,7 @@ ddg_goodie_test(
         '(4  *  10 ^ 5) + 1 = 400,001',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(4  *  10<sup>5</sup>) + 1'],
+            input     => ['(4  *  10 ^ 5) + 1'],
             operation => 'calculate',
             result    => qr/>400,001</
         }
@@ -636,7 +636,7 @@ ddg_goodie_test(
         '(4  *  10 ^ 5) + 1 = 400,001',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['(4  *  10<sup>5</sup>) + 1'],
+            input     => ['(4  *  10 ^ 5) + 1'],
             operation => 'calculate',
             result    => qr/>400,001</
         }
@@ -645,7 +645,7 @@ ddg_goodie_test(
         'pi / (1  *  10 ^ 9) = 3.14159265358979 * 10^-9',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['pi / (1  *  10<sup>9</sup>)'],
+            input     => ['pi / (1  *  10 ^ 9)'],
             operation => 'calculate',
             result    => qr/>3\.14159265358979 \* 10<sup>-9<\/sup></
         }
@@ -654,7 +654,7 @@ ddg_goodie_test(
         'pi * (1  *  10 ^ 9) = 3,141,592,653.58979',
         heading           => 'Calculator',
         structured_answer => {
-            input     => ['pi * (1  *  10<sup>9</sup>)'],
+            input     => ['pi * (1  *  10 ^ 9)'],
             operation => 'calculate',
             result    => qr/>3,141,592,653\.58979</
         }
