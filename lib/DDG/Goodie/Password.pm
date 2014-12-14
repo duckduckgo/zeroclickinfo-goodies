@@ -20,6 +20,9 @@ zci is_cached   => 0;
 
 triggers start => 'password', 'random password', 'pw', 'random pw', 'pwgen';
 
+use constant MAX_PWD_LENGTH => 64;
+use constant DEFAULT_PWD_LENGTH => 8;
+
 my %look_alikes = map { $_ => 1 } qw(l O I);    # Exclude alphabet characters which can be easily visually confused.
 my %averages = map { $_ => 1 } (2 .. 9);        # 0,1 missing for the same reasons as above.
 my %highs = map { $_ => 1 } ('!', '@', '#', '$', '%', '^', '&', '*', '(', ')');
@@ -44,8 +47,6 @@ foreach my $value (values %pw_strengths) {
 my $strengths = join('|', keys %pw_strengths);
 
 handle remainder => sub {
-    use constant MAX_PWD_LENGTH => 64;
-    use constant DEFAULT_PWD_LENGTH => 8;
 
     my $query = shift;
 
