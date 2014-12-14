@@ -157,7 +157,7 @@ sub prepare_for_display {
     return +{
         text       => spacing($query) . ' = ' . $result,
         structured => {
-            input     => [spacing($input)],
+            input     => [spacing($query)],
             operation => 'calculate',
             result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
         },
