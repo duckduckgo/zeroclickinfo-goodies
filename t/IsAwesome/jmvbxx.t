@@ -16,13 +16,6 @@ ddg_goodie_test(
     'duckduckhack jmvbxx' => test_zci('jmvbxx is awesome and has successfully completed the DuckDuckHack Goodie tutorial!'),
     'duckduckhack jmvbxx is awesome' => undef,
     
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    # 'example query' => test_zci('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    # 'bad example query' => undef,
 );
 
 done_testing;
