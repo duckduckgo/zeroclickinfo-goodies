@@ -148,10 +148,8 @@ sub prepare_for_display {
     $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
     $query =~ s/\s*\*{2}\s*/^/g;    # Use prettier exponentiation.
     $result = $style->for_display($result);
-    my $input = $style->with_html($query);
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
-        $input =~ s#\($name\)#$name#xig;
     }
 
     return +{
