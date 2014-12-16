@@ -14,7 +14,7 @@ use POSIX qw(abs floor log10 pow);
 use utf8;
 
 # \x{2126} is the unicode ohm symbol
-triggers query_nowhitespace => qr/^(\d*[.kmKM]\d*[.kmKM])((ohm|ohms|\x{2126})|resistor)$/i;
+triggers query_nowhitespace => qr/^(\d*[.kmKM]*\d*[.kmKM]*)((ohm|ohms|\x{2126})|resistor)+$/i;
 
 zci is_cached => 1;
 zci answer_type => 'resistor_colors';
