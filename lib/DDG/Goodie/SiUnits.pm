@@ -27,7 +27,8 @@ my @lines = split /\n/, share("si_units.txt")->slurp;
 handle remainder => sub {
 
     #greps the text file for the unit of interest
-    my $ans = join "", grep /<div class="zci--statement">@_ /i, @lines;
+    my $unit = $_;
+    my $ans = join "", grep /<div class="zci--statement">$unit /i, @lines;
     
     chomp ($ans);
 
