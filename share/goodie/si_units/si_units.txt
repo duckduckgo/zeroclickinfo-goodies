@@ -1,0 +1,23 @@
+<div class="zci--statement">Newtons expressed in SI base units: <div class="zci--unit">kg&#183;m&#183;s<sup>-2</sup></div></div>
+<div class="zci--statement">Joules expressed in SI base units: <div class="zci--unit">kg&#183;m<sup>2</sup>&#183;s<sup>-2</sup></div>
+<div class="zci--statement">Hertz expressed in SI base units: <div class="zci--unit">1s<sup>-1</sup></div>
+<div class="zci--statement">Pascals expressed in SI base units: <div class="zci--unit">kg&#183;m<sup>-1</sup>&#183;s<sup>-2</sup></div>
+<div class="zci--statement">Watts expressed in SI base units: <div class="zci--unit">kg&#183;m<sup>2</sup>&#183;s<sup>-3</sup></div>
+<div class="zci--statement">Coulombs expressed in SI base units: <div class="zci--unit">s&#183;A</div>
+<div class="zci--statement">Volts expressed in SI base units: <div class="zci--unit">kg&#183;m<sup>2</sup>&#183;s<sup>-3</sup>&#183;A<sup>-1</sup></div>
+<div class="zci--statement">Farads expressed in SI base units: <div class="zci--unit">kg<sup>-1</sup>&#183;m<sup>-2</sup>&#183;s<sup>4</sup>&#183;A<sup>2</sup></div>
+<div class="zci--statement">Ohms expressed in SI base units: <div class="zci--unit">kg&#183;m<sup>2</sup>&#183;s<sup>-3</sup>&#183;A<sup>-2</sup></div>
+<div class="zci--statement">Siemens expressed in SI base units: <div class="zci--unit">kg<sup>-1</sup>&#183;m<sup>-2</sup>&#183;s<sup>3</sup>&#183;A<sup>2</sup></div>
+<div class="zci--statement">Mhos expressed in SI base units: <div class="zci--unit">kg<sup>-1</sup>&#183;m<sup>-2</sup>&#183;s<sup>3</sup>&#183;A<sup>2</sup></div>
+<div class="zci--statement">Webers expressed in SI base units: <div class="zci--unit">kg&#183;m<sup>2</sup>&#183;s<sup>-2</sup>&#183;A<sup>-1</sup></div>
+<div class="zci--statement">Teslas expressed in SI base units: <div class="zci--unit">kg&#183;s<sup>-2</sup>&#183;A<sup>-1</sup></div>
+<div class="zci--statement">Henries expressed in SI base units: <div class="zci--unit">kg&#183;m<sup>2</sup>&#183;s<sup>-2</sup>&#183;A<sup>-2</sup></div>
+<div class="zci--statement">Degrees Celsius expressed in SI base units: <div class="zci--unit">K</div>
+<div class="zci--statement">Lumens expressed in SI base units: <div class="zci--unit">cd</div>
+<div class="zci--statement">Lux expressed in SI base units: <div class="zci--unit">m<sup>-2</sup>&#183;cd</div>
+<div class="zci--statement">Becquerels expressed in SI base units: <div class="zci--unit">s<sup>-1</sup></div>
+<div class="zci--statement">Grays expressed in SI base units: <div class="zci--unit">m<sup>2</sup>&#183;s<sup>-2</sup></div>
+<div class="zci--statement">Sieverts expressed in SI base units: <div class="zci--unit">m<sup>2</sup>&#183;s<sup>-2</sup></div>
+<div class="zci--statement">Katals expressed in SI base units: <div class="zci--unit">mol&#183;s<sup>-1</sup></div>
+<div class="zci--statement">Radians are a dimensionless quantity.</div>
+<div class="zci--statement">Steradians are a dimensionless quantity.</div>

@@ -21,18 +21,18 @@ triggers start => 'si', 'si units', 'si base units';
 triggers end => 'si', 'in si', 'si units', 'in si units', 'si base units', 'in si base units'; 
 
 #read conversion statements from share directory
-my @lines = split /\n/, share("conversions.txt")->slurp;
+my @lines = split /\n/, share("si_units.txt")->slurp;
 
 #picks unit name out of remainder
 handle remainder => sub {
 
     #greps the text file for the unit of interest
-    my @thing = grep /<div class="zci--statement">@_ /i, @lines;
+    my $ans = join "", grep /<div class="zci--statement">@_ /i, @lines;
     
-    chomp (@thing);
+    chomp ($ans);
 
     #returns the instant answer, and treats the text as html
-    return "", html => "@thing" if @thing;
+    return "", html => "$ans" if $ans;
     return ;
 };
 1;
