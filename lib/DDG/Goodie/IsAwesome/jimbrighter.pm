@@ -3,7 +3,7 @@ package DDG::Goodie::IsAwesome::jimbrighter;
 
 use DDG::Goodie;
 
-zci answer_type => "is_awesome_jim-brighter";
+zci answer_type => "is_awesome_jimbrighter";
 zci is_cached   => 1;
 
 name "IsAwesome jim-brighter";
