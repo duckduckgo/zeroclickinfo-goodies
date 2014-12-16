@@ -61,9 +61,15 @@ ddg_goodie_test(
     "27 K ohm" => test_zci("27K\x{2126} (ohms) resistor colors: red (2), purple (7), orange (\x{00D7}1K), gold (\x{00B1}5%)", html => qr/./),
     "4K2 ohm" => test_zci("4.2K\x{2126} (ohms) resistor colors: yellow (4), red (2), red (\x{00D7}100), gold (\x{00B1}5%)", html => qr/./),
     "4.2K ohm" => test_zci("4.2K\x{2126} (ohms) resistor colors: yellow (4), red (2), red (\x{00D7}100), gold (\x{00B1}5%)", html => qr/./),
+    "27k resistor" => test_zci("27K\x{2126} (ohms) resistor colors: red (2), purple (7), orange (\x{00D7}1K), gold (\x{00B1}5%)", html => qr/./),
+    "27K resistor" => test_zci("27K\x{2126} (ohms) resistor colors: red (2), purple (7), orange (\x{00D7}1K), gold (\x{00B1}5%)", html => qr/./),
+    "27 K resistor" => test_zci("27K\x{2126} (ohms) resistor colors: red (2), purple (7), orange (\x{00D7}1K), gold (\x{00B1}5%)", html => qr/./),
+    "4K2 resistor" => test_zci("4.2K\x{2126} (ohms) resistor colors: yellow (4), red (2), red (\x{00D7}100), gold (\x{00B1}5%)", html => qr/./),
+    "4.2K resistor" => test_zci("4.2K\x{2126} (ohms) resistor colors: yellow (4), red (2), red (\x{00D7}100), gold (\x{00B1}5%)", html => qr/./),
 
     # Decimal points
     "2.9ohm" => test_zci("2.9\x{2126} (ohms) resistor colors: red (2), white (9), gold (\x{00D7}0.1), gold (\x{00B1}5%)", html => qr/./),
+    "2.9ohms resistor" => test_zci("2.9\x{2126} (ohms) resistor colors: red (2), white (9), gold (\x{00D7}0.1), gold (\x{00B1}5%)", html => qr/./),
 
     # Negative multipliers
     "1 ohm" => test_zci("1\x{2126} (ohm) resistor colors: brown (1), black (0), gold (\x{00D7}0.1), gold (\x{00B1}5%)", html => qr/./),
