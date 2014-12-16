@@ -29,8 +29,8 @@ topics 'science';
 
 attribution twitter => 'joewalnes',
             web => ['http://joewalnes.com', 'joewalnes.com'],
-            email => ['joe@walnes.com', 'Joe Walnes'];
-            github => ["https://github.com/HackOrQuack", "HackOrQuack"],
+            email => ['joe@walnes.com', 'Joe Walnes'],
+            github => ["https://github.com/HackOrQuack", "HackOrQuack"];
 
 # These hex codes came from
 # http://en.wikipedia.org/wiki/Electronic_color_code
