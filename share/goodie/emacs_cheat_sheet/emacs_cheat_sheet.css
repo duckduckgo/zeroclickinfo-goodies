@@ -3,8 +3,6 @@
     Created on : 2014-12-17 10:20 PM
     Author     : jim-brighter
     Description: stylesheet for emacs_cheat_sheet.html
-    Purpose of the stylesheet follows.
-    To change this template use Tools | Templates.
 */
 
 .zci--answer .zero_click_wrapper .zero_click {
@@ -20,9 +18,15 @@
 }
 
 .zci--answer .sheet-column {
-    width: 100%;
+    width: 50%;
     display: inline-block;
     vertical-align: top;
+}
+
+.zci--answer  table.sheet-table th {
+    padding-right: 1ex;
+    vertical-align: top;
+    text-align: left;
 }
 
 .zci--answer  table.sheet-table {
