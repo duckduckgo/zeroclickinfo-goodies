@@ -1,3 +1,280 @@
-<div id="emacs-sheet">
+<div id="sheet-container">
+    <b>Lingo:</b>
+    <p>C: control key (CTRL)<br>
+    M: meta key (ALT or ESC)</p>
     
+    <b>Quick Answers:</b>
+    <p><code>C-x C-f</code>: find file<br>
+    <code>C-x C-s</code>: save file<br>
+    <code>C-x C-c</code>: exit emacs</p>
+    
+    <div class="sheet-column">
+        <b>Cursor Motion</b>
+        <table class="sheet-table">
+            <tr>
+                <th rowspan=3>Amount</th>
+                <th colspan=4>Operation</th>
+            </tr>
+            <tr>
+                <th colspan=2>Move</th>
+                <th colspan=2>Delete</th>
+            </tr>
+            <tr>
+                <th>Forward</th>
+                <th>Backward</th>
+                <th>Forward</th>
+                <th>Backward</th>
+            </tr>
+            <tr>
+                <td>Characters</td>
+                <td><code>C-f</code></td>
+                <td><code>C-b</code></td>
+                <td><code>C-d</code></td>
+                <td><code>DEL</code></td>
+            </tr>
+            <tr>
+                <td>Words</td>
+                <td><code>M-f</code></td>
+                <td><code>M-b</code></td>
+                <td><code>M-d</code></td>
+                <td><code>M-DEL</code></td>
+            </tr>
+            <tr>
+                <td>Lines</td>
+                <td><code>C-n</code></td>
+                <td><code>C-p</code></td>
+                <td><code>C-k</code></td>
+                <td><code>C-SPC C-a C-w</code></td>
+            </tr>
+            <tr>
+                <td>Sentences</td>
+                <td><code>M-e</code></td>
+                <td><code>M-a</code></td>
+                <td><code>M-k</code></td>
+                <td><code>C-x DEL</code></td>
+            </tr>
+            <tr>
+                <td>Expressions</td>
+                <td><code>C-M-f</code></td>
+                <td><code>C-M-b</code></td>
+                <td><code>C-M-k</code></td>
+                <td><code>C-M-DEL</code></td>
+            </tr>
+            <tr>
+                <td>Paragraphs</td>
+                <td><code>M-}</code></td>
+                <td><code>M-{</code></td>
+                <td colspan=2 style="text-align: center;">None</td>
+            </tr>
+            <tr>
+                <td>End/Start of Line</td>
+                <td><code>C-e</code></td>
+                <td><code>C-a</code></td>
+                <td colspan=2 style="text-align: center;">None</td>
+            </tr>
+            <tr>
+                <td>End/Start of Buffer</td>
+                <td><code>M-&gt</code></td>
+                <td><code>M-&lt</code></td>
+                <td colspan=2 style="text-align: center">None</td>
+                    
+            </tr>
+        </table>
+        
+        <b>Scrolling and Windows</b>
+        <table class="sheet-table">
+            <tr>
+                <td><code>C-v</code></td>
+                <td>Page Down</td>
+            </tr>
+            <tr>
+                <td><code>M-v</code></td>
+                <td>Page Up</td>
+            </tr>
+            <tr>
+                <td><code>C-M-v</code></td>
+                <td>Page Down other window</td>
+            </tr>
+            <tr>
+                <td><code>C-x 1</code></td>
+                <td>Make current window only window</td>
+            </tr>
+            <tr>
+                <td><code>C-x 2</code></td>
+                <td>Split window vertically</td>
+            </tr>
+            <tr>
+                <td><code>C-x 3</code></td>
+                <td>Split window horizontally</td>
+            </tr>
+            <tr>
+                <td><code>C-x ^</code></td>
+                <td>Grow window vertically</td>
+            </tr>
+            <tr>
+                <td><code>C-x o</code></td>
+                <td>Switch to next window</td>
+            </tr>
+            <tr>
+                <td><code>C-x 0</code></td>
+                <td>Close current window</td>
+            </tr>
+        </table>
+        
+        <b>Command-Related Stuff</b>
+        <table class="sheet-table">
+            <tr>
+                <td><code>ESC ESC ESC</code></td>
+                <td>Leave current location</td>
+            </tr>
+            <tr>
+                <td><code>C-u #</code></td>
+                <td>Prefix numeric argument # to next command</td>
+            </tr>
+            <tr>
+                <td><code>C-g</code></td>
+                <td>Stop currently running command, or cancel partially entered command</td>
+            </tr>
+        </table>
+        
+        <b>Help</b>
+        <table class="sheet-table">
+            <tr>
+                <td><code>C-h k</code></td>
+                <td>Show command documentation; prompts for keystrokes</td>
+            </tr>
+            <tr>
+                <td><code>C-h a</code></td>
+                <td>"Command apropos"; prompts for regexp and shows all matching commands</td>
+            </tr>
+            <tr>
+                <td><code>C-h c</code></td>
+                <td>Show command name on message line; prompts for keystrokes</td>
+            </tr>
+            <tr>
+                <td><code>C-h f</code></td>
+                <td>Describe function; prompts for command or function name, shows documentation in other window</td>
+            </tr>
+            <tr>
+                <td><code>C-h i</code></td>
+                <td>Info browser; gives access to online documentation for emacs and more </td>
+            </tr>
+        </table>
+        
+        <b>Misc</b>
+        <table class="sheet-table">
+            <tr>
+                <td><code>C-_ or C-x u</code></td>
+                <td>Undo/redo (a series of these keeps undoing; after doing something else, C-_ or C-x u will undo the undo's)</td>
+            </tr>
+            <tr>
+                <td><code>C-q</code></td>
+                <td>Quoted insert; inserts the next character typed, even if it is a control or meta character</td>
+            </tr>
+            <tr>
+                <td><code>M-x shell-strip-ctrl-m RET</code></td>
+                <td>Flush ^M at end of line</td>
+            </tr>
+            <tr>
+                <td><code>C-z</code></td>
+                <td>Suspend/iconify emacs (type "%emacs" in invoking shell to get it back)</td>
+            </tr>
+            <tr>
+                <td><code>C-x C-c</code></td>
+                <td>Exit emacs (asks about unsaved buffers and running programs)</td>
+            </tr>
+        </table>
+        
+        <b>Cutting and Pasting</b>
+        <table class="sheet-table">
+            <tr>
+                <td><code>C-SPC</code></td>
+                <td>Set mark</td>
+            </tr>
+            <tr>
+                <td><code>C-w</code></td>
+                <td>Cut (after setting mark and moving to end point)</td>
+            </tr>
+            <tr>
+                <td><code>M-w</code></td>
+                <td>Copy (after setting mark and moving to end point)</td>
+            </tr>
+            <tr>
+                <td><code>C-y</code></td>
+                <td>Yank (paste) most recently killed (cut or copied); will also use text currently selected in another application</td>
+            </tr>
+            <tr>
+                <td><code>M-y</code></td>
+                <td>Next most recently killed (do <code>C-y</code> first, repeat <code>M-y</code> to cycle thru all)</td>
+            </tr>
+        </table>
+        
+        <b>Files and Buffers</b>
+        <table class="sheet-table">
+            <tr>
+                <td><code>C-x C-f</code></td>
+                <td>Find file (or create if not existing); prompts for file name</td>
+            </tr>
+            <tr>
+                <td><code>C-x C-s</code></td>
+                <td>Save file</td>
+            </tr>
+            <tr>
+                <td><code>C-x C-w</code></td>
+                <td>Write file; prompts for new name</td>
+            </tr>
+            <tr>
+                <td><code>C-x s</code></td>
+                <td>Save modified buffers; asks about each</td>
+            </tr>
+            <tr>
+                <td><code>C-x b</code></td>
+                <td>Select buffer; prompts for buffer name</td>
+            </tr>
+            <tr>
+                <td><code>C-x C-b</code></td>
+                <td>List buffers; shows in other window</td>
+            </tr>
+            <tr>
+                <td><code>C-x k</code></td>
+                <td>Kill buffer; prompts for buffer name</td>
+            </tr>
+        </table>
+        
+        <b>Searching and Replacing</b>
+        <table class="sheet-table">
+            <tr>
+                <td><code>C-s</code></td>
+                <td>Incremental search forward; searches as you type</td>
+            </tr>
+            <tr>
+                <td><code>C-r</code></td>
+                <td>Incremental search backward</td>
+            </tr>
+            <tr>
+                <td><code>C-M-s</code></td>
+                <td>Regexp search forward (there are differences in Emacs regexp syntax wrt Perl, etc.)</td>
+            </tr>
+            <tr>
+                <td><code>C-M-r</code></td>
+                <td>Regexp search backward</td>
+            </tr>
+            <tr>
+                <td><code>M-x replace-string RET</code></td>
+                <td>String replace from here to end of buffer; prompts for string and replacement</td>
+            </tr>
+            <tr>
+                <td><code>M-x query-replace RET</code></td>
+                <td>String replace from here to end of buffer, querying for each occurrence</td>
+            </tr>
+            <tr>
+                <td><code>M-x grep RET</code></td>
+                <td>Prompts for a grep command, shows hits in a buffer</td>
+            </tr>
+            <tr>
+                <td><code>C-x `</code></td>
+                <td>Visit next grep hit</td>
+            </tr>
+        </table>
+    </div>
 </div>
