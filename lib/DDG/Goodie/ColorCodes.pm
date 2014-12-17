@@ -87,12 +87,13 @@ handle matches => sub {
     }
 
     return unless $color;                   # Need a color to continue!
-
+    
+    my $alpha = "";
     $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
     if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {    # Color looks like a hex code, strip the leading #
         $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3); # Make three char hex into six chars by repeating each in turn
         $type = 'rgb8';
-    } elsif ($color =~ s/([0-9]+,[0-9]+,[0-9]+),[0]?\.[0-9]+/$1/) { #hack rgba into rgb, ignore alpha for me
+    } elsif ($color =~ s/([0-9]+,[0-9]+,[0-9]+),([0]?\.[0-9]+)/$alpha = $2; $1/e) { #hack rgba into rgb, ignore alpha for me
         $type = 'rgb8';
     } else {
         try {
@@ -118,10 +119,12 @@ handle matches => sub {
         $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb),
         round($hsl->hue), percentify($hsl->saturation, $hsl->lightness, $col->as_cmyk->cmyk));
 
+    $alpha = " with alpha: $alpha" if $alpha;
+    
     # Create the output!
-    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", @color_template_data);
+    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", @color_template_data).$alpha;
     my $html_text = sprintf("Hex: %s &middot; rgb(%d, %d, %d) &middot; rgb(%s, %s, %s) <br> hsl(%d, %s, %s) &middot; cmyb(%s, %s, %s, %s) &middot;",
-        @color_template_data);
+        @color_template_data).$alpha;
     return $text,
         html => '<div class="zci--color-codes"><div class="colorcodesbox" style="background:#'
       . $rgb->hex

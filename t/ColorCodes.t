@@ -55,7 +55,7 @@ ddg_goodie_test([qw(
           qq(<div class="zci--color-codes"><div class="colorcodesbox" style="background:#ff0000"></div>Hex: #ff0000 &middot; rgb(255, 0, 0) &middot; rgb(100%, 0%, 0%) <br> hsl(0, 100%, 50%) &middot; cmyb(0%, 100%, 100%, 0%) &middot; [<a href='http://labs.tineye.com/multicolr#colors=ff0000;weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/ff0000' title='Tints, information and similar colors on color-hex.com'>Info</a>]</div>),
     ),
     'rgba(99,60,176,0.5)' => test_zci(
-        'Hex: #633cb0 ~ rgb(99, 60, 176) ~ rgb(39%, 24%, 69%) ~ hsl(260, 49%, 46%) ~ cmyb(44%, 66%, 0%, 31%)',
+        'Hex: #633cb0 ~ rgb(99, 60, 176) ~ rgb(39%, 24%, 69%) ~ hsl(260, 49%, 46%) ~ cmyb(44%, 66%, 0%, 31%) with alpha: 0.5',
         html => qr/background:#633cb0/
     ),
     # Queries to ignore.
