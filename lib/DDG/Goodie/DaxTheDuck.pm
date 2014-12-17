@@ -13,7 +13,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["javathunderman", "Thomas Denizou"],
             twitter => "Emposoft";
 
-triggers any => "dax";
+triggers any => "dax the duck", "who is dax the duck", "who is dax", "where is dax the duck";
 
 handle remainder => sub {
 
