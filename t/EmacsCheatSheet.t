@@ -8,15 +8,20 @@ use DDG::Test::Goodie;
 zci answer_type => "emacs_cheat_sheet";
 zci is_cached   => 1;
 
+my $test_zci = test_zci(
+	    heading => 'Emacs Cheat Sheet',
+        html    => qr#<div(.*<table.*<tr.*<td.*</table.*)+</div>$#s,
+);
+
 ddg_goodie_test(
-    [qw( DDG::Goodie::EmacsCheatSheet )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => test_zci('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    [ 'DDG::Goodie::EmacsCheatSheet' ],
+    'emacs cheatsheet'      => $test_zci,
+    'emacs cheat sheet'     => $test_zci,
+    'emacs help'            => $test_zci,
+    'emacs commands'        => $test_zci,
+    'emacs guide'           => $test_zci,
+    'emacs reference'       => $test_zci,
+    'emacs quick reference' => $test_zci,
 );
 
 done_testing;

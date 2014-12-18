@@ -17,8 +17,8 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github  => ["https://github.com/jim-brighter", "Jim Brighter"],
             twitter => "jim_brighter";
 
-primary_example_queries "emacs cheatsheet", "emacs commands", "emacs help";
-secondary_example_queries "emacs reference", "emacs guide";
+primary_example_queries "emacs cheatsheet", "emacs cheat sheet", "emacs commands", "emacs help";
+secondary_example_queries "emacs reference", "emacs guide", "emacs quick reference";
 
 triggers startend => "emacs cheatsheet", "emacs cheat sheet",
                      "emacs help", "emacs commands", "emacs guide",
@@ -27,7 +27,7 @@ triggers startend => "emacs cheatsheet", "emacs cheat sheet",
 handle remainder => sub {
 	return 
         heading => 'Emacs Cheat Sheet',
-        html    => html_cheat_sheet();
+        html    => html_cheat_sheet(),
 };
 
 my $HTML;
