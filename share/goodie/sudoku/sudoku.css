@@ -1,0 +1,25 @@
+.zci--answer table.sudoku td {
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid rgba(136, 136, 136, 0.478);
+}
+
+.zci--answer table.sudoku tr:nth-of-type(3) td,
+.zci--answer table.sudoku tr:nth-of-type(6) td
+{
+	border-bottom: 3px solid rgba(136, 136, 136, 0.478);
+}
+
+.zci--answer table.sudoku td:nth-of-type(3),
+.zci--answer table.sudoku td:nth-of-type(6)
+{
+	border-right: 3px solid rgba(136, 136, 136, 0.478);
+}
+
+.zci--answer table.sudoku input {
+	border: 0px;
+	width: 1em;
+	text-align: center;
+}

@@ -1,0 +1,12 @@
+.zci--answer .zci--chinesezodiac {
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
+.zci--answer .zci--chinesezodiac .zodiaccharacter {
+  font-size: 1.7em;
+}
+
+.zci--answer .zci--chinesezodiac .statement {
+  color: #747474;
+}

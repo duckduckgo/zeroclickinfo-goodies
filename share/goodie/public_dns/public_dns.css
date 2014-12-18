@@ -1,0 +1,19 @@
+.zci--answer  table.publicdns {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.zci--answer table.publicdns td {
+    white-space: nowrap;
+    padding: 4px 30px 4px 10px;
+    border: 0px;
+}
+
+.zci--answer table.publicdns th {
+    font-weight: bold;
+    text-align: left;
+    background-color: #aaa;
+    color: #fff;
+    border: 0px;
+    padding: 4px 10px;
+}

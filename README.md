@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DuckDuckHack Codio Project - Welcome!
 
 If you're new here be sure to checkout the [DuckDuckHack Documentation](https://dukgo.com/duckduckhack/ddh-intro) to learn more!
@@ -23,3 +24,16 @@ We have a great [quickstart tutorial](https://duck.co/duckduckhack/goodie_quicks
 5. `git clone` the zeroclickinfo-goodies and/or zeroclickinfo-spice repo onto your Codio machine
 6. Create a new instant answer (`duckpan new` should help), or improve an existing one
 7. Make a pull request!
+=======
+# DuckDuckHack Goodies [![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.png?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
+
+This repository contains all the Goodie instant answers. If you are developing a Goodie instant answer you will need to fork this repository.
+
+**If you would like to contribute to DuckDuckHack, please start by reading the [DuckDuckHack Documentation](https://dukgo.com/duckduckhack/ddh-intro).**
+
+------
+
+### Goodie Instant Answer Example
+
+![Unit Conversion Example](https://raw.githubusercontent.com/duckduckgo/duckduckgo-documentation/master/duckduckhack/assets/goodie_readme_example.png)
+>>>>>>> 6f562df82a48db97db0bc54e898e4cdd63cbcad9

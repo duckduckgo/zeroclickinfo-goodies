@@ -1,0 +1,12 @@
+.zci--answer .latex--key {
+    color: #777;
+}
+
+.zci--answer .latex--value {
+    color: #292929;
+}
+
+.zci--answer .zci__body, .zero_click_answer {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
