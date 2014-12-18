@@ -1,6 +1,7 @@
 package DDG::Goodie::PhoneAlphabet;
 # ABSTRACT: Taking a phone number with letters in it and returning the phone number
 
+use POSIX;
 use DDG::Goodie;
 
 zci answer_type => 'phone_alphabet';
@@ -18,46 +19,17 @@ attribution github => ["https://github.com/stevelippert", "Steve Lippert"],
 # Triggers
 triggers any => 'to digit', 'to digits', 'to phone', 'to phone number';
 
-sub components {
-    my %phoneAlphabet = (
-      a => "2",
-      b => "2",
-      c => "2",
-      d => "3",
-      e => "3",
-      f => "3",
-      g => "4",
-      h => "4",
-      i => "4",
-      j => "5",
-      k => "5",
-      l => "5",
-      m => "6",
-      n => "6",
-      o => "6",
-      p => "7",
-      q => "7",
-      r => "7",
-      s => "7",
-      t => "8",
-      u => "8",
-      v => "8",
-      w => "9",
-      x => "9",
-      y => "9",
-      z => "9"
-    );
-
-    my @components = map { defined $phoneAlphabet{$_} ? ($phoneAlphabet{$_}) : ($_) } split //, $_;
-    return join("", @components);
-}
-
 handle remainder => sub {
+    #Return unless it looks like a phone number.
+    return unless ($_ =~ /[-0-9A-Za-z]{7,15}$/);
     return unless $_;
+    #Lower case everything.
     $_ = lc;
-    my @words = split(//, $_);
-    my @numbers = map { components($_) } @words;
-    return "Phone Number: " . join("", @numbers);
+    #Use a regex to replace each letter with the corresponding number from the phone key pad.
+    $_ =~ tr/abcdefghijklmnopqrstuvwxyz/22233344455566677778889999/;
+
+    #Returns the phone number.
+    return "Phone Number: $_";
 };
 
 1;
