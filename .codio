@@ -1,0 +1,13 @@
+{
+// Configure your Run and Preview buttons here.
+ 
+// Run button configuration
+  "commands": {
+      "DuckPAN New - Goodies": "cd ~/workspace/zeroclickinfo-goodies && duckpan new"
+  },
+ 
+// Preview button configuration
+  "preview": {
+      "DuckPAN Server": "http://{{domain}}:5000/"
+  }
+}
