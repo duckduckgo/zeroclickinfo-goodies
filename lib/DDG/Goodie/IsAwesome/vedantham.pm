@@ -1,5 +1,4 @@
 package DDG::Goodie::IsAwesome::vedantham;
-# ABSTRACT: vedantham's first goodie 
 
 use DDG::Goodie;
 
