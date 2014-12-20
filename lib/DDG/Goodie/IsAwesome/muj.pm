@@ -8,13 +8,11 @@ use DDG::Goodie;
 zci answer_type => "is_awesome_muj";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
+# Metadata.
 name "IsAwesome muj";
 description "My first Goodie, it lets the world know that muj is awesome!";
 primary_example_queries "duckduckhack muj";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
 category "special";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
 topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/muj.pm";
 attribution github => ["https://github.com/muj", "Mujtaba Arshad"];
