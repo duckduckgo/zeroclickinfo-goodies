@@ -1,7 +1,5 @@
 package DDG::Goodie::IsAwesome::muj;
 # ABSTRACT: muj's first Goodie
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
 
 use DDG::Goodie;
 
@@ -23,7 +21,7 @@ triggers start => "duckduckhack muj";
 # Handle statement
 handle remainder => sub {
     return if$_;
-	return "muj is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return "muj is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
