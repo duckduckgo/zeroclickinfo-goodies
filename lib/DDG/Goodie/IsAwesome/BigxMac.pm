@@ -8,7 +8,6 @@ zci is_cached   => 1;
 name "IsAwesome BigxMac";
 description "My first Goodie, it let's the world know that BigxMac is awesome";
 primary_example_queries "duckduckhack BigxMac";
-secondary_example_queries "optional -- demonstrate any additional triggers";
 category "special";
 topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/BigxMac.pm";
