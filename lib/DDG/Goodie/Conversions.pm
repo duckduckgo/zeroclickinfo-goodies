@@ -57,6 +57,7 @@ my %plural_exceptions = (
     'pounds force'           => 'pounds force',
 );
 my %singular_exceptions = reverse %plural_exceptions;
+
 sub looks_plural {
     my $unit = shift;
 
