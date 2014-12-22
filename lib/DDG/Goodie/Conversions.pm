@@ -124,12 +124,12 @@ handle query_lc => sub {
 
     # handle pluralisation of units
     # however temperature is never plural and does require "degrees" to be prepended
-    if ($result->{'type'} ne 'temperature') {
-        $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
-        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
-    } else {
+    if ($result->{'type'} eq 'temperature') {
         $result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
         $result->{'to_unit'}   = "degrees $result->{'to_unit'}"   if ($result->{'to_unit'}   ne "kelvin");
+    } else {
+        $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
+        $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
     }
 
     $result->{'result'} = $formatted_result;
