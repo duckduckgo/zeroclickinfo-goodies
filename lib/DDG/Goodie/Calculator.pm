@@ -3,6 +3,7 @@ package DDG::Goodie::Calculator;
 
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
+with 'DDG::GoodieRole::MathUtil';
 
 use List::Util qw( max );
 use Math::Trig;
@@ -84,6 +85,9 @@ handle query_nowhitespace => sub {
     my $tmp_expr = spacing($query, 1);
 
     return if $tmp_expr eq $query;     # If it didn't get spaced out, there are no operations to be done.
+    
+    # boolean value to see if the given expression contains division operations
+    my $contains_division = index($tmp_expr, "/") != -1 || index($tmp_expr, "divided") != -1;
 
     # First replace named operations with their computable equivalents.
     while (my ($name, $operation) = each %named_operations) {
@@ -121,6 +125,15 @@ handle query_nowhitespace => sub {
 
     # Guard against non-result results
     return unless (defined $tmp_result && $tmp_result ne 'inf' && $tmp_result ne '');
+    
+    # $fraction_result contains the string representation of the answer to the $tmp_expr, initialize to empty string
+    my $fraction_result = "";
+    # check if the $tmp_expr contains division operations
+    if ($contains_division) {
+        # if so then go ahead and compute the fraction representation of the answer
+        $fraction_result = get_fraction_answer($tmp_result);
+    }
+    
     # Try to determine if the result is supposed to be 0, but isn't because of FP issues.
     # If there's a defined precision, let sprintf worry about it.
     # Otherwise, we'll say that smaller than 1e-14 was supposed to be zero.
@@ -130,7 +143,7 @@ handle query_nowhitespace => sub {
     # Dollars.
     $tmp_result = '$' . $tmp_result if ($query =~ /^\$/);
 
-    my $results = prepare_for_display($query, $tmp_result, $style);
+    my $results = prepare_for_display($query, $tmp_result, $style, $fraction_result);
 
     return if $results->{text} =~ /^\s/;
     return $results->{text},
@@ -139,7 +152,7 @@ handle query_nowhitespace => sub {
 };
 
 sub prepare_for_display {
-    my ($query, $result, $style) = @_;
+    my ($query, $result, $style, $fraction_result) = @_;
 
     # Equals varies by output type.
     $query =~ s/\=$//;
@@ -157,7 +170,7 @@ sub prepare_for_display {
         structured => {
             input     => [spacing($query)],
             operation => 'calculate',
-            result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
+            result => ($fraction_result ne "" ? $fraction_result.", " : "")."<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
         },
     };
 }
@@ -174,6 +187,12 @@ sub spacing {
     $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);
 
     return $text;
+}
+
+# gets the fraction answer from the solve function in the MathUtil module
+sub get_fraction_answer {
+    my ($decimal_val) = @_;
+    return solve($decimal_val);
 }
 
 1;
