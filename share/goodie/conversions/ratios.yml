@@ -282,7 +282,7 @@ aliases:
   - square metre
   - square metres
   - m^2
-  - m²
+  - mÂ²
 factor: 10000
 type: area
 unit: square meter
@@ -292,7 +292,7 @@ aliases:
   - square kilometre
   - square kilometres
   - km^2
-  - km²
+  - kmÂ²
 factor: 0.01
 type: area
 unit: square kilometer
@@ -302,7 +302,7 @@ aliases:
   - square centimetre
   - square centimetres
   - cm^2
-  - cm²
+  - cmÂ²
 factor: 100000000
 type: area
 unit: square centimeter
@@ -312,7 +312,7 @@ aliases:
   - square millimetre
   - square millimetres
   - mm^2
-  - mm²
+  - mmÂ²
 factor: 10000000000
 type: area
 unit: square millimeter
@@ -324,7 +324,7 @@ aliases:
   - square land mile
   - square land miles
   - miles^2
-  - miles²
+  - milesÂ²
 factor: 0.00386102160083284
 type: area
 unit: square mile
@@ -332,13 +332,13 @@ unit: square mile
 aliases:
   - square yards
   - yard^2
-  - yard²
-  - yards²
+  - yardÂ²
+  - yardsÂ²
   - yards^2
   - yd^2
-  - yd²
+  - ydÂ²
   - yrd^2
-  - yrd²
+  - yrdÂ²
 factor: 11959.9
 type: area
 unit: square yard
@@ -346,10 +346,10 @@ unit: square yard
 aliases:
   - square feet
   - feet^2
-  - feet²
+  - feetÂ²
   - foot^2
-  - foot²
-  - ft²
+  - footÂ²
+  - ftÂ²
   - ft^2
 factor: 107639.1
 type: area
@@ -361,7 +361,7 @@ aliases:
   - inches^2
   - squinch
   - in^2
-  - in²
+  - inÂ²
 factor: 15500031
 type: area
 unit: square inch
@@ -392,7 +392,7 @@ aliases:
   - metres^3
   - meters^3
   - m^3
-  - m³
+  - mÂ³
 factor: 0.001
 type: volume
 unit: cubic metre
@@ -403,7 +403,7 @@ aliases:
   - centimetres^3
   - centimeters^3
   - cm^3
-  - cm³
+  - cmÂ³
 factor: 1000
 type: volume
 unit: cubic centimetre
@@ -414,7 +414,7 @@ aliases:
   - millimetres^3
   - millimeters^3
   - mm^3
-  - mm³
+  - mmÂ³
 factor: 1000000
 type: volume
 unit: cubic millimetre
