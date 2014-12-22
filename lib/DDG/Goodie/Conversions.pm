@@ -98,11 +98,6 @@ sub get_matches {
     my $m = shift;
     my @input_matches = @{$m};
 
-    $input_matches[0] =~ s/"/inches/; 
-    $input_matches[0] =~ s/'/feet/; 
-    $input_matches[1] =~ s/"/inches/; 
-    $input_matches[1] =~ s/'/feet/;
-
     my @output_matches = ();
     foreach my $match (@input_matches) {
         foreach my $type (@types) {
