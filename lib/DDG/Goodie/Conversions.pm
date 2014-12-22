@@ -108,21 +108,17 @@ handle query_lc => sub {
     $result->{'result'} = nearest($nearest, $result->{'result'});
 
     if ($result->{'result'} == 0 || length($result->{'result'}) > 2*$precision + 1) {
-        if ($result->{'result'} == 0) {
-            # rounding error
-            $result = convert( {
-                'factor' => $styler->for_computation($factor),
-                'from_unit' => $matches[0],
-                'to_unit' => $matches[1],
-            } );
-        }
+        # rounding error
+        $result = convert({
+            'factor' => $styler->for_computation($factor),
+            'from_unit' => $matches[0],
+            'to_unit' => $matches[1],
+        });
 
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
-        if($result->{'result'} > 1_000_000 || $result->{'result'} < 1) {
+        if($result->{'result'} > 1_000_000 || abs($result->{'result'}) < 1) {
             $f_result = (sprintf "%.${precision}g", $result->{'result'});
-        } else {
-            $f_result = (sprintf "%.${precision}f", $result->{'result'});
         }
     }
 
