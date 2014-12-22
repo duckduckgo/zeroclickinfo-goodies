@@ -866,6 +866,22 @@ ddg_goodie_test(
             result    => '10,000 centimeters'
         }
     ),
+    '1 acres in square kilometers' => test_zci(
+        '1 acre = 0.004 square kilometers',
+		structured_answer => {
+            input     => ['1 acre'],
+            operation => 'Convert',
+            result    => '0.004 square kilometers'
+        }
+    ),
+    '1 acres in square meters' => test_zci(
+        '1 acre = 4,046.873 square meters',
+		structured_answer => {
+            input     => ['1 acre'],
+            operation => 'Convert',
+            result    => '4,046.873 square meters'
+        }
+    ),
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
