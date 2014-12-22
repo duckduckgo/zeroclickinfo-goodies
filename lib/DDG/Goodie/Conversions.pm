@@ -56,6 +56,10 @@ my %plural_exceptions = (
 );
 my %singular_exceptions = reverse %plural_exceptions;
 
+# fix precision and rounding:
+my $precision = 3;
+my $nearest = '.' . ('0' x ($precision-1)) . '1';
+
 handle query_lc => sub {
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
@@ -86,10 +90,6 @@ handle query_lc => sub {
         @matches = ($matches[1], $matches[0]);
     }
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/);
-
-    # fix precision and rounding:
-    my $precision = 3;
-    my $nearest = '.' . ('0' x ($precision-1)) . '1';
 
     my $styler = number_style_for($factor);
     return unless $styler;
