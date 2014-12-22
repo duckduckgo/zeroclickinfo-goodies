@@ -102,7 +102,7 @@ handle query_lc => sub {
     
     return if !$result->{'result'};
 
-    my $f_result;
+    my $f_result = sprintf("%.${precision}f", $result->{'result'});
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result->{'result'} = nearest($nearest, $result->{'result'});
@@ -133,10 +133,10 @@ handle query_lc => sub {
         $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
     } else {
         $result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
-        $result->{'to_unit'} = "degrees $result->{'to_unit'}" if ($result->{'to_unit'} ne "kelvin");
+        $result->{'to_unit'}   = "degrees $result->{'to_unit'}"   if ($result->{'to_unit'}   ne "kelvin");
     }
 
-    $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});
+    $result->{'result'} = $f_result;
     $result->{'result'} =~ s/\.0{$precision}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
 
