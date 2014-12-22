@@ -146,7 +146,6 @@ handle query_lc => sub {
 
 sub looks_plural {
     my $unit = shift;
-
     my @unit_letters = split //, $unit;
     return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
 }
@@ -203,28 +202,11 @@ sub get_matches {
     return if scalar(@output_matches) != 2;
     return @output_matches;
 }
-sub parse_number {
-    my $in = shift;
-    my $out = ($in =~ /^(-?\d*(?:\.?\d+))\^(-?\d*(?:\.?\d+))$/) ? $1**$2 : $in;
-    return 0 + $out;
-}
 sub convert {
     my $conversion = shift;
     my @matches = get_matches([$conversion->{'from_unit'}, $conversion->{'to_unit'}]);  
     
-    if (looks_like_number($conversion->{'factor'})) {
-        # looks_like_number thinks 'Inf' and 'NaN' are numbers:
-        return if float_is_infinite($conversion->{'factor'}) || float_is_nan($conversion->{'factor'});
-
-        return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'} && $matches[1]->{'can_be_negative'}); 
-    }
-    else {
-        # if it doesn't look like a number, and it contains a number (e.g., '6^2'):
-        $conversion->{'factor'} = parse_number($conversion->{'factor'});
-    }
-    
-    return if $conversion->{'factor'} =~ /[[:alpha:]]/;
-
+    return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'} && $matches[1]->{'can_be_negative'}); 
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
 
@@ -264,6 +246,5 @@ sub set_unit_pluralisation {
 
     return $proper_unit;
 }
-
 
 1;
