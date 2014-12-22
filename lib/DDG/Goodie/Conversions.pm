@@ -102,7 +102,7 @@ handle query_lc => sub {
     
     return if !$result->{'result'};
 
-    my $f_result = sprintf("%.${precision}f", $result->{'result'});
+    my $formatted_result = sprintf("%.${precision}f", $result->{'result'});
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result->{'result'} = nearest($nearest, $result->{'result'});
@@ -118,7 +118,7 @@ handle query_lc => sub {
         # We only display it in exponent form if it's above a certain number.
         # We also want to display numbers from 0 to 1 in exponent form.
         if($result->{'result'} > 1_000_000 || abs($result->{'result'}) < 1) {
-            $f_result = (sprintf "%.${precision}g", $result->{'result'});
+            $formatted_result = (sprintf "%.${precision}g", $result->{'result'});
         }
     }
 
@@ -132,7 +132,7 @@ handle query_lc => sub {
         $result->{'to_unit'}   = "degrees $result->{'to_unit'}"   if ($result->{'to_unit'}   ne "kelvin");
     }
 
-    $result->{'result'} = $f_result;
+    $result->{'result'} = $formatted_result;
     $result->{'result'} =~ s/\.0{$precision}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
 
