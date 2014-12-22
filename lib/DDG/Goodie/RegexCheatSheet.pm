@@ -45,6 +45,7 @@ attribution github => ['https://github.com/mintsoft', 'mintsoft'];
 primary_example_queries 'regex';
 secondary_example_queries 'regexp $';
 category 'computing_tools';
+description 'provides a cheatsheet for common regular expression syntax';
 
 # The order to display each category and in which columns
 my @category_column = (
