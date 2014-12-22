@@ -125,8 +125,8 @@ handle query_lc => sub {
     # handle pluralisation of units
     # however temperature is never plural and does require "degrees" to be prepended
     if ($result->{'type'} eq 'temperature') {
-        $result->{'from_unit'} = "degrees $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
-        $result->{'to_unit'}   = "degrees $result->{'to_unit'}"   if ($result->{'to_unit'}   ne "kelvin");
+        $result->{'from_unit'} = ($factor == 1 ? "degree" : "degrees") . " $result->{'from_unit'}" if ($result->{'from_unit'} ne "kelvin");
+        $result->{'to_unit'}   = ($result->{'result'} == 1 ? "degree" : "degrees") . " $result->{'to_unit'}" if ($result->{'to_unit'}   ne "kelvin");
     } else {
         $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
         $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
@@ -136,8 +136,14 @@ handle query_lc => sub {
     $result->{'result'} =~ s/\.0{$precision}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
 
-    my $output = $styler->for_display($factor)." $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
-    return $output, html => wrap_html($factor, $result, $styler);
+    $factor = $styler->for_display($factor);
+
+    return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
+      structured_answer => {
+        input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
+        operation => 'convert',
+        result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
+      };
 };
 
 sub looks_plural {
