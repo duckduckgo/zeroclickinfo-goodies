@@ -179,8 +179,7 @@ sub convert_temperatures {
     return $factor;
 }
 sub get_matches {
-    my $m = shift;
-    my @input_matches = @{$m};
+    my @input_matches = @_;
 
     my @output_matches = ();
     foreach my $match (@input_matches) {
@@ -200,7 +199,7 @@ sub get_matches {
 }
 sub convert {
     my $conversion = shift;
-    my @matches = get_matches([$conversion->{'from_unit'}, $conversion->{'to_unit'}]);  
+    my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
     
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'} && $matches[1]->{'can_be_negative'}); 
     # matches must be of the same type (e.g., can't convert mass to length):
