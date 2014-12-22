@@ -9,7 +9,7 @@ use bignum;
 use Scalar::Util qw/looks_like_number/;
 use Data::Float qw/float_is_infinite float_is_nan/;
 use YAML qw(Load);
-
+use Data::Dump qw(dump);
 name                      'Conversions';
 description               'convert between various units of measurement';
 category                  'calculations';
@@ -96,46 +96,28 @@ sub convert_temperatures {
 }
 sub get_matches {
     my $m = shift;
-    my @matches = @{$m};
+    my @input_matches = @{$m};
 
-    $matches[0] =~ s/"/inches/; 
-    $matches[0] =~ s/'/feet/; 
-    $matches[1] =~ s/"/inches/; 
-    $matches[1] =~ s/'/feet/;
+    $input_matches[0] =~ s/"/inches/; 
+    $input_matches[0] =~ s/'/feet/; 
+    $input_matches[1] =~ s/"/inches/; 
+    $input_matches[1] =~ s/'/feet/;
 
-    my @match_types = ();
-    my @factors = ();
-    my @units = ();
-    my @can_be_negative = ();
-    
-    foreach my $match (@matches) {
+    my @output_matches = ();
+    foreach my $match (@input_matches) {
         foreach my $type (@types) {
             if (lc $match eq $type->{'unit'} || grep { $_ eq lc $match } @{$type->{'aliases'}}) {
-                push(@match_types, $type->{'type'});
-                push(@factors, $type->{'factor'});
-                push(@units, $type->{'unit'});
-                push(@can_be_negative, $type->{'can_be_negative'} || '0');
+                push(@output_matches,{
+                    type => $type->{'type'},
+                    factor => $type->{'factor'},
+                    unit => $type->{'unit'},
+                    can_be_negative => $type->{'can_be_negative'} || '0'
+                });
             }
         }
     }
-   
-    return if scalar(@match_types) != 2; 
-    return if scalar(@factors) != 2;
-    return if scalar(@units) != 2;
-    return if scalar(@can_be_negative) != 2;
-    
-    my %matches = (
-        'type_1'            => $match_types[0],
-        'type_2'            => $match_types[1],
-        'factor_1'          => $factors[0],
-        'factor_2'          => $factors[1],
-        'from_unit'         => $units[0],
-        'to_unit'           => $units[1],
-        'can_be_negative_1' => $can_be_negative[0],
-        'can_be_negative_2' => $can_be_negative[1],
-    );
-
-    return \%matches;
+    return if scalar(@output_matches) != 2;
+    return @output_matches;
 }
 sub parse_number {
     my $in = shift;
@@ -144,13 +126,13 @@ sub parse_number {
 }
 sub convert {
     my $conversion = shift;
-    my $matches = get_matches([$conversion->{'from_unit'}, $conversion->{'to_unit'}]);  
-   
+    my @matches = get_matches([$conversion->{'from_unit'}, $conversion->{'to_unit'}]);  
+    
     if (looks_like_number($conversion->{'factor'})) {
         # looks_like_number thinks 'Inf' and 'NaN' are numbers:
         return if float_is_infinite($conversion->{'factor'}) || float_is_nan($conversion->{'factor'});
 
-        return if $conversion->{'factor'} < 0 && !($matches->{'can_be_negative_1'} && $matches->{'can_be_negative_2'}); 
+        return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'} && $matches[1]->{'can_be_negative'}); 
     }
     else {
         # if it doesn't look like a number, and it contains a number (e.g., '6^2'):
@@ -160,17 +142,23 @@ sub convert {
     return if $conversion->{'factor'} =~ /[[:alpha:]]/;
 
     # matches must be of the same type (e.g., can't convert mass to length):
-    return if ($matches->{'type_1'} ne $matches->{'type_2'});
+    return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
 
+    my $result;
     # run the conversion:
     # temperatures don't have 1:1 conversions, so they get special treatment:
-    if ($matches->{'type_1'} eq 'temperature') {
-        $matches->{'result'} = convert_temperatures($matches->{'from_unit'}, $matches->{'to_unit'}, $conversion->{'factor'})
+    if ($matches[0]->{'type'} eq 'temperature') {
+        $result = convert_temperatures($matches[0]->{'unit'}, $matches[1]->{'unit'}, $conversion->{'factor'})
     }
     else {
-        $matches->{'result'} = $conversion->{'factor'} * ($matches->{'factor_2'} / $matches->{'factor_1'});
+        $result = $conversion->{'factor'} * ($matches[1]->{'factor'} / $matches[0]->{'factor'});
     }
-    return $matches;
+    return {
+        "result" => $result,
+        "from_unit" => $matches[0]->{'unit'},
+        "to_unit" => $matches[1]->{'unit'},
+        "type"  => $matches[0]->{'type'}
+    };
 };
 sub wrap_html {
     my ($factor, $result, $styler) = @_;
@@ -184,9 +172,9 @@ sub set_unit_pluralisation {
 
     my $already_plural = looks_plural($unit);
 
-    if ($count == 1 && $already_plural) {
+    if ($already_plural && $count == 1) {
         $proper_unit = $singular_exceptions{$unit} || substr($unit, 0, -1);
-    } elsif ($count != 1 && !$already_plural) {
+    } elsif (!$already_plural && $count != 1) {
         $proper_unit = $plural_exceptions{$unit} || $unit . 's';
     }
 
@@ -200,10 +188,10 @@ handle query_lc => sub {
 
     # hack support for "degrees" prefix on temperatures
     $_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
-
+    
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-
+    
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
@@ -231,13 +219,13 @@ handle query_lc => sub {
     my $styler = number_style_for($factor);
     return unless $styler;
 
-    my $result = convert( {
+    my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
         'to_unit' => $matches[1],
         'precision' => $precision,
-    } );
-
+    });
+    
     return if !$result->{'result'};
 
     my $f_result;
@@ -267,7 +255,7 @@ handle query_lc => sub {
 
     # handle pluralisation of units
     # however temperature is never plural and does require "degrees" to be prepended
-    if ($result->{'type_1'} ne 'temperature') {
+    if ($result->{'type'} ne 'temperature') {
         $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
         $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
     } else {
@@ -282,7 +270,5 @@ handle query_lc => sub {
     my $output = $styler->for_display($factor)." $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}";
     return $output, html => wrap_html($factor, $result, $styler);
 };
-
-
 
 1;
