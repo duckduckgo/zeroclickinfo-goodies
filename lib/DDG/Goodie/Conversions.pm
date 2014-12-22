@@ -223,7 +223,6 @@ handle query_lc => sub {
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
         'to_unit' => $matches[1],
-        'precision' => $precision,
     });
     
     return if !$result->{'result'};
@@ -240,7 +239,6 @@ handle query_lc => sub {
                 'factor' => $styler->for_computation($factor),
                 'from_unit' => $matches[0],
                 'to_unit' => $matches[1],
-                'precision' => $precision,
             } );
         }
 
