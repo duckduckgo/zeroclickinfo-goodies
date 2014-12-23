@@ -677,6 +677,33 @@ ddg_goodie_test(
             result    => qr/6,666/
         }
     ),
+    '2 divided by 4' => test_zci(
+        "2 divided by 4 = 0.5",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['2 divided by 4'],
+            operation => 'calculate',
+            result    => qr/1\/2/
+        }
+    ),
+    '2 / 4 + 1 / 4' => test_zci(
+        "2 / 4 + 1 / 4 = 0.75",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['2 / 4 + 1 / 4'],
+            operation => 'calculate',
+            result    => qr/3\/4/
+    }
+    ),
+    '( - 2 / 4) + (1 / 4)' => test_zci(
+    "( - 2 / 4) + (1 / 4) = -0.25",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['( - 2 / 4) + (1 / 4)'],
+            operation => 'calculate',
+            result    => qr/-1\/4/
+    }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,

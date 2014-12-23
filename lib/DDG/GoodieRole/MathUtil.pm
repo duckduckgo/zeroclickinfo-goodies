@@ -56,12 +56,17 @@ sub compute_fraction {
 
 sub solve {
     my ($decimal_val) = @_;
+    # check for negative number
+    my $is_negative = ($decimal_val < 0);
+    if ($is_negative) {
+        $decimal_val = abs($decimal_val);
+    }
     my $fraction_value = $decimal_val - int($decimal_val);
     if ($fraction_value == 0 || $fraction_value < 0.001) {
         return "";
     }
     compute_terms_iter($decimal_val);
-    return compute_fraction();
+    return ($is_negative ? "-" : "") . compute_fraction();
 }
 
 1;
