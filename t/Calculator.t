@@ -704,6 +704,24 @@ ddg_goodie_test(
             result    => qr/-1\/4/
     }
     ),
+    '1 / 2 + 0.5' => test_zci(
+    "1 / 2 + 0.5 = 1",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['1 / 2 + 0.5'],
+            operation => 'calculate',
+            result    => qr/>1</
+    }
+    ),
+    '(1 + 8) / 2' => test_zci(
+    "(1 + 8) / 2 = 4.5",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['(1 + 8) / 2'],
+            operation => 'calculate',
+            result    => qr/9\/2/
+    }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,

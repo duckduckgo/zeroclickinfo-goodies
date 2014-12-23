@@ -87,7 +87,7 @@ handle query_nowhitespace => sub {
     return if $tmp_expr eq $query;     # If it didn't get spaced out, there are no operations to be done.
     
     # boolean value to see if the given expression contains division operations
-    my $contains_division = index($tmp_expr, "/") != -1 || index($tmp_expr, "divided") != -1;
+    my $contains_division = $tmp_expr =~ division_regex();
 
     # First replace named operations with their computable equivalents.
     while (my ($name, $operation) = each %named_operations) {
@@ -128,11 +128,7 @@ handle query_nowhitespace => sub {
     
     # $fraction_result contains the string representation of the answer to the $tmp_expr, initialize to empty string
     my $fraction_result = "";
-    # check if the $tmp_expr contains division operations
-    if ($contains_division) {
-        # if so then go ahead and compute the fraction representation of the answer
-        $fraction_result = get_fraction_answer($tmp_result);
-    }
+    $fraction_result = get_fraction_answer($tmp_result) if($contains_division);
     
     # Try to determine if the result is supposed to be 0, but isn't because of FP issues.
     # If there's a defined precision, let sprintf worry about it.
@@ -192,7 +188,7 @@ sub spacing {
 # gets the fraction answer from the solve function in the MathUtil module
 sub get_fraction_answer {
     my ($decimal_val) = @_;
-    return solve($decimal_val);
+    return compute_fraction_from_decimal($decimal_val);
 }
 
 1;

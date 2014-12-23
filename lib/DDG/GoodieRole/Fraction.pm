@@ -12,10 +12,10 @@ sub new {
 
 # function that adds a Fraction to this Fraction and returns a new Fraction representing the result of the addition
 sub add {
-    my $self = shift;
-    my $new_num = $self->{numerator} * $_[0]->{denominator} + $self->{denominator} * $_[0]->{numerator};
-    my $new_den = $self->{denominator} * $_[0]->{denominator};
-    my $common = gcd($new_num, $new_den);
+    my ($self, $other_fraction) = @_;
+    my $new_num = $self->{numerator} * $other_fraction->{denominator} + $self->{denominator} * $other_fraction->{numerator};
+    my $new_den = $self->{denominator} * $other_fraction->{denominator};
+    my $common = greatest_common_divisor($new_num, $new_den);
     my $common_result = DDG::GoodieRole::Fraction->new($new_num/$common, $new_den/$common);
     return $common_result;
 }
@@ -23,10 +23,7 @@ sub add {
 # function that swaps the numerator and the denominator
 sub inverse {
     my $self = shift;
-    my $num = $self->{numerator};
-    my $den = $self->{denominator};
-    $self->{numerator} = $den;
-    $self->{denominator} = $num;
+    ($self->{numerator}, $self->{denominator}) = ($self->{denominator}, $self->{numerator});
 }
 
 sub to_string {
