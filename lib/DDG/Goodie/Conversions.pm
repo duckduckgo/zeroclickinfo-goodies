@@ -145,11 +145,12 @@ handle query_lc => sub {
 };
 
 sub looks_plural {
-    my $unit = shift;
+    my ($unit) = @_;
     my @unit_letters = split //, $unit;
     return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
 }
 sub convert_temperatures {
+    my ($from, $to, $factor) = @_;
     # ##
     # F  = (C * 1.8) + 32            # celsius to fahrenheit
     # F  = 1.8 * (K - 273.15) + 32   # kelvin  to fahrenheit
@@ -161,10 +162,6 @@ sub convert_temperatures {
     # R  = F + 459.67                # fahrenheit to rankine
     # Ra = (F - 32) * 0.444          # fahrenheit to reaumur
     # ##
-
-    my $from = shift;
-    my $to = shift;
-    my $factor = shift;
    
     # convert $from to fahrenheit:
     if    ($from =~ /fahrenheit|f/i) { $factor = $factor;                           }
@@ -202,7 +199,7 @@ sub get_matches {
     return @output_matches;
 }
 sub convert {
-    my $conversion = shift;
+    my ($conversion) = @_;
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
     
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'} && $matches[1]->{'can_be_negative'}); 
