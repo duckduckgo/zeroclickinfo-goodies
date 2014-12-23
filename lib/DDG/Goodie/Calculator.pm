@@ -185,7 +185,7 @@ sub spacing {
     return $text;
 }
 
-# gets the fraction answer from the solve function in the MathUtil module
+# gets the fraction answer from the compute_fraction_from_decimal function in the MathUtil module
 sub get_fraction_answer {
     my ($decimal_val) = @_;
     return compute_fraction_from_decimal($decimal_val);
