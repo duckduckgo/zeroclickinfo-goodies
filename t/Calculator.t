@@ -696,7 +696,7 @@ ddg_goodie_test(
     }
     ),
     '( - 2 / 4) + (1 / 4)' => test_zci(
-    "( - 2 / 4) + (1 / 4) = -0.25",
+        "( - 2 / 4) + (1 / 4) = -0.25",
         heading           => 'Calculator',
         structured_answer => {
             input     => ['( - 2 / 4) + (1 / 4)'],
@@ -705,7 +705,7 @@ ddg_goodie_test(
     }
     ),
     '1 / 2 + 0.5' => test_zci(
-    "1 / 2 + 0.5 = 1",
+        "1 / 2 + 0.5 = 1",
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1 / 2 + 0.5'],
@@ -714,7 +714,7 @@ ddg_goodie_test(
     }
     ),
     '(1 + 8) / 2' => test_zci(
-    "(1 + 8) / 2 = 4.5",
+        "(1 + 8) / 2 = 4.5",
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(1 + 8) / 2'],
