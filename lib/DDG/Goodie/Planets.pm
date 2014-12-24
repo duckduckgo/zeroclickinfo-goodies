@@ -3,11 +3,10 @@ package DDG::Goodie::Planets;
 
 use DDG::Goodie;
 use YAML::XS qw( Load );
+use POSIX;
 
 zci answer_type => "planets";
 zci is_cached   => 1;
-
-triggers startend => 'size of', 'planet size', 'what size is', 'volume';
 
 name "Planets";
 primary_example_queries 'size of venus';
@@ -19,23 +18,44 @@ topics 'special_interest';
 attribution github => 'chrisjwilsoncom',
             twitter => 'chrisjwilsoncom';
 
+my @triggers = qw(size radius volume mass);
+triggers any => @triggers;
+
 my $planets = Load(scalar share('planets.yml')->slurp);
 
+
+
 # Handle statement
-handle remainder_lc => sub {
+handle query_lc => sub {
 
-	return unless $_; 
+  s/\?//g; # Strip question marks.
+  s/of|what|is|the//g; #remove common words
 
-    my $value = $planets->{$_};
+  #if (m/size/) { }
+  #if (m/radius/) { }
+  #if (m/volume/) { }
+  #if (m/mass/) { }
 
-    return unless $value;
+  my $triggers = join('|', @triggers);
+  s/$triggers//g; #remove keywords
+  s/^\s+|\s+$//g; #trim
 
-    return $value,
-      structured_answer => {
-        input     => [$_],
-        operation => 'planet attributes',
-        result    => $value
-      };
+  return unless $_; 
+
+  my $planetObj = $planets->{$_};
+
+
+  my $html = '<div>';
+  $html .= '<div class="zci__caption">' . commify(ceil($planetObj->{equatorial_radius})) . 'km </div> (' . ceil($planetObj->{equatorial_radius}* 0.6214) . ' miles)';
+  $html .= '<div class="zci__subheader">' . $planetObj->{equatorial_radius} . '</div>';
+  $html .= '</div>';
+
+  return $planetObj->{equatorial_radius}, html => $html;
 };
-
 1;
+
+sub commify {
+    my $text = reverse $_[0];
+    $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
+    return scalar reverse $text;
+}
