@@ -17,8 +17,10 @@ ddg_goodie_test([qw( DDG::Goodie::GUID ) ],
     'uuid'                       => test_zci(@answer),
     'globally unique identifier' => test_zci(@answer),
     'rfc 4122'                   => test_zci(@answer),
-    'uuid in ansi C' => undef,
-    'what is a guid' => undef,
+    'new guid'                   => test_zci(@answer),
+    'random uuid'                => test_zci(@answer),
+    'uuid in ansi C'             => undef,
+    'what is a guid'             => undef,
 );
 
 done_testing;

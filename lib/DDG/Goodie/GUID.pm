@@ -12,7 +12,7 @@ my %guid = (
     'rfc 4122'                      => 0,
 );
 
-triggers start => keys %guid;
+triggers any => keys %guid;
 
 zci answer_type => "guid";
 zci is_cached   => 0;
@@ -33,6 +33,7 @@ attribution twitter => 'crazedpsyc',
 handle remainder => sub {
 
     s/^\s+|\s+$//g; #trim
+    s/new|random//g; #allow random or new in query
 
     return if $_; #return if other words remaining
 
