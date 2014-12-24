@@ -25,11 +25,14 @@ my @continued_fraction_terms;
 # implements the continued fraction algorithm to compute the terms for the given number
 sub compute_continued_fraction_terms {
     my ($number) = @_;
+    my $max_terms = 15;
+    my $num_of_terms = 0;
     while (1) {
         my $int_value = int($number);
         push @continued_fraction_terms, $int_value;
+        $num_of_terms++;
         my $fraction_value = $number - $int_value;
-        if ($number - $int_value < 1e-3) {
+        if ($number - $int_value < 1e-3 || $num_of_terms == $max_terms) {
             last;
         }
         $number = 1/$fraction_value;
