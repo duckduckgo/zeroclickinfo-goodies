@@ -4,7 +4,7 @@ package DDG::Goodie::HexToDec;
 use DDG::Goodie;
 use Math::BigInt;
 
-triggers query_raw => qr/^\s*0x[0-9a-fA-F]+\s*$/;
+triggers query_raw => qr/^\s*0x[0-9a-fA-F]+(?:(?:\s+hex)?\s+(?:in|as|to)\s+(?:dec(?:imal)?|base(?:\s+|-)?10))?\s*$/;
 
 zci answer_type => 'hex_to_dec';
 zci is_cached   => 1;
