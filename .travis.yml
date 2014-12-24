@@ -5,6 +5,7 @@ before_install:
   - rm .travis.yml
   - git config --global user.name "Dist Zilla Plugin TravisCI"
   - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
+  - chmod 755 install_mpfr.sh
   - ./install_mpfr.sh
 install:
   - cpanm  --quiet  --notest --skip-installed Dist::Zilla
