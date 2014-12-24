@@ -32,6 +32,10 @@ attribution twitter => 'crazedpsyc',
 
 handle remainder => sub {
 
+    s/^\s+|\s+$//g; #trim
+
+    return if $_; #return if other words remaining
+
     my $guid = Data::GUID->new;
 
     return unless $guid;
