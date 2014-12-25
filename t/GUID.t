@@ -19,6 +19,8 @@ ddg_goodie_test([qw( DDG::Goodie::GUID ) ],
     'rfc 4122'                   => test_zci(@answer),
     'new guid'                   => test_zci(@answer),
     'random uuid'                => test_zci(@answer),
+    'generate new uuid'          => test_zci(@answer),
+    'generate random uuid'       => test_zci(@answer),
     'uuid in ansi C'             => undef,
     'what is a guid'             => undef,
 );

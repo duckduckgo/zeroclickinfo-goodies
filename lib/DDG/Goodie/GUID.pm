@@ -12,6 +12,9 @@ my %guid = (
     'rfc 4122'                      => 0,
 );
 
+# additional allowed triggers
+my $allowedTriggers = qr/new|random|generate/i;
+
 triggers any => keys %guid;
 
 zci answer_type => "guid";
@@ -32,14 +35,15 @@ attribution twitter => 'crazedpsyc',
 
 handle remainder => sub {
 
-    s/^\s+|\s+$//g; #trim
-    s/new|random//g; #allow random or new in query
+    s///g; # allow random or new in query
+    s/$allowedTriggers//g; # strip allowed triggers
+    s/^\s+|\s+$//g; # trim
 
-    return if $_; #return if other words remaining
+    return if $_; # return if other words remaining
 
-    my $guid = Data::GUID->new;
+    my $guid = Data::GUID->new; # generate new GUID
 
-    return unless $guid;
+    return unless $guid; # return if GUID exists
 
     return $guid->as_string,
       structured_answer => {
