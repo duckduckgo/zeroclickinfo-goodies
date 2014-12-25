@@ -13,9 +13,6 @@ category "special";
 topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/isleofmax.pm";
 attribution github => ["https://github.com/isleofmax", "isleofmax"];
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/isleofmax.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
 
 triggers start => "duckduckhack isleofmax";
 
