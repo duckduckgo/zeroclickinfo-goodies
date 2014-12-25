@@ -37,12 +37,6 @@ attribution github => ["https://github.com/loganom",      'loganom'],
             github => ['https://github.com/gdrooid',      'gdrooid'],
             email  => ['gdrooid@openmailbox.org',         'gdrooid'];
 
-# Wrap the response in html
-sub html_output {
-    my ($str, $list) = @_;
-    return "<div class='zci--anagrams'>" . "<span class='text--secondary'>$str</span><br/>" . "<span class='text--primary'>$list</span>" . "</div>";
-}
-
 # Calculate the frequency of the characters in a string
 sub calc_freq {
     my ($str) = @_;
@@ -56,6 +50,8 @@ sub calc_freq {
 }
 
 my %words = map { chomp; ($_ => undef); } share('words')->slurp;    # This will cache letter frequencies as they get used.
+
+my %easter_eggs = (voldemort => 'Tom Riddle');
 
 handle remainder => sub {
 
@@ -71,12 +67,13 @@ handle remainder => sub {
 
     my $len = length $match_word;
 
-    if ($match_word eq 'voldemort') {
-        return 'Tom Riddle', html => html_output("Anagrams of \"$word\"", 'Tom Riddle');
+    my @output;
+    if (my $egg = $easter_eggs{lc $word}) {
+        push @output, $egg;
     }
 
+    unless (@output) {
     my $query_freq = calc_freq($match_word);    # Calculate the letter-freq of the query
-    my @output;
 
     foreach (keys %words) {
         if (/^[$match_word]{$len}$/i) {
@@ -97,22 +94,25 @@ handle remainder => sub {
             push(@output, $_) if $is_anagram;
         }
     }
-    # Scramble when no anagram can be found.
-    if (!@output) {
-        my $w;
+}
+
+    my ($response, $operation);
+    if (@output) {
+        $response = join ', ', sort { $a cmp $b } @output;
+        $operation = 'anagrams of';
+    } else {
         do {
-            $w = join '', shuffle split(//, $word);
-        } while ($w eq $match_word);
-        # Do not cache the scrambled versions since the shuffle is random.
-        return $word,
-          html      => html_output('Sorry, we found no anagrams for "' . html_enc($word) . '". We scrambled it for you:', html_enc($w)),
-          is_cached => 0;
+            $response = join '', shuffle split(//, $word);
+        } while (length($word) > 1 && $response eq $word);
+        $operation = 'scrambled letters of';
     }
 
-    my $response = join ', ', sort { $a cmp $b } @output;
-    my $output_str = 'Anagrams of "' . html_enc($word) . '"';
-
-    return $response, html => html_output($output_str, $response);
+    return $response,
+      structured_answer => {
+        input     => [html_enc($word)],
+        operation => $operation,
+        result    => html_enc($response)
+      };
 };
 
 1;

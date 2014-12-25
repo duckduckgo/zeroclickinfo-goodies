@@ -8,8 +8,8 @@ triggers start => 'uppercase', 'upper case', 'allcaps', 'all caps', 'strtoupper'
 # 2014-08-10: triggers to "start"-only  to make it act more like a "command"
 #   resolves issue with queries like "why do people type in all caps"
 
-zci is_cached => 1;
 zci answer_type => "uppercase";
+zci is_cached   => 1;
 
 primary_example_queries   'uppercase this';
 secondary_example_queries 'upper case that';
@@ -24,17 +24,18 @@ attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
 handle remainder => sub {
-    return unless $_;
-    my $upper = uc $_;
-    my $text = $upper;
+    my $input = shift;
 
-    # Encode the variable before putting it in HTML.
-    # There's no need to encode the $text variable because that gets encoded internally.
-    $upper = html_enc($upper);
+    return unless $input;
 
-    my $html = qq(<div class="zci--uppercase"><span class="text--primary">$upper</span></div>);
+    my $upper = uc $input;
 
-    return $text, html => $html;
+    return $upper,
+      structured_answer => {
+        input     => [html_enc($input)],
+        operation => 'uppercase',
+        result    => html_enc($upper),
+      };
 };
 
 1;

@@ -20,16 +20,6 @@ code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies
 attribution                 github => ['http://github.com/syst3mw0rm', 'syst3mw0rm'],
                             email => ['syst3m.w0rm@gmail.com', 'syst3m.w0rm@gmail.com'];
 
-# Wrap the response in html
-sub html_output {
-    my ($weekday_count, $start_end_dates) = @_;
-    return "<div class='zci--weekdaysbetween'>"
-          ."<span class='text--primary'>$weekday_count</span><br/>"
-          ."<span class='text--secondary'>$start_end_dates</span>"
-          ."</div>";
-}
-
-
 my $datestring_regex = datestring_regex();
 
 handle remainder => sub {
@@ -50,7 +40,12 @@ handle remainder => sub {
 
     my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
 
-    return $response, html => html_output("$weekday_count $weekday_plurality", "between $start_str and $end_str.");
+    return $response,
+      structured_answer => {
+        input     => [$start_str, $end_str],
+        operation => "$weekday_plurality between",
+        result    => $weekday_count
+      };
 };
 
 # It calculates the number of weekdays between two given dates, both inclusive.

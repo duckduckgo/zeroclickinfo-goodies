@@ -1,0 +1,51 @@
+---
+AU:
+  contacts:
+  - phone: 13 11 14
+    web: http://www.lifeline.org.au/Get-Help/I-Need-Help-Now
+  - for_kids: 1
+    phone: 1800 55 1800
+    web: http://www.kidshelp.com.au/grownups/about-this-site.php
+  display_country: Australia
+CA:
+  contacts:
+  - phone: 1-800-273-8255
+    web: http://www.suicidepreventionlifeline.org/
+  - for_kids: 1
+    phone: 1-800-668-6868
+    web: http://org.kidshelpphone.ca/en
+  display_country: Canada
+GB:
+  contacts:
+  - phone: 0800 068 41 41
+    web: http://www.papyrus-uk.org/
+  - phone: 08457 90 90 90
+    web: http://www.samaritans.org/
+  - phone: 0800 58 58 58
+    web: http://www.thecalmzone.net/help/helpline/helpline-nationwide/
+  display_country: the UK
+HK:
+  contacts:
+  - phone: 2896 0000
+    web: http://samaritans.org.hk/24-hour-telephone-hotline
+  display_country: Hong Kong
+IE:
+  contacts:
+  - phone: 1850 60 90 90
+    web: http://www.samaritans.org/how-we-can-help-you/contact-us
+  display_country: Ireland
+NZ:
+  contacts:
+  - phone: 0800 543 354
+    web: http://www.lifeline.org.nz/corp_Home_378_2001.aspx
+  display_country: New Zealand
+SG:
+  contacts:
+  - phone: 1800-221 4444
+    web: http://www.samaritans.org.sg/contact/confide.htm#call_us
+  display_country: Singapore
+US:
+  contacts:
+  - phone: 1-800-273-TALK (8255)
+    web: http://www.suicidepreventionlifeline.org/
+  display_country: the U.S.

@@ -17,7 +17,7 @@ secondary_example_queries "optional -- demonstrate any additional triggers";
 # category "";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
 # topics "";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/<: $ia_path :>/<: $ia_name :>.pm";
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/<: $ia_path :>.pm";
 attribution github => ["GitHubAccount", "Friendly Name"],
             twitter => "twitterhandle";
 

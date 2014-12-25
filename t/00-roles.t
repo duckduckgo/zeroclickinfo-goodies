@@ -24,8 +24,9 @@ subtest 'NumberStyler' => sub {
             [['4,431',      '4.321'] => 'perl'],
             [['4,431',      '4,32']  => 'euro'],
             [['4534,345.0', '1']     => 'perl'],    # Unenforced commas.
-            [['4,431', '4,32', '5,42'] => 'euro'],
-            [['4,431', '4.32', '5.42'] => 'perl'],
+            [['4,431',     '4,32', '5,42']       => 'euro'],
+            [['4,431',     '4.32', '5.42']       => 'perl'],
+            [['4_431_123', '4 32', '99.999 999'] => 'perl'],
         );
 
         foreach my $tc (@valid_test_cases) {
@@ -39,10 +40,11 @@ subtest 'NumberStyler' => sub {
     subtest 'Invalid numbers' => sub {
         my @invalid_test_cases = (
             [['5234534.34.54', '1'] => 'has a mal-formed number'],
-            [['4,431', '4,32',     '4.32'] => 'is confusingly ambiguous'],
-            [['4,431', '4.32.10',  '5.42'] => 'is hard to figure'],
-            [['4,431', '4,32,100', '5.42'] => 'has a mal-formed number'],
-            [['4,431', '4,32,100', '5,42'] => 'is too crazy to work out'],
+            [['4,431',     '4,32',     '4.32']       => 'is confusingly ambiguous'],
+            [['4,431',     '4.32.10',  '5.42']       => 'is hard to figure'],
+            [['4,431',     '4,32,100', '5.42']       => 'has a mal-formed number'],
+            [['4,431',     '4,32,100', '5,42']       => 'is too crazy to work out'],
+            [['4_431_123', "4\t32",    '99.999 999'] => 'no tabs in numbers'],
         );
 
         foreach my $tc (@invalid_test_cases) {

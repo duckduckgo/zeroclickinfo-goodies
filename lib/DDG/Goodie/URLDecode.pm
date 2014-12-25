@@ -13,6 +13,7 @@ primary_example_queries 'url decode https%3A%2F%2Fduckduckgo.com%2F', 'decode ur
 secondary_example_queries 'http%3A%2F%2Farstechnica.com%2F url unescape', 'linux.com%2Ftour%2F unescape url';
 
 zci answer_type => 'decoded_url';
+zci is_cached   => 1;
 
 name 'URLDecode';
 description 'Displays the uri from a percent encoded url';
@@ -29,10 +30,10 @@ handle query_raw => sub {
     s/(^$trigger_words)|($trigger_words$)//i;
     s/(^\s+)|(\s+$)//;
 
-    my $decoded = decodeURIComponent($_);
+    my $in      = $_;
+    my $decoded = decodeURIComponent($in);
 
-    if($decoded =~ /^\s+$/)
-    {
+    if ($decoded =~ /^\s+$/) {
         $decoded =~ s/\r/CReturn/;
         $decoded =~ s/\n/Newline/;
         $decoded =~ s/\t/Tab/;
@@ -40,9 +41,13 @@ handle query_raw => sub {
     }
 
     my $text = "URL Decoded: $decoded";
-    my $html = '<div class="zci--urldecode"><div class="text--secondary mini-title">URL Decoded: </div><div class="text--primary url_decoded">'.html_enc($decoded).'</div></div>';
 
-    return $text, html => $html;
+    return $text,
+      structured_answer => {
+        input     => [html_enc($in)],
+        operation => 'URL decode',
+        result    => html_enc($decoded)
+      };
 };
 
 1;

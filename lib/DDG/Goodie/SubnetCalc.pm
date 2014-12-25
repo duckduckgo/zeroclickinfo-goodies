@@ -20,6 +20,7 @@ secondary_example_queries '46.51.197.88 255.255.254.0', '176.34.131.233/32';
 
 category 'computing_tools';
 topics 'sysadmin';
+description 'calculates IPv4 subnets and range information';
 
 handle query => sub {
     # Convert an integer into an IP address.

@@ -72,9 +72,9 @@ handle query_clean => sub {
 
 
     # html formatted answer
-    my $html = '<div class="zci--independence-day">';
-    $html .= '<div class="text--primary">' . $date_str . '</div>';
-    $html .= '<div class="text--secondary">' . $prolog . '</div>';
+    my $html = '<div>';
+    $html .= '<div class="zci__caption">' . $date_str . '</div>';
+    $html .= '<div class="zci__subheader">' . $prolog . '</div>';
     $html .= '</div>';
     # plain text answer
     my $text = $prolog  . ' ' . $date_str;
