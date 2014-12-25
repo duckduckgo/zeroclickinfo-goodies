@@ -462,7 +462,7 @@ sub parse_descriptive_datestring_to_date {
             my $unit = $+{'unit'};
             my $num = ($+{'dir'} eq 'next') ? 1 : ($+{'dir'} eq 'last') ? -1 : 0;
             @to_add = _util_add_unit($unit, $num);
-        } elsif ($relative_date =~ qr/in (?<num>a|[0-9]+) (?<unit>day|week|month|year)/) {
+        } elsif ($relative_date =~ qr/in (?<num>a|[0-9]+) (?<unit>day|week|month|year)(?:[s])?/) {
             my $unit = $+{'unit'};
             my $num = ($+{'num'} eq "a" ? 1 : $+{'num'});
             @to_add = _util_add_unit($unit, $num);

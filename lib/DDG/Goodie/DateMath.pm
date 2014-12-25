@@ -6,13 +6,13 @@ with 'DDG::GoodieRole::Dates';
 use DateTime::Duration;
 use Lingua::EN::Numericalize;
 
-triggers any => qw( plus minus + - date from ago today yesterday tomorrow);
+triggers any => qw( plus minus + - date from ago day week month year days weeks months years);
 
 zci is_cached => 1;
 zci answer_type => 'date_math';
 
 primary_example_queries 'Jan 1 2012 plus 32 days';
-secondary_example_queries '1/1/2012 plus 5 months', 'January first minus ten days', 'today', '2 weeks ago', '1 month from today';
+secondary_example_queries '1/1/2012 plus 5 months', 'January first minus ten days', 'in 5 weeks', '2 weeks ago', '1 month from today';
 description 'calculate the date with an offset';
 name 'DateMath';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DateMath.pm';
