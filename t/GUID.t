@@ -17,12 +17,17 @@ ddg_goodie_test([qw( DDG::Goodie::GUID ) ],
     'uuid'                       => test_zci(@answer),
     'globally unique identifier' => test_zci(@answer),
     'rfc 4122'                   => test_zci(@answer),
+<<<<<<< HEAD
     'new guid'                   => test_zci(@answer),
     'random uuid'                => test_zci(@answer),
     'generate new uuid'          => test_zci(@answer),
     'generate random uuid'       => test_zci(@answer),
     'uuid in ansi C'             => undef,
     'what is a guid'             => undef,
+=======
+    'uuid in ansi C' => undef,
+    'what is a guid' => undef,
+>>>>>>> parent of 91e48e9... GUID: Add additonal triggers
 );
 
 done_testing;

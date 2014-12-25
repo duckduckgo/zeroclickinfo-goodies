@@ -35,7 +35,6 @@ attribution twitter => 'crazedpsyc',
 
 handle remainder => sub {
 
-    s///g; # allow random or new in query
     s/$allowedTriggers//g; # strip allowed triggers
     s/^\s+|\s+$//g; # trim
 
@@ -43,7 +42,7 @@ handle remainder => sub {
 
     my $guid = Data::GUID->new; # generate new GUID
 
-    return unless $guid; # return if GUID exists
+    return unless $guid; # return if GUID doesn't exist
 
     return $guid->as_string,
       structured_answer => {
