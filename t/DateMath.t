@@ -34,6 +34,7 @@ ddg_goodie_test([qw(
     'January 1 2012 plus 32 days'   => test_zci(@overjan),
     'January 1, 2012 plus 32 days'  => test_zci(@overjan),
     'January 1st 2012 plus 32 days' => test_zci(@overjan),
+    '32 days from January 1st 2012' => test_zci(@overjan),
     'January 1st plus 32 days'      => test_zci(
         qr/01 Jan [0-9]{4} \+ 32 days is 02 Feb [0-9]{4}/,
         structured_answer => {
@@ -41,6 +42,14 @@ ddg_goodie_test([qw(
             operation => 'date math',
             result    => qr/02 Feb [0-9]{4}/,
         },
+    ),
+    'date January 1st'      => test_zci(
+        qr/01 Jan [0-9]{4}/,
+        structured_answer => {
+            input     => ['january 1st'],
+            operation => 'date math',
+            result    => qr/01 Jan [0-9]{4}/,
+        }
     ),
     '1/1/2012 plus 32 days' => test_zci(@overjan),
     '1/1/2012 plus 5 weeks' => test_zci(
@@ -67,6 +76,7 @@ ddg_goodie_test([qw(
             result    => '01 Jan 2017',
         },
     ),
+    '1 day from 1/1/2012'     => test_zci(@first_sec),
     '1/1/2012 plus 1 day'     => test_zci(@first_sec),
     '1/1/2012 plus 1 days'    => test_zci(@first_sec),
     '01/01/2012 + 1 day'      => test_zci(@first_sec),

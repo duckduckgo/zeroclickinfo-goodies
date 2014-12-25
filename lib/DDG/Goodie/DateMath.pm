@@ -6,13 +6,13 @@ with 'DDG::GoodieRole::Dates';
 use DateTime::Duration;
 use Lingua::EN::Numericalize;
 
-triggers any => qw( plus minus + - );
+triggers any => qw( plus minus + - date from ago today yesterday tomorrow);
 
 zci is_cached => 1;
 zci answer_type => 'date_math';
 
 primary_example_queries 'Jan 1 2012 plus 32 days';
-secondary_example_queries '1/1/2012 plus 5 months', 'January first minus ten days';
+secondary_example_queries '1/1/2012 plus 5 months', 'January first minus ten days', 'today', '2 weeks ago', '1 month from today';
 description 'calculate the date with an offset';
 name 'DateMath';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DateMath.pm';
@@ -24,8 +24,25 @@ my $datestring_regex = datestring_regex();
 
 handle query_lc => sub {
     my $query = $_;
-    return unless $query =~ qr!^($datestring_regex)\s+(plus|\+|\-|minus)\s+(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)$!;
-    my ($input_date, $input_action, $input_number, $unit) = ($1, $2, $3, $4);
+    my ($input_date, $input_action, $input_number, $unit);
+    
+    if ($query =~ qr!^(?:date\s+)?($datestring_regex)(?:\s+(plus|\+|\-|minus)\s+(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?))?$!) {
+        ($input_date, $input_action, $input_number, $unit) = ($1, $2, $3, $4);
+        
+        if (!defined $2) {
+            my $out_date = date_output_string(parse_datestring_to_date($input_date));
+            return $out_date,
+              structured_answer => {
+                input     => [$input_date],
+                operation => 'date math',
+                result    => $out_date
+              };
+        }
+    } elsif ($query =~ qr!^(?:date\s+)?(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)\s+from\s+($datestring_regex)?$!) {
+        ($input_number, $unit, $input_date, $input_action) = ($1, $2, $3, '+');
+    } else {
+        return;
+    }
 
     $input_date   = parse_datestring_to_date($input_date);
     $input_number = str2nbr($input_number);
