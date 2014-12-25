@@ -26,7 +26,9 @@ handle query_lc => sub {
     my $query = $_;
     my ($input_date, $input_action, $input_number, $unit);
     
-    if ($query =~ qr!^(?:date\s+)?($datestring_regex)(?:\s+(plus|\+|\-|minus)\s+(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?))?$!) {
+    my $relative_regex = qr!(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)!;
+    
+    if ($query =~ qr!^(?:date\s+)?($datestring_regex)(?:\s+(plus|\+|\-|minus)\s+$relative_regex)?$!) {
         ($input_date, $input_action, $input_number, $unit) = ($1, $2, $3, $4);
         
         if (!defined $2) {
@@ -38,7 +40,7 @@ handle query_lc => sub {
                 result    => $out_date
               };
         }
-    } elsif ($query =~ qr!^(?:date\s+)?(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)\s+from\s+($datestring_regex)?$!) {
+    } elsif ($query =~ qr!^(?:date\s+)?$relative_regex\s+from\s+($datestring_regex)?$!) {
         ($input_number, $unit, $input_date, $input_action) = ($1, $2, $3, '+');
     } else {
         return;

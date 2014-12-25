@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use DateTime;
 
 zci answer_type => 'date_math';
 zci is_cached   => 1;
@@ -25,6 +26,12 @@ my @first_sec = (
         result    => '02 Jan 2012',
     },
 );
+
+my $six_weeks_ago = DateTime->now->subtract(weeks => 6)->strftime('%d %b %Y');
+
+my $two_weeks_from_today = DateTime->now->add(weeks => 2)->strftime('%d %b %Y');
+
+my $today = DateTime->now->strftime('%d %b %Y');
 
 ddg_goodie_test([qw(
           DDG::Goodie::DateMath
@@ -49,6 +56,30 @@ ddg_goodie_test([qw(
             input     => ['january 1st'],
             operation => 'date math',
             result    => qr/01 Jan [0-9]{4}/,
+        }
+    ),
+    '6 weeks ago'      => test_zci(
+        $six_weeks_ago,
+        structured_answer => {
+            input     => ['6 weeks ago'],
+            operation => 'date math',
+            result    => $six_weeks_ago,
+        }
+    ),
+    '2 weeks from today'      => test_zci(
+        "$today + 2 weeks is $two_weeks_from_today",
+        structured_answer => {
+            input     => ["$today + 2 weeks"],
+            operation => 'date math',
+            result    => $two_weeks_from_today,
+        }
+    ),
+    'date today'      => test_zci(
+        $today,
+        structured_answer => {
+            input     => ['today'],
+            operation => 'date math',
+            result    => $today,
         }
     ),
     '1/1/2012 plus 32 days' => test_zci(@overjan),
@@ -96,6 +127,13 @@ ddg_goodie_test([qw(
             result    => '15 Jan 2014',
         },
     ),
+    
+    'yesterday' => undef,
+    'today' => undef,
+    'five years' => undef,
+    'two months' => undef,
+    '2 months' => undef,
+    '5 years' => undef,
 );
 
 done_testing;
