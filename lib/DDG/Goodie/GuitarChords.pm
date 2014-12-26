@@ -2,6 +2,8 @@ package DDG::Goodie::GuitarChords;
 # ABSTRACT: Returns diagrams of guitar chords
 
 use DDG::Goodie;
+with 'DDG::GoodieRole::ImageLoader';
+
 use MIME::Base64;
 use GD::Tab::Guitar;
 
@@ -23,41 +25,52 @@ triggers startend => ('guitar chord');
 
 handle remainder => sub
 {
-    if (my $c //= parse_chord($_))
+    if (my $c //= check_chord($_))
     {
         return
             heading => "$c",
-            html => "<img src='data:image/png;base64,".generate_img($c)."'/>",
-            answer => "$c"
+            html => get_chord_img($c),
+            answer => "$c";
     }
     return;
 };
 
 my $gtr = GD::Tab::Guitar->new;
 
-sub parse_chord
+sub check_chord
 {
-    if ($_[0] =~ /^([A-Ga-g])(#|b)?(dim|m)?([0-9])?$/) {
+    if ($_[0] =~ /([a-gA-G])(#|b)?(dim|m|min|aug|add)?(M|maj|m|min)?([0-9])?\s*((#|b)?[0-9]+)?/) {
         my $r = "";
-        $r .= ucfirst($1) if $1;
+        $r .= uc($1) if $1;
         $r .= $2 if $2;
         if ($3) {
-            if($3 eq "m") {
+            if($3 eq "min") {
                 $r .= "m";
-            } elsif (lc $3 eq "dim") {
-                $r .= "dim";
+            } else {
+                $r .= $3;
             }
         }
-        $r .= $4 if defined $4;
-        if ($_[0] ~~ @{$gtr->all_chords}) {
+        if ($4) {
+            if ($4 eq "maj") {
+                $r .= "M";
+            } elsif ($4 eq "min") {
+                $r .= "m";
+            }
+        }
+        $r .= $5 if defined $5;
+        if ($6) {
+            $r .= '('.$6.')';
+        }
+        if ($r ~~ @{$gtr->all_chords}) {
             return $r;
         }
     }
     return;
 }
-sub generate_img
+
+sub get_chord_img
 {
-    return MIME::Base64::encode_base64($gtr->chord($_[0])->png);
+    goodie_img_tag({filename=>$_[0].'.png'});
 }
 
 1;
