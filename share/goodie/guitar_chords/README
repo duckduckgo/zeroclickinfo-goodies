@@ -1,0 +1,3 @@
+generate.pm generates the images used by the GuitarChords goodie.
+
+Run `make` to run the perl script and create the .pngs and `make clean` to delete them (if necessary).
