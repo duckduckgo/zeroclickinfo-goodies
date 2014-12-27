@@ -11,7 +11,40 @@
     border-radius: 50%;
 }
 
+.zci--answer .zci--color-codes .mini-color {
+    display: inline-block;
+    width: 2.0em;
+    height: 2.0em;
+}
+
 .zci--answer .zci--color-codes p.no_vspace {
     margin: 0;
     padding: 0;
+}
+
+.zci--answer .zci--color-codes .col1,
+.zci--answer .zci--color-codes .col2
+{
+    display: inline-block;
+    height: 125px;
+}
+
+.zci--answer .zci--color-codes .col2 {
+    width: 16em;
+    margin-left: 2em;
+}
+
+
+.zci--answer .zci--color-codes .mini-color:nth-of-type(n+2) {
+    margin-left: -0.7em;
+}
+
+.zci--answer .zci--color-codes .cols_column {
+    display: inline-block;
+    width: 5em;
+}
+
+.zci--answer .zci--color-codes .desc_column {
+    display: inline-block;
+    width: 10em;
 }

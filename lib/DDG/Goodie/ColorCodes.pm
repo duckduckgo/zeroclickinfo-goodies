@@ -75,14 +75,32 @@ sub create_output {
     my (%input) = @_;
     my ($text, $html) = ("","");
     
-    my $hex = "Hex: ".$input{'hex'};
+    my $hex = "Hex: ".uc($input{'hex'});
     my $rgb = "rgba(" . join(", ", @{$input{'rgb'}}) . ", ".$input{'alpha'}.")";
     my $rgb_pct = "rgb(" . join(", ", @{$input{'rgb_percentage'}}) . ")";
     my $hsl = "hsl(" . join(", ", @{$input{'hsl'}}) . ")";
     my $cmyb = "cmyb(" . join(", ", @{$input{'cmyb'}}) . ")";
-    
+    my @analogous_colors = @{$input{'analogous'}};
     $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb";
-    $html = "<p class='hex zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>";
+        
+    my $comps = "<div class='cols_column'><span class='mini-color circle' style='background: #".$input{'complementary'}.";'> </span></div>"
+              . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace text--primary'>". uc($input{'complementary'}) . "</p></div>";
+    
+    my $analogs = "<div class='cols_column'>"
+                . (join "", map { "<span class='mini-color circle' style='background: #" . $_ . "'> </span>"; } @analogous_colors)
+                . "</div>"
+                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace text--primary'>". (join ", ", map { uc $_ } @analogous_colors) . "</p></div>";
+    
+    $html = "<div class='col1'>"
+          . "<p class='hex zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
+          . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex . ";weights=100;'>Images</a>"
+          . " | "
+          . "<a href='http://www.color-hex.com/color/" . $hex . "' title='Tints, information and similar colors on color-hex.com'>Info</a></p>"
+          . "</div>"
+          . "<div class='col2'>"
+          . "<div>$comps</div>"
+          . "<div>$analogs</div>"
+          . "</div>";
     
     return ($text, $html);
 }
@@ -134,7 +152,8 @@ handle matches => sub {
     my $hex_code = $col->as_rgb8->hex;
     
     my $complementary = $color_mix->complementary($hex_code);
-    my @analogous = $color_mix->analogous($hex_code); 
+    my @analogous = $color_mix->analogous($hex_code);
+    @analogous = splice(@analogous, 1, 2);
     my @rgb = $col->as_rgb8->rgb8;
     my $hsl = $col->as_hsl;
     my @rgb_pct = percentify($col->as_rgb->rgb);
@@ -155,9 +174,6 @@ handle matches => sub {
     return $text,
         html => '<div class="zci--color-codes"><div class="colorcodesbox circle" style="background:#' . $hex_code . '"></div>'
       . $html_text
-      . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex_code . ";weights=100;'>Images</a>"
-      . " | "
-      . "<a href='http://www.color-hex.com/color/" . $hex_code . "' title='Tints, information and similar colors on color-hex.com'>Info</a></p>"
       . "</div>";
 };
 
