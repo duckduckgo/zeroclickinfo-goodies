@@ -81,7 +81,9 @@ sub create_output {
     my $hsl = "hsl(" . join(", ", @{$input{'hsl'}}) . ")";
     my $cmyb = "cmyb(" . join(", ", @{$input{'cmyb'}}) . ")";
     my @analogous_colors = @{$input{'analogous'}};
-    $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb";
+    $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb"."\n"
+          . "Complementary: #".uc($input{'complementary'})."\n"
+          . "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
         
     my $comps = "<div class='cols_column'><span class='mini-color circle' style='background: #".$input{'complementary'}.";'> </span></div>"
               . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace text--primary'>". uc($input{'complementary'}) . "</p></div>";
@@ -89,7 +91,7 @@ sub create_output {
     my $analogs = "<div class='cols_column'>"
                 . (join "", map { "<span class='mini-color circle' style='background: #" . $_ . "'> </span>"; } @analogous_colors)
                 . "</div>"
-                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace text--primary'>". (join ", ", map { uc $_ } @analogous_colors) . "</p></div>";
+                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace text--primary'>" . (join ", ", map { uc $_ } @analogous_colors) . "</p></div>";
     
     $html = "<div class='col1'>"
           . "<p class='hex zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
