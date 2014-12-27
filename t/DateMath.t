@@ -70,6 +70,14 @@ ddg_goodie_test([qw(
             result    => '26 Mar 2014',
         }
     ),
+    'in 3 weeks'      => test_zci(
+        '02 Apr 2014',
+        structured_answer => {
+            input     => ['in 3 weeks'],
+            operation => 'date math',
+            result    => '02 Apr 2014',
+        }
+    ),
     'date today'      => test_zci(
         '12 Mar 2014',
         structured_answer => {
