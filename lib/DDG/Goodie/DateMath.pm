@@ -24,30 +24,27 @@ my $datestring_regex = datestring_regex();
 
 handle query_lc => sub {
     my $query = $_;
-    my ($input_date, $input_action, $input_number, $unit);
     
-    my $relative_regex = qr!(\d+|[a-z\s-]+)\s+((?:day|week|month|year)s?)!;
+    my $relative_regex = qr!(?<number>\d+|[a-z\s-]+)\s+(?<unit>(?:day|week|month|year)s?)!;
     
-    if ($query =~ qr!^(?:date\s+)?($datestring_regex)(?:\s+(plus|\+|\-|minus)\s+$relative_regex)?$!) {
-        ($input_date, $input_action, $input_number, $unit) = ($1, $2, $3, $4);
-        
-        if (!defined $2) {
-            my $out_date = date_output_string(parse_datestring_to_date($input_date));
-            return $out_date,
-              structured_answer => {
-                input     => [$input_date],
-                operation => 'date math',
-                result    => $out_date
-              };
-        }
-    } elsif ($query =~ qr!^(?:date\s+)?$relative_regex\s+from\s+($datestring_regex)?$!) {
-        ($input_number, $unit, $input_date, $input_action) = ($1, $2, $3, '+');
-    } else {
-        return;
+    return unless $query =~ qr!^(?:date\s+)?(
+        (?<date>$datestring_regex)(?:\s+(?<action>plus|\+|\-|minus)\s+$relative_regex)?|
+        $relative_regex\s+(?<action>from)\s+(?<date>$datestring_regex)?
+    )$!x;
+    
+    if (!exists $+{'number'}) {
+        my $out_date = date_output_string(parse_datestring_to_date($+{'date'}));
+        return $out_date,
+            structured_answer => {
+            input     => [$+{'date'}],
+            operation => 'date math',
+            result    => $out_date
+        };
     }
-
-    $input_date   = parse_datestring_to_date($input_date);
-    $input_number = str2nbr($input_number);
+    
+    my $input_date   = parse_datestring_to_date($+{date});
+    my $input_number = str2nbr($+{number});
+    my $unit = $+{unit};
 
     # check/tweak other (non-date) input
     my %action_map = (
@@ -55,8 +52,9 @@ handle query_lc => sub {
         '+'   => '+',
         minus => '-',
         '-'   => '-',
+        from  => '+'
     );
-    my $action = $action_map{$input_action} || return;
+    my $action = $action_map{$+{action}} || return;
 
     my $number = $action eq '-' ? 0 - $input_number : $input_number;
 
