@@ -1,5 +1,5 @@
 package DDG::Goodie::ColorCodes;
-# ABSTRACT: Copious information about various ways ofencoding colors.
+# ABSTRACT: Copious information about various ways of [encoding colors.
 
 use DDG::Goodie;
 
@@ -9,6 +9,7 @@ use Convert::Color::Library;
 use Convert::Color::RGB8;
 use Math::Round;
 use Try::Tiny;
+use Data::Dump qw(dump);
 
 my %types = ( # hash of keyword => Convert::Color prefix
         rgb     => 'rgb8',
@@ -36,11 +37,11 @@ triggers query_raw => qr/^
     (?:(inverse|negative|opposite)\s+(?:of)?)?
     (?:
         (.*?)\s*(.+?)\bcolou?r(?:\s+code)?|             # handles "rgb red color code", "red rgb color code", etc
-        (.*?)\s*(.+?)\brgb(?:\s+code)?|             # handles "red rgb code", etc
-        (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)|  # handles "rgb color code for red", "red color code for html", etc
+        (.*?)\s*(.+?)\brgb(?:\s+code)?|                 # handles "red rgb code", etc
+        (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)| # handles "rgb color code for red", "red color code for html", etc
         (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        (.*?)($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
-        \#?([0-9a-f]{6})|\#([0-9a-f]{3})               # handles #00f, #0000ff, etc
+        (.*?)($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|       # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        \#?([0-9a-f]{6})|\#([0-9a-f]{3})                # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+(inverse|negative|opposite))?
     $/ix;
@@ -67,6 +68,22 @@ sub percentify {
 my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
 my %trigger_filler = map { $_ => 1 } (qw( code ));
 
+sub create_output {
+    my (%input) = @_;
+    my ($text, $html) = ("","");
+    
+    my $hex = "Hex: ".$input{'hex'};
+    my $rgb = "rgba(" . join(", ", @{$input{'rgb'}}) . ", ".$input{'alpha'}.")";
+    my $rgb_pct = "rgb(" . join(", ", @{$input{'rgb_percentage'}}) . ")";
+    my $hsl = "hsl(" . join(", ", @{$input{'hsl'}}) . ")";
+    my $cmyb = "cmyb(" . join(", ", @{$input{'cmyb'}}) . ")";
+    
+    $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb";
+    $html = "<p class='hex zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>";
+    
+    return ($text, $html);
+}
+
 handle matches => sub {
 
     my $color;
@@ -88,7 +105,7 @@ handle matches => sub {
 
     return unless $color;                   # Need a color to continue!
     
-    my $alpha = "";
+    my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
     if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {    # Color looks like a hex code, strip the leading #
         $color = join('', map { $_ . $_ } (split '', $color)) if (length($color) == 3); # Make three char hex into six chars by repeating each in turn
@@ -102,7 +119,7 @@ handle matches => sub {
             $type = 'rgb8';    # We asked for rgb8 from our dictionary, so make sure our type matches.
         };
     }
-
+    
     my $col = try { Convert::Color->new("$type:$color") };    # Everything should be ready for conversion now.
     return unless $col;                                       # Guess not.
 
@@ -110,31 +127,29 @@ handle matches => sub {
         my $orig_rgb = $col->as_rgb8;
         $col = Convert::Color::RGB8->new(255 - $orig_rgb->red, 255 - $orig_rgb->green, 255 - $orig_rgb->blue);
     }
-
-    my $rgb = $col->as_rgb8;
-    my $hsl = $col->as_hsl;
-
-    my @color_template_data = (
-        '#' . $rgb->hex,
-        $col->as_rgb8->rgb8, percentify($col->as_rgb->rgb),
-        round($hsl->hue), percentify($hsl->saturation, $hsl->lightness, $col->as_cmyk->cmyk));
-
-    $alpha = " with alpha: $alpha" if $alpha;
     
-    # Create the output!
-    my $text = sprintf("Hex: %s ~ rgb(%d, %d, %d) ~ rgb(%s, %s, %s) ~ hsl(%d, %s, %s) ~ cmyb(%s, %s, %s, %s)", @color_template_data).$alpha;
-    my $html_text = sprintf("Hex: %s &middot; rgb(%d, %d, %d) &middot; rgb(%s, %s, %s) <br> hsl(%d, %s, %s) &middot; cmyb(%s, %s, %s, %s) &middot;",
-        @color_template_data).$alpha;
+    my @rgb = $col->as_rgb8->rgb8;
+    my $hsl = $col->as_hsl;
+    my @rgb_pct = percentify($col->as_rgb->rgb);
+    my @cmyk = percentify($col->as_cmyk->cmyk);
+    my %outdata = (
+        "hex" => '#' . $col->as_rgb8->hex,
+        "rgb" => \@rgb,
+        "rgb_percentage" => \@rgb_pct,
+        "hsl" => [round($hsl->hue), percentify($hsl->saturation), percentify($hsl->lightness)],
+        "cmyb" => \@cmyk,
+        "alpha" => $alpha
+    );
+
+    my ($text, $html_text) = create_output(%outdata);
+    
     return $text,
-        html => '<div class="zci--color-codes"><div class="colorcodesbox" style="background:#'
-      . $rgb->hex
-      . '"></div>'
+        html => '<div class="zci--color-codes"><div class="colorcodesbox circle" style="background:#' . $col->as_rgb8->hex . '"></div>'
       . $html_text
-      . " [<a href='http://labs.tineye.com/multicolr#colors="
-      . $rgb->hex
-      . ";weights=100;'>Images</a>] [<a href='http://www.color-hex.com/color/"
-      . $rgb->hex
-      . "' title='Tints, information and similar colors on color-hex.com'>Info</a>]</div>";
+      . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $col->as_rgb8->hex . ";weights=100;'>Images</a>"
+      . " | "
+      . "<a href='http://www.color-hex.com/color/" . $col->as_rgb8->hex . "' title='Tints, information and similar colors on color-hex.com'>Info</a></p>"
+      . "</div>";
 };
 
 1;
