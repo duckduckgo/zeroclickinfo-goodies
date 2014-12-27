@@ -10,7 +10,7 @@ use DDG::Goodie;
 use Schedule::Cron::Events;
 
 my @mon = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
-my @day = qw(Mon Tue Wed Thu Fri Sat Sun);
+my @day = qw(Sun Mon Tue Wed Thu Fri Sat);
 
 triggers start => 'crontab', 'cron', 'cronjob';
 
@@ -27,16 +27,20 @@ attribution web     => [ 'http://indeliblestamp.com', 'Arun S' ],
             github  => [ 'http://github.com/indeliblestamp', 'IndelibleStamp' ] ;
 
 handle remainder => sub {
-    my $crontab = $_;
-    # We replace Jan,Feb.. and Mon,Tue.. with 1,2..
+    my @crontab = split( $_, qr/\s/ );
+
+    # We replace Jan,Feb.. with 1,2..
     foreach (0..$#mon) {
-	my $newmonth=$_+1;
-	$crontab =~ s/$mon[$_]/$newmonth/;
+        my $newmonth=$_+1;
+        $crontab =~ s/$mon[$_]/$newmonth/i;
     }
+
+    # and Day of Week with its index
     foreach (0..$#day) {
-	my $newday=$_+1;
-	$crontab =~ s/$day[$_]/$newday/;
+        my $newday=$_;
+        $crontab =~ s/$day[$_]/$newday/i;
     }
+
     my $cron = Schedule::Cron::Events->new($crontab) or return;
     my $text;
     # Fix for issue #95: Show the next 3 events instead of just one.
