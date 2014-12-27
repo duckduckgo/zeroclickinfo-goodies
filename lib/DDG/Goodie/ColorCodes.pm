@@ -4,6 +4,7 @@ package DDG::Goodie::ColorCodes;
 use DDG::Goodie;
 
 use Color::Library;
+use Color::Mix;
 use Convert::Color;
 use Convert::Color::Library;
 use Convert::Color::RGB8;
@@ -59,14 +60,16 @@ topics 'programming';
 attribution twitter => 'crazedpsyc',
             cpan    => 'CRZEDPSYC' ;
 
+my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
+my %trigger_filler = map { $_ => 1 } (qw( code ));
+
+my $color_mix = Color::Mix->new;
+
 sub percentify {
     my @out;
     push @out, ($_ <= 1 ? round(($_ * 100))."%" : round($_)) for @_;
     return @out;
 }
-
-my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
-my %trigger_filler = map { $_ => 1 } (qw( code ));
 
 sub create_output {
     my (%input) = @_;
@@ -128,27 +131,33 @@ handle matches => sub {
         $col = Convert::Color::RGB8->new(255 - $orig_rgb->red, 255 - $orig_rgb->green, 255 - $orig_rgb->blue);
     }
     
+    my $hex_code = $col->as_rgb8->hex;
+    
+    my $complementary = $color_mix->complementary($hex_code);
+    my @analogous = $color_mix->analogous($hex_code); 
     my @rgb = $col->as_rgb8->rgb8;
     my $hsl = $col->as_hsl;
     my @rgb_pct = percentify($col->as_rgb->rgb);
     my @cmyk = percentify($col->as_cmyk->cmyk);
     my %outdata = (
-        "hex" => '#' . $col->as_rgb8->hex,
-        "rgb" => \@rgb,
-        "rgb_percentage" => \@rgb_pct,
-        "hsl" => [round($hsl->hue), percentify($hsl->saturation), percentify($hsl->lightness)],
-        "cmyb" => \@cmyk,
-        "alpha" => $alpha
+        hex => '#' . $hex_code,
+        rgb => \@rgb,
+        rgb_percentage => \@rgb_pct,
+        hsl => [round($hsl->hue), percentify($hsl->saturation), percentify($hsl->lightness)],
+        cmyb => \@cmyk,
+        alpha => $alpha,
+        complementary => $complementary,
+        analogous => \@analogous
     );
 
     my ($text, $html_text) = create_output(%outdata);
     
     return $text,
-        html => '<div class="zci--color-codes"><div class="colorcodesbox circle" style="background:#' . $col->as_rgb8->hex . '"></div>'
+        html => '<div class="zci--color-codes"><div class="colorcodesbox circle" style="background:#' . $hex_code . '"></div>'
       . $html_text
-      . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $col->as_rgb8->hex . ";weights=100;'>Images</a>"
+      . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex_code . ";weights=100;'>Images</a>"
       . " | "
-      . "<a href='http://www.color-hex.com/color/" . $col->as_rgb8->hex . "' title='Tints, information and similar colors on color-hex.com'>Info</a></p>"
+      . "<a href='http://www.color-hex.com/color/" . $hex_code . "' title='Tints, information and similar colors on color-hex.com'>Info</a></p>"
       . "</div>";
 };
 
