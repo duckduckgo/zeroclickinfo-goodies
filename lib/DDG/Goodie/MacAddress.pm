@@ -21,7 +21,7 @@ attribution web     => ["http://mogigoma.com/",         "Mak Kolybabi"],
 
 triggers startend => "mac address", "ethernet address";
 
-our %oui_db = map { chomp; my (@f) = split(/\\n/, $_, 2); ($f[0] => $f[1]); } share("oui_database.txt")->slurp;
+my %oui_db = map { chomp; my (@f) = split(/\\n/, $_, 2); ($f[0] => $f[1]); } share("oui_database.txt")->slurp;
 
 sub fmt_mac {
     my $mac = shift;
