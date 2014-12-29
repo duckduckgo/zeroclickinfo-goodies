@@ -43,13 +43,13 @@ handle remainder => sub {
 
     my ($name, $addr) = map { html_enc($_); } @vendor;
     $addr = "No associated address" unless defined $addr;
-    $addr =~ s|\\n|<br/>|g;
+    $addr =~ s|\\n|, |g;
 
     return "The OUI, " . fmt_mac($oui) . ", for this NIC was manufactured by " . $name,
       structured_answer => {
         input     => [fmt_mac($_)],
         operation => "mac address",
-        result    => "<strong>" . $name . "</strong><br/>" . $addr,
+        result    => $name . ": " . $addr
       };
 };
 
