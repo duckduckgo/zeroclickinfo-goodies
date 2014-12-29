@@ -45,7 +45,7 @@ handle remainder => sub {
     $addr = "No associated address" unless defined $addr;
     $addr =~ s|\\n|, |g;
 
-    return "The OUI, " . fmt_mac($oui) . ", for this NIC was manufactured by " . $name,
+    return "The OUI, " . fmt_mac($oui) . ", for this NIC is assigned to " . $name,
       structured_answer => {
         input     => [fmt_mac($_)],
         operation => "mac address",
