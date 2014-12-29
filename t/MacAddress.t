@@ -37,7 +37,6 @@ my @private = (
         result    => "PRIVATE: No associated address"
     });
 
-
 ddg_goodie_test(
     [qw(
         DDG::Goodie::MacAddress
