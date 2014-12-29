@@ -2,9 +2,7 @@
 
 set -e
 
-wget http://www.ieee.org/netstorage/standards/oui.txt
-
-sed '
+wget -O - http://www.ieee.org/netstorage/standards/oui.txt | sed '
     # Remove Windows-style line endings.
     s/\r$//;
 
@@ -47,6 +45,4 @@ sed '
 
     # Remove any blank lines.
     /^[[:space:]]*$/d;
-    ' oui.txt > oui_database.txt
-
-rm -f oui.txt
+    ' > oui_database.txt
