@@ -5,7 +5,7 @@ use POSIX;
 use DDG::Goodie;
 
 zci answer_type => 'phone_alphabet';
-zci is_cached   => 0;
+zci is_cached   => 1;
 
 name "PhoneAlphabet";
 description "Returns the phone number from a word phone number";
