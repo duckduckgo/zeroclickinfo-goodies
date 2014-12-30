@@ -60,12 +60,15 @@ handle query_raw => sub {
         $result = output_date(orthodox_easter($year));
         
     } elsif ($operation eq 'Passover' || $operation eq 'Pesach') {
+        return if ($year < 1900 || $year > 2099);
         $result = output_date(passover($year));
         
     } elsif ($operation eq 'Rosh Hashanah') {
+        return if ($year < 1900 || $year > 2099);
         $result = output_date(roshhashanah($year));
         
     } elsif ($operation eq 'Jewish Holidays') {
+        return if ($year < 1900 || $year > 2099);
         $result = 'Rosh Hashanah: ' . output_date(roshhashanah($year)) . ', Passover: ' . output_date(passover($year));
         
     } else {

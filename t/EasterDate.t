@@ -68,6 +68,18 @@ ddg_goodie_test(
             operation => 'Orthodox Easter',
             result => '1 May'
         }),
+    'easter 1700' => test_zci('Western: 11 April, Orthodox: 11 April',
+        structured_answer => {
+            input => ['1700'],
+            operation => 'Easter',
+            result => 'Western: 11 April, Orthodox: 11 April'
+        }),
+    'easter 2299' => test_zci('Western: 16 April, Orthodox: 23 April',
+        structured_answer => {
+            input => ['2299'],
+            operation => 'Easter',
+            result => 'Western: 16 April, Orthodox: 23 April'
+        }),
     
     'Passover 2015' => test_zci('4 April',
         structured_answer => {
@@ -93,6 +105,12 @@ ddg_goodie_test(
             operation => 'Jewish Holidays',
             result => 'Rosh Hashanah: 25 September, Passover: 15 April'
         }),
+    'Passover 2099' => test_zci('5 April',
+        structured_answer => {
+            input => ['2099'],
+            operation => 'Passover',
+            result => '5 April'
+        }),
 
     'easter' => undef,
     'easter 123' => undef,
@@ -100,6 +118,9 @@ ddg_goodie_test(
     'Rosh Hashanah' => undef,
     'Pesach' => undef,
     'Passover' => undef,
+    'Passover 1899' => undef,
+    'Rosh Hashanah 2100' => undef,
+    'Jewish Holidays 9999' => undef,
     'Jewish Holidays' => undef
 );
 
