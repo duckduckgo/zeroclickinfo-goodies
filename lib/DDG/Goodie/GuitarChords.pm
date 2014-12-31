@@ -29,7 +29,7 @@ handle remainder => sub
     {
         return
             heading => "$c",
-            html => get_chord_img($c),
+            html => "<div class='text--secondary'>Guitar chord diagram for $c</div>" . get_chord_img($c),
             answer => "$c";
     }
     return;
