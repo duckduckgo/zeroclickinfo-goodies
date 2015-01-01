@@ -31,10 +31,14 @@ handle query_lc => sub {
   s/\?//g; # Strip question marks.
   s/of|what|is|the//g; #remove common words
 
-  #if (m/size/) { }
-  #if (m/radius/) { }
-  #if (m/volume/) { }
-  #if (m/mass/) { }
+  my $flag;
+
+  # This is incorrect as a query like "size volume size of mars" will choose the last flag value
+  
+  if (m/size/) { $flag = "equatorial_radius" }
+  if (m/radius/) { $flag = "equatorial_radius" }
+  if (m/volume/) { $flag = "volume" }
+  if (m/mass/) { $flag = "mass" }
 
   my $triggers = join('|', @triggers);
   s/$triggers//g; #remove keywords
@@ -44,18 +48,20 @@ handle query_lc => sub {
 
   my $planetObj = $planets->{$_};
 
+  my $kmValue = ceilCommify($planetObj->{equatorial_radius});
+  my $mileValue = ceilCommify($planetObj->{equatorial_radius}* 0.6214);
 
   my $html = '<div>';
-  $html .= '<div class="zci__caption">' . commify(ceil($planetObj->{equatorial_radius})) . 'km </div> (' . ceil($planetObj->{equatorial_radius}* 0.6214) . ' miles)';
-  $html .= '<div class="zci__subheader">' . $planetObj->{equatorial_radius} . '</div>';
+  $html .= '<div class="zci__caption">' .$kmValue. ' km (' .$mileValue. ' miles)</div>';
+  $html .= '<div class="zci__subheader">' . ucfirst $_. ', Radius</div>';
   $html .= '</div>';
 
   return $planetObj->{equatorial_radius}, html => $html;
 };
 1;
 
-sub commify {
-    my $text = reverse $_[0];
+sub ceilCommify {
+    my $text = reverse ceil($_[0]);
     $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
     return scalar reverse $text;
 }
