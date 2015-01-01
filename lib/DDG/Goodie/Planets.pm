@@ -21,9 +21,9 @@ attribution github => 'chrisjwilsoncom',
 my @triggers = qw(size radius volume mass);
 triggers any => @triggers;
 
+# Load planet data 
+# https://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System
 my $planets = Load(scalar share('planets.yml')->slurp);
-
-
 
 # Handle statement
 handle query_lc => sub {
