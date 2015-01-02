@@ -19,7 +19,7 @@ category 'physical_properties';
 topics 'science';
 attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 
-#Javascript to dynamically resize elements
+#Javascript to dynamically resize and/or hide elements
 my $dynamicwidths = <<EOF;
 <script type="text/javascript">
     
@@ -33,6 +33,44 @@ my $dynamicwidths = <<EOF;
     markertag.setAttribute("y", bbox.y + 1)
     markertag.setAttribute("width", bbox.width)
     markertag.setAttribute("height", bbox.height)
+
+    // When window is too small, remove marker label and tag
+    // and abbreviate major range (y-axis) labels
+    var wwidth, majrangelabels
+    wwidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+    majrangelabels = document.getElementsByClassName("major_range_label")
+    if (wwidth < 500) {
+
+      // Marker tag and label
+      markerlabel.style.visibility = "hidden"
+      markertag.style.visibility = "hidden"
+
+      // Major range labels
+      for (var i = majrangelabels.length - 1; i >= 0; i--) {
+        var labeltext
+        labeltext = majrangelabels[i].childNodes[1].childNodes[0].textContent
+        if (labeltext === "Radio") {
+          majrangelabels[i].childNodes[1].childNodes[0].textContent = "Rad."
+        } else if (labeltext === "Infrared") {
+          majrangelabels[i].childNodes[1].childNodes[0].textContent = "Inf."
+        } else if (labeltext === "Visible light") {
+          majrangelabels[i].childNodes[1].childNodes[0].textContent = "Vis."
+        } else if (labeltext === "Ultraviolet") {
+          majrangelabels[i].childNodes[1].childNodes[0].textContent = "UV"
+        } else if (labeltext === "X-ray") {
+          majrangelabels[i].childNodes[1].childNodes[0].textContent = "X-ray"
+        } else if (labeltext === "Gamma") {
+          majrangelabels[i].childNodes[1].childNodes[0].textContent = "Gam."
+        }
+      }
+
+    }
+
+    // If the marker tag is wider than the window - 80 px, hide it
+    if (bbox.width > (wwidth - 80)) {
+      markerlabel.style.visibility = "hidden"
+      markertag.style.visibility = "hidden"
+    }
 
 
 </script>
