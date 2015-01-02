@@ -22,18 +22,37 @@ attribution web => "https://machinepublishers.com", twitter => 'machinepub';
 #Javascript to dynamically resize and/or hide elements
 my $dynamicwidths = <<EOF;
 <script type="text/javascript">
-    
-    // Resize marker to fit text
+
+    // Get the marker label and tag
     var markerlabel, markertag
     markerlabel = document.getElementById("marker_label")
-    bbox = markerlabel.getBBox()
-    markerlabel.setAttribute("x", bbox.x)
     markertag = document.getElementById("marker_tag")
-    markertag.setAttribute("x", bbox.x - (bbox.width / 2))
-    markertag.setAttribute("y", bbox.y + 1)
-    markertag.setAttribute("width", bbox.width)
-    markertag.setAttribute("height", bbox.height)
 
+    // Firefox (and possbily other browers) have a problem with the
+    // getBBox function. For now, I'll work around this by simply
+    // hiding the marker tag if getBBox() is not available.
+    try { 
+
+        // Resize marker to fit text
+        bbox = markerlabel.getBBox()
+        markerlabel.setAttribute("x", bbox.x)
+        markertag.setAttribute("x", bbox.x - (bbox.width / 2))
+        markertag.setAttribute("y", bbox.y + 1)
+        markertag.setAttribute("width", bbox.width)
+        markertag.setAttribute("height", bbox.height)
+
+        // If the marker tag is wider than the window - 80 px, hide it
+        if (bbox.width > (wwidth - 80)) {
+          markerlabel.style.visibility = "hidden"
+          markertag.style.visibility = "hidden"
+        }
+
+    // If getBBox() not available, hide the tag and label
+    } catch(err) {
+        markerlabel.style.visibility = "hidden"
+        markertag.style.visibility = "hidden"
+    }
+    
     // When window is too small, remove marker label and tag
     // and abbreviate major range (y-axis) labels
     var wwidth, majrangelabels
@@ -41,37 +60,29 @@ my $dynamicwidths = <<EOF;
     majrangelabels = document.getElementsByClassName("major_range_label")
     if (wwidth < 500) {
 
-      // Marker tag and label
-      markerlabel.style.visibility = "hidden"
-      markertag.style.visibility = "hidden"
+        // Marker tag and label
+        markerlabel.style.visibility = "hidden"
+        markertag.style.visibility = "hidden"
 
-      // Major range labels
-      for (var i = majrangelabels.length - 1; i >= 0; i--) {
-        var labeltext
-        labeltext = majrangelabels[i].childNodes[1].childNodes[0].textContent
-        if (labeltext === "Radio") {
-          majrangelabels[i].childNodes[1].childNodes[0].textContent = "Rad."
-        } else if (labeltext === "Infrared") {
-          majrangelabels[i].childNodes[1].childNodes[0].textContent = "Inf."
-        } else if (labeltext === "Visible light") {
-          majrangelabels[i].childNodes[1].childNodes[0].textContent = "Vis."
-        } else if (labeltext === "Ultraviolet") {
-          majrangelabels[i].childNodes[1].childNodes[0].textContent = "UV"
-        } else if (labeltext === "X-ray") {
-          majrangelabels[i].childNodes[1].childNodes[0].textContent = "X-ray"
-        } else if (labeltext === "Gamma") {
-          majrangelabels[i].childNodes[1].childNodes[0].textContent = "Gam."
+        // Major range labels
+        for (var i = majrangelabels.length - 1; i >= 0; i--) {
+            var labeltext
+            labeltext = majrangelabels[i].childNodes[1].childNodes[0].textContent
+            if (labeltext === "Radio") {
+                majrangelabels[i].childNodes[1].childNodes[0].textContent = "Rad."
+            } else if (labeltext === "Infrared") {
+                majrangelabels[i].childNodes[1].childNodes[0].textContent = "Inf."
+            } else if (labeltext === "Visible light") {
+                majrangelabels[i].childNodes[1].childNodes[0].textContent = "Vis."
+            } else if (labeltext === "Ultraviolet") {
+                majrangelabels[i].childNodes[1].childNodes[0].textContent = "UV"
+            } else if (labeltext === "X-ray") {
+                majrangelabels[i].childNodes[1].childNodes[0].textContent = "X-ray"
+            } else if (labeltext === "Gamma") {
+                majrangelabels[i].childNodes[1].childNodes[0].textContent = "Gam."
+            }
         }
-      }
-
     }
-
-    // If the marker tag is wider than the window - 80 px, hide it
-    if (bbox.width > (wwidth - 80)) {
-      markerlabel.style.visibility = "hidden"
-      markertag.style.visibility = "hidden"
-    }
-
 
 </script>
 EOF
