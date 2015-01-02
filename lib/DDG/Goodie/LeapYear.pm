@@ -75,8 +75,7 @@ sub format_year {
 }
 handle remainder => sub {
     
-    my ($second, $minute, $hour, $dayOfMonth, $month, $partyear, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
-    my $year = $partyear + 1900;
+    my $year = (localtime)[5] + 1900;
     
     if ($_ =~ /(last|previous) ([0-9][0-9]?)$/i) {
         my @years = search_leaps($2, -1, 0, $year);
