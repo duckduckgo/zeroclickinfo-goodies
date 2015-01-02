@@ -14,6 +14,7 @@ my %base_map = (
     octal       =>  8,
     binary      =>  2,
 );
+my $map_keys = join '|', keys %base_map;
 
 triggers any => 'base', keys %base_map;
 
@@ -32,12 +33,17 @@ attribution web => [ 'http://perlgeek.de/blog-en', 'Moritz Lenz' ],
 
 
 handle query_clean => sub {
-    return unless  /^([0-9]+)\s*(?:(?:in|as|to)\s+)?(hex|hexadecimal|octal|oct|binary|base\s*([0-9]+))$/;
-    my $number = $1;
-    my $base = $3 // $base_map{$2};
+    return unless /^(?<num>[0-9]+)\s*(?:(?:in|as|to)\s+)?(?:(?<bt>$map_keys)|(?:base\s*(?<bn>[0-9]+)))$/;
+    my $number = $+{'num'};
+    my $base = $+{'bn'} // $base_map{$+{bt}};
     return if $base < 2 || $base > 36;
     my $based = int2base($number, $base);
-    return "$number in base $base is $based";
+    return "$number in base $base is $based",
+      structured_answer => {
+        input     => ["$number"],
+        operation => 'decimal to base ' . $base,
+        result    => $based
+      };
 };
 
 1;

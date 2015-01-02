@@ -10,39 +10,77 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw(DDG::Goodie::Anagram)],
-    # Sucessful anagram tests.
-    'Anagrams for filter'          => test_zci('trifle',                             html => qr/Anagrams of "filter"/),
-    'anagram filter'               => test_zci('trifle',                             html => qr/Anagrams of "filter"/),
-    'anagrams of events'           => test_zci('Steven',                             html => qr/Anagrams of "events"/),
-    'anagram of algorithm'         => test_zci('logarithm',                          html => qr/Anagrams of "algorithm"/),
-    'show anagram of algorithm'    => test_zci('logarithm',                          html => qr/Anagrams of "algorithm"/),
-    'anagrams for times'           => test_zci('emits, items, mites, smite',         html => qr/Anagrams of "times"/),
-    'show anagrams of stop'        => test_zci('Post, opts, post, pots, spot, tops', html => qr/Anagrams of "stop"/),
-    'find anagram for stop'        => test_zci('Post, opts, post, pots, spot, tops', html => qr/Anagrams of "stop"/),
-    'anagrams lost'                => test_zci('lots, slot',                         html => qr/Anagrams of "lost"/),
-    'anagrams of lost'             => test_zci('lots, slot',                         html => qr/Anagrams of "lost"/),
-    'anagram for lost'             => test_zci('lots, slot',                         html => qr/Anagrams of "lost"/),
-    'anagram of lost'              => test_zci('lots, slot',                         html => qr/Anagrams of "lost"/),
-    'anagram of filter'            => test_zci('trifle',                             html => qr/Anagrams of "filter"/),
-    'anagram of Filter'            => test_zci('trifle',                             html => qr/Anagrams of "Filter"/),
-    'anagram of "partial men"'     => test_zci('Parliament, parliament',             html => qr/Anagrams of "partial men"/),
-    'find anagram for partial men' => test_zci('Parliament, parliament',             html => qr/Anagrams of "partial men"/),
-    # Uncached scrambles tests.
+    'Anagram filter' => test_zci(
+        'trifle',
+        structured_answer => {
+            input     => ['filter'],
+            operation => 'anagrams of',
+            result    => 'trifle',
+        }
+    ),
+    'anagrams events' => test_zci(
+        'Steven',
+        structured_answer => {
+            input     => ['events'],
+            operation => 'anagrams of',
+            result    => 'Steven',
+        }
+    ),
+    'anagram of algorithm' => test_zci(
+        'logarithm',
+        structured_answer => {
+            input     => ['algorithm'],
+            operation => 'anagrams of',
+            result    => 'logarithm',
+        }
+    ),
     'anagrams of favorite' => test_zci(
-        'favorite',
-        html      => qr/we found no anagrams for "favorite".*scrambled it for you:/,
-        is_cached => 0
+        '-ANY-',
+        structured_answer => {
+            input     => ['favorite'],
+            operation => 'scrambled letters of',
+            result    => '-ANY-',
+        }
     ),
-    'anagram for "Mixing it up"' => test_zci(
-        'Mixing it up',
-        html      => qr/we found no anagrams for "Mixing it up".*scrambled it for you:/,
-        is_cached => 0
+    'anagrams of "Mixing it up"' => test_zci(
+        '-ANY-',
+        structured_answer => {
+            input     => ['Mixing it up'],
+            operation => 'scrambled letters of',
+            result    => '-ANY-',
+        }
     ),
-    # Full HTML test.
-    'anagrams of slot' => test_zci(
-        'lost, lots',
-        html =>
-          "<div class='zci--anagrams'><span class='text--secondary'>Anagrams of \"slot\"</span><br/><span class='text--primary'>lost, lots</span></div>",
+    'anagram times' => test_zci(
+        'emits, items, mites, smite',
+        structured_answer => {
+            input     => ['times'],
+            operation => 'anagrams of',
+            result    => 'emits, items, mites, smite',
+        }
+    ),
+    'anagrams stop' => test_zci(
+        'Post, opts, post, pots, spot, tops',
+        structured_answer => {
+            input     => ['stop'],
+            operation => 'anagrams of',
+            result    => 'Post, opts, post, pots, spot, tops',
+        }
+    ),
+    'anagram of lost' => test_zci(
+        'lots, slot',
+        structured_answer => {
+            input     => ['lost'],
+            operation => 'anagrams of',
+            result    => 'lots, slot',
+        }
+    ),
+    'anagram of voldemort' => test_zci(
+        'Tom Riddle',
+        structured_answer => {
+            input     => ['voldemort'],
+            operation => 'anagrams of',
+            result    => 'Tom Riddle',
+        }
     ),
     # No result tests.
     'anagram of'              => undef,

@@ -9,27 +9,27 @@ use DDG::Goodie;
 zci answer_type => "regex_cheat";
 zci is_cached   => 1;
 
-triggers start => 
-    'regex cheatsheet', 
-    'regex cheat sheet', 
-    'regex help', 
-    'regexp cheatsheet', 
-    'regexp cheat sheet', 
+triggers start =>
+    'regex cheatsheet',
+    'regex cheat sheet',
+    'regex help',
+    'regexp cheatsheet',
+    'regexp cheat sheet',
     'regexp help',
-    'regex symbols', 
+    'regex symbols',
     'regex symbol',
-    'regexp symbols', 
+    'regexp symbols',
     'regexp symbol',
-    'regex chars', 
+    'regex chars',
     'regex char',
-    'regexp chars', 
+    'regexp chars',
     'regexp char',
-    'regex characters', 
+    'regex characters',
     'regex character',
-    'regexp characters', 
-    'regexp character', 
-    'regex', 
-    'regexp', 
+    'regexp characters',
+    'regexp character',
+    'regex',
+    'regexp',
     'regular expressions',
     'regular expression',
     'regex guide',
@@ -45,6 +45,7 @@ attribution github => ['https://github.com/mintsoft', 'mintsoft'];
 primary_example_queries 'regex';
 secondary_example_queries 'regexp $';
 category 'computing_tools';
+description 'provides a cheatsheet for common regular expression syntax';
 
 # The order to display each category and in which columns
 my @category_column = (
@@ -99,7 +100,7 @@ my %syntax_map = (
     '[a-q]'      => 'Single character range (a or b ... or q)',
     '[A-Z]'      => 'Single character range (A or B ... or Z)',
     '[0-9]'      => 'Single digit from 0 to 9',
-    '^'      => "Start of string or line",  
+    '^'      => "Start of string or line",
     '\A'         => "Start of string",
     '$'      => "End of string or line",
     '\Z'         => "End of string",
@@ -216,29 +217,29 @@ handle remainder => sub {
         elsif ($_ =~ /^\{([0-9]+),([0-9]+)?\}$/) {
             if ($2) {
                 return unless ($1 < $2);
-                return answer => "$_ - Between $1 and $2 occurrences", 
+                return answer => "$_ - Between $1 and $2 occurrences",
                        html => "<code>" . html_enc($_) . "</code> - Between $1 and $2 occurrences",
                        heading => $heading;
             }
-            return answer => "$_ - $1 or more", 
+            return answer => "$_ - $1 or more",
                        html =>  "<code>" . html_enc($_) . "</code> - $1 or more occurrences",
                    heading => $heading;
         }
         # Check our map if it's in our list of regex patterns.
         return unless $syntax_map{$syntax_key};
-    
+
         my $text_output = "$_ - $syntax_map{$syntax_key}";
         my $html_output = "<code>" . html_enc($_) . "</code> - " . html_enc($syntax_map{$syntax_key});
         return answer => $text_output, html => $html_output, heading => $heading;
     }
-    
+
     # Otherwise display the complete tabular output, into n columns in the order specified.
-    
+
     my $text_output = '';
-    
+
     # Content of the div column wrapper.
     my @html_columns = ();
-    
+
     # Add a helper function for adding the <td> tag.
     sub add_table_data {
         my ($text, $is_code) = @_;
@@ -258,13 +259,13 @@ handle remainder => sub {
                 $new_table .= "<tr>" . add_table_data($syntax_object, 1) . add_table_data($syntax_map{$syntax_object}, 0) . "</tr>\n";
                 $text_output .= "\t$syntax_object - $syntax_map{$syntax_object}\n";
             }
-            
-            $text_output .= "\n";                 
+
+            $text_output .= "\n";
             $new_table .= "</table>\n";
             $html_columns[$column] .= $new_table;
         }
     }
-    
+
     my $html_output = "<div class='regex-container'><div class='regex-column'>";
     $html_output .= join ("</div><div class='regex-column'>", @html_columns);
     $html_output .= "</div></div>";

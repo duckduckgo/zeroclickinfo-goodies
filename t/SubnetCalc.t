@@ -16,7 +16,7 @@ ddg_goodie_test(
     ],
     "10.0.0.0/24" => test_zci(
 	"Network: 10.0.0.0/24 (Class A)\nNetmask: 255.255.255.0\nSpecified: Network\nHost Address Range: 10.0.0.1-10.0.0.254 (254 hosts)\nBroadcast: 10.0.0.255\n", html => qr/.*/),
-    
+
     "192.168.0.0/24" => test_zci(
 	"Network: 192.168.0.0/24 (Class C)\nNetmask: 255.255.255.0\nSpecified: Network\nHost Address Range: 192.168.0.1-192.168.0.254 (254 hosts)\nBroadcast: 192.168.0.255\n",html => qr/.*/),
 

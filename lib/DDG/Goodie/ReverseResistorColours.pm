@@ -48,11 +48,11 @@ handle query_raw => sub {
 	$resistance += ($coloursToDigits{$colours[0]}{value} * 10);
 	$resistance += $coloursToDigits{$colours[1]}{value};
 	for (my $i = 0; $i < $coloursToDigits{$colours[2]}{value}; $i++) {
-		$resistance = $resistance * 10;	
+		$resistance = $resistance * 10;
 	}
 	my $mult = $coloursToDigits{$colours[2]}{value};
 	if (exists $colours[3]) {
-		$marginE = $coloursToDigits{$colours[3]}{tolerance}; 
+		$marginE = $coloursToDigits{$colours[3]}{tolerance};
 	} else {
 		$marginE = 20;
 	}
@@ -67,7 +67,7 @@ handle query_raw => sub {
 	if ($resistance > 1000000000) {
 		$resistance = $resistance / 1000000000;
 		$append = "G";
-	}	
+	}
 	#U+2126 is the ohm symbol, U+00B1 is the plus-minus sign.
 	my $answer = "A $_ resistor has a resistance of $resistance $append\x{2126} \x{00B1} $marginE\%.";
 	my $source = '<a href="https://en.wikipedia.org/wiki/Electronic_color_code">More at Wikipedia</a>';

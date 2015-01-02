@@ -44,8 +44,12 @@ handle remainder => sub {
             $html .= '&hellip;';
         }
 
-        my $addendum = ' (ASCII)';
-        return $pure . $addendum, html => $html . $addendum;
+        return $pure . ' (ASCII)',
+          structured_answer => {
+            input     => [$value],
+            operation => 'hex to ASCII',
+            result    => $html,
+          };
     }
     return;
 };
@@ -104,7 +108,7 @@ sub printable_chr {
         $representation->{pure} = '';    # Don't want to add any printable whitespace and wonder what happened.
     } else {
         # This must be a printable character, so just let chr figure it out
-        $representation->{html} = $representation->{pure} = chr $hex;
+        $representation->{html} = html_enc($representation->{pure} = chr $hex);
     }
 
     return $representation;

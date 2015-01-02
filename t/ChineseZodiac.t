@@ -21,8 +21,9 @@ ddg_goodie_test(
   '2004 chinese zodiac animal' => test_zci('Monkey', html => qr/Monkey/),
   'what was the chinese zodiac animal in 1992' => test_zci('Monkey', html => qr/Monkey/),
   'what will the chinese zodiac animal be for 2056' => test_zci('Rat', html => qr/Rat/),
-  'last year\'s chinese zodiac' => test_zci(qr/./, html => qr/./),
-
+  "last year's chinese zodiac" => test_zci(qr/./, html => qr/./),
+  "last years chinese zodiac" => test_zci(qr/./, html => qr/./),
+  
   #Primary example with different query formats
   '1969 chinese zodiac animal' => test_zci('Rooster', html => qr/Rooster/),
   'what was the chinese zodiac animal for 1969' => test_zci('Rooster', html => qr/Rooster/),

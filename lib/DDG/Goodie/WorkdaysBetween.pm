@@ -32,7 +32,7 @@ handle remainder => sub {
     my ($start_date, $end_date) = parse_all_datestrings_to_date($1, $2);
 
     return unless ($start_date && $end_date);
-    
+
     ($start_date, $end_date) = ($end_date, $start_date) if (DateTime->compare($start_date, $end_date) == 1);
 
     my $calendar = Date::Calendar->new($Profiles->{US});
@@ -44,7 +44,12 @@ handle remainder => sub {
     my $verb = $workdays == 1 ? 'is' : 'are';
     my $number = $workdays == 1 ? 'workday' : 'workdays';
 
-    return "There $verb $workdays $number between $start_str and $end_str.";
+    return "There $verb $workdays $number between $start_str and $end_str.",
+      structured_answer => {
+        input     => [$start_str, $end_str],
+        operation => "$number between",
+        result    => $workdays
+      };
 };
 
 1;

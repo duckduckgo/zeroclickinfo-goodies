@@ -1,5 +1,5 @@
 package DDG::Goodie::Palindrome;
-# ABSTRACT: Return if the a string is a palindrome, formatted requests: 
+# ABSTRACT: Return if the a string is a palindrome, formatted requests:
 #    'is <string> a[n] palindrome[?]' or 'isPalindrome <string>'
 
 use DDG::Goodie;

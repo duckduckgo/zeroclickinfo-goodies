@@ -10,25 +10,26 @@ secondary_example_queries "lower case GitHub";
 category 'conversions';
 topics 'programming';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Lowercase.pm';
-attribution github  => ["DavidMascio"];
+attribution github  => ["https://github.com/DavidMascio", "DavidMascio"];
 
-zci is_cached => 1;
 zci answer_type => "lowercase";
+zci is_cached   => 1;
 
 triggers start => 'lowercase', 'lower case', 'lc', 'strtolower', 'tolower';
 
 handle remainder => sub {
-    return unless $_;
-    my $lower = lc $_;
-    my $text = $lower;
-    
-    # Encode the variable before putting it in HTML.
-    # There's no need to encode the $text variable because that gets encoded internally.
-    $lower = html_enc($lower);
-    
-    my $html = qq(<div class="zci--lowercase"><span class="text--primary">$lower</span></div>);
+    my $input = shift;
 
-    return $text, html => $html;
+    return unless $input;
+
+    my $lower = lc $input;
+
+    return $lower,
+      structured_answer => {
+        input     => [html_enc($input)],
+        operation => 'lowercase',
+        result    => html_enc($lower)
+      };
 };
 
 1;

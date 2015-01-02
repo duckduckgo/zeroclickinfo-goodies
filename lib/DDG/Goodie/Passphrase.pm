@@ -48,8 +48,16 @@ handle query_lc => sub {
         push @chosen_words, $word_list[int(rand $list_size)];
     }
 
+    my $phrase = join(' ', @chosen_words);
+    my $input_string = ($word_count == 1) ? '1 word' : $word_count . ' words';
+
     # Now stick them together with an indicator as to what it is
-    return join ' ', ('random passphrase:', @chosen_words);
+    return "random passphrase: $phrase",
+      structured_answer => {
+        input     => [$input_string],
+        operation => 'random passphrase',
+        result    => $phrase,
+      };
 };
 
 1;

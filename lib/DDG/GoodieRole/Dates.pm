@@ -7,7 +7,9 @@ use warnings;
 use Moo::Role;
 
 use DateTime;
+use Devel::StackTrace;
 use List::Util qw( first );
+use Package::Stash;
 use Try::Tiny;
 
 # This appears to parse most/all of the big ones, however it doesn't present a regex
@@ -39,6 +41,14 @@ my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
+my $relative_dates      = qr#
+    now | today | tomorrow | yesterday |
+    (?:(?:current|previous|next)\sday) |
+    (?:next|last|this)\s(?:week|month|year) |
+    (?:in\s(?:a|[0-9]+)\s(?:day|week|month|year)[s]?)(?:\stime)? | 
+    (?:(?:a|[0-9]+)\s(?:day|week|month|year)[s]?(?:\sago)?)
+#ix;
+
 # Covering the ambiguous formats, like:
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
@@ -243,7 +253,8 @@ my $descriptive_datestring = qr{
     (?:(?:$month_regex)\s(?:[0-9]{4})) |                         # Jan 2014, August 2000
     (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
     (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
-    (?:$month_regex) |                                           # February, Aug
+    (?:$month_regex)                                           | # February, Aug
+    (?:$relative_dates)                                          # next week, last month, this year
     }ix;
 
 # Used for parse_descriptive_datestring_to_date
@@ -252,7 +263,8 @@ my $descriptive_datestring_matches = qr#
     (?:(?<m>$month_regex)\s(?<y>[0-9]{4})) |
     (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
     (?:(?<m>$month_regex)\s(?<d>$date_number)\s?$number_suffixes?) |
-    (?<m>$month_regex)
+    (?<m>$month_regex) |
+    (?<r>$relative_dates)
     #ix;
 
 my $formatted_datestring = build_datestring_regex();
@@ -272,6 +284,9 @@ sub full_day_of_week_regex {
 }
 sub short_day_of_week_regex {
     return $short_day_of_week;
+}
+sub relative_dates_regex {
+    return $relative_dates;
 }
 
 # Accessors for matching regexes
@@ -338,7 +353,7 @@ sub parse_datestring_to_date {
 sub parse_formatted_datestring_to_date {
     my ($d) = @_;
 
-    return unless ($d && $d =~ qr/^$formatted_datestring$/);    # Only handle white-listed strings, even if they might otherwise work.
+    return unless (defined $d && $d =~ qr/^$formatted_datestring$/);    # Only handle white-listed strings, even if they might otherwise work.
     if ($d =~ $ambiguous_dates_matches) {
         # guesswork for ambigous DMY/MDY and switch to ISO
         my ($month, $day, $year) = ($+{'m'}, $+{'d'}, $+{'y'});    # Assume MDY, even though it's crazy, for backward compatibility
@@ -390,39 +405,95 @@ sub parse_all_datestrings_to_date {
     return @dates_to_return;
 }
 
+sub _get_timezone {
+    my $default_tz = 'UTC';    # If any of the below fails for some reason, we'll go with this
+
+    my $tz = try {
+        # Dig through how we got here, ignoring
+        my $hit = 0;
+        # We only care about the most recent caller who is some kinda goodie-looking thing.
+        my $frame_filter = sub {
+            my $frame_info = shift;
+            if (!$hit && $frame_info->{caller}[0] =~ /^DDG::Goodie::/) { $hit++; return 1; }
+            else                                                       { return 0; }
+        };
+        my $trace = Devel::StackTrace->new(
+            frame_filter => $frame_filter,
+            no_args      => 1,
+        );
+        my $stash = Package::Stash->new($trace->frame(0)->package);    # Get the package info for our caller.
+        ${$stash->get_symbol('$loc')}->time_zone;                      # Give back the time_zone in the $loc variable on their package
+    };
+
+    return $tz || $default_tz;
+}
+
 # Parses a really vague description and basically guesses
 sub parse_descriptive_datestring_to_date {
     my ($string) = @_;
 
-    return unless ($string && $string =~ qr/^$descriptive_datestring_matches$/);
+    return unless (defined $string && $string =~ qr/^$descriptive_datestring_matches$/);
 
-    my $now = DateTime->now();
-    my $month = $+{'m'}; # Set in each alternative match.
-    
+    my $now   = DateTime->now(time_zone => _get_timezone());
+    my $month = $+{'m'};           # Set in each alternative match.
+
     if (my $day = $+{'d'}) {
-        return parse_datestring_to_date("$day $month ".$now->year());
-    }
-    elsif (my $relative_dir = $+{'q'}) {
-        my $tmp_date = parse_datestring_to_date("01 $month ".$now->year());
-        # next <month>
+        return parse_datestring_to_date("$day $month " . $now->year());
+    } elsif (my $relative_dir = $+{'q'}) {
+        my $tmp_date = parse_datestring_to_date("01 $month " . $now->year());
+
+        # for "next <month>"
         $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
-        # last <month>
-        $tmp_date->add( years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
+        # for "last <month>" if $tmp_date is in the future then we need to subtract a year
+        $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
         return $tmp_date;
-    }
-    elsif (my $year = $+{'y'}) {
+    } elsif (my $year = $+{'y'}) {
         # Month and year is the first of that month.
         return parse_datestring_to_date("01 $month $year");
-    }
-    else {
+    } elsif (my $relative_date = $+{'r'}) {
+        # relative dates, tomorrow, yesterday etc
+        my $tmp_date = $now;
+        my @to_add;
+        if ($relative_date =~ qr/tomorrow|(?:next day)/) {
+            @to_add = (days => 1);
+        } elsif ($relative_date =~ qr/yesterday|(?:previous day)/) {
+            @to_add = (days => -1);
+        } elsif ($relative_date =~ qr/(?<dir>next|last|this) (?<unit>week|month|year)/) {
+            my $unit = $+{'unit'};
+            my $num = ($+{'dir'} eq 'next') ? 1 : ($+{'dir'} eq 'last') ? -1 : 0;
+            @to_add = _util_add_unit($unit, $num);
+        } elsif ($relative_date =~ qr/in (?<num>a|[0-9]+) (?<unit>day|week|month|year)/) {
+            my $unit = $+{'unit'};
+            my $num = ($+{'num'} eq "a" ? 1 : $+{'num'});
+            @to_add = _util_add_unit($unit, $num);
+        } elsif ($relative_date =~ qr/(?<num>a|[0-9]+) (?<unit>day|week|month|year)(?:[s])? ago/) {
+            my $unit = $+{'unit'};
+            my $num = ($+{'num'} eq "a" ? 1 : $+{'num'}) * -1;
+            @to_add = _util_add_unit($unit, $num);
+        }
+        # Any other cases which came through here should be today.
+        $tmp_date->add(@to_add);
+        return $tmp_date;
+    } else {
         # single named months
         # "january" in january means the current month
         # otherwise it always means the coming month of that name, be it this year or next year
-        return parse_datestring_to_date("01 ".$now->month()." ".$now->year()) if lc($now->month_name()) eq lc($month);
-        my $this_years_month = parse_datestring_to_date("01 $month ".$now->year());
-        $this_years_month->add( years => 1 ) if (DateTime->compare($this_years_month, $now) == -1);
+        return parse_datestring_to_date("01 " . $now->month_name() . " " . $now->year()) if lc($now->month_name()) eq lc($month);
+        my $this_years_month = parse_datestring_to_date("01 $month " . $now->year());
+        $this_years_month->add(years => 1) if (DateTime->compare($this_years_month, $now) == -1);
         return $this_years_month;
     }
+}
+
+sub _util_add_unit {
+    my ($unit, $num) = @_;
+    my @to_add =
+        ($unit eq 'day')   ? (days => $num)
+      : ($unit eq 'week')  ? (days => 7*$num)
+      : ($unit eq 'month') ? (months => $num)
+      : ($unit eq 'year')  ? (years  => $num)
+      :                      ();
+    return @to_add;
 }
 
 # Takes a DateTime object (or a string which can be parsed into one)
@@ -432,7 +503,6 @@ sub date_output_string {
 
     my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.
     my $string     = '';            # By default we've got nothing.
-
     # They didn't give us a DateTime object, let's try to make one from whatever we got.
     $dt = parse_datestring_to_date($dt) if (ref($dt) !~ /DateTime/);
 

@@ -20,49 +20,35 @@ handle query_lc => sub {
     srand();
     # Random number.
     # q_check (as opposed to q_internal) Allows for decimals.
-    if ( $_ =~ /^\!?(?:rand(?:om|)(?: num(?:ber|)|)(?: between|))( [\d\.]+|)(?: and|)( [\d\.]+|)$/i ) {
+    return unless ($_ =~ /^\!?(?:rand(?:om|)(?: num(?:ber|)|)(?: between|))( [\d\.]+|)(?: and|)( [\d\.]+|)$/i);
 
-        # For debugging.
-        #     warn qq($1\t$2);
+    my $start = $1 || 0;
+    my $end   = $2 || 0;
 
-        my $start = $1 || 0;
-        my $end   = $2 || 0;
+    $start = 1000000000 if $start > 1000000000;
+    $start = 0          if $start < 0;
+    $start += 0;
 
-        # Messes up decimals.
-        #     $start = int($start) if $start;
-        #     $end= int($end) if $end;
+    $end = 1000000000 if $end > 1000000000;
+    $end = 0          if $end < 0;
+    $end = 1          if !$end;
+    $end += 0;
 
-        $start = 1000000000 if $start > 1000000000;
-        $start = 0          if $start < 0;
+    ($end, $start) = ($start, $end) if ($start > $end);
 
-        $end = 1000000000 if $end > 1000000000;
-        $end = 0          if $end < 0;
+    my $rand = rand;
 
-        $end = $start if $end && $end < $start;
-
-        # For debugging.
-        #     warn qq($start\t$end);
-
-        my $rand = rand;
-
-        if ( $start && !$end ) {
-            $rand *= $start;
-            $rand = int($rand) + 1;
-
-        }
-        elsif ( $start && $end && $start == $end ) {
-            $rand = $start;
-
-        }
-        elsif ( $start && $end ) {
-            $rand *= ( $end - $start + 1 );
-            $rand = int($rand) + $start;
-        }
-
-        # Add IP for display.
-        return $rand ." (random number)";
+    if ($start && $end) {
+        $rand *= ($end - $start + 1);
+        $rand = int($rand) + $start;
     }
-    return;
+
+    return $rand . " (random number)",
+      structured_answer => {
+        input     => [$start, $end],
+        operation => 'random number between',
+        result    => $rand
+      };
 };
 
 1;

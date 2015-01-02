@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Released under the GPL v2 license 
+# Released under the GPL v2 license
 # https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 import lxml.html
@@ -44,10 +44,10 @@ for table in tables:
         if len(cells) == 5:
             currency = cells[0].text_content()
             iso_code = cells[2].text_content()
-        
+
         currency = clear_text(currency)
         iso_code = iso_code if iso_code != "None" else ""
-        
+
         if currency != "None" and currency != "":
             add_currency(country[1:], currency, iso_code, countries)
 
@@ -58,7 +58,7 @@ result = []
 for country in sorted(countries):
 	description = ""
 	formated_record = []
-			
+
 	for record in countries[country]:
 		iso_code = "" if record[1] == "" else (" (" + record[1] + ")")
 		currency = record[0]

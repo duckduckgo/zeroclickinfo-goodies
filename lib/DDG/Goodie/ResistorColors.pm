@@ -14,13 +14,13 @@ use POSIX qw(abs floor log10 pow);
 use utf8;
 
 # \x{2126} is the unicode ohm symbol
-triggers query_nowhitespace => qr/^(.*)(ohm|ohms|\x{2126})/i;
+triggers query_nowhitespace => qr/^(\d+[\.kmKM]?\d*[kmKM]?)((ohm|ohms|\x{2126})|resistor)+$/i;
 
 zci is_cached => 1;
 zci answer_type => 'resistor_colors';
 
-primary_example_queries '4.7k ohm';
-secondary_example_queries '1Ω';
+primary_example_queries '4.7k ohm', '10k resistor';
+secondary_example_queries '1Ω', '5.1ohms resistor';
 description 'find resistor color bands';
 name 'ResistorColors';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ResistorColors.pm';
@@ -29,7 +29,8 @@ topics 'science';
 
 attribution twitter => 'joewalnes',
             web => ['http://joewalnes.com', 'joewalnes.com'],
-            email => ['joe@walnes.com', 'Joe Walnes'];
+            email => ['joe@walnes.com', 'Joe Walnes'],
+            github => ["https://github.com/HackOrQuack", "HackOrQuack"];
 
 # These hex codes came from
 # http://en.wikipedia.org/wiki/Electronic_color_code

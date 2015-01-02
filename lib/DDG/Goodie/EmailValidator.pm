@@ -35,22 +35,28 @@ handle remainder => sub {
     return if !$address;
 
     my $email_valid = Email::Valid->new(
-	-tldcheck => 1,
+        -tldcheck => 1,
     );
 
     # Danger: address returns possible modified string!
-    my $result = $email_valid->address($address); 
+    my $result = $email_valid->address($address);
 
+    my $message;
     if (!$result) {
-	my $message = '';
-	if(defined $message_part->{$email_valid->details}) {
-	    $message = "$address is invalid. Please check the " . $message_part->{$email_valid->details} . ".";
-	}
-
-	return $message || "E-mail address $address is invalid."
+        if (defined $message_part->{$email_valid->details}) {
+            $message = "$address is invalid. Please check the " . $message_part->{$email_valid->details} . ".";
+        }
+        $message ||= 'E-mail address $address is invalid.';
+    } else {
+        $message = "$address appears to be valid.";
     }
 
-    return "$address is valid.";
+    return $message,
+      structured_answer => {
+        input     => [html_enc($address)],
+        operation => 'email address validation',
+        result    => html_enc($message),
+      };
 };
 
 1;

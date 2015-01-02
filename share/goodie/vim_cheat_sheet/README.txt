@@ -1,12 +1,12 @@
 SYNOPSIS
 
-    fetch.sh 
+    fetch.sh
     parser.pl
 
 
 DESCRIPTION
 
-fetch.sh downloads the cheat sheet data from 
+fetch.sh downloads the cheat sheet data from
     https://github.com/rtorr/vim-cheat-sheet
 
 parser.pl parses the html retrieved by fetch.sh and generates

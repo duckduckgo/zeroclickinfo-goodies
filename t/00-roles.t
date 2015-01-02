@@ -6,15 +6,15 @@ use warnings;
 use Test::MockTime qw( :all );
 use Test::Most;
 
-use DateTime;
+use DDG::Test::Location;
 
 subtest 'NumberStyler' => sub {
 
-    { package RoleTester; use Moo; with 'DDG::GoodieRole::NumberStyler'; 1; }
+    { package NumberRoleTester; use Moo; with 'DDG::GoodieRole::NumberStyler'; 1; }
 
     subtest 'Initialization' => sub {
-        new_ok('RoleTester', [], 'Applied to a class');
-        isa_ok(RoleTester::number_style_regex(), 'Regexp', 'number_style_regex()');
+        new_ok('NumberRoleTester', [], 'Applied to a class');
+        isa_ok(NumberRoleTester::number_style_regex(), 'Regexp', 'number_style_regex()');
     };
 
     subtest 'Valid numbers' => sub {
@@ -24,14 +24,15 @@ subtest 'NumberStyler' => sub {
             [['4,431',      '4.321'] => 'perl'],
             [['4,431',      '4,32']  => 'euro'],
             [['4534,345.0', '1']     => 'perl'],    # Unenforced commas.
-            [['4,431', '4,32', '5,42'] => 'euro'],
-            [['4,431', '4.32', '5.42'] => 'perl'],
+            [['4,431',     '4,32', '5,42']       => 'euro'],
+            [['4,431',     '4.32', '5.42']       => 'perl'],
+            [['4_431_123', '4 32', '99.999 999'] => 'perl'],
         );
 
         foreach my $tc (@valid_test_cases) {
             my @numbers           = @{$tc->[0]};
             my $expected_style_id = $tc->[1];
-            is(RoleTester::number_style_for(@numbers)->id,
+            is(NumberRoleTester::number_style_for(@numbers)->id,
                 $expected_style_id, '"' . join(' ', @numbers) . '" yields a style of ' . $expected_style_id);
         }
     };
@@ -39,16 +40,17 @@ subtest 'NumberStyler' => sub {
     subtest 'Invalid numbers' => sub {
         my @invalid_test_cases = (
             [['5234534.34.54', '1'] => 'has a mal-formed number'],
-            [['4,431', '4,32',     '4.32'] => 'is confusingly ambiguous'],
-            [['4,431', '4.32.10',  '5.42'] => 'is hard to figure'],
-            [['4,431', '4,32,100', '5.42'] => 'has a mal-formed number'],
-            [['4,431', '4,32,100', '5,42'] => 'is too crazy to work out'],
+            [['4,431',     '4,32',     '4.32']       => 'is confusingly ambiguous'],
+            [['4,431',     '4.32.10',  '5.42']       => 'is hard to figure'],
+            [['4,431',     '4,32,100', '5.42']       => 'has a mal-formed number'],
+            [['4,431',     '4,32,100', '5,42']       => 'is too crazy to work out'],
+            [['4_431_123', "4\t32",    '99.999 999'] => 'no tabs in numbers'],
         );
 
         foreach my $tc (@invalid_test_cases) {
             my @numbers = @{$tc->[0]};
             my $why_not = $tc->[1];
-            is(RoleTester::number_style_for(@numbers), undef, '"' . join(' ', @numbers) . '" fails because it ' . $why_not);
+            is(NumberRoleTester::number_style_for(@numbers), undef, '"' . join(' ', @numbers) . '" fails because it ' . $why_not);
         }
     };
 
@@ -56,19 +58,19 @@ subtest 'NumberStyler' => sub {
 
 subtest 'Dates' => sub {
 
-    { package RoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
+    { package DatesRoleTester; use Moo; with 'DDG::GoodieRole::Dates'; 1; }
 
     my $test_datestring_regex;
     my $test_formatted_datestring_regex;
     my $test_descriptive_datestring_regex;
 
     subtest 'Initialization' => sub {
-        new_ok('RoleTester', [], 'Applied to a class');
-        $test_datestring_regex = RoleTester::datestring_regex();
+        new_ok('DatesRoleTester', [], 'Applied to a class');
+        $test_datestring_regex = DatesRoleTester::datestring_regex();
         isa_ok($test_datestring_regex, 'Regexp', 'datestring_regex()');
-        $test_formatted_datestring_regex = RoleTester::formatted_datestring_regex();
+        $test_formatted_datestring_regex = DatesRoleTester::formatted_datestring_regex();
         isa_ok($test_formatted_datestring_regex, 'Regexp', 'formatted_datestring_regex()');
-        $test_descriptive_datestring_regex = RoleTester::descriptive_datestring_regex();
+        $test_descriptive_datestring_regex = DatesRoleTester::descriptive_datestring_regex();
         isa_ok($test_descriptive_datestring_regex, 'Regexp', 'descriptive_datestring_regex()');
     };
 
@@ -134,7 +136,7 @@ subtest 'Dates' => sub {
             $test_formatted_datestring_regex =~ qr/^$test_datestring_regex$/;
             ok(scalar @- == 1 && scalar @+ == 1, ' with no sub-captures.');
 
-            my $date_object = RoleTester::parse_formatted_datestring_to_date($test_date);
+            my $date_object = DatesRoleTester::parse_formatted_datestring_to_date($test_date);
             isa_ok($date_object, 'DateTime', $test_date);
             is($date_object->epoch, $dates_to_match{$test_date}, '... which represents the correct time.');
         }
@@ -185,7 +187,7 @@ subtest 'Dates' => sub {
 
         foreach my $set (@date_sets) {
             my @source = @{$set->{src}};
-            eq_or_diff([map { $_->epoch } (RoleTester::parse_all_datestrings_to_date(@source))],
+            eq_or_diff([map { $_->epoch } (DatesRoleTester::parse_all_datestrings_to_date(@source))],
                 $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
         }
     };
@@ -210,7 +212,7 @@ subtest 'Dates' => sub {
             }
 
             my $result;
-            lives_ok { $result = RoleTester::parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
+            lives_ok { $result = DatesRoleTester::parse_formatted_datestring_to_date($test_string) } '... and does not kill the parser.';
             is($result, undef, '... and returns undef to signal failure.');
         }
     };
@@ -227,7 +229,7 @@ subtest 'Dates' => sub {
 
         foreach my $set (@invalid_date_sets) {
             my @source       = @$set;
-            my @date_results = RoleTester::parse_all_datestrings_to_date(@source);
+            my @date_results = DatesRoleTester::parse_all_datestrings_to_date(@source);
             is(@date_results, 0, '"' . join(', ', @source) . '": cannot be parsed in combination.');
         }
     };
@@ -240,7 +242,7 @@ subtest 'Dates' => sub {
 
         foreach my $result (sort keys %date_strings) {
             foreach my $test_string (@{$date_strings{$result}}) {
-                is(RoleTester::date_output_string($test_string), $result, $test_string . ' normalizes for output as ' . $result);
+                is(DatesRoleTester::date_output_string($test_string), $result, $test_string . ' normalizes for output as ' . $result);
             }
         }
     };
@@ -248,11 +250,11 @@ subtest 'Dates' => sub {
         my %bad_stuff = (
             'Empty string' => '',
             'Hashref'      => {},
-            'Object'       => RoleTester->new,
+            'Object'       => DatesRoleTester->new,
         );
         foreach my $description (sort keys %bad_stuff) {
             my $result;
-            lives_ok { $result = RoleTester::date_output_string($bad_stuff{$description}) } $description . ' does not kill the string output';
+            lives_ok { $result = DatesRoleTester::date_output_string($bad_stuff{$description}) } $description . ' does not kill the string output';
             is($result, '', '... and yields an empty string as a result');
         }
     };
@@ -261,6 +263,7 @@ subtest 'Dates' => sub {
             '2000-08-01T00:00:00Z' => {
                 'next december' => '01 Dec 2000',
                 'last january'  => '01 Jan 2000',
+                'this year'     => '01 Aug 2000',
                 'june'          => '01 Jun 2001',
                 'december 2015' => '01 Dec 2015',
                 'june 2000'     => '01 Jun 2000',
@@ -268,6 +271,7 @@ subtest 'Dates' => sub {
                 'next jan'      => '01 Jan 2001',
                 'last jan'      => '01 Jan 2000',
                 'feb 2038'      => '01 Feb 2038',
+                'next day'      => '02 Aug 2000',
             },
             '2015-12-01T00:00:00Z' => {
                 'next december' => '01 Dec 2016',
@@ -279,26 +283,66 @@ subtest 'Dates' => sub {
                 'next jan'      => '01 Jan 2016',
                 'last jan'      => '01 Jan 2015',
                 'feb 2038'      => '01 Feb 2038',
+                'now'           => '01 Dec 2015',
+                'today'         => '01 Dec 2015',
+                'current day'   => '01 Dec 2015',
+                'next month'    => '01 Jan 2016',
+                'this week'     => '01 Dec 2015',
+                '1 month ago'   => '01 Nov 2015',
+                '2 years ago'   => '01 Dec 2013'
             },
             '2000-01-01T00:00:00Z' => {
-                'feb 21st'       => '21 Feb 2000',
-                '11th feb'       => '11 Feb 2000',
-                'march 13'       => '13 Mar 2000',
-                '12 march'       => '12 Mar 2000',
-            }
+                'feb 21st'          => '21 Feb 2000',
+                '11th feb'          => '11 Feb 2000',
+                'march 13'          => '13 Mar 2000',
+                '12 march'          => '12 Mar 2000',
+                'next week'         => '08 Jan 2000',
+                'last week'         => '25 Dec 1999',
+                'tomorrow'          => '02 Jan 2000',
+                'yesterday'         => '31 Dec 1999',
+                'last year'         => '01 Jan 1999',
+                'next year'         => '01 Jan 2001',
+                'in a day'          => '02 Jan 2000',
+                'in a week'         => '08 Jan 2000',
+                'in a month'        => '01 Feb 2000',
+                'in a year'         => '01 Jan 2001',
+                'in 1 day'          => '02 Jan 2000',
+                'in 2 weeks'        => '15 Jan 2000',
+                'in 3 months'       => '01 Apr 2000',
+            },
+            '2014-10-08T00:00:00Z' => {
+                'next week'         => '15 Oct 2014',
+                'this week'         => '08 Oct 2014',
+                'last week'         => '01 Oct 2014',
+                'next month'        => '08 Nov 2014',
+                'this month'        => '08 Oct 2014',
+                'last month'        => '08 Sep 2014',
+                'next year'         => '08 Oct 2015',
+                'this year'         => '08 Oct 2014',
+                'last year'         => '08 Oct 2013',
+                'december 2015'     => '01 Dec 2015',
+                'march 13'          => '13 Mar 2014',
+                'in a weeks time'   => '15 Oct 2014',
+                'a month ago'       => '01 Dec 1999',
+                '2 months ago'      => '08 Aug 2014',
+                'in 2 years'        => '08 Oct 2016',
+                'a week ago'        => '01 Oct 2014',
+                'a month ago'       => '08 Sep 2014',
+            },
         );
         foreach my $query_time (sort keys %time_strings) {
             set_fixed_time($query_time);
             my %strings = %{$time_strings{$query_time}};
             foreach my $test_date (sort keys %strings) {
-                my $result = RoleTester::parse_descriptive_datestring_to_date($test_date);
+                like($test_date, qr/^$test_descriptive_datestring_regex$/, "$test_date matches the descriptive_datestring_regex");
+                my $result = DatesRoleTester::parse_descriptive_datestring_to_date($test_date);
                 isa_ok($result, 'DateTime', $test_date);
-                is(RoleTester::date_output_string($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
+                is(DatesRoleTester::date_output_string($result), $strings{$test_date}, $test_date . ' relative to ' . $query_time);
             }
         }
         restore_time();
     };
-    
+
     subtest 'Valid mixture of formatted and descriptive dates' => sub {
         set_fixed_time('2000-01-01T00:00:00Z');
         my %mixed_dates_to_test = (
@@ -320,15 +364,130 @@ subtest 'Dates' => sub {
             'next january'              => 978307200,
             'december'                  => 975628800,
         );
-        
+
         foreach my $test_mixed_date (sort keys %mixed_dates_to_test) {
-            my $parsed_date_object = RoleTester::parse_datestring_to_date($test_mixed_date);
+            my $parsed_date_object = DatesRoleTester::parse_datestring_to_date($test_mixed_date);
             isa_ok($parsed_date_object, 'DateTime', $test_mixed_date);
             is($parsed_date_object->epoch, $mixed_dates_to_test{$test_mixed_date}, ' ... represents the correct time.');
         }
-        
+
         restore_time();
-    }
+    };
+
+    subtest 'Relative dates with location' => sub {
+        my $test_location = test_location('in');
+        {
+            package DDG::Goodie::FakerDater;
+            use Moo;
+            with 'DDG::GoodieRole::Dates';
+            our $loc = $test_location;
+            sub pds { shift; parse_datestring_to_date(@_); }
+            1;
+        }
+
+        my $with_loc = new_ok('DDG::Goodie::FakerDater', [], 'With location');
+        set_fixed_time('2013-12-31T23:00:00Z');
+        my $today_obj;
+        lives_ok { $today_obj = $with_loc->pds('today'); } 'Parsed out today at just before midnight UTC NYE, 2013';
+        is($today_obj->time_zone_long_name, 'Asia/Kolkata', '... in our local time zone');
+        is($today_obj->year,                2014,           '... where it is already 2014');
+        is($today_obj->hms,                 '04:30:00',     '... for about 4.5 hours');
+        is($today_obj->offset / 3600,       5.5,            '... which seems just about right.');
+
+        restore_time();
+    };
+
+};
+
+subtest 'ImageLoader' => sub {
+
+    subtest 'object with no share' => sub {
+        # We have to wrap the function in a method in order to get the call-stack correct.
+        { package ImgRoleTester; use Moo; with 'DDG::GoodieRole::ImageLoader'; sub img_wrap { shift; goodie_img_tag(@_); } 1; }
+
+        my $no_share;
+        subtest 'Initialization' => sub {
+            $no_share = new_ok('ImgRoleTester', [], 'Applied to class');
+        };
+
+        subtest 'non-share enabled object attempts' => sub {
+            my %no_deaths = (
+                'undef'             => undef,
+                'array ref'         => [],
+                'killer code ref'   => sub { die },
+                'with itself'       => $no_share,
+                'empty hash ref'    => +{},
+                'nonsense hash ref' => {ding => 'dong'},
+                'proper'            => {filename => 'hi.jpg'},
+            );
+            foreach my $desc (sort keys %no_deaths) {
+                lives_ok { $no_share->goodie_img_tag($no_deaths{$desc}) } $desc . ': does not die.';
+            }
+        };
+    };
+    subtest 'object with a share' => sub {
+        our $b64_gif =
+          'R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub//ge8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAALAAAAAAQAA4AAARe8L1Ekyky67QZ1hLnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g77ZKPJjPZqIyd7sJAgVGoEGv2xsBxqNgYPj/gAwXEQA7';
+        our $final_src = 'src="data:image/gif;base64,' . $b64_gif;
+        {
+
+            package DDG::Goodie::ImgShareTester;
+            use Moo;
+            use HTML::Entities;
+            use Path::Class;    # Hopefully the real share stays implemented this way.
+            use MIME::Base64;
+            with 'DDG::GoodieRole::ImageLoader';
+            our $tmp_dir = Path::Class::tempdir(CLEANUP => 1);
+            our $tmp_file = file(($tmp_dir->tempfile(TEMPLATE => 'img_XXXXXX', suffix   => '.gif'))[1]);
+            # Always return the same file for our purposes here.
+            sub share     { $tmp_file }
+            sub html_enc  { encode_entities(@_) }                                             # Deal with silly symbol table twiddling.
+            sub fill_temp { $tmp_file->spew(iomode => '>:bytes', decode_base64($b64_gif)) }
+            sub kill_temp { undef $tmp_file }
+            sub img_wrap { shift; goodie_img_tag(@_); }
+            1;
+        }
+
+        my $with_share;
+        subtest 'Initialization' => sub {
+            $with_share = new_ok('DDG::Goodie::ImgShareTester', [], 'Applied to class');
+        };
+
+        subtest 'tag creation' => sub {
+            my $filename = $with_share->share()->stringify;
+            my $tag_content;
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename}) } 'Empty file does not die';
+            is($tag_content, '', '... but returns empty tag.');
+            $with_share->fill_temp;
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename}) } 'Newly filled file does not die';
+            like($tag_content, qr/$final_src/, '... contains proper data');
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, alt => 'Yo!'}) } 'With alt';
+            like($tag_content, qr/$final_src/,  '... contains proper data');
+            like($tag_content, qr/alt=\"Yo!\"/, '... and proper alt attribute');
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, alt => 'Yo!', height => 12}) } 'Plus height';
+            like($tag_content, qr/$final_src/,  '... contains proper data');
+            like($tag_content, qr/alt="Yo!"/,   '... and proper alt attribute');
+            like($tag_content, qr/height="12"/, '... and proper height attribute');
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, alt => 'Yo!', height => 12, width => 10}) } 'Plus width';
+            like($tag_content, qr/$final_src/,  '... contains proper data');
+            like($tag_content, qr/alt="Yo!"/,   '... and proper alt attribute');
+            like($tag_content, qr/height="12"/, '... and proper height attribute');
+            like($tag_content, qr/width="10"/,  '... and proper width attribute');
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, alt => 'hello"there!', height => 12, width => 10, class => 'smooth' }); } 'Plus class';
+            like($tag_content, qr/$final_src/,              '... contains proper data');
+            like($tag_content, qr/alt="hello&quot;there!"/, '... and proper alt attribute');
+            like($tag_content, qr/height="12"/,             '... and proper height attribute');
+            like($tag_content, qr/width="10"/,              '... and proper width attribute');
+            like($tag_content, qr/class="smooth"/,          '... and proper class attribute');
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, atl => 'Yo!', height => 12, width => 10, class => 'smooth'}) }
+            'Any mispelled does not die';
+            is($tag_content, '', '... but yields an empty tag');
+            $with_share->kill_temp;
+            lives_ok { $tag_content = $with_share->img_wrap({filename => $filename, alt => 'Yo!', height => 12, width => 10, class => 'smooth'}) }
+            'File disappeared does not die';
+            is($tag_content, '', '... but yields an empty tag');
+        };
+    };
 };
 
 done_testing;

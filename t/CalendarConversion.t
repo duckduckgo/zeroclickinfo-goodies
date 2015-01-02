@@ -10,18 +10,27 @@ zci is_cached   => 0;
 
 my @g22h = (
     '22 August 2003 (Gregorian) is 23 Jumaada Thani 1424 (Hijri)',
-    html =>
-      "<div class='zci--calendarconversion text--primary'>22 August 2003 (Gregorian) <span class='text--secondary'>is</span> 23 Jumaada Thani 1424 (Hijri)</div>"
+    structured_answer => {
+        input     => ['22 August 2003 (Gregorian)'],
+        operation => 'calendar conversion',
+        result    => '23 Jumaada Thani 1424 (Hijri)'
+    },
 );
 my @h23g = (
     '23 Jumaada Thani 1424 (Hijri) is 22 August 2003 (Gregorian)',
-    html =>
-      "<div class='zci--calendarconversion text--primary'>23 Jumaada Thani 1424 (Hijri) <span class='text--secondary'>is</span> 22 August 2003 (Gregorian)</div>"
+    structured_answer => {
+        input     => ['23 Jumaada Thani 1424 (Hijri)'],
+        operation => 'calendar conversion',
+        result    => '22 August 2003 (Gregorian)'
+    },
 );
 my @g22j = (
     '22 August 2003 (Gregorian) is 31 Mordad 1382 (Jalali)',
-    html =>
-      "<div class='zci--calendarconversion text--primary'>22 August 2003 (Gregorian) <span class='text--secondary'>is</span> 31 Mordad 1382 (Jalali)</div>"
+    structured_answer => {
+        input     => ['22 August 2003 (Gregorian)'],
+        operation => 'calendar conversion',
+        result    => '31 Mordad 1382 (Jalali)'
+    },
 );
 
 ddg_goodie_test(
@@ -34,18 +43,27 @@ ddg_goodie_test(
     '22/8/2003 to jalali'                   => test_zci(@g22j),
     '31/5/1382 jalali to gregorian'         => test_zci(
         '31 Mordad 1382 (Jalali) is 22 August 2003 (Gregorian)',
-        html =>
-          "<div class='zci--calendarconversion text--primary'>31 Mordad 1382 (Jalali) <span class='text--secondary'>is</span> 22 August 2003 (Gregorian)</div>",
+        structured_answer => {
+            input     => ['31 Mordad 1382 (Jalali)'],
+            operation => 'calendar conversion',
+            result    => '22 August 2003 (Gregorian)'
+        },
     ),
     '31/5/1382 jalali to hijri' => test_zci(
         '31 Mordad 1382 (Jalali) is 23 Jumaada Thani 1424 (Hijri)',
-        html =>
-          "<div class='zci--calendarconversion text--primary'>31 Mordad 1382 (Jalali) <span class='text--secondary'>is</span> 23 Jumaada Thani 1424 (Hijri)</div>"
+        structured_answer => {
+            input     => ['31 Mordad 1382 (Jalali)'],
+            operation => 'calendar conversion',
+            result    => '23 Jumaada Thani 1424 (Hijri)'
+        },
     ),
     '23/6/1424 in hijri to jalali date' => test_zci(
         '23 Jumaada Thani 1424 (Hijri) is 31 Mordad 1382 (Jalali)',
-        html =>
-          "<div class='zci--calendarconversion text--primary'>23 Jumaada Thani 1424 (Hijri) <span class='text--secondary'>is</span> 31 Mordad 1382 (Jalali)</div>"
+        structured_answer => {
+            input     => ['23 Jumaada Thani 1424 (Hijri)'],
+            operation => 'calendar conversion',
+            result    => '31 Mordad 1382 (Jalali)',
+        },
     ),
     'August 22nd, 2003 to jalali'     => test_zci(@g22j),
     '22 Aug 2003 to Hijri'            => test_zci(@g22h),

@@ -35,6 +35,8 @@ If you're submitting a **pull request** (bugfix/addition):
   ```
 
 - Make sure you have added the necessary tests for your changes
+    - When modifying the triggers, update existing tests and add some new tests to show it works as expected
+    - When modifying the result, update existing tests accordingly
 - Run `dzil test` (executes all tests in t/) to ensure nothing else was accidentally broken
 - If your change affects an instant answer, remember to add yourself to the Metadata attribution list in the appropriate `.pm` file
 
