@@ -1,5 +1,5 @@
 package DDG::Goodie::IsAwesome::Blito;
-# ABSTRACT: Blit's first Goodie
+# ABSTRACT: Blito's first Goodie
 
 use DDG::Goodie;
 
