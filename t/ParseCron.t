@@ -12,7 +12,7 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::ParseCron
 	)],
-    # 
+    # Time
     'cron * * * * *' => test_zci('every minute'),
     'cron 5 0 * * *' => test_zci('at 12:05am every day'),
     'cron 0 */2 * * *' => test_zci('every other hour'),
@@ -59,6 +59,9 @@ ddg_goodie_test(
     'cron 0 0' => undef,
     'cron 0' => undef,
     'cron ' => undef,
+    'cron help' => undef,
+    'cron cheatsheet' => undef,
+    'crontab examples' => undef,
     
     'cron 96 4 * * *' => test_zci('Invalid minute 96'),
     'cron 6 45 * * *' => test_zci('Invalid hour 45'),

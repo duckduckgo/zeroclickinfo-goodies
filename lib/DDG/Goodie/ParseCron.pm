@@ -10,6 +10,7 @@ use DDG::Goodie;
 
 use strict;
 use warnings;
+use Try::Tiny;
 
 my @month_names = qw(January February March April May June
     July August September October November December);
@@ -97,34 +98,35 @@ sub parse_field {
         return get_freq(defined $1 ? $1 : 1, $singular, $plural);
     }
     
-    my @components = split ',', $field;
+    my @components = ();
     my $i = 0;
     
-    for (@components) {
+    for (split ',', $field) {
         die "Invalid $singular $_\n" unless $_ =~ m!^(\d+|[a-z]{3})(?:-(\d+|[a-z]{3})(?:/(\d+))?)?$!i;
         my ($start, $stop, $freq) = ($1, $2, $3);
         $start = replace_names($start, $singular, $names);
         $stop = replace_names($stop, $singular, $names) if defined $stop;
         
-        $_ = '';
+        my $res = '';
         if (defined $freq) {
             check_bounds($freq, 1, $max, $singular);
-            $_ .= get_freq($freq, $singular, $plural) . ' ';
+            $res .= get_freq($freq, $singular, $plural) . ' ';
         }
         if (defined $stop) { # a range (from X to Y)
             check_bounds($start, $min, $max, $singular);
             check_bounds($stop, $min, $max, $singular);
             
             if ($singular eq 'month' || $singular eq 'day of the week') {
-                $_ .= &$format_value($start, "start/$i") . ' through ' . &$format_value($stop, "stop/$i");
+                $res .= &$format_value($start, "start/$i") . ' through ' . &$format_value($stop, "stop/$i");
             } else {
-                $_ .= 'from ' . &$format_value($start, "start/$i") . ' to ' . &$format_value($stop, "stop/$i");
+                $res .= 'from ' . &$format_value($start, "start/$i") . ' to ' . &$format_value($stop, "stop/$i");
             }
         } else {
             check_bounds($start, $min, $max, $singular);
-            $_ .= &$format_value($start, "single/$i");
+            $res .= &$format_value($start, "single/$i");
         }
         $i++;
+        push @components, $res;
     }
     return join_list(@components);
 }
@@ -262,23 +264,21 @@ handle remainder => sub {
     my $line = shift;
     
     my ($minute, $hour, $day, $month, $weekday) = split(' ', $line);
-    my ($time, $date);
     
     return if (!defined $weekday); # less than five fields
     
-    eval {
-        local $SIG{'__DIE__'};
-        $time = parse_time($minute, $hour);
-        $date = parse_date($day, $month, $weekday);
-    };
-    if ($@) {
-        chomp $@;
-        return $@;
+    try {
+        my $time = parse_time($minute, $hour);
+        my $date = parse_date($day, $month, $weekday);
+
+        # If it's something like "every two hours", don't add "every day"
+        $time .= ' ' . $date unless $time =~ /^every / && $date eq 'every day';
+
+        return $time;
+    } catch {
+        chomp;
+        return $_;
     }
     
-    # If it's something like "every two hours", don't add "every day"
-    return $time if $time =~ /^every / && $date eq 'every day';
-    
-    return $time . ' ' . $date;
 };
 1;
