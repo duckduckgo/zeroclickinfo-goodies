@@ -86,17 +86,47 @@ ddg_goodie_test(
             operation => 'Orthodox Easter',
             result => '1 May'
         }),
-    'easter 1700' => test_zci('Western: 11 April, Orthodox: 11 April',
+    'easter 1900' => test_zci('Western: 15 April, Orthodox: 22 April',
         structured_answer => {
-            input => ['1700'],
+            input => ['1900'],
             operation => 'Easter',
-            result => 'Western: 11 April, Orthodox: 11 April'
+            result => 'Western: 15 April, Orthodox: 22 April'
+        }),
+    'date of easter 1951' => test_zci('Western: 25 March, Orthodox: 29 April',
+        structured_answer => {
+            input => ['1951'],
+            operation => 'Easter',
+            result => 'Western: 25 March, Orthodox: 29 April'
+        }),
+    'when is easter 1850' => test_zci('Western: 31 March, Orthodox: 5 May',
+        structured_answer => {
+            input => ['1850'],
+            operation => 'Easter',
+            result => 'Western: 31 March, Orthodox: 5 May'
+        }),
+    'when is easter 1800' => test_zci('Western: 13 April, Orthodox: 20 April',
+        structured_answer => {
+            input => ['1800'],
+            operation => 'Easter',
+            result => 'Western: 13 April, Orthodox: 20 April'
+        }),
+    'when is easter 1803' => test_zci('Western: 10 April, Orthodox: 17 April',
+        structured_answer => {
+            input => ['1803'],
+            operation => 'Easter',
+            result => 'Western: 10 April, Orthodox: 17 April'
         }),
     'easter 2299' => test_zci('Western: 16 April, Orthodox: 23 April',
         structured_answer => {
             input => ['2299'],
             operation => 'Easter',
             result => 'Western: 16 April, Orthodox: 23 April'
+        }),
+    'easter 2298' => test_zci('Western: 3 April, Orthodox: 8 May',
+        structured_answer => {
+            input => ['2298'],
+            operation => 'Easter',
+            result => 'Western: 3 April, Orthodox: 8 May'
         }),
     
     'Passover 2015' => test_zci('4 April',
@@ -132,6 +162,8 @@ ddg_goodie_test(
 
     'easter' => undef,
     'easter 123' => undef,
+    'easter 2300' => undef,
+    'easter 1799' => undef,
     'easter date 2000 date' => undef,
     'Rosh Hashanah' => undef,
     'Pesach' => undef,

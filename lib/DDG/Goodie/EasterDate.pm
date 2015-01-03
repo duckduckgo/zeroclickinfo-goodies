@@ -42,8 +42,7 @@ handle query_raw => sub {
         passover| pesach| rosh\s+hashanah| jewish\s+holidays)/ix;
     
     return unless /^(?:$holiday\s+
-            (?:date |
-             (?:date\s+)? (?<y>\d{4}) |
+            ((?:date) (?:\s+(?<y>\d{4}))? |
              (?<y>\d{4}) (?:\s+date)?
             )|
             (?:date\s+of| when\s+is) \s+$holiday (?:\s+(?<y>\d{4}))?)$/ix;
@@ -54,12 +53,15 @@ handle query_raw => sub {
     
     # Calculate the dates
     if ($operation eq 'Easter') {
+        return if ($year < 1800 || $year > 2299);
         $result = 'Western: ' . output_date(easter($year)) . ', Orthodox: ' . output_date(orthodox_easter($year));
         
     } elsif ($operation eq 'Catholic Easter' || $operation eq 'Protestant Easter') {
+        return if ($year < 1800 || $year > 2299);
         $result = output_date(easter($year));
         
     } elsif ($operation eq 'Orthodox Easter') {
+        return if ($year < 1800 || $year > 2299);
         $result = output_date(orthodox_easter($year));
         
     } elsif ($operation eq 'Passover' || $operation eq 'Pesach') {
