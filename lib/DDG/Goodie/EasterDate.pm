@@ -38,15 +38,18 @@ handle query_raw => sub {
     my $result;
     
     # Read the input
-    return unless /^(catholic\s+easter|orthodox\s+easter|protestant\s+easter|easter|
-                     passover|pesach|rosh\s+hashanah|jewish\s+holidays)\s+
+    my $holiday = qr/(?<h>catholic\s+easter| orthodox\s+easter| protestant\s+easter| easter|
+        passover| pesach| rosh\s+hashanah| jewish\s+holidays)/ix;
+    
+    return unless /^(?:$holiday\s+
             (?:date |
-             (?:date\s+)?(\d{4}) |
-             (\d{4})(?:\s+date)?
-            )$/ix;
+             (?:date\s+)? (?<y>\d{4}) |
+             (?<y>\d{4}) (?:\s+date)?
+            )|
+            (?:date\s+of| when\s+is) \s+$holiday (?:\s+(?<y>\d{4}))?)$/ix;
             
-    my $year = defined $2 ? $2 : (defined $3 ? $3 : (localtime)[5] + 1900);
-    my $operation = $1;
+    my $year = defined $+{y} ? $+{y} : ((localtime)[5] + 1900);
+    my $operation = $+{h};
     $operation =~ s/(\w+)/\u\L$1/g; # title case
     
     # Calculate the dates
@@ -75,7 +78,7 @@ handle query_raw => sub {
         return;
     }
 
-	return $result,
+    return $result,
         structured_answer => {
             input => [$year],
             operation => $operation,

@@ -13,13 +13,25 @@ set_fixed_time("2013-01-01T10:00:00");
 
 ddg_goodie_test(
     [qw( DDG::Goodie::EasterDate )],
-    'easter 2015' => test_zci('Western: 5 April, Orthodox: 12 April',
+    'Easter 2015' => test_zci('Western: 5 April, Orthodox: 12 April',
         structured_answer => {
             input => ['2015'],
             operation => 'Easter',
             result => 'Western: 5 April, Orthodox: 12 April'
         }),
-    'easter date' => test_zci('Western: 31 March, Orthodox: 5 May',
+    'Easter date' => test_zci('Western: 31 March, Orthodox: 5 May',
+        structured_answer => {
+            input => ['2013'],
+            operation => 'Easter',
+            result => 'Western: 31 March, Orthodox: 5 May'
+        }),
+    'date of easter' => test_zci('Western: 31 March, Orthodox: 5 May',
+        structured_answer => {
+            input => ['2013'],
+            operation => 'Easter',
+            result => 'Western: 31 March, Orthodox: 5 May'
+        }),
+    'when is Easter' => test_zci('Western: 31 March, Orthodox: 5 May',
         structured_answer => {
             input => ['2013'],
             operation => 'Easter',
@@ -38,6 +50,12 @@ ddg_goodie_test(
             result => 'Western: 16 April, Orthodox: 23 April'
         }),
     'easter 2014' => test_zci('Western: 20 April, Orthodox: 20 April',
+        structured_answer => {
+            input => ['2014'],
+            operation => 'Easter',
+            result => 'Western: 20 April, Orthodox: 20 April'
+        }),
+    'date of easter 2014' => test_zci('Western: 20 April, Orthodox: 20 April',
         structured_answer => {
             input => ['2014'],
             operation => 'Easter',
