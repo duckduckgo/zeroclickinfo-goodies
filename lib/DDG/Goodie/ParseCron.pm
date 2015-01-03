@@ -274,10 +274,18 @@ handle remainder => sub {
         # If it's something like "every two hours", don't add "every day"
         $time .= ' ' . $date unless $time =~ /^every / && $date eq 'every day';
 
-        return $time;
+        return $time, structured_answer => {
+            input => [$line],
+            operation => 'crontab',
+            result => $time
+        };
     } catch {
         chomp;
-        return $_;
+        return $_, structured_answer => {
+            input => [$line],
+            operation => 'crontab',
+            result => $_
+        };
     }
     
 };
