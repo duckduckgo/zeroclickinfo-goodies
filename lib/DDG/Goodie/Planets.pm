@@ -4,6 +4,7 @@ package DDG::Goodie::Planets;
 use DDG::Goodie;
 use YAML::XS qw( Load );
 use POSIX;
+use DDG::Test::Location;
 
 zci answer_type => "planets";
 zci is_cached   => 1;
@@ -15,8 +16,8 @@ description 'Lookup various attributes of planets';
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Planets.pm";
 category 'conversions';
 topics 'special_interest';
-attribution github => 'chrisjwilsoncom',
-            twitter => 'chrisjwilsoncom';
+attribution github => ["MrChrisW", "Chris Wilson"],
+            web => ["http://chrisjwilson.com", "Chris Wilson"];
 
 my @triggers = qw(size radius volume mass);
 triggers any => @triggers;
@@ -31,7 +32,8 @@ handle query_lc => sub {
   s/\?//g; # Strip question marks.
   s/of|what|is|the//g; #remove common words
 
-  my $flag;
+  #declare vars
+  my ($flag, $result, $planetObj);
 
   # This is incorrect as a query like "size volume size of mars" will choose the last flag value
   
@@ -46,17 +48,29 @@ handle query_lc => sub {
 
   return unless $_; 
 
-  my $planetObj = $planets->{$_};
+  $planetObj = $planets->{$_};
 
-  my $kmValue = ceilCommify($planetObj->{equatorial_radius});
-  my $mileValue = ceilCommify($planetObj->{equatorial_radius}* 0.6214);
+  return unless $planetObj;
 
-  my $html = '<div>';
-  $html .= '<div class="zci__caption">' .$kmValue. ' km (' .$mileValue. ' miles)</div>';
-  $html .= '<div class="zci__subheader">' . ucfirst $_. ', Radius</div>';
-  $html .= '</div>';
+  my $test_location = test_location('au');
+  my $location = $test_location->country_code;
 
-  return $planetObj->{equatorial_radius}, html => $html;
+  my $radius = ceilCommify($planetObj->{equatorial_radius});
+  my $radius_miles = ceilCommify($planetObj->{equatorial_radius}* 0.6214);
+
+  if ($location =~ m/US|MM|LR/) { 
+    $result = $radius_miles . ' miles (' . $radius . ' km)';
+  } else {
+    $result = $radius . ' km (' . $radius_miles . ' miles)';
+  }
+
+  my $operation = ucfirst($_) . ucfirst($flag) ;
+
+      structured_answer => {
+        input     => [$_],
+        operation => $operation,
+        result    => $result
+      };
 };
 1;
 
