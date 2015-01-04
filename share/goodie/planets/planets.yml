@@ -1,56 +1,59 @@
 ---
 mercury:
   mean_distance_sun_km: 57909175
-  equatorial_radius: 2439.64
-  surface_area: 75000000
-  volume: 6.083×1010
+  radius: 2439.7
+  radius_imperial: 1516.0
+  surface_area: 74797000
+  surface_area_imperial: 28879000
+  volume: 60827208742
+  volume_imperial: 14593223446
   mass: 3.302×1023
   density: 5.43
 venus:
   mean_distance_sun_km: 108208930
-  equatorial_radius: 6051.59
+  radius: 6051.59
   surface_area: 460000000
   volume: 9.28×1011
   mass: 4.8690×1024
   density: 5.24
 earth:
   mean_distance_sun_km: 149597890
-  equatorial_radius: 6378.1
+  radius: 6378.1
   surface_area: 510000000
   volume: 1.083×1012
   mass: 5.9742×1024
   density: 5.515
 mars:
   mean_distance_sun_km: 227936640
-  equatorial_radius: 3397.00
+  radius: 3397.00
   surface_area: 140000000
   volume: 1.6318×1011
   mass: 6.4191×1023
   density: 3.940
 jupiter:
   mean_distance_sun_km: 778412010
-  equatorial_radius: 71492.68
+  radius: 71492.68
   surface_area: 64000000000
   volume: 1.431×1015
   mass: 1.8987×1027
   density: 1.33
 saturn:
   mean_distance_sun_km: 1426725400
-  equatorial_radius: 60267.14
+  radius: 60267.14
   surface_area: 44000000000
   volume: 8.27×1014
   mass: 5.6851×1026
   density: 0.70
 uranus:
   mean_distance_sun_km: 2870972200
-  equatorial_radius: 25557.25
+  radius: 25557.25
   surface_area: 8100000000
   volume: 6.834×1013
   mass: 8.6849×1025
   density: 1.30
 neptune:
   mean_distance_sun_km: 4498252900
-  equatorial_radius: 24766.36
+  radius: 24766.36
   surface_area: 7700000000
   volume: 6.254×1013
   mass: 1.0244×1026

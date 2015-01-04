@@ -55,20 +55,17 @@ handle query_lc => sub {
   my $test_location = test_location('au');
   my $location = $test_location->country_code;
 
-  my $radius = ceilCommify($planetObj->{equatorial_radius});
-  my $radius_miles = ceilCommify($planetObj->{equatorial_radius}* 0.6214);
+  my $radius = ceilCommify($planetObj->{$flag});
+  my $radius_miles = ceilCommify($planetObj->{$flag}* 0.6214);
 
-  if ($location =~ m/US|MM|LR/) { 
+  if ($location =~ m/UK|US|MM|LR/) { 
     $result = $radius_miles . ' miles (' . $radius . ' km)';
   } else {
     $result = $radius . ' km (' . $radius_miles . ' miles)';
   }
-
-  my $operation = ucfirst($_) . ucfirst($flag) ;
-
       structured_answer => {
-        input     => [$_],
-        operation => $operation,
+        input     => [ucfirst($_)],
+        operation => ucfirst($flag),
         result    => $result
       };
 };
