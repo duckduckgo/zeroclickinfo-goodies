@@ -12,7 +12,7 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::IsAwesome::purplehuman
     )],
-    'duckduckhack purplehuman' => test_zci('purplehuman is awesome!'),
+    'duckduckhack purplehuman' => test_zci('purplehuman is awesome and has successfully completed the DuckDuckHack Goodie tutorial!'),
     'duckduckhack purplehuman is awesome' => undef,
 );
 
