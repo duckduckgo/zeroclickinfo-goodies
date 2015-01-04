@@ -15,7 +15,6 @@ category "special";
 topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/sagarhani.pm";
 attribution github => ["https://github.com/sagarhani", "sagarhani"],
-
             twitter => "sagarhan_i";
 
 
