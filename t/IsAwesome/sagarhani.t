@@ -13,7 +13,7 @@ ddg_goodie_test(
         DDG::Goodie::IsAwesome::sagarhani
     )],
     'duckduckhack sagarhani' => test_zci('sagarhani is awesome and has successfully completed the DuckDuckHack Goodie tutorial!'),
-    'duckduckhack sagarhani' => undef,
+    'duckduckhack sagarhani is awesome' => undef,
 );
 
 done_testing;
