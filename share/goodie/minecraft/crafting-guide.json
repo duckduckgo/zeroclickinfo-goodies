@@ -382,7 +382,7 @@
       "name": "Dropper",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/dropper-crafting.png",
       "ingredients": "Cobblestone + Redstone",
-      "description": "Block that drops an item from it\\\"s inventory as an entity (as if it were dropped by the player)each time it is powered. If there is a block with an inventory immediately in front of the dropper when it is powered, it will instead store the item within th"
+      "description": "The dropper is a block that can be used to eject items, or push items into another container."
     },
     {
       "name": "Hopper",
@@ -592,7 +592,7 @@
       "name": "Ender Chest",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/ender-chest-crafting.png",
       "ingredients": "Obsidian + Eye of Ender",
-      "description": "Used for storage like normal chests. All contents of the chest are put into all Ender Chests created, which means they access the same storage. The contents are localised to the player in SMP. If the ender chest is destroyed, none of its contents will be "
+      "description": "A placeable block used to store items. They function like normals chests, but their items can be accessed by any other ender chest in the world. If the ender chest is destroyed, none of its contents will be dropped and new ender chests can be created to access them."
     },
     {
       "name": "Eye of Ender",
