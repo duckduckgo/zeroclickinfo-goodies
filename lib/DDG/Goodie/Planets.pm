@@ -55,8 +55,8 @@ handle query_lc => sub {
   my $test_location = test_location('au');
   my $location = $test_location->country_code;
 
-  my $radius = ceilCommify($planetObj->{$flag});
-  my $radius_miles = ceilCommify($planetObj->{$flag}* 0.6214);
+  my $radius = $planetObj->{$flag});
+  my $radius_miles = $planetObj->{$flag}* 0.6214);
 
   if ($location =~ m/UK|US|MM|LR/) { 
     $result = $radius_miles . ' miles (' . $radius . ' km)';
@@ -70,9 +70,3 @@ handle query_lc => sub {
       };
 };
 1;
-
-sub ceilCommify {
-    my $text = reverse ceil($_[0]);
-    $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
-    return scalar reverse $text;
-}
