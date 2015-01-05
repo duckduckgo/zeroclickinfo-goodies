@@ -1,60 +1,154 @@
 ---
+sun:
+  radius: 695,508 km
+  radius_imperial: 432,168.6 miles
+  radius_scientific: 6.9551 x 105 km
+  surface_area: 6,078,747,774,547 km2
+  surface_area_imperial: 2,347,017,636,988 square miles
+  surface_area_scientific: 6.07877 x 1012 km2
+  volume: 1,409,272,569,059,860,000 km3
+  volume_imperial: 338,102,469,632,763,000 mi3
+  volume_scientific: 1.40927 x 1018 km3
+  mass: 1,989,100,000,000,000,000,000,000,000,000 kg
+  mass_imperial: 4,385,214,857,119,400,000,000,000,000,000 lbs
+  mass_scientific: 1.989 x 1030 kg
+  effective_temperature: 5504 °C
+  effective_temperature_imperial: 9939 °F
+  effective_temperature_scientific: 5777 K
+  density: 1.409 g/cm3
 mercury:
-  mean_distance_sun_km: 57909175
-  radius: 2439.7
-  radius_imperial: 1516.0
-  surface_area: 74797000
-  surface_area_imperial: 28879000
-  volume: 60827208742
-  volume_imperial: 14593223446
-  mass: 3.302×1023
-  density: 5.43
+  radius: 2,439.7 km
+  radius_imperial: 1,516.0 miles
+  radius_scientific: 2.4397 x 103 km
+  surface_area: 74,797,000 km2
+  surface_area_imperial: 28,879,000 square miles
+  surface_area_scientific: 7.4797 x 107 km2
+  volume: 60,827,208,742 km3
+  volume_imperial: 14,593,223,446 mi3
+  volume_scientific: 6.08272 x 1010 km3
+  mass: 330,104,000,000,000,000,000,000 kg
+  mass_imperial: 7.27754746 × 1018 lbs # very large number - fix
+  mass_scientific: 3.3010 x 1023 kg
+  effective_temperature: -173/427 °C
+  effective_temperature_imperial: -279/801 °F
+  effective_temperature_scientific: 100/700 K
+  density: 5.427 g/cm3
 venus:
-  mean_distance_sun_km: 108208930
-  radius: 6051.59
-  surface_area: 460000000
-  volume: 9.28×1011
-  mass: 4.8690×1024
-  density: 5.24
+  radius: 6,051.8 km
+  radius_imperial: 3,760.4 miles
+  radius_scientific: 6.0518 x 103 km
+  surface_area: 460,234,317 km2
+  surface_area_imperial: 177,697,463 square miles
+  surface_area_scientific: 4.6023 x 108 km2
+  volume: 928,415,345,893 km3
+  volume_imperial: 222,738,686,740 mi3
+  volume_scientific: 9.28415 x 1011 km3
+  mass: 4,867,320,000,000,000,000,000,000 kg
+  mass_imperial: 1.07306038 × 1025 lbs # very large number - fix
+  mass_scientific: 4.8673 x 1024 kg
+  effective_temperature: 462 °C
+  effective_temperature_imperial: 864 °F
+  effective_temperature_scientific: 735 K
+  density: 5.243 g/cm3
 earth:
-  mean_distance_sun_km: 149597890
-  radius: 6378.1
-  surface_area: 510000000
-  volume: 1.083×1012
-  mass: 5.9742×1024
-  density: 5.515
+  radius: 6,371.00 km
+  radius_imperial:  3,958.8 miles
+  radius_scientific: 6.3710 x 103 km
+  surface_area: 510,064,472 km2
+  surface_area_imperial: 196,936,994 square miles
+  surface_area_scientific: 5.1006 x 108 km2
+  volume: 1,083,206,916,846 km3
+  volume_imperial: 259,875,159,532 mi3
+  volume_scientific: 1.08321 x 1012 km3
+  mass: 5,972,190,000,000,000,000,000,000 kg
+  mass_imperial: 1.31664252 × 1025 lbs # very large number - fix
+  mass_scientific: 5.9722 x 1024 kg
+  effective_temperature: -88/58 (min/max) °C
+  effective_temperature_imperial: -126/136 (min/max) °F
+  effective_temperature_scientific: 185/331 (min/max) K
+  density: 5.513 g/cm3
 mars:
-  mean_distance_sun_km: 227936640
-  radius: 3397.00
-  surface_area: 140000000
-  volume: 1.6318×1011
-  mass: 6.4191×1023
-  density: 3.940
+  radius: 3,389.5 km
+  radius_imperial: 2,106.1 miles
+  radius_scientific: 3.3895 x 103 km
+  surface_area: 144,371,391 km2
+  surface_area_imperial: 55,742,106 square miles
+  surface_area_scientific: 1.4437 x 108 km2
+  volume: 163,115,609,799 km3
+  volume_imperial: 39,133,515,914 mi3
+  volume_scientific: 1.63116 X 1011 km3
+  mass: 641,693,000,000,000,000,000,000 kg
+  mass_imperial: 1.4146909 × 1024 lbs # very large number - fix
+  mass_scientific: 6.4169 x 1023 kg
+  effective_temperature: -153/20 (min/max) °C
+  effective_temperature_imperial: -225/70 (min/max) °F
+  effective_temperature_scientific: 120/293 (min/max) K
+  density: 3.934 g/cm3
 jupiter:
-  mean_distance_sun_km: 778412010
-  radius: 71492.68
-  surface_area: 64000000000
-  volume: 1.431×1015
-  mass: 1.8987×1027
-  density: 1.33
+  radius: 69,911 km
+  radius_imperial: 43,440.7 miles
+  radius_scientific: 6.9911 x 104 km
+  surface_area: 61,418,738,571 km2
+  surface_area_imperial: 23,713,907,537 square miles
+  surface_area_scientific: 6.1419 x 1010 km2
+  volume: 1,431,281,810,739,360 km3
+  volume_imperial: 343,382,767,518,322 mi3
+  volume_scientific: 1.43128 x 1015 km3
+  mass: 1,898,130,000,000,000,000,000,000,000 kg
+  mass_imperial: 4.18466034 × 1027 lbs # very large number - fix
+  mass_scientific: 1.8981 x 1027 kg
+  effective_temperature: -148 °C
+  effective_temperature_imperial: -234 °F
+  effective_temperature_scientific: 125 K
+  density: 1.326 g/cm3
 saturn:
-  mean_distance_sun_km: 1426725400
-  radius: 60267.14
-  surface_area: 44000000000
-  volume: 8.27×1014
-  mass: 5.6851×1026
-  density: 0.70
+  radius: 58,232 km
+  radius_imperial: 36,183.7 miles
+  radius_scientific: 5.8232 x 104 km
+  surface_area: 42,612,133,285 km2
+  surface_area_imperial: 16,452,636,641 square miles
+  surface_area_scientific: 4.2612 x 1010 km2
+  volume: 827,129,915,150,897 km3
+  volume_imperial: 198,439,019,647,006 mi3
+  volume_scientific: 8.2713 x 1014 km3
+  mass: 568,319,000,000,000,000,000,000,000 kg
+  mass_imperial: 1.25292892 × 1027 lbs # very large number - fix
+  mass_scientific: 5.6832 x 1026 kg
+  effective_temperature: -178 °C
+  effective_temperature_imperial: -288 °F
+  effective_temperature_scientific: 95 K
+  density: 0.687 g/cm3
 uranus:
-  mean_distance_sun_km: 2870972200
-  radius: 25557.25
-  surface_area: 8100000000
-  volume: 6.834×1013
-  mass: 8.6849×1025
-  density: 1.30
+  radius: 25,362 km
+  radius_imperial: 15,759.2 miles
+  radius_scientific: 2.5362 x 104 km
+  surface_area: 8,083,079,690 km2
+  surface_area_imperial: 3,120,894,516 square miles
+  surface_area_scientific: 8.0831 x 109 km2
+  volume: 68,334,355,695,584 km3
+  volume_imperial: #not found
+  volume_scientific: 6.83344 x 1013 km3
+  mass: 86,810,300,000,000,000,000,000,000 kg
+  mass_imperial: 1.91383951 × 1026 lbs # very large number - fix
+  mass_scientific: 8.6810 x 1-216 °C025 kg
+  effective_temperature: -216 °C
+  effective_temperature_imperial: -357 °F
+  effective_temperature_scientific: 57 K
+  density: 1.270 g/cm3
 neptune:
-  mean_distance_sun_km: 4498252900
-  radius: 24766.36
-  surface_area: 7700000000
-  volume: 6.254×1013
-  mass: 1.0244×1026
-  density: 1.76
+  radius: 24,622 km
+  radius_imperial: 15,299.4 miles
+  radius_scientific: 2.4622 x 104 km
+  surface_area: 7,618,272,763 km2
+  surface_area_imperial: 2,941,431,558 square miles
+  surface_area_scientific: 7.6183 x 109 km2
+  volume: 62,525,703,987,421 km3
+  volume_imperial: 15,000,714,125,712 mi3
+  volume_scientific: 6.25257 x 1013 km3
+  mass: 102,410,000,000,000,000,000,000,000 kg
+  mass_imperial: 2.25775403 × 1026 lbs
+  mass_scientific: 1.0241 x 1026 kg
+  effective_temperature: -214 °C
+  effective_temperature_imperial: -353 °F
+  effective_temperature_scientific: 59 K
+  density: 1.638 g/cm3
