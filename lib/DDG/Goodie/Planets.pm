@@ -19,11 +19,10 @@ topics 'special_interest';
 attribution github => ["MrChrisW", "Chris Wilson"],
             web => ["http://chrisjwilson.com", "Chris Wilson"];
 
-my @triggers = qw(size radius volume mass);
+my @triggers = ( 'size', 'radius', 'volume', 'mass', 'temperature', 'surface area', 'area');
 triggers any => @triggers;
 
 # Load planet data 
-# https://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System
 my $planets = Load(scalar share('planets.yml')->slurp);
 
 # Handle statement
@@ -35,34 +34,34 @@ handle query_lc => sub {
   #declare vars
   my ($flag, $result, $planetObj);
 
-  # This is incorrect as a query like "size volume size of mars" will choose the last flag value
-  
-  if (m/size/) { $flag = "equatorial_radius" }
-  if (m/radius/) { $flag = "equatorial_radius" }
+  # This is incorrect a query like "size volume size of mars" will choose the last flag value
+  if (m/size/) { $flag = "radius" }
+  if (m/radius/) { $flag = "radius" }
   if (m/volume/) { $flag = "volume" }
   if (m/mass/) { $flag = "mass" }
+  if (m/area/) { $flag = "surface_area" }
 
   my $triggers = join('|', @triggers);
   s/$triggers//g; #remove keywords
   s/^\s+|\s+$//g; #trim
 
-  return unless $_; 
+  return unless $_; # return if empty query
+  $planetObj = $planets->{$_}; 
+  return unless $planetObj; # return if we don't have a valid planet
 
-  $planetObj = $planets->{$_};
-
-  return unless $planetObj;
-
-  my $test_location = test_location('au');
+  # Test Code # START
+  my $test_location = test_location('au'); 
   my $location = $test_location->country_code;
+  # Test Code # END
 
-  my $radius = $planetObj->{$flag});
-  my $radius_miles = $planetObj->{$flag}* 0.6214);
-
+  #Switch to imperial for non-metric countries
   if ($location =~ m/UK|US|MM|LR/) { 
-    $result = $radius_miles . ' miles (' . $radius . ' km)';
+    $result = $planetObj->{$flag."_imperial"};
   } else {
-    $result = $radius . ' km (' . $radius_miles . ' miles)';
+    $result = $planetObj->{$flag};
   }
+  #Convert any attributes to human friendly text. e.g surface_area = Surface Area
+  if($flag =~ /_/ ) { $flag = join ' ', map ucfirst lc, split /[_]+/, $flag; }
       structured_answer => {
         input     => [ucfirst($_)],
         operation => ucfirst($flag),
