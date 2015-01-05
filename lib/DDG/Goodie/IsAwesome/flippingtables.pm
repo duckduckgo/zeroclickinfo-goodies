@@ -16,7 +16,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/flippingtables", "flippingtables"];
 
 # Triggers
-triggers start => 'how many days are in', 'days in', 'number of days in', 'days';
+triggers start => 'how many days are in', 'days in', 'number of days in', 'days', 'how many days are there in', 'the number of days in';
 
 
 # Handle statement
