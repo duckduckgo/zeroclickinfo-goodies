@@ -33,6 +33,12 @@ foreach my $type (@types) {
     push(@units, @{$type->{'aliases'}});
 }
 
+# add data rates to @units manually, as it is not part of the Convert::Pluggable lib
+my @bits = ('bps', 'kbps', 'mbps', 'gbps', 'tbps', 'pbps', 'ebps', 'zbps', 'ybps');
+my @bytes = ('b/s', 'kb/s', 'mb/s', 'gb/s', 'tb/s', 'pb/s', 'eb/s', 'zb/s', 'yb/s');
+push(@units, @bits);
+push(@units, @bytes);
+
 # build triggers based on available conversion units:
 triggers any => @units;
 
@@ -96,7 +102,38 @@ handle query_lc => sub {
 
     my $styler = number_style_for($factor);
     return unless $styler;
+    
+    # data rates converter
+    if (grep(/^$matches[0]$/, @bits)) {
+        if (grep(/^$matches[1]$/, @bytes)) {
+            return data_rates_convert($+{'left_num'}, $matches[0], $matches[1]);
+        } else {
+            return;
+        }
+    }
+    if (grep(/^$matches[1]$/, @bits)) {
+        if (grep(/^$matches[0]$/, @bytes)) {
+            return data_rates_convert($+{'left_num'}, $matches[0], $matches[1]);
+        } else {
+            return;
+        }
+    }
+    if (grep(/^$matches[0]$/, @bytes)) {
+        if (grep(/^$matches[1]$/, @bits)) {
+            return data_rates_convert($+{'left_num'}, $matches[0], $matches[1]);
+        } else {
+            return;
+        }
+    }
+    if (grep(/^$matches[1]$/, @bytes)) {
+        if (grep(/^$matches[0]$/, @bits)) {
+            return data_rates_convert($+{'left_num'}, $matches[0], $matches[1]);
+        } else {
+            return;
+        }
+    }
 
+    # Convert::Pluggable converter
     my $result = $c->convert( {
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
@@ -175,6 +212,10 @@ sub looks_plural {
 
     my @unit_letters = split //, $unit;
     return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
+}
+
+sub data_rates_convert {
+    # todo: do conversion, return answer
 }
 
 1;
