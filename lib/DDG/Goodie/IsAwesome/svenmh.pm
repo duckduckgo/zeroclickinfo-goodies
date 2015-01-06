@@ -14,7 +14,6 @@ use LWP::Simple;
 zci answer_type => "is_awesome_svenmh";
 zci is_cached   => 1;
 
-# See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "Get PubMed titles from https://www.ncbi.nlm.nih.gov/";
 source "PubMed.gov";
 description "Provide links to the PubMed database from PubMed IDs.";
