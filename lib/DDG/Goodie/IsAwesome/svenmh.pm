@@ -44,15 +44,15 @@ handle remainder => sub {
     $pubmed->query_form(%qs);
     #warn $pubmed;
     
-    # Guessing the DDS guies arn't going to like using LWP::Simple in a
+    # Guessing the DDS guys arn't going to like using LWP::Simple in a
     # goodie.
     my $got=get($pubmed);
     
     # we don't use a hash here as we want them in the order returned from pubmed.
-    my @parced=summary($got);
+    my @parced=docsum($got);
 
     # if we get zero quit.  Should check for odd number of elements and report
-    # error someplace.
+    # errors someplace.
     return if 2>scalar(@parced);
 
     my $out='';
@@ -69,8 +69,8 @@ handle remainder => sub {
     return $pmids,'html'=>$out;
 };
 
-# Abstracted as I first was parsing MEDLINE entries before I remembered report summaries.
-sub summary{
+# Abstracted as I first was parsing MEDLINE entries before I remembered docsum.
+sub docsum{
     my $lines=shift;
     $lines=~s/\<[^\>]*\>//g; # Strip @
     $lines=~s/^\s*//;
