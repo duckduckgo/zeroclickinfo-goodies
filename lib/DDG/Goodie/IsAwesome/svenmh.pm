@@ -55,7 +55,7 @@ handle remainder => sub {
     # errors someplace.
     return if 2>scalar(@parced);
 
-    my $out='';
+    my @out;
     my $count=0;
     while(@parced){
         my $pmid=shift(@parced);
@@ -64,9 +64,9 @@ handle remainder => sub {
         ++$count;
         $pubmed->query_form(['term'=>$pmid]);
         # As <ol> seems to be list-styled away, I'll number them the old fashoned way.
-        $out.="<p>$count: <a href=\"$pubmed\">$ref</a></p>";
+        push(@out,"<p>$count: <a href=\"$pubmed\">$ref</a></p>");
     }
-    return $pmids,'html'=>$out;
+    return $pmids,'html'=>join("\n",@out);
 };
 
 # Abstracted as I first was parsing MEDLINE entries before I remembered docsum.
