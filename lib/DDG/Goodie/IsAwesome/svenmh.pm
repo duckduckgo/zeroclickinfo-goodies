@@ -40,8 +40,9 @@ handle remainder => sub {
 
     # I'm sure there is a BioPerl way to get this, but for now...
     my $pubmed=URI->new('https://www.ncbi.nlm.nih.gov/pubmed/');
-    my %qs=('report'=>'summary','format'=>'text','term'=>$pmids);
+    my %qs=('report'=>'docsum','format'=>'text','term'=>$pmids);
     $pubmed->query_form(%qs);
+    #warn $pubmed;
     
     # Guessing the DDS guies arn't going to like using LWP::Simple in a
     # goodie.
