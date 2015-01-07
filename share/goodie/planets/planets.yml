@@ -146,7 +146,7 @@ neptune:
   volume_imperial: 15,000,714,125,712 mi3
   volume_scientific: 6.25257 x 1013 km3
   mass: 102,410,000,000,000,000,000,000,000 kg
-  mass_imperial: 2.25775403 × 1026 lbs
+  mass_imperial: 2.25775403 × 1026 lbs # very large number - fix
   mass_scientific: 1.0241 x 1026 kg
   effective_temperature: -214 °C
   effective_temperature_imperial: -353 °F

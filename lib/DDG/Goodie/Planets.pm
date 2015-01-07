@@ -2,6 +2,7 @@ package DDG::Goodie::Planets;
 # ABSTRACT: Return various attributes of a planet
 
 use DDG::Goodie;
+with 'DDG::GoodieRole::ImageLoader';
 use YAML::XS qw( Load );
 use POSIX;
 use DDG::Test::Location;
@@ -21,6 +22,17 @@ attribution github => ["MrChrisW", "Chris Wilson"],
 
 my @triggers = ( 'size', 'radius', 'volume', 'mass', 'temperature', 'surface area', 'area');
 triggers any => @triggers;
+
+my %planetImages = (
+    earth => goodie_img_tag({filename => 'images/Earth.svg',height => 48, width => 48,}),
+    jupiter => goodie_img_tag({filename => 'images/Jupiter.svg',height => 48, width => 48,}),
+    mars => goodie_img_tag({filename => 'images/Mars.svg',height => 48, width => 48,}),
+    mercury => goodie_img_tag({filename => 'images/Mercury.svg',height => 48, width => 48,}),
+    neptune => goodie_img_tag({filename => 'images/Neptune.svg',height => 48, width => 48,}),
+    saturn => goodie_img_tag({filename => 'images/Saturn.svg',height => 48, width => 48,}),
+    uranus => goodie_img_tag({filename => 'images/Uranus.svg',height => 48, width => 48,}),
+    venus => goodie_img_tag({filename => 'images/Venus.svg',height => 48, width => 48,})
+);
 
 # Load planet data 
 my $planets = Load(scalar share('planets.yml')->slurp);
@@ -62,10 +74,28 @@ handle query_lc => sub {
   }
   #Convert any attributes to human friendly text. e.g surface_area = Surface Area
   if($flag =~ /_/ ) { $flag = join ' ', map ucfirst lc, split /[_]+/, $flag; }
-      structured_answer => {
-        input     => [ucfirst($_)],
-        operation => ucfirst($flag),
-        result    => $result
-      };
+
+  #Superscript for km3, mi3, km2 or mi2 - TODO: This is bad and broken
+  if($result =~ m/km(\d)|mi(\d)/) {
+    my $num = $1;
+    my $notation = $&;
+    $notation =~ s/$num//g;
+    $result =~ s/$&/<sup>$num<\/sup>/g;
+  }
+
+  my $html = "<div class='zci--planets'>";
+  $html .= "<span class=\"planets--planetImage\">";
+  $html .= $planetImages{$_};
+  $html .= "</span>";
+  $html .= "<span class=\"planets--info\">";
+  $html .= "<span class=\"text--primary planets--planetAttribute\">";
+  $html .= $result;
+  $html .= "</span>";
+  $html .= "<span class=\"text--secondary planets--planetName\">";
+  $html .= ucfirst($_).", ".ucfirst($flag);
+  $html .= "</span>";
+  $html .= "</span>";
+  $html .= "</div>";
+  return (html => $html);
 };
 1;
