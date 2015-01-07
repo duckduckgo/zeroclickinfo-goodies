@@ -1,0 +1,23 @@
+
+.zci--answer .zci--planets .planets--planetImage {
+    float:left;
+    margin-right: 10px;
+
+}
+.zci--answer .zci--planets .planets--planetAttribute {
+    font-size: 1.75em;
+    font-weight: 400;
+    display:block;
+}
+
+.zci--answer .zci--planets .planets--planetName {
+    font-size: 15px;
+    display:inline-block;
+}
+
+.zci--answer .zci--planets .planets--info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 48px;
+}
