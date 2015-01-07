@@ -15,8 +15,8 @@ name 'Perimeter';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Perimeter.pm';
 category 'calculations';
 topics 'math';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc', 'Michael Smith'],
+            cpan    => ['CRZEDPSYC', 'Michael Smith'];
 
 handle query_lc => sub {
     if ($_ =~ m/^(?:circumference (?:of\s|)(?:circle\s|)(\d+(?:\.\d+)?))|(?:(perimeter) (?:of\s|)(?:(square|circle|pentagon|hexagon|octagon) (\d+(?:\.\d+)?)|(rectangle) (\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)|(triangle) (\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)[,;]?\s(\d+(?:\.\d+)?)))$/) {

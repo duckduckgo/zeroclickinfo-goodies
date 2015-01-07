@@ -13,7 +13,7 @@ name "TwelveOclock";
 code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/TwelveOclock.pm";
 category "reference";
 topics "everyday";
-attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
+attribution github => ['duckduckgo', 'DuckDuckGo'];
 
 # Triggers
 triggers any => "midnight", "noon";

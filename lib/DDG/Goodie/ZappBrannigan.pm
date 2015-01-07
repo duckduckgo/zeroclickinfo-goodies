@@ -10,8 +10,8 @@ triggers any => "zapp", "brannigan";
 zci answer_type => 'zapp_brannigan';
 zci is_cached   => 0;
 
-attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
-            web    => ['http://github.com/nospampleasemam', 'nospampleasemam'];
+attribution github => ['nospampleasemam', 'Dylan Lloyd'],
+            web    => ['nospampleasemam', 'Dylan Lloyd'];
 
 primary_example_queries 'zapp brannigan quote';
 name 'Zapp Brannigan';

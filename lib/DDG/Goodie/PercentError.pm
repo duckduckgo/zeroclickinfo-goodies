@@ -15,8 +15,8 @@ name 'PercentError';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PercentError.pm';
 category 'calculations';
 topics 'math';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc', 'Michael Smith'],
+            cpan    => ['CRZEDPSYC', 'Michael Smith'];
 
 handle remainder => sub {
     my $length = length($_);
