@@ -33,7 +33,13 @@ handle query_raw => sub {
 		$result = ( $1 / (($1 * $3) / 100) );
 	}
 
-	return "Result: ". $result;
+	my $text = "Result: $result";
+	return $text,
+	structured_answer => {
+		input => $_,
+		operation => 'calculate',
+		result => $result
+	};
 	
 };
 
