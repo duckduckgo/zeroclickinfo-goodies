@@ -9,7 +9,7 @@ use DDG::Goodie;
 use DateTime;
 use POSIX qw(fmod);
 
-attribution github => ['https://github.com/GlitchMr', 'GlitchMr'];
+attribution github => ['GlitchMr', 'GlitchMr'];
 
 primary_example_queries '10:00AM MST to PST';
 secondary_example_queries '19:00 UTC to EST', '1am UTC to PST';

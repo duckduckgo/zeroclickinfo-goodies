@@ -14,7 +14,7 @@ description 'returns the birth stone of the specified month';
 name 'BirthStone';
 topics 'special_interest', 'entertainment';
 category 'random';
-attribution github => ['https://github.com/austinheimark', 'austin_heimark'];
+attribution github => ['https://github.com/austinheimark', 'Austin Heimark'];
 
 my %birthstones = (
     "January"   => "Garnet",

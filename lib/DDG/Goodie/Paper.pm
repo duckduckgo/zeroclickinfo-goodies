@@ -17,9 +17,9 @@ code_url
     'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Paper.pm';
 category 'conversions';
 topics 'special_interest';
-attribution github => 'loganom',
-            twitter => 'loganmccamon',
-            github => 'mattlehnig';
+attribution github => ['loganom', 'Logan McCamon'],
+            twitter => ['loganmccamon', 'Logan McCamon'],
+            github => ['mattlehnig', 'Matt Lehnig'];
 
 my $sizes = Load(scalar share('sizes.yml')->slurp);
 

@@ -12,9 +12,7 @@ name 'IPS';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IPS.pm';
 category 'ids';
 topics 'special_interest';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
 
 triggers query_nowhitespace_nodash => qr/(E[MA]\d{9})(IN|HR|)/xi;
 

@@ -13,7 +13,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'cheat_sheets';
 topics 'sysadmin';
 
-attribution github => ['https://github.com/warthurton', 'warthurton'];
+attribution github => ['warthurton', 'Wayne Arthurton'];
 
 triggers end => "public dns", "dns server", "dns servers";
 

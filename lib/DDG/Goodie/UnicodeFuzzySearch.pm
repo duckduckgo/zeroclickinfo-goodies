@@ -8,9 +8,9 @@ triggers startend => "unicode";
 zci is_cached => 1;
 
 attribution
-    github => "konr",
-    twitter => "konr",
-    web => "http://konr.mobi";
+    github => ["konr", 'Konrad Scorciapino'],
+    twitter => ["konr", 'Konrad Scorciapino'],
+    web => ["http://konr.mobi", 'Konrad Scorciapino'];
 primary_example_queries 'unicode black heart';
 secondary_example_queries "unicode 2665";
 

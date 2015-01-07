@@ -13,7 +13,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'cryptography';
 
-attribution github => ['https://github.com/hunterlang', 'hunterlang'];
+attribution github => ['hunterlang', 'Hunter Lang'];
 
 triggers startend => 'passphrase', 'pass phrase', 'random passphrase', 'passphrase random', 'random pass phrase', 'pass phrase random';
 
