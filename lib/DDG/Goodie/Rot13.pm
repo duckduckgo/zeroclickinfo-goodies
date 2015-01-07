@@ -11,7 +11,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'transformations';
 topics 'cryptography';
 
-attribution github => ['https://github.com/unlisted', 'unlisted'];
+attribution github => ['unlisted', 'Morgan'];
 
 triggers start => 'rot13';
 

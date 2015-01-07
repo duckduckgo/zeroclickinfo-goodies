@@ -11,7 +11,7 @@ category 'special';
 topics 'geek';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MakeMeASandwich.pm';
 attribution twitter => ['mattr555', 'Matt Ramina'],
-            github => ['https://github.com/mattr555/', 'Matt Ramina'];
+            github => ['mattr555', 'Matt Ramina'];
 
 triggers end => 'make me a sandwich';
 

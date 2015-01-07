@@ -18,8 +18,8 @@ category 'reference';
 topics 'trivia';
 primary_example_queries 'potus 16';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/POTUS.pm';
-attribution github  => ['https://github.com/numbertheory', 'John-Peter Etcheber'],
-            twitter => ['http://twitter.com/jpscribbles', 'John-Peter Etcheber'];
+attribution github  => ['numbertheory', 'John-Peter Etcheber'],
+            twitter => ['jpscribbles', 'John-Peter Etcheber'];
 
 my @presidents = @{Load(scalar share('presidents.yml')->slurp)};
 my $prez_count = scalar @presidents;

@@ -14,7 +14,9 @@ name "MoonPhases";
 topics "special_interest", "everyday";
 category "random";
 
-attribution github  => ['https://github.com/rpicard', 'Robert Picard'];
+attribution github  => ['rpicard', 'Robert Picard'],
+            twitter => ['__rlp', 'Robert Picard'],
+            web     => ['http://robert.io', 'Robert Picard'];
 
 
 triggers any => 'moon', 'lunar';

@@ -20,7 +20,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'cryptography';
 attribution web => ['http://www.guttula.com', 'Jarmo Kivekäs'],
-            github => [ 'jarmokivekas', 'Jarmo Kivekäs'];
+            github => ['jarmokivekas', 'Jarmo Kivekäs'];
 
 
 triggers startend => 'md5', 'md5sum';

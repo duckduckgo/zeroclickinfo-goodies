@@ -12,8 +12,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'special_interest';
 attribution web     => ['http://und3f.com', 'und3f'],
-            twitter => 'und3f',
-            github  => 'und3f',
+            twitter => ['und3f', 'und3f'],
+            github  => ['und3f', 'und3f'],
             cpan    => ['UNDEF', 'und3f'];
 
 triggers startend => 'morse', 'morse code';

@@ -17,8 +17,8 @@ name 'SumOfNaturalNumbers';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SumOfNaturalNumbers.pm';
 category 'calculations';
 topics 'math';
-attribution github => ['https://github.com/JulianGindi', 'JulianGindi'],
-            github => ['https://github.com/navneet35371', 'navneet35371'];
+attribution github => ['JulianGindi', 'Julian Gindi'],
+            github => ['navneet35371', 'Navneet Suman'];
 
 # This adds commas to the number.
 # It converts 10000000 to 10,000,000.
