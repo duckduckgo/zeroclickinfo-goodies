@@ -17,7 +17,7 @@ description 'show a little sudoku you can play in the browser';
 
 name 'Sudoku';
 category 'random';
-attribution github => ['https://github.com/DrDub', 'DrDub'],
+attribution github => ['DrDub', 'Pablo Duboue'],
 	web => ['http://duboue.net/', 'Pablo Duboue'],
 	github => ['https://github.com/mintsoft', 'Rob Emery'];
 

@@ -23,8 +23,8 @@ name 'ParseCron';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ParseCron.pm';
 category 'computing_info';
 topics 'sysadmin';
-attribution web     => [ 'http://indeliblestamp.com', 'Arun S' ],
-            github  => [ 'http://github.com/indeliblestamp', 'IndelibleStamp' ] ;
+attribution web     => ['http://indeliblestamp.com', 'Arun S'],
+            github  => ['indeliblestamp', 'Arun S'];
 
 handle remainder => sub {
     my $crontab = $_;

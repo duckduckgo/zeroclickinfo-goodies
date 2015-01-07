@@ -11,8 +11,8 @@ description 'Hichhiker\'s Guide to the Galaxy reference.';
 category 'special';
 topics 'entertainment';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UltimateAnswer.pm';
-attribution github  => ['https://github.com/jfeeneywm/', 'jfeeneywm'],
-            twitter => ['https://twitter.com/jfeeneywm', 'jfeeneywm'];
+attribution github  => ['jfeeneywm', 'Jason Feeney'],
+            twitter => ['jfeeneywm', 'Jason Feeney'];
 
 zci answer_type => 'ultimate_answer';
 zci is_cached   => 1;

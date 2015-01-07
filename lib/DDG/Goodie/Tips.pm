@@ -14,7 +14,7 @@ name 'Tips';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Tips.pm';
 category 'calculations';
 topics 'everyday';
-attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
+attribution github => [ 'mattlehning', 'Matt Lehning' ];
 
 zci answer_type => 'tip';
 zci is_cached   => 1;

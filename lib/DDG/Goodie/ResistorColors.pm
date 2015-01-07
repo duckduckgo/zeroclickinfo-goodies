@@ -28,7 +28,7 @@ category 'reference';
 topics 'science';
 
 attribution twitter => 'joewalnes',
-            web => ['http://joewalnes.com', 'joewalnes.com'],
+            web => ['http://joewalnes.com', 'Joe Walnes'],
             email => ['joe@walnes.com', 'Joe Walnes'],
             github => ["https://github.com/HackOrQuack", "HackOrQuack"];
 

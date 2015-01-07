@@ -15,7 +15,7 @@ name 'NLetterWords';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/NLetterWords.pm';
 topics 'words_and_games';
 category 'language';
-attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
+attribution github => ['nospampleasemam', 'Dylan Lloyd'],
             web => ['http://dylansserver.com/', 'Dylan Lloyd'];
 
 handle query_parts => sub {

@@ -23,7 +23,7 @@ name 'Sort';
 code_url 'http://github.com/koosha--';
 category 'computing_tools';
 topics 'programming';
-attribution github  => ['https://github.com/koosha--', 'koosha--'],
+attribution github  => ['koosha--', 'Koosha K. M.'],
             twitter => '_koosha_';
 
 my $delim = ', ';

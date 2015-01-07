@@ -19,8 +19,8 @@ name "Week";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Week.pm";
 category "dates";
 topics "everyday", "special_interest";
-attribution twitter => "garrettsquire",
-            github => "gsquire";
+attribution twitter => ["garrettsquire", 'Garrett Squire'],
+            github => ["gsquire", 'Garrett Squire'];
 
 triggers any => 'week';
 
