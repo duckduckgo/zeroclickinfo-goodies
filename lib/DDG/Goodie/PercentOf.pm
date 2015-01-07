@@ -16,9 +16,9 @@ attribution github => ["puskin94", "puskin"],
 
 my $result;
 
-triggers query_raw => qr/\d{1,3}\%$/;
+triggers query_nowhitespace => qr/\d{1,3}\%$/;
  
-handle query_raw => sub {	
+handle query_nowhitespace => sub {	
 
 	return unless $_ =~ qr/(\d+)(\+|\*|\/|\-)(\d+)\%/;
 
