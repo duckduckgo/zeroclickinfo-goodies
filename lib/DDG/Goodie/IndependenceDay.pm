@@ -3,6 +3,7 @@ package DDG::Goodie::IndependenceDay;
 
 use DDG::Goodie;
 use JSON;
+use utf8;
 
 zci answer_type => "independence_day";
 zci is_cached   => 1;
@@ -16,7 +17,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["jarmokivekas", "Jarmo Kivekäs"],
             web => ["http://guttula.com", "Jarmo Kivekäs"],
             github => ["YouriAckx", "Youri Ackx"],
-            twitter => "YouriAckx";
+            twitter => ["YouriAckx", "Youri Ackx"];
 
 
 # Triggers

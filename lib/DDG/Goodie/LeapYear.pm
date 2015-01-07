@@ -15,7 +15,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'dates';
 topics 'everyday';
 attribution github => [ 'https://github.com/tophattedcoder', 'Tom Bebbington'],
-twitter => '@tophattedcoder';
+            twitter => ['@tophattedcoder', 'Tom Bebbington'];
 
 zci is_cached => 1;
 triggers startend => 'leap years', 'leap year';

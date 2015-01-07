@@ -16,7 +16,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'math', 'programming';
 attribution cpan   => 'majuscule',
-            github => 'nospampleasemam',
+            github => ['nospampleasemam', 'Dylan Lloyd'],
             web    => ['https://dylansserver.com', 'Dylan Lloyd'] ;
 
 handle query_raw => sub {

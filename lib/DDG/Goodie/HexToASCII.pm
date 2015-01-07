@@ -19,8 +19,7 @@ name 'HexToASCII';
 code_url 'http://github.com';
 category 'computing_tools';
 topics 'programming';
-attribution github => ['https://github.com/koosha--', 'koosha--'],
-			twitter => '_koosha_';
+attribution github => ['https://github.com/koosha--', 'koosha--'];
 
 handle remainder => sub {
     my $value = $_;

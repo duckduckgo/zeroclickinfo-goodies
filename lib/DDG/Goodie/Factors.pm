@@ -16,7 +16,7 @@ description 'Returns the factors of the entered number';
 name 'Factors';
 topics 'math';
 category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
+attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
 
 handle remainder => sub {
     my $query = $_;

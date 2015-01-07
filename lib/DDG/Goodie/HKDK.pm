@@ -13,9 +13,7 @@ name 'HK/DK';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HKDK.pm';
 category 'ids';
 topics 'special_interest';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
 
 triggers query_nowhitespace_nodash => qr/([a-z]{2}\d{9}(?:hk|dk))/i;
 
