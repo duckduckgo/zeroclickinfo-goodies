@@ -10,7 +10,7 @@ topics 'geek';
 category 'conversions';
 name 'LeetSpeak';
 code_url 'https://github.com/antoine-vugliano/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/LeetSpeak.pm';
-attribution github => ['https://github.com/antoine-vugliano', 'antoine-vugliano'],
+attribution github => ['https://github.com/antoine-vugliano', 'Antoine Vugliano'],
             web    => ['http://antoine.vugliano.free.fr',     'Antoine Vugliano'];
 
 zci answer_type => 'leet_speak';

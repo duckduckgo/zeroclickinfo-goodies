@@ -19,8 +19,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'programming';
 attribution web     => ['robert.io',                 'Robert Picard'],
-            github  => ['http://github.com/rpicard', 'rpicard'],
-            twitter => ['http://twitter.com/__rlp',  '__rlp'];
+            github  => ['http://github.com/rpicard', 'Robert Picard'],
+            twitter => ['http://twitter.com/__rlp',  'Robert Picard'];
 
 handle remainder => sub {
     return unless $_ =~ /^(?<com>encode|decode|)\s*(?<str>.*)$/i;

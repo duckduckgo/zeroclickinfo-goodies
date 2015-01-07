@@ -17,10 +17,7 @@ name 'Calculator';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
 category 'calculations';
 topics 'math';
-attribution
-  web     => ['https://www.duckduckgo.com',    'DuckDuckGo'],
-  github  => ['https://github.com/duckduckgo', 'duckduckgo'],
-  twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github  => ['https://github.com/duckduckgo', 'duckduckgo'];
 
 triggers query_nowhitespace => qr<
         ^

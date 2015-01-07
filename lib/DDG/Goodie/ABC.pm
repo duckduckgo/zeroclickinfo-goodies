@@ -16,12 +16,8 @@ name 'ABC';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
 category 'random';
 topics 'trivia';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC',
-            twitter => 'kablamo_',
-            cpan    => 'KABLAMO',
-            github  => 'kablamo',
-            web     => ["http://kablamo.org", "Eric Johnson"] ;
+attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
+            github  => ['kablamo', 'Eric Johnson'];
 
 handle remainder => sub {
 

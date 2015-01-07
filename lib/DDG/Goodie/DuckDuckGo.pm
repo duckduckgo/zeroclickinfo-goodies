@@ -12,8 +12,8 @@ name 'DuckDuckGo';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
 category 'cheat_sheets';
 topics 'everyday';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC';
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'];
 
 my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
 
