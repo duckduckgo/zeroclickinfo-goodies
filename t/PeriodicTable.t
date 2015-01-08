@@ -15,7 +15,7 @@ ddg_goodie_test(
             'Nitrogen (N), Atomic mass 14.007 u',
             structured_answer => {
                 input => ['Nitrogen (N)'],
-                operation => 'atomic mass',
+                operation => 'Atomic Mass',
                 result => '14.007 u'
             },
         ),
@@ -23,7 +23,7 @@ ddg_goodie_test(
             'Nitrogen (N), Atomic mass 14.007 u',
             structured_answer => {
                 input => ['Nitrogen (N)'],
-                operation => 'atomic mass',
+                operation => 'Atomic Mass',
                 result => '14.007 u'
             },
         ),
@@ -31,7 +31,7 @@ ddg_goodie_test(
             'Nitrogen (N), Atomic mass 14.007 u',
             structured_answer => {
                 input => ['Nitrogen (N)'],
-                operation => 'atomic mass',
+                operation => 'Atomic Mass',
                 result => '14.007 u'
             },
         ),
@@ -41,7 +41,7 @@ ddg_goodie_test(
             'Nitrogen (N), Atomic number 7',
             structured_answer => {
                 input => ['Nitrogen (N)'],
-                operation => 'atomic number',
+                operation => 'Atomic Number',
                 result => '7'
             },
         ),
@@ -49,7 +49,7 @@ ddg_goodie_test(
             'Nitrogen (N), Atomic number 7',
             structured_answer => {
                 input => ['Nitrogen (N)'],
-                operation => 'atomic number',
+                operation => 'Atomic Number',
                 result => '7'
             },
         ),
@@ -57,7 +57,7 @@ ddg_goodie_test(
             'Nitrogen (N), Atomic number 7',
             structured_answer => {
                 input => ['Nitrogen (N)'],
-                operation => 'atomic number',
+                operation => 'Atomic Number',
                 result => '7'
             },
         ),
@@ -67,7 +67,7 @@ ddg_goodie_test(
             'Mercury (Hg), Atomic number 80',
             structured_answer => {
                 input => ['Mercury (Hg)'],
-                operation => 'atomic number',
+                operation => 'Atomic Number',
                 result => '80'
             },
         ),
@@ -75,7 +75,7 @@ ddg_goodie_test(
             'Hydrargyrum (Hg), Atomic number 80',
             structured_answer => {
                 input => ['Hydrargyrum (Hg)'],
-                operation => 'atomic number',
+                operation => 'Atomic Number',
                 result => '80'
             },
         ),
@@ -85,7 +85,7 @@ ddg_goodie_test(
             'Copernicium (Cn), Atomic number 112',
             structured_answer => {
                 input => ['Copernicium (Cn)'],
-                operation => 'atomic number',
+                operation => 'Atomic Number',
                 result => '112'
             },
         ),
@@ -93,7 +93,7 @@ ddg_goodie_test(
             'Ununbium (Uub), Atomic number 112',
             structured_answer => {
                 input => ['Ununbium (Uub)'],
-                operation => 'atomic number',
+                operation => 'Atomic Number',
                 result => '112'
             },
         ),
