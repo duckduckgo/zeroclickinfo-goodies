@@ -17,10 +17,12 @@ attribution github => ["puskin94", "puskin"],
 my $result;
 
 triggers query_nowhitespace => qr/\d{1,3}\%$/;
- 
-handle query_nowhitespace => sub {	
 
-	return unless $_ =~ qr/(\d+)(\+|\*|\/|\-)(\d+)\%/;
+handle query_nowhitespace => sub {
+
+	my $input = $_;
+
+	return unless $input =~ qr/(\d+)(\+|\*|\/|\-|of)(\d+)\%/;
 
 
 	if ($2 eq '-') {
@@ -36,13 +38,12 @@ handle query_nowhitespace => sub {
 	my $text = "Result: $result";
 	return $text,
 	structured_answer => {
-		input => $_,
+		input => [$input],
 		operation => 'calculate',
 		result => $result
 	};
-	
+
 };
 
 1;
-
 
