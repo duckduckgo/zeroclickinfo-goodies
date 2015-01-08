@@ -44,14 +44,14 @@ handle query_lc => sub {
     if ($is_mass_query) {
         return "$element_name ($element_symbol), Atomic mass $atomic_mass u", structured_answer => {
             input     => ["$element_name ($element_symbol)"],
-            operation => 'atomic mass',
+            operation => 'Atomic Mass',
             result    => "$atomic_mass u"
         };
     }
     else {
         return "$element_name ($element_symbol), Atomic number $atomic_number", structured_answer => {
             input     => ["$element_name ($element_symbol)"],
-            operation => 'atomic number',
+            operation => 'Atomic Number',
             result    => $atomic_number
         };
     }
