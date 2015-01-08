@@ -5,7 +5,6 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::ImageLoader';
 use YAML::XS qw( Load );
 use POSIX;
-use DDG::Test::Location;
 
 zci answer_type => "planets";
 zci is_cached   => 1;
@@ -61,10 +60,7 @@ handle query_lc => sub {
   $planetObj = $planets->{$_}; 
   return unless $planetObj; # return if we don't have a valid planet
 
-  # Test Code # START
-  my $test_location = test_location('us'); 
-  my $location = $test_location->country_code;
-  # Test Code # END
+  my $location = $loc->country_code;
 
   #Switch to imperial for non-metric countries
   if ($location =~ m/UK|US|MM|LR/i) { 
