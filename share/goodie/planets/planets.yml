@@ -4,7 +4,7 @@ sun:
   radius_imperial: 432,168.6 miles
   radius_scientific: 6.9551 x 105 km
   surface_area: 6,078,747,774,547 km2
-  surface_area_imperial: 2,347,017,636,988 square miles
+  surface_area_imperial: 2,347,017,636,988 mi2
   surface_area_scientific: 6.07877 x 1012 km2
   volume: 1,409,272,569,059,860,000 km3
   volume_imperial: 338,102,469,632,763,000 mi3
@@ -21,7 +21,7 @@ mercury:
   radius_imperial: 1,516.0 miles
   radius_scientific: 2.4397 x 103 km
   surface_area: 74,797,000 km2
-  surface_area_imperial: 28,879,000 square miles
+  surface_area_imperial: 28,879,000 mi2
   surface_area_scientific: 7.4797 x 107 km2
   volume: 60,827,208,742 km3
   volume_imperial: 14,593,223,446 mi3
@@ -38,7 +38,7 @@ venus:
   radius_imperial: 3,760.4 miles
   radius_scientific: 6.0518 x 103 km
   surface_area: 460,234,317 km2
-  surface_area_imperial: 177,697,463 square miles
+  surface_area_imperial: 177,697,463 mi2
   surface_area_scientific: 4.6023 x 108 km2
   volume: 928,415,345,893 km3
   volume_imperial: 222,738,686,740 mi3
@@ -55,7 +55,7 @@ earth:
   radius_imperial:  3,958.8 miles
   radius_scientific: 6.3710 x 103 km
   surface_area: 510,064,472 km2
-  surface_area_imperial: 196,936,994 square miles
+  surface_area_imperial: 196,936,994 mi2
   surface_area_scientific: 5.1006 x 108 km2
   volume: 1,083,206,916,846 km3
   volume_imperial: 259,875,159,532 mi3
@@ -72,7 +72,7 @@ mars:
   radius_imperial: 2,106.1 miles
   radius_scientific: 3.3895 x 103 km
   surface_area: 144,371,391 km2
-  surface_area_imperial: 55,742,106 square miles
+  surface_area_imperial: 55,742,106 mi2
   surface_area_scientific: 1.4437 x 108 km2
   volume: 163,115,609,799 km3
   volume_imperial: 39,133,515,914 mi3
@@ -89,7 +89,7 @@ jupiter:
   radius_imperial: 43,440.7 miles
   radius_scientific: 6.9911 x 104 km
   surface_area: 61,418,738,571 km2
-  surface_area_imperial: 23,713,907,537 square miles
+  surface_area_imperial: 23,713,907,537 mi2
   surface_area_scientific: 6.1419 x 1010 km2
   volume: 1,431,281,810,739,360 km3
   volume_imperial: 343,382,767,518,322 mi3
@@ -106,7 +106,7 @@ saturn:
   radius_imperial: 36,183.7 miles
   radius_scientific: 5.8232 x 104 km
   surface_area: 42,612,133,285 km2
-  surface_area_imperial: 16,452,636,641 square miles
+  surface_area_imperial: 16,452,636,641 mi2
   surface_area_scientific: 4.2612 x 1010 km2
   volume: 827,129,915,150,897 km3
   volume_imperial: 198,439,019,647,006 mi3
@@ -123,7 +123,7 @@ uranus:
   radius_imperial: 15,759.2 miles
   radius_scientific: 2.5362 x 104 km
   surface_area: 8,083,079,690 km2
-  surface_area_imperial: 3,120,894,516 square miles
+  surface_area_imperial: 3,120,894,516 mi2
   surface_area_scientific: 8.0831 x 109 km2
   volume: 68,334,355,695,584 km3
   volume_imperial: #not found
@@ -140,7 +140,7 @@ neptune:
   radius_imperial: 15,299.4 miles
   radius_scientific: 2.4622 x 104 km
   surface_area: 7,618,272,763 km2
-  surface_area_imperial: 2,941,431,558 square miles
+  surface_area_imperial: 2,941,431,558 mi2
   surface_area_scientific: 7.6183 x 109 km2
   volume: 62,525,703,987,421 km3
   volume_imperial: 15,000,714,125,712 mi3

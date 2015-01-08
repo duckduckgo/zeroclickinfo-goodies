@@ -62,12 +62,12 @@ handle query_lc => sub {
   return unless $planetObj; # return if we don't have a valid planet
 
   # Test Code # START
-  my $test_location = test_location('au'); 
+  my $test_location = test_location('us'); 
   my $location = $test_location->country_code;
   # Test Code # END
 
   #Switch to imperial for non-metric countries
-  if ($location =~ m/UK|US|MM|LR/) { 
+  if ($location =~ m/UK|US|MM|LR/i) { 
     $result = $planetObj->{$flag."_imperial"};
   } else {
     $result = $planetObj->{$flag};
@@ -75,27 +75,35 @@ handle query_lc => sub {
   #Convert any attributes to human friendly text. e.g surface_area = Surface Area
   if($flag =~ /_/ ) { $flag = join ' ', map ucfirst lc, split /[_]+/, $flag; }
 
-  #Superscript for km3, mi3, km2 or mi2 - TODO: This is bad and broken
-  if($result =~ m/km(\d)|mi(\d)/) {
-    my $num = $1;
-    my $notation = $&;
-    $notation =~ s/$num//g;
-    $result =~ s/$&/<sup>$num<\/sup>/g;
+  # Human friendly planet name + attribute
+  my $operation = ucfirst($_).", ".ucfirst($flag);
+
+  #Superscript for km3, mi3, km2 or mi2 
+  if($result =~ m/(km|mi)(\d)/) {
+    my $notation = $1; my $num = $2;
+    $result =~ s/$notation$num/$notation<sup>$num<\/sup>/;
   }
 
+  return pretty_output($result, $operation, $planetImages{$_});
+
+};
+
+sub pretty_output {
+  my ($result, $operation, $image) = @_;
   my $html = "<div class='zci--planets'>";
   $html .= "<span class=\"planets--planetImage\">";
-  $html .= $planetImages{$_};
+  $html .= $image;
   $html .= "</span>";
   $html .= "<span class=\"planets--info\">";
   $html .= "<span class=\"text--primary planets--planetAttribute\">";
   $html .= $result;
   $html .= "</span>";
   $html .= "<span class=\"text--secondary planets--planetName\">";
-  $html .= ucfirst($_).", ".ucfirst($flag);
+  $html .= $operation;
   $html .= "</span>";
   $html .= "</span>";
   $html .= "</div>";
   return (html => $html);
-};
+}
+
 1;
