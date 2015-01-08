@@ -276,14 +276,14 @@ handle remainder => sub {
 
         return $time, structured_answer => {
             input => [$line],
-            operation => 'crontab',
+            operation => 'Crontab',
             result => $time
         };
     } catch {
         chomp;
         return $_, structured_answer => {
             input => [$line],
-            operation => 'crontab',
+            operation => 'Crontab',
             result => $_
         };
     }
