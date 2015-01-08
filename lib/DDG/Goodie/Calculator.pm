@@ -81,7 +81,7 @@ handle query_nowhitespace => sub {
 
     return if ($query =~ /\b0x/);      # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
-    return if ($query =~ qr/((?<pcnt>\d+)%|(?<num>\d+))(?<op>(\+|\-|\*|\/))((?<pcnt>\d+)%|(?<num>\d+))/);    # Probably want to calculate a percent ( PercentOf will be Used )
+    return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
