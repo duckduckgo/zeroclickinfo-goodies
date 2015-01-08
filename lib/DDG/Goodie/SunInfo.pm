@@ -42,23 +42,6 @@ my $lat_lon_regex = qr/[\+\-]?[0-9]+(?:
         )
     )?/x;
 
-sub parse_arc {
-    my ($arc_string) = @_;
-    return unless $arc_string =~ qr/
-        (?<sign>[\+\-])?(?<deg>[0-9]+)(?:
-            ((?<dec_deg>\.[0-9]+)[°]?)
-            |(?:°?
-                (?:(?<min>[0-9]{1,2})')?
-                (?:(?<sec>[0-9]{1,2})(?:''|"))?
-            )
-        )?(?<dir>[NSEW])/x;
-    my $decimal_degrees = $+{'deg'};
-    $decimal_degrees += $+{'dec_deg'} if $+{'dec_deg'};
-    $decimal_degrees += $+{'min'}/60 if $+{'min'};
-    $decimal_degrees += $+{'sec'}/3600 if $+{'sec'};
-    $decimal_degrees *= -1 if $+{'sign'} && $+{'sign'} eq '-' || $+{'dir'} =~ /[SW]/;
-    return $decimal_degrees;
-}
 handle remainder => sub {
 
     my $remainder = shift // '';
@@ -75,15 +58,12 @@ handle remainder => sub {
     my ($lat, $lon, $tz) = ($loc->latitude, $loc->longitude, $loc->time_zone);
     my $where = where_string();
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
-    my $dt;
-    if($+{'when'}) {
-        $dt = parse_datestring_to_date($+{'when'});
-    }
-    else {
-        $dt = DateTime->now;
-    }
+    my $dt = DateTime->now;;
+    $dt = parse_datestring_to_date($+{'when'}) if($+{'when'});
+    
     return unless $dt;                                  # Also going to need to know which day.
     $dt->set_time_zone($tz);
+    
     $lon = parse_arc($+{'lon'}) if ($+{'lon'});
     $lat = parse_arc($+{'lat'}) if ($+{'lat'});
     
@@ -117,6 +97,24 @@ sub where_string {
         @where_bits = ($loc->country, $loc->continent_code);
     }
     return join(', ', @where_bits);
+}
+
+sub parse_arc {
+    my ($arc_string) = @_;
+    return unless $arc_string =~ qr/
+        (?<sign>[\+\-])?(?<deg>[0-9]+)(?:
+            ((?<dec_deg>\.[0-9]+)[°]?)
+            |(?:°?
+                (?:(?<min>[0-9]{1,2})')?
+                (?:(?<sec>[0-9]{1,2})(?:''|"))?
+            )
+        )?(?<dir>[NSEW])/x;
+    my $decimal_degrees = $+{'deg'};
+    $decimal_degrees += $+{'dec_deg'} if $+{'dec_deg'};
+    $decimal_degrees += $+{'min'}/60 if $+{'min'};
+    $decimal_degrees += $+{'sec'}/3600 if $+{'sec'};
+    $decimal_degrees *= -1 if $+{'sign'} && $+{'sign'} eq '-' || $+{'dir'} =~ /[SW]/;
+    return $decimal_degrees;
 }
 
 sub pretty_output {
