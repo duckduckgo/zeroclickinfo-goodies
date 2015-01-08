@@ -62,10 +62,12 @@ handle remainder => sub {
     $dt = parse_datestring_to_date($+{'when'}) if($+{'when'});
     
     return unless $dt;                                  # Also going to need to know which day.
-    $dt->set_time_zone($tz);
+    $dt->set_time_zone($tz) unless ($+{'lat'} && $+{'lon'});
     
     $lon = parse_arc($+{'lon'}) if ($+{'lon'});
     $lat = parse_arc($+{'lat'}) if ($+{'lat'});
+    
+    $where = "coordinates ${lat}°N ${lon}°E" if($+{'lat'} && $+{'lon'});
     
     my $sun_at_loc = DateTime::Event::Sunrise->new(
         longitude => $lon,
