@@ -6,6 +6,7 @@ with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::ImageLoader';
 
 use DateTime::Event::Sunrise;
+use utf8;
 
 zci answer_type => "sun_info";
 zci is_cached   => 0;
