@@ -6,7 +6,7 @@ with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::ImageLoader';
 
 use DateTime::Event::Sunrise;
-
+use Data::Dump qw(dump);
 zci answer_type => "sun_info";
 zci is_cached   => 0;
 
@@ -34,18 +34,38 @@ my $sunset_svg = goodie_img_tag({
     width    => 48,
 });
 
+my $lat_lon_regex = qr/[\+\-]?[0-9]+(?:
+        (?:\.[0-9]+[°]?)
+        |(?:°?
+            (?:[0-9]{1,2}')?
+            (?:[0-9]{1,2}(?:''|"))?
+        )
+    )/x;
+
 handle remainder => sub {
 
     my $remainder = shift // '';
     $remainder =~ s/\?//g;    # Strip question marks.
+    return unless $remainder =~ qr/^
+        (?:at\s
+            (?<lat>$lat_lon_regex)[NS]\s
+            (?<lon>$lat_lon_regex)[EW]\s
+        )?
+        (?:on|for)?\s?
+        (?<when>$datestring_regex)?
+    $/xi;
+    
+#    print STDERR $remainder.$/.dump($+).$/;
+#    die;
     my ($lat, $lon, $tz) = ($loc->latitude, $loc->longitude, $loc->time_zone);
     my $where = where_string();
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
     my $dt;
-    if (!$remainder) {
-        $dt = DateTime->now;
-    } elsif ($remainder =~ /^(?:on|for)?\s*(?<when>$datestring_regex)$/) {
+    if($+{'when'}) {
         $dt = parse_datestring_to_date($+{'when'});
+    }
+    else {
+        $dt = DateTime->now;
     }
     return unless $dt;                                  # Also going to need to know which day.
     $dt->set_time_zone($tz);
