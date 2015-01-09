@@ -66,7 +66,7 @@ handle remainder => sub {
             @out = ('0x' . lc $1, hex2bin($1), "hex", "binary");
         } else {
             # We didn't match anything else, so just convert whatever string is left.
-            @out = ($_, bin($_), "string", "binary");
+            @out = ($_, bin($_), "String", "Binary");
         }
     }
     return unless (@out);    # Didn't hit any conditions, must not be us.
