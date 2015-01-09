@@ -53,7 +53,7 @@ handle remainder => sub {
     return "$sorted_list (Sorted $dir)",
       structured_answer => {
         input     => [$unsorted_list],
-        operation => 'sort ' . $dir,
+        operation => 'Sort ' . $dir,
         result    => $sorted_list
       };
 };

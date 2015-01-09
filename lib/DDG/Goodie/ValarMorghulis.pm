@@ -26,7 +26,7 @@ handle remainder => sub {
     return $answer,
       structured_answer => {
         input     => ['Valar morghulis'],
-        operation => 'code phrase',
+        operation => 'Code phrase',
         result    => $answer
       };
 };

@@ -26,7 +26,7 @@ handle remainder => sub {
     return $answer,
       structured_answer => {
         input     => [],
-        operation => 'apparent current location',
+        operation => 'Apparent current location',
         result    => $answer
       };
 };

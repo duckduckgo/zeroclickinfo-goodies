@@ -25,7 +25,7 @@ handle remainder => sub {
     return $answer,
       structured_answer => {
         input     => [],
-        operation => 'the answer to the ultimate question of life, the universe and everything',
+        operation => 'The answer to the ultimate question of life, the universe and everything',
         result    => $answer
       };
 };
