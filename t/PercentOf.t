@@ -17,7 +17,6 @@ ddg_goodie_test(
             operation => "Calculate",
             result => 6
         }),
-
     '456+120%' => test_zci('Result: 1003.2',
         structured_answer => {
             input => ["456+120%"],

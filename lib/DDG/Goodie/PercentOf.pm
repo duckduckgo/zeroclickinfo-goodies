@@ -46,7 +46,6 @@ handle query_nowhitespace => sub {
         operation => 'Calculate',
         result => $result
     };
-
 };
 
 1;
