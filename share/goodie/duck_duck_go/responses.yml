@@ -66,7 +66,7 @@ duck:
   html: <img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.
   text: I am the duck. Dax the duck.
 engine:
-  base_format: '[DuckDuckGo. The search engine that doesn\'t track you]' 
+  base_format: '[DuckDuckGo. The search engine that doesn''t track you]' 
   info_url: https://duckduckgo.com/
 facebook:
   base_format: 'Like us on [Facebook]'
