@@ -1,0 +1,24 @@
+radio	3	30	 in the ELF band used by pipeline inspection gauges
+radio	30	300	 in the SLF band used by submarine communication systems
+radio	300	3000	 in the ULF band used by mine cave communication systems
+radio	3000	30000	 in the VLF band used by government time stations and navigation systems
+radio	30000	300000	 in the LF band used by AM broadcasts, government time stations, navigation systems, and weather alert systems
+radio	300000	3000000	 in the MF band used by AM broadcasts, navigation systems, and ship-to-shore communication systems
+radio	3000000	30000000	 in the HF band used by international shortwave broadcasts, aviation systems, government time stations, weather stations, and amateur radio
+radio	30000000	300000000	 in the VHF band used by FM broadcasts, televisions, amateur radio, marine communication systems, and air traffic control
+radio	300000000	3000000000	 in the UHF band used by televisions, cordless phones, cell phones, pagers, walkie-talkies, and satellites
+radio	3000000000	30000000000	 in the SHF band used by microwave ovens, wireless LANs, cell phones, and satellites
+radio	30000000000	300000000000	 in the EHF band used by radio telescopes, security screening systems, and point-to-point high-bandwidth devices
+radio	300000000000	3000000000000	 in the THF band used by satellites and radio telescopes
+infrared	3000000000000	 400000000000000	. Infrared light is found in sunlight and has a variety of industrial, commercial, scientific and household uses
+visible light	400000000000000	480000000000000	 corresponding to the color red
+visible light	480000000000000	505000000000000	 corresponding to the color orange
+visible light	505000000000000	525000000000000	 corresponding to the color yellow
+visible light	525000000000000	575000000000000	 corresponding to the color green
+visible light	575000000000000	610000000000000	 corresponding to the color cyan
+visible light	610000000000000	668000000000000	 corresponding to the color blue
+visible light	668000000000000	715000000000000	 corresponding to the color indigo
+visible light	715000000000000	800000000000000	 corresponding to the color violet
+ultraviolet	749500000000000	30000000000000000	. UV light is found in sunlight and is emitted by electric arcs and specialized lights such as mercury lamps and black lights
+x-ray	30000000000000000	30000000000000000000	. X-rays are used for various medical and industrial uses such as radiographs and CT scans
+gamma	30000000000000000000	3000000000000000000000000	. Gamma rays can be used to treat cancer and for diagnostic purposes
