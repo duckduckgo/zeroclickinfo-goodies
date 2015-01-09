@@ -1,5 +1,5 @@
 package DDG::Goodie::ColorCodes;
-# ABSTRACT: Copious information about various ways of [encoding colors.
+# ABSTRACT: Copious information about various ways of encoding colors.
 
 use DDG::Goodie;
 
