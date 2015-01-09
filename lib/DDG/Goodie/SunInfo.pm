@@ -68,7 +68,7 @@ handle remainder => sub {
     $lon = parse_arc($+{'lon'}) if ($+{'lon'});
     $lat = parse_arc($+{'lat'}) if ($+{'lat'});
     
-    $where = "coordinates ${lat}°N ${lon}°E" if($+{'lat'} && $+{'lon'});
+    $where = "Coordinates ${lat}°N ${lon}°E" if($+{'lat'} && $+{'lon'});
     
     my $sun_at_loc = DateTime::Event::Sunrise->new(
         longitude => $lon,
