@@ -14,8 +14,8 @@ name 'WhereAmI';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WhereAmI.pm';
 category 'computing_tools';
 topics 'travel';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc', 'Michael Smith'],
+            cpan    => ['CRZEDPSYC', 'Michael Smith'];
 
 handle remainder => sub {
     return if length($_) or !$loc or !$loc->city;

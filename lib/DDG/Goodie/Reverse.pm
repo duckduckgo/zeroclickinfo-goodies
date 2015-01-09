@@ -10,7 +10,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'transformations';
 topics 'words_and_games';
 
-attribution github => ['https://github.com/Getty', 'Getty'], cpan => 'GETTY';
+attribution github => ['https://github.com/Getty', 'Torsten Raudssus'], 
+            cpan => ['GETTY', 'Torsten Raudssus'];
 
 triggers startend => "reverse text";
 

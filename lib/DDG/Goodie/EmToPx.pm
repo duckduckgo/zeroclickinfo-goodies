@@ -15,8 +15,8 @@ name 'EmToPx';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/EmToPx.pm';
 category 'conversions';
 topics 'programming';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'];
 
 handle query_raw => sub {
     my $q = lc $_;

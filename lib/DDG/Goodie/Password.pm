@@ -11,7 +11,7 @@ primary_example_queries 'random password', 'random password strong 15';
 description 'generates a random password';
 name 'Password';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/Password.pm';
-attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
+attribution github => ['duckduckgo', 'DuckDuckGo'];
 category 'computing_tools';
 topics 'cryptography';
 
@@ -19,6 +19,9 @@ zci answer_type => 'pw';
 zci is_cached   => 0;
 
 triggers start => 'password', 'random password', 'pw', 'random pw', 'pwgen';
+
+use constant MAX_PWD_LENGTH => 64;
+use constant DEFAULT_PWD_LENGTH => 8;
 
 my %look_alikes = map { $_ => 1 } qw(l O I);    # Exclude alphabet characters which can be easily visually confused.
 my %averages = map { $_ => 1 } (2 .. 9);        # 0,1 missing for the same reasons as above.
@@ -44,7 +47,9 @@ foreach my $value (values %pw_strengths) {
 my $strengths = join('|', keys %pw_strengths);
 
 handle remainder => sub {
+
     my $query = shift;
+
     return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s*(?<sw>\d+|$strengths|)$/i);
 
     srand();                           # Reseed on each request.
@@ -52,7 +57,9 @@ handle remainder => sub {
     my @q_words = map { lc $_ } grep { defined } ($+{'fw'}, $+{'sw'});
 
     my $pw_length = first { looks_like_number($_) } @q_words;
-    $pw_length = ($pw_length) ? min(32, max(1, $pw_length)) : 8;
+    $pw_length = ($pw_length) ? max(1, $pw_length) : DEFAULT_PWD_LENGTH;
+
+    return if ($pw_length > MAX_PWD_LENGTH);
 
     my $strength_code = first { $_ && exists $pw_strengths{$_} } @q_words;
     my $pw_strength = $pw_strengths{$strength_code || 'average'};

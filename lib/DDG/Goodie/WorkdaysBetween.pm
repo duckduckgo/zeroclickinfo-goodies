@@ -21,7 +21,7 @@ name 'WorkDaysBetween';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WorkdaysBetween.pm';
 category 'calculations';
 topics 'everyday';
-attribution github => ['http://github.com/mgarriott', 'mgarriott'];
+attribution github => ['http://github.com/mgarriott', 'Matt Garriott'];
 
 my $datestring_regex = datestring_regex();
 

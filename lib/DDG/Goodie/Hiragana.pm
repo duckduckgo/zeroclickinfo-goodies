@@ -17,7 +17,7 @@ category "language";
 topics "special_interest";
 
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Hiragana.pm';
-attribution github => "mintsoft";
+attribution github => ['https://github.com/mintsoft', 'Rob Emery'];
 
 my %hiragana = (
     # gojuuon

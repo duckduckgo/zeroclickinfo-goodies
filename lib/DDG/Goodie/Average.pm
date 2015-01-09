@@ -15,8 +15,8 @@ name 'Average';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Average.pm';
 category 'calculations';
 topics 'math';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'];
 
 handle remainder => sub {
 

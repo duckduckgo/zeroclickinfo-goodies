@@ -12,7 +12,10 @@ my %guid = (
     'rfc 4122'                      => 0,
 );
 
-triggers start => keys %guid;
+# additional allowed triggers
+my $allowedTriggers = qr/new|random|generate/i;
+
+triggers any => keys %guid;
 
 zci answer_type => "guid";
 zci is_cached   => 0;
@@ -24,17 +27,21 @@ name 'GUID';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/GUID.pm';
 category 'computing_tools';
 topics 'programming';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC',
-            twitter => 'loganmccamon',
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'],
             github  => 'loganom';
 
 
 handle remainder => sub {
 
-    my $guid = Data::GUID->new;
+    s/$allowedTriggers//g; # strip allowed triggers
+    s/^\s+|\s+$//g; # trim
 
-    return unless $guid;
+    return if $_; # return if other words remaining
+
+    my $guid = Data::GUID->new; # generate new GUID
+
+    return unless $guid; # return if GUID doesn't exist
 
     return $guid->as_string,
       structured_answer => {

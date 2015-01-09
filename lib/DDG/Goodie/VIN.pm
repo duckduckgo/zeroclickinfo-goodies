@@ -14,9 +14,9 @@ name 'VIN';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/VIN.pm';
 category 'ids';
 topics 'special_interest';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution web => ['https://www.duckduckgo.com', 'DuckDuckGo'],
+            github => ['duckduckgo', 'DuckDuckGo'],
+            twitter => ['duckduckgo', 'DuckDuckGo'];
 
 triggers query_lc => qr/([\d+a-z]{17})|
                         (^\d+$)

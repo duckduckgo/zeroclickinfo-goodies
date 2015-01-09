@@ -14,7 +14,7 @@ description 'returns the greatest common factor of the two entered numbers';
 name 'GreatestCommonFactor';
 topics 'math';
 category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
+attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
 
 handle remainder => sub {
 

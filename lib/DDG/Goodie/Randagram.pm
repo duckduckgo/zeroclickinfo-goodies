@@ -16,7 +16,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "transformations";
 topics "words_and_games";
 
-attribution github => ["https://github.com/crazedpsyc", "crazedpsyc"];
+attribution github => ["crazedpsyc", "Michael Smith"];
 
 handle remainder => sub {
     s/^of\s(.*)/$1/i;
