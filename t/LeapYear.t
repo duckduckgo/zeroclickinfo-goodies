@@ -31,7 +31,7 @@ ddg_goodie_test(
     'is it a leap year?' => test_zci('2014 CE is not a leap year')
 );
 restore_time();
-set_fixed_time("2015-01-01T00:00:00");
+set_fixed_time("2015-12-01T00:00:00");
 ddg_goodie_test(
     [qw(
         DDG::Goodie::LeapYear
