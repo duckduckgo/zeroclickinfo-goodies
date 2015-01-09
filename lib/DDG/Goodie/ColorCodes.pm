@@ -95,9 +95,9 @@ sub create_output {
     
     $html = "<div class='col1'>"
           . "<p class='hex zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
-          . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex . ";weights=100;'>Images</a>"
+          . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex . ";weights=100;' class='tx-clr--lt'>Images</a>"
           . " | "
-          . "<a href='http://www.color-hex.com/color/" . $hex . "' title='Tints, information and similar colors on color-hex.com'>Info</a></p>"
+          . "<a href='http://www.color-hex.com/color/" . $hex . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--lt'>Info</a></p>"
           . "</div>"
           . "<div class='col2'>"
           . "<div>$comps</div>"
