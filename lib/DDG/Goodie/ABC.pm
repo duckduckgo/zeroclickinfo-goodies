@@ -31,12 +31,12 @@ handle remainder => sub {
     # rm every 'or' from the list
     my @choices = grep { lc $_ ne 'or' } @words;
 
-    my $selection_type = 'random';
+    my $selection_type = 'Random';
     my $selection;
     # Easter egg. For queries like:
     #   'choose duckduckgo or google or bing or something'
     if (my @duck = grep { / \A (?: duck (?: duckgo )? | ddg ) \z /ix } @choices) {
-        $selection_type = 'non-random';
+        $selection_type = 'Non-random';
         $selection      = $duck[0];
     } else {
         # Ensure rand is seeded for each process

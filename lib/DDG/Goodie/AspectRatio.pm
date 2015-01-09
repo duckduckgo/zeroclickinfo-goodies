@@ -36,7 +36,7 @@ handle remainder => sub {
         return "Aspect ratio: $result ($pretty_ratio)",
           structured_answer => {
             input     => [$pretty_ratio],
-            operation => 'aspect ratio',
+            operation => 'Aspect ratio',
             result    => $result
           };
     }

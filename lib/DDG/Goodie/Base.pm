@@ -41,7 +41,7 @@ handle query_clean => sub {
     return "$number in base $base is $based",
       structured_answer => {
         input     => ["$number"],
-        operation => 'decimal to base ' . $base,
+        operation => 'Decimal to base ' . $base,
         result    => $based
       };
 };
