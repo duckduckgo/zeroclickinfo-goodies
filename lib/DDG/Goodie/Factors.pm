@@ -27,7 +27,7 @@ handle remainder => sub {
     return "Factors of $query: $factors",
       structured_answer => {
         input     => [$query],
-        operation => 'factors',
+        operation => 'Factors',
         result    => $factors
       };
 };

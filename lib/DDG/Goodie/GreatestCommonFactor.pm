@@ -26,7 +26,7 @@ handle remainder => sub {
     return 'Greatest common factor of ' . $first . ' and ' . $second . ' is ' . $result . '.',
       structured_answer => {
         input     => [$first, $second],
-        operation => 'greatest common factor',
+        operation => 'Greatest common factor',
         result    => $result
       };
 };

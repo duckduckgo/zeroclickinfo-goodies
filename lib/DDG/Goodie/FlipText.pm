@@ -31,7 +31,7 @@ handle remainder => sub {
     return $result,
       structured_answer => {
         input     => [html_enc($input)],
-        operation => 'flip text',
+        operation => 'Flip text',
         result    => html_enc($result),
       };
 };
