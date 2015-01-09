@@ -4,7 +4,7 @@ package DDG::Goodie::UnicodeFuzzySearch;
 use DDG::Goodie;
 use URI::Escape::XS;
 
-triggers startend => "unicode";
+triggers startend => "unicode", "emoji";
 
 zci is_cached => 1;
 
