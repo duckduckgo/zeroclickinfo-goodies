@@ -97,16 +97,14 @@ handle query_lc => sub {
 
     my $styler = number_style_for($factor);
     return unless $styler;
-
+print $styler->for_computation($factor);
     my $result = $c->convert( {
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
         'to_unit' => $matches[1],
         'precision' => $precision,
     } );
-
     return if !$result->{'result'};
-
     my $f_result;
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
@@ -149,11 +147,81 @@ handle query_lc => sub {
     $factor = $styler->for_display($factor);
 
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
-      structured_answer => {
-        input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
-        operation => 'convert',
-        result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
-      };
+    html=>'<div class="contain"><div class="our_input"><input id="origin" class="conversions-input" type="text" value='.$factor.'></div><div class="buttonpanel"><span class="btn ddgsi ddgsi-chev-up fit-up" id="button-up-left"></span><span class="btn ddgsi ddgsi-chev-down fit-down" id="button-down-left"></span></div></div><span class="equals"> = </span>
+     <div class="contain"><div class="our_input"><input id="target" class="conversions-input" type="text" value='.$result->{'result'}.'></div><div class="buttonpanel"><span class="btn ddgsi ddgsi-chev-up fit-up" id="button-up-right"></span><span class="btn ddgsi ddgsi-chev-down fit-down" id="button-down-right"></span></div></div>
+<div class="tfirst">'. $result->{'from_unit'} .'</div><div class="tsecond">'. $result->{'to_unit'} .'</div>
+     <script>
+         var timeoudId = 0;
+         $("#button-up-left").mousedown(function( event ) {
+             timeoutId = setInterval(function () {
+                 $("#origin").val(parseFloat($("#origin").val(), 10) + 1);
+                 changeTarget();
+             }, 500);
+         }).bind("mouseup mouseleave", function() {
+             clearTimeout(timeoutId);
+         });
+         $("#button-up-left").click(function(event) {
+             $("#origin").val(parseFloat($("#origin").val(), 10) + 1);
+             changeTarget();
+         });
+         $("#button-down-left").mousedown(function( event ) {
+             timeoutId = setInterval(function () {
+                 $("#origin").val(parseFloat($("#origin").val(), 10) - 1);
+                 changeTarget();
+             }, 500);
+         }).bind("mouseup mouseleave", function() {
+             clearTimeout(timeoutId);
+         });
+         $("#button-down-left").click(function(event) {
+             $("#origin").val(parseFloat($("#origin").val(), 10) - 1);
+             changeTarget();
+         });
+         $("#button-up-right").mousedown(function( event ) {
+             timeoutId = setInterval(function () {
+                 $("#target").val(parseFloat($("#target").val(), 10) + 1);
+                 changeOrigin();
+             }, 500);
+         }).bind("mouseup mouseleave", function() {
+             clearTimeout(timeoutId);
+         });
+         $("#button-up-right").click(function(event) {
+             $("#target").val(parseFloat($("#target").val(), 10) + 1);
+             changeOrigin();
+         });
+         $("#button-down-right").mousedown(function( event ) {
+             timeoutId = setInterval(function () {
+                 $("#target").val(parseFloat($("#target").val(), 10) - 1);
+                 changeOrigin();
+             }, 500);
+         }).bind("mouseup mouseleave", function() {
+             clearTimeout(timeoutId);
+         });
+         $("#button-down-right").click(function(event) {
+             $("#target").val(parseFloat($("#target").val(), 10) - 1);
+             changeOrigin();
+         });
+         $( "#origin" ).keyup(function( event ) {
+             changeTarget();
+         }).keydown(function( event ) {
+             if ( event.which == 13 ) {
+                 event.preventDefault();
+             }
+         });
+         $( "#target" ).keyup(function( event ) {
+             changeOrigin();
+         }).keydown(function( event ) {
+             if ( event.which == 13 ) {
+                 event.preventDefault();
+             }
+         });
+         function changeOrigin() {
+             $( origin ).val($("#target").val() * '. $result->{'factor_1'} .'/'.$result->{'factor_2'}.');
+         }
+         function changeTarget() {
+             $( target ).val($("#origin").val() * '. $result->{'factor_2'} .'/'.$result->{'factor_1'}.');
+         }
+
+     </script>';
 };
 
 sub set_unit_pluralisation {

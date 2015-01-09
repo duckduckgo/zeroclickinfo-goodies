@@ -1,0 +1,61 @@
+.conversions-input {
+    height: 100%;
+    text-align: center;
+    background-color: #fff;
+    color: #393939;
+    border-radius: 2px;
+    border: 0;
+    font-size: 2.5em;
+    top:0;
+    width: 100%;
+    padding-top:0.2em;
+    padding-bottom:0.2em;
+}
+.equals {
+    font-size: 2em;
+    margin: 0.25em 0.75em;
+    float : left;
+}
+.contain {
+    width: 35%;
+    float:left;
+}
+.buttonpanel {
+    float:left;
+    position: relative;
+    width: 20%;
+    height: 100%;
+}
+.fit-down {
+    position: absolute;
+    left:0;
+    bottom: 0;
+    border-width: 0 0 0 0 !important;
+}
+.fit-up {
+    border-style: none none solid solid !important;
+    border-width: 0 0 0.5px !important;	
+}
+
+.btn, .button{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-radius: 0 !important;
+}
+.our_input {
+    float:left;
+    width: 80%;
+}
+.tfirst{
+    font-size: 2em;
+    text-align: center;
+    clear:left;
+    width:30%;
+    float:left;
+}
+.tsecond{
+    font-size: 2em;
+    text-align: center;
+    width:60%;
+    float:left;
+}
