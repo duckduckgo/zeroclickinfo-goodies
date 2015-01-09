@@ -31,7 +31,7 @@ handle remainder => sub {
   return qq|Reversed "$_": | . $out,
     structured_answer => {
       input     => [html_enc($in)],
-      operation => 'reverse string',
+      operation => 'Reverse string',
       result    => html_enc($out),
     };
 };
