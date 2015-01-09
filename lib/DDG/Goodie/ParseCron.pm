@@ -8,9 +8,10 @@ package DDG::Goodie::ParseCron;
 
 use DDG::Goodie;
 use Schedule::Cron::Events;
+use List::MoreUtils qw(firstidx);
 
 my @mon = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
-my @day = qw(Mon Tue Wed Thu Fri Sat Sun);
+my @day = qw(Sun Mon Tue Wed Thu Fri Sat);
 
 triggers start => 'crontab', 'cron', 'cronjob';
 
@@ -27,17 +28,24 @@ attribution web     => ['http://indeliblestamp.com', 'Arun S'],
             github  => ['indeliblestamp', 'Arun S'];
 
 handle remainder => sub {
-    my $crontab = $_;
-    # We replace Jan,Feb.. and Mon,Tue.. with 1,2..
-    foreach (0..$#mon) {
-	my $newmonth=$_+1;
-	$crontab =~ s/$mon[$_]/$newmonth/;
+    my $input = $_;
+
+    my @crontab = split( ' ', $input );
+
+    if( $crontab[3] ne '*' ) {
+        # Month value ranges 1-12.
+        $crontab[3] = ( firstidx{ $_ eq ucfirst $crontab[3] } @mon ) + 1;
     }
-    foreach (0..$#day) {
-	my $newday=$_+1;
-	$crontab =~ s/$day[$_]/$newday/;
+
+    if( $crontab[4] ne '*' ) {
+        # Day of Week value ranges 0-6, * 0 is Sunday
+        $crontab[4] = ( firstidx{ $_ eq ucfirst $crontab[4] } @day );
     }
-    my $cron = Schedule::Cron::Events->new($crontab) or return;
+
+    my $crontab_str = join( ' ', @crontab );
+
+    my $cron = Schedule::Cron::Events->new($crontab_str) or return;
+
     my $text;
     # Fix for issue #95: Show the next 3 events instead of just one.
     for (my $count=1;$count<=3;$count++) {
