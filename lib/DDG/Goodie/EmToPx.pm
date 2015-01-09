@@ -33,7 +33,7 @@ handle query_raw => sub {
     return "There $plur $result $target in $num $source (assuming a ${fontsize}px font size)",
       structured_answer => {
         input     => [$num . $source, $fontsize . 'px font size'],
-        operation => 'convert to ' . $target,
+        operation => 'Convert to ' . $target,
         result    => $result . $target
       };
 };

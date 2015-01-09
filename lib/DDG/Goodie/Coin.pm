@@ -45,7 +45,7 @@ handle query_lc => sub {
         $result . ' (random)',
         structured_answer => {
             input     => [$flips],
-            operation => 'flip coin',
+            operation => 'Flip coin',
             result    => $result
         });
 };
