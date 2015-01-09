@@ -19,6 +19,13 @@ my $result;
 triggers query_nowhitespace => qr/\d{1,3}\%$/;
 
 handle query_nowhitespace => sub {
+<<<<<<< HEAD
+=======
+
+	my $input = $_;
+
+	return unless $input =~ qr/(\d+)(\+|\*|\/|\-|of)(\d+)\%/;
+>>>>>>> b40b4023494fbf220646c667651c483dc37d157a
 
     my $input = $_;
 
@@ -43,6 +50,17 @@ handle query_nowhitespace => sub {
         result => $result
     };
 
+<<<<<<< HEAD
+=======
+	my $text = "Result: $result";
+	return $text,
+	structured_answer => {
+		input => [$input],
+		operation => 'calculate',
+		result => $result
+	};
+
+>>>>>>> b40b4023494fbf220646c667651c483dc37d157a
 };
 
 1;
