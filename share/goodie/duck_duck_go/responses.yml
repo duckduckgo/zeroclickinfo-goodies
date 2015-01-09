@@ -50,7 +50,7 @@ develop:
     - improve
     - relevancy
     - contribute
-  base_format: '[Develop Instant Answers for DuckDuckGo search results]
+  base_format: '[Develop Instant Answers for DuckDuckGo search results]'
   info_url: http://duckduckhack.com/
 doodle:
   base_format: 'Take a look at our [holiday logos]'
