@@ -57,6 +57,11 @@ duck:
     - mirrormirroronthewallwhosthefairestofthemall
   html: <img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.
   text: I am the duck. Dax the duck.
+engine:
+  aliases:
+    - option
+  html: <img src='https://duckduckgo.com/assets/logo_homepage.normal.v107.svg' alt='DuckDuckGo' /><br/>DuckDuckGo, the search engine that doesn't track you.
+  text: DuckDuckGo, the search engine that doesn't track you. 
 facebook:
   base_format: 'Like us on [Facebook]'
   info_url: https://www.facebook.com/duckduckgo
