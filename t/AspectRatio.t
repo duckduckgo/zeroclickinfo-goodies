@@ -5,7 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'Aspect_ratio';
+zci answer_type => 'aspect_ratio';
 zci is_cached => 1;
 
 ddg_goodie_test([qw(
