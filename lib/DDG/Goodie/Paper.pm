@@ -34,7 +34,7 @@ handle query_lc => sub {
     return $value,
       structured_answer => {
         input     => [$s],
-        operation => 'paper size',
+        operation => 'Paper size',
         result    => $value
       };
 };
