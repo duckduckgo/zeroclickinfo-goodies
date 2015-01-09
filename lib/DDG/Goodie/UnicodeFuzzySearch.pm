@@ -27,7 +27,7 @@ topics 'programming';
 my @lines = split /\n/, share("UnicodeData.txt")->slurp;
 
 use constant {
-    IMAGE_PROXY       => 'https://duckduckgo.com/iu/?u=',
+    IMAGE_PROXY       => '/iu/?u=',
     EMOJI_IMAGE_PATH  => 'http://www.emoji-cheat-sheet.com/graphics/emojis/<PATH>.png',
     EMOJI_LOWER_BOUND => 0x1F300,
     EMOJI_UPPER_BOUND => 0x1F6C5,
