@@ -12,84 +12,84 @@ my @six_to_ten = (
     'There are 5 workdays between 06 Jan 2014 and 10 Jan 2014.',
     structured_answer => {
         input     => ['06 Jan 2014', '10 Jan 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 5,
     });
 my @twentyfourteen = (
     'There are 251 workdays between 01 Jan 2014 and 01 Jan 2015.',
     structured_answer => {
         input     => ['01 Jan 2014', '01 Jan 2015'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 251,
     });
 my @twoohoh = (
     'There are 253 workdays between 31 Jan 2000 and 31 Jan 2001.',
     structured_answer => {
         input     => ['31 Jan 2000', '31 Jan 2001'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 253,
     });
 my @midjune = (
     'There are 12 workdays between 05 Jun 2014 and 20 Jun 2014.',
     structured_answer => {
         input     => ['05 Jun 2014', '20 Jun 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 12,
     });
 my @midjan = (
     'There are 6 workdays between 06 Jan 2014 and 13 Jan 2014.',
     structured_answer => {
         input     => ['06 Jan 2014', '13 Jan 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 6,
     });
 my @somejan = (
     'There are 5 workdays between 06 Jan 2014 and 12 Jan 2014.',
     structured_answer => {
         input     => ['06 Jan 2014', '12 Jan 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 5,
     });
 my @somesat = (
     'There are 2 workdays between 11 Jan 2014 and 14 Jan 2014.',
     structured_answer => {
         input     => ['11 Jan 2014', '14 Jan 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 2,
     });
 my @somesun = (
     'There are 2 workdays between 12 Jan 2014 and 14 Jan 2014.',
     structured_answer => {
         input     => ['12 Jan 2014', '14 Jan 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 2,
     });
 my @latejun = (
     'There are 5 workdays between 16 Jun 2014 and 20 Jun 2014.',
     structured_answer => {
         input     => ['16 Jun 2014', '20 Jun 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 5,
     });
 my @sameday = (
     'There is 1 workday between 03 Jan 2014 and 03 Jan 2014.',
     structured_answer => {
         input     => ['03 Jan 2014', '03 Jan 2014'],
-        operation => 'workday between',
+        operation => 'Workday between',
         result    => 1,
     });
 my @samedaywknd = (
     'There are 0 workdays between 04 Jan 2014 and 04 Jan 2014.',
     structured_answer => {
         input     => ['04 Jan 2014', '04 Jan 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 0,
     });
 my @weekend_middle = (
     'There are 2 workdays between 03 Jan 2014 and 06 Jan 2014.',
     structured_answer => {
         input     => ['03 Jan 2014', '06 Jan 2014'],
-        operation => 'workdays between',
+        operation => 'Workdays between',
         result    => 2,
     });
 
@@ -186,7 +186,7 @@ ddg_goodie_test(
         qr"There are [1-9] workdays between 10 Jan [0-9]{4} and 20 Jan [0-9]{4}\.",
         structured_answer => {
             input     => '-ANY-',
-            operation => 'workdays between',
+            operation => 'Workdays between',
             result    => qr/[1-9]/,
         }
     ),
@@ -195,7 +195,7 @@ ddg_goodie_test(
         qr"There are [1-9][0-9] workdays between 01 Jan [0-9]{4} and 01 Feb [0-9]{4}\.",
         structured_answer => {
             input     => '-ANY-',
-            operation => 'workdays between',
+            operation => 'Workdays between',
             result    => qr/[1-9][0-9]/,
         }
     ),
@@ -207,7 +207,7 @@ ddg_goodie_test(
         "There are 2 workdays between 03 Jan 2013 and 04 Jan 2013.",
         structured_answer => {
             input     => ['03 Jan 2013', '04 Jan 2013'],
-            operation => 'workdays between',
+            operation => 'Workdays between',
             result    => 2,
         }
     ),

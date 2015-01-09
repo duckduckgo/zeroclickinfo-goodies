@@ -14,7 +14,7 @@ ddg_goodie_test(
         'Binary conversion: foo (string) = 011001100110111101101111 (binary)',
         structured_answer => {
             input     => ['foo'],
-            operation => 'string to binary',
+            operation => 'String to Binary',
             result    => '011001100110111101101111'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'Binary conversion: 12 (decimal) = 00001100 (binary)',
         structured_answer => {
             input     => [12],
-            operation => 'decimal to binary',
+            operation => 'Decimal to Binary',
             result    => '00001100'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'Binary conversion: that (string) = 01110100011010000110000101110100 (binary)',
         structured_answer => {
             input     => ['that'],
-            operation => 'string to binary',
+            operation => 'String to Binary',
             result    => '01110100011010000110000101110100'
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         'Binary conversion: 127 (decimal) = 01111111 (binary)',
         structured_answer => {
             input     => ['127'],
-            operation => 'decimal to binary',
+            operation => 'Decimal to Binary',
             result    => '01111111'
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         'Binary conversion: 256 (decimal) = 0000000100000000 (binary)',
         structured_answer => {
             input     => ['256'],
-            operation => 'decimal to binary',
+            operation => 'Decimal to Binary',
             result    => '0000000100000000'
         }
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         'Binary conversion: 0x00 (hex) = 00000000 (binary)',
         structured_answer => {
             input     => ['0x00'],
-            operation => 'hex to binary',
+            operation => 'Hex to Binary',
             result    => '00000000'
         }
     ),
@@ -62,7 +62,7 @@ ddg_goodie_test(
         'Binary conversion: 0x1e (hex) = 00011110 (binary)',
         structured_answer => {
             input     => ['0x1e'],
-            operation => 'hex to binary',
+            operation => 'Hex to Binary',
             result    => '00011110'
         }
     ),
@@ -70,7 +70,7 @@ ddg_goodie_test(
         'Binary conversion: 0xa1 (hex) = 10100001 (binary)',
         structured_answer => {
             input     => ['0xa1'],
-            operation => 'hex to binary',
+            operation => 'Hex to Binary',
             result    => '10100001'
         }
     ),
@@ -78,7 +78,7 @@ ddg_goodie_test(
         'Binary conversion: 0xffff (hex) = 1111111111111111 (binary)',
         structured_answer => {
             input     => ['0xffff'],
-            operation => 'hex to binary',
+            operation => 'Hex to Binary',
             result    => '1111111111111111'
         }
     ),
@@ -86,7 +86,7 @@ ddg_goodie_test(
         'Binary conversion: 0xffff (hex) = 1111111111111111 (binary)',
         structured_answer => {
             input     => ['0xffff'],
-            operation => 'hex to binary',
+            operation => 'Hex to Binary',
             result    => '1111111111111111'
         }
     ),
@@ -94,7 +94,7 @@ ddg_goodie_test(
         'Binary conversion: 0xfefe (hex) = 1111111011111110 (binary)',
         structured_answer => {
             input     => ['0xfefe'],
-            operation => 'hex to binary',
+            operation => 'Hex to Binary',
             result    => '1111111011111110'
         }
     ),
@@ -102,7 +102,7 @@ ddg_goodie_test(
         'Binary conversion: 10 (binary) = 2 (decimal)',
         structured_answer => {
             input     => ['10'],
-            operation => 'binary to decimal',
+            operation => 'Binary to Decimal',
             result    => '2'
         }
     ),
@@ -110,7 +110,7 @@ ddg_goodie_test(
         'Binary conversion: 10 (binary) = 2 (decimal)',
         structured_answer => {
             input     => ['10'],
-            operation => 'binary to decimal',
+            operation => 'Binary to Decimal',
             result    => '2'
         }
     ),
@@ -118,7 +118,7 @@ ddg_goodie_test(
         'Binary conversion: 10 (decimal) = 00001010 (binary)',
         structured_answer => {
             input     => ['10'],
-            operation => 'decimal to binary',
+            operation => 'Decimal to Binary',
             result    => '00001010'
         }
     ),
@@ -126,7 +126,7 @@ ddg_goodie_test(
         'Binary conversion: 10 (decimal) = 00001010 (binary)',
         structured_answer => {
             input     => ['10'],
-            operation => 'decimal to binary',
+            operation => 'Decimal to Binary',
             result    => '00001010'
         }
     ),
@@ -134,7 +134,7 @@ ddg_goodie_test(
         'Binary conversion: 0x10 (hex) = 00010000 (binary)',
         structured_answer => {
             input     => ['0x10'],
-            operation => 'hex to binary',
+            operation => 'Hex to Binary',
             result    => '00010000'
         }
     ),
@@ -142,7 +142,7 @@ ddg_goodie_test(
         'Binary conversion: 0xg (string) = 001100000111100001100111 (binary)',
         structured_answer => {
             input     => ['0xg'],
-            operation => 'string to binary',
+            operation => 'String to Binary',
             result    => '001100000111100001100111'
         }
     ),
@@ -150,7 +150,7 @@ ddg_goodie_test(
         'Binary conversion: hex 0xg (string) = 01101000011001010111100000100000001100000111100001100111 (binary)',
         structured_answer => {
             input     => ['hex 0xg'],
-            operation => 'string to binary',
+            operation => 'String to Binary',
             result    => '01101000011001010111100000100000001100000111100001100111'
         }
     ),
@@ -158,7 +158,7 @@ ddg_goodie_test(
         'Binary conversion: 2336462209024 (decimal) = 000000100010000000000000000000000000000000000000 (binary)',
         structured_answer => {
             input     => ['2336462209024'],
-            operation => 'decimal to binary',
+            operation => 'Decimal to Binary',
             result    => '000000100010000000000000000000000000000000000000'
         }
     ),
@@ -166,7 +166,7 @@ ddg_goodie_test(
         'Binary conversion: 300000000000000 (decimal) = 00000001000100001101100100110001011011101100000000000000 (binary)',
         structured_answer => {
             input     => [300000000000000],
-            operation => 'decimal to binary',
+            operation => 'Decimal to Binary',
             result    => '00000001000100001101100100110001011011101100000000000000'
         }
     ),
@@ -174,7 +174,7 @@ ddg_goodie_test(
         'Binary conversion: Cygnus X-1 (string) = 01000011011110010110011101101110011101010111001100100000010110000010110100110001 (binary)',
         structured_answer => {
             input     => ['Cygnus X-1'],
-            operation => 'string to binary',
+            operation => 'String to Binary',
             result    => '01000011011110010110011101101110011101010111001100100000010110000010110100110001'
         }
     ),

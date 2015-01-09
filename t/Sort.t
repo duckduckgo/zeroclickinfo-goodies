@@ -14,7 +14,7 @@ ddg_goodie_test(
         '-3, -1, 4, 5.7 (Sorted ascendingly)',
         structured_answer => {
             input     => ['-1, 4, -3, 5.7'],
-            operation => 'sort ascendingly',
+            operation => 'Sort ascendingly',
             result    => '-3, -1, 4, 5.7'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         '-3, -1, 4, 5.7 (Sorted ascendingly)',
         structured_answer => {
             input     => ['-1, 4, -3, 5.7'],
-            operation => 'sort ascendingly',
+            operation => 'Sort ascendingly',
             result    => '-3, -1, 4, 5.7'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         '-3, -1, 4, 5.7 (Sorted ascendingly)',
         structured_answer => {
             input     => ['-1, 4, -3, 5.7'],
-            operation => 'sort ascendingly',
+            operation => 'Sort ascendingly',
             result    => '-3, -1, 4, 5.7'
         }
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         '-10, -3, 10, 56 (Sorted ascendingly)',
         structured_answer => {
             input     => ['-3, -10, 56, 10'],
-            operation => 'sort ascendingly',
+            operation => 'Sort ascendingly',
             result    => '-10, -3, 10, 56'
         }
     ),

@@ -21,7 +21,7 @@ ddg_goodie_test(
         qr/(pick|axe) \(random\)/,
         structured_answer => {
             input     => ['pick or axe'],
-            operation => 'random selection from',
+            operation => 'Random selection from',
             result    => qr/^(?:pick|axe)$/,
         }
     ),
@@ -29,7 +29,7 @@ ddg_goodie_test(
         qr/(yes|no) \(random\)/,
         structured_answer => {
             input     => ['yes or no'],
-            operation => 'random selection from',
+            operation => 'Random selection from',
             result    => qr/^(?:yes|no)$/,
         }
     ),
@@ -37,7 +37,7 @@ ddg_goodie_test(
         qr/(this|that|none) \(random\)/,
         structured_answer => {
             input     => ['this, that or none'],
-            operation => 'random selection from',
+            operation => 'Random selection from',
             result    => qr/^(?:this|that|none)$/,
         }
     ),
@@ -45,7 +45,7 @@ ddg_goodie_test(
         qr/(this|that|none) \(random\)/,
         structured_answer => {
             input     => ['this, that or none'],
-            operation => 'random selection from',
+            operation => 'Random selection from',
             result    => qr/^(?:this|that|none)$/,
         }
     ),
@@ -53,7 +53,7 @@ ddg_goodie_test(
         qr/(heads|tails) \(random\)/,
         structured_answer => {
             input     => ['heads or tails'],
-            operation => 'random selection from',
+            operation => 'Random selection from',
             result    => qr/^(?:heads|tails)$/,
         }
     ),
@@ -61,7 +61,7 @@ ddg_goodie_test(
         qr/(heads|tails) \(random\)/,
         structured_answer => {
             input     => ['heads or tails'],
-            operation => 'random selection from',
+            operation => 'Random selection from',
             result    => qr/^(?:heads|tails)$/,
         }
     ),
@@ -69,7 +69,7 @@ ddg_goodie_test(
         'duckduckgo (non-random)',
         structured_answer => {
             input     => ['duckduckgo, google, bing or something'],
-            operation => 'non-random selection from',
+            operation => 'Non-random selection from',
             result    => 'duckduckgo',
         }
     ),
@@ -77,7 +77,7 @@ ddg_goodie_test(
         'DuckDuckGo (non-random)',
         structured_answer => {
             input     => ['Google, DuckDuckGo, Bing or SOMETHING'],
-            operation => 'non-random selection from',
+            operation => 'Non-random selection from',
             result    => 'DuckDuckGo',
         }
     ),
