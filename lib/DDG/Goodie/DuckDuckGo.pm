@@ -17,7 +17,7 @@ attribution twitter => ['crazedpsyc','crazedpsyc'],
 
 my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
 
-triggers any => @ddg_aliases, "zeroclickinfo";
+triggers any => @ddg_aliases, "zeroclickinfo", "private search";
 
 zci is_cached => 1;
 
