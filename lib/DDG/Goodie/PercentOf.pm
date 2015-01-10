@@ -20,7 +20,7 @@ triggers query_nowhitespace => qr/\d{1,3}\%$/;
 
 handle query_nowhitespace => sub {
 
-	my $input = $_;
+    my $input = $_;
 
     return unless $input =~ qr/(\d+)(\+|\*|\/|\-)(\d+)\%/;
 
