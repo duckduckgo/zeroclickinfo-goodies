@@ -41,7 +41,7 @@ handle remainder => sub {
     return "There are $daysBetween days between $startDate and $endDate$inclusive.",
       structured_answer => {
         input     => [$startDate, $endDate,],
-        operation => 'days between' . $inclusive,
+        operation => 'Days between' . $inclusive,
         result    => $daysBetween
       };
 };

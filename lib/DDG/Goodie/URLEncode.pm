@@ -21,7 +21,7 @@ category                    'computing_tools';
 topics                      'programming', 'web_design';
 attribution twitter =>      ['nshanmugham', 'Nishanth Shanmugham'],
             web     =>      ['http://nishanths.github.io', 'Nishanth Shanmugham'],
-            github  =>      ['https://github.com/nishanths', 'Nishanth Shanmugham'];
+            github  =>      ['nishanths', 'Nishanth Shanmugham'];
 
 
 handle remainder => sub {

@@ -19,8 +19,7 @@ name 'HexToASCII';
 code_url 'http://github.com';
 category 'computing_tools';
 topics 'programming';
-attribution github => ['https://github.com/koosha--', 'koosha--'],
-			twitter => '_koosha_';
+attribution github => ['https://github.com/koosha--', 'koosha--'];
 
 handle remainder => sub {
     my $value = $_;
@@ -47,7 +46,7 @@ handle remainder => sub {
         return $pure . ' (ASCII)',
           structured_answer => {
             input     => [$value],
-            operation => 'hex to ASCII',
+            operation => 'Hex to ASCII',
             result    => $html,
           };
     }

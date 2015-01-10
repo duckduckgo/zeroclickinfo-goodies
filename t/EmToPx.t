@@ -14,7 +14,7 @@ ddg_goodie_test(
         'There are 0.625 em in 10 px (assuming a 16px font size)',
         structured_answer => {
             input     => ['10px', '16px font size'],
-            operation => 'convert to em',
+            operation => 'Convert to em',
             result    => '0.625em'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'There are 16 px in 1 em (assuming a 16px font size)',
         structured_answer => {
             input     => ['1em', '16px font size'],
-            operation => 'convert to px',
+            operation => 'Convert to px',
             result    => '16px'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         "There is 1 em in 12.2 px (assuming a 12.2px font size)",
         structured_answer => {
             input     => ['12.2px', '12.2px font size'],
-            operation => 'convert to em',
+            operation => 'Convert to em',
             result    => '1em'
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         'There are 0.7625 em in 12.2 px (assuming a 16px font size)',
         structured_answer => {
             input     => ['12.2px', '16px font size'],
-            operation => 'convert to em',
+            operation => 'Convert to em',
             result    => '0.7625em'
         }
     ),

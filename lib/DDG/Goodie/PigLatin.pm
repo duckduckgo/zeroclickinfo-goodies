@@ -9,8 +9,8 @@ triggers startend => 'pig latin', 'piglatin';
 zci answer_type => "translation";
 zci is_cached   => 1;
 
-attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
-            web    => ['http://github.com/nospampleasemam', 'nospampleasemam'];
+attribution github => ['nospampleasemam', 'Dylan Lloyd'],
+            web    => ['nospampleasemam', 'Dylan Lloyd'];
 
 primary_example_queries 'pig latin i love duckduckgo';
 name 'PigLatin';
@@ -27,7 +27,7 @@ handle remainder => sub {
     return "Pig Latin: " . $out,
       structured_answer => {
         input     => [html_enc($in)],
-        operation => 'translate to Pig Latin',
+        operation => 'Translate to Pig Latin',
         result    => html_enc($out)
       };
 };

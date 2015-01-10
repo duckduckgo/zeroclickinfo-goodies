@@ -44,6 +44,14 @@ community:
 contributing:
   base_format: '[Contributing to DuckDuckGo]'
   info_url: https://duck.co/help/community/contributing
+develop:
+  aliases: 
+    - developers
+    - improve
+    - relevancy
+    - contribute
+  base_format: '[Develop Instant Answers for DuckDuckGo search results]'
+  info_url: http://duckduckhack.com/
 doodle:
   base_format: 'Take a look at our [holiday logos]'
   info_url: https://duck.co/help/settings/holiday-logos
@@ -57,6 +65,9 @@ duck:
     - mirrormirroronthewallwhosthefairestofthemall
   html: <img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.
   text: I am the duck. Dax the duck.
+engine:
+  base_format: '[DuckDuckGo. The search engine that doesn''t track you]' 
+  info_url: https://duckduckgo.com/
 facebook:
   base_format: 'Like us on [Facebook]'
   info_url: https://www.facebook.com/duckduckgo

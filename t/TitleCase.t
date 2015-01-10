@@ -14,7 +14,7 @@ ddg_goodie_test(
         'Test This Out',
         structured_answer => {
             input     => ['test this out'],
-            operation => 'title case',
+            operation => 'Title case',
             result    => 'Test This Out'
         },
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'This Is a Walk in the Park',
         structured_answer => {
             input     => ['this is a walk in the park'],
-            operation => 'title case',
+            operation => 'Title case',
             result    => 'This Is a Walk in the Park'
         },
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'A Good Day to Die Hard',
         structured_answer => {
             input     => ['a good day to die hard'],
-            operation => 'title case',
+            operation => 'Title case',
             result    => 'A Good Day to Die Hard'
         },
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         'A Good Day to Die Hard',
         structured_answer => {
             input     => ['A GOOD DAY TO                   DIE HARD'],
-            operation => 'title case',
+            operation => 'Title case',
             result    => 'A Good Day to Die Hard'
         },
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         'Here I Am Testing-Hyphenated-Words',
         structured_answer => {
             input     => ['here i am testing-hyphenated-words'],
-            operation => 'title case',
+            operation => 'Title case',
             result    => 'Here I Am Testing-Hyphenated-Words'
         },
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         'Test',
         structured_answer => {
             input     => ['test'],
-            operation => 'title case',
+            operation => 'Title case',
             result    => 'Test'
         },
     ),
