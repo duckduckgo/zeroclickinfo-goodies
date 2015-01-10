@@ -14,7 +14,7 @@ ddg_goodie_test(
         'Pennsylvania sales tax: 6%',
         structured_answer => {
             input     => ['Pennsylvania'],
-            operation => 'SalesTax',
+            operation => 'Sales tax for',
             result    => '6%'
         }
     ),
