@@ -14,7 +14,7 @@ category 'random';
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SalesTax.pm";
 source "https://en.wikipedia.org/wiki/Sales_taxes_in_the_United_States";
 attribution github => ['https://github.com/javathunderman', 'Thomas Denizou'];
-            twitter => ["emposoft",     "Thomas Denizou"];
+            
 
 my %salestax = (
     "Alabama"   => "4%",
