@@ -21,7 +21,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/W25", "W25"];
 
 # Triggers
-triggers any => 'easter', 'passover', 'pesach', 'rosh hashanah', 'jewish holidays';
+triggers any => 'easter', 'passover', 'pesach', 'rosh hashana', 'rosh hashanah', 'jewish holidays';
 
 
 my @month_names = qw(January February March April May June
@@ -39,7 +39,7 @@ handle query_raw => sub {
     
     # Read the input
     my $holiday = qr/(?<h>catholic\s+easter| orthodox\s+easter| protestant\s+easter| easter|
-        passover| pesach| rosh\s+hashanah| jewish\s+holidays)/ix;
+        passover| pesach| rosh\s+hashanah?| jewish\s+holidays)/ix;
     
     return unless /^(?:$holiday\s+
             ((?:date) (?:\s+(?<y>\d{4}))? |
@@ -68,7 +68,7 @@ handle query_raw => sub {
         return if ($year < 1900 || $year > 2099);
         $result = output_date(passover($year));
         
-    } elsif ($operation eq 'Rosh Hashanah') {
+    } elsif ($operation eq 'Rosh Hashanah' || $operation eq 'Rosh Hashana') {
         return if ($year < 1900 || $year > 2099);
         $result = output_date(roshhashanah($year));
         
