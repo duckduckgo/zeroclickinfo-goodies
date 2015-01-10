@@ -46,7 +46,7 @@ handle remainder => sub {
         return $pure . ' (ASCII)',
           structured_answer => {
             input     => [$value],
-            operation => 'hex to ASCII',
+            operation => 'Hex to ASCII',
             result    => $html,
           };
     }

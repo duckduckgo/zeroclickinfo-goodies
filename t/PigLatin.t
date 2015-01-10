@@ -14,7 +14,7 @@ ddg_goodie_test(
         'Pig Latin: illway isthay orkway?',
         structured_answer => {
             input     => ['will this work?'],
-            operation => 'translate to Pig Latin',
+            operation => 'Translate to Pig Latin',
             result    => 'illway isthay orkway?'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'Pig Latin: iway ovelay uckduckgoday',
         structured_answer => {
             input     => ['i love duckduckgo'],
-            operation => 'translate to Pig Latin',
+            operation => 'Translate to Pig Latin',
             result    => 'iway ovelay uckduckgoday'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'Pig Latin: iway ovelay uckduckgoday',
         structured_answer => {
             input     => ['i love duckduckgo'],
-            operation => 'translate to Pig Latin',
+            operation => 'Translate to Pig Latin',
             result    => 'iway ovelay uckduckgoday'
         }
     ),

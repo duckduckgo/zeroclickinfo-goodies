@@ -50,7 +50,7 @@ handle remainder => sub {
   return $sequence,
     structured_answer => {
       input     => [$normalized_seq],
-      operation => 'nucleotide reverse complement',
+      operation => 'Nucleotide reverse complement',
       result    => $sequence
     };
 };

@@ -14,7 +14,7 @@ ddg_goodie_test(
         'There are 366 days between 01 Jan 2000 and 01 Jan 2001.',
         structured_answer => {
             input     => ['01 Jan 2000', '01 Jan 2001'],
-            operation => 'days between',
+            operation => 'Days between',
             result    => 366
         },
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'There are 367 days between 01 Jan 2000 and 01 Jan 2001, inclusive.',
         structured_answer => {
             input     => ['01 Jan 2000', '01 Jan 2001'],
-            operation => 'days between, inclusive',
+            operation => 'Days between, inclusive',
             result    => 367
         },
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'There are 5728 days between 04 Mar 2005 and 08 Nov 2020.',
         structured_answer => {
             input     => ['04 Mar 2005', '08 Nov 2020'],
-            operation => 'days between',
+            operation => 'Days between',
             result    => 5728
         },
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         'There are 802 days between 02 Jan 2003 and 14 Mar 2005.',
         structured_answer => {
             input     => ['02 Jan 2003', '14 Mar 2005'],
-            operation => 'days between',
+            operation => 'Days between',
             result    => 802
         },
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         'There are 366 days between 31 Jan 2000 and 31 Jan 2001.',
         structured_answer => {
             input     => ['31 Jan 2000', '31 Jan 2001'],
-            operation => 'days between',
+            operation => 'Days between',
             result    => 366
         },
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         'There are 367 days between 31 Jan 2000 and 31 Jan 2001, inclusive.',
         structured_answer => {
             input     => ['31 Jan 2000', '31 Jan 2001'],
-            operation => 'days between, inclusive',
+            operation => 'Days between, inclusive',
             result    => 367
         },
     ),
@@ -62,7 +62,7 @@ ddg_goodie_test(
         'There are 367 days between 31 Jan 2000 and 31 Jan 2001, inclusive.',
         structured_answer => {
             input     => ['31 Jan 2000', '31 Jan 2001'],
-            operation => 'days between, inclusive',
+            operation => 'Days between, inclusive',
             result    => 367
         },
     ),
@@ -70,7 +70,7 @@ ddg_goodie_test(
         "There are 284158 days between 01 Jan 1234 and 01 Jan 2012.",
         structured_answer => {
             input     => ['01 Jan 1234', '01 Jan 2012'],
-            operation => 'days between',
+            operation => 'Days between',
             result    => 284158
         },
     ),
@@ -78,7 +78,7 @@ ddg_goodie_test(
         qr/^There are 15 days between.+inclusive\.$/,
         structured_answer => {
             input     => '-ANY-',
-            operation => 'days between, inclusive',
+            operation => 'Days between, inclusive',
             result    => 15
         },
     ),
@@ -86,7 +86,7 @@ ddg_goodie_test(
         qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/,
         structured_answer => {
             input     => '-ANY-',
-            operation => 'days between',
+            operation => 'Days between',
             result    => 45
         },
     ),

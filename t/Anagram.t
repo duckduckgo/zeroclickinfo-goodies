@@ -14,7 +14,7 @@ ddg_goodie_test(
         'trifle',
         structured_answer => {
             input     => ['filter'],
-            operation => 'anagrams of',
+            operation => 'Anagrams of',
             result    => 'trifle',
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'Steven',
         structured_answer => {
             input     => ['events'],
-            operation => 'anagrams of',
+            operation => 'Anagrams of',
             result    => 'Steven',
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'logarithm',
         structured_answer => {
             input     => ['algorithm'],
-            operation => 'anagrams of',
+            operation => 'Anagrams of',
             result    => 'logarithm',
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         '-ANY-',
         structured_answer => {
             input     => ['favorite'],
-            operation => 'scrambled letters of',
+            operation => 'Scrambled letters of',
             result    => '-ANY-',
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         '-ANY-',
         structured_answer => {
             input     => ['Mixing it up'],
-            operation => 'scrambled letters of',
+            operation => 'Scrambled letters of',
             result    => '-ANY-',
         }
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         'emits, items, mites, smite',
         structured_answer => {
             input     => ['times'],
-            operation => 'anagrams of',
+            operation => 'Anagrams of',
             result    => 'emits, items, mites, smite',
         }
     ),
@@ -62,7 +62,7 @@ ddg_goodie_test(
         'Post, opts, post, pots, spot, tops',
         structured_answer => {
             input     => ['stop'],
-            operation => 'anagrams of',
+            operation => 'Anagrams of',
             result    => 'Post, opts, post, pots, spot, tops',
         }
     ),
@@ -70,7 +70,7 @@ ddg_goodie_test(
         'lots, slot',
         structured_answer => {
             input     => ['lost'],
-            operation => 'anagrams of',
+            operation => 'Anagrams of',
             result    => 'lots, slot',
         }
     ),
@@ -78,13 +78,13 @@ ddg_goodie_test(
         'Tom Riddle',
         structured_answer => {
             input     => ['voldemort'],
-            operation => 'anagrams of',
+            operation => 'Anagrams of',
             result    => 'Tom Riddle',
         }
     ),
     # No result tests.
     'anagram of'              => undef,
-    'anagrams for'            => undef,
+    'Anagrams for'            => undef,
     'anagrams for ""'         => undef,
     'anagrams for "867-5309"' => undef,
 );

@@ -55,7 +55,7 @@ handle query_lc => sub {
     return "random passphrase: $phrase",
       structured_answer => {
         input     => [$input_string],
-        operation => 'random passphrase',
+        operation => 'Random passphrase',
         result    => $phrase,
       };
 };

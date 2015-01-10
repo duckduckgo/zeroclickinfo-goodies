@@ -41,7 +41,7 @@ handle remainder => sub {
     return $month . " birthstone: $stone",
       structured_answer => {
         input     => [$month],
-        operation => 'birthstone',
+        operation => 'Birthstone',
         result    => $stone
       };
 };

@@ -46,7 +46,7 @@ handle remainder => sub {
     return $guid->as_string,
       structured_answer => {
         input     => [],
-        operation => 'random GUID',
+        operation => 'Random GUID',
         result    => $guid->as_string
       };
 };

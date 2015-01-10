@@ -27,7 +27,7 @@ handle remainder => sub {
     return "Pig Latin: " . $out,
       structured_answer => {
         input     => [html_enc($in)],
-        operation => 'translate to Pig Latin',
+        operation => 'Translate to Pig Latin',
         result    => html_enc($out)
       };
 };

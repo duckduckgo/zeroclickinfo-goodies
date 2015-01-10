@@ -41,7 +41,7 @@ handle remainder => sub {
     return $title_case,
       structured_answer => {
         input     => [html_enc($input)],
-        operation => 'title case',
+        operation => 'Title case',
         result    => html_enc($title_case),
       };
 };
