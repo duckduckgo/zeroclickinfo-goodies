@@ -43,12 +43,12 @@ sub make_html {
     my $uri = 'https://duckduckgo.com/iu/?u=' . encodeURIComponent($recipe->{'image'});
 
     $html = '<div id="minecraft-wrapper">';
-    $html .= '<div id="minecraft-recipe" style="float: left; width: 50%;">';
     $html .= '<h3>' . $recipe->{'name'} . '</h3>';
+    $html .= '<div id="minecraft-recipe" style="float: left; width: 50%;">';
     $html .= '<p>' . $recipe->{'description'} . '</p>';
     $html .= '<p>Ingredients: ' . $recipe->{'ingredients'} . '</p>';
     $html .= '</div>';
-    $html .= '<div id="minecraft-recipe-image" style="float: right; width: 50%;">';
+    $html .= '<div id="minecraft-recipe-image" style="float: right; width: 40%;">';
     $html .= '<img src="' . $uri . '" />';
     $html .= '</div>';
     $html .= '</div>';
