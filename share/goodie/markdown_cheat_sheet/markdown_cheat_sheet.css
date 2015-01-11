@@ -1,0 +1,9 @@
+.zci--answer h1 {
+    font-size: x-large;
+}
+.zci--answer h2 {
+    font-size: large;
+}
+.zci--answer p, pre {
+    font-size: small;
+}
