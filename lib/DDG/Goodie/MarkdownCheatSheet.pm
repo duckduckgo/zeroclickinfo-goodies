@@ -28,6 +28,7 @@ triggers startend => (
 
 attribution github  => ["marianosimone", "Mariano Simone"];
 
+# Base snippet definitions
 my %snippets = (
     'header' => {
         'html' => '<h1>This is an H1</h1><h2>This is an H2</h2><h6>This is an H6</h6>',
@@ -71,28 +72,22 @@ my %snippets = (
     }    
 );
 
-sub load_synonyms {
-    my %mappings = (
-        "header", ['h1', 'headers', 'h2', 'h3', 'h4', 'h5', 'h6', 'heading'],
-        "em", ['emphasis', 'emphasize'],
-        "strong", [],
-        "image", ["img", "images", "insert image"],
-        "link", ["a", "href", "links"],
-        "blockquote", ["quote", "quotation"],
-        "list", ["lists", "ordered list", "unordered list", "ul", "ol"]
-    );
+my %synonyms = (
+    "header", ['h1', 'headers', 'h2', 'h3', 'h4', 'h5', 'h6', 'heading'],
+    "em", ['emphasis', 'emphasize'],
+    "strong", [],
+    "image", ["img", "images", "insert image"],
+    "link", ["a", "href", "links"],
+    "blockquote", ["quote", "quotation"],
+    "list", ["lists", "ordered list", "unordered list", "ul", "ol"]
+);
 
-    my %synonims = ();
-    foreach my $key (keys(%mappings)) {
-        $synonims{$key} = $key;
-        foreach my $v (@{$mappings{$key}}) {
-            $synonims{$v} = $key;
-        }
+# Add more mappings for each snippet
+foreach my $key (keys(%synonyms)) {
+    foreach my $v (@{$synonyms{$key}}) {
+        $snippets{$v} = $snippets{$key};
     }
-    return %synonims;
-};
-
-my %synonyms = load_synonyms();
+}
 
 sub make_html {
     my $element = $_[0];
@@ -101,12 +96,12 @@ sub make_html {
 
 handle remainder => sub {
     return unless $_;
-    my $requested = $synonyms{$_};
+    my $requested = $snippets{$_};
     return unless $requested;
     return
         heading => 'Markdown Cheat Sheet',
-        html    => make_html($requested).'<br>See full <a href="http://daringfireball.net/projects/markdown/syntax">Markdown Syntax Documentation</a>',
-        answer  => $snippets{$requested}->{'text'}
+        html    => make_html($_).'<br>See full <a href="http://daringfireball.net/projects/markdown/syntax">Markdown Syntax Documentation</a>',
+        answer  => $snippets{$_}->{'text'}
 };
 
 1;
