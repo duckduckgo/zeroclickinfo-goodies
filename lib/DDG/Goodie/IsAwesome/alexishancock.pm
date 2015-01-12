@@ -10,7 +10,7 @@ name "IsAwesome alexishancock";
 description "My first Goodie, it let's the world know that GitHubUsername is awesome";
 primary_example_queries "duckduckhack alexishancock";
 category "special";
-topics "special_interest", "geek"
+topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/alexishancock.pm";
 attribution github => ["https://github.com/alexishancock", "Alexis Hancock"],
             twitter => "nappy_techie";
