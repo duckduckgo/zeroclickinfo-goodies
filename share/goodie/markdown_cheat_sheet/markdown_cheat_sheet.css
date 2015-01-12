@@ -1,9 +1,17 @@
-.zci--answer h1 {
-    font-size: x-large;
+.zci--answer li {
+    margin-left: 1em;
 }
-.zci--answer h2 {
-    font-size: large;
+
+.zci--answer ul {
+    list-style: initial;
 }
-.zci--answer p, pre {
-    font-size: small;
+
+.zci--answer ol {
+   list-style: decimal;
+}
+
+.zci--answer blockquote {
+	color: #999;
+	border-left: 2px solid #999;
+	padding-left: 1em;
 }
