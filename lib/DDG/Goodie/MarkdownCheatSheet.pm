@@ -29,23 +29,46 @@ triggers startend => (
 attribution github  => ["marianosimone", "Mariano Simone"];
 
 my %snippets = (
-    'header', '<h1>This is an H1</h1><h2>This is an H2</h2><h6>This is an H6</h6><pre># This is an H1
+    'header' => {
+        'html' => '<h1>This is an H1</h1><h2>This is an H2</h2><h6>This is an H6</h6>',
+        'text' => '# This is an H1
 ## This is an H2
-###### This is an H6</pre>',
-    'em', '<em>Emphasis</em> or <em>ephasis</em><pre>_emphasis_ or *emphasis*</pre>',
-    'strong', '<strong>Strong</strong> or <strong>strong</strong><pre>**strong** or __strong__</pre>',
-    'list', '<ul><li>First</li><li>Second</li><li>Third</li></ul><pre>- First
+###### This is an H6'
+    },
+    'em' => {
+        'html' => '<em>Emphasis</em> or <em>ephasis</em>',
+        'text' => '_emphasis_ or *emphasis*'
+    },
+    'strong' => {
+        'html' => '<strong>Strong</strong> or <strong>strong</strong>',
+        'text' => '**strong** or __strong__'
+    },
+    'list' => {
+        'html' => '<ul><li>First</li><li>Second</li><li>Third</li></ul><ol><li>First</li><li>Second</li><li>Third</li></ol>',
+        'text' => '- First
 - Second
-- Third</pre><ol><li>First</li><li>Second</li><li>Third</li></ol><pre>1. First
+- Third
+
+1. First
 2. Second
-3. Third</pre>',
-    'image', '<img src="http://duckduckgo.com/assets/badges/logo_square.64.png"></img><pre>![Image Alt](http://duckduckgo.com/assets/badges/logo_square.64.png)</pre>',
-    'link', '<a href="http://www.duckduckgo.com" title="Example Title">This is an example inline link</a><pre>[This is an example inline link](http://www.duckduckgo.com "Example Title")</pre>',
-    'blockquote', '<blockquote>This is the first level of quoting.<blockquote>This is nested blockquote.</blockquote>Back to the first level.</blockquote><pre>> This is the first level of quoting.
+3. Third'
+    },
+    'image' => {
+        'html' => '<img src="http://duckduckgo.com/assets/badges/logo_square.64.png"></img>',
+        'text' => '![Image Alt](http://duckduckgo.com/assets/badges/logo_square.64.png)'
+    },
+    'link' => {
+        'html' => '<a href="http://www.duckduckgo.com" title="Example Title">This is an example inline link</a>',
+        'text' => '[This is an example inline link](http://www.duckduckgo.com "Example Title")'
+    },
+    'blockquote' => {
+        'html' => '<blockquote>This is the first level of quoting.<blockquote>This is nested blockquote.</blockquote>Back to the first level.</blockquote>',
+        'text' => '> This is the first level of quoting.
 >
 > > This is nested blockquote.
 >
-> Back to the first level.</pre>'
+> Back to the first level.'
+    }    
 );
 
 sub load_synonyms {
@@ -71,14 +94,19 @@ sub load_synonyms {
 
 my %synonyms = load_synonyms();
 
+sub make_html {
+    my $element = $_[0];
+    return $snippets{$element}->{'html'}.'<pre>'.$snippets{$element}->{'text'}.'</pre>'
+};
+
 handle remainder => sub {
     return unless $_;
     my $requested = $synonyms{$_};
     return unless $requested;
     return
         heading => 'Markdown Cheat Sheet',
-        html    => $snippets{$requested}."<br>See full <a href='http://daringfireball.net/projects/markdown/syntax'>Markdown Syntax Documentation</a>",
-        answer  => $snippets{$requested},  # TODO: make simpler txt response
+        html    => make_html($requested).'<br>See full <a href="http://daringfireball.net/projects/markdown/syntax">Markdown Syntax Documentation</a>',
+        answer  => $snippets{$requested}->{'text'}
 };
 
 1;
