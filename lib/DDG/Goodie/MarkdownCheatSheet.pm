@@ -29,8 +29,9 @@ triggers startend => (
 attribution github  => ["marianosimone", "Mariano Simone"];
 
 my %snippets = (
-    'header', '<h1>This is an H1</h1><h2>This is an H2</h2><pre># This is an H1
-## This is an H2</pre>',
+    'header', '<h1>This is an H1</h1><h2>This is an H2</h2><h6>This is an H6</h6><pre># This is an H1
+## This is an H2
+###### This is an H6</pre>',
     'em', '<em>Emphasis</em> or <em>ephasis</em><pre>_emphasis_ or *emphasis*</pre>',
     'strong', '<strong>Strong</strong> or <strong>strong</strong><pre>**strong** or __strong__</pre>',
     'list', '<ul><li>First</li><li>Second</li><li>Third</li></ul><pre>- First
@@ -49,7 +50,7 @@ my %snippets = (
 
 sub load_synonyms {
     my %mappings = (
-        "header", ['h1', 'heading'],
+        "header", ['h1', 'headers', 'h2', 'h3', 'h4', 'h5', 'h6', 'heading'],
         "em", ['emphasis', 'emphasize'],
         "strong", [],
         "image", ["img", "images", "insert image"],
