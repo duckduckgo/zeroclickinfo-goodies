@@ -15,7 +15,6 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 source "https://en.wikipedia.org/wiki/Sales_taxes_in_the_United_States";
 attribution github => ['https://github.com/javathunderman', 'Thomas Denizou'];
             
-
 my %salestax = (
     "Alabama"   => "4%",
     "Alaska"   => "Alaska does not levy a sales tax.",
@@ -70,9 +69,6 @@ my %salestax = (
     "West Virginia"   => "6%",
     "Wisconsin"   => "5%",
     "Wyoming"   => "4%"
-    
-    
-    
 );
 
 handle remainder => sub {
