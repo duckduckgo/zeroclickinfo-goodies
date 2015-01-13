@@ -20,6 +20,7 @@ sub test_success {
 ddg_goodie_test(
 	[ 'DDG::Goodie::MarkdownCheatSheet' ],
     'markdown cheat sheet header' => test_success('#', 'h1'),
+    'h1 markdown cheat sheet' => test_success('#', 'h1'),
     'markdown help h1' => test_success('#', 'h1'),
     'markdown syntax list' => test_success('-', 'ul'),
     'markdown quick reference em' => test_success('_', 'em'),
