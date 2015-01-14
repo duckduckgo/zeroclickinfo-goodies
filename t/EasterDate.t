@@ -153,6 +153,12 @@ ddg_goodie_test(
             operation => 'Rosh Hashanah',
             result => '25 September'
         }),
+    'rosh hashana 2015' => test_zci('14 September',
+        structured_answer => {
+            input => ['2015'],
+            operation => 'Rosh Hashana',
+            result => '14 September'
+        }),
     'Jewish Holidays 2014' => test_zci(
     'Purim: 16 March, Passover: 15 April, Shavuot: 4 June, Rosh Hashanah: 25 September, Yom Kippur: 4 October, Sukkot: 9 October, Hanukkah: 17 December',
         structured_answer => {
