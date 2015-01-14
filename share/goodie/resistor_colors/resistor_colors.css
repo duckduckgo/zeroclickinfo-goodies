@@ -1,15 +1,57 @@
-.zci--answer .zci--resistor-colors .resistor {
-    margin-right: 4px;
-}
-
-.zci--answer .zci--resistor-colors .colors {
+.zci--resistor-colors .resistor-band {
+    padding: 5px 15px;
     display: inline-block;
-    border: 1px solid #c8c8c8;
-    margin-top: -1px;
-    padding: 0px 5px 3px;
-    border-radius: 4px;
+    margin-right: 5px;
+    color: #333;
 }
 
-.zci--answer .zci--resistor-colors .link {
-    font-size: 92.8%;
+.zci--resistor-colors .resistor-band.silver {
+    background-color: #c0c0c0;
+}
+
+.zci--resistor-colors .resistor-band.gold {
+    background-color: #cfb53b;
+}
+
+.zci--resistor-colors .resistor-band.black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.zci--resistor-colors .resistor-band.brown {
+    background-color: #964b00;
+    color: #ffffff;
+}
+
+.zci--resistor-colors .resistor-band.red {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.zci--resistor-colors .resistor-band.orange {
+    background-color: #ffa500;
+}
+
+.zci--resistor-colors .resistor-band.yellow {
+    background-color: #ffff00;
+}
+
+.zci--resistor-colors .resistor-band.green {
+    background-color: #9acd32;
+}
+
+.zci--resistor-colors .resistor-band.blue {
+    background-color: #6495ed;
+}
+
+.zci--resistor-colors .resistor-band.purple {
+    background-color: #ee82ee;
+}
+
+.zci--resistor-colors .resistor-band.gray {
+    background-color: #a0a0a0;
+}
+
+.zci--resistor-colors .resistor-band.white {
+    background-color: #ffffff;
 }
