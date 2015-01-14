@@ -141,17 +141,24 @@ ddg_goodie_test(
             operation => 'Pesach',
             result => '4 April'
         }),
+    'Yom Kippur 2015' => test_zci('23 September',
+        structured_answer => {
+            input => ['2015'],
+            operation => 'Yom Kippur',
+            result => '23 September'
+        }),
     'Rosh Hashanah 2014' => test_zci('25 September',
         structured_answer => {
             input => ['2014'],
             operation => 'Rosh Hashanah',
             result => '25 September'
         }),
-    'Jewish Holidays 2014' => test_zci('Rosh Hashanah: 25 September, Passover: 15 April',
+    'Jewish Holidays 2014' => test_zci(
+    'Purim: 16 March, Passover: 15 April, Shavuot: 4 June, Rosh Hashanah: 25 September, Yom Kippur: 4 October, Sukkot: 9 October, Hanukkah: 17 December',
         structured_answer => {
             input => ['2014'],
             operation => 'Jewish Holidays',
-            result => 'Rosh Hashanah: 25 September, Passover: 15 April'
+            result => 'Purim: 16 March, Passover: 15 April, Shavuot: 4 June, Rosh Hashanah: 25 September, Yom Kippur: 4 October, Sukkot: 9 October, Hanukkah: 17 December'
         }),
     'Passover 2099' => test_zci('5 April',
         structured_answer => {
@@ -159,6 +166,90 @@ ddg_goodie_test(
             operation => 'Passover',
             result => '5 April'
         }),
+    'Chanukkah 2015' => test_zci('7 December',
+        structured_answer => {
+            input => ['2015'],
+            operation => 'Chanukkah',
+            result => '7 December'
+        }),
+    'Hanukkah 2013' => test_zci('28 November',
+        structured_answer => {
+            input => ['2013'],
+            operation => 'Hanukkah',
+            result => '28 November'
+        }),
+    'Purim 2013' => test_zci('24 February',
+        structured_answer => {
+            input => ['2013'],
+            operation => 'Purim',
+            result => '24 February'
+        }),
+    'Purim 2015' => test_zci('5 March',
+        structured_answer => {
+            input => ['2015'],
+            operation => 'Purim',
+            result => '5 March'
+        }),
+    'Purim 2016' => test_zci('24 March',
+        structured_answer => {
+            input => ['2016'],
+            operation => 'Purim',
+            result => '24 March'
+        }),
+    'Purim 2017' => test_zci('12 March',
+        structured_answer => {
+            input => ['2017'],
+            operation => 'Purim',
+            result => '12 March'
+        }),
+    'jewish holidays 2007' => test_zci(
+    'Purim: 4 March, Passover: 3 April, Shavuot: 23 May, Rosh Hashanah: 13 September, Yom Kippur: 22 September, Sukkot: 27 September, Hanukkah: 5 December',
+        structured_answer => {
+            input => ['2007'],
+            operation => 'Jewish Holidays',
+            result => 'Purim: 4 March, Passover: 3 April, Shavuot: 23 May, Rosh Hashanah: 13 September, Yom Kippur: 22 September, Sukkot: 27 September, Hanukkah: 5 December'
+        }),
+        
+    'jewish holidays 2008' => test_zci(
+    'Purim: 21 March, Passover: 20 April, Shavuot: 9 June, Rosh Hashanah: 30 September, Yom Kippur: 9 October, Sukkot: 14 October, Hanukkah: 22 December',
+        structured_answer => {
+            input => ['2008'],
+            operation => 'Jewish Holidays',
+            result => 'Purim: 21 March, Passover: 20 April, Shavuot: 9 June, Rosh Hashanah: 30 September, Yom Kippur: 9 October, Sukkot: 14 October, Hanukkah: 22 December'
+        }), 
+        
+    'Jewish holidays 2009' => test_zci(
+    'Purim: 10 March, Passover: 9 April, Shavuot: 29 May, Rosh Hashanah: 19 September, Yom Kippur: 28 September, Sukkot: 3 October, Hanukkah: 12 December',
+        structured_answer => {
+            input => ['2009'],
+            operation => 'Jewish Holidays',
+            result => 'Purim: 10 March, Passover: 9 April, Shavuot: 29 May, Rosh Hashanah: 19 September, Yom Kippur: 28 September, Sukkot: 3 October, Hanukkah: 12 December'
+        }),
+        
+    'Jewish holidays 2015' => test_zci(
+    'Purim: 5 March, Passover: 4 April, Shavuot: 24 May, Rosh Hashanah: 14 September, Yom Kippur: 23 September, Sukkot: 28 September, Hanukkah: 7 December',
+        structured_answer => {
+            input => ['2015'],
+            operation => 'Jewish Holidays',
+            result => 'Purim: 5 March, Passover: 4 April, Shavuot: 24 May, Rosh Hashanah: 14 September, Yom Kippur: 23 September, Sukkot: 28 September, Hanukkah: 7 December'
+        }),
+        
+    'Jewish holidays 2016' => test_zci(
+    'Purim: 24 March, Passover: 23 April, Shavuot: 12 June, Rosh Hashanah: 3 October, Yom Kippur: 12 October, Sukkot: 17 October, Hanukkah: 25 December',
+        structured_answer => {
+            input => ['2016'],
+            operation => 'Jewish Holidays',
+            result => 'Purim: 24 March, Passover: 23 April, Shavuot: 12 June, Rosh Hashanah: 3 October, Yom Kippur: 12 October, Sukkot: 17 October, Hanukkah: 25 December'
+        }),
+    
+    'Jewish holidays 2017' => test_zci(
+    'Purim: 12 March, Passover: 11 April, Shavuot: 31 May, Rosh Hashanah: 21 September, Yom Kippur: 30 September, Sukkot: 5 October, Hanukkah: 13 December',
+        structured_answer => {
+            input => ['2017'],
+            operation => 'Jewish Holidays',
+            result => 'Purim: 12 March, Passover: 11 April, Shavuot: 31 May, Rosh Hashanah: 21 September, Yom Kippur: 30 September, Sukkot: 5 October, Hanukkah: 13 December'
+        }),
+    
 
     'easter' => undef,
     'easter 123' => undef,
@@ -168,8 +259,8 @@ ddg_goodie_test(
     'Rosh Hashanah' => undef,
     'Pesach' => undef,
     'Passover' => undef,
-    'Passover 1899' => undef,
-    'Rosh Hashanah 2100' => undef,
+    'Passover 1799' => undef,
+    'Rosh Hashanah 2300' => undef,
     'Jewish Holidays 9999' => undef,
     'Jewish Holidays' => undef
 );
