@@ -23,6 +23,18 @@ ddg_goodie_test(
             operation => "Calculate",
             result => 1003.2
         }),
+    '3.4+6%' => test_zci('Result: 3.604',
+        structured_answer => {
+            input => ["3.4+6%"],
+            operation => "Calculate",
+            result => 3.604
+        }),
+    '323.7+55.3%' => test_zci('Result: 502.7061',
+        structured_answer => {
+            input => ["323.7+55.3%"],
+            operation => "Calculate",
+            result => 502.7061
+        }),
 
     'urldecode hello%20there' => undef,
     '34$+16' => undef,
