@@ -21,7 +21,7 @@ handle query_nowhitespace => sub {
 
     my $input = $_;
 
-    return unless $input =~ qr/(\d+)(\+|\*|\/|\-)(\d+)\%/;
+    return unless $input =~ qr/(\d+\.?\d*)(\+|\*|\/|\-)(\d+\.?\d*)\%/;
 
 
     if ($2 eq '-') {
