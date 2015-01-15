@@ -17,13 +17,14 @@ primary_example_queries 'markdown help', 'markdown cheat sheet', 'markdown synta
 secondary_example_queries 'markdown quick reference', 'markdown guide';
 
 triggers startend => (
-    'markdown help',
-    'markdown cheat sheet',
-    'markdown cheatsheet',
-    'markdown syntax',
-    'markdown guide',
-    'markdown quick reference',
-    'markdown reference',
+    'markdown', 'md',
+    'markdown help', 'md help',
+    'markdown cheat sheet', 'md cheat sheet',
+    'markdown cheatsheet', 'md cheatsheet',
+    'markdown syntax', 'md syntax',
+    'markdown guide', 'md guide',
+    'markdown quick reference', 'md quick reference',
+    'markdown reference', 'md reference',
 );
 
 attribution github  => ["marianosimone", "Mariano Simone"];
