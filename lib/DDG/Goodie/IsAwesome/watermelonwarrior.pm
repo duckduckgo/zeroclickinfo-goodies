@@ -6,7 +6,6 @@ use DDG::Goodie;
 zci answer_type => "is_awesome_watermelonwarrior";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "IsAwesome watermelonwarrior";
 description "My first Goodie, it let's the world konw that watermelonwarrior is awesome";
 primary_example_queries "duckduckhack watermelonwarrior";
@@ -21,9 +20,8 @@ triggers start => "duckduckhack watermelonwarrior";
 
 # Handle statement
 handle remainder => sub {
-
     return if $_;
-    return "Watermelonwarrior is awesome and has successfully completed the tutorial"
+    return "watermelonwarrior is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
