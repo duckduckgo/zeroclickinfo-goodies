@@ -4,8 +4,10 @@ package DDG::Goodie::GuitarChords;
 use DDG::Goodie;
 with 'DDG::GoodieRole::ImageLoader';
 
-use MIME::Base64;
-use GD::Tab::Guitar;
+# guitar script is stored in share directory
+# including this way, because it limits duplicated code
+my $g = share("Guitar.pm");
+require "$g";
 
 zci answer_type => 'guitarchord';
 zci is_cached => 1;
@@ -35,29 +37,26 @@ handle remainder => sub
     return;
 };
 
-my $gtr = GD::Tab::Guitar->new;
+my $gtr = Guitar->new;
 
 sub check_chord
 {
-    if ($_[0] =~ /(?<a>[a-gA-G])(?<b>#|b)?(?<c>dim|m|min|aug|add)?(?<d>M|maj|m|min)?(?<e>[0-9])?\s*(?<f>(#|b)?[0-9]+)?/) {
+    if ($_[0] =~ /(?<a>[a-gA-G])(?<b>#|b)?(?<c>dim|min|maj|add|aug|m|M)?(?<d>M|maj|m|min)?(?<e>[0-9])?\s*(?<f>(#|b)?[0-9]+)?/) {
         my ($a,$b,$c,$d,$e,$f,$r) = "";
-        $a = uc($+{'a'}) if $+{'a'};
+        $a = uc($+{'a'});
         if ($+{'b'}) {
             $b = $+{'b'} if $+{'b'};
         }
-        if ($+{'c'}) {
-            $c = 'm' if ($+{'c'} =~ /(min|m)/);
+        if (my $m = $+{'c'}) {
+            $c = 'm' if ($m =~ /^(min|m)$/);
+            $c = 'M' if ($m =~ /^(maj|M)$/);
         }
-        if ($+{'d'}) {
-            $d = 'M' if ($+{'d'} =~ /(maj|M)/);
+        if (my $m = $+{'d'}) {
+            $d = 'm' if ($m =~ /^(min|m)$/);
+            $d = 'M' if ($m =~ /^(maj|M)$/);
         }
-        if ($+{'e'}) {
-            $e = $+{'e'};
-        }
-        if ($+{'f'}) {
-            $f = '('.$+{'f'}.')';
-        }
-        # 'cause perl will throw `$c is not defined` even though $c is initialized to an empty string?
+        $e = $+{'e'} if $+{'e'};
+        $f = '('.$+{'f'}.')' if $+{'f'};
         $r = $a if $a;
         $r .= $b if $b;
         $r .= $c if $c;

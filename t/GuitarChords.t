@@ -21,11 +21,6 @@ ddg_goodie_test(
             heading=>'Abaug7',
             html => qr#<img src='data:image/png;base64,.*'/>#s
     ),
-    'A#add9 guitar chord' => test_zci(
-            'G#m6',
-            heading=>'G#m6',
-            html => qr#<img src='data:image/png;base64,.*'/>#s
-    ),
     'A7 b9 guitar chord' => test_zci(
             'A7(b9)',
             heading=>'A7(b9)',
