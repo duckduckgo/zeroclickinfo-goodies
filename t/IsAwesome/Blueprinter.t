@@ -10,10 +10,10 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw(
-        DDG::Goodie::IsAwesome::GitHubUsername
+        DDG::Goodie::IsAwesome::Blueprinter
     )],
-    'duckduckhack GitHubUsername' => test_zci('GitHubUsername is awesome and has successfully completed the DuckDuckHack Goodie tutorial!'),
-    'duckduckhack GitHubUsername is awesome' => undef,
+    'duckduckhack blueprinter' => test_zci('Blueprinter is awesome and has successfully completed the DuckDuckHack Goodie tutorial!'),
+    'duckduckhack blueprinter is awesome' => undef,
 );
 
 done_testing;
