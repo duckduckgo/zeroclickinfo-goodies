@@ -14,8 +14,8 @@ primary_example_queries "duckduckhack amneher";
 category "special";
 topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/amneher.pm";
-attribution github => ["amneher"],
-            twitter => "amneher";
+attribution github => ["amneher", "Andrew Neher"],
+            twitter => ["amneher", "Andrew Neher"];
 
 
 triggers start => "duckduckhack amneher";
@@ -23,7 +23,7 @@ triggers start => "duckduckhack amneher";
 
 handle remainder => sub {
     return if $_;
-    return "amneher is awesome and has just completed the duckduckhack goodie tutorial!";
+    return "amneher is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
