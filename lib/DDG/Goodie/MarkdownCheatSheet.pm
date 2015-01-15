@@ -90,9 +90,11 @@ foreach my $key (keys(%synonyms)) {
     }
 }
 
+my $more_at = '<a href="http://daringfireball.net/projects/markdown/syntax" class="zci__more-at--info"><img src="//images.duckduckgo.com/iu/?u=http%3A%2F%2Fdaringfireball.net%2Ffavicon.ico" class="zci__more-at__icon"/>More at Daring Fireball</a>';
+
 sub make_html {
     my $element = $_[0];
-    return $snippets{$element}->{'html'}.'<pre>'.$snippets{$element}->{'text'}.'</pre>'
+    return $snippets{$element}->{'html'}.'<pre>'.$snippets{$element}->{'text'}.'</pre>'.$more_at
 };
 
 handle remainder => sub {
@@ -101,7 +103,7 @@ handle remainder => sub {
     return unless $requested;
     return
         heading => 'Markdown Cheat Sheet',
-        html    => make_html($_).'<br>See full <a href="http://daringfireball.net/projects/markdown/syntax">Markdown Syntax Documentation</a>',
+        html    => make_html($_),
         answer  => $snippets{$_}->{'text'}
 };
 
