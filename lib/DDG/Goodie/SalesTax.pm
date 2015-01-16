@@ -21,7 +21,7 @@ attribution github => ['https://github.com/javathunderman', 'Thomas Denizou'];
 my $US = new Locale::SubCountry("US");
  
 #Load states.yml
-my $salestax = Load(scalar share('states.txt')->slurp);            
+my $salestax = Load(scalar share('states.yml')->slurp);            
 
 handle remainder => sub {
  
