@@ -19,10 +19,29 @@ topics "everyday";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/EasterDate.pm";
 attribution github => ["https://github.com/W25", "W25"];
 
+# Deltas relative to Rosh Hashanah
+use constant {
+    HOLIDAY_PURIM => -193,
+    HOLIDAY_SHAVUOT => -113,
+    HOLIDAY_PASSOVER => -163,
+    HOLIDAY_ROSH_HASHANAH => 0,
+    HOLIDAY_YOM_KIPPUR => 9,
+    HOLIDAY_SUKKOT => 14,
+    HOLIDAY_HANUKKAH => 83,
+};
+
+my %jewish_holidays = (
+    'Purim' => HOLIDAY_PURIM,
+    'Passover' => HOLIDAY_PASSOVER, 'Pesach' => HOLIDAY_PASSOVER,
+    'Shavuot' => HOLIDAY_SHAVUOT,
+    'Rosh Hashanah' => HOLIDAY_ROSH_HASHANAH, 'Rosh Hashana' => HOLIDAY_ROSH_HASHANAH,
+    'Yom Kippur' => HOLIDAY_YOM_KIPPUR,
+    'Sukkot' => HOLIDAY_SUKKOT,
+    'Hanukkah' => HOLIDAY_HANUKKAH, 'Chanukkah' => HOLIDAY_HANUKKAH,
+);
+
 # Triggers
-triggers any => 'easter', 'purim', 'shavuot', 'passover', 'pesach', 'rosh hashana', 'rosh hashanah',
-                'yom kippur', 'sukkot', 'hanukkah', 'chanukkah',
-                'jewish holidays', 'hebrew holidays', 'holidays in israel';
+triggers any => 'easter', 'jewish holidays', 'hebrew holidays', map {lc($_)} keys %jewish_holidays;
 
 
 my @month_names = qw(January February March April May June
@@ -72,18 +91,6 @@ sub roshhashanah {
     
     return (9, $day);
 }
-
-
-# Deltas relative to Rosh Hashanah
-use constant {
-    HOLIDAY_PURIM => -193,
-    HOLIDAY_SHAVUOT => -113,
-    HOLIDAY_PASSOVER => -163,
-    HOLIDAY_ROSH_HASHANAH => 0,
-    HOLIDAY_YOM_KIPPUR => 9,
-    HOLIDAY_SUKKOT => 14,
-    HOLIDAY_HANUKKAH => 83,
-};
 
 sub jewish_holiday {
     my ($year, $delta) = @_;
@@ -139,16 +146,6 @@ sub easter {
     }
 }
 
-my %jewish_holidays = (
-    'Purim' => HOLIDAY_PURIM,
-    'Passover' => HOLIDAY_PASSOVER, 'Pesach' => HOLIDAY_PASSOVER,
-    'Shavuot' => HOLIDAY_SHAVUOT,
-    'Rosh Hashanah' => HOLIDAY_ROSH_HASHANAH, 'Rosh Hashana' => HOLIDAY_ROSH_HASHANAH,
-    'Yom Kippur' => HOLIDAY_YOM_KIPPUR,
-    'Sukkot' => HOLIDAY_SUKKOT,
-    'Hanukkah' => HOLIDAY_HANUKKAH, 'Chanukkah' => HOLIDAY_HANUKKAH,
-);
-
 my $jewish_regex = join('|', keys %jewish_holidays);
 $jewish_regex =~ s/ /\\s+/g;
 
@@ -185,7 +182,7 @@ handle query_raw => sub {
     } elsif (exists $jewish_holidays{$operation}) {
         $result = output_date(jewish_holiday($year, $jewish_holidays{$operation}));
             
-    } elsif ($operation eq 'Jewish Holidays') {
+    } elsif ($operation eq 'Jewish Holidays' || $operation eq 'Hebrew Holidays') {
         $result = 'Purim: ' . output_date(jewish_holiday($year, HOLIDAY_PURIM)) .
                   ', Passover: ' . output_date(jewish_holiday($year, HOLIDAY_PASSOVER)) .
                   ', Shavuot: ' . output_date(jewish_holiday($year, HOLIDAY_SHAVUOT)) .

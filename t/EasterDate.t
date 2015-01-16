@@ -248,11 +248,11 @@ ddg_goodie_test(
             result => 'Purim: 24 March, Passover: 23 April, Shavuot: 12 June, Rosh Hashanah: 3 October, Yom Kippur: 12 October, Sukkot: 17 October, Hanukkah: 25 December'
         }),
     
-    'Jewish holidays 2017' => test_zci(
+    'Hebrew holidays 2017' => test_zci(
     'Purim: 12 March, Passover: 11 April, Shavuot: 31 May, Rosh Hashanah: 21 September, Yom Kippur: 30 September, Sukkot: 5 October, Hanukkah: 13 December',
         structured_answer => {
             input => ['2017'],
-            operation => 'Jewish Holidays',
+            operation => 'Hebrew Holidays',
             result => 'Purim: 12 March, Passover: 11 April, Shavuot: 31 May, Rosh Hashanah: 21 September, Yom Kippur: 30 September, Sukkot: 5 October, Hanukkah: 13 December'
         }),
     
