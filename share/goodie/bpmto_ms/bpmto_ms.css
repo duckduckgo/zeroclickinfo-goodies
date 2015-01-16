@@ -1,4 +1,41 @@
-.zci--answer .bpmto_ms table {
-    border-spacing: 0.4em;
-    border-collapse: separate;
+@media (max-width: 600px) {
+    .bpmto_ms table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .bpmto_ms table td {
+        word-wrap: break-word;
+    }
+
+    .bpmto_ms .record td.record__cell__key {
+        width: 100px;
+        border-top: solid 1px #DDD;
+        border-bottom: solid 1px #DDD;
+    }
+}
+
+.bpmto_ms .maintable {
+    width: 100%;
+}
+
+.bpmto_ms .maintable td {
+    width:12.5%;
+    white-space: nowrap;
+}
+
+.zci--answer .bpmto_ms .zci__more-at {
+    padding-top: 0;
+}
+
+.bpmto_ms .record > td {
+    padding: 0.4em;
+    padding-left: 0;
+    border-top: solid 1px #DDD;
+    border-bottom: solid 1px #DDD;
+}
+
+.bpmto_ms .record .record__cell__key {
+    text-transform: capitalize;
+    width: 150px;
 }

@@ -23,62 +23,63 @@ handle remainder => sub {
     
     my $bpm = $_;
     
-    my @divisors = map { 2 ** $_ } 0 .. 6;
+    my @note_names = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
     
-    my @straight_values = map { int( 240000 / ($bpm * $_) + 0.5) } @divisors;
-    my @triplet_values = map { int( 160000 / ($bpm * $_) + 0.5) } @divisors;
-    my @dotted_values = map { int( 360000 / ($bpm * $_) + 0.5) } @divisors;
+    # The basic note lengths for each category
+    my $straight_whole_note = 240000;
+    my $triplet_whole_note = 160000;
+    my $dotted_whole_note = 360000;
     
-    return html => "<div class=\"bpmto_ms record\">
-                    <div>
-                       $bpm BPM as quarter notes per minute corresponds to the following note lengths in milliseconds:
-                    </div>
-                    <table class=\"record__body\">
-                        <tr class=\"record__row record__highlight\">
-                            <td>Whole Note:</td><td>" . $straight_values[0] . " ms</td>
-                            <td>Triplet:</td><td>" . $triplet_values[0] . " ms</td>
-                            <td>Dotted:</td><td>" . $dotted_values[0] . " ms</td>
-                        </tr>
-                        <tr class=\"record__row record__highlight\">
-                            <td>Half Note:</td><td>" . $straight_values[1] . " ms</td>
-                            <td>Triplet:</td><td>" . $triplet_values[1] . " ms</td>
-                            <td>Dotted:</td><td>" . $dotted_values[1] . " ms</td>
-                        </tr>
-                        <tr class=\"record__row record__highlight\">
-                            <td>Quarter Note:</td><td>" . $straight_values[2] . " ms</td>
-                            <td>Triplet:</td><td>" . $triplet_values[2] . " ms</td>
-                            <td>Dotted:</td><td>" . $dotted_values[2] . " ms</td>
-                        </tr>
-                        <tr class=\"record__row record__highlight\">
-                            <td>1/8 Note:</td><td>" . $straight_values[3] . " ms</td>
-                            <td>Triplet:</td><td>" . $triplet_values[3] . " ms</td>
-                            <td>Dotted:</td><td>" . $dotted_values[3] . " ms</td>
-                        </tr>
-                        <tr class=\"record__row record__highlight\">
-                            <td>1/16 Note:</td><td>" . $straight_values[4] . " ms</td>
-                            <td>Triplet:</td><td>" . $triplet_values[4] . " ms</td>
-                            <td>Dotted:</td><td>" . $dotted_values[4] . " ms</td>
-                        </tr>
-                        <tr class=\"record__row record__highlight\">
-                            <td>1/32 Note:</td><td>" . $straight_values[5] . " ms</td>
-                            <td>Triplet:</td><td>" . $triplet_values[5] . " ms</td>
-                            <td>Dotted:</td><td>" . $dotted_values[5] . " ms</td>
-                        </tr>
-                        <tr class=\"record__row record__highlight\">
-                            <td>1/64 Note:</td><td>" . $straight_values[6] . " ms</td>
-                            <td>Triplet:</td><td>" . $triplet_values[6] . " ms</td>
-                            <td>Dotted:</td><td>" . $dotted_values[6] . " ms</td>
-                        </tr>
-                   </table>
-                   </div>",
-                   answer => "$bpm BPM as quarter notes per minute corresponds to the following note lengths in milliseconds:
+    my @divisors = map { 2 ** $_ } 0 .. 5; # Create a list of divisors to calculate the values of half notes, quarter notes etc.
+    
+    my @straight_values = map { int( $straight_whole_note / ($bpm * $_) + 0.5) } @divisors;
+    my @triplet_values = map { int( $triplet_whole_note / ($bpm * $_) + 0.5) } @divisors;
+    my @dotted_values = map { int( $dotted_whole_note / ($bpm * $_) + 0.5) } @divisors;
+    
+    my $html_content = "<div class=\"bpmto_ms\">
+                        <h3 class=\"zci__header\">$bpm bpm in milliseconds</h3>
+                        <div class=\"zci__content\">
+                            <div class=\"record\">
+                                <table class=\"maintable\">";
+                                
+    for my $i (0 .. $#note_names) {
+        $html_content = $html_content .
+        "<tr class=\"record\">
+            <td class=\"record__cell__key record_keyspacing\">
+                $note_names[$i]
+            </td>
+            <td class=\"record__cell__value\">
+                $straight_values[$i] ms
+            </td>
+            <td />
+            <td class=\"record__cell__key record_keyspacing\">
+                Triplet
+            </td>
+            <td class=\"record__cell__value\">
+                $triplet_values[$i] ms
+            </td>
+            <td />
+            <td class=\"record__cell__key record_keyspacing\">
+                Dotted
+            </td>
+            <td class=\"record__cell__value\">
+                $dotted_values[$i] ms
+            </td>
+        </tr>";
+    }
+    
+    $html_content = $html_content .
+    "</table></div></div></div>";
+    
+    
+    return html => $html_content,
+           answer => "$bpm bpm in milliseconds
 Whole Note: " . $straight_values[0] . " ms, Triplet: " . $triplet_values[0] . " ms, Dotted: " . $dotted_values[0] . " ms
 Half Note: " . $straight_values[1] . " ms, Triplet: " . $triplet_values[1] . " ms, Dotted: " . $dotted_values[1] . " ms
 Quarter Note: " . $straight_values[2] . " ms, Triplet: " . $triplet_values[2] . " ms, Dotted: " . $dotted_values[2] . " ms
 1/8 Note: " . $straight_values[3] . " ms, Triplet: " . $triplet_values[3] . " ms, Dotted: " . $dotted_values[3] . " ms
 1/16 Note: " . $straight_values[4] . " ms, Triplet: " . $triplet_values[4] . " ms, Dotted: " . $dotted_values[4] . " ms
-1/32 Note: " . $straight_values[5] . " ms, Triplet: " . $triplet_values[5] . " ms, Dotted: " . $dotted_values[5] . " ms
-1/64 Note: " . $straight_values[6] . " ms, Triplet: " . $triplet_values[6] . " ms, Dotted: " . $dotted_values[6] . " ms";
+1/32 Note: " . $straight_values[5] . " ms, Triplet: " . $triplet_values[5] . " ms, Dotted: " . $dotted_values[5] . " ms";
 };
 
 1;
