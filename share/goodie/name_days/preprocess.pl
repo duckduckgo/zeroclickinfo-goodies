@@ -74,8 +74,8 @@ sub prepare_dates {
             '</span></td><td class="name-days-dates">';
         my $i = 0;
         for (@{$dates_by_country_and_month->{$_}}) {
-            $res .= '<div class="name-days-tile">' . $month_names[$i] . ' ' .
-                    $_ . '</div>' if $_;
+            $res .= '<div class="name-days-tile"><span>' . $month_names[$i] . ' ' .
+                    $_ . '</span></div>' if $_;
             $i++;
         }
         $res .= '</td></tr>';

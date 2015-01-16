@@ -36,7 +36,7 @@ sub line {
 
 sub tile {
     my ($days, $month) = @_;
-    return "<div class=\"name-days-tile\">$month $days</div>";
+    return "<div class=\"name-days-tile\"><span>$month $days</span></div>";
 }
 
 my $footer = '</table></div></div>';

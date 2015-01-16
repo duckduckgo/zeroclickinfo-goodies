@@ -21,8 +21,23 @@ tr:last-of-type .name-days-country, tr:last-of-type .name-days-dates {
     border-bottom: none;
 }
 
+.name-days-tile span {
+    padding: 0 0.5em 0 0;
+}
+
 .name-days-tile {
     display: inline-block;
-    min-width: 30%;
-    padding: 0 0.5em 0 0;
+    min-width: 33%;
+}
+
+@media (max-width: 600px) {
+    .name-days-tile {
+        min-width: 50%;
+    }
+}
+
+@media (max-width: 400px) {
+    .name-days-tile {
+        width: 100%;
+    }
 }
