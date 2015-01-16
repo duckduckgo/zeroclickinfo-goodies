@@ -19,7 +19,17 @@ ddg_goodie_test(
         }
     ),
     
-        
+        'Rhode Island sales tax' => test_zci(
+        'Rhode Island sales tax: 7%',
+        structured_answer => {
+            input     => ['washington dc'],
+            operation => 'Sales tax for',
+            result    => '7%'
+            
+            
+        }
+    ),    
+    
 );
 
 done_testing;
