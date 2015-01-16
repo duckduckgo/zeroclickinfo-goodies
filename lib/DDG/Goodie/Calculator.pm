@@ -17,10 +17,7 @@ name 'Calculator';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
 category 'calculations';
 topics 'math';
-attribution
-  web     => ['https://www.duckduckgo.com',    'DuckDuckGo'],
-  github  => ['https://github.com/duckduckgo', 'duckduckgo'],
-  twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github  => ['https://github.com/duckduckgo', 'duckduckgo'];
 
 triggers query_nowhitespace => qr<
         ^
@@ -77,6 +74,7 @@ handle query_nowhitespace => sub {
 
     return if ($query =~ /\b0x/);      # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
+    return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
@@ -156,7 +154,7 @@ sub prepare_for_display {
         text       => spacing($query) . ' = ' . $result,
         structured => {
             input     => [spacing($query)],
-            operation => 'calculate',
+            operation => 'Calculate',
             result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
         },
     };

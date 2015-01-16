@@ -14,8 +14,7 @@ zci is_cached   => 0;
 
 primary_example_queries 'suicide hotline';
 description 'Checks if a query with the word "suicide" was made and returns a 24 hr suicide hotline.';
-attribution github  => ['https://github.com/conorfl', 'conorfl'],
-            twitter => '@areuhappylucia';
+attribution github  => ['https://github.com/conorfl', 'conorfl'];
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Helpline.pm';
 topics 'everyday';
 category 'special';

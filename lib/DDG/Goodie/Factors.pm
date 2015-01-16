@@ -16,7 +16,7 @@ description 'Returns the factors of the entered number';
 name 'Factors';
 topics 'math';
 category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
+attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
 
 handle remainder => sub {
     my $query = $_;
@@ -27,7 +27,7 @@ handle remainder => sub {
     return "Factors of $query: $factors",
       structured_answer => {
         input     => [$query],
-        operation => 'factors',
+        operation => 'Factors',
         result    => $factors
       };
 };

@@ -6,6 +6,7 @@ with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::ImageLoader';
 
 use DateTime::Event::Sunrise;
+use utf8;
 
 zci answer_type => "sun_info";
 zci is_cached   => 0;
@@ -18,7 +19,7 @@ description 'Compute the sunrise and sunset for a given day';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SunInfo.pm';
 category 'calculations';
 topics 'everyday';
-attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
+attribution github => ['duckduckgo', 'DuckDuckGo'];
 
 my $time_format      = '%l:%M %p';
 my $datestring_regex = datestring_regex();
@@ -34,22 +35,41 @@ my $sunset_svg = goodie_img_tag({
     width    => 48,
 });
 
+my $lat_lon_regex = qr/[\+\-]?[0-9]+(?:
+        (?:\.[0-9]+[°]?)
+        |(?:°?
+            (?:[0-9]{1,2}')?
+            (?:[0-9]{1,2}(?:''|"))?
+        )
+    )?/x;
+
 handle remainder => sub {
 
     my $remainder = shift // '';
     $remainder =~ s/\?//g;    # Strip question marks.
+    return unless $remainder =~ qr/^
+        (?:at\s
+            (?<lat>$lat_lon_regex[NS])\s
+            (?<lon>$lat_lon_regex[EW])\s?
+        )?
+        (?:on|for)?\s?
+        (?<when>$datestring_regex)?
+    $/xi;
+    
     my ($lat, $lon, $tz) = ($loc->latitude, $loc->longitude, $loc->time_zone);
     my $where = where_string();
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
-    my $dt;
-    if (!$remainder) {
-        $dt = DateTime->now;
-    } elsif ($remainder =~ /^(?:on|for)?\s*(?<when>$datestring_regex)$/) {
-        $dt = parse_datestring_to_date($+{'when'});
-    }
+    my $dt = DateTime->now;;
+    $dt = parse_datestring_to_date($+{'when'}) if($+{'when'});
+    
     return unless $dt;                                  # Also going to need to know which day.
-    $dt->set_time_zone($tz);
-
+    $dt->set_time_zone($tz) unless ($+{'lat'} && $+{'lon'});
+    
+    $lon = parse_arc($+{'lon'}) if ($+{'lon'});
+    $lat = parse_arc($+{'lat'}) if ($+{'lat'});
+    
+    $where = "Coordinates ${lat}°N ${lon}°E" if($+{'lat'} && $+{'lon'});
+    
     my $sun_at_loc = DateTime::Event::Sunrise->new(
         longitude => $lon,
         latitude  => $lat,
@@ -80,6 +100,24 @@ sub where_string {
         @where_bits = ($loc->country, $loc->continent_code);
     }
     return join(', ', @where_bits);
+}
+
+sub parse_arc {
+    my ($arc_string) = @_;
+    return unless $arc_string =~ qr/
+        (?<sign>[\+\-])?(?<deg>[0-9]+)(?:
+            ((?<dec_deg>\.[0-9]+)[°]?)
+            |(?:°?
+                (?:(?<min>[0-9]{1,2})')?
+                (?:(?<sec>[0-9]{1,2})(?:''|"))?
+            )
+        )?(?<dir>[NSEW])/x;
+    my $decimal_degrees = $+{'deg'};
+    $decimal_degrees += $+{'dec_deg'} if $+{'dec_deg'};
+    $decimal_degrees += $+{'min'}/60 if $+{'min'};
+    $decimal_degrees += $+{'sec'}/3600 if $+{'sec'};
+    $decimal_degrees *= -1 if $+{'sign'} && $+{'sign'} eq '-' || $+{'dir'} =~ /[SW]/;
+    return $decimal_degrees;
 }
 
 sub pretty_output {

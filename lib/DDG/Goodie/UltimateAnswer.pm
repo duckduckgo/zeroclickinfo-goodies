@@ -11,8 +11,8 @@ description 'Hichhiker\'s Guide to the Galaxy reference.';
 category 'special';
 topics 'entertainment';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UltimateAnswer.pm';
-attribution github  => ['https://github.com/jfeeneywm/', 'jfeeneywm'],
-            twitter => ['https://twitter.com/jfeeneywm', 'jfeeneywm'];
+attribution github  => ['jfeeneywm', 'Jason Feeney'],
+            twitter => ['jfeeneywm', 'Jason Feeney'];
 
 zci answer_type => 'ultimate_answer';
 zci is_cached   => 1;
@@ -25,7 +25,7 @@ handle remainder => sub {
     return $answer,
       structured_answer => {
         input     => [],
-        operation => 'the answer to the ultimate question of life, the universe and everything',
+        operation => 'The answer to the ultimate question of life, the universe and everything',
         result    => $answer
       };
 };

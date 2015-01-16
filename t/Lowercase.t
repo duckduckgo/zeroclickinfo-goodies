@@ -15,7 +15,7 @@ ddg_goodie_test(
         'foo',
         structured_answer => {
             input     => ['foo'],
-            operation => 'lowercase',
+            operation => 'Lowercase',
             result    => 'foo'
         },
     ),
@@ -23,7 +23,7 @@ ddg_goodie_test(
         'foo',
         structured_answer => {
             input     => ['foO'],
-            operation => 'lowercase',
+            operation => 'Lowercase',
             result    => 'foo'
         },
     ),
@@ -31,7 +31,7 @@ ddg_goodie_test(
         'john doe',
         structured_answer => {
             input     => ['john Doe'],
-            operation => 'lowercase',
+            operation => 'Lowercase',
             result    => 'john doe'
         },
     ),
@@ -39,7 +39,7 @@ ddg_goodie_test(
         'github',
         structured_answer => {
             input     => ['GitHub'],
-            operation => 'lowercase',
+            operation => 'Lowercase',
             result    => 'github'
         },
     ),
@@ -47,7 +47,7 @@ ddg_goodie_test(
         'github',
         structured_answer => {
             input     => ['GitHub'],
-            operation => 'lowercase',
+            operation => 'Lowercase',
             result    => 'github'
         },
     ),
@@ -55,7 +55,7 @@ ddg_goodie_test(
         'github',
         structured_answer => {
             input     => ['GitHub'],
-            operation => 'lowercase',
+            operation => 'Lowercase',
             result    => 'github'
         },
     ),
@@ -63,7 +63,7 @@ ddg_goodie_test(
         'github',
         structured_answer => {
             input     => ['GitHub'],
-            operation => 'lowercase',
+            operation => 'Lowercase',
             result    => 'github'
         },
     ),
@@ -71,7 +71,7 @@ ddg_goodie_test(
         'github',
         structured_answer => {
             input     => ['GitHub'],
-            operation => 'lowercase',
+            operation => 'Lowercase',
             result    => 'github'
         },
     ),

@@ -29,7 +29,7 @@ handle remainder => sub {
     return "Here's a random MAC address: $address",
       structured_answer => {
         input     => [],
-        operation => 'random MAC address',
+        operation => 'Random MAC address',
         result    => $address
       };
 };

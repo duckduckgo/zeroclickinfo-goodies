@@ -21,6 +21,10 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'programming', 'web_design';
 
+attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
+            github => [ 'duckduckgo', 'DuckDuckGo'],
+            twitter => ['duckduckgo', 'DuckDuckGo'];
+
 handle query_raw => sub {
     # unless trigger words exist, only answer when we have a single word
     unless (m/$trigger_words/) {

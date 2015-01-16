@@ -99,12 +99,12 @@ handle remainder => sub {
     my ($response, $operation);
     if (@output) {
         $response = join ', ', sort { $a cmp $b } @output;
-        $operation = 'anagrams of';
+        $operation = 'Anagrams of';
     } else {
         do {
             $response = join '', shuffle split(//, $word);
         } while (length($word) > 1 && $response eq $word);
-        $operation = 'scrambled letters of';
+        $operation = 'Scrambled letters of';
     }
 
     return $response,

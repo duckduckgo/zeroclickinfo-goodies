@@ -14,7 +14,7 @@ ddg_goodie_test(
         'April birthstone: Diamond',
         structured_answer => {
             input     => ['April'],
-            operation => 'birthstone',
+            operation => 'Birthstone',
             result    => 'Diamond'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'June birthstone: Pearl',
         structured_answer => {
             input     => ['June'],
-            operation => 'birthstone',
+            operation => 'Birthstone',
             result    => 'Pearl'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'December birthstone: Turquoise',
         structured_answer => {
             input     => ['December'],
-            operation => 'birthstone',
+            operation => 'Birthstone',
             result    => 'Turquoise'
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         'April birthstone: Diamond',
         structured_answer => {
             input     => ['April'],
-            operation => 'birthstone',
+            operation => 'Birthstone',
             result    => 'Diamond'
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         'May birthstone: Emerald',
         structured_answer => {
             input     => ['May'],
-            operation => 'birthstone',
+            operation => 'Birthstone',
             result    => 'Emerald'
         }
     ),
