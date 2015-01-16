@@ -12,7 +12,7 @@ my @fortune = (
     '-ANY-',
     structured_answer => {
         input     => [],
-        operation => 'random fortune',
+        operation => 'Random fortune',
         result    => '-ANY-'
     });
 

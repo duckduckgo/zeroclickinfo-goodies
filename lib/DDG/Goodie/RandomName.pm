@@ -12,8 +12,8 @@ topics 'words_and_games';
 primary_example_queries 'random name';
 secondary_example_queries 'random person';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RandomName.pm';
-attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
-            twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
+attribution github  => ['stelim', 'Stefan Limbacher'],
+            twitter => ['stefanlimbacher', 'Stefan Limbacher'];
 
 triggers start  => 'random name','random person';
 zci answer_type => "randomname";

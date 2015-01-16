@@ -248,8 +248,8 @@ zci is_cached   =>          1;
 attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"],
             github  =>      ["https://github.com/nishanths", "Nishanth Shanmugham"],
             twitter =>      ["https://twitter.com/nshanmugham", "Nishanth Shanmugham"],
-            twitter =>      'crazedpsyc',
-            cpan    =>      'CRZEDPSYC' ;
+            twitter =>      ['crazedpsyc','crazedpsyc'],
+            cpan    =>      ['CRZEDPSYC','crazedpsyc'];
 
 handle remainder => sub {
     # General query cleanup

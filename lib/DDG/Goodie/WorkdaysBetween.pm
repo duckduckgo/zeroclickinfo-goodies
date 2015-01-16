@@ -21,7 +21,7 @@ name 'WorkDaysBetween';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WorkdaysBetween.pm';
 category 'calculations';
 topics 'everyday';
-attribution github => ['http://github.com/mgarriott', 'mgarriott'];
+attribution github => ['http://github.com/mgarriott', 'Matt Garriott'];
 
 my $datestring_regex = datestring_regex();
 
@@ -42,7 +42,7 @@ handle remainder => sub {
     my $end_str   = date_output_string($end_date);
 
     my $verb = $workdays == 1 ? 'is' : 'are';
-    my $number = $workdays == 1 ? 'workday' : 'workdays';
+    my $number = $workdays == 1 ? 'Workday' : 'Workdays';
 
     return "There $verb $workdays $number between $start_str and $end_str.",
       structured_answer => {

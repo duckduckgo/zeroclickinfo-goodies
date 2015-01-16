@@ -12,7 +12,7 @@ my @my_string = (
     '"my string" is 9 characters long.',
     structured_answer => {
         input     => ['my string'],
-        operation => 'character count',
+        operation => 'Character count',
         result    => 9
     });
 
@@ -39,7 +39,7 @@ ddg_goodie_test(
         '"1" is 1 character long.',
         structured_answer => {
             input     => ['1'],
-            operation => 'character count',
+            operation => 'Character count',
             result    => 1
         }
     ),
@@ -49,7 +49,7 @@ ddg_goodie_test(
         '"" is 0 characters long.',
         structured_answer => {
             input     => [''],
-            operation => 'character count',
+            operation => 'Character count',
             result    => 0
         }
     ),
