@@ -20,8 +20,8 @@ code_url    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib
 category    'conversions';
 topics      'programming';
 
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc', 'Michael Smith'],
+            cpan    => ['CRZEDPSYC', 'Michael Smith'];
 
 handle remainder => sub {
     my $input = shift;
@@ -33,7 +33,7 @@ handle remainder => sub {
     return $upper,
       structured_answer => {
         input     => [html_enc($input)],
-        operation => 'uppercase',
+        operation => 'Uppercase',
         result    => html_enc($upper),
       };
 };

@@ -14,7 +14,7 @@ ddg_goodie_test(
         qr/.{5} \(random password\)/,
         structured_answer => {
             input     => ['5 characters', 'low strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{5}$/
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         qr/.{5} \(random password\)/,
         structured_answer => {
             input     => ['5 characters', 'low strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{5}$/
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         qr/.{5} \(random password\)/,
         structured_answer => {
             input     => ['5 characters', 'low strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{5}$/
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         qr/.{15} \(random password\)/,
         structured_answer => {
             input     => ['15 characters', 'average strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{15}$/
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         qr/.{15} \(random password\)/,
         structured_answer => {
             input     => ['15 characters', 'average strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{15}$/
         }
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         qr/.{15} \(random password\)/,
         structured_answer => {
             input     => ['15 characters', 'average strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{15}$/
         }
     ),
@@ -62,7 +62,7 @@ ddg_goodie_test(
         qr/.{25} \(random password\)/,
         structured_answer => {
             input     => ['25 characters', 'high strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{25}$/
         }
     ),
@@ -70,7 +70,7 @@ ddg_goodie_test(
         qr/.{25} \(random password\)/,
         structured_answer => {
             input     => ['25 characters', 'high strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{25}$/
         }
     ),
@@ -78,7 +78,7 @@ ddg_goodie_test(
         qr/.{25} \(random password\)/,
         structured_answer => {
             input     => ['25 characters', 'high strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{25}$/
         }
     ),
@@ -87,7 +87,7 @@ ddg_goodie_test(
         qr/.{8} \(random password\)/,
         structured_answer => {
             input     => ['8 characters', 'average strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{8}$/
         }
     ),
@@ -95,7 +95,7 @@ ddg_goodie_test(
         qr/.{15} \(random password\)/,
         structured_answer => {
             input     => ['15 characters', 'high strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{15}$/
         }
     ),
@@ -103,7 +103,7 @@ ddg_goodie_test(
         qr/.{15} \(random password\)/,
         structured_answer => {
             input     => ['15 characters', 'average strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{15}$/
         }
     ),
@@ -111,7 +111,7 @@ ddg_goodie_test(
         qr/.{33} \(random password\)/,
         structured_answer => {
             input     => ['33 characters', 'average strength'],
-            operation => 'random password',
+            operation => 'Random password',
             result    => qr/^.{33}$/
         }
     ),

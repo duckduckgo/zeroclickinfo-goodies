@@ -13,7 +13,7 @@ triggers query => qr#^([0-9]{1,3}\.){3}([0-9]{1,3})[\s/](([1-3]?[0-9])|(([0-9]{1
 zci answer_type => "subnet_info";
 zci is_cached => 1;
 
-attribution github => ['https://github.com/mintsoft', 'mintsoft'];
+attribution github => ['mintsoft', 'Rob Emery'];
 
 primary_example_queries '10.92.24.0/22';
 secondary_example_queries '46.51.197.88 255.255.254.0', '176.34.131.233/32';

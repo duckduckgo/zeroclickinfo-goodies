@@ -12,8 +12,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'transformations';
 topics 'words_and_games';
 
-attribution github => ['https://github.com/moollaza', 'moollaza'],
-            github => ['https://github.com/maxluzuriaga', 'Max Luzuriaga'];
+attribution github => ['moollaza', 'Zaahir Moolla'],
+            github => ['maxluzuriaga', 'Max Luzuriaga'];
 
 zci answer_type => "title_case";
 zci is_cached   => 1;
@@ -41,7 +41,7 @@ handle remainder => sub {
     return $title_case,
       structured_answer => {
         input     => [html_enc($input)],
-        operation => 'title case',
+        operation => 'Title case',
         result    => html_enc($title_case),
       };
 };

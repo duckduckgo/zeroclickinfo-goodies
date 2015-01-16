@@ -23,7 +23,7 @@ ddg_goodie_test(
         $ascii_answer,
         structured_answer => {
             input     => [],
-            operation => 'current lunar phase',
+            operation => 'Current lunar phase',
             result    => $phases,
         }
     ),
@@ -31,7 +31,7 @@ ddg_goodie_test(
         $ascii_answer,
         structured_answer => {
             input     => [],
-            operation => 'current lunar phase',
+            operation => 'Current lunar phase',
             result    => $phases,
         }
     ),
@@ -39,7 +39,7 @@ ddg_goodie_test(
         $ascii_answer,
         structured_answer => {
             input     => [],
-            operation => 'current lunar phase',
+            operation => 'Current lunar phase',
             result    => $phases,
         }
     ),
@@ -47,7 +47,7 @@ ddg_goodie_test(
         $ascii_answer,
         structured_answer => {
             input     => [],
-            operation => 'current lunar phase',
+            operation => 'Current lunar phase',
             result    => $phases,
         }
     ),

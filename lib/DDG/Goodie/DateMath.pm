@@ -37,7 +37,7 @@ handle query_lc => sub {
         return $out_date,
             structured_answer => {
             input     => [$+{'date'}],
-            operation => 'date math',
+            operation => 'Date math',
             result    => $out_date
         };
     }
@@ -80,7 +80,7 @@ handle query_lc => sub {
     return "$in_date $out_action is $out_date",
       structured_answer => {
         input     => [$in_date . ' ' . $out_action],
-        operation => 'date math',
+        operation => 'Date math',
         result    => $out_date
       };
 };

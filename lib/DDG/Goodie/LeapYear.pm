@@ -15,7 +15,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'dates';
 topics 'everyday';
 attribution github => [ 'https://github.com/tophattedcoder', 'Tom Bebbington'],
-twitter => '@tophattedcoder';
+            twitter => ['@tophattedcoder', 'Tom Bebbington'];
 
 zci is_cached => 1;
 triggers startend => 'leap years', 'leap year';
@@ -31,9 +31,7 @@ my %is_not_tense = (
     present => 'is not',
     future => 'will not be',
 );
-my ($second, $minute, $hour, $dayOfMonth, $month, $partyear, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
-# the current year
-my $year = $partyear + 1900;
+
 # searches for leap years
 sub search_leaps {
     my ($num, $direction, $include_curr, $curryear) = @_;
@@ -53,7 +51,7 @@ sub search_leaps {
 }
 # finds the matching tense for the given year
 sub find_tense {
-    my ($cyear) = @_;
+    my ($cyear, $year) = @_;
     if($cyear < $year) {
         return "past";
     } elsif($cyear > $year) {
@@ -76,6 +74,9 @@ sub format_year {
     }
 }
 handle remainder => sub {
+    
+    my $year = (localtime)[5] + 1900;
+    
     if ($_ =~ /(last|previous) ([0-9][0-9]?)$/i) {
         my @years = search_leaps($2, -1, 0, $year);
         @years = map(format_year, @years);
@@ -119,7 +120,7 @@ handle remainder => sub {
             $cyear = -$cyear;
         }
         my $fyear = format_year($cyear);
-        my $tense = find_tense($cyear);
+        my $tense = find_tense($cyear, $year);
         if(isleap($cyear)) {
             return "$fyear $is_tense{$tense} a leap year";
         } else {

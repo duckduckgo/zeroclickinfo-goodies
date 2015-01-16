@@ -10,7 +10,7 @@ source 'https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Doc
 code_url 'https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/KernelTaint.pm';
 category 'computing_tools';
 topics 'computing', 'sysadmin', 'special_interest';
-attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
+attribution github => ['http://github.com/nospampleasemam', 'Dylan Lloyd'],
                web => ['http://dylansserver.com/', 'Dylan Lloyd'];
 
 zci answer_type => 'kernel_taint';

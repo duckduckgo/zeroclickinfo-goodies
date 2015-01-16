@@ -16,7 +16,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'math', 'programming';
 attribution cpan   => 'majuscule',
-            github => 'nospampleasemam',
+            github => ['nospampleasemam', 'Dylan Lloyd'],
             web    => ['https://dylansserver.com', 'Dylan Lloyd'] ;
 
 handle query_raw => sub {
@@ -27,7 +27,7 @@ handle query_raw => sub {
 
     return "$hex base 16 = $decimal base 10", structured_answer => {
         input     => ['0x' . $hex],
-        operation => 'hex to decimal',
+        operation => 'Hex to decimal',
         result    => "$decimal",         # Quoted for display precision as string.
     };
 };

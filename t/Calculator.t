@@ -16,7 +16,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 - 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0</
         }
     ),
@@ -25,7 +25,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 + 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>4</
         }
     ),
@@ -34,7 +34,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 ^ 8'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>256</
         }
     ),
@@ -43,7 +43,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 * 7'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>14</
         }
     ),
@@ -52,7 +52,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1 dozen * 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>24</
         }
     ),
@@ -61,7 +61,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['dozen + dozen'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>24</
         }
     ),
@@ -70,7 +70,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 divided by 4'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0.5</
         }
     ),
@@ -79,7 +79,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 ^ 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>4</
         }
     ),
@@ -88,7 +88,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 ^ 0.2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1\.14869835499704</
         }
     ),
@@ -97,7 +97,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['cos(0)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1</
         }
     ),
@@ -106,7 +106,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['tan(1)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1\.5574077246549</
         }
     ),
@@ -115,7 +115,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['tanh(1)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0\.761594155955765</
         }
     ),
@@ -124,7 +124,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['cotan(1)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0\.642092615934331</
         }
     ),
@@ -133,7 +133,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['sin(1)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0\.841470984807897</
         }
     ),
@@ -142,7 +142,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['csc(1)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1\.18839510577812</
         }
     ),
@@ -151,7 +151,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['sec(1)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1\.85081571768093</
         }
     ),
@@ -160,7 +160,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['log(3)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1\.09861228866811</
         }
     ),
@@ -169,7 +169,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['log(3)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1\.09861228866811</
         }
     ),
@@ -178,7 +178,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['log10(100.00)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>2</
         }
     ),
@@ -187,7 +187,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['log_10(100.00)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>2</
         }
     ),
@@ -196,7 +196,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['log_2(16)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>4</
         }
     ),
@@ -205,7 +205,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['log_23(25)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1\.0265928122321</
         }
     ),
@@ -214,7 +214,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['log23(25)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1\.0265928122321</
         }
     ),
@@ -223,7 +223,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['$3.43 + $34.45'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>\$37\.88</
         }
     ),
@@ -232,7 +232,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['$3.45 + $34.45'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>\$37\.90</
         }
     ),
@@ -241,7 +241,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['$3 + $34'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>\$37\.00</
         }
     ),
@@ -250,7 +250,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['$3,4 + $34,4'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>\$37,80</
         }
     ),
@@ -259,7 +259,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['64 * 343'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>21,952</
         }
     ),
@@ -268,7 +268,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(1  *  10 ^ 2) + 1'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>101</
         }
     ),
@@ -277,7 +277,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1 + (1  *  10 ^ 2)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>101</
         }
     ),
@@ -286,7 +286,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 * 3 + (1  *  10 ^ 2)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>106</
         }
     ),
@@ -295,7 +295,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(1  *  10 ^ 2) + 2 * 3'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>106</
         }
     ),
@@ -304,7 +304,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(1  *  10 ^ 2) / 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>50</
         }
     ),
@@ -313,7 +313,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 / (1  *  10 ^ 2)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0\.02</
         }
     ),
@@ -322,7 +322,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['424334 + 2253828'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>2,678,162</
         }
     ),
@@ -331,7 +331,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['4.243,34 + 22.538,28'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>26\.781,62</
         }
     ),
@@ -340,7 +340,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['sin(1,0) + 1,05'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1,8914709848079</
         }
     ),
@@ -349,7 +349,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['21 + 15 * 0 + 5'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>26</
         }
     ),
@@ -358,7 +358,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['0.8158 - 0.8157'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0\.0001</
         }
     ),
@@ -367,7 +367,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2,90 + 4,6'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>7,50</
         }
     ),
@@ -376,7 +376,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2,90 + sec(4,6)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>-6,01642861135959</
         }
     ),
@@ -385,7 +385,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['100 - 96.54'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>3\.46</
         }
     ),
@@ -394,7 +394,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1. + 1.'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>2</
         }
     ),
@@ -403,7 +403,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1 + sin(pi)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1</
         }
     ),
@@ -412,7 +412,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1 - 1'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0</
         }
     ),
@@ -421,7 +421,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['sin(pi / 2)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1</
         }
     ),
@@ -430,7 +430,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['sin(pi)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0</
         }
     ),
@@ -439,7 +439,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['cos(2 pi)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1</
         }
     ),
@@ -448,7 +448,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['5 ^ 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>25</
         }
     ),
@@ -457,7 +457,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1.0 + 5 ^ 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>26</
         }
     ),
@@ -466,7 +466,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['3 ^ 2 + 4 ^ 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>25</
         }
     ),
@@ -475,7 +475,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2,2 ^ 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>4,84</
         }
     ),
@@ -484,7 +484,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['0.8 ^ 2 + 0.6 ^ 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1</,
         }
     ),
@@ -493,7 +493,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 ^ 2 ^ 3'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>256</
         }
     ),
@@ -502,7 +502,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 ^ 2 ^ 3.06'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>323\.972172143725</
         }
     ),
@@ -511,7 +511,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['2 ^ 3 ^ 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>512</
         }
     ),
@@ -520,7 +520,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['4 score + 7'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>87</
         }
     ),
@@ -529,7 +529,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['418.1 / 2'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>209\.05</
         }
     ),
@@ -538,7 +538,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['418.005 / 8'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>52\.250625</
         }
     ),
@@ -547,7 +547,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(pi ^ 4 + pi ^ 5) ^ (1 / 6)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>2\.71828180861191</
         }
     ),
@@ -556,7 +556,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>3\.71828180861191</
         }
     ),
@@ -565,7 +565,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['5 ^ 4 ^ (3 - 2) ^ 1'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>625</
         }
     ),
@@ -574,7 +574,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(5 - 4) ^ (3 - 2) ^ 1'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>1</
         }
     ),
@@ -583,7 +583,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(5 + 4 - 3) ^ (2 - 1)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>6</
         }
     ),
@@ -592,7 +592,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['5 ^ ((4 - 3) * (2 + 1)) + 6'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>131</
         }
     ),
@@ -601,7 +601,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['20 * 07'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>140</
         }
     ),
@@ -610,7 +610,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['83.166.167.160 / 33'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>2\.520\.186\.883,63636</
         }
     ),
@@ -619,7 +619,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['123.123.123.123 / 255.255.255.256'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>0,482352941174581</
         }
     ),
@@ -628,7 +628,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(4  *  10 ^ 5) + 1'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>400,001</
         }
     ),
@@ -637,7 +637,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['(4  *  10 ^ 5) + 1'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>400,001</
         }
     ),
@@ -646,7 +646,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['pi / (1  *  10 ^ 9)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>3\.14159265358979 \* 10<sup>-9<\/sup></
         }
     ),
@@ -655,7 +655,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['pi * (1  *  10 ^ 9)'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/>3,141,592,653\.58979</
         }
     ),
@@ -664,7 +664,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1234 + 5432'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/6,666/
         }
     ),
@@ -673,7 +673,7 @@ ddg_goodie_test(
         heading           => 'Calculator',
         structured_answer => {
             input     => ['1234 + 5432'],
-            operation => 'calculate',
+            operation => 'Calculate',
             result    => qr/6,666/
         }
     ),

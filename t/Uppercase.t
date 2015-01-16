@@ -14,7 +14,7 @@ ddg_goodie_test(
         'THIS',
         structured_answer => {
             input     => ['this'],
-            operation => 'uppercase',
+            operation => 'Uppercase',
             result    => 'THIS'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'THAT',
         structured_answer => {
             input     => ['that'],
-            operation => 'uppercase',
+            operation => 'Uppercase',
             result    => 'THAT'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'THIS STRING',
         structured_answer => {
             input     => ['this string'],
-            operation => 'uppercase',
+            operation => 'Uppercase',
             result    => 'THIS STRING'
         }
     ),

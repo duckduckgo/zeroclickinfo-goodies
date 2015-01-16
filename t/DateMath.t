@@ -13,7 +13,7 @@ my @overjan = (
     '01 Jan 2012 + 32 days is 02 Feb 2012',
     structured_answer => {
         input     => ['01 Jan 2012 + 32 days'],
-        operation => 'date math',
+        operation => 'Date math',
         result    => '02 Feb 2012',
     },
 );
@@ -22,7 +22,7 @@ my @first_sec = (
     '01 Jan 2012 + 1 day is 02 Jan 2012',
     structured_answer => {
         input     => ['01 Jan 2012 + 1 day'],
-        operation => 'date math',
+        operation => 'Date math',
         result    => '02 Jan 2012',
     },
 );
@@ -42,7 +42,7 @@ ddg_goodie_test([qw(
         '01 Jan 2014 + 32 days is 02 Feb 2014',
         structured_answer => {
             input     => '-ANY-',
-            operation => 'date math',
+            operation => 'Date math',
             result    => '02 Feb 2014',
         },
     ),
@@ -50,7 +50,7 @@ ddg_goodie_test([qw(
         '01 Jan 2014',
         structured_answer => {
             input     => ['january 1st'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '01 Jan 2014',
         }
     ),
@@ -58,7 +58,7 @@ ddg_goodie_test([qw(
         '29 Jan 2014',
         structured_answer => {
             input     => ['6 weeks ago'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '29 Jan 2014',
         }
     ),
@@ -66,7 +66,7 @@ ddg_goodie_test([qw(
         '12 Mar 2014 + 2 weeks is 26 Mar 2014',
         structured_answer => {
             input     => ['12 Mar 2014 + 2 weeks'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '26 Mar 2014',
         }
     ),
@@ -74,7 +74,7 @@ ddg_goodie_test([qw(
         '02 Apr 2014',
         structured_answer => {
             input     => ['in 3 weeks'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '02 Apr 2014',
         }
     ),
@@ -82,7 +82,7 @@ ddg_goodie_test([qw(
         '12 Mar 2014',
         structured_answer => {
             input     => ['today'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '12 Mar 2014',
         }
     ),
@@ -91,7 +91,7 @@ ddg_goodie_test([qw(
         '01 Jan 2012 + 5 weeks is 05 Feb 2012',
         structured_answer => {
             input     => ['01 Jan 2012 + 5 weeks'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '05 Feb 2012',
         },
     ),
@@ -99,7 +99,7 @@ ddg_goodie_test([qw(
         '01 Jan 2012 + 5 months is 01 Jun 2012',
         structured_answer => {
             input     => ['01 Jan 2012 + 5 months'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '01 Jun 2012',
         },
     ),
@@ -107,7 +107,7 @@ ddg_goodie_test([qw(
         '01 Jan 2012 + 5 years is 01 Jan 2017',
         structured_answer => {
             input     => ['01 Jan 2012 + 5 years'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '01 Jan 2017',
         },
     ),
@@ -119,7 +119,7 @@ ddg_goodie_test([qw(
         '01 Jan 2012 - 10 days is 22 Dec 2011',
         structured_answer => {
             input     => ['01 Jan 2012 - 10 days'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '22 Dec 2011',
         },
     ),
@@ -127,7 +127,7 @@ ddg_goodie_test([qw(
         '01 Jan 2014 + 2 weeks is 15 Jan 2014',
         structured_answer => {
             input     => ['01 Jan 2014 + 2 weeks'],
-            operation => 'date math',
+            operation => 'Date math',
             result    => '15 Jan 2014',
         },
     ),

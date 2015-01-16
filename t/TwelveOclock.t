@@ -12,42 +12,42 @@ my @noon = (
     '12:00pm is noon.',
     structured_answer => {
         input     => [],
-        operation => 'midnight or noon',
+        operation => 'Midnight or noon',
         result    => '12:00pm is noon.'
     });
 my @correct_noon = (
     'Yes, 12:00pm is noon.',
     structured_answer => {
         input     => [],
-        operation => 'midnight or noon',
+        operation => 'Midnight or noon',
         result    => 'Yes, 12:00pm is noon.'
     });
 my @wrong_noon = (
     'No, 12:00pm is noon.',
     structured_answer => {
         input     => [],
-        operation => 'midnight or noon',
+        operation => 'Midnight or noon',
         result    => 'No, 12:00pm is noon.'
     });
 my @midnight = (
     '12:00am is midnight.',
     structured_answer => {
         input     => [],
-        operation => 'midnight or noon',
+        operation => 'Midnight or noon',
         result    => '12:00am is midnight.'
     });
 my @correct_midnight = (
     'Yes, 12:00am is midnight.',
     structured_answer => {
         input     => [],
-        operation => 'midnight or noon',
+        operation => 'Midnight or noon',
         result    => 'Yes, 12:00am is midnight.'
     });
 my @wrong_midnight = (
     'No, 12:00am is midnight.',
     structured_answer => {
         input     => [],
-        operation => 'midnight or noon',
+        operation => 'Midnight or noon',
         result    => 'No, 12:00am is midnight.'
     });
 
