@@ -38,41 +38,38 @@ my $planets = Load(scalar share('planets.yml')->slurp);
 
 # Handle statement
 handle query_lc => sub {
-
-  s/\?//g; # Strip question marks.
-  s/of|what|is|the//g; #remove common words
-
   #declare vars
-  my ($flag, $result, $planetObj);
-
-  # This is incorrect a query like "size volume size of mars" will choose the last flag value
-  if (m/size/) { $flag = "radius" }
-  if (m/radius/) { $flag = "radius" }
-  if (m/volume/) { $flag = "volume" }
-  if (m/mass/) { $flag = "mass" }
-  if (m/area/) { $flag = "surface_area" }
+  my ($attribute, $result, $planetObj);
+  
+  s/\?//g; # Strip question marks
+  s/of|what|is|the|planet//g; #remove common words
+  
+  #Switch attribute depending on search query
+  if(m/size|radius/) {$attribute = "radius"}
+  elsif(m/volume/) {$attribute = "volume"}
+  elsif(m/mass/) {$attribute = "mass"}
+  elsif(m/area/) {$attribute = "surface_area"}
 
   my $triggers = join('|', @triggers);
-  s/$triggers//g; #remove keywords
+  s/$triggers//g; #remove triggers
   s/^\s+|\s+$//g; #trim
 
   return unless $_; # return if empty query
-  $planetObj = $planets->{$_}; 
+  $planetObj = $planets->{$_}; #get planet data
   return unless $planetObj; # return if we don't have a valid planet
 
-  my $location = $loc->country_code;
-
   #Switch to imperial for non-metric countries
-  if ($location =~ m/UK|US|MM|LR/i) { 
-    $result = $planetObj->{$flag."_imperial"};
+  if ($loc->country_code =~ m/UK|US|MM|LR/i) {
+    $result = $planetObj->{$attribute."_imperial"};
   } else {
-    $result = $planetObj->{$flag};
+    $result = $planetObj->{$attribute};
   }
-  #Convert any attributes to human friendly text. e.g surface_area = Surface Area
-  if($flag =~ /_/ ) { $flag = join ' ', map ucfirst lc, split /[_]+/, $flag; }
+  
+  #Convert flag surface_area = Surface Area
+  if($attribute =~ /_/ ) { $attribute = join ' ', map ucfirst lc, split /[_]+/, $attribute; }
 
   # Human friendly planet name + attribute
-  my $operation = ucfirst($_).", ".ucfirst($flag);
+  my $operation = ucfirst($_).", ".ucfirst($attribute);
 
   #Superscript for km3, mi3, km2 or mi2 
   if($result =~ m/(km|mi)(\d)/) {
@@ -84,6 +81,7 @@ handle query_lc => sub {
 
 };
 
+#Build HTML output
 sub pretty_output {
   my ($result, $operation, $image) = @_;
   my $html = "<div class='zci--planets'>";
