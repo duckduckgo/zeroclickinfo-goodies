@@ -1,11 +1,13 @@
 package DDG::Goodie::SalesTax;
 use DDG::Goodie;
-
-triggers startend => 'sales tax for', 'sales tax';
-
+use Locale::SubCountry;
+use YAML::XS qw(Load);
+ 
+triggers startend => 'sales tax for', 'sales tax', 'what is the sales tax for', 'what is sales tax for';
+ 
 zci answer_type => "sales_tax";
 zci is_cached   => 1;
-
+ 
 primary_example_queries 'Sales tax for pennsylvania', 'Sales tax pennsylvania';
 description 'Returns the sales tax of the specified state or territory in the United States';
 name 'Sales Tax';
@@ -14,70 +16,32 @@ category 'random';
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SalesTax.pm";
 source "https://en.wikipedia.org/wiki/Sales_taxes_in_the_United_States";
 attribution github => ['https://github.com/javathunderman', 'Thomas Denizou'];
-            
-my %salestax = (
-    "Alabama"   => "4%",
-    "Alaska"   => "Alaska does not levy a sales tax.",
-    "Arizona"   => "5.6%",
-    "Arkansas"   => "6.5%",
-    "California"   => "7.5%",
-    "Colorado"   => "2.9%",
-    "Connecticut"   => "6.35%",
-    "Delaware"   => "Delaware does not levy a sales tax.",
-    "District of Columbia"   => "5.75%",
-    "Florida"   => "6%",
-    "Georgia"   => "4%",
-    "Guam"   => "4%",
-    "Hawaii"   => "4%",
-    "Idaho"   => "6%",
-    "Illinois"   => "6.25%",
-    "Indiana"   => "7%",
-    "Iowa"   => "6%",
-    "Kansas"   => "6.15%",
-    "Kentucky"   => "6%",
-    "Louisiana"   => "4%",
-    "Maine"   => "5.5%",
-    "Maryland"   => "6%",
-    "Massachusetts"   => "6.25%",
-    "Michigan"   => "6%",
-    "Minnesota"   => "6.875%",
-    "Mississippi"   => "7%",
-    "Missouri"   => "4.225%",
-    "Montana"   => "Montana does not levy a sales tax.",
-    "Nebraska"   => "5.5%",
-    "Nevada"   => "6.85%",
-    "New Hampshire"   => "New Hampshire does not levy a sales tax.",
-    "New Jersey"   => "7%",
-    "New Mexico"   => "7%",
-    "New York"   => "4%",
-    "North Carolina"   => "4.75%",
-    "North Dakota"   => "5%",
-    "Ohio"   => "5.75%",
-    "Oklahoma"   => "4.5%",
-    "Oregon"   => "Oregon does not levy a sales tax.",
-    "Pennsylvania"   => "6%",
-    "Puerto Rico"   => "6%",
-    "Rhode Island"   => "7%",
-    "South Carolina"   => "6%",
-    "South Dakota"   => "4%",
-    "Tennessee"   => "7%",
-    "Texas"   => "6.25%",
-    "Utah"   => "5.95%",
-    "Vermont"   => "6%",
-    "Virginia"   => "5.3%",
-    "Washington state"   => "6.5%",
-    "West Virginia"   => "6%",
-    "Wisconsin"   => "5%",
-    "Wyoming"   => "4%"
-);
+         
+#Create US SubCountry object
+my $US = new Locale::SubCountry("US");
+ 
+#Load states.yml
+my $salestax = Load(scalar share('states.txt')->slurp);            
 
 handle remainder => sub {
-    my $state = ucfirst lc $_;
-
+ 
+    my $query = $_;
+ 
+    #If our query is Washington DC convert it to District of Columbia
+    if($query =~ m/\b(washington\sdc|d\.c)\b/i) {
+        $query = "District of Columbia"
+    }
+ 
+    #Return the full name of the state as determined by SubCountry
+    my $state = $US->full_name($US->code($query));
     return unless $state;
-    my $tax = $salestax{$state};
+ 
+    #Lookup the $state in $salestax YML data
+    my $tax = $salestax->{$state};
     return unless $tax;
-
+ 
+    #If $tax is 0% then the state does not levy sales tax
+    if ($tax eq "0%") {$tax = $state." does not levy a sales tax";}
     return $state . " sales tax: $tax",
       structured_answer => {
         input     => [$state],
@@ -85,5 +49,4 @@ handle remainder => sub {
         result    => $tax
       };
 };
-
 1;
