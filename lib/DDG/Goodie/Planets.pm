@@ -12,14 +12,16 @@ zci is_cached   => 1;
 name "Planets";
 primary_example_queries 'size of venus';
 secondary_example_queries 'what is the size of venus', 'volume of venus';
-description 'Lookup various attributes of planets';
+description 'Lookup various planet attributes';
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Planets.pm";
-category 'conversions';
+category 'random';
 topics 'special_interest';
 attribution github => ["MrChrisW", "Chris Wilson"],
             web => ["http://chrisjwilson.com", "Chris Wilson"];
 
-my @triggers = ( 'size', 'radius', 'volume', 'mass', 'temperature', 'surface area', 'area');
+my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'temperature', 'surface area', 'area');
+my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus');
+
 triggers any => @triggers;
 
 my %planetImages = (
@@ -38,40 +40,42 @@ my $planets = Load(scalar share('planets.yml')->slurp);
 
 # Handle statement
 handle query_lc => sub {
-  #declare vars
-  my ($attribute, $result, $planetObj);
+  # Declare vars
+  my ($attribute, $attributesString, $result, $planetObj);
   
-  s/\?//g; # Strip question marks
-  s/of|what|is|the|planet//g; #remove common words
-  
-  #Switch attribute depending on search query
+  s/of|what|is|the|planet|\?//g; # Remove common words, strip question marks
+
+  $attributesString = join('|', @attributesArray); 
+  return unless /$attributesString/; # Ensure we match at least one attribute, eg. size, volume
+
+  # Switch attribute depending on search query
   if(m/size|radius/) {$attribute = "radius"}
   elsif(m/volume/) {$attribute = "volume"}
   elsif(m/mass/) {$attribute = "mass"}
   elsif(m/area/) {$attribute = "surface_area"}
 
-  my $triggers = join('|', @triggers);
-  s/$triggers//g; #remove triggers
-  s/^\s+|\s+$//g; #trim
+  s/$attributesString//g; # Remove attributes
+  s/^\s+|\s+$//g; # Trim
 
-  return unless $_; # return if empty query
-  $planetObj = $planets->{$_}; #get planet data
-  return unless $planetObj; # return if we don't have a valid planet
+  return unless $_; # Return if empty query
+  $planetObj = $planets->{$_}; # Get planet data
+  return unless $planetObj; # Return if we don't have a valid planet
 
-  #Switch to imperial for non-metric countries
+  # Switch to imperial for non-metric countries
+  # https://en.wikipedia.org/wiki/Metrication
   if ($loc->country_code =~ m/UK|US|MM|LR/i) {
     $result = $planetObj->{$attribute."_imperial"};
   } else {
     $result = $planetObj->{$attribute};
   }
   
-  #Convert flag surface_area = Surface Area
+  # Convert flag surface_area = Surface Area
   if($attribute =~ /_/ ) { $attribute = join ' ', map ucfirst lc, split /[_]+/, $attribute; }
 
   # Human friendly planet name + attribute
   my $operation = ucfirst($_).", ".ucfirst($attribute);
 
-  #Superscript for km3, mi3, km2 or mi2 
+  # Superscript for km3, mi3, km2 or mi2 
   if($result =~ m/(km|mi)(\d)/) {
     my $notation = $1; my $num = $2;
     $result =~ s/$notation$num/$notation<sup>$num<\/sup>/;
