@@ -17,8 +17,8 @@ attribution github => ["https://github.com/dl00", "dl00"];
 triggers start => "duckduckhack dl00";
 
 handle remainder => sub {
-	return if $_;
-	return "dl00 is awesome and successfully completed the initiation tutorial for DuckDuckHack."
+    return if $_;
+    return "dl00 is awesome and successfully completed the initiation tutorial for DuckDuckHack."
 };
 
 1;
