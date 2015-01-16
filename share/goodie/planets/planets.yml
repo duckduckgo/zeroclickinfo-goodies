@@ -27,7 +27,7 @@ mercury:
   volume_imperial: 14,593,223,446 mi3
   volume_scientific: 6.08272 x 1010 km3
   mass: 330,104,000,000,000,000,000,000 kg
-  mass_imperial: 7.27754746 × 1018 lbs # very large number - fix
+  mass_imperial: 727,754,745,962,800,000,000,000 lbs
   mass_scientific: 3.3010 x 1023 kg
   effective_temperature: -173/427 °C
   effective_temperature_imperial: -279/801 °F
@@ -44,7 +44,7 @@ venus:
   volume_imperial: 222,738,686,740 mi3
   volume_scientific: 9.28415 x 1011 km3
   mass: 4,867,320,000,000,000,000,000,000 kg
-  mass_imperial: 1.07306038 × 1025 lbs # very large number - fix
+  mass_imperial: 10,730,603,779,780,000,000,000,000 lbs
   mass_scientific: 4.8673 x 1024 kg
   effective_temperature: 462 °C
   effective_temperature_imperial: 864 °F
@@ -61,7 +61,7 @@ earth:
   volume_imperial: 259,875,159,532 mi3
   volume_scientific: 1.08321 x 1012 km3
   mass: 5,972,190,000,000,000,000,000,000 kg
-  mass_imperial: 1.31664252 × 1025 lbs # very large number - fix
+  mass_imperial: 13,166,425,175,980,000,000,000,000 lbs
   mass_scientific: 5.9722 x 1024 kg
   effective_temperature: -88/58 (min/max) °C
   effective_temperature_imperial: -126/136 (min/max) °F
@@ -78,7 +78,7 @@ mars:
   volume_imperial: 39,133,515,914 mi3
   volume_scientific: 1.63116 X 1011 km3
   mass: 641,693,000,000,000,000,000,000 kg
-  mass_imperial: 1.4146909 × 1024 lbs # very large number - fix
+  mass_imperial: 1,414,690,904,082,000,000,000,000 lbs
   mass_scientific: 6.4169 x 1023 kg
   effective_temperature: -153/20 (min/max) °C
   effective_temperature_imperial: -225/70 (min/max) °F
@@ -95,7 +95,7 @@ jupiter:
   volume_imperial: 343,382,767,518,322 mi3
   volume_scientific: 1.43128 x 1015 km3
   mass: 1,898,130,000,000,000,000,000,000,000 kg
-  mass_imperial: 4.18466034 × 1027 lbs # very large number - fix
+  mass_imperial: 4,184,660,337,210,000,000,000,000,000 lbs
   mass_scientific: 1.8981 x 1027 kg
   effective_temperature: -148 °C
   effective_temperature_imperial: -234 °F
@@ -112,7 +112,7 @@ saturn:
   volume_imperial: 198,439,019,647,006 mi3
   volume_scientific: 8.2713 x 1014 km3
   mass: 568,319,000,000,000,000,000,000,000 kg
-  mass_imperial: 1.25292892 × 1027 lbs # very large number - fix
+  mass_imperial: 1,252,928,923,826,000,000,000,000,000 lbs
   mass_scientific: 5.6832 x 1026 kg
   effective_temperature: -178 °C
   effective_temperature_imperial: -288 °F
@@ -129,7 +129,7 @@ uranus:
   volume_imperial: #not found
   volume_scientific: 6.83344 x 1013 km3
   mass: 86,810,300,000,000,000,000,000,000 kg
-  mass_imperial: 1.91383951 × 1026 lbs # very large number - fix
+  mass_imperial: 191,383,951,189,500,000,000,000,000 lbs
   mass_scientific: 8.6810 x 1-216 °C025 kg
   effective_temperature: -216 °C
   effective_temperature_imperial: -357 °F
@@ -146,7 +146,7 @@ neptune:
   volume_imperial: 15,000,714,125,712 mi3
   volume_scientific: 6.25257 x 1013 km3
   mass: 102,410,000,000,000,000,000,000,000 kg
-  mass_imperial: 2.25775403 × 1026 lbs # very large number - fix
+  mass_imperial: 225,775,402,703,500,000,000,000,000 lbs
   mass_scientific: 1.0241 x 1026 kg
   effective_temperature: -214 °C
   effective_temperature_imperial: -353 °F
