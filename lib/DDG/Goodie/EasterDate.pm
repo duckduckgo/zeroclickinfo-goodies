@@ -38,37 +38,37 @@ sub output_date {
 
 sub roshhashanah {
     # Gauss algorithm
-	my $y = shift;
-	
-	my $r = (12 * $y + 12) % 19;
+    my $y = shift;
+    
+    my $r = (12 * $y + 12) % 19;
 
     # Calculate the number of parts (Talmudic units)
-	my $parts = 765433 * $r - 1565 * $y - 445405 + 123120 * ($y % 4);
-	
+    my $parts = 765433 * $r - 1565 * $y - 445405 + 123120 * ($y % 4);
+    
     # Take into account the difference between Gregorian and Julian calendars
-	my $gregorian_shift = int($y / 100) - int ($y / 400) - 2;
-	
-	$parts -= 492479 if $parts <= 0; # Floored division
-	
-	my $day = int($parts / 492480) + $gregorian_shift;
-	
-	$parts %= 492480;
-	
-	my $dow = ($y + int($y / 4) - $gregorian_shift + $day + 2) % 7;
-	
+    my $gregorian_shift = int($y / 100) - int ($y / 400) - 2;
+    
+    $parts -= 492479 if $parts <= 0; # Floored division
+    
+    my $day = int($parts / 492480) + $gregorian_shift;
+    
+    $parts %= 492480;
+    
+    my $dow = ($y + int($y / 4) - $gregorian_shift + $day + 2) % 7;
+    
     # Postponement rules
-	if ($dow == 0 || $dow == 3 || $dow == 5) {
-		$day++;
-	} elsif ($dow == 1 && $parts >= 442111 && $r > 11) {
-		$day++;
-	} elsif ($dow == 2 && $parts >= 311676 && $r > 6) {
-		$day += 2;
-	}
-	
+    if ($dow == 0 || $dow == 3 || $dow == 5) {
+        $day++;
+    } elsif ($dow == 1 && $parts >= 442111 && $r > 11) {
+        $day++;
+    } elsif ($dow == 2 && $parts >= 311676 && $r > 6) {
+        $day += 2;
+    }
+    
     # Calculate month and day
-	return (8, $day + 31) if $day <= 0;
-	
-	return (10, $day - 30) if $day > 30;
+    return (8, $day + 31) if $day <= 0;
+    
+    return (10, $day - 30) if $day > 30;
     
     return (9, $day);
 }
@@ -86,11 +86,11 @@ use constant {
 };
 
 sub jewish_holiday {
-	my ($year, $delta) = @_;
-	my ($month, $day) = roshhashanah($year);
-	
-	my $dt = DateTime->new(year => $year, month => $month, day => $day);
-	
+    my ($year, $delta) = @_;
+    my ($month, $day) = roshhashanah($year);
+    
+    my $dt = DateTime->new(year => $year, month => $month, day => $day);
+    
     if ($delta == HOLIDAY_HANUKKAH) {
         ($month, $day) = roshhashanah($year + 1);
     
@@ -101,42 +101,42 @@ sub jewish_holiday {
         $delta++ if $year_length == 355 || $year_length == 385; # Heshvan is one day longer in a complete year
     }
     
-	$dt->add( days => $delta );
-	
-	return ($dt->month, $dt->day);
+    $dt->add( days => $delta );
+    
+    return ($dt->month, $dt->day);
 }
 
 sub easter {
-	# Gauss algorithm
-	my ($year, $is_western) = @_;
-	
-	# Calculate the difference between Julian and Gregorian calendars for the given year
-	my $century = int($year / 100);
-	my $gregorian_shift = $century - int ($century / 4) - 2;
-	
-	my ($x, $y) = (15, 6);
-		
-	if ($is_western) {
-		$x = 17 - int ((13 + 8 * $century) / 25) + $gregorian_shift; # Metonic cycle correction
-		$y += $gregorian_shift;
-	}
-	
-	my $d = ( ($year % 19) * 19 + $x) % 30; # Paschal Full Moon
-	my $e = ( 2 * ($year % 4) + 4 * $year - $d + $y) % 7; # Sunday after PFM
-	
-	my $r = $d + $e;
-	
-	$r += $gregorian_shift if !$is_western;
-	
-	if ($r >= 40) {
-		return ( 5, $r - 39 );
-	} elsif ($r >= 10) {
-		# Correction for the length of the moon month
-		$r -= 7 if $e == 6 && ($d == 29 || $d == 28 && ($year % 19) > 10);
-		return ( 4, $r - 9 );
-	} else {
-		return ( 3, $r + 22 );
-	}
+    # Gauss algorithm
+    my ($year, $is_western) = @_;
+    
+    # Calculate the difference between Julian and Gregorian calendars for the given year
+    my $century = int($year / 100);
+    my $gregorian_shift = $century - int ($century / 4) - 2;
+    
+    my ($x, $y) = (15, 6);
+        
+    if ($is_western) {
+        $x = 17 - int ((13 + 8 * $century) / 25) + $gregorian_shift; # Metonic cycle correction
+        $y += $gregorian_shift;
+    }
+    
+    my $d = ( ($year % 19) * 19 + $x) % 30; # Paschal Full Moon
+    my $e = ( 2 * ($year % 4) + 4 * $year - $d + $y) % 7; # Sunday after PFM
+    
+    my $r = $d + $e;
+    
+    $r += $gregorian_shift if !$is_western;
+    
+    if ($r >= 40) {
+        return ( 5, $r - 39 );
+    } elsif ($r >= 10) {
+        # Correction for the length of the moon month
+        $r -= 7 if $e == 6 && ($d == 29 || $d == 28 && ($year % 19) > 10);
+        return ( 4, $r - 9 );
+    } else {
+        return ( 3, $r + 22 );
+    }
 }
 
 my %jewish_holidays = (
