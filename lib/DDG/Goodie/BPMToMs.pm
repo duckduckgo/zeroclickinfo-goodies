@@ -48,22 +48,22 @@ handle remainder => sub {
             <td class=\"record__cell__key record_keyspacing\">
                 $note_names[$i]
             </td>
-            <td class=\"record__cell__value\">
-                $straight_values[$i] ms
+            <td class=\"record__cell__value numbers\">
+                $straight_values[$i]
             </td>
             <td />
             <td class=\"record__cell__key record_keyspacing\">
                 Triplet
             </td>
-            <td class=\"record__cell__value\">
-                $triplet_values[$i] ms
+            <td class=\"record__cell__value numbers\">
+                $triplet_values[$i]
             </td>
             <td />
             <td class=\"record__cell__key record_keyspacing\">
                 Dotted
             </td>
-            <td class=\"record__cell__value\">
-                $dotted_values[$i] ms
+            <td class=\"record__cell__value numbers\">
+                $dotted_values[$i]
             </td>
         </tr>";
     }
@@ -74,12 +74,12 @@ handle remainder => sub {
     
     return html => $html_content,
            answer => "$bpm bpm in milliseconds
-Whole Note: " . $straight_values[0] . " ms, Triplet: " . $triplet_values[0] . " ms, Dotted: " . $dotted_values[0] . " ms
-Half Note: " . $straight_values[1] . " ms, Triplet: " . $triplet_values[1] . " ms, Dotted: " . $dotted_values[1] . " ms
-Quarter Note: " . $straight_values[2] . " ms, Triplet: " . $triplet_values[2] . " ms, Dotted: " . $dotted_values[2] . " ms
-1/8 Note: " . $straight_values[3] . " ms, Triplet: " . $triplet_values[3] . " ms, Dotted: " . $dotted_values[3] . " ms
-1/16 Note: " . $straight_values[4] . " ms, Triplet: " . $triplet_values[4] . " ms, Dotted: " . $dotted_values[4] . " ms
-1/32 Note: " . $straight_values[5] . " ms, Triplet: " . $triplet_values[5] . " ms, Dotted: " . $dotted_values[5] . " ms";
+Whole Note: " . $straight_values[0] . ", Triplet: " . $triplet_values[0] . ", Dotted: " . $dotted_values[0] . "
+Half Note: " . $straight_values[1] . ", Triplet: " . $triplet_values[1] . ", Dotted: " . $dotted_values[1] . "
+Quarter Note: " . $straight_values[2] . ", Triplet: " . $triplet_values[2] . ", Dotted: " . $dotted_values[2] . "
+1/8 Note: " . $straight_values[3] . ", Triplet: " . $triplet_values[3] . ", Dotted: " . $dotted_values[3] . "
+1/16 Note: " . $straight_values[4] . ", Triplet: " . $triplet_values[4] . ", Dotted: " . $dotted_values[4] . "
+1/32 Note: " . $straight_values[5] . ", Triplet: " . $triplet_values[5] . ", Dotted: " . $dotted_values[5];
 };
 
 1;

@@ -35,6 +35,10 @@
     border-bottom: solid 1px #DDD;
 }
 
+.bpmto_ms .record .numbers {
+    text-align: right;
+}
+
 .bpmto_ms .record .record__cell__key {
     text-transform: capitalize;
     width: 150px;
