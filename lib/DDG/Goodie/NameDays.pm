@@ -3,12 +3,14 @@ package DDG::Goodie::NameDays;
 
 use utf8;
 use strict;
+use warnings;
 use DateTime;
 use Date::Format;
+use Locale::Country;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 
-zci answer_type => "name_days_w25";
+zci answer_type => "name_days";
 zci is_cached   => 1;
 
 # Metadata
@@ -84,18 +86,23 @@ sub parse_other_date_formats {
     return parse_datestring_to_date($_);
 }
 
-
+sub get_flag {
+    my $country = shift;
+    return '<span class="flag-sm flag-sm-' . country2code($country) . '"></span>';
+}
 
 # Handle statement
 handle remainder => sub {
     my $text;
     my $html;
     my $query;
+    my $header;
     
     if (exists $dates{lc($_)}) {
         # Search by name first
         $query = ucfirst($_);
         ($text, $html) = split('\|', $dates{lc($_)});
+        $header = 'Name days for <b>' . html_enc($query) . '</b>';
     } else {
         # Then, search by date
         my $day = parse_datestring_to_date($_);
@@ -115,13 +122,17 @@ handle remainder => sub {
         # Convert to HTML
         $html = $text;
         $html =~ s/(\d{1,2}) (\w{1,3})/$1&nbsp;$2/g;
-        $html =~ s@(.*?): (.*?)(?:$|; )@<tr><td class="name-days-country">$1</td><td>$2</td></tr>@g;
+        $html =~ s@(.*?): (.*?)(?:$|; )@'<tr><td class="name-days-country">' . get_flag($1) .
+                                        ' <span class="name-days-country-name">' . $1 . '</span>' .
+                                        '</td><td class="name-days-dates">'  . $2 . '</td></tr>'@ge;
+        
+        $header = 'Name days on <b>' . html_enc($query) . '</b>';
     }
     
     # Add the header
-    $html = '<div class="zci__body"><span class="zci__header">' . $query . '</span>' .
-            '<span class="zci__subheader">Name days</span><div class="zci__content"><table>' .
-            $html . '</table></div></div>';
+    $html = '<div class="zci__body"><span>' . $header . '</span>' .
+        '<div class="zci__content"><table>' .
+        $html . '</table></div></div>';
     
     return $text, html => $html;
 };

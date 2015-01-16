@@ -4,6 +4,12 @@
 use strict;
 use DateTime;
 use Path::Class;
+use Locale::Country;
+
+sub get_flag {
+    my $country = shift;
+    return '<span class="flag-sm flag-sm-' . country2code($country) . '"></span>';
+}
 
 # Load the data file
 my @names = (); # Names indexed by day
@@ -63,12 +69,13 @@ sub prepare_dates {
 
     # Prepare the HTML answer
     foreach (sort keys %{$dates_by_country_and_month}) {
-        $res .= '<tr><td class="name-days-country">' . $_ . '</td><td>';
+        $res .= '<tr><td class="name-days-country">' .
+            get_flag($_) . ' <span class="name-days-country-name">' . $_ .
+            '</span></td><td class="name-days-dates">';
         my $i = 0;
         for (@{$dates_by_country_and_month->{$_}}) {
-            $res .= '<div class="name-days-tile"><div class="name-days-tile-body">' .
-            '<h4>' . $_ . '</h4><p>' . $month_names[$i] . '</p>' .
-            '</div></div>' if $_;
+            $res .= '<div class="name-days-tile">' . $month_names[$i] . ' ' .
+                    $_ . '</div>' if $_;
             $i++;
         }
         $res .= '</td></tr>';
