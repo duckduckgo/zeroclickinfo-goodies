@@ -1,7 +1,5 @@
 package DDG::Goodie::IsAwesome::Dronov;
 # ABSTRACT: Dronov's first Goodie
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
 
 use DDG::Goodie;
 
@@ -10,12 +8,11 @@ zci is_cached   => 1;
 
 name "Mikhail Dronov";
 description "http://dronov.net";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
+primary_example_queries "duckduckhack dronov";
 category "programming";
 topics "geek", "programming";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Dronov.pm";
-attribution github => ["dronov", "Mikhail Dronov"],
+attribution github => ["https://github.com/dronov", "dronov"],
             twitter => "dronovmm";
 
 triggers start => "duckduckhack dronov";
