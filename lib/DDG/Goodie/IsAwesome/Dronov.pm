@@ -22,7 +22,7 @@ triggers start => "duckduckhack dronov";
 
 handle remainder => sub {
     return if $_;
-	return "Mikhail Dronov is awesome and has successfully completed the DuckDuckHack Goodie tutorial! He's saying hello from far cold Russia. Find him at dronov.net";
+    return "Mikhail Dronov is awesome and has successfully completed the DuckDuckHack Goodie tutorial! He's saying hello from far cold Russia. Find him at dronov.net";
 };
 
 1;
