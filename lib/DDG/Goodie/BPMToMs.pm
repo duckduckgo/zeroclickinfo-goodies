@@ -52,12 +52,14 @@ handle remainder => sub {
                 $straight_values[$i]
             </td>
             <td />
+            <td />
             <td class=\"record__cell__key record_keyspacing\">
                 Triplet
             </td>
             <td class=\"record__cell__value numbers\">
                 $triplet_values[$i]
             </td>
+            <td />
             <td />
             <td class=\"record__cell__key record_keyspacing\">
                 Dotted
