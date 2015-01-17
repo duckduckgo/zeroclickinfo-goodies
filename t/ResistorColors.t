@@ -95,7 +95,7 @@ ddg_goodie_test(
     # Check the HTML. Just once.
     "4.7k ohm" => test_zci(
         "4.7K\x{2126} (ohms) resistor colors: yellow (4), purple (7), red (\x{00D7}100), gold (\x{00B1}5%)",
-        html => "<div class='zci__body'><div class='zci--resistor-colors'><h3 class='zci__header'>4.7K\x{2126}</h3><h4 class='zci__subheader'>Four Bands</h4><div class='zci__content'><span class='resistor-band yellow'>Yellow 4</span><span class='resistor-band purple'>Purple 7</span><span class='resistor-band red'>Red &times;100</span><span class='resistor-band gold'>Gold &plusmn;5%</span></div></div><br/><a href='http://resisto.rs/#4.7K' class='resistorlink'>More at resisto.rs</a></div>"
+        html => "<div class='zci__body'><div class='zci--resistor-colors'><h3 class='zci__header'>4.7K\x{2126}</h3><h4 class='zci__subheader'>Four Bands</h4><div class='zci__content'><span class='resistor-band yellow'>Yellow 4</span><span class='resistor-band purple'>Purple 7</span><span class='resistor-band red'>Red &times;100</span><span class='resistor-band gold'>Gold &plusmn;5%</span></div></div><br/><a href='http://resisto.rs/#4.7K' class='zci__more-at'>More at resisto.rs</a></div>"
     ),
 );
 

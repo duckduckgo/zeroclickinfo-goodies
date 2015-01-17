@@ -176,7 +176,7 @@ sub render {
     }
     $html .= "</div></div>"
         . "<br/>"
-        . "<a href='http://resisto.rs/#$formatted_value' class='resistorlink'>"
+        . "<a href='http://resisto.rs/#$formatted_value' class='zci__more-at'>"
         . "More at resisto.rs</a></div>";
 
     return $text, html => $html;
