@@ -42,7 +42,7 @@ handle remainder => sub {
     return unless $tax;
  
     #If $tax is 0% then the state does not levy sales tax
-    if ($tax eq "0%") {$tax = $state." does not levy a sales tax";}
+    if ($tax eq "0%") {$tax = $state." does not levy a sales tax.";}
     return $state . " sales tax: $tax",
       structured_answer => {
         input     => [$state],
