@@ -31,11 +31,11 @@ ddg_goodie_test(
         }
     ),    
     'Alaska sales tax' => test_zci(
-        'Alaska sales tax: Alaska does not levy a sales tax',
+        'Alaska sales tax: Alaska does not levy a sales tax.',
         structured_answer => {
             input     => ['Alaska'],
             operation => 'Sales tax for',
-            result    => 'Alaska does not levy a sales tax'
+            result    => 'Alaska does not levy a sales tax.'
             
             }
             ),
