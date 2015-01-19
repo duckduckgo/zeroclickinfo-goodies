@@ -8,7 +8,8 @@ triggers startend => 'sales tax for', 'sales tax', 'what is the sales tax for', 
 zci answer_type => "sales_tax";
 zci is_cached   => 1;
  
-primary_example_queries 'Sales tax for pennsylvania', 'Sales tax pennsylvania';
+primary_example_queries 'Sales tax for pennsylvania', 'Sales tax pa';
+secondary_example_queries 'what is sales tax for mississippi';
 description 'Returns the sales tax of the specified state or territory in the United States';
 name 'Sales Tax';
 topics 'special_interest', 'geography', 'travel';
@@ -25,20 +26,24 @@ my $US = new Locale::SubCountry("US");
 my $salestax = Load(scalar share('states.yml')->slurp);            
 
 handle remainder => sub {
+    #Define vars
+    my ($query,$state,$tax);
+
+    $query = $_;
  
-    my $query = $_;
- 
-    #If our query is Washington DC convert it to District of Columbia
-    if($query =~ m/\b(washington\sdc|d\.c)\b/i) {
-        $query = "District of Columbia"
+    # Washington D.C is a district and is not supported by the SubCountry package.
+    if($query =~ m/\b(washington\s(dc|d\.c))\b/i) {
+        $state = "Washington D.C"
+    } else {
+        # $US->full_name returns the full state name based on the ISO3166 code 
+        $state = $US->full_name($query); # Check for state using ISO code (PA)
+        if($state eq "unknown") {
+            $state = $US->full_name($US->code($query)); # If state is "unknown" search for code using full state name (Pennsylvania)
+        }
     }
- 
-    #Return the full name of the state as determined by SubCountry
-    my $state = $US->full_name($US->code($query));
+
     return unless $state;
- 
-    #Lookup the $state in $salestax YML data
-    my $tax = $salestax->{$state};
+    $tax = $salestax->{$state}; #Lookup the $state in $salestax YML data
     return unless $tax;
  
     #If $tax is 0% then the state does not levy sales tax
