@@ -1,8 +1,9 @@
 package DDG::Goodie::SalesTax;
+#ABSTRACT: Returns the sales tax for any state (not including federal districts or territories) in the United States. 
 use DDG::Goodie;
 use Locale::SubCountry;
 use YAML::XS qw(Load);
- 
+
 triggers startend => 'sales tax for', 'sales tax', 'what is the sales tax for', 'what is sales tax for';
  
 zci answer_type => "sales_tax";
