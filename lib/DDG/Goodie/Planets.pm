@@ -88,7 +88,7 @@ handle query_lc => sub {
 #Build HTML output
 sub pretty_output {
   my ($result, $operation, $image) = @_;
-  my $html = "<div class='zci--planets'>";
+  my $html = "<div class=\"zci--planets\">";
   $html .= "<span class=\"planets--planetImage\">";
   $html .= $image;
   $html .= "</span>";
