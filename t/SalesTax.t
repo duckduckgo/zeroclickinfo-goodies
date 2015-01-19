@@ -11,34 +11,41 @@ zci is_cached   => 1;
 ddg_goodie_test(
     [qw( DDG::Goodie::SalesTax )],
             
-    'pennsylvania sales tax' => test_zci(
+    'Sales tax for pennsylvania' => test_zci(
         'Pennsylvania sales tax: 6%',
         structured_answer => {
             input     => ['Pennsylvania'],
             operation => 'Sales tax for',
             result    => '6%'
         }
-    ),
-          
-        'Rhode Island sales tax' => test_zci(
-        'Rhode Island sales tax: 7%',
+    ), 
+    'what is sales tax for mississippi' => test_zci(
+        'Mississippi sales tax: 7%',
         structured_answer => {
-            input     => ['Rhode Island'],
+            input     => ['Mississippi'],
             operation => 'Sales tax for',
             result    => '7%'
             
             
         }
     ),    
-    'Alaska sales tax' => test_zci(
-        'Alaska sales tax: Alaska does not levy a sales tax.',
+    'sales tax pa' => test_zci(
+        'Pennsylvania sales tax: 6%',
         structured_answer => {
-            input     => ['Alaska'],
+            input     => ['Pennsylvania'],
             operation => 'Sales tax for',
-            result    => 'Alaska does not levy a sales tax.'
+            result    => '6%'
             
-            }
-            ),
+        }
+    ),
+    'sales tax washington dc' => test_zci(
+        'Washington D.C sales tax: 5.75%',
+        structured_answer => {
+            input     => ['Washington D.C'],
+            operation => 'Sales tax for',
+            result    => '5.75%'
+            
+        }
+    ),
 );
-
 done_testing;
