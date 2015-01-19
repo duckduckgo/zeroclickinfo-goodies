@@ -30,22 +30,6 @@ ddg_goodie_test(
         }
     ),
     
-    'founder of linux operating system' => test_zci($answer, 
-        structured_answer => {
-            input => ["Linux Founder"],
-            operation => "Answer",
-            result => "Linus Torvalds"
-        }
-    ),
-    
-    'who is the founder of linux operating system' => test_zci($answer, 
-        structured_answer => {
-            input => ["Linux Founder"],
-            operation => "Answer",
-            result => "Linus Torvalds"
-        }
-    ),
-    
     # Bad Tests
     'who is the founder of the linux fsdjklfsd' => undef,
     'fhdsjka linux founder' => undef,
