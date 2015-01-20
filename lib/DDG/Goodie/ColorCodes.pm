@@ -99,7 +99,7 @@ sub create_output {
           . "<a href='http://www.color-hex.com/color/" . $hex . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a></p>"
           . "</div>"
           . "<div class='column2 tx-clr--dk2'>"
-          . "<div>$comps</div>"
+          . "<div class='complementary'>$comps</div>"
           . "<div>$analogs</div>"
           . "</div>";
     

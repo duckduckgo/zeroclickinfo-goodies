@@ -1,6 +1,6 @@
 .zci--answer .zci--color-codes .colorcodesbox {
-    height: 125px;
-    width: 125px;
+    height: 120px;
+    width: 120px;
     margin: 5px;
     margin-right: 20px;
     margin-top: 3px;
@@ -13,8 +13,8 @@
 
 .zci--answer .zci--color-codes .mini-color {
     display: inline-block;
-    width: 2.0em;
-    height: 2.0em;
+    width: 2.05em;
+    height: 2.05em;
 }
 
 .zci--answer .zci--color-codes p.no_vspace {
@@ -35,7 +35,6 @@
     margin-left: 2em;
 }
 
-
 .zci--answer .zci--color-codes .mini-color:nth-of-type(n+2) {
     margin-left: -0.7em;
 }
@@ -48,4 +47,8 @@
 .zci--answer .zci--color-codes .desc_column {
     display: inline-block;
     width: 10em;
+}
+
+.zci--answer .zci--color-codes .complementary {
+    margin-bottom: 0.25em;
 }
