@@ -19,8 +19,9 @@ topics 'special_interest';
 attribution github => ["MrChrisW", "Chris Wilson"],
             web => ["http://chrisjwilson.com", "Chris Wilson"];
 
-my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'temperature', 'surface area', 'area');
 my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus');
+
+my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'area');
 
 triggers any => @triggers;
 
@@ -43,7 +44,7 @@ handle query_lc => sub {
   # Declare vars
   my ($attribute, $attributesString, $result, $planetObj);
   
-  s/of|what|is|the|planet|\?//g; # Remove common words, strip question marks
+  s/what is (the)|(of)|(planet)//g; # Remove common words, strip question marks
 
   $attributesString = join('|', @attributesArray); 
   return unless /$attributesString/; # Ensure we match at least one attribute, eg. size, volume
@@ -81,7 +82,8 @@ handle query_lc => sub {
     $result =~ s/$notation$num/$notation<sup>$num<\/sup>/;
   }
 
-  return pretty_output($result, $operation, $planetImages{$_});
+  #Return result and html
+  return $operation." is ".$result, pretty_output($result, $operation, $planetImages{$_});
 
 };
 
