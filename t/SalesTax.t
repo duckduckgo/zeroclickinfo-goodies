@@ -19,7 +19,7 @@ ddg_goodie_test(
             result    => '6%'
         }
     ), 
-    'what is the sales tax for mississippi' => test_zci(
+    'what is sales tax for mississippi' => test_zci(
         'Mississippi sales tax: 7%',
         structured_answer => {
             input     => ['Mississippi'],
