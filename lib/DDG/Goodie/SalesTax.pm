@@ -9,6 +9,8 @@ triggers startend => 'sales tax for', 'sales tax';
 zci answer_type => "sales_tax";
 zci is_cached   => 1;
  
+ s/what is (the)?//g; # strip common words
+ 
 primary_example_queries 'Sales tax for pennsylvania', 'Sales tax pa';
 secondary_example_queries 'what is sales tax for mississippi';
 description 'Returns the sales tax of the specified state or territory in the United States';
