@@ -9,7 +9,7 @@ triggers startend => 'sales tax for', 'sales tax';
 zci answer_type => "sales_tax";
 zci is_cached   => 1;
  
- s/what is (the)?//g; # strip common words
+
  
 primary_example_queries 'Sales tax for pennsylvania', 'Sales tax pa';
 secondary_example_queries 'what is sales tax for mississippi';
@@ -30,6 +30,7 @@ my $salestax = Load(scalar share('states.yml')->slurp);
 
 handle remainder => sub {
     #Define vars
+     s/what is (the)?//g; # strip common words
     my ($query,$state,$tax);
 
     $query = $_;
