@@ -280,12 +280,7 @@ handle remainder => sub {
             result => $time
         };
     } catch {
-        chomp;
-        return $_, structured_answer => {
-            input => [$line],
-            operation => 'Crontab',
-            result => $_
-        };
+        return '';
     }
     
 };
