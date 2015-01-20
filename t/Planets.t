@@ -10,16 +10,18 @@ use DDG::Test::Location;
 zci answer_type => "planets";
 zci is_cached   => 1;
 
-  # Test Code # START
-  my $test_location = test_location('us'); 
-  my $location = $test_location->country_code;
-  # Test Code # END
-
 ddg_goodie_test(
     [qw( DDG::Goodie::Planets )],
-    'size of earth' => test_zci("Earth, Radius is 3,958.8 miles",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">3,958.8 miles</span><span class="text--secondary planets--planetName">Earth, Radius</span></span></div>}),
+
+    #Test Imperial
+
+    'size earth' => test_zci("Earth, Radius is 3,958.8 miles",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">3,958.8 miles</span><span class="text--secondary planets--planetName">Earth, Radius</span></span></div>}),
+
+    'what is the size of earth' => test_zci("Earth, Radius is 3,958.8 miles",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">3,958.8 miles</span><span class="text--secondary planets--planetName">Earth, Radius</span></span></div>}),   
 
     'size of jupiter' => test_zci("Jupiter, Radius is 43,440.7 miles",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">43,440.7 miles</span><span class="text--secondary planets--planetName">Jupiter, Radius</span></span></div>}),
+  
+    'size of planet jupiter' => test_zci("Jupiter, Radius is 43,440.7 miles",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">43,440.7 miles</span><span class="text--secondary planets--planetName">Jupiter, Radius</span></span></div>}),
 
     'volume of mars' => test_zci("Mars, Volume is 39,133,515,914 mi<sup>3</sup>",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">39,133,515,914 mi<sup>3</sup></span><span class="text--secondary planets--planetName">Mars, Volume</span></span></div>}),
 
@@ -32,6 +34,29 @@ ddg_goodie_test(
     'radius of uranus' => test_zci("Uranus, Radius is 15,759.2 miles",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">15,759.2 miles</span><span class="text--secondary planets--planetName">Uranus, Radius</span></span></div>}),
 
     'size of venus' => test_zci("Venus, Radius is 3,760.4 miles",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">3,760.4 miles</span><span class="text--secondary planets--planetName">Venus, Radius</span></span></div>}),
+
+    #Test Metric
+
+    DDG::Request->new(query_raw => "size earth", location => test_location("au")) => test_zci("Earth, Radius is 6,371.00 km",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">6,371.00 km</span><span class="text--secondary planets--planetName">Earth, Radius</span></span></div>}),
+
+    DDG::Request->new(query_raw => "what is the size of earth", location => test_location("au")) => test_zci("Earth, Radius is 6,371.00 km",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">6,371.00 km</span><span class="text--secondary planets--planetName">Earth, Radius</span></span></div>}),
+
+   	DDG::Request->new(query_raw => "size of jupiter", location => test_location("au")) => test_zci("Jupiter, Radius is 69,911 km",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">69,911 km</span><span class="text--secondary planets--planetName">Jupiter, Radius</span></span></div>}),
+
+   	DDG::Request->new(query_raw => "size of planet jupiter", location => test_location("au")) => test_zci("Jupiter, Radius is 69,911 km",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">69,911 km</span><span class="text--secondary planets--planetName">Jupiter, Radius</span></span></div>}),
+
+    DDG::Request->new(query_raw => "volume of mars", location => test_location("au")) => test_zci("Mars, Volume is 163,115,609,799 km<sup>3</sup>",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">163,115,609,799 km<sup>3</sup></span><span class="text--secondary planets--planetName">Mars, Volume</span></span></div>}),
+
+    DDG::Request->new(query_raw => "surface area of mercury", location => test_location("au")) => test_zci("Mercury, Surface Area is 74,797,000 km<sup>2</sup>",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">74,797,000 km<sup>2</sup></span><span class="text--secondary planets--planetName">Mercury, Surface Area</span></span></div>}),
+
+    DDG::Request->new(query_raw => "mass of neptune", location => test_location("au")) => test_zci("Neptune, Mass is 102,410,000,000,000,000,000,000,000 kg",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">102,410,000,000,000,000,000,000,000 kg</span><span class="text--secondary planets--planetName">Neptune, Mass</span></span></div>}),
+
+    DDG::Request->new(query_raw => "area of saturn", location => test_location("au")) => test_zci("Saturn, Surface Area is 42,612,133,285 km<sup>2</sup>",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">42,612,133,285 km<sup>2</sup></span><span class="text--secondary planets--planetName">Saturn, Surface Area</span></span></div>}),
+
+    DDG::Request->new(query_raw => "radius of uranus", location => test_location("au")) => test_zci("Uranus, Radius is 25,362 km",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">25,362 km</span><span class="text--secondary planets--planetName">Uranus, Radius</span></span></div>}),
+
+    DDG::Request->new(query_raw => "size of venus", location => test_location("au")) => test_zci("Venus, Radius is 6,051.8 km",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">6,051.8 km</span><span class="text--secondary planets--planetName">Venus, Radius</span></span></div>}),
+
     'bad example query' => undef
 );
 
