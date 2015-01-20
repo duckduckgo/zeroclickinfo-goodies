@@ -280,7 +280,7 @@ handle remainder => sub {
             result => $time
         };
     } catch {
-        return '';
+        return;
     }
     
 };
