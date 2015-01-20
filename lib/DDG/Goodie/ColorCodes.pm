@@ -75,30 +75,30 @@ sub create_output {
     my ($text, $html) = ("","");
     
     my $hex = "Hex: ".uc($input{'hex'});
-    my $rgb = "rgba(" . join(", ", @{$input{'rgb'}}) . ", ".$input{'alpha'}.")";
-    my $rgb_pct = "rgb(" . join(", ", @{$input{'rgb_percentage'}}) . ")";
-    my $hsl = "hsl(" . join(", ", @{$input{'hsl'}}) . ")";
-    my $cmyb = "cmyb(" . join(", ", @{$input{'cmyb'}}) . ")";
+    my $rgb = "RGBA(" . join(", ", @{$input{'rgb'}}) . ", ".$input{'alpha'}.")";
+    my $rgb_pct = "RGB(" . join(", ", @{$input{'rgb_percentage'}}) . ")";
+    my $hsl = "HSL(" . join(", ", @{$input{'hsl'}}) . ")";
+    my $cmyb = "CMYB(" . join(", ", @{$input{'cmyb'}}) . ")";
     my @analogous_colors = @{$input{'analogous'}};
     $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb"."\n"
           . "Complementary: #".uc($input{'complementary'})."\n"
           . "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
         
     my $comps = "<div class='cols_column'><span class='mini-color circle' style='background: #".$input{'complementary'}.";'> </span></div>"
-              . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace text--primary'>". uc($input{'complementary'}) . "</p></div>";
+              . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace tx-clr--dk'>". uc($input{'complementary'}) . "</p></div>";
     
     my $analogs = "<div class='cols_column'>"
                 . (join "", map { "<span class='mini-color circle' style='background: #" . $_ . "'> </span>"; } @analogous_colors)
                 . "</div>"
-                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace text--primary'>" . (join ", ", map { uc $_ } @analogous_colors) . "</p></div>";
+                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace tx-clr--dk'>" . (join ", ", map { uc $_ } @analogous_colors) . "</p></div>";
     
-    $html = "<div class='col1'>"
-          . "<p class='hex zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
-          . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex . ";weights=100;' class='tx-clr--lt'>Images</a>"
+    $html = "<div class='column1 tx-clr--dk2'>"
+          . "<p class='hex tx-clr--dk zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
+          . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex . ";weights=100;' class='tx-clr--dk2'>Images</a>"
           . " | "
-          . "<a href='http://www.color-hex.com/color/" . $hex . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--lt'>Info</a></p>"
+          . "<a href='http://www.color-hex.com/color/" . $hex . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a></p>"
           . "</div>"
-          . "<div class='col2'>"
+          . "<div class='column2 tx-clr--dk2'>"
           . "<div>$comps</div>"
           . "<div>$analogs</div>"
           . "</div>";

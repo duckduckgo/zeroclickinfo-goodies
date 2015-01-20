@@ -22,13 +22,13 @@
     padding: 0;
 }
 
-.zci--answer .zci--color-codes .col1
+.zci--answer .zci--color-codes .column1
 {
     display: inline-block;
     height: 125px;
 }
 
-.zci--answer .zci--color-codes .col2 {
+.zci--answer .zci--color-codes .column2 {
 	display: inline-block;
 	height: 90px;
     width: 16em;
