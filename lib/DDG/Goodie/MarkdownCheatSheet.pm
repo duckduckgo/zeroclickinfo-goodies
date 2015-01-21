@@ -13,8 +13,8 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "cheat_sheets";
 topics "computing", "geek", "web_design";
 
-primary_example_queries 'markdown help', 'markdown cheat sheet', 'markdown syntax';
-secondary_example_queries 'markdown quick reference', 'markdown guide';
+primary_example_queries 'markdown help header', 'markdown cheat sheet h1', 'markdown syntax list';
+secondary_example_queries 'markdown quick reference image', 'markdown guide headers';
 
 triggers startend => (
     'markdown', 'md',
@@ -74,13 +74,13 @@ my %snippets = (
 );
 
 my %synonyms = (
-    "header", ['h1', 'headers', 'h2', 'h3', 'h4', 'h5', 'h6', 'heading'],
-    "em", ['emphasis', 'emphasize'],
-    "strong", [],
-    "image", ["img", "images", "insert image"],
-    "link", ["a", "href", "links"],
-    "blockquote", ["quote", "quotation"],
-    "list", ["lists", "ordered list", "unordered list", "ul", "ol"]
+    'header', ['h1', 'headers', 'h2', 'h3', 'h4', 'h5', 'h6', 'heading'],
+    'em', ['emphasis', 'emphasize', 'italic', 'italics'],
+    'strong', ['bold'],
+    'image', ['img', 'images', 'insert image'],
+    'link', ['a', 'href', 'links'],
+    'blockquote', ['quote', 'quotation'],
+    'list', ['lists', 'ordered list', 'unordered list', 'ul', 'ol', 'bullet', 'bullets']
 );
 
 # Add more mappings for each snippet
