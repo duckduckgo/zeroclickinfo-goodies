@@ -7,8 +7,7 @@ use strict;
 use warnings;
 
 zci answer_type => 'word_list';
-# Don't cache answers because we return random words
-zci is_cached   => 0;
+zci is_cached   => 1;
 
 primary_example_queries 'words starting with duck', '9-letter words like cro*rd', '20 words', 'random words with 4 letters';
 secondary_example_queries '5 6-letter words ending in ay', 'words like cro----rd';
@@ -30,7 +29,7 @@ use constant {
     # Maximum number of words to return
     MAX_WORD_COUNT => 50,
 
-    # Perf: Maximum number of viewed nodes allowed
+    # Perf: Maximum number of viewed edges allowed
     # to answer a query. Most queries don't need
     # that many but some open-ended word specs
     # (like '*abcde*') require too many matches.
@@ -128,7 +127,7 @@ sub parse_input
             $pattern =~ s/[^a-z]//g;
 
             # Normalize pattern
-            $pattern = ($verb eq 'start') ? $pattern . '*' : '*' . $pattern;
+            $pattern = ($verb eq 'start') ? "$pattern*" : "*$pattern";
         } elsif ($verb eq 'like') {
             # Replace all single-character symbols (- ?) with '.'
             $pattern =~ tr/-?/../;
@@ -154,9 +153,7 @@ sub parse_input
     return 0;
 }
 
-
-my ($forward_dict, $reverse_dict);
-
+# Load the binary file
 sub load_dict {
     my $filename = shift;
     
@@ -170,18 +167,21 @@ sub load_dict {
     return $content;
 }
 
-$forward_dict = load_dict('dict_forward.bin');
-$reverse_dict = load_dict('dict_reverse.bin');
+my $forward_dict = load_dict('dict_forward.bin');
+my $reverse_dict = load_dict('dict_reverse.bin');
 
+# Read the edge at the specified position
 sub read_at_pos {
     my ($dict, $pos) = @_;
     
+    # Read three bytes
     my $a = vec ${$dict}, $pos * 3, 8;
     my $b = vec ${$dict}, $pos * 3 + 1, 8;
     my $c = vec ${$dict}, $pos * 3 + 2, 8;
     
     my $code = $a | ($b << 8) | ($c << 16);
     
+    # Extract character code, offset of the node, and the last edge bit
     my $ch = $code & 0x1F;
     $ch = ($ch == 0) ? '' : chr(ord('a') + $ch - 1);
     my $offset = $code >> 6;
@@ -190,34 +190,44 @@ sub read_at_pos {
     return ($ch, $offset, $end);
 }
 
+# The matching function
 sub search_in_dict {
-    my ($res, $word, $dict, $pos, $counter, $out_limit) = @_;
+    my ($res, $pattern, $dict, $pos, $counter, $out_limit) = @_;
     
     my ($dict_ch, $new_pos, $end);
     
-    my $ch = substr($word, 0, 1);
-    my $star = $ch eq '*';
-    $ch = substr($word, 1, 1) if $star;
+    # Match the first character. If it's a star, then match the next character
+    my $ch = substr($pattern, 0, 1);
+    my $is_star = $ch eq '*';
+    $ch = substr($pattern, 1, 1) if $is_star;
     
     my @out;
     
+    # Read all edges incident to the node
     do {
         ($dict_ch, $new_pos, $end) = read_at_pos($dict, $pos);
         
+        # Limit the number of viewed edges
         $counter++;
         return @out if $counter > BACKTRACKING_LIMIT;
         
+        # If found the letter
         if ($dict_ch eq $ch || $ch eq '.') {
-            return $res if $dict_ch eq '' && $ch eq '';
+            return $res if $dict_ch eq '' && $ch eq ''; # End of the word
             
-            push @out, search_in_dict($res . $dict_ch, substr($word, $star ? 2 : 1), $dict, $new_pos, $counter, $out_limit);
-            return @out if scalar(@out) >= $out_limit;
+            # Search for the next letter
+            push @out, search_in_dict($res . $dict_ch, substr($pattern, $is_star ? 2 : 1),
+                $dict, $new_pos, $counter, $out_limit);
+            return @out if scalar(@out) >= $out_limit; # Stop if found enough words
         }
-        push @out, search_in_dict($res . $dict_ch, $word, $dict, $new_pos, $counter, $out_limit) if $star && $dict_ch ne '';
+        
+        # If it's a star, try to skip the letter
+        push @out, search_in_dict($res . $dict_ch, $pattern,
+            $dict, $new_pos, $counter, $out_limit) if $is_star && $dict_ch ne '';
         return @out if scalar(@out) >= $out_limit;
         
-        $pos++;
-    } until ($end || $dict_ch ge $ch && $ch ne '.' && !$star);
+        $pos++; # Advance to the next edge incident to the node
+    } until ($end || $dict_ch ge $ch && $ch ne '.' && !$is_star);
     
     return @out;
 }
@@ -234,10 +244,13 @@ sub get_matching_words {
 	# Add encoded word length if specified
 	my $len = $word_length ? chr(ord('a') + $word_length) : '.';
 
+    # Do the search
     my @matches = map {substr($_, 1)} search_in_dict('', $len . $pattern, $dict, 0, 0, $word_count);
 
+    # Reverse the found words when using the reverse dictionary
     @matches = map {scalar reverse($_)} @matches if $use_reverse;
 
+    # Crop the array if found more words than needed
     @matches = @matches[0..$word_count - 1] if @matches > $word_count;
     
     return @matches;

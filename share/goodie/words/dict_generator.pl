@@ -90,7 +90,7 @@ sub remove_duplicates {
 
 # For debugging purposes only
 
-sub count_nodes {
+sub count_edges {
     my ($node, $visited) = @_;
     
     return 0 if exists $visited->{$node};
@@ -98,7 +98,7 @@ sub count_nodes {
     
     my $count = 0;
     for (keys %{$node}) {
-        $count += 1 + count_nodes($node->{$_}, $visited);
+        $count += 1 + count_edges($node->{$_}, $visited);
     }
     
     return $count;
@@ -130,8 +130,8 @@ sub write_binary {
     my ($root, $filename) = @_;
     
     # The DAWG contains forward references, so we need to linearize it first
-    # to be able to assign offsets to the nodes. Use breadth-first search.
-    my %visited;
+    # to be able to assign offsets to the edges. Use breadth-first search.
+    my %visited; # Visited nodes
     my @queue = ($root);
     my @output;
     
@@ -146,9 +146,9 @@ sub write_binary {
         for (sort keys %{$node}) {
             $i++;
             push @output, [$_, $node->{$_}, $i == scalar(keys %{$node})];
-            unshift @queue, $node->{$_};
+            unshift @queue, $node->{$_}; # Add to the queue
         }
-        $node->{'offset'} = $offset; # save offset in the node
+        $node->{'offset'} = $offset; # Save offset in the node
     }
     
     # Write to the file
@@ -185,7 +185,7 @@ while (<$f>) {
     my $len = length($_) - 1;
     $len = chr(ord('a') + $len);
     
-    # Insert the normal word and the reverse word into the trees
+    # Insert the normal word and the reversed word into the trees
     $forward_root = insert($forward_root, $len . $_);
     
     chomp;
@@ -208,4 +208,4 @@ write_binary($reverse_root, 'dict_reverse.bin');
 
 #print_dawg($forward_root, 0, {}, 0);
 
-#print count_nodes($forward_root, {}) . "\n";
+#print count_edges($forward_root, {}) . "\n";

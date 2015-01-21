@@ -6,7 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => "word_list";
-zci is_cached   => 0;
+zci is_cached   => 1;
 
 my $WC = 10;
 my $WCM = $WC - 1;
