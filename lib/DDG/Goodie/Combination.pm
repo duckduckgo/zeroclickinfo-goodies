@@ -36,29 +36,29 @@ handle query => sub {
         $operation = 'choose';
     }
 
-    my $p1 = $style->for_computation($1);
-    my $p2 = $style->for_computation($3);
+    #$n choose $k
+    my $n = $style->for_computation($1);
+    my $k = $style->for_computation($3);
 
     #Ensure both are non-negative integers
-    return unless $p1 =~ /^\d+$/ && $p2 =~ /^\d+$/;
+    return unless $n =~ /^\d+$/ && $k =~ /^\d+$/;
 
     #Do not try to calculate undefined combinations
-    return unless $p1 >= $p2;
+    return unless $n >= $k;
 
     my $result;
-    my %struct_ans;
 
     if ('choose' eq $operation) {
-        $result = $style->for_display(choose($p1, $p2));
+        $result = $style->for_display(choose($n, $k));
     } else { #must be permute
-        $result = $style->for_display(permute($p1, $p2));
+        $result = $style->for_display(permute($n, $k));
     }
 
     return $result,
     structured_answer => {
-        input     => [$style->for_display($p1) . " $operation " . $style->for_display($p2)],
+        input     => [$style->for_display($n) . " $operation " . $style->for_display($k)],
         operation => $operation,
-        result    => $style->with_html($result),
+        result    => $style->for_display($result),
     };
 };
 

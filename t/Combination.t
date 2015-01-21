@@ -31,7 +31,7 @@ ddg_goodie_test(
         structured_answer =>  {
             input     => ["25 permute 16"],
             operation => "permute",
-            result    => "4.27447366714368 * 10<sup>19</sup>"
+            result    => "4.27447366714368*10^19"
         }
     ), 
     '16 permutation 3' => test_zci('3,360',
