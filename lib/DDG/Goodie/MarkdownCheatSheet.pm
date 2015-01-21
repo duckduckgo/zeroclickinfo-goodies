@@ -56,8 +56,8 @@ my %snippets = (
 3. Third'
     },
     'image' => {
-        'html' => '<img src="http://duckduckgo.com/assets/badges/logo_square.64.png"></img>',
-        'text' => '![Image Alt](http://duckduckgo.com/assets/badges/logo_square.64.png)'
+        'html' => '<img src="https://duckduckgo.com/assets/badges/logo_square.64.png"></img>',
+        'text' => '![Image Alt](https://duckduckgo.com/assets/badges/logo_square.64.png)'
     },
     'link' => {
         'html' => '<a href="http://www.duckduckgo.com" title="Example Title">This is an example inline link</a>',
