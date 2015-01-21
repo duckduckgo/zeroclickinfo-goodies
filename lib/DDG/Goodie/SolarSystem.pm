@@ -1,4 +1,4 @@
-package DDG::Goodie::Planets;
+package DDG::Goodie::SolarSystem;
 # ABSTRACT: Return various attributes of a planet
 
 use DDG::Goodie;
@@ -6,10 +6,10 @@ with 'DDG::GoodieRole::ImageLoader';
 use YAML::XS qw( Load );
 use POSIX;
 
-zci answer_type => "planets";
+zci answer_type => "solarsystem";
 zci is_cached   => 1;
 
-name "Planets";
+name "SolarSystem";
 primary_example_queries 'size of venus';
 secondary_example_queries 'what is the size of venus', 'volume of venus';
 description 'Lookup various planet attributes';
@@ -37,7 +37,7 @@ my %planetImages = (
 );
 
 # Load planet data 
-my $planets = Load(scalar share('planets.yml')->slurp);
+my $planets = Load(scalar share('objects.yml')->slurp);
 
 # Handle statement
 handle query_lc => sub {

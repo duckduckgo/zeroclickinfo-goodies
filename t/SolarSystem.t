@@ -7,11 +7,11 @@ use DDG::Test::Goodie;
 use DDG::GoodieRole::ImageLoader;
 use DDG::Test::Location;
 
-zci answer_type => "planets";
+zci answer_type => "solarsystem";
 zci is_cached   => 1;
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::Planets )],
+    [qw( DDG::Goodie::SolarSystem )],
 
     #Test Imperial
 

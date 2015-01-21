@@ -1,22 +1,22 @@
 
-.zci--answer .zci--planets .planets--planetImage {
+.zci--answer .zci--solarsystem .solarsystem--planetImage {
     float:left;
     margin-right: 10px;
 
 }
-.zci--answer .zci--planets .planets--planetAttribute {
+.zci--answer .zci--solarsystem .solarsystem--planetAttribute {
     font-size: 1.5em;
     font-weight: 400;
     line-height: 1.2;
     display:block;
 }
 
-.zci--answer .zci--planets .planets--planetName {
+.zci--answer .zci--solarsystem .solarsystem--planetName {
     font-size: 15px;
     display:inline-block;
 }
 
-.zci--answer .zci--planets .planets--info {
+.zci--answer .zci--solarsystem .solarsystem--info {
     display: flex;
     justify-content: center;
     flex-direction: column;
