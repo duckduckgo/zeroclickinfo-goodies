@@ -1,7 +1,5 @@
 package DDG::Goodie::Combination;
 # ABSTRACT: Compute combinations and permutations
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
 
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
