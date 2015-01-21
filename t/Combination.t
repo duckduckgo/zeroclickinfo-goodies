@@ -20,6 +20,13 @@ ddg_goodie_test(
             result    => '120',
         }
     ),
+    '10 nCr 3' => test_zci('120',
+        structured_answer => {
+            input     => ['10 choose 3'],
+            operation => 'choose',
+            result    => '120',
+        }
+    ),
     '25 permute 16' => test_zci('4.27447366714368 * 10^19',
         structured_answer =>  {
             input     => ["25 permute 16"],

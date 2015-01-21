@@ -16,21 +16,24 @@ topics "math";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Combination.pm";
 attribution github => ["richardscollin", "Collin Richards"];
 
-triggers any => "any", "choose", "permute", "permutation";
+triggers any => "choose", "permute", "permutation", "npr", "ncr";
 
 my $number_re = number_style_regex();
 
 # Handle statement
 handle query => sub {
     my $query = $_;
-    return unless /^($number_re) (choose|permute|permutation) ($number_re)$/i;
+    return unless /^($number_re) (choose|permute|permutation|npr|ncr) ($number_re)$/i;
 
     my $style = number_style_for($1,$3);
     return unless $style; #Cannot determine number format
     my $operation = lc $2;
 
-    if ($operation eq 'permutation') {
-        $operation = 'permute';#standardizes output for tests
+    #If contains a 'p' then it is permutation
+    if (index($operation, 'p') != -1) {
+        $operation = 'permute';
+    } else {
+        $operation = 'choose';
     }
 
     my $p1 = $style->for_computation($1);
