@@ -190,7 +190,18 @@ ddg_goodie_test(
             result    => qr/^(\w{8},\s){4}\w{8}$/
         }
     ),
-    'letter words'                              => undef,
+    
+    '50 words like *z*z*z*'                     => undef, # Excessive backtracking
+    '50 words like *...'                        => test_zci(
+        qr/^(\w{3},\s){49}\w{3}$/,
+        structured_answer => {
+            input     => ["50 words like *..."],
+            operation => 'Words',
+            result    => qr/^(\w{3},\s){49}\w{3}$/
+        }
+    ),
+    
+    'letter words'                              => undef, # Too wrong or unrelated queries
     'words like quaternion'                     => undef,
     'words like doesnotexist'                   => undef,
     'words test what'                           => undef,
