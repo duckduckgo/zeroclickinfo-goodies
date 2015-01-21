@@ -190,13 +190,15 @@ sub read_at_pos {
 sub search_in_dict {
     my ($res, $pattern, $pos, $search) = @_;
     
-    my ($dict_ch, $new_pos, $end);
-    my @matches;
+    my ($dict_ch, $new_pos, $end, @matches);
     
     # Match the first character. If it's a star, then match the next character
     my $ch = substr($pattern, 0, 1);
     my $is_star = $ch eq '*';
     $ch = substr($pattern, 1, 1) if $is_star;
+    
+    # View all edges until this character. Put z here if all edges must be viewed
+    my $last_ch = ($ch eq '.' || $is_star) ? 'z' : $ch;
     
     # Read all edges incident to the node
     do {
@@ -222,7 +224,7 @@ sub search_in_dict {
         return @matches if scalar(@matches) >= $search->{word_count};
         
         $pos++; # Advance to the next edge incident to the node
-    } until ($end || $dict_ch ge $ch && $ch ne '.' && !$is_star);
+    } until ($end || $dict_ch ge $last_ch);
     
     return @matches;
 }
