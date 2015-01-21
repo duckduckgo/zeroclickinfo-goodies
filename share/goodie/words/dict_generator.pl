@@ -1,12 +1,37 @@
 #!/usr/bin/perl
 
+# The dictionary is stored in a DAWG (direct acyclic word graph).
+# The data structure is described in the following articles:
+#   * Appel, Jacobson. The world's fastest Scrabble program. Communications of the ACM. Volume 31 Issue 5, May 1988.
+#   * http://www.strchr.com/ternary_dags
+#   * http://www.strchr.com/dawg_predictive
+#   * http://stevehanov.ca/blog/index.php?id=115
+
+# Each node is stored in a binary file as a sorted array of outgoing edges.
+# Each edge is stored as three bytes: 5 bits for the character code, 1 bit for the 'last edge' bit,
+# and 18 bits for the offset of the node. The offset is the number of the first edge
+# outgoing from the node. The edges outgoing from a node are sorted by the character code;
+# the last edge has a special bit set. The character code is zero for the end of the word
+# (stored as "\n" in the internal structures of the generator), one for 'a', two for 'b', etc.
+
+# There are two dictionaries: one for searching from the start of the word and another one
+# for searching backwards. Depending on a pattern, the program chooses one of them.
+
+# At the root of each dictionary, there are edges for different word lengths. The length is encoded
+# as 'b' for 1-letter words, 'c' for 2-letter words, etc. Together, the reverse dictionary and
+# the edges for different word lengths increase the size of the dictionary file by 3-4 times.
+# However, we can answer some queries (such as '6-character word which ends in ex') faster with them.
+
+# The generator script first builds two tries (for the usual and the reverse dictionary), then
+# compresses them into DAWGs, and saves them in two binary files.
+
 use strict;
 use warnings;
 use Test;
 
 BEGIN {plan};
 
-# Insert to the tree
+# Insert to the trie
 
 sub insert {
     my ($node, $word) = @_;
@@ -22,7 +47,7 @@ sub insert {
     return $node;
 }
 
-# Convert the tree to DAWG
+# Convert the trie to DAWG
 
 # Recursively calculate a hash for the subtree
 sub get_hash {
@@ -175,7 +200,7 @@ open(my $f, '<', 'enable2k.txt') or die;
 
 my ($forward_root, $reverse_root); # Reference to the DAWG root
 
-print "Constructing the trees...\n";
+print "Constructing the tries...\n";
 
 while (<$f>) {
     next if m/^\s+$/;
@@ -192,7 +217,7 @@ while (<$f>) {
     $reverse_root = insert($reverse_root, $len . reverse($_) . "\n");
 }
 
-print "Converting the trees to DAWGs... ";
+print "Converting the tries to DAWGs... ";
 
 $forward_root = remove_duplicates($forward_root, {});
 

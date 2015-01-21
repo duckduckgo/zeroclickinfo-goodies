@@ -28,7 +28,7 @@ use constant {
     # Maximum number of words to return
     MAX_WORD_COUNT => 50,
 
-    # Perf: Maximum number of viewed edges allowed
+    # Perf: Maximum number of visited edges allowed
     # to answer a query. Most queries don't need
     # that many but some open-ended word specs
     # (like '*abcde*') require too many matches.
@@ -197,14 +197,14 @@ sub search_in_dict {
     my $is_star = $ch eq '*';
     $ch = substr($pattern, 1, 1) if $is_star;
     
-    # View all edges until this character. Put z here if all edges must be viewed
+    # Check all edges until this character. Put z here if all edges must be checked
     my $last_ch = ($ch eq '.' || $is_star) ? 'z' : $ch;
     
-    # Read all edges incident to the node
+    # Read all edges outgoing from the node
     do {
         ($dict_ch, $new_pos, $end) = read_at_pos($search->{dict}, $pos);
         
-        # Limit the number of viewed edges
+        # Limit the overall number of visited edges
         $search->{counter}++;
         return @matches if $search->{counter} > BACKTRACKING_LIMIT;
         
@@ -223,7 +223,7 @@ sub search_in_dict {
             $new_pos, $search) if $is_star && $dict_ch ne '';
         return @matches if scalar(@matches) >= $search->{word_count};
         
-        $pos++; # Advance to the next edge incident to the node
+        $pos++; # Advance to the next edge
     } until ($end || $dict_ch ge $last_ch);
     
     return @matches;
