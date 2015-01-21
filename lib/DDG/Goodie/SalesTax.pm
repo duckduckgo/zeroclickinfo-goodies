@@ -4,7 +4,7 @@ use DDG::Goodie;
 use Locale::SubCountry;
 use YAML::XS qw(Load);
 
-triggers any => 'sales tax for', 'sales tax';
+triggers any => 'sales tax for', 'sales tax', 'sales tax in';
  
 zci answer_type => "sales_tax";
 zci is_cached   => 1;
