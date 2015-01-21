@@ -1,5 +1,5 @@
 package DDG::Goodie::SolarSystem;
-# ABSTRACT: Return various attributes of a planet
+# ABSTRACT: Return various attributes of a object
 
 use DDG::Goodie;
 with 'DDG::GoodieRole::ImageLoader';
@@ -12,20 +12,21 @@ zci is_cached   => 1;
 name "SolarSystem";
 primary_example_queries 'size of venus';
 secondary_example_queries 'what is the size of venus', 'volume of venus';
-description 'Lookup various planet attributes';
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Planets.pm";
+description 'Lookup various object attributes';
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/objects.pm";
 category 'random';
 topics 'special_interest';
 attribution github => ["MrChrisW", "Chris Wilson"],
             web => ["http://chrisjwilson.com", "Chris Wilson"];
 
-my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus');
+my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'sun');
 
 my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'area');
 
 triggers any => @triggers;
 
-my %planetImages = (
+my %objectImages = (
+    sun => goodie_img_tag({filename => 'images/Sun.svg',height => 48, width => 48,}),
     earth => goodie_img_tag({filename => 'images/Earth.svg',height => 48, width => 48,}),
     jupiter => goodie_img_tag({filename => 'images/Jupiter.svg',height => 48, width => 48,}),
     mars => goodie_img_tag({filename => 'images/Mars.svg',height => 48, width => 48,}),
@@ -36,15 +37,15 @@ my %planetImages = (
     venus => goodie_img_tag({filename => 'images/Venus.svg',height => 48, width => 48,})
 );
 
-# Load planet data 
-my $planets = Load(scalar share('objects.yml')->slurp);
+# Load object data 
+my $objects = Load(scalar share('objects.yml')->slurp);
 
 # Handle statement
 handle query_lc => sub {
   # Declare vars
-  my ($attribute, $attributesString, $result, $planetObj);
+  my ($attribute, $attributesString, $result, $objectObj);
   
-  s/what is (the)|(of)|(planet)//g; # Remove common words, strip question marks
+  s/what is (the)|(of)|(object)//g; # Remove common words, strip question marks
 
   $attributesString = join('|', @attributesArray); 
   return unless /$attributesString/; # Ensure we match at least one attribute, eg. size, volume
@@ -59,21 +60,21 @@ handle query_lc => sub {
   s/^\s+|\s+$//g; # Trim
 
   return unless $_; # Return if empty query
-  $planetObj = $planets->{$_}; # Get planet data
-  return unless $planetObj; # Return if we don't have a valid planet
+  $objectObj = $objects->{$_}; # Get object data
+  return unless $objectObj; # Return if we don't have a valid object
 
   # Switch to imperial for non-metric countries
   # https://en.wikipedia.org/wiki/Metrication
   if ($loc->country_code =~ m/UK|US|MM|LR/i) {
-    $result = $planetObj->{$attribute."_imperial"};
+    $result = $objectObj->{$attribute."_imperial"};
   } else {
-    $result = $planetObj->{$attribute};
+    $result = $objectObj->{$attribute};
   }
   
   # Convert flag surface_area = Surface Area
   if($attribute =~ /_/ ) { $attribute = join ' ', map ucfirst lc, split /[_]+/, $attribute; }
 
-  # Human friendly planet name + attribute
+  # Human friendly object name + attribute
   my $operation = ucfirst($_).", ".ucfirst($attribute);
 
   # Superscript for km3, mi3, km2 or mi2 
@@ -82,23 +83,26 @@ handle query_lc => sub {
     $result =~ s/$notation$num/$notation<sup>$num<\/sup>/;
   }
 
+  #Ensure we have a vaild image
+  return unless $objectImages{$_};
+
   #Return result and html
-  return $operation." is ".$result, pretty_output($result, $operation, $planetImages{$_});
+  return $operation." is ".$result, pretty_output($result, $operation, $objectImages{$_});
 
 };
 
 #Build HTML output
 sub pretty_output {
   my ($result, $operation, $image) = @_;
-  my $html = "<div class=\"zci--planets\">";
-  $html .= "<span class=\"planets--planetImage\">";
+  my $html = "<div class=\"zci--objects\">";
+  $html .= "<span class=\"objects--objectImage\">";
   $html .= $image;
   $html .= "</span>";
-  $html .= "<span class=\"planets--info\">";
-  $html .= "<span class=\"text--primary planets--planetAttribute\">";
+  $html .= "<span class=\"objects--info\">";
+  $html .= "<span class=\"text--primary objects--objectAttribute\">";
   $html .= $result;
   $html .= "</span>";
-  $html .= "<span class=\"text--secondary planets--planetName\">";
+  $html .= "<span class=\"text--secondary objects--objectName\">";
   $html .= $operation;
   $html .= "</span>";
   $html .= "</span>";
