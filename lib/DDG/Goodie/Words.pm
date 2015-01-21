@@ -1,0 +1,246 @@
+package DDG::Goodie::Words;
+# ABSTRACT: Show some words matching the specified criteria.
+
+use DDG::Goodie;
+
+use strict;
+use warnings;
+
+zci answer_type => 'word_list';
+# Don't cache answers because we return random words
+zci is_cached   => 0;
+
+primary_example_queries 'words starting with duck', '9-letter words like cro*rd', '20 words', 'random words with 4 letters';
+secondary_example_queries '5 6-letter words ending in ay', 'words like cro----rd';
+description 'find words for puzzles and word games';
+name 'Words';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Words.pm';
+category 'language';
+topics 'words_and_games';
+
+attribution github => ['https://github.com/pavlos256', 'Pavlos Touboulidis'];
+
+triggers any => 'words', 'word';
+triggers startend => 'words', 'word';
+
+use constant {
+    # Number of words to return if not specified
+    DEFAULT_WORD_COUNT => 10,
+
+    # Maximum number of words to return
+    MAX_WORD_COUNT => 50,
+
+    # Perf: Maximum number of viewed nodes allowed
+    # to answer a query. Most queries don't need
+    # that many but some open-ended word specs
+    # (like '*abcde*') require too many matches.
+    BACKTRACKING_LIMIT => 1000,
+};
+
+handle query_lc => sub {
+    my $query = shift;
+
+    my ($word_count, $word_length, $pattern) = parse_input($query);
+    return unless $word_count;
+
+    my @words = get_matching_words($word_count, $word_length, $pattern);
+    return unless @words;
+
+    my $plain_result = join ", ", @words;
+
+    return $plain_result,
+        structured_answer => {
+            input     => [describe_input($word_count, $word_length, $pattern)],
+            operation => 'Words',
+            result    => $plain_result
+        };
+};
+
+sub describe_input {
+    my ($word_count, $word_length, $pattern) = @_;
+
+    my @a = ();
+
+    # word count
+    my $t = $word_count == 1 ? 'word' : 'words';
+    push @a, ($word_count == 1 ? 'one' : $word_count) unless $word_count == 0;
+
+    # letter count
+    push @a, "$word_length-letter" if $word_length;
+
+    # 'word'
+    push @a, $t;
+
+    # verb & pattern
+    if ($pattern =~ s/^([a-z]+)\*$/$1/) {
+        push @a, "starting with $pattern";
+    } elsif ($pattern =~ s/^\*([a-z]+)$/$1/) {
+        push @a, "ending in $pattern";
+    } elsif ($pattern ne '*') {
+        push @a, "like $pattern";
+    }
+
+    return join ' ', @a;
+}
+
+sub parse_input
+{
+    # The input is expected to be in lowercase (which it is because of 'handle query_lc')
+    my $s = shift;
+
+    my ($word_count, $word_length, $verb, $pattern);
+
+    if ($s =~ m/
+        (?:(?<count>\d+)\s+)?
+        (?:(?<length>\d+)[\s\-]+(?:letter|char|character)\s+)?
+        (?:random\s+)?(?<word>word[s]?)
+        (?:\s+(?:having|with)\s+(?<length>\d+)\s+(?:letters|characters))?
+        (?:
+            \s+
+            (?:(?:which|that)\s+)?
+            (?:(?:(?<verb>start|begin)(?:s|ing|ning)?+(?:\s+(?:in|with)?)?+)|(?:(?<verb>end)(?:s|ing)?+(?:\s+(?:in|with)?)?+)|(?:(?<verb>like)))
+            (?:\s+)
+            (?<pattern>[a-z\-\?\.\*]{1,28})
+        )?
+        (?:\s+(?:having|with)\s+(?<length>\d+)\s+(?:letters|characters))?
+    /x)
+    {   
+        # Word count
+        $word_count = ($+{'word'} eq 'words') ? DEFAULT_WORD_COUNT : 1;
+        $word_count = $+{'count'} if $+{'count'};
+        $word_count = MAX_WORD_COUNT if $word_count > MAX_WORD_COUNT;
+
+        # Word length
+        $word_length = $+{'length'} || 0;
+
+        # Verb
+        $verb = $+{'verb'} || '';
+        $verb = 'start' if $verb eq 'begin';
+
+        # Pattern
+        $pattern = $+{'pattern'} || '*';
+        
+        # Don't process too wrong or unrelated queries
+        return if !$+{'count'} && !$word_length && (!$verb || $pattern eq '*');
+        
+        if (($verb eq 'start') || ($verb eq 'end')) {
+            # Remove any symbols from the pattern
+            $pattern =~ s/[^a-z]//g;
+
+            # Normalize pattern
+            $pattern = ($verb eq 'start') ? $pattern . '*' : '*' . $pattern;
+        } elsif ($verb eq 'like') {
+            # Replace all single-character symbols (- ?) with '.'
+            $pattern =~ tr/-?/../;
+
+            # Remove duplicate '*'
+            $pattern =~ s/\*+/*/g;
+
+            # Since the verb is 'like',
+            # we abort if there's no wildcards in the pattern
+            return unless $pattern =~ tr/\*\.//;
+            
+			# If the string is just dots, clear the pattern
+			# and set the word_length to the number of dots.
+			if ($pattern eq '.' x length($pattern)) {
+				$word_length = length($pattern);
+				$pattern = '*';
+			}
+        }
+
+        return ($word_count, $word_length, $pattern);
+    }
+
+    return 0;
+}
+
+
+my ($forward_dict, $reverse_dict);
+
+sub load_dict {
+    my $filename = shift;
+    
+    open my $f, '<', share() . '/' . $filename or die;
+    
+    my $content;
+    read $f, $content, -s $f;
+    
+    close $f;
+    
+    return $content;
+}
+
+$forward_dict = load_dict('dict_forward.bin');
+$reverse_dict = load_dict('dict_reverse.bin');
+
+sub read_at_pos {
+    my ($dict, $pos) = @_;
+    
+    my $a = vec ${$dict}, $pos * 3, 8;
+    my $b = vec ${$dict}, $pos * 3 + 1, 8;
+    my $c = vec ${$dict}, $pos * 3 + 2, 8;
+    
+    my $code = $a | ($b << 8) | ($c << 16);
+    
+    my $ch = $code & 0x1F;
+    $ch = ($ch == 0) ? '' : chr(ord('a') + $ch - 1);
+    my $offset = $code >> 6;
+    my $end = ($code >> 5) & 1;
+    
+    return ($ch, $offset, $end);
+}
+
+sub search_in_dict {
+    my ($res, $word, $dict, $pos, $counter, $out_limit) = @_;
+    
+    my ($dict_ch, $new_pos, $end);
+    
+    my $ch = substr($word, 0, 1);
+    my $star = $ch eq '*';
+    $ch = substr($word, 1, 1) if $star;
+    
+    my @out;
+    
+    do {
+        ($dict_ch, $new_pos, $end) = read_at_pos($dict, $pos);
+        
+        $counter++;
+        return @out if $counter > BACKTRACKING_LIMIT;
+        
+        if ($dict_ch eq $ch || $ch eq '.') {
+            return $res if $dict_ch eq '' && $ch eq '';
+            
+            push @out, search_in_dict($res . $dict_ch, substr($word, $star ? 2 : 1), $dict, $new_pos, $counter, $out_limit);
+            return @out if scalar(@out) >= $out_limit;
+        }
+        push @out, search_in_dict($res . $dict_ch, $word, $dict, $new_pos, $counter, $out_limit) if $star && $dict_ch ne '';
+        return @out if scalar(@out) >= $out_limit;
+        
+        $pos++;
+    } until ($end || $dict_ch ge $ch && $ch ne '.' && !$star);
+    
+    return @out;
+}
+
+sub get_matching_words {
+    my ($word_count, $word_length, $pattern) = @_;
+
+    # Find the dictionary to use
+	die unless $pattern =~ m/^([a-z]*).*?([a-z]*)$/;
+    my $use_reverse = length($1) < length($2);
+    my $dict = $use_reverse ? \$reverse_dict : \$forward_dict;
+    $pattern = reverse $pattern if $use_reverse;
+
+	# Add encoded word length if specified
+	my $len = $word_length ? chr(ord('a') + $word_length) : '.';
+
+    my @matches = map {substr($_, 1)} search_in_dict('', $len . $pattern, $dict, 0, 0, $word_count);
+
+    @matches = map {scalar reverse($_)} @matches if $use_reverse;
+
+    @matches = @matches[0..$word_count - 1] if @matches > $word_count;
+    
+    return @matches;
+}
+
+1;
