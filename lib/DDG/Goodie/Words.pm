@@ -20,7 +20,6 @@ topics 'words_and_games';
 attribution github => ['https://github.com/pavlos256', 'Pavlos Touboulidis'];
 
 triggers any => 'words', 'word';
-triggers startend => 'words', 'word';
 
 use constant {
     # Number of words to return if not specified
@@ -58,7 +57,7 @@ handle query_lc => sub {
 sub describe_input {
     my ($word_count, $word_length, $pattern) = @_;
 
-    my @a = ();
+    my @a;
 
     # word count
     my $t = $word_count == 1 ? 'word' : 'words';
@@ -89,7 +88,7 @@ sub parse_input
 
     my ($word_count, $word_length, $verb, $pattern);
 
-    if ($s =~ m/
+    return unless $s =~ m/
         (?:(?<count>\d+)\s+)?
         (?:(?<length>\d+)[\s\-]+(?:letter|char|character)\s+)?
         (?:random\s+)?(?<word>word[s]?)
@@ -102,55 +101,52 @@ sub parse_input
             (?<pattern>[a-z\-\?\.\*]{1,28})
         )?
         (?:\s+(?:having|with)\s+(?<length>\d+)\s+(?:letters|characters))?
-    /x)
-    {   
-        # Word count
-        $word_count = ($+{'word'} eq 'words') ? DEFAULT_WORD_COUNT : 1;
-        $word_count = $+{'count'} if $+{'count'};
-        $word_count = MAX_WORD_COUNT if $word_count > MAX_WORD_COUNT;
+    /x;
+ 
+    # Word count
+    $word_count = ($+{'word'} eq 'words') ? DEFAULT_WORD_COUNT : 1;
+    $word_count = $+{'count'} if $+{'count'};
+    $word_count = MAX_WORD_COUNT if $word_count > MAX_WORD_COUNT;
 
-        # Word length
-        $word_length = $+{'length'} || 0;
+    # Word length
+    $word_length = $+{'length'} || 0;
 
-        # Verb
-        $verb = $+{'verb'} || '';
-        $verb = 'start' if $verb eq 'begin';
+    # Verb
+    $verb = $+{'verb'} || '';
+    $verb = 'start' if $verb eq 'begin';
 
-        # Pattern
-        $pattern = $+{'pattern'} || '*';
-        
-        # Don't process too wrong or unrelated queries
-        return if !$+{'count'} && !$word_length && (!$verb || $pattern eq '*');
-        
-        if (($verb eq 'start') || ($verb eq 'end')) {
-            # Remove any symbols from the pattern
-            $pattern =~ s/[^a-z]//g;
+    # Pattern
+    $pattern = $+{'pattern'} || '*';
 
-            # Normalize pattern
-            $pattern = ($verb eq 'start') ? "$pattern*" : "*$pattern";
-        } elsif ($verb eq 'like') {
-            # Replace all single-character symbols (- ?) with '.'
-            $pattern =~ tr/-?/../;
+    # Don't process too wrong or unrelated queries
+    return if !$+{'count'} && !$word_length && (!$verb || $pattern eq '*');
 
-            # Remove duplicate '*'
-            $pattern =~ s/\*+/*/g;
+    if (($verb eq 'start') || ($verb eq 'end')) {
+        # Remove any symbols from the pattern
+        $pattern =~ s/[^a-z]//g;
 
-            # Since the verb is 'like',
-            # we abort if there's no wildcards in the pattern
-            return unless $pattern =~ tr/\*\.//;
-            
-            # If the string is just dots, clear the pattern
-            # and set the word_length to the number of dots.
-            if ($pattern eq '.' x length($pattern)) {
-                $word_length = length($pattern);
-                $pattern = '*';
-            }
+        # Normalize pattern
+        $pattern = ($verb eq 'start') ? "$pattern*" : "*$pattern";
+    } elsif ($verb eq 'like') {
+        # Replace all single-character symbols (- ?) with '.'
+        $pattern =~ tr/-?/../;
+
+        # Remove duplicate '*'
+        $pattern =~ s/\*+/*/g;
+
+        # Since the verb is 'like',
+        # we abort if there's no wildcards in the pattern
+        return unless $pattern =~ tr/\*\.//;
+
+        # If the string is just dots, clear the pattern
+        # and set the word_length to the number of dots.
+        if ($pattern eq '.' x length($pattern)) {
+            $word_length = length($pattern);
+            $pattern = '*';
         }
-
-        return ($word_count, $word_length, $pattern);
     }
 
-    return 0;
+    return ($word_count, $word_length, $pattern);
 }
 
 # Load the binary file
