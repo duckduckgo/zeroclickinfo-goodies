@@ -57,7 +57,11 @@ ddg_goodie_test(
 
     DDG::Request->new(query_raw => "size of venus", location => test_location("au")) => test_zci("Venus, Radius is 6,051.8 km",  html => qr{<div class="zci--planets"><span class="planets--planetImage"><img src=".*" height="48" width="48"/></span><span class="planets--info"><span class="text--primary planets--planetAttribute">6,051.8 km</span><span class="text--secondary planets--planetName">Venus, Radius</span></span></div>}),
 
-    'bad example query' => undef
+    'size of tomato' => undef,
+    'volume of water' => undef,
+    'mass of RMS titanic' => undef,
+    'surface area of united states' => undef,
+    'radius of orange' => undef
 );
 
 done_testing;
