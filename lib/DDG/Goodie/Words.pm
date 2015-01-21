@@ -139,12 +139,12 @@ sub parse_input
             # we abort if there's no wildcards in the pattern
             return unless $pattern =~ tr/\*\.//;
             
-			# If the string is just dots, clear the pattern
-			# and set the word_length to the number of dots.
-			if ($pattern eq '.' x length($pattern)) {
-				$word_length = length($pattern);
-				$pattern = '*';
-			}
+            # If the string is just dots, clear the pattern
+            # and set the word_length to the number of dots.
+            if ($pattern eq '.' x length($pattern)) {
+                $word_length = length($pattern);
+                $pattern = '*';
+            }
         }
 
         return ($word_count, $word_length, $pattern);
@@ -235,13 +235,13 @@ sub get_matching_words {
     my ($word_count, $word_length, $pattern) = @_;
 
     # Find the dictionary to use
-	die unless $pattern =~ m/^([a-z]*).*?([a-z]*)$/;
+    die unless $pattern =~ m/^([a-z]*).*?([a-z]*)$/;
     my $use_reverse = length($1) < length($2);
     my $dict = $use_reverse ? \$reverse_dict : \$forward_dict;
     $pattern = reverse $pattern if $use_reverse;
 
-	# Add encoded word length if specified
-	my $len = $word_length ? chr(ord('a') + $word_length) : '.';
+    # Add encoded word length if specified
+    my $len = $word_length ? chr(ord('a') + $word_length) : '.';
 
     # Do the search
     my @matches = map {substr($_, 1)} search_in_dict('', $len . $pattern, 0,
