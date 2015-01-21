@@ -32,7 +32,11 @@
     padding: 0.4em;
     padding-left: 0;
     border-top: solid 1px #DDD;
-    border-bottom: solid 1px #DDD;
+    border-bottom: 0;
+}
+
+.zci.is-active {
+    padding-bottom: 0.5em;
 }
 
 .bpmto_ms .record .numbers {
