@@ -233,7 +233,7 @@ sub get_matching_words {
     my ($word_count, $word_length, $pattern) = @_;
 
     # Find the dictionary to use
-    die unless $pattern =~ m/^([a-z]*).*?([a-z]*)$/;
+    return unless $pattern =~ m/^([a-z]*).*?([a-z]*)$/;
     my $use_reverse = length($1) < length($2);
     my $dict = $use_reverse ? \$reverse_dict : \$forward_dict;
     $pattern = reverse $pattern if $use_reverse;
