@@ -4,7 +4,7 @@ use DDG::Goodie;
 use Locale::SubCountry;
 use YAML::XS qw(Load);
 
-triggers startend => 'sales tax for', 'sales tax';
+triggers any => 'sales tax for', 'sales tax';
  
 zci answer_type => "sales_tax";
 zci is_cached   => 1;
@@ -30,9 +30,9 @@ my $salestax = Load(scalar share('states.yml')->slurp);
 
 handle remainder => sub {
     #Define vars
-     s/what is (the)?//g; # strip common words
-    my ($query,$state,$tax);
 
+    my ($query,$state,$tax);
+        s/what is (the)?//g; # strip common words
     $query = $_;
  
     # Washington D.C is a district and is not supported by the SubCountry package.
