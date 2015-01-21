@@ -38,14 +38,10 @@ ddg_goodie_test(
             
         }
     ),
-    'sales tax washington dc' => test_zci(
-        'Washington D.C sales tax: 5.75%',
-        structured_answer => {
-            input     => ['Washington D.C'],
-            operation => 'Sales tax for',
-            result    => '5.75%'
-            
-        }
-    ),
-);
+    
+    'sales tax in japan' => undef
+    
+    
+   
+   );
 done_testing;
