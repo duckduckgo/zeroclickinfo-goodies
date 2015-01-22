@@ -10,7 +10,6 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::SalesTax )],
-            
     'Sales tax for pennsylvania' => test_zci(
         'Pennsylvania sales tax: 6%',
         structured_answer => {
@@ -38,10 +37,6 @@ ddg_goodie_test(
             
         }
     ),
-    
     'sales tax in japan' => undef
-    
-    
-   
    );
 done_testing;
