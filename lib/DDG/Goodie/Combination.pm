@@ -49,16 +49,21 @@ handle query => sub {
     my $result;
 
     if ('choose' eq $operation) {
-        $result = $style->for_display(choose($n, $k));
+        $result = choose($n, $k);
     } else { #must be permute
-        $result = $style->for_display(permute($n, $k));
+        $result = permute($n, $k);
     }
 
-    return $result,
+    #Return no result if overflow
+    return if $result eq '-nan' or $result eq 'nan';
+
+    my $formatted_result = $style->for_display($result);
+
+    return $formatted_result,
     structured_answer => {
         input     => [$style->for_display($n) . " $operation " . $style->for_display($k)],
         operation => $operation,
-        result    => $style->for_display($result),
+        result    => $formatted_result,
     };
 };
 
