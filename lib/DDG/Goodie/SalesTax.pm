@@ -1,5 +1,5 @@
 package DDG::Goodie::SalesTax;
-#ABSTRACT: Returns the sales tax for any state (not including federal districts or territories) in the United States. 
+#ABSTRACT: Returns the sales tax for any state (not including territories) in the United States. 
 use DDG::Goodie;
 use Locale::SubCountry;
 use YAML::XS qw(Load);
@@ -8,9 +8,7 @@ triggers any => 'sales tax for', 'sales tax', 'sales tax in';
  
 zci answer_type => "sales_tax";
 zci is_cached   => 1;
- 
 
- 
 primary_example_queries 'Sales tax for pennsylvania', 'Sales tax pa';
 secondary_example_queries 'what is sales tax for mississippi';
 description 'Returns the sales tax of the specified state or territory in the United States';
@@ -20,21 +18,19 @@ category 'random';
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SalesTax.pm";
 source "https://en.wikipedia.org/wiki/Sales_taxes_in_the_United_States";
 attribution github => ['https://github.com/javathunderman', 'Thomas Denizou'];
-         
+
 #Create US SubCountry object
 my $US = new Locale::SubCountry("US");
- 
+
 #Load states.yml
 #country-aliases file
 my $salestax = Load(scalar share('states.yml')->slurp);            
 
 handle remainder => sub {
-    #Define vars
-
-    my ($query,$state,$tax);
-        s/what is (the)?//g; # strip common words
+    my ($query,$state,$tax); #Define vars
+    s/what is (the)?//g; # strip common words
     $query = $_;
- 
+
     # Washington D.C is a district and is not supported by the SubCountry package.
     if($query =~ m/\b(washington\s(dc|d\.c))\b/i) {
         $state = "Washington D.C"
