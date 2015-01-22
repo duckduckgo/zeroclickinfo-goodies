@@ -28,7 +28,7 @@ my $salestax = Load(scalar share('states.yml')->slurp);
 
 handle remainder => sub {
     my ($query,$state,$tax); #Define vars
-    s/what is (the)?//g; # strip common words
+    s/^what is (the)?//g; # strip common words
     $query = $_;
 
     # Washington D.C is a district and is not supported by the SubCountry package.
