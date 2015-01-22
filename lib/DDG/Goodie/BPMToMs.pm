@@ -66,22 +66,8 @@ Quarter Note: " . $straight_values[2] . ", Triplet: " . $triplet_values[2] . ", 
     $html_content = $html_content .
     "</table></div></div></div>";
     
-    return $plain_text_content,
-        structured_answer => {
-            input     => [html_enc($bpm)],
-            operation => 'BPMToMs',
-            result    => $html_content,
-    };
-    
-    #return html => $html_content,
-    #       answer => "$bpm bpm in milliseconds
-#Whole Note: " . $straight_values[0] . ", Triplet: " . $triplet_values[0] . ", Dotted: " . $dotted_values[0] . "
-#Half Note: " . $straight_values[1] . ", Triplet: " . $triplet_values[1] . ", Dotted: " . $dotted_values[1] . "
-#Quarter Note: " . $straight_values[2] . ", Triplet: " . $triplet_values[2] . ", Dotted: " . $dotted_values[2] . "
-#1/8 Note: " . $straight_values[3] . ", Triplet: " . $triplet_values[3] . ", Dotted: " . $dotted_values[3] . "
-#1/16 Note: " . $straight_values[4] . ", Triplet: " . $triplet_values[4] . ", Dotted: " . $dotted_values[4] . "
-#1/32 Note: " . $straight_values[5] . ", Triplet: " . $triplet_values[5] . ", Dotted: " . $dotted_values[5];
-
+    return html => $html_content,
+           answer => $plain_text_content;
 };
 
 1;
