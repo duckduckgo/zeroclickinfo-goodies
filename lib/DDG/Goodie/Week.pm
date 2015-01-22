@@ -63,23 +63,32 @@ handle query_raw => sub {
 
     return if $week =~ s/(nd|th|rd|st)$// and $week > 52;
 
-    my $dt = DateTime->now(time_zone => $loc->time_zone)
-        if ($week eq 'current' or $year eq 'current');
+    my $dt = DateTime->now(time_zone => $loc->time_zone) if ($week eq 'current' or $year eq 'current');
+
+    my ($response, $operation);
 
     if ($week eq 'current' and $year eq 'current') {
-        return "We are in currently in the " . ordinate($dt->week_number) .
-                ' week of ' . $dt->year . '.',
-            html => 'We are in currently in the ' . $dt->week_number
-                    . '<sup>' . ordsuf($dt->week_number) . '</sup>'
-                    . ' week of ' . $dt->year . '.';
+        my ($dt_week_num, $dt_year) = (ordinate($dt->week_number), $dt->year);
+        $response = "We are currently in the $dt_week_num week of $dt_year.";
+        $operation = "Current week";
     } elsif ($year eq 'current') {
         $year = $dt->year();
     }
-    my (undef, $month, $day) = Monday_of_Week($week, $year);
-    return "The " . ordinate($week) . " week of $year began on " .
-        "$months[--$month] " . ordinate($day) . '.',
-        html =>"The $week<sup>" . ordsuf($week) . "</sup> week of $year began on " .
-            "$months[$month] $day<sup>" . ordsuf($day) . '</sup>.';
+
+    unless ($response){
+        my (undef, $month, $day) = Monday_of_Week($week, $year);
+        my ($week_num, $day_num, $out_month) = (ordinate($week), ordinate($day), $months[--$month]);
+
+        $response = "The $week_num week of $year began on $out_month $day_num.";
+        $operation = "Find the $week_num week of $year";
+    }
+
+    return $response,
+      structured_answer => {
+        input     => [],
+        operation => "Assuming the week starts on Monday",
+        result    => $response
+      };
 };
 
 1;
