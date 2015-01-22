@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::SalesTax )],
-    'Sales tax for pennsylvania' => test_zci(
+    'sales tax for pennsylvania' => test_zci(
         'Pennsylvania sales tax: 6%',
         structured_answer => {
             input     => ['Pennsylvania'],
@@ -27,7 +27,17 @@ ddg_goodie_test(
             
             
         }
-    ),    
+    ),   
+    'what is the sales tax in kansas' => test_zci(
+        'Kansas sales tax: 6.15%',
+        structured_answer => {
+            input     => ['Kansas'],
+            operation => 'Sales tax for',
+            result    => '6.15%'
+            
+            
+        }
+    ),     
     'sales tax pa' => test_zci(
         'Pennsylvania sales tax: 6%',
         structured_answer => {
@@ -37,6 +47,26 @@ ddg_goodie_test(
             
         }
     ),
-    'sales tax in japan' => undef
+    'sales tax connecticut' => test_zci(
+        'Connecticut sales tax: 6.35%',
+        structured_answer => {
+            input     => ['Connecticut'],
+            operation => 'Sales tax for',
+            result    => '6.35%'
+            
+        }
+    ),
+    'sales tax delaware' => test_zci(
+        'Delaware sales tax: Delaware does not levy a sales tax.',
+        structured_answer => {
+            input     => ['Delaware'],
+            operation => 'Sales tax for',
+            result    => 'Delaware does not levy a sales tax.'
+            
+        }
+    ),
+    'sales tax in japan' => undef,
+    'what is the sales tax in china' => undef,
+    'sales tax in connecticut what is' => undef
    );
 done_testing;
