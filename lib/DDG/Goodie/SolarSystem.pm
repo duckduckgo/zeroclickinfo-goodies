@@ -32,7 +32,7 @@ my %objectImages = (
     mars => goodie_img_tag({filename => 'images/Mars.svg',height => 48, width => 48,}),
     mercury => goodie_img_tag({filename => 'images/Mercury.svg',height => 48, width => 48,}),
     neptune => goodie_img_tag({filename => 'images/Neptune.svg',height => 48, width => 48,}),
-    saturn => goodie_img_tag({filename => 'images/Saturn.svg',height => 48, width => 48,}),
+    saturn => goodie_img_tag({filename => 'images/Saturn.svg',height => 48, width => 58,}),
     uranus => goodie_img_tag({filename => 'images/Uranus.svg',height => 48, width => 48,}),
     venus => goodie_img_tag({filename => 'images/Venus.svg',height => 48, width => 48,})
 );
@@ -45,7 +45,7 @@ handle query_lc => sub {
   # Declare vars
   my ($attribute, $attributesString, $result, $objectObj);
   
-  s/what is (the)|(of)|(object)//g; # Remove common words, strip question marks
+  s/^what is (the)|(of)|(object)//g; # Remove common words, strip question marks
 
   $attributesString = join('|', @attributesArray); 
   return unless /$attributesString/; # Ensure we match at least one attribute, eg. size, volume
