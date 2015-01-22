@@ -14,7 +14,7 @@ ddg_goodie_test(
         'Pennsylvania sales tax: 6%',
         structured_answer => {
             input     => ['Pennsylvania'],
-            operation => 'Sales tax for',
+            operation => 'Sales Tax',
             result    => '6%'
         }
     ), 
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'Mississippi sales tax: 7%',
         structured_answer => {
             input     => ['Mississippi'],
-            operation => 'Sales tax for',
+            operation => 'Sales Tax',
             result    => '7%'
             
             
@@ -32,7 +32,7 @@ ddg_goodie_test(
         'Kansas sales tax: 6.15%',
         structured_answer => {
             input     => ['Kansas'],
-            operation => 'Sales tax for',
+            operation => 'Sales Tax',
             result    => '6.15%'
             
             
@@ -42,7 +42,7 @@ ddg_goodie_test(
         'Pennsylvania sales tax: 6%',
         structured_answer => {
             input     => ['Pennsylvania'],
-            operation => 'Sales tax for',
+            operation => 'Sales Tax',
             result    => '6%'
             
         }
@@ -51,7 +51,7 @@ ddg_goodie_test(
         'Connecticut sales tax: 6.35%',
         structured_answer => {
             input     => ['Connecticut'],
-            operation => 'Sales tax for',
+            operation => 'Sales Tax',
             result    => '6.35%'
             
         }
@@ -60,7 +60,7 @@ ddg_goodie_test(
         'Delaware sales tax: Delaware does not levy a sales tax.',
         structured_answer => {
             input     => ['Delaware'],
-            operation => 'Sales tax for',
+            operation => 'Sales Tax',
             result    => 'Delaware does not levy a sales tax.'
             
         }

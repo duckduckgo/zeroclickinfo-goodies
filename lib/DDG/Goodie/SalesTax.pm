@@ -51,7 +51,7 @@ handle remainder => sub {
     return $state . " sales tax: $tax",
       structured_answer => {
         input     => [$state],
-        operation => 'Sales tax for',
+        operation => 'Sales Tax',
         result    => $tax
       };
 };
