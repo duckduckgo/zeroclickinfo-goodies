@@ -132,11 +132,10 @@ sub render {
     my $ohms = $formatted_value eq '1' ? 'ohm' : 'ohms';
     my $text = "$formatted_value\x{2126}";
     my $bands = ucfirst to_string(scalar @$digits);
-    my $html = "<div class='zci__body'>" .
-                    "<div class='zci--resistor-colors'>" .
-                        "<h3 class='zci__header'>$text</h3>" .
-                        "<h4 class='zci__subheader'>$bands Bands</h4>" .
-                        "<div class='zci__content'>";
+    my $html = "<div class='zci--resistor-colors'>" .
+                    "<h3 class='zci__header'>$text</h3>" .
+                    "<h4 class='zci__subheader'>$bands Bands</h4>" .
+                    "<div class='zci__content'>";
     $text .= " ($ohms) resistor colors:";
 
     #while (my ($index, $digit) = each @$digits) {
@@ -177,7 +176,7 @@ sub render {
     $html .= "</div></div>"
         . "<br/>"
         . "<a href='http://resisto.rs/#$formatted_value' class='zci__more-at'>"
-        . "More at resisto.rs</a></div>";
+        . "More at resisto.rs</a>";
 
     return $text, html => $html;
 };
