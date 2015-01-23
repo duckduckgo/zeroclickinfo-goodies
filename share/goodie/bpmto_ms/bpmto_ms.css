@@ -35,6 +35,10 @@
     border-bottom: 0;
 }
 
+.zci.zci--answer {
+    padding-bottom: 0.5em;
+}
+
 .bpmto_ms .record .numbers {
     text-align: right;
 }
