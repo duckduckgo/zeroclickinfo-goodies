@@ -20,18 +20,21 @@ my @current_week = (
 ddg_goodie_test(
     ['DDG::Goodie::Week'],
 
+    # Current Week Queries
     'what is the current week of the year?' => test_zci(@current_week),
     "what week is this?" => test_zci(@current_week),
     "what is the current week" => test_zci(@current_week),
     "what's   the current week? " => test_zci(@current_week),
     "whats the current week of the year" => test_zci(@current_week),
 
+
+    # Nth Week Queries
     "what was the 5th week of this year" => test_zci(
-        qr/The \d{1,2}\w{2} week of \d{4} began on January \d{1,2}\w{2}\./,
+        qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
         structured_answer => {
             input     => [],
             operation => "Assuming the week starts on Monday",
-            result    => qr/The \d{1,2}\w{2} week of \d{4} began on January \d{1,2}\w{2}\./,
+            result    => qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
         }
     ),
 

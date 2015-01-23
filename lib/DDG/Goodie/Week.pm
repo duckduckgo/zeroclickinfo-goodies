@@ -42,45 +42,53 @@ my @months = qw/
     December
 /;
 
-handle query_raw => sub {
+handle query_lc => sub {
     return unless /^\s*
-        what(?:'?s|\sis|\swas)?\s+
-        (?:the\s+)?
-        (?:(current|(\d{1,2})(?:nd|th|rd|st)?)\s+)?
+        what(?:'?s|\sis|\swas)?\s
+        (?:the\s)?
+        (?:(current|(?<week>\d{1,2})(?:nd|th|rd|st)?)\s)?
         week
         (
-            \s+of\s+
-            (?:(?:the|this)\s+)?
-            (year|\d{4})
+            \sof\s
+            (?:(?:the(?:\scurrent)?|this)\s)?
+            (?<year>year|\d{4})
             |
-            \s+is\s+this
+            \sis\sthis
         )?\??
     \s*$/x;
 
-    my $week = $1;
-    my $year = defined $4 ? ($4 eq 'year' ? 'current' : $4) : 'current';
+    my $week = $+{week};
+    my $year = $+{year} || 'current';
+    $year = 'current' if $year eq 'year';
+
     ($week, $year) = qw/current current/ if (not defined $week);
 
+    # ensure week number is legitimate
     return if $week =~ s/(nd|th|rd|st)$// and $week > 52;
 
-    my $dt = DateTime->now(time_zone => $loc->time_zone) if ($week eq 'current' or $year eq 'current');
+    my $dt = DateTime->now(time_zone => $loc->time_zone);
 
-    my ($response, $operation);
+    my $response;
 
+    # Asking about current week of the current year
     if ($week eq 'current' and $year eq 'current') {
         my ($dt_week_num, $dt_year) = (ordinate($dt->week_number), $dt->year);
         $response = "We are currently in the $dt_week_num week of $dt_year.";
-        $operation = "Current week";
-    } elsif ($year eq 'current') {
+    }
+
+    # Asking about nth week of the current year
+    elsif ($year eq 'current') {
         $year = $dt->year();
     }
 
+    # Asking about nth week of some year
     unless ($response){
         my (undef, $month, $day) = Monday_of_Week($week, $year);
-        my ($week_num, $day_num, $out_month) = (ordinate($week), ordinate($day), $months[--$month]);
+        my ($week_num, $day_num, $out_month,  $start_term) = (ordinate($week), ordinate($day), $months[--$month], 'begins');
 
-        $response = "The $week_num week of $year began on $out_month $day_num.";
-        $operation = "Find the $week_num week of $year";
+        $start_term = "began" if ($year < $dt->year || $week < $dt->week|| $day < $dt->day);
+
+        $response = "The $week_num week of $year $start_term on $out_month $day_num.";
     }
 
     return $response,
