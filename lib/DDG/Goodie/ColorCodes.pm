@@ -54,8 +54,7 @@ name 'ColorCodes';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ColorCodes.pm';
 category 'conversions';
 topics 'programming';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution cpan    => 'CRZEDPSYC' ;
 
 sub percentify {
     my @out;

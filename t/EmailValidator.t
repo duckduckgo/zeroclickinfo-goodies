@@ -14,7 +14,7 @@ ddg_goodie_test(
         qr/appears to be valid/,
         structured_answer => {
             input     => ['foo@example.com'],
-            operation => 'email address validation',
+            operation => 'Email address validation',
             result    => qr/appears to be valid/
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         qr/appears to be valid/,
         structured_answer => {
             input     => ['foo+abc@example.com'],
-            operation => 'email address validation',
+            operation => 'Email address validation',
             result    => qr/appears to be valid/
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         qr/appears to be valid/,
         structured_answer => {
             input     => ['foo.bar@example.com'],
-            operation => 'email address validation',
+            operation => 'Email address validation',
             result    => qr/appears to be valid/
         }
     ),
@@ -39,7 +39,7 @@ ddg_goodie_test(
         qr/Please check the address/,
         structured_answer => {
             input     => '-ANY-',
-            operation => 'email address validation',
+            operation => 'Email address validation',
             result    => qr/Please check the address/,
         }
       ),
@@ -47,7 +47,7 @@ ddg_goodie_test(
         qr/appears to be valid/,
         structured_answer => {
             input     => ['foo@example.com'],
-            operation => 'email address validation',
+            operation => 'Email address validation',
             result    => qr/appears to be valid/
         }
     ),
@@ -55,7 +55,7 @@ ddg_goodie_test(
         qr/Please check the fully qualified domain name/,
         structured_answer => {
             input     => ['foo@!!!.com'],
-            operation => 'email address validation',
+            operation => 'Email address validation',
             result    => qr/Please check the fully qualified domain name/,
         }
     ),
@@ -63,7 +63,7 @@ ddg_goodie_test(
         qr/Please check the top-level domain/,
         structured_answer => {
             input     => ['foo@example.lmnop'],
-            operation => 'email address validation',
+            operation => 'Email address validation',
             result    => qr/Please check the top-level domain/,
         }
     ),

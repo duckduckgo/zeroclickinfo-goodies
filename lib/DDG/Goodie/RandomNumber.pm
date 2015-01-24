@@ -9,7 +9,7 @@ name 'RandomNumber';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/RandomNumber.pm';
 category 'computing_tools';
 topics 'cryptography';
-attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
+attribution github => ['duckduckgo', 'DuckDuckGo'];
 
 zci answer_type => 'rand';
 zci is_cached   => 0;
@@ -46,7 +46,7 @@ handle query_lc => sub {
     return $rand . " (random number)",
       structured_answer => {
         input     => [$start, $end],
-        operation => 'random number between',
+        operation => 'Random number between',
         result    => $rand
       };
 };

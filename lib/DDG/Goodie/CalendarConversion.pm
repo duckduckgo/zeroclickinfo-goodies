@@ -75,7 +75,7 @@ handle query_lc => sub {
     return $input_date . ' is ' . $converted_date,
       structured_answer => {
         input     => [$input_date],
-        operation => 'calendar conversion',
+        operation => 'Calendar conversion',
         result    => $converted_date
       };
 };

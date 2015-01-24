@@ -24,7 +24,7 @@ handle remainder => sub {
     return "$binary in binary is \"$ascii\" in ASCII",
       structured_answer => {
         input     => [$binary],
-        operation => 'binary to ASCII',
+        operation => 'Binary to ASCII',
         result    => html_enc($ascii),
       };
 };

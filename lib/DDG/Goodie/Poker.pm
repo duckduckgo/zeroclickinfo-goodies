@@ -14,7 +14,7 @@ description 'returns requested statistic of the requested poker hand';
 name 'Poker';
 topics 'gaming', 'entertainment';
 category 'random';
-attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
+attribution github => [ 'austinheimark', 'Austin Heimark' ];
 
 my %odds = (
 	"royal flush" => "649,739",

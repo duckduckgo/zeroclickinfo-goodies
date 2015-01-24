@@ -12,14 +12,14 @@ my @foo = (
     'Base64 encoded: Zm9v',
     structured_answer => {
         input     => ['foo'],
-        operation => 'base64 encode',
+        operation => 'Base64 encode',
         result    => 'Zm9v'
     });
 my @this_text = (
     'Base64 decoded: this text',
     structured_answer => {
         input     => ['dGhpcyB0ZXh0'],
-        operation => 'base64 decode',
+        operation => 'Base64 decode',
         result    => 'this text'
     });
 
@@ -32,7 +32,7 @@ ddg_goodie_test(
         'Base64 encoded: dGhpcyB0ZXh0',
         structured_answer => {
             input     => ['this text'],
-            operation => 'base64 encode',
+            operation => 'Base64 encode',
             result    => 'dGhpcyB0ZXh0'
         }
     ),

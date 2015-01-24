@@ -11,7 +11,7 @@ primary_example_queries 'random password', 'random password strong 15';
 description 'generates a random password';
 name 'Password';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/Password.pm';
-attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
+attribution github => ['duckduckgo', 'DuckDuckGo'];
 category 'computing_tools';
 topics 'cryptography';
 
@@ -85,7 +85,7 @@ handle remainder => sub {
     return $pw_string . " (random password)",
       structured_answer => {
         input     => [$pw_length . ' characters', $pw_strength . ' strength'],
-        operation => 'random password',
+        operation => 'Random password',
         result    => $pw_string
       };
 };
