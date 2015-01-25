@@ -24,27 +24,14 @@ triggers startend => "emacs cheatsheet", "emacs cheat sheet",
                      "emacs help", "emacs commands", "emacs guide",
                      "emacs reference", "emacs quick reference";
 
+my $TEXT = scalar share('emacs_cheat_sheet.txt')->slurp,
+my $HTML = scalar share('emacs_cheat_sheet.html')->slurp;
+
 handle remainder => sub {
 	return 
         heading => 'Emacs Cheat Sheet',
-        answer  => text_cheat_sheet(),
-        html    => html_cheat_sheet(),
+        answer  => $TEXT,
+        html    => $HTML,
 };
-
-my $HTML;
-
-sub html_cheat_sheet {
-    $HTML //= share("emacs_cheat_sheet.html")
-            ->slurp(iomode => '<:encoding(UTF-8)');
-        return $HTML;
-}
-
-my $TEXT;
-
-sub text_cheat_sheet {
-    $TEXT //= share("emacs_cheat_sheet.txt")
-            ->slurp(iomode => '<:encoding(UTF-8)');
-        return $TEXT
-}
 
 1;
