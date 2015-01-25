@@ -5,7 +5,7 @@
 }
 
 .zci--answer #sheet-container {
-    max-height: 45ex;
+    max-height: 46ex;
     overflow-y: scroll;
     overflow-x: hidden;
 }
