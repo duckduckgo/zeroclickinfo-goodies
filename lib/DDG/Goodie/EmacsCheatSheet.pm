@@ -28,7 +28,7 @@ my $TEXT = scalar share('emacs_cheat_sheet.txt')->slurp,
 my $HTML = scalar share('emacs_cheat_sheet.html')->slurp;
 
 handle remainder => sub {
-	return 
+    return 
         heading => 'Emacs Cheat Sheet',
         answer  => $TEXT,
         html    => $HTML,
