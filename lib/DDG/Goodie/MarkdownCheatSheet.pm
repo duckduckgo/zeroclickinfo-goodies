@@ -2,6 +2,7 @@ package DDG::Goodie::MarkdownCheatSheet;
 # ABSTRACT: Provide a cheatsheet for common Markdown syntax
 
 use DDG::Goodie;
+use HTML::Entities;
 
 zci answer_type => "markdown_cheat";
 zci is_cached   => 1;
@@ -32,39 +33,46 @@ attribution github  => ["marianosimone", "Mariano Simone"];
 # Base snippet definitions
 my %snippets = (
     'header' => {
-        'html' => '<h1>This is an H1</h1><h2>This is an H2</h2><h6>This is an H6</h6>',
+        'html' => HTML::Entities::encode_entities('<h1>This is an H1</h1>
+<h2>This is an H2</h2>
+<h6>This is an H6</h6>'),
         'text' => '# This is an H1
 ## This is an H2
 ###### This is an H6'
     },
     'em' => {
-        'html' => '<em>Emphasis</em> or <em>ephasis</em>',
+        'html' => HTML::Entities::encode_entities('<em>Emphasis</em> or <em>ephasis</em>'),
         'text' => '_emphasis_ or *emphasis*'
     },
     'strong' => {
-        'html' => '<strong>Strong</strong> or <strong>strong</strong>',
+        'html' => HTML::Entities::encode_entities('<strong>Strong</strong> or <strong>strong</strong>'),
         'text' => '**strong** or __strong__'
     },
     'list' => {
-        'html' => '<ul><li>First</li><li>Second</li><li>Third</li></ul><ol><li>First</li><li>Second</li><li>Third</li></ol>',
+        'html' => HTML::Entities::encode_entities('<ul>
+  <li>First</li>
+  <li>Second</li>
+</ul>
+<ol>
+  <li>First</li>
+  <li>Second</li>
+</ol>'),
         'text' => '- First
 - Second
-- Third
 
 1. First
-2. Second
-3. Third'
+2. Second'
     },
     'image' => {
-        'html' => '<img src="https://duckduckgo.com/assets/badges/logo_square.64.png"></img>',
+        'html' => HTML::Entities::encode_entities('<img src="https://duckduckgo.com/assets/badges/logo_square.64.png"/>'),
         'text' => '![Image Alt](https://duckduckgo.com/assets/badges/logo_square.64.png)'
     },
     'link' => {
-        'html' => '<a href="http://www.duckduckgo.com" title="Example Title">This is an example inline link</a>',
+        'html' => HTML::Entities::encode_entities('<a href="http://www.duckduckgo.com" title="Example Title">This is an example inline link</a>'),
         'text' => '[This is an example inline link](http://www.duckduckgo.com "Example Title")'
     },
     'blockquote' => {
-        'html' => '<blockquote>This is the first level of quoting.<blockquote>This is nested blockquote.</blockquote>Back to the first level.</blockquote>',
+        'html' => HTML::Entities::encode_entities('<blockquote>This is the first level of quoting.<blockquote>This is nested blockquote.</blockquote>Back to the first level.</blockquote>'),
         'text' => '> This is the first level of quoting.
 >
 > > This is nested blockquote.
@@ -90,11 +98,11 @@ foreach my $key (keys(%synonyms)) {
     }
 }
 
-my $more_at = '<a href="http://daringfireball.net/projects/markdown/syntax" class="zci__more-at--info"><img src="//images.duckduckgo.com/iu/?u=http%3A%2F%2Fdaringfireball.net%2Ffavicon.ico" class="zci__more-at__icon"/>More at Daring Fireball</a>';
+my $more_at = '<a href="http://daringfireball.net/projects/markdown/syntax" class="zci__more-at--info"><img src="http://daringfireball.net/favicon.ico" class="zci__more-at__icon"/>More at Daring Fireball</a>';
 
 sub make_html {
     my $element = $_[0];
-    return $snippets{$element}->{'html'}.'<pre>'.$snippets{$element}->{'text'}.'</pre>'.$more_at
+    return 'Markdown:<pre>'.$snippets{$element}->{'text'}.'</pre>HTML:<pre>'.$snippets{$element}->{'html'}.'</pre>'.$more_at
 };
 
 handle remainder => sub {

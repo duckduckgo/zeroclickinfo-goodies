@@ -13,7 +13,7 @@ sub test_success {
     return test_zci(
         qr/^$_[0]/s,
 	    heading => 'Markdown Cheat Sheet',
-		html => qr/^<$_[1] ?.*>.*<\/\w*><pre>.*<\/pre>/s,
+		html => qr/Markdown:<pre>$_[0].*<\/pre>HTML:<pre>&lt;$_[1] ?.*&gt;.*<\/pre>/s,
     );
 }
 
