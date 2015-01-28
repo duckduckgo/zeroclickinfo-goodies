@@ -22,7 +22,7 @@ triggers startend => "shortcuts";
 handle remainder => sub {
 
     # Combination of "keyboard", "cheat sheet", "duckduckgo" (or aliases), or nothing
-    return unless $_ =~ /^(((duck\s*duck\s*go|ddg)('?s)?|cheat\s*sheet|keyboard)\s*)*$/i;
+    return unless $_ =~ /^\s*(((duck\s*duck\s*go|ddg)( ?'?s)?|cheat\s*sheet|keyboard)\s*)*$/i;
 
     return
         heading => "DuckDuckGo Shortcuts Cheat Sheet",
