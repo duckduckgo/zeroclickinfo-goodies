@@ -16,17 +16,38 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github  => ['https://github.com/Qeole','Qeole'],
             twitter => ['https://twitter.com/qeole','Qeole'];
 
-triggers any => "shortcuts";
-triggers startend => "shortcuts";
+my @ddg_aliases = map { (
+        $_ . " ",
+        $_ . "'s ",
+        $_ . "s "
+    ) } (
+    'duck duck go',
+    'duckduck go',
+    'duck duckgo',
+    'duckduckgo',
+    'ddg'
+);
+my @ddg_shortcuts_triggers = map { (
+    $_.'cheatsheet',
+    $_.'cheat sheet',
+    $_.'keyboard shortcuts',
+    $_.'shortcuts',
+    $_.'shortcuts cheatsheet',
+    $_.'shortcuts cheat sheet'
+) } @ddg_aliases;
+
+triggers startend => @ddg_shortcuts_triggers;
 
 my $TEXT = scalar share('ddg_shortcuts.txt')->slurp,
 my $HTML = scalar share('ddg_shortcuts.html')->slurp;
 
 handle remainder => sub {
 
-    # Combination of "keyboard", "cheat sheet", "duckduckgo" (or aliases), or nothing
-    return unless $_ =~ /^\s*(((duck\s*duck\s*go|ddg)( ?'?s)?|cheat\s*sheet|keyboard)\s*)*$/i;
-
+    ## DEGUG -- print all triggers
+    #foreach (@ddg_shortcuts_triggers) {
+    #    print "$_\n";
+    #}
+    
     return
         heading => "DuckDuckGo Shortcuts Cheat Sheet",
         answer  => $TEXT,
