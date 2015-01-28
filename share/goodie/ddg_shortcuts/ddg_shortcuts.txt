@@ -1,0 +1,16 @@
+Open results
+
+Enter or l or o     Go to the highlighted result, or use it right away to go to the first result
+Ctrl/Cmd + Enter    Open a result in the background
+d                   Domain search (if a result is highlighted)
+' or v              Open the highlighted result in a new window/tab. Since this uses JavaScript, you need to turn off pop-up blockers first.
+
+Move around
+
+Left or Right       Navigate instant answer tabs. When an instant answer is open, navigate within the instant answer.
+Down or j           Next search result
+Up   or k           Previous search result
+/    or h           Go to search box
+s                   Go to misspelling link (if any)
+t                   Go to top
+m                   Go to main results
