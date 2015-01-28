@@ -11,9 +11,9 @@
 }
 
 .zci--answer .ddg_shortcuts-container {
-    max-height:  45ex;
-    /overflow-y: auto;
-    overflow-x:  hidden;
+    max-height: 45ex;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .zci--answer .ddg_shortcuts-column {

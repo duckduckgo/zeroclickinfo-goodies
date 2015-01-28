@@ -13,11 +13,14 @@ secondary_example_queries "keyboard shortcuts", "shortcuts cheatsheet";
 category "cheat_sheets";
 topics "computing", "geek", "trivia";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DDGShortcuts.pm";
-attribution github => "Qeole",
-            twitter => "qeole";
+attribution github  => ['https://github.com/Qeole','Qeole'],
+            twitter => ['https://twitter.com/qeole','Qeole'];
 
 triggers any => "shortcuts";
 triggers startend => "shortcuts";
+
+my $TEXT = scalar share('ddg_shortcuts.txt')->slurp,
+my $HTML = scalar share('ddg_shortcuts.html')->slurp;
 
 handle remainder => sub {
 
@@ -26,24 +29,8 @@ handle remainder => sub {
 
     return
         heading => "DuckDuckGo Shortcuts Cheat Sheet",
-        html    => html_cheat_sheet(),
-        answer  => text_cheat_sheet(),
+        answer  => $TEXT,
+        html    => $HTML,
 };
-
-my $HTML;
-
-sub html_cheat_sheet {
-    $HTML //= share("ddg_shortcuts.html")
-        ->slurp(iomode => '<:encoding(UTF-8)');
-    return $HTML;
-}
-
-my $TEXT;
-
-sub text_cheat_sheet {
-    $TEXT //= share("ddg_shortcuts.txt")
-        ->slurp(iomode => '<:encoding(UTF-8)');
-    return $TEXT;
-}
 
 1;
