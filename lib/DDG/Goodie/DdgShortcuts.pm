@@ -42,12 +42,6 @@ my $TEXT = scalar share('ddg_shortcuts.txt')->slurp,
 my $HTML = scalar share('ddg_shortcuts.html')->slurp;
 
 handle remainder => sub {
-
-    ## DEGUG -- print all triggers
-    #foreach (@ddg_shortcuts_triggers) {
-    #    print "$_\n";
-    #}
-    
     return
         heading => "DuckDuckGo Shortcuts Cheat Sheet",
         answer  => $TEXT,
