@@ -8,8 +8,8 @@ zci is_cached   => 1;
 
 name "DDG_Shortcuts";
 description "DuckDuckGo Shortcuts Cheat Sheet";
-primary_example_queries "DuckDuckGo shortcuts", "shortcuts";
-secondary_example_queries "keyboard shortcuts", "shortcuts cheatsheet";
+primary_example_queries "DuckDuckGo shortcuts", "DDG Cheat Sheet";
+secondary_example_queries "Display DuckDuckGo's keyboard shortcuts";
 category "cheat_sheets";
 topics "computing", "geek", "trivia";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DDGShortcuts.pm";

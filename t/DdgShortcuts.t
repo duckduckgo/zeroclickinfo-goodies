@@ -17,7 +17,7 @@ my $test_zci = test_zci(
 
 ddg_goodie_test(
     [qw( DDG::Goodie::DdgShortcuts )],
-    
+
     'duck duck go cheatsheet'                        => $test_zci, # Generated triggers - start
     'duck duck go cheat sheet'                       => $test_zci,
     'duck duck go keyboard shortcuts'                => $test_zci,
@@ -107,12 +107,16 @@ ddg_goodie_test(
     'ddgs keyboard shortcuts'                        => $test_zci,
     'ddgs shortcuts'                                 => $test_zci,
     'ddgs shortcuts cheatsheet'                      => $test_zci, # Generated triggers - end
-    
+
     'DDGs Shortcuts Cheat Sheet'                     => $test_zci, # Upper case triggers
     'ddgs shortcuts cheat sheet WHATEVER AFTER'      => $test_zci, # starting trigger
     'WHATEVER BEFORE ddgs shortcuts cheat sheet'     => $test_zci, # ending trigger
     'ddgs shortcuts WHATEVER HERE cheat sheet'       => $test_zci, # triggers on "ddgs shortcuts"
-    
+
+    "DuckDuckGo shortcuts"                           => $test_zci, # primary_example_queries
+    "DDG Cheat Sheet"                                => $test_zci, # primary_example_queries
+    "Display DuckDuckGo's keyboard shortcuts"        => $test_zci, # secondary_example_queries
+
     'ddgs WHATEVER IN BETWEEN shortcuts cheat sheet' => undef, # no complete trigger
     'BEFORE ddgs shortcuts cheat sheet AND AFTER'    => undef, # no start/end trigger
     'DUCKDUCKGO ddg shortcuts cheat sheet AFTER'     => undef, # no start/end trigger
