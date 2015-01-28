@@ -22,6 +22,7 @@ ddg_goodie_test(
     'cheatsheet shortcuts'       => $test_zci,
     '  keyboard shortcuts'       => $test_zci,
     'duckduckgo\'s shortcuts'    => $test_zci,
+    'DuckDuckGo\'s Shortcuts'    => $test_zci,
     'ddg keyboard shortcuts  '   => $test_zci,
     'ddgs shortcuts cheat sheet' => $test_zci,
     'duck duck go \'s shortcuts' => $test_zci,
