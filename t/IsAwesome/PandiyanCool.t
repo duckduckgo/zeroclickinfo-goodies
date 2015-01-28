@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw(
-        DDG::Goodie::IsAwesome::pandiyancool
+        DDG::Goodie::IsAwesome::PandiyanCool
     )],
     'duckduckhack pandiyancool' => test_zci('PandiyanCool is techie saint who always interested to learn new things!'),
     'duckduckhack pandiyancool is techie saint' => undef,
