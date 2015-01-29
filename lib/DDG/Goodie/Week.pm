@@ -44,7 +44,7 @@ my @months = qw/
 
 handle query_lc => sub {
     return unless /^\s*
-        what(?:'?s|\sis|\swas)?\s
+        (?:what|when)(?:'?s|\sis|\swas)?\s
         (?:the\s)?
         (?:(current|(?<week>\d{1,2})(?:nd|th|rd|st)?)\s)?
         week
