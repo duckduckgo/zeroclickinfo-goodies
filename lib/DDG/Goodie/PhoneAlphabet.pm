@@ -19,8 +19,10 @@ attribution github => ["https://github.com/stevelippert", "Steve Lippert"],
 triggers any => 'to digit', 'to digits', 'to phone', 'to phone number';
 
 handle remainder => sub {
-    # Return unless it looks like a phone number.
+    # Return unless it looks like a phone number
     return unless ($_ =~ /[-0-9A-Za-z]{6,15}$/);
+    # Return if it's a Base64 number
+    return if ($_ =~ /^0x\d+$/);
     return unless $_;
     # Lower case everything.
     my $num = lc $_;

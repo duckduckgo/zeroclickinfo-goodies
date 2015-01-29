@@ -6,16 +6,16 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => "phone_alphabet";
-zci is_cached   => 0;
+zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::PhoneAlphabet )],
     '1-800-LAWYR-UP to digits' => test_zci(
-        'Phone Number: 1-800-529-9787',
+        'Phone Number: 1-800-52997-87',
          structured_answer => {
             input     => ['1-800-LAWYR-UP'],
             operation => 'Phone Number',
-            result    => '1-800-529-9787'
+            result    => '1-800-52997-87'
         }
     ),
 
@@ -29,7 +29,7 @@ ddg_goodie_test(
     ),
 
     '1958funhack to phone' => test_zci(
-        'Phone Number: 1-958-386-4225',
+        'Phone Number: 19583864225',
         structured_answer => {
             input     => ['1958funhack'],
             operation => 'Phone Number',
@@ -38,7 +38,7 @@ ddg_goodie_test(
     ),
 
     '13TAXI to phone' => test_zci(
-        'Phone Number: 13',
+        'Phone Number: 138294',
         structured_answer => {
             input     => ['13TAXI'],
             operation => 'Phone Number',
