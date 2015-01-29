@@ -16,20 +16,23 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/stevelippert", "Steve Lippert"],
             twitter => ["https://twitter.com/stevelippert", "stevelippert"];
 
-# Triggers
 triggers any => 'to digit', 'to digits', 'to phone', 'to phone number';
 
 handle remainder => sub {
-    #Return unless it looks like a phone number.
-    return unless ($_ =~ /[-0-9A-Za-z]{7,15}$/);
+    # Return unless it looks like a phone number.
+    return unless ($_ =~ /[-0-9A-Za-z]{6,15}$/);
     return unless $_;
-    #Lower case everything.
-    $_ = lc;
-    #Use a regex to replace each letter with the corresponding number from the phone key pad.
-    $_ =~ tr/abcdefghijklmnopqrstuvwxyz/22233344455566677778889999/;
+    # Lower case everything.
+    my $num = lc $_;
+    # Use a regex to replace each letter with the corresponding number from the phone key pad.
+    $num =~ tr/abcdefghijklmnopqrstuvwxyz/22233344455566677778889999/;
 
-    #Returns the phone number.
-    return "Phone Number: $_";
+    return "Phone Number: $num",
+    structured_answer => {
+        input     => ["$_"],
+        operation => "Phone Number",
+        result    => "$num",
+    };
 };
 
 1;

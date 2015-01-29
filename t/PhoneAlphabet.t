@@ -10,9 +10,42 @@ zci is_cached   => 0;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::PhoneAlphabet )],
-    '1-800-LAWYR-UP to digits' => test_zci('Phone Number: 1-800-52997-87'),
-    '1-800-fun-hack to phone number' => test_zci('Phone Number: 1-800-386-4225'),
-    '1958funhack to phone' => test_zci('Phone Number: 19583864225'),
+    '1-800-LAWYR-UP to digits' => test_zci(
+        'Phone Number: 1-800-529-9787',
+         structured_answer => {
+            input     => ['1-800-LAWYR-UP'],
+            operation => 'Phone Number',
+            result    => '1-800-529-9787'
+        }
+    ),
+
+    '1-800-fun-hack to phone number' => test_zci(
+        'Phone Number: 1-800-386-4225',
+        structured_answer => {
+            input     => ['1-800-fun-hack'],
+            operation => 'Phone Number',
+            result    => '1-800-386-4225'
+        }
+    ),
+
+    '1958funhack to phone' => test_zci(
+        'Phone Number: 1-958-386-4225',
+        structured_answer => {
+            input     => ['1958funhack'],
+            operation => 'Phone Number',
+            result    => '19583864225'
+        }
+    ),
+
+    '13TAXI to phone' => test_zci(
+        'Phone Number: 13',
+        structured_answer => {
+            input     => ['13TAXI'],
+            operation => 'Phone Number',
+            result    => '138294'
+        }
+    ),
+
     'something fun to hack to phone' => undef,
     '0x0123 to digits' => undef
 );
