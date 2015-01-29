@@ -86,7 +86,7 @@ handle query_lc => sub {
         my (undef, $month, $day) = Monday_of_Week($week, $year);
         my ($week_num, $day_num, $out_month,  $start_term) = (ordinate($week), ordinate($day), $months[--$month], 'begins');
 
-        $start_term = "began" if ($year < $dt->year || $week < $dt->week|| $day < $dt->day);
+        $start_term = "began" if ($year < $dt->year || $year == $dt->year && ($week< $dt->week && $day < $dt->day));
 
         $response = "The $week_num week of $year $start_term on $out_month $day_num.";
     }
