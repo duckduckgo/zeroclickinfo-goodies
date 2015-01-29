@@ -21,9 +21,8 @@ triggers any => 'to digit', 'to digits', 'to phone', 'to phone number';
 handle remainder => sub {
     # Return unless it looks like a phone number
     return unless ($_ =~ /[-0-9A-Za-z]{6,15}$/);
-    # Return if it's a Base64 number
+    # Return if it's a Hex number
     return if ($_ =~ /^0x\d+$/);
-    return unless $_;
     # Lower case everything.
     my $num = lc $_;
     # Use a regex to replace each letter with the corresponding number from the phone key pad.
