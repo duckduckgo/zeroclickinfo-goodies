@@ -19,18 +19,20 @@ attribution github => ["https://github.com/stevelippert", "Steve Lippert"],
 triggers any => 'to digit', 'to digits', 'to phone', 'to phone number';
 
 handle remainder => sub {
+    my $input = shift;
+
     # Return unless it looks like a phone number
-    return unless ($_ =~ /[-0-9A-Za-z]{6,15}$/);
+    return unless ($input =~ /[-0-9A-Za-z]{6,15}$/);
     # Return if it's a Hex number
-    return if ($_ =~ /^0x\d+$/);
+    return if ($input =~ /^0x\d+$/);
     # Lower case everything.
-    my $num = lc $_;
+    my $num = lc $input;
     # Use a regex to replace each letter with the corresponding number from the phone key pad.
     $num =~ tr/abcdefghijklmnopqrstuvwxyz/22233344455566677778889999/;
 
     return "Phone Number: $num",
     structured_answer => {
-        input     => ["$_"],
+        input     => [html_enc($input)],
         operation => "Phone Number",
         result    => "$num",
     };
