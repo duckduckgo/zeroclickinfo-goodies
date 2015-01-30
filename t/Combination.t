@@ -13,42 +13,42 @@ ddg_goodie_test(
     '10 choose 3' => test_zci('120',
         structured_answer => {
             input     => ['10 choose 3'],
-            operation => 'choose',
+            operation => 'Calculate',
             result    => '120',
         }
     ),
     '10 nCr 3' => test_zci('120',
         structured_answer => {
             input     => ['10 choose 3'],
-            operation => 'choose',
+            operation => 'Calculate',
             result    => '120',
         }
     ),
     '25 permute 16' => test_zci('4.27447366714368 * 10^19',
         structured_answer =>  {
             input     => ["25 permute 16"],
-            operation => "permute",
+            operation => 'Calculate',
             result    => "4.27447366714368 * 10^19"
         }
     ), 
     '16 permutation 3' => test_zci('3,360',
         structured_answer =>  {
             input     => ["16 permute 3"],
-            operation => "permute",
+            operation => 'Calculate',
             result    => "3,360"
         }
     ), 
     '15 permutation 0' => test_zci('1',
         structured_answer  => {
             input     => ["15 permute 0"],
-            operation => "permute",
+            operation => 'Calculate',
             result    => "1"
         }
     ), 
     '1,000 choose 2' => test_zci('499,500',
         structured_answer  => {
             input     => ["1,000 choose 2"],
-            operation => "choose",
+            operation => 'Calculate',
             result    => "499,500"
         }
     ), 

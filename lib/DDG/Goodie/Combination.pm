@@ -62,7 +62,7 @@ handle query => sub {
     return $formatted_result,
     structured_answer => {
         input     => [$style->for_display($n) . " $operation " . $style->for_display($k)],
-        operation => $operation,
+        operation => 'Calculate',
         result    => $formatted_result,
     };
 };
