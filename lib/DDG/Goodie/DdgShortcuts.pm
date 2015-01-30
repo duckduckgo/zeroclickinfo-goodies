@@ -38,8 +38,8 @@ my @ddg_shortcuts_triggers = map { (
 
 triggers startend => @ddg_shortcuts_triggers;
 
-my $TEXT = scalar share('ddg_shortcuts.txt')->slurp,
-my $HTML = scalar share('ddg_shortcuts.html')->slurp;
+my $TEXT = scalar share('ddg_shortcuts.txt')->slurp(iomode => '<:encoding(UTF-8)'),
+my $HTML = scalar share('ddg_shortcuts.html')->slurp(iomode => '<:encoding(UTF-8)');;
 
 handle remainder => sub {
     return
