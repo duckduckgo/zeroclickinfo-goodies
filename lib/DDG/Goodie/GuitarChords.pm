@@ -6,8 +6,9 @@ with 'DDG::GoodieRole::ImageLoader';
 
 # guitar script is stored in share directory
 # including this way, because it limits duplicated code
-my $g = share("Guitar.pm");
+my $g = share("chords.pm");
 require "$g";
+our %chord_lists; #from chords.pm
 
 zci answer_type => 'guitarchord';
 zci is_cached => 1;
@@ -37,8 +38,6 @@ handle remainder => sub
     return;
 };
 
-my $gtr = Guitar->new;
-
 sub check_chord
 {
     if ($_[0] =~ /(?<a>[a-gA-G])(?<b>#|b)?(?<c>dim|min|maj|add|aug|m|M)?(?<d>M|maj|m|min)?(?<e>[0-9])?\s*(?<f>(#|b)?[0-9]+)?/) {
@@ -63,7 +62,7 @@ sub check_chord
         $r .= $d if $d;
         $r .= $e if $e;
         $r .= $f if $f;
-        if ($r ~~ @{$gtr->all_chords}) {
+        if ($r ~~ @{[keys %chord_lists]}) {
             return $r;
         }
     }
@@ -72,7 +71,7 @@ sub check_chord
 
 sub get_chord_img
 {
-    goodie_img_tag({filename=>$_[0].'.png'});
+    goodie_img_tag({filename=>$_[0].'.png', width=>78});
 }
 
 1;
