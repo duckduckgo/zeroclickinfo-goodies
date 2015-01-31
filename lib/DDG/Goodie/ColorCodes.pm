@@ -73,7 +73,8 @@ sub percentify {
 sub create_output {
     my (%input) = @_;
     my ($text, $html) = ("","");
-    
+
+    (my $hex_for_links = $input{'hex'}) =~ s/^#//;
     my $hex = "Hex: ".uc($input{'hex'});
     my $rgb = "RGBA(" . join(", ", @{$input{'rgb'}}) . ", ".$input{'alpha'}.")";
     my $rgb_pct = "RGB(" . join(", ", @{$input{'rgb_percentage'}}) . ")";
@@ -94,9 +95,9 @@ sub create_output {
     
     $html = "<div class='column1 tx-clr--dk2'>"
           . "<p class='hex tx-clr--dk zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
-          . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex . ";weights=100;' class='tx-clr--dk2'>Images</a>"
+          . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex_for_links . ";weights=100;' class='tx-clr--dk2'>Images</a>"
           . " | "
-          . "<a href='http://www.color-hex.com/color/" . $hex . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a></p>"
+          . "<a href='http://www.color-hex.com/color/" . $hex_for_links . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a></p>"
           . "</div>"
           . "<div class='column2 tx-clr--dk2'>"
           . "<div class='complementary'>$comps</div>"
