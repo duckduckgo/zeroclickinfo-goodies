@@ -2,11 +2,13 @@ package DDG::Goodie::Zodiac;
 #ABSTRACT : Find the Zodiac Sign by feeding Date as Input
 
 use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
 
 #My Imports
 use strict;
 use warnings;
+
+#Import the Date Manipulation Module
+use Date::Manip qw(ParseDate);							
 
 #Import the DateTime::Event::Zodiac Module
 use DateTime::Event::Zodiac qw(zodiac_date_name);
@@ -20,23 +22,48 @@ primary_example_queries "zodiac 21st June";
 secondary_example_queries "31 Dec starsign","1st Jan 1981 star sign","zodiac sign 1 Nov";
 description	"Find the Zodiac Sign for the Respective Date given as Input based on Tropical Zodiac(2011) Source : https://en.wikipedia.org/wiki/Zodiac";
 name "zodiac";
-category "dates";
-topics "special_interest";
-attribution email  => 'nomady@zoho.com',
-            github => ['https://github.com/n0mady','NOMADY'];
-
+category "special";
+topics "science";
+attribution email => 'nomady@zoho.com',
+	    github => ['https://github.com/n0mady','NOMADY'];
+			
 handle remainder => sub {
+	
+		#User Entered Date/Query
+		my $query=$_;								
+		
+		#Temp Variable
+		my $result;
 
-    my $datestring = $_;    # The remainder should just be the string for their date.
+		#Parse the Given Date String
+		my $date=&ParseDate($query);
+		
+		#Return Nothing if the User Provided Date is Invalid	
+		return if $date eq "";
+	
+		my $zodiacdate=DateTime->new(
+		
+			#Extract the Year from Date String
+			year=>substr($date,0,4),
 
-    #Parse the Given Date String
-    my $zodiacdate = parse_datestring_to_date($datestring);
+			#Extract the Month from Date String
+			month=>substr($date,4,2),
+		
+			#Extract the Day from Date String
+			day=>substr($date,6,2)		
+		);					
 
-    #Return Nothing if the User Provided Date is Invalid
-    return unless $zodiacdate;
+		#Return the Star Sign
+		$result = " Star Sign :",zodiac_date_name($zodiacdate);
+		return $result,
+			structured_answer => {
+			input	=> [html_enc[$query]],
+			operation => 'Star Sign'
+			result	=> html_enc(zodiac_date_name($zodiacdate))
+		};
+		
 
-    #Return the Star Sign
-    return "Star Sign for ".date_output_string($zodiacdate).": ".ucfirst(zodiac_date_name($zodiacdate));
+
 };
 
 1;
