@@ -6,6 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'regexp';
+zci is_cached   => 1;
 
 ddg_goodie_test(
         [qw( DDG::Goodie::Regexp )],
@@ -22,7 +23,7 @@ ddg_goodie_test(
         	heading => 'Regexp Result',
         ),
         'regexp /(.*)/ ddg' => test_zci(
-            'ddg', 
+            'ddg',
             heading => 'Regexp Result'
         ),
 );

@@ -6,7 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'Latex';
-zci is_cached => 0;
+zci is_cached   => 1;
 
 ddg_goodie_test(
         [qw(
@@ -22,7 +22,7 @@ Example: $\int_a^b f(x)dx$',
 		html => qr/\\int_lowerbound\^upperbound/,
 		heading => 'Integral (LaTeX)'),
     'latex summation' => test_zci('LaTeX command: \sum_{lower}^{upper}
-Example: $\sum{i=0}^{10} x^{2}$', 
+Example: $\sum{i=0}^{10} x^{2}$',
 		html => qr/\\sum_\{lower\}\^\{upper\}/,
         heading => 'Summation (LaTeX)'),
 );

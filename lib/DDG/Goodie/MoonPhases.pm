@@ -4,50 +4,44 @@ package DDG::Goodie::MoonPhases;
 use DDG::Goodie;
 use Astro::MoonPhase;
 
+zci answer_type => 'moon_phase';
+zci is_cached   => 0;
+
 primary_example_queries "lunar phase";
-
-secondary_example_queries
-    "moon phase",
-    "phase of the moon",
-    "what is the current lunar phase";
-
-description  "Lunar phase";
-
+secondary_example_queries "moon phase", "phase of the moon", "what is the current lunar phase";
+description "Lunar phase";
 name "MoonPhases";
-
 topics "special_interest", "everyday";
-
 category "random";
 
-attribution
-    github => ['https://github.com/rpicard', 'rpicard'],
-    twitter => ['https://twitter.com/__rlp', '__rlp'],
-    web => ['http://robert.io', 'Robert Picard'];
+attribution github  => ['rpicard', 'Robert Picard'],
+            twitter => ['__rlp', 'Robert Picard'],
+            web     => ['http://robert.io', 'Robert Picard'];
 
 
 triggers any => 'moon', 'lunar';
 
-my %triggerQueries = (
-    'moon phase' => 1,
-    'lunar phase' => 1,
-    'phase of the moon' => 1,
-    'current moon phase' => 1,
-    'current phase of the moon' => 1,
-    'what is the phase of the moon' => 1,
-    'whats the phase of the moon' => 1,
-    'what is the current phase of the moon' => 1,
-    'whats the current phase of them moon' => 1,
-    'current lunar phase' => 1,
-    'whats the lunar phase' => 1,
-    'what is the lunar phase' => 1,
-    'whats the current lunar phase' => 1,
-    'what is the current lunar phase' => 1,
-    'what phase is the moon in' => 1,
-    'what lunar phase is the moon in' => 1,
+my %triggerQueries = map { $_ => 1 } (
+    'moon phase',
+    'lunar phase',
+    'phase of the moon',
+    'current moon phase',
+    'current phase of the moon',
+    'what is the phase of the moon',
+    'whats the phase of the moon',
+    'what is the current phase of the moon',
+    'whats the current phase of them moon',
+    'current lunar phase',
+    'whats the lunar phase',
+    'what is the lunar phase',
+    'whats the current lunar phase',
+    'what is the current lunar phase',
+    'what phase is the moon in',
+    'what lunar phase is the moon in',
 );
 
 handle query_lc => sub {
-   
+
     # Make sure the query is on the list
     my $queryStripped = $_;
     $queryStripped =~ s/[^a-zA-z\s]//g;
@@ -68,13 +62,17 @@ handle query_lc => sub {
     $phase = 'First Quarter' if $phaseAngle == 25;
     $phase = 'Full Moon' if $phaseAngle == 50;
     $phase = 'Third Quarter' if $phaseAngle == 75;
-    
+
     my $phaseUrl = $phase;
     $phaseUrl =~ s/\s+/+/g;
-    
-    return "The current lunar phase is: $phase", html => qq(The current lunar phase is: <a href="?q=$phaseUrl">$phase</a>);
+
+    return "The current lunar phase is: $phase",
+      structured_answer => {
+        input     => [],
+        result    => $phase,
+        operation => 'Current lunar phase'
+      };
 };
 
-zci is_cached => 0;
 
 1;

@@ -14,20 +14,21 @@ name 'WhereAmI';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WhereAmI.pm';
 category 'computing_tools';
 topics 'travel';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc', 'Michael Smith'],
+            cpan    => ['CRZEDPSYC', 'Michael Smith'];
 
 handle remainder => sub {
     return if length($_) or !$loc or !$loc->city;
 
-    my $answer = 'You appear to be near ' .
-        $loc->city.', '.
-        ($loc->region_name ? $loc->region_name.', ' : '').
-        $loc->country_name
-        ;
-    my $coords = 'Lat: '.$loc->latitude.', Lon: '.$loc->longitude;
+    my $answer = 'Lat: ' . $loc->latitude . ', Lon: ' . $loc->longitude
+                 . ' (near ' . join(', ', $loc->city, $loc->region || $loc->country_name) . ')';
 
-    return $answer . " ($coords).", html => $answer . ".<br/>$coords.";
+    return $answer,
+      structured_answer => {
+        input     => [],
+        operation => 'Apparent current location',
+        result    => $answer
+      };
 };
 
 1;

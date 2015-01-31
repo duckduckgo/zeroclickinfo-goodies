@@ -9,6 +9,7 @@ use DDG::Request;
 use utf8;
 
 zci answer_type => 'loan';
+zci is_cached   => 1;
 
 ddg_goodie_test (
 	[
@@ -191,7 +192,7 @@ ddg_goodie_test (
 				metro_code => 0
 			}
 		)) =>
-		test_zci('Monthly Payment is $2,026.74 for 30 years. Total interest paid is $329,626.85'), 
+		test_zci('Monthly Payment is $2,026.74 for 30 years. Total interest paid is $329,626.85'),
 
 	# Test a few cases of inferring user's location with 'mortgage' trigger word
 	DDG::Request->new(query_raw => "mortgage 400000 4.5%", location => test_location("de")) =>
@@ -227,11 +228,11 @@ ddg_goodie_test (
 			}
 		)) =>
 		test_zci('Monthly Payment is $2,026.74 for 30 years. Total interest paid is $329,626.85'),
-    'loan $500000 at 4.5% with 20% down 15 years' => 
+    'loan $500000 at 4.5% with 20% down 15 years' =>
         test_zci('Monthly Payment is $3,059.97 for 15 years. Total interest paid is $150,795.17'),
-    'borrow $500000 4.5%' => 
+    'borrow $500000 4.5%' =>
         test_zci('Monthly Payment is $2,533.43 for 30 years. Total interest paid is $412,033.56'),
-    'mortgage $500000 4.5% 20% down 15 years' => 
+    'mortgage $500000 4.5% 20% down 15 years' =>
         test_zci('Monthly Payment is $3,059.97 for 15 years. Total interest paid is $150,795.17'),
 );
 

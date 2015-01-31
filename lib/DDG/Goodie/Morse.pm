@@ -11,22 +11,30 @@ name 'Morse';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Morse.pm';
 category 'conversions';
 topics 'special_interest';
-attribution
-  web     => 'http://und3f.com',
-  twitter => 'und3f',
-  github  => 'und3f',
-  cpan    => 'UNDEF';
+attribution web     => ['http://und3f.com', 'und3f'],
+            twitter => ['und3f', 'und3f'],
+            github  => ['und3f', 'und3f'],
+            cpan    => ['UNDEF', 'und3f'];
 
 triggers startend => 'morse', 'morse code';
 
-zci is_cached => 1;
-zci answer_type => 'chars';
+zci answer_type => 'morse';
+zci is_cached   => 1;
 
 handle remainder => sub {
-    return unless $_;
+    my $input = shift;
 
-    my $convertor = is_morse($_) ? \&as_ascii : \&as_morse;
-    return "Morse code: " . $convertor->($_);
+    return unless $input;
+
+    my $convertor = is_morse($input) ? \&as_ascii : \&as_morse;
+    my $result = $convertor->($input);
+
+    return $result,
+      structured_answer => {
+        input     => [html_enc($input)],
+        operation => 'Morse code conversion',
+        result    => html_enc($result),
+      };
 };
 
 1;

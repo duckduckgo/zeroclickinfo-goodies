@@ -1,0 +1,40 @@
+---
+gregorian:
+  - January
+  - Feburary
+  - March
+  - April
+  - May
+  - June
+  - July
+  - August
+  - September
+  - October
+  - November
+  - December
+hijri:
+  - Muharram
+  - Safar
+  - Rabia Awal
+  - Rabia Thani
+  - Jumaada Awal
+  - Jumaada Thani
+  - Rajab
+  - Sha'ban
+  - Ramadan
+  - Shawwal
+  - Dhul-Qi'dah
+  - Dhul-Hijjah
+jalali:
+  - Farvardin
+  - Ordibehesht
+  - Khordad
+  - Tir
+  - Mordad
+  - Shahrivar
+  - Mehr
+  - Aban
+  - Azar
+  - Dey
+  - Bahman
+  - Esfand

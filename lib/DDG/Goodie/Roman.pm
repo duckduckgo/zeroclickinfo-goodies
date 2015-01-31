@@ -4,6 +4,7 @@ package DDG::Goodie::Roman;
 use DDG::Goodie;
 
 use Roman;
+use utf8;
 
 primary_example_queries 'roman numeral MCCCXXXVII';
 secondary_example_queries 'roman 1337', 'roman IV';
@@ -13,7 +14,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'cryptography';
 
-attribution github => ['https://github.com/mrshu', 'mrshu'];
+attribution github => ['mrshu', 'Marek Šuppa'];
 
 triggers any => "roman", "arabic";
 
@@ -21,10 +22,26 @@ zci is_cached => 1;
 zci answer_type => "roman_numeral_conversion";
 
 handle remainder => sub {
-    s/\s*(?:numeral|number)\s*//i;
-    return uc(roman($_)) . ' (roman numeral conversion)' if /^\d+$/ && roman($_);
-    return arabic($_) . ' (roman numeral conversion)' if lc($_) =~ /^[mdclxvi]+$/ && arabic($_);
-    return;
+    my $in = uc shift;
+    $in =~ s/\s*(?:numeral|number)\s*//i;
+
+    return unless $in;
+
+    my $out;
+    if ($in =~ /^\d+$/) {
+        $out = uc(roman($in));
+    } elsif ($in =~ /^[mdclxvi]+$/i) {
+        $in  = uc($in);
+        $out = arabic($in);
+    }
+    return unless $out;
+
+    return $out . ' (roman numeral conversion)',
+      structured_answer => {
+        input     => [$in],
+        operation => 'Roman numeral conversion',
+        result    => $out
+      };
 };
 
 1;

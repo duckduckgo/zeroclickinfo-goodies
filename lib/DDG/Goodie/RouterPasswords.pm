@@ -10,7 +10,7 @@ name 'RouterPasswords';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RouterPasswords.pm';
 topics 'sysadmin';
 category 'computing_tools';
-attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
+attribution github => ['nospampleasemam', 'Dylan Lloyd'],
             web => ['http://dylansserver.com/', 'Dylan Lloyd'];
 
 my %routers = (
@@ -4378,10 +4378,10 @@ handle query => sub {
                    # default $router password
                    |^(?:(?:default|password)\ )(.+)(?:\ (?:default|password))$
                    # $router default password
-                   # default password $router 
+                   # default password $router
                    |^(?:(.+)\ )?(?:default\ password|password\ default)(?:\ (.+))?$
-                   # password $router 
-                   # $router password 
+                   # password $router
+                   # $router password
                    |^(?:(.+)\ )?(?:password)(?:\ (.+))?$
                    # $router
                    |^(.+)$

@@ -6,6 +6,7 @@ package DDG::Goodie::CrontabCheatSheet;
 use DDG::Goodie;
 
 zci answer_type => "cron_cheat";
+zci is_cached   => 1;
 
 name "CrontabCheatSheet";
 description "Crontab cheat sheet";
@@ -16,16 +17,16 @@ topics "computing", "geek", "programming", "sysadmin";
 primary_example_queries 'crontab help', 'crontab cheat sheet', 'crontab example';
 
 triggers startend => (
-    'cron cheat sheet', 
-    'cron cheatsheet', 
+    'cron cheat sheet',
+    'cron cheatsheet',
     'cron guide',
     'cron help',
     'cron quick reference',
     'cron reference',
     'cron example',
     'cron examples',
-    'crontab cheat sheet', 
-    'crontab cheatsheet', 
+    'crontab cheat sheet',
+    'crontab cheatsheet',
     'crontab guide',
     'crontab help',
     'crontab quick reference',
@@ -36,27 +37,14 @@ triggers startend => (
 
 attribution github  => ["nkorth", "Nathan Korth"];
 
+my $HTML = share("crontab_cheat_sheet.html")->slurp(iomode => '<:encoding(UTF-8)');
+my $TEXT = share("crontab_cheat_sheet.txt")->slurp(iomode => '<:encoding(UTF-8)');
+
 handle remainder => sub {
-    return 
+    return
         heading => 'Cron Cheat Sheet',
-        html    => html_cheat_sheet(),
-        answer  => text_cheat_sheet(),
+        html    => $HTML,
+        answer  => $TEXT,
 };
-
-my $HTML;
-
-sub html_cheat_sheet {
-    $HTML //= share("crontab_cheat_sheet.html")
-        ->slurp(iomode => '<:encoding(UTF-8)');
-    return $HTML;
-}
-
-my $TEXT;
-
-sub text_cheat_sheet {
-    $TEXT //= share("crontab_cheat_sheet.txt")
-        ->slurp(iomode => '<:encoding(UTF-8)');
-    return $TEXT;
-}
 
 1;

@@ -8,6 +8,7 @@ use DDG::Test::Location;
 use DDG::Request;
 
 zci answer_type => 'helpline';
+zci is_cached   => 0;
 
 my @queries = (
     'suicide',
@@ -47,7 +48,7 @@ ddg_goodie_test(
                 query_raw => "$query",
                 location => test_location("$locations[$_]")
             ),
-            test_zci(qr/24 Hour Suicide Hotline/),
+            test_zci(qr/24 Hour Suicide Hotline/, structured_answer => { input => [], operation => qr/24 Hour Suicide Hotline/, result => qr/[0-9]{2}/}),
         } 0 .. scalar @locations - 1
     } 0 .. scalar @queries - 1),
     (map {
@@ -62,7 +63,4 @@ ddg_goodie_test(
     } 0 .. scalar @ok_queries - 1),
 );
 
-done_testing(
-    (scalar @queries * scalar @locations * 2) +
-    (scalar @ok_queries * scalar @locations)
-);
+done_testing;

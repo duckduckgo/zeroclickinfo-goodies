@@ -16,8 +16,8 @@ triggers startend =>
     'length in characters',
     'length in chars';
 
-zci is_cached => 1;
 zci answer_type => "chars";
+zci is_cached   => 1;
 
 name 'Character Counter';
 description 'Count the number of charaters in a query';
@@ -50,12 +50,17 @@ handle remainder => sub {
 
     # pluralize the word 'character' unless length is 1.
     # note that this works for length=0, i.e. we'll correctly get '0 characters'.
-    my $characters_pluralized = (length($str) == 1 ? 'character' : 'characters');
+    my $characters_pluralized = ($len == 1 ? 'character' : 'characters');
 
     # build the output string
     my $text_out = qq("$str" is $len $characters_pluralized long.);
 
-    return $text_out;
+    return $text_out,
+      structured_answer => {
+        input     => [html_enc($str)],
+        operation => 'Character count',
+        result    => $len
+      };
 };
 
 1;

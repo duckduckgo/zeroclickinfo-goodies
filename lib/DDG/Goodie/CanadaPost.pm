@@ -10,9 +10,7 @@ icon_url "/i/www.canadapost.ca.ico";
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CanadaPost.pm';
 category 'ids';
 topics 'special_interest';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
 
 zci is_cached => 1;
 zci answer_type => "canadapost";
@@ -47,7 +45,7 @@ handle query_nowhitespace_nodash => sub {
     # Tracking number.
     my $package_number = '';
 
-    # Exclsuive trigger.
+    # Exclusive trigger.
     if ($1 || $2) {
         $package_number = $1 || $2;
         $is_capost      = 2;
@@ -60,9 +58,9 @@ handle query_nowhitespace_nodash => sub {
         my $length     = scalar(@chars);
         my $char_count = 0;
         my $sum        = 0;
-        
+
         foreach my $char (@chars) {
-            $char_count++;  
+            $char_count++;
 
             next if $char_count < 3;
 

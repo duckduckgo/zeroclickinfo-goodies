@@ -25,6 +25,13 @@ app:
     - mobile
   base_format: "DuckDuckGo's [mobile app]"
   info_url: https://duckduckgo.com/app/
+bangs:
+  aliases:
+    - bang
+    - newbang
+    - newbangs
+  base_format: "Learn more about DuckDuckGo's [!bangs]. You can submit new ones too!"
+  info_url: https://duck.co/help/features/bangs
 blog:
   base_format: "DuckDuckGo's [official blog]"
   info_url: https://duck.co/blog
@@ -37,6 +44,14 @@ community:
 contributing:
   base_format: '[Contributing to DuckDuckGo]'
   info_url: https://duck.co/help/community/contributing
+develop:
+  aliases: 
+    - developers
+    - improve
+    - relevancy
+    - contribute
+  base_format: '[Develop Instant Answers for DuckDuckGo search results]'
+  info_url: http://duckduckhack.com/
 doodle:
   base_format: 'Take a look at our [holiday logos]'
   info_url: https://duck.co/help/settings/holiday-logos
@@ -50,6 +65,9 @@ duck:
     - mirrormirroronthewallwhosthefairestofthemall
   html: <img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.
   text: I am the duck. Dax the duck.
+engine:
+  base_format: '[DuckDuckGo. The search engine that doesn''t track you]' 
+  info_url: https://duckduckgo.com/
 facebook:
   base_format: 'Like us on [Facebook]'
   info_url: https://www.facebook.com/duckduckgo
@@ -117,6 +135,12 @@ roboduck:
 safari:
   base_format: "DuckDuckGo's [Safari help page]"
   info_url: https://duck.co/help/desktop/safari
+searchbox:
+  aliases:
+    - searchbar
+    - sitesearch
+  base_format: "Add a DuckDuckGo [search box] to your site!"
+  info_url: https://duckduckgo.com/search_box
 settings:
   base_format: 'DuckDuckGo [settings]'
   info_url: https://duckduckgo.com/settings
@@ -138,6 +162,13 @@ swag:
     - merchandise
     - shirt
     - shirts
+    - tshirt
+    - tshirts
+    - t-shirt
+    - t-shirts
+    - tee
+    - tees
+    - t
     - sticker
     - stickers
   base_format: 'Thanks for the support! Check out the [DuckDuckGo store] for t-shirts, stickers, and other items'
@@ -148,8 +179,10 @@ syntax:
 tor:
   aliases:
     - hiddenservice
+    - onion
+    - onionservice
     - torhiddenservice
-  base_format: "DuckDuckGo's [Tor hidden service]"
+  base_format: "DuckDuckGo's [service on Tor]"
   info_url: http://3g2upl4pq6kufc4m.onion
 traffic:
   base_format: "DuckDuckGo's [traffic page]"

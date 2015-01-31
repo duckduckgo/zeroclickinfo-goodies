@@ -7,6 +7,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => "gimp_cheat";
+zci is_cached   => 1;
 
 # This goodie always returns the same answer whenever its triggered
 my $test_zci = test_zci(
@@ -17,8 +18,8 @@ my $test_zci = test_zci(
 
 ddg_goodie_test(
     [ 'DDG::Goodie::GimpCheatSheet' ],
-    "gimp cheat sheet"     => $test_zci, 
-    "gimp cheatsheet"      => $test_zci, 
+    "gimp cheat sheet"     => $test_zci,
+    "gimp cheatsheet"      => $test_zci,
     "gimp help"            => $test_zci,
     "gimp quick reference" => $test_zci,
     "gimp reference"       => $test_zci,

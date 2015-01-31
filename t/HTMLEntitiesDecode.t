@@ -6,17 +6,18 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'html_entity';
+zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw(DDG::Goodie::HTMLEntitiesDecode)],
 
-    # Simple decimal test 
+    # Simple decimal test
     'html decode &#33;' => test_zci("Decoded HTML Entity: !, Decimal: 33, Hexadecimal: 0021", html => qr/&#33;/),
-    # Simple text test 
+    # Simple text test
     'html entity &amp;' => test_zci("Decoded HTML Entity: &, Decimal: 38, Hexadecimal: 0026", html => qr/&amp;/),
     # Another simple text test
     'decode html for &gt;' => test_zci("Decoded HTML Entity: >, Decimal: 62, Hexadecimal: 003e", html => qr/&gt;/),
-    # Simple hex test 
+    # Simple hex test
     '&#x21 htmlentity' => test_zci("Decoded HTML Entity: !, Decimal: 33, Hexadecimal: 0021", html => qr/&#x21;/),
 
     # No "&" and ";" in decimal input
@@ -33,11 +34,11 @@ ddg_goodie_test(
     # "cent" fails during the regex match because of the missing front "&" (stricter for text to eliminate false positive encoding hits)
     'html decode cent' => undef,
     # "cent;" fails during the regex match for the same reasons as above
-    'html decode cent;' => undef,   
+    'html decode cent;' => undef,
 
     # "&#20;" has no visual representation
     'html entity of &#20;' => test_zci("Decoded HTML Entity: Unicode control character (no visual representation), Decimal: 20, Hexadecimal: 0014", html => qr/Unicode control character/),
-    
+
     # Querying for "&bunnyrabbit;" should fail
     'html decode &bunnyrabbit;' => undef,
     # Trying to decode "&" should fail (this is an encoding job)

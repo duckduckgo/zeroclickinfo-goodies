@@ -12,9 +12,10 @@ name 'Latex';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Latex.pm';
 attribution
     web => ['www.transistor.io', 'Jason Dorweiler'],
-    github => [ 'jdorweiler', 'Jason_Dorweiler'];
+    github => [ 'jdorweiler', 'Jason Dorweiler'];
 
 zci answer_type => 'Latex';
+zci is_cached   => 1;
 
 my %texCommands = (
 

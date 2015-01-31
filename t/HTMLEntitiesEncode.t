@@ -6,6 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'html_entity';
+zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw(DDG::Goodie::HTMLEntitiesEncode)],
@@ -61,7 +62,7 @@ ddg_goodie_test(
     'How to get a a acute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
     'how to get a a-acute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
     'how to get a aacute character in html code' => test_zci("Encoded HTML Entity: &aacute;", html => qr/aacute/),
-    'how to get a A acute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),    
+    'how to get a A acute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
     'how to get a A-acute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
     'how to get a Aacute character in html code' => test_zci("Encoded HTML Entity: &Aacute;", html => qr/Aacute/),
 

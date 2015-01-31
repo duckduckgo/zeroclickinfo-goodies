@@ -61,7 +61,7 @@ Reading & use of other information media
 029
 No longer used, formerly Literary methods
 030
-General [[encyclopedic]] works 
+General [[encyclopedic]] works
 031
 Encyclopedias in American English
 032
@@ -225,7 +225,7 @@ Metaphysics
 111
 [[Ontology]]
 112
-No longer usedÃ¢formerly [[Methodology]] 
+No longer usedÃ¢formerly [[Methodology]]
 113
 [[Cosmology]] ([[Philosophy of nature]])
 114
@@ -303,7 +303,7 @@ Other philosophical systems
 150
 Psychology
 151
-No longer usedÃ¢formerly Intellect 
+No longer usedÃ¢formerly Intellect
 152
 [[Perception]], [[Motion (physics)|movement]], [[emotion]]s, and [[Motivation|drive]]s
 153
@@ -319,7 +319,7 @@ No longer usedÃ¢formerly [[Emotion]]s
 158
 [[Applied psychology]]
 159
-No longer usedÃ¢formerly Will 
+No longer usedÃ¢formerly Will
 160
 Logic
 161
@@ -327,9 +327,9 @@ Logic
 162
 [[Deductive reasoning|Deduction]]
 163
-Not assigned or no longer used 
+Not assigned or no longer used
 164
-Not assigned or no longer used 
+Not assigned or no longer used
 165
 [[fallacy|Fallacies]] and sources of error
 166
@@ -431,7 +431,7 @@ Sources
 215
 [[Relationship between religion and science|Science & religion]]
 216
-No longer usedÃ¢formerly Evil 
+No longer usedÃ¢formerly Evil
 217
 No longer usedÃ¢formerly Prayer
 218
@@ -469,7 +469,7 @@ Spiritual beings
 236
 [[Christian eschatology|Eschatology]]
 237
-No longer usedÃ¢formerly Future state 
+No longer usedÃ¢formerly Future state
 238
 [[Creed]]s & [[catechism]]s
 239
@@ -503,11 +503,11 @@ Pastoral office ([[Pastoral theology]])
 255
 [[Congregation (catholic)|Religious congregations]] & orders
 256
-No longer usedÃ¢formerly Religious societies 
+No longer usedÃ¢formerly Religious societies
 257
 No longer usedÃ¢formerly Parochial schools, libraries, etc.
 258
-No longer usedÃ¢formerly Parochial medicine 
+No longer usedÃ¢formerly Parochial medicine
 259
 Activities of the local church
 261
@@ -561,7 +561,7 @@ Christian church in other areas
 287
 [[Methodist]] & related churches
 288
-No longer usedÃ¢formerly [[Unitarianism|Unitarian]] 
+No longer usedÃ¢formerly [[Unitarianism|Unitarian]]
 289
 Other denominations & sects
 291
@@ -579,7 +579,7 @@ Classical ([[Ancient Greek religion|Greek]] & [[Religion in ancient Rome|Roman]]
 297
 [[Islam]], [[BÃÂ¡bism]] & [[BahÃÂ¡'ÃÂ­ Faith]]
 298
-No longer usedÃ¢formerly [[Mormonism]] 
+No longer usedÃ¢formerly [[Mormonism]]
 299
 Other religions
 300
@@ -721,9 +721,9 @@ School management; special education
 375
 [[Curriculum]]s
 376
-No longer usedÃ¢formerly Education of women 
+No longer usedÃ¢formerly Education of women
 377
-No longer usedÃ¢formerly Ethical education 
+No longer usedÃ¢formerly Ethical education
 378
 [[Higher education]]
 379
@@ -759,7 +759,7 @@ Etiquette ([[Manners]])
 396
 No longer usedÃ¢formerly Women's position and treatment
 397
-No longer usedÃ¢formerly [[Outcast (person)|outcast]] studies 
+No longer usedÃ¢formerly [[Outcast (person)|outcast]] studies
 398
 [[Folklore]]
 399
@@ -795,7 +795,7 @@ Geographical & persons treatment
 415
 Structural systems ([[Grammar]])
 416
-No longer usedÃ¢formerly [[Prosody (linguistics)]] 
+No longer usedÃ¢formerly [[Prosody (linguistics)]]
 417
 [[Dialectology]] & [[historical linguistics]]
 418
@@ -827,11 +827,11 @@ German etymology
 433
 German dictionaries
 434
-Not assigned or no longer used 
+Not assigned or no longer used
 435
 [[German grammar]]
 436
-Not assigned or no longer used 
+Not assigned or no longer used
 437
 [[German dialects|German language variations]]
 438
@@ -845,11 +845,11 @@ French etymology
 443
 French dictionaries
 444
-Not assigned or no longer used 
+Not assigned or no longer used
 445
 [[French grammar]]
 446
-Not assigned or no longer used 
+Not assigned or no longer used
 447
 [[Dialects of French|French language variations]]
 448
@@ -863,11 +863,11 @@ Italian etymology
 453
 Italian dictionaries
 454
-Not assigned or no longer used 
+Not assigned or no longer used
 455
 [[Italian grammar]]
 456
-Not assigned or no longer used 
+Not assigned or no longer used
 457
 [[Italian dialects|Italian language variations]]
 458
@@ -881,11 +881,11 @@ Spanish etymology
 463
 Spanish dictionaries
 464
-Not assigned or no longer used 
+Not assigned or no longer used
 465
 [[Spanish grammar]]
 466
-Not assigned or no longer used 
+Not assigned or no longer used
 467
 [[Spanish dialects and varieties|Spanish language variations]]
 468
@@ -899,11 +899,11 @@ Portuguese
 473
 Classical Latin dictionaries
 474
-Not assigned or no longer used 
+Not assigned or no longer used
 475
 Classical [[Latin grammar]]
 476
-Not assigned or no longer used 
+Not assigned or no longer used
 477
 [[old Latin|Old]], Postclassical, [[Vulgar Latin]]
 478
@@ -917,11 +917,11 @@ Classical Greek etymology
 483
 Classical Greek dictionaries
 484
-Not assigned or no longer used 
+Not assigned or no longer used
 485
 Classical Greek grammar
 486
-Not assigned or no longer used 
+Not assigned or no longer used
 487
 Preclassical & postclassical Greek
 488
@@ -955,7 +955,7 @@ Miscellany
 503
 Dictionaries & encyclopedias
 504
-Not assigned or no longer used 
+Not assigned or no longer used
 505
 Serial publications
 506
@@ -979,7 +979,7 @@ General principles
 516
 [[Topic outline of geometry|Geometry]]
 517
-Not assigned or no longer used 
+Not assigned or no longer used
 518
 [[Numerical analysis]]
 519
@@ -991,7 +991,7 @@ Techniques, equipment, materials
 523
 Specific celestial bodies & phenomena
 524
-Not assigned or no longer used 
+Not assigned or no longer used
 525
 [[Earth]] (Astronomical geography)
 526
@@ -1109,7 +1109,7 @@ Not assigned or no longer used
 588
 [[Bryophyte|Bryophyta]]
 589
-Forestry 
+Forestry
 591
 [[Outline of zoology|Zoology]]
 592
@@ -1177,7 +1177,7 @@ Incidence & prevention of disease
 625
 Engineering of [[railroad]]s, [[road]]s
 626
-Not assigned or no longer used 
+Not assigned or no longer used
 627
 [[Hydraulic engineering]]
 628
@@ -1227,11 +1227,11 @@ Processes of written communication
 653
 [[Shorthand]]
 654
-Not assigned or no longer used 
+Not assigned or no longer used
 655
-Not assigned or no longer used 
+Not assigned or no longer used
 656
-Not assigned or no longer used 
+Not assigned or no longer used
 657
 [[Accounting]]
 658
@@ -1291,7 +1291,7 @@ Clothing
 688
 Other final products & [[packaging]]
 689
-Not assigned or no longer used 
+Not assigned or no longer used
 691
 Building [[material]]s
 692
@@ -1391,7 +1391,7 @@ Drawing & drawings
 743
 Drawing & drawings by subject
 744
-Not assigned or no longer used 
+Not assigned or no longer used
 745
 Decorative arts
 746
@@ -1413,7 +1413,7 @@ Techniques, equipment, forms
 755
 [[iconography|Religion & religious symbolism]]
 756
-Not assigned or no longer used 
+Not assigned or no longer used
 757
 Human figures & their parts
 758
@@ -1423,7 +1423,7 @@ Geographical, [[History of painting|historical]], areas, persons treatment
 761
 Relief processes ([[Block printing]])
 762
-Not assigned or no longer used 
+Not assigned or no longer used
 763
 [[lithography|Lithographic]] (Planographic) processes
 764
@@ -1435,7 +1435,7 @@ Metal [[engraving]]
 767
 [[Etching]] & [[drypoint]]
 768
-Not assigned or no longer used 
+Not assigned or no longer used
 769
 Prints
 771
@@ -1451,7 +1451,7 @@ Pigment processes of printing
 776
 [[Computer art]]
 777
-[[Cinematography]] and [[Videography]] <ref>{{cite web|title=WebDewey 2.0 installs DDC 23!|url=http://www.oclc.org/uk/en/news/announcements/2011/announcement39.htm|work=WebDewey 2.0|publisher=OCLC Online Computer Library Center, Inc.|accessdate=02/13/2012}}</ref>ref> 
+[[Cinematography]] and [[Videography]] <ref>{{cite web|title=WebDewey 2.0 installs DDC 23!|url=http://www.oclc.org/uk/en/news/announcements/2011/announcement39.htm|work=WebDewey 2.0|publisher=OCLC Online Computer Library Center, Inc.|accessdate=02/13/2012}}</ref>ref>
 778
 [[:Category:Photography by genre|Fields & kinds of photography]]
 779
@@ -1473,7 +1473,7 @@ Music for single voices; The [[human voice|voice]]
 788
 [[Wind instrument]]s (Aerophones)
 789
-Not assigned or no longer used 
+Not assigned or no longer used
 791
 Public performances
 792
@@ -1501,7 +1501,7 @@ Miscellany
 803
 Dictionaries & encyclopedias
 804
-Not assigned or no longer used 
+Not assigned or no longer used
 805
 [[Literary magazine|Serial publications]]
 806
@@ -1529,7 +1529,7 @@ Satire & humor
 818
 Miscellaneous writings
 819
-Not assigned or no longer used 
+Not assigned or no longer used
 821
 [[English poetry]]
 822
@@ -1825,9 +1825,9 @@ General history of South America; [[History of Guyana|Guiana]]
 989
 General history of South America; [[history of Paraguay|Paraguay]] & [[History of Uruguay|Uruguay]]
 991
-Not assigned or no longer used 
+Not assigned or no longer used
 992
-Not assigned or no longer used 
+Not assigned or no longer used
 993
 General history of other areas; [[History of New Zealand|New Zealand]]
 994

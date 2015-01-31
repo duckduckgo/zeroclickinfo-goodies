@@ -5,8 +5,8 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'rand';
 zci is_cached => 0;
+zci answer_type => "randomname";
 
 ddg_goodie_test(
     [
@@ -14,9 +14,12 @@ ddg_goodie_test(
     ],
     'random Name' => test_zci (qr/\w\w \(random\)/),
     'random name' => test_zci (qr/\w\w \(random\)/),
-    'random person' => 
-        test_zci (qr/Name: [\w\s]+\nGender: (?:Male|Female)\nDate of birth: \d{4}\-\d{2}\-\d{2}\nAge: \d+/, 
+    'random person' =>
+        test_zci (qr/Name: [\w\s]+\nGender: (?:Male|Female)\nDate of birth: \d{4}\-\d{2}\-\d{2}\nAge: \d+/,
                   heading => 'Random Person'),
+    'random domain name' => undef,
+    'random city name' => undef,
+    'names of random people' => undef
 );
 
 done_testing;

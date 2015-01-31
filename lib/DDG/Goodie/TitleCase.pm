@@ -3,7 +3,7 @@ package DDG::Goodie::TitleCase;
 
 use DDG::Goodie;
 
-triggers startend => 'titlecase', 'ucfirst', 'title case', 'capitalize';
+triggers start => 'titlecase', 'title case';
 
 primary_example_queries 'titlecase test';
 description 'return the query in title case';
@@ -12,34 +12,38 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'transformations';
 topics 'words_and_games';
 
-attribution github => ['https://github.com/moollaza', 'moollaza'],
-            github => ['https://github.com/maxluzuriaga', 'Max Luzuriaga'];
+attribution github => ['moollaza', 'Zaahir Moolla'],
+            github => ['maxluzuriaga', 'Max Luzuriaga'];
 
-zci is_cached => 1;
 zci answer_type => "title_case";
+zci is_cached   => 1;
 
 # http://blog.apastyle.org/apastyle/2012/03/title-case-and-sentence-case-capitalization-in-apa-style.html
-my @exceptions = ("a", "an", "and", "the", "by", "but", "for", "or", "nor", "yet", "so", "as", "at", "in", "of", "on", "per", "to");
+my %exceptions = map { $_ => 1 } ("a", "an", "and", "the", "by", "but", "for", "or", "nor", "yet", "so", "as", "at", "in", "of", "on", "per", "to");
 
 handle remainder => sub {
-    return unless $_;
+    my $input = shift;
 
-    my @words = split(/ /, $_);
+    return unless $input;
 
-    @words = map {
-        my $word = $words[$_];
-        if ($_ == 0) {
-            ucfirst $word # Capitalize first word
-        } else {
-            if (grep { $_ eq $word } @exceptions) {
-                $word # Don't capitalize minor words
-            } else {
-                join('-', map { ucfirst $_ } split(/-/, $word) ) # Capitalize every part of a hyphenated word
-            }
-        }
-    } 0 .. $#words;
+    my ($first_word, @words) = split(/\s+/, lc $input);    # Normalize to lowercase and break out words.
 
-    return join(' ', @words);
+    my $title_case = join(
+        ' ',                                               # Single spaces between words in the result
+        ucfirst $first_word,                               # First word is always capped.
+        map {
+            ($exceptions{$_})
+              ? $_                                         # Exceptions left untouched.
+              : join('-', map { ucfirst } split(/-/, $_))  # Each part of a hyphenated word is capped.
+        } @words
+    );
+
+    return $title_case,
+      structured_answer => {
+        input     => [html_enc($input)],
+        operation => 'Title case',
+        result    => html_enc($title_case),
+      };
 };
 
 1;

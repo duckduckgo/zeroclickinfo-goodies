@@ -5,9 +5,11 @@ use 5.010;
 use strict;
 use warnings;
 use DDG::Goodie;
+
+use DateTime;
 use POSIX qw(fmod);
 
-attribution github => ['https://github.com/GlitchMr', 'GlitchMr'];
+attribution github => ['GlitchMr', 'GlitchMr'];
 
 primary_example_queries '10:00AM MST to PST';
 secondary_example_queries '19:00 UTC to EST', '1am UTC to PST';
@@ -55,10 +57,25 @@ my %timezones = qw(
     YEKT      5
 );
 
-sub parse_timezone(_) {
+my $default_tz   = 'UTC';
+my $localtime_re = qr/(?:(?:my|local|my local)\s*time(?:zone)?)/i;
+my $timezone_re  = qr/(?:\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?|$localtime_re)?/;
+
+sub parse_timezone {
     my $timezone = shift;
-    my ( $name, $modifier, $minutes )
-        = $timezone =~ /\A(\w+)(?:([+-]\d+)(?::(\d\d))?)?\z/;
+
+    # They said "my timezone" or similar.
+    if ($timezone =~ /$localtime_re/i) {
+        my $dt = DateTime->now(time_zone => $loc->time_zone || $default_tz );
+        return ($dt->time_zone_short_name, $dt->offset / 3600);
+    }
+
+    # Normalize
+    $timezone ||= $default_tz;
+    $timezone = uc $timezone;
+    $timezone =~ s/\s+//g;
+
+    my ($name, $modifier, $minutes) = $timezone =~ /\A(\w+)(?:([+-]\d+)(?::(\d\d))?)?\z/;
 
     # If timezone doesn't exist, skip it
     return unless defined $timezones{$name};
@@ -68,11 +85,13 @@ sub parse_timezone(_) {
 
     # Minutes can be skipped too
     $minutes //= 0;
-    return $timezones{$name} + $modifier + $minutes / 60;
+
+    return ($timezone, $timezones{$name} + $modifier + $minutes / 60);
 }
 
 sub to_time {
     my ($hours, $american) = @_;
+
     my $pm = "";
     my $seconds = 3600 * fmod $hours, 1 / 60;
 
@@ -87,45 +106,40 @@ sub to_time {
         # Special case certain hours
         return 'midnight' if $hours == 0;
         return 'noon'     if $hours == 12;
-        $pm = ' A.M.';
+        $pm = ' AM';
         if ($hours > 12) {
-            $pm = ' P.M.';
-            $hours -= 12;
+            $pm = ' PM';
+            $hours -= 12 if (int($hours) > 12);
         }
     }
     sprintf "%i:%02.0f$seconds_format$pm", $hours, $minutes, $seconds;
 }
 
 handle query => sub {
-    my $timezone = qr/(\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?)?/;
-    my (
-        # Time
-        $hour, $minutes, $seconds, $american, $pm,
-
-        # Timezones
-        $input_timezone, $output_timezone,
-        )
-        = uc =~ m{
+    my $query = $_;
+    $query =~ m{
         \A \s*
         # Time
           # Hours
-          ([01]?[0-9] | 2[0-3])
+          (?<h>[01]?[0-9] | 2[0-3])
           (?:
             # Minutes
-            :([0-5] [0-9])
+            :(?<m>[0-5] [0-9])
             (?:
               # Seconds
-              :([0-5] [0-9])
+              :(?<s>[0-5] [0-9])
             )?
           )?
           # Optional spaces between tokens
           \s*
           # AM/PM
-          ((?:A|(P))\.?M\.?)?
+          (?<american>(?:A|(?<pm>P))\.?M\.?)?
         # Spaces between tokens
         \s* \b
+        # Optional "from" indicator for input timezone
+        (?:\s+FROM\s+)?
         # Optional input timezone
-        $timezone
+        (?<from_tz>$timezone_re)
         # Spaces
         \s+
         # in keywords
@@ -133,35 +147,28 @@ handle query => sub {
         # Spaces
         \s+
         # Output timezone
-        $timezone
+        (?<to_tz>$timezone_re)
         \s* \z
-    }x or return;
+    }ix or return;
 
-    $pm = $pm ? 12 : 0;
-    $input_timezone //= 'UTC';
-    $minutes        //= 0;
-    $seconds        //= 0;
+    my ($hours, $minutes, $seconds) = map { $_ // 0 } ($+{'h'}, $+{'m'}, $+{'s'});
+    my $american        = $+{'american'};
+    my $pm              = ($+{'pm'} && $hours != 12) ? 12 : (!$+{'pm'} && $hours == 12) ? -12 : 0;
 
-    my $modifier = 0;
-    for ( $input_timezone, $output_timezone ) {
-        s/\s+//g;
-    }
-    my $gmt_input_timezone  = parse_timezone $input_timezone;
-    # parse_timezone returns undef if the timezone name parsed
-    # from #input_timezone is not found in %timezones
+    # parse_timezone returns undef if the timezone cannot be parsed
+    my ($input_timezone, $gmt_input_timezone) = parse_timezone($+{'from_tz'});
     return unless defined $gmt_input_timezone;
-
-    my $gmt_output_timezone = parse_timezone $output_timezone;
+    my ($output_timezone, $gmt_output_timezone) = parse_timezone($+{'to_tz'});
     return unless defined($gmt_output_timezone);
 
-    $modifier += $gmt_output_timezone - $gmt_input_timezone;
+    my $modifier = $gmt_output_timezone - $gmt_input_timezone;
     for ( $gmt_input_timezone, $gmt_output_timezone ) {
         $_ = to_time $_;
         s/\A\b/+/;
         s/:00\z//;
     }
 
-    my $input_time  = $hour + $minutes / 60 + $seconds / 3600 + $pm;
+    my $input_time  = $hours + $minutes / 60 + $seconds / 3600 + $pm;
     my $output_time = $input_time + $modifier;
     for ( $input_time, $output_time ) {
         my $days = "";
@@ -195,9 +202,15 @@ handle query => sub {
         $output_format = '%s';
         pop @output_timezones;
     }
-    sprintf "%s ($input_format) is %s ($output_format).",
-        ucfirst $input_time, @input_timezones,
-        $output_time, @output_timezones;
+
+    my $output_string = sprintf "%s ($input_format) is %s ($output_format).",
+            ucfirst $input_time, @input_timezones,
+            $output_time, @output_timezones;
+    my $output_html = sprintf "<div class='zci--timezone-converter text--secondary'><span class='text--primary'>%s</span> ($input_format) is <span class='text--primary'>%s</span> ($output_format).</div>",
+            ucfirst $input_time, @input_timezones,
+            $output_time, @output_timezones;
+
+    return $output_string, html => $output_html;
 };
 
 1;

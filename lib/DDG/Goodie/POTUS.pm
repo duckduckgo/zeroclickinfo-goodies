@@ -4,12 +4,13 @@ package DDG::Goodie::POTUS;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
 use Lingua::EN::Words2Nums;
-use URI::Escape;
+use YAML::XS qw( Load );
 
 triggers startend => 'potus';
 triggers any => 'president of the united states', 'president of the us';
 
-zci is_cached => 1;
+zci answer_type => 'potus';
+zci is_cached   => 1;
 
 name 'POTUS';
 description 'returns the President of the United States';
@@ -17,79 +18,37 @@ category 'reference';
 topics 'trivia';
 primary_example_queries 'potus 16';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/POTUS.pm';
-attribution github  => ['https://github.com/numbertheory', 'John-Peter Etcheber'],
-            twitter => ['http://twitter.com/jpscribbles', 'John-Peter Etcheber'];
+attribution github  => ['numbertheory', 'John-Peter Etcheber'],
+            twitter => ['jpscribbles', 'John-Peter Etcheber'];
 
-#For maintenance, just add the president to the end of this array
-my @presidents = (
-    "George Washington",
-    "John Adams",
-    "Thomas Jefferson",
-    "James Madison",
-    "James Monroe",
-    "John Quincy Adams",
-    "Andrew Jackson",
-    "Martin Van Buren",
-    "William Henry Harrison",
-    "John Tyler",
-    "James K. Polk",
-    "Zachary Taylor",
-    "Millard Fillmore",
-    "Franklin Pierce",
-    "James Buchanan",
-    "Abraham Lincoln",
-    "Andrew Johnson",
-    "Ulysses S. Grant",
-    "Rutherford B. Hayes",
-    "James A. Garfield",
-    "Chester A. Arthur",
-    "Grover Cleveland",
-    "Benjamin Harrison",
-    "Grover Cleveland",
-    "William McKinley",
-    "Theodore Roosevelt",
-    "William Howard Taft",
-    "Woodrow Wilson",
-    "Warren G. Harding",
-    "Calvin Coolidge",
-    "Herbert Hoover",
-    "Franklin D. Roosevelt",
-    "Harry S. Truman",
-    "Dwight D. Eisenhower",
-    "John F. Kennedy",
-    "Lyndon B. Johnson",
-    "Richard Nixon",
-    "Gerald Ford",
-    "Jimmy Carter",
-    "Ronald Reagan",
-    "George H.W. Bush",
-    "Bill Clinton",
-    "George W. Bush",
-    "Barack Obama",
-);
-		
+my @presidents = @{Load(scalar share('presidents.yml')->slurp)};
+my $prez_count = scalar @presidents;
+
 handle remainder => sub {
-	s/
+    my $rem = shift;
+    $rem =~ s/
       |who\s+(is|was)\s+the\s+
       |^POTUS\s+
       |\s+(POTUS|president\s+of\s+the\s+united\s+states)$
       |^(POTUS|president\s+of\s+the\s+united\s+states)\s+
     //gix;
 
-    my $num = /\d/ ? $_ : words2nums $_;
-    $num = scalar @presidents if not $num;
-    return if --$num < 0 or $num > scalar @presidents;
+    my $num = ($rem =~ /^\d+$/) ? $rem : words2nums($rem) || $prez_count;
+    my $index = $num - 1;
+    return if $index < 0 or $index > $#presidents;
 
-    my $fact = ($num + 1 == scalar @presidents ? 'is' : 'was') . ' the';
+    my $fact = ($num == $prez_count ? 'is' : 'was') . ' the';
 
-    my $POTUS = 'President of the United States.';
+    my $POTUS   = 'President of the United States';
+    my $the_guy = $presidents[$index];
+    my $which   = ordinate($num);
 
-    my $link = '<a href="https://en.wikipedia.org/wiki/'
-             . uri_escape($presidents[$num]) .'">'
-             . "$presidents[$num]</a>";
-
-	return "$presidents[$num] $fact " . ordinate($num + 1) . " $POTUS",
-        html => "$link $fact " . ($num + 1) . '<sup>' . ordsuf($num + 1) . "</sup> $POTUS";
+    return "$the_guy $fact $which $POTUS.",
+      structured_answer => {
+        input     => [$which],
+        operation => $POTUS,
+        result    => $the_guy,
+      };
 };
 
 1;

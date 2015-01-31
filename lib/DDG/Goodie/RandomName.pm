@@ -5,9 +5,6 @@ use DDG::Goodie;
 
 use Data::RandomPerson;
 
-triggers start  => 'random';
-zci answer_type => 'rand';
-
 name 'RandomName';
 description 'returns a random and fictive title, first- and lastname and day of birth';
 category 'random';
@@ -15,11 +12,14 @@ topics 'words_and_games';
 primary_example_queries 'random name';
 secondary_example_queries 'random person';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RandomName.pm';
-attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
-            twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
+attribution github  => ['stelim', 'Stefan Limbacher'],
+            twitter => ['stefanlimbacher', 'Stefan Limbacher'];
 
-handle remainder => sub {
-    return unless /name|person/i;
+triggers start  => 'random name','random person';
+zci answer_type => "randomname";
+zci is_cached   => 0;
+
+handle query => sub {
     my $person = Data::RandomPerson->new()->create();
     my $name = "$person->{firstname} $person->{lastname}";
     my %genders = (m => 'Male', f => 'Female');

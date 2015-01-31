@@ -6,6 +6,7 @@ use Locale::Country qw/country2code code2country/;
 use Telephony::CountryDialingCodes;
 
 zci answer_type => "calling_codes";
+zci is_cached   => 1;
 
 name        "CallingCodes";
 description "Matches country names to international calling codes";
@@ -14,30 +15,27 @@ code_url    "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/D
 category    "geography";
 topics      "travel", "geography";
 
-primary_example_queries   "country code 55", "country code brazil";
+primary_example_queries   "calling code 55", "dialing code brazil";
 secondary_example_queries "dialing code +55", "country calling code 55";
 
 attribution github  => ["kablamo",            "Eric Johnson"],
             web     => ["http://kablamo.org", "Eric Johnson"];
 
-triggers any => 
-    "calling code",
-    "calling codes",
-    "country calling code", 
-    "country calling codes", 
-    "country code", 
-    "country dialing code", 
-    "country dialing codes", 
-    "dial in code",
-    "dial in codes",
-    "dialing code", 
-    "dialing codes", 
-    "international calling code", 
-    "international calling codes", 
-    "international dial in code",
-    "international dial in codes",
-    "international dialing code",
-    "international dialing codes"; 
+my @codewords   = qw(code codes);
+my @descriptors = ('calling', 'dialing', 'dial-in', 'dial in');
+my @extras      = qw(international country);
+
+my @triggers;
+foreach my $cw (@codewords) {
+    foreach my $desc (@descriptors) {
+        push @triggers, $desc . ' ' . $cw;
+        foreach my $extra (@extras) {
+            push @triggers, join(' ', $extra, $desc, $cw);
+        }
+    }
+}
+
+triggers any => @triggers;
 
 Locale::Country::rename_country('ae' => 'the United Arab Emirates');
 Locale::Country::rename_country('do' => 'the Dominican Republic');
@@ -75,7 +73,7 @@ Locale::Country::add_country_alias('United States' => 'America');
 # Easter eggs
 Locale::Country::add_country_alias('Russian Federation' => 'Kremlin');
 Locale::Country::add_country_alias('United States' => 'murica');
-Locale::Country::add_country_alias('Canada' => 'Canadia'); 
+Locale::Country::add_country_alias('Canada' => 'Canadia');
 Locale::Country::add_country_alias('Australia' => 'down under');
 
 handle remainder => sub {
@@ -83,23 +81,27 @@ handle remainder => sub {
 
     my ($dialing_code, @countries);
 
+    my $in_number;
     if ($query =~ /^\+?(\d+)/) {
+        $in_number = $1;
         # $query looks like a phone number. eg +65
-        ($dialing_code, @countries) = number_to_country($1);
-    }
-    elsif ($query =~ /^\w+/) {
+        ($dialing_code, @countries) = number_to_country($in_number);
+    } elsif ($query =~ /^\w+/) {
         # $query looks like a country name or country code. eg Brazil or Br
         ($dialing_code, @countries) = country_to_calling_code($query);
     }
 
-    return unless $dialing_code && @countries;
+    return unless $dialing_code && @countries && (defined $countries[0]);
 
-    my $answer = "+" . $dialing_code;
-    $answer .= " is the international calling code for ";
-    $answer .= list2string(@countries);
-    $answer .= ".";
+    $dialing_code = '+' . $dialing_code;
+    my $country_list = list2string(@countries);
 
-	return $answer;
+    return $dialing_code . ' is the international calling code for ' . $country_list . '.',
+      structured_answer => {
+        input => [$in_number ? $dialing_code : $country_list],
+        operation => 'International calling code',
+        result    => ($in_number ? $country_list : $dialing_code),
+      };
 };
 
 # Convert a list of country names to a single human readable English string.

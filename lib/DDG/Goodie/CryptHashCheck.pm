@@ -25,57 +25,57 @@ topics 'cryptography';
 
 attribution github => ['https://github.com/digit4lfa1l', 'digit4lfa1l'];
 
-# Remainder function with links to the Wikipedia resources. 
+# Remainder function with links to the Wikipedia resources.
 
 handle remainder => sub {
 	my ($md5) = /^[0-9a-f]{32}$/i;
 		if ($md5){
 		  	my $text = sprintf qq(This is a 128 bit MD5 cryptographic hash.);
-  			my $html = sprintf qq(This is a 128 bit <a href="%s">MD5</a> cryptographic hash.),MD5HERF;	
-			
-			return $text, html => $html;			
+  			my $html = sprintf qq(This is a 128 bit <a href="%s">MD5</a> cryptographic hash.),MD5HERF;
+
+			return $text, html => $html;
 		}
 
 	my ($sha1)  = /^[0-9a-f]{40}$/i;
 		if ($sha1){
 		  	my $text = sprintf qq(This is a 160 bit SHA-1 cryptographic hash.);
-  			my $html = sprintf qq(This is a 160 bit <a href="%s">SHA-1</a> cryptographic hash.),SHA1HREF;	
-			
-			return $text, html => $html;			
+  			my $html = sprintf qq(This is a 160 bit <a href="%s">SHA-1</a> cryptographic hash.),SHA1HREF;
+
+			return $text, html => $html;
 		}
-		
+
 	my ($sha224) = /^[0-9a-f]{56}$/i;
 		if ($sha224){
 		  	my $text = sprintf qq(This is a 224 bit SHA-2/SHA-3 cryptographic hash.);
-  			my $html = sprintf qq(This is a 224 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;	
-			
-			return $text, html => $html;			
+  			my $html = sprintf qq(This is a 224 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;
+
+			return $text, html => $html;
 		}
 
 	my ($sha256) = /^[0-9a-f]{64}$/i;
 		if ($sha256){
 		  	my $text = sprintf qq(This is a 256 bit SHA-2/SHA-3 cryptographic hash.);
-  			my $html = sprintf qq(This is a 256 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;	
-			
-			return $text, html => $html;			
+  			my $html = sprintf qq(This is a 256 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;
+
+			return $text, html => $html;
 		}
 
 	my ($sha384) = /^[0-9a-f]{96}$/i;
 		if ($sha384){
 		  	my $text = sprintf qq(This is a 384 bit SHA-2/SHA-3 cryptographic hash.);
-  			my $html = sprintf qq(This is a 384 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;	
-			
-			return $text, html => $html;			
+  			my $html = sprintf qq(This is a 384 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;
+
+			return $text, html => $html;
 		}
 
 	my ($sha512) = /^[0-9a-f]{128}$/i;
 		if ($sha512){
 		  	my $text = sprintf qq(This is a 512 bit SHA-2/SHA-3 cryptographic hash.);
-  			my $html = sprintf qq(This is a 512 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;	
-			
-			return $text, html => $html;			
+  			my $html = sprintf qq(This is a 512 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;
+
+			return $text, html => $html;
 		}
-	return;	
+	return;
 };
 
 1;

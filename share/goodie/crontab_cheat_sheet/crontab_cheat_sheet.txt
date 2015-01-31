@@ -1,8 +1,8 @@
-# Commands are executed by cron when the minute, hour, and month of year 
-# fields match the current time, and at least one of the two day fields 
+# Commands are executed by cron when the minute, hour, and month of year
+# fields match the current time, and at least one of the two day fields
 # (day of month, or day of week) match the current time. A field may be
 # an asterisk (*), which will always match.
-# 
+#
 # Fields in order:
 #   minute          (0-59)
 #   hour            (0-23)

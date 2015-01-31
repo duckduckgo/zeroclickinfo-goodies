@@ -16,13 +16,13 @@ name 'GoldenRatio';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/GoldenRatio.pm';
 category 'calculations';
 topics 'math';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'];
 
 handle remainder => sub {
     my $input = $_;
     my $golden_ratio = (1 + sqrt(5)) / 2;
-    my $result = 0; 
+    my $result = 0;
 
     if ($input =~ /^(?:(?:(\?)\s*:\s*(\d+(?:\.\d+)?))|(?:(\d+(?:\.\d+)?)\s*:\s*(\?)))$/) {
         if ($1 && $1 eq "?") {
@@ -30,10 +30,10 @@ handle remainder => sub {
             $result = $2 / $golden_ratio;
             return "Golden ratio: $result : $2";
         } elsif ($4 && $4 eq "?") {
-            # x : ? 
-            $result = $3 * $golden_ratio; 
+            # x : ?
+            $result = $3 * $golden_ratio;
             return "Golden ratio: $3 : $result";
-        } 
+        }
     }
     return;
 };

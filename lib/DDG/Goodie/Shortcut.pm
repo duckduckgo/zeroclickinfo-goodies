@@ -2,10 +2,12 @@ package DDG::Goodie::Shortcut;
 # ABSTRACT: Display keyboard shortcut for an action.
 
 use DDG::Goodie;
+use utf8;
 
 triggers any => 'shortcut','keyboard shortcut', 'key combination';
 
 zci answer_type => 'shortcut';
+zci is_cached   => 1;
 
 primary_example_queries 'windows show desktop shortcut';
 secondary_example_queries 'ubuntu shortcut new folder';
@@ -13,9 +15,9 @@ description 'Keyboard shortcuts';
 name 'Shortcut';
 topics 'computing';
 category 'computing_info';
-attribution github => ['https://github.com/dariog88a','dariog88a'],
-            email => [ 'mailto:dariog88@gmail.com', 'dariog88' ],
-            twitter => ['http://twitter.com/dariog88','dariog88'];
+attribution github => ['dariog88a','Darío'],
+            email => [ 'dariog88@gmail.com', 'Darío' ],
+            twitter => ['dariog88', 'Darío'];
 
 my @shortcuts = share('shortcuts.csv')->slurp(iomode => '<:encoding(UTF-8)');
 

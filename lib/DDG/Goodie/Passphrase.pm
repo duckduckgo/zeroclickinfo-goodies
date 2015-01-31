@@ -3,6 +3,9 @@ package DDG::Goodie::Passphrase;
 
 use DDG::Goodie;
 
+zci answer_type => 'random_passphrase';
+zci is_cached   => 0;
+
 primary_example_queries 'random passphrase', '4 word random passphrase', 'pass phrase 3 words';
 description 'generate a random passphrase';
 name 'Passphrase';
@@ -10,7 +13,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'cryptography';
 
-attribution github => ['https://github.com/hunterlang', 'hunterlang'];
+attribution github => ['hunterlang', 'Hunter Lang'];
 
 triggers startend => 'passphrase', 'pass phrase', 'random passphrase', 'passphrase random', 'random pass phrase', 'pass phrase random';
 
@@ -45,8 +48,16 @@ handle query_lc => sub {
         push @chosen_words, $word_list[int(rand $list_size)];
     }
 
+    my $phrase = join(' ', @chosen_words);
+    my $input_string = ($word_count == 1) ? '1 word' : $word_count . ' words';
+
     # Now stick them together with an indicator as to what it is
-    return join ' ', ('random passphrase:', @chosen_words);
+    return "random passphrase: $phrase",
+      structured_answer => {
+        input     => [$input_string],
+        operation => 'Random passphrase',
+        result    => $phrase,
+      };
 };
 
 1;

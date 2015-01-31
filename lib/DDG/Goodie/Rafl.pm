@@ -13,14 +13,23 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'ids';
 topics 'social';
 
-attribution
-  web     => 'http://stephen.scaffidi.net',
-  github  => ['https://github.com/Hercynium', 'Hercynium'];
+attribution web     => ['http://stephen.scaffidi.net', 'Stephen R. Scaffidi'],
+            github  => ['Hercynium', 'Stephen R. Scaffidi'];
 
 triggers any => 'rafl';
 
+zci answer_type => 'rafl';
+zci is_cached   => 1;
+
 handle remainder => sub {
-  return Acme::rafl::Everywhere->new->fact
+    my $fact = Acme::rafl::Everywhere->new->fact;
+
+    return $fact,
+      structured_answer => {
+        input     => ['rafl'],
+        operation => 'rafl',
+        result    => $fact,
+      };
 };
 
 1 && "rafl"; # everywhere

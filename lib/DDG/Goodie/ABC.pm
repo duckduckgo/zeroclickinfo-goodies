@@ -6,8 +6,8 @@ use List::AllUtils qw/none/;
 
 triggers startend => qw/choose pick select/;
 
-zci answer_type => "rand";
-zci is_cached => 0;
+zci answer_type => "choice";
+zci is_cached   => 0;
 
 primary_example_queries 'choose yes or no';
 secondary_example_queries 'choose heads or tails', 'pick this or that or none';
@@ -16,39 +16,49 @@ name 'ABC';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
 category 'random';
 topics 'trivia';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC',
-            twitter => 'kablamo_',
-            cpan    => 'KABLAMO',
-            github  => 'kablamo',
-            web     => ["http://kablamo.org", "Eric Johnson"] ;
+attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
+            github  => ['kablamo', 'Eric Johnson'];
 
 handle remainder => sub {
-    # Ensure rand is seeded for each process
-    srand();
 
     my $query = $_;
 
     # split the query on whitespace and rm whitespace
-    my @words = grep { length } split /\s+/, $query; 
+    my @words = grep { length } split /\s+/, $query;
 
     return if query_is_malformed(@words);
 
     # rm every 'or' from the list
     my @choices = grep { lc $_ ne 'or' } @words;
 
+    my $selection_type = 'Random';
+    my $selection;
     # Easter egg. For queries like:
     #   'choose duckduckgo or google or bing or something'
     if (my @duck = grep { / \A (?: duck (?: duckgo )? | ddg ) \z /ix } @choices) {
-        return $duck[0]." (not random)", answer_type => 'egg';
+        $selection_type = 'Non-random';
+        $selection      = $duck[0];
+    } else {
+        # Ensure rand is seeded for each process
+        srand();
+        # Choose randomly
+        $selection = $choices[int rand scalar @choices];
     }
 
-    # Choose randomly
-    my $index = int rand scalar @choices;
-    return $choices[$index]." (random)";
+    # Multi-inputs to single input.
+    my $last          = pop @choices;
+    my $choice_string = join(', ', @choices) . ' or ' . $last;
+    my $operation     = $selection_type . ' selection from';
+
+    return $selection . " (" . $selection_type . ")",
+      structured_answer => {
+        input     => [html_enc($choice_string)],
+        operation => $operation,
+        result    => html_enc($selection),
+      };
 };
 
-# The query must look like 
+# The query must look like
 #   '<choice> or <choice> or <choice>'
 #
 # Note this method also prevents choices from being > 1 word long as this

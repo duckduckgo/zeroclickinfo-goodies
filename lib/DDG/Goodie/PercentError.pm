@@ -15,8 +15,8 @@ name 'PercentError';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PercentError.pm';
 category 'calculations';
 topics 'math';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc', 'Michael Smith'],
+            cpan    => ['CRZEDPSYC', 'Michael Smith'];
 
 handle remainder => sub {
     my $length = length($_);
@@ -30,7 +30,7 @@ handle remainder => sub {
     my $err = $per*100;
 
     my $html = qq(Accepted: $acc Experimental: $exp Error: <a href="javascript:;" onclick="document.x.q.value='$per';document.x.q.focus();">$err%</a>);
-    
+
     return "Accepted: $acc Experimental: $exp Error: $err%", html => $html;
 };
 

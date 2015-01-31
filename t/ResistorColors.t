@@ -20,6 +20,13 @@ ddg_goodie_test(
     "330ohms" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
     "330ohm" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
     "330\x{2126}" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
+    "330 ohms resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
+    "330 ohm resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
+    "330 \x{2126} resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
+    "330ohms resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
+    "330ohm resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
+    "330\x{2126} resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
+    "330 resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
 
     # Various multipliers
     "472000 ohms" => test_zci("470K\x{2126} (ohms) resistor colors: yellow (4), purple (7), yellow (\x{00D7}10K), gold (\x{00B1}5%)", html => qr/./),
@@ -54,9 +61,15 @@ ddg_goodie_test(
     "27 K ohm" => test_zci("27K\x{2126} (ohms) resistor colors: red (2), purple (7), orange (\x{00D7}1K), gold (\x{00B1}5%)", html => qr/./),
     "4K2 ohm" => test_zci("4.2K\x{2126} (ohms) resistor colors: yellow (4), red (2), red (\x{00D7}100), gold (\x{00B1}5%)", html => qr/./),
     "4.2K ohm" => test_zci("4.2K\x{2126} (ohms) resistor colors: yellow (4), red (2), red (\x{00D7}100), gold (\x{00B1}5%)", html => qr/./),
+    "27k resistor" => test_zci("27K\x{2126} (ohms) resistor colors: red (2), purple (7), orange (\x{00D7}1K), gold (\x{00B1}5%)", html => qr/./),
+    "27K resistor" => test_zci("27K\x{2126} (ohms) resistor colors: red (2), purple (7), orange (\x{00D7}1K), gold (\x{00B1}5%)", html => qr/./),
+    "27 K resistor" => test_zci("27K\x{2126} (ohms) resistor colors: red (2), purple (7), orange (\x{00D7}1K), gold (\x{00B1}5%)", html => qr/./),
+    "4K2 resistor" => test_zci("4.2K\x{2126} (ohms) resistor colors: yellow (4), red (2), red (\x{00D7}100), gold (\x{00B1}5%)", html => qr/./),
+    "4.2K resistor" => test_zci("4.2K\x{2126} (ohms) resistor colors: yellow (4), red (2), red (\x{00D7}100), gold (\x{00B1}5%)", html => qr/./),
 
     # Decimal points
     "2.9ohm" => test_zci("2.9\x{2126} (ohms) resistor colors: red (2), white (9), gold (\x{00D7}0.1), gold (\x{00B1}5%)", html => qr/./),
+    "2.9ohms resistor" => test_zci("2.9\x{2126} (ohms) resistor colors: red (2), white (9), gold (\x{00D7}0.1), gold (\x{00B1}5%)", html => qr/./),
 
     # Negative multipliers
     "1 ohm" => test_zci("1\x{2126} (ohm) resistor colors: brown (1), black (0), gold (\x{00D7}0.1), gold (\x{00B1}5%)", html => qr/./),
@@ -82,7 +95,7 @@ ddg_goodie_test(
     # Check the HTML. Just once.
     "4.7k ohm" => test_zci(
         "4.7K\x{2126} (ohms) resistor colors: yellow (4), purple (7), red (\x{00D7}100), gold (\x{00B1}5%)",
-        html => "<div class='zci--resistor-colors'><span class='resistor'>4.7K&#x2126; (ohms) resistor colors:</span> <span class='resistorcolors' style='background-color:#ffff00;color:#000;'>yellow (4)</span> <span class='resistorcolors' style='background-color:#ee82ee;color:#000;'>purple (7)</span> <span class='resistorcolors' style='background-color:#ff0000;color:#fff;'>red (&times;100)</span> <span class='resistorcolors' style='background-color:#cfb53b;color:#000;'>gold (&plusmn;5%)</span><br/><a href='http://resisto.rs/#4.7K' class='resistorlink'>More at resisto.rs</a></div>"
+        html => "<div class='zci--resistor-colors'><h3 class='zci__header'>4.7K\x{2126}</h3><h4 class='zci__subheader'>Four Bands</h4><div class='zci__content'><span class='resistor-band yellow'>Yellow 4</span><span class='resistor-band purple'>Purple 7</span><span class='resistor-band red'>Red &times;100</span><span class='resistor-band gold'>Gold &plusmn;5%</span></div></div><br/><a href='http://resisto.rs/#4.7K' class='zci__more-at'>More at resisto.rs</a>"
     ),
 );
 

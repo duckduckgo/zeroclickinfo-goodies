@@ -23,7 +23,7 @@ sub _build_number_regex {
     my $self = shift;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
-    return qr/-?[\d\Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/;
+    return qr/-?[\d_ \Q$decimal\E\Q$thousands\E]+(?:\Q$exponential\E-?\d+)?/;
 }
 
 sub understands {
@@ -34,7 +34,7 @@ sub understands {
     # This assumes the exponentials are not included to give better answers.
     return (
         # The number must contain only things we understand: numerals and separators for this style.
-        $number =~ /^-?(|\d|\Q$thousands\E|\Q$decimal\E)+$/
+        $number =~ /^-?(|\d|_| |\Q$thousands\E|\Q$decimal\E)+$/
           && (
             # The number is not required to contain thousands separators
             $number !~ /\Q$thousands\E/
@@ -64,6 +64,7 @@ sub for_computation {
     my ($self, $number_text) = @_;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
+    $number_text =~ s/[ _]//g;              # Remove spaces and underscores as visuals.
     $number_text =~ s/\Q$thousands\E//g;    # Remove thousands seps, since they are just visual.
     $number_text =~ s/\Q$decimal\E/./g;     # Make sure decimal mark is something perl knows how to use.
     if ($number_text =~ s/^([\d$decimal$thousands]+)\Q$exponential\E(-?[\d$decimal$thousands]+)$/$1e$2/ig) {
@@ -78,6 +79,7 @@ sub for_display {
     my ($self, $number_text) = @_;
     my ($decimal, $thousands, $exponential) = ($self->decimal, $self->thousands, $self->exponential);
 
+    $number_text =~ s/[ _]//g;    # Remove spaces and underscores as visuals.
     if ($number_text =~ /(.*)\Q$exponential\E([+-]?\d+)/i) {
         $number_text = $self->for_display($1) . ' * 10^' . $self->for_display(int $2);
     } else {
@@ -95,7 +97,7 @@ sub for_display {
 sub with_html {
     my ($self, $number_text) = @_;
 
-    return $self->_add_html_exponents($self->for_display($number_text));
+    return $self->_add_html_exponents($number_text);
 }
 
 sub _add_html_exponents {
@@ -111,7 +113,7 @@ sub _add_html_exponents {
     my ($parens_count, $number_up) = (0, 0);
 
     # because of associativity and power-to-power, we need to scan nearly the whole thing
-    for my $index (1 .. $#chars - 1) {
+    for my $index (1 .. $#chars) {
         my $this_char = $chars[$index];
         if ($this_char =~ $number_re or ($newly_up && $this_char eq '-')) {
             if ($newly_up) {
@@ -137,21 +139,27 @@ sub _add_html_exponents {
             $chars[$index] = $end_tag . $chars[$index];
         } elsif ($number_up && !$in_exp_parens) {
             # Must have ended another term or more
-            $chars[$index] = ($end_tag x ($number_up - 1)) . $chars[$index];
-            $number_up = 0;
+            $chars[$index] = ($end_tag x $number_up) . $chars[$index];
+            $number_up -= 1;
         } elsif ($this_char eq ')') {
             # We just closed a set of parens, see if it closes one of our things
             if ($in_exp_parens && $power_parens{$parens_count}) {
                 $chars[$index] .= $end_tag;
                 delete $power_parens{$parens_count};
                 $in_exp_parens -= 1;
+                $number_up     -= 1;
             }
             $parens_count -= 1;
         }
     }
-    $chars[-1] .= $end_tag x $number_up if ($number_up);
+    my $final = join('', @chars);
+    # We may not have added enough closing tags, because we can't "see" the end.
+    my $up_count   = () = $final =~ /$start_tag/g;
+    my $down_count = () = $final =~ /$end_tag/g;
+    # We'll assume we're just supposed to append them now
+    $final .= $end_tag x ($up_count - $down_count);
 
-    return join('', @chars);
+    return $final;
 }
 
 1;

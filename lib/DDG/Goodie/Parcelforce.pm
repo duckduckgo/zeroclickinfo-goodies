@@ -16,8 +16,8 @@ code_url
 category 'ids';
 topics 'special_interest';
 attribution
-    github  => [ 'https://github.com/TopHattedCoder', 'Tom Bebbington' ],
-    twitter => [ 'http://twitter.com/TopHattedCoder', 'TopHattedCoder' ];
+    github  => [ 'TopHattedCoder', 'Tom Bebbington' ],
+    twitter => [ 'TopHattedCoder', 'Tom Bebbington' ];
 
 # Regex for parcelforce / royal mail
 my $rm_qr = qr/royalmail|parcelforce/io;
@@ -35,9 +35,9 @@ triggers query_nowhitespace_nodash => qr/
 
 handle query_nowhitespace_nodash => sub {
     my $parcel_number = $+{parcel_number};
-    
+
     if ($parcel_number && $parcel_number !~ /^isbn/i) {
-    
+
         return $parcel_number,
             heading => 'Parcelforce Tracking',
             html =>

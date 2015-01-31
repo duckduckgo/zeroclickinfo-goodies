@@ -5,17 +5,19 @@ use DDG::Goodie;
 
 use YAML qw( Load );
 
-primary_example_queries 'help';
-secondary_example_queries 'Zero-Click Info', 'zeroclick';
+primary_example_queries 'duckduckgo help';
+secondary_example_queries 'ddg tor', 'short URL for duck duck go';
 description 'DuckDuckGo help and quick links';
 name 'DuckDuckGo';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
 category 'cheat_sheets';
 topics 'everyday';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC';
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'];
 
-triggers startend => "duckduckgo", "ddg", "zeroclickinfo";
+my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
+
+triggers any => @ddg_aliases, "zeroclickinfo", "private search";
 
 zci is_cached => 1;
 
@@ -53,14 +55,23 @@ foreach my $keyword (keys %$responses) {
     }
 }
 
+my $skip_words_re = qr/\b(?:what|where|is|of|for|the|in|on)\b/;
+
 handle remainder => sub {
-    s/\W+//g;
     my $key = lc;
+
+    $key =~ s/\?//g;    # Allow for questions, but don't pollute skip words.
+    $key =~ s/$skip_words_re//g;
+    $key =~ s/\W+//g;
 
     my $response = $responses->{$key};
 
     return unless ($response);
-    return $response->{text}, html => $response->{html};
+    return $response->{text},
+      structured_answer => {
+        input     => [],
+        operation => 'DuckDuckGo info',
+        result    => $response->{html}};
 };
 
 1;

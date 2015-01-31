@@ -6,6 +6,7 @@ use DDG::Goodie;
 use Safe;
 
 zci answer_type => "regexp";
+zci is_cached   => 1;
 
 primary_example_queries 'regexp /(.*)/ ddg';
 description 'Regular expressions';
@@ -14,8 +15,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'programming', 'sysadmin';
 attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+            github => [ 'duckduckgo', 'DuckDuckGo'],
+            twitter => ['duckduckgo', 'DuckDuckGo'];
 
 triggers query_lc => qr/^regex[p]? [\/\\](.+?)[\/\\] (.+)$/i;
 

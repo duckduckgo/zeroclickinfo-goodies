@@ -17,7 +17,7 @@ description 'show a little sudoku you can play in the browser';
 
 name 'Sudoku';
 category 'random';
-attribution github => ['https://github.com/DrDub', 'DrDub'],
+attribution github => ['DrDub', 'Pablo Duboue'],
 	web => ['http://duboue.net/', 'Pablo Duboue'],
 	github => ['https://github.com/mintsoft', 'Rob Emery'];
 
@@ -28,7 +28,7 @@ sub parse_to_html_table(@)
 	for my $line (@sudoku_lines)
 	{
 		my @chars = split(/ /, $line);
-		for my $char (@chars) 
+		for my $char (@chars)
 		{
 			$char = "<input maxlength='1'/>" if $char eq "_";
 		}
@@ -54,13 +54,13 @@ handle remainder => sub {
 
 	$sudoku->generate(blanks => (9 ** 2) * $blanks);
 	my $str_output = $sudoku->as_string();
-	
+
 	#switch 0 to more sensible placeholders
 	$str_output =~ s/0/_/g;
-	
+
 	my @sudoku_lines = split(/\n/, $str_output);
 	my $html_table = parse_to_html_table(@sudoku_lines);
-	
+
 	return $str_output, html => $html_table;
 };
 

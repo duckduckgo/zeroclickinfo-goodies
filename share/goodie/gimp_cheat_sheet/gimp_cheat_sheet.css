@@ -1,0 +1,34 @@
+@media (max-width: 380px) {
+    .zci--answer .gimp-column {
+        width: 100%;
+    }
+}
+.zci--answer .gimp-container {
+    max-height: 45ex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.zci--answer .gimp-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.zci--answer  table.gimp-table {
+    width: 100%;
+    margin-bottom: 3ex;
+}
+
+.zci--answer  .gimp-subsection td {
+    padding-top: 1ex;
+}
+
+.zci--answer  table.gimp-table td {
+    padding-right: 1ex;
+    vertical-align: top;
+}
+
+.zci--answer  table.gimp-table td code {
+    white-space: nowrap;
+}

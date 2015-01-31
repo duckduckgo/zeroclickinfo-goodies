@@ -16,9 +16,7 @@ source "FedEx";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FedEx.pm";
 category 'ids';
 topics 'special_interest';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
 
 # Regex for fedex.
 my $fedex_qr = qr/fed(?:eral|)ex(?:press|)/io;
@@ -33,7 +31,7 @@ triggers query_nowhitespace_nodash => qr/
 
 # Fedex package tracking.
 #
-# For detailed specification: 
+# For detailed specification:
 # http://images.fedex.com/us/solutions/ppe/FedEx_Ground_Label_Layout_Specification.pdf
 #
 # For brief description see:

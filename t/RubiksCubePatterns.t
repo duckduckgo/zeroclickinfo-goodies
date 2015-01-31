@@ -6,6 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'rubiks_cube';
+zci is_cached   => 1;
 
 ddg_goodie_test(
         [qw(

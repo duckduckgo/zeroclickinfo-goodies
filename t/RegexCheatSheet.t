@@ -7,13 +7,14 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'regex_cheat';
+zci is_cached   => 1;
 
 ddg_goodie_test(
     [
         # This is the name of the goodie that will be loaded to test.
         'DDG::Goodie::RegexCheatSheet'
     ],
-    # this one is really hard to actually test, so fudge it 
+    # this one is really hard to actually test, so fudge it
     'regex' => test_zci(
         qr/^Anchors.*|((Character|POSIX) Classes).*Pattern Modifiers.*Escape Sequences.*Groups and Ranges.*Assertions.*Special Characters.*String Replacement/s,
         html => qr#<div(.*<table.*<tr.*<td.*</table.*)+</div>$#s,
@@ -55,8 +56,8 @@ ddg_goodie_test(
         heading => 'Regex Cheat Sheet',
     ),
     'regexp $' => test_zci(
-        '$ - End of string or line', 
-        html => '<code>$</code> - End of string or line', 
+        '$ - End of string or line',
+        html => '<code>$</code> - End of string or line',
         heading => 'Regex Cheat Sheet'
     ),
     'regex [b-X]' => undef,

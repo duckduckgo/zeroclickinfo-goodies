@@ -28,7 +28,7 @@ description 'Returns the prime factors of the entered number';
 name 'PrimeFactors';
 topics 'math';
 category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
+attribution github => [ 'austinheimark', 'Austin Heimark' ];
 
 # This adds exponents to the prime numbers.
 # It outputs both text and HTML:
@@ -52,7 +52,7 @@ sub format_prime {
 
     foreach my $factor (@factors) {
 	my ($text, $html) = format_exp($factor);
-	
+
 	push(@text_result, $text);
 	push(@html_result, $html);
     }
@@ -77,7 +77,7 @@ handle remainder => sub {
 
     my $start_time = time();
     my @factors = ();
-    
+
     # Provide only one second for computing the factors.
     eval {
 	alarm(1);

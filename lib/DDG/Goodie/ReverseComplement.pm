@@ -5,7 +5,9 @@ use DDG::Goodie;
 use feature 'state';
 
 triggers any => 'reverse complement', 'revcomp';
-zci is_cached => 1;
+
+zci answer_type => 'reverse_complement';
+zci is_cached   => 1;
 
 name 'Reverse Complement';
 description 'Give the DNA reverse complement of a DNA or RNA sequence';
@@ -13,11 +15,12 @@ primary_example_queries 'revcomp AAAACCCGGT';
 category 'transformations';
 topics 'science';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ReverseComplement.pm';
-attribution github => ['http://github.com/wilkox', 'wilkox'];
+attribution github => ['http://github.com/wilkox', 'David Wilkins'];
 
 handle remainder => sub {
 
   my $sequence = $_;
+
 
   #Remove extra words if supplied
   $sequence =~ s/\bof\b//gi;
@@ -30,6 +33,7 @@ handle remainder => sub {
   #Return nothing if sequence does not contains characters or contains characters
   # other than DNA/RNA bases or standard IUPAC ambiguity codes
   return unless ($sequence =~ /^[ATCGURYKMSWBVDHN]+$/);
+  my $normalized_seq = $sequence;
   #DNA contains thymine (T) but not uracil (U);
   # RNA contains U but not T (with some extremely
   # rare exceptions). Hence, if the sequence
@@ -42,12 +46,13 @@ handle remainder => sub {
 
   #Reverse
   $sequence = reverse($sequence);
-  
-  return $sequence, html => wrap_html('DNA reverse complement:', $sequence);
+
+  return $sequence,
+    structured_answer => {
+      input     => [$normalized_seq],
+      operation => 'Nucleotide reverse complement',
+      result    => $sequence
+    };
 };
 
-sub wrap_html {
-  my ($label, $sequence) = @_;
-  return "<div class='zci--reversecomplement'><div class='label'>$label</div><div class='sequence'>$sequence</div></div>";
-}
 1;

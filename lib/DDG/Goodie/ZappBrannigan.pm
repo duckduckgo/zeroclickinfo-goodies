@@ -3,11 +3,15 @@ package DDG::Goodie::ZappBrannigan;
 
 use DDG::Goodie;
 
-triggers any => "zapp", "brannigan";
-zci is_cached => 0;
+use YAML::XS qw(Load);
 
-attribution github => ['http://github.com/nospampleasemam', 'nospampleasemam'],
-            web => ['http://github.com/nospampleasemam', 'nospampleasemam'];
+triggers any => "zapp", "brannigan";
+
+zci answer_type => 'zapp_brannigan';
+zci is_cached   => 0;
+
+attribution github => ['nospampleasemam', 'Dylan Lloyd'],
+            web    => ['nospampleasemam', 'Dylan Lloyd'];
 
 primary_example_queries 'zapp brannigan quote';
 name 'Zapp Brannigan';
@@ -16,18 +20,20 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'entertainment';
 topics 'entertainment';
 
-my @quotes = share('quotes.txt')->slurp;
+my $quotes = Load(scalar share('quotes.yml')->slurp);
 
 handle query => sub {
-	# Ensure rand is seeded for each process
-	srand();
-	
-    return if $_ !~ m/quotes?/;
-    my $rand = int(rand(scalar(@quotes)));
-    my $quote = $quotes[$rand];
-    chomp $quote;
-    (my $text = $quote) =~ s/<br>/\n/g;
-    return $text, html => $quote;
+    return unless $_ =~ m/quotes?/;
+
+    # Ensure rand is seeded for each process
+    srand();
+    my @quote = @{$quotes->[int(rand(scalar(@$quotes)))]};
+
+    return join("\n", @quote),
+      structured_answer => {
+        input     => [],
+        operation => 'Zapp Brannigan quote',
+        result    => join('<br>', @quote)};
 };
 
 1;
