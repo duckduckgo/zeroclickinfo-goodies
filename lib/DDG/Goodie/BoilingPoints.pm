@@ -10,8 +10,8 @@ zci is_cached   => 1;
 name "BoilingPoints";
 description "Returns boiling points of common elements";
 primary_example_queries "boiling point of nitrogen";
-category "science";
-topics "science", "boiling_points";
+category "facts";
+topics "science", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/BoilingPoints.pm";
 attribution github => ["https://github.com/ag8", "ag8"];
 
@@ -137,7 +137,7 @@ handle remainder => sub {
 	elsif (($_ eq "yttrium") == 1) {return "3345 degrees Celcius";}
 	elsif (($_ eq "zinc") == 1) {return "907 degrees Celcius";}
 	elsif (($_ eq "zirconium") == 1) {return "4409 degrees Celcius";}
-    else {return undef;}#no answer
+    else {return;}#no answer
 };
 
 1;
