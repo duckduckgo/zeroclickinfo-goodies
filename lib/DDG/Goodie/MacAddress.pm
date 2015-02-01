@@ -44,7 +44,19 @@ handle remainder => sub {
     my ($name, $addr) = map { html_enc($_); } @vendor;
     $addr = "No associated address" unless defined $addr;
 
-    my ($result) = join("", map { "<p class=\"macaddress\">$_</p>"; } split(/\\n/, $info));
+    # If the info is all capitals, then try to add in some best guesses for
+    # capitalization to make it more readable.
+    #
+    # Decide whether to do this replacement per-line, since there are often
+    # errant unformatted lines amongst formatted ones.
+    my (@lines) = split(/\\n/, $info);
+    foreach my $line (@lines) {
+      if ($line !~ m/[a-z]/) {
+        $line =~ s/(\w+)/ucfirst(lc($1))/eg;
+      }
+    }
+
+    my ($result) = join("", map { "<p class=\"macaddress\">$_</p>"; } @lines);
 
     return "The OUI, " . fmt_mac($oui) . ", for this NIC is assigned to " . $name,
       structured_answer => {
