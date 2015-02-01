@@ -191,6 +191,39 @@ subtest 'Dates' => sub {
                 $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
         }
     };
+    
+    subtest 'Relative naked months' => sub {
+        
+        my %time_strings = (
+            "2015-01-13T00:00:00Z" => {
+                src    => ['january', 'february'],
+                output => ['2015-01-01T00:00:00', '2015-02-01T00:00:00'],
+            },
+            "2015-02-01T00:00:00Z" => {
+                src    => ['january', 'february'],
+                output => ['2016-01-01T00:00:00',  '2016-02-01T00:00:00'],
+            },
+            "2015-03-01T00:00:00Z" => {
+                src    => ['january', 'february'],
+                output => ['2016-01-01T00:00:00',  '2016-02-01T00:00:00'],
+            },
+            "2014-12-01T00:00:00Z" => {
+                src    => ['january', 'february'],
+                output => ['2015-01-01T00:00:00',  '2015-02-01T00:00:00'],
+            },
+            
+        );
+        
+        foreach my $query_time (sort keys %time_strings) {
+            set_fixed_time($query_time);
+            
+            my @source = @{$time_strings{$query_time}{src}};
+            my @expectation = @{$time_strings{$query_time}{output}};
+            my @result = DatesRoleTester::parse_all_datestrings_to_date(@source);
+            
+            is_deeply(\@expectation, \@result);
+        }
+    };
 
     subtest 'Invalid single dates' => sub {
         my %bad_strings_match = (
