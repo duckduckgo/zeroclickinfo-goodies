@@ -13,10 +13,10 @@ ddg_goodie_test(
     # At a minimum, be sure to include tests for all:
     # - primary_example_queries
     # - secondary_example_queries
-    'duckduckhack sika' => test_zci('Sika is awesome !'),
+    'duckduckhack 5ika' => test_zci('Sika is awesome !'),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
-    'duckduckhack sika is awesome !' => undef,
+    'duckduckhack 5ika is awesome !' => undef,
 );
 
 done_testing;
