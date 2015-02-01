@@ -5,6 +5,8 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
+use Test::MockTime qw( :all );
+
 zci answer_type => 'workdays_between';
 zci is_cached   => 0;
 
@@ -182,24 +184,6 @@ ddg_goodie_test(
     'Workdays between jan 3, 2014 to jan 6, 2014'           => test_zci(@weekend_middle),
     'Workdays between jan 3, 2014 to jan 6, 2014 inclusive' => test_zci(@weekend_middle),
 
-    'business days between jan 10 and jan 20' => test_zci(
-        qr"There are [1-9] Workdays between 10 Jan [0-9]{4} and 20 Jan [0-9]{4}\.",
-        structured_answer => {
-            input     => '-ANY-',
-            operation => 'Workdays between',
-            result    => qr/[1-9]/,
-        }
-    ),
-
-    'business days between january and february' => test_zci(
-        qr"There are [1-9][0-9] Workdays between 01 Jan [0-9]{4} and 01 Feb [0-9]{4}\.",
-        structured_answer => {
-            input     => '-ANY-',
-            operation => 'Workdays between',
-            result    => qr/[1-9][0-9]/,
-        }
-    ),
-
     'Workdays between 01/31/2000 01/31/2001'               => test_zci(@twoohoh),
     'Workdays between 01/31/2000 01/31/2001 inclusive'     => test_zci(@twoohoh),
     'Workdays between 01/31/2000 and 01/31/2001 inclusive' => test_zci(@twoohoh),
@@ -221,6 +205,30 @@ ddg_goodie_test(
     'Workdays between 19/19/2014 20/24/2015'           => undef,
     'Workdays between 19/19/2014 20/24/2015 inclusive' => undef,
     'Workdays from FEB 30 2014 to March 24 2014'       => undef,
+);
+
+set_fixed_time("2015-01-11T09:45:56");
+ddg_goodie_test(
+    [qw(
+        DDG::Goodie::WorkdaysBetween
+    )],
+    'business days between jan 10 and jan 20' => test_zci(
+        qr"There are [1-9] Workdays between 10 Jan [0-9]{4} and 20 Jan [0-9]{4}\.",
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Workdays between',
+            result    => qr/[1-9]/,
+        }
+    ),
+
+    'business days between january and february' => test_zci(
+        qr"There are [1-9][0-9] Workdays between 01 Jan [0-9]{4} and 01 Feb [0-9]{4}\.",
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Workdays between',
+            result    => qr/[1-9][0-9]/,
+        }
+    ),
 );
 
 done_testing;
