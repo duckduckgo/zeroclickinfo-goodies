@@ -28,7 +28,7 @@ description 'Returns the prime factors of the entered number';
 name 'PrimeFactors';
 topics 'math';
 category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
+attribution github => [ 'austinheimark', 'Austin Heimark' ];
 
 # This adds exponents to the prime numbers.
 # It outputs both text and HTML:

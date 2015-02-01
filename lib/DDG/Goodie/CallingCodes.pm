@@ -99,7 +99,7 @@ handle remainder => sub {
     return $dialing_code . ' is the international calling code for ' . $country_list . '.',
       structured_answer => {
         input => [$in_number ? $dialing_code : $country_list],
-        operation => 'international calling code',
+        operation => 'International calling code',
         result    => ($in_number ? $country_list : $dialing_code),
       };
 };

@@ -18,7 +18,7 @@ topics "computing";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Uptime/Uptime.pm";
 attribution github => ["YouriAckx", "Youri Ackx"],
             web => ["http://ackx.net/", "Youri Ackx"],
-            twitter => "YouriAckx";
+            twitter => ["YouriAckx", "Youri Ackx"];
 
 # Triggers
 triggers startend => "uptime", start => "uptime of";

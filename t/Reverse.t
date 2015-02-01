@@ -15,7 +15,7 @@ ddg_goodie_test(
         'Reversed "esrever": reverse',
         structured_answer => {
             input     => ['esrever'],
-            operation => 'reverse string',
+            operation => 'Reverse string',
             result    => 'reverse'
         }
     ),
@@ -24,7 +24,7 @@ ddg_goodie_test(
         'Reversed "bla": alb',
         structured_answer => {
             input     => ['bla'],
-            operation => 'reverse string',
+            operation => 'Reverse string',
             result    => 'alb'
         }
     ),
@@ -32,7 +32,7 @@ ddg_goodie_test(
         'Reversed "blabla": albalb',
         structured_answer => {
             input     => ['blabla'],
-            operation => 'reverse string',
+            operation => 'Reverse string',
             result    => 'albalb'
         }
     ),

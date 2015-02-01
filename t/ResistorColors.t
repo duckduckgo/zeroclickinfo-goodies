@@ -27,7 +27,7 @@ ddg_goodie_test(
     "330ohm resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
     "330\x{2126} resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
     "330 resistor" => test_zci("330\x{2126} (ohms) resistor colors: orange (3), orange (3), brown (\x{00D7}10), gold (\x{00B1}5%)", html => qr/./),
-    
+
     # Various multipliers
     "472000 ohms" => test_zci("470K\x{2126} (ohms) resistor colors: yellow (4), purple (7), yellow (\x{00D7}10K), gold (\x{00B1}5%)", html => qr/./),
     "400000 ohms" => test_zci("400K\x{2126} (ohms) resistor colors: yellow (4), black (0), yellow (\x{00D7}10K), gold (\x{00B1}5%)", html => qr/./),
@@ -95,7 +95,7 @@ ddg_goodie_test(
     # Check the HTML. Just once.
     "4.7k ohm" => test_zci(
         "4.7K\x{2126} (ohms) resistor colors: yellow (4), purple (7), red (\x{00D7}100), gold (\x{00B1}5%)",
-        html => "<div class='zci--resistor-colors'><span class='resistor'>4.7K&#x2126; (ohms) resistor colors:</span> <span class='resistorcolors' style='background-color:#ffff00;color:#000;'>yellow (4)</span> <span class='resistorcolors' style='background-color:#ee82ee;color:#000;'>purple (7)</span> <span class='resistorcolors' style='background-color:#ff0000;color:#fff;'>red (&times;100)</span> <span class='resistorcolors' style='background-color:#cfb53b;color:#000;'>gold (&plusmn;5%)</span><br/><a href='http://resisto.rs/#4.7K' class='resistorlink'>More at resisto.rs</a></div>"
+        html => "<div class='zci--resistor-colors'><h3 class='zci__header'>4.7K\x{2126}</h3><h4 class='zci__subheader'>Four Bands</h4><div class='zci__content'><span class='resistor-band yellow'>Yellow 4</span><span class='resistor-band purple'>Purple 7</span><span class='resistor-band red'>Red &times;100</span><span class='resistor-band gold'>Gold &plusmn;5%</span></div></div><br/><a href='http://resisto.rs/#4.7K' class='zci__more-at'>More at resisto.rs</a>"
     ),
 );
 

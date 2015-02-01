@@ -23,7 +23,7 @@ name 'Sort';
 code_url 'http://github.com/koosha--';
 category 'computing_tools';
 topics 'programming';
-attribution github  => ['https://github.com/koosha--', 'koosha--'],
+attribution github  => ['koosha--', 'Koosha K. M.'],
             twitter => '_koosha_';
 
 my $delim = ', ';
@@ -53,7 +53,7 @@ handle remainder => sub {
     return "$sorted_list (Sorted $dir)",
       structured_answer => {
         input     => [$unsorted_list],
-        operation => 'sort ' . $dir,
+        operation => 'Sort ' . $dir,
         result    => $sorted_list
       };
 };

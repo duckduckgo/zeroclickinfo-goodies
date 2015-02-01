@@ -1,0 +1,43 @@
+@media(max-width: 704px) {
+    .zci--answer .crontab-container .crontab-column {
+        width: 100%;
+        margin-right: 0;
+        display: block;
+    }
+}
+.zci--answer .crontab-container {
+    max-height: 23.3ex;
+    overflow-y: auto;
+}
+
+.zci--answer .crontab-container .crontab-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.zci--answer .crontab-container .crontab-column:first-child {
+    margin-right: 3%;
+}
+
+.zci--answer .crontab-container p,
+    .zci--answer .crontab-container .crontab-column {
+    padding-top: 0;
+    padding-bottom: 2ex;
+}
+
+.zci--answer .crontab-container table {
+    width: 100%;
+}
+
+.zci--answer .crontab-container th {
+    font-weight: bold;
+}
+
+.zci--answer .crontab-container td {
+    vertical-align: top;
+}
+
+.zci--answer .crontab-container dd {
+    margin-bottom: 1ex;
+}

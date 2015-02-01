@@ -15,7 +15,7 @@ primary_example_queries 'revcomp AAAACCCGGT';
 category 'transformations';
 topics 'science';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ReverseComplement.pm';
-attribution github => ['http://github.com/wilkox', 'wilkox'];
+attribution github => ['http://github.com/wilkox', 'David Wilkins'];
 
 handle remainder => sub {
 
@@ -50,7 +50,7 @@ handle remainder => sub {
   return $sequence,
     structured_answer => {
       input     => [$normalized_seq],
-      operation => 'nucleotide reverse complement',
+      operation => 'Nucleotide reverse complement',
       result    => $sequence
     };
 };

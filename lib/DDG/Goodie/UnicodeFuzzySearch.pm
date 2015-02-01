@@ -2,15 +2,16 @@ package DDG::Goodie::UnicodeFuzzySearch;
 # ABSTRACT: returns unicode symbols matching the input
 
 use DDG::Goodie;
+use URI::Escape::XS;
 
-triggers startend => "unicode";
+triggers startend => "unicode", "emoji";
 
 zci is_cached => 1;
 
 attribution
-    github => "konr",
-    twitter => "konr",
-    web => "http://konr.mobi";
+    github => ["konr", 'Konrad Scorciapino'],
+    twitter => ["konr", 'Konrad Scorciapino'],
+    web => ["http://konr.mobi", 'Konrad Scorciapino'];
 primary_example_queries 'unicode black heart';
 secondary_example_queries "unicode 2665";
 
@@ -24,6 +25,14 @@ topics 'programming';
 # Uploaded file version: 6.3.0, obtained from
 # ftp://ftp.unicode.org/Public/6.3.0/ucd/
 my @lines = split /\n/, share("UnicodeData.txt")->slurp;
+
+use constant {
+    IMAGE_PROXY       => '/iu/?u=',
+    EMOJI_IMAGE_PATH  => 'http://www.emoji-cheat-sheet.com/graphics/emojis/<PATH>.png',
+    EMOJI_LOWER_BOUND => 0x1F300,
+    EMOJI_UPPER_BOUND => 0x1F6C5,
+    EMOJI_IMAGE_SIZE  => 20
+};
 
 handle remainder => sub {
     return unless $_;
@@ -48,13 +57,35 @@ handle remainder => sub {
          name => $name};
     } @matches;
 
-    my @results = map {sprintf('%s: %s (U+%s)', @{$_}{qw/name symbol code/})} @matches;
+    my @results = map { _make_a_result($_) } @matches;
 
     my $html = scalar @results > 1 ?
 		'<ul>' . join('', map {"<li>$_</li>"} @results) . '</ul>' : $results[0];
 
     return join("\n", @results), html => $html;
 
+};
+
+sub _make_a_result {
+    my ( $obj ) = @_;
+
+    my $decimal_code = hex $obj->{code};
+    my $symbol = $obj->{symbol};
+
+    # If the code is a emoji icon, we'll serve it as a image instead
+    # because it's rendered properly on Chrome.
+    if( EMOJI_LOWER_BOUND <= $decimal_code && $decimal_code <= EMOJI_UPPER_BOUND  ) {
+        ( my $image_name = lc $obj->{name} ) =~ s/\s/_/g;
+        ( my $image_path = EMOJI_IMAGE_PATH ) =~ s/<PATH>/$image_name/;
+        $symbol = sprintf(
+            '<img src="%s" alt="%s" width="%s" style="vertical-align:bottom"/>',
+            IMAGE_PROXY . encodeURIComponent( $image_path ),
+            $symbol,
+            EMOJI_IMAGE_SIZE,
+        );
+    }
+
+    return sprintf('%s: %s (U+%s)', $obj->{name}, $symbol, $obj->{code} );
 };
 
 1;

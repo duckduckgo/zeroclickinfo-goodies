@@ -14,7 +14,7 @@ ddg_goodie_test(
         'Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30',
         structured_answer => {
             input     => ['30'],
-            operation => 'factors',
+            operation => 'Factors',
             result    => '1, 2, 3, 5, 6, 10, 15, 30'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'Factors of 72: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72',
         structured_answer => {
             input     => ['72'],
-            operation => 'factors',
+            operation => 'Factors',
             result    => '1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30',
         structured_answer => {
             input     => ['30'],
-            operation => 'factors',
+            operation => 'Factors',
             result    => '1, 2, 3, 5, 6, 10, 15, 30'
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         'Factors of 72: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72',
         structured_answer => {
             input     => ['72'],
-            operation => 'factors',
+            operation => 'Factors',
             result    => '1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72'
         }
     ),

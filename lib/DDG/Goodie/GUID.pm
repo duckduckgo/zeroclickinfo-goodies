@@ -27,9 +27,8 @@ name 'GUID';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/GUID.pm';
 category 'computing_tools';
 topics 'programming';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC',
-            twitter => 'loganmccamon',
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'],
             github  => 'loganom';
 
 
@@ -47,7 +46,7 @@ handle remainder => sub {
     return $guid->as_string,
       structured_answer => {
         input     => [],
-        operation => 'random GUID',
+        operation => 'Random GUID',
         result    => $guid->as_string
       };
 };
