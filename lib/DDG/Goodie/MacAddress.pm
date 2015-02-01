@@ -57,6 +57,7 @@ handle remainder => sub {
     }
 
     my ($result) = join("", map { "<p class=\"macaddress\">$_</p>"; } @lines);
+    $result =~ s/class="macaddress"/class="macaddress title"/;
 
     return "The OUI, " . fmt_mac($oui) . ", for this NIC is assigned to " . $name,
       structured_answer => {
