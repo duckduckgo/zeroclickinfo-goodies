@@ -49,7 +49,7 @@ handle remainder => sub {
     return "The OUI, " . fmt_mac($oui) . ", for this NIC is assigned to " . $name,
       structured_answer => {
         input     => [fmt_mac($_)],
-        operation => "mac address",
+        operation => "MAC Address",
         result    => $result
       };
 };
