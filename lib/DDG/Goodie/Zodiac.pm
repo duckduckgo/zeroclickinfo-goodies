@@ -40,8 +40,8 @@ handle remainder => sub {
     
     return $result,
 	structured_answer => {
-	input	=> [html_enc[date_output_string($zodiacdate)]],
-	operation => 'Star Sign'
+	input	=> [html_enc[date_output_string($zodiacdate).": "]],
+	operation => 'Star Sign for ',
 	result	=> html_enc(ucfirst(zodiac_date_name($zodiacdate)))
 	};
 };
