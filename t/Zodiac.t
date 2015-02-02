@@ -364,8 +364,8 @@ ddg_goodie_test([qw(
             result    => 'Pisces'
         }
      ),
-    'StarSign 1st Mar'     => test_zci('
-	Star Sign for 01 Mar 2015: Pisces',
+    'StarSign 1st Mar'     => test_zci(
+	'Star Sign for 01 Mar 2015: Pisces',
         structured_answer => {
             input     => ['01 Mar 2015: '],
             operation => 'Star Sign for ',
