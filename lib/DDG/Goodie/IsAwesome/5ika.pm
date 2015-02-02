@@ -22,7 +22,7 @@ triggers start => "duckduckhack 5ika";
 handle remainder => sub {
 
     return if $_;
-	return "Sika is awesome !";
+    return "Sika is awesome !";
 };
 
 1;
