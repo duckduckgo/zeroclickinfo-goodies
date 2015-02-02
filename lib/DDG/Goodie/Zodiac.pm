@@ -37,10 +37,13 @@ handle remainder => sub {
 
     #Return the Star Sign
     my $result="Star Sign for ".date_output_string($zodiacdate).": ".ucfirst(zodiac_date_name($zodiacdate));
+
+	#Input String
+	my $input=date_output_string($zodiacdate).": ";
     
     return $result,
     structured_answer => {
-    input	=> [html_enc[date_output_string($zodiacdate).": "]],
+    input	=> [html_enc($input)],
     operation => 'Star Sign for ',
     result	=> html_enc(ucfirst(zodiac_date_name($zodiacdate)))
     };
