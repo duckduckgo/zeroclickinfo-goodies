@@ -23,18 +23,18 @@ ddg_goodie_test([qw(
     ),
 
     'StarSign 30 Mar'        => test_zci(
-	'Star Sign for 30 Mar 2014: Aries',
+	'Star Sign for 30 Mar 2015: Aries',
         structured_answer => {
-            input     => ['30 Mar 2014: '],
+            input     => ['30 Mar 2015: '],
             operation => 'Star Sign for ',
             result    => 'Aries'
         }
     ),
 
     '20 April star sign'     => test_zci(
-	'Star Sign for 20 Apr 2014: Aries',
+	'Star Sign for 20 Apr 2015: Aries',
         structured_answer => {
-            input     => ['20 Apr 2014: '],
+            input     => ['20 Apr 2015: '],
             operation => 'Star Sign for ',
             result    => 'Aries'
         }
@@ -50,9 +50,9 @@ ddg_goodie_test([qw(
         }
     ),
     'StarSign 27 Apr'        => test_zci(
-	'Star Sign for 27 Apr 2014: Taurus',
+	'Star Sign for 27 Apr 2015: Taurus',
         structured_answer => {
-            input     => ['27 Apr 2014: '],
+            input     => ['27 Apr 2015: '],
             operation => 'Star Sign for ',
             result    => 'Taurus'
         }
@@ -60,9 +60,9 @@ ddg_goodie_test([qw(
 
     #Test Gemini
     '21 May star sign'     => test_zci(
-	'Star Sign for 21 May 2014: Gemini',
+	'Star Sign for 21 May 2015: Gemini',
         structured_answer => {
-            input     => ['21 May 2014: '],
+            input     => ['21 May 2015: '],
             operation => 'Star Sign for ',
             result    => 'Gemini'
         }
@@ -87,18 +87,18 @@ ddg_goodie_test([qw(
     ),
 
     'StarSign 31 May'      => test_zci(
-	'Star Sign for 31 May 2014: Gemini',
+	'Star Sign for 31 May 2015: Gemini',
         structured_answer => {
-            input     => ['31 May 2014: '],
+            input     => ['31 May 2015: '],
             operation => 'Star Sign for ',
             result    => 'Gemini'
         }
     ),
 
     '21 jun star sign'     => test_zci(
-	'Star Sign for 21 Jun 2014: Gemini',
+	'Star Sign for 21 Jun 2015: Gemini',
         structured_answer => {
-            input     => ['21 Jun 2014: '],
+            input     => ['21 Jun 2015: '],
             operation => 'Star Sign for ',
             result    => 'Gemini'
         }
@@ -124,9 +124,9 @@ ddg_goodie_test([qw(
     ),
 
     '22nd july star sign'   => test_zci(
-	'Star Sign for 22 Jul 2014: Cancer',
+	'Star Sign for 22 Jul 2015: Cancer',
         structured_answer => {
-            input     => ['22 Jul 2014: '],
+            input     => ['22 Jul 2015: '],
             operation => 'Star Sign for ',
             result    => 'Cancer'
         }
@@ -143,18 +143,18 @@ ddg_goodie_test([qw(
     ),
 
     'StarSign 24th July'   => test_zci(
-	'Star Sign for 24 Jul 2014: Leo',
+	'Star Sign for 24 Jul 2015: Leo',
         structured_answer => {
-            input     => ['24 Jul 2014: '],
+            input     => ['24 Jul 2015: '],
             operation => 'Star Sign for ',
             result    => 'Leo'
         }
     ),
 
     '22 aug star sign'     => test_zci(
-	'Star Sign for 22 Aug 2014: Leo',
+	'Star Sign for 22 Aug 2015: Leo',
         structured_answer => {
-            input     => ['22 Aug 2014: '],
+            input     => ['22 Aug 2015: '],
             operation => 'Star Sign for ',
             result    => 'Leo'
         }
@@ -171,9 +171,9 @@ ddg_goodie_test([qw(
 
     #Test Virgo
     'StarSign 1 Sep' => test_zci(
-	'Star Sign for 01 Sep 2014: Virgo',
+	'Star Sign for 01 Sep 2015: Virgo',
         structured_answer => {
-            input     => ['01 Sep 2014: '],
+            input     => ['01 Sep 2015: '],
             operation => 'Star Sign for ',
             result    => 'Virgo'
         }
@@ -181,9 +181,9 @@ ddg_goodie_test([qw(
 
     #Test Libra
     '23rd Sep star sign'       => test_zci(
-	'Star Sign for 23 Sep 2014: Libra',
+	'Star Sign for 23 Sep 2015: Libra',
         structured_answer => {
-            input     => ['23 Sep 2014: '],
+            input     => ['23 Sep 2015: '],
             operation => 'Star Sign for ',
             result    => 'Libra'
         }
@@ -199,9 +199,9 @@ ddg_goodie_test([qw(
     ),
 
     'StarSign 7th October'     => test_zci(
-	'Star Sign for 07 Oct 2014: Libra',
+	'Star Sign for 07 Oct 2015: Libra',
         structured_answer => {
-            input     => ['07 Oct 2014: '],
+            input     => ['07 Oct 2015: '],
             operation => 'Star Sign for ',
             result    => 'Libra'
         }
@@ -209,9 +209,9 @@ ddg_goodie_test([qw(
 
     #Test Scorpius
     '23 oct star sign'       => test_zci(
-	'Star Sign for 23 Oct 2014: Scorpius',
+	'Star Sign for 23 Oct 2015: Scorpius',
         structured_answer => {
-            input     => ['23 Oct 2014: '],
+            input     => ['23 Oct 2015: '],
             operation => 'Star Sign for ',
             result    => 'Scorpius'
         }
@@ -227,9 +227,9 @@ ddg_goodie_test([qw(
     ),
 
     'StarSign 9th November'  => test_zci(
-	'Star Sign for 09 Nov 2014: Scorpius',
+	'Star Sign for 09 Nov 2015: Scorpius',
         structured_answer => {
-            input     => ['09 Nov 2014: '],
+            input     => ['09 Nov 2015: '],
             operation => 'Star Sign for ',
             result    => 'Scorpius'
         }
@@ -237,9 +237,9 @@ ddg_goodie_test([qw(
 
     #Test Sagittarius
     '22 nov star sign'   => test_zci(
-	'Star Sign for 22 Nov 2014: Sagittarius',
+	'Star Sign for 22 Nov 2015: Sagittarius',
         structured_answer => {
-            input     => ['22 Nov 2014: '],
+            input     => ['22 Nov 2015: '],
             operation => 'Star Sign for ',
             result    => 'Sagittarius'
         }
@@ -255,18 +255,18 @@ ddg_goodie_test([qw(
     ),
 
     'StarSign 6 Dec'     => test_zci(
-	'Star Sign for 06 Dec 2014: Sagittarius',
+	'Star Sign for 06 Dec 2015: Sagittarius',
         structured_answer => {
-            input     => ['06 Dec 2014: '],
+            input     => ['06 Dec 2015: '],
             operation => 'Star Sign for ',
             result    => 'Sagittarius'
         }
      ),
 
     '21 Dec star sign'   => test_zci(
-	'Star Sign for 21 Dec 2014: Sagittarius',
+	'Star Sign for 21 Dec 2015: Sagittarius',
         structured_answer => {
-            input     => ['21 Dec 2014: '],
+            input     => ['21 Dec 2015: '],
             operation => 'Star Sign for ',
             result    => 'Sagittarius'
         }
@@ -274,9 +274,9 @@ ddg_goodie_test([qw(
 
     #Test Capricornus
     'Zodiac 22nd December' => test_zci(
-	'Star Sign for 22 Dec 2014: Capricornus',
+	'Star Sign for 22 Dec 2015: Capricornus',
         structured_answer => {
-            input     => ['22 Dec 2014: '],
+            input     => ['22 Dec 2015: '],
             operation => 'Star Sign for ',
             result    => 'Capricornus'
         }
@@ -310,9 +310,9 @@ ddg_goodie_test([qw(
     ),
 
     '1 Jan zodiac'         => test_zci(
-	'Star Sign for 01 Jan 2014: Capricornus',
+	'Star Sign for 01 Jan 2015: Capricornus',
         structured_answer => {
-            input     => ['01 Jan 2014: '],
+            input     => ['01 Jan 2015: '],
             operation => 'Star Sign for ',
             result    => 'Capricornus'
         }
@@ -320,27 +320,27 @@ ddg_goodie_test([qw(
 
     #Test Aquarius
     '20 Jan star sign' => test_zci(
-	'Star Sign for 20 Jan 2014: Aquarius',
+	'Star Sign for 20 Jan 2015: Aquarius',
         structured_answer => {
-            input     => ['20 Jan 2014: '],
+            input     => ['20 Jan 2015: '],
             operation => 'Star Sign for ',
             result    => 'Aquarius'
         }
     ),
 
     'Zodiac 21st Jan'  => test_zci(
-	'Star Sign for 21 Jan 2014: Aquarius',
+	'Star Sign for 21 Jan 2015: Aquarius',
         structured_answer => {
-            input     => ['21 Jan 2014: '],
+            input     => ['21 Jan 2015: '],
             operation => 'Star Sign for ',
             result    => 'Aquarius'
         }
     ),
 
     'StarSign 1st Feb' => test_zci(
-	'Star Sign for 01 Feb 2014: Aquarius',
+	'Star Sign for 01 Feb 2015: Aquarius',
         structured_answer => {
-            input     => ['01 Feb 2014: '],
+            input     => ['01 Feb 2015: '],
             operation => 'Star Sign for ',
             result    => 'Aquarius'
         }
@@ -348,9 +348,9 @@ ddg_goodie_test([qw(
 
     #Test Pisces
     '19 Feb star sign'     => test_zci(
-	'Star Sign for 19 Feb 2014: Pisces',
+	'Star Sign for 19 Feb 2015: Pisces',
         structured_answer => {
-            input     => ['19 Feb 2014: '],
+            input     => ['19 Feb 2015: '],
             operation => 'Star Sign for ',
             result    => 'Pisces'
         }
@@ -365,18 +365,18 @@ ddg_goodie_test([qw(
         }
      ),
     'StarSign 1st Mar'     => test_zci('
-	Star Sign for 01 Mar 2014: Pisces',
+	Star Sign for 01 Mar 2015: Pisces',
         structured_answer => {
-            input     => ['01 Mar 2014: '],
+            input     => ['01 Mar 2015: '],
             operation => 'Star Sign for ',
             result    => 'Pisces'
         }
      ),
 
     '20 Mar star sign'     => test_zci(
-	'Star Sign for 20 Mar 2014: Pisces',
+	'Star Sign for 20 Mar 2015: Pisces',
         structured_answer => {
-            input     => ['20 Mar 2014: '],
+            input     => ['20 Mar 2015: '],
             operation => 'Star Sign for ',
             result    => 'Pisces'
         }
