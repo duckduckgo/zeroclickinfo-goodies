@@ -32,16 +32,16 @@ triggers any => "λ", "wavelength", "lambda";
 
 # Handle statement
 handle remainder => sub {
-	my ($freq,$units) = m/([\d\.]+)\s*((k|m|g|t)?hz)/i;
+    my ($freq,$units) = m/([\d\.]+)\s*((k|m|g|t)?hz)/i;
     return unless $freq and $units;
 
     my $mul     = MULTIPLIER->{lc($units)};
     my $hz_freq = $freq * $mul;
-    
+
     my $output_value = (SPEED_OF_LIGHT / $hz_freq);
     my $output_units = 'Meters';
-    
-    # Fairly common to express higher freqs in cm/mm. 
+
+    # Express higher freqs in cm/mm.
     # eg UHF 70cm band, microwave 3mm, etc
     if ($output_value<1) {
         $output_units = 'Centimeters';
@@ -51,7 +51,7 @@ handle remainder => sub {
             $output_value *= 10;
         }
     }
-         
+
     return "$freq $units λ = $output_value $output_units";
 };
 
