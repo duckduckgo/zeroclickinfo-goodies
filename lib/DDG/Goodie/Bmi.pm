@@ -13,7 +13,7 @@ category "calculations";
 topics "special_interest", "everyday";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Bmi.pm";
 attribution github => ["jrenouard", "Julien Renouard"],
-            twitter => "@jurenouard";
+            twitter => "jurenouard";
 
 triggers start => "bmi";
 
