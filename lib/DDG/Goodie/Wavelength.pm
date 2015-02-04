@@ -12,6 +12,13 @@ use constant MULTIPLIER => {
     ghz => 10**9,
     thz => 10**12
 };
+use constant FORMAT_UNITS => {
+     hz => 'Hz',
+    khz => 'kHz',
+    mhz => 'MHz',
+    ghz => 'GHz',
+    thz => 'THz'
+};
 
 zci answer_type => "wavelength";
 zci is_cached   => 1;
@@ -32,7 +39,7 @@ triggers any => "λ", "wavelength", "lambda";
 
 # Handle statement
 handle remainder => sub {
-    my ($freq,$units) = m/([\d\.]+)\s*((k|m|g|t)?hz)/i;
+    my ($freq,$units) = m/([\d\.]+)\s*((k|M|G|T)?hz)/i;
     return unless $freq and $units;
 
     my $mul     = MULTIPLIER->{lc($units)};
@@ -52,7 +59,14 @@ handle remainder => sub {
         }
     }
 
-    return "$freq $units λ = $output_value $output_units";
+    my $output_text = "λ = $output_value $output_units";
+
+    return $output_text,
+        structured_answer => {
+            input     => [$freq, FORMAT_UNITS->{lc($units)}],
+            operation => "Wavelength",
+            result    => $output_text,
+        };
 };
 
 1;
