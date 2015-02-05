@@ -26,7 +26,7 @@ zci is_cached   => 1;
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "Wavelength";
 description "Frequency to Wavelength translation";
-primary_example_queries "λ 2.4GHz", "144.39 MHz wavelength","lambda 1500kHz";
+primary_example_queries "λ 2.4GHz", "144.39 MHz wavelength","lambda 1500kHz", "1Mhz lambda VF=0.85";
 category "physical_properties";
 topics "math", "science", "special_interest";
 code_url "https://github.com/nebulous/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Wavelength.pm";
@@ -39,11 +39,15 @@ triggers any => "λ", "wavelength", "lambda";
 
 # Handle statement
 handle remainder => sub {
-    my ($freq,$units) = m/([\d\.]+)\s*((k|M|G|T)?hz)/i;
+    my ($query) = @_;
+    my ($freq,$units) = $query =~ m/([\d\.]+)\s*((k|M|G|T)?hz)/i;
     return unless $freq and $units;
 
+    my ($vf) = $query =~ m/\bvf[ =]([\d\.]+)/i;
+    $vf = 1 if (!$vf or $vf>1 or $vf<0);
+
     my $mul     = MULTIPLIER->{lc($units)};
-    my $hz_freq = $freq * $mul;
+    my $hz_freq = $freq * $mul * (1/$vf);
 
     my $output_value = (SPEED_OF_LIGHT / $hz_freq);
     my $output_units = 'Meters';
@@ -64,7 +68,7 @@ handle remainder => sub {
     return $output_text,
         structured_answer => {
             input     => [$freq, FORMAT_UNITS->{lc($units)}],
-            operation => "Wavelength",
+            operation => "Wavelength ( Velocity Factor $vf × Speed of light in a vacuum )",
             result    => $output_text,
         };
 };
