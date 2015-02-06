@@ -15,10 +15,6 @@
     }
 }
 
-.bpmto_ms .maintable {
-    width: 100%;
-}
-
 .bpmto_ms .maintable td {
     width:12.5%;
     white-space: nowrap;

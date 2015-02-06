@@ -24,25 +24,18 @@ handle remainder => sub {
     return unless $_ =~ /^\d+$/i; # Only integer values accepted
     
     my @note_names = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
-    
-    # The basic note lengths for each category
     my $straight_whole_note = 240000;
-    my $triplet_whole_note = 160000;
-    my $dotted_whole_note = 360000;
-    
     my @divisors = map { 2 ** $_ } 0 .. 5; # Create a list of divisors to calculate the values of half notes, quarter notes etc.
-    
     my @straight_values = map { int( $straight_whole_note / ($bpm * $_) + 0.5) } @divisors;
-    my @triplet_values = map { int( $triplet_whole_note / ($bpm * $_) + 0.5) } @divisors;
-    my @dotted_values = map { int( $dotted_whole_note / ($bpm * $_) + 0.5) } @divisors;
+    
     
     my $plain_text_content = "$bpm bpm in milliseconds
-Whole Note: " . $straight_values[0] . ", Triplet: " . $triplet_values[0] . ", Dotted: " . $dotted_values[0] . "
-Half Note: " . $straight_values[1] . ", Triplet: " . $triplet_values[1] . ", Dotted: " . $dotted_values[1] . "
-Quarter Note: " . $straight_values[2] . ", Triplet: " . $triplet_values[2] . ", Dotted: " . $dotted_values[2] . "
-1/8 Note: " . $straight_values[3] . ", Triplet: " . $triplet_values[3] . ", Dotted: " . $dotted_values[3] . "
-1/16 Note: " . $straight_values[4] . ", Triplet: " . $triplet_values[4] . ", Dotted: " . $dotted_values[4] . "
-1/32 Note: " . $straight_values[5] . ", Triplet: " . $triplet_values[5] . ", Dotted: " . $dotted_values[5];
+Whole Note: " . $straight_values[0] . "
+Half Note: " . $straight_values[1] . "
+Quarter Note: " . $straight_values[2] . "
+1/8 Note: " . $straight_values[3] . "
+1/16 Note: " . $straight_values[4] . "
+1/32 Note: " . $straight_values[5];
     
     my $html_content =              "<div class=\"bpmto_ms\">";
     $html_content = $html_content . "<h3 class=\"zci__header\">$bpm bpm in milliseconds</h3>";
@@ -54,12 +47,6 @@ Quarter Note: " . $straight_values[2] . ", Triplet: " . $triplet_values[2] . ", 
         $html_content = $html_content . "<tr class=\"record\">";
         $html_content = $html_content . "<td class=\"record__cell__key record_keyspacing\">$note_names[$i]</td>";
         $html_content = $html_content . "<td class=\"record__cell__value numbers\">$straight_values[$i]</td>";
-        $html_content = $html_content . "<td /><td />";
-        $html_content = $html_content . "<td class=\"record__cell__key record_keyspacing\">Triplet</td>";
-        $html_content = $html_content . "<td class=\"record__cell__value numbers\">$triplet_values[$i]</td>";
-        $html_content = $html_content . "<td /><td />";
-        $html_content = $html_content . "<td class=\"record__cell__key record_keyspacing\">Dotted</td>";
-        $html_content = $html_content . "<td class=\"record__cell__value numbers\">$dotted_values[$i]</td>";
         $html_content = $html_content . "</tr>";
     }
     
