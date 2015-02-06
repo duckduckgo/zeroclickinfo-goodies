@@ -1,9 +1,3 @@
-@media (max-width: 400px) {
-    .zci--answer .ddg_shortcuts-column {
-        width: 100%;
-    }
-}
-
 .zci--answer .zero_click_wrapper .zero_click {
     padding-left: 0px !important;
     margin-left:  0px !important;
@@ -42,4 +36,10 @@
 
 .zci--answer table.ddg_shortcuts-table td code {
     white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+    .zci--answer .ddg_shortcuts-column {
+        width: 100%;
+    }
 }
