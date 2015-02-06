@@ -19,7 +19,7 @@ triggers start => "duckduckhack chaw";
 
 # Handle statement
 handle remainder => sub {
-	return if $_;
+    return if $_;
     return "chaw wishes you Happy Hacking!";
 };
 
