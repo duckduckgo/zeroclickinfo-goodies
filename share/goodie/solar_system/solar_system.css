@@ -1,12 +1,11 @@
-
 .zci--answer .zci--objects .objects--objectImage {
     float:left;
-    margin-right: 10px;
+    margin-right: 1.4em;
 
 }
 .zci--answer .zci--objects .objects--objectAttribute {
-    font-size: 1.5em;
-    font-weight: 400;
+    font-size: 1.4em;
+    font-weight: 700;
     line-height: 1.2;
     display:block;
 }
@@ -14,6 +13,7 @@
 .zci--answer .zci--objects .objects--objectName {
     font-size: 15px;
     display:inline-block;
+    font-weight: 500;
 }
 
 .zci--answer .zci--objects .objects--info {

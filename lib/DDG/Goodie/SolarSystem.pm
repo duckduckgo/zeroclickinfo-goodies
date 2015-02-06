@@ -25,25 +25,13 @@ my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'are
 
 triggers any => @triggers;
 
-my %objectImages = (
-    sun => goodie_img_tag({filename => 'images/Sun.svg',height => 48, width => 48,}),
-    earth => goodie_img_tag({filename => 'images/Earth.svg',height => 48, width => 48,}),
-    jupiter => goodie_img_tag({filename => 'images/Jupiter.svg',height => 48, width => 48,}),
-    mars => goodie_img_tag({filename => 'images/Mars.svg',height => 48, width => 48,}),
-    mercury => goodie_img_tag({filename => 'images/Mercury.svg',height => 48, width => 48,}),
-    neptune => goodie_img_tag({filename => 'images/Neptune.svg',height => 48, width => 48,}),
-    saturn => goodie_img_tag({filename => 'images/Saturn.svg',height => 48, width => 58,}),
-    uranus => goodie_img_tag({filename => 'images/Uranus.svg',height => 48, width => 48,}),
-    venus => goodie_img_tag({filename => 'images/Venus.svg',height => 48, width => 48,})
-);
-
 # Load object data 
 my $objects = Load(scalar share('objects.yml')->slurp);
 
 # Handle statement
 handle query_lc => sub {
   # Declare vars
-  my ($attribute, $attributesString, $result, $objectObj);
+  my ($attribute, $attributesString, $result, $objectObj, $image, $width);
   
   s/^what is (the)|(of)|(object)//g; # Remove common words, strip question marks
 
@@ -65,7 +53,7 @@ handle query_lc => sub {
 
   # Switch to imperial for non-metric countries
   # https://en.wikipedia.org/wiki/Metrication
-  if ($loc->country_code =~ m/UK|US|MM|LR/i) {
+  if ($loc->country_code =~ m/US|MM|LR/i) {
     $result = $objectObj->{$attribute."_imperial"};
   } else {
     $result = $objectObj->{$attribute};
@@ -75,7 +63,7 @@ handle query_lc => sub {
   if($attribute =~ /_/ ) { $attribute = join ' ', map ucfirst lc, split /[_]+/, $attribute; }
 
   # Human friendly object name + attribute
-  my $operation = ucfirst($_).", ".ucfirst($attribute);
+  my $operation = ucfirst($_)." - ".ucfirst($attribute);
 
   # Superscript for km3, mi3, km2 or mi2 
   if($result =~ m/(km|mi)(\d)/) {
@@ -84,11 +72,13 @@ handle query_lc => sub {
   }
 
   #Ensure we have a vaild image
-  return unless $objectImages{$_};
+  # 76
+  $width = ($_ eq "saturn") ? 76 : 48;
+  $image = goodie_img_tag({filename=>"/img/".$_.".png", height => 48, width => $width});
+  return unless $image;
 
   #Return result and html
-  return $operation." is ".$result, pretty_output($result, $operation, $objectImages{$_});
-
+  return $operation." is ".$result, pretty_output($result, $operation, $image);
 };
 
 #Build HTML output

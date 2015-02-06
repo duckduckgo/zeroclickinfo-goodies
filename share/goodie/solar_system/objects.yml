@@ -1,7 +1,7 @@
 ---
 sun:
   radius: 695,508 km
-  radius_imperial: 432,168.6 miles
+  radius_imperial: 432,168.6 mi
   radius_scientific: 6.9551 x 105 km
   surface_area: 6,078,747,774,547 km2
   surface_area_imperial: 2,347,017,636,988 mi2
@@ -18,7 +18,7 @@ sun:
   density: 1.409 g/cm3
 mercury:
   radius: 2,439.7 km
-  radius_imperial: 1,516.0 miles
+  radius_imperial: 1,516.0 mi
   radius_scientific: 2.4397 x 103 km
   surface_area: 74,797,000 km2
   surface_area_imperial: 28,879,000 mi2
@@ -35,7 +35,7 @@ mercury:
   density: 5.427 g/cm3
 venus:
   radius: 6,051.8 km
-  radius_imperial: 3,760.4 miles
+  radius_imperial: 3,760.4 mi
   radius_scientific: 6.0518 x 103 km
   surface_area: 460,234,317 km2
   surface_area_imperial: 177,697,463 mi2
@@ -52,7 +52,7 @@ venus:
   density: 5.243 g/cm3
 earth:
   radius: 6,371.00 km
-  radius_imperial:  3,958.8 miles
+  radius_imperial:  3,958.8 mi
   radius_scientific: 6.3710 x 103 km
   surface_area: 510,064,472 km2
   surface_area_imperial: 196,936,994 mi2
@@ -69,7 +69,7 @@ earth:
   density: 5.513 g/cm3
 mars:
   radius: 3,389.5 km
-  radius_imperial: 2,106.1 miles
+  radius_imperial: 2,106.1 mi
   radius_scientific: 3.3895 x 103 km
   surface_area: 144,371,391 km2
   surface_area_imperial: 55,742,106 mi2
@@ -86,7 +86,7 @@ mars:
   density: 3.934 g/cm3
 jupiter:
   radius: 69,911 km
-  radius_imperial: 43,440.7 miles
+  radius_imperial: 43,440.7 mi
   radius_scientific: 6.9911 x 104 km
   surface_area: 61,418,738,571 km2
   surface_area_imperial: 23,713,907,537 mi2
@@ -103,7 +103,7 @@ jupiter:
   density: 1.326 g/cm3
 saturn:
   radius: 58,232 km
-  radius_imperial: 36,183.7 miles
+  radius_imperial: 36,183.7 mi
   radius_scientific: 5.8232 x 104 km
   surface_area: 42,612,133,285 km2
   surface_area_imperial: 16,452,636,641 mi2
@@ -120,7 +120,7 @@ saturn:
   density: 0.687 g/cm3
 uranus:
   radius: 25,362 km
-  radius_imperial: 15,759.2 miles
+  radius_imperial: 15,759.2 mi
   radius_scientific: 2.5362 x 104 km
   surface_area: 8,083,079,690 km2
   surface_area_imperial: 3,120,894,516 mi2
@@ -137,7 +137,7 @@ uranus:
   density: 1.270 g/cm3
 neptune:
   radius: 24,622 km
-  radius_imperial: 15,299.4 miles
+  radius_imperial: 15,299.4 mi
   radius_scientific: 2.4622 x 104 km
   surface_area: 7,618,272,763 km2
   surface_area_imperial: 2,941,431,558 mi2
