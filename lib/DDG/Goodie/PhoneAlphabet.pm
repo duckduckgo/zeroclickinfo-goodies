@@ -14,9 +14,10 @@ category 'reference';
 topics 'special_interest';
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PhoneAlphabet.pm";
 attribution github => ["https://github.com/stevelippert", "Steve Lippert"],
-            twitter => ["https://twitter.com/stevelippert", "stevelippert"];
+            twitter => ["https://twitter.com/stevelippert", "stevelippert"],
+            github => ["https://github.com/samph", "samph"];
 
-triggers any => 'to digit', 'to digits', 'to phone', 'to phone number';
+triggers any => 'to digit', 'to digits', 'to phone', 'to phone number', 'to numbers';
 
 handle remainder => sub {
     my $input = shift;
