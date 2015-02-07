@@ -27,6 +27,15 @@ ddg_goodie_test(
             result    => '1-800-386-4225'
         }
     ),
+    '1-800-fun-hack to numbers' => test_zci(
+        'Phone Number: 1-800-386-4225',
+        structured_answer => {
+            input     => ['1-800-fun-hack'],
+            operation => 'Phone Number',
+            result    => '1-800-386-4225'
+        }
+    ),
+
 
     '1958funhack to phone' => test_zci(
         'Phone Number: 19583864225',
