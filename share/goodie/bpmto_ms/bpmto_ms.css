@@ -1,4 +1,10 @@
-@media (max-width: 600px) {
+@media (max-width: 300px) {    
+    .bpmto_ms table td {
+        word-wrap: break-word;
+    }
+}
+
+@media (min-width: 400px) {
     .bpmto_ms table {
         table-layout: fixed;
         width: 100%;
@@ -6,12 +12,6 @@
 
     .bpmto_ms table td {
         word-wrap: break-word;
-    }
-
-    .bpmto_ms .record td.record__cell__key {
-        width: 100px;
-        border-top: solid 1px #DDD;
-        border-bottom: solid 1px #DDD;
     }
 }
 
