@@ -57,7 +57,8 @@ name 'ColorCodes';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ColorCodes.pm';
 category 'conversions';
 topics 'programming';
-attribution cpan    => 'CRZEDPSYC' ;
+attribution  cpan   => 'CRZEDPSYC',
+             github => ['mintsoft', 'Rob Emery'];
 
 my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
 my %trigger_filler = map { $_ => 1 } (qw( code ));
@@ -95,8 +96,8 @@ sub create_output {
     
     $html = "<div class='column1 tx-clr--dk2'>"
           . "<p class='hex tx-clr--dk zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
-          . "<p ><a href='http://labs.tineye.com/multicolr#colors=" . $hex_for_links . ";weights=100;' class='tx-clr--dk2'>Images</a>"
-          . " | "
+          . "<p><a href='http://labs.tineye.com/multicolr#colors=" . $hex_for_links . ";weights=100;' class='tx-clr--dk2'>Images</a>"
+          . "<span class='separator'> | </span>"
           . "<a href='http://www.color-hex.com/color/" . $hex_for_links . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a></p>"
           . "</div>"
           . "<div class='column2 tx-clr--dk2'>"

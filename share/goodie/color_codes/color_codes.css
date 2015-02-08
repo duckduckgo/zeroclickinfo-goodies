@@ -53,3 +53,7 @@
 .zci--answer .zci--color-codes .complementary {
     margin-bottom: 0.25em;
 }
+
+.zci--answer .zci--color-codes .separator {
+    color: #d0d0d0;
+}
