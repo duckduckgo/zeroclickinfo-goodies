@@ -27,6 +27,7 @@
 {
     display: inline-block;
     height: 125px;
+    padding-top: 2px;
 }
 
 .zci--answer .zci--color-codes .column2 {
