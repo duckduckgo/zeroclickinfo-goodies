@@ -10,7 +10,6 @@ use Convert::Color::Library;
 use Convert::Color::RGB8;
 use Math::Round;
 use Try::Tiny;
-use Data::Dump qw(dump);
 
 my %types = ( # hash of keyword => Convert::Color prefix
         rgb     => 'rgb8',
@@ -82,11 +81,12 @@ sub create_output {
     my $hsl = "HSL(" . join(", ", @{$input{'hsl'}}) . ")";
     my $cmyb = "CMYB(" . join(", ", @{$input{'cmyb'}}) . ")";
     my @analogous_colors = @{$input{'analogous'}};
-    $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb"."\n"
-          . "Complementary: #".uc($input{'complementary'})."\n"
-          . "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
-    #<a href='javascript:;' onclick='document.x.q.value=\"2,860\";document.x.q.focus();'>2,860</a>
     my $complementary = uc $input{'complementary'};
+    
+    $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb"."\n"
+          . "Complementary: #$complementary\n"
+          . "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
+    
     my $comps = "<div class='cols_column'><span class='mini-color circle' style='background: #".$complementary.";'> </span></div>"
               . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace tx-clr--dk'>"
               . qq[<a onclick='document.x.q.value="#$complementary";document.x.q.focus();' href='javascript:'>$complementary</a>]
@@ -158,8 +158,8 @@ handle matches => sub {
     my $hex_code = $col->as_rgb8->hex;
     
     my $complementary = $color_mix->complementary($hex_code);
-    my @analogous = $color_mix->analogous($hex_code);
-    @analogous = splice(@analogous, 1, 2);
+    my @analogous = $color_mix->analogous($hex_code,12,12);
+    @analogous = ($analogous[1], $analogous[11]);
     my @rgb = $col->as_rgb8->rgb8;
     my $hsl = $col->as_hsl;
     my @rgb_pct = percentify($col->as_rgb->rgb);
