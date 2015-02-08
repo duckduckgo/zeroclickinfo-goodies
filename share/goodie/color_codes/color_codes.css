@@ -58,3 +58,7 @@
 .zci--answer .zci--color-codes .separator {
     color: #d0d0d0;
 }
+
+.zci--answer .zci--color-codes .column2 a {
+    color: #333;
+}
