@@ -17,5 +17,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-
-1;
