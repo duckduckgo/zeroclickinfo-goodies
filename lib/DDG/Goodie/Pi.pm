@@ -34,16 +34,14 @@ handle remainder => sub {
     if (($decimal  > 0) && ($decimal < 400)) {
         if ($decimal > 301) {
             $num = $PI1 . $PI2 . $PI3 . $PI4;
-            $answer = substr $num, 0, ( $decimal + 2 );
         } elsif ($decimal > 201) {
             $num = $PI1 . $PI2 . $PI3;
-            $answer = substr $num, 0, ( $decimal + 2 );
         } elsif ($decimal > 101) {
             $num = $PI1 . $PI2;
-            $answer = substr $num, 0, ( $decimal + 2 );
         } else {
-            $answer = substr $PI1, 0, ( $decimal + 2 );
+            $num = $PI1;
         }
+        $answer = substr $num, 0, ( $decimal + 2 );
 
         return "$answer";
     }
