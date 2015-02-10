@@ -44,10 +44,10 @@ handle remainder => sub {
         } else {
             $answer = substr $PI1, 0, ( $decimal + 2 );
         }
+
         return "$answer";
     }
     return;
-    
 };
 
 1;
