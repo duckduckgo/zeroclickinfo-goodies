@@ -5,7 +5,6 @@ use utf8;
 use strict;
 use warnings;
 use DateTime;
-use Date::Format;
 use Locale::Country;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
@@ -117,7 +116,12 @@ handle remainder => sub {
         # Any leap year here, because the array includes February, 29
         $day->set_year(2000);
         
-        $query = time2str( '%B %o', $day->epoch() );
+        my $suffix = 'th';
+        my $daynum = $day->day();
+        $suffix = 'st' if $daynum == 1 || $daynum == 21 || $daynum == 31;
+        $suffix = 'nd' if $daynum == 2 || $daynum == 22;
+        $suffix = 'rd' if $daynum == 3 || $daynum == 23;
+        $query = $day->month_name() . " $daynum$suffix";
         $text = $names[$day->day_of_year() - 1];
     
         # Convert to HTML
