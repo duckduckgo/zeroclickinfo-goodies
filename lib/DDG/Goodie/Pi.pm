@@ -32,11 +32,11 @@ handle remainder => sub {
 
     my $decimal = $_;
     if (($decimal  > 0) && ($decimal < 400)) {
-        if ($decimal > 301) {
+        if ($decimal > 300) {
             $num = $PI1 . $PI2 . $PI3 . $PI4;
-        } elsif ($decimal > 201) {
+        } elsif ($decimal > 200) {
             $num = $PI1 . $PI2 . $PI3;
-        } elsif ($decimal > 101) {
+        } elsif ($decimal > 100) {
             $num = $PI1 . $PI2;
         } else {
             $num = $PI1;
