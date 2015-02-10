@@ -9,7 +9,9 @@ use DDG::Goodie;
 use DateTime;
 use POSIX qw(fmod);
 
-attribution github => ['GlitchMr', 'GlitchMr'];
+attribution github => ['GlitchMr', 'GlitchMr'],
+            github => ['https://github.com/samph',      'samph'];
+
 
 primary_example_queries '10:00AM MST to PST';
 secondary_example_queries '19:00 UTC to EST', '1am UTC to PST';
@@ -123,8 +125,10 @@ handle query => sub {
           # Hours
           (?<h>[01]?[0-9] | 2[0-3])
           (?:
+          #Optional colon
+          :?
             # Minutes
-            :(?<m>[0-5] [0-9])
+            (?<m>[0-5] [0-9])
             (?:
               # Seconds
               :(?<s>[0-5] [0-9])
