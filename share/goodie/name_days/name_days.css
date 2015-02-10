@@ -1,12 +1,16 @@
 .name-days-country {
-    padding: 0.3em 1em 0.3em 0;
+    padding-right: 2em;
     white-space: nowrap;
     vertical-align: top;
 }
 
+.name-days-country-name, .name-days-tile {
+    line-height: 1.6;
+}
+
 .name-days-country-name {
     vertical-align: middle;
-    padding-left: 0.2em;
+    padding-left: 0.4em;
 }
 
 .name-days-country .flag-sm {
@@ -15,6 +19,8 @@
 
 .name-days-country, .name-days-dates {
     border-bottom: solid 1px #DDD;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
 }
 
 tr:last-of-type .name-days-country, tr:last-of-type .name-days-dates {

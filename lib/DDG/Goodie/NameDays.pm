@@ -25,7 +25,8 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["http://github.com/W25", "W25"];
 
 # Triggers
-triggers any => "name day", "name days", "nameday", "namedays", "imieniny", "jmeniny", "svátek";
+triggers any => "name day", "name days", "nameday", "namedays", "imieniny",
+                "jmeniny", "svátek"; # The phrase "name days" in Polish and Czech language
 
 
 
