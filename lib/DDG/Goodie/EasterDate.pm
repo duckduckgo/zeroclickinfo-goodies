@@ -91,12 +91,10 @@ sub roshhashanah {
         $day += 2;
     }
     
-    # Calculate month and day
-    return (8, $day + 31) if $day <= 0;
-    
-    return (10, $day - 30) if $day > 30;
-    
-    return (9, $day);
+    # Return DateTime object
+    my $dt = DateTime->new(year => $y, month => 8, day => 31);
+    $dt->add( days => $day );
+    return $dt;
 }
 
 sub easter {
@@ -121,28 +119,23 @@ sub easter {
     
     $r += $gregorian_shift if !$is_western;
     
-    if ($r >= 40) {
-        return ( 5, $r - 39 );
-    } elsif ($r >= 10) {
-        # Correction for the length of the moon month
-        $r -= 7 if $e == 6 && ($d == 29 || $d == 28 && ($year % 19) > 10);
-        return ( 4, $r - 9 );
-    } else {
-        return ( 3, $r + 22 );
-    }
+    # Correction for the length of the moon month
+    $r -= 7 if $e == 6 && ($d == 29 || $d == 28 && ($year % 19) > 10);
+    
+    # Return DateTime object
+    my $dt = DateTime->new(year => $year, month => 3, day => 22);
+    $dt->add( days => $r );
+    return $dt;
 }
 
 sub jewish_holiday {
     my ($year, $delta) = @_;
-    my ($month, $day) = roshhashanah($year);
     
-    my $dt = DateTime->new(year => $year, month => $month, day => $day);
+    my $dt = roshhashanah($year);
     
     if ($delta == HOLIDAY_HANUKKAH) {
-        ($month, $day) = roshhashanah($year + 1);
+        my $next = roshhashanah($year + 1);
     
-        my $next = DateTime->new(year => $year + 1, month => $month, day => $day);
-
         my $year_length = $next->delta_days($dt)->delta_days();
 
         $delta++ if $year_length == 355 || $year_length == 385; # Heshvan is one day longer in a complete year
@@ -163,9 +156,7 @@ sub christian_holiday {
     # Corpus Christi is not observed by Orthodox church
     $is_western = 1 if $delta == $christian_holidays{'Corpus Christi'} && !$is_western;
     
-    my ($month, $day) = easter($year, $is_western);
-    
-    my $dt = DateTime->new(year => $year, month => $month, day => $day);
+    my $dt = easter($year, $is_western);
     
     $dt->add( days => $delta );
     
