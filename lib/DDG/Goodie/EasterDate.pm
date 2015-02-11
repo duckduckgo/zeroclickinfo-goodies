@@ -64,15 +64,15 @@ triggers any => 'jewish holidays', 'hebrew holidays', (map {lc($_)} keys %jewish
 
 sub roshhashanah {
     # Gauss algorithm
-    my $y = shift;
+    my $year = shift;
     
-    my $r = (12 * $y + 12) % 19;
+    my $r = (12 * $year + 12) % 19;
 
     # Calculate the number of parts (Talmudic units)
-    my $parts = 765433 * $r - 1565 * $y - 445405 + 123120 * ($y % 4);
+    my $parts = 765433 * $r - 1565 * $year - 445405 + 123120 * ($year % 4);
     
     # Take into account the difference between Gregorian and Julian calendars
-    my $gregorian_shift = int($y / 100) - int ($y / 400) - 2;
+    my $gregorian_shift = int($year / 100) - int ($year / 400) - 2;
     
     $parts -= 492479 if $parts <= 0; # Floored division
     
@@ -80,7 +80,7 @@ sub roshhashanah {
     
     $parts %= 492480;
     
-    my $dow = ($y + int($y / 4) - $gregorian_shift + $day + 2) % 7;
+    my $dow = ($year + int($year / 4) - $gregorian_shift + $day + 2) % 7;
     
     # Postponement rules
     if ($dow == 0 || $dow == 3 || $dow == 5) {
@@ -91,10 +91,7 @@ sub roshhashanah {
         $day += 2;
     }
     
-    # Return DateTime object
-    my $dt = DateTime->new(year => $y, month => 8, day => 31);
-    $dt->add( days => $day );
-    return $dt;
+    return DateTime->new(year => $year, month => 8, day => 31)->add( days => $day );
 }
 
 sub easter {
@@ -122,10 +119,7 @@ sub easter {
     # Correction for the length of the moon month
     $r -= 7 if $e == 6 && ($d == 29 || $d == 28 && ($year % 19) > 10);
     
-    # Return DateTime object
-    my $dt = DateTime->new(year => $year, month => 3, day => 22);
-    $dt->add( days => $r );
-    return $dt;
+    return DateTime->new(year => $year, month => 3, day => 22)->add( days => $r );
 }
 
 sub jewish_holiday {
@@ -185,11 +179,12 @@ handle query_raw => sub {
     my $result;
     
     # Read the input
-    return unless /^(?:$holiday \s+
-            ((?:date) (?:\s+(?<y>\d{4}))? |
-             (?<y>\d{4}) (?:\s+date)?
-            )|
-            (?:date\s+of| when\s+is) \s+$holiday (?:\s+(?<y>\d{4}))?)$/ix;
+    return unless /^(?: $holiday \s+
+                     ( (?:date) (?: \s+ (?<y> \d{4}) )? |
+                       (?<y> \d{4}) (?: \s+ date)?
+                     ) |
+                     (?:date \s+ of| when \s+ is) \s+ $holiday (?: \s+ (?<y> \d{4}) )?
+                    )$/ix;
             
     my $year = defined $+{y} ? $+{y} : ((localtime)[5] + 1900);
     return if ($year < 1800 || $year > 2299);
@@ -204,7 +199,7 @@ handle query_raw => sub {
         $result = output_date(jewish_holiday($year, $jewish_holidays{$operation}));
         
     } elsif (exists $christian_holidays{$operation}) {
-        # Find the most likely Christianity branch in this country using Location API
+        # Find the most common Christianity branch in this country using Location API
         my $is_western = !exists $orthodox_countries{$loc->country_code};
         if ($denomination) {
             $is_western = $denomination ne 'orthodox' && $denomination ne 'eastern';
@@ -216,13 +211,13 @@ handle query_raw => sub {
         $operation .= $is_western ? ' (Western Christianity)' : ' (Orthodox Christianity)';
         
     } elsif ($operation eq 'Jewish Holidays' || $operation eq 'Hebrew Holidays') {
-        $result = 'Purim: ' . output_date(jewish_holiday($year, HOLIDAY_PURIM)) .
-                  ', Passover: ' . output_date(jewish_holiday($year, HOLIDAY_PASSOVER)) .
-                  ', Shavuot: ' . output_date(jewish_holiday($year, HOLIDAY_SHAVUOT)) .
+        $result =   'Purim: ' .         output_date(jewish_holiday($year, HOLIDAY_PURIM)) .
+                  ', Passover: ' .      output_date(jewish_holiday($year, HOLIDAY_PASSOVER)) .
+                  ', Shavuot: ' .       output_date(jewish_holiday($year, HOLIDAY_SHAVUOT)) .
                   ', Rosh Hashanah: ' . output_date(jewish_holiday($year, HOLIDAY_ROSH_HASHANAH)) .
-                  ', Yom Kippur: ' . output_date(jewish_holiday($year, HOLIDAY_YOM_KIPPUR)) .
-                  ', Sukkot: ' . output_date(jewish_holiday($year, HOLIDAY_SUKKOT)) .
-                  ', Hanukkah: ' . output_date(jewish_holiday($year, HOLIDAY_HANUKKAH));
+                  ', Yom Kippur: ' .    output_date(jewish_holiday($year, HOLIDAY_YOM_KIPPUR)) .
+                  ', Sukkot: ' .        output_date(jewish_holiday($year, HOLIDAY_SUKKOT)) .
+                  ', Hanukkah: ' .      output_date(jewish_holiday($year, HOLIDAY_HANUKKAH));
         
     } else {
         return;
