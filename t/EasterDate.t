@@ -7,255 +7,121 @@ use Test::MockTime qw( :all );
 use DDG::Test::Goodie;
 
 zci answer_type => "easter_date";
-zci is_cached   => 1;
+zci is_cached   => 0;
 
 set_fixed_time("2013-01-01T10:00:00");
 
+sub get_test {
+    my ($text, $year, $operation) = @_;
+    return test_zci($text, structured_answer => {
+            input => [$year],
+            operation => $operation,
+            result => $text
+        });
+}
+
+my $w_easter = 'Easter (Western Christianity)';
+my $o_easter = 'Easter (Orthodox Christianity)';
+
 ddg_goodie_test(
     [qw( DDG::Goodie::EasterDate )],
-    'Easter 2015' => test_zci('Western: 5 April, Orthodox: 12 April',
-        structured_answer => {
-            input => ['2015'],
-            operation => 'Easter',
-            result => 'Western: 5 April, Orthodox: 12 April'
-        }),
-    'Easter date' => test_zci('Western: 31 March, Orthodox: 5 May',
-        structured_answer => {
-            input => ['2013'],
-            operation => 'Easter',
-            result => 'Western: 31 March, Orthodox: 5 May'
-        }),
-    'date of easter' => test_zci('Western: 31 March, Orthodox: 5 May',
-        structured_answer => {
-            input => ['2013'],
-            operation => 'Easter',
-            result => 'Western: 31 March, Orthodox: 5 May'
-        }),
-    'when is Easter' => test_zci('Western: 31 March, Orthodox: 5 May',
-        structured_answer => {
-            input => ['2013'],
-            operation => 'Easter',
-            result => 'Western: 31 March, Orthodox: 5 May'
-        }),
-    'Easter date 1995' => test_zci('Western: 16 April, Orthodox: 23 April',
-        structured_answer => {
-            input => ['1995'],
-            operation => 'Easter',
-            result => 'Western: 16 April, Orthodox: 23 April'
-        }),
-    'EASTER 1995 date' => test_zci('Western: 16 April, Orthodox: 23 April',
-        structured_answer => {
-            input => ['1995'],
-            operation => 'Easter',
-            result => 'Western: 16 April, Orthodox: 23 April'
-        }),
-    'easter 2014' => test_zci('Western: 20 April, Orthodox: 20 April',
-        structured_answer => {
-            input => ['2014'],
-            operation => 'Easter',
-            result => 'Western: 20 April, Orthodox: 20 April'
-        }),
-    'date of easter 2014' => test_zci('Western: 20 April, Orthodox: 20 April',
-        structured_answer => {
-            input => ['2014'],
-            operation => 'Easter',
-            result => 'Western: 20 April, Orthodox: 20 April'
-        }),
-    'Easter 2016' => test_zci('Western: 27 March, Orthodox: 1 May',
-        structured_answer => {
-            input => ['2016'],
-            operation => 'Easter',
-            result => 'Western: 27 March, Orthodox: 1 May'
-        }),
-        
-    'catholic easter 2016' => test_zci('27 March',
-        structured_answer => {
-            input => ['2016'],
-            operation => 'Catholic Easter',
-            result => '27 March'
-        }),
-    'protestant easter 2016' => test_zci('27 March',
-        structured_answer => {
-            input => ['2016'],
-            operation => 'Protestant Easter',
-            result => '27 March'
-        }),
-    'orthodox easter 2016' => test_zci('1 May',
-        structured_answer => {
-            input => ['2016'],
-            operation => 'Orthodox Easter',
-            result => '1 May'
-        }),
-    'easter 1900' => test_zci('Western: 15 April, Orthodox: 22 April',
-        structured_answer => {
-            input => ['1900'],
-            operation => 'Easter',
-            result => 'Western: 15 April, Orthodox: 22 April'
-        }),
-    'date of easter 1951' => test_zci('Western: 25 March, Orthodox: 29 April',
-        structured_answer => {
-            input => ['1951'],
-            operation => 'Easter',
-            result => 'Western: 25 March, Orthodox: 29 April'
-        }),
-    'when is easter 1850' => test_zci('Western: 31 March, Orthodox: 5 May',
-        structured_answer => {
-            input => ['1850'],
-            operation => 'Easter',
-            result => 'Western: 31 March, Orthodox: 5 May'
-        }),
-    'when is easter 1800' => test_zci('Western: 13 April, Orthodox: 20 April',
-        structured_answer => {
-            input => ['1800'],
-            operation => 'Easter',
-            result => 'Western: 13 April, Orthodox: 20 April'
-        }),
-    'when is easter 1803' => test_zci('Western: 10 April, Orthodox: 17 April',
-        structured_answer => {
-            input => ['1803'],
-            operation => 'Easter',
-            result => 'Western: 10 April, Orthodox: 17 April'
-        }),
-    'easter 2299' => test_zci('Western: 16 April, Orthodox: 23 April',
-        structured_answer => {
-            input => ['2299'],
-            operation => 'Easter',
-            result => 'Western: 16 April, Orthodox: 23 April'
-        }),
-    'easter 2298' => test_zci('Western: 3 April, Orthodox: 8 May',
-        structured_answer => {
-            input => ['2298'],
-            operation => 'Easter',
-            result => 'Western: 3 April, Orthodox: 8 May'
-        }),
     
-    'Passover 2015' => test_zci('4 April',
-        structured_answer => {
-            input => ['2015'],
-            operation => 'Passover',
-            result => '4 April'
-        }),
-    'Pesach 2015' => test_zci('4 April',
-        structured_answer => {
-            input => ['2015'],
-            operation => 'Pesach',
-            result => '4 April'
-        }),
-    'Yom Kippur 2015' => test_zci('23 September',
-        structured_answer => {
-            input => ['2015'],
-            operation => 'Yom Kippur',
-            result => '23 September'
-        }),
-    'Rosh Hashanah 2014' => test_zci('25 September',
-        structured_answer => {
-            input => ['2014'],
-            operation => 'Rosh Hashanah',
-            result => '25 September'
-        }),
-    'rosh hashana 2015' => test_zci('14 September',
-        structured_answer => {
-            input => ['2015'],
-            operation => 'Rosh Hashana',
-            result => '14 September'
-        }),
-    'Jewish Holidays 2014' => test_zci(
-    'Purim: 16 March, Passover: 15 April, Shavuot: 4 June, Rosh Hashanah: 25 September, Yom Kippur: 4 October, Sukkot: 9 October, Hanukkah: 17 December',
-        structured_answer => {
-            input => ['2014'],
-            operation => 'Jewish Holidays',
-            result => 'Purim: 16 March, Passover: 15 April, Shavuot: 4 June, Rosh Hashanah: 25 September, Yom Kippur: 4 October, Sukkot: 9 October, Hanukkah: 17 December'
-        }),
-    'Passover 2099' => test_zci('5 April',
-        structured_answer => {
-            input => ['2099'],
-            operation => 'Passover',
-            result => '5 April'
-        }),
-    'Chanukkah 2015' => test_zci('7 December',
-        structured_answer => {
-            input => ['2015'],
-            operation => 'Chanukkah',
-            result => '7 December'
-        }),
-    'Hanukkah 2013' => test_zci('28 November',
-        structured_answer => {
-            input => ['2013'],
-            operation => 'Hanukkah',
-            result => '28 November'
-        }),
-    'Purim 2013' => test_zci('24 February',
-        structured_answer => {
-            input => ['2013'],
-            operation => 'Purim',
-            result => '24 February'
-        }),
-    'Purim 2015' => test_zci('5 March',
-        structured_answer => {
-            input => ['2015'],
-            operation => 'Purim',
-            result => '5 March'
-        }),
-    'Purim 2016' => test_zci('24 March',
-        structured_answer => {
-            input => ['2016'],
-            operation => 'Purim',
-            result => '24 March'
-        }),
-    'Purim 2017' => test_zci('12 March',
-        structured_answer => {
-            input => ['2017'],
-            operation => 'Purim',
-            result => '12 March'
-        }),
-    'jewish holidays 2007' => test_zci(
-    'Purim: 4 March, Passover: 3 April, Shavuot: 23 May, Rosh Hashanah: 13 September, Yom Kippur: 22 September, Sukkot: 27 September, Hanukkah: 5 December',
-        structured_answer => {
-            input => ['2007'],
-            operation => 'Jewish Holidays',
-            result => 'Purim: 4 March, Passover: 3 April, Shavuot: 23 May, Rosh Hashanah: 13 September, Yom Kippur: 22 September, Sukkot: 27 September, Hanukkah: 5 December'
-        }),
-        
-    'jewish holidays 2008' => test_zci(
-    'Purim: 21 March, Passover: 20 April, Shavuot: 9 June, Rosh Hashanah: 30 September, Yom Kippur: 9 October, Sukkot: 14 October, Hanukkah: 22 December',
-        structured_answer => {
-            input => ['2008'],
-            operation => 'Jewish Holidays',
-            result => 'Purim: 21 March, Passover: 20 April, Shavuot: 9 June, Rosh Hashanah: 30 September, Yom Kippur: 9 October, Sukkot: 14 October, Hanukkah: 22 December'
-        }), 
-        
-    'Jewish holidays 2009' => test_zci(
-    'Purim: 10 March, Passover: 9 April, Shavuot: 29 May, Rosh Hashanah: 19 September, Yom Kippur: 28 September, Sukkot: 3 October, Hanukkah: 12 December',
-        structured_answer => {
-            input => ['2009'],
-            operation => 'Jewish Holidays',
-            result => 'Purim: 10 March, Passover: 9 April, Shavuot: 29 May, Rosh Hashanah: 19 September, Yom Kippur: 28 September, Sukkot: 3 October, Hanukkah: 12 December'
-        }),
-        
-    'Jewish holidays 2015' => test_zci(
-    'Purim: 5 March, Passover: 4 April, Shavuot: 24 May, Rosh Hashanah: 14 September, Yom Kippur: 23 September, Sukkot: 28 September, Hanukkah: 7 December',
-        structured_answer => {
-            input => ['2015'],
-            operation => 'Jewish Holidays',
-            result => 'Purim: 5 March, Passover: 4 April, Shavuot: 24 May, Rosh Hashanah: 14 September, Yom Kippur: 23 September, Sukkot: 28 September, Hanukkah: 7 December'
-        }),
-        
-    'Jewish holidays 2016' => test_zci(
-    'Purim: 24 March, Passover: 23 April, Shavuot: 12 June, Rosh Hashanah: 3 October, Yom Kippur: 12 October, Sukkot: 17 October, Hanukkah: 25 December',
-        structured_answer => {
-            input => ['2016'],
-            operation => 'Jewish Holidays',
-            result => 'Purim: 24 March, Passover: 23 April, Shavuot: 12 June, Rosh Hashanah: 3 October, Yom Kippur: 12 October, Sukkot: 17 October, Hanukkah: 25 December'
-        }),
+	'Easter 2015' => get_test('5 April', '2015', $w_easter),
+    'Easter date' => get_test('31 March', '2013', $w_easter),
+    'date of easter' => get_test('31 March', '2013', $w_easter),
+    'when is Easter' => get_test('31 March', '2013', $w_easter),
+    'easter date 1995' => get_test('16 April', '1995', $w_easter),
+    'EASTER 1995 date' => get_test('16 April', '1995', $w_easter),
+    'easter 2014' => get_test('20 April', '2014', $w_easter),
+    'date of easter 2014' => get_test('20 April', '2014', $w_easter),
+    'Easter 2016' => get_test('27 March', '2016', $w_easter),
     
-    'Hebrew holidays 2017' => test_zci(
-    'Purim: 12 March, Passover: 11 April, Shavuot: 31 May, Rosh Hashanah: 21 September, Yom Kippur: 30 September, Sukkot: 5 October, Hanukkah: 13 December',
-        structured_answer => {
-            input => ['2017'],
-            operation => 'Hebrew Holidays',
-            result => 'Purim: 12 March, Passover: 11 April, Shavuot: 31 May, Rosh Hashanah: 21 September, Yom Kippur: 30 September, Sukkot: 5 October, Hanukkah: 13 December'
-        }),
+    'Orthodox Easter 2015' => get_test('12 April', '2015', $o_easter),
+    'Orthodox Easter date' => get_test('5 May', '2013', $o_easter),
+    'date of Orthodox easter' => get_test('5 May', '2013', $o_easter),
+    'when is Orthodox Easter' => get_test('5 May', '2013', $o_easter),
+    'Orthodox Easter date 1995' => get_test('23 April', '1995', $o_easter),
+    'Orthodox Easter 1995 date' => get_test('23 April', '1995', $o_easter),
+    'Orthodox easter 2014' => get_test('20 April', '2014', $o_easter),
+    'date of Orthodox easter 2014' => get_test('20 April', '2014', $o_easter),
+    'Orthodox Easter 2016' => get_test('1 May', '2016', $o_easter),
+        
+    'catholic easter 2016' => get_test('27 March', '2016', $w_easter),
+    'protestant easter 2016' => get_test('27 March', '2016', $w_easter),
+    'orthodox easter 2016' => get_test('1 May', '2016', $o_easter),
+    'western easter 2016' => get_test('27 March', '2016', $w_easter),
+
+    'easter 1900' => get_test('15 April', '1900', $w_easter),
+    'date of easter 1951' => get_test('25 March', '1951', $w_easter),
+    'when is easter 1850' => get_test('31 March', '1850', $w_easter),
+    'when is easter 1800' => get_test('13 April', '1800', $w_easter),
+    'when is easter 1803' => get_test('10 April', '1803', $w_easter),
+    'easter 2299' => get_test('16 April', '2299', $w_easter),
+    'easter 2298' => get_test('3 April', '2298', $w_easter),
+
+    'orthodox easter 1900' => get_test('22 April', '1900', $o_easter),
+    'date of eastern easter 1951' => get_test('29 April', '1951', $o_easter),
+    'when is orthodox easter 1850' => get_test('5 May', '1850', $o_easter),
+    'when is orthodox easter 1800' => get_test('20 April', '1800', $o_easter),
+    'when is orthodox easter 1803' => get_test('17 April', '1803', $o_easter),
+    'orthodox easter 2299' => get_test('23 April', '2299', $o_easter),
+    'orthodox easter 2298' => get_test('8 May', '2298', $o_easter),
     
+    'good friday 2015' => get_test('3 April', '2015', 'Good Friday (Western Christianity)'),
+    'western good friday 2015' => get_test('3 April', '2015', 'Good Friday (Western Christianity)'),
+    'orthodox good friday 2015' => get_test('10 April', '2015', 'Good Friday (Orthodox Christianity)'),
+    
+    'Ascension Day 2016' => get_test('5 May', '2016', 'Ascension Day (Western Christianity)'),
+    'orthodox ascension 2016' => get_test('9 June', '2016', 'Ascension (Orthodox Christianity)'),
+    'ascension thursday 2017' => get_test('25 May', '2017', 'Ascension Thursday (Western Christianity)'),
+    
+    'pentecost 2015' => get_test('24 May', '2015', 'Pentecost (Western Christianity)'),
+    'western pentecost 2016' => get_test('15 May', '2016', 'Pentecost (Western Christianity)'),
+    'orthodox pentecost 2016' => get_test('19 June', '2016', 'Pentecost (Orthodox Christianity)'),
+    'orthodox Trinity Sunday 2016' => get_test('19 June', '2016', 'Trinity Sunday (Orthodox Christianity)'),
+    
+    'Trinity Sunday 2016' => get_test('22 May', '2016', 'Trinity Sunday (Western Christianity)'),
+    'Corpus Christi 2015' => get_test('4 June', '2015', 'Corpus Christi (Western Christianity)'),
+    'Orthodox Corpus Christi 2015' => get_test('4 June', '2015', 'Corpus Christi (Western Christianity)'), # cannot be Orthodox
+    
+    'Passover 2015' => get_test('4 April', '2015', 'Passover'),
+    'Pesach 2015' => get_test('4 April', '2015', 'Pesach'),
+    'Yom Kippur 2015' => get_test('23 September', '2015', 'Yom Kippur'),
+    'Rosh Hashanah 2014' => get_test('25 September', '2014', 'Rosh Hashanah'),
+    'rosh hashana 2015' => get_test('14 September', '2015', 'Rosh Hashana'),
+    'Jewish Holidays 2014' => get_test('Purim: 16 March, Passover: 15 April, Shavuot: 4 June, ' .
+        'Rosh Hashanah: 25 September, Yom Kippur: 4 October, Sukkot: 9 October, Hanukkah: 17 December',
+        '2014', 'Jewish Holidays'),
+    'Passover 2099' => get_test('5 April', '2099', 'Passover'),
+    'Chanukkah 2015' => get_test('7 December', '2015', 'Chanukkah'),
+    'Hanukkah 2013' => get_test('28 November', '2013', 'Hanukkah'),
+    'Purim 2013' => get_test('24 February', '2013', 'Purim'),
+    'Purim 2015' => get_test('5 March', '2015', 'Purim'),
+    'Purim 2016' => get_test('24 March', '2016', 'Purim'),
+    'Purim 2017' => get_test('12 March', '2017', 'Purim'),
+    'jewish holidays 2007' => get_test('Purim: 4 March, Passover: 3 April, Shavuot: 23 May, ' .
+        'Rosh Hashanah: 13 September, Yom Kippur: 22 September, Sukkot: 27 September, Hanukkah: 5 December',
+        '2007', 'Jewish Holidays'),
+        
+    'jewish holidays 2008' => get_test('Purim: 21 March, Passover: 20 April, Shavuot: 9 June, ' .
+        'Rosh Hashanah: 30 September, Yom Kippur: 9 October, Sukkot: 14 October, Hanukkah: 22 December',
+        '2008', 'Jewish Holidays'), 
+        
+    'Jewish holidays 2009' => get_test('Purim: 10 March, Passover: 9 April, Shavuot: 29 May, ' .
+        'Rosh Hashanah: 19 September, Yom Kippur: 28 September, Sukkot: 3 October, Hanukkah: 12 December',
+        '2009', 'Jewish Holidays'),
+        
+    'Jewish holidays 2015' => get_test('Purim: 5 March, Passover: 4 April, Shavuot: 24 May, ' .
+        'Rosh Hashanah: 14 September, Yom Kippur: 23 September, Sukkot: 28 September, Hanukkah: 7 December',
+        '2015', 'Jewish Holidays'),
+        
+    'Jewish holidays 2016' => get_test('Purim: 24 March, Passover: 23 April, Shavuot: 12 June, ' .
+        'Rosh Hashanah: 3 October, Yom Kippur: 12 October, Sukkot: 17 October, Hanukkah: 25 December',
+        '2016', 'Jewish Holidays'),
+    
+    'Hebrew holidays 2017' => get_test('Purim: 12 March, Passover: 11 April, Shavuot: 31 May, ' .
+        'Rosh Hashanah: 21 September, Yom Kippur: 30 September, Sukkot: 5 October, Hanukkah: 13 December',
+        '2017', 'Hebrew Holidays'),
 
     'easter' => undef,
     'easter 123' => undef,

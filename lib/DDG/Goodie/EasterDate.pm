@@ -1,5 +1,6 @@
 package DDG::Goodie::EasterDate;
-# ABSTRACT: Show easter date for the specified year
+# ABSTRACT: Show moveable holidays for the specified year
+# https://en.wikipedia.org/wiki/Category:Moveable_holidays
 
 use DDG::Goodie;
 use DateTime;
@@ -8,12 +9,12 @@ use strict;
 use warnings;
 
 zci answer_type => "easter_date";
-zci is_cached   => 1;
+zci is_cached   => 0;
 
 name "EasterDate";
 description "Show easter date for the specified year";
-primary_example_queries "Easter 2015", "Easter date";
-secondary_example_queries "easter date 1995", "Easter 1995 date", "Passover 2016", "Rosh Hashanah 2014";
+primary_example_queries "Easter 2015", "Easter date", "Rosh Hashanah 2014";
+secondary_example_queries "easter date 1995", "Orthodox Easter 1995 date", "Passover 2016", "good friday 2015";
 category "dates";
 topics "everyday";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/EasterDate.pm";
@@ -40,18 +41,24 @@ my %jewish_holidays = (
     'Hanukkah' => HOLIDAY_HANUKKAH, 'Chanukkah' => HOLIDAY_HANUKKAH,
 );
 
+my %christian_holidays = (
+    'Good Friday' => -2,
+    'Easter' => 0,
+    'Ascension' => 39, 'Ascension Day' => 39, 'Ascension Thursday' => 39,
+    'Pentecost' => 49,
+    'Trinity Sunday' => 56, # Equal to Pentecost in Orthodox church
+    'Corpus Christi' => 60, # Not observed by Orthodox church
+);
+
+# Countries where Orthodox Christianity is more common than Western Christianity
+# according to https://en.wikipedia.org/wiki/Eastern_Orthodox_Church
+my %orthodox_countries;
+@orthodox_countries{qw(BY BG CY GE GR MK MD ME RO RU RS UA BA AL KZ IL JO PS LB SY AM TM UZ)} = ();
+
 # Triggers
-triggers any => 'easter', 'jewish holidays', 'hebrew holidays', map {lc($_)} keys %jewish_holidays;
+triggers any => 'jewish holidays', 'hebrew holidays', (map {lc($_)} keys %jewish_holidays, keys %christian_holidays);
 
 
-my @month_names = qw(January February March April May June
-    July August September October November December);
-
-sub output_date {
-    my ($month, $day) = @_;
-    
-    return "$day " . $month_names[$month - 1];
-}
 
 # Based on http://www.strchr.com/calendar
 
@@ -92,27 +99,6 @@ sub roshhashanah {
     return (9, $day);
 }
 
-sub jewish_holiday {
-    my ($year, $delta) = @_;
-    my ($month, $day) = roshhashanah($year);
-    
-    my $dt = DateTime->new(year => $year, month => $month, day => $day);
-    
-    if ($delta == HOLIDAY_HANUKKAH) {
-        ($month, $day) = roshhashanah($year + 1);
-    
-        my $next = DateTime->new(year => $year + 1, month => $month, day => $day);
-
-        my $year_length = $next->delta_days($dt)->delta_days();
-
-        $delta++ if $year_length == 355 || $year_length == 385; # Heshvan is one day longer in a complete year
-    }
-    
-    $dt->add( days => $delta );
-    
-    return ($dt->month, $dt->day);
-}
-
 sub easter {
     # Gauss algorithm
     my ($year, $is_western) = @_;
@@ -146,18 +132,69 @@ sub easter {
     }
 }
 
+sub jewish_holiday {
+    my ($year, $delta) = @_;
+    my ($month, $day) = roshhashanah($year);
+    
+    my $dt = DateTime->new(year => $year, month => $month, day => $day);
+    
+    if ($delta == HOLIDAY_HANUKKAH) {
+        ($month, $day) = roshhashanah($year + 1);
+    
+        my $next = DateTime->new(year => $year + 1, month => $month, day => $day);
+
+        my $year_length = $next->delta_days($dt)->delta_days();
+
+        $delta++ if $year_length == 355 || $year_length == 385; # Heshvan is one day longer in a complete year
+    }
+    
+    $dt->add( days => $delta );
+    
+    return $dt;
+}
+
+# A holiday related to easter
+sub christian_holiday {
+    my ($year, $is_western, $delta) = @_;
+    
+    # Trinity Sunday is equal to Pentecost in Orthodox church
+    $delta = $christian_holidays{'Pentecost'} if $delta == $christian_holidays{'Trinity Sunday'} && !$is_western;
+    
+    # Corpus Christi is not observed by Orthodox church
+    $is_western = 1 if $delta == $christian_holidays{'Corpus Christi'} && !$is_western;
+    
+    my ($month, $day) = easter($year, $is_western);
+    
+    my $dt = DateTime->new(year => $year, month => $month, day => $day);
+    
+    $dt->add( days => $delta );
+    
+    return ($dt, $is_western);
+}
+
+sub output_date {
+    my $dt = shift;
+    
+    return $dt->format_cldr('d MMMM');
+}
+
 my $jewish_regex = join('|', keys %jewish_holidays);
 $jewish_regex =~ s/ /\\s+/g;
 
-my $holiday = qr/(?<h>catholic\s+easter| orthodox\s+easter| protestant\s+easter| easter |
-               $jewish_regex | jewish\s+holidays | hebrew\s+holidays | holidays\s+in\s+israel)/ix;
+my $christian_regex = join('|', keys %christian_holidays);
+$christian_regex =~ s/ /\\s+/g;
+
+my $holiday = qr/(?:
+                     (?: (?<d>catholic | orthodox | protestant | western | eastern) \s+ )? (?<h> $christian_regex) |
+                     (?<h> $jewish_regex | jewish\s+holidays | hebrew\s+holidays)
+                 )/ix;
 
 # Handle statement
 handle query_raw => sub {
     my $result;
     
     # Read the input
-    return unless /^(?:$holiday\s+
+    return unless /^(?:$holiday \s+
             ((?:date) (?:\s+(?<y>\d{4}))? |
              (?<y>\d{4}) (?:\s+date)?
             )|
@@ -166,22 +203,27 @@ handle query_raw => sub {
     my $year = defined $+{y} ? $+{y} : ((localtime)[5] + 1900);
     return if ($year < 1800 || $year > 2299);
     
+    my $denomination = defined $+{d} ? lc $+{d} : '';
+    
     my $operation = $+{h};
     $operation =~ s/(\w+)/\u\L$1/g; # title case
     
     # Calculate the dates
-    if ($operation eq 'Easter') {
-        $result = 'Western: ' . output_date(easter($year, 1)) . ', Orthodox: ' . output_date(easter($year, 0));
-        
-    } elsif ($operation eq 'Catholic Easter' || $operation eq 'Protestant Easter') {
-        $result = output_date(easter($year, 1));
-        
-    } elsif ($operation eq 'Orthodox Easter') {
-        $result = output_date(easter($year, 0));
-        
-    } elsif (exists $jewish_holidays{$operation}) {
+    if (exists $jewish_holidays{$operation}) {
         $result = output_date(jewish_holiday($year, $jewish_holidays{$operation}));
-            
+        
+    } elsif (exists $christian_holidays{$operation}) {
+        # Find the most likely Christianity branch in this country using Location API
+        my $is_western = !exists $orthodox_countries{$loc->country_code};
+        if ($denomination) {
+            $is_western = $denomination ne 'orthodox' && $denomination ne 'eastern';
+        }
+        
+        my $dt; # the is_western flag may be changed by the christian_holiday function
+        ($dt, $is_western) = christian_holiday($year, $is_western, $christian_holidays{$operation});
+        $result = output_date($dt);
+        $operation .= $is_western ? ' (Western Christianity)' : ' (Orthodox Christianity)';
+        
     } elsif ($operation eq 'Jewish Holidays' || $operation eq 'Hebrew Holidays') {
         $result = 'Purim: ' . output_date(jewish_holiday($year, HOLIDAY_PURIM)) .
                   ', Passover: ' . output_date(jewish_holiday($year, HOLIDAY_PASSOVER)) .
