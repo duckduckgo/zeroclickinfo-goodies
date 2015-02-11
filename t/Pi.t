@@ -10,9 +10,16 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Pi )],
-    'pi 7' => test_zci('3.1415926'),
 
-    'pi 23 digit' => undef
+    'pi 23' => test_zci("3.14159265358979323846264",
+	structured_answer => {
+		input => ["23 digits of Pi"],
+		operation => "Calculate",
+		result => "3.14159265358979323846264"
+	}),
+
+    'pi 23 digit' => undef,
+    'pi 3f5' => undef
 );
 
 done_testing;
