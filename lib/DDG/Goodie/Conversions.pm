@@ -151,7 +151,7 @@ handle query_lc => sub {
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
         input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
-        operation => 'convert',
+        operation => 'Convert',
         result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
       };
 };

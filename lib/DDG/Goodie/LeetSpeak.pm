@@ -55,7 +55,7 @@ handle remainder => sub {
     return "Leet Speak: $translation",
       structured_answer => {
         input     => [$text],
-        operation => 'leet speak',
+        operation => 'Leet speak',
         result    => $translation,
       };
 };

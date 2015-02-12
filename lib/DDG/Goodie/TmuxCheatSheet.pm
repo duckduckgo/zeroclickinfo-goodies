@@ -36,27 +36,14 @@ attribution github  => ["charles-l",            "Charles Saternos"],
             twitter => ["theninjacharlie",           "Charles Saternos"],
             web     => ["http://charles-l.github.io", "Charles Saternos"];
 
+my $HTML = share("tmux_cheat_sheet.html")->slurp(iomode => '<:encoding(UTF-8)');
+my $TEXT= share("tmux_cheat_sheet.txt")->slurp(iomode => '<:encoding(UTF-8)');
+
 handle remainder => sub {
     return
         heading => 'Tmux Cheat Sheet',
-        html    => html_cheat_sheet(),
-        answer   => text_cheat_sheet(),
+        html    => $HTML,
+        answer   => $TEXT,
 };
-
-my $HTML;
-
-sub html_cheat_sheet {
-    $HTML //= share("tmux_cheat_sheet.html")
-        ->slurp(iomode => '<:encoding(UTF-8)');
-    return $HTML;
-}
-
-my $TEXT;
-
-sub text_cheat_sheet {
-    $TEXT //= share("tmux_cheat_sheet.txt")
-        ->slurp(iomode => '<:encoding(UTF-8)');
-    return $TEXT;
-}
 
 1;

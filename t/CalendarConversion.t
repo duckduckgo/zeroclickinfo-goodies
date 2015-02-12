@@ -12,7 +12,7 @@ my @g22h = (
     '22 August 2003 (Gregorian) is 23 Jumaada Thani 1424 (Hijri)',
     structured_answer => {
         input     => ['22 August 2003 (Gregorian)'],
-        operation => 'calendar conversion',
+        operation => 'Calendar conversion',
         result    => '23 Jumaada Thani 1424 (Hijri)'
     },
 );
@@ -20,7 +20,7 @@ my @h23g = (
     '23 Jumaada Thani 1424 (Hijri) is 22 August 2003 (Gregorian)',
     structured_answer => {
         input     => ['23 Jumaada Thani 1424 (Hijri)'],
-        operation => 'calendar conversion',
+        operation => 'Calendar conversion',
         result    => '22 August 2003 (Gregorian)'
     },
 );
@@ -28,7 +28,7 @@ my @g22j = (
     '22 August 2003 (Gregorian) is 31 Mordad 1382 (Jalali)',
     structured_answer => {
         input     => ['22 August 2003 (Gregorian)'],
-        operation => 'calendar conversion',
+        operation => 'Calendar conversion',
         result    => '31 Mordad 1382 (Jalali)'
     },
 );
@@ -45,7 +45,7 @@ ddg_goodie_test(
         '31 Mordad 1382 (Jalali) is 22 August 2003 (Gregorian)',
         structured_answer => {
             input     => ['31 Mordad 1382 (Jalali)'],
-            operation => 'calendar conversion',
+            operation => 'Calendar conversion',
             result    => '22 August 2003 (Gregorian)'
         },
     ),
@@ -53,7 +53,7 @@ ddg_goodie_test(
         '31 Mordad 1382 (Jalali) is 23 Jumaada Thani 1424 (Hijri)',
         structured_answer => {
             input     => ['31 Mordad 1382 (Jalali)'],
-            operation => 'calendar conversion',
+            operation => 'Calendar conversion',
             result    => '23 Jumaada Thani 1424 (Hijri)'
         },
     ),
@@ -61,7 +61,7 @@ ddg_goodie_test(
         '23 Jumaada Thani 1424 (Hijri) is 31 Mordad 1382 (Jalali)',
         structured_answer => {
             input     => ['23 Jumaada Thani 1424 (Hijri)'],
-            operation => 'calendar conversion',
+            operation => 'Calendar conversion',
             result    => '31 Mordad 1382 (Jalali)',
         },
     ),

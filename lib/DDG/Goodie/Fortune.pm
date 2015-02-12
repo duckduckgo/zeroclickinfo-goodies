@@ -29,7 +29,7 @@ handle remainder => sub {
     return $output,
       structured_answer => {
         input     => [],
-        operation => 'random fortune',
+        operation => 'Random fortune',
         result    => $output
       };
 };

@@ -36,7 +36,7 @@ handle remainder => sub {
     my $end_str   = date_output_string($end);
 
     my $verb = $weekday_count == 1 ? 'is' : 'are';
-    my $weekday_plurality = $weekday_count == 1 ? 'weekday' : 'weekdays';
+    my $weekday_plurality = $weekday_count == 1 ? 'Weekday' : 'Weekdays';
 
     my $response = "There $verb $weekday_count $weekday_plurality between $start_str and $end_str.";
 

@@ -85,7 +85,7 @@ handle remainder => sub {
     return $pw_string . " (random password)",
       structured_answer => {
         input     => [$pw_length . ' characters', $pw_strength . ' strength'],
-        operation => 'random password',
+        operation => 'Random password',
         result    => $pw_string
       };
 };

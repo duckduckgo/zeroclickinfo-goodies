@@ -46,7 +46,7 @@ handle query_lc => sub {
     return $rand . " (random number)",
       structured_answer => {
         input     => [$start, $end],
-        operation => 'random number between',
+        operation => 'Random number between',
         result    => $rand
       };
 };

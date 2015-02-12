@@ -45,7 +45,7 @@ handle query_nowhitespace_nodash => sub {
     # Tracking number.
     my $package_number = '';
 
-    # Exclsuive trigger.
+    # Exclusive trigger.
     if ($1 || $2) {
         $package_number = $1 || $2;
         $is_capost      = 2;

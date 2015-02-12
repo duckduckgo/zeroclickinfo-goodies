@@ -33,7 +33,7 @@ handle remainder => sub {
     chomp $out_str;
 
     return unless $out_str;
-    my $what = 'base64 ' . $command;
+    my $what = 'Base64 ' . $command;
 
     return ucfirst($what) . 'd: ' . $out_str,
       structured_answer => {

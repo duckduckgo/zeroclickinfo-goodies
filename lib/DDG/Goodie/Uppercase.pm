@@ -33,7 +33,7 @@ handle remainder => sub {
     return $upper,
       structured_answer => {
         input     => [html_enc($input)],
-        operation => 'uppercase',
+        operation => 'Uppercase',
         result    => html_enc($upper),
       };
 };

@@ -14,7 +14,7 @@ ddg_goodie_test(
         'd1038d2e07b42569 base 16 = 15061036807694329193 base 10',
         structured_answer => {
             input     => ['0xd1038d2e07b42569'],
-            operation => 'hex to decimal',
+            operation => 'Hex to decimal',
             result    => 15061036807694329193
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         '44696f21 base 16 = 1147760417 base 10',
         structured_answer => {
             input     => ['0x44696f21'],
-            operation => 'hex to decimal',
+            operation => 'Hex to decimal',
             result    => 1147760417,
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'ffffffffffffffffffffff base 16 = 309485009821345068724781055 base 10',
         structured_answer => {
             input     => ['0xffffffffffffffffffffff'],
-            operation => 'hex to decimal',
+            operation => 'Hex to decimal',
             result    => "309485009821345068724781055",
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         'ff base 16 = 255 base 10',
         structured_answer => {
             input     => ['0xff'],
-            operation => 'hex to decimal',
+            operation => 'Hex to decimal',
             result    => "255",
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         'ff base 16 = 255 base 10',
         structured_answer => {
             input     => ['0xff'],
-            operation => 'hex to decimal',
+            operation => 'Hex to decimal',
             result    => "255",
         }
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         'ff base 16 = 255 base 10',
         structured_answer => {
             input     => ['0xff'],
-            operation => 'hex to decimal',
+            operation => 'Hex to decimal',
             result    => "255",
         }
     ),
@@ -62,7 +62,7 @@ ddg_goodie_test(
         'ff base 16 = 255 base 10',
         structured_answer => {
             input     => ['0xff'],
-            operation => 'hex to decimal',
+            operation => 'Hex to decimal',
             result    => "255",
         }
     ),
@@ -70,7 +70,7 @@ ddg_goodie_test(
         'ff base 16 = 255 base 10',
         structured_answer => {
             input     => ['0xff'],
-            operation => 'hex to decimal',
+            operation => 'Hex to decimal',
             result    => "255",
         }
     ),

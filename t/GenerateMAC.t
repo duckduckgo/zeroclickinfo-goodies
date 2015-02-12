@@ -15,7 +15,7 @@ my @answer = (
     qr/^$text_start$mac_regxp$/,
     structured_answer => {
         input     => [],
-        operation => 'random MAC address',
+        operation => 'Random MAC address',
         result    => qr/$mac_regxp/
     });
 

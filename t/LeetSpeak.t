@@ -17,7 +17,7 @@ ddg_goodie_test(
         'Leet Speak: |-|3|_|_0 \^/0|2|_|) !',
         structured_answer => {
             input     => ['hello world !'],
-            operation => 'leet speak',
+            operation => 'Leet speak',
             result    => '|-|3|_|_0 \^/0|2|_|) !'
         }
     ),
@@ -25,7 +25,7 @@ ddg_goodie_test(
         'Leet Speak: |-|3|_|_0 \^/0|2|_|) !',
         structured_answer => {
             input     => ['hElLo WORlD !'],
-            operation => 'leet speak',
+            operation => 'Leet speak',
             result    => '|-|3|_|_0 \^/0|2|_|) !'
         }
     ),
@@ -33,7 +33,7 @@ ddg_goodie_test(
         q~Leet Speak: \^/|-|/-\'][' 15~,
         structured_answer => {
             input     => ['what is'],
-            operation => 'leet speak',
+            operation => 'Leet speak',
             result    => q~\^/|-|/-\'][' 15~,
         }
     ),
@@ -41,7 +41,7 @@ ddg_goodie_test(
         q~Leet Speak: |_33']['5|D3/-\|<~,
         structured_answer => {
             input     => ['leetspeak'],
-            operation => 'leet speak',
+            operation => 'Leet speak',
             result    => q~|_33']['5|D3/-\|<~,
         }
     ),
@@ -49,7 +49,7 @@ ddg_goodie_test(
         q~Leet Speak: /!§ ;€~,
         structured_answer => {
             input     => ['/!§ ;€'],
-            operation => 'leet speak',
+            operation => 'Leet speak',
             result    => q~/!§ ;€~,
         }
     ),

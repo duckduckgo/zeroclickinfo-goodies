@@ -70,7 +70,7 @@ handle query_lc => sub {
       structured_answer => {
         input     => [],
         result    => $phase,
-        operation => 'current lunar phase'
+        operation => 'Current lunar phase'
       };
 };
 

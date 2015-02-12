@@ -14,7 +14,7 @@ ddg_goodie_test(
         '841mm x 1189mm  (33.11in x 46.81in)',
         structured_answer => {
             input     => ['A0'],
-            operation => 'paper size',
+            operation => 'Paper size',
             result    => '841mm x 1189mm  (33.11in x 46.81in)'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         '28mm x 40mm  (1.10in x 1.57in)',
         structured_answer => {
             input     => ['C10'],
-            operation => 'paper size',
+            operation => 'Paper size',
             result    => '28mm x 40mm  (1.10in x 1.57in)'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         '31mm x 44mm  (1.22in x 1.73in)',
         structured_answer => {
             input     => ['B10'],
-            operation => 'paper size',
+            operation => 'Paper size',
             result    => '31mm x 44mm  (1.22in x 1.73in)'
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         '210mm x 279mm  (8.27in x 11in)',
         structured_answer => {
             input     => ['letter'],
-            operation => 'paper size',
+            operation => 'Paper size',
             result    => '210mm x 279mm  (8.27in x 11in)'
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         '216mm x 356mm  (8.5in x 14in)',
         structured_answer => {
             input     => ['legal'],
-            operation => 'paper size',
+            operation => 'Paper size',
             result    => '216mm x 356mm  (8.5in x 14in)'
         }
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         '203mm x 127mm  (8in x 5in)',
         structured_answer => {
             input     => ['junior legal'],
-            operation => 'paper size',
+            operation => 'Paper size',
             result    => '203mm x 127mm  (8in x 5in)'
         }
     ),
@@ -62,7 +62,7 @@ ddg_goodie_test(
         '432mm x 279mm  (17in x 11in)',
         structured_answer => {
             input     => ['ledger'],
-            operation => 'paper size',
+            operation => 'Paper size',
             result    => '432mm x 279mm  (17in x 11in)'
         }
     ),
@@ -70,7 +70,7 @@ ddg_goodie_test(
         '279mm x 432mm  (11in x 17in)',
         structured_answer => {
             input     => ['tabloid'],
-            operation => 'paper size',
+            operation => 'Paper size',
             result    => '279mm x 432mm  (11in x 17in)'
         }
     ),

@@ -44,7 +44,7 @@ sub count_words {
         qr/^random passphrase: $words_re$/,
         structured_answer => {
             input => [($count > 1) ? $count . ' words' : '1 word'],
-            operation => 'random passphrase',
+            operation => 'Random passphrase',
             result    => qr/^$words_re$/,
         });
 }

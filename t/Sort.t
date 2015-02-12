@@ -14,7 +14,7 @@ ddg_goodie_test(
         '-3, -1, 4, 5.7 (Sorted ascendingly)',
         structured_answer => {
             input     => ['-1, 4, -3, 5.7'],
-            operation => 'sort ascendingly',
+            operation => 'Sort ascendingly',
             result    => '-3, -1, 4, 5.7'
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         '-3, -1, 4, 5.7 (Sorted ascendingly)',
         structured_answer => {
             input     => ['-1, 4, -3, 5.7'],
-            operation => 'sort ascendingly',
+            operation => 'Sort ascendingly',
             result    => '-3, -1, 4, 5.7'
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         '-3, -1, 4, 5.7 (Sorted ascendingly)',
         structured_answer => {
             input     => ['-1, 4, -3, 5.7'],
-            operation => 'sort ascendingly',
+            operation => 'Sort ascendingly',
             result    => '-3, -1, 4, 5.7'
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         '66, 15, 1, 0.5, -4.4, -55 (Sorted descendingly)',
         structured_answer => {
             input     => ['-4.4, 0.5, 1, 66, 15, -55'],
-            operation => 'sort descendingly',
+            operation => 'Sort descendingly',
             result    => '66, 15, 1, 0.5, -4.4, -55'
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         '66, 15, 1, 0.5, 0.002, -4.4, -55 (Sorted descendingly)',
         structured_answer => {
             input     => ['-4.4, 0.5, 1, 66, 0.002, 15, -55'],
-            operation => 'sort descendingly',
+            operation => 'Sort descendingly',
             result    => '66, 15, 1, 0.5, 0.002, -4.4, -55'
         }
     ),
@@ -54,7 +54,7 @@ ddg_goodie_test(
         '-10, -3, 10, 56 (Sorted ascendingly)',
         structured_answer => {
             input     => ['-3, -10, 56, 10'],
-            operation => 'sort ascendingly',
+            operation => 'Sort ascendingly',
             result    => '-10, -3, 10, 56'
         }
     ),
@@ -62,7 +62,7 @@ ddg_goodie_test(
         '10, 5.3, 1, -1, -95 (Sorted descendingly)',
         structured_answer => {
             input     => ['10, -1, 5.3, -95, 1'],
-            operation => 'sort descendingly',
+            operation => 'Sort descendingly',
             result    => '10, 5.3, 1, -1, -95'
         }
     ),
@@ -70,7 +70,7 @@ ddg_goodie_test(
         '100, 10, 5.3, 1, -1, -95 (Sorted descendingly)',
         structured_answer => {
             input     => ['10, -1, 5.3, -95, 1, 100'],
-            operation => 'sort descendingly',
+            operation => 'Sort descendingly',
             result    => '100, 10, 5.3, 1, -1, -95'
         }
     ),

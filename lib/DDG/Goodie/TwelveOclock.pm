@@ -53,7 +53,7 @@ handle query => sub {
     return $answer,
       structured_answer => {
         input     => [],
-        operation => 'midnight or noon',
+        operation => 'Midnight or noon',
         result    => $answer
       };
 };
