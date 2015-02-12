@@ -367,3 +367,5 @@ for my $chord (keys %chord_lists) {
         $chord_lists{$same_chord} = $chord_lists{$chord}; # copy
     }
 }
+
+1;
