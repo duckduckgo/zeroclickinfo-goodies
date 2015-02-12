@@ -4,7 +4,6 @@ package DDG::Goodie::Minecraft;
 use strict;
 use DDG::Goodie;
 use JSON;
-use URI::Escape::XS;
 
 triggers startend => "minecraft";
 
@@ -55,7 +54,7 @@ handle remainder => sub {
     return $plaintext,
     structured_answer => {
         id => 'goodie_template_custom',
-        name => 'Software',
+        name => 'Minecraft',
         meta => {
             sourceName => 'duckduckgo.com',
             sourceUrl => 'http://duckduckgo.com'
@@ -64,7 +63,7 @@ handle remainder => sub {
             title => $recipe->{'name'},
             subtitle => "Ingredients: " . $recipe->{'ingredients'},
             description => $recipe->{'description'},
-            image => 'https://duckduckgo.com/iu/?u=' . encodeURIComponent( $recipe->{'image'} )
+            image => 'https://duckduckgo.com/iu/?u=' . uri_esc( $recipe->{'image'} )
         },
         templates => {
             group => 'info',

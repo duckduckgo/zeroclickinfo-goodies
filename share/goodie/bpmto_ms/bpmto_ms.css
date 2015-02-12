@@ -1,45 +1,47 @@
-@media (max-width: 300px) {    
-    .bpmto_ms table td {
-        word-wrap: break-word;
-    }
+.zci--bpmto_ms .tile--bpmto_ms {
+    width: 15em;
 }
 
-@media (min-width: 400px) {
-    .bpmto_ms table {
-        table-layout: fixed;
-        width: 100%;
-    }
-
-    .bpmto_ms table td {
-        word-wrap: break-word;
-    }
+.zci--bpmto_ms .tile__media {
+    height: 9em;
+    width: 9em;
+    border-radius: 100%;
+    margin: 0px auto;
+    margin-top: 1em;
 }
 
-.bpmto_ms .maintable td {
-    width:12.5%;
-    white-space: nowrap;
+.zci--bpmto_ms .note {
+    text-align: center;
+    font-size: 1.2em;
 }
 
-.zci--answer .bpmto_ms .zci__more-at {
-    padding-top: 0;
+.zci--bpmto_ms .image_wrap {
+    background: #F2F2F2;
+    border-radius: 100%;
+    text-align: center;
+    margin: 1em auto;
+    width: 7em;
 }
 
-.bpmto_ms .record > td {
-    padding: 0.4em;
-    padding-left: 0;
-    border-top: solid 1px #DDD;
-    border-bottom: 0;
+.zci--bpmto_ms .music-note {
+    font-size: 5em;
 }
 
-.zci.zci--answer {
-    padding-bottom: 0.5em;
+.zci--bpmto_ms p.zci__caption {
+    text-align: center;
+    padding-bottom: 0;
 }
 
-.bpmto_ms .record .numbers {
-    text-align: right;
+.zci--bpmto_ms .seperator {
+    width: 75%;
+    border-bottom: 1px solid #F7F7F7;
+    margin: 1em auto;
 }
 
-.bpmto_ms .record .record__cell__key {
-    text-transform: capitalize;
-    width: 150px;
+
+.zci--bpmto_ms .variation {
+    color: #aaa;
+    clear: both;
+    max-width: 75%;
+    margin: 0 auto;
 }
