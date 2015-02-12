@@ -37,13 +37,13 @@ handle remainder => sub {
     my @dotted_values = map { int( $dotted_whole_note / ($bpm * $_) + 0.5) } @divisors;
 
 
-    my $plaintext = "$bpm bpm in milliseconds: 
-    Whole Note: " . $straight_values[0] . ", Triplet: " . $triplet_values[0] . ", Dotted: " . $dotted_values[0] . "
-    Half Note: " . $straight_values[1] . ", Triplet: " . $triplet_values[1] . ", Dotted: " . $dotted_values[1] . "
-    Quarter Note: " . $straight_values[2] . ", Triplet: " . $triplet_values[2] . ", Dotted: " . $dotted_values[2] . "
-    1/8 Note: " . $straight_values[3] . ", Triplet: " . $triplet_values[3] . ", Dotted: " . $dotted_values[3] . "
-    1/16 Note: " . $straight_values[4] . ", Triplet: " . $triplet_values[4] . ", Dotted: " . $dotted_values[4] . "
-    1/32 Note: " . $straight_values[5] . ", Triplet: " . $triplet_values[5] . ", Dotted: " . $dotted_values[5];
+    my $plaintext = "$bpm bpm in milliseconds:";
+    $plaintext .= "\nWhole Note: $straight_values[0], Triplet: $triplet_values[0], Dotted: $dotted_values[0]";
+    $plaintext .= "\nHalf Note: $straight_values[1], Triplet: $triplet_values[1], Dotted: $dotted_values[1]";
+    $plaintext .= "\nQuarter Note: $straight_values[2], Triplet: $triplet_values[2], Dotted: $dotted_values[2]";
+    $plaintext .= "\n1/8 Note: $straight_values[3], Triplet: $triplet_values[3], Dotted: $dotted_values[3]";
+    $plaintext .= "\n1/16 Note: $straight_values[4], Triplet: $triplet_values[4], Dotted: $dotted_values[4]";
+    $plaintext .= "\n1/32 Note: $straight_values[5], Triplet: $triplet_values[5], Dotted: $dotted_values[5]";
 
     my @items;
 
@@ -57,16 +57,10 @@ handle remainder => sub {
         push @items, \%result;
     };
 
-    warn p(@items);
-
     return $plaintext,
         structured_answer => {
             id => 'bpmto_ms',
             name => 'Music',
-            meta => {
-                sourceName => undef,
-                sourceUrl => undef
-            },
             data => \@items,
             templates => {
                 group => 'base',
