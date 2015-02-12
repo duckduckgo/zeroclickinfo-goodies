@@ -2,6 +2,8 @@
 
 use strict;
 use warnings;
+use utf8;
+
 use Test::More;
 use Test::MockTime qw( :all );
 use DDG::Test::Goodie;
@@ -122,6 +124,20 @@ ddg_goodie_test(
     'Hebrew holidays 2017' => get_test('Purim: 12 March, Passover: 11 April, Shavuot: 31 May, ' .
         'Rosh Hashanah: 21 September, Yom Kippur: 30 September, Sukkot: 5 October, Hanukkah: 13 December',
         '2017', 'Hebrew Holidays'),
+        
+    'thanksgiving 2015' => get_test('United States: 26 November, Canada: 12 October', '2015', 'Thanksgiving'),
+    'labor day 2015' => get_test('7 September', '2015', 'Labor Day (United States)'),
+    'Columbus Day date' => get_test('14 October', '2013', 'Columbus Day (United States)'),
+    '2015 Memorial Day' => get_test('25 May', '2015', 'Memorial Day (United States)'),
+    '2015 Presidents\' Day' => get_test('16 February', '2015', 'Presidents\' Day (United States)'),
+    'Martin Luther King Day 2015' => get_test('19 January', '2015', 'Martin Luther King Day (United States)'),
+    
+    '成人の日 2015' => get_test('12 January', '2015', '成人の日 (Japan)'), # https://en.wikipedia.org/wiki/Coming_of_Age_Day
+    'coming of age day 2017' => get_test('9 January', '2017', 'Coming of Age Day (Japan)'),
+    
+    'Programmers\' Day 2015' => get_test('13 September', '2015', 'Programmers\' Day'),
+    'Programmer Day 2016' => get_test('12 September', '2016', 'Programmer Day'),
+    'Programmer\'s Day 2017' => get_test('13 September', '2017', 'Programmer\'s Day'),
 
     'easter' => undef,
     'easter 123' => undef,
