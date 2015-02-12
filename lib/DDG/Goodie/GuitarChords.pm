@@ -30,10 +30,14 @@ handle remainder => sub
 {
     if (my $c //= check_chord($_))
     {
+        my $f = $c;
+        # filenames use '_' instead of parenthesies
+        $f =~ s/[\(\)]/_/g;
+
         return
             heading => "$c",
-            html => "<div class='text--secondary'>Guitar chord diagram for $c</div>" . get_chord_img($c),
-            answer => "$c";
+            answer => "$c",
+            html => "<div class='text--secondary'>Guitar chord diagram for $c</div>" . get_chord_img($f);
     }
     return;
 };

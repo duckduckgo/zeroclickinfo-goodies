@@ -35,7 +35,12 @@ ddg_goodie_test(
             'Db7sus4',
             heading=>'Db7sus4',
             html => qr#.*Guitar chord diagram for Db7sus4.*#s
-    )
+    ),
+    # check that certain things don't trigger it:
+    'C# programming' => undef,
+    'C programming' => undef,
+    'D programming' => undef,
+    'G' => undef
 );
 
 done_testing;
