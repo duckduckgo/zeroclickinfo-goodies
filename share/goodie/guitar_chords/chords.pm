@@ -350,3 +350,20 @@
     'Badd9'      => 'x24422',
 );
 
+my %synonyms = (
+    'C#' => 'Db',
+    'Eb' => 'D#',
+    'F#' => 'Gb',
+    'G#' => 'Ab',
+    'Bb' => 'A#',
+);
+
+my $synonyms_re = qr<^([CFG]\#|[EB]b)>;
+
+for my $chord (keys %chord_lists) {
+    if ($chord =~ $synonyms_re) {
+        my $match = $1;
+        (my $same_chord = $chord) =~ s/^$match/$synonyms{$match}/;
+        $chord_lists{$same_chord} = $chord_lists{$chord}; # copy
+    }
+}

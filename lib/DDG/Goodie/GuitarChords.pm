@@ -7,7 +7,7 @@ with 'DDG::GoodieRole::ImageLoader';
 # guitar script is stored in share directory
 # including this way, because it limits duplicated code
 my $g = share("chords.pm");
-require "$g";
+do "$g";
 our %chord_lists; #from chords.pm
 
 zci answer_type => 'guitarchord';
@@ -41,18 +41,16 @@ handle remainder => sub
 sub check_chord
 {
     if ($_[0] =~ /(?<a>[a-gA-G])(?<b>#|b)?(?<c>dim|min|maj|add|aug|m|M)?(?<d>M|maj|m|min)?(?<e>[0-9])?\s*(?<f>(#|b)?[0-9]+)?/) {
-        my ($a,$b,$c,$d,$e,$f,$r) = "";
+        my ($a,$b,$c,$d,$e,$f,$r);
         $a = uc($+{'a'});
-        if ($+{'b'}) {
-            $b = $+{'b'} if $+{'b'};
+        $b = $+{'b'} if $+{'b'};
+        if ($c = $+{'c'}) {
+            $c = 'm' if ($c =~ /^min$/);
+            $c = 'M' if ($c =~ /^maj$/);
         }
-        if (my $m = $+{'c'}) {
-            $c = 'm' if ($m =~ /^(min|m)$/);
-            $c = 'M' if ($m =~ /^(maj|M)$/);
-        }
-        if (my $m = $+{'d'}) {
-            $d = 'm' if ($m =~ /^(min|m)$/);
-            $d = 'M' if ($m =~ /^(maj|M)$/);
+        if ($d = $+{'d'}) {
+            $d = 'm' if ($d =~ /^min$/);
+            $d = 'M' if ($d =~ /^maj$/);
         }
         $e = $+{'e'} if $+{'e'};
         $f = '('.$+{'f'}.')' if $+{'f'};
