@@ -40,7 +40,7 @@ handle remainder => sub
 
 sub check_chord
 {
-    if ($_[0] =~ /(?<a>[a-gA-G])(?<b>#|b)?(?<c>dim|min|maj|add|aug|m|M)?(?<d>M|maj|m|min)?(?<e>[0-9])?\s*(?<f>(#|b)?[0-9]+)?/) {
+    if ($_[0] =~ /(?<a>[a-gA-G])(?<b>#|b)?(?<c>dim|min|maj|add|aug|m|M)?(?<d>M|maj|m|min)?(?<e>[0-9])?(\/(?<f>(#|b)?[0-9]+))?/) {
         my ($a,$b,$c,$d,$e,$f,$r);
         $a = uc($+{'a'});
         $b = $+{'b'} if $+{'b'};
