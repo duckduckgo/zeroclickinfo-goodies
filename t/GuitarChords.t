@@ -20,6 +20,21 @@ ddg_goodie_test(
             'Abaug7',
             heading=>'Abaug7',
             html => qr#.*Guitar chord diagram for Abaug7.*#s
+    ),
+    'A7/b9 guitar chord' => test_zci(
+            'A7(b9)',
+            heading=>'A7(b9)',
+            html => qr#.*Guitar chord diagram for A7\(b9\).*#s
+    ),
+    'guitar chord Cm7' => test_zci(
+            'Cm7',
+            heading=>'Cm7',
+            html => qr#.*Guitar chord diagram for Cm7.*#s
+    ),
+    'guitar chord Db7sus4' => test_zci(
+            'Db7sus4',
+            heading=>'Db7sus4',
+            html => qr#.*Guitar chord diagram for Db7sus4.*#s
     )
 );
 
