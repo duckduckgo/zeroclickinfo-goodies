@@ -53,12 +53,8 @@ handle remainder => sub {
 
     return $plaintext,
     structured_answer => {
-        id => 'goodie_template_custom',
+        id => 'minecraft',
         name => 'Minecraft',
-        meta => {
-            sourceName => 'duckduckgo.com',
-            sourceUrl => 'http://duckduckgo.com'
-        },
         data => {
             title => $recipe->{'name'},
             subtitle => "Ingredients: " . $recipe->{'ingredients'},
