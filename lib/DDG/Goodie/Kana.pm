@@ -1,8 +1,7 @@
 package DDG::Goodie::Kana;
-# ABSTRACT: Convert katakana, hiragan or romaji texts between each other
+# ABSTRACT: Convert katakana, hiragana or romaji texts between each other
 
-use utf8;
-use DDG::Goodie;
+use utf8; use DDG::Goodie;
 use Lingua::JA::Moji qw/
     is_kana
     is_romaji
@@ -37,29 +36,43 @@ my %dispatch = (
     'romaji'   => \&to_romaji
 );
 
-my $jp_punc = 'ー、。！？〜・「」｢｣『』〽0123456789';
+my $jp_punc = '｛｝（）［］【】、，…。・「」『』〜：！？0123456789 ';
+my $punc = '{}()[][],,….•\'\'""~:!?0123456789 ';
 
-sub trim_jp_punc {
+sub trim_punc {
     local $_ = shift @_;
-    s/[\Q$jp_punc\E]//g;
+    my $punc = shift @_;
+    s/[\Q$punc\E]//g;
     return $_;
 };
 
+sub punc_from_jp {
+    local $_ = shift @_;
+    eval "tr/$jp_punc/$punc/";
+    return $_;
+}
+
+sub punc_to_jp {
+    local $_ = shift @_;
+    eval "tr/$punc/$jp_punc/";
+    return $_;
+}
 sub to_hiragana {
     my $text = shift @_;
-    return kata2hira($text) if is_kana(trim_jp_punc($text));
-    return romaji2hiragana($text, { ime => 1 }) if is_romaji($text);
+    return kata2hira($text) if is_kana(trim_punc($text, $jp_punc));
+    return romaji2hiragana(punc_to_jp($text), { ime => 1 }) if is_romaji(trim_punc($text, $punc));
 };
 
 sub to_katakana {
     my $text = shift @_;
-    return hira2kata($text) if is_kana(trim_jp_punc($text));
-    return romaji2kana($text, { ime => 1 }) if is_romaji($text);
+    return hira2kata($text) if is_kana(trim_punc($text, $jp_punc));
+    return romaji2kana(punc_to_jp($text), { ime => 1 }) if is_romaji(trim_punc($text, $punc));
 };
 
 sub to_romaji {
     my $text = shift @_;
-    kana2romaji($text, {style => 'hepburn', wo => 1}) if is_kana(trim_jp_punc($text));
+    my $romaji = kana2romaji($text, {style => 'hepburn', wo => 1}) if is_kana(trim_punc($text, $jp_punc));
+    punc_from_jp($romaji);
 };
 
 handle query_lc => sub {
@@ -67,7 +80,11 @@ handle query_lc => sub {
     my $syll = $+{syll};
     my $answer = $dispatch{$syll}($text);
     return unless $answer;
-    return $answer;
+
+    my $html = '<div>';
+    $html .= '<div class="zci__caption">' . ucfirst $syll . '</div>';
+    $html .= '<div class="zci__content">' . $answer . '</div>';
+    return ucfirst $syll . ": $answer", html => $html;
 };
 
 1;
