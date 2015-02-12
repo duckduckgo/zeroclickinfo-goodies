@@ -57,7 +57,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'programming';
 attribution  cpan   => 'CRZEDPSYC',
-             github => ['mintsoft', 'Rob Emery'];
+             github => ['http://github.com/mintsoft', 'Rob Emery'];
 
 my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
 my %trigger_filler = map { $_ => 1 } (qw( code ));
