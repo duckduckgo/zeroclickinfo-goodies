@@ -4,7 +4,6 @@ package DDG::Goodie::Minecraft;
 use strict;
 use DDG::Goodie;
 use JSON;
-use utf8;
 use URI::Escape::XS;
 
 triggers startend => "minecraft";
@@ -37,26 +36,6 @@ my %good_words = map { $_ => 1 } map { split /\s+/ } (keys %recipes);
 my %okay_words = map { $_ => 1 } (qw(a crafting));
 my %bad_words = map { $_ => 1 } (qw(download server tutorial mod mods skins skin texture pack packs project projects));
 
-# Creates the HTML.
-sub make_html {
-    my ($recipe) = @_;
-    my $html = '';
-    my $uri = 'https://duckduckgo.com/iu/?u=' . encodeURIComponent($recipe->{'image'});
-
-    $html = '<div id="minecraft-wrapper">';
-    $html .= '<h3>' . $recipe->{'name'} . '</h3>';
-    $html .= '<div id="minecraft-recipe" style="float: left; width: 50%;">';
-    $html .= '<p>' . $recipe->{'description'} . '</p>';
-    $html .= '<p>Ingredients: ' . $recipe->{'ingredients'} . '</p>';
-    $html .= '</div>';
-    $html .= '<div id="minecraft-recipe-image" style="float: right; width: 40%;">';
-    $html .= '<img src="' . $uri . '" />';
-    $html .= '</div>';
-    $html .= '</div>';
-
-    return $html;
-}
-
 handle remainder => sub {
     my @query = split /\s+/, lc $_; # Split on whitespaces.
     my @lookup;
@@ -71,9 +50,29 @@ handle remainder => sub {
     return unless $recipe;
 
     # Recipe found, let's return an answer.
-    my $plain = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
-    my $html = make_html($recipe);
+    my $plaintext = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
 
-    return $plain, html => $html;
+    return $plaintext,
+    structured_answer => {
+        id => 'goodie_template_custom',
+        name => 'Software',
+        meta => {
+            sourceName => 'duckduckgo.com',
+            sourceUrl => 'http://duckduckgo.com'
+        },
+        data => {
+            title => $recipe->{'name'},
+            subtitle => "Ingredients: " . $recipe->{'ingredients'},
+            description => $recipe->{'description'},
+            image => 'https://duckduckgo.com/iu/?u=' . encodeURIComponent( $recipe->{'image'} )
+        },
+        templates => {
+            group => 'info',
+            options => {
+                moreAt => 1
+            }
+        }
+    };
 };
+
 1;
