@@ -11,7 +11,8 @@ primary_example_queries "pi 7";
 description "Ex. returns 3.1415926";
 
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Pi.pm";
-attribution github => ["https://github.com/puskin94", "puskin94"];
+attribution github => ["https://github.com/puskin94", "puskin94"],
+            github => ["https://github.com/jmvbxx", "jmvbxx"];
 
 
 triggers startend => "pi", "digits of pi";
@@ -23,12 +24,14 @@ my $PI = '3.14159265358979323846264338327950288419716939937510582097494459230781
         '4428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273'.
         '724587006606315588174881520920962829254091715364367892590360011330530548820466521384146951941511609';
 
+my $PI_max_digits = length($PI);
+
 # Handle statement
 handle remainder => sub {
 
     my $decimal = $_;
 
-    return unless $decimal && $decimal =~ /^(\d+)$/ && $decimal > 0 && $decimal < length($PI);
+    return unless $decimal && $decimal =~ /^(\d+)$/ && $decimal > 0 && $decimal < $PI_max_digits;
 
     my $answer = substr $PI, 0, ( $decimal + 2 );
 
