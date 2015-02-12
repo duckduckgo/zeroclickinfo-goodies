@@ -11,7 +11,7 @@ primary_example_queries "pi 7";
 description "Ex. returns 3.1415926";
 
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Pi.pm";
-attribution github => ["https://github.com/jmvbxx", "jmvbxx"];
+attribution github => ["https://github.com/puskin94", "puskin94"];
 
 
 triggers startend => "pi", "digits of pi";
@@ -28,7 +28,7 @@ handle remainder => sub {
 
     my $decimal = $_;
 
-    return unless $decimal && $decimal =~ /^(\d+)$/ && $decimal > 0 && $decimal < 400;
+    return unless $decimal && $decimal =~ /^(\d+)$/ && $decimal > 0 && $decimal < length($PI);
 
     my $answer = substr $PI, 0, ( $decimal + 2 );
 
