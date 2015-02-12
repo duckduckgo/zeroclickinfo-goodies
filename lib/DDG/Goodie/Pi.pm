@@ -13,8 +13,7 @@ description "Ex. returns 3.1415926";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Pi.pm";
 attribution github => ["https://github.com/jmvbxx", "jmvbxx"];
 
-# Triggers
-#triggers query => qr/(\d+) digits of pi|pi to (\d+) digits/;
+
 triggers startend => "pi", "digits of pi";
 
 # $PI has 399 decimals
