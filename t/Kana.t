@@ -24,7 +24,7 @@ ddg_goodie_test(
     'nihon no daigaku! to hiragana' => test_zci(
         'nihon no daigaku! converted to hiragana is にほん の だいがく！',
         structured_answer => {
-            input     => ['ahiru'],
+            input     => ['nihon no daigaku!'],
             operation => 'in hiragana from',
             result    => 'にほん の だいがく！'
         }
@@ -58,11 +58,11 @@ ddg_goodie_test(
         }
     ),
     'キリン、 バナナ in romaji' => test_zci(
-        'キリン、 バナナ converted to romaji is kiran, banana',
+        'キリン、 バナナ converted to romaji is kirin, banana',
         structured_answer => {
             input     => ['キリン、 バナナ'],
             operation => 'in romaji from',
-            result    => 'kiran, banana'
+            result    => 'kirin, banana'
         }
     ),
 
@@ -78,15 +78,15 @@ ddg_goodie_test(
     'すみません、 いま なんじ ですか。 to romaji' => test_zci(
         'すみません、 いま なんじ ですか。 converted to romaji is sumimasen, ima nanji desuka.',
         structured_answer => {
-            input     => ['すみません、 いまなんじですか。'],
+            input     => ['すみません、 いまなんじ ですか。'],
             operation => 'in romaji from',
             result    => 'sumimasen, ima nanji desuka.'
         }
     ),
 
-    # katakana -> hiragana
+    # hiragana -> katakana
     'はつしぐれさるもこみのをほしげなり to katakana' => test_zci(
-        'はつしぐれさるもこみのをほしげなり converted to hiragana is ハツシグレサルモコミノヲホシゲナリ',
+        'はつしぐれさるもこみのをほしげなり converted to katakana is ハツシグレサルモコミノヲホシゲナリ',
         structured_answer => {
             input     => ['はつしぐれさるもこみのをほしげなり'],
             operation => 'in katakana from',
@@ -94,9 +94,9 @@ ddg_goodie_test(
         }
     ),
 
-    # hiragana -> katakana
+    # katakana -> hirgana
     'ハツシグレサルモコミノヲホシゲナリ to hiragana' => test_zci(
-        'ハツシグレサルモコミノヲホシゲナリ converted to katakana is はつしぐれさるもこみのをほしげなり',
+        'ハツシグレサルモコミノヲホシゲナリ converted to hiragana is はつしぐれさるもこみのをほしげなり',
         structured_answer => {
             input     => ['ハツシグレサルモコミノヲホシゲナリ'],
             operation => 'in hiragana from',
@@ -162,7 +162,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['tsukue no ue'],
             operation => 'in hiragana from',
-            result    => 'につくえ の うえ'
+            result    => 'つくえ の うえ'
         }
     ),
 
