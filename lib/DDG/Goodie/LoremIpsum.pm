@@ -15,10 +15,8 @@ attribution github => ["https://github.com/jee1mr", "Jeevan M R"],
 
 
 triggers any => "lorem ipsum", "lipsum";
-
+my $text = Text::Lorem->new();
 handle remainder => sub {
-    
-    my $text = Text::Lorem->new();
     return $text->paragraphs($_) if $_ && $_ =~ /^\d{10}$/; 
     return $text->paragraphs(4);
 };
