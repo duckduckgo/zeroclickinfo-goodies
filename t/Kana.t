@@ -134,7 +134,7 @@ ddg_goodie_test(
             result    => 'こんにちわ'
         }
     ),
-    'nihon hiragana' => test_zci('1'
+    'nihon hiragana' => test_zci('1',
         structured_answer => {
             input     => ['nihon'],
             operation => 'in hiragana from',
@@ -160,7 +160,6 @@ ddg_goodie_test(
     'ho abc hi to hiragana' => undef,
     'えego to romaji'       => undef,
     'ハ.ツha.tsu in romaji' => undef,
-
 );
 
 done_testing;
