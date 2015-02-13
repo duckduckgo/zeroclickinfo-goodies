@@ -81,9 +81,12 @@ handle query_lc => sub {
         (?: to| in)?\s+
         (?<syll>hiragana|katakana|romaji)
         $/x;
+
     my $text = $+{text};
     my $syll = $+{syll};
+    $text =~ s/^\s+|\s+$//g;
     my $answer = $dispatch{$syll}($text);
+
     return unless $answer;
     return "$text converted to $syll is $answer",
         structured_answer => {
