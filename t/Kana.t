@@ -20,11 +20,11 @@ ddg_goodie_test(
             result    => 'あひる'
         }
     ),
-    'nihon no daigaku!' => test_zci('1',
+    'nihon no daigaku! to hiragana' => test_zci('1',
         structured_answer => {
             input     => ['ahiru'],
             operation => 'in hiragana from',
-            result    => 'にほんのだいがく！'
+            result    => 'にほん の だいがく！'
         }
     ),
 
@@ -54,7 +54,7 @@ ddg_goodie_test(
     ),
     'キリン、 バナナ in romaji' => test_zci('1',
         structured_answer => {
-            input     => ['キリン、バナナ'],
+            input     => ['キリン、 バナナ'],
             operation => 'in romaji from',
             result    => 'kiran, banana'
         }
@@ -70,7 +70,7 @@ ddg_goodie_test(
     ),
     'すみません、 いま なんじ ですか。 to romaji' => test_zci('1',
         structured_answer => {
-            input     => ['すみません、いまなんじですか。'],
+            input     => ['すみません、 いまなんじですか。'],
             operation => 'in romaji from',
             result    => 'sumimasen, ima nanji desuka.'
         }
@@ -127,7 +127,7 @@ ddg_goodie_test(
             result    => 'あ'
         }
     ),
-    'hiragana konnichiwa'  => test_zci('1',
+    'konnichiwa hiragana'  => test_zci('1',
         structured_answer => {
             input     => ['konnichiwa'],
             operation => 'in hiragana from',
