@@ -14,7 +14,7 @@ ddg_goodie_test(
 
     # romaji -> hiragana
     'ahiru in hiragana' => test_zci(
-        'ahiru in hiragana converted to hiragana is あひる',
+        'ahiru converted to hiragana is あひる',
         structured_answer => {
             input     => ['ahiru'],
             operation => 'in hiragana from',
@@ -78,7 +78,7 @@ ddg_goodie_test(
     'すみません、 いま なんじ ですか。 to romaji' => test_zci(
         'すみません、 いま なんじ ですか。 converted to romaji is sumimasen, ima nanji desuka.',
         structured_answer => {
-            input     => ['すみません、 いまなんじ ですか。'],
+            input     => ['すみません、 いま なんじ ですか。'],
             operation => 'in romaji from',
             result    => 'sumimasen, ima nanji desuka.'
         }
