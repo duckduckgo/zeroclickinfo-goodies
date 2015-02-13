@@ -36,43 +36,50 @@ ddg_goodie_test(
                     note_type => "Whole Note",
                     triplet => 1333,
                     dotted => 3000,
-                    milliseconds => 2000
+                    milliseconds => 2000,
+                    image => qr/.+/
                 },
                 {
                     note_type => "Half Note",
                     triplet => 667,
                     dotted => 1500,
-                    milliseconds => 1000
+                    milliseconds => 1000,
+                    image => qr/.+/
                 },
                 {
                     note_type => "Quarter Note",
                     triplet => 333,
                     dotted => 750,
-                    milliseconds => 500
+                    milliseconds => 500,
+                    image => qr/.+/
                 },
                 {
                     note_type => "1/8 Note",
                     triplet => 167,
                     dotted => 375,
-                    milliseconds => 250
+                    milliseconds => 250,
+                    image => qr/.+/
                 },
                 {
                     note_type => "1/16 Note",
                     triplet => 83,
                     dotted => 188,
-                    milliseconds => 125
+                    milliseconds => 125,
+                    image => qr/.+/
                 },
                 {
                     note_type => "1/32 Note",
                     triplet => 42,
                     dotted => 94,
-                    milliseconds => 63
+                    milliseconds => 63,
+                    image => qr/.+/
                 }
             ],
             id => "bpmto_ms",
             name => "Music",
             templates => {
                 group => "base",
+                detail => 0,
                 options => {
                     content => "DDH.bpmto_ms.content"
                 }
@@ -87,44 +94,51 @@ ddg_goodie_test(
                 {
                     note_type => "Whole Note",
                     triplet => 2623,
+                    dotted => 5902,
                     milliseconds => 3934,
-                    dotted => 5902
+                    image => qr/.+/
                 },
                 {
                     note_type => "Half Note",
                     triplet => 1311,
+                    dotted => 2951,
                     milliseconds => 1967,
-                    dotted => 2951
+                    image => qr/.+/
                 },
                 {
                     note_type => "Quarter Note",
                     triplet => 656,
+                    dotted => 1475,
                     milliseconds => 984,
-                    dotted => 1475
+                    image => qr/.+/
                 },
                 {
                     note_type => "1/8 Note",
                     triplet => 328,
+                    dotted => 738,
                     milliseconds => 492,
-                    dotted => 738
+                    image => qr/.+/
                 },
                 {
                     note_type => "1/16 Note",
                     triplet => 164,
+                    dotted => 369,
                     milliseconds => 246,
-                    dotted => 369
+                    image => qr/.+/
                 },
                 {
                     note_type => "1/32 Note",
                     triplet => 82,
+                    dotted => 184,
                     milliseconds => 123,
-                    dotted => 184
+                    image => qr/.+/
                 }
             ],
             id => "bpmto_ms",
             name => "Music",
             templates => {
                 group => "base",
+                detail => 0,
                 options => {
                     content => "DDH.bpmto_ms.content"
                 }
