@@ -14,20 +14,40 @@ ddg_goodie_test(
         'DDG::Goodie::Kana'
     ],
     'ahiru in hiragana' => test_zci('1',
-        html => '<div><div class="zci__caption">Hiragana</div><div class="zci__content">あひる</div>',
+        structured_answer => {
+            input     => ['ahiru'],
+            operation => 'in hiragana from',
+            result    => 'あひる'
+        }
     ),
     'ahiru in katakana' => test_zci('1',
-        html => '<div><div class="zci__caption">Katakana</div><div class="zci__content">アヒル</div>',
+        structured_answer => {
+            input     => ['ahiru'],
+            operation => 'in katakana from',
+            result    => "アヒル"
+        }
     ),
     'アヒル to romaji' => test_zci('1',
-        html => '<div><div class="zci__caption">Romaji</div><div class="zci__content">ahiru</div>',
-    )
+        structured_answer => {
+            input     => ['アヒル'],
+            operation => 'in romaji from',
+            result    => 'ahiru'
+        }
+    ),
     'あひる in romaji' => test_zci('1',
-        html => '<div><div class="zci__caption">Romaji</div><div class="zci__content">ahiru</div>',
-    )
+        structured_answer => {
+            input     => ['あひる'],
+            operation => 'in romaji from',
+            result    => 'ahiru'
+        }
+    ),
     '「みかん,りんご」 to romaji' => test_zci('1',
-        html => '<div><div class="zci__caption">Romaji</div><div class="zci__content">\'mikan,ringo\'<div>',
-    )
+        structured_answer => {
+            input     => ['「みかん,りんご」'],
+            operation => 'in romaji from',
+            result    => '\'mikan,ringo\''
+        }
+    ),
 );
 
 done_testing;
