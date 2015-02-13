@@ -85,11 +85,12 @@ handle query_lc => sub {
     my $syll = $+{syll};
     my $answer = $dispatch{$syll}($text);
     return unless $answer;
-
-    my $html = '<div>';
-    $html .= '<div class="zci__caption">' . ucfirst $syll . '</div>';
-    $html .= '<div class="zci__content">' . $answer . '</div>';
-    return ucfirst $syll . ": $answer", html => $html;
+    return "$text converted to $syll is $answer",
+        structured_answer => {
+            input     => [$text],
+            operation => "in $syll from",
+            result    => $answer
+        };
 };
 
 1;
