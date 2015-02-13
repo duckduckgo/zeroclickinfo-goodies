@@ -26,6 +26,7 @@ handle remainder => sub {
     return unless $_ =~ /^\d+$/i; # Only integer values accepted
 
     my @note_names = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
+    my @image_names = ( "whole.svg", "half.svg", "quarter.svg", "8th.svg", "16th.svg", "32nd.svg" );
 
     # The basic note lengths for each category
     my $straight_whole_note = 240000;
@@ -52,7 +53,8 @@ handle remainder => sub {
             note_type => $note_names[$i],
             milliseconds => $straight_values[$i],
             triplet => $triplet_values[$i],
-            dotted => $dotted_values[$i]
+            dotted => $dotted_values[$i],
+            image => scalar share($image_names[$i])->slurp,
         );
         push @items, \%result;
     };
@@ -64,6 +66,7 @@ handle remainder => sub {
             data => \@items,
             templates => {
                 group => 'base',
+                detail => 0,
                 options => {
                     content => 'DDH.bpmto_ms.content',
                 }

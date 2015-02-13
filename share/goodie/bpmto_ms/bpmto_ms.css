@@ -1,5 +1,5 @@
 .zci--bpmto_ms .tile--bpmto_ms {
-    width: 15em;
+    width: 12em;
 }
 
 .zci--bpmto_ms .tile__media {
@@ -16,15 +16,9 @@
 }
 
 .zci--bpmto_ms .image_wrap {
-    background: #F2F2F2;
-    border-radius: 100%;
     text-align: center;
     margin: 1em auto;
     width: 7em;
-}
-
-.zci--bpmto_ms .music-note {
-    font-size: 5em;
 }
 
 .zci--bpmto_ms p.zci__caption {
@@ -34,14 +28,14 @@
 
 .zci--bpmto_ms .seperator {
     width: 75%;
-    border-bottom: 1px solid #F7F7F7;
+    border-bottom: 1px solid #e0e0e0;
     margin: 1em auto;
 }
 
-
 .zci--bpmto_ms .variation {
-    color: #aaa;
+    color: #999;
     clear: both;
     max-width: 75%;
     margin: 0 auto;
+    font-size: 1.1em;
 }
