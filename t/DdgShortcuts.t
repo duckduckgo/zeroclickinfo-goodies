@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 # This goodie always returns the same answer whenever its triggered
 my $test_zci = test_zci(
-    qr/^Open results.*Move around.*/s,
+    qr/^~ DuckDuckGo Shortcuts ~.*Open results.*Move around.*/s,
     heading => 'DuckDuckGo Shortcuts Cheat Sheet',
     html => qr#<div(.*<table class="ddg_shortcuts-table".*<tr.*<td.*</table.*)+</div>$#s,
 );
