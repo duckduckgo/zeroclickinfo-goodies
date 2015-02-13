@@ -13,14 +13,16 @@ ddg_goodie_test(
     ['DDG::Goodie::Kana'],
 
     # romaji -> hiragana
-    'ahiru in hiragana' => test_zci('1',
+    'ahiru in hiragana' => test_zci(
+        'ahiru in hiragana converted to hiragana is あひる',
         structured_answer => {
             input     => ['ahiru'],
             operation => 'in hiragana from',
             result    => 'あひる'
         }
     ),
-    'nihon no daigaku! to hiragana' => test_zci('1',
+    'nihon no daigaku! to hiragana' => test_zci(
+        'nihon no daigaku! converted to hiragana is にほん の だいがく！',
         structured_answer => {
             input     => ['ahiru'],
             operation => 'in hiragana from',
@@ -29,14 +31,16 @@ ddg_goodie_test(
     ),
 
     # romaji -> katakana
-    'ahiru in katakana' => test_zci('1',
+    'ahiru in katakana' => test_zci(
+        'ahiru converted to katakana is アヒル',
         structured_answer => {
             input     => ['ahiru'],
             operation => 'in katakana from',
             result    => 'アヒル'
         }
     ),
-    'kirin, banana to katakana' => test_zci('1',
+    'kirin, banana to katakana' => test_zci(
+        'kirin, banana converted to katakana is キリン、 バナナ',
         structured_answer => {
             input     => ['kirin, banana'],
             operation => 'in katakana from',
@@ -45,14 +49,16 @@ ddg_goodie_test(
     ),
 
     # katakana -> romaji
-    'アヒル to romaji' => test_zci('1',
+    'アヒル to romaji' => test_zci(
+        'アヒル converted to romaji is ahiru',
         structured_answer => {
             input     => ['アヒル'],
             operation => 'in romaji from',
             result    => 'ahiru'
         }
     ),
-    'キリン、 バナナ in romaji' => test_zci('1',
+    'キリン、 バナナ in romaji' => test_zci(
+        'キリン、 バナナ converted to romaji is kiran, banana',
         structured_answer => {
             input     => ['キリン、 バナナ'],
             operation => 'in romaji from',
@@ -61,14 +67,16 @@ ddg_goodie_test(
     ),
 
     # hiragana -> romaji
-    'あひる in romaji' => test_zci('1',
+    'あひる in romaji' => test_zci(
+        'あひる converted to romaji is ahiru',
         structured_answer => {
             input     => ['あひる'],
             operation => 'in romaji from',
             result    => 'ahiru'
         }
     ),
-    'すみません、 いま なんじ ですか。 to romaji' => test_zci('1',
+    'すみません、 いま なんじ ですか。 to romaji' => test_zci(
+        'すみません、 いま なんじ ですか。 converted to romaji is sumimasen, ima nanji desuka.',
         structured_answer => {
             input     => ['すみません、 いまなんじですか。'],
             operation => 'in romaji from',
@@ -77,16 +85,18 @@ ddg_goodie_test(
     ),
 
     # katakana -> hiragana
-    'はつしぐれさるもこみのをほしげなり to katakana' => test_zci('1',
+    'はつしぐれさるもこみのをほしげなり to katakana' => test_zci(
+        'はつしぐれさるもこみのをほしげなり converted to hiragana is ハツシグレサルモコミノヲホシゲナリ',
         structured_answer => {
             input     => ['はつしぐれさるもこみのをほしげなり'],
-            operation => 'in katana from',
+            operation => 'in katakana from',
             result    => 'ハツシグレサルモコミノヲホシゲナリ'
         }
     ),
 
     # hiragana -> katakana
-    'ハツシグレサルモコミノヲホシゲナリ to hiragana' => test_zci('1',
+    'ハツシグレサルモコミノヲホシゲナリ to hiragana' => test_zci(
+        'ハツシグレサルモコミノヲホシゲナリ converted to katakana is はつしぐれさるもこみのをほしげなり',
         structured_answer => {
             input     => ['ハツシグレサルモコミノヲホシゲナリ'],
             operation => 'in hiragana from',
@@ -95,7 +105,8 @@ ddg_goodie_test(
     ),
 
     # Mixed hiragana + katakana -> romaji
-    'ハンバーグ は たべもの です。' => test_zci('1',
+    'ハンバーグ は たべもの です。' => test_zci(
+        'ハンバーグ は たべもの です。 converted to romaji is hambāgu ha tabemono desu.',
         structured_answer => {
             input     => ['ハンバーグ は たべもの です。'],
             operation => 'in romaji from',
@@ -104,14 +115,16 @@ ddg_goodie_test(
     ),
 
     # Japanese puncuation -> romaji
-    '｛［（？！。、『』「」，：）］｝ to romaji' => test_zci('1',
+    '｛［（？！。、『』「」，：）］｝ to romaji' => test_zci(
+        '｛［（？！。、『』「」，：）］｝ converted to romaji is {[(?!.,""\'\',:)',
         structured_answer => {
             input     => ['｛［（？！。、『』「」，：）］｝'],
             operation => 'in romaji from',
             result    => '{[(?!.,""\'\',:)}'
         }
     ),
-    'ええ！ in romaji' => test_zci('1',
+    'ええ！ in romaji' => test_zci(
+        'ええ！ converted to romaji is ē!',
         structured_answer => {
             input     => ['ええ！'],
             operation => 'in romaji from',
@@ -120,28 +133,32 @@ ddg_goodie_test(
     ),
 
     # Hiragana goodie tests
-    'a hiragana' => test_zci('1',
+    'a hiragana' => test_zci(
+        'a converted to hiragana is あ',
         structured_answer => {
             input     => ['a'],
             operation => 'in hiragana from',
             result    => 'あ'
         }
     ),
-    'konnichiwa hiragana'  => test_zci('1',
+    'konnichiwa hiragana' => test_zci(
+        'konnichiwa converted to hiragana is こんにちわ',
         structured_answer => {
             input     => ['konnichiwa'],
             operation => 'in hiragana from',
             result    => 'こんにちわ'
         }
     ),
-    'nihon hiragana' => test_zci('1',
+    'nihon hiragana' => test_zci(
+        'nihon converted to hiragana is にほん',
         structured_answer => {
             input     => ['nihon'],
             operation => 'in hiragana from',
             result    => 'にほん'
         }
     ),
-    'tsukue no ue hiragana' => test_zci('1',
+    'tsukue no ue hiragana' => test_zci(
+        'tsukue no ue converted to hiragana is つくえ の うえ',
         structured_answer => {
             input     => ['tsukue no ue'],
             operation => 'in hiragana from',
