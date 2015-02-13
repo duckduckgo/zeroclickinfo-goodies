@@ -1,3 +1,5 @@
+~ DuckDuckGo Shortcuts ~
+
 Open results
 
 ↵ or l or o     Go to the highlighted result, or use it right away to go to the first result

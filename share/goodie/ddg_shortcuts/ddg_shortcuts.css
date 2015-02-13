@@ -5,22 +5,22 @@
 }
 
 .zci--answer .ddg_shortcuts-container {
-    max-height: 45ex;
+    max-height: 52ex;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .zci--answer .ddg_shortcuts-column {
-    width:          48%;
+    width:          45%;
     display:        inline-block;
     vertical-align: top;
 }
 
-.ddg_shortcuts-column:first-child {
-    margin-right: 1em;
+.zci--answer .ddg_shortcuts-column:first-of-type {
+    margin-right: 56px;
 }
 
-.ddg_shortcuts-column b {
+.zci--answer .ddg_shortcuts-column b {
     line-height: 220%;
 }
 
@@ -29,13 +29,18 @@
 }
 
 .zci--answer table.ddg_shortcuts-table td {
-    padding-right:  1ex;
+    padding-right:  10px;
     padding-bottom: 1ex;
     vertical-align: top;
 }
 
 .zci--answer table.ddg_shortcuts-table td code {
     white-space: nowrap;
+    padding:     3px;
+}
+
+.zci--answer table.ddg_shortcuts-table tr td:first-child {
+    width: 72px;
 }
 
 @media (max-width: 400px) {
