@@ -28,7 +28,7 @@ secondary_example_queries   'ahiru to hiragana',
 zci is_cached   => 1;
 zci answer_type => 'kana';
 
-triggers query_lc => qr/^(?<text>.*?)(?: to| in)?\s+(?<syll>hiragana|katakana|romaji)$/;
+triggers end => qw/hiragana katakana romaji/;
 
 my %dispatch = (
     'hiragana' => \&to_hiragana,
@@ -76,6 +76,11 @@ sub to_romaji {
 };
 
 handle query_lc => sub {
+    return unless /^
+        (?<text>.*?)
+        (?: to| in)?\s+
+        (?<syll>hiragana|katakana|romaji)
+        $/x;
     my $text = $+{text};
     my $syll = $+{syll};
     my $answer = $dispatch{$syll}($text);
