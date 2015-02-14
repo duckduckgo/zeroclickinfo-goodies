@@ -33,31 +33,31 @@ handle remainder => sub {
         $item =~ s/are //;
     }
     
-    my $isPlural = substr($item, -1) eq "s";
+    my $is_plural = substr($item, -1) eq "s";
     my($result);
 
     if (any {/$item/} @safe_keywords) {
         # If we know the item is safe, append the appropriate positive result.
-        if ($isPlural) {
+        if ($is_plural) {
             $result = "are";
         } else {
             $result = "is";
         }
     } elsif (any {/$item/} @unsafe_keywords) {
         # If we know the item is unsafe, append the appropriate negative result.
-        if ($isPlural) {
+        if ($is_plural) {
             $result = "are not";
         } else {
             $result = "is not";
         }
-    } elsif (!$isPlural) {
+    } elsif (!$is_plural) {
         # If nothing was found and the query was not plural, try it pluralized.
         if (any {/$item."s"/} @safe_keywords) {
             $result = "is";
         } elsif (any {/$item."s"/} @unsafe_keywords) {
             $result = "is not";
         }
-    } elsif ($isPlural) {
+    } elsif ($is_plural) {
         # If nothing was found and the query was plural, try it depluralized.
         my $depluralized = substr($item, 0, -1);
         if (any {/$depluralized/} @safe_keywords) {
