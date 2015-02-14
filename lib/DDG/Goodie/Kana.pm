@@ -1,7 +1,8 @@
 package DDG::Goodie::Kana;
 # ABSTRACT: Convert katakana, hiragana or romaji texts between each other
 
-use utf8; use DDG::Goodie;
+use utf8;
+use DDG::Goodie;
 use Lingua::JA::Moji qw/
     is_kana
     is_romaji
@@ -30,6 +31,9 @@ zci answer_type => 'kana';
 
 triggers end => qw/hiragana katakana romaji/;
 
+# Due to wide characters in output
+binmode STDOUT, ':utf8';
+
 my %dispatch = (
     'hiragana' => \&to_hiragana,
     'katakana' => \&to_katakana,
@@ -39,6 +43,8 @@ my %dispatch = (
 my $jp_punc = '｛｝（）［］【】、，…。・「」『』〜：！？0123456789 ー';
 my $punc = '{}()[][],,….•\'\'""~:!?0123456789 -';
 
+# Removes all puncuations symbols
+# Methods from Lingua::JA::Moji don't work with it
 sub trim_punc {
     local $_ = shift @_;
     my $punc = shift @_;
@@ -46,6 +52,7 @@ sub trim_punc {
     return $_;
 };
 
+# Translates punctuation between each other
 sub punc_from_jp {
     local $_ = shift @_;
     eval "tr/$jp_punc/$punc/";
@@ -57,18 +64,22 @@ sub punc_to_jp {
     eval "tr/$punc/$jp_punc/";
     return $_;
 }
+
+# From romaji or kana to hiragana
 sub to_hiragana {
     my $text = shift @_;
     return kata2hira($text) if is_kana(trim_punc($text, $jp_punc));
     return romaji2hiragana(punc_to_jp($text), { ime => 1 }) if is_romaji(trim_punc($text, $punc));
 };
 
+# From romaji or kana to katakana
 sub to_katakana {
     my $text = shift @_;
     return hira2kata($text) if is_kana(trim_punc($text, $jp_punc));
     return romaji2kana(punc_to_jp($text), { ime => 1 }) if is_romaji(trim_punc($text, $punc));
 };
 
+# From kana to romaji
 sub to_romaji {
     my $text = shift @_;
     my $romaji = kana2romaji($text, {style => 'hepburn', wo => 1}) if is_kana(trim_punc($text, $jp_punc));
@@ -83,11 +94,12 @@ handle query_lc => sub {
         $/x;
 
     my $text = $+{text};
-    my $syll = $+{syll};
+    my $syll = $+{syll}; # Output syllable
     $text =~ s/^\s+|\s+$//g;
     my $answer = $dispatch{$syll}($text);
 
     return unless $answer;
+
     return "$text converted to $syll is $answer",
         structured_answer => {
             input     => [$text],
