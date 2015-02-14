@@ -1,0 +1,129 @@
+poultry
+turkey
+chicken breast
+pork tenderloin
+pork chops
+steak
+veal
+bacon
+pork
+ground beef
+grass-fed beef
+chicken thigh
+chicken leg
+chicken wings
+lamb rack
+shrimp
+lobster
+clams
+salmon
+venison steaks
+buffalo
+new york steak
+bison
+bison steaks
+bison jerky
+bison ribeye
+bison sirloin
+lamb chops
+rabbit
+goat
+elk
+emu
+goose
+kangaroo
+bear
+beef jerky
+eggs
+duck eggs
+chicken eggs
+goose eggs
+wild boar
+reindeer
+turtle
+ostrich
+pheasant
+quail
+lean veal
+chuck steak
+rattlesnake
+bass
+salmon
+halibut
+mackerel
+sardines
+tuna
+red snapper
+shark
+sunfish
+swordfish
+tilapia
+trout
+walleye
+crab
+crawfish
+crayfish
+shrimp
+clams
+lobster
+scallops
+oysters
+asparagus
+avocado
+artichoke hearts
+brussels sprouts
+carrots
+spinach
+celery
+broccoli
+zucchini
+cabbage
+peppers
+cauliflower
+parsley
+eggplant
+green onions
+butternut squash
+acorn squash
+yam
+yucca
+sweet potato
+sweet potatoes
+beets
+coconut oil
+olive oil
+macadamia oil
+avocado oil
+grass-fed butter
+almonds
+cashews
+hazelnuts
+pecans
+pine nuts
+pumpkin seeds
+sunflower seeds
+macadamia nuts
+walnuts
+apple
+avocado
+blackberries
+papaya
+peaches
+plums
+mango
+lychee
+blueberries
+grapes
+lemon
+strawberries
+watermelon
+pineapple guava
+lime
+raspberries
+cantaloupe
+tangerine
+figs
+oranges
+bananas
+potatoes
+potato
