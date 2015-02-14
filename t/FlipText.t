@@ -15,7 +15,7 @@ ddg_goodie_test(
         "\x{0287}\x{0073}\x{01DD}\x{0287}",
         structured_answer => {
             input     => ['test'],
-            operation => 'flip text',
+            operation => 'Flip text',
             result    => '&#x287;s&#x1DD;&#x287;'
         }
     ),
@@ -23,7 +23,7 @@ ddg_goodie_test(
         "\x{0287}\x{0073}\x{01DD}\x{0287}",
         structured_answer => {
             input     => ['test'],
-            operation => 'flip text',
+            operation => 'Flip text',
             result    => '&#x287;s&#x1DD;&#x287;'
         }
     ),
@@ -31,7 +31,7 @@ ddg_goodie_test(
         'ǝɔuǝʇuǝs ʎɯ',
         structured_answer => {
             input     => ['my sentence'],
-            operation => 'flip text',
+            operation => 'Flip text',
             result    => '&#x1DD;&#x254;u&#x1DD;&#x287;u&#x1DD;s &#x28E;&#x26F;'
         }
     ),
@@ -39,7 +39,7 @@ ddg_goodie_test(
         'ʇxǝʇ',
         structured_answer => {
             input     => ['text'],
-            operation => 'flip text',
+            operation => 'Flip text',
             result    => '&#x287;x&#x1DD;&#x287;'
         }
     ),

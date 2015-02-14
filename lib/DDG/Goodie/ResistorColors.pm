@@ -11,16 +11,17 @@ package DDG::Goodie::ResistorColors;
 use DDG::Goodie;
 use Math::Round;
 use POSIX qw(abs floor log10 pow);
+use Lingua::Any::Numbers qw(:std);
 use utf8;
 
 # \x{2126} is the unicode ohm symbol
-triggers query_nowhitespace => qr/^(.*)(ohm|ohms|\x{2126})/i;
+triggers query_nowhitespace => qr/^(\d+[\.kmKM]?\d*[kmKM]?)((ohm|ohms|\x{2126})|resistor)+$/i;
 
 zci is_cached => 1;
 zci answer_type => 'resistor_colors';
 
-primary_example_queries '4.7k ohm';
-secondary_example_queries '1Ω';
+primary_example_queries '4.7k ohm', '10k resistor';
+secondary_example_queries '1Ω', '5.1ohms resistor';
 description 'find resistor color bands';
 name 'ResistorColors';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ResistorColors.pm';
@@ -28,8 +29,9 @@ category 'reference';
 topics 'science';
 
 attribution twitter => 'joewalnes',
-            web => ['http://joewalnes.com', 'joewalnes.com'],
-            email => ['joe@walnes.com', 'Joe Walnes'];
+            web => ['http://joewalnes.com', 'Joe Walnes'],
+            email => ['joe@walnes.com', 'Joe Walnes'],
+            github => ["https://github.com/HackOrQuack", "HackOrQuack"];
 
 # These hex codes came from
 # http://en.wikipedia.org/wiki/Electronic_color_code
@@ -128,18 +130,22 @@ sub render {
     my ($value, $digits) = @_;
     my $formatted_value = format_value($value);
     my $ohms = $formatted_value eq '1' ? 'ohm' : 'ohms';
-    my $text = "$formatted_value\x{2126} ($ohms) resistor colors:";
-    my $html = "<div class='zci--resistor-colors'><span class='resistor'>"
-             . "$formatted_value&#x2126; ($ohms) resistor colors:</span>";
+    my $text = "$formatted_value\x{2126}";
+    my $bands = ucfirst to_string(scalar @$digits);
+    my $html = "<div class='zci--resistor-colors'>" .
+                    "<h3 class='zci__header'>$text</h3>" .
+                    "<h4 class='zci__subheader'>$bands Bands</h4>" .
+                    "<div class='zci__content'>";
+    $text .= " ($ohms) resistor colors:";
 
     #while (my ($index, $digit) = each @$digits) {
     my $index = 0;
     foreach my $digit (@$digits) {
         if (exists $digits_to_colors{$digit}) {
-            my $name  = $digits_to_colors{$digit}{name};
+            my $class  = $digits_to_colors{$digit}{name};
+            my $name = ucfirst $class;
             my $hex   = $digits_to_colors{$digit}{hex};
             my $label = $digits_to_colors{$digit}{label};
-            my $style = "background-color:$hex;color:$label;";
             my ($text_prefix, $html_prefix, $display_digit);
             if ($index == scalar(@$digits) - 2) {
                 # multiplier digit
@@ -157,19 +163,20 @@ sub render {
                 $html_prefix = '';
                 $display_digit = $digit;
             }
-            $text .= " $name ($text_prefix$display_digit)";
+            $text .= " $class ($text_prefix$display_digit)";
             if ($index != scalar(@$digits - 1)) {
                 $text .= ','; # Comma delimit all but last
             }
-            $html .= " <span class='resistorcolors' style='$style'>$name ($html_prefix$display_digit)</span>";
+            $html .= "<span class='resistor-band $class'>$name $html_prefix$display_digit</span>";
         } else {
             return;
         }
         $index++;
     }
-    $html .= "<br/>"
-        . "<a href='http://resisto.rs/#$formatted_value' class='resistorlink'>"
-        . "More at resisto.rs</a></div>";
+    $html .= "</div></div>"
+        . "<br/>"
+        . "<a href='http://resisto.rs/#$formatted_value' class='zci__more-at'>"
+        . "More at resisto.rs</a>";
 
     return $text, html => $html;
 };

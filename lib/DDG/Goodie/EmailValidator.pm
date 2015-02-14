@@ -54,7 +54,7 @@ handle remainder => sub {
     return $message,
       structured_answer => {
         input     => [html_enc($address)],
-        operation => 'email address validation',
+        operation => 'Email address validation',
         result    => html_enc($message),
       };
 };

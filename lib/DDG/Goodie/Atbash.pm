@@ -12,8 +12,8 @@ category 'transformations';
 topics 'cryptography';
 
 attribution web     => ['http://kyokodaniel.com/tech/',      'Daniel Davis'],
-            github  => ['https://github.com/tagawa',         'tagawa'],
-            twitter => ['https://twitter.com/ourmaninjapan', 'ourmaninjapan'];
+            github  => ['https://github.com/tagawa',         'Daniel Davis'],
+            twitter => ['https://twitter.com/ourmaninjapan', 'Daniel Davis'];
 
 triggers start => 'atbash';
 

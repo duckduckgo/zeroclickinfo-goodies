@@ -28,28 +28,15 @@ triggers startend => (
 
 attribution github  => ["elebow", "Eddie Lebow"];
 
+my $HTML = share("gimp_cheat_sheet.html")->slurp(iomode => "<:encoding(UTF-8)");
+my $TEXT = share("gimp_cheat_sheet.txt")->slurp(iomode => "<:encoding(UTF-8)");;
+
 handle remainder => sub {
     return
         heading => "GIMP Shortcut Cheat Sheet",
-        html    => html_cheat_sheet(),
-        answer  => text_cheat_sheet(),
+        html    => $HTML,
+        answer  => $TEXT,
 };
-
-my $HTML;
-
-sub html_cheat_sheet {
-    $HTML //= share("gimp_cheat_sheet.html")
-        ->slurp(iomode => "<:encoding(UTF-8)");
-    return $HTML;
-}
-
-my $TEXT;
-
-sub text_cheat_sheet {
-    $TEXT //= share("gimp_cheat_sheet.txt")
-        ->slurp(iomode => "<:encoding(UTF-8)");
-    return $TEXT;
-}
 
 1;
 

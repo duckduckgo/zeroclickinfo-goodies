@@ -18,7 +18,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['+55'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Brazil'
         }
     ),
@@ -26,7 +26,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['Brazil'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+55'
         }
     ),
@@ -34,7 +34,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['+55'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Brazil'
         }
     ),
@@ -42,7 +42,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['+55'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Brazil'
         }
     ),
@@ -51,7 +51,7 @@ ddg_goodie_test(
         "+249 $txt Sudan.",
         structured_answer => {
             input     => ['Sudan'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+249'
         }
     ),
@@ -59,7 +59,7 @@ ddg_goodie_test(
         "+379 $txt the Holy See (Vatican City State).",
         structured_answer => {
             input     => ['the Holy See (Vatican City State)'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+379'
         }
     ),
@@ -67,7 +67,7 @@ ddg_goodie_test(
         "+379 $txt the Holy See (Vatican City State).",
         structured_answer => {
             input     => ['+379'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'the Holy See (Vatican City State)'
         }
     ),
@@ -75,7 +75,7 @@ ddg_goodie_test(
         "+379 $txt the Holy See (Vatican City State).",
         structured_answer => {
             input     => ['the Holy See (Vatican City State)'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+379'
         }
     ),
@@ -83,7 +83,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['Brazil'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+55'
         }
     ),
@@ -91,7 +91,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['+55'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Brazil'
         }
     ),
@@ -99,7 +99,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['Brazil'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+55'
         }
     ),
@@ -107,7 +107,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['+55'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Brazil'
         }
     ),
@@ -115,7 +115,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['Brazil'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+55'
         }
     ),
@@ -123,7 +123,7 @@ ddg_goodie_test(
         "+55 $txt Brazil.",
         structured_answer => {
             input     => ['+55'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Brazil'
         }
     ),
@@ -131,7 +131,7 @@ ddg_goodie_test(
         "+65 $txt Singapore.",
         structured_answer => {
             input     => ['+65'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Singapore'
         }
     ),
@@ -139,7 +139,7 @@ ddg_goodie_test(
         "+65 $txt Singapore.",
         structured_answer => {
             input     => ['+65'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Singapore'
         }
     ),
@@ -147,7 +147,7 @@ ddg_goodie_test(
         "+65 $txt Singapore.",
         structured_answer => {
             input     => ['+65'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Singapore'
         }
     ),
@@ -155,7 +155,7 @@ ddg_goodie_test(
         "+65 $txt Singapore.",
         structured_answer => {
             input     => ['+65'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'Singapore'
         }
     ),
@@ -163,7 +163,7 @@ ddg_goodie_test(
         "+65 $txt Singapore.",
         structured_answer => {
             input     => ['Singapore'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+65'
         }
     ),
@@ -171,7 +171,7 @@ ddg_goodie_test(
         "+65 $txt Singapore.",
         structured_answer => {
             input     => ['Singapore'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+65'
         }
     ),
@@ -179,7 +179,7 @@ ddg_goodie_test(
         "+65 $txt Singapore.",
         structured_answer => {
             input     => ['Singapore'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+65'
         }
     ),
@@ -187,7 +187,7 @@ ddg_goodie_test(
         "+65 $txt Singapore.",
         structured_answer => {
             input     => ['Singapore'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+65'
         }
     ),
@@ -195,7 +195,7 @@ ddg_goodie_test(
         "+44 $txt the United Kingdom.",
         structured_answer => {
             input     => ['the United Kingdom'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+44'
         }
     ),
@@ -203,7 +203,7 @@ ddg_goodie_test(
         "+44 $txt the United Kingdom.",
         structured_answer => {
             input     => ['the United Kingdom'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+44'
         }
     ),
@@ -211,7 +211,7 @@ ddg_goodie_test(
         "+44 $txt the United Kingdom.",
         structured_answer => {
             input     => ['the United Kingdom'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+44'
         }
     ),
@@ -219,7 +219,7 @@ ddg_goodie_test(
         "+44 $txt the United Kingdom.",
         structured_answer => {
             input     => ['the United Kingdom'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+44'
         }
     ),
@@ -227,7 +227,7 @@ ddg_goodie_test(
         "+1 $txt Antigua and Barbuda.",
         structured_answer => {
             input     => ['Antigua and Barbuda'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+1'
         }
     ),
@@ -235,7 +235,7 @@ ddg_goodie_test(
         "+1 $txt Antigua and Barbuda.",
         structured_answer => {
             input     => ['Antigua and Barbuda'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+1'
         }
     ),
@@ -243,7 +243,7 @@ ddg_goodie_test(
         "+1 $txt Trinidad and Tobago.",
         structured_answer => {
             input     => ['Trinidad and Tobago'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+1'
         }
     ),
@@ -251,7 +251,7 @@ ddg_goodie_test(
         "+1 $txt Trinidad and Tobago.",
         structured_answer => {
             input     => ['Trinidad and Tobago'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+1'
         }
     ),
@@ -259,7 +259,7 @@ ddg_goodie_test(
         "+1 $txt the United States.",
         structured_answer => {
             input     => ['the United States'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+1'
         }
     ),
@@ -267,7 +267,7 @@ ddg_goodie_test(
         "+1 $txt the United States.",
         structured_answer => {
             input     => ['the United States'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+1'
         }
     ),
@@ -275,7 +275,7 @@ ddg_goodie_test(
         "+1 $txt Antigua and Barbuda, Anguilla, American Samoa, Barbados, Bermuda, the Bahamas, Canada, Dominica, the Dominican Republic, Grenada, Guam, Jamaica, Saint Lucia, Saint Kitts and Nevis, the Cayman Islands, the Northern Mariana Islands, Montserrat, Puerto Rico, Turks and Caicos Islands, Trinidad and Tobago, the United States, Saint Vincent and the Grenadines, the British Virgin Islands, and the US Virgin Islands.",
         structured_answer => {
             input     => ['+1'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => qr/^Antigua.* US Virgin Islands$/,
         }
     ),
@@ -283,7 +283,7 @@ ddg_goodie_test(
         "+7 $txt the Russian Federation and Kazakhstan.",
         structured_answer => {
             input     => ['+7'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => 'the Russian Federation and Kazakhstan'
         }
     ),
@@ -291,7 +291,7 @@ ddg_goodie_test(
         "+7 $txt the Russian Federation.",
         structured_answer => {
             input     => ['the Russian Federation'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+7'
         }
     ),
@@ -299,7 +299,7 @@ ddg_goodie_test(
         "+7 $txt the Russian Federation.",
         structured_answer => {
             input     => ['the Russian Federation'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+7'
         }
     ),
@@ -307,7 +307,7 @@ ddg_goodie_test(
         "+82 $txt the Republic of Korea.",
         structured_answer => {
             input     => ['the Republic of Korea'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+82'
         }
     ),
@@ -315,7 +315,7 @@ ddg_goodie_test(
         "+82 $txt the Republic of Korea.",
         structured_answer => {
             input     => ['the Republic of Korea'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+82'
         }
     ),
@@ -323,7 +323,7 @@ ddg_goodie_test(
         "+850 $txt the Democratic People's Republic of Korea.",
         structured_answer => {
             input     => ['the Democratic People\'s Republic of Korea'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+850'
         }
     ),
@@ -331,7 +331,7 @@ ddg_goodie_test(
         "+850 $txt the Democratic People's Republic of Korea.",
         structured_answer => {
             input     => ['the Democratic People\'s Republic of Korea'],
-            operation => 'international calling code',
+            operation => 'International calling code',
             result    => '+850'
         }
     ),

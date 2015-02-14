@@ -14,7 +14,7 @@ ddg_goodie_test(
         'Greatest common factor of 9 and 81 is 9.',
         structured_answer => {
             input     => [9, 81],
-            operation => 'greatest common factor',
+            operation => 'Greatest common factor',
             result    => 9
         }
     ),
@@ -22,7 +22,7 @@ ddg_goodie_test(
         'Greatest common factor of 100 and 1000 is 100.',
         structured_answer => {
             input     => [100, 1000],
-            operation => 'greatest common factor',
+            operation => 'Greatest common factor',
             result    => 100
         }
     ),
@@ -30,7 +30,7 @@ ddg_goodie_test(
         'Greatest common factor of 12 and 76 is 4.',
         structured_answer => {
             input     => [12, 76],
-            operation => 'greatest common factor',
+            operation => 'Greatest common factor',
             result    => 4
         }
     ),
@@ -38,7 +38,7 @@ ddg_goodie_test(
         'Greatest common factor of 11 and 121 is 11.',
         structured_answer => {
             input     => [11, 121],
-            operation => 'greatest common factor',
+            operation => 'Greatest common factor',
             result    => 11
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         'Greatest common factor of 9 and 99 is 9.',
         structured_answer => {
             input     => [9, 99],
-            operation => 'greatest common factor',
+            operation => 'Greatest common factor',
             result    => 9
         }
     ),
