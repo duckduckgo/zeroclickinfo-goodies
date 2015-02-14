@@ -10,7 +10,7 @@ zci answer_type => "paleo_ingredient_check";
 zci is_cached   => 1;
 
 name "PaleoIngredientCheck";
-description "Succinct explanation of what this instant answer does";
+description "Indicates if a given food item is known to be safe or unsafe on the paleo diet.";
 primary_example_queries "are apples paleo friendly", "Is dairy allowed on the paleo diet?";
 secondary_example_queries "Is sugar paleo friendly?", "beans paleo safe";
 category "food";
