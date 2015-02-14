@@ -104,23 +104,23 @@ ddg_goodie_test(
         }
     ),
 
-    # Mixed hiragana + katakana -> romaji
-    'ハンバーグ は たべもの です。' => test_zci(
-        'ハンバーグ は たべもの です。 converted to romaji is hambāgu ha tabemono desu.',
+    # kana -> romaji
+    'ハンバーガーはたべものです。 to romaji' => test_zci(
+        'ハンバーガーはたべものです。 converted to romaji is hambāgāhatabemonodesu.',
         structured_answer => {
-            input     => ['ハンバーグ は たべもの です。'],
+            input     => ['ハンバーガーはたべものです。'],
             operation => 'in romaji from',
-            result    => 'hambāgu ha tabemono desu.'
+            result    => 'hambāgāhatabemonodesu.'
         }
     ),
 
-    # Japanese puncuation -> romaji
+    # japanese puncuation -> romaji
     '｛［（？！。、『』あ「」，：）］｝ to romaji' => test_zci(
-        '｛［（？！。、『』あ「」，：）］｝ converted to romaji is {[(?!.,""a\'\',:)',
+        '｛［（？！。、『』あ「」，：）］｝ converted to romaji is {[(?!.,""a\'\',:)]}',
         structured_answer => {
             input     => ['｛［（？！。、『』あ「」，：）］｝'],
             operation => 'in romaji from',
-            result    => '{[(?!.,""a\'\',:)}'
+            result    => '{[(?!.,""a\'\',:)]}'
         }
     ),
     'ええ！ in romaji' => test_zci(

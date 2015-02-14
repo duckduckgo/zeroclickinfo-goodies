@@ -31,9 +31,6 @@ zci answer_type => 'kana';
 
 triggers end => qw/hiragana katakana romaji/;
 
-# Due to wide characters in output
-binmode STDOUT, ':utf8';
-
 my %dispatch = (
     'hiragana' => \&to_hiragana,
     'katakana' => \&to_katakana,
