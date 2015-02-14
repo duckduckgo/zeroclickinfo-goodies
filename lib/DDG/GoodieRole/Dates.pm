@@ -343,9 +343,9 @@ sub build_datestring_regex {
 
 # Parses any string that *can* be parsed to a date object
 sub parse_datestring_to_date {
-    my ($d) = @_;
+    my ($d,$base) = @_;
 
-    return parse_formatted_datestring_to_date($d) || parse_descriptive_datestring_to_date($d);
+    return parse_formatted_datestring_to_date($d) || parse_descriptive_datestring_to_date($d,$base);
 }
 
 # Accepts a string which looks like date per the supplied datestring_regex (e.g. '31/10/1980')
@@ -388,7 +388,6 @@ sub parse_all_datestrings_to_date {
 
     # If there is an ambiguous date with a "month" over 12 in the set, we need to flip.
     my $flip_d_m = first { /$ambiguous_dates_matches/ && $+{'m'} > 12 } @dates;
-
     my @dates_to_return;
     foreach my $date (@dates) {
         if ($date =~ $ambiguous_dates_matches) {
@@ -397,7 +396,12 @@ sub parse_all_datestrings_to_date {
             return if $month > 12;    #there's a mish-mash of formats; give up
             $date = "$year-$month-$day";
         }
-        my $date_object = parse_datestring_to_date($date);
+        
+        my $date_object = ($dates_to_return[0]
+                            ? parse_datestring_to_date($date, $dates_to_return[0])
+                            : parse_datestring_to_date($date)
+                        );
+        
         return unless $date_object;
         push @dates_to_return, $date_object;
     }
@@ -430,29 +434,29 @@ sub _get_timezone {
 
 # Parses a really vague description and basically guesses
 sub parse_descriptive_datestring_to_date {
-    my ($string) = @_;
+    my ($string, $base_time) = @_;
 
     return unless (defined $string && $string =~ qr/^$descriptive_datestring_matches$/);
 
-    my $now   = DateTime->now(time_zone => _get_timezone());
+    $base_time = DateTime->now(time_zone => _get_timezone()) unless($base_time);
     my $month = $+{'m'};           # Set in each alternative match.
 
     if (my $day = $+{'d'}) {
-        return parse_datestring_to_date("$day $month " . $now->year());
+        return parse_datestring_to_date("$day $month " . $base_time->year());
     } elsif (my $relative_dir = $+{'q'}) {
-        my $tmp_date = parse_datestring_to_date("01 $month " . $now->year());
+        my $tmp_date = parse_datestring_to_date("01 $month " . $base_time->year());
 
         # for "next <month>"
-        $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $now) != 1);
+        $tmp_date->add( years => 1) if ($relative_dir eq "next" && DateTime->compare($tmp_date, $base_time) != 1);
         # for "last <month>" if $tmp_date is in the future then we need to subtract a year
-        $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $now) != -1);
+        $tmp_date->add(years => -1) if ($relative_dir eq "last" && DateTime->compare($tmp_date, $base_time) != -1);
         return $tmp_date;
     } elsif (my $year = $+{'y'}) {
         # Month and year is the first of that month.
         return parse_datestring_to_date("01 $month $year");
     } elsif (my $relative_date = $+{'r'}) {
         # relative dates, tomorrow, yesterday etc
-        my $tmp_date = $now;
+        my $tmp_date = $base_time;
         my @to_add;
         if ($relative_date =~ qr/tomorrow|(?:next day)/) {
             @to_add = (days => 1);
@@ -478,9 +482,9 @@ sub parse_descriptive_datestring_to_date {
         # single named months
         # "january" in january means the current month
         # otherwise it always means the coming month of that name, be it this year or next year
-        return parse_datestring_to_date("01 " . $now->month_name() . " " . $now->year()) if lc($now->month_name()) eq lc($month);
-        my $this_years_month = parse_datestring_to_date("01 $month " . $now->year());
-        $this_years_month->add(years => 1) if (DateTime->compare($this_years_month, $now) == -1);
+        return parse_datestring_to_date("01 " . $base_time->month_name() . " " . $base_time->year()) if lc($base_time->month_name()) eq lc($month);
+        my $this_years_month = parse_datestring_to_date("01 $month " . $base_time->year());
+        $this_years_month->add(years => 1) if (DateTime->compare($this_years_month, $base_time) == -1);
         return $this_years_month;
     }
 }

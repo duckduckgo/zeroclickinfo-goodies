@@ -191,6 +191,39 @@ subtest 'Dates' => sub {
                 $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
         }
     };
+    
+    subtest 'Relative naked months' => sub {
+        
+        my %time_strings = (
+            "2015-01-13T00:00:00Z" => {
+                src    => ['january', 'february'],
+                output => ['2015-01-01T00:00:00', '2015-02-01T00:00:00'],
+            },
+            "2015-02-01T00:00:00Z" => {
+                src    => ['january', 'february'],
+                output => ['2016-01-01T00:00:00',  '2016-02-01T00:00:00'],
+            },
+            "2015-03-01T00:00:00Z" => {
+                src    => ['january', 'february'],
+                output => ['2016-01-01T00:00:00',  '2016-02-01T00:00:00'],
+            },
+            "2014-12-01T00:00:00Z" => {
+                src    => ['january', 'february'],
+                output => ['2015-01-01T00:00:00',  '2015-02-01T00:00:00'],
+            },
+            
+        );
+        
+        foreach my $query_time (sort keys %time_strings) {
+            set_fixed_time($query_time);
+            
+            my @source = @{$time_strings{$query_time}{src}};
+            my @expectation = @{$time_strings{$query_time}{output}};
+            my @result = DatesRoleTester::parse_all_datestrings_to_date(@source);
+            
+            is_deeply(\@expectation, \@result);
+        }
+    };
 
     subtest 'Invalid single dates' => sub {
         my %bad_strings_match = (
@@ -268,6 +301,8 @@ subtest 'Dates' => sub {
                 'december 2015' => '01 Dec 2015',
                 'june 2000'     => '01 Jun 2000',
                 'jan'           => '01 Jan 2001',
+                'august'        => '01 Aug 2000',
+                'aug'           => '01 Aug 2000',
                 'next jan'      => '01 Jan 2001',
                 'last jan'      => '01 Jan 2000',
                 'feb 2038'      => '01 Feb 2038',
@@ -277,6 +312,7 @@ subtest 'Dates' => sub {
                 'next december' => '01 Dec 2016',
                 'last january'  => '01 Jan 2015',
                 'june'          => '01 Jun 2016',
+                'december'      => '01 Dec 2015',
                 'december 2015' => '01 Dec 2015',
                 'june 2000'     => '01 Jun 2000',
                 'jan'           => '01 Jan 2016',
@@ -293,6 +329,7 @@ subtest 'Dates' => sub {
             },
             '2000-01-01T00:00:00Z' => {
                 'feb 21st'          => '21 Feb 2000',
+                'january'           => '01 Jan 2000',
                 '11th feb'          => '11 Feb 2000',
                 'march 13'          => '13 Mar 2000',
                 '12 march'          => '12 Mar 2000',
