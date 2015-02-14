@@ -115,12 +115,12 @@ ddg_goodie_test(
     ),
 
     # Japanese puncuation -> romaji
-    '｛［（？！。、『』「」，：）］｝ to romaji' => test_zci(
-        '｛［（？！。、『』「」，：）］｝ converted to romaji is {[(?!.,""\'\',:)',
+    '｛［（？！。、『』あ「」，：）］｝ to romaji' => test_zci(
+        '｛［（？！。、『』あ「」，：）］｝ converted to romaji is {[(?!.,""a\'\',:)',
         structured_answer => {
-            input     => ['｛［（？！。、『』「」，：）］｝'],
+            input     => ['｛［（？！。、『』あ「」，：）］｝'],
             operation => 'in romaji from',
-            result    => '{[(?!.,""\'\',:)}'
+            result    => '{[(?!.,""a\'\',:)}'
         }
     ),
     'ええ！ in romaji' => test_zci(
