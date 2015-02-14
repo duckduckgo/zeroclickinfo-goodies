@@ -191,11 +191,11 @@ ddg_goodie_test(
         }
     ),
     '500 miles in metres' => test_zci(
-        '500 miles = 804,672.249 meters',
+        '500 miles = 804,672 meters',
         structured_answer => {
             input     => ['500 miles'],
             operation => 'Convert',
-            result    => '804,672.249 meters'
+            result    => '804,672 meters'
         }
     ),
     '25 cm in inches' => test_zci(
@@ -600,11 +600,11 @@ ddg_goodie_test(
         }
     ),
     '3.5e-2 miles to inches' => test_zci(
-        '3.5 * 10^-2 miles = 2,217.602 inches',
+        '3.5 * 10^-2 miles = 2,217.601 inches',
         structured_answer => {
             input     => ['3.5 * 10<sup>-2</sup> miles'],
             operation => 'Convert',
-            result    => '2,217.602 inches'
+            result    => '2,217.601 inches'
         }
     ),
     # Areas and volumes
