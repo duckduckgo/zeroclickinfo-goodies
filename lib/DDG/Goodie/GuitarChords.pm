@@ -64,7 +64,7 @@ sub check_chord
         $r .= $d if $d;
         $r .= $e if $e;
         $r .= $f if $f;
-        if ($r ~~ @{[keys %chord_lists]}) {
+        if (exists($chord_lists{$r})) {
             return $r;
         }
     }
