@@ -182,6 +182,14 @@ ddg_goodie_test(
             result    => '3.219 kilometers'
         }
     ),
+    '3 mi to km' => test_zci(
+        '3 miles = 4.828 kilometers',
+        structured_answer => {
+            input     => ['3 miles'],
+            operation => 'Convert',
+            result    => '4.828 kilometers'
+        }
+    ),
     '0.5 nautical mile to klick' => test_zci(
         '0.5 nautical miles = 0.926 kilometers',
         structured_answer => {
@@ -191,11 +199,11 @@ ddg_goodie_test(
         }
     ),
     '500 miles in metres' => test_zci(
-        '500 miles = 804,672.249 meters',
+        '500 miles = 804,672 meters',
         structured_answer => {
             input     => ['500 miles'],
             operation => 'Convert',
-            result    => '804,672.249 meters'
+            result    => '804,672 meters'
         }
     ),
     '25 cm in inches' => test_zci(
@@ -600,11 +608,11 @@ ddg_goodie_test(
         }
     ),
     '3.5e-2 miles to inches' => test_zci(
-        '3.5 * 10^-2 miles = 2,217.602 inches',
+        '3.5 * 10^-2 miles = 2,217.601 inches',
         structured_answer => {
             input     => ['3.5 * 10<sup>-2</sup> miles'],
             operation => 'Convert',
-            result    => '2,217.602 inches'
+            result    => '2,217.601 inches'
         }
     ),
     # Areas and volumes
@@ -622,6 +630,14 @@ ddg_goodie_test(
             input     => ['0.0001 hectares'],
             operation => 'Convert',
             result    => '1 square meter'
+        }
+    ),
+    '5 sq mi in square meters' => test_zci(
+        '5 square miles = 1.29 * 10^7 square meters',
+        structured_answer => {
+            input     => ['5 square miles'],
+            operation => 'Convert',
+            result    => '1.29 * 10<sup>7</sup> square meters'
         }
     ),
     '1 imperial gallon in litres' => test_zci(
