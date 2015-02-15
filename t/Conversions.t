@@ -182,6 +182,14 @@ ddg_goodie_test(
             result    => '3.219 kilometers'
         }
     ),
+    '3 mi to km' => test_zci(
+        '3 miles = 4.828 kilometers',
+        structured_answer => {
+            input     => ['3 miles'],
+            operation => 'Convert',
+            result    => '4.828 kilometers'
+        }
+    ),
     '0.5 nautical mile to klick' => test_zci(
         '0.5 nautical miles = 0.926 kilometers',
         structured_answer => {
@@ -622,6 +630,14 @@ ddg_goodie_test(
             input     => ['0.0001 hectares'],
             operation => 'Convert',
             result    => '1 square meter'
+        }
+    ),
+    '5 sq mi in square meters' => test_zci(
+        '5 square miles = 1.29 * 10^7 square meters',
+        structured_answer => {
+            input     => ['5 square miles'],
+            operation => 'Convert',
+            result    => '1.29 * 10<sup>7</sup> square meters'
         }
     ),
     '1 imperial gallon in litres' => test_zci(
