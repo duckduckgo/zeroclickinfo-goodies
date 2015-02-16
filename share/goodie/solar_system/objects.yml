@@ -152,4 +152,20 @@ neptune:
   effective_temperature_imperial: -353 °F
   effective_temperature_scientific: 59 K
   density: 1.638 g/cm3
-
+pluto:
+  radius: 1,151 km
+  radius_imperial: 715.2 mi
+  radius_scientific: 1.151 x 103 km
+  surface_area: 16,647,940 km2
+  surface_area_imperial: 6,427,806 m2
+  surface_area_scientific: 1.6648 x 107 km2
+  volume: 6,387,259,783 km3
+  volume_imperial: 1,532,385,114 mi3
+  volume_scientific: 6.38726 x 109 km3
+  mass: 13,090,000,000,000,000,000,000 kg
+  mass_imperial: 28,858,510,120,000,000,000,000 lbs
+  mass_scientific: 1.3090 x 1022 kg
+  effective_temperature: -233/-223 (min/max) °C
+  effective_temperature_imperial: -387/-369 (min/max) °F
+  effective_temperature_scientific: 40/50 K
+  density: 2.050 g/cm3
