@@ -1,8 +1,12 @@
+.zci--answer .zci--objects {
+    margin-top: 5px;
+}
+
 .zci--answer .zci--objects .objects--objectImage {
     float:left;
     margin-right: 1.4em;
-
 }
+
 .zci--answer .zci--objects .objects--objectAttribute {
     font-size: 1.4em;
     font-weight: 700;
