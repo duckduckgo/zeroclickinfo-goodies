@@ -35,6 +35,8 @@ ddg_goodie_test(
 
     'size of venus' => test_zci("Venus - Radius is 3,760.4 mi",  html => qr{<div class="zci--objects"><span class="objects--objectImage"><img src=".*" height="48" width="48"/></span><span class="objects--info"><span class="text--primary objects--objectAttribute">3,760.4 mi</span><span class="text--secondary objects--objectName">Venus - Radius</span></span></div>}),
 
+    'size of pluto' => test_zci("Pluto - Radius is 715.2 mi",  html => qr{<div class="zci--objects"><span class="objects--objectImage"><img src=".*" height="48" width="48"/></span><span class="objects--info"><span class="text--primary objects--objectAttribute">715.2 mi</span><span class="text--secondary objects--objectName">Pluto - Radius</span></span></div>}),
+
     #Test Metric
 
     DDG::Request->new(query_raw => "size earth", location => test_location("au")) => test_zci("Earth - Radius is 6,371.00 km",  html => qr{<div class="zci--objects"><span class="objects--objectImage"><img src=".*" height="48" width="48"/></span><span class="objects--info"><span class="text--primary objects--objectAttribute">6,371.00 km</span><span class="text--secondary objects--objectName">Earth - Radius</span></span></div>}),
@@ -56,6 +58,8 @@ ddg_goodie_test(
     DDG::Request->new(query_raw => "radius of uranus", location => test_location("au")) => test_zci("Uranus - Radius is 25,362 km",  html => qr{<div class="zci--objects"><span class="objects--objectImage"><img src=".*" height="48" width="48"/></span><span class="objects--info"><span class="text--primary objects--objectAttribute">25,362 km</span><span class="text--secondary objects--objectName">Uranus - Radius</span></span></div>}),
 
     DDG::Request->new(query_raw => "size of venus", location => test_location("au")) => test_zci("Venus - Radius is 6,051.8 km",  html => qr{<div class="zci--objects"><span class="objects--objectImage"><img src=".*" height="48" width="48"/></span><span class="objects--info"><span class="text--primary objects--objectAttribute">6,051.8 km</span><span class="text--secondary objects--objectName">Venus - Radius</span></span></div>}),
+
+    DDG::Request->new(query_raw => "size of pluto", location => test_location("au")) => test_zci("Pluto - Radius is 1,151 km",  html => qr{<div class="zci--objects"><span class="objects--objectImage"><img src=".*" height="48" width="48"/></span><span class="objects--info"><span class="text--primary objects--objectAttribute">1,151 km</span><span class="text--secondary objects--objectName">Pluto - Radius</span></span></div>}),
 
     'size of tomato' => undef,
     'volume of water' => undef,
