@@ -126,7 +126,7 @@ uranus:
   surface_area_imperial: 3,120,894,516 mi2
   surface_area_scientific: 8.0831 x 109 km2
   volume: 68,334,355,695,584 km3
-  volume_imperial: #not found
+  volume_imperial: 42,460,999,916,448 mi3
   volume_scientific: 6.83344 x 1013 km3
   mass: 86,810,300,000,000,000,000,000,000 kg
   mass_imperial: 191,383,951,189,500,000,000,000,000 lbs
@@ -152,3 +152,4 @@ neptune:
   effective_temperature_imperial: -353 °F
   effective_temperature_scientific: 59 K
   density: 1.638 g/cm3
+
