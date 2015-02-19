@@ -27,7 +27,7 @@
 }
 
 .zci--bpmto_ms .seperator {
-    width: 75%;
+    width: 90%;
     border-bottom: 1px solid #e0e0e0;
     margin: 1em auto;
 }
@@ -35,7 +35,7 @@
 .zci--bpmto_ms .variation {
     color: #999;
     clear: both;
-    max-width: 75%;
+    max-width: 90%;
     margin: 0 auto;
     font-size: 1.1em;
 }
