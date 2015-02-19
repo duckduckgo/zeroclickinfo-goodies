@@ -37,7 +37,7 @@ handle remainder => sub {
 
     return ucfirst($what) . 'd: ' . $out_str,
       structured_answer => {
-        input     => [$in_str],
+        input     => [html_enc($in_str)],
         operation => $what,
         result    => $out_str,
       };
