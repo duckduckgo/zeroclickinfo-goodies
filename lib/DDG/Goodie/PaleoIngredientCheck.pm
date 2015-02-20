@@ -26,13 +26,8 @@ handle remainder => sub {
     my $item = lc($_);
 
     # Remove any preceding "is" or "are" text from the query.
-    if (index($item, "is") == 0) {
-        $item =~ s/is //;
-    }
-    if (index($item, "are") == 0) {
-        $item =~ s/are //;
-    }
-    
+    $item =~ s/^(is|are)[\W]+//;
+
     my $is_plural = substr($item, -1) eq "s";
     my($result);
 
