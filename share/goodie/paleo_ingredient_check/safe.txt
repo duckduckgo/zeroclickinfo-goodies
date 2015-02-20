@@ -7,8 +7,10 @@ steak
 veal
 bacon
 pork
+beef
 ground beef
 grass-fed beef
+grassfed beef
 chicken thigh
 chicken leg
 chicken wings
