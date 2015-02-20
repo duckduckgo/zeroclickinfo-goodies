@@ -14,6 +14,7 @@ ddg_goodie_test(
     'Is dairy allowed on the paleo diet?' => test_zci('Dairy is not allowed on the paleo diet.'),
     'Is sugar paleo friendly?' => test_zci('Sugar is not allowed on the paleo diet.'),
     'beans paleo safe' => test_zci('Beans are not allowed on the paleo diet.'),
+    'is sugar paleo' => test_zci('Sugar is not allowed on the paleo diet.'),
     'Is foobar allowed on the paleo diet?' => undef,
     'are notarealfood paleo friendly' => undef,
     'paleo diet recipes' => undef,
