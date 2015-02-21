@@ -13,20 +13,20 @@ ddg_goodie_test(
 
 	'pi 23' => test_zci("3.14159265358979323846264",
 	structured_answer => {
-		input => ["23 digits of Pi"],
-		operation => "Calculate",
+		input => [],
+		operation => ["First 23 digits of Pi"],
 		result => "3.14159265358979323846264"
 	}),
 	'8 pi' => test_zci("3.14159265",
 	structured_answer => {
-		input => ["8 digits of Pi"],
-		operation => "Calculate",
+		input => [],
+		operation => ["First 8 digits of Pi"],
 		result => "3.14159265"
 	}),
 	'12 digits of pi' => test_zci("3.141592653589",
 	structured_answer => {
-		input => ["12 digits of Pi"],
-		operation => "Calculate",
+		input => [],
+		operation => ["First 12 digits of Pi"],
 		result => "3.141592653589"
 	}),
 
