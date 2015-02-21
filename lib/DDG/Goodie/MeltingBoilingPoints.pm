@@ -1,0 +1,56 @@
+package DDG::Goodie::MeltingBoilingPoints;
+
+# ABSTRACT: Melting and Boiling points for various elements
+
+use DDG::Goodie;
+use YAML::XS qw(Load);
+use List::Util qw(first);
+
+zci answer_type => 'melting_boiling_points';
+zci is_cached   => 1;
+
+name 'Melting/boiling points';
+description 'Melting and Boiling points for various elements';
+primary_example_queries 'melting point of Nitrogen', 'boiling point of Oxygen';
+category 'physical_properties';
+topics 'science';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MeltingBoilingPoints.pm';
+attribution github => [ 'javathunderman', 'Thomas Denizou' ];
+
+my @points = @{ Load( scalar share('meltingboiling.yml')->slurp ) };
+
+# Triggers
+triggers start => 'melting point', 'boiling point', 'melting temperature', 'boiling temperature';
+
+# Handle statement
+handle query_lc => sub {
+
+    my $query = $_;
+
+    # Determine if this is a query for atomic mass or atomic number
+    my $is_boiling_query = $query =~ /melting points|boiling points/;
+
+  
+
+    # Look for a matching element in the table
+    my $match = first { lc $_->[2] eq $query || lc $_->[3] eq $query } @points or return;
+    my ( $melting_point, $boiling_point, $element_name, $element_symbol ) = @{$match};
+
+    # Return the result if the element was found
+    if ($is_boiling_query) {
+        return "$element_name ($element_symbol), Boiling point $boiling_point kelvin", structured_answer => {
+            input     => ["$element_name ($element_symbol)"],
+            operation => 'Boiling Point',
+            result    => "$boiling_point kelvin"
+        };
+    }
+    else {
+        return "$element_name ($element_symbol), Melting point $melting_point", structured_answer => {
+            input     => ["$element_name ($element_symbol)"],
+            operation => 'Melting Point',
+            result    => "$melting_point kelvin"
+        };
+    }
+};
+
+1;
