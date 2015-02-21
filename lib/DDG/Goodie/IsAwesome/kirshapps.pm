@@ -1,22 +1,17 @@
 package DDG::Goodie::IsAwesome::kirshapps;
 
 use DDG::Goodie;
-
 zci answer_type => "is_awesome_kirshapps";
 zci is_cached   => 1;
-
 name "IsAwesome kirshapps";
 description "Tells everyone that kirshapps is awesome";
 primary_example_queries "duckduckhack kirshapps";
 secondary_example_queries "optional -- demonstrate any additional triggers";
- category "special";
+category "special";
 topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/kirshapps.pm";
-attribution github => ["https://github.com/kirshapps", "kirshapps"],
-            ;
-
+attribution github => ["https://github.com/kirshapps", "kirshapps"];
 triggers start => "duckduckhack kirshapps";
-
 handle remainder => sub {
 	return "kirshapps is awesome and has successfully completed the DuckDuckHack goodie tutorial!"
 };
