@@ -17,7 +17,7 @@ attribution github => ["https://github.com/puskin94", "puskin94"],
 
 triggers startend => "pi", "digits of pi";
 
-# $PI has 399 decimals
+# $PI now have 1 000 000 decimals
 
 my $PI = '3.14159265358979323846264338327950288419716939937510
 58209749445923078164062862089986280348253421170679
@@ -20022,7 +20022,6 @@ my $PI = '3.14159265358979323846264338327950288419716939937510
 
 my $PI_max_digits = length($PI);
 
-# Handle statement
 handle remainder => sub {
 
     my $decimal = $_;
