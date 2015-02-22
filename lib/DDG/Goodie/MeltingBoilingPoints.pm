@@ -27,12 +27,12 @@ handle query_lc => sub {
 
     my $query = $_;
 
-    # Determine if this is a query for atomic mass or atomic number
+    
     my $is_boiling_query = $query =~ /melting points|boiling points/;
 
   
 
-    # Look for a matching element in the table
+    
     my $match = first { lc $_->[2] eq $query || lc $_->[3] eq $query } @points or return;
     my ( $melting_point, $boiling_point, $element_name, $element_symbol ) = @{$match};
 
