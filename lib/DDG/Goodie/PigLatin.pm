@@ -1,6 +1,7 @@
 package DDG::Goodie::PigLatin;
 # ABSTRACT: convert a given string to pig latin
 
+use strict;
 use DDG::Goodie;
 use Lingua::PigLatin 'piglatin';
 

@@ -8,6 +8,7 @@ package DDG::Goodie::ResistorColors;
 # - show surface mount resistor markings
 # - detect if query contains tolerance (e.g. 10%) and use appropriate color
 
+use strict;
 use DDG::Goodie;
 use Math::Round;
 use POSIX qw(abs floor log10 pow);

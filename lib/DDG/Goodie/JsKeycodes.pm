@@ -1,6 +1,7 @@
 package DDG::Goodie::JsKeycodes;
 # ABSTRACT: Give the equivalent JavaScript Keycode.
 
+use strict;
 use DDG::Goodie;
 
 triggers any => 'keycode', 'keycodes', 'char', 'chars', 'charcode', 'charcodes';

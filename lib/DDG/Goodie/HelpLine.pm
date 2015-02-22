@@ -1,6 +1,7 @@
 package DDG::Goodie::HelpLine;
 # ABSTRACT: Provide localized suicide intervention phone numbers.
 
+use strict;
 use DDG::Goodie;
 
 use YAML::XS qw( Load );

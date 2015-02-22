@@ -1,6 +1,7 @@
 package DDG::Goodie::CalendarToday;
 # ABSTRACT: Print calendar of current / given month and highlight (to)day
 
+use strict;
 use DDG::Goodie;
 use DateTime;
 use Try::Tiny;

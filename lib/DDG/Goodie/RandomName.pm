@@ -1,6 +1,7 @@
 package DDG::Goodie::RandomName;
 # ABSTRACT: Return random first and last name
 
+use strict;
 use DDG::Goodie;
 
 use Data::RandomPerson;

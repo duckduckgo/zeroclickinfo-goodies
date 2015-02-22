@@ -1,6 +1,7 @@
 package DDG::Goodie::Poker;
 # ABSTRACT: Returns requested statistic for the requested poker hand
 
+use strict;
 use DDG::Goodie;
 
 triggers any => 'poker';

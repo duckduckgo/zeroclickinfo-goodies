@@ -1,6 +1,7 @@
 package DDG::Goodie::Frequency;
 # ABSTRACT: Displays frequency of alphabet character (a-z)
 
+use strict;
 use DDG::Goodie;
 
 triggers start => 'frequency', 'freq';

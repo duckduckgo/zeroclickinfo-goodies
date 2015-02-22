@@ -1,6 +1,7 @@
 package DDG::Goodie::Base64;
 # ABSTRACT: Base64 <-> Unicode
 
+use strict;
 use DDG::Goodie;
 
 use MIME::Base64;

@@ -1,6 +1,7 @@
 package DDG::Goodie::VIN;
 # ABSTRACT: extract information about vehicle identification numbers
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;

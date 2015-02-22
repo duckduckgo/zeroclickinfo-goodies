@@ -1,6 +1,7 @@
 package DDG::Goodie::Lowercase;
 # ABSTRACT: Convert a string into lowercase.
 
+use strict;
 use DDG::Goodie;
 
 name "Lowercase";

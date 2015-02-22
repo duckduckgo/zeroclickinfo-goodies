@@ -3,6 +3,7 @@ package DDG::Goodie::Teredo;
 # NAT IPv4 address, and port number encoded in a given
 # Teredo tunnel IPv6 address.
 
+use strict;
 use DDG::Goodie;
 use Net::IP;
 use Math::BaseConvert;

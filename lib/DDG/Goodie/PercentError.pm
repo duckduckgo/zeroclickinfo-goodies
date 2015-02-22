@@ -1,6 +1,7 @@
 package DDG::Goodie::PercentError;
 # ABSTRACT: find the percent error given accepted and experimental values
 
+use strict;
 use DDG::Goodie;
 
 triggers start => "percent error", "% error", "%err", "%error", "percenterror", "percent err", "%-error";

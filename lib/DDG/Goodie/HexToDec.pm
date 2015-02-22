@@ -1,6 +1,7 @@
 package DDG::Goodie::HexToDec;
 # ABSTRACT: Convert hexidecimal to decimal
 
+use strict;
 use DDG::Goodie;
 use Math::BigInt;
 

@@ -1,6 +1,7 @@
 package DDG::Goodie::CryptHashCheck;
 # ABSTRACT: Identifies cryptographic hash type.
 
+use strict;
 use DDG::Goodie;
 
 # A comprehensive reference for hashing functions from Wikipedia.

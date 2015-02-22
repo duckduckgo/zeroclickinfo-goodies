@@ -1,6 +1,7 @@
 package DDG::Goodie::PhoneAlphabet;
 # ABSTRACT: Taking a phone number with letters in it and returning the phone number
 
+use strict;
 use POSIX;
 use DDG::Goodie;
 
