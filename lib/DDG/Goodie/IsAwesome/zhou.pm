@@ -1,6 +1,7 @@
 package DDG::Goodie::IsAwesome::zhou;
 # ABSTRACT: zhou's first Goodie
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_zhou";

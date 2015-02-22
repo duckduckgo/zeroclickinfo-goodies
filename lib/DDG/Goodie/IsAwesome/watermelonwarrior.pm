@@ -1,6 +1,7 @@
 package DDG::Goodie::IsAwesome::watermelonwarrior;
 # ABSTRACT: Watermelonwarrior's first Goodie
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_watermelonwarrior";
