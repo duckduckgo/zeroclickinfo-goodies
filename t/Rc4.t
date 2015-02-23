@@ -29,4 +29,4 @@ ddg_goodie_test(
     'rc4 no operation' => undef
 );
 
-done_testing; 
+done_testing;
