@@ -1,6 +1,7 @@
 package DDG::Goodie::ConvertLatLon;
 # ABSTRACT: Convert between latitudes and longitudes expressed in degrees of arc and decimal
 
+use strict;
 use DDG::Goodie;
 use utf8;
 use Geo::Coordinates::DecimalDegrees;

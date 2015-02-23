@@ -1,6 +1,7 @@
 package DDG::Goodie::GreatestCommonFactor;
 # ABSTRACT: Returns the greatest common factor of the two numbers entered
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "greatest_common_factor";

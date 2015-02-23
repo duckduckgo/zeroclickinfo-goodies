@@ -1,6 +1,7 @@
 package DDG::Goodie::BloodDonor;
 # ABSTRACT: Returns available donors for a blood type
 
+use strict;
 use DDG::Goodie;
 
 use strict;

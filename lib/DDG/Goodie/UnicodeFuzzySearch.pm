@@ -1,6 +1,7 @@
 package DDG::Goodie::UnicodeFuzzySearch;
 # ABSTRACT: returns unicode symbols matching the input
 
+use strict;
 use DDG::Goodie;
 use URI::Escape::XS;
 

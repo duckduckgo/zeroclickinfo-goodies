@@ -1,6 +1,7 @@
 package DDG::Goodie::Randagram;
 # ABSTRACT: Take a query and spit it out randomly.
 
+use strict;
 use DDG::Goodie;
 use List::Util 'shuffle';
 

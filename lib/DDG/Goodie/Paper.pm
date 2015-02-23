@@ -1,6 +1,7 @@
 package DDG::Goodie::Paper;
 # ABSTRACT: Return the dimensions of a defined paper size
 
+use strict;
 use DDG::Goodie;
 use YAML;
 

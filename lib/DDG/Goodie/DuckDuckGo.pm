@@ -1,6 +1,7 @@
 package DDG::Goodie::DuckDuckGo;
 # ABSTRACT: Return hard-coded descriptions for DuckDuckGo terms
 
+use strict;
 use DDG::Goodie;
 
 use YAML qw( Load );

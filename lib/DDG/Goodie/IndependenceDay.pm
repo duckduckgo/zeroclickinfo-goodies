@@ -1,6 +1,7 @@
 package DDG::Goodie::IndependenceDay;
 # ABSTRACT: Goodie answer for different countries' national independence days
 
+use strict;
 use DDG::Goodie;
 use JSON;
 use utf8;

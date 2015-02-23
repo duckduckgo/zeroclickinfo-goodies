@@ -1,6 +1,7 @@
 package DDG::Goodie::USPS;
 # ABSTRACT: Track a package through the US postal service.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;

@@ -1,6 +1,7 @@
 package DDG::Goodie::Braille;
 # ABSTRACT: Braille <-> ASCII/Unicode
 
+use strict;
 use DDG::Goodie;
 
 use Convert::Braille;

@@ -1,6 +1,7 @@
 package DDG::Goodie::Cusip;
 # ABSTRACT: Validate a CUSIP ID's check digit.
 
+use strict;
 use DDG::Goodie;
 use Business::CUSIP;
 

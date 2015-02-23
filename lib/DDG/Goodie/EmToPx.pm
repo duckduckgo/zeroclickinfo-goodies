@@ -1,6 +1,7 @@
 package DDG::Goodie::EmToPx;
 # ABSTRACT: em <-> px for font sizes.
 
+use strict;
 use DDG::Goodie;
 
 triggers any => "em", "px";

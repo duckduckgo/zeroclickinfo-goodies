@@ -1,6 +1,7 @@
 package DDG::Goodie::ChineseZodiac;
 # ABSTRACT: Return the Chinese zodiac animal for a given year.
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 use DateTime::Calendar::Chinese;

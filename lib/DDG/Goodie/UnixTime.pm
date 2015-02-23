@@ -1,6 +1,7 @@
 package DDG::Goodie::UnixTime;
 # ABSTRACT: epoch -> human readable time
 
+use strict;
 use DDG::Goodie;
 
 use DateTime;

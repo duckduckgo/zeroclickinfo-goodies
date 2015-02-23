@@ -1,6 +1,7 @@
 package DDG::Goodie::POTUS;
 # ABSTRACT: Returns requested President of the United States
 
+use strict;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
 use Lingua::EN::Words2Nums;

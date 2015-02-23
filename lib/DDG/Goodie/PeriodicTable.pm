@@ -1,7 +1,7 @@
 package DDG::Goodie::PeriodicTable;
-
 # ABSTRACT: Atomic masses and numbers for chemical elements
 
+use strict;
 use DDG::Goodie;
 use YAML::XS qw(Load);
 use List::Util qw(first);

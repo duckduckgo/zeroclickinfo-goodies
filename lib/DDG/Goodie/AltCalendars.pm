@@ -1,6 +1,7 @@
 package DDG::Goodie::AltCalendars;
 # ABSTRACT: Convert non-Gregorian years to the Gregorian calendar
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'heisei 24';

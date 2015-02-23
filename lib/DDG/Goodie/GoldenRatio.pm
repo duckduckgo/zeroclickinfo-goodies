@@ -1,6 +1,7 @@
 package DDG::Goodie::GoldenRatio;
 # ABSTRACT: find number related to the given number by the Golden Ratio.
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "golden_ratio";

@@ -1,6 +1,7 @@
 package DDG::Goodie::Morse;
 # ABSTRACT: Converts to/from Morse code
 
+use strict;
 use DDG::Goodie;
 use Convert::Morse qw(is_morse as_ascii as_morse);
 

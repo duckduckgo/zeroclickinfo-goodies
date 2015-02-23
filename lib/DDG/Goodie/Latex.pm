@@ -1,6 +1,7 @@
 package DDG::Goodie::Latex;
 # ABSTRACT: Show the Latex command for a keyword
 
+use strict;
 use DDG::Goodie;
 
 triggers startend => 'latex', 'tex';

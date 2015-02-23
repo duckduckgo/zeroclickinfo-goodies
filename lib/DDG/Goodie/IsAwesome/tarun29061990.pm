@@ -1,6 +1,7 @@
 package DDG::Goodie::IsAwesome::tarun29061990;
 # ABSTRACT: tarun29061990's first Goodie
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_tarun29061990";

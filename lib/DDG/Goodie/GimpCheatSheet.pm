@@ -1,8 +1,7 @@
 package DDG::Goodie::GimpCheatSheet;
 # ABSTRACT: Some GIMP keyboard and mouse shortcuts
 
-# Adapted from CrontabCheatSheet.pm
-
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "gimp_cheat";
