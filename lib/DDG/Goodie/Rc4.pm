@@ -30,6 +30,8 @@ triggers startend => "rc4";
 handle remainder => sub { 
 
     (my $type, my $key, my $plaintext) = split / /;
+    my $operation;
+    my $result;
 
     return unless $type && $key && $plaintext;
 
@@ -37,29 +39,25 @@ handle remainder => sub {
             # To encrypt we receive the plaintext as is and pass it to the RC4 function.
             my $encrypted = RC4($key, $plaintext);
             # To avoid problems with non printable characters, we transform the result using encode_base64()
-            my $result = encode_base64($encrypted);
+            $result = encode_base64($encrypted);
             chomp $result;
-
-            return $result,
-                structured_answer => {
-                input     => [],
-                operation => "Rc4 Encryption",
-                result    => $result
-            };
+            $operation = "Rc4 Encryption";
 
     } elsif ($type eq "decrypt" || $type eq "de" || $type eq "dec") {
             #To decrypt we do the reverse process, we take the plaintext, transform it using decode_base64()
             my $decoded = decode_base64($plaintext);
             # Then we pass it to the RC4 funcion to be decrypted.
-            my $result = RC4($key, $decoded);
+            $result = RC4($key, $decoded);
             # No need to encode again, this result is show as is.
-            return $result,
-                structured_answer => {
-                input     => [],
-                operation => "Rc4 Decryption",
-                result    => $result
-            };
+            $operation = "Rc4 Decryption";
     }
+
+    return $result,
+        structured_answer => {
+        input     => [],
+        operation => $operation,
+        result    => $result
+    };
 
 };
 
