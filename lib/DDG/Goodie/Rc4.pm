@@ -43,7 +43,8 @@ handle remainder => sub {
             chomp $result;
             $operation = "Rc4 Encryption";
 
-    } elsif ($type eq "decrypt" || $type eq "de" || $type eq "dec") {
+    }
+    if ($type eq "decrypt" || $type eq "de" || $type eq "dec") {
             #To decrypt we do the reverse process, we take the plaintext, transform it using decode_base64()
             my $decoded = decode_base64($plaintext);
             # Then we pass it to the RC4 funcion to be decrypted.
