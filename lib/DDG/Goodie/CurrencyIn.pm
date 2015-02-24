@@ -17,6 +17,7 @@ package DDG::Goodie::CurrencyIn;
 # currency in Russia
 # What type of currency do I need for Russia?
 
+use strict;
 use DDG::Goodie;
 use Locale::SubCountry;
 

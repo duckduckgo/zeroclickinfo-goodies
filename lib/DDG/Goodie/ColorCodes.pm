@@ -1,6 +1,7 @@
 package DDG::Goodie::ColorCodes;
 # ABSTRACT: Copious information about various ways of encoding colors.
 
+use strict;
 use DDG::Goodie;
 
 use Color::Library;

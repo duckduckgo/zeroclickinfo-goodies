@@ -1,6 +1,7 @@
 package DDG::Goodie::Unicode;
 # ABSTRACT: unicode character information lookup
 
+use strict;
 use DDG::Goodie;
 
 use Unicode::UCD qw/charinfo/;

@@ -1,8 +1,7 @@
 package DDG::Goodie::CrontabCheatSheet;
 # ABSTRACT: Some examples of crontab syntax
 
-# Adapted from VimCheatSheet.pm
-
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "cron_cheat";

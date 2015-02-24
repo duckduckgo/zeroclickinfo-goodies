@@ -1,6 +1,7 @@
 package DDG::Goodie::TmuxCheatSheet;
 # ABSTRACT: Provide a cheatsheet for common tmux commands
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => 'tmux_cheat';

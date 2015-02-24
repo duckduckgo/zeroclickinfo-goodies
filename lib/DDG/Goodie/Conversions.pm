@@ -1,6 +1,7 @@
 package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 

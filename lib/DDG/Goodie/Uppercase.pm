@@ -1,6 +1,7 @@
 package DDG::Goodie::Uppercase;
 # ABSTRACT: uppercase a provided string.
 
+use strict;
 use DDG::Goodie;
 
 triggers start => 'uppercase', 'upper case', 'allcaps', 'all caps', 'strtoupper', 'toupper';

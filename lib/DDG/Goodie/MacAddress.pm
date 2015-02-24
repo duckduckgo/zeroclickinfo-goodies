@@ -1,6 +1,7 @@
 package DDG::Goodie::MacAddress;
 # ABSTRACT: Vendor information lookup for MAC addresses
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "mac_address";

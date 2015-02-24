@@ -1,6 +1,7 @@
 package DDG::Goodie::Shortcut;
 # ABSTRACT: Display keyboard shortcut for an action.
 
+use strict;
 use DDG::Goodie;
 use utf8;
 

@@ -1,9 +1,9 @@
 package DDG::Goodie::HTMLEntitiesEncode;
 # ABSTRACT: Displays the HTML entity code for the query name.
 
-use DDG::Goodie;
 use strict;
 use warnings;
+use DDG::Goodie;
 
 # '&' and ';' not included in the hash value -- they are added in make_text() and make_html()
 my %codes = (

@@ -1,6 +1,7 @@
 package DDG::Goodie::DateMath;
 # ABSTRACT: add/subtract days/weeks/months/years to/from a date
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 use DateTime::Duration;

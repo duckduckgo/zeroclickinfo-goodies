@@ -1,5 +1,6 @@
 package DDG::Goodie::IsAwesome::vedantham;
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_vedantham";

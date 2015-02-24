@@ -1,6 +1,7 @@
 package DDG::Goodie::UN;
 # ABSTRACT: Gives a description for a given UN number
 
+use strict;
 use DDG::Goodie;
 use Number::UN 'get_un';
 

@@ -1,6 +1,7 @@
 package DDG::Goodie::Reverse;
 # ABSTRACT: Reverse the order of chars in the remainder
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'reverse text esrever';

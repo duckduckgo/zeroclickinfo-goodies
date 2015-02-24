@@ -1,6 +1,7 @@
 package DDG::Goodie::Unicornify;
 # ABSTRACT: Return Gravatar image given an email address
 
+use strict;
 use DDG::Goodie;
 use CGI qw/img/;
 use Email::Valid;
