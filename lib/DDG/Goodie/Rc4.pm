@@ -35,7 +35,7 @@ handle remainder => sub {
 
     return unless $type && $key && $plaintext;
 
-    if ($type eq "encrypt" || $type eq "en" || $type eq "enc") {
+    if ($type =~ m/en(c|crypt)?/) {
             # To encrypt we receive the plaintext as is and pass it to the RC4 function.
             my $encrypted = RC4($key, $plaintext);
             # To avoid problems with non printable characters, we transform the result using encode_base64()
@@ -43,14 +43,15 @@ handle remainder => sub {
             chomp $result;
             $operation = "Rc4 Encryption";
 
-    }
-    if ($type eq "decrypt" || $type eq "de" || $type eq "dec") {
+    } elsif ($type =~ m/de(c|crypt)?/) {
             #To decrypt we do the reverse process, we take the plaintext, transform it using decode_base64()
             my $decoded = decode_base64($plaintext);
             # Then we pass it to the RC4 funcion to be decrypted.
             $result = RC4($key, $decoded);
             # No need to encode again, this result is show as is.
             $operation = "Rc4 Decryption";
+    } else {
+        return;
     }
 
     return $result,
