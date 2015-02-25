@@ -1,4 +1,4 @@
-package DDG::Goodie::EasterDate;
+package DDG::Goodie::MoveableHolidays;
 # ABSTRACT: Show moveable holidays for the specified year
 
 use DDG::Goodie;
@@ -9,11 +9,11 @@ use strict;
 use warnings;
 use utf8;
 
-zci answer_type => "easter_date";
-zci is_cached   => 0; # depends on user's location
+zci answer_type => "moveable_holiday";
+zci is_cached   => 0; # easter date depends on user's location
 
-name "EasterDate";
-description "Show easter date for the specified year";
+name "MoveableHolidays";
+description "Show moveable holidays for the specified year";
 primary_example_queries "Easter 2015", "Easter date", "Rosh Hashanah 2014", "thanksgiving 2015", "Columbus Day date";
 secondary_example_queries "easter date 1995", "Orthodox Easter 1995 date", "Passover 2016", "good friday 2015",
     "Programmers' Day 2015", "成人の日 2015"; # Coming of Age Day in Japan

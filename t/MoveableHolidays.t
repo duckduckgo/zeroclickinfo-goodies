@@ -8,7 +8,7 @@ use Test::More;
 use Test::MockTime qw( :all );
 use DDG::Test::Goodie;
 
-zci answer_type => "easter_date";
+zci answer_type => "moveable_holiday";
 zci is_cached   => 0;
 
 set_fixed_time("2013-01-01T10:00:00");
