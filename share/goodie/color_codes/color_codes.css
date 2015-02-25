@@ -10,12 +10,14 @@
 
 .zci--answer .zci--color-codes .circle {
     border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.15);
 }
 
 .zci--answer .zci--color-codes .mini-color {
     display: inline-block;
     width: 2.05em;
     height: 2.05em;
+    border: 1px solid rgba(0,0,0,0.15);
 }
 
 .zci--answer .zci--color-codes p.no_vspace {
