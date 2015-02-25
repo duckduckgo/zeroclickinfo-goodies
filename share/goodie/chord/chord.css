@@ -1,0 +1,42 @@
+.zci--answer .chord{
+    position: relative;
+    background-color: #ddd;
+    margin: 3px 20px 2px;
+    padding: 0;
+    float: left;
+}
+.zci--answer .topfret{
+    height: 5px;
+    background-color: #888;
+}
+.zci--answer .string{
+    float: left;
+    margin: 0 7px;
+    background-color: #888;
+    width: 2px;
+}
+.zci--answer .fret{
+    margin: 23px 0 0;
+    background-color: #888;
+    height: 2px;
+}
+.zci--answer .zeropoint{
+    background-color: #ddd;
+    width: 6px;
+    height: 6px;
+    border: 1px #222 solid;
+    border-radius: 3px;
+    position: relative;
+    margin: 0 4px;
+    float: left;
+
+}
+.zci--answer .point{
+    background-color: #222;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 3px;
+    float: left;
+}
