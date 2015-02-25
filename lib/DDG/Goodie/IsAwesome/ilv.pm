@@ -17,8 +17,8 @@ attribution github => ["https://github.com/ilv", "ilv"];
 triggers start => "duckduckhack ilv";
 
 handle remainder => sub {
-	return if $_;
-	return "ilv is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return if $_;
+    return "ilv is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
