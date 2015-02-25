@@ -28,7 +28,7 @@ my $o_easter = 'Easter (Orthodox Christianity)';
 ddg_goodie_test(
     [qw( DDG::Goodie::EasterDate )],
     
-	'Easter 2015' => get_test('5 April', '2015', $w_easter),
+    'Easter 2015' => get_test('5 April', '2015', $w_easter),
     'Easter date' => get_test('31 March', '2013', $w_easter),
     'date of easter' => get_test('31 March', '2013', $w_easter),
     'when is Easter' => get_test('31 March', '2013', $w_easter),

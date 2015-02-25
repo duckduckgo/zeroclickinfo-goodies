@@ -248,17 +248,17 @@ sub moveable_holiday {
         
         $dt->subtract( days => ($dt->dow() - $dow) % 7 );
     } else {
-		$dt = DateTime->new(year => $year, month => $month, day => 1);
-	
-		$dt->add( days => ($week - 1) * 7 + ($dow - $dt->dow()) % 7 );
-	
-		return undef if $dt->weekday_of_month() != $week; # Assertion (self-check)
-	}
+        $dt = DateTime->new(year => $year, month => $month, day => 1);
+    
+        $dt->add( days => ($week - 1) * 7 + ($dow - $dt->dow()) % 7 );
+    
+        return undef if $dt->weekday_of_month() != $week; # Assertion (self-check)
+    }
 
-	# The month has no such date (for example, there is no 5th Sunday in January 2015)
-	return undef if $dt->month != $month;
+    # The month has no such date (for example, there is no 5th Sunday in January 2015)
+    return undef if $dt->month != $month;
 
-	return undef if $dt->dow() != $dow; # Assertion (self-check)
+    return undef if $dt->dow() != $dow; # Assertion (self-check)
     
     return $dt;
 }
