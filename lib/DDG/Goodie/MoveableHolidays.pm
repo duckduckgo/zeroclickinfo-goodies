@@ -44,6 +44,8 @@ my %jewish_holidays = (
 );
 
 my %christian_holidays = (
+    'Mardi Gras' => -47, 'Shrove Tuesday' => -47, 'Fat Tuesday' => -47, # Not observed by Orthodox church
+    'Ash Wednesday' => -46, # Not observed by Orthodox church
     'Palm Sunday' => -7,
     'Good Friday' => -2,
     'Easter' => 0,
@@ -59,6 +61,20 @@ my %moveable_holidays = ( # Format: country-code<month day_of_week week>
     'Autism Sunday' => '<2 7 2>',
     'International Beer Day' => '<8 5 1>',
     
+    # https://en.wikipedia.org/wiki/Mother%27s_Day
+    'Mother\'s Day' => 'US<5 7 2> NO<2 7 2> ES<5 7 1> AR<10 7 3> RU<11 7 0>',
+    'Mothers Day'   => 'US<5 7 2> NO<2 7 2> ES<5 7 1> AR<10 7 3> RU<11 7 0>',
+    'Mothers\' Day' => 'US<5 7 2> NO<2 7 2> ES<5 7 1> AR<10 7 3> RU<11 7 0>',
+    
+    # https://en.wikipedia.org/wiki/Children's_Day
+    'Children\'s Day' => 'US<6 7 2> US<6 7 1> TH<1 6 2> NZ<3 7 1> ES<5 7 2> AU<10 6 4> ZA<11 6 1>',
+    
+    # https://en.wikipedia.org/wiki/Father%27s_Day#Dates_around_the_world
+    'Father\'s Day' => 'US<6 7 3> RO<5 7 2> LT<6 7 1> AT<6 7 2> AU<9 7 1>',
+    
+    # https://en.wikipedia.org/wiki/Arbor_Day
+    'Arbor Day' => 'US<4 5 0>',
+    
     # US (https://en.wikipedia.org/wiki/Public_holidays_in_the_United_States)
     'Thanksgiving' => 'US<11 4 4> CA<10 1 2>',
     'Labor Day' => 'US<9 1 1>',
@@ -69,22 +85,18 @@ my %moveable_holidays = ( # Format: country-code<month day_of_week week>
     
     'American Family Day' => 'US<8 7 1>',
     'Casimir Pulaski Day' => 'US<3 1 1>',
+    'Pulaski Days' => 'US<10 5 1>',
     'Child Health Day' => 'US<10 1 1>',
     'Fraternal Day' => 'US<10 1 2>',
     'Hawaii Admission Day' => 'US<8 5 3>',
     'Indigenous Peoples\' Day' => 'US<10 1 2>',
-    'Missouri Day' => 'US<10 6 3>',
-    'Mother\'s Day' => 'US<5 7 2>',
-    'Children\'s Day' => 'US<6 7 1>',
-    'Father\'s Day' => 'US<6 7 3>',
+    'Missouri Day' => 'US<10 3 3>',
     'National Day of Prayer' => 'US<5 4 1>',
     'National Day of Reason' => 'US<5 4 1>',
     'Nevada Day' => 'US<10 5 0>',
     'Patriots\' Day' => 'US<4 1 3>',
-    'Pioneer Days' => 'US<5 6 1>',
-    'Pulaski Days' => 'US<10 5 1>',
+    'Pioneer Days' => 'US<5 6 1>', # https://en.wikipedia.org/wiki/Pioneer_Days_%28Chico,_California%29
     'Sweetest Day' => 'US<10 6 3>',
-    'Arbor Day' => 'US<4 5 0>',
     
     'El Buen Fin' => 'MX<11 5 3>',
     
@@ -225,8 +237,10 @@ sub christian_holiday {
     # Trinity Sunday is equal to Pentecost in Orthodox church
     $delta = $christian_holidays{'Pentecost'} if $delta == $christian_holidays{'Trinity Sunday'} && !$is_western;
     
-    # Corpus Christi is not observed by Orthodox church
-    $is_western = 1 if $delta == $christian_holidays{'Corpus Christi'} && !$is_western;
+    # Some holidays are not observed by Orthodox church
+    $is_western = 1 if ($delta == $christian_holidays{'Corpus Christi'} ||
+                        $delta == $christian_holidays{'Mardi Gras'} ||
+                        $delta == $christian_holidays{'Ash Wednesday'}) && !$is_western;
     
     my $dt = easter($year, $is_western);
     
@@ -330,7 +344,7 @@ handle query_raw => sub {
             }
         } elsif ($expr =~ $expr_regex) { # One country
             $result = output_date(moveable_holiday($year, $2, $3, $4));
-            $operation .= ' (' . code2country($1) . ')';
+            $operation .= ' (' . code2country($1) . ')' if $1;
         }
         return unless $result;
         

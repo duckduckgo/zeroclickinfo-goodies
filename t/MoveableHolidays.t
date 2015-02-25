@@ -86,6 +86,14 @@ ddg_goodie_test(
     'Corpus Christi 2015' => get_test('4 June', '2015', 'Corpus Christi (Western Christianity)'),
     'Orthodox Corpus Christi 2015' => get_test('4 June', '2015', 'Corpus Christi (Western Christianity)'), # cannot be Orthodox
     
+    'Mardi Gras 2015' => get_test('17 February', '2015', 'Mardi Gras (Western Christianity)'),
+    'Shrove Tuesday 2016' => get_test('9 February', '2016', 'Shrove Tuesday (Western Christianity)'),
+    'Fat Tuesday 2015' => get_test('17 February', '2015', 'Fat Tuesday (Western Christianity)'),
+    'Orthodox Mardi Gras 2015' => get_test('17 February', '2015', 'Mardi Gras (Western Christianity)'), # cannot be Orthodox
+    
+    'Ash Wednesday 2015' => get_test('18 February', '2015', 'Ash Wednesday (Western Christianity)'),
+    'Orthodox Ash Wednesday 2015' => get_test('18 February', '2015', 'Ash Wednesday (Western Christianity)'), # cannot be Orthodox
+    
     'Passover 2015' => get_test('4 April', '2015', 'Passover'),
     'Pesach 2015' => get_test('4 April', '2015', 'Pesach'),
     'Yom Kippur 2015' => get_test('23 September', '2015', 'Yom Kippur'),
@@ -130,14 +138,46 @@ ddg_goodie_test(
     'Columbus Day date' => get_test('14 October', '2013', 'Columbus Day (United States)'),
     '2015 Memorial Day' => get_test('25 May', '2015', 'Memorial Day (United States)'),
     '2015 Presidents\' Day' => get_test('16 February', '2015', 'Presidents\' Day (United States)'),
+    'presidents day 2015' => get_test('16 February', '2015', 'Presidents Day (United States)'),
+    'president\'s day date 2015' => get_test('16 February', '2015', 'President\'s Day (United States)'),
+    'washington\'s birthday 2015' => get_test('16 February', '2015', 'Washington\'s Birthday (United States)'),
     'Martin Luther King Day 2015' => get_test('19 January', '2015', 'Martin Luther King Day (United States)'),
-    
+
+    'American Family Day 2015' => get_test('2 August', '2015', 'American Family Day (United States)'),
+    'Casimir Pulaski Day 2015' => get_test('2 March', '2015', 'Casimir Pulaski Day (United States)'),
+    'Pulaski Days 2015' => get_test('2 October', '2015', 'Pulaski Days (United States)'),
+    'Child Health Day 2015' => get_test('5 October', '2015', 'Child Health Day (United States)'),
+    'Fraternal Day 2015' => get_test('12 October', '2015', 'Fraternal Day (United States)'),
+    'Hawaii Admission Day 2015' => get_test('21 August', '2015', 'Hawaii Admission Day (United States)'),
+    'Indigenous Peoples\' Day 2015' => get_test('12 October', '2015', 'Indigenous Peoples\' Day (United States)'),
+    'Missouri Day 2015' => get_test('21 October', '2015', 'Missouri Day (United States)'),
+    'National Day of Prayer 2015' => get_test('7 May', '2015', 'National Day of Prayer (United States)'),
+    'National Day of Reason 2015' => get_test('7 May', '2015', 'National Day of Reason (United States)'),
+    'Nevada Day 2015' => get_test('30 October', '2015', 'Nevada Day (United States)'),
+    'Patriots\' Day 2015' => get_test('20 April', '2015', 'Patriots\' Day (United States)'),
+    'Pioneer Days 2015' => get_test('2 May', '2015', 'Pioneer Days (United States)'),
+    'Sweetest Day 2015' => get_test('17 October', '2015', 'Sweetest Day (United States)'),
+
     '成人の日 2015' => get_test('12 January', '2015', '成人の日 (Japan)'), # https://en.wikipedia.org/wiki/Coming_of_Age_Day
     'coming of age day 2017' => get_test('9 January', '2017', 'Coming of Age Day (Japan)'),
     
     'Programmers\' Day 2015' => get_test('13 September', '2015', 'Programmers\' Day'),
     'Programmer Day 2016' => get_test('12 September', '2016', 'Programmer Day'),
     'Programmer\'s Day 2017' => get_test('13 September', '2017', 'Programmer\'s Day'),
+    
+    'autism sunday 2016' => get_test('14 February', '2016', 'Autism Sunday'),
+    'international beer day 2015' => get_test('7 August', '2015', 'International Beer Day'),
+    
+    'mothers day 2015' => get_test('United States: 10 May, Norway: 8 February, Spain: 3 May, ' .
+        'Argentina: 18 October, Russian Federation: 29 November', '2015', 'Mothers Day'),
+    'mother\'s day 2016' => get_test('United States: 8 May, Norway: 14 February, Spain: 1 May, ' .
+        'Argentina: 16 October, Russian Federation: 27 November', '2016', 'Mother\'s Day'),
+
+    'Children\'s Day 2015' => get_test('United States: 14 June, United States: 7 June, Thailand: 10 January, New Zealand: 1 March, ' .
+        'Spain: 10 May, Australia: 24 October, South Africa: 7 November', '2015', 'Children\'s Day'),
+        
+    'Father\'s Day 2015' => get_test('United States: 21 June, Romania: 10 May, ' .
+        'Lithuania: 7 June, Austria: 14 June, Australia: 6 September', '2015', 'Father\'s Day'),
 
     'easter' => undef,
     'easter 123' => undef,
