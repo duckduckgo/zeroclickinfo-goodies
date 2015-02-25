@@ -1,7 +1,6 @@
 package DDG::Goodie::CheatSheets;
 # ABSTRACT: Load basic cheat sheets from YAML files 
 
-use YAML::XS 'LoadFile';
 use DDG::Goodie;
 
 zci answer_type => 'cheat_sheet';
@@ -24,8 +23,6 @@ triggers startend => (
     'reference',
     'example',
     'examples',
-    'example',
-    'examples'
 );
 
 attribution github  => [zachthompson => 'Zach Thompson'];
@@ -33,10 +30,22 @@ attribution github  => [zachthompson => 'Zach Thompson'];
 handle remainder => sub {
     # If needed we could jump through a few more hoops to check
     # terms against file names.
-    my $yml_path = share(join('-', split /\s+/o, lc($_) . '.yml');
-    my $yml;
+    my $json_path = share(join('-', split /\s+/o, lc($_) . '.yml');
+    open my $fh, $json_path or return;
+    my $json = do { local $/;  <$fh> };
     eval { $yml = LoadFile($yml_path) } or do { return };
-    return structured_answer => $yml;
+    return structured_answer => {
+    	id => 'cheat_sheets',
+	name => 'Cheat Sheet',
+	data => $json,
+	templates => {
+	    group => 'base',
+	    options => {
+	    	content => 'DDH.cheat_sheets.content',
+	    	moreAt => true
+	    }
+	}
+    };
 };
 
 1;
