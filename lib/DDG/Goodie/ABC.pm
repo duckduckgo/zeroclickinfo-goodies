@@ -1,6 +1,7 @@
 package DDG::Goodie::ABC;
 # ABSTRACT: Randomly pick one of several different choices delimited by "or"
 
+use strict;
 use DDG::Goodie;
 use List::AllUtils qw/none/;
 
@@ -16,12 +17,8 @@ name 'ABC';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
 category 'random';
 topics 'trivia';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC',
-            twitter => 'kablamo_',
-            cpan    => 'KABLAMO',
-            github  => 'kablamo',
-            web     => ["http://kablamo.org", "Eric Johnson"] ;
+attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
+            github  => ['kablamo', 'Eric Johnson'];
 
 handle remainder => sub {
 
@@ -35,12 +32,12 @@ handle remainder => sub {
     # rm every 'or' from the list
     my @choices = grep { lc $_ ne 'or' } @words;
 
-    my $selection_type = 'random';
+    my $selection_type = 'Random';
     my $selection;
     # Easter egg. For queries like:
     #   'choose duckduckgo or google or bing or something'
     if (my @duck = grep { / \A (?: duck (?: duckgo )? | ddg ) \z /ix } @choices) {
-        $selection_type = 'non-random';
+        $selection_type = 'Non-random';
         $selection      = $duck[0];
     } else {
         # Ensure rand is seeded for each process

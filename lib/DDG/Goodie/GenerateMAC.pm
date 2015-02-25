@@ -1,6 +1,7 @@
 package DDG::Goodie::GenerateMAC;
 # ABSTRACT: generates a random network MAC address
 
+use strict;
 use DDG::Goodie;
 
 triggers startend => "generate mac addr",
@@ -29,7 +30,7 @@ handle remainder => sub {
     return "Here's a random MAC address: $address",
       structured_answer => {
         input     => [],
-        operation => 'random MAC address',
+        operation => 'Random MAC address',
         result    => $address
       };
 };

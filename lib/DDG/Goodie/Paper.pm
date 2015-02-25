@@ -1,6 +1,7 @@
 package DDG::Goodie::Paper;
 # ABSTRACT: Return the dimensions of a defined paper size
 
+use strict;
 use DDG::Goodie;
 use YAML;
 
@@ -17,9 +18,9 @@ code_url
     'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Paper.pm';
 category 'conversions';
 topics 'special_interest';
-attribution github => 'loganom',
-            twitter => 'loganmccamon',
-            github => 'mattlehnig';
+attribution github => ['loganom', 'Logan McCamon'],
+            twitter => ['loganmccamon', 'Logan McCamon'],
+            github => ['mattlehnig', 'Matt Lehnig'];
 
 my $sizes = Load(scalar share('sizes.yml')->slurp);
 
@@ -34,7 +35,7 @@ handle query_lc => sub {
     return $value,
       structured_answer => {
         input     => [$s],
-        operation => 'paper size',
+        operation => 'Paper size',
         result    => $value
       };
 };

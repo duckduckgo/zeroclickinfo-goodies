@@ -1,6 +1,7 @@
 package DDG::Goodie::Hiragana;
 # ABSTRACT: converts romaji syllables into hiragana
 
+use strict;
 use DDG::Goodie;
 triggers startend =>'japanese hiragana','hiragana', 'hiragana japanese';
 zci answer_type => 'hiragana';
@@ -17,7 +18,7 @@ category "language";
 topics "special_interest";
 
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Hiragana.pm';
-attribution github => "mintsoft";
+attribution github => ['https://github.com/mintsoft', 'Rob Emery'];
 
 my %hiragana = (
     # gojuuon

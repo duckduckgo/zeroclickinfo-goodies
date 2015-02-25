@@ -1,13 +1,14 @@
 package DDG::Goodie::Unicornify;
 # ABSTRACT: Return Gravatar image given an email address
 
+use strict;
 use DDG::Goodie;
 use CGI qw/img/;
 use Email::Valid;
 use Unicornify::URL;
 
 triggers start => 'unicornify';
-attribution github => ['https://github.com/flaming-toast', 'flaming-toast'];
+attribution github => ['flaming-toast', 'Jessica Yu'];
 
 handle remainder => sub {
 	my $link = 'http://unicornify.appspot.com/';

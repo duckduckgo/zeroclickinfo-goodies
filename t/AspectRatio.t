@@ -16,7 +16,7 @@ ddg_goodie_test([qw(
         'Aspect ratio: 640:480 (4:3)',
         structured_answer => {
             input     => ['4:3'],
-            operation => 'aspect ratio',
+            operation => 'Aspect ratio',
             result    => '640:480'
         }
     ),
@@ -24,7 +24,7 @@ ddg_goodie_test([qw(
         'Aspect ratio: 640:480 (4:3)',
         structured_answer => {
             input     => ['4:3'],
-            operation => 'aspect ratio',
+            operation => 'Aspect ratio',
             result    => '640:480'
         }
     ),
@@ -32,7 +32,7 @@ ddg_goodie_test([qw(
         'Aspect ratio: 20:30 (1:1.5)',
         structured_answer => {
             input     => ['1:1.5'],
-            operation => 'aspect ratio',
+            operation => 'Aspect ratio',
             result    => '20:30'
         }
     ),
@@ -40,7 +40,7 @@ ddg_goodie_test([qw(
         'Aspect ratio: 10:15 (1:1.5)',
         structured_answer => {
             input     => ['1:1.5'],
-            operation => 'aspect ratio',
+            operation => 'Aspect ratio',
             result    => '10:15'
         }
     ),

@@ -1,6 +1,7 @@
 package DDG::Goodie::RubiksCubePatterns;
 # ABSTRACT: Create interesting patterns from a solved Rubik's Cube.
 
+use strict;
 use DDG::Goodie;
 
 
@@ -12,7 +13,9 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'random';
 topics 'special_interest';
 source 'http://math.cos.ucf.edu/~reid/Rubik/patterns.html';
-attribution web => ['robert.io', 'Robert Picard'], twitter => '__rlp', github => ['https://github.com/rpicard', 'rpicard'];
+attribution web => ['robert.io', 'Robert Picard'], 
+            twitter => ['__rlp', 'Robert Picard'], 
+            github => ['rpicard', 'Robert Picard'];
 
 triggers start =>	"rcube", "rubik", "rubiks", "rubix",
 					"rubicks", "rubik's", "rubic's", "rubick's",

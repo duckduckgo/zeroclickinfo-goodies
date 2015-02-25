@@ -1,9 +1,11 @@
 package DDG::Goodie::Roman;
 # ABSTRACT: Convert between Roman and Arabic numeral systems.
 
+use strict;
 use DDG::Goodie;
 
 use Roman;
+use utf8;
 
 primary_example_queries 'roman numeral MCCCXXXVII';
 secondary_example_queries 'roman 1337', 'roman IV';
@@ -13,7 +15,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'cryptography';
 
-attribution github => ['https://github.com/mrshu', 'mrshu'];
+attribution github => ['mrshu', 'Marek Šuppa'];
 
 triggers any => "roman", "arabic";
 

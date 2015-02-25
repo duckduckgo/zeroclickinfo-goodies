@@ -1,6 +1,8 @@
 package DDG::Goodie::Dice;
 # ABSTRACT: roll a number of (abstract) dice.
+# https://en.wikipedia.org/wiki/Dice_notation
 
+use strict;
 use DDG::Goodie;
 
 triggers start => "roll", "throw";
@@ -15,10 +17,9 @@ name 'Dice';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Dice.pm';
 category 'random';
 topics 'math';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC',
-            twitter => 'loganmccamon',
-            github => 'loganom' ;
+attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
+            twitter => [ 'loganmccamon', 'loganom'],
+            github => ['loganom', 'loganom'];
 
 my %utf8_dice = (
     1 => "\x{2680}",

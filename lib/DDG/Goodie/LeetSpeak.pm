@@ -1,6 +1,7 @@
 package DDG::Goodie::LeetSpeak;
 # ABSTRACT: Translate the query into leet speak.
 
+use strict;
 use DDG::Goodie;
 
 triggers startend => 'leetspeak', 'l33tsp34k', 'l33t', 'leet speak', 'l33t sp34k';
@@ -10,7 +11,7 @@ topics 'geek';
 category 'conversions';
 name 'LeetSpeak';
 code_url 'https://github.com/antoine-vugliano/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/LeetSpeak.pm';
-attribution github => ['https://github.com/antoine-vugliano', 'antoine-vugliano'],
+attribution github => ['https://github.com/antoine-vugliano', 'Antoine Vugliano'],
             web    => ['http://antoine.vugliano.free.fr',     'Antoine Vugliano'];
 
 zci answer_type => 'leet_speak';
@@ -55,7 +56,7 @@ handle remainder => sub {
     return "Leet Speak: $translation",
       structured_answer => {
         input     => [$text],
-        operation => 'leet speak',
+        operation => 'Leet speak',
         result    => $translation,
       };
 };

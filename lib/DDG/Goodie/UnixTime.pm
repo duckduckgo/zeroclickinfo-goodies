@@ -1,19 +1,20 @@
 package DDG::Goodie::UnixTime;
 # ABSTRACT: epoch -> human readable time
 
+use strict;
 use DDG::Goodie;
 
 use DateTime;
 use List::MoreUtils qw( uniq );
 use Try::Tiny;
 
-my @trigger_words = ("unixtime", "datetime", "unix timestamp", "unix time stamp", "unix epoch", "epoch", "timestamp", "unix time");
+my @trigger_words = ("unixtime", "datetime", "unix timestamp", "unix time stamp", "unix epoch", "epoch", "timestamp", "unix time", "utc time", "utc now", "current utc");
 triggers startend => @trigger_words;
 
 zci answer_type => "time_conversion";
 zci is_cached   => 0;
 
-attribution github => ['https://github.com/codejoust', 'codejoust'];
+attribution github => ['codejoust', 'Iain '];
 
 primary_example_queries 'unix time 0000000000000';
 secondary_example_queries 'epoch 0', 'epoch 2147483647';

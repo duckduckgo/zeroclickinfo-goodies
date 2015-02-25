@@ -1,6 +1,7 @@
 package DDG::Goodie::WhereAmI;
 # ABSTRACT: Display the user's perceived location from GeoIP
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 0;
@@ -14,8 +15,8 @@ name 'WhereAmI';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WhereAmI.pm';
 category 'computing_tools';
 topics 'travel';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc', 'Michael Smith'],
+            cpan    => ['CRZEDPSYC', 'Michael Smith'];
 
 handle remainder => sub {
     return if length($_) or !$loc or !$loc->city;
@@ -26,7 +27,7 @@ handle remainder => sub {
     return $answer,
       structured_answer => {
         input     => [],
-        operation => 'apparent current location',
+        operation => 'Apparent current location',
         result    => $answer
       };
 };

@@ -1,6 +1,7 @@
 package DDG::Goodie::Ascii;
 # ABSTRACT: ASCII
 
+use strict;
 use DDG::Goodie;
 
 triggers end => "ascii";
@@ -24,7 +25,7 @@ handle remainder => sub {
     return "$binary in binary is \"$ascii\" in ASCII",
       structured_answer => {
         input     => [$binary],
-        operation => 'binary to ASCII',
+        operation => 'Binary to ASCII',
         result    => html_enc($ascii),
       };
 };

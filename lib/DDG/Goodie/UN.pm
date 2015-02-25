@@ -1,10 +1,11 @@
 package DDG::Goodie::UN;
 # ABSTRACT: Gives a description for a given UN number
 
+use strict;
 use DDG::Goodie;
 use Number::UN 'get_un';
 
-attribution github => ['https://github.com/tantalor', 'tantalor'];
+attribution github => ['tantalor', 'John Tantalo'];
 
 primary_example_queries 'UN Number 0009';
 description 'gives a description for a given UN number';

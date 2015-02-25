@@ -1,6 +1,7 @@
 package DDG::Goodie::Fortune;
 # ABSTRACT: UNIX fortune quips.
 
+use strict;
 use DDG::Goodie;
 use Fortune;
 
@@ -29,7 +30,7 @@ handle remainder => sub {
     return $output,
       structured_answer => {
         input     => [],
-        operation => 'random fortune',
+        operation => 'Random fortune',
         result    => $output
       };
 };

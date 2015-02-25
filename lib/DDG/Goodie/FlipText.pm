@@ -1,6 +1,7 @@
 package DDG::Goodie::FlipText;
 # ABSTRACT: appear to flip text upside down via UNICODE.
 
+use strict;
 use DDG::Goodie;
 
 use Text::UpsideDown;
@@ -31,7 +32,7 @@ handle remainder => sub {
     return $result,
       structured_answer => {
         input     => [html_enc($input)],
-        operation => 'flip text',
+        operation => 'Flip text',
         result    => html_enc($result),
       };
 };

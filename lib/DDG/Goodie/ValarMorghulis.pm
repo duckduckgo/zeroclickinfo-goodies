@@ -1,6 +1,7 @@
 package DDG::Goodie::ValarMorghulis;
 # ABSTRACT: A Game of Thrones / A Song of Ice and Fire easter egg.
 
+use strict;
 use utf8;
 use DDG::Goodie;
 
@@ -26,7 +27,7 @@ handle remainder => sub {
     return $answer,
       structured_answer => {
         input     => ['Valar morghulis'],
-        operation => 'code phrase',
+        operation => 'Code phrase',
         result    => $answer
       };
 };

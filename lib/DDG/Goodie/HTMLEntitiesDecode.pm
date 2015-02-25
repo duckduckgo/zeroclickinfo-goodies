@@ -2,6 +2,7 @@ package DDG::Goodie::HTMLEntitiesDecode;
 # ABSTRACT: Decode HTML Entities.
 # HTML Entity Encoding has been moved to a separate module
 
+use strict;
 use DDG::Goodie;
 use HTML::Entities 'decode_entities';
 use Unicode::UCD 'charinfo';
@@ -18,8 +19,8 @@ name                        'HTMLEntitiesDecode';
 code_url                    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HTMLEntitiesDecode.pm';
 category                    'computing_tools';
 topics                      'programming';
-attribution twitter =>      'crazedpsyc',
-            cpan    =>      'CRZEDPSYC' ,
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'],
             twitter =>      ['https://twitter.com/nshanmugham', 'Nishanth Shanmugham'],
             web     =>      ['http://nishanths.github.io', 'Nishanth Shanmugham'],
             github  =>      ['https://github.com/nishanths', 'Nishanth Shanmugham'];

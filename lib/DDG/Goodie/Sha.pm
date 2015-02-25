@@ -1,6 +1,7 @@
 package DDG::Goodie::Sha;
 # ABSTRACT: Compute a SHA sum for a provided string.
 
+use strict;
 use DDG::Goodie;
 use Digest::SHA;
 
@@ -15,8 +16,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'cryptography';
 attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+            github => [ 'duckduckgo', 'DuckDuckGo'],
+            twitter => ['duckduckgo', 'DuckDuckGo'];
 
 
 triggers query => qr/^

@@ -1,7 +1,9 @@
 package DDG::Goodie::Jira;
 # ABSTRACT: returns the URL of an Apache or Codehaus JIRA bug ticket according to its identifier
 
+use strict;
 use DDG::Goodie;
+use utf8;
 
 zci is_cached   => 1;
 zci answer_type => 'jira';
@@ -16,8 +18,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'programming';
 topics 'programming';
 attribution
-  github  => ['https://github.com/arroway',       'arroway'],
-  twitter => ['http://twitter.com/steph_ouillon', 'steph_ouillon'];
+  github  => ['https://github.com/arroway',       'Stéphanie Ouillon'],
+  twitter => ['http://twitter.com/steph_ouillon', 'Stéphanie Ouillon'];
 
 my $projects = Load(scalar share('projects.yml')->slurp);
 

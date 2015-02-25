@@ -1,6 +1,7 @@
 package DDG::Goodie::GreatestCommonFactor;
 # ABSTRACT: Returns the greatest common factor of the two numbers entered
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "greatest_common_factor";
@@ -14,7 +15,7 @@ description 'returns the greatest common factor of the two entered numbers';
 name 'GreatestCommonFactor';
 topics 'math';
 category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'austin_heimark' ];
+attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
 
 handle remainder => sub {
 
@@ -26,7 +27,7 @@ handle remainder => sub {
     return 'Greatest common factor of ' . $first . ' and ' . $second . ' is ' . $result . '.',
       structured_answer => {
         input     => [$first, $second],
-        operation => 'greatest common factor',
+        operation => 'Greatest common factor',
         result    => $result
       };
 };

@@ -1,10 +1,11 @@
 package DDG::Goodie::HexToDec;
 # ABSTRACT: Convert hexidecimal to decimal
 
+use strict;
 use DDG::Goodie;
 use Math::BigInt;
 
-triggers query_raw => qr/^\s*0x[0-9a-fA-F]+\s*$/;
+triggers query_raw => qr/^\s*0x[0-9a-fA-F]+(?:(?:\s+hex)?\s+(?:in|as|to)\s+(?:dec(?:imal)?|base(?:\s+|-)?10))?\s*$/;
 
 zci answer_type => 'hex_to_dec';
 zci is_cached   => 1;
@@ -16,7 +17,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'math', 'programming';
 attribution cpan   => 'majuscule',
-            github => 'nospampleasemam',
+            github => ['nospampleasemam', 'Dylan Lloyd'],
             web    => ['https://dylansserver.com', 'Dylan Lloyd'] ;
 
 handle query_raw => sub {
@@ -27,7 +28,7 @@ handle query_raw => sub {
 
     return "$hex base 16 = $decimal base 10", structured_answer => {
         input     => ['0x' . $hex],
-        operation => 'hex to decimal',
+        operation => 'Hex to decimal',
         result    => "$decimal",         # Quoted for display precision as string.
     };
 };

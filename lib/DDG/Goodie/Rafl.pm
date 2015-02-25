@@ -1,6 +1,7 @@
 package DDG::Goodie::Rafl;
 # ABSTRACT: rafl is so everywhere, there's a DuckDuckGo.com "!rafl" bang syntax
 
+use strict;
 use DDG::Goodie;
 
 use Acme::rafl::Everywhere;
@@ -13,8 +14,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'ids';
 topics 'social';
 
-attribution web     => 'http://stephen.scaffidi.net',
-            github  => ['https://github.com/Hercynium', 'Hercynium'];
+attribution web     => ['http://stephen.scaffidi.net', 'Stephen R. Scaffidi'],
+            github  => ['Hercynium', 'Stephen R. Scaffidi'];
 
 triggers any => 'rafl';
 

@@ -1,6 +1,7 @@
 package DDG::Goodie::Rot13;
 # ABSTRACT: Rotate chars by 13  letters
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'rot13 thirteen';
@@ -11,7 +12,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'transformations';
 topics 'cryptography';
 
-attribution github => ['https://github.com/unlisted', 'unlisted'];
+attribution github => ['unlisted', 'Morgan'];
 
 triggers start => 'rot13';
 

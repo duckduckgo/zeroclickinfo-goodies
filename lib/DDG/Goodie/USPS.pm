@@ -1,6 +1,7 @@
 package DDG::Goodie::USPS;
 # ABSTRACT: Track a package through the US postal service.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;
@@ -14,8 +15,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'ids';
 topics 'special_interest';
 attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+            github => [ 'duckduckgo', 'DuckDuckGo'],
+            twitter => ['duckduckgo', 'DuckDuckGo'];
 
 # Regex for usps.
 my $usps_qr = qr/u(?:nited|)s(?:states|)(?:p(?:ostal|)s(?:ervice|)|)/io;

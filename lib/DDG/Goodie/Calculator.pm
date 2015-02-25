@@ -1,6 +1,7 @@
 package DDG::Goodie::Calculator;
 # ABSTRACT: do simple arthimetical calculations
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
@@ -17,10 +18,7 @@ name 'Calculator';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
 category 'calculations';
 topics 'math';
-attribution
-  web     => ['https://www.duckduckgo.com',    'DuckDuckGo'],
-  github  => ['https://github.com/duckduckgo', 'duckduckgo'],
-  twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github  => ['https://github.com/duckduckgo', 'duckduckgo'];
 
 triggers query_nowhitespace => qr<
         ^
@@ -77,6 +75,7 @@ handle query_nowhitespace => sub {
 
     return if ($query =~ /\b0x/);      # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
+    return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
@@ -148,17 +147,15 @@ sub prepare_for_display {
     $query =~ s/((?:\d+?|\s))E(-?\d+)/\($1 * 10^$2\)/i;
     $query =~ s/\s*\*{2}\s*/^/g;    # Use prettier exponentiation.
     $result = $style->for_display($result);
-    my $input = $style->with_html($query);
     foreach my $name (keys %named_constants) {
         $query =~ s#\($name\)#$name#xig;
-        $input =~ s#\($name\)#$name#xig;
     }
 
     return +{
         text       => spacing($query) . ' = ' . $result,
         structured => {
-            input     => [spacing($input)],
-            operation => 'calculate',
+            input     => [spacing($query)],
+            operation => 'Calculate',
             result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
         },
     };

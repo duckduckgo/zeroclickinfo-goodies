@@ -1,6 +1,7 @@
 package DDG::Goodie::ReverseResistorColours;
 #ABSTRACT: Do the reverse of what ResistorColors.pm does.
 
+use strict;
 use DDG::Goodie;
 use utf8;
 

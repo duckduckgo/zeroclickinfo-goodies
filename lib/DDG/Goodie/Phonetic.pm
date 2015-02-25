@@ -1,6 +1,7 @@
 package DDG::Goodie::Phonetic;
 # ABSTRACT: Take a string and spell it out phonetically using the NATO alphabet
 
+use strict;
 use DDG::Goodie;
 
 triggers start => 'phonetic';
@@ -13,8 +14,8 @@ name 'Phonetic';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Phonetic.pm';
 category 'reference';
 topics 'special_interest';
-attribution github    => [ 'http://github.com/robotmay', 'Robert May' ],
-            twitter => [ 'http://twitter.com/robotmay', 'robotmay' ];
+attribution github    => [ 'robotmay', 'Robert May' ],
+            twitter => [ 'robotmay', 'Robert May' ];
 
 sub components {
     my %nato = (

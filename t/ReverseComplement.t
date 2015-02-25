@@ -12,7 +12,7 @@ my @aaaacccggt = (
     "ACCGGGTTTT",
     structured_answer => {
         input     => ['AAAACCCGGT'],
-        operation => 'nucleotide reverse complement',
+        operation => 'Nucleotide reverse complement',
         result    => 'ACCGGGTTTT'
     });
 
@@ -25,7 +25,7 @@ ddg_goodie_test(
         "ACGCCGCCAGCGTTCGTCCTGAGCCATGATCAAA",
         structured_answer => {
             input     => ['TTTGATCATGGCTCAGGACGAACGCTGGCGGCGT'],
-            operation => 'nucleotide reverse complement',
+            operation => 'Nucleotide reverse complement',
             result    => 'ACGCCGCCAGCGTTCGTCCTGAGCCATGATCAAA'
         }
     ),
@@ -37,7 +37,7 @@ ddg_goodie_test(
         "ACCGGGTTTT",
         structured_answer => {
             input     => ['AAAACCCGGU'],
-            operation => 'nucleotide reverse complement',
+            operation => 'Nucleotide reverse complement',
             result    => 'ACCGGGTTTT'
         }
     ),
@@ -47,7 +47,7 @@ ddg_goodie_test(
         "TCCGTCTGA",
         structured_answer => {
             input     => ['UCAGACGGA'],
-            operation => 'nucleotide reverse complement',
+            operation => 'Nucleotide reverse complement',
             result    => 'TCCGTCTGA',
         }
     ),
@@ -55,7 +55,7 @@ ddg_goodie_test(
         "TCCGTCTGA",
         structured_answer => {
             input     => ['UCAGACGGA'],
-            operation => 'nucleotide reverse complement',
+            operation => 'Nucleotide reverse complement',
             result    => 'TCCGTCTGA',
         }
     ),
@@ -68,7 +68,7 @@ ddg_goodie_test(
             input => [
                 'TCAAAWWDGGATTAMATACCCTGGTAGTCCACRCCATAAACGATGTATGCTTGGTGRGVGTGAGTAATCACTCAGTMCGAAGGCAACCTGATAAGCATACCKCCTVGAGTACGATCSCAAGGTTGAAACTCA'
             ],
-            operation => 'nucleotide reverse complement',
+            operation => 'Nucleotide reverse complement',
             result =>
               'TGAGTTTCAACCTTGSGATCGTACTCBAGGMGGTATGCTTATCAGGTTGCCTTCGKACTGAGTGATTACTCACBCYCACCAAGCATACATCGTTTATGGYGTGGACTACCAGGGTATKTAATCCHWWTTTGA'
         },
@@ -80,7 +80,7 @@ ddg_goodie_test(
             input => [
                 'CUAKCCAAGCCGACGASUCGGUAGCUGGUCUGAGAGKGACGAACAGCCACACUGGAACUGAGACAYCGGUCCAGACUCCUACGGGAGGCAGCAGUGAGGAAUAUUGGUCAAKUGGACRGCAAGUCUGAACCAYGCGACGRCGCGUGCGGGAUGAAGGGGCUUAGCCUCGUAAACDCGCURGUCAAGAGGGACGAGAGGHGCGAUUUUGUMCGUCCGGGWWACGV'
             ],
-            operation => 'nucleotide reverse complement',
+            operation => 'Nucleotide reverse complement',
             result =>
               'BCGTWWCCCGGACGKACAAAATCGCDCCTCTCGTCCCTCTTGACYAGCGHGTTTACGAGGCTAAGCCCCTTCATCCCGCACGCGYCGTCGCRTGGTTCAGACTTGCYGTCCAMTTGACCAATATTCCTCACTGCTGCCTCCCGTAGGAGTCTGGACCGRTGTCTCAGTTCCAGTGTGGCTGTTCGTCMCTCTCAGACCAGCTACCGASTCGTCGGCTTGGMTAG'
         },

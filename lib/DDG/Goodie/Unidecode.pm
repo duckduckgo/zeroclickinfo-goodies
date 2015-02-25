@@ -1,6 +1,7 @@
 package DDG::Goodie::Unidecode;
 # ABSTRACT: return an ASCII version of the search query
 
+use strict;
 use DDG::Goodie;
 use Text::Unidecode;
 use utf8;
@@ -10,7 +11,7 @@ triggers startend => "unidecode";
 zci is_cached => 1;
 zci answer_type => "convert_to_ascii";
 
-attribution github => ['https://github.com/moritz', 'moritz'];
+attribution github => ['moritz', 'Moritz Lenz'];
 primary_example_queries 'unidecode møæp';
 secondary_example_queries "unidecode åäº°";
 description 'decode special non-latin characters';

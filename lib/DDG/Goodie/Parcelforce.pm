@@ -1,6 +1,7 @@
 package DDG::Goodie::Parcelforce;
 # ABSTRACT: track a package through Parcelforce.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached   => 1;
@@ -16,8 +17,8 @@ code_url
 category 'ids';
 topics 'special_interest';
 attribution
-    github  => [ 'https://github.com/TopHattedCoder', 'Tom Bebbington' ],
-    twitter => [ 'http://twitter.com/TopHattedCoder', 'TopHattedCoder' ];
+    github  => [ 'TopHattedCoder', 'Tom Bebbington' ],
+    twitter => [ 'TopHattedCoder', 'Tom Bebbington' ];
 
 # Regex for parcelforce / royal mail
 my $rm_qr = qr/royalmail|parcelforce/io;

@@ -1,6 +1,7 @@
 package DDG::Goodie::DHL;
 # ABSTRACT: track a package through DHL.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;
@@ -14,9 +15,7 @@ icon_url "/i/www.dhl.com.ico";
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DHL.pm';
 category 'ids';
 topics 'special_interest';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
 
 # Regex for usps.
 my $dhl_qr = qr/dhl/io;

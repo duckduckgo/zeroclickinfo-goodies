@@ -1,6 +1,7 @@
 package DDG::Goodie::Passphrase;
 # ABSTRACT: Randomly generate a passphrase with the selected number of words.
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => 'random_passphrase';
@@ -13,7 +14,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'cryptography';
 
-attribution github => ['https://github.com/hunterlang', 'hunterlang'];
+attribution github => ['hunterlang', 'Hunter Lang'];
 
 triggers startend => 'passphrase', 'pass phrase', 'random passphrase', 'passphrase random', 'random pass phrase', 'pass phrase random';
 
@@ -55,7 +56,7 @@ handle query_lc => sub {
     return "random passphrase: $phrase",
       structured_answer => {
         input     => [$input_string],
-        operation => 'random passphrase',
+        operation => 'Random passphrase',
         result    => $phrase,
       };
 };

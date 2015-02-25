@@ -1,6 +1,7 @@
 package DDG::Goodie::MD5;
 # ABSTRACT: Calculate the MD5 digest of a string.
 
+use strict;
 use utf8;
 use DDG::Goodie;
 use Digest::MD5 qw(md5_base64 md5_hex);
@@ -19,8 +20,8 @@ description 'Calculate the MD5 digest of a string.';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MD5.pm';
 category 'calculations';
 topics 'cryptography';
-attribution web => 'http://www.guttula.com',
-            github => [ 'jarmokivekas', 'Jarmo Kivekäs'];
+attribution web => ['http://www.guttula.com', 'Jarmo Kivekäs'],
+            github => ['jarmokivekas', 'Jarmo Kivekäs'];
 
 
 triggers startend => 'md5', 'md5sum';

@@ -1,6 +1,7 @@
 package DDG::Goodie::GoldenRatio;
 # ABSTRACT: find number related to the given number by the Golden Ratio.
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "golden_ratio";
@@ -16,8 +17,8 @@ name 'GoldenRatio';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/GoldenRatio.pm';
 category 'calculations';
 topics 'math';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'];
 
 handle remainder => sub {
     my $input = $_;

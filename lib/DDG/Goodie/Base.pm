@@ -1,6 +1,7 @@
 package DDG::Goodie::Base;
 # ABSTRACT: convert numbers between arbitrary bases
 
+use strict;
 use DDG::Goodie;
 
 use Math::Int2Base qw/int2base/;
@@ -29,7 +30,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'math';
 attribution web => [ 'http://perlgeek.de/blog-en', 'Moritz Lenz' ],
-            github => [ 'http://github.com/moritz', 'moritz'];
+            github => [ 'http://github.com/moritz', 'Moritz Lenz'];
 
 
 handle query_clean => sub {
@@ -41,7 +42,7 @@ handle query_clean => sub {
     return "$number in base $base is $based",
       structured_answer => {
         input     => ["$number"],
-        operation => 'decimal to base ' . $base,
+        operation => 'Decimal to base ' . $base,
         result    => $based
       };
 };

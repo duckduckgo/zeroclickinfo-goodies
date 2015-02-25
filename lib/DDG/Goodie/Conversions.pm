@@ -1,6 +1,7 @@
 package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
@@ -15,8 +16,9 @@ topics                    'computing', 'math';
 primary_example_queries   'convert 5 oz to grams';
 secondary_example_queries '5 ounces to g', '0.5 nautical miles in km';
 code_url                  'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Conversions.pm';
-attribution                github  => ['https://github.com/elohmrow', 'https://github.com/mintsoft'],
-                           email   => ['bradley@pvnp.us', 'bradley@pvnp.us'];
+attribution                github  => 'https://github.com/elohmrow',
+                           github => ['https://github.com/mintsoft', 'Rob Emery'],
+                           email   => 'bradley@pvnp.us';
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
@@ -150,7 +152,7 @@ handle query_lc => sub {
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
         input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
-        operation => 'convert',
+        operation => 'Convert',
         result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
       };
 };

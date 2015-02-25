@@ -1,6 +1,7 @@
 package DDG::Goodie::Coin;
 # ABSTRACT: flip a (fair) coin.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 0;
@@ -45,7 +46,7 @@ handle query_lc => sub {
         $result . ' (random)',
         structured_answer => {
             input     => [$flips],
-            operation => 'flip coin',
+            operation => 'Flip coin',
             result    => $result
         });
 };

@@ -1,13 +1,14 @@
 package DDG::Goodie::Unicode;
 # ABSTRACT: unicode character information lookup
 
+use strict;
 use DDG::Goodie;
 
 use Unicode::UCD qw/charinfo/;
 use Unicode::Char ();              # For name -> codepoint lookup
 use Encode qw/encode_utf8/;
 
-attribution github => ['https://github.com/cosimo', 'cosimo'];
+attribution github => ['cosimo', 'Cosimo Streppone'];
 primary_example_queries 'U+590c';
 secondary_example_queries 'unicode white smiling face';
 description 'get information about a unicode character';

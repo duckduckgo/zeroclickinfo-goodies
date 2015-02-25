@@ -1,6 +1,7 @@
 package DDG::Goodie::EmailValidator;
 # ABSTRACT: Checks given email address
 
+use strict;
 use DDG::Goodie;
 use Email::Valid;
 
@@ -54,7 +55,7 @@ handle remainder => sub {
     return $message,
       structured_answer => {
         input     => [html_enc($address)],
-        operation => 'email address validation',
+        operation => 'Email address validation',
         result    => html_enc($message),
       };
 };

@@ -1,6 +1,7 @@
 package DDG::Goodie::ISO639;
 # ABSTRACT: ISO 639 language names and codes
 
+use strict;
 use DDG::Goodie;
 use Locale::Language;
 
@@ -16,7 +17,7 @@ name 'ISO639';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ISO639.pm';
 category 'reference';
 topics 'programming';
-attribution github => [ 'http://github.com/tantalor', 'tantalor' ],
+attribution github => [ 'http://github.com/tantalor',  'John Tantalo' ],
             web    => [ 'http://johntantalo.com/blog', 'John Tantalo' ];
 
 

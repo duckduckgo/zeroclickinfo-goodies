@@ -1,6 +1,7 @@
 package DDG::Goodie::VimCheatSheet;
 # ABSTRACT: Provide a cheatsheet for common vim syntax
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "vim_cheat";
@@ -37,27 +38,14 @@ attribution github  => ["kablamo",            "Eric Johnson"],
             twitter => ["kablamo_",           "Eric Johnson"],
             web     => ["http://kablamo.org", "Eric Johnson"];
 
+my $HTML = share("vim_cheat_sheet.html")->slurp(iomode => '<:encoding(UTF-8)');
+my $TEXT = share("vim_cheat_sheet.txt")->slurp(iomode => '<:encoding(UTF-8)');
+
 handle remainder => sub {
     return
         heading => 'Vim Cheat Sheet',
-        html    => html_cheat_sheet(),
-        answer  => text_cheat_sheet(),
+        html    => $HTML,
+        answer  => $TEXT,
 };
-
-my $HTML;
-
-sub html_cheat_sheet {
-    $HTML //= share("vim_cheat_sheet.html")
-        ->slurp(iomode => '<:encoding(UTF-8)');
-    return $HTML;
-}
-
-my $TEXT;
-
-sub text_cheat_sheet {
-    $TEXT //= share("vim_cheat_sheet.txt")
-        ->slurp(iomode => '<:encoding(UTF-8)');
-    return $TEXT;
-}
 
 1;

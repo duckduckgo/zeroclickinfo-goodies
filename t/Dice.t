@@ -81,11 +81,11 @@ ddg_goodie_test(
                 html => qr/./,
                 heading => $heading
         ),
-        "roll 2d6 and 3d12 - 4" => test_zci(qr/^\d (\+|-) \d = \d+<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d+<br\/>Total: \d+$/,
+        "roll 2d6 and 3d12 - 4" => test_zci(qr/^\d (\+|-) \d = \d+<br\/>\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = -?\d+<br\/>Total: \d+$/,
                 html => qr/./,
                 heading => $heading
         ),
-        "throw 3d12 - 4 and 2d6" => test_zci(qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2}<br\/>\d (\+|-) \d = \d+<br\/>Total: \d+$/,
+        "throw 3d12 - 4 and 2d6" => test_zci(qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = -?\d{1,2}<br\/>\d (\+|-) \d = \d+<br\/>Total: \d+$/,
                 html => qr/./,
                 heading => $heading
         ),

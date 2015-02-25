@@ -1,6 +1,7 @@
 package DDG::Goodie::TwelveOclock;
 # ABSTRACT: Determine whether 12:00 is midnight or noon.
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "twelve_oclock";
@@ -13,7 +14,7 @@ name "TwelveOclock";
 code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/TwelveOclock.pm";
 category "reference";
 topics "everyday";
-attribution github => ['https://github.com/duckduckgo', 'duckduckgo'];
+attribution github => ['duckduckgo', 'DuckDuckGo'];
 
 # Triggers
 triggers any => "midnight", "noon";
@@ -53,7 +54,7 @@ handle query => sub {
     return $answer,
       structured_answer => {
         input     => [],
-        operation => 'midnight or noon',
+        operation => 'Midnight or noon',
         result    => $answer
       };
 };

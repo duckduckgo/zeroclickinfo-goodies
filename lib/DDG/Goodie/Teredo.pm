@@ -3,6 +3,7 @@ package DDG::Goodie::Teredo;
 # NAT IPv4 address, and port number encoded in a given
 # Teredo tunnel IPv6 address.
 
+use strict;
 use DDG::Goodie;
 use Net::IP;
 use Math::BaseConvert;
@@ -15,9 +16,9 @@ name 'Teredo extractor';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Teredo.pm';
 topics 'sysadmin';
 category 'transformations';
-attribution github => ['https://github.com/seanheaton','seanheaton'],
-	twitter => ['http://twitter.com/seanograph','@seanograph'],
-	email => ['mailto:seanoftime@gmail.com','seanoftime@gmail.com'];
+attribution github => ['seanheaton','Sean Heaton'],
+            twitter => ['seanograph','Sean Heaton'],
+            email => ['seanoftime@gmail.com','seanoftime@gmail.com'];
 
 zci answer_type => 'teredo';
 zci is_cached   => 1;

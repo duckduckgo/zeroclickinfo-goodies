@@ -1,6 +1,7 @@
 package DDG::Goodie::Base64;
 # ABSTRACT: Base64 <-> Unicode
 
+use strict;
 use DDG::Goodie;
 
 use MIME::Base64;
@@ -19,8 +20,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'conversions';
 topics 'programming';
 attribution web     => ['robert.io',                 'Robert Picard'],
-            github  => ['http://github.com/rpicard', 'rpicard'],
-            twitter => ['http://twitter.com/__rlp',  '__rlp'];
+            github  => ['http://github.com/rpicard', 'Robert Picard'],
+            twitter => ['http://twitter.com/__rlp',  'Robert Picard'];
 
 handle remainder => sub {
     return unless $_ =~ /^(?<com>encode|decode|)\s*(?<str>.*)$/i;
@@ -33,11 +34,11 @@ handle remainder => sub {
     chomp $out_str;
 
     return unless $out_str;
-    my $what = 'base64 ' . $command;
+    my $what = 'Base64 ' . $command;
 
     return ucfirst($what) . 'd: ' . $out_str,
       structured_answer => {
-        input     => [$in_str],
+        input     => [html_enc($in_str)],
         operation => $what,
         result    => $out_str,
       };

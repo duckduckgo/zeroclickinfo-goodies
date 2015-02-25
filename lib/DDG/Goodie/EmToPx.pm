@@ -1,6 +1,7 @@
 package DDG::Goodie::EmToPx;
 # ABSTRACT: em <-> px for font sizes.
 
+use strict;
 use DDG::Goodie;
 
 triggers any => "em", "px";
@@ -15,8 +16,8 @@ name 'EmToPx';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/EmToPx.pm';
 category 'conversions';
 topics 'programming';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc','crazedpsyc'],
+            cpan    => ['CRZEDPSYC','crazedpsyc'];
 
 handle query_raw => sub {
     my $q = lc $_;
@@ -33,7 +34,7 @@ handle query_raw => sub {
     return "There $plur $result $target in $num $source (assuming a ${fontsize}px font size)",
       structured_answer => {
         input     => [$num . $source, $fontsize . 'px font size'],
-        operation => 'convert to ' . $target,
+        operation => 'Convert to ' . $target,
         result    => $result . $target
       };
 };

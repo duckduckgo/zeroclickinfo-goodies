@@ -1,9 +1,9 @@
 package DDG::Goodie::HTMLEntitiesEncode;
 # ABSTRACT: Displays the HTML entity code for the query name.
 
-use DDG::Goodie;
 use strict;
 use warnings;
+use DDG::Goodie;
 
 # '&' and ';' not included in the hash value -- they are added in make_text() and make_html()
 my %codes = (
@@ -248,8 +248,8 @@ zci is_cached   =>          1;
 attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"],
             github  =>      ["https://github.com/nishanths", "Nishanth Shanmugham"],
             twitter =>      ["https://twitter.com/nshanmugham", "Nishanth Shanmugham"],
-            twitter =>      'crazedpsyc',
-            cpan    =>      'CRZEDPSYC' ;
+            twitter =>      ['crazedpsyc','crazedpsyc'],
+            cpan    =>      ['CRZEDPSYC','crazedpsyc'];
 
 handle remainder => sub {
     # General query cleanup

@@ -1,6 +1,7 @@
 package DDG::Goodie::MoonPhases;
 # ABSTRACT: answer queries for the current phase of the moon.
 
+use strict;
 use DDG::Goodie;
 use Astro::MoonPhase;
 
@@ -14,9 +15,9 @@ name "MoonPhases";
 topics "special_interest", "everyday";
 category "random";
 
-attribution github  => ['https://github.com/rpicard', 'rpicard'],
-            twitter => ['https://twitter.com/__rlp',  '__rlp'],
-            web     => ['http://robert.io',           'Robert Picard'];
+attribution github  => ['rpicard', 'Robert Picard'],
+            twitter => ['__rlp', 'Robert Picard'],
+            web     => ['http://robert.io', 'Robert Picard'];
 
 
 triggers any => 'moon', 'lunar';
@@ -70,7 +71,7 @@ handle query_lc => sub {
       structured_answer => {
         input     => [],
         result    => $phase,
-        operation => 'current lunar phase'
+        operation => 'Current lunar phase'
       };
 };
 

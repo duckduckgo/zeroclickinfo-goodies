@@ -12,7 +12,7 @@ my @test_loc = (
     'Lat: 40.1246, Lon: -75.5385 (near Phoenixville, PA)',
     structured_answer => {
         input     => [],
-        operation => 'apparent current location',
+        operation => 'Apparent current location',
         result    => 'Lat: 40.1246, Lon: -75.5385 (near Phoenixville, PA)'
     });
 

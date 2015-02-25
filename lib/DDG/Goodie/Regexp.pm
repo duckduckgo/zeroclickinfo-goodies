@@ -1,6 +1,7 @@
 package DDG::Goodie::Regexp;
 # ABSTRACT: Parse a regexp.
 
+use strict;
 use DDG::Goodie;
 
 use Safe;
@@ -15,8 +16,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'programming', 'sysadmin';
 attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+            github => [ 'duckduckgo', 'DuckDuckGo'],
+            twitter => ['duckduckgo', 'DuckDuckGo'];
 
 triggers query_lc => qr/^regex[p]? [\/\\](.+?)[\/\\] (.+)$/i;
 

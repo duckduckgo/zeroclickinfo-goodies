@@ -1,6 +1,7 @@
 package DDG::Goodie::AspectRatio;
 # ABSTRACT: Calculates aspect ratio based on previously defined one
 
+use strict;
 use DDG::Goodie;
 
 triggers start => "aspect ratio";
@@ -14,8 +15,7 @@ name 'AspectRatio';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/AspectRatio.pm';
 category 'calculations';
 topics 'math';
-attribution github => [ 'https://github.com/mrshu', 'mrshu' ],
-            twitter => [ 'https://twitter.com/mr__shu', 'mr__shu' ];
+attribution github => [ 'https://github.com/mrshu', 'mrshu' ];
 
 handle remainder => sub {
     my $input  = $_;
@@ -37,7 +37,7 @@ handle remainder => sub {
         return "Aspect ratio: $result ($pretty_ratio)",
           structured_answer => {
             input     => [$pretty_ratio],
-            operation => 'aspect ratio',
+            operation => 'Aspect ratio',
             result    => $result
           };
     }

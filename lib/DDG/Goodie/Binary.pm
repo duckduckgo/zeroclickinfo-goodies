@@ -1,6 +1,7 @@
 package DDG::Goodie::Binary;
 # ABSTRACT: Convert decimal, hex and string to binary.
 
+use strict;
 use DDG::Goodie;
 
 use Bit::Vector;
@@ -54,19 +55,19 @@ handle remainder => sub {
 
     if (/^([01]+)(\s+from)?$/) {
         # Looks like they gave us some binary, let's turn it into decimal!
-        @out = ($1, bin2dec($1), "binary", "decimal");
+        @out = ($1, bin2dec($1), "Binary", "Decimal");
     } elsif (s/\s+(in|to|into|as)$//) {
         # Looks like they are asking for a conversion to binary
         # So, try to figure out what they've got.
         # They can either tell us explicitly or we can try to just work it out.
         if (/^(?:decimal\s+)?([0-9]+)$/) {
-            @out = ($1, dec2bin($1), "decimal", "binary");
+            @out = ($1, dec2bin($1), "Decimal", "Binary");
         } elsif (/^(?:hex\s+)?(?:0x|Ox|x)?([0-9a-fA-F]+)$/) {
             # Normalize the hex output with lowercase and a prepended '0x'.
-            @out = ('0x' . lc $1, hex2bin($1), "hex", "binary");
+            @out = ('0x' . lc $1, hex2bin($1), "Hex", "Binary");
         } else {
             # We didn't match anything else, so just convert whatever string is left.
-            @out = ($_, bin($_), "string", "binary");
+            @out = ($_, bin($_), "String", "Binary");
         }
     }
     return unless (@out);    # Didn't hit any conditions, must not be us.

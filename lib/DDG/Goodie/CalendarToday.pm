@@ -1,6 +1,7 @@
 package DDG::Goodie::CalendarToday;
 # ABSTRACT: Print calendar of current / given month and highlight (to)day
 
+use strict;
 use DDG::Goodie;
 use DateTime;
 use Try::Tiny;
@@ -32,6 +33,7 @@ my @weekDays = ("S", "M", "T", "W", "T", "F", "S");
 my $filler_words_regex         = qr/(?:\b(?:on|of|for|the|a)\b)/;
 my $datestring_regex           = datestring_regex();
 my $formatted_datestring_regex = formatted_datestring_regex();
+my $relative_dates_regex       = relative_dates_regex();
 
 handle remainder => sub {
     my $query       = $_;
@@ -48,7 +50,12 @@ handle remainder => sub {
         $date_object = parse_datestring_to_date($date_string);
 
         return unless $date_object;
-        $highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex);    # They specified a date, so highlight.
+
+	# Decide if a specific day should be highlighted.  If the query was not precise, eg "Nov 2009",
+	# we can't hightlight.  OTOH, if they specified a date, we highlight.  Relative dates like "next
+	# year", or "last week" exactly specify a date so they get highlighted also.
+	$highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex ||
+						$query =~ $relative_dates_regex);
     }
     # Highlight today if it's this month and no other day was chosen.
     $highlightDay ||= $currentDay if (($date_object->year() eq $currentYear) && ($date_object->month() eq $currentMonth));

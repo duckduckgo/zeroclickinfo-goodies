@@ -1,6 +1,7 @@
 package DDG::Goodie::BirthStone;
 # ABSTRACT: Returns the birthstone of the queried month
 
+use strict;
 use DDG::Goodie;
 
 triggers startend => 'birthstone', 'birth stone';
@@ -14,7 +15,7 @@ description 'returns the birth stone of the specified month';
 name 'BirthStone';
 topics 'special_interest', 'entertainment';
 category 'random';
-attribution github => ['https://github.com/austinheimark', 'austin_heimark'];
+attribution github => ['https://github.com/austinheimark', 'Austin Heimark'];
 
 my %birthstones = (
     "January"   => "Garnet",
@@ -41,7 +42,7 @@ handle remainder => sub {
     return $month . " birthstone: $stone",
       structured_answer => {
         input     => [$month],
-        operation => 'birthstone',
+        operation => 'Birthstone',
         result    => $stone
       };
 };

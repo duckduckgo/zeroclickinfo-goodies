@@ -16,7 +16,7 @@ ddg_goodie_test(
         '5 ounces = 141.747 grams',
         structured_answer => {
             input     => ['5 ounces'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '141.747 grams'
         }
     ),
@@ -24,7 +24,7 @@ ddg_goodie_test(
         '5 ounces = 141.747 grams',
         structured_answer => {
             input     => ['5 ounces'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '141.747 grams'
         }
     ),
@@ -32,7 +32,7 @@ ddg_goodie_test(
         '0.5 nautical miles = 0.926 kilometers',
         structured_answer => {
             input     => ['0.5 nautical miles'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.926 kilometers'
         }
     ),
@@ -41,7 +41,7 @@ ddg_goodie_test(
         '1 ton = 0.893 long tons',
         structured_answer => {
             input     => ['1 ton'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.893 long tons'
         }
     ),
@@ -49,7 +49,7 @@ ddg_goodie_test(
         '158 ounces = 9.875 pounds',
         structured_answer => {
             input     => ['158 ounces'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '9.875 pounds'
         }
     ),
@@ -57,7 +57,7 @@ ddg_goodie_test(
         '0.111 stone = 1.554 pounds',
         structured_answer => {
             input     => ['0.111 stone'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1.554 pounds'
         }
     ),
@@ -65,7 +65,7 @@ ddg_goodie_test(
         '5 feet = 60 inches',
         structured_answer => {
             input     => ['5 feet'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '60 inches'
         }
     ),
@@ -73,7 +73,7 @@ ddg_goodie_test(
         '5 kelvin = -450.670 degrees fahrenheit',
         structured_answer => {
             input     => ['5 kelvin'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '-450.670 degrees fahrenheit'
         }
     ),
@@ -81,7 +81,7 @@ ddg_goodie_test(
         '25 inches = 2.083 feet',
         structured_answer => {
             input     => ['25 inches'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '2.083 feet'
         }
     ),
@@ -89,7 +89,7 @@ ddg_goodie_test(
         '5 degrees fahrenheit = -15 degrees celsius',
         structured_answer => {
             input     => ['5 degrees fahrenheit'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '-15 degrees celsius'
         }
     ),
@@ -97,7 +97,7 @@ ddg_goodie_test(
         '1 kilometer = 100,000 centimeters',
         structured_answer => {
             input     => ['1 kilometer'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '100,000 centimeters'
         }
     ),
@@ -105,7 +105,7 @@ ddg_goodie_test(
         '10 milliseconds = 0.010 seconds',
         structured_answer => {
             input     => ['10 milliseconds'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.010 seconds'
         }
     ),
@@ -113,7 +113,7 @@ ddg_goodie_test(
         '1 yottabyte = 0.827 yobibytes',
         structured_answer => {
             input     => ['1 yottabyte'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.827 yobibytes'
         }
     ),
@@ -121,7 +121,7 @@ ddg_goodie_test(
         '1 stone = 14 pounds',
         structured_answer => {
             input     => ['1 stone'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '14 pounds'
         }
     ),
@@ -129,7 +129,7 @@ ddg_goodie_test(
         '5 bytes = 40 bits',
         structured_answer => {
             input     => ['5 bytes'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '40 bits'
         }
     ),
@@ -138,7 +138,7 @@ ddg_goodie_test(
         '3 kilograms = 6.614 pounds',
         structured_answer => {
             input     => ['3 kilograms'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '6.614 pounds'
         }
     ),
@@ -146,7 +146,7 @@ ddg_goodie_test(
         '1.3 metric tons = 1.433 tons',
         structured_answer => {
             input     => ['1.3 metric tons'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1.433 tons'
         }
     ),
@@ -154,7 +154,7 @@ ddg_goodie_test(
         '2 tons = 1,814.372 kilograms',
         structured_answer => {
             input     => ['2 tons'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1,814.372 kilograms'
         }
     ),
@@ -162,7 +162,7 @@ ddg_goodie_test(
         '1 ton = 907.186 kilograms',
         structured_answer => {
             input     => ['1 ton'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '907.186 kilograms'
         }
     ),
@@ -170,7 +170,7 @@ ddg_goodie_test(
         '3.9 ounces = 110.563 grams',
         structured_answer => {
             input     => ['3.9 ounces'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '110.563 grams'
         }
     ),
@@ -178,31 +178,39 @@ ddg_goodie_test(
         '2 miles = 3.219 kilometers',
         structured_answer => {
             input     => ['2 miles'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '3.219 kilometers'
+        }
+    ),
+    '3 mi to km' => test_zci(
+        '3 miles = 4.828 kilometers',
+        structured_answer => {
+            input     => ['3 miles'],
+            operation => 'Convert',
+            result    => '4.828 kilometers'
         }
     ),
     '0.5 nautical mile to klick' => test_zci(
         '0.5 nautical miles = 0.926 kilometers',
         structured_answer => {
             input     => ['0.5 nautical miles'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.926 kilometers'
         }
     ),
     '500 miles in metres' => test_zci(
-        '500 miles = 804,672.249 meters',
+        '500 miles = 804,672 meters',
         structured_answer => {
             input     => ['500 miles'],
-            operation => 'convert',
-            result    => '804,672.249 meters'
+            operation => 'Convert',
+            result    => '804,672 meters'
         }
     ),
     '25 cm in inches' => test_zci(
         '25 centimeters = 9.843 inches',
         structured_answer => {
             input     => ['25 centimeters'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '9.843 inches'
         }
     ),
@@ -210,7 +218,7 @@ ddg_goodie_test(
         '1,760 yards = 1 mile',
         structured_answer => {
             input     => ['1,760 yards'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1 mile'
         }
     ),
@@ -218,7 +226,7 @@ ddg_goodie_test(
         '3,520 yards = 2 miles',
         structured_answer => {
             input     => ['3,520 yards'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '2 miles'
         }
     ),
@@ -226,7 +234,7 @@ ddg_goodie_test(
         '30 centimeters = 11.811 inches',
         structured_answer => {
             input     => ['30 centimeters'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '11.811 inches'
         }
     ),
@@ -234,7 +242,7 @@ ddg_goodie_test(
         '36 months = 3 years',
         structured_answer => {
             input     => ['36 months'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '3 years'
         }
     ),
@@ -242,7 +250,7 @@ ddg_goodie_test(
         '43,200 seconds = 12 hours',
         structured_answer => {
             input     => ['43,200 seconds'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '12 hours'
         }
     ),
@@ -250,7 +258,7 @@ ddg_goodie_test(
         '4 hours = 240 minutes',
         structured_answer => {
             input     => ['4 hours'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '240 minutes'
         }
     ),
@@ -258,7 +266,7 @@ ddg_goodie_test(
         '1 bar = 100,000 pascals',
         structured_answer => {
             input     => ['1 bar'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '100,000 pascals'
         }
     ),
@@ -266,7 +274,7 @@ ddg_goodie_test(
         '1 kilopascal = 0.145 pounds per square inch',
         structured_answer => {
             input     => ['1 kilopascal'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.145 pounds per square inch'
         }
     ),
@@ -274,7 +282,7 @@ ddg_goodie_test(
         '1 atmosphere = 101.325 kilopascals',
         structured_answer => {
             input     => ['1 atmosphere'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '101.325 kilopascals'
         }
     ),
@@ -282,7 +290,7 @@ ddg_goodie_test(
         '5 yards = 0.005 kilometers',
         structured_answer => {
             input     => ['5 yards'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.005 kilometers'
         }
     ),
@@ -290,7 +298,7 @@ ddg_goodie_test(
         '12 inches = 30.480 centimeters',
         structured_answer => {
             input     => ['12 inches'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '30.480 centimeters'
         }
     ),
@@ -298,7 +306,7 @@ ddg_goodie_test(
         '42 kilowatt-hours = 1.51 * 10^8 joules',
         structured_answer => {
             input     => ['42 kilowatt-hours'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1.51 * 10<sup>8</sup> joules'
         }
     ),
@@ -306,7 +314,7 @@ ddg_goodie_test(
         '2,500 large calories = 0.003 tons of TNT',
         structured_answer => {
             input     => ['2,500 large calories'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.003 tons of TNT'
         }
     ),
@@ -314,7 +322,7 @@ ddg_goodie_test(
         '90 metric horsepower = 66,194.888 watts',
         structured_answer => {
             input     => ['90 metric horsepower'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '66,194.888 watts'
         }
     ),
@@ -322,7 +330,7 @@ ddg_goodie_test(
         '1 gigawatt = 1.34 * 10^6 horsepower',
         structured_answer => {
             input     => ['1 gigawatt'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1.34 * 10<sup>6</sup> horsepower'
         }
     ),
@@ -330,7 +338,7 @@ ddg_goodie_test(
         '180 degrees = 3.142 radians',
         structured_answer => {
             input     => ['180 degrees'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '3.142 radians'
         }
     ),
@@ -338,7 +346,7 @@ ddg_goodie_test(
         '270 degrees = 3 quadrants',
         structured_answer => {
             input     => ['270 degrees'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '3 quadrants'
         }
     ),
@@ -346,7 +354,7 @@ ddg_goodie_test(
         '180 degrees = 200 gradians',
         structured_answer => {
             input     => ['180 degrees'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '200 gradians'
         }
     ),
@@ -354,7 +362,7 @@ ddg_goodie_test(
         '45 newtons = 10.116 pounds force',
         structured_answer => {
             input     => ['45 newtons'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '10.116 pounds force'
         }
     ),
@@ -362,7 +370,7 @@ ddg_goodie_test(
         '8 poundals = 1.106 newtons',
         structured_answer => {
             input     => ['8 poundals'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1.106 newtons'
         }
     ),
@@ -370,7 +378,7 @@ ddg_goodie_test(
         '10 milligrams = 1.1 * 10^-8 tons',
         structured_answer => {
             input     => ['10 milligrams'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1.1 * 10<sup>-8</sup> tons'
         }
     ),
@@ -378,7 +386,7 @@ ddg_goodie_test(
         '10,000 minutes = 6 * 10^11 microseconds',
         structured_answer => {
             input     => ['10,000 minutes'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '6 * 10<sup>11</sup> microseconds'
         }
     ),
@@ -386,7 +394,7 @@ ddg_goodie_test(
         '5 gigabytes = 5,000 megabytes',
         structured_answer => {
             input     => ['5 gigabytes'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '5,000 megabytes'
         }
     ),
@@ -394,7 +402,7 @@ ddg_goodie_test(
         '0.013 megabytes = 104,000 bits',
         structured_answer => {
             input     => ['0.013 megabytes'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '104,000 bits'
         }
     ),
@@ -402,7 +410,7 @@ ddg_goodie_test(
         '0,013 megabytes = 104.000 bits',
         structured_answer => {
             input     => ['0,013 megabytes'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '104.000 bits'
         }
     ),
@@ -410,7 +418,7 @@ ddg_goodie_test(
         '1 exabyte = 888.178 pebibytes',
         structured_answer => {
             input     => ['1 exabyte'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '888.178 pebibytes'
         }
     ),
@@ -418,7 +426,7 @@ ddg_goodie_test(
         '16 years = 192 months',
         structured_answer => {
             input     => ['16 years'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '192 months'
         }
     ),
@@ -426,7 +434,7 @@ ddg_goodie_test(
         '1 year = 12 months',
         structured_answer => {
             input     => ['1 year'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '12 months'
         }
     ),
@@ -434,7 +442,7 @@ ddg_goodie_test(
         '360 degrees = 1 revolution',
         structured_answer => {
             input     => ['360 degrees'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1 revolution'
         }
     ),
@@ -442,7 +450,7 @@ ddg_goodie_test(
         '12 degrees celsius = 53.600 degrees fahrenheit',
         structured_answer => {
             input     => ['12 degrees celsius'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '53.600 degrees fahrenheit'
         }
     ),
@@ -450,7 +458,7 @@ ddg_goodie_test(
         '1 degree fahrenheit = -17.222 degrees celsius',
         structured_answer => {
             input     => ['1 degree fahrenheit'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '-17.222 degrees celsius'
         }
     ),
@@ -458,7 +466,7 @@ ddg_goodie_test(
         '0 degrees celsius = 273.150 kelvin',
         structured_answer => {
             input     => ['0 degrees celsius'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '273.150 kelvin'
         }
     ),
@@ -466,7 +474,7 @@ ddg_goodie_test(
         '234 degrees fahrenheit = 112.222 degrees celsius',
         structured_answer => {
             input     => ['234 degrees fahrenheit'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '112.222 degrees celsius'
         }
     ),
@@ -474,7 +482,7 @@ ddg_goodie_test(
         '234 degrees fahrenheit = 385.372 kelvin',
         structured_answer => {
             input     => ['234 degrees fahrenheit'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '385.372 kelvin'
         }
     ),
@@ -482,7 +490,7 @@ ddg_goodie_test(
         '20 yards = 18.288 meters',
         structured_answer => {
             input     => ['20 yards'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '18.288 meters'
         }
     ),
@@ -490,7 +498,7 @@ ddg_goodie_test(
         '7 milligrams = 7,000 micrograms',
         structured_answer => {
             input     => ['7 milligrams'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '7,000 micrograms'
         }
     ),
@@ -498,7 +506,7 @@ ddg_goodie_test(
         '5 meters = 196.851 inches',
         structured_answer => {
             input     => ['5 meters'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '196.851 inches'
         }
     ),
@@ -506,7 +514,7 @@ ddg_goodie_test(
         '5 inches = 0.127 meters',
         structured_answer => {
             input     => ['5 inches'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.127 meters'
         }
     ),
@@ -514,7 +522,7 @@ ddg_goodie_test(
         '1 us gallon = 3,785.412 millilitres',
         structured_answer => {
             input     => ['1 us gallon'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '3,785.412 millilitres'
         }
     ),
@@ -522,7 +530,7 @@ ddg_goodie_test(
         '1 millilitre = 0.000264 us gallons',
         structured_answer => {
             input     => ['1 millilitre'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.000264 us gallons'
         }
     ),
@@ -530,7 +538,7 @@ ddg_goodie_test(
         '1 inch = 0.083 feet',
         structured_answer => {
             input     => ['1 inch'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.083 feet'
         }
     ),
@@ -538,7 +546,7 @@ ddg_goodie_test(
         '1 millilitre = 0.000264 us gallons',
         structured_answer => {
             input     => ['1 millilitre'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.000264 us gallons'
         }
     ),
@@ -546,7 +554,7 @@ ddg_goodie_test(
         '1 us gallon = 3,785.412 millilitres',
         structured_answer => {
             input     => ['1 us gallon'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '3,785.412 millilitres'
         }
     ),
@@ -554,7 +562,7 @@ ddg_goodie_test(
         '1 millimeter = 0.039 inches',
         structured_answer => {
             input     => ['1 millimeter'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.039 inches'
         }
     ),
@@ -562,7 +570,7 @@ ddg_goodie_test(
         '1 inch = 25.400 millimeters',
         structured_answer => {
             input     => ['1 inch'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '25.400 millimeters'
         }
     ),
@@ -571,7 +579,7 @@ ddg_goodie_test(
         '3 * 10^60 degrees = 8.33 * 10^57 revolutions',
         structured_answer => {
             input     => ['3 * 10<sup>60</sup> degrees'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '8.33 * 10<sup>57</sup> revolutions'
         }
     ),
@@ -579,7 +587,7 @@ ddg_goodie_test(
         '4,1 * 10^5 newtons = 92.171,667 pounds force',
         structured_answer => {
             input     => ['4,1 * 10<sup>5</sup> newtons'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '92.171,667 pounds force'
         }
     ),
@@ -587,7 +595,7 @@ ddg_goodie_test(
         '4 * 10^5 newtons = 89,923.577 pounds force',
         structured_answer => {
             input     => ['4 * 10<sup>5</sup> newtons'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '89,923.577 pounds force'
         }
     ),
@@ -595,16 +603,16 @@ ddg_goodie_test(
         '5,0 gigabytes = 5.000 megabytes',
         structured_answer => {
             input     => ['5,0 gigabytes'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '5.000 megabytes'
         }
     ),
     '3.5e-2 miles to inches' => test_zci(
-        '3.5 * 10^-2 miles = 2,217.602 inches',
+        '3.5 * 10^-2 miles = 2,217.601 inches',
         structured_answer => {
             input     => ['3.5 * 10<sup>-2</sup> miles'],
-            operation => 'convert',
-            result    => '2,217.602 inches'
+            operation => 'Convert',
+            result    => '2,217.601 inches'
         }
     ),
     # Areas and volumes
@@ -612,7 +620,7 @@ ddg_goodie_test(
         '100 square meters = 0.010 hectares',
         structured_answer => {
             input     => ['100 square meters'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.010 hectares'
         }
     ),
@@ -620,15 +628,23 @@ ddg_goodie_test(
         '0.0001 hectares = 1 square meter',
         structured_answer => {
             input     => ['0.0001 hectares'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1 square meter'
+        }
+    ),
+    '5 sq mi in square meters' => test_zci(
+        '5 square miles = 1.29 * 10^7 square meters',
+        structured_answer => {
+            input     => ['5 square miles'],
+            operation => 'Convert',
+            result    => '1.29 * 10<sup>7</sup> square meters'
         }
     ),
     '1 imperial gallon in litres' => test_zci(
         '1 imperial gallon = 4.546 litres',
         structured_answer => {
             input     => ['1 imperial gallon'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '4.546 litres'
         }
     ),
@@ -636,7 +652,7 @@ ddg_goodie_test(
         '0.001 litres = 1 millilitre',
         structured_answer => {
             input     => ['0.001 litres'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '1 millilitre'
         }
     ),
@@ -644,7 +660,7 @@ ddg_goodie_test(
         '1 hectare = 10,000 square meters',
         structured_answer => {
             input     => ['1 hectare'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '10,000 square meters'
         }
     ),
@@ -652,7 +668,7 @@ ddg_goodie_test(
         '1 acre = 0.004 square kilometers',
         structured_answer => {
             input     => ['1 acre'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.004 square kilometers'
         }
     ),
@@ -660,7 +676,7 @@ ddg_goodie_test(
         '1 acre = 4,046.873 square meters',
         structured_answer => {
             input     => ['1 acre'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '4,046.873 square meters'
         }
     ),
@@ -669,7 +685,7 @@ ddg_goodie_test(
         '1 inch = 2.540 centimeters',
         structured_answer => {
             input     => ['1 inch'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '2.540 centimeters'
         }
     ),
@@ -677,7 +693,7 @@ ddg_goodie_test(
         '10 yards = 9.144 meters',
         structured_answer => {
             input     => ['10 yards'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '9.144 meters'
         }
     ),
@@ -685,7 +701,7 @@ ddg_goodie_test(
         '42 days = 60,480 minutes',
         structured_answer => {
             input     => ['42 days'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '60,480 minutes'
         }
     ),
@@ -693,7 +709,7 @@ ddg_goodie_test(
         '40 kelvin = -233.150 degrees celsius',
         structured_answer => {
             input     => ['40 kelvin'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '-233.150 degrees celsius'
         }
     ),
@@ -701,7 +717,7 @@ ddg_goodie_test(
         '40 kelvin = -233.150 degrees celsius',
         structured_answer => {
             input     => ['40 kelvin'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '-233.150 degrees celsius'
         }
     ),
@@ -709,7 +725,7 @@ ddg_goodie_test(
         '10 yards = 9.144 meters',
         structured_answer => {
             input     => ['10 yards'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '9.144 meters'
         }
     ),
@@ -717,7 +733,7 @@ ddg_goodie_test(
         '10 yards = 9.144 meters',
         structured_answer => {
             input     => ['10 yards'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '9.144 meters'
         }
     ),
@@ -725,7 +741,7 @@ ddg_goodie_test(
         '1 kilogram = 2.205 pounds',
         structured_answer => {
             input     => ['1 kilogram'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '2.205 pounds'
         }
     ),
@@ -733,7 +749,7 @@ ddg_goodie_test(
         '1 kilogram = 2.205 pounds',
         structured_answer => {
             input     => ['1 kilogram'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '2.205 pounds'
         }
     ),
@@ -741,7 +757,7 @@ ddg_goodie_test(
         '1 pound = 0.454 kilograms',
         structured_answer => {
             input     => ['1 pound'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.454 kilograms'
         }
     ),
@@ -749,7 +765,7 @@ ddg_goodie_test(
         '1 meter = 100 centimeters',
         structured_answer => {
             input     => ['1 meter'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '100 centimeters'
         }
     ),
@@ -757,7 +773,7 @@ ddg_goodie_test(
         '1 centimeter = 0.010 meters',
         structured_answer => {
             input     => ['1 centimeter'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.010 meters'
         }
     ),
@@ -765,7 +781,7 @@ ddg_goodie_test(
         '1 inch = 2.540 centimeters',
         structured_answer => {
             input     => ['1 inch'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '2.540 centimeters'
         }
     ),
@@ -773,7 +789,7 @@ ddg_goodie_test(
         '1 litre = 0.264 us gallons',
         structured_answer => {
             input     => ['1 litre'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.264 us gallons'
         }
     ),
@@ -781,7 +797,7 @@ ddg_goodie_test(
         '1 us gallon = 3.785 litres',
         structured_answer => {
             input     => ['1 us gallon'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '3.785 litres'
         }
     ),
@@ -789,7 +805,7 @@ ddg_goodie_test(
         '1 litre = 0.264 us gallons',
         structured_answer => {
             input     => ['1 litre'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '0.264 us gallons'
         }
     ),
@@ -797,7 +813,7 @@ ddg_goodie_test(
         '100 meters = 10,000 centimeters',
         structured_answer => {
             input     => ['100 meters'],
-            operation => 'convert',
+            operation => 'Convert',
             result    => '10,000 centimeters'
         }
     ),

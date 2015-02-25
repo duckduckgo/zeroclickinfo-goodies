@@ -1,6 +1,7 @@
 package DDG::Goodie::PercentError;
 # ABSTRACT: find the percent error given accepted and experimental values
 
+use strict;
 use DDG::Goodie;
 
 triggers start => "percent error", "% error", "%err", "%error", "percenterror", "percent err", "%-error";
@@ -15,8 +16,8 @@ name 'PercentError';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PercentError.pm';
 category 'calculations';
 topics 'math';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
+attribution twitter => ['crazedpsyc', 'Michael Smith'],
+            cpan    => ['CRZEDPSYC', 'Michael Smith'];
 
 handle remainder => sub {
     my $length = length($_);

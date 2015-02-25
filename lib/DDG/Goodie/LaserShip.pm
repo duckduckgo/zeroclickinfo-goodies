@@ -1,6 +1,7 @@
 package DDG::Goodie::LaserShip;
 # ABSTRACT: Track a package through Lasership
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;
@@ -12,9 +13,7 @@ name 'Lasership';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/LaserShip.pm';
 category 'ids';
 topics 'special_interest';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'https://github.com/duckduckgo', 'duckduckgo'],
-            twitter => ['http://twitter.com/duckduckgo', 'duckduckgo'];
+attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
 
 triggers query_nowhitespace_nodash => qr/(l[a-z]\d{8})/i;
 

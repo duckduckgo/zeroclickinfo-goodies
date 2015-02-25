@@ -1,6 +1,7 @@
 package DDG::Goodie::SigFigs;
 # ABSTRACT: Count the significant figures in a number.
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'sigfigs 01.1234000';
@@ -11,7 +12,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'math';
 
-attribution github => ['https://github.com/hunterlang', 'hunterlang'];
+attribution github => ['hunterlang', 'Hunter Lang'];
 
 triggers start => 'sigfigs', 'sigdigs', 'sf', 'sd', 'significant';
 

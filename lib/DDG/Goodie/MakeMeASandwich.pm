@@ -1,6 +1,7 @@
 package DDG::Goodie::MakeMeASandwich;
 # ABSTRACT: XKCD #149 Easter Egg
 
+use strict;
 use DDG::Goodie;
 
 name 'Make Me A Sandwich';
@@ -10,8 +11,8 @@ primary_example_queries 'make me a sandwich', 'sudo make me a sandwich';
 category 'special';
 topics 'geek';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MakeMeASandwich.pm';
-attribution twitter => 'mattr555',
-            github => ['https://github.com/mattr555/', 'Matt Ramina'];
+attribution twitter => ['mattr555', 'Matt Ramina'],
+            github => ['mattr555', 'Matt Ramina'];
 
 triggers end => 'make me a sandwich';
 
