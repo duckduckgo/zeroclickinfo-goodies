@@ -96,17 +96,18 @@ handle query  => sub {
 
             # Try and simplify the radical
             my $count = int(abs($calc));
+            unless(($base - int($base))==0){
+                while ($count > 1) {
 
-            while ($count > 1) {
+                    # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
+                    my $newBase = $base / ($count ** $exp);
 
-                # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
-                my $newBase = $base / ($count ** $exp);
+                    if ( ($newBase - int($newBase)) == 0) {
+                        return structured($exp,"-$base","The $exp-root of -$base is $calc (-$count times the $exp-root of $newBase).", qq|<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> (-$count&sdot;<sup>$exp</sup>&radic;$newBase)|);
+                    }
 
-                if ( ($newBase - int($newBase)) == 0 and $newBase != 1) {
-                    return structured($exp,"-$base","The $exp-root of -$base is $calc (-$count times the $exp-root of $newBase).", qq|<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> (-$count&sdot;<sup>$exp</sup>&radic;$newBase)|);
+                    $count--;
                 }
-
-                $count--;
             }
             return structured($exp,"-$base","The $exp-root of -$base is $calc.", qq|<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
         }
@@ -121,17 +122,20 @@ handle query  => sub {
 
             # Try and simplify the radical
             my $count = int($calc);
+            
+            #If the answer is not a whole number, try to simplify the radical
+            unless(($base - int($base))==0){
+                while ($count > 1) {
 
-            while ($count > 1) {
+                    # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
+                    my $newBase = $base / ($count ** $exp);
 
-                # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
-                my $newBase = $base / ($count ** $exp);
+                    if ( ($newBase - int($newBase)) == 0) {
+                        return structured($exp,$base,"The $exp-root of $base is $calc ($count times the $exp-root of $newBase).", qq|<sup>$exp</sup>&radic;$base =  <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($count&sdot;<sup>$exp</sup>&radic;$newBase)|);
+                    }
 
-                if ( ($newBase - int($newBase)) == 0 and $newBase != 1) {
-                    return structured($exp,$base,"The $exp-root of $base is $calc ($count times the $exp-root of $newBase).", qq|<sup>$exp</sup>&radic;$base =  <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($count&sdot;<sup>$exp</sup>&radic;$newBase)|);
+                    $count--;
                 }
-
-                $count--;
             }
             return structured($exp,$base,"The $exp-root of $base is $calc.", qq|<sup>$exp</sup>&radic;$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
         }
@@ -142,11 +146,13 @@ handle query  => sub {
 
 sub structured{
     my($exp,$base,$text, $html) = @_;
-    return $text, structured_answer => {
-                            input     => ["$exp-root of $base"],
-                            operation => 'Calculate',
-                            result    => $html,
-                        };
+    return $text, 
+            heading => "Root Calculator", 
+            structured_answer => {
+                    input     => ["$exp-root of $base"],
+                    operation => 'Calculate',
+                    result    => $html,
+                    };
 }
 
 1;
