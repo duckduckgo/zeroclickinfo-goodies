@@ -63,7 +63,7 @@ handle query  => sub {
 
         # If the result is a whole number (n), the answer is n*i
         if (($calc - int($calc)) == 0) {
-            return $calc . 'i', html => "<sup>$exp</sup>&radic;-$base = $calc<em>i</em>";
+            return structured($exp, "-$base", $calc . 'i', "<sup>$exp</sup>&radic;-$base = $calc<em>i</em>");
         }
 
         # Try and simplify the radical
@@ -75,14 +75,14 @@ handle query  => sub {
             my $newBase = $base / ($count ** $exp);
 
             if ( ($newBase - int($newBase)) == 0) {
-                return "The $exp-root of -$base is $count * i * the $exp-root of $newBase.", html=> "<sup>$exp</sup>&radic;-$base = $count<em>i</em>&sdot;<sup>$exp</sup>&radic;$newBase";
+                return structured($exp,"-$base","The $exp-root of -$base is $count * i * the $exp-root of $newBase.", "<sup>$exp</sup>&radic;-$base = $count<em>i</em>&sdot;<sup>$exp</sup>&radic;$newBase");
             }
 
             $count--;
         }
 
         # Can't be solved or simplified via the above methods
-        return "The $exp-root of -$base is i * the $exp-root of $base", html => "<sup>$exp</sup>&radic;-$base = <em>i</em>&sdot;<sup>$exp</sup>&radic;$base";
+        return structured($exp,"-$base","The $exp-root of -$base is i * the $exp-root of $base", "<sup>$exp</sup>&radic;-$base = <em>i</em>&sdot;<sup>$exp</sup>&radic;$base");
     }
     elsif ($base =~ m/negative\s|minus\s|\A-/i && $exp % 2 != 0) {
 
@@ -103,13 +103,12 @@ handle query  => sub {
                 my $newBase = $base / ($count ** $exp);
 
                 if ( ($newBase - int($newBase)) == 0) {
-                    return "The $exp-root of -$base is $calc (-$count times the $exp-root of $newBase).", html=> qq|<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> (-$count&sdot;<sup>$exp</sup>&radic;$newBase)|;
+                    return structured($exp,"-$base","The $exp-root of -$base is $calc (-$count times the $exp-root of $newBase).", qq|<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> (-$count&sdot;<sup>$exp</sup>&radic;$newBase)|);
                 }
 
                 $count--;
             }
-
-            return "The $exp-root of -$base is $calc.", html=> qq|<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|;
+            return structured($exp,"-$base","The $exp-root of -$base is $calc.", qq|<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
         }
     }
     elsif ($exp =~ m/[0-9]+/) {
@@ -129,17 +128,25 @@ handle query  => sub {
                 my $newBase = $base / ($count ** $exp);
 
                 if ( ($newBase - int($newBase)) == 0) {
-                    return "The $exp-root of $base is $calc ($count times the $exp-root of $newBase).", html=> qq|<sup>$exp</sup>&radic;$base =  <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($count&sdot;<sup>$exp</sup>&radic;$newBase)|;
+                    return structured($exp,$base,"The $exp-root of $base is $calc ($count times the $exp-root of $newBase).", qq|<sup>$exp</sup>&radic;$base =  <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($count&sdot;<sup>$exp</sup>&radic;$newBase)|);
                 }
 
                 $count--;
             }
-
-            return "The $exp-root of $base is $calc.", html => qq|<sup>$exp</sup>&radic;$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|;
+            return structured($exp,$base,"The $exp-root of $base is $calc.", qq|<sup>$exp</sup>&radic;$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
         }
     }
 
     return;
 };
+
+sub structured{
+    my($exp,$base,$text, $html) = @_;
+    return $text, structured_answer => {
+                            input     => ["$exp-root of $base"],
+                            operation => 'Calculate',
+                            result    => $html,
+                        };
+}
 
 1;
