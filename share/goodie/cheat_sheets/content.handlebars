@@ -1,0 +1,15 @@
+<div class="record">
+{{#each section_order}}
+    <h4 class="zci__subheader">{{this}}</h4>
+    {{#withItem ../sections key=this}}    
+    <table class="record__body">
+        {{#table-each this}}
+            <tr class="record__row {{#if ../meta.options.rowHighlight}}record__highlight{{/if}}">
+                <td class="record__cell__key {{#if ../meta.options.keySpacing}}record_keyspacing{{/if}}">{{key}}:</td>
+                <td class="record__cell__value">{{ellipsis val 350}}</td>
+            </tr>
+        {{/table-each}}
+    </table>
+    {{/withItem}}
+{{/each}}
+</div>

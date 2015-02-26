@@ -1,6 +1,7 @@
 package DDG::Goodie::CheatSheets;
-# ABSTRACT: Load basic cheat sheets from YAML files 
+# ABSTRACT: Load basic cheat sheets from JSON files 
 
+use JSON::XS;
 use DDG::Goodie;
 
 zci answer_type => 'cheat_sheet';
@@ -30,11 +31,11 @@ attribution github  => [zachthompson => 'Zach Thompson'];
 handle remainder => sub {
     # If needed we could jump through a few more hoops to check
     # terms against file names.
-    my $json_path = share(join('-', split /\s+/o, lc($_) . '.yml');
+    my $json_path = share(join('-', split /\s+/o, lc($_) . '.json'));
     open my $fh, $json_path or return;
     my $json = do { local $/;  <$fh> };
-    eval { $yml = LoadFile($yml_path) } or do { return };
-    return structured_answer => {
+    my $data = decode_json($json);
+    return 'Vim Cheat Sheet', structured_answer => {
     	id => 'cheat_sheets',
 	name => 'Cheat Sheet',
 	data => $json,
