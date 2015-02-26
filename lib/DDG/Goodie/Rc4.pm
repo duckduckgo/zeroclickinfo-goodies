@@ -11,7 +11,7 @@ use MIME::Base64;
 zci answer_type => "rc4";
 zci is_cached   => 1;
 
-name "DDG::Goodie::RC4.pm";
+name "RC4.pm";
 description "Encrypt or decrypt a text using a key provided by the user";
 primary_example_queries "crypto encrypt key string", "crypto decrypt key string";
 secondary_example_queries "crypto en key string", "crypto de key string";
