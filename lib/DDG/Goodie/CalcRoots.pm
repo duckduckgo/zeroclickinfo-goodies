@@ -102,7 +102,7 @@ handle query  => sub {
                 # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
                 my $newBase = $base / ($count ** $exp);
 
-                if ( ($newBase - int($newBase)) == 0) {
+                if ( ($newBase - int($newBase)) == 0 and $newBase != 1) {
                     return structured($exp,"-$base","The $exp-root of -$base is $calc (-$count times the $exp-root of $newBase).", qq|<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> (-$count&sdot;<sup>$exp</sup>&radic;$newBase)|);
                 }
 
@@ -127,7 +127,7 @@ handle query  => sub {
                 # See if the current number raised to the given exponent is a factor of our base. If it is, we can give them a simplified version of the radical in addition to the answer.
                 my $newBase = $base / ($count ** $exp);
 
-                if ( ($newBase - int($newBase)) == 0) {
+                if ( ($newBase - int($newBase)) == 0 and $newBase != 1) {
                     return structured($exp,$base,"The $exp-root of $base is $calc ($count times the $exp-root of $newBase).", qq|<sup>$exp</sup>&radic;$base =  <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a> ($count&sdot;<sup>$exp</sup>&radic;$newBase)|);
                 }
 
