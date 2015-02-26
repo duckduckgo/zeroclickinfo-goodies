@@ -8,24 +8,23 @@ zci is_cached   => 1;
 
 name "Chord";
 description "Shows a tab representing the correct frets, for a given chord, on a given strings instrument";
-primary_example_queries "C ukulele chord", "G# minor guitar tab";
+primary_example_queries "C ukulele chord", "F# minor guitar tab";
 secondary_example_queries "Ebmaj7 uke chord";
 category "reference";
 topics "music";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Chord.pm";
 attribution github => ["GitHubAccount", "gerhuyy"];
 
-# Triggers
-triggers any => "chord", "tab";
 
+triggers any => "chord", "tab";
 
 # Map note letters to indexes
 my %notes = (
-    "c"  => 0,
+    "c"  => 0,    #
     "d"  => 2,
-    "e"  => 4,
+    "e"  => 4,  #
     "f"  => 5,
-    "g"  => 7,
+    "g"  => 7,#
     "a"  => 9,
     "b"  => 11,
 );
@@ -81,14 +80,12 @@ sub items{
     my @chordList = grep($chords{$_}, @words);
     if(defined $chordList[0]){
         $chord = $chordList[0];
-    }elsif(defined $chord){
-        if($chord eq "m" or $chord =~ /(min|minor)/i){
+    }elsif(defined $chord and $chord eq "m" or $chord =~ /(min|minor)/i){
             $chord = "minor";
-        }elsif($chord eq "M" or $chord =~ /(maj|major)/i){
+    }elsif(defined $chord and $chord eq "M" or $chord =~ /(maj|major)/i){
             $chord = "major";
-        }elsif($chord =~ /sus[24]/i){
+    }elsif(defined $chord and $chord =~ /sus[24]/i){
             $chord = lc $chord;
-        };
     }elsif($dom){
         $chord = "dominant";
     }else{
@@ -217,7 +214,7 @@ handle remainder => sub {
             result    => $html,
         };
     };
-    return;
+    return $_;
 };
 
 
