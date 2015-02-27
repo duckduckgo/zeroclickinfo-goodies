@@ -35,21 +35,30 @@ handle remainder => sub {
     open my $fh, $json_path or return;
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
+	my @data;
+	for my $s (@{$data->{section_order}}){
+		my %record_data;
+		for my $t (@{$data->{sections}{$s}}){
+			$record_data{$t->{key}} = $t->{val};
+		}
+		push @data, {title => $s, record_data => \%record_data};	
+	}
     return 'Vim Cheat Sheet', structured_answer => {
     	id => 'cheat_sheets',
 		name => 'Cheat Sheets',
-		data => $data,
+		data => \@data,
 		templates => {
 			group => 'base',
 			options => {
-	    	content => 'DDH.cheat_sheets.content',
-	    	moreAt => true
-	    }
-	},
-	meta => {
-		sourceName => 'duckduckgo',
-		sourceURL => 'https://duckduckgo.com'
-	}
+				content => 'record',
+				moreAt => true,
+				rowHighlight => true
+			}
+		},
+		meta => {
+			sourceName => 'duckduckgo',
+			sourceURL => 'https://duckduckgo.com'
+		}
     };
 };
 
