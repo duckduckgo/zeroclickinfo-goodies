@@ -19,12 +19,12 @@ sub get_flag {
 
 sub header_name {
     my $query = shift;
-    return '<div class="zci__body"><span>Name days for <b>' . $query . '</b></span><div class="zci__content"><table>';
+    return '<span>Name days for <b>' . $query . '</b></span><div class="zci__content"><table>';
 }
 
 sub header_date {
     my $query = shift;
-    return '<div class="zci__body"><span>Name days on <b>' . $query . '</b></span><div class="zci__content"><table>';
+    return '<span>Name days on <b>' . $query . '</b></span><div class="zci__content"><table>';
 }
 
 sub line {
@@ -39,7 +39,7 @@ sub tile {
     return "<div class=\"name-days-tile\"><span>$month $days</span></div>";
 }
 
-my $footer = '</table></div></div>';
+my $footer = '</table></div>';
 
 
 

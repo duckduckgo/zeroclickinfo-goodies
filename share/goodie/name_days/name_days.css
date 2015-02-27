@@ -1,7 +1,16 @@
+.zci__body, .zero_click_answer {
+    color: #333;
+}
+
 .name-days-country {
     padding-right: 2em;
     white-space: nowrap;
     vertical-align: top;
+    width: 25%;
+}
+
+.name-days-dates {
+    width: 75%;
 }
 
 .name-days-country-name, .name-days-tile {

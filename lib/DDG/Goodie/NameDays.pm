@@ -135,9 +135,9 @@ handle remainder => sub {
     }
     
     # Add the header
-    $html = '<div class="zci__body"><span>' . $header . '</span>' .
+    $html = '<span>' . $header . '</span>' .
         '<div class="zci__content"><table>' .
-        $html . '</table></div></div>';
+        $html . '</table></div>';
     
     return $text, html => $html;
 };
