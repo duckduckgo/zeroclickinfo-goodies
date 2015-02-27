@@ -7,13 +7,13 @@ use DDG::Goodie;
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
-name 'CheatSheet';
+name 'CheatSheets';
 description 'Cheat sheets';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CheatSheets.pm';
 category 'cheat_sheets';
 topics qw'computing geek programming sysadmin';
 
-primary_example_queries 'help', 'cheat sheet', 'example';
+primary_example_queries 'universal help', 'universal cheat sheet', 'universal example';
 
 triggers startend => (
     'cheat sheet',
@@ -37,14 +37,18 @@ handle remainder => sub {
     my $data = decode_json($json);
     return 'Vim Cheat Sheet', structured_answer => {
     	id => 'cheat_sheets',
-	name => 'Cheat Sheet',
-	data => $json,
-	templates => {
-	    group => 'base',
-	    options => {
+		name => 'Cheat Sheets',
+		data => $data,
+		templates => {
+			group => 'base',
+			options => {
 	    	content => 'DDH.cheat_sheets.content',
 	    	moreAt => true
 	    }
+	},
+	meta => {
+		sourceName => 'duckduckgo',
+		sourceURL => 'https://duckduckgo.com'
 	}
     };
 };
