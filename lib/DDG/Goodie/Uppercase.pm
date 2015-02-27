@@ -28,6 +28,7 @@ handle remainder => sub {
     my $input = shift;
 
     return unless $input;
+    return if $input eq uc($input);
 
     my $upper = uc $input;
 
