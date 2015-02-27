@@ -13,7 +13,7 @@ secondary_example_queries 'bash if [[ "abc" -lt "cba" ]]';
 description 'Bash Primary Expressions Help';
 name 'Bash Help';
 source 'http://tille.garrels.be/training/bash/ch07.html';
-attribution github => [ 'http://github.com/mintsoft', 'mintsoft' ];
+attribution github => [ 'http://github.com/mintsoft', 'Rob Emery' ];
 
 category 'computing_tools';
 topics 'sysadmin';

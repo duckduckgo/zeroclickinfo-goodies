@@ -1,6 +1,7 @@
 package DDG::Goodie::ReverseComplement;
 # ABSTRACT: Give the DNA reverse complement of a DNA or RNA sequence.
 
+use strict;
 use DDG::Goodie;
 use feature 'state';
 

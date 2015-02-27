@@ -88,6 +88,11 @@ ddg_goodie_test(
         test_zci('11:22 AM (EST, UTC-5) is 4:22 PM (UTC).',
         html => qr/.*11:22 AM.*\(EST, UTC-5\) is.*4:22 PM.*\(UTC\)./
     ),
+      '1600 UTC in BST' =>
+        test_zci('16:00 (UTC) is 17:00 (BST, UTC+1).',
+        html => '-ANY-'
+    ),  
+    
     # Intentional non-answers
     '12 in binary' => undef,
 );

@@ -1,6 +1,7 @@
 package DDG::Goodie::IsAwesome::TheAdamGalloway;
 # ABSTRACT: TheAdamGalloway's first Goodie
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_the_adam_galloway";

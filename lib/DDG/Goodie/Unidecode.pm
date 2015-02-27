@@ -1,6 +1,7 @@
 package DDG::Goodie::Unidecode;
 # ABSTRACT: return an ASCII version of the search query
 
+use strict;
 use DDG::Goodie;
 use Text::Unidecode;
 use utf8;

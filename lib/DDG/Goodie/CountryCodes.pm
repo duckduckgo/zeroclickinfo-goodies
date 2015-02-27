@@ -1,6 +1,7 @@
 package DDG::Goodie::CountryCodes;
 # ABSTRACT: Matches country names to ISO 3166 codes and vice versa
 
+use strict;
 use DDG::Goodie;
 use Locale::Country qw/country2code code2country/;
 
