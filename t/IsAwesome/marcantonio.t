@@ -11,7 +11,7 @@ zci is_cached   => 1;
 ddg_goodie_test(
     [qw(
        DDG::Goodie::IsAwesome::marcantonio
-	     )],
+    )],
     'duckduckhack marcantonio' => test_zci('marcantonio is awesome and has successfully completed the DuckDuckHack Goodie tutorial!'),
     'duckduckhack marcantonio is awesome' => undef,
 );
