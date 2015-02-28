@@ -27,12 +27,24 @@ triggers any => "triggerWord", "trigger phrase";
 # Handle statement
 handle remainder => sub {
 
-	# optional - regex guard
-	# return unless qr/^\w+/;
+    my $input = $_;
 
-	return unless $_; # Guard against "no answer"
+    # optional - regex guard
+    # return unless $input =~ /^\w+/;
 
-	return $_;
+    return unless $input; # Guard against "no answer"
+
+    # Create your result
+    my $result = "result";
+
+    return $result,
+      structured_answer => {
+        input     => [$input],
+        operation => 'what did this thing do?',
+        result    => $result
+      };
 };
+
+
 
 1;
