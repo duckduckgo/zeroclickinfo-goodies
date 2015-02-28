@@ -12,6 +12,24 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::CalcRoots
     )],
+    'square root of negative 9' => test_zci(
+    "The 2-root of -9 is 3 i",
+        heading           => "Root Calculator", 
+        structured_answer => {
+            input     => ["2-root of -9"],
+            operation => 'Calculate',
+            result    => "<sup>2</sup>&radic;-9 = 3<em>i</em>"
+            }
+    ),
+    'negative square root of negative 25' =>test_zci(
+    "The -2-root of -25 is -5 i",
+        heading           => "Root Calculator", 
+        structured_answer => {
+            input     => ["-2-root of -25"],
+            operation => 'Calculate',
+            result    => "-<sup>2</sup>&radic;-25 = -5<em>i</em>"
+            }
+    ),
     '2nd root of 100' => test_zci(
         "The 2-root of 100 is 10.",
         heading           => "Root Calculator", 
