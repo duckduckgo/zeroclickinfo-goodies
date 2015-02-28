@@ -17,7 +17,7 @@ attribution github => ["https://github.com/gjskha", "gjskha"];
 triggers start => "duckduckhack gjskha";
 
 handle remainder => sub {
-     return if $_;
+    return if $_;
     return "gjskha is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
