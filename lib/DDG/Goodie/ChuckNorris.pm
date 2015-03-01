@@ -4,9 +4,9 @@ package DDG::Goodie::ChuckNorris;
 use DDG::Goodie;
 use Fortune;
 
-triggers startend => 'chuck norris', 'chuck norris fact';
+triggers startend => 'chuck norris fact';
 
-primary_example_queries 'chuck norris', 'chuck norris fact';
+primary_example_queries 'chuck norris fact';
 name 'Chuck Norris';
 description 'get a random chuck norris fact from the fortunes file';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ChuckNorris.pm';
