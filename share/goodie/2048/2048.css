@@ -1,0 +1,16 @@
+.area {
+	table-layout: fixed;
+	border: 2px solid black;
+	border-collapse: collapse;
+	margin-left: auto; 
+    margin-right: auto;
+}
+
+.area td, tr {
+    height: 50px;
+	width: 50px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+
