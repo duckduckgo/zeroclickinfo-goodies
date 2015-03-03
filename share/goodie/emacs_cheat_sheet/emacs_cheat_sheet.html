@@ -1,94 +1,95 @@
 <div id="sheet-container">
-    <div class="sheet-column">
-        <b>Lingo:</b>
-        <p>C: control key (CTRL)<br>
-        M: meta key (ALT or ESC)<br></p>
+    <div class="top-elements">
+        <div class="sheet-column">
+            <h6>Lingo:</h6>
+            <p>C: control key (CTRL)<br>
+            M: meta key (ALT or ESC)<br></p>
+        </div>
+        <div class="sheet-column">
+            <h6>Quick Answers:</h6>
+            <p><code>C-x C-f</code>: find file<br>
+            <code>C-x C-s</code>: save file<br>
+            <code>C-x C-c</code>: exit emacs<br></p>
+        </div>
     </div>
-    <div class="sheet-column">
-        <b>Quick Answers:</b>
-        <p><code>C-x C-f</code>: find file<br>
-        <code>C-x C-s</code>: save file<br>
-        <code>C-x C-c</code>: exit emacs<br></p>
-    </div>
-    
-    <b>Cursor Motion</b>
+    <h6>Cursor Motion</h6>
     <table class="sheet-table">
-            <tr>
-                <th rowspan=3>Amount</th>
-                <th colspan=4>Operation</th>
-            </tr>
-            <tr>
-                <th>Move</th>
-                <th>Move</th>
-                <th>Delete</th>
-                <th>Delete</th>
-            </tr>
-            <tr>
-                <th>Forward</th>
-                <th>Backward</th>
-                <th>Forward</th>
-                <th>Backward</th>
-            </tr>
-            <tr>
-                <td>Characters</td>
-                <td><code>C-f</code></td>
-                <td><code>C-b</code></td>
-                <td><code>C-d</code></td>
-                <td><code>DEL</code></td>
-            </tr>
-            <tr>
-                <td>Words</td>
-                <td><code>M-f</code></td>
-                <td><code>M-b</code></td>
-                <td><code>M-d</code></td>
-                <td><code>M-DEL</code></td>
-            </tr>
-            <tr>
-                <td>Lines</td>
-                <td><code>C-n</code></td>
-                <td><code>C-p</code></td>
-                <td><code>C-k</code></td>
-                <td><code>C-SPC C-a C-w</code></td>
-            </tr>
-            <tr>
-                <td>Sentences</td>
-                <td><code>M-e</code></td>
-                <td><code>M-a</code></td>
-                <td><code>M-k</code></td>
-                <td><code>C-x DEL</code></td>
-            </tr>
-            <tr>
-                <td>Expressions</td>
-                <td><code>C-M-f</code></td>
-                <td><code>C-M-b</code></td>
-                <td><code>C-M-k</code></td>
-                <td><code>C-M-DEL</code></td>
-            </tr>
-            <tr>
-                <td>Paragraphs</td>
-                <td><code>M-}</code></td>
-                <td><code>M-{</code></td>
-                <td>None</td>
-                <td>None</td>
-            </tr>
-            <tr>
-                <td>End/Start of Line</td>
-                <td><code>C-e</code></td>
-                <td><code>C-a</code></td>
-                <td>None</td>
-                <td>None</td>
-            </tr>
-            <tr>
-                <td>End/Start of Buffer</td>
-                <td><code>M-&gt;</code></td>
-                <td><code>M-&lt;</code></td>
-                <td>None</td>
-                <td>None</td> 
-            </tr>
-        </table>
+        <tr>
+            <th rowspan=3>Amount</th>
+            <th colspan=4>Operation</th>
+        </tr>
+        <tr>
+            <th>Move</th>
+            <th>Move</th>
+            <th>Delete</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <th>Forward</th>
+            <th>Backward</th>
+            <th>Forward</th>
+            <th>Backward</th>
+        </tr>
+        <tr>
+            <td>Characters</td>
+            <td><code>C-f</code></td>
+            <td><code>C-b</code></td>
+            <td><code>C-d</code></td>
+            <td><code>DEL</code></td>
+        </tr>
+        <tr>
+            <td>Words</td>
+            <td><code>M-f</code></td>
+            <td><code>M-b</code></td>
+            <td><code>M-d</code></td>
+            <td><code>M-DEL</code></td>
+        </tr>
+        <tr>
+            <td>Lines</td>
+            <td><code>C-n</code></td>
+            <td><code>C-p</code></td>
+            <td><code>C-k</code></td>
+            <td><code>C-SPC C-a C-w</code></td>
+        </tr>
+        <tr>
+            <td>Sentences</td>
+            <td><code>M-e</code></td>
+            <td><code>M-a</code></td>
+            <td><code>M-k</code></td>
+            <td><code>C-x DEL</code></td>
+        </tr>
+        <tr>
+            <td>Expressions</td>
+            <td><code>C-M-f</code></td>
+            <td><code>C-M-b</code></td>
+            <td><code>C-M-k</code></td>
+            <td><code>C-M-DEL</code></td>
+        </tr>
+        <tr>
+            <td>Paragraphs</td>
+            <td><code>M-}</code></td>
+            <td><code>M-{</code></td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>End/Start of Line</td>
+            <td><code>C-e</code></td>
+            <td><code>C-a</code></td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>End/Start of Buffer</td>
+            <td><code>M-&gt;</code></td>
+            <td><code>M-&lt;</code></td>
+            <td>None</td>
+            <td>None</td> 
+        </tr>
+    </table>
         
     <div class="sheet-column">
-        <b>Scrolling and Windows</b>
+        <h6>Scrolling and Windows</h6>
         <table class="sheet-table">
             <tr>
                 <td><code>C-v</code></td>
@@ -128,7 +129,7 @@
             </tr>
         </table>
         
-        <b>Cutting and Pasting</b>
+        <h6>Cutting and Pasting</h6>
         <table class="sheet-table">
             <tr>
                 <td><code>C-SPC</code></td>
@@ -154,7 +155,7 @@
     </div>
     
     <div class="sheet-column">
-        <b>Files and Buffers</b>
+        <h6>Files and Buffers</h6>
         <table class="sheet-table">
             <tr>
                 <td><code>C-x C-f</code></td>
@@ -192,7 +193,7 @@
             </tr>
         </table>
         
-        <b>Command-Related Stuff</b>
+        <h6>Command-Related Stuff</h6>
         <table class="sheet-table">
             <tr>
                 <td><code>ESC ESC ESC</code></td>
@@ -215,7 +216,7 @@
         </table>
     </div>
     
-    <b>Searching and Replacing</b>
+    <h6>Searching and Replacing</h6>
         <table class="sheet-table">
             <tr>
                 <td><code>C-s</code></td>
@@ -252,7 +253,7 @@
         </table>
     
     <div class="sheet-column">
-        <b>Help</b>
+        <h6>Help</h6>
         <table class="sheet-table">
             <tr>
                 <td><code>C-h k</code></td>
@@ -278,7 +279,7 @@
     </div>
     
     <div class="sheet-column">
-        <b>Misc</b>
+        <h6>Misc</h6>
         <table class="sheet-table">
             <tr>
                 <td><code>C-_ or C-x u</code></td>

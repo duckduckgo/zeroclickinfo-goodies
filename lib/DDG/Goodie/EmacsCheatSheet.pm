@@ -20,9 +20,20 @@ attribution github  => ["https://github.com/jim-brighter", "Jim Brighter"],
 primary_example_queries "emacs cheatsheet", "emacs cheat sheet", "emacs commands", "emacs help";
 secondary_example_queries "emacs reference", "emacs guide", "emacs quick reference";
 
-triggers startend => "emacs cheatsheet", "emacs cheat sheet",
-                     "emacs help", "emacs commands", "emacs guide",
-                     "emacs reference", "emacs quick reference";
+triggers startend => "emacs cheatsheet", 
+                     "emacs cheat sheet",
+                     "emacs help", 
+                     "emacs commands", 
+                     "emacs guide",
+                     "emacs reference", 
+                     "emacs quick reference",
+                     "cheatsheet emacs",
+                     "cheat sheet emacs",
+                     "help emacs",
+                     "commands emacs",
+                     "guide emacs", 
+                     "reference emacs", 
+                     "quick reference emacs";
 
 my $TEXT = scalar share('emacs_cheat_sheet.txt')->slurp,
 my $HTML = scalar share('emacs_cheat_sheet.html')->slurp;

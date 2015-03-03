@@ -5,15 +5,19 @@
 }
 
 .zci--answer #sheet-container {
-    max-height: 46ex;
+    max-height: 45ex;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 .zci--answer .sheet-column {
-    width: 50%;
+    width: 48%;
     display: inline-block;
     vertical-align: top;
+}
+
+.zci--answer .top-elements div {
+    display: inline-block;
 }
 
 .zci--answer  table.sheet-table th {
