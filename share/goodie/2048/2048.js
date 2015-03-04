@@ -36,10 +36,12 @@ document.onkeydown = function(event) {
 	getArea(tempArea,area);
 
 
-	// if move is true, a move has been made
+	// if move is true, a move has been made. I can generate a new random number
+	// if move is false, do nothing
+	// if move is -1, the game is finished
 	if (move == true) {
 		getRand(area);
-	} else if (move == -1) { // else, the game is finished
+	} else if (move == -1) {
 		return;
 	}
  
@@ -203,9 +205,8 @@ function printArea(area) {
 	var val;
 	for (var r = 0; r< 4; r++) {
 		for (var c = 0; c<4; c++) {
-			val = area[r][c];
 			tempArea.rows[r].cells[c].innerHTML = area[r][c];
-			tempArea.rows[r].cells[c].style.backgroundColor = color[val];
+			tempArea.rows[r].cells[c].style.backgroundColor = color[area[r][c]];
 		}
 	}
 }
