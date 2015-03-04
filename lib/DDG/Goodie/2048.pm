@@ -19,16 +19,19 @@ attribution github => ["GitHubAccount", "Friendly Name"],
             twitter => "twitterhandle";
 
 # Triggers
-triggers any => "2048 game", "play 2048";
+triggers any => "game", "play";
 
 # Handle statement
 handle remainder => sub {
 
-	#return unless $_; # Guard against "no answer"
+	my $base = 1024;
 
+	return unless (($_ == $base) || ($_ == $base*2) || ($_ == $base*4));
+
+	my $play = '<i><b>Play <span id="game">'. $_ .'</span></b></i>';
 	my $html = scalar share('2048.html')->slurp;
 
-	return html => $html;
+	return html => "$play $html";
 };
 
 1;

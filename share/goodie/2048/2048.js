@@ -1,6 +1,6 @@
 var tempArea = document.getElementById('area');
 var SIZE = 4;
-var WINNUM = 2048;
+var WINNUM = document.getElementById('game').innerHTML;
 var area = new Array();
 var color = {'' : '#FFFFFF',
 			'2' : '#EEE4DA',
