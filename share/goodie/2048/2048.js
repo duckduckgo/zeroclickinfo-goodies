@@ -14,11 +14,12 @@ var color = {'' : '#FFFFFF',
 			'512' : '#EDC850',
 			'1024' : '#EDC53F',
 			'2048' : '#EDC22E'};
-var move;
 
 start(tempArea,area);
 
 document.onkeydown = function(event) {
+
+	var move = 0;
 
 	getArea(tempArea,area);
 
@@ -34,14 +35,14 @@ document.onkeydown = function(event) {
 
 	getArea(tempArea,area);
 
-	if (move) {
+
+	// if move is true, a move has been made
+	if (move == true) {
 		getRand(area);
+	} else if (move == -1) { // else, the game is finished
+		return;
 	}
-
-	if (checkWin(area) || checkLose(area)) {
-		return; return;
-	}
-
+ 
 }
 
 function mov(dir, area) {
@@ -50,7 +51,7 @@ function mov(dir, area) {
 	var moves = 0;
 	var flag = false;
 	var possibleToMove = 0;
-	var changed;
+	var changes;
 
 	if (dir == 'w') {
 		// moving numbers
@@ -160,12 +161,11 @@ function mov(dir, area) {
 			}
 		}
 	}
-	//area = canSum(dir,area);
 
 	printArea(area);
 
 	if (checkWin(area) || checkLose(area, dir)) {
-		return;
+		return -1;
 	}
 
 	// This check is necesary avoiding the appearance of a new value in the area if
@@ -263,24 +263,25 @@ function checkLose(area) {
 			if (area[r][c] != '') {
 				count++;
 			}
-			if (count == SIZE*SIZE && !canDoSomething(area)) {
-				area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-				area[3][0] = 'L'; area[3][1] = 'O'; area[3][2] = 'S'; area[3][3] = 'E';
-				printArea(area);
-				return true;
-			}
 		}
 	}
+	if (count == SIZE*SIZE && !canDoSomething(area)) {
+		area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
+		area[3][0] = 'L'; area[3][1] = 'O'; area[3][2] = 'S'; area[3][3] = 'E';
+		printArea(area);
+		return true;
+	}
+
 	return false;
 }
 
 function canDoSomething(area) {
 	for (var r = 0; r < SIZE; r++) {
 		for (var c = 0; c < SIZE; c++) {
-			if ( (r != 0 && area[r][c] == area[r-1][c]) ||
+			if ((r != 0 && area[r][c] == area[r-1][c]) ||
 				(r != 3 && area[r][c] == area[r+1][c]) ||
 				(c != 0 && area[r][c] == area[r][c-1]) ||
-				(c != 3 && area[r][c] == area[r][c+1]) ) {
+				(c != 3 && area[r][c] == area[r][c+1])) {
 				
 				return true;
 			}
