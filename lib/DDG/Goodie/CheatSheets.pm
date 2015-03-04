@@ -16,14 +16,15 @@ topics qw'computing geek programming sysadmin';
 primary_example_queries 'universal help', 'universal cheat sheet', 'universal example';
 
 triggers startend => (
-    'cheat sheet',
-    'cheatsheet',
-    'guide',
-    'help',
-    'quick reference',
-    'reference',
-    'example',
-    'examples',
+	'char', 'chars',
+	'character', 'characters',
+    'cheat sheet', 'cheatsheet',
+	'command', 'commands',
+    'example', 'examples',
+    'guide', 'help',
+    'quick reference', 'reference',
+    'shortcut', 'shortcuts',
+	'symbol', 'symbols',
 );
 
 attribution github  => [zachthompson => 'Zach Thompson'];
@@ -45,7 +46,7 @@ handle remainder => sub {
 	}
     return 'Vim Cheat Sheet', structured_answer => {
     	id => 'cheat_sheets',
-		name => 'Cheat Sheets',
+		name => 'Cheat Sheet',
 		data => \@data,
 		templates => {
 			group => 'base',
