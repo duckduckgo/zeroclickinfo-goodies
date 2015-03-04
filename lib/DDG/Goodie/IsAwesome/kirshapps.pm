@@ -13,7 +13,7 @@ attribution github => ["https://github.com/kirshapps", "kirshapps"];
 triggers start => "duckduckhack kirshapps";
 handle remainder => sub {
     return if $_;
-	return "kirshapps is awesome and has successfully completed the DuckDuckHack goodie tutorial!"
+    return "kirshapps is awesome and has successfully completed the DuckDuckHack goodie tutorial!"
 };
 
 1;
