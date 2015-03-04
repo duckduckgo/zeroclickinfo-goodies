@@ -12,16 +12,16 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::Rc4
     )],
-    'rc4 en mysecretkey hello' => test_zci("Rc4 Encrypt: hello, with key: mysecretkey is grYU1K8=",
+    'rc4 en mysecretkey hello' => test_zci("RC4 Encrypt: hello, with key: mysecretkey is grYU1K8=",
 	structured_answer => {
 		input => ['hello, Key: mysecretkey'],
-		operation => "Rc4 Encrypt",
+		operation => "RC4 Encrypt",
 		result => "grYU1K8="
 	}),
-	'rc4 de duck yWrJniG/nNg=' => test_zci("Rc4 Decrypt: yWrJniG/nNg=, with key: duck is DdgRocks",
+	'rc4 de duck yWrJniG/nNg=' => test_zci("RC4 Decrypt: yWrJniG/nNg=, with key: duck is DdgRocks",
 	structured_answer => {
 		input => ['yWrJniG/nNg=, Key: duck'],
-		operation => "Rc4 Decrypt",
+		operation => "RC4 Decrypt",
 		result => "DdgRocks"
 	}),
     'rc4 ' => undef,
