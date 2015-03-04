@@ -13,8 +13,7 @@ zci is_cached   => 1;
 
 name "RC4.pm";
 description "Encrypt or decrypt a text using a key provided by the user";
-primary_example_queries "crypto encrypt key string", "crypto decrypt key string";
-secondary_example_queries "crypto en key string", "crypto de key string";
+primary_example_queries "rc4 en mysecretkey hello", "rc4 de duck yWrJniG/nNg=";
 category "computing_tools";
 topics "cryptography";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Rc4.pm";
@@ -41,7 +40,7 @@ handle remainder => sub {
             # To avoid problems with non printable characters, we transform the result using encode_base64()
             $result = encode_base64($encrypted);
             chomp $result;
-            $operation = "Rc4 Encrypt";
+            $operation = "RC4 Encrypt";
 
     } elsif ($type =~ m/^de(c|crypt)?$/) {
             #To decrypt we do the reverse process, we take the plaintext, transform it using decode_base64()
@@ -49,7 +48,7 @@ handle remainder => sub {
             # Then we pass it to the RC4 funcion to be decrypted.
             $result = RC4($key, $decoded);
             # No need to encode again, this result is show as is.
-            $operation = "Rc4 Decrypt";
+            $operation = "RC4 Decrypt";
     } else {
         return;
     }
