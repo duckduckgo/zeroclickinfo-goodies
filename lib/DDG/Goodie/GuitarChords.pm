@@ -42,9 +42,11 @@ handle remainder => sub
     return;
 };
 
+# Checks a chord to make sure it's valid and formats it so
+# that it will match a filename in the share directory.
 sub check_chord
 {
-    if ($_[0] =~ /(?<a>[a-gA-G])(?<b>#|b)?(?<c>dim|min|maj|add|aug|m|M)?(?<d>M|maj|m|min)?(?<e>[0-9]?(sus[0-9])?)?(\/(?<f>(#|b)?[0-9]+))?/) {
+    if ($_[0] =~ /^(?<a>[a-gA-G])(?<b>#|b)?\s*(?<c>dim|min|maj|add|aug|m|M)?\s*(?<d>M|maj|m|min)?(?<e>[0-9]?(sus[0-9])?)?(\/(?<f>(#|b)?[0-9]+))?$/) {
         my ($a,$b,$c,$d,$e,$f,$r);
         $a = uc($+{'a'});
         $b = $+{'b'} if $+{'b'};
@@ -71,6 +73,7 @@ sub check_chord
     return;
 }
 
+# Returns an image tag with the correct filename and width.
 sub get_chord_img
 {
     goodie_img_tag({filename=>$_[0].'.png', width=>78});
