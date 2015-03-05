@@ -1,6 +1,7 @@
 package DDG::Goodie::ZappBrannigan;
 # ABSTRACT: Zapp Brannigan quotes.
 
+use strict;
 use DDG::Goodie;
 
 use YAML::XS qw(Load);

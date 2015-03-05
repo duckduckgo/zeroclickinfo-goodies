@@ -1,6 +1,7 @@
 package DDG::Goodie::NLetterWords;
 # ABSTRACT: find words of a certain length
 
+use strict;
 use DDG::Goodie;
 use Lingua::EN::Numericalize;
 

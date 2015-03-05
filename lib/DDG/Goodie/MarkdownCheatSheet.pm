@@ -1,6 +1,7 @@
 package DDG::Goodie::MarkdownCheatSheet;
 # ABSTRACT: Provide a cheatsheet for common Markdown syntax
 
+use strict;
 use DDG::Goodie;
 use HTML::Entities;
 

@@ -583,7 +583,7 @@ sub add_major_range {
         'text-anchor' => $anchor,
         class => 'major_range_label'
     );
-    $majorRangeLabel->tag('tspan', -cdata => ucfirst($label));
+    $majorRangeLabelText->tag('tspan', -cdata => ucfirst($label));
 
     return $plot;
 }

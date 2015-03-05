@@ -1,6 +1,7 @@
 package DDG::Goodie::IDN;
 # ABSTRACT: Convert domain names from/to Punycode.
 
+use strict;
 use DDG::Goodie;
 use Net::IDN::Encode ':all';
 use utf8;

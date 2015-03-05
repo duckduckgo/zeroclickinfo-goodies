@@ -5,6 +5,7 @@ use warnings;
 
 use Test::More;
 use DDG::Test::Goodie;
+use utf8;
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
@@ -70,11 +71,11 @@ ddg_goodie_test(
         }
     ),
     'convert 5 kelvin to fahrenheit' => test_zci(
-        '5 kelvin = -450.670 degrees fahrenheit',
+        '5 K = -450.670 °F',
         structured_answer => {
-            input     => ['5 kelvin'],
+            input     => ['5 K'],
             operation => 'Convert',
-            result    => '-450.670 degrees fahrenheit'
+            result    => "-450.670 °F"
         }
     ),
     'convert 25 inches into feet' => test_zci(
@@ -86,11 +87,11 @@ ddg_goodie_test(
         }
     ),
     'convert 5 f to celsius' => test_zci(
-        '5 degrees fahrenheit = -15 degrees celsius',
+        '5 °F = -15 °C',
         structured_answer => {
-            input     => ['5 degrees fahrenheit'],
+            input     => ['5 °F'],
             operation => 'Convert',
-            result    => '-15 degrees celsius'
+            result    => "-15 °C"
         }
     ),
     'convert km to cm' => test_zci(
@@ -447,43 +448,43 @@ ddg_goodie_test(
         }
     ),
     '12 degrees Celsius to Fahrenheit' => test_zci(
-        '12 degrees celsius = 53.600 degrees fahrenheit',
+        '12 °C = 53.600 °F',
         structured_answer => {
-            input     => ['12 degrees celsius'],
+            input     => ['12 °C'],
             operation => 'Convert',
-            result    => '53.600 degrees fahrenheit'
+            result    => "53.600 °F"
         }
     ),
     '1 degrees Fahrenheit to celsius' => test_zci(
-        '1 degree fahrenheit = -17.222 degrees celsius',
+        '1 °F = -17.222 °C',
         structured_answer => {
-            input     => ['1 degree fahrenheit'],
+            input     => ['1 °F'],
             operation => 'Convert',
-            result    => '-17.222 degrees celsius'
+            result    => "-17.222 °C"
         }
     ),
     '0 c in k' => test_zci(
-        '0 degrees celsius = 273.150 kelvin',
+        '0 °C = 273.150 K',
         structured_answer => {
-            input     => ['0 degrees celsius'],
+            input     => ['0 °C'],
             operation => 'Convert',
-            result    => '273.150 kelvin'
+            result    => '273.150 K'
         }
     ),
     '234 f to c' => test_zci(
-        '234 degrees fahrenheit = 112.222 degrees celsius',
+        '234 °F = 112.222 °C',
         structured_answer => {
-            input     => ['234 degrees fahrenheit'],
+            input     => ['234 °F'],
             operation => 'Convert',
-            result    => '112.222 degrees celsius'
+            result    => "112.222 °C"
         }
     ),
     '234 f to k' => test_zci(
-        '234 degrees fahrenheit = 385.372 kelvin',
+        '234 °F = 385.372 K',
         structured_answer => {
-            input     => ['234 degrees fahrenheit'],
+            input     => ['234 °F'],
             operation => 'Convert',
-            result    => '385.372 kelvin'
+            result    => '385.372 K'
         }
     ),
     'metres from 20 yards' => test_zci(
@@ -706,19 +707,19 @@ ddg_goodie_test(
         }
     ),
     'how much is 40 kelvin in celsius' => test_zci(
-        '40 kelvin = -233.150 degrees celsius',
+        '40 K = -233.150 °C',
         structured_answer => {
-            input     => ['40 kelvin'],
+            input     => ['40 K'],
             operation => 'Convert',
-            result    => '-233.150 degrees celsius'
+            result    => '-233.150 °C'
         }
     ),
     'how much is 40 kelvin in celsius?' => test_zci(
-        '40 kelvin = -233.150 degrees celsius',
+        '40 K = -233.150 °C',
         structured_answer => {
-            input     => ['40 kelvin'],
+            input     => ['40 K'],
             operation => 'Convert',
-            result    => '-233.150 degrees celsius'
+            result    => "-233.150 °C"
         }
     ),
     'how many metres in 10 of yard?' => test_zci(

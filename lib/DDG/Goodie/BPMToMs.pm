@@ -1,6 +1,7 @@
 package DDG::Goodie::BPMToMs;
 # ABSTRACT: Displays common note values in milliseconds for a given tempo measured in quarter notes per minute.
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "bpmto_ms";

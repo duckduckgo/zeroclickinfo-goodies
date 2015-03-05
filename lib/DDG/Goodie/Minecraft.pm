@@ -1,6 +1,7 @@
 package DDG::Goodie::Minecraft;
 # ABSTRACT: Minecraft crafting recipes.
 
+use strict;
 use DDG::Goodie;
 use JSON;
 use utf8;

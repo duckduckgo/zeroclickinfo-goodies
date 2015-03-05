@@ -1,6 +1,7 @@
 package DDG::Goodie::DaysBetween;
 # ABSTRACT: Give the number of days between two given dates.
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 

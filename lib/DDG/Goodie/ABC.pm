@@ -1,6 +1,7 @@
 package DDG::Goodie::ABC;
 # ABSTRACT: Randomly pick one of several different choices delimited by "or"
 
+use strict;
 use DDG::Goodie;
 use List::AllUtils qw/none/;
 

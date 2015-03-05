@@ -1,6 +1,7 @@
 package DDG::Goodie::AspectRatio;
 # ABSTRACT: Calculates aspect ratio based on previously defined one
 
+use strict;
 use DDG::Goodie;
 
 triggers start => "aspect ratio";

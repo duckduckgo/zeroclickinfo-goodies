@@ -1,6 +1,7 @@
 package DDG::Goodie::RandomNumber;
 # ABSTRACT: generate a random number in the requested range.
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'random number between 1 and 12', 'random number';

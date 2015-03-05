@@ -1,6 +1,7 @@
 package DDG::Goodie::Chars;
 # ABSTRACT: Give the number of characters (length) of the query.
 
+use strict;
 use DDG::Goodie;
 
 triggers startend =>

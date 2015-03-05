@@ -1,6 +1,7 @@
 package DDG::Goodie::Uppercase;
 # ABSTRACT: uppercase a provided string.
 
+use strict;
 use DDG::Goodie;
 
 triggers start => 'uppercase', 'upper case', 'allcaps', 'all caps', 'strtoupper', 'toupper';
@@ -27,6 +28,7 @@ handle remainder => sub {
     my $input = shift;
 
     return unless $input;
+    return if $input eq uc($input);
 
     my $upper = uc $input;
 

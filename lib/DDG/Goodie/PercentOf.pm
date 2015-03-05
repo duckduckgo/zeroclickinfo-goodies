@@ -1,6 +1,7 @@
 package DDG::Goodie::PercentOf;
-# Operations with percentuals
+# ABSTRACT: Operations with percentuals
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "percent_of";

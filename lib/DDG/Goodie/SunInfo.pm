@@ -1,6 +1,7 @@
 package DDG::Goodie::SunInfo;
 # ABSTRACT: sunrise and sunset information for the client location
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::ImageLoader';

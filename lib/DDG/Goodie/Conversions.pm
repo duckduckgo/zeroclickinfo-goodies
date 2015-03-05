@@ -1,12 +1,14 @@
 package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use Math::Round qw/nearest/;
 use bignum;
 use Convert::Pluggable;
+use utf8;
 
 name                      'Conversions';
 description               'convert between various units of measurement';
@@ -59,6 +61,13 @@ my %plural_exceptions = (
 );
 
 my %singular_exceptions = reverse %plural_exceptions;
+
+my %temperature_aliases = (
+    'celsius'    => '°C',
+    'fahrenheit' => '°F',
+    'rankine'    => '°R',
+    'kelvin'     => 'K',
+);
 
 handle query_lc => sub {
     # hack around issues with feet and inches for now
@@ -138,8 +147,8 @@ handle query_lc => sub {
         $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
         $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
     } else {
-        $result->{'from_unit'} = ($factor == 1 ? 'degree' : 'degrees') . ' ' . $result->{'from_unit'} if ($result->{'from_unit'} ne "kelvin");
-        $result->{'to_unit'} = ($result->{'result'} == 1 ? 'degree' : 'degrees') . ' ' . $result->{'to_unit'} if ($result->{'to_unit'} ne "kelvin");
+        $result->{'from_unit'} = $temperature_aliases{$result->{'from_unit'}};
+        $result->{'to_unit'} = $temperature_aliases{$result->{'to_unit'}};
     }
 
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});

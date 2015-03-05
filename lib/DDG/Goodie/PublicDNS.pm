@@ -1,6 +1,7 @@
 package DDG::Goodie::PublicDNS;
 # ABSTRACT: Display a list of DNS servers which accept public queries.
 
+use strict;
 use DDG::Goodie;
 
 use List::Util qw(max);

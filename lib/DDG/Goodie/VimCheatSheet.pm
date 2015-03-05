@@ -1,6 +1,7 @@
 package DDG::Goodie::VimCheatSheet;
 # ABSTRACT: Provide a cheatsheet for common vim syntax
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "vim_cheat";

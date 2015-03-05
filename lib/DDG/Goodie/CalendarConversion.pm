@@ -1,6 +1,7 @@
 package DDG::Goodie::CalendarConversion;
 # ABSTRACT: convert between various calendars.
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 

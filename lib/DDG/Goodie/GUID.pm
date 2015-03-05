@@ -1,6 +1,7 @@
 package DDG::Goodie::GUID;
 # ABSTRACT: Generated a GUID on-demand.
 
+use strict;
 use DDG::Goodie;
 use Data::GUID;
 

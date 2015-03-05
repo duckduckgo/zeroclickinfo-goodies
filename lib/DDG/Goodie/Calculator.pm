@@ -1,6 +1,7 @@
 package DDG::Goodie::Calculator;
 # ABSTRACT: do simple arthimetical calculations
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 

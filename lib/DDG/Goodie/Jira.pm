@@ -1,6 +1,7 @@
 package DDG::Goodie::Jira;
 # ABSTRACT: returns the URL of an Apache or Codehaus JIRA bug ticket according to its identifier
 
+use strict;
 use DDG::Goodie;
 use utf8;
 
