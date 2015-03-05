@@ -10,7 +10,7 @@ name "2048";
 description "Javascript IA for online 2048";
 primary_example_queries "2048 game", "play 512";
 secondary_example_queries "play 4096";
-category "entertainment ";
+category "entertainment";
 topics "gaming ";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/2048.pm";
 attribution github => ["https://github.com/puskin94", "puskin"];
