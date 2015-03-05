@@ -46,6 +46,8 @@ handle remainder => sub {
     my ($vf) = $query =~ m/\bvf[ =]([\d\.]+)/i;
     $vf = 1 if (!$vf or $vf>1 or $vf<0);
 
+    my $velocity_text = ($vf == 1 ? '' : "$vf × ").'Speed of light in a vacuum';
+
     my $mul     = MULTIPLIER->{lc($units)};
     my $hz_freq = $freq * $mul * (1/$vf);
 
@@ -63,13 +65,14 @@ handle remainder => sub {
         }
     }
 
-    my $output_text = "λ = $output_value $output_units";
+    my $result_text    = "λ = $output_value $output_units";
+    my $operation_text = "Wavelength of $freq ".FORMAT_UNITS->{lc($units)}." ($velocity_text)";
 
-    return $output_text,
+    return $result_text,
         structured_answer => {
-            input     => [$freq, FORMAT_UNITS->{lc($units)}],
-            operation => "Wavelength ( Velocity Factor $vf × Speed of light in a vacuum )",
-            result    => $output_text,
+            input     => [],
+            operation => $operation_text,
+            result    => $result_text,
         };
 };
 
