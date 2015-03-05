@@ -30,13 +30,14 @@ sub mk_test {
     $freq_units ||= 'MHz';
     $wave_units ||= 'Meters';
             $vf ||= 1;
+     my $vf_text = $vf == 1 ? '' : "$vf × ";
 
     my $expect = "λ = $wave_value $wave_units";
     return (
         $expect,
         structured_answer => {
-            input => [$freq_value,$freq_units],
-            operation => "Wavelength ( Velocity Factor $vf × Speed of light in a vacuum )",
+            input => [],
+            operation => "Wavelength of $freq_value $freq_units ($vf_text\Speed of light in a vacuum)",
             result => $expect,
         }
     );
