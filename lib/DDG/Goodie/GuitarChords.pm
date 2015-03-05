@@ -46,7 +46,7 @@ handle remainder => sub
 # that it will match a filename in the share directory.
 sub check_chord
 {
-    if ($_[0] =~ /(?<a>[a-gA-G])(?<b>#|b)?(?<c>dim|min|maj|add|aug|m|M)?(?<d>M|maj|m|min)?(?<e>[0-9]?(sus[0-9])?)?(\/(?<f>(#|b)?[0-9]+))?/) {
+    if ($_[0] =~ /^(?<a>[a-gA-G])(?<b>#|b)?\s*(?<c>dim|min|maj|add|aug|m|M)?\s*(?<d>M|maj|m|min)?(?<e>[0-9]?(sus[0-9])?)?(\/(?<f>(#|b)?[0-9]+))?$/) {
         my ($a,$b,$c,$d,$e,$f,$r);
         $a = uc($+{'a'});
         $b = $+{'b'} if $+{'b'};
