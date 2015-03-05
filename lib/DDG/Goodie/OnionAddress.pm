@@ -26,11 +26,10 @@ my $onion_address_qr = qr/\bhttps?:\/\/([a-z0-9]{16})\.onion[:\d+]?[\/.*]?\b/;
 triggers query_lc => qr/$onion_address_qr[\?]?/;
 
 handle query_lc => sub {
-    if ($1) {
-        return $1, heading => "Access to onion service", html => "Access $1.onion using the <a href='https://www.torproject.org/projects/torbrowser.html.en'>Tor Browser</a> or via <a href='https://$1.tor2web.org'>Tor2web</a>.";
-    }
 
-    return;
+    return unless $1;
+    return $1, html => "<div class='zci__caption'>Access $1.onion using the <a href='https://www.torproject.org/projects/torbrowser.html.en'>Tor Browser</a> or via <a href='https://$1.tor2web.org'>Tor2web</a>.</div>";
+
 };
 
 1;
