@@ -22,8 +22,6 @@ document.onkeydown = function(event) {
 
 	var move = 0;
 
-	getArea(tempArea,area);
-
 	if (event.keyCode == 87 || event.keyCode == 38) { // w or up arrow
 		move = mov('w', area);
 	} else if (event.keyCode == 65 || event.keyCode == 37) { // a or left arrow
@@ -201,32 +199,6 @@ function upPoints(points) {
 	var spanPoints = document.getElementsByClassName('points')[0];
 	var current = parseInt(spanPoints.innerHTML);
 	spanPoints.innerHTML = current + points;
-}
-
-
-function sumIfPossible(r, c, dir, area) {
-
-	var flag = -1;
-
-	if (dir == 'w' && r != 0 && area[r][c] == area[r-1][c]) {
-		area[r-1][c] *= 2;
-		flag = 1;
-	} else if (dir == 's' && r != 3 && area[r][c] == area[r+1][c]) {
-		area[r+1][c] *= 2;
-		flag = 1;
-	} else if (dir == 'a' && c != 0 && area[r][c] == area[r][c-1]) {
-		area[r][c-1] *= 2;
-		flag = 1;
-	} else if (dir == 'd' && c != 3 && area[r][c] == area[r][c+1]) {
-		area[r][c+1] *= 2;
-		flag = 1;
-	}
-	if (flag != -1) {
-		area[r][c] = '';
-		return area;
-	}
-	return flag;
-
 }
 
 function printArea(area) {

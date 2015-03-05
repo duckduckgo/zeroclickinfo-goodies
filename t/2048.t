@@ -8,7 +8,7 @@ use DDG::Test::Goodie;
 zci answer_type => "2048";
 zci is_cached   => 1;
 
-my $html = '<i><b>Play <span id="game">2048</span></b></i> 
+my $html = '<i><b>Play <span id="game">2048</span></b></i> <span class="counter"><span class="points">0</span> Points</div>
 <div id="2048-area">
     <table class="area" id="area">
         <tr><td></td><td></td><td></td><td></td></tr>
@@ -22,6 +22,8 @@ ddg_goodie_test(
     [qw( DDG::Goodie::2048 )],
 
     'play 2048' => test_zci(
+        answer => "",
+        caller => "DDG::Goodie::2048",
         html => $html
     ),
 

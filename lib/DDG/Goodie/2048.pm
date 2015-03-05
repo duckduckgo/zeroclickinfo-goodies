@@ -1,5 +1,5 @@
 package DDG::Goodie::2048;
-# ABSTRACT: Write an abstract here
+# Play (128|256|512|1024|2048|4096|8192) online!!
 
 use DDG::Goodie;
 
@@ -7,16 +7,13 @@ zci answer_type => "2048";
 zci is_cached   => 1;
 
 name "2048";
-description "Succinct explanation of what this instant answer does";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
-# category "";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-# topics "";
+description "Javascript IA for online 2048";
+primary_example_queries "2048 game", "play 512";
+secondary_example_queries "play 4096";
+category "entertainment ";
+topics "gaming ";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/2048.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
+attribution github => ["https://github.com/puskin94", "puskin"];
 
 # Triggers
 triggers any => "game", "play";
@@ -37,7 +34,7 @@ handle remainder => sub {
 	my $play = '<i><b>Play <span id="game">'. $_ .'</span></b></i>';
 	my $html = scalar share('2048.html')->slurp;
 
-	return html => "$play $html";
+	return "", html => "$play $html";
 };
 
 1;
