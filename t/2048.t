@@ -23,7 +23,6 @@ ddg_goodie_test(
 
     'play 2048' => test_zci(
         answer => "",
-        caller => "DDG::Goodie::2048",
         html => $html
     ),
 
