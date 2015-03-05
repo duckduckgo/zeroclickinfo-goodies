@@ -19,11 +19,11 @@ attribution email => 'ilv@torproject.org';
 # regex to detect an onion address
 # this cover several cases, including addresses with ports and/or paths
 # e.g. https://3g2upl4pq6kufc4m.onion:5000/?q=dont+track+us
-my $onion_addess_qr = qr/\bhttps?:\/\/([a-z0-9]{16})\.onion[:\d+]?[\/.*]?\b/;
+my $onion_address_qr = qr/\bhttps?:\/\/([a-z0-9]{16})\.onion[:\d+]?[\/.*]?\b/;
 
 # add an optional question mark in case it's at the end of a question sentence
 # e.g. How do I access https://0123456789abcdef.onion?
-triggers query_lc => qr/$onion_addess_qr[\?]?/;
+triggers query_lc => qr/$onion_address_qr[\?]?/;
 
 handle query_lc => sub {
     if ($1) {
