@@ -24,9 +24,15 @@ triggers any => "game", "play";
 # Handle statement
 handle remainder => sub {
 
-	my $base = 1024;
+	my $base = 128;
 
-	return unless (($_ == $base) || ($_ == $base*2) || ($_ == $base*4));
+	return unless (($_ == $base) || # play 128
+					($_ == $base*2) || # play 256
+					($_ == $base*4) || # play 512
+					($_ == $base*8) || # play 1024
+					($_ == $base*16) || # play 2048
+					($_ == $base*32) || # play 4096
+					($_ == $base*64)); # play 8192
 
 	my $play = '<i><b>Play <span id="game">'. $_ .'</span></b></i>';
 	my $html = scalar share('2048.html')->slurp;

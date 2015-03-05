@@ -1,16 +1,27 @@
 .area {
 	table-layout: fixed;
-	border: 2px solid black;
+	border: 3px solid #776E65;
 	border-collapse: collapse;
 	margin-left: auto; 
     margin-right: auto;
+    box-shadow: 2px 2px 2px #999;
+    font-style: italic;
 }
 
 .area td, tr {
     height: 50px;
 	width: 50px;
-	border: 1px solid black;
+	border: 3px solid #776E65;
 	text-align: center;
+	font-weight: bold; 
 }
 
+.points {
+	font-weight: bold; 
+	font-style: italic;
+}
 
+.counter {
+	margin:auto; 
+	display:table;
+}
