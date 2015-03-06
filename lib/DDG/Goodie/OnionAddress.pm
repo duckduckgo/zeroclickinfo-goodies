@@ -27,9 +27,9 @@ triggers query_lc => qr/\b$onion_address_qr(\?)?\b/;
 
 handle query_lc => sub {
 
-	# we only accept queries for web onion services
-	# we also assume that an onion service without protocol:// should be web
-	return unless !$1 or $1 eq 'https://' or $1 eq 'http://' or $2;
+    # we only accept queries for web onion services
+    # we also assume that an onion service without protocol:// should be web
+    return unless !$1 or $1 eq 'https://' or $1 eq 'http://' or $2;
     return $2, html => "<div class='zci__caption'>Access $2.onion using the <a href='https://www.torproject.org/projects/torbrowser.html.en'>Tor Browser</a> or via <a href='https://$2.tor2web.org'>Tor2web</a>.</div>";
 
 };
