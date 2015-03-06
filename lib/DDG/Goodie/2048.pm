@@ -31,10 +31,11 @@ handle remainder => sub {
 					($_ == $base*32) || # play 4096
 					($_ == $base*64)); # play 8192
 
+
 	my $play = '<i><b>Play <span id="game">'. $_ .'</span></b></i>';
 	my $html = scalar share('2048.html')->slurp;
 
-	return "", html => "$play $html";
+	return "Play ".$_, html => "$play $html";
 };
 
 1;
