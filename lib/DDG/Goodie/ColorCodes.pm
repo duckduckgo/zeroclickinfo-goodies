@@ -89,14 +89,14 @@ sub create_output {
           . "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
     
     my $comps = "<div class='cols_column'><span class='mini-color circle' style='background: #".$complementary.";'> </span></div>"
-              . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace tx-clr--dk'>"
-              . qq[<a onclick='document.x.q.value="#$complementary";document.x.q.focus();' href='javascript:'>$complementary</a>]
+              . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace'>"
+              . qq[<a onclick='document.x.q.value="#$complementary";document.x.q.focus();' href='javascript:' class='tx-clr--lt'>$complementary</a>]
               . "</p></div>";
     
     my $analogs = "<div class='cols_column'>"
                 . (join "", map { "<span class='mini-color circle' style='background: #" . $_ . "'> </span>"; } @analogous_colors)
                 . "</div>"
-                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace tx-clr--dk'>" . (join ", ", map { qq[<a onclick='document.x.q.value="#] .(uc $_). qq[";document.x.q.focus();' href='javascript:'>].(uc $_).'</a>' } @analogous_colors) . "</p></div>";
+                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace'>" . (join ", ", map { qq[<a onclick='document.x.q.value="#] .(uc $_). qq[";document.x.q.focus();' href='javascript:' class='tx-clr--lt'>].(uc $_).'</a>' } @analogous_colors) . "</p></div>";
     
     $html = "<div class='column1 tx-clr--dk2'>"
           . "<p class='hex tx-clr--dk zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"

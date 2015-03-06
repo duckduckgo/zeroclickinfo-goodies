@@ -61,10 +61,6 @@
     color: #d0d0d0;
 }
 
-.zci--answer .zci--color-codes .column2 a {
-    color: #333;
-}
-
 @media screen and (max-width: 420px) {
     .zci--answer .zci--color-codes .colorcodesbox {
         width: 80px;
