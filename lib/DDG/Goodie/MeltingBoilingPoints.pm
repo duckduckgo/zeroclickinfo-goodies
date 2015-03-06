@@ -45,7 +45,7 @@ handle query_lc => sub {
         };
     }
     else {
-        return "$element_name ($element_symbol), Melting point $melting_point", structured_answer => {
+        return "$element_name ($element_symbol), Melting point $melting_point kelvin", structured_answer => {
             input     => ["$element_name ($element_symbol)"],
             operation => 'Melting Point',
             result    => "$melting_point kelvin"
