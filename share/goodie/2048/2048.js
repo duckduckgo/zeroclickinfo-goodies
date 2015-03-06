@@ -15,7 +15,8 @@ var color = {'' : '#BBADA0',
 			'512' : '#EDC850',
 			'1024' : '#EDC53F',
 			'2048' : '#EDC22E',
-			'4096' : '#D5AE29'};
+			'4096' : '#D5AE29',
+			'8192' : '#AA8B21'};
 
 createTable(tempArea);
 start(tempArea,area);

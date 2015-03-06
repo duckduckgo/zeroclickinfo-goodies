@@ -36,7 +36,7 @@ handle remainder => sub {
 					($inputNum == $base*64)); # play 8192
 
 
-	if (!$dimension || $dimension > 10 || $dimension < 0) {
+	if (!$dimension || $dimension > 10 || $dimension < 4) {
 		$dimension = 4;
 	}
 
