@@ -1,6 +1,7 @@
 var tempArea = document.getElementById('area');
 var WINNUM = document.getElementById('game').innerHTML;
 var SIZE = 4;
+var goOn = true;
 var area = new Array();
 var color = {'' : '#BBADA0',
 			'2' : '#EEE4DA',
@@ -22,24 +23,28 @@ document.onkeydown = function(event) {
 
 	var move = 0;
 
-	if (event.keyCode == 87 || event.keyCode == 38) { // w or up arrow
-		move = mov('w', area);
-	} else if (event.keyCode == 65 || event.keyCode == 37) { // a or left arrow
-		move = mov('a', area);
-	} else if (event.keyCode == 83 || event.keyCode == 40) { // s or right arrow
-		move = mov('s', area);
-	} else if (event.keyCode == 68 || event.keyCode == 39) { // d or down arrow
-		move = mov('d', area);
-	}
+	if (goOn) {
 
-	getArea(tempArea,area);
+		if (event.keyCode == 87 || event.keyCode == 38) { // w or up arrow
+			move = mov('w', area);
+		} else if (event.keyCode == 65 || event.keyCode == 37) { // a or left arrow
+			move = mov('a', area);
+		} else if (event.keyCode == 83 || event.keyCode == 40) { // s or right arrow
+			move = mov('s', area);
+		} else if (event.keyCode == 68 || event.keyCode == 39) { // d or down arrow
+			move = mov('d', area);
+		}
+
+		getArea(tempArea,area);
 
 
-	// if move is true, a move has been made
-	if (move == true) {
-		getRand(area);
-	} else if (move == -1) { // else, the game is finished
-		return;
+		// if move is true, a move has been made
+		if (move == true) {
+			getRand(area);
+		} else if (move == -1) { // else, the game is finished
+			return;
+		}
+
 	}
  
 }
@@ -50,7 +55,6 @@ function mov(dir, area) {
 	var points = 0;
 	var moves = 0;
 	var flag = false;
-	var possibleToMove = 0;
 
 	if (dir == 'w') {
 
@@ -186,6 +190,7 @@ function mov(dir, area) {
 	upPoints(points);
 
 	if (checkWin(area) || checkLose(area, dir)) {
+		goOn = false;
 		return -1;
 	}
 
