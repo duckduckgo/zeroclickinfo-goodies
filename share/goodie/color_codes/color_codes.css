@@ -15,8 +15,8 @@
 
 .zci--answer .zci--color-codes .mini-color {
     display: inline-block;
-    width: 2.05em;
-    height: 2.05em;
+    width: 32px;
+    height: 32px;
     border: 1px solid rgba(0,0,0,0.15);
 }
 
@@ -29,7 +29,7 @@
 {
     display: inline-block;
     height: 125px;
-    padding-top: 2px;
+    padding-top: 7px;
 }
 
 .zci--answer .zci--color-codes .column2 {
