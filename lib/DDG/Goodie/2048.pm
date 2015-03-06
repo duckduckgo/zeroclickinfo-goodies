@@ -21,18 +21,27 @@ triggers any => "game", "play";
 # Handle statement
 handle remainder => sub {
 
+	(my $inputNum, my $dimension) = split/ /;
+
+	return unless $inputNum;
+
 	my $base = 128;
 
-	return unless (($_ == $base) || # play 128
-					($_ == $base*2) || # play 256
-					($_ == $base*4) || # play 512
-					($_ == $base*8) || # play 1024
-					($_ == $base*16) || # play 2048
-					($_ == $base*32) || # play 4096
-					($_ == $base*64)); # play 8192
+	return unless (($inputNum == $base) || # play 128
+					($inputNum == $base*2) || # play 256
+					($inputNum == $base*4) || # play 512
+					($inputNum == $base*8) || # play 1024
+					($inputNum == $base*16) || # play 2048
+					($inputNum == $base*32) || # play 4096
+					($inputNum == $base*64)); # play 8192
 
 
-	my $play = '<i><b>Play <span id="game">'. $_ .'</span></b></i>';
+	if (!$dimension || $dimension > 10 || $dimension < 0) {
+		$dimension = 4;
+	}
+
+
+	my $play = '<i><b>Play <span id="game">'. $inputNum .'</span> <br><br><span id="dimension">'. $dimension .'</span> x '. $dimension. '</b></i>';
 	my $html = scalar share('2048.html')->slurp;
 
 	return "Play ".$_, html => "$play $html";

@@ -1,6 +1,6 @@
 var tempArea = document.getElementById('area');
 var WINNUM = document.getElementById('game').innerHTML;
-var SIZE = 4;
+var SIZE = parseInt(document.getElementById('dimension').innerHTML);
 var goOn = true;
 var area = new Array();
 var color = {'' : '#BBADA0',
@@ -17,11 +17,12 @@ var color = {'' : '#BBADA0',
 			'2048' : '#EDC22E',
 			'4096' : '#D5AE29'};
 
+createTable(tempArea);
 start(tempArea,area);
 
 document.onkeydown = function(event) {
 
-	var move = 0;
+	var move = false;
 
 	if (goOn) {
 
@@ -39,12 +40,9 @@ document.onkeydown = function(event) {
 
 
 		// if move is true, a move has been made
-		if (move == true) {
+		if (move) {
 			getRand(area);
-		} else if (move == -1) { // else, the game is finished
-			return;
 		}
-
 	}
  
 }
@@ -191,7 +189,6 @@ function mov(dir, area) {
 
 	if (checkWin(area) || checkLose(area, dir)) {
 		goOn = false;
-		return -1;
 	}
 
 	// This check is necesary avoiding the appearance of a new value in the area if
@@ -208,8 +205,8 @@ function upPoints(points) {
 
 function printArea(area) {
 	var val;
-	for (var r = 0; r< 4; r++) {
-		for (var c = 0; c<4; c++) {
+	for (var r = 0; r< SIZE; r++) {
+		for (var c = 0; c<SIZE; c++) {
 			val = area[r][c];
 			tempArea.rows[r].cells[c].innerHTML = area[r][c];
 			tempArea.rows[r].cells[c].style.backgroundColor = color[val];
@@ -239,8 +236,8 @@ function getRand(area) {
 	rand = (rand < 10) ? 2 : 4;
 	
 	do {
-		posX=Math.floor(Math.random()*4);
-		posY=Math.floor(Math.random()*4);
+		posX=Math.floor(Math.random()*SIZE);
+		posY=Math.floor(Math.random()*SIZE);
 	} while( area[posX][posY] != '');
 
 	area[posX][posY] = rand;
@@ -295,6 +292,18 @@ function canDoSomething(area) {
 		}
 	}
 	return false;
+}
+
+function createTable(tempArea) {
+
+	var body = document.body;
+
+	for(var r = 0; r < SIZE; r++){
+		var tr = tempArea.insertRow();
+		for(var c = 0; c < SIZE; c++){
+			var td = tr.insertCell();
+		}
+    }
 }
 
 function start() {
