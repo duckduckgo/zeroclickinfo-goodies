@@ -64,3 +64,15 @@
 .zci--answer .zci--color-codes .column2 a {
     color: #333;
 }
+
+@media screen and (max-width: 420px) {
+    .zci--answer .zci--color-codes .colorcodesbox {
+        width: 80px;
+        height: 80px;
+        margin-top: 15px;
+    }
+
+    .zci--answer .zci--color-codes .column1 {
+        padding-top: 0;
+    }
+}
