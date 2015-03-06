@@ -33,7 +33,7 @@ handle query_lc => sub {
   
 
     
-    my $match = first { lc $_->[2] eq $query || lc $_->[3] eq $query } @points or return;
+    my $match = first { $query =~ /($_->[2])|($_->[3])/i } @points or return;
     my ( $melting_point, $boiling_point, $element_name, $element_symbol ) = @{$match};
 
     # Return the result if the element was found
