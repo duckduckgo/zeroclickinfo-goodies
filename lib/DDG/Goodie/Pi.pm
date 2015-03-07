@@ -15,7 +15,8 @@ attribution github => ["https://github.com/puskin94", "puskin94"],
             github => ["https://github.com/jmvbxx", "jmvbxx"];
 
 
-triggers startend => "pi", "digits of pi","π","digits of π", "pi to", "π to";
+triggers start => "pi","π", "pi to", "π to";
+triggers end => "digits of pi", "digits of π";
 
 # $PI now have 1 000 000 decimals
 

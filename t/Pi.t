@@ -17,7 +17,7 @@ ddg_goodie_test(
 		operation => ["First 23 digits of Pi"],
 		result => "3.14159265358979323846264"
 	}),
-	'8 pi' => test_zci("3.14159265",
+	'π 8' => test_zci("3.14159265",
 	structured_answer => {
 		input => [],
 		operation => ["First 8 digits of Pi"],
