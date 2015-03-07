@@ -100,7 +100,7 @@ handle query_lc => sub {
     return "$text converted to $syll is $answer",
         structured_answer => {
             input     => [$text],
-            operation => "in $syll from",
+            operation => "Convert to ". ucfirst $syll,
             result    => $answer
         };
 };
