@@ -1,6 +1,7 @@
 package DDG::Goodie::IsAwesome::murz;
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_murz";
 zci is_cached   => 1;

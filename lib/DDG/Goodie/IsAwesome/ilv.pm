@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::ilv;
 # ABSTRACT: ilv's first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_ilv";
 zci is_cached   => 1;

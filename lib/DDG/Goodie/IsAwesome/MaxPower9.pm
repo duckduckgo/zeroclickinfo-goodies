@@ -1,12 +1,11 @@
 package DDG::Goodie::IsAwesome::MaxPower9;
 # ABSTRACT: MaxPower9's first Goodie
 
-
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_max_power9";
 zci is_cached   => 1;
-
 
 name "IsAwesome MaxPower9";
 description "My first Goodie, it let's the world know that MaxPower9 is awesome";
