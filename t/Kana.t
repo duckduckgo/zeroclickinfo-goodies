@@ -17,7 +17,7 @@ ddg_goodie_test(
         'ahiru converted to hiragana is あひる',
         structured_answer => {
             input     => ['ahiru'],
-            operation => 'in hiragana from',
+            operation => 'Convert to Hiragana',
             result    => 'あひる'
         }
     ),
@@ -25,7 +25,7 @@ ddg_goodie_test(
         'nihon no daigaku! converted to hiragana is にほん の だいがく！',
         structured_answer => {
             input     => ['nihon no daigaku!'],
-            operation => 'in hiragana from',
+            operation => 'Convert to Hiragana',
             result    => 'にほん の だいがく！'
         }
     ),
@@ -35,7 +35,7 @@ ddg_goodie_test(
         'ahiru converted to katakana is アヒル',
         structured_answer => {
             input     => ['ahiru'],
-            operation => 'in katakana from',
+            operation => 'Convert to Katakana',
             result    => 'アヒル'
         }
     ),
@@ -43,7 +43,7 @@ ddg_goodie_test(
         'kirin, banana converted to katakana is キリン、 バナナ',
         structured_answer => {
             input     => ['kirin, banana'],
-            operation => 'in katakana from',
+            operation => 'Convert to Katakana',
             result    => 'キリン、 バナナ'
         }
     ),
@@ -53,7 +53,7 @@ ddg_goodie_test(
         'アヒル converted to romaji is ahiru',
         structured_answer => {
             input     => ['アヒル'],
-            operation => 'in romaji from',
+            operation => 'Convert to Romaji',
             result    => 'ahiru'
         }
     ),
@@ -61,7 +61,7 @@ ddg_goodie_test(
         'キリン、 バナナ converted to romaji is kirin, banana',
         structured_answer => {
             input     => ['キリン、 バナナ'],
-            operation => 'in romaji from',
+            operation => 'Convert to Romaji',
             result    => 'kirin, banana'
         }
     ),
@@ -71,7 +71,7 @@ ddg_goodie_test(
         'あひる converted to romaji is ahiru',
         structured_answer => {
             input     => ['あひる'],
-            operation => 'in romaji from',
+            operation => 'Convert to Romaji',
             result    => 'ahiru'
         }
     ),
@@ -79,7 +79,7 @@ ddg_goodie_test(
         'すみません、 いま なんじ ですか。 converted to romaji is sumimasen, ima nanji desuka.',
         structured_answer => {
             input     => ['すみません、 いま なんじ ですか。'],
-            operation => 'in romaji from',
+            operation => 'Convert to Romaji',
             result    => 'sumimasen, ima nanji desuka.'
         }
     ),
@@ -89,7 +89,7 @@ ddg_goodie_test(
         'はつしぐれさるもこみのをほしげなり converted to katakana is ハツシグレサルモコミノヲホシゲナリ',
         structured_answer => {
             input     => ['はつしぐれさるもこみのをほしげなり'],
-            operation => 'in katakana from',
+            operation => 'Convert to Katakana',
             result    => 'ハツシグレサルモコミノヲホシゲナリ'
         }
     ),
@@ -99,7 +99,7 @@ ddg_goodie_test(
         'ハツシグレサルモコミノヲホシゲナリ converted to hiragana is はつしぐれさるもこみのをほしげなり',
         structured_answer => {
             input     => ['ハツシグレサルモコミノヲホシゲナリ'],
-            operation => 'in hiragana from',
+            operation => 'Convert to Hiragana',
             result    => 'はつしぐれさるもこみのをほしげなり'
         }
     ),
@@ -109,7 +109,7 @@ ddg_goodie_test(
         'ハンバーガーはたべものです。 converted to romaji is hambāgāhatabemonodesu.',
         structured_answer => {
             input     => ['ハンバーガーはたべものです。'],
-            operation => 'in romaji from',
+            operation => 'Convert to Romaji',
             result    => 'hambāgāhatabemonodesu.'
         }
     ),
@@ -119,7 +119,7 @@ ddg_goodie_test(
         '｛［（？！。、『』あ「」，：）］｝ converted to romaji is {[(?!.,""a\'\',:)]}',
         structured_answer => {
             input     => ['｛［（？！。、『』あ「」，：）］｝'],
-            operation => 'in romaji from',
+            operation => 'Convert to Romaji',
             result    => '{[(?!.,""a\'\',:)]}'
         }
     ),
@@ -127,7 +127,7 @@ ddg_goodie_test(
         'ええ！ converted to romaji is ē!',
         structured_answer => {
             input     => ['ええ！'],
-            operation => 'in romaji from',
+            operation => 'Convert to Romaji',
             result    => 'ē!'
         }
     ),
@@ -137,7 +137,7 @@ ddg_goodie_test(
         'a converted to hiragana is あ',
         structured_answer => {
             input     => ['a'],
-            operation => 'in hiragana from',
+            operation => 'Convert to Hiragana',
             result    => 'あ'
         }
     ),
@@ -145,7 +145,7 @@ ddg_goodie_test(
         'konnichiwa converted to hiragana is こんにちわ',
         structured_answer => {
             input     => ['konnichiwa'],
-            operation => 'in hiragana from',
+            operation => 'Convert to Hiragana',
             result    => 'こんにちわ'
         }
     ),
@@ -153,7 +153,7 @@ ddg_goodie_test(
         'nihon converted to hiragana is にほん',
         structured_answer => {
             input     => ['nihon'],
-            operation => 'in hiragana from',
+            operation => 'Convert to Hiragana',
             result    => 'にほん'
         }
     ),
@@ -161,7 +161,7 @@ ddg_goodie_test(
         'tsukue no ue converted to hiragana is つくえ の うえ',
         structured_answer => {
             input     => ['tsukue no ue'],
-            operation => 'in hiragana from',
+            operation => 'Convert to Hiragana',
             result    => 'つくえ の うえ'
         }
     ),
