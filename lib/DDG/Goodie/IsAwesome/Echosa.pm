@@ -1,4 +1,5 @@
 package DDG::Goodie::IsAwesome::Echosa;
+# ABSTRACT: Echosa's first Goodie
 
 use DDG::Goodie;
 use strict;

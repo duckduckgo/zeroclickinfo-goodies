@@ -1,4 +1,5 @@
 package DDG::Goodie::IsAwesome::Bitflipped;
+# ABSTRACT: Bitflipped's first Goodie
 
 use DDG::Goodie;
 use strict;

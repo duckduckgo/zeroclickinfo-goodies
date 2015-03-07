@@ -1,4 +1,5 @@
 package DDG::Goodie::IsAwesome::javathunderman;
+# ABSTRACT: JavaThunderMan's first Goodie
 
 use DDG::Goodie;
 use strict;

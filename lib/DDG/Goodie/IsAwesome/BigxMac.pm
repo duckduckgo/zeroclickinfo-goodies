@@ -1,4 +1,5 @@
 package DDG::Goodie::IsAwesome::BigxMac;
+# ABSTRACT: BigxMac's first Goodie
 
 use DDG::Goodie;
 use strict;

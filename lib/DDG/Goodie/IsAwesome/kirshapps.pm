@@ -1,4 +1,5 @@
 package DDG::Goodie::IsAwesome::kirshapps;
+# ABSTRACT: Kirshapps' first Goodie
 
 use DDG::Goodie;
 use strict;
