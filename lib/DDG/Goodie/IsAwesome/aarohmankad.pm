@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::aarohmankad;
 # ABSTRACT: aarohmankad's first goodie for DuckDuckGo
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_aarohmankad";
 zci is_cached   => 1;

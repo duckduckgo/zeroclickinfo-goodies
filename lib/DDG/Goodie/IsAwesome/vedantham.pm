@@ -1,7 +1,8 @@
 package DDG::Goodie::IsAwesome::vedantham;
+# ABSTRACT: Vendatham's first Goodie
 
-use strict;
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_vedantham";
 zci is_cached   => 1;

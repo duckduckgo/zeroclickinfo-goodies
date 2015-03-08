@@ -1,8 +1,8 @@
 package DDG::Goodie::IsAwesome::mougias;
 # ABSTRACT: mougias's first Goodie
 
-
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_mougias";
 zci is_cached   => 1;

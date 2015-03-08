@@ -1,12 +1,11 @@
 package DDG::Goodie::IsAwesome::sagarhani;
 #ABSTRACT: sagarhani's first Goodie
 
-
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_sagarhani";
 zci is_cached   => 1;
-
 
 name "IsAwesome sagarhani";
 description "My first Goodie, it let's the world know that sagarhani is awesome";
@@ -17,9 +16,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/sagarhani", "sagarhani"],
             twitter => "sagarhan_i";
 
-
 triggers start => "duckduckhack sagarhani";
-
 
 handle remainder => sub {
     return if $_;

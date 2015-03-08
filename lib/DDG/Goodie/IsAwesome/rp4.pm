@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::rp4;
 # ABSTRACT: rp4's first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_rp4";
 zci is_cached   => 1;
