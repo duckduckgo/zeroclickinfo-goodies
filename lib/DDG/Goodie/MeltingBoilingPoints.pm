@@ -38,17 +38,17 @@ handle query_lc => sub {
 
     # Return the result if the element was found
     if ($is_boiling_query) {
-        return "$element_name ($element_symbol), Boiling point $boiling_point kelvin", structured_answer => {
+        return "$element_name ($element_symbol), Boiling point $boiling_point Kelvin", structured_answer => {
             input     => ["$element_name ($element_symbol)"],
             operation => 'Boiling Point',
-            result    => "$boiling_point kelvin"
+            result    => "$boiling_point Kelvin"
         };
     }
     else {
-        return "$element_name ($element_symbol), Melting point $melting_point kelvin", structured_answer => {
+        return "$element_name ($element_symbol), Melting point $melting_point Kelvin", structured_answer => {
             input     => ["$element_name ($element_symbol)"],
             operation => 'Melting Point',
-            result    => "$melting_point kelvin"
+            result    => "$melting_point Kelvin"
         };
     }
 };
