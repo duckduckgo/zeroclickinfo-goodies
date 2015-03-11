@@ -1,0 +1,41 @@
+/*
+    Document   : zeroclickinfo-goodies/share/goodie/fen_viewer/fen_viewer.css
+    Created on : 2015-03-11 01:06 PM
+    Author     : rouzbeh
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+.zci--answer .zci--fenviewer a {
+	color:#000;
+	display:block;
+	font-size:30px;
+	height:40px;
+	position:relative;
+	text-decoration:none;
+	text-shadow:0 1px #fff;
+	width:40px;
+}
+.zci--answer .zci--fenviewer .chess_board { border:5px solid #333; }
+.zci--answer .zci--fenviewer .chess_board td {
+	background:#fff;
+	background:-moz-linear-gradient(top, #fff, #eee);
+	background:-webkit-gradient(linear,0 0, 0 100%, from(#fff), to(#eee));
+	box-shadow:inset 0 0 0 1px #fff;
+	-moz-box-shadow:inset 0 0 0 1px #fff;
+	-webkit-box-shadow:inset 0 0 0 1px #fff;
+	height:40px;
+	text-align:center;
+	vertical-align:middle;
+	width:40px;
+}
+.zci--answer .zci--fenviewer .chess_board tr:nth-child(odd) td:nth-child(even),
+.zci--answer .zci--fenviewer .chess_board tr:nth-child(even) td:nth-child(odd) {
+	background:#ccc;
+	background:-moz-linear-gradient(top, #ccc, #eee);
+	background:-webkit-gradient(linear,0 0, 0 100%, from(#ccc), to(#eee));
+	box-shadow:inset 0 0 10px rgba(0,0,0,.4);
+	-moz-box-shadow:inset 0 0 10px rgba(0,0,0,.4);
+	-webkit-box-shadow:inset 0 0 10px rgba(0,0,0,.4);
+}
