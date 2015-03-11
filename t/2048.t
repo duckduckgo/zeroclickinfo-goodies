@@ -20,7 +20,7 @@ ddg_goodie_test(
     [qw( DDG::Goodie::2048 )],
 
     'play 2048' => test_zci(
-        'Play 2048'
+        'Play 2048',
         html => $html
     ),
     '2048 online' => undef

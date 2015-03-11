@@ -18,6 +18,7 @@ var color = {'' : '#BBADA0',
 			'4096' : '#D5AE29',
 			'8192' : '#AA8B21'};
 
+
 createTable(tempArea);
 start(tempArea,area);
 
@@ -31,9 +32,9 @@ document.onkeydown = function(event) {
 			move = mov('w', area);
 		} else if (event.keyCode == 65 || event.keyCode == 37) { // a or left arrow
 			move = mov('a', area);
-		} else if (event.keyCode == 83 || event.keyCode == 40) { // s or right arrow
+		} else if (event.keyCode == 83 || event.keyCode == 40) { // s or dowm arrow
 			move = mov('s', area);
-		} else if (event.keyCode == 68 || event.keyCode == 39) { // d or down arrow
+		} else if (event.keyCode == 68 || event.keyCode == 39) { // d or right arrow
 			move = mov('d', area);
 		}
 
@@ -50,140 +51,53 @@ document.onkeydown = function(event) {
 
 function mov(dir, area) {
 	var i;
-	var s;
 	var points = 0;
 	var moves = 0;
 	var flag = false;
 
-	if (dir == 'w') {
-
-		for (var c = 0; c<SIZE; c++) {
-			for (var r = 0; r<SIZE; r++) {	
-
-				if (area[r][c] == "") {
-					moves++;
-				} else {
-					
-					if (moves != 0) {
-						area[r-moves][c] = area[r][c];
-						area[r][c] = '';	
-						flag=true;
-					}
-					for (i = r+1; i <SIZE; i++) {
-						if(area[r-moves][c]==area[i][c]) {
-							area[r-moves][c]*=2;
-							area[i][c]='';
-							points = area[r-moves][c];
-							flag = true;
-							break;
-						} else {
-							if(area[i][c]!="") {
-								break;
-							}
-						}
-					}
-				}
-			}
-			moves = 0;
-		}
-	
-	} else if (dir == 'a') {
-
-		for (var r = 0; r<SIZE; r++) {
-			for (var c = 0; c<SIZE; c++) {
-				
-				if (area[r][c] == "") {
-					moves++;
-				} else {
-					
-					if (moves != 0) {
-						area[r][c-moves] = area[r][c];
-						area[r][c] = '';	
-						flag=true;
-					}
-					for (i = c+1; i <SIZE; i++) {
-						if(area[r][c-moves]==area[r][i]) {
-							area[r][c-moves]*=2;
-							area[r][i]='';
-							points = area[r][c-moves];
-							flag = true;
-							break;
-						} else {
-							if(area[r][i]!="") {
-								break;
-							}
-						}
-					}
-				}
-			}
-			moves = 0;
-		}
-
-	} else if (dir == 's') {
-
-		for (var c = SIZE -1; c>=0; c--) {
-			for (var r = SIZE-1; r>=0; r--) {
-				
-				if (area[r][c] == "") {
-					moves++;
-				} else {
-					
-					if (moves != 0) {
-						area[r+moves][c] = area[r][c];
-						area[r][c] = '';	
-						flag=true;
-					}
-					for (i = r-1; i>=0; i--) {
-						if(area[r+moves][c]==area[i][c]) {
-							area[r+moves][c]*=2;
-							area[i][c]='';
-							points = area[r+moves][c];
-							flag = true;
-							break;
-						} else {
-							if(area[i][c]!="") {
-								break;
-							}
-						}
-					}
-				}
-			}
-			moves = 0;
-		}
-		
-	} else {//dir==d
-
-		for (var r = SIZE-1; r>=0; r--) {
-			for (var c = SIZE -1; c>=0; c--) {	
-
-				if (area[r][c] == "") {
-					moves++;
-				} else {
-					
-					if (moves != 0) {
-						area[r][c+moves] = area[r][c];
-						area[r][c] = '';	
-						flag=true;
-					}
-					for (i = c-1; i>=0 ; i--) {
-						if(area[r][c+moves]==area[r][i]) {
-							area[r][c+moves]*=2;
-							area[r][i]='';
-							points = area[r][c+moves];
-							flag = true;
-							break;
-						} else {
-							if(area[r][i]!="") {
-								break;
-							}
-						}	
-					}
-				}
-				
-			}
-			moves = 0;
-		}
+	if (dir == 'a' || dir == 'd') {
+		area = transpose(area);
 	}
+	if (dir == 's' || dir == 'd') {
+		area = swapRows(area);
+	}																		
+
+	for (var c = 0; c<SIZE; c++) {
+		for (var r = 0; r<SIZE; r++) {	
+
+			if (area[r][c] == "") {
+				moves++;
+			} else {
+				
+				if (moves != 0) {
+					area[r-moves][c] = area[r][c];
+					area[r][c] = '';	
+					flag=true;
+				}
+				for (i = r+1; i <SIZE; i++) {
+					if(area[r-moves][c]==area[i][c]) {
+						area[r-moves][c]*=2;
+						area[i][c]='';
+						points = area[r-moves][c];
+						flag = true;
+						break;
+					} else {
+						if(area[i][c]!="") {
+							break;
+						}
+					}
+				}
+			}
+		}
+		moves = 0;
+	}
+
+	if (dir == 's' || dir == 'd') {
+		area = swapRows(area);
+	}		
+	if (dir == 'a' || dir == 'd') {
+		area = transpose(area);
+	}		
 
 	printArea(area);
 	upPoints(points);
@@ -227,6 +141,25 @@ function getArea(tempArea, area) {
 	}
 }
 
+function transpose(area) {
+	for (var r = 0; r < SIZE; r++) {
+		for (var c = 0; c < r; c++) {
+			var temp = area[r][c];
+			area[r][c] = area[c][r];
+			area[c][r] = temp;
+		}
+	}
+	return area;
+}
+
+function swapRows(area) {
+	var narea=new Array();
+
+	for(i=0;i<SIZE;i++) {
+		narea[SIZE-1-i]=area[i];
+	}
+	return narea;
+}
 
 function getRand(area) {
 
