@@ -475,7 +475,7 @@ subtest 'ImageLoader' => sub {
             use MIME::Base64;
             with 'DDG::GoodieRole::ImageLoader';
             our $tmp_dir = Path::Class::tempdir(CLEANUP => 1);
-            our $tmp_file = file(($tmp_dir->tempfile(TEMPLATE => 'img_XXXXXX', suffix   => '.gif'))[1]);
+            our $tmp_file = file(($tmp_dir->tempfile(TEMPLATE => 'img_XXXXXX', SUFFIX => '.gif'))[1]);
             # Always return the same file for our purposes here.
             sub share     { $tmp_file }
             sub html_enc  { encode_entities(@_) }                                             # Deal with silly symbol table twiddling.
