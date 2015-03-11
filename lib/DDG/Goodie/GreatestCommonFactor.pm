@@ -7,7 +7,7 @@ use DDG::Goodie;
 zci answer_type => "greatest_common_factor";
 zci is_cached   => 1;
 
-triggers startend => 'greatest common factor', 'GCF', 'gcf';
+triggers startend => 'greatest common factor', 'gcf';
 
 primary_example_queries 'GCF 121 11';
 secondary_example_queries '99 9 greatest common factor';
