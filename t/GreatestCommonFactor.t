@@ -50,6 +50,22 @@ ddg_goodie_test(
             result    => 9
         }
     ),
+    'greatest common divisor 4 6' => test_zci(
+        'Greatest common factor of 4 and 6 is 2.',
+        structured_answer => {
+            input     => [4, 6],
+            operation => 'Greatest common factor',
+            result    => 2
+        }
+    ),
+    'gcd 4 6' => test_zci(
+        'Greatest common factor of 4 and 6 is 2.',
+        structured_answer => {
+            input     => [4, 6],
+            operation => 'Greatest common factor',
+            result    => 2
+        }
+    ),
 );
 
 done_testing;
