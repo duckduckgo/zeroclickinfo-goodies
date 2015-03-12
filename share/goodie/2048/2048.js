@@ -38,9 +38,6 @@ document.onkeydown = function(event) {
 			move = mov('d', area);
 		}
 
-		getArea(tempArea,area);
-
-
 		// if move is true, a move has been made
 		if (move) {
 			getRand(area);
@@ -229,15 +226,12 @@ function canDoSomething(area) {
 }
 
 function createTable(tempArea) {
-
-	var body = document.body;
-
 	for(var r = 0; r < SIZE; r++){
 		var tr = tempArea.insertRow();
 		for(var c = 0; c < SIZE; c++){
 			var td = tr.insertCell();
 		}
-    }
+	}
 }
 
 function start() {
