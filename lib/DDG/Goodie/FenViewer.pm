@@ -26,12 +26,14 @@ triggers start => "fen";
 # Parse the FEN string into an array of length 64.
 sub parse_position {
     my ($i) = 0;
-    my ($inp_query) = @_;
+    my ($position) = @_;
+    $position =~ s/^\s+|\s+$//g;
     my (@cases) = ();
-    my (@fen_fields) = split(' ', $inp_query);
-    my ($position) = $fen_fields[0];
     for (my $char = 0 ; $char < length($position) ; $char++ ) {
         my $fenchar = substr($position, $char, 1);
+        if ($fenchar eq ' ') {
+            return @cases;
+        }
         if (looks_like_number($fenchar)) {
             for ($i = 0; $i < $fenchar; $i++){
                 push(@cases, 'e');
@@ -138,6 +140,10 @@ handle remainder => sub {
     my ($query) = $_;
     return unless $query;
     my (@pos) = parse_position($query);
+    if ($#pos != 63) {
+        # The format is wrong, e.g. space in the middle
+        return;
+    }
     my ($html_out) = '';
     my ($ascii_out) = '';
     try {
@@ -145,6 +151,7 @@ handle remainder => sub {
         $ascii_out = draw_chessboard_ascii(@pos);
     }
     catch {
+        # The format is wrong, e.g. non-existent piece
         return;
     };
     return $ascii_out, html => $html_out;
