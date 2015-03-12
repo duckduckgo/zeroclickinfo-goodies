@@ -11,7 +11,6 @@ use Try::Tiny;
 zci answer_type => "fen_viewer";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "FenViewer";
 description "This instant answer parses a chess position in the Forsyth–Edwards notation, and draws a chessboard on screen representing that position.";
     primary_example_queries "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", "fen rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1";
@@ -22,7 +21,6 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["rouzbeh", "Ali Neishabouri"],
             twitter => "Rou7_beh";
 
-# Triggers
 triggers start => "fen";
 
 # Parse the FEN string into an array of length 64.
@@ -136,11 +134,7 @@ sub draw_chessboard_ascii {
     return $ascii_chessboard;
 }
 
-# Handle statement
 handle remainder => sub {
-
-    # optional - regex guard
-    # return unless qr/^\w+/;
     my ($query) = $_;
     return unless $query;
     my (@pos) = parse_position($query);
@@ -153,8 +147,6 @@ handle remainder => sub {
     catch {
         return;
     };
-    print $ascii_out;
-    print $html_out;
     return $ascii_out, html => $html_out;
 };
 

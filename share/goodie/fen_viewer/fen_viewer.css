@@ -1,12 +1,3 @@
-/*
-    Document   : zeroclickinfo-goodies/share/goodie/fen_viewer/fen_viewer.css
-    Created on : 2015-03-11 01:06 PM
-    Author     : rouzbeh
-    Description:
-    Purpose of the stylesheet follows.
-    To change this template use Tools | Templates.
-*/
-
 .zci--answer .zci--fenviewer a {
 	color:#000;
 	display:block;
@@ -17,6 +8,7 @@
 	text-shadow:0 1px #fff;
 	width:40px;
 }
+
 .zci--answer .zci--fenviewer .chess_board { border:5px solid #333; }
 .zci--answer .zci--fenviewer .chess_board td {
 	background:#fff;
@@ -27,6 +19,7 @@
 	vertical-align:middle;
 	width:40px;
 }
+
 .zci--answer .zci--fenviewer .chess_board tr:nth-child(odd) td:nth-child(even),
 .zci--answer .zci--fenviewer .chess_board tr:nth-child(even) td:nth-child(odd) {
 	background:#ccc;
