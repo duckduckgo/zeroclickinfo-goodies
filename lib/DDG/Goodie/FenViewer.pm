@@ -47,7 +47,7 @@ sub parse_position {
 }
 
 # Generate a chessboard as a HTML table.
-sub draw_chessboard {
+sub draw_chessboard_html {
     my (@position) = @_;
     my ($i) = 0;
     my ($j) = 0;
@@ -103,6 +103,39 @@ sub draw_chessboard {
     return $html_chessboard;
 }
 
+# Generate a chessboard in ASCII, with the same format as
+# 'text output from Chess::PGN::EPD
+sub draw_chessboard_ascii {
+    my (@position) = @_;
+    my ($i) = 0;
+    my ($j) = 0;
+    my ($counter) = 0;
+    my ($ascii_chessboard) = "";
+    for ($i = 0; $i < 8; $i++){
+        # Rows
+        for ($j = 0; $j < 8; $j++){
+            # Columns
+            if ($position[$counter] ne 'e') {
+                # Occupied square
+                $ascii_chessboard .= $position[$counter];
+            }
+            elsif ($j % 2 != $i % 2) {
+                # Black square
+                $ascii_chessboard .= '-';
+            }
+            else {
+                # White square
+                $ascii_chessboard .= ' ';
+            }
+            $counter++;
+        }
+        if($counter < 63) {
+            $ascii_chessboard .= "\n";
+        }
+    }
+    return $ascii_chessboard;
+}
+
 # Handle statement
 handle remainder => sub {
 
@@ -112,13 +145,17 @@ handle remainder => sub {
     return unless $query;
     my (@pos) = parse_position($query);
     my ($html_out) = '';
+    my ($ascii_out) = '';
     try {
-        $html_out = draw_chessboard(@pos);
+        $html_out = draw_chessboard_html(@pos);
+        $ascii_out = draw_chessboard_ascii(@pos);
     }
     catch {
         return;
     };
-    return 'Chessboard', html => $html_out;
+    print $ascii_out;
+    print $html_out;
+    return $ascii_out, html => $html_out;
 };
 
 1;
