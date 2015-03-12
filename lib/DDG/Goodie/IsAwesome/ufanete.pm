@@ -1,6 +1,6 @@
 package DDG::Goodie::IsAwesome::ufanete;
 # ABSTRACT: ufanete's first Goodie
-
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_ufanete";
