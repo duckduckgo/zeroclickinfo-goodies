@@ -182,7 +182,7 @@ function checkWin(area) {
 		for (var c = 0; c<SIZE; c++) {
 			if (area[r][c] == WINNUM) {
 				area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-				area[3][1] = 'W'; area[3][2] = 'I'; area[3][3] = 'N';
+				area[SIZE-1][0] = 'W'; area[SIZE-1][1] = 'I'; area[SIZE-1][2] = 'N';
 				printArea(area);
 				return true;
 			}
@@ -202,7 +202,7 @@ function checkLose(area) {
 	}
 	if (count == SIZE*SIZE && !canDoSomething(area)) {
 		area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-		area[3][0] = 'L'; area[3][1] = 'O'; area[3][2] = 'S'; area[3][3] = 'E';
+		area[SIZE-1][0] = 'L'; area[SIZE-1][1] = 'O'; area[SIZE-1][2] = 'S'; area[SIZE-1][3] = 'E';
 		printArea(area);
 		return true;
 	}
@@ -214,9 +214,9 @@ function canDoSomething(area) {
 	for (var r = 0; r < SIZE; r++) {
 		for (var c = 0; c < SIZE; c++) {
 			if ((r != 0 && area[r][c] == area[r-1][c]) ||
-				(r != 3 && area[r][c] == area[r+1][c]) ||
+				(r != SIZE-1 && area[r][c] == area[r+1][c]) ||
 				(c != 0 && area[r][c] == area[r][c-1]) ||
-				(c != 3 && area[r][c] == area[r][c+1])) {
+				(c != SIZE-1 && area[r][c] == area[r][c+1])) {
 				
 				return true;
 			}

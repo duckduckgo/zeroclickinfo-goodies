@@ -14,6 +14,9 @@ ddg_goodie_test(
 
     'play 2048' => test_zci(
 		'Play 2048', html => qr/(.+)/
+	),
+	'play 256 7' => test_zci(
+		'Play 256 7', html => qr/(.+)/
     ),
     '2048 online' => undef
 );
