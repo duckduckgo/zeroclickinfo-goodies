@@ -43,7 +43,7 @@ handle remainder => sub {
 
 	my $play = '<i><b>Play <span id="game">'. $inputNum .'</span> <br><br><span id="dimension">'. $dimension .'</span> x '. $dimension. '</b></i>';
 	my $html = scalar share('2048.html')->slurp;
-	my $text = "Play ".$_;
+	my $text = "Play ".$inputNum;
 
 	return $text, html => "$play $html";
 };
