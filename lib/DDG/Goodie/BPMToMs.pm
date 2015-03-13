@@ -19,8 +19,8 @@ attribution github => ["https://github.com/stefolof", "stefolof"],
 triggers end => "bpm to ms", "bpm to milliseconds", "bpm to note values", "bpm to note lengths", "bpm", "bpm timings", "beats per minute to milliseconds",
                 "beats per minute to ms", "beats per minute to note values", "beats per minute to note lengths", "beats per minute", "beats per minute timings";
 
-my @note_names = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
-my @note_links = ( "Whole_note", "Half_note", "Quarter_note", "Eighth_note", "Sixteenth_note", "Thirty-second_note" );
+my @note_names  = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
+my @note_links  = ( "whole note", "half note", "quarter note", "eighth note", "sixteenth note", "thirty-second note" );
 my @image_names = ( "whole.svg", "half.svg", "quarter.svg", "8th.svg", "16th.svg", "32nd.svg" );
 my @images = map { scalar share($_)->slurp } @image_names;
 
@@ -56,7 +56,7 @@ handle remainder => sub {
             triplet => $triplet_values[$i],
             dotted => $dotted_values[$i],
             image => $images[$i],
-            url => "https://wikipedia.org/wiki/" . $note_links[$i] ,
+            url => "https://duckduckgo.com/?q=" . $note_links[$i] . "&ia=about",
         );
         push @items, \%result;
     };
