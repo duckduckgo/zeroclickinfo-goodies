@@ -1,5 +1,5 @@
 package DDG::Goodie::FenViewer;
-# ABSTRACT: This instant answer parses a chess position in the Forsyth–Edwards notation, 
+# ABSTRACT: This instant answer parses a chess position in the Forsyth-Edwards notation, 
 # and draws a chessboard on screen representing that position. The current version only 
 # parses the current board position (the first field in the FEN format) and does not check
 # that the given position is actually legal.
@@ -12,8 +12,8 @@ zci answer_type => "fen_viewer";
 zci is_cached   => 1;
 
 name "FenViewer";
-description "This instant answer parses a chess position in the Forsyth–Edwards notation, and draws a chessboard on screen representing that position.";
-    primary_example_queries "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", "fen rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1";
+description "This instant answer parses a chess position in the Forsyth-Edwards notation, and draws a chessboard on screen representing that position.";
+primary_example_queries "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", "fen rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1";
 
 category "entertainment";
 topics "gaming";
