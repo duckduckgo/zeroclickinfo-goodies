@@ -77,6 +77,10 @@ ddg_goodie_test(
 #             ],
             id => "bpmto_ms",
             name => "Music",
+            meta => {
+                sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
+                sourceName => "Wikipedia"
+            },
             templates => {
                 group => "base",
                 detail => 0,
@@ -137,6 +141,10 @@ ddg_goodie_test(
 #             ],
             id => "bpmto_ms",
             name => "Music",
+            meta => {
+                sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
+                sourceName => "Wikipedia"
+            },
             templates => {
                 group => "base",
                 detail => 0,
