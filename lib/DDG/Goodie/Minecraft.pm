@@ -5,11 +5,11 @@ use strict;
 use DDG::Goodie;
 use JSON;
 
-triggers startend => "minecraft";
+zci answer_type => 'minecraft';
+zci is_cached => 1;
 
 primary_example_queries 'cake minecraft';
 secondary_example_queries 'how do i craft a cake in minecraft';
-
 name 'Minecraft';
 description 'Minecraft crafting recipes.';
 source 'http://thejool.com/api/crafting-guide.json';
@@ -20,8 +20,7 @@ attribution
     web => ['http://engvik.nu', 'Lars Jansøn Engvik'],
     github => [ 'larseng', 'Lars Jansøn Engvik'];
 
-zci answer_type => 'minecraft';
-zci is_cached => 1;
+triggers startend => "minecraft";
 
 # Fetch and store recipes in a hash.
 my $json = share('crafting-guide.json')->slurp;
@@ -33,7 +32,7 @@ my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
 # Bad words: Words related to Minecraft, but not related to recipes.
 my %good_words = map { $_ => 1 } map { split /\s+/ } (keys %recipes);
 my %okay_words = map { $_ => 1 } (qw(a crafting));
-my %bad_words = map { $_ => 1 } (qw(download server tutorial mod mods skins skin texture pack packs project projects));
+my %bad_words  = map { $_ => 1 } (qw(download server tutorial mod mods skins skin texture pack packs project projects));
 
 handle remainder => sub {
     my @query = split /\s+/, lc $_; # Split on whitespaces.
