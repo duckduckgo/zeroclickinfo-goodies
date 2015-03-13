@@ -3,7 +3,6 @@ package DDG::Goodie::BPMToMs;
 
 use strict;
 use DDG::Goodie;
-use Data::Printer;
 
 zci answer_type => "bpmto_ms";
 zci is_cached   => 1;
@@ -20,24 +19,25 @@ attribution github => ["https://github.com/stefolof", "stefolof"],
 triggers end => "bpm to ms", "bpm to milliseconds", "bpm to note values", "bpm to note lengths", "bpm", "bpm timings", "beats per minute to milliseconds",
                 "beats per minute to ms", "beats per minute to note values", "beats per minute to note lengths", "beats per minute", "beats per minute timings";
 
+my @note_names = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
+my @note_links = ( "Whole_note", "Half_note", "Quarter_note", "Eighth_note", "Sixteenth_note", "Thirty-second_note" );
+my @image_names = ( "whole.svg", "half.svg", "quarter.svg", "8th.svg", "16th.svg", "32nd.svg" );
+my @images = map { scalar share($_)->slurp } @image_names;
+
+# The basic note lengths for each category
+my $straight_whole_note = 240000;
+my $triplet_whole_note = 160000;
+my $dotted_whole_note = 360000;
+my @divisors = map { 2 ** $_ } 0 .. 5; # Create a list of divisors to calculate the values of half notes, quarter notes etc.
+
 handle remainder => sub {
     my $bpm = shift;
 
-    return unless $_ =~ /^\d+$/i; # Only integer values accepted
+    return unless $bpm =~ /^\d+$/i; # Only integer values accepted
 
-    my @note_names = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
-    my @image_names = ( "whole.svg", "half.svg", "quarter.svg", "8th.svg", "16th.svg", "32nd.svg" );
-    my @note_links = ( "Whole_note", "Half_note", "Quarter_note", "Eighth_note", "Sixteenth_note", "Thirty-second_note" );
-
-    # The basic note lengths for each category
-    my $straight_whole_note = 240000;
-    my $triplet_whole_note = 160000;
-    my $dotted_whole_note = 360000;
-    my @divisors = map { 2 ** $_ } 0 .. 5; # Create a list of divisors to calculate the values of half notes, quarter notes etc.
     my @straight_values = map { int( $straight_whole_note / ($bpm * $_) + 0.5) } @divisors;
     my @triplet_values = map { int( $triplet_whole_note / ($bpm * $_) + 0.5) } @divisors;
     my @dotted_values = map { int( $dotted_whole_note / ($bpm * $_) + 0.5) } @divisors;
-
 
     my $plaintext = "$bpm bpm in milliseconds:";
     $plaintext .= "\nWhole Note: $straight_values[0], Triplet: $triplet_values[0], Dotted: $dotted_values[0]";
@@ -55,7 +55,7 @@ handle remainder => sub {
             milliseconds => $straight_values[$i],
             triplet => $triplet_values[$i],
             dotted => $dotted_values[$i],
-            image => scalar share($image_names[$i])->slurp,
+            image => $images[$i],
             url => "https://wikipedia.org/wiki/" . $note_links[$i] ,
         );
         push @items, \%result;
