@@ -27,6 +27,7 @@ handle remainder => sub {
 
     my @note_names = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
     my @image_names = ( "whole.svg", "half.svg", "quarter.svg", "8th.svg", "16th.svg", "32nd.svg" );
+    my @note_links = ( "Whole_note", "Half_note", "Quarter_note", "Eighth_note", "Sixteenth_note", "Thirty-second_note" );
 
     # The basic note lengths for each category
     my $straight_whole_note = 240000;
@@ -55,6 +56,7 @@ handle remainder => sub {
             triplet => $triplet_values[$i],
             dotted => $dotted_values[$i],
             image => scalar share($image_names[$i])->slurp,
+            url => "https://wikipedia.org/wiki/" . $note_links[$i] ,
         );
         push @items, \%result;
     };
@@ -64,6 +66,10 @@ handle remainder => sub {
             id => 'bpmto_ms',
             name => 'Music',
             data => \@items,
+            meta => {
+                sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
+                sourceName => "Wikipedia"
+            },
             templates => {
                 group => 'base',
                 detail => 0,
