@@ -14,6 +14,7 @@ ddg_goodie_test(
     [
         'DDG::Goodie::Minecraft'
     ],
+
     'ladder crafting minecraft' =>
     test_zci(
         'Minecraft Ladder ingredients: Sticks.',
@@ -24,6 +25,7 @@ ddg_goodie_test(
             "http://www.minecraftxl.com/images/wiki/recipes/ladder-crafting.png",
         )
     ),
+
     'tnt minecraft' =>
     test_zci(
         'Minecraft TNT ingredients: Gunpowder + Sand.',
@@ -34,6 +36,7 @@ ddg_goodie_test(
             "http://www.minecraftxl.com/images/wiki/recipes/tnt-crafting.png",
         )
     ),
+
     'minecraft how to craft a book' =>
     test_zci(
         'Minecraft Book ingredients: Paper + Leather.',
@@ -44,6 +47,7 @@ ddg_goodie_test(
             "http://www.minecraftxl.com/images/wiki/recipes/book-crafting.png",
         )
     ),
+
     'minecraft activator rail' =>
     test_zci(
         'Minecraft Activator Rail ingredients: Iron Ingots + Sticks + Redstone Torch.',
@@ -54,6 +58,7 @@ ddg_goodie_test(
             "http://www.minecraftxl.com/images/wiki/recipes/activator-rail-crafting.png",
         )
     ),
+
     'how do i craft an anvil in minecraft' =>
     test_zci(
         'Minecraft Anvil ingredients: Iron Blocks + Iron Ingots.',
@@ -66,7 +71,7 @@ ddg_goodie_test(
     ),
 
     'craft ladder' => undef,
-    'make tnt' => undef,  
+    'make tnt' => undef,
     'burger minecraft' => undef,
     'crafting burgers in minecraft' => undef,
     'how do i craft a cheeseburger in minecraft' => undef,
@@ -91,6 +96,10 @@ sub make_structured_answer {
             subtitle => "Ingredients: " . $recipe{'ingredients'},
             description => $recipe{'description'},
             image => 'https://duckduckgo.com/iu/?u=' . uri_escape( $recipe{'image'} )
+        },
+         meta => {
+            sourceName => "Minecraft XL",
+            sourceUrl => "http://www.minecraftxl.com/crafting-recipes/"
         },
         templates => {
             group => 'info',
