@@ -10,6 +10,22 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::RIPEMD )],
+    'RIPEMD this string' => test_zci(
+        '33f65617195f9667673865edde5b96721d750046',
+        structured_answer => {
+            input     => ['this string'],
+            operation => 'RIPEMD-160 hex hash',
+            result    => '33f65617195f9667673865edde5b96721d750046'
+        }
+    ),
+    'ripemdsum message ' => test_zci(
+        '1dddbe1bea18cfda41f3fa4e6e66dbbbab93774e',
+        structured_answer => {
+            input     => ['message'],
+            operation => 'RIPEMD-160 hex hash',
+            result    => '1dddbe1bea18cfda41f3fa4e6e66dbbbab93774e'
+        }
+    ),
     'ripemd this string' => test_zci(
         '33f65617195f9667673865edde5b96721d750046',
         structured_answer => {
@@ -88,6 +104,14 @@ ddg_goodie_test(
             input     => ['this string'],
             operation => 'RIPEMD-128 hex hash',
             result    => 'bb5fe1c296fa5d94d1c9202511df16a7'
+        }
+    ),
+    'ripemd128 hash of string' => test_zci(
+        '8f4b5ffc400e9fe83e33a2e0da3668b6',
+        structured_answer => {
+            input     => ['string'],
+            operation => 'RIPEMD-128 hex hash',
+            result    => '8f4b5ffc400e9fe83e33a2e0da3668b6'
         }
     ),
     'ripemd128 base64 hash of this string' => test_zci(
@@ -202,6 +226,14 @@ ddg_goodie_test(
             result    => 'e32a3dc548d1b1dc57e1bea093ef1837734f91be'
         }
     ),
+    'RIPEMD-256 that' => test_zci(
+        '1ff3ee2a8109caf8d33f810cfb7dccaee71824bbb18c2ac65cbf6b175ffe57d1',
+        structured_answer => {
+            input     => ['that'],
+            operation => 'RIPEMD-256 hex hash',
+            result    => '1ff3ee2a8109caf8d33f810cfb7dccaee71824bbb18c2ac65cbf6b175ffe57d1'
+        }
+    ),
     'ripemd-256 this string' => test_zci(
         '3592bc0d765e41e8855687572cfe19f44d8c18bbe0ccfddab9c8b260985ebb40',
         structured_answer => {
@@ -312,6 +344,14 @@ ddg_goodie_test(
             input     => ['this string'],
             operation => 'RIPEMD-320 hex hash',
             result    => '9098c0143e74a96101dda84df41dfb9ef89e6e61d5db992d77fee635512859ac84b0d6be7af2d6e6'
+        }
+    ),
+    'ripemd320 secret' => test_zci(
+        'c93e9064381bb8ca9a2d5436b872cce22a7beb78c3ba971906011096cce68359762bb53c08925dc7',
+        structured_answer => {
+            input     => ['secret'],
+            operation => 'RIPEMD-320 hex hash',
+            result    => 'c93e9064381bb8ca9a2d5436b872cce22a7beb78c3ba971906011096cce68359762bb53c08925dc7'
         }
     ),
     'ripemd320sum this string' => test_zci(
