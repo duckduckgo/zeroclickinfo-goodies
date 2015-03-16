@@ -5,6 +5,7 @@ use strict;
 use DDG::Goodie;
 use YAML::XS qw(Load);
 use List::Util qw(first);
+use Text::Trim;
 
 zci answer_type => 'periodic_table';
 zci is_cached   => 1;
@@ -33,7 +34,7 @@ handle query_lc => sub {
 
     # Strip out irrelevant words in the query
     $query =~ s/(?:atomic (?:mass|weight|number)|proton number|of|the|element|elemental)//g;
-    $query =~ s/^\s+|\s+$//g;
+    $query = trim $query;
     return unless $query;
 
     # Look for a matching element in the table

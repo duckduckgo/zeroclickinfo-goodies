@@ -20,6 +20,7 @@ package DDG::Goodie::CurrencyIn;
 use strict;
 use DDG::Goodie;
 use Locale::SubCountry;
+use Text::Trim;
 
 zci is_cached => 1;
 zci answer_type => "currency_in";
@@ -43,8 +44,7 @@ my %countries = share('currency.txt')->slurp;
 sub clear_country_name {
     my $txt = shift;
     $txt =~ s/^\?$|\?$//g;      # Query may end with "?". If so take it away.
-    $txt =~ s/^\s+|\s+$//g;     # Trim spaces before and after the country name
-    $txt;
+    return trim $txt;
 }
 
 handle remainder => sub {
