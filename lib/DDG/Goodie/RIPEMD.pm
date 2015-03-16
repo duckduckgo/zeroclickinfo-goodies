@@ -31,9 +31,8 @@ my @triggers = qw(ripemd ripemdsum ripemd128 ripemd128sum ripemd-128 ripemd160 r
 triggers start => @triggers;
 
 handle query => sub {
-    my $query = $_;
-    $query =~ qr/^ripemd\-?(?<ver>128|160|256|320|)?(?:sum|)\s*
-              (?<enc>hex|base64|)\s+(?<str>.*)$/ix;
+    return unless $_ =~ qr/^ripemd\-?(?<ver>128|160|256|320|)?(?:sum|)\s*
+                        (?<enc>hex|base64|)\s+(?<str>.*)$/ix;
 
     my $ver = $+{'ver'}    || 160;    # RIPEMD-160 is the most common version in the family
     my $enc = lc $+{'enc'} || 'hex';
