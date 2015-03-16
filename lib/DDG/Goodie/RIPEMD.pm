@@ -25,13 +25,16 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["rafacas", "Rafa Casado"],
             twitter => "rafacas";
 
-triggers query => qr/^
-    ripemd\-?(?<ver>128|160|256|320|)?(?:sum|)\s*
-    (?<enc>hex|base64|)\s+
-    (?<str>.*)
-    $/ix;
+my @triggers = qw(ripemd ripemdsum ripemd128 ripemd128sum ripemd-128 ripemd160 ripemd160sum ripemd-160
+               ripemd256 ripemd256sum ripemd-256 ripemd320 ripemd320sum ripemd-320);
+
+triggers start => @triggers;
 
 handle query => sub {
+    my $query = $_;
+    $query =~ qr/^ripemd\-?(?<ver>128|160|256|320|)?(?:sum|)\s*
+              (?<enc>hex|base64|)\s+(?<str>.*)$/ix;
+
     my $ver = $+{'ver'}    || 160;    # RIPEMD-160 is the most common version in the family
     my $enc = lc $+{'enc'} || 'hex';
     my $str = $+{'str'}    || '';
