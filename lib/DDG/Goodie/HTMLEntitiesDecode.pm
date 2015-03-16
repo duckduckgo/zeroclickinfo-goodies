@@ -6,6 +6,7 @@ use strict;
 use DDG::Goodie;
 use HTML::Entities 'decode_entities';
 use Unicode::UCD 'charinfo';
+use Text::Trim;
 use warnings;
 use strict;
 
@@ -26,10 +27,10 @@ attribution twitter => ['crazedpsyc','crazedpsyc'],
             github  =>      ['https://github.com/nishanths', 'Nishanth Shanmugham'];
 
 handle remainder => sub {
-    $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace
+    $_ = trim $_; # remove front and back whitespace
     $_ =~ s/(\bwhat\s*is\s*(the)?)//ig; # remove "what is the" (optional: the)
     $_ =~ s/\b(the|for|of|is|entity|decode|decoded|code|character)\b//ig; # remove filler words
-    $_ =~ s/^\s+|\s+$//g; # remove front and back whitespace that existed in between that may show up after removing the filler words
+    $_ = trim $_; # remove front and back whitespace that existed in between that may show up after removing the filler words
     $_ =~ s/\s*\?$//g; # remove ending question mark
     return unless ((/^(&?#(?:[0-9]+(?!_))+;?)$/) || (/^(&(?:[a-zA-Z]+(?!_))+;?)$/) || (/^(&?#[xX](?:[0-9A-Fa-f]+(?!_))+;?)$/)); # decimal (&#39;) || text with no underscores (&cent;) || hex (&#x27;)
                                                                                                                                 # "&" optional for all

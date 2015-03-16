@@ -4,6 +4,7 @@ package DDG::Goodie::Cusip;
 use strict;
 use DDG::Goodie;
 use Business::CUSIP;
+use Text::Trim;
 
 # metadata
 name "CUSIP check";
@@ -24,11 +25,8 @@ my $CUSIPLENGTH = 9;
 
 handle remainder => sub {
 
-    # strip beginning and end whitespace from remainder
-    s/^\s+|\s+$//g;
-
     # capitalize all letters in the CUSIP
-    $_ = uc;
+    $_ = uc trim $_;
 
     # check that the remainder is the correct length and
     # only contains alphanumeric chars and *, @, and #

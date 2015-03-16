@@ -6,6 +6,7 @@ use DDG::Goodie;
 use DateTime;
 use Try::Tiny;
 use URI::Escape::XS qw(encodeURIComponent);
+use Text::Trim;
 with 'DDG::GoodieRole::Dates';
 
 zci answer_type => 'calendar';
@@ -43,7 +44,7 @@ handle remainder => sub {
     $query =~ s/$filler_words_regex//g;    # Remove filler words.
     $query =~ s/\s{2,}/ /g;                # Tighten up any extra spaces we may have left.
     $query =~ s/'s//g;                     # Remove 's for possessives.
-    $query =~ s/^\s+|\s+$//g;              # Trim outside spaces.
+    $query = trim $query;                  # Trim outside spaces.
     if ($query) {
         my ($date_string) = $query =~ qr#^($datestring_regex)$#i;    # Extract any datestring from the query.
 
@@ -51,11 +52,11 @@ handle remainder => sub {
 
         return unless $date_object;
 
-	# Decide if a specific day should be highlighted.  If the query was not precise, eg "Nov 2009",
-	# we can't hightlight.  OTOH, if they specified a date, we highlight.  Relative dates like "next
-	# year", or "last week" exactly specify a date so they get highlighted also.
-	$highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex ||
-						$query =~ $relative_dates_regex);
+	    # Decide if a specific day should be highlighted.  If the query was not precise, eg "Nov 2009",
+	    # we can't hightlight.  OTOH, if they specified a date, we highlight.  Relative dates like "next
+	    # year", or "last week" exactly specify a date so they get highlighted also.
+	    $highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex ||
+        $query =~ $relative_dates_regex);
     }
     # Highlight today if it's this month and no other day was chosen.
     $highlightDay ||= $currentDay if (($date_object->year() eq $currentYear) && ($date_object->month() eq $currentMonth));
