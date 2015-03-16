@@ -5,6 +5,7 @@ package DDG::Goodie::FenViewer;
 # that the given position is actually legal.
 
 use DDG::Goodie;
+use strict;
 use Scalar::Util qw(looks_like_number);
 use Try::Tiny;
 
