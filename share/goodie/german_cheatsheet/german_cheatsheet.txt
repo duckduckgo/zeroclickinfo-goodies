@@ -1,0 +1,71 @@
+Basics
+
+Welcome           			Willkommen           
+Hello           			Hallo/Guten Tag           
+How are you?           		Wie gehts?           
+I'm fine thanks!           	Mir geht es gut, danke.           
+What's your name?           Wie Heisst du?           
+My name is...           	Ich heisse...           
+
+
+Getting Help
+
+Do you speak English?           		Sprechen Sie Englisch?           
+Please speak more slowly!           	Koennen Sie bitte langsamer sprechen!           
+Can you write that down?           		Koennen Sie das bitte aufschreiben?           
+Repeat, please.           				Bitte wiederholen.           
+How do you say "X" in German?           Wie sagt man "X" auf Deutsch?           
+Excuse me!           					Entschuldigung!           
+Can you help me?           				Koennen Sie mir helfen?           
+I am in danger!           				Ich bin in Gefahr!           
+I need a doctor!           				Ich brauche einen Arzt!           
+Fire!           						Feuer!           
+Stop!           						Halt!           
+Call an Ambulance!          			Ruf Sie Krankwagen!           
+Call the Police!            			Ruf Sie Polezei!           
+I am allergic.              			Ich bin allergisch.           
+
+
+
+Travelling
+
+Where?           				Wo?           
+Where are the taxis?            Wo sind die Taxies?           
+Is it far?           			Ist es weit?           
+Where is the exit?           	Wo is der Ausgang?           
+Go straight ahead.           	Gehen Sie geradeaus.           
+Turn right.           			Biegen Sie rechts ab.           
+Turn left.           			Biegen Sie links ab.           
+Stop here please.           	Bitte halten Sie heir an.           
+Do you have a city map?         Hast due einen Stadplan?           
+
+
+
+Etiquette
+
+Good Morning           	Guten Morgen           
+Good Afternoon          Guten Tag
+Good Evening           	Guten Abend           
+Good Night           	Gute Morgen           
+Thank you           	Danke.           
+Thank you very much!    Vielen Dank!           
+You're welcome.         Bitteschoen.           
+Please.          		Bitte.           
+I'm sorry 				Es tut mir leid.           
+
+
+Dinner on the Town
+
+Where is a good restaurant?             Wo is ein gutes Restaurant?           
+A table for two please!                 Einen Tisch fuer zwei bitte!           
+Can I get a menu, please!               Kann ich erhalten Die Speisekarte, bitte!           
+Appetizers                              Vorspeisen           
+Entree                                  Hauptgericht           
+Dessert                                 Nachtish           
+A glass of water please.                Ein Glas Wasser, bitte.           
+A cup of coffee pelase.                 Ein Tasse Kaffee, bitte.           
+Do you have vegetarian dishes?          Haben Sie ein vegetarisches Gericht?           
+Do you have gluten-free dishes?         Haben Sie ein glutenfreie Gericht?.           
+I am allergic.                          Ich bin allergisch.           
+The check please!                       Die Rechnung, bitte!           
+
