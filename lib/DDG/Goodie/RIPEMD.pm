@@ -38,7 +38,7 @@ handle query => sub {
 
     $str =~ s/^hash\s+(.*\S+)/$1/;    # Remove 'hash' in queries like 'ripemd hash this'
     $str =~ s/^of\s+(.*\S+)/$1/;      # Remove 'of' in queries like 'ripemd hash of this'
-    $str =~ s/^\"(.*)\"$/$1/;         # remove quotes (e.g. ripemd256 "this string")
+    $str =~ s/^\"(.+)\"$/$1/;         # remove quotes (e.g. ripemd256 "this string")
     return unless $str;
 
     $enc =~ s/base64/b64/;            # the suffix for the base64 functions is b64 (ex: ripemd160_b64)
