@@ -90,6 +90,14 @@ ddg_goodie_test(
             result    => 5
         }
     ),
+    'gcd 6, 9, ,,,,     12       15' => test_zci(
+        'Greatest common factor of 6, 9, 12 and 15 is 3.',
+        structured_answer => {
+            input     => ['6, 9, 12 and 15'],
+            operation => 'Greatest common factor',
+            result    => 3
+        }
+    ),
 );
 
 done_testing;

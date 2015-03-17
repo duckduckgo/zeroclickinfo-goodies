@@ -19,12 +19,12 @@ attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
 
 handle remainder => sub {
 
-    return unless /^\s*\d+(\s+\d+)*\s*$/;
+    return unless /^\s*\d+(?:(?:\s|,)+\d+)*\s*$/;
 
     # Here, $_ is a string of digits separated by whitespaces. And $_
     # holds at least one number.
 
-    my @numbers = grep(/^\d/, split /\s+/);
+    my @numbers = grep(/^\d/, split /(?:\s|,)+/);
     @numbers = sort { $a <=> $b } @numbers;
 
     my $formatted_numbers = join(', ', @numbers);
