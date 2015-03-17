@@ -31,7 +31,7 @@ my @triggers = qw(ripemd ripemdsum ripemd128 ripemd128sum ripemd-128 ripemd160 r
 triggers start => @triggers;
 
 handle query => sub {
-    return unless $_ =~ qr/^ripemd\-?(?<ver>128|160|256|320|)?(?:sum|)\s*
+    return unless $_ =~ /^ripemd\-?(?<ver>128|160|256|320|)?(?:sum|)\s*
                         (?<enc>hex|base64|)\s+(?<str>.*)$/ix;
 
     my $ver = $+{'ver'}    || 160;    # RIPEMD-160 is the most common version in the family
@@ -49,6 +49,16 @@ handle query => sub {
     my $func      = \&$func_name;
 
     my $out = $func->($str);
+
+    # By convention, CPAN Digest modules do not pad their Base64 output, but the
+    # Crypt::Digest::RIPEMDXXX doesn't comply with that convention and returns the
+    # output with padding. In case they change it in the future and to avoid wrong
+    # results the necessary padding will be implemented here.
+    if ($enc eq 'base64'){
+        while (length($out) % 4) {
+            $out .= '=';
+        }
+    }
 
     return $out,
       structured_answer => {
