@@ -98,6 +98,38 @@ ddg_goodie_test(
             result    => 3
         }
     ),
+    'gcd 2 3' => test_zci(
+        'Greatest common factor of 2 and 3 is 1.',
+        structured_answer => {
+            input     => ['2 and 3'],
+            operation => 'Greatest common factor',
+            result    => 1
+        }
+    ),
+    'gcd 2 3 5' => test_zci(
+        'Greatest common factor of 2, 3 and 5 is 1.',
+        structured_answer => {
+            input     => ['2, 3 and 5'],
+            operation => 'Greatest common factor',
+            result    => 1
+        }
+    ),
+    'gcd 0 2' => test_zci(
+        'Greatest common factor of 0 and 2 is 2.',
+        structured_answer => {
+            input     => ['0 and 2'],
+            operation => 'Greatest common factor',
+            result    => 2
+        }
+    ),
+    'gcd 0 0' => test_zci(
+        'Greatest common factor of 0 and 0 is 0.',
+        structured_answer => {
+            input     => ['0 and 0'],
+            operation => 'Greatest common factor',
+            result    => 0
+        }
+    ),
 );
 
 done_testing;
