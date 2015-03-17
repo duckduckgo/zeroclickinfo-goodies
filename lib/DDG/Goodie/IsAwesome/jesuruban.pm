@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::jesuruban;
 # ABSTRACT: Jesu Ruban's first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_jesuruban";
 zci is_cached   => 1;

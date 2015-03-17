@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::spyninja;
 # ABSTRACT: spyninja's first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_spyninja";
 zci is_cached   => 1;

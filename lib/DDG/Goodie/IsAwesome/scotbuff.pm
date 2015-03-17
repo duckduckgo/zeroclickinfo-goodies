@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::scotbuff;
 # ABSTRACT: scotbuff's first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_scotbuff";
 zci is_cached   => 1;

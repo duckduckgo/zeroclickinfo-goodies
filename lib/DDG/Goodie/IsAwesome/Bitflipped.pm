@@ -1,10 +1,11 @@
 package DDG::Goodie::IsAwesome::Bitflipped;
+# ABSTRACT: Bitflipped's first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type             => "is_awesome_bitflipped";
 zci is_cached               => 1;
-
 
 name                        "IsAwesome Bitflipped";
 description                 "Prints nice message";
@@ -15,10 +16,7 @@ topics                      "special_interest", "geek";
 code_url                    "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Bitflipped.pm";
 attribution github          => ["bitflipped", "Jon A"];
 
-
-
 triggers start      => "duckduckhack bitflipped";
-
 
 handle remainder    => sub {
 

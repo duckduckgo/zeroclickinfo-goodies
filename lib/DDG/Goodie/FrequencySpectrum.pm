@@ -616,7 +616,7 @@ sub add_marker {
         'text-anchor' => 'middle',
         class => 'marker_label'
     );
-    $markerLabel->tag('tspan', id => 'marker_label', -cdata => ucfirst($freq_formatted));
+    $markerLabelText->tag('tspan', id => 'marker_label', -cdata => ucfirst($freq_formatted));
 
     #Add marker line
     $plot->{svg}->group(
