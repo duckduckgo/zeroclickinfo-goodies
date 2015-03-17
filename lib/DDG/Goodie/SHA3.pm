@@ -53,11 +53,9 @@ handle query => sub {
 
     # By convention, CPAN Digest modules do not pad their Base64 output. So any
     # necessary padding will be implemented here
-    if ($enc eq 'base64'){
-        while (length($out) % 4) {
-            $out .= '=';
-        }
-    }
+    my $modulo  = length($out) % 4;
+    my $pad     = ($enc eq 'base64' && $modulo) ? 4 - $modulo : 0;
+    $out .= '=' x $pad if ($pad);
 
     return $out,
         structured_answer => {
