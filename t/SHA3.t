@@ -298,6 +298,14 @@ ddg_goodie_test(
             result    => '6fb7de092c66591cca6d119284d7fddd8f78352a90a65ee7da5c40cd48e59c9c28a8b2fab15b176f1c5f2d242dd44cc17fed7e9656f5e9215973f273ebba3fc8ae24adb04c591feb66a4bfdaf9dcdc4bae5ce6944cc88a9b3b9edb15c4950772ac973b310c5a2c6d7d83ffa3d1a6d64d664af3ab4b1ddc5ff42e1ca301c46566fd4efc51f083837dd8c08553e63248cd8f920d54a2d54abcbaa6a228b4c556694713e5b2ffb69067'
         }
     ),
+    'shake-128 this string' => test_zci(
+        '6fb7de092c66591cca6d119284d7fddd8f78352a90a65ee7da5c40cd48e59c9c28a8b2fab15b176f1c5f2d242dd44cc17fed7e9656f5e9215973f273ebba3fc8ae24adb04c591feb66a4bfdaf9dcdc4bae5ce6944cc88a9b3b9edb15c4950772ac973b310c5a2c6d7d83ffa3d1a6d64d664af3ab4b1ddc5ff42e1ca301c46566fd4efc51f083837dd8c08553e63248cd8f920d54a2d54abcbaa6a228b4c556694713e5b2ffb69067',
+        structured_answer => {
+            input     => ['this string'],
+            operation => 'SHAKE-128 hex hash',
+            result    => '6fb7de092c66591cca6d119284d7fddd8f78352a90a65ee7da5c40cd48e59c9c28a8b2fab15b176f1c5f2d242dd44cc17fed7e9656f5e9215973f273ebba3fc8ae24adb04c591feb66a4bfdaf9dcdc4bae5ce6944cc88a9b3b9edb15c4950772ac973b310c5a2c6d7d83ffa3d1a6d64d664af3ab4b1ddc5ff42e1ca301c46566fd4efc51f083837dd8c08553e63248cd8f920d54a2d54abcbaa6a228b4c556694713e5b2ffb69067'
+        }
+    ),
     'shake128 hash of this string' => test_zci(
         '6fb7de092c66591cca6d119284d7fddd8f78352a90a65ee7da5c40cd48e59c9c28a8b2fab15b176f1c5f2d242dd44cc17fed7e9656f5e9215973f273ebba3fc8ae24adb04c591feb66a4bfdaf9dcdc4bae5ce6944cc88a9b3b9edb15c4950772ac973b310c5a2c6d7d83ffa3d1a6d64d664af3ab4b1ddc5ff42e1ca301c46566fd4efc51f083837dd8c08553e63248cd8f920d54a2d54abcbaa6a228b4c556694713e5b2ffb69067',
         structured_answer => {
@@ -307,6 +315,14 @@ ddg_goodie_test(
         }
     ),
     'shake256 this string' => test_zci(
+        '841294b912e09c446978db0ac7ba61e74a819005c7487ea9d9792f4181fe834607c84457b232b1e0d742983a385129fab598e415f593a805f01a13cd67cbaf9e4fc992e3502f7a3393dd1e4b5ad2c6e7e6a0d7ea6605dcdc9fd6009e450400f34e48e9a3969267b21d577b75e99012d1c7d9069d5fe314cacf2e975a9536b5c05b41c151cb1dd95c',
+        structured_answer => {
+            input     => ['this string'],
+            operation => 'SHAKE-256 hex hash',
+            result    => '841294b912e09c446978db0ac7ba61e74a819005c7487ea9d9792f4181fe834607c84457b232b1e0d742983a385129fab598e415f593a805f01a13cd67cbaf9e4fc992e3502f7a3393dd1e4b5ad2c6e7e6a0d7ea6605dcdc9fd6009e450400f34e48e9a3969267b21d577b75e99012d1c7d9069d5fe314cacf2e975a9536b5c05b41c151cb1dd95c'
+        }
+    ),
+    'shake-256 this string' => test_zci(
         '841294b912e09c446978db0ac7ba61e74a819005c7487ea9d9792f4181fe834607c84457b232b1e0d742983a385129fab598e415f593a805f01a13cd67cbaf9e4fc992e3502f7a3393dd1e4b5ad2c6e7e6a0d7ea6605dcdc9fd6009e450400f34e48e9a3969267b21d577b75e99012d1c7d9069d5fe314cacf2e975a9536b5c05b41c151cb1dd95c',
         structured_answer => {
             input     => ['this string'],
@@ -329,6 +345,7 @@ ddg_goodie_test(
     'shake224 this string' => undef,
     'shake384 this string' => undef,
     'shake512 this string' => undef,
+    'shake-512 this string' => undef,
 );
 
 done_testing;
