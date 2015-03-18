@@ -1,7 +1,7 @@
 package DDG::Goodie::Wavelength;
-use utf8;
 # ABSTRACT: Frequency to wavelength
 
+use utf8;
 use DDG::Goodie;
 
 use constant SPEED_OF_LIGHT => 299792458; #meters/second
