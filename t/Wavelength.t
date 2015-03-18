@@ -37,7 +37,7 @@ sub mk_test {
         $expect,
         structured_answer => {
             input => [],
-            operation => "Wavelength of $freq_value $freq_units ($vf_text\Speed of light in a vacuum)",
+            operation => "Wavelength of $freq_value $freq_units (${vf_text}Speed of light in a vacuum)",
             result => $expect,
         }
     );
