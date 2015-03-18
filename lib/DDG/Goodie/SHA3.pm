@@ -27,7 +27,8 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["rafacas", "Rafa Casado"],
             twitter => "rafacas";
 
-my @triggers = qw(sha3 sha3sum sha3-224 sha3-256 sha3-384 sha3-512 shake128 shake256);
+my @triggers = qw(sha3 sha3sum sha3-224 sha3-256 sha3-384 sha3-512 
+                  shake128 shake-128 shake256 shake-256);
 triggers start => @triggers;
 
 handle query => sub {
