@@ -1,0 +1,147 @@
+Lingo:
+C: control key (CTRL)
+M: meta key (ALT or ESC)
+Quick Answers:
+C-x C-f: find file
+C-x C-s: save file
+C-x C-c: exit emacs
+Cursor Motion
+Operation
+Move
+Move
+Delete
+Delete
+Forward
+Backward
+Forward
+Backward
+Characters
+C-f
+C-b
+C-d
+DEL
+Words
+M-f
+M-b
+M-d
+M-DEL
+Lines
+C-n
+C-p
+C-k
+C-SPC C-a C-w
+Sentences
+M-e
+M-a
+M-k
+C-x DEL
+Expressions
+C-M-f
+C-M-b
+C-M-k
+C-M-DEL
+Paragraphs
+M-}
+M-{
+None
+None
+End/Start of Line
+C-e
+C-a
+None
+None
+End/Start of Buffer
+M-&gt;
+M-&lt;
+None
+None 
+Scrolling and Windows
+C-v
+Page Down
+M-v
+Page Up
+C-M-v
+Page Down other window
+C-x 1
+Make current window only window
+C-x 2
+Split window vertically
+C-x 3
+Split window horizontally
+C-x ^
+Grow window vertically
+C-x o
+Switch to next window
+C-x 0
+Close current window
+Cutting and Pasting
+C-SPC
+Set mark
+C-w
+Cut (after setting mark and moving to end point)
+M-w
+Copy (after setting mark and moving to end point)
+C-y
+Yank (paste) most recently killed (cut or copied)
+M-y
+Yank next most recently killed
+Files and Buffers
+
+C-x C-f
+Find file (or create if not existing)
+C-x C-s
+Save file
+C-x C-w
+Write file
+C-x s
+Save modified buffers
+C-x b
+Select buffer
+C-x C-b
+List buffers
+C-x k
+Kill buffer
+Command-Related Stuff
+ESC ESC ESC
+Leave current location
+C-u #
+Prefix numeric argument # to next command
+C-g
+Stop running command, or cancel partially entered command
+Searching and Replacing
+C-s
+Incremental search forward
+C-r
+Incremental search backward
+C-M-s
+Regexp search forward
+C-M-r
+Regexp search backward
+M-x replace-string RET
+String replace from here to end of buffer
+M-x query-replace RET
+String replace from here to end of buffer, querying for each occurrence
+M-x grep RET
+Prompts for a grep command, shows hits in a buffer
+C-x `
+Visit next grep hit
+Help
+C-h k
+Show command documentation
+C-h a
+"Command apropos"
+C-h c
+Show command name on message line
+C-h f
+Describe function
+C-h i
+Info browser
+Misc
+C-_ or C-x u
+Undo/redo
+C-q
+Quoted insert
+C-z
+Suspend/iconify emacs (type "%emacs" to return)
+C-x C-c
+Exit emacs
