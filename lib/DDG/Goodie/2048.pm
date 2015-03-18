@@ -42,10 +42,22 @@ handle remainder => sub {
 
 
 	my $play = '<i><b>Play <span id="game">'. $inputNum .'</span> <br><br><span id="dimension">'. $dimension .'</span> x '. $dimension. '</b></i>';
-	my $html = scalar share('2048.html')->slurp;
-	my $text = "Play ".$inputNum;
+	my $text = 'Play '.$inputNum;
 
-	return $text, html => "$play $html";
+	return $text,
+	structured_answer => {
+		id => '2048',
+		name => '2048',
+		data => $play,
+		templates => {
+			group => 'base',
+			detail => 0,
+			options => {
+				content => 'DDH.2048.content'
+			}
+		}
+	};
+
 };
 
 1;
