@@ -4,7 +4,7 @@
 
 .zci--answer .zci--objects .objects--objectImage {
     float:left;
-    margin-right: 1.4em;
+    margin-right: 15px;
 
     /* Box */
     text-align: center;
@@ -40,8 +40,7 @@
 }
 
 .zci--answer .zci--objects .objects--info {
-    display: flex;s
-    justify-content: center;
-    flex-direction: column;
-    height: 50px;
+    height: 60px;
+    display: table-cell;
+    vertical-align: middle;
 }

@@ -84,23 +84,6 @@ handle query_lc => sub {
 
 
 #Build HTML output
-sub pretty_output_testing {
-  my ($result, $operation, $image) = @_;
-  my  $html = "<div class=\"zci__main\">";
-      $html .= "<div class=\"zci__img-wrap\">";
-      $html .= "<img class=\"zci__img\">";
-      $html .= $image;
-      $html .= "</div>";
-      $html .= "<div class=\"zci__body\">";
-      $html .= $result;
-      $html .= $operation;
-      $html .= "</div>";
-      $html .= "</div>";
-  return (html => $html);
-}
-
-
-#Build HTML output
 sub pretty_output {
   my ($result, $operation, $image) = @_;
   my $html = "<div class=\"zci--objects\">";
