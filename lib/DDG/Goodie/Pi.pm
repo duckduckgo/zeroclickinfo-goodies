@@ -29,7 +29,6 @@ my $PI = '3.14159265358979323846264338327950288419716939937510582097494459230781
 my $PI_max_digits = length($PI);
 
 handle query_nowhitespace => sub {
-    print "----->".$_;
 
     return unless $_ =~ /(?:pi|π|to)?(?<decimal>\d+)(?:decimal|digits|decimals|digits of pi)?/i && 
                         $+{decimal} > 0 && $+{decimal} < $PI_max_digits;
