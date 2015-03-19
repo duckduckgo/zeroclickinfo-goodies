@@ -1,0 +1,18 @@
+~ DuckDuckGo Shortcuts ~
+
+Open results
+
+↵ or l or o     Go to the highlighted result, or use it right away to go to the first result
+Ctrl/⌘ + ↵      Open a result in the background
+d               Domain search (if a result is highlighted)
+' or v          Open the highlighted result in a new window/tab. Since this uses JavaScript, you need to turn off pop-up blockers first.
+
+Move around
+
+← or →          Navigate instant answer tabs. When an instant answer is open, navigate within the instant answer.
+↓ or j          Next search result
+↑ or k          Previous search result
+/ or h          Go to search box
+s               Go to misspelling link (if any)
+t               Go to top
+m               Go to main results
