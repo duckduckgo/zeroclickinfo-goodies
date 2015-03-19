@@ -31,7 +31,7 @@ my $objects = Load(scalar share('objects.yml')->slurp);
 # Handle statement
 handle query_lc => sub {
   # Declare vars
-  my ($attribute, $attributesString, $result, $objectObj, $image, $width);
+  my ($attribute, $attributesString, $result, $objectObj, $image, $width, $height);
   
   s/^what is (the)|(of)|(object)//g; # Remove common words, strip question marks
 
@@ -72,14 +72,33 @@ handle query_lc => sub {
   }
 
   #Ensure we have a vaild image
-  # 76
-  $width = ($_ eq "saturn") ? 76 : 48;
-  $image = goodie_img_tag({filename=>"/img/".$_.".png", height => 48, width => $width});
+  #Change width for saturn image
+  $width = ($_ eq "saturn") ? 45 : 40;
+  $height = ($_ eq "saturn") ? 28 : 40;
+  $image = goodie_img_tag({filename=>"/img/".$_.".png", height => $height, width => $width});
   return unless $image;
 
   #Return result and html
   return $operation." is ".$result, pretty_output($result, $operation, $image);
 };
+
+
+#Build HTML output
+sub pretty_output_testing {
+  my ($result, $operation, $image) = @_;
+  my  $html = "<div class=\"zci__main\">";
+      $html .= "<div class=\"zci__img-wrap\">";
+      $html .= "<img class=\"zci__img\">";
+      $html .= $image;
+      $html .= "</div>";
+      $html .= "<div class=\"zci__body\">";
+      $html .= $result;
+      $html .= $operation;
+      $html .= "</div>";
+      $html .= "</div>";
+  return (html => $html);
+}
+
 
 #Build HTML output
 sub pretty_output {

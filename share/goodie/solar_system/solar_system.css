@@ -5,6 +5,25 @@
 .zci--answer .zci--objects .objects--objectImage {
     float:left;
     margin-right: 1.4em;
+
+    /* Box */
+    text-align: center;
+    background-color: #333;
+    border-radius: 5%;
+    height: 60px;
+    width: 60px;
+
+    /* Blur fix */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.zci--answer .zci--objects .objects--objectImage img {
+    /* Vertical align */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .zci--answer .zci--objects .objects--objectAttribute {
