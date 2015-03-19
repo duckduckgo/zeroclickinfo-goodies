@@ -13,7 +13,7 @@ ddg_goodie_test(
     "brt 123456789012" => test_zci(
         "123456789012",
         heading => 'BRT Tracking',
-        html    => 'Shipment tracking available at <a href="http://as777.brt.it/vas/sped_det_show.hsm?referer=sped_numspe_par.htm&Nspediz=123456789012&RicercaNumeroSpedizione=Ricerca">BRT</a>.'
+        html    => 'Shipment tracking available at <a href="http://as777.brt.it/vas/sped_det_show.htm?referer=sped_numspe_par.htm&Nspediz=123456789012&RicercaNumeroSpedizione=Ricerca">BRT</a>.'
     ),
     "brtcode 1234567890123456789" => test_zci(
         "1234567890123456789",

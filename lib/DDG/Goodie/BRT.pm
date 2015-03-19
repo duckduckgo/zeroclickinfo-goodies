@@ -22,15 +22,15 @@ attribution web => ["https://afelicioni.github.io/", "Alessio Felicioni"],
 triggers start => "brt", "brtcode";
 
 handle query_lc => sub {
-    return unless /^(?:brt\s+(?:([0-9]{12})|([0-9]{19}))|brtcode\s+([0-9]{19}))$/;
-    my $brt_num = $1;
-    my $brtcode_num = $3 // $2;
+    return unless /^(?:brt\s+(?:(?<c_brt>[0-9]{12})|(?<c_brtcode>[0-9]{19}))|brtcode\s+(?<c_brtcode>[0-9]{19}))$/;
+    my $brt_num = $+{'c_brt'};
+    my $brtcode_num = $+{'c_brtcode'};
 
     # BRT Shipment Tracking (using 12 digits basic code)
     if ( $brt_num ) {
         return $brt_num,
             heading => "BRT Tracking",
-            html    => qq|Shipment tracking available at <a href="http://as777.brt.it/vas/sped_det_show.hsm?referer=sped_numspe_par.htm&Nspediz=$brt_num&RicercaNumeroSpedizione=Ricerca">BRT</a>.|;
+            html    => qq|Shipment tracking available at <a href="http://as777.brt.it/vas/sped_det_show.htm?referer=sped_numspe_par.htm&Nspediz=$brt_num&RicercaNumeroSpedizione=Ricerca">BRT</a>.|;
     }
     # BRT Shipment Tracking (using 19 digits "BRTcode")
     if ( $brtcode_num ) {
