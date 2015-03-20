@@ -16,9 +16,21 @@ attribution github => ["https://github.com/jee1mr", "Jeevan M R"],
 
 triggers any => "lorem ipsum", "lipsum";
 my $text = Text::Lorem->new();
+my @lorem = ();
+for my $i (1..10) {
+    $lorem[$i] = "<p>" . $text->paragraphs(1) . "</p>"; 
+}
+
 handle remainder => sub {
-    return $text->paragraphs($_) if $_ && $_ =~ /(^\d{1}$)|10/; 
-    return $text->paragraphs(4);
+    my $html = "";
+    my $loop;
+    $loop = $_ if $_ && $_ =~ /(^\d{1}$)|10/;
+    $loop = 10 if $_ && $_ =~ /^\d{2,}$/;
+    $loop = 4 if !$_;
+    for my $i (1..$loop){
+        $html .= $lorem[$i];
+    }
+    return answer => $text->paragraphs($loop), html => $html;
 };
 
 1;
