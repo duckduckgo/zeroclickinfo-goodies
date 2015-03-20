@@ -30,7 +30,8 @@ ddg_goodie_test(
 		result => "3.141592653589"
 	}),
 
-	'pi ff' => undef
+	'pi ff' => undef,
+	'pi 3f2' => undef
 
 );
 

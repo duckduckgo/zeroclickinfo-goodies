@@ -17,9 +17,6 @@ attribution github => ["https://github.com/puskin94", "puskin94"],
 
 triggers startend => "pi","π";
 
-# $PI now have 1 000 000 decimals
-
-
 
 my $PI = '3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679'.
 		'8214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196'.
@@ -28,16 +25,16 @@ my $PI = '3.14159265358979323846264338327950288419716939937510582097494459230781
 
 my $PI_max_digits = length($PI);
 
-handle query_nowhitespace => sub {
+handle query_raw => sub {
 
-    return unless $_ =~ /(?:pi|π|to)?(?<decimal>\d+)(?:decimal|digits|decimals|digits of pi)?/i && 
-                        $+{decimal} > 0 && $+{decimal} < $PI_max_digits;
+    return unless $_ =~ /^(?:pi|π)?\s*(?:to|first)?\s*(\d+)\s*(?:(?:decimal|digit)s?)?\s*(?:of\s+(?:pi|π))?$/i && 
+                        $1 > 0 && $1 < $PI_max_digits;
 
-    my $answer = substr $PI, 0, ( $+{decimal} + 2 );
+    my $answer = substr $PI, 0, ( $1 + 2 );
     return $answer,
     structured_answer => {
         input     => [],
-        operation => ["First ".$+{decimal}." digits of Pi"],
+        operation => ["First ".$1." digits of Pi"],
         result    => $answer
     };
 
