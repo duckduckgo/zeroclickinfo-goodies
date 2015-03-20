@@ -8,28 +8,153 @@ use DDG::Test::Goodie;
 zci answer_type => "bpmto_ms";
 zci is_cached   => 1;
 
+my $plaintext_120 = "120 bpm in milliseconds:";
+   $plaintext_120 .= "\nWhole Note: 2000, Triplet: 1333, Dotted: 3000";
+   $plaintext_120 .= "\nHalf Note: 1000, Triplet: 667, Dotted: 1500";
+   $plaintext_120 .= "\nQuarter Note: 500, Triplet: 333, Dotted: 750";
+   $plaintext_120 .= "\n1/8 Note: 250, Triplet: 167, Dotted: 375";
+   $plaintext_120 .= "\n1/16 Note: 125, Triplet: 83, Dotted: 188";
+   $plaintext_120 .= "\n1/32 Note: 63, Triplet: 42, Dotted: 94";
+
+my $plaintext_61 = "61 bpm in milliseconds:";
+   $plaintext_61 .= "\nWhole Note: 3934, Triplet: 2623, Dotted: 5902";
+   $plaintext_61 .= "\nHalf Note: 1967, Triplet: 1311, Dotted: 2951";
+   $plaintext_61 .= "\nQuarter Note: 984, Triplet: 656, Dotted: 1475";
+   $plaintext_61 .= "\n1/8 Note: 492, Triplet: 328, Dotted: 738";
+   $plaintext_61 .= "\n1/16 Note: 246, Triplet: 164, Dotted: 369";
+   $plaintext_61 .= "\n1/32 Note: 123, Triplet: 82, Dotted: 184";
+
 ddg_goodie_test(
     [qw( DDG::Goodie::BPMToMs)],
-    (map { ("$_" => test_zci(
-'120 bpm in milliseconds
-Whole Note: 2000
-Half Note: 1000
-Quarter Note: 500
-1/8 Note: 250
-1/16 Note: 125
-1/32 Note: 63',
-    html => qr#<td class="record__cell__key record_keyspacing">Whole Note</td><td class="record__cell__value numbers">2000</td>#
-)) } ( '120 bpm to ms', '120 beats per minute to note lengths', '120 bpm timings' )),
-    (map { ("$_" => test_zci(
-'61 bpm in milliseconds
-Whole Note: 3934
-Half Note: 1967
-Quarter Note: 984
-1/8 Note: 492
-1/16 Note: 246
-1/32 Note: 123',
-    html => qr#<td class="record__cell__key record_keyspacing">Whole Note</td><td class="record__cell__value numbers">3934</td>#
-)) } ( '61 beats per minute to ms', '61 bpm', '61 bpm to note values' )),
+
+    "120 beats per minute to ms" => test_zci(
+        $plaintext_120,
+        structured_answer => {
+            data => '-ANY-',
+#                   [
+#                 {
+#                     note_type => "Whole Note",
+#                     triplet => 1333,
+#                     dotted => 3000,
+#                     milliseconds => 2000,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "Half Note",
+#                     triplet => 667,
+#                     dotted => 1500,
+#                     milliseconds => 1000,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "Quarter Note",
+#                     triplet => 333,
+#                     dotted => 750,
+#                     milliseconds => 500,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "1/8 Note",
+#                     triplet => 167,
+#                     dotted => 375,
+#                     milliseconds => 250,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "1/16 Note",
+#                     triplet => 83,
+#                     dotted => 188,
+#                     milliseconds => 125,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "1/32 Note",
+#                     triplet => 42,
+#                     dotted => 94,
+#                     milliseconds => 63,
+#                     image => qr/.*/
+#                 }
+#             ],
+            id => "bpmto_ms",
+            name => "Music",
+            meta => {
+                sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
+                sourceName => "Wikipedia"
+            },
+            templates => {
+                group => "base",
+                detail => 0,
+                options => {
+                    content => "DDH.bpmto_ms.content"
+                }
+            }
+        }
+    ),
+
+    "61 beats per minute to ms" => test_zci(
+        $plaintext_61,
+        structured_answer => {
+            data => '-ANY-',
+#                   [
+#                 {
+#                     note_type => "Whole Note",
+#                     triplet => 2623,
+#                     dotted => 5902,
+#                     milliseconds => 3934,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "Half Note",
+#                     triplet => 1311,
+#                     dotted => 2951,
+#                     milliseconds => 1967,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "Quarter Note",
+#                     triplet => 656,
+#                     dotted => 1475,
+#                     milliseconds => 984,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "1/8 Note",
+#                     triplet => 328,
+#                     dotted => 738,
+#                     milliseconds => 492,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "1/16 Note",
+#                     triplet => 164,
+#                     dotted => 369,
+#                     milliseconds => 246,
+#                     image => qr/.*/
+#                 },
+#                 {
+#                     note_type => "1/32 Note",
+#                     triplet => 82,
+#                     dotted => 184,
+#                     milliseconds => 123,
+#                     image => qr/.*/
+#                 }
+#             ],
+            id => "bpmto_ms",
+            name => "Music",
+            meta => {
+                sourceUrl => "https://wikipedia.org/wiki/Tempo#Beats_per_minute",
+                sourceName => "Wikipedia"
+            },
+            templates => {
+                group => "base",
+                detail => 0,
+                options => {
+                    content => "DDH.bpmto_ms.content"
+                }
+            }
+        }
+    ),
+
     '-1 bpm to ms' => undef,
     'some bpm to ms' => undef,
     'bpm' => undef,
