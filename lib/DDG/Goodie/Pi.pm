@@ -27,14 +27,14 @@ my $PI_max_digits = length($PI);
 
 handle query_raw => sub {
 
-    return unless $_ =~ /^(?:pi|π)?\s*(?:to|first)?\s*(\d+)\s*(?:(?:decimal|digit)s?)?\s*(?:of\s+(?:pi|π))?$/i && 
-                        $1 > 0 && $1 < $PI_max_digits;
+    return unless $_ =~ /^(?:pi|π)?\s*(?:to|first)?\s*(?<decimal>\d+)\s*(?:(?:decimal|digit)s?)?\s*(?:of\s+(?:pi|π))?$/i && 
+                        $+{decimal} > 0 && $+{decimal} < $PI_max_digits;
 
     my $answer = substr $PI, 0, ( $1 + 2 );
     return $answer,
     structured_answer => {
         input     => [],
-        operation => ["First ".$1." digits of Pi"],
+        operation => ["First ".$+{decimal}." digits of Pi"],
         result    => $answer
     };
 
