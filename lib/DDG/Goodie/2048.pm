@@ -48,13 +48,13 @@ handle remainder => sub {
 	structured_answer => {
 		id => '2048',
 		name => '2048',
-		data => $play,
+		data => $play, # I don't know how push this to the html
 		templates => {
 			group => 'base',
-			detail => 0,
-			options => {
-				content => 'DDH.2048.content'
-			}
+			detail => 0
+			#options => {			this is not useful, duckpan takes the content.handlebars
+			#	content => $play.'Goodie.2048.content'
+			#}
 		}
 	};
 
