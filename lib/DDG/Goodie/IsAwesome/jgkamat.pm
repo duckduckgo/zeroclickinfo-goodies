@@ -22,7 +22,7 @@ triggers start => "duckduckhack jgkamat";
 # Handle statement
 handle remainder => sub {
     return if $_;
-	return "jgkamat is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return "jgkamat is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
