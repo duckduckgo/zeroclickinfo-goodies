@@ -452,6 +452,15 @@ ddg_goodie_test(
             result    => qr/>25</
         }
     ),
+    'sqrt(4)' => test_zci(
+        'sqrt(4) = 2',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['sqrt(4)'],
+            operation => 'Calculate',
+            result    => qr/>2</
+        }
+    ),
     '1.0 + 5 squared' => test_zci(
         '1.0 + 5 ^ 2 = 26',
         heading           => 'Calculator',
