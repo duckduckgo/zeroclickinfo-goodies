@@ -169,3 +169,20 @@ pluto:
   effective_temperature_imperial: -387/-369 (min/max) °F
   effective_temperature_scientific: 40/50 K
   density: 2.050 g/cm3
+moon:
+  radius: 1737.5 km
+  radius_imperial: 1079.6 mi
+  radius_scientific: 1.738 x 103 km
+  surface_area: 37,936,694.79 km2
+  surface_area_imperial: 14,647,439.75 m2
+  surface_area_scientific:  3.793669 x 107 km2
+  volume: 21,971,669,064 km3
+  volume_imperial: 5,271,283,735.8 mi3
+  volume_scientific: 2.197 x 1010 km3
+  mass: 73,476,730,924,573,500,000,000 kg
+  mass_imperial: 161,988,463,175,900,000,000,000 lbs
+  mass_scientific: 7.3477 x 1022 kg
+  effective_temperature: -233/123 (min/max) °C
+  effective_temperature_imperial: -387/253 (min/max) °F
+  effective_temperature_scientific: 40/396 K
+  density: 3.344 g/cm3

@@ -19,7 +19,7 @@ topics 'special_interest';
 attribution github => ["MrChrisW", "Chris Wilson"],
             web => ["http://chrisjwilson.com", "Chris Wilson"];
 
-my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'pluto', 'sun');
+my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'pluto', 'sun', 'moon');
 
 my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'area');
 
