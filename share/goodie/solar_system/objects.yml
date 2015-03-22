@@ -170,8 +170,8 @@ pluto:
   effective_temperature_scientific: 40/50 K
   density: 2.050 g/cm3
 moon:
-  radius: 1737.5 km
-  radius_imperial: 1079.6 mi
+  radius: 1,737.5 km
+  radius_imperial: 1,079.6 mi
   radius_scientific: 1.738 x 103 km
   surface_area: 37,936,694.79 km2
   surface_area_imperial: 14,647,439.75 m2
