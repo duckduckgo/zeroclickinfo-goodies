@@ -24,7 +24,7 @@ zci is_cached   => 1;
 my $number_re = number_style_regex();
 
 handle query_lc => sub {
-    return unless (/^(?<p>$number_re)(?: ?%| percent) (?:(?<do_tip>tip (?:on|for|of))|of)(?: an?)? (?<sign>[\$\-]?)(?<num>$number_re)(?: bill)?$/);
+    return unless (/^(?<p>$number_re)(?: ?%| percent) (?:(?<do_tip>tip|tax (?:on|for|of))|of)(?: an?)? (?<sign>[\$\-]?)(?<num>$number_re)(?: bill)?$/);
     my ($p, $num, $sign) = ($+{'p'}, $+{'num'}, $+{'sign'});
     my $style = number_style_for($p, $num);
     $p   = $style->for_computation($p) / 100;
