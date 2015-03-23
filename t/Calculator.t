@@ -524,6 +524,24 @@ ddg_goodie_test(
             result    => qr/>512</
         }
     ),
+    'sqrt(2)' => test_zci(
+        'sqrt(2) = 1.4142135623731',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['sqrt(2)'],
+            operation => 'Calculate',
+            result    => qr/>1\.4142135623731</
+        }
+    ),
+    'sqrt(3 pi / 4 + 1) + 1' => test_zci(
+        'sqrt(3 pi / 4 + 1) + 1 = 2.83199194599549',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['sqrt(3 pi / 4 + 1) + 1'],
+            operation => 'Calculate',
+            result    => qr/>2\.83199194599549</
+        }
+    ),
     '4 score + 7' => test_zci(
         '4 score + 7 = 87',
         heading           => 'Calculator',
