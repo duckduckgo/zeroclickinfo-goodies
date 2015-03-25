@@ -52,7 +52,12 @@ handle query_parts => sub {
 
         my $answer_html = $answer.'<br><a href="'.$wiki.$eras{$era_name}[1].'">More at Wikipedia</a>';
 
-        return $answer, html => $answer_html;
+        return $answer,
+            structured_answer => {
+            input     => [html_enc($era_name . ' ' . $era_year)],
+            operation => html_enc('Gregorian conversion of ' . $era_name . ' ' . $era_year),
+            result    => html_enc($answer_html)
+        };
     };
 
     return ;
