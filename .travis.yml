@@ -13,6 +13,7 @@ install:
   - dzil listdeps | grep -ve '^\W' | cpanm  --quiet   --notest  --skip-installed
   - cpanm  --quiet   --notest  App::DuckPAN autodie
   - duckpan DDG
+  - npm install -g handlebars
 language: perl
 perl:
   - 5.16
