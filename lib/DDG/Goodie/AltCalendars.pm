@@ -42,25 +42,32 @@ handle query_parts => sub {
         my $year = $eras{$era_name}[0] + $era_year;
         my $result = $1.$year.$4;
         my $wiki = 'https://en.wikipedia.org/wiki/';
-        my $answer;
 
-        if ($result =~ /^[0-9]{4}$/) {
-            $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
-        } else {
-            $answer = "$result ($era_name $era_year is equivalent to $year in the Gregorian Calendar)";
-        }
-
-        my $answer_html = $answer.'<br><a href="'.$wiki.$eras{$era_name}[1].'">More at Wikipedia</a>';
+        my $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
 
         return $answer,
             structured_answer => {
-            input     => [html_enc($era_name . ' ' . $era_year)],
-            operation => html_enc('Gregorian conversion of ' . $era_name . ' ' . $era_year),
-            result    => html_enc($answer_html)
+                id => 'altcalendars',
+                name => 'Calendar',
+                data => {
+                    title => "$era_name Calendar Conversion",
+                    subtitle => "$era_name year: $era_year",
+                    description => "Equivalent to $year in the Gregorian Calendar"
+                },
+                meta => {
+                    sourceName => "Wikipedia",
+                    sourceUrl => "$wiki$eras{$era_name}[1]"
+                },
+                templates => {
+                    group => 'info',
+                    options => {
+                        moreAt => 1
+                    }
+                }
         };
-    };
+    }
 
-    return ;
+    return;
 };
 
 1;
