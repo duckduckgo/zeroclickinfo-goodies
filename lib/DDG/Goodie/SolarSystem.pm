@@ -79,8 +79,8 @@ handle query_lc => sub {
     $result =~ s/x/&times;/;
   }
 
-  #Ensure we have a vaild image
   #Change width for saturn image
+  #Ensure we have a vaild image
   $width = ($_ eq "saturn") ? 45 : 40;
   $height = ($_ eq "saturn") ? 28 : 40;
   $image = goodie_img_tag({filename=>"/img/".$_.".png", height => $height, width => $width});

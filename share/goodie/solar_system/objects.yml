@@ -129,9 +129,8 @@ neptune:
   surface_area: 7,618,272,763 km2
   surface_area_imperial: 2,941,431,558 mi2
   surface_area_scientific: 7.6183 x 109 km2
-  volume: 62,525,703,987,421 km3
-  volume_imperial: 15,000,714,125,712 mi3
-  volume_scientific: 6.25257 x 1013 km3
+  volume: 6.25257 x 1013 km3
+  volume_imperial: 1.50007 x 1013 mi3
   mass: 1.0241 x 1026 kg
   mass_imperial: 2.26 x 1026 lbs
   effective_temperature: -214 °C
@@ -164,9 +163,8 @@ moon:
   volume: 21,971,669,064 km3
   volume_imperial: 5,271,283,735.8 mi3
   volume_scientific: 2.197 x 1010 km3
-  mass: 73,476,730,924,573,500,000,000 kg
-  mass_imperial: 161,988,463,175,900,000,000,000 lbs
-  mass_scientific: 7.3477 x 1022 kg
+  mass: 7.3477 x 1022 kg
+  mass_imperial: 1.6199 x 1023 lbs
   effective_temperature: -233/123 (min/max) °C
   effective_temperature_imperial: -387/253 (min/max) °F
   effective_temperature_scientific: 40/396 K
