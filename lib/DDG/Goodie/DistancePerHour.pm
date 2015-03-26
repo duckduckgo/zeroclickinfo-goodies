@@ -16,22 +16,27 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["BigxMac", "Jared Stefanowicz"];
 
 # Triggers
-triggers any => "mph", "mih" , "m/h" , "mi/h", "kph", "kih", "k/h", "ki/h";
+triggers any => "mph", "mih" , "m/h" , "mi/h", "kph", "kih", "k/h", "km/h";
 
 # Handle statement
 handle remainder => sub {
-
-	# optional - regex guard
-	#return unless qr//;
 	
     # check structure with a regex 
-    if ($_ =~ /^\d (mph|kph) to (mph|kph)/)
+    if ($_ =~ /^(\d)*\s(.)./)
     {
-        # do calculations and return
-    } 
-    else
-    {
-        return $_;
+    
+     my $number = $1;
+     my $unit = $2;
+     
+        if ($unit =~ 'mph' || $unit =~ 'mih' || $unit =~ 'm\/h' || $unit =~ 'mi\/h')
+        {
+            return $number * 0.621;
+        }
+        elsif ($unit =~ 'kph' || $unit =~ 'kmh' || $unit =~ 'km\/h' || $unit =~ 'k\/h')
+        {
+            return $number * 1.609;
+        }
+    
     }
     
 };
