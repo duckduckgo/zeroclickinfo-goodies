@@ -67,8 +67,16 @@ handle query_lc => sub {
 
   # Superscript for km3, mi3, km2 or mi2 
   if($result =~ m/(km|mi)(\d)/) {
-    my $notation = $1; my $num = $2;
-    $result =~ s/$notation$num/$notation<sup>$num<\/sup>/;
+    my $symbol = $1; my $superscript = $2;
+    $result =~ s/$symbol$superscript/$symbol<sup>$superscript<\/sup>/;
+  }
+  
+  # Superscript for scientific notation
+  # Convert x to HTML entity &times;
+  if($result =~ m/x\s(10)(\d\d)/) {
+    my $number = $1; my $exponent = $2;
+    $result =~ s/$number$exponent/$number<sup>$exponent<\/sup>/;
+    $result =~ s/x/&times;/;
   }
 
   #Ensure we have a vaild image
