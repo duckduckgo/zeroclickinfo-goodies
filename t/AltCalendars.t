@@ -70,9 +70,8 @@ sub make_structured_answer {
         id => 'altcalendars',
         name => 'Calendar',
         data => {
-            title => "$era_name year: $era_year",
-            subtitle => "$era_name Calendar Conversion",
-            description => "Equivalent to $gregorian_year in the Gregorian Calendar"
+            title => $gregorian_year,
+            subtitle => 'Equivalent Gregorian Calendar year'
         },
          meta => {
             sourceName => "Wikipedia",

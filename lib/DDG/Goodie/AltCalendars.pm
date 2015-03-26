@@ -50,9 +50,8 @@ handle query_parts => sub {
                 id => 'altcalendars',
                 name => 'Calendar',
                 data => {
-                    title => "$era_name year: $era_year",
-                    subtitle => "$era_name Calendar Conversion",
-                    description => "Equivalent to $year in the Gregorian Calendar"
+                    title => $year,
+                    subtitle => 'Equivalent Gregorian Calendar year'
                 },
                 meta => {
                     sourceName => "Wikipedia",
