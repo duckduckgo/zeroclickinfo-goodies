@@ -101,5 +101,4 @@ sub pretty_output {
   $html .= "</div>";
   return (html => $html);
 }
-
 1;
