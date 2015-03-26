@@ -2,16 +2,13 @@
 sun:
   radius: 695,508 km
   radius_imperial: 432,168.6 mi
-  radius_scientific: 6.9551 x 105 km
   surface_area: 6,078,747,774,547 km2
   surface_area_imperial: 2,347,017,636,988 mi2
   surface_area_scientific: 6.07877 x 1012 km2
-  volume: 1,409,272,569,059,860,000 km3
-  volume_imperial: 338,102,469,632,763,000 mi3
-  volume_scientific: 1.40927 x 1018 km3
-  mass: 1,989,100,000,000,000,000,000,000,000,000 kg
-  mass_imperial: 4,385,214,857,119,400,000,000,000,000,000 lbs
-  mass_scientific: 1.989 x 1030 kg
+  volume: 1.40927 x 1018 km3
+  volume_imperial: 3.38 x 1017 mi3
+  mass: 1.989 x 1030 kg
+  mass_imperial: 4.39 x 1030 lbs
   effective_temperature: 5504 °C
   effective_temperature_imperial: 9939 °F
   effective_temperature_scientific: 5777 K
@@ -26,9 +23,8 @@ mercury:
   volume: 60,827,208,742 km3
   volume_imperial: 14,593,223,446 mi3
   volume_scientific: 6.08272 x 1010 km3
-  mass: 330,104,000,000,000,000,000,000 kg
-  mass_imperial: 727,754,745,962,800,000,000,000 lbs
-  mass_scientific: 3.3010 x 1023 kg
+  mass: 3.3010 x 1023 kg
+  mass_imperial: 7.28 x 1023 lbs
   effective_temperature: -173/427 °C
   effective_temperature_imperial: -279/801 °F
   effective_temperature_scientific: 100/700 K
@@ -43,9 +39,8 @@ venus:
   volume: 928,415,345,893 km3
   volume_imperial: 222,738,686,740 mi3
   volume_scientific: 9.28415 x 1011 km3
-  mass: 4,867,320,000,000,000,000,000,000 kg
-  mass_imperial: 10,730,603,779,780,000,000,000,000 lbs
-  mass_scientific: 4.8673 x 1024 kg
+  mass: 4.8673 x 1024 kg
+  mass_imperial: 1.07 x 1025 lbs
   effective_temperature: 462 °C
   effective_temperature_imperial: 864 °F
   effective_temperature_scientific: 735 K
@@ -60,9 +55,8 @@ earth:
   volume: 1,083,206,916,846 km3
   volume_imperial: 259,875,159,532 mi3
   volume_scientific: 1.08321 x 1012 km3
-  mass: 5,972,190,000,000,000,000,000,000 kg
-  mass_imperial: 13,166,425,175,980,000,000,000,000 lbs
-  mass_scientific: 5.9722 x 1024 kg
+  mass: 5.9722 x 1024 kg
+  mass_imperial: 1.32 x 1025 lbs
   effective_temperature: -88/58 (min/max) °C
   effective_temperature_imperial: -126/136 (min/max) °F
   effective_temperature_scientific: 185/331 (min/max) K
@@ -77,9 +71,9 @@ mars:
   volume: 163,115,609,799 km3
   volume_imperial: 39,133,515,914 mi3
   volume_scientific: 1.63116 X 1011 km3
-  mass: 641,693,000,000,000,000,000,000 kg
-  mass_imperial: 1,414,690,904,082,000,000,000,000 lbs
-  mass_scientific: 6.4169 x 1023 kg
+  mass: 6.4169 x 1023 kg
+  mass_imperial: 1.41 x 1024 lbs
+  mass_scientific: 
   effective_temperature: -153/20 (min/max) °C
   effective_temperature_imperial: -225/70 (min/max) °F
   effective_temperature_scientific: 120/293 (min/max) K
@@ -91,12 +85,10 @@ jupiter:
   surface_area: 61,418,738,571 km2
   surface_area_imperial: 23,713,907,537 mi2
   surface_area_scientific: 6.1419 x 1010 km2
-  volume: 1,431,281,810,739,360 km3
-  volume_imperial: 343,382,767,518,322 mi3
-  volume_scientific: 1.43128 x 1015 km3
-  mass: 1,898,130,000,000,000,000,000,000,000 kg
-  mass_imperial: 4,184,660,337,210,000,000,000,000,000 lbs
-  mass_scientific: 1.8981 x 1027 kg
+  volume: 1.43128 x 1015 km3
+  volume_imperial: 3.43 x 1014 mi3
+  mass: 1.8981 x 1027 kg
+  mass_imperial: 4.18 x 1027 lbs
   effective_temperature: -148 °C
   effective_temperature_imperial: -234 °F
   effective_temperature_scientific: 125 K
@@ -108,12 +100,10 @@ saturn:
   surface_area: 42,612,133,285 km2
   surface_area_imperial: 16,452,636,641 mi2
   surface_area_scientific: 4.2612 x 1010 km2
-  volume: 827,129,915,150,897 km3
-  volume_imperial: 198,439,019,647,006 mi3
-  volume_scientific: 8.2713 x 1014 km3
-  mass: 568,319,000,000,000,000,000,000,000 kg
-  mass_imperial: 1,252,928,923,826,000,000,000,000,000 lbs
-  mass_scientific: 5.6832 x 1026 kg
+  volume: 8.2713 x 1014 km3
+  volume_imperial: 1.98 x 1014 mi3
+  mass: 5.6832 x 1026 kg
+  mass_imperial: 1.25 x 1027 lbs
   effective_temperature: -178 °C
   effective_temperature_imperial: -288 °F
   effective_temperature_scientific: 95 K
