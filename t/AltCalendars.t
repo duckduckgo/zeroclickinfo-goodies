@@ -71,7 +71,7 @@ sub make_structured_answer {
         name => 'Calendar Conversion',
         data => {
             title => $gregorian_year,
-            subtitle => 'Equivalent Gregorian Calendar year'
+            subtitle => "$era_name $era_year - Equivalent Gregorian Year"
         },
          meta => {
             sourceName => "Wikipedia",
