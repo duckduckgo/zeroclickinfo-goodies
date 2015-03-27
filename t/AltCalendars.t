@@ -68,7 +68,7 @@ sub make_structured_answer {
 
     return structured_answer => {
         id => 'altcalendars',
-        name => 'Calendar',
+        name => 'Calendar Conversion',
         data => {
             title => $gregorian_year,
             subtitle => 'Equivalent Gregorian Calendar year'
