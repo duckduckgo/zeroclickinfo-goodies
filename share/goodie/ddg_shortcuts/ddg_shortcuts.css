@@ -1,0 +1,50 @@
+.zci--answer .zero_click_wrapper .zero_click {
+    padding-left: 0px !important;
+    margin-left:  0px !important;
+    margin-right: 0px !important;
+}
+
+.zci--answer .ddg_shortcuts-container {
+    max-height: 52ex;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.zci--answer .ddg_shortcuts-column {
+    width:          45%;
+    display:        inline-block;
+    vertical-align: top;
+}
+
+.zci--answer .ddg_shortcuts-column:first-of-type {
+    margin-right: 56px;
+}
+
+.zci--answer .ddg_shortcuts-column b {
+    line-height: 220%;
+}
+
+.zci--answer table.ddg_shortcuts-table {
+    width: 100%;
+}
+
+.zci--answer table.ddg_shortcuts-table td {
+    padding-right:  10px;
+    padding-bottom: 1ex;
+    vertical-align: top;
+}
+
+.zci--answer table.ddg_shortcuts-table td code {
+    white-space: nowrap;
+    padding:     3px;
+}
+
+.zci--answer table.ddg_shortcuts-table tr td:first-child {
+    width: 72px;
+}
+
+@media (max-width: 400px) {
+    .zci--answer .ddg_shortcuts-column {
+        width: 100%;
+    }
+}

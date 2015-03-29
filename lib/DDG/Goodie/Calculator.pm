@@ -31,7 +31,7 @@ triggers query_nowhitespace => qr<
         [\( \) x X * % + / \^ 0-9 \. , _ \$ -]*
 
         (?(1) (?: -? [0-9 \. , _ ]+ |) |)
-        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | pi | e )+
+        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
