@@ -677,6 +677,15 @@ ddg_goodie_test(
             result    => qr/6,666/
         }
     ),
+    '(0.4e^(0))*cos(0)' => test_zci(
+        '(0.4e^(0))*cos(0)',
+        heading => 'Calculator',
+        structured_answer => {
+            input => ['(0.4e^(0))*cos(0)'],
+            operation => 'Calculate',
+            result => '0.4'
+        }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,
