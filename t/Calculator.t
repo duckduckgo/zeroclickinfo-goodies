@@ -686,6 +686,15 @@ ddg_goodie_test(
             result => '0.4'
         }
     ),
+    '2pi' => test_zci(
+        '2pi',
+        heading => 'Calculator',
+        structure_answer => {
+            input => ['2pi'],
+            operation => 'Calculate',
+            result => "2 * pi = 6.28318530717958"
+        }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,
