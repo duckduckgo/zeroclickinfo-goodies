@@ -678,21 +678,21 @@ ddg_goodie_test(
         }
     ),
     '(0.4e^(0))*cos(0)' => test_zci(
-        '(0.4e^(0))*cos(0)',
+        '(0.4e ^ (0)) * cos(0) = 0.4',
         heading => 'Calculator',
         structured_answer => {
-            input => ['(0.4e^(0))*cos(0)'],
+            input => ['(0.4e ^ (0)) * cos(0)'],
             operation => 'Calculate',
-            result => '0.4'
+            result => qr'0.4'
         }
     ),
     '2pi' => test_zci(
-        '2pi',
+        '2 pi = 6.28318530717958',
         heading => 'Calculator',
-        structure_answer => {
-            input => ['2pi'],
+        structured_answer => {
+            input => ['2 pi'],
             operation => 'Calculate',
-            result => "2 * pi = 6.28318530717958"
+            result => qr"6.28318530717958"
         }
     ),
     '123.123.123.123/255.255.255.255' => undef,
