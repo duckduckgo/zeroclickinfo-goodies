@@ -6,6 +6,7 @@
 	position:relative;
 	text-decoration:none;
 	width:40px;
+    line-height: 1.5;
 }
 
 .zci--answer .zci--fenviewer .chess_board { border: 2px solid #333; }
