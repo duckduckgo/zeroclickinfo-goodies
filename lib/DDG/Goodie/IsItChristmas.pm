@@ -6,7 +6,6 @@ use Date::Calc;
 zci answer_type => "is_it_christmas";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "IsItChristmas";
 description "Answers the question of whether or not it is Christmas with a simple yes or no";
 primary_example_queries "is it christmas";
@@ -23,8 +22,6 @@ triggers any => "isitchristmas", "is it christmas";
 # Handle statement
 handle remainder => sub {
     my ($y, $m, $d) = Date::Calc::Today();
-    print($m);
-    print($d);
 
     if ($m == 12 && $d == 25) {
         return "Yes";
