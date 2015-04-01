@@ -106,7 +106,6 @@ handle query_lc => sub {
             },
             templates => {
                 group => 'base',
-                detail => 0,
                 options => {
                     content => 'DDH.solar_system.content',
                 }

@@ -1,4 +1,4 @@
-.zci--answer .zci--objects .objects--objectImage {
+#zci-solar_system .zci--objects .objects--objectImage {
     height: 60px;
     width: 60px;
     display: table-cell;
@@ -9,20 +9,20 @@
     text-align: center;
 }
 
-.zci--answer .zci--objects .objects--objectAttribute {
+#zci-solar_system .zci--objects .objects--objectAttribute {
     font-size: 1.4em;
     font-weight: 700;
     line-height: 1.2;
     display:block;
 }
 
-.zci--answer .zci--objects .objects--objectName {
+#zci-solar_system .zci--objects .objects--objectName {
     font-size: 15px;
     display:inline-block;
     font-weight: 500;
-}
+} 
 
-.zci--answer .zci--objects .objects--info {
+#zci-solar_system .zci--objects .objects--info {
     height: 60px;
     display: table-cell;
     vertical-align: middle;
