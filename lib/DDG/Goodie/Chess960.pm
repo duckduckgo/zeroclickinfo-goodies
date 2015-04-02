@@ -3,6 +3,7 @@ package DDG::Goodie::Chess960;
 
 use strict;
 use DDG::Goodie;
+use DDG::Goodie::FenViewer qw(parse_position draw_chessboard_html draw_chessboard_ascii);
 
 triggers any => 'random', 'chess960';
 zci is_cached => 0;
@@ -115,6 +116,13 @@ RBKRNQBN RKRBNQBN RKRNQBBN RKRNQNBB BBRKRNNQ BRKBRNNQ BRKRNBNQ BRKRNNQB RBBKRNNQ
 RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ RKRNNQBB
 );
 
+sub make_fen {
+    my ($position) = @_;
+    my ($position_lc) = lc$position;
+    my ($fen) = "${position_lc}/pppppppp/8/8/8/8/PPPPPPPP/${position}";
+    return parse_position($fen);
+}
+
 handle query => sub {
     # Ensure rand is seeded for each process
     srand();
@@ -124,29 +132,17 @@ handle query => sub {
     return unless ($query =~ /\bchess960\b/i &&
             ($query =~ /\brandom\b/i || (($pos) = $query =~ /\b(\d+)\b/))) ;
 
-
     my $index = ($pos && 1 <= $pos && $pos <= 960) ? $pos - 1 : int rand @all_positions;
 
     my $position = $all_positions[$index];
+    
+    my @fen = make_fen($position);
 
     my $position_num = $index + 1;
-
-    my $output = "Position " . $position_num . ":\n" .
-                 "White: " . join(" ", split("", $position)) . "\n" .
-                 "       " . "P " x 8 . "\n" .
-                 "Black: " . join(" ", split("", $position)) . "\n" .
-                 "       " . "P " x 8 . "\n\n" .
-                 "(where B is for bishop,\n" .
-                 "       K is for king,\n" .
-                 "       N is for knight,\n" .
-                 "       Q is for queen,\n" .
-                 "       R is for rook, and\n" .
-                 "       P is for pawn)";
-    my $position_lc = lc $position;
-    my $html = "<img src='/iu/?u=http://www.apronus.com/chess/stilldiagram.php?d=P${position}PPPPPPPP________________________________pppppppp${position_lc}0.jpg&w=8&h=8'/>";
-
+    
+    my $html = draw_chessboard_html(@fen);
     $query =~ s/^ chess960|chess960 $|chess960 //i;
-    return $output, html => $html, heading => "Position $position_num (Chess960)";
+    return draw_chessboard_ascii(@fen), html => $html, heading => "Position $position_num (Chess960)";
 };
 
 1;

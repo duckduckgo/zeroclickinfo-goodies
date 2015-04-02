@@ -8,6 +8,8 @@ use DDG::Goodie;
 use strict;
 use Scalar::Util qw(looks_like_number);
 use Try::Tiny;
+use Exporter qw(import);
+our @EXPORT_OK = qw(parse_position draw_chessboard_html draw_chessboard_ascii);
 
 zci answer_type => "fen_viewer";
 zci is_cached   => 1;
