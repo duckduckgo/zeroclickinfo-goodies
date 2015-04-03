@@ -30,7 +30,7 @@ my $objects = Load(scalar share('objects.yml')->slurp);
 # Handle statement
 handle query_lc => sub {
   # Declare vars
-  my ($attribute, $attributesString, $result, $objectObj, $image, $width, $height, $objectName, $saturn);
+  my ($attribute, $attributesString, $result, $objectObj, $objectName, $saturn);
   
   s/^what is (the)|(of)|(object)//g; # Remove common words, strip question marks
 
