@@ -85,28 +85,30 @@ handle query_lc => sub {
   $height = ($_ eq "saturn") ? 28 : 40;
   $image = goodie_img_tag({filename=>"/img/".$_.".png", height => $height, width => $width});
   return unless $image;
+  
+  my %results = (attributes => $result, operation => $operation, image => $image);
+  my %hash = ( foo => 42, bar => 43, baz => 44 );
 
   #Return result and html
-  return $operation." is ".$result, pretty_output($result, $operation, $image);
+      return $operation." is ".$result,
+        structured_answer => {
+            id => 'solar_system',
+            name => 'Answer',
+            data => {
+                attributes => $result,
+                operation => $operation,
+                image => $image
+            },
+            meta => {
+                sourceUrl => "https://solarsystem.nasa.gov/planets/index.cfm",
+                sourceName => "NASA"
+            },
+            templates => {
+                group => 'base',
+                options => {
+                    content => 'DDH.solar_system.content',
+                }
+            }
+        };
 };
-
-
-#Build HTML output
-sub pretty_output {
-  my ($result, $operation, $image) = @_;
-  my $html = "<div class=\"zci--objects\">";
-  $html .= "<span class=\"objects--objectImage\">";
-  $html .= $image;
-  $html .= "</span>";
-  $html .= "<span class=\"objects--info\">";
-  $html .= "<span class=\"text--primary objects--objectAttribute\">";
-  $html .= $result;
-  $html .= "</span>";
-  $html .= "<span class=\"text--secondary objects--objectName\">";
-  $html .= $operation;
-  $html .= "</span>";
-  $html .= "</span>";
-  $html .= "</div>";
-  return (html => $html);
-}
 1;
