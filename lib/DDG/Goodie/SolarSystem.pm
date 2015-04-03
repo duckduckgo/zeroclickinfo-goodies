@@ -2,7 +2,6 @@ package DDG::Goodie::SolarSystem;
 # ABSTRACT: Return various attributes of a object
 
 use DDG::Goodie;
-with 'DDG::GoodieRole::ImageLoader';
 use YAML::XS qw( Load );
 use POSIX;
 
@@ -31,7 +30,7 @@ my $objects = Load(scalar share('objects.yml')->slurp);
 # Handle statement
 handle query_lc => sub {
   # Declare vars
-  my ($attribute, $attributesString, $result, $objectObj, $image, $width, $height);
+  my ($attribute, $attributesString, $result, $objectObj, $image, $width, $height, $objectName, $saturn);
   
   s/^what is (the)|(of)|(object)//g; # Remove common words, strip question marks
 
@@ -50,6 +49,7 @@ handle query_lc => sub {
   return unless $_; # Return if empty query
   $objectObj = $objects->{$_}; # Get object data
   return unless $objectObj; # Return if we don't have a valid object
+  $objectName = $_;
 
   # Switch to imperial for non-metric countries
   # https://en.wikipedia.org/wiki/Metrication
@@ -79,15 +79,8 @@ handle query_lc => sub {
     $result =~ s/x/&times;/;
   }
 
-  #Change width for saturn image
-  #Ensure we have a vaild image
-  $width = ($_ eq "saturn") ? 45 : 40;
-  $height = ($_ eq "saturn") ? 28 : 40;
-  $image = goodie_img_tag({filename=>"/img/".$_.".png", height => $height, width => $width});
-  return unless $image;
-  
-  my %results = (attributes => $result, operation => $operation, image => $image);
-  my %hash = ( foo => 42, bar => 43, baz => 44 );
+  #$saturn var is provided to handlebars template to set size of image
+  $saturn = ($objectName eq "saturn") ? 1 : 0;
 
   #Return result and html
       return $operation." is ".$result,
@@ -97,7 +90,8 @@ handle query_lc => sub {
             data => {
                 attributes => $result,
                 operation => $operation,
-                image => $image
+                imageName => $objectName,
+                saturn => $saturn
             },
             meta => {
                 sourceUrl => "https://solarsystem.nasa.gov/planets/index.cfm",
@@ -105,6 +99,7 @@ handle query_lc => sub {
             },
             templates => {
                 group => 'base',
+                detail_mobile => 'DDH.solar_system.mobile',
                 options => {
                     content => 'DDH.solar_system.content',
                 }
