@@ -18,11 +18,10 @@
 
 .zci--solar_system .objects--objectName {
     font-size: 15px;
-    display:inline-block;
     font-weight: 500;
 } 
 
-.zci-solar_system .zci--objects .objects--info {
+.zci--solar_system .objects--info {
     height: 60px;
     display: table-cell;
     vertical-align: middle;

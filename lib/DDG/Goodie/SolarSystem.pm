@@ -90,7 +90,6 @@ handle query_lc => sub {
   my %hash = ( foo => 42, bar => 43, baz => 44 );
 
   #Return result and html
- 
       return $operation." is ".$result,
         structured_answer => {
             id => 'solar_system',
