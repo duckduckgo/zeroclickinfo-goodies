@@ -20,6 +20,7 @@ my $templateData = {
             },
             templates => {
                 group => 'base',
+                detail_mobile => 'DDH.solar_system.mobile',
                 options => {
                     content => 'DDH.solar_system.content',
                 }
