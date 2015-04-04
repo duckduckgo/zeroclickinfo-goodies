@@ -11,13 +11,13 @@ zci is_cached   => 1;
 
 # This goodie always returns the same answer whenever its triggered
 my $test_zci = test_zci(
-        qr/^Session Control.*Window Control.*Pane Control.*/s,
+        qr/^Session Control.*Main Commands.*Window Commands.*Copying and Scrolling.*/s,
 	    heading => 'GNU Screen Cheat Sheet',
 		html => qr#<div(.*<table.*<tr.*<td.*</table.*)+</div>$#s,
 );
 
 ddg_goodie_test(
-	[ 'DDG::Goodie::GnuScreenCheatSheet' ],
+  [ 'DDG::Goodie::GnuScreenCheatSheet' ],
     'screen cheat sheet'      => $test_zci,
     'screen cheatsheet'       => $test_zci,
     'screen commands'         => $test_zci,

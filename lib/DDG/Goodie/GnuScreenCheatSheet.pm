@@ -37,8 +37,8 @@ attribution github  => ["dnmfarrell",            "David Farrell"],
             twitter => ["perltricks",           "David Farrell"],
             web     => ["http://perltricks.com", "David Farrell"];
 
-my $HTML = share("tmux_cheat_sheet.html")->slurp(iomode => '<:encoding(UTF-8)');
-my $TEXT= share("tmux_cheat_sheet.txt")->slurp(iomode => '<:encoding(UTF-8)');
+my $HTML = share("gnuscreen_cheat_sheet.html")->slurp(iomode => '<:encoding(UTF-8)');
+my $TEXT= share("gnuscreen_cheat_sheet.txt")->slurp(iomode => '<:encoding(UTF-8)');
 
 handle remainder => sub {
     return
