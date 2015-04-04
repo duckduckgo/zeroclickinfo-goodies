@@ -39,10 +39,10 @@ handle remainder => sub {
     my $html_output = '';
     my $text_output = '';
     my $heading = 'Cheat sheets on DuckDuckGo';
+    
     foreach my $cheatsheet (sort keys %mapping) {
         $html_output .= '<p><a href="' . $mapping{$cheatsheet} . '">' . $cheatsheet . '</a></p>';
         $text_output .= $cheatsheet . ' - ' . $mapping{$cheatsheet} . '\n';
-        
     }
 
     return answer => $text_output, html => $html_output, heading => $heading;
