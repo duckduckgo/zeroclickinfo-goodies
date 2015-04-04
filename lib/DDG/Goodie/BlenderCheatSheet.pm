@@ -10,9 +10,9 @@ zci is_cached   => 1;
 
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "BlenderCheatSheet";
-description "Blender most common shortucts";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
+description "Blender most common shortcuts";
+primary_example_queries "blender shortcuts", "blender key bindings";
+# secondary_example_queries "optional -- demonstrate any additional triggers";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#category
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
 category "cheat_sheets";
@@ -22,17 +22,16 @@ attribution github => ["xuv", "Julien Deswaef"],
             twitter => "xuv";
 
 # Triggers
-triggers any => "blender help", "blender shortcuts", "blender cheat sheet", "blender key bindings";
+triggers any => "blender help", "blender shortcuts", "blender cheat sheet", "blender cheatsheet", "blender key bindings";
 
-# Handle statement
+my $HTML = share("blender_cheat_sheet.html")->slurp(iomode => "<:encoding(UTF-8)");
+my $TEXT = share("blender_cheat_sheet.txt")->slurp(iomode => "<:encoding(UTF-8)");;
+
 handle remainder => sub {
-
-    # optional - regex guard
-    # return unless qr/^\w+/;
-
-    return unless $_; # Guard against "no answer"
-
-    return $_;
+    return
+        heading => "Blender Cheat Sheet",
+        html    => $HTML,
+        answer  => $TEXT,
 };
 
 1;

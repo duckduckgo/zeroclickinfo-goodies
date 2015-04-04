@@ -1,0 +1,236 @@
+Basics
+ 
+Right click			    select
+Middle click		    pan
+Mouse wheel			    zoom
+Shift+a			        add object
+x			            delete
+Spacebar			    search for function
+t			            toolbar
+n			            properties
+Ctrl+s			        save file
+F12			            render image
+Ctrl+F12			    render animation
+Esc			            stop render
+F3			            save render
+F11			            show last render
+Crtl+z			        undo
+Ctrl+Shift+z		    redo
+
+
+General
+ 
+Shift+d			        duplicate
+m			            move to layer
+Ctrl+m			        mirror
+h			            hide
+Alt+h			        unhide
+Crtl+Shift+Alt+c	    move origin point
+Ctrl+p			        parent to
+Alt+p			        clear parent
+Ctrl+t			        track to
+Alt+t			        clear track
+Shift+c			        reset 3D cursor
+Ctrl+Spacebar		    turn widget on/off
+Ctrl+g			        add to group
+
+
+Movements
+ 
+g			            move
+r			            rotate
+s			            scale
+[hold] Shift		    precise movement
+[hold] Ctrl			    increment movement
+Middle click or x/y/z	lock to axis
+
+
+Navigation
+ 
+Numpad 7			    top view
+Numpad 1			    front view
+Numpad 3			    side view
+Numpad 0			    camera view
+Numpad .			    zoom to object
+Shift+f			        fly mode
+
+
+Selection
+ 
+Right click			    select object
+Shift+Right click		select multiple
+a			            (de-)select all
+Alt+Right click			select object behind
+l			            select linked
+Ctrl+l			        select all linked
+b			            box select
+c			            circle select
+Ctrl+Click			    lasso tool
+Ctrl+i			        inverse selection
+
+
+Fly mode
+ 
+Shift+f			        start fly mode
+Mouse wheel [up]		accelerate
+Mouse wheel [down]		decelerate
+Middle click			pan
+w			            fly forward
+s			            fly backwards
+a			            fly left
+d			            fly right
+r			            fly up
+f			            fly down
+
+
+Switching modes
+ 
+Tab			            edit/object mode
+v			            vertex paint mode
+Ctrl+Tab			    weight paint mode
+Ctrl+Left/Right arrow	switch workspace
+Shift+F2			    logic editor
+Shift+F3			    node editor
+Shift+F4			    console
+Shift+F5			    3D viewport
+Shift+F6			    F-curve editor
+Shift+F7			    properties
+Shift+F8			    video sequence editor
+Shift+F9			    outliner
+Shift+F10			    UV/image editor
+Shift+F11			    text editor
+
+
+Modelling
+ 
+f			            make face
+w			            subdivide
+e			            extrude
+v			            rip
+p			            seperate
+Ctrl+r			        create loop cut
+o			            proportional editing
+Alt+Right click			select edge loop
+Ctrl+e			        make seam/sharp
+Alt+m			        merge vertices
+Ctrl+m			        mirror
+Alt+s			        shrink/flatten
+k+Click			        knife
+Alt+f			        fill
+Shift+Alt+f			    beauty fill
+Ctrl+1/2/3/4			add subdivision level
+
+
+Editing curves
+ 
+Alt+c			        close path
+Ctrl+Click			    add handle
+w			            subdivide
+Ctrl+t			        tilt
+Alt+t			        clear tilt
+h			            change handle to bezier
+v			            change handle to vector
+Shift+h			        reset to default handle
+
+
+Sculpting
+ 
+f			            change brush size
+Shift+f			        change brush strength
+Ctrl+f			        rotate brush texture
+
+
+Animation
+ 
+Alt+a			        play/stop animation
+Alt+Shift+a			    play animation in reverse
+Right arrow			    next frame
+Left arrow			    previous frame
+Up arrow			    forward 10 frames
+Down arrow			    back 10 frames
+Shift+Left arrow		jump to start point
+Shift+Right arrow		jump to end point
+Alt+Mouse wheel			scroll through frames
+i			            insert keyframe
+Alt+i			        remove keyframe
+Ctrl+Page up			jump to next keyframe
+Ctrl+Page down			jump to previous keyframe
+
+
+Node Editor
+ 
+Shift+a			        add node
+Ctrl+Left mouse			cut links
+h			            (un-)hide node
+Ctrl+g			        make group
+ctrl+g			        ungroup
+Tab			            edit group
+Alt+Middle mouse		move packground
+v			            zoom in background
+Alt+v			        zoom out background
+n			            properties
+
+
+Armatures
+ 
+e/Ctrl+Click			add bone
+Ctrl+r			        rotate
+Ctrl+n			        recalculate roll
+Ctrl+Alt+a			    align bones
+m			            move to bone layers
+Shift+m			        View bone layers
+Shift+w			        set bone flag
+Alt+f			        switch bone direction
+]/[			            scroll hierarchy
+Shift+]/[			    select hierarchy
+l			            select connected
+
+
+Pose mode
+ 
+Ctrl+a			        apply pose
+Alt+r			        clear pose rotation
+Alt+l			        clear pose location
+Alt+s			        clear pose scale
+Ctrl+c			        copy pose
+Ctrl+v			        paste pose
+Shift+i			        add IK
+Ctrl+Alt+i			    remove IK
+Ctrl+g			        add to bone group
+Alt+e			        relax pose
+
+
+Timeline
+ 
+s			            set start frame
+e			            set end frame 
+Home			        show all frames
+m			            add marker
+Right click [drag]		move marker
+Ctrl+t			        toggle frames/seconds
+
+
+Video Sequence Editor
+ 
+Page up			        next strip
+Page down			    previous strip
+k			            split strips
+Shift-l			        lock strip
+Shift+Alt+l			    unlock strip
+Ctrl+c			        copy strip
+Ctrl+v			        paste strip
+y			            seperate images
+Shift+s			        snap strip to scrubber
+
+
+Advanced
+ 
+Shift+F1			    append file
+Alt+F11			        fullscreen mode
+Ctrl+Up arrow			maximize subwindow
+Ctrl+o			        change active camera
+j			            use render buffer
+w			            only render selected
+Shift+b			        only render portion
+Ctrl+u			        save over default scene
+Ctrl+F4			        make screen cast

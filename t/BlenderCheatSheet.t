@@ -9,14 +9,12 @@ zci answer_type => "blender_cheat_sheet";
 zci is_cached   => 1;
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::BlenderCheatSheet )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => test_zci('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    [ 'DDG::Goodie::BlenderCheatSheet' ],
+    "blender cheat sheet"     => $test_zci,
+    "blender cheatsheet"     => $test_zci,
+    "blender shortcuts" => $test_zci,
+    "blender key bindings"       => $test_zci,
+    "blender help"        => $test_zci
 );
 
 done_testing;
