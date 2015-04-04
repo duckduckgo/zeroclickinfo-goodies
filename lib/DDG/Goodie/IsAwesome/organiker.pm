@@ -1,47 +1,25 @@
 package DDG::Goodie::IsAwesome::organiker;
-# ABSTRACT: Write an abstract here
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
+# ABSTRACT: organiker's first Goodie
 
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_organiker";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "IsAwesome organiker";
-description "Succinct explanation of what this instant answer does";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
-# category "";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-# topics "";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/organiker.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
+description "My first Goodie, it lets the world know that organiker is awesome";
+primary_example_queries "duckduckhack organiker";
+category "special";
+topics "special_interest", "geek";
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/GitHubUsername.pm";
+attribution github => ["https://github.com/organiker", "organiker"],
+            twitter => "jiyeonorganiker";
 
-# Triggers
-# triggers any => "triggerWord", "trigger phrase";
 triggers start => "duckduckhack organiker";
 
-# Handle statement
-# handle remainder => sub {
-
-#     # optional - regex guard
-#     # return unless qr/^\w+/;
-
-#     return unless $_; # Guard against "no answer"
-
-#     return $_;
-# };
-
 handle remainder => sub {
-
+    return if $_;
     return "organiker is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
-
-
-
 
 1;
