@@ -1,17 +1,19 @@
-<span class="objects--objectImage">
-    {{#if saturn}}    
-        <img width="45px" height="28px" src="share/goodie/solar_system/img/{{imageName}}.png">
-    {{else}}
-        <img width="40px" height="40px" src="share/goodie/solar_system/img/{{imageName}}.png">
-    {{/if}}
-</span>
+<div class="objects--body">
+    <span class="objects--objectImage">
+        {{#if saturn}}    
+            <img width="45px" height="28px" src="share/goodie/solar_system/img/{{imageName}}.png">
+        {{else}}
+            <img width="40px" height="40px" src="share/goodie/solar_system/img/{{imageName}}.png">
+        {{/if}}
+    </span>
 
-<span class="objects--info">
-    <span class="text--primary objects--objectAttribute">
-        {{{attributes}}}
+    <span class="objects--info">
+        <span class="text--primary objects--objectAttribute">
+            {{{attributes}}}
+        </span>
+        
+        <span class="text--secondary objects--objectName">
+            {{operation}}
+        </span>
     </span>
-    
-    <span class="text--secondary objects--objectName">
-        {{operation}}
-    </span>
-</span>
+</div>
