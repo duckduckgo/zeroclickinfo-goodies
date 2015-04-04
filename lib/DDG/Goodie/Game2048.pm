@@ -1,4 +1,4 @@
-package DDG::Goodie::2048;
+package DDG::Goodie::Game2048;
 # Play (128|256|512|1024|2048|4096|8192) online!!
 
 use DDG::Goodie;
@@ -12,13 +12,12 @@ primary_example_queries "2048 game", "play 512";
 secondary_example_queries "play 4096";
 category "entertainment";
 topics "gaming";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/2048.pm";
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Game2048.pm";
 attribution github => ["https://github.com/puskin94", "puskin"];
 
-# Triggers
 triggers any => "game", "play";
 
-# Handle statement
+
 handle remainder => sub {
 
 	(my $inputNum, my $dimension) = split/ /;
@@ -41,20 +40,23 @@ handle remainder => sub {
 	}
 
 
-	my $play = '<i><b>Play <span id="game">'. $inputNum .'</span> <br><br><span id="dimension">'. $dimension .'</span> x '. $dimension. '</b></i>';
 	my $text = 'Play '.$inputNum;
+
 
 	return $text,
 	structured_answer => {
-		id => '2048',
+		id => 'game2048',
 		name => '2048',
-		data => $play, # I don't know how push this to the html
+		data => {
+			inputNum => $inputNum,
+			dimension => $dimension
+		},
 		templates => {
 			group => 'base',
-			detail => 0
-			#options => {           this is not useful, duckpan takes the content.handlebars
-			#   content => $play.'Goodie.2048.content'
-			#}
+			detail => 0,
+			options => {
+				content => 'DDH.game2048.content'
+			}
 		}
 	};
 
