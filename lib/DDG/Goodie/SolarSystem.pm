@@ -4,6 +4,7 @@ package DDG::Goodie::SolarSystem;
 use DDG::Goodie;
 use YAML::XS qw( Load );
 use POSIX;
+use List::Util qw'first';
 
 zci answer_type => "solarsystem";
 zci is_cached   => 1;
@@ -22,6 +23,8 @@ my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'ur
 
 my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'area');
 
+my @unitTriggers = ( 'kg', 'km2', 'km3', 'km', 'mi2', 'mi3', 'mi', 'lbs', 'metric', 'imperial');
+
 triggers any => @triggers;
 
 # Load object data 
@@ -30,20 +33,32 @@ my $objects = Load(scalar share('objects.yml')->slurp);
 # Handle statement
 handle query_lc => sub {
   # Declare vars
-  my ($attribute, $attributesString, $result, $objectObj, $objectName, $saturn);
+  my ($attribute, $attributesString, $unitsString, $result, $objectObj, $objectName, $saturn, $unitType);
   
   s/^what is (the)|(of)|(object)//g; # Remove common words, strip question marks
 
   $attributesString = join('|', @attributesArray); 
   return unless /$attributesString/; # Ensure we match at least one attribute, eg. size, volume
 
-  # Switch attribute depending on search query
+  $unitsString = join('|', @unitTriggers); 
+
+  # Set attribute depending on search query
   if(m/size|radius/) {$attribute = "radius"}
   elsif(m/volume/) {$attribute = "volume"}
   elsif(m/mass/) {$attribute = "mass"}
   elsif(m/area/) {$attribute = "surface_area"}
 
   s/$attributesString//g; # Remove attributes
+
+  # Switch unit type based on user input
+  # kg, km, metric | lbs mi imperial
+  if(m/kg|km\d?|metric/) {
+    $unitType = $attribute;
+  } elsif (m/lbs|mi\d?|imperial/) {
+    $unitType = $attribute."_imperial";
+  } 
+
+  s/$unitsString//g; # Remove unit/unit type
   s/^\s+|\s+$//g; # Trim
 
   return unless $_; # Return if empty query
@@ -53,11 +68,17 @@ handle query_lc => sub {
 
   # Switch to imperial for non-metric countries
   # https://en.wikipedia.org/wiki/Metrication
-  if ($loc->country_code =~ m/US|MM|LR/i) {
-    $result = $objectObj->{$attribute."_imperial"};
-  } else {
-    $result = $objectObj->{$attribute};
+  if (!$unitType)
+  {
+    if ($loc->country_code =~ m/US|MM|LR/i) {
+      $unitType = $attribute."_imperial";
+    } else {
+      $unitType = $attribute;
+    }
   }
+
+  # Get correct unit type 
+  $result = $objectObj->{$unitType};
   
   # Convert flag surface_area = Surface Area
   if($attribute =~ /_/ ) { $attribute = join ' ', map ucfirst lc, split /[_]+/, $attribute; }

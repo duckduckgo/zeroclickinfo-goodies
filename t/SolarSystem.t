@@ -54,7 +54,7 @@ ddg_goodie_test(
     
     # Unit type - imperial
     "size earth imperial" => test_zci("Earth - Radius is 3,958.8 mi", structured_answer => $templateData),
-    'volume of mars imperial' => test_zci("Mars - Volume is 163,115,609,799 km<sup>3</sup>",  structured_answer => $templateData),
+    'volume of mars imperial' => test_zci("Mars - Volume is 39,133,515,914 mi<sup>3</sup>",  structured_answer => $templateData),
 
     # Imperial
 
