@@ -6,74 +6,74 @@
   margin-right: 0px !important;
 }
 
-.zci--answer .tmux-container {
+.zci--answer .chrome-container {
   max-height: 45ex;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.zci--answer .tmux-column {
+.zci--answer .chrome-column {
   width: 48%;
   display: inline-block;
   vertical-align: top;
 }
 
-.tmux-column:first-child {
+.chrome-column:first-child {
   margin-right: 1em;
 }
 
-.tmux-column b {
+.chrome-column b {
   line-height: 220%;
 }
 
-.zci--answer  table.tmux-table {
+.zci--answer  table.chrome-table {
   width: 100%;
   margin-bottom: 3ex;
 }
 
-.zci--answer  table.tmux-table td {
+.zci--answer  table.chrome-table td {
   padding-right: 1ex;
   vertical-align: top;
 }
-.zci--answer  table.tmux-table td code {
+.zci--answer  table.chrome-table td code {
   white-space: nowrap;
 }
 
   @media (max-width: 400px) {
-    .zci--answer .tmux-column {
+    .zci--answer .chrome-column {
       width: 100%;
     }
   }
 
 </style>
 
-<div class="tmux-container">
+<div class="chrome-container">
 
-  <div class="tmux-column">
+  <div class="chrome-column">
 
     <b>Session Control (from the command line)</b>
-    <table class="tmux-table">
+    <table class="chrome-table">
       <tr>
         <td>
-          <code>tmux</code>
+          <code>chrome</code>
         </td>
         <td>Start a new session</td>
       </tr>
       <tr>
         <td>
-          <code>tmux attach</code>
+          <code>chrome attach</code>
         </td>
         <td>Re-attach a detached session</td>
       </tr>
       <tr>
         <td>
-          <code>tmux attach -d</code>
+          <code>chrome attach -d</code>
         </td>
         <td>Re-attach a detached session (and detach it from elsewhere)</td>
       </tr>
     </table>
     <b>Pane Control</b>
-    <table class="tmux-table">
+    <table class="chrome-table">
 
       <tr>
         <td>
@@ -132,9 +132,9 @@
     </table>
   </div>
 
-  <div class="tmux-column">
+  <div class="chrome-column">
     <b>Window Control</b>
-    <table class="tmux-table">
+    <table class="chrome-table">
       <tr>
         <td>
           <code>Ctrl-B c</code>
@@ -162,7 +162,7 @@
     </table>
 
     <b>Copy-Mode (Emacs)</b>
-    <table class="tmux-table">
+    <table class="chrome-table">
       <tr>
         <td>
           <code>Ctrl-B [</code>
@@ -220,7 +220,7 @@
     </table>
 
     <b>Copy-Mode (vi)</b>
-    <table class="tmux-table">
+    <table class="chrome-table">
       <tr>
         <td>
           <code>Ctrl-B [</code>
