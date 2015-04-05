@@ -18,7 +18,7 @@ attribution github  => ["stevenmg", "Steve Glick"],
             twitter => "stevenmglick";
 
 # Triggers
-triggers any => "isitchristmas", "is it christmas";
+triggers any => "is it christmas", "is it xmas";
 
 # Handle statement
 handle remainder => sub {
