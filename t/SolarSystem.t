@@ -30,7 +30,34 @@ my $templateData = {
 ddg_goodie_test(
     [qw( DDG::Goodie::SolarSystem)],
 
-    #Test Imperial
+    # Metric - using search trigger
+
+    # Unit - km, kg
+    "size earth km" => test_zci("Earth - Radius is 6,371 km", structured_answer => $templateData),
+    'volume of mars km3' => test_zci("Mars - Volume is 163,115,609,799 km<sup>3</sup>",  structured_answer => $templateData),
+    'volume of mars km' => test_zci("Mars - Volume is 163,115,609,799 km<sup>3</sup>",  structured_answer => $templateData),
+    'area of saturn km2' => test_zci("Saturn - Surface Area is 42,612,133,285 km<sup>2</sup>",  structured_answer => $templateData),
+    'mass of neptune kg' => test_zci("Neptune - Mass is 1.024 &times; 10<sup>26</sup> kg",  structured_answer => $templateData),
+
+    # Unit type - metric
+    "size earth metric" => test_zci("Earth - Radius is 6,371 km", structured_answer => $templateData),
+    'volume of mars metric' => test_zci("Mars - Volume is 163,115,609,799 km<sup>3</sup>",  structured_answer => $templateData),
+
+    # Imperial - using search trigger
+
+    # Unit - mi, lbs
+    "size earth mi" => test_zci("Earth - Radius is 3,958.8 mi", structured_answer => $templateData),
+    'volume of mars mi3' => test_zci("Mars - Volume is 39,133,515,914 mi<sup>3</sup>",  structured_answer => $templateData),
+    'volume of mars mi' => test_zci("Mars - Volume is 39,133,515,914 mi<sup>3</sup>",  structured_answer => $templateData),
+    'area of saturn mi' => test_zci("Saturn - Surface Area is 16,452,636,641 mi<sup>2</sup>",  structured_answer => $templateData),
+    'mass of neptune lbs' => test_zci("Neptune - Mass is 2.258 &times; 10<sup>26</sup> lbs",  structured_answer => $templateData),
+    
+    # Unit type - imperial
+    "size earth imperial" => test_zci("Earth - Radius is 3,958.8 mi", structured_answer => $templateData),
+    'volume of mars imperial' => test_zci("Mars - Volume is 163,115,609,799 km<sup>3</sup>",  structured_answer => $templateData),
+
+    # Imperial
+
     "size earth" => test_zci("Earth - Radius is 3,958.8 mi", structured_answer => $templateData),
 
     "what is the size of earth" => test_zci( "Earth - Radius is 3,958.8 mi", structured_answer => $templateData),
@@ -56,7 +83,9 @@ ddg_goodie_test(
     'size of moon' => test_zci("Moon - Radius is 1,079.6 mi",  structured_answer => $templateData),    
 
 
-    #Test Metric
+
+    # Metric - using location (AU)
+
     DDG::Request->new(query_raw => "size earth", location => test_location("au")) => test_zci("Earth - Radius is 6,371 km",  structured_answer => $templateData),
 
     DDG::Request->new(query_raw => "what is the size of earth", location => test_location("au")) => test_zci("Earth - Radius is 6,371 km",  structured_answer => $templateData),
@@ -80,6 +109,8 @@ ddg_goodie_test(
     DDG::Request->new(query_raw => "size of pluto", location => test_location("au")) => test_zci("Pluto - Radius is 1,151 km",  structured_answer => $templateData),
 
     DDG::Request->new(query_raw => "size of moon", location => test_location("au")) => test_zci("Moon - Radius is 1,737.5 km",  structured_answer => $templateData),
+
+    # Do not trigger
 
     'size of tomato' => undef,
     'volume of water' => undef,
