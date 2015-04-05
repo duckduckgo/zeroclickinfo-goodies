@@ -4,7 +4,6 @@ package DDG::Goodie::SolarSystem;
 use DDG::Goodie;
 use YAML::XS qw( Load );
 use POSIX;
-use List::Util qw'first';
 
 zci answer_type => "solarsystem";
 zci is_cached   => 1;
