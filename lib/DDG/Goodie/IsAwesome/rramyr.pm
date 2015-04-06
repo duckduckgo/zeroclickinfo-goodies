@@ -1,4 +1,5 @@
 package DDG::Goodie::IsAwesome::rramyr;
+# ABSTRACT: GitHubrramyr's first Goodie		
 
 use DDG::Goodie;
 
@@ -6,7 +7,7 @@ zci answer_type => "is_awesome_rramyr";
 zci is_cached   => 1;
 
 name "IsAwesome rramyr";
-description "My first Goodie, it lets the world know that GitHubUsername is awesome";
+description "My first Goodie, it lets the world know that rramyr is awesome";
 primary_example_queries "duckduckhack rramyr";
 category "special";
 topics "special_interest", "geek";
