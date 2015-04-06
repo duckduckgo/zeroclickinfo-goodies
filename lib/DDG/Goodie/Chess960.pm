@@ -3,7 +3,7 @@ package DDG::Goodie::Chess960;
 
 use strict;
 use DDG::Goodie;
-use DDG::Goodie::FenViewer qw(parse_position draw_chessboard_html draw_chessboard_ascii);
+with 'DDG::GoodieRole::Chess';
 
 triggers any => 'random', 'chess960';
 zci is_cached => 0;
