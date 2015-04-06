@@ -34,7 +34,7 @@ handle query_lc => sub {
   # Declare vars
   my ($attribute, $attributesString, $unitsString, $result, $objectObj, $objectName, $saturn, $unitType);
   
-  s/^what is (the)|(of)|(object)//g; # Remove common words, strip question marks
+  s/^what is (the)|(of)|(object)|(in)//g; # Remove common words, strip question marks
 
   $attributesString = join('|', @attributesArray); 
   return unless /$attributesString/; # Ensure we match at least one attribute, eg. size, volume
