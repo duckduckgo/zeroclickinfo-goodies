@@ -2,7 +2,7 @@ package DDG::Goodie::IsItChristmas;
 # ABSTRACT: Answers the question of whether or not it is Christmas with a simple yes or no answer
 
 use DDG::Goodie;
-use Date::Calc;
+use DateTime;
 
 zci answer_type => "is_it_christmas";
 zci is_cached   => 1;
