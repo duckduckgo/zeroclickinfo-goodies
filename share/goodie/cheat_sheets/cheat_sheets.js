@@ -16,16 +16,14 @@ DDH.cheat_sheets.build = function(ops) {
          onShow: function() {
             var $dom = $("#zci-cheat_sheets"),
                 $container = $dom.find(".cheatsheet__container"),
-                $more_btn  = $dom.find("#show_more"),
+                $more_btn  = $dom.find(".chomp--link"),
                 $icon = $more_btn.find(".chomp--link__icn"),
                 $more = $more_btn.find(".chomp--link__mr"),
                 $less = $more_btn.find(".chomp--link__ls");
 
             $more_btn.click(function() {
-                $container.toggle("compressed");
-                $more.toggle();
-                $less.toggle();
-                $icon.toggleClass("expand");
+                $dom.toggleClass("has-chomp-expanded");
+                $container.toggleClass("compressed");
             });
          }
     };

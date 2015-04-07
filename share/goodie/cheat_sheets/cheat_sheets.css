@@ -1,16 +1,14 @@
-.zci--cheat_sheets .cheatsheet__container.chomp {
-    max-height: none;
+.zci--cheat_sheets .cheatsheet__container.compressed {
+    max-height: 20em;
 }
 
-.zci--cheat_sheets .cheatsheet__container .cheatsheet__section {
+.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section,
+.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section .g {
     display: none;
 }
 
-.zci--cheat_sheets .cheatsheet__container .cheatsheet__section .g {
-    display: none;
-}
-
-.zci--cheat_sheets.has-chomp-expanded .cheatsheet__container .cheatsheet__section {
+.zci--cheat_sheets .cheatsheet__section,
+.zci--cheat_sheets .cheatsheet__section .g {
     display: inline-block;
 }
 
@@ -24,10 +22,6 @@
 
 .zci--cheat_sheets .cheatsheet__container {
     overflow: hidden;
-}
-
-.zci--cheat_sheets .cheatsheet__container.compressed {
-    height: 15em;
 }
 
 .zci--cheat_sheets .cheatsheet__title {
