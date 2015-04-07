@@ -53,7 +53,7 @@ handle remainder => sub {
 		},
 		templates => {
 			group => 'base',
-			detail => 0,
+			item => 0,
 			options => {
 				content => 'DDH.game2048.content'
 			}
