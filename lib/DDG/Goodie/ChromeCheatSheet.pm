@@ -10,7 +10,7 @@ name "ChromeCheatSheet";
 source "http://chromecheat.blogspot.com/";
 description "Chrome cheat sheet";
 category "cheat_sheets";
-topics "computing", "geek", "browser", "shortcuts";
+topics "programming", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ChromeCheatSheet.pm";
 
 primary_example_queries 'chrome shortcuts', 'chrome cheat sheet', 'chrome keyboard shortcuts';
@@ -20,7 +20,7 @@ triggers startend => (
     'chrome cheat sheet',
     'chrome cheatsheet',
     'google chrome cheat sheet',
-    'chrome help',
+    'help chrome',
     'chrome reference',
     'cheat sheet chrome',
     'cheatsheet chrome',
