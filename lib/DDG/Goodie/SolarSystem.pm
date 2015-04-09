@@ -18,6 +18,9 @@ topics 'special_interest';
 attribution github => ["MrChrisW", "Chris Wilson"],
             web => ["http://chrisjwilson.com", "Chris Wilson"];
 
+# Get Goodie version for use with image paths
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'pluto', 'sun', 'moon');
 
 my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'area');
@@ -111,7 +114,8 @@ handle query_lc => sub {
                 attributes => $result,
                 operation => $operation,
                 imageName => $objectName,
-                saturn => $saturn
+                saturn => $saturn,
+                goodie_version => $goodieVersion
             },
             meta => {
                 sourceUrl => "https://solarsystem.nasa.gov/planets/index.cfm",
