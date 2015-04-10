@@ -18,15 +18,15 @@ attribution github  => [zachthompson => 'Zach Thompson'];
 
 
 triggers startend => (
-	'char', 'chars',
-	'character', 'characters',
+    'char', 'chars',
+    'character', 'characters',
     'cheat sheet', 'cheatsheet',
-	'command', 'commands',
+    'command', 'commands',
     'example', 'examples',
     'guide', 'help',
     'quick reference', 'reference',
     'shortcut', 'shortcuts',
-	'symbol', 'symbols',
+    'symbol', 'symbols',
 );
 
 handle remainder => sub {
@@ -37,19 +37,19 @@ handle remainder => sub {
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
 
-    return 'Vim Cheat Sheet', structured_answer => {
-    	id => 'cheat_sheets',
-		name => 'Cheat Sheet',
-		data => $data,
-		meta => \%{$data->{meta}},
-		templates => {
+    return 'Cheat Sheet', structured_answer => {
+        id => 'cheat_sheets',
+        name => 'Cheat Sheet',
+        data => $data,
+        meta => \%{$data->{meta}},
+        templates => {
             group => 'base',
             item => 0,
             options => {
                 content => 'DDH.cheat_sheets.detail',
                 moreAt => 0
             }
-		}
+        }
     };
 };
 
