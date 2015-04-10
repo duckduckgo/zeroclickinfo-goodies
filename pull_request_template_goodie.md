@@ -54,6 +54,7 @@ Please place an 'X' where appropriate.
         - [] Firefox
         - [] Opera
         - [] IE 10
+        - [] IE 11
 
     - Windows 7
         - [] Google Chrome
@@ -62,10 +63,7 @@ Please place an 'X' where appropriate.
         - [] IE 8
         - [] IE 9
         - [] IE 10
-
-    - Windows XP
-        - [] IE 7
-        - [] IE 8
+        - [] IE 11
 
     - Mac OSX
         - [] Google Chrome
