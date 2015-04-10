@@ -12,8 +12,6 @@ install:
   - cpanm --quiet --notest Dist::Zilla
   - dzil authordeps | grep -ve '^\W' | xargs -n 5 -P 10 cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
   - dzil listdeps | grep -ve '^\W' | cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
-  - cpanm --quiet --notest App::DuckPAN autodie
-  - duckpan DDG
 language: perl
 perl:
   - 5.16
