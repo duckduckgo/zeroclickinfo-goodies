@@ -22,7 +22,7 @@ attribution github => ["xuv", "Julien Deswaef"],
             twitter => "xuv";
 
 # Triggers
-triggers any => "blender help", "blender shortcuts", "blender cheat sheet", "blender cheatsheet", "blender key bindings";
+triggers any => "blender help", "blender shortcuts", "blender cheat sheet", "blender cheatsheet", "blender key bindings", "blender guide", "shortcut blender", "shortcuts blender", "cheatsheet blender", "cheat sheet blender", "key bindings blender", "keybindings blender", "blender keybindings", "guide blender", "help blender";
 
 my $HTML = share("blender_cheat_sheet.html")->slurp(iomode => "<:encoding(UTF-8)");
 my $TEXT = share("blender_cheat_sheet.txt")->slurp(iomode => "<:encoding(UTF-8)");;
