@@ -1,236 +1,236 @@
 Basics
  
-Right click			    Select
-Middle click		    Pan
-Mouse wheel			    Zoom
-Shift + a		        Add object
-x			            Delete
-Spacebar			    Search for function
-t			            Toolbar
-n			            Properties
-Ctrl + s		        Save file
-F12			            Render image
-Ctrl + F12			    Render animation
-Esc			            Stop render
-F3			            Save render
-F11			            Show last render
-Crtl + z		        Undo
-Ctrl + Shift + z	    Redo
+Right click				Select
+Middle click			Pan
+Mouse wheel				Zoom
+Shift + a				Add object
+x						Delete
+Spacebar				Search for function
+t						Toolbar
+n						Properties
+Ctrl + s				Save file
+F12						Render image
+Ctrl + F12				Render animation
+Esc						Stop render
+F3						Save render
+F11						Show last render
+Crtl + z				Undo
+Ctrl + Shift + z		Redo
 
 
 General
  
-Shift + d		        Duplicate
-m			            Move to layer
-Ctrl + m			    Mirror
-h			            Hide
-Alt + h			        Unhide
+Shift + d				Duplicate
+m						Move to layer
+Ctrl + m				Mirror
+h						Hide
+Alt + h					Unhide
 Crtl + Shift + Alt + c	Move origin point
-Ctrl + p			    Parent to
-Alt + p			        Clear parent
-Ctrl + t			    Track to
-Alt + t			        Clear track
-Shift + c			    Reset 3D cursor
-Ctrl + Spacebar		    Turn widget on/off
-Ctrl + g			    Add to group
+Ctrl + p				Parent to
+Alt + p					Clear parent
+Ctrl + t				Track to
+Alt + t					Clear track
+Shift + c				Reset 3D cursor
+Ctrl + Spacebar			Turn widget on/off
+Ctrl + g				Add to group
 
 
 Movements
  
-g			            Move
-r			            Rotate
-s			            Scale
-[hold] Shift		    Precise movement
-[hold] Ctrl			    Increment movement
+g						Move
+r						Rotate
+s						Scale
+[hold] Shift			Precise movement
+[hold] Ctrl				Increment movement
 Middle click or x/y/z	Lock to axis
 
 
 Navigation
  
-Numpad 7			    Top view
-Numpad 1			    Front view
-Numpad 3			    Side view
-Numpad 0			    Camera view
-Numpad .			    Zoom to object
-Shift + f		        Fly mode
+Numpad 7				Top view
+Numpad 1				Front view
+Numpad 3				Side view
+Numpad 0				Camera view
+Numpad .				Zoom to object
+Shift + f				Fly mode
 
 
 Selection
  
-Right click			    Select object
+Right click				Select object
 Shift + Right click		Select multiple
-a			            (De-)Select all
+a						(De-)Select all
 Alt + Right click		Select object behind
-l			            Select linked
-Ctrl + l			    Select all linked
-b			            Box select
-c			            Circle select
+l						Select linked
+Ctrl + l				Select all linked
+b						Box select
+c						Circle select
 Ctrl + Click			Lasso tool
-Ctrl + i			    Inverse selection
+Ctrl + i				Inverse selection
 
 
 Fly mode
  
-Shift + f			    Start fly mode
+Shift + f				Start fly mode
 Mouse wheel [up]		Accelerate
 Mouse wheel [down]		Decelerate
 Middle click			Pan
-w			            Fly forward
-s			            Fly backwards
-a			            Fly left
-d			            Fly right
-r			            Fly up
-f			            Fly down
+w						Fly forward
+s						Fly backwards
+a						Fly left
+d						Fly right
+r						Fly up
+f						Fly down
 
 
 Switching modes
  
-Tab			                Edit/Object mode
-v			                Vertex paint mode
-Ctrl+  Tab			        Weight paint mode
-Ctrl + Left/Right arrow	    Switch workspace
-Shift + F2			        Logic editor
-Shift + F3			        Node editor
-Shift + F4			        Console
-Shift + F5			        3D viewport
-Shift + F6			        F-curve editor
-Shift + F7			        Properties
-Shift + F8			        Video sequence editor
-Shift + F9			        Outliner
-Shift + F10			        UV/image editor
-Shift + F11			        Text editor
+Tab							Edit/Object mode
+v							Vertex paint mode
+Ctrl+  Tab					Weight paint mode
+Ctrl + Left/Right arrow		Switch workspace
+Shift + F2					Logic editor
+Shift + F3					Node editor
+Shift + F4					Console
+Shift + F5					3D viewport
+Shift + F6					F-curve editor
+Shift + F7					Properties
+Shift + F8					Video sequence editor
+Shift + F9					Outliner
+Shift + F10					UV/image editor
+Shift + F11					Text editor
 
 
 Modelling
  
-f			            Make face
-w			            Subdivide
-e			            Extrude
-v			            Rip
-p			            Seperate
-Ctrl + r			    Create loop cut
-o			            Proportional editing
+f						Make face
+w						Subdivide
+e						Extrude
+v						Rip
+p						Seperate
+Ctrl + r				Create loop cut
+o						Proportional editing
 Alt + Right click		Select edge loop
-Ctrl + e			    Make seam/sharp
-Alt + m			        Merge vertices
-Ctrl + m			    Mirror
-Alt + s			        Shrink/flatten
-k + Click			    Knife
-Alt + f			        Fill
-Shift + Alt + f		    Beauty fill
+Ctrl + e				Make seam/sharp
+Alt + m					Merge vertices
+Ctrl + m				Mirror
+Alt + s					Shrink/flatten
+k + Click				Knife
+Alt + f					Fill
+Shift + Alt + f			Beauty fill
 Ctrl + 1/2/3/4			Add subdivision level
 
 
 Editing curves
  
-Alt + c			        Close path
+Alt + c					Close path
 Ctrl + Click			Add handle
-w			            Subdivide
-Ctrl + t			    Tilt
-Alt + t			        Clear tilt
-h			            Change handle to bezier
-v			            Change handle to vector
-Shift + h			    Reset to default handle
+w						Subdivide
+Ctrl + t				Tilt
+Alt + t					Clear tilt
+h						Change handle to bezier
+v						Change handle to vector
+Shift + h				Reset to default handle
 
 
 Sculpting
  
-f			            Change brush size
-Shift + f			    Change brush strength
-Ctrl + f			    Rotate brush texture
+f						Change brush size
+Shift + f				Change brush strength
+Ctrl + f				Rotate brush texture
 
 
 Animation
  
-Alt + a			        Play/Stop animation
+Alt + a					Play/Stop animation
 Alt + Shift + a			Play animation in reverse
-Right arrow			    Next frame
-Left arrow			    Previous frame
-Up arrow			    Forward 10 frames
-Down arrow			    Back 10 frames
+Right arrow				Next frame
+Left arrow				Previous frame
+Up arrow				Forward 10 frames
+Down arrow				Back 10 frames
 Shift + Left arrow		Jump to start point
 Shift + Right arrow		Jump to end point
 Alt + Mouse wheel		Scroll through frames
-i			            Insert keyframe
-Alt + i			        Remove keyframe
+i						Insert keyframe
+Alt + i					Remove keyframe
 Ctrl + Page up			Jump to next keyframe
 Ctrl + Page down		Jump to previous keyframe
 
 
 Node Editor
  
-Shift + a			    Add node
+Shift + a				Add node
 Ctrl + Left mouse		Cut links
-h			            (Un-)Hide node
-Ctrl + g			    Make group
-ctrl + g			    Ungroup
-Tab			            Edit group
+h						(Un-)Hide node
+Ctrl + g				Make group
+ctrl + g				Ungroup
+Tab						Edit group
 Alt + Middle mouse		Move packground
-v			            Zoom in background
-Alt + v			        Zoom out background
-n			            Properties
+v						Zoom in background
+Alt + v					Zoom out background
+n						Properties
 
 
 Armatures
  
 e/Ctrl + Click			Add bone
-Ctrl + r			    Rotate
-Ctrl + n			    Recalculate roll
+Ctrl + r				Rotate
+Ctrl + n				Recalculate roll
 Ctrl + Alt + a			Align bones
-m			            Move to bone layers
-Shift + m			    View bone layers
-Shift + w			    Set bone flag
-Alt + f			        Switch bone direction
-]/[			            Scroll hierarchy
-Shift + ]/[			    Select hierarchy
-l			            Select connected
+m						Move to bone layers
+Shift + m				View bone layers
+Shift + w				Set bone flag
+Alt + f					Switch bone direction
+]/[						Scroll hierarchy
+Shift + ]/[				Select hierarchy
+l						Select connected
 
 
 Pose mode
  
-Ctrl + a			    Apply pose
-Alt + r			        Clear pose rotation
-Alt + l			        Clear pose location
-Alt + s			        Clear pose scale
-Ctrl + c			    Copy pose
-Ctrl + v			    Paste pose
-Shift + i			    Add IK
+Ctrl + a				Apply pose
+Alt + r					Clear pose rotation
+Alt + l					Clear pose location
+Alt + s					Clear pose scale
+Ctrl + c				Copy pose
+Ctrl + v				Paste pose
+Shift + i				Add IK
 Ctrl + Alt + i			Remove IK
-Ctrl + g			    Add to bone group
-Alt + e			        Relax pose
+Ctrl + g				Add to bone group
+Alt + e					Relax pose
 
 
 Timeline
  
-s			            Set start frame
-e			            Set end frame 
-Home			        Show all frames
-m			            Add marker
+s						Set start frame
+e						Set end frame 
+Home					Show all frames
+m						Add marker
 Right click [drag]		Move marker
-Ctrl + t			    Toggle frames/seconds
+Ctrl + t				Toggle frames/seconds
 
 
 Video Sequence Editor
  
-Page up			        Next strip
-Page down			    Previous strip
-k			            Split strips
-Shift + l			    Lock strip
+Page up					Next strip
+Page down				Previous strip
+k						Split strips
+Shift + l				Lock strip
 Shift + Alt + l			Unlock strip
-Ctrl + c			    Copy strip
-Ctrl + v			    Paste strip
-y			            Seperate images
-Shift + s			    Snap strip to scrubber
+Ctrl + c				Copy strip
+Ctrl + v				Paste strip
+y						Seperate images
+Shift + s				Snap strip to scrubber
 
 
 Advanced
  
-Shift + F1			    Append file
-Alt + F11			    Fullscreen mode
+Shift + F1				Append file
+Alt + F11				Fullscreen mode
 Ctrl + Up arrow			Maximize subwindow
-Ctrl + o			    Change active camera
-j			            Use render buffer
-w			            Only render selected
-Shift + b			    Only render portion
-Ctrl + u			    Save over default scene
-Ctrl + F4			    Make screen cast
+Ctrl + o				Change active camera
+j						Use render buffer
+w						Only render selected
+Shift + b				Only render portion
+Ctrl + u				Save over default scene
+Ctrl + F4				Make screen cast
