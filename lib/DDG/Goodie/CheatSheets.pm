@@ -14,19 +14,19 @@ primary_example_queries 'universal help', 'universal cheat sheet', 'universal ex
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CheatSheets.pm';
 category 'cheat_sheets';
 topics qw'computing geek programming sysadmin';
-attribution github  => [zachthompson => 'Zach Thompson'];
-
+attribution github => [zachthompson => 'Zach Thompson'],
+            github => [moollaza => 'Zaahir Moolla'];
 
 triggers startend => (
-	'char', 'chars',
-	'character', 'characters',
+    'char', 'chars',
+    'character', 'characters',
     'cheat sheet', 'cheatsheet',
-	'command', 'commands',
+    'command', 'commands',
     'example', 'examples',
     'guide', 'help',
     'quick reference', 'reference',
     'shortcut', 'shortcuts',
-	'symbol', 'symbols',
+    'symbol', 'symbols',
 );
 
 handle remainder => sub {
@@ -37,19 +37,19 @@ handle remainder => sub {
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
 
-    return 'Vim Cheat Sheet', structured_answer => {
-    	id => 'cheat_sheets',
-		name => 'Cheat Sheet',
-		data => $data,
-		meta => \%{$data->{meta}},
-		templates => {
+    return 'Cheat Sheet', structured_answer => {
+        id => 'cheat_sheets',
+        name => 'Cheat Sheet',
+        data => $data,
+        meta => \%{$data->{meta}},
+        templates => {
             group => 'base',
             item => 0,
             options => {
                 content => 'DDH.cheat_sheets.detail',
                 moreAt => 0
             }
-		}
+        }
     };
 };
 
