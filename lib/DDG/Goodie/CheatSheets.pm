@@ -14,8 +14,8 @@ primary_example_queries 'universal help', 'universal cheat sheet', 'universal ex
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CheatSheets.pm';
 category 'cheat_sheets';
 topics qw'computing geek programming sysadmin';
-attribution github  => [zachthompson => 'Zach Thompson'];
-
+attribution github => [zachthompson => 'Zach Thompson'],
+            github => [moollaza => 'Zaahir Moolla'];
 
 triggers startend => (
     'char', 'chars',
