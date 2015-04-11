@@ -6,19 +6,11 @@ DDH.game2048.build = function(ops) {
     return {
         onShow: function() {
 
-            function stopDefAction(evt) {
-                evt.stopPropagation();
-                evt.preventDefault();
-            }
-
-            var duckbar = document.addEventListener(
-            'keydown', stopDefAction, false);
-
-
             var tempArea = document.getElementById('area');
             var WINNUM = document.getElementById('game').innerHTML;
             var SIZE = parseInt(document.getElementById('dimension').innerHTML);
             var goOn = true;
+            var dir;
             var area = new Array();
             var color = {'' : '#BBADA0',
                         '2' : '#EEE4DA',
@@ -38,21 +30,34 @@ DDH.game2048.build = function(ops) {
             createTable(tempArea);
             start(tempArea,area);
 
-            document.onkeydown = function(event) {
+            document.addEventListener("keydown", function(event){checkMov(event)}, true);
 
+            function checkMov(event) {
                 var move = false;
 
                 if (goOn) {
 
-                    if (event.keyCode == 87 || event.keyCode == 38) { // w or up arrow
-                        move = mov('w', area);
-                    } else if (event.keyCode == 65 || event.keyCode == 37) { // a or left arrow
-                        move = mov('a', area);
-                    } else if (event.keyCode == 83 || event.keyCode == 40) { // s or dowm arrow
-                        move = mov('s', area);
-                    } else if (event.keyCode == 68 || event.keyCode == 39) { // d or right arrow
-                        move = mov('d', area);
+                    switch(event.which) {
+                        case 38: {
+                            dir = 'w';
+                            break;
+                        }
+                        case 37: {
+                            dir = 'a';
+                            break;
+                        }
+                        case 40: {
+                            dir = 's';
+                            break;
+                        }
+                        case 39: {
+                            dir = 'd';
+                            break;
+                        }
+                        default: return;
                     }
+
+                    move = mov(dir,area);
 
                     // if move is true, a move has been made
                     if (move) {
@@ -60,10 +65,10 @@ DDH.game2048.build = function(ops) {
                     }
                 }
 
+                event.defaultPrevented;
             }
 
             function mov(dir, area) {
-                tempArea.focus();
                 var i;
                 var points = 0;
                 var moves = 0;
@@ -124,7 +129,6 @@ DDH.game2048.build = function(ops) {
 
                 // This check is necesary avoiding the appearance of a new value in the area if
                 // no moves was made
-                // alert(flag);
                 return flag;
             }
 
@@ -260,4 +264,3 @@ DDH.game2048.build = function(ops) {
         }
     };
 };
-
