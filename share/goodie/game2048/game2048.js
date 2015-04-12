@@ -4,13 +4,7 @@ DDH.game2048.build = function(ops) {
 
     // Global Variables Declaration
 
-    var tempArea;
-    var container;
-    var WINNUM;
-    var SIZE;
-    var goOn;
-    var area;
-    var color;
+    var tempArea, container, WINNUM, SIZE, goOn, area, color;
 
 
     // This function ( using 'transpose' and 'swapRows' )
@@ -18,11 +12,11 @@ DDH.game2048.build = function(ops) {
 
     function mov(dir, area) {
         tempArea.focus();
-        var i;
-        var points = 0;
-        var moves = 0;
-        var flag = false;
-        var exit;
+        var i,
+            points = 0,
+            moves = 0,
+            flag = false,
+            exit;
 
         if (dir == 'a' || dir == 'd') {
             area = transpose(area);
@@ -105,7 +99,7 @@ DDH.game2048.build = function(ops) {
     // 'area' initialization
 
     function getArea(tempArea, area) {
-        var sub = new Array();
+        var sub = [];
         for (var r = 0; r<SIZE; r++) {
             for (var c = 0; c<SIZE; c++) {
                 sub[c] = $(area).find('tr#'+r).find('td:eq(c)').text();
@@ -151,8 +145,7 @@ DDH.game2048.build = function(ops) {
     function getRand(area) {
 
         var rand=Math.floor(Math.random()*11);
-        var posX;
-        var posY;
+        var posX, posY;
 
         rand = (rand < 10) ? 2 : 4;
 
