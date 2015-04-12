@@ -11,7 +11,6 @@ DDH.game2048.build = function(ops) {
     // moves the numbers
 
     function mov(dir, area) {
-        tempArea.focus();
         var i,
             points = 0,
             moves = 0,
@@ -90,19 +89,19 @@ DDH.game2048.build = function(ops) {
         for (var r = 0; r < SIZE; r++) {
             for (var c = 0; c < SIZE; c++) {
                 val = area[r][c];
-                $('#area tr').eq(r).find('td').eq(c).html(val);
-                $('#area tr').eq(r).find('td').eq(c).css("background-color",color[val]);
+                $(tempArea).find('tr').eq(r).find('td').eq(c).html(val);
+                $(tempArea).find('tr').eq(r).find('td').eq(c).css("background-color",color[val]);
             }
         }
     }
 
     // 'area' initialization
 
-    function getArea(tempArea, area) {
+    function getArea(area) {
         var sub = [];
         for (var r = 0; r<SIZE; r++) {
             for (var c = 0; c<SIZE; c++) {
-                sub[c] = $(area).find('tr#'+r).find('td:eq(c)').text();
+                sub[c] = $(area).eq(r).find('td').eq(c).text();
             }
             area[r] = sub;
             sub = [];
@@ -229,7 +228,7 @@ DDH.game2048.build = function(ops) {
 
 
     function start() {
-        getArea(tempArea,area);
+        getArea(area);
         getRand(area);
     }
 
@@ -237,7 +236,6 @@ DDH.game2048.build = function(ops) {
     return {
         onShow: function() {
 
-            tempArea = $('#area');
             container = $('#2048-area');
             WINNUM = $('#game').html();
             SIZE = parseInt($("#dimension").html(), 10);
@@ -259,6 +257,7 @@ DDH.game2048.build = function(ops) {
                     '8192' : '#AA8B21'};
 
             createTable(container);
+            tempArea = $('#area');
             start(tempArea,area);
 
             $('html').keydown(function(event){
