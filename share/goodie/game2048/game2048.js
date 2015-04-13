@@ -159,7 +159,7 @@ DDH.game2048.build = function(ops) {
     function checkWin(area) {
         for (var row = 0; row < $SIZE; row++) {
             for (var col = 0; col < $SIZE; col++) {
-                if (area[row][col] === $WINNUM) {
+                if (area[row][col] == $WINNUM) {
                     area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
                     area[$SIZE-1][0] = 'W'; area[$SIZE-1][1] = 'I'; area[$SIZE-1][2] = 'N';
                     printArea(area);
@@ -195,9 +195,9 @@ DDH.game2048.build = function(ops) {
         for (var row = 0; row < $SIZE; row++) {
             for (var col = 0; col < $SIZE; col++) {
                 if ((row !== 0 && area[row][col] === area[row-1][col]) ||
-                    (row !== SIZE-1 && area[row][col] === area[row+1][col]) ||
+                    (row !== $SIZE-1 && area[row][col] === area[row+1][col]) ||
                     (col !== 0 && area[row][col] === area[row][col-1]) ||
-                    (col !== SIZE-1 && area[row][col] === area[row][col+1])) {
+                    (col !== $SIZE-1 && area[row][col] === area[row][col+1])) {
 
                     return true;
                 }
