@@ -30,7 +30,7 @@ DDH.game2048.build = function(ops) {
                 if (area[row][col] === "") {
                     moves++;
                 } else {
-
+                    // if a move can be made
                     if (moves !== 0) {
                         area[row-moves][col] = area[row][col];
                         area[row][col] = '';
@@ -38,12 +38,14 @@ DDH.game2048.build = function(ops) {
                     }
                     i = row+1;
                     while(i < $SIZE && exit === false) {
+                        // if numbers can be summed
                         if(area[row-moves][col] === area[i][col]) {
                             area[row-moves][col]*=2;
                             area[i][col]='';
                             points = area[row-moves][col];
                             flag = true; exit = true;
                         } else {
+                            // else quit the while loop
                             if(area[i][col] !== "")
                                 exit = true;
                         }
@@ -65,7 +67,7 @@ DDH.game2048.build = function(ops) {
         printArea(area);
         increasePoints(points);
 
-        if (checkWin(area) || checkLose(area, dir)) {
+        if (checkWin(area) || checkLose(area)) {
             goOn = false;
         }
         // This check is mandatory in order to avoid the appearance of a new
@@ -107,6 +109,72 @@ DDH.game2048.build = function(ops) {
 
     // The two functions below are implemented in order to avoid to make a
     // specific function for every single direction/move
+
+/*
+    Start:
+
+''  ''  2   ''
+
+4   8   ''  ''
+
+2   ''   ''  2
+
+''  ''  ''  ''
+
+Want to make a move to the right: -> or 'd'
+transpose(area) makes the table looks like this:
+
+''  4   2   ''
+
+''  8   ''  ''
+
+2   ''  ''  ''
+
+''  ''  2   ''
+
+swapRows(area) makes the table looks like this:
+
+''  ''  2   ''
+
+2   ''  ''  ''
+
+''  8   ''  ''
+
+''  4   2   ''
+
+movement to the up:
+
+2   8   4   ''
+
+''  4   ''  ''
+
+''  ''  ''  ''
+
+''  ''  ''  ''
+
+
+recall the swapRows(area) function
+
+''  ''  ''  ''
+
+''  ''  ''  ''
+
+''  4   ''  ''
+
+2   8   4   ''
+
+
+recall the transpose(area) function (final state)
+
+''  ''  ''  2
+
+''  ''  4   8
+
+''  ''  ''  4
+
+''  ''  ''  ''
+
+*/
 
     // left and right moves activate this function
 
@@ -174,14 +242,24 @@ DDH.game2048.build = function(ops) {
 
     function checkLose(area) {
         var count = 0;
+        var canDoSomething = false;
         for (var row = 0; row < $SIZE; row++) {
             for (var col = 0; col < $SIZE; col++) {
+                // how many cells are not empty??
                 if (area[row][col] !== '') {
                     count++;
                 }
+                // check all available movements
+                if ((row !== 0 && area[row][col] === area[row-1][col]) ||
+                    (row !== $SIZE-1 && area[row][col] === area[row+1][col]) ||
+                    (col !== 0 && area[row][col] === area[row][col-1]) ||
+                    (col !== $SIZE-1 && area[row][col] === area[row][col+1])) {
+                    canDoSomething = true;
+                }
             }
         }
-        if (count === $SIZE * $SIZE && !canDoSomething(area)) {
+        // if all the cells all full AND no movements are available, returns true
+        if (count === $SIZE * $SIZE && !canDoSomething) {
             area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
             area[$SIZE-1][0] = 'L'; area[$SIZE-1][1] = 'O'; area[$SIZE-1][2] = 'S'; area[$SIZE-1][3] = 'E';
             printArea(area);
@@ -191,22 +269,8 @@ DDH.game2048.build = function(ops) {
         return false;
     }
 
-    function canDoSomething(area) {
-        for (var row = 0; row < $SIZE; row++) {
-            for (var col = 0; col < $SIZE; col++) {
-                if ((row !== 0 && area[row][col] === area[row-1][col]) ||
-                    (row !== $SIZE-1 && area[row][col] === area[row+1][col]) ||
-                    (col !== 0 && area[row][col] === area[row][col-1]) ||
-                    (col !== $SIZE-1 && area[row][col] === area[row][col+1])) {
 
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    // This function creates and prints to page the gaming table
+    // This function creates and prints on page the gaming table
 
     function createTable(container) {
         var nCell = '';
