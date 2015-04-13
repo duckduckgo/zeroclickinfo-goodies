@@ -4,7 +4,7 @@ DDH.game2048.build = function(ops) {
 
     // Global Variables Declaration
 
-    var tempArea, container, WINNUM, SIZE, goOn, area, color;
+    var $tempArea, $container, $WINNUM, $SIZE, $spanPoints, goOn, area;
 
 
     // This function ( using 'transpose' and 'swapRows' )
@@ -17,53 +17,53 @@ DDH.game2048.build = function(ops) {
             flag = false,
             exit;
 
-        if (dir == 'a' || dir == 'd') {
+        if (dir === 'a' || dir === 'd') {
             area = transpose(area);
         }
-        if (dir == 's' || dir == 'd') {
+        if (dir === 's' || dir === 'd') {
             area = swapRows(area);
         }
 
-        for (var c = 0; c<SIZE; c++) {
-            for (var r = 0; r<SIZE; r++) {
+        for (var col = 0; col < $SIZE; col++) {
+            for (var row = 0; row < $SIZE; row++) {
                 exit = false;
-                if (area[r][c] == "") {
+                if (area[row][col] === "") {
                     moves++;
                 } else {
 
-                    if (moves != 0) {
-                        area[r-moves][c] = area[r][c];
-                        area[r][c] = '';
+                    if (moves !== 0) {
+                        area[row-moves][col] = area[row][col];
+                        area[row][col] = '';
                         flag=true;
                     }
-                    i = r+1;
-                    while(i < SIZE && exit == false) {
-                        if(area[r-moves][c]==area[i][c]) {
-                            area[r-moves][c]*=2;
-                            area[i][c]='';
-                            points = area[r-moves][c];
+                    i = row+1;
+                    while(i < $SIZE && exit === false) {
+                        if(area[row-moves][col] === area[i][col]) {
+                            area[row-moves][col]*=2;
+                            area[i][col]='';
+                            points = area[row-moves][col];
                             flag = true; exit = true;
                         } else {
-                            if(area[i][c]!="")
+                            if(area[i][col] !== "")
                                 exit = true;
                         }
                         i++;
                     }
                 }
-                i =0;
+                i = 0;
             }
             moves = 0;
         }
 
-        if (dir == 's' || dir == 'd') {
+        if (dir === 's' || dir === 'd') {
             area = swapRows(area);
         }
-        if (dir == 'a' || dir == 'd') {
+        if (dir === 'a' || dir === 'd') {
             area = transpose(area);
         }
 
         printArea(area);
-        upPoints(points);
+        increasePoints(points);
 
         if (checkWin(area) || checkLose(area, dir)) {
             goOn = false;
@@ -75,10 +75,9 @@ DDH.game2048.build = function(ops) {
 
     // Updates the 'points' div
 
-    function upPoints(points) {
-        var spanPoints = $('.points');
-        var current = parseInt(spanPoints.text());
-        spanPoints.text(current + points);
+    function increasePoints(points) {
+        var current = parseInt($spanPoints.text());
+        $spanPoints.text(current + points);
     }
 
     // After every little table's change, the area is updated.
@@ -86,28 +85,24 @@ DDH.game2048.build = function(ops) {
 
     function printArea(area) {
         var val;
-        for (var r = 0; r < SIZE; r++) {
-            for (var c = 0; c < SIZE; c++) {
-                val = area[r][c];
-                $(tempArea).find('tr').eq(r).find('td').eq(c).html(val);
-                $(tempArea).find('tr').eq(r).find('td').eq(c).css("background-color",color[val]);
-            }
-        }
+        $("td").each(function(idx) {
+            val = area[parseInt(idx / $SIZE, 10)][idx % $SIZE];
+            $(this).html(val).attr("class","val-"+val);
+        });
     }
 
     // 'area' initialization
 
     function getArea(area) {
-        var sub = [];
-        for (var r = 0; r<SIZE; r++) {
-            for (var c = 0; c<SIZE; c++) {
-                sub[c] = $(area).eq(r).find('td').eq(c).text();
-            }
-            area[r] = sub;
+        var sub = [$SIZE];
+        for (var row = 0; row < $SIZE; row++) {
+            $("td").each(function(idx) {
+                sub[idx % $SIZE] = $(this).text();
+            });
+            area[row] = sub;
             sub = [];
         }
     }
-
 
 
     // The two functions below are implemented in order to avoid to make a
@@ -116,11 +111,11 @@ DDH.game2048.build = function(ops) {
     // left and right moves activate this function
 
     function transpose(area) {
-        for (var r = 0; r < SIZE; r++) {
-            for (var c = 0; c < r; c++) {
-                var temp = area[r][c];
-                area[r][c] = area[c][r];
-                area[c][r] = temp;
+        for (var row = 0; row < $SIZE; row++) {
+            for (var col = 0; col < row; col++) {
+                var temp = area[row][col];
+                area[row][col] = area[col][row];
+                area[col][row] = temp;
             }
         }
         return area;
@@ -129,10 +124,10 @@ DDH.game2048.build = function(ops) {
     // down and right moves activate this function
 
     function swapRows(area) {
-        var nArea=new Array();
+        var nArea = [];
 
-        for(i=0;i<SIZE;i++) {
-            nArea[SIZE-1-i]=area[i];
+        for(i = 0;i < $SIZE;i++) {
+            nArea[$SIZE-1-i]=area[i];
         }
         return nArea;
     }
@@ -149,9 +144,9 @@ DDH.game2048.build = function(ops) {
         rand = (rand < 10) ? 2 : 4;
 
         do {
-            posX=Math.floor(Math.random()*SIZE);
-            posY=Math.floor(Math.random()*SIZE);
-        } while( area[posX][posY] != '');
+            posX=Math.floor(Math.random()*$SIZE);
+            posY=Math.floor(Math.random()*$SIZE);
+        } while( area[posX][posY] !== '');
 
         area[posX][posY] = rand;
         printArea(area);
@@ -162,11 +157,11 @@ DDH.game2048.build = function(ops) {
     // prints a congratulation message
 
     function checkWin(area) {
-        for (var r = 0; r<SIZE; r++) {
-            for (var c = 0; c<SIZE; c++) {
-                if (area[r][c] == WINNUM) {
+        for (var row = 0; row < $SIZE; row++) {
+            for (var col = 0; col < $SIZE; col++) {
+                if (area[row][col] === $WINNUM) {
                     area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-                    area[SIZE-1][0] = 'W'; area[SIZE-1][1] = 'I'; area[SIZE-1][2] = 'N';
+                    area[$SIZE-1][0] = 'W'; area[$SIZE-1][1] = 'I'; area[$SIZE-1][2] = 'N';
                     printArea(area);
                     return true;
                 }
@@ -179,16 +174,16 @@ DDH.game2048.build = function(ops) {
 
     function checkLose(area) {
         var count = 0;
-        for (var r = 0; r<SIZE; r++) {
-            for (var c = 0; c<SIZE; c++) {
-                if (area[r][c] != '') {
+        for (var row = 0; row < $SIZE; row++) {
+            for (var col = 0; col < $SIZE; col++) {
+                if (area[row][col] !== '') {
                     count++;
                 }
             }
         }
-        if (count == SIZE*SIZE && !canDoSomething(area)) {
+        if (count === $SIZE * $SIZE && !canDoSomething(area)) {
             area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-            area[SIZE-1][0] = 'L'; area[SIZE-1][1] = 'O'; area[SIZE-1][2] = 'S'; area[SIZE-1][3] = 'E';
+            area[$SIZE-1][0] = 'L'; area[$SIZE-1][1] = 'O'; area[$SIZE-1][2] = 'S'; area[$SIZE-1][3] = 'E';
             printArea(area);
             return true;
         }
@@ -197,12 +192,12 @@ DDH.game2048.build = function(ops) {
     }
 
     function canDoSomething(area) {
-        for (var r = 0; r < SIZE; r++) {
-            for (var c = 0; c < SIZE; c++) {
-                if ((r != 0 && area[r][c] == area[r-1][c]) ||
-                    (r != SIZE-1 && area[r][c] == area[r+1][c]) ||
-                    (c != 0 && area[r][c] == area[r][c-1]) ||
-                    (c != SIZE-1 && area[r][c] == area[r][c+1])) {
+        for (var row = 0; row < $SIZE; row++) {
+            for (var col = 0; col < $SIZE; col++) {
+                if ((row !== 0 && area[row][col] === area[row-1][col]) ||
+                    (row !== SIZE-1 && area[row][col] === area[row+1][col]) ||
+                    (col !== 0 && area[row][col] === area[row][col-1]) ||
+                    (col !== SIZE-1 && area[row][col] === area[row][col+1])) {
 
                     return true;
                 }
@@ -217,10 +212,10 @@ DDH.game2048.build = function(ops) {
         var nCell = '';
         var table = $('<table/>').attr("id","area").attr("class","area");
 
-        for (var i = 0; i < SIZE; i++) {
+        for (var i = 0; i < $SIZE; i++) {
             nCell += '<td></td>';
         }
-        for(var r = 0; r < SIZE; r++){
+        for(var r = 0; r < $SIZE; r++){
             table.append('<tr>' + nCell + '</tr>');
         }
         $(container).append(table);
@@ -236,29 +231,16 @@ DDH.game2048.build = function(ops) {
     return {
         onShow: function() {
 
-            container = $('#2048-area');
-            WINNUM = $('#game').html();
-            SIZE = parseInt($("#dimension").html(), 10);
+            $container = $('#2048-area');
+            $WINNUM = $('#game').html();
+            $SIZE = parseInt($("#dimension").html(), 10);
+            $spanPoints = $('.points');
             goOn = true;
             area = new Array();
-            color = {'' : '#BBADA0',
-                    '2' : '#EEE4DA',
-                    '4' : '#EDE0C8',
-                    '8' : '#F2B179',
-                    '16' : '#F59563',
-                    '32' : '#F67C5F',
-                    '64' : '#F65E3B',
-                    '128' : '#EDCF72',
-                    '256' : '#EDCC61',
-                    '512' : '#EDC850',
-                    '1024' : '#EDC53F',
-                    '2048' : '#EDC22E',
-                    '4096' : '#D5AE29',
-                    '8192' : '#AA8B21'};
 
-            createTable(container);
-            tempArea = $('#area');
-            start(tempArea,area);
+            createTable($container);
+            $tempArea = $('#area');
+            start($tempArea,area);
 
             $('html').keydown(function(event){
 
@@ -269,13 +251,13 @@ DDH.game2048.build = function(ops) {
 
                 if (goOn) {
 
-                    if (event.keyCode == 87 || event.keyCode == 38) { // w or up arrow
+                    if (event.keyCode === 87 || event.keyCode === 38) { // w or up arrow
                         move = mov('w', area);
-                    } else if (event.keyCode == 65 || event.keyCode == 37) { // a or left arrow
+                    } else if (event.keyCode === 65 || event.keyCode === 37) { // a or left arrow
                         move = mov('a', area);
-                    } else if (event.keyCode == 83 || event.keyCode == 40) { // s or dowm arrow
+                    } else if (event.keyCode === 83 || event.keyCode === 40) { // s or dowm arrow
                         move = mov('s', area);
-                    } else if (event.keyCode == 68 || event.keyCode == 39) { // d or right arrow
+                    } else if (event.keyCode === 68 || event.keyCode === 39) { // d or right arrow
                         move = mov('d', area);
                     }
 

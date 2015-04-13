@@ -1,27 +1,42 @@
-.area {
-	table-layout: fixed;
-	border: 3px solid #776E65;
-	border-collapse: collapse;
-	margin-left: auto; 
+.zci--game2048 .area {
+    table-layout: fixed;
+    border: 3px solid #776E65;
+    border-collapse: collapse;
+    margin-left: auto;
     margin-right: auto;
     box-shadow: 2px 2px 2px #999;
     font-style: italic;
 }
 
-.area td, tr {
+.zci--game2048 .area td, tr {
     height: 50px;
-	width: 50px;
-	border: 3px solid #776E65;
-	text-align: center;
-	font-weight: bold; 
+    width: 50px;
+    border: 3px solid #776E65;
+    text-align: center;
+    font-weight: bold;
 }
 
-.points {
-	font-weight: bold; 
-	font-style: italic;
+.zci--game2048 .points {
+    font-weight: bold;
+    font-style: italic;
 }
 
-.counter {
-	margin:auto; 
-	display:table;
+.zci--game2048 .counter {
+    margin:auto;
+    display:table;
 }
+
+.zci--game2048 .val- { background-color: #BBADA0; }
+.zci--game2048 .val-2 { background-color: #EEE4DA; }
+.zci--game2048 .val-4{ background-color: #EDE0C8; }
+.zci--game2048 .val-8 { background-color: #F2B179; }
+.zci--game2048 .val-16{ background-color: #F59563; }
+.zci--game2048 .val-32 { background-color: #F67C5F; }
+.zci--game2048 .val-64{ background-color: #F65E3B; }
+.zci--game2048 .val-128 { background-color: #EDCF72; }
+.zci--game2048 .val-256{ background-color: #EDCC61; }
+.zci--game2048 .val-512 { background-color: #EDC850; }
+.zci--game2048 .val-1024{ background-color: #EDC53F; }
+.zci--game2048 .val-2048 { background-color: #EDC22E; }
+.zci--game2048 .val-4096{ background-color: #D5AE29; }
+.zci--game2048 .val-8192 { background-color: #AA8B21; }
