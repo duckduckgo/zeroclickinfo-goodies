@@ -4,6 +4,7 @@ package DDG::Goodie::SolarSystem;
 use DDG::Goodie;
 use YAML::XS qw( Load );
 use POSIX;
+use Text::Trim;
 
 zci answer_type => "solarsystem";
 zci is_cached   => 1;
@@ -21,13 +22,13 @@ attribution github => ["MrChrisW", "Chris Wilson"],
 # Get Goodie version for use with image paths
 my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
-my @triggers = ( 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'pluto', 'sun', 'moon');
-
 my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'area');
+my $attributesString = join('|', @attributesArray); 
 
 my @unitTriggers = ( 'kg', 'km2', 'km3', 'km', 'mi2', 'mi3', 'mi', 'lbs', 'metric', 'imperial');
+my $unitsString = join('|', @unitTriggers); 
 
-triggers any => @triggers;
+triggers any => 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'pluto', 'sun', 'moon';
 
 # Load object data 
 my $objects = Load(scalar share('objects.yml')->slurp);
@@ -35,71 +36,63 @@ my $objects = Load(scalar share('objects.yml')->slurp);
 # Handle statement
 handle query_lc => sub {
     # Declare vars
-    my ($attribute, $attributesString, $unitsString, $result, $objectObj, $objectName, $saturn, $unitType);
+    my ($attribute, $result, $objectObj, $objectName, $saturn, $unitType, $operation);
     
-    s/^what is (the)|(of)|(object)|(in)//g; # Remove common words, strip question marks
+    s/(^what is)|(the)|(of)|(object)|(in)//g; # Remove common words
 
-    $attributesString = join('|', @attributesArray); 
     return unless /$attributesString/; # Ensure we match at least one attribute, eg. size, volume
 
-    $unitsString = join('|', @unitTriggers); 
-
     # Set attribute depending on search query
-    if(m/size|radius/) {$attribute = "radius"}
-    elsif(m/volume/) {$attribute = "volume"}
-    elsif(m/mass/) {$attribute = "mass"}
-    elsif(m/area/) {$attribute = "surface_area"}
+    if(m/size|radius/) { $attribute = "radius" }
+    elsif(m/volume/) { $attribute = "volume" }
+    elsif(m/mass/) { $attribute = "mass" }
+    elsif(m/area/) { $attribute = "surface_area" }
 
     s/$attributesString//g; # Remove attributes
 
-    # Switch unit type based on user input
+    # Set unitType based on query string
     # kg, km, metric | lbs mi imperial
     if(m/kg|km\d?|metric/) {
-      $unitType = $attribute;
+        $unitType = $attribute;
     } elsif (m/lbs|mi\d?|imperial/) {
-      $unitType = $attribute."_imperial";
-    } 
+        $unitType = $attribute."_imperial";
+    } else {
+        # Switch to imperial for non-metric countries based on location
+        # https://en.wikipedia.org/wiki/Metrication
+        if ($loc->country_code =~ m/US|MM|LR/i) {
+            $unitType = $attribute."_imperial";
+        } else {
+            $unitType = $attribute;
+        }
+    }
 
     s/$unitsString//g; # Remove unit/unit type
-    s/^\s+|\s+$//g; # Trim
+    trim($_); # Trim
 
     return unless $_; # Return if empty query
     $objectObj = $objects->{$_}; # Get object data
     return unless $objectObj; # Return if we don't have a valid object
-    $objectName = $_;
-
-    # Switch to imperial for non-metric countries
-    # https://en.wikipedia.org/wiki/Metrication
-    if (!$unitType)
-    {
-      if ($loc->country_code =~ m/US|MM|LR/i) {
-        $unitType = $attribute."_imperial";
-      } else {
-        $unitType = $attribute;
-      }
-    }
-
-    # Get correct unit type 
-    $result = $objectObj->{$unitType};
+    return unless $unitType; # Guard against no $unitType - should never occur
+    $result = $objectObj->{$unitType}; # Get data using correct unit type 
+    $objectName = $_;    
     
-    # Convert flag surface_area = Surface Area
-    if($attribute =~ /_/ ) { $attribute = join ' ', map ucfirst lc, split /[_]+/, $attribute; }
-
+    # Convert attribute surface_area = Surface Area
     # Human friendly object name + attribute
-    my $operation = ucfirst($_)." - ".ucfirst($attribute);
+    if($attribute =~ "surface_area") { $attribute = "Surface Area"; }
+    $operation = ucfirst($_)." - ".ucfirst($attribute);
 
     # Superscript for km3, mi3, km2 or mi2 
     if($result =~ m/(km|mi)(\d)/) {
-      my ($symbol, $superscript) = ($1, $2);
-      $result =~ s/$symbol$superscript/$symbol<sup>$superscript<\/sup>/;
+        my ($symbol, $superscript) = ($1, $2);
+        $result =~ s/$symbol$superscript/$symbol<sup>$superscript<\/sup>/;
     }
     
     # Superscript for scientific notation
     # Convert x to HTML entity &times;
     if($result =~ m/x\s(10)(\d\d)/) {
-      my $number = $1; my $exponent = $2;
-      $result =~ s/$number$exponent/$number<sup>$exponent<\/sup>/;
-      $result =~ s/x/&times;/;
+        my ($number, $exponent) = ($1, $2);
+        $result =~ s/$number$exponent/$number<sup>$exponent<\/sup>/;
+        $result =~ s/x/&times;/;
     }
 
     #$saturn var is provided to handlebars template to set size of image
