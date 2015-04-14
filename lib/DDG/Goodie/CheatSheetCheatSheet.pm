@@ -68,7 +68,8 @@ my @list = [{
 
 handle remainder => sub {
     my $heading = 'Cheat sheets on DuckDuckGo';
-    return structured_answer => {
+    return @list,
+        structured_answer => {
         id => 'cheat_sheet_cheat_sheet',
         name => "CheatSheet CheatSheet",
         data => {
