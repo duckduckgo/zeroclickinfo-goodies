@@ -10,7 +10,7 @@ DDH.game2048.build = function(ops) {
     // This function ( using 'transpose' and 'swapRows' )
     // moves the numbers
 
-    function mov(dir, area) {
+    function mov(dir) {
         var i,
             points = 0,
             moves = 0,
@@ -18,10 +18,10 @@ DDH.game2048.build = function(ops) {
             exit;
 
         if (dir === 'a' || dir === 'd') {
-            area = transpose(area);
+            area = transpose();
         }
         if (dir === 's' || dir === 'd') {
-            area = swapRows(area);
+            area = swapRows();
         }
 
         for (var col = 0; col < $SIZE; col++) {
@@ -58,16 +58,16 @@ DDH.game2048.build = function(ops) {
         }
 
         if (dir === 's' || dir === 'd') {
-            area = swapRows(area);
+            area = swapRows();
         }
         if (dir === 'a' || dir === 'd') {
-            area = transpose(area);
+            area = transpose();
         }
 
-        printArea(area);
+        printArea();
         increasePoints(points);
 
-        if (checkWin(area) || checkLose(area)) {
+        if (checkWin() || checkLose()) {
             goOn = false;
         }
         // This check is mandatory in order to avoid the appearance of a new
@@ -85,7 +85,7 @@ DDH.game2048.build = function(ops) {
     // After every little table's change, the area is updated.
     // This function changes the cell background too
 
-    function printArea(area) {
+    function printArea() {
         var val;
         $("td").each(function(idx) {
             val = area[parseInt(idx / $SIZE, 10)][idx % $SIZE];
@@ -95,7 +95,7 @@ DDH.game2048.build = function(ops) {
 
     // 'area' initialization
 
-    function getArea(area) {
+    function getArea() {
         var sub = [$SIZE];
         for (var row = 0; row < $SIZE; row++) {
             $("td").each(function(idx) {
@@ -122,7 +122,7 @@ DDH.game2048.build = function(ops) {
 ''  ''  ''  ''
 
 Want to make a move to the right: -> or 'd'
-transpose(area) makes the table looks like this:
+transpose() makes the table looks like this:
 
 ''  4   2   ''
 
@@ -132,7 +132,7 @@ transpose(area) makes the table looks like this:
 
 ''  ''  2   ''
 
-swapRows(area) makes the table looks like this:
+swapRows() makes the table looks like this:
 
 ''  ''  2   ''
 
@@ -153,7 +153,7 @@ movement to the up:
 ''  ''  ''  ''
 
 
-recall the swapRows(area) function
+recall the swapRows() function
 
 ''  ''  ''  ''
 
@@ -164,7 +164,7 @@ recall the swapRows(area) function
 2   8   4   ''
 
 
-recall the transpose(area) function (final state)
+recall the transpose() function (final state)
 
 ''  ''  ''  2
 
@@ -178,7 +178,7 @@ recall the transpose(area) function (final state)
 
     // left and right moves activate this function
 
-    function transpose(area) {
+    function transpose() {
         for (var row = 0; row < $SIZE; row++) {
             for (var col = 0; col < row; col++) {
                 var temp = area[row][col];
@@ -191,7 +191,7 @@ recall the transpose(area) function (final state)
 
     // down and right moves activate this function
 
-    function swapRows(area) {
+    function swapRows() {
         var nArea = [];
 
         for(i = 0;i < $SIZE;i++) {
@@ -204,7 +204,7 @@ recall the transpose(area) function (final state)
     // This function set a random number ( 2 or 4 ) in a random
     // position around the area. 4 has a 10% chance of being chosen.
 
-    function getRand(area) {
+    function getRand() {
 
         var rand=Math.floor(Math.random()*11);
         var posX, posY;
@@ -217,20 +217,20 @@ recall the transpose(area) function (final state)
         } while( area[posX][posY] !== '');
 
         area[posX][posY] = rand;
-        printArea(area);
+        printArea();
 
     }
 
     // If there is the winning number inside the table, returns true and
     // prints a congratulation message
 
-    function checkWin(area) {
+    function checkWin() {
         for (var row = 0; row < $SIZE; row++) {
             for (var col = 0; col < $SIZE; col++) {
                 if (area[row][col] == $WINNUM) {
                     area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
                     area[$SIZE-1][0] = 'W'; area[$SIZE-1][1] = 'I'; area[$SIZE-1][2] = 'N';
-                    printArea(area);
+                    printArea();
                     return true;
                 }
             }
@@ -240,7 +240,7 @@ recall the transpose(area) function (final state)
 
     // If no moves or sums are possible, returns true
 
-    function checkLose(area) {
+    function checkLose() {
         var count = 0;
         var canDoSomething = false;
         for (var row = 0; row < $SIZE; row++) {
@@ -262,7 +262,7 @@ recall the transpose(area) function (final state)
         if (count === $SIZE * $SIZE && !canDoSomething) {
             area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
             area[$SIZE-1][0] = 'L'; area[$SIZE-1][1] = 'O'; area[$SIZE-1][2] = 'S'; area[$SIZE-1][3] = 'E';
-            printArea(area);
+            printArea();
             return true;
         }
 
@@ -272,7 +272,7 @@ recall the transpose(area) function (final state)
 
     // This function creates and prints on page the gaming table
 
-    function createTable(container) {
+    function createTable() {
         var nCell = '';
         var table = $('<table/>').attr("id","area").attr("class","area");
 
@@ -282,13 +282,13 @@ recall the transpose(area) function (final state)
         for(var r = 0; r < $SIZE; r++){
             table.append('<tr>' + nCell + '</tr>');
         }
-        $(container).append(table);
+        $($container).append(table);
     }
 
 
     function start() {
-        getArea(area);
-        getRand(area);
+        getArea();
+        getRand();
     }
 
 
@@ -304,7 +304,7 @@ recall the transpose(area) function (final state)
 
             createTable($container);
             $tempArea = $('#area');
-            start($tempArea,area);
+            start();
 
             $('html').keydown(function(event){
 
@@ -316,18 +316,18 @@ recall the transpose(area) function (final state)
                 if (goOn) {
 
                     if (event.keyCode === 87 || event.keyCode === 38) { // w or up arrow
-                        move = mov('w', area);
+                        move = mov('w');
                     } else if (event.keyCode === 65 || event.keyCode === 37) { // a or left arrow
-                        move = mov('a', area);
+                        move = mov('a');
                     } else if (event.keyCode === 83 || event.keyCode === 40) { // s or dowm arrow
-                        move = mov('s', area);
+                        move = mov('s');
                     } else if (event.keyCode === 68 || event.keyCode === 39) { // d or right arrow
-                        move = mov('d', area);
+                        move = mov('d');
                     }
 
                     // if move is true, a move has been made
                     if (move) {
-                        getRand(area);
+                        getRand();
                     }
                 }
 
