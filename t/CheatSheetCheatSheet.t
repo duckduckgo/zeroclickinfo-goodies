@@ -18,7 +18,7 @@ my @list = [{
 },
 {
     text => 'RegEx',
-    url => 'https://duckduckgo.com/?q=regex&ia=answer'
+    url => 'https://duckduckgo.com/?q=regex+cheat+sheet&ia=answer'
 },
 {
     text => 'TMux',
