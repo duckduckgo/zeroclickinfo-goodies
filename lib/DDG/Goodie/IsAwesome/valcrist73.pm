@@ -1,13 +1,13 @@
 package DDG::Goodie::IsAwesome::valcrist73;
 # ABSTRACT: valcrist73's first goodie
-
+use strict; #used so Github can correctly identify the file as Perl5
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_valcrist73";
 zci is_cached   => 1;
 
 name "IsAwesome valcrist73";
-description "My first Goodie, it lets the world know that valcrist73 is specifically awesome";
+description "My first Goodie, it lets the english/spanish speaking world know that valcrist73 is specifically awesome";
 primary_example_queries "duckduckhack valcrist73";
 category "special";
 topics "special_interest", "geek";
