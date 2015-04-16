@@ -14,22 +14,40 @@ attribution github => ["https://github.com/jee1mr", "Jeevan M R"],
             twitter => ["https://twitter.com/jee1mr","Jeevan M R"];
 
 
-triggers any => "lorem ipsum", "lipsum";
+triggers startend => "lorem ipsum", "lipsum";
 my $text = Text::Lorem->new();
-my @lorem = ();
-for my $i (1..10) {
-    $lorem[$i] = "<p>" . $text->paragraphs(1) . "</p>"; 
-}
 
 handle remainder => sub {
-    my $html = "";
     my $loop = 4;
     $loop = $_ if $_ && $_ =~ /(^\d+$)/;
     $loop = 10 if $loop > 10;
-    for my $i (1..$loop){
-        $html .= $lorem[$i];
-    }
-    return answer => $text->paragraphs($loop), html => $html;
+
+    my @lorem;
+    map { push (@lorem, $text->paragraphs(1)) } (1..$loop);
+
+    my $plaintext = join " ", @lorem;
+
+    return $plaintext,
+    structured_answer => {
+        id => 'lorem_ipsum',
+        name => 'Answer',
+        data => {
+            title => 'Lorem Ipsum',
+            subtitle => "$loop Random Paragraphs",
+            lorem_array => \@lorem,
+        },
+        meta => {
+            sourceName => "Lipsum",
+            sourceUrl => "http://lipsum.com/"
+        },
+        templates => {
+            group => 'text',
+            options =>{
+                content => 'DDH.lorem_ipsum.content',
+                moreAt => 1
+            }
+        }
+    };
 };
 
 1;
