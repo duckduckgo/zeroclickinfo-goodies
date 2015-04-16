@@ -1,5 +1,5 @@
 package DDG::Goodie::IsAwesome::Quoidautre;
-#ABSTRACT: QuoidautreGitHubUsername's first Goodie;
+#ABSTRACT: Quoidautre's first Goodie;
 
 use DDG::Goodie;
 use strict;
