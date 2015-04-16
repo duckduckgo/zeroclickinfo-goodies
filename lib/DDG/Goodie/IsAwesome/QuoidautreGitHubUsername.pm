@@ -1,24 +1,20 @@
 package DDG::Goodie::IsAwesome::QuoidautreGitHubUsername;
-#ABSTRACT: QuoidautreGitHubUsername first Goodie;
+#ABSTRACT: QuoidautreGitHubUsername's first Goodie;
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_git_hub_username";
 zci is_cached   => 1;
 
 name "IsAwesome QuoidautreGitHubUsername";
-description "Succinct explanation of what this Instant Answer does";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
-# category "";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-# topics "";
+description "My first Goodie, it lets QuoidautreGitHubUsername";
+category "special";
+topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/GitHubUsername.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
+attribution github => ["https://github.com/quoidautre", "quoidautre"],
+            twitter => "quoidautre_test";
 
-#triggers start => "duckduckhack quoidautregithubusername";
 triggers start => "duckduckhack quoidautregithubusername";
 
 handle remainder => sub {
