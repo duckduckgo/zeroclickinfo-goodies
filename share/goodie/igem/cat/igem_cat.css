@@ -1,0 +1,37 @@
+/*
+    Document   : zeroclickinfo-goodies/share/goodie/igem/igem_cat.css
+    Created on : 2015-04-11 12:08 PM
+    Author     : mcavallaro
+    Description: List the categories of http://parts.igem.org/Main_Page
+    To change this template use Tools | Templates.
+*/
+
+@media (max-width: 380px) {
+    .zci--answer .igem-column {
+        width: 100%;
+    }
+}
+.zci--answer .igem-container {
+    max-height: 30ex;
+    overflow-x: hidden;
+}
+
+.zci--answer .igem-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.zci--answer  table.igem-table {
+    width: 70%;
+    margin-bottom: 3ex;
+}
+
+.zci--answer  table.igem-table td {
+    padding-right: 1ex;
+    vertical-align: top;
+}
+
+root {
+    display: block;
+}
