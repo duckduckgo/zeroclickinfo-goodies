@@ -4,11 +4,12 @@ DDH.game2048.build = function(ops) {
 
     // Global Variables Declaration
 
-    var $tempArea, $container, $WINNUM, $SIZE, $spanPoints, goOn, area;
+    var $tempArea, $container, $WINNUM, $SIZE, $spanPoints,
+        goOn = true, area = [], started = false;;
 
 
-    // This function ( using 'transpose' and 'swapRows' )
-    // moves the numbers
+    /* This function ( using 'transpose' and 'swapRows' )
+    moves the numbers */
 
     function mov(dir) {
         var i,
@@ -70,8 +71,8 @@ DDH.game2048.build = function(ops) {
         if (checkWin() || checkLose()) {
             goOn = false;
         }
-        // This check is mandatory in order to avoid the appearance of a new
-        // value in the area if no moves has been made
+        /* This check is mandatory in order to avoid the appearance of a new
+        value in the area if no moves has been made */
         return flag;
     }
 
@@ -82,8 +83,8 @@ DDH.game2048.build = function(ops) {
         $spanPoints.text(current + points);
     }
 
-    // After every little table's change, the area is updated.
-    // This function changes the cell background too
+    /* After every little table's change, the area is updated.
+    This function changes the cell class too */
 
     function printArea() {
         var val;
@@ -107,10 +108,9 @@ DDH.game2048.build = function(ops) {
     }
 
 
-    // The two functions below are implemented in order to avoid to make a
-    // specific function for every single direction/move
+    /* The two functions below are implemented in order to avoid to make a
+    specific function for every single direction/move
 
-/*
     Start:
 
 ''  ''  2   ''
@@ -201,8 +201,8 @@ recall the transpose() function (final state)
     }
 
 
-    // This function set a random number ( 2 or 4 ) in a random
-    // position around the area. 4 has a 10% chance of being chosen.
+    /* This function set a random number ( 2 or 4 ) in a random
+    position around the area. 4 has a 10% chance of being chosen. */
 
     function getRand() {
 
@@ -221,8 +221,8 @@ recall the transpose() function (final state)
 
     }
 
-    // If there is the winning number inside the table, returns true and
-    // prints a congratulation message
+    /* If there is the winning number inside the table, returns true and
+    prints a congratulation message */
 
     function checkWin() {
         for (var row = 0; row < $SIZE; row++) {
@@ -295,43 +295,49 @@ recall the transpose() function (final state)
     return {
         onShow: function() {
 
-            $container = $('#2048-area');
-            $WINNUM = $('#game').html();
-            $SIZE = parseInt($("#dimension").html(), 10);
-            $spanPoints = $('.points');
-            goOn = true;
-            area = new Array();
+            /* 'started' is a boolean variable used in order to avoid the
+            duplication of the gaming area. Moving around the DDG tabs the
+            'onShow' function is executed over and over. This simple solution
+            solves the problem */
+            if (!started) {
 
-            createTable($container);
-            $tempArea = $('#area');
-            start();
+                $container = $('#2048-area');
+                $WINNUM = $('#game').html();
+                $SIZE = parseInt($("#dimension").html(), 10);
+                $spanPoints = $('.points');
 
-            $('html').keydown(function(event){
+                createTable($container);
+                started = true;
+                $tempArea = $('#area');
+                start();
 
-                event.stopPropagation();
-                event.preventDefault();
+                $('html').keydown(function(event){
 
-                var move = false;
+                    event.stopPropagation();
+                    event.preventDefault();
 
-                if (goOn) {
+                    var move = false;
 
-                    if (event.keyCode === 87 || event.keyCode === 38) { // w or up arrow
-                        move = mov('w');
-                    } else if (event.keyCode === 65 || event.keyCode === 37) { // a or left arrow
-                        move = mov('a');
-                    } else if (event.keyCode === 83 || event.keyCode === 40) { // s or dowm arrow
-                        move = mov('s');
-                    } else if (event.keyCode === 68 || event.keyCode === 39) { // d or right arrow
-                        move = mov('d');
+                    if (goOn) {
+
+                        if (event.keyCode === 87 || event.keyCode === 38) { // w or up arrow
+                            move = mov('w');
+                        } else if (event.keyCode === 65 || event.keyCode === 37) { // a or left arrow
+                            move = mov('a');
+                        } else if (event.keyCode === 83 || event.keyCode === 40) { // s or dowm arrow
+                            move = mov('s');
+                        } else if (event.keyCode === 68 || event.keyCode === 39) { // d or right arrow
+                            move = mov('d');
+                        }
+
+                        // if move is true, a move has been made
+                        if (move) {
+                            getRand();
+                        }
                     }
 
-                    // if move is true, a move has been made
-                    if (move) {
-                        getRand();
-                    }
-                }
-
-            });
+                });
+            }
         }
     };
 };
