@@ -18,11 +18,12 @@ DDH.game2048.build = function(ops) {
             flag = false,
             exit;
 
-        if (dir === 'a' || dir === 'd')
+        if (dir === 'a' || dir === 'd') {
             area = transpose();
-
-        if (dir === 's' || dir === 'd')
+        }
+        if (dir === 's' || dir === 'd') {
             area = swapRows();
+        }
 
         for (var col = 0; col < $SIZE; col++) {
             for (var row = 0; row < $SIZE; row++) {
@@ -46,8 +47,9 @@ DDH.game2048.build = function(ops) {
                             flag = true; exit = true;
                         } else {
                             // else quit the while loop
-                            if(area[i][col] !== "")
+                            if(area[i][col] !== "") {
                                 exit = true;
+                            }
                         }
                         i++;
                     }
@@ -57,18 +59,19 @@ DDH.game2048.build = function(ops) {
             moves = 0;
         }
 
-        if (dir === 's' || dir === 'd')
+        if (dir === 's' || dir === 'd') {
             area = swapRows();
-
-        if (dir === 'a' || dir === 'd')
+        }
+        if (dir === 'a' || dir === 'd') {
             area = transpose();
+        }
 
         printArea();
         increasePoints(points);
 
-        if (checkWin() || checkLose())
+        if (checkWin() || checkLose()) {
             goOn = false;
-
+        }
         /* This check is mandatory in order to avoid the appearance of a new
         value in the area if no moves has been made */
         return flag;
@@ -192,9 +195,9 @@ recall the transpose() function (final state)
     function swapRows() {
         var nArea = [];
 
-        for(i = 0;i < $SIZE;i++)
-            nArea[$SIZE-1 - i]=area[i];
-
+        for(i = 0;i < $SIZE;i++) {
+            nArea[$SIZE-1-i]=area[i];
+        }
         return nArea;
     }
 
@@ -212,7 +215,7 @@ recall the transpose() function (final state)
         do {
             posX=Math.floor(Math.random()*$SIZE);
             posY=Math.floor(Math.random()*$SIZE);
-        } while(area[posX][posY] !== '');
+        } while( area[posX][posY] !== '');
 
         area[posX][posY] = rand;
         printArea();
@@ -244,9 +247,9 @@ recall the transpose() function (final state)
         for (var row = 0; row < $SIZE; row++) {
             for (var col = 0; col < $SIZE; col++) {
                 // how many cells are not empty??
-                if (area[row][col] !== '')
+                if (area[row][col] !== '') {
                     count++;
-
+                }
                 // check all available movements
                 if ((row !== 0 && area[row][col] === area[row-1][col]) ||
                     (row !== $SIZE-1 && area[row][col] === area[row+1][col]) ||
@@ -330,8 +333,9 @@ recall the transpose() function (final state)
                         }
 
                         // if move is true, a move has been made
-                        if (move)
+                        if (move) {
                             getRand();
+                        }
                     }
 
                 });
