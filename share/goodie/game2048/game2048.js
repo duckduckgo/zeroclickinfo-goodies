@@ -71,6 +71,7 @@ DDH.game2048.build = function(ops) {
 
         if (checkWin() || checkLose()) {
             goOn = false;
+            flag = false;
         }
         /* This check is mandatory in order to avoid the appearance of a new
         value in the area if no moves has been made */
