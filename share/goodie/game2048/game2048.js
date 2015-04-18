@@ -5,7 +5,7 @@ DDH.game2048.build = function(ops) {
     // Global Variables Declaration
 
     var $tempArea, $container, $WINNUM, $SIZE, $spanPoints,
-        goOn = true, area = [], started = false;;
+        goOn = true, started = false, area = [];
 
 
     /* This function ( using 'transpose' and 'swapRows' )
@@ -41,8 +41,8 @@ DDH.game2048.build = function(ops) {
                     while(i < $SIZE && exit === false) {
                         // if numbers can be summed
                         if(area[row-moves][col] === area[i][col]) {
-                            area[row-moves][col]*=2;
-                            area[i][col]='';
+                            area[row-moves][col] *= 2;
+                            area[i][col] = '';
                             points = area[row-moves][col];
                             flag = true; exit = true;
                         } else {
@@ -195,8 +195,8 @@ recall the transpose() function (final state)
     function swapRows() {
         var nArea = [];
 
-        for(i = 0;i < $SIZE;i++) {
-            nArea[$SIZE-1-i]=area[i];
+        for(i = 0; i < $SIZE; i++) {
+            nArea[$SIZE-1-i] = area[i];
         }
         return nArea;
     }
@@ -207,14 +207,14 @@ recall the transpose() function (final state)
 
     function getRand() {
 
-        var rand=Math.floor(Math.random()*11);
+        var rand=Math.floor(Math.random() * 11);
         var posX, posY;
 
         rand = (rand < 10) ? 2 : 4;
 
         do {
-            posX=Math.floor(Math.random()*$SIZE);
-            posY=Math.floor(Math.random()*$SIZE);
+            posX = Math.floor(Math.random() * $SIZE);
+            posY = Math.floor(Math.random() * $SIZE);
         } while( area[posX][posY] !== '');
 
         area[posX][posY] = rand;
@@ -343,4 +343,3 @@ recall the transpose() function (final state)
         }
     };
 };
-
