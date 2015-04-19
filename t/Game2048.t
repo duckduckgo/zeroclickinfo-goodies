@@ -25,7 +25,7 @@ ddg_goodie_test(
             id => "game2048",
             name => 2048,
             templates => {
-                group => "base",
+                group => "text",
                 item => 0,
                 options => {
                     content => "DDH.game2048.content"
@@ -46,7 +46,7 @@ ddg_goodie_test(
             id => "game2048",
             name => 2048,
             templates => {
-                group => "base",
+                group => "text",
                 item => 0,
                 options => {
                     content => "DDH.game2048.content"

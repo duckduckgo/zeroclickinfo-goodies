@@ -1,14 +1,13 @@
-.zci--game2048 .area {
+.zci--game2048 .game2048__area {
     table-layout: fixed;
     border: 3px solid #776E65;
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 2px 2px 2px #999;
-    font-style: italic;
 }
 
-.zci--game2048 .area td, tr {
+.zci--game2048 .game2048__area td, tr {
     height: 50px;
     width: 50px;
     border: 3px solid #776E65;
@@ -16,12 +15,11 @@
     font-weight: bold;
 }
 
-.zci--game2048 .points {
+.zci--game2048 .game2048__points {
     font-weight: bold;
-    font-style: italic;
 }
 
-.zci--game2048 .counter {
+.zci--game2048 .game2048__counter {
     margin:auto;
     display:table;
 }

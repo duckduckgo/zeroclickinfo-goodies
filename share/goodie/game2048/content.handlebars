@@ -1,7 +1,15 @@
-<i><b>Play <span id="game">{{inputNum}}</span>
-<div id="dimContainer"><span id="dimension">{{dimension}}</span> x {{dimension}}</b></i></div>
+<div class="game2048__container">
 
-<span class="counter"><span class="points">0</span> Points</span>
-<div id="2048-area">
+    Play <span id="game">{{inputNum}}</span>
+    <div id="dimContainer"><span id="dimension">{{dimension}}</span> x {{dimension}}</div>
 
+    <span class="game2048__counter">
+        <span class="game2048__points">0</span> Points
+    </span>
+
+    <table id="game2048__area" class ="game2048__area">
+        {{#loop dimension}}
+            <tr>{{#loop dimension}}<td></td>{{/loop}}</tr>
+        {{/loop}}
+    </table>
 </div>

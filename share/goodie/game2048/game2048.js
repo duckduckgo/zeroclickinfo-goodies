@@ -4,8 +4,11 @@ DDH.game2048.build = function(ops) {
 
     // Global Variables Declaration
 
-    var $tempArea, $container, $WINNUM, $SIZE, $spanPoints,
-        goOn = true, started = false, area = [];
+    var $tempArea, $container, $WINNUM, $SIZE, $spanPoints;
+
+    var continueGame = true,
+        started = false,
+        area = [];
 
 
     /* This function ( using 'transpose' and 'swapRows' )
@@ -33,17 +36,24 @@ DDH.game2048.build = function(ops) {
                 } else {
                     // if a move can be made
                     if (moves !== 0) {
+
                         area[row-moves][col] = area[row][col];
+
                         area[row][col] = '';
+
                         flag=true;
                     }
                     i = row+1;
                     while(i < $SIZE && exit === false) {
                         // if numbers can be summed
                         if(area[row-moves][col] === area[i][col]) {
+                            // sum numbers
                             area[row-moves][col] *= 2;
+                            // delete the old number
                             area[i][col] = '';
+                            // add points
                             points = area[row-moves][col];
+
                             flag = true; exit = true;
                         } else {
                             // else quit the while loop
@@ -70,7 +80,7 @@ DDH.game2048.build = function(ops) {
         increasePoints(points);
 
         if (checkWin() || checkLose()) {
-            goOn = false;
+            continueGame = false;
             flag = false;
         }
         /* This check is mandatory in order to avoid the appearance of a new
@@ -196,7 +206,7 @@ recall the transpose() function (final state)
     function swapRows() {
         var nArea = [];
 
-        for(i = 0; i < $SIZE; i++) {
+        for(var i = 0; i < $SIZE; i++) {
             nArea[$SIZE-1-i] = area[i];
         }
         return nArea;
@@ -208,7 +218,7 @@ recall the transpose() function (final state)
 
     function getRand() {
 
-        var rand=Math.floor(Math.random() * 11);
+        var rand = Math.floor(Math.random() * 11);
         var posX, posY;
 
         rand = (rand < 10) ? 2 : 4;
@@ -274,20 +284,6 @@ recall the transpose() function (final state)
 
     // This function creates and prints on page the gaming table
 
-    function createTable() {
-        var nCell = '';
-        var table = $('<table/>').attr("id","area").attr("class","area");
-
-        for (var i = 0; i < $SIZE; i++) {
-            nCell += '<td></td>';
-        }
-        for(var r = 0; r < $SIZE; r++){
-            table.append('<tr>' + nCell + '</tr>');
-        }
-        $($container).append(table);
-    }
-
-
     function start() {
         getArea();
         getRand();
@@ -305,13 +301,12 @@ recall the transpose() function (final state)
 
                 started = true;
 
-                $container = $('#2048-area');
-                $WINNUM = $('#game').html();
-                $SIZE = parseInt($("#dimension").html(), 10);
-                $spanPoints = $('.points');
+                $container = $('#game2048__container');
+                $WINNUM = ops.data[0].inputNum;
+                $SIZE = ops.data[0].dimension;
+                $spanPoints = $('.game2048__points');
 
-                createTable($container);
-                $tempArea = $('#area');
+                $tempArea = $('#game2048__area');
                 start();
 
                 $('html').keydown(function(event){
@@ -321,7 +316,7 @@ recall the transpose() function (final state)
 
                     var move = false;
 
-                    if (goOn) {
+                    if (continueGame) {
 
                         if (event.keyCode === 87 || event.keyCode === 38) { // w or up arrow
                             move = mov('w');
