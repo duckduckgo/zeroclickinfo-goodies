@@ -4,14 +4,14 @@ package DDG::Goodie::IsAwesome::Quoidautre;
 use DDG::Goodie;
 use strict;
 
-zci answer_type => "is_awesome_git_hub_username";
+zci answer_type => "quoidautre";
 zci is_cached   => 1;
 
 name "IsAwesome Quoidautre";
-description "My first Goodie, it lets Quoidautre";
+description "My first Goodie, it lets the world know Quoidautre is awesome";
 category "special";
 topics "special_interest", "geek";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/GitHubUsername.pm";
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Quoidautre.pm";
 attribution github => ["https://github.com/quoidautre", "quoidautre"],
             twitter => "quoidautre_test";
 
