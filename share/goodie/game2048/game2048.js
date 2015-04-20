@@ -4,7 +4,7 @@ DDH.game2048.build = function(ops) {
 
     // Global Variables Declaration
 
-    var $tempArea, $container, $WINNUM, $SIZE, $spanPoints;
+    var $tempArea, $container, $spanPoints, WINNUM, SIZE;
 
     var continueGame = true,
         started = false,
@@ -28,8 +28,8 @@ DDH.game2048.build = function(ops) {
             area = swapRows();
         }
 
-        for (var col = 0; col < $SIZE; col++) {
-            for (var row = 0; row < $SIZE; row++) {
+        for (var col = 0; col < SIZE; col++) {
+            for (var row = 0; row < SIZE; row++) {
                 exit = false;
                 if (area[row][col] === "") {
                     moves++;
@@ -44,7 +44,7 @@ DDH.game2048.build = function(ops) {
                         flag=true;
                     }
                     i = row+1;
-                    while(i < $SIZE && exit === false) {
+                    while(i < SIZE && exit === false) {
                         // if numbers can be summed
                         if(area[row-moves][col] === area[i][col]) {
                             // sum numbers
@@ -101,7 +101,7 @@ DDH.game2048.build = function(ops) {
     function printArea() {
         var val;
         $("td").each(function(idx) {
-            val = area[parseInt(idx / $SIZE, 10)][idx % $SIZE];
+            val = area[parseInt(idx / SIZE, 10)][idx % SIZE];
             $(this).html(val).attr("class","val-"+val);
         });
     }
@@ -109,10 +109,10 @@ DDH.game2048.build = function(ops) {
     // 'area' initialization
 
     function getArea() {
-        var sub = [$SIZE];
-        for (var row = 0; row < $SIZE; row++) {
+        var sub = [SIZE];
+        for (var row = 0; row < SIZE; row++) {
             $("td").each(function(idx) {
-                sub[idx % $SIZE] = $(this).text();
+                sub[idx % SIZE] = $(this).text();
             });
             area[row] = sub;
             sub = [];
@@ -191,7 +191,7 @@ recall the transpose() function (final state)
     // left and right moves activate this function
 
     function transpose() {
-        for (var row = 0; row < $SIZE; row++) {
+        for (var row = 0; row < SIZE; row++) {
             for (var col = 0; col < row; col++) {
                 var temp = area[row][col];
                 area[row][col] = area[col][row];
@@ -206,8 +206,8 @@ recall the transpose() function (final state)
     function swapRows() {
         var nArea = [];
 
-        for(var i = 0; i < $SIZE; i++) {
-            nArea[$SIZE-1-i] = area[i];
+        for(var i = 0; i < SIZE; i++) {
+            nArea[SIZE-1-i] = area[i];
         }
         return nArea;
     }
@@ -224,8 +224,8 @@ recall the transpose() function (final state)
         rand = (rand < 10) ? 2 : 4;
 
         do {
-            posX = Math.floor(Math.random() * $SIZE);
-            posY = Math.floor(Math.random() * $SIZE);
+            posX = Math.floor(Math.random() * SIZE);
+            posY = Math.floor(Math.random() * SIZE);
         } while( area[posX][posY] !== '');
 
         area[posX][posY] = rand;
@@ -237,11 +237,11 @@ recall the transpose() function (final state)
     prints a congratulation message */
 
     function checkWin() {
-        for (var row = 0; row < $SIZE; row++) {
-            for (var col = 0; col < $SIZE; col++) {
-                if (area[row][col] == $WINNUM) {
+        for (var row = 0; row < SIZE; row++) {
+            for (var col = 0; col < SIZE; col++) {
+                if (area[row][col] == WINNUM) {
                     area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-                    area[$SIZE-1][0] = 'W'; area[$SIZE-1][1] = 'I'; area[$SIZE-1][2] = 'N';
+                    area[SIZE-1][0] = 'W'; area[SIZE-1][1] = 'I'; area[SIZE-1][2] = 'N';
                     printArea();
                     return true;
                 }
@@ -255,25 +255,25 @@ recall the transpose() function (final state)
     function checkLose() {
         var count = 0;
         var canDoSomething = false;
-        for (var row = 0; row < $SIZE; row++) {
-            for (var col = 0; col < $SIZE; col++) {
+        for (var row = 0; row < SIZE; row++) {
+            for (var col = 0; col < SIZE; col++) {
                 // how many cells are not empty??
                 if (area[row][col] !== '') {
                     count++;
                 }
                 // check all available movements
                 if ((row !== 0 && area[row][col] === area[row-1][col]) ||
-                    (row !== $SIZE-1 && area[row][col] === area[row+1][col]) ||
+                    (row !== SIZE-1 && area[row][col] === area[row+1][col]) ||
                     (col !== 0 && area[row][col] === area[row][col-1]) ||
-                    (col !== $SIZE-1 && area[row][col] === area[row][col+1])) {
+                    (col !== SIZE-1 && area[row][col] === area[row][col+1])) {
                     canDoSomething = true;
                 }
             }
         }
         // if all the cells all full AND no movements are available, returns true
-        if (count === $SIZE * $SIZE && !canDoSomething) {
+        if (count === SIZE * SIZE && !canDoSomething) {
             area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-            area[$SIZE-1][0] = 'L'; area[$SIZE-1][1] = 'O'; area[$SIZE-1][2] = 'S'; area[$SIZE-1][3] = 'E';
+            area[SIZE-1][0] = 'L'; area[SIZE-1][1] = 'O'; area[SIZE-1][2] = 'S'; area[SIZE-1][3] = 'E';
             printArea();
             return true;
         }
@@ -302,11 +302,11 @@ recall the transpose() function (final state)
                 started = true;
 
                 $container = $('#game2048__container');
-                $WINNUM = ops.data[0].inputNum;
-                $SIZE = ops.data[0].dimension;
                 $spanPoints = $('.game2048__points');
-
                 $tempArea = $('#game2048__area');
+                WINNUM = ops.data[0].inputNum;
+                SIZE = ops.data[0].dimension;
+
                 start();
 
                 $('html').keydown(function(event){
