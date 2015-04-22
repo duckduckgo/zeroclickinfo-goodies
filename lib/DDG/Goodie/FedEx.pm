@@ -32,9 +32,6 @@ triggers query_nowhitespace_nodash => qr/
 
 # Fedex package tracking.
 #
-# For detailed specification:
-# http://images.fedex.com/us/solutions/ppe/FedEx_Ground_Label_Layout_Specification.pdf
-#
 # For brief description see:
 # http://answers.google.com/answers/main?cmd=threadview&id=207899
 #
@@ -115,7 +112,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_fedex) {
-        return $package_number, heading => 'FedEx Shipment Tracking', html => qq(Track this shipment at <a href="http://fedex.com/Tracking?tracknumbers=$package_number&action=track">FedEx</a>.);
+        return $package_number, heading => 'FedEx Shipment Tracking', html => qq(Track this shipment at <a href="https://www.fedex.com/apps/fedextrack/?action=track&tracknumbers=$package_number&action=track">FedEx</a>.);
     }
 
     return;
