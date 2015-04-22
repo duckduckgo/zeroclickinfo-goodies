@@ -15,6 +15,7 @@ ddg_goodie_test(
     # - secondary_example_queries
     'weight 5' => test_zci('Weight of a 5kg mass on Earth is 49.03325N. Note: Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.'),
     'weight 5.12' => test_zci('Weight of a 5.12kg mass on Earth is 50.210048N. Note: Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.'),
+    '5.1 weight' => test_zci('Weight of a 5.1kg mass on Earth is 50.013915N. Note: Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.'),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     'weight' => undef,
