@@ -30,7 +30,14 @@ handle remainder => sub {
 
     # Return only if $_ is a number
     if (looks_like_number($_)){
-        return "Weight of a ".$_."kg mass on Earth is ".$_*9.80665."N. Note: Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.";
+    
+        return "Weight of a ".$_."kg mass on Earth is ".$_*9.80665."N.",
+            structured_answer => {
+                input     => [],
+                operation => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.",
+                result    => "Weight of a ".$_."kg mass on Earth is ".$_*9.80665."N.",
+            };
+            
     }
 
 
