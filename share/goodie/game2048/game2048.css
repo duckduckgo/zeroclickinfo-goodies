@@ -7,7 +7,7 @@
     box-shadow: 2px 2px 2px #999;
 }
 
-.zci--game2048 .game2048__area td, tr {
+.zci--game2048 .game2048__area .boxtile {
     height: 50px;
     width: 50px;
     border: 3px solid #776E65;

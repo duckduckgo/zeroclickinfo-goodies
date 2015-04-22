@@ -12,7 +12,7 @@ DDH.game2048.build = function(ops) {
 
 
     /* This function ( using 'transpose' and 'swapRows' )
-    moves the numbers */
+    moves and sums numbers */
 
     function mov(dir) {
         var i,
@@ -102,7 +102,7 @@ DDH.game2048.build = function(ops) {
         var val;
         $("td").each(function(idx) {
             val = area[parseInt(idx / SIZE, 10)][idx % SIZE];
-            $(this).html(val).attr("class","val-"+val);
+            $(this).html(val).attr("class","boxtile val-"+val);
         });
     }
 
