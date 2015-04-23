@@ -1,5 +1,5 @@
 package DDG::Goodie::PeriodicTable;
-# ABSTRACT: Atomic masses and numbers for chemical elements
+# ABSTRACT: Chemical symbols, atomic masses and numbers for chemical elements
 
 use strict;
 use DDG::Goodie;
@@ -10,18 +10,29 @@ zci answer_type => 'periodic_table';
 zci is_cached   => 1;
 
 name 'Periodic Table';
-description 'Atomic masses and numbers for chemical elements';
-primary_example_queries 'atomic mass of Nitrogen', 'atomic number of Oxygen';
-secondary_example_queries 'atomic weight of Na';
+description 'Chemical symbols, atomic masses and numbers for chemical elements';
+primary_example_queries 'rubidium', 'chemical symbol for argon', 'atomic mass of nitrogen', 'atomic number of oxygen';
+secondary_example_queries 'atomic weight of Na', 'what is the chemical symbol for argon', 'chemical name for He';
 category 'physical_properties';
 topics 'science';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PeriodicTable.pm';
-attribution github => [ 'zblair', 'Zachary D Blair' ];
+attribution github => [ 'zblair', 'Zachary D Blair' ],
+            github  => ['skywickenden', 'Sky Wickenden'],;
 
 my @elements = @{ Load( scalar share('elements.yml')->slurp ) };
 
 # Triggers
-triggers any => 'atomic mass', 'atomic weight', 'atomic number', 'proton number';
+#triggers start => @$elements; #'titanium';
+triggers start => 'titanium';
+
+#my $triggers = Load(scalar share('elements.yml')->slurp);
+
+my @element_triggers = [map { lc($_->[2]) } @elements];
+
+triggers start => $element_triggers[0];
+
+triggers any => 'atomic mass', 'atomic weight', 'atomic number', 'proton number', 'chemical symbol', 'chemical name for';
+
 
 # Handle statement
 handle query_lc => sub {
@@ -30,31 +41,79 @@ handle query_lc => sub {
 
     # Determine if this is a query for atomic mass or atomic number
     my $is_mass_query = $query =~ /atomic mass|atomic weight/;
+    my $is_atomic_query = $query =~ /atomic number|proton number/;
 
     # Strip out irrelevant words in the query
-    $query =~ s/(?:atomic (?:mass|weight|number)|proton number|of|the|element|elemental)//g;
+    $query =~ s/(?:atomic (?:mass|weight|number)|proton number|of|the|for|element|elemental|chemical symbol|what is|chemical name for)//g;
     $query =~ s/^\s+|\s+$//g;
     return unless $query;
 
-    # Look for a matching element in the table
+    # Look for a matching element or symbol in the table
     my $match = first { lc $_->[2] eq $query || lc $_->[3] eq $query } @elements or return;
-    my ( $atomic_number, $atomic_mass, $element_name, $element_symbol ) = @{$match};
+    my ( $atomic_number, $atomic_mass, $element_name, $element_symbol, $element_type ) = @{$match};
 
-    # Return the result if the element was found
+    # Default to displaying chemical symbol info.
+    my $title = $element_name;
+    my $subtitle = "Atomic number $atomic_number. Atomic mass $atomic_mass u.";
+    my $raw = "$element_symbol, chemical symbol for " . lc($element_name);
     if ($is_mass_query) {
-        return "$element_name ($element_symbol), Atomic mass $atomic_mass u", structured_answer => {
-            input     => ["$element_name ($element_symbol)"],
-            operation => 'Atomic Mass',
-            result    => "$atomic_mass u"
-        };
+        $title = "$atomic_mass u";
+        $subtitle = "$element_name - atomic mass";
+        $raw = "$element_name ($element_symbol), atomic mass $atomic_mass u"
     }
-    else {
-        return "$element_name ($element_symbol), Atomic number $atomic_number", structured_answer => {
-            input     => ["$element_name ($element_symbol)"],
-            operation => 'Atomic Number',
-            result    => $atomic_number
-        };
-    }
+    elsif ($is_atomic_query) {
+        $title = "$atomic_number";
+        $subtitle = "$element_name - atomic number";
+        $raw = "$element_name ($element_symbol), atomic number $atomic_number"
+    }    
+
+    return $raw, 
+    structured_answer => {
+        id => "periodic_table",
+        name => "Periodic Table",
+        data => {
+            badge => $element_symbol,
+            title => $title,
+            subtitle => $subtitle,
+            description => ""
+        },
+        templates => {
+            group => "icon",
+            elClass => {
+                bgColor => get_badge_color($element_type),
+                iconBadge => "tx-clr-white"
+            },
+            variants => {
+                iconBadge => "medium"
+            },
+            options => {
+                moreAt => 0
+            }
+        }
+    };   
+    
 };
+
+# Decide on a color to use when displaying the element badge based on its group.
+sub get_badge_color {
+	my ($element_type) = @_;
+
+    # metmetal–metalloid–nonmetal etc is currently split into only 5 color groups.
+    # https://github.com/duckduckgo/zeroclickinfo-goodies/issues/927
+    my $badge_color = "bg-clr--red";
+    if    ($element_type eq "Alkali metal") { $badge_color = "bg-clr--gold" }
+    elsif ($element_type eq "Alkaline earth metal") { $badge_color = "bg-clr--gold" }
+    elsif ($element_type eq "Lanthanide") { $badge_color = "bg-clr--red" }
+    elsif ($element_type eq "Actinide") { $badge_color = "bg-clr--red" }
+    elsif ($element_type eq "Transition metal") { $badge_color = "bg-clr--red" }
+    elsif ($element_type eq "Post-transition metal") { $badge_color = "bg-clr--green" }
+    elsif ($element_type eq "Metalloid") { $badge_color = "bg-clr--green" }
+    elsif ($element_type eq "Polyatomic nonmetal") { $badge_color = "bg-clr--green" }
+    elsif ($element_type eq "Diatomic nonmetal") { $badge_color = "bg-clr--green" }
+    elsif ($element_type eq "Noble gas") { $badge_color = "bg-clr--blue-light" }
+    elsif ($element_type eq "Unknown") { $badge_color = "bg-clr--red" }
+
+	return $badge_color;
+}
 
 1;
