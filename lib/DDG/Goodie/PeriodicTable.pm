@@ -17,7 +17,7 @@ category 'physical_properties';
 topics 'science';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PeriodicTable.pm';
 attribution github => [ 'zblair', 'Zachary D Blair' ],
-            github  => ['skywickenden', 'Sky Wickenden'],;
+            github  => ['skywickenden', 'Sky Wickenden'];
 
 my @elements = @{ Load( scalar share('elements.yml')->slurp ) };
 
