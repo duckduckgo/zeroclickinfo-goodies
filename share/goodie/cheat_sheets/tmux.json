@@ -1,4 +1,5 @@
 {
+    "id": "tmux_cheat_sheet",
     "name": "tmux",
     "description": "Terminal multiplexer",
     "meta": {

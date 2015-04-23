@@ -1,4 +1,5 @@
 {
+    "id": "regex_cheat_sheet",
     "name": "Regex Cheat Sheet",
     "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"],
     "sections": {
