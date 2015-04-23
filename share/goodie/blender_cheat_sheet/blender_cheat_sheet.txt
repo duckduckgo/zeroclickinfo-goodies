@@ -101,7 +101,7 @@ Shift + F10					UV/image editor
 Shift + F11					Text editor
 
 
-Modelling
+Modeling
  
 f						Make face
 w						Subdivide
@@ -163,9 +163,9 @@ Shift + a				Add node
 Ctrl + Left mouse		Cut links
 h						(Un-)Hide node
 Ctrl + g				Make group
-ctrl + g				Ungroup
+Alt + g					Ungroup
 Tab						Edit group
-Alt + Middle mouse		Move packground
+Alt + Middle mouse		Move background
 v						Zoom in background
 Alt + v					Zoom out background
 n						Properties
