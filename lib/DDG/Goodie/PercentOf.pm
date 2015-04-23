@@ -24,18 +24,21 @@ handle query_nowhitespace => sub {
 
     return unless $input =~ qr/(\d+\.?\d*)(\+|\*|\/|\-)(\d+\.?\d*)\%/;
 
+    my $partRes = ($1 * $3) / 100;
+
 
     if ($2 eq '-') {
-        $result = ( $1 - (($1 * $3) / 100) );
+        $result = ( $1 - ( $partRes ) );
     } elsif ($2 eq '+') {
-        $result = ( $1 + (($1 * $3) / 100) );
+        $result = ( $1 + ( $partRes ) );
     } elsif ($2 eq '*') {
-        $result = ( $1 * (($1 * $3) / 100) );
+        $result = ( $partRes );
     } elsif ($2 eq '/') {
-        $result = ( $1 / (($1 * $3) / 100) );
+        $result = ( $1 * 100 / ( $partRes ) );
     }
 
     my $text = "Result: $result";
+
     return $text,
     structured_answer => {
         input => [$input],
