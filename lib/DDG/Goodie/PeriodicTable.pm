@@ -22,7 +22,6 @@ attribution github => [ 'zblair', 'Zachary D Blair' ],
 my @elements = @{ Load( scalar share('elements.yml')->slurp ) };
 
 # Triggers
-triggers start => 'titanium'
 my @element_triggers = [map { lc($_->[2]) } @elements];
 triggers start => $element_triggers[0];
 triggers any => 'atomic mass', 'atomic weight', 'atomic number', 'proton number', 'chemical symbol', 'chemical name for';
