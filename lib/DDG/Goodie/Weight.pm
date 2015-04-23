@@ -1,8 +1,7 @@
 package DDG::Goodie::Weight;
-# ABSTRACT: Write an abstract here
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
+# ABSTRACT: Calculate the weight of provided mass (in kg).
 
+use strict;
 use DDG::Goodie;
 use Scalar::Util qw(looks_like_number);
 
@@ -31,11 +30,19 @@ handle remainder => sub {
     # Return only if $_ is a number
     if (looks_like_number($_)){
     
-        return "Weight of a ".$_."kg mass on Earth is ".$_*9.80665."N.",
+        my $mass = $_;
+    
+        # Value of acceleration due to gravity on Earth in m/s^2.
+        my $g = 9.80665;
+        
+        # Weight = Mass (in kg) * Acceleration due to gravity (in m/s^2)
+        my $weight = $mass*$g;
+    
+        return "Weight of a ".$mass."kg mass on Earth is ".$weight."N.",
             structured_answer => {
                 input     => [],
-                operation => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.",
-                result    => "Weight of a ".$_."kg mass on Earth is ".$_*9.80665."N.",
+                operation => "Taking value of acceleration due to gravity on Earth as ".$g."m/s^2.",
+                result    => "Weight of a ".$mass."kg mass on Earth is ".$weight."N.",
             };
             
     }
