@@ -37,7 +37,7 @@ handle query_lc => sub {
     my $is_atomic_query = $query =~ /atomic number|proton number/;
 
     # Strip out irrelevant words in the query
-    $query =~ s/(?:atomic (?:mass|weight|number)|proton number|of|the|for|element|elemental|chemical symbol|what is|chemical name for)//g;
+    $query =~ s/(?:atomic (?:mass|weight|number)|proton number|of|the|for|element|elemental|chemical symbol|what is|chemical name)//g;
     $query =~ s/^\s+|\s+$//g;
     return unless $query;
 
@@ -67,9 +67,12 @@ handle query_lc => sub {
         data => {
             badge => $element_symbol,
             title => $title,
-            subtitle => $subtitle,
-            description => ""
+            subtitle => $subtitle
         },
+        meta => {
+            sourceName => "Wikipedia",
+            sourceUrl => "https://en.wikipedia.org/wiki/$element_name" 
+        }, 
         templates => {
             group => "icon",
             elClass => {
@@ -78,9 +81,9 @@ handle query_lc => sub {
             },
             variants => {
                 iconBadge => "medium"
-            },
+            },           
             options => {
-                moreAt => 0
+                moreAt => 1
             }
         }
     };   
