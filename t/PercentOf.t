@@ -35,6 +35,12 @@ ddg_goodie_test(
             operation => "Calculate",
             result => 502.7061
         }),
+    '577.40*5%' => test_zci('Result: 28.87',
+        structured_answer => {
+            input => ["577.40*5%"],
+            operation => "Calculate",
+            result => 28.87
+        }),
 
     'urldecode hello%20there' => undef,
     '34$+16' => undef,
