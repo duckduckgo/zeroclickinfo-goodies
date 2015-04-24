@@ -32,7 +32,7 @@ ddg_goodie_test(
             result => 3.604
         }),
 
-    '323.7+55.3%' => test_zci('Result: 502.7061',
+    '323.7+ 55.3%' => test_zci('Result: 502.7061',
         structured_answer => {
             input => ['323.7+55.3%'],
             operation => "Calculate",
@@ -46,18 +46,24 @@ ddg_goodie_test(
             result => 28.87
         }),
 
-    '$577.40*0.5%' => test_zci('Result: 2.887',
+    '$577.40 *0.5%' => test_zci('Result: 2.887',
         structured_answer => {
             input => ['$577.40*0.5%'],
             operation => "Calculate",
             result => 2.887
         }),
 
-    '200-50%' => test_zci('Result: 100',
+    '200 - 50%' => test_zci('Result: 100',
         structured_answer => {
             input => ['200-50%'],
             operation => "Calculate",
             result => 100
+        }),
+    '234 / 25%' => test_zci('Result: 4',
+        structured_answer => {
+            input => ['234/25%'],
+            operation => "Calculate",
+            result => 4
         }),
 
     '200+50-10%' => undef,
