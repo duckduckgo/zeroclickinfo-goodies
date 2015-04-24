@@ -17,42 +17,42 @@ ddg_goodie_test(
             operation => "Calculate",
             result => 6
         }),
-        
+
     '456+120%' => test_zci('Result: 1003.2',
         structured_answer => {
             input => ['456+120%'],
             operation => "Calculate",
             result => 1003.2
         }),
-        
+
     '3.4+6%' => test_zci('Result: 3.604',
         structured_answer => {
             input => ['3.4+6%'],
             operation => "Calculate",
             result => 3.604
         }),
-        
+
     '323.7+55.3%' => test_zci('Result: 502.7061',
         structured_answer => {
             input => ['323.7+55.3%'],
             operation => "Calculate",
             result => 502.7061
         }),
-        
+
     '577.40*5%' => test_zci('Result: 28.87',
         structured_answer => {
             input => ['577.40*5%'],
             operation => "Calculate",
             result => 28.87
         }),
-        
+
     '$577.40*0.5%' => test_zci('Result: 2.887',
         structured_answer => {
             input => ['$577.40*0.5%'],
             operation => "Calculate",
             result => 2.887
         }),
-        
+
     '200-50%' => test_zci('Result: 100',
         structured_answer => {
             input => ['200-50%'],
@@ -60,6 +60,7 @@ ddg_goodie_test(
             result => 100
         }),
 
+    '200+50-10%' => undef,
     'urldecode hello%20there' => undef,
     '34$+16' => undef,
     '12+5t%' => undef
