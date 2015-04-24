@@ -59,11 +59,11 @@ ddg_goodie_test(
             operation => "Calculate",
             result => 100
         }),
-    '234 / 25%' => test_zci('Result: 4',
+    '234 / 25%' => test_zci('Result: 936',
         structured_answer => {
             input => ['234/25%'],
             operation => "Calculate",
-            result => 4
+            result => 936
         }),
 
     '200+50-10%' => undef,

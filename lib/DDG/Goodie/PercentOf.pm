@@ -31,7 +31,7 @@ handle query_nowhitespace => sub {
     } elsif ($2 eq '*') {
         $result = ( $partRes );
     } elsif ($2 eq '/') {
-        $result = ( $1 / ( $partRes ) );
+        $result = ( $1 * ( 100 / $3 ) );
     }
 
     my $text = "Result: $result";
