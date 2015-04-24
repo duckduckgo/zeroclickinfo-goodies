@@ -12,7 +12,7 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::IsAwesome::uniphil
     )],
-    'duckduckhack uniphil' => test_zci('uniphil is awesome I guess. They successfully completed the DuckDuckHack Goodie tutorial anyway.'),
+    'duckduckhack uniphil' => test_zci('uniphil is awesome and has successfully completed the DuckDuckHack Goodie tutorial!'),
     'duckduckhack uniphil is awesome' => undef,
 );
 
