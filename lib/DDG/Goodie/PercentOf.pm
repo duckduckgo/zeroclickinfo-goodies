@@ -20,12 +20,9 @@ triggers query_nowhitespace => qr/\d{1,3}\%$/;
 
 handle query_nowhitespace => sub {
 
-    my $input = $_;
-
-    return unless $input =~ qr/(\d+\.?\d*)(\+|\*|\/|\-)(\d+\.?\d*)\%/;
+    return unless $_ =~ qr/(\d+\.?\d*)(\+|\*|\/|\-)(\d+\.?\d*)\%/;
 
     my $partRes = ($1 * $3) / 100;
-
 
     if ($2 eq '-') {
         $result = ( $1 - ( $partRes ) );
@@ -41,7 +38,7 @@ handle query_nowhitespace => sub {
 
     return $text,
     structured_answer => {
-        input => [$input],
+        input => [$_],
         operation => 'Calculate',
         result => $result
     };
