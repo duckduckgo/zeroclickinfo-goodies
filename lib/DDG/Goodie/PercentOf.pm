@@ -20,7 +20,7 @@ triggers query_nowhitespace => qr/\d{1,3}\%$/;
 
 handle query_nowhitespace => sub {
 
-    return unless $_ =~ qr/^(?:\$|\€|\£)*\s*(\d+\.?\d*)\s*(\+|\*|\/|\-)\s*(\d+\.?\d*)\%$/;
+    return unless $_ =~ qr/^(?:\p{Currency_Symbol})*\s*(\d+\.?\d*)\s*(\+|\*|\/|\-)\s*(\d+\.?\d*)\%$/;
 
     my $partRes = ($1 * $3) / 100;
 
