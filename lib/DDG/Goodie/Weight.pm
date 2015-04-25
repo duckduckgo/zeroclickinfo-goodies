@@ -11,7 +11,7 @@ zci is_cached   => 1;
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "Weight";
 description "Calculate the weight of provided mass (in kg).";
-primary_example_queries "Weight 5", "Weight 5.12", "5.1 weight";
+primary_example_queries "Weight 5", "Weight 5.12g", "5.1 kg weight";
 category "physical_properties";
 topics "math", "science";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Weight.pm";
@@ -22,30 +22,38 @@ triggers startend => "weight";
 
 # Handle statement
 handle remainder => sub {
-    
-    return unless $_;
-    
-    return unless looks_like_number ($_);
 
-    # Return only if $_ is a number
-    if (looks_like_number($_)){
+    return unless $_;
+
+    return unless m/^(?<mass>\d+\.*\d*)\s*(?<unit>\w+)?$/;
+    my $mass = $+{mass};
+    my $unit = $+{unit} // my $default_unit;
     
-        my $mass = $_;
+    my %units = (
+        "kg" => 1,
+        "g"  => 0.001,
+        "mg" => 0.00001,
+        "t" => 1000,
+        "lb" => 0.453,
+        "oz" => 0.0283,
+    );
     
-        # Value of acceleration due to gravity on Earth in m/s^2.
-        my $g = 9.80665;
-        
-        # Weight = Mass (in kg) * Acceleration due to gravity (in m/s^2)
-        my $weight = $mass*$g;
+    if ($unit){
+        $mass *= $units{$unit} if exists $units{$unit};
+        }
     
-        return "Weight of a ".$mass."kg mass on Earth is ".$weight."N.",
+    # Value of acceleration due to gravity on Earth in m/s^2.
+    my $g = 9.80665;
+    
+    # Weight = Mass (in kg) * Acceleration due to gravity (in m/s^2)
+    my $weight = $mass*$g;
+    
+    return "Weight of a ".$mass."kg mass on Earth is ".$weight."N.",
             structured_answer => {
                 input     => [],
                 operation => "Taking value of acceleration due to gravity on Earth as ".$g."m/s^2.",
                 result    => "Weight of a ".$mass."kg mass on Earth is ".$weight."N.",
             };
-            
-    }
 
 
 };

@@ -12,8 +12,8 @@ ddg_goodie_test(
     [qw( DDG::Goodie::Weight )],
     # - primary_example_queries
     'weight 5' => test_zci("Weight of a 5kg mass on Earth is 49.03325N.", structured_answer => { input =>[], operation => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", result =>"Weight of a 5kg mass on Earth is 49.03325N."}),
-    'weight 5.12' => test_zci("Weight of a 5.12kg mass on Earth is 50.210048N.", structured_answer => { input =>[], operation => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", result =>"Weight of a 5.12kg mass on Earth is 50.210048N."}),
-    '5.1 weight' => test_zci("Weight of a 5.1kg mass on Earth is 50.013915N.", structured_answer => { input =>[], operation => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", result =>"Weight of a 5.1kg mass on Earth is 50.013915N."}),
+    'weight 5.12g' => test_zci("Weight of a 0.00512kg mass on Earth is 0.050210048N.", structured_answer => { input =>[], operation => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", result =>"Weight of a 0.00512kg mass on Earth is 0.050210048N."}),
+    '5.1 kg weight' => test_zci("Weight of a 5.1kg mass on Earth is 50.013915N.", structured_answer => { input =>[], operation => "Taking value of acceleration due to gravity on Earth as 9.80665m/s^2.", result =>"Weight of a 5.1kg mass on Earth is 50.013915N."}),
     # Bad example queries
     'weight' => undef,
     'weight abc' => undef,
