@@ -25,7 +25,7 @@ handle remainder => sub {
 
     return unless $_;
 
-    return unless m/^(?<mass>\d+\.*\d*)\s*(?<unit>\w+)?$/;
+    return unless m/^(?<mass>\d+(?:\.\d+)?)\s*(?<unit>\w+)?$/;
     my $mass = $+{mass};
     my $unit = $+{unit} // my $default_unit;
     
