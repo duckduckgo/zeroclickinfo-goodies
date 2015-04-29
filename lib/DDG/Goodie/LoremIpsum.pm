@@ -26,7 +26,8 @@ handle remainder => sub {
     map { push (@lorem, $text->paragraphs(1)) } (1..$loop);
 
     my $plaintext = join " ", @lorem;
-    my $subtitle = $loop >1 ? "$loop Random Paragraphs" : "$loop Random Paragraph";
+    my $default = 1 if !$_;
+    my $plural = 1 if $loop > 1;
        
     return $plaintext,
     structured_answer => {
@@ -34,7 +35,8 @@ handle remainder => sub {
         name => 'Answer',
         data => {
             title => 'Lorem Ipsum',
-            subtitle => $subtitle,
+            is_default => $default,
+            is_plural => $plural,
             lorem_array => \@lorem,
         },
         meta => {
@@ -44,6 +46,7 @@ handle remainder => sub {
         templates => {
             group => 'text',
             options =>{
+                subtitle_content => 'DDH.lorem_ipsum.subtitle',
                 content => 'DDH.lorem_ipsum.content',
                 moreAt => 1
             }
