@@ -61,12 +61,18 @@ ddg_goodie_test(
         }
 	),
     'bad example query' => undef,
-    'coffee to water 20 rgams' => undef,
+    'coffee to water 20 rgams' => => test_zci("334 ml of water",
+        structured_answer => { 
+            input       => ['20g'],                                                                                                                                                                                                                                                                                    
+            operation   => "Water calculation for metric coffee weight",                                                                                                                                                                                                                                                          
+            result      => "334 ml of water"
+        }		
+	),
     '29387293847 coffee to water ratio' => undef,
     'coffee to water sdkmfsdkjfh' => undef,
     'coffee to water 30 garms' => test_zci("501 ml of water",
         structured_answer => { 
-            input       => ['30garms'],                                                                                                                                                                                                                                                                                    
+            input       => ['30g'],                                                                                                                                                                                                                                                                                    
             operation   => "Water calculation for metric coffee weight",                                                                                                                                                                                                                                                          
             result      => "501 ml of water"
         }		

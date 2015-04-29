@@ -44,7 +44,8 @@ handle remainder => sub {
     my $weight_styler = number_style_for($weight_ns);
     my $weight = $weight_styler->for_computation($weight_ns);
 
-    my ($unit) = $_ =~ /([ouncezgramsOUNCEZGRAMS]+)/;
+    #my ($unit) = $_ =~ /([ouncezgramsOUNCEZGRAMS]+)/;
+    my ($unit) = $_ =~ /(ounce[s]?|gram[s]?|oz|g)/i;
     
     return unless defined $unit and defined $weight;
     
