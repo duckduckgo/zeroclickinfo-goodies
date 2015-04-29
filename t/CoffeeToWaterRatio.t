@@ -14,35 +14,35 @@ ddg_goodie_test(
 	'30g coffee to water' => test_zci("501 ml of water",
         structured_answer => { 
             input       => ['30g'],                                                                                                                                                                                                                                                                                    
-            operation   => "Water calculation for metric coffee weight",                                                                                                                                                                                                                                                          
+            operation   => "Water calculation for coffee weight",                                                                                                                                                                                                                                                          
             result      => "501 ml of water"
         }		
 	),
 	'coffee to water 30G' => test_zci("501 ml of water",
         structured_answer => { 
             input       => ['30G'],                                                                                                                                                                                                                                                                                    
-            operation   => "Water calculation for metric coffee weight",                                                                                                                                                                                                                                                          
+            operation   => "Water calculation for coffee weight",                                                                                                                                                                                                                                                          
             result      => "501 ml of water"
         }
     ),
 	'coffee to water ratio 1 ounce' => test_zci("16 fl. oz. of water",
         structured_answer => { 
             input       => ['1ounce'],                                                                                                                                                                                                                                                                                    
-            operation   => "Water calculation for imperial coffee weight",                                                                                                                                                                                                                                                          
+            operation   => "Water calculation for coffee weight",                                                                                                                                                                                                                                                          
             result      => "16 fl. oz. of water"
         }
 	),
 	'31.2 grams coffee to water ratio' => test_zci("521 ml of water",
         structured_answer => { 
             input       => ['31.2grams'],                                                                                                                                                                                                                                                                                    
-            operation   => "Water calculation for metric coffee weight",                                                                                                                                                                                                                                                          
+            operation   => "Water calculation for coffee weight",                                                                                                                                                                                                                                                          
             result      => "521 ml of water"
         }
 	),
 	'coffee to water .5Oz' => test_zci("8 fl. oz. of water",
         structured_answer => { 
             input       => ['.5Oz'],                                                                                                                                                                                                                                                                                    
-            operation   => "Water calculation for imperial coffee weight",                                                                                                                                                                                                                                                          
+            operation   => "Water calculation for coffee weight",                                                                                                                                                                                                                                                          
             result      => "8 fl. oz. of water"
         }
 	),
@@ -64,7 +64,7 @@ ddg_goodie_test(
     'coffee to water 20 rgams' => => test_zci("334 ml of water",
         structured_answer => { 
             input       => ['20g'],                                                                                                                                                                                                                                                                                    
-            operation   => "Water calculation for metric coffee weight",                                                                                                                                                                                                                                                          
+            operation   => "Water calculation for coffee weight",                                                                                                                                                                                                                                                          
             result      => "334 ml of water"
         }		
 	),
@@ -73,7 +73,7 @@ ddg_goodie_test(
     'coffee to water 30 garms' => test_zci("501 ml of water",
         structured_answer => { 
             input       => ['30g'],                                                                                                                                                                                                                                                                                    
-            operation   => "Water calculation for metric coffee weight",                                                                                                                                                                                                                                                          
+            operation   => "Water calculation for coffee weight",                                                                                                                                                                                                                                                          
             result      => "501 ml of water"
         }		
 	),

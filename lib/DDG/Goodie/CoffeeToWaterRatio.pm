@@ -24,16 +24,37 @@ attribution github => ["nickselpa", "Nick Selpa"], twitter => "nickselpa";
 # Triggers
 triggers startend => "coffee to water", "coffee to water ratio";
 
-my @imperialwt = ('ounces', 'ounce', 'oz');
-my @metricwt = ('grams', 'gram', 'g');
+my %imperialwt = (
+    'ounce' => 'fl. oz.',
+    'ounces' => 'fl. oz.',
+    'oz' => 'fl. oz.',
+);
+    
+my %metricwt = (
+    'gram' => 'ml',
+    'grams' => 'ml',
+    'g' => 'ml',
+);
+
 my $weight_re = number_style_regex();
 
 my $imperial_to_water = 16;   
 my $metric_to_water = 16.6945;
 
-# Handle statement
-handle remainder => sub {
+sub convertResult {
+    my ($unit, $weight, $weight_display, $water_ratio, $precision, $fluid_units) = @_;
+    my $conversion = nearest($precision, $weight * $water_ratio);
+    return $conversion . " " . $fluid_units . " of water", structured_answer => {
+        input     => [$weight_display . $unit],
+        operation => 'Water calculation for coffee weight',
+        result    => "$conversion $fluid_units of water",
+    };
+}
 
+
+# Handle statement
+handle remainder => sub { 
+        
     return "1 g to 16.7 ml (0.035 oz. to 0.56 fl. oz.)", structured_answer => {
         input     => [''],
         operation => 'Coffee to water ratio per gram (0.035 ounces)',
@@ -43,48 +64,15 @@ handle remainder => sub {
     return unless my ($weight_ns) = $_ =~ qr/($weight_re)/;
     my $weight_styler = number_style_for($weight_ns);
     my $weight = $weight_styler->for_computation($weight_ns);
+    my $weight_display = $weight_styler->for_display($weight);
 
-    #my ($unit) = $_ =~ /([ouncezgramsOUNCEZGRAMS]+)/;
     my ($unit) = $_ =~ /(ounce[s]?|gram[s]?|oz|g)/i;
     
     return unless defined $unit and defined $weight;
     
-    foreach my $u (@imperialwt) {
-    
-        my $search_string = quotemeta $u;
-        
-        if (lc($unit) =~ /^$search_string/) {
+    return convertResult($unit, $weight, $weight_display, $metric_to_water, 1, $metricwt{lc($unit)}) if exists $metricwt{lc($unit)};
+    return convertResult($unit, $weight, $weight_display, $imperial_to_water, .1, $imperialwt{lc($unit)}) if exists $imperialwt{lc($unit)};
             
-            my $conversion = nearest(.1, $weight * $imperial_to_water);
-            my $weight_display = $weight_styler->for_display($weight);
-            return $conversion . " fl. oz. of water", structured_answer => {
-                input     => [$weight_display . $unit],
-                operation => 'Water calculation for imperial coffee weight',
-                result    => "$conversion fl. oz. of water",
-            };
-        
-        };
-    
-    };
-    
-    foreach my $u (@metricwt) {
-    
-        my $search_string = quotemeta $u;
-        
-        if (lc($unit) =~ /^$search_string/) {
-            
-            my $conversion = nearest(1, $weight * $metric_to_water);
-            my $weight_display = $weight_styler->for_display($weight);
-            return $conversion . " ml of water", structured_answer => {
-                input     => [$weight_display . $unit],
-                operation => 'Water calculation for metric coffee weight',
-                result    => "$conversion ml of water",
-            };
-        
-        };
-    
-    };
-    
     return;
  
 };
