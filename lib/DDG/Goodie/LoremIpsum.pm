@@ -23,7 +23,7 @@ handle remainder => sub {
     $loop = 10 if $loop > 10;
 
     my @lorem;
-    map { push (@lorem, $text->paragraphs(3)) } (1..$loop);
+    map { push (@lorem, $text->paragraphs(1).$text->paragraphs(1)) } (1..$loop);
 
     my $plaintext = join " ", @lorem;
     my $default = 1 if !$_;
