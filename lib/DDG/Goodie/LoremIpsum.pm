@@ -18,7 +18,7 @@ triggers startend => "lorem ipsum", "lipsum";
 my $text = Text::Lorem->new();
 
 handle remainder => sub {
-    my $loop = 4;
+    my $loop = 3;
     $loop = $_ if $_ && $_ =~ /(^\d+$)/;
     $loop = 10 if $loop > 10;
 
@@ -26,14 +26,15 @@ handle remainder => sub {
     map { push (@lorem, $text->paragraphs(1)) } (1..$loop);
 
     my $plaintext = join " ", @lorem;
-
+    my $subtitle = $loop >1 ? "$loop Random Paragraphs" : "$loop Random Paragraph";
+       
     return $plaintext,
     structured_answer => {
         id => 'lorem_ipsum',
         name => 'Answer',
         data => {
             title => 'Lorem Ipsum',
-            subtitle => "$loop Random Paragraphs",
+            subtitle => $subtitle,
             lorem_array => \@lorem,
         },
         meta => {
