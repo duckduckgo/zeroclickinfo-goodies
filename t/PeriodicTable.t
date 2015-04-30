@@ -93,7 +93,7 @@ ddg_goodie_test(
             "N",
             "Nitrogen",
             "Nitrogen",
-            "Atomic number 7. Atomic mass 14.007 u.",
+            "Chemical Element",
             "green"
         )
     ),  
@@ -104,7 +104,7 @@ ddg_goodie_test(
             "N",
             "Nitrogen",
             "Nitrogen",
-            "Atomic number 7. Atomic mass 14.007 u.",
+            "Chemical Element",
             "green"
         )
     ),  
@@ -119,7 +119,7 @@ ddg_goodie_test(
             "Au",
             "Gold",
             "Gold",
-            "Atomic number 79. Atomic mass 196.97 u.",
+            "Chemical Element",
             "red"
         )
     ),  
@@ -130,7 +130,7 @@ ddg_goodie_test(
             "Ag",
             "Silver",
             "Silver",
-            "Atomic number 47. Atomic mass 107.87 u.",
+            "Chemical Element",
             "red"
         )
     ),  
@@ -146,7 +146,7 @@ ddg_goodie_test(
             "O",
             "Oxygen",
             "Oxygen",
-            "Atomic number 8. Atomic mass 15.999 u.",
+            "Chemical Element",
             "green"
         )
     ),
@@ -157,7 +157,7 @@ ddg_goodie_test(
             "Li",
             "Lithium",
             "Lithium",
-            "Atomic number 3. Atomic mass 6.94 u.",
+            "Chemical Element",
             "gold"
         )
     ),
@@ -168,7 +168,7 @@ ddg_goodie_test(
             "Be",
             "Beryllium",
             "Beryllium",
-            "Atomic number 4. Atomic mass 9.0122 u.",
+            "Chemical Element",
             "gold"
         )
     ),
@@ -179,7 +179,7 @@ ddg_goodie_test(
             "La",
             "Lanthanum",
             "Lanthanum",
-            "Atomic number 57. Atomic mass 138.91 u.",
+            "Chemical Element",
             "red"
         )
     ),
@@ -190,7 +190,7 @@ ddg_goodie_test(
             "Ac",
             "Actinium",
             "Actinium",
-            "Atomic number 89. Atomic mass [227.03] u.",
+            "Chemical Element",
             "red"
         )
     ), 
@@ -201,7 +201,7 @@ ddg_goodie_test(
             "Sc",
             "Scandium",
             "Scandium",
-            "Atomic number 21. Atomic mass 44.956 u.",
+            "Chemical Element",
             "red"
         )
     ),
@@ -212,7 +212,7 @@ ddg_goodie_test(
             "Al",
             "Aluminium",
             "Aluminium",
-            "Atomic number 13. Atomic mass 26.982 u.",
+            "Chemical Element",
             "green"
         )
     ),
@@ -223,7 +223,7 @@ ddg_goodie_test(
             "B",
             "Boron",
             "Boron",
-            "Atomic number 5. Atomic mass 10.81 u.",
+            "Chemical Element",
             "green"
         )
     ),
@@ -234,7 +234,7 @@ ddg_goodie_test(
             "C",
             "Carbon",
             "Carbon",
-            "Atomic number 6. Atomic mass 12.011 u.",
+            "Chemical Element",
             "green"
         )
     ),
@@ -245,7 +245,7 @@ ddg_goodie_test(
             "He",
             "Helium",
             "Helium",
-            "Atomic number 2. Atomic mass 4.0026 u.",
+            "Chemical Element",
             "blue-light"
         )
     ),    
@@ -256,7 +256,7 @@ ddg_goodie_test(
             "Mt",
             "Meitnerium",
             "Meitnerium",
-            "Atomic number 109. Atomic mass [276.15] u.",
+            "Chemical Element",
             "red"
         )
     ),  
@@ -268,7 +268,7 @@ ddg_goodie_test(
             "Hg",
             "Mercury",
             "Mercury",
-            "Atomic number 80. Atomic mass 200.59 u.",
+            "Chemical Element",
             "red"
         )
     ), 
@@ -278,14 +278,51 @@ ddg_goodie_test(
             "Hg",
             "Hydrargyrum",
             "Hydrargyrum",
-            "Atomic number 80. Atomic mass 200.59 u.",
+            "Chemical Element",
             "red"
         )
     ), 
+    
+    # Tests for symbol length
+    "oxygen" => test_zci(
+        "O, chemical symbol for oxygen",
+        make_structured_answer(
+            "O",
+            "Oxygen",
+            "Oxygen",
+            "Chemical Element",
+            "green"
+        )
+    ),
+    "lithium" => test_zci(
+        "Li, chemical symbol for lithium",
+        make_structured_answer(
+            "Li",
+            "Lithium",
+            "Lithium",
+            "Chemical Element",
+            "gold"
+        )
+    ),
+    "ununoctium" => test_zci(
+        "Uuo, chemical symbol for ununoctium",
+        make_structured_answer(
+            "Uuo",
+            "Ununoctium",
+            "Ununoctium",
+            "Chemical Element",
+            "red"
+        )
+    ),    
 );
 
 sub make_structured_answer {
     my ($badge, $element_name, $title, $subtitle, $color) = @_;
+
+    my $badge_class = "";
+    my $symbol_length = length($badge);
+    if ($symbol_length == 1) { $badge_class = "tx--25" }
+    elsif ($symbol_length == 3) { $badge_class = "tx--14" }
 
     return structured_answer => {
         id => "periodic_table",
@@ -303,7 +340,9 @@ sub make_structured_answer {
             group => "icon",
             elClass => {
                 bgColor => "bg-clr--$color",
-                iconBadge => "tx-clr-white"
+                iconBadge => "tx-clr-white $badge_class",
+                iconTitle => "tx--19",
+                tileSubtitle => "tx--14"
             },
             variants => {
                 iconBadge => "medium"

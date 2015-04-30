@@ -47,7 +47,7 @@ handle query_lc => sub {
 
     # Default to displaying chemical symbol info.
     my $title = $element_name;
-    my $subtitle = "Atomic number $atomic_number. Atomic mass $atomic_mass u.";
+    my $subtitle = "Chemical Element";
     my $raw = "$element_symbol, chemical symbol for " . lc($element_name);
     if ($is_mass_query) {
         $title = "$atomic_mass u";
@@ -59,6 +59,12 @@ handle query_lc => sub {
         $subtitle = "$element_name - atomic number";
         $raw = "$element_name ($element_symbol), atomic number $atomic_number"
     }    
+
+    # The text size of the icon needs to change depending on the length of the chemical symbol.
+    my $badge_class = "";
+    my $symbol_length = length($element_symbol);
+    if ($symbol_length == 1) { $badge_class = "tx--25" }
+    elsif ($symbol_length == 3) { $badge_class = "tx--14" }
 
     return $raw, 
     structured_answer => {
@@ -77,7 +83,9 @@ handle query_lc => sub {
             group => "icon",
             elClass => {
                 bgColor => get_badge_color($element_type),
-                iconBadge => "tx-clr-white"
+                iconBadge => "tx-clr-white $badge_class",
+                iconTitle => "tx--19",
+                tileSubtitle => "tx--14"
             },
             variants => {
                 iconBadge => "medium"
