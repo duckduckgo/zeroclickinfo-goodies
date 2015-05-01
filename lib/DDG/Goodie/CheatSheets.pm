@@ -28,10 +28,10 @@ handle remainder => sub {
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
 
-	my $meta = delete $data->{meta};
+    my $meta = delete $data->{meta};
 
     return 'Cheat Sheet', structured_answer => {
-	    id => 'cheat_sheets',
+        id => 'cheat_sheets',
         dynamic_id => $data->{id},
         name => 'Cheat Sheet',
         data => $data,
