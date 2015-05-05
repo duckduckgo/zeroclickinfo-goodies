@@ -604,7 +604,7 @@
       "name": "Fence",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fence-crafting.png",
       "ingredients": "Sticks",
-      "description": "Used as a barrier that players and mobs cannot jump over, with the exception of spiders and spider jockeys. It is 1Â½ blocks high for mobs and players, but only 1 to other blocks."
+      "description": "Used as a barrier that players and mobs cannot jump over, with the exception of spiders and spider jockeys. It is 1.5 blocks high for mobs and players, but only 1 to other blocks."
     },
     {
       "name": "Fence Gate",
