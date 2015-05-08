@@ -22,21 +22,27 @@ triggers any => "nepal earthquake relief", "nepal earthquake help", "nepal earth
 handle remainder => sub {
     
     return "Help Nepal Earthquake Relief",
-    html => "
-            <h3>Ways to help Nepal earthquake relief:</h3>
-            
-            <h6>1. Donate</h6>
-            <p>You can donate and that relief charities will be mounting a response to assist with the immediate aftereffects of this disaster.</p>
-            <p><a href='http://www.charitynavigator.org/index.cfm?bay=content.view&cpid=1888#.VULgJSGqpBd'>Donate to charities here.</a></p>
-            
-            <h6>2. #SupportNepal</h6>
-            <p>Share this information with others by posting on Facebook, Twitter, Instagram and all your social media platforms using the <a href='https://twitter.com/search?q=%23supportnepal&src=typd'>#SupportNepal</a> hashtag to encourage others to donate and help as well. </p>
-            
-            <h4>Read More:</h4>
-            <p><a href='http://time.com/3836242/nepal-earthquake-donations-disaster-relief/'>TIME 6 Ways You Can Give to Nepal Earthquake Relief</a></p>
-            <p><a href='http://mariashriver.com/blog/2015/04/8-ways-you-can-help-nepal-earthquake-victims/'>8 Ways You Can Help Nepal Earthquake Victims BY MARIASHRIVER.COM</a></p>
-            
-            ";
+    structured_answer => {
+        id => 'nepal_earthquake_relief',
+        name => 'Nepal Earthquake Relief',
+        data => {
+            title => "Ways to help Nepal earthquake relief",
+            description => "You can donate and that relief charities will be mounting a response to assist 
+            with the immediate aftereffects of this disaster, and share this information with others by posting 
+            on Facebook, Twitter, Instagram and all your social media platforms using the #SupportNepal hashtag 
+            to encourage others to donate and help as well."
+        },
+        meta => {
+            sourceName => "TIME 6 Ways You Can Give to Nepal Earthquake Relief",
+            sourceUrl => "http://time.com/3836242/nepal-earthquake-donations-disaster-relief/"
+        },
+        templates => {
+            group => 'info',
+            options => {
+                moreAt => 1
+            }
+        }
+    };
     
 };
 
