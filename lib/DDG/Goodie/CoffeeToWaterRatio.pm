@@ -24,26 +24,14 @@ attribution github => ["nickselpa", "Nick Selpa"], twitter => "nickselpa";
 # Triggers
 triggers startend => "coffee to water", "coffee to water ratio";
 
-#my %imperialwt = (
-#    'ounce' => 'fl. oz.',
-#    'ounces' => 'fl. oz.',
-#    'oz' => 'fl. oz.',
-#);
-#    
-#my %metricwt = (
-#    'gram' => 'ml',
-#    'grams' => 'ml',
-#    'g' => 'ml',
-#);
+my $imperial_fluid_units = 'fl. oz.';
+my $metric_fluid_units = 'ml';
 
 my $metric_precision =  1;
 my $imperial_precision = 0.1;
 
 my $imperial_to_water = 16;   
 my $metric_to_water = 16.6945;
-
-my $imperial_fluid_units = 'fl. oz.';
-my $metric_fluid_units = 'ml';
 
 my %wt = (
     'ounce' => {
