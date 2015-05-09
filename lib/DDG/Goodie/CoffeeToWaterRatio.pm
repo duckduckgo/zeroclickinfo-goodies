@@ -24,22 +24,61 @@ attribution github => ["nickselpa", "Nick Selpa"], twitter => "nickselpa";
 # Triggers
 triggers startend => "coffee to water", "coffee to water ratio";
 
-my %imperialwt = (
-    'ounce' => 'fl. oz.',
-    'ounces' => 'fl. oz.',
-    'oz' => 'fl. oz.',
-);
-    
-my %metricwt = (
-    'gram' => 'ml',
-    'grams' => 'ml',
-    'g' => 'ml',
-);
+#my %imperialwt = (
+#    'ounce' => 'fl. oz.',
+#    'ounces' => 'fl. oz.',
+#    'oz' => 'fl. oz.',
+#);
+#    
+#my %metricwt = (
+#    'gram' => 'ml',
+#    'grams' => 'ml',
+#    'g' => 'ml',
+#);
 
-my $weight_re = number_style_regex();
+my $metric_precision =  1;
+my $imperial_precision = 0.1;
 
 my $imperial_to_water = 16;   
 my $metric_to_water = 16.6945;
+
+my $imperial_fluid_units = 'fl. oz.';
+my $metric_fluid_units = 'ml';
+
+my %wt = (
+    'ounce' => {
+        'fluid_units' => $imperial_fluid_units,
+        'precision' => $imperial_precision,
+        'ratio' => $imperial_to_water,
+    },
+    'ounces' => {
+        'fluid_units' => $imperial_fluid_units,
+        'precision' => $imperial_precision,
+        'ratio' => $imperial_to_water,
+    },
+    'oz' => {
+        'fluid_units' => $imperial_fluid_units,
+        'precision' => $imperial_precision,
+        'ratio' => $imperial_to_water,
+    },
+    'gram' => {
+        'fluid_units' => $metric_fluid_units,
+        'precision' => $metric_precision,
+        'ratio' => $metric_to_water,
+    },
+    'grams' => {
+        'fluid_units' => $metric_fluid_units,
+        'precision' => $metric_precision,
+        'ratio' => $metric_to_water,
+    },
+    'g' => {
+        'fluid_units' => $metric_fluid_units,
+        'precision' => $metric_precision,
+        'ratio' => $metric_to_water,
+    },
+);
+
+my $weight_re = number_style_regex();
 
 sub convertResult {
     my ($unit, $weight, $weight_display, $water_ratio, $precision, $fluid_units) = @_;
@@ -70,9 +109,10 @@ handle remainder => sub {
     
     return unless defined $unit and defined $weight;
     
-    return convertResult($unit, $weight, $weight_display, $metric_to_water, 1, $metricwt{lc($unit)}) if exists $metricwt{lc($unit)};
-    return convertResult($unit, $weight, $weight_display, $imperial_to_water, .1, $imperialwt{lc($unit)}) if exists $imperialwt{lc($unit)};
-            
+    my $lc_unit = lc($unit);
+   
+    return convertResult($unit, $weight, $weight_display, $wt{$lc_unit}{'ratio'}, $wt{$lc_unit}{'precision'}, $wt{$lc_unit}{'fluid_units'}) if defined $wt{$lc_unit};
+    
     return;
  
 };
