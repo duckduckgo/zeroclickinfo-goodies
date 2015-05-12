@@ -1,3 +1,5 @@
+#ABSTRACT: dmcdowell's first Goodie
+
 package DDG::Goodie::IsAwesome::dmcdowell;
 
 use DDG::Goodie;
