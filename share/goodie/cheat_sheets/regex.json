@@ -1,5 +1,10 @@
 {
     "name": "Regex Cheat Sheet",
+    "description": "Regular expression syntax",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceURL": "http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/"
+    },
     "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"],
     "sections": {
         "Assertions": [{
@@ -243,10 +248,5 @@
             "val": "End of word",
             "key": "\\>"
         }]
-    },
-    "description": "Regular expression syntax",
-    "meta": {
-        "sourceName": "?",
-        "sourceURL": ""
     }
 }
