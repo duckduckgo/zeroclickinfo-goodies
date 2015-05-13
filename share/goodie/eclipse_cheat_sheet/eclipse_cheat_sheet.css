@@ -1,0 +1,53 @@
+/*
+    Document   : zeroclickinfo-goodies/share/goodie/eclipse_cheat_sheet/eclipse_cheat_sheet.css
+    Created on : 2015-05-12 02:35 PM
+    Author     : dmcdowell
+    Description: CSS stylesheet for the eclipse cheat sheet Goodie
+*/
+
+.zci--answer .zero_click_wrapper .zero_click {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.zci--answer #sheet-container {
+    max-height: 45ex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.zci--answer .sheet-column {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.zci--answer .top-elements div {
+    display: inline-block;
+}
+
+.zci--answer  table.sheet-table th {
+    padding-right: 1ex;
+    vertical-align: top;
+    text-align: left;
+}
+
+.zci--answer  table.sheet-table {
+    width: 100%;
+    margin-bottom: 1ex;
+}
+
+.zci--answer  table.sheet-table td {
+    padding-right: 1ex;
+    vertical-align: top;
+}
+.zci--answer  table.sheet-table td code {
+    white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+    .zci--answer .sheet-column {
+	width: 100%;
+    }
+}
