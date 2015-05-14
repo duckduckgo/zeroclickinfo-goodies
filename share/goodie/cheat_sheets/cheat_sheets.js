@@ -12,22 +12,37 @@ DDH.cheat_sheets.build = function(ops) {
         return result;
     });
 
-    var re_lbrackets = /(^|[^\\])(\[|\{)/gi, // search for [ or {, but not \[ or \{
-        re_rbrackets = /([^\\])(\]|\})/gi,   // search for ] or ], but not \] or \}
-        re_escbrackets = /(?:\\(\[|\{|\]|\}))/gi; // search for \[, \], \{, and \}
+    var re_lbrackets   = /(^|[^\\])(\[|\{)/gi, // search for [ or {, but not \[ or \{
+        re_rbrackets   = /([^\\])(\]|\})/gi,   // search for ] or ], but not \] or \}
+        re_escbrackets = /(?:\\(\[|\{|\]|\}))/gi, // search for \[, \], \{, and \}
+        re_whitespace  = /\s+/,
+        re_codeblock   = /<code>(.+?)<\/code>/g;
+        _escape = Handlebars.Utils.escapeExpression;
 
     Spice.registerHelper('cheatsheets_codeblock', function(string, options) {
-        // replace '[' or '{' with '<code>'
-        string = string.replace(re_lbrackets, '$1<code>');
 
-        // replace ']' or '}' with '</code>'
-        string = string.replace(re_rbrackets, '$1</code>');
+        var out;
 
-        // replace '\[' or '\{' with '[' or '{'
-        // replace '\]' or '\}' with ']' or '}'
-        string = string.replace(re_escbrackets, '$1');
+        if (re_lbrackets.test(string) && re_rbrackets.test(string)) {
 
-        return new Handlebars.SafeString(string);
+            // replace '[' or '{' with '<code>'
+            string = string.replace(re_lbrackets, '$1<code>');
+
+            // replace ']' or '}' with '</code>'
+            string = string.replace(re_rbrackets, '$1</code>');
+
+            // replace '\[' or '\{' with '[' or '{'
+            // replace '\]' or '\}' with ']' or '}'
+            string = string.replace(re_escbrackets, '$1');
+
+            out = string.replace(re_codeblock, function(match, p1, offset, string){
+                return "<code>" + _escape(p1) + "</code>";
+            });
+        } else {
+           out = "<code>" + _escape(string) + "</code>";
+        }
+
+        return new Handlebars.SafeString(out);
     });
 
     return {
