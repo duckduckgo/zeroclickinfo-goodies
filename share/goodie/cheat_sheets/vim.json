@@ -2,7 +2,7 @@
     "id": "vim_cheat_sheet",
     "name": "Vim",
     "description": "Text Editor",
-    "meta": {
+    "metadata": {
         "sourceName": "VimCheatSheet",
         "sourceUrl": "https://duckduckgo.com"
     },

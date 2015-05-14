@@ -246,7 +246,7 @@
         }]
     },
     "description": "Regular expression syntax",
-    "meta": {
+    "metadata": {
         "sourceName": "?",
         "sourceURL": ""
     }

@@ -2,7 +2,7 @@
     "id": "tmux_cheat_sheet",
     "name": "tmux",
     "description": "Terminal multiplexer",
-    "meta": {
+    "metadata": {
         "sourceName": "OpenBSD",
         "sourceURL": "http://www.openbsd.org/cgi-bin/man.cgi?query=tmux&sektion=1"
     },
