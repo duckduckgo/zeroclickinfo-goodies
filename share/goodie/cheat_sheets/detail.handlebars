@@ -3,13 +3,13 @@
 
 <div class="gw cheatsheet__container compressed">
 
-    {{#ordered_cheatsheet sections section_order}}
+    {{#cheatsheets_ordered sections section_order}}
     <div class="g half cheatsheet__section">
         <h6 class="cheatsheet__title">{{name}}</h6>
         <div class="gw">
         {{#each items}}
             <div class="g forty">
-                <span class="cheatsheet__data"><code>{{key}}</code></span>
+                <span class="cheatsheet__data">{{cheatsheets_codeblock key}}</span>
             </div>
             <div class="g sixty">
                 <span class="cheatsheet__data">{{val}}</span>
@@ -17,7 +17,7 @@
         {{/each}}
         </div>
     </div>
-    {{/ordered_cheatsheet}}
+    {{/cheatsheets_ordered}}
 </div>
 
 <div class="cheatsheet__footer">
