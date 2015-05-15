@@ -330,7 +330,8 @@ sub make_structured_answer {
         data => {
             badge => $badge,
             title => $title,
-            subtitle => $subtitle
+            subtitle => $subtitle,
+            url => "https://en.wikipedia.org/wiki/$element_name",
         },        
         meta => {
             sourceName => "Wikipedia",
