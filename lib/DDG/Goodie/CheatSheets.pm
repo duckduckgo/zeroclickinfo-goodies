@@ -41,7 +41,6 @@ handle remainder => sub {
         id => 'cheat_sheets',
         name => 'Cheat Sheet',
         data => $data,
-        meta => \%{$data->{metadata}},
         templates => {
             group => 'base',
             item => 0,
