@@ -4,19 +4,27 @@
 <div class="gw cheatsheet__container compressed">
 
     {{#cheatsheets_ordered sections section_order}}
-    <div class="g half cheatsheet__section">
-        <h6 class="cheatsheet__title">{{name}}</h6>
-        <div class="gw">
-        {{#each items}}
-            <div class="g forty">
-                <span class="cheatsheet__data">{{cheatsheets_codeblock key}}</span>
-            </div>
-            <div class="g sixty">
-                <span class="cheatsheet__data tx-clr--slate-light ">{{val}}</span>
-            </div>
-        {{/each}}
-        </div>
-    </div>
+    <table class="g half cheatsheet__section">
+        <thead class="whole">
+            <tr class="whole">
+                <th class="whole">
+                    <h6 class="cheatsheet__title">{{name}}</h6>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="whole">
+            {{#each items}}
+            <tr class="gw whole">
+                <td class="g forty forty--screen-s cheatsheet__key">
+                    <span class="cheatsheet__data">{{cheatsheets_codeblock key}}</span>
+                </td>
+                <td class="g sixty sixty--screen-s cheatsheet__value">
+                    <span class="cheatsheet__data tx-clr--slate-light ">{{val}}</span>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
     {{/cheatsheets_ordered}}
 </div>
 
