@@ -208,13 +208,13 @@
       "name": "Clock",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/clock-crafting.png",
       "ingredients": "Gold Ingots + Compass",
-      "description": "Clocks are items that display the current in-game time. It is done by displaying the sun and the moon\\\"s position, relative to the horizon."
+      "description": "Clocks are items that display the current in-game time. It is done by displaying the sun and the moon's position, relative to the horizon."
     },
     {
       "name": "Compass",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/compass-crafting.png",
       "ingredients": "Iron Ingots + Redstone Dust",
-      "description": "The compass will always point to your original spawn point. Can\\\"t be used in The Nether or in The End."
+      "description": "The compass will always point to your original spawn point. Can't be used in The Nether or in The End."
     },
     {
       "name": "Fishing Rod",
@@ -238,7 +238,7 @@
       "name": "Map",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/map-crafting.png",
       "ingredients": "Paper + Compass",
-      "description": "The Map is used to view explored terrain. While a map is being held in the player\\\"s hand, it will gradually be drawn as the player explores the world."
+      "description": "The Map is used to view explored terrain. While a map is being held in the player's hand, it will gradually be drawn as the player explores the world."
     },
     {
       "name": "Pickaxes",
@@ -604,7 +604,7 @@
       "name": "Fence",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/fence-crafting.png",
       "ingredients": "Sticks",
-      "description": "Used as a barrier that players and mobs cannot jump over, with the exception of spiders and spider jockeys. It is 1Â½ blocks high for mobs and players, but only 1 to other blocks."
+      "description": "Used as a barrier that players and mobs cannot jump over, with the exception of spiders and spider jockeys. It is 1.5 blocks high for mobs and players, but only 1 to other blocks."
     },
     {
       "name": "Fence Gate",
@@ -796,7 +796,7 @@
       "name": "Gray Dye",
       "image": "http://www.minecraftxl.com/images/wiki/recipes/gray-dye-crafting.png",
       "ingredients": "Ink Sac + Bone Meal",
-      "description": "Used to color wool or sheep\"s gray."
+      "description": "Used to color wool or sheep's gray."
     },
     {
       "name": "Light Blue Dye",
