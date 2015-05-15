@@ -73,7 +73,8 @@ handle query_lc => sub {
         data => {
             badge => $element_symbol,
             title => $title,
-            subtitle => $subtitle
+            subtitle => $subtitle,
+            url => "https://en.wikipedia.org/wiki/$element_name",
         },
         meta => {
             sourceName => "Wikipedia",
