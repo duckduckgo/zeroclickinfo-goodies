@@ -1,0 +1,31 @@
+<h3 class="c-base__title">{{name}}</h3>
+<h4 class="c-base__sub">{{description}}</h4>
+
+<div class="gw cheatsheet__container compressed">
+
+    {{#ordered_cheatsheet sections section_order}}
+    <div class="g half cheatsheet__section">
+        <h6 class="cheatsheet__title">{{name}}</h6>
+        <div class="gw">
+        {{#each items}}
+            <div class="g forty">
+                <span class="cheatsheet__data"><code>{{key}}</code></span>
+            </div>
+            <div class="g sixty">
+                <span class="cheatsheet__data">{{val}}</span>
+            </div>
+        {{/each}}
+        </div>
+    </div>
+    {{/ordered_cheatsheet}}
+</div>
+
+<div class="cheatsheet__footer">
+    <hr>
+    <a class="c-text__link  c-text__link--chomp  chomp--link sep--after can-expand">
+        <i class="chomp--link__icn"></i>
+        <span class="chomp--link__mr">Show More</span>
+        <span class="chomp--link__ls">Show Less</span>
+    </a>
+    <span class="pull-right">{{{moreAt meta 'none' className="c-base__link"}}}</span>
+</div>

@@ -31,7 +31,7 @@ triggers query_nowhitespace => qr<
         [\( \) x X * % + / \^ 0-9 \. , _ \$ -]*
 
         (?(1) (?: -? [0-9 \. , _ ]+ |) |)
-        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt )+
+        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
@@ -94,7 +94,7 @@ handle query_nowhitespace => sub {
     $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/xg;    # E == *10^n
     $tmp_expr =~ s/\$//g;                                              # Remove $s.
     $tmp_expr =~ s/=$//;                                               # Drop =.
-
+    $tmp_expr =~ s/([0-9])\s*([a-zA-Z])([^0-9])/$1*$2$3/g;             # Support 0.5e or 0.5pi; but don't break 1e8
     # Now sub in constants
     while (my ($name, $constant) = each %named_constants) {
         $tmp_expr =~ s# (\d+?)\s+$name # $1 * $constant #xig;
@@ -109,7 +109,6 @@ handle query_nowhitespace => sub {
     $tmp_expr = $style->for_computation($tmp_expr);
     # Using functions makes us want answers with more precision than our inputs indicate.
     my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
-
     my $tmp_result;
     eval {
         # e.g. sin(100000)/100000 completely makes this go haywire.

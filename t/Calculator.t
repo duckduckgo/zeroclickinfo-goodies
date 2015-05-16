@@ -704,6 +704,24 @@ ddg_goodie_test(
             result    => qr/6,666/
         }
     ),
+    '(0.4e^(0))*cos(0)' => test_zci(
+        '(0.4e ^ (0)) * cos(0) = 0.4',
+        heading => 'Calculator',
+        structured_answer => {
+            input => ['(0.4e ^ (0)) * cos(0)'],
+            operation => 'Calculate',
+            result => qr'0.4'
+        }
+    ),
+    '2pi' => test_zci(
+        '2 pi = 6.28318530717958',
+        heading => 'Calculator',
+        structured_answer => {
+            input => ['2 pi'],
+            operation => 'Calculate',
+            result => qr"6.28318530717958"
+        }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,

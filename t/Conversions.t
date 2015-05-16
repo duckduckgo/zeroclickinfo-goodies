@@ -559,6 +559,30 @@ ddg_goodie_test(
             result    => '3,785.412 millilitres'
         }
     ),
+    '32 ml to oz' => test_zci(
+        '32 millilitres = 1.082 us fluid ounces',
+        structured_answer => {
+            input     => ['32 millilitres'],
+            operation => 'Convert',
+            result    => '1.082 us fluid ounces'
+        }
+    ),
+    '100 oz to ml' => test_zci(
+        '100 us fluid ounces = 2,957.353 millilitres',
+        structured_answer => {
+            input     => ['100 us fluid ounces'],
+            operation => 'Convert',
+            result    => '2,957.353 millilitres'
+        }
+    ),
+    '100 ml to oz' => test_zci(
+        '100 millilitres = 3.381 us fluid ounces',
+        structured_answer => {
+            input     => ['100 millilitres'],
+            operation => 'Convert',
+            result    => '3.381 us fluid ounces'
+        }
+    ),
     'mm in inches' => test_zci(
         '1 millimeter = 0.039 inches',
         structured_answer => {
