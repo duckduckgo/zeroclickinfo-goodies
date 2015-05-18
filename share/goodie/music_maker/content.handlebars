@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="controls">
+        <button class="play btn">Play</button>
+        <button class="stop btn">Stop</button>
+        <label for="tempo frm_label">Tempo: </label>
+        <span class="tempo--value"></span>
+        <input name="tempo" class="tempo tempo frm_input" type=number value=120>
+    </div>
+    <table>
+        <tbody>
+            {{#loop 5}}
+            <tr class="track">
+                <td class="instrument bg-clr--platinum-dark tx-clr--slate">
+                    <label for="instrument_select frm_label">Instrument:</label>
+                    <select id="instrument_select frm_select" name="instrument_select">
+                        <option value="" selected>Please choose</option>
+
+                        <option value="Snare">Snare</option>
+                        <option value="Hi Hat">Hi Hat</option>
+                        <option value="Cymbal">Cymbal</option>
+                        <option value="Kick">Kick</option>
+                    </select>
+                </td>
+
+                {{#loop 24}}
+                <td class="beat bg-clr--slate"></td>
+                {{/loop}}
+            </tr>
+            {{/loop}}
+        </tbody>
+    </table>
+    <div>
+        <span class="ddgsi ddgsi-plus"></span>&nbsp;New track
+    </div>
+</div>

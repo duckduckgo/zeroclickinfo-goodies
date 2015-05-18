@@ -1,0 +1,65 @@
+.zci--music_maker .container {
+    width: 760px;
+}
+
+.zci--music_maker .controls {
+    margin-bottom: .85em;
+}
+
+.zci--music_maker .controls input.tempo {
+    display: inline;
+    vertical-align: middle;
+}
+
+.zci--music_maker table {
+    border: 1px solid #666;
+    border-radius: 3px;
+}
+
+.zci--music_maker tr {
+    border-bottom: 1px solid #999;
+    padding: 4px;
+}
+
+.zci--music_maker td {
+    padding: 4px;
+}
+
+.zci--music_maker td.instrument {
+    width: 280px;
+}
+
+.zci--music_maker td.beat {
+    border-right: 1px solid rgba(170, 170, 170, 0.5);
+    border-top: 1px solid rgba(170, 170, 170, 0.5);
+    width: 20px;
+    height: 20px;
+}
+
+.zci--music_maker td.beat:hover {
+    cursor: pointer;
+}
+
+.zci--music_maker td.selected {
+    background-color: #589e4d;
+}
+
+.zci--music_maker td.highlight {
+    background-color: #3a7fb4;
+}
+
+.zci--music_maker td.beat:nth-of-type(5n) {
+    border-right: 2px solid rgba(170, 170, 170, 1);
+}
+
+.zci--music_maker tr td.beat:last-of-type {
+    border-right: none;
+}
+
+.zci--music_maker tr:first-of-type td.beat {
+    border-top: none;
+}
+
+.zci--music_maker tr:last-of-type  td.beat {
+    border-bottom: none
+}
