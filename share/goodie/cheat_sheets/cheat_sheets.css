@@ -1,5 +1,5 @@
 .zci--cheat_sheets .cheatsheet__container.compressed {
-    max-height: 20em;
+/*     max-height: 20em; */
 }
 
 /* Style Cheatsheet Elements */
@@ -11,7 +11,8 @@
 }
 
 .zci--cheat_sheets .cheatsheet__section {
-    margin-bottom: 3px;
+    width: 45%;
+    float: left;
 }
 
 .zci--cheat_sheets  .cheatsheet__data {

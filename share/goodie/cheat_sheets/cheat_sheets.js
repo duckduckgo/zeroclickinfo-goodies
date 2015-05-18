@@ -54,10 +54,19 @@ DDH.cheat_sheets.build = function(ops) {
                 $more = $more_btn.find(".chomp--link__mr"),
                 $less = $more_btn.find(".chomp--link__ls");
 
-            $more_btn.click(function() {
-                $dom.toggleClass("has-chomp-expanded");
-                $container.toggleClass("compressed");
-            });
+             DDG.require('masonry.js', function(){
+                 $container.masonry({
+                     columnWidth: '.grid-sizer',
+                     itemSelector: '.cheatsheet__section',
+                     gutter: 5,
+                     percentPosition: true
+                 });
+
+                $more_btn.click(function() {
+                    $dom.toggleClass("has-chomp-expanded");
+                    $container.toggleClass("compressed");
+                });
+             });
          }
     };
 };

@@ -1,30 +1,28 @@
 <h3 class="c-base__title">{{name}}</h3>
 <h4 class="c-base__sub">{{description}}</h4>
 
-<div class="gw cheatsheet__container compressed">
-
+<div class="cheatsheet__container">
+    <div class="grid-sizer half whole--screen-s"></div>
     {{#cheatsheets_ordered sections section_order}}
-    <table class="g half cheatsheet__section">
-        <thead class="whole">
-            <tr class="whole">
-                <th class="whole">
-                    <h6 class="cheatsheet__title">{{name}}</h6>
-                </th>
-            </tr>
-        </thead>
-        <tbody class="whole">
-            {{#each items}}
-            <tr class="gw whole">
-                <td class="g forty forty--screen-s cheatsheet__key">
-                    <span class="cheatsheet__data">{{cheatsheets_codeblock key}}</span>
-                </td>
-                <td class="g sixty sixty--screen-s cheatsheet__value">
-                    <span class="cheatsheet__data tx-clr--slate-light ">{{val}}</span>
-                </td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
+    <div class="cheatsheet__section">
+        <span class="whole">
+            <h6 class="cheatsheet__title">{{name}}</h6>
+        </span>
+        <table class="whole">
+            <tbody class="whole">
+                {{#each items}}
+                <tr class="gw whole">
+                    <td class="g forty forty--screen-s cheatsheet__key">
+                        <span class="cheatsheet__data">{{cheatsheets_codeblock key}}</span>
+                    </td>
+                    <td class="g sixty sixty--screen-s cheatsheet__value">
+                        <span class="cheatsheet__data tx-clr--slate-light ">{{val}}</span>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
     {{/cheatsheets_ordered}}
 </div>
 
