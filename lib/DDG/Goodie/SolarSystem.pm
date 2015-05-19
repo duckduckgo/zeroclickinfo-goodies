@@ -5,6 +5,7 @@ use DDG::Goodie;
 use YAML::XS qw( Load );
 use POSIX;
 use Text::Trim;
+use strict;
 
 zci answer_type => "solarsystem";
 zci is_cached   => 1;
