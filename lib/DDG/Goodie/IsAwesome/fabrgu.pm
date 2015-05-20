@@ -13,7 +13,7 @@ primary_example_queries "duckduckhack fabrgu";
 category "special";
 topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/fabrgu.pm";
-attribution github => ["https://github.com/fabrgu", "fabrgu"],
+attribution github => ["https://github.com/fabrgu", "fabrgu"];
 
 triggers start => "duckduckhack fabrgu";
 
