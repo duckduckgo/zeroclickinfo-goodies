@@ -38,14 +38,11 @@ sub test_queries {
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Binomial )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
+   
     'binomial(7, 1)' => test_zci('binomial(7, 1) = 7'),
     'binomial(7,5)' => test_zci('binomial(7, 5) = 21'),
     '3 choose 2' => test_zci('binomial(3, 2) = 3'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
+   
     'derp' => undef,
     'binomial(7, -1)' => undef,
     '7 choose -1' => undef,
