@@ -1,6 +1,7 @@
 package DDG::Goodie::IPCodes;
 # ABSTRACT: International Protection Marking Codes
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "ipcodes";
