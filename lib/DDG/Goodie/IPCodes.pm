@@ -45,9 +45,8 @@ my %water = (
 );
 
 handle query_lc => sub {
-    return unless $_ =~ $regex;
-    my $d = uc $1;
-    my $w = uc $2;
+    return unless $regex;
+    my ($d, $w) = ($1, $2);
 
     my $answer = "Particle protection: $particles{$d}; Water protection: $water{$w}";
     return $answer,
