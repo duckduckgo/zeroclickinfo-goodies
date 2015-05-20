@@ -23,16 +23,6 @@ attribution github  => ["killerfish", "Usman Raza"],
 
 triggers any => 'country code', 'iso code', 'iso 3166';
 
-# Adding alias for country names not present in Local::Country
-Locale::Country::add_country_alias('Antigua and Barbuda'  => 'Antigua');
-Locale::Country::add_country_alias('Antigua and Barbuda'  => 'Barbuda');
-Locale::Country::add_country_alias('Russian Federation'   => 'Russia');
-Locale::Country::add_country_alias('Trinidad and Tobago'  => 'Tobago');
-Locale::Country::add_country_alias('Trinidad and Tobago'  => 'Trinidad');
-Locale::Country::add_country_alias('United States'        => 'America');
-Locale::Country::add_country_alias('Vatican City'         => 'Vatican');
-Locale::Country::add_country_alias('Virgin Islands, U.S.' => 'US Virgin Islands');
-
 my %numbers    = (two   => 2, three => 3);
 my $connectors = qr/of|for/;
 my $counts     = join('|', values %numbers, keys %numbers);
