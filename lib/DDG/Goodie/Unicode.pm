@@ -162,3 +162,50 @@ sub unicode_lookup {
 }
 
 1;
+
+=head1 NAME
+
+DDG::Goodie::Unicode
+
+
+=head1 DESCRIPTION
+
+Unicode character information lookup
+
+
+=head1 REQUIRES
+
+L<Encode> 
+
+L<Unicode::Char> 
+
+L<Unicode::UCD> 
+
+L<DDG::Goodie> 
+
+
+=head1 METHODS
+
+=head2 char_to_codepoint
+
+ Converts a character input to a codepoint.
+
+=head2 codepoint_description
+
+ Performs a lookup for a codepoint input and returns the description.
+
+=head2 input_type
+
+ Determines whether an input is a codepoint, name or character based on regular expressions.
+
+=head2 name_to_char
+
+ Converts a name input to a character.
+
+=head2 unicode_lookup
+
+ Performs a unicode lookup based on type of input - codepoint, name or char.
+
+
+=cut
+
