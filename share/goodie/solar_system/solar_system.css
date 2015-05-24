@@ -1,0 +1,33 @@
+.zci--solar_system .objects--objectImage {
+    height: 60px;
+    width: 60px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #333;
+    border-radius: 5%;
+    line-height: 0.5;
+    text-align: center;
+}
+
+.zci--solar_system .objects--objectAttribute {
+    font-size: 1.319em;
+    font-weight: 700;
+    line-height: 1.2;
+    display:block;
+}
+
+.zci--solar_system .objects--objectName {
+    font-size: 0.972em;
+    font-weight: 500;
+} 
+
+.zci--solar_system .objects--info {
+    height: 60px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 15px;
+}
+
+.zci--solar_system .objects--body {
+    display: table;
+}

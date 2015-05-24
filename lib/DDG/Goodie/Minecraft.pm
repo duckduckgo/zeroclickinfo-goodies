@@ -4,14 +4,12 @@ package DDG::Goodie::Minecraft;
 use strict;
 use DDG::Goodie;
 use JSON;
-use utf8;
-use URI::Escape::XS;
 
-triggers startend => "minecraft";
+zci answer_type => 'minecraft';
+zci is_cached => 1;
 
 primary_example_queries 'cake minecraft';
 secondary_example_queries 'how do i craft a cake in minecraft';
-
 name 'Minecraft';
 description 'Minecraft crafting recipes.';
 source 'http://thejool.com/api/crafting-guide.json';
@@ -22,8 +20,7 @@ attribution
     web => ['http://engvik.nu', 'Lars Jansøn Engvik'],
     github => [ 'larseng', 'Lars Jansøn Engvik'];
 
-zci answer_type => 'minecraft';
-zci is_cached => 1;
+triggers startend => "minecraft";
 
 # Fetch and store recipes in a hash.
 my $json = share('crafting-guide.json')->slurp;
@@ -35,27 +32,7 @@ my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
 # Bad words: Words related to Minecraft, but not related to recipes.
 my %good_words = map { $_ => 1 } map { split /\s+/ } (keys %recipes);
 my %okay_words = map { $_ => 1 } (qw(a crafting));
-my %bad_words = map { $_ => 1 } (qw(download server tutorial mod mods skins skin texture pack packs project projects));
-
-# Creates the HTML.
-sub make_html {
-    my ($recipe) = @_;
-    my $html = '';
-    my $uri = 'https://duckduckgo.com/iu/?u=' . encodeURIComponent($recipe->{'image'});
-
-    $html = '<div id="minecraft-wrapper">';
-    $html .= '<h3>' . $recipe->{'name'} . '</h3>';
-    $html .= '<div id="minecraft-recipe" style="float: left; width: 50%;">';
-    $html .= '<p>' . $recipe->{'description'} . '</p>';
-    $html .= '<p>Ingredients: ' . $recipe->{'ingredients'} . '</p>';
-    $html .= '</div>';
-    $html .= '<div id="minecraft-recipe-image" style="float: right; width: 40%;">';
-    $html .= '<img src="' . $uri . '" />';
-    $html .= '</div>';
-    $html .= '</div>';
-
-    return $html;
-}
+my %bad_words  = map { $_ => 1 } (qw(download server tutorial mod mods skins skin texture pack packs project projects));
 
 handle remainder => sub {
     my @query = split /\s+/, lc $_; # Split on whitespaces.
@@ -71,9 +48,29 @@ handle remainder => sub {
     return unless $recipe;
 
     # Recipe found, let's return an answer.
-    my $plain = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
-    my $html = make_html($recipe);
+    my $plaintext = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
 
-    return $plain, html => $html;
+    return $plaintext,
+    structured_answer => {
+        id => 'minecraft',
+        name => 'Minecraft',
+        data => {
+            title => $recipe->{'name'},
+            subtitle => "Ingredients: " . $recipe->{'ingredients'},
+            description => $recipe->{'description'},
+            image => 'https://duckduckgo.com/iu/?u=' . uri_esc( $recipe->{'image'} )
+        },
+        meta => {
+            sourceName => "Minecraft XL",
+            sourceUrl => "http://www.minecraftxl.com/crafting-recipes/"
+        },
+        templates => {
+            group => 'info',
+            options => {
+                moreAt => 1
+            }
+        }
+    };
 };
+
 1;

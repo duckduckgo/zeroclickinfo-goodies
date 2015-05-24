@@ -1,5 +1,5 @@
 package DDG::Goodie::Uptime;
-# Given an uptime percentage, display various average downtime durations 
+# ABSTRACT: Given an uptime percentage, display various average downtime durations
 
 use strict;
 use DDG::Goodie;

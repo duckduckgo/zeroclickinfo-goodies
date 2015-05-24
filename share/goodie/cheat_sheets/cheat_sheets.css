@@ -1,0 +1,49 @@
+.zci--cheat_sheets .cheatsheet__container.compressed {
+    max-height: 20em;
+}
+
+.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section,
+.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section .g {
+    display: none;
+}
+
+.zci--cheat_sheets .cheatsheet__section,
+.zci--cheat_sheets .cheatsheet__section .g {
+    display: inline-block;
+}
+
+.zci--cheat_sheets .cheatsheet__container .cheatsheet__section:nth-child(-n+2) {
+    display: inline-block;
+}
+
+.zci--cheat_sheets .cheatsheet__container .cheatsheet__section:nth-child(-n+2) .g:nth-child(-n+6) {
+    display: inline-block;
+}
+
+.zci--cheat_sheets .cheatsheet__container {
+    overflow: hidden;
+}
+
+.zci--cheat_sheets .cheatsheet__title {
+    font-weight: bold;
+    font-size: 1em;
+    color: #444;
+}
+
+.zci--cheat_sheets .cheatsheet__section {
+    margin-bottom: 3px;
+}
+
+.zci--cheat_sheets  .cheatsheet__data {
+    display: block;
+    margin-bottom: 0.4em;
+    color: #444
+}
+
+.zci--cheat_sheets  .cheatsheet__data code {
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    padding: 2px;
+    font-weight: bold;
+    line-height: 1;
+}

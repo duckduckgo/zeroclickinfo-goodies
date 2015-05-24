@@ -452,6 +452,15 @@ ddg_goodie_test(
             result    => qr/>25</
         }
     ),
+    'sqrt(4)' => test_zci(
+        'sqrt(4) = 2',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['sqrt(4)'],
+            operation => 'Calculate',
+            result    => qr/>2</
+        }
+    ),
     '1.0 + 5 squared' => test_zci(
         '1.0 + 5 ^ 2 = 26',
         heading           => 'Calculator',
@@ -513,6 +522,24 @@ ddg_goodie_test(
             input     => ['2 ^ 3 ^ 2'],
             operation => 'Calculate',
             result    => qr/>512</
+        }
+    ),
+    'sqrt(2)' => test_zci(
+        'sqrt(2) = 1.4142135623731',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['sqrt(2)'],
+            operation => 'Calculate',
+            result    => qr/>1\.4142135623731</
+        }
+    ),
+    'sqrt(3 pi / 4 + 1) + 1' => test_zci(
+        'sqrt(3 pi / 4 + 1) + 1 = 2.83199194599549',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['sqrt(3 pi / 4 + 1) + 1'],
+            operation => 'Calculate',
+            result    => qr/>2\.83199194599549</
         }
     ),
     '4 score + 7' => test_zci(
@@ -675,6 +702,24 @@ ddg_goodie_test(
             input     => ['1234 + 5432'],
             operation => 'Calculate',
             result    => qr/6,666/
+        }
+    ),
+    '(0.4e^(0))*cos(0)' => test_zci(
+        '(0.4e ^ (0)) * cos(0) = 0.4',
+        heading => 'Calculator',
+        structured_answer => {
+            input => ['(0.4e ^ (0)) * cos(0)'],
+            operation => 'Calculate',
+            result => qr'0.4'
+        }
+    ),
+    '2pi' => test_zci(
+        '2 pi = 6.28318530717958',
+        heading => 'Calculator',
+        structured_answer => {
+            input => ['2 pi'],
+            operation => 'Calculate',
+            result => qr"6.28318530717958"
         }
     ),
     '123.123.123.123/255.255.255.255' => undef,

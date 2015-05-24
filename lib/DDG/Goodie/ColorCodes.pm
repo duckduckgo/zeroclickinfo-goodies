@@ -88,21 +88,25 @@ sub create_output {
           . "Complementary: #$complementary\n"
           . "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
     
-    my $comps = "<div class='cols_column'><span class='mini-color circle' style='background: #".$complementary.";'> </span></div>"
-              . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace tx-clr--dk'>"
-              . qq[<a onclick='document.x.q.value="#$complementary";document.x.q.focus();' href='javascript:'>$complementary</a>]
+    my $comps = "<div class='cols_column'>"
+              . "<a href='/?q=color%20picker%20%23$complementary' class='mini-color circle' style='background: #$complementary'>"
+              . "</a></div>"
+              . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace'>"
+              . qq[<a onclick='document.x.q.value="#$complementary";document.x.q.focus();' href='javascript:' class='tx-clr--lt'>$complementary</a>]
               . "</p></div>";
     
     my $analogs = "<div class='cols_column'>"
-                . (join "", map { "<span class='mini-color circle' style='background: #" . $_ . "'> </span>"; } @analogous_colors)
+                . (join "", map { "<a href='/?q=color%20picker%20%23".$_."' class='mini-color circle' style='background: #" . $_ . "'> </a>"; } @analogous_colors)
                 . "</div>"
-                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace tx-clr--dk'>" . (join ", ", map { qq[<a onclick='document.x.q.value="#] .(uc $_). qq[";document.x.q.focus();' href='javascript:'>].(uc $_).'</a>' } @analogous_colors) . "</p></div>";
+                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace'>" . (join ", ", map { qq[<a onclick='document.x.q.value="#] .(uc $_). qq[";document.x.q.focus();' href='javascript:' class='tx-clr--lt'>].(uc $_).'</a>' } @analogous_colors) . "</p></div>";
     
     $html = "<div class='column1 tx-clr--dk2'>"
           . "<p class='hex tx-clr--dk zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
           . "<p><a href='http://labs.tineye.com/multicolr#colors=" . $hex_for_links . ";weights=100;' class='tx-clr--dk2'>Images</a>"
           . "<span class='separator'> | </span>"
-          . "<a href='http://www.color-hex.com/color/" . $hex_for_links . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a></p>"
+          . "<a href='http://www.color-hex.com/color/" . $hex_for_links . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a>"
+          . "<span class='separator'> | </span>"
+          . "<a href='/?q=color%20picker%20%23" . $hex_for_links . "' class='tx-clr--dk2'>Picker</a></p>" 
           . "</div>"
           . "<div class='column2 tx-clr--dk2'>"
           . "<div class='complementary'>$comps</div>"
@@ -179,9 +183,11 @@ handle matches => sub {
     my ($text, $html_text) = create_output(%outdata);
     
     return $text,
-        html => '<div class="zci--color-codes"><div class="colorcodesbox circle" style="background:#' . $hex_code . '"></div>'
-      . $html_text
-      . "</div>";
+        html => '<div class="zci--color-codes"><a href="/?q=color%20picker%20%23' . $hex_code . '" '
+          . 'class="colorcodesbox circle" style="background:#' . $hex_code . '">'
+          . '</a>'
+          . $html_text
+          . "</div>";
 };
 
 1;

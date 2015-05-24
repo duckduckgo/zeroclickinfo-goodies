@@ -1,5 +1,6 @@
 package DDG::Goodie::IsAwesome::ufanete;
 # ABSTRACT: ufanete's first Goodie
+
 use strict;
 use DDG::Goodie;
 

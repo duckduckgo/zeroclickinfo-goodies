@@ -4,6 +4,7 @@ package DDG::Goodie::<: $ia_package_name :>;
 # to instant answer development
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "<: $lia_name :>";
 zci is_cached   => 1;

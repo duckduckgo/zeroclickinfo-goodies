@@ -6,6 +6,7 @@
     margin-top: 4px;
     margin-left: 0px;
     float: left;
+    display: inline-block;
 }
 
 .zci--answer .zci--color-codes .circle {
@@ -15,9 +16,18 @@
 
 .zci--answer .zci--color-codes .mini-color {
     display: inline-block;
-    width: 2.05em;
-    height: 2.05em;
+    width: 32px;
+    height: 32px;
     border: 1px solid rgba(0,0,0,0.15);
+    vertical-align: bottom;
+}
+
+.zci--answer .zci--color-codes .complementary .mini-color {
+    margin-left: 23px;
+}
+
+.zci--answer .zci--color-codes .mini-color:nth-of-type(n+2) {
+    margin-left: -0.7em;
 }
 
 .zci--answer .zci--color-codes p.no_vspace {
@@ -29,7 +39,7 @@
 {
     display: inline-block;
     height: 125px;
-    padding-top: 2px;
+    padding-top: 7px;
 }
 
 .zci--answer .zci--color-codes .column2 {
@@ -39,13 +49,11 @@
     margin-left: 2em;
 }
 
-.zci--answer .zci--color-codes .mini-color:nth-of-type(n+2) {
-    margin-left: -0.7em;
-}
-
 .zci--answer .zci--color-codes .cols_column {
     display: inline-block;
     width: 5em;
+    margin-left: -2px;
+    margin-right: 4px;
 }
 
 .zci--answer .zci--color-codes .desc_column {
@@ -61,6 +69,14 @@
     color: #d0d0d0;
 }
 
-.zci--answer .zci--color-codes .column2 a {
-    color: #333;
+@media screen and (max-width: 420px) {
+    .zci--answer .zci--color-codes .colorcodesbox {
+        width: 80px;
+        height: 80px;
+        margin-top: 15px;
+    }
+
+    .zci--answer .zci--color-codes .column1 {
+        padding-top: 0;
+    }
 }

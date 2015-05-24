@@ -7,7 +7,7 @@ use DDG::Goodie;
 zci answer_type => "greatest_common_factor";
 zci is_cached   => 1;
 
-triggers startend => 'greatest common factor', 'GCF', 'gcf';
+triggers startend => 'greatest common factor', 'gcf', 'greatest common divisor', 'gcd';
 
 primary_example_queries 'GCF 121 11';
 secondary_example_queries '99 9 greatest common factor';
@@ -19,14 +19,25 @@ attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
 
 handle remainder => sub {
 
-    return unless /^(?<fn>\d+)\s(?<sn>\d+)$/;
+    return unless /^\s*\d+(?:(?:\s|,)+\d+)*\s*$/;
 
-    my ($first, $second) = sort { $a <=> $b } ($+{'fn'}, $+{'sn'});
-    my $result = gcf($first, $second);
+    # Here, $_ is a string of digits separated by whitespaces. And $_
+    # holds at least one number.
 
-    return 'Greatest common factor of ' . $first . ' and ' . $second . ' is ' . $result . '.',
+    my @numbers = grep(/^\d/, split /(?:\s|,)+/);
+    @numbers = sort { $a <=> $b } @numbers;
+
+    my $formatted_numbers = join(', ', @numbers);
+    $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
+
+    my $result = shift @numbers;
+    foreach (@numbers) {
+        $result = gcf($result, $_)
+    }
+
+    return "Greatest common factor of $formatted_numbers is $result.",
       structured_answer => {
-        input     => [$first, $second],
+        input     => [$formatted_numbers],
         operation => 'Greatest common factor',
         result    => $result
       };

@@ -1,5 +1,5 @@
 package DDG::Goodie::Zodiac;
-#ABSTRACT : Find the Zodiac Sign by feeding Date as Input
+#ABSTRACT: Find the Zodiac Sign by feeding Date as Input
 
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
