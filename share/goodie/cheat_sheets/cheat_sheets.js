@@ -14,6 +14,7 @@ DDH.cheat_sheets.build = function(ops) {
 
     var re_brackets    = /(?:\[|\{|\}|\])/,      // search for [, {, }, or }
         re_escbrackets = /(?:\\(\[|\{|\]|\}))/g, // search for \[, \], \{, and \}
+        re_esslash     = /(?:\\)/g,              // search for \\
         re_whitespace  = /\s+/,                  // search for spaces
         re_codeblock   = /<code>(.+?)<\/code>/g; // search for <code></code>
 
@@ -36,13 +37,21 @@ DDH.cheat_sheets.build = function(ops) {
         //  --> replace [] & {} with <code></code>
         } else {
             out = string
-                // replace pairs of brackets with <code></code>
-                .replace(/(?:\[|\{)([^\[\]\{\}].*?)(?:\]|\})/g, "<code>$1</code>")
+                .replace('\\\\', "<bks>")
+                .replace('\\[', "<lbr>")
+                .replace('\\{', "<lcbr>")
+                .replace('\\]', "<rbr>")
+                .replace('\\}', "<rcbr>")
+
                 // un-escape remaining brackets
-                .replace(/\\\[/, "[")
-                .replace(/\\\{/, "{")
-                .replace(/\\\]/, "]")
-                .replace(/\\\}/, "}");
+                .replace(/\[|\{/, "<code>")
+                .replace(/\]|\}/, "</code>")
+
+                .replace("<bks>",  '\\')
+                .replace("<lbr>",  '[')
+                .replace("<lcbr>", '{')
+                .replace("<rbr>",  ']')
+                .replace("<rcbr>", '}');
 
         }
 
