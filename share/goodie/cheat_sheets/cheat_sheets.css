@@ -5,7 +5,7 @@
     color: #000;
 }
 
-.zci--cheat_sheets .cheatsheet__section {
+.zci--cheat_sheets .cheatsheet__container .cheatsheet__section {
     width: 32%;
     float: left;
 }
