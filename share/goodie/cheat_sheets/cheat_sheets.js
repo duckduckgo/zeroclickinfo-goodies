@@ -22,8 +22,6 @@ DDH.cheat_sheets.build = function(ops) {
     });
 
     var re_brackets    = /(?:\[|\{|\}|\])/,      // search for [, {, }, or }
-        re_escbrackets = /(?:\\(\[|\{|\]|\}))/g, // search for \[, \], \{, and \}
-        re_esslash     = /(?:\\)/g,              // search for \\
         re_whitespace  = /\s+/,                  // search for spaces
         re_codeblock   = /<code>(.+?)<\/code>/g; // search for <code></code>
 
