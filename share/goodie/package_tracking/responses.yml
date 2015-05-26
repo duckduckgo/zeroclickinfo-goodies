@@ -1,0 +1,15 @@
+HongKong:
+  name: "Hongkong Post"
+  tracking_url: http://app3.hongkongpost.com/CGI/mt/genresult.jsp?tracknbr=
+  short_code: hk$
+  trigger: ([a-z]{2}\d{9}(?:hk))
+PostNorden:
+  name: "Post Norden"
+  short_code: dk$
+  tracking_url: http://www.postdanmark.dk/tracktrace/TrackTrace.do?i_stregkode=
+  trigger: ([a-z]{2}\d{9}(?:dk))
+RussianPost:
+  name: "Russian Post"
+  short_code: ru$
+  tracking_url: http://www.russianpost.ru/tracking20/?
+  trigger: ([a-z]{2}\d{9}(?:ru))
