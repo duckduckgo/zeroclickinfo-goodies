@@ -14,11 +14,6 @@
     width: 45%;
 }
 
-.is-mobile .zci--cheat_sheets .cheatsheet__section,
-.is-mobile .zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section {
-    width: 100%;
-}
-
 .zci--cheat_sheets .cheatsheet__data {
     display: inline-block;
     margin-bottom: 0.4em;
@@ -47,4 +42,22 @@
 /* Hide rows 4+ */
 .zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section tbody tr:nth-child(n+4) {
     display: none;
+}
+
+/* Media queries for smaller screens... */
+@media (max-width:350px) {
+
+    .zci--cheat_sheets .cheatsheet__container .cheatsheet__section,
+    .zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section {
+        width: 100%;
+    }
+
+}
+
+@media (min-width:400px) and (max-width: 900px) {
+
+    .zci--cheat_sheets .cheatsheet__container .cheatsheet__section,
+    .zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section {
+       width: 45%;
+    }
 }
