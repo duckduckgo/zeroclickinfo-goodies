@@ -1,7 +1,7 @@
 HongKong:
   name: "Hongkong Post"
-  tracking_url: http://app3.hongkongpost.com/CGI/mt/genresult.jsp?tracknbr=
   short_code: hk$
+  tracking_url: http://app3.hongkongpost.com/CGI/mt/genresult.jsp?tracknbr=
   trigger: ([a-z]{2}\d{9}(?:hk))
 PostNorden:
   name: "Post Norden"
