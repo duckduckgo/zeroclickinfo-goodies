@@ -6,20 +6,25 @@
 }
 
 .zci--cheat_sheets .cheatsheet__section {
-    width: 45%;
+    width: 32%;
     float: left;
 }
+
+.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section {
+    width: 45%;
+}
+
 
 .is-mobile .zci--cheat_sheets .cheatsheet__section {
     width: 100%;
 }
 
-.zci--cheat_sheets  .cheatsheet__data {
+.zci--cheat_sheets .cheatsheet__data {
     display: inline-block;
     margin-bottom: 0.4em;
 }
 
-.zci--cheat_sheets  .cheatsheet__data code {
+.zci--cheat_sheets .cheatsheet__data code {
     color: #333;
     padding: 4px 5px 2px;
     background-color: #fff;
@@ -28,6 +33,10 @@
     border-radius: 2px;
     line-height: 1.7;
     font-size: 0.833em;
+}
+
+.zci--cheat_sheets hr {
+    color: rgba(0,0,0,.15);
 }
 
 /*

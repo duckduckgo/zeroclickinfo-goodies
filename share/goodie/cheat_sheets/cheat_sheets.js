@@ -78,7 +78,8 @@ DDH.cheat_sheets.build = function(ops) {
         onShow: function() {
             var $dom = $("#zci-cheat_sheets"),
                 $container = $dom.find(".cheatsheet__container"),
-                $showhide = $container.find(".cheatsheet__section.showhide"),
+                $detail    = $dom.find(".zci__main--detail"),
+                $showhide  = $container.find(".cheatsheet__section.showhide"),
                 $more_btn  = $dom.find(".chomp--link");
 
             DDG.require('masonry.js', function(){
@@ -86,11 +87,12 @@ DDH.cheat_sheets.build = function(ops) {
 
                 $container.masonry({
                     itemSelector: '.cheatsheet__section',
-                    gutter: 5,
+                    gutter: 10,
                 });
 
                 $more_btn.click(function() {
                     $dom.toggleClass("has-chomp-expanded");
+                    $detail.toggleClass("c-base");
                     $container.toggleClass("compressed");
                     $showhide.toggleClass("is-hidden");
                     $container.masonry();
