@@ -3,10 +3,19 @@ DDH.cheat_sheets = DDH.cheat_sheets || {};
 DDH.cheat_sheets.build = function(ops) {
 
     Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, options) {
-        var result ="";
+        var result = "";
         $.each(section_order, function(i, section) {
            if (sections[section]){
-               result += options.fn({ name: section, items: sections[section] });
+
+               var showhide = true;
+
+               if (i === 0 ){
+                   showhide = false;
+               } else if ( i === 1 && !is_mobile ){
+                   showhide = false;
+               }
+
+               result += options.fn({ name: section, items: sections[section], showhide: showhide });
             }
         });
         return result;
@@ -37,17 +46,21 @@ DDH.cheat_sheets.build = function(ops) {
         //  --> replace [] & {} with <code></code>
         } else {
             out = string
-                .replace('\\\\', "<bks>")
+                // replace escaped slash
+                .replace('\\', "<bks>")
+                // replace escaped brackets
                 .replace('\\[', "<lbr>")
                 .replace('\\{', "<lcbr>")
                 .replace('\\]', "<rbr>")
                 .replace('\\}', "<rcbr>")
 
-                // un-escape remaining brackets
-                .replace(/\[|\{/, "<code>")
-                .replace(/\]|\}/, "</code>")
+                // replace unescaped brackets
+                .replace(/\[|\{/g, "<code>")
+                .replace(/\]|\}/g, "</code>")
 
+                // re-replace escaped slash
                 .replace("<bks>",  '\\')
+                // re-replace escaped brackets
                 .replace("<lbr>",  '[')
                 .replace("<lcbr>", '{')
                 .replace("<rbr>",  ']')
@@ -64,25 +77,25 @@ DDH.cheat_sheets.build = function(ops) {
     });
 
     return {
-         onShow: function() {
+        onShow: function() {
             var $dom = $("#zci-cheat_sheets"),
                 $container = $dom.find(".cheatsheet__container"),
-                $more_btn  = $dom.find(".chomp--link"),
-                $icon = $more_btn.find(".chomp--link__icn"),
-                $more = $more_btn.find(".chomp--link__mr"),
-                $less = $more_btn.find(".chomp--link__ls");
+                $showhide = $container.find(".cheatsheet__section.showhide"),
+                $more_btn  = $dom.find(".chomp--link");
 
-             DDG.require('masonry.js', function(){
-                 $container.masonry({
-                     columnWidth: '.grid-sizer',
-                     itemSelector: '.cheatsheet__section',
-                     gutter: 5,
-                     percentPosition: true
-                 });
+            DDG.require('masonry.js', function(){
+
+
+                $container.masonry({
+                    itemSelector: '.cheatsheet__section',
+                    gutter: 5,
+                });
 
                 $more_btn.click(function() {
                     $dom.toggleClass("has-chomp-expanded");
                     $container.toggleClass("compressed");
+                    $showhide.toggleClass("is-hidden");
+                    $container.masonry();
                 });
              });
          }
