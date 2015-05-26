@@ -3,7 +3,7 @@
     "description": "Terminal multiplexer",
     "metadata": {
         "sourceName": "OpenBSD",
-        "sourceURL": "http://www.openbsd.org/cgi-bin/man.cgi?query=tmux&sektion=1"
+        "sourceUrl": "http://www.openbsd.org/cgi-bin/man.cgi?query=tmux&sektion=1"
     },
     "section_order": ["Session Control (from the command line)", "Pane Control", "Window Control", "Copy-Mode (Emacs)", "Copy-Mode (vi)"],
     "sections": {
