@@ -9,25 +9,25 @@
     "sections": {
         "Power-ups": [{
             "val": "Search for matches in your browsing history",
-            "key": "[^]"
+            "key": "^"
         }, {
             "val": "Search for matches in your bookmarks",
-            "key": "[*]"
+            "key": "*"
         }, {
             "val": "Search for matches in pages you've tagged",
-            "key": "[+]"
+            "key": "+"
         }, {
             "val": "Search for matches in your currently open tabs",
-            "key": "[%]"
+            "key": "%"
         }, {
             "val": "Search for matches in pages you've typed",
-            "key": "[~]"
+            "key": "~"
         }, {
             "val": "Search for matches in page titles",
-            "key": "[#]"
+            "key": "#"
         }, {
             "val": "Search for matches in web addresses (URLs)",
-            "key": "[@]"
+            "key": "@"
         }]
     }
 }
