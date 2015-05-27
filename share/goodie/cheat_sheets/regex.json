@@ -18,7 +18,7 @@
             "key": "?<="
         }, {
             "val": "Negative lookbehind",
-            "key": "[?!=] or [?<!]"
+            "key": "[?!=] / [?<!]"
         }, {
             "val": "Once-only Subexpression",
             "key": "?>"

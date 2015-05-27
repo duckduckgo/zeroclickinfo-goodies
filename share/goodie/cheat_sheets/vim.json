@@ -19,29 +19,29 @@
     ],
     "sections": {
         "Tabs": [{
-            "val": "open a file in a new tab",
-            "key": "[:tabnew filename], [:tabn filename]"
+            "val": "move to tab number #",
+            "key": "#gt"
         }, {
             "val": "move the current split window into its own tab",
             "key": "[Ctrl] + [wt]"
         }, {
-            "val": "move to the next tab",
-            "key": "[gt], [:tabnext], [:tabn]"
-        }, {
-            "val": "move to the previous tab",
-            "key": "[gT], [:tabprev], [:tabp]"
-        }, {
-            "val": "move to tab number #",
-            "key": "#gt"
-        }, {
             "val": "move current tab to the #th position (indexed from 0)",
             "key": ":tabmove #"
         }, {
+            "val": "open a file in a new tab",
+            "key": "[:tabnew filename] [:tabn filename]"
+        }, {
             "val": "close the current tab and all its windows",
-            "key": "[:tabclose] or [:tabc]"
+            "key": "[:tabclose] / [:tabc]"
         }, {
             "val": "close all tabs except for the current one",
-            "key": "[:tabonly] or [:tabo]"
+            "key": "[:tabonly] / [:tabo]"
+        }, {
+            "val": "move to the next tab",
+            "key": "[gt] [:tabnext] [:tabn]"
+        }, {
+            "val": "move to the previous tab",
+            "key": "[gT] [:tabprev] [:tabp]"
         }],
         "Editing": [{
             "val": "replace a single character",
@@ -194,10 +194,10 @@
             "key": ":e filename"
         }, {
             "val": "go to the next buffer",
-            "key": "[:bnext] or [:bn]"
+            "key": "[:bnext] / [:bn]"
         }, {
             "val": "go to the previous buffer",
-            "key": "[:bprev] or [:bp]"
+            "key": "[:bprev] / [:bp]"
         }, {
             "val": "delete a buffer (close a file)",
             "key": ":bd"
@@ -272,7 +272,7 @@
             "val": "go to line 5",
             "key": "5G"
         }, {
-            "val": "To the position before the latest jump, or where the last \"m'\" or \"m`\" command was given.",
+            "val": "To the position before the latest jump, / where the last \"m'\" / \"m`\" command was given.",
             "key": "''"
         }],
         "Visual commands": [{
