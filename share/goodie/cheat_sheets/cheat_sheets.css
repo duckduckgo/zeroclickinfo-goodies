@@ -1,3 +1,7 @@
+.zci--cheat_sheets.has-chomp-expanded .cw {
+    max-width: none;
+}
+
 .zci--cheat_sheets .cheatsheet__title {
     padding-bottom: 1em;
     font-size: 1.1111em;
@@ -6,31 +10,44 @@
 }
 
 .zci--cheat_sheets .cheatsheet__container .cheatsheet__section {
-    width: 32%;
+    max-width: 295px;
     float: left;
+    margin-bottom: 30px;
 }
 
-.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section {
-    width: 45%;
-}
-
-.zci--cheat_sheets .cheatsheet__data {
-    display: inline-block;
+.zci--cheat_sheets tr {
     margin-bottom: 0.4em;
 }
 
-.zci--cheat_sheets .cheatsheet__data code {
+.zci--cheat_sheets td {
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.zci--cheat_sheets code {
     color: #333;
     padding: 4px 5px 2px;
     background-color: #fff;
-    padding-bottom: 0;
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    line-height: 1.7;
     font-size: 0.833em;
 }
 
+.zci--cheat_sheets td.cheatsheet__key {
+    min-width: 80px;
+    max-width: 155px;
+    line-height: 1.7;
+}
+
+.zci--cheat_sheets td.cheatsheet__value {
+    padding-left: 14px;
+    max-width: 155px;
+    line-height: 1.4;
+}
+
 .zci--cheat_sheets .cheatsheet__footer {
+    border-top: 1px solid rgba(0,0,0,0.15);
+    padding-top: 5px;
     clear: both;
 }
 
@@ -56,12 +73,8 @@
         width: 100%;
     }
 
-}
-
-@media (min-width:400px) and (max-width: 900px) {
-
-    .zci--cheat_sheets .cheatsheet__container .cheatsheet__section,
-    .zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section {
-       width: 45%;
+    .zci--cheat_sheets .cheatsheet__value {
+        max-width: none;
     }
+
 }

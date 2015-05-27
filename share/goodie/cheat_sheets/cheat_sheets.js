@@ -45,24 +45,24 @@ DDH.cheat_sheets.build = function(ops) {
         } else {
             out = string
                 // replace escaped slash
-                .replace('\\', "<bks>")
+                .replace("\\\\", "<bks>")
                 // replace escaped brackets
-                .replace('\\[', "<lbr>")
-                .replace('\\{', "<lcbr>")
-                .replace('\\]', "<rbr>")
-                .replace('\\}', "<rcbr>")
+                .replace("\\[", "<lbr>")
+                .replace("\\{", "<lcbr>")
+                .replace("\\]", "<rbr>")
+                .replace("\\}", "<rcbr>")
 
                 // replace unescaped brackets
                 .replace(/\[|\{/g, "<code>")
                 .replace(/\]|\}/g, "</code>")
 
                 // re-replace escaped slash
-                .replace("<bks>",  '\\')
+                .replace("<bks>",  "\\")
                 // re-replace escaped brackets
-                .replace("<lbr>",  '[')
-                .replace("<lcbr>", '{')
-                .replace("<rbr>",  ']')
-                .replace("<rcbr>", '}');
+                .replace("<lbr>",  "[")
+                .replace("<lcbr>", "{")
+                .replace("<rbr>",  "]")
+                .replace("<rcbr>", "}");
 
         }
 
@@ -87,7 +87,9 @@ DDH.cheat_sheets.build = function(ops) {
 
                 $container.masonry({
                     itemSelector: '.cheatsheet__section',
-                    gutter: 10,
+                    columnWidth: 295,
+                    gutter: 30,
+                    isFitWidth: true
                 });
 
                 $more_btn.click(function() {
@@ -95,7 +97,12 @@ DDH.cheat_sheets.build = function(ops) {
                     $detail.toggleClass("c-base");
                     $container.toggleClass("compressed");
                     $showhide.toggleClass("is-hidden");
-                    $container.masonry();
+                    $container.masonry({
+                        itemSelector: '.cheatsheet__section',
+                        columnWidth: 295,
+                        gutter: 30,
+                        isFitWidth: true
+                    });
                 });
              });
          }
