@@ -1,5 +1,5 @@
 package DDG::Goodie::CheatSheets;
-# ABSTRACT: Load basic cheat sheets from JSON files 
+# ABSTRACT: Load basic cheat sheets from JSON files
 
 use JSON::XS;
 use DDG::Goodie;
@@ -41,7 +41,6 @@ handle remainder => sub {
         id => 'cheat_sheets',
         name => 'Cheat Sheet',
         data => $data,
-        meta => \%{$data->{meta}},
         templates => {
             group => 'base',
             item => 0,
