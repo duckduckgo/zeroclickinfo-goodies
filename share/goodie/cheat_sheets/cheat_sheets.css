@@ -30,7 +30,11 @@
     font-size: 0.833em;
 }
 
-.zci--cheat_sheets hr {
+.zci--cheat_sheets .cheatsheet__footer {
+    clear: both;
+}
+
+.zci--cheat_sheets .cheatsheet__footer hr {
     color: rgba(0,0,0,.15);
 }
 
