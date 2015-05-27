@@ -13,3 +13,8 @@ RussianPost:
   short_code: ru$
   tracking_url: http://www.russianpost.ru/tracking20/?
   trigger: ([a-z]{2}\d{9}(?:ru))
+LaserShip:
+  name: "Lasership"
+  short_code: ^ll
+  tracking_url: http://lasership.com/track/
+  trigger: (l[a-z]\d{8})

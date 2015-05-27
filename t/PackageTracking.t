@@ -25,6 +25,11 @@ ddg_goodie_test(
         	heading => 'Tracking Package',
         	html => qq(Track this shipment at <a href="http://www.russianpost.ru/tracking20/?YF123456789RU">Russian Post</a>.)
         ),
+        'LL12345678' => test_zci(
+        	"LL12345678",
+        	heading => 'Tracking Package',
+        	html => qq(Track this shipment at <a href="http://lasership.com/track/LL12345678">Lasership</a>.)
+        ),
 );
 
 done_testing;
