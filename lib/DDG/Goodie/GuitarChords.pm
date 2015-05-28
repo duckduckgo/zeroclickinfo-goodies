@@ -2,6 +2,7 @@ package DDG::Goodie::GuitarChords;
 # ABSTRACT: Returns diagrams of guitar chords
 
 use DDG::Goodie;
+use strict;
 with 'DDG::GoodieRole::ImageLoader';
 
 # guitar script is stored in share directory

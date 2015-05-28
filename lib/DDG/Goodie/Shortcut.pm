@@ -4,6 +4,7 @@ package DDG::Goodie::Shortcut;
 use strict;
 use DDG::Goodie;
 use utf8;
+use Text::Trim;
 
 triggers any => 'shortcut','keyboard shortcut', 'key combination';
 
@@ -36,7 +37,7 @@ handle remainder_lc => sub {
     my $os = $1; #save OS char
     $search =~ tr/[WML]//d; #remove all OS chars from search
     $search =~ tr/ / /s; #leave just one blank between words
-    $search =~ s/^\s+|\s+$//g; #trim
+    $search = trim $search; #trim
 
 if(!$os) {$os='';} #line added to avoid error, remove when UA detection added.
 

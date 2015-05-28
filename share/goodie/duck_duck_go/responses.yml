@@ -87,7 +87,7 @@ hiring:
   aliases:
     - job
     - jobs
-  base_format: 'Check out the DuckDuckGo [hiring article]'
+  base_format: 'Check out [DuckDuckGo''s article on how we hire and what we''re looking for]'
   info_url: https://duck.co/help/company/hiring
 ia:
   aliases:

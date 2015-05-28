@@ -1,31 +1,35 @@
 <h3 class="c-base__title">{{name}}</h3>
 <h4 class="c-base__sub">{{description}}</h4>
 
-<div class="gw cheatsheet__container compressed">
-
-    {{#ordered_cheatsheet sections section_order}}
-    <div class="g half cheatsheet__section">
-        <h6 class="cheatsheet__title">{{name}}</h6>
-        <div class="gw">
-        {{#each items}}
-            <div class="g forty">
-                <span class="cheatsheet__data"><code>{{key}}</code></span>
-            </div>
-            <div class="g sixty">
-                <span class="cheatsheet__data">{{val}}</span>
-            </div>
-        {{/each}}
-        </div>
+<div class="cheatsheet__container compressed" >
+    {{#cheatsheets_ordered sections section_order}}
+    <div class="cheatsheet__section {{#if showhide}} showhide is-hidden {{/if}}">
+        <span>
+            <h6 class="cheatsheet__title">{{name}}</h6>
+        </span>
+        <table>
+            <tbody>
+                {{#each items}}
+                <tr>
+                    <td class="cheatsheet__key">
+                        {{cheatsheets_codeblock key}}
+                    </td>
+                    <td class="cheatsheet__value">
+                        {{val}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
     </div>
-    {{/ordered_cheatsheet}}
+    {{/cheatsheets_ordered}}
 </div>
 
-<div class="cheatsheet__footer">
-    <hr>
-    <a class="c-text__link  c-text__link--chomp  chomp--link sep--after can-expand">
+<div class="cheatsheet__footer c-list__links">
+    <a class="c-list__link  chomp--link  sep--after can-expand">
         <i class="chomp--link__icn"></i>
         <span class="chomp--link__mr">Show More</span>
         <span class="chomp--link__ls">Show Less</span>
     </a>
-    <span class="pull-right">{{{moreAt metadata 'none' className="c-base__link"}}}</span>
+    <span>{{{moreAt metadata 'none' className="c-list__link"}}}</span>
 </div>
