@@ -36,10 +36,16 @@ handle query_nowhitespace_nodash => sub {
         my $package_number = $1;
         my $response = $responses->{$keyword};
         if ( $package_number =~ /$response->{short_code}/i  ) {
-            return $package_number, heading => 'Tracking Package', html => qq(Track this shipment at <a href="$response->{tracking_url}$package_number">$response->{name}</a>.);
+            return handle_one_word_trigger($package_number, $response);
         }
     }
-    return;
 };
+
+sub handle_one_word_trigger {
+    my $package_number = $_[0];
+    my $response = $_[1];
+
+    return $package_number, heading => 'Tracking Package', html => qq(Track this shipment at <a href="$response->{tracking_url}$package_number">$response->{name}</a>.);
+}
 
 1;
