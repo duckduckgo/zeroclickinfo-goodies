@@ -1,0 +1,33 @@
+{
+    "name": "Firefox Awesome Bar",
+    "id": "awesome_bar_cheat_sheet",
+    "metadata": {
+        "sourceName": "Mozilla Support",
+        "sourceUrl": "https://support.mozilla.org/kb/awesome-bar-keyboard-shortcuts"
+    },
+    "section_order": ["Power-ups"],
+    "sections": {
+        "Power-ups": [{
+            "val": "Search for matches in your browsing history",
+            "key": "^"
+        }, {
+            "val": "Search for matches in your bookmarks",
+            "key": "*"
+        }, {
+            "val": "Search for matches in pages you've tagged",
+            "key": "+"
+        }, {
+            "val": "Search for matches in your currently open tabs",
+            "key": "%"
+        }, {
+            "val": "Search for matches in pages you've typed",
+            "key": "~"
+        }, {
+            "val": "Search for matches in page titles",
+            "key": "#"
+        }, {
+            "val": "Search for matches in web addresses (URLs)",
+            "key": "@"
+        }]
+    }
+}
