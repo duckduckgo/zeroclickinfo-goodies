@@ -1,0 +1,15 @@
+Firefox Awesome Bar Shortcuts
+^
+To search for matches in your browsing history.
+*
+To search for matches in your bookmarks.
++
+To search for matches in pages you've tagged.
+%
+To search for matches in your currently open tabs.
+~
+To search for matches in pages you've typed.
+#
+To search for matches in page titles.
+@
+To search for matches in web addresses (URLs).
