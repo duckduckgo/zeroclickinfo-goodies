@@ -5,7 +5,7 @@ use strict;
 use DDG::Goodie;
 
 use List::Util qw(max);
-use YAML qw( Load );
+use YAML::XS 'LoadFile';
 
 primary_example_queries 'public dns';
 description 'list common public DNS servers and their IP addresses';
@@ -21,7 +21,7 @@ triggers end => "public dns", "dns server", "dns servers";
 zci is_cached   => 1;
 zci answer_type => "public_dns";
 
-my $providers = Load(scalar share('providers.yml')->slurp);
+my $providers = LoadFile(share('providers.yml'));
 
 my @ordered_servers;
 # Alphabetize the output while making the structure

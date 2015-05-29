@@ -2,7 +2,7 @@ package DDG::Goodie::SolarSystem;
 # ABSTRACT: Return various attributes of a object
 
 use DDG::Goodie;
-use YAML::XS qw( Load );
+use YAML::XS 'LoadFile';
 use POSIX;
 use Text::Trim;
 use strict;
@@ -32,7 +32,7 @@ my $unitsString = join('|', @unitTriggers);
 triggers any => 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'pluto', 'sun', 'moon';
 
 # Load object data 
-my $objects = Load(scalar share('objects.yml')->slurp);
+my $objects = LoadFile(share('objects.yml'));
 
 # Handle statement
 handle query_lc => sub {
