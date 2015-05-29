@@ -3,7 +3,7 @@ package DDG::Goodie::Paper;
 
 use strict;
 use DDG::Goodie;
-use YAML;
+use YAML::XS 'LoadFile';
 
 zci answer_type => "paper";
 zci is_cached   => 1;
@@ -22,7 +22,7 @@ attribution github => ['loganom', 'Logan McCamon'],
             twitter => ['loganmccamon', 'Logan McCamon'],
             github => ['mattlehnig', 'Matt Lehnig'];
 
-my $sizes = Load(scalar share('sizes.yml')->slurp);
+my $sizes = LoadFile(share('sizes.yml'));
 
 handle query_lc => sub {
     return unless my ($s, $l, $n) = $_ =~ /^((?:(a|b|c)(\d{0,2}))|legal|letter|junior\s*legal|ledger|tabloid|hagaki)\s+paper\s+(?:size|dimm?ensions?)$/i;

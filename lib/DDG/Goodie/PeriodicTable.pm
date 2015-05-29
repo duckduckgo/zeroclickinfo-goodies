@@ -3,7 +3,7 @@ package DDG::Goodie::PeriodicTable;
 
 use strict;
 use DDG::Goodie;
-use YAML::XS qw(Load);
+use YAML::XS 'LoadFile';
 use List::Util qw(first);
 use Text::Trim;
 
@@ -20,7 +20,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => [ 'zblair', 'Zachary D Blair' ],
             github  => ['skywickenden', 'Sky Wickenden'];
 
-my @elements = @{ Load( scalar share('elements.yml')->slurp ) };
+my @elements = @{ LoadFile(share('elements.yml')) };
 
 # Triggers
 my @element_triggers = [map { lc($_->[2]) } @elements];
