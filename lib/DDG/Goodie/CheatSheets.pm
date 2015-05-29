@@ -8,15 +8,6 @@ use DDP;
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
-name 'CheatSheets';
-description 'Cheat sheets';
-primary_example_queries 'universal help', 'universal cheat sheet', 'universal example';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CheatSheets.pm';
-category 'cheat_sheets';
-topics qw'computing geek programming sysadmin';
-attribution github => [zachthompson => 'Zach Thompson'],
-            github => [moollaza => 'Zaahir Moolla'];
-
 triggers startend => (
     'char', 'chars',
     'character', 'characters',
@@ -39,6 +30,7 @@ handle remainder => sub {
 
     return 'Cheat Sheet', structured_answer => {
         id => 'cheat_sheets',
+        dynamic_id => $data->{id},
         name => 'Cheat Sheet',
         data => $data,
         templates => {
