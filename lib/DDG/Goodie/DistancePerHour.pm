@@ -9,32 +9,31 @@ zci is_cached   => 1;
 name "DistancePerHour";
 description "Converts kph to mph and vise versa.";
 primary_example_queries "5 mph to kph", "5 m/h to k/h";
-secondary_example_queries "optional -- demonstrate any additional triggers";
 category "calculations";
 topics "math";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DistancePerHour.pm";
 attribution github => ["BigxMac", "Jared Stefanowicz"];
 
-# Triggers
 triggers any => "mph", "mih" , "m/h" , "mi/h", "kph", "kih", "k/h", "km/h";
 
-# Handle statement
 handle query => sub {
 	
     # check structure with a regex 
-    if ($_ =~ /(\d)(.)(.)/)
+    if ($_ =~ /^(\d+)\s?(.+)\s(?:to\s)?(.+)$/)
     {
         my $number = $1;
-        print("$number");
+        my $word = $2; 
      
-        if($_  =~ 'mph' || $_ =~ 'mih' || $_ =~ 'm\/h' || $_ =~ 'mi\/h')
+        if($word  =~ 'mph' || $word =~ 'mih' || $word =~ 'm\/h' || $word =~ 'mi\/h')
         {
-            return $number * 0.621371192;
+            my $answer = $number * 0.621371192;
+            return "$number mph converts to $answer kph";
         }
      
-        elsif ($_  =~ 'kph' || $_ =~ 'kmh' || $_ =~ 'km\/h' || $_ =~ 'k\/h')
+        elsif ($word  =~ 'kph' || $word =~ 'kmh' || $word =~ 'km\/h' || $word =~ 'k\/h')
         {
-            return $number * 1.609344;
+            my $answer = $number * 1.609344;
+            return "$number kph converts to $answer mph";
         }
     }
 };
