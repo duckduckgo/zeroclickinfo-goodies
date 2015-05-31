@@ -30,6 +30,16 @@ ddg_goodie_test(
         	heading => 'Tracking Package',
         	html => qq(Track this shipment at <a href="http://lasership.com/track/LL12345678">Lasership</a>.)
         ),
+        'EM999999999IN' => test_zci(
+        	"EM999999999IN",
+        	heading => 'Tracking Package',
+        	html => qq(Track this shipment at <a href="http://ipsweb.ptcmysore.gov.in/ipswebtracking/IPSWeb_item_events.asp?itemid=EM999999999IN">IPS</a>.)
+        ),
+        'em123456789hr' => test_zci(
+        	"em123456789hr",
+        	heading => 'Tracking Package',
+        	html => qq(Track this shipment at <a href="http://ips.posta.hr/IPSWeb_item_events.asp?itemid=em123456789hr">IPS</a>.)
+        ),
 );
 
 done_testing;

@@ -18,3 +18,13 @@ LaserShip:
   short_code: ^ll
   tracking_url: http://lasership.com/track/
   trigger: (l[a-z]\d{8})
+IPS_IN:
+  name: "IPS"
+  short_code: in$
+  tracking_url: http://ipsweb.ptcmysore.gov.in/ipswebtracking/IPSWeb_item_events.asp?itemid=
+  trigger: (E[MA]\d{9}(IN|HR|))
+IPS_HR:
+  name: "IPS"
+  short_code: hr$
+  tracking_url: http://ips.posta.hr/IPSWeb_item_events.asp?itemid=
+  trigger: (E[MA]\d{9}(IN|HR|))
