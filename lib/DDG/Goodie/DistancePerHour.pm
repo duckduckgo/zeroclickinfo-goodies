@@ -1,11 +1,11 @@
 package DDG::Goodie::DistancePerHour;
+with DDG::GoodieRole::NumberStyler;
 
 use DDG::Goodie;
 
 zci answer_type => "Conversion";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "DistancePerHour";
 description "Converts kph to mph and vise versa.";
 primary_example_queries "5 mph to kph", "5 m/h to k/h";
@@ -19,25 +19,23 @@ attribution github => ["BigxMac", "Jared Stefanowicz"];
 triggers any => "mph", "mih" , "m/h" , "mi/h", "kph", "kih", "k/h", "km/h";
 
 # Handle statement
-handle remainder => sub {
+handle query => sub {
 	
     # check structure with a regex 
-    if ($_ =~ /^(\d)*\s(.)./)
+    if ($_ =~ /(\d)(.)(.)/)
     {
-    
-     my $number = $1;
-     my $unit = $2;
+        my $number = $1;
+        print("$number");
      
-        if ($unit =~ 'mph' || $unit =~ 'mih' || $unit =~ 'm\/h' || $unit =~ 'mi\/h')
+        if($_  =~ 'mph' || $_ =~ 'mih' || $_ =~ 'm\/h' || $_ =~ 'mi\/h')
         {
-            return $number * 0.621;
+            return $number * 0.621371192;
         }
-        elsif ($unit =~ 'kph' || $unit =~ 'kmh' || $unit =~ 'km\/h' || $unit =~ 'k\/h')
+     
+        elsif ($_  =~ 'kph' || $_ =~ 'kmh' || $_ =~ 'km\/h' || $_ =~ 'k\/h')
         {
-            return $number * 1.609;
+            return $number * 1.609344;
         }
-    
     }
-    
 };
 1;
