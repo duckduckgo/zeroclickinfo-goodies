@@ -27,13 +27,13 @@ handle query => sub {
         if($word  =~ 'mph' || $word =~ 'mih' || $word =~ 'm\/h' || $word =~ 'mi\/h')
         {
             my $answer = $number * 0.621371192;
-            return "$number mph converts to $answer kph";
+            return "$number mph converts to ".sprintf("%.3f kph", $answer);
         }
      
         elsif ($word  =~ 'kph' || $word =~ 'kmh' || $word =~ 'km\/h' || $word =~ 'k\/h')
         {
             my $answer = $number * 1.609344;
-            return "$number kph converts to $answer mph";
+            return "$number kph converts to ".sprintf("%.3f mph", $answer);
         }
     }
 };
