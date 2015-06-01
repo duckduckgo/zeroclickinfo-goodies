@@ -1,4 +1,5 @@
 {
+    "id": "blender_cheat_sheet",
     "name": "Blender",
     "description": "3D computer graphics software",
     "meta": {
@@ -36,7 +37,7 @@
             "key": "Mouse wheel"
         }, {
             "val": "Add object",
-            "key": "Shift + a"
+            "key": "[Shift + a]"
         }, {
             "val": "Delete",
             "key": "x"
@@ -51,13 +52,13 @@
             "key": "n"
         }, {
             "val": "Save file",
-            "key": "Ctrl + s"
+            "key": "[Ctrl + s]"
         }, {
             "val": "Render image",
             "key": "F12"
         }, {
             "val": "Render animation",
-            "key": "Ctrl + F12"
+            "key": "[Ctrl + F12]"
         }, {
             "val": "Stop render",
             "key": "Esc"
@@ -69,10 +70,10 @@
             "key": "F11"
         }, {
             "val": "Undo",
-            "key": "Ctrl + z"
+            "key": "[Ctrl + z]"
         }, {
             "val": "Redo",
-            "key": "Ctrl + Shift + z"
+            "key": "[Ctrl + Shift + z]"
         }],
         "General": [{
             "val": "Duplicate",
@@ -125,13 +126,13 @@
             "key": "s"
         }, {
             "val": "Precise movement",
-            "key": "[hold] Shift"
+            "key": "[\\{hold\\} Shift]"
         }, {
             "val": "Increment movement",
-            "key": "[hold] Ctrl"
+            "key": "[\\{hold\\} Ctrl]"
         }, {
             "val": "Lock to axis",
-            "key": "Middle click or x/y/z"
+            "key": "[Middle click] or [x] / [y] / [z]"
         }],
         "Navigation": [{
             "val": "Topview",
@@ -157,13 +158,13 @@
             "key": "Right click"
         }, {
             "val": "Select multiple",
-            "key": "Shift - Right click"
+            "key": "[Shift] + [Right click]"
         }, {
             "val": "(De-)Select all",
             "key": "a"
         }, {
             "val": "Select object behind",
-            "key": "Alt + Right click"
+            "key": "[Alt] + [Right click]"
         }, {
             "val": "Select linked",
             "key": "l"
@@ -178,7 +179,7 @@
             "key": "c"
         }, {
             "val": "Lasso tool",
-            "key": "Ctrl + Click"
+            "key": "[Ctrl] + [Click]"
         }, {
             "val": "Inverse selection",
             "key": "Ctrl + i"
@@ -188,10 +189,10 @@
             "key": "Shift + f"
         }, {
             "val": "Accelerate",
-            "key": "Mouse wheel [up]"
+            "key": "Mouse wheel \\{up\\}"
         }, {
             "val": "Decelerate",
-            "key": "Mouse wheel [down]"
+            "key": "Mouse wheel \\{down\\}"
         }, {
             "val": "Pan",
             "key": "Middle click"
@@ -222,10 +223,10 @@
             "key": "v"
         }, {
             "val": "Weight paint mode",
-            "key": "Ctnl + Tab"
+            "key": "Ctrl + Tab"
         }, {
             "val": "Switching workspace",
-            "key": "Ctrl + Left/Right arrow"
+            "key": "[Ctrl] + [Left arrow] or [Right arrow]"
         }, {
             "val": "Logic editor",
             "key": "Shift + F2"
@@ -262,7 +263,7 @@
             "key": "Alt + c"
         }, {
             "val": "Add handle",
-            "key": "Ctrl + Click"
+            "key": "[Ctrl] + [Click]"
         }, {
             "val": "Subdivide",
             "key": "w"
@@ -305,7 +306,7 @@
             "key": "o"
         }, {
             "val": "Select edge loop",
-            "key": "Alt + Right click"
+            "key": "[Alt] + [Right click]"
         }, {
             "val": "Make seam/sharp",
             "key": "Ctrl + e"
@@ -320,7 +321,7 @@
             "key": "Alt + s"
         }, {
             "val": "Knife",
-            "key": "k + Click"
+            "key": "[k], [Click]"
         }, {
             "val": "Fill",
             "key": "Alt + f"
@@ -329,7 +330,7 @@
             "key": "Shift + Alt + f"
         }, {
             "val": "Add subdivision level",
-            "key": "Ctrl + 1/2/3/4"
+            "key": "[Ctrl] + [1] / [2] / [3] / [4]"
         }],
         "Sculpting": [{
             "val": "Change brush size",
@@ -361,13 +362,13 @@
             "key": "Down arrow"
         }, {
             "val": "Jump to start point",
-            "key": "Shift + Left arrow"
+            "key": "[Shift] + [Left arrow]"
         }, {
             "val": "Jump to end point",
-            "key": "Shift + Right arrow"
+            "key": "[Shift] + [Right arrow]"
         }, {
             "val": "Scroll through frames",
-            "key": "Alt + Mouse wheel"
+            "key": "[Alt] + [Mouse wheel]"
         }, {
             "val": "Insert keyframe",
             "key": "i"
@@ -376,17 +377,17 @@
             "key": "Alt + i"
         }, {
             "val": "Jump to next keyframe",
-            "key": "Ctrl + Page up"
+            "key": "[Ctrl] + [Page up]"
         }, {
-            "val": "JUmp to previous keyframe",
-            "key": "Ctrl + Page down"
+            "val": "Jump to previous keyframe",
+            "key": "[Ctrl] + [Page down]"
         }],
         "Node editor": [{
             "val": "Add node",
             "key": "Shift + a"
         }, {
             "val": "Cut links",
-            "key": "Ctrl + Left mouse"
+            "key": "[Ctrl] + [Left mouse]"
         }, {
             "val": "(Un-)Hide node",
             "key": "h"
@@ -401,7 +402,7 @@
             "key": "Tab"
         }, {
             "val": "Move background",
-            "key": "Alt + Middle mouse"
+            "key": "[Alt] + [Middle mouse]"
         }, {
             "val": "Zoom in background",
             "key": "v"
@@ -414,7 +415,7 @@
         }],
         "Armatures": [{
             "val": "Add bone",
-            "key": "e/Ctrl + Click"
+            "key": "[e] / [Ctrl] + [Click]"
         }, {
             "val": "Rotate",
             "key": "Ctrl + r"
@@ -438,10 +439,10 @@
             "key": "Alt + f"
         }, {
             "val": "Scroll hierachy",
-            "key": "]/["
+            "key": "{\\]} / {\\[}"
         }, {
             "val": "Select hierarchy",
-            "key": "Shift + ]/["
+            "key": "[Shift] + {\\]} / {\\[}"
         }, {
             "val": "Select connected",
             "key": "l"
@@ -491,7 +492,7 @@
             "key": "m"
         }, {
             "val": "Move marker",
-            "key": "Right click [drag]"
+            "key": "Right click \\{drag\\}"
         }, {
             "val": "Toggle frames/seconds",
             "key": "Ctrl + t"
@@ -532,7 +533,7 @@
             "key": "Alt + F11"
         }, {
             "val": "Maximize subwindow",
-            "key": "Ctrl + Up arrow"
+            "key": "[Ctrl] + [Up arrow]"
         }, {
             "val": "Change active camera",
             "key": "Ctrl + o"
