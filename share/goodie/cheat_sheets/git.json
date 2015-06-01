@@ -1,0 +1,73 @@
+{
+    // Required; use underscore formatting
+    "id": "git_cheat_sheet", 
+
+    // Required; displayed as title of AnswerBar
+    "name": "Git",
+
+    // Optional; displayed as subtitle of AnswerBar
+    "description": "Version control", 
+    
+    // Required if cheat sheet has a source; useful to link users to further information.
+    // Displayed at bottom of AnswerBar, favicon shown automatically
+    "metadata": { 
+        "sourceName": "Github Git Cheat Sheet",
+        "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf" // Should be SSL if possible
+    },
+
+    // Required; controls which sections appear and in what order
+    "section_order": [  
+        "Creating",
+        "Changing",
+        "Updating"
+        ...
+    ],
+
+    // Required; section names must match those in section_order in order to appear
+    "sections": { // Syntax explained below
+        "Creating": [
+            {
+                "key": "git init [project-name]", 
+                "val": "Create a new local respository"
+            },
+            {
+                "key": "git clone [url].git",
+                "val": "Download a remote repository"
+            }
+            
+        ],        
+         
+        "Changing": [
+            {
+                "key": "git branch [branch-name]",
+                "val": "Create a new branch"               
+            }, 
+            {
+                "key": "git checkout [branch-name]",
+                "val": "Switch between branches"
+            }
+            
+            {
+                "key": "git pull [branch-name]",
+                "val": "Grab remote branch"
+            }
+            
+        "Updating": [
+            {
+                "key": "git merge [branch-name]",
+                "val": "Merge specified branch into currently checked-out branch"               
+            }, 
+            {
+                "key": "git commit -am "[commit message]"",
+                "val": "Add changes with message"
+            }
+    
+            {
+                "key": "git push",
+                "val": "Synchronize local repository with remote repository"
+            }
+            
+        ],  
+        ...                  
+    }
+}
