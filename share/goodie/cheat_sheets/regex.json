@@ -1,5 +1,11 @@
 {
+    "id": "regex_cheat_sheet",
     "name": "Regex Cheat Sheet",
+    "description": "Regular expression syntax",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/"
+    },
     "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"],
     "sections": {
         "Assertions": [{
@@ -13,7 +19,7 @@
             "key": "?<="
         }, {
             "val": "Negative lookbehind",
-            "key": "?!= or ?<!"
+            "key": "[?!=] / [?<!]"
         }, {
             "val": "Once-only Subexpression",
             "key": "?>"
@@ -243,10 +249,5 @@
             "val": "End of word",
             "key": "\\>"
         }]
-    },
-    "description": "Regular expression syntax",
-    "meta": {
-        "sourceName": "?",
-        "sourceURL": ""
     }
 }

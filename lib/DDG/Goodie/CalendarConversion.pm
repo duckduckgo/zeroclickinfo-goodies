@@ -8,7 +8,7 @@ with 'DDG::GoodieRole::Dates';
 use Date::Hijri;
 use Date::Jalali2;
 
-use YAML qw(Load);
+use YAML::XS 'LoadFile';
 
 zci answer_type => "calendar_conversion";
 zci is_cached   => 0;
@@ -25,7 +25,7 @@ attribution github => ['http://github.com/mattlehning', 'mattlehning'],
 
 triggers any => 'hijri', 'gregorian', 'jalali';
 
-my $calendars = Load(scalar share('calendars.yml')->slurp);
+my $calendars = LoadFile(share('calendars.yml'));
 
 my $datestring_regex = datestring_regex();
 

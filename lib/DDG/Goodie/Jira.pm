@@ -8,7 +8,7 @@ use utf8;
 zci is_cached   => 1;
 zci answer_type => 'jira';
 
-use YAML qw( Load );
+use YAML::XS 'LoadFile';
 
 primary_example_queries 'SOLR-4530';
 secondary_example_queries 'IdentityHtmlMapper solr-4530';
@@ -21,7 +21,7 @@ attribution
   github  => ['https://github.com/arroway',       'Stéphanie Ouillon'],
   twitter => ['http://twitter.com/steph_ouillon', 'Stéphanie Ouillon'];
 
-my $projects = Load(scalar share('projects.yml')->slurp);
+my $projects = LoadFile(share('projects.yml'));
 
 my @all_project_keys = sort keys %$projects;
 

@@ -4,7 +4,7 @@ package DDG::Goodie::ZappBrannigan;
 use strict;
 use DDG::Goodie;
 
-use YAML::XS qw(Load);
+use YAML::XS 'LoadFile';
 
 triggers any => "zapp", "brannigan";
 
@@ -21,7 +21,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'entertainment';
 topics 'entertainment';
 
-my $quotes = Load(scalar share('quotes.yml')->slurp);
+my $quotes = LoadFile(share('quotes.yml'));
 
 handle query => sub {
     return unless $_ =~ m/quotes?/;
