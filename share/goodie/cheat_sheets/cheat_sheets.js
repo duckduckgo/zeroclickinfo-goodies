@@ -29,9 +29,16 @@ DDH.cheat_sheets.build = function(ops) {
 
         var out;
 
+        // replace escaped slashes and brackets
+        string = string.replace(/\\\\/, "<bks>")
+                .replace(/\\\[/g, "<lbr>")
+                .replace(/\\\{/g, "<lcbr>")
+                .replace(/\\\]/g, "<rbr>")
+                .replace(/\\\}/g, "<rcbr>");
+
         // no spaces
         // OR
-        // spaces and no brackets
+        // spaces and no un-escaped brackets
         // e.g "?()", ":sp filename"
         //  --> wrap whole sting in <code></code>
         if ( !re_whitespace.test(string) || !re_brackets.test(string) ){
@@ -39,32 +46,25 @@ DDH.cheat_sheets.build = function(ops) {
 
         // spaces
         // AND
-        // brackets
+        // un-escaped brackets
         // e.g "[Ctrl] [B]"
         //  --> replace [] & {} with <code></code>
         } else {
+
+            // replace unescaped brackets
             out = string
-                // replace escaped slash
-                .replace("\\\\", "<bks>")
-                // replace escaped brackets
-                .replace("\\[", "<lbr>")
-                .replace("\\{", "<lcbr>")
-                .replace("\\]", "<rbr>")
-                .replace("\\}", "<rcbr>")
-
-                // replace unescaped brackets
                 .replace(/\[|\{/g, "<code>")
-                .replace(/\]|\}/g, "</code>")
-
-                // re-replace escaped slash
-                .replace("<bks>",  "\\")
-                // re-replace escaped brackets
-                .replace("<lbr>",  "[")
-                .replace("<lcbr>", "{")
-                .replace("<rbr>",  "]")
-                .replace("<rcbr>", "}");
-
+                .replace(/\]|\}/g, "</code>");
         }
+
+        out = out
+                // re-replace escaped slash
+                .replace(/<bks>/g,  "\\")
+                // re-replace escaped brackets
+                .replace(/<lbr>/g,  "[")
+                .replace(/<lcbr/g, "{")
+                .replace(/<rbr>/g,  "]")
+                .replace(/<rcbr/g, "}");
 
         out = out.replace(re_codeblock, function esc_codeblock (match, p1, offset, string){
             var escaped = Handlebars.Utils.escapeExpression(p1);
@@ -83,7 +83,6 @@ DDH.cheat_sheets.build = function(ops) {
                 $more_btn  = $dom.find(".chomp--link");
 
             DDG.require('masonry.js', function(){
-
 
                 $container.masonry({
                     itemSelector: '.cheatsheet__section',
