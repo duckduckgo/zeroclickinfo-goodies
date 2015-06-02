@@ -135,7 +135,7 @@
             "key": "[Middle click] or [x] / [y] / [z]"
         }],
         "Navigation": [{
-            "val": "Topview",
+            "val": "Top view",
             "key": "Numpad 7"
         }, {
             "val": "Front view",
@@ -226,7 +226,7 @@
             "key": "[Ctrl] + [Tab]"
         }, {
             "val": "Switching workspace",
-            "key": "[Ctrl] + [Left arrow] or [Right arrow]"
+            "key": "[Ctrl] + [Left arrow] or [Ctrl] + [Right arrow]"
         }, {
             "val": "Logic editor",
             "key": "[Shift] + [F2]"
