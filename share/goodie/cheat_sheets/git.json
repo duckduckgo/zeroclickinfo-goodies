@@ -3,7 +3,7 @@
     "name": "Git",
     "description": "Git help",
     "metadata": {
-        "sourceName": "Github.com",
+        "sourceName": "Github",
         "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet"
     },
     "section_order": [
