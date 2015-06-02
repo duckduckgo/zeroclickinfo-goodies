@@ -424,7 +424,7 @@
             "key": "[Ctrl] + [n]"
         }, {
             "val": "Align bones",
-            "key": "[Ctrl] + [ALt] + [a]"
+            "key": "[Ctrl] + [Alt] + [a]"
         }, {
             "val": "Move to bone layers",
             "key": "m"
