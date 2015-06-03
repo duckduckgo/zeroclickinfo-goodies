@@ -14,31 +14,48 @@ ddg_goodie_test(
     'lorem dipsum' => undef,
     'lipsum 10' => test_zci(
         qr/[a-zA-Z .]+/,
-        make_structured_answer(10)
+        make_structured_answer()
+    ),
+    'lorem ipsum 10' => test_zci(
+        qr/[a-zA-Z .]+/,
+        make_structured_answer()
+    ),
+    'lipsum 100' => test_zci(
+        qr/[a-zA-Z .]+/,
+        make_structured_answer()
+    ),
+    'lipsum 1' => test_zci(
+        qr/[a-zA-Z .]+/,
+        make_structured_answer()
+    ),
+    'lorem ipsum 0' => test_zci(
+        qr/[a-zA-Z .]+/,
+        make_structured_answer()
+    ),
+    'lipsum' => test_zci(
+        qr/[a-zA-Z .]+/,
+        make_structured_answer()
+    ),
+    'lorem ipsum' => test_zci(
+        qr/[a-zA-Z .]+/,
+        make_structured_answer()
     )
 
 );
 
 sub make_structured_answer {
-    my ($loop) = @_;
-    my $pattern = qr/[a-zA-Z \.\n]*/;
-    my @lorem_array = ($pattern) x $loop; 
-
     return structured_answer => {
         id => 'lorem_ipsum',
         name => 'Answer',
-        data => {
-            title => "Lorem Ipsum",
-            subtitle => "$loop Random Paragraph",
-            lorem_array => \@lorem_array,
-        },
-         meta => {
+        data => "-ANY-",
+        meta => {
             sourceName => "Lipsum",
             sourceUrl => "http://lipsum.com/"
         },
         templates => {
             group => 'text',
             options => {
+                subtitle_content => 'DDH.lorem_ipsum.subtitle',
                 content => 'DDH.lorem_ipsum.content',
                 moreAt => 1
             }
