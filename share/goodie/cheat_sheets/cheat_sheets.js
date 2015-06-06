@@ -62,9 +62,9 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/<bks>/g,  "\\")
                 // re-replace escaped brackets
                 .replace(/<lbr>/g,  "[")
-                .replace(/<lcbr/g, "{")
+                .replace(/<lcbr>/g, "{")
                 .replace(/<rbr>/g,  "]")
-                .replace(/<rcbr/g, "}");
+                .replace(/<rcbr>/g, "}");
 
         out = out.replace(re_codeblock, function esc_codeblock (match, p1, offset, string){
             var escaped = Handlebars.Utils.escapeExpression(p1);
