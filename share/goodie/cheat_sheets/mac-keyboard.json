@@ -6,7 +6,7 @@
         "sourceName": "Mac keyboard shortcuts",
         "sourceUrl": "https://support.apple.com/en-us/HT201236"
     },
-    "section_order" : ["Menu Symbols", "General", "Finder", "Text Editing", "Web Browsing", "Spotlight", "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)"],
+    "section_order" : ["Menu Symbols", "General", "Finder", "Text Editing", "Web Browsing (Works on most modern browsers)", "Spotlight", "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)"],
     "sections":{
         "Menu Symbols": [{
             "key" : "⌘",
