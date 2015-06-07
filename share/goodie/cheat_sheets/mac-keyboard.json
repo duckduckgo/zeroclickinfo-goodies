@@ -1,0 +1,178 @@
+{
+    "id": "mac_keyboard_shortcuts", 
+    "name": "Mac Keyboard Shortcuts",
+    "description": "List of useful keyboard shortcuts for Mac", 
+    "metadata": { 
+        "sourceName": "Mac keyboard shortcuts",
+        "sourceUrl": "https://support.apple.com/en-us/HT201236"
+    },
+    "section_order" : ["Menu Symbols", "General", "Finder", "Text Editing", "Web Browsing", "Spotlight", "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)"],
+    "sections":{
+        "Menu Symbols": [{
+            "key" : "⌘",
+            "val" : "Command/Cmd"
+        }, {
+            "key" : "⌥",
+            "val" : "Option/Opt"
+        }, {
+            "key" : "⌃",
+            "val" : "Control/Ctrl (Ctrl+Click = Right-click)"
+        }, {
+            "key" : "⇧",
+            "val" : "Shift Key"
+        }, {
+            "key" : "⇪",
+            "val" : "Caps Lock"
+        }, {
+            "key" : "⇥",
+            "val" : "Tab Key"
+        }, {
+            "key" : "↑",
+            "val" : "Up arrow"
+        }, {
+            "key" : "↓",
+            "val" : "Down arrow"
+        }, {
+            "key" : "←",
+            "val" : "Left arrow"
+        }, {
+            "key" : "→",
+            "val" : "Right arrow"
+        }, {
+            "key" : "↩",
+            "val" : "Return/Enter"
+        }], "Spotlight": [{
+            "key" : "[⌘] + [Space]",
+            "val" : "Open Spotlight"
+        }, {
+            "key" : "Enter",
+            "val" : "Open selected item"
+        }, {
+            "key" : "[⌘] + [Enter]",
+            "val" : "Open selected item in Finder"
+        }, {
+            "key" : "[⌘] + [↑/↓]",
+            "val" : "Skip to next/previous result category"
+        }], "Finder": [{
+            "key" : "[⌘] + [T]",
+            "val" : "Open new Finder tab"
+        }, {
+            "key" : "[⌘] + [W]",
+            "val" : "Close current tab"
+        }, {
+            "key" : "[⌘] + [⇧] + [W]",
+            "val" : "Close current window"
+        }, {
+            "key" : "[⌘] + [N]",
+            "val" : "Open new Finder window"
+        }, {
+            "key" : "[⌃] + [⇥]",
+            "val" : "Cycle through tabs"
+        }, {
+            "key" : "[⌘] + [Del]",
+            "val" : "Delete selected folder or file"
+        }, {
+            "key" : "[⌘] + [C], [⌘] + [V]",
+            "val" : "Copy and paste files"
+        }, {
+            "key" : "[⌘] + [C], [⌘] + [⌥] + [V]",
+            "val" : "Cut and paste files (move files)"
+        }, {
+            "key" : "[⌘] + [1~4]",
+            "val" : "Switch Finder views (Icon, List, Column, Cover Flow)"
+        }, {
+            "key" : "Return/Enter",
+            "val" : "Rename the selected file/folder"
+        }, {
+            "key" : "Spacebar",
+            "val" : "Preview selected item using Quick Look"
+        }, {
+            "key" : "[⌘] + [↓]",
+            "val" : "Go into selected folder or open the selected file"
+        }, {
+            "key" : "[⌘] + [↑]",
+            "val" : "Go to parent folder"
+        }], "Text Editing" :[{
+            "key" : "[⌘] + [A]",
+            "val" : "Select all"
+        }, {
+            "key" : "[⌘] + [X]",
+            "val" : "Cut"
+        }, {
+            "key" : "[⌘] + [C]",
+            "val" : "Copy"
+        }, {
+            "key" : "[⌘] + [V]",
+            "val" : "Paste"
+        }, {
+            "key" : "[⌘] + [Z]",
+            "val" : "Undo"
+        }, {
+            "key" : "[⌘] + [⇧] + [Z]",
+            "val" : "Redo"
+        }, {
+            "key" : "[⌘] + [←/→]",
+            "val" : "Go to beginning/end of line"
+        }, {
+            "key" : "[⌥] + [←]",
+            "val" : "Go to beginning of previous word"
+        }, {
+            "key" : "[⌥] + [→]",
+            "val" : "Go to end of next word"
+        }], "General" : [{
+            "key" : "[⌘] + [⇥]",
+            "val" : "Switch between apps. Holding ⇧ reverses."
+        }, {
+            "key" : "[⌘] + [~]",
+            "val" : "Switch to next window of current app. Holding ⇧ reverses."
+        }, {
+            "key" : "[⌘] + [Q]",
+            "val" : "Quit app"
+        }, {
+            "key" : "[⌘] + [H]",
+            "val" : "Hide windows of current app"
+        }, {
+            "key" : "[⌘] + [M]",
+            "val" : "Minimize windows of current app"
+        }, {
+            "key" : "[⌘] + [,]",
+            "val" : "Open Preferences (if available)"
+        }, {
+            "key" : "[⌃] + [←/→]",
+            "val" : "Move one desktop left or right"
+        }, {
+            "key" : "[⌘] + [⌥] + [Esc]",
+            "val" : "Open force quit dialog"
+        }], "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)" : [{
+            "key" : "[⌘] + [⇧] + [3]",
+            "val" : "Take picture of the entire screen"
+        }, {
+            "key" : "[⌘] + [⇧] + [4]",
+            "val" : "Take picture of a selected area"
+        }, {
+            "key" : "[⌘] + [⇧] + [4], [Spacebar]",
+            "val" : "Take picture of a specific window/object"
+        }], "Web Browsing (Works on most modern browsers)" : [{
+            "key" : "[⌘] + [T]",
+            "val" : "Open a new tab"
+        }, {
+            "key" : "[⌘] + [W]",
+            "val" : "Close curren tab"
+        }, {
+            "key" : "[⌘] + [L]",
+            "val" : "Focus on browser's location bar"
+        }, {
+            "key" : "[⌘] + [←]",
+            "val" : "Go back a page"
+        }, {
+            "key" : "[⌘] + [→]",
+            "val" : "Go forward a page"
+        }, {
+            "key" : "[⌃] + [⇥]",
+            "val" : "Cycle through tabs. Holding Shift reverses."
+        }, {
+            "key" : "[⌘] + [F]",
+            "val" : "Find"
+        }]
+    }
+}
