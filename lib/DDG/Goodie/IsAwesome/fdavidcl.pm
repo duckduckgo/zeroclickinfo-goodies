@@ -1,7 +1,5 @@
 package DDG::Goodie::IsAwesome::fdavidcl;
-# ABSTRACT: Write an abstract here
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
+# ABSTRACT: fdavidcl's First Goodie
 
 use DDG::Goodie;
 use strict;
@@ -9,23 +7,17 @@ use strict;
 zci answer_type => "is_awesome_fdavidcl";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "IsAwesome fdavidcl";
-description "Succinct explanation of what this instant answer does";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
-# category "";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-# topics "";
+description "My first Goodie, it lets the world know that fdavidcl is awesome";
+primary_example_queries "duckduckhack fdavidcl";
+category "special";
+topics "special_interest", "geek";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/fdavidcl.pm";
 attribution github => ["fdavidcl", "David Charte"],
             twitter => "fdavidcl";
 
-# Triggers
 triggers start => "duckduckhack fdavidcl";
 
-# Handle statement
 handle remainder => sub {
     return if $_;
     return "fdavidcl is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
