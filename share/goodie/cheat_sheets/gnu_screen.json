@@ -1,115 +1,115 @@
 {
     "id": "gnu_screen_cheat_sheet",
-    "name": "gnu_screen",
+    "name": "gnu screen",
     "description": "Terminal multiplexer",
     "metadata": {
         "sourceName": "GNU Screen Manual",
         "sourceUrl": "https://www.gnu.org/software/screen/manual/screen.html"
     },
-    "section_order": ["Session Commands (from the command line)", "Copying and Scrolling", "Main Comands", "Window Commands"],
+    "section_order": ["Terminal Commands", "Main Commands", "Copying and Scrolling", "Window Commands"],
     "sections": {
-        "Session Commands (from the command line)": [
+        "Terminal Commands": [
         {
-            "val": "screen",
-            "key": "Start a new session"
+            "key": "screen",
+            "val": "Start a new session"
         },
         {
-            "val": "screen -S <name>",
-            "key": "Start a new named session"
+            "key": "screen -S <name>",
+            "val": "Start a new named session"
         },
         {
-            "val": "screen -ls",
-            "key": "List sessions"
+            "key": "screen -ls",
+            "val": "List sessions"
         },
         {
-            "val": "screen -r [name]",
-            "key": "Re-attach session"
+            "key": "screen -r <name>",
+            "val": "Re-attach session"
         }
         ],
         "Copying and Scrolling": [
         {
-            "val": "Ctrl-a, [",
-            "key": "Copy mode"
+            "key": "[Ctrl-a] [\\[]",
+            "val": "Copy mode"
         },
         {
-            "val": "Ctrl-a, space",
-            "key": "Start copy"
+            "key": "[Ctrl-a] [space]",
+            "val": "Start copy"
         },
         {
-            "val": "Ctrl-a, space",
-            "key": "End copy"
+            "key": "[Ctrl-a] [space] ",
+            "val": "End copy"
         },
         {
-            "val": "Ctrl-a, ]",
-            "key": "Paste"
+            "key": "[Ctrl-a] [\\]]",
+            "val": "Paste"
         },
         {
-            "val": "Ctrl-a, u",
-            "key": "Scroll up"
+            "key": "[Ctrl-a] [u]",
+            "val": "Scroll up"
         },
         {
-            "val": "Ctrl-a, d",
-            "key": "Scroll down"
+            "key": "[Ctrl-a] [d]",
+            "val": "Scroll down"
         },
         {
-            "val": "Ctrl-a, escape",
-            "key": "End copy mode"
+            "key": "[Ctrl-a] [escape]",
+            "val": "End copy mode"
         }
         ],
         "Main Commands": [
         {
-            "val": "Ctrl-a, ?",
-            "key": "Shortcuts menu"
+            "key": "[Ctrl-a] [?]",
+            "val": "Shortcuts menu"
         },
         {
-            "val": "Ctrl-a, d",
-            "key": "Detach session"
+            "key": "[Ctrl-a] [d]",
+            "val": "Detach session"
         },
         {
-            "val": "Ctrl-a, \\",
-            "key": "Kill session"
+            "key": "[Ctrl-a] [\\]",
+            "val": "Kill session"
         }
         ],
         "Window Commands": [
         {
-            "val": "Ctrl-a, c",
-            "key": "Create a new window"
+            "key": "[Ctrl-a] [c]",
+            "val": "Create a new window"
         },
         {
-            "val": "Ctrl-a, k",
-            "key": "Kill current window"
+            "key": "[Ctrl-a] [k]",
+            "val": "Kill current window"
         },
         {
-            "val": "Ctrl-a, n",
-            "key": "Next window"
+            "key": "[Ctrl-a] [n]",
+            "val": "Next window"
         },
         {
-            "val": "Ctrl-a, p",
-            "key": "Previous window"
+            "key": "[Ctrl-a] [p]",
+            "val": "Previous window"
         },
         {
-            "val": "Ctrl-a, 0-9",
-            "key": "Jump to window #"
+            "key": "[Ctrl-a] [0-9]",
+            "val": "Jump to window #"
         },
         {
-            "val": "Ctrl-a, \"",
-            "key": "List windows"
+            "key": "[Ctrl-a] [\"]",
+            "val": "List windows"
         },
         {
-            "val": "Ctrl-a, |",
-            "key": "Split vertical"
+            "key": "[Ctrl-a] [|]",
+            "val": "Split vertical"
         },
         {
-            "val": "Ctrl-a, S",
-            "key": "Split horizontal"
+            "key": "[Ctrl-a] [S]",
+            "val": "Split horizontal"
         },
         {
-            "val": "Ctrl-a, tab",
-            "key": "Focus next region"
+            "key": "[Ctrl-a] [tab]",
+            "val": "Focus next region"
         },
         {
-            "val": "Ctrl-a, Q",
-            "key": "Quit split screen mode"
+            "key": "[Ctrl-a] [Q]",
+            "val": "Quit split screen mode"
         }
         ]
     }
