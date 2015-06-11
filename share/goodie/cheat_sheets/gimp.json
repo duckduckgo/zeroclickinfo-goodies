@@ -80,11 +80,11 @@
         ],
         "Layers": [
             {
-                "key": "[PgUp] or [Ctrl + Tab]",
+                "key": "[PgUp] or [Ctrl] + [Tab]",
                 "val": "Select the layer above"
             },
             {
-                "key": "[PgDn]\n or\n [Shift + Ctrl + Tab]",
+                "key": "[PgDn] or [Shift] + [Ctrl] + [Tab]",
                 "val": "Select the layer below"
             },
             {
@@ -253,7 +253,7 @@
             },
             {
                 "key": "[Shift] + [U]",
-                "val": "Blur/Sharpen"
+                "val": "Blur / Sharpen"
             },
             {
                 "key": "S",
@@ -261,7 +261,7 @@
             },
             {
                 "key": "[Shift] + [D]",
-                "val": "Dodge/Burn"
+                "val": "Dodge / Burn"
             },
             {
                 "key": "X",
@@ -360,7 +360,7 @@
                 "val": "Gradients"
             },
             {
-                "key": "[Alt + F4] or [Ctrl + W]",
+                "key": "[Alt] + [F4] or [Ctrl] + [W]",
                 "val": "Close the window"
             },
             {
@@ -380,7 +380,7 @@
                 "val": "Activate current button or list"
             },
             {
-                "key": "[Ctrl + Alt + PgUp] and [Ctrl + Alt + PgDn]",
+                "key": "[Ctrl] + [Alt] + [PgUp] / [PgDn]",
                 "val": "Switch tabs (multi-tab dialog)"
             },
             {
@@ -410,7 +410,7 @@
                 "val": "Main Menu"
             },
             {
-                "key": "[Shift + F10] or [right click]",
+                "key": "[Shift] + [F10] or [right click]",
                 "val": "Drop-down Menu"
             },
             {
