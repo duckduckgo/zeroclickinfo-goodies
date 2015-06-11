@@ -3,8 +3,7 @@
     "name": "Gimp",
     "description": "Graphics Editor", 
     "metadata": { 
-        "sourceName": "GimpCheatSheet",
-        "sourceUrl": "https://..."
+        "sourceName": "GimpCheatSheet"
     },
     "section_order": [  
         "Tools",
