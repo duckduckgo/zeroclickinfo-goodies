@@ -6,14 +6,16 @@ package DDG::Goodie::Bitsum;
 use DDG::Goodie;
 use strict;
 
+use Math::BigInt;
+
 zci answer_type => "bitsum";
 zci is_cached   => 1;
 
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "Bitsum";
-description "Succinct explanation of what this instant answer does";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
+description "Computes the Hamming Weight / bit-wise sum of a decimal or hex number.";
+primary_example_queries "bitsum 1023", "bitsum 0x789abcd";
+secondary_example_queries "hammingweight 1023", "hw 1023";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#category
 # category "";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
@@ -23,23 +25,27 @@ attribution github => ["GitHubAccount", "Friendly Name"],
             twitter => "twitterhandle";
 
 # Triggers
-triggers start => "bitsum", "hammingweight";
+triggers start => "bitsum", "hammingweight", "hw";
 
 # Handle statement
 handle remainder => sub {
     
-    # optional - regex guard
-    # return unless qr/^\w+/;
-
-    return unless $_; # Guard against "no answer"
+    # Return if input is no hex or decimal number
+    return unless $_ =~ /^(0x[0-9a-f]+$)|(\d+$)/i;
 
     my $n = $_;
-    my $c;
-    for ($c = 0; $n; $n >>= 1) { 
-        $c += $n & 1; 
-    } 
-
-    my $result = $c;
+    my $binstring;
+    
+    # Construct binary for both hex and decimal representations
+    if( $n =~ /^0x/) {
+        $n =~ s/0x//;
+        $binstring = unpack ('B*', pack ('H*',$n));
+    } else {
+        $binstring = Math::BigInt->new($n)->as_bin();
+    }
+    
+    # Count ones
+    my $result = $binstring =~ tr/1/1/;
     
     return $result,
         structured_answer => {
