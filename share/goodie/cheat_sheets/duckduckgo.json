@@ -1,0 +1,58 @@
+{
+    "id": "ddg_shortcuts", 
+    "name": "DuckDuckGo shortcuts",
+    "section_order": [  
+        "Open results",
+        "Move around"
+    ],
+    "sections": {
+        "Open results": [
+            {
+                "key": "[↵] or [l] or [o]", 
+                "val": "Go to the highlighted result, or use it right away to go to the first result"
+            },
+            {
+                "key": "[Ctrl]/[⌘] + [↵]",
+                "val": "Open a result in the background"
+            },
+            {
+                "key": "d", 
+                "val": "Domain search (if a result is highlighted)"
+            },
+            {
+                "key": "['] or [v]",
+                "val": "Open the highlighted result in a new window/tab. Since this uses JavaScript, you need to turn off pop-up blockers first."
+            }
+        ],        
+        "Move around": [
+            {
+                "key": "[←] or [→]",
+                "val": "Navigate instant answer tabs. When an instant answer is open, navigate within the instant answer."               
+            }, 
+            {
+                "key": "[↓] or [j]",
+                "val": "Next search result"
+            },
+            {
+                "key": "[↑] or [k]",
+                "val": "Previous search result"               
+            }, 
+            {
+                "key": "[/] or [h]",
+                "val": "Go to search box"
+            },
+            {
+                "key": "s",
+                "val": "Go to misspelt link (if any)"
+            },
+            {
+                "key": "t",
+                "val": "Go to top"
+            },
+            {
+                "key": "m",
+                "val": "Go to main results"
+            }
+        ]
+    }
+}
