@@ -1,7 +1,5 @@
 package DDG::Goodie::Bitsum;
-# ABSTRACT: Write an abstract here
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
+# ABSTRACT: Computes the Hamming weight of a hex or decimal number.
 
 use DDG::Goodie;
 use strict;
