@@ -29,15 +29,24 @@ ddg_goodie_test(
                 operation => 'Hamming Weight',
                 result    => '8'
         }),
+    # Long number tests
     'hw 123456789123456789123456789' => test_zci('50',
             structured_answer => {
                 input     => ['123456789123456789123456789'],
                 operation => 'Hamming Weight',
                 result    => '50'
         }),
+    'bitsum 0x123456789ABCDEF123456789ABCDEF' => test_zci('64',
+            structured_answer => {
+                input     => ['0x123456789ABCDEF123456789ABCDEF'],
+                operation => 'Hamming Weight',
+                result    => '64'
+        }),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
     # Test which should fail
+    'bitsum 213f3a', undef,
+    'hw 0d23238', undef,
     'bitsum 0x' => undef,
     'bitsum test' => undef,
 );

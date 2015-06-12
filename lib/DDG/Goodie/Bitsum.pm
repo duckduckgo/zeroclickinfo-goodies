@@ -16,13 +16,11 @@ name "Bitsum";
 description "Computes the Hamming Weight / bit-wise sum of a decimal or hex number.";
 primary_example_queries "bitsum 1023", "bitsum 0x789abcd";
 secondary_example_queries "hammingweight 1023", "hw 1023";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
-# category "";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-# topics "";
+category "programming";
+topics "programming", "cryptography";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Bitsum.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
+attribution github => ["kste", "Stefan Koelbl"],
+            twitter => "@kste_";
 
 # Triggers
 triggers start => "bitsum", "hammingweight", "hw";
@@ -31,7 +29,7 @@ triggers start => "bitsum", "hammingweight", "hw";
 handle remainder => sub {
     
     # Return if input is no hex or decimal number
-    return unless $_ =~ /^(0x[0-9a-f]+$)|(\d+$)/i;
+    return unless $_ =~ /(^0x[0-9a-f]+$)|(^\d+$)/i;
 
     my $n = $_;
     my $binstring;
