@@ -29,15 +29,15 @@ handle remainder => sub {
     # Return if input is no hex or decimal number
     return unless $_ =~ /(^0x[0-9a-f]+$)|(^\d+$)/i;
 
-    my $n = $_;
+    my $input_number = $_;
     my $binstring;
     
     # Construct binary for both hex and decimal representations
-    if( $n =~ /^0x/) {
-        $n =~ s/0x//;
-        $binstring = unpack ('B*', pack ('H*',$n));
+    if( $input_number =~ /^0x/) {
+        $input_number =~ s/0x//;
+        $binstring = unpack ('B*', pack ('H*',$input_number));
     } else {
-        $binstring = Math::BigInt->new($n)->as_bin();
+        $binstring = Math::BigInt->new($input_number)->as_bin();
     }
     
     # Count ones
@@ -45,7 +45,7 @@ handle remainder => sub {
     
     return $result,
         structured_answer => {
-            input     => [html_enc($_)],
+            input     => [html_enc($input_number)],
             operation => 'Hamming Weight',
             result    => html_enc($result),
         };

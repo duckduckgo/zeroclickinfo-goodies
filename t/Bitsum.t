@@ -42,9 +42,7 @@ ddg_goodie_test(
                 operation => 'Hamming Weight',
                 result    => '64'
         }),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    # Test which should fail
+    # Tests which should fail
     'bitsum 213f3a', undef,
     'hw 0d23238', undef,
     'bitsum 0x' => undef,
