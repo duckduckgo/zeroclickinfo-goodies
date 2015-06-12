@@ -20,7 +20,7 @@ category "programming";
 topics "programming", "cryptography";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Bitsum.pm";
 attribution github => ["kste", "Stefan Koelbl"],
-            twitter => "@kste_";
+            twitter => "kste_";
 
 # Triggers
 triggers start => "bitsum", "hammingweight", "hw";
