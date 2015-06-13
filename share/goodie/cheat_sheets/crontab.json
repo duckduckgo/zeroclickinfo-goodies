@@ -1,0 +1,49 @@
+{
+    "id": "crontab_cheat_sheet", 
+    "name": "Crontab Cheat Sheet",
+    "description": "Commands are executed by cron when the minute, hour, and month of year fields match the current time, and at least one of the two day fields (day of month, or day of week) match the current time. A field may be an asterisk (*), which will always match.",
+    "metadata": { 
+        "sourceName": Crontab Cheat Sheet",
+        "sourceUrl": ""
+    },
+    "section_order" : ["Fields (in order) & allowed values", "Examples"],
+    "sections":{
+        "Fields (in order) & allowed values": [{
+            "key" : "0-59",
+            "val" : "minute"
+        }, {
+            "key" : "0-23",
+            "val" : "hour"
+        }, {
+            "key" : "1-31",
+            "val" : "day of month"
+        }, {
+            "key" : "[1-12] or [first three letters]",
+            "val" : "month"
+        }, {
+            "key" : "[0-7] or [first three letters (0 or 7 is Sunday)]",
+            "val" : "day of week"
+        }], "Examples" :[{
+            "key" : "[30 2 * * tue /path/to/command] or [30 2 * * 2 /path/to/command]",
+            "val" : "Run every Tuesday at 2:30"
+        }, {
+            "key" : "*/10 * * * * /path/to/command",
+            "val" : "Run every 10 minutes"
+        }, {
+            "key" : "30 */2 * * * /path/to/command",
+            "val" : "Run every 2 hours, on the half-hour"
+        }, {
+            "key" : "30 */2 * * 1-5 /path/to/command",
+            "val" : "Run every 2 hours on the half-hour, but only on weekdays"
+        }, {
+            "key" : "5 12-18/2 * * * /path/to/command",
+            "val" : "Run at 12:05, 13:05, ..., and 18:05"
+        }, {
+            "key" : "0 0 1 * * /path/to/command",
+            "val" : "Run on the first day of every month, at 12:00am"
+        }, {
+            "key" : "0 0 1 */3 * /path/to/command",
+            "val" : "Run on the first day of every third month, at 12:00am"
+        }]
+    }
+}
