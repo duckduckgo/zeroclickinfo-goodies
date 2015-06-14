@@ -3,7 +3,7 @@
     "name": "Crontab Cheat Sheet",
     "description": "Commands are executed by cron when the minute, hour, and month of year fields match the current time, and at least one of the two day fields (day of month, or day of week) match the current time. A field may be an asterisk (*), which will always match.",
     "metadata": { 
-        "sourceName": Crontab Cheat Sheet",
+        "sourceName": "Crontab Cheat Sheet",
         "sourceUrl": ""
     },
     "section_order" : ["Fields (in order) & allowed values", "Examples"],
@@ -18,10 +18,10 @@
             "key" : "1-31",
             "val" : "day of month"
         }, {
-            "key" : "[1-12] or [first three letters]",
+            "key" : "[1-12] or [first 3 letters]",
             "val" : "month"
         }, {
-            "key" : "[0-7] or [first three letters (0 or 7 is Sunday)]",
+            "key" : "[0-7] or [first 3 letters (0 or 7 is Sun)]",
             "val" : "day of week"
         }], "Examples" :[{
             "key" : "[30 2 * * tue /path/to/command] or [30 2 * * 2 /path/to/command]",
