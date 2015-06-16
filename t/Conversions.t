@@ -583,6 +583,14 @@ ddg_goodie_test(
             result    => '3.381 us fluid ounces'
         }
     ),
+    '75 ml to ounces' => test_zci(
+        '75 millilitres = 2.536 us fluid ounces',
+        structured_answer => {
+            input     => ['75 millilitres'],
+            operation => 'Convert',
+            result    => '2.536 us fluid ounces'
+        }
+    ),
     'mm in inches' => test_zci(
         '1 millimeter = 0.039 inches',
         structured_answer => {
