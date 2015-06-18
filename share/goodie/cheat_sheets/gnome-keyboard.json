@@ -1,0 +1,75 @@
+{
+    "id": "gnome_cheat_sheet", 
+    "name": "GNOME Keyboard Shortcuts",
+    "description": "List of useful keyboard shortcuts for GNOME", 
+    "metadata": {
+        "sourceName": "GNOME Help",
+        "sourceUrl": "https://help.gnome.org/users/gnome-help/stable/shell-keyboard-shortcuts.html.en"
+    },
+    "section_order": ["Desktop Shortcuts", "Common Editing", "Screen Capturing"],
+    "sections": {
+        "Desktop Shortcuts": [{
+            "val": "Switch between the Activities overview and desktop",
+            "key": "[Alt]+[F1] or [Super]"
+        }, {
+            "val": "Pop up command window",
+            "key": "[Alt]+[F2] "
+        }, {
+            "val": "Quickly switch between windows",
+            "key": "[Super]+[Tab] "
+        }, {
+            "val": "Switch between windows from the same application",
+            "key": "[Super]+[`] "
+        }, {
+            "val": "Give keyboard focus to the top bar",
+            "key": "[Ctrl]+[Alt]+[Tab] "
+        }, {
+            "val": "Show the list of applications",
+            "key": "[Super]+[A] "
+        }, {
+            "val": "Switch between workspaces",
+            "key": "[Super]+[Page Up] \/ [Page Down]"
+        }, {
+            "val": "Move the current window to a different workspace",
+            "key": "[Super]+[Shift]+[Page Up] \/ [Page Down]"
+        }, {
+            "val": "Power Off",
+            "key": "[Ctrl]+[Alt]+[Delete] "
+        }, {
+            "val": "Lock the screen",
+            "key": "[Super]+[L] "
+        }, {
+            "val": "Open the message tray",
+            "key": "[Super]+[M] "
+        }],
+         "Common Editing": [{
+            "val": "Select all text or items in a list",
+            "key": "[Ctrl]+[A] "
+        }, {
+            "val": "Cut selected text or items and place it on the clipboard",
+            "key": "[Ctrl]+[X] "
+        }, {
+            "val": "Copy selected text or items to the clipboard",
+            "key": "[Ctrl]+[C] "
+        }, {
+            "val": "Paste the contents of the clipboard",
+            "key": "[Ctrl]+[V] "
+        }, {
+            "val": "Undo the last action",
+            "key": "[Ctrl]+[Z] "
+        }],
+         "Screen Capturing": [{
+            "val": "Take a screenshot",
+            "key": "[Prnt Scrn]"
+        }, {
+            "val": "Take a screenshot of a window",
+            "key": "[Alt]+[Prnt Scrn]"
+        }, {
+            "val": "Take a screenshot of an area of the screen",
+            "key": "[Shift]+[Prnt Scrn]"
+        }, {
+            "val": "Start and end screencast recording",
+            "key": "[Ctrl]+[Alt]+[Shift]+[R] "
+        }]
+    }
+}
