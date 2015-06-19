@@ -20,6 +20,24 @@ attribution github => ["https://github.com/wongalvis", "wongalvis"];
 # Triggers
 triggers startend => "weight";
 
+my %units = (
+    "kg" => 1,
+    "kgs" => 1,
+    "g"  => 0.001,
+    "gs"  => 0.001,
+    "mg" => 0.00001,
+    "mgs" => 0.00001,
+    "t" => 1000,
+    "ts" => 1000,
+    "lb" => 0.453,
+    "lbs" => 0.453,
+    "oz" => 0.0283,
+    "ozs" => 0.0283,
+);
+
+# Value of acceleration due to gravity on Earth in m/s^2.
+use constant g => 9.80665;
+
 # Handle statement
 handle remainder => sub {
 
@@ -29,31 +47,13 @@ handle remainder => sub {
     my $mass_input = $+{mass};
     my $unit = $+{unit} // my $default_unit;
     
-    my %units = (
-        "kg" => 1,
-        "kgs" => 1,
-        "g"  => 0.001,
-        "gs"  => 0.001,
-        "mg" => 0.00001,
-        "mgs" => 0.00001,
-        "t" => 1000,
-        "ts" => 1000,
-        "lb" => 0.453,
-        "lbs" => 0.453,
-        "oz" => 0.0283,
-        "ozs" => 0.0283,
-    );
-    
     my $mass = $mass_input;
     if ($unit){
         $mass *= $units{$unit} if exists $units{$unit};
     }
     
-    # Value of acceleration due to gravity on Earth in m/s^2.
-    my $g = 9.80665;
-    
     # Weight = Mass (in kg) * Acceleration due to gravity (in m/s^2)
-    my $weight = $mass*$g;
+    my $weight = $mass*g;
     
     # Text to be shown to indicate conversion done
     my $conversiontext = "(".$mass." kg) ";
@@ -67,7 +67,7 @@ handle remainder => sub {
     return "Weight of a ".$mass_input.$unit." mass on Earth is ".$weight."N.",
             structured_answer => {
                 input     => [],
-                operation => "Taking value of acceleration due to gravity on Earth as ".$g."m/s^2.",
+                operation => "Taking value of acceleration due to gravity on Earth as ".g."m/s^2.",
                 result    => "Weight of a ".$mass_input.$unit." ".$conversiontext."mass on Earth is ".$weight."N.",
             };
 
