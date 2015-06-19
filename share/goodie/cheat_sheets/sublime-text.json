@@ -1,5 +1,5 @@
 {
-    "id": "sublime_cheat_sheet",
+    "id": "sublime_text_cheat_sheet",
     "name": "Sublime Text",
     "description": "Sublime Text 2 Keyboard Shortcuts ",
     "metadata": {
@@ -77,7 +77,7 @@
             "key":"[Alt] + [Ctrl] + [P]",
             "val":"Switch Project"
           }, {  
-            "key":"[Ctrl]+[Shift] + [F2]",
+            "key":"[Ctrl] + [Shift] + [F2]",
             "val":"Clear all bookmarks"
           }, {  
             "key":"[F2]",
