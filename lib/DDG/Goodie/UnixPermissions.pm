@@ -60,19 +60,20 @@ handle query => sub {
     if ($attributes ne '') {
         $octal = "$attributes$octal";
         $plain_output = "Attributes: $attributes{$1}\n";
+        my $tmp_ttributes = $attributes;
         my @symbolic = split '', $symbolic;
-        if ($attributes >= 4) {
-            $attributes -= 4;
+        if ($tmp_ttributes >= 4) {
+            $tmp_ttributes -= 4;
             if ($symbolic[5] eq 'x') { $symbolic[5] = 's'; }
             else { $symbolic[5] = 'S'; }
         }
-        if ($attributes >= 2) {
-            $attributes -= 2;
+        if ($tmp_ttributes >= 2) {
+            $tmp_ttributes -= 2;
             if ($symbolic[2] eq 'x') { $symbolic[2] = 's'; }
             else { $symbolic[2] = 'S'; }
         }
-        if ($attributes >= 1) {
-            $attributes -= 1;
+        if ($tmp_ttributes >= 1) {
+            $tmp_ttributes -= 1;
             if ($symbolic[8] eq 'x') { $symbolic[2] = 't'; }
             else { $symbolic[8] = 'T'; }
         }
@@ -108,8 +109,9 @@ handle query => sub {
                     user => $modes_desc[$digits[0]],
                     group => $modes_desc[$digits[1]],
                     others => $modes_desc[$digits[2]],
+                    attributes => $attributes{$attributes},
                 },
-                record_keys => ["symbolic", "user", "group", "others"],
+                record_keys => ["symbolic", "user", "group", "others", "attributes"],
             },
             
         }
