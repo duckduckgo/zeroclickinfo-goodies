@@ -60,20 +60,20 @@ handle query => sub {
     if ($attributes ne '') {
         $octal = "$attributes$octal";
         $plain_output = "Attributes: $attributes{$1}\n";
-        my $tmp_ttributes = $attributes;
+        my $tmp_attributes = $attributes;
         my @symbolic = split '', $symbolic;
-        if ($tmp_ttributes >= 4) {
-            $tmp_ttributes -= 4;
+        if ($tmp_attributes >= 4) {
+            $tmp_attributes -= 4;
             if ($symbolic[5] eq 'x') { $symbolic[5] = 's'; }
             else { $symbolic[5] = 'S'; }
         }
-        if ($tmp_ttributes >= 2) {
-            $tmp_ttributes -= 2;
+        if ($tmp_attributes >= 2) {
+            $tmp_attributes -= 2;
             if ($symbolic[2] eq 'x') { $symbolic[2] = 's'; }
             else { $symbolic[2] = 'S'; }
         }
-        if ($tmp_ttributes >= 1) {
-            $tmp_ttributes -= 1;
+        if ($tmp_attributes >= 1) {
+            $tmp_attributes -= 1;
             if ($symbolic[8] eq 'x') { $symbolic[2] = 't'; }
             else { $symbolic[8] = 'T'; }
         }
