@@ -84,12 +84,35 @@ handle query => sub {
                     'Group: '  . $modes_desc[$digits[1]] . "\n" .
                     'Others: ' . $modes_desc[$digits[2]] . "\n" .
                     ($plain_output ? $plain_output : '');
-    (my $html_output = $plain_output) =~ s/\n/<br>/g;
 
-    $plain_output  = "$octal (octal)\n$plain_output" . 'More at https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions';
-    $html_output  .= '<a href="https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions">More at Wikipedia</a>';
+    $plain_output  = "$octal (octal)\n$plain_output";
 
-    return $plain_output, html => $html_output, heading => "$query (Unix Permissions)";
+    return $plain_output,
+        structured_answer => {
+            id => 'UnixPermissions',
+            description => 'Unix file permission',
+            meta => {
+                sourceName => 'wikipedia',
+                sourceUrl => 'https://en.wikipedia.org/wiki/Permissions#Notation_of_traditional_Unix_permissions'
+            },
+            templates => {
+                group => 'list',
+                options => {
+                    content => 'record',
+                },
+            },
+            data => {
+                title => 'Unix file permissions',
+                record_data => {
+                    symbolic => $symbolic,
+                    user => $modes_desc[$digits[0]],
+                    group => $modes_desc[$digits[1]],
+                    others => $modes_desc[$digits[2]],
+                },
+                record_keys => ["symbolic", "user", "group", "others"],
+            },
+            
+        }
 };
 
 1;
