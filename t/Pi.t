@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use utf8;
 
 zci answer_type => "pi";
 zci is_cached   => 1;
@@ -28,6 +29,24 @@ ddg_goodie_test(
 		input => [],
 		operation => ["First 12 digits of Pi"],
 		result => "3.141592653589"
+	}),
+    '12 digits of π' => test_zci("3.141592653589",
+	structured_answer => {
+		input => [],
+		operation => ["First 12 digits of Pi"],
+		result => "3.141592653589"
+	}),
+    'pi to 6 digits' => test_zci("3.141592",
+	structured_answer => {
+		input => [],
+		operation => ["First 6 digits of Pi"],
+		result => "3.141592"
+	}),
+    'π to 6 digits' => test_zci("3.141592",
+	structured_answer => {
+		input => [],
+		operation => ["First 6 digits of Pi"],
+		result => "3.141592"
 	}),
 
 	'pi ff' => undef,
