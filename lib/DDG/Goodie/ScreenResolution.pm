@@ -15,10 +15,10 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution twitter => 'mattr555',
             github => ['mattr555', 'Matt Ramina'];
 
-triggers startend => "screen resolution", "display resolution";
+triggers startend => "screen resolution", "display resolution", "resolution of my screen";
 
 handle remainder => sub {
-    return unless $_ eq '' || $_ eq 'what is my';
+    return unless /^((what\'?s|what is)?\s?(the|my|current))?$/;
 
     return 'Javascript required', structured_answer => {
         id => 'screen_resolution',

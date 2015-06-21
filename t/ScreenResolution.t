@@ -27,6 +27,10 @@ ddg_goodie_test(
     [qw( DDG::Goodie::ScreenResolution )],
     'screen resolution' => @answer,
     'what is my display resolution' => @answer,
+    'whats my screen resolution' => @answer,
+    'what is my screen resolution' => @answer,
+    'what is the resolution of my screen?' => @answer,
+    'my screen resolution' => @answer,
     'blah blah screen resolution' => undef,
 );
 
