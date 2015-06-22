@@ -10,7 +10,10 @@
         "sourceUrl": "https://www.freebsd.org/cgi/man.cgi?ed%281%29"
     },
     "section_order": [
-        "Commands",
+        "Editing commands",
+        "File manipulation commands",
+        "Display commands",
+        "Other commands",
         "Addressing",
         "Invocation"
     ],
@@ -76,7 +79,7 @@
                 "val": "A line marked with {letter} (see the [k] command below)"
             }
         ],
-        "Commands": [
+        "Editing commands": [
             {
                 "key": "[.]a",
                 "val": "Insert below the current line, end with a single period"
@@ -89,6 +92,36 @@
                 "key": "[.,.]d",
                 "val": "Delete the specified range"
             },
+            {
+                "key": "[.]i",
+                "val": "Insert above the current line, end with a single period"
+            },
+            {
+                "key": "[.,+]j",
+                "val": "Join the specified range"
+            },
+            {
+                "key": "[.,.]m[.]",
+                "val": "Move the specified range"
+            },
+            {
+                "key": "[.,.]s/regexp/replacement/flags",
+                "val": "Perform a substitution on the specified range"
+            },
+            {
+                "key": "[.,.]t[.]",
+                "val": "Copy the specified range"
+            },
+            {
+                "key": "[.]x",
+                "val": "Paste the cut buffer (GNU extension)"
+            },
+            {
+                "key": "[.,.]y",
+                "val": "Copy (yank) the specified range (GNU extension)"
+            }
+        ],
+        "File manipulation commands": [
             {
                 "key": "e\u00a0\\[filename\\]",
                 "val": "Edit the file [filename]"
@@ -106,88 +139,12 @@
                 "val": "Set the default filename"
             },
             {
-                "key": "[1,$]g/\\{re\\}/\\{command-list\\}",
-                "val": "Execute {command-list} on all lines matching {re}"
-            },
-            {
-                "key": "[1,$]G/{re}/",
-                "val": "Interactively edit all lines matching {re}"
-            },
-            {
-                "key": "h",
-                "val": "Print help on the last error"
-            },
-            {
-                "key": "H",
-                "val": "Toggle printing of errors"
-            },
-            {
-                "key": "[.]i",
-                "val": "Insert above the current line, end with a single period"
-            },
-            {
-                "key": "[.,+]j",
-                "val": "Join the specified range"
-            },
-            {
-                "key": "[.]k\\{letter\\}",
-                "val": "Mark the line with the specified lower-case letter"
-            },
-            {
-                "key": "[.]l",
-                "val": "Display the specified range unambiguously"
-            },
-            {
-                "key": "[.,.]m[.]",
-                "val": "Move the specified range"
-            },
-            {
-                "key": "[.]n",
-                "val": "Number and print the specified range"
-            },
-            {
-                "key": "[.]p",
-                "val": "Print the specified range"
-            },
-            {
-                "key": "P",
-                "val": "Toggle command-prompt printing"
-            },
-            {
-                "key": "q",
-                "val": "Quit"
-            },
-            {
-                "key": "Q",
-                "val": "Quit unconditionally"
-            },
-            {
                 "key": "\\[$\\]r\u00a0\\[filename\\]",
                 "val": "Read data from [filename] after the specified line"
             },
             {
                 "key": "\\[$\\]r\u00a0!\\{command\\}",
                 "val": "Read output from {command} after the specified line"
-            },
-            {
-                "key": "[.,.]s/regexp/replacement/flags",
-                "val": "Perform a substitution on the specified range"
-            },
-            {
-                "key": "[.,.]t[.]",
-                "val": "Copy the specified range"
-            },
-            {
-                "key": "u",
-                "val": "Undo"
-            },
-            {
-                "key": "[1,$]v/re/\\{command-list\\}",
-                "val": "Execute {command-list} on all lines that do not match {re}"
-            },
-            {
-                "key": "[1,$]V/re/",
-                "val": "Interactively edit all lines that do not match {re}"
             },
             {
                 "key": "\\[1,$\\]w\u00a0\\[filename\\]",
@@ -202,12 +159,76 @@
                 "val": "Append the specified range to [filename] unconditionally"
             },
             {
-                "key": "[.+1]z{N}",
-                "val": "Display N lines of text"
-            },
-            {
                 "key": "!command",
                 "val": "Execute {command} via [sh(1)]"
+            },
+            {
+                "key": "q",
+                "val": "Quit"
+            },
+            {
+                "key": "Q",
+                "val": "Quit unconditionally"
+            },
+            {
+                "key": "x",
+                "val": "Prompt for the DES encryption key (BSD extension)"
+            }
+        ],
+        "Display commands": [
+            {
+                "key": "h",
+                "val": "Print help on the last error"
+            },
+            {
+                "key": "H",
+                "val": "Toggle printing of errors"
+            },
+            {
+                "key": "[.]l",
+                "val": "Display the specified range unambiguously"
+            },
+            {
+                "key": "[.]n",
+                "val": "Number and print the specified range"
+            },
+            {
+                "key": "[.]p",
+                "val": "Print the specified range"
+            },
+            {
+                "key": "P",
+                "val": "Toggle command-prompt printing"
+            },
+            {
+                "key": "[.+1]z{N}",
+                "val": "Display N lines of text"
+            }
+        ],
+        "Other commands": [
+            {
+                "key": "[1,$]g/\\{re\\}/\\{command-list\\}",
+                "val": "Execute {command-list} on all lines matching {re}"
+            },
+            {
+                "key": "[1,$]G/{re}/",
+                "val": "Interactively edit all lines matching {re}"
+            },
+            {
+                "key": "[.]k\\{letter\\}",
+                "val": "Mark the line with the specified lower-case letter"
+            },
+            {
+                "key": "u",
+                "val": "Undo"
+            },
+            {
+                "key": "[1,$]v/re/\\{command-list\\}",
+                "val": "Execute {command-list} on all lines that do not match {re}"
+            },
+            {
+                "key": "[1,$]V/re/",
+                "val": "Interactively edit all lines that do not match {re}"
             },
             {
                 "key": "[$]=",
@@ -216,18 +237,6 @@
             {
                 "key": "[.+1]{newline}",
                 "val": "Print and select the addressed line"
-            },
-            {
-                "key": "x",
-                "val": "Prompt for the DES encryption key (BSD extension)"
-            },
-            {
-                "key": "[.]x",
-                "val": "Paste the cut buffer (GNU extension)"
-            },
-            {
-                "key": "[.,.]y",
-                "val": "Copy (yank) the specified range (GNU extension)"
             },
             {
                 "key": "[.,.]#",
