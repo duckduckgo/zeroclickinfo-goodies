@@ -1,0 +1,183 @@
+{
+    "id": "sublime_cheat_sheet",
+    "name": "Sublime",
+    "description": "Text Editor",
+    "metadata": {
+        "sourceName": "Sublime",
+        "sourceUrl": "https://www.sublimetext.com/support"
+    },
+    "section_order": [
+        "Basic",
+        "Editing",
+        "Movement",
+        "Selection",
+        "Multiple Selection",
+        "Search and Replace",
+        "Macro"
+    ],
+    "sections": {
+        "Basic": [{
+            "val": "new file",
+            "key": "[Ctrl] + [n]"
+        }, {
+            "val": "save file",
+            "key": "[Ctrl] + [s]"
+        }, {
+            "val": "open file",
+            "key": "[Ctrl] + [o]"
+        }, {
+            "val": "close file",
+            "key": "[Ctrl] + [w]"
+        }, {
+            "val": "new window",
+            "key": "[Shift] + [Ctrl] + [n]"
+        }],
+        "Macro": [{
+            "val": "record macro / stop record",
+            "key": "[Ctrl] + [Alt] + [q]"
+        }, {
+            "val": "repeat macro",
+            "key": "[Shift] + [Ctrl] + [Alt] + [q]"
+        }],
+        "Editing": [{
+            "val": "copy",
+            "key": "[Ctrl] + [c]"
+        }, {
+            "val": "paste",
+            "key": "[Ctrl] + [p]"
+        }, {
+            "val": "insert line after",
+            "key": "[Ctrl] + [Enter]"
+        }, {
+            "val": "insert line before",
+            "key": "[Ctrl] + [Shift] + [Enter]"
+        }, {
+            "val": "toggle comment",
+            "key": "[Ctrl] + [/]"
+        }, {
+            "val": "toggle block comment",
+            "key": "[Shift] + [Ctrl] + [/]"
+        }, {
+            "val": "upper case",
+            "key": "[Ctrl] + [k] [Ctrl] + [u]"
+        }, {
+            "val": "lower case",
+            "key": "[Ctrl] + [k] [Ctrl] + [l]"
+        }, {
+            "val": "move line up",
+            "key": "[Shift] + [Ctrl] + [Up]"
+        }, {
+            "val": "move line down",
+            "key": "[Shift] + [Ctrl] + [Down]"
+        }, {
+            "val": "duplicate line",
+            "key": "[Shift] + [Ctrl] + [D]"
+        }, {
+            "val": "delete line",
+            "key": "[Shift] + [Ctrl] + [k]"
+        }, {
+            "val": "delete word forward",
+            "key": "[Ctrl] + [Del]"
+        }, {
+            "val": "delete word backward",
+            "key": "[Ctrl] + [Backspace]"
+        }, {
+            "val": "delete line",
+            "key": "[Shift] + [Ctrl] + [k]"
+        }],
+        "Selection": [{
+            "val": "select word",
+            "key": "[Ctrl] + [D]"
+        }, {
+            "val": "select line",
+            "key": "[Ctrl] + [L]"
+        }, {
+            "val": "select brackets",
+            "key": "[Ctrl] + [Shift] + [M]"
+        }, {
+            "val": "select scope",
+            "key": "[Ctrl] + [Shift] + [Space]"
+        }, {
+            "val": "select indentation",
+            "key": "[Ctrl] + [Shift] + [J]"
+        }],
+        "Multiple Selection": [{
+            "val": "column selection",
+            "key": "[Ctrl] + [Alt] + [Up] / [Ctrl] + [Alt] + [Down]"
+        }, {
+            "val": "add next occurrence of word to selection",
+            "key": "[Ctrl] + [d]"
+        }, {
+            "val": "add next occurrence of word to selection",
+            "key": "[Ctrl] + [d]"
+        }, {
+            "val": "undo last selection",
+            "key": "[Ctrl] + [u]"
+        }, {
+            "val": "undo last selection",
+            "key": "[Ctrl] + [u]"
+        }, {
+            "val": "add next occurrence of word to selection",
+            "key": "[Ctrl] + [d]"
+        }, {
+            "val": "undo last selection",
+            "key": "[Ctrl] + [u]"
+        }, {
+            "val": "skip selecting a word",
+            "key": "[Ctrl] + [k] / [Ctrl] + [d]"
+        }, {
+            "val": "add all occurencs of word to selection",
+            "key": "[Alt] + [F3]"
+        }],
+        "Search and Replace": [{
+            "val": "open search",
+            "key": "[Ctrl] + [f]"
+        }, {
+            "val": "open search in files",
+            "key": "[Ctrl] + [Shift] + [f]"
+        }, {
+            "val": "toggle regular expressions",
+            "key": "[Alt] + [r]"
+        }, {
+            "val": "toggle case sensitivity",
+            "key": "[Alt] + [c]"
+        }, {
+            "val": "toggle exact match",
+            "key": "[Alt] + [w]"
+        }, {
+            "val": "find next",
+            "key": "[Enter]"
+        }, {
+            "val": "find previous",
+            "key": "[Shift] + [Enter]"
+        }, {
+            "val": "find all",
+            "key": "[Alt] + [Enter]"
+        }, {
+            "val": "open replace",
+            "key": "[Ctrl] + [h]"
+        }, {
+            "val": "replace next",
+            "key": "[Ctrl] + [Shift] + [h]"
+        }, {
+            "val": "replace all",
+            "key": "[Ctrl] + [Alt] + [Enter]"
+        }],
+        "Movement": [{
+            "val": "goto symbol",
+            "key": "[Ctrl] + [r]"
+        }, {
+            "val": "goto anything",
+            "key": "[Ctrl] + [p]"
+        }, {
+            "val": "goto line 5",
+            "key": "[Ctrl] + [p] [:5]"
+        }, {
+            "val": "goto word",
+            "key": "[Ctrl] + [p] [#word]"
+        }, {
+            "val": "jump to the closing bracket",
+            "key": "[Ctrl] + [M]"
+        }]
+    }
+}
