@@ -20,14 +20,14 @@ triggers startend => "screen resolution", "display resolution", "resolution of m
 handle remainder => sub {
     return unless /^((what\'?s|what is)?\s?(the|my|current))?$/;
 
-    return 'Javascript required', structured_answer => {
+    return structured_answer => {
         id => 'screen_resolution',
         name => 'Screen Resolution',
         data => {
             title => "Your screen resolution is [Loading...]"
         },
         templates => {
-            group => 'text',
+            group => 'icon',
             item => 0,
             options => {
                 moreAt => 0

@@ -1,11 +1,13 @@
 DDH.screen_resolution = DDH.screen_resolution || {};
 
 DDH.screen_resolution.build = function(ops){
-    var res = 'Your screen resolution is ' + window.screen.width + 'x' + window.screen.height;
+    var title = window.screen.width + ' × ' + window.screen.height,
+        sub = ['Your Screen Resolution'];
     if (window.devicePixelRatio && window.devicePixelRatio > 1){
-        res += ' (pixel ratio x' + window.devicePixelRatio + ')';
+        sub.push('Pixel Ratio: x' + window.devicePixelRatio);
     }
 
-    ops.data.title = res;
+    ops.data.title = title;
+    ops.data.subtitle = sub;
     return ops;
 }
