@@ -1,5 +1,5 @@
 {
-    "id": "openshot_cheat_sheet",
+    "id": "open_shot_cheat_sheet",
     "name": "OpenShot",
     "description": "Video Editor",
     "metadata": {
@@ -7,10 +7,52 @@
         "sourceUrl": "http://www.openshotusers.com/help/1.4/en/ar01s05.html"
     },
     "section_order": [
+        "General",
+        "Playback",
         "Editing"
     ],
     "sections": {
-        "Editing": [{
+        "General": [{
+            "key": "CTRL + N",
+            "val": "Create a new project"
+        }, {
+            "key": "CTRL + O",
+            "val": "Open an existing project"
+        }, {
+            "key": "CTRL + S",
+            "val": "Save the current project"
+        }, {
+            "key": "SHIFT + CTRL + S",
+            "val": "Save the current project as..."
+        }, {
+            "key": "CTRL + X",
+            "val": "Export project as MLT XML"
+        }, {
+            "key": "CTRL + E",
+            "val": "Export the current project as a video file"
+        }, {
+            "key": "CTRL + U",
+            "val": "Upload current project as a video file to YouTube or Vimeo"
+        }, {
+            "key": "CTRL + Z",
+            "val": "Undo the last action"
+        }, {
+            "key": "CTRL + Y",
+            "val": "Redo the previous action"
+        }, {
+            "key": "F11",
+            "val": "Toggle full-screen mode"
+        }, {
+            "key": "F1",
+            "val": "Launch the help file (if installed)"
+        }, {
+            "key": "CTRL + P",
+            "val": "Edit the preferences"
+        }, {
+            "key": "CTRL + Q",
+            "val": "Quit the program"
+        }],
+        "Playback": [{
             "key": "J",
             "val": "Rewind the video playback"
         }, {
@@ -34,7 +76,8 @@
         }, {
             "key": "Right",
             "val": "Step forwards one frame (frame stepping)"
-        }, {
+        }],
+        "Editing": [{
             "key": "TAB",
             "val": "Switch between Resize and Select mode"
         }, {
@@ -50,12 +93,6 @@
             "key": "C",
             "val": "Slice all clips at the play-head position"
         }, {
-            "key": "CTRL + N",
-            "val": "Create a new project"
-        }, {
-            "key": "CTRL + O",
-            "val": "Open an existing project"
-        }, {
             "key": "CTRL + F",
             "val": "Import a file (audio, video, or image)"
         }, {
@@ -65,44 +102,11 @@
             "key": "CTRL + W",
             "val": "Import new transition"
         }, {
-            "key": "CTRL + S",
-            "val": "Save the current project"
-        }, {
-            "key": "SHIFT + CTRL + S",
-            "val": "Save the current project as..."
-        }, {
-            "key": "CTRL + X",
-            "val": "Export project as MLT XML"
-        }, {
-            "key": "CTRL + E",
-            "val": "Export the current project as a video file"
-        }, {
-            "key": "CTRL + U",
-            "val": "Upload current project as a video file to YouTube or Vimeo"
-        }, {
-            "key": "CTRL + Q",
-            "val": "Quit the program"
-        }, {
-            "key": "CTRL + Z",
-            "val": "Undo the last action"
-        }, {
-            "key": "CTRL + Y",
-            "val": "Redo the previous action"
-        }, {
-            "key": "CTRL + P",
-            "val": "Edit the preferences"
-        }, {
             "key": "CTRL + T",
             "val": "Create a new title"
         }, {
             "key": "CTRL + B",
             "val": "Create a new animated title"
-        }, {
-            "key": "F11",
-            "val": "Toggle full-screen mode"
-        }, {
-            "key": "F1",
-            "val": "Launch the help file (if installed)"
         }, {
             "key": "CTRL + D",
             "val": "Capture and save the current frame of any non-audio clips that are overlapping the play-head, and add them to the project files."
