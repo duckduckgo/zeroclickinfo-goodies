@@ -1,10 +1,7 @@
 {
     "id": "ed_cheat_sheet",
-
     "name": "ed(1)",
-
     "description": "Line-oriented Text Editor",
-
     "metadata": {
         "sourceName": "EdCheatSheet",
         "sourceUrl": "https://www.freebsd.org/cgi/man.cgi?ed%281%29"
@@ -17,15 +14,14 @@
         "Addressing",
         "Invocation"
     ],
-
     "sections": {
         "Invocation": [
             {
-                "key": "[ed\u00a0\\[parameters\\]\u00a0\\[filename\\]]",
+                "key": "[ed \\[parameters\\] \\[filename\\]]",
                 "val": "Invoke ed(1) with optional parameters and/or filename"
             },
             {
-                "key": "[-p\u00a0\\[string\\]]",
+                "key": "[-p \\[string\\]]",
                 "val": "Use [string] as a prompt"
             },
             {
@@ -123,39 +119,39 @@
         ],
         "File manipulation commands": [
             {
-                "key": "e\u00a0\\[filename\\]",
+                "key": "e \\[filename\\]",
                 "val": "Edit the file [filename]"
             },
             {
-                "key": "e\u00a0!\\{command\\}",
+                "key": "e !\\{command\\}",
                 "val": "Edit the output of {command}"
             },
             {
-                "key": "E\u00a0\\[filename\\]",
+                "key": "E \\[filename\\]",
                 "val": "Edit the file [filename] unconditionally"
             },
             {
-                "key": "f\u00a0\\[filename\\]",
+                "key": "f \\[filename\\]",
                 "val": "Set the default filename"
             },
             {
-                "key": "\\[$\\]r\u00a0\\[filename\\]",
+                "key": "\\[$\\]r \\[filename\\]",
                 "val": "Read data from [filename] after the specified line"
             },
             {
-                "key": "\\[$\\]r\u00a0!\\{command\\}",
+                "key": "\\[$\\]r !\\{command\\}",
                 "val": "Read output from {command} after the specified line"
             },
             {
-                "key": "\\[1,$\\]w\u00a0\\[filename\\]",
+                "key": "\\[1,$\\]w \\[filename\\]",
                 "val": "Write the specified range to [filename] unconditionally"
             },
             {
-                "key": "\\[1,$\\]wq\u00a0\\[filename\\]",
+                "key": "\\[1,$\\]wq \\[filename\\]",
                 "val": "Write the specified range to [filename] unconditionally and quit"
             },
             {
-                "key": "\\[1,$\\]W\u00a0\\[filename\\]",
+                "key": "\\[1,$\\]W \\[filename\\]",
                 "val": "Append the specified range to [filename] unconditionally"
             },
             {
@@ -245,3 +241,4 @@
         ]
     }
 }
+
