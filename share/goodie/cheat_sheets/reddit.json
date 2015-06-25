@@ -1,62 +1,74 @@
 {
-    // Required; must match the id of the cheat sheet's IA page
-    // For example, https://duck.co/ia/view/vim_cheat_sheet
-    "id": "reddit_cheat_sheet", 
-
-    // Required; displayed as title of AnswerBar
+    "id": "reddit_cheat_sheet",
     "name": "reddit",
-
-    // Optional; displayed as subtitle of AnswerBar
-    "description": "Text formatting", 
-    
-    // Required if cheat sheet has a source; useful to link users to further information.
-    // Displayed at bottom of AnswerBar, favicon shown automatically
-    "metadata": { 
+    "description": "Proper formatting for reddit",
+    "metadata": {
         "sourceName": "redditCheatSheet",
-        "sourceUrl": "https://www.reddit.com/comments/6ewgt/reddit_markdown_primer_or_how_do_you_do_all_that" // Should be SSL if possible
+        "sourceUrl": "https://www.reddit.com/comments/6ewgt/reddit_markdown_primer_or_how_do_you_do_all_that"
     },
-
-    // Required; controls which sections appear and in what order
-    "section_order": [  
-        "Basic Markdown",
-        "Tables",
-        // ...additional sections
+    "section_order": [
+        "Text",
+        "Editing"
     ],
-
-    /////////////////////applying italic to the "you see"
-    
-   "definition":[{ "name":"MyFontStyle", "type":"font", "font":"Verdana", "size":"12",
-                "color":"FF0000", "bold":"1", "italic":"1", "underline":"1" }]
-    
-    
-    "application":[{ "toobject":"val", "styles":"MyFontStyle" }]
-   //////////////////////
-
-
-    // Required; section names must match those in section_order in order to appear
     "sections": {
-        "Basic Markdown": [
-            {
-                "key": "You type:", 
-                "val": "You see"
-            },
-            {
-                "key": "*italics*",
-                "val": "italics"
-            }
-            // ...additional entries
-        ],        
-        "Insert mode - inserting/appending text": [
-            {
-                "key": "i",
-                "val": "insert before the cursor"               
-            }, 
-            {
-                "key": "I",
-                "val": "insert at the beginning of the line"
-            }
-            // ...additional entries
-        ],  
-        // ...additional sections
+        "Text": [{
+            "val": "italic",
+            "key": "*italic*"
+        }, {
+            "val": "**bold**",
+            "key": "bold"
+        }, {
+            "val": "~~strikethrough~~",
+            "key": "~~strikethrough~~"
+        }, {
+            "val": "super^script",
+            "key": "super^script"
+        }, {
+            "val": "close the current tab and all its windows",
+            "key": "[:tabclose] / [:tabc]"
+        }, {
+            "val": "close all tabs except for the current one",
+            "key": "[:tabonly] / [:tabo]"
+        }, {
+            "val": "move to the next tab",
+            "key": "[gt] [:tabnext] [:tabn]"
+        }, {
+            "val": "move to the previous tab",
+            "key": "[gT] [:tabprev] [:tabp]"
+        }],
+        "Editing": [{
+            "val": "replace a single character",
+            "key": "r"
+        }, {
+            "val": "join line below to the current one",
+            "key": "J"
+        }, {
+            "val": "change (replace) entire line",
+            "key": "cc"
+        }, {
+            "val": "change (replace) to the end of the word",
+            "key": "cw"
+        }, {
+            "val": "change (replace) to the end of the line",
+            "key": "c$"
+        }, {
+            "val": "delete character and substitute text",
+            "key": "s"
+        }, {
+            "val": "delete line and substitute text (same as cc)",
+            "key": "S"
+        }, {
+            "val": "transpose two letters (delete and paste)",
+            "key": "xp"
+        }, {
+            "val": "undo",
+            "key": "u"
+        }, {
+            "val": "redo",
+            "key": "[Ctrl] + [r]"
+        }, {
+            "val": "repeat last command",
+            "key": "."
+        }]
     }
 }
