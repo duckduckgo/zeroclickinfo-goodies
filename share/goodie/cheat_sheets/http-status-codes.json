@@ -1,0 +1,137 @@
+{
+    "id": "http_status_codes",
+    "name": "HTTP Status Codes",
+    "description": "A list of HTTP status codes",
+    "metadata": {
+        "sourceName": "W3C",
+        "sourceUrl": "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
+    },
+    "section_order": ["1xx", "2xx", "3xx", "4xx", "5xx"],
+    "sections": {
+        "1xx": [{
+            "key": "100",
+            "val": "Continue"
+         }],
+        "2xx": [{
+            "key": "200",
+            "val": "OK"
+         }, {
+            "key": "201",
+            "val": "Created"
+         }, {
+            "key": "202",
+            "val": "Accepted"
+         }, {
+            "key": "203",
+            "val": "Non-Authoritative Information"
+         }, {
+            "key": "204",
+            "val": "No Content"
+         }, {
+            "key": "205",
+            "val": "Reset Content"
+         }, {
+            "key": "206",
+            "val": "Partial Content"
+         }],
+         "3xx": [{
+             "key": "300",
+             "val": "Multiple Choices"
+         }, {
+             "key": "301",
+             "val": "Moved Permanently"
+         }, {
+             "key": "302",
+             "val": "Found"
+         }, {
+             "key": "303",
+             "val": "See Other"
+         }, {
+             "key": "304",
+             "val": "Not Modified"
+         }, {
+             "key": "305",
+             "val": "Use Proxy"
+         }, {
+             "key": "306",
+             "val": "(Unused)"
+         }, {
+             "key": "307",
+             "val": "Temporary Redirect"
+         }],
+         "4xx": [{
+             "key": "400",
+             "val": "Bad Request"
+         }, {
+             "key": "401",
+             "val": "Unauthorized"
+         }, {
+             "key": "402",
+             "val": "Payment Required"
+         }, {
+             "key": "403",
+             "val": "Forbidden"
+         }, {
+             "key": "404",
+             "val": "Not Found"
+         }, {
+             "key": "405",
+             "val": "Method Not Allowed"
+         }, {
+             "key": "406",
+             "val": "Not Acceptable"
+         }, {
+             "key": "407",
+             "val": "Proxy Authentication Required"
+         }, {
+             "key": "408",
+             "val": "Request Timeout"
+         }, {
+             "key": "409",
+             "val": "Conflict"
+         }, {
+             "key": "410",
+             "val": "Gone"
+         }, {
+             "key": "411",
+             "val": "Length Required"
+         }, {
+             "key": "412",
+             "val": "Precondition Failed"
+         }, {
+             "key": "413",
+             "val": "Request Entity Too Large"
+         }, {
+             "key": "414",
+             "val": "Request-URI Too Long"
+         }, {
+             "key": "415",
+             "val": "Unsupported Media Type"
+         }, {
+             "key": "416",
+             "val": "Requested Range Not Satisfiable"
+         }, {
+             "key": "417",
+             "val": "Expectation Failed"
+         }],
+         "5xx": [{
+             "key": "500",
+             "val": "Internal Server Error"
+         }, {
+             "key": "501",
+             "val": "Not Implemented"
+         }, {
+             "key": "502",
+             "val": "Bad Gateway"
+         }, {
+             "key": "503",
+             "val": "Service Unavailable"
+         }, {
+             "key": "504",
+             "val": "Gateway Timeout"
+         }, {
+             "key": "505",
+             "val": "HTTP Version Not Supported"
+         }]
+    }
+}
