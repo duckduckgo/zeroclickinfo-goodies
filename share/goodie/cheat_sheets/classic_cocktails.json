@@ -1,0 +1,157 @@
+{  
+   "id":"Classic_Cocktails",
+   "name":"Classic Cocktails",
+   "description":"The Top Classic Cocktails",
+   "metadata":{  
+      "sourceName":"Classic Cocktails",
+      "sourceUrl":"http://www.iba-world.com/index.php?option=com_content&view=article&id=88"
+   },
+   "section_order":[  
+      "Brown Liquor",
+      "Summer",
+      "Old School",
+      "Brunch",
+      "Howard Hughes Style"
+   ],
+   "sections":{  
+      "Brown Liquor":[  
+         {  
+            "name":"Old Fashioned",
+            "primarySpirit":"whiskey",
+            "Ingredients":[  
+               "4.5 cl Bourbon or Rye whiskey",
+               "2 Dashes Angostura Bitters",
+               "1 sugar cube",
+               "Few dashes plain water"
+            ]
+         },
+         {  
+            "name":"Manhattan",
+            "primarySpirit":"whiskey",
+            "Ingredients":[  
+               "5 cl Rye Whiskey",
+               "2 cl Red Vermouth",
+               "1 dash Angostura Bitters"
+            ]
+         },
+         {  
+            "name":"Sazerac",
+            "primarySpirit":"",
+            "Ingredients":[  
+               "5 cl Cognac",
+               "1 cl Absinthe",
+               "1 sugar cube",
+               "2 dashes Peychaud’s bitters"
+            ]
+         }
+      ],
+      "Summer":[  
+         {  
+            "name":"Margarita",
+            "primarySpirit":"Tequila",
+            "Ingredients":[  
+               "3.5 cl Tequila",
+               "2 cl Cointreau",
+               "1.5 cl Freshly squeezed lime juice"
+            ]
+         },
+         {  
+            "name":"Daquiri (the Real Kind)",
+            "primarySpirit":"Rum",
+            "Ingredients":[  
+               "4.5 cl White rum",
+               "2.5 cl Fresh lime juice",
+               "1.5 cl Simple syrup"
+            ]
+         },
+         {  
+            "name":"Dark and Stormy",
+            "primarySpirit":"Rum",
+            "Ingredients":[  
+               "2 oz Dark Rum",
+               "3 1/3 oz Ginger Beer",
+               "Couple dashes of bitters"
+            ]
+         }
+      ],
+      "Old School":[  
+         {  
+            "name":"Martini",
+            "primarySpirit":"Gin!",
+            "Ingredients":[  
+               "6 cl Gin",
+               "1 cl Dry Vermouth"
+            ]
+         },
+         {  
+            "name":"Bronx",
+            "primarySpirit":"Gin",
+            "Ingredients":[  
+               "1 oz (6 parts) Gin",
+               "1/2 oz (3 parts) Orange juice",
+               "1/2 oz (3 parts) Sweet Red Vermouth",
+               "1/3 oz (2 parts) Dry Vermouth"
+            ]
+         },
+         {  
+            "name":"Salty Dog",
+            "primarySpirit":"Vodka",
+            "Ingredients":[  
+               "2 shots Vodka",
+               "juice of half a grapefruit",
+               "salt the rim of the glass"
+            ]
+         }
+      ],
+      "Brunch":[  
+         {  
+            "name":"Bloody Mary",
+            "primarySpirit":"Vodka",
+            "Ingredients":[  
+               "4.5 cl Vodka",
+               "9 cl Clamato juice",
+               "Steak sauce",
+               "2 to 3 dashes of Worcestershire Sauce",
+               "Tabasco",
+               "Celery salt",
+               "Pepper",
+               "Pickle Juice",
+               "Beef Jerkey"
+            ]
+         },
+         {  
+            "name":"Belini",
+            "primarySpirit":"whiskey",
+            "Ingredients":[  
+               "10 cl Prosecco",
+               "1 cl Vodka",
+               "5 cl Fresh peach puree"
+            ]
+         },
+         {  
+            "name":"French75",
+            "primarySpirit":"Gin",
+            "Ingredients":[  
+               "3 cl Gin",
+               "1.5 cl Fresh lemon juice",
+               "2 dashes Sugar syrup",
+               "6 cl Champagne"
+            ]
+         }
+      ],
+      "Howard Hughes Style":[  
+         {  
+            "name":"Unicorn Blood",
+            "Creator":"@jppope",
+            "primarySpirit":"Scotch Whiskey",
+            "Ingredients":[  
+               "1 oz Macallen 25 year old single malt scotch whiskey",
+               "1/2 oz Goldschlagger (last shot from the bottle, with all the gold)",
+               "2 dashes Cherry Vanilla Bitters",
+               "Purple food coloring",
+               "1 form of stimulant either on the side as a chaser or in the drink if it is relatively flavorless"
+            ]
+         }
+      ]
+   }
+}
