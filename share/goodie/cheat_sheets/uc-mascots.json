@@ -1,0 +1,56 @@
+{
+    "id": "uc_mascots",
+    "name": "List of UC Mascots",
+    "description": "University of California School System",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/University_of_California"
+    },
+    "section_order": [
+        "Universities and Rescpective Mascots"
+    ],
+    "sections": {
+        "Campuses and Rescpective Mascots": [
+            {
+                "key": "Berkeley",
+                "val": "Golden Bears"
+            },
+            {
+                "key": "Davis",
+                "val": "Aggies"
+            },
+            {
+                "key": "Irvine",
+                "val": "Anteaters"
+            },
+            {
+                "key": "Los Angeles",
+                "val": "Bruins"
+            },
+            {
+                "key": "Merced",
+                "val": "Golden Bobcats"
+            },
+            {
+                "key": "Riverside",
+                "val": "Highlanders"
+            },
+            {
+                "key": "San Diego",
+                "val": "Tritons"
+            },
+            {
+                "key": "San Francisco",
+                "val": "Bears"
+            },
+            {
+                "key": "Santa Barbara",
+                "val": "Guachos"
+            },
+            {
+                "key": "Santa Cruz",
+                "val": "Banana Slugs"
+            }
+        ]
+    }
+}
