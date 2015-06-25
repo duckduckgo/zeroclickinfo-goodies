@@ -1,0 +1,29 @@
+#zero_click_wrapper #figlet-wrapper pre {
+    display: block;
+    word-wrap: normal;
+    white-space: pre;
+    overflow: auto;
+    font-family: monospace;
+    background-color: inherit;
+    border: 0;
+    height: auto;
+    width: 100%;
+    padding-left: 0px;
+    outline: none;
+}
+
+#zero_click_wrapper #figlet-wrapper #figlet-font {
+    font-family: monospace;
+}
+
+@media screen and (max-width:768px) {
+    #zero_click_wrapper #figlet-wrapper pre {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #zero_click_wrapper #figlet-wrapper pre {
+        font-size: 5px;
+    }
+}

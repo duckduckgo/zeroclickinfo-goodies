@@ -1,0 +1,62 @@
+{
+    // Required; must match the id of the cheat sheet's IA page
+    // For example, https://duck.co/ia/view/vim_cheat_sheet
+    "id": "reddit_cheat_sheet", 
+
+    // Required; displayed as title of AnswerBar
+    "name": "reddit",
+
+    // Optional; displayed as subtitle of AnswerBar
+    "description": "Text formatting", 
+    
+    // Required if cheat sheet has a source; useful to link users to further information.
+    // Displayed at bottom of AnswerBar, favicon shown automatically
+    "metadata": { 
+        "sourceName": "redditCheatSheet",
+        "sourceUrl": "https://www.reddit.com/comments/6ewgt/reddit_markdown_primer_or_how_do_you_do_all_that" // Should be SSL if possible
+    },
+
+    // Required; controls which sections appear and in what order
+    "section_order": [  
+        "Basic Markdown",
+        "Tables",
+        // ...additional sections
+    ],
+
+    /////////////////////applying italic to the "you see"
+    
+   "definition":[{ "name":"MyFontStyle", "type":"font", "font":"Verdana", "size":"12",
+                "color":"FF0000", "bold":"1", "italic":"1", "underline":"1" }]
+    
+    
+    "application":[{ "toobject":"val", "styles":"MyFontStyle" }]
+   //////////////////////
+
+
+    // Required; section names must match those in section_order in order to appear
+    "sections": {
+        "Basic Markdown": [
+            {
+                "key": "You type:", 
+                "val": "You see"
+            },
+            {
+                "key": "*italics*",
+                "val": "italics"
+            }
+            // ...additional entries
+        ],        
+        "Insert mode - inserting/appending text": [
+            {
+                "key": "i",
+                "val": "insert before the cursor"               
+            }, 
+            {
+                "key": "I",
+                "val": "insert at the beginning of the line"
+            }
+            // ...additional entries
+        ],  
+        // ...additional sections
+    }
+}

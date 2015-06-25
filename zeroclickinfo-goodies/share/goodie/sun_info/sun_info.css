@@ -1,0 +1,55 @@
+.zci--answer .zci--suninfo {
+    font-size: 1.75em;
+    font-weight: 400;
+}
+
+.zci--answer .zci--suninfo .suninfo--header {
+    font-size: 0.5em;
+    margin-bottom: 0.25em;
+    margin-top: 0.25em;
+}
+
+.zci--answer .zci--suninfo .ddgsi {
+	position: relative;
+	top: 2px;
+}
+
+.zci--answer .zci--suninfo .suninfo--row span {
+	vertical-align: middle;
+}
+
+.zci--answer .zci--suninfo .ddgsi {
+	margin-right: 0.5em;
+}
+
+.zci--answer .zci--suninfo .suninfo--timeboxes {
+    display: inline-block;
+    height: 30px;
+}
+
+.zci--answer .zci--suninfo .suninfo--border-right {
+	border-right: 1px solid #ccc;
+	padding-right: 2px;
+}
+
+.zci--answer .zci--suninfo .suninfo--times {
+    margin: 0 0.5em;
+    position: relative;
+    top: -3px;
+}
+
+.zci--answer .zci--suninfo .suninfo--setbox,
+.zci--answer .zci--suninfo .suninfo--risebox {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+}
+
+.zci--answer .zci--suninfo .suninfo--setbox {
+	padding-left: 0.5em;
+}
+
+.zci--answer .zci--suninfo .suninfo--risebox {
+	padding: 0;
+	margin-left: -3px;
+}
