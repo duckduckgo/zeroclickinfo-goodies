@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DuckDuckHack Codio Project - Welcome!
 
 If you're new here be sure to checkout the [DuckDuckHack Documentation](https://dukgo.com/duckduckhack/ddh-intro) to learn more!
@@ -29,3 +30,18 @@ We have a great [quickstart tutorial](https://duck.co/duckduckhack/goodie_quicks
 Please [send us an email](mailto:open@duckduckgo) if you need help. You can also reach us on [IRC](http://webchat.freenode.net/?channels=duckduckgo), #duckduckgo on Freenode or you can reach out to our developer community via our [DuckDuckHack mailing list](https://www.listbox.com/subscribe/?list_id=197814).
 
 **Note:** The Codio team **cannot** help you with DuckDuckHack specific problems, if you're unsure, please get in touch with us. If we determine the problem is related to Codio, we'll reach out to them for you.
+=======
+# DuckDuckHack Goodies [![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.png?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/duckduckgo/zeroclickinfo-goodies?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+This repository contains all the Goodie instant answers. If you are developing a Goodie instant answer you will need to fork this repository.
+
+**If you would like to contribute to DuckDuckHack, please start by reading the [DuckDuckHack Documentation](https://dukgo.com/duckduckhack/ddh-intro).**
+
+------
+
+### Goodie Instant Answer Example
+
+![Unit Conversion Example](https://raw.githubusercontent.com/duckduckgo/duckduckgo-documentation/master/duckduckhack/assets/goodie_readme_example.png)
+>>>>>>> 976079002b3916014c84b3800e2fed1e7bbe13c8
