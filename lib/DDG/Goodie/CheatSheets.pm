@@ -18,6 +18,7 @@ triggers startend => (
     'quick reference', 'reference',
     'shortcut', 'shortcuts',
     'symbol', 'symbols',
+	'key bindings', 'keys', 'default keys'
 );
 
 handle remainder => sub {
