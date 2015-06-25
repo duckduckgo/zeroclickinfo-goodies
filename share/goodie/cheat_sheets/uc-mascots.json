@@ -1,16 +1,16 @@
 {
     "id": "uc_mascots",
-    "name": "List of UC Mascots",
-    "description": "University of California School System",
+    "name": "List of UC System Mascots",
+    "description": "University of California",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/University_of_California"
     },
     "section_order": [
-        "Universities and Rescpective Mascots"
+        "Campuses and Respective Mascots"
     ],
     "sections": {
-        "Campuses and Rescpective Mascots": [
+        "Campuses and Respective Mascots": [
             {
                 "key": "Berkeley",
                 "val": "Golden Bears"
