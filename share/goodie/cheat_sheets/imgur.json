@@ -7,11 +7,12 @@
         "sourceUrl": "https://www.imgur.com"
     },
     "section_order": [
-        "General",
-        "On a picture"
+        "Voting",
+        "Accessibility"
+        "On the Homepage"
     ],
     "sections": {
-        "On a picture": [{
+        "Voting": [{
             "val": "Favorite",
             "key": "[Inser] or [0]"
         }, {
@@ -20,20 +21,21 @@
         }, {
             "val": "Downvote",
             "key": "-"
-        }, {
-            "val": "Slideshow",
-            "key": "[Ctrl] + [F9]"
+        }],
+        "Accessibility":[{
+            "val": "Previous / Next image",
+            "key": "Left / Right arrows"
         }, {
             "val": "Zoom",
             "key": "Enter"
         }, {
-            "val": "Previous / Next image",
-            "key": "Left / Right arrows"
+            "val": "Slideshow",
+            "key": "[Ctrl] + [F9]"
         },{
             "val": "Expand album",
             "key": "9"
         }],
-        "General": [{
+        "On the Homepage": [{
             "val": "Upload box",
             "key": "%"
         },{
