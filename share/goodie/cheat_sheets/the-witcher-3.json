@@ -6,7 +6,7 @@
         "sourceName": "The Witcher",
         "sourceUrl": "http://www.thewitcher.com/"
     },
-    "section_order": ["Movement", "Combat", "Interaction/Signs", "Menus/Panels", "Quick Access", "Horse", "Swimming", "Misc/Unbound"],
+    "section_order": ["Movement", "Combat", "Quick Access", "Menus/Panels", "Interaction/Signs", "Horse", "Swimming", "Misc/Unbound"],
     "sections": {
         "Movement": [
             { "key": "W", "val": "Up" },
