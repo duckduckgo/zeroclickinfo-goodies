@@ -1,0 +1,75 @@
+{
+    "id": "reddit_cheat_sheet",
+    "name": "reddit",
+    "description": "Proper formatting for reddit",
+    "metadata": {
+        "sourceName": "redditCheatSheet",
+        "sourceUrl": "https://www.reddit.com/comments/6ewgt/reddit_markdown_primer_or_how_do_you_do_all_that"
+    },
+    "section_order": [
+        "Text",
+        "Editing"
+    ],
+    "sections": {
+        "Text": [{
+            "val": "italic",
+            "key": "*italic*"
+        }, {
+            "val": "**bold**",
+            "key": "bold"
+        }, {
+            "val": "~~strikethrough~~",
+            "key": "~~strikethrough~~"
+        }, {
+            "val": "super^script",
+            "key": "super^script"
+        }, {
+            "val": "close the current tab and all its windows",
+            "key": "[:tabclose] / [:tabc]"
+        }, {
+            "val": "close all tabs except for the current one",
+            "key": "[:tabonly] / [:tabo]"
+        }, {
+            "val": "move to the next tab",
+            "key": "[gt] [:tabnext] [:tabn]"
+        }, {
+            "val": "move to the previous tab",
+            "key": "[gT] [:tabprev] [:tabp]"
+        }],
+        "Editing": [{
+            "val": "replace a single character",
+            "key": "r"
+        }, {
+            "val": "join line below to the current one",
+            "key": "J"
+        }, {
+            "val": "change (replace) entire line",
+            "key": "cc"
+        }, {
+            "val": "change (replace) to the end of the word",
+            "key": "cw"
+        }, {
+            "val": "change (replace) to the end of the line",
+            "key": "c$"
+        }, {
+            "val": "delete character and substitute text",
+            "key": "s"
+        }, {
+            "val": "delete line and substitute text (same as cc)",
+            "key": "S"
+        }, {
+            "val": "transpose two letters (delete and paste)",
+            "key": "xp"
+        }, {
+            "val": "undo",
+            "key": "u"
+        }, {
+            "val": "redo",
+            "key": "[Ctrl] + [r]"
+        }, {
+            "val": "repeat last command",
+            "key": "."
+        }]
+    }
+}
+
