@@ -1,44 +1,44 @@
 {
-    "id": "reddit_cheat_sheet",
-    "name": "reddit",
-    "description": "Proper formatting for reddit",
+    "id": "imgur_cheat_sheet",
+    "name": "imgur",
+    "description": "Imgur shortcuts",
     "metadata": {
-        "sourceName": "redditCheatSheet",
-        "sourceUrl": "https://www.reddit.com/comments/6ewgt/reddit_markdown_primer_or_how_do_you_do_all_that"
+        "sourceName": "ImgurCheatSheet",
+        "sourceUrl": "https://www.imgur.com"
     },
     "section_order": [
-        "Text",
+        "General",
         "Editing"
     ],
     "sections": {
-        "Text": [{
-            "val": "italic",
-            "key": "*italic*"
+        "General": [{
+            "val": "Exit upload or stats menu",
+            "key": "Esc"
         }, {
-            "val": "**bold**",
-            "key": "bold"
+            "val": "Expand album",
+            "key": "9"
         }, {
-            "val": "~~strikethrough~~",
-            "key": "~~strikethrough~~"
+            "val": "Favorite",
+            "key": "[Inser] or [0]"
         }, {
-            "val": "super^script",
-            "key": "super^script"
+            "val": "Upvote",
+            "key": "+"
         }, {
-            "val": "close the current tab and all its windows",
-            "key": "[:tabclose] / [:tabc]"
+            "val": "Downvote",
+            "key": "-"
         }, {
-            "val": "close all tabs except for the current one",
-            "key": "[:tabonly] / [:tabo]"
+            "val": "Slideshow",
+            "key": "[Ctrl] + [F9]"
         }, {
-            "val": "move to the next tab",
-            "key": "[gt] [:tabnext] [:tabn]"
+            "val": "Zoom",
+            "key": "Enter"
         }, {
-            "val": "move to the previous tab",
-            "key": "[gT] [:tabprev] [:tabp]"
+            "val": "Previous / Next image",
+            "key": "Left / Right arrows"
         }],
         "Editing": [{
-            "val": "replace a single character",
-            "key": "r"
+            "val": "Upload box",
+            "key": "%"
         }, {
             "val": "join line below to the current one",
             "key": "J"
