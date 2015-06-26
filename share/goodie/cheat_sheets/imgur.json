@@ -8,16 +8,10 @@
     },
     "section_order": [
         "General",
-        "Editing"
+        "On a picture"
     ],
     "sections": {
-        "General": [{
-            "val": "Exit upload or stats menu",
-            "key": "Esc"
-        }, {
-            "val": "Expand album",
-            "key": "9"
-        }, {
+        "On a picture": [{
             "val": "Favorite",
             "key": "[Inser] or [0]"
         }, {
@@ -35,40 +29,16 @@
         }, {
             "val": "Previous / Next image",
             "key": "Left / Right arrows"
+        },{
+            "val": "Expand album",
+            "key": "9"
         }],
-        "Editing": [{
+        "General": [{
             "val": "Upload box",
             "key": "%"
-        }, {
-            "val": "join line below to the current one",
-            "key": "J"
-        }, {
-            "val": "change (replace) entire line",
-            "key": "cc"
-        }, {
-            "val": "change (replace) to the end of the word",
-            "key": "cw"
-        }, {
-            "val": "change (replace) to the end of the line",
-            "key": "c$"
-        }, {
-            "val": "delete character and substitute text",
-            "key": "s"
-        }, {
-            "val": "delete line and substitute text (same as cc)",
-            "key": "S"
-        }, {
-            "val": "transpose two letters (delete and paste)",
-            "key": "xp"
-        }, {
-            "val": "undo",
-            "key": "u"
-        }, {
-            "val": "redo",
-            "key": "[Ctrl] + [r]"
-        }, {
-            "val": "repeat last command",
-            "key": "."
+        },{
+            "val": "Exit upload or stats menu",
+            "key": "Esc"
         }]
     }
 }
