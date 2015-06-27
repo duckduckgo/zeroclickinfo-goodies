@@ -1,0 +1,47 @@
+{
+    "id": "imgur_cheat_sheet",
+    "name": "imgur",
+    "description": "Imgur shortcuts",
+    "metadata": {
+        "sourceName": "ImgurCheatSheet",
+        "sourceUrl": "https://www.imgur.com"
+    },
+    "section_order": [
+        "Voting",
+        "Accessibility",
+        "On the Homepage"
+    ],
+    "sections": {
+        "Voting": [{
+            "val": "Favorite",
+            "key": "[Inser] or [0]"
+        }, {
+            "val": "Upvote",
+            "key": "+"
+        }, {
+            "val": "Downvote",
+            "key": "-"
+        }],
+        "Accessibility":[{
+            "val": "Previous / Next image",
+            "key": "Left / Right arrows"
+        }, {
+            "val": "Zoom",
+            "key": "Enter"
+        }, {
+            "val": "Slideshow",
+            "key": "[Ctrl] + [F9]"
+        },{
+            "val": "Expand album",
+            "key": "9"
+        }],
+        "On the Homepage": [{
+            "val": "Upload box",
+            "key": "%"
+        },{
+            "val": "Exit upload or stats menu",
+            "key": "Esc"
+        }]
+    }
+}
+
