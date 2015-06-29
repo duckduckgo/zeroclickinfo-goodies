@@ -4,7 +4,9 @@
     "description": "Imgur shortcuts",
     "metadata": {
         "sourceName": "ImgurCheatSheet",
-        "sourceUrl": "https://www.imgur.com"
+        "sourceUrl": "https://i.imgur.com/nz63EPD.png",
+        "category": "cheat_sheets",
+        "attribution":"RomainLG"
     },
     "section_order": [
         "Voting",
