@@ -19,6 +19,14 @@
     margin-bottom: 30px;
 }
 
+.zci--cheat_sheets table {
+    width: 100%;
+}
+
+.zci--cheat_sheets tr:hover {
+    background: #e0e0e0;
+}
+
 .zci--cheat_sheets td {
     vertical-align: top;
 }
