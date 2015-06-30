@@ -212,7 +212,7 @@ handle remainder => sub {
 	return 'chord', structured_answer => {
 		id => 'chord',
 		   name => 'chord',
-		   data => {width => 100, string_height=> 100, num_frets=>4, num_strings => 6, height => 100, points=>[@frets]},
+		   data => {width => 100, string_height=> 100, num_frets=>4, num_strings => 6, height => 100, points=>[@frets[0..6]]},
 		   templates => {
 			   group => 'base',
 			   item  => 0,
