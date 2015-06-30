@@ -96,6 +96,7 @@ sub items{
     };
     my @instr = grep($instruments{$_}, @words);
     if(!@instr){
+	# FIXME
         @instr = $instrument_aliases{(grep($instrument_aliases{$_}, @words))[0]};
     };
     return $instr[0], $chord, $key, $mod, $dom;
@@ -201,20 +202,26 @@ handle remainder => sub {
         my @texts;
         for(my $i = 0; $i < @frets; $i += $strings){
             my @fret = @frets[$i .. $strings + $i - 1];
-            $html .= get_html_draw(@fret);
             push(@texts, join("-", @fret));
         };
         my $text = join(", ", @texts);
         my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), 
                     $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
         my $type = ucfirst($instr_name) . " Chord";
-        return $text, structured_answer => {
-            input     => [html_enc($input)],
-            operation => html_enc($type),
-            result    => $html,
-        };
+	return 'chord', structured_answer => {
+		id => 'chord',
+		   name => 'chord',
+		   data => {width => 100, string_height=> 100, num_frets=>4, num_strings => 6, height => 100, points=>[0,0,0,25 + 5.5]},
+		   templates => {
+			   group => 'base',
+			   item  => 0,
+			   options => {
+				   content => 'DDH.chord.detail'
+			   }
+		   },
+		   meta => {}
+	};
     };
-    return $_;
 };
 
 
