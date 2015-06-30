@@ -204,6 +204,7 @@ handle remainder => sub {
             my @fret = @frets[$i .. $strings + $i - 1];
             push(@texts, join("-", @fret));
         };
+	foreach (@frets) {$_ = ($_ * 25) + 5.5 if $_ != 0;}
         my $text = join(", ", @texts);
         my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), 
                     $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
@@ -211,7 +212,7 @@ handle remainder => sub {
 	return 'chord', structured_answer => {
 		id => 'chord',
 		   name => 'chord',
-		   data => {width => 100, string_height=> 100, num_frets=>4, num_strings => 6, height => 100, points=>[0,0,0,25 + 5.5]},
+		   data => {width => 100, string_height=> 100, num_frets=>4, num_strings => 6, height => 100, points=>[@frets]},
 		   templates => {
 			   group => 'base',
 			   item  => 0,
