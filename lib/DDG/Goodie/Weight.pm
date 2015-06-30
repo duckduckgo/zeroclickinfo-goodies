@@ -11,7 +11,7 @@ zci is_cached   => 1;
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "Weight";
 description "Calculate the weight of provided mass (in kg).";
-primary_example_queries "Weight 5", "Weight 5.12g", "5.1 kg weight";
+primary_example_queries "Weight 5", "Weight 5.12g", "5.1 kg weight on Earth";
 category "physical_properties";
 topics "math", "science";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Weight.pm";
@@ -45,31 +45,33 @@ handle remainder => sub {
 
     return unless m/^(?<mass>\d+(?:\.\d+)?)\s*(?<unit>\w+)?$/;
     my $mass_input = $+{mass};
-    my $unit = $+{unit} // my $default_unit;
+    my $default_unit = "kg";
+    my $unit = $+{unit} // $default_unit;
     
     my $mass = $mass_input;
-    if ($unit){
-        $mass *= $units{$unit} if exists $units{$unit};
+    
+    if ($unit && exists $units{$unit}){
+        $mass *= $units{$unit};
     }
     
     # Weight = Mass (in kg) * Acceleration due to gravity (in m/s^2)
     my $weight = $mass*g;
     
     # Text to be shown to indicate conversion done
-    my $conversiontext = "(".$mass." kg) ";
-    if (!$unit) {
-        $unit = "kg";
-    }
+    my $conversiontext = "($mass kg) ";
+    
     if ( $unit eq "kg" || $unit eq "kgs" ) {
         $conversiontext = "";
     }
     
-    return "Weight of a ".$mass_input.$unit." mass on Earth is ".$weight."N.",
-            structured_answer => {
-                input     => [],
-                operation => "Taking value of acceleration due to gravity on Earth as ".g."m/s^2.",
-                result    => "Weight of a ".$mass_input.$unit." ".$conversiontext."mass on Earth is ".$weight."N.",
-            };
+    my $massUnit = $mass_input.$unit;
+    
+    return "Weight of a ".$massUnit." mass on Earth is ".$weight."N.",
+        structured_answer => {
+            input     => [],
+            operation => "Taking value of acceleration due to gravity on Earth as ".g."m/s^2.",
+            result    => "Weight of a ".$massUnit." ".$conversiontext."mass on Earth is ".$weight."N.",
+        };
 
 
 };
