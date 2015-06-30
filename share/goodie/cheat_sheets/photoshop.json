@@ -17,6 +17,9 @@
         "View",
         "Window",
         "Tools",
+        "Brushes",
+        "Toggles",
+        "Movement/Navigation",
         "Help"
     ],
     "sections": {
@@ -26,11 +29,7 @@
                 "val": "Photoshop Help"
             }
         ],
-        "Tools": [
-            {
-                "key": "V",
-                "val": "Move Tool"               
-            }, 
+        "Tools": [ 
             {
                 "key": "M",
                 "val": "Rectangular Marquee / Elliptical Marquee Tools"
@@ -94,19 +93,9 @@
             {
                 "key": "U",
                 "val": "Rectangle / Rounded Rectangle / Ellipse / Polygon / Line / Custom Shape Tools"
-            }, 
-            {
-                "key": "H",
-                "val": "Hand Tool"
-            },
-            {
-                "key": "R",
-                "val": "Rotate View Tool"
-            }, 
-            {
-                "key": "Z",
-                "val": "Zoom Tool"
-            },
+            }
+        ],
+        "Toggles": [
             {
                 "key": "D",
                 "val": "Default Foreground/Background Colors"
@@ -126,7 +115,27 @@
             {
                 "key": "/",
                 "val": "Toggle Preserve Transparency"
+            }
+        ],
+        "Movement/Navigation": [
+            {
+                "key": "V",
+                "val": "Move Tool"               
+            },
+            {
+                "key": "H",
+                "val": "Hand Tool"
+            },
+            {
+                "key": "R",
+                "val": "Rotate View Tool"
             }, 
+            {
+                "key": "Z",
+                "val": "Zoom Tool"
+            }
+        ],
+        "Brushes": [
             {
                 "key": "[",
                 "val": "Decrease Brush Size"
