@@ -3,10 +3,8 @@
     "name": "imgur",
     "description": "Imgur shortcuts",
     "metadata": {
-        "sourceName": "ImgurCheatSheet",
-        "sourceUrl": "https://i.imgur.com/nz63EPD.png",
-        "category": "cheat_sheets",
-        "attribution":"RomainLG"
+        "sourceName": "Imgur Cheatsheet",
+        "sourceUrl": "https://i.imgur.com/nz63EPD.png"
     },
     "section_order": [
         "Voting",
@@ -16,7 +14,7 @@
     "sections": {
         "Voting": [{
             "val": "Favorite",
-            "key": "[Inser] or [0]"
+            "key": "[0] or [Insert]"
         }, {
             "val": "Upvote",
             "key": "+"
@@ -26,7 +24,7 @@
         }],
         "Accessibility":[{
             "val": "Previous / Next image",
-            "key": "Left / Right arrows"
+            "key": "[Left] / [Right] arrow"
         }, {
             "val": "Zoom",
             "key": "Enter"
