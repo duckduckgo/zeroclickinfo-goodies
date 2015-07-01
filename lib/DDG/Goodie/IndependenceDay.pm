@@ -5,6 +5,7 @@ use strict;
 use DDG::Goodie;
 use JSON;
 use utf8;
+use Locale::Country;
 
 zci answer_type => "independence_day";
 zci is_cached   => 1;
@@ -78,9 +79,20 @@ handle query_clean => sub {
 
     return $text,
       structured_answer => {
-        input     => [],
-        operation => $prolog,
-        result    => $date_str
+        id => 'independence_day',
+        templates => {
+            group => "icon",
+            item => 0,
+            elClass => {
+                iconTitle => "t-xxl",
+                iconSubtitle => "tx--15"
+            }
+        },
+        data => {
+            country_code => country2code($country_key),
+            date => $date_str,
+            info => $prolog
+        }
       };
     
 };
