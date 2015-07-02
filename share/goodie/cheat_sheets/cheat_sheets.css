@@ -4,9 +4,9 @@
 
 .zci--cheat_sheets .cheatsheet__title {
     padding-bottom: 1em;
-    font-size: 1.1111em;
+    font-size: 1em;
     font-weight: bold;
-    color: #000;
+    color: #333;
 }
 
 .zci--cheat_sheets .cheatsheet__container {
@@ -19,22 +19,15 @@
     margin-bottom: 30px;
 }
 
-.zci--cheat_sheets table {
-    width: 100%;
-}
-
-.zci--cheat_sheets tr:hover {
-    background: #e0e0e0;
-}
-
 .zci--cheat_sheets td {
     vertical-align: top;
+    padding-bottom: 10px;
 }
 
 .zci--cheat_sheets code {
     display: inline-block;
     border: 1px solid #e0e0e0;
-    padding: 3px 5px 0px;
+    padding: 2px 5px 0px;
     border-radius: 2px;
     font-size: 0.833em;
     color: #333;
@@ -42,7 +35,7 @@
     white-space: normal;
     word-break: normal;
     margin-bottom: 0.2em;
-    line-height: 1.7;
+    line-height: 1.4;
 }
 
 .zci--cheat_sheets td.cheatsheet__key {
@@ -51,18 +44,14 @@
 }
 
 .zci--cheat_sheets td.cheatsheet__value {
+    padding-top: 3px;
     padding-left: 14px;
     line-height: 1.4;
 }
 
 .zci--cheat_sheets .cheatsheet__footer {
-    border-top: 1px solid rgba(0,0,0,0.15);
     padding-top: 10px;
     clear: both;
-}
-
-.zci--cheat_sheets .cheatsheet__footer hr {
-    color: rgba(0,0,0,.15);
 }
 
 /*
