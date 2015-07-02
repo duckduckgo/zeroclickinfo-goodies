@@ -4,6 +4,7 @@ package DDG::Goodie::Weight;
 use strict;
 use DDG::Goodie;
 use Scalar::Util qw(looks_like_number);
+use Text::Trim;
 
 zci answer_type => "weight";
 zci is_cached   => 1;
@@ -18,7 +19,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/wongalvis", "wongalvis"];
 
 # Triggers
-triggers startend => "weight";
+triggers startend => "weight", "earth weight", "weight on earth";
 
 my %units = (
     "kg" => 1,
@@ -42,6 +43,8 @@ use constant g => 9.80665;
 handle remainder => sub {
 
     return unless $_;
+    s/\bof\b//;
+    trim $_;
 
     return unless m/^(?<mass>\d+(?:\.\d+)?)\s*(?<unit>\w+)?$/;
     my $mass_input = $+{mass};
