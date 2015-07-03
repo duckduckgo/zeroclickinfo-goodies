@@ -12,9 +12,9 @@ secondary_example_queries 'my location';
 description 'display your perceived location';
 name 'WhereAmI';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/WhereAmI.pm';
-category 'computing_tools';
-topics 'travel';
-attribution twitter => 'crazedpsyc',
+category 'Special';
+topics 'fun';
+attribution twitter => 'sagarhan_i',
             cpan    => 'CRZEDPSYC' ;
 
 handle remainder => sub {
