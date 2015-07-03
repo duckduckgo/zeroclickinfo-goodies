@@ -165,28 +165,6 @@ sub all_frets{
 };
 
 # Takes a list of frets, such as from the "fret" function. 
-# Draws using divs, with classes coming from share/goodie/chord/chord.css
-sub get_html_draw{
-    my @fret = @_;
-    my $length = maximum(@fret, (4));
-    my $height = ($length * 25)+5 . "px";
-    my $string_height = (($length * 25)) . "px";
-    my $width = (@fret * 16) . "px";
-    my $final = "<div class='chord' style='width: $width ;height: $height ;'>\n";
-    $final .= "  <div class='topfret' style='width: $width'></div>\n";
-    $final .= "  <div class='string' style='height: $string_height'></div>\n" x @fret;
-    $final .= "  <div class='fret' style='width: $width'></div>\n" x $length;
-    for(my $i = 0; $i < @fret; $i++){
-        if($fret[$i] == 0){
-            my $top = ($length * -25)-7 . "px";
-            $final .= "  <div class='zeropoint' style='top: $top'></div>\n";
-        }else{
-            my $top = (($fret[$i] - ($length))*25)-19.5 . "px";
-            $final .= "  <div class='point' style='top: $top'></div>\n";
-        };
-    };
-    return $final . "</div>\n";
-};
 
 # Handle statement
 handle remainder => sub {
@@ -202,25 +180,33 @@ handle remainder => sub {
         my @texts;
         for(my $i = 0; $i < @frets; $i += $strings){
             my @fret = @frets[$i .. $strings + $i - 1];
+	    my $length = maximum(@fret, (4));
+	    my $width = (@fret * 16);
+	    my $height = ($length * 25)+5;
+	    my $string_height = (($length * 25));
+
             push(@texts, join("-", @fret));
-        };
-	foreach (@frets) {$_ = 120 - ($_ * 25) if $_ != 0;}
-        my $text = join(", ", @texts);
-        my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), 
-                    $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
-        my $type = ucfirst($instr_name) . " Chord";
-	return 'chord', structured_answer => {
-		id => 'chord',
-		   name => 'chord',
-		   data => {width => 100, string_height=> 100, num_frets=>4, num_strings => 6, height => 100, points=>[@frets[0..5]]},
-		   templates => {
-			   group => 'base',
-			   item  => 0,
-			   options => {
-				   content => 'DDH.chord.detail'
-			   }
-		   },
-		   meta => {}
+	    my $text = join(", ", @texts);
+
+	    foreach (@fret) {$_ = 120 - ($_ * 25) if $_ != 0;}
+	    foreach (@fret) {$_ += 0;} # <- KEEP THIS! Otherwise Perl converts 0 to a string. Why? Not a clue.
+
+	    my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), 
+			    $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
+	    my $type = ucfirst($instr_name) . " Chord";
+	    return 'chord', structured_answer => {
+		    id => 'chord',
+		       name => 'chord',
+		       data => {width => $width, string_height=> $string_height, num_frets=>$length, num_strings => $strings, height => $height, points=>[@fret], input=>$input},
+		       templates => {
+			       group => 'base',
+			       item  => 0,
+			       options => {
+				       content => 'DDH.chord.detail'
+			       }
+		       },
+		       meta => {}
+	    };
 	};
     };
 };
