@@ -56,3 +56,7 @@ tr:last-of-type .name-days-country, tr:last-of-type .name-days-dates {
         width: 100%;
     }
 }
+
+table.name-days {
+    max-width: 44em;
+}
