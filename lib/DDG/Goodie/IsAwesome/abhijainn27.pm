@@ -11,15 +11,14 @@ zci is_cached   => 1;
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "IsAwesome abhijainn27";
 description "Succinct explanation of what this instant answer does";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
+primary_example_queries "duckduckhack abhijainn27";secondary_example_queries "optional -- demonstrate any additional triggers";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#category
 # category "";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
 # topics "";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/abhijainn27.pm";
 attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
+            twitter => "abhijainn27";
 
 # Triggers
 triggers start => "duckduckhack abhijainn27";
@@ -27,7 +26,7 @@ triggers start => "duckduckhack abhijainn27";
 # Handle statement
 handle remainder => sub {
     return if $_;
-	return "abhijainn27 is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+	return "abhijainn27 is a DDG user and has successfully completed the DuckDuckHack Goodie tutorial!";
 
 	return unless $_; # Guard against "no answer"
 
