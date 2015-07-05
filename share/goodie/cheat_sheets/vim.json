@@ -4,7 +4,7 @@
     "description": "Text Editor",
     "metadata": {
         "sourceName": "VimCheatSheet",
-        "sourceUrl": "https://duckduckgo.com"
+        "sourceUrl": "vim.rtorr.com"
     },
     "section_order": [
         "Cursor movement",
