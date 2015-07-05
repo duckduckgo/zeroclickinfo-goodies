@@ -1,0 +1,36 @@
+{
+    "id": "top_footballer", 
+
+    "name": "top footballers",
+
+    "description": "List of top footballer", 
+    
+    "metadata": { 
+        "sourceName": "topfootballer",
+        "sourceUrl": "http://www.goal.com/en-india/teams/spain/barcelona/2017" 
+    },
+ "section_order" : ["A","B"],
+    "sections": {
+        "A": [
+            {
+                "key": "C. Bravo", 
+                "val": "GoalKeeper"
+            },
+            {
+                "key": "Piqué",
+                "val": "Defender"
+            },
+            {
+                "key": " Sergi Roberto",
+                "val": "Midfielder"
+            },
+            {
+                "key": " Neymer",
+                "val": "Attacker"
+            }
+            
+          
+        ]        
+        
+    }
+}
