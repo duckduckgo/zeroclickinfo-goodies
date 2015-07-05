@@ -1,0 +1,241 @@
+{
+    "id": "sms_cheat_sheet", 
+    "name": "SMS",
+    "description": "Short Message Service (SMS) Language", 
+    "metadata": { 
+        "sourceName": "SMSCheatSheet",
+        "sourceURL": "https://en.wikipedia.org/wiki/SMS_language"
+        },
+    "section_order": [  
+        "Frequently Used",
+        "Others",
+        "Abbrivated"
+        
+    ],
+    "sections": {
+        "Frequently Used": [
+           
+            {
+                "key":"BTW",
+                "val":"By The Way"
+            },
+            {
+                "key": "ASAP",
+                "val": "As Soon As Possible"
+            },
+            {
+                "key": "OMG",
+                "val": "Oh My Gosh"
+            },
+            {
+                "key":"C U or cya",
+                "val":"See You"
+            },
+            {
+                "key": "LOL",
+                "val": "Laugh Out Loud"
+            },
+            {
+                "key": "ROFL or ROTFL",
+                "val": "Rolling On The Floor Laughing"
+            },
+            {
+                "key":"HAND",
+                "val":"Have A Nice Day"
+            },
+            {
+                "key":"JK",
+                "val":"Just kidding"
+            },
+            {
+                "key":"SWYP",
+                "val":"So what’s your problem?"
+            },
+            {
+                "key":"WYD",
+                "val":"What are You Doing"
+            },
+            {
+                "key": "C U L8R",
+                "val": "See you later"
+            },
+            {
+                "key": "TTYL",
+                "val": "Talk To You Later"
+            },
+            {
+                "key": "ILU",
+                "val": "I Love You"
+            },
+            {
+                "key":"IDK",
+                "val":"I Don't Know"
+            },
+            {
+                "key": "hh  ",
+                "val": "Ha Ha"
+            },
+            {
+                "key":"FYI",
+                "val":"For Your Information"
+            },
+            {
+                "key":"BFN",
+                "val":"Bye For Now"
+            },
+            {
+                "key":"IH8U",
+                "val":"I Hate You"
+            }
+        ],
+        "Others": [
+            {
+                "key": "TIME",
+                "val": "Tears in my eyes"
+            },
+            {
+                "key": "SAL",
+                "val": "Such A Laugh"
+            },
+            {
+                "key":"ATM",
+                "val":"At The Moment"
+            },
+            {
+                "key":"WYA",
+                "val":"Where are You At"
+            },
+            {
+                "key":"SWYD",
+                "val":"Stop What You're Doing"
+            },
+            {
+                "key": "AFAIK",
+                "val": "As Far As I Know"
+            },
+            {
+                "key": "AFK",
+                "val": "Away From Keyboard"
+            },
+            {
+                "key":"KISS",
+                "val":"Keep It Simple,Stupid"
+            },
+            {
+                "key": "SWAK",
+                "val": "Sealed with A Kiss"
+            },
+            {
+                "key": "YOYO",
+                "val": "You’re on your own"
+            },
+            {
+                "key": "WDYMBT",
+                "val": "What Do You Mean By That"
+            },
+            {
+                "key": "LTWT or LWT or LW",
+                "val": "Loving the weather today"
+            },
+            {
+                "key":"SMH",
+                "val":"Shake My Head (disapproval/frustration)"
+            },
+            {
+                "key":"GF",
+                "val":"Girlfriend"
+            },
+            {
+                "key":"BF or BFF",
+                "val":"Best Friend/Boyfriend or Best Friend Forever/Boyfriend Forever"
+            },
+            {
+                "key":"WTH",
+                "val":"What The Hell?"
+            },
+            {
+                "key":"WTF",
+                "val":"What The Fuck?"
+            },
+            {
+                "key":"STFU",
+                "val":"Shut The Fuck Up"
+            }
+     
+        ],
+        "Abbrivated": [
+            {
+                "key": "THX",
+                "val": "Thanks"               
+            }, 
+            {
+                "key": "2day",
+                "val": "Today"
+            },
+            {
+                "key":" 2mro or 2moro or 2mrw ",
+                "val":"Tomorrow"
+            },
+            {
+                "key": "B4",
+                "val": "Before"
+            },
+            {
+                "key": "4get",
+                "val": "Forget"
+            },
+            {
+                "key":"LUV",
+                "val":"Love"
+            },
+            {
+                "key": "B/C",
+                "val": "Because"
+            },
+            {
+                "key":"njoy",
+                "val":"enjoy"
+            },
+            {
+                "key": "MSG",
+                "val": "Message"
+            },
+            {
+                "key": "PLZ",
+                "val": "Please"
+            },
+            {
+                "key":"@",
+                "val":"At"
+            },
+            {
+                "key":"ez",
+                "val":"Easy"
+            },
+            {
+                "key": "GR8",
+                "val": "Great"
+            },
+            {
+                "key":"any1 or ne1",
+                "val":"Anyone"
+            },
+            {
+                "key":"1drfl",
+                "val":"Wonderful"
+            },
+            {
+                "key":"sum1",
+                "val":"Someone"
+            },
+            {
+                "key":"no1",
+                "val":"no one "
+            },
+            {
+                "key":"ur",
+                "val":"your and you're"
+            }
+        ]
+    }
+}
