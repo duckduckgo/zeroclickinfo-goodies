@@ -1,0 +1,58 @@
+{
+    "id": "poker_hands_cheat_sheet", 
+    "name": "Poker",
+    "description": "Game", 
+    "metadata": { 
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_poker_hands"
+    },
+    "section_order": [  
+        "Poker Hands"
+    ],
+    "sections": {
+        
+        "Poker Hands": [
+            {
+                "key": "Straight flush",
+                "val": "Q♣ J♣ 10♣ 9♣ 8♣ (Five cards in sequence, all of the same suit)"
+            },
+            {
+                "key": "Four of a kind",
+                "val": "9♣ 9♠ 9♦ 9♥ J♥ (Four cards of one rank and any other card)"
+            },
+            {
+                "key": "Full house",
+                "val": "3♣ 3♠ 3♦ 6♣ 6♥ (Three matching cards of one rank and two matching cards of another rank)"
+            },
+            {
+                "key": "Flush",
+                "val": "Q♣ 10♣ 7♣ 6♣ 4♣ (All five cards are of the same suit, but not in sequence)"
+            },
+            {
+                "key": "Straight",
+                "val": "Q♣ J♠ 10♠ 9♥ 8♥ (Five cards of sequential rank in at least two different suits)" 
+            },
+            {
+                "key": "Three of a kind",
+                "val": "2♦ 2♠ 2♣ K♠ 6♥  (Three cards of the same rank, plus two cards of another rank)"
+            },
+            {
+                "key": "Two pair",
+                "val": "J♥ J♣ 4♣ 4♠ 9♥ (Two cards of the same rank, plus two cards of another rank that match each other but not the first pair, plus any card not of either rank)"
+            },
+            {
+                "key": "One pair",
+                "val": "4♥ 4♠ K♠ 10♦ 5♠ (Two cards of one rank, plus three cards which are not of this rank nor the same as each other)"
+            },
+            {
+                "key": "High card",
+                "val": "K♥ J♥ 8♣ 7♦ 4♠ (No hand is made, and the only thing of any potential meaning in the hand is the highest card)" 
+            }
+
+        ]
+    }
+}
+
+
+
+
