@@ -1,7 +1,5 @@
 package DDG::Goodie::IsAwesome::gmahesh23;
-# ABSTRACT: Write an abstract here
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
+# ABSTRACT: gmahesh23's first Goodie
 
 use DDG::Goodie;
 use strict;
@@ -16,7 +14,7 @@ primary_example_queries "first example query", "second example query";
 secondary_example_queries "optional -- demonstrate any additional triggers";
 
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/gmahesh23.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
+attribution github => ["https://github.com/gmahesh23", "gmahesh23"],
             twitter => "gmahesh1994";
 
 # Triggers
