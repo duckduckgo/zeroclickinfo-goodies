@@ -80,7 +80,7 @@
             "key":"[Ctrl] [Shift] [F2]",
             "val":"Clear all bookmarks"
           }, {  
-            "key":"[F2]",
+            "key":"F2",
             "val":"Goto next bookmark"
         }],
         "View/Window Manipulation": [{  
@@ -90,7 +90,7 @@
             "key":"[Ctrl] [K] , [B]",
             "val":"Show/Hide Sidebar"
           }, {  
-            "key":"[F11]",
+            "key":"F11",
             "val":"Fullscreen"
           }, {  
             "key":"[Shift] [F11]",
@@ -118,7 +118,7 @@
             "key":"[Ctrl] [F]",
             "val":"Find"
           }, {  
-            "key":"[F3] ",
+            "key":"F3 ",
             "val":"Find Next"
           }, {  
             "key":"[Ctrl] [F3]",
@@ -148,7 +148,7 @@
             "key":"[Ctrl] [Shift] [F]",
             "val":"Find in files"
           }, {  
-            "key":"[F4]",
+            "key":"F4",
             "val":"Next result (find in files)"
           }, {  
             "key":"[Shift] [F4]",
@@ -233,7 +233,7 @@
             "key":"[Ctrl] [Shift] [Enter]",
             "val":"Insert Line Before"
           }, {  
-            "key":"[F9] ",
+            "key":"F9",
             "val":"Sort Lines"
           }, {  
             "key":"[Ctrl] [F9]",
