@@ -23,7 +23,6 @@ triggers start => 'password', 'random password', 'pw', 'random pw', 'pwgen';
 
 use constant MAX_PWD_LENGTH => 64;
 use constant MIN_PWD_LENGTH => 8;
-use constant DEFAULT_PWD_LENGTH => MIN_PWD_LENGTH;
 
 my %look_alikes = map { $_ => 1 } qw(l O I);    # Exclude alphabet characters which can be easily visually confused.
 my %averages = map { $_ => 1 } (2 .. 9);        # 0,1 missing for the same reasons as above.
@@ -59,7 +58,7 @@ handle remainder => sub {
     my @q_words = map { lc $_ } grep { defined } ($+{'fw'}, $+{'sw'});
 
     my $pw_length = first { looks_like_number($_) } @q_words;
-    $pw_length = ($pw_length) ? max(MIN_PWD_LENGTH, $pw_length) : DEFAULT_PWD_LENGTH;
+    $pw_length = ($pw_length) ? max(MIN_PWD_LENGTH, $pw_length) : MIN_PWD_LENGTH;
 
     return if ($pw_length > MAX_PWD_LENGTH);
 
