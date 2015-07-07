@@ -17,7 +17,7 @@
         "View",
         "Window",
         "Tools",
-        "Brushes",
+        "Blend Mode",
         "Toggles",
         "Movement/Navigation",
         "Help"
@@ -29,7 +29,39 @@
                 "val": "Photoshop Help"
             }
         ],
-        "Tools": [ 
+        "Tools": [
+            {
+                "key": "[",
+                "val": "Decrease Brush Size"
+            },
+            {
+                "key": "]",
+                "val": "Increase Brush Size"
+            },
+            {
+                "key": "{",
+                "val": "Decrease Brush Hardness"
+            }, 
+            {
+                "key": "}",
+                "val": "Increase Brush Hardness"
+            },
+            {
+                "key": ",",
+                "val": "Previous Brush"
+            },
+            {
+                "key": ".",
+                "val": "Next Brush"
+            },
+            {
+                "key": "<",
+                "val": "First Brush"
+            }, 
+            {
+                "key": ">",
+                "val": "Last Brush"
+            },
             {
                 "key": "M",
                 "val": "Rectangular Marquee / Elliptical Marquee Tools"
@@ -135,40 +167,6 @@
                 "val": "Zoom Tool"
             }
         ],
-        "Brushes": [
-            {
-                "key": "[",
-                "val": "Decrease Brush Size"
-            },
-            {
-                "key": "]",
-                "val": "Increase Brush Size"
-            },
-            {
-                "key": "{",
-                "val": "Decrease Brush Hardness"
-            }, 
-            {
-                "key": "}",
-                "val": "Increase Brush Hardness"
-            },
-            {
-                "key": ",",
-                "val": "Previous Brush"
-            },
-            {
-                "key": ".",
-                "val": "Next Brush"
-            },
-            {
-                "key": "<",
-                "val": "First Brush"
-            }, 
-            {
-                "key": ">",
-                "val": "Last Brush"
-            }
-        ],
         "Window": [
             {
                 "key": "[Alt] [F9] or [F9]",
@@ -201,7 +199,7 @@
                 "val": "Gamut Warning"
             },
             {
-                "key": "[Ctrl] [+]/[=]",
+                "key": "[Ctrl] [+]",
                 "val": "Zoom In"
             },
             {
@@ -553,6 +551,100 @@
             {
                 "key": "[Ctrl] [Q]",
                 "val": "Quit"
+            }
+        ],
+        "Blend Mode": [
+            {
+                "key": "[Shift] [Alt] [N]",
+                "val": "Normal"
+            },
+            {
+                "key": "[Shift] [Alt] [I]",
+                "val": "Dissolve"
+            },
+            {
+                "key": "[Shift] [Alt] [K]",
+                "val": "Darken"
+            },
+            {
+                "key": "[Shift] [Alt] [M]",
+                "val": "Multiply"
+            },
+            {
+                "key": "[Shift] [Alt] [B]",
+                "val": "Color Burn"
+            },
+            {
+                "key": "[Shift] [Alt] [A]",
+                "val": "Linear Burn"
+            },
+            {
+                "key": "[Shift] [Alt] [G]",
+                "val": "Lighten"
+            },
+            {
+                "key": "[Shift] [Alt] [S]",
+                "val": "Screen"
+            },
+            {
+                "key": "[Shift] [Alt] [D]",
+                "val": "Color Dodge"
+            },
+            {
+                "key": "[Shift] [Alt] [W]",
+                "val": "Linear Dodge"
+            },
+            {
+                "key": "[Shift] [Alt] [O]",
+                "val": "Overlay"
+            },
+            {
+                "key": "[Shift] [Alt] [F]",
+                "val": "Soft Light"
+            },
+            {
+                "key": "[Shift] [Alt] [H]",
+                "val": "Hard Light"
+            },
+            {
+                "key": "[Shift] [Alt] [V]",
+                "val": "Vivid Light"
+            },
+            {
+                "key": "[Shift] [Alt] [J]",
+                "val": "Linear Light"
+            },
+            {
+                "key": "[Shift] [Alt] [Z]",
+                "val": "Pin Light"
+            },
+            {
+                "key": "[Shift] [Alt] [L]",
+                "val": "Hard Mix"
+            },
+            {
+                "key": "[Shift] [Alt] [E]",
+                "val": "Difference"
+            },
+            {
+                "key": "[Shift] [Alt] [X]",
+                "val": "Exclusion"
+            },
+            {
+                "key": "[Shift] [Alt] [U]",
+                "val": "Hue"
+            },
+            {
+                "key": "[Shift] [Alt] [T]",
+                "val": "Saturation"
+            },
+            {
+                "key": "[Shift] [Alt] [C]",
+                "val": "Color"
+            },
+            {
+                "key": "[Shift] [Alt] [Y]",
+                "val": "Luminosity"
             }
         ]
     }
