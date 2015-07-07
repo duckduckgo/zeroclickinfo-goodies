@@ -20,24 +20,24 @@
                 "val":"By The Way"
             },
             {
-                "key": "ASAP",
-                "val": "As Soon As Possible"
+                "key":"ASAP",
+                "val":"As Soon As Possible"
             },
             {
-                "key": "OMG",
-                "val": "Oh My Gosh"
+                "key":"OMG",
+                "val":"Oh My Gosh"
             },
             {
                 "key":"C U or cya",
                 "val":"See You"
             },
             {
-                "key": "LOL",
-                "val": "Laugh Out Loud"
+                "key":"LOL",
+                "val":"Laugh Out Loud"
             },
             {
-                "key": "ROFL or ROTFL",
-                "val": "Rolling On The Floor Laughing"
+                "key":"ROFL or ROTFL",
+                "val":"Rolling On The Floor Laughing"
             },
             {
                 "key":"HAND",
@@ -56,24 +56,24 @@
                 "val":"What are You Doing"
             },
             {
-                "key": "C U L8R",
-                "val": "See you later"
+                "key":"C U L8R",
+                "val":"See you later"
             },
             {
-                "key": "TTYL",
-                "val": "Talk To You Later"
+                "key":"TTYL",
+                "val":"Talk To You Later"
             },
             {
-                "key": "ILU",
-                "val": "I Love You"
+                "key":"ILU",
+                "val":"I Love You"
             },
             {
                 "key":"IDK",
                 "val":"I Don't Know"
             },
             {
-                "key": "hh  ",
-                "val": "Ha Ha"
+                "key":"hh",
+                "val":"Ha Ha"
             },
             {
                 "key":"FYI",
@@ -90,12 +90,12 @@
         ],
         "Others": [
             {
-                "key": "TIME",
-                "val": "Tears in my eyes"
+                "key":"TIME",
+                "val":"Tears in my eyes"
             },
             {
-                "key": "SAL",
-                "val": "Such A Laugh"
+                "key":"SAL",
+                "val":"Such A Laugh"
             },
             {
                 "key":"ATM",
@@ -110,32 +110,32 @@
                 "val":"Stop What You're Doing"
             },
             {
-                "key": "AFAIK",
-                "val": "As Far As I Know"
+                "key":"AFAIK",
+                "val":"As Far As I Know"
             },
             {
-                "key": "AFK",
-                "val": "Away From Keyboard"
+                "key":"AFK",
+                "val":"Away From Keyboard"
             },
             {
                 "key":"KISS",
                 "val":"Keep It Simple,Stupid"
             },
             {
-                "key": "SWAK",
-                "val": "Sealed with A Kiss"
+                "key":"SWAK",
+                "val":"Sealed with A Kiss"
             },
             {
-                "key": "YOYO",
-                "val": "You’re on your own"
+                "key":"YOYO",
+                "val":"You’re on your own"
             },
             {
-                "key": "WDYMBT",
-                "val": "What Do You Mean By That"
+                "key":"WDYMBT",
+                "val":"What Do You Mean By That"
             },
             {
-                "key": "LTWT or LWT or LW",
-                "val": "Loving the weather today"
+                "key":"LTWT or LWT or LW",
+                "val":"Loving the weather today"
             },
             {
                 "key":"SMH",
@@ -155,54 +155,54 @@
             },
             {
                 "key":"WTF",
-                "val":"What The Fuck?"
+                "val":"What The #$%@?"
             },
             {
                 "key":"STFU",
-                "val":"Shut The Fuck Up"
+                "val":"Shut The #$%@ Up"
             }
      
         ],
         "Abbrivated": [
             {
-                "key": "THX",
-                "val": "Thanks"               
+                "key":"THX",
+                "val":"Thanks"               
             }, 
             {
-                "key": "2day",
-                "val": "Today"
+                "key":"2day",
+                "val":"Today"
             },
             {
-                "key":" 2mro or 2moro or 2mrw ",
+                "key":"2mro or 2moro or 2mrw",
                 "val":"Tomorrow"
             },
             {
-                "key": "B4",
-                "val": "Before"
+                "key":"B4",
+                "val":"Before"
             },
             {
-                "key": "4get",
-                "val": "Forget"
+                "key":"4get",
+                "val":"Forget"
             },
             {
                 "key":"LUV",
                 "val":"Love"
             },
             {
-                "key": "B/C",
-                "val": "Because"
+                "key":"B/C",
+                "val":"Because"
             },
             {
                 "key":"njoy",
                 "val":"enjoy"
             },
             {
-                "key": "MSG",
-                "val": "Message"
+                "key":"MSG",
+                "val":"Message"
             },
             {
-                "key": "PLZ",
-                "val": "Please"
+                "key":"PLZ",
+                "val":"Please"
             },
             {
                 "key":"@",
@@ -213,8 +213,8 @@
                 "val":"Easy"
             },
             {
-                "key": "GR8",
-                "val": "Great"
+                "key":"GR8",
+                "val":"Great"
             },
             {
                 "key":"any1 or ne1",
