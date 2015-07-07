@@ -1,72 +1,49 @@
-# Contributing to Goodie
+# Create an Instant Answer
 
-At DuckDuckGo, we truly appreciate our community members taking the time to contribute to our open-source repositories. In an effort to ensure contributions are easy for you to make and for us to manage, we have written some guidelines that we ask our contributors to follow so that we can handle pull requests in a timely manner with as little friction as possible.
+Creating an Instant Answer is the most exciting way to contribute to the community.
 
-## Getting Started
+Whether you want to improve your personal search results, bring exposure to a source of great data, or simply enjoy collaborating with smart people around the world, your live code will help millions of searchers every day.
 
-Before you can do anything, you first need a [GitHub account](https://github.com/signup/free). This is required because we use GitHub to handle all incoming *Pull Requests* (code modifications) and *Issues* (bug reports) which cannot be made without a GitHub account.
+Learn the [big picture of creating Instant Answers](https://duck.co/duckduckhack/ddh-intro).
 
-## Submitting a **Bug** or **Suggestion**
+> It was my first time contributing to an open source project and I haven't been able to stop since. Keep being awesome, and thanks for inspiring me :)
+> 
+> prezjordan on Hacker News
 
-- Firstly, please make sure the bug is related to the Goodie repository. If this bug is about the DuckDuckGo API, or the relevancy of our search results, please visit our feedback page at <https://duckduckgo.com/feedback>. If you're unsure, its best to use the feedback page (your message will be passed along to the correct people).
+## Make Your First Commit
 
-- Check the Goodie [issues](https://github.com/duckduckgo/zeroclickinfo-goodies/issues) to see if an issue already exists for the given bug or suggestion
-  - If one doesn't exist, create a GitHub issue in the Goodie repository
-    - Clearly describe the bug/improvemnt, including steps to reproduce when it is a bug
-  - If one already exists, please add any additional comments you have regarding the matter
+What makes the DuckDuckGo community so great is how quickly new contributors can start committing code. To see just how quickly we mean, try our [Quick Start Goodie](https://duck.co/duckduckhack/goodie_quickstart) Tutorial. It will help you set up your environment, fork the repository, and walk you through creating the simplest possible Instant Answer.
 
-If you're submitting a **pull request** (bugfix/addition):
-- Fork the Goodie repository on GitHub
+From there, you could learn more about the [various Instant Answer types](https://duck.co/duckduckhack/determine_your_instant_answer_type), or get hacking on a real Instant Answer, below.
 
-## Making Changes
+If you have any questions at any point, feel free to ask on one of our community channels:
 
-- Before making any changes, refer to the [DuckDuckHack Styleguide](https://dukgo.com/duckduckhack/styleguide_overview) to ensure your changes are made in the correct fashion
-- Make sure your commits are of a reasonable size. They shouldn't be too big (or too small)
-- Make sure your commit messages effectively explain what changes have been made, and please identify which instant answer or file has been modified:
+*   [DuckDuckHack mailing list](https://duck.co/redir/?u=https%3A%2F%2Fwww.listbox.com%2Fsubscribe%2F%3Flist_id%3D197814)
+*   [Gitter chat](https://duck.co/redir/?u=https%3A%2F%2Fgitter.im%2Fduckduckgo%2FIdeas)
 
-  ```shell
-  CONTRIBUTING.md - Added the example commit message because it was missing
-  ```
+Do not hesitate to email us directly at [open@duckduckgo.com](mailto:open@duckduckgo.com).
 
-  is much better than:
+## Improve a Live Instant Answer
 
-  ```shell
-  <bad_commit_example>
-  ```
+We recommend that your first live contribution to Instant Answers is to improve one that's already live. Many contributors report completing their first fix within two hours of forking the repository.
 
-- Make sure you have added the necessary tests for your changes
-    - When modifying the triggers, update existing tests and add some new tests to show it works as expected
-    - When modifying the result, update existing tests accordingly
-- Run `dzil test` (executes all tests in t/) to ensure nothing else was accidentally broken
-- If your change affects an instant answer, remember to add yourself to the Metadata attribution list in the appropriate `.pm` file
+The best place to get started is by looking at "low-hanging fruit" fixes, which we've made sure to identify throughout our repositories for new contributors.
 
-## Submitting Changes
+*   [Goodie Low Hanging Fruit](https://github.com/duckduckgo/zeroclickinfo-goodies/issues?q=is%3Aopen+is%3Aissue+label%3A%22Low-Hanging+Fruit%22) ([Goodie docs](https://duck.co/duckduckhack/goodie_overview))
+*   [Spice Low Hanging Fruit](https://github.com/duckduckgo/zeroclickinfo-spice/issues?q=is%3Aopen+is%3Aissue+label%3A%22Low-Hanging+Fruit%22) ([Spice docs](https://duck.co/duckduckhack/spice_overview))
 
-1. Commit your changes.
+Fixing a small bug is a great hands-on way to learn how each Instant Answer functions. Feel free to [ask us anything](mailto:open@duckduckgo.com), and don't forget to check out the [Instant Answer documentation](https://duck.co/duckduckhack/ddh-intro).
 
-  ```shell
-  git commit -a -m "My first instant answer that does X is ready to go!"
-  ```
+## Create a New Instant Answer
 
-2. Get your commit history [how you like it](http://book.git-scm.com/4_interactive_rebasing.html).
+By this point, you're more comfortable with contributing, and have a better idea of the Instant Answer framework. Now it's time to think about creating an Instant Answer of your own!
 
-  ```shell
-  git rebase -i origin/master
-  ```
+Bring your own idea, or check out the ideas forum - especially [top voted answer ideas](https://duck.co/ideas/status/3?table_lnKRpLENwO2NUmZUyukQpw_sort=votes).
 
-  or
+The first step is to research and plan your Instant Answer. Consider [the best way to implement](https://duck.co/duckduckhack/determine_your_instant_answer_type) your idea, and [involve us in your thinking](mailto:open@duckduckgo.com).
 
-  ```shell
-  git pull --rebase origin/master
-  ```
+**The first step to implementing an Instant Answer is to let us know you're working on one:** Email us at [open@duckduckgo.com](mailto:open@duckduckgo.com) and let us know what idea you're working on, as well as your initial thoughts on implementation.
 
-3. Push your forked repository back to GitHub.
+We'll help you plan, using our experience from current Instant Answers. We'll also be ready to answer your questions along the way. We'll create a [central Instant Answer page](http://www.duck.co/ia) on the community platform so others can know you're working on it and how they can help you.
 
-  ```shell
-  git push
-  ```
-
-4. Add your info to the instant answer so we can give you credit for it on the [Goodies page](https://duckduckgo.com/goodies). You'll see your name or handle on the live site!
-Check out the [Metadata documentation](https://dukgo.com/duckduckhack/metadata) for detailed instructions on how to include your name and links.
-
-5. Go into GitHub and submit a [pull request!](http://help.github.com/send-pull-requests/) to the Goodie repository, making sure to use the Goodie repository's **[Pull Request Template](https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/pull_request_template_goodie.md)**. This will let us know about your changes and start the conversation about integrating it into the live code.
+[Talk to us!](mailto:open@duckduckgo.com)
