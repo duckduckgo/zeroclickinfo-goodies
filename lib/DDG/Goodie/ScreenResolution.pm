@@ -22,7 +22,7 @@ handle remainder => sub {
 
     return structured_answer => {
         id => 'screen_resolution',
-        name => 'Screen Resolution',
+        name => 'Answer',
         data => {
             title => "Your screen resolution is [Loading...]"
         },
