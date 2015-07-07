@@ -20,9 +20,6 @@ Using this template will help us better understand your Instant Answer and assis
 **Is this Instant Answer connected to a DuckDuckHack [Instant Answer idea](https://duck.co/ideas)?**
 
 
-**Which existing Instant Answers will this one supercede/overlap with?**
-
-
 **Are you having any problems? Do you need our help with anything?**
 
 
