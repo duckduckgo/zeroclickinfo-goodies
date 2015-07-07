@@ -21,28 +21,28 @@
             "key": "[Mod1] [Enter]"
         }, {
             "val": "Focus left",
-            "key": "[Mod1] ([j]/[Left])"
+            "key": "[Mod1] ([j]/[←])"
         }, {
             "val": "Focus down",
-            "key": "[Mod1] ([k]/[Down])"
+            "key": "[Mod1] ([k]/[↓])"
         }, {
             "val": "Focus up",
-            "key": "[Mod1] ([l]/[Up])"
+            "key": "[Mod1] ([l]/[↑])"
         }, {
             "val": "Focus right",
-            "key": "[Mod1] ([;]/[Right])"
+            "key": "[Mod1] ([;]/[→])"
         }, {
             "val": "Move window left",
-            "key": "[Mod1] [Shift] ([j]/[Left])"
+            "key": "[Mod1] [Shift] ([j]/[←])"
         }, {
             "val": "Move window down",
-            "key": "[Mod1] [Shift] ([k]/[Down])"
+            "key": "[Mod1] [Shift] ([k]/[↓])"
         }, {
             "val": "Move window up",
-            "key": "[Mod1] [Shift] ([l]/[Up])"
+            "key": "[Mod1] [Shift] ([l]/[↑])"
         }, {
             "val": "Move window right",
-            "key": "[Mod1] [Shift] ([;]/[Right])"
+            "key": "[Mod1] [Shift] ([;]/[→])"
         }, {
             "val": "Kill a window",
             "key": "[Mod1] [Shift] [q]"
