@@ -256,7 +256,7 @@
             "key": "[Shift] [F10]"
         }, {
             "val": "Text editor",
-            "key": "[Shift] + [F11]"
+            "key": "[Shift] [F11]"
         }],
         "Editing curves": [{
             "val": "Close path",
@@ -511,7 +511,7 @@
             "key": "[Shift] [l]"
         }, {
             "val": "Unlock strip",
-            "key": "[Shift] [Alt] + [l]"
+            "key": "[Shift] [Alt] [l]"
         }, {
             "val": "Coyp strip",
             "key": "[Ctrl] [c]"
