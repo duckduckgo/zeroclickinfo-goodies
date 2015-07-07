@@ -90,6 +90,30 @@ ddg_goodie_test(
             result    => 45
         },
     ),
+       'number of days between jan 1 and 15th feb' => test_zci(
+        qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/,
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Days between',
+            result    => 45
+        },
+    ),
+    'number of days from jan 1 and 15th feb' => test_zci(
+        qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/,
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Days between',
+            result    => 45
+        },
+    ),
+    'days from jan 1 and 15th feb' => test_zci(
+        qr/^There are 45 days between.+and 15 Feb [0-9]{4}\.$/,
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Days between',
+            result    => 45
+        },
+    ),
     'days between jan 1 2012 and jan 1 123456' => undef,
 );
 
