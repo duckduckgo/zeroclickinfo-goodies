@@ -80,6 +80,21 @@ Attributes: sticky, setuid and setgid
             attributes => 'sticky, setuid and setgid',
         })
     ),
+    'unix file permissions chmod 777' => test_zci(
+'777 (octal)
+rwxrwxrwx (symbolic)
+User: read, write and execute
+Group: read, write and execute
+Others: read, write and execute
+',
+        structured_answer => _expected_result({
+            symbolic => 'rwxrwxrwx',
+            user => 'read, write and execute',
+            group => 'read, write and execute',
+            others => 'read, write and execute',
+            attributes => undef,
+        }),
+    ),
 
     'permission 9644' => undef,
 );

@@ -21,7 +21,7 @@ category 'computing_tools';
 handle query => sub {
     my $query = $_;
 
-    s/\s*(chmod|permissions?)\s*//g;
+    s/\s*(unix|files?|chmod|permissions?)\s*//g;
     return unless /^(0|1|2|4|6|7)?([0-7]{3})$/;
 
     my $plain_output;
