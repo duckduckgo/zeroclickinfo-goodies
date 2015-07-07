@@ -80,12 +80,20 @@
         ],
         "Layers": [
             {
-                "key": "[PgUp] or [Ctrl] [Tab]",
+                "key": "[PgUp]",
                 "val": "Select the layer above"
             },
             {
-                "key": "[PgDn] or [Shift] [Ctrl] [Tab]",
+                "key": "[Ctrl] [Tab]",
+                "val": "Select the layer above (alternative)"
+            },
+            {
+                "key": "[PgDn]",
                 "val": "Select the layer below"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Tab]",
+                "val": "Select the layer below (alternative)"
             },
             {
                 "key": "Home",
@@ -360,8 +368,12 @@
                 "val": "Gradients"
             },
             {
-                "key": "[Alt] [F4] or [Ctrl] [W]",
+                "key": "[Ctrl] [W]",
                 "val": "Close the window"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "Close the window (alternative)"
             },
             {
                 "key": "Tab",
@@ -376,8 +388,12 @@
                 "val": "Set the new value"
             },
             {
-                "key": "[Space] or [Enter]",
+                "key": "[Space]",
                 "val": "Activate current button or list"
+            },
+            {
+                "key": "[Enter]",
+                "val": "Activate current button or list (alternative)"
             },
             {
                 "key": "[Ctrl] [Alt] [PgUp] / [PgDn]",
@@ -410,8 +426,12 @@
                 "val": "Main Menu"
             },
             {
-                "key": "[Shift] [F10] or [right click]",
+                "key": "[Shift] [F10]",
                 "val": "Drop-down Menu"
+            },
+            {
+                "key": "[right click]",
+                "val": "Drop-down Menu (alternative)"
             },
             {
                 "key": "F11",

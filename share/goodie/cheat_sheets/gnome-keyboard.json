@@ -10,7 +10,10 @@
     "sections": {
         "Desktop Shortcuts": [{
             "val": "Switch between the Activities overview and desktop",
-            "key": "[Alt] [F1] or [Super]"
+            "key": "[Alt] [F1]"
+        },{
+            "val": "Switch between the Activities overview and desktop (alternative)",
+            "key": "[Super]"
         }, {
             "val": "Pop up command window",
             "key": "[Alt] [F2] "
