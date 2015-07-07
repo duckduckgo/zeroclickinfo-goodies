@@ -7,7 +7,6 @@ use strict;
 zci answer_type => "is_awesome_gmahesh23";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "IsAwesome gmahesh23";
 description "Tell the world gmahesh23 is awesome ";
 primary_example_queries "first example query", "second example query";
@@ -17,10 +16,8 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/gmahesh23", "gmahesh23"],
             twitter => "gmahesh1994";
 
-# Triggers
 triggers any => "duckduckhack gmahesh23";
 
-# Handle statement
 handle remainder => sub {
     return if $_;
     return "gmahesh23 is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
