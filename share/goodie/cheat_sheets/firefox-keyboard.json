@@ -1,5 +1,5 @@
 {
-    "id": "gnome_keyboard_cheat_sheet", 
+    "id": "firefox_keyboard_cheat_sheet", 
     "name": "firefox Keyboard Shortcuts",
     "description": "List of useful keyboard shortcuts for firefox", 
     "metadata": {
@@ -10,13 +10,13 @@
     "sections": {
         "Navigation": [{
             "val": "Back",
-            "key": "[Alt][ ←]"
+            "key": "[Alt] [ ←]"
         }, {
             "val": "Home ",
-            "key": "[Alt][Home] "
+            "key": "[Alt] [Home] "
         }, {
             "val": "Open File ",
-            "key": "[Ctrl][O] "
+            "key": "[Ctrl] [O] "
         }, {
             "val": "Reload ",
             "key": "F5"
