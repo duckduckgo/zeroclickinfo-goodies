@@ -16,7 +16,7 @@
             "val": "Compose a new message"
             
         }, {
-            "key": "[Shift] + [c]",
+            "key": "[Shift] [c]",
             "val": "Compose a new message in new window"
             
         }, {
@@ -64,11 +64,11 @@
             "val": "Reply to sender"
             
         }, {
-            "key": "[Shift] + [r]",
+            "key": "[Shift] [r]",
             "val": "Reply to sender in a new window"
             
         }, {
-            "key": "[Shift] + [a]",
+            "key": "[Shift] [a]",
             "val": "Reply to all message recipients"
             
         }, {
@@ -76,7 +76,7 @@
             "val": "Forward a message"
             
         }, {
-            "key": "[Shift] + [f]",
+            "key": "[Shift] [f]",
             "val": "Forward a message in a new window"
             
         }, {
@@ -85,31 +85,31 @@
             
             }],
         "Navigate": [{
-            "key": "[Tab] then [Enter]",
+            "key": "[Tab], [Enter]",
             "val": "Send the message"
             
         }, {
-            "key": "[y] then [o]",
+            "key": "[y], [o]",
             "val": "Archive the message and move to next"
             
         }, {
-            "key": "[g] then [a]",
+            "key": "[g], [a]",
             "val": "Go to  'All Mail'",
             
         }, {
-            "key": "[g] then [s]",
+            "key": "[g], [s]",
             "val": "Go to 'Starred'",
             
         }, {
-            "key": "[g] then [c]",
+            "key": "[g], [c]",
             "val": "Go to 'Contacts'",
             
         }, {
-            "key": "[g] then [d]",
+            "key": "[g], [d]",
             "val": "Go to 'Drafts'",
             
         }, {
-            "key": "[g] then [i]",
+            "key": "[g], [i]",
             "val": "Go to 'Inbox'"
             
         }]
