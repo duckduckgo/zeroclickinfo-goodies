@@ -350,22 +350,22 @@
             "key": "[Alt] [Shift] [a]"
         }, {
             "val": "Next frame",
-            "key": "Right arrow"
+            "key": "→"
         }, {
             "val": "Previous frame",
-            "key": "Left arrow"
+            "key": "←"
         }, {
             "val": "Forward 10 frames",
-            "key": "Up arrow"
+            "key": "↑"
         }, {
             "val": "Back 10 frames",
-            "key": "Down arrow"
+            "key": "↓"
         }, {
             "val": "Jump to start point",
-            "key": "[Shift] [Left arrow]"
+            "key": "[Shift] [←]"
         }, {
             "val": "Jump to end point",
-            "key": "[Shift] [Right arrow]"
+            "key": "[Shift] [→]"
         }, {
             "val": "Scroll through frames",
             "key": "[Alt] [Mouse wheel]"
@@ -533,7 +533,7 @@
             "key": "[Alt] [F11]"
         }, {
             "val": "Maximize subwindow",
-            "key": "[Ctrl] [Up arrow]"
+            "key": "[Ctrl] [↑]"
         }, {
             "val": "Change active camera",
             "key": "[Ctrl] [o]"

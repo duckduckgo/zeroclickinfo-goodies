@@ -80,7 +80,7 @@
         ],
         "Layers": [
             {
-                "key": "[PgUp]",
+                "key": "PgUp",
                 "val": "Select the layer above"
             },
             {
@@ -88,7 +88,7 @@
                 "val": "Select the layer above (alternative)"
             },
             {
-                "key": "[PgDn]",
+                "key": "PgDn",
                 "val": "Select the layer below"
             },
             {
@@ -388,11 +388,11 @@
                 "val": "Set the new value"
             },
             {
-                "key": "[Space]",
+                "key": "Space",
                 "val": "Activate current button or list"
             },
             {
-                "key": "[Enter]",
+                "key": "Enter",
                 "val": "Activate current button or list (alternative)"
             },
             {
@@ -430,7 +430,7 @@
                 "val": "Drop-down Menu"
             },
             {
-                "key": "[right click]",
+                "key": "right click",
                 "val": "Drop-down Menu (alternative)"
             },
             {
