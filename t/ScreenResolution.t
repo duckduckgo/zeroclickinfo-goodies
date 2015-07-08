@@ -10,12 +10,12 @@ zci is_cached   => 1;
 
 my @answer = test_zci('Javascript required', structured_answer => {
     id => 'screen_resolution',
-    name => 'Screen Resolution',
+    name => 'Answer',
     data => {
         title => "Your screen resolution is [Loading...]"
     },
     templates => {
-        group => 'text',
+        group => 'icon',
         item => 0,
         options => {
             moreAt => 0
