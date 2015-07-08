@@ -36,43 +36,64 @@ sub table_data {
 }
 
 handle remainder => sub {
-    if ($_ =~ /^(O|A|B|AB)(\-|\+)$/i) {
-        my $type = uc $1;
-        my $rh = $2;
+    
+    return unless ($_ =~ /^(O|A|B|AB)(\-|\+)$/i);
 
-        my @idealResults = ();
-        my @criticalResults = ();
+    my $type = uc $1;
+    my $rh = $2;
 
-        return unless defined $typeMap{$type};
+    my @idealResults = ();
+    my @criticalResults = ();
 
-        # ideally same Rh
-        foreach our $donorType (split(",", $typeMap{$type})) {
-            push(@idealResults, $donorType . $rh);
-            if($rh eq '+') {
-                # only when access to same Rh is impossible
-                push(@criticalResults, $donorType . '-');
-            }
-        }
+    return unless defined $typeMap{$type};
 
-        my $output = '';
-        my $html = "<table class='blooddonor'>";
-
-        my $idealStr = join(' or ', @idealResults);
-        my $criticalStr = join(' or ', @criticalResults);
-
-        $output .= "Ideal donor: " . uc($_) . "\n";
-        $output .= "Other donors: " . $idealStr . "\n";
-        $html .= table_data("Ideal donor:", uc($_));
-        $html .= table_data("Other donors:", $idealStr);
-
+    # ideally same Rh
+    foreach our $donorType (split(",", $typeMap{$type})) {
+        push(@idealResults, $donorType . $rh);
         if($rh eq '+') {
-            $output .= "Only if no Rh(+) found: " . $criticalStr . "\n";
-            $html .= table_data("<i>Only if</i> no Rh(+) found:", $criticalStr);
+            # only when access to same Rh is impossible
+            push(@criticalResults, $donorType . '-');
         }
-
-        $html .= '</table>';
-        return $output, html => $html, heading => "Donors for blood type ".uc($_);
     }
-    return;
+    
+    my $output = '';
+    my $html = "<table class='blooddonor'>";
+
+    my $idealStr = join(' or ', @idealResults);
+    my $criticalStr = join(' or ', @criticalResults);
+
+
+    my %record_data = (
+        "Ideal donor" => uc($_),
+        "Other donors" => $idealStr,
+    );
+    my @record_keys = ("Ideal donor", "Other donors");
+    
+    if($rh eq '+') {
+        push @record_keys,"Only if no Rh(+) found";
+        $record_data{"Only if no Rh(+) found"} = $criticalStr;
+    }
+
+    sub to_text
+	{
+		my ($data, $keys) = @_;
+		return join "\n", map {"$_: $data->{$_}";} @{$keys};
+	}
+
+    return to_text(\%record_data, \@record_keys), structured_answer => {
+            id => 'BloodDonor',
+            description => 'Returns available donors for a blood type',
+            templates => {
+                group => 'list',
+                options => {
+                    content => 'record'
+                }
+            },
+            data => {
+                title => "Donors for blood type ".uc($_),
+                record_data => \%record_data,
+                record_keys => \@record_keys
+            }
+        };
 };
 1;
