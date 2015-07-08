@@ -28,7 +28,7 @@ triggers start => "duckduckhack hazeeb";
 # Handle statement
 handle remainder => sub {
     return if $_;
-    return "GitHubUsername is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return "Hazeeb is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;
