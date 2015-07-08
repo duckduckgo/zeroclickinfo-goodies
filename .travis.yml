@@ -12,9 +12,8 @@ install:
   - cpanm --quiet --notest Dist::Zilla
   - dzil authordeps | grep -ve '^\W' | xargs -n 5 -P 10 cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
   - dzil listdeps | grep -ve '^\W' | cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
-  - prove -l 2> /dev/null
 language: perl
 perl:
   - 5.16
 script:
-  - dzil smoke --release --author
+  - dzil smoke --release --author 2> /dev/null
