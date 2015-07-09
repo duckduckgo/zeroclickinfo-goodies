@@ -1,7 +1,9 @@
 package DDG::Goodie::Chars;
 # ABSTRACT: Give the number of characters (length) of the query.
 
+use strict;
 use DDG::Goodie;
+use Text::Trim;
 
 triggers startend =>
     'chars',
@@ -35,7 +37,7 @@ handle remainder => sub {
     $str =~ s/^\s*in\b//;
 
     # trim spaces at beg and end of string
-    $str =~ s/^\s+|\s+$//g;
+    $str = trim $str;
 
     # if nothing left in the string, return without triggering the IA.
     # this means the remainder contained only the word 'in' and/or spaces.

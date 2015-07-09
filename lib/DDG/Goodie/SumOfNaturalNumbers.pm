@@ -1,6 +1,7 @@
 package DDG::Goodie::SumOfNaturalNumbers;
 # ABSTRACT: Returns the sum of the numbers between the first and second provided integers
 
+use strict;
 use DDG::Goodie;
 use bignum;
 

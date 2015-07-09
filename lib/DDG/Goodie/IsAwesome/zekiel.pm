@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::zekiel;
 # ABSTRACT: A simple goodie by zekiel
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_zekiel";
 zci is_cached   => 1;

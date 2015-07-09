@@ -1,6 +1,7 @@
 package DDG::Goodie::LeetSpeak;
 # ABSTRACT: Translate the query into leet speak.
 
+use strict;
 use DDG::Goodie;
 
 triggers startend => 'leetspeak', 'l33tsp34k', 'l33t', 'leet speak', 'l33t sp34k';

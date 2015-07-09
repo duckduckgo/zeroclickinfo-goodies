@@ -1,6 +1,7 @@
 package DDG::Goodie::MoonPhases;
 # ABSTRACT: answer queries for the current phase of the moon.
 
+use strict;
 use DDG::Goodie;
 use Astro::MoonPhase;
 

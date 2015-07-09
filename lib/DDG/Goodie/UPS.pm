@@ -1,6 +1,7 @@
 package DDG::Goodie::UPS;
 # ABSTRACT: Track a package through United Parcel Service.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;

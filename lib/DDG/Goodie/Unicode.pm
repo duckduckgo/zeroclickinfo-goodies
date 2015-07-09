@@ -1,6 +1,7 @@
 package DDG::Goodie::Unicode;
 # ABSTRACT: unicode character information lookup
 
+use strict;
 use DDG::Goodie;
 
 use Unicode::UCD qw/charinfo/;
@@ -46,6 +47,7 @@ handle sub {
     return codepoint_description($term);
 };
 
+# Performs a lookup for a codepoint input and returns the description
 sub codepoint_description {
     my $term = $_[0];
     return unless $term;
@@ -91,6 +93,7 @@ sub codepoint_description {
     return $info_str;
 }
 
+# Converts a character input to a codepoint
 sub char_to_codepoint {
     my $c = $_[0];
 
@@ -103,6 +106,7 @@ sub char_to_codepoint {
     return $cp;
 }
 
+# Determines whether an input is a codepoint, name or character based on regular expressions
 sub input_type ($) {
     my $input = $_[0] || q{};
     my $type;
@@ -123,12 +127,14 @@ sub input_type ($) {
     return ($input, $type);
                 }
 
+# Converts a name input to a character
 sub name_to_char {
     my $name = $_[0];
     my $u = Unicode::Char->new();
     return $u->n($name);
 }
 
+# Performs a unicode lookup based on type of input - codepoint, name or char
 sub unicode_lookup {
     my $term = $_[0];
 

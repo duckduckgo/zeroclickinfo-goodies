@@ -4,6 +4,7 @@ package DDG::Goodie::<: $ia_package_name :>;
 # to instant answer development
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "<: $lia_name :>";
 zci is_cached   => 1;
@@ -27,12 +28,12 @@ triggers any => "triggerWord", "trigger phrase";
 # Handle statement
 handle remainder => sub {
 
-	# optional - regex guard
-	# return unless qr/^\w+/;
+    # optional - regex guard
+    # return unless qr/^\w+/;
 
-	return unless $_; # Guard against "no answer"
+    return unless $_; # Guard against "no answer"
 
-	return $_;
+    return $_;
 };
 
 1;

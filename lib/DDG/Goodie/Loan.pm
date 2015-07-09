@@ -1,6 +1,7 @@
 package DDG::Goodie::Loan;
 # ABSTRACT: Calculate monthly payment and total interest payment for a conventional mortgage loan
 
+use strict;
 use DDG::Goodie;
 use Locale::Currency::Format;
 

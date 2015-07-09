@@ -1,6 +1,7 @@
 package DDG::Goodie::Roman;
 # ABSTRACT: Convert between Roman and Arabic numeral systems.
 
+use strict;
 use DDG::Goodie;
 
 use Roman;

@@ -1,6 +1,7 @@
 package DDG::Goodie::WhereAmI;
 # ABSTRACT: Display the user's perceived location from GeoIP
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 0;

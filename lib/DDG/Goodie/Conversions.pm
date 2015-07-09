@@ -1,12 +1,14 @@
 package DDG::Goodie::Conversions;
 # ABSTRACT: convert between various units of measurement
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use Math::Round qw/nearest/;
 use bignum;
 use Convert::Pluggable;
+use utf8;
 
 name                      'Conversions';
 description               'convert between various units of measurement';
@@ -60,6 +62,13 @@ my %plural_exceptions = (
 
 my %singular_exceptions = reverse %plural_exceptions;
 
+my %temperature_aliases = (
+    'celsius'    => '°C',
+    'fahrenheit' => '°F',
+    'rankine'    => '°R',
+    'kelvin'     => 'K',
+);
+
 handle query_lc => sub {
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
@@ -67,13 +76,18 @@ handle query_lc => sub {
 
     # hack support for "degrees" prefix on temperatures
     $_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
+    
+    # hack - convert "oz" to "fl oz" if "ml" contained in query
+    s/(oz|ounces)/fl oz/ if(/ml/ && not /fl oz/);
 
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-
+   
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
+    
+ 
 
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
@@ -90,7 +104,7 @@ handle query_lc => sub {
         @matches = ($matches[1], $matches[0]);
     }
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/);
-
+    
     # fix precision and rounding:
     my $precision = 3;
     my $nearest = '.' . ('0' x ($precision-1)) . '1';
@@ -104,7 +118,7 @@ handle query_lc => sub {
         'to_unit' => $matches[1],
         'precision' => $precision,
     } );
-
+    
     return if !$result->{'result'};
 
     my $f_result;
@@ -138,8 +152,8 @@ handle query_lc => sub {
         $result->{'from_unit'} = set_unit_pluralisation($result->{'from_unit'}, $factor);
         $result->{'to_unit'}   = set_unit_pluralisation($result->{'to_unit'},   $result->{'result'});
     } else {
-        $result->{'from_unit'} = ($factor == 1 ? 'degree' : 'degrees') . ' ' . $result->{'from_unit'} if ($result->{'from_unit'} ne "kelvin");
-        $result->{'to_unit'} = ($result->{'result'} == 1 ? 'degree' : 'degrees') . ' ' . $result->{'to_unit'} if ($result->{'to_unit'} ne "kelvin");
+        $result->{'from_unit'} = $temperature_aliases{$result->{'from_unit'}};
+        $result->{'to_unit'} = $temperature_aliases{$result->{'to_unit'}};
     }
 
     $result->{'result'} = defined($f_result) ? $f_result : sprintf("%.${precision}f", $result->{'result'});

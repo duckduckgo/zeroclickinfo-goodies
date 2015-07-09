@@ -1,6 +1,7 @@
 package DDG::Goodie::SigFigs;
 # ABSTRACT: Count the significant figures in a number.
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'sigfigs 01.1234000';

@@ -1,6 +1,7 @@
 package DDG::Goodie::HKDK;
 # ABSTRACT: Track a package through HKDK.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;

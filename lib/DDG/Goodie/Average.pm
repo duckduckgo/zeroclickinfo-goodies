@@ -1,6 +1,7 @@
 package DDG::Goodie::Average;
 # ABSTRACT: take statistics for a list of numbers
 
+use strict;
 use DDG::Goodie;
 
 triggers startend => "avg", "average", "mean", "median", "root mean square";

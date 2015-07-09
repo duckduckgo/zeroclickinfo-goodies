@@ -1,8 +1,10 @@
 package DDG::Goodie::GUID;
 # ABSTRACT: Generated a GUID on-demand.
 
+use strict;
 use DDG::Goodie;
 use Data::GUID;
+use Text::Trim;
 
 my %guid = (
     'guid'                          => 0,
@@ -35,9 +37,8 @@ attribution twitter => ['crazedpsyc','crazedpsyc'],
 handle remainder => sub {
 
     s/$allowedTriggers//g; # strip allowed triggers
-    s/^\s+|\s+$//g; # trim
 
-    return if $_; # return if other words remaining
+    return if trim $_; # return if other words remaining
 
     my $guid = Data::GUID->new; # generate new GUID
 

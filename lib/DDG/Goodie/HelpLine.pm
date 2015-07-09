@@ -1,11 +1,12 @@
 package DDG::Goodie::HelpLine;
 # ABSTRACT: Provide localized suicide intervention phone numbers.
 
+use strict;
 use DDG::Goodie;
 
-use YAML::XS qw( Load );
+use YAML::XS 'LoadFile';
 
-my $triggers = Load(scalar share('triggers.yml')->slurp);
+my $triggers = LoadFile(share('triggers.yml'));
 
 triggers any => @$triggers;
 
@@ -20,7 +21,7 @@ topics 'everyday';
 category 'special';
 source 'https://en.wikipedia.org/wiki/List_of_suicide_crisis_lines';
 
-my $helplines = Load(scalar share('helplines.yml')->slurp);
+my $helplines = LoadFile(share('helplines.yml'));
 my %suicide_phrases = map { $_ => 1 } @$triggers;
 
 handle query_lc => sub {

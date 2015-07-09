@@ -1,6 +1,7 @@
 package DDG::Goodie::Regexp;
 # ABSTRACT: Parse a regexp.
 
+use strict;
 use DDG::Goodie;
 
 use Safe;

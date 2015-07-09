@@ -1,9 +1,10 @@
 package DDG::Goodie::DuckDuckGo;
 # ABSTRACT: Return hard-coded descriptions for DuckDuckGo terms
 
+use strict;
 use DDG::Goodie;
 
-use YAML qw( Load );
+use YAML::XS 'LoadFile';
 
 primary_example_queries 'duckduckgo help';
 secondary_example_queries 'ddg tor', 'short URL for duck duck go';
@@ -21,7 +22,7 @@ triggers any => @ddg_aliases, "zeroclickinfo", "private search";
 
 zci is_cached => 1;
 
-my $responses = Load(scalar share("responses.yml")->slurp);
+my $responses = LoadFile(share('responses.yml'));
 
 # The YAML is intended to be human-friendly.
 # Now we make something computer-friendly.

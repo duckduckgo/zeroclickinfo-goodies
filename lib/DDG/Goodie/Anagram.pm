@@ -1,6 +1,7 @@
 package DDG::Goodie::Anagram;
 # ABSTRACT: Returns an anagram based on the supplied query.
 
+use strict;
 use DDG::Goodie;
 use List::Util qw( shuffle );
 

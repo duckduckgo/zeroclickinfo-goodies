@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::redwavestudios;
 # ABSTRACT: redwavestudios' first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_redwavestudios";
 zci is_cached   => 1;

@@ -1,6 +1,7 @@
 package DDG::Goodie::RubiksCubePatterns;
 # ABSTRACT: Create interesting patterns from a solved Rubik's Cube.
 
+use strict;
 use DDG::Goodie;
 
 

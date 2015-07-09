@@ -5,6 +5,7 @@ use warnings;
 
 use Test::More;
 use DDG::Test::Goodie;
+use utf8;
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
@@ -70,11 +71,11 @@ ddg_goodie_test(
         }
     ),
     'convert 5 kelvin to fahrenheit' => test_zci(
-        '5 kelvin = -450.670 degrees fahrenheit',
+        '5 K = -450.670 °F',
         structured_answer => {
-            input     => ['5 kelvin'],
+            input     => ['5 K'],
             operation => 'Convert',
-            result    => '-450.670 degrees fahrenheit'
+            result    => "-450.670 °F"
         }
     ),
     'convert 25 inches into feet' => test_zci(
@@ -86,11 +87,11 @@ ddg_goodie_test(
         }
     ),
     'convert 5 f to celsius' => test_zci(
-        '5 degrees fahrenheit = -15 degrees celsius',
+        '5 °F = -15 °C',
         structured_answer => {
-            input     => ['5 degrees fahrenheit'],
+            input     => ['5 °F'],
             operation => 'Convert',
-            result    => '-15 degrees celsius'
+            result    => "-15 °C"
         }
     ),
     'convert km to cm' => test_zci(
@@ -182,6 +183,14 @@ ddg_goodie_test(
             result    => '3.219 kilometers'
         }
     ),
+    '3 mi to km' => test_zci(
+        '3 miles = 4.828 kilometers',
+        structured_answer => {
+            input     => ['3 miles'],
+            operation => 'Convert',
+            result    => '4.828 kilometers'
+        }
+    ),
     '0.5 nautical mile to klick' => test_zci(
         '0.5 nautical miles = 0.926 kilometers',
         structured_answer => {
@@ -191,11 +200,11 @@ ddg_goodie_test(
         }
     ),
     '500 miles in metres' => test_zci(
-        '500 miles = 804,672.249 meters',
+        '500 miles = 804,672 meters',
         structured_answer => {
             input     => ['500 miles'],
             operation => 'Convert',
-            result    => '804,672.249 meters'
+            result    => '804,672 meters'
         }
     ),
     '25 cm in inches' => test_zci(
@@ -439,43 +448,43 @@ ddg_goodie_test(
         }
     ),
     '12 degrees Celsius to Fahrenheit' => test_zci(
-        '12 degrees celsius = 53.600 degrees fahrenheit',
+        '12 °C = 53.600 °F',
         structured_answer => {
-            input     => ['12 degrees celsius'],
+            input     => ['12 °C'],
             operation => 'Convert',
-            result    => '53.600 degrees fahrenheit'
+            result    => "53.600 °F"
         }
     ),
     '1 degrees Fahrenheit to celsius' => test_zci(
-        '1 degree fahrenheit = -17.222 degrees celsius',
+        '1 °F = -17.222 °C',
         structured_answer => {
-            input     => ['1 degree fahrenheit'],
+            input     => ['1 °F'],
             operation => 'Convert',
-            result    => '-17.222 degrees celsius'
+            result    => "-17.222 °C"
         }
     ),
     '0 c in k' => test_zci(
-        '0 degrees celsius = 273.150 kelvin',
+        '0 °C = 273.150 K',
         structured_answer => {
-            input     => ['0 degrees celsius'],
+            input     => ['0 °C'],
             operation => 'Convert',
-            result    => '273.150 kelvin'
+            result    => '273.150 K'
         }
     ),
     '234 f to c' => test_zci(
-        '234 degrees fahrenheit = 112.222 degrees celsius',
+        '234 °F = 112.222 °C',
         structured_answer => {
-            input     => ['234 degrees fahrenheit'],
+            input     => ['234 °F'],
             operation => 'Convert',
-            result    => '112.222 degrees celsius'
+            result    => "112.222 °C"
         }
     ),
     '234 f to k' => test_zci(
-        '234 degrees fahrenheit = 385.372 kelvin',
+        '234 °F = 385.372 K',
         structured_answer => {
-            input     => ['234 degrees fahrenheit'],
+            input     => ['234 °F'],
             operation => 'Convert',
-            result    => '385.372 kelvin'
+            result    => '385.372 K'
         }
     ),
     'metres from 20 yards' => test_zci(
@@ -550,6 +559,38 @@ ddg_goodie_test(
             result    => '3,785.412 millilitres'
         }
     ),
+    '32 ml to oz' => test_zci(
+        '32 millilitres = 1.082 us fluid ounces',
+        structured_answer => {
+            input     => ['32 millilitres'],
+            operation => 'Convert',
+            result    => '1.082 us fluid ounces'
+        }
+    ),
+    '100 oz to ml' => test_zci(
+        '100 us fluid ounces = 2,957.353 millilitres',
+        structured_answer => {
+            input     => ['100 us fluid ounces'],
+            operation => 'Convert',
+            result    => '2,957.353 millilitres'
+        }
+    ),
+    '100 ml to oz' => test_zci(
+        '100 millilitres = 3.381 us fluid ounces',
+        structured_answer => {
+            input     => ['100 millilitres'],
+            operation => 'Convert',
+            result    => '3.381 us fluid ounces'
+        }
+    ),
+    '75 ml to ounces' => test_zci(
+        '75 millilitres = 2.536 us fluid ounces',
+        structured_answer => {
+            input     => ['75 millilitres'],
+            operation => 'Convert',
+            result    => '2.536 us fluid ounces'
+        }
+    ),
     'mm in inches' => test_zci(
         '1 millimeter = 0.039 inches',
         structured_answer => {
@@ -600,11 +641,11 @@ ddg_goodie_test(
         }
     ),
     '3.5e-2 miles to inches' => test_zci(
-        '3.5 * 10^-2 miles = 2,217.602 inches',
+        '3.5 * 10^-2 miles = 2,217.601 inches',
         structured_answer => {
             input     => ['3.5 * 10<sup>-2</sup> miles'],
             operation => 'Convert',
-            result    => '2,217.602 inches'
+            result    => '2,217.601 inches'
         }
     ),
     # Areas and volumes
@@ -622,6 +663,14 @@ ddg_goodie_test(
             input     => ['0.0001 hectares'],
             operation => 'Convert',
             result    => '1 square meter'
+        }
+    ),
+    '5 sq mi in square meters' => test_zci(
+        '5 square miles = 1.29 * 10^7 square meters',
+        structured_answer => {
+            input     => ['5 square miles'],
+            operation => 'Convert',
+            result    => '1.29 * 10<sup>7</sup> square meters'
         }
     ),
     '1 imperial gallon in litres' => test_zci(
@@ -690,19 +739,19 @@ ddg_goodie_test(
         }
     ),
     'how much is 40 kelvin in celsius' => test_zci(
-        '40 kelvin = -233.150 degrees celsius',
+        '40 K = -233.150 °C',
         structured_answer => {
-            input     => ['40 kelvin'],
+            input     => ['40 K'],
             operation => 'Convert',
-            result    => '-233.150 degrees celsius'
+            result    => '-233.150 °C'
         }
     ),
     'how much is 40 kelvin in celsius?' => test_zci(
-        '40 kelvin = -233.150 degrees celsius',
+        '40 K = -233.150 °C',
         structured_answer => {
-            input     => ['40 kelvin'],
+            input     => ['40 K'],
             operation => 'Convert',
-            result    => '-233.150 degrees celsius'
+            result    => "-233.150 °C"
         }
     ),
     'how many metres in 10 of yard?' => test_zci(

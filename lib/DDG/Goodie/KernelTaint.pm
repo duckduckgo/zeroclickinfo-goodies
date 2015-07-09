@@ -1,6 +1,7 @@
 package DDG::Goodie::KernelTaint;
 # ABSTRACT: Parses and explains the OR'd values of /proc/sys/kernel/tainted
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'kernel taint 5121', 'kernel taint description 2';

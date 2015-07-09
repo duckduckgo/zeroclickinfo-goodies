@@ -2,7 +2,6 @@ package DDG::Goodie::Chess960;
 # ABSTRACT: return a random Chess 960 starting position.
 
 use strict;
-
 use DDG::Goodie;
 
 triggers any => 'random', 'chess960';

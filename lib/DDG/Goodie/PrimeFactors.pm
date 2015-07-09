@@ -1,6 +1,7 @@
 package DDG::Goodie::PrimeFactors;
 # ABSTRACT: Returns all the prime factors of the entered number
 
+use strict;
 use DDG::Goodie;
 
 use Math::Prime::Util 'factor_exp', 'is_prime';

@@ -1,6 +1,7 @@
 package DDG::Goodie::CanadaPost;
 # ABSTRACT: Track a package through Canada Post
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'canada post 123456789';

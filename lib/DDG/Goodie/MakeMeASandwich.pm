@@ -1,6 +1,7 @@
 package DDG::Goodie::MakeMeASandwich;
 # ABSTRACT: XKCD #149 Easter Egg
 
+use strict;
 use DDG::Goodie;
 
 name 'Make Me A Sandwich';

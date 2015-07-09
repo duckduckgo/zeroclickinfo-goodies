@@ -1,6 +1,7 @@
 package DDG::Goodie::Binary;
 # ABSTRACT: Convert decimal, hex and string to binary.
 
+use strict;
 use DDG::Goodie;
 
 use Bit::Vector;

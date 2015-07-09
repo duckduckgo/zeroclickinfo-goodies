@@ -1,6 +1,7 @@
 package DDG::Goodie::GenerateMAC;
 # ABSTRACT: generates a random network MAC address
 
+use strict;
 use DDG::Goodie;
 
 triggers startend => "generate mac addr",

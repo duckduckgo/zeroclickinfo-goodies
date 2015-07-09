@@ -1,6 +1,7 @@
 package DDG::Goodie::Passphrase;
 # ABSTRACT: Randomly generate a passphrase with the selected number of words.
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => 'random_passphrase';

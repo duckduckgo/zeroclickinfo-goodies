@@ -1,6 +1,7 @@
 package DDG::Goodie::Rot13;
 # ABSTRACT: Rotate chars by 13  letters
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'rot13 thirteen';

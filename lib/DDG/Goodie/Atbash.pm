@@ -1,6 +1,7 @@
 package DDG::Goodie::Atbash;
 # ABSTRACT: A simple substitution cipher using a reversed alphabet
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'atbash hello';

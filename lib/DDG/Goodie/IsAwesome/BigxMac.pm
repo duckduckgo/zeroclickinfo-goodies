@@ -1,6 +1,8 @@
 package DDG::Goodie::IsAwesome::BigxMac;
+# ABSTRACT: BigxMac's first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_bigx_mac";
 zci is_cached   => 1;

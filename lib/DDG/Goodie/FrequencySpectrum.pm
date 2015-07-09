@@ -583,7 +583,7 @@ sub add_major_range {
         'text-anchor' => $anchor,
         class => 'major_range_label'
     );
-    $majorRangeLabel->tag('tspan', -cdata => ucfirst($label));
+    $majorRangeLabelText->tag('tspan', -cdata => ucfirst($label));
 
     return $plot;
 }
@@ -616,7 +616,7 @@ sub add_marker {
         'text-anchor' => 'middle',
         class => 'marker_label'
     );
-    $markerLabel->tag('tspan', id => 'marker_label', -cdata => ucfirst($freq_formatted));
+    $markerLabelText->tag('tspan', id => 'marker_label', -cdata => ucfirst($freq_formatted));
 
     #Add marker line
     $plot->{svg}->group(

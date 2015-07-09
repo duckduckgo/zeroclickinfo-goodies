@@ -1,6 +1,7 @@
 package DDG::Goodie::Fortune;
 # ABSTRACT: UNIX fortune quips.
 
+use strict;
 use DDG::Goodie;
 use Fortune;
 

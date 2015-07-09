@@ -1,6 +1,7 @@
 package DDG::Goodie::EmailValidator;
 # ABSTRACT: Checks given email address
 
+use strict;
 use DDG::Goodie;
 use Email::Valid;
 

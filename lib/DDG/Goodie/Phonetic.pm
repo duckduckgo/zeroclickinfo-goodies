@@ -1,6 +1,7 @@
 package DDG::Goodie::Phonetic;
 # ABSTRACT: Take a string and spell it out phonetically using the NATO alphabet
 
+use strict;
 use DDG::Goodie;
 
 triggers start => 'phonetic';

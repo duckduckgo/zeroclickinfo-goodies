@@ -1,6 +1,7 @@
 package DDG::Goodie::LaserShip;
 # ABSTRACT: Track a package through Lasership
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;

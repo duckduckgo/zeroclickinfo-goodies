@@ -1,6 +1,7 @@
 package DDG::Goodie::Factors;
 # ABSTRACT: Returns the factors of the entered number
 
+use strict;
 use DDG::Goodie;
 
 use Math::Prime::Util 'divisors';

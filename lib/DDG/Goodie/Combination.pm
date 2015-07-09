@@ -1,6 +1,7 @@
 package DDG::Goodie::Combination;
 # ABSTRACT: Compute combinations and permutations
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
