@@ -22,7 +22,7 @@ This short tutorial will lead you through all the parts of building a full-loop 
 
 ## Create a New Instant Answer
 
-Once you're comfortable with the workflow and how Goodie's work, we're excited to have you create your own original Instant Answer.
+Once you're comfortable with the workflow and how Goodies work, we're excited to have you create your own original Instant Answer.
 
 **1. Choose an idea**
 
@@ -40,7 +40,7 @@ In addition, we'll promptly set up a [central Instant Answer page](http://www.du
 
 ## Improve an Existing Instant Answer
 
-Another great way to contribute is to improve an existing, live Instant Answer. It's a great way to get further acquainted with Instant Answers, as well as get implementation ideas. Many contributors report completing their first fix within two hours of forking the repository.
+Another great way to contribute is to improve an existing, live Instant Answer. It's a great way to get further acquainted with Instant Answers, as well as get implementation ideas. (Many contributors report completing their first fix within two hours of forking the repository!)
 
 **1. Choose a "low-hanging fruit"**
 
@@ -51,7 +51,7 @@ We've made sure to identify these throughout our repositories for new contributo
 
 **2. Dive in**
 
-Make a comment on issues you'd like to work on. Feel completely free to dive right in. Let us know what you're thinking and if you'd like any help or guidance. 
+Go ahead and comment on any issues you're interested in helping with. Let us know what you're thinking and if you'd like any help or guidance. 
 	
 As always, feel free to [ask us anything](mailto:open@duckduckgo.com), and don't forget the handy [Instant Answer documentation](https://duck.co/duckduckhack/ddh-intro).
 
