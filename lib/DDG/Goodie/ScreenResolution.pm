@@ -20,7 +20,7 @@ triggers startend => "screen resolution", "display resolution", "resolution of m
 handle remainder => sub {
     return unless /^((what\'?s|what is)?\s?(the|my|current))?$/;
 
-    return structured_answer => {
+    return undef, structured_answer => {
         id => 'screen_resolution',
         name => 'Answer',
         data => {
