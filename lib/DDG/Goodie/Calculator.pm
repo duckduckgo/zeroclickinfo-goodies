@@ -24,29 +24,30 @@ triggers query_nowhitespace => qr<
         ^
        ( what is | calculate | solve | math )?
 
-        [\( \) x X * % + / \^ \$ -]*
+        [\( \) x X \x{00D7} * % + / \^ \$ -]*
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
-        [\( \) x X * % + / \^ 0-9 \. , _ \$ -]*
+        [\( \) x X \x{00D7} * % + / \^ 0-9 \. , _ \$ -]*
 
         (?(1) (?: -? [0-9 \. , _ ]+ |) |)
-        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
+        (?: [\( \) x X \x{00D7} * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
 
-        [\( \) x X * % + / \^ 0-9 \. , _ \$ -]* =?
+        [\( \) x X \x{00D7} * % + / \^ 0-9 \. , _ \$ -]* =?
 
         $
         >xi;
 
 my $number_re = number_style_regex();
-my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\/|squared|divided/;    # Stuff that looks like functions.
+my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\\x{00D7}|\/|squared|divided/;    # Stuff that looks like functions.
 
 my %named_operations = (
     '\^'          => '**',
     'x'           => '*',
+    '\x{00D7}'           => '*',
     'times'       => '*',
     'minus'       => '-',
     'plus'        => '+',
@@ -75,7 +76,7 @@ handle query_nowhitespace => sub {
 
     return if ($query =~ /\b0x/);      # Probable attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
     return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
-    return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
+    return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\\x{00D7}|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\×|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
 
     $query =~ s/^(?:whatis|calculate|solve|math)//;
 
@@ -166,7 +167,7 @@ sub spacing {
     my ($text, $space_for_parse) = @_;
 
     $text =~ s/\s{2,}/ /g;
-    $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
+    $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\x{00D7}\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);
