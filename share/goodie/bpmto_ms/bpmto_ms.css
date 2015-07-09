@@ -1,0 +1,41 @@
+.zci--bpmto_ms .tile--bpmto_ms {
+    width: 12em;
+}
+
+.zci--bpmto_ms .tile__media {
+    height: 9em;
+    width: 9em;
+    border-radius: 100%;
+    margin: 0px auto;
+    margin-top: 1em;
+}
+
+.zci--bpmto_ms .note {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.zci--bpmto_ms .image_wrap {
+    text-align: center;
+    margin: 1em auto;
+    width: 7em;
+}
+
+.zci--bpmto_ms p.zci__caption {
+    text-align: center;
+    padding-bottom: 0;
+}
+
+.zci--bpmto_ms .seperator {
+    width: 90%;
+    border-bottom: 1px solid #e0e0e0;
+    margin: 1em auto;
+}
+
+.zci--bpmto_ms .variation {
+    color: #999;
+    clear: both;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 1.1em;
+}

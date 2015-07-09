@@ -1,6 +1,7 @@
 package DDG::Goodie::AltCalendars;
 # ABSTRACT: Convert non-Gregorian years to the Gregorian calendar
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'heisei 24';
@@ -41,20 +42,31 @@ handle query_parts => sub {
         my $year = $eras{$era_name}[0] + $era_year;
         my $result = $1.$year.$4;
         my $wiki = 'https://en.wikipedia.org/wiki/';
-        my $answer;
 
-        if ($result =~ /^[0-9]{4}$/) {
-            $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
-        } else {
-            $answer = "$result ($era_name $era_year is equivalent to $year in the Gregorian Calendar)";
-        }
+        my $answer = "$era_name $era_year is equivalent to $year in the Gregorian Calendar";
 
-        my $answer_html = $answer.'<br><a href="'.$wiki.$eras{$era_name}[1].'">More at Wikipedia</a>';
+        return $answer,
+            structured_answer => {
+                id => 'altcalendars',
+                name => 'Calendar Conversion',
+                data => {
+                    title => $year,
+                    subtitle => "$era_name $era_year - Equivalent Gregorian Year"
+                },
+                meta => {
+                    sourceName => "Wikipedia",
+                    sourceUrl => "$wiki$eras{$era_name}[1]"
+                },
+                templates => {
+                    group => 'info',
+                    options => {
+                        moreAt => 1
+                    }
+                }
+        };
+    }
 
-        return $answer, html => $answer_html;
-    };
-
-    return ;
+    return;
 };
 
 1;

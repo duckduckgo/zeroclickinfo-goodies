@@ -1,6 +1,7 @@
 package DDG::Goodie::IPS;
 # ABSTRACT: track a package through IPS.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;

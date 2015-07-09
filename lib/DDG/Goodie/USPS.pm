@@ -1,6 +1,7 @@
 package DDG::Goodie::USPS;
 # ABSTRACT: Track a package through the US postal service.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;
@@ -18,14 +19,14 @@ attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
             twitter => ['duckduckgo', 'DuckDuckGo'];
 
 # Regex for usps.
-my $usps_qr = qr/u(?:nited|)s(?:states|)(?:p(?:ostal|)s(?:ervice|)|)/io;
+my $usps_qr = qr/u(?:nited|)s(?:states|)(?:p(?:ostal|)s(?:ervice|))/io;
 my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
 
-triggers query_nowhitespace_nodash => qr/^
-                                         $usps_qr.*?([\d]{9,})\s*$|
-                                         ^([\d]{9,}).*?$usps_qr$|
+triggers query_nowhitespace_nodash => qr/
+                                         ^$usps_qr\s*([\d]{9,})\s*$|
+                                         ^([\d]{9,})\s*$usps_qr\s*$|
                                          ^$usps_qr?([a-z]{2}\d{9}us)$usps_qr?$|
-                                         ^(?:$tracking_qr|$usps_qr|)*([\d]{20,30})(?:$tracking_qr|$usps_qr|)*$
+                                         ^(?:$tracking_qr|$usps_qr|)*\s*([\d]{20,30})\s*(?:$tracking_qr|$usps_qr|)*$
                                         /xio;
 
 handle query_nowhitespace_nodash => sub {

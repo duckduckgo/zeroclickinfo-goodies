@@ -1,6 +1,7 @@
 package DDG::Goodie::Tips;
 # ABSTRACT: calculate a tip on a bill
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 

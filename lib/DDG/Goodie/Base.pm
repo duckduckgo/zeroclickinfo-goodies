@@ -1,6 +1,7 @@
 package DDG::Goodie::Base;
 # ABSTRACT: convert numbers between arbitrary bases
 
+use strict;
 use DDG::Goodie;
 
 use Math::Int2Base qw/int2base/;

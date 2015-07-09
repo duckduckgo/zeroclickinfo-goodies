@@ -1,6 +1,7 @@
 package DDG::Goodie::TwelveOclock;
 # ABSTRACT: Determine whether 12:00 is midnight or noon.
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "twelve_oclock";

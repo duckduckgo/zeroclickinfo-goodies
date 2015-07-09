@@ -1,6 +1,7 @@
 package DDG::Goodie::Perimeter;
 # ABSTRACT: Compute the perimeter of basic shapes.
 
+use strict;
 use DDG::Goodie;
 
 triggers start => "perimeter", "circumference";

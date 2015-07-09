@@ -1,6 +1,7 @@
 package DDG::Goodie::Dewey;
 # ABSTRACT: Identify and find dewey decimal system numbers
 
+use strict;
 use DDG::Goodie;
 
 triggers any => 'dewey';

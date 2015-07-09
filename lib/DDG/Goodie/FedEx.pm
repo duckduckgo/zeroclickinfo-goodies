@@ -1,6 +1,7 @@
 package DDG::Goodie::FedEx;
 # ABSTRACT: Track a package through FedEx
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;
@@ -114,7 +115,7 @@ handle query_nowhitespace_nodash => sub {
     }
 
     if ($is_fedex) {
-        return $package_number, heading => 'FedEx Shipment Tracking', html => qq(Track this shipment at <a href="http://fedex.com/Tracking?tracknumbers=$package_number&action=track">FedEx</a>.);
+        return $package_number, heading => 'FedEx Shipment Tracking', html => qq(Track this shipment at <a href="https://www.fedex.com/apps/fedextrack/?action=track&tracknumbers=$package_number&action=track">FedEx</a>.);
     }
 
     return;

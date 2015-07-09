@@ -2,8 +2,8 @@ package DDG::Goodie::HexToASCII;
 # ABSTRACT: Returns the ASCII representaion of a given hexadecimal value. (If printbale of course).
 
 use strict;
-
 use DDG::Goodie;
+
 # Used to restrict long generated outputs
 use constant MAX_INPUT_CHARS => 128;
 

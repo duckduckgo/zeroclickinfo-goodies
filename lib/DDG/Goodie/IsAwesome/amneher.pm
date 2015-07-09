@@ -1,8 +1,8 @@
 package DDG::Goodie::IsAwesome::amneher;
 # ABSTRACT: amneher's first goodie
 
-
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_amneher";
 zci is_cached   => 1;

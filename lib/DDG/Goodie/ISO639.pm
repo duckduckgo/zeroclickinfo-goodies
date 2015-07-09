@@ -1,6 +1,7 @@
 package DDG::Goodie::ISO639;
 # ABSTRACT: ISO 639 language names and codes
 
+use strict;
 use DDG::Goodie;
 use Locale::Language;
 

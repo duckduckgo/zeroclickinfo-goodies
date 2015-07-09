@@ -1,6 +1,7 @@
 package DDG::Goodie::RouterPasswords;
 # ABSTRACT: Return default passwords forvarious routers.
 
+use strict;
 use DDG::Goodie;
 
 primary_example_queries 'belkin f5d6130 default password';

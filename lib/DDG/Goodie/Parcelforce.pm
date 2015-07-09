@@ -1,6 +1,7 @@
 package DDG::Goodie::Parcelforce;
 # ABSTRACT: track a package through Parcelforce.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached   => 1;

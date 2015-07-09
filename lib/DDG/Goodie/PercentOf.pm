@@ -1,6 +1,7 @@
 package DDG::Goodie::PercentOf;
-# Operations with percentuals
+# ABSTRACT: Operations with percentuals
 
+use strict;
 use DDG::Goodie;
 
 zci answer_type => "percent_of";
@@ -19,25 +20,25 @@ triggers query_nowhitespace => qr/\d{1,3}\%$/;
 
 handle query_nowhitespace => sub {
 
-    my $input = $_;
+    return unless $_ =~ qr/^(?:\p{Currency_Symbol})*\s*(\d+\.?\d*)\s*(\+|\*|\/|\-)\s*(\d+\.?\d*)\%$/;
 
-    return unless $input =~ qr/(\d+\.?\d*)(\+|\*|\/|\-)(\d+\.?\d*)\%/;
-
+    my $partRes = ($1 * $3) / 100;
 
     if ($2 eq '-') {
-        $result = ( $1 - (($1 * $3) / 100) );
+        $result = ( $1 - ( $partRes ) );
     } elsif ($2 eq '+') {
-        $result = ( $1 + (($1 * $3) / 100) );
+        $result = ( $1 + ( $partRes ) );
     } elsif ($2 eq '*') {
-        $result = ( $1 * (($1 * $3) / 100) );
+        $result = ( $partRes );
     } elsif ($2 eq '/') {
-        $result = ( $1 / (($1 * $3) / 100) );
+        $result = ( $1 * ( 100 / $3 ) );
     }
 
     my $text = "Result: $result";
+
     return $text,
     structured_answer => {
-        input => [$input],
+        input => [$_],
         operation => 'Calculate',
         result => $result
     };

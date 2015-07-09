@@ -1,6 +1,7 @@
 package DDG::Goodie::BirthStone;
 # ABSTRACT: Returns the birthstone of the queried month
 
+use strict;
 use DDG::Goodie;
 
 triggers startend => 'birthstone', 'birth stone';

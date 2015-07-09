@@ -1,10 +1,11 @@
 package DDG::Goodie::POTUS;
 # ABSTRACT: Returns requested President of the United States
 
+use strict;
 use DDG::Goodie;
 use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
 use Lingua::EN::Words2Nums;
-use YAML::XS qw( Load );
+use YAML::XS 'LoadFile';
 
 triggers startend => 'potus';
 triggers any => 'president of the united states', 'president of the us';
@@ -21,7 +22,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github  => ['numbertheory', 'John-Peter Etcheber'],
             twitter => ['jpscribbles', 'John-Peter Etcheber'];
 
-my @presidents = @{Load(scalar share('presidents.yml')->slurp)};
+my @presidents = @{LoadFile(share('presidents.yml'))};
 my $prez_count = scalar @presidents;
 
 handle remainder => sub {

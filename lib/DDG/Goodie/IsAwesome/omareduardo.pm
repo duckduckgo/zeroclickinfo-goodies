@@ -2,6 +2,7 @@ package DDG::Goodie::IsAwesome::omareduardo;
 # ABSTRACT: omareduardo's first Goodie
 
 use DDG::Goodie;
+use strict;
 
 zci answer_type => "is_awesome_omareduardo";
 zci is_cached   => 1;

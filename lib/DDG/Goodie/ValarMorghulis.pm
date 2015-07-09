@@ -1,6 +1,7 @@
 package DDG::Goodie::ValarMorghulis;
 # ABSTRACT: A Game of Thrones / A Song of Ice and Fire easter egg.
 
+use strict;
 use utf8;
 use DDG::Goodie;
 

@@ -1,6 +1,7 @@
 package DDG::Goodie::TitleCase;
 # ABSTRACT: Convert a string to title case.
 
+use strict;
 use DDG::Goodie;
 
 triggers start => 'titlecase', 'title case';

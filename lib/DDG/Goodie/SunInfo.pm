@@ -1,6 +1,7 @@
 package DDG::Goodie::SunInfo;
 # ABSTRACT: sunrise and sunset information for the client location
 
+use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 with 'DDG::GoodieRole::ImageLoader';
@@ -44,7 +45,6 @@ my $lat_lon_regex = qr/[\+\-]?[0-9]+(?:
     )?/x;
 
 handle remainder => sub {
-
     my $remainder = shift // '';
     $remainder =~ s/\?//g;    # Strip question marks.
     return unless $remainder =~ qr/^
@@ -94,10 +94,10 @@ sub where_string {
         # No city, but a region name; abbreviate the country or continent
         # - Pennsylvania, USA
         @where_bits = ($region_name, $loc->country_code3 || $loc->continent_code);
-    } elsif (my $country = $loc->country) {
+    } elsif (my $country = $loc->country_name) {
         # Country and continent, then, I guess.
         # United States, NA
-        @where_bits = ($loc->country, $loc->continent_code);
+        @where_bits = ($loc->country_name, $loc->continent_code);
     }
     return join(', ', @where_bits);
 }

@@ -1,6 +1,7 @@
 package DDG::Goodie::Rafl;
 # ABSTRACT: rafl is so everywhere, there's a DuckDuckGo.com "!rafl" bang syntax
 
+use strict;
 use DDG::Goodie;
 
 use Acme::rafl::Everywhere;

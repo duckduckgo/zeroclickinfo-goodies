@@ -1,6 +1,7 @@
 package DDG::Goodie::Ascii;
 # ABSTRACT: ASCII
 
+use strict;
 use DDG::Goodie;
 
 triggers end => "ascii";

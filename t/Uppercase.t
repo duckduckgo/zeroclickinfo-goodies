@@ -36,6 +36,8 @@ ddg_goodie_test(
     ),
     'that string all caps'    => undef,
     'is this uppercase, sir?' => undef,
+    'uppercase HELLO'         => undef,
+    'uppercase 123'           => undef
 );
 
 done_testing;

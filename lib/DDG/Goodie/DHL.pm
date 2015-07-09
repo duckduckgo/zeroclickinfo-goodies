@@ -1,6 +1,7 @@
 package DDG::Goodie::DHL;
 # ABSTRACT: track a package through DHL.
 
+use strict;
 use DDG::Goodie;
 
 zci is_cached => 1;
