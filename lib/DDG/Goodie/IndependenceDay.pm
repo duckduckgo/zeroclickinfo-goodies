@@ -83,15 +83,15 @@ handle query_clean => sub {
         templates => {
             group => "icon",
             item => 0,
-            elClass => {
-                iconTitle => "t-xxl",
-                iconSubtitle => "tx--15"
+            variants => {
+              iconTitle => 'large',
+              iconImage => 'large'
             }
         },
         data => {
             country_code => country2code($country_key),
-            date => $date_str,
-            info => $prolog
+            title => $date_str,
+            subtitle => $prolog
         }
       };
     
