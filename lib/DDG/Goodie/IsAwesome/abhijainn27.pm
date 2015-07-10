@@ -1,5 +1,5 @@
 package DDG::Goodie::IsAwesome::abhijainn27;
-
+# ABSTRACT: abhijainn27 first Goodie Hack !!
 
 use DDG::Goodie;
 
