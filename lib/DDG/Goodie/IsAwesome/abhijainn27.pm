@@ -1,6 +1,7 @@
 package DDG::Goodie::IsAwesome::abhijainn27;
 # ABSTRACT: abhijainn27 first Goodie Hack !!
-
+# CATEGORY "DuckDuckHack Goodie";
+# TOPICS "Web Development", "geek";
 use DDG::Goodie;
 
 zci answer_type => "is_awesome_abhijainn27";
