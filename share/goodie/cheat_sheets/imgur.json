@@ -14,7 +14,7 @@
     "sections": {
         "Voting": [{
             "val": "Favorite",
-            "key": "[0] or [Insert]"
+            "key": "([0]/[Insert])"
         }, {
             "val": "Upvote",
             "key": "+"
@@ -24,13 +24,13 @@
         }],
         "Accessibility":[{
             "val": "Previous / Next image",
-            "key": "[Left] / [Right] arrow"
+            "key": "([←]/[→])"
         }, {
             "val": "Zoom",
             "key": "Enter"
         }, {
             "val": "Slideshow",
-            "key": "[Ctrl]  [F9]"
+            "key": "[Ctrl] [F9]"
         },{
             "val": "Expand album",
             "key": "9"
