@@ -30,11 +30,6 @@ my %typeMap = (
     'B' => 'B,O',
 );
 
-sub table_data {
-    my ($label, $value) = @_;
-    return "<tr><td class='text--secondary'>$label</td><td class='text--primary'>$value</td></tr>";
-}
-
 handle remainder => sub {
     
     return unless ($_ =~ /^(O|A|B|AB)(\-|\+)$/i);
@@ -55,13 +50,9 @@ handle remainder => sub {
             push(@criticalResults, $donorType . '-');
         }
     }
-    
-    my $output = '';
-    my $html = "<table class='blooddonor'>";
 
     my $idealStr = join(' or ', @idealResults);
     my $criticalStr = join(' or ', @criticalResults);
-
 
     my %record_data = (
         "Ideal donor" => uc($_),
@@ -75,10 +66,10 @@ handle remainder => sub {
     }
 
     sub to_text
-	{
-		my ($data, $keys) = @_;
-		return join "\n", map {"$_: $data->{$_}";} @{$keys};
-	}
+    {
+        my ($data, $keys) = @_;
+        return join "\n", map {"$_: $data->{$_}";} @{$keys};
+    }
 
     return to_text(\%record_data, \@record_keys), structured_answer => {
             id => 'BloodDonor',
