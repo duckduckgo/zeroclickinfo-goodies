@@ -12,8 +12,13 @@ sub build_structure
 {
 	my ($blood_type, $data, $keys) = @_;
 	return {
-            id => 'BloodDonor',
+            id => 'blood_donor',
+			name => 'Blood Donors',
             description => 'Returns available donors for a blood type',
+			meta => {
+				sourceName => 'Wikipedia',
+				sourceUrl => 'https://en.wikipedia.org/wiki/Blood_type'
+			},
             templates => {
                 group => 'list',
                 options => {
