@@ -47,11 +47,11 @@
             { "key": "F", "val": "Consumables Slot 2" },
             { "key": "1", "val": "Draw Steel Sword" },
             { "key": "2", "val": "Draw Silver Sword" },
-            { "key": "3", "val": "Select Aard (stagger)" },
-            { "key": "4", "val": "Select Yrden (trap)" },
-            { "key": "5", "val": "Select Igni (flames)" },
-            { "key": "6", "val": "Select Quen (shield)" },
-            { "key": "7", "val": "Select Axii (influence)" },
+            { "key": "3", "val": "Select Aard" },
+            { "key": "4", "val": "Select Yrden" },
+            { "key": "5", "val": "Select Igni" },
+            { "key": "6", "val": "Select Quen" },
+            { "key": "7", "val": "Select Axii" },
             { "key": "V", "val": "Change Objective" }
         ],
         "Menus/Panels": [
