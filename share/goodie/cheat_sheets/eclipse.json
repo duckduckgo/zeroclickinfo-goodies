@@ -1,14 +1,8 @@
 {
    
     "id": "eclipse_cheat_sheet", 
-
-    
     "name": "Eclipse",
-
-    
     "description": "Eclipse IDE", 
-    
-   
     "metadata": { 
         "sourceName": "EclipseCheatSheet",
         "sourceUrl": "https://duckduckgo.com"
@@ -72,7 +66,7 @@
             {
                 "key": "F5",
                 "val": "Refresh content of selected element with local file system"               
-            },
+            }
             
         ],        
         "Editor Window": [
@@ -248,7 +242,7 @@
             {
                 "key": "[Shift]+[Ctrl]+[Enter]",
                 "val": "Enter line above current line"               
-            }
+            },
             {
                 "key": "[Insert]",
                 "val": "Switch between insert and overwrite mode"               
@@ -307,7 +301,7 @@
                 "val": "Add Block Comment around selection ( adds '/... */' )"               
             }, 
             {
-                "key": "[Ctrl]+[Shift]+[\]",
+                "key": "[Ctrl]+[Shift]+[\\\\]",
                 "val": "Remove Block Comment"               
             }, 
             {
@@ -369,7 +363,7 @@
             {
                 "key": "[Ctrl] + move over method]",
                 "val": "Open Declaration or Implementation"               
-            }, 
+            }
           ],  
         "Refactoring": [
             {
