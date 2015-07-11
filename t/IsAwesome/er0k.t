@@ -10,8 +10,8 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::IsAwesome::er0k )],
-    'duckduckhack er0k' => test_zci('fart fart fart'),
-    'duckduckhack GitHubUsername is awesome' => undef,
+    'duckduckhack er0k' => test_zci(':)'),
+    'duckduckhack er0k is awesome' => undef,
 );
 
 done_testing;
