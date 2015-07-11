@@ -87,7 +87,7 @@
                 "val": "Show list of open Editors. Use arrow keys and enter to switch"               
             }, 
             {
-                "key": "[Ctrl] + F6 / [Ctrl]+[Shift]+F6",
+                "key": "[Ctrl] + [F6] / [Ctrl] + [Shift] + [F6]",
                 "val": "Jump to Editor Window"               
             }, 
             {
@@ -95,15 +95,15 @@
                 "val": "Go to previous / go to next Editor Window"               
             }, 
             {
-                "key": "[Alt] + -",
+                "key": "[Alt] + [-]",
                 "val": "Open Editor Window Option menu"               
             }, 
             {
-                "key": "[Ctrl] + F10",
+                "key": "[Ctrl] + [F10]",
                 "val": "Show view menu "               
             }, 
             {
-                "key": "[Ctrl] + F10, then [n]",
+                "key": "[Ctrl] + [F10], then [n]",
                 "val": "Show or hide line numbers"               
             }, 
             {
@@ -114,19 +114,19 @@
         ],  
         "Navigate in Editor": [
             {
-                "key": "[Home]/[End]",
+                "key": "[Home] / [End]",
                 "val": "Jump to beginning / jump to end of indention. Press home twice to jump to beginning of line"               
             }, 
             {
-                "key": "[Ctrl] + [Home]/[End]",
+                "key": "[Ctrl] + [Home] / [End]",
                 "val": "Jump to beginning / jump to end of source"
             },
             {
-                "key": "[Ctrl] + [Arrow Right]/[Arrow Left]",
+                "key": "[Ctrl] + [Arrow Right] / [Arrow Left]",
                 "val": "Jump one word to the left / one word to the right"               
             }, 
             {
-                "key": "[Ctrl] + [Shift]+[Arrow Down]/[Arrow Up]",
+                "key": "[Ctrl] + [Shift] + [Arrow Down] / [Arrow Up]",
                 "val": "Jump to previous / jump to next method"               
             }, 
             {
@@ -138,11 +138,11 @@
                 "val": "Go to previous / go to next Editor Window"               
             }, 
             {
-                "key": "[Ctrl] + [.]/[Ctrl]+[,]",
+                "key": "[Ctrl] + [.] / [Ctrl] + [,]",
                 "val": "Jump to next / jump to previous compiler syntax warning or error"               
             }, 
             {
-                "key": "[Ctrl] + [Shift]+[P]",
+                "key": "[Ctrl] + [Shift] + [P]",
                 "val": "With a bracket selected: jump to the matching closing or opening bracket"               
             }, 
             {
@@ -150,15 +150,15 @@
                 "val": "Collapse / Expand current method or class"               
             }, 
             {
-                "key": "[Ctrl] + [/]/[Ctrl]+[*]",
+                "key": "[Ctrl] + [/] / [Ctrl] + [*]",
                 "val": "Collapse / Expand all methods or classes"               
             },
             {
-                "key": "[Ctrl] + [Arrow Down]/[Ctrl]+[Arrow Up]",
+                "key": "[Ctrl] + [Arrow Down] / [Ctrl] + [Arrow Up]",
                 "val": "Scroll Editor without changing cursor position"               
             },
             {
-                "key": "[Alt] + [Page Up]/[Alt] + [Page Down]",
+                "key": "[Alt] + [Page Up] / [Alt] + [Page Down]",
                 "val": "Next Sub-Tab / Previous Sub-Tab"               
             }
             
@@ -166,19 +166,19 @@
         ],  
         "Select Text": [
             {
-                "key": "[Shift] + [Arrow Right]/[Arrow Left]",
+                "key": "[Shift] + [Arrow Right] / [Arrow Left]",
                 "val": "Expand selection by one character to the left / to the right"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [Arrow Right]/[Arrow Left]",
+                "key": "[Ctrl] + [Shift] + [Arrow Right] / [Arrow Left]",
                 "val": "Expand selection to next / previous word"
             },
             {
-                "key": "[Shift] + [Arrow Down]/[Arrow Up]",
+                "key": "[Shift] + [Arrow Down] / [Arrow Up]",
                 "val": "Expand selection by one line down / one line up"               
             }, 
             {
-                "key": "[Shift] + [End]/[Home]",
+                "key": "[Shift] + [End] / [Home]",
                 "val": "Expand selection to end / to beginning of line"               
             }, 
             {
@@ -186,15 +186,15 @@
                 "val": "Select All"               
             }, 
             {
-                "key": "[Alt] + [Arrow Left] / [Alt]+[Arrow Right]",
+                "key": "[Alt] + [Arrow Left] / [Alt] + [Arrow Right]",
                 "val": "Go to previous / go to next Editor Window"               
             }, 
             {
-                "key": "[Alt] + [Shift]+[Arrow Up]",
+                "key": "[Alt] + [Shift] + [Arrow Up]",
                 "val": "Expand selection to current element (e.g. current one-line expression or content within brackets)"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [Arrow Left]/[Arrow Right]",
+                "key": "[Alt] + [Shift] + [Arrow Left] / [Arrow Right]",
                 "val": "Expand selection to next / previous element"               
             }, 
             {
@@ -410,7 +410,7 @@
         ],  
         "Run and Debug": [
             {
-                "key": "[Ctrl] + F11",
+                "key": "[Ctrl] + [F11]",
                 "val": "Save and launch application (run)"               
             }, 
             {
@@ -436,11 +436,11 @@
         ],  
         "The Rest": [
             {
-                "key": "[Ctrl] + F7 / [Ctrl] + [Shift] + F7",
+                "key": "[Ctrl] + [F7] / [Ctrl] + [Shift] + [F7]",
                 "val": "Switch forward / backward between views (panels). Useful for switching back and forth between Package Explorer and Editor."               
             }, 
             {
-                "key": "[Ctrl] + F8 / [Ctrl] + [Shift] + F8",
+                "key": "[Ctrl] + [F8] / [Ctrl] + [Shift] + [F8]",
                 "val": "Switch forward / backward between perspectives"
             },
             {
@@ -452,7 +452,7 @@
                 "val": "Open Eclipse Help"               
             }, 
             {
-                "key": "[Shift] + F10",
+                "key": "[Shift] + [F10]",
                 "val": "Show Context Menu right click with mouse"               
             }
         ]
