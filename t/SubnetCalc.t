@@ -6,14 +6,15 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'subnet_info';
+zci answer_type => 'subnet_calc';
 zci is_cached => 1;
 
 sub build_structure
 {
 	my ($data, $keys) = @_;
 	return {
-			id => "Subnet Calculator",
+			id => "subnet_calculator",
+			name => "Subnet Calculator",
 			description => "Calculates IPv4 Subnets to and from CIDR notation",
 			templates => {
 				group => 'list',

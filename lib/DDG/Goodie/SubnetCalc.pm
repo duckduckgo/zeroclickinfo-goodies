@@ -7,10 +7,9 @@ use warnings;
 
 use DDG::Goodie;
 
-# TODO: This (sh|c)ould be re-written to be more precise
-triggers query => qr#^([0-9]{1,3}\.){3}([0-9]{1,3})[\s/](([1-3]?[0-9])|(([0-9]{1,3}\.){3}([0-9]{1,3})))$#;
+triggers query => qr#^(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})[\s/](?:(?:[1-3]?[0-9])|(?:(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})))$#x;
 
-zci answer_type => "subnet_info";
+zci answer_type => "subnet_calc";
 zci is_cached => 1;
 
 attribution github => ['mintsoft', 'Rob Emery'];
@@ -121,8 +120,9 @@ handle query => sub {
 	
     return to_text(\%output, \@output_keys),
 		structured_answer => {
-			id => "Subnet Calculator",
+			id => "subnet_calculator",
 			description => "Calculates IPv4 Subnets to and from CIDR notation",
+			name => "Subnet Calculator",
 			templates => {
 				group => 'list',
 				options => {
