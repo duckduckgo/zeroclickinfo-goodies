@@ -6,11 +6,11 @@
     "metadata": { 
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html",
-        "primary_example_queries ": "eclipse shortcuts", "eclipse ide keyboard shortcuts", "eclipse keyboard shortcuts",
-        "secondary_example_queries" : "java programming", "productivity", "shortcuts", "keyboard shortcuts",
+        "primary_example_queries ": ["eclipse shortcuts", "eclipse ide keyboard shortcuts", "eclipse keyboard shortcuts"],
+        "secondary_example_queries" : ["java programming", "productivity", "shortcuts", "keyboard shortcuts"],
         "category": "cheat_sheets",
-        "topics":"everyday", "programming", "computing"
-        "attribution": "Kishore S Meda", "http://github.com/kishoresmeda"
+        "topics": ["everyday", "programming", "computing"],
+        "attribution": ["Kishore S Meda", "http://github.com/kishoresmeda"]
     },
 
     
