@@ -36,31 +36,31 @@
                 "val": "Create new project, file, class, etc."
             },
             {
-                "key": "[Alt]+[f] , then [.]",
+                "key": "[Alt] + [f] , then [.]",
                 "val": "Open project, file, etc."               
             },
             {
-                "key": "[Ctrl]+[Shift]+[R]",
+                "key": "[Ctrl] + [Shift]+[R]",
                 "val": "Open Resource (file, folder or project)"               
             },
             {
-                "key": "[Alt]+[Enter]",
+                "key": "[Alt] + [Enter]",
                 "val": "Show and access file properties"               
             },
             {
-                "key": "[Ctrl]+[S]",
+                "key": "[Ctrl] + [S]",
                 "val": "Save current file"               
             },
             {
-                "key": "[Ctrl]+[Shift]+[S]",
+                "key": "[Ctrl] + [Shift]+[S]",
                 "val": "Save all files"               
             },
             {
-                "key": "[Ctrl]+[W]",
+                "key": "[Ctrl] + [W]",
                 "val": "Close current file"               
             },
             {
-                "key": "[Ctrl]+[Shift]+[W]",
+                "key": "[Ctrl] + [Shift]+[W]",
                 "val": "Close all files"               
             },
             {
