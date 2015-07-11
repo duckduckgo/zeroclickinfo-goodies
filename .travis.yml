@@ -16,4 +16,4 @@ language: perl
 perl:
   - 5.16
 script:
-  - dzil smoke --release --author 2> /dev/null
+  - dzil smoke --release --author
