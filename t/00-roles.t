@@ -183,6 +183,10 @@ subtest 'Dates' => sub {
                 src    => ['5-06-2014', '4th January 2013', '20-06-2014'],
                 output => [1401926400,  1357257600,         1403222400],     # 5 jun; 4 jan, 20 jun
             },
+            {
+                src    => ['7-11-2015', 'tomorrow'],
+                output => [1436572800,  1436659200],     # 11 jul; 12 jul
+            },
         );
 
         foreach my $set (@date_sets) {
