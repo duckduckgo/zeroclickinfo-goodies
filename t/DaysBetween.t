@@ -122,6 +122,14 @@ ddg_goodie_test(
             result    => 1
         },
     ),
+    'days between last year and today' => test_zci(
+        qr/^There are 365 days between.+ and.+\.$/,
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Days between',
+            result    => 365
+        },
+    ),
     'days between jan 1 2012 and jan 1 123456' => undef,
 );
 
