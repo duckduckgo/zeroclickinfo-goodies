@@ -19,12 +19,12 @@ sub get_flag {
 
 sub header_name {
     my $query = shift;
-    return '<span>Name days for <b>' . $query . '</b></span><div class="zci__content"><table class="name-days">';
+    return '<span>Name days for <b>' . $query . '</b></span><div class="zci--name_days"><table class="name-days">';
 }
 
 sub header_date {
     my $query = shift;
-    return '<span>Name days on <b>' . $query . '</b></span><div class="zci__content"><table class="name-days">';
+    return '<span>Name days on <b>' . $query . '</b></span><div class="zci--name_days"><table class="name-days">';
 }
 
 sub line {
@@ -91,7 +91,7 @@ my $maria_html =  header_name('Maria') . line('Bulgaria', tile('15', 'Aug')) .
 ddg_goodie_test(
     [qw( DDG::Goodie::NameDays )],
     'name day mieszko' => test_zci('Poland:  1 Jan', html =>
-    	header_name('Mieszko') . line('Poland', tile('1', 'Jan')) . $footer),
+      header_name('Mieszko') . line('Poland', tile('1', 'Jan')) . $footer),
     'maria imieniny' => test_zci($maria, html => $maria_html),
     '3 June name day' => test_zci('Croatia: Karlo Lwanga, dr.; Czech Republic: Tamara; Denmark: Erasmus; France: Kévin; ' .
                     'Greece: Marinos, Nikiforos; Hungary: Klotild, Cecília; Latvia: Inta, Dailis; ' .
@@ -107,11 +107,11 @@ ddg_goodie_test(
     'namedays dec 30' => test_zci($dec_30, html => $dec_30_html),
     'name day 1 Jan' => test_zci('Bulgaria: Vassil; Croatia: Marija; Denmark: Nytårsdag; France: Jour de l\'An; ' .
         'Greece: Basilius, Telemachus; Hungary: Fruzsina; Latvia: Solvija, Laimnesis; Poland: Mieczysław, Mieszko; Sweden: Nyårsdagen', html =>
-    	header_date('January 1st') . line('Bulgaria', 'Vassil') . line('Croatia', 'Marija') . line('Denmark', 'Nytårsdag') .
+      header_date('January 1st') . line('Bulgaria', 'Vassil') . line('Croatia', 'Marija') . line('Denmark', 'Nytårsdag') .
         line('France', 'Jour de l\'An') . line('Greece', 'Basilius, Telemachus') . line('Hungary', 'Fruzsina') .
         line('Latvia', 'Solvija, Laimnesis') . line('Poland', 'Mieczysław, Mieszko') . line('Sweden', 'Nyårsdagen') . $footer),
     'Radmila svátek' => test_zci('Croatia: 11 Apr; Czech Republic:  3 Jan; Slovakia:  3 Jan', html =>
-    	header_name('Radmila') . line('Croatia', tile('11', 'Apr')) . line('Czech Republic', tile('3', 'Jan')) .
+      header_name('Radmila') . line('Croatia', tile('11', 'Apr')) . line('Czech Republic', tile('3', 'Jan')) .
         line('Slovakia', tile('3', 'Jan')) . $footer),
 
     # 1st, 2nd, 3rd, etc.
