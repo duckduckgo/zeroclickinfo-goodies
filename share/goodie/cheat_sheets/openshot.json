@@ -13,102 +13,102 @@
     ],
     "sections": {
         "General": [{
-            "key": "CTRL + N",
+            "key": "[CTRL] [N]",
             "val": "Create a new project"
         }, {
-            "key": "CTRL + O",
+            "key": "[CTRL] [O]",
             "val": "Open an existing project"
         }, {
-            "key": "CTRL + S",
+            "key": "[CTRL] [S]",
             "val": "Save the current project"
         }, {
-            "key": "SHIFT + CTRL + S",
+            "key": "[SHIFT] [CTRL] [S]",
             "val": "Save the current project as..."
         }, {
-            "key": "CTRL + X",
+            "key": "[CTRL] [X]",
             "val": "Export project as MLT XML"
         }, {
-            "key": "CTRL + E",
+            "key": "[CTRL] [E]",
             "val": "Export the current project as a video file"
         }, {
-            "key": "CTRL + U",
+            "key": "[CTRL] [U]",
             "val": "Upload current project as a video file to YouTube or Vimeo"
         }, {
-            "key": "CTRL + Z",
+            "key": "[CTRL] [Z]",
             "val": "Undo the last action"
         }, {
-            "key": "CTRL + Y",
+            "key": "[CTRL] [Y]",
             "val": "Redo the previous action"
         }, {
-            "key": "F11",
+            "key": "[F11]",
             "val": "Toggle full-screen mode"
         }, {
-            "key": "F1",
+            "key": "[F1]",
             "val": "Launch the help file (if installed)"
         }, {
-            "key": "CTRL + P",
+            "key": "[CTRL] [P]",
             "val": "Edit the preferences"
         }, {
-            "key": "CTRL + Q",
+            "key": "[CTRL] [Q]",
             "val": "Quit the program"
         }],
         "Playback": [{
-            "key": "J",
+            "key": "[J]",
             "val": "Rewind the video playback"
         }, {
-            "key": "K",
+            "key": "[K]",
             "val": "Pause / Play"
         }, {
-            "key": "L",
+            "key": "[L]",
             "val": "Fast-forward the video playback"
         }, {
-            "key": "Space bar",
+            "key": "[Space bar]",
             "val": "Pause / Play"
         }, {
-            "key": "Up",
+            "key": "[Up]",
             "val": "Seek to previous maker (if any)"
         }, {
-            "key": "Down",
+            "key": "[Down]",
             "val": "Seek to next marker (if any)"
         }, {
-            "key": "Left",
+            "key": "[Left]",
             "val": "Step backwards one frame (frame stepping)"
         }, {
-            "key": "Right",
+            "key": "[Right]",
             "val": "Step forwards one frame (frame stepping)"
         }],
         "Editing": [{
-            "key": "TAB",
+            "key": "[TAB]",
             "val": "Switch between Resize and Select mode"
         }, {
-            "key": "Ctrl + Scroll Wheel",
+            "key": "[Ctrl] [Scroll Wheel]",
             "val": "Zoom in & out of the timeline"
         }, {
-            "key": "Ctrl + Home",
+            "key": "[Ctrl] [Home]",
             "val": "Seek to the beginning of the timeline"
         }, {
-            "key": "Ctrl + End",
+            "key": "[Ctrl] [End]",
             "val": "Seek to the end of the timeline"
         }, {
-            "key": "C",
+            "key": "[C]",
             "val": "Slice all clips at the play-head position"
         }, {
-            "key": "CTRL + F",
+            "key": "[CTRL] [F]",
             "val": "Import a file (audio, video, or image)"
         }, {
-            "key": "CTRL + I",
+            "key": "[CTRL] [I]",
             "val": "Import an image sequence"
         }, {
-            "key": "CTRL + W",
+            "key": "[CTRL] [W]",
             "val": "Import new transition"
         }, {
-            "key": "CTRL + T",
+            "key": "[CTRL] [T]",
             "val": "Create a new title"
         }, {
-            "key": "CTRL + B",
+            "key": "[CTRL] [B]",
             "val": "Create a new animated title"
         }, {
-            "key": "CTRL + D",
+            "key": "[CTRL] [D]",
             "val": "Capture and save the current frame of any non-audio clips that are overlapping the play-head, and add them to the project files."
         }]
     }
