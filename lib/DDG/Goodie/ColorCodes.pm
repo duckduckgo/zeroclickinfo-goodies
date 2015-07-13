@@ -45,6 +45,7 @@ triggers query_raw => qr/^
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})                # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+(inverse|negative|opposite))?
+    (?:\sto\s(?:$typestr))?
     $/ix;
 
 zci is_cached => 1;
@@ -61,7 +62,7 @@ attribution  cpan   => 'CRZEDPSYC',
              github => ['http://github.com/mintsoft', 'Rob Emery'];
 
 my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
-my %trigger_filler = map { $_ => 1 } (qw( code ));
+my %trigger_filler = map { $_ => 1 } (qw( code k b ));
 
 my $color_mix = Color::Mix->new;
 
@@ -124,6 +125,8 @@ handle matches => sub {
     my $type    = 'rgb8';    # Default type, can be overridden below.
     my @matches = @_;
 
+    s/\sto\s(?:$typestr)//;
+
     foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
         # $q now contains the defined normalized matches which can be:
         if (exists $types{$q}) {
@@ -136,6 +139,7 @@ handle matches => sub {
     }
 
     return unless $color;                   # Need a color to continue!
+    $color =~ s/\sto\s//;
 
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
