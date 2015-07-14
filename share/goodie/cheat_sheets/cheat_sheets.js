@@ -79,6 +79,8 @@ DDH.cheat_sheets.build = function(ops) {
             var $dom = $("#zci-cheat_sheets"),
                 $container = $dom.find(".cheatsheet__container"),
                 $detail    = $dom.find(".zci__main--detail"),
+                $section   = $dom.find(".cheatsheet__section"),
+                $hideRow   = $section.find("tbody tr:nth-child(n+4)"),
                 $showhide  = $container.find(".cheatsheet__section.showhide"),
                 $more_btn  = $dom.find(".chomp--link");
 
@@ -91,11 +93,16 @@ DDH.cheat_sheets.build = function(ops) {
                     isFitWidth: true
                 });
 
+                if ($container.hasClass("compressed")) {
+                  $hideRow.toggleClass("is-hidden");
+                }
+
                 $more_btn.click(function() {
                     $dom.toggleClass("has-chomp-expanded");
                     $detail.toggleClass("c-base");
                     $container.toggleClass("compressed");
                     $showhide.toggleClass("is-hidden");
+                    $hideRow.toggleClass("is-hidden");
                     $container.masonry({
                         itemSelector: '.cheatsheet__section',
                         columnWidth: 295,
