@@ -77,27 +77,26 @@ sub format_year {
 handle remainder => sub {
     
     my $year = (localtime)[5] + 1900;
+    my ($plaintext, $title, $subtitle);
     
     if ($_ =~ /(last|previous) ([0-9][0-9]?)$/i) {
         my @years = search_leaps($2, -1, 0, $year);
         @years = map(format_year, @years);
         my $pretty_years = join(', ', @years);
-        return "The last $2 leap years were $pretty_years",
-            structured_answer => {
-                input       => [],
-                operation   => "The last $2 leap years",
-                result      => $pretty_years,
-            };
+        
+        $plaintext = "The last $2 leap years were $pretty_years";
+        $title = $pretty_years;
+        $subtitle = "The last $2 leap years";
+        
     } elsif ($_ =~ /(next|future) ([0-9][0-9]?)$/i) {
         my @years = search_leaps($2, 1, 0, $year);
         @years = map(format_year, @years);
         my $pretty_years = join(', ', @years);
-        return "The $1 $2 leap years will be $pretty_years",
-            structured_answer => {
-                input       => [],
-                operation   => "The $1 $2 leap years",
-                result      => $pretty_years,
-            };
+        
+        $plaintext = "The $1 $2 leap years will be $pretty_years";
+        $title = $pretty_years;
+        $subtitle = "The $1 $2 leap years";
+        
     } elsif ($_ =~ /^(after|before) ([0-9]+) ?(ad|bce|bc|ce)?$/) {
         my $cyear = $2;
         my $direction = $1;
@@ -112,39 +111,35 @@ handle remainder => sub {
         @years = map(format_year, @years);
         my $pretty_years = join(', ', @years);
         my $pretty_year = format_year($cyear);
-        return "The 5 leap years $direction $pretty_year are $pretty_years",
-            structured_answer => {
-                input       => [],
-                operation   => "The 5 leap years $direction $pretty_year",
-                result      => $pretty_years,
-            };
+        
+        $plaintext = "The 5 leap years $direction $pretty_year are $pretty_years";
+        $title = $pretty_years;
+        $subtitle = "The 5 leap years $direction $pretty_year";
+        
     } elsif ($_ =~ /(next|future|upcoming)$/i) {
         my ($nyear) = search_leaps(1, 1, 0, $year);
         $nyear = format_year($nyear);
-        return "$nyear will be the $1 leap year",
-            structured_answer => {
-                input       => [],
-                operation   => "The $1 leap year",
-                result      => $nyear,
-            };
+        
+        $plaintext = "$nyear will be the $1 leap year";
+        $title = $nyear;
+        $subtitle = "The $1 leap year";
+        
     } elsif ($_ =~ /(latest|last|previous)$/i) {
         my ($pyear) = search_leaps(1, -1, 0, $year);
         $pyear = format_year($pyear);
-        return "$pyear was the $1 leap year",
-            structured_answer => {
-                input       => [],
-                operation   => "The $1 leap year",
-                result      => $pyear,
-            };
+        
+        $plaintext = "$pyear was the $1 leap year";
+        $title = $pyear;
+        $subtitle = "The $1 leap year";
+        
     } elsif ($_ =~ /(most recent)$/i) {
         my ($ryear) = search_leaps(1, -1, 1, $year);
         $ryear = format_year($ryear);
-        return "$ryear is the $1 leap year",
-            structured_answer => {
-                input       => [],
-                operation   => "The $1 leap year",
-                result      => $ryear,
-            };
+        
+        $plaintext = "$ryear is the $1 leap year";
+        $title = $ryear;
+        $subtitle = "The $1 leap year";
+        
     } elsif($_ =~ /^(was|is|will) ([0-9]+) ?(ad|bce|bc|ce)?( be)? a$/i) {
         my $cyear = $2;
         if(defined($3) && $3 =~ /^(bce|bc)$/i) {
@@ -153,39 +148,40 @@ handle remainder => sub {
         my $fyear = format_year($cyear);
         my $tense = find_tense($cyear, $year);
         if(isleap($cyear)) {
-            return "$fyear $is_tense{$tense} a leap year",
-                structured_answer => {
-                    input       => [$fyear],
-                    operation   => "Leap year",
-                    result      => "$fyear $is_tense{$tense} a leap year",
-                };
+            
+            $plaintext = "Yes! $fyear $is_tense{$tense} a leap year";
+            
         } else {
-            return "$fyear $is_not_tense{$tense} a leap year",
-                structured_answer => {
-                    input       => [$fyear],
-                    operation   => "Leap year",
-                    result      => "$fyear $is_not_tense{$tense} a leap year",
-                };
+        
+            $plaintext = "No. $fyear $is_not_tense{$tense} a leap year"
+            
         }
     } elsif($_ =~ /^is it( now | currently)? a|are we in a$/i) {
         my $fyear = format_year($year);
         if(isleap($year)) {
-            return "$fyear is a leap year",
-                structured_answer => {
-                    input       => [$fyear],
-                    operation   => "Leap year",
-                    result      => "$fyear is a leap year",
-                };
+            
+            $plaintext = "Yes! $fyear is a leap year";
+            
         } else {
-            return "$fyear is not a leap year",
-                structured_answer => {
-                    input       => [$fyear],
-                    operation   => "Leap year",
-                    result      => "$fyear is not a leap year",
-                };
+            
+            $plaintext = "No. $fyear is not a leap year",
+            
         }
     }
-    return;
+    
+    return $plaintext,
+    structured_answer => {
+        id => "leap_year",
+        name => "Answer",
+        data => {
+            title => $title || $plaintext,
+            subtitle => $subtitle
+        },
+        templates => {
+            group => "text",
+            moreAt => 0
+        }
+    }
 };
 
 1;
