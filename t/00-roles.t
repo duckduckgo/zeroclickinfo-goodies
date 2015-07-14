@@ -360,7 +360,6 @@ subtest 'Dates' => sub {
                 'december 2015'     => '01 Dec 2015',
                 'march 13'          => '13 Mar 2014',
                 'in a weeks time'   => '15 Oct 2014',
-                'a month ago'       => '01 Dec 1999',
                 '2 months ago'      => '08 Aug 2014',
                 'in 2 years'        => '08 Oct 2016',
                 'a week ago'        => '01 Oct 2014',
