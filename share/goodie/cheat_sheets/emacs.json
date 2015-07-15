@@ -207,13 +207,13 @@
             "key": "C-M-r"
         }, {
             "val": "String replace from here to end of buffer",
-            "key": "[M-x replace-string RET]"
+            "key": "[M-x] [<replace-string>] [RET]"
         }, {
             "val": "String replace from here to end of buffer, querying for each occurrence",
-            "key": "[M-x query-replace RET]"
+            "key": "[M-x] [<query-replace>] [RET]"
         }, {
             "val": "Prompts for a grep command, shows hits in a buffer",
-            "key": "[M-x grep RET]"
+            "key": "[M-x] [<grep>] [RET]"
         }, {
             "val": "Visit next grep hit",
             "key": "[C-x] [`]"
