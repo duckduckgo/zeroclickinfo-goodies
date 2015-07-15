@@ -84,6 +84,11 @@ DDH.cheat_sheets.build = function(ops) {
                 $showhide  = $container.find(".cheatsheet__section.showhide"),
                 $more_btn  = $dom.find(".chomp--link");
 
+            // Removes all tr's after the 3rd before masonry fires
+            if ($container.hasClass("compressed")) {
+              $hideRow.toggleClass("is-hidden");
+            }
+
             DDG.require('masonry.js', function(){
 
                 $container.masonry({
@@ -92,10 +97,6 @@ DDH.cheat_sheets.build = function(ops) {
                     gutter: 30,
                     isFitWidth: true
                 });
-
-                if ($container.hasClass("compressed")) {
-                  $hideRow.toggleClass("is-hidden");
-                }
 
                 $more_btn.click(function() {
                     $dom.toggleClass("has-chomp-expanded");
