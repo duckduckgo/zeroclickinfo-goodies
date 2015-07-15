@@ -27,7 +27,7 @@ attribution twitter =>      ['nshanmugham', 'Nishanth Shanmugham'],
 handle remainder => sub {
     my $in = $_;
 
-    return unless $in;
+    return unless $in; #/cheat[\s]?sheet/
 
     my $encoded_url = encodeURIComponent($in);
 

@@ -1,0 +1,118 @@
+{
+    "id" : "url_escape_cheat_sheet",
+    "name" : "Url Escape",
+    "description" : "Escape Sequence",
+    "metadata" : {
+        "sourceName" : "ASCIIEncodingReference",
+        "sourceUrl" : "http://www.w3schools.com/tags/ref_urlencode.asp"
+    },
+    "section_order" : "Character",
+    "sections": {
+        "Character": [
+            {
+                "key": "Space",
+                "val": "%20"
+            },
+            {
+                "key": "&",
+                "val": "%26"
+            },
+            {
+                "key": "<",
+                "val": "%3C"
+            },
+            {
+                "key": ">",
+                "val": "3E"
+            },
+            {
+                "key": "\"",
+                "val": "%22"
+            },
+            {
+                "key": "#",
+                "val": "%23"
+            },
+            {
+                "key": "$",
+                "val": "%24"
+            },
+            {
+                "key": "%",
+                "val": "%25"
+            },
+            {
+                "key": "'",
+                "val": "%27"
+            },
+            {
+                "key": "+",
+                "val": "%2B"
+            },
+            {
+                "key": ",",
+                "val": "%2C"
+            },
+            {
+                "key": "/",
+                "val": "%2F"
+            },
+            {
+                "key": ":",
+                "val": "%3A"
+            },
+            {
+                "key": ";",
+                "val": "%3B"
+            },
+            {
+                "key": "=",
+                "val": "%3D"
+            },
+            {
+                "key": "?",
+                "val": "%3F"
+            },
+            {
+                "key": "@",
+                "val": "%40"
+            },
+            {
+                "key": "[",
+                "val": "%5B"
+            },
+            {
+                "key": "\\",
+                "val": "%5C"
+            },
+            {
+                "key": "]",
+                "val": "%5D"
+            },
+            {
+                "key": "^",
+                "val": "%5E"
+            },
+            {
+                "key": "`",
+                "val": "%60"
+            },
+            {
+                "key": "{",
+                "val": "%7B"
+            },
+            {
+                "key": "|",
+                "val": "%7C"
+            },
+            {
+                "key": "}",
+                "val": "%7D"
+            },
+            {
+                "key": "~",
+                "val": "%7E"
+            }
+        ]
+    }
+}
