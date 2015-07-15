@@ -56,16 +56,6 @@
     color: rgba(0,0,0,.15);
 }
 
-/*
- * The following CSS is used to control the compressed/expanded display.
- * For the initial compressed view, we only show the first 3 key-value pairs, for the first 2 sections
- */
-
-/* Hide rows 4+ */
-.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section tbody tr:nth-child(n+4) {
-    display: none;
-}
-
 /* Media queries for smaller screens... */
 @media (max-width:350px) {
 
