@@ -195,6 +195,45 @@ subtest 'Dates' => sub {
                 $set->{output}, '"' . join(', ', @source) . '": dates parsed correctly');
         }
     };
+	
+	subtest 'Strong dates and vague or relative dates mixed' => sub {
+		set_fixed_time('2001-02-05T00:00:00Z');
+		my @date_sets = (
+			{
+				src => ["1990-06-13", "december"],
+				out => ['1990-06-13T00:00:00', '1990-12-01T00:00:00']
+			},
+			{
+				src => ["1990-06-13", "last december"],
+				out => ['1990-06-13T00:00:00', '2000-12-01T00:00:00']
+			},
+			{
+				src => ["1990-06-13", "next december"],
+				out => ['1990-06-13T00:00:00', '2001-12-01T00:00:00']
+			},
+			{
+				src => ["1990-06-13", "today"],
+				out => ['1990-06-13T00:00:00', '2001-02-05T00:00:00']
+			},
+			{
+				src => ["1990-06-13", "tomorrow"],
+				out => ['1990-06-13T00:00:00', '2001-02-06T00:00:00']
+			},
+			{
+				src => ["1990-06-13", "yesterday"],
+				out => ['1990-06-13T00:00:00', '2001-02-04T00:00:00']
+			}
+		);
+		
+		foreach my $set (@date_sets) {
+            my @source = @{$set->{src}};
+			my @expectation = @{$set->{out}};
+			my @result = DatesRoleTester::parse_all_datestrings_to_date(@source);
+            is_deeply(\@result, \@expectation, join(", ", @source));
+        }
+		
+		restore_time();
+	};
     
     subtest 'Relative naked months' => sub {
         
@@ -225,7 +264,7 @@ subtest 'Dates' => sub {
             my @expectation = @{$time_strings{$query_time}{output}};
             my @result = DatesRoleTester::parse_all_datestrings_to_date(@source);
             
-            is_deeply(\@expectation, \@result);
+            is_deeply(\@result, \@expectation);
         }
     };
 
