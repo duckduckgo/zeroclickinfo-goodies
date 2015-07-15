@@ -1,0 +1,228 @@
+{
+   "id" : "german_cheat_sheet",
+   "name" : "German Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Linguanaut",
+      "sourceUrl" : "http://www.linguanaut.com/english_german.htm"
+   },
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Dinner on the Town"
+   ],
+   "description" : "Basic German words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Gute Morgen",
+            "key" : "Good Night"
+         },
+         {
+            "val" : "Guten Tag",
+            "key" : "Good Afternoon"
+         },
+         {
+            "val" : "Guten Abend",
+            "key" : "Good Evening"
+         },
+         {
+            "val" : "Es tut mir leid.",
+            "key" : "I'm sorry"
+         },
+         {
+            "val" : "Danke.",
+            "key" : "Thank you"
+         },
+         {
+            "val" : "Bitte.",
+            "key" : "Please."
+         },
+         {
+            "val" : "Vielen Dank!",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "Guten Morgen",
+            "key" : "Good Morning"
+         },
+         {
+            "val" : "Bitteschoen.",
+            "key" : "You're welcome."
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Ruf Sie Polezei!",
+            "key" : "Call the Police!"
+         },
+         {
+            "val" : "Koennen Sie bitte langsamer sprechen!",
+            "key" : "Please speak more slowly!"
+         },
+         {
+            "val" : "Ich bin allergisch.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Bitte wiederholen.",
+            "key" : "Repeat, please."
+         },
+         {
+            "val" : "Wie sagt man \"X\" auf Deutsch?",
+            "key" : "How do you say \"X\" in German?"
+         },
+         {
+            "val" : "Halt!",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "Sprechen Sie Englisch?",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Entschuldigung!",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "Ich brauche einen Arzt!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Koennen Sie das bitte aufschreiben?",
+            "key" : "Can you write that down?"
+         },
+         {
+            "val" : "Ruf Sie Krankwagen!",
+            "key" : "Call an Ambulance!"
+         },
+         {
+            "val" : "Ich bin in Gefahr!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Koennen Sie mir helfen?",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Feuer!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Ich heisse...",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "Mir geht es gut, danke.",
+            "key" : "I'm fine thanks!"
+         },
+         {
+            "val" : "Wie gehts?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Hallo/Guten Tag",
+            "key" : "Hello"
+         },
+         {
+            "val" : "Willkommen",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Wie Heisst du?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Biegen Sie links ab.",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "Wo is der Ausgang?",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Wo?",
+            "key" : "Where?"
+         },
+         {
+            "val" : "Ist es weit?",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Gehen Sie geradeaus.",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "Hast due einen Stadplan?",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Bitte halten Sie heir an.",
+            "key" : "Stop here please."
+         },
+         {
+            "val" : "Biegen Sie rechts ab.",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "Wo sind die Taxies?",
+            "key" : "Where are the taxis?"
+         }
+      ],
+      "Dinner on the Town" : [
+         {
+            "val" : "Haben Sie ein vegetarisches Gericht?",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "Hauptgericht",
+            "key" : "Entree"
+         },
+         {
+            "val" : "Ich bin allergisch.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Nachtish",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "Die Rechnung, bitte!",
+            "key" : "The check please!"
+         },
+         {
+            "val" : "Ein Tasse Kaffee, bitte.",
+            "key" : "A cup of coffee pelase."
+         },
+         {
+            "val" : "Haben Sie ein glutenfreie Gericht?.",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "Wo is ein gutes Restaurant?",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : "Ein Glas Wasser, bitte.",
+            "key" : "A glass of water please."
+         },
+         {
+            "val" : "Einen Tisch fuer zwei bitte!",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "Vorspeisen",
+            "key" : "Appetizers"
+         },
+         {
+            "val" : "Kann ich erhalten Die Speisekarte, bitte!",
+            "key" : "Can I get a menu, please!"
+         }
+      ]
+   }
+}
