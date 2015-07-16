@@ -17,7 +17,7 @@ ddg_goodie_test(
         test_zci('This is a unique unicorn for example@example.com',
         structured_answer => {
             id => "unicornify",
-            name => "Unicornify",
+            name => "Social",
             data => {
                 subtitle => "Unique unicorn",
                 title => 'example@example.com',
