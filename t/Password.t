@@ -10,30 +10,6 @@ zci is_cached   => 0;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Password)],
-    'random password weak 5' => test_zci(
-        qr/.{8} \(random password\)/,
-        structured_answer => {
-            input     => ['8 characters', 'low strength'],
-            operation => 'Random password',
-            result    => qr/^.{8}$/
-        }
-    ),
-    'password 5 EaSy' => test_zci(
-        qr/.{8} \(random password\)/,
-        structured_answer => {
-            input     => ['8 characters', 'low strength'],
-            operation => 'Random password',
-            result    => qr/^.{8}$/
-        }
-    ),
-    'password low 5' => test_zci(
-        qr/.{8} \(random password\)/,
-        structured_answer => {
-            input     => ['8 characters', 'low strength'],
-            operation => 'Random password',
-            result    => qr/^.{8}$/
-        }
-    ),
     'pw 15 average' => test_zci(
         qr/.{15} \(random password\)/,
         structured_answer => {
@@ -116,6 +92,9 @@ ddg_goodie_test(
         }
     ),
     'password 65' => undef,
+    'random password weak 5' => undef,
+    'password 5 EaSy' => undef,
+    'password low 5' => undef,
 );
 
 done_testing
