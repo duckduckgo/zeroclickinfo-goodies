@@ -41,7 +41,7 @@ triggers query_raw => qr/^
         (.*?)\s*(.+?)\brgb(?:\s+code)?|                 # handles "red rgb code", etc
         (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)| # handles "rgb color code for red", "red color code for html", etc
         (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        (.*?)($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|       # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|       # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})                # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+(inverse|negative|opposite))?
@@ -62,7 +62,7 @@ attribution  cpan   => 'CRZEDPSYC',
              github => ['http://github.com/mintsoft', 'Rob Emery'];
 
 my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
-my %trigger_filler = map { $_ => 1 } (qw( code k b ));
+my %trigger_filler = map { $_ => 1 } (qw( code ));
 
 my $color_mix = Color::Mix->new;
 
