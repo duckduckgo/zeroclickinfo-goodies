@@ -58,9 +58,7 @@ handle remainder => sub {
     my @q_words = map { lc $_ } grep { defined } ($+{'fw'}, $+{'sw'});
 
     my $pw_length = first { looks_like_number($_) } @q_words;
-    $pw_length = ($pw_length) ? max(MIN_PWD_LENGTH, $pw_length) : MIN_PWD_LENGTH;
-
-    return if ($pw_length > MAX_PWD_LENGTH);
+    return if ($pw_length > MAX_PWD_LENGTH || $pw_length < MIN_PWD_LENGTH);
 
     my $strength_code = first { $_ && exists $pw_strengths{$_} } @q_words;
     my $pw_strength = $pw_strengths{$strength_code || 'average'};
