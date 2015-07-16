@@ -4,21 +4,21 @@ There are several options for contributing Goodie Instant Answers, explained bel
 
 You can always find the [Instant Answer Documentation here](https://duck.co/duckduckhack/ddh-intro). Also, if you have any questions at any point, feel free to ask on one of our community channels:
 
-- [DuckDuckHack mailing list](https://duck.co/redir/?u=https%3A%2F%2Fwww.listbox.com%2Fsubscribe%2F%3Flist_id%3D197814)
-- [Gitter chat](https://duck.co/redir/?u=https%3A%2F%2Fgitter.im%2Fduckduckgo%2FIdeas)
+- [DuckDuckHack mailing list](https://www.listbox.com/subscribe/?list_id=197814)
+- [Gitter chat](https://gitter.im/duckduckgo/Ideas)
 - Do not hesitate to email us directly at [open@duckduckgo.com](mailto:open@duckduckgo.com).
 
 ## New? Make Your First Contribution Today
 
 If this is your first time contributing to [DuckDuckHack](http://www.duckduckhack.com), you have two great ways to quickly make your first commit:
 
-**1. Make a [Cheat Sheet](https://duck.co/duckduckhack/goodie_cheat_sheets)**
+- **Make a [Cheat Sheet](https://duck.co/duckduckhack/goodie_cheat_sheets)**
 
-Cheat sheets are a super-easy way to contribute to the live DuckDuckGo AnswerBar very quickly, by editing a single file. Cheat sheets can be about anything, from Emacs and Vim to Game of Thrones house names or wine pairings.
+    Cheat sheets are a super-easy way to contribute to the live DuckDuckGo AnswerBar very quickly, by editing a single file. Cheat sheets can be about anything, from Emacs and Vim to Game of Thrones house names or wine pairings.
 
-**2. Create a simple, complete "Hello World" Goodie with our [Quick Start Tutorial](https://duck.co/duckduckhack/goodie_quickstart)**
+- **Create a simple, complete "Hello World" Goodie with our [Quick Start Tutorial](https://duck.co/duckduckhack/goodie_quickstart)**
 
-This short tutorial will lead you through all the parts of building a full-loop Goodie. This is a perfect place to start if you have an idea for an original Instant Answer.
+    This short tutorial will lead you through all the parts of building a full-loop Goodie. This is a perfect place to start if you have an idea for an original Instant Answer.
 
 ## Create a New Instant Answer
 
