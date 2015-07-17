@@ -8,6 +8,11 @@ use DDG::Test::Goodie;
 zci answer_type => 'color_code';
 zci is_cached => 1;
 
+my @green_args = (
+    'Hex: #00FF00 ~ RGBA(0, 255, 0, 1) ~ RGB(0%, 100%, 0%) ~ HSL(120, 100%, 50%) ~ CMYB(100%, 0%, 100%, 0%)'."\n".'Complementary: #FF00FF'."\n".'Analogous: #00FF80, #80FF00',
+    html => qr/background:#00ff00/
+);
+
 ddg_goodie_test(
 	[qw(DDG::Goodie::ColorCodes)],
     'hex color code for cyan' => test_zci(
@@ -26,14 +31,10 @@ ddg_goodie_test(
         'Hex: #E0FFFF ~ RGBA(224, 255, 255, 1) ~ RGB(88%, 100%, 100%) ~ HSL(180, 100%, 94%) ~ CMYB(12%, 0%, 0%, 0%)'."\n".'Complementary: #FFE0E0'."\n".'Analogous: #E0F0FF, #E0FFF0',
         html => qr/background:#e0ffff/,
     ),
-    '#00ff00' => test_zci(
-        'Hex: #00FF00 ~ RGBA(0, 255, 0, 1) ~ RGB(0%, 100%, 0%) ~ HSL(120, 100%, 50%) ~ CMYB(100%, 0%, 100%, 0%)'."\n".'Complementary: #FF00FF'."\n".'Analogous: #00FF80, #80FF00',
-        html => qr/background:#00ff00/,
-    ),
-    '#0f0' => test_zci(
-        'Hex: #00FF00 ~ RGBA(0, 255, 0, 1) ~ RGB(0%, 100%, 0%) ~ HSL(120, 100%, 50%) ~ CMYB(100%, 0%, 100%, 0%)'."\n".'Complementary: #FF00FF'."\n".'Analogous: #00FF80, #80FF00',
-        html => qr/background:#00ff00/,
-    ),
+    '#00ff00' => test_zci(@green_args),
+    '#0f0' => test_zci(@green_args),
+    '#0f0 to rgb' => test_zci(@green_args),
+    '#0f0 to cmyk' => test_zci(@green_args),
     'inverse of the color red' => test_zci(
         'Hex: #00FFFF ~ RGBA(0, 255, 255, 1) ~ RGB(0%, 100%, 100%) ~ HSL(180, 100%, 50%) ~ CMYB(100%, 0%, 0%, 0%)'."\n".'Complementary: #FF0000'."\n".'Analogous: #0080FF, #00FF80',
         html => qr/background:#00ffff/,
