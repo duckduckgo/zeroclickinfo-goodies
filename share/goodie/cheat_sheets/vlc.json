@@ -26,7 +26,7 @@
             "key":"B",
             "val":"Audio track cycle"
           }, {  
-            "key":"[Ctrl] [↑] / [↓]",
+            "key":"[Ctrl] ([↑]/[↓])",
             "val":"Volume"
           }, {  
             "key":"[Ctrl] [O]",
@@ -44,18 +44,18 @@
           }],
         "Navigation": [{  
             "key":"[Ctrl] [T]",
-            "val":"Goto / jump to time"
+            "val":"Goto/jump to time"
           }, {  
-            "key":"[Shift] [←] / [→]",
+            "key":"[Shift] ([←]/[→])",
             "val":"Very short jump – 3 secs"
           }, {  
-            "key":"[Alt] [←] / [→]",
+            "key":"[Alt] ([←]/[→])",
             "val":"Short jump – 10 secs"
           }, {  
-            "key":"[Ctrl] [←] / [→]",
+            "key":"[Ctrl] ([←]/[→])",
             "val":"Medium jump – 1 min"
           }, {  
-            "key":"[Ctrl] [Alt] [←] / [→]",
+            "key":"[Ctrl] [Alt] ([←]/[→])",
             "val":"Long jump"
           }, {  
             "key":"E",
@@ -180,8 +180,11 @@
             "key":"F11",
             "val":"Window fullscreen"
           }, {  
-            "key":"[Alt] [F4] / [Ctrl] [Q]",
+            "key":"[Alt] [F4]",
             "val":"Quit VLC"
+          }, {  
+            "key":"[Ctrl] [Q]",
+            "val":"Quit VLC (alternative)"
           }]
     }
 }
