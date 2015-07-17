@@ -1,9 +1,8 @@
 {
     "id": "vlc_cheat_sheet",
-    "name": "VLC Keyboard Shortcuts",
-    "description": "VLC Media Player Hotkeys",
+    "name": "VLC Media Player Keyboard Shortcuts",
     "metadata": {
-        "sourceName": "Videolan",
+        "sourceName": "VideoLAN",
         "sourceUrl": "https://wiki.videolan.org/Hotkeys_table"
     },
     "section_order": [
