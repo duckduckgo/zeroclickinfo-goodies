@@ -15,7 +15,6 @@ sub build_structure
 	return {
 			id => "subnet_calculator",
 			name => "Subnet Calculator",
-			description => "Calculates IPv4 Subnets to and from CIDR notation",
 			templates => {
 				group => 'list',
 				options => {
