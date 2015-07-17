@@ -71,7 +71,7 @@ sub format_year {
         $cyear = abs($cyear);
         return "$cyear BCE";
     } else {
-        return "$cyear CE";
+        return "$cyear";
     }
 }
 handle remainder => sub {
