@@ -19,138 +19,138 @@
     ],
     "sections": {
         "Privileges": [{
-            "val": "run command as root ",
+            "val": "Run command as root ",
             "key": "sudo command"
         },  {
-            "val": "open a root shell",
+            "val": "Open a root shell",
             "key": "sudo -s"
         },  {
-            "val": "open a shell as user",
+            "val": "Open a shell as user",
             "key": "sudo -s -u user"
         },  {
-            "val": "forget sudo passwords",
+            "val": "Forget sudo passwords",
             "key": "sudo -k"
         },  {
-            "val": "visual sudo dialog (GNOME)",
+            "val": "Visual sudo dialog (GNOME)",
             "key": "gksudo command"
         },  {
-            "val": "visual sudo dialog (KDE)",
+            "val": "Visual sudo dialog (KDE)",
             "key": "kdesudo command"
         },  {
-            "val": "edit /etc/sudoers",
+            "val": "Edit /etc/sudoers",
             "key": "sudo visudo"
         },  {
-            "val": "root file manager (GNOME)",
+            "val": "Root file manager (GNOME)",
             "key": "gksudo nautilus"
         },  {
-            "val": "root file manager (KDE)",
+            "val": "Root file manager (KDE)",
             "key": "kdesudo konqueror"
         },  {
-            "val": "change your password",
+            "val": "Change your password",
             "key": "passwd"
         }],
         "Display": [{
-            "val": "restart X and return to login (GNOME)",
+            "val": "Restart X and return to login (GNOME)",
             "key": "sudo /etc/init.d/gdm restart"
         }, {
-            "val": "restart X and return to login (KDE)",
+            "val": "Restart X and return to login (KDE)",
             "key": "sudo /etc/init.d/kdm restart"
         }, {
-            "val": "display configuration",
+            "val": "Display configuration",
             "key": "(file) /etc/X11/xorg.conf"
         }, {
-            "val": "reset xorg.conf configuration",
+            "val": "Reset xorg.conf configuration",
             "key": "sudo dexconf"
         }, {
-            "val": "restart X display if frozen",
+            "val": "Restart X display if frozen",
             "key": "[Ctrl] [Alt] [Backspace]"
         }, {
-            "val": "switch to tty N",
+            "val": "Switch to TTY N",
             "key": "[Ctrl] [Alt] [Fn]"
         }, {
-            "val": "switch back to X display",
+            "val": "Switch back to X display",
             "key": "[Ctrl] [Alt] [F7]"
         }],
         "System Services": [{
-            "val": "start job service (Upstart)",
+            "val": "Start job service (Upstart)",
             "key": "start service"
         }, {
-            "val": "stop job service (Upstart)",
+            "val": "Stop job service (Upstart)",
             "key": "stop service"
         }, {
-            "val": "check if service is running (Upstart)",
+            "val": "Check if service is running (Upstart)",
             "key": "status service"
         }, {
-            "val": "start service(SysV)",
+            "val": "Start service(SysV)",
             "key": "/etc/init.d/service start"
         }, {
-            "val": "stop service (SysV)",
+            "val": "Stop service (SysV)",
             "key": "/etc/init.d/service stop"
         }, {
-            "val": "check service (SysV)",
+            "val": "Check service (SysV)",
             "key": "/etc/init.d/service status"
         }, {
-            "val": "restart service (SysV)",
+            "val": "Restart service (SysV)",
             "key": "/etc/init.d/service restart"
         },  {
-            "val": "get current runlevel",
+            "val": "Get current runlevel",
             "key": "runlevel"
         }],
         "Package Management": [{
-            "val": "refresh available updates",
+            "val": "Refresh available updates",
             "key": "apt-get update"
         }, {
-            "val": "upgrade all packages",
+            "val": "Upgrade all packages",
             "key": "apt-get upgrade"
         }, {
-            "val": "upgrade with package replacements; upgrade Ubuntu version",
+            "val": "Upgrade with package replacements; upgrade Ubuntu version",
             "key": "apt-get dist-upgrade"
         }, {
-            "val": "install pkg",
+            "val": "Install pkg",
             "key": "apt-get install pkg"
         }, {
-            "val": "uninstall pkg",
+            "val": "Uninstall pkg",
             "key": "apt-get purge pkg"
         }, {
-            "val": "remove obsolete packages",
+            "val": "Remove obsolete packages",
             "key": "apt-get autoremove"
         }, {
-            "val": "try to fix broken packages",
+            "val": "Try to fix broken packages",
             "key": "apt-get -f install"
         }, {
-            "val": "try to fix broken packages",
+            "val": "Try to fix broken packages",
             "key": "dpkg --configure -a"
         }, {
-            "val": "install file pkg.deb",
+            "val": "Install file pkg.deb",
             "key": "dpkg -i pkg.deb"
         }, {
             "val": "APT repository list",
             "key": "(file) /etc/apt/sources.list"
         }],
         "Network": [{
-            "val": "show network information",
+            "val": "Show network information",
             "key": "ifconfig"
         }, {
-            "val": "show wireless information",
+            "val": "Show wireless information",
             "key": "iwconfig"
         }, {
-            "val": "scan for wireless networks",
+            "val": "Scan for wireless networks",
             "key": "sudo iwlist scan"
         }, {
-            "val": "reset network for manual configurations",
+            "val": "Reset network for manual configurations",
             "key": "sudo /etc/init.d/networking restart"
         }, {
-            "val": "manual configuration",
+            "val": "Manual configuration",
             "key": "(file) /etc/network/interfaces"
         }, {
-            "val": "bring interface online",
+            "val": "Bring interface online",
             "key": "ifup interface"
         }, {
-            "val": "disable interface",
+            "val": "Disable interface",
             "key": "ifdown interface"
         }],
         "Special Packages": [{
-            "val": "standard Ubuntu environment",
+            "val": "Standard Ubuntu environment",
             "key": "ubuntu-desktop"
         }, {
             "val": "KDE desktop",
@@ -159,66 +159,66 @@
             "val": "XFCE desktop",
             "key": "xubuntu-desktop"
         }, {
-            "val": "core Ubuntu utilities",
+            "val": "Core Ubuntu utilities",
             "key": "ubuntu-minimal"
         }, {
-            "val": "standard Ubuntu utilities",
+            "val": "Standard Ubuntu utilities",
             "key": "ubuntu-standard"
         }, {
-            "val": "non-free, but useful",
+            "val": "Non-free, but useful",
             "key": "ubuntu-restricted-extras"
         }, {
             "val": "KDE of the above",
             "key": "kubuntu-restricted-extras"
         }, {
-            "val": "packages used to compile programs",
+            "val": "Packages used to compile programs",
             "key": "xubuntu-restricted-extras"
         }, {
-            "val": "latest generic kernel image",
+            "val": "Latest generic kernel image",
             "key": "linux-image-generic"
         }, {
-            "val": "latest build headers",
+            "val": "Latest build headers",
             "key": "linux-headers-generic"
         }],
         "Firewall": [{
-            "val": "turn on the firewall",
+            "val": "Turn on the firewall",
             "key": "ufw enable"
         }, {
-            "val": "turn off the firewall",
+            "val": "Turn off the firewall",
             "key": "ufw disable"
         }, {
-            "val": "allow all connections by default",
+            "val": "Allow all connections by default",
             "key": "ufw default allow"
         }, {
-            "val": "drop all connections by default",
+            "val": "Drop all connections by default",
             "key": "ufw default deny"
         }, {
-            "val": "current status and rules",
+            "val": "Current status and rules",
             "key": "ufw status"
         }, {
-            "val": "allow traffic on port",
+            "val": "Allow traffic on port",
             "key": "ufw allow port"
         }, {
-            "val": "block port",
+            "val": "Block port",
             "key": "ufw deny port"
         }, {
-            "val": "block ip adress",
+            "val": "Block ip adress",
             "key": "ufw deny from ip"
         }],
         "Application Names": [{
-            "val": "file manager (GNOME)",
+            "val": "File manager (GNOME)",
             "key": "nautilus"
         }, {
-            "val": "file manager (KDE)",
+            "val": "File manager (KDE)",
             "key": "dolphin"
         }, {
-            "val": "web browser (KDE)",
+            "val": "Web browser (KDE)",
             "key": "konqueror"
         }, {
-            "val": "text editor (KDE)",
+            "val": "Text editor (KDE)",
             "key": "kate"
         }, {
-            "val": "text editor (GNOME)",
+            "val": "Text editor (GNOME)",
             "key": "gedit"
         }],
         "System": [{
@@ -226,13 +226,13 @@
             "key": "Recovery"
             
         }, {
-            "val": "get Ubuntu version",
+            "val": "Get Ubuntu version",
             "key": "lsb_release -a"
         }, {
-            "val": "get kernel version",
+            "val": "Get kernel version",
             "key": "uname -r"
         }, {
-            "val": "get all kernel information",
+            "val": "Get all kernel information",
             "key": "uname -a"
         }]
     }
