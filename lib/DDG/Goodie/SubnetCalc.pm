@@ -121,7 +121,6 @@ handle query => sub {
     return to_text(\%output, \@output_keys),
 		structured_answer => {
 			id => "subnet_calculator",
-			description => "Calculates IPv4 Subnets to and from CIDR notation",
 			name => "Subnet Calculator",
 			templates => {
 				group => 'list',
