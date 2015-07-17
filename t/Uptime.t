@@ -9,12 +9,11 @@ zci answer_type => "uptime";
 zci is_cached   => 1;
 
 sub build_structure {
-    my ($percentage, $data) = @_;
+    my ($title, $subtitle, $percentage, $data, $keys) = @_;
     
     return {
         id => "uptime",
         name => "Answer",
-        description => "Implied downtimes for $percentage uptime",
         templates => {
             group => "list",
             options => {
@@ -22,28 +21,34 @@ sub build_structure {
             }
         },
         data => {
-            title => "Implied downtimes for $percentage uptime",
+            title => $title,
+            subtitle => $subtitle,
             record_data => $data,
-            record_keys => ["daily", "monthly", "yearly"]
+            record_keys => $keys
         }
     }
 }
 
+sub build_list_structure {
+    my ($percentage, $data) = @_;
+    return build_structure(
+        "Implied downtimes for $percentage uptime",
+        undef,
+        $percentage,
+        $data,
+        ["daily", "monthly", "yearly"]
+    );
+}
+
 sub build_text_structure {
     my ($percentage) = @_;
-    
-    return {
-        id => "uptime",
-        name => "Answer",
-        templates => {
-            group => "text",
-            moreAt => 0
-        },
-        data => {
-            subtitle => "Implied downtimes for $percentage uptime",
-            title => "No downtime or less than a second during a year"
-        }
-    }
+    return build_structure(
+        "No downtime or less than a second during a year",
+        "Implied downtimes for $percentage uptime",
+        $percentage,
+        undef,
+        undef
+    );
 }
 
 ddg_goodie_test(
@@ -53,7 +58,7 @@ ddg_goodie_test(
                             "Daily: 14 minutes and 24 seconds\n".
                             "Monthly: 7 hours and 18 minutes\n".
                             "Annually: 3 days and 16 hours",
-                            structured_answer => build_structure("99%",{
+                            structured_answer => build_list_structure("99%",{
                                 "daily" => "14 minutes and 24 seconds",
                                 "monthly" => "7 hours and 18 minutes",
                                 "yearly" => "3 days and 16 hours"
@@ -64,7 +69,7 @@ ddg_goodie_test(
                             "Daily: 14 minutes and 24 seconds\n".
                             "Monthly: 7 hours and 18 minutes\n".
                             "Annually: 3 days and 16 hours",
-                            structured_answer => build_structure("99%",{
+                            structured_answer => build_list_structure("99%",{
                                 "daily" => "14 minutes and 24 seconds",
                                 "monthly" => "7 hours and 18 minutes",
                                 "yearly" => "3 days and 16 hours"
@@ -75,7 +80,7 @@ ddg_goodie_test(
                             "Daily: 14 minutes and 24 seconds\n".
                             "Monthly: 7 hours and 18 minutes\n".
                             "Annually: 3 days and 16 hours",
-                            structured_answer => build_structure("99%",{
+                            structured_answer => build_list_structure("99%",{
                                 "daily" => "14 minutes and 24 seconds",
                                 "monthly" => "7 hours and 18 minutes",
                                 "yearly" => "3 days and 16 hours"
@@ -86,7 +91,7 @@ ddg_goodie_test(
                             "Daily: 8 seconds\n".
                             "Monthly: 4 minutes and 22 seconds\n".
                             "Annually: 52 minutes and 35 seconds",
-                            structured_answer => build_structure("99,99%",{
+                            structured_answer => build_list_structure("99,99%",{
                                 "daily" => "8 seconds",
                                 "monthly" => "4 minutes and 22 seconds",
                                 "yearly" => "52 minutes and 35 seconds"
@@ -95,7 +100,7 @@ ddg_goodie_test(
                             "Daily: 8 seconds\n".
                             "Monthly: 4 minutes and 22 seconds\n".
                             "Annually: 52 minutes and 35 seconds",
-                            structured_answer => build_structure("99.99%",{
+                            structured_answer => build_list_structure("99.99%",{
                                 "daily" => "8 seconds",
                                 "monthly" => "4 minutes and 22 seconds",
                                 "yearly" => "52 minutes and 35 seconds"
@@ -116,7 +121,7 @@ ddg_goodie_test(
                             "Daily: less than one second\n".
                             "Monthly: 2 seconds\n".
                             "Annually: 31 seconds",
-                            structured_answer => build_structure("99.9999%",{
+                            structured_answer => build_list_structure("99.9999%",{
                                 "daily" => "less than one second",
                                 "monthly" => "2 seconds",
                                 "yearly" => "31 seconds"
@@ -125,7 +130,7 @@ ddg_goodie_test(
                             "Daily: less than one second\n".
                             "Monthly: less than one second\n".
                             "Annually: 3 seconds",
-                            structured_answer => build_structure("99.99999%",{
+                            structured_answer => build_list_structure("99.99999%",{
                                 "daily" => "less than one second",
                                 "monthly" => "less than one second",
                                 "yearly" => "3 seconds"

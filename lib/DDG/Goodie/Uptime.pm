@@ -67,26 +67,28 @@ sub format_text {
 # Format response as structured_answer
 sub format_answer {
     my ($uptime_percentage, $downtime_year, $downtime_month, $downtime_day) = @_;
+    
+    my ($title, $subtitle, @record_data, @record_keys);
 
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
-        return structured_answer => {
-            id => "uptime",
-            name => "Answer",
-            data => {
-                title => "No downtime or less than a second during a year",
-                subtitle => "Implied downtimes for $uptime_percentage uptime"
-            },
-            templates => {
-                group => "text",
-                moreAt => 0
-            }
-        }
+        $title = "No downtime or less than a second during a year";
+        $subtitle = "Implied downtimes for $uptime_percentage uptime";
+        @record_data = undef;
+        @record_keys = undef;
+    } else {
+        $title = "Implied downtimes for $uptime_percentage uptime";
+        @record_data = {
+            daily => $downtime_day,
+            monthly => $downtime_month,
+            yearly => $downtime_year
+        };
+        @record_keys = ["daily", "monthly", "yearly"];
+        
     }
     
     return structured_answer => {
         id => "uptime",
         name => "Answer",
-        description => "Implied downtimes for $uptime_percentage uptime",
         templates => {
             group => "list",
             options => {
@@ -94,13 +96,10 @@ sub format_answer {
             }
         },
         data => {
-            title => "Implied downtimes for $uptime_percentage uptime",
-            record_data => {
-                daily => $downtime_day,
-                monthly => $downtime_month,
-                yearly => $downtime_year
-            },
-            record_keys => ["daily", "monthly", "yearly"]
+            title => $title,
+            subtitle => $subtitle,
+            record_data => @record_data,
+            record_keys => @record_keys
         }
     }
 }
