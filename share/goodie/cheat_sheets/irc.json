@@ -4,7 +4,7 @@
     "description": "Internet Relay Chat",
     "metadata": {
         "sourceName": "IRC Cheat Sheet",
-        "sourceUrl": "http://www.cheat-sheets.org/saved-copy/wikiHow_IRC_Cheat_Sheet.pdf"
+        "sourceUrl": "http://www.cheat-sheets.org/saved-copy/wikiHow_IRC_Cheat_Sheet"
     },
     "section_order": [
         "Main",
@@ -16,7 +16,7 @@
             "val": "Joining a server",
             "key": "[/server <server_name>]"
         }, {
-            "val": "move the current split window into its own tab",
+            "val": "Move the current split window into its own tab",
             "key": "[/join #channel]"
         }, {
             "val": "Setting yourself away",
