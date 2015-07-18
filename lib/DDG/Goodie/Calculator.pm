@@ -26,19 +26,19 @@ triggers query_nowhitespace => qr<
         ^
        ( what is | calculate | solve | math )?
 
-        [\( \) x X \xC3\x97 \xE2\x8B\x85 \xC2\xB7 \xE2\x88\x99 * % + \xC3\xB7 \xE2\x88\x95 / \^ \$ -]*
+        [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -]*
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
-        [\( \) x X \xC3\x97 \xE2\x8B\x85 \xC2\xB7 \xE2\x88\x99 * % + \xC3\xB7 \xE2\x88\x95 / \^ 0-9 \. , _ \$ -]*
+        [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]*
 
         (?(1) (?: -? [0-9 \. , _ ]+ |) |)
-        (?: [\( \) x X \xC3\x97 \xE2\x8B\x85 \xC2\xB7 \xE2\x88\x99 * % + \xC3\xB7 \xE2\x88\x95 / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
+        (?: [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
 
-        [\( \) x X \xC3\x97 \xE2\x8B\x85 \xC2\xB7 \xE2\x88\x99 * % + \xC3\xB7 \xE2\x88\x95 / \^ 0-9 \. , _ \$ -]* =?
+        [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]* =?
 
         $
         >xi;
@@ -49,16 +49,14 @@ my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\/|squared|divided/;    # St
 my %named_operations = (
     '\^'          => '**',
     'x'           => '*',
-    '\xC3\x97'    => '*',                                                   # Multiplication sign
-    '\xE2\x8B\x85'=> '*',                                                   # Interpunct symbol mistaken for multiplaction dot
-    '\xC2\xB7'    => '*',                                                   # Multiplication dot
-    '\xE2\x88\x99'=> '*',                                                   # Bullet operator
+    '×'           => '*',
+    '∙'           => '*',
+    '⋅'           => '*',                                                   # Can be mistaken for dot operator
     'times'       => '*',
     'minus'       => '-',
     'plus'        => '+',
     'divided\sby' => '/',
-    '\xC3\xB7'    => '/',                                                   # Obelus symbol (division symbol)
-    '\xE2\x88\x95'=> '/',                                                   # Division slash
+    '÷'           => '/',
     'ln'          => 'log',                                                 # perl log() is natural log.
     'squared'     => '**2',
 );
@@ -174,7 +172,7 @@ sub spacing {
     my ($text, $space_for_parse) = @_;
 
     $text =~ s/\s{2,}/ /g;
-    $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\xC3\x97\xE2\x8B\x85\xC2\xB7\xE2\x88\x99\*\/\xC3\xB7\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
+    $text =~ s/(\s*(?<!<)(?:[\+\-\^xX×∙⋅\*\/÷\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);
