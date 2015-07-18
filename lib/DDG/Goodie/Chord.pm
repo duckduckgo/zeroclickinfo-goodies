@@ -13,7 +13,7 @@ secondary_example_queries "Ebmaj7 uke chord";
 category "reference";
 topics "music";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Chord.pm";
-attribution github => ["GitHubAccount", "gerhuyy"];
+attribution github => ["GitHubAccount", "gerhuyy", "charles-l"];
 
 
 triggers any => "chord", "tab";
@@ -176,7 +176,6 @@ handle remainder => sub {
         my @frets = all_frets($instruments{$instr_name}, \@values);
         my $strings = 0+@{$instruments{$instr_name}};
         splice(@frets, int(@frets/$strings)*$strings);
-        my $html = "";
         my @texts;
         for(my $i = 0; $i < @frets; $i += $strings){
             my @fret = @frets[$i .. $strings + $i - 1];
