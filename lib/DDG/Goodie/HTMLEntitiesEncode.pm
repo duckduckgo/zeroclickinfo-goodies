@@ -210,11 +210,8 @@ my %accented_chars = (
 
 sub make_text {
     # Returns a text string of the form: "Encoded HTML Entity: <<entity>>"
-    my $text = "";
-    foreach my $i (0 .. scalar(@{$_[0]}) - 1) {
-        $text = $i ? ("$text" . "\n" . "Encoded HTML Entity: &$_[0][$i][1];") : ("$text" . "Encoded HTML Entity: &$_[0][$i][1];"); # No \n in the first line of the answer
-    }
-    return $text;
+    my @input = @{$_[0]};
+    return join ("\n", map {"Encoded HTML Entity: &$_->[1];"} @input);
 };
 
 sub make_html {
