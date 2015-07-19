@@ -135,6 +135,26 @@ ddg_goodie_test(
                                 "monthly" => "less than one second",
                                 "yearly" => "3 seconds"
                             })),
+                            
+    # Lower limit
+    'uptime 0%' => test_zci("Implied downtimes for 0% uptime\n".
+                            "Daily: 1 day\n".
+                            "Monthly: 30 days and 10 hours\n".
+                            "Annually: 1 year and 6 hours",
+                            structured_answer => build_list_structure("0%",{
+                                "daily" => "1 day",
+                                "monthly" => "30 days and 10 hours",
+                                "yearly" => "1 year and 6 hours"
+                            })),
+    'uptime 000%' => test_zci("Implied downtimes for 000% uptime\n".
+                            "Daily: 1 day\n".
+                            "Monthly: 30 days and 10 hours\n".
+                            "Annually: 1 year and 6 hours",
+                            structured_answer => build_list_structure("000%",{
+                                "daily" => "1 day",
+                                "monthly" => "30 days and 10 hours",
+                                "yearly" => "1 year and 6 hours"
+                            })),
 
     # Outside range
     'uptime 101%' => undef,

@@ -129,7 +129,7 @@ handle remainder => sub {
     my $plaintext = format_text($clean_query, $year, $month, $day);
     my @structured_answer = format_answer($clean_query, $year, $month, $day);
     
-	return $plaintext, @structured_answer;
+    return $plaintext, @structured_answer;
 };
 
 1;
