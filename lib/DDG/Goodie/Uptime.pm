@@ -19,7 +19,8 @@ topics "computing";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Uptime/Uptime.pm";
 attribution github => ["YouriAckx", "Youri Ackx"],
             web => ["http://ackx.net/", "Youri Ackx"],
-            twitter => ["YouriAckx", "Youri Ackx"];
+            twitter => ["YouriAckx", "Youri Ackx"],
+            github => ["https://github.com/Sloff/", "Sloff"];
 
 # Triggers
 triggers startend => "uptime", start => "uptime of";
@@ -63,21 +64,44 @@ sub format_text {
 }
 
 
-# Format response as HTML
-sub format_html {
+# Format response as structured_answer
+sub format_answer {
     my ($uptime_percentage, $downtime_year, $downtime_month, $downtime_day) = @_;
-    my $html = '<div class="zci__header">Implied downtimes for ';
-    $html .= $uptime_percentage . " uptime</div>";
+    
+    my ($title, $subtitle, @record_data, @record_keys);
 
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
-        $html .= '<div class="zci__content">No downtime or less than a second during a year</div>';
-        return $html;
+        $title = "No downtime or less than a second during a year";
+        $subtitle = "Implied downtimes for $uptime_percentage uptime";
+        @record_data = undef;
+        @record_keys = undef;
+    } else {
+        $title = "Implied downtimes for $uptime_percentage uptime";
+        @record_data = {
+            daily => $downtime_day,
+            monthly => $downtime_month,
+            yearly => $downtime_year
+        };
+        @record_keys = ["daily", "monthly", "yearly"];
+        
     }
-
-    $html .= '<div class="zci__content"> Daily: ' . $downtime_day . '<br>';
-    $html .= 'Monthly: ' . $downtime_month . '<br>';
-    $html .= 'Annually: ' . $downtime_year . '</div>';
-    return $html;
+    
+    return structured_answer => {
+        id => "uptime",
+        name => "Answer",
+        templates => {
+            group => "list",
+            options => {
+                content => "record"
+            }
+        },
+        data => {
+            title => $title,
+            subtitle => $subtitle,
+            record_data => @record_data,
+            record_keys => @record_keys
+        }
+    }
 }
 
 
@@ -102,10 +126,10 @@ handle remainder => sub {
     return unless $perl_number >= 0 && $perl_number < 100;
     
     my ($year, $month, $day) = compute_durations($perl_number / 100);
-    my $text = format_text($clean_query, $year, $month, $day);
-    my $html = format_html($clean_query, $year, $month, $day);
+    my $plaintext = format_text($clean_query, $year, $month, $day);
+    my @structured_answer = format_answer($clean_query, $year, $month, $day);
     
-	return $text, html => $html;
+    return $plaintext, @structured_answer;
 };
 
 1;
