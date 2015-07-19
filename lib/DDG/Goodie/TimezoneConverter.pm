@@ -28,7 +28,7 @@ triggers any => qw(in into to);
 zci is_cached   => 1;
 zci answer_type => 'timezone_converter';
 
-my %timezones = %DDG::GoodieRole::Dates::tz_offsets;
+my %timezones = DDG::GoodieRole::Dates::get_timezones();
 
 my $default_tz   = 'UTC';
 my $localtime_re = qr/(?:(?:my|local|my local)\s*time(?:zone)?)/i;

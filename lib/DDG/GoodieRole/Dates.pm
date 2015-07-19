@@ -60,7 +60,7 @@ my $ambiguous_dates_matches = qr#^(?<m>$date_number)$date_delim(?<d>$date_number
 my $number_suffixes = qr#(?:st|nd|rd|th)#i;
 
 # Timezones: https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
-our %tz_offsets = (
+my %tz_offsets = (
     ACDT  => '+1030',
     ACST  => '+0930',
     ACT   => '+0800',
@@ -407,6 +407,10 @@ sub parse_all_datestrings_to_date {
     }
 
     return @dates_to_return;
+}
+
+sub get_timezones {
+    return %tz_offsets;
 }
 
 sub _get_timezone {
