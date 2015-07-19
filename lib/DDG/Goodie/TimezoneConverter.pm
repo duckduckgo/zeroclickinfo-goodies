@@ -11,7 +11,8 @@ use DateTime;
 use POSIX qw(fmod);
 
 attribution github => ['GlitchMr', 'GlitchMr'],
-            github => ['https://github.com/samph',      'samph'];
+            github => ['https://github.com/samph',   'samph'],
+            github => 'cwallen';
 
 
 primary_example_queries '10:00AM MST to PST';
