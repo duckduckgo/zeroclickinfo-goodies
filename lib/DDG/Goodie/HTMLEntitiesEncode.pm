@@ -6,6 +6,7 @@ use warnings;
 use DDG::Goodie;
 use Text::Trim;
 use HTML::Entities 'decode_entities';
+use utf8;
 
 triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
 
@@ -241,7 +242,7 @@ sub make_structured_answer {
     my @input = @{$_[0]};
 
     if (scalar(@input) == 1) {
-        return structured_answer => {
+        return {
             input       => [$input[0][0]],
             operation   => "HTML Entity Encode",
             result      => html_enc("&$input[0][1];"),
@@ -264,7 +265,6 @@ sub make_structured_answer {
                 }
             },
             data => {
-                title => '',
                 record_data => \%output,
                 record_keys => \@output_keys,
             }
