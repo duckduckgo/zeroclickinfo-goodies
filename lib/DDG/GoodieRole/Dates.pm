@@ -168,7 +168,7 @@ my %tz_offsets = (
     MIST  => '+1100',
     MIT   => '-0930',
     MMT   => '+0630',
-    MSK   => '+0400',
+    MSK   => '+0300',
     MST   => '-0700',
     MUT   => '+0400',
     MVT   => '+0500',
@@ -407,6 +407,10 @@ sub parse_all_datestrings_to_date {
     }
 
     return @dates_to_return;
+}
+
+sub get_timezones {
+    return %tz_offsets;
 }
 
 sub _get_timezone {
