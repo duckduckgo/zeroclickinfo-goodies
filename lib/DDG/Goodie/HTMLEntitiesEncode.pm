@@ -5,6 +5,7 @@ use strict;
 use warnings;
 use DDG::Goodie;
 use Text::Trim;
+use HTML::Entities 'decode_entities';
 
 triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
 
@@ -236,21 +237,40 @@ sub make_text {
     return join ("\n", map {"Encoded HTML Entity: &$_->[1];"} @input);
 };
 
-sub make_html {
-    # Returns a html formatted string with css class names (no inline styles)
-    my $html = qq(<div class="zci--htmlentitiesencode">);
+sub make_structured_answer {
     my @input = @{$_[0]};
-    if (scalar(@input) == 1) { # single line answer
-        # link in the same line for single line answers
-        $html .= qq(<span class="text--secondary">Encoded HTML Entity (&$input[0][1];): </span><span class="text--primary">&<span>$input[0][1]</span>;</span>);
-    } else {       
-        foreach my $i (0 .. scalar(@input) - 1) { # multiple line answer
-            $html = $html . qq(<div><span class="text--secondary">$input[$i][0] (&$input[$i][1];): </span><span class="text--primary">&<span>$input[$i][1]</span>;</span></div>);
+
+    if (scalar(@input) == 1) {
+        return structured_answer => {
+            input       => [$input[0][0]],
+            operation   => "HTML Entity Encode",
+            result      => html_enc("&$input[0][1];"),
         }
+    } else {
+        my (%output, @output_keys);
+        foreach my $i (0 .. scalar(@input) - 1) {
+            my $rowkey = "$input[$i][0] (" . decode_entities("&$input[$i][1];").")";
+            $output{$rowkey} = "&$input[$i][1];";
+            push @output_keys, $rowkey;
+        }
+
+        return {
+            id => "htmlentitiesencode",
+            name => "HTML Entities",
+            templates => {
+                group => 'list',
+                options => {
+                    content => 'record'
+                }
+            },
+            data => {
+                title => '',
+                record_data => \%output,
+                record_keys => \@output_keys,
+            }
+        };
     }
-    $html = $html . "</div>";
-    return $html;
-};
+}
 
 handle remainder => sub {
     # General query cleanup
@@ -288,7 +308,7 @@ handle remainder => sub {
         }
         # Make final answer
         if (defined $value) {
-            return make_text($value), html => make_html($value);
+            return make_text($value), structured_answer => make_structured_answer($value);
         }
     }
 
@@ -307,7 +327,7 @@ handle remainder => sub {
         $entity =~ s/;$//g;
         # Make final answer
         my $answer = [[$_, $entity]];
-        return make_text($answer), html => make_html($answer);
+        return make_text($answer), structured_answer => make_structured_answer($answer);
     }
 
     return;
