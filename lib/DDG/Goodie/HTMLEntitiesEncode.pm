@@ -238,16 +238,17 @@ sub make_text {
 
 sub make_html {
     # Returns a html formatted string with css class names (no inline styles)
-    my $html;
-    if (scalar(@{$_[0]}) == 1) { # single line answer
-        $html = qq(<div class="zci--htmlentitiesencode"><span class="text--secondary">Encoded HTML Entity (&$_[0][0][1];): </span><span class="text--primary">&<span>$_[0][0][1]</span>;</span></div>) ; # link in the same line for single line answers
-    } else {
-        $html = qq(<div class="zci--htmlentitiesencode">);
-        foreach my $i (0 .. scalar(@{$_[0]}) - 1) { # multiple line answer
-            $html = $html . qq(<div><span class="text--secondary">$_[0][$i][0] (&$_[0][$i][1];): </span><span class="text--primary">&<span>$_[0][$i][1]</span>;</span></div>);
+    my $html = qq(<div class="zci--htmlentitiesencode">);
+    my @input = @{$_[0]};
+    if (scalar(@input) == 1) { # single line answer
+        # link in the same line for single line answers
+        $html .= qq(<span class="text--secondary">Encoded HTML Entity (&$input[0][1];): </span><span class="text--primary">&<span>$input[0][1]</span>;</span>);
+    } else {       
+        foreach my $i (0 .. scalar(@input) - 1) { # multiple line answer
+            $html = $html . qq(<div><span class="text--secondary">$input[$i][0] (&$input[$i][1];): </span><span class="text--primary">&<span>$input[$i][1]</span>;</span></div>);
         }
-        $html = $html . "</div>";
     }
+    $html = $html . "</div>";
     return $html;
 };
 
@@ -287,9 +288,7 @@ handle remainder => sub {
         }
         # Make final answer
         if (defined $value) {
-            my $text = make_text($value);
-            my $html = make_html($value);
-            return $text, html => $html;
+            return make_text($value), html => make_html($value);
         }
     }
 
@@ -308,9 +307,7 @@ handle remainder => sub {
         $entity =~ s/;$//g;
         # Make final answer
         my $answer = [[$_, $entity]];
-        my $text = make_text($answer);
-        my $html = make_html($answer);
-        return $text, html => $html;
+        return make_text($answer), html => make_html($answer);
     }
 
     return;
