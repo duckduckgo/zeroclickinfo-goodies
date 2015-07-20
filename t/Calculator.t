@@ -5,6 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 use DDG::Goodie::Calculator;    # For function subtests.
+use utf8;
 
 zci answer_type => 'calc';
 zci is_cached   => 1;
