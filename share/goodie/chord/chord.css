@@ -1,26 +1,26 @@
-.zci__body .chord{
+.zci--chord .chord{
     position: relative;
     background-color: #ddd;
     margin: 3px 20px 2px;
     padding: 0;
     float: left;
 }
-.zci__body .topfret{
+.zci--chord .topfret{
     height: 5px;
     background-color: #888;
 }
-.zci__body .string{
+.zci--chord .string{
     float: left;
     margin: 0 7px;
     background-color: #888;
     width: 2px;
 }
-.zci__body .fret{
+.zci--chord .fret{
     margin: 23px 0 0;
     background-color: #888;
     height: 2px;
 }
-.zci__body .zeropoint{
+.zci--chord .zeropoint{
     background-color: #ddd;
     width: 6px;
     height: 6px;
@@ -31,7 +31,7 @@
     float: left;
 }
 
-.zci__body .point{
+.zci--chord .point{
     background-color: #222;
     width: 10px;
     height: 10px;
