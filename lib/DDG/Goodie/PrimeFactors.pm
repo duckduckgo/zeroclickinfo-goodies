@@ -29,7 +29,8 @@ description 'Returns the prime factors of the entered number';
 name 'PrimeFactors';
 topics 'math';
 category 'calculations';
-attribution github => [ 'austinheimark', 'Austin Heimark' ];
+attribution github => [ 'austinheimark', 'Austin Heimark' ],
+                    ['https://github.com/Sloff', 'Sloff'];
 
 # This adds exponents to the prime numbers.
 # It outputs both text and HTML:
@@ -39,7 +40,7 @@ sub format_exp {
     my $factor = shift;
 
     if($factor->[1] > 1) {
-	return "$factor->[0]^$factor->[1]", "$factor->[0]<sup>$factor->[1]</sup>";
+        return "$factor->[0]^$factor->[1]", "$factor->[0]<sup>$factor->[1]</sup>";
     }
     return $factor->[0], $factor->[0];
 }
@@ -52,10 +53,10 @@ sub format_prime {
     my @html_result = ();
 
     foreach my $factor (@factors) {
-	my ($text, $html) = format_exp($factor);
+        my ($text, $html) = format_exp($factor);
 
-	push(@text_result, $text);
-	push(@html_result, $html);
+        push(@text_result, $text);
+        push(@html_result, $html);
     }
 
     return join(" × ", @text_result), join(" × ", @html_result);
@@ -81,12 +82,12 @@ handle remainder => sub {
 
     # Provide only one second for computing the factors.
     eval {
-	alarm(1);
-	@factors = factor_exp($_);
+        alarm(1);
+        @factors = factor_exp($_);
     };
     # Exit if we didn't find anything.
     if(@factors == 0) {
-	return;
+        return;
     }
 
     my $formatted = commify($_);
@@ -94,12 +95,12 @@ handle remainder => sub {
     # If it has only one factor then it is a prime. Except if it's 0 or 1.
     my $result;
     if(is_prime($_)) {
-	return "$formatted is a prime number.", html => "$formatted is a prime number.";
+        return "$formatted is a prime number.", html => "$formatted is a prime number.";
     } else {
-	my ($text, $html) = format_prime(@factors);
-	my $intro = "The prime factorization of $formatted is";
+        my ($text, $html) = format_prime(@factors);
+        my $intro = "The prime factorization of $formatted is";
 
-	return "$intro $text", html => "$intro $html";
+        return "$intro $text", html => "$intro $html";
     }
 };
 
