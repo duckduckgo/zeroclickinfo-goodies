@@ -22,128 +22,128 @@
         "Accessibility"
     ],
     "sections": {
-    	"General shortcuts": [{
-	        "val": "File menu",
-	        "key": "[Alt] [f]"
-	    }, {
-	        "val": "File menu (alternative)",
-	        "key": "[F10], [f]"
-	    }, {
-	        "val": "Edit menu",
-	        "key": "[Alt] [e]"
-	    }, {
-	        "val": "View menu",
-	        "key": "[Alt] [v]"
-	    }, {
-	        "val": "Undo",
-	        "key": "[Ctrl] [z]"
-	    }, {
-	        "val": "Undo (alternative)",
-	        "key": "[Alt] [Backspace]"
-	    }, {
-	        "val": "Redo",
-	        "key": "[Ctrl] [y]"
-	    }, {
-	        "val": "Redo (alternative)",
-	        "key": "[Shift] [Alt] [Backspace]"
-	    }, {
-	        "val": "Cut",
-	        "key": "[Ctrl] [x]"
-	    }, {
-	        "val": "Cut (alternative)",
-	        "key": "[Shift] [Del]"
-	    }, {
-	        "val": "Copy",
-	        "key": "[Ctrl] [c]"
-	    }, {
-	        "val": "Copy (alternative)",
-	        "key": "[Ctrl] [Ins]"
-	    }, {
-	        "val": "Paste",
-	        "key": "[Ctrl] [v]"
-	    }, {
-	        "val": "Paste (alternative)",
-	        "key": "[Shift] [Ins]"
-	    }, {
-	        "val": "Paste Special",
-	        "key": "[Ctrl] [Alt] [v]"
-	    }, {
-	        "val": "Select All",
-	        "key": "[Ctrl] [a]"
-	    }, {
-	        "val": "Cycle through installed keyboard languages / input methods",
-	        "key": "[Shift] [Alt]"
-	    }, {
-	        "val": "Cycle through installed keyboard languages / input methods (alternative)",
-	        "key": "[Win] [Space]"
-	    }],
+        "General shortcuts": [{
+            "val": "File menu",
+            "key": "[Alt] [f]"
+        }, {
+            "val": "File menu (alternative)",
+            "key": "[F10], [f]"
+        }, {
+            "val": "Edit menu",
+            "key": "[Alt] [e]"
+        }, {
+            "val": "View menu",
+            "key": "[Alt] [v]"
+        }, {
+            "val": "Undo",
+            "key": "[Ctrl] [z]"
+        }, {
+            "val": "Undo (alternative)",
+            "key": "[Alt] [Backspace]"
+        }, {
+            "val": "Redo",
+            "key": "[Ctrl] [y]"
+        }, {
+            "val": "Redo (alternative)",
+            "key": "[Shift] [Alt] [Backspace]"
+        }, {
+            "val": "Cut",
+            "key": "[Ctrl] [x]"
+        }, {
+            "val": "Cut (alternative)",
+            "key": "[Shift] [Del]"
+        }, {
+            "val": "Copy",
+            "key": "[Ctrl] [c]"
+        }, {
+            "val": "Copy (alternative)",
+            "key": "[Ctrl] [Ins]"
+        }, {
+            "val": "Paste",
+            "key": "[Ctrl] [v]"
+        }, {
+            "val": "Paste (alternative)",
+            "key": "[Shift] [Ins]"
+        }, {
+            "val": "Paste Special",
+            "key": "[Ctrl] [Alt] [v]"
+        }, {
+            "val": "Select All",
+            "key": "[Ctrl] [a]"
+        }, {
+            "val": "Cycle through installed keyboard languages / input methods",
+            "key": "[Shift] [Alt]"
+        }, {
+            "val": "Cycle through installed keyboard languages / input methods (alternative)",
+            "key": "[Win] [Space]"
+        }],
         "Navigation": [{
-	        "val": "New browser window",
-	        "key": "[Ctrl] [n]"
-	    }, {
-	        "val": "New folder",
-	        "key": "[Ctrl] [Shift] [n]"
-	    }, {
-	        "val": "Applications menu",
-	        "key": "Win"
-	    }, {
-	        "val": "Applications menu (alternative)",
-	        "key": "[Ctrl] [Esc]"
-	    }, {
-	        "val": "Lock desktop",
-	        "key": "[Win] [l]"
-	    }, {
-	        "val": "Show desktop",
-	        "key": "[Win] [d]"
-	    }, {
-	        "val": "Show desktop (alternative)",
-	        "key": "[Win] [m]"
-	    }, {
-	        "val": "Switch active user",
-	        "key": "[Win] [l]"
-	    }, {
-	        "val": "Task manager",
-	        "key": "[Ctrl] [Shift] [Esc]"
-	    }, {
-	        "val": "Task manager (alternative)",
-	        "key": "[Ctrl] [Alt] [Del]"
-	    }, {
-	        "val": "Rename object",
-	        "key": "F2"
-	    }, {
-	        "val": "Open file or program",
-	        "key": "Enter"
-	    }, {
-	        "val": "Open file or program (alternative)",
-	        "key": "[Shift] [Enter]"
-	    }, {
-	        "val": "Switch window (next)",
-	        "key": "[Alt] [Tab]"
-	    }, {
-	        "val": "Switch window (previous)",
-	        "key": "[Shift] [Alt] [Tab]"
-	    }, {
-	        "val": "Switch window without dialog (next)",
-	        "key": "[Alt] [Esc]"
-	    }, {
-	        "val": "Switch window without dialog (previous)",
-	        "key": "[Shift] [Alt] [Esc]"
-	    }, {
-	        "val": "Run application",
-	        "key": "[Win], [<Executable name>], [Enter]"
-	    }, {
-	        "val": "Run application (alternative)",
-	        "key": "[Win] [r], [<Executable name>], [Enter]"
-	    }, {
-	        "val": "Search",
-	        "key": "[Win], [<Name>]"
-	    }, {
-	        "val": "Search (alternative)",
-	        "key": "[Win] [f]"
-	    }, {
-	        "val": "Search (alternative)",
-	        "key": "F3"
-	    }],
+            "val": "New browser window",
+            "key": "[Ctrl] [n]"
+        }, {
+            "val": "New folder",
+            "key": "[Ctrl] [Shift] [n]"
+        }, {
+            "val": "Applications menu",
+            "key": "Win"
+        }, {
+            "val": "Applications menu (alternative)",
+            "key": "[Ctrl] [Esc]"
+        }, {
+            "val": "Lock desktop",
+            "key": "[Win] [l]"
+        }, {
+            "val": "Show desktop",
+            "key": "[Win] [d]"
+        }, {
+            "val": "Show desktop (alternative)",
+            "key": "[Win] [m]"
+        }, {
+            "val": "Switch active user",
+            "key": "[Win] [l]"
+        }, {
+            "val": "Task manager",
+            "key": "[Ctrl] [Shift] [Esc]"
+        }, {
+            "val": "Task manager (alternative)",
+            "key": "[Ctrl] [Alt] [Del]"
+        }, {
+            "val": "Rename object",
+            "key": "F2"
+        }, {
+            "val": "Open file or program",
+            "key": "Enter"
+        }, {
+            "val": "Open file or program (alternative)",
+            "key": "[Shift] [Enter]"
+        }, {
+            "val": "Switch window (next)",
+            "key": "[Alt] [Tab]"
+        }, {
+            "val": "Switch window (previous)",
+            "key": "[Shift] [Alt] [Tab]"
+        }, {
+            "val": "Switch window without dialog (next)",
+            "key": "[Alt] [Esc]"
+        }, {
+            "val": "Switch window without dialog (previous)",
+            "key": "[Shift] [Alt] [Esc]"
+        }, {
+            "val": "Run application",
+            "key": "[Win], [<Executable name>], [Enter]"
+        }, {
+            "val": "Run application (alternative)",
+            "key": "[Win] [r], [<Executable name>], [Enter]"
+        }, {
+            "val": "Search",
+            "key": "[Win], [<Name>]"
+        }, {
+            "val": "Search (alternative)",
+            "key": "[Win] [f]"
+        }, {
+            "val": "Search (alternative)",
+            "key": "F3"
+        }],
         "Power management": [{
             "val": "Place computer into sleep/standby mode",
             "key": "Sleep"
