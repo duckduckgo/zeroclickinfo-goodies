@@ -1,17 +1,17 @@
 <div class='chord' style='width: {{width}}px; height: {{height}}px;'>
-<div class='topfret' style='width: {{width}}px'></div>
-{{#loop num_strings}}
-<div class='string' style='height: {{string_height}}px'></div>
-{{/loop}}
-{{#loop num_frets}}
-<div class='fret' style='width: {{width}}px'></div>
-{{/loop}}
-{{#each points}}
-{{#if this}}
-<div class='point' style='top: -{{this}}px'></div>
-{{else}}
-<div class='zeropoint' style='top: -{{../../string_height}}px'></div>
-{{/if}}
-{{/each}}
+    <div class='topfret' style='width: {{width}}px'></div>
+    {{#loop num_strings}}
+        <div class='string' style='height: {{string_height}}px'></div>
+    {{/loop}}
+    {{#loop num_frets}}
+        <div class='fret' style='width: {{width}}px'></div>
+    {{/loop}}
+    {{#each points}}
+        {{#if this}}
+            <div class='point' style='top: -{{this}}px'></div>
+        {{else}}
+            <div class='zeropoint' style='top: -{{../../string_height}}px'></div>
+        {{/if}}
+    {{/each}}
 </div>
 <p>{{input}}</p>
