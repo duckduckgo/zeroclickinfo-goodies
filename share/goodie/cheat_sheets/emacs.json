@@ -84,7 +84,7 @@
             "key": "M-<"
         }, {
             "val": "Move to the end of a buffer",
-            "key": "M-<"
+            "key": "M->"
         }],
         "Editing": [{
             "val": "Delete a character (forward)",
