@@ -1,7 +1,6 @@
 {
-    "id": "firefox_keyboard_cheat_sheet", 
+    "id": "firefox_cheat_sheet", 
     "name": "firefox Keyboard Shortcuts",
-    "description": "List of useful keyboard shortcuts for firefox", 
     "metadata": {
         "sourceName": "Firefox Help",
         "sourceUrl": "https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly"
@@ -134,7 +133,7 @@
             "key": "[Ctrl]  [Shift]  [T]"
         }, {
             "val": "Select Tab 1 to 8  ",
-            "key": "[Alt]  [1to8] "
+            "key": "[Alt]  [1..8] "
         }, {
             "val": "Select Last Tab  ",
             "key": "[Alt]  [9] "
