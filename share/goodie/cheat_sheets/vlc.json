@@ -74,7 +74,7 @@
             "key":"[Ctrl] [F]",
             "val":"Open folder (browse folder menu)"
           }, {  
-            "key":"[Ctrl] [R] / [S]",
+            "key":"[Ctrl] ([R]/[S])",
             "val":"Advanced open file"
           }, {  
             "key":"[Ctrl] [O]",
@@ -104,11 +104,17 @@
             "key":"C",
             "val":"Crop screen"
           }, {  
-            "key":"[G] / [H]",
-            "val":"Increase or decrease subtitle delay"
+            "key":"[G]",
+            "val":"Increase subtitle delay"
           }, {  
-            "key":"[J] / [K]",
-            "val":"Increase or decrease audio delay"
+            "key":"[H]",
+            "val":"Decrease subtitle delay"
+          }, {  
+            "key":"[J]",
+            "val":"Increase audio delay"
+          }, {  
+            "key":"[K]",
+            "val":"Decrease audio delay"
           }, {  
             "key":"Z",
             "val":"Change zoom mode"
@@ -147,7 +153,7 @@
             "key":"[Ctrl] [Y]",
             "val":"Save playlist"
           }, {  
-            "key":"[Ctrl] [I] / [J]",
+            "key":"[Ctrl] ([I]/[J])",
             "val":"Media information"
           }, {  
             "key":"[Alt] [A]",
