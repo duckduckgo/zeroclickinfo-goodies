@@ -293,6 +293,9 @@
             "key": "~"
         }],
         "Search and replace": [{
+            "val": "search for word under cursor",
+            "key": "*"
+        }, {
             "val": "search for pattern",
             "key": "/pattern"
         }, {
