@@ -30,7 +30,7 @@ name 'PrimeFactors';
 topics 'math';
 category 'calculations';
 attribution github => [ 'austinheimark', 'Austin Heimark' ],
-                    ['https://github.com/Sloff', 'Sloff'];
+            github => ['https://github.com/Sloff', 'Sloff'];
 
 sub convert_to_superscripts (_) {
     my $string = $_[0];

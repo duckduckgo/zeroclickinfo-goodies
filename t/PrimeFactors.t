@@ -42,7 +42,7 @@ ddg_goodie_test(
                                     build_answer('The prime factorization of 128', '2⁷')),
     '42 prime factorize' => test_zci('The prime factorization of 42 is 2 × 3 × 7',
                                     build_answer('The prime factorization of 42', '2 × 3 × 7')),
-    'optimus prime 45' => undef,
+    'optimus prime 45' => undef
 );
 
 done_testing;
