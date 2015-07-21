@@ -32,15 +32,22 @@ category 'calculations';
 attribution github => [ 'austinheimark', 'Austin Heimark' ],
                     ['https://github.com/Sloff', 'Sloff'];
 
+sub convert_to_superscripts (_) {
+    my $string = $_[0];
+    $string =~ tr[+−=()0123456789]
+                [⁺⁻⁼⁽⁾⁰¹²³⁴⁵⁶⁷⁸⁹ⵯ];
+    return $string;
+}
+
 # This adds exponents to the prime numbers.
 # It outputs both text and HTML:
 # - 2^2
-# - 2<sup>2</sup>
+# - 2²
 sub format_exp {
     my $factor = shift;
 
     if($factor->[1] > 1) {
-        return "$factor->[0]^$factor->[1]", "$factor->[0]<sup>$factor->[1]</sup>";
+        return "$factor->[0]^$factor->[1]", "$factor->[0]".convert_to_superscripts($factor->[1]);
     }
     return $factor->[0], $factor->[0];
 }
@@ -72,6 +79,24 @@ sub commify {
     return $_;
 }
 
+# Structured answer that will be returned
+sub format_answer {
+    my ($plaintext, $title, $subtitle) = @_;
+    
+    return $plaintext,
+    structured_answer => {
+        id => 'prime_factors',
+        name => 'Answer',
+        data => {
+            title => $title || $plaintext,
+            subtitle => $subtitle
+        },
+        templates => {
+            group => 'text'
+        }
+    };
+}
+
 handle remainder => sub {
     # Exit if it's not a digit.
     # TODO: We should accept different number formats.
@@ -93,15 +118,17 @@ handle remainder => sub {
     my $formatted = commify($_);
 
     # If it has only one factor then it is a prime. Except if it's 0 or 1.
-    my $result;
+    my @result;
     if(is_prime($_)) {
-        return "$formatted is a prime number.", html => "$formatted is a prime number.";
+        @result = format_answer("$formatted is a prime number");
     } else {
         my ($text, $html) = format_prime(@factors);
-        my $intro = "The prime factorization of $formatted is";
+        my $intro = "The prime factorization of $formatted";
 
-        return "$intro $text", html => "$intro $html";
+        @result = format_answer($intro." is ".$text, $html, $intro);
     }
+    
+    return @result;
 };
 
 1;
