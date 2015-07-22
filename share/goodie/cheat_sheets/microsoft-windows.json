@@ -1,7 +1,7 @@
 {
-    "id": "windows_shortcuts_cheat_sheet",
-    "name": "Windows Shortcuts",
-    "description": "",
+    "id": "microsoft_windows_cheat_sheet",
+    "name": "Microsoft Windows",
+    "description": "Shortcuts for Microsoft Windows XP, Vista, 7 and 8",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts"
@@ -273,7 +273,7 @@
         }],
         "Browsers": [{
             "val": "Go to Address Bar",
-            "key": "[Alt] [d]/[c]"
+            "key": "[Alt] ([d]/[c])"
         }, {
             "val": "Go to Address Bar (alternative)",
             "key": "F6"
@@ -423,7 +423,7 @@
             "key": "[Win] [Shift] [↑]"
         }, {
             "val": "Minimize all",
-            "key": "[Win] [m]/[d]"
+            "key": "[Win] ([m]/[d])"
         }, {
             "val": "Minimize all non focused windows (Windows 7 and Windows 8.1)",
             "key": "[Win] [Home]"
@@ -438,10 +438,10 @@
             "key": "[Win] [Tab]"
         }, {
             "val": "Move window to left/right/up/down workspace (Windows 7 and Windows 8)",
-            "key": "[Win] [←]/[→]"
+            "key": "[Win] ([←]/[→])"
         }, {
             "val": "Move window between multiple monitors (Windows 7 and Windows 8)",
-            "key": "[Win] [Shift] [←]/[→]"
+            "key": "[Win] [Shift] ([←]/[→])"
         }, {
             "val": "Quit application of current window",
             "key": "[Alt] [F4]"
