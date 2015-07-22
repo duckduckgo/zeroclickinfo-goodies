@@ -1,0 +1,582 @@
+{
+    "id": "microsoft_windows_cheat_sheet",
+    "name": "Microsoft Windows",
+    "description": "Shortcuts for Microsoft Windows XP, Vista, 7 and 8",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts"
+    },
+    "section_order": [
+        "General shortcuts",
+        "Navigation",
+        "Power management",
+        "Screenshots",
+        "Text editing",
+        "Text formatting",
+        "Browsers",
+        "Web browsers",
+        "Tab management",
+        "Window management",
+        "User interface navigation",
+        "Command line shortcuts",
+        "Accessibility"
+    ],
+    "sections": {
+        "General shortcuts": [{
+            "val": "File menu",
+            "key": "[Alt] [f]"
+        }, {
+            "val": "File menu (alternative)",
+            "key": "[F10], [f]"
+        }, {
+            "val": "Edit menu",
+            "key": "[Alt] [e]"
+        }, {
+            "val": "View menu",
+            "key": "[Alt] [v]"
+        }, {
+            "val": "Undo",
+            "key": "[Ctrl] [z]"
+        }, {
+            "val": "Undo (alternative)",
+            "key": "[Alt] [Backspace]"
+        }, {
+            "val": "Redo",
+            "key": "[Ctrl] [y]"
+        }, {
+            "val": "Redo (alternative)",
+            "key": "[Shift] [Alt] [Backspace]"
+        }, {
+            "val": "Cut",
+            "key": "[Ctrl] [x]"
+        }, {
+            "val": "Cut (alternative)",
+            "key": "[Shift] [Del]"
+        }, {
+            "val": "Copy",
+            "key": "[Ctrl] [c]"
+        }, {
+            "val": "Copy (alternative)",
+            "key": "[Ctrl] [Ins]"
+        }, {
+            "val": "Paste",
+            "key": "[Ctrl] [v]"
+        }, {
+            "val": "Paste (alternative)",
+            "key": "[Shift] [Ins]"
+        }, {
+            "val": "Paste Special",
+            "key": "[Ctrl] [Alt] [v]"
+        }, {
+            "val": "Select All",
+            "key": "[Ctrl] [a]"
+        }, {
+            "val": "Cycle through installed keyboard languages / input methods",
+            "key": "[Shift] [Alt]"
+        }, {
+            "val": "Cycle through installed keyboard languages / input methods (alternative)",
+            "key": "[Win] [Space]"
+        }],
+        "Navigation": [{
+            "val": "New browser window",
+            "key": "[Ctrl] [n]"
+        }, {
+            "val": "New folder",
+            "key": "[Ctrl] [Shift] [n]"
+        }, {
+            "val": "Applications menu",
+            "key": "Win"
+        }, {
+            "val": "Applications menu (alternative)",
+            "key": "[Ctrl] [Esc]"
+        }, {
+            "val": "Lock desktop",
+            "key": "[Win] [l]"
+        }, {
+            "val": "Show desktop",
+            "key": "[Win] [d]"
+        }, {
+            "val": "Show desktop (alternative)",
+            "key": "[Win] [m]"
+        }, {
+            "val": "Switch active user",
+            "key": "[Win] [l]"
+        }, {
+            "val": "Task manager",
+            "key": "[Ctrl] [Shift] [Esc]"
+        }, {
+            "val": "Task manager (alternative)",
+            "key": "[Ctrl] [Alt] [Del]"
+        }, {
+            "val": "Rename object",
+            "key": "F2"
+        }, {
+            "val": "Open file or program",
+            "key": "Enter"
+        }, {
+            "val": "Open file or program (alternative)",
+            "key": "[Shift] [Enter]"
+        }, {
+            "val": "Switch window (next)",
+            "key": "[Alt] [Tab]"
+        }, {
+            "val": "Switch window (previous)",
+            "key": "[Shift] [Alt] [Tab]"
+        }, {
+            "val": "Switch window without dialog (next)",
+            "key": "[Alt] [Esc]"
+        }, {
+            "val": "Switch window without dialog (previous)",
+            "key": "[Shift] [Alt] [Esc]"
+        }, {
+            "val": "Run application",
+            "key": "[Win], [<Executable name>], [Enter]"
+        }, {
+            "val": "Run application (alternative)",
+            "key": "[Win] [r], [<Executable name>], [Enter]"
+        }, {
+            "val": "Search",
+            "key": "[Win], [<Name>]"
+        }, {
+            "val": "Search (alternative)",
+            "key": "[Win] [f]"
+        }, {
+            "val": "Search (alternative)",
+            "key": "F3"
+        }],
+        "Power management": [{
+            "val": "Place computer into sleep/standby mode",
+            "key": "Sleep"
+        }, {
+            "val": "Bring up power/sleep dialog box (while on Desktop only)",
+            "key": "[Alt] [F4]"
+        }],
+        "Screenshots": [{
+            "val": "Save screenshot of entire screen as file",
+            "key": "[Win] [Print Screen]"
+        }, {
+            "val": "Save screenshot of entire screen as file (alternative)",
+            "key": "Print Screen"
+        }, {
+            "val": "Copy screenshot of entire screen to clipboard",
+            "key": "Print Screen"
+        }, {
+            "val": "Copy screenshot of entire screen to clipboard (alternative)",
+            "key": "[Ctrl] [Print Screen]"
+        }, {
+            "val": "Copy screenshot of window to clipboard",
+            "key": "[Alt] [Print Screen]"
+        }],
+        "Text editing": [{
+            "val": "Delete char to the right of cursor",
+            "key": "Del"
+        }, {
+            "val": "Delete char to the right of cursor (alternative)",
+            "key": "[Fn] [Backspace]"
+        }, {
+            "val": "Delete word to the right of cursor",
+            "key": "[Ctrl] [Del]"
+        }, {
+            "val": "Delete word to the left of cursor",
+            "key": "[Ctrl] [Backspace]"
+        }, {
+            "val": "Go to start of line",
+            "key": "Home"
+        }, {
+            "val": "Go to start of line (alternative)",
+            "key": "[Fn] [←]"
+        }, {
+            "val": "Go to end of line",
+            "key": "End"
+        }, {
+            "val": "Go to end of line (alternative)",
+            "key": "[Fn] [→]"
+        }, {
+            "val": "Go to start of document",
+            "key": "[Ctrl] [Home]"
+        }, {
+            "val": "Go to end of document",
+            "key": "[Ctrl] [End]"
+        }, {
+            "val": "Go to previous word",
+            "key": "[Ctrl] [←]"
+        }, {
+            "val": "Go to next word",
+            "key": "[Ctrl] [→]"
+        }, {
+            "val": "Go to previous line",
+            "key": "↑"
+        }, {
+            "val": "Go to next line",
+            "key": "↓"
+        }, {
+            "val": "Go to previous line break (paragraph)",
+            "key": "[Ctrl] [↑]"
+        }, {
+            "val": "Go to next line break",
+            "key": "[Ctrl] [↓]"
+        }, {
+            "val": "Move the cursor down the length of the viewport",
+            "key": "Page Down"
+        }, {
+            "val": "Move the cursor up the length of the viewport",
+            "key": "Page Up"
+        }, {
+            "val": "Find",
+            "key": "[Ctrl] [f]"
+        }, {
+            "val": "Go to next search result",
+            "key": "F3"
+        }, {
+            "val": "Go to previous search result",
+            "key": "[Shift] [F3]"
+        }, {
+            "val": "Search and replace",
+            "key": "[Ctrl] [h]"
+        }],
+        "Text formatting": [{
+            "val": "Bold",
+            "key": "[Ctrl] [b]"
+        }, {
+            "val": "Underline",
+            "key": "[Ctrl] [u]"
+        }, {
+            "val": "Italic",
+            "key": "[Ctrl] [i]"
+        }, {
+            "val": "Uppercase / Lowercase",
+            "key": "[Shift] [F3]"
+        }, {
+            "val": "Superscript",
+            "key": "[Ctrl] [Shift] [=]"
+        }, {
+            "val": "Subscript",
+            "key": "[Ctrl] [=]"
+        }, {
+            "val": "Make selected text larger",
+            "key": "[Ctrl] [Shift] [>]"
+        }, {
+            "val": "Make selected text larger (alternative)",
+            "key": "[Ctrl] [\\[]"
+        }, {
+            "val": "Make selected text smaller",
+            "key": "[Ctrl] [Shift] [<]"
+        }, {
+            "val": "Make selected text smaller (alternative)",
+            "key": "[Ctrl] [\\]]"
+        }, {
+            "val": "Make selected text bulleted or Numbered Items",
+            "key": "[Ctrl] [Shift] [l]"
+        }, {
+            "val": "Insert Linebreak",
+            "key": "[Shift] [Enter]"
+        }],
+        "Browsers": [{
+            "val": "Go to Address Bar",
+            "key": "[Alt] ([d]/[c])"
+        }, {
+            "val": "Go to Address Bar (alternative)",
+            "key": "F6"
+        }, {
+            "val": "Go to the previous location in history",
+            "key": "[Alt] [←]"
+        }, {
+            "val": "Go to the previous location in history (alternative)",
+            "key": "Backspace"
+        }, {
+            "val": "Go to the next location in history",
+            "key": "[Alt] [→]"
+        }, {
+            "val": "Go to the next location in history (web browser only)",
+            "key": "[Shift] [Backspace]"
+        }, {
+            "val": "Go up one level in the navigation hierarchy (Vista, 7 or 8 only)",
+            "key": "[Alt] [↑]"
+        }, {
+            "val": "Go up one level in the navigation hierarchy (Windows Explorer)",
+            "key": "Backspace"
+        }, {
+            "val": "Go to the starting page defined by the user or application",
+            "key": "[Alt] [Home]"
+        }],
+        "Web browsers": [{
+            "val": "Bookmarks menu",
+            "key": "[Ctrl] [b]"
+        }, {
+            "val": "URL Shortcuts (Adds www. + .com)",
+            "key": "[Ctrl] [Enter]"
+        }, {
+            "val": "URL Shortcuts (Adds www. + .org)",
+            "key": "[Ctrl] [Shift] [Enter]"
+        }, {
+            "val": "URL Shortcuts (Adds www. + .net)",
+            "key": "[Shift] [Enter]"
+        }, {
+            "val": "Add bookmark for current page",
+            "key": "[Ctrl] [d]"
+        }, {
+            "val": "Manage bookmarks",
+            "key": "[Ctrl] [b]"
+        }, {
+            "val": "Focus and select Web search bar",
+            "key": "[Ctrl] [e]"
+        }, {
+            "val": "Focus and select address bar",
+            "key": "[Ctrl] [l]"
+        }, {
+            "val": "Focus and select address bar (alternative)",
+            "key": "F6"
+        }, {
+            "val": "Focus and select address bar (alternative)",
+            "key": "[Alt] [d]"
+        }, {
+            "val": "Refresh a webpage",
+            "key": "F5"
+        }, {
+            "val": "Refresh a webpage (alternative)",
+            "key": "[Ctrl] [r]"
+        }, {
+            "val": "Refresh a webpage ignoring cache",
+            "key": "[Ctrl] [Shift] [F5]"
+        }, {
+            "val": "Refresh a webpage ignoring cache (alternative)",
+            "key": "[Ctrl] [Shift] [r]"
+        }, {
+            "val": "Open a new window",
+            "key": "[Ctrl] [n]"
+        }, {
+            "val": "Zoom in",
+            "key": "[Ctrl] [+]"
+        }, {
+            "val": "Zoom out",
+            "key": "[Ctrl] [-]"
+        }, {
+            "val": "Zoom 100%",
+            "key": "[Ctrl] [0]"
+        }],
+        "Tab management": [{
+            "val": "New tab",
+            "key": "[Ctrl] [t]"
+        }, {
+            "val": "Close tab",
+            "key": "[Ctrl] [w]"
+        }, {
+            "val": "Go to next tab",
+            "key": "[Ctrl] [Tab]"
+        }, {
+            "val": "Go to previous tab",
+            "key": "[Ctrl] [Shift] [Tab]"
+        }, {
+            "val": "Go to tab-n",
+            "key": "[Ctrl] [<n>]"
+        }, {
+            "val": "Open a previously closed tab",
+            "key": "[Ctrl] [Shift] [t]"
+        }, {
+            "val": "Open a previously closed window",
+            "key": "[Ctrl] [Shift] [n]"
+        }],
+        "Window management": [{
+            "val": "Force window mode",
+            "key": "[Alt] [Enter]"
+        }, {
+            "val": "Pop up window menu",
+            "key": "[Alt] [Space]"
+        }, {
+            "val": "Close the focused window",
+            "key": "[Alt] [F4]"
+        }, {
+            "val": "Close the focused window (alternative)",
+            "key": "[Ctrl] [F4]"
+        }, {
+            "val": "Close the focused window (alternative)",
+            "key": "[Ctrl] [w]"
+        }, {
+            "val": "Close the focused window (alternative)",
+            "key": "[Alt] [Space], [c]"
+        }, {
+            "val": "Restore the focused window to its previous size",
+            "key": "[Alt] [Space], [r]"
+        }, {
+            "val": "Move the focused window",
+            "key": "[Alt] [Space], [m], [Arrow Keys], [Enter]"
+        }, {
+            "val": "Resize the focused window",
+            "key": "[Alt] [Space], [s], [Arrow Keys], [Enter]"
+        }, {
+            "val": "Lower the focused window",
+            "key": "[Alt] [Esc]"
+        }, {
+            "val": "Minimize the focused window",
+            "key": "[Alt] [Space], [n]"
+        }, {
+            "val": "Minimize the focused window (Windows 7 and Vista Home Premium)",
+            "key": "[Win] [↓]"
+        }, {
+            "val": "Maximize the focused window",
+            "key": "[Alt] [Space], [x]"
+        }, {
+            "val": "Maximize the focused window (Windows 7 and Windows 8)",
+            "key": "[Win] [↑]"
+        }, {
+            "val": "Maximize vertically (Windows 7 and Windows 8)",
+            "key": "[Win] [Shift] [↑]"
+        }, {
+            "val": "Minimize all",
+            "key": "[Win] ([m]/[d])"
+        }, {
+            "val": "Minimize all non focused windows (Windows 7 and Windows 8.1)",
+            "key": "[Win] [Home]"
+        }, {
+            "val": "Undo minimize all",
+            "key": "[Shift] [Win] [m]"
+        }, {
+            "val": "Switch fullscreen/normal size",
+            "key": "F11"
+        }, {
+            "val": "Show all open windows (Windows 7)",
+            "key": "[Win] [Tab]"
+        }, {
+            "val": "Move window to left/right/up/down workspace (Windows 7 and Windows 8)",
+            "key": "[Win] ([←]/[→])"
+        }, {
+            "val": "Move window between multiple monitors (Windows 7 and Windows 8)",
+            "key": "[Win] [Shift] ([←]/[→])"
+        }, {
+            "val": "Quit application of current window",
+            "key": "[Alt] [F4]"
+        }, {
+            "val": "Quit application of current window (alternative)",
+            "key": "[Ctrl] [F4]"
+        }, {
+            "val": "Close dialog",
+            "key": "[Esc]"
+        }, {
+            "val": "Open/Focus (preview) pinned program on the taskbar (Windows 7 and Windows 8.1)",
+            "key": "[Win] [<#>]"
+        }, {
+            "val": "Open new program window of pinned program in Quick Launch (Windows 7 and Windows 8.1)",
+            "key": "[Win] [<#>]"
+        }, {
+            "val": "Open new program window of the pinned program on the taskbar (if program is already opened) (Windows 7 and Windows 8.1)",
+            "key": "[Win] [Shift] [<#>]"
+        }, {
+            "val": "Focus the first taskbar entry. Pressing again will cycle through them (Windows 7 and Windows 8.1)",
+            "key": "[Win] [t]"
+        }, {
+            "val": "Peek at the desktop (Windows 7 only)",
+            "key": "[Win] [Space]"
+        }, {
+            "val": "Bring gadgets to the front of the Z-order and cycle between gadgets (Windows Vista and Windows 7)",
+            "key": "[Win] [g]"
+        }, {
+            "val": "Bring gadgets to the front of the Z-order (Windows Vista only)",
+            "key": "[Win] [Space]"
+        }, {
+            "val": "External display options (Windows 7 and Windows 8)",
+            "key": "[Win] [p]"
+        }],
+        "User interface navigation": [{
+            "val": "Moves keyboard focus to next control",
+            "key": "Tab"
+        }, {
+            "val": "Moves keyboard focus to previous control",
+            "key": "[Shift] [Tab]"
+        }, {
+            "val": "Pop up tooltip for currently focused control",
+            "key": "[Shift] [F1]"
+        }, {
+            "val": "Show context-sensitive help for currently focused window or control",
+            "key": "[Shift] [F1]"
+        }, {
+            "val": "Give focus to next pane",
+            "key": "[Ctrl] [F6]"
+        }, {
+            "val": "Give focus to previous pane",
+            "key": "[Alt] [F6]"
+        }, {
+            "val": "Give focus to window's menu bar",
+            "key": "[F10] / [Alt]"
+        }, {
+            "val": "Pop up contextual menu for currently selected objects (aka context menu)",
+            "key": "[Shift] [F10]"
+        }, {
+            "val": "Toggle selected state of focused checkbox, radio button, or toggle button",
+            "key": "Space"
+        }, {
+            "val": "Activate focused button, menu item etc.",
+            "key": "Enter"
+        }, {
+            "val": "Switch focus to the next/previous tab within a window",
+            "key": "[Ctrl] [Tab]"
+        }],
+        "Command line shortcuts": [{
+            "val": "Scroll through History of typed commands",
+            "key": "[↑] / [↓]"
+        }, {
+            "val": "Signal end-of-file",
+            "key": "[Ctrl] [z]"
+        }, {
+            "val": "Abort current command/typing",
+            "key": "[Ctrl] [c]"
+        }, {
+            "val": "Erase word to the left",
+            "key": "[Ctrl] [Backspace]"
+        }, {
+            "val": "Erase word to the right",
+            "key": "[Ctrl] [Del]"
+        }, {
+            "val": "Erase line to the left",
+            "key": "[Ctrl] [Home]"
+        }, {
+            "val": "Erase line to the right",
+            "key": "[Ctrl] [End]"
+        }, {
+            "val": "Move one word to the left (backward)",
+            "key": "[Ctrl] [←]"
+        }, {
+            "val": "Move one word to the right (forward)",
+            "key": "[Ctrl] [→]"
+        }, {
+            "val": "Move to beginning of line",
+            "key": "Home"
+        }, {
+            "val": "Move to end of line",
+            "key": "End"
+        }, {
+            "val": "Reverse search of history",
+            "key": "F8"
+        }, {
+            "val": "Autocomplete command/file name",
+            "key": "Tab"
+        }, {
+            "val": "Paste contents of clipboard at cursor",
+            "key": "[Alt] [Space], [e], [p]"
+        }, {
+            "val": "Scroll window up",
+            "key": "[Shift] [Page Up]"
+        }, {
+            "val": "Scroll window down",
+            "key": "[Shift] [Page Down]"
+        }],
+        "Accessibility": [{
+            "val": "Utility Manager",
+            "key": "[Win] [u]"
+        }, {
+            "val": "Use keyboard to control cursor",
+            "key": "[Left Alt] [Left Shift] [Numlock]"
+        }, {
+            "val": "Allow user to press shortcuts one key at a time",
+            "key": "[Shift 5 times]"
+        }, {
+            "val": "Hear beep when -lock key pressed",
+            "key": "[Numlock for 5 seconds]"
+        }, {
+            "val": "Stop/slow repeating characters when key is pressed",
+            "key": "[Right Shift for 8 seconds]"
+        }, {
+            "val": "Inverse (Reverse Colors) Mode",
+            "key": "[Left Alt] [Left Shift] [Print Screen]"
+        }]
+    }
+}
