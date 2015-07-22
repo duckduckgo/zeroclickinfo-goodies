@@ -1,0 +1,185 @@
+{
+    "id": "nato_alphabet_cheat_sheet", 
+    
+    "name": "NATO Phonetic Alphabet",
+    
+    "description": "International Radiotelephony Spelling Alphabet using Wikipedia pronunciation respellings for numeric codewords",
+    
+    "metadata": { 
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/NATO_phonetic_alphabet"
+    },
+
+    
+    "section_order": [  
+        "Letters",
+        "Numbers"
+    ],
+
+    "sections": {
+        "Letters": [
+            {
+                "val": "A", 
+                "key": "Alfa"
+            },
+            {
+                "val": "B",
+                "key": "Bravo"
+            },
+            {
+                "val": "C",
+                "key": "Charlie"
+            },
+            {
+                "val": "D",
+                "key": "Delta"
+            },
+            {
+                "val": "E",
+                "key": "Echo"
+            },
+            {
+                "val": "F",
+                "key": "Foxtrot"
+            },
+            {
+                "val": "G",
+                "key": "Golf"
+            },
+            {
+                "val": "H",
+                "key": "Hotel"
+            },
+            {
+                "val": "I",
+                "key": "India"
+            },
+            {
+                "val": "J",
+                "key": "Juliett"
+            },
+            {
+                "val": "K",
+                "key": "Kilo"
+            },
+            {
+                "val": "L",
+                "key": "Lima"
+            },
+            {
+                "val": "M",
+                "key": "Mike"
+            },
+            {
+                "val": "N",
+                "key": "November"
+            },
+            {
+                "val": "O",
+                "key": "Oscar"
+            },
+            {
+                "val": "P",
+                "key": "Papa"
+            },
+            {
+                "val": "Q",
+                "key": "Quebec"
+            },
+            {
+                "val": "R",
+                "key": "Romeo"
+            },
+            {
+                "val": "S",
+                "key": "Sierra"
+            },
+            {
+                "val": "T",
+                "key": "Tango"
+            },
+            {
+                "val": "U",
+                "key": "Uniform"
+            },
+            {
+                "val": "V",
+                "key": "Victor"
+            },
+            {
+                "val": "W",
+                "key": "Whiskey"
+            },
+            {
+                "val": "X",
+                "key": "Xray"
+            },
+            {
+                "val": "Y",
+                "key": "Yankee"
+            },
+            {
+                "val": "Z",
+                "key": "Zulu"
+            }, 
+            {
+                "val": "- (hyphen)",
+                "key": "Dash"
+            }
+        ],        
+        "Numbers": [
+            {
+                "val": "0",
+                "key": "Zero - (ZEE-roh)"               
+            }, 
+            {
+                "val": "1",
+                "key": "One - (WUN)"
+            }, 
+            {
+                "val": "2",
+                "key": "Two - (TOO)"
+            }, 
+            {
+                "val": "3",
+                "key": "Three - (TREE)"
+            }, 
+            {
+                "val": "4",
+                "key": "Four - (FOH-er)"
+            }, 
+            {
+                "val": "5",
+                "key": "Five - (FYF)"
+            }, 
+            {
+                "val": "6",
+                "key": "Six - (SIKS)"
+            }, 
+            {
+                "val": "7",
+                "key": "Seven - (SEV-en)"
+            }, 
+            {
+                "val": "8",
+                "key": "Eight - (AYT)"
+            }, 
+            {
+                "val": "9",
+                "key": "Nine - (NY-ner)"
+            }, 
+            {
+                "val": "100",
+                "key": "Hundred - (HUN-dred)"
+            }, 
+            {
+                "val": "1000",
+                "key": "Thousand - (TOW-ZEND)"
+            }, 
+            {
+                "val": ".(decimal point)",
+                "key": "Decimal - (DAY-SEE-MAL)"
+            }
+        ]  
+    }
+}
