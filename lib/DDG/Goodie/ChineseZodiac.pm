@@ -84,7 +84,7 @@ handle remainder => sub {
     my $character = $animal_to_language_or_image{$animal}{'zh'};
     my $img = $animal_to_language_or_image{$animal}{'img'};
 
-    my $statement = 'Chinese zodiac animal for ' . date_output_string($year_start) . " – " . date_output_string($year_end);
+    my $statement = date_output_string($year_start) . " – " . date_output_string($year_end);
 
     return format_answer($character, $english, $statement, $img);
 };
@@ -94,7 +94,7 @@ sub format_answer {
 
     return "$character ($english)", structured_answer => {
         id => "chinese_zodiac",
-        name => "Answer",
+        name => "Chinese Zodiac",
         data => {
             title => "$character ($english)",
             subtitle => $statement,
