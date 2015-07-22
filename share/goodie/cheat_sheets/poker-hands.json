@@ -1,16 +1,20 @@
 {
     "id": "poker_hands_cheat_sheet", 
     "name": "Poker",
-    "description": "Game", 
+    "description": "Gambling Card Game", 
     "metadata": { 
         "sourceName": "Wikipedia",
         "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_poker_hands"
     },
     "section_order": [  
-        "Poker Hands"
+        "Poker Hands in order of rank"
     ],
     "sections": {       
-        "Poker Hands": [
+        "Poker Hands in order of rank": [
+            {
+                "key": "Royal flush",
+                "val": "An ace-high straight flush"
+            },
             {
                 "key": "Straight flush",
                 "val": "Five cards in sequence, all of the same suit"
