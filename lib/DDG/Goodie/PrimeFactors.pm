@@ -40,7 +40,7 @@ sub convert_to_superscripts (_) {
 }
 
 # This adds exponents to the prime numbers.
-# It outputs both text and HTML:
+# It outputs both plaintext and the number that will be displayed:
 # - 2^2
 # - 2²
 sub format_exp {
@@ -53,20 +53,20 @@ sub format_exp {
 }
 
 # This goes through all the prime factors and formats them in an "n × m" format.
-# It outputs both text and HTML.
+# It outputs both plaintext and the text that will be used in the answer.
 sub format_prime {
     my @factors = @_;
     my @text_result = ();
-    my @html_result = ();
+    my @answer_result = ();
 
     foreach my $factor (@factors) {
-        my ($text, $html) = format_exp($factor);
+        my ($text, $exp) = format_exp($factor);
 
         push(@text_result, $text);
-        push(@html_result, $html);
+        push(@answer_result, $exp);
     }
 
-    return join(" × ", @text_result), join(" × ", @html_result);
+    return join(" × ", @text_result), join(" × ", @answer_result);
 }
 
 # This adds commas to the number.
@@ -122,10 +122,10 @@ handle remainder => sub {
     if(is_prime($_)) {
         @result = format_answer("$formatted is a prime number");
     } else {
-        my ($text, $html) = format_prime(@factors);
-        my $intro = "The prime factorization of $formatted";
+        my ($text, $answer) = format_prime(@factors);
+        my $intro = "Prime factorization of $formatted";
 
-        @result = format_answer($intro." is ".$text, $html, $intro);
+        @result = format_answer($intro." is ".$text, $answer, $intro);
     }
     
     return @result;
