@@ -128,55 +128,55 @@
         "Numbers": [
             {
                 "val": "0",
-                "key": "Zero - [ZEE-roh]"               
+                "key": "Zero - (ZEE-roh)"               
             }, 
             {
                 "val": "1",
-                "key": "One - [WUN]"
+                "key": "One - (WUN)"
             }, 
             {
                 "val": "2",
-                "key": "Two - [TOO]"
+                "key": "Two - (TOO)"
             }, 
             {
                 "val": "3",
-                "key": "Three - [TREE]"
+                "key": "Three - (TREE)"
             }, 
             {
                 "val": "4",
-                "key": "Four - [FOH-er]"
+                "key": "Four - (FOH-er)"
             }, 
             {
                 "val": "5",
-                "key": "Five - [FYF]"
+                "key": "Five - (FYF)"
             }, 
             {
                 "val": "6",
-                "key": "Six - [SIKS]"
+                "key": "Six - (SIKS)"
             }, 
             {
                 "val": "7",
-                "key": "Seven - [SEV-en]"
+                "key": "Seven - (SEV-en)"
             }, 
             {
                 "val": "8",
-                "key": "Eight - [AYT]"
+                "key": "Eight - (AYT)"
             }, 
             {
                 "val": "9",
-                "key": "Nine - [NY-ner]"
+                "key": "Nine - (NY-ner)"
             }, 
             {
                 "val": "100",
-                "key": "Hundred - [HUN-dred]"
+                "key": "Hundred - (HUN-dred)"
             }, 
             {
                 "val": "1000",
-                "key": "Thousand - [TOW-ZEND]"
+                "key": "Thousand - (TOW-ZEND)"
             }, 
             {
                 "val": ".(decimal point)",
-                "key": "Decimal - [DAY-SEE-MAL]"
+                "key": "Decimal - (DAY-SEE-MAL)"
             }
         ]  
     }
