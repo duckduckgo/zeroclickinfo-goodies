@@ -3,6 +3,8 @@
     
     "name": "NATO Phonetic Alphabet",
     
+    "description": "International Radiotelephony Spelling Alphabet using Wikipedia pronunciation respellings for numeric codewords",
+    
     "metadata": { 
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/NATO_phonetic_alphabet"
