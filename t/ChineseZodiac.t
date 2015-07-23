@@ -63,57 +63,57 @@ ddg_goodie_test(
 	)],
 
   #Primary example
-  'chinese zodiac for 1969' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
+  'chinese zodiac for 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
 
   #Secondary examples
-  '2004 chinese zodiac animal' => build_answer('monkey', '22 Jan 2004 – 08 Feb 2005'),
-  'what was the chinese zodiac animal in 1992' => build_answer('monkey', '04 Feb 1992 – 22 Jan 1993'),
-  'what will the chinese zodiac animal be for 2056' => build_answer('rat', '15 Feb 2056 – 03 Feb 2057'),
+  '2004 chinese zodiac animal' => build_answer('monkey', 'Jan 22, 2004 – Feb 08, 2005'),
+  'what was the chinese zodiac animal in 1992' => build_answer('monkey', 'Feb 04, 1992 – Jan 22, 1993'),
+  'what will the chinese zodiac animal be for 2056' => build_answer('rat', 'Feb 15, 2056 – Feb 03, 2057'),
   
   #Primary example with different query formats
-  '1969 chinese zodiac animal' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
-  'what was the chinese zodiac animal for 1969' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
-  'what will the chinese zodiac animal be for people born in the year 1969' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
-  'chinese zodiac for a person born in 1969' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
-  'chinese zodiac of 1969' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
+  '1969 chinese zodiac animal' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
+  'what was the chinese zodiac animal for 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
+  'what will the chinese zodiac animal be for people born in the year 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
+  'chinese zodiac for a person born in 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
+  'chinese zodiac of 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
 
   #Alternative triggers
-  '1969 shēngxiào' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
-  'shengxiao animal 1969' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
-  'shēng xiào for 1969' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
-  'i was born in 1969 what is my sheng xiao' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
+  '1969 shēngxiào' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
+  'shengxiao animal 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
+  'shēng xiào for 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
+  'i was born in 1969 what is my sheng xiao' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
 
   #Test some different years
   # Taken from http://www.chinesezodiac.com/calculator.php
-  'chinese zodiac animal for 1924' => build_answer('rat', '05 Feb 1924 – 23 Jan 1925'),
-  'chinese zodiac animal for 1929' => build_answer('snake', '10 Feb 1929 – 29 Jan 1930'),
-  'chinese zodiac animal for 1934' => build_answer('dog', '14 Feb 1934 – 03 Feb 1935'),
-  'chinese zodiac animal for 1939' => build_answer('hare', '19 Feb 1939 – 07 Feb 1940'),
-  'chinese zodiac animal for 1944' => build_answer('monkey', '25 Jan 1944 – 12 Feb 1945'),
-  'chinese zodiac animal for 1949' => build_answer('ox', '29 Jan 1949 – 16 Feb 1950'),
-  'chinese zodiac animal for 1954' => build_answer('horse', '03 Feb 1954 – 23 Jan 1955'),
-  'chinese zodiac animal for 1959' => build_answer('pig', '08 Feb 1959 – 27 Jan 1960'),
-  'chinese zodiac animal for 1964' => build_answer('dragon', '13 Feb 1964 – 01 Feb 1965'),
-  'chinese zodiac animal for 1969' => build_answer('fowl', '17 Feb 1969 – 05 Feb 1970'),
-  'chinese zodiac animal for 1974' => build_answer('tiger', '23 Jan 1974 – 10 Feb 1975'),
-  'chinese zodiac animal for 2027' => build_answer('sheep', '06 Feb 2027 – 25 Jan 2028'),
-  'chinese zodiac animal for 2040' => build_answer('monkey', '12 Feb 2040 – 31 Jan 2041'),
+  'chinese zodiac animal for 1924' => build_answer('rat', 'Feb 05, 1924 – Jan 23, 1925'),
+  'chinese zodiac animal for 1929' => build_answer('snake', 'Feb 10, 1929 – Jan 29, 1930'),
+  'chinese zodiac animal for 1934' => build_answer('dog', 'Feb 14, 1934 – Feb 03, 1935'),
+  'chinese zodiac animal for 1939' => build_answer('hare', 'Feb 19, 1939 – Feb 07, 1940'),
+  'chinese zodiac animal for 1944' => build_answer('monkey', 'Jan 25, 1944 – Feb 12, 1945'),
+  'chinese zodiac animal for 1949' => build_answer('ox', 'Jan 29, 1949 – Feb 16, 1950'),
+  'chinese zodiac animal for 1954' => build_answer('horse', 'Feb 03, 1954 – Jan 23, 1955'),
+  'chinese zodiac animal for 1959' => build_answer('pig', 'Feb 08, 1959 – Jan 27, 1960'),
+  'chinese zodiac animal for 1964' => build_answer('dragon', 'Feb 13, 1964 – Feb 01, 1965'),
+  'chinese zodiac animal for 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
+  'chinese zodiac animal for 1974' => build_answer('tiger', 'Jan 23, 1974 – Feb 10, 1975'),
+  'chinese zodiac animal for 2027' => build_answer('sheep', 'Feb 06, 2027 – Jan 25, 2028'),
+  'chinese zodiac animal for 2040' => build_answer('monkey', 'Feb 12, 2040 – Jan 31, 2041'),
 
   #Test for correct date ranges
   # Taken from http://www.chinesezodiac.com/calculator.php
-  'chinese zodiac animal for 1925' => build_answer('ox', '24 Jan 1925 – 12 Feb 1926'),
-  'chinese zodiac animal for 1937' => build_answer('ox', '11 Feb 1937 – 30 Jan 1938'),
-  'chinese zodiac animal for 1953' => build_answer('snake', '14 Feb 1953 – 02 Feb 1954'),
-  'chinese zodiac animal for 1973' => build_answer('ox', '03 Feb 1973 – 22 Jan 1974'),
-  'chinese zodiac animal for 1997' => build_answer('ox', '07 Feb 1997 – 27 Jan 1998'),
-  'chinese zodiac animal for 2013' => build_answer('snake', '10 Feb 2013 – 30 Jan 2014'),
-  'chinese zodiac animal for 2017' => build_answer('fowl', '28 Jan 2017 – 15 Feb 2018'),
-  'chinese zodiac animal for 2041' => build_answer('fowl', '01 Feb 2041 – 21 Jan 2042'),
+  'chinese zodiac animal for 1925' => build_answer('ox', 'Jan 24, 1925 – Feb 12, 1926'),
+  'chinese zodiac animal for 1937' => build_answer('ox', 'Feb 11, 1937 – Jan 30, 1938'),
+  'chinese zodiac animal for 1953' => build_answer('snake', 'Feb 14, 1953 – Feb 02, 1954'),
+  'chinese zodiac animal for 1973' => build_answer('ox', 'Feb 03, 1973 – Jan 22, 1974'),
+  'chinese zodiac animal for 1997' => build_answer('ox', 'Feb 07, 1997 – Jan 27, 1998'),
+  'chinese zodiac animal for 2013' => build_answer('snake', 'Feb 10, 2013 – Jan 30, 2014'),
+  'chinese zodiac animal for 2017' => build_answer('fowl', 'Jan 28, 2017 – Feb 15, 2018'),
+  'chinese zodiac animal for 2041' => build_answer('fowl', 'Feb 01, 2041 – Jan 21, 2042'),
 
   #Handled by the date role–
-  'chinese zodiac 20 march 1997' => build_answer('ox', '07 Feb 1997 – 27 Jan 1998'),
-  'chinese zodiac 1997-03-20' => build_answer('ox', '07 Feb 1997 – 27 Jan 1998'),
-  'what was the chinese zodiac animal on the 3rd of april 1945' => build_answer('fowl', '13 Feb 1945 – 01 Feb 1946'),
+  'chinese zodiac 20 march 1997' => build_answer('ox', 'Feb 07, 1997 – Jan 27, 1998'),
+  'chinese zodiac 1997-03-20' => build_answer('ox', 'Feb 07, 1997 – Jan 27, 1998'),
+  'what was the chinese zodiac animal on the 3rd of april 1945' => build_answer('fowl', 'Feb 13, 1945 – Feb 01, 1946'),
 
   #Should not trigger
   'wikipedia chinese zodiac' => undef,
@@ -123,8 +123,8 @@ ddg_goodie_test(
 
   #No support currently for years outside 1900--2069
   'chinese zodiac 1899' => undef,
-  'chinese zodiac 1900' => build_answer('rat', '31 Jan 1900 – 18 Feb 1901'),
-  'chinese zodiac 2069' => build_answer('ox', '23 Jan 2069 – 10 Feb 2070'),
+  'chinese zodiac 1900' => build_answer('rat', 'Jan 31, 1900 – Feb 18, 1901'),
+  'chinese zodiac 2069' => build_answer('ox', 'Jan 23, 2069 – Feb 10, 2070'),
   'chinese zodiac 2070' => undef,
   'chinese zodiac 2000000000000' => undef
 
@@ -135,8 +135,8 @@ ddg_goodie_test(
 	[qw(
 		DDG::Goodie::ChineseZodiac
 	)],
-    "last year's chinese zodiac" => build_answer('snake', '10 Feb 2013 – 30 Jan 2014'),
-    "last years chinese zodiac" => build_answer('snake', '10 Feb 2013 – 30 Jan 2014')
+    "last year's chinese zodiac" => build_answer('snake', 'Feb 10, 2013 – Jan 30, 2014'),
+    "last years chinese zodiac" => build_answer('snake', 'Feb 10, 2013 – Jan 30, 2014')
 );
 restore_time();
 

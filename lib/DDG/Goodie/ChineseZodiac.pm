@@ -84,7 +84,7 @@ handle remainder => sub {
     my $character = $animal_to_language_or_image{$animal}{'zh'};
     my $img = $animal_to_language_or_image{$animal}{'img'};
 
-    my $statement = date_output_string($year_start) . " – " . date_output_string($year_end);
+    my $statement = $year_start->strftime("%b %d, %Y") . " – " . $year_end->strftime("%b %d, %Y");
 
     return format_answer($character, $english, $statement, $img);
 };
