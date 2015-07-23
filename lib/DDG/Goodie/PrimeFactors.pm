@@ -29,36 +29,44 @@ description 'Returns the prime factors of the entered number';
 name 'PrimeFactors';
 topics 'math';
 category 'calculations';
-attribution github => [ 'austinheimark', 'Austin Heimark' ];
+attribution github => [ 'austinheimark', 'Austin Heimark' ],
+            github => ['https://github.com/Sloff', 'Sloff'];
+
+sub convert_to_superscripts (_) {
+    my $string = $_[0];
+    $string =~ tr[+−=()0123456789]
+                [⁺⁻⁼⁽⁾⁰¹²³⁴⁵⁶⁷⁸⁹ⵯ];
+    return $string;
+}
 
 # This adds exponents to the prime numbers.
-# It outputs both text and HTML:
+# It outputs both plaintext and the number that will be displayed:
 # - 2^2
-# - 2<sup>2</sup>
+# - 2²
 sub format_exp {
     my $factor = shift;
 
     if($factor->[1] > 1) {
-	return "$factor->[0]^$factor->[1]", "$factor->[0]<sup>$factor->[1]</sup>";
+        return "$factor->[0]^$factor->[1]", "$factor->[0]".convert_to_superscripts($factor->[1]);
     }
     return $factor->[0], $factor->[0];
 }
 
 # This goes through all the prime factors and formats them in an "n × m" format.
-# It outputs both text and HTML.
+# It outputs both plaintext and the text that will be used in the answer.
 sub format_prime {
     my @factors = @_;
     my @text_result = ();
-    my @html_result = ();
+    my @answer_result = ();
 
     foreach my $factor (@factors) {
-	my ($text, $html) = format_exp($factor);
+        my ($text, $exp) = format_exp($factor);
 
-	push(@text_result, $text);
-	push(@html_result, $html);
+        push(@text_result, $text);
+        push(@answer_result, $exp);
     }
 
-    return join(" × ", @text_result), join(" × ", @html_result);
+    return join(" × ", @text_result), join(" × ", @answer_result);
 }
 
 # This adds commas to the number.
@@ -71,6 +79,24 @@ sub commify {
     return $_;
 }
 
+# Structured answer that will be returned
+sub format_answer {
+    my ($plaintext, $title, $subtitle) = @_;
+    
+    return $plaintext,
+    structured_answer => {
+        id => 'prime_factors',
+        name => 'Answer',
+        data => {
+            title => $title || $plaintext,
+            subtitle => $subtitle
+        },
+        templates => {
+            group => 'text'
+        }
+    };
+}
+
 handle remainder => sub {
     # Exit if it's not a digit.
     # TODO: We should accept different number formats.
@@ -81,26 +107,29 @@ handle remainder => sub {
 
     # Provide only one second for computing the factors.
     eval {
-	alarm(1);
-	@factors = factor_exp($_);
+        alarm(1);
+        @factors = factor_exp($_);
     };
     # Exit if we didn't find anything.
     if(@factors == 0) {
-	return;
+        return;
     }
 
     my $formatted = commify($_);
 
     # If it has only one factor then it is a prime. Except if it's 0 or 1.
-    my $result;
+    my @result;
     if(is_prime($_)) {
-	return "$formatted is a prime number.", html => "$formatted is a prime number.";
+        @result = format_answer("$formatted is a prime number");
     } else {
-	my ($text, $html) = format_prime(@factors);
-	my $intro = "The prime factorization of $formatted is";
+        my ($text, $answer) = format_prime(@factors);
+        my $subtitle = "$formatted - Prime Factors";
+        my $plaintext = "The prime factorization of $formatted is $text";
 
-	return "$intro $text", html => "$intro $html";
+        @result = format_answer($plaintext, $answer, $subtitle);
     }
+    
+    return @result;
 };
 
 1;
