@@ -123,9 +123,10 @@ handle remainder => sub {
         @result = format_answer("$formatted is a prime number");
     } else {
         my ($text, $answer) = format_prime(@factors);
-        my $intro = "Prime factorization of $formatted";
+        my $subtitle = "$formatted - Prime Factors";
+        my $plaintext = "The prime factorization of $formatted is $text";
 
-        @result = format_answer($intro." is ".$text, $answer, $intro);
+        @result = format_answer($plaintext, $answer, $subtitle);
     }
     
     return @result;
