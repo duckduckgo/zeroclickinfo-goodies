@@ -1,7 +1,7 @@
 {
     "id": "states_of_india_cheat_sheet", 
     "name": "States Of India",
-    "description": "states of India with their capital cities ", 
+    "description": "States Of India with their Capital Cities ", 
      "metadata": {  
         "sourceName": "States Of India",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
@@ -40,7 +40,7 @@
                   "val":"Shimla"
                },{  
                   "key":"Jammu & Kashmir",
-                  "val":"Srinagar(Summer)/Jammu (Winter)"
+                  "val":"Srinagar(Summer)/Jammu(Winter)"
                },{  
                   "key":"Jharkhand",
                   "val":"Ranchi"
