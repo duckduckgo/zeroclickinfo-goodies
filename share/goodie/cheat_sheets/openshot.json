@@ -13,75 +13,75 @@
     ],
     "sections": {
         "General": [{
-            "key": "[CTRL] [N]",
+            "key": "[Ctrl] [N]",
             "val": "Create a new project"
         }, {
-            "key": "[CTRL] [O]",
+            "key": "[Ctrl] [O]",
             "val": "Open an existing project"
         }, {
-            "key": "[CTRL] [S]",
+            "key": "[Ctrl] [S]",
             "val": "Save the current project"
         }, {
-            "key": "[SHIFT] [CTRL] [S]",
+            "key": "[Shift] [Ctrl] [S]",
             "val": "Save the current project as..."
         }, {
-            "key": "[CTRL] [X]",
+            "key": "[Ctrl] [X]",
             "val": "Export project as MLT XML"
         }, {
-            "key": "[CTRL] [E]",
+            "key": "[Ctrl] [E]",
             "val": "Export the current project as a video file"
         }, {
-            "key": "[CTRL] [U]",
+            "key": "[Ctrl] [U]",
             "val": "Upload current project as a video file to YouTube or Vimeo"
         }, {
-            "key": "[CTRL] [Z]",
+            "key": "[Ctrl] [Z]",
             "val": "Undo the last action"
         }, {
-            "key": "[CTRL] [Y]",
+            "key": "[Ctrl] [Y]",
             "val": "Redo the previous action"
         }, {
-            "key": "[F11]",
+            "key": "F11",
             "val": "Toggle full-screen mode"
         }, {
-            "key": "[F1]",
+            "key": "F1",
             "val": "Launch the help file (if installed)"
         }, {
-            "key": "[CTRL] [P]",
+            "key": "[Ctrl] [P]",
             "val": "Edit the preferences"
         }, {
-            "key": "[CTRL] [Q]",
+            "key": "[Ctrl] [Q]",
             "val": "Quit the program"
         }],
         "Playback": [{
-            "key": "[J]",
+            "key": "J",
             "val": "Rewind the video playback"
         }, {
-            "key": "[K]",
+            "key": "K",
             "val": "Pause / Play"
         }, {
-            "key": "[L]",
+            "key": "L",
             "val": "Fast-forward the video playback"
         }, {
             "key": "[Space bar]",
             "val": "Pause / Play"
         }, {
-            "key": "[Up]",
+            "key": "Up",
             "val": "Seek to previous maker (if any)"
         }, {
-            "key": "[Down]",
+            "key": "Down",
             "val": "Seek to next marker (if any)"
         }, {
-            "key": "[Left]",
+            "key": "Left",
             "val": "Step backwards one frame (frame stepping)"
         }, {
-            "key": "[Right]",
+            "key": "Right",
             "val": "Step forwards one frame (frame stepping)"
         }],
         "Editing": [{
-            "key": "[TAB]",
+            "key": "Tab",
             "val": "Switch between Resize and Select mode"
         }, {
-            "key": "[Ctrl] [Scroll Wheel]",
+            "key": "[Ctrl] [Scroll]",
             "val": "Zoom in & out of the timeline"
         }, {
             "key": "[Ctrl] [Home]",
@@ -90,25 +90,25 @@
             "key": "[Ctrl] [End]",
             "val": "Seek to the end of the timeline"
         }, {
-            "key": "[C]",
+            "key": "C",
             "val": "Slice all clips at the play-head position"
         }, {
-            "key": "[CTRL] [F]",
+            "key": "[Ctrl] [F]",
             "val": "Import a file (audio, video, or image)"
         }, {
-            "key": "[CTRL] [I]",
+            "key": "[Ctrl] [I]",
             "val": "Import an image sequence"
         }, {
-            "key": "[CTRL] [W]",
+            "key": "[Ctrl] [W]",
             "val": "Import new transition"
         }, {
-            "key": "[CTRL] [T]",
+            "key": "[Ctrl] [T]",
             "val": "Create a new title"
         }, {
-            "key": "[CTRL] [B]",
+            "key": "[Ctrl] [B]",
             "val": "Create a new animated title"
         }, {
-            "key": "[CTRL] [D]",
+            "key": "[Ctrl] [D]",
             "val": "Capture and save the current frame of any non-audio clips that are overlapping the play-head, and add them to the project files."
         }]
     }
