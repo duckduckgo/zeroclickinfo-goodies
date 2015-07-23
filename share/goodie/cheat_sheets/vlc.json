@@ -1,0 +1,196 @@
+{
+    "id": "vlc_cheat_sheet",
+    "name": "VLC Media Player Keyboard Shortcuts",
+    "metadata": {
+        "sourceName": "VideoLAN",
+        "sourceUrl": "https://wiki.videolan.org/Hotkeys_table"
+    },
+    "section_order": [
+        "General",
+        "Mouse actions",
+        "Navigation",
+        "Browsing & Playback Adjustments",
+        "Manage"
+    ],
+    "sections": {
+        "General": [{
+            "key":"F",
+            "val":"Fullscreen"
+          }, {  
+            "key":"Space",
+            "val":"Play/Pause"
+          }, {  
+            "key":"V",
+            "val":"Subtitles cycle/off"
+          }, {  
+            "key":"B",
+            "val":"Audio track cycle"
+          }, {  
+            "key":"[Ctrl] ([↑]/[↓])",
+            "val":"Volume"
+          }, {  
+            "key":"[Ctrl] [O]",
+            "val":"Open Single file(s)"
+          }],
+        "Mouse actions": [{  
+            "key":"Double click",
+            "val":"Fullscreen"
+          }, {  
+            "key":"Scroll",
+            "val":"Volume or Position"
+          }, {  
+            "key":"Right click",
+            "val":"Local menu (play controls, audio/video)"
+          }],
+        "Navigation": [{  
+            "key":"[Ctrl] [T]",
+            "val":"Goto/jump to time"
+          }, {  
+            "key":"[Shift] ([←]/[→])",
+            "val":"Very short jump – 3 secs"
+          }, {  
+            "key":"[Alt] ([←]/[→])",
+            "val":"Short jump – 10 secs"
+          }, {  
+            "key":"[Ctrl] ([←]/[→])",
+            "val":"Medium jump – 1 min"
+          }, {  
+            "key":"[Ctrl] [Alt] ([←]/[→])",
+            "val":"Long jump"
+          }, {  
+            "key":"E",
+            "val":"Next frame"
+          }, {  
+            "key":"N",
+            "val":"Next in playlist"
+          }, {  
+            "key":"P",
+            "val":"Current from beginning/Previous in playlist"
+          }],
+        "Browsing & Playback Adjustments": [{  
+            "key":"[Ctrl] [D]",
+            "val":"Open disc menu"
+          }, {  
+            "key":"[Ctrl] [F]",
+            "val":"Open folder (browse folder menu)"
+          }, {  
+            "key":"[Ctrl] ([R]/[S])",
+            "val":"Advanced open file"
+          }, {  
+            "key":"[Ctrl] [O]",
+            "val":"Open single file(s)"
+          }, {  
+            "key":"M",
+            "val":"Mute and unmute audio"
+          }, {  
+            "key":"S",
+            "val":"Stop movie"
+          }, {  
+            "key":"Esc",
+            "val":"Exit full screen mode"
+          }, {  
+            "key":"+",
+            "val":"Faster"
+          }, {  
+            "key":"-",
+            "val":"Slower"
+          }, {  
+            "key":"=",
+            "val":"Normal"
+          }, {  
+            "key":"A",
+            "val":"Aspect ratio"
+          }, {  
+            "key":"C",
+            "val":"Crop screen"
+          }, {  
+            "key":"[G]",
+            "val":"Increase subtitle delay"
+          }, {  
+            "key":"[H]",
+            "val":"Decrease subtitle delay"
+          }, {  
+            "key":"[J]",
+            "val":"Increase audio delay"
+          }, {  
+            "key":"[K]",
+            "val":"Decrease audio delay"
+          }, {  
+            "key":"Z",
+            "val":"Change zoom mode"
+          }, {  
+            "key":"T",
+            "val":"Show time"
+          }, {  
+            "key":"R",
+            "val":"Random"
+          }],
+        "Manage": [{  
+            "key":"[Ctrl] [H]",
+            "val":"Hide / unhide controls"
+          }, {  
+            "key":"[Ctrl] [P]",
+            "val":"Preferences / interface settings"
+          }, {  
+            "key":"[Ctrl] [E]",
+            "val":"Adjustments and audio/video effects"
+          }, {  
+            "key":"[Ctrl] [B]",
+            "val":"Edit bookmarks"
+          }, {  
+            "key":"[Ctrl] [M]",
+            "val":"Open messages"
+          }, {  
+            "key":"[Ctrl] [N]",
+            "val":"Open network"
+          }, {  
+            "key":"[Ctrl] [C]",
+            "val":"Open capture device"
+          }, {  
+            "key":"[Ctrl] [L]",
+            "val":"Open playlist"
+          }, {  
+            "key":"[Ctrl] [Y]",
+            "val":"Save playlist"
+          }, {  
+            "key":"[Ctrl] ([I]/[J])",
+            "val":"Media information"
+          }, {  
+            "key":"[Alt] [A]",
+            "val":"Open audio menu"
+          }, {  
+            "key":"[Alt] [H]",
+            "val":"Open help menu"
+          }, {  
+            "key":"[Alt] [M]",
+            "val":"Open media menu"
+          }, {  
+            "key":"[Alt] [P]",
+            "val":"Open playlist menu"
+          }, {  
+            "key":"[Alt] [T]",
+            "val":"Open tool menu"
+          }, {  
+            "key":"[Alt] [V]",
+            "val":"Open video menu"
+          }, {  
+            "key":"[Alt] [L]",
+            "val":"Open playback menu"
+          }, {  
+            "key":"D",
+            "val":"Show movie path"
+          }, {  
+            "key":"F1",
+            "val":"Show Help"
+          }, {  
+            "key":"F11",
+            "val":"Window fullscreen"
+          }, {  
+            "key":"[Alt] [F4]",
+            "val":"Quit VLC"
+          }, {  
+            "key":"[Ctrl] [Q]",
+            "val":"Quit VLC (alternative)"
+          }]
+    }
+}
