@@ -5,8 +5,9 @@ use strict;
 use DDG::Goodie;
 use DateTime;
 use Try::Tiny;
-use URI::Escape::XS qw(encodeURIComponent);
 use Text::Trim;
+use URI::Escape::XS qw(encodeURIComponent);
+
 with 'DDG::GoodieRole::Dates';
 
 zci answer_type => 'calendar';
@@ -64,15 +65,78 @@ handle remainder => sub {
     my $the_month = $date_object->month();
     # return calendar
     my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
-    return format_result({
-            first_day     => $start,
-            first_day_num => $start->day_of_week() % 7,                                    # 0=Sunday
+    my $plaintext = "calendar today";
+    my %month = (
+        first_day_num => $start->day_of_week() % 7,
+        month => $the_month,
+        month_name => $date_object->month_name(),
+        year => $the_year,
+	last_day      => DateTime->last_day_of_month(
+		year  => $the_year,
+		month => $the_month,
+	      )->day()
+    );
+    my @months;
+    my %month_data;
+    my $last_month_days = undef;
+    my $month_last_day;
+    my $last_day;
+    my $month_date_object = $date_object;
+    my $month = $the_month;
+    for (my $month_index=0; $month_index < 12; $month_index++){
+	my $start = parse_datestring_to_date($the_year . "-" . $month . "-1");
+        $month_date_object = $month_date_object->add(days => 31);
+	$month = $month_date_object -> month();
+        if (!$last_month_days){
+            $last_month_days = DateTime->last_day_of_month(
+                year => $the_year,
+	        month => $month
+            )->day()
+        }
+                # set new last_month days 
+       $last_month_days = $last_day;
+       # push month onto months
+       push @months, (
+            first_day_num => $start->day_of_week() %7,
+            month => $month,
+            month_name => $month_date_object->month_name(),
+            year => $month_date_object->year(), 
             last_day      => DateTime->last_day_of_month(
-                year  => $the_year,
-                month => $the_month,
-              )->day(),
-            highlight => $highlightDay,
-        });
+		year  => $the_year,
+		month => $the_month,
+	      )->day()#, 
+    #        last_month_days => $last_month_days
+       );
+ 
+    }
+    my @items;
+    @items = (\%month,\%month,\%month);
+    return $plaintext,
+        structured_answer => {
+            id => 'calendar',
+            name => 'Answer',
+            data => \@months,
+            meta => {
+               
+            },
+            templates => {
+                group => 'base',
+               detail => 0,
+                options => {
+                    content => 'DDH.calendar_today.content',
+                }
+            }
+        };
+
+    return format_result({
+	    first_day     => $start,
+	    first_day_num => $start->day_of_week() % 7,                                    # 0=Sunday
+	    last_day      => DateTime->last_day_of_month(
+		year  => $the_year,
+		month => $the_month,
+	      )->day(),
+	    highlight => $highlightDay,
+    });
 };
 
 # prepare text and html to be returned
@@ -84,10 +148,12 @@ sub format_result {
 
     # Print heading
     my $rText = "\n";
+    # these are supposed to go to previous dates but don't render?
     my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="/?q=' . encodeURIComponent('calendar ' . $previous->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-left"></span></a></span><span class="calendar__header"><b>';
     $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="/?q=' . encodeURIComponent('calendar ' . $next->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-right"></span></a></span></th>';
     $rHtml .= '</tr><tr>';
 
+    # create day headings (M,T,W,T...)
     for my $dayHeading (@weekDays) {
         $rText .= $dayHeading . ' ';
         $rHtml .= '<th>' . $dayHeading . '</th>';
@@ -125,5 +191,7 @@ sub format_result {
 
     return $rText, html => $rHtml;
 }
+
+#};
 
 1;
