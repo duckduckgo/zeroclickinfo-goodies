@@ -80,6 +80,7 @@ handle remainder => sub {
     my @all_days;
     my @days_concat;
     my $counter;
+    # for 12 months starting at current month
     for (my $month_index=0; $month_index < 12; $month_index++){
 	my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
         $the_year = $month_date_object-> year();  
