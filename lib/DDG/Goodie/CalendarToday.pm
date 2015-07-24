@@ -66,51 +66,60 @@ handle remainder => sub {
     # return calendar
     my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
     my $plaintext = "calendar today";
-    my %month = (
-        first_day_num => $start->day_of_week() % 7,
-        month => $the_month,
-        month_name => $date_object->month_name(),
-        year => $the_year,
-	last_day      => DateTime->last_day_of_month(
-		year  => $the_year,
-		month => $the_month,
-	      )->day()
-    );
     my @months;
     my %month_data;
     my $last_month_days = undef;
     my $month_last_day;
     my $last_day;
-    my $month_date_object = $date_object;
+    my $month_date_object = DateTime->new(year=>$the_year, month=>$the_month);
+    my $the_month_days;
+    my @day_array;
     my $month = $the_month;
+    my $first_day_month;
+    my @prev_day_array;
+    my @all_days;
+    my @days_concat;
+    my $counter;
+    my $grid_length;
     for (my $month_index=0; $month_index < 12; $month_index++){
-	my $start = parse_datestring_to_date($the_year . "-" . $month . "-1");
-        $month_date_object = $month_date_object->add(days => 31);
-	$month = $month_date_object -> month();
+	my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
+        $the_year = $month_date_object-> year();  
+	$the_month = $month_date_object -> month();
         if (!$last_month_days){
             $last_month_days = DateTime->last_day_of_month(
-                year => $the_year,
-	        month => $month
-            )->day()
+                year => $month_date_object->clone()->subtract(months => 1)-> year(),
+	        month => $month_date_object->clone()->subtract(months => 1)-> month()
+            )->day();
         }
-                # set new last_month days 
-       $last_month_days = $last_day;
-       # push month onto months
-       push @months, (
-            first_day_num => $start->day_of_week() %7,
-            month => $month,
-            month_name => $month_date_object->month_name(),
-            year => $month_date_object->year(), 
-            last_day      => DateTime->last_day_of_month(
+        
+       $the_month_days = DateTime->last_day_of_month(
 		year  => $the_year,
-		month => $the_month,
-	      )->day()#, 
-    #        last_month_days => $last_month_days
-       );
- 
+		month => $the_month
+	      )->day();
+       
+       @day_array = (1..$the_month_days);
+       $first_day_month = $month_date_object->day_of_week() % 7;
+       @prev_day_array = ($last_month_days-$first_day_month+1..$last_month_days);
+       push @prev_day_array , @day_array;
+       $counter = 1;
+       while (@prev_day_array % 7 != 0){
+           push @prev_day_array, $counter;
+           $counter += 1; 
+       }
+       push @all_days, [ splice @prev_day_array, 0, 7 ] while @prev_day_array;
+       # push month onto months
+       push @months, {
+            first_day_num =>  $first_day_month,
+            month => $the_month,
+            month_name => $month_date_object->month_name(),
+            year => $the_year, 
+            days => [@all_days],
+            last_month_days => $last_month_days
+       };
+       $month_date_object = $month_date_object->subtract(months => -1);
+       $last_month_days = $the_month_days;
+       @all_days = ();
     }
-    my @items;
-    @items = (\%month,\%month,\%month);
     return $plaintext,
         structured_answer => {
             id => 'calendar',
