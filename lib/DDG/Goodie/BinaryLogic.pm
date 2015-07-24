@@ -122,10 +122,19 @@ handle query_raw => sub {
     return if not defined $value_ref;
 
     my $text_output = ${$value_ref};
-    my $html_output = "<div>Result: <b>" . ${$value_ref} . "</b></div>";
-    my $heading = "Binary Logic";
 
-    return answer => $text_output, html => $html_output, heading => $heading;
+    return $text_output, structured_answer => {
+        id => 'binary_logic',
+        name => 'Answer',
+        data => {
+            title => $text_output,
+            subtitle => 'Binary Logic'
+        },
+        templates => {
+            group => 'text',
+            moreAt => 0
+        }
+    }
 };
 
 1;
