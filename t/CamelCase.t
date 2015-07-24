@@ -37,11 +37,11 @@ ddg_goodie_test(
     'camel case this is a test' => test_zci(build_answer('thisIsATest')),
     'camel case this is another test' => test_zci(build_answer('thisIsAnotherTest')),
     
-    'this is a test camelcase' => test_zci(build_answer('thisIsATest')),
-    'this is another test camelcase' => test_zci(build_answer('thisIsAnotherTest')),
+    'this is a test camelcase' => undef,
+    'this is another test camelcase' => undef,
     
-    'this is a test camel case' => test_zci(build_answer('thisIsATest')),
-    'this is another test camel case' => test_zci(build_answer('thisIsAnotherTest')),
+    'this is a test camel case' => undef,
+    'this is another test camel case' => undef,
     
     'camelcase this' => undef
 );

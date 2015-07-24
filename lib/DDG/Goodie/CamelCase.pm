@@ -16,7 +16,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/Sloff", "Sloff"];
 
 # Triggers
-triggers startend => "camelcase", "camel case";
+triggers start => "camelcase", "camel case";
 
 # Handle statement
 handle remainder => sub {
