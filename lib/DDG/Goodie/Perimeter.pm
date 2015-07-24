@@ -24,7 +24,7 @@ handle query_lc => sub {
         my %polygons = ("pentagon" => 5, "hexagon" => 6, "octagon" => 8);
         my $shape = $1 ? "circle" : $3 || $5 || $8;
 
-        my $answerPrefix = "Perimeter of $shape: ";
+        my $subtitle = "Perimeter";
         my $answer;
 
         if ($shape eq "square") {
@@ -34,16 +34,26 @@ handle query_lc => sub {
         } elsif ($shape eq "triangle") {
             $answer = $9 + $10 + $11;
         } elsif ($shape eq "circle") {
-            $answerPrefix = "Circumference: ";
+            $subtitle = "Circumference";
             $answer = (2 * 3.14159265358979323846) * ($1 || $4);
         } else {
-        if (substr $shape, index($shape, "agon") eq "agon") {
-            $answer = $4 * $polygons{$shape};
-        }
+            if (substr $shape, index($shape, "agon") eq "agon") {
+                $answer = $4 * $polygons{$shape};
+            }
         }
 
-
-        return $answerPrefix.$answer;
+        return $answer, structured_answer => {
+            id => 'perimeter',
+            name => 'Answer',
+            data => {
+                title => $answer,
+                subtitle => $subtitle
+            },
+            templates => {
+                group => 'text',
+                moreAt => 0
+            }
+        }
     }
     return;
 };
