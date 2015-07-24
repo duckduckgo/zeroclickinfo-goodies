@@ -10,7 +10,7 @@ use utf8;
 zci answer_type => 'chinesezodiac';
 zci is_cached   => 0;
 
-my %animal_to_language_or_image = (
+my %animal_to_language = (
     'hare' => { en => 'Rabbit', zh => '兔' },
     'dragon' => { en => 'Dragon', zh => '龙' },
     'snake' => { en => 'Snake', zh => '蛇' },
@@ -28,8 +28,8 @@ my %animal_to_language_or_image = (
 sub build_answer {
     my ($animal, $statement) = @_;
     
-    my $character = $animal_to_language_or_image{$animal}{'zh'};
-    my $english = $animal_to_language_or_image{$animal}{'en'};
+    my $character = $animal_to_language{$animal}{'zh'};
+    my $english = $animal_to_language{$animal}{'en'};
 
     return test_zci("$character ($english)", structured_answer => {
         id => "chinese_zodiac",

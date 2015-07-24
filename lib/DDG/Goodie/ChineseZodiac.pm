@@ -21,7 +21,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ['http://github.com/wilkox', 'wilkox'],
             github => ['https://github.com/Sloff', 'Sloff'];
 
-my %animal_to_language_or_image = (
+my %animal_to_language = (
     'hare' => { en => 'Rabbit', zh => '兔' },
     'dragon' => { en => 'Dragon', zh => '龙' },
     'snake' => { en => 'Snake', zh => '蛇' },
@@ -80,8 +80,8 @@ handle remainder => sub {
     my $year_end = chinese_new_year_after($date_gregorian)->subtract(days => 1)->set_time_zone($chinese_zodiac_tz);
 
     my $animal = $year_chinese->zodiac_animal;
-    my $english = $animal_to_language_or_image{$animal}{'en'};
-    my $character = $animal_to_language_or_image{$animal}{'zh'};
+    my $english = $animal_to_language{$animal}{'en'};
+    my $character = $animal_to_language{$animal}{'zh'};
 
     my $statement = $year_start->strftime("%b %d, %Y") . " – " . $year_end->strftime("%b %d, %Y");
 
