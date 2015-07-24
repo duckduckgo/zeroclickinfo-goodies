@@ -80,7 +80,6 @@ handle remainder => sub {
     my @all_days;
     my @days_concat;
     my $counter;
-    my $grid_length;
     for (my $month_index=0; $month_index < 12; $month_index++){
 	my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
         $the_year = $month_date_object-> year();  
@@ -96,18 +95,24 @@ handle remainder => sub {
 		year  => $the_year,
 		month => $the_month
 	      )->day();
-       
+    
+       # get days of this month   
        @day_array = (1..$the_month_days);
+       # get first day of this month
        $first_day_month = $month_date_object->day_of_week() % 7;
+       # get days from previous month that will be rendered on calendar
        @prev_day_array = ($last_month_days-$first_day_month+1..$last_month_days);
+       # concatenate previous days and this months days
        push @prev_day_array , @day_array;
+       # add any days from the next month to fill empty space in calendar
        $counter = 1;
        while (@prev_day_array % 7 != 0){
            push @prev_day_array, $counter;
            $counter += 1; 
        }
+       # divide into 7 days per row
        push @all_days, [ splice @prev_day_array, 0, 7 ] while @prev_day_array;
-       # push month onto months
+       # push this month onto months
        push @months, {
             first_day_num =>  $first_day_month,
             month => $the_month,
@@ -116,10 +121,14 @@ handle remainder => sub {
             days => [@all_days],
             last_month_days => $last_month_days
        };
+       # go to next month
        $month_date_object = $month_date_object->subtract(months => -1);
+       # save the days in this month
        $last_month_days = $the_month_days;
+       # clear days
        @all_days = ();
     }
+    # return months to handlebar template
     return $plaintext,
         structured_answer => {
             id => 'calendar',
@@ -135,72 +144,7 @@ handle remainder => sub {
                     content => 'DDH.calendar_today.content',
                 }
             }
-        };
-
-    return format_result({
-	    first_day     => $start,
-	    first_day_num => $start->day_of_week() % 7,                                    # 0=Sunday
-	    last_day      => DateTime->last_day_of_month(
-		year  => $the_year,
-		month => $the_month,
-	      )->day(),
-	    highlight => $highlightDay,
-    });
+     };
 };
-
-# prepare text and html to be returned
-sub format_result {
-    my $args = shift;
-    my ($firstDay, $first_day_num, $lastDay, $highlightDay) = @{$args}{qw(first_day first_day_num last_day highlight)};
-    my $previous = $firstDay->clone->subtract(months => 1);
-    my $next = $firstDay->clone->add(months => 1);
-
-    # Print heading
-    my $rText = "\n";
-    # these are supposed to go to previous dates but don't render?
-    my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="/?q=' . encodeURIComponent('calendar ' . $previous->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-left"></span></a></span><span class="calendar__header"><b>';
-    $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="/?q=' . encodeURIComponent('calendar ' . $next->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-right"></span></a></span></th>';
-    $rHtml .= '</tr><tr>';
-
-    # create day headings (M,T,W,T...)
-    for my $dayHeading (@weekDays) {
-        $rText .= $dayHeading . ' ';
-        $rHtml .= '<th>' . $dayHeading . '</th>';
-    }
-    $rText .= "     ".$firstDay->strftime("%B %Y")."\n";
-    $rHtml .= "</tr><tr>";
-
-    # Skip to the first day of the week
-    $rText .= "    " x $first_day_num;
-    $rHtml .= "<td>&nbsp;</td>" x $first_day_num;
-    my $weekDayNum = $first_day_num;
-
-    # Printing the month
-    for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
-        my $padded_date = sprintf('%2s', $dayNum);
-        if ($dayNum == $highlightDay) {
-            $rText .= '|' . $padded_date . '|';
-            $rHtml .= '<td><span class="calendar__today circle">' . $dayNum . '</span></td>';
-        } else {
-            $rText .= ' ' . $padded_date . ' ';
-            $rHtml .= "<td>$dayNum</td>";
-        }
-
-        # next row after 7 cells
-        $weekDayNum++;
-        if ($weekDayNum == 7) {
-          $weekDayNum = 0;
-          $rText .= "\n";
-          $rHtml .= "</tr><tr>";
-        }
-    }
-
-    $rText .= "\n";
-    $rHtml .="</tr></table>";
-
-    return $rText, html => $rHtml;
-}
-
-#};
 
 1;
