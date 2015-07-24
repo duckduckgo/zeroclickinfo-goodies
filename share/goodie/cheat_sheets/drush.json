@@ -1,9 +1,9 @@
 {
     "id": "drush_cheat_sheet",
     "name": "Drush",
-    "description": "shell scripting interface for Drupal",
+    "description": "Shell scripting interface for Drupal",
     "metadata": {
-        "sourceName": "DrushCheatSheet",
+        "sourceName": "Drush Commands",
         "sourceUrl": "http://drushcommands.com"
     },
     "section_order": [
