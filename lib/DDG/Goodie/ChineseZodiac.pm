@@ -22,18 +22,18 @@ attribution github => ['http://github.com/wilkox', 'wilkox'],
             github => ['https://github.com/Sloff', 'Sloff'];
 
 my %animal_to_language_or_image = (
-    'hare' => { en => 'Rabbit', zh => '兔', img => 'https://upload.wikimedia.org/wikipedia/commons/2/24/Rabbit.svg' },
-    'dragon' => { en => 'Dragon', zh => '龙', img => 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Dragon.svg' },
-    'snake' => { en => 'Snake', zh => '蛇', img => 'https://upload.wikimedia.org/wikipedia/commons/1/1d/Snake.svg' },
-    'horse' => { en => 'Horse', zh => '马', img => 'https://upload.wikimedia.org/wikipedia/commons/7/76/Horse.svg' },
-    'sheep' => { en => 'Goat', zh => '羊', img => 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Goat.svg' },
-    'monkey' => { en => 'Monkey', zh => '猴', img => 'https://upload.wikimedia.org/wikipedia/commons/9/96/Monkey_2.svg' },
-    'fowl' => { en => 'Rooster', zh => '鸡', img => 'https://upload.wikimedia.org/wikipedia/commons/0/06/Rooster.svg' },
-    'dog' => { en => 'Dog', zh => '狗', img => 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Dog_2.svg' },
-    'pig' => { en => 'Pig', zh => '猪', img => 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Boar.svg' },
-    'rat' => { en => 'Rat', zh => '鼠', img => 'https://upload.wikimedia.org/wikipedia/commons/0/04/Rat.svg' },
-    'ox' => { en => 'Ox', zh => '牛', img => 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Oxen.svg' },
-    'tiger' => { en => 'Tiger', zh => '虎', img => 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Tiger.svg' }
+    'hare' => { en => 'Rabbit', zh => '兔' },
+    'dragon' => { en => 'Dragon', zh => '龙' },
+    'snake' => { en => 'Snake', zh => '蛇' },
+    'horse' => { en => 'Horse', zh => '马' },
+    'sheep' => { en => 'Goat', zh => '羊' },
+    'monkey' => { en => 'Monkey', zh => '猴' },
+    'fowl' => { en => 'Rooster', zh => '鸡' },
+    'dog' => { en => 'Dog', zh => '狗' },
+    'pig' => { en => 'Pig', zh => '猪' },
+    'rat' => { en => 'Rat', zh => '鼠' },
+    'ox' => { en => 'Ox', zh => '牛' },
+    'tiger' => { en => 'Tiger', zh => '虎' }
 );
 
 my $chinese_zodiac_tz            = 'Asia/Shanghai';
@@ -82,33 +82,26 @@ handle remainder => sub {
     my $animal = $year_chinese->zodiac_animal;
     my $english = $animal_to_language_or_image{$animal}{'en'};
     my $character = $animal_to_language_or_image{$animal}{'zh'};
-    my $img = $animal_to_language_or_image{$animal}{'img'};
 
     my $statement = $year_start->strftime("%b %d, %Y") . " – " . $year_end->strftime("%b %d, %Y");
 
-    return format_answer($character, $english, $statement, $img);
+    return format_answer($character, $english, $statement);
 };
 
 sub format_answer {
-    my ($character, $english, $statement, $img) = @_;
+    my ($character, $english, $statement) = @_;
 
     return "$character ($english)", structured_answer => {
         id => "chinese_zodiac",
         name => "Chinese Zodiac",
         data => {
             title => "$character ($english)",
-            subtitle => $statement,
-            url => "https://en.wikipedia.org/wiki/".$english."_(zodiac)",
-            image => $img
+            subtitle => $statement
         },
         templates => {
-            group => "icon",
+            group => "text",
             item => 0,
-            moreAt => 1,
-            variants => {
-                iconTitle => 'large',
-                iconImage => 'large'
-            }
+            moreAt => 1
         },
         meta => {
             sourceName => "Wikipedia",
