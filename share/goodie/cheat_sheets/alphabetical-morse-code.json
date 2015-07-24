@@ -1,7 +1,6 @@
 {
     "id": "alphabetical_morse_code_cheat_sheet",
-    "name": "Alphabetical Morse Code Cheat Sheet",
-    "description": "Morse Code help",
+    "name": "Alphabetical Morse Code Cheat Sheet",  
     "metadata":{
         "sourceName": "MorseCode",
         "sourceUrl": "http://morsecode.scphillips.com/morse2.html"
