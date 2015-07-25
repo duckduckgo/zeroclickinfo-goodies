@@ -1,5 +1,5 @@
 package DDG::Goodie::Unicornify;
-# ABSTRACT: Return Gravatar image given an email address
+# ABSTRACT: Return Unicornify image given an email address
 
 use strict;
 use DDG::Goodie;
@@ -7,26 +7,51 @@ use CGI qw/img/;
 use Email::Valid;
 use Unicornify::URL;
 
-triggers start => 'unicornify';
-attribution github => ['flaming-toast', 'Jessica Yu'];
+zci answer_type => "unicornify";
+
+primary_example_queries 'unicornify test@example.com';
+description 'Unicornify an email address';
+name 'Unicornify';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Unicornify.pm';
+category 'special';
+topics 'special_interest', 'geek';
+attribution github => ['flaming-toast', 'Jessica Yu'],
+            github => ['https://github.com/Sloff', 'Sloff'];
+            
+zci is_cached => 1;
+triggers startend => 'unicornify';
 
 handle remainder => sub {
-	my $link = 'http://unicornify.appspot.com/';
 	if (Email::Valid->address($_)) {
 		s/[\s\t]+//g; # strip whitespace from the remainder, we just need the email address.
-		my $answer = 'This is a unique unicorn for ' . $_ . ':' . "\nLearn more at unicornify.appspot.com";
-		my $heading =  $_ . ' (Unicornify)';
-		my $html = 'This is a unique unicorn for ' . $_ . ':'
-		.'<br /><a href="' . unicornify_url(email => $_, size => 128) .'">'
-		.'<img src="/iu/?u='.unicornify_url(email => $_, size => "100").'" class="zci--unicornify-img" /></a>'
-		. 'Learn more at <a href="'.$link.'">unicornify.appspot.com</a>';
-
-		return $answer, heading => $heading, html => $html;
+		
+        return "This is a unique unicorn for $_",
+        structured_answer => {
+            id => "unicornify",
+            name => "Social",
+            data => {
+                subtitle => "Unique unicorn",
+                title => "$_",
+                url => unicornify_url(email => $_, size => "200"),
+                image => unicornify_url(email => $_, size => "100")
+            },
+            meta => {
+                sourceName => "Unicornify",
+                sourceUrl => 'http://unicornify.appspot.com/'
+            }, 
+            templates => {
+                group => "icon",
+                item => 0,
+                moreAt => 1,
+                variants => {
+                    iconTitle => 'large',
+                    iconImage => 'large'
+                }
+            }
+        }
 	}
 	return;
 };
-
-zci is_cached => 1;
 
 1;
 
