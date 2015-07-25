@@ -14,11 +14,29 @@ ddg_goodie_test(
 		DDG::Goodie::Unicornify
 		)],
 	'unicornify example@example.com' =>
-		test_zci('This is a unique unicorn for example@example.com:' . "\n" . 'Learn more at unicornify.appspot.com',
-		       heading =>  'example@example.com (Unicornify)',
-			html => 'This is a unique unicorn for example@example.com:'
-			.'<br /><a href="'.unicornify_url(email => 'example@example.com', size => 128).'">'
-			.'<img src="/iu/?u='.unicornify_url(email=>'example@example.com', size => 100).'" class="zci--unicornify-img" /></a>'
-			. 'Learn more at <a href="http://unicornify.appspot.com/">unicornify.appspot.com</a>'));
+        test_zci('This is a unique unicorn for example@example.com',
+        structured_answer => {
+            id => "unicornify",
+            name => "Social",
+            data => {
+                subtitle => "Unique unicorn",
+                title => 'example@example.com',
+                url => unicornify_url(email => 'example@example.com', size => "200"),
+                image => unicornify_url(email => 'example@example.com', size => "100")
+            },
+            meta => {
+                sourceName => "Unicornify",
+                sourceUrl => 'http://unicornify.appspot.com/' 
+            }, 
+            templates => {
+                group => "icon",
+                item => 0,
+                moreAt => 1,
+                variants => {
+                    iconTitle => 'large',
+                    iconImage => 'large'
+                }
+            }
+        }));
 
 done_testing;
