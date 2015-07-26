@@ -28,6 +28,11 @@ ddg_goodie_test(
     ),
     'tell a factorial'    => undef,
     'what is factorial?' => undef,
+    'a factorial' => undef,
+    'factorial xyz' => undef,
+    '-12 factorial' => undef,
+    'fact -8' => undef,
+    'abc fact' => undef,
 );
 
 done_testing;
