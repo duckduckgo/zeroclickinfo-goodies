@@ -2,17 +2,25 @@
     text-align: center;
 }
 
+.zci--answer  .weekend {
+   color:#333; 
+}
+
+
+
 .zci--answer .calendar th, .calendar td {
     width: 2.5em;
     text-align: center;
-    height: 1.6em;
+    height: 2.17em;
     position:relative;
+    font-weight: 400;
 }
 
 .zci--answer .calendar__header {
     vertical-align: top;
     height: 2em;
-    font-size: 1.25em;
+    font-size: 1.18em;
+    font-weight: 600;
 }
 
 .zci--answer .calendar__today {

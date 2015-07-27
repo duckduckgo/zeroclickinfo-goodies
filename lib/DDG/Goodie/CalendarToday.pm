@@ -67,10 +67,8 @@ handle remainder => sub {
     my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
     my $plaintext = "calendar today";
     my @months;
-    my %month_data;
     my $last_month_days = undef;
     my $month_last_day;
-    my $last_day;
     my $month_date_object = DateTime->new(year=>$the_year, month=>$the_month);
     my $the_month_days;
     my @day_array;
@@ -78,10 +76,11 @@ handle remainder => sub {
     my $first_day_month;
     my @prev_day_array;
     my @all_days;
-    my @days_concat;
-    my $counter;
+    my $bumper_row;
+    my $next_month_days;
     # for 12 months starting at current month
     for (my $month_index=0; $month_index < 12; $month_index++){
+        $bumper_row = 0;
 	my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
         $the_year = $month_date_object-> year();  
 	$the_month = $month_date_object -> month();
@@ -106,13 +105,16 @@ handle remainder => sub {
        # concatenate previous days and this months days
        push @prev_day_array , @day_array;
        # add any days from the next month to fill empty space in calendar
-       $counter = 1;
+       $next_month_days = 1;
        while (@prev_day_array % 7 != 0){
-           push @prev_day_array, $counter;
-           $counter += 1; 
+           push @prev_day_array, $next_month_days;
+           $next_month_days += 1; 
        }
        # divide into 7 days per row
        push @all_days, [ splice @prev_day_array, 0, 7 ] while @prev_day_array;
+       if (scalar(@all_days) < 6){
+           $bumper_row = 1;
+       }
        # push this month onto months
        push @months, {
             first_day_num =>  $first_day_month,
@@ -120,8 +122,11 @@ handle remainder => sub {
             month_name => $month_date_object->month_name(),
             year => $the_year, 
             days => [@all_days],
-            last_month_days => $last_month_days
-       };
+            last_month_days => $last_month_days,
+            last_month_length => scalar($last_month_days),
+            next_month_length => $next_month_days, 
+            bumper_row => $bumper_row
+       }; 
        # go to next month
        $month_date_object = $month_date_object->subtract(months => -1);
        # save the days in this month
@@ -139,7 +144,7 @@ handle remainder => sub {
                
             },
             templates => {
-                group => 'base',
+               group => 'base',
                detail => 0,
                 options => {
                     content => 'DDH.calendar_today.content',
