@@ -30,6 +30,8 @@ handle remainder => sub {
         return;
     }
     
+    $n = int($n);
+    
     my $fact = reduce { $a * $b } 1 .. $n;
     
     return "Factorial of $n is $fact",
