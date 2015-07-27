@@ -144,11 +144,11 @@
    },
    {
       "val":"Quick Find within link-text only",
-      "key":" ' "
+      "key":"'"
    },
    {
       "val":"Quick Find",
-      "key":" / "
+      "key":"/"
    },
    {
       "val":"Close the Find or Quick Find bar (When Focused)",
@@ -164,11 +164,11 @@
    },
    {
       "val":"Quickly switch between search engines (When Search Bar is focused)",
-      "key":"[Ctrl] [↑][↓]"
+      "key":"[Ctrl] ([↑]/[↓])"
    },
    {
       "val":"View menu to switch, add or manage search engines (When Search Bar Focused)",
-      "key":"[Alt] [↑][↓]"
+      "key":"[Alt] ([↑]/[↓])"
    }
 ],
         "Windows & Tabs": [
@@ -260,7 +260,7 @@
         "History": [
    {
       "val":"History sidebar",
-      "key":"[Ctrl]  [H]"
+      "key":"[Ctrl] [H]"
    },
    {
       "val":"Library window (History)",
@@ -300,7 +300,7 @@
    },
    {
       "val":"Toggle Developer Tools",
-      "key":"[Ctrl] + [Shift] + [I]"
+      "key":"[Ctrl] [Shift] [I]"
    },
    {
       "val":"Toggle Developer Tools (Alternative)",
@@ -332,7 +332,7 @@
    },
    {
       "val":"Developer Toolbar",
-      "key":"[Shift]  [F2]"
+      "key":"[Shift] [F2]"
    },
    {
       "val":"Responsive Design View",
@@ -358,11 +358,11 @@
         "PDF Viewer": [
    {
       "val":"Next page",
-      "key":"[N] or [J] or [→]"
+      "key":"→"
    },
    {
       "val":"Previous page",
-      "key":"[P] or [K] or [←]"
+      "key":"←"
    },
    {
       "val":"Zoom in",
@@ -454,11 +454,11 @@
    },
    {
       "val":"Mute audio",
-      "key":"[Ctrl]  [↓]"
+      "key":"[Ctrl] [↓]"
    },
    {
       "val":"Unmute audio",
-      "key":"[Ctrl]  [↑]"
+      "key":"[Ctrl] [↑]"
    },
    {
       "val":"Seek back 15 seconds",
@@ -466,7 +466,7 @@
    },
    {
       "val":"Seek back 10 %",
-      "key":"[Ctrl]  [←]"
+      "key":"[Ctrl] [←]"
    },
    {
       "val":"Seek forward 15 seconds",
@@ -474,7 +474,7 @@
    },
    {
       "val":"Seek forward 10 %",
-      "key":"[Ctrl]  [→]"
+      "key":"[Ctrl] [→]"
    },
    {
       "val":"Seek to the beginning",
