@@ -89,6 +89,19 @@
           }, {  
             "key":"$whois <nickname>",
             "val":"When adding a user to the access list, note whether they own their current nick"
-          }]
+          }, {
+            "val": "Various flags",
+            "key": "[None = default for anyone off the street]"
+        }, {
+            "val": "Various flags (alternative)",
+            "key": "[+votiA = ops]"
+        }, {
+            "val": "Various flags (alternative)",
+            "key": "[+votsriRfA - able to set access levels]"
+        }, {
+            "val": "Various flags (alternative)",
+            "key": "[+vVoOtsriRfAF = Channel founder]"
+        }
+          ]
     }
 }
