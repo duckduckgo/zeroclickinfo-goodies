@@ -16,7 +16,8 @@
         "Exiting",
         "Search and replace",
         "Working with multiple files",
-        "Tabs"
+        "Tabs",
+        "Miscellaneous"
     ],
     "sections": {
         "Tabs": [{
@@ -313,6 +314,10 @@
         }, {
             "val": "replace all old with new throughout file with confirmations",
             "key": ":%s/old/new/gc"
+        }],
+        "Miscellaneous": [{
+            "val": "create html representation of current working buffer",
+            "key": ":%TOhtml"
         }]
     }
 }
