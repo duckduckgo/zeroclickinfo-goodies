@@ -1,30 +1,5 @@
 {
-    "id": "blender_cheat_sheet",
-    "name": "Blender",
-    "description": "3D computer graphics software",
-    "metadata": {
-        "sourceName": "OverAPI.com",
-        "sourceUrl": "http://overapi.com/blender/"
-    },
-    "section_order": [
-        "Basics",
-        "General",
-        "Movements",
-        "Navigation",
-        "Selection",
-        "Fly mode",
-        "Switching modes",
-        "Modeling",
-        "Editing curves",
-        "Sculpting",
-        "Animation",
-        "Node editor",
-        "Armatures",
-        "Pose mode",
-        "Timeline",
-        "Video Sequence Editor",
-        "Advanced"
-    ],
+    
     "sections": {
         "Basics": [{
             "val": "Select",
