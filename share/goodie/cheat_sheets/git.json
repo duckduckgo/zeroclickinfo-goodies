@@ -96,6 +96,9 @@
             "key": "$ git stash pop"
         }, {
             "val": "Lists all stashed changesets",
+            "key": "$ git stash list"
+        }, {
+            "val": "Discards the most recently stashed changeset",
             "key": "$ git stash drop"
         }],
         "Review History": [{
