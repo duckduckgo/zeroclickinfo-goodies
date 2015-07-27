@@ -1,9 +1,9 @@
 {
     "id": "firefox_cheat_sheet",
-    "name": "Firefox Cheetsheet",
+    "name": "Firefox Cheatsheet",
     "metadata": {
         "sourceName": "Mozilla Firefox",
-        "sourceUrl": "https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly?redirectlocale=en-US&redirectslug=Keyboard+shortcuts"
+        "sourceUrl": "https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly"
     },
     "section_order": [
         "Navigation",
@@ -22,49 +22,49 @@
         "Navigation": [
    {
       "val":"Back",
-      "key":"Alt + ←Backspacecommand + ←command + [DeleteAlt + ←Ctrl + ["
+      "key":"[Alt] [←]"
    },
    {
       "val":"Forward",
-      "key":"Alt + →Shift + Backspacecommand + →command + ]Shift + DeleteAlt + →Ctrl + ]"
+      "key":"[Alt] [→]"
    },
    {
       "val":"Home",
-      "key":"Alt + Homeoption + home"
+      "key":"[Alt] [Home]"
    },
    {
       "val":"Open File",
-      "key":"Ctrl + Ocommand + O"
+      "key":"[Ctrl] [O]"
    },
    {
       "val":"Reload",
-      "key":"F5Ctrl + Rcommand + R"
+      "key":"F5"
    },
    {
       "val":"Reload (override cache)",
-      "key":"Ctrl + F5Ctrl + Shift + Rcommand + shift + R"
+      "key":"[Ctrl] [F5]"
    },
    {
       "val":"Stop",
-      "key":"Esccommand + ."
+      "key":"Esc"
    }
 ],
         "Current Page": [
    {
       "val":"Go Down a Screen",
-      "key":"Page Downfn + ↓"
+      "key":"[Page Down]"
    },
    {
       "val":"Go Up a Screen",
-      "key":"Page Upfn + ↑"
+      "key":"[Page Up]"
    },
    {
       "val":"Go to Bottom of Page",
-      "key":"Endcommand + ↓"
+      "key":"End"
    },
    {
       "val":"Go to Top of Page",
-      "key":"Homecommand + ↑"
+      "key":"Home"
    },
    {
       "val":"Move to Next Frame",
@@ -72,297 +72,309 @@
    },
    {
       "val":"Move to Previous Frame",
-      "key":"Shift + F6"
+      "key":"[Shift] [F6]"
    },
    {
       "val":"Print",
-      "key":"Ctrl + Pcommand + P"
+      "key":"[Ctrl] [P]"
    },
    {
       "val":"Save Page As",
-      "key":"Ctrl + Scommand + S"
+      "key":"[Ctrl] [S]"
    },
    {
       "val":"Zoom In",
-      "key":"Ctrl + +command + +"
+      "key":"[Ctrl] [+]"
    },
    {
       "val":"Zoom Out",
-      "key":"Ctrl + -command + -"
+      "key":"[Ctrl] [-]"
    },
    {
       "val":"Zoom Reset",
-      "key":"Ctrl + 0command + 0"
+      "key":"[Ctrl] [0]"
    }
 ],
         "Editing": [
    {
       "val":"Copy",
-      "key":"Ctrl + Ccommand + C"
+      "key":"[Ctrl] [C]"
    },
    {
       "val":"Cut",
-      "key":"Ctrl + Xcommand + X"
+      "key":"[Ctrl] [X]"
    },
    {
       "val":"Delete",
-      "key":"Deldelete"
+      "key":"Del"
    },
    {
       "val":"Paste",
-      "key":"Ctrl + Vcommand + V"
+      "key":"[Ctrl] [V]"
    },
    {
       "val":"Paste (as plain text)",
-      "key":"Ctrl + Shift + Vcommand + shift + V"
+      "key":"[Ctrl] [Shift] [V]"
    },
    {
       "val":"Redo",
-      "key":"Ctrl + Ycommand + shift + ZCtrl + Shift + Z"
+      "key":"[Ctrl] [Shift] [Z]"
    },
    {
       "val":"Select All",
-      "key":"Ctrl + Acommand + A"
+      "key":"[Ctrl] [A]"
    },
    {
       "val":"Undo",
-      "key":"Ctrl + Zcommand + Z"
+      "key":"[Ctrl] [Z]"
    }
 ],
         "Search":  [
    {
       "val":"Find",
-      "key":"Ctrl + Fcommand + F"
+      "key":"[Ctrl] [F]"
    },
    {
       "val":"Find Again",
-      "key":"F3Ctrl + Gcommand + G"
+      "key":"[Ctrl] [G]"
    },
    {
       "val":"Find Previous",
-      "key":"Shift + F3Ctrl + Shift + Gcommand + shift + G"
+      "key":"[Shift] [F3]"
    },
    {
       "val":"Quick Find within link-text only",
-      "key":"'"
+      "key":" ' "
    },
    {
       "val":"Quick Find",
-      "key":"/"
+      "key":" / "
    },
    {
-      "val":"Close the Find or Quick Find bar",
+      "val":"Close the Find or Quick Find bar (When Focused)",
       "key":"Esc"
    },
    {
       "val":"Focus Search bar",
-      "key":"Ctrl + Kcommand + KCtrl + ECtrl + Jcommand + option + F"
+      "key":"[Ctrl] [K]"
    },
    {
-      "val":"Quickly switch between search engines",
-      "key":"Ctrl + ↑Ctrl + ↓command + ↑command + ↓"
+      "val":"Focus Search bar (Alternative)",
+      "key":"[Ctrl] [J]"
    },
    {
-      "val":"View menu to switch, add or manage search engines",
-      "key":"Alt + ↑Alt + ↓F4option + ↑option + ↓"
+      "val":"Quickly switch between search engines (When Search Bar is focused)",
+      "key":"[Ctrl] [↑][↓]"
+   },
+   {
+      "val":"View menu to switch, add or manage search engines (When Search Bar Focused)",
+      "key":"[Alt] [↑][↓]"
    }
 ],
         "Windows & Tabs": [
    {
       "val":"Close Tab",
-      "key":"Ctrl + WCtrl + F4command + W"
+      "key":"[Ctrl] [W]"
+   },
+   {
+      "val":"Close Tab",
+      "key":"[Ctrl] [F4]"
    },
    {
       "val":"Close Window",
-      "key":"Ctrl + Shift + WAlt + F4command + shift + W"
+      "key":"[Ctrl] [Shift] [W]"
    },
    {
       "val":"Move Tab in focus Left",
-      "key":"Ctrl + ←Ctrl + ↑command + ←command + ↑Ctrl + Shift + Page Up"
+      "key":"[Ctrl] [Shift] [Page Up]"
    },
    {
       "val":"Move Tab in focus Right",
-      "key":"Ctrl + →Ctrl + ↓command + →command + ↓Ctrl + Shift + Page Down"
+      "key":"[Ctrl] [Shift] [Page Down]"
    },
    {
       "val":"Move Tab in focus to start",
-      "key":"Ctrl + Homecommand + home"
+      "key":"[Ctrl] [Home]"
    },
    {
       "val":"Move Tab in focus to end",
-      "key":"Ctrl + Endcommand + end"
+      "key":"[Ctrl] [End]"
    },
    {
       "val":"New Tab",
-      "key":"Ctrl + Tcommand + T"
+      "key":"[Ctrl] [T]"
    },
    {
       "val":"New Window",
-      "key":"Ctrl + Ncommand + N"
+      "key":"[Ctrl] [N]"
    },
    {
       "val":"New Private Window",
-      "key":"Ctrl + Shift + Pcommand + shift + P"
+      "key":"[Ctrl] [Shift] [P]"
    },
    {
       "val":"Next Tab",
-      "key":"Ctrl + TabCtrl + Page Downcontrol + tabcontrol + page downcommand + option + →"
+      "key":"[Ctrl] [Tab]"
    },
    {
       "val":"Open Address in New Tab",
-      "key":"Alt + Enteroption + return"
+      "key":"[Alt] [Enter]"
    },
    {
       "val":"Previous Tab",
-      "key":"Ctrl + Shift + TabCtrl + Page Upcontrol + shift + tabcontrol + page upcommand + option + ←"
+      "key":"[Ctrl] [Shift] [Tab]"
    },
    {
       "val":"Undo Close Tab",
-      "key":"Ctrl + Shift + Tcommand + shift + T"
+      "key":"[Ctrl] [Shift] [T]"
    },
    {
       "val":"Undo Close Window",
-      "key":"Ctrl + Shift + Ncommand + shift + N"
+      "key":"[Ctrl] [Shift] [N]"
    },
    {
       "val":"Select Tab 1 to 8",
-      "key":"Ctrl + 1to8command + 1to8Alt + 1to8"
+      "key":"[Ctrl] [1to8]"
    },
    {
       "val":"Select Last Tab",
-      "key":"Ctrl + 9command + 9Alt + 9"
+      "key":"[Alt] [9]"
    },
    {
       "val":"Tab Groups View",
-      "key":"Ctrl + Shift + Ecommand + shift + E"
+      "key":"[Ctrl] [Shift] [E]"
    },
    {
       "val":"Close Tab Groups View",
       "key":"Esc"
    },
    {
-      "val":"Next Tab Group",
-      "key":"Ctrl + `control + `"
+      "val":"Next Tab Group (only for some keyboard layouts )",
+      "key":"[Ctrl] [`]"
    },
    {
-      "val":"Previous Tab Group",
-      "key":"Ctrl + Shift + `control + shift + `"
+      "val":"Previous Tab Group (only for some keyboard layouts )",
+      "key":"[Ctrl] [Shift] [`]"
    }
 ],
         "History": [
    {
       "val":"History sidebar",
-      "key":"Ctrl + Hcommand + shift + H"
+      "key":"[Ctrl]  [H]"
    },
    {
       "val":"Library window (History)",
-      "key":"Ctrl + Shift + H"
+      "key":"[Ctrl] [Shift] [H]"
    },
    {
       "val":"Clear Recent History",
-      "key":"Ctrl + Shift + Delcommand + shift + delete"
+      "key":"[Ctrl] [Shift] [Del]"
    }
 ],
         "Bookmarks": [
    {
       "val":"Bookmark All Tabs",
-      "key":"Ctrl + Shift + Dcommand + shift + D"
+      "key":"[Ctrl] [Shift] [D]"
    },
    {
       "val":"Bookmark This Page",
-      "key":"Ctrl + Dcommand + D"
+      "key":"[Ctrl] [D]"
    },
    {
       "val":"Bookmarks sidebar",
-      "key":"Ctrl + BCtrl + Icommand + BCtrl + B"
+      "key":"[Ctrl] [B]"
    },
    {
       "val":"Library window (Bookmarks)",
-      "key":"Ctrl + Shift + Bcommand + shift + BCtrl + Shift + O"
+      "key":"[Ctrl] [Shift] [O]"
    }
 ],
         "Tools": [
    {
       "val":"Downloads",
-      "key":"Ctrl + JCtrl + Shift + Ycommand + J"
+      "key":"[Ctrl] [Shift] [Y]"
    },
    {
       "val":"Add-ons",
-      "key":"Ctrl + Shift + Acommand + shift + A"
+      "key":"[Ctrl] [Shift] [A]"
    },
    {
       "val":"Toggle Developer Tools",
-      "key":"F12Ctrl + Shift + Icommand + alt + I"
+      "key":"[Ctrl] + [Shift] + [I]"
+   },
+   {
+      "val":"Toggle Developer Tools (Alternative)",
+      "key":"F12"
    },
    {
       "val":"Web Console",
-      "key":"Ctrl + Shift + Kcommand + alt + K"
+      "key":"[Ctrl] [Shift] [K]"
    },
    {
       "val":"Inspector",
-      "key":"Ctrl + Shift + Ccommand + alt + C"
+      "key":"[Ctrl] [Shift] [C]"
    },
    {
       "val":"Debugger",
-      "key":"Ctrl + Shift + Scommand + alt + S"
+      "key":"[Ctrl] [Shift] [S]"
    },
    {
       "val":"Style Editor",
-      "key":"Shift + F7"
+      "key":"[Shift] [F7]"
    },
    {
       "val":"Profiler",
-      "key":"Shift + F5"
+      "key":"[Shift] [F5]"
    },
    {
       "val":"Network",
-      "key":"Ctrl + Shift + Qcommand + alt + Q"
+      "key":"[Ctrl] [Shift] [Q]"
    },
    {
       "val":"Developer Toolbar",
-      "key":"Shift + F2"
+      "key":"[Shift]  [F2]"
    },
    {
       "val":"Responsive Design View",
-      "key":"Ctrl + Shift + Mcommand + alt + M"
+      "key":"[Ctrl] [Shift] [M]"
    },
    {
       "val":"Scratchpad",
-      "key":"Shift + F4"
+      "key":"[Shift] [F4]"
    },
    {
       "val":"Page Source",
-      "key":"Ctrl + Ucommand + U"
+      "key":"[Ctrl] [U]"
    },
    {
-      "val":"Error ConsoleBrowser Console",
-      "key":"Ctrl + Shift + Jcommand + shift + J"
+      "val":"Browser Console",
+      "key":"[Ctrl] [Shift] [J]"
    },
    {
       "val":"Page Info",
-      "key":"command + ICtrl + I"
+      "key":"[Ctrl] [I]"
    }
 ],
         "PDF Viewer": [
    {
       "val":"Next page",
-      "key":"N or J or →"
+      "key":"[N] or [J] or [→]"
    },
    {
       "val":"Previous page",
-      "key":"P or K or ←"
+      "key":"[P] or [K] or [←]"
    },
    {
       "val":"Zoom in",
-      "key":"Ctrl + +command + +"
+      "key":"[Ctrl] [+]"
    },
    {
       "val":"Zoom out",
-      "key":"Ctrl + -command + -"
+      "key":"[Ctrl] [-]"
    },
    {
       "val":"Automatic Zoom",
-      "key":"Ctrl + 0command + 0"
+      "key":"[Ctrl] [0]"
    },
    {
       "val":"Rotate the document clockwise",
@@ -370,11 +382,11 @@
    },
    {
       "val":"Rotate counterclockwise",
-      "key":"Shift + R"
+      "key":"[Shift] [R]"
    },
    {
       "val":"Switch to Presentation Mode",
-      "key":"Ctrl + Alt + Pcommand + Alt + P"
+      "key":"[Ctrl] [Alt] [P]"
    },
    {
       "val":"Toggle Hand Tool",
@@ -382,37 +394,41 @@
    },
    {
       "val":"Focus the Page Number input box",
-      "key":"Ctrl + Alt + Gcommand + Alt + G"
+      "key":"[Ctrl] [Alt] [G]"
    }
 ],
         "Miscellaneous": [
    {
       "val":"Complete .com Address",
-      "key":"Ctrl + Entercommand + return"
+      "key":"[Ctrl] [Enter]"
    },
    {
       "val":"Complete .net Address",
-      "key":"Shift + Entershift + return"
+      "key":"[Shift] [Enter]"
    },
    {
       "val":"Complete .org Address",
-      "key":"Ctrl + Shift + Entercommand + shift + return"
+      "key":"[Ctrl] [Shift] [Enter]"
    },
    {
       "val":"Delete Selected Autocomplete Entry",
-      "key":"Delshift + delete"
+      "key":"Del"
    },
    {
       "val":"Toggle Full Screen",
-      "key":"command+Shift+FF11"
+      "key":"F11"
    },
    {
-      "val":"Toggle Menu Bar activation (showing it temporarily when hidden)",
-      "key":"Alt or F10Alt (KDE) or F10 (GNOME)"
+      "val":"Toggle Menu Bar activation (KDE) (showing it temporarily when hidden)",
+      "key":"Alt"
+   },
+    {
+      "val":"Toggle Menu Bar activation (GNOME) (showing it temporarily when hidden)",
+      "key":"F10"
    },
    {
       "val":"Show/Hide Add-on Bar",
-      "key":"Ctrl + /command + /"
+      "key":"[Ctrl] [/]"
    },
    {
       "val":"Caret Browsing",
@@ -420,7 +436,7 @@
    },
    {
       "val":"Select Location Bar",
-      "key":"F6Alt + DCtrl + Lcommand + L"
+      "key":"F6"
    }
 ],
         "Media shortcuts": [
@@ -438,11 +454,11 @@
    },
    {
       "val":"Mute audio",
-      "key":"Ctrl + ↓command + ↓"
+      "key":"[Ctrl]  [↓]"
    },
    {
       "val":"Unmute audio",
-      "key":"Ctrl + ↑command + ↑"
+      "key":"[Ctrl]  [↑]"
    },
    {
       "val":"Seek back 15 seconds",
@@ -450,7 +466,7 @@
    },
    {
       "val":"Seek back 10 %",
-      "key":"Ctrl + ←command + ←"
+      "key":"[Ctrl]  [←]"
    },
    {
       "val":"Seek forward 15 seconds",
@@ -458,7 +474,7 @@
    },
    {
       "val":"Seek forward 10 %",
-      "key":"Ctrl + →command + →"
+      "key":"[Ctrl]  [→]"
    },
    {
       "val":"Seek to the beginning",
