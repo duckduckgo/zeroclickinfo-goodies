@@ -26,12 +26,21 @@ ddg_goodie_test(
             result    => 720
         }
     ),
+    'factorial 0' => test_zci(
+        'Factorial of 0 is 1.',
+        structured_answer => {
+            input     => ['0'],
+            operation => 'Factorial',
+            result    => 1
+        }
+    ),
     'tell a factorial'    => undef,
     'what is factorial?' => undef,
     'a factorial' => undef,
     '25abc factorial' => undef,
     'factorial xyz' => undef,
     'factorial -9' => undef,
+    'factorial 0!' => undef,
     '-12 factorial' => undef,
     'fact -8' => undef,
     'fact 12!' => undef,
