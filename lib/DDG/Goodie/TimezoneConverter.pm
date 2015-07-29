@@ -151,8 +151,7 @@ handle query => sub {
 
     $input->{time}  = $hours + $minutes / 60 + $seconds / 3600 + $pm;
     $output->{time} = $input->{time} + $modifier;
-    for ( $input, $output ) {
-        my $io = $_;
+    for my $io ( $input, $output ) {
         my $time = $io->{time};
         $io->{days} = '';
         if ( $time < 0 ) {
