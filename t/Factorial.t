@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
-use BigInt;
+use bigint;
 
 zci answer_type => "factorial";
 zci is_cached   => 1;
