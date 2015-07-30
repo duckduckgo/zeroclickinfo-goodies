@@ -1,0 +1,76 @@
+{
+    "id": "mtg_phases_cheat_sheet",
+    "name": "Magic: The Gathering Phases and Steps",
+    "description": "Turn Structure",
+    "metadata": {
+        "sourceName": "WoTC",
+        "sourceUrl": "http://archive.wizards.com/Magic/tcg/article.aspx?x=magic/rules"
+    },
+    "section_order": [
+        "Beginning Phase",
+        "First Main Phase",
+        "Combat Phase",
+        "Second Main Phase",
+        "End Phase"
+    ],
+    "sections": {
+        "Beginning Phase": [
+            {
+                "key": "Untap Step",
+                "val": "Untap your creatures, lands, and artifacts."
+            },
+            {
+                "key": "Upkeep Step",
+                "val": "Complete any actions or pay any costs that occur during upkeep."
+            },
+            {
+                "key": "Draw Step",
+                "val": "Draw a card for the turn."
+            }
+        ],
+        "First Main Phase": [
+            {
+                "key": "(No Step)",
+                "val": "Play spells or your one land allowance during your turn."
+            }
+        ],
+        "Combat Phase": [
+            {
+                "key": "Beginning of Phase",
+                "val": "Play instants or activate abilities."
+            },
+            {
+                "key": "Declare Attackers",
+                "val": "Declare which creatures will attack your opponent or opponent's planeswalker."
+            },
+            {
+                "key": "Declare Blockers",
+                "val": "Opponents declare what creatures will be blocked and abilities/instants can be played.."
+            },
+            {
+                "key": "Combat Damage Step",
+                "val": "Creatures deal damage to each other and no spells can be played."
+            },
+            {
+                "key": "End of Combat Step",
+                "val": "The phase ends and triggers occur."
+            }
+        ],
+        "Second Main Phase": [
+            {
+                "key": "(No Step)",
+                "val": "Play spells or your one land allowance during your turn."
+            }
+        ],
+        "End Phase": [
+            {
+                "key": "End Step",
+                "val": "Card triggers are dealt with."
+            },
+            {
+                "key": "Cleanup Step",
+                "val": "Reduce your hand to 7 cards or less then pass the turn."
+            }
+        ]
+    }
+}
