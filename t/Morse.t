@@ -31,6 +31,8 @@ ddg_goodie_test([qw(
     'SOS morse code'         => test_zci(@sos),
     'morse hello, duck'      => test_zci(@duck),
     'morse code hello, duck' => test_zci(@duck),
+    'morse code cheatsheet' => undef,
+    'morse code cheat sheet' => undef,
 );
 
 done_testing;
