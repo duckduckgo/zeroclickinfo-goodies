@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use Test::MockTime qw( :all );
 
 zci answer_type => "week";
 zci is_cached => 1;
@@ -73,7 +74,11 @@ ddg_goodie_test(
             result    => "The 5th week of 1944 began on January 31st.",
         }
     ),
+);
 
+set_fixed_time('2014-01-01T00:00:00');
+ddg_goodie_test(
+    ['DDG::Goodie::Week'],
     'when is the 8th week of 2015' => test_zci(
         "The 8th week of 2015 begins on February 16th.",
         structured_answer => {
@@ -83,5 +88,20 @@ ddg_goodie_test(
         }
     )
 );
+restore_time();
+
+set_fixed_time('2015-07-31T00:00:00');
+ddg_goodie_test(
+    ['DDG::Goodie::Week'],
+    'when is the 8th week of 2015' => test_zci(
+        "The 8th week of 2015 began on February 16th.",
+        structured_answer => {
+            input     => [],
+            operation => 'Assuming the week starts on Monday',
+            result    => "The 8th week of 2015 began on February 16th.",
+        }
+    )
+);
+restore_time();
 
 done_testing;
