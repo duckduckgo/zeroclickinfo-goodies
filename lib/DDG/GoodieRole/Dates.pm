@@ -310,7 +310,9 @@ sub formatted_datestring_regex {
 
 sub is_valid_year {
 	my ($year) = @_;
-	return ($year =~ $full_year) && ($year > 0);
+	return ($year =~ /^[0-9]{1,4}$/)
+		&& (1*$year > 0)
+		&& (1*$year < 10000);
 }
 
 # Called once to build $formatted_datestring

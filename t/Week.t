@@ -74,9 +74,9 @@ ddg_goodie_test(
             result    => "The 5th week of 1944 began on January 31st.",
         }
     ),
-	'what was the 5th week of 0000' => undef,
-	"what was the 0 week of 2011" => undef,
-	"what was the 99th week of 2011" => undef,
+    'what was the 5th week of 0000' => undef,
+    "what was the 0 week of 2011" => undef,
+    "what was the 99th week of 2011" => undef,
 );
 
 set_fixed_time('2014-01-01T00:00:00');
