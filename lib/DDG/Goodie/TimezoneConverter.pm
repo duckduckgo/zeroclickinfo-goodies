@@ -133,63 +133,64 @@ handle query => sub {
     my $american        = $+{'american'};
     my $pm              = ($+{'pm'} && $hours != 12) ? 12 : (!$+{'pm'} && $hours == 12) ? -12 : 0;
 
+    my $input = {};
+    my $output = {};
     # parse_timezone returns undef if the timezone cannot be parsed
-    my ($input_timezone, $gmt_input_timezone) = parse_timezone($+{'from_tz'});
-    return unless defined $gmt_input_timezone;
-    my ($output_timezone, $gmt_output_timezone) = parse_timezone($+{'to_tz'});
-    return unless defined($gmt_output_timezone);
+    ($input->{timezone}, $input->{gmt_timezone}) = parse_timezone($+{'from_tz'});
+    return unless defined $input->{gmt_timezone};
+    ($output->{timezone}, $output->{gmt_timezone}) = parse_timezone($+{'to_tz'});
+    return unless defined $output->{gmt_timezone};
 
-    my $modifier = $gmt_output_timezone - $gmt_input_timezone;
+    my $modifier = $output->{gmt_timezone} - $input->{gmt_timezone};
 
-    for ( $gmt_input_timezone, $gmt_output_timezone ) {
+    for ( $input->{gmt_timezone}, $output->{gmt_timezone} ) {
         $_ = to_time $_;
         s/\A\b/+/;
         s/:00\z//;
     }
 
-    my $input_time  = $hours + $minutes / 60 + $seconds / 3600 + $pm;
-    my $output_time = $input_time + $modifier;
-    for ( $input_time, $output_time ) {
-        my $days = "";
-        if ( $_ < 0 ) {
-            my $s = $_ <= -24 ? 's' : "";
-            $days = sprintf ', %i day%s prior', $_ / -24 + 1, $s;
+    $input->{time}  = $hours + $minutes / 60 + $seconds / 3600 + $pm;
+    $output->{time} = $input->{time} + $modifier;
+    for my $io ( $input, $output ) {
+        my $time = $io->{time};
+        $io->{days} = '';
+        if ( $time < 0 ) {
+            my $s = $time <= -24 ? 's' : "";
+            $io->{days} = sprintf ' (%i day%s prior)', $time / -24 + 1, $s;
 
             # fmod() doesn't do what I want, Perl's % operator doesn't
             # support floating point numbers. Instead, I will use
             # lamest hack ever to do things correctly.
-            $_ += int( $_ / -24 + 1 ) * 24;
+            $time += int( $time / -24 + 1 ) * 24;
         }
-        elsif ( $_ >= 24 ) {
-            my $s = $_ >= 48 ? 's' : "";
-            $days = sprintf ', %i day%s after', $_ / 24, $s;
+        elsif ( $time >= 24 ) {
+            my $s = $time >= 48 ? 's' : "";
+            $io->{days} = sprintf ' (%i day%s after)', $time / 24, $s;
         }
-        $_ = fmod $_, 24;
-        $_ = to_time($_, $american) . $days;
+        $time = fmod $time, 24;
+        $io->{time} = to_time($time, $american);
+
+        $io->{format} = '%s (UTC%s)';
+        $io->{timezones}  = [ $io->{timezone},  $io->{gmt_timezone} ];
+
+        $io->{timezone} =~ /(\A\w+)/;
+        if ( $timezones{ $1 } !~ /[1-9]/ ) {
+            $io->{format} = '%s';
+            pop @{$io->{timezones}};
+        }
     }
 
-    my ( $input_format, $output_format ) = ('%s, UTC%s') x 2;
-    my @input_timezones  = ( $input_timezone,  $gmt_input_timezone );
-    my @output_timezones = ( $output_timezone, $gmt_output_timezone );
+    my $input_string = sprintf "%s $input->{format} to $output->{format}",
+            ucfirst $input->{time}, @{$input->{timezones}}, @{$output->{timezones}};
 
-    # I'm using @timezones because I need list context.
-    if ( @timezones{ $input_timezone =~ /(\A\w+)/ } !~ /[1-9]/ ) {
-        $input_format = '%s';
-        pop @input_timezones;
-    }
-    if ( @timezones{ $output_timezone =~ /(\A\w+)/ } !~ /[1-9]/ ) {
-        $output_format = '%s';
-        pop @output_timezones;
-    }
+    my $output_string = sprintf "%s %s%s",
+            ucfirst $output->{time}, $output->{timezone}, $output->{days};
 
-    my $output_string = sprintf "%s ($input_format) is %s ($output_format).",
-            ucfirst $input_time, @input_timezones,
-            $output_time, @output_timezones;
-    my $output_html = sprintf "<div class='zci--timezone-converter text--secondary'><span class='text--primary'>%s</span> ($input_format) is <span class='text--primary'>%s</span> ($output_format).</div>",
-            ucfirst $input_time, @input_timezones,
-            $output_time, @output_timezones;
-
-    return $output_string, html => $output_html;
+    return $output_string, structured_answer => {
+        input     => [html_enc($input_string)],
+        operation => 'Convert Timezone',
+        result    => html_enc($output_string),
+    };
 };
 
 1;
