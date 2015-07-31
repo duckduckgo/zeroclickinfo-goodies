@@ -74,6 +74,14 @@ ddg_goodie_test(
             result    => "The 5th week of 1944 began on January 31st.",
         }
     ),
+    '8th week of 2015' => test_zci(
+        "The 8th week of 2015 began on February 16th.",
+        structured_answer => {
+            input     => [],
+            operation => 'Assuming the week starts on Monday',
+            result    => "The 8th week of 2015 began on February 16th."
+        }
+    ),
     'what was the 5th week of 0000' => undef,
     "what was the 0 week of 2011" => undef,
     "what was the 99th week of 2011" => undef,
