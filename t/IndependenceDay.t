@@ -16,15 +16,15 @@ sub answer {
         id => "independence_day",
         data => {
             country_code => country2code($_[0]),
-            date => $_[1],
-            info => "Independence Day of " . $_[0]
+            title => $_[1],
+            subtitle => "Independence Day of " . $_[0]
         },
         templates => {
             group => "icon",
             item => "0",
-            elClass => {
-                iconTitle => "t-xxl",
-                iconSubtitle => "tx--15"
+            variants => {
+              iconTitle => 'large',
+              iconImage => 'large'
             }
         }
     });
