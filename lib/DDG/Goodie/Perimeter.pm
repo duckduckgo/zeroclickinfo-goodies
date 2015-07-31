@@ -24,20 +24,24 @@ handle query_lc => sub {
         my %polygons = ("pentagon" => 5, "hexagon" => 6, "octagon" => 8);
         my $shape = $1 ? "circle" : $3 || $5 || $8;
 
-        my $subtitle = "Perimeter";
+        my $subtitle = "Perimeter of $shape with sides of ";
         my $answer;
 
         if ($shape eq "square") {
+            $subtitle .= $4;
             $answer = $4 * 4;
         } elsif ($shape eq "rectangle") {
+            $subtitle .= "$6 and $7";
             $answer = ($6 * 2) + ($7 * 2)
         } elsif ($shape eq "triangle") {
+            $subtitle .= "$9, $10 and $11";
             $answer = $9 + $10 + $11;
         } elsif ($shape eq "circle") {
-            $subtitle = "Circumference";
+            $subtitle = "Circumference of circle with radius of ".($1 || $4);
             $answer = (2 * 3.14159265358979323846) * ($1 || $4);
         } else {
             if (substr $shape, index($shape, "agon") eq "agon") {
+                $subtitle .= $4;
                 $answer = $4 * $polygons{$shape};
             }
         }
