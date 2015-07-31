@@ -2,6 +2,7 @@ package DDG::Goodie::Week;
 # ABSTRACT: Find the current week number or when a week began
 
 use DDG::Goodie;
+with 'DDG::GoodieRole::Dates';
 
 # My imports
 use strict;
@@ -64,8 +65,8 @@ handle query_lc => sub {
     ($week, $year) = qw/current current/ if (not defined $week);
 
     # ensure week number is legitimate
-    return if $week =~ s/(nd|th|rd|st)$// and $week > 52;
-
+	return unless $week eq 'current' or ($week > 0 && $week <=52);
+	
     my $dt = DateTime->now(time_zone => $loc->time_zone);
 
     my $response;
@@ -75,12 +76,12 @@ handle query_lc => sub {
         my ($dt_week_num, $dt_year) = (ordinate($dt->week_number), $dt->year);
         $response = "We are currently in the $dt_week_num week of $dt_year.";
     }
-
     # Asking about nth week of the current year
     elsif ($year eq 'current') {
         $year = $dt->year();
     }
-
+	return unless $year eq 'current' || is_valid_year($year);
+	
     # Asking about nth week of some year
     unless ($response){
         my (undef, $month, $day) = Monday_of_Week($week, $year);

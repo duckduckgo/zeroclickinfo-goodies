@@ -308,9 +308,9 @@ sub formatted_datestring_regex {
     return $formatted_datestring;
 }
 
-sub validate_year {
+sub is_valid_year {
 	my ($year) = @_;
-	return ($year =~ $full_year) && ($year gt 0);
+	return ($year =~ $full_year) && ($year > 0);
 }
 
 # Called once to build $formatted_datestring
