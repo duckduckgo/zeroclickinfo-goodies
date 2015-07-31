@@ -31,7 +31,7 @@
         "First Main Phase": [
             {
                 "key": "(No Step)",
-                "val": "Play spells or your one land allowance during your turn."
+                "val": "Play spells or your one land allowance during this phase."
             }
         ],
         "Combat Phase": [
@@ -45,11 +45,11 @@
             },
             {
                 "key": "Declare Blockers",
-                "val": "Opponents declare what creatures will be blocked and abilities/instants can be played.."
+                "val": "Opponents declare what creatures will be blocked and abilities/instants can be played."
             },
             {
                 "key": "Combat Damage Step",
-                "val": "Creatures deal damage to each other and no spells can be played."
+                "val": "Creatures deal damage to each other and no spells can be played.  An additional combat step is used for creatures with first or double strike."
             },
             {
                 "key": "End of Combat Step",
@@ -59,7 +59,7 @@
         "Second Main Phase": [
             {
                 "key": "(No Step)",
-                "val": "Play spells or your one land allowance during your turn."
+                "val": "Play spells or your one land allowance during this phase."
             }
         ],
         "End Phase": [
