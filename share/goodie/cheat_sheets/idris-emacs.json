@@ -17,8 +17,8 @@
     "sections": {
         "Loading Keys": [
             { "key" : "C-c C-l", "val" : "Load File"},
-            { "key" : "C-c C-n", "val" : "Load Line Forward"],
-            {"key" : "C-c C-p", "val" : "Load Line Backword"}
+            { "key" : "C-c C-n", "val" : "Load Line Forward"},
+            { "key" : "C-c C-p", "val" : "Load Line Backword"}
         ],
         "Documentation" : [
             { "key" : "C-c C-t"     , "val" : "Idris Type at Point"},
@@ -43,7 +43,7 @@
         ],
         "General" : [
             { "key" : "C-c C-z"  , "val" : "Go to REPL"},
-            { "key" : "C-c C-SPC", "val" : "Complete"},
+            { "key" : "C-c C-SPC", "val" : "Complete"}
         ],
         "Manipulate Active Terms" : [
             { "key" : "C-c C-m n", "val" : "Normalise Term"},
@@ -61,7 +61,6 @@
             { "key" : "C-c C-f"    , "val" : "Insert Field in Package File"},
             { "key" : "C-c C-b C-p", "val" : "Open Idris Package File"},
             { "key" : "C-c C-b p"  , "val" : "Open Idris Package File"}
-        ],
+        ]
     }
-
 }
