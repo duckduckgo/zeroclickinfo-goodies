@@ -1,7 +1,7 @@
 {
-"id": "anniversary_cheat_sheet",
-    "name": "Anniversary",
-    "description": "Anniversaries special names",
+    "id": "anniversary_cheat_sheet",
+    "name": "Anniversary Terms",
+    "description": "Common and Latin terms for anniversaries from 6 months up to 2000 years",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Anniversary"
@@ -13,6 +13,9 @@
     "sections": {
         "Common term": [
         {
+            "val": "6 months",
+            "key": "N/A"
+        }, {
             "val": "1 year",
             "key": "Paper"
         }, {
@@ -87,6 +90,21 @@
         }, {
             "val": "300 years",
             "key": "Tercentennial / Tricentennial"
+        } , {
+            "val": "400 years",
+            "key": "Quadricentenary / Quatercentenary"
+        }, {
+            "val": "500 years",
+            "key": "Quincentennial"
+        }, {
+            "val": "600 years",
+            "key": "Sex(a)centennial"
+        }, {
+            "val": "700 years",
+            "key": "Septuacentennial"
+        }, {
+            "val": "800 years",
+            "key": "Octocentennial"
         }
     ],
         
