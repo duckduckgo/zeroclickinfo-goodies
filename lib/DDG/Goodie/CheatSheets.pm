@@ -3,7 +3,7 @@ package DDG::Goodie::CheatSheets;
 
 use JSON::XS;
 use DDG::Goodie;
-use DDP;
+use Text::Trim;
 
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
@@ -22,6 +22,11 @@ triggers startend => (
 );
 
 handle remainder => sub {
+
+    # allow queries like "cheat sheet for vim"
+    s/\bfor\b// if $_ =~ m/^for .+/;
+    trim($_);
+
     # If needed we could jump through a few more hoops to check
     # terms against file names.
     my $json_path = share(join('-', split /\s+/o, lc($_) . '.json'));
