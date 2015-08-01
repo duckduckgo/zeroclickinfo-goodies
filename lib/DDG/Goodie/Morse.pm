@@ -26,7 +26,8 @@ handle remainder => sub {
     my $input = shift;
 
     return unless $input;
-
+    return if($input eq 'cheat sheet');
+    return if($input eq 'cheatsheet');
     my $convertor = is_morse($input) ? \&as_ascii : \&as_morse;
     my $result = $convertor->($input);
 
