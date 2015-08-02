@@ -16,23 +16,23 @@
    "sections" : {
       "Etiquette" : [
          {
-            "val" : "Gute Morgen",
+            "val" : "Gute Nacht",
             "key" : "Good Night"
          },
          {
             "val" : "Guten Tag",
-            "key" : "Good Afternoon"
+            "key" : "Good day"
          },
          {
             "val" : "Guten Abend",
-            "key" : "Good Evening"
+            "key" : "Good evening"
          },
          {
-            "val" : "Es tut mir leid.",
+            "val" : "Es tut mir leid",
             "key" : "I'm sorry"
          },
          {
-            "val" : "Danke.",
+            "val" : "Danke",
             "key" : "Thank you"
          },
          {
@@ -54,11 +54,11 @@
       ],
       "Getting Help" : [
          {
-            "val" : "Ruf Sie Polezei!",
+            "val" : "Rufen Sie die Polizei!",
             "key" : "Call the Police!"
          },
          {
-            "val" : "Koennen Sie bitte langsamer sprechen!",
+            "val" : "Bitte sprechen Sie langsamer!",
             "key" : "Please speak more slowly!"
          },
          {
@@ -91,11 +91,11 @@
          },
          {
             "val" : "Koennen Sie das bitte aufschreiben?",
-            "key" : "Can you write that down?"
+            "key" : "Can you write that down please?"
          },
          {
-            "val" : "Ruf Sie Krankwagen!",
-            "key" : "Call an Ambulance!"
+            "val" : "Rufen Sie einen Krankenwagen!",
+            "key" : "Call an ambulance!"
          },
          {
             "val" : "Ich bin in Gefahr!",
@@ -116,7 +116,7 @@
             "key" : "My name is..."
          },
          {
-            "val" : "Mir geht es gut, danke.",
+            "val" : "Mir geht es gut, danke!",
             "key" : "I'm fine thanks!"
          },
          {
@@ -132,7 +132,7 @@
             "key" : "Welcome"
          },
          {
-            "val" : "Wie Heisst du?",
+            "val" : "Wie heisst du?",
             "key" : "What's your name?"
          }
       ],
@@ -158,11 +158,11 @@
             "key" : "Go straight ahead."
          },
          {
-            "val" : "Hast due einen Stadplan?",
+            "val" : "Haben Sie einen Stadtplan?",
             "key" : "Do you have a city map?"
          },
          {
-            "val" : "Bitte halten Sie heir an.",
+            "val" : "Bitte halten Sie hier.",
             "key" : "Stop here please."
          },
          {
@@ -170,7 +170,7 @@
             "key" : "Turn right."
          },
          {
-            "val" : "Wo sind die Taxies?",
+            "val" : "Wo sind die Taxis?",
             "key" : "Where are the taxis?"
          }
       ],
@@ -188,7 +188,7 @@
             "key" : "I am allergic."
          },
          {
-            "val" : "Nachtish",
+            "val" : "Nachtisch",
             "key" : "Dessert"
          },
          {
@@ -197,14 +197,14 @@
          },
          {
             "val" : "Ein Tasse Kaffee, bitte.",
-            "key" : "A cup of coffee pelase."
+            "key" : "A cup of coffee please."
          },
          {
-            "val" : "Haben Sie ein glutenfreie Gericht?.",
+            "val" : "Haben Sie glutenfreie Gerichte?",
             "key" : "Do you have gluten-free dishes?"
          },
          {
-            "val" : "Wo is ein gutes Restaurant?",
+            "val" : "Wo ist ein gutes Restaurant?",
             "key" : "Where is a good restaurant?"
          },
          {
@@ -220,8 +220,8 @@
             "key" : "Appetizers"
          },
          {
-            "val" : "Kann ich erhalten Die Speisekarte, bitte!",
-            "key" : "Can I get a menu, please!"
+            "val" : "Kann ich bitte die Speisekarte haben?",
+            "key" : "Can I get a menu, please?"
          }
       ]
    }
