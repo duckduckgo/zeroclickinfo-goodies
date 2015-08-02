@@ -15,8 +15,19 @@ ddg_goodie_test(
                 input     => ['127'],
                 operation => 'Hamming Weight',
                 result    => '7'
-        }
-    ),
+        }),
+    'bitsum of 127' => test_zci('7',
+            structured_answer => {
+                input     => ['127'],
+                operation => 'Hamming Weight',
+                result    => '7'
+        }),
+    'bitsum for 0x1234' => test_zci('5',
+            structured_answer => {
+                input     => ['0x1234'],
+                operation => 'Hamming Weight',
+                result    => '5'
+        }), 
     'hammingweight 1024' => test_zci('1',
             structured_answer => {
                 input     => ['1024'],
@@ -28,6 +39,12 @@ ddg_goodie_test(
                 input     => ['0xff'],
                 operation => 'Hamming Weight',
                 result    => '8'
+        }),
+    'hw for 0xaa' => test_zci('4',
+            structured_answer => {
+                input     => ['0xaa'],
+                operation => 'Hamming Weight',
+                result    => '4'
         }),
     # Long number tests
     'hw 123456789123456789123456789' => test_zci('50',

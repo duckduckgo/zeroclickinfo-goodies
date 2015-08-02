@@ -21,7 +21,9 @@ attribution github => ["kste", "Stefan Koelbl"],
             twitter => "kste_";
 
 # Triggers
-triggers start => "bitsum", "hammingweight", "hw";
+triggers start => "bitsum", "hammingweight", "hw", 
+                  "bitsum of", "hammingweight of", "hw of",
+                  "bitsum for", "hammingweight for", "hw for";
 
 # Handle statement
 handle remainder => sub {
@@ -45,7 +47,7 @@ handle remainder => sub {
     
     return $result,
         structured_answer => {
-            input     => [html_enc($input_number)],
+            input     => [html_enc($_)],
             operation => 'Hamming Weight',
             result    => html_enc($result),
         };
