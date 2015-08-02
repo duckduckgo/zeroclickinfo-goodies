@@ -102,7 +102,7 @@
             "key" : "I am in danger!"
          },
          {
-            "val" : "Koennen Sie mir helfen?",
+            "val" : "Können Sie mir helfen?",
             "key" : "Can you help me?"
          },
          {
@@ -196,7 +196,7 @@
             "key" : "I am allergic."
          },
          {
-            "val" : "Nachspeise / [Nachtisch",
+            "val" : "Nachspeise / Nachtisch",
             "key" : "Dessert"
          },
          {
@@ -220,7 +220,7 @@
             "key" : "A glass of water please."
          },
          {
-            "val" : "Einen Tisch fuer zwei bitte!",
+            "val" : "Einen Tisch für zwei bitte!",
             "key" : "A table for two please!"
          },
          {
