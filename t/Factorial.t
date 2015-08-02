@@ -12,7 +12,7 @@ zci is_cached   => 1;
 ddg_goodie_test(
     [qw( DDG::Goodie::Factorial )],
     'fact 4' => test_zci(
-        'Factorial of 4 is 24.',
+        'Factorial of 4 is 24',
         structured_answer => {
             input     => ['4'],
             operation => 'Factorial',
@@ -20,7 +20,7 @@ ddg_goodie_test(
         }
     ),
     'factorial 6' => test_zci(
-        'Factorial of 6 is 720.',
+        'Factorial of 6 is 720',
         structured_answer => {
             input     => ['6'],
             operation => 'Factorial',
@@ -28,7 +28,7 @@ ddg_goodie_test(
         }
     ),
     'factorial 0' => test_zci(
-        'Factorial of 0 is 1.',
+        'Factorial of 0 is 1',
         structured_answer => {
             input     => ['0'],
             operation => 'Factorial',
