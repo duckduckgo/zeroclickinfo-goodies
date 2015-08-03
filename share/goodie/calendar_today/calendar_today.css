@@ -1,5 +1,6 @@
 .zci--answer table.calendar {
     text-align: center;
+    line-height: 2.17;
 }
 
 .zci--answer  .weekend {
@@ -7,7 +8,15 @@
 }
 
 
+.calendar .today{
+    background-color:#e37151;
+    display: inline-block;
+    text-align: center;
+    height: 22px;
+    width:22px;
+    color: #FFFFFF;
 
+}
 .zci--answer .calendar th, .calendar td {
     width: 2.5em;
     text-align: center;
