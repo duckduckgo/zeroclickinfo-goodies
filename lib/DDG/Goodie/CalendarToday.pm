@@ -64,12 +64,11 @@ handle remainder => sub {
     my $the_year  = $date_object->year();
     my $the_month = $date_object->month();
     # return calendar
-    my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
     my $plaintext = "calendar today";
     my @months;
     my $last_month_days = undef;
     my $month_last_day;
-    my $month_date_object = DateTime->new(year=>$the_year, month=>$the_month);
+    my $month_date_object = DateTime->new(year=>$the_year, month=>1);
     my $the_month_days;
     my @day_array;
     my $month = $the_month;
@@ -81,9 +80,8 @@ handle remainder => sub {
     # for 12 months starting at current month
     for (my $month_index=0; $month_index < 12; $month_index++){
         $bumper_row = 0;
-	my $start = parse_datestring_to_date($the_year . "-" . $the_month . "-1");
         $the_year = $month_date_object-> year();  
-	$the_month = $month_date_object -> month();
+	    $the_month = $month_date_object -> month();
         if (!$last_month_days){
             $last_month_days = DateTime->last_day_of_month(
                 year => $month_date_object->clone()->subtract(months => 1)-> year(),
@@ -124,8 +122,7 @@ handle remainder => sub {
             days => [@all_days],
             last_month_days => $last_month_days,
             last_month_length => scalar($last_month_days),
-            next_month_length => $next_month_days, 
-            bumper_row => $bumper_row
+            next_month_length => $next_month_days
        }; 
        # go to next month
        $month_date_object = $month_date_object->subtract(months => -1);
@@ -137,10 +134,11 @@ handle remainder => sub {
     # return months to handlebar template
     return $plaintext,
         structured_answer => {
-            id => 'calendar',
+            id => 'calendar_today',
             name => 'Answer',
             data => \@months,
             meta => {
+                selectedItem => 11
                
             },
             templates => {
