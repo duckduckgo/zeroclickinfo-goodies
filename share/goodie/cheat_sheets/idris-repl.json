@@ -72,7 +72,7 @@
                 "val" :  "Compile to an executable [codegen] [<filename>]"
             },
             {
-                "key" : "[:exec] [:execute] [\\[<expr>]\\]]",
+                "key" : "[:exec] [:execute] [\\[<expr>\\]]",
                 "val" :  "Compile to an executable and run"
             },
             {
@@ -98,7 +98,7 @@
                 "val" : "Search names, types, and documentation"
             },
             {
-                "key" : "[:s] [:search] [\\[<package list>]\\]] [<expr>]",
+                "key" : "[:s] [:search] [\\[<package list>\\]] [<expr>]",
                 "val" : "Search for vals by type"
             },
             {
@@ -180,7 +180,7 @@
                 "val" :  "Turn REPL colours on or off; set a specific colour"
             },
             {
-                "key" : "[:consolewidth]  [auto|infinite>|number]",
+                "key" : "[:consolewidth]  [auto|infinite|number]",
                 "val" :  "Set the width of the console"
             },
             {
