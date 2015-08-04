@@ -24,7 +24,7 @@
                 "val": "Open new window"
             },
             {
-                "key": "[Ctrl-Shift] [N]",
+                "key": "[Ctrl] [Shift] [N]",
                 "val": "Open new Incognito window"
             },
             {
@@ -36,7 +36,7 @@
                 "val": "Close current tab"
             },
             {
-                "key": "[Ctrl-Shift] [T]",
+                "key": "[Ctrl] [Shift] [T]",
                 "val": "Re-open recently closed tab"
             },
             {
@@ -50,7 +50,7 @@
                 "val": "Open Chrome menu"
             },
             {
-                "key": "[Ctrl-Shift] [B]",
+                "key": "[Ctrl] [Shift] [B]",
                 "val": "Toggle the bookmarks bar"
             },
              {
@@ -62,11 +62,11 @@
                 "val": "Open downloads page"
             },
              {
-                "key": "[Ctrl-Shift] [M]",
+                "key": "[Ctrl] [Shift] [M]",
                 "val": "Switch between users"
             },
              {
-                "key": "[Ctrl-Shift] [J]",
+                "key": "[Ctrl] [Shift] [J]",
                 "val": "Open developer Tools"
             },
             {
@@ -119,7 +119,7 @@
                 "val": "Paste copied content"
             },
              {
-                "key": "[Ctrl-Shift] [V]",
+                "key": "[Ctrl] [Shift] [V]",
                 "val": "Paste without formatting"
             },
              {
