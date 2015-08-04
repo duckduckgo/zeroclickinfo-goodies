@@ -1,0 +1,58 @@
+{
+    "id": "bash_cheat_sheet",
+    "name": "bash",
+    "description": "Unix Shell",
+    "metadata": {
+        "sourceName": "Bash Reference Manual",
+        "sourceUrl": "https://www.gnu.org/software/bash/manual/bash.html"
+    },
+    "section_order": [
+        "Lingo",
+        "Shortcuts",
+        "Special Variables"
+    ],
+    "sections": {
+        "Lingo": [
+            {
+                "key": "C",
+                "val": "Cotrol Key (Ctrl)"
+            },
+            {
+                "key": "M",
+                "val": "Meta Key (Alt or ESC)"
+            }
+        ],
+        "Shortcuts": [
+            {
+                "key": "C-l",
+                "val": "Clear Screen"
+            },
+            {
+                "key": "C-a",
+                "val": "Move at the start of the line"
+            },
+            {
+                "key": "C-e",
+                "val": "Move at the end of the line"
+            },
+            {
+                "key": "C-←",
+                "val": "Move backward by a word"
+            },
+            {
+                "key": "C-→",
+                "val": "Move forward by a word"
+            },
+            {
+                "key": "M-.",
+                "val": "Insert last arg of last command"
+            }
+        ],
+        "Special Variables": [
+            {
+                "key": "!$",
+                "val": "Last arg of last command"
+            }
+        ]
+    }
+}
