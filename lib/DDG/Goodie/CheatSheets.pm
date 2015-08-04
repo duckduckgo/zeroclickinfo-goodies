@@ -21,16 +21,27 @@ triggers startend => (
     'key bindings', 'keys', 'default keys'
 );
 
-handle remainder => sub {
+sub get_json_path {
+    my $name = lc shift;
+    return share(join('-', split /\s+/o, "$name.json"));
+}
 
-    # allow queries like "cheat sheet for vim"
-    s/\bfor\b// if $_ =~ m/^for .+/;
-    trim($_);
+handle remainder => sub {
 
     # If needed we could jump through a few more hoops to check
     # terms against file names.
-    my $json_path = share(join('-', split /\s+/o, lc($_) . '.json'));
-    open my $fh, $json_path or return;
+    my $json_path = get_json_path($_);
+    my $fh;
+
+    # try to open file, may need to cleanup candidate filename
+    unless (open $fh, $json_path){ 
+        # allow queries like "cheat sheet for vim"
+        s/^for\s+//;
+        trim($_);
+        $json_path = get_json_path($_);
+        open $fh, $json_path or return;
+    }
+
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
 
