@@ -13,6 +13,8 @@
         "Standard File Descriptors",
         "Arithmetic Operators",
         "IO Redirection",
+        "Expansion And Other Operators",
+        "Exit Statuses",
         "Here Documents",
         "Misc"
     ],
@@ -232,7 +234,7 @@
             },
             {
                 "key": "-ge",
-                "val": "Comparisons (greater than or equal) (alternative)"
+                "val": "Comparison (greater than or equal) (alternative)"
             },
             {
                 "key": "==",
@@ -279,6 +281,62 @@
             {
                 "key": "cmd1 | cmd2",
                 "val": "Output of cmd1 is passed to cmd2"
+            }
+        ],
+        "Expansion And Other Operators": [
+            {
+                "key": "${var:-val}",
+                "val": "If $var exists and isn't NULL, return its value; otherwise return val"
+            },
+            {
+                "key": "${var:=val}",
+                "val": "If $var exists and isn't NULL, return its value; otherwise set it to val and then return its value"
+            },
+            {
+                "key": "${var:?val}",
+                "val": "If $var exists and isn't NULL, return its value; otherwise return 'var: val' and abord"
+            },
+            {
+                "key": "${var:?}",
+                "val": "If $var exists and isn't NULL, return its value; otherwise return 'var: parameter null or not set' and abord"
+            },
+            {
+                "key": "${var:+val}",
+                "val": "If $var exists and isn't NULL, return val; otherwise return NULL"
+            },
+            {
+                "key": "$((...))",
+                "val": "Arithmetic Expansion"
+            },
+            {
+                "key": "${#var}",
+                "val": "String length operator"
+            }
+        ],
+        "Exit Statuses": [
+            {
+                "key": "0",
+                "val": "Success"
+            },
+            {
+                "key": ">0",
+                "val": "Failure"
+            },
+            {
+                "key": "1-125",
+                "val": "Meaning varies depending on command"
+            },
+            {
+                "key": "126",
+                "val": "Not executable"
+            },
+            {
+                "key": "127",
+                "val": "Not found"
+            },
+            {
+                "key": ">128",
+                "val": "Interrupt received"
             }
         ],
         "Here Documents": [
