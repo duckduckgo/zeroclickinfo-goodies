@@ -113,6 +113,14 @@
                 "val": "Paste"
             },
             {
+                "key": "C-_",
+                "val": "Undo"
+            },
+            {
+                "key": "M-r",
+                "val": "Revert to original command (before editing it)"
+            },
+            {
                 "key": "C-p",
                 "val": "Get previous command"
             },
@@ -177,6 +185,18 @@
             {
                 "key": ":",
                 "val": "Dummy placeholder (produces no output)"
+            },
+            {
+                "key": "!-<N>",
+                "val": "Execute Nth command from history"
+            },
+            {
+                "key": "!!",
+                "val": "Execute last command"
+            },
+            {
+                "key": "!<string>",
+                "val": "Execute last command starting with <string>"
             }
         ],
          "Standard File Descriptors": [
