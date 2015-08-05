@@ -17,7 +17,7 @@
         "Beginning Phase": [
             {
                 "key": "Untap Step",
-                "val": "Untap your creatures, lands, and artifacts."
+                "val": "Untap creatures, lands, and artifacts you control that you want untapped."
             },
             {
                 "key": "Upkeep Step",
@@ -31,35 +31,35 @@
         "First Main Phase": [
             {
                 "key": "(No Step)",
-                "val": "Play spells or your one land allowance during this phase."
+                "val": "Play spells or your one land allowance during this phase. Lasts until neither player wants to use a spell or ability (i.e. the stack is empty and neither player wants to do something)."
             }
         ],
         "Combat Phase": [
             {
-                "key": "Beginning of Phase",
-                "val": "Play instants or activate abilities."
+                "key": "Beginning of Combat Step",
+                "val": "Play instants or activate abilities. Declare what player(s) will be attacked."
             },
             {
-                "key": "Declare Attackers",
+                "key": "Declare Attackers Step",
                 "val": "Declare which creatures will attack your opponent or opponent's planeswalker."
             },
             {
-                "key": "Declare Blockers",
-                "val": "Opponents declare what creatures will be blocked and abilities/instants can be played."
+                "key": "Declare Blockers Step",
+                "val": "Opponents declare what creatures will be blocked and abilities/instants can be played in response."
             },
             {
                 "key": "Combat Damage Step",
-                "val": "Creatures deal damage to each other and no spells can be played. An additional combat step is used for creatures with first or double strike."
+                "val": "Creatures deal damage to each other. An additional combat step is used for creatures with first or double strike."
             },
             {
                 "key": "End of Combat Step",
-                "val": "The phase ends and triggers occur."
+                "val": "Triggers occur and are dealt with before the phase officially ends."
             }
         ],
         "Second Main Phase": [
             {
                 "key": "(No Step)",
-                "val": "Play spells or your one land allowance during this phase."
+                "val": "Play spells or your one land allowance during this phase. Lasts until neither player wants to use a spell or ability (i.e. the stack is empty and neither player wants to do something)."
             }
         ],
         "End Phase": [
@@ -69,7 +69,7 @@
             },
             {
                 "key": "Cleanup Step",
-                "val": "Reduce your hand to 7 cards or less then pass the turn."
+                "val": "Reduce your hand to 7 cards or less, remove marked damage from all permanents, then pass the turn."
             }
         ]
     }
