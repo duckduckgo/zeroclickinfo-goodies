@@ -1,22 +1,54 @@
-.zci--answer table.calendar {
+.calendar {
     text-align: center;
     line-height: 2.17;
+    weight: 400;
+    padding: 1.25em;
 }
 
-.zci--answer  .weekend {
-   color:#333; 
+.calendar .header-day{
+    color:#AAA;
+}
+.calendar  .weekend {
+   color:#888; 
 }
 
+.calendar .weekday{
+    color: #333;
+}
+
+.calendar .month-name{
+    font-size: 1.18em;
+    font-weight: 600;
+    color: #333;
+    text-align:left;
+}
+.calendar .year{
+    font-size: 1.18em;
+    font-weight: 300;
+    color: #AAA;
+    text-align:right;
+} 
 
 .calendar .today{
     background-color:#e37151;
     display: inline-block;
     text-align: center;
-    height: 22px;
+    color: #FFF;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    height:22px;
     width:22px;
-    color: #FFFFFF;
 
 }
+
+.calendar .last-month{
+    color: #CCC;
+}
+
+.calendar .next-month{
+    color: #CCC;
+}
+
 .zci--answer .calendar th, .calendar td {
     width: 2.5em;
     text-align: center;
@@ -24,7 +56,7 @@
     position:relative;
     font-weight: 400;
 }
-
+/*
 .zci--answer .calendar__header {
     vertical-align: top;
     height: 2em;
@@ -67,4 +99,4 @@
 
 .zci--answer .ddgsi-arrow-right {
     font-size: 0.75em;
-} 
+} */
