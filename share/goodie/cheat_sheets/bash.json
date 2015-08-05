@@ -4,7 +4,7 @@
     "description": "Unix Shell",
     "metadata": {
         "sourceName": "Bash Reference Manual",
-        "sourceUrl": "https://www.gnu.org/software/bash/manual/bash.html"
+        "sourceUrl": "https://www.gnu.org/software/bash/"
     },
     "section_order": [
         "Lingo",
@@ -16,6 +16,8 @@
         "Expansion And Other Operators",
         "Exit Statuses",
         "Here Documents",
+        "Auto-Completion",
+        "Backslash Escape Sequences",
         "Misc"
     ],
     "sections": {
@@ -59,6 +61,10 @@
                 "val": "Move forward by a word (alternative)"
             },
             {
+                "key": "C-xx",
+                "val": "Move cursor between start of line and current position"
+            },
+            {
                 "key": "M-t",
                 "val": "Swap the last two words before the cursor"
             },
@@ -91,6 +97,18 @@
                 "val": "Kill from cursor to the beginning of line"
             },
             {
+                "key": "M-u",
+                "val": "Upper-case from cursor to the end of word"
+            },
+            {
+                "key": "M-l",
+                "val": "Lower-case from cursor to the end of word"
+            },
+            {
+                "key": "M-c",
+                "val": "Capitalize word (from cursor position)"
+            },
+            {
                 "key": "C-y",
                 "val": "Paste"
             },
@@ -113,6 +131,10 @@
             {
                 "key": "[M-<N>] [C-M-y]",
                 "val": "Get Nth argument of previous command (N=0 gives the command)"
+            },
+            {
+                "key": "M-<",
+                "val": "Insert oldest command from history"
             }
         ],
         "Special Variables": [
@@ -147,6 +169,10 @@
             {
                 "key": "$?",
                 "val": "Exit code of previous command"
+            },
+            {
+                "key": "$$",
+                "val": "PID of current shell or script"
             },
             {
                 "key": ":",
@@ -285,6 +311,18 @@
         ],
         "Expansion And Other Operators": [
             {
+                "key": "$(cmd)",
+                "val": "Execute cmd"
+            },
+            {
+                "key": "`cmd`",
+                "val": "Execute cmd (alternative)"
+            },
+            {
+                "key": "cmd &",
+                "val": "Execute cmd in the background"
+            },
+            {
                 "key": "${var:-val}",
                 "val": "If $var exists and isn't NULL, return its value; otherwise return val"
             },
@@ -341,12 +379,92 @@
         ],
         "Here Documents": [
             {
-                "key": "<<'EOF'",
+                "key": ": <<'EOF'",
                 "val": "Here doc start (newline must follow)"
             },
             {
                 "key": "EOF",
                 "val": "Here doc end (must be at the beginning of the line)"
+            }
+        ],
+        "Auto-Completion": [
+            {
+                "key": "TAB",
+                "val": "Auto-complete (hit twice when ambiguous)"
+            },
+            {
+                "key": "~ TAB-TAB",
+                "val": "Display all users from /etc/passwd"
+            },
+            {
+                "key": "$ TAB-TAB",
+                "val": "Display all system variables"
+            },
+            {
+                "key": "<string> M-/",
+                "val": "Auto-complete/display files and directories starting with <string>"
+            },
+            {
+                "key": "<string> M-?",
+                "val": "Display commands starting with <string>"
+            },
+            {
+                "key": "M-*",
+                "val": "Insert all possible completions"
+            }
+        ],
+        "Backslash Escape Sequences": [
+            {
+                "key": "\\",
+                "val": "Escape character"
+            },
+            {
+                "key": "\\a",
+                "val": "Alert (bell)"
+            },
+            {
+                "key": "\\b",
+                "val": "Backspace"
+            },
+            {
+                "key": "\\c",
+                "val": "Produce no further output"
+            },
+            {
+                "key": "\\e",
+                "val": "Escape character"
+            },
+            {
+                "key": "\\f",
+                "val": "Form feed"
+            },
+            {
+                "key": "\\n",
+                "val": "New line"
+            },
+            {
+                "key": "\\r",
+                "val": "Carriage return"
+            },
+            {
+                "key": "\\t",
+                "val": "Horizondal tab"
+            },
+            {
+                "key": "\\v",
+                "val": "Vertical tab"
+            },
+            {
+                "key": "\\xHH",
+                "val": "Byte with Hex value HH"
+            },
+            {
+                "key": "\\0NNN",
+                "val": "Byte with octal value NNN"
+            },
+            {
+                "key": "\\uHHHH",
+                "val": "Byte with octal value HHHH"
             }
         ],
         "Misc": [
