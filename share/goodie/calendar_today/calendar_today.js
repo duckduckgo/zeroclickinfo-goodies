@@ -1,7 +1,6 @@
 DDH.calendar_today = DDH.calendar_today || {}; // create the namespace in case it doesn't exist
 
 DDH.calendar_today.build = function(ops) {
-
     Spice.registerHelper('calendar_table', function(options, context) { 
        var data = options.hash; 
         var days = data.days,
@@ -10,7 +9,7 @@ DDH.calendar_today.build = function(ops) {
             month_name = data.month_name,
             year = data.year;
         // create header
-        var ret = '<table class="calendar"><tbody><tr><th colspan="7"><span class="calendar__header"><b>'+ month_name + ' ' + year + '</b></span></th></tr><tr class="header-days">';
+        var ret = '<table id="'+month_name+'" class="calendar"><tbody><tr><th colspan="7"><span class="calendar__header"><span class="month-name">'+ month_name + '</span><span class="year">' + year + '</span></span></th></tr><tr class="header-days">';
         // make column table heads for days of week
         for (var i = 0; i < daysOfTheWeek.length; i++){
             ret = ret + '<td class="header-day">' + daysOfTheWeek[i] + '</td>';
@@ -33,14 +32,18 @@ DDH.calendar_today.build = function(ops) {
         // return html 
         return ret;
     });
+    var data = ops.data;
+    var currentMonth = data.month,
+            currentYear = data.year,
+            currentDay = data.day;
 
     DDG.require('moment.js', function(){
         var classes = {
-                        today: 'today circle',
-                        lastMonth: 'last-month',
-                        nextMonth: 'next-month',
-                        weekend: 'weekend'
-                    };
+            today: 'today circle',
+            lastMonth: 'last-month',
+            nextMonth: 'next-month',
+            weekend: 'weekend'
+        };
 
         createDayObject = function(day) {
             var now = moment();
@@ -58,15 +61,15 @@ DDH.calendar_today.build = function(ops) {
 
             var extraClasses = '';
 
-            if(now.format('YYYY-MM-DD') == day.format('YYYY-MM-DD')) {
-                extraClasses += (" " + classes.today);
-                properties.isToday = true;
-            }
             if (currentIntervalStart.month() > day.month()){
                 extraClasses += (' ' + classes.lastMonth);
-            }
-            if (currentIntervalStart.month() < day.month()){
+            } else if (currentIntervalStart.month() < day.month()){
                 extraClasses += (' ' + classes.nextMonth);
+            } else {
+                if(now.format('YYYY-MM-DD') == day.format('YYYY-MM-DD')) {
+                    extraClasses += (" " + classes.today);
+                    properties.isToday = true;
+                }
             }
             
 
@@ -78,37 +81,42 @@ DDH.calendar_today.build = function(ops) {
         
             extraClasses += ' calendar-day-' + day.format('YYYY-MM-DD');
 
-            // day of week
-            extraClasses += ' calendar-dow-' + day.weekday();
+            var weekday = day.weekday();
+            if (weekday === 0 || weekday === 6){
+                extraClasses += ' weekend';
+            } else {
+                extraClasses += ' weekday';
+            }
+            
 
             return {
-            day: day.date(),
-            classes:extraClasses,
-            date: day
+                day: day.date(),
+                classes:extraClasses,
+                date: day
             };
                 
         };
             
-        var items = [];
-        for (var z = 0; z < ops.data.length; z++){
-            var item = ops.data[z];
-            var month = item.month;
-            var year = item.year; 
+        var items = [],
+            item = {};
+            
+        var startDate = moment([currentYear, 0]);
+        var currentMonthName = moment([currentYear, currentMonth - 1]).format('MMMM');
+        for (var z = 0; z < 12; z++){
+            var month = startDate.format('MMMM');
+            var year = startDate.format('YYYY'); 
             var daysOfTheWeek = [];
             for (var i = 0; i < 7; i++) {
                 daysOfTheWeek.push( moment().weekday(i).format('dd').charAt(0) );
             }
             item.daysOfTheWeek = daysOfTheWeek;
             var daysArray = [];
-            // month in moment is 0 based, so 9 is actually october, subtract 1 to compensate
-            // array is 'year', 'month', 'day', etc
-            var startDate = moment([year, month - 1]);
             // Clone the value before .endOf()
-            var endDate = moment(startDate).endOf('month');        
-            var startOfLastMonth = startDate.clone().subtract(1, 'months').startOf('month');
-            var endOfLastMonth = startOfLastMonth.clone().endOf('month');
-            var startOfNextMonth = endDate.clone().add(1, 'months').startOf('month');
-            var endOfNextMonth = startOfNextMonth.clone().endOf('month');
+            var endDate = moment(startDate).endOf('month'),
+                startOfLastMonth = startDate.clone().subtract(1, 'months').startOf('month'),
+                endOfLastMonth = startOfLastMonth.clone().endOf('month'),
+                startOfNextMonth = endDate.clone().add(1, 'months').startOf('month'),
+                endOfNextMonth = startOfNextMonth.clone().endOf('month');
 
             currentIntervalStart = startDate.clone();
             // this array will hold numbers for the entire grid (even the blank spaces)
@@ -125,12 +133,12 @@ DDH.calendar_today.build = function(ops) {
             // now we push all of the days in the interval
             var dateIterator = startDate.clone();
             while (dateIterator.isBefore(endDate) || dateIterator.isSame(endDate, 'day')) {
-                daysArray.push( createDayObject(dateIterator.clone()) );
+                daysArray.push(createDayObject(dateIterator.clone()) );
                 dateIterator.add(1, 'days');
             }
 
             while(daysArray.length % 7 !== 0) {
-                daysArray.push( this.createDayObject(dateIterator.clone()));
+                daysArray.push(this.createDayObject(dateIterator.clone()));
                 dateIterator.add(1, 'days');
             }
 
@@ -138,24 +146,25 @@ DDH.calendar_today.build = function(ops) {
             // if the 42 seems explicit it's because we're creating a 7-row grid and 6 rows of 7 is always 42!
             if(daysArray.length !== 42 ) {
                 while(daysArray.length < 42) {
-                        daysArray.push( createDayObject(dateIterator.clone()) );
-                        dateIterator.add(1, 'days');
-                    }
+                    daysArray.push( createDayObject(dateIterator.clone()) );
+                    dateIterator.add(1, 'days');
+                }
             }
 
             item.days = daysArray;
-            item.month = month;
+            item.month_name = month;
             item.daysOfTheWeek = daysOfTheWeek;
             item.numberOfRows = Math.ceil(daysArray.length / 7);
             item.year = year;
             items.push(item);
+            item = {};
+            startDate = startDate.add(1, 'months');
         }
-
         Spice.add({
             id: "calendar",
             name: "Answer",
             meta:{
-                selectedItem: items[2]
+                selectedItem: currentMonthName
             },
             data: items,
             templates: {

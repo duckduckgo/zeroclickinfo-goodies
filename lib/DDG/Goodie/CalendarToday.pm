@@ -58,85 +58,18 @@ handle remainder => sub {
         # year", or "last week" exactly specify a date so they get highlighted also.
         $highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex || $query =~ $relative_dates_regex);
     }
-    # Highlight today if it's this month and no other day was chosen.
-    $highlightDay ||= $currentDay if (($date_object->year() eq $currentYear) && ($date_object->month() eq $currentMonth));
-
-    my $the_year  = $date_object->year();
-    my $the_month = $date_object->month();
-    # return calendar
-    my $plaintext = "calendar today";
-    my @months;
-    my $last_month_days = undef;
-    my $month_last_day;
-    my $month_date_object = DateTime->new(year=>$the_year, month=>1);
-    my $the_month_days;
-    my @day_array;
-    my $month = $the_month;
-    my $first_day_month;
-    my @prev_day_array;
-    my @all_days;
-    my $bumper_row;
-    my $next_month_days;
-    # for 12 months starting at current month
-    for (my $month_index=0; $month_index < 12; $month_index++){
-        $bumper_row = 0;
-        $the_year = $month_date_object-> year();  
-	    $the_month = $month_date_object -> month();
-        if (!$last_month_days){
-            $last_month_days = DateTime->last_day_of_month(
-                year => $month_date_object->clone()->subtract(months => 1)-> year(),
-	        month => $month_date_object->clone()->subtract(months => 1)-> month()
-            )->day();
-        }
-        
-       $the_month_days = DateTime->last_day_of_month(
-		year  => $the_year,
-		month => $the_month
-	      )->day();
     
-       # get days of this month   
-       @day_array = (1..$the_month_days);
-       # get first day of this month
-       $first_day_month = $month_date_object->day_of_week() % 7;
-       # get days from previous month that will be rendered on calendar
-       @prev_day_array = ($last_month_days-$first_day_month+1..$last_month_days);
-       # concatenate previous days and this months days
-       push @prev_day_array , @day_array;
-       # add any days from the next month to fill empty space in calendar
-       $next_month_days = 1;
-       while (@prev_day_array % 7 != 0){
-           push @prev_day_array, $next_month_days;
-           $next_month_days += 1; 
-       }
-       # divide into 7 days per row
-       push @all_days, [ splice @prev_day_array, 0, 7 ] while @prev_day_array;
-       if (scalar(@all_days) < 6){
-           $bumper_row = 1;
-       }
-       # push this month onto months
-       push @months, {
-            first_day_num =>  $first_day_month,
-            month => $the_month,
-            month_name => $month_date_object->month_name(),
-            year => $the_year, 
-            days => [@all_days],
-            last_month_days => $last_month_days,
-            last_month_length => scalar($last_month_days),
-            next_month_length => $next_month_days
-       }; 
-       # go to next month
-       $month_date_object = $month_date_object->subtract(months => -1);
-       # save the days in this month
-       $last_month_days = $the_month_days;
-       # clear days
-       @all_days = ();
-    }
-    # return months to handlebar template
-    return $plaintext,
+    my $plaintext = "calendar today";
+       return $plaintext,
         structured_answer => {
             id => 'calendar_today',
             name => 'Answer',
-            data => \@months,
+            #data => \@months,
+            data => {
+                month => $currentMonth,
+                day => $currentDay,
+                year => $currentYear
+            },
             meta => {
                 selectedItem => 11
                
