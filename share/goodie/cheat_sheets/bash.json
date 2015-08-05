@@ -9,7 +9,12 @@
     "section_order": [
         "Lingo",
         "Shortcuts",
-        "Special Variables"
+        "Special Variables",
+        "Standard File Descriptors",
+        "Arithmetic Operators",
+        "IO Redirection",
+        "Here Documents",
+        "Misc"
     ],
     "sections": {
         "Lingo": [
@@ -40,18 +45,264 @@
                 "val": "Move backward by a word"
             },
             {
+                "key": "M-b",
+                "val": "Move backward by a word (alternative)"
+            },
+            {
                 "key": "C-→",
                 "val": "Move forward by a word"
             },
             {
+                "key": "M-f",
+                "val": "Move forward by a word (alternative)"
+            },
+            {
+                "key": "M-t",
+                "val": "Swap the last two words before the cursor"
+            },
+            {
+                "key": "C-t",
+                "val": "Swap the last two characters before the cursor"
+            },
+            {
+                "key": "M-Backspace",
+                "val": "Delete a word (backward)"
+            },
+            {
+                "key": "C-w",
+                "val": "Delete a word (backward) (alternative)"
+            },
+            {
+                "key": "M-d",
+                "val": "Delete a word (forward)"
+            },
+            {
+                "key": "C-h",
+                "val": "Delete one character backward (same as Backspace)"
+            },
+            {
+                "key": "C-k",
+                "val": "Kill from cursor to the end of line"
+            },
+            {
+                "key": "C-u",
+                "val": "Kill from cursor to the beginning of line"
+            },
+            {
+                "key": "C-y",
+                "val": "Paste"
+            },
+            {
+                "key": "C-p",
+                "val": "Get previous command"
+            },
+            {
+                "key": "C-n",
+                "val": "Get next command"
+            },
+            {
+                "key": "[C-r] [<pattern>]",
+                "val": "Search previous command containing <pattern>"
+            },
+            {
                 "key": "M-.",
-                "val": "Insert last arg of last command"
+                "val": "Insert last argument of last command"
+            },
+            {
+                "key": "[M-<N>] [C-M-y]",
+                "val": "Get Nth argument of previous command (N=0 gives the command)"
             }
         ],
         "Special Variables": [
             {
                 "key": "!$",
-                "val": "Last arg of last command"
+                "val": "Last argument of last command"
+            }, 
+            {
+                "key": "$#",
+                "val": "Number of arguments given to current process"
+            },
+            {
+                "key": "$@",
+                "val": "Command line arguments for current process"
+            },
+            {
+                "key": "$*",
+                "val": "Without quotes, same as '$@'"
+            },
+            {
+                "key": "\"$*\"",
+                "val": "Command line arguments for current process, expanded to a single argument"
+            },
+            {
+                "key": "$0",
+                "val": "The name of the shell program"
+            },
+            {
+                "key": "$<N>",
+                "val": "Nth argument of current process"
+            },
+            {
+                "key": "$?",
+                "val": "Exit code of previous command"
+            },
+            {
+                "key": ":",
+                "val": "Dummy placeholder (produces no output)"
+            }
+        ],
+         "Standard File Descriptors": [
+            {
+                "key": "0",
+                "val": "stdin (standard input stream)"
+            },
+            {
+                "key": "1",
+                "val": "stdout (stanrard output stream)"
+            },
+            {
+                "key": "2",
+                "val": "stderr (standard error output stream)"
+            }
+        ],
+        "Arithmetic Operators": [
+            {
+                "key": "+",
+                "val": "Addition"
+            },
+            {
+                "key": "-",
+                "val": "Subtraction"
+            },
+            {
+                "key": "++",
+                "val": "Increment"
+            },
+            {
+                "key": "--",
+                "val": "Decrement"
+            },
+            {
+                "key": "*",
+                "val": "Multiplication"
+            },
+            {
+                "key": "/",
+                "val": "Division"
+            },
+            {
+                "key": "**",
+                "val": "Exponentiation"
+            },
+            {
+                "key": "<<",
+                "val": "Bit-shift left"
+            },
+            {
+                "key": ">>",
+                "val": "Bit-shift right"
+            },
+            {
+                "key": "<",
+                "val": "Comparison (lower than)"
+            },
+            {
+                "key": "-lt",
+                "val": "Comparison (lower than) (alternative)"
+            },
+            {
+                "key": "<=",
+                "val": "Comparison (lower than or equal)"
+            },
+            {
+                "key": "-le",
+                "val": "Comparison (lower than or equal) (alternative)"
+            },
+            {
+                "key": ">",
+                "val": "Comparison (greater than)"
+            },
+            {
+                "key": "-gt",
+                "val": "Comparison (greater than) (alternative)"
+            },
+            {
+                "key": ">=",
+                "val": "Comparison (greater than or equal)"
+            },
+            {
+                "key": "-ge",
+                "val": "Comparisons (greater than or equal) (alternative)"
+            },
+            {
+                "key": "==",
+                "val": "Comparison (equal)"
+            },
+            {
+                "key": "!=",
+                "val": "Comparison (not equal)"
+            },
+            {
+                "key": "&",
+                "val": "Bitwise AND"
+            },
+            {
+                "key": "^",
+                "val": "Bitwise exclusive OR"
+            },
+            {
+                "key": "|",
+                "val": "Bitwise OR"
+            },
+            {
+                "key": "&&",
+                "val": "Logical AND"
+            },
+            {
+                "key": "||",
+                "val": "Logical OR"
+            }
+        ],
+        "IO Redirection": [
+            {
+                "key": "cmd > file",
+                "val": "Send cmd output to file"
+            },
+            {
+                "key": "cmd >> file",
+                "val": "Append cmd output to file"
+            },
+            {
+                "key": "cmd < file",
+                "val": "Contents of file become arguments to cmd"
+            },
+            {
+                "key": "cmd1 | cmd2",
+                "val": "Output of cmd1 is passed to cmd2"
+            }
+        ],
+        "Here Documents": [
+            {
+                "key": "<<'EOF'",
+                "val": "Here doc start (newline must follow)"
+            },
+            {
+                "key": "EOF",
+                "val": "Here doc end (must be at the beginning of the line)"
+            }
+        ],
+        "Misc": [
+            {
+                "key": "C-c",
+                "val": "Interrupt running process"
+            },
+            {
+                "key": "C-z",
+                "val": "Suspend running process"
+            },
+            {
+                "key": "C-d",
+                "val": "Exit from current shell"
             }
         ]
     }
