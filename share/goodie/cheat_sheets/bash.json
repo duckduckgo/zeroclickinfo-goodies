@@ -164,7 +164,7 @@
             },
             {
                 "key": "$<N>",
-                "val": "Nth argument of current process"
+                "val": "Nth argument of current process (positional parameter)"
             },
             {
                 "key": "$?",
