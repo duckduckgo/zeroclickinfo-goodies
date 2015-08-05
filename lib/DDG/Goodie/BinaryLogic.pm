@@ -9,7 +9,8 @@ use Marpa::R2;
 
 # Regexp triggers are used to find cases where the logical symbol
 # for 'not' is at the beginning of the query (e.g. the case '¬1')
-triggers query_raw => qr/.*\s+(and|or|xor|⊕|∧|∨)\s+.*/;
+triggers query_raw => qr/.*\s+(and|or|xor)\s+.*/;
+triggers query_raw => qr/.*\s*(⊕|∧|∨)\s*.*/;
 triggers query_raw => qr/not\s+.*/;
 triggers query_raw => qr/¬.*/;
 
@@ -19,7 +20,8 @@ zci answer_type => "binary_logic";
 attribution
     github => ['https://github.com/MithrandirAgain', 'MithrandirAgain'],
     github => ['https://github.com/bpaschen', 'Bjoern Paschen'],
-    twitter => ['https://twitter.com/Prypjat', 'Bjoern Paschen'];
+    twitter => ['https://twitter.com/Prypjat', 'Bjoern Paschen'],
+    github => ['https://github.com/Sloff', 'Sloff'];
 
 primary_example_queries '4 xor 5', '3 and 2', '1 or 1234';
 secondary_example_queries
@@ -107,10 +109,27 @@ handle query_raw => sub {
 
     # Substitute the unicode characters. The parser does not seem to
     # like unicode.
-    $input =~ s/⊕/ xor /;
-    $input =~ s/∧/ and /;
-    $input =~ s/∨/ or /;
-    $input =~ s/¬/ not /;
+    $input =~ s/\s?⊕\s?/ xor /;
+    $input =~ s/\s?∧\s?/ and /;
+    $input =~ s/\s?∨\s?/ or /;
+    $input =~ s/¬\s?/not /;
+    
+    my $subtitle = "Bitwise Operation: ".uc($input);
+    my @numbers = $subtitle =~ /\b((?:0x|0b)?[\da-f]+)\b/gi;
+    my $numInBin;
+    
+    foreach my $number (@numbers) {
+        if ($number =~ /^0x/i) {
+            $numInBin = sprintf "%b", hex($number);
+        } elsif ($number =~ /^0b/i) {
+            $numInBin = $number;
+            $numInBin =~ s/^0b//i;
+        } else {
+            $numInBin = sprintf "%b", $number;
+        }
+        
+        $subtitle =~ s/\b$number\b/$numInBin/g;
+    }
 
     # using eval to catch possible errors with $@
     eval { $recce->read( \$input ) };
@@ -128,7 +147,7 @@ handle query_raw => sub {
         name => 'Answer',
         data => {
             title => $text_output,
-            subtitle => 'Binary Logic'
+            subtitle => $subtitle
         },
         templates => {
             group => 'text',
