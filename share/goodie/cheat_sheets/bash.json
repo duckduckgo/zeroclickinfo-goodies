@@ -497,12 +497,12 @@
         ],
         "Misc": [
             {
-                "key": "$(cmd)",
-                "val": "Execute cmd"
+                "key": "a=$(cmd)",
+                "val": "$a now holds cmd's output"
             },
             {
-                "key": "`cmd`",
-                "val": "Execute cmd (alternative)"
+                "key": "a=`cmd`",
+                "val": "$a now holds cmd's output (alternative)"
             },
             {
                 "key": "cmd &",
