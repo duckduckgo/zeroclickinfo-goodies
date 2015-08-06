@@ -1,0 +1,232 @@
+{
+   "id" : "bulgarian_cheat_sheet",
+   "name" : "Bulgarian Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Linguanaut",
+      "sourceUrl" : "http://www.linguanaut.com/english_bulgarian.htm"
+   },
+   "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Dinner on the Town"
+   ],
+   "description" : "Basic German words and phrases",
+   "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "Leka nosht!",
+            "key" : "Good Night!"
+         },
+         {
+            "val" : "Dobur den!",
+            "key" : "Good day!"
+         },
+         {
+            "val" : "Dobar wecher!",
+            "key" : "Good Evening!"
+         },
+         {
+            "val" : "Izvinete.",
+            "key" : "I'm sorry."
+         },
+         {
+            "val" : "Blagodaria!",
+            "key" : "Thank you!"
+         },
+         {
+            "val" : "Molia.",
+            "key" : "Please."
+         },
+         {
+            "val" : "Mnogo blagodaria!",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "Dobro utro!",
+            "key" : "Good Morning!"
+         },
+         {
+            "val" : "S udovolstvie!",
+            "key" : "You're welcome!"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "Viknete Policia!",
+            "key" : "Call the Police!"
+         },
+         {
+            "val" : "Govorete po bavno!",
+            "key" : "Please speak more slowly!"
+         },
+         {
+            "val" : "Az sum alergichen.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Molia, povtorete.",
+            "key" : "Repeat, please."
+         },
+         {
+            "val" : "Kak kazvate \"X\" na bulgarski?",
+            "key" : "How do you say \"X\" in German?"
+         },
+         {
+            "val" : "Spri!",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "Govorite li angliiski?",
+            "key" : "Do you speak English?"
+         },
+         {
+            "val" : "Izvinete!",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "Imam nujda ot lekar!",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "Moje li da napishete tova?",
+            "key" : "Can you write that down?"
+         },
+         {
+            "val" : "Viknete lineika!",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "Pomosht!",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "Mojete li da mi pomognete?",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "Pojar!",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "Kazvam se...",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "Dobre sum, blagodaria!",
+            "key" : "I'm fine thanks!"
+         },
+         {
+            "val" : "Kak ste?",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "Zdrawei",
+            "key" : "Hello"
+         },
+         {
+            "val" : "Dobredo doshli",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "Kak se kazvate?",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "Zavii na liavo.",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "Kude e izhoda?",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "Kude?",
+            "key" : "Where?"
+         },
+         {
+            "val" : "Dalech li e?",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "Vurvi pravo napred.",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "Imate li karta na grada?",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "Molia sprete tuk.",
+            "key" : "Stop here please."
+         },
+         {
+            "val" : "Zavii na diasno.",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "Kude moga da nameria taxi?",
+            "key" : "Where can I find the taxis?"
+         },
+         {
+            "val" : "Kak moga da vikna taxi?",
+            "key" : "How can I get a taxi?"
+         }
+      ],
+      "Dinner on the Town" : [
+         {
+            "val" : "Imate li vegeratarianski yastia?",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "Osnovno yastie.",
+            "key" : "Main dish."
+         },
+         {
+            "val" : "Starter.",
+            "key" : "Entrée."
+         },
+         {
+            "val" : "Az sum alergichen.",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "Desert.",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "Smetkata, molia!",
+            "key" : "The check please!"
+         },
+         {
+            "val" : "Chasha kafe ako moje.",
+            "key" : "A cup of coffee please."
+         },
+         {
+            "val" : "Imate li yastia bez gluten?",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "Kude ima dobur restorant?",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : "Chasha voda, molia.",
+            "key" : "A glass of water please."
+         },
+         {
+            "val" : "Masa za dvama, molia!",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "Shte moje li da vidq menu, molia?",
+            "key" : "Can I get a menu, please?"
+         }
+      ]
+   }
+}
