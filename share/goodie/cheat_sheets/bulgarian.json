@@ -20,11 +20,11 @@
             "key" : "Good Night!"
          },
          {
-            "val" : "Dobur den!",
+            "val" : "Dobar den!",
             "key" : "Good day!"
          },
          {
-            "val" : "Dobar wecher!",
+            "val" : "Dobar vecher!",
             "key" : "Good Evening!"
          },
          {
@@ -32,15 +32,15 @@
             "key" : "I'm sorry."
          },
          {
-            "val" : "Blagodaria!",
+            "val" : "Blagodarya!",
             "key" : "Thank you!"
          },
          {
-            "val" : "Molia.",
+            "val" : "Molya.",
             "key" : "Please."
          },
          {
-            "val" : "Mnogo blagodaria!",
+            "val" : "Mnogo blagodarya!",
             "key" : "Thank you very much!"
          },
          {
@@ -54,7 +54,7 @@
       ],
       "Getting Help" : [
          {
-            "val" : "Viknete Policia!",
+            "val" : "Viknete Policya!",
             "key" : "Call the Police!"
          },
          {
@@ -66,7 +66,7 @@
             "key" : "I am allergic."
          },
          {
-            "val" : "Molia, povtorete.",
+            "val" : "Molya, povtorete.",
             "key" : "Repeat, please."
          },
          {
@@ -116,7 +116,7 @@
             "key" : "My name is..."
          },
          {
-            "val" : "Dobre sum, blagodaria!",
+            "val" : "Dobre sum, blagodarya!",
             "key" : "I'm fine thanks!"
          },
          {
@@ -128,7 +128,7 @@
             "key" : "Hello"
          },
          {
-            "val" : "Dobredo doshli",
+            "val" : "Dobre doshli",
             "key" : "Welcome"
          },
          {
@@ -138,15 +138,15 @@
       ],
       "Travelling" : [
          {
-            "val" : "Zavii na liavo.",
+            "val" : "Zavii na lyavo.",
             "key" : "Turn left."
          },
          {
-            "val" : "Kude e izhoda?",
+            "val" : "Kade e izhoda?",
             "key" : "Where is the exit?"
          },
          {
-            "val" : "Kude?",
+            "val" : "Kade?",
             "key" : "Where?"
          },
          {
@@ -154,7 +154,7 @@
             "key" : "Is it far?"
          },
          {
-            "val" : "Vurvi pravo napred.",
+            "val" : "Varvi pravo napred.",
             "key" : "Go straight ahead."
          },
          {
@@ -162,15 +162,15 @@
             "key" : "Do you have a city map?"
          },
          {
-            "val" : "Molia sprete tuk.",
+            "val" : "Molya sprete tuk.",
             "key" : "Stop here please."
          },
          {
-            "val" : "Zavii na diasno.",
+            "val" : "Zavii na dyasno.",
             "key" : "Turn right."
          },
          {
-            "val" : "Kude moga da nameria taxi?",
+            "val" : "Kade moga da namerya taxi?",
             "key" : "Where can I find the taxis?"
          },
          {
@@ -180,8 +180,8 @@
       ],
       "Dinner on the Town" : [
          {
-            "val" : "Imate li vegeratarianski yastia?",
-            "key" : "Do you have vegetarian dishes?"
+            "val" : "Imate li vegerataryanski yastya?",
+            "key" : "Do you have vegetaryan dishes?"
          },
          {
             "val" : "Osnovno yastie.",
@@ -200,7 +200,7 @@
             "key" : "Dessert"
          },
          {
-            "val" : "Smetkata, molia!",
+            "val" : "Smetkata, molya!",
             "key" : "The check please!"
          },
          {
@@ -208,23 +208,23 @@
             "key" : "A cup of coffee please."
          },
          {
-            "val" : "Imate li yastia bez gluten?",
+            "val" : "Imate li yastya bez gluten?",
             "key" : "Do you have gluten-free dishes?"
          },
          {
-            "val" : "Kude ima dobur restorant?",
+            "val" : "Kade ima dobar restorant?",
             "key" : "Where is a good restaurant?"
          },
          {
-            "val" : "Chasha voda, molia.",
+            "val" : "Chasha voda, molya.",
             "key" : "A glass of water please."
          },
          {
-            "val" : "Masa za dvama, molia!",
+            "val" : "Masa za dvama, molya!",
             "key" : "A table for two please!"
          },
          {
-            "val" : "Shte moje li da vidq menu, molia?",
+            "val" : "Shte moje li da vidya menu, molya?",
             "key" : "Can I get a menu, please?"
          }
       ]
