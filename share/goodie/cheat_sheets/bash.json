@@ -346,7 +346,7 @@
             },
             {
                 "key": "cmd1 | cmd2",
-                "val": "Output of cmd1 is passed to cmd2"
+                "val": "Output of cmd1 is passed to cmd2's stdin"
             }
         ],
         "Expansion And Other Operators": [
