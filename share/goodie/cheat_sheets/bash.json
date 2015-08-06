@@ -334,11 +334,11 @@
         "IO Redirection": [
             {
                 "key": "cmd > file",
-                "val": "Send cmd output to file"
+                "val": "Send cmd output to file (overwrite)"
             },
             {
                 "key": "cmd >> file",
-                "val": "Append cmd output to file"
+                "val": "Send cmd output to file (append)"
             },
             {
                 "key": "cmd < file",
