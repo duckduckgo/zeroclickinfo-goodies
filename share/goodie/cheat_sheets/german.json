@@ -10,18 +10,14 @@
       "Getting Help",
       "Travelling",
       "Etiquette",
-      "Dinner on the Town"
+      "Going out for Dinner"
    ],
    "description" : "Basic German words and phrases",
    "sections" : {
       "Etiquette" : [
          {
-            "val" : "Guten Nacht",
-            "key" : "Good Night"
-         },
-         {
-            "val" : "Guten Mittag",
-            "key" : "Good Afternoon"
+            "val" : "Gute Nacht",
+            "key" : "Good night"
          },
          {
             "val" : "Guten Abend",
@@ -54,12 +50,12 @@
       ],
       "Getting Help" : [
          {
-            "val" : "Ruf die Polizei (an)!",
-            "key" : "Call the Police!"
+            "val" : "Rufen Sie die Polizei!",
+            "key" : "Call the police!"
          },
          {
-            "val" : "Können Sie bitte langsamer sprechen!",
-            "key" : "Please speak more slowly!"
+            "val" : "Können Sie bitte langsamer sprechen?",
+            "key" : "Can you speak more slowly, please?"
          },
          {
             "val" : "Ich bin allergisch.",
@@ -132,7 +128,7 @@
             "key" : "Welcome"
          },
          {
-            "val" : "Wie heisst du?",
+            "val" : "Wie heißt du?",
             "key" : "What's your name?"
          }
       ],
@@ -163,7 +159,7 @@
          },
          {
             "val" : "Bitte halten Sie hier an.",
-            "key" : "Stop here please."
+            "key" : "Please stop here."
          },
          {
             "val" : "Biegen Sie rechts ab.",
@@ -178,7 +174,7 @@
             "key" : "How can I get a taxi?"
          }
       ],
-      "Dinner on the Town" : [
+      "Going out for Dinner" : [
          {
             "val" : "Haben Sie ein vegetarisches Gericht?",
             "key" : "Do you have vegetarian dishes?"
