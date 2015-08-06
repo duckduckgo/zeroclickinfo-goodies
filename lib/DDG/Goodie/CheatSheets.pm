@@ -22,7 +22,7 @@ triggers startend => (
 );
 
 sub get_json_path {
-    my $name = lc shift;
+    my $name = trim( lc shift );
     return share(join('-', split /\s+/o, "$name.json"));
 }
 
@@ -36,9 +36,7 @@ handle remainder => sub {
     # try to open file, may need to cleanup candidate filename
     unless (open $fh, $json_path){ 
         # allow queries like "cheat sheet for vim"
-        s/^for\s+//;
-        trim($_);
-        $json_path = get_json_path($_);
+        $json_path =~ s|/for-|/|;
         open $fh, $json_path or return;
     }
 
