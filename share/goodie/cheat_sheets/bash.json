@@ -155,6 +155,10 @@
             {
                 "key": "M-<",
                 "val": "Insert oldest command from history"
+            },
+            {
+                "key": "[C-x], [C-v]",
+                "val": "Show bash version"
             }
         ],
         "Special Variables": [
