@@ -252,19 +252,19 @@
             },
             {
                 "key": "<",
-                "val": "Comparison (lower than)"
+                "val": "Comparison (less than)"
             },
             {
                 "key": "-lt",
-                "val": "Comparison (lower than) (alternative)"
+                "val": "Comparison (less than) (alternative)"
             },
             {
                 "key": "<=",
-                "val": "Comparison (lower than or equal)"
+                "val": "Comparison (less than or equal)"
             },
             {
                 "key": "-le",
-                "val": "Comparison (lower than or equal) (alternative)"
+                "val": "Comparison (less than or equal) (alternative)"
             },
             {
                 "key": ">",
