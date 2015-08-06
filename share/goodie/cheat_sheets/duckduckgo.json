@@ -12,7 +12,7 @@
                 "val": "Go to the highlighted result, or use it right away to go to the first result"
             },
             {
-                "key": "[Ctrl]/[⌘] + [↵]",
+                "key": "[Ctrl]/[⌘] [↵]",
                 "val": "Open a result in the background"
             },
             {
