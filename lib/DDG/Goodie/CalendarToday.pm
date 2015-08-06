@@ -50,6 +50,7 @@ handle remainder => sub {
         my ($date_string) = $query =~ qr#^($datestring_regex)$#i;    # Extract any datestring from the query.
 
         $date_object = parse_datestring_to_date($date_string);
+        my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
 
         return unless $date_object;
 
@@ -58,7 +59,9 @@ handle remainder => sub {
         # year", or "last week" exactly specify a date so they get highlighted also.
         $highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex || $query =~ $relative_dates_regex);
     }
-    
+
+    my $the_year  = $date_object->year();
+    my $the_month = $date_object->month();
     my $plaintext = "calendar today";
        return $plaintext,
         structured_answer => {
@@ -66,9 +69,9 @@ handle remainder => sub {
             name => 'Answer',
             #data => \@months,
             data => {
-                month => $currentMonth,
+                month => $the_month,
                 day => $currentDay,
-                year => $currentYear
+                year => $the_year
             },
             meta => {
                 selectedItem => 11
