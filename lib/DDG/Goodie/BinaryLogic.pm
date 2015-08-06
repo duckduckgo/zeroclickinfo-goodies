@@ -140,7 +140,7 @@ handle query_raw => sub {
 
     return if not defined $value_ref;
 
-    my $text_output = ${$value_ref};
+    my $text_output = "${$value_ref}";
 
     return $text_output, structured_answer => {
         id => 'binary_logic',
