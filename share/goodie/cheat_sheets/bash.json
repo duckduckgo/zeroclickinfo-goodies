@@ -159,6 +159,10 @@
             {
                 "key": "[C-x], [C-v]",
                 "val": "Show bash version"
+            },
+            {
+                "key": "[C-x], [C-e]",
+                "val": "Edit current line with ${EDITOR}"
             }
         ],
         "Special Variables": [
