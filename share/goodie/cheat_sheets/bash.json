@@ -73,7 +73,7 @@
                 "val": "Move forward by a word (alternative)"
             },
             {
-                "key": "C-xx",
+                "key": "[C-x], [C-x]",
                 "val": "Move cursor between start of line and current position"
             },
             {
