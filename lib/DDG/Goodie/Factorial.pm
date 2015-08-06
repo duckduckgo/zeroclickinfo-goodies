@@ -25,10 +25,7 @@ triggers any => "factorial", "fact";
 handle remainder => sub {
     my $n = $_;
     
-    #accept only numeric input
-    if ($n =~ m/[^0-9]/){
-        return;
-    }
+    return unless $n =~ /^\d+$/;
     
     $n = int($n);
     
