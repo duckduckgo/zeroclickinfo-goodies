@@ -21,10 +21,43 @@ triggers startend => (
     'key bindings', 'keys', 'default keys'
 );
 
+sub getAliases {
+    my @files = File::Find::Rule->file()
+                                ->name("*.json")
+                                ->in(share());
+    my @results;
+    
+    foreach my $file (@files) {
+        open my $fh, $file or return;
+        my $json = do { local $/;  <$fh> };
+        my $data = decode_json($json);
+        
+        if ($data->{'aliases'}) {
+            foreach my $alias (@{$data->{'aliases'}}) {
+                push (@results, $alias);
+                push (@results, File::Basename::fileparse($file));
+            }
+        }
+    }
+    
+    return @results;
+}
+
+my %alias = (
+    getAliases()
+);
+
 handle remainder => sub {
     # If needed we could jump through a few more hoops to check
     # terms against file names.
-    my $json_path = share(join('-', split /\s+/o, lc($_) . '.json'));
+    my $json_path;
+    
+    if ($alias{lc($_)}) {
+        $json_path = share($alias{lc($_)});
+    } else {
+        $json_path = share(join('-', split /\s+/o, lc($_) . '.json'));
+    }
+    
     open my $fh, $json_path or return;
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
