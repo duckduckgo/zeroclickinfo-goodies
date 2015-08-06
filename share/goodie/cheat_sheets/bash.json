@@ -149,7 +149,7 @@
                 "val": "Insert last argument of last command"
             },
             {
-                "key": "[M-<N>] [C-M-y]",
+                "key": "[M-<N>], [C-M-y]",
                 "val": "Get Nth argument of previous command (N=0 gives the command)"
             },
             {
