@@ -342,7 +342,7 @@
             },
             {
                 "key": "cmd < file",
-                "val": "Contents of file become arguments to cmd"
+                "val": "Contents of file are passed to cmd's stdin"
             },
             {
                 "key": "cmd1 | cmd2",
