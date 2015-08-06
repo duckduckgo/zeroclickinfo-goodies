@@ -74,7 +74,6 @@ handle remainder => sub {
                 year => $the_year
             },
             meta => {
-                selectedItem => 11
                
             },
             templates => {

@@ -5,29 +5,40 @@
     padding: 1.25em;
 }
 
-.calendar .header-day{
-    color:#AAA;
+.calendar .calendar__header {
+    clear:both;
+    
 }
+
+.calendar .calendar__header .month-name{
+    float:left;
+    font-weight: 600;
+    color: #333;
+    text-align:left;
+    font-size: 1.18em;
+
+}
+
+.calendar .calendar__header .year{
+    float: right;
+    font-weight: 300;
+    color: #AAA;
+    text-align: right;
+    font-size: 1.18em;
+}
+
+
+.calendar .header-day{
+    color: #AAA;
+}
+
 .calendar  .weekend {
-   color:#888; 
+   color: #888; 
 }
 
 .calendar .weekday{
     color: #333;
 }
-
-.calendar .month-name{
-    font-size: 1.18em;
-    font-weight: 600;
-    color: #333;
-    text-align:left;
-}
-.calendar .year{
-    font-size: 1.18em;
-    font-weight: 300;
-    color: #AAA;
-    text-align:right;
-} 
 
 .calendar .today{
     background-color:#e37151;
@@ -36,16 +47,12 @@
     color: #FFF;
     -moz-border-radius: 11px;
     border-radius: 11px;
-    height:22px;
-    width:22px;
+    height: 22px;
+    width: 22px;
 
 }
 
-.calendar .last-month{
-    color: #CCC;
-}
-
-.calendar .next-month{
+.calendar .adj-month{
     color: #CCC;
 }
 
@@ -53,17 +60,12 @@
     width: 2.5em;
     text-align: center;
     height: 2.17em;
-    position:relative;
+    position: relative;
     font-weight: 400;
 }
-/*
-.zci--answer .calendar__header {
-    vertical-align: top;
-    height: 2em;
-    font-size: 1.18em;
-    font-weight: 600;
-}
 
+
+/*
 .zci--answer .calendar__today {
     color: white;
     background-color: #808080;

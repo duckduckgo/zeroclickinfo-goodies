@@ -9,7 +9,7 @@ DDH.calendar_today.build = function(ops) {
             month_name = data.month_name,
             year = data.year;
         // create header
-        var ret = '<table id="'+month_name+'" class="calendar"><tbody><tr><th colspan="7"><span class="calendar__header"><span class="month-name">'+ month_name + '</span><span class="year">' + year + '</span></span></th></tr><tr class="header-days">';
+        var ret = '<table class="calendar"><tbody><tr><th colspan="7"><div class="calendar__header"><div class="month-name">'+ month_name + '</div><div class="year">' + year + '</div></div></th></tr><tr class="header-days">';
         // make column table heads for days of week
         for (var i = 0; i < daysOfTheWeek.length; i++){
             ret = ret + '<td class="header-day">' + daysOfTheWeek[i] + '</td>';
@@ -36,13 +36,11 @@ DDH.calendar_today.build = function(ops) {
     var currentMonth = data.month,
             currentYear = data.year,
             currentDay = data.day;
-
     DDG.require('moment.js', function(){
         var classes = {
             today: 'today circle',
-            lastMonth: 'last-month',
-            nextMonth: 'next-month',
-            weekend: 'weekend'
+            weekend: 'weekend',
+            adjacentMonth: 'adj-month'
         };
 
         createDayObject = function(day) {
@@ -61,10 +59,8 @@ DDH.calendar_today.build = function(ops) {
 
             var extraClasses = '';
 
-            if (currentIntervalStart.month() > day.month()){
-                extraClasses += (' ' + classes.lastMonth);
-            } else if (currentIntervalStart.month() < day.month()){
-                extraClasses += (' ' + classes.nextMonth);
+            if (currentIntervalStart.month() !== day.month()){
+                extraClasses += (' ' + classes.adjacentMonth);
             } else {
                 if(now.format('YYYY-MM-DD') == day.format('YYYY-MM-DD')) {
                     extraClasses += (" " + classes.today);
@@ -88,7 +84,6 @@ DDH.calendar_today.build = function(ops) {
                 extraClasses += ' weekday';
             }
             
-
             return {
                 day: day.date(),
                 classes:extraClasses,
@@ -103,9 +98,10 @@ DDH.calendar_today.build = function(ops) {
         var startDate = moment([currentYear, 0]);
         var currentMonthName = moment([currentYear, currentMonth - 1]).format('MMMM');
         for (var z = 0; z < 12; z++){
-            var month = startDate.format('MMMM');
-            var year = startDate.format('YYYY'); 
-            var daysOfTheWeek = [];
+            var month_name = startDate.format('MMMM'),
+                month = startDate.month(),
+                year = startDate.format('YYYY'),
+                daysOfTheWeek = [];
             for (var i = 0; i < 7; i++) {
                 daysOfTheWeek.push( moment().weekday(i).format('dd').charAt(0) );
             }
@@ -152,10 +148,12 @@ DDH.calendar_today.build = function(ops) {
             }
 
             item.days = daysArray;
-            item.month_name = month;
+            item.month_name = month_name;
+            item.month = month;
             item.daysOfTheWeek = daysOfTheWeek;
             item.numberOfRows = Math.ceil(daysArray.length / 7);
             item.year = year;
+            item.id = month;
             items.push(item);
             item = {};
             startDate = startDate.add(1, 'months');
@@ -164,7 +162,9 @@ DDH.calendar_today.build = function(ops) {
             id: "calendar",
             name: "Answer",
             meta:{
-                selectedItem: currentMonthName
+                selectedItem: String(currentMonth),
+                scrollToSelectedItem: true,
+                itemsHighlight: false 
             },
             data: items,
             templates: {
