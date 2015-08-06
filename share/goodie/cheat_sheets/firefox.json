@@ -16,7 +16,7 @@
         "Tools",
         "PDF Viewer",
         "Miscellaneous",
-        "Media shortcuts"
+        "Audio & Video Media"
     ],
     "sections":{  
         "Navigation":[  
@@ -439,7 +439,7 @@
                 "key":"F6"
             }
         ],
-        "Media shortcuts":[  
+        "Audio & Video Media":[  
             {  
                 "val":"Toggle Play / Pause",
                 "key":"Space bar"
