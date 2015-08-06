@@ -1,5 +1,5 @@
 {
-    "id": "firefox_cheat_sheet", 
+    "id": "firefox_cheat_sheet",
     "name": "Mozilla Firefox",
     "metadata": {
         "sourceName": "Firefox Help",
@@ -131,6 +131,15 @@
         }, {
             "val": "Undo Close Tab  ",
             "key": "[Ctrl]  [Shift]  [T]"
+        }, {
+            "val": "Group Tabs Manager",
+            "key": "[Ctrl]  [Shift]  [E]"
+        }, {
+            "val": "Next Tab Group",
+            "key": "[Ctrl] [`]"
+        }, {
+            "val": "Previous Tab Group",
+            "key": "[Ctrl] [Shift] [`]"
         }, {
             "val": "Select Tab 1 to 8  ",
             "key": "[Alt]  [1..8] "
