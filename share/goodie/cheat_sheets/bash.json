@@ -345,8 +345,40 @@
                 "val": "Contents of file are passed to cmd's stdin"
             },
             {
+                "key": "cmd << '<string>'",
+                "val": "Contents of the shell script up to a line identical to <string> become stdin for cmd (verbatim)"
+            },
+            {
+                "key": "cmd << <string>",
+                "val": "Same as above but variables and arithmetic operations are processed"
+            },
+            {
                 "key": "cmd1 | cmd2",
                 "val": "Output of cmd1 is passed to cmd2's stdin"
+            },
+            {
+                "key": "cmd >&n",
+                "val": "Send cmd's output to file descriptor n"
+            },
+            {
+                "key": "cmd m>&n",
+                "val": "Same as above except that output that would normally go to file descriptor m, will also go to n"
+            },
+            {
+                "key": "cmd <&n",
+                "val": "File descriptor n becomes stdin for cmd"
+            },
+            {
+                "key": "cmd m<&n",
+                "val": "Same as above except that intput that would normally come from file descriptor m, will now come from n"
+            },
+            {
+                "key": "cmd >&-",
+                "val": "Close stdout"
+            },
+            {
+                "key": "cmd <&-",
+                "val": "Close stdin"
             }
         ],
         "Expansion And Other Operators": [
