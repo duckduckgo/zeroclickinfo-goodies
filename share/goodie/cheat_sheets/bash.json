@@ -33,6 +33,18 @@
         ],
         "Shortcuts": [
             {
+                "key": "C-c",
+                "val": "Interrupt running process"
+            },
+            {
+                "key": "C-z",
+                "val": "Suspend running process"
+            },
+            {
+                "key": "C-d",
+                "val": "Exit from current shell"
+            },
+            {
                 "key": "C-l",
                 "val": "Clear Screen"
             },
@@ -45,7 +57,7 @@
                 "val": "Move at the end of the line"
             },
             {
-                "key": "C-←",
+                "key": "M-←",
                 "val": "Move backward by a word"
             },
             {
@@ -53,7 +65,7 @@
                 "val": "Move backward by a word (alternative)"
             },
             {
-                "key": "C-→",
+                "key": "M-→",
                 "val": "Move forward by a word"
             },
             {
@@ -202,15 +214,15 @@
          "Standard File Descriptors": [
             {
                 "key": "0",
-                "val": "stdin (standard input stream)"
+                "val": "stdin"
             },
             {
                 "key": "1",
-                "val": "stdout (stanrard output stream)"
+                "val": "stdout"
             },
             {
                 "key": "2",
-                "val": "stderr (standard error output stream)"
+                "val": "stderr"
             }
         ],
         "Arithmetic Operators": [
@@ -330,18 +342,6 @@
             }
         ],
         "Expansion And Other Operators": [
-            {
-                "key": "$(cmd)",
-                "val": "Execute cmd"
-            },
-            {
-                "key": "`cmd`",
-                "val": "Execute cmd (alternative)"
-            },
-            {
-                "key": "cmd &",
-                "val": "Execute cmd in the background"
-            },
             {
                 "key": "${var:-val}",
                 "val": "If $var exists and isn't NULL, return its value; otherwise return val"
@@ -484,21 +484,21 @@
             },
             {
                 "key": "\\uHHHH",
-                "val": "Byte with octal value HHHH"
+                "val": "Byte with Hex value HHHH (unicode)"
             }
         ],
         "Misc": [
             {
-                "key": "C-c",
-                "val": "Interrupt running process"
+                "key": "$(cmd)",
+                "val": "Execute cmd"
             },
             {
-                "key": "C-z",
-                "val": "Suspend running process"
+                "key": "`cmd`",
+                "val": "Execute cmd (alternative)"
             },
             {
-                "key": "C-d",
-                "val": "Exit from current shell"
+                "key": "cmd &",
+                "val": "Execute cmd in the background"
             }
         ]
     }
