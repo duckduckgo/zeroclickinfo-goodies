@@ -24,7 +24,7 @@
             "key": "[SPC], [C-v]"
         }, {
             "val": "Backward page",
-            "key": "[b], [ESC] + [v]"
+            "key": "[b], [ESC] [v]"
         }, {
             "val": "Cursor right",
             "key": "[l], [C-f]"
@@ -87,7 +87,7 @@
             "key": "TAB"
         }, {
             "val": "Move to previous hyperlink",
-            "key": "[C-u], [ESC] + [TAB]"
+            "key": "[C-u], [ESC] [TAB]"
         }, {
             "val": "Move to the first hyperlink",
             "key": "\\["
@@ -100,7 +100,7 @@
             "key": "RET"
         }, {
             "val": "Save link to file",
-            "key": "[ESC] + [RET]"
+            "key": "[ESC] [RET]"
         }, {
             "val": "Peek link URL",
             "key": "u"
@@ -112,13 +112,13 @@
             "key": "l"
         }, {
             "val": "Save inline image to file",
-            "key": "[ESC] + [l]"
+            "key": "[ESC] [l]"
         }, {
             "val": "Mark URL-like strings as anchors",
             "key": ":"
         }, {
             "val": "Mark Message-ID-like strings as news anchors",
-            "key": "[ESC] + [:]"
+            "key": "[ESC] [:]"
         }, {
             "val": "Peek current URL",
             "key": "c"
@@ -139,7 +139,7 @@
             "key": "M"
         }, {
             "val": "Browse link using external browser (use 2ESC M and 3ESC M to invoke second and third browser)",
-            "key": "[ESC] + [M]"
+            "key": "[ESC] [M]"
         }],
         "File/Stream operation`": [{
             "val": "Open URL",
@@ -177,10 +177,10 @@
             "key": "S"
         }, {
             "val": "Save source",
-            "key": "[ESC] + [s]"
+            "key": "[ESC] [s]"
         }, {
             "val": "Edit buffer image",
-            "key": "[ESC] + [e]"
+            "key": "[ESC] [e]"
         }],
         "Buffer selection mode": [{
             "val": "Select previous buffer",
@@ -197,10 +197,10 @@
         }],
         "Bookmark operation": [{
             "val": "Load bookmark",
-            "key": "[ESC] + [b]"
+            "key": "[ESC] [b]"
         }, {
             "val": "Add current to bookmark",
-            "key": "[ESC] + [a]"
+            "key": "[ESC] [a]"
         }],
         "Search": [{
             "val": "Search forward",
@@ -223,10 +223,10 @@
             "key": "C-SPC"
         }, {
             "val": "Go to previous mark",
-            "key": "[ESC] + [p]"
+            "key": "[ESC] [p]"
         }, {
             "val": "Go to next mark",
-            "key": "[ESC] + [n]"
+            "key": "[ESC] [n]"
         }, {
             "val": "Mark by regular expression",
             "key": "\""
