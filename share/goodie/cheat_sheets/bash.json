@@ -392,11 +392,11 @@
             },
             {
                 "key": "${var:?val}",
-                "val": "If $var exists and isn't NULL, return its value; otherwise return 'var: val' and abord"
+                "val": "If $var exists and isn't NULL, return its value; otherwise return 'var: val' and abort"
             },
             {
                 "key": "${var:?}",
-                "val": "If $var exists and isn't NULL, return its value; otherwise return 'var: parameter null or not set' and abord"
+                "val": "If $var exists and isn't NULL, return its value; otherwise return 'var: parameter null or not set' and abort"
             },
             {
                 "key": "${var:+val}",
