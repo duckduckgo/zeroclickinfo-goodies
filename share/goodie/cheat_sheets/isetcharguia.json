@@ -1,0 +1,10 @@
+/**
+* Created with DuckDuckHack.
+* User: marwendoukh
+* Date: 2015-08-07
+* Time: 12:01 AM
+* To change this template use Tools | Templates.
+*/
+define(function() {
+return {};
+});
