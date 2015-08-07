@@ -4,9 +4,9 @@
     "description": "List of useful keyboard shortcuts for Mac", 
     "metadata": { 
         "sourceName": "Mac keyboard shortcuts",
-        "sourceUrl": "https://support.apple.com/en-us/HT201236"
+        "sourceUrl": "https://support.apple.com/en + us/HT201236"
     },
-    "section_order" : ["General", "Finder", "Text Editing", "Web Browsing (Works on most modern browsers)", "Spotlight", "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)"],
+    "section_order" : ["General", "Finder", "Text Editing", "Document shortcuts", "Web Browsing (Works on most modern browsers)", "Spotlight", "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)"],
     "sections":{
         "Finder": [{
             "key" : "[Cmd] + [C]",
@@ -62,7 +62,11 @@
         }, {
             "key" : "[Cmd] + [↑/↓]",
             "val" : "Skip to next/previous result category"
-        }], "Text Editing" :[{
+        }],
+     
+        
+        
+        "Text Editing" :[{
             "key" : "[Cmd] + [A]",
             "val" : "Select all"
         }, {
@@ -97,10 +101,10 @@
             "val" : "Go to end of next word"
         }], "General" : [{
             "key" : "[Cmd] + [Tab]",
-            "val" : "Switch between apps. Holding Shift reverses."
+            "val" : "Switch between apps. Holding [Shift] reverses."
         }, {
             "key" : "[Cmd] + [~]",
-            "val" : "Switch to next window of current app. Holding Shift reverses."
+            "val" : "Switch to next window of current app. Holding [Shift] reverses."
         }, {
             "key" : "[Cmd] + [Q]",
             "val" : "Quit app"
@@ -148,10 +152,258 @@
             "val" : "Go forward a page"
         }, {
             "key" : "[Ctrl] + [Tab]",
-            "val" : "Cycle through tabs. Holding Shift reverses."
+            "val" : "Cycle through tabs. Holding [Shift] reverses."
         }, {
             "key" : "[Cmd] + [F]",
             "val" : "Find"
-        }]
+        }],
+        
+      "Document shortcuts" : [
+
+            {
+                "key": "[Cmd] + [Shift] + [Opt] + [V]",
+                "val": "Paste and Match Style: Apply the style of the surrounding content to the item pasted within that content."
+            },
+          
+               {
+                "key": "[Cmd] + [Opt] + [C]",
+                "val": "Copy Style: Copy the formatting settings of the selected item to the Clipboard."
+            },
+            {
+                "key": "[Cmd] + [Opt] + [V]",
+                "val": "Paste Style: Apply the copied style to the selected item."
+            },
+
+            {
+                "key": "[Cmd] + [B]",
+                "val": "Boldface the selected text, or turn boldfacing on or off."
+            },
+            {
+                "key": "[Cmd] + [I]",
+                "val": "Italicize the selected text, or turn italics on or off."
+            },
+            {
+                "key": "[Cmd] + [U]",
+                "val": "Underline the selected text, or turn underlining on or off."
+            },
+            {
+                "key": "[Cmd] + [T]",
+                "val": "Show or hide the Fonts window."
+            },
+            {
+                "key": "[Cmd] + [D]",
+                "val": "Select the Desktop folder from within an Open dialog or Save dialog."
+            },
+            {
+                "key": "[Cmd] + [Ctrl] + [D]",
+                "val": "Show or hide the definition of the selected word."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [Colon (:)]",
+                "val": "Display the Spelling and Grammar window."
+            },
+            {
+                "key": "[Cmd] + [Semicolon (;)]",
+                "val": "Find misspelled words in the document."
+            },
+            {
+                "key": "[Opt] + [Delete]",
+                "val": "Delete the word to the left of the insertion point."
+            },
+            {
+                "key": "[Ctrl] + [H]",
+                "val": "Delete the character to the left of the insertion point. Or use Delete."
+            },
+            {
+                "key": "[Ctrl] + [D]",
+                "val": "Delete the character to the right of the insertion point. Or use Fn + Delete."
+            },
+            {
+                "key": "[Fn] + [Delete]",
+                "val": "Forward delete on keyboards that don't have a Forward Delete  key. Or use [Ctrl] D."
+            },
+            {
+                "key": "[Ctrl] + [K]",
+                "val": "Delete the text between the insertion point and the end of the line or paragraph."
+            },
+            {
+                "key": "[Cmd] + [Delete]",
+                "val": "Select Delete or Don't Save in a dialog that contains a Delete or Don't Save button."
+            },
+            {
+                "key": "[Fn] + [↑]",
+                "val": "Page Up: Scroll up one page."
+            },
+            {
+                "key": "[Fn] + [↓]",
+                "val": "Page Down: Scroll down one page."
+            },
+            {
+                "key": "[Fn] + [←]",
+                "val": "Home: Scroll to the beginning of a document."
+            },
+            {
+                "key": "[Fn] + [→]",
+                "val": "End: Scroll to the end of a document."
+            },
+            {
+                "key": "[Cmd] + [↑]",
+                "val": "Move the insertion point to the beginning of the document."
+            },
+            {
+                "key": "[Cmd] + [↓]",
+                "val": "Move the insertion point to the end of the document."
+            },
+            {
+                "key": "[Cmd] + [←]",
+                "val": "Move the insertion point to the beginning of the current line."
+            },
+            {
+                "key": "[Cmd] + [→]",
+                "val": "Move the insertion point to the end of the current line."
+            },
+            {
+                "key": "[Opt] + [←]",
+                "val": "Move the insertion point to the beginning of the previous word."
+            },
+            {
+                "key": "[Opt] + [→]",
+                "val": "Move the insertion point to the end of the next word."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [↑]",
+                "val": "Select the text between the insertion point and the beginning of the document."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [↓]",
+                "val": "Select the text between the insertion point and the end of the document."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [←]",
+                "val": "Select the text between the insertion point and the beginning of the current line."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [→]",
+                "val": "Select the text between the insertion point and the end of the current line."
+            },
+            {
+                "key": "[Shift] + [↑]",
+                "val": "Extend text selection to the nearest character at the same horizontal location on the line above."
+            },
+            {
+                "key": "[Shift] + [↓]",
+                "val": "Extend text selection to the nearest character at the same horizontal location on the line below."
+            },
+            {
+                "key": "[Shift] + [←]",
+                "val": "Extend text selection one character to the left."
+            },
+            {
+                "key": "[Shift] + [→]",
+                "val": "Extend text selection one character to the right."
+            },
+            {
+                "key": "[Shift] + [Opt] + [↑]",
+                "val": "Extend text selection to the beginning of the current paragraph, then to the beginning of the following paragraph if pressed again."
+            },
+            {
+                "key": "[Shift] + [Opt] + [↓]",
+                "val": "Extend text selection to the end of the current paragraph, then to the end of the following paragraph if pressed again."
+            },
+            {
+                "key": "[Shift] + [Opt] + [←]",
+                "val": "Extend text selection to the beginning of the current word, then to the beginning of the following word if pressed again."
+            },
+            {
+                "key": "[Shift] + [Opt] + [→]",
+                "val": "Extend text selection to the end of the current word, then to the end of the following word if pressed again."
+            },
+            {
+                "key": "[Ctrl] + [A]",
+                "val": "Move to the beginning of the line or paragraph."
+            },
+            {
+                "key": "[Ctrl] + [E]",
+                "val": "Move to the end of a line or paragraph."
+            },
+            {
+                "key": "[Ctrl] + [F]",
+                "val": "Move one character forward."
+            },
+            {
+                "key": "[Ctrl] + [B]",
+                "val": "Move one character backward."
+            },
+            {
+                "key": "[Ctrl] + [L]",
+                "val": "Center the cursor or selection in the visible area."
+            },
+            {
+                "key": "[Ctrl] + [P]",
+                "val": "Move up one line."
+            },
+            {
+                "key": "[Ctrl] + [N]",
+                "val": "Move down one line."
+            },
+            {
+                "key": "[Ctrl] + [O]",
+                "val": "Insert a new line after the insertion point."
+            },
+            {
+                "key": "[Ctrl] + [T]",
+                "val": "Swap the character behind the insertion point with the character in front of the insertion point."
+            },
+            {
+                "key": "[Cmd] + [Left Curly Bracket ({)]",
+                "val": "Left align."
+            },
+            {
+                "key": "[Cmd] + [Right Curly Bracket (})]",
+                "val": "Right align."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [Vertical bar (|)]",
+                "val": "Center align."
+            },
+            {
+                "key": "[Cmd] + [Opt] + [F]",
+                "val": "Go to the search field."
+            },
+            {
+                "key": "[Cmd] + [Opt] + [T]",
+                "val": "Show or hide a toolbar in the app."
+            },
+       
+           
+            {
+                "key": "[Cmd] + [Opt] + [I]",
+                "val": "Show or hide the inspector window."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [P]",
+                "val": "Page setup: Display a window for selecting document settings."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [S]",
+                "val": "Display the Save As dialog, or duplicate the current document."
+            },
+            {
+                "key": "[Cmd] + [Shift] +   [Minus sign ( - )]",
+                "val": "Decrease the size of the selected item."
+            },
+            {
+                "key": "[Cmd] + [Shift] +   [Plus sign (+)]",
+                "val": "Increase the size of the selected item. [Cmd] + Equal sign (=) performs the same function."
+            },
+            {
+                "key": "[Cmd] + [Shift] + [Question mark (?)]",
+                "val": "Open the Help menu."
+          
+          
+      }]  
+        
+        
+        
     }
 }
