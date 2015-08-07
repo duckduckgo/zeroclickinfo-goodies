@@ -358,7 +358,7 @@
             },
             {
                 "key": "cmd >&n",
-                "val": "Send cmd's output to file descriptor n"
+                "val": "Send cmd's stdout to file descriptor n"
             },
             {
                 "key": "cmd m>&n",
@@ -370,7 +370,7 @@
             },
             {
                 "key": "cmd m<&n",
-                "val": "Same as above except that intput that would normally come from file descriptor m, will now come from n"
+                "val": "Same as above except that stdin that would normally come from file descriptor m, will now come from n"
             },
             {
                 "key": "cmd >&-",
@@ -422,7 +422,7 @@
             },
             {
                 "key": "1",
-                "val": "Catchall fo rgeneral errors"
+                "val": "Catchall for general errors"
             },
             {
                 "key": "2",
@@ -558,7 +558,7 @@
             },
             {
                 "key": "cmd &",
-                "val": "Execute cmd in the background"
+                "val": "Execute cmd in the background (fork)"
             }
         ]
     }
