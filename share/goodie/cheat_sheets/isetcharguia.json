@@ -6,6 +6,5 @@
 * To change this template use Tools | Templates.
 */
 define(function() {
-    echo 'hhhhh'
 return {};
 });
