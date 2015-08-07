@@ -1,7 +1,7 @@
 {
     "id": "bash_cheat_sheet",
-    "name": "bash",
-    "description": "Unix Shell",
+    "name": "Bash",
+    "description": "Bourne-Again shell",
     "metadata": {
         "sourceName": "Bash Reference Manual",
         "sourceUrl": "https://www.gnu.org/software/bash/"
