@@ -1,17 +1,18 @@
 package DDG::Goodie::Tips;
-# ABSTRACT: calculate a tip on a bill
+# ABSTRACT: calculate a tip and tax on a bill
 
 use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 # Yes, 'of' is very generic, the gaurd should kick back false positives very quickly.
-triggers any => 'tip', 'tips', 'of';
+triggers any => 'tip', 'tips', 'of', 'tax';
 
 primary_example_queries '20% tip on $21.63';
 secondary_example_queries '20 percent tip for a $20 bill';
+tertiary_example_queries '20% tax on $21.63 bill';
 description 'calculate a total including a percentage tip';
-name 'Tips';
+name 'Tips & tax';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Tips.pm';
 category 'calculations';
 topics 'everyday';
@@ -23,7 +24,7 @@ zci is_cached   => 1;
 my $number_re = number_style_regex();
 
 handle query_lc => sub {
-    return unless (/^(?<p>$number_re)(?: ?%| percent) (?:(?<do_tip>tip (?:on|for|of))|of)(?: an?)? (?<sign>[\$\-]?)(?<num>$number_re)(?: bill)?$/);
+    return unless (/^(?<p>$number_re)(?: ?%| percent) (?:(?<do_tip>tip|tax (?:on|for|of))|of)(?: an?)? (?<sign>[\$\-]?)(?<num>$number_re)(?: bill)?$/);
     my ($p, $num, $sign) = ($+{'p'}, $+{'num'}, $+{'sign'});
     my $style = number_style_for($p, $num);
     $p   = $style->for_computation($p) / 100;
