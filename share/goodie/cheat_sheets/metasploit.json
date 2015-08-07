@@ -1,9 +1,9 @@
 {
-    "id": "Metasploit_cheat_sheet",
+    "id": "metasploit_cheat_sheet",
     "name": "Metasploit",
-    "description": "Framework provides information about security vulnerabilities",
+    "description": "A framework provides information about security vulnerabilities",
     "metadata": {
-        "sourceName": "metasploit",
+        "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/huntereight/cheat-sheets/metasploit-4-5-0-dev-15713/"
     },
     "section_order": [
@@ -18,321 +18,420 @@
         "Database Commands": [{
             "val": "Connect database",
             "key": "db_connect"
-        }, {
+        },
+        {
             "val": "Disconnect database",
             "key": "db_disconnect"
-        }, {
+        },
+        {
             "val": "Export Database",
             "key": "db_export"
-        }, {
+        },
+        {
             "val": "Import Scan Result",
             "key": "db_import"
-        }, {
+        },
+        {
             "val": "Status of Database",
             "key": "db_status"
-        }, {
+        },
+        {
             "val": "Display Hosts",
             "key": "hosts"
-        }, {
+        },
+        {
             "val": "Display Loot",
             "key": "loot"
-        }, {
+        },
+        {
             "val": "Display Notes",
             "key": "notes"
-        }, {
+        },
+        {
             "val": "Display Services",
             "key": "services"
-        }, {
+        },
+        {
             "val": "Display Vulnerabilities",
             "key": "vulns"
-        }, {
+        },
+        {
             "val": "Switch Between Workspaces",
             "key": "workspace"
-        }, {
+        },
+        {
             "val": "NMAP Scan into Database",
             "key": "db_nmap"
         }],
         "Core Commands": [{
             "val": "Display Help",
             "key": "? or help"
-        }, {
+        },
+        {
             "val": "Go Back",
             "key": "back"
-        }, {
+        },
+        {
             "val": "Change Directory",
             "key": "cd"
-        }, {
+        },
+        {
             "val": "Toggle Color",
             "key": "color"
-        }, {
+        },
+        {
             "val": "Communicate with a Host",
             "key": "connect"
-        }, {
+        },
+        {
             "val": "Exit Metasploit",
             "key": "exit"
-        }, {
+        },
+        {
             "val": "Display Info of Module",
             "key": "info"
-        }, {
+        },
+        {
             "val": "Go into irb",
             "key": "irb"
-        }, {
+        },
+        {
             "val": "Display and Manage Jobs",
             "key": "jobs"
-        }, {
+        },
+        {
             "val": "Stop a Job",
             "key": "kill"
-        },{
+        },
+        {
             "val": "Load a Plugin",
             "key": "load"
-        },{
+        },
+        {
             "val": "Load a Plugin from Path",
             "key": "loadpath"
-        },{
+        },
+        {
             "val": "Print Commands Entered to a Path",
             "key": "makerc"
-        },{
+        },
+        {
             "val": "Set Previous Module as Current Module",
             "key": "previous"
-        },{
+        },
+        {
             "val": "Pops the Latest Module Off of the Module Stack and Makes it Active",
             "key": "popm"
-        },{
+        },
+        {
             "val": "Pushes the Active or List of Modules onto the Module Stack",
             "key": "pushm"
-        },{
+        },
+        {
             "val": "Quit the Console",
             "key": "quit"
-        },{
+        },
+        {
             "val": "Run Commands Stored in a File",
             "key": "resource"
-        },{
+        },
+        {
             "val": "Route Traffic Through a Connection",
             "key": "route"
-        },{
+        },
+        {
             "val": "Save Datastores",
             "key": "save"
-        },{
+        },
+        {
             "val": "Search for Modules",
             "key": "search"
-        },{
+        },
+        {
             "val": "Dump Session Listings and Display Information about Sessions",
             "key": "sessions"
-        },{
+        },
+        {
             "val": "Set Variable of a Module",
             "key": "set"
-        },{
+        },
+        {
             "val": "Set a Global Variable",
             "key": "setg"
-        },{
+        },
+        {
             "val": "Display Modules of a Type, or All Modules",
             "key": "show"
-        },{
+        },
+        {
             "val": "Do Nothing for X Seconds",
             "key": "sleep"
-        },{
+        },
+        {
             "val": "Write All Output to a Files",
             "key": "spool"
-        },{
+        },
+        {
             "val": "Manipulate Threads",
             "key": "threads"
-        },{
+        },
+        {
             "val": "Unload a Plugin",
             "key": "unload"
-        },{
+        },
+        {
             "val": "Unset a Variable",
             "key": "unset"
-        },{
+        },
+        {
             "val": "Unset a Global Variable",
             "key": "unsetg"
-        },{
+        },
+        {
             "val": "Use a Module (by Name)",
             "key": "use"
-        }, {
+        },
+        {
             "val": "Show Metasploit Info",
             "key": "version"
         }],
         "Meterpreter Core and File System": [{
             "val": "Background the Current Session",
             "key": "background"
-        }, {
+        },
+        {
             "val": "Kill a Background Meterp­reter Script",
             "key": "bgkill"
-        }, {
+        },
+        {
             "val": "Displays Info About Active Channels",
             "key": "disable_unicode_encoding"
-        }, {
+        },
+        {
             "val": "Enable Encoding of Unicode Strings",
             "key": "enable_unicode_encoding"
-        },{
+        },
+        {
             "val": "Exit Meterpreter Shell",
             "key": "exit"
-        },{
+        },
+        {
             "val": "Display Help",
             "key": "help"
-        },{
+        },
+        {
             "val": "Display Info About Active Post Module",
             "key": "info"
-        },{
+        },
+        {
             "val": "Interact with a Channel",
             "key": "interact"
-        },{
+        },
+        {
             "val": "Drop into irb Scripting Mode",
             "key": "irb"
-        },{
+        },
+        {
             "val": "Load One or More Meterp­reter Extens­ions",
             "key": "load"
-        },{
+        },
+        {
             "val": "Migrate the Server to Another Process",
             "key": "migrate"
-        },{
+        },
+        {
             "val": "Terminate the Meterpreter Sessions",
             "key": "quit"
-        },{
+        },
+        {
             "val": "Reads Data from a Channel",
             "key": "read"
-        },{
+        },
+        {
             "val": "Run the Commands Stored in a File",
             "key": "resource"
-        },{
+        },
+        {
             "val": "Executes a Meterpreter Script or Post Module",
             "key": "run"
-        },{
+        },
+        {
             "val": "Write Data to a Channel",
             "key": "write"
-        },{
+        },
+        {
             "val": "Read the Contents of a File to the Screen",
             "key": "cat"
-        },{
+        },
+        {
             "val": "Change Directory",
             "key": "cd"
-        },{
+        },
+        {
             "val": "Download File to Your Computer",
             "key": "download"
-        },{
+        },
+        {
             "val": "Edit a File",
             "key": "edit"
-        },{
+        },
+        {
             "val": "Print Local Working Directory",
             "key": "getlwd"
-        },{
+        },
+        {
             "val": "Print Working Directory",
             "key": "getwd"
-        },{
+        },
+        {
             "val": "Change Local Working Directory",
             "key": "lcd"
-        },{
+        },
+        {
             "val": "Print Local Working Directory",
             "key": "lpwd"
-        },{
+        },
+        {
             "val": "List Files",
             "key": "ls"
-        },{
+        },
+        {
             "val": "Make Directory",
             "key": "mkdir"
-        },{
+        },
+        {
             "val": "Print Working Directory",
             "key": "pwd"
-        },{
+        },
+        {
             "val": "Delete the Specified File",
             "key": "rm"
-        },{
+        },
+        {
             "val": "Remove Directory",
             "key": "rmdir"
-        },{
+        },
+        {
             "val": "Search for Files",
             "key": "search"
-        }, {
+        },
+        {
             "val": "Upload File to Target",
             "key": "upload"
         }],
         "Meterpreter User Interface Commands": [{
             "val": "List All Accessible Desktops and Window Stations",
             "key": "enumdesktops"
-        }, {
+        },
+        {
             "val": "Get the Current Meterpreter Desktop",
             "key": "getdesktop"
-        }, {
+        },
+        {
             "val": "Display the Amount of Time the User has been Idle",
             "key": "idletime"
-        }, {
+        },
+        {
             "val": "Start Capturing Keystrokes",
             "key": "keyscan_start"
-        }, {
+        },
+        {
             "val": "Stop Capturing Keystrokes",
             "key": "keyscan_stop"
-        }, {
+        },
+        {
             "val": "Dump the Keystroke Buffer",
             "key": "keyscan_dump"
-        }, {
+        },
+        {
             "val": "Screenshot of the GUI",
             "key": "screenshot"
-        },{
+        },
+        {
             "val": "Change the Meterpreters Current Desktop",
             "key": "setdesktop"
-        }, {
+        },
+        {
             "val": "Control Some of the User Interface Components",
             "key": "uictl"
         }],
         "Meterpreter System Commands": [{
             "val": "Clear the Event Log",
             "key": "clearev"
-        }, {
+        },
+        {
             "val": "Relinquishes Any Active Impersonation Token",
             "key": "drop_token"
-        }, {
+        },
+        {
             "val": "Execute a Command",
             "key": "execute"
-        }, {
+        },
+        {
             "val": "Get the Current Process Identifier",
             "key": "getpid"
-        }, {
+        },
+        {
             "val": "Attempt to Enable All Privileges Available to the Current Process",
             "key": "getprivs"
-        }, {
+        },
+        {
             "val": "Get the User that the Server is Running as",
             "key": "getuid"
-        }, {
+        },
+        {
             "val": "Terminate a Process",
             "key": "kill"
-        }, {
+        },
+        {
             "val": "List Running Processes",
             "key": "ps"
-        }, {
+        },
+        {
             "val": "Reboots the Remote Computer",
             "key": "reboot"
-        }, {
+        },
+        {
             "val": "Interact with the Remote Registry",
             "key": "reg"
-        }, {
+        },
+        {
             "val": "Calls RevertToSelf() on the Remote Machine",
             "key": "rev2self"
-        },{
+        },
+        {
             "val": "Drop into a System Command Shell",
             "key": "shell"
-        },{
+        },
+        {
             "val": "Shuts Down the Remote Computer",
             "key": "shutdown"
-        },{
+        },
+        {
             "val": "Attempt to Steal an Impers­onation Token from the Process",
             "key": "steal_token"
-        }, {
+        },
+        {
             "val": "Gets Information About the Remote System",
             "key": "sysinfo"
         }],
         "Meterpreter Priv Commands": [{
             "val": "List Webcams",
             "key": "webcam_list"
-        }, {
+        },
+        {
             "val": "Take a Snapshot from the Specified Webcam",
             "key": "webcam_snap"
-        }, {
+        },
+        {
             "val": "Attempt to Elevate your Priviledge to that of Local System",
             "key": "getsystem"
-        }, {
+        },
+        {
             "val": "Dumps the Contents of the SAM Database",
             "key": "hashdump"
-        }, {
+        },
+        {
             "val": "Manipulate MACE Attrib­utes",
             "key": "timestomp"
         }]
