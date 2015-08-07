@@ -141,7 +141,7 @@
                 "val": "Get next command"
             },
             {
-                "key": "[C-r] [<pattern>]",
+                "key": "[C-r], [<pattern>]",
                 "val": "Search previous command containing <pattern>"
             },
             {
@@ -453,19 +453,19 @@
                 "val": "Auto-complete (hit twice when ambiguous)"
             },
             {
-                "key": "~ TAB-TAB",
+                "key": "[~], [TAB] [TAB]",
                 "val": "Display all users from /etc/passwd"
             },
             {
-                "key": "$ TAB-TAB",
+                "key": "[$], [TAB] [TAB]",
                 "val": "Display all system variables"
             },
             {
-                "key": "<string> M-/",
+                "key": "[<string>], [M-/]",
                 "val": "Auto-complete/display files and directories starting with <string>"
             },
             {
-                "key": "<string> M-?",
+                "key": "[<string>], [M-?]",
                 "val": "Display commands starting with <string>"
             },
             {
