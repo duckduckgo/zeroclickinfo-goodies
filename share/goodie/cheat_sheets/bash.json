@@ -171,6 +171,10 @@
                 "val": "Last argument of last command"
             }, 
             {
+                "key": "$<N>",
+                "val": "Nth argument of current process (positional parameter)"
+            },
+            {
                 "key": "$#",
                 "val": "Number of arguments given to current process"
             },
@@ -189,10 +193,6 @@
             {
                 "key": "$0",
                 "val": "The name of the shell program"
-            },
-            {
-                "key": "$<N>",
-                "val": "Nth argument of current process (positional parameter)"
             },
             {
                 "key": "$?",
