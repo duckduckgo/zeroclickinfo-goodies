@@ -23,6 +23,8 @@
     padding-bottom: 10px;
 }
 
+/* code-snippets.handlebars */
+
 .zci--cheat_sheets code {
     display: inline-block;
     border: 1px solid #e0e0e0;
@@ -47,6 +49,27 @@
     padding-left: 14px;
     line-height: 1.4;
 }
+
+/* reference-sheet.handlebars */
+
+.zci--cheat_sheets ul {
+  margin-left: 13px;
+}
+
+.zci--cheat_sheets li {
+  list-style-type: disc;
+  padding-left: 7px;
+  line-height: 17px;
+  margin-bottom: 10px;
+}
+
+.zci--cheat_sheets li .cheatsheet__key {
+    color: #333333;
+    font-weight: bold;
+    display: block;
+}
+
+/**/
 
 .zci--cheat_sheets .cheatsheet__footer {
     padding-top: 10px;
