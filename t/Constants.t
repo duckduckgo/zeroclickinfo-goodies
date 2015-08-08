@@ -14,7 +14,7 @@ ddg_goodie_test(
        'Hardy Ramanujan number 1729 = 1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>',
         structured_answer => {
             input     => [],
-            operation => 'constants',
+            operation => 'Constants',
             result    => "Hardy Ramanujan number 1729 = 1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>",
         }
     ),

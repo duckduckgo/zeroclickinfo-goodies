@@ -2,6 +2,7 @@ package DDG::Goodie::Constants;
 # ABSTRACT: Various Math and Physics constants.
 use DDG::Goodie;
 use YAML::XS qw( Load );
+use YAML::XS qw( LoadFile );
 
 zci answer_type => "constants";
 zci is_cached   => 1;
@@ -16,22 +17,20 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["hemanth", "Hemanth.HM"],
             twitter => "gnumanth";
          
-# Constants from the share.
-my $constants = Load(scalar share("constants.yml")->slurp);
+my $constants = LoadFile(share("constants.yml"));
+my @triggers = keys %{$constants};
 
-# Triggers
-triggers any => %$constants;
+triggers startend => @triggers;
 
 # Handle statement
-handle remainder => sub {
-    return unless my $constant = $constants->{1729};
-    if ($constant) {
-        return $constant, structured_answer => {
-            input     => [],
-            operation => 'constants',
-            result    => $constant
-        };
-    }
+handle query_lc => sub {
+    return unless my $val = $constants->{$_}; #lookup hash using query as key
+
+    return $val, structured_answer => {
+        input     => [],
+        operation => 'Constants',
+        result    => $val
+    };
 };
 
 1;
