@@ -1,7 +1,6 @@
 package DDG::Goodie::Constants;
 # ABSTRACT: Various Math and Physics constants.
 use DDG::Goodie;
-use YAML::XS qw( Load );
 use YAML::XS qw( LoadFile );
 
 zci answer_type => "constants";
