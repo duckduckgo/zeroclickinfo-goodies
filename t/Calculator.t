@@ -5,6 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 use DDG::Goodie::Calculator;    # For function subtests.
+use utf8;
 
 zci answer_type => 'calc';
 zci is_cached   => 1;
@@ -45,6 +46,42 @@ ddg_goodie_test(
             input     => ['2 * 7'],
             operation => 'Calculate',
             result    => qr/>14</
+        }
+    ),
+    '4 ∙ 5' => test_zci(
+        "4 * 5 = 20",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['4 * 5'],
+            operation => 'Calculate',
+            result    => qr/>20</
+        }
+    ),
+    '6 ⋅ 7' => test_zci(
+        "6 * 7 = 42",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['6 * 7'],
+            operation => 'Calculate',
+            result    => qr/>42</
+        }
+    ),
+    '3 × dozen' => test_zci(
+        "3 * dozen = 36",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['3 * dozen'],
+            operation => 'Calculate',
+            result    => qr/>36</
+        }
+    ),
+    'dozen ÷ 4' => test_zci(
+        "dozen / 4 = 3",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['dozen / 4'],
+            operation => 'Calculate',
+            result    => qr/>3</
         }
     ),
     '1 dozen * 2' => test_zci(
@@ -702,6 +739,24 @@ ddg_goodie_test(
             input     => ['1234 + 5432'],
             operation => 'Calculate',
             result    => qr/6,666/
+        }
+    ),
+    '(0.4e^(0))*cos(0)' => test_zci(
+        '(0.4e ^ (0)) * cos(0) = 0.4',
+        heading => 'Calculator',
+        structured_answer => {
+            input => ['(0.4e ^ (0)) * cos(0)'],
+            operation => 'Calculate',
+            result => qr'0.4'
+        }
+    ),
+    '2pi' => test_zci(
+        '2 pi = 6.28318530717958',
+        heading => 'Calculator',
+        structured_answer => {
+            input => ['2 pi'],
+            operation => 'Calculate',
+            result => qr"6.28318530717958"
         }
     ),
     '123.123.123.123/255.255.255.255' => undef,

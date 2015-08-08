@@ -7,6 +7,7 @@ with 'DDG::GoodieRole::NumberStyler';
 
 use List::Util qw( max );
 use Math::Trig;
+use utf8;
 
 zci answer_type => "calc";
 zci is_cached   => 1;
@@ -18,25 +19,26 @@ name 'Calculator';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
 category 'calculations';
 topics 'math';
-attribution github  => ['https://github.com/duckduckgo', 'duckduckgo'];
+attribution github  => ['https://github.com/duckduckgo', 'duckduckgo'],
+            github  => ['https://github.com/phylum', 'Daniel Smith'];
 
 triggers query_nowhitespace => qr<
         ^
        ( what is | calculate | solve | math )?
 
-        [\( \) x X * % + / \^ \$ -]*
+        [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -]*
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
-        [\( \) x X * % + / \^ 0-9 \. , _ \$ -]*
+        [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]*
 
         (?(1) (?: -? [0-9 \. , _ ]+ |) |)
-        (?: [\( \) x X * % + / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt )+
+        (?: [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -] | times | divided by | plus | minus | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
 
         (?: [0-9 \. ,]* )
         (?: gross | dozen | pi | e | c | squared | score |)
 
-        [\( \) x X * % + / \^ 0-9 \. , _ \$ -]* =?
+        [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]* =?
 
         $
         >xi;
@@ -47,10 +49,14 @@ my $funcy     = qr/[[a-z]+\(|log[_]?\d{1,3}\(|\^|\*|\/|squared|divided/;    # St
 my %named_operations = (
     '\^'          => '**',
     'x'           => '*',
+    '×'           => '*',
+    '∙'           => '*',
+    '⋅'           => '*',                                                   # Can be mistaken for dot operator
     'times'       => '*',
     'minus'       => '-',
     'plus'        => '+',
     'divided\sby' => '/',
+    '÷'           => '/',
     'ln'          => 'log',                                                 # perl log() is natural log.
     'squared'     => '**2',
 );
@@ -94,7 +100,7 @@ handle query_nowhitespace => sub {
     $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/xg;    # E == *10^n
     $tmp_expr =~ s/\$//g;                                              # Remove $s.
     $tmp_expr =~ s/=$//;                                               # Drop =.
-
+    $tmp_expr =~ s/([0-9])\s*([a-zA-Z])([^0-9])/$1*$2$3/g;             # Support 0.5e or 0.5pi; but don't break 1e8
     # Now sub in constants
     while (my ($name, $constant) = each %named_constants) {
         $tmp_expr =~ s# (\d+?)\s+$name # $1 * $constant #xig;
@@ -109,7 +115,6 @@ handle query_nowhitespace => sub {
     $tmp_expr = $style->for_computation($tmp_expr);
     # Using functions makes us want answers with more precision than our inputs indicate.
     my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
-
     my $tmp_result;
     eval {
         # e.g. sin(100000)/100000 completely makes this go haywire.
@@ -167,7 +172,7 @@ sub spacing {
     my ($text, $space_for_parse) = @_;
 
     $text =~ s/\s{2,}/ /g;
-    $text =~ s/(\s*(?<!<)(?:[\+\-\^xX\*\/\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
+    $text =~ s/(\s*(?<!<)(?:[\+\-\^xX×∙⋅\*\/÷\%]|times|plus|minus|dividedby)+\s*)/ $1 /ig;
     $text =~ s/\s*dividedby\s*/ divided by /ig;
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);

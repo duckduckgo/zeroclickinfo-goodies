@@ -1,9 +1,10 @@
 {
+    "id": "vim_cheat_sheet",
     "name": "Vim",
     "description": "Text Editor",
-    "meta": {
+    "metadata": {
         "sourceName": "VimCheatSheet",
-        "sourceUrl": "https://duckduckgo.com"
+        "sourceUrl": "http://vim.rtorr.com"
     },
     "section_order": [
         "Cursor movement",
@@ -15,33 +16,34 @@
         "Exiting",
         "Search and replace",
         "Working with multiple files",
-        "Tabs"
+        "Tabs",
+        "Miscellaneous"
     ],
     "sections": {
         "Tabs": [{
-            "val": "open a file in a new tab",
-            "key": ":tabnew filename, :tabn filename"
-        }, {
-            "val": "move the current split window into its own tab",
-            "key": "Ctrl+wt"
-        }, {
-            "val": "move to the next tab",
-            "key": "gt, :tabnext, :tabn"
-        }, {
-            "val": "move to the previous tab",
-            "key": "gT, :tabprev, :tabp"
-        }, {
             "val": "move to tab number #",
             "key": "#gt"
+        }, {
+            "val": "move the current split window into its own tab",
+            "key": "[Ctrl] + [wt]"
         }, {
             "val": "move current tab to the #th position (indexed from 0)",
             "key": ":tabmove #"
         }, {
+            "val": "open a file in a new tab",
+            "key": "[:tabnew filename] [:tabn filename]"
+        }, {
             "val": "close the current tab and all its windows",
-            "key": ":tabclose/:tabc"
+            "key": "[:tabclose] / [:tabc]"
         }, {
             "val": "close all tabs except for the current one",
-            "key": ":tabonly/:tabo"
+            "key": "[:tabonly] / [:tabo]"
+        }, {
+            "val": "move to the next tab",
+            "key": "[gt] [:tabnext] [:tabn]"
+        }, {
+            "val": "move to the previous tab",
+            "key": "[gT] [:tabprev] [:tabp]"
         }],
         "Editing": [{
             "val": "replace a single character",
@@ -72,7 +74,7 @@
             "key": "u"
         }, {
             "val": "redo",
-            "key": "Ctrl+r"
+            "key": "[Ctrl] + [r]"
         }, {
             "val": "repeat last command",
             "key": "."
@@ -166,7 +168,7 @@
             "key": "o"
         }, {
             "val": "start visual block mode",
-            "key": "Ctrl+v"
+            "key": "[Ctrl] + [v]"
         }, {
             "val": "move to other corner of block",
             "key": "O"
@@ -194,10 +196,10 @@
             "key": ":e filename"
         }, {
             "val": "go to the next buffer",
-            "key": ":bnext/:bn"
+            "key": "[:bnext] / [:bn]"
         }, {
             "val": "go to the previous buffer",
-            "key": ":bprev/:bp"
+            "key": "[:bprev] / [:bp]"
         }, {
             "val": "delete a buffer (close a file)",
             "key": ":bd"
@@ -209,22 +211,22 @@
             "key": ":vsp filename"
         }, {
             "val": "split window",
-            "key": "Ctrl+ws"
+            "key": "[Ctrl] + [ws]"
         }, {
             "val": "switch windows",
-            "key": "Ctrl+ww"
+            "key": "[Ctrl] + [ww]"
         }, {
             "val": "quit a window",
-            "key": "Ctrl+wq"
+            "key": "[Ctrl] + [wq]"
         }, {
             "val": "split window vertically",
-            "key": "Ctrl+wv"
+            "key": "[Ctrl] + [wv]"
         }, {
             "val": "move cursor to next buffer (right)",
-            "key": "Ctrl+wh"
+            "key": "[Ctrl] + [wh]"
         }, {
             "val": "move cursor to previous buffer (left)",
-            "key": "Ctrl+wl"
+            "key": "[Ctrl] + [wl]"
         }],
         "Cursor movement": [{
             "val": "move cursor left",
@@ -272,7 +274,7 @@
             "val": "go to line 5",
             "key": "5G"
         }, {
-            "val": "To the position before the latest jump, or where the last \"m'\" or \"m`\" command was given.",
+            "val": "To the position before the latest jump, / where the last \"m'\" / \"m`\" command was given.",
             "key": "''"
         }],
         "Visual commands": [{
@@ -292,6 +294,9 @@
             "key": "~"
         }],
         "Search and replace": [{
+            "val": "search for word under cursor",
+            "key": "*"
+        }, {
             "val": "search for pattern",
             "key": "/pattern"
         }, {
@@ -309,6 +314,10 @@
         }, {
             "val": "replace all old with new throughout file with confirmations",
             "key": ":%s/old/new/gc"
+        }],
+        "Miscellaneous": [{
+            "val": "create html representation of current working buffer",
+            "key": ":%TOhtml"
         }]
     }
 }

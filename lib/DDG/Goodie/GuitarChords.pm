@@ -2,6 +2,7 @@ package DDG::Goodie::GuitarChords;
 # ABSTRACT: Returns diagrams of guitar chords
 
 use DDG::Goodie;
+use strict;
 with 'DDG::GoodieRole::ImageLoader';
 
 # guitar script is stored in share directory
@@ -33,6 +34,8 @@ handle remainder => sub
         my $f = $c;
         # filenames use '_' instead of parenthesies
         $f =~ s/[\(\)]/_/g;
+        $f =~ s/([^dim])m/$1minor/g;
+        $f =~ s/M/major/g;
 
         return
             heading => "$c",
@@ -51,12 +54,12 @@ sub check_chord
         $a = uc($+{'a'});
         $b = $+{'b'} if $+{'b'};
         if ($c = $+{'c'}) {
-            $c = 'm' if ($c =~ /^min$/);
-            $c = 'M' if ($c =~ /^maj$/);
+            $c = 'm' if ($c =~ /^(min|m)$/);
+            $c = 'M' if ($c =~ /^(maj|M)$/);
         }
         if ($d = $+{'d'}) {
-            $d = 'm' if ($d =~ /^min$/);
-            $d = 'M' if ($d =~ /^maj$/);
+            $d = 'm' if ($d =~ /^(min|m)$/);
+            $d = 'M' if ($d =~ /^(maj|M)$/);
         }
         $e = $+{'e'} if $+{'e'};
         $f = '('.$+{'f'}.')' if $+{'f'};

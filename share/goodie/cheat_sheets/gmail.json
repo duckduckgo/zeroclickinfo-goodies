@@ -1,0 +1,92 @@
+{
+    "id": "gmail_cheat_sheet",
+    "name": "Gmail",
+    "description": "Google Email Client",
+    "metadata": {
+        "sourceName": "Gmail Help",
+        "sourceUrl": "https://support.google.com/mail/answer/6594"
+    },
+    "section_order": [
+        "Shortcuts",
+        "Navigate"
+    ],
+    "sections": {
+        "Shortcuts": [{
+            "key": "c",
+            "val": "Compose a new message"
+        }, {
+            "key": "[Shift] [c]",
+            "val": "Compose a new message in new window"
+        }, {
+            "key": "k",
+            "val": "Move to newer conversation"
+        }, {
+            "key": "j",
+            "val": "Move to older conversation"
+        }, {
+            "key": "n",
+            "val": "Move to next message"
+        }, {
+            "key": "p",
+            "val": "Move to previous message"
+        }, {
+            "key": "[o] / [Enter]",
+            "val": "Open conversation"
+        }, {
+            "key": "u",
+            "val": "Return to inbox"
+        }, {
+            "key": "y",
+            "val": "Select the conversation"
+        }, {
+            "key": "x",
+            "val": "Archive the conversation"
+        }, {
+            "key": "s",
+            "val": "Add or remove a star to a message or conversation"
+        }, {
+            "key": "!",
+            "val": "Mark message as spam and remove it from conversation"
+        }, {
+            "key": "r",
+            "val": "Reply to sender"
+        }, {
+            "key": "[Shift] [r]",
+            "val": "Reply to sender in a new window"
+        }, {
+            "key": "[Shift] [a]",
+            "val": "Reply to all message recipients"
+        }, {
+            "key": "f",
+            "val": "Forward a message"
+        }, {
+            "key": "[Shift] [f]",
+            "val": "Forward a message in a new window"
+        }, {
+            "key": "Esc",
+            "val": "Escape from input field"
+            }],
+        "Navigate": [{
+            "key": "[Tab], [Enter]",
+            "val": "Send the message"
+        }, {
+            "key": "[y], [o]",
+            "val": "Archive the message and move to next"
+        }, {
+            "key": "[g], [a]",
+            "val": "Go to  'All Mail'"
+        }, {
+            "key": "[g], [s]",
+            "val": "Go to 'Starred'"
+        }, {
+            "key": "[g], [c]",
+            "val": "Go to 'Contacts'"
+        }, {
+            "key": "[g], [d]",
+            "val": "Go to 'Drafts'"
+        }, {
+            "key": "[g], [i]",
+            "val": "Go to 'Inbox'"
+        }]
+    }
+}

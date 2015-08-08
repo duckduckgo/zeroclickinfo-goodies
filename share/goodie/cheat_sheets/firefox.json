@@ -1,0 +1,162 @@
+{
+    "id": "firefox_cheat_sheet", 
+    "name": "Mozilla Firefox",
+    "metadata": {
+        "sourceName": "Firefox Help",
+        "sourceUrl": "https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly"
+    },
+    "section_order": ["Navigation", "Current Page", "Editing","Search","Windows & Tabs","History","Bookmarks"],
+    "sections": {
+        "Navigation": [{
+            "val": "Back",
+            "key": "[Alt] [ ←]"
+        }, {
+            "val": "Home ",
+            "key": "[Alt] [Home] "
+        }, {
+            "val": "Open File ",
+            "key": "[Ctrl] [O] "
+        }, {
+            "val": "Reload ",
+            "key": "F5"
+        }, {
+            "val": "Stop",
+            "key": "Esc"
+        }],
+         "Current Page": [{
+            "val": "Go Down a Screen ",
+            "key": "Page Down"
+        }, {
+            "val": "Go Up a Screen ",
+            "key": "Page Up"
+        }, {
+            "val": "Go to Bottom of Page ",
+            "key": "End"
+        }, {
+            "val": "Go to Top of Page ",
+            "key": "Home"
+        }, {
+            "val": "Move to Next Frame ",
+            "key": "F6"
+        }],
+         "Editing": [{
+            "val": "copy ",
+            "key": "[Ctrl] [C]"
+        }, {
+            "val": "Cut",
+            "key": "[Ctrl] [X]"
+        }, {
+            "val": "Delete ",
+            "key": "Del"
+        }, {
+            "val": "Paste",
+            "key": "[Ctrl] [V] "
+        }, {
+            "val": "Paste as plain txt",
+            "key": "[Ctrl] [Shift] [V] "
+        }, {
+            "val": "Redo",
+            "key": "[Ctrl] [Shift] [Z] "
+        }, {
+            "val": "Undo",
+            "key": "[Ctrl]  [Z] "
+        }],
+         "Search": [{
+            "val": "Find ",
+            "key": "[Ctrl] [F]"
+        }, {
+            "val": "Find again",
+            "key": "[Ctrl] [G]"
+        }, {
+            "val": "Find Previous ",
+            "key": "[Shift] [F3]"
+        }, {
+            "val": "Quick Find within link-text only ",
+            "key": "' "
+        }, {
+            "val": "Quick Find ",
+            "key": "/ "
+        }, {
+            "val": "Close the Find or Quick Find bar ",
+            "key": "Esc "
+        }, {
+            "val": "Focus Search bar",
+            "key": "[Ctrl]  [K]  "
+        }, {
+            "val": "Focus Search bar(alternative)",
+            "key": "[Ctrl] [J]"
+        }],
+         "Windows & Tabs": [{
+            "val": "CLose Tab ",
+            "key": "[Ctrl] [W]"
+        },{
+            "val": "CLose Tab(alternative) ",
+            "key": "[Ctrl] [F4]"
+        }, {
+            "val": "Close Window ",
+            "key": "[Ctrl] [Shift] [W]"
+        }, {
+            "val": "Close Window(alternative) ",
+            "key": "[Alt] [F4]"
+        }, {
+            "val": "Move Tab in focus Left  ",
+            "key": "[Ctrl]  [Shift]  [Page Up]"
+        }, {
+            "val": "Move Tab in focus Right ",
+            "key": "[Ctrl]  [Shift]  [Page Down] "
+        }, {
+            "val": "Move Tab in focus to start ",
+            "key": "[Ctrl]  [Home]"
+        }, {
+            "val": "Move Tab in focus to end ",
+            "key": "[Ctrl]  [End] "
+        }, {
+            "val": "New Tab ",
+            "key": "[Ctrl]  [T] "
+        }, {
+            "val": "New Window ",
+            "key": "[Ctrl]  [W] "
+        }, {
+            "val": "New Private Window ",
+            "key": "[Ctrl]  [Shift]  [P] "
+        }, {
+            "val": "Next Tab ",
+            "key": "[Ctrl]  [Tab] "
+        }, {
+            "val": "Next Tab(alternative) ",
+            "key": "[Ctrl]  [Page Down] "
+        }, {
+            "val": "Open Address in New Tab  ",
+            "key": "[Alt]  [Enter] "
+        }, {
+            "val": "Undo Close Tab  ",
+            "key": "[Ctrl]  [Shift]  [T]"
+        }, {
+            "val": "Select Tab 1 to 8  ",
+            "key": "[Alt]  [1..8] "
+        }, {
+            "val": "Select Last Tab  ",
+            "key": "[Alt]  [9] "
+        }],
+         "History": [{
+            "val": "History sidebar ",
+            "key": "[Ctrl]  [H] "
+        }, {
+            "val": "Library window (History) ",
+            "key": " [Ctrl]  [Shift]  [H] "
+        }, {
+            "val": "Clear Recent History ",
+            "key": " [Ctrl]  [Shift]  [Del] "
+        }],
+         "Bookmarks": [{
+            "val": "Bookmark This Page ",
+            "key": "[Ctrl]  [D] "
+        }, {
+            "val": "Bookmarks sidebar  ",
+            "key": " [Ctrl]  [B] "
+        }, {
+            "val": "Library window (Bookmarks)  ",
+            "key": " [Ctrl]  [Shift]  [O] "
+        }]
+    }
+}

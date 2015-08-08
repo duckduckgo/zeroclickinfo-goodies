@@ -1,0 +1,433 @@
+{
+    "id": "affinity_designer_cheat_sheet", 
+
+    "name": "Affinity Designer",
+
+    "description": "Vector Editor", 
+    
+    "metadata": { 
+        "sourceName": "Affinity Designer Cheatsheet",
+        "sourceUrl": "https://i.imgur.com/qY4k7xX.jpg"
+    },
+
+    "section_order": [  
+        "File",
+        "Edit",
+        "Layer",
+        "Format",
+        "Select",
+        "Tools",
+        "Brush",
+        "View",
+        "Opacity",
+        "Zoom"
+    ],
+
+    "sections": {
+        "File": [
+            {
+                "key": "[⌘] [N]",
+                "val": "New"
+            },
+            {
+                "key": "[⌘] [O]",
+                "val": "Open"
+            },
+            {
+                "key": "[⌘] [S]",
+                "val": "Save"
+            },
+            {
+                "key": "[⌘] [Shift] [S]",
+                "val": "Save As"
+            },
+            {
+                "key": "[⌘] [Shift] [P]",
+                "val": "Document Setup"
+            },
+            {
+                "key": "[⌘] [P]",
+                "val": "Print"
+            },
+            {
+                "key": "[⌘] [,]",
+                "val": "Preferences"
+            },
+            {
+                "key": "[⌘] [W]",
+                "val": "Close"
+            },
+            {
+                "key": "[⌘] [Q]",
+                "val": "Quit"
+            }
+        ],
+        "Edit": [
+            {
+                "key": "[⌘] [Z]",
+                "val": "Undo"               
+            }, 
+            {
+                "key": "[⌘] [Y]",
+                "val": "Redo"               
+            }, 
+            {
+                "key": "[⌘] [X]",
+                "val": "Cut"               
+            }, 
+            {
+                "key": "[⌘] [C]",
+                "val": "Copy"               
+            }, 
+            {
+                "key": "[⌘] [V]",
+                "val": "Paste"               
+            }, 
+            {
+                "key": "[⌘] [Shift] [V]",
+                "val": "Paste Style"               
+            }, 
+            {
+                "key": "[⌘] [Alt] [V]",
+                "val": "Paste Inside"               
+            },
+            {
+                "key": "[⌘] [J]",
+                "val": "Duplicate"               
+            },
+            {
+                "key": "Delete",
+                "val": "Delete"               
+            }
+        ],
+        "Layer": [
+            {
+                "key": "[⌘] [G]",
+                "val": "Group"               
+            }, 
+            {
+                "key": "[⌘] [Shift] [G]",
+                "val": "Ungroup"               
+            }, 
+            {
+                "key": "[⌘] [Shift] [\\]]",
+                "val": "Move to Front"               
+            }, 
+            {
+                "key": "[⌘] [\\]]",
+                "val": "Move Forward One"               
+            }, 
+            {
+                "key": "[⌘] [\\[]",
+                "val": "Move Back One"               
+            }, 
+            {
+                "key": "[⌘] [Shift] [\\[]",
+                "val": "Move to Back"               
+            }, 
+            {
+                "key": "[⌘] [Shift] [N]",
+                "val": "New Pixel Layer"               
+            }, 
+            {
+                "key": "[⌘] [L]",
+                "val": "Lock"               
+            }, 
+            {
+                "key": "[⌘] [Shift] [L]",
+                "val": "Unlock"               
+            }
+        ],
+        "Format": [
+            {
+                "key": "[⌘] [T]",
+                "val": "Show Character"               
+            },
+            {
+                "key": "[⌘] [B]",
+                "val": "Bold"               
+            },
+            {
+                "key": "[⌘] [I]",
+                "val": "Italic"               
+            },
+            {
+                "key": "[⌘] [U]",
+                "val": "Underline"               
+            },
+            {
+                "key": "[⌘] [Shift] [=]",
+                "val": "Bigger"               
+            },
+            {
+                "key": "[⌘] [Shift] [-]",
+                "val": "Smaller"               
+            },
+            {
+                "key": "[⌘] [\\{]",
+                "val": "Align Left"               
+            },
+            {
+                "key": "[⌘] [|]",
+                "val": "Align Center"               
+            },
+            {
+                "key": "[⌘] [\\}]",
+                "val": "Align Right"               
+            },
+            {
+                "key": "[⌘] [Alt] [|]",
+                "val": "Justify Left"               
+            },
+            {
+                "key": "[Alt] [Left]",
+                "val": "Tighten"               
+            },
+            {
+                "key": "[⌘] [Alt] [Left]",
+                "val": "Tighten More"               
+            },
+            {
+                "key": "[Alt] [Right]",
+                "val": "Loosen"               
+            },
+            {
+                "key": "[⌘] [Alt] [Right]",
+                "val": "Loosen More"               
+            },
+            {
+                "key": "[⌘] [Control] [+]",
+                "val": "Superscript"               
+            },
+            {
+                "key": "[⌘] [Control] [+]",
+                "val": "Subscript"               
+            },
+            {
+                "key": "[Alt] [Down]",
+                "val": "Increase Leading"               
+            },
+            {
+                "key": "[⌘] [Alt] [Down]",
+                "val": "Increase Leading More"               
+            },
+            {
+                "key": "[Alt] [Up]",
+                "val": "Decrease Leading"               
+            }
+        ],
+        "Select": [
+            {
+                "key": "[⌘] [A]",
+                "val": "Select All"               
+            },
+            {
+                "key": "[⌘] [D]",
+                "val": "Deselect"               
+            },
+            {
+                "key": "[⌘] [Shift] [I]",
+                "val": "Invert Selection"               
+            }
+        ],
+        "Tools": [
+            {
+                "key": "A",
+                "val": "Node Tool"               
+            }, 
+            {
+                "key": "P",
+                "val": "Pen Tool"
+            },
+            {
+                "key": "N",
+                "val": "Pencil Tool"
+            },
+            {
+                "key": "B",
+                "val": "Vector Brush"
+            },
+            {
+                "key": "G",
+                "val": "Gradient Tool"
+            },
+            {
+                "key": "Y",
+                "val": "Transparency"
+            },
+            {
+                "key": "M",
+                "val": "Cycle Shape Tools"
+            },
+            {
+                "key": "T",
+                "val": "Text Tool"
+            },
+            {
+                "key": "H",
+                "val": "Pan Tool"
+            },
+            {
+                "key": "Space",
+                "val": "Hold for Pan Tool"
+            },
+            {
+                "key": "Z",
+                "val": "Zoom Tool"
+            },
+            {
+                "key": "C",
+                "val": "Corner Tool"
+            },
+            {
+                "key": "X",
+                "val": "Swap Colour"
+            }
+        ],
+        "Brush": [
+            {
+                "key": "{",
+                "val": "Decrease Brush Size"               
+            },
+            {
+                "key": "}",
+                "val": "Increase Brush Size"               
+            }
+        ],
+        "View": [
+            {
+                "key": ";",
+                "val": "Toggle Snapping"               
+            },
+            {
+                "key": "'",
+                "val": "Cycle Grid Plane"               
+            },
+            {
+                "key": "<",
+                "val": "Toggle Split View"               
+            },
+            {
+                "key": ">",
+                "val": "Reset Selection Box"               
+            }, 
+            {
+                "key": "/",
+                "val": "Set Fill to None"               
+            }, 
+            {
+                "key": "[⌘] [;]",
+                "val": "Show Guides"               
+            }, 
+            {
+                "key": "[⌘] [']",
+                "val": "Show Grid"               
+            }, 
+            {
+                "key": "[⌘] [R]",
+                "val": "Show Rulers"               
+            }, 
+            {
+                "key": "[⌘] [Y]",
+                "val": "Outline View"               
+            }, 
+            {
+                "key": "[⌘] [Shift] [M]",
+                "val": "Media Browser"               
+            }, 
+            {
+                "key": "[⌘] [Alt] [T]",
+                "val": "Show Toolbar"               
+            }
+        ],
+        "Opacity": [
+            {
+                "key": "1",
+                "val": "10% Opacity"               
+            },
+            {
+                "key": "2",
+                "val": "20% Opacity"               
+            },
+            {
+                "key": "3",
+                "val": "30% Opacity"               
+            },
+            {
+                "key": "4",
+                "val": "40% Opacity"               
+            },
+            {
+                "key": "5",
+                "val": "50% Opacity"               
+            },
+            {
+                "key": "6",
+                "val": "60% Opacity"               
+            },
+            {
+                "key": "7",
+                "val": "70% Opacity"               
+            },
+            {
+                "key": "8",
+                "val": "80% Opacity"               
+            },
+            {
+                "key": "8",
+                "val": "80% Opacity"               
+            },
+            {
+                "key": "9",
+                "val": "90% Opacity"               
+            },
+            {
+                "key": "10",
+                "val": "100% Opacity"               
+            }
+        ],
+        "Zoom": [
+            {
+                "key": "[⌘] [-]",
+                "val": "Zoom Out"               
+            }, 
+            {
+                "key": "[⌘] [+]",
+                "val": "Zoom In"
+            },
+            {
+                "key": "[⌘] [0]",
+                "val": "Zoom to Fit"
+            },
+            {
+                "key": "[⌘] [Shift] [0]",
+                "val": "Zoom to Selection"
+            },
+            {
+                "key": "[⌘] [1]",
+                "val": "100%"
+            },
+            {
+                "key": "[⌘] [2]",
+                "val": "200%"
+            },
+            {
+                "key": "[⌘] [3]",
+                "val": "400%"
+            },
+            {
+                "key": "[⌘] [4]",
+                "val": "800%"
+            },
+            {
+                "key": "[⌘] [8]",
+                "val": "Print Size"
+            },
+            {
+                "key": "[⌘] [8]",
+                "val": "Pixel Size"
+            }
+        ]
+    }
+}
+ 

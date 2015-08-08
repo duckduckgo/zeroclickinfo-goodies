@@ -41,10 +41,11 @@ triggers query_raw => qr/^
         (.*?)\s*(.+?)\brgb(?:\s+code)?|                 # handles "red rgb code", etc
         (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)| # handles "rgb color code for red", "red color code for html", etc
         (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        (.*?)($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|       # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|       # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})                # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+(inverse|negative|opposite))?
+    (?:\sto\s(?:$typestr))?
     $/ix;
 
 zci is_cached => 1;
@@ -83,36 +84,36 @@ sub create_output {
     my $cmyb = "CMYB(" . join(", ", @{$input{'cmyb'}}) . ")";
     my @analogous_colors = @{$input{'analogous'}};
     my $complementary = uc $input{'complementary'};
-    
+
     $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb"."\n"
           . "Complementary: #$complementary\n"
           . "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
-    
+
     my $comps = "<div class='cols_column'>"
               . "<a href='/?q=color%20picker%20%23$complementary' class='mini-color circle' style='background: #$complementary'>"
               . "</a></div>"
               . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace'>"
               . qq[<a onclick='document.x.q.value="#$complementary";document.x.q.focus();' href='javascript:' class='tx-clr--lt'>$complementary</a>]
               . "</p></div>";
-    
+
     my $analogs = "<div class='cols_column'>"
                 . (join "", map { "<a href='/?q=color%20picker%20%23".$_."' class='mini-color circle' style='background: #" . $_ . "'> </a>"; } @analogous_colors)
                 . "</div>"
                 . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace'>" . (join ", ", map { qq[<a onclick='document.x.q.value="#] .(uc $_). qq[";document.x.q.focus();' href='javascript:' class='tx-clr--lt'>].(uc $_).'</a>' } @analogous_colors) . "</p></div>";
-    
+
     $html = "<div class='column1 tx-clr--dk2'>"
           . "<p class='hex tx-clr--dk zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
-          . "<p><a href='http://labs.tineye.com/multicolr#colors=" . $hex_for_links . ";weights=100;' class='tx-clr--dk2'>Images</a>"
+          . "<p><a href='http://labs.tineye.com/multicolr/#colors=" . $hex_for_links . ";weights=100;' class='tx-clr--dk2'>Images</a>"
           . "<span class='separator'> | </span>"
           . "<a href='http://www.color-hex.com/color/" . $hex_for_links . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a>"
           . "<span class='separator'> | </span>"
-          . "<a href='/?q=color%20picker%20%23" . $hex_for_links . "' class='tx-clr--dk2'>Picker</a></p>" 
+          . "<a href='/?q=color%20picker%20%23" . $hex_for_links . "' class='tx-clr--dk2'>Picker</a></p>"
           . "</div>"
           . "<div class='column2 tx-clr--dk2'>"
           . "<div class='complementary'>$comps</div>"
           . "<div>$analogs</div>"
           . "</div>";
-    
+
     return ($text, $html);
 }
 
@@ -123,6 +124,8 @@ handle matches => sub {
 
     my $type    = 'rgb8';    # Default type, can be overridden below.
     my @matches = @_;
+
+    s/\sto\s(?:$typestr)//;
 
     foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
         # $q now contains the defined normalized matches which can be:
@@ -136,7 +139,8 @@ handle matches => sub {
     }
 
     return unless $color;                   # Need a color to continue!
-    
+    $color =~ s/\sto\s//;
+
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"
     if ($color =~ s/#?([0-9a-f]{3,6})$/$1/) {    # Color looks like a hex code, strip the leading #
@@ -151,7 +155,7 @@ handle matches => sub {
             $type = 'rgb8';    # We asked for rgb8 from our dictionary, so make sure our type matches.
         };
     }
-    
+
     my $col = try { Convert::Color->new("$type:$color") };    # Everything should be ready for conversion now.
     return unless $col;                                       # Guess not.
 
@@ -159,9 +163,9 @@ handle matches => sub {
         my $orig_rgb = $col->as_rgb8;
         $col = Convert::Color::RGB8->new(255 - $orig_rgb->red, 255 - $orig_rgb->green, 255 - $orig_rgb->blue);
     }
-    
+
     my $hex_code = $col->as_rgb8->hex;
-    
+
     my $complementary = $color_mix->complementary($hex_code);
     my @analogous = $color_mix->analogous($hex_code,12,12);
     @analogous = ($analogous[1], $analogous[11]);
@@ -181,7 +185,7 @@ handle matches => sub {
     );
 
     my ($text, $html_text) = create_output(%outdata);
-    
+
     return $text,
         html => '<div class="zci--color-codes"><a href="/?q=color%20picker%20%23' . $hex_code . '" '
           . 'class="colorcodesbox circle" style="background:#' . $hex_code . '">'
