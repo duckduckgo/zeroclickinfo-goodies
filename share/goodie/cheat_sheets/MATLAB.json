@@ -1,0 +1,275 @@
+{
+    "id": "matlab_cheat_sheet",
+    "name": "MATLAB",
+    "description": "MATLAB is an incredibly flexible environment that you can use to perform all sorts of math tasks",
+    "metadata": {
+        "sourceName": "Dummies",
+        "sourceUrl": "http://www.dummies.com/how-to/content/matlab-for-dummies-cheat-sheet.html"
+    },
+    "section_order": [
+        "Common",
+        "File Navigation",
+        "View/Window Manipulation",
+        "Find",
+        "Folding",
+        "Marks",
+        "Word Manipulation",
+        "Line Manipulation",
+        "Selection"
+    ],
+    "sections": {
+        "Common": [{  
+            "key":"cla",
+            "val":"Clears the current plot"
+          }, {  
+            "key":"clc",
+            "val":"Clears the Command window"
+          }, {  
+            "key":"clear <variable name>",
+            "val":"Removes a specific variable from the Workspace window (as specified by <variable name>)"
+          }, {  
+            "key":"clear all",
+            "val":"Removes all of the variables from the Workspace window"
+          }, {  
+            "key":"close <figure name>",
+            "val":"Closes a specific figure (as specified by <figure name>)"
+          }, {  
+            "key":"close all",
+            "val":"Closes all of the current figures"
+          }, {  
+            "key":"diary <filename>",
+            "val":"Specifies the name of the file to use for the Diary feature"
+          }, {  
+            "key":"diary off",
+            "val":"Stops saving the Command window text to a file"
+          }, {  
+            "key":"diary on",
+            "val":"Starts saving the Command window text to a file"
+        }, {  
+            "key":"format compact",
+            "val":"Removes extraneous spaces from the Command window"
+        }, {  
+            "key":"gca",
+            "val":"Obtains a handle to the current axes"
+        }],
+        "File Navigation": [{  
+            "key":"[Ctrl] [P]",
+            "val":"Goto Anything"
+          }, {  
+            "key":"[Ctrl] [G]",
+            "val":"Goto Line"
+          }, {  
+            "key":"[Ctrl] [R]",
+            "val":"Goto symbol (function name, table, etc.)"
+          }, {  
+            "key":"[Ctrl] ([Pageup]/[Pagedown])",
+            "val":"Goto next/prev file"
+          }, {  
+            "key":"[Ctrl] [K], [C]",
+            "val":"Goto current selection"
+          }, {  
+            "key":"[Ctrl] ([↑]/[↓])",
+            "val":"Scroll up/down one line (doesn't move cursor)"
+          }, {  
+            "key":"[Ctrl] [F2]",
+            "val":"Set Bookmark"
+          }, {  
+            "key":"[Alt] [Ctrl] [P]",
+            "val":"Switch Project"
+          }, {  
+            "key":"[Ctrl] [Shift] [F2]",
+            "val":"Clear all bookmarks"
+          }, {  
+            "key":"F2",
+            "val":"Goto next bookmark"
+        }],
+        "View/Window Manipulation": [{  
+            "key":"[Ctrl] [`]",
+            "val":"Show/Hide Console"
+          }, {  
+            "key":"[Ctrl] [K], [B]",
+            "val":"Show/Hide Sidebar"
+          }, {  
+            "key":"F11",
+            "val":"Fullscreen"
+          }, {  
+            "key":"[Shift] [F11]",
+            "val":"Distraction-free mode"
+          }, {  
+            "key":"[Alt] [Shift] ([2]/[3]/[4])",
+            "val":"Set 2, 3, or 4 column layout"
+          }, {  
+            "key":"[Alt] [Shift] ([8]/[9])",
+            "val":"Set 2 or 3 Row layout"
+          }, {  
+            "key":"[Alt] [Shift] [5]",
+            "val":"Set 4-pane grid layout"
+          }, {  
+            "key":"[Alt] [Shift] [1]",
+            "val":"Set single-pane layout"
+          }, {  
+            "key":"[Ctrl] ([1]/[2]/[3]/[4])",
+            "val":"Set focused group/pane"
+          }, {  
+            "key":"[Ctrl] [Shift] ([1]/[2]/[3]/[4])",
+            "val":"Move current tab/file to pane"
+        }],
+        "Find": [{  
+            "key":"[Ctrl] [F]",
+            "val":"Find"
+          }, {  
+            "key":"F3 ",
+            "val":"Find Next"
+          }, {  
+            "key":"[Ctrl] [F3]",
+            "val":"Find previous"
+          }, {  
+            "key":"[Ctrl] [I]",
+            "val":"Incremental find"
+          }, {  
+            "key":"[Ctrl] [H]",
+            "val":"Replace"
+          }, {  
+            "key":"[Ctrl] [Shift] [H]",
+            "val":"Replace next"
+          }, {  
+            "key":"[Ctrl] [F3]",
+            "val":"Quick Find (find current word)"
+          }, {  
+            "key":"[Alt] [F3]",
+            "val":"Quick find all"
+          }, {  
+            "key":"[Ctrl] [E]",
+            "val":"Use selection for find"
+          }, {  
+            "key":"[Ctrl] [Shift] [E]",
+            "val":"Use selection for replace"
+          }, {  
+            "key":"[Ctrl] [Shift] [F]",
+            "val":"Find in files"
+          }, {  
+            "key":"F4",
+            "val":"Next result (find in files)"
+          }, {  
+            "key":"[Shift] [F4]",
+            "val":"Previous result (find in files)"
+        }],
+        "Folding": [{  
+            "key":"[Ctrl] ([\\[]\/[\\]])",
+            "val":"Fold/expand"
+          }, {  
+            "key":"[Ctrl] [K], [J]",
+            "val":"Unfold all"
+          }, {  
+            "key":"[Ctrl] [K], [1]",
+            "val":"Fold all"
+          }, {  
+            "key":"[Ctrl] ([2]-[9])",
+            "val":"Fold level X"
+          }, {  
+            "key":"[Ctrl] [K], [T]",
+            "val":"Fold tag attributes"
+        }],
+        "Marks": [{  
+            "key":"[Ctrl] [K], [Space]",
+            "val":"Set mark"
+          }, {  
+            "key":"[Ctrl] [K], [A]",
+            "val":"Select to mark"
+          }, {  
+            "key":"[Ctrl] [K], [W]",
+            "val":"Delete to mark"
+          }, {  
+            "key":"[Ctrl] [K], [X]",
+            "val":"Swap with mark"
+          }, {  
+            "key":"[Ctrl] [K], [Y]",
+            "val":"Yank"
+        }],
+        "Word Manipulation": [{  
+            "key":"[Ctrl] ([Delete]/[BackSpace])",
+            "val":"Delete word forward/backward"
+          }, {  
+            "key":"[Ctrl] [K], [K]",
+            "val":"Delete to end of line"
+          }, {  
+            "key":"[Ctrl] [K], [BackSpace]",
+            "val":"Delete to beginning of line"
+          }, {  
+            "key":"[Ctrl] [T]",
+            "val":"Transpose (switch characters surrounding cursor)"
+          }, {  
+            "key":"[Alt] [.]",
+            "val":"Close Tag"
+          }, {  
+            "key":"[Ctrl] [K], ([U]/[L])",
+            "val":"Convert to upper/lower case"
+        }],
+        "Line Manipulation": [{  
+            "key":"[Ctrl] [\\]], [\\[]",
+            "val":"Indent/outdent"
+          }, {  
+            "key":"[Ctrl] [Shift] ([↑]/[↓])",
+            "val":"Swap Line Up/Down"
+          }, {  
+            "key":"[Ctrl] [Shift] [D]",
+            "val":"Duplicate Line"
+          }, {  
+            "key":"[Ctrl] [Shift] [K]",
+            "val":"Delete line"
+          }, {  
+            "key":"[Ctrl] [J]",
+            "val":"Join Lines"
+          }, {  
+            "key":"[Ctrl] [X]",
+            "val":"Cut Line"
+          }, {  
+            "key":"[Ctrl] [V]",
+            "val":"Paste cut/copied line above"
+          }, {  
+            "key":"[Ctrl] [Enter]",
+            "val":"Insert line after"
+          }, {  
+            "key":"[Ctrl] [Shift] [Enter]",
+            "val":"Insert Line Before"
+          }, {  
+            "key":"F9",
+            "val":"Sort Lines"
+          }, {  
+            "key":"[Ctrl] [F9]",
+            "val":"Sort lines (case-sensitive)"
+        }],
+        "Selection": [{  
+            "key":"[Ctrl] [D]",
+            "val":"Quick select (repeat to add next)"
+          }, {  
+            "key":"[Ctrl] [U]",
+            "val":"Undo quick select"
+          }, {  
+            "key":"[Ctrl] [K], [D]",
+            "val":"Skip and quick add next"
+          }, {  
+            "key":"[Ctrl] [Shift] [L]",
+            "val":"Split into lines (adds cursor to each line of current selection)"
+          }, {  
+            "key":"[Alt] [Ctrl] ([↑]/[↓])",
+            "val":"Add previous/next line"
+          }, {  
+            "key":"[Ctrl] [L]",
+            "val":"Expand selection to line"
+          }, {  
+            "key":"[Ctrl] [Shift] [Space]",
+            "val":"Expand selection to scope"
+          }, {  
+            "key":"[Ctrl] [Shift] [M]",
+            "val":"Expand selection to brackets"
+          }, {  
+            "key":"[Ctrl] [Shift] [J]",
+            "val":"Expand selection to indent­ation"
+          }, {  
+            "key":"[Ctrl] [Shift] [A]",
+            "val":"Expand selection to tag"
+          }
+        ]
+    }
+}
