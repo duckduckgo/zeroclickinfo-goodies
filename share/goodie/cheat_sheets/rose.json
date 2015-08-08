@@ -1,14 +1,14 @@
 {
-    "name": "Rose Cheat Sheet",
-    "id": "rose_cheat_sheet",
-    "description": "Not all rose are grown naturally, some are even artificial.",
+    "name": "Rose Colour Meanings",
+    "id": "rose_meanings_cheat_sheet",
+    "description": "These are the common meanings for each rose petal colour",
     "metadata": {
         "sourceName": "Morrison Garden",
         "sourceUrl": "http://rkdn.org/roses/colors.asp"
     },
     "section_order": [
                         "Colour of Rose",
-                        "Number of Rose"
+                        "Number of Roses"
                      ],
     "sections": {
         "Colour of Rose": [{
@@ -43,7 +43,7 @@
             "key": "Yellow"
         }, {
             "val": "Friendship, Falling in Love",
-            "key": "[Yellow] [Red Tip]"
+            "key": "Yellow Red Tip"
         }, {
             "val": "Given together, these signify unity",
             "key": "[Red] [White] "
@@ -73,29 +73,29 @@
             "key": "Blue"
         }, {
             "val": "Symbolic of purity and loveliness",
-            "key": "[Red] [Rosebud]"
+            "key": "Red Rosebud"
         }, {
             "val": "Symbolic of girlhood",
-            "key": "[White] [Rosebud]"
+            "key": "White Rosebud"
         }, {
             "val": "Love at first sight",
-            "key": " [Thorn-less] [Rose]"
+            "key": "Thorn-less Rose"
         }],
-        "Number of Rose": [
+        "Number of Roses": [
             {
-            "val": "A rose of any color depicts utmost devotion",
+            "val": "rose of any color depicts utmost devotion",
             "key": "Single"
         },  {
-            "val": "roses entwined together communicate 'Marry me'",
+            "val": "When entwined, two roses communicate "Marry Me"",
             "key": "Two"
         },  {
-            "val": "roses signify a need to be loved or cherished",
+            "val": "Signify a need to be loved or cherished",
             "key": "Six"
         },  {
-            "val": "roses assure the recipient they are truly and deeply loved",
+            "val": "Assure the recipient they are truly and deeply loved",
             "key": "Eleven"
         },  {
-            "val": "roses indicate a secret admirer",
+            "val": "Indicates a secret admirer",
             "key": "Thirteen"
         }]
     }
