@@ -3,7 +3,7 @@
 }
 
 .zci--cheat_sheets .cheatsheet__title {
-    padding-bottom: 1em;
+    padding: 19px 0;
     font-size: 1em;
     font-weight: bold;
 }
@@ -15,20 +15,19 @@
 .zci--cheat_sheets .cheatsheet__container .cheatsheet__section {
     width: 295px;
     float: left;
-    margin-bottom: 30px;
 }
 
 .zci--cheat_sheets td {
     vertical-align: top;
-    padding-bottom: 10px;
+    padding-bottom: 14px;
 }
 
-/* code-snippets.handlebars */
+/* style defaults */
 
 .zci--cheat_sheets code {
     display: inline-block;
     border: 1px solid #e0e0e0;
-    padding: 2px 5px 0px;
+    padding: 2px 5px 2px;
     border-radius: 2px;
     font-size: 0.833em;
     color: #333;
@@ -36,7 +35,7 @@
     white-space: normal;
     word-break: normal;
     margin-bottom: 0.2em;
-    line-height: 1.4;
+    line-height: 1.17;
 }
 
 .zci--cheat_sheets td.cheatsheet__key {
@@ -47,26 +46,77 @@
 .zci--cheat_sheets td.cheatsheet__value {
     padding-top: 3px;
     padding-left: 14px;
-    line-height: 1.4;
+    line-height: 1.18;
+}
+
+/* keyboard-shortcuts.handlebars */
+/**/
+/* .zci--cheat_sheets .keyboard-shortcuts { */
+/* no need for styles here yet } */
+/**/
+
+/* code-snippets.handlebars */
+
+.zci--cheat_sheets .code-snippets code {
+  background-color: #e0e0e0;
+}
+
+/* terminal-snippets.handlebars */
+
+.zci--cheat_sheets .terminal-snippets td,
+.zci--cheat_sheets .reference-sheet td {
+    vertical-align: top;
+    padding-bottom: 19px;
+}
+
+.zci--cheat_sheets .terminal-snippets code {
+  width: 100%;
+  background-color: #e0e0e0;
+}
+
+.zci--cheat_sheets .terminal-snippets td.cheatsheet__key {
+  display: block;
+  min-width: 100%;
+  padding-bottom: 1px;
+}
+
+.zci--cheat_sheets .terminal-snippets td.cheatsheet__value {
+  display: block;
+  min-width: 100%;
+  padding-top: 0px;
+  padding-left: 7px;
 }
 
 /* reference-sheet.handlebars */
 
-.zci--cheat_sheets ul {
+.zci--cheat_sheets .reference-sheet ul {
+  padding: 0;
   margin-left: 13px;
 }
 
-.zci--cheat_sheets li {
-  list-style-type: disc;
+.zci--cheat_sheets .reference-sheet li {
+  position: relative;
+  padding-bottom: 19px;
   padding-left: 7px;
   line-height: 17px;
-  margin-bottom: 10px;
 }
 
-.zci--cheat_sheets li .cheatsheet__key {
-    color: #333333;
-    font-weight: bold;
+.zci--cheat_sheets .reference-sheet li::before {
+  position: absolute;
+  left: -12px;
+  content: '●';
+  color: #333;
+  font-size: 7px;
+}
+
+.zci--cheat_sheets .reference-sheet li .cheatsheet__key {
     display: block;
+    color: #333;
+    font-weight: bold;
+}
+
+.zci--cheat_sheets .reference-sheet li .cheatsheet__value {
+    color: #888;
 }
 
 /**/
