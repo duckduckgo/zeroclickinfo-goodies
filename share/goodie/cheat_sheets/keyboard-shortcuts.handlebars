@@ -4,9 +4,7 @@
 <div class="cheatsheet__container compressed" >
     {{#cheatsheets_ordered sections section_order}}
     <div class="cheatsheet__section {{#if showhide}} showhide is-hidden {{/if}}">
-        <span>
-            <h6 class="cheatsheet__title tx-clr--slate">{{name}}</h6>
-        </span>
+        <h6 class="cheatsheet__title tx-clr--slate">{{name}}</h6>
         <table>
             <tbody>
                 {{#each items}}
