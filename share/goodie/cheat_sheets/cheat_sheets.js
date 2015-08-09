@@ -2,8 +2,10 @@ DDH.cheat_sheets = DDH.cheat_sheets || {};
 
 DDH.cheat_sheets.build = function(ops) {
 
-    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, options) {
+    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, template_type, options) {
         var result = "";
+        var template = template_type;
+
         $.each(section_order, function(i, section) {
            if (sections[section]){
 
@@ -15,7 +17,7 @@ DDH.cheat_sheets.build = function(ops) {
                    showhide = false;
                }
 
-               result += options.fn({ name: section, items: sections[section], showhide: showhide });
+               result += options.fn({ name: section, items: sections[section], template: template, showhide: showhide });
             }
         });
         return result;
