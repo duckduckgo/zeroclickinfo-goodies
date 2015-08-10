@@ -20,7 +20,7 @@
         ],
         "Module Options": [
         {
-            "key": "[ Module::Name ]",
+            "key": "Module::Name",
             "val": "Show module documentation"
         },
         {
@@ -52,23 +52,23 @@
         ],
         "Common Options": [
         {
-            "key": "[ perl]",
+            "key": "perl",
             "val": "Language overview"
         },
         {
-            "key": "[ perlvar]",
+            "key": "perlvar",
             "val": "Pre-defined variables"
         },
         {
-            "key": "[ perlfunc]",
+            "key": "perlfunc",
             "val": "Built-in functions"
         },
         {
-            "key": "[ perlref]",
+            "key": "perlref",
             "val": "References guide"
         },
         {
-            "key": "[ perlre]",
+            "key": "perlre",
             "val": "Regex guide"
         }
         ]
