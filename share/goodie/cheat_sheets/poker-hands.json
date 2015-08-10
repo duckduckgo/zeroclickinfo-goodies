@@ -1,0 +1,43 @@
+{
+    "id": "poker_hands_cheat_sheet",
+    "name": "Poker Hands",
+    "description": "Probabilities of 5 card poker hands, the lower the probability the stronger the hand.",
+    "metadata": {
+    "sourceName": "Wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_poker_hands"    
+    },
+    "section_order": [
+        "Hands"
+    ],
+    "sections": {
+            "Hands": [{
+            "val": "0.0015%",
+            "key": "Straight flush"
+        },{
+           "val": "0.024%",
+            "key": "Four of a kind"
+        },{
+            "val": "0.1441%",
+            "key": "Full house"          
+        },{
+             "val": "0.196%",
+            "key": "Flush"           
+        },{
+            "val": "0.39%",
+            "key": "Straight"
+        },{
+            "val" : "2.11%",
+            "key": "Three of a kind"
+        },{
+            "val": "4.75%",
+            "key": "Two pair"
+        },{            
+            "val": "42.26%",
+            "key": "One pair"
+        },{
+            
+            "val": "50.11%",
+            "key": "High card"
+        }]
+    }
+}
