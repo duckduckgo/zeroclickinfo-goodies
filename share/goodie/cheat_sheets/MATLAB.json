@@ -1,6 +1,6 @@
 {
     "id": "matlab_cheat_sheet",
-    "name": "MATLAB",
+    "name": "MATLA",
     "description": "MATLAB is an incredibly flexible environment that you can use to perform all sorts of math tasks",
     "metadata": {
         "sourceName": "Dummies",
@@ -8,11 +8,8 @@
     },
     "section_order": [
         "Common",
-        "File Navigation",
-        "View/Window Manipulation",
-        "Find",
-        "Folding",
-        "Marks",
+        "MATLAB Common Operator",
+        "MATLAB Operator Precedence",
         "Word Manipulation",
         "Line Manipulation",
         "Selection"
@@ -51,128 +48,128 @@
         }, {  
             "key":"gca",
             "val":"Obtains a handle to the current axes"
+        }, {  
+            "key":"get(<handle>, <property>)",
+            "val":"Obtains the <property> found in the object pointed at by <handle>"
+          }, {  
+            "key":"help <command or file>",
+            "val":"Displays help documentation for the <command> or comments in files you've created"
+          }, {  
+            "key":"gcf",
+            "val":"Obtains a handle to the current figure"
+          }, {  
+            "key":"gco",
+            "val":"Obtains a handle to the current object"
+          }, {  
+            "key":"iskeyword",
+            "val":"Displays a list of all the MATLAB keywords"
+          }, {  
+            "key":"iskeyword <name>",
+            "val":"Determines whether <name> is a keyword"
+          }, {  
+            "key":"load <filename>",
+            "val":"Loads the file containing variables to the Workspace window"
+          }, {  
+            "key":"more off",
+            "val":"Displays output using standard scrolling so that all of the output appears at one time"
+          }, {  
+            "key":"more on",
+            "val":"Tells MATLAB to display output one screen at a time"
+          }, {  
+            "key":"save <filename>",
+            "val":"Saves the variables shown in the Workspace window to the specified file"
+        },  {  
+            "key":"set(<handle>, <property>, <value>)",
+            "val":"Sets the <property> found in the object pointed at by <handle> to the specified <value>"
         }],
-        "File Navigation": [{  
-            "key":"[Ctrl] [P]",
-            "val":"Goto Anything"
+        "MATLAB Common Operator": [{  
+            "key":"-",
+            "val":"Subtracts the right operand from the left operand."
           }, {  
-            "key":"[Ctrl] [G]",
-            "val":"Goto Line"
+            "key":"*",
+            "val":"Multiplies the right operand by the left operand."
           }, {  
-            "key":"[Ctrl] [R]",
-            "val":"Goto symbol (function name, table, etc.)"
+            "key":"^",
+            "val":"Calculates the exponential value of the right operand by the left operand"
           }, {  
-            "key":"[Ctrl] ([Pageup]/[Pagedown])",
-            "val":"Goto next/prev file"
+            "key":"/",
+            "val":"Divides the left operand by the right operand."
           }, {  
-            "key":"[Ctrl] [K], [C]",
-            "val":"Goto current selection"
+            "key":"\",
+            "val":"Divides the right operand by the left operand."
           }, {  
-            "key":"[Ctrl] ([↑]/[↓])",
-            "val":"Scroll up/down one line (doesn't move cursor)"
+            "key":"+",
+            "val":"Adds two values together."
           }, {  
-            "key":"[Ctrl] [F2]",
-            "val":"Set Bookmark"
+            "key":".",
+            "val":"Modifies operators to perform element-by-element arithmetic vis-à-vis matrix arithmetic. You receive no modification if you're operating on scalars (ordinary numbers)."
           }, {  
-            "key":"[Alt] [Ctrl] [P]",
-            "val":"Switch Project"
+            "key":"=",
+            "val":"Assigns the value found in the right operand to the left operand."
           }, {  
-            "key":"[Ctrl] [Shift] [F2]",
-            "val":"Clear all bookmarks"
+            "key":"bitand",
+            "val":"Performs a logical and of the bits in two numbers."
           }, {  
-            "key":"F2",
-            "val":"Goto next bookmark"
+            "key":"bitor",
+            "val":"Performs a logical or of the bits in two numbers."
+        },   {  
+            "key":"bitget",
+            "val":"Obtains the value of the bit at a specific location."
+          }, {  
+            "key":"bitset",
+            "val":"Changes the bit at the specified location."
+          }, {  
+            "key":"bitshift",
+            "val":"Shifts the bits the specified number of positions."
+          }, {  
+            "key":"bitxor",
+            "val":"Performs a logical exclusive or on the bits in two numbers."
+          }, {  
+            "key":"and",
+            "val":"Determines whether both operands are true."
+          }, {  
+            "key":"not",
+            "val":"Negates the truth value of a single operand. A true value becomes false and a false value becomes true."
+          }, {  
+            "key":"or",
+            "val":"Determines when one of two operands are true."
+          }, {  
+            "key":"xor",
+            "val":"Determines when one and only one of the operands is true."
+          }, {  
+            "key":"all",
+            "val":"Determines whether all the array elements are nonzero or true."
+          }, {  
+            "key":"any",
+            "val":"Determines whether any of the array elements are nonzero or true."
+          }, {  
+            "key":"~=",
+            "val":"Determines whether two values are not equal."
+          }, {  
+            "key":"<",
+            "val":"Verifies that the left operand value is less than the right operand value."
+          }, {  
+            "key":"<=",
+            "val":"Verifies that the left operand value is less than or equal to the right operand value."
+        },  {  
+            "==",
+            "val":"Determines whether two values are equal. Notice that the relational operator uses two equals signs. A mistake many developers make is using just one equals sign, which results in one value being assigned to another."
+          }, {  
+            "key":">",
+            "val":"Verifies that the left operand value is greater than the right operand value."
+          }, {  
+            "key":">=",
+            "val":"Verifies that the left operand value is greater than or equal to the right operand value."
+          }, {  
+            "key":"-",
+            "val":"Negates the original value so that positive becomes negative and vice versa."
+          }, {  
+            "key":"+",
+            "val":"Provided purely for the sake of completeness. This operator returns the same value that you provide as input."
         }],
-        "View/Window Manipulation": [{  
-            "key":"[Ctrl] [`]",
-            "val":"Show/Hide Console"
-          }, {  
-            "key":"[Ctrl] [K], [B]",
-            "val":"Show/Hide Sidebar"
-          }, {  
-            "key":"F11",
-            "val":"Fullscreen"
-          }, {  
-            "key":"[Shift] [F11]",
-            "val":"Distraction-free mode"
-          }, {  
-            "key":"[Alt] [Shift] ([2]/[3]/[4])",
-            "val":"Set 2, 3, or 4 column layout"
-          }, {  
-            "key":"[Alt] [Shift] ([8]/[9])",
-            "val":"Set 2 or 3 Row layout"
-          }, {  
-            "key":"[Alt] [Shift] [5]",
-            "val":"Set 4-pane grid layout"
-          }, {  
-            "key":"[Alt] [Shift] [1]",
-            "val":"Set single-pane layout"
-          }, {  
-            "key":"[Ctrl] ([1]/[2]/[3]/[4])",
-            "val":"Set focused group/pane"
-          }, {  
-            "key":"[Ctrl] [Shift] ([1]/[2]/[3]/[4])",
-            "val":"Move current tab/file to pane"
-        }],
-        "Find": [{  
-            "key":"[Ctrl] [F]",
-            "val":"Find"
-          }, {  
-            "key":"F3 ",
-            "val":"Find Next"
-          }, {  
-            "key":"[Ctrl] [F3]",
-            "val":"Find previous"
-          }, {  
-            "key":"[Ctrl] [I]",
-            "val":"Incremental find"
-          }, {  
-            "key":"[Ctrl] [H]",
-            "val":"Replace"
-          }, {  
-            "key":"[Ctrl] [Shift] [H]",
-            "val":"Replace next"
-          }, {  
-            "key":"[Ctrl] [F3]",
-            "val":"Quick Find (find current word)"
-          }, {  
-            "key":"[Alt] [F3]",
-            "val":"Quick find all"
-          }, {  
-            "key":"[Ctrl] [E]",
-            "val":"Use selection for find"
-          }, {  
-            "key":"[Ctrl] [Shift] [E]",
-            "val":"Use selection for replace"
-          }, {  
-            "key":"[Ctrl] [Shift] [F]",
-            "val":"Find in files"
-          }, {  
-            "key":"F4",
-            "val":"Next result (find in files)"
-          }, {  
-            "key":"[Shift] [F4]",
-            "val":"Previous result (find in files)"
-        }],
-        "Folding": [{  
-            "key":"[Ctrl] ([\\[]\/[\\]])",
-            "val":"Fold/expand"
-          }, {  
-            "key":"[Ctrl] [K], [J]",
-            "val":"Unfold all"
-          }, {  
-            "key":"[Ctrl] [K], [1]",
-            "val":"Fold all"
-          }, {  
-            "key":"[Ctrl] ([2]-[9])",
-            "val":"Fold level X"
-          }, {  
-            "key":"[Ctrl] [K], [T]",
-            "val":"Fold tag attributes"
-        }],
-        "Marks": [{  
-            "key":"[Ctrl] [K], [Space]",
-            "val":"Set mark"
+        "MATLAB Operator Precedence": [{  
+            "key":"()",
+            "val":"Parentheses are used to group expressions and to override the default precedence so that you can force an operation of lower precedence (such as addition) to take precedence over an operation of higher precedence (such as multiplication)."
           }, {  
             "key":"[Ctrl] [K], [A]",
             "val":"Select to mark"
