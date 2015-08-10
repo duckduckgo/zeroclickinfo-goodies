@@ -28,7 +28,6 @@ handle remainder => sub {
     open my $fh, $json_path or return;
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
-    my $template = $data->{template_type} || 'detail';
 
     return 'Cheat Sheet', structured_answer => {
         id => 'cheat_sheets',
@@ -39,7 +38,7 @@ handle remainder => sub {
             group => 'base',
             item => 0,
             options => {
-                content => "DDH.cheat_sheets.$template",
+                content => "DDH.cheat_sheets.detail",
                 moreAt => 0
             }
         }

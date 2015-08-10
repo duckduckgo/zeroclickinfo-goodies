@@ -4,7 +4,10 @@ DDH.cheat_sheets.build = function(ops) {
 
     Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, template_type, options) {
         var result = "";
-        var template = template_type;
+        var template = {
+          type: template_type,
+          path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard-shortcuts'
+        };
 
         $.each(section_order, function(i, section) {
            if (sections[section]){
