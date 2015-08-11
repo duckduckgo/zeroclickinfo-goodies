@@ -357,6 +357,14 @@
                 "val": "Output of cmd1 is passed to cmd2's stdin"
             },
             {
+                "key": "cmd &> file",
+                "val": "Redirect both stdout and stderr to file (overwrite)"
+            },
+            {
+                "key": "cmd &>> file",
+                "val": "Redirect both stdout and stderr to file (append)"
+            },
+            {
                 "key": "cmd >&n",
                 "val": "Send cmd's stdout to file descriptor n"
             },
