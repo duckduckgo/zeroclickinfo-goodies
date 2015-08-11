@@ -3,7 +3,7 @@ package DDG::Goodie::CheatSheets;
 
 use JSON::XS;
 use DDG::Goodie;
-use DDP;
+use Text::Trim;
 
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
@@ -21,11 +21,25 @@ triggers startend => (
     'key bindings', 'keys', 'default keys'
 );
 
+sub get_json_path {
+    my $name = trim( lc shift );
+    return share(join('-', split /\s+/o, "$name.json"));
+}
+
 handle remainder => sub {
+
     # If needed we could jump through a few more hoops to check
     # terms against file names.
-    my $json_path = share(join('-', split /\s+/o, lc($_) . '.json'));
-    open my $fh, $json_path or return;
+    my $json_path = get_json_path($_);
+    my $fh;
+
+    # try to open file, may need to cleanup candidate filename
+    unless (open $fh, $json_path){ 
+        # allow queries like "cheat sheet for vim"
+        $json_path =~ s|/for-|/|;
+        open $fh, $json_path or return;
+    }
+
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
 
