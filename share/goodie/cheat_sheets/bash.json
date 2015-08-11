@@ -419,42 +419,6 @@
             {
                 "key": "!=0",
                 "val": "Failure"
-            },
-            {
-                "key": "1",
-                "val": "Catchall for general errors"
-            },
-            {
-                "key": "2",
-                "val": "Misuse of shell builtins"
-            },
-            {
-                "key": "3-125",
-                "val": "Meaning varies depending on command"
-            },
-            {
-                "key": "126",
-                "val": "Command invoked cannot execute"
-            },
-            {
-                "key": "127",
-                "val": "Command not found"
-            },
-            {
-                "key": "128",
-                "val": "Invalid argument to exit (exit only accepts INT)"
-            },
-            {
-                "key": "128+n",
-                "val": "Fatal error signal \"n\""
-            },
-            {
-                "key": "130",
-                "val": "Script terminated by Ctrl-C"
-            },
-            {
-                "key": "255*",
-                "val": "Exit status out of range (example: -1)"
             }
         ],
         "Here Documents": [
