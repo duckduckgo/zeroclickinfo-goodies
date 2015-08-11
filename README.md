@@ -1,7 +1,5 @@
 # DuckDuckHack Goodies [![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.png?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
 
-[![Join the chat at https://gitter.im/rohitzidu/zeroclickinfo-goodies](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rohitzidu/zeroclickinfo-goodies?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/duckduckgo/zeroclickinfo-goodies?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This repository contains all the Goodie instant answers. If you are developing a Goodie instant answer you will need to fork this repository.
