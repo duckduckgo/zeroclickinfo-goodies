@@ -360,7 +360,6 @@ subtest 'Dates' => sub {
                 'december 2015'     => '01 Dec 2015',
                 'march 13'          => '13 Mar 2014',
                 'in a weeks time'   => '15 Oct 2014',
-                'a month ago'       => '01 Dec 1999',
                 '2 months ago'      => '08 Aug 2014',
                 'in 2 years'        => '08 Oct 2016',
                 'a week ago'        => '01 Oct 2014',
@@ -433,7 +432,27 @@ subtest 'Dates' => sub {
 
         restore_time();
     };
+    subtest 'Valid Years' => sub {
+        #my @valids = ('1', '0001', '9999', 2015, 1997);
+        my @valids = ('1');
+        my @invalids = (-1, 0, 10000);
 
+        foreach my $case (@valids) {
+            my $result;
+            lives_ok {
+                $result = DatesRoleTester::is_valid_year($case)
+            };
+            is($result, "1", "$case is a valid year");
+        }
+
+        foreach my $case (@invalids) {
+            my $result;
+            lives_ok {
+                $result = DatesRoleTester::is_valid_year($case)
+            };
+            is($result, '', "$case is an invalid year");
+        }
+    }
 };
 
 subtest 'ImageLoader' => sub {

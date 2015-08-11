@@ -3,6 +3,7 @@ package DDG::Goodie::EmailValidator;
 
 use strict;
 use DDG::Goodie;
+use Net::Domain::TLD;
 use Email::Valid;
 
 primary_example_queries 'validate foo@example.com';

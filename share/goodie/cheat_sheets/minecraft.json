@@ -1,0 +1,155 @@
+{
+    "id": "minecraft_cheat_sheet", 
+    "name": "Minecraft Shortcuts",
+    "section_order": [  
+        "Movement",
+        "Items",
+        "Multiplayer",
+        "Debug",
+        "General Toggles"
+    ],
+    "sections": {
+        "Movement": [
+            {
+                "key": "W", 
+                "val": "Move forward (double tap to sprint)"
+            },
+            {
+                "key": "A",
+                "val": "Strafe left"
+            },
+            {
+                "key": "S", 
+                "val": "Move backward"
+            },
+            {
+                "key": "D",
+                "val": "Strafe right"
+            },
+            {
+                "key": "Space",
+                "val": "Jump (ascend in Fly mode)"
+            },
+            {
+                "key": "Left Shift", 
+                "val": "Sneak (descend in Fly mode)"
+            },
+            {
+                "key": "Left Control",
+                "val": "Sprint"
+            }
+        ],
+        "Items": [
+            {
+                "key": "[1] to [9]", 
+                "val": "Select associated hotbar item"
+            },
+            {
+                "key": "E",
+                "val": "Open/close inventory"
+            },
+            {
+                "key": "Q", 
+                "val": "Drop/toss item"
+            }
+        ],
+        "Multiplayer": [
+            {
+                "key": "T", 
+                "val": "Chat"
+            },
+            {
+                "key": "/",
+                "val": "Open chat with '/' already typed"
+            },
+            {
+                "key": "Tab",
+                "val": "View list of players"
+            }
+        ],
+        "Debug": [
+            {
+                "key": "[1] to [9]", 
+                "val": "Increase/decrease graph detail"
+            },
+            {
+                "key": "[Shift] [F3]",
+                "val": "Display profiler graph"
+            },
+            {
+                "key": "[S] [F3]", 
+                "val": "Reload web-loaded client resources"
+            },
+            {
+                "key": "[A] [F3]", 
+                "val": "Reload chunks"
+            },
+            {
+                "key": "[T] [F3]",
+                "val": "Reload textures"
+            },
+            {
+                "key": "[P] [F3]", 
+                "val": "Toggle auto-pause when window loses focus"
+            },
+            {
+                "key": "[H] [F3]", 
+                "val": "Toggle detailed item descriptions"
+            },
+            {
+                "key": "[C] [F3]",
+                "val": "Trigger manual debug crash (hold for six seconds)"
+            },
+            {
+                "key": "[B] [F3]", 
+                "val": "Toggle hitbox around entities"
+            },
+            {
+                "key": "[D] [F3]", 
+                "val": "Clear chat history"
+            },
+            {
+                "key": "F8", 
+                "val": "Slowly pan camera"
+            }
+        ],
+        "General Toggles": [
+            {
+                "key": "Esc", 
+                "val": "Open menu"
+            },
+            {
+                "key": "F1",
+                "val": "Toggle Heads-Up Display"
+            },
+            {
+                "key": "F2", 
+                "val": "Take screenshot"
+            },
+            {
+                "key": "[F1] [F2]", 
+                "val": "Take screenshot without HUD"
+            },
+            {
+                "key": "F4",
+                "val": "Toggle shaders"
+            },
+            {
+                "key": "F5", 
+                "val": "Toggle perspective"
+            },
+            {
+                "key": "F6", 
+                "val": "Start/stop stream"
+            },
+            {
+                "key": "F7", 
+                "val": "Pause/unpause stream"
+            },
+            {
+                "key": "F11", 
+                "val": "Toggle fullscreen"
+            }
+        ]
+    }
+}

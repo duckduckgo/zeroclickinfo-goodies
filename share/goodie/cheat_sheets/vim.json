@@ -4,7 +4,7 @@
     "description": "Text Editor",
     "metadata": {
         "sourceName": "VimCheatSheet",
-        "sourceUrl": "https://duckduckgo.com"
+        "sourceUrl": "http://vim.rtorr.com"
     },
     "section_order": [
         "Cursor movement",
@@ -16,7 +16,8 @@
         "Exiting",
         "Search and replace",
         "Working with multiple files",
-        "Tabs"
+        "Tabs",
+        "Miscellaneous"
     ],
     "sections": {
         "Tabs": [{
@@ -293,6 +294,9 @@
             "key": "~"
         }],
         "Search and replace": [{
+            "val": "search for word under cursor",
+            "key": "*"
+        }, {
             "val": "search for pattern",
             "key": "/pattern"
         }, {
@@ -310,6 +314,10 @@
         }, {
             "val": "replace all old with new throughout file with confirmations",
             "key": ":%s/old/new/gc"
+        }],
+        "Miscellaneous": [{
+            "val": "create html representation of current working buffer",
+            "key": ":%TOhtml"
         }]
     }
 }
