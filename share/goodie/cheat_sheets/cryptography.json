@@ -39,7 +39,7 @@
             "val": "A complete public-key cryptosystem for electronic messaging that has been released to the public domain. It was originally designed by Phil Zimmerman. It uses IDEA, CAST or Triple DES for actual data encryption and RSA (with up to 2048-bit key) or DH/DSS (with 1024-bit signature key and 4096-bit encryption key) for key management and digital signatures. The RSA or DH public key is used to encrypt the IDEA secret key as part of the message.",
             "key": "PGP"
         }, {
-            "val": "The secret part of a a private key/public key pair used in public key cryptography. The Private Key is normally known only to the key owner. Messages are encrypted using the Public Key and decrypted using the Private Key. For digital signatures, however, a document is signed with a Private Key and authenticated with the corresponding Public Key.",
+            "val": "The secret part of a private key/public key pair used in public key cryptography. The Private Key is normally known only to the key owner. Messages are encrypted using the Public Key and decrypted using the Private Key. For digital signatures, however, a document is signed with a private key and authenticated with the corresponding Public Key.",
             "key": "Private Key"
         }, {
             "val": "A concept first proposed by Diffie and Hellman in 1975 that has been largely responsible for opening up the science of cryptography for commercial use. The encryption key is made public but only the person who holds the corresponding private key can decrypt the message.",
@@ -59,7 +59,7 @@
         }],
         "Types of Cryptography": [{
             "val": "Uses one key for encryption and another for decryption. Also called Public Key Cryptography.",
-            "key": "Assymetric Key"
+            "key": "Asymmetric Key"
         }, {
             "val": "Uses a mathematical transformation to irreversibly encrypt information.",
             "key": "Hash Functions"
@@ -88,9 +88,9 @@
         }],
         "Hashing Algorithms": [{
             "val": "The message digest family of encryption algorithms provides encryption of 128-bits in strength and is designed to be fast and simple. Current standards are MD2, MD4 and MD5.",
-            "key": "Message Digest Service Algorithm"
+            "key": "Message Digest Service Algorithm (MD5)"
         }, {
-            "val": "SHA is used extensively by the US government and was developed by the National Security Agency (NSA). Two version of SHA have so far been developed - SHA and SHA1. SHA1 provides 160-bit hashing. SHA-1 is more secure than MD5 but involves a slower encryption process.",
+            "val": "SHA is used extensively by the US government and was developed by the National Security Agency (NSA). Four versions of SHA have so far been developed - SHA-0, SHA-1, SHA-2 and SHA-3. SHA-1 provides 160-bit hashing. SHA-1 is more secure than MD5 but involves a slower encryption process. SHA-2 also known as SHA-256 and SHA-512. SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. SHA-3 supports the same hash lengths as SHA-2.",
             "key": "Secure Hash Algorithm"
         }],
         "Symmetric Encryption Algorithms": [{
@@ -115,7 +115,7 @@
             "val": "RC2 is a variable-key-length cipher. It was invented by Ron Rivest for RSA Data Security, Inc. Its details have not been published.",
             "key": "RC2"
         }, {
-            "val": "RC4 was developed by Ron Rivest in 1987. It is a variable-key-size stream cipher. It is a cipher with a key size of up to 2048 bits (256 bytes).",
+            "val": "RC4 was developed by Ron Rivest in 1987. It is a variable-key-size stream cipher. It is a cipher with a key size of up to 2048 bits (256 bytes). RC4 is not regarded as a secure algorithm anymore.",
             "key": "RC4"
         }, {
             "val": "RC6 is a symmetric key block cipher derived from RC5. It was designed by Ron Rivest, Matt Robshaw, Ray Sidney, and Yiqun Lisa Yin to meet the requirements of the Advanced Encryption Standard (AES) competition.",
@@ -124,10 +124,10 @@
             "val": "Serpent is a very fast and reasonably secure block cipher developed by Ross Anderson, Eli Biham and Lars Knudsen.",
             "key": "Serpent"
         }, {
-            "val": "A method of vastly increasing the security of DES by encrypting 3 times with different keys.",
+            "val": "A method of vastly increasing the security of DES by encrypting 3 times with different keys. Each triple encryption encrypts one block of 64 bits of data.",
             "key": "Triple DES"
         }, {
-            "val": "Twofish is a symmetric block cipher. Twofish has a block size of 128 bits and accepts keys of any length up to 256 bits.Twofish has key dependent S-boxes like Blowfish. Twofish encryption algorithm was designed by Bruce Schneier, John Kelsey, Chris Hall, Niels Ferguson, David Wagner and Doug Whiting.",
+            "val": "Twofish is a symmetric block cipher. Twofish has a block size of 128 bits and accepts keys of any length up to 256 bits. Twofish has key dependent S-boxes like Blowfish. Twofish encryption algorithm was designed by Bruce Schneier, John Kelsey, Chris Hall, Niels Ferguson, David Wagner and Doug Whiting and was one of the five finalist of the Advanced Encryption Standard contest.",
             "key": "Twofish"
         }]
     }
