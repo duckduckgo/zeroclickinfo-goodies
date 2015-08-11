@@ -36,19 +36,21 @@
 }
 
 .zci--cheat_sheets td.cheatsheet__key {
-    line-height: 1.7;
+  vertical-align: top;
+  line-height: 1.7;
 }
 
 .zci--cheat_sheets td.cheatsheet__value {
-    padding-top: 3px;
-    padding-left: 18px;
-    line-height: 1.18;
+  padding-top: 3px;
+  padding-left: 18px;
+  vertical-align: top;
+  line-height: 1.18;
 }
 
 /* terminal-snippets.handlebars */
 
 .zci--cheat_sheets .terminal-snippets td {
-    padding-bottom: 12px;
+  padding-bottom: 12px;
 }
 
 .zci--cheat_sheets .terminal-snippets code {
@@ -67,7 +69,6 @@
   padding-top: 0px;
   padding-left: 7px;
   margin-top: 1px;
-
 }
 
 /* reference-sheet.handlebars */
