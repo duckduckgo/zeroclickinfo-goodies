@@ -3,7 +3,7 @@
 }
 
 .zci--cheat_sheets .cheatsheet__title {
-    padding: 19px 0;
+    padding: 16px 0 12px;
     font-size: 1em;
     font-weight: bold;
 }
@@ -18,8 +18,7 @@
 }
 
 .zci--cheat_sheets td {
-    vertical-align: top;
-    padding-bottom: 14px;
+    padding-bottom: 8px;
 }
 
 /* style defaults */
@@ -27,11 +26,9 @@
 .zci--cheat_sheets code {
     display: inline-block;
     border: 1px solid #e0e0e0;
-    padding: 2px 5px 2px;
+    padding: 3px 4px 1px;
     border-radius: 2px;
     font-size: 0.833em;
-    color: #333;
-    background-color: #fff;
     white-space: normal;
     word-break: normal;
     margin-bottom: 0.2em;
@@ -45,33 +42,18 @@
 
 .zci--cheat_sheets td.cheatsheet__value {
     padding-top: 3px;
-    padding-left: 14px;
+    padding-left: 18px;
     line-height: 1.18;
-}
-
-/* keyboard-shortcuts.handlebars */
-/**/
-/* .zci--cheat_sheets .keyboard-shortcuts { */
-/* no need for styles here yet } */
-/**/
-
-/* code-snippets.handlebars */
-
-.zci--cheat_sheets .code-snippets code {
-  background-color: #e0e0e0;
 }
 
 /* terminal-snippets.handlebars */
 
-.zci--cheat_sheets .terminal-snippets td,
-.zci--cheat_sheets .reference-sheet td {
-    vertical-align: top;
-    padding-bottom: 19px;
+.zci--cheat_sheets .terminal-snippets td {
+    padding-bottom: 12px;
 }
 
 .zci--cheat_sheets .terminal-snippets code {
   width: 100%;
-  background-color: #e0e0e0;
 }
 
 .zci--cheat_sheets .terminal-snippets td.cheatsheet__key {
@@ -98,7 +80,7 @@
 
 .zci--cheat_sheets .reference-sheet li {
   position: relative;
-  padding-bottom: 19px;
+  padding-bottom: 12px;
   padding-left: 7px;
   line-height: 17px;
 }
@@ -107,18 +89,13 @@
   position: absolute;
   left: -12px;
   content: '●';
-  color: #333;
+  color: inherit;
   font-size: 7px;
 }
 
 .zci--cheat_sheets .reference-sheet li .cheatsheet__key {
     display: block;
-    color: #333;
     font-weight: bold;
-}
-
-.zci--cheat_sheets .reference-sheet li .cheatsheet__value {
-    color: #888;
 }
 
 /**/
