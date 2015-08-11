@@ -1,0 +1,376 @@
+/**
+* Created with DuckDuckHack Xcode shortcuts.
+* User: marwendoukh
+* Date: 2015-08-11
+* Time: 10:33 AM
+*/
+
+{
+    // Required; must match the id of the cheat sheet's IA page
+    // For example, https://duck.co/ia/view/vim_cheat_sheet
+    "id": "xcode_cheat_sheet", 
+
+    // Required; displayed as title of AnswerBar
+    "name": "Xcode",
+
+    // Optional; displayed as subtitle of AnswerBar
+    "description": "Integrated Development Environment", 
+    
+    // Required if cheat sheet has a source; useful to link users to further information.
+    // Displayed at bottom of AnswerBar, favicon shown automatically
+    "metadata": { 
+        "sourceName": "Apple Developper",
+        "sourceUrl": "https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/MenuCommands/MenuCommands014.html" // Should be SSL if possible
+    },
+
+    // Required; controls which sections appear and in what order
+    "section_order": [  
+        "Xcode menu command",
+        "File menu command",
+        "Edit menu command",
+        "View menu command",
+        "Navigate menu command",
+        "Editor menu command", 
+        "Product menu command",
+        "Window menu command",
+        "Help menu command",
+          ],
+
+    // Required; section names must match those in section_order in order to appear
+    "sections": {
+        "Xcode menu command": [
+            {
+                "key": "⌘", 
+                "val": "Preferences"
+            },
+            {
+                "key": "[⌘] [H]",
+                "val": "Hide Xcode"
+            },
+            {
+                "key": "[⌥] [⌘] [H]",
+                "val": "Hide others"
+            },
+            {
+                "key": "[⌘] [Q]",
+                "val": "Quit Xcode"
+            }
+        ],        
+        "File menu command": [
+            {
+                "key": "[⌘] [T]",
+                "val": "New Tab"               
+            }, 
+            {
+                "key": "[⇧] [⌘] [T]",
+                "val": "New Window"
+            }, 
+            {
+                "key": "[⌘] [N]",
+                "val": "New File"
+            }, 
+            {
+                "key": "[⇧] [⌘] [N]",
+                "val": "New Project"
+            }, 
+            {
+                "key": "[⌃] [⌘] [N]",
+                "val": "New Workspace"
+            }, 
+            {
+                "key": "[⌥] [⌘] [N]",
+                "val": "New Group"
+            }, 
+            {
+                "key": "[⌥] [⌘] [A]",
+                "val": "Add Files"
+            }, 
+            {
+                "key": "[⌘] [O]",
+                "val": "Open"
+            }, 
+            {
+                "key": "[⇧] [⌘] [O]",
+                "val": "Open Quickly"
+            }, 
+            {
+                "key": "[⌘] [W]",
+                "val": "Close Window"
+            }, 
+            {
+                "key": "[⌥] [⌘] [W]",
+                "val": "Close All Windows"
+            }, 
+            {
+                "key": "[⇧] [⌘] [W]",
+                "val": "Close Tab"
+            }, 
+            {
+                "key": "[⌥] [⇧] [⌘] [W]",
+                "val": "Close Other Tabs"
+            }, 
+            {
+                "key": "[⌃] [⌘] [W]",
+                "val": "Close Document"
+            }, 
+            {
+                "key": "[⌘] [S]",
+                "val": "Save"
+            }, 
+            {
+                "key": "[⌥] [⌘] [S]",
+                "val": "Save All"
+            }, 
+            {
+                "key": "[⌥] [⇧] [⌘] [S]",
+                "val": "Save Multiple"
+            }, 
+            {
+                "key": "[⇧] [⌘] [S]",
+                "val": "Save As"
+            }, 
+            {
+                "key": "[⌥] [⌘] [C]",
+                "val": "Commit"
+            }, 
+            {
+                "key": "[⌥] [⌘] [X]",
+                "val": "Update"
+            }, 
+            {
+                "key": "[⌃] [⌥] [⌘] [X]",
+                "val": "Update All"
+            }, 
+            {
+                "key": "[⌃] [⌘] [S]",
+                "val": "Create Snapshot"
+            }, 
+            {
+                "key": "[⇧] [⌘] [P]",
+                "val": "Page Setup"
+            }, 
+            {
+                "key": "[⌘] [P]",
+                "val": "Print"
+            }
+        ],
+        "Edit menu command": [
+            {
+                "key": "[⌘] [Z]",
+                "val": "Undo"               
+            }, 
+            {
+                "key": "[⇧] [⌘] [Z]",
+                "val": "Redo"
+            }, 
+            {
+                "key": "[⌘] [X]",
+                "val": "Cut"
+            }, 
+            {
+                "key": "[⌘] [C]",
+                "val": "Copy"
+            }, 
+            {
+                "key": "[⌘] [V]",
+                "val": "Paste"
+            }, 
+            {
+                "key": "[⌥] [⌘] [V]",
+                "val": "Paste Special"
+            }, 
+            {
+                "key": "[⌥] [⇧] [⌘] [V]",
+                "val": "Paste and Match Style"
+            }, 
+            {
+                "key": "[⌘] [D]",
+                "val": "Duplicate"
+            }, 
+            {
+                "key": "[⌘] [A]",
+                "val": "Select All"
+            }, 
+            {
+                "key": "[⇧] [⌘] [F]",
+                "val": "Find in Workspace"
+            }, 
+            {
+                "key": "[⌥] [⇧] [⌘] [F]",
+                "val": "Find and Replace in Workspace"
+            }, 
+            {
+                "key": "[⌘] [F]",
+                "val": "Find"
+            }, 
+            {
+                "key": "[⌥] [⌘] [F]",
+                "val": "Find and Replace"
+            }, 
+            {
+                "key": "[⌘] [G]",
+                "val": "Find Next"
+            }, 
+            {
+                "key": "[⇧] [⌘] [G]",
+                "val": "Find Previous"
+            }, 
+            {
+                "key": "[⌘] [E]",
+                "val": "Use Selection for Find"
+            }, 
+            {
+                "key": "[⇧] [⌘] [E]",
+                "val": "Use Selection for Replace"
+            }, 
+            {
+                "key": "[⌥] [⌘] [J]",
+                "val": "Filter in Navigator"
+            }, 
+            {
+                "key": "[⌥] [⌘] [L]",
+                "val": "Filter in Library"
+            }, 
+            {
+                "key": "[⌃] [⇧] [⌘] [T]",
+                "val": "Show Fonts"
+            }, 
+            {
+                "key": "[⌘] [:]",
+                "val": "Show Spelling and Grammar"
+            }
+        ], 
+        "View menu command": [
+            {
+                "key": "[⌘] [1]",
+                "val": "Project"               
+            }, 
+            {
+                "key": "[⌘] [2]",
+                "val": "Symbol"
+            }, 
+            {
+                "key": "[⌘] [3]",
+                "val": "Search"
+            }, 
+            {
+                "key": "[⌘] [4]",
+                "val": "Issue"
+            }, 
+            {
+                "key": "[⌘] [5]",
+                "val": "Debug"
+            }, 
+            {
+                "key": "[⌘] [6]",
+                "val": "Breakpoint"
+            }, 
+            {
+                "key": "[⌘] [7]",
+                "val": "Log"
+            }, 
+            {
+                "key": "[⌘] [0]",
+                "val": "Show Navigator"
+            }, 
+            {
+                "key": "[⌘] [↩]",
+                "val": "Standard"
+            }, 
+            {
+                "key": "[⌥] [⌘] [↩]",
+                "val": "Assistant"
+            }, 
+            {
+                "key": "[⌥] [⇧] [⌘] [↩]",
+                "val": "Version"
+            }, 
+            {
+                "key": "[⌘] [F]",
+                "val": "Show Related Items"
+            }
+        ], 
+        "Navigate menu command": [
+            {
+                "key": "[⌘] [L]",
+                "val": "Reveal in Project Navigator"               
+            }, 
+            {
+                "key": "[⌃] [⌘] [⇢]",
+                "val": "Go Forward"
+            }, 
+            {
+                "key": "[⌃] [⌘] [⇠]",
+                "val": "Go Back"
+            }, 
+            {
+                "key": "[⌘] [J]",
+                "val": "Jump to Selection"
+            }, 
+            {
+                "key": "[⇧] [⌘] [D]",
+                "val": "Jump to Definition"
+            }, 
+            {
+                "key": "[⇧] [⌘] [J]",
+                "val": "Jump To"
+            }
+        ], 
+        "Editor menu command": [
+            {
+                "key": "[⌃] [⌘] [A]",
+                "val": "Add Attribute"               
+            }, 
+            {
+                "key": "[⌃] [⌘] [R]",
+                "val": "Add Relationship"
+            }, 
+            {
+                "key": "[⌘] [=]",
+                "val": "Size to Fit"
+            }, 
+            {
+                "key": "[⌘] [/]",
+                "val": "Comment Selection"
+            }
+        ], 
+        "Product menu command": [
+            {
+                "key": "[⌘] [R]",
+                "val": "Run"               
+            }, 
+            {
+                "key": "[⌃] [⌘] [B]",
+                "val": "Analyze"
+            }, 
+            {
+                "key": "[⌘] [B]",
+                "val": "Build"
+            }
+        ], 
+        "Window menu command": [
+            {
+                "key": "[⌘] [M]",
+                "val": "Minimize"               
+            }, 
+            {
+                "key": "[⇧] [⌘] [1]",
+                "val": "Welcome to Xcode"
+            }, 
+            {
+                "key": "[⌘] [B]",
+                "val": "Build"
+            }
+        ],
+        "Help menu command": [
+            {
+                "key": "[⌃] [⌘] [?]",
+                "val": "Quick Help"               
+            }, 
+            {
+                "key": "[⌥] [⌘] [?]",
+                "val": "Developer Documentation"
+            }
+        ]
+    }
+}
