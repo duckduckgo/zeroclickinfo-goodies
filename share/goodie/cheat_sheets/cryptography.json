@@ -58,13 +58,13 @@
             "key": "Symmetric Algorithm"
         }],
         "Types of Cryptography": [{
-            "val": "Uses one key for encryption and another for decryption. Also called Public Key Cryptography",
+            "val": "Uses one key for encryption and another for decryption. Also called Public Key Cryptography.",
             "key": "Assymetric Key"
         }, {
             "val": "Uses a mathematical transformation to irreversibly encrypt information.",
             "key": "Hash Functions"
         }, {
-            "val": "Uses a single key for both encryption and decryption. Also called Secret Key Cryptography",
+            "val": "Uses a single key for both encryption and decryption. Also called Secret Key Cryptography.",
             "key": "Symmetric Key"
         }],
         "Asymmetric Encryption Algorithms": [{
