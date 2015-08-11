@@ -10,152 +10,180 @@
         "Digit"
     ],
     "sections": {
-        "Alphabet": [
+        "Alphabet": [            
             {
-                "key": "a",
-                "val": "⠁"
+                "val": "a",
+                "key": "⠁"
             },
             {
-                "key": "b",
-                "val": "⠃"
+                "val": "b",
+                "key": "⠃"
             },
             {
-                "key": "c",
-                "val": "⠉"
+                "val": "c",
+                "key": "⠉"
             },
             {
-                "key": "d",
-                "val": "⠙"
+                "val": "d",
+                "key": "⠙"
             },
             {
-                "key": "e",
-                "val": "⠑"
+                "val": "e",
+                "key": "⠑"
             },
             {
-                "key": "f",
-                "val": "⠋"
+                "val": "f",
+                "key": "⠋"
             },
             {
-                "key": "g",
-                "val": "⠛"
+                "val": "g",
+                "key": "⠛"
             },
             {
-                "key": "h",
-                "val": "⠓"
+                "val": "h",
+                "key": "⠓"
             },
             {
-                "key": "i",
-                "val": "⠊"
+                "val": "i",
+                "key": "⠊"
             },
             {
-                "key": "j",
-                "val": "⠚"
+                "val": "j",
+                "key": "⠚"
             },
             {
-                "key": "k",
-                "val": "⠅"
+                "val": "k",
+                "key": "⠅"
             },
             {
-                "key": "l",
-                "val": "⠇"
+                "val": "l",
+                "key": "⠇"
             },
             {
-                "key": "m",
-                "val": "⠍"
+                "val": "m",
+                "key": "⠍"
             },
             {
-                "key": "n",
-                "val": "⠝"
+                "val": "n",
+                "key": "⠝"
             },
             {
-                "key": "o",
-                "val": "⠕"
+                "val": "o",
+                "key": "⠕"
             },
             {
-                "key": "p",
-                "val": "⠏"
+                "val": "p",
+                "key": "⠏"
             },
             {
-                "key": "q",
-                "val": "⠟"
+                "val": "q",
+                "key": "⠟"
             },
             {
-                "key": "r",
-                "val": "⠗"
+                "val": "r",
+                "key": "⠗"
             },
             {
-                "key": "s",
-                "val": "⠎"
+                "val": "s",
+                "key": "⠎"
             },
             {
-                "key": "t",
-                "val": "⠞"
+                "val": "t",
+                "key": "⠞"
             },
             {
-                "key": "u",
-                "val": "⠥"
+                "val": "u",
+                "key": "⠥"
             },
             {
-                "key": "v",
-                "val": "⠧"
+                "val": "v",
+                "key": "⠧"
             },
             {
-                "key": "w",
-                "val": "⠺"
+                "val": "w",
+                "key": "⠺"
             },
             {
-                "key": "x",
-                "val": "⠭"
+                "val": "x",
+                "key": "⠭"
             },
             {
-                "key": "y",
-                "val": "⠽"
+                "val": "y",
+                "key": "⠽"
             },
             {
-                "key": "z",
-                "val": "⠵"
+                "val": "z",
+                "key": "⠵"
+            },
+            {
+                "val": "letter sign force the end of a series of numbers",
+                "key": "⠰"
+            },
+            {
+                "val": "4a",
+                "key": "⠼⠙⠰⠁"
+            },
+            {
+                "val": "capitalization sign marks the following letter to be capitalized",
+                "key": "⠠"
+            },
+            {
+                "val": "DuckDuckGo",
+                "key": "⠠⠙⠥⠉⠅⠠⠙⠥⠉⠅⠠⠛⠕"
+            },
+            {
+                "val": "double capitalization sign marks the following word to be in all caps",
+                "key": "⠠⠠"
+            },
+            {
+                "val": "DDG",
+                "key": "⠠⠠⠙⠙⠛"
             }
         ],
         "Digit": [
             {
-                "key": "0",
-                "val": "⠚"
+                "val": "number sign marks the beginning of a sequence of number(s)",
+                "key": "⠼"
             },
             {
-                "key": "1",
-                "val": "⠁"
+                "val": "0",
+                "key": "⠚"
             },
             {
-                "key": "2",
-                "val": "⠃"
+                "val": "1",
+                "key": "⠁"
             },
             {
-                "key": "3",
-                "val": "⠉"
+                "val": "2",
+                "key": "⠃"
             },
             {
-                "key": "4",
-                "val": "⠙"
+                "val": "3",
+                "key": "⠉"
             },
             {
-                "key": "5",
-                "val": "⠑"
+                "val": "4",
+                "key": "⠙"
             },
             {
-                "key": "6",
-                "val": "⠋"
+                "val": "5",
+                "key": "⠑"
             },
             {
-                "key": "7",
-                "val": "⠛"
+                "val": "6",
+                "key": "⠋"
             },
             {
-                "key": "8",
-                "val": "⠓"
+                "val": "7",
+                "key": "⠛"
             },
             {
-                "key": "9",
-                "val": "⠊"
+                "val": "8",
+                "key": "⠓"
+            },
+            {
+                "val": "9",
+                "key": "⠊"
             }
         ]
     }
