@@ -1,0 +1,201 @@
+/**
+* Created with DuckDuckHack ubuntu shortcuts.
+* User: marwendoukh
+* Date: 2015-08-11
+* Time: 07:33 AM
+* To change this template use Tools | Templates.
+*/
+{
+    // Required; must match the id of the cheat sheet's IA page
+    // For example, https://duck.co/ia/view/vim_cheat_sheet
+    "id": "ubuntu_cheat_sheet", 
+
+    // Required; displayed as title of AnswerBar
+    "name": "Ubuntu",
+
+    // Optional; displayed as subtitle of AnswerBar
+    "description": "Operating system", 
+    
+    // Required if cheat sheet has a source; useful to link users to further information.
+    // Displayed at bottom of AnswerBar, favicon shown automatically
+    "metadata": { 
+        "sourceName": "Ubuntu help",
+        "sourceUrl": "https://help.ubuntu.com/community/KeyboardShortcuts" // Should be SSL if possible
+    },
+
+    // Required; controls which sections appear and in what order
+    "section_order": [  
+        "Desktop shortcuts",
+        "Window shortcuts",
+        "Desktop Effects enabled shortcuts",
+        "Common application shortcuts",
+        "System shortcuts",
+            ],
+
+    // Required; section names must match those in section_order in order to appear
+    "sections": {
+        "Desktop shortcuts": [
+            {
+                "key": "[Alt] [F1]", 
+                "val": "Open the Applications menu"
+            },
+            {
+                "key": "[Alt] [F2]", 
+                "val": "Run an application by typing its name in the box which appears"
+            },
+            {
+                "key": "Prt Sc", 
+                "val": "(Print Screen) Take a screenshot of the whole screen"
+            },
+            {
+                "key": "[Alt] [Prt Sc]", 
+                "val": "Take a screenshot of the current window"
+            },
+            {
+                "key": "[Shift] [Prt Sc]", 
+                "val": "Take a screenshot of a selected rectangle on the screen"
+            }
+        ],        
+        "Window shortcuts": [
+            {
+                "key": "[Alt] [tab]",
+                "val": "Switch between currently-open windows. Press Alt + Tab and then release Tab (but continue to hold Alt). Press Tab repeatedly to cycle through the list of available windows which appears on the screen. Release the Alt key to switch to the selected window"               
+            }, 
+            {
+                "key": "[Ctrl]  [Alt] [tab]",
+                "val": "Switch between currently-open windows in all Workspaces. Press Tab repeatedly to cycle through the list of available windows which appears on the screen. Release the Ctrl and Alt keys to switch to the selected window"
+            }, 
+            {
+                "key": "[Ctrl] [Alt] [Left/Right Cursor]",
+                "val": "Lets you quickly switch between your Workspaces"
+            }
+        ],          
+        "Desktop Effects enabled shortcuts": [
+            {
+                "key": "[Ctrl] [Alt] [Left/Right Cursor]",
+                "val": "Spins the 'cube' that your workspaces reside on, allowing you to select the workspace you wish to use"               
+            }, 
+            {
+                "key": "[Ctrl] [Alt] [Up Cursor]",
+                "val": "Enables an 'expose' like feature that presents you with all the windows you currently have open, allowing you to select the one you wish to give focus to"
+            }, 
+            {
+                "key": "[Ctrl] [Alt] [Down Cursor]",
+                "val": "Unfolds your workspace cube allowing you to see more than one of your workspaces at once, using the left and right cursor keys with this active will allow you to select the workspace you wish to use"
+            }, 
+            {
+                "key": "[Super] [W]",
+                "val": "Enables the 'scale' effect, it shows all windows from the current workspace"
+            }, 
+            {
+                "key": "[Super] [A]",
+                "val": "Enables the 'scale' effect, it shows all windows from all workspaces"
+            }, 
+            {
+                "key": "[Super] [N]",
+                "val": "Invert colours of the focused window"
+            }, 
+            {
+                "key": "[Super] [M]",
+                "val": "Invert colours for the whole screen"
+            }, 
+            {
+                "key": "[Super] [Mouse Scroll Wheel]",
+                "val": "Zooms in on the screen"
+            }, 
+            {
+                "key": "[Super] [Middle Mouse Button]",
+                "val": "Select a region to zoom into, using a rectangle"
+            }, 
+            {
+                "key": "[Ctrl] [Super] [D]",
+                "val": "Toggles 'Show Desktop' "
+            }, 
+            {
+                "key": "[Alt] [Middle Mouse Button]",
+                "val": "Resize focused window"
+            }, 
+            {
+                "key": "[Alt]  [Left Mouse Button]",
+                "val": "Move focused window"
+            }, 
+            {
+                "key": "[Alt] [Right Mouse Button]",
+                "val":  "Show window menu"
+            }, 
+            {
+                "key": "[Super] [S]",
+                "val":  "Zoom out, show workspace switcher"
+            }
+            
+        ],        
+        "Common application shortcuts": [
+            {
+                "key": "[Ctrl] [C]",
+                "val": "Copy the selected text/object"               
+            }, 
+            {
+                "key": "[Ctrl]  [X]",
+                "val": "Cut the selected text/object"
+            }, 
+            {
+                "key": "[Ctrl] [V]",
+                "val": "Paste/insert the selected text/object"
+            }, 
+            {
+                "key": "[Ctrl] [A]",
+                "val": "Select all text"
+            }, 
+            {
+                "key": "[Ctrl] [B]",
+                "val": "Make the selected text bold"
+            }, 
+            {
+                "key": "[Ctrl] [I]",
+                "val": "Make the selected text italic"
+            }, 
+            {
+                "key": "[Ctrl] [U]",
+                "val": "Underline the selected text"
+            }, 
+            {
+                "key": "[Ctrl] [N]",
+                "val": "Open a new document or window"
+            }, 
+            {
+                "key": "[Ctrl] [S]",
+                "val": "Save the current document"
+            }, 
+            {
+                "key": "[Ctrl] [O]",
+                "val": "Open another document"
+            }, 
+            {
+                "key": "[Ctrl] [P]",
+                "val": "Print the current document"
+            }, 
+            {
+                "key": "[Ctrl] [Z]",
+                "val": "Undo the last change you made"
+            }, 
+            {
+                "key": "[Ctrl] [Shift] [Z]",
+                "val": "Redo a change that you just undid"
+            }
+        ],        
+        "System shortcuts": [
+            {
+                "key": "[Ctrl] [Alt] [Delete]",
+                "val": "Restart the computer immediately, without saving open files"               
+            }, 
+            {
+                "key": "[Ctrl]  [Alt] [+]",
+                "val": "Rotate through supported screen resolutions"
+            }, 
+            {
+                "key": "[Ctrl] [Alt] [-]",
+                "val": "Rotate backwards through supported screen resolutions"
+            }
+        ]             
+    }
+}
