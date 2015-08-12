@@ -1,29 +1,15 @@
-/**
-* Created with DuckDuckHack Xcode shortcuts.
-* User: marwendoukh
-* Date: 2015-08-11
-* Time: 10:33 AM
-*/
-
 {
-    // Required; must match the id of the cheat sheet's IA page
-    // For example, https://duck.co/ia/view/vim_cheat_sheet
     "id": "xcode_cheat_sheet", 
 
-    // Required; displayed as title of AnswerBar
     "name": "Xcode",
 
-    // Optional; displayed as subtitle of AnswerBar
     "description": "Integrated Development Environment", 
     
-    // Required if cheat sheet has a source; useful to link users to further information.
-    // Displayed at bottom of AnswerBar, favicon shown automatically
     "metadata": { 
         "sourceName": "Apple Developper",
-        "sourceUrl": "https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/MenuCommands/MenuCommands014.html" // Should be SSL if possible
+        "sourceUrl": "https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/MenuCommands/MenuCommands014.html" 
     },
 
-    // Required; controls which sections appear and in what order
     "section_order": [  
         "Xcode menu command",
         "File menu command",
@@ -36,7 +22,6 @@
         "Help menu command",
           ],
 
-    // Required; section names must match those in section_order in order to appear
     "sections": {
         "Xcode menu command": [
             {
