@@ -7,7 +7,8 @@
     },
     "section_order": [
         "Alphabet",
-        "Digit"
+        "Digit",
+        "Formatting Marks"
     ],
     "sections": {
         "Alphabet": [            
@@ -114,37 +115,9 @@
             {
                 "val": "z",
                 "key": "⠵"
-            },
-            {
-                "val": "letter sign force the end of a series of numbers",
-                "key": "⠰"
-            },
-            {
-                "val": "4a",
-                "key": "⠼⠙⠰⠁"
-            },
-            {
-                "val": "capitalization sign marks the following letter to be capitalized",
-                "key": "⠠"
-            },
-            {
-                "val": "DuckDuckGo",
-                "key": "⠠⠙⠥⠉⠅⠠⠙⠥⠉⠅⠠⠛⠕"
-            },
-            {
-                "val": "double capitalization sign marks the following word to be in all caps",
-                "key": "⠠⠠"
-            },
-            {
-                "val": "DDG",
-                "key": "⠠⠠⠙⠙⠛"
             }
         ],
-        "Digit": [
-            {
-                "val": "number sign marks the beginning of a sequence of number(s)",
-                "key": "⠼"
-            },
+        "Digit": [            
             {
                 "val": "0",
                 "key": "⠚"
@@ -185,6 +158,37 @@
                 "val": "9",
                 "key": "⠊"
             }
+        ],
+        "Formatting Marks": [
+            {
+                "val": "number sign marks the beginning of a sequence of number(s)",
+                "key": "⠼"
+            },
+            {
+                "val": "letter sign force the end of a series of numbers",
+                "key": "⠰"
+            },
+            {
+                "val": "4a",
+                "key": "⠼⠙⠰⠁"
+            },
+            {
+                "val": "capitalization sign marks the following letter to be capitalized",
+                "key": "⠠"
+            },
+            {
+                "val": "DuckDuckGo",
+                "key": "⠠⠙⠥⠉⠅⠠⠙⠥⠉⠅⠠⠛⠕"
+            },
+            {
+                "val": "double capitalization sign marks the following word to be in all caps",
+                "key": "⠠⠠"
+            },
+            {
+                "val": "DDG",
+                "key": "⠠⠠⠙⠙⠛"
+            }
+            
         ]
     }
 }
