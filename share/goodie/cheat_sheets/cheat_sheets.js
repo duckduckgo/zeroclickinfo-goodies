@@ -82,36 +82,54 @@ DDH.cheat_sheets.build = function(ops) {
                 $section   = $dom.find(".cheatsheet__section"),
                 $hideRow   = $section.find("tbody tr:nth-child(n+4)"),
                 $showhide  = $container.find(".cheatsheet__section.showhide"),
-                $more_btn  = $dom.find(".chomp--link");
-
-            // Removes all tr's after the 3rd before masonry fires
-            if ($container.hasClass("compressed")) {
-              $hideRow.toggleClass("is-hidden");
-            }
-
-            DDG.require('masonry.js', function(){
-
-                $container.masonry({
+                $more_btn  = $dom.find(".chomp--link"),
+                isExpanded = false,
+                loadedMasonry = false,
+                masonryOps = {
                     itemSelector: '.cheatsheet__section',
                     columnWidth: 295,
                     gutter: 30,
                     isFitWidth: true
-                });
+                },
+                showMoreLess = function() {
 
-                $more_btn.click(function() {
+                    // keep track of whether it's expanded or not:
+                    isExpanded = !isExpanded;
+
+                    // update the querystring param so the state
+                    // persists across page refreshes or if the link
+                    // is shared to someone else:
+                    if (isExpanded) {
+                        DDG.history.set({ iax: 1 });
+                    } else {
+                        DDG.history.clear('iax');
+                    }
+
                     $dom.toggleClass("has-chomp-expanded");
                     $detail.toggleClass("c-base");
                     $container.toggleClass("compressed");
                     $showhide.toggleClass("is-hidden");
                     $hideRow.toggleClass("is-hidden");
-                    $container.masonry({
-                        itemSelector: '.cheatsheet__section',
-                        columnWidth: 295,
-                        gutter: 30,
-                        isFitWidth: true
-                    });
-                });
-             });
+
+                    if (window.Masonry) {
+                        $container.masonry(masonryOps);
+                    }
+                };
+
+            // Removes all tr's after the 3rd before masonry fires
+            if ($container.hasClass("compressed")) {
+              $hideRow.toggleClass("is-hidden");
+            }
+            // if iax=1 is in the querystring, expand
+            // the cheatsheet automatically when the IA is shown:
+            if (DDG.history.get('iax')) {
+                showMoreLess();
+            }
+
+            DDG.require('masonry.js', function(){
+                $container.masonry(masonryOps);
+                $more_btn.click(showMoreLess);
+            });
          }
     };
 };
