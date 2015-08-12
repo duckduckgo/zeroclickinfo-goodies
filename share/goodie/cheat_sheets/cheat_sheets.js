@@ -2,8 +2,13 @@ DDH.cheat_sheets = DDH.cheat_sheets || {};
 
 DDH.cheat_sheets.build = function(ops) {
 
-    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, options) {
+    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, template_type, options) {
         var result = "";
+        var template = {
+          type: template_type,
+          path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard-shortcuts'
+        };
+
         $.each(section_order, function(i, section) {
            if (sections[section]){
 
@@ -15,7 +20,7 @@ DDH.cheat_sheets.build = function(ops) {
                    showhide = false;
                }
 
-               result += options.fn({ name: section, items: sections[section], showhide: showhide });
+               result += options.fn({ name: section, items: sections[section], template: template, showhide: showhide });
             }
         });
         return result;
@@ -25,10 +30,11 @@ DDH.cheat_sheets.build = function(ops) {
         re_whitespace  = /\s+/,                  // search for spaces
         re_codeblock   = /<code>(.+?)<\/code>/g; // search for <code></code>
 
-    Spice.registerHelper('cheatsheets_codeblock', function(string, options) {
+    Spice.registerHelper('cheatsheets_codeblock', function(string, className, options) {
 
         var out;
-
+        var codeClass = typeof className === "string" ? className : "bg-clr--white";
+        
         // replace escaped slashes and brackets
         string = string.replace(/\\\\/, "<bks>")
                 .replace(/\\\[/g, "<lbr>")
@@ -42,7 +48,7 @@ DDH.cheat_sheets.build = function(ops) {
         // e.g "?()", ":sp filename"
         //  --> wrap whole sting in <code></code>
         if ( !re_whitespace.test(string) || !re_brackets.test(string) ){
-            out = "<code>" + string + "</code>";
+            out = "<code class='"+codeClass+"'>" + string + "</code>";
 
         // spaces
         // AND
@@ -53,7 +59,7 @@ DDH.cheat_sheets.build = function(ops) {
 
             // replace unescaped brackets
             out = string
-                .replace(/\[|\{/g, "<code>")
+                .replace(/\[|\{/g, "<code class='"+codeClass+"'>")
                 .replace(/\]|\}/g, "</code>");
         }
 
@@ -66,9 +72,9 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/<rbr>/g,  "]")
                 .replace(/<rcbr>/g, "}");
 
-        out = out.replace(re_codeblock, function esc_codeblock (match, p1, offset, string){
+        out = out.replace(re_codeblock, function esc_codeblock (match, p1, offset, string, codeClass){
             var escaped = Handlebars.Utils.escapeExpression(p1);
-            return "<code>" + escaped + "</code>";
+            return "<code class='"+codeClass+">" + escaped + "</code>";
         });
 
         return new Handlebars.SafeString(out);
