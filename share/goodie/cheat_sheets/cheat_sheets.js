@@ -74,8 +74,17 @@ DDH.cheat_sheets.build = function(ops) {
         return new Handlebars.SafeString(out);
     });
 
+    var wasShown = false; // keep track whether onShow was run yet
+
     return {
         onShow: function() {
+            // make sure this function is only run once, the first time
+            // the IA is shown otherwise things will get initialized more than once
+            if (wasShown) { return; }
+
+            // set the flag to true so it doesn't get run again:
+            wasShown = true;
+
             var $dom = $("#zci-cheat_sheets"),
                 $container = $dom.find(".cheatsheet__container"),
                 $detail    = $dom.find(".zci__main--detail"),
