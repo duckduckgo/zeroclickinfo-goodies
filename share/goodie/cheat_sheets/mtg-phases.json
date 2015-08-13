@@ -8,40 +8,40 @@
     },
     "section_order": [
         "Beginning Phase",
-        "First Main Phase",
+        "Precombat Main Phase",
         "Combat Phase",
-        "Second Main Phase",
+        "Postcombat Main Phase",
         "End Phase"
     ],
     "sections": {
         "Beginning Phase": [
             {
                 "key": "Untap Step",
-                "val": "Untap creatures, lands, and artifacts you control that you want untapped."
+                "val": "The active player untaps the permanents they control. The active player doesn't recieve priority."
             },
             {
                 "key": "Upkeep Step",
-                "val": "Complete any actions or pay any costs that occur during upkeep."
+                "val": "Complete any actions or pay any costs that occur during upkeep. The active player recieves priority now."
             },
             {
                 "key": "Draw Step",
-                "val": "Draw a card for the turn."
+                "val": "The active player draws a card for the turn. This does not use the stack."
             }
         ],
-        "First Main Phase": [
+        "Precombat Main Phase": [
             {
                 "key": "(No Step)",
-                "val": "Play spells or your one land allowance during this phase. Lasts until neither player wants to use a spell or ability (i.e. the stack is empty and neither player wants to do something)."
+                "val": "The active player may play a land (if one hasn't been played this turn), play spells (the opponent may use abilities and instants in response). Lasts until neither player wants to use a spell or ability (i.e. the stack is empty and all players pass priority)."
             }
         ],
         "Combat Phase": [
             {
                 "key": "Beginning of Combat Step",
-                "val": "Play instants or activate abilities. Declare what player(s) will be attacked."
+                "val": "Play instants or activate abilities. The active player which player will be attacked."
             },
             {
                 "key": "Declare Attackers Step",
-                "val": "Declare which creatures will attack your opponent or opponent's planeswalker."
+                "val": "The active player declares whether a creature will attack an opponent or their planeswalker."
             },
             {
                 "key": "Declare Blockers Step",
@@ -49,27 +49,27 @@
             },
             {
                 "key": "Combat Damage Step",
-                "val": "Creatures deal damage to each other. An additional combat step is used for creatures with first or double strike."
+                "val": "The active player and defending player declare how combat damage will be assigned. An additional combat step is used for creatures with first or double strike."
             },
             {
                 "key": "End of Combat Step",
-                "val": "Triggers occur and are dealt with before the phase officially ends."
+                "val": "Triggers occuring at the end of combat are put on to the stack and the active player recieves priority."
             }
         ],
-        "Second Main Phase": [
+        "Postcombat Main Phase": [
             {
                 "key": "(No Step)",
-                "val": "Play spells or your one land allowance during this phase. Lasts until neither player wants to use a spell or ability (i.e. the stack is empty and neither player wants to do something)."
+                "val": "The active player may play a land (if one hasn't been played this turn), play spells (the opponent may use abilities and instants in response). Lasts until neither player wants to use a spell or ability (i.e. the stack is empty and all players pass priority)."
             }
         ],
         "End Phase": [
             {
                 "key": "End Step",
-                "val": "Card triggers are dealt with."
+                "val": "Triggers occuring during the end step are put on to the stack and the active player recieves priority for the last time in a turn."
             },
             {
                 "key": "Cleanup Step",
-                "val": "Reduce your hand to 7 cards or less, remove marked damage from all permanents, then pass the turn."
+                "val": "The active player reduces their hand to 7 cards or less, removes marked damage from all permanents, then passes the turn. No player recieves priority."
             }
         ]
     }
