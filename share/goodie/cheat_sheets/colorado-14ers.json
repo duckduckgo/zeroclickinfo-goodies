@@ -6,6 +6,8 @@
         "sourceName":"14ers.com",
         "sourceUrl":"http://14ers.com"
     },
+    "aliases":["colorado fourteeners", "co 14ers", "co fourteeners"],
+    "template_type":"reference-sheet",
     "section_order":[
         "Sawatch Range",
         "Sangre de Cristo Range",
