@@ -5,6 +5,8 @@ use JSON::XS;
 use DDG::Goodie;
 use DDP;
 
+no warnings 'uninitialized';
+
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
