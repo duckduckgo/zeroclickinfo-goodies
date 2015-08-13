@@ -6,7 +6,7 @@ DDH.cheat_sheets.build = function(ops) {
         var result = "";
         var template = {
           type: template_type,
-          path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard-shortcuts'
+          path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard'
         };
 
         $.each(section_order, function(i, section) {
