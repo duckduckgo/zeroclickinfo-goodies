@@ -6,6 +6,17 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts"
     },
+    "aliases": [
+        "windows", 
+        "windows xp",
+        "windows vista",
+        "windows 7",
+        "windows 8",
+        "microsoft windows xp",
+        "microsoft windows vista",
+        "microsoft windows 7",
+        "microsoft windows 8"
+    ],
     "section_order": [
         "General shortcuts",
         "Navigation",
