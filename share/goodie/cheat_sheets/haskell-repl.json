@@ -1,11 +1,12 @@
 {
-    "description": "A cheatsheet for ghci.",
     "id": "ghci_repl_cheat_sheet",
+    "name": "GHCi Cheatsheet",
+    "description": "A cheatsheet for ghci.",
     "metadata": {
         "sourceName": "Haskell Website",
         "sourceUrl": "https://www.haskell.org"
     },
-    "name": "GHCi Cheatsheet",
+
     "section_order": [
         "Commands available from the prompt",
         "Commands for debugging",
