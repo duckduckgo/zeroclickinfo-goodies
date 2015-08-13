@@ -6,6 +6,9 @@
         "sourceName": "CoffeeScript",
         "sourceUrl": "http://coffeescript.org"
     },
+    "aliases": [
+        "coffee script"
+    ],
     "section_order": [
         "Usage",
         "Variables",

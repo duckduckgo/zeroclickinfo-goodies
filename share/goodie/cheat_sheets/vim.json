@@ -6,6 +6,7 @@
         "sourceName": "VimCheatSheet",
         "sourceUrl": "http://vim.rtorr.com"
     },
+    "template_type": "keyboard-shortcuts",
     "section_order": [
         "Cursor movement",
         "Insert mode - inserting/appending text",
@@ -25,7 +26,7 @@
             "key": "#gt"
         }, {
             "val": "move the current split window into its own tab",
-            "key": "[Ctrl] + [wt]"
+            "key": "[Ctrl] [wt]"
         }, {
             "val": "move current tab to the #th position (indexed from 0)",
             "key": ":tabmove #"
@@ -74,7 +75,7 @@
             "key": "u"
         }, {
             "val": "redo",
-            "key": "[Ctrl] + [r]"
+            "key": "[Ctrl] [r]"
         }, {
             "val": "repeat last command",
             "key": "."
@@ -168,7 +169,7 @@
             "key": "o"
         }, {
             "val": "start visual block mode",
-            "key": "[Ctrl] + [v]"
+            "key": "[Ctrl] [v]"
         }, {
             "val": "move to other corner of block",
             "key": "O"
@@ -211,22 +212,22 @@
             "key": ":vsp filename"
         }, {
             "val": "split window",
-            "key": "[Ctrl] + [ws]"
+            "key": "[Ctrl] [ws]"
         }, {
             "val": "switch windows",
-            "key": "[Ctrl] + [ww]"
+            "key": "[Ctrl] [ww]"
         }, {
             "val": "quit a window",
-            "key": "[Ctrl] + [wq]"
+            "key": "[Ctrl] [wq]"
         }, {
             "val": "split window vertically",
-            "key": "[Ctrl] + [wv]"
+            "key": "[Ctrl] [wv]"
         }, {
             "val": "move cursor to next buffer (right)",
-            "key": "[Ctrl] + [wh]"
+            "key": "[Ctrl] [wh]"
         }, {
             "val": "move cursor to previous buffer (left)",
-            "key": "[Ctrl] + [wl]"
+            "key": "[Ctrl] [wl]"
         }],
         "Cursor movement": [{
             "val": "move cursor left",
