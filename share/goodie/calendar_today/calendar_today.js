@@ -142,21 +142,22 @@ DDH.calendar_today.build = DDH.calendar_today.build_async =  function(ops, DDH_a
 
             item.days = daysArray;
             item.month_name = month_name;
-            item.month = String(month+1);
+            item.month = month;
             item.daysOfTheWeek = daysOfTheWeek;
             item.numberOfRows = Math.ceil(daysArray.length / 7);
             item.year = year;
-            item.id = month;
+            item.id = month + 1;
             items.push(item);
             item = {};
             startDate = startDate.add(1, 'months');
         }
-        
-        DDH.add({
+        console.log(currentMonth);
+        var f = DDH_async_add || Spice.add;        
+        Spice.add({
             id: "calendar",
-            name: "Answer",
+            name: "Calendar",
             meta:{
-                selectedItem: String(currentMonth),
+                idField: currentMonth,
                 scrollToSelectedItem: true,
                 itemsHighlight: false 
             },
