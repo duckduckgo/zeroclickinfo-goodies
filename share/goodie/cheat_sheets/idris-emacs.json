@@ -1,11 +1,11 @@
 {
-    "description": "Idris A Language with Dependent Types.",
     "id": "idris_emacs_cheat_sheet",
+    "name": "Idris Emacs Mode Cheatsheet",
+    "description": "Idris A Language with Dependent Types.",
     "metadata": {
         "sourceName": "Idris Website",
         "sourceUrl": "http://www.idris-lang.org"
     },
-    "name": "Idris Emacs Mode Cheatsheet",
     "section_order": [
         "Loading Keys",
         "Documentation",
