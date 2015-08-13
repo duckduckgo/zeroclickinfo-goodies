@@ -15,7 +15,6 @@
         "IO Redirection",
         "Expansion And Other Operators",
         "Exit Statuses",
-        "Here Documents",
         "Auto-Completion",
         "Backslash Escape Sequences",
         "Misc"
@@ -419,16 +418,6 @@
             {
                 "key": "!=0",
                 "val": "Failure"
-            }
-        ],
-        "Here Documents": [
-            {
-                "key": ": <<'EOF'",
-                "val": "Here doc start (newline must follow)"
-            },
-            {
-                "key": "EOF",
-                "val": "Here doc end (must be at the beginning of the line)"
             }
         ],
         "Auto-Completion": [
