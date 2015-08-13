@@ -98,42 +98,42 @@ handle query => sub {
     $which_specified = "Host Only" if ($cidr == 32);
 
     my %output = (
-		"Network" => int_to_str($network) . "/$cidr (Class $class)",
-		"Netmask" => int_to_str($mask),
-		"Specified" => "$which_specified",
+        "Network" => int_to_str($network) . "/$cidr (Class $class)",
+        "Netmask" => int_to_str($mask),
+        "Specified" => "$which_specified",
     );
 
-	my @output_keys = qw(Network Netmask Specified);
+    my @output_keys = qw(Network Netmask Specified);
 	
     unless($cidr > 30) {
-		$output{"Host Address Range"} = int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)";
-		$output{"Broadcast"} = int_to_str($broadcast);
-		push @output_keys, "Host Address Range";
-		push @output_keys, "Broadcast";
+        $output{"Host Address Range"} = int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)";
+        $output{"Broadcast"} = int_to_str($broadcast);
+        push @output_keys, "Host Address Range";
+        push @output_keys, "Broadcast";
     }
 
-	sub to_text
-	{
-		my ($data, $keys) = @_;
-		return join "\n", map {"$_: $data->{$_}";} @{$keys};
-	}
+    sub to_text
+    {
+        my ($data, $keys) = @_;
+        return join "\n", map {"$_: $data->{$_}";} @{$keys};
+    }
 	
     return to_text(\%output, \@output_keys),
-		structured_answer => {
-			id => "subnet_calculator",
-			name => "Subnet Calculator",
-			templates => {
-				group => 'list',
-				options => {
-					content => 'record'
-				}
-			},
-			data => {
-				title => 'IPv4 Subnet',
-				record_data => \%output,
-				record_keys => \@output_keys,
-			}
-		};
+        structured_answer => {
+            id => "subnet_calculator",
+            name => "Subnet Calculator",
+            templates => {
+                group => 'list',
+                options => {
+                    content => 'record'
+                }
+            },
+            data => {
+                title => 'IPv4 Subnet',
+                record_data => \%output,
+                record_keys => \@output_keys,
+            }
+        };
 };
 
 1;
