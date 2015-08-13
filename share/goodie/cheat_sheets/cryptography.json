@@ -9,6 +9,7 @@
     },
     "section_order": [
         "Terminology",
+        "Terminology (cont.)",
         "Types of Cryptography",
         "Asymmetric Encryption Algorithms",
         "Hashing Algorithms",
@@ -39,7 +40,8 @@
         }, {
             "val": "A complete public-key cryptosystem for electronic messaging that has been released to the public domain. It was originally designed by Phil Zimmerman. It uses IDEA, CAST or Triple DES for actual data encryption and RSA (with up to 2048-bit key) or DH/DSS (with 1024-bit signature key and 4096-bit encryption key) for key management and digital signatures. The RSA or DH public key is used to encrypt the IDEA secret key as part of the message.",
             "key": "PGP"
-        }, {
+        }],
+        "Terminology (cont.)": [{
             "val": "The secret part of a private key/public key pair used in public key cryptography. The Private Key is normally known only to the key owner. Messages are encrypted using the Public Key and decrypted using the Private Key. For digital signatures, however, a document is signed with a private key and authenticated with the corresponding Public Key.",
             "key": "Private Key"
         }, {
