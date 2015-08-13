@@ -6,7 +6,7 @@
         "sourceName": "VimCheatSheet",
         "sourceUrl": "http://vim.rtorr.com"
     },
-    "template_type": "keyboard-shortcuts",
+    "template_type": "keyboard",
     "section_order": [
         "Cursor movement",
         "Insert mode - inserting/appending text",

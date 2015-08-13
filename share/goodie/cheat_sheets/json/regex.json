@@ -9,7 +9,7 @@
     "aliases": [
         "regexp", "regular expression", "regular expressions"
     ],
-    "template_type": "code-snippets",
+    "template_type": "code",
     "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"],
     "sections": {
         "Assertions": [{
