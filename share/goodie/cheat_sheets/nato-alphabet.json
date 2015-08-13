@@ -9,7 +9,10 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/NATO_phonetic_alphabet"
     },
-
+    
+    "aliases": [
+        "nato phonetic alphabet"
+    ],
     
     "section_order": [  
         "Letters",

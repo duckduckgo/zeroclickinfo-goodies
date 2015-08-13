@@ -5,6 +5,9 @@
         "sourceName": "Mozilla Support",
         "sourceUrl": "https://support.mozilla.org/kb/awesome-bar-keyboard-shortcuts"
     },
+    "aliases": [
+        "firefox awesome bar"
+    ],
     "section_order": ["Power-ups"],
     "sections": {
         "Power-ups": [{
