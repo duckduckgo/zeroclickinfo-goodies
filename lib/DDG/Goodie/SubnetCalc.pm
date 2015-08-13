@@ -104,7 +104,7 @@ handle query => sub {
     );
 
     my @output_keys = qw(Network Netmask Specified);
-	
+
     unless($cidr > 30) {
         $output{"Host Address Range"} = int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)";
         $output{"Broadcast"} = int_to_str($broadcast);
@@ -117,7 +117,7 @@ handle query => sub {
         my ($data, $keys) = @_;
         return join "\n", map {"$_: $data->{$_}";} @{$keys};
     }
-	
+
     return to_text(\%output, \@output_keys),
         structured_answer => {
             id => "subnet_calculator",
@@ -125,7 +125,8 @@ handle query => sub {
             templates => {
                 group => 'list',
                 options => {
-                    content => 'record'
+                    content => 'record',
+                    moreAt => 0
                 }
             },
             data => {
