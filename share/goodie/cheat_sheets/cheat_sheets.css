@@ -49,21 +49,21 @@
 
 /* terminal-snippets.handlebars */
 
-.zci--cheat_sheets .terminal-snippets td {
+.zci--cheat_sheets .terminal td {
   padding-bottom: 12px;
 }
 
-.zci--cheat_sheets .terminal-snippets code {
+.zci--cheat_sheets .terminal code {
   width: 100%;
 }
 
-.zci--cheat_sheets .terminal-snippets td.cheatsheet__key {
+.zci--cheat_sheets .terminal td.cheatsheet__key {
   display: block;
   min-width: 100%;
   padding-bottom: 1px;
 }
 
-.zci--cheat_sheets .terminal-snippets td.cheatsheet__value {
+.zci--cheat_sheets .terminal td.cheatsheet__value {
   display: block;
   min-width: 100%;
   padding-top: 0px;
@@ -73,19 +73,19 @@
 
 /* reference-sheet.handlebars */
 
-.zci--cheat_sheets .reference-sheet ul {
+.zci--cheat_sheets .reference ul {
   padding: 0;
   margin-left: 13px;
 }
 
-.zci--cheat_sheets .reference-sheet li {
+.zci--cheat_sheets .reference li {
   position: relative;
   padding-bottom: 12px;
   padding-left: 7px;
   line-height: 17px;
 }
 
-.zci--cheat_sheets .reference-sheet li::before {
+.zci--cheat_sheets .reference li::before {
   position: absolute;
   left: -12px;
   content: '●';
@@ -93,7 +93,7 @@
   font-size: 7px;
 }
 
-.zci--cheat_sheets .reference-sheet li .cheatsheet__key {
+.zci--cheat_sheets .reference li .cheatsheet__key {
     display: block;
     font-weight: bold;
 }
