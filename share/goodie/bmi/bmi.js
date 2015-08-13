@@ -1,9 +1,8 @@
 DDH.bmi = DDH.bmi || {};
 
 DDH.bmi.build = function(ops) {
-
-    // console.warn(ops);
-  
+    var text = ops.data.text;
+ 
     function getBmi(h, w, unit) {
         if(unit == 'metric') {
             h = h/100;
@@ -18,32 +17,32 @@ DDH.bmi.build = function(ops) {
 
     function getRange(bmi) {
         if(bmi < 15) {
-            range = "very severely underweight";
+            range = text.range[0];
         }else if(bmi >= 15 && bmi < 16) {
-            range = "severely underweight";
+            range = text.range[1];
         }else if(bmi >= 16 && bmi < 18.5) {
-            range = "underweight";
+            range = text.range[2];
         }else if(bmi >= 18.5 && bmi < 25) {
-            range = "normal";
+            range = text.range[3];
         }else if(bmi >= 25 && bmi < 30) {
-            range = "overweight";
+            range = text.range[4];
         }else if(bmi >= 30 && bmi < 35) {
-            range = "moderately obese";
+            range = text.range[5];
         }else if(bmi >= 35 && bmi < 40) {
-            range = "severely  obese";
+            range = text.range[6];
         }else if(bmi >= 40) {
-            range = "very severely obese";
+            range = text.range[7];
         }
         return range;
     }
 
     function formatResult(bmi) {
         if(isNaN(bmi)){
-            html = 'Error, your bmi is not a number, did you filled the fields?';
+            html = text.error;
         }else{
-            html = 'Your bmi is ' + bmi;
-            html += '<br/>This is within the <b>' + getRange(bmi) + '</b> range';
-            html += '<br/><small>source <a href="http://en.wikipedia.org/wiki/Body_mass_index">http://en.wikipedia.org/wiki/Body_mass_index</a></small>';
+            html = text.your_bmi + bmi;
+            html += '<br/>' + text.within + '<b> ' + getRange(bmi) + '</b> ' + text.str_range;
+            html += '<br/><small> ' + text.source + ' ' + ops.meta.sourceName + ' <a href="' + ops.meta.sourceUrl + '">' + ops.meta.sourceUrl + '</a></small>';
         }
         $('#div_result').html(html);
     }

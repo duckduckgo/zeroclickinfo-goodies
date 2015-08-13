@@ -21,17 +21,37 @@ triggers any => "bmi calculator", "body mass index calculator";
 # Handle statement
 handle remainder => sub {
 
-    # validate query & check for inputs here
-
     return 'BMI', structured_answer => {
         id => 'bmi',
         name => 'Body Mass Index Calculatior',
         data => {
-            title => "Body Mass Index Calculation"
+            title => "Body Mass Index Calculation",
+            text => {
+                imperial => "Imperial",
+                metric => "Metric",
+                height_placeholder => "Height in cm",
+                weight_placeholder => "Weight",
+                calculate => "Calculate",
+                feet => "Feet",
+                inches => "Inches",
+                pounds => "Pounds",
+                range => ["very severely underweight",
+                "severely underweight",
+                "underweight",
+                "normal",
+                "overweight",
+                "moderately obese",
+                "severely  obese",
+                "very severely obese"],
+                error => "Error, your bmi is not a number, have you filled in the fields?",
+                your_bmi => "Your bmi is ",
+                within => "This is within the",
+                str_range => "range",
+                source => "source"
+            },
         },
         meta => {
-            # maybe send them to a related Wiki article?
-            sourceName => "Wiki",
+            sourceName => "Wikipedia",
             sourceUrl  => "https://en.wikipedia.org/wiki/Body_mass_index"
         },
         templates => {
