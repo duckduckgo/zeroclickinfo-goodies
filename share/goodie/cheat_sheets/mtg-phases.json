@@ -11,7 +11,7 @@
         "Precombat Main Phase",
         "Combat Phase",
         "Postcombat Main Phase",
-        "End Phase"
+        "Ending Phase"
     ],
     "sections": {
         "Beginning Phase": [
@@ -62,7 +62,7 @@
                 "val": "The active player may play a land (if one hasn't been played this turn), play spells (the opponent may use abilities and instants in response). Lasts until neither player wants to use a spell or ability (i.e. the stack is empty and all players pass priority)."
             }
         ],
-        "End Phase": [
+        "Ending Phase": [
             {
                 "key": "End Step",
                 "val": "Triggers occuring during the end step are put on to the stack and the active player recieves priority for the last time in a turn."
