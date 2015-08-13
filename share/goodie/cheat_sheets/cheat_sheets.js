@@ -6,7 +6,7 @@ DDH.cheat_sheets.build = function(ops) {
         var result = "";
         var template = {
           type: template_type,
-          path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard-shortcuts'
+          path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard'
         };
 
         $.each(section_order, function(i, section) {
@@ -95,7 +95,7 @@ DDH.cheat_sheets.build = function(ops) {
                 $container = $dom.find(".cheatsheet__container"),
                 $detail    = $dom.find(".zci__main--detail"),
                 $section   = $dom.find(".cheatsheet__section"),
-                $hideRow   = $section.find("tbody tr:nth-child(n+4)"),
+                $hideRow   = $section.find("tbody tr:nth-child(n+4), ul li:nth-child(n+4)"),
                 $showhide  = $container.find(".cheatsheet__section.showhide"),
                 $more_btn  = $dom.find(".chomp--link"),
                 isExpanded = false,

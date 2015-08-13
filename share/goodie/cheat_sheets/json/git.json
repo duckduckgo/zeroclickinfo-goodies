@@ -6,7 +6,7 @@
         "sourceName": "GitHub",
         "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet"
     },
-    "template_type" : "terminal-snippets",
+    "template_type" : "terminal",
     "section_order": [
         "Configure Tooling",
         "Create Repositories",
