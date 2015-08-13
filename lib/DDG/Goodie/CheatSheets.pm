@@ -66,7 +66,7 @@ handle remainder => sub {
             group => 'base',
             item => 0,
             options => {
-                content => 'DDH.cheat_sheets.detail',
+                content => "DDH.cheat_sheets.detail",
                 moreAt => 0
             }
         }
