@@ -46,18 +46,21 @@ handle remainder => sub {
     $query =~ s/\s{2,}/ /g;                # Tighten up any extra spaces we may have left.
     $query =~ s/'s//g;                     # Remove 's for possessives.
     $query = trim $query;                  # Trim outside spaces.
+
     if ($query) {
         my ($date_string) = $query =~ qr#^($datestring_regex)$#i;    # Extract any datestring from the query.
-
         $date_object = parse_datestring_to_date($date_string);
-        my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
-
+        # check if our date regex figured out the date
+        if ($date_object){
+            my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
+        } else {
+            # check if 4 digit year is being queried e.g. cal 1999
+            if ($query =~ qr/\d\d\d\d/){
+                $date_object = DateTime->now->set_year($query);
+            }
+        }
         return unless $date_object;
 
-        # Decide if a specific day should be highlighted.  If the query was not precise, eg "Nov 2009",
-        # we can't hightlight.  OTOH, if they specified a date, we highlight.  Relative dates like "next
-        # year", or "last week" exactly specify a date so they get highlighted also.
-        $highlightDay = $date_object->day() if ($query =~ $formatted_datestring_regex || $query =~ $relative_dates_regex);
     }
 
     my $the_year  = $date_object->year();
@@ -67,14 +70,10 @@ handle remainder => sub {
         structured_answer => {
             id => 'calendar_today',
             name => 'Answer',
-            #data => \@months,
             data => {
                 month => $the_month,
                 day => $currentDay,
                 year => $the_year
-            },
-            meta => {
-               
             },
             templates => {
                group => 'base',
