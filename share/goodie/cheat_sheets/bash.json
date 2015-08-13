@@ -345,14 +345,6 @@
                 "val": "Contents of file are passed to cmd's stdin"
             },
             {
-                "key": "cmd << '<string>'",
-                "val": "Contents of the shell script up to a line identical to <string> become stdin for cmd (verbatim)"
-            },
-            {
-                "key": "cmd << <string>",
-                "val": "Same as above but variables and arithmetic operations are processed"
-            },
-            {
                 "key": "cmd1 | cmd2",
                 "val": "Output of cmd1 is passed to cmd2's stdin"
             },
