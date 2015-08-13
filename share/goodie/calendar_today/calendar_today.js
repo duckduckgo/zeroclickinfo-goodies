@@ -1,6 +1,6 @@
 DDH.calendar_today = DDH.calendar_today || {}; // create the namespace in case it doesn't exist
 
-DDH.calendar_today.build = function(ops) {
+DDH.calendar_today.build = DDH.calendar_today.build_async =  function(ops, DDH_async_add) {
     Spice.registerHelper('calendar_table', function(options, context) { 
        var data = options.hash; 
         var days = data.days,
@@ -68,13 +68,6 @@ DDH.calendar_today.build = function(ops) {
                 }
             }
             
-
-            // validate moment date
-            if (!day.isValid() && day.hasOwnProperty('_d') && day._d !== undefined) {
-                day = moment(day._d);
-            }
-
-        
             extraClasses += ' calendar-day-' + day.format('YYYY-MM-DD');
 
             var weekday = day.weekday();
@@ -149,7 +142,7 @@ DDH.calendar_today.build = function(ops) {
 
             item.days = daysArray;
             item.month_name = month_name;
-            item.month = month;
+            item.month = String(month+1);
             item.daysOfTheWeek = daysOfTheWeek;
             item.numberOfRows = Math.ceil(daysArray.length / 7);
             item.year = year;
@@ -158,7 +151,8 @@ DDH.calendar_today.build = function(ops) {
             item = {};
             startDate = startDate.add(1, 'months');
         }
-        Spice.add({
+        
+        DDH.add({
             id: "calendar",
             name: "Answer",
             meta:{
