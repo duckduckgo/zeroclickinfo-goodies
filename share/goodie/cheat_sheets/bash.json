@@ -16,7 +16,6 @@
         "Expansion And Other Operators",
         "Exit Statuses",
         "Auto-Completion",
-        "Backslash Escape Sequences",
         "Misc"
     ],
     "sections": {
@@ -444,60 +443,6 @@
             {
                 "key": "M-*",
                 "val": "Insert all possible completions"
-            }
-        ],
-        "Backslash Escape Sequences": [
-            {
-                "key": "\\",
-                "val": "Escape character"
-            },
-            {
-                "key": "\\a",
-                "val": "Alert (bell)"
-            },
-            {
-                "key": "\\b",
-                "val": "Backspace"
-            },
-            {
-                "key": "\\c",
-                "val": "Produce no further output"
-            },
-            {
-                "key": "\\e",
-                "val": "Escape character"
-            },
-            {
-                "key": "\\f",
-                "val": "Form feed"
-            },
-            {
-                "key": "\\n",
-                "val": "New line"
-            },
-            {
-                "key": "\\r",
-                "val": "Carriage return"
-            },
-            {
-                "key": "\\t",
-                "val": "Horizondal tab"
-            },
-            {
-                "key": "\\v",
-                "val": "Vertical tab"
-            },
-            {
-                "key": "\\xHH",
-                "val": "Byte with Hex value HH"
-            },
-            {
-                "key": "\\0NNN",
-                "val": "Byte with octal value NNN"
-            },
-            {
-                "key": "\\uHHHH",
-                "val": "Byte with Hex value HHHH (unicode)"
             }
         ],
         "Misc": [
