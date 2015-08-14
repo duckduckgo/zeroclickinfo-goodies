@@ -5,15 +5,41 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 use JSON::XS;
+use File::Find::Rule;
 
 zci answer_type => "cheat_sheet";
 zci is_cached   => 1;
 
-sub build_answer {
-    my ($filename) = @_;
-    my $file = 'share/goodie/cheat_sheets/json/'.$filename;
+sub getTests {
+    my @files = File::Find::Rule->file()
+                                ->name("*.json")
+                                ->in('share/goodie/cheat_sheets/json/');
+    my %tests;
     
-    open my $fh, $file or return;
+    foreach my $file (@files) {
+        open my $fh, $file or return;
+        my $json = do { local $/;  <$fh> };
+        my $data = decode_json($json);
+        
+        my $defaultName = File::Basename::fileparse($file);
+        $defaultName =~ s/-/ /g;
+        $defaultName =~ s/.json//;
+        
+        $tests{$defaultName." cheat sheet"} = test_zci(build_answer($file));
+        
+        if ($data->{'aliases'}) {
+            foreach my $alias (@{$data->{'aliases'}}) {
+                $tests{$alias." cheat sheet"} = test_zci(build_answer($file));
+            }
+        }
+    }
+    return %tests;
+}
+
+sub build_answer {
+    my ($file) = @_;
+    
+    open my $fh, $file or warn "Error opening file: ".$file;
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
     
@@ -35,10 +61,7 @@ sub build_answer {
 
 ddg_goodie_test(
     [qw( DDG::Goodie::CheatSheets )],
-    'windows cheat sheet' => test_zci(build_answer('microsoft-windows.json')),
-    'blender shortcuts' => test_zci(build_answer('blender.json')),
-    'regexp examples' => test_zci(build_answer('regex.json')),
-    'git help' => test_zci(build_answer('git.json'))
+    getTests()
 );
 
 done_testing;
