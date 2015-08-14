@@ -93,10 +93,10 @@ ia:
   aliases:
     - instantanswer
     - instantanswers
-  html: DuckDuckGo's instant answers display helpful information at the top of the search page (like this box).<br>Suggest or develop them on <a href='http://duckduckhack.com/'>DuckDuckHack</a> and see all the current instant answers on the <a href='https://duckduckgo.com/goodies'>Goodies page</a>.
+  html: DuckDuckGo's instant answers display helpful information at the top of the search page (like this box).<br>Suggest or develop them on <a href='http://duckduckhack.com/'>DuckDuckHack</a> and see all the current instant answers <a href='https://duck.co/ia'>here</a>.
   text: |-
     DuckDuckGo's instant answers display helpful information at the top of the search page (like this box).
-    Suggest or develop them on http://duckduckhack.com and see all the current instant answers on the Goodies page (https://duckduckgo.com/goodies).
+    Suggest or develop them on http://duckduckhack.com and see all the current instant answers here https://duck.co/ia.
 ie:
   aliases:
     - internetexplorer
