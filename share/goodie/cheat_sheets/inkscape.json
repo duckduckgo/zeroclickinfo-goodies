@@ -1,0 +1,230 @@
+{
+    // Required; must match the id of the cheat sheet's IA page
+    // For example, https://duck.co/ia/view/vim_cheat_sheet
+    "id": "inkscape_cheat_sheet", 
+
+    // Required; displayed as title of AnswerBar
+    "name": "Inkscape",
+
+    // Optional; displayed as subtitle of AnswerBar
+    "description": "Vector Graphics Editor", 
+    
+    // Required if cheat sheet has a source; useful to link users to further information.
+    // Displayed at bottom of AnswerBar, favicon shown automatically
+    "metadata": { 
+        "sourceName": "Inkscape keyboard and mouse reference",
+        "sourceUrl": "https://inkscape.org/en/doc/keys091.html" // Should be SSL if possible
+    },
+
+    // Required; controls which sections appear and in what order
+    "section_order": [  
+        "Tools",
+        "Grouping",
+        "Zoom",
+        "Documents",
+        "Fill and Strocke",
+        "Selections",
+        "Duplication, Alignement, Distribution",
+        "Z-order",
+        "Shapes",
+        "Moving, Scaling, Rotating"
+    ],
+
+    // Required; section names must match those in section_order in order to appear
+    "sections": {
+        "Tools": [
+            {
+                "key": "F1, s", 
+                "val": "Selector"
+            },
+            {
+                "key": "Space",
+                "val": "Selector (temporary)"
+            },
+            {
+                "key": "F2, n",
+                "val": "Node tool"
+            },
+            {
+                "key": "Shift + F2, w",
+                "val": "Tweak tool"
+            },
+            {
+                "key": "F3, z",
+                "val": "Zoom tool"
+            },
+            {
+                "key": "n",
+                "val": "Measure tool"
+            },
+            {
+                "key": "F4, r",
+                "val": "Rectangle tool"
+            },
+            {
+                "key": "Shift + F4, x",
+                "val": "3D box tool"
+            },
+            {
+                "key": "F5, e",
+                "val": "Ellipse/arc tool"
+            },
+            {
+                "key": "Shift + F9, *",
+                "val": "Star tool"
+            },
+            {
+                "key": "F9, i",
+                "val": "Spiral tool"
+            },
+            {
+                "key": "F6, p",
+                "val": "Pencil (Freehand) tool"
+            },
+            {
+                "key": "Shift +F6, b",
+                "val": "Pen (Bezier) tool"
+            },
+            {
+                "key": "Ctrl +F6, c",
+                "val": "Calligraphy tool"
+            },
+            {
+                "key": "F8, t",
+                "val": "Text tool"
+            },
+            {
+                "key": "Shift + F3, a",
+                "val": "Spray tool"
+            },
+            {
+                "key": "Shift + E",
+                "val": "Eraser tool"
+            },
+            {
+                "key": "Shift + F7, u",
+                "val": "Paint Bucket tool"
+            },
+            {
+                "key": "Ctrl + F1, g",
+                "val": "Gradient tool"
+            },
+            {
+                "key": "F7, d",
+                "val": "Dropper tool"
+            },
+            {
+                "key": "Ctrl + F2, o",
+                "val": "Connector tool"
+            }
+        ],        
+        "Grouping": [
+            {
+                "key": "Ctrl + G",
+                "val": "Group selected objects"               
+            }, 
+            {
+                "key": "Ctrl + U",
+                "val": "Ungroup selected group(s)"
+            }, 
+            {
+                "key": "Ctrl + Mouse Click",
+                "val": "Select object in group"
+            }
+        ],        
+        "Zoom" [
+            {
+                "key": "=,+",
+                "val": "Zoom in"               
+            }, 
+            {
+                "key": "-",
+                "val": "Zoom out"
+            }, 
+            {
+                "key": "Alt + Z",
+                "val": "Activate zoom field"
+            }
+        ],
+        "Fill and stroke" [
+            {
+                "key": "Ctrl + F1",
+                "val": "Gradient tool"               
+            }, 
+            {
+                "key": "F7",
+                "val": "Dropper tool"
+            }
+        ],
+        "Selections" [
+            {
+                "key": "Shift + Click",
+                "val": "Toggle selection"               
+            }, 
+            {
+                "key": "Shift + Drag",
+                "val": "Rubberband"
+            }, 
+            {
+                "key": "Tab",
+                "val": "Select next object"
+            }, 
+            {
+                "key": "Shift + Tab",
+                "val": "Select previous object"
+            }
+        ],
+        "Duplication, Alignement, Distribution" [
+            {
+                "key": "Ctrl + D",
+                "val": "Duplicate object"               
+            }, 
+            {
+                "key": "Ctrl + Shift + A",
+                "val": "Align dialog"
+            }
+        ],
+        "Z-order" [
+            {
+                "key": "Home",
+                "val": "Raise selection to top"               
+            }, 
+            {
+                "key": "End",
+                "val": "Lower selection to bottom"
+            }, 
+            {
+                "key": "PgUp",
+                "val": "Raise selection one step"
+            }, 
+            {
+                "key": "PgDn",
+                "val": "Lower selection one step"
+            }
+        ],
+        "Shapes" [
+            {
+                "key": "Ctrl + Shift + C",
+                "val": "Convert shape to path"               
+            }, 
+            {
+                "key": "Ctrl",
+                "val": "Draw fixed to ratio"
+            }, 
+            {
+                "key": "Shift",
+                "val": "Starting point is centre"
+            }
+        ],
+        "Moving, Scaling, Rotating" [
+            {
+                "key": "Ctrl + Mouse",
+                "val": "Move selected object on the X axis OR the Y axis"               
+            }, 
+            {
+                "key": "<, >",
+                "val": "Scale selection up"
+            }
+        ],
+    }
+}
