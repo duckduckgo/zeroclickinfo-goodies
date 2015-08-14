@@ -23,7 +23,7 @@ triggers startend => @triggers;
 
 # Handle statement
 handle query_lc => sub {
-    return unless my $val = $constants->{$_}; #lookup hash using query as key
+    return unless my $val = $constants->{$_}->{'value'}->{'html'}; #lookup hash using query as key
 
     return $val, structured_answer => {
         input     => [],
