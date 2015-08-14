@@ -6,6 +6,10 @@
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/"
     },
+    "aliases": [
+        "regexp", "regular expression", "regular expressions"
+    ],
+    "template_type": "code",
     "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"],
     "sections": {
         "Assertions": [{

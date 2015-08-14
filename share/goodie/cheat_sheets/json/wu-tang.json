@@ -6,6 +6,8 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Wu-Tang_Clan#Members"
     },
+    "aliases":["wu-tang"],
+    "template_type": "reference",
     "section_order": ["Members"],
     "sections": {
         "Members": [{
@@ -42,4 +44,3 @@
 
     }
 }
-

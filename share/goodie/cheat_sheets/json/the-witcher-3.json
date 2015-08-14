@@ -6,6 +6,11 @@
         "sourceName": "The Witcher",
         "sourceUrl": "http://www.thewitcher.com/"
     },
+    "aliases": [
+        "witcher 3",
+        "witcher wild hunt",
+        "wild hunt"
+    ],
     "section_order": ["Movement", "Combat", "Quick Access", "Menus/Panels", "Interaction/Signs", "Horse", "Swimming", "Misc/Unbound"],
     "sections": {
         "Movement": [

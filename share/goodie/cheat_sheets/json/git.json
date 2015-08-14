@@ -6,6 +6,7 @@
         "sourceName": "GitHub",
         "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet"
     },
+    "template_type" : "terminal",
     "section_order": [
         "Configure Tooling",
         "Create Repositories",
@@ -124,7 +125,7 @@
         "Synchronize Changes": [{
             "val": "Downloads all history from the repository bookmark",
             "key": "$ git fetch \\[bookmark\\]"
-            
+
         }, {
             "val": "Combines bookmark's branch into current local branches",
             "key": "$ git merge \\[bookmark\\]/\\[branch\\]"
@@ -137,4 +138,3 @@
         }]
     }
 }
-
