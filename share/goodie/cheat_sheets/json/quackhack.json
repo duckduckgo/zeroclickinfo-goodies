@@ -6,7 +6,7 @@
         "sourceName": "DuckDuckHack",
         "sourceUrl": "https://duck.co/duckduckhack/"
     },
-    "aliases":["quack and hack", "quack & hack", "quack&hack", "hack and quack", "hack & quack"],
+    "aliases":["quack and hack", "quack & hack", "quack&hack", "hack and quack", "hack & quack", "quack hack", "hack quack"],
     "template_type": "reference",
     "section_order": ["Quick Links", "Communication", "Examples", "Repositories"],
     "sections": {
@@ -21,7 +21,7 @@
             "key": "Live Instant Answers"
         }], 
         "Communication": [{
-            "val": "duckduckhack.slack.com",
+            "val": "https://duckduckhack.slack.com/",
             "key": "Slack Team"
         }, {
             "val": "email: QuackSlack@duckduckgo.com",
