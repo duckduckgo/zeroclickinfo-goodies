@@ -45,9 +45,9 @@ handle remainder => sub {
                 "very severely obese"],
                 error => "Error, your bmi is not a number, have you filled in the fields?",
                 your_bmi => "Your bmi is ",
-                within => "This is within the",
-                str_range => "range",
-                source => "source"
+                within => "<br/>This is within the <b>",
+                str_range => "</b> range",
+                source_line => "<br/><small> source Wikipedia  <a href=\"https://en.wikipedia.org/wiki/Body_mass_index\">https://en.wikipedia.org/wiki/Body_mass_index</a></small>"
             },
         },
         meta => {

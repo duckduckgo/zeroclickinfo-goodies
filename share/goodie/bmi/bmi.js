@@ -41,8 +41,8 @@ DDH.bmi.build = function(ops) {
             html = text.error;
         }else{
             html = text.your_bmi + bmi;
-            html += '<br/>' + text.within + '<b> ' + getRange(bmi) + '</b> ' + text.str_range;
-            html += '<br/><small> ' + text.source + ' ' + ops.meta.sourceName + ' <a href="' + ops.meta.sourceUrl + '">' + ops.meta.sourceUrl + '</a></small>';
+            html += text.within + getRange(bmi) + text.str_range;
+            html += text.source_line;
         }
         $('#div_result').html(html);
     }
