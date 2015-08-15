@@ -1,0 +1,172 @@
+{
+  "id": "logic_cheat_sheet",
+  "name": "logic",
+  "description": "These are a set of operators and expressions used in the boolean algebra",
+  "metadata": {
+    "sourceName": "Image",
+    "sourceUrl": "http://i.imgur.com/OXdpVxx.png"
+  },
+  "aliases": [
+    "boolean algebra",
+    "logical expressions",
+    "logical algebra"
+  ],
+  "section_order": [
+    "Basic operators",
+    "Basic Principles",
+    "Idempotent Law",
+    "Involution law",
+    "Law of complementarity",
+    "Commutative law",
+    "Assosiative law",
+    "Distributive law",
+    "DeMorgan’s law",
+    "Duality",
+    "Theorem for multiplying out and factoring",
+    "Consensus theorem",
+    "Simplification Theorems"
+  ],
+  "sections": {
+    "Basic operators": [
+      {
+        "val": "And",
+        "key": "∧"
+      },
+      {
+        "val": "Or",
+        "key": "∨"
+      },
+      {
+        "val": "Not",
+        "key": "¬"
+      }
+    ],
+    "Basic Principles": [
+      {
+        "val": "X+0=X",
+        "key": ""
+      },
+      {
+        "val": "X+1=1",
+        "key": ""
+      },
+      {
+        "val": "X•1=X",
+        "key": ""
+      },
+      {
+        "val": "X•0=0",
+        "key": ""
+      }
+    ],
+    "Idempotent Law": [
+      {
+        "val": "X+X=X",
+        "key": ""
+      },
+      {
+        "val": "X•X=X",
+        "key": ""
+      }],
+      "Involution law":[
+      {
+        "val": "(X)'=X",
+        "key": ""
+      }],
+      "Law of complementarity":[
+      {
+        "val": "X+X'=1",
+        "key": ""
+      },
+      {
+        "val": "X•X'=0",
+        "key": ""
+      }],
+      "Commutative law":[
+      {
+        "val": "X+Y=Y+X",
+        "key": ""
+      },
+      {
+        "val": "X•Y=Y•X",
+        "key": ""
+      }],
+      "Assosiative law":[
+      {
+        "val":"(X+Y)+Z=X+(Y+Z)=X+Y+Z" ,
+        "key": ""
+      },
+      {
+        "val": "(XY)Z=X(YZ)=XYZ",
+        "key": ""
+      }],
+      "Distributive law":[
+      {
+        "val": "X(Y+Z)=XY+XZ",
+        "key": ""
+      },
+      {
+        "val": "X+YZ=(X+Y)(X+Z)",
+        "key": ""
+      }],
+    "DeMorgan’s law": [
+      {
+        "val": "(X+Y+Z+…)'=X'Y'Z'…",
+        "key": ""
+      },{
+        "val": "(XYZ…)'=X'+Y'+Z'+…",
+        "key": ""
+      },{
+        "val": "[f( X,X,…X,0,1,+,•)]'=f( X',X', … X', 1, 0, •,+)",
+        "key": ""
+      }],
+       "Duality": [
+      {
+        "val": "(X+Y+Z+…)D=XYZ…",
+        "key": ""
+      },{
+        "val": "(XYZ…)D=X+Y+Z+…",
+        "key": ""
+      },{
+        "val": "[f(X1,X2,…XN,0,1,+,•)]D=f(X1,X2,…XN,1,0,•,+)",
+        "key": ""
+      }],
+       "Theorem for multiplying out and factoring": [
+      {
+        "val": "(X+Y)(X'+Z)=XZ+X'Y",
+        "key": ""
+      },{
+        "val": "XY+X'Z=(X+Z)(X'+Y)",
+        "key": ""
+      }],
+       "Consensus theorem": [
+      {
+        "val": "XY+YZ+X'Z=XY+X'Z",
+        "key": ""
+      },{
+        "val": "(X+Y)(Y+Z)(X'+Z)=(X+Y)(X'+Z)",
+        "key": ""
+      }],
+       "Simplification Theorems": [
+      {
+        "val": "XY+XY'=X",
+        "key": ""
+      },{
+        "val": "(X+Y)(X+Y')=X",
+        "key": ""
+      },{
+        "val": "X+XY=X",
+        "key": ""
+      },{
+        "val": "X(X+Y)=X",
+        "key": ""
+      },{
+        "val": "(X+Y')Y=XY",
+        "key": ""
+      },
+      {
+        "val": "XY'+Y=X+Y",
+        "key": ""
+      }]
+  }
+}
