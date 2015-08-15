@@ -4,6 +4,7 @@ package DDG::Goodie::CheatSheets;
 use JSON::XS;
 use DDG::Goodie;
 use DDP;
+use File::Find::Rule;
 
 no warnings 'uninitialized';
 
