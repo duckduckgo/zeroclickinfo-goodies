@@ -1,13 +1,14 @@
 {
-  "id": "logic_cheat_sheet",
-  "name": "logic",
+  "id": "boolean_algebra_cheat_sheet",
+  "name": "boolean algrebra",
   "description": "These are a set of operators and expressions used in the boolean algebra",
+  "template_type": "reference",
   "metadata": {
-    "sourceName": "Image",
-    "sourceUrl": "http://i.imgur.com/OXdpVxx.png"
+    "sourceName": "Wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Boolean_algebra"
   },
   "aliases": [
-    "boolean algebra",
+    "mathematical logic",
     "logical expressions",
     "logical algebra"
   ],
