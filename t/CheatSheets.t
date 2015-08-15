@@ -25,23 +25,19 @@ sub getTests {
         $defaultName =~ s/-/ /g;
         $defaultName =~ s/.json//;
         
-        $tests{$defaultName." cheat sheet"} = test_zci(build_answer($file));
+        $tests{$defaultName." cheat sheet"} = test_zci(build_answer($data));
         
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
-                $tests{$alias." cheat sheet"} = test_zci(build_answer($file));
+                $tests{$alias." cheat sheet"} = test_zci(build_answer($data));
             }
         }
     }
-    return %tests;
+    return \%tests;
 }
 
 sub build_answer {
-    my ($file) = @_;
-    
-    open my $fh, $file or warn "Error opening file: ".$file;
-    my $json = do { local $/;  <$fh> };
-    my $data = decode_json($json);
+    my ($data) = @_;
     
     return 'Cheat Sheet', structured_answer => {
         id => 'cheat_sheets',
@@ -61,7 +57,7 @@ sub build_answer {
 
 ddg_goodie_test(
     [qw( DDG::Goodie::CheatSheets )],
-    getTests()
+    %{getTests()}
 );
 
 done_testing;
