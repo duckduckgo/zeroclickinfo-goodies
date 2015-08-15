@@ -7,7 +7,6 @@
 
 .calendar .calendar__header {
     clear:both;
-    
 }
 
 .calendar .calendar__header .month-name{
@@ -16,7 +15,6 @@
     color: #333;
     text-align:left;
     font-size: 1.18em;
-
 }
 
 .calendar .calendar__header .year{
@@ -42,20 +40,22 @@
 
 .calendar .today{
     background-color:#de5833;
-    display: inline-block;
-    text-align: center;
+    display: inline-table;
+    text-align: center; 
     color: #FFF;
-    -moz-border-radius: 11px;
-    border-radius: 11px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
     height: 22px;
     width: 22px;
+    line-height: 22px;
+    font-weight: lighter;
 }
 
 .calendar .adj-month{
     color: #aaa;
 }
 
-.zci--answer .calendar th, .calendar td {
+.calendar th, .calendar td {
     width: 2.5em;
     text-align: center;
     height: 2.17em;
