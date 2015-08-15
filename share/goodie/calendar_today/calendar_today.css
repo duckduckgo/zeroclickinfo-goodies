@@ -41,7 +41,7 @@
 }
 
 .calendar .today{
-    background-color:#e37151;
+    background-color:#de5833;
     display: inline-block;
     text-align: center;
     color: #FFF;
@@ -49,11 +49,10 @@
     border-radius: 11px;
     height: 22px;
     width: 22px;
-
 }
 
 .calendar .adj-month{
-    color: #CCC;
+    color: #aaa;
 }
 
 .zci--answer .calendar th, .calendar td {
