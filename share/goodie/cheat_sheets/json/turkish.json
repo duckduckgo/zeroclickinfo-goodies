@@ -1,18 +1,13 @@
 {
   "id" : "turkish_cheat_sheet",
   "name" : "Turkish Cheat Sheet",
+  "description" : "Basic Turkish words and phrases",
   "metadata" : {
     "sourceName" : "Linguanaut",
     "sourceUrl" : "http://www.linguanaut.com/english_turkish.htm"
   },
-  "section_order" : [
-    "Basics",
-    "Etiquette",
-    "Getting Help",
-    "Travelling",
-    "Going out for dinner"
-  ],
-  "description" : "Basic Turkish words and phrases",
+  "template_type": "reference",
+  "section_order" : ["Basics", "Etiquette", "Getting Help", "Travelling", "Going out for dinner"],
   "sections" : {
     "Basics" : [
       {
