@@ -22,6 +22,8 @@
         "Opacity",
         "Zoom"
     ],
+    
+    "template_type": "keyboard",
 
     "sections": {
         "File": [

@@ -6,6 +6,7 @@
         "sourceName": "EdCheatSheet",
         "sourceUrl": "https://www.freebsd.org/cgi/man.cgi?ed%281%29"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Editing commands",
         "File manipulation commands",

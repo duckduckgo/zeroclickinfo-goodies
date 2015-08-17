@@ -6,7 +6,10 @@
         "sourceName": "Version Control with Subversion",
         "sourceUrl": "http://svnbook.red-bean.com/"
     },
-
+    "aliases": [
+        "subversion"
+    ],
+    "template_type": "terminal",
     "section_order": [  
         "Basic usage",
         "Advanced usage"

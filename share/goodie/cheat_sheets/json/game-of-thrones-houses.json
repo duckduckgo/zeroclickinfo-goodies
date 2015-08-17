@@ -6,11 +6,12 @@
         "sourceName": "Game of Thrones Wikia",
         "sourceUrl": "http://gameofthrones.wikia.com/wiki/Great_House"
     },
+    "template_type": "reference",
     "section_order": [
         "Current Great Houses",
         "Exiled Great Houses",
         "Extinct Great Houses"
-        ],
+    ],
     "sections": {
         "Current Great Houses": [
         {

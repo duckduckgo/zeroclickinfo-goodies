@@ -8,6 +8,7 @@
     "aliases": [
         "firefox awesome bar"
     ],
+    "template_type": "keyboard",
     "section_order": ["Power-ups"],
     "sections": {
         "Power-ups": [{

@@ -11,6 +11,7 @@
         "witcher wild hunt",
         "wild hunt"
     ],
+    "template_type": "keyboard",
     "section_order": ["Movement", "Combat", "Quick Access", "Menus/Panels", "Interaction/Signs", "Horse", "Swimming", "Misc/Unbound"],
     "sections": {
         "Movement": [

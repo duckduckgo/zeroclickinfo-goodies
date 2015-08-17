@@ -1,6 +1,7 @@
 {
     "id": "minecraft_cheat_sheet", 
     "name": "Minecraft Shortcuts",
+    "template_type": "keyboard",
     "section_order": [  
         "Movement",
         "Items",

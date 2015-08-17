@@ -9,6 +9,7 @@
     "aliases": [
         "coffee script"
     ],
+    "template_type": "terminal",
     "section_order": [
         "Usage",
         "Variables",

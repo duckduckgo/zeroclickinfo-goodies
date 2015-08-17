@@ -6,6 +6,7 @@
         "sourceName": "EmacsCheatSheet",
         "sourceUrl": "http://www.rgrjr.com/emacs/emacs_cheat.html"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Lingo",
         "Quick Answers",

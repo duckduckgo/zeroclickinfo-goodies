@@ -6,6 +6,7 @@
         "sourceName": "GNOME Help",
         "sourceUrl": "https://help.gnome.org/users/gnome-help/stable/shell-keyboard-shortcuts.html.en"
     },
+    "template_type": "keyboard",
     "section_order": ["Desktop Shortcuts", "Common Editing", "Screen Capturing"],
     "sections": {
         "Desktop Shortcuts": [{
