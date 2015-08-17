@@ -24,7 +24,7 @@
             "key":"[-] (Numpad)",
             "val":"Zoom view out"
         }, {
-            "key":"[Mod] + [F12]",
+            "key":"[Mod] [F12]",
             "val":"Open debug console"
         }, {
             "key":"M",
@@ -33,7 +33,7 @@
             "key":"Tab",
             "val":"Cycle focus in orbital map"
         }, {
-            "key":"[Left-Shift] + [Tab]",
+            "key":"[Left-Shift] [Tab]",
             "val":"Reverse cycle focus in orbital map"
         }, {
             "key":"Backspace",
@@ -51,10 +51,10 @@
             "key":",",
             "val":"Time warp (physical time warp in atmosphere) decrease"
         }, {
-            "key":"[Mod] + [.]",
+            "key":"[Mod] [.]",
             "val":"Physical time warp increase (compulsory)"
         }, {
-            "key":"[Mod] + [,]",
+            "key":"[Mod] [,]",
             "val":"Physical time warp decrease (compulsory)"
         }, {
             "key":".",
@@ -81,16 +81,16 @@
             "key":"F5",
             "val":"Quicksave"
         }, {
-            "key":"[Mod] + [F5]",
+            "key":"[Mod] [F5]",
             "val":"Make a specific, user-inputted quicksave"
         }, {
             "key":"[F9] (hold)",
             "val":"Load quicksave"
         }, {
-            "key":"[Mod] + [F9]",
+            "key":"[Mod] [F9]",
             "val":"Load a specific quicksave"
         }, {
-            "key":"[Ctrl] + [F10]",
+            "key":"[Ctrl] [F10]",
             "val":"Load saved game state dialogue box (hidden feature, looks in KSP/saves/scenarios/)"
         }, {
             "key":"F10",
@@ -102,7 +102,7 @@
             "key":"F12",
             "val":"Aerodynamic Forces Overlay"
         }, {
-            "key":"[Mod] + [F12]",
+            "key":"[Mod] [F12]",
             "val":"Debug/cheat menu"
         }],
         "Flight Controls": [{
@@ -145,7 +145,7 @@
             "key":"F",
             "val":"Hold to temporarily invert SAS state"
         }, {
-            "key":"[Mod] + [L]",
+            "key":"[Mod] [L]",
             "val":"Lock current stage (very useful before you accidentally hit the spacebar)"
         }, {
             "key":"Caps Lock",
@@ -181,10 +181,10 @@
             "key":"G",
             "val":"Toggle landing gear"
         }, {
-            "key":"[Mod] + ([W]/[S]/[A]/[D]/[Q]/[E])",
+            "key":"[Mod] ([W]/[S]/[A]/[D]/[Q]/[E])",
             "val":"Trim pitch/yaw/roll"
         }, {
-            "key":"[Mod] + [X]",
+            "key":"[Mod] [X]",
             "val":"Reset trim"
         }, {
             "key":"B",
@@ -202,7 +202,7 @@
             "key":"Right-click",
             "val":"Open part info window"
         }, {
-            "key":"[Mod] + [Right-click]",
+            "key":"[Mod] [Right-click]",
             "val":"Open multiple info windows for fuel transfer (right-click on two fuel tanks)"
         }, {
             "key":"Home",
@@ -285,10 +285,10 @@
             "key":"F",
             "val":"Use part"
         }, {
-            "key":"[Shift] + ([W]/[S]/[A]/[D]) + [Space]",
+            "key":"[Shift] ([W]/[S]/[A]/[D]) [Space]",
             "val":"Jump to different directions when on ladders"
         }, {
-            "key":"[Shift] + ([W]/[S]/[A]/[D])",
+            "key":"[Shift] ([W]/[S]/[A]/[D])",
             "val":"Sprint"
         }, {
             "key":"L",
@@ -310,16 +310,16 @@
             "val":"Cycle through active ships/EVAs (backwards)"
         }],
         "VAB/SPH Commands": [{
-            "key":"[Ctrl] + [Z]",
+            "key":"[Ctrl] [Z]",
             "val":"Undo last action"
         }, {
-            "key":"[Ctrl] + [Y]",
+            "key":"[Ctrl] [Y]",
             "val":"Redo last action"
         }, {
             "key":"[Mod] (hold)",
             "val":"Disable surface attach/exclusively use node attach"
         }, {
-            "key":"[Mod] + [Left-click]",
+            "key":"[Mod] [Left-click]",
             "val":"Duplicate part or assembly in VAB"
         }, {
             "key":"C",
@@ -328,7 +328,7 @@
             "key":"X",
             "val":"Cycle symmetry settings (forward)"
         }, {
-            "key":"[Shift] + [X]",
+            "key":"[Shift] [X]",
             "val":"Cycle symmetry settings (backward)"
         }, {
             "key":"Page Up",
@@ -337,13 +337,13 @@
             "key":"Page Down",
             "val":"Scroll view down"
         }, {
-            "key":"[Shift] + [Left-click]",
+            "key":"[Shift] [Left-click]",
             "val":"Move the entire ship"
         }, {
-            "key":"[Shift] + [Scroll Up]",
+            "key":"[Shift] [Scroll Up]",
             "val":"Zoom view in"
         }, {
-            "key":"[Shift] + [Scroll Down]",
+            "key":"[Shift] [Scroll Down]",
             "val":"Zoom view out"
         }, {
             "key":"W",
