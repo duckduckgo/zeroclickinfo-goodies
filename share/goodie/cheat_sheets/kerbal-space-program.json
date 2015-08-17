@@ -18,10 +18,10 @@
             "key":"[←] / [→] / [↑] / [↓]",
             "val":"Turn view L/R/U/D"
         }, {
-            "key":"[+] (Numpad)",
+            "key":"[+]",
             "val":"Zoom view in"
         }, {
-            "key":"[-] (Numpad)",
+            "key":"[-]",
             "val":"Zoom view out"
         }, {
             "key":"[Mod] [F12]",
@@ -33,7 +33,7 @@
             "key":"Tab",
             "val":"Cycle focus in orbital map"
         }, {
-            "key":"[Left-Shift] [Tab]",
+            "key":"[Shift] [Tab]",
             "val":"Reverse cycle focus in orbital map"
         }, {
             "key":"Backspace",
@@ -130,10 +130,10 @@
             "key":"V",
             "val":"Toggle camera view (auto/free/orbital/chase)"
         }, {
-            "key":"Left-Shift",
+            "key":"Shift",
             "val":"Increase throttle"
         }, {
-            "key":"Left-Control",
+            "key":"Control",
             "val":"Decrease throttle"
         }, {
             "key":"Space",
@@ -193,7 +193,7 @@
             "key":"U",
             "val":"Toggle vehicle lights"
         }, {
-            "key":"[1-9], [0]",
+            "key":"[0-9]",
             "val":"Activate custom action group 1-10"
         }, {
             "key":"Backspace",
@@ -230,10 +230,10 @@
             "key":"E",
             "val":"Roll adjustment"
         }, {
-            "key":"Left-Shift",
+            "key":"Shift",
             "val":"Translate up"
         }, {
-            "key":"Left-Control",
+            "key":"Control",
             "val":"Translate down"
         }, {
             "key":"Space",
