@@ -99,13 +99,17 @@ sub BinaryLogic_Actions::do_not {
 }
 
 handle query_raw => sub {
+    my $input = $_;
+    
+    my $testError = $input;
+    $testError =~ s/(?:0x|0b|[\d\s]|and|or|xor|not|\(|\)|⊕|∧|∨|¬)//ig;
+    return undef if length $testError != 0;
+
     my $grammar = Marpa::R2::Scanless::G->new({ source => \$rules });
     my $recce = Marpa::R2::Scanless::R->new({
         grammar => $grammar,
         semantics_package => 'BinaryLogic_Actions'
     });
-
-    my $input = $_;
 
     # Substitute the unicode characters. The parser does not seem to
     # like unicode.

@@ -57,6 +57,8 @@ ddg_goodie_test(
     '0x01 or 0x02' => test_zci(build_answer('3', sprintf "%b OR %b", hex(1), hex(2))),
     '0b01 or 0b10' => test_zci(build_answer('3', sprintf "01 OR 10")),
     '0B11 xor 0B10' => test_zci(build_answer('1', sprintf "11 XOR 10")),
+    
+    'what do number and letter codes in a lens name mean' => test_zci(undef)
 );
 
 done_testing;
