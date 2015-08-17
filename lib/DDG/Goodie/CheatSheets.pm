@@ -34,7 +34,7 @@ sub getAliases {
         open my $fh, $file or warn "Error opening file: $file\n" and next;
         my $json = do { local $/;  <$fh> };
         my $data = eval { decode_json($json) } or do {
-			warn "Failed to decode $fh: $@";
+			warn "Failed to decode $file: $@";
 			next;
 		};
         
