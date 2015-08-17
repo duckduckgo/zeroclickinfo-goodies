@@ -64,7 +64,7 @@ ddg_goodie_test(
     'sentence containing not then words' => undef,
     'sentence containing or then words' => undef,
     'not words or word and number' => undef,
-    'what do number and letter codes in a lens name mean' => test_zci(undef)
+    'what do number and letter codes in a lens name mean' => undef
 );
 
 done_testing;
