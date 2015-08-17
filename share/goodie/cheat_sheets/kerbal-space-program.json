@@ -18,13 +18,13 @@
             "key":"[←] / [→] / [↑] / [↓]",
             "val":"Turn view L/R/U/D"
         }, {
-            "key":"[+]",
+            "key":"+",
             "val":"Zoom view in"
         }, {
-            "key":"[-]",
+            "key":"-",
             "val":"Zoom view out"
         }, {
-            "key":"[Mod] [F12]",
+            "key":"[Alt] [F12]",
             "val":"Open debug console"
         }, {
             "key":"M",
@@ -51,10 +51,10 @@
             "key":",",
             "val":"Time warp (physical time warp in atmosphere) decrease"
         }, {
-            "key":"[Mod] [.]",
+            "key":"[Alt] [.]",
             "val":"Physical time warp increase (compulsory)"
         }, {
-            "key":"[Mod] [,]",
+            "key":"[Alt] [,]",
             "val":"Physical time warp decrease (compulsory)"
         }, {
             "key":".",
@@ -81,13 +81,13 @@
             "key":"F5",
             "val":"Quicksave"
         }, {
-            "key":"[Mod] [F5]",
+            "key":"[Alt] [F5]",
             "val":"Make a specific, user-inputted quicksave"
         }, {
             "key":"[F9] (hold)",
             "val":"Load quicksave"
         }, {
-            "key":"[Mod] [F9]",
+            "key":"[Alt] [F9]",
             "val":"Load a specific quicksave"
         }, {
             "key":"[Ctrl] [F10]",
@@ -102,7 +102,7 @@
             "key":"F12",
             "val":"Aerodynamic Forces Overlay"
         }, {
-            "key":"[Mod] [F12]",
+            "key":"[Alt] [F12]",
             "val":"Debug/cheat menu"
         }],
         "Flight Controls": [{
@@ -145,7 +145,7 @@
             "key":"F",
             "val":"Hold to temporarily invert SAS state"
         }, {
-            "key":"[Mod] [L]",
+            "key":"[Alt] [L]",
             "val":"Lock current stage (very useful before you accidentally hit the spacebar)"
         }, {
             "key":"Caps Lock",
@@ -181,10 +181,10 @@
             "key":"G",
             "val":"Toggle landing gear"
         }, {
-            "key":"[Mod] ([W]/[S]/[A]/[D]/[Q]/[E])",
+            "key":"[Alt] ([W]/[S]/[A]/[D]/[Q]/[E])",
             "val":"Trim pitch/yaw/roll"
         }, {
-            "key":"[Mod] [X]",
+            "key":"[Alt] [X]",
             "val":"Reset trim"
         }, {
             "key":"B",
@@ -202,7 +202,7 @@
             "key":"Right-click",
             "val":"Open part info window"
         }, {
-            "key":"[Mod] [Right-click]",
+            "key":"[Alt] [Right-click]",
             "val":"Open multiple info windows for fuel transfer (right-click on two fuel tanks)"
         }, {
             "key":"Home",
@@ -300,7 +300,7 @@
             "key":"B",
             "val":"Return to cockpit"
         }, {
-            "key":"Mod",
+            "key":"Alt",
             "val":"Toggle movement"
         }, {
             "key":"\\]",
@@ -316,10 +316,10 @@
             "key":"[Ctrl] [Y]",
             "val":"Redo last action"
         }, {
-            "key":"[Mod] (hold)",
+            "key":"[Alt] (hold)",
             "val":"Disable surface attach/exclusively use node attach"
         }, {
-            "key":"[Mod] [Left-click]",
+            "key":"[Alt] [Left-click]",
             "val":"Duplicate part or assembly in VAB"
         }, {
             "key":"C",
