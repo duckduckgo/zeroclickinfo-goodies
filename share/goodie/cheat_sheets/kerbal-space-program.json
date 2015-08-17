@@ -69,7 +69,7 @@
             "key":"F1",
             "val":"Screenshot"
         }, {
-            "key":"[F2]",
+            "key":"F2",
             "val":"Toggle UI visibility"
         }, {
             "key":"F3",
@@ -124,7 +124,7 @@
             "key":"E",
             "val":"Roll adjustment (clockwise)"
         }, {
-            "key":"[C]",
+            "key":"C",
             "val":"Toggle IVA view"
         }, {
             "key":"V",
@@ -148,7 +148,7 @@
             "key":"[Mod] + [L]",
             "val":"Lock current stage (very useful before you accidentally hit the spacebar)"
         }, {
-            "key":"[Caps Lock]",
+            "key":"Caps Lock",
             "val":"Toggle precision (\"softer\") controls"
         }, {
             "key":"R",
@@ -157,7 +157,7 @@
             "key":"H",
             "val":"RCS thrust translate forward"
         }, {
-            "key":"[N]",
+            "key":"N",
             "val":"RCS thrust translate backward"
         }, {
             "key":"I",
@@ -181,7 +181,7 @@
             "key":"G",
             "val":"Toggle landing gear"
         }, {
-            "key":"[Mod] + [W]/[S]/[A]/[D]/[Q]/[E]",
+            "key":"[Mod] + ([W]/[S]/[A]/[D]/[Q]/[E])",
             "val":"Trim pitch/yaw/roll"
         }, {
             "key":"[Mod] + [X]",
@@ -199,7 +199,7 @@
             "key":"Backspace",
             "val":"Activate abort action group"
         }, {
-            "key":"[Right-click]",
+            "key":"Right-click",
             "val":"Open part info window"
         }, {
             "key":"[Mod] + [Right-click]",
@@ -230,10 +230,10 @@
             "key":"E",
             "val":"Roll adjustment"
         }, {
-            "key":"[Left-Shift]",
+            "key":"Left-Shift",
             "val":"Translate up"
         }, {
-            "key":"[Left-Control]",
+            "key":"Left-Control",
             "val":"Translate down"
         }, {
             "key":"Space",
@@ -258,16 +258,16 @@
             "key":"E",
             "val":"Jet rotate right"
         }, {
-            "key":"[Left-click] and drag left",
+            "key":"[Left-click], drag left",
             "val":"Jet counter clockwise"
         }, {
-            "key":"[Left-click] and drag right",
+            "key":"[Left-click], drag right",
             "val":"Jet clockwise"
         }, {
-            "key":"[Left-click] and drag up",
+            "key":"[Left-click], drag up",
             "val":"Pitch down by jet"
         }, {
-            "key":"[Left-click] and drag down",
+            "key":"[Left-click], drag down",
             "val":"Pitch up by jet"
         }, {
             "key":"Shift",
@@ -279,7 +279,7 @@
             "key":"Space",
             "val":"Jump/Let go of part"
         }, {
-            "key":"[Space]",
+            "key":"Space",
             "val":"Reorient attitude to camera by jet"
         }, {
             "key":"F",
