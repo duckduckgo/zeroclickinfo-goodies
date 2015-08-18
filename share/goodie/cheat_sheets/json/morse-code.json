@@ -5,6 +5,7 @@
         "sourceName": "MorseCode",
         "sourceUrl": "http://morsecode.scphillips.com/morse2.html"
     },
+    "template_type": "reference",
     "section_order":[
         "Alphabet",
         "Digit"

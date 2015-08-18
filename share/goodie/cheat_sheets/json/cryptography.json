@@ -1,5 +1,5 @@
 {
-    "template_type": "reference-sheet",
+    "template_type": "reference",
     "id": "cryptography_cheat_sheet",
     "name": "Cryptography",
     "description": "The study and practice of techniques for secure communication",

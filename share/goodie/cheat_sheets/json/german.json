@@ -8,6 +8,7 @@
    "aliases": [
        "german phrases", "english to german", "basic german phrases", "basic german"
    ],
+   "template_type": "reference",
    "section_order" : [
       "Basics",
       "Getting Help",

@@ -6,6 +6,7 @@
         "sourceName": "Wikipedia",
         "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_poker_hands"
     },
+    "template_type": "reference",
     "section_order": [  
         "Poker Hands in order of rank"
     ],

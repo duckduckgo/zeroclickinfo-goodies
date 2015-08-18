@@ -5,6 +5,7 @@
         "sourceName": "Internet Relay Chat WikiHow",
         "sourceUrl": "http://www.cheat-sheets.org/saved-copy/wikiHow_IRC_Cheat_Sheet.pdf"
     },
+    "template_type": "terminal",
     "section_order": [
         "Main",
         "Commands for channel operators",

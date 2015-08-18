@@ -5,6 +5,7 @@
     "metadata": { 
         "sourceName": "GimpCheatSheet"
     },
+    "template_type": "keyboard",
     "section_order": [  
         "Tools",
         "File",

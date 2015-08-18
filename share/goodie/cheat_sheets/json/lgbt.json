@@ -6,6 +6,7 @@
         "sourceName": "LGBT Terms",
         "sourceUrl": "http://web.jhu.edu/LGBTQ/glossary.html"
     },
+    "template_type": "reference",
     "section_order" : ["Sex", "Gender", "Sexuality"],
     "sections":{
         "Sex": [

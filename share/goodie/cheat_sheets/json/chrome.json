@@ -9,6 +9,12 @@
         "sourceName": "Chrome Help",
         "sourceUrl": "https://support.google.com/chrome/answer/157179?hl=en"
     },
+    
+    "aliases": [
+        "google chrome"
+    ],
+    
+    "template_type": "keyboard",
 
     "section_order": [  
         "Tab and Window",
