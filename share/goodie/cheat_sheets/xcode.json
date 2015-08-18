@@ -1,31 +1,26 @@
 {
-    "id": "xcode_cheat_sheet", 
-
+    "id": "xcode_cheat_sheet",
     "name": "Xcode",
-
-    "description": "Integrated Development Environment", 
-    
-    "metadata": { 
+    "description": "Integrated Development Environment",
+    "metadata": {
         "sourceName": "Apple Developer",
-        "sourceUrl": "https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/MenuCommands/MenuCommands014.html" 
+        "sourceUrl": "https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/MenuCommands/MenuCommands014.html"
     },
-
-    "section_order": [  
+    "section_order": [
         "Xcode menu command",
         "File menu command",
         "Edit menu command",
         "View menu command",
         "Navigate menu command",
-        "Editor menu command", 
+        "Editor menu command",
         "Product menu command",
         "Window menu command",
-        "Help menu command",
-          ],
-
+        "Help menu command"
+    ],
     "sections": {
         "Xcode menu command": [
             {
-                "key": "Command", 
+                "key": "Command",
                 "val": "Preferences"
             },
             {
@@ -40,100 +35,100 @@
                 "key": "[Command] [Q]",
                 "val": "Quit Xcode"
             }
-        ],        
+        ],
         "File menu command": [
             {
                 "key": "[Command] [T]",
-                "val": "New Tab"               
-            }, 
+                "val": "New Tab"
+            },
             {
                 "key": "[Shift] [Command] [T]",
                 "val": "New Window"
-            }, 
+            },
             {
                 "key": "[Command] [N]",
                 "val": "New File"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [N]",
                 "val": "New Project"
-            }, 
+            },
             {
                 "key": "[Control] [Command] [N]",
                 "val": "New Workspace"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [N]",
                 "val": "New Group"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [A]",
                 "val": "Add Files"
-            }, 
+            },
             {
                 "key": "[Command] [O]",
                 "val": "Open"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [O]",
                 "val": "Open Quickly"
-            }, 
+            },
             {
                 "key": "[Command] [W]",
                 "val": "Close Window"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [W]",
                 "val": "Close All Windows"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [W]",
                 "val": "Close Tab"
-            }, 
+            },
             {
                 "key": "[Option] [Shift] [Command] [W]",
                 "val": "Close Other Tabs"
-            }, 
+            },
             {
                 "key": "[Control] [Command] [W]",
                 "val": "Close Document"
-            }, 
+            },
             {
                 "key": "[Command] [S]",
                 "val": "Save"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [S]",
                 "val": "Save All"
-            }, 
+            },
             {
                 "key": "[Option] [Shift] [Command] [S]",
                 "val": "Save Multiple"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [S]",
                 "val": "Save As"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [C]",
                 "val": "Commit"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [X]",
                 "val": "Update"
-            }, 
+            },
             {
                 "key": "[Control] [Option] [Command] [X]",
                 "val": "Update All"
-            }, 
+            },
             {
                 "key": "[Control] [Command] [S]",
                 "val": "Create Snapshot"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [P]",
                 "val": "Page Setup"
-            }, 
+            },
             {
                 "key": "[Command] [P]",
                 "val": "Print"
@@ -142,202 +137,202 @@
         "Edit menu command": [
             {
                 "key": "[Command] [Z]",
-                "val": "Undo"               
-            }, 
+                "val": "Undo"
+            },
             {
                 "key": "[Shift] [Command] [Z]",
                 "val": "Redo"
-            }, 
+            },
             {
                 "key": "[Command] [X]",
                 "val": "Cut"
-            }, 
+            },
             {
                 "key": "[Command] [C]",
                 "val": "Copy"
-            }, 
+            },
             {
                 "key": "[Command] [V]",
                 "val": "Paste"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [V]",
                 "val": "Paste Special"
-            }, 
+            },
             {
                 "key": "[Option] [Shift] [Command] [V]",
                 "val": "Paste and Match Style"
-            }, 
+            },
             {
                 "key": "[Command] [D]",
                 "val": "Duplicate"
-            }, 
+            },
             {
                 "key": "[Command] [A]",
                 "val": "Select All"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [F]",
                 "val": "Find in Workspace"
-            }, 
+            },
             {
                 "key": "[Option] [Shift] [Command] [F]",
                 "val": "Find and Replace in Workspace"
-            }, 
+            },
             {
                 "key": "[Command] [F]",
                 "val": "Find"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [F]",
                 "val": "Find and Replace"
-            }, 
+            },
             {
                 "key": "[Command] [G]",
                 "val": "Find Next"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [G]",
                 "val": "Find Previous"
-            }, 
+            },
             {
                 "key": "[Command] [E]",
                 "val": "Use Selection for Find"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [E]",
                 "val": "Use Selection for Replace"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [J]",
                 "val": "Filter in Navigator"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [L]",
                 "val": "Filter in Library"
-            }, 
+            },
             {
                 "key": "[Control] [Shift] [Command] [T]",
                 "val": "Show Fonts"
-            }, 
+            },
             {
                 "key": "[Command] [:]",
                 "val": "Show Spelling and Grammar"
             }
-        ], 
+        ],
         "View menu command": [
             {
                 "key": "[Command] [1]",
-                "val": "Project"               
-            }, 
+                "val": "Project"
+            },
             {
                 "key": "[Command] [2]",
                 "val": "Symbol"
-            }, 
+            },
             {
                 "key": "[Command] [3]",
                 "val": "Search"
-            }, 
+            },
             {
                 "key": "[Command] [4]",
                 "val": "Issue"
-            }, 
+            },
             {
                 "key": "[Command] [5]",
                 "val": "Debug"
-            }, 
+            },
             {
                 "key": "[Command] [6]",
                 "val": "Breakpoint"
-            }, 
+            },
             {
                 "key": "[Command] [7]",
                 "val": "Log"
-            }, 
+            },
             {
                 "key": "[Command] [0]",
                 "val": "Show Navigator"
-            }, 
+            },
             {
                 "key": "[Command] [↩]",
                 "val": "Standard"
-            }, 
+            },
             {
                 "key": "[Option] [Command] [↩]",
                 "val": "Assistant"
-            }, 
+            },
             {
                 "key": "[Option] [Shift] [Command] [↩]",
                 "val": "Version"
-            }, 
+            },
             {
                 "key": "[Command] [F]",
                 "val": "Show Related Items"
             }
-        ], 
+        ],
         "Navigate menu command": [
             {
                 "key": "[Command] [L]",
-                "val": "Reveal in Project Navigator"               
-            }, 
+                "val": "Reveal in Project Navigator"
+            },
             {
                 "key": "[Control] [Command] [⇢]",
                 "val": "Go Forward"
-            }, 
+            },
             {
                 "key": "[Control] [Command] [⇠]",
                 "val": "Go Back"
-            }, 
+            },
             {
                 "key": "[Command] [J]",
                 "val": "Jump to Selection"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [D]",
                 "val": "Jump to Definition"
-            }, 
+            },
             {
                 "key": "[Shift] [Command] [J]",
                 "val": "Jump To"
             }
-        ], 
+        ],
         "Editor menu command": [
             {
                 "key": "[Control] [Command] [A]",
-                "val": "Add Attribute"               
-            }, 
+                "val": "Add Attribute"
+            },
             {
                 "key": "[Control] [Command] [R]",
                 "val": "Add Relationship"
-            }, 
+            },
             {
                 "key": "[Command] [=]",
                 "val": "Size to Fit"
-            }, 
+            },
             {
                 "key": "[Command] [/]",
                 "val": "Comment Selection"
             }
-        ], 
+        ],
         "Product menu command": [
             {
                 "key": "[Command] [R]",
-                "val": "Run"               
-            }, 
+                "val": "Run"
+            },
             {
                 "key": "[Control] [Command] [B]",
                 "val": "Analyze"
-            }, 
+            },
             {
                 "key": "[Command] [B]",
                 "val": "Build"
             }
-        ], 
+        ],
         "Window menu command": [
             {
                 "key": "[Command] [M]",
-                "val": "Minimize"               
-            }, 
+                "val": "Minimize"
+            },
             {
                 "key": "[Shift] [Command] [1]",
                 "val": "Welcome to Xcode"
@@ -346,8 +341,8 @@
         "Help menu command": [
             {
                 "key": "[Control] [Command] [?]",
-                "val": "Quick Help"               
-            }, 
+                "val": "Quick Help"
+            },
             {
                 "key": "[Option] [Command] [?]",
                 "val": "Developer Documentation"
