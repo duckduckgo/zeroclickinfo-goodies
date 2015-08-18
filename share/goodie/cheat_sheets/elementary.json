@@ -55,6 +55,10 @@
                 "key":"[⌘] [End]"
             },
             {
+                "val":"Will take the screentshot of entire screen",
+                "key":"prtsc"
+            },
+            {
                 "val":"Move Window with Workspace",
                 "key":"[⇧] [⌘] ([Left]/[Right])"
             },
