@@ -83,6 +83,14 @@
                 "key":"[⌘] [L]"
             },
             {
+                "val":"Will start the Pantheon Terminal",
+                "key":"[⌘] [T]"
+            },
+            {
+                "val":"Will switch to the next keyboard layout",
+                "key":"[Alt] [Space]"
+            },
+            {
                 "val":"Move Window",
                 "key":"[⌘] [Click] [drag]"
             },
