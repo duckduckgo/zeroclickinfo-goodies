@@ -43,6 +43,18 @@
                 "key":"[⌘] [O]"
             },
             {
+                "val":"Will switch to a specific workspace (If it currently exists)",
+                "key":"[⌘] [1..9]"
+            },
+            {
+                "val":"Will switch to the first workspace",
+                "key":"[⌘] [Home]"
+            },
+            {
+                "val":"Will switch to the last workspace",
+                "key":"[⌘] [End]"
+            },
+            {
                 "val":"Move Window with Workspace",
                 "key":"[⇧] [⌘] ([Left]/[Right])"
             },
