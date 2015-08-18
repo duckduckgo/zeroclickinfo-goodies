@@ -56,7 +56,15 @@
             },
             {
                 "val":"Will take the screentshot of entire screen",
-                "key":"prtsc"
+                "key":"prscr"
+            },
+            {
+                "val":"Will allow you to select an area on the screen to be screen shoted",
+                "key":"[Shift] [prscr]"
+            },
+            {
+                "val":"will screenshot the specific window",
+                "key":"[Ctrl] [Alt] [Prscr]"
             },
             {
                 "val":"Move Window with Workspace",
