@@ -31,10 +31,10 @@
             "key": "[Super] [A] "
         }, {
             "val": "Switch between workspaces",
-            "key": "[Super] ([Page Up]/[Page Down])"
+            "key": "[Super] ( [Page Up] / [Page Down] )"
         }, {
             "val": "Move the current window to a different workspace",
-            "key": "[Super] [Shift] ([Page Up]/[Page Down])"
+            "key": "[Super] [Shift] ( [Page Up] / [Page Down] )"
         }, {
             "val": "Power Off",
             "key": "[Ctrl] [Alt] [Delete] "
