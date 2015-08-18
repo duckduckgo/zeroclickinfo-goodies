@@ -33,7 +33,10 @@ sub getAliases {
     foreach my $file (@files) {
         open my $fh, $file or warn "Error opening file: $file\n" and next;
         my $json = do { local $/;  <$fh> };
-        my $data = decode_json($json);
+        my $data = eval { decode_json($json) } or do {
+			warn "Failed to decode $file: $@";
+			next;
+		};
         
         my $defaultName = File::Basename::fileparse($file);
         $defaultName =~ s/-/ /g;
