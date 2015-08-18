@@ -19,6 +19,9 @@
         }, {
             "val": "https://duck.co/ia",
             "key": "Live Instant Answers"
+        }, {
+            "val": "http://www.meetup.com/pro/duckduckgo/",
+            "key": "Meetup Groups"
         }], 
         "Communication": [{
             "val": "https://duckduckhack.slack.com/",
