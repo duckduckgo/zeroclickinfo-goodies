@@ -1,17 +1,18 @@
 {
     "id": "english_braille_cheat_sheet",
-    "name": "English Braille Cheat Sheet",
+    "name": "English Braille",
     "metadata": {
         "sourceName": "EnglishBraille",
         "sourceUrl": "https://en.wikipedia.org/wiki/English_braille"
     },
+    "template_type": "code",
     "section_order": [
         "Alphabet",
         "Digit",
         "Formatting Marks"
     ],
     "sections": {
-        "Alphabet": [            
+        "Alphabet": [
             {
                 "val": "a",
                 "key": "⠁"
@@ -117,7 +118,7 @@
                 "key": "⠵"
             }
         ],
-        "Digit": [            
+        "Digit": [
             {
                 "val": "0",
                 "key": "⠚"
@@ -188,7 +189,6 @@
                 "val": "DDG",
                 "key": "⠠⠠⠙⠙⠛"
             }
-            
         ]
     }
 }
