@@ -145,7 +145,8 @@ DDH.calendar_today.build = DDH.calendar_today.build_async =  function(ops, DDH_a
             id: "calendar",
             name: "Calendar",
             meta:{
-                idField: currentMonth,
+                idField: 'id',
+                selectedItem: currentMonth,
                 scrollToSelectedItem: true,
                 itemsHighlight: false 
             },
