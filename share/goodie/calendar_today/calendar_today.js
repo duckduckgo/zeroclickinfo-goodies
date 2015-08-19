@@ -1,6 +1,6 @@
 DDH.calendar_today = DDH.calendar_today || {}; // create the namespace in case it doesn't exist
 
-DDH.calendar_today.build = DDH.calendar_today.build_async =  function(ops, DDH_async_add) {
+DDH.calendar_today.build = function(ops, DDH_async_add) {
     var data = ops.data;
     var currentMonth = data.month,
             currentYear = data.year,
@@ -137,8 +137,6 @@ DDH.calendar_today.build = DDH.calendar_today.build_async =  function(ops, DDH_a
             // iterate to next month
             startDate = startDate.add(1, 'months');
         }
-
-        var f = DDH_async_add || Spice.add;        
 
         // add spice
         Spice.add({
