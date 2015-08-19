@@ -1,7 +1,7 @@
 {
     "id": "vi_cheat_sheet", 
     "name": "Vi",
-    "description": "Awesome Text Editor", 
+    "description": "Text Editor", 
     "metadata": { 
         "sourceName": "LagMonster",
         "sourceUrl": "http://www.lagmonster.org/docs/vi.html"
