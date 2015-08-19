@@ -2,6 +2,7 @@
     "name": "Rose Colour Meanings",
     "id": "rose_meanings_cheat_sheet",
     "description": "These are the common meanings for each rose petal colour",
+    "template_type": "reference",
     "metadata": {
         "sourceName": "Morrison Garden",
         "sourceUrl": "http://rkdn.org/roses/colors.asp"
