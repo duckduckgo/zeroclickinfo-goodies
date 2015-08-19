@@ -21,12 +21,12 @@ secondary_example_queries "calendar november",
                           "cal 29.11.1980",
                           "cal 1980-11-29";
 
-description "Print calendar of current / given month and highlight (to)day";
+description "Print calendar of given year and highlight today";
 name "Calendar Today";
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CalendarToday.pm';
 category "dates";
 topics "everyday";
-attribution email   => ['webmaster@quovadit.org', 'webmaster@quovadit.org'];
+attribution email   => ['webmaster@quovadit.org', 'j@rubinovitz.com'];
 triggers startend => 'calendar', 'cal';
 
 # define variables
