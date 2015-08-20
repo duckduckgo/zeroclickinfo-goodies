@@ -8,7 +8,7 @@
     },
     "section_order":[
         "Common",
-        "MATLAB Common Operator",
+        "MATLAB Common Operators",
         "MATLAB Operator Precedence",
         "Line Plot Styles"
     ],
@@ -103,7 +103,7 @@
                 "val":"Sets the <property> found in the object pointed at by <handle> to the specified <value>"
             }
         ],
-        "MATLAB Common Operator":[
+        "MATLAB Common Operators":[
             {
                 "key":"-",
                 "val":"Subtracts the right operand from the left operand."
