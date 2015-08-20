@@ -1,9 +1,9 @@
 {
     "id":"matlab_cheat_sheet",
-    "name":"matlab",
+    "name":"MATLAB",
     "description":"MATLAB is an incredibly flexible environment that you can use to perform all sorts of math tasks",
     "metadata":{
-        "sourceName":"Dummies",
+        "sourceName":"Matlab For Dummies",
         "sourceUrl":"http://www.dummies.com/how-to/content/matlab-for-dummies-cheat-sheet.html"
     },
     "section_order":[
