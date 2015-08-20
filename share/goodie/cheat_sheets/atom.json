@@ -1,109 +1,172 @@
 {
-    "id": "atom_cheat_sheet",
-    "name": "Atom",
-    "metadata": {
-        "sourceName": "Bugsnag",
-        "sourceUrl": "https://bugsnag.com/blog/atom-editor-cheat-sheet"
+    "id":"atom_cheat_sheet",
+    "name":"Atom",
+    "metadata":{
+        "sourceName":"Bugsnag",
+        "sourceUrl":"https://bugsnag.com/blog/atom-editor-cheat-sheet"
     },
-    "section_order": [
+    "section_order":[
         "General",
         "File Navigation",
-        "Commands for channel operators",
-        "Information"
+        "View/Window Manipulation",
+        "Find",
+        "Folding",
+        "Word Manipulation",
+        "Line Manipulation",
+        "Selection"
     ],
-    "sections": {
-        "General": [{
-            "key":"[shift] [⌘] [p]",
-            "val":"Toggle command palette"
-          }, {  
-            "key":"[⌘] [/]",
-            "val":"Toggle line / Selection comment"
-          }, {  
-            "key":"[ctrl] [space]",
-            "val":"Show available auto-completions"
-          }],
-        "File Navigation": [{  
-            "key":"[⌘] [p]",
-            "val":"Toggle file finder"
-          }, {  
-            "key":"[ctrl] [g]",
-            "val":"Goto line"
-          }, {  
-            "key":"[⌘] [r]",
-            "val":"Goto symbol"
-          },
-             {  
-            "key":"[shift] + [⌘] + [{ / }]",
-            "val":"Changing your password (You have to repeat this for all of your linked nicks, which can be found with msg NickServ info YOUR NICK)"
-          }, 
-             {
-              "key":"/topic NEW TOPIC",
-              "val":"Changing the topic of the channel (some channels restrict this command to operators)"
-          },
-             {  
-            "key":"/whois USERNAME",
-            "val":"Get more information on another user"
-          }, {  
-            "key":"/whois USERNAME USERNAME",
-            "val":"Get Idle time and signon time in addition to normal WHOIS (USERNAME repeated twice)"
-          }],
-        "Commands for channel operators": [{  
-            "key":"/msg ChanServ op #channel",
-            "val":"Opping yourself"
-          }, {  
-            "key":"/msg chanserv op #channel NICKNAME",
-            "val":"Opping another person"
-          }, {  
-            "key":"/mode #channel +o NICKNAME",
-            "val":"Opping another person (when opped)"
-          }, {  
-            "key":"/kick NICKNAME (reason)",
-            "val":"Kicking people"
-          },{  
-            "key":"/quote remove #CHANNEL NICKNAME :REASON",
-            "val":"Removing people (When opped)"
-          },{  
-            "key":"/mode #channel +q NAME",
-            "val":"Quieting another person (when opped)"
-          },{  
-            "key":"/msg ChanServ clear #channel ops",
-            "val":"Clearing ops"
-          },{  
-            "key":"/msg ChanServ clear #channel voices",
-            "val":"Clearing voices"
-          },{  
-            "key":"/msg chanserv op #channel -NAME",
-            "val":"Removing just one op"
-          },{  
-            "key":"/mode -o NAME",
-            "val":"Removing just one op (when opped)"
-          },{  
-            "key":"/msg ChanServ voice #channel -NAME",
-            "val":"Removing just one voice"
-          },{  
-            "key":"/msg nickserv ghost YourUsername yourpassword",
-            "val":"Ghosting Yourself"
-          } 
-            ],
-        "Information": [{  
-            "key":"/msg ChanServ access #channel list",
-            "val":"To see who has what access"
-          }, {  
-            "key":"/whois <nickname>",
-            "val":"When adding a user to the access list, note whether they own their current nick"
-          }, {
-            "val": "Various flags",
-            "key": "[None = default for anyone off the street]"
-        }, {
-            "val": "Various flags (alternative)",
-            "key": "[+votiA = ops]"
-        }, {
-            "val": "Various flags (alternative)",
-            "key": "[+votsriRfA - able to set access levels]"
-        }, {
-            "val": "Various flags (alternative)",
-            "key": "[+vVoOtsriRfAF = Channel founder]"
-        }
-          ]
+    "sections":{
+        "General":[
+            {
+                "key":"[shift] [⌘] [p]",
+                "val":"Toggle command palette"
+            },
+            {
+                "key":"[⌘] [/]",
+                "val":"Toggle line / Selection comment"
+            },
+            {
+                "key":"[ctrl] [space]",
+                "val":"Show available auto-completions"
+            }
+        ],
+        "File Navigation":[
+            {
+                "key":"[⌘] [p]",
+                "val":"Toggle file finder"
+            },
+            {
+                "key":"[ctrl] [g]",
+                "val":"Goto line"
+            },
+            {
+                "key":"[⌘] [r]",
+                "val":"Goto symbol"
+            },
+            {
+                "key":"[shift] [⌘] { / }",
+                "val":"Previous/next file"
+            },
+            {
+                "key":"[⌘] [F2]",
+                "val":"Set bookmark"
+            },
+            {
+                "key":"F2",
+                "val":"Goto next bookmark"
+            }
+        ],
+        "View/Window Manipulation":[
+            {
+                "key":"[⌘] [\\]",
+                "val":"Toggle tree-view sidebar"
+            },
+            {
+                "key":"[ctrl] [⌘] [f]",
+                "val":"Toggle fullscreen"
+            },
+            {
+                "key":"[⌘] [k]",
+                "val":"Split pane left/right/up/down"
+            }
+        ],
+        "Find":[
+            {
+                "key":"[⌘] [f]",
+                "val":"Find in file"
+            },
+            {
+                "key":"[⌘] [g]",
+                "val":"Find next"
+            },
+            {
+                "key":"[shift] [⌘] [f]",
+                "val":"Find in project"
+            },
+            {
+                "key":"[⌘] [e]",
+                "val":"Use selection for find"
+            }
+        ],
+        "Folding":[
+            {
+                "key":"[ctrl] [⌘] [/]",
+                "val":"Fold/unfold current code block"
+            },
+            {
+                "key":"[option] [shift] [⌘] [/]",
+                "val":"Fold/unfold all code blocks"
+            },
+            {
+                "key":"[⌘] [1..9]",
+                "val":"Fold code blocks at depth 1-9 "
+            }
+        ],
+        "Word Manipulation":[
+            {
+                "key":"[ctrl] [t]",
+                "val":"Transpose characters either side of cursor"
+            },
+            {
+                "key":"[option] [backspace]",
+                "val":"Delete text to beginning of word"
+            },
+            {
+                "key":"[option] [delete]",
+                "val":"Delete text to end of word"
+            }
+        ],
+        "Line Manipulation":[
+            {
+                "key":"[⌘] ] / [",
+                "val":"Indent/outdent current line"
+            },
+            {
+                "key":"[⌘] [enter]",
+                "val":"Insert new line after current line"
+            },
+            {
+                "key":"[⌘] [shift] [enter]",
+                "val":"Insert new line before current line"
+            },
+            {
+                "key":"[ctrl] [shift] [k]",
+                "val":"Delete current line"
+            },
+            {
+                "key":"[ctrl] [⌘] [(up/down)]",
+                "val":"Move current line up/down"
+            },
+            {
+                "key":"[shift] [⌘] [d]",
+                "val":"Duplicate current line"
+            },
+            {
+                "key":"[⌘] [j]",
+                "val":"Join current and next lines"
+            }
+        ],
+        "Selection":[
+            {
+                "key":"[⌘] [d]",
+                "val":"Select current word/token"
+            },
+            {
+                "key":"[⌘] [l]",
+                "val":"Select current line"
+            },
+            {
+                "key":"[option] [shift] [(left/right)]",
+                "val":"Select to beginning/end of word"
+            },
+            {
+                "key":"[shift] [⌘] [(left/right)]",
+                "val":"Select to first/last character of line"
+            },
+            {
+                "key":"[shift] [⌘] [(up/down)]",
+                "val":"Select to top/bottom of document"
+            }
+        ]
     }
 }
