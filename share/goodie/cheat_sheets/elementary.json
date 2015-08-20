@@ -5,6 +5,7 @@
         "sourceName":"Lme Linux",
         "sourceUrl":"http://lmelinux.net/2014/07/26/elementary-os-keyboard-shortcuts/"
     },
+    "aliases": [ "elementary os" ],
     "section_order":[
         "General"
     ],
