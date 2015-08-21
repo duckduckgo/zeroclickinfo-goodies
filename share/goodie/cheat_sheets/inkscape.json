@@ -146,6 +146,20 @@
                 "val": "Activate zoom field"
             }
         ],
+        "Documents" [
+            {
+                "key": "=,+",
+                "val": "Zoom in"               
+            }, 
+            {
+                "key": "-",
+                "val": "Zoom out"
+            }, 
+            {
+                "key": "Alt + Z",
+                "val": "Activate zoom field"
+            }
+        ],
         "Fill and stroke" [
             {
                 "key": "Ctrl + F1",
