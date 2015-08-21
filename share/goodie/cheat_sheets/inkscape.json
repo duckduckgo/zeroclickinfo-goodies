@@ -1,22 +1,15 @@
 {
-    // Required; must match the id of the cheat sheet's IA page
-    // For example, https://duck.co/ia/view/vim_cheat_sheet
     "id": "inkscape_cheat_sheet", 
 
-    // Required; displayed as title of AnswerBar
     "name": "Inkscape",
 
-    // Optional; displayed as subtitle of AnswerBar
     "description": "Vector Graphics Editor", 
     
-    // Required if cheat sheet has a source; useful to link users to further information.
-    // Displayed at bottom of AnswerBar, favicon shown automatically
     "metadata": { 
         "sourceName": "Inkscape keyboard and mouse reference",
-        "sourceUrl": "https://inkscape.org/en/doc/keys091.html" // Should be SSL if possible
+        "sourceUrl": "https://inkscape.org/en/doc/keys091.html"
     },
 
-    // Required; controls which sections appear and in what order
     "section_order": [  
         "Tools",
         "Grouping",
@@ -30,7 +23,6 @@
         "Moving, Scaling, Rotating"
     ],
 
-    // Required; section names must match those in section_order in order to appear
     "sections": {
         "Tools": [
             {
@@ -132,7 +124,7 @@
                 "val": "Select object in group"
             }
         ],        
-        "Zoom" [
+        "Zoom" : [
             {
                 "key": "=,+",
                 "val": "Zoom in"               
@@ -146,7 +138,7 @@
                 "val": "Activate zoom field"
             }
         ],
-        "Documents" [
+        "Documents" : [
             {
                 "key": "=,+",
                 "val": "Zoom in"               
@@ -160,7 +152,7 @@
                 "val": "Activate zoom field"
             }
         ],
-        "Fill and stroke" [
+        "Fill and stroke" : [
             {
                 "key": "Ctrl + F1",
                 "val": "Gradient tool"               
@@ -170,7 +162,7 @@
                 "val": "Dropper tool"
             }
         ],
-        "Selections" [
+        "Selections" : [
             {
                 "key": "Shift + Click",
                 "val": "Toggle selection"               
@@ -188,7 +180,7 @@
                 "val": "Select previous object"
             }
         ],
-        "Duplication, Alignement, Distribution" [
+        "Duplication, Alignement, Distribution" : [
             {
                 "key": "Ctrl + D",
                 "val": "Duplicate object"               
@@ -198,7 +190,7 @@
                 "val": "Align dialog"
             }
         ],
-        "Z-order" [
+        "Z-order" : [
             {
                 "key": "Home",
                 "val": "Raise selection to top"               
@@ -216,7 +208,7 @@
                 "val": "Lower selection one step"
             }
         ],
-        "Shapes" [
+        "Shapes" : [
             {
                 "key": "Ctrl + Shift + C",
                 "val": "Convert shape to path"               
@@ -230,7 +222,7 @@
                 "val": "Starting point is centre"
             }
         ],
-        "Moving, Scaling, Rotating" [
+        "Moving, Scaling, Rotating" : [
             {
                 "key": "Ctrl + Mouse",
                 "val": "Move selected object on the X axis OR the Y axis"               
@@ -239,6 +231,6 @@
                 "key": "<, >",
                 "val": "Scale selection up"
             }
-        ],
+        ]
     }
 }
