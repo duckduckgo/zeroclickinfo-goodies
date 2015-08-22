@@ -118,7 +118,7 @@
         ],
         "Line Manipulation":[
             {
-                "key":"[⌘] ] / [",
+                "key":"[⌘] {( \\] / \\[ )}",
                 "val":"Indent/outdent current line"
             },
             {
