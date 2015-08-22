@@ -7,13 +7,13 @@
         "sourceUrl":"http://www.dummies.com/how-to/content/matlab-for-dummies-cheat-sheet.html"
     },
     "section_order":[
-        "Common",
-        "MATLAB Common Operators",
-        "MATLAB Operator Precedence",
+        "Common Commands",
+        "Common Operators",
+        "Operator Precedence",
         "Line Plot Styles"
     ],
     "sections":{
-        "Common":[
+        "Common Commands":[
             {
                 "key":"cla",
                 "val":"Clears the current plot"
@@ -103,7 +103,7 @@
                 "val":"Sets the <property> found in the object pointed at by <handle> to the specified <value>"
             }
         ],
-        "MATLAB Common Operators":[
+        "Common Operators":[
             {
                 "key":"-",
                 "val":"Subtracts the right operand from the left operand."
@@ -213,7 +213,7 @@
                 "val":"Provided purely for the sake of completeness. This operator returns the same value that you provide as input."
             }
         ],
-        "MATLAB Operator Precedence":[
+        "Operator Precedence":[
             {
                 "key":"()",
                 "val":"Parentheses are used to group expressions and to override the default precedence so that you can force an operation of lower precedence (such as addition) to take precedence over an operation of higher precedence (such as multiplication)."
