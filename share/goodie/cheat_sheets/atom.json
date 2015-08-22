@@ -134,7 +134,7 @@
                 "val":"Delete current line"
             },
             {
-                "key":"[ctrl] [⌘] [(up/down)]",
+                "key":"[ctrl] [⌘] [( ↑ / ↓ )]",
                 "val":"Move current line up/down"
             },
             {
@@ -156,15 +156,15 @@
                 "val":"Select current line"
             },
             {
-                "key":"[option] [shift] [(left/right)]",
+                "key":"[option] [shift] [( ← / → )]",
                 "val":"Select to beginning/end of word"
             },
             {
-                "key":"[shift] [⌘] [(left/right)]",
+                "key":"[shift] [⌘] [( ← / → )]",
                 "val":"Select to first/last character of line"
             },
             {
-                "key":"[shift] [⌘] [(up/down)]",
+                "key":"[shift] [⌘] [( ↑ / ↓ )]",
                 "val":"Select to top/bottom of document"
             }
         ]
