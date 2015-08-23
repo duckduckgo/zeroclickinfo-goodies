@@ -1,15 +1,15 @@
-.calendar {
+.zci--calendar .calendar {
     text-align: center;
     line-height: 2.17;
     weight: 400;
     padding: 1.25em;
 }
 
-.calendar .calendar__header {
+.zci--calendar .calendar .calendar__header {
     clear:both;
 }
 
-.calendar .calendar__header .month-name{
+.zci--calendar .calendar .calendar__header .month-name{
     float:left;
     font-weight: 600;
     color: #333;
@@ -17,7 +17,7 @@
     font-size: 1.18em;
 }
 
-.calendar .calendar__header .year{
+.zci--calendar .calendar .calendar__header .year{
     float: right;
     font-weight: 300;
     color: #AAA;
@@ -25,20 +25,19 @@
     font-size: 1.18em;
 }
 
-
-.calendar .header-day{
+.zci--calendar .calendar .header-day{
     color: #AAA;
 }
 
-.calendar  .weekend {
+.zci--calendar .calendar  .weekend {
    color: #888; 
 }
 
-.calendar .weekday{
+.zci--calendar .calendar .weekday{
     color: #333;
 }
 
-.calendar .today{
+.zci--calendar .calendar .today{
     background-color:#de5833;
     display: inline-table;
     text-align: center; 
@@ -51,53 +50,14 @@
     font-weight: lighter;
 }
 
-.calendar .adj-month{
+.zci--calendar .calendar .adj-month{
     color: #aaa;
 }
 
-.calendar th, .calendar td {
+.zci--calendar .calendar th, .calendar td {
     width: 2.5em;
     text-align: center;
     height: 2.17em;
     position: relative;
     font-weight: 400;
 }
-
-
-/*
-.zci--answer .calendar__today {
-    color: white;
-    background-color: #808080;
-}
-
-.zci--answer .calendar .circle {
-    display: inline-block;
-    line-height: 1.6em;
-    text-align: center;
-    width: 1.6em;
-}
-
-.zci--answer .calendar a {
-    color: white;
-    font-size: 1.1em;
-}
-
-.zci--answer .calendar .t_left {
-    position: absolute;
-    left:0.4em;
-    background-color: #bfbfbf;
-}
-
-.zci--answer .calendar .t_right {
-    position: absolute;
-    right:0.4em;
-    background-color: #bfbfbf;
-}
-
-.zci--answer .ddgsi-arrow-left {
-    font-size: 0.75em;
-}
-
-.zci--answer .ddgsi-arrow-right {
-    font-size: 0.75em;
-} */
