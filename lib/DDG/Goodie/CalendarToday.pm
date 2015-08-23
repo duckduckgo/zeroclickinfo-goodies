@@ -6,7 +6,6 @@ use DDG::Goodie;
 use DateTime;
 use Try::Tiny;
 use Text::Trim;
-use URI::Escape::XS qw(encodeURIComponent);
 
 with 'DDG::GoodieRole::Dates';
 
