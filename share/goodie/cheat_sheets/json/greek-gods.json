@@ -1,7 +1,7 @@
 {
     "id": "greek_gods_cheat_sheet",
-    "name": "Greek God Names",
-    "description": "Names of Greek Gods and their dominion",
+    "name": "Greek Gods",
+    "description": "Names of Greek Gods and their dominion(s)",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Greek_mythological_figures#Major_gods_and_goddesses"
