@@ -1,13 +1,12 @@
 {
     "id": "nikto_cheat_sheet",
     "name": "Nikto",
-    "description": "A Nikto is perl based vulnerability scanner that scans webserver for thousands of vulnerabilities and other known issues",
+    "description": "A Nikto is perl based vulnerability scanner that scan webservers for thousand of vulnerabilities and other known issues",
     "metadata": {
         "sourceName": "r00tsec",
-        "sourceName_1": "cirt",
-        "sourceUrl": "http://www.r00tsec.com/2014/06/cheatsheet-nikto-cheat-sheet.html",
-        "sourceUrl_1": "https://cirt.net/nikto2-docs/options.html#id2741238"
+        "sourceUrl": "http://www.r00tsec.com/2014/06/cheatsheet-nikto-cheat-sheet.html"
     },
+    "template_type": "terminal,
     "section_order": [
         "Installation",
         "Display Options",
@@ -21,11 +20,11 @@
     "sections": {
         "Installation": [
             {
-                "val": "Install nikto on ubuntu",
+                "val": "Install Nikto on Ubuntu",
                 "key": "sudo apt-get install nikto"
             },
             {
-                "val": "Install nikto on windows (On windows first install the perl interpreter)",
+                "val": "Install Nikto on windows (On windows first install the perl interpreter)",
                 "key": "C:\\pentest\\nikto-2.1.5>perl nikto.pl -h example.com"
             },
             {
@@ -277,7 +276,7 @@
                 "key": "-dbcheck"
             },
              {
-                "val": "Specify an alternative config file to use instead of the nikto.conf file located in the install directory",
+                "val": "Specify an alternative config file to use instead of the Nikto.conf file located in the install directory",
                 "key": "-config"
             },
             {
