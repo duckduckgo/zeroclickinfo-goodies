@@ -145,7 +145,8 @@ DDH.calendar_today.build_async = function(ops, DDH_async_add) {
                 idField: 'id',
                 selectedItem: currentMonth,
                 scrollToSelectedItem: true,
-                itemsHighlight: false 
+                itemsHighlight: false,
+                itemType: 'months'
             },
             data: items,
             templates: {
