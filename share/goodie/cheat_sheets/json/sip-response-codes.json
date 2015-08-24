@@ -1,11 +1,11 @@
 {
     "id": "sip_response_codes_cheat_sheet",
-    "name": "SIP Response Codes Cheat Sheet",  
+    "name": "SIP Response Codes",
     "metadata":{
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_SIP_response_codes"
     },
-	"aliases": [
+    "aliases": [
         "sip status codes"
     ],
     "template_type": "reference",
@@ -18,7 +18,7 @@
         "6xx - Global Failure Responses"
     ],
     "sections":{
-        "1xx - Provisional Responses":[{  
+        "1xx - Provisional Responses":[{
                   "key":"100 Trying",
                   "val":"Extended search being performed may take a significant time so a forking proxy must send a 100 Trying response."
                },{  
@@ -37,7 +37,7 @@
                   "key":"199 Early Dialog Terminated",
                   "val":"Can be used by User Agent Server to indicate to upstream SIP entities (including the User Agent Client (UAC)) that an early dialog has been terminated."
                }],
-        "2xx - Successful Responses":[{  
+        "2xx - Successful Responses":[{
                   "key":"200 OK",
                   "val":"Indicates the request was successful."
                },{  
@@ -47,7 +47,7 @@
                   "key":"204 No Notification",
                   "val":"Indicates the request was successful, but the corresponding response will not be received."
                }],
-        "3xx - Redirection Responses":[{  
+        "3xx - Redirection Responses":[{
                   "key":"300 Multiple Choices",
                   "val":"The address resolved to one of several options for the user or client to choose between, which are listed in the message body or the message's Contact fields."
                },{  
@@ -63,7 +63,7 @@
                   "key":"380 Alternative Service",
                   "val":"The call failed, but alternatives are detailed in the message body."
                }],
-        "4xx - Client Failure Responses":[{  
+        "4xx - Client Failure Responses":[{
                   "key":"400 Bad Request",
                   "val":"The request could not be understood due to malformed syntax."
                },{  
@@ -199,7 +199,7 @@
                   "key":"494 Security Agreement Required",
                   "val":"The server has received a request that requires a negotiated security mechanism, and the response contains a list of suitable security mechanisms for the requester to choose between, or a digest authentication challenge."
                }],
-        "5xx - Server Failure Responses":[{  
+        "5xx - Server Failure Responses":[{
                   "key":"500 Server Internal Error",
                   "val":"The server could not fulfill the request due to some unexpected condition."
                },{  
@@ -224,7 +224,7 @@
                   "key":"580 Precondition Failure",
                   "val":"The server is unable or unwilling to meet some constraints specified in the offer."
                }],
-        "6xx - Global Failure Responses":[{  
+        "6xx - Global Failure Responses":[{
                   "key":"600 Busy Everywhere",
                   "val":"All possible destinations are busy. Unlike the 486 response, this response indicates the destination knows there are no alternative destinations (such as a voicemail server) able to accept the call."
                },{  
