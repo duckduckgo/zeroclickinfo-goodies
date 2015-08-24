@@ -1,6 +1,6 @@
 {
-    "id": "gnome_keyboard_cheat_sheet", 
-    "name": "GNOME Keyboard Shortcuts",
+    "id": "gnome_cheat_sheet", 
+    "name": "GNOME",
     "description": "List of useful keyboard shortcuts for GNOME", 
     "metadata": {
         "sourceName": "GNOME Help",
