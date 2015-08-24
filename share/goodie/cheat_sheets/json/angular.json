@@ -3,7 +3,7 @@
     "name": "Angular js directives",
     "description": "Extended HTML attributes",
     "metadata": {
-        "sourceName": "Angular js Directives",
+        "sourceName": "AngularDirectiveCommands",
         "sourceUrl": "https://docs.angularjs.org/api/ng/directive"
     },
     "template_type": "reference",
