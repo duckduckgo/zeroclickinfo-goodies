@@ -1,6 +1,4 @@
-                                                                                                                                                               
-# Goodie Cheat Sheet Pull Request Template
-                                                                                                                                                                 
+                                                                                                                                                                                                                              
 Using this template will help us better understand your Instant Answer and assist you when necessary.  Simply copy 
 and paste the markdown below into the descrip$
                                                                                                                                                                  
