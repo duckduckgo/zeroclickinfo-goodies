@@ -11,19 +11,19 @@ zci is_cached   => 1;
 
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "AngularDirectiveCommands";
-description "Succinct explanation of what this instant answer does";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
+source "https://docs.angularjs.org/api/ng/directive";
+description "Angular Js directives commands for reference to the developers to use it in their  application";
+primary_example_queries "angular cheat sheet", "angular commands,angular command";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#category
-# category "";
+ category "reference";
 # Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-# topics "";
+ topics "programming","computing";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/AngularDirectiveCommands.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
+attribution github => ["SibuStephen", "sibu Stephen"],
+            twitter =>"sibustephen";
 
 # Triggers
-triggers any => "triggerWord", "trigger phrase";
+triggers any => "duckduckhack", "sibu stephen";
 
 # Handle statement
 handle remainder => sub {
@@ -31,9 +31,9 @@ handle remainder => sub {
     # optional - regex guard
     # return unless qr/^\w+/;
 
-    return unless $_; # Guard against "no answer"
+   
 
-    return $_;
-};
+    return "sibu stephen suggested this feature";
+};};
 
 1;
