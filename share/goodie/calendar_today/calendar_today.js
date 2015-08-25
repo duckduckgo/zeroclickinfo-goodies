@@ -3,8 +3,7 @@ DDH.calendar_today = DDH.calendar_today || {}; // create the namespace in case i
 DDH.calendar_today.build_async = function(ops, DDH_async_add) {
     var data = ops.data;
     var currentMonth = data.month,
-            currentYear = data.year,
-            currentDay = data.day;
+            currentYear = data.year;
     DDG.require('moment.js', function(){
         var classes = {
             today: 'today circle',

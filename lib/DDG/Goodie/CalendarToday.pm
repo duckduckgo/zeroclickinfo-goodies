@@ -39,7 +39,7 @@ my $relative_dates_regex       = relative_dates_regex();
 handle remainder => sub {
     my $query       = $_;
     my $date_object = DateTime->now;
-    my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
+    my ($currentMonth, $currentYear) = ($date_object->month(), $date_object->year());
     my $highlightDay = 0;                  # Initialized, but won't match, by default.
     $query =~ s/$filler_words_regex//g;    # Remove filler words.
     $query =~ s/\s{2,}/ /g;                # Tighten up any extra spaces we may have left.
@@ -51,7 +51,7 @@ handle remainder => sub {
         $date_object = parse_datestring_to_date($date_string);
         # check if our date regex figured out the date
         if ($date_object){
-            my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
+            my ($currentMonth, $currentYear) = ($date_object->month(), $date_object->year());
         } else {
             # check if 4 digit year is being queried e.g. cal 1999
             if ($query =~ qr/^\d{4}$/){
@@ -71,7 +71,6 @@ handle remainder => sub {
             name => 'Answer',
             data => {
                 month => $the_month,
-                day => $currentDay,
                 year => $the_year
             },
             templates => {
