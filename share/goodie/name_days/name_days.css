@@ -9,7 +9,8 @@
     width: 75%;
 }
 
-.zci--name_days .name-days-country-name, .zci--name_days .name-days-tile {
+.zci--name_days .name-days-country-name,
+.zci--name_days .name-days-tile {
     line-height: 1.6;
 }
 
@@ -22,13 +23,15 @@
     vertical-align: middle;
 }
 
-.zci--name_days .name-days-country, .zci--name_days .name-days-dates {
+.zci--name_days .name-days-country,
+.zci--name_days .name-days-dates {
     border-bottom: solid 1px #DDD;
     padding-top: 0.3em;
     padding-bottom: 0.3em;
 }
 
-tr:last-of-type .zci--name_days .name-days-country, tr:last-of-type .zci--name_days .name-days-dates {
+.zci--name_days tr:last-of-type .name-days-country,
+.zci--name_days tr:last-of-type .name-days-dates {
     border-bottom: none;
 }
 
