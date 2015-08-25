@@ -47,8 +47,11 @@
             "val":"Complete and move to history a sub-task or a recurring task"
           }],
         "General shortcuts": [{
-            "key":"[Ctrl] [Click] or [Shift] [Click]",
+            "key":"[Ctrl] [Click]",
             "val":"Select and update multiple tasks"
+          }, {
+            "key":"[Shift] [Click]",
+            "val":"Select and update multiple tasks (alternative)"
           }, {
             "key":"[Click] on task",
             "val":"Edit the task"
