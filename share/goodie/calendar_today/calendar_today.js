@@ -16,8 +16,8 @@ DDH.calendar_today.build_async = function(ops, DDH_async_add) {
          * @param {moment object} day
          * @return {Object} day, classes, date
          */
-        var createDayObject = function(day) {
-            var now = moment();
+        var createDayObject = function(day, currentIntervalStart) {
+            var now = moment(), currentIntervalStart;
 
             // validate moment date
             if (!day.isValid() && day.hasOwnProperty('_d') && day._d !== undefined) {
@@ -81,7 +81,7 @@ DDH.calendar_today.build_async = function(ops, DDH_async_add) {
                 endOfNextMonth = startOfNextMonth.clone().endOf('month');
 
             // get start date to iterate from
-            currentIntervalStart = startDate.clone();
+            var currentIntervalStart = startDate.clone();
                         
             // get diff between start day and 7
             var diff = startDate.weekday();
@@ -90,26 +90,26 @@ DDH.calendar_today.build_async = function(ops, DDH_async_add) {
             // push previous days
             for (var i = 0; i < diff; i++) {
             var day = moment([startDate.year(), startDate.month(), i - diff + 1]);
-                daysArray.push(createDayObject(day));
+                daysArray.push(createDayObject(day, currentIntervalStart));
             }
 
             // push all of the days in the interval
             var dateIterator = startDate.clone();
             while (dateIterator.isBefore(endDate) || dateIterator.isSame(endDate, 'day')) {
-                daysArray.push(createDayObject(dateIterator.clone()) );
+                daysArray.push(createDayObject(dateIterator.clone(), currentIntervalStart) );
                 dateIterator.add(1, 'days');
             }
 
             // pad last row until it has a full 7 days
             while (daysArray.length % 7 !== 0) {
-                daysArray.push(createDayObject(dateIterator.clone()));
+                daysArray.push(createDayObject(dateIterator.clone(), currentIntervalStart));
                 dateIterator.add(1, 'days');
             }
 
             // make sure we have 5 rows of 7 days (42) so each tile is even
             if (daysArray.length !== 42 ) {
                 while(daysArray.length < 42) {
-                    daysArray.push( createDayObject(dateIterator.clone()) );
+                    daysArray.push( createDayObject(dateIterator.clone(), currentIntervalStart) );
                     dateIterator.add(1, 'days');
                 }
             }
