@@ -21,19 +21,19 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ['http://github.com/wilkox', 'wilkox'],
             github => ['https://github.com/Sloff', 'Sloff'];
 
-my %animal_to_language = (
-    'hare' => { en => 'Rabbit', zh => '兔' },
-    'dragon' => { en => 'Dragon', zh => '龙' },
-    'snake' => { en => 'Snake', zh => '蛇' },
-    'horse' => { en => 'Horse', zh => '马' },
-    'sheep' => { en => 'Goat', zh => '羊' },
-    'monkey' => { en => 'Monkey', zh => '猴' },
-    'fowl' => { en => 'Rooster', zh => '鸡' },
-    'dog' => { en => 'Dog', zh => '狗' },
-    'pig' => { en => 'Pig', zh => '猪' },
-    'rat' => { en => 'Rat', zh => '鼠' },
-    'ox' => { en => 'Ox', zh => '牛' },
-    'tiger' => { en => 'Tiger', zh => '虎' }
+my %animal_to_language_and_path = (
+    'hare' => { en => 'Rabbit', zh => '兔' , path => "share/goodie/chinese_zodiac/rabbit.png"},
+    'dragon' => { en => 'Dragon', zh => '龙' , path => "share/goodie/chinese_zodiac/dragon.png"},
+    'snake' => { en => 'Snake', zh => '蛇' , path => "share/goodie/chinese_zodiac/snake.png"},
+    'horse' => { en => 'Horse', zh => '马' , path => "share/goodie/chinese_zodiac/horse.png"},
+    'sheep' => { en => 'Goat', zh => '羊' , path => "share/goodie/chinese_zodiac/goat.png"},
+    'monkey' => { en => 'Monkey', zh => '猴' , path => "share/goodie/chinese_zodiac/monkey.png"},
+    'fowl' => { en => 'Rooster', zh => '鸡' , path => "share/goodie/chinese_zodiac/rooster.png"},
+    'dog' => { en => 'Dog', zh => '狗' , path => "share/goodie/chinese_zodiac/dog.png"},
+    'pig' => { en => 'Pig', zh => '猪' , path => "share/goodie/chinese_zodiac/pig.png"},
+    'rat' => { en => 'Rat', zh => '鼠' , path => "share/goodie/chinese_zodiac/rat.png"},
+    'ox' => { en => 'Ox', zh => '牛' , path => "share/goodie/chinese_zodiac/ox.png"},
+    'tiger' => { en => 'Tiger', zh => '虎' , path => "share/goodie/chinese_zodiac/tiger.png"}
 );
 
 my $chinese_zodiac_tz            = 'Asia/Shanghai';
@@ -80,28 +80,34 @@ handle remainder => sub {
     my $year_end = chinese_new_year_after($date_gregorian)->subtract(days => 1)->set_time_zone($chinese_zodiac_tz);
 
     my $animal = $year_chinese->zodiac_animal;
-    my $english = $animal_to_language{$animal}{'en'};
-    my $character = $animal_to_language{$animal}{'zh'};
+    my $english = $animal_to_language_and_path{$animal}{'en'};
+    my $character = $animal_to_language_and_path{$animal}{'zh'};
+    my $path = $animal_to_language_and_path{$animal}{'path'};
 
     my $statement = $year_start->strftime("%b %d, %Y") . " – " . $year_end->strftime("%b %d, %Y");
 
-    return format_answer($character, $english, $statement);
+    return format_answer($character, $english, $statement, $path);
 };
 
 sub format_answer {
-    my ($character, $english, $statement) = @_;
+    my ($character, $english, $statement, $path) = @_;
 
     return "$character ($english)", structured_answer => {
         id => "chinese_zodiac",
         name => "Chinese Zodiac",
         data => {
             title => "$character ($english)",
-            subtitle => $statement
+            subtitle => $statement,
+            image => $path
         },
         templates => {
-            group => "text",
+            group => "icon",
             item => 0,
-            moreAt => 1
+            moreAt => 1,
+            variants => {
+                iconTitle => 'large',
+                iconImage => 'large'
+            }
         },
         meta => {
             sourceName => "Wikipedia",
