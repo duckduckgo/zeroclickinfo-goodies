@@ -54,7 +54,7 @@ handle remainder => sub {
             my ($currentDay, $currentMonth, $currentYear) = ($date_object->day(), $date_object->month(), $date_object->year());
         } else {
             # check if 4 digit year is being queried e.g. cal 1999
-            if ($query =~ qr/\d\d\d\d/){
+            if ($query =~ qr/^\d{4}$/){
                 $date_object = DateTime->now->set_year($query);
             }
         }
