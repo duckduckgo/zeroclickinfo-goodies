@@ -7,18 +7,18 @@
         "sourceUrl": "https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/MenuCommands/MenuCommands014.html"
     },
     "section_order": [
-        "Xcode menu command",
-        "File menu command",
-        "Edit menu command",
-        "View menu command",
-        "Navigate menu command",
-        "Editor menu command",
-        "Product menu command",
-        "Window menu command",
-        "Help menu command"
+        "Xcode Menu",
+        "File Menu",
+        "Edit Menu",
+        "View Menu",
+        "Navigate Menu",
+        "Editor Menu",
+        "Product Menu",
+        "Window Menu",
+        "Help Menu"
     ],
     "sections": {
-        "Xcode menu command": [
+        "Xcode Menu": [
             {
                 "key": "⌘",
                 "val": "Preferences"
@@ -36,7 +36,7 @@
                 "val": "Quit Xcode"
             }
         ],
-        "File menu command": [
+        "File Menu": [
             {
                 "key": "[⌘] [T]",
                 "val": "New Tab"
@@ -134,7 +134,7 @@
                 "val": "Print"
             }
         ],
-        "Edit menu command": [
+        "Edit Menu": [
             {
                 "key": "[⌘] [Z]",
                 "val": "Undo"
@@ -220,7 +220,7 @@
                 "val": "Show Spelling and Grammar"
             }
         ],
-        "View menu command": [
+        "View Menu": [
             {
                 "key": "[⌘] [1]",
                 "val": "Project"
@@ -270,7 +270,7 @@
                 "val": "Show Related Items"
             }
         ],
-        "Navigate menu command": [
+        "Navigate Menu": [
             {
                 "key": "[⌘] [L]",
                 "val": "Reveal in Project Navigator"
@@ -296,7 +296,7 @@
                 "val": "Jump To"
             }
         ],
-        "Editor menu command": [
+        "Editor Menu": [
             {
                 "key": "[Control] [⌘] [A]",
                 "val": "Add Attribute"
@@ -314,7 +314,7 @@
                 "val": "Comment Selection"
             }
         ],
-        "Product menu command": [
+        "Product Menu": [
             {
                 "key": "[⌘] [R]",
                 "val": "Run"
@@ -328,7 +328,7 @@
                 "val": "Build"
             }
         ],
-        "Window menu command": [
+        "Window Menu": [
             {
                 "key": "[⌘] [M]",
                 "val": "Minimize"
@@ -338,7 +338,7 @@
                 "val": "Welcome to Xcode"
             }
         ],
-        "Help menu command": [
+        "Help Menu": [
             {
                 "key": "[Control] [⌘] [?]",
                 "val": "Quick Help"
