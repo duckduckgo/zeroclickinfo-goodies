@@ -14,6 +14,7 @@
         "2xx - Successful Responses",
         "3xx - Redirection Responses",
         "4xx - Client Failure Responses",
+        "4xx - Client Failure Responses (continued)",
         "5xx - Server Failure Responses",
         "6xx - Global Failure Responses"
     ],
@@ -156,7 +157,8 @@
                },{
                   "key":"439 First Hop Lacks Outbound Support",
                   "val":"The first outbound proxy the user is attempting to register through does not support the \"outbound\" feature of RFC 5626, although the registrar does."
-               },{
+               }],
+        "4xx - Client Failure Responses (continued)":[{
                   "key":"470 Consent Needed",
                   "val":"The source of the request did not have the permission of the recipient to make such a request."
                },{
