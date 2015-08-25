@@ -1,0 +1,205 @@
+{
+    "id": "atom_cheat_sheet",
+    "name": "Atom Text Editor",
+    "description": "Atom Keyboard Shortcuts ",
+    "metadata": {
+        "sourceName": "ShortcutWorld",
+        "sourceUrl": "http://www.shortcutworld.com/en/linux/Atom-%28text-editor%29_1.0.html"
+    },
+    "section_order": [
+        "General",
+        "File Management",
+        "Editing Lines",
+        "Find and Replace",
+        "Code Folding",
+        "Github Integration",
+        "selection"
+    ],
+    "sections": {
+        "General": [{
+            "key":"[Shift] [Ctrl] [P]",
+            "val":"Toggle command palette"
+          }, {
+            "key":"[Ctrl] [/]",
+            "val":"Toggle line/selection comment"
+          }, {
+            "key":"[Ctrl] [S]",
+            "val":"Save"
+          }, {
+            "key":"[Ctrl] [Shift] [S]",
+            "val":"Save as"
+          },
+              {
+             "key":"[Ctrl] [Space]",
+             "val":"Show available auto-completions"
+          },
+              {
+            "key":"[Ctrl] [Shift] [N]",
+            "val":"New file in new window"
+          }, {
+            "key":"[Ctrl] [Shift] [P]",
+            "val":"Command pallette"
+          }, {
+            "key":"[Ctrl] [W]",
+            "val":"Close current file"
+        }, {
+            "key":"[Ctrl] [Shift] [W]",
+            "val":"Close current window"
+        }],
+        "File Management": [{
+            "key":"[Ctrl] [P]",
+            "val":"Toggle file finder"
+          }, {
+            "key":"[Ctrl] [G]",
+            "val":"Goto line"
+          }, {
+            "key":"[Ctrl] [R]",
+            "val":"Goto symbol"
+          }, {
+            "key":"[Ctrl] [K], [C]",
+            "val":"Goto current selection"
+          }, {
+            "key":"[Ctrl] ([↑]/[↓])",
+            "val":"Move current line up/down"
+          }, {
+            "key":"[Ctrl] [F2]",
+            "val":"Set Bookmark"
+          }, {
+            "key":"[Ctrl] [Shift] [F2]",
+            "val":"Clear all bookmarks"
+          }, {
+            "key":"F2",
+            "val":"Goto next bookmark"
+        }],
+
+        "Editing Lines": [{
+            "key":"[Ctrl] [K], [B]",
+            "val":"Show/Hide Sidebar"
+          }, {
+            "key":"F11",
+            "val":"Fullscreen"
+          }, {
+            "key":"[Ctrl] [K] [←] [↑] [→] [↓]",
+            "value":"Split pane left/right/up/down"
+
+          },  {
+            "key":"[Ctrl] [G]",
+            "value":"Go to line"
+          }, {
+            "key":"Duplicate line",
+            "value":"[Ctrl] [Shift] [D]"
+          },{
+            "key":"[Ctrl] [Shift] [D]",
+            "value":"Join Lines"
+          }
+        ],
+        "Find and Replace": [{
+            "key":"[Ctrl] [F]",
+            "val":"Find"
+          }, {
+            "key":"F3",
+            "val":"Find Next"
+          }, {
+            "key":"[Ctrl] [F3]",
+            "val":"Find previous"
+          }, {
+            "key":"[Ctrl] [I]",
+            "val":"Incremental find"
+          }, {
+            "key":"[Ctrl] [H]",
+            "val":"Replace"
+          }, {
+            "key":"[Ctrl] [Shift] [H]",
+            "val":"Replace next"
+          }, {
+            "key":"[Ctrl] [F3]",
+            "val":"Quick Find (find current word)"
+          }, {
+            "key":"[Alt] [F3]",
+            "val":"Quick find all"
+          }, {
+            "key":"[Ctrl] [E]",
+            "val":"Use selection for find"
+          }, {
+            "key":"[Ctrl] [Shift] [E]",
+            "val":"Use selection for replace"
+          }, {
+            "key":"[Ctrl] [Shift] [F]",
+            "val":"Find in files"
+          }, {
+            "key":"F4",
+            "val":"Next result (find in files)"
+          }, {
+            "key":"[Shift] [F4]",
+            "val":"Previous result (find in files)"
+        }],
+        "Code Folding": [{
+            "key":"[Ctrl] ([\\[]\/[\\]])",
+            "val":"Fold/expand"
+          }, {
+            "key":"[Ctrl] [K], [J]",
+            "val":"Unfold all"
+          }, {
+            "key":"[Ctrl] [K], [1]",
+            "val":"Fold all"
+          }, {
+            "key":"[Ctrl] ([2]-[9])",
+            "val":"Fold level X"
+          }, {
+            "key":"[Ctrl] [K], [T]",
+            "val":"Fold tag attributes"
+        }],
+           "Github Integration": [{
+            "key":"[Alt] [G] [B])",
+            "val":"Open on Github : blame"
+          }, {
+            "key":"[Alt] [G] [C])",
+            "val":"Open on Github: copy-url"
+          }, {
+            "key":"[Alt] [G] [G])",
+            "val":"Open on Github: repository"
+          }, {
+            "key":"[Alt] [G] [H])",
+            "val":"Open on Github: history"
+          }, {
+            "key":"[Alt] [G] [I])",
+            "val":"Open on Github: issues"
+          }, {
+             "key":"[Alt] [G] [R])",
+            "val":"Open on Github: branch-compare"
+        }],
+
+        "Selection": [{
+            "key":"[Ctrl] [D]",
+            "val":"Quick select (repeat to add next)"
+          }, {
+            "key":"[Ctrl] [U]",
+            "val":"Undo quick select"
+          }, {
+            "key":"[Ctrl] [K], [D]",
+            "val":"Skip and quick add next"
+          }, {
+            "key":"[Ctrl] [Shift] [L]",
+            "val":"Split into lines (adds cursor to each line of current selection)"
+          }, {
+            "key":"[Alt] [Ctrl] ([↑]/[↓])",
+            "val":"Add previous/next line"
+          }, {
+            "key":"[Ctrl] [L]",
+            "val":"Expand selection to line"
+          }, {
+            "key":"[Ctrl] [Shift] [Space]",
+            "val":"Expand selection to scope"
+          }, {
+            "key":"[Ctrl] [Shift] [M]",
+            "val":"Expand selection to brackets"
+          }, {
+            "key":"[Ctrl] [Shift] [J]",
+            "val":"Expand selection to indent­ation"
+          }, {
+            "key":"[Ctrl] [Shift] [A]",
+            "val":"Expand selection to tag"
+          }
+        ]
+    }
+}
