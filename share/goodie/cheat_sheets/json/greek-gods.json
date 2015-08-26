@@ -1,16 +1,16 @@
 {
-    "id": "greek_gods_cheat_sheet",
-    "name": "Greek Gods",
-    "description": "Names of Greek Gods and their dominion(s)",
+    "id": "greek_roman_gods_cheat_sheet",
+    "name": "Greek and Roman Gods",
+    "description": "Names of Greek and Roman Gods and their dominion(s)",
     "metadata": {
         "sourceName": "Wikipedia",
-        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Greek_mythological_figures#Major_gods_and_goddesses"
+        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Greek_mythological_figures#Major_gods_and_goddesses",
     },
-    "aliases":["greek-gods"],
+    "aliases":["greek gods", "roman gods", "greek and roman gods", "roman and greek gods"],
     "template_type": "reference",
-    "section_order": ["Gods"],
+    "section_order": ["Greek Gods", "Roman Gods"],
     "sections": {
-        "Gods": [{
+        "Greek Gods": [{
             "val": "Goddess of love, beauty, desire, sex and pleasure",
             "key": "Aphrodite"
         }, {
@@ -52,6 +52,31 @@
         }, {
             "val": "King and father of the gods, the ruler of Mount Olympus and the god of the sky, weather, thunder, lightning, law, order, and justice",
             "key": "Zeus"
+        }],
+        "Roman Gods": [{
+            "val": "Roman God of the Sky, thunderstorms, lightning, weather, air, law, order, justice, governance and strength",
+            "key": "Jupiter"
+        }, {
+            "val": "Goddess of Marriage and Women",
+            "key": "Juno"
+        }, {
+            "val": "God of War, Spring and Justice",
+            "key": "Mars"
+        }, {
+            "val": "Goddess of Love and consort of Mars",
+            "key": "Venus"
+        }, {
+            "val": "Goddess of War, Conquest and Peace",
+            "key": "Bellona"
+        }, {
+            "val": "Goddess of Wisdom, Divine Counsel, Useful Arts and Crafts",
+            "key": "Minerva"
+        }, {
+            "val": "God of Beginnings, Endings, Transition, Doorways and Keys",
+            "key": "Janus"
+        }, {
+            "val": "Goddess of the Home and the Hearth",
+            "key": "Vesta"
         }]
     }
 }
