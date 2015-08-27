@@ -8,15 +8,15 @@
 	    },
 	    "template_type": "terminal",
 	    "section_order": [
-	        "database commands",
-	        "core commands",
-	        "meterpreter core and file system",
-	        "meterpreter user interface commands",
-	        "meterpreter system commands",
-	        "meterpreter priv commands"
+	        "Database Commands",
+	        "Core Commands",
+	        "Meterpreter Core and File System",
+	        "Meterpreter User Interface Commands",
+	        "Meterpreter System Commands",
+	        "Meterpreter Priv Commands"
 	    ],
-	    "sections": {
-	        "database commands": [{
+	    "Sections": {
+	        "Database Commands": [{
 	            "val": "connect database",
 	            "key": "db_connect"
 	        },
@@ -64,7 +64,7 @@
 	            "val": "nmap scan into database",
 	            "key": "db_nmap"
 	        }],
-	        "core commands": [{
+	        "Core Commands": [{
 	            "val": "display help",
 	            "key": "?"
 	        },
@@ -200,7 +200,7 @@
 	            "val": "show metasploit info",
 	            "key": "version"
 	        }],
-	        "meterpreter core and file system": [{
+	        "Meterpreter Core and File System[{
 	            "val": "background the current session",
 	            "key": "background"
 	        },
@@ -324,7 +324,7 @@
 	            "val": "upload file to target",
 	            "key": "upload"
 	        }],
-	        "meterpreter user interface commands": [{
+	        "Meterpreter User Interface Commands": [{
 	            "val": "list all accessible desktops and window stations",
 	            "key": "enumdesktops"
 	        },
@@ -360,7 +360,7 @@
 	            "val": "control some of the user interface components",
 	            "key": "uictl"
 	        }],
-	        "meterpreter system commands": [{
+	        "Meterpreter System Commands": [{
 	            "val": "clear the event log",
 	            "key": "clearev"
 	        },
@@ -420,7 +420,7 @@
 	            "val": "gets information about the remote system",
 	            "key": "sysinfo"
 	        }],
-	        "meterpreter priv commands": [{
+	        "Meterpreter Priv Commands": [{
 	            "val": "list webcams",
 	            "key": "webcam_list"
 	        },
