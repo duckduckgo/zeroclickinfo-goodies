@@ -6,6 +6,7 @@
         "sourceName": "Mac keyboard shortcuts",
         "sourceUrl": "https://support.apple.com/en-us/HT201236"
     },
+    "template_type": "keyboard",
     "section_order" : ["General", "Finder", "Text Editing", "Web Browsing (Works on most modern browsers)", "Spotlight", "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)"],
     "sections":{
         "Finder": [{

@@ -6,6 +6,7 @@
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com"
     },
+    "template_type": "keyboard",
     "section_order": [
         "General",
         "File Navigation",

@@ -5,6 +5,7 @@
         "sourceName": "VideoLAN",
         "sourceUrl": "https://wiki.videolan.org/Hotkeys_table"
     },
+    "template_type": "keyboard",
     "section_order": [
         "General",
         "Mouse actions",

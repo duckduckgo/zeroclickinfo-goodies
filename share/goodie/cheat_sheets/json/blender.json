@@ -6,6 +6,7 @@
         "sourceName": "OverAPI.com",
         "sourceUrl": "http://overapi.com/blender/"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Basics",
         "General",

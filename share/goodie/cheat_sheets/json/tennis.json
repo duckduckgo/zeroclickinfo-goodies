@@ -6,6 +6,7 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Tennis"
     },
+    "template_type": "reference",
     "section_order": [
         "Major Tournaments",
         "Match Types",

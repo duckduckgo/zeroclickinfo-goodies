@@ -17,6 +17,7 @@
         "microsoft windows 7",
         "microsoft windows 8"
     ],
+    "template_type": "keyboard",
     "section_order": [
         "General shortcuts",
         "Navigation",

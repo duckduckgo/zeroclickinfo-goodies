@@ -1,6 +1,7 @@
 {
     "id": "duckduckgo_cheat_sheet", 
     "name": "DuckDuckGo Shortcuts",
+    "template_type": "keyboard",
     "section_order": [  
         "Open results",
         "Move around"

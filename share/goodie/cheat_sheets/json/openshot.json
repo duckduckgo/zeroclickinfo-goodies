@@ -6,6 +6,7 @@
         "sourceName": "OpenShot Users Website",
         "sourceUrl": "http://www.openshotusers.com/help/1.4/en/ar01s05.html"
     },
+    "template_type": "keyboard",
     "section_order": [
         "General",
         "Playback",

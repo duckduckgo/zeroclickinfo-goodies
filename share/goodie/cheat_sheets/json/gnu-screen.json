@@ -6,6 +6,7 @@
         "sourceName": "GNU Screen Manual",
         "sourceUrl": "https://www.gnu.org/software/screen/manual/screen.html"
     },
+    "template_type": "terminal",
     "section_order": ["Terminal Commands", "Main Commands", "Copying and Scrolling", "Window Commands"],
     "sections": {
         "Terminal Commands": [

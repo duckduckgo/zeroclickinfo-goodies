@@ -6,6 +6,7 @@
         "sourceName": "Gmail Help",
         "sourceUrl": "https://support.google.com/mail/answer/6594"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Shortcuts",
         "Navigate"

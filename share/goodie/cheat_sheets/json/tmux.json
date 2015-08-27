@@ -6,6 +6,7 @@
         "sourceName": "OpenBSD",
         "sourceUrl": "http://www.openbsd.org/cgi-bin/man.cgi?query=tmux&sektion=1"
     },
+    "template_type": "keyboard",
     "section_order": ["Session Control (from the command line)", "Pane Control", "Window Control", "Copy-Mode (Emacs)", "Copy-Mode (vi)"],
     "sections": {
         "Copy-Mode (Emacs)": [{

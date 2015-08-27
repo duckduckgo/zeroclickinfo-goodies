@@ -6,6 +6,7 @@
         "sourceName": "Inbox Help",
         "sourceUrl": "https://support.google.com/inbox/answer/6080523"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Everywhere",
         "List navigation",
