@@ -1,11 +1,11 @@
 {  
     "id":"opera_cheat_sheet",
     "name":"Opera Browser",
+    "template_type": "keyboard",
     "metadata":{  
         "sourceName":"makeuseof",
         "sourceUrl":"http://www.makeuseof.com/tag/opera-shortcuts/"
     },
-    "template_type": "keyboard",
     "section_order":[  
         "Navigation",
         "Scrolling",
@@ -18,16 +18,16 @@
         "Email"
     ],
     "sections":{  
-        "Navigation":[ {  
+        "Navigation":[
+            {  
                 "val":"Next Link up",
                 "key":"[Shift] [↑]"
-        },
+             },
               {  
                 "val":"Next Link right",
                 "key":"[Shift] [↓]"
             },         
-            
-                       {  
+            {  
                 "val":"Next Link to the left",
                 "key":"[shift] [←]"
             },
@@ -128,7 +128,7 @@
                 "key":"X"
             },
             {  
-                "val":" Reload" ",
+                "val":"Reload" ",
                 "key":"F5"
             },
             {  
@@ -138,8 +138,7 @@
             {  
                 "val":"Fast forward",
                 "key":"[Shift] [X]"
-            },
-            
+            },            
             {  
                 "val":"Show entire backward history",
                 "key":"[Alt] [Z]"
@@ -149,28 +148,23 @@
                 "key":"[Alt] [X]"
             }
         ],
-        "System Keys":[  
-          
+        "System Keys":[            
             {  
                 "val":"Open file",
                 "key":"[Ctrl] [O]"
-            },
-            
+            },            
             {  
                 "val":"Save copy of page",
                 "key":"[Ctrl] [S]"
-            },
-            
+            },            
             {  
                 "val":"Print page",
                 "key":"[Ctrl] [P]"
-            },
-            
+            },            
             {  
                 "val":"Quit opera",
                 "key":"[Ctrl] [Q]"
-            },
-            
+            },            
             {  
                 "val":"Print preview",
                 "key":"[Shift] [P]"
@@ -178,7 +172,7 @@
         ],
         "Display":[  
             {  
-                "val":"use entire screen for viewing page",
+                "val":"Use entire screen for viewing page",
                 "key":"F11"
             },
             {  
