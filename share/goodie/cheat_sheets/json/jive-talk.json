@@ -1,11 +1,12 @@
 {
     "id": "jive_talk_cheat_sheet",
-    "name": "Jive Talk Cheat Sheet",
+    "name": "Jive Talk",
     "description": "Language of Jive",
     "metadata": {
         "sourceName": "Hepcats Jive Dictionary",
         "sourceUrl": "http://www.scribd.com/doc/57707658/Hepcats-Jive-Dictionary"
     },
+    "template_type": "reference",
     "section_order": [
         "Common Words",
         "A",
@@ -20,203 +21,203 @@
         ],
     "sections": {
         "Common Words": [{
-            "key":"[Barkers]",
+            "key":"Barkers",
             "val":"A pair of shoes"
           }, {
-            "key":"[Canary]",
+            "key":"Canary",
             "val":"A female vocalist"
           }, {
-            "key":"[Idea Pot]",
+            "key":"Idea Pot",
             "val":"The head"
           }, {
-            "key":"[Legit]",
+            "key":"Legit",
             "val":"The real thing"
           },{
-            "key":"[Murder]",
+            "key":"Murder",
             "val":"To reach perfection."
           },{
-            "key":"[Scratch]",
+            "key":"Scratch",
             "val":"Paper money."
           },{
-            "key":"[Flip the Grip]",
+            "key":"Flip the Grip",
             "val":"To shake hands"
           }
         ],
         "A": [{
-            "key":"[Ace]",
+            "key":"Ace",
             "val":"A dollar bill"
           }, {
-            "key":"[Action]",
+            "key":"Action",
             "val":"Propostion"
           }, {
-            "key":"[Airbags]",
+            "key":"Airbags",
             "val":"Lungs"
           }, {
-            "key":"[Legit]",
+            "key":"Legit",
             "val":"The real thing"
           },{
-            "key":"[Angle]",
+            "key":"Angle",
             "val":"Clever Idea"
           },{
-            "key":"[Apple]",
+            "key":"Apple",
             "val":"The Globe"
           },{
-            "key":"[Artillery]",
+            "key":"Artillery",
             "val":"Baked Beans"
           }
         ],
 
         "B": [{
-            "key":"[Backs]",
+            "key":"Backs",
             "val":"Counterfeit money"
           }, {
-            "key":"[Banana]",
+            "key":"Banana",
             "val":"Mulatto"
           }, {
-            "key":"[Bank]",
+            "key":"Bank",
             "val":"Toilet"
           }, {
-            "key":"[Banter]",
+            "key":"Banter",
             "val":"Pretty Girl"
           },{
-            "key":"[Bark]",
+            "key":"Bark",
             "val":"Skin"
           },{
-            "key":"[Beef]",
+            "key":"Beef",
             "val":"Complaint"
           },{
-            "key":"[Brush]",
+            "key":"Brush",
             "val":"Mustache"
           }
         ],
         "C":[{
-            "key":"[Cabbage]",
+            "key":"Cabbage",
             "val":"Money"
           }, {
-            "key":"[Cat]",
+            "key":"Cat",
             "val":"Jive Musician"
           }, {
-            "key":"[Cave]",
+            "key":"Cave",
             "val":"House"
           }, {
-            "key":"[Chew]",
+            "key":"Chew",
             "val":"To Talk"
           },{
-            "key":"[Choker]",
+            "key":"Choker",
             "val":"Tie or Collar"
           },{
-            "key":"[Chops]",
+            "key":"Chops",
             "val":"Jaws"
           },{
-            "key":"[Cogs]",
+            "key":"Cogs",
             "val":"Sunglasses"
           }
         ],
            "D": [{
-               "key":"[Dead]",
+               "key":"Dead",
                "val":"Empty"
              }, {
-               "key":"[Den]",
+               "key":"Den",
                "val":"Small Room"
              }, {
-               "key":"[Dicer]",
+               "key":"Dicer",
                "val":"Hat"
              }, {
-               "key":"[Digger]",
+               "key":"Digger",
                "val":"Undertaker"
              },{
-               "key":"[Dingle]",
+               "key":"Dingle",
                "val":"Good"
              },{
-               "key":"[Drink]",
+               "key":"Drink",
                "val":"A body of water"
              },{
-               "key":"[Duchess]",
+               "key":"Duchess",
                "val":"Girlfriend"
              }
            ],
 
            "E": [{
-               "key":"[Easy]",
+               "key":"Easy",
                "val":"Financially Secure"
              }, {
-               "key":"[Enamel]",
+               "key":"Enamel",
                "val":"Teeth or Skin"
              }, {
-               "key":"[Exodust]",
+               "key":"Exodust",
                "val":"To flee"
              }, {
-               "key":"[Expense]",
+               "key":"Expense",
                "val":"Baby"
              },{
-               "key":"[Eye]",
+               "key":"Eye",
                "val":"Detective"
              }
            ],
            "F": [{
-               "key":"[Face]",
+               "key":"Face",
                "val":"White man"
              }, {
-               "key":"[Fanny]",
+               "key":"Fanny",
                "val":"Rear end"
              }, {
-               "key":"[Fish]",
+               "key":"Fish",
                "val":"To lie"
              }, {
-               "key":"[Fog]",
+               "key":"Fog",
                "val":"To kill"
              },{
-               "key":"[Frame]",
+               "key":"Frame",
                "val":"Your body"
              }
            ],
            "G": [{
-               "key":"[Gaff]",
+               "key":"Gaff",
                "val":"To Cheat"
              }, {
-               "key":"[Gander]",
+               "key":"Gander",
                "val":"Examine"
              }, {
-               "key":"[Gate]",
+               "key":"Gate",
                "val":"Youth"
              }, {
-               "key":"[GB]",
+               "key":"GB",
                "val":"Goodbye"
              },{
-               "key":"[Gutbox]",
+               "key":"Gutbox",
                "val":"Piano"
              } ],
            "H": [{
-               "key":"[Hack]",
+               "key":"Hack",
                "val":"To write inferior material"
              }, {
-               "key":"[Handcuffed]",
+               "key":"Handcuffed",
                "val":"Married"
              }, {
-               "key":"[Headache]",
+               "key":"Headache",
                "val":"Wife"
              }, {
-               "key":"[Hides]",
+               "key":"Hides",
                "val":"Drums"
              },{
-               "key":"[Husk]",
+               "key":"Husk",
                "val":"Undress"
              }
            ],
          "I": [{
-             "key":"[Iceberg]",
+             "key":"Iceberg",
              "val":"Unemotional"
            }, {
-             "key":"[Icky]",
+             "key":"Icky",
              "val":"Conservative Person"
            }, {
-             "key":"[Idiot]",
+             "key":"Idiot",
              "val":"Educted Moron"
            }, {
-             "key":"[Index]",
+             "key":"Index",
              "val":"Face"
            },{
-             "key":"[Insider]",
+             "key":"Insider",
              "val":"Pocket"
            }
          ]
