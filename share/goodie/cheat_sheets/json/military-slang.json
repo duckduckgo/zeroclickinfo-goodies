@@ -6,6 +6,7 @@
         "sourceName": "Wikitionary",
         "sourceUrl": "http://www.military.com/join-armed-forces/military-terms-and-jargon.html"
     },
+    "template_type": "reference",
     "section_order": [
         "Popular Terms",
         "A",
@@ -19,139 +20,139 @@
         ],
     "sections": {
         "Popular Terms": [{
-            "key":"[Bird]",
+            "key":"Bird",
             "val":"Aircraft"
           }, {
-            "key":"[Lock and Load]",
+            "key":"Lock and Load",
             "val":"To insert ammunition into weapon"
           }, {
-            "key":"[Sarge]",
+            "key":"Sarge",
             "val":"Informal for Sergeant"
           }, {
-            "key":"[Shack]",
+            "key":"Shack",
             "val":"Direct hit"
           },{
-            "key":"[Tango]",
+            "key":"Tango",
             "val":"Phonetic Alphabet for T"
           },{
-            "key":"[Zoom Bag]",
+            "key":"Zoom Bag",
             "val":"Flight Suit"
           },{
-            "key":"[Hooaah]",
+            "key":"Hooaah",
             "val":"Spirited cry"
           }
         ],
         "A": [{
-            "key":"[Archie]",
+            "key":"Archie",
             "val":"Anti Aircraft Gun"
           }, {
-            "key":"[Ass]",
+            "key":"Ass",
             "val":"Armored vehicles"
           }, {
-            "key":"[Ack]",
+            "key":"Ack",
             "val":"Anti Aircraft Fire"
           }, {
-            "key":"[auto-pilot]",
+            "key":"Auto-pilot",
             "val":"Unauthorised flight maneuver"
           }
         ],
 
         "B": [{
-            "key":"[Balls]",
+            "key":"Balls",
             "val":"Midnight"
           }, {
-            "key":"[Bayonet]",
+            "key":"Bayonet",
             "val":"Infantryman"
           }, {
-            "key":"[Beans and Bullets]",
+            "key":"Beans and Bullets",
             "val":"Supplies"
           }, {
-            "key":"[Bird Barn]",
+            "key":"Bird Barn",
             "val":"Aircraft Carrier"
           }
         ],
         "C":[{
-            "key":"[Chalk]",
+            "key":"Chalk",
             "val":"Soldiers deployed from single aircraft"
           }, {
-            "key":"[Charlie Mike]",
+            "key":"Charlie Mike",
             "val":"Continue mission"
           }, {
-            "key":"[Check Six]",
+            "key":"Check Six",
             "val":"Watch your back"
           }, {
-            "key":"[Cover]",
+            "key":"Cover",
             "val":"Headgear"
           }
         ],
            "D": [{
-             "key":"[Death Jet]",
+             "key":"Death Jet",
             "val":"F-22 Raptor"
              } , {
-            "key":"[Ditch]",
+            "key":"Ditch",
             "val":"Crash into sea"
           }, {
-            "key":"[Driver]",
+            "key":"Driver",
             "val":"Fighter pilot"
           }, {
-            "key":"[Dropped]",
+            "key":"Dropped",
             "val":"Punished"
           }
            ],
 
            "E": [{
-               "key":"[Eagle Driver]",
+               "key":"Eagle Driver",
                "val":"F-15 pilot"
              }, {
-               "key":"[Endex]",
+               "key":"Endex",
                "val":"End Exercise"
              }, {
-               "key":"[Extra]",
+               "key":"Extra",
                "val":"Extra duty as punishment"
                }, {
-               "key":"[Elsie]",
+               "key":"Elsie",
                "val":"Lance-Corporal"
              }
            ],
            "F": [{
-               "key":"[Fart Sack]",
+               "key":"Fart Sack",
                "val":"Sleeping Bag"
              }, {
-               "key":"[Fast Movers]",
+               "key":"Fast Movers",
                "val":"Jet Fighters"
              }, {
-               "key":"[Fort Fumble]",
+               "key":"Fort Fumble",
                "val":"The Pentagon"
              }, {
-               "key":"[FUBAR]",
+               "key":"FUBAR",
                "val":"Fucked up beyond all recognition"
              }
            ],
            "G": [{
-               "key":"[Gabra]",
+               "key":"Gabra]",
                "val":"Confused"
              }, {
-               "key":"[Ganked]",
+               "key":"Ganked]",
                "val":"Stolen"
              }, {
-               "key":"[G.I]",
+               "key":"G.I]",
                "val":"Government Issue"
              }, {
-               "key":"[Gone Elvis]",
+               "key":"Gone Elvis]",
                "val":"Missing in action"
              }
            ],
            "H": [{
-               "key":"[Hawk]",
+               "key":"Hawk",
                "val":"Extreme cold weather"
              }, {
-               "key":"[Head Shed]",
+               "key":"Head Shed",
                "val":"Headquarters"
              }, {
-               "key":"[Hun]",
-               "val":"[F-100 fighter]"
+               "key":"Hun",
+               "val":"F-100 fighter"
              }, {
-               "key":"[HUA]",
+               "key":"HUA",
                "val":"Heard Understood Acknowledged"
              }
            ]
