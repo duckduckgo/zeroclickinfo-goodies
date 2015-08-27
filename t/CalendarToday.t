@@ -15,17 +15,16 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::CalendarToday
     )],
-    "calendar" => test_zci( "calendar today",  make_structured_answer(6, 11, 2015) ),
+    "calendar today" => test_zci( "calendar today",  make_structured_answer(6, 2015) ),
 );
 
 sub make_structured_answer {
-    my ($month, $day, $year ) = @_;
+    my ($month, $year ) = @_;
 
     return structured_answer => {
         id => 'calendar_today',
         name => 'Answer',
         data => {
-            day => $day,
             month => $month,
             year => $year
         },
