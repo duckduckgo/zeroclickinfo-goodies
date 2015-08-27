@@ -200,7 +200,7 @@
 	            "val": "show metasploit info",
 	            "key": "version"
 	        }],
-	        "Meterpreter Core and File System[{
+	        "Meterpreter Core and File System": [{
 	            "val": "background the current session",
 	            "key": "background"
 	        },
