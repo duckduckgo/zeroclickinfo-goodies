@@ -1,7 +1,7 @@
 {
     "id": "nikto_cheat_sheet",
     "name": "Nikto",
-    "description": "A Nikto is perl based vulnerability scanner that scan webservers for thousand of vulnerabilities and other known issues",
+    "description": "A Nikto is a perl based vulnerability scanner that scan webservers for thousand of vulnerabilities and other known issues",
     "metadata": {
         "sourceName": "r00tsec",
         "sourceUrl": "http://www.r00tsec.com/2014/06/cheatsheet-nikto-cheat-sheet.html"
