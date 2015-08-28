@@ -1,3 +1,7 @@
+.zci__body, .zero_click_answer {
+    color: #333;
+}
+
 .zci--name_days .name-days-country {
     padding-right: 2em;
     white-space: nowrap;
