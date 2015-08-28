@@ -24,7 +24,7 @@
                 "key":"[Shift] [↑]"
             },
             {
-                "val":"Next Link right",
+                "val":"Next Link down",
                 "key":"[Shift] [↓]"
             },
             {
@@ -44,8 +44,7 @@
                 "key":"[Shift] [Enter]"
             }
         ],
-        "Scrolling":[
-            {
+        {
                 "val":"One line up",
                 "key":"↑"
             },
@@ -53,30 +52,7 @@
                 "val":"One line down",
                 "key":"↓"
             },
-            {
-                "val":"One character to the left",
-                "key":"←"
-            },
-            {
-                "val":"One character to the right",
-                "key":"→"
-            },
-            {
-                "val":"One screen up",
-                "key":"[Shift] [↑]"
-            },
-            {
-                "val":"One screen down",
-                "key":"[Shift] [↓]"
-            },
-            {
-                "val":"One screen to the left",
-                "key":"[Ctrl] [↑]"
-            },
-            {
-                "val":"One screen to the right",
-                "key":"[Ctrl] [↓]"
-            },
+            
             {
                 "val":"Go to top",
                 "key":"home"
@@ -110,42 +86,27 @@
                 "key":"[Ctrl] [W]"
             },
             {
+                "val":"Close window",
+                "key":"[Alt] [F4]"
+            },
+            {
                 "val":"Open new Tab",
                 "key":"[Ctrl] [T]"
             },
             {
                 "val":"Cycle between tabs",
-                "key":"[Ctrl] [Page Down]"
+                "key":"[Ctrl] [Tab]"
             }
         ],
         "History":[
-            {
-                "val":"Previous page in history",
-                "key":"Z"
-            },
-            {
-                "val":"Next page in history",
-                "key":"X"
-            },
+            
             {
                 "val":"Reload",
                 "key":"F5"
             },
-            {
-                "val":"Rewind",
-                "key":"[Shift] [Z]"
-            },
-            {
-                "val":"Fast forward",
-                "key":"[Shift] [X]"
-            },
-            {
-                "val":"Show entire backward history",
-                "key":"[Alt] [Z]"
-            },
-            {
-                "val":"Show entire forward history",
-                "key":"[Alt] [X]"
+             {
+                "val":"Show  history",
+                "key":"[ctrl] [H]"
             }
         ],
         "System Keys":[
@@ -158,17 +119,13 @@
                 "key":"[Ctrl] [S]"
             },
             {
-                "val":"Print page",
-                "key":"[Ctrl] [P]"
+                "val":"Set preferences",
+                "key":"[Alt] [P]"
             },
             {
                 "val":"Quit opera",
                 "key":"[Ctrl] [Q]"
             },
-            {
-                "val":"Print preview",
-                "key":"[Shift] [P]"
-            }
         ],
         "Display":[
             {
@@ -176,8 +133,8 @@
                 "key":"F11"
             },
             {
-                "val":"Pretend to be a smaller device",
-                "key":"[Shift] [F11]"
+                "val":"back to normal",
+                "key":"Esc"
             }
         ],
         "Zooming":[
