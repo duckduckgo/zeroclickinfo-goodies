@@ -1,10 +1,7 @@
 {
     "id": "inkscape_cheat_sheet", 
-
     "name": "Inkscape",
-
     "description": "Vector Graphics Editor", 
-    
     "metadata": { 
         "sourceName": "Inkscape keyboard and mouse reference",
         "sourceUrl": "https://inkscape.org/en/doc/keys091.html"
@@ -12,15 +9,10 @@
 
     "section_order": [  
         "Tools",
-        "Grouping",
-        "Zoom",
-        "Documents",
-        "Fill and Strocke",
-        "Selections",
-        "Duplication, Alignement, Distribution",
-        "Z-order",
-        "Shapes",
-        "Moving, Scaling, Rotating"
+        "Dialogs",
+        "Object",
+        "Path",
+        "Selections"
     ],
 
     "sections": {
@@ -109,8 +101,58 @@
                 "key": "Ctrl + F2, o",
                 "val": "Connector tool"
             }
-        ],        
-        "Grouping": [
+        ],
+        "Dialogs": [
+            {
+                "key": "Shift + Ctrl + F",
+                "val": "Fill and Stroke"               
+            }, 
+            {
+                "key": "Shift + Ctrl + T",
+                "val": "Text and Font"
+            }, 
+            {
+                "key": "Shift + Ctrl + M",
+                "val": "Transform"
+            }, 
+            {
+                "key": "Shift + Ctrl + L",
+                "val": "Layers"
+            }, 
+            {
+                "key": "Shift + Ctrl + A",
+                "val": "Align and Distribute"
+            }, 
+            {
+                "key": "Shift + Ctrl + O",
+                "val": "Object Properties"
+            },
+            {
+                "key": "Shift + Ctrl + D",
+                "val": "Document Preferences"
+            }, 
+            {
+                "key": "Shift + Ctrl + P",
+                "val": "Inkscape Preferences"
+            }, 
+            {
+                "key": "Shift + Ctrl + E",
+                "val": "Export to PNG"
+            }
+        ],
+        "Object" : [
+            {
+                "key": "Ctrl + D",
+                "val": "Duplicate selection"               
+            },
+            {
+                "key": "Alt + D",
+                "val": "Clone object"               
+            },
+            {
+                "key": "Shift + Alt + B",
+                "val": "Trace bitmap"               
+            },
             {
                 "key": "Ctrl + G",
                 "val": "Group selected objects"               
@@ -122,44 +164,64 @@
             {
                 "key": "Ctrl + Mouse Click",
                 "val": "Select object in group"
-            }
-        ],        
-        "Zoom" : [
+            },
             {
-                "key": "=,+",
-                "val": "Zoom in"               
+                "key": "Home",
+                "val": "Raise selection to top"               
             }, 
             {
-                "key": "-",
-                "val": "Zoom out"
+                "key": "End",
+                "val": "Lower selection to bottom"
             }, 
             {
-                "key": "Alt + Z",
-                "val": "Activate zoom field"
-            }
-        ],
-        "Documents" : [
-            {
-                "key": "=,+",
-                "val": "Zoom in"               
+                "key": "PgUp",
+                "val": "Raise selection one step"
             }, 
             {
-                "key": "-",
-                "val": "Zoom out"
-            }, 
-            {
-                "key": "Alt + Z",
-                "val": "Activate zoom field"
+                "key": "PgDn",
+                "val": "Lower selection one step"
             }
         ],
-        "Fill and stroke" : [
+        "Path" : [
             {
-                "key": "Ctrl + F1",
-                "val": "Gradient tool"               
+                "key": "Shift + Ctrl + C",
+                "val": "Convert selected object(s) to path"               
             }, 
             {
-                "key": "F7",
-                "val": "Dropper tool"
+                "key": "Ctrl + Alt + C",
+                "val": "Convert stroke to path"
+            }, 
+            {
+                "key": "Ctrl + +",
+                "val": "Union"
+            }, 
+            {
+                "key": "Ctrl + -",
+                "val": "Difference"
+            }, 
+            {
+                "key": "Ctrl + *",
+                "val": "Intersection"
+            }, 
+            {
+                "key": "Ctrl + ^",
+                "val": "Exclusive OR (XOR)"
+            }, 
+            {
+                "key": "Ctrl + /",
+                "val": "Division (cut)"
+            }, 
+            {
+                "key": "Ctrl + Alt + /",
+                "val": "Cut path"
+            }, 
+            {
+                "key": "Ctrl + K",
+                "val": "Combine paths"
+            }, 
+            {
+                "key": "Shift + Ctrl + K",
+                "val": "Break paths apart"
             }
         ],
         "Selections" : [
@@ -178,58 +240,6 @@
             {
                 "key": "Shift + Tab",
                 "val": "Select previous object"
-            }
-        ],
-        "Duplication, Alignement, Distribution" : [
-            {
-                "key": "Ctrl + D",
-                "val": "Duplicate object"               
-            }, 
-            {
-                "key": "Ctrl + Shift + A",
-                "val": "Align dialog"
-            }
-        ],
-        "Z-order" : [
-            {
-                "key": "Home",
-                "val": "Raise selection to top"               
-            }, 
-            {
-                "key": "End",
-                "val": "Lower selection to bottom"
-            }, 
-            {
-                "key": "PgUp",
-                "val": "Raise selection one step"
-            }, 
-            {
-                "key": "PgDn",
-                "val": "Lower selection one step"
-            }
-        ],
-        "Shapes" : [
-            {
-                "key": "Ctrl + Shift + C",
-                "val": "Convert shape to path"               
-            }, 
-            {
-                "key": "Ctrl",
-                "val": "Draw fixed to ratio"
-            }, 
-            {
-                "key": "Shift",
-                "val": "Starting point is centre"
-            }
-        ],
-        "Moving, Scaling, Rotating" : [
-            {
-                "key": "Ctrl + Mouse",
-                "val": "Move selected object on the X axis OR the Y axis"               
-            }, 
-            {
-                "key": "<, >",
-                "val": "Scale selection up"
             }
         ]
     }
