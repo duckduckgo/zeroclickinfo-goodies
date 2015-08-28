@@ -29,22 +29,23 @@
             {
                 "key":"[ctrl] [space]",
                 "val":"Show available auto-completions"
-            },{
-+            "key":"[ctrl] [shift] [s]",
-+            "val":"Save as"
-+          },{
-+            "key":"[ctrl] [shift] [n]",
-+            "val":"New file in new window"
-+          }, 
+            },
             {
-+            "key":"[ctrl] [w]",
-+            "val":"Close current file"
-+        }, 
+                "key":"[ctrl] [shift] [s]",
+                "val":"Save as"
+            },
             {
-+            "key":"[ctrl] [shift] [w]",
-+            "val":"Close current window"
-+        }
-
+                "key":"[ctrl] [shift] [n]",
+                "val":"New file in new window"
+            },
+            {
+                "key":"[ctrl] [w]",
+                "val":"Close current file"
+            },
+            {
+                "key":"[ctrl] [shift] [w]",
+                "val":"Close current window"
+            }
         ],
         "File Navigation":[
             {
@@ -72,18 +73,21 @@
                 "val":"Goto next bookmark"
             },
             {
-+            "key":"[ctrl] [k], [c]",
-+            "val":"Goto current selection"
-+          }, {
-+            "key":"[ctrl] ([↑]/[↓])",
-+            "val":"Move current line up/down"
-+          }, {
-+            "key":"[ctrl] [F2]",
-+            "val":"Set Bookmark"
-+          }, {
-+            "key":"[ctrl] [shift] [F2]",
-+            "val":"Clear all bookmarks"
-+          }
+                "key":"[ctrl] [k], [c]",
+                "val":"Goto current selection"
+            },
+            {
+                "key":"[ctrl] ([↑]/[↓])",
+                "val":"Move current line up/down"
+            },
+            {
+                "key":"[ctrl] [F2]",
+                "val":"Set Bookmark"
+            },
+            {
+                "key":"[ctrl] [shift] [F2]",
+                "val":"Clear all bookmarks"
+            }
         ],
         "View/Window Manipulation":[
             {
@@ -99,63 +103,81 @@
                 "val":"Split pane left/right/up/down"
             }
         ],
-        "Find and Replace": [{
-+            "key":"[ctrl] [f]",
-+            "val":"Find"
-+          }, {
-+            "key":"F3",
-+            "val":"Find Next"
-+          }, {
-+            "key":"[ctrl] [F3]",
-+            "val":"Find previous"
-+          }, {
-+            "key":"[ctrl] [i]",
-+            "val":"Incremental find"
-+          }, {
-+            "key":"[ctrl] [h]",
-+            "val":"Replace"
-+          }, {
-+            "key":"[ctrl] [shift] [h]",
-+            "val":"Replace next"
-+          }, {
-+            "key":"[ctrl] [F3]",
-+            "val":"Quick Find (find current word)"
-+          }, {
-+            "key":"[alt] [F3]",
-+            "val":"Quick find all"
-+          }, {
-+            "key":"[ctrl] [e]",
-+            "val":"Use selection for find"
-+          }, {
-+            "key":"[ctrl] [shift] [e]",
-+            "val":"Use selection for replace"
-+          }, {
-+            "key":"[ctrl] [shift] [f]",
-+            "val":"Find in files"
-+          }, {
-+            "key":"F4",
-+            "val":"Next result (find in files)"
-+          }, {
-+            "key":"[shift] [F4]",
-+            "val":"Previous result (find in files)"
-+        }],
+        "Find and Replace":[
+            {
+                "key":"[ctrl] [f]",
+                "val":"Find"
+            },
+            {
+                "key":"F3",
+                "val":"Find Next"
+            },
+            {
+                "key":"[ctrl] [F3]",
+                "val":"Find previous"
+            },
+            {
+                "key":"[ctrl] [i]",
+                "val":"Incremental find"
+            },
+            {
+                "key":"[ctrl] [h]",
+                "val":"Replace"
+            },
+            {
+                "key":"[ctrl] [shift] [h]",
+                "val":"Replace next"
+            },
+            {
+                "key":"[ctrl] [F3]",
+                "val":"Quick Find (find current word)"
+            },
+            {
+                "key":"[alt] [F3]",
+                "val":"Quick find all"
+            },
+            {
+                "key":"[ctrl] [e]",
+                "val":"Use selection for find"
+            },
+            {
+                "key":"[ctrl] [shift] [e]",
+                "val":"Use selection for replace"
+            },
+            {
+                "key":"[ctrl] [shift] [f]",
+                "val":"Find in files"
+            },
+            {
+                "key":"F4",
+                "val":"Next result (find in files)"
+            },
+            {
+                "key":"[shift] [F4]",
+                "val":"Previous result (find in files)"
+            }
+        ],
         "Folding":[
             {
-+            "key":"[ctrl] ([\\[]\/[\\]])",
-+            "val":"Fold/expand"
-+          }, {
-+            "key":"[ctrl] [k], [j]",
-+            "val":"Unfold all"
-+          }, {
-+            "key":"[ctrl] [k], [1]",
-+            "val":"Fold all"
-+          }, {
-+            "key":"[ctrl] ([2]-[9])",
-+            "val":"Fold level X"
-+          }, {
-+            "key":"[ctrl] [k], [t]",
-+            "val":"Fold tag attributes"
-+        }
+                "key":"[ctrl] ([\\[]\/[\\]])",
+                "val":"Fold/expand"
+            },
+            {
+                "key":"[ctrl] [k], [j]",
+                "val":"Unfold all"
+            },
+            {
+                "key":"[ctrl] [k], [1]",
+                "val":"Fold all"
+            },
+            {
+                "key":"[ctrl] ([2]-[9])",
+                "val":"Fold level X"
+            },
+            {
+                "key":"[ctrl] [k], [t]",
+                "val":"Fold tag attributes"
+            }
         ],
         "Word Manipulation":[
             {
@@ -201,25 +223,32 @@
                 "val":"Join current and next lines"
             }
         ],
-        "Github Integration": [{
-+            "key":"[alt] [g] [b]",
-+            "val":"Open on Github : blame"
-+          }, {
-+            "key":"[alt] [g] [c]",
-+            "val":"Open on Github: copy-url"
-+          }, {
-+            "key":"[alt] [g] [g]",
-+            "val":"Open on Github: repository"
-+          }, {
-+            "key":"[alt] [g] [h]",
-+            "val":"Open on Github: history"
-+          }, {
-+            "key":"[alt] [g] [i]",
-+            "val":"Open on Github: issues"
-+          }, {
-+             "key":"[alt] [g] [r]",
-+            "val":"Open on Github: branch-compare"
-+        }],
+        "Github Integration":[
+            {
+                "key":"[alt] [g] [b]",
+                "val":"Open on Github : blame"
+            },
+            {
+                "key":"[alt] [g] [c]",
+                "val":"Open on Github: copy-url"
+            },
+            {
+                "key":"[alt] [g] [g]",
+                "val":"Open on Github: repository"
+            },
+            {
+                "key":"[alt] [g] [h]",
+                "val":"Open on Github: history"
+            },
+            {
+                "key":"[alt] [g] [i]",
+                "val":"Open on Github: issues"
+            },
+            {
+                "key":"[alt] [g] [r]",
+                "val":"Open on Github: branch-compare"
+            }
+        ],
         "Selection":[
             {
                 "key":"[⌘] [d]",
@@ -240,29 +269,35 @@
             {
                 "key":"[shift] [⌘] [( ↑ / ↓ )]",
                 "val":"Select to top/bottom of document"
-            },{
-+            "key":"[ctrl] [u]",
-+            "val":"Undo quick select"
-+          }, {
-+            "key":"[ctrl] [k], [d]",
-+            "val":"Skip and quick add next"
-+          }, {
-+            "key":"[ctrl] [shift] [l]",
-+            "val":"Split into lines (adds cursor to each line of current selection)"
-+          },
+            },
             {
-+            "key":"[ctrl] [shift] [space]",
-+            "val":"Expand selection to scope"
-+          }, {
-+            "key":"[ctrl] [shift] [m]",
-+            "val":"Expand selection to brackets"
-+          }, {
-+            "key":"[ctrl] [shift] [j]",
-+            "val":"Expand selection to indent­ation"
-+          }, {
-+            "key":"[ctrl] [shift] [a]",
-+            "val":"Expand selection to tag"
-+          }
+                "key":"[ctrl] [u]",
+                "val":"Undo quick select"
+            },
+            {
+                "key":"[ctrl] [k], [d]",
+                "val":"Skip and quick add next"
+            },
+            {
+                "key":"[ctrl] [shift] [l]",
+                "val":"Split into lines (adds cursor to each line of current selection)"
+            },
+            {
+                "key":"[ctrl] [shift] [space]",
+                "val":"Expand selection to scope"
+            },
+            {
+                "key":"[ctrl] [shift] [m]",
+                "val":"Expand selection to brackets"
+            },
+            {
+                "key":"[ctrl] [shift] [j]",
+                "val":"Expand selection to indent­ation"
+            },
+            {
+                "key":"[ctrl] [shift] [a]",
+                "val":"Expand selection to tag"
+            }
         ]
     }
 }
