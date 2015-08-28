@@ -98,7 +98,8 @@ sub format_answer {
         data => {
             title => "$character ($english)",
             subtitle => $statement,
-            image => $path
+            image => $path,
+            url => 'https://en.wikipedia.org/wiki/'.$english.'_(zodiac)'
         },
         templates => {
             group => "icon",
@@ -107,6 +108,9 @@ sub format_answer {
             variants => {
                 iconTitle => 'large',
                 iconImage => 'large'
+            },
+            elClass => {
+                iconImage => 'bg-clr--black circle'
             }
         },
         meta => {
