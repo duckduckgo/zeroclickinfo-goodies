@@ -44,6 +44,7 @@
                 "key":"[Shift] [Enter]"
             }
         ],
+        "Scrolling":[
         {
                 "val":"One line up",
                 "key":"↑"
