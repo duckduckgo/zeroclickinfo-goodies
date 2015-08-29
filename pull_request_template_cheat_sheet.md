@@ -2,15 +2,15 @@
 
 ## How To Use This Template
 
-1) View the **raw** text by visiting https://raw.githubusercontent.com/duckduckgo/zeroclickinfo-goodies/master/pull_request_template_cheat_sheet.md
+1) Use the **raw** text at https://raw.githubusercontent.com/duckduckgo/zeroclickinfo-goodies/master/pull_request_template_cheat_sheet.md
 
-2) Copy and paste the questions below into the description of your GitHub pull request and fill in the questions there, as appropriate.
+2) Copy and paste the questions (from the raw text) into the description of your GitHub pull request and fill in the questions there, as appropriate.
 
 3) Preview the text before posting by clicking the "Preview changes" button above text box. The questions should remain bolded so it's easier for everyone to read
 
 4) Make sure you don't include these instructions when you paste this into the Pull Request description!
 
-**Here's a Demo:**
+## Demo
 
 ![Demo GIF](http://cl.ly/image/1O0n39092K3q/download/Screen%20Recording%202015-08-29%20at%2009.31%20AM.gif)
 
