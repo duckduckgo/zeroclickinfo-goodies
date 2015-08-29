@@ -20,7 +20,8 @@
 	"section_order": [
 		"Directive Definition Object",
 		"Directives",
-		"Global Functions"
+		"Global Functions",
+		"Scope Properties and Methods"
 	],
 	"sections": {
 		"Directives": [
@@ -219,6 +220,64 @@
 			{
 				"val": "Determines if a reference is an Array.",
 				"key": "angular.isArray(value)"
+			}
+		],
+		"Scope Properties and Methods": [
+			{
+				"val": "Move to the top-most $scope (ng-app)",
+				"key": "$root or $roo­tSc­ope"
+			},
+			{
+				"val": "Move to the immediate parent of the current $scope",
+				"key": "$parent"
+			},
+			{
+				"val": "Auto generated Unique ID",
+				"key": "$id"
+			},
+			{
+				"val": "Broadc­asted when a scope and its children are being destroyed",
+				"key": "$destroy (event)"
+			},
+			{
+				"val": "Executes logic within the AngularJS context and refreshes all models checks.",
+				"key": "$app­ly(­exp)"
+			},
+			{
+				"val": "Dispatches an event name downwards to all child scopes",
+				"key": "$bro­adc­ast­(name, args)"
+			},
+			{
+				"val": "Removes the current scope (and all of its children) from the parent scope",
+				"key": "$des­tro­y()"
+			},
+			{
+				"val": "Process all of the watchers of the current scope and its children. Since watchers can change models, they will continue firing until all changes stop. BEWARE OF RECURSIVE CODE",
+				"key": "$dig­est()"
+			},
+			{
+				"val": "Dispatches an event name upwards through the scope hierarchy",
+				"key": "$emi­t(name, args)"
+			},
+			{
+				"val": "Executes the expression on the current scope and returns the result",
+				"key": "$eva­l(e­xpr­ess­ion)"
+			},
+			{
+				"val": "Executes the expression on the current scope at a later point in time",
+				"key": "$eva­lAs­ync­(ex­pre­ssi­on)"
+			},
+			{
+				"val": "Creates a new child scope",
+				"key": "$new­(is­ola­te)"
+			},
+			{
+				"val": "Listens on events of a given type",
+				"key": "$on(­name, listen­er)"
+			},
+			{
+				"val": "Watch a model (exp) for changes and fires the listener callback. Pass true as a third argument to watch an object's properties too.",
+				"key": "$wat­ch(­wat­chExp, listen­er(­newVal, oldVal, scope), object­Equ­ali­ty)"
 			}
 		]
 	}
