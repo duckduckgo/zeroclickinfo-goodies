@@ -11,6 +11,7 @@
         "Tools",
         "Dialogs",
         "Object",
+        "Nodes",
         "Path",
         "Selections"
     ],
@@ -180,6 +181,36 @@
             {
                 "key": "PgDn",
                 "val": "Lower selection one step"
+            }
+        ],
+        "Nodes" : [
+            {
+                "key": "Tab",
+                "val": "Select next node"               
+            },
+            {
+                "key": "Shift + Tab",
+                "val": "Select previous node"               
+            },
+            {
+                "key": "Ctrl + A",
+                "val": "Select all nodes in subpath(s)"               
+            },
+            {
+                "key": "Ctrl + Alt + A",
+                "val": "Select all nodes in path"               
+            }, 
+            {
+                "key": "Shift + J",
+                "val": "Join selected nodes"
+            }, 
+            {
+                "key": "Shift + I",
+                "val": "Insert new node(s)"
+            },
+            {
+                "key": "Shift + B",
+                "val": "break selected node(s)"               
             }
         ],
         "Path" : [
