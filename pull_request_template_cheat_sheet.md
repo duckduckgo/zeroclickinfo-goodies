@@ -1,6 +1,16 @@
 # Goodie Cheat Sheet Pull Request Template
 
-Using this template will help us better understand your Instant Answer and assist you when necessary.  Simply copy and paste the markdown below into the description of your GitHub pull request and complete as appropriate.
+## How To Use This Template
+
+1) View the **raw** text by visiting https://raw.githubusercontent.com/duckduckgo/zeroclickinfo-goodies/master/pull_request_template_cheat_sheet.md
+
+2) Copy and paste the questions below into the description of your GitHub pull request and fill in the questions there, as appropriate.
+
+3) Preview the text before posting by clicking the "Preview changes" button above text box. The questions should remain bolded so it's easier for everyone to read
+
+4) Make sure you don't include these instructions when you paste this into the Pull Reques description!
+
+## Copy and Paste the Raw Text Below Into Your Pull Request
 
 **What does your Instant Answer do?**
 
