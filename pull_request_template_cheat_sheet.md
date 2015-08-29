@@ -8,7 +8,7 @@
 
 3) Preview the text before posting by clicking the "Preview changes" button above text box. The questions should remain bolded so it's easier for everyone to read
 
-4) Make sure you don't include these instructions when you paste this into the Pull Request description!
+4) Do not include these instructions when you paste the questions into the Pull Request description!
 
 ## Demo
 
