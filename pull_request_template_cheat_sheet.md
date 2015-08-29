@@ -6,9 +6,9 @@
 
 2) Copy and paste the questions below into the description of your GitHub pull request and fill in the questions there, as appropriate.
 
-3) Preview the text before posting by clicking the "Preview changes" button above text box. The questions should remain bolded so it's easier for everyone to read
+3) Preview the text before posting by clicking the, "Preview changes" button above text box. The questions should remain bolded so it's easier for everyone to read
 
-4) Make sure you don't include these instructions when you paste this into the Pull Reques description!
+4) Make sure you don't include these instructions when you paste this into the Pull Request description!
 
 ## Copy and Paste the Raw Text Below Into Your Pull Request
 
