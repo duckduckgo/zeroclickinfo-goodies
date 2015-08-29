@@ -6,8 +6,8 @@
     "description": "Popular general-purpose scripting language", 
 
     "metadata": { 
-        "sourceName": "OverAPI",
-        "sourceUrl": "http://overapi.com/php/"
+        "sourceName": "PHP.net",
+        "sourceUrl": "http://php.net/manual/en/funcref.php"
     },
 
 	"aliases": [
