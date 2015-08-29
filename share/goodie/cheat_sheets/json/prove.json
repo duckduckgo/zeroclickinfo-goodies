@@ -1,0 +1,49 @@
+{
+    "id": "prove_cheat_sheet",
+    "name": "prove",
+    "description": "Perl test runner for the Test Anything Protocol",
+    "metadata": {
+        "sourceName": "prove Manual",
+        "sourceUrl": "http://perldoc.perl.org/prove.html"
+    },
+    "template_type": "keyboard",
+    "section_order": ["Usage", "Options"],
+    "sections": {
+        "Usage": [
+        {
+            "key": "[prove \\[option\\] \\[filepath\\] ]",
+            "val": "start prove"
+        }
+        ],
+        "Options": [
+        {
+            "key": "-I<filepath>",
+            "val": "include this filepath"
+        },
+        {
+            "key": "-l",
+            "val": "include ./lib"
+        },
+        {
+            "key": "-r",
+            "val": "recursively exec test files"
+        },
+        {
+            "key": "-j <n>",
+              "val": "number of jobs in parallel"
+        },
+        {
+            "key": "-v",
+            "val": "verbose output"
+        },
+        {
+            "key": "-h",
+            "val": "display help text"
+        },
+        {
+            "key": "--exec <program>",
+            "val": "run tests with another program (not Perl)"
+        }
+        ]
+    }
+}
