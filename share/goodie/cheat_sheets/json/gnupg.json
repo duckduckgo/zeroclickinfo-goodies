@@ -1,7 +1,7 @@
 {
     "id": "gnupg_cheat_sheet",
     "name": "GnuPG",
-    "description": "Encryption Tool",
+    "description": "GNU Privacy Guard is the GNU project's free software implementation of the OpenPGP standard.",
     "metadata": {
         "sourceName": "GnuPG man page",
         "sourceUrl": "https://www.gnupg.org/documentation/manpage.en.html"
@@ -24,7 +24,7 @@
             },
             {
                 "val": "Encrypt and sign a file to a recipient",
-                "key": "$ gpg -e -s -r \\[recipient key\\] \\[file\\]"
+                "key": "$ gpg -se -r \\[recipient key\\] \\[file\\]"
             },
             {
                 "val": "Encrypt a file with a password",
@@ -38,7 +38,7 @@
         "Signing": [
             {
                 "val": "Sign a file (detached ASCII signature)",
-                "key": "$ gpg -b -a \\[file\\]"
+                "key": "$ gpg --detach-sign -a \\[file\\]"
             },
             {
                 "val": "Clear-sign a file",
@@ -51,49 +51,70 @@
             {
                 "val": "Verify a signature",
                 "key": "$ gpg -v \\[file\\]"
+            },
+            {
+                "val": "Sign a key",
+                "key": "$ gpg --sign-key \\[key\\]"
             }
         ],
         "Key Management": [
             {
-                "val":"Exporting a public key to an ascii-armoured file",
+                "val":"Export a public key to an ascii-armoured file",
                 "key": "$ gpg -o \\[file.asc\\] --export -a \\[key\\]"
             },
             {
-                "val":"Importing a key",
+                "val":"Export a secret key to an ascii-armoured file",
+                "key": "$ gpg -o \\[file.asc\\] --export-secret-key -a \\[key\\]"
+            },
+            {
+                "val":"Import key(s) into the local keychain",
                 "key": "$ gpg --import \\[file\\]"
             },
             {
-                "val":"Listing keys",
+                "val":"Delete key(s) from the local keychain",
+                "key": "$ gpg --delete-keys \\[key(s)\\]"
+            },
+            {
+                "val":"List keys in local keychain",
                 "key": "$ gpg --list \\[optional search\\]"
             },
             {
-                "val":"Generating a key",
+                "val":"List key fingerprint(s)",
+                "key": "$ gpg --fingerprint \\[key(s)\\]"
+            },
+            {
+                "val":"Generate a new key pair",
                 "key": "$ gpg --gen-key"
             },
             {
-                "val":"Generating a revokation certificate for a key",
+                "val":"Generate a revocation certificate for a key",
                 "key": "$ gpg --gen-revoke \\[key\\]"
             },
             {
-                "val":"Edit key",
+                "val":"Sign or edit a key",
                 "key": "$ gpg --edit \\[key\\]"
             }
         ],
         "Key Server": [
             {
                 "val":"Send a key to a key server",
-                "key": "$ gpg --send-keys \\[key\\]"
+                "key": "$ gpg --send-keys \\[key(s)\\]"
             },
             {
                 "val":"Retrieve a key from a key server",
-                "key": "$ gpg --recv-keys \\[key\\]"
+                "key": "$ gpg --recv-keys \\[key(s)\\]"
             },
             {
-                "val":"Refreshing all keys in local keyring",
+                "val":"Search for keys on a key server",
+                "key": "$ gpg --search-keys \\[search\\]"
+            },
+            {
+                "val":"Refresh all keys in local keyring",
                 "key": "$ gpg --refresh-keys"
             }
         ]
     }
 }
+
 
 
