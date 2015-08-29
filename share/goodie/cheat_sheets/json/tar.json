@@ -38,8 +38,7 @@
             "val": "Append a file to the end of a .tar archive",
             "key": "$ tar -rvf \\[archive\\].tar \\[file1\\]"
         }, {
-            "val": "Append a file that is newer than the copy in the 
-archive to the end of a .tar archive",
+            "val": "Append a file that is newer than the copy in the archive to the end of a .tar archive",
             "key": "$ tar -uvf \\[archive\\].tar \\[file1\\]"
         }, {
             "val": "Delete a file from a .tar archive",
@@ -49,8 +48,7 @@ archive to the end of a .tar archive",
             "val": "List files in a .tar archive",
             "key": "$ tar -tvf \\[archive\\].tar"
         }, {
-            "val": "Check to see if the the contents of an archive have 
-changed on the file system",
+            "val": "Check to see if the the contents of an archive have changed on the file system",
             "key": "$ tar -dvf \\[archive\\].tar"
         }, {
             "val": "Append extra.tar to a .tar archive",
