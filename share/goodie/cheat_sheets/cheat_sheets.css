@@ -78,19 +78,22 @@
 
 /* reference-sheet.handlebars */
 
-.zci--cheat_sheets .reference ul {
+.zci--cheat_sheets .reference ul,
+.zci--cheat_sheets .links ul {
   padding: 0;
   margin-left: 13px;
 }
 
-.zci--cheat_sheets .reference li {
+.zci--cheat_sheets .reference li,
+.zci--cheat_sheets .links li {
   position: relative;
   padding-bottom: 12px;
   padding-left: 7px;
   line-height: 17px;
 }
 
-.zci--cheat_sheets .reference li::before {
+.zci--cheat_sheets .reference li::before,
+.zci--cheat_sheets .links li::before {
   position: absolute;
   left: -12px;
   content: '●';

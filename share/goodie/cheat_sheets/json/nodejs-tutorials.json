@@ -1,0 +1,308 @@
+{
+  "id": "nodejs_tutorials_cheat_sheet",
+  "name": "Node.js Tutorials",
+  "description": "A list of helpful resources for getting started with Node.js",
+  "metadata": {
+      "sourceName": "Stack Overflow",
+      "sourceUrl": "https://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js"
+  },
+  "aliases":["nodejs tutorials", "node tutorials", "node.js tutorials"],
+  "template_type": "links",
+  "section_order": [
+    "Tutorials",
+    "Developer Sites",
+    "Videos",
+    "Screencasts",
+    "Books",
+    "Courses",
+    "Blogs",
+    "Podcasts",
+    "JavaScript Resources",
+    "Node.js Modules",
+    "Other"
+  ],
+  "sections": {
+      "Tutorials": [
+        {
+          "val": "http://nodeschool.io/",
+          "key": "NodeSchool.io"
+        },
+        {
+            "val": "https://github.com/maxogden/art-of-node/#the-art-of-node",
+            "key": "The Art of Node"
+        },
+        {
+            "val": "http://node.blog.com/2014/12/29/hello-world-with-node-and-express/",
+            "key": "Hello World Example"
+        },
+        {
+            "val": "http://www.nodebeginner.org/#hello-world",
+            "key": "Hello World"
+        },
+        {
+            "val": "http://www.nodebeginner.org/#building-the-application-stack",
+            "key": "Hellow World Web Server"
+        },
+        {
+            "val": "http://nodeguide.com/",
+            "key": "Node.js Guide"
+        },
+        {
+            "val": "http://howtonode.org/express-mongodb",
+            "key": "Build a blog with Node.js, express and MongoDB"
+        },
+        {
+            "val": "http://project70.com/",
+            "key": "Node.Js Tutorials At Project 70"
+        },
+        {
+            "val": "http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/",
+            "key": "Node.js for Beginners"
+        },
+        {
+            "val": "http://javascriptissexy.com/learn-node-js-completely-and-with-confidence/",
+            "key": "Learn Node.js Completely and with Confidence"
+        },
+        {
+          "val": "http://blog.modulus.io/absolute-beginners-guide-to-nodejs",
+          "key": "Absolute Beginners Guide To Node.js"
+        }
+      ],
+      "Developer Sites": [
+        {
+            "val": "http://www.joyent.com/developers/node",
+            "key": "Joyent's developer site for node"
+        }
+      ],
+      "Videos": [
+        {
+            "val": "http://nodetuts.com/",
+            "key": "Node tuts"
+        },
+        {
+            "val": "http://www.youtube.com/watch?v=jo_B4LTHi3I",
+            "key": "Introduction to Node.js with the author of the languag, Ryan Dahl"
+        },
+        {
+            "val": "http://www.infoq.com/presentations/nodejs",
+            "key": "Node.js: Asynchronous Purity Leads to Faster Development"
+        },
+        {
+            "val": "http://www.infoq.com/presentations/Parallel-Programming-with-Nodejs",
+            "key": "Parallel Programming with Node.js"
+        },
+        {
+            "val": "http://vimeo.com/18077379",
+            "key": "Server-side JavaScript with Node, Connect & Express"
+        },
+        {
+            "val": "http://www.lynda.com/Nodejs-tutorials/Nodejs-First-Look/101554-2.html",
+            "key": "Node.js First Look"
+        },
+        {
+            "val": "http://www.youtube.com/watch?v=0_GNHWZHc-o",
+            "key": "Node.js with MongoDB"
+        },
+        {
+            "val": "http://www.youtube.com/watch?v=F6k8lTrAE2g",
+            "key": "Ryan Dahl's Google Tech Talk"
+        },
+        {
+            "val": "http://node.codeschool.com/levels/1",
+            "key": "Real Time Web with Node.js"
+        },
+        {
+            "val": "https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_",
+            "key": "Node.js Tutorials for Beginners"
+        },
+        {
+            "val": "http://www.pluralsight.com/search/?searchTerm=Node.js",
+            "key": "Pluralsight courses (paid)"
+        }
+      ],
+      "Screencasts": [
+        {
+            "val": "http://learnallthenodes.com/",
+            "key": "Learn All the Nodes"
+        },
+        {
+            "val": "http://nodetuts.com/",
+            "key": "NodeTuts"
+        },
+        {
+            "val": "http://nodecasts.net/",
+            "key": "NodeCasts"
+        },
+        {
+            "val": "http://www.develop.com/webcasts/watch/5318c4d5d588bf08c461f4b1/create-server-side-mvc-apps-with-node-js-and-express",
+            "key": "Create server-side MVC apps with Node.js and Express"
+        }
+      ],
+      "Books": [
+        {
+            "val": "http://nodebeginner.org/",
+            "key": "The Node Beginner Book"
+        },
+        {
+            "val": "https://github.com/tj/masteringnode",
+            "key": "Mastering Node.js"
+        },
+        {
+            "val": "http://chimera.labs.oreilly.com/books/1234000001808/index.html",
+            "key": "Up and Running with Node.js"
+        },
+        {
+            "val": "http://www.manning.com/cantelon/",
+            "key": "Node.js in Action"
+        },
+        {
+            "val": "http://amzn.com/B008Z5OEUY",
+            "key": "Smashing Node.js: JavaScript Everywhere"
+        },
+        {
+            "val": "http://www.amazon.de/dp/389864829X",
+            "key": "Node.js & Co. (in German)"
+        },
+        {
+            "val": "http://nodejsbook.io/",
+            "key": "Sam's Teach Yourself Node.js in 24 Hours"
+        },
+        {
+            "val": "http://jsbooks.revolunet.com/",
+            "key": "A detailed list of free JavaScript Books"
+        },
+        {
+            "val": "http://book.mixu.net/node/index.html",
+            "key": "Mixu's Node Book"
+        },
+        {
+            "val": "http://pragprog.com/book/jwnode/node-js-the-right-way",
+            "key": "Node.js the Right Way: Practical, Server-Side JavaScript That Scale"
+        },
+        {
+            "val": "https://leanpub.com/webdevelopmentwithnodejs",
+            "key": "Beginning Web Development with Node.js"
+        },
+        {
+            "val": "http://www.packtpub.com/node-javascript-web-development/book",
+            "key": "Node Web Development"
+        },
+        {
+            "val": "http://nicholasjohnson.com/courses/nodejs/book",
+            "key": "NodeJS for Righteous Universal Domination!"
+        }
+      ],
+      "Courses": [
+        {
+            "val": "http://node.codeschool.com/",
+            "key": "Real Time Web with Node.js"
+        },
+        {
+            "val": "http://www.develop.com/training-course/nodejs-featuring-node-npm-express-mocha-mongodb-with-mongoose",
+            "key": "Essential Node.js from DevelopMentor"
+        }
+      ],
+      "Blogs": [
+        {
+            "val": "http://blog.nodejs.org/",
+            "key": "The Node.js blog"
+        },
+        {
+            "val": "http://howtonode.org/",
+            "key": "How to Node"
+        },
+        {
+            "val": "http://dailyjs.com/",
+            "key": "DailyJS"
+        },
+        {
+            "val": "http://blog.nodejitsu.com/",
+            "key": "Nodejitsu blog"
+        },
+        {
+            "val": "http://www.wilcoxd.com/whitepapers/node_js/",
+            "key": "Ryan Wilcox's Whitepaper"
+        },
+        {
+            "val": "http://www.devthought.com/",
+            "key": "devthought"
+        }
+      ],
+      "Podcasts": [
+        {
+            "val": "http://nodeup.com/",
+            "key": "NodeUp"
+        }
+      ],
+      "JavaScript Resources": [
+        {
+            "val": "http://yuiblog.com/crockford/",
+            "key": "Douglas Crockford's videos"
+        },
+        {
+            "val": "http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/",
+            "key": "Essential JavaScript Design Patterns For Beginners"
+        },
+        {
+            "val": "http://bonsaiden.github.com/JavaScript-Garden/",
+            "key": "JavaScript garden"
+        },
+        {
+            "val": "http://oreilly.com/catalog/9780596806767",
+            "key": "Javascript Patterns"
+        },
+        {
+            "val": "http://oreilly.com/catalog/9780596517748/",
+            "key": "JavaScript: The Good Parts"
+        }
+      ],
+      "Node.js Modules": [
+        {
+            "val": "http://npmjs.org/",
+            "key": "Search for registered Node.js modules"
+        },
+        {
+            "val": "http://www.freshblurbs.com/articles/important-node-js-modules.html",
+            "key": "Useful, yet biased and incomplete, selection of Node.js modules"
+        },
+        {
+            "val": "https://github.com/joyent/node/wiki/modules",
+            "key": "Wiki List on GitHub/Joyent/Node.js "
+        }
+      ],
+      "Other": [
+        {
+            "val": "http://jsapp.us/",
+            "key": "JSApp.US - like jsfiddle, but for Node.js"
+        },
+        {
+            "val": "https://www.ebayopensource.org/index.php/VJET/NodeJS",
+            "key": "Node with VJET JS (for Eclipse IDE)"
+        },
+        {
+            "val": "http://coding.smashingmagazine.com/2011/09/16/useful-node-js-tools-tutorials-and-resources/",
+            "key": "Useful Node.js Tools, Tutorials and Resources"
+        },
+        {
+            "val": "http://runnable.com/",
+            "key": "Runnable.com - like jsfiddle, but for server side as well"
+        },
+        {
+            "val": "https://devcenter.heroku.com/categories/nodejs",
+            "key": "Getting Started with Node.js on Heroku"
+        },
+        {
+            "val": "https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/",
+            "key": "Getting Started with Node.js on Open-Shift"
+        },
+        {
+            "val": "http://passportjs.org/guide/",
+            "key": "Authentication using the Passport Module"
+        },
+        {
+            "val": "http://apostrophenow.org/",
+            "key": "In-Context, Open Source CMS built in Node.js"
+        }
+      ]
+    }
+  }
