@@ -1,0 +1,2471 @@
+{
+    "id": "6186", 
+
+    "name": "PHP",
+
+    "description": "Popular general-purpose scripting language", 
+
+    "metadata": { 
+        "sourceName": "OverAPI",
+        "sourceUrl": "http://overapi.com/php/"
+    },
+
+	"aliases": [
+        "php", "php language"
+    ],
+
+    "template_type": "code",
+
+    "section_order": [  
+        "Array",
+        "String",
+        "Variable",
+        "Filters",
+        "XML Parser",
+        "Directory",
+        "Error",
+        "Math",
+        "Filesystem",
+        "Calendar",
+        "FTP",
+        "MySQLi",
+        "HTTP",
+        "Libxml",
+        "Mail",
+        "Zip",
+        "SimpleXML",
+        "Misc",
+        "Filter",
+        "Date/Time",
+        "OOP"
+    ],
+
+    "sections": {
+        "Array": [
+            {
+                "key": "array()",
+                "val": "Creates an array" 
+            },
+            {
+                "key": "array_change_key_case()",
+                "val": "Returns an array with all keys in lowercase or uppercase" 
+            },
+            {
+                "key": "array_chunk()",
+                "val": "Splits an array into chunks of arrays" 
+            },
+            {
+                "key": "array_combine()",
+                "val": "Creates an array by using one array for keys and another for its values" 
+            },
+            {
+                "key": "array_count_values()",
+                "val": "Returns an array with the number of occurrences for each value" 
+            },
+            {
+                "key": "array_diff()",
+                "val": "Compares array values, and returns the differences" 
+            },
+            {
+                "key": "array_diff_assoc()",
+                "val": "Compares array keys and values, and returns the differences" 
+            },
+            {
+                "key": "array_diff_key()",
+                "val": "Compares array keys, and returns the differences" 
+            },
+            {
+                "key": "array_diff_uassoc()",
+                "val": "Compares array keys and values, with an additional user-made function check, and returns the differences" 
+            },
+            {
+                "key": "array_diff_ukey()",
+                "val": "Compares array keys, with an additional user-made function check, and returns the differences" 
+            },
+            {
+                "key": "array_fill()",
+                "val": "Fills an array with values" 
+            },
+            {
+                "key": "array_filter()",
+                "val": "Filters elements of an array using a user-made function" 
+            },
+            {
+                "key": "array_flip()",
+                "val": "Exchanges all keys with their associated values in an array" 
+            },
+            {
+                "key": "array_intersect()",
+                "val": "Compares array values, and returns the matches" 
+            },
+            {
+                "key": "array_intersect_assoc()",
+                "val": "Compares array keys and values, and returns the matches" 
+            },
+            {
+                "key": "array_intersect_key()",
+                "val": "Compares array keys, and returns the matches" 
+            },
+            {
+                "key": "array_intersect_uassoc()",
+                "val": "Compares array keys and values, with an additional user-made function check, and returns the matches" 
+            },
+            {
+                "key": "array_intersect_ukey()",
+                "val": "Compares array keys, with an additional user-made function check, and returns the matches" 
+            },
+            {
+                "key": "array_key_exists()",
+                "val": "Checks if the specified key exists in the array" 
+            },
+            {
+                "key": "array_keys()",
+                "val": "Returns all the keys of an array" 
+            },
+            {
+                "key": "array_map()",
+                "val": "Sends each value of an array to a user-made function, which returns new values" 
+            },
+            {
+                "key": "array_merge()",
+                "val": "Merges one or more arrays into one array" 
+            },
+            {
+                "key": "array_merge_recursive()",
+                "val": "Merges one or more arrays into one array" 
+            },
+            {
+                "key": "array_multisort()",
+                "val": "Sorts multiple or multi-dimensional arrays" 
+            },
+            {
+                "key": "array_pad()",
+                "val": "Inserts a specified number of items, with a specified value, to an array" 
+            },
+            {
+                "key": "array_pop()",
+                "val": "Deletes the last element of an array" 
+            },
+            {
+                "key": "array_product()",
+                "val": "Calculates the product of the values in an array" 
+            },
+            {
+                "key": "array_push()",
+                "val": "Inserts one or more elements to the end of an array" 
+            },
+            {
+                "key": "array_rand()",
+                "val": "Returns one or more random keys from an array" 
+            },
+            {
+                "key": "array_reduce()",
+                "val": "Returns an array as a string, using a user-defined function" 
+            },
+            {
+                "key": "array_reverse()",
+                "val": "Returns an array in the reverse order" 
+            },
+            {
+                "key": "array_search()",
+                "val": "Searches an array for a given value and returns the key" 
+            },
+            {
+                "key": "array_shift()",
+                "val": "Removes the first element from an array, and returns the value of the removed element" 
+            },
+            {
+                "key": "array_slice()",
+                "val": "Returns selected parts of an array" 
+            },
+            {
+                "key": "array_splice()",
+                "val": "Removes and replaces specified elements of an array" 
+            },
+            {
+                "key": "array_sum()",
+                "val": "Returns the sum of the values in an array" 
+            },
+            {
+                "key": "array_udiff()",
+                "val": "Compares array values in a user-made function and returns an array" 
+            },
+            {
+                "key": "array_udiff_assoc()",
+                "val": "Compares array keys, and compares array values in a user-made function, and returns an array" 
+            },
+            {
+                "key": "array_udiff_uassoc()",
+                "val": "Compares array keys and array values in user-made functions, and returns an array" 
+            },
+            {
+                "key": "array_uintersect()",
+                "val": "Compares array values in a user-made function and returns an array" 
+            },
+            {
+                "key": "array_uintersect_assoc()",
+                "val": "Compares array keys, and compares array values in a user-made function, and returns an array" 
+            },
+            {
+                "key": "array_uintersect_uassoc()",
+                "val": "Compares array keys and array values in user-made functions, and returns an array" 
+            },
+            {
+                "key": "array_unique()",
+                "val": "Removes duplicate values from an array" 
+            },
+            {
+                "key": "array_unshift()",
+                "val": "Adds one or more elements to the beginning of an array" 
+            },
+            {
+                "key": "array_values()",
+                "val": "Returns all the values of an array" 
+            },
+            {
+                "key": "array_walk()",
+                "val": "Applies a user function to every member of an array" 
+            },
+            {
+                "key": "array_walk_recursive()",
+                "val": "Applies a user function recursively to every member of an array" 
+            },
+            {
+                "key": "arsort()",
+                "val": "Sorts an array in reverse order and maintain index association" 
+            },
+            {
+                "key": "asort()",
+                "val": "Sorts an array and maintain index association" 
+            },
+            {
+                "key": "compact()",
+                "val": "Create array containing variables and their values" 
+            },
+            {
+                "key": "count()",
+                "val": "Counts elements in an array, or properties in an object" 
+            },
+            {
+                "key": "current()",
+                "val": "Returns the current element in an array" 
+            },
+            {
+                "key": "each()",
+                "val": "Returns the current key and value pair from an array" 
+            },
+            {
+                "key": "end()",
+                "val": "Sets the internal pointer of an array to its last element" 
+            },
+            {
+                "key": "extract()",
+                "val": "Imports variables into the current symbol table from an array" 
+            },
+            {
+                "key": "in_array()",
+                "val": "Checks if a specified value exists in an array" 
+            },
+            {
+                "key": "key()",
+                "val": "Fetches a key from an array" 
+            },
+            {
+                "key": "krsort()",
+                "val": "Sorts an array by key in reverse order" 
+            },
+            {
+                "key": "ksort()",
+                "val": "Sorts an array by key" 
+            },
+            {
+                "key": "list()",
+                "val": "Assigns variables as if they were an array" 
+            },
+            {
+                "key": "natcasesort()",
+                "val": "Sorts an array using a case insensitive natural order algorithm" 
+            },
+            {
+                "key": "natsort()",
+                "val": "Sorts an array using a natural order algorithm" 
+            },
+            {
+                "key": "next()",
+                "val": "Advance the internal array pointer of an array" 
+            },
+            {
+                "key": "pos()",
+                "val": "Alias of current()" 
+            },
+            {
+                "key": "prev()",
+                "val": "Rewinds the internal array pointer" 
+            },
+            {
+                "key": "range()",
+                "val": "Creates an array containing a range of elements" 
+            },
+            {
+                "key": "reset()",
+                "val": "Sets the internal pointer of an array to its first element" 
+            },
+            {
+                "key": "rsort()",
+                "val": "Sorts an array in reverse order" 
+            },
+            {
+                "key": "shuffle()",
+                "val": "Shuffles an array" 
+            },
+            {
+                "key": "sizeof()",
+                "val": "Alias of count()" 
+            },
+            {
+                "key": "sort()",
+                "val": "Sorts an array" 
+            },
+            {
+                "key": "uasort()",
+                "val": "Sorts an array with a user-defined function and maintain index association" 
+            },
+            {
+                "key": "uksort()",
+                "val": "Sorts an array by keys using a user-defined function" 
+            },
+            {
+                "key": "usort()",
+                "val": "Sorts an array by values using a user-defined function"
+            }
+        ],        
+        "String": [
+            {
+                "key": "addcslashes()",
+                "val": "Returns a string with backslashes in front of the specified characters"
+            },
+            {
+                "key": "addslashes()",
+                "val": "Returns a string with backslashes in front of predefined characters"
+            },
+            {
+                "key": "bin2hex()",
+                "val": "Converts a string of ASCII characters to hexadecimal values"
+            },
+            {
+                "key": "chop()",
+                "val": "Alias of rtrim()"
+            },
+            {
+                "key": "chr()",
+                "val": "Returns a character from a specified ASCII value"
+            },
+            {
+                "key": "chunk_split()",
+                "val": "Splits a string into a series of smaller parts"
+            },
+            {
+                "key": "convert_cyr_string()",
+                "val": "Converts a string from one Cyrillic character-set to another"
+            },
+            {
+                "key": "convert_uudecode()",
+                "val": "Decodes a uuencoded string"
+            },
+            {
+                "key": "convert_uuencode()",
+                "val": "Encodes a string using the uuencode algorithm"
+            },
+            {
+                "key": "count_chars()",
+                "val": "Returns how many times an ASCII character occurs within a string and returns the information"
+            },
+            {
+                "key": "crc32()",
+                "val": "Calculates a 32-bit CRC for a string"
+            },
+            {
+                "key": "crypt()",
+                "val": "One-way string encryption (hashing)"
+            },
+            {
+                "key": "echo()",
+                "val": "Outputs strings"
+            },
+            {
+                "key": "explode()",
+                "val": "Breaks a string into an array"
+            },
+            {
+                "key": "fprintf()",
+                "val": "Writes a formatted string to a specified output stream"
+            },
+            {
+                "key": "get_html_translation_table()",
+                "val": "Returns the translation table used by htmlspecialchars() and htmlentities()"
+            },
+            {
+                "key": "hebrev()",
+                "val": "Converts Hebrew text to visual text"
+            },
+            {
+                "key": "hebrevc()",
+                "val": "Converts Hebrew text to visual text and new lines into <br>"
+            },
+            {
+                "key": "html_entity_decode()",
+                "val": "Converts HTML entities to characters"
+            },
+            {
+                "key": "htmlentities()",
+                "val": "Converts characters to HTML entities"
+            },
+            {
+                "key": "htmlspecialchars_decode()",
+                "val": "Converts some predefined HTML entities to characters"
+            },
+            {
+                "key": "htmlspecialchars()",
+                "val": "Converts some predefined characters to HTML entities"
+            },
+            {
+                "key": "implode()",
+                "val": "Returns a string from the elements of an array"
+            },
+            {
+                "key": "join()",
+                "val": "Alias of implode()"
+            },
+            {
+                "key": "levenshtein()",
+                "val": "Returns the Levenshtein distance between two strings"
+            },
+            {
+                "key": "localeconv()",
+                "val": "Returns locale numeric and monetary formatting information"
+            },
+            {
+                "key": "ltrim()",
+                "val": "Strips whitespace from the left side of a string"
+            },
+            {
+                "key": "md5()",
+                "val": "Calculates the MD5 hash of a string"
+            },
+            {
+                "key": "md5_file()",
+                "val": "Calculates the MD5 hash of a file"
+            },
+            {
+                "key": "metaphone()",
+                "val": "Calculates the metaphone key of a string"
+            },
+            {
+                "key": "money_format()",
+                "val": "Returns a string formatted as a currency string"
+            },
+            {
+                "key": "nl_langinfo()",
+                "val": "Returns specific local information"
+            },
+            {
+                "key": "nl2br()",
+                "val": "Inserts HTML line breaks in front of each newline in a string"
+            },
+            {
+                "key": "number_format()",
+                "val": "Formats a number with grouped thousands"
+            },
+            {
+                "key": "ord()",
+                "val": "Returns the ASCII value of the first character of a string"
+            },
+            {
+                "key": "parse_str()",
+                "val": "Parses a query string into variables"
+            },
+            {
+                "key": "print()",
+                "val": "Outputs a string"
+            },
+            {
+                "key": "printf()",
+                "val": "Outputs a formatted string"
+            },
+            {
+                "key": "quoted_printable_decode()",
+                "val": "Decodes a quoted-printable string"
+            },
+            {
+                "key": "quotemeta()",
+                "val": "Quotes meta characters"
+            },
+            {
+                "key": "rtrim()",
+                "val": "Strips whitespace from the right side of a string"
+            },
+            {
+                "key": "setlocale()",
+                "val": "Sets locale information"
+            },
+            {
+                "key": "sha1()",
+                "val": "Calculates the SHA-1 hash of a string"
+            },
+            {
+                "key": "sha1_file()",
+                "val": "Calculates the SHA-1 hash of a file"
+            },
+            {
+                "key": "similar_text()",
+                "val": "Calculates the similarity between two strings"
+            },
+            {
+                "key": "soundex()",
+                "val": "Calculates the soundex key of a string"
+            },
+            {
+                "key": "sprintf()",
+                "val": "Writes a formatted string to a variable"
+            },
+            {
+                "key": "sscanf()",
+                "val": "Parses input from a string according to a format"
+            },
+            {
+                "key": "str_ireplace()",
+                "val": "Replaces some characters in a string (case-insensitive)"
+            },
+            {
+                "key": "str_pad()",
+                "val": "Pads a string to a new length"
+            },
+            {
+                "key": "str_repeat()",
+                "val": "Repeats a string a specified number of times"
+            },
+            {
+                "key": "str_replace()",
+                "val": "Replaces some characters in a string (case-sensitive)"
+            },
+            {
+                "key": "str_rot13()",
+                "val": "Performs the ROT13 encoding on a string"
+            },
+            {
+                "key": "str_shuffle()",
+                "val": "Randomly shuffles all characters in a string"
+            },
+            {
+                "key": "str_split()",
+                "val": "Splits a string into an array"
+            },
+            {
+                "key": "str_word_count()",
+                "val": "Count the number of words in a string"
+            },
+            {
+                "key": "strcasecmp()",
+                "val": "Compares two strings (case-insensitive)"
+            },
+            {
+                "key": "strchr()",
+                "val": "Finds the first occurrence of a string inside another string (alias of strstr())"
+            },
+            {
+                "key": "strcmp()",
+                "val": "Compares two strings (case-sensitive)"
+            },
+            {
+                "key": "strcoll()",
+                "val": "Locale based string comparison"
+            },
+            {
+                "key": "strcspn()",
+                "val": "Returns the number of characters found in a string before any part of some specified characters are found"
+            },
+            {
+                "key": "strip_tags()",
+                "val": "Strips HTML and PHP tags from a string"
+            },
+            {
+                "key": "stripcslashes()",
+                "val": "Unquotes a string quoted with addcslashes()"
+            },
+            {
+                "key": "stripslashes()",
+                "val": "Unquotes a string quoted with addslashes()"
+            },
+            {
+                "key": "stripos()",
+                "val": "Returns the position of the first occurrence of a string inside another string (case-insensitive)"
+            },
+            {
+                "key": "stristr()",
+                "val": "Finds the first occurrence of a string inside another string (case-insensitive)"
+            },
+            {
+                "key": "strlen()",
+                "val": "Returns the length of a string"
+            },
+            {
+                "key": "strnatcasecmp()",
+                "val": "Compares two strings using a natural order algorithm (case-insensitive)"
+            },
+            {
+                "key": "strnatcmp()",
+                "val": "Compares two strings using a natural order algorithm (case-sensitive)"
+            },
+            {
+                "key": "strncasecmp()",
+                "val": "String comparison of the first n characters (case-insensitive)"
+            },
+            {
+                "key": "strncmp()",
+                "val": "String comparison of the first n characters (case-sensitive)"
+            },
+            {
+                "key": "strpbrk()",
+                "val": "Searches a string for any of a set of characters"
+            },
+            {
+                "key": "strpos()",
+                "val": "Returns the position of the first occurrence of a string inside another string (case-sensitive)"
+            },
+            {
+                "key": "strrchr()",
+                "val": "Finds the last occurrence of a string inside another string"
+            },
+            {
+                "key": "strrev()",
+                "val": "Reverses a string"
+            },
+            {
+                "key": "strripos()",
+                "val": "Finds the position of the last occurrence of a string inside another string (case-insensitive)"
+            },
+            {
+                "key": "strrpos()",
+                "val": "Finds the position of the last occurrence of a string inside another string (case-sensitive)"
+            },
+            {
+                "key": "strspn()",
+                "val": "Returns the number of characters found in a string that contains only characters from a specified charlist"
+            },
+            {
+                "key": "strstr()",
+                "val": "Finds the first occurrence of a string inside another string (case-sensitive)"
+            },
+            {
+                "key": "strtok()",
+                "val": "Splits a string into smaller strings"
+            },
+            {
+                "key": "strtolower()",
+                "val": "Converts a string to lowercase letters"
+            },
+            {
+                "key": "strtoupper()",
+                "val": "Converts a string to uppercase letters"
+            },
+            {
+                "key": "strtr()",
+                "val": "Translates certain characters in a string"
+            },
+            {
+                "key": "substr()",
+                "val": "Returns a part of a string"
+            },
+            {
+                "key": "substr_compare()",
+                "val": "Compares two strings from a specified start position (binary safe and optionally case-sensitive)"
+            },
+            {
+                "key": "substr_count()",
+                "val": "Counts the number of times a substring occurs in a string"
+            },
+            {
+                "key": "substr_replace()",
+                "val": "Replaces a part of a string with another string"
+            },
+            {
+                "key": "trim()",
+                "val": "Strips whitespace from both sides of a string"
+            },
+            {
+                "key": "ucfirst()",
+                "val": "Converts the first character of a string to uppercase"
+            },
+            {
+                "key": "ucwords()",
+                "val": "Converts the first character of each word in a string to uppercase"
+            },
+            {
+                "key": "vfprintf()",
+                "val": "Writes a formatted string to a specified output stream"
+            },
+            {
+                "key": "vprintf()",
+                "val": "Outputs a formatted string"
+            },
+            {
+                "key": "vsprintf()",
+                "val": "Writes a formatted string to a variable"
+            },
+            {
+                "key": "wordwrap()",
+                "val": "Wraps a string to a given number of characters"
+            }
+        ],
+        "Variable": [
+            {
+                "key": "boolval",
+                "val": "Get the boolean value of a variable"
+            },
+            {
+                "key": "debug_zval_dump",
+                "val": "Dumps a string representation of an internal zend value to output"
+            },
+            {
+                "key": "doubleval",
+                "val": "Alias of floatval"
+            },
+            {
+                "key": "empty",
+                "val": "Determine whether a variable is empty"
+            },
+            {
+                "key": "floatval",
+                "val": "Get float value of a variable"
+            },
+            {
+                "key": "get_defined_vars",
+                "val": "Returns an array of all defined variables"
+            },
+            {
+                "key": "get_resource_type",
+                "val": "Returns the resource type"
+            },
+            {
+                "key": "gettype",
+                "val": "Get the type of a variable"
+            },
+            {
+                "key": "import_request_variables",
+                "val": "Import GET/POST/Cookie variables into the global scope"
+            },
+            {
+                "key": "intval",
+                "val": "Get the integer value of a variable"
+            },
+            {
+                "key": "is_array",
+                "val": "Finds whether a variable is an array"
+            },
+            {
+                "key": "is_bool",
+                "val": "Finds out whether a variable is a boolean"
+            },
+            {
+                "key": "is_callable",
+                "val": "Verify that the contents of a variable can be called as a function"
+            },
+            {
+                "key": "is_double",
+                "val": "Alias of is_float"
+            },
+            {
+                "key": "is_float",
+                "val": "Finds whether the type of a variable is float"
+            },
+            {
+                "key": "is_int",
+                "val": "Find whether the type of a variable is integer"
+            },
+            {
+                "key": "is_integer",
+                "val": "Alias of is_int"
+            },
+            {
+                "key": "is_long",
+                "val": "Alias of is_int"
+            },
+            {
+                "key": "is_null",
+                "val": "Finds whether a variable is NULL"
+            },
+            {
+                "key": "is_numeric",
+                "val": "Finds whether a variable is a number or a numeric string"
+            },
+            {
+                "key": "is_object",
+                "val": "Finds whether a variable is an object"
+            },
+            {
+                "key": "is_real",
+                "val": "Alias of is_float"
+            },
+            {
+                "key": "is_resource",
+                "val": "Finds whether a variable is a resource"
+            },
+            {
+                "key": "is_scalar",
+                "val": "Finds whether a variable is a scalar"
+            },
+            {
+                "key": "is_string",
+                "val": "Find whether the type of a variable is string"
+            },
+            {
+                "key": "isset",
+                "val": "Determine if a variable is set and is not NULL"
+            },
+            {
+                "key": "print_r",
+                "val": "Prints human-readable information about a variable"
+            },
+            {
+                "key": "serialize",
+                "val": "Generates a storable representation of a value"
+            },
+            {
+                "key": "settype",
+                "val": "Set the type of a variable"
+            },
+            {
+                "key": "strval",
+                "val": "Get string value of a variable"
+            },
+            {
+                "key": "unserialize",
+                "val": "Creates a PHP value from a stored representation"
+            },
+            {
+                "key": "unset",
+                "val": "Unset a given variable"
+            },
+            {
+                "key": "var_dump",
+                "val": "Dumps information about a variable"
+            },
+            {
+                "key": "var_export",
+                "val": "Outputs or returns a parsable string representation of a variable"
+            }
+        ],
+        "Date/Time": [
+            {
+                "key": "checkdate()",
+                "val": "Validates a Gregorian date"
+            },
+            {
+                "key": "date_default_timezone_get()",
+                "val": "Returns the default time zone"
+            },
+            {
+                "key": "date_default_timezone_set()",
+                "val": "Sets the default time zone"
+            },
+            {
+                "key": "date_sunrise()",
+                "val": "Returns the time of sunrise for a given day / location"
+            },
+            {
+                "key": "date_sunset()",
+                "val": "Returns the time of sunset for a given day / location"
+            },
+            {
+                "key": "date()",
+                "val": "Formats a local time/date"
+            },
+            {
+                "key": "getdate()",
+                "val": "Returns an array that contains date and time information for a Unix timestamp"
+            },
+            {
+                "key": "gettimeofday()",
+                "val": "Returns an array that contains current time information"
+            },
+            {
+                "key": "gmdate()",
+                "val": "Formats a GMT/UTC date/time"
+            },
+            {
+                "key": "gmmktime()",
+                "val": "Returns the Unix timestamp for a GMT date"
+            },
+            {
+                "key": "gmstrftime()",
+                "val": "Formats a GMT/UTC time/date according to locale settings"
+            },
+            {
+                "key": "idate()",
+                "val": "Formats a local time/date as integer"
+            },
+            {
+                "key": "localtime()",
+                "val": "Returns an array that contains the time components of a Unix timestamp"
+            },
+            {
+                "key": "microtime()",
+                "val": "Returns the microseconds for the current time"
+            },
+            {
+                "key": "mktime()",
+                "val": "Returns the Unix timestamp for a date"
+            },
+            {
+                "key": "strftime()",
+                "val": "Formats a local time/date according to locale settings"
+            },
+            {
+                "key": "strptime()",
+                "val": "Parses a time/date generated with strftime()"
+            },
+            {
+                "key": "strtotime()",
+                "val": "Parses an English textual date or time into a Unix timestamp"
+            },
+            {
+                "key": "time()",
+                "val": "Returns the current time as a Unix timestamp"
+            }
+        ],
+        "Directory": [
+            {
+                "key": "chdir()",
+                "val": "Changes the current directory"
+            },
+            {
+                "key": "chroot()",
+                "val": "Changes the root directory of the current process"
+            },
+            {
+                "key": "dir()",
+                "val": "Opens a directory handle and returns an object"
+            },
+            {
+                "key": "closedir()",
+                "val": "Closes a directory handle"
+            },
+            {
+                "key": "getcwd()",
+                "val": "Returns the current directory"
+            },
+            {
+                "key": "opendir()",
+                "val": "Opens a directory handle"
+            },
+            {
+                "key": "readdir()",
+                "val": "Returns an entry from a directory handle"
+            },
+            {
+                "key": "rewinddir()",
+                "val": "Resets a directory handle"
+            },
+            {
+                "key": "scandir()",
+                "val": "Lists files and directories inside a specified path"
+            }
+        ],
+        "Error": [
+            {
+                "key": "debug_backtrace()",
+                "val": "Generates a backtrace"
+            },
+            {
+                "key": "debug_print_backtrace()",
+                "val": "Prints a backtrace"
+            },
+            {
+                "key": "error_get_last()",
+                "val": "Gets the last error occurred"
+            },
+            {
+                "key": "error_log()",
+                "val": "Sends an error to the server error-log, to a file or to a remote destination"
+            },
+            {
+                "key": "error_reporting()",
+                "val": "Specifies which errors are reported"
+            },
+            {
+                "key": "restore_error_handler()",
+                "val": "Restores the previous error handler"
+            },
+            {
+                "key": "restore_exception_handler()",
+                "val": "Restores the previous exception handler"
+            },
+            {
+                "key": "set_error_handler()",
+                "val": "Sets a user-defined function to handle errors"
+            },
+            {
+                "key": "set_exception_handler()",
+                "val": "Sets a user-defined function to handle exceptions"
+            },
+            {
+                "key": "trigger_error()",
+                "val": "Creates a user-defined error message"
+            },
+            {
+                "key": "user_error()",
+                "val": "Alias of trigger_error()"
+            }
+        ],
+        "Math": [
+            {
+                "key": "abs()",
+                "val": "Returns the absolute value of a number"
+            },
+            {
+                "key": "acos()",
+                "val": "Returns the arccosine of a number"
+            },
+            {
+                "key": "acosh()",
+                "val": "Returns the inverse hyperbolic cosine of a number"
+            },
+            {
+                "key": "asin()",
+                "val": "Returns the arcsine of a number"
+            },
+            {
+                "key": "asinh()",
+                "val": "Returns the inverse hyperbolic sine of a number"
+            },
+            {
+                "key": "atan()",
+                "val": "Returns the arctangent of a number as a numeric value between -PI/2 and PI/2 radians"
+            },
+            {
+                "key": "atan2()",
+                "val": "Returns the angle theta of an (x,y) point as a numeric value between -PI and PI radians"
+            },
+            {
+                "key": "atanh()",
+                "val": "Returns the inverse hyperbolic tangent of a number"
+            },
+            {
+                "key": "base_convert()",
+                "val": "Converts a number from one base to another"
+            },
+            {
+                "key": "bindec()",
+                "val": "Converts a binary number to a decimal number"
+            },
+            {
+                "key": "ceil()",
+                "val": "Returns the value of a number rounded upwards to the nearest integer"
+            },
+            {
+                "key": "cos()",
+                "val": "Returns the cosine of a number"
+            },
+            {
+                "key": "cosh()",
+                "val": "Returns the hyperbolic cosine of a number"
+            },
+            {
+                "key": "decbin()",
+                "val": "Converts a decimal number to a binary number"
+            },
+            {
+                "key": "dechex()",
+                "val": "Converts a decimal number to a hexadecimal number"
+            },
+            {
+                "key": "decoct()",
+                "val": "Converts a decimal number to an octal number"
+            },
+            {
+                "key": "deg2rad()",
+                "val": "Converts a degree to a radian number"
+            },
+            {
+                "key": "exp()",
+                "val": "Returns the value of E"
+            },
+            {
+                "key": "expm1()",
+                "val": "Returns the value of E"
+            },
+            {
+                "key": "floor()",
+                "val": "Returns the value of a number rounded downwards to the nearest integer"
+            },
+            {
+                "key": "fmod()",
+                "val": "Returns the remainder (modulo) of the division of the arguments"
+            },
+            {
+                "key": "getrandmax()",
+                "val": "Returns the maximum random number that can be returned by a call to the rand() function"
+            },
+            {
+                "key": "hexdec()",
+                "val": "Converts a hexadecimal number to a decimal number"
+            },
+            {
+                "key": "hypot()",
+                "val": "Returns the length of the hypotenuse of a right-angle triangle"
+            },
+            {
+                "key": "is_finite()",
+                "val": "Returns true if a value is a finite number"
+            },
+            {
+                "key": "is_infinite()",
+                "val": "Returns true if a value is an infinite number"
+            },
+            {
+                "key": "is_nan()",
+                "val": "Returns true if a value is not a number"
+            },
+            {
+                "key": "lcg_value()",
+                "val": "Returns a pseudo random number in the range of (0,1)"
+            },
+            {
+                "key": "log()",
+                "val": "Returns the natural logarithm (base E) of a number"
+            },
+            {
+                "key": "log10()",
+                "val": "Returns the base-10 logarithm of a number"
+            },
+            {
+                "key": "log1p()",
+                "val": "Returns log(1+number)"
+            },
+            {
+                "key": "max()",
+                "val": "Returns the number with the highest value of two specified numbers"
+            },
+            {
+                "key": "min()",
+                "val": "Returns the number with the lowest value of two specified numbers"
+            },
+            {
+                "key": "mt_getrandmax()",
+                "val": "Returns the largest possible value that can be returned by mt_rand()"
+            },
+            {
+                "key": "mt_rand()",
+                "val": "Returns a random integer using Mersenne Twister algorithm"
+            },
+            {
+                "key": "mt_srand()",
+                "val": "Seeds the Mersenne Twister random number generator"
+            },
+            {
+                "key": "octdec()",
+                "val": "Converts an octal number to a decimal number"
+            },
+            {
+                "key": "pi()",
+                "val": "Returns the value of PI"
+            },
+            {
+                "key": "pow()",
+                "val": "Returns the value of x to the power of y"
+            },
+            {
+                "key": "rad2deg()",
+                "val": "Converts a radian number to a degree"
+            },
+            {
+                "key": "rand()",
+                "val": "Returns a random integer"
+            },
+            {
+                "key": "round()",
+                "val": "Rounds a number to the nearest integer"
+            },
+            {
+                "key": "sin()",
+                "val": "Returns the sine of a number"
+            },
+            {
+                "key": "sinh()",
+                "val": "Returns the hyperbolic sine of a number"
+            },
+            {
+                "key": "sqrt()",
+                "val": "Returns the square root of a number"
+            },
+            {
+                "key": "srand()",
+                "val": "Seeds the random number generator"
+            },
+            {
+                "key": "tan()",
+                "val": "Returns the tangent of an angle"
+            },
+            {
+                "key": "tanh()",
+                "val": "Returns the hyperbolic tangent of an angle"
+            }
+        ],
+        "Filesystem": [
+            {
+                "key": "basename()",
+                "val": "Returns the filename component of a path"
+            },
+            {
+                "key": "chgrp()",
+                "val": "Changes the file group"
+            },
+            {
+                "key": "chmod()",
+                "val": "Changes the file mode"
+            },
+            {
+                "key": "chown()",
+                "val": "Changes the file owner"
+            },
+            {
+                "key": "clearstatcache()",
+                "val": "Clears the file status cache"
+            },
+            {
+                "key": "copy()",
+                "val": "Copies a file"
+            },
+            {
+                "key": "dirname()",
+                "val": "Returns the directory name component of a path"
+            },
+            {
+                "key": "disk_free_space()",
+                "val": "Returns the free space of a directory"
+            },
+            {
+                "key": "disk_total_space()",
+                "val": "Returns the total size of a directory"
+            },
+            {
+                "key": "diskfreespace()",
+                "val": "Alias of disk_free_space()"
+            },
+            {
+                "key": "fclose()",
+                "val": "Closes an open file"
+            },
+            {
+                "key": "feof()",
+                "val": "Tests for end-of-file on an open file"
+            },
+            {
+                "key": "fflush()",
+                "val": "Flushes buffered output to an open file"
+            },
+            {
+                "key": "fgetc()",
+                "val": "Returns a character from an open file"
+            },
+            {
+                "key": "fgetcsv()",
+                "val": "Parses a line from an open file, checking for "
+            },
+            {
+                "key": "fgets()",
+                "val": "Returns a line from an open file"
+            },
+            {
+                "key": "fgetss()",
+                "val": "Returns a line, with HTML and PHP tags removed, from an open file"
+            },
+            {
+                "key": "file()",
+                "val": "Reads a file into an array"
+            },
+            {
+                "key": "file_exists()",
+                "val": "Checks whether or not a file or directory exists"
+            },
+            {
+                "key": "file_get_contents()",
+                "val": "Reads a file into a string"
+            },
+            {
+                "key": "file_put_contents",
+                "val": "Writes a string to a file"
+            },
+            {
+                "key": "fileatime()",
+                "val": "Returns the last access time of a file"
+            },
+            {
+                "key": "filectime()",
+                "val": "Returns the last change time of a file"
+            },
+            {
+                "key": "filegroup()",
+                "val": "Returns the group ID of a file"
+            },
+            {
+                "key": "fileinode()",
+                "val": "Returns the inode number of a file"
+            },
+            {
+                "key": "filemtime()",
+                "val": "Returns the last modification time of a file"
+            },
+            {
+                "key": "fileowner()",
+                "val": "Returns the user ID (owner) of a file"
+            },
+            {
+                "key": "fileperms()",
+                "val": "Returns the permissions of a file"
+            },
+            {
+                "key": "filesize()",
+                "val": "Returns the file size"
+            },
+            {
+                "key": "filetype()",
+                "val": "Returns the file type"
+            },
+            {
+                "key": "flock()",
+                "val": "Locks or releases a file"
+            },
+            {
+                "key": "fnmatch()",
+                "val": "Matches a filename or string against a specified pattern"
+            },
+            {
+                "key": "fopen()",
+                "val": "Opens a file or URL"
+            },
+            {
+                "key": "fpassthru()",
+                "val": "Reads from an open file, until EOF, and writes the result to the output buffer"
+            },
+            {
+                "key": "fputcsv()",
+                "val": "Formats a line as CSV and writes it to an open file"
+            },
+            {
+                "key": "fputs()",
+                "val": "Alias of fwrite()"
+            },
+            {
+                "key": "fread()",
+                "val": "Reads from an open file"
+            },
+            {
+                "key": "fscanf()",
+                "val": "Parses input from an open file according to a specified format"
+            },
+            {
+                "key": "fseek()",
+                "val": "Seeks in an open file"
+            },
+            {
+                "key": "fstat()",
+                "val": "Returns information about an open file"
+            },
+            {
+                "key": "ftell()",
+                "val": "Returns the current position in an open file"
+            },
+            {
+                "key": "ftruncate()",
+                "val": "Truncates an open file to a specified length"
+            },
+            {
+                "key": "fwrite()",
+                "val": "Writes to an open file"
+            },
+            {
+                "key": "glob()",
+                "val": "Returns an array of filenames / directories matching a specified pattern"
+            },
+            {
+                "key": "is_dir()",
+                "val": "Checks whether a file is a directory"
+            },
+            {
+                "key": "is_executable()",
+                "val": "Checks whether a file is executable"
+            },
+            {
+                "key": "is_file()",
+                "val": "Checks whether a file is a regular file"
+            },
+            {
+                "key": "is_link()",
+                "val": "Checks whether a file is a link"
+            },
+            {
+                "key": "is_readable()",
+                "val": "Checks whether a file is readable"
+            },
+            {
+                "key": "is_uploaded_file()",
+                "val": "Checks whether a file was uploaded via HTTP POST"
+            },
+            {
+                "key": "is_writable()",
+                "val": "Checks whether a file is writeable"
+            },
+            {
+                "key": "is_writeable()",
+                "val": "Alias of is_writable()"
+            },
+            {
+                "key": "link()",
+                "val": "Creates a hard link"
+            },
+            {
+                "key": "linkinfo()",
+                "val": "Returns information about a hard link"
+            },
+            {
+                "key": "lstat()",
+                "val": "Returns information about a file or symbolic link"
+            },
+            {
+                "key": "mkdir()",
+                "val": "Creates a directory"
+            },
+            {
+                "key": "move_uploaded_file()",
+                "val": "Moves an uploaded file to a new location"
+            },
+            {
+                "key": "parse_ini_file()",
+                "val": "Parses a configuration file"
+            },
+            {
+                "key": "pathinfo()",
+                "val": "Returns information about a file path"
+            },
+            {
+                "key": "pclose()",
+                "val": "Closes a pipe opened by popen()"
+            },
+            {
+                "key": "popen()",
+                "val": "Opens a pipe"
+            },
+            {
+                "key": "readfile()",
+                "val": "Reads a file and writes it to the output buffer"
+            },
+            {
+                "key": "readlink()",
+                "val": "Returns the target of a symbolic link"
+            },
+            {
+                "key": "realpath()",
+                "val": "Returns the absolute pathname"
+            },
+            {
+                "key": "rename()",
+                "val": "Renames a file or directory"
+            },
+            {
+                "key": "rewind()",
+                "val": "Rewinds a file pointer"
+            },
+            {
+                "key": "rmdir()",
+                "val": "Removes an empty directory"
+            },
+            {
+                "key": "set_file_buffer()",
+                "val": "Sets the buffer size of an open file"
+            },
+            {
+                "key": "stat()",
+                "val": "Returns information about a file"
+            },
+            {
+                "key": "symlink()",
+                "val": "Creates a symbolic link"
+            },
+            {
+                "key": "tempnam()",
+                "val": "Creates a unique temporary file"
+            },
+            {
+                "key": "tmpfile()",
+                "val": "Creates a unique temporary file"
+            },
+            {
+                "key": "touch()",
+                "val": "Sets access and modification time of a file"
+            },
+            {
+                "key": "umask()",
+                "val": "Changes file permissions for files"
+            },
+            {
+                "key": "unlink()",
+                "val": "Deletes a file"
+            }
+        ],
+        "Filter": [
+            {
+                "key": "filter_has_var()",
+                "val": "Checks if a variable of a specified input type exist"
+            },
+            {
+                "key": "filter_id()",
+                "val": "Returns the ID number of a specified filter"
+            },
+            {
+                "key": "filter_input()",
+                "val": "Get input from outside the script and filter it"
+            },
+            {
+                "key": "filter_input_array()",
+                "val": "Get multiple inputs from outside the script and filters them"
+            },
+            {
+                "key": "filter_list()",
+                "val": "Returns an array of all supported filters"
+            },
+            {
+                "key": "filter_var_array()",
+                "val": "Get multiple variables and filter them"
+            },
+            {
+                "key": "filter_var()",
+                "val": "Get a variable and filter it"
+            }
+        ],
+        "Filters": [
+            {
+                "key": "FILTER_CALLBACK",
+                "val": "Call a user-defined function to filter data"
+            },
+            {
+                "key": "FILTER_SANITIZE_STRING",
+                "val": "Strip tags, optionally strip or encode special characters"
+            },
+            {
+                "key": "FILTER_SANITIZE_STRIPPED",
+                "val": "Alias of string filter"
+            },
+            {
+                "key": "FILTER_SANITIZE_ENCODED",
+                "val": "URL-encode string, optionally strip or encode special characters"
+            },
+            {
+                "key": "FILTER_SANITIZE_SPECIAL_CHARS",
+                "val": "HTML-escape <>& and characters with ASCII value less than 32"
+            },
+            {
+                "key": "FILTER_SANITIZE_EMAIL",
+                "val": "Remove all characters, except letters, digits and !#$%&;'*+-/=?^_`{|},~@.[]"
+            },
+            {
+                "key": "FILTER_SANITIZE_URL",
+                "val": "Remove all characters, except letters, digits and $-_.+!*'(),{},|\\^~[]`<>#%;/?:@&="
+            },
+            {
+                "key": "FILTER_SANITIZE_NUMBER_INT",
+                "val": "Remove all characters, except digits and +-"
+            },
+            {
+                "key": "filter_sanitize_number_float",
+                "val": "remove all characters, except digits, +- and optionally .,ee"
+            },
+            {
+                "key": "filter_sanitize_magic_quotes",
+                "val": "apply addslashes()"
+            },
+            {
+                "key": "FILTER_UNSAFE_RAW",
+                "val": "Do nothing, optionally strip or encode special characters"
+            },
+            {
+                "key": "FILTER_VALIDATE_INT",
+                "val": "Validate value as integer, optionally from the specified range"
+            },
+            {
+                "key": "FILTER_VALIDATE_BOOLEAN",
+                "val": "Return TRUE for '1', 'true', 'on' and 'yes', FALSE for '0', 'false', 'off', 'no', and '', NULL otherwise"
+            },
+            {
+                "key": "FILTER_VALIDATE_FLOAT",
+                "val": "Validate value as float"
+            },
+            {
+                "key": "FILTER_VALIDATE_REGEXP",
+                "val": "Validate value against regexp, a Perl-compatible regular expression"
+            },
+            {
+                "key": "FILTER_VALIDATE_URL",
+                "val": "Validate value as URL, optionally with required components"
+            },
+            {
+                "key": "FILTER_VALIDATE_EMAIL",
+                "val": "Validate value as e-mail"
+            },
+            {
+                "key": "FILTER_VALIDATE_IP",
+                "val": "Validate value as IP address, optionally only IPv4 or IPv6 or not from private or reserved ranges"
+            }
+        ],
+        "Calendar": [
+            {
+                "key": "cal_days_in_month()",
+                "val": "Returns the number of days in a month for a specified year and calendar"
+            },
+            {
+                "key": "cal_from_jd()",
+                "val": "Converts a Julian day count into a date of a specified calendar"
+            },
+            {
+                "key": "cal_info()",
+                "val": "Returns information about a given calendar"
+            },
+            {
+                "key": "cal_to_jd()",
+                "val": "Converts a date to Julian day count"
+            },
+            {
+                "key": "easter_date()",
+                "val": "Returns the Unix timestamp for midnight on Easter of a specified year"
+            },
+            {
+                "key": "easter_days()",
+                "val": "Returns the number of days after March 21, on which Easter falls for a specified year"
+            },
+            {
+                "key": "FrenchToJD()",
+                "val": "Converts a French Republican date to a Julian day count"
+            },
+            {
+                "key": "GregorianToJD()",
+                "val": "Converts a Gregorian date to a Julian day count"
+            },
+            {
+                "key": "JDDayOfWeek()",
+                "val": "Returns the day of a week"
+            },
+            {
+                "key": "JDMonthName()",
+                "val": "Returns a month name"
+            },
+            {
+                "key": "JDToFrench()",
+                "val": "Converts a Julian day count to a French Republican date"
+            },
+            {
+                "key": "JDToGregorian()",
+                "val": "Converts a Julian day count to a Gregorian date"
+            },
+            {
+                "key": "jdtojewish()",
+                "val": "Converts a Julian day count to a Jewish date"
+            },
+            {
+                "key": "JDToJulian()",
+                "val": "Converts a Julian day count to a Julian date"
+            },
+            {
+                "key": "jdtounix()",
+                "val": "Converts a Julian day count to a Unix timestamp"
+            },
+            {
+                "key": "JewishToJD()",
+                "val": "Converts a Jewish date to a Julian day count"
+            },
+            {
+                "key": "JulianToJD()",
+                "val": "Converts a Julian date to a Julian day count"
+            },
+            {
+                "key": "unixtojd()",
+                "val": "Converts a Unix timestamp to a Julian day count"
+            }
+        ],
+        "FTP": [
+            {
+                "key": "ftp_alloc()",
+                "val": "Allocates space for a file to be uploaded to the FTP server"
+            },
+            {
+                "key": "ftp_cdup()",
+                "val": "Changes the current directory to the parent directory on the FTP server"
+            },
+            {
+                "key": "ftp_chdir()",
+                "val": "Changes the current directory on the FTP server"
+            },
+            {
+                "key": "ftp_chmod()",
+                "val": "Sets permissions on a file via FTP"
+            },
+            {
+                "key": "ftp_close()",
+                "val": "Closes an FTP connection"
+            },
+            {
+                "key": "ftp_connect()",
+                "val": "Opens an FTP connection"
+            },
+            {
+                "key": "ftp_delete()",
+                "val": "Deletes a file on the FTP server"
+            },
+            {
+                "key": "ftp_exec()",
+                "val": "Executes a program/command on the FTP server"
+            },
+            {
+                "key": "ftp_fget()",
+                "val": "Downloads a file from the FTP server and saves it to an open file"
+            },
+            {
+                "key": "ftp_fput()",
+                "val": "Uploads from an open file and saves it to a file on the FTP server"
+            },
+            {
+                "key": "ftp_get_option()",
+                "val": "Returns runtime behaviors of the FTP connection"
+            },
+            {
+                "key": "ftp_get()",
+                "val": "Downloads a file from the FTP server"
+            },
+            {
+                "key": "ftp_login()",
+                "val": "Logs on to an FTP connection"
+            },
+            {
+                "key": "ftp_mdtm()",
+                "val": "Returns the last modified time of a specified file"
+            },
+            {
+                "key": "ftp_mkdir()",
+                "val": "Creates a new directory on the FTP server"
+            },
+            {
+                "key": "ftp_nb_continue()",
+                "val": "Continues retrieving/sending a file (non-blocking)"
+            },
+            {
+                "key": "ftp_nb_fget()",
+                "val": "Downloads a file from the FTP server and saves it to an open file (non-blocking)"
+            },
+            {
+                "key": "ftp_nb_fput()",
+                "val": "Uploads from an open file and saves it to a file on the FTP server (non-blocking)"
+            },
+            {
+                "key": "ftp_nb_get()",
+                "val": "Downloads a file from the FTP server (non-blocking)"
+            },
+            {
+                "key": "ftp_nb_put()",
+                "val": "Uploads a file to the FTP server (non-blocking)"
+            },
+            {
+                "key": "ftp_nlist()",
+                "val": "Lists the files in a specified directory on the FTP server"
+            },
+            {
+                "key": "ftp_pasv()",
+                "val": "Turns passive mode on or off"
+            },
+            {
+                "key": "ftp_put()",
+                "val": "Uploads a file to the FTP server"
+            },
+            {
+                "key": "ftp_pwd()",
+                "val": "Returns the current directory name"
+            },
+            {
+                "key": "ftp_quit()",
+                "val": "Alias of ftp_close()"
+            },
+            {
+                "key": "ftp_raw()",
+                "val": "Sends a raw command to the FTP server"
+            },
+            {
+                "key": "ftp_rawlist()",
+                "val": "Returns a detailed list of files in the specified directory"
+            },
+            {
+                "key": "ftp_rename()",
+                "val": "Renames a file or directory on the FTP server"
+            },
+            {
+                "key": "ftp_rmdir()",
+                "val": "Removes a directory on the FTP server"
+            },
+            {
+                "key": "ftp_set_option()",
+                "val": "Sets runtime options for the FTP connection"
+            },
+            {
+                "key": "ftp_site()",
+                "val": "Sends a SITE command to the server"
+            },
+            {
+                "key": "ftp_size()",
+                "val": "Returns the size of the specified file"
+            },
+            {
+                "key": "ftp_ssl_connect()",
+                "val": "Opens a secure SSL-FTP connection"
+            },
+            {
+                "key": "ftp_systype()",
+                "val": "Returns the system type identifier of the FTP server"
+            }
+        ],
+        "HTTP": [
+            {
+                "key": "header()",
+                "val": "Sends a raw HTTP header to a client"
+            },
+            {
+                "key": "headers_list()",
+                "val": "Returns a list of response headers sent (or ready to send)"
+            },
+            {
+                "key": "headers_sent()",
+                "val": "Checks if / where the HTTP headers have been sent"
+            },
+            {
+                "key": "setcookie()",
+                "val": "Sends an HTTP cookie to a client"
+            },
+            {
+                "key": "setrawcookie()",
+                "val": "Sends an HTTP cookie without URL encoding the cookie value"
+            }
+        ],
+        "Libxml": [
+            {
+                "key": "libxml_clear_errors()",
+                "val": "Clear libxml error buffer"
+            },
+            {
+                "key": "libxml_get_errors()",
+                "val": "Retrieve array of errors"
+            },
+            {
+                "key": "libxml_get_last_error()",
+                "val": "Retrieve last error from libxml"
+            },
+            {
+                "key": "libxml_set_streams_context()",
+                "val": "Set the streams context for the next libxml document load or write"
+            },
+            {
+                "key": "libxml_use_internal_errors()",
+                "val": "Disable libxml errors and allow user to fetch error information as needed"
+            }
+        ],
+        "Mail": [
+            {
+                "key": "ezmlm_hash()",
+                "val": "Calculates the hash value needed by the EZMLM mailing list system"
+            },
+            {
+                "key": "mail()",
+                "val": "Allows you to send emails directly from a script"
+            }
+        ],
+        "OOP": [
+            {
+                "key": "__construct()",
+                "val": "Classes which have a constructor method call this method on each newly-created object, so it is suitable for any initialization that the object may need before it is used"
+            },
+            {
+                "key": "__destruct()",
+                "val": "Called as soon as there are no other references to a particular object, or in any order during the shutdown sequence"
+            },
+            {
+                "key": "__callStatic()",
+                "val": "Triggered when invoking inaccessible methods in a static context"
+            },
+            {
+                "key": "__call()",
+                "val": "Triggered when invoking inaccessible methods in an object context"
+            },
+            {
+                "key": "__get()",
+                "val": "Utilized for reading data from inaccessible properties"
+            },
+            {
+                "key": "__set()",
+                "val": "Run when writing data to inaccessible properties"
+            },
+            {
+                "key": "__isset()",
+                "val": "Triggered by calling isset() or empty() on inaccessible properties"
+            },
+            {
+                "key": "__unset()",
+                "val": "Invoked when unset() is used on inaccessible properties"
+            },
+            {
+                "key": "__sleep()",
+                "val": " The intended use of __sleep() is to commit pending data or perform similar cleanup tasks. Also, the function is useful if you have very large objects which do not need to be saved completely"
+            },
+            {
+                "key": "__wakeup()",
+                "val": "The intended use of __wakeup() is to reestablish any database connections that may have been lost during serialization and perform other reinitialization tasks"
+            },
+            {
+                "key": "__toString()",
+                "val": "Allows a class to decide how it will react when it is treated like a string"
+            },
+            {
+                "key": "__invoke()",
+                "val": "Called when a script tries to call an object as a function"
+            },
+            {
+                "key": "__set_state()",
+                "val": "Called for classes exported by var_export() since PHP 5.1.0"
+            },
+            {
+                "key": "__clone()",
+                "val": "Once the cloning is complete, if a __clone() method is defined, then the newly created object's __clone() method will be called, to allow any necessary properties that need to be changed"
+            }
+        ],
+        "Zip": [
+            {
+                "key": "zip_close()",
+                "val": "Closes a ZIP file"
+            },
+            {
+                "key": "zip_entry_close()",
+                "val": "Closes an entry in the ZIP file"
+            },
+            {
+                "key": "zip_entry_compressedsize()",
+                "val": "Returns the compressed size of an entry in the ZIP file"
+            },
+            {
+                "key": "zip_entry_compressionmethod()",
+                "val": "Returns the compression method of an entry in the ZIP file"
+            },
+            {
+                "key": "zip_entry_filesize()",
+                "val": "Returns the actual file size of an entry in the ZIP file"
+            },
+            {
+                "key": "zip_entry_name()",
+                "val": "Returns the name of an entry in the ZIP file"
+            },
+            {
+                "key": "zip_entry_open()",
+                "val": "Opens an entry in the ZIP file for reading"
+            },
+            {
+                "key": "zip_entry_read()",
+                "val": "Reads from an open entry in the ZIP file"
+            },
+            {
+                "key": "zip_open()",
+                "val": "Opens a ZIP file"
+            },
+            {
+                "key": "zip_read()",
+                "val": "Reads the next entry in a ZIP file"
+            }
+        ],
+        "SimpleXML": [
+            {
+                "key": "__construct()",
+                "val": "Creates a new SimpleXMLElement object"
+            },
+            {
+                "key": "addAttribute()",
+                "val": "Adds an attribute to the SimpleXML element"
+            },
+            {
+                "key": "addChild()",
+                "val": "Adds a child element the SimpleXML element"
+            },
+            {
+                "key": "asXML()",
+                "val": "Gets an XML string from a SimpleXML element"
+            },
+            {
+                "key": "attributes()",
+                "val": "Gets a SimpleXML element's attributes"
+            },
+            {
+                "key": "children()",
+                "val": "Gets the children of a specified node"
+            },
+            {
+                "key": "getDocNamespaces()",
+                "val": "Gets the namespaces of an XML document"
+            },
+            {
+                "key": "getName()",
+                "val": "Gets the name of a SimpleXML element"
+            },
+            {
+                "key": "getNamespace()",
+                "val": "Gets the namespaces from XML data"
+            },
+            {
+                "key": "registerXPathNamespace()",
+                "val": "Creates a namespace context for the next XPath query"
+            },
+            {
+                "key": "simplexml_import_dom()",
+                "val": "Gets a SimpleXMLElement object from a DOM node"
+            },
+            {
+                "key": "simplexml_load_file()",
+                "val": "Gets a SimpleXMLElement object from an XML document"
+            },
+            {
+                "key": "simplexml_load_string()",
+                "val": "Gets a SimpleXMLElement object from an XML string"
+            },
+            {
+                "key": "xpath()",
+                "val": "Runs an XPath query on XML data"
+            }
+        ],
+        "Misc": [
+            {
+                "key": "connection_aborted()",
+                "val": "Checks whether the client has disconnected"
+            },
+            {
+                "key": "connection_status()",
+                "val": "Returns the current connection status"
+            },
+            {
+                "key": "connection_timeout()",
+                "val": "Deprecated in PHP 4.0.5"
+            },
+            {
+                "key": "constant()",
+                "val": "Returns the value of a constant"
+            },
+            {
+                "key": "define()",
+                "val": "Defines a constant"
+            },
+            {
+                "key": "defined()",
+                "val": "Checks whether a constant exists"
+            },
+            {
+                "key": "die()",
+                "val": "Prints a message and exits the current script"
+            },
+            {
+                "key": "eval()",
+                "val": "Evaluates a string as PHP code"
+            },
+            {
+                "key": "exit()",
+                "val": "Prints a message and exits the current script"
+            },
+            {
+                "key": "get_browser()",
+                "val": "Returns the capabilities of the user's browser "
+            },
+            {
+                "key": "highlight_file()",
+                "val": "Outputs a file with the PHP syntax highlighted"
+            },
+            {
+                "key": "highlight_string()",
+                "val": "Outputs a string with the PHP syntax highlighted"
+            },
+            {
+                "key": "ignore_user_abort()",
+                "val": "Sets whether a remote client can abort the running of a script"
+            },
+            {
+                "key": "pack()",
+                "val": "Packs data into a binary string"
+            },
+            {
+                "key": "php_check_syntax()",
+                "val": "http://php.net/manual/en/function.php-check-syntax.php"
+            },
+            {
+                "key": "php_strip_whitespace()",
+                "val": "Returns the source code of a file with PHP comments and whitespace removed"
+            },
+            {
+                "key": "show_source()",
+                "val": "Alias of highlight_file()"
+            },
+            {
+                "key": "sleep()",
+                "val": "Delays code execution for a number of seconds"
+            },
+            {
+                "key": "time_nanosleep()",
+                "val": "Delays code execution for a number of seconds and nanoseconds"
+            },
+            {
+                "key": "time_sleep_until()",
+                "val": "Delays code execution until a specified time"
+            },
+            {
+                "key": "uniqid()",
+                "val": "Generates a unique ID"
+            },
+            {
+                "key": "unpack()",
+                "val": "Unpacks data from a binary string"
+            },
+            {
+                "key": "usleep()",
+                "val": "Delays code execution for a number of microseconds"
+            }
+        ],
+        "MySQLi": [
+            {
+                "key": "mysqli::$affected_rows",
+                "val": "Gets the number of affected rows in a previous MySQL operation"
+            },
+            {
+                "key": "mysqli::autocommit()",
+                "val": "Turns on or off auto-committing database modifications"
+            },
+            {
+                "key": "mysqli::change_user()",
+                "val": "Changes the user of the specified database connection"
+            },
+            {
+                "key": "mysqli::character_set_name()",
+                "val": "Returns the default character set for the database connection"
+            },
+            {
+                "key": "mysqli::$client_info",
+                "val": "Get MySQL client info"
+            },
+            {
+                "key": "mysqli::$client_version",
+                "val": "Returns the MySQL client version as a string"
+            },
+            {
+                "key": "mysqli::close()",
+                "val": "Closes a previously opened database connection"
+            },
+            {
+                "key": "mysqli::commit()",
+                "val": "Commits the current transaction"
+            },
+            {
+                "key": "mysqli::$connect_errno",
+                "val": "Returns the error code from last connect call"
+            },
+            {
+                "key": "mysqli::$connect_error",
+                "val": "Returns a string description of the last connect error"
+            },
+            {
+                "key": "mysqli::__construct()",
+                "val": "Open a new connection to the MySQL server"
+            },
+            {
+                "key": "mysqli::debug()",
+                "val": "Performs debugging operations"
+            },
+            {
+                "key": "mysqli::dump_debug_info()",
+                "val": "Dump debugging information into the log"
+            },
+            {
+                "key": "mysqli::$errno",
+                "val": "Returns the error code for the most recent function call"
+            },
+            {
+                "key": "mysqli::$error_list",
+                "val": "Returns a list of errors from the last command executed"
+            },
+            {
+                "key": "mysqli::$error",
+                "val": "Returns a string description of the last error"
+            },
+            {
+                "key": "mysqli::$field_count",
+                "val": "Returns the number of columns for the most recent query"
+            },
+            {
+                "key": "mysqli::get_charset()",
+                "val": "Returns a character set object"
+            },
+            {
+                "key": "mysqli::get_client_info()",
+                "val": "Get MySQL client info"
+            },
+            {
+                "key": "mysqli_get_client_stats()",
+                "val": "Returns client per-process statistics"
+            },
+            {
+                "key": "mysqli_get_client_version()",
+                "val": "Returns the MySQL client version as a string"
+            },
+            {
+                "key": "mysqli::get_connection_stats()",
+                "val": "Returns statistics about the client connection"
+            },
+            {
+                "key": "mysqli::$host_info",
+                "val": "Returns a string representing the type of connection used"
+            },
+            {
+                "key": "mysqli::$protocol_version",
+                "val": "Returns the version of the MySQL protocol used"
+            },
+            {
+                "key": "mysqli::$server_info",
+                "val": "Returns the version of the MySQL server"
+            },
+            {
+                "key": "mysqli::$server_version",
+                "val": "Returns the version of the MySQL server as an integer"
+            },
+            {
+                "key": "mysqli::get_warnings()",
+                "val": "Get result of SHOW WARNINGS"
+            },
+            {
+                "key": "mysqli::$info",
+                "val": "Retrieves information about the most recently executed query"
+            },
+            {
+                "key": "mysqli::init()",
+                "val": "Initializes MySQLi and returns a resource for use with mysqli_real_connect()"
+            },
+            {
+                "key": "mysqli::$insert_id",
+                "val": "Returns the auto generated id used in the last query"
+            },
+            {
+                "key": "mysqli::kill()",
+                "val": "Asks the server to kill a MySQL thread"
+            },
+            {
+                "key": "mysqli::more_results()",
+                "val": "Check if there are any more query results from a multi query"
+            },
+            {
+                "key": "mysqli::multi_query()",
+                "val": "Performs a query on the database"
+            },
+            {
+                "key": "mysqli::next_result()",
+                "val": "Prepare next result from multi_query"
+            },
+            {
+                "key": "mysqli::options()",
+                "val": "Set options"
+            },
+            {
+                "key": "mysqli::ping()",
+                "val": "Pings a server connection, or tries to reconnect if the connection has gone down"
+            },
+            {
+                "key": "mysqli::poll()",
+                "val": "Poll connections"
+            },
+            {
+                "key": "mysqli::prepare()",
+                "val": "Prepare an SQL statement for execution"
+            },
+            {
+                "key": "mysqli::query()",
+                "val": "Performs a query on the database"
+            },
+            {
+                "key": "mysqli::real_connect()",
+                "val": "Opens a connection to a mysql server"
+            },
+            {
+                "key": "mysqli::real_escape_string()",
+                "val": "Escapes special characters in a string for use in an SQL statement, taking into account the current charset of the connection"
+            },
+            {
+                "key": "mysqli::real_query()",
+                "val": "Execute an SQL query"
+            },
+            {
+                "key": "mysqli::reap_async_query()",
+                "val": "Get result from async query"
+            },
+            {
+                "key": "mysqli::refresh()",
+                "val": "Refreshes"
+            },
+            {
+                "key": "mysqli::rollback()",
+                "val": "Rolls back current transaction"
+            },
+            {
+                "key": "mysqli::rpl_query_type()",
+                "val": "Returns RPL query type"
+            },
+            {
+                "key": "mysqli::select_db()",
+                "val": "Selects the default database for database queries"
+            },
+            {
+                "key": "mysqli::send_query()",
+                "val": "Send the query and return"
+            },
+            {
+                "key": "mysqli::set_charset()",
+                "val": "Sets the default client character set"
+            },
+            {
+                "key": "mysqli::set_local_infile_default()",
+                "val": "Unsets user defined handler for load local infile command"
+            },
+            {
+                "key": "mysqli::set_local_infile_handler()",
+                "val": "Set callback function for LOAD DATA LOCAL INFILE command"
+            },
+            {
+                "key": "mysqli::$sqlstate",
+                "val": "Returns the SQLSTATE error from previous MySQL operation"
+            },
+            {
+                "key": "mysqli::ssl_set()",
+                "val": "Used for establishing secure connections using SSL"
+            },
+            {
+                "key": "mysqli::stat()",
+                "val": "Gets the current system status"
+            },
+            {
+                "key": "mysqli::stmt_init()",
+                "val": "Initializes a statement and returns an object for use with mysqli_stmt_prepare"
+            },
+            {
+                "key": "mysqli::store_result()",
+                "val": "Transfers a result set from the last query"
+            },
+            {
+                "key": "mysqli::$thread_id",
+                "val": "Returns the thread ID for the current connection"
+            },
+            {
+                "key": "mysqli::thread_safe()",
+                "val": "Returns whether thread safety is given or not"
+            },
+            {
+                "key": "mysqli::use_result()",
+                "val": "Initiate a result set retrieval"
+            },
+            {
+                "key": "mysqli::$warning_count",
+                "val": "Returns the number of warnings from the last query for the given link"
+            }
+        ],
+        "XML Parser": [
+            {
+                "key": "utf8_decode()",
+                "val": "Decodes an UTF-8 string to ISO-8859-1"
+            },
+            {
+                "key": "utf8_encode()",
+                "val": "Encodes an ISO-8859-1 string to UTF-8"
+            },
+            {
+                "key": "xml_error_string()",
+                "val": "Gets an error string from the XML parser"
+            },
+            {
+                "key": "xml_get_current_byte_index()",
+                "val": "Gets the current byte index from the XML parser"
+            },
+            {
+                "key": "xml_get_current_column_number()",
+                "val": "Gets the current column number from the XML parser"
+            },
+            {
+                "key": "xml_get_current_line_number()",
+                "val": "Gets the current line number from the XML parser"
+            },
+            {
+                "key": "xml_get_error_code()",
+                "val": "Gets an error code from the XML parser"
+            },
+            {
+                "key": "xml_parse()",
+                "val": "Parses an XML document"
+            },
+            {
+                "key": "xml_parse_into_struct()",
+                "val": "Parse XML data into an array"
+            },
+            {
+                "key": "xml_parser_create_ns()",
+                "val": "Create an XML parser with namespace support"
+            },
+            {
+                "key": "xml_parser_create()",
+                "val": "Create an XML parser"
+            },
+            {
+                "key": "xml_parser_free()",
+                "val": "Free an XML parser"
+            },
+            {
+                "key": "xml_parser_get_option()",
+                "val": "Get options from an XML parser"
+            },
+            {
+                "key": "xml_parser_set_option()",
+                "val": "Set options in an XML parser"
+            },
+            {
+                "key": "xml_set_character_data_handler()",
+                "val": "Set handler function for character data"
+            },
+            {
+                "key": "xml_set_default_handler()",
+                "val": "Set default handler function"
+            },
+            {
+                "key": "xml_set_element_handler()",
+                "val": "Set handler function for start and end element of elements"
+            },
+            {
+                "key": "xml_set_external_entity_ref_handler()",
+                "val": "Set handler function for external entities"
+            },
+            {
+                "key": "xml_set_notation_decl_handler()",
+                "val": "Set handler function for notation declarations"
+            },
+            {
+                "key": "xml_set_object()",
+                "val": "Use XML Parser within an object"
+            },
+            {
+                "key": "xml_set_processing_instruction_handler()",
+                "val": "Set handler function for processing instruction"
+            },
+            {
+                "key": "xml_set_unparsed_entity_decl_handler()",
+                "val": "Set handler function for unparsed entity declarations"
+            }
+        ]
+    }
+}
