@@ -24,8 +24,8 @@
   "sections": {
       "Tutorials": [
         {
-          "val": "http://nodeschool.io/",
-          "key": "NodeSchool.io"
+            "val": "http://nodeschool.io/",
+            "key": "NodeSchool.io"
         },
         {
             "val": "https://github.com/maxogden/art-of-node/#the-art-of-node",
@@ -41,7 +41,7 @@
         },
         {
             "val": "http://www.nodebeginner.org/#building-the-application-stack",
-            "key": "Hellow World Web Server"
+            "key": "Hello World Web Server"
         },
         {
             "val": "http://nodeguide.com/",
@@ -50,10 +50,6 @@
         {
             "val": "http://howtonode.org/express-mongodb",
             "key": "Build a blog with Node.js, express and MongoDB"
-        },
-        {
-            "val": "http://project70.com/",
-            "key": "Node.Js Tutorials At Project 70"
         },
         {
             "val": "http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/",
