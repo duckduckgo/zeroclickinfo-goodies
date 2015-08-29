@@ -27,7 +27,7 @@
             "key" : "Good afternoon"
          },
          {
-            "val" : "Goedeavond (khoo-der-aa-font)",
+            "val" : "Goedenavond (khoo-der-aa-font)",
             "key" : "Good evening"
          },
          {
@@ -125,7 +125,7 @@
             "key" : "Where are the toilets?"
          },
          {
-            "val" : "Hoeveel kost dat ? (hoo-feyl kost dat)",
+            "val" : "Hoeveel kost dat? (hoo-feyl kost dat)",
             "key" : "How much is that?"
          },
          {
