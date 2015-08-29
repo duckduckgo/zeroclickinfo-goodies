@@ -55,7 +55,7 @@
             },
             {
                 "key": "i16",
-                "val": "Signed integer in the range of [-(2^15, 2^15 - 1]"               
+                "val": "Signed integer in the range of [-(2^15), 2^15 - 1]"               
             },
             {
                 "key": "i32",
@@ -92,7 +92,7 @@
                 "val": "Tuple types and values are denoted by listing the types or values of their elements, respectively, in a parenthesized, comma-separated list."
             }
         ],
-        "Array, and Slice types": [
+        "Array and Slice types": [
             {
                 "key": "array",
                 "val": "An array has a fixed size, and can be allocated on either the stack or the heap."
