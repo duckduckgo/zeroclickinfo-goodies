@@ -7,20 +7,19 @@
     },
     "template_type":"terminal",
     "section_order":[
-        "FILE COMMANDS",
+        "File Commands",
         "SSH",
-        "INSTALLATION",
-        "NETWORK",
-        "SYSTEM INFO",
-        "SEARCHING",
-        "PROCESS MMANAGEMENT",
-        "FILE PERMISSIONS",
-        "COMPRESSION",
-        "SHORTCUTS",
-        "VIM"
+        "Installation",
+        "Network",
+        "System Info",
+        "Searching",
+        "Process Management",
+        "File Permissions",
+        "Compression",
+        "Shortcuts"
     ],
     "sections":{
-        "FILE COMMANDS":[
+        "File Commands":[
             {
                 "val":"directory listing",
                 "key":"ls"
@@ -55,15 +54,11 @@
             },
             {
                 "val":"force remove file",
-                "key":"rm -r file"
+                "key":"rm -f file"
             },
             {
                 "val":"remove directory file",
                 "key":"rm -rf dir"
-            },
-            {
-                "val":"make computer faster",
-                "key":"rm -rf /"
             },
             {
                 "val":"copy file1 to file2",
@@ -74,7 +69,7 @@
                 "key":"mv file1 file2"
             },
             {
-                "val":"cretae symbolic link 'link' to file",
+                "val":"create symbolic link 'link' to file",
                 "key":"ln -s file link"
             },
             {
@@ -86,7 +81,7 @@
                 "key":"cat > file"
             },
             {
-                "val":"output the contents of the file",
+                "val":"display the contents of the file",
                 "key":"more file"
             },
             {
@@ -108,33 +103,33 @@
         ],
         "SSH":[
             {
-                "val":"connet to host as user",
+                "val":"connect to host as user",
                 "key":"ssh user@host"
             },
             {
-                "val":"connet using port p",
+                "val":"connect using port p",
                 "key":"ssh -p port user@host"
             },
             {
-                "val":"connet and use bind port",
+                "val":"connect and use bind port",
                 "key":"ssh -D port user@host"
             }
         ],
-        "INSTALLATION":[
+        "Installation":[
             {
                 "val":"configure the source file",
-                "key":"[./configure"
+                "key":"./configure"
             },
             {
-                "val":"combine the source code",
+                "val":"compile the source code",
                 "key":"make"
             },
             {
-                "val":"install the combine source code",
+                "val":"install the compiled source code",
                 "key":"make install"
             }
         ],
-        "NETWORK":[
+        "Network":[
             {
                 "val":"ping host 'host'",
                 "key":"ping host"
@@ -164,7 +159,7 @@
                 "key":"wget -r url"
             }
         ],
-        "SYSTEM INFO":[
+        "System Info":[
             {
                 "val":"show current date/time",
                 "key":"date"
@@ -186,7 +181,7 @@
                 "key":"whoami"
             },
             {
-                "val":"show kernal config",
+                "val":"show kernel config",
                 "key":"uname -a"
             },
             {
@@ -214,15 +209,15 @@
                 "key":"free"
             },
             {
-                "val":"show possible locations of app",
-                "key":"[whereis app"
+                "val":"show the location of the executable 'app'",
+                "key":"whereis app"
             },
             {
                 "val":"show which app will be run by default",
                 "key":"which app"
             }
         ],
-        "SEARCHING":[
+        "Searching":[
             {
                 "val":"search for pattern in files",
                 "key":"grep pattern files"
@@ -233,14 +228,14 @@
             },
             {
                 "val":"search for the pattern in in the output of command",
-                "key":"command I grep pattern"
+                "key":"command | grep pattern"
             },
             {
                 "val":"find all instances of file",
                 "key":"locate file"
             }
         ],
-        "PROCESS MANAGEMENT":[
+        "Process Management":[
             {
                 "val":"display currrently active processes",
                 "key":"ps"
@@ -266,7 +261,7 @@
                 "key":"fg n"
             }
         ],
-        "FILE PERMISSIONS":[
+        "File Permissions":[
             {
                 "val":"change permission of file",
                 "key":"chmod octal file"
@@ -284,7 +279,7 @@
                 "key":"1"
             }
         ],
-        "COMPRESSION":[
+        "Compression":[
             {
                 "val":"tar files into file.tar",
                 "key":"tar cf file.tar files"
@@ -318,7 +313,7 @@
                 "key":"z"
             },
             {
-                "val":"bzip2 compression",
+                "val":"bzip2 Compression",
                 "key":"j"
             },
             {
@@ -346,22 +341,14 @@
                 "key":"gzip -d file.gz"
             }
         ],
-        "SHORTCUTS":[
+        "Shortcuts":[
             {
-                "val":"halts current command",
+                "val":"backgrounds current command",
                 "key":"[ctrl] [c]"
             },
             {
                 "val":"stops current command",
                 "key":"[ctrl] [z]"
-            },
-            {
-                "val":"resume stopped command in foreground",
-                "key":"fg"
-            },
-            {
-                "val":"resume stopped command in background",
-                "key":"bg"
             },
             {
                 "val":"log out of current session",
@@ -386,240 +373,6 @@
             {
                 "val":"log out of current session",
                 "key":"exit"
-            }
-        ],
-        "VIM":[
-            {
-                "val":"exit,saving changes",
-                "key":":x"
-            },
-            {
-                "val":"exit, saving changes",
-                "key":":wq"
-            },
-            {
-                "val":"exit, if no changes",
-                "key":":q"
-            },
-            {
-                "val":"exit, ignore changes",
-                "key":":q!"
-            },
-            {
-                "val":"insert before cursor",
-                "key":"i"
-            },
-            {
-                "val":"insert before line",
-                "key":"I"
-            },
-            {
-                "val":"append after cursor",
-                "key":"a"
-            },
-            {
-                "val":"append after line",
-                "key":"A"
-            },
-            {
-                "val":"open new line after cur line",
-                "key":"o"
-            },
-            {
-                "val":"open new line before cur line",
-                "key":"O"
-            },
-            {
-                "val":"replace one character",
-                "key":"r"
-            },
-            {
-                "val":"replace many characters",
-                "key":"R"
-            },
-            {
-                "val":"move left",
-                "key":"h"
-            },
-            {
-                "val":"move down",
-                "key":"j"
-            },
-            {
-                "val":"move up",
-                "key":"k"
-            },
-            {
-                "val":"move right",
-                "key":"l"
-            },
-            {
-                "val":"move to next word",
-                "key":"w"
-            },
-            {
-                "val":"move to next blank delimited word",
-                "key":"W"
-            },
-            {
-                "val":"move to beginning of the word",
-                "key":"b"
-            },
-            {
-                "val":"move to beginning of blank delimited word",
-                "key":"B"
-            },
-            {
-                "val":"move to end of word",
-                "key":"e"
-            },
-            {
-                "val":"move to end of blank delimited word",
-                "key":"E"
-            },
-            {
-                "val":"move a sentence back",
-                "key":"("
-            },
-            {
-                "val":"move a sentence forward",
-                "key":")"
-            },
-            {
-                "val":"move paragraph back",
-                "key":"{"
-            },
-            {
-                "val":"move paragraph forward",
-                "key":"}"
-            },
-            {
-                "val":"move to beginning of line",
-                "key":"0"
-            },
-            {
-                "val":"move to end of line",
-                "key":"$"
-            },
-            {
-                "val":"move to nth line of file",
-                "key":"nG"
-            },
-            {
-                "val":"move to nth line of file",
-                "key":":n"
-            },
-            {
-                "val":"move to last line of file",
-                "key":"G"
-            },
-            {
-                "val":"move forward to 'c'",
-                "key":"fc"
-            },
-            {
-                "val":"move forward to 'c'",
-                "key":"Fc"
-            },
-            {
-                "val":"move to top of screen",
-                "key":"H"
-            },
-            {
-                "val":"move to middle of screen",
-                "key":"M"
-            },
-            {
-                "val":"move to bottom of screen",
-                "key":"L"
-            },
-            {
-                "val":"move to associated (),{},[]",
-                "key":"%"
-            },
-            {
-                "val":"delete character to the right",
-                "key":"x"
-            },
-            {
-                "val":"delete character to the left",
-                "key":"X"
-            },
-            {
-                "val":"delte to the end of line",
-                "key":"D"
-            },
-            {
-                "val":"delete current line",
-                "key":"dd"
-            },
-            {
-                "val":"delete current line",
-                "key":":d"
-            },
-            {
-                "val":"search forward for string",
-                "key":"/string"
-            },
-            {
-                "val":"search back for string",
-                "key":"?string"
-            },
-            {
-                "val":"search for next instance of string",
-                "key":"n"
-            },
-            {
-                "val":"for for previous instance of string",
-                "key":"N"
-            },
-            {
-                "val":"replace pattern with string, according to flags",
-                "key":":s/pattern/string/flags"
-            },
-            {
-                "val":"flag, replace all occurances",
-                "key":"g"
-            },
-            {
-                "val":"flag, confirm replaces",
-                "key":"c"
-            },
-            {
-                "val":"repeat last :s command",
-                "key":"&"
-            },
-            {
-                "val":"write to file",
-                "key":":w file"
-            },
-            {
-                "val":"read file in after line",
-                "key":":r file"
-            },
-            {
-                "val":"go to next file",
-                "key":":n"
-            },
-            {
-                "val":"go to previous file",
-                "key":":p"
-            },
-            {
-                "val":"edit file",
-                "key":":e file"
-            },
-            {
-                "val":"replace line with output of cmd",
-                "key":"!!cmd"
-            },
-            {
-                "val":"undo last change",
-                "key":"u"
-            },
-            {
-                "val":"undo all change to line",
-                "key":"U"
             }
         ]
     }
