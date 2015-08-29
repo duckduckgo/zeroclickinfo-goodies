@@ -7,6 +7,8 @@
         "sourceUrl": "https://inkscape.org/en/doc/keys091.html"
     },
 
+    "template_type": "keyboard",
+
     "section_order": [  
         "Tools",
         "Dialogs",
@@ -83,7 +85,7 @@
                 "val": "Spray tool"
             },
             {
-                "key": "E",
+                "key": "[Shift] [e]",
                 "val": "Eraser tool"
             },
             {
