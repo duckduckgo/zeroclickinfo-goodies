@@ -127,7 +127,7 @@
             "key": "$ nmap -sA \\[target\\]"
         }, {
             "val": "Custom TCP scan",
-            "key": "$ nmap --scnaflags \\[flags\\] \\[target\\]"
+            "key": "$ nmap --scanflags \\[flags\\] \\[target\\]"
         }, {
             "val": "IP protocol scan",
             "key": "$ nmap -sO \\[target\\]"
@@ -259,7 +259,7 @@
             "val": "Output all supported file types",
             "key": "$ nmap -oA \\[path\/filename\\] \\[target\\]"
         }, {
-            "val": "Periodicallz display statistics",
+            "val": "Periodically display statistics",
             "key": "$ nmap --stats-every \\[time\\] \\[target\\]"
         }, {
             "val": "1337 output",
