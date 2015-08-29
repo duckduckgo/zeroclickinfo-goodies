@@ -162,9 +162,6 @@
         }, {
             "val": "Address",
             "key": "[Alt] [Shift] [9]"
-        }, {
-            "val": "exit visual mode",
-            "key": "[Alt] [Shift] [n]"
         }],
         "Distraction Free Writing Mode": [{
             "val": "Enter Distraction Free Writing Mode",
