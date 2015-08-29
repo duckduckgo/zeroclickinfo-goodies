@@ -1,0 +1,109 @@
+{
+  "id": "ssh_cheat_sheet",
+  "name": "SSH",
+  "description": "SSH Help",
+  "metadata": {
+    "sourceName": "Tournas Dimitrios",
+    "sourceUrl": "https://tournasdimitrios1.wordpress.com/2011/01/23/the-ultimate-ssh-tricks-manual/"
+  },
+  "template_type": "terminal",
+  "section_order": [
+    "Transfering  files  and  Backups",
+    "Miscellaneous  Tricks",
+    "Proxy  and  Port  Forwarding  Tricks"    
+  ],
+  "sections": {
+    "Transfering  files  and  Backups": [
+      {
+        "val": "Connect to a remote system",
+        "key": "ssh user@remotehost"
+      },
+      {
+        "val": "Copy the local file.txt to the remote server",
+        "key": "scp file.txt user1@remote_server:~/"
+      },
+      {
+        "val": "Copy a file from a remote server to the local computer",
+        "key": "scp user1@remote_server:~/file.txt  . "
+      },
+      {
+        "val": "Transfer a local file to remote server",
+        "key": "cat /home/mynitor/testfile | ssh user@remotehost “cat > /home/mynitor/testfile”"
+      },
+      {
+        "val": "Transfer directory from remote host to local server using ssh and tar:",
+        "key": "ssh user@remotehost “tar cvzf – /home” | tar xvzf – /home"
+      },
+      {
+        "val": "Recursively copy /home from remote host to local server",
+        "key": "scp -r user@remotehost:/home /home"
+      },
+      {
+        "val": "Compare a file on remote server with local host",
+        "key": "ssh user@remotehost.com “cat /tmp/remotefile” | diff – /tmp/localfile"
+      }
+    ],
+    
+    "Miscellaneous  Tricks": [
+      {
+        "val": "Setup password less SSH access to another server",
+        "key": "cat ~/.ssh/id_rsa.pub | ssh user@remotehost “cat – >> ~/.ssh/authorized_keys"
+      },
+      {
+        "val": "Like previous example transfer your public key to the remote server ",
+        "key": "ssh-copy-id    -i  ~/.ssh/id_rsa.pub   username@remotehost"
+      },
+      {
+        "val": "Play a wav file on remote server",
+        "key": "ssh user1@local_server ‘play /home/mynitor/2pac.wav’"
+      },
+      {
+        "val": "Outputting your microphone to a remote computer’s speaker",
+        "key": "dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp"
+      }
+      
+    ],
+    "Proxy  and  Port  Forwarding  Tricks": [
+      {
+        "val": "Tunnel all your browser traffic through your SSH server",
+        "key": "ssh -D 9999 user@yourserver.com"
+      },
+      {
+        "val": "Launch a local x11 session for a given application.",
+        "key": "ssh -X user@remotehost.com ‘xterm’"
+      },
+      {
+        "val": "Execute one single command",
+        "key": "ssh -X user1@remote_serwer ‘xeyes’"
+      },
+      {
+        "val": "Use a local server through a proxy server",
+        "key": "ssh -f -N -L 1521:destinationhost.com:80 servertoproxyfrom.com"
+      },
+      {
+        "val": "Launch a local x11 session for a given application.",
+        "key": "ssh -X user@remotehost.com ‘xterm’"
+      },
+      {
+        "val": "Tunneling VNC over ssh",
+        "key": "ssh -L 5900:localhost:5900 user@yourserver.com"
+      },
+      {
+        "val": "Jump off one box into another",
+        "key": "ssh  -t  gatewayhost.com  ssh  destinationhost.com"
+      },
+      {
+        "val": "Forward connections using server A to get to server B",
+        "key": "ssh -L 3306:serverB.com:3306 user@serverA.com"
+      },
+      {
+        "val": "Reverse SSH Tunneling.",
+        "key": " ssh -R 3333:localhost:22 user@mynitor.com"
+      },
+      {
+        "val": "Log in without appearing in lastlog/w and who output",
+        "key": "ssh -T user@hostname.com"
+      }
+    ]
+  }
+}	
