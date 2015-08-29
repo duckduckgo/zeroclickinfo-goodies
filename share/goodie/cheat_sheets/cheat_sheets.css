@@ -50,17 +50,24 @@
 /* terminal-snippets.handlebars */
 
 .zci--cheat_sheets .terminal td {
-  padding-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .zci--cheat_sheets .terminal code {
+  display: inline;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
 }
 
 .zci--cheat_sheets .terminal td.cheatsheet__key {
   display: block;
   min-width: 100%;
-  padding-bottom: 1px;
+  padding: 3px 4px 1px;
+  line-height: 1.17;
+  border-radius: 2px;
 }
 
 .zci--cheat_sheets .terminal td.cheatsheet__value {
