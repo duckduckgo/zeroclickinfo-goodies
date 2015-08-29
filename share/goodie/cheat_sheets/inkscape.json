@@ -19,7 +19,7 @@
     "sections": {
         "Tools": [
             {
-                "key": "F1, s", 
+                "key": "[F1] [s]", 
                 "val": "Selector"
             },
             {
@@ -27,15 +27,15 @@
                 "val": "Selector (temporary)"
             },
             {
-                "key": "F2, n",
+                "key": "[F2] [n]",
                 "val": "Node tool"
             },
             {
-                "key": "Shift + F2, w",
+                "key": "[Shift + F2] [w]",
                 "val": "Tweak tool"
             },
             {
-                "key": "F3, z",
+                "key": "[F3] [z]",
                 "val": "Zoom tool"
             },
             {
@@ -43,63 +43,63 @@
                 "val": "Measure tool"
             },
             {
-                "key": "F4, r",
+                "key": "[F4] [r]",
                 "val": "Rectangle tool"
             },
             {
-                "key": "Shift + F4, x",
+                "key": "[Shift + F4] [x]",
                 "val": "3D box tool"
             },
             {
-                "key": "F5, e",
+                "key": "[F5] [e]",
                 "val": "Ellipse/arc tool"
             },
             {
-                "key": "Shift + F9, *",
+                "key": "[Shift + F9] [*]",
                 "val": "Star tool"
             },
             {
-                "key": "F9, i",
+                "key": "[F9] [i]",
                 "val": "Spiral tool"
             },
             {
-                "key": "F6, p",
+                "key": "[F6] [p]",
                 "val": "Pencil (Freehand) tool"
             },
             {
-                "key": "Shift +F6, b",
+                "key": "[Shift + F6] [b]",
                 "val": "Pen (Bezier) tool"
             },
             {
-                "key": "Ctrl +F6, c",
+                "key": "[Ctrl + F6] [c]",
                 "val": "Calligraphy tool"
             },
             {
-                "key": "F8, t",
+                "key": "[F8] [t]",
                 "val": "Text tool"
             },
             {
-                "key": "Shift + F3, a",
+                "key": "[Shift + F3] [a]",
                 "val": "Spray tool"
             },
             {
-                "key": "Shift + E",
+                "key": "[Shift] [E]",
                 "val": "Eraser tool"
             },
             {
-                "key": "Shift + F7, u",
+                "key": "[Shift + F7] [u]",
                 "val": "Paint Bucket tool"
             },
             {
-                "key": "Ctrl + F1, g",
+                "key": "[Ctrl + F1] [g]",
                 "val": "Gradient tool"
             },
             {
-                "key": "F7, d",
+                "key": "[F7] [d]",
                 "val": "Dropper tool"
             },
             {
-                "key": "Ctrl + F2, o",
+                "key": "[Ctrl + F2] [o]",
                 "val": "Connector tool"
             }
         ],
