@@ -33,39 +33,39 @@
     "sections": {
         "Manage Files and Projects": [
             {
-                "key": "[Ctrl] + [N]", 
+                "key": "[Ctrl] [N]", 
                 "val": "Create new project using the Wizard"
             },
             {
-                "key": "[Ctrl] + [Alt] + [N]",
+                "key": "[Ctrl] [Alt] [N]",
                 "val": "Create new project, file, class, etc."
             },
             {
-                "key": "[Alt] + [f] , then [.]",
+                "key": "[Alt-f], [.]",
                 "val": "Open project, file, etc."               
             },
             {
-                "key": "[Ctrl] + [Shift]+[R]",
+                "key": "[Ctrl] [Shift] [R]",
                 "val": "Open Resource (file, folder or project)"               
             },
             {
-                "key": "[Alt] + [Enter]",
+                "key": "[Alt] [Enter]",
                 "val": "Show and access file properties"               
             },
             {
-                "key": "[Ctrl] + [S]",
+                "key": "[Ctrl] [S]",
                 "val": "Save current file"               
             },
             {
-                "key": "[Ctrl] + [Shift]+[S]",
+                "key": "[Ctrl] [Shift] [S]",
                 "val": "Save all files"               
             },
             {
-                "key": "[Ctrl] + [W]",
+                "key": "[Ctrl] [W]",
                 "val": "Close current file"               
             },
             {
-                "key": "[Ctrl] + [Shift] + [W]",
+                "key": "[Ctrl] [Shift] [W]",
                 "val": "Close all files"               
             },
             {
@@ -80,39 +80,39 @@
                 "val": "Jump to Editor Window"               
             }, 
             {
-                "key": "[Ctrl] + [Page Down] / [Ctrl] + [Page Up]",
+                "key": "[Ctrl] ([Page Down] /  [Page Up])",
                 "val": "Switch to next editor / switch to previous editor"
             },
             {
-                "key": "[Ctrl] + [M]",
+                "key": "[Ctrl] [M]",
                 "val": "Maximize or un-maximize current Editor Window (also works for other Windows)"               
             }, 
             {
-                "key": "[Ctrl] + [E]",
+                "key": "[Ctrl] [E]",
                 "val": "Show list of open Editors. Use arrow keys and enter to switch"               
             }, 
             {
-                "key": "[Ctrl] + [F6] / [Ctrl] + [Shift] + [F6]",
+                "key": "[Ctrl] ([F6] / [Shift] [F6])",
                 "val": "Jump to Editor Window"               
             }, 
             {
-                "key": "[Alt] +  [Arrow Left] / [Alt] + [Arrow Right]",
+                "key": "[Alt] ([←] / [→])",
                 "val": "Go to previous / go to next Editor Window"               
             }, 
             {
-                "key": "[Alt] + [-]",
+                "key": "[Alt] [-]",
                 "val": "Open Editor Window Option menu"               
             }, 
             {
-                "key": "[Ctrl] + [F10]",
+                "key": "[Ctrl] [F10]",
                 "val": "Show view menu "               
             }, 
             {
-                "key": "[Ctrl] + [F10], then [n]",
+                "key": "[Ctrl] [F10], [n]",
                 "val": "Show or hide line numbers"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] +Q",
+                "key": "[Ctrl] [Shift], [Q]",
                 "val": "Jump to Editor Window"               
             }            
             
@@ -123,47 +123,47 @@
                 "val": "Jump to beginning / jump to end of indention. Press home twice to jump to beginning of line"               
             }, 
             {
-                "key": "[Ctrl] + [Home] / [End]",
+                "key": "[Ctrl] ([Home] / [End])",
                 "val": "Jump to beginning / jump to end of source"
             },
             {
-                "key": "[Ctrl] + [Arrow Right] / [Arrow Left]",
+                "key": "[Ctrl] ([→] / [←])",
                 "val": "Jump one word to the left / one word to the right"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [Arrow Down] / [Arrow Up]",
+                "key": "[Ctrl-Shift] ([↓] / [↑])",
                 "val": "Jump to previous / jump to next method"               
             }, 
             {
-                "key": "[Ctrl] + [L]",
+                "key": "[Ctrl] [L]",
                 "val": "Jump to Line Number. To hide/show line numbers, press ctrl+F10 and select 'Show Line Numbers'"               
             }, 
             {
-                "key": "[Ctrl] + [Q]",
+                "key": "[Ctrl] [Q]",
                 "val": "Go to previous / go to next Editor Window"               
             }, 
             {
-                "key": "[Ctrl] + [.] / [Ctrl] + [,]",
+                "key": "[Ctrl] ([.] / [,])",
                 "val": "Jump to next / jump to previous compiler syntax warning or error"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [P]",
+                "key": "[Ctrl] [Shift] [P]",
                 "val": "With a bracket selected: jump to the matching closing or opening bracket"               
             }, 
             {
-                "key": "[Ctrl] + [+]/[Ctrl]+[-]",
+                "key": "[Ctrl] ( [+] / [-])",
                 "val": "Collapse / Expand current method or class"               
             }, 
             {
-                "key": "[Ctrl] + [/] / [Ctrl] + [*]",
+                "key": "[Ctrl] ([/] / [*])",
                 "val": "Collapse / Expand all methods or classes"               
             },
             {
-                "key": "[Ctrl] + [Arrow Down] / [Ctrl] + [Arrow Up]",
+                "key": "[Ctrl] ([↓] / [↑])",
                 "val": "Scroll Editor without changing cursor position"               
             },
             {
-                "key": "[Alt] + [Page Up] / [Alt] + [Page Down]",
+                "key": "[Alt] ([Page Up] / [Page Down])",
                 "val": "Next Sub-Tab / Previous Sub-Tab"               
             }
             
@@ -171,81 +171,81 @@
         ],  
         "Select Text": [
             {
-                "key": "[Shift] + [Arrow Right] / [Arrow Left]",
+                "key": "[Shift] ([→] / [←])",
                 "val": "Expand selection by one character to the left / to the right"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [Arrow Right] / [Arrow Left]",
+                "key": "[Ctrl] [Shift] ([→] / [←])",
                 "val": "Expand selection to next / previous word"
             },
             {
-                "key": "[Shift] + [Arrow Down] / [Arrow Up]",
+                "key": "[Shift] ([↓] / [↑])",
                 "val": "Expand selection by one line down / one line up"               
             }, 
             {
-                "key": "[Shift] + [End] / [Home]",
+                "key": "[Shift] ([End] / [Home])",
                 "val": "Expand selection to end / to beginning of line"               
             }, 
             {
-                "key": "[Ctrl] + [A]",
+                "key": "[Ctrl] [A]",
                 "val": "Select All"               
             }, 
             {
-                "key": "[Alt] + [Arrow Left] / [Alt] + [Arrow Right]",
+                "key": "[Alt] ([←] / [→])",
                 "val": "Go to previous / go to next Editor Window"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [Arrow Up]",
+                "key": "[Alt] [Shift] [↑]",
                 "val": "Expand selection to current element (e.g. current one-line expression or content within brackets)"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [Arrow Left] / [Arrow Right]",
+                "key": "[Alt] [Shift] ([←] / [→])",
                 "val": "Expand selection to next / previous element"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [Arrow Down]",
+                "key": "[Alt] [Shift] [↓]",
                 "val": "Reduce previously expanded selection by one step"               
             }
         ],  
         "Editor Window": [
             {
-                "key": "[Ctrl] + [C] / [Ctrl] + [X] / [Ctrl] + [V]",
+                "key": "[Ctrl] ([C] / [X] / [V])",
                 "val": "Cut, copy and paste"               
             }, 
             {
-                "key": "[Ctrl] + [Z]",
+                "key": "[Ctrl] [Z]",
                 "val": "Undo last action"
             },
             {
-                "key": "[Ctrl] + [Y]",
+                "key": "[Ctrl] [Y]",
                 "val": "Redo last (undone) action"               
             }, 
             {
-                "key": "[Ctrl] + [D]",
+                "key": "[Ctrl] [D]",
                 "val": "Delete Line"               
             }, 
             {
-                "key": "[Alt] + [Arrow Up]/[Arrow Down]",
+                "key": "[Alt] [↑]/[↓]",
                 "val": "Move current line or selection up or down"               
             }, 
             {
-                "key": "[Ctrl] + [Alt] + [Arrow Up] / [Ctrl] + [Alt] + [Arrow Down]",
+                "key": "[Ctrl] [Alt] ([↑] / [↓])",
                 "val": "Duplicate current line or selection up or down"               
             }, 
             {
-                "key": "[Ctrl] + [Delete]",
+                "key": "[Ctrl] [Delete]",
                 "val": "Delete next word"               
             }, 
             {
-                "key": "[Ctrl] + [Backspace]",
+                "key": "[Ctrl] [Backspace]",
                 "val": "Delete previous word"               
             }, 
             {
-                "key": "[Shift] + [Enter]",
+                "key": "[Shift] [Enter]",
                 "val": "Enter line below current line"               
             }, 
             {
-                "key": "[Shift] + [Ctrl] + [Enter]",
+                "key": "[Shift] [Ctrl] [Enter]",
                 "val": "Enter line above current line"               
             },
             {
@@ -253,88 +253,88 @@
                 "val": "Switch between insert and overwrite mode"               
             }, 
             {
-                "key": "[Shift] + [Ctrl] + [Y]",
+                "key": "[Shift] [Ctrl] [Y]",
                 "val": "Change selection to all lower case"               
             }, 
             {
-                "key": "[Shift] + [Ctrl] + [X]",
+                "key": "[Shift] [Ctrl] [X]",
                 "val": "Change selection to all upper case"               
             }
             
         ],  
         "Search and Replace": [
             {
-                "key": "[Ctrl] + [F]",
+                "key": "[Ctrl] [F]",
                 "val": "Open find and replace dialog"               
             }, 
             {
-                "key": "[Ctrl] + [K]/[Ctrl] + [Shift] + [K]",
+                "key": "[Ctrl] ([K]/[Shift] [K])",
                 "val": "Find previous / find next occurrence of search term (close find window first)"
             },
             {
-                "key": "[Ctrl] + [H]",
+                "key": "[Ctrl] [H]",
                 "val": "Search Workspace (Java Search, Task Search, and File Search)"               
             }, 
             {
-                "key": "[Ctrl] + [J] / [Ctrl] + [Shift] + [J]",
+                "key": "[Ctrl] ([J] / [Shift] [J])",
                 "val": "Incremental search forward / backwards. Type search term after pressing [ctrl]+[j], there is now search window"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [O]",
+                "key": "[Ctrl] [Shift] [O]",
                 "val": "Open a resource search dialog to find any class"               
             }
         ],  
         "Indentions and Comments": [
             {
-                "key": "[Tab] / [Shift] + [Tab]",
+                "key": "[Tab] / [Shift] [Tab]",
                 "val": "Increase / decrease indent of selected text"               
             }, 
             {
-                "key": "[Ctrl] + [I]",
+                "key": "[Ctrl] [I]",
                 "val": "Correct indention of selected text or of current line"
             },
             {
-                "key": "[Ctrl] + [Shift] + [F]",
+                "key": "[Ctrl] [Shift] [F]",
                 "val": "Autoformat all code in Editor using code formatter"               
             }, 
             {
-                "key": "[Ctrl] + [/]",
+                "key": "[Ctrl] [/]",
                 "val": "Comment / uncomment line or selection ( adds '//' )"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [/]",
+                "key": "[Ctrl] [Shift] [/]",
                 "val": "Add Block Comment around selection ( adds '/... */' )"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [\\\\]",
+                "key": "[Ctrl] [Shift] [\\\\]",
                 "val": "Remove Block Comment"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [J]",
+                "key": "[Alt] [Shift] [J]",
                 "val": "Add Element Comment ( adds '/** ... */')"               
             }
         ],  
         "Editing Source Code": [
             {
-                "key": "[Ctrl] + [Space]",
+                "key": "[Ctrl] [Space]",
                 "val": "Opens Content Assist (e.g. show available methods or field names)"               
             }, 
             {
-                "key": "[Ctrl] + [1]",
+                "key": "[Ctrl] [1]",
                 "val": "Open Quick Fix and Quick Assist"
             },
             {
-                "key": "[Alt] + [/]",
+                "key": "[Alt] [/]",
                 "val": "Propose word completion (after typing at least one letter). Repeatedly press alt+/ until reaching correct name"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [Insert]",
+                "key": "[Ctrl] [Shift] [Insert]",
                 "val": "Deactivate or activate Smart Insert Mode (automatic indention, automatic brackets, etc.)"               
             }
         ],  
         "Code Information": [
             {
-                "key": "[Ctrl] + [O]",
+                "key": "[Ctrl] [O]",
                 "val": "Show code outline / structure"               
             }, 
             {
@@ -350,72 +350,72 @@
                 "val": "Open Type Hierarchy window for selected item"               
             }, 
             {
-                "key": "[Ctrl] + [T]",
+                "key": "[Ctrl] [T]",
                 "val": "Show / open Quick Type Hierarchy for selected item"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [T]",
+                "key": "[Ctrl] [Shift] [T]",
                 "val": "Open Type in Hierarchy"               
             }, 
             {
-                "key": "[Ctrl] + [Alt] + [H]",
+                "key": "[Ctrl] [Alt] [H]",
                 "val": "Open Call Hierarchy"               
             }, 
             {
-                "key": "[Ctrl] + [U]",
+                "key": "[Ctrl] [U]",
                 "val": "Find occurrences of expression in current file "               
             }, 
             {
-                "key": "[Ctrl] + move over method]",
+                "key": "[Ctrl] move over method",
                 "val": "Open Declaration or Implementation"               
             }
           ],  
         "Refactoring": [
             {
-                "key": "[Alt] + [Shift] + [R]",
+                "key": "[Alt] [Shift] [R]",
                 "val": "Rename selected element and all references"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [V]",
+                "key": "[Alt] [Shift] [V]",
                 "val": "Move selected element to other class or file (With complete method or class selected)"
             },
             {
-                "key": "[Ctrl] + [Shift] + [C]",
+                "key": "[Ctrl] [Shift] [C]",
                 "val": "Change method signature (with method name selected)"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [M]",
+                "key": "[Alt] [Shift] [M]",
                 "val": "Extract selection to method"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [L]",
+                "key": "[Alt] [Shift] [L]",
                 "val": "Extract local variable: Create and assigns a variable from a selected expression"               
             }, 
             {
-                "key": "[Alt] + [Shift] + [I]",
+                "key": "[Alt] [Shift] [I]",
                 "val": "Inline selected local variables, methods, or constants if possible (replaces variable with its declarations/ assignment and puts it directly into the statements)"               
             }, 
             {
-                "key": "[Alt] + [-]",
+                "key": "[Alt] [-]",
                 "val": "Open Editor Window Option menu"               
             }, 
             {
-                "key": "[Ctrl] + [F10]",
+                "key": "[Ctrl] [F10]",
                 "val": "Show view menu "               
             }, 
             {
-                "key": "[Ctrl] + [F10], then [n]",
+                "key": "[Ctrl] [F10], [n]",
                 "val": "Show or hide line numbers"               
             }, 
             {
-                "key": "[Ctrl] + [Shift] + [Q]",
+                "key": "[Ctrl] [Shift] [Q]",
                 "val": "Jump to Editor Window"               
             }            
            
         ],  
         "Run and Debug": [
             {
-                "key": "[Ctrl] + [F11]",
+                "key": "[Ctrl] [F11]",
                 "val": "Save and launch application (run)"               
             }, 
             {
@@ -441,15 +441,15 @@
         ],  
         "The Rest": [
             {
-                "key": "[Ctrl] + [F7] / [Ctrl] + [Shift] + [F7]",
+                "key": "[Ctrl] ([F7] / [Shift] [F7])",
                 "val": "Switch forward / backward between views (panels). Useful for switching back and forth between Package Explorer and Editor."               
             }, 
             {
-                "key": "[Ctrl] + [F8] / [Ctrl] + [Shift] + [F8]",
+                "key": "[Ctrl] ([F8] / [Shift] [F8])",
                 "val": "Switch forward / backward between perspectives"
             },
             {
-                "key": "[Ctrl] + [P]",
+                "key": "[Ctrl] [P]",
                 "val": "Print"               
             }, 
             {
@@ -457,7 +457,7 @@
                 "val": "Open Eclipse Help"               
             }, 
             {
-                "key": "[Shift] + [F10]",
+                "key": "[Shift] [F10]",
                 "val": "Show Context Menu right click with mouse"               
             }
         ]
