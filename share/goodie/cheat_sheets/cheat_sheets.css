@@ -30,7 +30,8 @@
     border-radius: 2px;
     font-size: 0.833em;
     white-space: normal;
-    word-break: normal;
+    word-break: break-all;
+    word-wrap: break-word;
     margin-bottom: 0.2em;
     line-height: 1.17;
 }
@@ -48,6 +49,10 @@
 }
 
 /* terminal-snippets.handlebars */
+.zci--cheat_sheets .terminal table {
+  width: 100%;
+}
+
 
 .zci--cheat_sheets .terminal td {
   margin-bottom: 6px;
@@ -68,6 +73,8 @@
   padding: 3px 4px 1px;
   line-height: 1.17;
   border-radius: 2px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .zci--cheat_sheets .terminal td.cheatsheet__value {
