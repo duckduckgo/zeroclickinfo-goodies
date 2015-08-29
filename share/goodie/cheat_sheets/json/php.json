@@ -316,7 +316,7 @@
             },
             {
                 "key": "shuffle()",
-                "val": "Shuffles an array" 
+                "val": "Randomises the order of elements in an array" 
             },
             {
                 "key": "sizeof()",
@@ -386,7 +386,7 @@
             },
             {
                 "key": "crypt()",
-                "val": "One-way string encryption (hashing)"
+                "val": "Uses the standard system crypt utilities to hash the string"
             },
             {
                 "key": "echo()",
@@ -719,139 +719,139 @@
         ],
         "Variable": [
             {
-                "key": "boolval",
+                "key": "boolval()",
                 "val": "Get the boolean value of a variable"
             },
             {
-                "key": "debug_zval_dump",
+                "key": "debug_zval_dump()",
                 "val": "Dumps a string representation of an internal zend value to output"
             },
             {
-                "key": "doubleval",
+                "key": "doubleval()",
                 "val": "Alias of floatval"
             },
             {
-                "key": "empty",
+                "key": "empty()",
                 "val": "Determine whether a variable is empty"
             },
             {
-                "key": "floatval",
+                "key": "floatval()",
                 "val": "Get float value of a variable"
             },
             {
-                "key": "get_defined_vars",
+                "key": "get_defined_vars()",
                 "val": "Returns an array of all defined variables"
             },
             {
-                "key": "get_resource_type",
+                "key": "get_resource_type()",
                 "val": "Returns the resource type"
             },
             {
-                "key": "gettype",
+                "key": "gettype()",
                 "val": "Get the type of a variable"
             },
             {
-                "key": "import_request_variables",
+                "key": "import_request_variables()",
                 "val": "Import GET/POST/Cookie variables into the global scope"
             },
             {
-                "key": "intval",
+                "key": "intval()",
                 "val": "Get the integer value of a variable"
             },
             {
-                "key": "is_array",
+                "key": "is_array()",
                 "val": "Finds whether a variable is an array"
             },
             {
-                "key": "is_bool",
+                "key": "is_bool()",
                 "val": "Finds out whether a variable is a boolean"
             },
             {
-                "key": "is_callable",
+                "key": "is_callable()",
                 "val": "Verify that the contents of a variable can be called as a function"
             },
             {
-                "key": "is_double",
+                "key": "is_double()",
                 "val": "Alias of is_float"
             },
             {
-                "key": "is_float",
+                "key": "is_float()",
                 "val": "Finds whether the type of a variable is float"
             },
             {
-                "key": "is_int",
+                "key": "is_int()",
                 "val": "Find whether the type of a variable is integer"
             },
             {
-                "key": "is_integer",
+                "key": "is_integer()",
                 "val": "Alias of is_int"
             },
             {
-                "key": "is_long",
+                "key": "is_long()",
                 "val": "Alias of is_int"
             },
             {
-                "key": "is_null",
+                "key": "is_null()",
                 "val": "Finds whether a variable is NULL"
             },
             {
-                "key": "is_numeric",
+                "key": "is_numeric()",
                 "val": "Finds whether a variable is a number or a numeric string"
             },
             {
-                "key": "is_object",
+                "key": "is_object()",
                 "val": "Finds whether a variable is an object"
             },
             {
-                "key": "is_real",
+                "key": "is_real()",
                 "val": "Alias of is_float"
             },
             {
-                "key": "is_resource",
+                "key": "is_resource()",
                 "val": "Finds whether a variable is a resource"
             },
             {
-                "key": "is_scalar",
+                "key": "is_scalar()",
                 "val": "Finds whether a variable is a scalar"
             },
             {
-                "key": "is_string",
+                "key": "is_string()",
                 "val": "Find whether the type of a variable is string"
             },
             {
-                "key": "isset",
+                "key": "isset()",
                 "val": "Determine if a variable is set and is not NULL"
             },
             {
-                "key": "print_r",
+                "key": "print_r()",
                 "val": "Prints human-readable information about a variable"
             },
             {
-                "key": "serialize",
+                "key": "serialize()",
                 "val": "Generates a storable representation of a value"
             },
             {
-                "key": "settype",
+                "key": "settype()",
                 "val": "Set the type of a variable"
             },
             {
-                "key": "strval",
+                "key": "strval()",
                 "val": "Get string value of a variable"
             },
             {
-                "key": "unserialize",
+                "key": "unserialize()",
                 "val": "Creates a PHP value from a stored representation"
             },
             {
-                "key": "unset",
+                "key": "unset()",
                 "val": "Unset a given variable"
             },
             {
-                "key": "var_dump",
+                "key": "var_dump()",
                 "val": "Dumps information about a variable"
             },
             {
-                "key": "var_export",
+                "key": "var_export()",
                 "val": "Outputs or returns a parsable string representation of a variable"
             }
         ],
