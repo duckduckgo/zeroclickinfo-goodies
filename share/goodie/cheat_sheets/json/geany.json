@@ -278,7 +278,7 @@
             "key": "F5"
         }, {
             "val": "Show macro list: Shows a list of available macros and variables in the workspace.",
-            "key": "[Ctrl] [Return"
+            "key": "[Ctrl] [Return]"
         }, {
             "val": "Make custom target: Builds the current file with the Make tool and a given target.",
             "key": "[Ctrl] [Shift] [F9]"
