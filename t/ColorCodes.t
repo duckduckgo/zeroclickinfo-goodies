@@ -60,10 +60,14 @@ ddg_goodie_test(
 		'Hex: #DC5F3C ~ RGBA(220, 95, 60, 1) ~ RGB(86%, 37%, 24%) ~ HSL(13, 70%, 55%) ~ CMYB(0%, 57%, 73%, 14%)'."\n".'Complementary: #3BB9DB'."\n".'Analogous: #DBAE3B, #DB3B69',
 		html => qr/background:#dc5f3c/
 	),
-	# Single full HTML check.
+	#Colours with no hue shouldn't have complements or analogs
     '#000000' => test_zci(
-        'Hex: #000000 ~ RGBA(0, 0, 0, 1) ~ RGB(0%, 0%, 0%) ~ HSL(0, 0, 0) ~ CMYB(0%, 0%, 0%, 0%)',
-        html => qq(<div class="zci--color-codes"><a href="/?q=color%20picker%20%23000000" class="colorcodesbox circle" style="background:#000000"></a><div class='column1 tx-clr--dk2'><p class='hex tx-clr--dk zci__caption'>Hex: #000000</p><p class='no_vspace'>RGBA(0, 0, 0, 1)</p><p class='no_vspace'>HSL(0, 0, 0)</p><p class='no_vspace'>CMYB(0%, 0%, 0%, 0%)</p><p><a href='http://labs.tineye.com/multicolr/#colors=000000;weights=100;' class='tx-clr--dk2'>Images</a><span class='separator'> | </span><a href='http://www.color-hex.com/color/000000' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a><span class='separator'> | </span><a href='/?q=color%20picker%20%23000000' class='tx-clr--dk2'>Picker</a></p></div></div>)
+        'Hex: #000000 ~ RGBA(0, 0, 0, 1) ~ RGB(0%, 0%, 0%) ~ HSL(0, 0%, 0%) ~ CMYB(0%, 0%, 0%, 100%)',
+        html => qq(<div class="zci--color-codes"><a href="/?q=color%20picker%20%23000000" class="colorcodesbox circle" style="background:#000000"></a><div class='column1 tx-clr--dk2'><p class='hex tx-clr--dk zci__caption'>Hex: #000000</p><p class='no_vspace'>RGBA(0, 0, 0, 1)</p><p class='no_vspace'>HSL(0, 0%, 0%)</p><p class='no_vspace'>CMYB(0%, 0%, 0%, 100%)</p><p><a href='http://labs.tineye.com/multicolr/#colors=000000;weights=100;' class='tx-clr--dk2'>Images</a><span class='separator'> | </span><a href='http://www.color-hex.com/color/000000' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a><span class='separator'> | </span><a href='/?q=color%20picker%20%23000000' class='tx-clr--dk2'>Picker</a></p></div></div>)
+    ),
+	'#FFFFFF' => test_zci(
+        'Hex: #FFFFFF ~ RGBA(255, 255, 255, 1) ~ RGB(100%, 100%, 100%) ~ HSL(0, 0%, 100%) ~ CMYB(0%, 0%, 0%, 0%)',
+        html => qq(<div class="zci--color-codes"><a href="/?q=color%20picker%20%23ffffff" class="colorcodesbox circle" style="background:#ffffff"></a><div class='column1 tx-clr--dk2'><p class='hex tx-clr--dk zci__caption'>Hex: #FFFFFF</p><p class='no_vspace'>RGBA(255, 255, 255, 1)</p><p class='no_vspace'>HSL(0, 0%, 100%)</p><p class='no_vspace'>CMYB(0%, 0%, 0%, 0%)</p><p><a href='http://labs.tineye.com/multicolr/#colors=ffffff;weights=100;' class='tx-clr--dk2'>Images</a><span class='separator'> | </span><a href='http://www.color-hex.com/color/ffffff' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a><span class='separator'> | </span><a href='/?q=color%20picker%20%23ffffff' class='tx-clr--dk2'>Picker</a></p></div></div>)
     ),
     # Queries to ignore.
     'bluishblack html' => undef,
