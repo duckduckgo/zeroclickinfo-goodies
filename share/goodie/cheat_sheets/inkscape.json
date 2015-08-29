@@ -19,7 +19,7 @@
     "sections": {
         "Tools": [
             {
-                "key": "[F1] [s]", 
+                "key": "s", 
                 "val": "Selector"
             },
             {
@@ -27,15 +27,15 @@
                 "val": "Selector (temporary)"
             },
             {
-                "key": "[F2] [n]",
+                "key": "n",
                 "val": "Node tool"
             },
             {
-                "key": "[Shift + F2] [w]",
+                "key": "w",
                 "val": "Tweak tool"
             },
             {
-                "key": "[F3] [z]",
+                "key": "z",
                 "val": "Zoom tool"
             },
             {
@@ -43,127 +43,127 @@
                 "val": "Measure tool"
             },
             {
-                "key": "[F4] [r]",
+                "key": "r",
                 "val": "Rectangle tool"
             },
             {
-                "key": "[Shift + F4] [x]",
+                "key": "x",
                 "val": "3D box tool"
             },
             {
-                "key": "[F5] [e]",
+                "key": "e",
                 "val": "Ellipse/arc tool"
             },
             {
-                "key": "[Shift + F9] [*]",
+                "key": "*",
                 "val": "Star tool"
             },
             {
-                "key": "[F9] [i]",
+                "key": "i",
                 "val": "Spiral tool"
             },
             {
-                "key": "[F6] [p]",
+                "key": "p",
                 "val": "Pencil (Freehand) tool"
             },
             {
-                "key": "[Shift + F6] [b]",
+                "key": "b",
                 "val": "Pen (Bezier) tool"
             },
             {
-                "key": "[Ctrl + F6] [c]",
+                "key": "c",
                 "val": "Calligraphy tool"
             },
             {
-                "key": "[F8] [t]",
+                "key": "t",
                 "val": "Text tool"
             },
             {
-                "key": "[Shift + F3] [a]",
+                "key": "a",
                 "val": "Spray tool"
             },
             {
-                "key": "[Shift] [E]",
+                "key": "E",
                 "val": "Eraser tool"
             },
             {
-                "key": "[Shift + F7] [u]",
+                "key": "u",
                 "val": "Paint Bucket tool"
             },
             {
-                "key": "[Ctrl + F1] [g]",
+                "key": "g",
                 "val": "Gradient tool"
             },
             {
-                "key": "[F7] [d]",
+                "key": "d",
                 "val": "Dropper tool"
             },
             {
-                "key": "[Ctrl + F2] [o]",
+                "key": "o",
                 "val": "Connector tool"
             }
         ],
         "Dialogs": [
             {
-                "key": "Shift + Ctrl + F",
+                "key": "[Shift] [Ctrl] [F]",
                 "val": "Fill and Stroke"               
             }, 
             {
-                "key": "Shift + Ctrl + T",
+                "key": "[Shift] [Ctrl] [T]",
                 "val": "Text and Font"
             }, 
             {
-                "key": "Shift + Ctrl + M",
+                "key": "[Shift] [Ctrl] [M]",
                 "val": "Transform"
             }, 
             {
-                "key": "Shift + Ctrl + L",
+                "key": "[Shift] [Ctrl] [L]",
                 "val": "Layers"
             }, 
             {
-                "key": "Shift + Ctrl + A",
+                "key": "[Shift] [Ctrl] [A]",
                 "val": "Align and Distribute"
             }, 
             {
-                "key": "Shift + Ctrl + O",
+                "key": "[Shift] [Ctrl] [O]",
                 "val": "Object Properties"
             },
             {
-                "key": "Shift + Ctrl + D",
+                "key": "[Shift] [Ctrl] [D]",
                 "val": "Document Preferences"
             }, 
             {
-                "key": "Shift + Ctrl + P",
+                "key": "[Shift] [Ctrl] [P]",
                 "val": "Inkscape Preferences"
             }, 
             {
-                "key": "Shift + Ctrl + E",
+                "key": "[Shift] [Ctrl] [E]",
                 "val": "Export to PNG"
             }
         ],
         "Object" : [
             {
-                "key": "Ctrl + D",
+                "key": "[Ctrl] [D]",
                 "val": "Duplicate selection"               
             },
             {
-                "key": "Alt + D",
+                "key": "[Alt] [D]",
                 "val": "Clone object"               
             },
             {
-                "key": "Shift + Alt + B",
+                "key": "[Shift] [Alt] [B]",
                 "val": "Trace bitmap"               
             },
             {
-                "key": "Ctrl + G",
+                "key": "[Ctrl] [G]",
                 "val": "Group selected objects"               
             }, 
             {
-                "key": "Ctrl + U",
+                "key": "[Ctrl] [U]",
                 "val": "Ungroup selected group(s)"
             }, 
             {
-                "key": "Ctrl + Mouse Click",
+                "key": "[Ctrl] [Mouse Click]",
                 "val": "Select object in group"
             },
             {
@@ -189,87 +189,87 @@
                 "val": "Select next node"               
             },
             {
-                "key": "Shift + Tab",
+                "key": "[Shift] [Tab]",
                 "val": "Select previous node"               
             },
             {
-                "key": "Ctrl + A",
+                "key": "[Ctrl] [A]",
                 "val": "Select all nodes in subpath(s)"               
             },
             {
-                "key": "Ctrl + Alt + A",
+                "key": "[Ctrl] [Alt] [A]",
                 "val": "Select all nodes in path"               
             }, 
             {
-                "key": "Shift + J",
+                "key": "[Shift] [J]",
                 "val": "Join selected nodes"
             }, 
             {
-                "key": "Shift + I",
+                "key": "[Shift] [I]",
                 "val": "Insert new node(s)"
             },
             {
-                "key": "Shift + B",
+                "key": "[Shift] [B]",
                 "val": "break selected node(s)"               
             }
         ],
         "Path" : [
             {
-                "key": "Shift + Ctrl + C",
+                "key": "[Shift] [Ctrl] [C]",
                 "val": "Convert selected object(s) to path"               
             }, 
             {
-                "key": "Ctrl + Alt + C",
+                "key": "[Ctrl] [Alt] [C]",
                 "val": "Convert stroke to path"
             }, 
             {
-                "key": "Ctrl + +",
+                "key": "[Ctrl] [+]",
                 "val": "Union"
             }, 
             {
-                "key": "Ctrl + -",
+                "key": "[Ctrl] [-]",
                 "val": "Difference"
             }, 
             {
-                "key": "Ctrl + *",
+                "key": "[Ctrl] [*]",
                 "val": "Intersection"
             }, 
             {
-                "key": "Ctrl + ^",
+                "key": "[Ctrl] [^]",
                 "val": "Exclusive OR (XOR)"
             }, 
             {
-                "key": "Ctrl + /",
+                "key": "[Ctrl] [/]",
                 "val": "Division (cut)"
             }, 
             {
-                "key": "Ctrl + Alt + /",
+                "key": "[Ctrl] [Alt] [/]",
                 "val": "Cut path"
             }, 
             {
-                "key": "Ctrl + K",
+                "key": "[Ctrl] [K]",
                 "val": "Combine paths"
             }, 
             {
-                "key": "Shift + Ctrl + K",
+                "key": "[Shift] [Ctrl] [K]",
                 "val": "Break paths apart"
             }
         ],
         "Selections" : [
             {
-                "key": "Shift + Click",
+                "key": "[Shift] [Click]",
                 "val": "Toggle selection"               
             }, 
             {
-                "key": "Shift + Drag",
+                "key": "[Shift] [Drag]",
                 "val": "Rubberband"
             }, 
             {
-                "key": "Tab",
+                "key": "[Tab]",
                 "val": "Select next object"
             }, 
             {
-                "key": "Shift + Tab",
+                "key": "[Shift] [Tab]",
                 "val": "Select previous object"
             }
         ]
