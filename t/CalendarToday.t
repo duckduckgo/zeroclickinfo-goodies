@@ -15,7 +15,16 @@ ddg_goodie_test(
     [qw(
         DDG::Goodie::CalendarToday
     )],
-    "calendar today" => test_zci( "calendar today",  make_structured_answer(6, 2015) ),
+    # today
+    "calendar today" => test_zci("calendar today",  make_structured_answer(6, 2015) ),
+    # today
+    "cal" => test_zci("calendar today",  make_structured_answer(6, 2015) ),
+    # month query (next january)
+    "cal january" => test_zci("calendar today", make_structured_answer(1, 2016)),
+    # year query (2004)
+    "cal 2004" => test_zci("calendar today", make_structured_answer(6, 2004)),
+    # year month query (feb 2003)
+    "cal february 2003" => test_zci("calendar today", make_structured_answer(2, 2003)),
 );
 
 sub make_structured_answer {
