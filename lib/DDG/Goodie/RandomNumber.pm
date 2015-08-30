@@ -37,9 +37,11 @@ handle query_lc => sub {
 
     ($end, $start) = ($start, $end) if ($start > $end);
 
+    my $valDiff = $end - $start;
+
     my $rand = rand;
 
-    if ($start && $end) {
+    if ($start && $end || $valDiff > 1) {
         $rand *= ($end - $start + 1);
         $rand = int($rand) + $start;
     }
