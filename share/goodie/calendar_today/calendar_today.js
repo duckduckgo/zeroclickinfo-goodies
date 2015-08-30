@@ -1,6 +1,7 @@
 DDH.calendar_today = DDH.calendar_today || {}; // create the namespace in case it doesn't exist
 
 DDH.calendar_today.build_async = function(ops, DDH_async_add) {
+    console.log('running build_async');
     var data = ops.data;
     var currentMonth = data.month,
             currentYear = data.year;
@@ -127,7 +128,7 @@ DDH.calendar_today.build_async = function(ops, DDH_async_add) {
             item.daysOfTheWeek = daysOfTheWeek;
             item.year = year;
             // add 1 since perl does. this is used for selected item
-            item.id = month + 1;
+            //item.id = month + 1;
             item.rows = rows;
             // push item into items
             items.push(item);
