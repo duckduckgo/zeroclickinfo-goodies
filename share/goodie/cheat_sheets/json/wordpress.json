@@ -94,11 +94,11 @@
         }, {
             "val": "Underline",
             "key": "[Ctrl] [u]"
-        }],
-        "Editor Shortcuts (Continued)": [{
+        }, {
             "val": "Insert/edit link",
             "key": "[Ctrl] [k]"
-        }, {
+        }],
+        "Editor Shortcuts (Continued)": [{
             "val": "Check spelling",
             "key": "[Alt] [Shift] [n]"
         }, {
