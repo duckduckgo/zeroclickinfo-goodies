@@ -22,7 +22,7 @@
                 "val": "Scroll through history of typed commands"
             },
             {
-                "key": "[F1]",
+                "key": " [F1] ",
                 "val": "Print characters of the previous command one by one"
             },
             {
@@ -30,7 +30,7 @@
                 "val": "Repeat part of the pevious command, up to character z"
             },
             {
-                "key": "[F3]",
+                "key": " [F3] ",
                 "val": "Repeat the previous command"
             },
             {
@@ -38,11 +38,11 @@
                 "val": "Beginning from the current cursor position, delete up to character Z"
             },
             {
-                "key": "[F5]",
+                "key": " [F5] ",
                 "val": "Scroll through history of typed commands (↑)"
             },
             {
-                "key": "[F7]",
+                "key": " [F7] ",
                 "val": "Show history of previous commands"
             },
             {
@@ -50,27 +50,27 @@
                 "val": "Clear command history"
             },
             {
-                "key": "[F8]",
+                "key": " [F8] ",
                 "val": "Move backwards through the command history, but only display commands matching the current text at the command prompt"
             },
             {
-                "key": "[F9]",
+                "key": " [F9] ",
                 "val": "Run a specific command from the command history"
             },
             {
-                "key": "[ESC]",
+                "key": " [ESC] ",
                 "val": "Clear command line"
             },
             {
-                "key": "[INSERT]",
+                "key": " [INSERT] ",
                 "val": "Toggle Insert/Overwrite"
             },
             {
-                "key": "[Ctrl]+[Home]",
+                "key": "[Ctrl] + [Home]",
                 "val": "Erase line to the left"
             },
             {
-                "key": "[Ctrl]+[End]",
+                "key": "[Ctrl] + [End]",
                 "val": "Erase line to the right"
             },
             {
@@ -82,23 +82,23 @@
                 "val": "Move one word to the right (forward)"
             },
             {
-                "key": "[⌫]",
+                "key": " [⌫] ",
                 "val": "Erase character to the left"
             },
             {
-                "key": "[Home]",
+                "key": " [Home] ",
                 "val": "Move to beginning of line"
             },
             {
-                "key": "[End]",
+                "key": " [End] ",
                 "val": "Move to end of line"
             },
             {
-                "key": "[PgUp]",
+                "key": " [PgUp] ",
                 "val": "Scroll window up"
             },
             {
-                "key": "[PgDn]",
+                "key": " [PgDn] ",
                 "val": "Scroll window Down"
             },
             {
