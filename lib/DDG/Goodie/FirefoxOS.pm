@@ -51,7 +51,6 @@ handle remainder => sub {
 
     return unless ($api);
     
-    
     return $api->{permission},
       structured_answer => {
         id => "firefox_os",
@@ -61,13 +60,26 @@ handle remainder => sub {
             subtitle => "Manifest permission: " . $api->{permission},
             description => $api->{description},
             url => $api->{url},
+            infoboxData => [{
+                label => "Minimum app type required",
+                value => $api->{app_type}
+            }, {
+                label => "'access' property",
+                value => $api->{access}
+            }, {
+                label => "Default granted",
+                value => $api->{granted}
+            }, {
+                label => "Platform/version supported",
+                value => $api->{platform}
+            }]
         },
         meta => {
             sourceName => "Mozilla Developer Network",
             sourceUrl => "https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_device_APIs" 
         }, 
         templates => {
-            group => "text",       
+            group => "info",       
             options => {
                 moreAt => 1
             }

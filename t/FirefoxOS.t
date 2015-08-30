@@ -18,7 +18,7 @@ my $templateData = {
                 sourceUrl => "https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_device_APIs" 
             },
             templates => {
-                group => "text",       
+                group => "info",       
                 options => {
                     moreAt => 1
                 }
