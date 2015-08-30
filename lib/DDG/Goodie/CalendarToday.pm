@@ -68,18 +68,11 @@ handle remainder => sub {
        return $plaintext,
         structured_answer => {
             id => 'calendar_today',
-            name => 'Answer',
             data => {
                 month => $the_month,
                 year => $the_year
             },
-            templates => {
-               group => 'base',
-               detail => 0,
-                options => {
-                    content => 'DDH.calendar_today.content',
-                }
-            }
+            templates => 1
      };
 };
 
