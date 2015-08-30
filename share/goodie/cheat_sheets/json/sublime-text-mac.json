@@ -17,31 +17,31 @@
     ],
     "sections": {
         "General": [{  
-            "key":"[Cmd] [Shift] [N]",
+            "key":"[⌘] [Shift] [N]",
             "val":"New File in New Tab"
           }, {  
-            "key":"[Cmd] [S]",
+            "key":"[⌘] [S]",
             "val":"Save"
           }, {  
-            "key":"[Cmd] [Shift] [S]",
+            "key":"[⌘] [Shift] [S]",
             "val":"Save As"
           }, {  
-            "key":"[Cmd] [KU]",
+            "key":"[⌘] [KU]",
             "val":"Upper Case"
           }, {  
-            "key":"[Cmd] [KL]",
+            "key":"[⌘] [KL]",
             "val":"Lower Case"
           },  {  
-            "key":"[Cmd] [Z]",
+            "key":"[⌘] [Z]",
             "val":"Undo"
           }, {  
-            "key":"[Cmd] [Y]",
+            "key":"[⌘] [Y]",
             "val":"Re-do"
           }, {  
-            "key":"[Cmd] [U]",
+            "key":"[⌘] [U]",
             "val":"Undo Movement (Soft Undo)"
           }, {  
-            "key":"[Cmd] [Shift] [U]",
+            "key":"[⌘] [Shift] [U]",
             "val":"Re-do Movement (Soft Re-do)"
           }, {  
             "key":"[Ctrl] [Space]",
@@ -50,51 +50,51 @@
             "key":"[Ctrl] [M]",
             "val":"Jump to Matching Bracket"
           }, {  
-            "key":"[Cmd] [/]",
+            "key":"[⌘] [/]",
             "val":"Toggle comment"
           }, {  
-            "key":"[Cmd] [Option] [/]",
+            "key":"[⌘] [Option] [/]",
             "val":"Toggle Block Comment"
           }, {  
-            "key":"[Cmd] [Space]",
+            "key":"[⌘] [Space]",
             "val":"Show Completions"
         }, {  
-            "key":"[Cmd] [Shift] [P]",
+            "key":"[⌘] [Shift] [P]",
             "val":"Command Prompt"
         }],
         "File Navigation": [{  
-            "key":"[Cmd] [Shift] [N]",
+            "key":"[⌘] [Shift] [N]",
             "val":"New File in New Window"
           }, {  
-            "key":"[Cmd] [W]",
+            "key":"[⌘] [W]",
             "val":"Close Current File"
           }, {  
-            "key":"[Cmd] [G]",
+            "key":"[⌘] [G]",
             "val":"Go to Line"
           }, {  
-            "key":"[Cmd] [F2]",
+            "key":"[⌘] [F2]",
             "val":"Set Bookmark"
           }, {  
             "key":"[Shift] [F2]",
             "val":"Previous Bookmarks"
           }, {  
-            "key":"[Cmd] [Shift] [F2]",
+            "key":"[⌘] [Shift] [F2]",
             "val":"Clear all Bookmarks"
           }, {  
             "key":"F2",
             "val":"Go to Next Bookmark"
         }],
         "View/Window Manipulation": [{  
-            "key":"[Cmd] [KB]",
+            "key":"[⌘] [KB]",
             "val":"Toggle Side Bar"
           }, {  
-            "key":"[Cmd] [Option] [1]",
+            "key":"[⌘] [Option] [1]",
             "val":"Single Column Layout"
           }, {  
-            "key":"[Cmd] [Option] [2]",
+            "key":"[⌘] [Option] [2]",
             "val":"Two Column Layout"
           }, {  
-            "key":"[Cmd] [Option] [5]",
+            "key":"[⌘] [Option] [5]",
             "val":"Grid Layout"
           }, {  
             "key":"[Ctrl] [\\[1,2,3,4\\]]",
@@ -103,69 +103,69 @@
             "key":"[Ctrl] [Shift] [\\[1,2,3,4\\]]",
             "val":"Move File to Group"
           }, {  
-            "key":"[Cmd] [\\[1,2,3,4\\]]",
+            "key":"[⌘] [\\[1,2,3,4\\]]",
             "val":"Select Tab"
         }],
         "Find": [{  
-            "key":"[Cmd] [F]",
+            "key":"[⌘] [F]",
             "val":"Find"
           }, {  
-            "key":"[Option] [Cmd] [G]",
+            "key":"[Option] [⌘] [G]",
             "val":"Find Next"
           }, {  
-            "key":"[Control] [Cmd] [G]",
+            "key":"[Ctrl] [⌘] [G]",
             "val":"Find All Occurrences"
           },{  
-            "key":"[Cmd] [Option] [F]",
+            "key":"[⌘] [Option] [F]",
             "val":"Replace"
           }, {  
-            "key":"[Cmd] [Shift] [F]",
+            "key":"[⌘] [Shift] [F]",
             "val":"Find in Files"
           }],
         "Line Manipulation": [{  
-            "key":"[Cmd] [L]",
+            "key":"[⌘] [L]",
             "val":"Select Line"
           }, {  
-            "key":"[Cmd] [D]",
+            "key":"[⌘] [D]",
             "val":"Select Word"
           }, {  
             "key":"[Ctrl] [Shift] [M]",
             "val":"Select Content in Brackets"
           }, {  
-            "key":"[Cmd] [Shift] [Enter]",
+            "key":"[⌘] [Shift] [Enter]",
             "val":"Insert Line Before Cursor"
           }, {  
-            "key":"[Cmd] [Enter]",
+            "key":"[⌘] [Enter]",
             "val":"Insert Line After"
           }, {  
-            "key":"[Cmd] [Shift] [D]",
+            "key":"[⌘] [Shift] [D]",
             "val":"Duplicate Line or Lines"
           }, {  
-            "key":"[Cmd] [J]",
+            "key":"[⌘] [J]",
             "val":"Join Lines"
           }, {  
-            "key":"[Cmd] [Shift] [A]",
+            "key":"[⌘] [Shift] [A]",
             "val":"Select Content Into Tag"
           }, {  
             "key":"[Ctrl] [Shift] [K]",
             "val":"Delete Line"
           }, {  
-            "key":"[Cmd] [KK]",
+            "key":"[⌘] [KK]",
             "val":"Delete from Cursor to End of Line"
           }, {  
-            "key":"[Cmd] [K] [Delete]",
+            "key":"[⌘] [K] [Delete]",
             "val":"Delete from Cursor to Beginning of Line"
           }, {  
-            "key":"[Cmd] [Option] [.]",
+            "key":"[⌘] [Option] [.]",
             "val":"Close Tag"
           }, {  
-            "key":"[Cmd] [X]",
+            "key":"[⌘] [X]",
             "val":"Cut Line"
           }, {  
-            "key":"[Cmd] [V]",
+            "key":"[⌘] [V]",
             "val":"Paste Cut/Copied line above"
           }, {  
-            "key":"[Cmd] [Shift] [V]",
+            "key":"[⌘] [Shift] [V]",
             "val":"Paste and Indent"
           }, {  
             "key":"[Ctrl] [M]",
