@@ -7,7 +7,6 @@
         "sourceUrl": "https://blog.codecentric.de/files/2012/12/MongoDB-CheatSheet-v1_0.pdf"
     },
     "section_order": [
-        "Basic Information",
 	    "Basic Conceptes & Shell Commands",
 	    "BSON Types",
         "Inserting Documents",
@@ -25,24 +24,6 @@
         "Durability of Writes"
     ],
     "sections": {
-        "Basic Information": [
-            {
-                "key": "http://www.mongodb.org/downloads",
-                "val": "Download MongoDB"
-            },
-            {
-                "key": "http://www.json.org/",
-                "val": "JSON Specification"
-            },
-	        {
-                "key": "http://bsonspec.org/",
-                "val": "BSON Specification"
-            },
-	        {
-                "key": "http://www.mongodb.org/display/DOCS/Java+Tutorial",
-                "val": "Java Tutorial"
-            }
-        ],
         "Basic Conceptes & Shell Commands": [
             {
                 "key": "db.ships.<command>",
