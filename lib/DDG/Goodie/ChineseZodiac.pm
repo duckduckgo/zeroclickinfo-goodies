@@ -110,7 +110,7 @@ sub format_answer {
                 iconImage => 'large'
             },
             elClass => {
-                iconImage => 'bg-clr--black circle'
+                iconImage => 'bg-clr--slate circle'
             }
         },
         meta => {
