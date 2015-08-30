@@ -5,14 +5,8 @@
     "description": "Eclipse IDE", 
     "metadata": { 
         "sourceName": "Shortcut World",
-        "sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html",
-        "primary_example_queries ": ["eclipse shortcuts", "eclipse ide keyboard shortcuts", "eclipse keyboard shortcuts"],
-        "secondary_example_queries" : ["java programming", "productivity", "shortcuts", "keyboard shortcuts"],
-        "category": "cheat_sheets",
-        "topics": ["everyday", "programming", "computing"],
-        "attribution": ["Kishore S Meda", "http://github.com/kishoresmeda"]
-    },
-
+        "sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html"
+        },
     
     "section_order": [  
         "Manage Files and Projects",
@@ -80,8 +74,12 @@
                 "val": "Jump to Editor Window"               
             }, 
             {
-                "key": "[Ctrl] ([Page Down] /  [Page Up])",
-                "val": "Switch to next editor / switch to previous editor"
+                "key": "[Ctrl] [Page Down]",
+                "val": "Switch to next editor"
+            },
+            {
+                "key": "[Ctrl] [Page Up]",
+                "val": "Switch to previous editor"
             },
             {
                 "key": "[Ctrl] [M]",
@@ -92,12 +90,16 @@
                 "val": "Show list of open Editors. Use arrow keys and enter to switch"               
             }, 
             {
-                "key": "[Ctrl] ([F6] / [Shift] [F6])",
-                "val": "Jump to Editor Window"               
+                "key": "[Ctrl] [F6]",
+                "val": "Show list of open Editors and switches between them upon releasing [Ctrl]"               
             }, 
             {
-                "key": "[Alt] ([←] / [→])",
-                "val": "Go to previous / go to next Editor Window"               
+                "key": "[Alt] [←]",
+                "val": "Go to previous Editor Window"               
+            }, 
+            {
+                "key": "[Alt] [→]",
+                "val": "Go to next Editor Window"               
             }, 
             {
                 "key": "[Alt] [-]",
@@ -119,20 +121,36 @@
         ],  
         "Navigate in Editor": [
             {
-                "key": "[Home] / [End]",
-                "val": "Jump to beginning / jump to end of indention. Press home twice to jump to beginning of line"               
+                "key": "Home",
+                "val": "Jump to beginning of indention. Press home twice to jump to beginning of line"               
             }, 
             {
-                "key": "[Ctrl] ([Home] / [End])",
-                "val": "Jump to beginning / jump to end of source"
+                "key": "End",
+                "val": "Jump to end of indention."
             },
             {
-                "key": "[Ctrl] ([→] / [←])",
-                "val": "Jump one word to the left / one word to the right"               
+                "key": "[Ctrl] [Home]",
+                "val": "Jump to beginning of source"
+            },
+            {
+                "key": "[Ctrl] [End]",
+                "val": "Jump to end of source"
+            },
+            {
+                "key": "[Ctrl] [←]",
+                "val": "Jump one word to the left"               
             }, 
             {
-                "key": "[Ctrl-Shift] ([↓] / [↑])",
-                "val": "Jump to previous / jump to next method"               
+                "key": "[Ctrl] [→]",
+                "val": "Jump one word to the right"               
+            }, 
+            {
+                "key": "[Ctrl] [Shift] [↓]",
+                "val": "Jump to previous method"               
+            },
+            {
+                "key": "[Ctrl] [Shift] [↑]",
+                "val": "Jump to next method"               
             }, 
             {
                 "key": "[Ctrl] [L]",
@@ -143,65 +161,109 @@
                 "val": "Go to previous / go to next Editor Window"               
             }, 
             {
-                "key": "[Ctrl] ([.] / [,])",
-                "val": "Jump to next / jump to previous compiler syntax warning or error"               
+                "key": "[Ctrl] [.]",
+                "val": "Jump to next compiler syntax warning or error"               
             }, 
+            {
+                "key": "[Ctrl] [,]",
+                "val": "Jump to previous compiler syntax warning or error"               
+            },
             {
                 "key": "[Ctrl] [Shift] [P]",
                 "val": "With a bracket selected: jump to the matching closing or opening bracket"               
             }, 
             {
-                "key": "[Ctrl] ( [+] / [-])",
-                "val": "Collapse / Expand current method or class"               
+                "key": "[Ctrl] [+]",
+                "val": "Expand current method or class"               
             }, 
             {
-                "key": "[Ctrl] ([/] / [*])",
-                "val": "Collapse / Expand all methods or classes"               
+                "key": "[Ctrl] [-]",
+                "val": "Collapse current method or class"               
+            }, 
+            {
+                "key": "[Ctrl] [/]",
+                "val": "Collapse all methods or classes"               
             },
             {
-                "key": "[Ctrl] ([↓] / [↑])",
-                "val": "Scroll Editor without changing cursor position"               
+                "key": "[Ctrl] [*]",
+                "val": "Expand all methods or classes"               
             },
             {
-                "key": "[Alt] ([Page Up] / [Page Down])",
-                "val": "Next Sub-Tab / Previous Sub-Tab"               
+                "key": "[Ctrl] [↑]",
+                "val": "Scroll Editor Up without changing cursor position"               
+            },
+            {
+                "key": "[Ctrl] [↓]",
+                "val": "Scroll Editor Down without changing cursor position"               
+            },
+            {
+                "key": "[Alt] [Page Up]",
+                "val": "Next Sub-Tab"               
+            },
+            {
+                "key": "[Alt] [Page Down]",
+                "val": "Previous Sub-Tab"               
             }
             
             
         ],  
         "Select Text": [
             {
-                "key": "[Shift] ([→] / [←])",
-                "val": "Expand selection by one character to the left / to the right"               
+                "key": "[Shift] [←]",
+                "val": "Expand selection by one character to the left"               
             }, 
             {
-                "key": "[Ctrl] [Shift] ([→] / [←])",
-                "val": "Expand selection to next / previous word"
+                "key": "[Shift] [→]",
+                "val": "Expand selection by one character to the right"               
             },
             {
-                "key": "[Shift] ([↓] / [↑])",
-                "val": "Expand selection by one line down / one line up"               
+                "key": "[Ctrl] [Shift] [→]",
+                "val": "Expand selection to next word"
+            },
+            {
+                "key": "[Ctrl] [Shift] [←]",
+                "val": "Expand selection to previous word"
+            },
+            {
+                "key": "[Shift] [↓]",
+                "val": "Expand selection by one line down"               
+            },
+            {
+                "key": "[Shift] [↑]",
+                "val": "Expand selection by one line up"               
             }, 
             {
-                "key": "[Shift] ([End] / [Home])",
-                "val": "Expand selection to end / to beginning of line"               
+                "key": "[Shift] [End]",
+                "val": "Expand selection to end of line"               
             }, 
+            {
+                "key": "[Shift] [Home]",
+                "val": "Expand selection to beginning of line"               
+            },
             {
                 "key": "[Ctrl] [A]",
                 "val": "Select All"               
             }, 
             {
-                "key": "[Alt] ([←] / [→])",
-                "val": "Go to previous / go to next Editor Window"               
+                "key": "[Alt] [←]",
+                "val": "Go to previous Editor Window"               
+            }, 
+            {
+                "key": "[Alt] [→]",
+                "val": "Go to next Editor Window"               
             }, 
             {
                 "key": "[Alt] [Shift] [↑]",
                 "val": "Expand selection to current element (e.g. current one-line expression or content within brackets)"               
             }, 
             {
-                "key": "[Alt] [Shift] ([←] / [→])",
-                "val": "Expand selection to next / previous element"               
+                "key": "[Alt] [Shift] [←]",
+                "val": "Expand selection to previous element"               
             }, 
+            {
+                "key": "[Alt] [Shift] [→]",
+                "val": "Expand selection to next element"               
+            },
             {
                 "key": "[Alt] [Shift] [↓]",
                 "val": "Reduce previously expanded selection by one step"               
@@ -209,9 +271,17 @@
         ],  
         "Editor Window": [
             {
-                "key": "[Ctrl] ([C] / [X] / [V])",
-                "val": "Cut, copy and paste"               
+                "key": "[Ctrl] [X]",
+                "val": "Cut"               
             }, 
+            {
+                "key": "[Ctrl] [C]",
+                "val": "Copy"               
+            },
+            {
+                "key": "[Ctrl] [V]",
+                "val": "Paste"               
+            },
             {
                 "key": "[Ctrl] [Z]",
                 "val": "Undo last action"
@@ -225,13 +295,21 @@
                 "val": "Delete Line"               
             }, 
             {
-                "key": "[Alt] [↑]/[↓]",
-                "val": "Move current line or selection up or down"               
+                "key": "[Alt] [↑]",
+                "val": "Move current line or selection Up"               
             }, 
             {
-                "key": "[Ctrl] [Alt] ([↑] / [↓])",
-                "val": "Duplicate current line or selection up or down"               
+                "key": "[Alt] [↓]",
+                "val": "Move current line or selection down"               
             }, 
+            {
+                "key": "[Ctrl] [Alt] [↑]",
+                "val": "Duplicate current line or selection Up"               
+            }, 
+            {
+                "key": "[Ctrl] [Alt] [↓]",
+                "val": "Duplicate current line or selection down"               
+            },
             {
                 "key": "[Ctrl] [Delete]",
                 "val": "Delete next word"               
@@ -249,7 +327,7 @@
                 "val": "Enter line above current line"               
             },
             {
-                "key": "[Insert]",
+                "key": "Insert",
                 "val": "Switch between insert and overwrite mode"               
             }, 
             {
@@ -268,17 +346,25 @@
                 "val": "Open find and replace dialog"               
             }, 
             {
-                "key": "[Ctrl] ([K]/[Shift] [K])",
-                "val": "Find previous / find next occurrence of search term (close find window first)"
+                "key": "[Ctrl] [K]",
+                "val": "Find next occurrence of search term (close find window first)"
+            },
+            {
+                "key": "[Ctrl] [Shift] [K]",
+                "val":"Find previous occurence of search term"
             },
             {
                 "key": "[Ctrl] [H]",
                 "val": "Search Workspace (Java Search, Task Search, and File Search)"               
             }, 
             {
-                "key": "[Ctrl] ([J] / [Shift] [J])",
-                "val": "Incremental search forward / backwards. Type search term after pressing [ctrl]+[j], there is now search window"               
+                "key": "[Ctrl] [J]",
+                "val": "Incremental search forward. Type search term after pressing [ctrl]+[j], there is now search window"               
             }, 
+            {
+                "key" : "[Ctrl] [Shift] [J]",
+                "val" : "Incremental search backwards"
+            },
             {
                 "key": "[Ctrl] [Shift] [O]",
                 "val": "Open a resource search dialog to find any class"               
@@ -286,9 +372,13 @@
         ],  
         "Indentions and Comments": [
             {
-                "key": "[Tab] / [Shift] [Tab]",
+                "key": "Tab",
                 "val": "Increase / decrease indent of selected text"               
             }, 
+            {
+                 "key": "[Shift] [Tab]",
+                 "val": "Decrease indent of selected text"
+            },
             {
                 "key": "[Ctrl] [I]",
                 "val": "Correct indention of selected text or of current line"
@@ -441,12 +531,19 @@
         ],  
         "The Rest": [
             {
-                "key": "[Ctrl] ([F7] / [Shift] [F7])",
-                "val": "Switch forward / backward between views (panels). Useful for switching back and forth between Package Explorer and Editor."               
+                "key": "[Ctrl] [F7]",
+                "val": "Switch forward between views (panels). Useful for switching back and forth between Package Explorer and Editor."               
             }, 
+            {   "key": "[Ctrl] [Shift] [F7]",
+                "val": "Switch backward between views"
+            },
             {
-                "key": "[Ctrl] ([F8] / [Shift] [F8])",
-                "val": "Switch forward / backward between perspectives"
+                "key": "[Ctrl] [F8]",
+                "val": "Switch backward between perspectives"
+            },
+            {
+                "key": "[Ctrl] [Shift] [F8]",
+                "val": "Switch backward between perspectives"
             },
             {
                 "key": "[Ctrl] [P]",
