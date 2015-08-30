@@ -1,0 +1,227 @@
+{
+    "id": "jive_talk_cheat_sheet",
+    "name": "Jive Talk",
+    "description": "Language of Jive",
+    "metadata": {
+        "sourceName": "Hepcats Jive Dictionary",
+        "sourceUrl": "http://www.scribd.com/doc/57707658/Hepcats-Jive-Dictionary"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Common Words",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+        ],
+    "sections": {
+        "Common Words": [{
+            "key":"Barkers",
+            "val":"A pair of shoes"
+          }, {
+            "key":"Canary",
+            "val":"A female vocalist"
+          }, {
+            "key":"Idea Pot",
+            "val":"The head"
+          }, {
+            "key":"Legit",
+            "val":"The real thing"
+          },{
+            "key":"Murder",
+            "val":"To reach perfection."
+          },{
+            "key":"Scratch",
+            "val":"Paper money."
+          },{
+            "key":"Flip the Grip",
+            "val":"To shake hands"
+          }
+        ],
+        "A": [{
+            "key":"Ace",
+            "val":"A dollar bill"
+          }, {
+            "key":"Action",
+            "val":"Propostion"
+          }, {
+            "key":"Airbags",
+            "val":"Lungs"
+          }, {
+            "key":"Legit",
+            "val":"The real thing"
+          },{
+            "key":"Angle",
+            "val":"Clever Idea"
+          },{
+            "key":"Apple",
+            "val":"The Globe"
+          },{
+            "key":"Artillery",
+            "val":"Baked Beans"
+          }
+        ],
+
+        "B": [{
+            "key":"Backs",
+            "val":"Counterfeit money"
+          }, {
+            "key":"Banana",
+            "val":"Mulatto"
+          }, {
+            "key":"Bank",
+            "val":"Toilet"
+          }, {
+            "key":"Banter",
+            "val":"Pretty Girl"
+          },{
+            "key":"Bark",
+            "val":"Skin"
+          },{
+            "key":"Beef",
+            "val":"Complaint"
+          },{
+            "key":"Brush",
+            "val":"Mustache"
+          }
+        ],
+        "C":[{
+            "key":"Cabbage",
+            "val":"Money"
+          }, {
+            "key":"Cat",
+            "val":"Jive Musician"
+          }, {
+            "key":"Cave",
+            "val":"House"
+          }, {
+            "key":"Chew",
+            "val":"To Talk"
+          },{
+            "key":"Choker",
+            "val":"Tie or Collar"
+          },{
+            "key":"Chops",
+            "val":"Jaws"
+          },{
+            "key":"Cogs",
+            "val":"Sunglasses"
+          }
+        ],
+           "D": [{
+               "key":"Dead",
+               "val":"Empty"
+             }, {
+               "key":"Den",
+               "val":"Small Room"
+             }, {
+               "key":"Dicer",
+               "val":"Hat"
+             }, {
+               "key":"Digger",
+               "val":"Undertaker"
+             },{
+               "key":"Dingle",
+               "val":"Good"
+             },{
+               "key":"Drink",
+               "val":"A body of water"
+             },{
+               "key":"Duchess",
+               "val":"Girlfriend"
+             }
+           ],
+
+           "E": [{
+               "key":"Easy",
+               "val":"Financially Secure"
+             }, {
+               "key":"Enamel",
+               "val":"Teeth or Skin"
+             }, {
+               "key":"Exodust",
+               "val":"To flee"
+             }, {
+               "key":"Expense",
+               "val":"Baby"
+             },{
+               "key":"Eye",
+               "val":"Detective"
+             }
+           ],
+           "F": [{
+               "key":"Face",
+               "val":"White man"
+             }, {
+               "key":"Fanny",
+               "val":"Rear end"
+             }, {
+               "key":"Fish",
+               "val":"To lie"
+             }, {
+               "key":"Fog",
+               "val":"To kill"
+             },{
+               "key":"Frame",
+               "val":"Your body"
+             }
+           ],
+           "G": [{
+               "key":"Gaff",
+               "val":"To Cheat"
+             }, {
+               "key":"Gander",
+               "val":"Examine"
+             }, {
+               "key":"Gate",
+               "val":"Youth"
+             }, {
+               "key":"GB",
+               "val":"Goodbye"
+             },{
+               "key":"Gutbox",
+               "val":"Piano"
+             } ],
+           "H": [{
+               "key":"Hack",
+               "val":"To write inferior material"
+             }, {
+               "key":"Handcuffed",
+               "val":"Married"
+             }, {
+               "key":"Headache",
+               "val":"Wife"
+             }, {
+               "key":"Hides",
+               "val":"Drums"
+             },{
+               "key":"Husk",
+               "val":"Undress"
+             }
+           ],
+         "I": [{
+             "key":"Iceberg",
+             "val":"Unemotional"
+           }, {
+             "key":"Icky",
+             "val":"Conservative Person"
+           }, {
+             "key":"Idiot",
+             "val":"Educted Moron"
+           }, {
+             "key":"Index",
+             "val":"Face"
+           },{
+             "key":"Insider",
+             "val":"Pocket"
+           }
+         ]
+
+
+    }
+}
