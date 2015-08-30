@@ -7,7 +7,7 @@
         "sourceUrl": "http://bash.cyberciti.biz/guide/Variables"
     },
        "aliases": [
-       "basic shell variables"
+       "basic shell variables", "shell variables", "shell var", "shell vars"
    ],
     "template_type": "reference",
     "section_order": [
