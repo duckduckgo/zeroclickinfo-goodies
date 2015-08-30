@@ -1,12 +1,12 @@
 {
-    "id": "processing_cheat_sheet",
+    "id": "processing_lang_cheat_sheet",
     "name": "Processing",
-    "description": "Processing Cheat Sheet",
+    "description": "Processing Language Cheat Sheet",
     "metadata": {
-        "sourceName": "processing.org",
+        "sourceName": "Processing.org",
         "sourceUrl": "https://www.processing.org/reference/"
     },
-    "template_type": "reference",
+    "template_type": "terminal",
     "section_order": [
         "Basic Structure",
         "Basic Functions",
