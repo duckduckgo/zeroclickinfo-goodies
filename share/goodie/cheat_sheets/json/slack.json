@@ -23,19 +23,15 @@
     "sections": {
         "Navigation": [
             {
-                "key": "[⌘] [/] or [Ctrl] [/]",
+                "key": "[Ctrl] [/]",
                 "val": "Open a quick list of keyboard shortcuts"
             },
-            {
-                "key": "[⌘] [+] or [⌘][-]",
-                "val": "Increase or decrease font size (Mac)"               
-            }, 
             {
                 "key": "[Ctrl] [+] or [Ctrl] [-]",
                 "val": "Increase or decrease font size (Windows)"               
             }, 
             {
-                "key": "[⌘] [k] or [Ctrl] [k]",
+                "key": "[Ctrl] [k]",
                 "val": "Open quick switcher"               
             }, 
             {
@@ -55,49 +51,49 @@
                 "val": "Next channel/DM with unread messages"               
             },  
             {
-                "key": "[⌘] [left square bracket] or [Alt] [←]",
+                "key": "[Alt] [←]",
                 "val": "Previous channel in your history"               
             }, 
             {
-                "key": "[⌘] [right square bracket] or [Alt] [→]",
+                "key": "[Alt] [→]",
                 "val": "Next channel in your history"          
             },
             {
-                "key": "[⌘] [,] or [Ctrl] [,]",
+                "key": "[Ctrl] [,]",
                 "val": "Open Preferences"               
             },
             {
-                "key": "[⌘] [.] or [Ctrl] [.]",
+                "key": "[Ctrl] [.]",
                 "val": "Toggle right pane open or closed"                   
             },
             {
-                "key": "[Shift] [⌘] [I] or [Ctrl] [Shift] [I]",
+                "key": "[Ctrl] [Shift] [I]",
                 "val": "Open Channel info pane"                   
             },
             {
-                "key": "[Shift] [⌘] [M] or [Ctrl] [Shift] [M]",
+                "key": "[Ctrl] [Shift] [M]",
                 "val": "Open Recent Mentions"                   
             },
             {
-                "key": "[Shift] [⌘] [E] or [Ctrl] [Shift] [E]",
+                "key": "[Ctrl] [Shift] [E]",
                 "val": "Open Team Directory"                   
             },
             {
-                "key": "[Shift] [⌘] [S] or [Ctrl] [Shift] [S]",
+                "key": "[Ctrl] [Shift] [S]",
                 "val": "Open Starred Items"                   
             }
         ],
         "Switching teams": [
             {
-                "key": "[Shift] [⌘] [left square bracket] or [Ctrl] [Shift] [left square bracket]",
+                "key": "[Ctrl] [Shift] [left square bracket]",
                 "val": "Switch to previous team"               
             }, 
             {
-                "key": "[Shift] [⌘] [right square bracket] or [Ctrl] [Shift] [right square bracket]",
+                "key": "[Ctrl] [Shift] [right square bracket]",
                 "val": "Switch to next team"               
             }, 
             {
-                "key": "[⌘] [number] or [Ctrl] [number]",
+                "key": "[Ctrl] [number]",
                 "val": "Switch to specific team"               
             }
         ],
@@ -155,15 +151,15 @@
         ],
         "Files & snippets": [
             {
-                "key": "[⌘] [U] or [Ctrl] [U]",
+                "key": "[Ctrl] [U]",
                 "val": "Upload a file"               
             }, 
             {
-                "key": "[Ctrl] [Shift] [Enter] or [⌘] [Enter] or [⌘] [Shift] [Enter]",
+                "key": "[Ctrl] [Shift] [Enter]",
                 "val": "Create a new Snippet"
             },
             {
-                "key": "[Shift] [Ctrl] [V] or [Shift] [⌘] [V]",
+                "key": "[Shift] [Ctrl] [V]",
                 "val": "Paste your clipboard contents as a new text Snippet"
             }
         ]
