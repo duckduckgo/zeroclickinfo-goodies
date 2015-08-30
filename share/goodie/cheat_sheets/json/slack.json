@@ -6,7 +6,7 @@
     "description": "Work chat", 
     
     "metadata": { 
-        "sourceName": "Slack keyboard shortcuts",
+        "sourceName": "Slack",
         "sourceUrl": "https://slack.zendesk.com/hc/en-us/articles/201374536-Slack-keyboard-shortcuts"
     },
 
@@ -85,11 +85,11 @@
         ],
         "Switching teams": [
             {
-                "key": "[Ctrl] [Shift] [left square bracket]",
+                "key": "[Ctrl] [Shift] [\\[]",
                 "val": "Switch to previous team"               
             }, 
             {
-                "key": "[Ctrl] [Shift] [right square bracket]",
+                "key": "[Ctrl] [Shift] [\\]]",
                 "val": "Switch to next team"               
             }, 
             {
