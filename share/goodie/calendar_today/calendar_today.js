@@ -139,8 +139,7 @@ DDH.calendar_today.build_async = function(ops, DDH_async_add) {
         }
         // add spice
        DDH_async_add({
-            id: "calendar",
-            name: "Calendar",
+            id: "calendar_today",
             meta:{
                 idField: 'id',
                 selectedItem: currentMonth,

@@ -1,15 +1,15 @@
-.zci--calendar .calendar {
+.zci--calendar_today .calendar {
     text-align: center;
     line-height: 2.17;
     weight: 400;
     padding: 1.25em;
 }
 
-.zci--calendar .calendar .calendar__header {
+.zci--calendar_today .calendar .calendar__header {
     clear:both;
 }
 
-.zci--calendar .calendar .calendar__header .month-name{
+.zci--calendar_today .calendar .calendar__header .month-name{
     float:left;
     font-weight: 600;
     color: #333;
@@ -17,7 +17,7 @@
     font-size: 1.18em;
 }
 
-.zci--calendar .calendar .calendar__header .year{
+.zci--calendar_today .calendar .calendar__header .year{
     float: right;
     font-weight: 300;
     color: #AAA;
@@ -25,19 +25,19 @@
     font-size: 1.18em;
 }
 
-.zci--calendar .calendar .header-day{
+.zci--calendar_today .calendar .header-day{
     color: #AAA;
 }
 
-.zci--calendar .calendar  .weekend {
+.zci--calendar_today .calendar .weekend {
    color: #888; 
 }
 
-.zci--calendar .calendar .weekday{
+.zci--calendar_today .calendar .weekday{
     color: #333;
 }
 
-.zci--calendar .calendar .today{
+.zci--calendar_today .calendar .today{
     background-color:#de5833;
     display: inline-table;
     text-align: center; 
@@ -50,11 +50,11 @@
     font-weight: lighter;
 }
 
-.zci--calendar .calendar .adj-month{
+.zci--calendar_today .calendar .adj-month{
     color: #aaa;
 }
 
-.zci--calendar .calendar th, .calendar td {
+.zci--calendar_today .calendar th, .calendar td {
     width: 2.5em;
     text-align: center;
     height: 2.17em;
