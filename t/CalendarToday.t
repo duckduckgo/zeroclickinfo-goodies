@@ -23,18 +23,11 @@ sub make_structured_answer {
 
     return structured_answer => {
         id => 'calendar_today',
-        name => 'Answer',
         data => {
             month => $month,
             year => $year
         },
-        templates => {
-           group => 'base',
-           detail => 0,
-            options => {
-                content => 'DDH.calendar_today.content',
-            }
-        }
+        templates => 1
     };
 };
 
