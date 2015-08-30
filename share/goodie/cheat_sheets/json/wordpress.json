@@ -9,6 +9,7 @@
     "template_type": "keyboard",
     "section_order": [
         "Editor Shortcuts",
+        "Editor Shortcuts (Continued)",
         "Distraction Free Writing Mode",
         "Navigating Between Comments",
         "Performing Actions on Comments",
@@ -93,7 +94,8 @@
         }, {
             "val": "Underline",
             "key": "[Ctrl] [u]"
-        }, {
+        }],
+        "Editor Shortcuts (Continued)": [{
             "val": "Insert/edit link",
             "key": "[Ctrl] [k]"
         }, {
