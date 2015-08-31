@@ -52,17 +52,15 @@ handle remainder => sub {
     return unless (defined $info); # another safety net
     if ($$info{name} eq '<control>') {
         $decoded = "Unicode control character (no visual representation)";
-        $entity = "Unicode control character (no visual representation)";
     } elsif(substr($$info{category},0,1) eq 'C') {
         $decoded = "Special character (no visual representation)";
-        $entity = "Special character (no visual representation)";
     }
 
     # Make answer
     return "Decoded HTML Entity: $decoded",
         structured_answer => {
-            input => $1,
-            output => $entity,
+            input => [$_],
+            result => $decoded,
             operation => "HTML Entity Decode"
         };
 };
