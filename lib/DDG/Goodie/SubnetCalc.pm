@@ -10,7 +10,7 @@ use DDG::Goodie;
 # TODO: This (sh|c)ould be re-written to be more precise
 triggers query => qr#^([0-9]{1,3}\.){3}([0-9]{1,3})[\s/](([1-3]?[0-9])|(([0-9]{1,3}\.){3}([0-9]{1,3})))$#;
 
-zci answer_type => "subnet_info";
+zci answer_type => "subnet_calc";
 zci is_cached => 1;
 
 attribution github => ['mintsoft', 'Rob Emery'];
@@ -99,36 +99,56 @@ handle query => sub {
     $which_specified = "Host Only" if ($cidr == 32);
 
     sub to_html {
-	my $results = "";
-    my $minwidth = "70px";
-	foreach my $result (@_) {
-	    $results .= "<div><span class=\"subnet__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
-        $minwidth = "140px" if $result->[0] eq "Host Address Range";
-	}
-	return $results . "<style> .zci--answer .subnet__label {display: inline-block; min-width: $minwidth}</style>";
+        my $results = "";
+        my $minwidth = "70px";
+        foreach my $result (@_) {
+            $results .= "<div><span class=\"subnet__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
+            $minwidth = "140px" if $result->[0] eq "Host Address Range";
+        }
+        return $results . "<style> .zci--answer .subnet__label {display: inline-block; min-width: $minwidth}</style>";
+    }
+    
+    sub to_structured_answer {
+		my ($output, $keys) = @_;
+        return {
+			id => "subnetcalculator",
+			name => "Subnet Calculator",
+			templates => {
+				group => 'list',
+				options => {
+					content => 'record'
+				}
+			},
+			data => {
+				record_data => $output,
+				record_keys => $keys,
+			}
+		};
     }
 
     sub to_text {
-	my $results = "";
-	foreach my $result (@_) {
-	    $results .= "$result->[0]: $result->[1]\n";
-	}
-	return $results;
+		my ($output, $keys) = @_;
+		my $results = "";
+        foreach (@{$keys}) {
+			$results .= "$_: $output->{$_}\n";
+        }
+        return $results;
     }
-
-    # We're putting them into an array because we want the output to be sorted.
-    my @output = (
-	["Network", int_to_str($network) . "/$cidr (Class $class)"],
-	["Netmask", int_to_str($mask)],
-	["Specified", "$which_specified"],
-    );
-
+	
+	my @keys = qw(Network Netmask Specified);
+	my %output = (
+		"Network" => int_to_str($network) . "/$cidr (Class $class)",
+		"Netmask" => int_to_str($mask),
+		"Specified" => "$which_specified"
+	);
+	
     unless($cidr > 30) {
-	push @output, (["Host Address Range", int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)"],
-		       ["Broadcast", int_to_str($broadcast)]);
+		$output{"Host Address Range"} = int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)";
+		$output{"Broadcast"} = int_to_str($broadcast);
+		push @keys, ("Host Address Range", "Broadcast");
     }
 
-    return answer => to_text(@output), html => to_html(@output);
+    return answer => to_text(\%output, \@keys), structured_answer => to_structured_answer(\%output, \@keys);
 };
 
 1;
