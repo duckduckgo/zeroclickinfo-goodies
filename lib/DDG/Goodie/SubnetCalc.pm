@@ -97,44 +97,7 @@ handle query => sub {
     $which_specified = "Broadcast" if ($host == $host_count+1);
     $which_specified = "Point-To-Point (".int_to_str($end).", ".int_to_str($start).")" if ($cidr == 31);
     $which_specified = "Host Only" if ($cidr == 32);
-
-    sub to_html {
-        my $results = "";
-        my $minwidth = "70px";
-        foreach my $result (@_) {
-            $results .= "<div><span class=\"subnet__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
-            $minwidth = "140px" if $result->[0] eq "Host Address Range";
-        }
-        return $results . "<style> .zci--answer .subnet__label {display: inline-block; min-width: $minwidth}</style>";
-    }
-    
-    sub to_structured_answer {
-		my ($output, $keys) = @_;
-        return {
-			id => "subnetcalculator",
-			name => "Subnet Calculator",
-			templates => {
-				group => 'list',
-				options => {
-					content => 'record'
-				}
-			},
-			data => {
-				record_data => $output,
-				record_keys => $keys,
-			}
-		};
-    }
-
-    sub to_text {
-		my ($output, $keys) = @_;
-		my $results = "";
-        foreach (@{$keys}) {
-			$results .= "$_: $output->{$_}\n";
-        }
-        return $results;
-    }
-	
+    	
 	my @keys = qw(Network Netmask Specified);
 	my %output = (
 		"Network" => int_to_str($network) . "/$cidr (Class $class)",
@@ -150,5 +113,32 @@ handle query => sub {
 
     return answer => to_text(\%output, \@keys), structured_answer => to_structured_answer(\%output, \@keys);
 };
+
+sub to_structured_answer {
+	my ($output, $keys) = @_;
+	return {
+		id => "subnetcalculator",
+		name => "Subnet Calculator",
+		templates => {
+			group => 'list',
+			options => {
+				content => 'record'
+			}
+		},
+		data => {
+			record_data => $output,
+			record_keys => $keys,
+		}
+	};
+}
+
+sub to_text {
+	my ($output, $keys) = @_;
+	my $results = "";
+	foreach (@{$keys}) {
+		$results .= "$_: $output->{$_}\n";
+	}
+	return $results;
+}
 
 1;
