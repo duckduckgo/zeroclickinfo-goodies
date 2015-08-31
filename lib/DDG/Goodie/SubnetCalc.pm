@@ -98,7 +98,7 @@ handle query => sub {
     $which_specified = "Point-To-Point (".int_to_str($end).", ".int_to_str($start).")" if ($cidr == 31);
     $which_specified = "Host Only" if ($cidr == 32);
     	
-	my @keys = qw(Network Netmask Specified);
+	my @output_keys = qw(Network Netmask Specified);
 	my %output = (
 		"Network" => int_to_str($network) . "/$cidr (Class $class)",
 		"Netmask" => int_to_str($mask),
@@ -108,10 +108,10 @@ handle query => sub {
     unless($cidr > 30) {
 		$output{"Host Address Range"} = int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)";
 		$output{"Broadcast"} = int_to_str($broadcast);
-		push @keys, ("Host Address Range", "Broadcast");
+		push @output_keys, ("Host Address Range", "Broadcast");
     }
 
-    return answer => to_text(\%output, \@keys), structured_answer => to_structured_answer(\%output, \@keys);
+    return answer => to_text(\%output, \@output_keys), structured_answer => to_structured_answer(\%output, \@output_keys);
 };
 
 sub to_structured_answer {
