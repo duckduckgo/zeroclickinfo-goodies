@@ -82,7 +82,7 @@
             "val": "Highlight usages in file"
         }, {
             "key": "[Alt] [Delete]",
-            "val": "Safe Delete"
+            "val": "Safe delete"
         }, {
             "key": "[Shift] [F6]",
             "val": "Rename"
