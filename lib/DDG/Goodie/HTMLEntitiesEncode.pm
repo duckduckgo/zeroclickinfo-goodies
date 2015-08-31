@@ -239,8 +239,9 @@ sub make_text {
 };
 
 sub make_structured_answer {
-    my @input = @{$_[0]};
-
+    my ($answer, $question) = @_;
+    my @input = @$answer;
+    
     if (scalar(@input) == 1) {
         return {
             input       => [$input[0][0]],
@@ -265,6 +266,7 @@ sub make_structured_answer {
                 }
             },
             data => {
+                title => "HTML Entity Encode: $question",
                 record_data => \%output,
                 record_keys => \@output_keys,
             }
@@ -308,7 +310,7 @@ handle remainder => sub {
         }
         # Make final answer
         if (defined $value) {
-            return make_text($value), structured_answer => make_structured_answer($value);
+            return make_text($value), structured_answer => make_structured_answer($value, $_);
         }
     }
 
@@ -327,7 +329,7 @@ handle remainder => sub {
         $entity =~ s/;$//g;
         # Make final answer
         my $answer = [[$_, $entity]];
-        return make_text($answer), structured_answer => make_structured_answer($answer);
+        return make_text($answer), structured_answer => make_structured_answer($answer, $_);
     }
 
     return;

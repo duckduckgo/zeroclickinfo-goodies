@@ -10,17 +10,17 @@ zci answer_type => 'html_entity';
 zci is_cached   => 1;
 
 sub make_structured_answer {
-	my ($qr) = @_;
-	return {
+    my ($qr) = @_;
+    return {
             input       => '-ANY-',
             operation   => "HTML Entity Encode",
             result      => $qr,
-	};
+    };
 }
 
 sub make_record_answer {
-	my ($data, $keys) = @_;
-	return {
+    my ($data, $keys, $question) = @_;
+    return {
             id => "htmlentitiesencode",
             name => "HTML Entities",
             templates => {
@@ -30,6 +30,7 @@ sub make_record_answer {
                 }
             },
             data => {
+                title => "HTML Entity Encode: $question",
                 record_data => $data,
                 record_keys => $keys,
             }
@@ -63,12 +64,12 @@ ddg_goodie_test(
 
     # Return two matching entities for ambiguous query
     'pound symbol html encode ' => test_zci(
-		"Encoded HTML Entity: &pound;\nEncoded HTML Entity: &#35;",
-		structured_answer => make_record_answer({
-			"British Pound Sterling (£)" => "&pound;",
-			"Number sign (#)"			 => "&#35;"
-		}, ["British Pound Sterling (£)", "Number sign (#)"])
-	),
+        "Encoded HTML Entity: &pound;\nEncoded HTML Entity: &#35;",
+        structured_answer => make_record_answer({
+            "British Pound Sterling (£)" => "&pound;",
+            "Number sign (#)"             => "&#35;"
+        }, ["British Pound Sterling (£)", "Number sign (#)"], "pound")
+    ),
 
     # Ignore words and whitespace
     'html code of pilcrow sign' => test_zci("Encoded HTML Entity: &#182;", structured_answer => make_structured_answer(qr/#182/)), # of, sign
@@ -77,13 +78,13 @@ ddg_goodie_test(
 
     # Better hash hits substitutions
     # 'right angle brackets' should work even though the defined key contains the singular 'bracket'
-	'right angle brackets htmlencode' => test_zci(
-		"Encoded HTML Entity: &rsaquo;\nEncoded HTML Entity: &raquo;", 
-		structured_answer => make_record_answer({
-			"Single right pointing angle quote (›)" => "&rsaquo;",
-			"Double right pointing angle quote (»)" => "&raquo;"
-		}, ["Single right pointing angle quote (›)", "Double right pointing angle quote (»)"])
-	),
+    'right angle brackets htmlencode' => test_zci(
+        "Encoded HTML Entity: &rsaquo;\nEncoded HTML Entity: &raquo;", 
+        structured_answer => make_record_answer({
+            "Single right pointing angle quote (›)" => "&rsaquo;",
+            "Double right pointing angle quote (»)" => "&raquo;"
+        }, ["Single right pointing angle quote (›)", "Double right pointing angle quote (»)"], "right angle brackets")
+    ),
     # 'double quotes' should work even though the defined key contains the singular 'quote'
     'double quotes htmlescape' => test_zci("Encoded HTML Entity: &quot;", structured_answer => make_structured_answer(qr/quot/)),
 
