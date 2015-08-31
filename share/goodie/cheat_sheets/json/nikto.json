@@ -28,7 +28,7 @@
                 "key": "C:\\pentest\\nikto-2.1.5>perl nikto.pl -h example.com"
             },
             {
-                "val": "Baisc Usage",
+                "val": "Basic Usage",
                 "key": "nikto -host example.com -port 8080"
             }
         ],
