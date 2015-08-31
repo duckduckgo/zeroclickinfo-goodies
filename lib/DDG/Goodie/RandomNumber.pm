@@ -10,7 +10,9 @@ name 'RandomNumber';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/RandomNumber.pm';
 category 'computing_tools';
 topics 'cryptography';
-attribution github => ['duckduckgo', 'DuckDuckGo'];
+attribution github => ['duckduckgo', 'DuckDuckGo'],
+            github => ['https://github.com/loganom', 'loganom'],
+            twitter => ['https://twitter.com/loganmccamon', 'loganom'];
 
 zci answer_type => 'rand';
 zci is_cached   => 0;
@@ -42,7 +44,7 @@ handle query_lc => sub {
     my $rand = rand;
 
     if ($start && $end || $valDiff > 1) {
-        $rand *= ($end - $start + 1);
+        $rand *= ($valDiff + 1);
         $rand = int($rand) + $start;
     }
 
