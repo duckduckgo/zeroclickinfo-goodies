@@ -6,8 +6,23 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => 'subnet_info';
+zci answer_type => 'subnet_calc';
 zci is_cached => 1;
+
+sub any_structured_answer
+{
+	return {
+		id => "subnetcalculator",
+		name => "Subnet Calculator",
+		templates => {
+			group => 'list',
+			options => {
+				content => 'record'
+			}
+		},
+		data => '-ANY-'
+	};
+}
 
 ddg_goodie_test(
     [
@@ -15,19 +30,19 @@ ddg_goodie_test(
         'DDG::Goodie::SubnetCalc'
     ],
     "10.0.0.0/24" => test_zci(
-	"Network: 10.0.0.0/24 (Class A)\nNetmask: 255.255.255.0\nSpecified: Network\nHost Address Range: 10.0.0.1-10.0.0.254 (254 hosts)\nBroadcast: 10.0.0.255\n", html => qr/.*/),
+	"Network: 10.0.0.0/24 (Class A)\nNetmask: 255.255.255.0\nSpecified: Network\nHost Address Range: 10.0.0.1-10.0.0.254 (254 hosts)\nBroadcast: 10.0.0.255\n", structured_answer => any_structured_answer()),
 
     "192.168.0.0/24" => test_zci(
-	"Network: 192.168.0.0/24 (Class C)\nNetmask: 255.255.255.0\nSpecified: Network\nHost Address Range: 192.168.0.1-192.168.0.254 (254 hosts)\nBroadcast: 192.168.0.255\n",html => qr/.*/),
+	"Network: 192.168.0.0/24 (Class C)\nNetmask: 255.255.255.0\nSpecified: Network\nHost Address Range: 192.168.0.1-192.168.0.254 (254 hosts)\nBroadcast: 192.168.0.255\n", structured_answer => any_structured_answer()),
 
     "8.8.8.8 255.255.224.0" => test_zci(
-	"Network: 8.8.0.0/19 (Class A)\nNetmask: 255.255.224.0\nSpecified: Host #2056\nHost Address Range: 8.8.0.1-8.8.31.254 (8190 hosts)\nBroadcast: 8.8.31.255\n", html => qr/.*/),
+	"Network: 8.8.0.0/19 (Class A)\nNetmask: 255.255.224.0\nSpecified: Host #2056\nHost Address Range: 8.8.0.1-8.8.31.254 (8190 hosts)\nBroadcast: 8.8.31.255\n", structured_answer => any_structured_answer()),
 
     '46.51.197.88/255.255.254.0' => test_zci(
-    "Network: 46.51.196.0/23 (Class A)\nNetmask: 255.255.254.0\nSpecified: Host #344\nHost Address Range: 46.51.196.1-46.51.197.254 (510 hosts)\nBroadcast: 46.51.197.255\n", html => qr/.*/),
+    "Network: 46.51.196.0/23 (Class A)\nNetmask: 255.255.254.0\nSpecified: Host #344\nHost Address Range: 46.51.196.1-46.51.197.254 (510 hosts)\nBroadcast: 46.51.197.255\n", structured_answer => any_structured_answer()),
 
     '176.34.131.233/32' => test_zci(
-    "Network: 176.34.131.233/32 (Class B)\nNetmask: 255.255.255.255\nSpecified: Host Only\n", html => qr/.*/),
+    "Network: 176.34.131.233/32 (Class B)\nNetmask: 255.255.255.255\nSpecified: Host Only\n", structured_answer => any_structured_answer()),
 );
 
 done_testing;
