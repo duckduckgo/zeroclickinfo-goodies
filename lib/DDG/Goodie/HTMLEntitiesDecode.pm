@@ -45,7 +45,6 @@ handle remainder => sub {
     # Attempt to decode, exit if unsuccessful
     my $decoded = decode_entities($entity); # decode_entities() returns the input if unsuccesful
     my $decimal = ord($decoded);
-    my $hex = sprintf("%04x", $decimal);
     return if (lc $entity eq lc $decoded); # safety net -- makes trying to decode something not real like "&enchantedbunny;" fail
 
     # If invisible character, provide link instead of displaying it
@@ -53,15 +52,19 @@ handle remainder => sub {
     return unless (defined $info); # another safety net
     if ($$info{name} eq '<control>') {
         $decoded = "Unicode control character (no visual representation)";
-        $entity = "<a href='https://en.wikipedia.org/wiki/Unicode_control_characters'>Unicode control character</a> (no visual representation)";
+        $entity = "Unicode control character (no visual representation)";
     } elsif(substr($$info{category},0,1) eq 'C') {
         $decoded = "Special character (no visual representation)";
-        $entity = "<a href='https://en.wikipedia.org/wiki/Special_characters'>Special character (no visual representation)";
+        $entity = "Special character (no visual representation)";
     }
 
     # Make answer
-    return "Decoded HTML Entity: $decoded, Decimal: $decimal, Hexadecimal: $hex",
-           html => qq(<div class="zci--htmlentitiesdecode"><div class="large"><span class="text--secondary">Decoded HTML Entity: </span><span class="text--primary">$entity</span></div><div class="small"><span class="text--secondary">Decimal: <span class="text--primary">$decimal</span>, Hexadecimal: <span class="text--primary">$hex</span></div></div></div>);
+    return "Decoded HTML Entity: $decoded",
+        structured_answer => {
+            input => $1,
+            output => $entity,
+            operation => "HTML Entity Decode"
+        };
 };
 
 1;
