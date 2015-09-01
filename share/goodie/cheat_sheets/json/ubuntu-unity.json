@@ -94,7 +94,7 @@
                 "val": "Go to Desktop (minimize all windows)."
             },
             {
-                "key": "[Ctrl] [Super] ([←]/[→])",
+                "key": "[Ctrl] [Super] ( [←] / [→] )",
                 "val": "Dock Window to left or right side of screen."
             },
             {
