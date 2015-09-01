@@ -163,11 +163,11 @@
                 "val":"Fold/expand"
             },
             {
-                "key":"[ctrl] [k], [j]",
+                "key":"[ctrl] [j]",
                 "val":"Unfold all"
             },
             {
-                "key":"[ctrl] [k], [1]",
+                "key":"[ctrl] [1]",
                 "val":"Fold all"
             },
             {
