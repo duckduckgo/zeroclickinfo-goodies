@@ -91,7 +91,7 @@
         ],
         "View/Window Manipulation":[
             {
-                "key":"[⌘] [\\]",
+                "key":"[⌘] [\\\\]",
                 "val":"Toggle tree-view sidebar"
             },
             {
@@ -163,6 +163,10 @@
                 "val":"Fold/expand"
             },
             {
+                "key":"[ctrl] ([\\[]\/[\\]])",
+                "val":"Fold/expand"
+            },
+            {
                 "key":"[ctrl] [j]",
                 "val":"Unfold all"
             },
@@ -171,7 +175,7 @@
                 "val":"Fold all"
             },
             {
-                "key":"[ctrl] ([2]-[9])",
+                "key":"[ctrl] [2..9]",
                 "val":"Fold level X"
             }
         ],
