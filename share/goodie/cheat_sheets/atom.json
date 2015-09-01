@@ -77,7 +77,7 @@
                 "val":"Goto current selection"
             },
             {
-                "key":"[ctrl] ([↑]/[↓])",
+                "key":"[ctrl] ( [↑] / [↓] )",
                 "val":"Move current line up/down"
             },
             {
