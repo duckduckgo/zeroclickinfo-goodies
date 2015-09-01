@@ -15,7 +15,7 @@
         "Meterpreter System Commands",
         "Meterpreter Priv Commands"
     ],
-    "Sections":{  
+    "sections":{  
         "Database Commands":[  
             {  
                 "val":"connect database",
