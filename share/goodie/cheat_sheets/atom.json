@@ -175,7 +175,7 @@
                 "val":"Fold level X"
             },
             {
-                "key":"[ctrl] [k], [t]",
+                "key":"[ctrl] [t]",
                 "val":"Fold tag attributes"
             }
         ],
