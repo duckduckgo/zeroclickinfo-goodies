@@ -7,41 +7,43 @@
     },
     "aliases": [ "elementary os" ],
     "section_order":[
-        "General"
+        "Window",
+        "Switching",
+        "Launcher",
+        "Workspace"
     ],
     "sections":{
-        "General":[
-            {
-                "val":"App Launcher",
-                "key":"[⌘] [Space]"
-            },
+        
+        "Window":[
             {
                 "val":"Window Switcher",
                 "key":"[Alt] [Tab]"
-            },
-            {
-                "val":"Switch Windows Backwards",
-                "key":"[⇧] [Alt] [Tab]"
             },
             {
                 "val":"Window Overview",
                 "key":"[⌘] [W]"
             },
             {
-                "val":"Window Overview (Across All Workspaces)",
-                "key":"[⌘] [A]"
+                "val":"Move Window with Workspace",
+                "key":"[⇧] [⌘] ([Left]/[Right])"
+            },
+            {
+                "val":"Snap Window to Half of Workspace",
+                "key":"[Ctrl] [⌘] ([Left]/[Right])"
+            },
+            {
+                "val":"Maximize/Unmaximize Window",
+                "key":"[ctrl] [⌘] ([Left]/[Right])"
+            },
+        ],
+        "Switching":[
+            {
+                "val":"Switch Windows Backwards",
+                "key":"[⇧] [Alt] [Tab]"
             },
             {
                 "val":"Switch Workspace",
                 "key":"[⌘] ([Left]/[Right])"
-            },
-            {
-                "val":"Workspace Overview",
-                "key":"[⌘] [S]"
-            },
-            {
-                "val":"New Workspace",
-                "key":"[⌘] [O]"
             },
             {
                 "val":"Will switch to a specific workspace (If it currently exists)",
@@ -56,6 +58,34 @@
                 "key":"[⌘] [End]"
             },
             {
+                "val":"Move Window",
+                "key":"[⌘] [Click] [drag]"
+            },
+            {
+                "val":"Will switch to the next keyboard layout",
+                "key":"[Alt] [Space]"
+            }
+        ],
+        "Launcher":[
+            {
+                "val":"App Launcher",
+                "key":"[⌘] [Space]"
+            },
+            {
+                "val":"Will start the Pantheon Terminal",
+                "key":"[⌘] [T]"
+            },
+            {
+                "val":"New Workspace",
+                "key":"[⌘] [O]"
+            }
+        ],
+        "Workspace":[
+            {
+                "val":"Workspace Overview",
+                "key":"[⌘] [S]"
+            },
+            {
                 "val":"Will take the screentshot of entire screen",
                 "key":"prscr"
             },
@@ -68,32 +98,8 @@
                 "key":"[Ctrl] [Alt] [Prscr]"
             },
             {
-                "val":"Move Window with Workspace",
-                "key":"[⇧] [⌘] ([Left]/[Right])"
-            },
-            {
-                "val":"Snap Window to Half of Workspace",
-                "key":"[Ctrl] [⌘] ([Left]/[Right])"
-            },
-            {
-                "val":"Maximize/Unmaximize Window",
-                "key":"[ctrl] [⌘] ([Left]/[Right])"
-            },
-            {
                 "val":"Lock Screen",
                 "key":"[⌘] [L]"
-            },
-            {
-                "val":"Will start the Pantheon Terminal",
-                "key":"[⌘] [T]"
-            },
-            {
-                "val":"Will switch to the next keyboard layout",
-                "key":"[Alt] [Space]"
-            },
-            {
-                "val":"Move Window",
-                "key":"[⌘] [Click] [drag]"
             },
             {
                 "val":"Resize Window",
