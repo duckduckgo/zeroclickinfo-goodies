@@ -1,6 +1,7 @@
 {
     "id":"opera_cheat_sheet",
     "name":"Opera Browser",
+    "description":"To utilize all the keys you must activate advance keyboard option (Settings>Browser>Under Shortcuts, tick the Enable advanced keyboard shortcuts checkbox.)",
     "template_type":"keyboard",
     "metadata":{
         "sourceName":"makeuseof",
