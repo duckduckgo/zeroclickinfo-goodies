@@ -30,8 +30,7 @@
     border-radius: 2px;
     font-size: 0.833em;
     white-space: normal;
-    word-break: break-all;
-    word-wrap: break-word;
+    word-break: normal;
     margin-bottom: 0.2em;
     line-height: 1.17;
 }
