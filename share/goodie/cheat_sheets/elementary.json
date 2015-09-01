@@ -34,7 +34,7 @@
             {
                 "val":"Maximize/Unmaximize Window",
                 "key":"[ctrl] [⌘] ([Left]/[Right])"
-            },
+            }
         ],
         "Switching":[
             {
