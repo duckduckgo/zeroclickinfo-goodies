@@ -97,7 +97,7 @@
             "key": "[Ctrl]  [F]",
             "val": "Find"
         }, {
-            "key": "[F3]",
+            "key": "F3",
             "val": "Find next"
         }, {
             "key": "[Shift] [F3]",
@@ -132,10 +132,10 @@
             "key": "[Ctrl] [T]",
             "val": "Update project from VCS"
         }, {
-            "key": "[F8]",
+            "key": "F8",
             "val": "Step over"
         }, {
-            "key": "[F7]",
+            "key": "F7",
             "val": "Step into"
         }, {
             "key": "[Shift] [F7]",
@@ -248,7 +248,7 @@
             "key": "[Alt] [Home]",
             "val": "Show navigation bar"
         }, {
-            "key": "[F11]",
+            "key": "F11",
             "val": "Toggle bookmark"
         }, {
             "key": "[Ctrl] [0..9]",
