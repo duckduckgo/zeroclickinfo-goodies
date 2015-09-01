@@ -127,10 +127,10 @@
             "key": "s"
         }, {
             "val": "Precise movement",
-            "key": "[\\{hold\\} Shift]"
+            "key": "[Shift] hold"
         }, {
             "val": "Increment movement",
-            "key": "[\\{hold\\} Ctrl]"
+            "key": "[Ctrl] hold"
         }, {
             "val": "Lock to axis",
             "key": "[Middle click] / [x] / [y] / [z]"
@@ -443,7 +443,7 @@
             "key": "{\\]} / {\\[}"
         }, {
             "val": "Select hierarchy",
-            "key": "[Shift] ({\\]} / {\\[})"
+            "key": "[Shift] ( {\\]} / {\\[} )"
         }, {
             "val": "Select connected",
             "key": "l"
