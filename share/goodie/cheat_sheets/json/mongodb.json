@@ -86,15 +86,15 @@
         ],
          "Inserting Documents": [
             {
-                "key": "db.ships.insert({name:'USS Enterprise-D',operator:'Starfleet',type:'Explorer',class:'Galaxy',crew:750,codes:[10,11,12]})",
+                "key": "db.ships.insert(\\{name:'USS Enterprise-D',operator:'Starfleet',type:'Explorer',class:'Galaxy',crew:750,codes:\\[10,11,12\\]\\})",
                 "val": "Insert into Ships collection Example 1"
             },
             {
-                "key": "db.ships.insert({name:'IKS Buruk',operator:' Klingon Empire',class:'Warship',crew:40,codes:[100,110,120]})",
+                "key": "db.ships.insert(\\{name:'IKS Buruk',operator:' Klingon Empire',class:'Warship',crew:40,codes:\\[100,110,120\\]\\})",
                 "val": "Insert into Ships collection Example 2"
             },
             {
-                "key": "db.ships.insert({name:'Narada',operator:'Romulan Star Empire',type:'Warbird',class:'Warbird',crew:65,codes:[251,251,220]})",
+                "key": "db.ships.insert(\\{name:'Narada',operator:'Romulan Star Empire',type:'Warbird',class:'Warbird',crew:65,codes:\\[251,251,220\\]\\})",
                 "val": "Insert into Ships collection Example 3"
             }
         ],
@@ -108,21 +108,21 @@
                 "val": "Finds all documents and using nice formatting"
             },
             {
-                "key": "db.ships.find({}, {name:true, _id:false})",
+                "key": "db.ships.find(\\{\\}, \\{name:true, _id:false\\})",
                 "val": "Shows only the names of the ships collections"
             },
             {
-                "key": "db.ships.findOne({'name':'USS Defiant'})",
+                "key": "db.ships.findOne(\\{'name':'USS Defiant'\\})",
                 "val": "Finds one document by corresponding attribute"
             }
         ],
         "Finding Documents using Operators": [
             {
-                "key": "$gt / $gte",
-                "val": "(greater than / greater than equals) : db.ships.find({class:{$gt:’P'}})"
+                "key": "$gt \/ $gte",
+                "val": "(greater than / greater than equals) : db.ships.find(\\{class:\\{$gt:’P'\\}\\})"
             },
             {
-                "key": "$lt / $lte",
+                "key": "$lt \/ $lte",
                 "val": "(lesser than / lesser than equals) : db.ships.find({class:{$lte:’P'}})"
             },
             {
@@ -140,53 +140,53 @@
         ],
         "Updating Documents": [
             {
-                "key": "db.ships.update({name : 'USS Prometheus'}, {name : 'USS Something'})",
+                "key": "db.ships.update(\\{name : 'USS Prometheus'\\}, \\{name : 'USS Something'\\})",
                 "val": "Replaces the whole document"
             },
             {
-                "key": "db.ships.update({name : 'USS Something'},{$set : {operator : 'Starfleet', class : 'Prometheus'}})",
+                "key": "db.ships.update(\\{name : 'USS Something'\\},\\{$set : \\{operator : 'Starfleet', class : 'Prometheus'\\}\\})",
                 "val": "sets / changes certain attributes of a given document"
             },
             {
-                "key": "db.ships.update({name : 'USS Something'},{$unset : {operator : 1}})",
+                "key": "db.ships.update(\\{name : 'USS Something'\\},\\{$unset : \\{operator : 1\\}\\})",
                 "val": "removes an attribute from a given document"
             }
         ],
         "Removing Documents": [
             {
-                "key": "db.ships.remove({name : 'USS Prometheus'})",
+                "key": "db.ships.remove(\\{name : 'USS Prometheus'\\})",
                 "val": "removes the document"
             },
             {
-                "key": "db.ships.remove({name:{$regex:’^USS\\sE’}})",
+                "key": "db.ships.remove(\\{name:\\{$regex:’^USS\\sE’\\}\\})",
                 "val": "removes using operator"
             }
         ],
         "Working with Indexes": [
             {
-                "key": "db.ships.ensureIndex({name : 1})",
+                "key": "db.ships.ensureIndex(\\{name : 1\\})",
                 "val": "Creating an index"
             },
             {
-                "key": "db.ships.dropIndex({name : 1})",
+                "key": "db.ships.dropIndex(\\{name : 1\\})",
                 "val": "Dropping an index"
             },
             {
-                "key": "db.ships.ensureIndex({name : 1, operator : 1, class : 0})",
+                "key": "db.ships.ensureIndex(\\{name : 1, operator : 1, class : 0\\})",
                 "val": "Creating a compound index"
             },
             {
-                "key": "db.ships.dropIndex({name : 1, operator : 1, class : 0})",
+                "key": "db.ships.dropIndex(\\{name : 1, operator : 1, class : 0\\})",
                 "val": "Dropping a compound index"
             },
             {
-                "key": "db.ships.ensureIndex({name : 1, operator : 1, class : 0}, {unique : true})",
+                "key": "db.ships.ensureIndex(\\{name : 1, operator : 1, class : 0\\}, \\{unique : true\\})",
                 "val": "Creating a unique compound index"
             }
         ],
         "Indexes - Hints & Stats": [
             {
-                "key": "db.ships.find ({'name':'USS Defiant'}).explain()",
+                "key": "db.ships.find (\\{'name':'USS Defiant'\\}).explain()",
                 "val": "Explains index usage"
             },
             {
