@@ -30,7 +30,8 @@ sub make_record_answer {
                 }
             },
             data => {
-                title => "HTML Entity Encode: $question",
+                title => "$question",
+                subtitle => "HTML Entity Encode",
                 record_data => $data,
                 record_keys => $keys,
             }

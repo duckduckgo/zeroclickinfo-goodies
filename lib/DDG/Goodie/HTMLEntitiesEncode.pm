@@ -266,7 +266,8 @@ sub make_structured_answer {
                 }
             },
             data => {
-                title => "HTML Entity Encode: $question",
+                title => "$question",
+                subtitle => "HTML Entity Encode",
                 record_data => \%output,
                 record_keys => \@output_keys,
             }
