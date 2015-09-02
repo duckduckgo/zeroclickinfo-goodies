@@ -1,7 +1,6 @@
 {
   "id": "ssh_cheat_sheet",
   "name": "SSH",
-  "description": "SSH Help",
   "metadata": {
     "sourceName": "Linux Command",
     "sourceUrl": " http://linuxcommand.org/man_pages/ssh1.html"
