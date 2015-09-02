@@ -1,9 +1,13 @@
 {
     "id": "kmplayer_cheat_sheet", 
-    "name": "Kmplayer",
-    "description": "Multimedia", 
+    "name": "K-Multimedia Player (KMPlayer)",
+    "aliases": [
+    "the kmplayer",
+    "k-multimedia player"
+    ]
     "metadata": { 
-        "sourceName": "KmplayerCheatSheet"
+        "sourceName": "guidingtech",
+        "sourceUrl": "http://www.guidingtech.com/13029/kmplayer-keyboard-shortcuts/"
     },
    "template_type": "keyboard",
     "section_order": [  
@@ -142,7 +146,7 @@
                 "val": "Ignore All Settings "
             }
         ],
-        "Video(Advanced )": [
+        "Video( Advanced )": [
             {
                 "key": "[Alt] [I]",
                 "val": "Deinterlacing"
@@ -188,53 +192,53 @@
                 "val": "High Speed Mode"
             }
         ],
-        "Video(basic)": [
+        "Video (basic) ": [
             {
                 "key": "[Ctrl] [F1]",
                 "val": "Motion Blur"
             },
             {
-                "key": " [Ctrl] [F2]",
+                "key": "[Ctrl] [F2]",
                 "val": "Soften"
             },
             {
-                "key": " [Ctrl] [F3]",
+                "key": "[Ctrl] [F3]",
                 "val": "Sharpen"
             },
             {
-                "key": " [Ctrl] [F4]",
+                "key": "[Ctrl] [F4]",
                 "val": "Media Vertical Filter"
             },
             {
-                "key": " [Ctrl] [F5]",
+                "key": "[Ctrl] [F5]",
                 "val": "Media Horizontal Filter"
             },
             {
-                "key": " [Ctrl] [F6]",
+                "key": "[Ctrl] [F6]",
                 "val": "Mean Y filter"
             },
             {
-                "key": " [Ctrl] [F7]",
+                "key": "[Ctrl] [F7]",
                 "val": "Mean UV filter"
             },
             {
-                "key": " [Ctrl] [F8]",
+                "key": "[Ctrl] [F8]",
                 "val": "Grayscale"
             },
             {
-                "key": " [Ctrl] [F9]",
+                "key": "[Ctrl] [F9]",
                 "val": "Auto Level Control"
             },
             {
-                "key": " [Ctrl] [F10]",
+                "key": "[Ctrl] [F10]",
                 "val": "Miror Image"
             },
             {
-                "key": " [Ctrl] [F11]",
+                "key": "[Ctrl] [F11]",
                 "val": "filp input picture"
             },
             {
-                "key": " [Ctrl] [F12]",
+                "key": "[Ctrl] [F12]",
                 "val": "Flip Output Picture"
             }
         ],
@@ -264,7 +268,7 @@
                 "val": "Size Reset"
             }
         ],
-        "PLayback": [
+        "Playback": [
             {
                 "key": "[Space]",
                 "val": "Play/Pause"
