@@ -1,11 +1,17 @@
 {
-    "id": "mac_keyboard_cheat_sheet",
-    "name": "Mac Keyboard Shortcuts",
-    "description": "List of useful keyboard shortcuts for Mac",
+    "id": "apple_mac_os_cheat_sheet",
+    "name": "Apple OS X",
+    "description": "List of useful keyboard shortcuts for Mac, works on all versions of mac os including OS X 10.10 Yosermite",
     "metadata": {
-        "sourceName": "Mac keyboard shortcuts",
+        "sourceName": "Apple Mac OS Cheat Sheet",
         "sourceUrl": "https://support.apple.com/en-us/HT201236"
     },
+    "aliases": [
+    "osx",
+    "os x",
+    "mac",
+    "apple mac"
+    ],
     "template_type": "keyboard",
     "section_order" : ["General", "Finder", "Text Editing", "Web Browsing (Works on most modern browsers)", "Spotlight", "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)"],
     "sections":{
