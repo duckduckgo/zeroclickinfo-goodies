@@ -53,19 +53,19 @@ foreach my $path (glob("$json_dir/*.json")){
     
       for my $section_name (@$order)
       {
-        ok my $section = $sections->{$section_name}, "'$section_name' exists in sections $name";
+        ok my $section = $sections->{$section_name}, "'$section_name' exists in sections from $name";
       }
     
       for my $section_name (keys %$sections)
       {
-        ok grep(/\Q$section_name\E/, @$order), "'$section_name' exists in section_order $name";
-        is ref $sections->{$section_name}, 'ARRAY', "'$section_name' is an array $name";
+        ok grep(/\Q$section_name\E/, @$order), "'$section_name' exists in section_order from $name";
+        is ref $sections->{$section_name}, 'ARRAY', "'$section_name' is an array from $name";
     
         my $entry_count = 0;
         for my $entry (@{$sections->{$section_name}})
         {
-          ok exists $entry->{key}, "'$section_name' entry: $entry_count has a key";
-          ok exists $entry->{val}, "'$section_name' entry: $entry_count has a val";
+          ok exists $entry->{key}, "'$section_name' entry: $entry_count has a key from $name";
+          ok exists $entry->{val}, "'$section_name' entry: $entry_count has a val from $name";
           $entry_count++;
         }
       }
@@ -78,9 +78,15 @@ foreach my $path (glob("$json_dir/*.json")){
       {
         for my $entry (@{$sections->{$section_name}})
         {
-          if($entry->{val} =~ /\//g){
-            is $entry->{val} =~ /\s\/\s/,  1,  "'/' should have spaces $name";
+
+         # spacing around '/'
+         if($entry->{val} =~ /\//g){
+            is $entry->{val} =~ /\s\/\s/,  1,  "'/' should have spaces: $entry->{val} from  $name";
          }
+
+         # trailing white space
+         is $entry->{val} =~ /\s"$/, '', "No trailing white space in the value: $entry->{val} from: $name";
+         is $entry->{key} =~ /\s"$/, '', "No trailing white space in the key: $entry->{key} from: $name";
         }
       }
     };
