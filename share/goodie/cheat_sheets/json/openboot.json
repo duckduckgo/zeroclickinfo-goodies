@@ -1,7 +1,6 @@
 {
     "id": "openboot_cheat_sheet",
     "name": "OpenBoot Cheat Sheet",
-    "category": "cheat_sheets",
     "description": "Quick reference of OpenBoot commands on SUN Workstations",
     "metadata": {
         "sourceName": "the Sun Docs (PDF)",
@@ -39,7 +38,7 @@
             "val": "Ejects the floppy",
             "key": "eject floppy"
         }, {
-            "val": "Ejects the cd-rom drive",
+            "val": "Ejects the CD drive",
             "key": "eject cdrom"
         }, {
             "val": "Re-sets all NVRAM contents",
