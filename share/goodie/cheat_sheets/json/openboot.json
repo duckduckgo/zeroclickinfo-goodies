@@ -3,7 +3,7 @@
     "name": "OpenBoot Cheat Sheet",
     "description": "Quick reference of OpenBoot commands on SUN Workstations",
     "metadata": {
-        "sourceName": "the Sun Docs (PDF)",
+        "sourceName": "SUN OpenBoot Quick Reference",
         "sourceUrl": "http://irtfweb.ifa.hawaii.edu/~spex/computers/spex1/techdocs/1201-hilodog/SunOBP_Quick_Ref.pdf"
     },
     "aliases": [
