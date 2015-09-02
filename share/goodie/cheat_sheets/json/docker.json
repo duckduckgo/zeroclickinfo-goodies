@@ -1,7 +1,8 @@
 {
     "id": "docker_cheat_sheet",
     "name": "Docker",
-    "description": "automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualization",
+    "description": "Automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualization",
+    "template_type": "terminal",
     "metadata": {
         "sourceName": "docker-cheat-sheet",
         "sourceUrl": "https://github.com/wsargent/docker-cheat-sheet"
