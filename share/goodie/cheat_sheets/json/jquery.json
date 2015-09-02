@@ -1,16 +1,16 @@
 {
     "id": "jquery_cheat_sheet",
-    "name": "JQuery",
+    "name": "jQuery",
     "description": "JavaScript Library",
     "metadata": {
-        "sourceName": "JQueryAPI",
+        "sourceName": "jQueryAPI",
         "sourceUrl": "http://api.jquery.com/"
     },
     "template_type": "terminal",
     "section_order": [
         "Selectors",
 		"Traversing",
-		"Css",
+		"CSS",
 		"Manipulation",
 		"Events",
 		"Event Object",
