@@ -7,7 +7,7 @@
         "sourceUrl": "https://support.microsoft.com/en-us/kb/290938"
     },
     "aliases":[
-        "Word", "MS Word", "Word Shortcuts", "Word Short cuts", "Microsoft Word Shortcuts", "Microsoft Word Short Cuts", "Microsoft Word Keyboard Shortcuts", "Microsoft Word Keyboard Short Cuts", "Word Cheatsheet", "MS Word Cheatsheet", "Microsfot Word Cheatsheet"
+        "Word", "MS Word", "Word"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -16,67 +16,67 @@
     "sections": {
         "Common Tasks": [ {
             "val": "Save",
-            "key": "CTRL + S"
+            "key": "[Ctrl] [S]"
         }, {
             "val": "Navigate (Find/Search)",
-            "key": "CTRL + F"
+            "key": "[Ctrl] [F]"
         }, {
             "val": "Cut",
-            "key": "CTRL + X"
+            "key": "[Ctrl] [X]"
         }, {
             "val": "Copy",
-            "key": "CTRL + C"
+            "key": "[Ctrl] [C]"
         }, {
             "val": "Paste",
-            "key": "CTRL + V"
+            "key": "[Ctrl] [V]"
         }, {
             "val": "Select All",
-            "key": "CTRL + A"
+            "key": "[Ctrl] [A]"
         }, {
             "val": "Print",
-            "key": "CTRL + P"
+            "key": "[Ctrl] [P]"
         }, {
             "val": "Undo",
-            "key": "CTRL + Z"
+            "key": "[Ctrl] [Z]"
         }, {
             "val": "Redo",
-            "key": "CTRL + Y"
+            "key": "[Ctrl] [Y]"
         }, {
             "val": "Make Letters Bold",
-            "key": "CTRL + B"
+            "key": "[Ctrl] [B]"
         }, {
             "val": "Make Letters Italic",
-            "key": "CTRL + I"
+            "key": "[Ctrl] [I]"
         }, {
             "val": "Make Letters Underline",
-            "key": "CTRL + U"
+            "key": "[Ctrl] [U]"
         }, {
             "val": "Create a Nonbreaking Space",
-            "key": "CTRL + SHIFT + SPACEBAR"
+            "key": "[Ctrl] [Shift] [Spacebar]"
         }, {
             "val": "Create a Nonbreaking Hyphen",
-            "key": "CTRL + SHIFT + HYPHEN"
+            "key": "[Ctrl] [Shift] [Hyphen]"
         }, {
             "val": "Decrease Font Size by 1 value",
-            "key": "CTRL + SHIFT + <"
+            "key": "[Ctrl] [Shift] [<]"
         }, {
             "val": "Increase Font Size by 1 value",
-            "key": "CTRL + SHIFT + >"
+            "key": "[Ctrl] [Shift] [>]"
         }, {
             "val": "Decrease Font Size by 1 point",
-            "key": "CTRL + \\["
+            "key": "[Ctrl] [\\[]"
         }, {
             "val": "Increase Font Size by 1 point",
-            "key": "CTRL + \\]"
+            "key": "[Ctrl]  [\\]]"
         }, {
             "val": "Remove Paragraph or Character Formatting",
-            "key": "CTRL + SPACEBAR"
+            "key": "[Ctrl] [Spacebar]"
         }, {
             "val": "Paste Specical",
-            "key": "CTRL + ALT + V"
+            "key": "[Ctrl] [ALT] [V]"
         }, {
             "val": "Paste Formatting Only",
-            "key": "CTRL + SHIFT + V"
+            "key": "[Ctrl] [Shift] [V]"
         }
         ]}      
     
