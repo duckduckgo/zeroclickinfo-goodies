@@ -7,7 +7,7 @@
         "sourceUrl": "http://irtfweb.ifa.hawaii.edu/~spex/computers/spex1/techdocs/1201-hilodog/SunOBP_Quick_Ref.pdf"
     },
     "aliases": [
-        "SUN Boot Prompt", "SUN OpenBoot"
+        "sun boot prompt", "sun openboot"
     ],
     "template_type": "code",
     "section_order": ["Basic commands", "Other helpful commands"],
