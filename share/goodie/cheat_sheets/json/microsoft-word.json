@@ -1,0 +1,83 @@
+{
+    "id": "microsoft_word_cheat_sheet",
+    "name": "Microsoft Word",
+    "description": "Word Processor by Microsoft",
+    "metadata": {
+        "sourceName": "Keyboard shortcuts for Microsoft Word",
+        "sourceUrl": "https://support.microsoft.com/en-us/kb/290938"
+    },
+    "aliases":[
+        "Word", "MS Word", "Word Shortcuts", "Word Short cuts", "Microsoft Word Shortcuts", "Microsoft Word Short Cuts", "Microsoft Word Keyboard Shortcuts", "Microsoft Word Keyboard Short Cuts", "Word Cheatsheet", "MS Word Cheatsheet", "Microsfot Word Cheatsheet"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+       "Common Tasks"
+    ],
+    "sections": {
+        "Common Tasks": [ {
+            "val": "Save",
+            "key": "CTRL + S"
+        }, {
+            "val": "Navigate (Find/Search)",
+            "key": "CTRL + F"
+        }, {
+            "val": "Cut",
+            "key": "CTRL + X"
+        }, {
+            "val": "Copy",
+            "key": "CTRL + C"
+        }, {
+            "val": "Paste",
+            "key": "CTRL + V"
+        }, {
+            "val": "Select All",
+            "key": "CTRL + A"
+        }, {
+            "val": "Print",
+            "key": "CTRL + P"
+        }, {
+            "val": "Undo",
+            "key": "CTRL + Z"
+        }, {
+            "val": "Redo",
+            "key": "CTRL + Y"
+        }, {
+            "val": "Make Letters Bold",
+            "key": "CTRL + B"
+        }, {
+            "val": "Make Letters Italic",
+            "key": "CTRL + I"
+        }, {
+            "val": "Make Letters Underline",
+            "key": "CTRL + U"
+        }, {
+            "val": "Create a Nonbreaking Space",
+            "key": "CTRL + SHIFT + SPACEBAR"
+        }, {
+            "val": "Create a Nonbreaking Hyphen",
+            "key": "CTRL + SHIFT + HYPHEN"
+        }, {
+            "val": "Decrease Font Size by 1 value",
+            "key": "CTRL + SHIFT + <"
+        }, {
+            "val": "Increase Font Size by 1 value",
+            "key": "CTRL + SHIFT + >"
+        }, {
+            "val": "Decrease Font Size by 1 point",
+            "key": "CTRL + \\["
+        }, {
+            "val": "Increase Font Size by 1 point",
+            "key": "CTRL + \\]"
+        }, {
+            "val": "Remove Paragraph or Character Formatting",
+            "key": "CTRL + SPACEBAR"
+        }, {
+            "val": "Paste Specical",
+            "key": "CTRL + ALT + V"
+        }, {
+            "val": "Paste Formatting Only",
+            "key": "CTRL + SHIFT + V"
+        }
+        ]}      
+    
+}
