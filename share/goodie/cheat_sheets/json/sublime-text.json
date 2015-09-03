@@ -54,10 +54,10 @@
             "key":"[Ctrl] [Shift] [W]",
             "val":"Close current window"
           }, {
-            "key":"[Ctrl] [Keypad Plus]",
+            "key":"[Ctrl] [+]",
             "val":"Smaller font"
           }, {
-            "key":"[Ctrl] [Keypad Minus]",
+            "key":"[Ctrl] [-]",
             "val":"Larger font" 
         }],
         "File Navigation": [{
@@ -280,19 +280,19 @@
           }
         ],
         "Tools": [{
-            "key": "[Ctrl] + [shift] + [p]", 
+            "key": "[Ctrl] + [Shift] + [p]", 
             "val": "Command Palette"
         }, {
             "key": "[Ctrl] + [b]",
             "val": "Build"
         }, {
-            "key": "[Ctrl] + [shift] + [b]",
+            "key": "[Ctrl] + [Shift] + [b]",
             "val": "Build with"
         }, {
             "key": "[Ctrl] + [q]",
             "val": "Record Macro"
         }, {
-            "key": "[Ctrl] + [shift] + [q]",
+            "key": "[Ctrl] + [Shift] + [q]",
             "val": "Playback Macro"
         }]
     }
