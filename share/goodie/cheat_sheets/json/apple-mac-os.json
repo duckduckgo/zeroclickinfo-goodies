@@ -7,12 +7,12 @@
     "sourceUrl": "https://support.apple.com/en-us/HT201236"
     },
     "aliases": [
-    "osx",
-    "os x",
-    "mac",
-    "apple mac",
-    "mac os",
-    "mac osx"
+        "osx",
+        "os x",
+        "mac",
+        "apple mac",
+        "mac os",
+        "mac osx"
     ],
     "template_type": "keyboard",
     "section_order" : ["General", "Finder", "Text Editing", "Web Browsing (Works on most modern browsers)", "Spotlight", "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)"],
