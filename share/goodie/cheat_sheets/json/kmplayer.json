@@ -1,16 +1,12 @@
 {
     "id": "kmplayer_cheat_sheet", 
-    "name": "K-Multimedia Player (KMPlayer)",
-    "aliases": [
-        "the kmplayer",
-        "k-multimedia player"
-        ],
+    "name": "Kmplayer",
+    "description": "Multimedia", 
     "metadata": { 
-        "sourceName": "guidingtech",
-        "sourceUrl": "http://www.guidingtech.com/13029/kmplayer-keyboard-shortcuts/"
-        },
+        "sourceName": "KmplayerCheatSheet"
+    },
    "template_type": "keyboard",
-    "section_order": [
+    "section_order": [  
         "Open",
         "Album",
         "Screen Controls",
@@ -48,11 +44,11 @@
         ],
         "Option": [
             {
-                "key": "[F2]",
+                "key": "F2",
                 "val": "Preference"
             },
             {
-                "key": "[F2]",
+                "key": "F2",
                 "val": "Help"
             }
             
@@ -86,11 +82,11 @@
         
         "Audio": [
             {
-                "key": "[Down]",
+                "key": "Down",
                 "val": "Volume Down"
             },
             {
-                "key": "[UP]",
+                "key": "UP",
                 "val": "Volume Up"
             },
             {
@@ -118,7 +114,7 @@
                 "val": "True Bass"
             },
             {
-                "key": "[Shift] F4]",
+                "key": "[Shift] [F4]",
                 "val": "Treble Enhance"
             }, 
             {
@@ -146,7 +142,7 @@
                 "val": "Ignore All Settings "
             }
         ],
-        "Video( Advanced )": [
+        "Video(Advanced )": [
             {
                 "key": "[Alt] [I]",
                 "val": "Deinterlacing"
@@ -192,53 +188,53 @@
                 "val": "High Speed Mode"
             }
         ],
-        "Video (basic) ": [
+        "Video(basic)": [
             {
                 "key": "[Ctrl] [F1]",
                 "val": "Motion Blur"
             },
             {
-                "key": "[Ctrl] [F2]",
+                "key": " [Ctrl] [F2]",
                 "val": "Soften"
             },
             {
-                "key": "[Ctrl] [F3]",
+                "key": " [Ctrl] [F3]",
                 "val": "Sharpen"
             },
             {
-                "key": "[Ctrl] [F4]",
+                "key": " [Ctrl] [F4]",
                 "val": "Media Vertical Filter"
             },
             {
-                "key": "[Ctrl] [F5]",
+                "key": " [Ctrl] [F5]",
                 "val": "Media Horizontal Filter"
             },
             {
-                "key": "[Ctrl] [F6]",
+                "key": " [Ctrl] [F6]",
                 "val": "Mean Y filter"
             },
             {
-                "key": "[Ctrl] [F7]",
+                "key": " [Ctrl] [F7]",
                 "val": "Mean UV filter"
             },
             {
-                "key": "[Ctrl] [F8]",
+                "key": " [Ctrl] [F8]",
                 "val": "Grayscale"
             },
             {
-                "key": "[Ctrl] [F9]",
+                "key": " [Ctrl] [F9]",
                 "val": "Auto Level Control"
             },
             {
-                "key": "[Ctrl] [F10]",
+                "key": " [Ctrl] [F10]",
                 "val": "Miror Image"
             },
             {
-                "key": "[Ctrl] [F11]",
+                "key": " [Ctrl] [F11]",
                 "val": "filp input picture"
             },
             {
-                "key": "[Ctrl] [F12]",
+                "key": " [Ctrl] [F12]",
                 "val": "Flip Output Picture"
             }
         ],
@@ -268,9 +264,9 @@
                 "val": "Size Reset"
             }
         ],
-        "Playback": [
+        "PLayback": [
             {
-                "key": "[Space]",
+                "key": "Space",
                 "val": "Play/Pause"
             },
             {
@@ -278,7 +274,7 @@
                 "val": "Stop"
             },
             {
-                "key": "[F]",
+                "key": "F",
                 "val": "Frame Step"
             },
             {
@@ -286,11 +282,11 @@
                 "val": "Frame Step Back"
             }, 
             {
-                "key": "[Pgup]",
+                "key": "Pgup",
                 "val": "Previous"
             },
             {
-                "key": "[PgDn]",
+                "key": "PgDn",
                 "val": "Next"
             },
             {
