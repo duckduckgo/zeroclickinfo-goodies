@@ -2,15 +2,15 @@
     "id": "kmplayer_cheat_sheet", 
     "name": "K-Multimedia Player (KMPlayer)",
     "aliases": [
-    "the kmplayer",
-    "k-multimedia player"
-    ]
+        "the kmplayer",
+        "k-multimedia player"
+        ],
     "metadata": { 
         "sourceName": "guidingtech",
         "sourceUrl": "http://www.guidingtech.com/13029/kmplayer-keyboard-shortcuts/"
     },
    "template_type": "keyboard",
-    "section_order": [  
+    "section_order": [
         "Open",
         "Album",
         "Screen Controls",
