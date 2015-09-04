@@ -7,15 +7,15 @@ use DDG::Test::Goodie;
 
 zci answer_type => "security_addons";
 zci is_cached   => 1;
-my $plaintext="Firefox: https://addons.mozilla.org/en-US/firefox/tag/anonymous";
-   $plaintext.="\nSafari: https://extensions.apple.com/?q=anonymous";
+my $plaintext="Firefox: https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/";
+   $plaintext.="\nSafari: https://extensions.apple.com/?category=security";
    $plaintext.="\nGoogle Chrome: https://chrome.google.com/webstore/search/anonymous";
-   $plaintext.="\nOpera: https://addons.opera.com/en/search/?query=anonymous&type=extensions";
+   $plaintext.="\nOpera: https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en";
 my @record_data = {
-    'Firefox' => "https://addons.mozilla.org/en-US/firefox/tag/anonymous",
-    'Safari' => "https://extensions.apple.com/?q=anonymous",
+    'Firefox' => "https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/",
+    'Safari' => "https://extensions.apple.com/?category=security",
     'Google Chrome' => "https://chrome.google.com/webstore/search/anonymous",
-    'Opera' => "https://addons.opera.com/en/search/?query=anonymous&type=extensions"
+    'Opera' => "https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en"
 };
 my @record_keys = ["Firefox", "Safari", "Google Chrome", "Opera"];
 my $structured_answer = {
