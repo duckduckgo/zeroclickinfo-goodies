@@ -45,7 +45,7 @@ handle remainder => sub {
         return $returnString,
             structured_answer => {
                 input     => [],
-                result    => [$returnString]
+                result    => $returnString
         };        
     }
     
@@ -71,10 +71,9 @@ handle remainder => sub {
                 };
          
          } elsif ($stringAfterAnd eq "friends") {
-            my @returnArray = ($returnString);
-         
+
             foreach my $iterateThroughFriends (@arrayOfFriendFacesWithNames) {
-                $returnString .= " _____ " . $iterateThroughFriends->{'image'};
+                $returnString .= " ____ " . $iterateThroughFriends->{'image'};
             }
             
             return $returnString,
@@ -88,7 +87,7 @@ handle remainder => sub {
             foreach my $nameEmojiiPair (@arrayOfFriendFacesWithNames) {
 
                 if (lc($nameEmojiiPair->{'name'}) eq $stringAfterAnd) {
-                    $returnString .= " ______ " . $nameEmojiiPair->{'image'};
+                    $returnString .= " ____ " . $nameEmojiiPair->{'image'};
                     
                     return $returnString,
                         structured_answer => {
