@@ -2,26 +2,39 @@ DDH.cheat_sheets = DDH.cheat_sheets || {};
 
 DDH.cheat_sheets.build = function(ops) {
 
-    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, template_type, options) {
-        var result = "";
-        var template = {
-          type: template_type,
-          path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard'
-        };
+    Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, sheet_template_type, section_template_type, options) {
+        var result = "",
+            // Check for sheet-defined template type
+            // default to `keyboard` template_type
+            _template = sheet_template_type || "keyboard";
 
         $.each(section_order, function(i, section) {
-           if (sections[section]){
-
-               var showhide = true;
-
-               if (i === 0 ){
-                   showhide = false;
-               } else if ( i === 1 && !is_mobile ){
-                   showhide = false;
-               }
-
-               result += options.fn({ name: section, items: sections[section], template: template, showhide: showhide });
+            if (!sections[section]) {
+                return Spice.failed("cheat_sheets");
             }
+
+            var showhide = true;
+
+            if (i === 0 ){
+                showhide = false;
+            } else if ( i === 1 && !is_mobile ){
+                showhide = false;
+            }
+
+            // Check for section-defined template
+            if (section_template_type && section_template_type[section]){
+                _template = section_template_type[section];
+                console.debug(section);
+                console.debug(section_template_type[section]);
+                console.debug(_template);
+            }
+
+            var templateObj = {
+                type: _template,
+                path: 'DDH.cheat_sheets.' + _template
+            };
+
+           result += options.fn({ name: section, items: sections[section], template: templateObj, showhide: showhide });
         });
         return result;
     });
@@ -32,17 +45,18 @@ DDH.cheat_sheets.build = function(ops) {
 
     Spice.registerHelper('cheatsheets_codeblock', function(string, className, options) {
 
-        var out;
-        var codeClass = typeof className === "string" ? className : "bg-clr--white";
-        
+        var out,
+            codeClass = typeof className === "string" ? className : "bg-clr--white";
+
         // replace escaped slashes and brackets
-        string = string.replace(/\</g, '&lt;')
-                .replace(/\>/g, '&gt;')
-                .replace(/\\\\/, "<bks>")
-                .replace(/\\\[/g, "<lbr>")
-                .replace(/\\\{/g, "<lcbr>")
-                .replace(/\\\]/g, "<rbr>")
-                .replace(/\\\}/g, "<rcbr>");
+        string = string
+            .replace(/\</g, '&lt;')
+            .replace(/\>/g, '&gt;')
+            .replace(/\\\\/, "<bks>")
+            .replace(/\\\[/g, "<lbr>")
+            .replace(/\\\{/g, "<lcbr>")
+            .replace(/\\\]/g, "<rbr>")
+            .replace(/\\\}/g, "<rcbr>");
 
         // no spaces
         // OR
@@ -66,13 +80,13 @@ DDH.cheat_sheets.build = function(ops) {
         }
 
         out = out
-                // re-replace escaped slash
-                .replace(/<bks>/g,  "\\")
-                // re-replace escaped brackets
-                .replace(/<lbr>/g,  "[")
-                .replace(/<lcbr>/g, "{")
-                .replace(/<rbr>/g,  "]")
-                .replace(/<rcbr>/g, "}");
+            // re-replace escaped slash
+            .replace(/<bks>/g,  "\\")
+            // re-replace escaped brackets
+            .replace(/<lbr>/g,  "[")
+            .replace(/<lcbr>/g, "{")
+            .replace(/<rbr>/g,  "]")
+            .replace(/<rcbr>/g, "}");
 
         out = out.replace(re_codeblock, function esc_codeblock (match, p1, offset, string, codeClass){
             var escaped = Handlebars.Utils.escapeExpression(p1);
