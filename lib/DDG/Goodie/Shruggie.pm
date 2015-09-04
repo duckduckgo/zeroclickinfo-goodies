@@ -43,9 +43,9 @@ handle remainder => sub {
     # Only search was "shruggie"
     if (!$_) {
         return $returnString,
-        structured_answer => {
-            input     => [],
-            result    => [$returnString]
+            structured_answer => {
+                input     => [],
+                result    => [$returnString]
         };        
     }
     
@@ -63,12 +63,12 @@ handle remainder => sub {
         
             my $pickRandomFriend = $arrayOfFriendFacesWithNames[rand @arrayOfFriendFacesWithNames];
         
-            #$returnString .= " _____<br>_ " . $pickRandomFriend->{'image'},      
+            $returnString .= " ____ " . $pickRandomFriend->{'image'},      
             return $returnString,
-            structured_answer => {
-                input     => [],
-                result    => $returnString . " _____ " . $pickRandomFriend->{'image'}
-            };
+                structured_answer => {
+                    input     => [],
+                    result    => $returnString
+                };
          
          } elsif ($stringAfterAnd eq "friends") {
             my @returnArray = ($returnString);
@@ -78,9 +78,9 @@ handle remainder => sub {
             }
             
             return $returnString,
-            structured_answer => {
-                input     => [],
-                result    => $returnString
+                structured_answer => {
+                    input     => [],
+                    result    => $returnString
             };
             
         } else {
@@ -88,7 +88,14 @@ handle remainder => sub {
             foreach my $nameEmojiiPair (@arrayOfFriendFacesWithNames) {
 
                 if (lc($nameEmojiiPair->{'name'}) eq $stringAfterAnd) {
-                    return $returnString . " ______ " . $nameEmojiiPair->{'image'};
+                    $returnString .= " ______ " . $nameEmojiiPair->{'image'};
+                    
+                    return $returnString,
+                        structured_answer => {
+                            input     => [],
+                            result    => $returnString
+                    };
+            
                 }
             
             }
