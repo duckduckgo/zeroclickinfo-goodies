@@ -1,0 +1,250 @@
+{  
+    "id":"nmap_cheat_sheet",
+    "name":"Nmap",
+    "description":"Nmap: The Network Mapper - Free Security Scanner::netwrkspider",
+    "metadata":{  
+        "sourceName":"Cheatography",
+        "sourceUrl":"http://www.cheatography.com/netwrkspider/cheat-sheets/nmap-cheatsheet/"
+    },
+    "template_type":"terminal",
+    "section_order":[  
+        "Basic Scanning with Nmap",
+        "Nmap Discovery Options",
+        "Version Detection with Nmap",
+        "Firewall Evasion Techniques with Nmap",
+        "Ndiff",
+        "Output Options",
+        "About Me"
+        
+    ],
+    "sections":{  
+        "Basic Scanning with Nmap":[  
+            {  
+                "val":"Scan a single target",
+                "key":"nmap <target>"
+            },
+            {  
+                "val":"Scan multiple targets",
+                "key":"nmap <targe­t1>,­<tar­get­2>,<etc>"
+            },
+            {  
+                "val":"Scan a list of targets",
+                "key":"nmap -iL <hackl­ist.txt>"
+            },
+            {  
+                "val":"Scan a range of hosts",
+                "key":"nmap <range of IP addresses>"
+            },
+            {  
+                "val":"Scan an entire subnet",
+                "key":"nmap <IP addres­s/cdir>"
+            },
+            {  
+                "val":"Scan random hosts",
+                "key":"nmap -iR <number>"
+            },
+            {  
+                "val":"Excl­uding targets from a scan",
+                "key":"nmap <targets> –exclude <targets>"
+            },
+            {  
+                "val":"Excl­uding targets using a list",
+                "key":"nmap <targets> –exclu­defile <list.txt>"
+            },
+            {  
+                "val":"Perform an aggressive scan",
+                "key":"nmap -A <target>"
+            },
+            {  
+                "val":"Scan an IPv6 target",
+                "key":"nmap -6 <target>"
+            }
+        ],
+        "Nmap Discovery Options":[  
+            {  
+                "val":"Perform a ping scan only",
+                "key":"nmap -sP <target>"
+            },
+            {  
+                "val":"Don’t ping",
+                "key":"nmap -PN <target>"
+            },
+            {  
+                "val":"TCP SYN Ping",
+                "key":"nmap -PS <target>"
+            },
+            {  
+                "val":"TCP ACK ping",
+                "key":"nmap -PA <target>"
+            },
+            {  
+                "val":"UDP ping",
+                "key":"nmap -PU <target>"
+            },
+            {  
+                "val":"SCTP Init Ping",
+                "key":"nmap -PY <target>"
+            },
+            {  
+                "val":"ICMP echo ping",
+                "key":"nmap -PE <target>"
+            },
+            {  
+                "val":"ICMP Timestamp ping",
+                "key":"nmap -PP <target>"
+            },
+            {  
+                "val":"ICMP address mask ping",
+                "key":"nmap -PM <target>"
+            },
+            {  
+                "val":"IP protocol ping",
+                "key":"nmap -PO <target>"
+            },
+            {  
+                "val":"ARP ping",
+                "key":"nmap -PR <target>"
+            },
+            {  
+                "val":"Traceroute",
+                "key":"nmap –trace­route <target>"
+            },
+            {  
+                "val":"Force reverse DNS resolution",
+                "key":"nmap -R <target>"
+            },
+            {  
+                "val":"Disable reverse DNS resolution",
+                "key":"nmap -n <target>"
+            },
+            {  
+                "val":"Alternative DNS lookup",
+                "key":"nmap –system-dns <target>"
+            },
+            {  
+                "val":"Manually specify DNS servers",
+                "key":"nmap –dns-servers <servers> <target>"
+            },
+            {  
+                "val":"Create a host list",
+                "key":"nmap -sL <targets>"
+            }
+        ],
+        "Version Detection with Nmap":[  
+            {  
+                "val":"Operating system detect­ion",
+                "key":"nmap -O <target>"
+            },
+            {  
+                "val":"Attempt to guess an unknown",
+                "key":"nmap -O –ossca­n-guess <target>"
+            },
+            {  
+                "val":"Service version detect­ion",
+                "key":"nmap -sV <target>"
+            },
+            {  
+                "val":"Trouble­sho­oting version scans",
+                "key":"nmap -sV –versi­on-­trace <target>"
+            },
+            {  
+                "val":"Perform a RPC scan",
+                "key":"nmap -sR <target>"
+            }
+            
+        ],
+        "Firewall Evasion Techniques with Nmap":[  
+            {  
+                "val":"Fragment packets",
+                "key":"nmap -f <target>"
+            },
+            {  
+                "val":"Specify a specific MTU",
+                "key":"nmap –mtu <MTU> <target>"
+            },
+            {  
+                "val":"Use a decoy",
+                "key":"nmap -D RND: <number> <target>"
+            },
+            {  
+                "val":"Idle zombie scan",
+                "key":"nmap -sI [zombie] [target]"
+            },
+            {  
+                "val":"Manually specify a source port",
+                "key":"nmap –sourc­e-port <port> <target>"
+            },
+            {  
+                "val":"Append random data",
+                "key":"nmap –data-­length <size> <target>"
+            },
+            {  
+                "val":"Rand­omize target scan order",
+                "key":"nmap –rando­miz­e-hosts <target>"
+            },
+            {  
+                "val":"Spoof MAC Address",
+                "key":"nmap –spoof-mac <MAC|0­|ve­ndor> <target>"
+            },
+            {  
+                "val":"Send bad checks­ums",
+                "key":"nmap –badsum <target>"
+            }
+        ],
+        "Ndiff":[  
+            {  
+                "val":"Comparison using Ndiff",
+                "key":"ndiff <scan1.xml> <scan2.xml>"
+            },
+            {  
+                "val":"Ndiff verbose mode",
+                "key":"ndiff -v <scan1.xml> <scan2.xml>"
+            },
+            {  
+                "val":"XML output mode",
+                "key":"ndiff –xml <scan1.xml> <scan2.xml>"
+            }
+        ],
+        "Output Options":[  
+            {  
+                "val":"Save output to a text file",
+                "key":"nmap -oN <scan.txt> <target>"
+            },
+            {  
+                "val":"Save output to a xml file",
+                "key":"nmap -oX <scan.xml> <target>"
+            },
+            {  
+                "val":"Grepable output",
+                "key":"nmap -oG <scan.txt> <target>"
+            },
+            {  
+                "val":"Output all supported file types",
+                "key":"nmap -oA <path/­fil­ename> <target>"
+            },
+            {  
+                "val":"Periodically display statistics",
+                "key":"nmap –stats­-every <time> <target>"
+            },
+	    {  
+                "val":"133t output",
+                "key":"nmap -oS <scan.txt> <target>"
+            }
+        ],
+	"About Me":[
+	    {  
+                "val":"Name",
+                "key":"netwrk­spider"
+            },
+	    {  
+                "val":"website",
+                "key":"http://www.netwrkspider.org"
+            },
+	    {  
+                "val":"Job Profile",
+                "key":"Security Researcher & Developers"
+            }		
+	]
+    }
+}
+
