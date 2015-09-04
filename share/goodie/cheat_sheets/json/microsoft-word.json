@@ -6,8 +6,8 @@
         "sourceName": "Microsoft Support",
         "sourceUrl": "https://support.microsoft.com/en-us/kb/290938"
     },
-    "aliases":[
-        "Word", "MS Word", "Word"
+    "aliases": [
+        "ms word"
     ],
     "template_type": "keyboard",
     "section_order": [
