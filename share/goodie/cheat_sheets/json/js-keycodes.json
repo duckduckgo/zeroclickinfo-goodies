@@ -8,9 +8,9 @@
         "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode"
     },
     "template_type": "keyboard",
-    "section_order": ["alphanumeric", "symbols", "F keys", "numpad keys", "misc"],
+    "section_order": ["Alphanumeric", "Symbols", "F keys", "Numpad keys", "Misc"],
     "sections": {
-        "alphanumeric": [
+        "Alphanumeric": [
             { "key": "0", "val": 48 },
             { "key": "1", "val": 49 },
             { "key": "2", "val": 50 },
@@ -48,7 +48,7 @@
             { "key": "y", "val": 89 },
             { "key": "z", "val": 90 }
         ],
-        "symbols": [
+        "Symbols": [
             { "key": ";", "val": 186 },
             { "key": "*", "val": 106 },
             { "key": "-", "val": 189 },
@@ -75,7 +75,7 @@
             { "key": "f11", "val": 122 },
             { "key": "f12", "val": 123 }
         ],
-        "numpad keys": [
+        "Numpad keys": [
             { "key": "numpad 0", "val": 96 },
             { "key": "numpad 1", "val": 97 },
             { "key": "numpad 3", "val": 98 },
@@ -86,7 +86,7 @@
             { "key": "numpad 8", "val": 104 },
             { "key": "numpad 9", "val": 105 }
         ],
-        "misc": [
+        "Misc": [
             { "key": "backspace", "val": 8 },
             { "key": "tab", "val": 9 },
             { "key": "enter", "val": 13 },
