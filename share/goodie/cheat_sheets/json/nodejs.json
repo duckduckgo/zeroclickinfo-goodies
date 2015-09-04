@@ -1,7 +1,6 @@
 {
     "id": "nodejs_cheat_sheet",
     "name": "NodeJS",
-    "description": "NodeJS Cheat Sheet",
     "metadata": {
         "sourceName": "Gosquared",
         "sourceUrl": "https://www.gosquared.com/resources/node-cheat-sheet/"
@@ -17,8 +16,8 @@
         "Net",
         "Events"
         ],
-  "sections": {
-  "Getting Started":[{
+    "sections": {
+    "Getting Started":[{
       "key":"node script.js",
       "val":"Run script"
     }, {
@@ -27,7 +26,7 @@
     }
   ],
 
-  "Globals": [{
+    "Globals": [{
     "key":"var variable",
     "val":"Initialize local variable to module"
   }, {
@@ -54,7 +53,7 @@
   }
   ],
 
-  "stdio": [{
+    "stdio": [{
     "key":"stdio",
     "val":"Object for printing out to stdout and stderr"
   },{
@@ -91,60 +90,60 @@
     "val":"Exception bubbled back to event loop"
   }
   ],
-     "Util": [{
-       "key":"util.debug(message)",
-       "val":"Synchronous console.error(message)"
-     },{
+    "Util": [{
+    "key":"util.debug(message)",
+    "val":"Synchronous console.error(message)"
+  },{
        "key":"util.log(message)",
        "val":"Print timestamped message to stdout"
-     }
+  }
      ],
 
-     "Event Emitter": [{
-       "key":"events",
-         "val":"Callback functions executed when events occur are listeners"
-     },{
-       "key":"emitter.on(event, listener)",
-       "val":"Add a listener for event"
-     },{
-       "key":"emitter.once(event, listener)",
-       "val":"Fire listener once"
-     },{
-       "key":"emitter.removeListener(event,listener)",
-       "val":"Remove a listener"
-     },{
-       "key":"emitter.removeAllListeners(event)",
-       "val":"Remove all listeners"
-     },{
-       "key":"emitter.emit(event, [[arg1], [arg2], [...]])",
-       "val":"Execute listeners for this event with supplied args"
+    "Event Emitter": [{
+    "key":"events",
+    "val":"Callback functions executed when events occur are listeners"
+  },{
+    "key":"emitter.on(event, listener)",
+    "val":"Add a listener for event"
+  },{
+    "key":"emitter.once(event, listener)",
+    "val":"Fire listener once"
+  },{
+    "key":"emitter.removeListener(event,listener)",
+    "val":"Remove a listener"
+  },{
+    "key":"emitter.removeAllListeners(event)",
+    "val":"Remove all listeners"
+  },{
+    "key":"emitter.emit(event, [[arg1], [arg2], [...]])",
+    "val":"Execute listeners for this event with supplied args"
      }
    ],
 
     "Net": [{
-      "key":"net",
-        "val":"Asynchronous network wrapper for creating streams"
-    },{
-      "key":"server.listenFD(fd)",
-      "val":"Listen on file descriptor fd"
-    },{
-      "key":"server.close()",
-      "val":"Stop accepting new connections"
-    },{
-      "key":"socket.bufferSize",
-      "val":"Number of characters in internal write buffer"
-    },{
-      "key":"socket.end()",
-      "val":"Send FIN packet"
-    },{
-      "key":"socket.pause()",
-      "val":"Pause reading of data"
+    "key":"net",
+    "val":"Asynchronous network wrapper for creating streams"
+  },{
+    "key":"server.listenFD(fd)",
+    "val":"Listen on file descriptor fd"
+  },{
+    "key":"server.close()",
+    "val":"Stop accepting new connections"
+  },{
+    "key":"socket.bufferSize",
+    "val":"Number of characters in internal write buffer"
+  },{
+    "key":"socket.end()",
+    "val":"Send FIN packet"
+  },{
+    "key":"socket.pause()",
+    "val":"Pause reading of data"
     }
   ],
 
-  "Events": [{
+    "Events": [{
     "key":"connect",
-      "val":"Socket connection established"
+    "val":"Socket connection established"
   },{
     "key":"end",
     "val":"Other end of socket sent FIN packet"
