@@ -2,7 +2,20 @@
     "id": "js_keycodes_cheat_sheet",
     "name": "JavaScript Keycodes",
     "description": "List of JavaScript keycodes (char codes)",
-    "aliases": ["javascript keycodes", "java script keycodes", "javascript key codes", "java script key codes"],
+    "aliases": [
+        "javascript keycode",
+        "javascript key code",
+        "javascript keycodes",
+        "javascript key codes",
+        "javascript charcode",
+        "javascript char code",
+        "javascript charcodes",
+        "javascript char codes",
+        "js charcode",
+        "js char code",
+        "js charcodes",
+        "js char codes"
+    ],
     "metadata": {
         "sourceName": "MDN",
         "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode"
