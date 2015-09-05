@@ -34,10 +34,12 @@
         "Accessibility"
     ],
     "sections": {
-        "General shortcuts": [{
+        "General shortcuts": [
+            {
             "val": "File menu",
             "key": "[Alt] [f]"
-        }, {
+        },
+            {
             "val": "File menu (alternative)",
             "key": "[F10], [f]"
         }, {
