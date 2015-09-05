@@ -280,19 +280,19 @@
           }
         ],
         "Tools": [{
-            "key": "[Ctrl] + [Shift] + [p]", 
+            "key": "[Ctrl] [Shift] [P]", 
             "val": "Command Palette"
         }, {
-            "key": "[Ctrl] + [b]",
+            "key": "[Ctrl] [B]",
             "val": "Build"
         }, {
-            "key": "[Ctrl] + [Shift] + [b]",
+            "key": "[Ctrl] [Shift] [B]",
             "val": "Build with"
         }, {
-            "key": "[Ctrl] + [q]",
+            "key": "[Ctrl] [Q]",
             "val": "Record Macro"
         }, {
-            "key": "[Ctrl] + [Shift] + [q]",
+            "key": "[Ctrl] [Shift] [Q]",
             "val": "Playback Macro"
         }]
     }
