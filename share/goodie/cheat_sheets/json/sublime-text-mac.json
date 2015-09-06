@@ -1,7 +1,8 @@
 {
-    "id": "sublime_text_mac",
-    "name": "Sublime Text",
-    "description": "Sublime 2 Keyboard Shortcuts for OSX ",
+    "id": "sublime_text_osx_cheat_sheet",
+    "name": "Sublime Text OSX",
+    "description": "Sublime Text 2 Keyboard Shortcuts for OS X",
+    "aliases": ["sublime text mac", "sublime mac", "sublime osx", "sublime for mac", "sublime 2 for osx" "sublime text osx", "sublimetext mac", "sublime text os x", "sublimetext os x"],
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/gelicia/cheat-sheets/sublime-text-2-shortcuts-verbose-mac/"
