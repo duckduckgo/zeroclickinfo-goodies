@@ -12,7 +12,7 @@ use DDG::Goodie;
 use strict;
 use utf8; # needed to properly use the various unicode characters in the emoticons
 use JSON; # encoded the various other ASCII items in a JSON file
-use Try::Tiny;
+
 
 zci answer_type => "shruggie";
 zci is_cached   => 1;
@@ -33,77 +33,102 @@ attribution github => ["Epik", "Epik"],
 # Triggers
 triggers start => "shruggie";
 
-
+# Preload the JSON file        
+my $externalJSONFile = share('shruggiesfriends.json')->slurp;
+my @arrayOfFriendFacesWithNames = @{decode_json($externalJSONFile)->{'Friends'}};
 
 # Handle statement
 handle remainder => sub {
 
-    my $returnString = '¯\_(ツ)_/¯';
+    my $returnString;
+    my $isJustShruggie = 0;
+    my $stringAfterAnd;
+    my %record_data = ("Shruggie", '¯\_(ツ)_/¯');
+    my @record_keys = ("Shruggie");
 
     # Only search was "shruggie"
     if (!$_) {
-        return $returnString,
-            structured_answer => {
-                input     => [],
-                result    => $returnString
-        };        
-    }
-    
-    my $checkIfAndIsSecondSearchTerm = lc($_);
-    if (index($checkIfAndIsSecondSearchTerm, "and ") == 0) {
+        $isJustShruggie = 1; 
+    } elsif (m/^and (.+)/i) { # check if remainder matches pattern "and X"
+
+        $stringAfterAnd = lc($1);
         
-        # Delay loading JSON file of emojiis until we know we need it 
-        my $externalJSONFile = share('shruggiesfriends.json')->slurp;
-        
-        my @arrayOfFriendFacesWithNames = @{decode_json($externalJSONFile)->{'Friends'}};
-        
-        my $stringAfterAnd = substr($checkIfAndIsSecondSearchTerm,4);
-    
         if ($stringAfterAnd eq "friend") {
-        
+
             my $pickRandomFriend = $arrayOfFriendFacesWithNames[rand @arrayOfFriendFacesWithNames];
-        
-            $returnString .= " ____ " . $pickRandomFriend->{'image'},      
-            return $returnString,
-                structured_answer => {
-                    input     => [],
-                    result    => $returnString
-                };
-         
-         } elsif ($stringAfterAnd eq "friends") {
+            my $randomFriendsName = $pickRandomFriend->{'name'};
+
+
+            $returnString = 'Shruggie and ' . $randomFriendsName;      
+            $record_data{$randomFriendsName} = $pickRandomFriend->{'image'};
+            push @record_keys, $randomFriendsName;
+
+        } elsif ($stringAfterAnd eq "friends") {
+
+            $returnString = 'Shruggie and Friends'; 
 
             foreach my $iterateThroughFriends (@arrayOfFriendFacesWithNames) {
-                $returnString .= " ____ " . $iterateThroughFriends->{'image'};
-            }
-            
-            return $returnString,
-                structured_answer => {
-                    input     => [],
-                    result    => $returnString
-            };
-            
+                my $currentForeachFriend = $iterateThroughFriends->{'name'};     
+                $record_data{$currentForeachFriend} = $iterateThroughFriends->{'image'};
+                push @record_keys, $currentForeachFriend;
+            }     
+
         } else {
-            
+
             foreach my $nameEmojiiPair (@arrayOfFriendFacesWithNames) {
 
                 if (lc($nameEmojiiPair->{'name'}) eq $stringAfterAnd) {
-                    $returnString .= " ____ " . $nameEmojiiPair->{'image'};
-                    
-                    return $returnString,
-                        structured_answer => {
-                            input     => [],
-                            result    => $returnString
-                    };
-            
+                    my $friendsName = $nameEmojiiPair->{'name'};
+
+
+                    $returnString = 'Shruggie and ' . $friendsName;      
+                    $record_data{$friendsName} = $nameEmojiiPair->{'image'};
+                    push @record_keys, $friendsName;                    
+                    last;
                 }
-            
+
             }
-            
-        }
+
+        }    
     }
     
-     # Don't trigger shruggie
-    return;
+    #if the string after shruggie was ill formed
+    if (!$returnString && !$isJustShruggie) {
+        return;
+    } elsif ($isJustShruggie) {
+         return '¯\_(ツ)_/¯',
+            structured_answer => {            
+            id => 'shruggie',
+            name => 'Shurggie',
+            description => 'Emojii for everone',
+            templates => {
+                group => 'text'
+            },
+            data => {
+                title => '¯\_(ツ)_/¯',
+                #subtitle => "Shruggie"  #I like it better without this, but either way is cool
+            }
+        }   
+    } else {
+
+        return $returnString,
+            structured_answer => {            
+            id => 'shruggie',
+            name => 'Shurggie',
+            description => 'Emojii for everone',
+            templates => {
+                group => 'list',
+                options => {
+                    content => 'record'
+                }
+            },
+            data => {
+                title => $returnString,
+                record_data => \%record_data,
+                record_keys => \@record_keys
+            }
+        }
+    }
 };
 
 1;
