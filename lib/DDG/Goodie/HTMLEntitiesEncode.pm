@@ -246,7 +246,7 @@ sub make_structured_answer {
         return {
             input       => [$input[0][0]],
             operation   => "HTML Entity Encode",
-            result      => html_enc("&$input[0][1];"),
+            result      => html_enc("&$input[0][1];")." (&$input[0][1];)",
         }
     } else {
         my (%output, @output_keys);
