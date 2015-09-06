@@ -1,19 +1,18 @@
 {
     "id": "shell_variables_cheat_sheet",
     "name": "Shell Variables",
-    "description": "Shell Variables",
     "metadata": {
-        "sourceName": "Variables",
-        "sourceUrl": "http://bash.cyberciti.biz/guide/Variables"
+    "sourceName": "Variables",
+    "sourceUrl": "http://bash.cyberciti.biz/guide/Variables"
     },
-       "aliases": [
-       "basic shell variables", "shell variables", "shell var", "shell vars"
+    "aliases": [
+    "basic shell variables", "shell variables", "shell var", "shell vars"
    ],
-    "template_type": "reference",
+    "template_type": "terminal",
     "section_order": [
-        "System Variables",
-        "User Defined Variables",
-        "Display Value"
+    "System Variables",
+    "User Defined Variables",
+    "Display Value"
     ],
     "sections": {
         "System Variables": [
