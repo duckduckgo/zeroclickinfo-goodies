@@ -1,5 +1,5 @@
 package DDG::Goodie::Weight;
-# ABSTRACT: Calculate the weight of provided mass (in kg).
+# ABSTRACT: Calculate the weight of provided mass.
 
 use strict;
 use DDG::Goodie;
@@ -12,14 +12,14 @@ zci is_cached   => 1;
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "Weight";
 description "Calculate the weight of provided mass (in kg).";
-primary_example_queries "Weight 5", "Weight 5.12g", "5.1 kg weight on Earth";
+primary_example_queries "What is the weight of a 5kg mass on Earth?", "Weight 5.12g", "Weight of 5.1 kg on earth";
 category "physical_properties";
 topics "math", "science";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Weight.pm";
 attribution github => ["https://github.com/wongalvis", "wongalvis"];
 
 # Triggers
-triggers startend => "weight", "earth weight", "weight on earth";
+triggers any => "weight";
 
 my %units = (
     "kg" => 1,
@@ -40,20 +40,17 @@ my %units = (
 use constant g => 9.80665;
 
 # Handle statement
-handle remainder => sub {
-
-    return unless $_;
-    s/\bof\b//;
-    trim $_;
-
-    return unless m/^(?<mass>\d+(?:\.\d+)?)\s*(?<unit>\w+)?$/;
+handle query_lc => sub {
+    
+    return unless m/^(what is the )?(earth )?weight (on earth )?(of )?(a )?(?<mass>\d+(\.\d+)?) ?(?<unit>\w+)( mass)?( on)?( earth)?\??$/;
     my $mass_input = $+{mass};
     my $default_unit = "kg";
     my $unit = $+{unit} // $default_unit;
     
     my $mass = $mass_input;
     
-    if ($unit && exists $units{$unit}){
+    if ($unit){
+        return unless exists $units{$unit};
         $mass *= $units{$unit};
     }
     
