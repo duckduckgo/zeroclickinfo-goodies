@@ -1,5 +1,5 @@
 {
-    "id": "go-lang_script_cheat_sheet",
+    "id": "go_lang_script_cheat_sheet",
     "name": "Go Language Cheat Sheet",
     "description": "Golang help",
     "metadata": {
@@ -56,9 +56,64 @@
             "key": "func returnMulti2() (n int, s string) \\{ <br> &nbsp;&nbsp;&nbsp;&nbsp;n = 42 <br> &nbsp;&nbsp;&nbsp;&nbsp;s = \"foobar\" <br>  &nbsp;&nbsp;&nbsp;&nbsp;// n and s will be returned <br> &nbsp;&nbsp;&nbsp;&nbsp;return <br> \\} <br> var x, str = returnMulti2()"
         }],
         "Built In Types": [{
-            "val": "",
-            "key": "bool<br><br>string<br><br>int  int8  int16  int32  int64<br>uint uint8 uint16 uint32 uint64 uintptr<br><br>byte // alias for uint8<br><br>rune // alias for int32 ~= a character (Unicode code point)<br><br>float32 float64<br><br>complex64 complex128"
-        }],
+            
+            "val": "Bool is the set of boolean values, true and false.",
+            "key": "bool"
+        }, {
+            "val": "string is the set of all strings of 8-bit bytes, conventionally but not necessarily representing UTF-8-encoded text. A string may be empty, but not nil. Values of string type are immutable.",
+            "key": "string"
+        }, {
+            "val": "int is a signed integer type that is at least 32 bits in size. It is a distinct type, however, and not an alias for, say, int32.",
+            "key": "int"
+        },  {
+            "val": "int8 is the set of all signed 8-bit integers. Range: -128 through 127.",
+            "key": "int8"
+        },  {
+            "val": "int16 is the set of all signed 16-bit integers. Range: -32768 through 32767.",
+            "key": "int16"
+        },  {
+            "val": "int32 is the set of all signed 32-bit integers. Range: -2147483648 through 2147483647.",
+            "key": "int32"
+        },  {
+            "val": "int64 is the set of all signed 64-bit integers. Range: -9223372036854775808 through 9223372036854775807.",
+            "key": "int64"
+        },  {
+            "val": "uint is an unsigned integer type that is at least 32 bits in size. It is a distinct type, however, and not an alias for, say, uint32.",
+            "key": "uint"
+        },  {
+            "val": "uint8 is the set of all unsigned 8-bit integers. Range: 0 through 255.",
+            "key": "uint8"
+        },  {
+            "val": "uint16 is the set of all unsigned 16-bit integers. Range: 0 through 65535.",
+            "key": "uint16"
+        },  {
+            "val": "uint32 is the set of all unsigned 32-bit integers. Range: 0 through 4294967295.",
+            "key": "uint32"
+        },  {
+            "val": "uint64 is the set of all unsigned 64-bit integers. Range: 0 through 18446744073709551615.",
+            "key": "uint64"
+        },  {
+            "val": "uintptr is an integer type that is large enough to hold the bit pattern of any pointer.",
+            "key": "uintptr"
+        },  {
+            "val": "byte is an alias for uint8 and is equivalent to uint8 in all ways. It is used, by convention, to distinguish byte values from 8-bit unsigned integer values.",
+            "key": "byte"
+        },  {
+            "val": "rune is an alias for int32 and is equivalent to int32 in all ways. It is used, by convention, to distinguish character values from integer values.",
+            "key": "rune"
+        },  {
+            "val": "float32 is the set of all IEEE-754 32-bit floating-point numbers.",
+            "key": "float32"
+        },  {
+            "val": "float64 is the set of all IEEE-754 64-bit floating-point numbers.",
+            "key": "float64"
+        },  {
+            "val": "complex64 is the set of all complex numbers with float32 real and imaginary parts.",
+            "key": "complex64"
+        },  {
+            "val": "complex128 is the set of all complex numbers with float64 real and imaginary parts.",
+            "key": "complex128"
+        } ],
         "Control Structures": [{
             "val": "If",
             "key": "func main() \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;if x > 0 \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x<br>&nbsp;&nbsp;&nbsp;&nbsp;\\} else \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return -x<br>\\}"
