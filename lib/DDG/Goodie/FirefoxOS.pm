@@ -54,7 +54,7 @@ handle remainder => sub {
     return $api->{permission},
       structured_answer => {
         id => "firefox_os",
-        name => "Firefox OS",
+        name => "About",
         data => {
             title => $api->{name},
             subtitle => "Manifest permission: " . $api->{permission},
