@@ -1,0 +1,303 @@
+{
+    "id":"github_atom_cheat_sheet",
+    "name":"Atom",
+    "metadata":{
+        "sourceName":"Bugsnag",
+        "sourceUrl":"https://bugsnag.com/blog/atom-editor-cheat-sheet"
+    },
+    "section_order":[
+        "General",
+        "File Navigation",
+        "View/Window Manipulation",
+        "Find and Replace",
+        "Folding",
+        "Word Manipulation",
+        "Line Manipulation",
+        "Github Integration",
+        "Selection"
+    ],
+    "sections":{
+        "General":[
+            {
+                "key":"[shift] [⌘] [p]",
+                "val":"Toggle command palette"
+            },
+            {
+                "key":"[⌘] [/]",
+                "val":"Toggle line / Selection comment"
+            },
+            {
+                "key":"[ctrl] [space]",
+                "val":"Show available auto-completions"
+            },
+            {
+                "key":"[ctrl] [shift] [s]",
+                "val":"Save as"
+            },
+            {
+                "key":"[ctrl] [shift] [n]",
+                "val":"New file in new window"
+            },
+            {
+                "key":"[ctrl] [w]",
+                "val":"Close current file"
+            },
+            {
+                "key":"[ctrl] [shift] [w]",
+                "val":"Close current window"
+            }
+        ],
+        "File Navigation":[
+            {
+                "key":"[⌘] [p]",
+                "val":"Toggle file finder"
+            },
+            {
+                "key":"[ctrl] [g]",
+                "val":"Goto line"
+            },
+            {
+                "key":"[⌘] [r]",
+                "val":"Goto symbol"
+            },
+            {
+                "key":"[shift] [⌘] { / }",
+                "val":"Previous/next file"
+            },
+            {
+                "key":"[⌘] [F2]",
+                "val":"Set bookmark"
+            },
+            {
+                "key":"F2",
+                "val":"Goto next bookmark"
+            },
+            {
+                "key":"[ctrl] [k], [c]",
+                "val":"Goto current selection"
+            },
+            {
+                "key":"[ctrl] ( [↑] / [↓] )",
+                "val":"Move current line up/down"
+            },
+            {
+                "key":"[ctrl] [F2]",
+                "val":"Set Bookmark"
+            },
+            {
+                "key":"[ctrl] [shift] [F2]",
+                "val":"Clear all bookmarks"
+            }
+        ],
+        "View/Window Manipulation":[
+            {
+                "key":"[⌘] [\\\\]",
+                "val":"Toggle tree-view sidebar"
+            },
+            {
+                "key":"[ctrl] [⌘] [f]",
+                "val":"Toggle fullscreen"
+            },
+            {
+                "key":"[⌘] [k]",
+                "val":"Split pane left/right/up/down"
+            }
+        ],
+        "Find and Replace":[
+            {
+                "key":"[ctrl] [f]",
+                "val":"Find"
+            },
+            {
+                "key":"F3",
+                "val":"Find Next"
+            },
+            {
+                "key":"[ctrl] [F3]",
+                "val":"Find previous"
+            },
+            {
+                "key":"[ctrl] [i]",
+                "val":"Incremental find"
+            },
+            {
+                "key":"[ctrl] [h]",
+                "val":"Replace"
+            },
+            {
+                "key":"[ctrl] [shift] [h]",
+                "val":"Replace next"
+            },
+            {
+                "key":"[ctrl] [F3]",
+                "val":"Quick Find (find current word)"
+            },
+            {
+                "key":"[alt] [F3]",
+                "val":"Quick find all"
+            },
+            {
+                "key":"[ctrl] [e]",
+                "val":"Use selection for find"
+            },
+            {
+                "key":"[ctrl] [shift] [e]",
+                "val":"Use selection for replace"
+            },
+            {
+                "key":"[ctrl] [shift] [f]",
+                "val":"Find in files"
+            },
+            {
+                "key":"F4",
+                "val":"Next result (find in files)"
+            },
+            {
+                "key":"[shift] [F4]",
+                "val":"Previous result (find in files)"
+            }
+        ],
+        "Folding":[
+            {
+                "key":"[ctrl] ([\\[]\/[\\]])",
+                "val":"Fold/expand"
+            },
+            {
+                "key":"[ctrl] ([\\[]\/[\\]])",
+                "val":"Fold/expand"
+            },
+            {
+                "key":"[ctrl] [j]",
+                "val":"Unfold all"
+            },
+            {
+                "key":"[ctrl] [1]",
+                "val":"Fold all"
+            },
+            {
+                "key":"[ctrl] [2..9]",
+                "val":"Fold level X"
+            }
+        ],
+        "Word Manipulation":[
+            {
+                "key":"[ctrl] [t]",
+                "val":"Transpose characters either side of cursor"
+            },
+            {
+                "key":"[option] [backspace]",
+                "val":"Delete text to beginning of word"
+            },
+            {
+                "key":"[option] [delete]",
+                "val":"Delete text to end of word"
+            }
+        ],
+        "Line Manipulation":[
+            {
+                "key":"[⌘] {( \\] / \\[ )}",
+                "val":"Indent/outdent current line"
+            },
+            {
+                "key":"[⌘] [enter]",
+                "val":"Insert new line after current line"
+            },
+            {
+                "key":"[⌘] [shift] [enter]",
+                "val":"Insert new line before current line"
+            },
+            {
+                "key":"[ctrl] [shift] [k]",
+                "val":"Delete current line"
+            },
+            {
+                "key":"[ctrl] [⌘] [( ↑ / ↓ )]",
+                "val":"Move current line up/down"
+            },
+            {
+                "key":"[shift] [⌘] [d]",
+                "val":"Duplicate current line"
+            },
+            {
+                "key":"[⌘] [j]",
+                "val":"Join current and next lines"
+            }
+        ],
+        "Github Integration":[
+            {
+                "key":"[alt] [g] [b]",
+                "val":"Open on Github : blame"
+            },
+            {
+                "key":"[alt] [g] [c]",
+                "val":"Open on Github: copy-url"
+            },
+            {
+                "key":"[alt] [g] [g]",
+                "val":"Open on Github: repository"
+            },
+            {
+                "key":"[alt] [g] [h]",
+                "val":"Open on Github: history"
+            },
+            {
+                "key":"[alt] [g] [i]",
+                "val":"Open on Github: issues"
+            },
+            {
+                "key":"[alt] [g] [r]",
+                "val":"Open on Github: branch-compare"
+            }
+        ],
+        "Selection":[
+            {
+                "key":"[⌘] [d]",
+                "val":"Select current word/token"
+            },
+            {
+                "key":"[⌘] [l]",
+                "val":"Select current line"
+            },
+            {
+                "key":"[option] [shift] [( ← / → )]",
+                "val":"Select to beginning/end of word"
+            },
+            {
+                "key":"[shift] [⌘] [( ← / → )]",
+                "val":"Select to first/last character of line"
+            },
+            {
+                "key":"[shift] [⌘] [( ↑ / ↓ )]",
+                "val":"Select to top/bottom of document"
+            },
+            {
+                "key":"[ctrl] [u]",
+                "val":"Undo quick select"
+            },
+            {
+                "key":"[ctrl] [k], [d]",
+                "val":"Skip and quick add next"
+            },
+            {
+                "key":"[ctrl] [shift] [l]",
+                "val":"Split into lines (adds cursor to each line of current selection)"
+            },
+            {
+                "key":"[ctrl] [shift] [space]",
+                "val":"Expand selection to scope"
+            },
+            {
+                "key":"[ctrl] [shift] [m]",
+                "val":"Expand selection to brackets"
+            },
+            {
+                "key":"[ctrl] [shift] [j]",
+                "val":"Expand selection to indent­ation"
+            },
+            {
+                "key":"[ctrl] [shift] [a]",
+                "val":"Expand selection to tag"
+            }
+        ]
+    }
+}
