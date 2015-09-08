@@ -1,11 +1,12 @@
 {
-    "id": "brackets_cheat_sheet",
-    "name": "Brackets",
+    "id": "adobe_brackets_cheat_sheet",
+    "name": "Adobe Brackets",
     "description": "Text Editor",
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/adobe/brackets/wiki/Brackets-Shortcuts"
     },
+    "aliases": ["brackets", "brackets editor", "adobe brackets editor"],
     "template_type": "keyboard",
     "section_order": [
         "View",
