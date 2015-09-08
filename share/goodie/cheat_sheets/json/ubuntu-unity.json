@@ -1,5 +1,5 @@
 {
-    "id": "ubuntu_cheat_sheet",
+    "id": "unity_unity_cheat_sheet",
     "name": "Ubuntu Unity",
     "description": "Linux Ubuntu Unity default keyboard shortcuts.",
     "template_type": "keyboard",
@@ -94,7 +94,7 @@
                 "val": "Go to Desktop (minimize all windows)."
             },
             {
-                "key": "[Ctrl] [Super] ([←]/[→])",
+                "key": "[Ctrl] [Super] ( [←] / [→] )",
                 "val": "Dock Window to left or right side of screen."
             },
             {
