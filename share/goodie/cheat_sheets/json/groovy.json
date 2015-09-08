@@ -1,6 +1,7 @@
 {
     "id": "groovy_cheat_sheet",
     "name": "Groovy",
+    "description": "Object-oriented programming language for the Java platform",
     "metadata": {
         "sourceName": "Groovy-Lang",
         "sourceUrl": "http://www.groovy-lang.org/syntax.html"
