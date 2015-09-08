@@ -1,11 +1,12 @@
 {
     "id": "intellij_cheat_sheet",
-    "name": "IntelliJ",
-    "description": "IntelliJ keyboard shortcuts",
+    "name": "JetBrains IntelliJ IDEA",
+    "descriptions": "Java IDE, developed by JetBrains (formerly known as IntelliJ), and is available as an Apache 2 Licensed community edition,[1] and in a proprietary commercial edition",
     "metadata": {
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/IntelliJ.html"
     },
+    "aliases": ["intellij idea", "intellij editor", "intellij ide", "idea ide"],
     "template_type": "keyboard",
     "section_order": ["General", "Productivity", "Editing", "Searching/Replacing", "Compile and Run", "Debugging", "Live Templates", "Navigation"],
     "sections": {
