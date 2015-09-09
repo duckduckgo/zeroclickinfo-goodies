@@ -4,6 +4,7 @@
     "description": "Linux Ubuntu Unity default keyboard shortcuts.",
     "template_type": "keyboard",
     "section_order": [
+        "Dash",
         "Launcher",
         "HUD",
         "Switching",
