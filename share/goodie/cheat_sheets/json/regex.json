@@ -23,31 +23,6 @@
         "String Replacement"
     ],
     "sections": {
-         "Anchors": [{
-            "val": "Start of string or line",
-            "key": "^"
-        }, {
-            "val": "Start of string",
-            "key": "\\A"
-        }, {
-            "val": "End of string or line",
-            "key": "$"
-        }, {
-            "val": "End of string",
-            "key": "\\Z"
-        }, {
-            "val": "Word boundary",
-            "key": "\\b"
-        }, {
-            "val": "Not word boundary",
-            "key": "\\B"
-        }, {
-            "val": "Start of word",
-            "key": "\\<"
-        }, {
-            "val": "End of word",
-            "key": "\\>"
-        }],
         "Assertions": [{
             "val": "Lookahead assertion",
             "key": "?="
@@ -263,6 +238,31 @@
         }, {
             "val": "Octal Digit",
             "key": "\\O"
+        }],
+        "Anchors": [{
+            "val": "Start of string or line",
+            "key": "^"
+        }, {
+            "val": "Start of string",
+            "key": "\\A"
+        }, {
+            "val": "End of string or line",
+            "key": "$"
+        }, {
+            "val": "End of string",
+            "key": "\\Z"
+        }, {
+            "val": "Word boundary",
+            "key": "\\b"
+        }, {
+            "val": "Not word boundary",
+            "key": "\\B"
+        }, {
+            "val": "Start of word",
+            "key": "\\<"
+        }, {
+            "val": "End of word",
+            "key": "\\>"
         }]
     }
 }
