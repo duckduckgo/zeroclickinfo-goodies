@@ -1,0 +1,119 @@
+{
+    "id": "lua_cheat_sheet", 
+
+    "name": "Lua Cheat Sheet",
+
+    "metadata": { 
+        "sourceName": "Lua Cheat Sheet for Programers",
+        "sourceUrl": "http://coffeeghost.net/2010/11/01/lua-cheat-sheet-for-programmers/"
+    },
+
+	"aliases": [
+        "lua", "lua tutorial"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [  
+        "Variables",
+        "Operators",
+        "Functions",
+        "Tables",
+        "Comments",
+        "Conditionals",
+        "Loops"
+    ],
+
+    "sections": {
+        "Variables": [
+            {
+                "key": "hello = \"Hello World\"", 
+                "val": "Initialize a variable"
+            },
+            {
+            	"key": "local hello = \"Hello World\"",
+            	"val": "Initialize a local variable"
+            }
+        ],
+        "Operators": [
+            {
+                "key": "==", 
+                "val": "Equal"
+            },
+            {
+                "key": "~=", 
+                "val": "Unequal"
+            },
+            {
+                "key": "and",
+                "val": "And"
+            },
+            {
+                "key": "or", 
+                "val": "Or"
+            }
+        ],
+        "Functions": [
+            {
+                "key": "function hello()", 
+                "val": "Define a function"
+            },
+            {
+                "key": "function hello(parameter1, parameter2)", 
+                "val": "Define a function with parameters"
+            },
+            {
+                "key": "hello()", 
+                "val": "Call a function"
+            }
+        ],
+        "Tables": [
+            {
+                "key": "hello = \\{\\}", 
+                "val": "Initialize an empty table"
+            },
+            {
+                "key": "hello = \\{1, 2, 3, 4, 5\\}", 
+                "val": "Initialize a table with entries"
+            },
+            {
+                "key": "world = hello\\[x\\]", 
+                "val": "Get entry x out of a table starting at 1"
+            },
+            {
+                "key": "hello\\[x\\] = \"world\"", 
+                "val": "Set something as entry x"
+            },
+            {
+                "key": "table.insert(hello, \"world\")", 
+                "val": "Add an entry to a table"
+            }
+        ],
+        "Comments": [
+            {
+                "key": "-- Hello World", 
+                "val": "Single-line comment"
+            },
+            {
+                "key": "--\\[\\[ Hello World \\]\\]", 
+                "val": "Multi-line comment"
+            }
+        ],
+        "Conditionals": [
+            {
+                "key": "if a == b then", 
+                "val": "If statement"
+            }
+        ],
+        "Loops": [
+            {
+                "key": "for i = 1, 10, 5 do", 
+                "val": "For loop from 1 to 10 with step size 5. Step size is optional."
+            },
+            {
+                "key": "while true do", 
+                "val": "While loop"
+            }
+        ]
+    }
+}
