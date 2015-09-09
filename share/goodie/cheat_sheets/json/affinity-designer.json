@@ -288,11 +288,11 @@
         ],
         "Brush": [
             {
-                "key": "{",
+                "key": "\\{",
                 "val": "Decrease Brush Size"               
             },
             {
-                "key": "}",
+                "key": "\\}",
                 "val": "Increase Brush Size"               
             }
         ],

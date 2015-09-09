@@ -32,19 +32,19 @@
         ],
         "Tools": [
             {
-                "key": "[",
+                "key": "\\[",
                 "val": "Decrease Brush Size"
             },
             {
-                "key": "]",
+                "key": "\\]",
                 "val": "Increase Brush Size"
             },
             {
-                "key": "{",
+                "key": "\\{",
                 "val": "Decrease Brush Hardness"
             }, 
             {
-                "key": "}",
+                "key": "\\}",
                 "val": "Increase Brush Hardness"
             },
             {
