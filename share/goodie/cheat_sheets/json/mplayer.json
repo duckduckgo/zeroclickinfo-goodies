@@ -3,7 +3,7 @@
     "name": "Mplayer",
     "description": "Video Player",
     "metadata": {
-        "sourceName": "Mplayer manpage",
+        "sourceName": "MPlayer HQ",
         "sourceUrl": "http://www.mplayerhq.hu/DOCS/man/en/mplayer.1.html"
     },
     "template_type": "keyboard",
@@ -49,7 +49,7 @@
             },
             {
                 "val": "reset playback speed",
-                "key": "[Backspace]"
+                "key": "Backspace"
             }
         ],
         "Video control": [
@@ -70,20 +70,36 @@
                 "key": "d"
             },
             {
-                "val": "adjust contrast",
-                "key": "[1] / [2]"
+                "val": "decrease contrast",
+                "key": "1"
             },
             {
-                "val": "adjust brightness",
-                "key": "[3] / [4]"
+                "val": "increase contrast",
+                "key": "2"
             },
             {
-                "val": "adjust hue",
-                "key": "[5] / [6]"
+                "val": "decrease brightness",
+                "key": "3"
             },
             {
-                "val": "adjust saturation",
-                "key": "[7] / [8]"
+                "val": "increase brightness",
+                "key": "4"
+            },
+            {
+                "val": "decrease hue",
+                "key": "5"
+            },
+            {
+                "val": "increase hue",
+                "key": "6"
+            },
+            {
+                "val": "decrease saturation",
+                "key": "7"
+            },
+            {
+                "val": "increase saturation",
+                "key": "8"
             }
         ],
         
@@ -129,7 +145,7 @@
             },
             {
                 "val": "toggle subtitle alignment",
-                "key": "[a]"
+                "key": "a"
             }
         ]
 
