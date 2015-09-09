@@ -1,14 +1,14 @@
 {
     "id": "lua_cheat_sheet", 
 
-    "name": "Lua Cheat Sheet",
+    "name": "Lua",
 
     "metadata": { 
         "sourceName": "Lua Cheat Sheet for Programers",
         "sourceUrl": "http://coffeeghost.net/2010/11/01/lua-cheat-sheet-for-programmers/"
     },
 
-	"aliases": [
+    "aliases": [
         "lua", "lua tutorial"
     ],
 
@@ -77,8 +77,8 @@
                 "val": "Initialize a table with entries"
             },
             {
-                "key": "world = hello\\[x\\]", 
-                "val": "Get entry x out of a table starting at 1"
+                "key": "world = hello\\[1\\]", 
+                "val": "Get the first entry out of a table"
             },
             {
                 "key": "hello\\[x\\] = \"world\"", 
@@ -87,6 +87,30 @@
             {
                 "key": "table.insert(hello, \"world\")", 
                 "val": "Add an entry to a table"
+            },
+            {
+                "key": "table.remove(hello, 1)",
+                "val": "Remove first entry from a table"
+            },
+            {
+                "key": "world = table.remove(hello, 1)",
+                "val": "Remove first entry from a table and return the removed entry"
+            },
+            {
+                "key": "hello\\[1\\] = nil",
+                "val": "Remove an entry without moving the lower entries up"
+            },
+            {
+                "key": "world = table.concat(hello)",
+                "val": "Concatenate all entries of a table and form a string"
+            },
+            {
+                "key": "hello = \\{\\[\"world\"\\] = \"foo\", \\[\"newWorld\"\\] = \"bar\"\\}",
+                "val": "Use custom keys"
+            },
+            {
+                "key": "hello.world",
+                "val": "Alternative to hello\\[\"world\"\\] when using custom keys"
             }
         ],
         "Comments": [
@@ -109,6 +133,10 @@
             {
                 "key": "for i = 1, 10, 5 do", 
                 "val": "For loop from 1 to 10 with step size 5. Step size is optional."
+            },
+            {
+                "key": "for key, value in pairs(hello) do",
+                "val": "For loop with one step for each entry (value) in a table. 'key' is either the index or the key when using custom keys."
             },
             {
                 "key": "while true do", 
