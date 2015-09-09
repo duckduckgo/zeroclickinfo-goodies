@@ -64,10 +64,10 @@
             "key": "M-a"
         }, {
             "val": "Move forward by a paragraph",
-            "key": "M-}"
+            "key": "M-\\}"
         }, {
             "val": "Move backward by a paragraph",
-            "key": "M-{"
+            "key": "M-\\{"
         }, {
             "val": "Move forward by an expression",
             "key": "C-M-f"
