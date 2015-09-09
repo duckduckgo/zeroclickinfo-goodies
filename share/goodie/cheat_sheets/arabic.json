@@ -6,6 +6,12 @@
       "sourceName" : "Linguanaut",
       "sourceUrl" : "http://www.linguanaut.com/english_arabic.htm"
    },
+    
+   "aliases": [
+       "arabic phrases", "english to arabic", "basic arabic phrases", "basic arabic"
+   ], 
+  
+   "template_type": "reference",
    "section_order" : [
       "Basics",
       "Getting Help",
