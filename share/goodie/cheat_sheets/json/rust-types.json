@@ -23,7 +23,7 @@
         
     ],
     
-    "template_type": "keyboard",
+    "template_type": "reference",
 
     "sections": {
         "Primitive types": [
