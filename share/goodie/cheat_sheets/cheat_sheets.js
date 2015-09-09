@@ -27,33 +27,31 @@ DDH.cheat_sheets.build = function(ops) {
     });
 
     var re_brackets    = /(?:\[|\{|\}|\])/,      // search for [, {, }, or }
-        re_whitespace  = /\s+/,                  // search for spaces
         re_codeblock   = /<code>(.+?)<\/code>/g; // search for <code></code>
 
     Spice.registerHelper('cheatsheets_codeblock', function(string, className, options) {
 
         var out;
         var codeClass = typeof className === "string" ? className : "bg-clr--white";
-        
-        // replace escaped slashes and brackets
-        string = string.replace(/\</g, '&lt;')
-                .replace(/\>/g, '&gt;')
-                .replace(/\\\\/, "<bks>")
-                .replace(/\\\[/g, "<lbr>")
-                .replace(/\\\{/g, "<lcbr>")
-                .replace(/\\\]/g, "<rbr>")
-                .replace(/\\\}/g, "<rcbr>");
 
-        // no spaces
-        // OR
-        // spaces and no un-escaped brackets
-        // e.g "?()", ":sp filename"
-        //  --> wrap whole sting in <code></code>
-        if ( !re_whitespace.test(string) || !re_brackets.test(string) ){
+        // replace escaped slashes and brackets
+        string = string
+            .replace(/\</g, '&lt;')
+            .replace(/\>/g, '&gt;')
+            .replace(/\n/g, '<br>')
+            .replace(/\\\\/g, "<bks>")
+            .replace(/\\\[/g, "<lbr>")
+            .replace(/\\\{/g, "<lcbr>")
+            .replace(/\\\]/g, "<rbr>")
+            .replace(/\\\}/g, "<rcbr>");
+
+        // no un-escaped brackets
+        // e.g "?()", ":sp filename", "\\[:alpha:\\]"
+        //  --> wrap whole string in <code></code>
+        if ( !re_brackets.test(string) ){
             out = "<code class='"+codeClass+"'>" + string + "</code>";
 
-        // spaces
-        // AND
+
         // un-escaped brackets
         // e.g "[Ctrl] [B]"
         //  --> replace [] & {} with <code></code>
