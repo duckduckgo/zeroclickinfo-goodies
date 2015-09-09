@@ -17,7 +17,6 @@ attribution web     => ['http://und3f.com', 'und3f'],
             github  => ['und3f', 'und3f'],
             cpan    => ['UNDEF', 'und3f'];
 
-#triggers startend => 'morse', 'morse code';
 triggers start => "morse code for", "morse for";
 triggers end => "to morse code", "to morse";
 

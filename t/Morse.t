@@ -26,8 +26,13 @@ ddg_goodie_test([qw(
         }
     ),
     'morse code for SOS'         => test_zci(@sos),
+    'morse for SOS'         => test_zci(@sos),
     'SOS to morse code'         => test_zci(@sos),
+    'SOS to morse'         => test_zci(@sos),
     'morse code for hello, duck' => test_zci(@duck),
+    'hello, duck to morse code' => test_zci(@duck),
+    'morse for hello, duck' => test_zci(@duck),
+    'hello, duck to morse' => test_zci(@duck),
     'morse code for cheatsheet' => undef,
     'morse code for cheat sheet' => undef,
 );
