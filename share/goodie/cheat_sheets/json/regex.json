@@ -10,8 +10,44 @@
         "regexp", "regular expression", "regular expressions"
     ],
     "template_type": "code",
-    "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"],
+    "section_order": [
+        "Anchors",
+        "Character Classes",
+        "POSIX Classes",
+        "Pattern Modifiers",
+        "Escape Sequences",
+        "Quantifiers",
+        "Groups and Ranges",
+        "Assertions",
+        "Special Characters",
+        "String Replacement"
+    ],
     "sections": {
+         "Anchors": [{
+            "val": "Start of string or line",
+            "key": "^"
+        }, {
+            "val": "Start of string",
+            "key": "\\A"
+        }, {
+            "val": "End of string or line",
+            "key": "$"
+        }, {
+            "val": "End of string",
+            "key": "\\Z"
+        }, {
+            "val": "Word boundary",
+            "key": "\\b"
+        }, {
+            "val": "Not word boundary",
+            "key": "\\B"
+        }, {
+            "val": "Start of word",
+            "key": "\\<"
+        }, {
+            "val": "End of word",
+            "key": "\\>"
+        }],
         "Assertions": [{
             "val": "Lookahead assertion",
             "key": "?="
@@ -170,13 +206,13 @@
             "key": "?"
         }, {
             "val": "Exactly 3",
-            "key": "{3}"
+            "key": "\\{3\\}"
         }, {
             "val": "3 or more",
-            "key": "{3,}"
+            "key": "\\{3,\\}"
         }, {
             "val": "2, 3, 4 or 5",
-            "key": "{2,5}"
+            "key": "\\{2,5\\}"
         }],
         "String Replacement": [{
             "val": "n-th non-passive group",
@@ -227,31 +263,6 @@
         }, {
             "val": "Octal Digit",
             "key": "\\O"
-        }],
-        "Anchors": [{
-            "val": "Start of string or line",
-            "key": "^"
-        }, {
-            "val": "Start of string",
-            "key": "\\A"
-        }, {
-            "val": "End of string or line",
-            "key": "$"
-        }, {
-            "val": "End of string",
-            "key": "\\Z"
-        }, {
-            "val": "Word boundary",
-            "key": "\\b"
-        }, {
-            "val": "Not word boundary",
-            "key": "\\B"
-        }, {
-            "val": "Start of word",
-            "key": "\\<"
-        }, {
-            "val": "End of word",
-            "key": "\\>"
         }]
     }
 }
