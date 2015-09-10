@@ -110,7 +110,7 @@
             },
             {
                 "key": "hello.world",
-                "val": "Alternative to hello\\[\"world\"\\] when using custom keys"
+                "val": "Alternative to hello[\"world\"] when using custom keys"
             }
         ],
         "Comments": [
