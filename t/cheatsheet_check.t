@@ -30,7 +30,6 @@ foreach my $path (glob("$json_dir/*.json")){
       SKIP: {
         skip 'metadata is missing, this is options but suggested to have', 1 unless $has_meta;
 
-
         ok exists $json->{metadata}{sourceName}, "has metadata sourceName $name";
 
         SKIP: {
@@ -75,8 +74,7 @@ foreach my $path (glob("$json_dir/*.json")){
       }
     }; 
 
-    subtest 'style' => sub {
-      my $sections = $json->{sections};
+    my $sections = $json->{sections};
     
       for my $section_name (keys %$sections)
       {
@@ -85,16 +83,18 @@ foreach my $path (glob("$json_dir/*.json")){
 
          # spacing in keys ([a]/[b])'
          if($entry->{val}){
-             if($entry->{val} =~ /\(\s\[.+\]\s\/\s\[.+\]\)/g){
-                is $entry->{val} =~ /\(\s\[.+\]\s\/\s\[.+\]\)/,  1,  "keys ([a]/[b]) shouldn't have white spaces: $entry->{val} from  $name";
+             if($entry->{val} =~ /\(\s+\[.*\]\s+\/\s+\[.+\]\s+\)/g){
+                diag("keys ([a]/[b]) shouldn't have white spaces: $entry->{val} from  $name");
             }
-            # trailing white space
-            is $entry->{val} =~ /\s"$/, '', "No trailing white space in the value: $entry->{val} from: $name";
-            is $entry->{key} =~ /\s"$/, '', "No trailing white space in the key: $entry->{key} from: $name";
+            diag( "No trailing white space in the value: $entry->{val} from: $name") if $entry->{val} =~ /\s"$/;
         }
-
+         if($entry->{key}){
+             if($entry->{key} =~ /\(\s+\[.*\]\s+\/\s+\[.+\]\s+\)/g){
+                diag("keys ([a]/[b]) shouldn't have white spaces: $entry->{key} from  $name");
+            }
+            diag( "No trailing white space in the value: $entry->{key} from: $name") if $entry->{key} =~ /\s"$/;
         }
       }
-    };
+  }
 }
 done_testing;
