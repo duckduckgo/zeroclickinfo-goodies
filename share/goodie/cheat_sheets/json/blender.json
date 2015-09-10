@@ -127,10 +127,10 @@
             "key": "s"
         }, {
             "val": "Precise movement",
-            "key": "[\\{hold\\} Shift]"
+            "key": "[Shift] hold"
         }, {
             "val": "Increment movement",
-            "key": "[\\{hold\\} Ctrl]"
+            "key": "[Ctrl] hold"
         }, {
             "val": "Lock to axis",
             "key": "[Middle click] / [x] / [y] / [z]"
@@ -227,7 +227,7 @@
             "key": "[Ctrl] [Tab]"
         }, {
             "val": "Switching workspace",
-            "key": "[Ctrl] ([←]/[→])"
+            "key": "[Ctrl] ( [←] / [→] )"
         }, {
             "val": "Logic editor",
             "key": "[Shift] [F2]"
@@ -331,7 +331,7 @@
             "key": "[Shift] [Alt] [f]"
         }, {
             "val": "Add subdivision level",
-            "key": "[Ctrl] ([1]/[2]/[3]/[4])"
+            "key": "[Ctrl] ( [1] / [2] / [3] / [4] )"
         }],
         "Sculpting": [{
             "val": "Change brush size",
@@ -443,7 +443,7 @@
             "key": "{\\]} / {\\[}"
         }, {
             "val": "Select hierarchy",
-            "key": "[Shift] ({\\]} / {\\[})"
+            "key": "[Shift] ( {\\]} / {\\[} )"
         }, {
             "val": "Select connected",
             "key": "l"

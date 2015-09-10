@@ -1,0 +1,82 @@
+{
+    "id": "greek_roman_gods_cheat_sheet",
+    "name": "Greek and Roman Gods",
+    "description": "Names of Greek and Roman Gods and their dominion(s)",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Greek_mythological_figures#Major_gods_and_goddesses"
+    },
+    "aliases":["greek gods", "roman gods", "greek and roman gods", "roman and greek gods"],
+    "template_type": "reference",
+    "section_order": ["Greek Gods", "Roman Gods"],
+    "sections": {
+        "Greek Gods": [{
+            "val": "Goddess of love, beauty, desire, sex and pleasure",
+            "key": "Aphrodite"
+        }, {
+            "val": "God of music, arts, knowledge, healing, plague, prophecy, poetry, manly beauty, archery, and the sun",
+            "key": "Apollo"
+        }, {
+            "val": "God of war, bloodshed, and violence",
+            "key": "Ares"
+        }, {
+            "val": "Virgin goddess of the hunt, wilderness, animals, young girls, childbirth, plague, and the moon",
+            "key": "Artemis"
+        }, {
+            "val": "Goddess of intelligence, skill, peace, warfare, battle strategy, handicrafts, and wisdom",
+            "key": "Athena"
+        }, {
+            "val": "Goddess of grain, agriculture and the harvest, growth and nourishment",
+            "key": "Demeter"
+        }, {
+            "val": "God of wine, parties and festivals, madness, chaos, drunkenness, drugs, and ecstasy",
+            "key": "Dionysus"
+        }, {
+            "val": "King of the underworld and the dead, and god of regret.",
+            "key": "Hades"
+        }, {
+            "val": "Crippled god of fire, metalworking, and crafts",
+            "key": "Hephaestus"
+        }, {
+            "val": "Queen of the gods and goddess of marriage, women, childbirth, heirs, kings, and empires",
+            "key": "Hera"
+        }, {
+            "val": "God of boundaries, travel, communication, trade, language, and writing",
+            "key": "Hermes"
+        }, {
+            "val": "Virgin goddess of the hearth, home and chastity",
+            "key": "Hestia"
+        }, {
+            "val": "God of the sea, rivers, floods, droughts, and earthquakes.",
+            "key": "Poseidon"
+        }, {
+            "val": "King and father of the gods, the ruler of Mount Olympus and the god of the sky, weather, thunder, lightning, law, order, and justice",
+            "key": "Zeus"
+        }],
+        "Roman Gods": [{
+            "val": "Roman God of the Sky, thunderstorms, lightning, weather, air, law, order, justice, governance and strength",
+            "key": "Jupiter"
+        }, {
+            "val": "Goddess of Marriage and Women",
+            "key": "Juno"
+        }, {
+            "val": "God of War, Spring and Justice",
+            "key": "Mars"
+        }, {
+            "val": "Goddess of Love and consort of Mars",
+            "key": "Venus"
+        }, {
+            "val": "Goddess of War, Conquest and Peace",
+            "key": "Bellona"
+        }, {
+            "val": "Goddess of Wisdom, Divine Counsel, Useful Arts and Crafts",
+            "key": "Minerva"
+        }, {
+            "val": "God of Beginnings, Endings, Transition, Doorways and Keys",
+            "key": "Janus"
+        }, {
+            "val": "Goddess of the Home and the Hearth",
+            "key": "Vesta"
+        }]
+    }
+}

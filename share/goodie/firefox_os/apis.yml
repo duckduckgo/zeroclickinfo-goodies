@@ -1,0 +1,256 @@
+---
+alarms:
+  aliases:
+    - alarm
+  permission: alarms
+  name: Alarm
+  description: Schedule a notification, or schedule an application to be started.
+  app_type: hosted
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Alarm"
+audio-capture:
+  permission: audio-capture
+  name: GetUserMedia
+  description: Obtain MediaStream from audio input devices, e.g. microphone. This is needed to allow audio capture in Firefox OS 1.2+.
+  app_type: hosted
+  access: none
+  granted: Prompt for all installed App types.
+  platform: FxOS 1.2 for audio, Desktop Firefox 20+
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator.getUserMedia"
+audio-channel-alarm:
+  permission: audio-channel-alarm
+  name: AudioChannels
+  description: Alarm clock, calendar alarms.
+  app_type: privileged
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/AudioChannels_API"
+audio-channel-content:
+  permission: audio-channel-content
+  name: AudioChannels
+  description: Music, video.
+  app_type: hosted
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/AudioChannels_API"
+audio-channel-normal:
+  permission: audio-channel-normal
+  name: AudioChannels
+  description: UI sounds, Web content, music, radio.
+  app_type: hosted
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/AudioChannels_API"
+audio-channel-notification:
+  permission: audio-channel-notification
+  name: AudioChannels
+  description: New email, incoming SMS.
+  app_type: privileged
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/AudioChannels_API"
+browser:
+  permission: browser
+  name: Browser
+  description: Enables the app to implement a browser in an iframe.
+  app_type: privileged
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Browser"
+camera:
+  permission: camera
+  name: Camera
+  description: "Take photos, shoot video, record audio, and control the camera. Note: camera was limited to certified apps initially because the app sandbox was preventing access to the camera hardware. Fixed from Firefox OS 2.0 onwards."
+  app_type: privileged in Firefox OS 2.0+ internal/certified up to Firefox OS 1.4
+  access: none
+  granted: Prompt for all installed App types.
+  platform: FxOS 1.0.1-1.4 certified  FxOS 2.0+ privileged
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator.mozCamera"
+contacts:
+  aliases:
+    - addresses
+    - addressbook
+  permission: contacts
+  name: Contacts
+  description: Add, read, or modify contacts from the address book on the device and read contacts from the SIM.
+  app_type: privileged
+  access: readonly, readwrite, readcreate, or createonly
+  granted: Prompt for all installed App types.
+  platform: FxOS 1.1, Firefox Android 18
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Contacts"
+desktop-notification:
+  aliases:
+    - notification
+    - notifications
+  permission: desktop-notification
+  name: mozNotification for Gecko <22, Notification for Gecko 22+
+  description: Display a notification on the user's desktop. Note that this has changed, so for Gecko <22 (Firefox OS <1.2) you need to use mozNotification, while for Gecko 22+ (Firefox 1.2+) you need to use Notification.
+  app_type: hosted
+  access: none
+  granted: Prompt for Web content. Allow for all installed App types.
+  platform: FxOS 1.0.1, Android 4.0, Desktop 4.0 for prefixed version, FxOS 1.2, Android 22, Desktop 22 for non-prefixed version
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/notification"
+device-storage:music:
+  aliases:
+    - device-storage-music
+  permission: "device-storage:music"
+  name: Device Storage
+  description: Add, read, or modify music files stored on the device.
+  app_type: privileged  readonly, readwrite, readcreate, or createonly
+  granted: Prompt
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Device_Storage"
+device-storage:pictures:
+  aliases:
+    - device-storage-pictures
+  permission: "device-storage:pictures"
+  name: Device Storage
+  description: Add, read, or modify picture files stored on the device.
+  app_type: privileged
+  access: readonly, readwrite, readcreate, or createonly
+  granted: Prompt
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Device_Storage"
+device-storage:sdcard:
+  aliases:
+    - device-storage-sdcard
+  permission: "device-storage:sdcard"
+  name: Device Storage
+  description: Add, read, or modify files stored on the device's SD card.
+  app_type: privileged
+  access: readonly, readwrite, readcreate, or createonly
+  granted: Prompt
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Device_Storage"
+device-storage:videos:
+  aliases:
+    - device-storage-videos
+  permission: "device-storage:videos"
+  name: Device Storage
+  description: Add, read, or modify video files stored on the device.
+  app_type: privileged
+  access: readonly, readwrite, readcreate, or createonly
+  granted: Prompt
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Device_Storage"
+fmradio:
+  aliases:
+    - radio
+  permission: fmradio
+  name: FM Radio
+  description: Control the FM radio.
+  app_type: hosted
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/WebFM"
+geolocation:
+  permission: geolocation
+  name: Geolocation
+  description: Obtain the current location of the user.
+  app_type: hosted
+  access: none
+  granted: Prompt (even for certified Apps)
+  platform: FxOS 1.0.1, Desktop Firefox 3.5, Android 4.0
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Using_geolocation"
+input:
+  aliases:
+    - keyboard
+  permission: keyboard
+  name: Keyboard
+  description: Allows the app to act as a virtual keyboard by listening to focus change events in other apps.
+  app_type: privileged
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://wiki.mozilla.org/WebAPI/KeboardIME"
+mobilenetwork:
+  aliases:
+    - mobile
+    - cell
+    - cellphone
+  permission: mobilenetwork
+  name: Mobile Network
+  description: Obtain mobile network information (MCC, MNC, etc.).
+  app_type: privileged
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/MozMobileNetworkInfo"
+moz-firefox-accounts:
+  aliases:
+    - account
+    - accounts
+  permission: moz-firefox-accounts
+  name: Firefox Accounts
+  description: Allows the use of Firefox Accounts when using the navigator.mozId API.
+  app_type: privileged
+  access: none
+  granted: Prompt for all installed App types.
+  platform: FxOS 2.0
+  url: "https://developer.mozilla.org/en-US/docs/Firefox-Accounts-on-FirefoxOS"
+push:
+  aliases:
+    - simplepush
+  permission: push
+  name: Simple Push
+  description: Enable an app to wake up to receive notification.
+  app_type: hosted
+  access: none
+  granted: Allow
+  platform: FxOS 1.1
+  url: "https://developer.mozilla.org/en-US/docs/WebAPI/Simple_Push"
+storage:
+  permission: storage
+  name: Storage
+  description: Utilize storage (appcache, pinned apps, IndexedDB) without size limitations. See appcache, IndexedDB.
+  app_type: hosted
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1, Desktop (early versions)
+  url: "" 
+systemxhr:
+  aliases:
+    - xhr
+  permission: systemXHR
+  name: SystemXHR
+  description: Allows anonymous (no cookies) cross-origin XHR without the target site having CORS enabled. Similar to the TCP Socket API but restricted to XHR, not just raw sockets, so it is slightly less risky. See XMLHttpRequest.
+  app_type: privileged
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#mozSystem"
+tcp-socket:
+  aliases:
+    - tcp
+    - tcpsocket
+    - tcpsockets
+    - socket
+    - sockets
+  permission: tcp-socket
+  name: TCP Socket
+  description: Create TCP sockets and communicate over them.
+  app_type: privileged
+  access: none
+  granted: Allow
+  platform: FxOS 1.0.1, Desktop (early versions)
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/TCPSocket"
+video-capture:
+  aliases:
+    - getusermedia
+    - video
+  permission: video-capture
+  name: GetUserMedia
+  description: Obtain MediaStream from video input devices, e.g. camera. This is needed to allow video capture in Firefox OS 1.4+.
+  app_type: hosted
+  access: none
+  granted: Prompt for all installed App types.
+  platform: FxOS 1.4
+  url: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator.getUserMedia"
