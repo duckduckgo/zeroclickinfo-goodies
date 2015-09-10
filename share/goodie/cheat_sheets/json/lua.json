@@ -42,7 +42,7 @@
             },
             {
                 "key": "~=", 
-                "val": "Unequal"
+                "val": "Not equal"
             },
             {
                 "key": "and",
@@ -77,6 +77,10 @@
                 "val": "Initialize a table with entries"
             },
             {
+                "key": "hello = \\{\\[\"world\"\\] = \"foo\", \\[\"newWorld\"\\] = \"bar\"\\}",
+                "val": "Initialize with custom keys"
+            },
+            {
                 "key": "world = hello\\[1\\]", 
                 "val": "Get the first entry out of a table"
             },
@@ -103,10 +107,6 @@
             {
                 "key": "world = table.concat(hello)",
                 "val": "Concatenate all entries of a table and form a string"
-            },
-            {
-                "key": "hello = \\{\\[\"world\"\\] = \"foo\", \\[\"newWorld\"\\] = \"bar\"\\}",
-                "val": "Use custom keys"
             },
             {
                 "key": "hello.world",
