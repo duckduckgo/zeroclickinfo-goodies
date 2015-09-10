@@ -3,12 +3,10 @@ use strict;
 use warnings;
 use open ':std', ':encoding(utf8)';
 use Test::More;
-use HTTP::Tiny;
 use JSON;
 use IO::All;
-use Data::Dumper;
 
-my $json_dir = "../share/goodie/cheat_sheets/json";
+my $json_dir = "share/goodie/cheat_sheets/json";
 my $json;
 
 foreach my $path (glob("$json_dir/*.json")){
@@ -24,22 +22,22 @@ foreach my $path (glob("$json_dir/*.json")){
     subtest 'headers' => sub {
       ok exists $json->{id} && $json->{id}, 'has id';
       ok exists $json->{name} && $json->{name}, 'has name';
-      ok exists $json->{description} && $json->{description}, 'has description';
+      diag( "description is optional but suggested from $name" ) if !exists $json->{description} && !$json->{description}
     };
     
     subtest 'metadata' => sub {
       my $has_meta = exists $json->{metadata};
       SKIP: {
         skip 'metadata is missing, this is options but suggested to have', 1 unless $has_meta;
+
+
         ok exists $json->{metadata}{sourceName}, "has metadata sourceName $name";
-        ok exists $json->{metadata}{sourceUrl}, "has metadata sourceUrl $name";
-        ok my $url = $json->{metadata}{sourceUrl}, "sourceUrl is not undef $name";
-        
-            SKIP: {
-                skip 'sourceUrl is missing, unable to check it', 1 unless $url;
-                ok(HTTP::Tiny->new->get($url)->{success}, 'fetch sourceUrl');
-            };
+
+        SKIP: {
+            skip "sourceUrl is missing from $name", 1 unless exists $json->{metadata}{sourceUrl};
+            ok my $url = $json->{metadata}{sourceUrl}, "sourceUrl is not undef $name";
         };
+      };
     };
     
     subtest 'sections' => sub {
@@ -59,12 +57,12 @@ foreach my $path (glob("$json_dir/*.json")){
       
       for my $section_name (@$order)
       {
-        ok my $section = $sections->{$section_name}, "'$section_name' exists in sections from $name";
+        diag( "Missing section $section_name from $name") unless $sections->{$section_name};
       }
     
       for my $section_name (keys %$sections)
       {
-        ok grep(/\Q$section_name\E/, @$order), "'$section_name' exists in section_order from $name";
+        diag( "Missing $section_name in section order for $name") unless grep(/\Q$section_name\E/, @$order);
         is ref $sections->{$section_name}, 'ARRAY', "'$section_name' is an array from $name";
     
         my $entry_count = 0;
