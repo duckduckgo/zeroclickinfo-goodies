@@ -3,8 +3,9 @@ package DDG::Goodie::PaleoIngredientCheck;
 
 use DDG::Goodie;
 use List::MoreUtils 'any';
+use YAML::XS qw(Load);
 
-triggers startend => share('triggers.txt')->slurp;
+triggers startend => Load(scalar share('triggers.txt')->slurp);
 
 zci answer_type => "paleo_ingredient_check";
 zci is_cached   => 1;
@@ -17,10 +18,11 @@ category "food";
 topics "food_and_drink";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PaleoIngredientCheck.pm";
 attribution github => ["murz", "Mike Murray"];
-attribuion  github => ["javathunderman", "Thomas Denizou"];
+attribution github => ["javathunderman", "Thomas Denizou"];
 attribution twitter => ["javathunderman", "Thomas Denizou"];
-my @safe_keywords = share('safe.txt')->slurp;
-my @unsafe_keywords = share('unsafe.txt')->slurp;
+
+my @safe_keywords = Load(scalar share ('safe.txt')->slurp);
+my @unsafe_keywords = Load(scalar share ('unsafe.txt')->slurp);
 
 handle remainder => sub {
 
@@ -64,7 +66,13 @@ handle remainder => sub {
     }
     
     return unless $result;
-    return sprintf("%s %s allowed on the paleo diet.", ucfirst($item), $result);
+    my $plaintext = ucfirst($item) . " $result allowed on the paleo diet.";
+    return $plaintext,
+    structured_answer => {
+    input     => "Is $item paleo-diet friendly", # or just the original query
+    operation => "",
+    result    => $plaintext, # this could possibly be shortened to a simple "Yes" or "No"
+};
 };
 
 1;
