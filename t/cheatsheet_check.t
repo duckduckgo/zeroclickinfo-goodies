@@ -1,4 +1,6 @@
 #!/usr/bin/env perl
+use strict;
+use warnings;
 use open ':std', ':encoding(utf8)';
 use Test::More;
 use HTTP::Tiny;
@@ -26,31 +28,35 @@ foreach my $path (glob("$json_dir/*.json")){
     };
     
     subtest 'metadata' => sub {
-      ok exists $json->{metadata}, "has metadata $name";
-      ok exists $json->{metadata}{sourceName}, "has metadata sourceName $name";
-      ok exists $json->{metadata}{sourceUrl}, "has metadata sourceUrl $name";
-      ok my $url = $json->{metadata}{sourceUrl}, "sourceUrl is not undef $name";
-    
+      my $has_meta = exists $json->{metadata};
       SKIP: {
-        skip 'sourceUrl is missing, unable to check it', 1 unless $url;
-        ok(HTTP::Tiny->new->get($url)->{success}, 'fetch sourceUrl');
-      };
+        skip 'metadata is missing, this is options but suggested to have', 1 unless $has_meta;
+        ok exists $json->{metadata}{sourceName}, "has metadata sourceName $name";
+        ok exists $json->{metadata}{sourceUrl}, "has metadata sourceUrl $name";
+        ok my $url = $json->{metadata}{sourceUrl}, "sourceUrl is not undef $name";
+        
+            SKIP: {
+                skip 'sourceUrl is missing, unable to check it', 1 unless $url;
+                ok(HTTP::Tiny->new->get($url)->{success}, 'fetch sourceUrl');
+            };
+        };
     };
     
     subtest 'sections' => sub {
       ok my $order = $json->{section_order}, 'has section_order';
       is ref $order, 'ARRAY', 'section_order is an array of section names';
     
+      # we're going to handle section case mismatches on frontend
       $_ = lc for @$order;
     
       ok my $sections = $json->{sections}, 'has sections';
       is ref $sections, 'HASH', 'sections is a hash of section key/pairs';
     
-      map{ 
-        $sections->{lc$_} = $sections->{$_}; 
-        delete $sections->{$_};
-      } keys $sections;
-    
+       map{ 
+         $sections->{lc$_} = $sections->{$_}; 
+         delete $sections->{$_};
+       } keys $sections;
+      
       for my $section_name (@$order)
       {
         ok my $section = $sections->{$section_name}, "'$section_name' exists in sections from $name";
@@ -65,7 +71,7 @@ foreach my $path (glob("$json_dir/*.json")){
         for my $entry (@{$sections->{$section_name}})
         {
           ok exists $entry->{key}, "'$section_name' entry: $entry_count has a key from $name";
-          ok exists $entry->{val}, "'$section_name' entry: $entry_count has a val from $name";
+          #ok exists $entry->{val}, "'$section_name' entry: $entry_count has a val from $name";
           $entry_count++;
         }
       }
@@ -79,14 +85,16 @@ foreach my $path (glob("$json_dir/*.json")){
         for my $entry (@{$sections->{$section_name}})
         {
 
-         # spacing around '/'
-         if($entry->{val} =~ /\//g){
-            is $entry->{val} =~ /\s\/\s/,  1,  "'/' should have spaces: $entry->{val} from  $name";
-         }
+         # spacing in keys ([a]/[b])'
+         if($entry->{val}){
+             if($entry->{val} =~ /\(\s\[.+\]\s\/\s\[.+\]\)/g){
+                is $entry->{val} =~ /\(\s\[.+\]\s\/\s\[.+\]\)/,  1,  "keys ([a]/[b]) shouldn't have white spaces: $entry->{val} from  $name";
+            }
+            # trailing white space
+            is $entry->{val} =~ /\s"$/, '', "No trailing white space in the value: $entry->{val} from: $name";
+            is $entry->{key} =~ /\s"$/, '', "No trailing white space in the key: $entry->{key} from: $name";
+        }
 
-         # trailing white space
-         is $entry->{val} =~ /\s"$/, '', "No trailing white space in the value: $entry->{val} from: $name";
-         is $entry->{key} =~ /\s"$/, '', "No trailing white space in the key: $entry->{key} from: $name";
         }
       }
     };
