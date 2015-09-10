@@ -10,11 +10,11 @@
         "Open",
         "Album",
         "Screen Controls",
-        "Pan & Scan ",
-        "PLayback",
+        "Pan & Scan",
+        "Playback",
         "Subtitles",
-        "Video(basic)",
-        "Video(Advanced )",
+        "Video (basic)",
+        "Video (Advanced)",
         "Audio",
         "Capture",
         "Option",
@@ -131,7 +131,7 @@
             }, 
             {
                 "key": "[Shift] [F8]",
-                "val": "Downmi to Mono"
+                "val": "Downmix to Mono"
             },
             {
                 "key": "[Shift] [F9]",
@@ -142,7 +142,7 @@
                 "val": "Ignore All Settings "
             }
         ],
-        "Video(Advanced )": [
+        "Video (Advanced)": [
             {
                 "key": "[Alt] [I]",
                 "val": "Deinterlacing"
@@ -165,7 +165,7 @@
             }, 
             {
                 "key": "[Alt] [N]",
-                "val": "Gradual Denase"
+                "val": "Gradual Denoise"
             }, 
             {
                 "key": "[Alt] [V]",
@@ -188,7 +188,7 @@
                 "val": "High Speed Mode"
             }
         ],
-        "Video(basic)": [
+        "Video (basic)": [
             {
                 "key": "[Ctrl] [F1]",
                 "val": "Motion Blur"
@@ -227,11 +227,11 @@
             },
             {
                 "key": " [Ctrl] [F10]",
-                "val": "Miror Image"
+                "val": "Mirror Image"
             },
             {
                 "key": " [Ctrl] [F11]",
-                "val": "filp input picture"
+                "val": "Flip input picture"
             },
             {
                 "key": " [Ctrl] [F12]",
@@ -253,18 +253,18 @@
             },
             {
                 "key": "[Alt] [F1]",
-                "val": "Font size : Increase"
+                "val": "Increase font size"
             },
             {
                 "key": "[Alt] [F2]",
-                "val": "Font size : Decrease"
+                "val": "Decrease font size"
             },
             {
                 "key": "[Alt] [F3]",
                 "val": "Size Reset"
             }
         ],
-        "PLayback": [
+        "Playback": [
             {
                 "key": "Space",
                 "val": "Play/Pause"
@@ -282,7 +282,7 @@
                 "val": "Frame Step Back"
             }, 
             {
-                "key": "Pgup",
+                "key": "Page up",
                 "val": "Previous"
             },
             {
@@ -318,7 +318,7 @@
          
             {
                 "key": "[Alt] [3]",
-                "val": "One & Half size"
+                "val": "One half size"
             },
             {
                 "key": "[Alt] [4]",
