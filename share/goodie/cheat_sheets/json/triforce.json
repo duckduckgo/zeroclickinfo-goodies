@@ -1,0 +1,31 @@
+{
+	"id": "triforce_cheat_sheet",
+	"name": "How To Tri-Force Instructional",
+	"description": "Step-by-step Tri-Forcing guide for Windows, Mac and Linux computers.",
+	"metadata": {
+		"sourceName": "eHow.com",
+		"sourceUrl": "http://www.ehow.com/how_8460794_triforce.html"
+	},
+	"aliases": ["triforce", "tri-force", "tri force"],
+	"template_type": "keyboard",
+	"section_order": [
+		"Linux",
+		"Mac",
+		"Windows"
+	],
+	"sections": {
+		"Windows": [{
+			"key": "[Alt] [255], [Alt] [255], [Alt] [30], [Enter], [Alt] [30], [Alt] [30], [Alt] [255], [Alt] [30]",
+			"val": "Windows"
+		}], 
+		"Mac": [{
+			"key": "[Option] [Space], [Option] [Space], [Option] [J], [Enter], [Option] [J], [Option] [Space],  [Option] [J]",
+		   	"val": "Mac"
+		}], 
+		"Linux": [{
+			"key": "[Ctrl] [Shift] [U] [a0], [Ctrl] [Shift] [U] [a0], [Ctrl] [Shift] [U] [25b2], [Enter], [Ctrl] [Shift] [U] [25b2], [Ctrl] [Shift] [U] [a0], [Ctrl] [Shift] [U] [25b2]",
+			"val": "Linux"
+		}]
+	}
+}
+
