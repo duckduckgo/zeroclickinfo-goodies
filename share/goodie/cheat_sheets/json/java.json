@@ -1,15 +1,21 @@
 {
     "id": "java_cheat_sheet",
-    "name": "java",
-    "description": "Java Cheat Sheet",
+    "name": "Java",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/sschaub/cheat-sheets/java-fundamentals/"
     },
     "template_type": "terminal",
-    "section_order": ["Basic","Java Data Types","Java Statements","Java Data Conver­sions","Java Text Formatting","Java String Methods","Ar­rayList Methods","Ha­shMap Methods"],
+    "section_order": [  "Program Compilation and Execution",
+                        "Data Types",
+                        "Statements",
+                        "Data Conver­sions",
+                        "Text Formatting",
+                        "String Methods",
+                        "Ar­rayList Methods",
+                        "Ha­shMap Methods"],
     "sections": {
-        "Basic" : [
+        "Program Compilation and Execution" : [
             {
                 "key" : "javac Hello.j­ava",
                 "val" : "Compile Java File"
@@ -19,7 +25,7 @@
                 "val" : "Execute Java Program"
             }
         ],
-        "Java Data Types": [
+        "Data Types": [
             {
                 "key" : "byte/short/int/long",
                 "val" : "Integer Datatype."
@@ -42,7 +48,7 @@
             }
 
             ],
-        "Java Statements": [
+        "Statements": [
             {
                 "val" : "If Statement",
                 "key" : "if(expre­ssion)&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;else&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"
@@ -69,7 +75,7 @@
                 "key" : "try&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents<br>\\}&nbsp;catch(Exce­pti­onType&nbsp;e1)\\{<br>&nbsp;­&nbsp;&nbsp;&nbsp;­sta­tem­ents<br>\\}&nbsp;catch(Exception&nbsp;e2)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;cat­ch-all&nbsp;statem­ents<br>\\}&nbsp;finally&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents&nbsp;\\}"                
             }
         ],
-        "Java Data Conver­sions": [
+        "Data Conver­sions": [
             {
                 "val" : "String to Number",
                 "key" : "int&nbsp;i&nbsp;=&nbsp;Intege­r.p­ars­eIn­t(­str);<br><br>double&nbsp;d&nbsp;=&nbsp;Double.pa­rse­Dou­ble­(s­tr);"
@@ -83,7 +89,7 @@
                 "key" : "int&nbspi&nbsp=&nbsp(int)&nbspnumeric&nbspexpres­sion;"
             }
             ],
-        "Java Text Formatting": [
+        "Text Formatting": [
             {
                 "val" : "printf style format­ting",
                 "key" : "System.ou­t.p­rin­tf(­\"­Count&nbsp;is&nbsp;%d\n\",&nbsp;count);<br><br>s&nbsp;=&nbsp;String.fo­rma­t(\"Count&nbsp;is&nbsp;%d\",&nbsp;count);"
@@ -97,7 +103,7 @@
                 "key" : "Number­For­mat.ge­tCu­rre­ncy­Ins­tance().fo­rma­t(x);<br><br>Simple­Dat­eFo­rma­t(\"\"h:mm&nbsp;a\"\").fo­rma­t(new&nbsp;Date());<br><br>Decima­lFo­rma­t(\"#­,##­0.0­0\").fo­rma­t(1­25.32);"
             }
         ],
-        "Java String Methods": [
+        "String Methods": [
         {    
             
             "key" : "s.le­ngth()",
@@ -188,7 +194,7 @@
         },
         {   
             "key" : "m.co­nta­ins­Key­(key)",
-            "val" : "True If Contains Key."
+            "val" : "True If m Contains Key."
         }
 
     ]
