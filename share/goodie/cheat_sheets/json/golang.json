@@ -27,13 +27,13 @@
             "key": "var varname vartype"
         }, {
             "val": "Declare a variable and assign a value",
-            "key": "var varname vartype = value"            
-        }, {    
+            "key": "var varname vartype = value"
+        }, {
             "val": "Declare a variable shorthand, only in func bodies, omit var keyword, type is always implicit",
-            "key": "varname := value"            
-        }, {    
+            "key": "varname := value"
+        }, {
             "val": "Declare a constant",
-            "key": "const constant = value"            
+            "key": "const constant = value"
         }],
         "Functions": [{
             "val": "A simple function",
@@ -55,7 +55,6 @@
             "key": "func returnMulti2() (n int, s string) \\{ <br> &nbsp;&nbsp;&nbsp;&nbsp;n = 42 <br> &nbsp;&nbsp;&nbsp;&nbsp;s = \"foobar\" <br>  &nbsp;&nbsp;&nbsp;&nbsp;// n and s will be returned <br> &nbsp;&nbsp;&nbsp;&nbsp;return <br> \\} <br> var x, str = returnMulti2()"
         }],
         "Built In Types": [{
-            
             "val": "Bool is the set of boolean values, true and false.",
             "key": "bool"
         }, {
@@ -114,15 +113,27 @@
             "key": "complex128"
         } ],
         "Control Structures": [{
-            "val": "If",
-            "key": "func main() \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;if x > 0 \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x<br>&nbsp;&nbsp;&nbsp;&nbsp;\\} else \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return -x<br>\\}"
+            "val": "Main",
+            "key": "func main() \\{...\\}"
         }, {
-            "val": "Loops",
-            "key": "There's only `for`, no `while`, no `until`<br><br> for i := 1; i < 10; i++ \\{<br>\\}<br><br>while - loop<br><br>for ; i < 10;  \\{<br>\\}<br><br>you can omit semicolons if there is only a condition<br><br>for i < 10  \\{<br>\\}<br><br>you can omit the condition ~ while (true)<br><br>for \\{<br>\\}"
+            "val": "If",
+            "key": "if x > 0 \\{<br>&nbsp;&nbsp;&nbsp;&nbsp; return x<br>\\} else \\{<br>&nbsp;&nbsp;&nbsp;&nbsp; return -x<br>\\}"
+        }, {
+            "val": "For Loop",
+            "key": "for i := 1; i < 10; i++ \\{...\\}"
+        }, {
+            "val": "For Loop (single condition)",
+            "key": "for i < 10  \\{...\\}"
+        }, {
+            "val": "For Loop (no condition)",
+            "key": "for \\{...\\}"
         }, {
             "val": "Switch",
-            "key": "switch operatingSystem \\{<br>case \"darwin\":<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Mac OS Hipster\")<br><br>// cases break automatically, no fallthrough by default<br><br>case \"linux\":<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Linux Geek\")<br>default:<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Other\")<br>\\}<br><br>// as with for and if, you can have an assignment statement before the switch value<br><br>switch os := runtime.GOOS; os \\{<br>case \"darwin\": ...<br>\\}"
-        }],    
+            "key": "switch operatingSystem \\{<br>case \"darwin\":<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Mac OS Hipster\")<br>case \"linux\":<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Linux Geek\")<br>default:<br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(\"Other\")<br>\\}"
+        }, {
+            "val": "Switch (with preceeding assignement)",
+            "key": "switch os := runtime.GOOS; os \\{<br>case \"darwin\": ...<br>\\}"
+        }],
         "Arrays, Slices, Ranges": [{
             "key": "var a \\[10\\]int",
             "val": "Declare an int array with length 10. Array length is part of the type!"
@@ -134,7 +145,7 @@
             "val": "Read elements"
         }, {
             "key": "var a = \\[2\\]int\\{1, 2\\}",
-            "val": "Declare and initialize" 
+            "val": "Declare and initialize"
         }, {
             "key": "a := \\[2\\]int\\{1, 2\\}",
             "val": "Shorthand"
@@ -184,7 +195,7 @@
         }, {
             "key": "var m = map\\[string\\]Vertex\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Bell Labs\": \\{40.68433, -74.39967\\},<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Google\": \\{37.42202, -122.08408\\},<br>\\}",
             "val": "Map literal"
-        }],    
+        }],
         "Structs": [{
             "key": "type Vertex struct \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;X, Y int<br>\\}",
             "val": "Struct declaration"
@@ -209,7 +220,7 @@
         }, {
             "key": "point := struct \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;X, Y int<br>\\}\\{1, 2\\}",
             "val": "Anonymous structs"
-        }],   
+        }],
         "Pointers": [{
             "key": "p := Vertex\\{1, 2\\}",
             "val": "p is a Vertex"
@@ -222,7 +233,7 @@
         }, {
             "key": "var s *Vertex = new(Vertex)",
             "val": "new creates a pointer to a new struct instance"
-        }],    
+        }],
         "Interfaces": [{
             "key": "type Awesomizer interface \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;Awesomize() string<br>\\}",
             "val": "Interface declaration"
@@ -232,76 +243,76 @@
         }, {
             "key": "func (foo Foo) Awesomize() string \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Awesome!\"<br>\\}",
             "val": "Rather, types implicitly satisfy an interface if they implement all required methods"
-        }],    
+        }],
         "Operators and aliases": [{
             "key": "+",
-            "val":"Addition" 
+            "val":"Addition"
         }, {
             "key": "-",
-            "val":"Subtraction" 
+            "val":"Subtraction"
         }, {
             "key": "*",
-            "val":"Multiplication" 
+            "val":"Multiplication"
         }, {
             "key": "/",
-            "val":"Quotient" 
+            "val":"Quotient"
         }, {
             "key": "%",
-            "val":"Remainder" 
+            "val":"Remainder"
         }, {
             "key": "&amp;",
-            "val":"Bitwise and" 
+            "val":"Bitwise and"
         }, {
             "key": "|",
-            "val":"Bitwise or" 
+            "val":"Bitwise or"
         }, {
             "key": "^",
             "val":"Bitwise xor"
         }, {
             "key": "&amp;^",
-            "val":"Bit clear (and not)" 
+            "val":"Bit clear (and not)"
         }, {
             "key": "&lt;&lt;",
-            "val":"Left shift" 
+            "val":"Left shift"
         }, {
             "key": "&gt;&gt;",
-            "val":"Right shift" 
+            "val":"Right shift"
         }, {
             "key": "==",
-            "val":"Equal" 
+            "val":"Equal"
         }, {
             "key": "!=",
-            "val":"Not equal" 
+            "val":"Not equal"
         }, {
             "key": "&lt;",
-            "val":"Less than" 
+            "val":"Less than"
         }, {
             "key": "&lt;=",
-            "val":"Less than or equal" 
+            "val":"Less than or equal"
         }, {
             "key": "&gt;",
-            "val":"Greater than" 
+            "val":"Greater than"
         }, {
             "key": "&gt;=",
-            "val":"Greater than or equal" 
+            "val":"Greater than or equal"
         }, {
             "key": "&amp;&amp;",
-            "val":"Logical and" 
+            "val":"Logical and"
         }, {
             "key": "||",
-            "val":"Logical or" 
+            "val":"Logical or"
         }, {
             "key": "!",
             "val":"Logical not"
         },  {
             "key": "&amp;",
-            "val":"Address of / create pointer" 
+            "val":"Address of / create pointer"
         }, {
             "key": "*",
-            "val":"Dereference pointer" 
+            "val":"Dereference pointer"
         }, {
             "key": "&lt;-",
-            "val":"Send / receive operator" 
+            "val":"Send / receive operator"
         } ]
     }
 }
