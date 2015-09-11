@@ -471,7 +471,7 @@ sub parse_descriptive_datestring_to_date {
         return parse_datestring_to_date("01 $month $year");
     } elsif (my $relative_date = $+{'r'}) {
         # relative dates, tomorrow, yesterday etc
-        my $tmp_date = $base_time;
+        my $tmp_date = DateTime->now(time_zone => _get_timezone());
         my @to_add;
         if ($relative_date =~ qr/tomorrow|(?:next day)/) {
             @to_add = (days => 1);
