@@ -1,6 +1,6 @@
 {
     "id": "kmplayer_cheat_sheet", 
-    "name": "Kmplayer",
+    "name": "K-Multimedia Player",
     "description": "Multimedia", 
     "metadata": { 
         "sourceName": "KmplayerCheatSheet"
@@ -240,7 +240,7 @@
         ],
         "Subtitles": [
             {
-                "key": "[Ctrl ][Alt] [Q]",
+                "key": "[Ctrl] [Alt] [Q]",
                 "val": "Online Subtitle Finder"
             },
             {
@@ -329,7 +329,7 @@
                 "val": "Full Screen (Normal) "
             },
             {
-                "key": "[Ctrl ][Alt] [Enter]",
+                "key": "[Ctrl] [Alt] [Enter]",
                 "val": "Full Screen (Overscan)"
             },
             {
@@ -375,7 +375,7 @@
             },
             {
                 "key": " [Ctrl] [P]",
-                "val": "ReOpen current file"
+                "val": "Re Open current file"
             },
             {
                 "key": " [Ctrl] [D]",
