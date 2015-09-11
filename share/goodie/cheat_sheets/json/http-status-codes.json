@@ -1,19 +1,19 @@
 {
-    "id": "http_status_codes_cheatsheet",
+    "id": "http_status_codes_cheat_sheet",
     "name": "HTTP Status Codes",
     "description": "Informational, Success and Error Codes returned by HTTP",
+    "aliases": ["http status code", "http error code", "http error codes", "http response codes", "http response code", "http response status codes", "http response status code"],
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/kstep/cheat-sheets/http-status-codes/"
     },
-    "template_type": "code",
+    "template_type": "reference",
     "section_order": [
         "HTTP Informational Codes (1xx)",
         "HTTP Successful Codes (2xx)",
         "HTTP Redirection Codes (3xx)",
         "HTTP Client Error Codes (4xx)",
         "HTTP Server Error Codes (5xx)"
-
     ],
     "sections": {
         "HTTP Informational Codes (1xx)": [{
@@ -63,7 +63,7 @@
             "val": "IM used",
             "key": "226"
         }],
-"HTTP Redirection Codes (3xx)": [{
+        "HTTP Redirection Codes (3xx)": [{
             "val": "Multiple Choices",
             "key": "300"
         }, {
