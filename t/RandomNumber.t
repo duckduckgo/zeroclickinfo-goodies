@@ -25,6 +25,30 @@ ddg_goodie_test(
             result    => qr/\d{1}\.\d+/,
         }
     ),
+    'random number between 0 and 1' => test_zci(
+        qr/\d{1} \(random number\)/,
+        structured_answer => {
+            input => [0, 1],
+            operation => 'Random number between',
+            result => qr/^\d{1}\.\d+$/
+        }
+    ),
+    'random number between 0 and 10' => test_zci(
+        qr/\d{1,2} \(random number\)/,
+        structured_answer => {
+            input => [0, 10],
+            operation => 'Random number between',
+            result => qr/^\d{1,2}$/
+        }
+    ),
+    'random number between 0 and 100' => test_zci(
+        qr/\d{1,3} \(random number\)/,
+        structured_answer => {
+            input => [0, 100],
+            operation => 'Random number between',
+            result => qr/^\d{1,3}$/
+        }
+    ),
     'random day'    => undef,
     'random access' => undef,
 );

@@ -48,6 +48,10 @@
 }
 
 /* terminal-snippets.handlebars */
+.zci--cheat_sheets .terminal table {
+  width: 100%;
+}
+
 
 .zci--cheat_sheets .terminal td {
   padding-bottom: 12px;
