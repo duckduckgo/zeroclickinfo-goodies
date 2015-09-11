@@ -16,7 +16,8 @@
         "Marks",
         "Word Manipulation",
         "Line Manipulation",
-        "Selection"
+        "Selection",
+        "Tools"
     ],
     "sections": {
         "General": [{
@@ -52,6 +53,12 @@
           }, {
             "key":"[Ctrl] [Shift] [W]",
             "val":"Close current window"
+          }, {
+            "key":"[Ctrl] [+]",
+            "val":"Smaller font"
+          }, {
+            "key":"[Ctrl] [-]",
+            "val":"Larger font" 
         }],
         "File Navigation": [{
             "key":"[Ctrl] [P]",
@@ -271,6 +278,22 @@
             "key":"[Ctrl] [Shift] [A]",
             "val":"Expand selection to tag"
           }
-        ]
+        ],
+        "Tools": [{
+            "key": "[Ctrl] [Shift] [P]", 
+            "val": "Command Palette"
+        }, {
+            "key": "[Ctrl] [B]",
+            "val": "Build"
+        }, {
+            "key": "[Ctrl] [Shift] [B]",
+            "val": "Build with"
+        }, {
+            "key": "[Ctrl] [Q]",
+            "val": "Record Macro"
+        }, {
+            "key": "[Ctrl] [Shift] [Q]",
+            "val": "Playback Macro"
+        }]
     }
 }

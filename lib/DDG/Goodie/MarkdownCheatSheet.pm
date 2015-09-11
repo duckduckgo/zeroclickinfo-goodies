@@ -42,7 +42,7 @@ my %snippets = (
 ###### This is an H6'
     },
     'em' => {
-        'html' => HTML::Entities::encode_entities('<em>Emphasis</em> or <em>ephasis</em>'),
+        'html' => HTML::Entities::encode_entities('<em>Emphasis</em> or <em>emphasis</em>'),
         'text' => '_emphasis_ or *emphasis*'
     },
     'strong' => {
