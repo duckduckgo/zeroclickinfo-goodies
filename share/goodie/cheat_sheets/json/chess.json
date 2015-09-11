@@ -16,7 +16,7 @@
             },
             {
                 "key": "Knight",
-                "val": "Moves and captures in an L shape: two spaces in any direction and one space out to the left or right. Can jump over other pieces"
+                "val": "Moves and captures in an L shape: two spaces in any direction and one space out at a 90 degree angle. Can jump over other pieces"
             },
             {
                 "key": "Bishop",
@@ -32,7 +32,7 @@
             },
             {
                 "key": "King",
-                "val": "Moves and captures one space in any direction"
+                "val": "Moves and captures one space in any direction, as long as the king won't be in \"check\" in the new square"
             }
         ],
         "Gameplay": [
@@ -60,7 +60,7 @@
         "Special Movement": [
             {
                 "key": "Castling",
-                "val": "If a king and one of its rooks haven't moved yet in the game, they can \"castle.\" With either the king-side or the queen-side rook, the king moves two squares towards the rook and the rook moves to the other side of the king, right next to it. A player cannot castle if the king is in check or would pass through (or into) spaces that are under attack"
+                "val": "If a king and one of its rooks haven't moved yet in the game and there are no pieces between them, they can \"castle.\" With either the king-side or the queen-side rook, the king moves two squares towards the rook and the rook moves to the other side of the king, right next to it. A player cannot castle if the king is in check or would pass through (or into) spaces that are under attack"
             },
             {
                 "key": "En passant",
