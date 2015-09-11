@@ -1,10 +1,15 @@
 {
     "id": "kmplayer_cheat_sheet", 
     "name": "K-Multimedia Player",
-    "description": "Multimedia", 
+    "description": "Multimedia Player Cheat Sheet", 
     "metadata": { 
         "sourceName": "KmplayerCheatSheet"
     },
+    
+    "aliases": [
+        "kmplayer"
+    ],
+    
    "template_type": "keyboard",
     "section_order": [  
         "Open",
