@@ -1,0 +1,163 @@
+{
+    "id": "6369",
+    "name": "Cmus",
+    "description": "Console music player",
+    "metadata": {
+        "sourceName": "Cmus manual",
+        "sourceUrl": "https://github.com/cmus/cmus/blob/master/Doc/cmus.txt"
+    },
+    "template_type": "keyboard",
+    "section_order": ["Cursor Movement", "Views", "Song navigation", "Add/Remove tracks", "Browser movements", "Exiting", "Miscellaneous"],
+    "sections": {
+        "Cursor Movement": [
+            {
+                "val": "Move up",
+                "key": "k"
+            },
+            {
+                "val": "Move down",
+                "key": "j"
+            }
+        ],
+        "Views": [
+            {
+                "val": "Library view",
+                "key": "1"
+            },
+            {
+                "val": "Sorted library view",
+                "key": "2"
+            },
+            {
+                "val": "Playlist view",
+                "key": "3"
+            },
+            {
+                "val": "Play queue view",
+                "key": "4"
+            },
+            {
+                "val": "Browser",
+                "key": "5"
+            },
+            {
+                "val": "Filters view",
+                "key": "6"
+            },
+            {
+                "val": "Settings view",
+                "key": "7"
+            }
+        ],
+        "Song navigation": [
+            {
+                "val": "Play/Restart",
+                "key": "x"
+            },
+            {
+                "val": "Pause/Play",
+                "key": "c"
+            },
+            {
+                "val": "Stop",
+                "key": "v"
+            },
+            {
+                "val": "Next track",
+                "key": "b"
+            },
+            {
+                "val": "Previous track",
+                "key": "z"
+            },
+            {
+                "val": "Skip 5s forward",
+                "key": "l"
+            },
+            {
+                "val": "Skip 5s backward",
+                "key": "h"
+            },
+            {
+                "val": "Skip 1m forward",
+                "key": "."
+            },
+            {
+                "val": "Skip 1m backward",
+                "key": ","
+            }
+        ],
+        "Add/Remove tracks": [
+            {
+                "val": "Add tracks/folders to library from browser view",
+                "key": "a"
+            },
+            {
+                "val": "Append track to play queue",
+                "key": "e"
+            },
+            {
+                "val": "Prepend track to play queue",
+                "key": "E"
+            },
+            {
+                "val": "Add track to playlist",
+                "key": "y"
+            },
+            {
+                "val": "Remove track",
+                "key": "D"
+            }
+        ],
+        "Browser movements": [
+            {
+                "val": "Activate selection",
+                "key": "<space>"
+            },
+            {
+                "val": "Browser up",
+                "key": "<backspace>"
+            },
+            {
+                "val": "Refresh files",
+                "key": "u"
+            },
+            {
+                "val": "Toggle show hidden",
+                "key": "i"
+            }
+        ],
+        "Exiting": [
+            {
+                "val": "Interactive quit",
+                "key": "q"
+            },
+            {
+                "val": "Quit",
+                "key": ":q"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "val": "Toggle shuffle",
+                "key": "s"
+            },
+            {
+                "val": "Toggle continue",
+                "key": "C"
+            },
+            {
+                "val": "Toggle repeat",
+                "key": "r"
+            },
+            {
+                "val": "Toggle playing mode i.e Artist/Album/All",
+                "key": "m"
+            },
+            {
+                "val": "Activate selection",
+                "key": "<enter>"
+            }
+        ]
+    }
+}
