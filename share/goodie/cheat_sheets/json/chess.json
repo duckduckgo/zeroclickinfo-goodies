@@ -6,6 +6,11 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Chess"
     },
+    "aliases": [
+        "chess pieces",
+        "chess gameplay",
+        "chess movement"
+    ],
     "template_type": "reference",
     "section_order": ["Pieces", "Gameplay", "Special Movement"],
     "sections": {
