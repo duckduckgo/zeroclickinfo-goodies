@@ -18,7 +18,9 @@
 
     "section_order": [  
         "SI base units",
-        "SI derived units"
+        "SI derived units",
+        "SI derived units with special names and symbols",
+        "Examples of SI derived units whose names and symbols include SI derived units with special names and symbols"
     ],
 
     "sections": {
@@ -37,7 +39,7 @@
             },
             {
                 "key": "electric current - A", 
-                "val": "ampere"
+                "val": "ampere (amp)"
             },
             {
                 "key": "thermodynamic temperature - K", 
@@ -54,11 +56,11 @@
         ],        
         "SI derived units": [
             {
-                "key": "area - m^2",
+                "key": "area - m²",
                 "val": "square meter"               
             }, 
             {
-                "key": "volume - m^3",
+                "key": "volume - m³",
                 "val": "cubic meter"               
             }, 
             {
@@ -66,23 +68,23 @@
                 "val": "meter per second"               
             }, 
             {
-                "key": "acceleration - m/s^2",
+                "key": "acceleration - m/s²",
                 "val": "meter per second squared"               
             }, 
             {
-                "key": "wave number - m^-1",
+                "key": "wave number - m⁻¹",
                 "val": "reciprocal meter"               
             }, 
             {
-                "key": "mass density - kg/m^3",
+                "key": "mass density - kg/m³",
                 "val": "kilogram per cubic meter"               
             }, 
             {
-                "key": "specifc volume - m^3/kg",
+                "key": "specific volume - m³/kg",
                 "val": "cubic meter per kilogram"               
             }, 
             {
-                "key": "current density - A/m^2",
+                "key": "current density - A/m²",
                 "val": "ampere per square meter"               
             }, 
             {
@@ -90,17 +92,169 @@
                 "val": "ampere per meter"               
             }, 
             {
-                "key": "amount-of-substance concentration - mol/m^3",
+                "key": "amount-of-substance concentration - mol/m³",
                 "val": "mole per cubic meter"               
             }, 
             {
-                "key": "luminance - cd/m^2",
+                "key": "luminance - cd/m²",
                 "val": "candela per square meter"               
-            }, 
-            {
-                "key": "mass fraction - kg/kg=1",
-                "val": "kilogram per kilogram, which may be represented by the number 1"               
             }
-        ]  
+        ],
+        "SI derived units with special names and symbols": [
+            {
+                "key": "plane angle - rad", 
+                "val": "radian"
+            },
+            {
+                "key": "solid angle - sr",
+                "val": "steradian"
+            },
+            {
+                "key": "frequency - Hz", 
+                "val": "hertz"
+            },
+            {
+                "key": "force - N", 
+                "val": "newton"
+            },
+            {
+                "key": "pressure, stress - Pa", 
+                "val": "pascal"
+            },
+            {
+                "key": "energy, work, quantity of heat - J", 
+                "val": "joule"
+            },
+            {
+                "key": "power, radiant flux - W", 
+                "val": "watt"
+            },
+            {
+                "key": "electric charge, quantity of electricity - C", 
+                "val": "coulomb"
+            },
+            {
+                "key": "electric potential difference, electromotive force - V", 
+                "val": "volt"
+            },
+            {
+                "key": "electric resistance - Ω", 
+                "val": "ohm"
+            },
+            {
+                "key": "magnetic flux - Wb", 
+                "val": "weber"
+            },
+            {
+                "key": "magnetic flux density - T", 
+                "val": "tesla"
+            },
+            {
+                "key": "inductance - H", 
+                "val": "henry"
+            },
+            {
+                "key": "luminous flux - lm", 
+                "val": "lumen"
+            },
+            {
+                "key": "illuminance - lx", 
+                "val": "lux"
+            },
+            {
+                "key": "activity (of a radionuclide) - Bq", 
+                "val": "becquerel"
+            },
+            {
+                "key": "absorbed dose, specific energy (imparted), kerma - Gy", 
+                "val": "gray"
+            }
+        ],
+        "Examples of SI derived units whose names and symbols include SI derived units with special names and symbols": [
+            {
+                "key": "dynamic viscosity - Pa·s", 
+                "val": "pascal second"
+            },
+            {
+                "key": "moment of force - N·m",
+                "val": "newton meter"
+            },
+            {
+                "key": "surface tension - N/m", 
+                "val": "newton per meter"
+            },
+            {
+                "key": "angular velocity - rad/s", 
+                "val": "radian per second"
+            },
+            {
+                "key": "angular acceleration - rad/s²", 
+                "val": "radian per second squared"
+            },
+            {
+                "key": "heat flux density, irradiance - W/m²", 
+                "val": "watt per square meter"
+            },
+            {
+                "key": "heat capacity, entropy - J/K", 
+                "val": "joule per kelvin"
+            },
+            {
+                "key": "specific heat capacity, specific entropy - J/(kg·K)", 
+                "val": "joule per kilogram kelvin"
+            },
+            {
+                "key": "specific energy - J/kg", 
+                "val": "joule per kilogram"
+            },
+            {
+                "key": "energy density - J/m³", 
+                "val": "joule per cubic meter"
+            },
+            {
+                "key": "electric field strength - V/m", 
+                "val": "volt per meter"
+            },
+            {
+                "key": "electric charge density - C/m³", 
+                "val": "coulomb per cubic meter"
+            },
+            {
+                "key": "electric flux density - C/m²", 
+                "val": "coulomb per square meter"
+            },
+            {
+                "key": "permittivity - F/m", 
+                "val": "farad per meter"
+            },
+            {
+                "key": "permeability - H/m", 
+                "val": "henry per meter"
+            },
+            {
+                "key": "molar energy - J/mol", 
+                "val": "joule per mole"
+            },
+            {
+                "key": "molar entropy, molar heat capacity - J/(mol·K)", 
+                "val": "joule per mole kelvin"
+            },
+            {
+                "key": "exposure (x and gamma rays) - C/kg", 
+                "val": "coulomb per kilogram"
+            },
+            {
+                "key": "absorbed dose rate - Gy/s", 
+                "val": "gray per second"
+            },
+            {
+                "key": "radiant intensity - W/sr", 
+                "val": "watt per steradian"
+            },
+            {
+                "key": "radiance - W/(m²·sr)", 
+                "val": "watt per square meter steradian"
+            }
+        ]     
     }
 }
