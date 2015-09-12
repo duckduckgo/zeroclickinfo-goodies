@@ -1,0 +1,260 @@
+{
+    "id": "cantonese_cheat_sheet", 
+
+    "name": "Cantonese",
+
+    "description": "Basic Cantonese words and phrases", 
+    
+    "metadata": { 
+        "sourceName": "Learn Cantonese!",
+        "sourceUrl": "http://www.cantonese.sheik.co.uk/"
+    },
+
+	"aliases": [
+        "cantonese words", "cantonese phrases", "basic cantonese words", "basic cantonese phrases", "basic cantonese"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [  
+        "Numbers",
+        "Dates",
+        "Common Words & Phrases",
+        "Basic Conversation"
+    ],
+
+    "sections": {
+        "Numbers": [
+            {
+                "key": "One", 
+                "val": "一 (yut/yat)"
+            },
+            {
+                "key": "Two",
+                "val": "二 (yee)"
+            },
+            {
+                "key": "Three", 
+                "val": "三 (sarm)"
+            },
+            {
+                "key": "Four", 
+                "val": "四 (say)"
+            },
+            {
+                "key": "Five", 
+                "val": "五 (mm)"
+            },
+            {
+                "key": "Six", 
+                "val": "六 (look/lok)"
+            },
+            {
+                "key": "Seven", 
+                "val": "七 (chat/chut)"
+            },
+            {
+                "key": "Eight", 
+                "val": "八 (bart)"
+            },
+            {
+                "key": "Nine", 
+                "val": "九 (gow)"
+            },
+            {
+                "key": "Ten", 
+                "val": "十 (sup)"
+            },
+            {
+                "key": "Hundred", 
+                "val": "百 (bark)"
+            },
+            {
+                "key": "Thousand", 
+                "val": "千 (cheen)"
+            },
+            {
+                "key": "Zero", 
+                "val": "零 (ling)"
+            }
+        ],        
+        "Dates": [
+            {
+                "key": "Day",
+                "val": "日 (yat)"               
+            }, 
+            {
+                "key": "Year",
+                "val": "年 (lean)"               
+            }, 
+            {
+                "key": "Week",
+                "val": "星期 (sing kay)"               
+            }, 
+            {
+                "key": "Month",
+                "val": "月 (yoot)"               
+            }, 
+            {
+                "key": "January",
+                "val": "一月 (yat yoot)"               
+            }, 
+            {
+                "key": "February",
+                "val": "二月 (yee yoot)"               
+            }, 
+            {
+                "key": "March",
+                "val": "三月 (sarm yoot)"               
+            }, 
+            {
+                "key": "April",
+                "val": "四月 (say yoot)"               
+            }, 
+            {
+                "key": "May",
+                "val": "五月 (mm yoot)"               
+            }, 
+            {
+                "key": "June",
+                "val": "六月 (look yoot)"               
+            }, 
+            {
+                "key": "July",
+                "val": "七月 (chat yoot)"               
+            }, 
+            {
+                "key": "August",
+                "val": "八月 (bat yoot)"               
+            }, 
+            {
+                "key": "September",
+                "val": "九月 (gow yoot)"               
+            }, 
+            {
+                "key": "October",
+                "val": "十月 (sap yoot)"               
+            }, 
+            {
+                "key": "November",
+                "val": "十一月 (sap yat yoot)"               
+            }, 
+            {
+                "key": "December",
+                "val": "十二月 (sap yee yoot)"               
+            }, 
+            {
+                "key": "February 1st",
+                "val": "二月一日 (yee yoot yát yat)"               
+            }, 
+            {
+                "key": "March 19th",
+                "val": "三月十九日 (sarm yoot sap gow yat)"               
+            }
+        ],
+        "Common Words & Phrases": [
+            {
+                "key": "OK", 
+                "val": "好呀 (ho ah)"
+            },
+            {
+                "key": "Is this necessary?/Do you need it?",
+                "val": "駛唔駛? (sai mm sai)"
+            },
+            {
+                "key": "How are you?/What's happening?", 
+                "val": "你點呀? (nei dim ah)"
+            },
+            {
+                "key": "Give me a hand/Help/Assist", 
+                "val": "幫手 (bong sau)"
+            },
+            {
+                "key": "No problem", 
+                "val": "冇問題 (mou man tai)"
+            },
+            {
+                "key": "This", 
+                "val": "呢個 (ni gor)"
+            },
+            {
+                "key": "That", 
+                "val": "嗰個 (gór gor)"
+            },
+            {
+                "key": "Here", 
+                "val": "呢度 (ni dou)"
+            },
+            {
+                "key": "Have", 
+                "val": "有 (yau)"
+            },
+            {
+                "key": "Up", 
+                "val": "上 (seung)"
+            },
+            {
+                "key": "Down", 
+                "val": "下 (haa)"
+            },
+            {
+                "key": "Left", 
+                "val": "左 (jaw)"
+            },
+            {
+                "key": "Right", 
+                "val": "右 (yow)"
+            },
+            {
+                "key": "Front", 
+                "val": "前 (cheen)"
+            },
+            {
+                "key": "Back", 
+                "val": "後 (how)"
+            }
+        ],
+        "Basic Conversation": [
+            {
+                "key": "Yes", 
+                "val": "係 (hai)"
+            },
+            {
+                "key": "No",
+                "val": "唔係 (mm hai)"
+            },
+            {
+                "key": "Good morning", 
+                "val": "早晨 (jou san)"
+            },
+            {
+                "key": "Sorry/Excuse me", 
+                "val": "對唔住/不好意思 (dui mm zyu/mm ho yee see)"
+            },
+            {
+                "key": "Thank you", 
+                "val": "多謝 (dor tse)"
+            },
+            {
+                "key": "Thank you/Please", 
+                "val": "唔該 (mm goi)"
+            },
+            {
+                "key": "You're welcome", 
+                "val": "唔使客氣 (mm sai hark hey)"
+            },
+            {
+                "key": "Very good", 
+                "val": "好好 (ho ho)"
+            },
+            {
+                "key": "Very beautiful", 
+                "val": "好靚 (ho leng)"
+            },
+            {
+                "key": "How much is that?", 
+                "val": "幾錢/幾多 (gay dor/gay cheen)"
+            }
+        ]   
+    }
+}
