@@ -1,0 +1,106 @@
+{
+    "id": "siunits_cheat_sheet", 
+
+    "name": "SI Units",
+
+    "description": "International System of Units (SI): Base/Derived quantity - Symbol - Name", 
+    
+    "metadata": { 
+        "sourceName": "International System of Units (SI)",
+        "sourceUrl": "http://physics.nist.gov/cuu/Units/units.html"
+    },
+
+	"aliases": [
+        "si unit", "international system of units", "si physics", "physics si", "si"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [  
+        "SI base units",
+        "SI derived units"
+    ],
+
+    "sections": {
+        "SI base units": [
+            {
+                "key": "length - m", 
+                "val": "meter"
+            },
+            {
+                "key": "mass - kg",
+                "val": "kilogram"
+            },
+            {
+                "key": "time - s", 
+                "val": "second"
+            },
+            {
+                "key": "electric current - A", 
+                "val": "ampere"
+            },
+            {
+                "key": "thermodynamic temperature - K", 
+                "val": "kelvin"
+            },
+            {
+                "key": "amount of substance - mol", 
+                "val": "mole"
+            },
+            {
+                "key": "luminous intensity - cd", 
+                "val": "candela"
+            }
+        ],        
+        "SI derived units": [
+            {
+                "key": "area - m^2",
+                "val": "square meter"               
+            }, 
+            {
+                "key": "volume - m^3",
+                "val": "cubic meter"               
+            }, 
+            {
+                "key": "speed, velocity - m/s",
+                "val": "meter per second"               
+            }, 
+            {
+                "key": "acceleration - m/s^2",
+                "val": "meter per second squared"               
+            }, 
+            {
+                "key": "wave number - m^-1",
+                "val": "reciprocal meter"               
+            }, 
+            {
+                "key": "mass density - kg/m^3",
+                "val": "kilogram per cubic meter"               
+            }, 
+            {
+                "key": "specifc volume - m^3/kg",
+                "val": "cubic meter per kilogram"               
+            }, 
+            {
+                "key": "current density - A/m^2",
+                "val": "ampere per square meter"               
+            }, 
+            {
+                "key": "magnetic field strength - A/m",
+                "val": "ampere per meter"               
+            }, 
+            {
+                "key": "amount-of-substance concentration - mol/m^3",
+                "val": "mole per cubic meter"               
+            }, 
+            {
+                "key": "luminance - cd/m^2",
+                "val": "candela per square meter"               
+            }, 
+            {
+                "key": "mass fraction - kg/kg=1",
+                "val": "kilogram per kilogram, which may be represented by the number 1"               
+            }
+        ]  
+    }
+}
