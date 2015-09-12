@@ -37,7 +37,7 @@
         "Combat Phase": [
             {
                 "key": "Beginning of Combat Step",
-                "val": "Play instants or activate abilities. The active player which player will be attacked."
+                "val": "Play instants or activate abilities. The active player declares which player will be attacked."
             },
             {
                 "key": "Declare Attackers Step",
