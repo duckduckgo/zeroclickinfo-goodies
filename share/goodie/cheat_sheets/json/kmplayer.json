@@ -1,13 +1,13 @@
 {
     "id": "kmplayer_cheat_sheet", 
     "name": "K-Multimedia Player",
-    "description": "Multimedia Player Cheat Sheet", 
+    "description": "Multimedia Player ", 
     "metadata": { 
         "sourceName": "KmplayerCheatSheet"
     },
     
     "aliases": [
-        "kmplayer"
+        "kmplayer, k-multimedia player , kmplayer shortkeys , kmplayer shortcuts"
     ],
     
    "template_type": "keyboard",
@@ -39,11 +39,11 @@
                 "val": "Playlist editor"
             },
             {
-                "key": "[shift] [Del]",
+                "key": "[Shift] [Del]",
                 "val": "Delete a file playing"
             },
             {
-                "key": "[shift] [Ctrl] [Del] ",
+                "key": "[Shift] [Ctrl] [Del] ",
                 "val": "Delete a file playing instantly"
             }
         ],
