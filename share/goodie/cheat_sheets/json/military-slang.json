@@ -1,0 +1,197 @@
+{
+  "id": "military_slang_cheat_sheet",
+  "name": "Military Slang",
+  "description": "Various common military slang terms and their meanings",
+  "metadata": {
+    "sourceName": "Military",
+    "sourceUrl": "http://www.military.com/join-armed-forces/military-terms-and-jargon.html"
+  },
+  "template_type": "reference",
+  "section_order": [
+    "Popular Terms",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "sections": {
+    "Popular Terms": [
+      {
+        "key": "Bird",
+        "val": "Aircraft"
+      },
+      {
+        "key": "Lock and Load",
+        "val": "To insert ammunition into weapon"
+      },
+      {
+        "key": "Sarge",
+        "val": "Informal for Sergeant"
+      },
+      {
+        "key": "Shack",
+        "val": "Direct hit"
+      },
+      {
+        "key": "Tango",
+        "val": "Phonetic Alphabet for T"
+      },
+      {
+        "key": "Zoom Bag",
+        "val": "Flight Suit"
+      },
+      {
+        "key": "Hooaah",
+        "val": "Spirited cry"
+      }
+    ],
+    "A": [
+      {
+        "key": "Archie",
+        "val": "Anti Aircraft Gun"
+      },
+      {
+        "key": "Ass",
+        "val": "Armored vehicles"
+      },
+      {
+        "key": "Ack",
+        "val": "Anti Aircraft Fire"
+      },
+      {
+        "key": "Auto-pilot",
+        "val": "Unauthorised flight maneuver"
+      }
+    ],
+    "B": [
+      {
+        "key": "Balls",
+        "val": "Midnight"
+      },
+      {
+        "key": "Bayonet",
+        "val": "Infantryman"
+      },
+      {
+        "key": "Beans and Bullets",
+        "val": "Supplies"
+      },
+      {
+        "key": "Bird Barn",
+        "val": "Aircraft Carrier"
+      }
+    ],
+    "C": [
+      {
+        "key": "Chalk",
+        "val": "Soldiers deployed from single aircraft"
+      },
+      {
+        "key": "Charlie Mike",
+        "val": "Continue mission"
+      },
+      {
+        "key": "Check Six",
+        "val": "Watch your back"
+      },
+      {
+        "key": "Cover",
+        "val": "Headgear"
+      }
+    ],
+    "D": [
+      {
+        "key": "Death Jet",
+        "val": "F-22 Raptor"
+      },
+      {
+        "key": "Ditch",
+        "val": "Crash into sea"
+      },
+      {
+        "key": "Driver",
+        "val": "Fighter pilot"
+      },
+      {
+        "key": "Dropped",
+        "val": "Punished"
+      }
+    ],
+    "E": [
+      {
+        "key": "Eagle Driver",
+        "val": "F-15 pilot"
+      },
+      {
+        "key": "Endex",
+        "val": "End Exercise"
+      },
+      {
+        "key": "Extra",
+        "val": "Extra duty as punishment"
+      },
+      {
+        "key": "Elsie",
+        "val": "Lance-Corporal"
+      }
+    ],
+    "F": [
+      {
+        "key": "Fart Sack",
+        "val": "Sleeping Bag"
+      },
+      {
+        "key": "Fast Movers",
+        "val": "Jet Fighters"
+      },
+      {
+        "key": "Fort Fumble",
+        "val": "The Pentagon"
+      },
+      {
+        "key": "FUBAR",
+        "val": "Fucked up beyond all recognition"
+      }
+    ],
+    "G": [
+      {
+        "key": "Gabra",
+        "val": "Confused"
+      },
+      {
+        "key": "Ganked",
+        "val": "Stolen"
+      },
+      {
+        "key": "G.I",
+        "val": "Government Issue"
+      },
+      {
+        "key": "Gone Elvis",
+        "val": "Missing in action"
+      }
+    ],
+    "H": [
+      {
+        "key": "Hawk",
+        "val": "Extreme cold weather"
+      },
+      {
+        "key": "Head Shed",
+        "val": "Headquarters"
+      },
+      {
+        "key": "Hun",
+        "val": "F-100 fighter"
+      },
+      {
+        "key": "HUA",
+        "val": "Heard Understood Acknowledged"
+      }
+    ]
+  }
+}

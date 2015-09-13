@@ -32,8 +32,8 @@
             "key" : "Good Evening"
          },
          {
-            "val" : "Es tut mir leid",
-            "key" : "I'm sorry"
+            "val" : "Es tut mir leid.",
+            "key" : "I'm sorry."
          },
          {
             "val" : "Danke",
@@ -95,7 +95,7 @@
          },
          {
             "val" : "Können Sie das bitte aufschreiben?",
-            "key" : "Can you write that down?"
+            "key" : "Can you write that down, please?"
          },
          {
             "val" : "Rufen Sie einen Krankenwagen!",
@@ -121,7 +121,7 @@
          },
          {
             "val" : "Mir geht es gut, danke!",
-            "key" : "I'm fine thanks!"
+            "key" : "I'm fine, thanks!"
          },
          {
             "val" : "Wie geht's?",
@@ -136,7 +136,7 @@
             "key" : "Welcome"
          },
          {
-            "val" : "Wie heisst du?",
+            "val" : "Wie heißt du?",
             "key" : "What's your name?"
          }
       ],
@@ -224,7 +224,7 @@
             "key" : "A glass of water please."
          },
          {
-            "val" : "Einen Tisch für zwei bitte!",
+            "val" : "Einen Tisch für zwei, bitte!",
             "key" : "A table for two please!"
          },
          {
