@@ -5,7 +5,7 @@ use DDG::Goodie;
 use List::MoreUtils 'any';
 use YAML::XS qw(Load);
 
-triggers startend => Load(scalar share('triggers.txt')->slurp);
+triggers any => 'paleo', 'paleo friendly', 'paleo diet', 'paleo friendly?', 'paleo?';
 
 zci answer_type => "paleo_ingredient_check";
 zci is_cached   => 1;
@@ -21,58 +21,26 @@ attribution github => ["murz", "Mike Murray"];
 attribution github => ["javathunderman", "Thomas Denizou"];
 attribution twitter => ["javathunderman", "Thomas Denizou"];
 
-my @safe_keywords = Load(scalar share ('safe.txt')->slurp);
-my @unsafe_keywords = Load(scalar share ('unsafe.txt')->slurp);
-
+my $safeornot = Load(scalar share('safeornot.yml')->slurp);
 handle remainder => sub {
+my ($query,$ingredient,$safe); #Define vars
 
-    my $item = lc($_);
+    s/^paleo friendly (diet)?//g; # strip common words
+    $query = $_;
 
-    # Remove any preceding "is" or "are" text from the query.
-    $item =~ s/^(is|are)[\W]+//;
 
-    my $is_plural = substr($item, -1) eq "s";
-    my($result);
+return unless $ingredient;
+$safe= $safeornot->{$ingredient}
+return unless $safe;
+if ($safe eq "0") {$safe = $ingredient." is safe";}
+else if ($safe eq "1") {$safe= $ingredient."is not safe";}
+return $ingredient . " is $safe",
+      structured_answer => {
+        input     => [$ingredient],
+        operation => 'paleo',
+        result    => $safe
+      };
 
-    if (any {/$item/} @safe_keywords) {
-        # If we know the item is safe, append the appropriate positive result.
-        if ($is_plural) {
-            $result = "are";
-        } else {
-            $result = "is";
-        }
-    } elsif (any {/$item/} @unsafe_keywords) {
-        # If we know the item is unsafe, append the appropriate negative result.
-        if ($is_plural) {
-            $result = "are not";
-        } else {
-            $result = "is not";
-        }
-    } elsif (!$is_plural) {
-        # If nothing was found and the query was not plural, try it pluralized.
-        if (any {/$item."s"/} @safe_keywords) {
-            $result = "is";
-        } elsif (any {/$item."s"/} @unsafe_keywords) {
-            $result = "is not";
-        }
-    } elsif ($is_plural) {
-        # If nothing was found and the query was plural, try it depluralized.
-        my $depluralized = substr($item, 0, -1);
-        if (any {/$depluralized/} @safe_keywords) {
-            $result = "are";
-        } elsif (any {/$depluralized/} @unsafe_keywords) {
-            $result = "are not";
-        }
-    }
-    
-    return unless $result;
-    my $plaintext = ucfirst($item) . " $result allowed on the paleo diet.";
-    return $plaintext,
-    structured_answer => {
-    input     => "Is $item paleo-diet friendly", # or just the original query
-    operation => "",
-    result    => $plaintext, # this could possibly be shortened to a simple "Yes" or "No"
-};
 };
 
 1;
