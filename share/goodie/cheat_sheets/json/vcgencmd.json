@@ -7,7 +7,7 @@
         "sourceUrl": "http://elinux.org/RPI_vcgencmd_usage"
     },
     "aliases": [
-        "vcgencmd", "raspberry pi temperature", "raspberry pi voltage"
+        "vcgencmd"
     ],
     "template_type": "terminal",
     "section_order": [
