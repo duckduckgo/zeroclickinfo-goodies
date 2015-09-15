@@ -1,17 +1,15 @@
 {
-    "id": "kmplayer_cheat_sheet", 
-    "name": "K-Multimedia Player",
-    "description": "Multimedia Player ", 
-    "metadata": { 
-        "sourceName": "KmplayerCheatSheet"
+    "id": "kmplayer_cheat_sheet",
+    "description": "Multimedia Player",
+    "metadata": {
+        "sourceName": "KB Mode",
+        "sourceURL": "http://kbmode.com/windows/kmplayer-keyboard-shortcuts/"
     },
-    
     "aliases": [
-        "kmplayer, k-multimedia player , kmplayer shortkeys , kmplayer shortcuts"
+        "k-multimedia player"
     ],
-    
    "template_type": "keyboard",
-    "section_order": [  
+    "section_order": [
         "Open",
         "Album",
         "Screen Controls",
@@ -29,7 +27,7 @@
     "sections": {
         "Exit": [
             {
-                "key": "[Alt] [F4]", 
+                "key": "[Alt] [F4]",
                 "val": "Exit Kmplayer"
             }
         ],
@@ -56,12 +54,12 @@
                 "key": "F2",
                 "val": "Help"
             }
-            
+
         ],
         "Capture": [
             {
                 "key": "[Ctrl] [Alt] [S] ",
-                "val": "Make Storyboard"               
+                "val": "Make Storyboard"
             },
             {
                 "key": "[Alt] [A]",
@@ -70,7 +68,7 @@
             {
                 "key": "[Alt] [C]",
                 "val": "Video Capture"
-            }, 
+            },
             {
                 "key": "[Ctrl] [E] ",
                 "val": "Frame : Orginal"
@@ -84,7 +82,7 @@
                 "val": "Frame Extract"
             }
         ],
-        
+
         "Audio": [
             {
                 "key": "Down",
@@ -101,7 +99,7 @@
             {
                 "key": "[Shift] [PgDn]",
                 "val": "PreAmp: Decrease"
-            }, 
+            },
             {
                 "key": "[Shift] [PgUp]",
                 "val": "PreAmp: Increase"
@@ -113,7 +111,7 @@
             {
                 "key": "[Shift] [F2]",
                 "val": "Normalizer"
-            }, 
+            },
             {
                 "key": "[Shift] [F3]",
                 "val": "True Bass"
@@ -121,7 +119,7 @@
             {
                 "key": "[Shift] [F4]",
                 "val": "Treble Enhance"
-            }, 
+            },
             {
                 "key": "[Shift] [F5]",
                 "val": "Remove Left Channel"
@@ -133,7 +131,7 @@
             {
                 "key": "[Shift] [F7]",
                 "val": "Swap Channels"
-            }, 
+            },
             {
                 "key": "[Shift] [F8]",
                 "val": "Downmix to Mono"
@@ -155,39 +153,39 @@
             {
                 "key": "[Alt] [H]",
                 "val": "Post Processing"
-            }, 
+            },
             {
                 "key": "[Alt] [S]",
                 "val": "Sharpen"
-            }, 
+            },
             {
                 "key": "[Alt] [W]",
                 "val": "aWarpSharp"
-            }, 
+            },
             {
                 "key": "[Alt] [B]",
                 "val": "Soften (Blur)"
-            }, 
+            },
             {
                 "key": "[Alt] [N]",
                 "val": "Gradual Denoise"
-            }, 
+            },
             {
                 "key": "[Alt] [V]",
                 "val": "Denoise 3D"
-            }, 
+            },
             {
                 "key": "[Alt] [Z]",
                 "val": "Level Control"
-            }, 
+            },
             {
                 "key": "[Alt] [D]",
                 "val": "Dscaler Filters"
-            }, 
+            },
             {
                 "key": "[Alt] [F]",
                 "val": "Super Speed Mode"
-            }, 
+            },
             {
                 "key": "[Alt] [Ctrl] [F]",
                 "val": "High Speed Mode"
@@ -199,47 +197,47 @@
                 "val": "Motion Blur"
             },
             {
-                "key": " [Ctrl] [F2]",
+                "key": "[Ctrl] [F2]",
                 "val": "Soften"
             },
             {
-                "key": " [Ctrl] [F3]",
+                "key": "[Ctrl] [F3]",
                 "val": "Sharpen"
             },
             {
-                "key": " [Ctrl] [F4]",
+                "key": "[Ctrl] [F4]",
                 "val": "Media Vertical Filter"
             },
             {
-                "key": " [Ctrl] [F5]",
+                "key": "[Ctrl] [F5]",
                 "val": "Media Horizontal Filter"
             },
             {
-                "key": " [Ctrl] [F6]",
+                "key": "[Ctrl] [F6]",
                 "val": "Mean Y filter"
             },
             {
-                "key": " [Ctrl] [F7]",
+                "key": "[Ctrl] [F7]",
                 "val": "Mean UV filter"
             },
             {
-                "key": " [Ctrl] [F8]",
+                "key": "[Ctrl] [F8]",
                 "val": "Grayscale"
             },
             {
-                "key": " [Ctrl] [F9]",
+                "key": "[Ctrl] [F9]",
                 "val": "Auto Level Control"
             },
             {
-                "key": " [Ctrl] [F10]",
+                "key": "[Ctrl] [F10]",
                 "val": "Mirror Image"
             },
             {
-                "key": " [Ctrl] [F11]",
+                "key": "[Ctrl] [F11]",
                 "val": "Flip input picture"
             },
             {
-                "key": " [Ctrl] [F12]",
+                "key": "[Ctrl] [F12]",
                 "val": "Flip Output Picture"
             }
         ],
@@ -285,7 +283,7 @@
             {
                 "key": "[Shift] [F]",
                 "val": "Frame Step Back"
-            }, 
+            },
             {
                 "key": "Page up",
                 "val": "Previous"
@@ -320,7 +318,6 @@
                 "key": "[Alt] [2]",
                 "val": "Normal Size"
             },
-         
             {
                 "key": "[Alt] [3]",
                 "val": "One half size"
@@ -357,41 +354,41 @@
             }
         ],
         "Open": [
-         
+
             {
                 "key": "[Ctrl] [O]",
                 "val": "Open"
             },
             {
-                "key": " [Ctrl] [U]",
+                "key": "[Ctrl] [U]",
                 "val": "Open URL"
             },
             {
-                "key": " [Ctrl] [F]",
+                "key": "[Ctrl] [F]",
                 "val": "Open Folder"
             },
             {
-                "key": " [Ctrl] [J]",
+                "key": "[Ctrl] [J]",
                 "val": "Open File Navigator"
             },
             {
-                "key": " [Ctrl] [R]",
+                "key": "[Ctrl] [R]",
                 "val": "Open Recent File"
             },
             {
-                "key": " [Ctrl] [P]",
+                "key": "[Ctrl] [P]",
                 "val": "Re Open current file"
             },
             {
-                "key": " [Ctrl] [D]",
+                "key": "[Ctrl] [D]",
                 "val": "Open DVD"
             },
             {
-                "key": " [Ctrl] [V]",
+                "key": "[Ctrl] [V]",
                 "val": "Open DVD File"
             },
             {
-                "key": " [Ctrl] [K]",
+                "key": "[Ctrl] [K]",
                 "val": "Open Video CD"
             }
         ]
