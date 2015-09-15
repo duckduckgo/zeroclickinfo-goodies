@@ -9,7 +9,8 @@ use Marpa::R2;
 
 # Regexp triggers are used to find cases where the logical symbol
 # for 'not' is at the beginning of the query (e.g. the case '¬1')
-triggers query_raw => qr/.*\s+(and|or|xor|⊕|∧|∨)\s+.*/;
+triggers query_raw => qr/.*\s+(and|or|xor)\s+.*/;
+triggers query_raw => qr/.*\s*(⊕|∧|∨)\s*.*/;
 triggers query_raw => qr/not\s+.*/;
 triggers query_raw => qr/¬.*/;
 
@@ -19,7 +20,8 @@ zci answer_type => "binary_logic";
 attribution
     github => ['https://github.com/MithrandirAgain', 'MithrandirAgain'],
     github => ['https://github.com/bpaschen', 'Bjoern Paschen'],
-    twitter => ['https://twitter.com/Prypjat', 'Bjoern Paschen'];
+    twitter => ['https://twitter.com/Prypjat', 'Bjoern Paschen'],
+    github => ['https://github.com/Sloff', 'Sloff'];
 
 primary_example_queries '4 xor 5', '3 and 2', '1 or 1234';
 secondary_example_queries
@@ -97,35 +99,61 @@ sub BinaryLogic_Actions::do_not {
 }
 
 handle query_raw => sub {
+    my $input = $_;
+
+    my $testError = $input;
+    $testError =~ s/(?:0x|0b|[\d\s]|and|or|xor|not|\(|\)|⊕|∧|∨|¬)//ig;
+    return if length $testError != 0;
+
     my $grammar = Marpa::R2::Scanless::G->new({ source => \$rules });
     my $recce = Marpa::R2::Scanless::R->new({
         grammar => $grammar,
         semantics_package => 'BinaryLogic_Actions'
     });
 
-    my $input = $_;
-
     # Substitute the unicode characters. The parser does not seem to
     # like unicode.
-    $input =~ s/⊕/ xor /;
-    $input =~ s/∧/ and /;
-    $input =~ s/∨/ or /;
-    $input =~ s/¬/ not /;
+    $input =~ s/\s?⊕\s?/ xor /;
+    $input =~ s/\s?∧\s?/ and /;
+    $input =~ s/\s?∨\s?/ or /;
+    $input =~ s/¬\s?/not /;
+
+    my $subtitle = "Bitwise Operation: ".uc($input);
+    my @numbers = $subtitle =~ /\b((?:0x|0b)?[\da-f]+)\b/gi;
 
     # using eval to catch possible errors with $@
     eval { $recce->read( \$input ) };
-
     return if ( $@ );
 
     my $value_ref = $recce->value();
-
     return if not defined $value_ref;
+    my $text_output = "${$value_ref}";
 
-    my $text_output = ${$value_ref};
-    my $html_output = "<div>Result: <b>" . ${$value_ref} . "</b></div>";
-    my $heading = "Binary Logic";
+    my $numInBin;
+    foreach my $number (@numbers) {
+        if ($number =~ /^0x/i) {
+            $numInBin = sprintf "%b", hex($number);
+        } elsif ($number =~ /^0b/i) {
+            $numInBin = $number;
+            $numInBin =~ s/^0b//i;
+        } else {
+            $numInBin = sprintf "%b", $number;
+        }
+        $subtitle =~ s/\b$number\b/$numInBin/g;
+    }
 
-    return answer => $text_output, html => $html_output, heading => $heading;
+    return $text_output, structured_answer => {
+        id => 'binary_logic',
+        name => 'Answer',
+        data => {
+            title => $text_output,
+            subtitle => $subtitle
+        },
+        templates => {
+            group => 'text',
+            moreAt => 0
+        }
+    }
 };
 
 1;

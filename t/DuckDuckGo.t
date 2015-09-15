@@ -61,11 +61,11 @@ my @shorturl_result = (
         result    => "DuckDuckGo's short URL: <a href='http://ddg.gg/'>http://ddg.gg/</a>."
     });
 my @zci_result = (
-    "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results.",
+    "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful Instant Answers above traditional results.",
     structured_answer => {
         input     => [],
         operation => 'DuckDuckGo info',
-        result => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful instant answers above traditional results."
+        result => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful Instant Answers above traditional results."
     });
 
 ddg_goodie_test(
