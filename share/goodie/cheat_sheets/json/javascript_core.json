@@ -1,15 +1,15 @@
 {
     "id": "javascript_core_cheat_sheet",
     "name": "JavaScript Core Methods",
-    "description": "Cheat sheet containing basic JavaScript methods",
+    "description": "Explanation of basic JavaScript methods",
     "metadata": {
         "sourceName": "OverAPI",
         "sourceUrl": "http://overapi.com/javascript/"
     },
     "aliases": [
-        "js", "java script", "javascript", "JavaScript", "Javascript" 
+        "js", "java script" 
     ],
-    "template_type": "terminal",
+    "template_type": "code",
     "section_order": [
         "Array Methods", 
         "String Methods", 
