@@ -6,6 +6,12 @@
         "sourceName": "WoTC",
         "sourceUrl": "http://archive.wizards.com/Magic/tcg/article.aspx?x=magic/rules"
     },
+    "template_type": "reference",
+    "aliases" [
+        "mtg turn structure",
+        "magic the gathering phases",
+        "magic the gathering turn structure,
+    ]
     "section_order": [
         "Beginning Phase",
         "Precombat Main Phase",
@@ -13,7 +19,6 @@
         "Postcombat Main Phase",
         "Ending Phase"
     ],
-    "template_type": "reference",
     "sections": {
         "Beginning Phase": [
             {
