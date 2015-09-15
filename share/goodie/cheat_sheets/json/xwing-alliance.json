@@ -1,19 +1,13 @@
 {
     "id": "xwing_alliance_cheat_sheet",
     "name": "X-Wing Alliance Shortcuts",
-    "description": "Keyboard commands for Starwars X-Wing Alliance simulation game",
+    "description": "Keyboard commands for Star Wars X-Wing Alliance simulation game",
     "metadata": {
         "sourceName": "Darksaber's X-Wing Station",
         "sourceUrl": "http://www.darksaber.xwaupgrade.com/archive/files/X-Wing_Alliance_Reference_Card_Printable.pdf"
     },
     "aliases": [
-        "xwing",
-        "x wing",
-        "x-wing",
-        "xwing alliance",
-        "x wing alliance",
-        "x-wing alliance",
-        "xwa"
+        "x-wing alliance"
     ],
     "template_type": "keyboard",
     "section_order": ["Targeting", "Energy", "Propulsion", "Weapons & Shields", "Turret & Dock", "View", "Communications",  "Other"],
