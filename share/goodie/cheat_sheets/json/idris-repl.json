@@ -8,14 +8,14 @@
     },
     "template_type": "terminal",
     "section_order": [
-        "Commands available from the prompt",
-        "Commands for documentation and searching",
-        "Commands for changing settings",
-        "Commands for displaying information",
-        "Commands for advanced usage"
+        "From the Prompt",
+        "Documentation and Searching",
+        "Changing Settings",
+        "Displaying Information",
+        "Advanced Usage"
     ],
     "sections": {
-        "Commands available from the prompt": [
+        "From the Prompt": [
             {
                 "key": "<expr>",
                 "val": "Evaluate an expression."
@@ -85,7 +85,7 @@
                 "val": "Remove the listed repl definitions, or all repl definitions if no names given"
             }
         ],
-        "Commands for documentation and searching": [
+        "Documentation and Searching": [
             {
                 "key": ":doc <name>",
                 "val": "Show internal documentation"
@@ -107,7 +107,7 @@
                 "val": "List the contents of some namespace"
             }
         ],
-        "Commands for displaying information": [
+        "Displaying Information": [
             {
                 "key": ":total <name>",
                 "val": "Check the totality of a name"
@@ -137,7 +137,7 @@
                 "val": "Show available proofs"
             }
         ],
-        "Commands for advanced usage": [
+        "Advanced Usage": [
             {
                 "key": ":p, :prove <hole>",
                 "val": "Prove a metavariable"
@@ -167,7 +167,7 @@
                 "val": "List dynamically loaded C libraries"
             }
         ],
-        "Commands for changing settings": [
+        "Changing Settings": [
             {
                 "key": ":set <option>",
                 "val": "Set an option (errorcontext, showimplicits)"
