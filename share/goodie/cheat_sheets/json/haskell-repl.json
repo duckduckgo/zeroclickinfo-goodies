@@ -1,12 +1,15 @@
 {
     "id": "ghci_repl_cheat_sheet",
-    "name": "GHCi Cheatsheet",
-    "description": "A cheatsheet for ghci.",
+    "name": "GHCi",
+    "description": "Glasgow Haskell Compiler (GHC) interactive environment, where Haskell expressions can be interactively evaluated and programs can be interpreted",
     "metadata": {
         "sourceName": "Haskell Website",
         "sourceUrl": "https://www.haskell.org"
     },
-
+    "aliases": [
+        "ghci"
+    ],
+    "template_type": "terminal",
     "section_order": [
         "Commands available from the prompt",
         "Commands for debugging",
