@@ -1,0 +1,141 @@
+{
+    "id": "chrome_cheat_sheet", 
+
+    "name": "Chrome",
+
+    "description": "Web Browser by Google", 
+
+    "metadata": { 
+        "sourceName": "Chrome Help",
+        "sourceUrl": "https://support.google.com/chrome/answer/157179?hl=en"
+    },
+    
+    "aliases": [
+        "google chrome"
+    ],
+    
+    "template_type": "keyboard",
+
+    "section_order": [  
+        "Tab and Window",
+        "Chrome Features",
+        "Webpage",
+        "Text"
+    ],
+
+    "sections": {
+        "Tab and Window": [
+            {
+                "key": "[Ctrl] [N]", 
+                "val": "Open new window"
+            },
+            {
+                "key": "[Ctrl] [Shift] [N]",
+                "val": "Open new Incognito window"
+            },
+            {
+                "key": "[Ctrl] [T]",
+                "val": "Open new tab"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "Close current tab"
+            },
+            {
+                "key": "[Ctrl] [Shift] [T]",
+                "val": "Re-open recently closed tab"
+            },
+            {
+                "key": "[Ctrl] [Tab]",
+                "val": "Navigate between tabs"
+            }
+        ],
+        "Chrome Features": [
+            {
+                "key": "[Alt] [F]",
+                "val": "Open Chrome menu"
+            },
+            {
+                "key": "[Ctrl] [Shift] [B]",
+                "val": "Toggle the bookmarks bar"
+            },
+             {
+                "key": "[Ctrl] [H]",
+                "val": "Open history page"
+            },
+             {
+                "key": "[Ctrl] [J]",
+                "val": "Open downloads page"
+            },
+             {
+                "key": "[Ctrl] [Shift] [M]",
+                "val": "Switch between users"
+            },
+             {
+                "key": "[Ctrl] [Shift] [J]",
+                "val": "Open developer Tools"
+            },
+            {
+                "key": "[Shift] [Esc]",
+                "val": "Open Chrome task manager"
+            }
+        ],
+        "Webpage": [
+            {
+                "key": "[Ctrl] [P]",
+                "val": "Print current page"
+            },
+            {
+                "key": "[Ctrl] [F]",
+                "val": "Search current page"
+            },
+             {
+                "key": "[Ctrl] [D]",
+                "val": "Bookmark current page"
+            },
+             {
+                "key": "[Ctrl] [R]",
+                "val": "Reload current page"
+            },
+             {
+                "key": "[Ctrl] [F5]",
+                "val": "Ignore cache, reload current page"
+            },
+             {
+                "key": "Esc",
+                "val": "Stop loading current page"
+            },
+            {
+                "key": "[Ctrl] [U]",
+                "val": "View source of current page"
+            }
+            ,
+            {
+                "key": "F11",
+                "val": "Toggle full screen mode"
+            }
+        ],
+        "Text": [
+            {
+                "key": "[Ctrl] [C]",
+                "val": "Copy highlighted content"
+            },
+            {
+                "key": "[Ctrl] [V]",
+                "val": "Paste copied content"
+            },
+             {
+                "key": "[Ctrl] [Shift] [V]",
+                "val": "Paste without formatting"
+            },
+             {
+                "key": "[Ctrl] [X]",
+                "val": "Copy highlighted content and delete from current place"
+            },
+             {
+                "key": "[Shift] [Delete]",
+                "val": "Delete auto-complete entry from Chrome's history"
+            }
+        ]
+    }
+}

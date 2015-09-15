@@ -4,52 +4,107 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use Test::MockTime qw( :all );
 
 zci answer_type => "week";
 zci is_cached => 1;
 
-# Output verified with UNIX cal program
+my @current_week = (
+    qr/We are currently in the \d{1,2}\w{2} week of \d{4}./,
+    structured_answer => {
+        input     => [],
+        operation => 'Assuming the week starts on Monday',
+        result    => qr/We are currently in the \d{1,2}\w{2} week of \d{4}./,
+    });
+
 
 ddg_goodie_test(
-        [qw(
-                DDG::Goodie::Week
-        )],
+    ['DDG::Goodie::Week'],
 
-        "what week is this?" => test_zci(
-            qr/We are in currently in the \d+\w+ week of \d+\./,
-            html => qr:We are in currently in the \d+<sup>\w+</sup> week of \d+\.:),
+    # Current Week Queries
+    'what is the current week of the year?' => test_zci(@current_week),
+    "what week is this?" => test_zci(@current_week),
+    "what is the current week" => test_zci(@current_week),
+    "what's   the current week? " => test_zci(@current_week),
+    "whats the current week of the year" => test_zci(@current_week),
 
-        "what is the current week" => test_zci(
-            qr/We are in currently in the \d+\w+ week of \d+\./,
-            html => qr:We are in currently in the \d+<sup>\w+</sup> week of \d+\.:),
 
-        "what's   the current week? " => test_zci(
-            qr/We are in currently in the \d+\w+ week of \d+\./,
-            html => qr:We are in currently in the \d+<sup>\w+</sup> week of \d+\.:),
+    # Nth Week Queries
+    "what was the 5th week of this year" => test_zci(
+        qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
+        structured_answer => {
+            input     => [],
+            operation => "Assuming the week starts on Monday",
+            result    => qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
+        }
+    ),
 
-        "whats the current week of the year" => test_zci(
-            qr/We are in currently in the \d+\w+ week of \d+\./,
-            html => qr:We are in currently in the \d+<sup>\w+</sup> week of \d+\.:),
+    "what was the 43rd week of 1984" => test_zci(
+        "The 43rd week of 1984 began on October 22nd.",
+        structured_answer => {
+            input     => [],
+            operation => 'Assuming the week starts on Monday',
+            result    => "The 43rd week of 1984 began on October 22nd.",
+        }
+    ),
 
-        "what was the 5th week of this year" => test_zci(
-            qr/The \d+\w+ week of \d+ began on January \d+\w+\./,
-            html => qr:The \d+<sup>\w+</sup> week of \d+ began on January \d+<sup>\w+</sup>\.:),
+    "what was the 8th week of 1956" => test_zci(
+        "The 8th week of 1956 began on February 20th.",
+        structured_answer => {
+            input     => [],
+            operation => 'Assuming the week starts on Monday',
+            result    => "The 8th week of 1956 began on February 20th.",
+        }
+    ),
 
-        "what was the 43rd week of 1984" => test_zci(
-            "The 43rd week of 1984 began on October 22nd.",
-            html => "The 43<sup>rd</sup> week of 1984 began on October 22<sup>nd</sup>."),
+    "what was the 21st week of 1987" => test_zci(
+        "The 21st week of 1987 began on May 18th.",
+        structured_answer => {
+            input     => [],
+            operation => 'Assuming the week starts on Monday',
+            result    => "The 21st week of 1987 began on May 18th.",
+        }
+    ),
 
-        "what was the 8th week of 1956" => test_zci(
-            "The 8th week of 1956 began on February 20th.",
-            html => "The 8<sup>th</sup> week of 1956 began on February 20<sup>th</sup>."),
-
-        "what was the 21st week of 1987" => test_zci(
-            "The 21st week of 1987 began on May 18th.",
-            html => "The 21<sup>st</sup> week of 1987 began on May 18<sup>th</sup>."),
-        'what was the 5th week of 1944' => test_zci(
-            'The 5th week of 1944 began on January 31st.',
-            html => 'The 5<sup>th</sup> week of 1944 began on January 31<sup>st</sup>.'
-        ),
+    'what was the 5th week of 1944' => test_zci(
+        "The 5th week of 1944 began on January 31st.",
+        structured_answer => {
+            input     => [],
+            operation => 'Assuming the week starts on Monday',
+            result    => "The 5th week of 1944 began on January 31st.",
+        }
+    ),
+    'what was the 5th week of 0000' => undef,
+    "what was the 0 week of 2011" => undef,
+    "what was the 99th week of 2011" => undef,
 );
+
+set_fixed_time('2014-01-01T00:00:00');
+ddg_goodie_test(
+    ['DDG::Goodie::Week'],
+    'when is the 8th week of 2015' => test_zci(
+        "The 8th week of 2015 begins on February 16th.",
+        structured_answer => {
+            input     => [],
+            operation => 'Assuming the week starts on Monday',
+            result    => "The 8th week of 2015 begins on February 16th.",
+        }
+    )
+);
+restore_time();
+
+set_fixed_time('2015-07-31T00:00:00');
+ddg_goodie_test(
+    ['DDG::Goodie::Week'],
+    'when is the 8th week of 2015' => test_zci(
+        "The 8th week of 2015 began on February 16th.",
+        structured_answer => {
+            input     => [],
+            operation => 'Assuming the week starts on Monday',
+            result    => "The 8th week of 2015 began on February 16th.",
+        }
+    )
+);
+restore_time();
 
 done_testing;
