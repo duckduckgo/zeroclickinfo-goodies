@@ -14,18 +14,18 @@
       "Getting Help",
       "Travelling",
       "Etiquette",
-      "Going out for Dinner"
+      "Going out for dinner"
    ],
    "description" : "Basic German words and phrases",
    "sections" : {
       "Etiquette" : [
          {
             "val" : "Guten Morgen",
-            "key" : "Good Morning"
+            "key" : "Good morning"
          },
          {
             "val" : "Guten Abend",
-            "key" : "Good Evening"
+            "key" : "Good evening"
          },
          {
             "val" : "Gute Nacht",
@@ -178,7 +178,7 @@
             "key" : "How can I get a taxi?"
          }
       ],
-      "Going out for Dinner" : [
+      "Going out for dinner" : [
          {
             "val" : "Haben Sie ein vegetarisches Gericht?",
             "key" : "Do you have vegetarian dishes?"
