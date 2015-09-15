@@ -41,6 +41,7 @@ my $month_regex         = qr#$full_month|$short_month#;
 my $time_24h            = qr#(?:(?:[0-1][0-9])|(?:2[0-3]))[:]?[0-5][0-9][:]?[0-5][0-9]#i;
 my $time_12h            = qr#(?:(?:0[1-9])|(?:1[012])):[0-5][0-9]:[0-5][0-9]\s?(?:am|pm)#i;
 my $date_number         = qr#[0-3]?[0-9]#;
+my $full_year           = qr#[0-9]{4}#;
 my $relative_dates      = qr#
     now | today | tomorrow | yesterday |
     (?:(?:current|previous|next)\sday) |
@@ -53,8 +54,8 @@ my $relative_dates      = qr#
 # DMY: 27/11/2014 with a variety of delimiters
 # MDY: 11/27/2014 -- fundamentally non-sensical date format, for americans
 my $date_delim              = qr#[\.\\/\,_-]#;
-my $ambiguous_dates         = qr#(?:$date_number)$date_delim(?:$date_number)$date_delim(?:[0-9]{4})#i;
-my $ambiguous_dates_matches = qr#^(?<m>$date_number)$date_delim(?<d>$date_number)$date_delim(?<y>[0-9]{4})$#i;
+my $ambiguous_dates         = qr#(?:$date_number)$date_delim(?:$date_number)$date_delim(?:$full_year)#i;
+my $ambiguous_dates_matches = qr#^(?<m>$date_number)$date_delim(?<d>$date_number)$date_delim(?<y>$full_year)$#i;
 
 # like: 1st 2nd 3rd 4-20,24-30th 21st 22nd 23rd 31st
 my $number_suffixes = qr#(?:st|nd|rd|th)#i;
@@ -243,14 +244,14 @@ my %tz_offsets = (
 my $tz_strings = join('|', keys %tz_offsets);
 my $tz_suffixes = qr#(?:[+-][0-9]{4})|$tz_strings#i;
 
-my $date_standard = qr#$short_day_of_week $short_month\s{1,2}$date_number $time_24h $tz_suffixes [0-9]{4}#i;
-my $date_standard_matches = qr#$short_day_of_week (?<m>$short_month)\s{1,2}(?<d>$date_number) (?<t>$time_24h) (?<tz>$tz_suffixes) (?<y>[0-9]{4})#i;
+my $date_standard = qr#$short_day_of_week $short_month\s{1,2}$date_number $time_24h $tz_suffixes $full_year#i;
+my $date_standard_matches = qr#$short_day_of_week (?<m>$short_month)\s{1,2}(?<d>$date_number) (?<t>$time_24h) (?<tz>$tz_suffixes) (?<y>$full_year)#i;
 
 # formats parsed by vague datestring, without colouring
 # the context of the code using it
 my $descriptive_datestring = qr{
     (?:(?:next|last)\s(?:$month_regex)) |                        # next June, last jan
-    (?:(?:$month_regex)\s(?:[0-9]{4})) |                         # Jan 2014, August 2000
+    (?:(?:$month_regex)\s(?:$full_year)) |                         # Jan 2014, August 2000
     (?:(?:$date_number)\s?$number_suffixes?\s(?:$month_regex)) | # 18th Jan, 01 October
     (?:(?:$month_regex)\s(?:$date_number)\s?$number_suffixes?) | # Dec 25, July 4th
     (?:$month_regex)                                           | # February, Aug
@@ -260,7 +261,7 @@ my $descriptive_datestring = qr{
 # Used for parse_descriptive_datestring_to_date
 my $descriptive_datestring_matches = qr#
     (?:(?<q>next|last)\s(?<m>$month_regex)) |
-    (?:(?<m>$month_regex)\s(?<y>[0-9]{4})) |
+    (?:(?<m>$month_regex)\s(?<y>$full_year)) |
     (?:(?<d>$date_number)\s?$number_suffixes?\s(?<m>$month_regex)) |
     (?:(?<m>$month_regex)\s(?<d>$date_number)\s?$number_suffixes?) |
     (?<m>$month_regex) |
@@ -270,6 +271,9 @@ my $descriptive_datestring_matches = qr#
 my $formatted_datestring = build_datestring_regex();
 
 # Accessors for useful regexes
+sub full_year_regex {
+	return $full_year;
+}
 sub full_month_regex {
     return $full_month;
 }
@@ -304,35 +308,42 @@ sub formatted_datestring_regex {
     return $formatted_datestring;
 }
 
+sub is_valid_year {
+	my ($year) = @_;
+	return ($year =~ /^[0-9]{1,4}$/)
+		&& (1*$year > 0)
+		&& (1*$year < 10000);
+}
+
 # Called once to build $formatted_datestring
 sub build_datestring_regex {
     my @regexes = ();
 
     ## unambigous and awesome date formats:
     # ISO8601: 2014-11-27 (with a concession to single-digit month and day numbers)
-    push @regexes, qr#[0-9]{4}-?[0-1]?[0-9]-?$date_number(?:[ T]$time_24h)?(?: ?$tz_suffixes)?#i;
+    push @regexes, qr#$full_year-?[0-1]?[0-9]-?$date_number(?:[ T]$time_24h)?(?: ?$tz_suffixes)?#i;
 
     # HTTP: Sat, 09 Aug 2014 18:20:00
-    push @regexes, qr#$short_day_of_week, [0-9]{2} $short_month [0-9]{4} $time_24h?#i;
+    push @regexes, qr#$short_day_of_week, [0-9]{2} $short_month $full_year $time_24h?#i;
 
     # RFC850 08-Feb-94 14:15:29 GMT
-    push @regexes, qr#[0-9]{2}-$short_month-(?:[0-9]{2}|[0-9]{4}) $time_24h?(?: ?$tz_suffixes)#i;
+    push @regexes, qr#[0-9]{2}-$short_month-(?:[0-9]{2}|$full_year) $time_24h?(?: ?$tz_suffixes)#i;
 
     # RFC2822 Sat, 13 Mar 2010 11:29:05 -0800
-    push @regexes, qr#$short_day_of_week, $date_number $short_month [0-9]{4} $time_24h $tz_suffixes#i;
+    push @regexes, qr#$short_day_of_week, $date_number $short_month $full_year $time_24h $tz_suffixes#i;
 
     # date(1) default format Sun Sep  7 15:57:56 EDT 2014
     push @regexes, $date_standard;
 
     # month-first date formats
-    push @regexes, qr#$date_number$date_delim$short_month$date_delim[0-9]{4}#i;
-    push @regexes, qr#$date_number$date_delim$full_month$date_delim[0-9]{4}#i;
-    push @regexes, qr#(?:$short_month|$full_month) $date_number(?: ?$number_suffixes)?[,]? [0-9]{4}#i;
+    push @regexes, qr#$date_number$date_delim$short_month$date_delim$full_year#i;
+    push @regexes, qr#$date_number$date_delim$full_month$date_delim$full_year#i;
+    push @regexes, qr#(?:$short_month|$full_month) $date_number(?: ?$number_suffixes)?[,]? $full_year#i;
 
     # day-first date formats
-    push @regexes, qr#$short_month$date_delim$date_number$date_delim[0-9]{4}#i;
-    push @regexes, qr#$full_month$date_delim$date_number$date_delim[0-9]{4}#i;
-    push @regexes, qr#$date_number[,]?(?: ?$number_suffixes)? (?:$short_month|$full_month)[,]? [0-9]{4}#i;
+    push @regexes, qr#$short_month$date_delim$date_number$date_delim$full_year#i;
+    push @regexes, qr#$full_month$date_delim$date_number$date_delim$full_year#i;
+    push @regexes, qr#$date_number[,]?(?: ?$number_suffixes)? (?:$short_month|$full_month)[,]? $full_year#i;
 
     ## Ambiguous, but potentially valid date formats
     push @regexes, $ambiguous_dates;
@@ -460,7 +471,7 @@ sub parse_descriptive_datestring_to_date {
         return parse_datestring_to_date("01 $month $year");
     } elsif (my $relative_date = $+{'r'}) {
         # relative dates, tomorrow, yesterday etc
-        my $tmp_date = $base_time;
+        my $tmp_date = DateTime->now(time_zone => _get_timezone());
         my @to_add;
         if ($relative_date =~ qr/tomorrow|(?:next day)/) {
             @to_add = (days => 1);

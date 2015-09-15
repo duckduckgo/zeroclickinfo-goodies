@@ -1,0 +1,14 @@
+<table>
+  <tbody>
+    {{#each items}}
+      <tr>
+        <td class="cheatsheet__key">
+          {{cheatsheets_codeblock key "bg-clr--platinum"}}
+        </td>
+        <td class="cheatsheet__value tx-clr--slate-light">
+          {{val}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

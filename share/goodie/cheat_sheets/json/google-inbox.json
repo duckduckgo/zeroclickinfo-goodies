@@ -1,0 +1,139 @@
+{
+    "id": "google_inbox_cheat_sheet",
+    "name": "Google Inbox",
+    "description": "Google email client",
+    "metadata": {
+        "sourceName": "Inbox Help",
+        "sourceUrl": "https://support.google.com/inbox/answer/6080523"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Everywhere",
+        "List navigation",
+        "Chat and Compose",
+        "Focused item"
+    ],
+    "sections": {
+        "Everywhere": [{
+            "key":"c",
+            "val":"Compose"
+          }, {
+            "key":"/",
+            "val":"Search"
+          }, {
+            "key":"i",
+            "val":"Go to inbox"
+          }, {
+            "key":"q",
+            "val":"Toggle chat roster"
+          }, {
+            "key":"t",
+            "val":"Create reminder"
+          }, {
+            "key":"[Shift] [x]",
+            "val":"Focus on notification"
+          }, {
+            "key":"z",
+            "val":"Undo last action"
+          }],
+        "List navigation": [{
+            "key":"[Enter] or [o]",
+            "val":"Open"
+          }, {
+            "key":"[Esc] or [u]",
+            "val":"Close"
+          }, {
+            "key":"[j] or [→]",
+            "val":"Next item"
+          }, {
+            "key":"[k] or [←]",
+            "val":"Previous item"
+          }, {
+            "key":"n",
+            "val":"Next message"
+          }, {
+            "key":"p",
+            "val":"Previous message"
+          }],
+        "Chat and Compose": [{
+            "key":"[Shift] [Esc]",
+            "val":"Focus latest chat or compose"
+          }, {
+            "key":"[Shift] [Esc]",
+            "val":"Focus main window (while in chat or compose)"
+          }, {
+            "key":"[Ctrl] [.]",
+            "val":"Advance to next chat or compose"
+          }, {
+            "key":"[Ctrl] [,]",
+            "val":"Advance to previous chat or compose"
+          }, {
+            "key":"[Ctrl] [b]",
+            "val":"Bold"
+          }, {
+            "key":"[Ctrl] [i]",
+            "val":"Italics"
+          }, {
+            "key":"[Ctrl] [u]",
+            "val":"Underline"
+          }, {
+            "key":"[Ctrl] [k]",
+            "val":"Insert link"
+          }, {
+            "key":"[Ctrl] [Shift] [7]",
+            "val":"Numbered list"
+          }, {
+            "key":"[Ctrl] [Shift] [8]",
+            "val":"Bulleted list"
+          }, {
+            "key":"[Ctrl] [Space]",
+            "val":"Remove formatting"
+          }, {
+            "key":"[Ctrl] [Enter]",
+            "val":"Send"
+          }, {
+            "key":"Esc",
+            "val":"Closes compose and deletes empty drafts"
+          }],
+        "Focused item": [{
+            "key":"[e] or [y]",
+            "val":"Mark done"
+          }, {
+            "key":"[\\]] or [\\[]",
+            "val":"Mark done and advance"
+          }, {
+            "key":"[Shift] [p]",
+            "val":"Pin"
+          }, {
+            "key":"a",
+            "val":"Reply all"
+          }, {
+            "key":"[Shift] [a]",
+            "val":"Reply all in a new window"
+          }, {
+            "key":"r",
+            "val":"Reply"
+          }, {
+            "key":"[Shift] [r]",
+            "val":"Reply in a new window"
+          }, {
+            "key":"f",
+            "val":"Forward"
+          }, {
+            "key":"#",
+            "val":"Trash"
+          }, {
+            "key":"!",
+            "val":"Report as spam"
+          }, {
+            "key":"m",
+            "val":"Mute"
+          }, {
+            "key":".",
+            "val":"Toggle move-to menu"
+          }, {
+            "key":"x",
+            "val":"Select"
+          }]
+    }
+}
