@@ -1,9 +1,9 @@
 {
-    "id": "6369",
+    "id": "cmus_cheat_sheet",
     "name": "Cmus",
     "description": "Console music player",
     "metadata": {
-        "sourceName": "Cmus manual",
+        "sourceName": "GitHub",
         "sourceUrl": "https://github.com/cmus/cmus/blob/master/Doc/cmus.txt"
     },
     "template_type": "keyboard",
@@ -112,11 +112,11 @@
         "Browser movements": [
             {
                 "val": "Activate selection",
-                "key": "<space>"
+                "key": "space"
             },
             {
                 "val": "Browser up",
-                "key": "<backspace>"
+                "key": "backspace"
             },
             {
                 "val": "Refresh files",
@@ -156,7 +156,7 @@
             },
             {
                 "val": "Activate selection",
-                "key": "<enter>"
+                "key": "enter"
             }
         ]
     }
