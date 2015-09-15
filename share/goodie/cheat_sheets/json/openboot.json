@@ -1,6 +1,6 @@
 {
     "id": "openboot_cheat_sheet",
-    "name": "OpenBoot Cheat Sheet",
+    "name": "OpenBoot",
     "description": "Quick reference of OpenBoot commands on SUN Workstations",
     "metadata": {
         "sourceName": "SUN OpenBoot Quick Reference",
@@ -10,9 +10,9 @@
         "sun boot prompt", "sun openboot"
     ],
     "template_type": "code",
-    "section_order": ["Basic commands", "Other helpful commands"],
+    "section_order": ["Basic Commands", "Other Helpful Commands"],
     "sections": {
-        "Basic commands": [{
+        "Basic Commands": [{
             "val": "Shows up the startup banner",
             "key": "banner"
         }, {
@@ -34,7 +34,7 @@
             "val": "Switches off the machine",
             "key": "power-off"
         }],
-        "Other helpful commands": [{
+        "Other Helpful Commands": [{
             "val": "Ejects the floppy",
             "key": "eject floppy"
         }, {
