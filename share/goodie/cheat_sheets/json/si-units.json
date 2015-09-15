@@ -1,16 +1,16 @@
 {
-    "id": "siunits_cheat_sheet", 
+    "id": "si_units_cheat_sheet", 
 
     "name": "SI Units",
 
     "description": "International System of Units (SI): Base/Derived quantity - Symbol - Name", 
     
     "metadata": { 
-        "sourceName": "International System of Units (SI)",
+        "sourceName": "NIST",
         "sourceUrl": "http://physics.nist.gov/cuu/Units/units.html"
     },
 
-	"aliases": [
+    "aliases": [
         "si unit", "international system of units", "si physics", "physics si", "si"
     ],
 
