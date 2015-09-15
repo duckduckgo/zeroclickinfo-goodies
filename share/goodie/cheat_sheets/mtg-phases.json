@@ -13,6 +13,7 @@
         "Postcombat Main Phase",
         "Ending Phase"
     ],
+    "template_type": "reference",
     "sections": {
         "Beginning Phase": [
             {
