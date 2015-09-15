@@ -116,6 +116,10 @@ handle remainder => sub {
             id => 'shruggie',
             name => 'Shurggie',
             description => 'Emojii for everone',
+            meta => {
+                sourceName => "Donger List",
+                sourceUrl => "http://dongerlist.com/"
+            },
             templates => {
                 group => 'list',
                 options => {

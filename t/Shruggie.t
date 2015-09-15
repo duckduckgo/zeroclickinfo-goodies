@@ -22,6 +22,10 @@ sub build_structure
                     content => 'record'
                 }
             },
+            meta => {                                                                                                                                                                  
+                sourceName => "Donger List",                                                                                                                                                  
+                sourceUrl => "http://dongerlist.com/"                                                                                                                                        
+            },   
             data => {
                 title => $string,
                 record_data => $data,
