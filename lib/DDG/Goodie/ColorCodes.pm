@@ -85,9 +85,13 @@ sub create_output {
     my @analogous_colors = @{$input{'analogous'}};
     my $complementary = uc $input{'complementary'};
 
-    $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb"."\n"
-          . "Complementary: #$complementary\n"
-          . "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
+    #greyscale colours have no hue and saturation
+    my $show_column_2 = !($input{'hsl'}->[0] eq 0 && $input{'hsl'}->[1] eq '0%');
+    
+    $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb";
+    my $column_2_text = "\n" .
+            "Complementary: #$complementary\n" .
+            "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
 
     my $comps = "<div class='cols_column'>"
               . "<a href='/?q=color%20picker%20%23$complementary' class='mini-color circle' style='background: #$complementary'>"
@@ -108,12 +112,18 @@ sub create_output {
           . "<a href='http://www.color-hex.com/color/" . $hex_for_links . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a>"
           . "<span class='separator'> | </span>"
           . "<a href='/?q=color%20picker%20%23" . $hex_for_links . "' class='tx-clr--dk2'>Picker</a></p>"
-          . "</div>"
-          . "<div class='column2 tx-clr--dk2'>"
+          . "</div>";
+          
+    my $column_2_html = "<div class='column2 tx-clr--dk2'>"
           . "<div class='complementary'>$comps</div>"
           . "<div>$analogs</div>"
           . "</div>";
-
+    
+    if ($show_column_2) {
+        $html.= $column_2_html;
+        $text.= $column_2_text;
+    }
+    
     return ($text, $html);
 }
 

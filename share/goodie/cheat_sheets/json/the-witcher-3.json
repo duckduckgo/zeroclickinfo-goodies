@@ -1,0 +1,80 @@
+{
+    "id": "the_witcher_3_cheat_sheet",
+    "name": "The Witcher 3: Wild Hunt PC Key Bindings",
+    "description": "Default key bindings for The Witcher 3",
+    "metadata": {
+        "sourceName": "The Witcher",
+        "sourceUrl": "http://www.thewitcher.com/"
+    },
+    "aliases": [
+        "witcher 3",
+        "witcher wild hunt",
+        "wild hunt"
+    ],
+    "template_type": "keyboard",
+    "section_order": ["Movement", "Combat", "Quick Access", "Menus/Panels", "Interaction/Signs", "Horse", "Swimming", "Misc/Unbound"],
+    "sections": {
+        "Movement": [
+            { "key": "W", "val": "Up" },
+            { "key": "S", "val": "Down" },
+            { "key": "A", "val": "Left" },
+            { "key": "D", "val": "Right" },
+            { "key": "Left Shift", "val": "Sprint" },
+            { "key": "Left Control", "val": "Toggle Walk/Run" },
+            { "key": "Space", "val": "Jump" }
+        ],
+        "Combat": [
+            { "key": "Z", "val": "Lock On Target" },
+            { "key": "Left Shift", "val": "Modify Attack Type" },
+            { "key": "Left Mouse Button", "val": "Fast Attack" },
+            { "key": "Right Mouse Button", "val": "Parry/Counter Attack" },
+            { "key": "Alt", "val": "Dodge" },
+            { "key": "Space", "val": "Roll" }
+        ],
+        "Interaction/Signs": [
+            { "key": "E", "val": "Interact" },
+            { "key": "Right Mouse Button", "val": "Use Witcher Senses" },
+            { "key": "Q", "val": "Cast sign" },
+            { "key": "Mouse Scroll Wheel", "val": "Toggle Between Signs" }
+        ],
+        "Horse": [
+            { "key": "X", "val": "Call Horse" },
+            { "key": "Left Shift", "val": "Gallop/Canter" },
+            { "key": "E", "val": "Dismount" },
+            { "key": "X", "val": "Stop Horse" }
+        ],
+        "Swimming": [
+            { "key": "C", "val": "Dive" },
+            { "key": "Space", "val": "Surface" }
+        ] ,
+        "Quick Access": [
+            { "key": "Tab", "val": "Quick Access Menu" },
+            { "key": "R", "val": "Consumables Slot 1" },
+            { "key": "F", "val": "Consumables Slot 2" },
+            { "key": "1", "val": "Draw Steel Sword" },
+            { "key": "2", "val": "Draw Silver Sword" },
+            { "key": "3", "val": "Select Aard" },
+            { "key": "4", "val": "Select Yrden" },
+            { "key": "5", "val": "Select Igni" },
+            { "key": "6", "val": "Select Quen" },
+            { "key": "7", "val": "Select Axii" },
+            { "key": "V", "val": "Change Objective" }
+        ],
+        "Menus/Panels": [
+            { "key": "K", "val": "Character Panel" },
+            { "key": "I", "val": "Inventory Panel" },
+            { "key": "M", "val": "Map" },
+            { "key": "Enter", "val": "Game Menu" },
+            { "key": "N", "val": "Meditation" },
+            { "key": "L", "val": "Alchemy" },
+            { "key": "O", "val": "Crafting" },
+            { "key": "B", "val": "Bestiary" },
+            { "key": "G", "val": "Glossary Panel" },
+            { "key": "H", "val": "Gwent Deck" }
+        ],
+        "Misc/Unbound": [
+            { "key": "F5", "val": "Quick Save" },
+            { "key":"none", "val":"Strong Attack" }
+        ]
+    }
+}
