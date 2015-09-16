@@ -60,7 +60,7 @@
             {
                 "key": "[Alt] [u]",
                 "val": "Move to previous directory in the history"
-            },
+            }
         ],
         "Pane operations" : [
             {
@@ -84,7 +84,7 @@
                 "val": "Jump to last item on page"
             },
             {
-                "key": "[Ctrl] [\]",
+                "key": "[Ctrl] [\\]",
                 "val": "Show directory hotlist"
             }
         ],
@@ -98,7 +98,7 @@
                 "val": "Tag/Mark dialog"
             },
             {
-                "key": "[\]",
+                "key": "[\\]",
                 "val": "Untag/Unmark dialog"
             }
         ]
