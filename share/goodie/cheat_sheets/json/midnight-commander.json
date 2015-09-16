@@ -21,11 +21,11 @@
     "sections": {
         "Movement": [
             {
-                "key": "[↑]",
+                "key": "↑",
                 "val": "Move selection bar to previous entry"
             },
             {
-                "key": "[↓]",
+                "key": "↓",
                 "val": "Move selection bar to next entry"
             },
             {
@@ -49,11 +49,11 @@
                 "val": "Switch between panels"
             },
             {
-                "key": "[←]",
+                "key": "←",
                 "val": "Move to parent directory (Lynx motion enabled)"
             },
             {
-                "key": "[→]",
+                "key": "→",
                 "val": "Move to child directory (Lynx motion enabled)"
             },
             {
@@ -109,41 +109,41 @@
         ],
         "Selecting files": [
             {
-                "key": "[Ctrl] [T] or [Insert]",
+                "key": "[Ctrl] [T] or Insert",
                 "val": "Toggle tagging/marking on selected item"
             },
             {
-                "key": "[+]",
+                "key": "+",
                 "val": "Tag/Mark dialog"
             },
             {
-                "key": "[\\\\]",
+                "key": "\\\\",
                 "val": "Untag/Unmark dialog"
             }
         ],
         "Filesystem operations": [
             {
-                "key": "[F5]",
+                "key": "F5",
                 "val": "Copy file (dir) (to location of other pane)"
             },
             {
-                "key": "[F6]",
+                "key": "F6",
                 "val": "Move file (dir) (to location of other pane) / Rename file (dir)"
             },
             {
-                "key": "[F7]",
+                "key": "F7",
                 "val": "Create new directory"
             },
             {
-                "key": "[F8]",
+                "key": "F8",
                 "val": "Delete (selected) files/directories"
             },
             {
-                "key": "[F3]",
+                "key": "F3",
                 "val": "View contents of file"
             },
             {
-                "key": "[F4]",
+                "key": "F4",
                 "val": "Edit contents of file"
             },
             {
@@ -153,19 +153,19 @@
         ],
         "Miscellanious": [
             {
-                "key": "[F10]",
+                "key": "F10",
                 "val": "Quit MC"
             },
             {
-                "key": "[F1]",
+                "key": "F1",
                 "val": "See MC help"
             },
             {
-                "key": "[F2]",
+                "key": "F2",
                 "val": "Display user menu"
             },
             {
-                "key": "[F9]",
+                "key": "F9",
                 "val": "Enable top menu"
             },
             {
