@@ -7,7 +7,7 @@
         "sourceUrl": "http://trembath.co.za/mctutorial.html"
     },
     "aliases": [ 
-        "midnight commander", "mc"
+        "midnight comander", "mc"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -15,7 +15,7 @@
         "Filesystem operations",
         "Selecting files",
         "Pane operations",
-        "Miscellanious"
+        "Miscellaneous"
 
     ],
     "sections": {
@@ -151,7 +151,7 @@
                 "val": "Refresh/rescan directory view"
             }
         ],
-        "Miscellanious": [
+        "Miscellaneous": [
             {
                 "key": "F10",
                 "val": "Quit MC"
