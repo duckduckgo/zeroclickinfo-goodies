@@ -3,8 +3,12 @@
     "name": "Midnight Commander",
     "description": "Console File Manager",
     "metadata": {
-        "sourceName": "MidnightCommanderCheatSheet"
+        "sourceName": "Midnight Commander Tutorial",
+        "sourceUrl": "http://trembath.co.za/mctutorial.html"
     },
+    "aliases": [ 
+        "midnight commander", "mc"
+    ],
     "template_type": "keyboard",
     "section_order": [
         "Movement",
@@ -95,11 +99,11 @@
                 "val": "Jump to last item on page"
             },
             {
-                "key": "[Ctrl] [\\]",
+                "key": "[Ctrl] [\\\\]",
                 "val": "Show directory hotlist"
             },
             {
-                "key": "[Ctrl] [x] ... [d]",
+                "key": "[Ctrl] [x], [d]",
                 "val": "Compare directories in panes"
             }
         ],
@@ -113,7 +117,7 @@
                 "val": "Tag/Mark dialog"
             },
             {
-                "key": "[\\]",
+                "key": "[\\\\]",
                 "val": "Untag/Unmark dialog"
             }
         ],
