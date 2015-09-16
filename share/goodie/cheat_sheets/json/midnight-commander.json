@@ -8,11 +8,99 @@
     "template_type": "keyboard",
     "section_order": [
         "Movement",
-        "File operation",
+        "File operations",
+        "Selecting files",
+        "Pane operations",
         "Commands",
         "Options"
 
     ],
     "sections": {
+        "Movement": [
+            {
+                "key": "[Up]",
+                "val": "Move selection bar to previous entry"
+            },
+            {
+                "key": "[Down]",
+                "val": "Move selection bar to next entry"
+            },
+            {
+                "key": "[PgUp] or [Alt] [v]",
+                "val": "Move selection bar one page up"
+            },
+            {
+                "key": "[PgDn] or [Ctrl] [v]",
+                "val": "Move selection bar one page down"
+            },
+            {
+                "key": "[Home] or [Alt] [<]",
+                "val": "Move selection bar to top of the panel"
+            },
+            {
+                "key": "[End] or [Alt] [>]",
+                "val": "Move selection bar to bottom of the panel"
+            },
+            {
+                "key": "[Tab] or [Ctrl] [i]",
+                "val": "Switch between panels"
+            },
+            {
+                "key": "[Left]",
+                "val": "Move to parent directory (Lynx motion enabled)"
+            },
+            {
+                "key": "[Right]",
+                "val": "Move to child directory (Lynx motion enabled)"
+            },
+            {
+                "key": "[Alt] [y]",
+                "val": "Move to next directory in the history"
+            },
+            {
+                "key": "[Alt] [u]",
+                "val": "Move to previous directory in the history"
+            },
+        ],
+        "Pane operations" : [
+            {
+                "key": "[Alt] [o]",
+                "val": "Load selected directory to other pane / Load parent directory of the selected file to other pane"
+            },
+            {
+                "key": "[Alt] [i]",
+                "val": "Mirror current directory in the other pane"
+            },
+            {
+                "key": "[Alt] [g]",
+                "val": "Jump to first item on page"
+            },
+            {
+                "key": "[Alt] [r]",
+                "val": "Jump to middle item on page"
+            },
+            {
+                "key": "[Alt] [j]",
+                "val": "Jump to last item on page"
+            },
+            {
+                "key": "[Ctrl] [\]",
+                "val": "Show directory hotlist"
+            }
+        ],
+        "Selecting files": [
+            {
+                "key": "[Ctrl] [T]",
+                "val": "Toggle tagging/marking on selected item"
+            },
+            {
+                "key": "[+]",
+                "val": "Tag/Mark dialog"
+            },
+            {
+                "key": "[\]",
+                "val": "Untag/Unmark dialog"
+            }
+        ]
     }
 }
