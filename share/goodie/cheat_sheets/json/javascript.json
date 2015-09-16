@@ -1,7 +1,7 @@
 {
-    "id": "javascript_core_cheat_sheet",
-    "name": "JavaScript Core Methods",
-    "description": "Explanation of basic JavaScript methods",
+    "id": "javascript_cheat_sheet",
+    "name": "JavaScript Methods",
+    "description": "Explanation of core JavaScript methods",
     "metadata": {
         "sourceName": "OverAPI",
         "sourceUrl": "http://overapi.com/javascript/"
