@@ -1,0 +1,18 @@
+{
+    "id": "midnight_commander_cheat_sheet",
+    "name": "Midnight Commander",
+    "description": "Console File Manager",
+    "metadata": {
+        "sourceName": "MidnightCommanderCheatSheet"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Movement",
+        "File operation",
+        "Commands",
+        "Options"
+
+    ],
+    "sections": {
+    }
+}
