@@ -2,24 +2,25 @@
     "id": "states_of_india_cheat_sheet", 
     "name": "States Of India",
     "description": "States Of India with their Capital Cities ", 
-     "metadata": {  
-        "sourceName": "States Of India",
+    "metadata": {  
+        "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
     },
-       "section_order":[  
-        "States",
-        "Union Territories"
+    "template_type": "reference",
+    "section_order":[  
+    "States",
+    "Union Territories"
     ],
     "sections":{
-        "States":[{  
-                    "key":"Andhra Pradesh",
-                    "val":"Hyderabad"
+        "States":[{
+                  "key":"Andhra Pradesh",
+                  "val":"Hyderabad"
                },{  
-                    "key":"Arunachal Pradesh",
-                    "val":"Itanagar"
+                  "key":"Arunachal Pradesh",
+                  "val":"Itanagar"
                },{  
-                    "key":"Assam",
-                    "val":"Dispur"
+                  "key":"Assam",
+                  "val":"Dispur"
                },{  
                   "key":"Bihar",
                   "val":"Patna"
@@ -99,7 +100,7 @@
                   "key":"West Bengal",
                   "val":"Kolkata"
                }],
-        "Union Territory":[{  
+        "Union Territories":[{  
                   "key":" Andaman & Nicobar Islands",
                   "val":"Port Blair"
                },{  
