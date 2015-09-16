@@ -8,21 +8,20 @@
     "template_type": "keyboard",
     "section_order": [
         "Movement",
-        "File operations",
+        "Filesystem operations",
         "Selecting files",
         "Pane operations",
-        "Commands",
-        "Options"
+        "Miscellanious"
 
     ],
     "sections": {
         "Movement": [
             {
-                "key": "[Up]",
+                "key": "[↑]",
                 "val": "Move selection bar to previous entry"
             },
             {
-                "key": "[Down]",
+                "key": "[↓]",
                 "val": "Move selection bar to next entry"
             },
             {
@@ -46,11 +45,11 @@
                 "val": "Switch between panels"
             },
             {
-                "key": "[Left]",
+                "key": "[←]",
                 "val": "Move to parent directory (Lynx motion enabled)"
             },
             {
-                "key": "[Right]",
+                "key": "[→]",
                 "val": "Move to child directory (Lynx motion enabled)"
             },
             {
@@ -60,9 +59,17 @@
             {
                 "key": "[Alt] [u]",
                 "val": "Move to previous directory in the history"
+            },
+            {
+                "key": "[Meta] [c]",
+                "val": "Quick 'cd' into specified directory"
             }
         ],
         "Pane operations" : [
+            {
+                "key": "[Ctrl] [u]",
+                "val": "Swap panes"
+            },
             {
                 "key": "[Alt] [o]",
                 "val": "Load selected directory to other pane / Load parent directory of the selected file to other pane"
@@ -80,17 +87,25 @@
                 "val": "Jump to middle item on page"
             },
             {
+                "key": "[Alt] [t]",
+                "val": "Switch between listing modes"
+            },
+            {
                 "key": "[Alt] [j]",
                 "val": "Jump to last item on page"
             },
             {
                 "key": "[Ctrl] [\\]",
                 "val": "Show directory hotlist"
+            },
+            {
+                "key": "[Ctrl] [x] ... [d]",
+                "val": "Compare directories in panes"
             }
         ],
         "Selecting files": [
             {
-                "key": "[Ctrl] [T]",
+                "key": "[Ctrl] [T] or [Insert]",
                 "val": "Toggle tagging/marking on selected item"
             },
             {
@@ -100,6 +115,58 @@
             {
                 "key": "[\\]",
                 "val": "Untag/Unmark dialog"
+            }
+        ],
+        "Filesystem operations": [
+            {
+                "key": "[F5]",
+                "val": "Copy file (dir) (to location of other pane)"
+            },
+            {
+                "key": "[F6]",
+                "val": "Move file (dir) (to location of other pane) / Rename file (dir)"
+            },
+            {
+                "key": "[F7]",
+                "val": "Create new directory"
+            },
+            {
+                "key": "[F8]",
+                "val": "Delete (selected) files/directories"
+            },
+            {
+                "key": "[F3]",
+                "val": "View contents of file"
+            },
+            {
+                "key": "[F4]",
+                "val": "Edit contents of file"
+            },
+            {
+                "key": "[Ctrl] [r]",
+                "val": "Refresh/rescan directory view"
+            }
+        ],
+        "Miscellanious": [
+            {
+                "key": "[F10]",
+                "val": "Quit MC"
+            },
+            {
+                "key": "[F1]",
+                "val": "See MC help"
+            },
+            {
+                "key": "[F2]",
+                "val": "Display user menu"
+            },
+            {
+                "key": "[F9]",
+                "val": "Enable top menu"
+            },
+            {
+                "key": "[Ctrl] [o]",
+                "val": "Toggle show/hide MC, reveal shell"
             }
         ]
     }
