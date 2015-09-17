@@ -7,16 +7,16 @@
         "sourceUrl": "https://github.com/cmus/cmus/blob/master/Doc/cmus.txt"
     },
     "template_type": "keyboard",
-    "section_order": ["Cursor Movement", "Views", "Song navigation", "Add/Remove tracks", "Browser movements", "Exiting", "Miscellaneous"],
+    "section_order": ["Cursor Movement", "Views", "Song navigation", "Adding / Removing tracks", "Browser movements", "Exiting", "Miscellaneous"],
     "sections": {
         "Cursor Movement": [
             {
                 "val": "Move up",
-                "key": "k"
+                "key": "[k] / [↑]"
             },
             {
                 "val": "Move down",
-                "key": "j"
+                "key": "[j] / [↓]"
             }
         ],
         "Views": [
@@ -51,11 +51,11 @@
         ],
         "Song navigation": [
             {
-                "val": "Play/Restart",
+                "val": "Play / Restart",
                 "key": "x"
             },
             {
-                "val": "Pause/Play",
+                "val": "Pause / Play",
                 "key": "c"
             },
             {
@@ -87,9 +87,9 @@
                 "key": ","
             }
         ],
-        "Add/Remove tracks": [
+        "Adding / Removing tracks": [
             {
-                "val": "Add tracks/folders to library from browser view",
+                "val": "Add track / folder to library from browser view",
                 "key": "a"
             },
             {
@@ -98,25 +98,25 @@
             },
             {
                 "val": "Prepend track to play queue",
-                "key": "E"
+                "key": "[Shift] [e]"
             },
             {
                 "val": "Add track to playlist",
                 "key": "y"
             },
             {
-                "val": "Remove track",
-                "key": "D"
+                "val": "Remove track from current view (1-4)",
+                "key": "[Shift] [d]"
             }
         ],
         "Browser movements": [
             {
                 "val": "Activate selection",
-                "key": "space"
+                "key": "[Space bar] / [Enter]"
             },
             {
                 "val": "Browser up",
-                "key": "backspace"
+                "key": "Backspace"
             },
             {
                 "val": "Refresh files",
@@ -139,25 +139,38 @@
         ],
         "Miscellaneous": [
             {
+                "val": "Volume: +10%",
+                "key": "[=] / [+]"
+            },
+            {
+                "val": "Volume: -10%",
+                "key": "-"
+            },
+            {
                 "val": "Toggle shuffle",
                 "key": "s"
             },
             {
                 "val": "Toggle continue",
-                "key": "C"
+                "key": "[Shift] [c]"
             },
             {
                 "val": "Toggle repeat",
                 "key": "r"
             },
             {
-                "val": "Toggle playing mode i.e Artist/Album/All",
+                "val": "Toggle playing mode i.e Artist / Album / All",
                 "key": "m"
             },
             {
-                "val": "Activate selection",
-                "key": "enter"
+                "val": "Jump to top",
+                "key": "g"
+            },
+            {
+                "val": "Jump to bottom",
+                "key": "[Shift] [g]"
             }
         ]
     }
 }
+
