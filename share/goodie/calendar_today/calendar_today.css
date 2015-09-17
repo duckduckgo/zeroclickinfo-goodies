@@ -1,53 +1,63 @@
-.zci--answer table.calendar {
+.zci--calendar_today .calendar {
     text-align: center;
+    line-height: 2.17;
+    weight: 400;
+    padding: 1.25em;
 }
 
-.zci--answer .calendar th, .calendar td {
+.zci--calendar_today .calendar .calendar__header {
+    clear:both;
+}
+
+.zci--calendar_today .calendar .calendar__header .month-name{
+    float:left;
+    font-weight: 600;
+    color: #333;
+    text-align:left;
+    font-size: 1.18em;
+}
+
+.zci--calendar_today .calendar .calendar__header .year{
+    float: right;
+    font-weight: 300;
+    color: #AAA;
+    text-align: right;
+    font-size: 1.18em;
+}
+
+.zci--calendar_today .calendar .header-day{
+    color: #AAA;
+}
+
+.zci--calendar_today .calendar .weekend {
+   color: #888; 
+}
+
+.zci--calendar_today .calendar .weekday{
+    color: #333;
+}
+
+.zci--calendar_today .calendar .today{
+    background-color:#de5833;
+    display: inline-table;
+    text-align: center; 
+    color: #FFF;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    line-height: 22px;
+    font-weight: lighter;
+}
+
+.zci--calendar_today .calendar .adj-month{
+    color: #aaa;
+}
+
+.zci--calendar_today .calendar th, .calendar td {
     width: 2.5em;
     text-align: center;
-    height: 1.6em;
-    position:relative;
+    height: 2.17em;
+    position: relative;
+    font-weight: 400;
 }
-
-.zci--answer .calendar__header {
-    vertical-align: top;
-    height: 2em;
-    font-size: 1.25em;
-}
-
-.zci--answer .calendar__today {
-    color: white;
-    background-color: #808080;
-}
-
-.zci--answer .calendar .circle {
-    display: inline-block;
-    line-height: 1.6em;
-    text-align: center;
-    width: 1.6em;
-}
-
-.zci--answer .calendar a {
-    color: white;
-    font-size: 1.1em;
-}
-
-.zci--answer .calendar .t_left {
-    position: absolute;
-    left:0.4em;
-    background-color: #bfbfbf;
-}
-
-.zci--answer .calendar .t_right {
-    position: absolute;
-    right:0.4em;
-    background-color: #bfbfbf;
-}
-
-.zci--answer .ddgsi-arrow-left {
-    font-size: 0.75em;
-}
-
-.zci--answer .ddgsi-arrow-right {
-    font-size: 0.75em;
-} 

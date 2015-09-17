@@ -1,0 +1,27 @@
+<table class="calendar">
+    <tbody>
+        <tr>
+            <th colspan="7">
+                <div class="calendar__header">
+                    <div class="month-name">{{month_name}}</div>
+                    <div class="year">{{year}}</div>
+                </div>
+            </th>
+        </tr>
+        <tr class="header-days">
+            {{#each daysOfTheWeek}}
+                <td class="header-day">{{this}}</td>
+            {{/each}}
+        <tr>
+    <tbody>
+        {{#each rows}}
+        <tr>
+            {{#each this}}
+                {{#with this}}
+                    <td class="{{classes}}">{{day}}</td>
+                {{/with}}
+            {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
