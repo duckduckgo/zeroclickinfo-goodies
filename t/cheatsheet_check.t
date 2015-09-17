@@ -1,4 +1,8 @@
 #!/usr/bin/env perl
+#
+# Cheat sheet tester created by David Farrell (https://github.com/dnmfarrell)
+# from http://perltricks.com/article/190/2015/8/28/Check-your-DuckDuckGo-cheatsheets-with-Perl
+#
 use strict;
 use warnings;
 use open ':std', ':encoding(utf8)';
