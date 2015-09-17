@@ -14,26 +14,26 @@
       "Getting Help",
       "Travelling",
       "Etiquette",
-      "Dinner on the Town"
+      "Going out for dinner"
    ],
    "description" : "Basic German words and phrases",
    "sections" : {
       "Etiquette" : [
          {
-            "val" : "Guten Nacht",
-            "key" : "Good Night"
-         },
-         {
-            "val" : "Guten Mittag",
-            "key" : "Good Afternoon"
+            "val" : "Guten Morgen",
+            "key" : "Good morning"
          },
          {
             "val" : "Guten Abend",
-            "key" : "Good Evening"
+            "key" : "Good evening"
          },
          {
-            "val" : "Es tut mir leid",
-            "key" : "I'm sorry"
+            "val" : "Gute Nacht",
+            "key" : "Good night"
+         },
+         {
+            "val" : "Es tut mir leid.",
+            "key" : "I'm sorry."
          },
          {
             "val" : "Danke",
@@ -48,30 +48,26 @@
             "key" : "Thank you very much!"
          },
          {
-            "val" : "Guten Morgen",
-            "key" : "Good Morning"
-         },
-         {
             "val" : "Bitteschön",
             "key" : "You're welcome"
          }
       ],
       "Getting Help" : [
          {
-            "val" : "Ruf die Polizei (an)!",
-            "key" : "Call the Police!"
+            "val" : "Rufen Sie die Polizei!",
+            "key" : "Call the police!"
          },
          {
-            "val" : "Können Sie bitte langsamer sprechen!",
-            "key" : "Please speak more slowly!"
+            "val" : "Können Sie bitte langsamer sprechen?",
+            "key" : "Can you speak more slowly, please?"
          },
          {
             "val" : "Ich bin allergisch.",
             "key" : "I am allergic."
          },
          {
-            "val" : "Bitte wiederholen.",
-            "key" : "Repeat, please."
+            "val" : "Können Sie das bitte wiederholen?",
+            "key" : "Can you repeat, please?"
          },
          {
             "val" : "Wie sagt man \"X\" auf Deutsch?",
@@ -95,7 +91,7 @@
          },
          {
             "val" : "Können Sie das bitte aufschreiben?",
-            "key" : "Can you write that down?"
+            "key" : "Can you write that down, please?"
          },
          {
             "val" : "Rufen Sie einen Krankenwagen!",
@@ -121,7 +117,7 @@
          },
          {
             "val" : "Mir geht es gut, danke!",
-            "key" : "I'm fine thanks!"
+            "key" : "I'm fine, thanks!"
          },
          {
             "val" : "Wie geht's?",
@@ -136,7 +132,7 @@
             "key" : "Welcome"
          },
          {
-            "val" : "Wie heisst du?",
+            "val" : "Wie heißt du?",
             "key" : "What's your name?"
          }
       ],
@@ -167,7 +163,7 @@
          },
          {
             "val" : "Bitte halten Sie hier an.",
-            "key" : "Stop here please."
+            "key" : "Please stop here."
          },
          {
             "val" : "Biegen Sie rechts ab.",
@@ -182,7 +178,7 @@
             "key" : "How can I get a taxi?"
          }
       ],
-      "Dinner on the Town" : [
+      "Going out for dinner" : [
          {
             "val" : "Haben Sie ein vegetarisches Gericht?",
             "key" : "Do you have vegetarian dishes?"
@@ -224,7 +220,7 @@
             "key" : "A glass of water please."
          },
          {
-            "val" : "Einen Tisch für zwei bitte!",
+            "val" : "Einen Tisch für zwei, bitte!",
             "key" : "A table for two please!"
          },
          {
