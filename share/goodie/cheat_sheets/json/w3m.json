@@ -141,7 +141,7 @@
             "val": "Browse link using external browser (use 2ESC M and 3ESC M to invoke second and third browser)",
             "key": "[ESC] [M]"
         }],
-        "File/Stream operation`": [{
+        "File/Stream operation": [{
             "val": "Open URL",
             "key": "U"
         }, {

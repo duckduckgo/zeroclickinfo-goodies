@@ -1,0 +1,193 @@
+{
+    "id": "idris_repl_cheat_sheet",
+    "name": "Idris REPL",
+    "description": "Basic commands for the Idris REPL",
+    "metadata": {
+        "sourceName": "Idris-Lang",
+        "sourceUrl": "http://www.idris-lang.org"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "From the Prompt",
+        "Documentation and Searching",
+        "Changing Settings",
+        "Displaying Information",
+        "Advanced Usage"
+    ],
+    "sections": {
+        "From the Prompt": [
+            {
+                "key": "<expr>",
+                "val": "Evaluate an expression."
+            },
+            {
+                "key": ":t, :type",
+                "val": "Check the type of an expression."
+            },
+            {
+                "key": ":q, :quit",
+                "val": "Exit the Idris system"
+            },
+            {
+                "key": ":w,  :warranty",
+                "val": "Displays warranty information"
+            },
+            {
+                "key": ":?, :h, :help",
+                "val": "Display this help text"
+            },
+            {
+                "key": ":pp, :pprint <option> <number> <name>",
+                "val": "Pretty prints an Idris function in either LaTeX or HTML and for a specified width."
+            },
+            {
+                "key": ":r, :reload",
+                "val": "Reload current file"
+            },
+            {
+                "key": ":l, :load <filename>",
+                "val": "Load a new file"
+            },
+            {
+                "key": ":cd <filename>",
+                "val": "Change working directory"
+            },
+            {
+                "key": ":e, :edit",
+                "val": "Edit current file using $EDITOR or $VISUAL"
+            },
+            {
+                "key": ":module <module>",
+                "val": "Import an extra module"
+            },
+            {
+                "key": ":m, :metavars",
+                "val": "Show remaining proof obligations (metavariables or holes)"
+            },
+            {
+                "key": ":x <expr>",
+                "val": "Execute IO actions resulting from an expression using the interpreter"
+            },
+            {
+                "key": ":c, :compile <filename>",
+                "val": "Compile to an executable [codegen <filename>"
+            },
+            {
+                "key": ":exec,  :execute <expr>",
+                "val": "Compile to an executable and run"
+            },
+            {
+                "key": ":let (<top-level declaration>)",
+                "val": "Evaluate a declaration, such as a function definition, instance implementation, or fixity declaration"
+            },
+            {
+                "key": ":unlet, :undefine (\\[<name>\\])",
+                "val": "Remove the listed repl definitions, or all repl definitions if no names given"
+            }
+        ],
+        "Documentation and Searching": [
+            {
+                "key": ":doc <name>",
+                "val": "Show internal documentation"
+            },
+            {
+                "key": ":mkdoc <namespace>",
+                "val": "Generate IdrisDoc for namespace(s) and dependencies"
+            },
+            {
+                "key": ":apropos <package list> <name>",
+                "val": "Search names, types, and documentation"
+            },
+            {
+                "key": ":s :search \\[<package list>\\] <expr>",
+                "val": "Search for vals by type"
+            },
+            {
+                "key": ":browse <namespace>",
+                "val": "List the contents of some namespace"
+            }
+        ],
+        "Displaying Information": [
+            {
+                "key": ":total <name>",
+                "val": "Check the totality of a name"
+            },
+            {
+                "key": ":miss, :missing <name>",
+                "val": "Show missing clauses"
+            },
+            {
+                "key": ":wc, :whocalls <name>",
+                "val": "List the callers of some name"
+            },
+            {
+                "key": ":cw, :callswho <name>",
+                "val": "List the callees of some name"
+            },
+            {
+                "key": ":printdef <name>",
+                "val": "Show the definition of a function"
+            },
+            {
+                "key": ":showproof <name>",
+                "val": "Show proof"
+            },
+            {
+                "key": ":proofs",
+                "val": "Show available proofs"
+            }
+        ],
+        "Advanced Usage": [
+            {
+                "key": ":p, :prove <hole>",
+                "val": "Prove a metavariable"
+            },
+            {
+                "key": ":elab <hole>",
+                "val": "Build a metavariable using the elaboration shell"
+            },
+            {
+                "key": ":a, :addproof <name>",
+                "val": "Add proof to source file"
+            },
+            {
+                "key": ":rmproof <name>",
+                "val": "Remove proof from proof stack"
+            },
+            {
+                "key": ":core <expr>",
+                "val": "View the core language representation of a term"
+            },
+            {
+                "key": ":dynamic <filename>",
+                "val": "Dynamically load a C library (similar to %dynamic)"
+            },
+            {
+                "key": ":dynamic",
+                "val": "List dynamically loaded C libraries"
+            }
+        ],
+        "Changing Settings": [
+            {
+                "key": ":set <option>",
+                "val": "Set an option (errorcontext, showimplicits)"
+            },
+            {
+                "key": ":unset <option>",
+                "val": "Unset an option"
+            },
+            {
+                "key": ":color, :colour <option>",
+                "val": "Turn REPL colours on or off; set a specific colour"
+            },
+            {
+                "key": ":consolewidth (auto|infinite|number)",
+                "val": "Set the width of the console"
+            },
+            {
+                "key": ":printerdepth \\[<number>\\]",
+                "val": "Set the maximum pretty-printer depth (no arg for infinite)"
+            }
+        ]
+    }
+}

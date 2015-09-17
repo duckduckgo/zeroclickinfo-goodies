@@ -65,8 +65,9 @@ handle query_lc => sub {
     ($week, $year) = qw/current current/ if (not defined $week);
 
     # ensure week number is legitimate
-	return unless $week eq 'current' or ($week > 0 && $week <=52);
-	
+    return unless $week eq 'current' or ($week > 0 && $week <=52);
+
+    return unless $loc && $loc->time_zone;
     my $dt = DateTime->now(time_zone => $loc->time_zone);
 
     my $response;
