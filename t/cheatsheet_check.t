@@ -32,7 +32,7 @@ foreach my $path (glob("$json_dir/*.json")){
     subtest 'metadata' => sub {
       my $has_meta = exists $json->{metadata};
       SKIP: {
-        skip 'metadata is missing, this is options but suggested to have', 1 unless $has_meta;
+        skip 'metadata is missing, this is optional but suggested to have', 1 unless $has_meta;
 
         ok exists $json->{metadata}{sourceName}, "has metadata sourceName $name";
 
