@@ -1,7 +1,7 @@
 {
     "id": "github_atom_cheat_sheet",
     "name": "GitHub Atom",
-    "description": "An open source text editor, made by GitHub Inc.",
+    "description": "Open source text editor, made by GitHub Inc.",
     "metadata":{
         "sourceName": "Bugsnag",
         "sourceUrl": "https://bugsnag.com/blog/atom-editor-cheat-sheet"
