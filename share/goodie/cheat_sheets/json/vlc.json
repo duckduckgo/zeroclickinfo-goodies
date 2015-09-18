@@ -27,7 +27,7 @@
             "key":"B",
             "val":"Audio track cycle"
           }, {
-            "key":"[Ctrl] ([↑]/[↓])",
+            "key":"[Ctrl] ( [↑] / [↓] )",
             "val":"Volume"
           }, {
             "key":"[Ctrl] [O]",
@@ -47,16 +47,16 @@
             "key":"[Ctrl] [T]",
             "val":"Goto/jump to time"
           }, {
-            "key":"[Shift] ([←]/[→])",
+            "key":"[Shift] ( [←] / [→] )",
             "val":"Very short jump – 3 secs"
           }, {
-            "key":"[Alt] ([←]/[→])",
+            "key":"[Alt] ( [←] / [→] )",
             "val":"Short jump – 10 secs"
           }, {
-            "key":"[Ctrl] ([←]/[→])",
+            "key":"[Ctrl] ( [←] / [→] )",
             "val":"Medium jump – 1 min"
           }, {
-            "key":"[Ctrl] [Alt] ([←]/[→])",
+            "key":"[Ctrl] [Alt] ( [←] / [→] )",
             "val":"Long jump"
           }, {
             "key":"E",
@@ -75,7 +75,7 @@
             "key":"[Ctrl] [F]",
             "val":"Open folder (browse folder menu)"
           }, {
-            "key":"[Ctrl] ([R]/[S])",
+            "key":"[Ctrl] ( [R] / [S] )",
             "val":"Advanced open file"
           }, {
             "key":"[Ctrl] [O]",
@@ -154,7 +154,7 @@
             "key":"[Ctrl] [Y]",
             "val":"Save playlist"
           }, {
-            "key":"[Ctrl] ([I]/[J])",
+            "key":"[Ctrl] ( [I] / [J] )",
             "val":"Media information"
           }, {
             "key":"[Alt] [A]",

@@ -69,7 +69,7 @@
             "key" : "[Cmd] [Enter]",
             "val" : "Open selected item in Finder"
         }, {
-            "key" : "[Cmd] ([↑]/[↓])",
+            "key" : "[Cmd] ( [↑] / [↓] )",
             "val" : "Skip to next/previous result category"
         }], "Text Editing" :[{
             "key" : "[Cmd] [A]",
@@ -90,7 +90,7 @@
             "key" : "[Cmd] [Shift] [Z]",
             "val" : "Redo"
         }, {
-            "key" : "[Cmd] ([←]/[→])",
+            "key" : "[Cmd] ( [←] / [→] )",
             "val" : "Go to beginning/end of line"
         }, {
             "key" : "[Cmd] [↑]",
@@ -123,7 +123,7 @@
             "key" : "[Cmd] [,]",
             "val" : "Open Preferences (if available)"
         }, {
-            "key" : "[Ctrl] ([←]/[→])",
+            "key" : "[Ctrl] ( [←] / [→] )",
             "val" : "Move one desktop left or right"
         }, {
             "key" : "[Cmd] [Opt] [Esc]",

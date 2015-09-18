@@ -165,11 +165,11 @@
             },
             {
                 "val":"Quickly switch between search engines (When Search Bar is focused)",
-                "key":"[Ctrl] ([↑]/[↓])"
+                "key":"[Ctrl] ( [↑] / [↓] )"
             },
             {
                 "val":"View menu to switch, add or manage search engines (When Search Bar Focused)",
-                "key":"[Alt] ([↑]/[↓])"
+                "key":"[Alt] ( [↑] / [↓] )"
             }
         ],
         "Windows & Tabs":[
