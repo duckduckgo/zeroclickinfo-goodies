@@ -12,9 +12,9 @@
     "template_type":"keyboard",
     "section_order":[
         "Movement",
-        "Filesystem operations",
-        "Selecting files",
-        "Pane operations",
+        "Filesystem Operations",
+        "Selecting Files",
+        "Pane Operations",
         "Miscellaneous"
 
     ],
@@ -29,24 +29,44 @@
                 "val":"Move selection bar to next entry"
             },
             {
-                "key":"PgUp or [Alt] [v]",
+                "key":"PgUp",
                 "val":"Move selection bar one page up"
             },
+              {
+                "key":"[Alt] [v]",
+                "val":"Move selection bar one page up (alternate)"
+            },
             {
-                "key":"PgDn or [Ctrl] [v]",
+                "key":"PgDn",
                 "val":"Move selection bar one page down"
             },
             {
-                "key":"Home or [Alt] [<]",
+                "key":"[Ctrl] [v]",
+                "val":"Move selection bar one page down (alternate)"
+            },
+            {
+                "key":"Home",
                 "val":"Move selection bar to top of the panel"
             },
-            {
-                "key":"End or [Alt] [>]",
-                "val":"Move selection bar to bottom of the panel"
+             {
+                "key":"[Alt] [<]",
+                "val":"Move selection bar to top of the panel (alternate)"
             },
             {
-                "key":"Tab or [Ctrl] [i]",
+                "key":"End",
+                "val":"Move selection bar to bottom of the panel"
+            },
+               {
+                "key":"[Alt] [>]",
+                "val":"Move selection bar to bottom of the panel (alternate)"
+            },
+            {
+                "key":"Tab",
                 "val":"Switch between panels"
+            },
+              {
+                "key":"[Ctrl] [i]",
+                "val":"Switch between panels (alternate)"
             },
             {
                 "key":"←",
@@ -69,7 +89,7 @@
                 "val":"Quick 'cd' into specified directory"
             }
         ],
-        "Pane operations":[
+        "Pane Operations":[
             {
                 "key":"[Ctrl] [u]",
                 "val":"Swap panes"
@@ -107,10 +127,14 @@
                 "val":"Compare directories in panes"
             }
         ],
-        "Selecting files":[
+        "Selecting Files":[
             {
-                "key":"[Ctrl] [T] or Insert",
+                "key":"Insert",
                 "val":"Toggle tagging/marking on selected item"
+            },
+             {
+                "key":"[Ctrl] [T]",
+                "val":"Toggle tagging/marking on selected item (alternate)"
             },
             {
                 "key":"+",
@@ -121,7 +145,7 @@
                 "val":"Untag/Unmark dialog"
             }
         ],
-        "Filesystem operations":[
+        "Filesystem Operations":[
             {
                 "key":"F5",
                 "val":"Copy file (dir) (to location of other pane)"
