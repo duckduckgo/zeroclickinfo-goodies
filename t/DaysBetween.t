@@ -123,6 +123,14 @@ ddg_goodie_test(
             result    => 1
         },
     ),
+    'how many days between feb 2 and feb 17' => test_zci(
+        qr/^There are 15 days between.+ and.+\.$/,
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Days between',
+            result    => 15
+        },
+    ),
     'days between jan 1 2012 and jan 1 123456' => undef,
 );
 
