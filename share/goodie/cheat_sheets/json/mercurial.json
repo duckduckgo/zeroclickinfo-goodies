@@ -6,6 +6,9 @@
         "sourceName": "Mercurial (hg)",
         "sourceUrl": "http://www.cheatography.com/codeshane/cheat-sheets/mercurial-hg/"
     },
+    "aliases": [
+        "hg"
+    ],
     "template_type" : "terminal",
     "section_order": [
         "Create Local Repositories",
