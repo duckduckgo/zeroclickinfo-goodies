@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "lua", "lua tutorial"
+        "lua", "lua lang", "lua language"
     ],
 
     "template_type": "terminal",
@@ -127,6 +127,14 @@
             {
                 "key": "if a == b then", 
                 "val": "If statement"
+            },
+            {
+                "key": "else if a == b then", 
+                "val": "Else if statement"
+            },
+            {
+                "key": "else", 
+                "val": "Else statement"
             }
         ],
         "Loops": [
