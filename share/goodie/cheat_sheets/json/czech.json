@@ -21,15 +21,15 @@
       "Etiquette" : [
          {
             "val" : "Dobrou noc",
-            "key" : "Good Night"
+            "key" : "Good night"
          },
          {
             "val" : "Dobré poledne",
-            "key" : "Good Afternoon"
+            "key" : "Good afternoon"
          },
          {
             "val" : "Dobrý večer",
-            "key" : "Good Evening"
+            "key" : "Good evening"
          },
          {
             "val" : "Omlouvám se",
@@ -49,7 +49,7 @@
          },
          {
             "val" : "Dobré ráno",
-            "key" : "Good Morning"
+            "key" : "Good morning"
          },
          {
             "val" : "Nemáte zač",
@@ -59,7 +59,7 @@
       "Getting Help" : [
          {
             "val" : "Zavolejte policii!",
-            "key" : "Call the Police!"
+            "key" : "Call the police!"
          },
          {
             "val" : "Mluvte prosím pomaleji!",
