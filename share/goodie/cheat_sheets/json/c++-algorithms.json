@@ -1,7 +1,7 @@
 {
     "id": "cpp_algorithms_cheat_sheet",
     "name": "C++ Algorithms",
-    "description": "C++ <algorithm> libarary reference. This library provides a variety of different functions e.g. paritions, sorting, searching, merging, heap and min/max algorithms which operate on ranges of elements.",
+    "description": "C++ <algorithm> library reference. This library provides a variety of different functions e.g. paritions, sorting, searching, merging, heap and min/max algorithms which operate on ranges of elements.",
     "metadata": {
         "sourceName": "cplusplus",
         "sourceUrl": "http://www.cplusplus.com/reference/algorithm/"
