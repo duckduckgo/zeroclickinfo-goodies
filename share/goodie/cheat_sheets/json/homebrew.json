@@ -1,12 +1,12 @@
 {
-    "id": "homebrew_cheat_sheet", 
+    "id": "homebrew_cheat_sheet",
     "name": "Homebrew",
     "description": "The missing package manager for OS X",
     "metadata": {
         "sourceName": "Homebrew",
         "sourceUrl": "http://brew.sh/"
     },
-    "section_order": [  
+    "section_order": [
         "Essential Commands",
         "Troubleshooting",
         "Brewing"
@@ -14,7 +14,7 @@
     "sections": {
         "Essential Commands": [
             {
-                "key": "brew info $FORMULA", 
+                "key": "brew info $FORMULA",
                 "val": "Display information about formula."
             },
             {
@@ -22,7 +22,7 @@
                 "val": "Open formula's homepage in a browser."
             },
             {
-                "key": "brew options $FORMULA", 
+                "key": "brew options $FORMULA",
                 "val": "Display install options specific to formula."
             },
             {
@@ -49,20 +49,20 @@
                 "key": "brew upgrade \\[--all | $FORMULA\\]",
                 "val": "Upgrade outdated, unpinned brews."
             }
-        ],        
+        ],
         "Troubleshooting": [
             {
                 "key": "brew doctor",
-                "val": "Check your system for potential problems. Doctor exits with a non-zero status if any problems are found."               
+                "val": "Check your system for potential problems. Doctor exits with a non-zero status if any problems are found."
             },
             {
                 "key": "brew config",
-                "val": "Show Homebrew and system configuration useful for debugging."               
+                "val": "Show Homebrew and system configuration useful for debugging."
             },
             {
                 "key": "brew --env",
                 "val": "Show a summary of the Homebrew build environment."
-            },             
+            },
             {
                 "key": "brew --version",
                 "val": "Print the version number of brew to standard error and exit."
@@ -71,7 +71,7 @@
         "Brewing": [
             {
                 "key": "brew create \\[URL\\]",
-                "val": "Generate a formula for the downloadable file at URL and open it in the editor."               
+                "val": "Generate a formula for the downloadable file at URL and open it in the editor."
             },
             {
                 "key": "brew edit $FORMULA",
