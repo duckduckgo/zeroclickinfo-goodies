@@ -58,7 +58,7 @@
             "val":"Smaller font"
           }, {
             "key":"[Ctrl] [-]",
-            "val":"Larger font" 
+            "val":"Larger font"
         }],
         "File Navigation": [{
             "key":"[Ctrl] [P]",
@@ -70,13 +70,13 @@
             "key":"[Ctrl] [R]",
             "val":"Goto symbol (function name, table, etc.)"
           }, {
-            "key":"[Ctrl] ( [Pageup] / [Pagedown] )",
+            "key":"[Ctrl] ([Page Up]/[Page Down])",
             "val":"Goto next/prev file"
           }, {
             "key":"[Ctrl] [K], [C]",
             "val":"Goto current selection"
           }, {
-            "key":"[Ctrl] ( [↑] / [↓] )",
+            "key":"[Ctrl] ([↑]/[↓])",
             "val":"Scroll up/down one line (doesn't move cursor)"
           }, {
             "key":"[Ctrl] [F2]",
@@ -104,10 +104,10 @@
             "key":"[Shift] [F11]",
             "val":"Distraction-free mode"
           }, {
-            "key":"[Alt] [Shift] ( [2] / [3] / [4] )",
+            "key":"[Alt] [Shift] ([2]/[3]/[4])",
             "val":"Set 2, 3, or 4 column layout"
           }, {
-            "key":"[Alt] [Shift] ( [8] / [9] )",
+            "key":"[Alt] [Shift] ([8]/[9])",
             "val":"Set 2 or 3 Row layout"
           }, {
             "key":"[Alt] [Shift] [5]",
@@ -116,10 +116,10 @@
             "key":"[Alt] [Shift] [1]",
             "val":"Set single-pane layout"
           }, {
-            "key":"[Ctrl] ( [1] / [2] / [3] / [4] )",
+            "key":"[Ctrl] ([1]/[2]/[3]/[4])",
             "val":"Set focused group/pane"
           }, {
-            "key":"[Ctrl] [Shift] ( [1] / [2] / [3] / [4] )",
+            "key":"[Ctrl] [Shift] ([1]/[2]/[3]/[4])",
             "val":"Move current tab/file to pane"
         }],
         "Find": [{
@@ -195,7 +195,7 @@
             "val":"Yank"
         }],
         "Word Manipulation": [{
-            "key":"[Ctrl] ( [Delete] / [BackSpace] )",
+            "key":"[Ctrl] ([Delete]/[BackSpace])",
             "val":"Delete word forward/backward"
           }, {
             "key":"[Ctrl] [K], [K]",
@@ -210,14 +210,14 @@
             "key":"[Alt] [.]",
             "val":"Close Tag"
           }, {
-            "key":"[Ctrl] [K], ( [U] / [L] )",
+            "key":"[Ctrl] [K], ([U]/[L])",
             "val":"Convert to upper/lower case"
         }],
         "Line Manipulation": [{
             "key":"[Ctrl] [\\]], [\\[]",
             "val":"Indent/outdent"
           }, {
-            "key":"[Ctrl] [Shift] ( [↑] / [↓] )",
+            "key":"[Ctrl] [Shift] ([↑]/[↓])",
             "val":"Swap Line Up/Down"
           }, {
             "key":"[Ctrl] [Shift] [D]",
@@ -260,7 +260,7 @@
             "key":"[Ctrl] [Shift] [L]",
             "val":"Split into lines (adds cursor to each line of current selection)"
           }, {
-            "key":"[Alt] [Ctrl] ( [↑] / [↓] )",
+            "key":"[Alt] [Ctrl] ([↑]/[↓])",
             "val":"Add previous/next line"
           }, {
             "key":"[Ctrl] [L]",
@@ -280,7 +280,7 @@
           }
         ],
         "Tools": [{
-            "key": "[Ctrl] [Shift] [P]", 
+            "key": "[Ctrl] [Shift] [P]",
             "val": "Command Palette"
         }, {
             "key": "[Ctrl] [B]",

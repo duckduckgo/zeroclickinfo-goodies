@@ -18,7 +18,7 @@
     "sections": {
         "View": [{
             "val": "Increase font size",
-            "key": "[Ctrl] ( [+] / [=] )"
+            "key": "[Ctrl] ([+]/[=])"
         }, {
             "val": "Decrease font size",
             "key": "[Ctrl] [-]"
@@ -107,7 +107,7 @@
             "key": "[Ctrl] [Z]"
         }, {
             "val": "Redo",
-            "key": "[Ctrl] ( [Y] / [Shift] [Z] )"
+            "key": "[Ctrl] ([Y]/[Shift] [Z])"
         }, {
             "val": "Unindent",
             "key": "[Ctrl] [\\]]"

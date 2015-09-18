@@ -186,7 +186,7 @@
             "val": "Throw new"
         }],
         "Navigation": [{
-            "key": "[Alt] ( [←] / [→] )",
+            "key": "[Alt] ([←]/[→])",
             "val": "Go to next or previous tab"
         }, {
             "key": "[F12]",
@@ -225,10 +225,10 @@
             "key": "[Ctrl] [U]",
             "val": "Go to super method"
         }, {
-            "key": "[Alt] ( [↑] / [↓] )",
+            "key": "[Alt] ([↑]/[↓])",
             "val": "Go to previous/next method"
         }, {
-            "key": "[Ctrl] ( [\\]] / [\\[] )",
+            "key": "[Ctrl] ([\\]]/[\\[])",
             "val": "Move to code block end/start"
         }, {
             "key": "[Ctrl] [F12]",
