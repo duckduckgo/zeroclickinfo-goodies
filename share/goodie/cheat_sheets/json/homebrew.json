@@ -6,6 +6,7 @@
         "sourceName": "Homebrew",
         "sourceUrl": "http://brew.sh/"
     },
+    "template_type": "terminal",
     "section_order": [
         "Essential Commands",
         "Troubleshooting",
