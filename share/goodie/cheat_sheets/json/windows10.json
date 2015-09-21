@@ -3,7 +3,7 @@
     "name" : "Microsoft Windows 10",
     "description" : "List of shortcuts only for Windows 10",
     "metadata" : {
-        "sourcename" : "How-To Geek",
+        "sourceName" : "How-To Geek",
         "sourceUrl" : "http://www.howtogeek.com/198122/32-new-keyboard-shortcuts-in-the-windows-10-technical-preview"
     },
     "aliases" : [
