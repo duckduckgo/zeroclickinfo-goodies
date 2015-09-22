@@ -24,7 +24,7 @@
             "key" : "Good night"
          },
          {
-            "val" : "Dobré poledne",
+            "val" : "Dobré odpoledne",
             "key" : "Good afternoon"
          },
          {
@@ -44,7 +44,7 @@
             "key" : "Please"
          },
          {
-            "val" : "Děkuji vám mockrát!",
+            "val" : "Děkuji vám mnohokrát!",
             "key" : "Thank you very much!"
          },
          {
@@ -74,11 +74,11 @@
             "key" : "I am allergic. (female)"
          },
          {
-            "val" : "Znovu, prosím..",
+            "val" : "Zopakujte to, prosím..",
             "key" : "Repeat, please."
          },
          {
-            "val" : "Jak se řekne \"X\" v Češtině?",
+            "val" : "Jak se česky řekne \"X\"?",
             "key" : "How do you say \"X\" in Czech?"
          },
          {
@@ -86,11 +86,11 @@
             "key" : "Stop!"
          },
          {
-            "val" : "Mluvíte Anglicky?",
+            "val" : "Mluvíte anglicky?",
             "key" : "Do you speak English?"
          },
          {
-            "val" : "S prominutím!",
+            "val" : "Promiňte!",
             "key" : "Excuse me!"
          },
          {
