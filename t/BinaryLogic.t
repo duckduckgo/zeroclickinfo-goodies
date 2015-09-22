@@ -12,7 +12,7 @@ zci is_cached => 1;
 sub build_answer {
     my ($answer, $sub) = @_;
     $sub = '' unless $sub;
-    
+
     return $answer, structured_answer => {
         id => 'binary_logic',
         name => 'Answer',
@@ -57,6 +57,14 @@ ddg_goodie_test(
     '0x01 or 0x02' => test_zci(build_answer('3', sprintf "%b OR %b", hex(1), hex(2))),
     '0b01 or 0b10' => test_zci(build_answer('3', sprintf "01 OR 10")),
     '0B11 xor 0B10' => test_zci(build_answer('1', sprintf "11 XOR 10")),
+
+    # failing tests
+    'one and two' => undef,
+    'sentence containing and then words' => undef,
+    'sentence containing not then words' => undef,
+    'sentence containing or then words' => undef,
+    'not words or word and number' => undef,
+    'what do number and letter codes in a lens name mean' => undef
 );
 
 done_testing;

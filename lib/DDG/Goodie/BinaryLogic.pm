@@ -99,13 +99,17 @@ sub BinaryLogic_Actions::do_not {
 }
 
 handle query_raw => sub {
+    my $input = $_;
+
+    my $testError = $input;
+    $testError =~ s/(?:0x|0b|[\d\s]|and|or|xor|not|\(|\)|⊕|∧|∨|¬)//ig;
+    return if length $testError != 0;
+
     my $grammar = Marpa::R2::Scanless::G->new({ source => \$rules });
     my $recce = Marpa::R2::Scanless::R->new({
         grammar => $grammar,
         semantics_package => 'BinaryLogic_Actions'
     });
-
-    my $input = $_;
 
     # Substitute the unicode characters. The parser does not seem to
     # like unicode.
@@ -113,11 +117,19 @@ handle query_raw => sub {
     $input =~ s/\s?∧\s?/ and /;
     $input =~ s/\s?∨\s?/ or /;
     $input =~ s/¬\s?/not /;
-    
+
     my $subtitle = "Bitwise Operation: ".uc($input);
     my @numbers = $subtitle =~ /\b((?:0x|0b)?[\da-f]+)\b/gi;
+
+    # using eval to catch possible errors with $@
+    eval { $recce->read( \$input ) };
+    return if ( $@ );
+
+    my $value_ref = $recce->value();
+    return if not defined $value_ref;
+    my $text_output = "${$value_ref}";
+
     my $numInBin;
-    
     foreach my $number (@numbers) {
         if ($number =~ /^0x/i) {
             $numInBin = sprintf "%b", hex($number);
@@ -127,20 +139,8 @@ handle query_raw => sub {
         } else {
             $numInBin = sprintf "%b", $number;
         }
-        
         $subtitle =~ s/\b$number\b/$numInBin/g;
     }
-
-    # using eval to catch possible errors with $@
-    eval { $recce->read( \$input ) };
-
-    return if ( $@ );
-
-    my $value_ref = $recce->value();
-
-    return if not defined $value_ref;
-
-    my $text_output = "${$value_ref}";
 
     return $text_output, structured_answer => {
         id => 'binary_logic',

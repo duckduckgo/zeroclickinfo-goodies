@@ -1,0 +1,46 @@
+{
+    "id": "wu_tang_cheat_sheet",
+    "name": "Wu-Tang Members",
+    "description": "Wu-Tang Clan members, given names, and birthdays",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Wu-Tang_Clan#Members"
+    },
+    "aliases":["wu-tang"],
+    "template_type": "reference",
+    "section_order": ["Members"],
+    "sections": {
+        "Members": [{
+            "val": "born Robert Diggs, July 05 1969",
+            "key": "RZA"
+        }, {
+            "val": "born Gary Grice, August 22 1966",
+            "key": "GZA"
+        }, {
+            "val": "born Russell Jones, November 15 1968 – November 13 2004",
+            "key": "Ol' Dirty Bastard"
+        }, {
+            "val": "born Jason Hunter, July 06 1970",
+            "key": "Inspectah Deck"
+        }, {
+            "val": "born Corey Woods, January 12 1970",
+            "key": "Raekwon the Chef"
+        }, {
+            "val": "born Lamont Hawkins, October 11 1970",
+            "key": "U-God"
+        }, {
+            "val": "born Elgin Turner, August 18 1969",
+            "key": "Masta Killa"
+        }, {
+            "val": "born Clifford Smith, March 02 1971",
+            "key": "Method Man"
+        }, {
+            "val": "born Dennis Coles, May 09 1970",
+            "key": "Ghostface Killah"
+        }, {
+            "val": "born Darryl Hill, September 18 1969",
+            "key": "Cappadonna"
+        }]
+
+    }
+}
