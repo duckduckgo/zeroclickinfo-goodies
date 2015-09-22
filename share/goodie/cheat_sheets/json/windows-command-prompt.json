@@ -46,7 +46,7 @@
                 "val": "Show history of previous commands"
             },
             {
-                "key": "[ALT] + [F7]",
+                "key": "[ALT] , [F7]",
                 "val": "Clear command history"
             },
             {
@@ -58,27 +58,27 @@
                 "val": "Run a specific command from the command history"
             },
             {
-                "key":"[ESC]",
+                "key":"[Esc]",
                 "val": "Clear command line"
             },
             {
-                "key": "[INSERT]",
+                "key": "[Insert]",
                 "val": "Toggle Insert/Overwrite"
             },
             {
-                "key": "[Ctrl] + [Home]",
+                "key": "[Ctrl] , [Home]",
                 "val": "Erase line to the left"
             },
             {
-                "key": "[Ctrl] + [End]",
+                "key": "[Ctrl] , [End]",
                 "val": "Erase line to the right"
             },
             {
-                "key": "[Ctrl] + [←]",
+                "key": "[Ctrl] , [←]",
                 "val": "Move one word to the left (backward)"
             },
             {
-                "key": "[Ctrl] + [→]",
+                "key": "[Ctrl] , [→]",
                 "val": "Move one word to the right (forward)"
             },
             {
@@ -102,11 +102,11 @@
                 "val": "Scroll window Down"
             },
             {
-                "key": "[Ctrl] + [C]",
+                "key": "[Ctrl] , [C]",
                 "val": "Abort current command/typing"
             },
             {
-                "key": "[Left Alt] + [Left Shift] + [PrtScn]",
+                "key": "[Left Alt] , [Left Shift] , [PrtScn]",
                 "val": "Toggle High Visibility screen mode"
             },
             {
