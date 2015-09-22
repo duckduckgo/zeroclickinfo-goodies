@@ -19,7 +19,7 @@ topics 'cryptography';
 zci answer_type => 'pw';
 zci is_cached   => 0;
 
-triggers start => 'password', 'random password', 'pw', 'random pw', 'pwgen';
+triggers startend => 'password', 'random password', 'generate password', 'generate random password', 'password generator', 'pw', 'random pw', 'pwgen';
 
 use constant MAX_PWD_LENGTH => 64;
 use constant MIN_PWD_LENGTH => 8;
@@ -49,13 +49,11 @@ my $strengths = join('|', keys %pw_strengths);
 
 handle remainder => sub {
 
-    my $query = shift;
-
-    return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s*(?<sw>\d+|$strengths|)$/i);
+    my $query = lc(shift);
 
     srand();                           # Reseed on each request.
 
-    my @q_words = map { lc $_ } grep { defined } ($+{'fw'}, $+{'sw'});
+    my @q_words = ( $query =~ /(\w+|\d+)/g );
 
     my $pw_length = first { looks_like_number($_) } @q_words;
     $pw_length = ($pw_length) ? max(1, $pw_length) : MIN_PWD_LENGTH;
