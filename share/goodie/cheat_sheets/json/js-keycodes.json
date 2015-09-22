@@ -133,37 +133,37 @@
                 "val": 9
             }],
         "Symbols": [{
-                "key": "[Semi-colon [;]]",
+                "key": ";",
                 "val": 186
             },{
-                "key": "[Equal sign [=]]",
+                "key": "=",
                 "val": 187
             },{
-                "key": "[Comma [,]]",
+                "key": ",",
                 "val": 188
             },{
-                "key": "[Dash [-]]",
+                "key": "-",
                 "val": 189
             },{
-                "key": "[Period [.]]",
+                "key": ".",
                 "val": 190
             },{
-                "key": "[Forward Slash [/]]",
+                "key": "/",
                 "val": 191
             },{
-                "key": "[Grave Accent [`]]",
+                "key": "`",
                 "val": 192
             },{
-                "key": "[Open Bracket [(]]",
+                "key": "(",
                 "val": 219
             },{
-                "key": "[Back Slash [\\\\]]",
+                "key": "\\\\",
                 "val": 220
             },{
-                "key": "[Close Bracket [)]]",
+                "key": ")",
                 "val": 221
             },{
-                "key": "[Single Quote [']]",
+                "key": "'",
                 "val": 222
             }],
         "F Keys": [{
