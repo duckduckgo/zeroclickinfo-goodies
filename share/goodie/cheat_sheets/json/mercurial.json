@@ -1,9 +1,9 @@
 {
     "id": "hg_cheat_sheet",
-    "name": "Mercurial(hg) help",
-    "description": "Mercurial(hg) help",
+    "name": "Mercurial(hg)",
+    "description": "Mercurial(hg) cheat sheet",
     "metadata": {
-        "sourceName": "Mercurial (hg)",
+        "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/codeshane/cheat-sheets/mercurial-hg/"
     },
     "aliases": [
@@ -25,98 +25,98 @@
     "sections": {
         "Create Local Repositories": [{
             "val": "Creates a ./.hg/ subfolder and repository",
-            "key": "$ hg init \\[project-name\\]"
+            "key": "hg init \\[project-name\\]"
         }, {
             "val": "Begin tracking all files",
-            "key": "$ hg add"
+            "key": "hg add"
         }, {
             "val": "Save files and Commit message to Repo",
-            "key": "$ hg commit -m \"\\[descriptive message\\]\""
+            "key": "hg commit -m \"\\[descriptive message\\]\""
         }],
 
         "File Operations": [{
             "val": "Begin tracking changes",
-            "key": "$ hg add \\[file\\]"
+            "key": "hg add \\[file\\]"
         }, {
             "val": "Track new but forget missing files",
-            "key": "$ hg addremove"
+            "key": "hg addremove"
         }, {
             "val": "Stop tracking a file",
-            "key": "$ hg forget \\[file\\]"
+            "key": "hg forget \\[file\\]"
         }, {
             "val": "Stop tracking and delete a file",
-            "key": "$ hg remove \\[file\\]"
+            "key": "hg remove \\[file\\]"
         }, {
             "val": "Copy a file",
-            "key": "$ hg copy \\[file\\] \\[target\\]"
+            "key": "hg copy \\[file\\] \\[target\\]"
         }, {
             "val": "Move a file",
-            "key": "$ hg move \\[file\\] \\[target\\]"
+            "key": "hg move \\[file\\] \\[target\\]"
         }],
         "Work Status": [{
             "val": "List tracked file changes",
-            "key": "$ hg diff"
+            "key": "hg diff"
         }, {
             "val": "List changes to a file",
-            "key": "$ hg diff \\[file\\]"
+            "key": "hg diff \\[file\\]"
         }, {
             "val": "List status of files",
-            "key": "$ hg status"
+            "key": "hg status"
         }],
         "Work Directory Updates" :[{
             "val": "Update Work to match Tip",
-            "key": "$ hg update \\[tip\\]"
+            "key": "hg update \\[tip\\]"
         }, {
             "val": "Update Work to specified Revision",
-            "key": "$ hg update -r \\[REV\\]"
+            "key": "hg update -r \\[REV\\]"
         }, {
             "val": "Undo all uncommitted changes",
-            "key": "$ hg revert"
+            "key": "hg revert"
         }],
         "Repository History": [{
             "val": "History of changesets",
-            "key": "$ hg log \\[file/dir\\]"
+            "key": "hg log \\[file/dir\\]"
         }, {
             "val": "Who changed what, when",
-            "key": "$ hg annotate \\[file\\]"
+            "key": "hg annotate \\[file\\]"
         }, {
             "val": "List known remote repos",
-            "key": "$ hg paths"
+            "key": "hg paths"
         }, {
             "val": "List heads",
-            "key": "$ hg heads"
+            "key": "hg heads"
         }],
         "Remote Repositories": [{
             "val": "Cloning a Remote Repository for local work",
-            "key": "$ hg clone \\[url\\] \\[local dir name\\]"
+            "key": "hg clone \\[url\\] \\[local dir name\\]"
         }, {
             "val": "List changesets available from Remote",
-            "key": "$ hg incoming \\[Remote\\]"
+            "key": "hg incoming \\[Remote\\]"
         }, {
             "val": "Pull all new changesets into Local",
-            "key": "$ hg pull"
+            "key": "hg pull"
         }, {
             "val": "Pull specified changesets into Local",
-            "key": "$ hg pull -r \\[Remote\\]"
+            "key": "hg pull -r \\[Remote\\]"
         }, {
             "val": "Also update working directory",
             "key": "-u"
         }, {
             "val": "Push changesets to Remote",
-            "key": "$ hg push \\[Remote\\]"
+            "key": "hg push \\[Remote\\]"
         }, {
             "val": "Sync history with parent and siblings",
-            "key": "$ hg share"
+            "key": "hg share"
         }],
         "Merge Operations": [{
             "val": "Forcefully pull changes overwriting local changes",
-            "key": "$ hg pull --force"
+            "key": "hg pull --force"
         }, {
             "val": "Merge changes",
-            "key": "$ hg merge"
+            "key": "hg merge"
         }, {
             "val": "Commit changes",
-            "key": "$ hg commit"
+            "key": "hg commit"
         }],
         "Command Options": [{
             "val": "Specify a Rev number (default parent)",
@@ -136,10 +136,10 @@
         }],
         "Help": [{
             "val": "See a basic command list",
-            "key": "$ hg"
+            "key": "hg"
         }, {
             "val": "Full command list",
-            "key": "$ hg help"
+            "key": "hg help"
         }, {
             "val": "Detailed help reference",
             "key": "hg help \\[command\\]"
