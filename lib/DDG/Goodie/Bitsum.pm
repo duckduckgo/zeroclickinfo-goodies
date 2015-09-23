@@ -9,7 +9,6 @@ use Math::BigInt;
 zci answer_type => "bitsum";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "Bitsum";
 description "Computes the Hamming Weight / bit-wise sum of a decimal or hex number.";
 primary_example_queries "bitsum 1023", "bitsum 0x789abcd";
@@ -32,12 +31,13 @@ handle remainder => sub {
     return unless $_ =~ /(^0x[0-9a-f]+$)|(^\d+$)/i;
 
     my $input_number = $_;
+    my $hex_number;
     my $binstring;
     
-    # Construct binary for both hex and decimal representations
+    # Construct binary representation for both hex and decimal numbers
     if( $input_number =~ /^0x/) {
-        $input_number =~ s/0x//;
-        $binstring = unpack ('B*', pack ('H*',$input_number));
+        $hex_number = substr($input_number, 2);
+        $binstring = unpack ('B*', pack ('H*',$hex_number));
     } else {
         $binstring = Math::BigInt->new($input_number)->as_bin();
     }
@@ -47,7 +47,7 @@ handle remainder => sub {
     
     return $result,
         structured_answer => {
-            input     => [html_enc($_)],
+            input     => [html_enc($input_number)],
             operation => 'Hamming Weight',
             result    => html_enc($result),
         };
