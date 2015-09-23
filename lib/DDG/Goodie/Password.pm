@@ -8,7 +8,8 @@ use List::MoreUtils qw( none );
 use List::Util qw( min max first );
 use Scalar::Util qw( looks_like_number );
 
-primary_example_queries 'random password', 'random password strong 15';
+primary_example_queries 'random password', 'password strong 15';
+secondary_example_queries 'generate password', 'generate weak password', 'pw', 'pwgen strong 25';
 description 'generates a random password';
 name 'Password';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/Password.pm';
@@ -19,7 +20,8 @@ topics 'cryptography';
 zci answer_type => 'pw';
 zci is_cached   => 0;
 
-triggers startend => 'password', 'random password', 'generate password', 'generate random password', 'password generator', 'pw', 'random pw', 'pwgen';
+triggers start => 'random password', 'generate password', 'generate random password', 'password generator', 'pw', 'generate pw', 'random pw', 'pwgen';
+triggers startend => 'password';
 
 use constant MAX_PWD_LENGTH => 64;
 use constant MIN_PWD_LENGTH => 8;
@@ -50,10 +52,18 @@ my $strengths = join('|', keys %pw_strengths);
 handle remainder => sub {
 
     my $query = lc(shift);
+    
+    # Remove stopwords from remainder before checking format
+    my @stopwords = ('generate', 'generator', 'random', 'characters', 'create');
+    for my $stopwd (@stopwords) {
+        $query =~ s/$stopwd//;
+    }
+    
+    return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s*(?<sw>\d+|$strengths|)$/i);
 
     srand();                           # Reseed on each request.
 
-    my @q_words = ( $query =~ /(\w+|\d+)/g );
+    my @q_words = map { lc $_ } grep { defined } ($+{'fw'}, $+{'sw'});
 
     my $pw_length = first { looks_like_number($_) } @q_words;
     $pw_length = ($pw_length) ? max(1, $pw_length) : MIN_PWD_LENGTH;

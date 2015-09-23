@@ -67,20 +67,20 @@ ddg_goodie_test(
             result    => qr/^.{8}$/
         }
     ),
-    'password 15' => test_zci(
+    'password strong 15' => test_zci(
         qr/.{15} \(random password\)/,
         structured_answer => {
-            input     => ['15 characters', 'average strength'],
+            input     => ['15 characters', 'high strength'],
             operation => 'Random password',
             result    => qr/^.{15}$/
         }
     ),
-    'password 33' => test_zci(
-        qr/.{33} \(random password\)/,
+    'pw' => test_zci(
+        qr/.{8} \(random password\)/,
         structured_answer => {
-            input     => ['33 characters', 'average strength'],
+            input     => ['8 characters', 'average strength'],
             operation => 'Random password',
-            result    => qr/^.{33}$/
+            result    => qr/^.{8}$/
         }
     ),
     # Add some triggers (issue  #1565)
@@ -168,6 +168,14 @@ ddg_goodie_test(
     'random password weak 5' => undef,
     'password 5 EaSy' => undef,
     'password low 5' => undef,
+    'generate generate password' => undef,
+    'password pw' => undef,
+    'password fortissimo' => undef,
+    'nice random password' => undef,
+    'excavate strong password' => undef,
+    'not another strong pw' => undef,
+    'generator' => undef,
+    'potatoe generator' => undef
 );
 
 done_testing
