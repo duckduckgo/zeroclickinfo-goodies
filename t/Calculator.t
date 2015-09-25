@@ -774,6 +774,7 @@ ddg_goodie_test(
     '$5'                              => undef,
     'calculate 5'                     => undef,
     'solve $50'                       => undef,
+    '382-538-2546'                    => undef,    # Calling DuckDuckGo
 );
 
 done_testing;
