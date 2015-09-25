@@ -1,15 +1,15 @@
 {
     "id": "us_government_agencies_cheat_sheet", 
-    "name": "Acronyms for US Government Agencies (Noncomprehensive)",
+    "name": "Acronyms for US Government Agenciess",
     "description": "Common US Government Agencies and their Acronyms", 
     "metadata": { 
-        "sourceName": "Common U.S. Government Abbreviations and Acronyms",
-        "sourceUrl": "http://www15.uta.fi/FAST/GC/usabacro.html"
+        "sourceName": "A Guide to U.S. Government Acronyms & Abbreviations",
+        "sourceUrl": "http://ucsd.libguides.com/c.php?g=90902&p=584912"
     },	
     "aliases": [
         "us government agencies", "us government", "us agencies"
     ],
-    "template_type": "code",
+    "template_type": "reference",
     "section_order" : ["A", "B", "C", "D", "E", "F", "H", "I", "N", "P", "R", "S", "T", "U", "V", "W", "Y"],
     "sections":{
         "A": [
