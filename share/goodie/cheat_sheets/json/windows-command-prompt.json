@@ -7,7 +7,10 @@
        "sourceUrl": "https://en.wikipedia.org/wiki/Windows_Command_Prompt"
     },
 	"aliases": [
-        "cmd"
+        "cmd",
+        "windows cmd",
+        "windows cmd prompt",
+        "cmd prompt"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -38,75 +41,75 @@
                 "val": "Beginning from the current cursor position, delete up to character Z"
             },
             {
-                "key": "[F5]",
+                "key": "F5",
                 "val": "Scroll through history of typed commands (↑)"
             },
             {
-                "key": "[F7]",
+                "key": "F7",
                 "val": "Show history of previous commands"
             },
             {
-                "key": "[ALT] , [F7]",
+                "key": "[ALT], [F7]",
                 "val": "Clear command history"
             },
             {
-                "key": "[F8]",
+                "key": "F8",
                 "val": "Move backwards through the command history, but only display commands matching the current text at the command prompt"
             },
             {
-                "key": "[F9]",
+                "key": "F9",
                 "val": "Run a specific command from the command history"
             },
             {
-                "key":"[Esc]",
+                "key":"Esc",
                 "val": "Clear command line"
             },
             {
-                "key": "[Insert]",
+                "key": "Insert",
                 "val": "Toggle Insert/Overwrite"
             },
             {
-                "key": "[Ctrl] , [Home]",
+                "key": "[Ctrl], [Home]",
                 "val": "Erase line to the left"
             },
             {
-                "key": "[Ctrl] , [End]",
+                "key": "[Ctrl], [End]",
                 "val": "Erase line to the right"
             },
             {
-                "key": "[Ctrl] , [←]",
+                "key": "[Ctrl], [←]",
                 "val": "Move one word to the left (backward)"
             },
             {
-                "key": "[Ctrl] , [→]",
+                "key": "[Ctrl], [→]",
                 "val": "Move one word to the right (forward)"
             },
             {
-                "key": "[Backspace]" ,
+                "key": "Backspace" ,
                 "val": "Erase character to the left"
             },
             {
-                "key": "[Home]",
+                "key": "Home",
                 "val": "Move to beginning of line"
             },
             {
-                "key": "[End]",
+                "key": "End",
                 "val": "Move to end of line"
             },
             {
-                "key": "[PgUp]",
+                "key": "PgUp",
                 "val": "Scroll window up"
             },
             {
-                "key": "[PgDn]",
+                "key": "PgDn",
                 "val": "Scroll window Down"
             },
             {
-                "key": "[Ctrl] , [C]",
+                "key": "[Ctrl], [C]",
                 "val": "Abort current command/typing"
             },
             {
-                "key": "[Left Alt] , [Left Shift] , [PrtScn]",
+                "key": "[Left Alt], [Left Shift], [PrtScn]",
                 "val": "Toggle High Visibility screen mode"
             },
             {
