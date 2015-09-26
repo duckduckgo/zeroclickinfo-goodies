@@ -40,15 +40,15 @@
         "Binary": [
         {
             "val": "2^10 bytes = 1024 bytes",
-            "key": "Kilobyte (KB) / Kibibyte (KiB)"
+            "key": "Kibibyte (KiB)"
         }, {
-            "val": "2^20 bytes = 1024^2 byte = 1,048,576 bytes = 1024 KB",
-            "key": "Megabyte (MB) / Mebibyte (MiB)"
+            "val": "2^20 bytes = 1024^2 byte = 1,048,576 bytes = 1024 KiB",
+            "key": "Mebibyte (MiB)"
         }, {
-            "val": "2^30 bytes = 1024^3 bytes = 1,073,741,824 bytes = 1024 MB",
-            "key": "Gigabyte (GB) / Gebibyte (GiB)"
+            "val": "2^30 bytes = 1024^3 bytes = 1,073,741,824 bytes = 1024 MiB",
+            "key": "Gibibyte (GiB)"
         }, {
-            "val": "2^40 bytes = 1024^4 bytes = 1,099,511,627,776 bytes = 1024 GB",
+            "val": "2^40 bytes = 1024^4 bytes = 1,099,511,627,776 bytes = 1024 GiB",
             "key": "Tebibyte (TiB)"
         }, {
             "val": "2^50 bytes = 1024^5 bytes = 1,125,899,906,842,624 bytes = 1024 TiB",
