@@ -7,11 +7,11 @@
         "sourceUrl": "http://perldoc.perl.org/prove.html"
     },
     "template_type": "keyboard",
-    "section_order": ["Usage", "Options"],
+    "section_order": ["Usage", "Options", "Examples"],
     "sections": {
         "Usage": [
         {
-            "key": "[prove \\[option\\] \\[filepath\\] ]",
+            "key": "prove \\[option\\] \\[filepath\\]",
             "val": "start prove"
         }
         ],
@@ -43,6 +43,36 @@
         {
             "key": "--exec <program>",
             "val": "run tests with another program (not Perl)"
+        }
+        ],
+        "Examples": [
+        {
+            "key": "prove -lr",
+            "val": "Run all *.t tests in t/"
+        },
+        {
+            "key": "prove -l t/01-Basics.t",
+            "val": "Run the t/01-Basics.t test file"
+        },
+        {
+            "key": "prove -lrv",
+            "val": "Run all *.t tests in t/ with verbose output"
+        },
+        {
+            "key": "prove -lr -j 4",
+            "val": "Run all *.t tests in t/ with 4 processes"
+        },
+        {
+            "key": "prove -r /test-dir",
+            "val": "Run all *.t tests in /test-dir"
+        },
+        {
+            "key": "prove --exec perl6 test-dir/",
+            "val": "Run all *.t tests in test-dir/ with perl6"
+        },
+        {
+            "key": "prove -h",
+            "val": "Display help page"
         }
         ]
     }
