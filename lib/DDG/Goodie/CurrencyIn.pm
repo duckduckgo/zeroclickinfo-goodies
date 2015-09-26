@@ -21,7 +21,6 @@ use strict;
 use DDG::Goodie;
 use Locale::SubCountry;
 use Text::Trim;
-use Encode;
 
 zci is_cached => 1;
 zci answer_type => "currency_in";
@@ -74,7 +73,7 @@ handle remainder => sub {
             # Append result with all currencies
             for (@currencies) {
                 chomp;
-                $result .= decode_utf8($_) . "\n";
+                $result .= Encode::decode_utf8($_) . "\n";
             }
 
             chomp $result;
