@@ -34,10 +34,32 @@ sub build_structure
 
 ddg_goodie_test(
     [qw(DDG::Goodie::UN)],
-    "un 9" => test_zci(build_structure("0009", "Ammunition, incendiary with or without burster, expelling charge, or propelling charge", "https://en.wikipedia.org/wiki/List_of_UN_numbers_0001_to_0100")),
-    "un number 9" => test_zci(build_structure("0009", "Ammunition, incendiary with or without burster, expelling charge, or propelling charge", "https://en.wikipedia.org/wiki/List_of_UN_numbers_0001_to_0100")),
-    "un number 0009" => test_zci(build_structure("0009", "Ammunition, incendiary with or without burster, expelling charge, or propelling charge", "https://en.wikipedia.org/wiki/List_of_UN_numbers_0001_to_0100")),
-    "un 1993" => test_zci(build_structure("1993", "Combustible liquids, n.o.s", "https://en.wikipedia.org/wiki/List_of_UN_numbers_1901_to_2000")),
+    "un 9" => test_zci(
+        build_structure(
+            "0009",
+            "Ammunition, incendiary with or without burster, expelling charge, or propelling charge",
+            "https://en.wikipedia.org/wiki/List_of_UN_numbers_0001_to_0100"
+        )
+    ),
+    "un number 9" => test_zci(
+        build_structure(
+            "0009",
+            "Ammunition, incendiary with or without burster, expelling charge, or propelling charge",
+            "https://en.wikipedia.org/wiki/List_of_UN_numbers_0001_to_0100"
+        )
+    ),
+    "un number 0009" => test_zci(
+        build_structure(
+            "0009",
+            "Ammunition, incendiary with or without burster, expelling charge, or propelling charge",
+            "https://en.wikipedia.org/wiki/List_of_UN_numbers_0001_to_0100"
+        )
+    ),
+    "un 1993" => test_zci(
+        build_structure(
+            "1993", "Combustible liquids, n.o.s", "https://en.wikipedia.org/wiki/List_of_UN_numbers_1901_to_2000"
+        )
+    ),
     "un number foo" => undef,
 );
 
