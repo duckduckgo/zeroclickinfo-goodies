@@ -8,7 +8,8 @@
     },
     "template_type": "reference",
     "section_order": [  
-        "Poker Hands in order of rank"
+        "Poker Hands in order of rank",
+        "Poker Hands probabilities"
     ],
     "sections": {       
         "Poker Hands in order of rank": [
@@ -51,6 +52,44 @@
             {
                 "key": "High card",
                 "val": "No hand is made, and the only thing of any potential meaning in the hand is the highest card" 
+            }
+        ],
+        "Poker Hands probabilities": [
+            {
+                "key": "Straight flush",
+                "val": "0.0015%"
+            },
+            {
+                "key": "Four of a kind",
+                "val": "0.024%"
+            },
+            {
+                "key": "Full house",
+                "val": "0.1441%"
+            },
+            {
+                "key": "Flush",
+                "val": "0.196%"
+            },
+            {
+                "key": "Straight",
+                "val": "0.39%"
+            },
+            {
+                "key": "Three of a kind",
+                "val" : "2.11%"
+            },
+            {
+                "key": "Two pair",
+                "val": "4.75%"
+            },
+            {
+                "key": "One pair",
+                "val": "42.26%"
+            },
+            {
+               "key": "High card",
+               "val": "50.11%"
             }
         ]
     }
