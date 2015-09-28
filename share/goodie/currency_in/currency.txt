@@ -7,7 +7,7 @@ Euro (EUR)
 albania
 Albanian lek (ALL)
 alderney
-Alderney pound,British pound (GBP),Guernsey pound
+Alderney pound,British pound (GBP),Guernsey pound (GGP)
 algeria
 Algerian dinar (DZD)
 andorra
@@ -175,7 +175,7 @@ East Caribbean dollar (XCD)
 guatemala
 Guatemalan quetzal (GTQ)
 guernsey
-British pound (GBP),Guernsey pound
+British pound (GBP),Guernsey pound (GGP)
 guinea
 Guinean franc (GNF)
 guinea-bissau
@@ -443,7 +443,7 @@ Turkmenistani manat (TMT)
 turks and caicos islands
 United States dollar (USD)
 tuvalu
-Australian dollar (AUD),Tuvaluan dollar
+Australian dollar (AUD),Tuvaluan dollar (TVD)
 uganda
 Ugandan shilling (UGX)
 ukraine
