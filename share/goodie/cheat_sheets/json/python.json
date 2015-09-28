@@ -11,8 +11,8 @@
         "Invocation Options",
         "Environment Variables",
         "String Literal Escapes",
-        "Navigation",
-        "Selection",
+        "Operations on String",
+        "Format codes",
         "Fly mode",
         "Switching modes",
         "Modeling",
@@ -104,8 +104,7 @@
       "Environment Variables": [{
             "val": "PYTHONHOME",
             "key": "Alternate prefix directory.The default module search path uses prefix/lib"
-        },
-                   {
+        }, {
             "val": "PYTHONPATH",
             "key": "Augments the default search path for module files.The format is same as shell's $path. one or mpre directory path names seperated by ':' or ';'without spaces around (semi)) colons !  "
         }, {
@@ -147,10 +146,10 @@
             "key": "Ignored (escape newline)"
         }, {
             "val": "\\",
-            "key": "Backslash (\)"
+            "key": "Backslash"
         }, {
             "val": "\e",
-            "key": "Escapes (Esc)"
+            "key": "Escapes"
         }, {
             "val": "\v",
             "key": "Vertical Tab [VT]"
