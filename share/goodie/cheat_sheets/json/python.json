@@ -141,8 +141,8 @@
         }, {
             "val": "PYTHONNOUSERSITE",
             "key": "If nonempty,same as -s option"
-        }, 
-         "String Literal Escapes" :[{
+        }] , 
+         "String Literal Escapes" : [{
             "val": "\newline",
             "key": "Ignored (escape newline)"
         }, {
