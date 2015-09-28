@@ -5,7 +5,8 @@ use strict;
 use DDG::Goodie;
 use Number::UN 'get_un';
 
-attribution github => ['tantalor', 'John Tantalo'];
+attribution github => ['tantalor', 'John Tantalo'],
+            github => ['https://github.com/ozdemirburak', "Burak Özdemir"];
 
 primary_example_queries 'UN Number 0009';
 description 'gives a description for a given UN number';
@@ -14,7 +15,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'facts';
 topics 'everyday';
 
-use constant WPHREF => "http://en.wikipedia.org/wiki/List_of_UN_numbers_%04d_to_%04d";
+use constant WPHREF => "https://en.wikipedia.org/wiki/List_of_UN_numbers_%04d_to_%04d";
 
 triggers start => 'un';
 
@@ -28,7 +29,25 @@ handle remainder => sub {
 
   my %un = get_un($num) or return;
   $un{description} =~ s/\.$//;
-  return (sprintf qq(UN Number %04d - %s.), $num, $un{description}), html => sprintf qq(<a href="%s">UN Number %04d</a> - %s.), wphref($num), $num, $un{description};
+
+  return $un{description}, structured_answer => {
+    id => 'un',
+    name => 'UN Number',
+    data => {
+      title => "UN Number: " . $un{number},
+      description => $un{description}
+    },
+    meta => {
+      sourceName => "Wikipedia",
+      sourceUrl => wphref($num)
+    },
+    templates => {
+      group => 'info',
+      options => {
+        moreAt => 1
+      }
+    }
+  };
 };
 
 # Wikipedia attribution per CC-BY-SA
