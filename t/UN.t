@@ -57,7 +57,9 @@ ddg_goodie_test(
     ),
     "un 1993" => test_zci(
         build_structure(
-            "1993", "Combustible liquids, n.o.s", "https://en.wikipedia.org/wiki/List_of_UN_numbers_1901_to_2000"
+            "1993",
+            "Combustible liquids, n.o.s",
+            "https://en.wikipedia.org/wiki/List_of_UN_numbers_1901_to_2000"
         )
     ),
     "un number foo" => undef,
