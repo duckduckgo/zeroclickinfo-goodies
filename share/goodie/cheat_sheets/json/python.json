@@ -76,7 +76,7 @@
             "val": "-V",
             "key": "Print the python version number and exit "
         },
-        " {
+         {
             "val": "-W arg",
             "key": "Warning control"
         }, {
@@ -100,7 +100,7 @@
         }, {
             "val": "",
             "key": "if no scriptFile or command ,Python enters interactive mode "
-        }, 
+        }], 
       "Environment Variables": [{
             "val": "PYTHONHOME",
             "key": "Alternate prefix directory.The default module search path uses prefix/lib"
