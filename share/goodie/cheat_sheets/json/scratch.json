@@ -1,0 +1,591 @@
+{
+   "id" : "scratch_cheat_sheet",
+   "name" : "Scratch Cheat Sheet",
+   "metadata" : {
+      "sourceName" : "Scratch for Kids",
+      "sourceUrl" : "http://www.dummies.com/how-to/content/scratch-for-kids-for-dummies-cheat-sheet.html"
+   },
+   "aliases": [
+       "optioneel1", "optioneel2"
+   ],
+   "template_type": "terminal",
+   "section_order" : [
+      "Control",
+      "Data",
+      "Events",
+      "Looks",
+      "Motion",
+      "Operators",
+      "Pen",
+      "Sensing",
+      "Sound",
+      "More Blocks"
+   ],
+   "description" : "Basic Scratch Blocks.The blocks are grouped into categories, these are color-coded within Scratch.",
+   "sections" : {
+      "Motion" : [
+         {
+            "val" : "",
+            "key" : "move _ steps"
+         },
+         {
+            "val" : "",
+            "key" : "turn right"
+         },
+         {
+            "val" : "",
+            "key" : "turn left"
+         },
+         {
+            "val" : "",
+            "key" : "point in direction"
+         },
+         {
+            "val" : "",
+            "key" : "point towards"
+         },
+         {
+            "val" : "",
+            "key" : "go to x y"
+         },
+         {
+            "val" : "",
+            "key" : "go to"
+         },
+         {
+            "val" : "",
+            "key" : "glide _ secs to x y"
+         },
+         {
+            "val" : "",
+            "key" : "change x by"
+         },
+         {
+            "val" : "",
+            "key" : "set x to"
+         },
+         {
+            "val" : "",
+            "key" : "change y by"
+         },
+         {
+            "val" : "",
+            "key" : "set y to"
+         },
+         {
+            "val" : "",
+            "key" : "if on edge, bounce"
+         },
+         {
+            "val" : "",
+            "key" : "set rotation style"
+         },
+         {
+            "val" : "",
+            "key" : "x position"
+         },
+         {
+            "val" : "",
+            "key" : "y position"
+         },
+         {
+            "val" : "",
+            "key" : "direction"
+         }
+      ],
+      "Looks" : [
+         {
+            "val" : "",
+            "key" : "say for _ secs"
+         },
+         {
+            "val" : "",
+            "key" : "say"
+         },
+         {
+            "val" : "",
+            "key" : "think for _ secs"
+         },
+         {
+            "val" : "",
+            "key" : "think"
+         },
+         {
+            "val" : "",
+            "key" : "show"
+         },
+         {
+            "val" : "",
+            "key" : "hide"
+         },
+         {
+            "val" : "",
+            "key" : "switch costume"
+         },
+         {
+            "val" : "",
+            "key" : "next costume"
+         },
+         {
+            "val" : "",
+            "key" : "next backdrop"
+         },
+         {
+            "val" : "",
+            "key" : "switch backdrop"
+         },
+         {
+            "val" : "",
+            "key" : "switch and wait"
+         },
+         {
+            "val" : "",
+            "key" : "change effect to"
+         },
+         {
+            "val" : "",
+            "key" : "set effect to"
+         },
+         {
+            "val" : "",
+            "key" : "clear effects"
+         },
+         {
+            "val" : "",
+            "key" : "change size by"
+         },
+         {
+            "val" : "",
+            "key" : "set size to"
+         },
+         {
+            "val" : "",
+            "key" : "go to front"
+         },
+         {
+            "val" : "",
+            "key" : "go back _ layers"
+         },
+         {
+            "val" : "",
+            "key" : "costume #"
+         },
+         {
+            "val" : "",
+            "key" : "backdrop name"
+         },
+         {
+            "val" : "",
+            "key" : "backdrop #"
+         },
+         {
+            "val" : "",
+            "key" : "size"
+         }
+      ],
+      "Sound" : [
+         {
+            "val" : "",
+            "key" : "play sound _"
+         },
+         {
+            "val" : "",
+            "key" : "play sound _ until done"
+         },
+         {
+            "val" : "",
+            "key" : "stop all sounds"
+         },
+         {
+            "val" : "",
+            "key" : "play drum _ for _ beats"
+         },
+         {
+            "val" : "",
+            "key" : "rest for _ beats"
+         },
+         {
+            "val" : "",
+            "key" : "play note _ for _ beats"
+         },
+         {
+            "val" : "",
+            "key" : "set instrument to _"
+         },
+         {
+            "val" : "",
+            "key" : "change volume by _"
+         },
+         {
+            "val" : "",
+            "key" : "set volume to _ %"
+         },
+         {
+            "val" : "",
+            "key" : "change tempo by _"
+         },
+         {
+            "val" : "",
+            "key" : "set tempo to _ bpm"
+         },
+         {
+            "val" : "",
+            "key" : "tempo"
+         },
+         {
+            "val" : "",
+            "key" : "volume"
+         }
+      ],
+      "Pen" : [
+         {
+            "val" : "",
+            "key" : "clear"
+         },
+         {
+            "val" : "",
+            "key" : "stamp"
+         },
+         {
+            "val" : "",
+            "key" : "pen down"
+         },
+         {
+            "val" : "",
+            "key" : "pen up"
+         },
+         {
+            "val" : "",
+            "key" : "set pen color to \\[color\\]"
+         },
+         {
+            "val" : "",
+            "key" : "change pen color by _"
+         },
+         {
+            "val" : "",
+            "key" : "set pen color to \\[number\\]"
+         },
+         {
+            "val" : "",
+            "key" : "change pen shade by _"
+         },
+         {
+            "val" : "",
+            "key" : "set pen shade to _"
+         },
+         {
+            "val" : "",
+            "key" : "change pen size by _"
+         },
+         {
+            "val" : "",
+            "key" : "set pen size to _"
+         }
+      ],
+      "Data" : [
+         {
+            "val" : "",
+            "key" : "make variable"
+         },
+         {
+            "val" : "",
+            "key" : "set _ to"
+         },
+         {
+            "val" : "",
+            "key" : "change _ by"
+         },
+         {
+            "val" : "",
+            "key" : "show variable"
+         },
+         {
+            "val" : "",
+            "key" : "hide variable"
+         },
+         {
+            "val" : "",
+            "key" : "make a list"
+         },
+         {
+            "val" : "",
+            "key" : "add _ to"
+         },
+         {
+            "val" : "",
+            "key" : "delete _ of"
+         },
+         {
+            "val" : "",
+            "key" : "insert _ at"
+         },
+         {
+            "val" : "",
+            "key" : "replace item"
+         },
+         {
+            "val" : "",
+            "key" : "item _ of"
+         },
+         {
+            "val" : "",
+            "key" : "length of"
+         },
+         {
+            "val" : "",
+            "key" : "_ contains"
+         },
+         {
+            "val" : "",
+            "key" : "show list"
+         },
+         {
+            "val" : "",
+            "key" : "hide list"
+         }
+      ],
+      "Events" : [
+         {
+            "val" : "",
+            "key" : "when green flag clicked"
+         },
+         {
+            "val" : "",
+            "key" : "when key pressed"
+         },
+         {
+            "val" : "",
+            "key" : "when this sprite clicked"
+         },
+         {
+            "val" : "",
+            "key" : "when backdrop switches to"
+         },
+         {
+            "val" : "",
+            "key" : "when _ > _"
+         },
+         {
+            "val" : "",
+            "key" : "when I receive"
+         },
+         {
+            "val" : "",
+            "key" : "broadcast"
+         },
+         {
+            "val" : "",
+            "key" : "broadcast and wait"
+         }
+      ],
+      "Control" : [
+         {
+            "val" : "",
+            "key" : "wait _ secs"
+         },
+         {
+            "val" : "",
+            "key" : "repeat"
+         },
+         {
+            "val" : "",
+            "key" : "forever"
+         },
+         {
+            "val" : "",
+            "key" : "if _ then"
+         },
+         {
+            "val" : "",
+            "key" : "if _ then else"
+         },
+         {
+            "val" : "",
+            "key" : "wait until"
+         },
+         {
+            "val" : "",
+            "key" : "when I start as a clone"
+         },
+         {
+            "val" : "",
+            "key" : "repeat until"
+         },
+         {
+            "val" : "",
+            "key" : "stop"
+         },
+         {
+            "val" : "",
+            "key" : "create clone of"
+         },
+         {
+            "val" : "",
+            "key" : "delete this clone"
+         }
+      ],
+      "Sensing" : [
+         {
+            "val" : "",
+            "key" : "touching"
+         },
+         {
+            "val" : "",
+            "key" : "touching color"
+         },
+         {
+            "val" : "",
+            "key" : "color is touching"
+         },
+         {
+            "val" : "",
+            "key" : "distance to"
+         },
+         {
+            "val" : "",
+            "key" : "ask _ and wait"
+         },
+         {
+            "val" : "",
+            "key" : "answer"
+         },
+         {
+            "val" : "",
+            "key" : "key _ pressed?"
+         },
+         {
+            "val" : "",
+            "key" : "mouse down?"
+         },
+         {
+            "val" : "",
+            "key" : "mouse x"
+         },
+         {
+            "val" : "",
+            "key" : "mouse y"
+         },
+         {
+            "val" : "",
+            "key" : "loudness"
+         },
+         {
+            "val" : "",
+            "key" : "video _ on _"
+         },
+         {
+            "val" : "",
+            "key" : "turn video"
+         },
+         {
+            "val" : "",
+            "key" : "set transparency"
+         },
+         {
+            "val" : "",
+            "key" : "timer"
+         },
+         {
+            "val" : "",
+            "key" : "reset timer"
+         },
+         {
+            "val" : "",
+            "key" : "_ of _"
+         },
+         {
+            "val" : "",
+            "key" : "current _"
+         },
+         {
+            "val" : "",
+            "key" : "days since 2000"
+         },
+         {
+            "val" : "",
+            "key" : "username"
+         }
+      ],
+      "Operators" : [
+         {
+            "val" : "",
+            "key" : "add"
+         },
+         {
+            "val" : "",
+            "key" : "subtract"
+         },
+         {
+            "val" : "",
+            "key" : "multiply"
+         },
+         {
+            "val" : "",
+            "key" : "devide"
+         },
+         {
+            "val" : "",
+            "key" : "pick random #"
+         },
+         {
+            "val" : "",
+            "key" : "less than"
+         },
+         {
+            "val" : "",
+            "key" : "equals"
+         },
+         {
+            "val" : "",
+            "key" : "greater than"
+         },
+         {
+            "val" : "",
+            "key" : "and"
+         },
+         {
+            "val" : "",
+            "key" : "or"
+         },
+         {
+            "val" : "",
+            "key" : "not"
+         },
+         {
+            "val" : "",
+            "key" : "join"
+         },
+         {
+            "val" : "",
+            "key" : "letter _ of"
+         },
+         {
+            "val" : "",
+            "key" : "length of"
+         },
+         {
+            "val" : "",
+            "key" : "mod"
+         },
+         {
+            "val" : "",
+            "key" : "round"
+         },
+         {
+            "val" : "",
+            "key" : "_ of _"
+         }
+      ],
+      "More blocks" : [
+         {
+            "val" : "",
+            "key" : "Make a Block"
+         },
+         {
+            "val" : "",
+            "key" : "Add an Extension"
+         }
+      ]
+   }
+}
