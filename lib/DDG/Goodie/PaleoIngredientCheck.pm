@@ -32,38 +32,33 @@ handle remainder => sub {
     my($result);
 
     if (any {/$item/} @safe_keywords) {
-        # If we know the item is safe, append the appropriate positive result.
-        if ($is_plural) {
-            $result = "are";
-        } else {
-            $result = "is";
-        }
+        
+        $result= "Yes";
     } elsif (any {/$item/} @unsafe_keywords) {
-        # If we know the item is unsafe, append the appropriate negative result.
-        if ($is_plural) {
-            $result = "are not";
-        } else {
-            $result = "is not";
-        }
+        $result= "No"
     } elsif (!$is_plural) {
         # If nothing was found and the query was not plural, try it pluralized.
         if (any {/$item."s"/} @safe_keywords) {
-            $result = "is";
+            $result = "Yes";
         } elsif (any {/$item."s"/} @unsafe_keywords) {
-            $result = "is not";
+            $result = "No";
         }
     } elsif ($is_plural) {
         # If nothing was found and the query was plural, try it depluralized.
         my $depluralized = substr($item, 0, -1);
         if (any {/$depluralized/} @safe_keywords) {
-            $result = "are";
+            $result = "Yes";
         } elsif (any {/$depluralized/} @unsafe_keywords) {
-            $result = "are not";
+            $result = "No";
         }
     }
     
-    return unless $result;
-    return sprintf("%s %s allowed on the paleo diet.", ucfirst($item), $result);
+return $result;
+structured_answer => {
+    input     => "Is $item paleo-diet friendly", # or just the original query
+    operation => "",
+    result    => $result, # this could possibly be shortened to a simple "Yes" or "No"
+};
 };
 
 1;
