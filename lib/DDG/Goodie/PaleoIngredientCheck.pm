@@ -3,9 +3,8 @@ package DDG::Goodie::PaleoIngredientCheck;
 
 use DDG::Goodie;
 use List::MoreUtils 'any';
-use YAML::XS qw(Load);
 
-triggers any => 'paleo', 'paleo friendly', 'paleo diet', 'paleo friendly?', 'paleo?';
+triggers startend => share('triggers.txt')->slurp;
 
 zci answer_type => "paleo_ingredient_check";
 zci is_cached   => 1;
@@ -18,29 +17,53 @@ category "food";
 topics "food_and_drink";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PaleoIngredientCheck.pm";
 attribution github => ["murz", "Mike Murray"];
-attribution github => ["javathunderman", "Thomas Denizou"];
-attribution twitter => ["javathunderman", "Thomas Denizou"];
 
-my $safeornot = Load(scalar share('safeornot.yml')->slurp);
+my @safe_keywords = share('safe.txt')->slurp;
+my @unsafe_keywords = share('unsafe.txt')->slurp;
+
 handle remainder => sub {
-my ($query,$ingredient,$safe); #Define vars
 
-    s/^paleo friendly (diet)?//g; # strip common words
-    $query = $_;
+    my $item = lc($_);
 
+    # Remove any preceding "is" or "are" text from the query.
+    $item =~ s/^(is|are)[\W]+//;
 
-return unless $ingredient;
-$safe= $safeornot->{$ingredient}
-return unless $safe;
-if ($safe eq "0") {$safe = $ingredient." is safe";}
-else if ($safe eq "1") {$safe= $ingredient."is not safe";}
-return $ingredient . " is $safe",
-      structured_answer => {
-        input     => [$ingredient],
-        operation => 'paleo',
-        result    => $safe
-      };
+    my $is_plural = substr($item, -1) eq "s";
+    my($result);
 
+    if (any {/$item/} @safe_keywords) {
+        # If we know the item is safe, append the appropriate positive result.
+        if ($is_plural) {
+            $result = "are";
+        } else {
+            $result = "is";
+        }
+    } elsif (any {/$item/} @unsafe_keywords) {
+        # If we know the item is unsafe, append the appropriate negative result.
+        if ($is_plural) {
+            $result = "are not";
+        } else {
+            $result = "is not";
+        }
+    } elsif (!$is_plural) {
+        # If nothing was found and the query was not plural, try it pluralized.
+        if (any {/$item."s"/} @safe_keywords) {
+            $result = "is";
+        } elsif (any {/$item."s"/} @unsafe_keywords) {
+            $result = "is not";
+        }
+    } elsif ($is_plural) {
+        # If nothing was found and the query was plural, try it depluralized.
+        my $depluralized = substr($item, 0, -1);
+        if (any {/$depluralized/} @safe_keywords) {
+            $result = "are";
+        } elsif (any {/$depluralized/} @unsafe_keywords) {
+            $result = "are not";
+        }
+    }
+    
+    return unless $result;
+    return sprintf("%s %s allowed on the paleo diet.", ucfirst($item), $result);
 };
 
 1;
