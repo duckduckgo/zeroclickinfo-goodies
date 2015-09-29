@@ -1,12 +1,12 @@
 {
-    "id":"data_size_cheat_sheet",
-    "name":"Units of Data",
+    "id":"digital_information_units_cheat_sheet",
+    "name":"Units of Digital Information",
     "description":"Unit of information is the capacity of some standard data storage system or communication channel, used to measure the capacities of other systems and channels.",
     "metadata":{
         "sourceName":"Wikipedia",
         "sourceUrl":"https://en.wikipedia.org/wiki/Units_of_information"
     },
-    "aliases":["unit of data", "units of data", "data sizes", "data unit", "data units"],
+    "aliases":["units of information", "unit of data", "units of data", "data sizes", "data unit", "data units"],
     "template_type": "reference",
     "section_order": ["Decimal", "Binary"],
     "sections": {
