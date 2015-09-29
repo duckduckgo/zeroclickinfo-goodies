@@ -1,0 +1,230 @@
+{
+    "id": "anniversary_cheat_sheet",
+    "name": "Anniversary Terms",
+    "description": "Common and Latin terms for anniversaries from 6 months up to 2000 years",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Anniversary"
+    },
+    "section_order": [
+        "Common term",
+        "Latin term"
+    ],
+    "template_type": "reference",
+    "sections": {
+        "Common term": [
+        {
+            "val": "6 months",
+            "key": "N/A"
+        }, {
+            "val": "1 year",
+            "key": "Paper"
+        }, {
+            "val": "2 years",
+            "key": "Cotton"
+        }, {
+            "val": "3 years",
+            "key": "Leather"
+        }, {
+            "val": "4 years",
+            "key": "Linen"
+        }, {
+            "val": "5 years",
+            "key": "Wood"
+        }, {
+            "val": "6 years",
+            "key": "Iron"
+        }, {
+            "val": "7 years",
+            "key": "Wool"
+        }, {
+            "val": "8 years",
+            "key": "Bronze"
+        }, {
+            "val": "9 years",
+            "key": "Copper"
+        }, {
+            "val": "10 years",
+            "key": "Tin / Aluminium"
+        }, {
+            "val": "11 years",
+            "key": "Steel"
+        }, {
+            "val": "12 years",
+            "key": "Silk"
+        }, {
+            "val": "13 years",
+            "key": "Lace"
+        }, {
+            "val": "14 years",
+            "key": "Ivory"
+        }, {
+            "val": "15 years",
+            "key": "Crystal"
+        }, {
+            "val": "20 years",
+            "key": "China/Porcelain"
+        }, {
+            "val": "25 years",
+            "key": "Silver"
+        }, {
+            "val": "50 years",
+            "key": "Gold"
+        }, {
+            "val": "60 years",
+            "key": "Diamond of Monarchs"
+        }, {
+            "val": "70 years",
+            "key": "Platinum of Monarchs"
+        }, {
+            "val": "75 years",
+            "key": "Diamond"
+        }, {
+            "val": "100 years",
+            "key": "Platinum / Centenary"
+        },{
+            "val": "200 years",
+            "key": "Bicentenary"
+        }, {
+            "val": "250 years",
+            "key": "Quarter-millennial"
+        }, {
+            "val": "300 years",
+            "key": "Tercentennial / Tricentennial"
+        } , {
+            "val": "400 years",
+            "key": "Quadricentenary / Quatercentenary"
+        }, {
+            "val": "500 years",
+            "key": "Quincentennial"
+        }, {
+            "val": "600 years",
+            "key": "Sex(a)centennial"
+        }, {
+            "val": "700 years",
+            "key": "Septuacentennial"
+        }, {
+            "val": "800 years",
+            "key": "Octocentennial"
+        }
+    ],
+        
+        "Latin term": [
+        {
+            "val": "6 months",
+            "key": "Semiannual"
+        }, {
+            "val": "1 year",
+            "key": "Annual"
+        }, {
+            "val": "2 years",
+            "key": "Biennial"
+        }, {
+            "val": "3 years",
+            "key": "Triennial"
+        }, {
+            "val": "4 years",
+            "key": "Quadrennial"
+        }, {
+            "val": "5 years",
+            "key": "Quinquennial"
+        }, {
+            "val": "6 years",
+            "key": "Sexennial"
+        }, {
+            "val": "7 years",
+            "key": "Septennial"
+        }, {
+            "val": "8 years",
+            "key": "Octennial"
+        }, {
+            "val": "9 years",
+            "key": "Novennial"
+        }, {
+            "val": "10 years",
+            "key": "Decennial"
+        }, {
+            "val": "11 years",
+            "key": "Undecennial"
+        }, {
+            "val": "12 years",
+            "key": "Duodecennial"
+        }, {
+            "val": "13 years",
+            "key": "Tredecennial"
+        }, {
+            "val": "14 years",
+            "key": "Quattuordecennial"
+        }, {
+            "val": "15 years",
+            "key": "Quindecennial"
+        }, {
+            "val": "20 years",
+            "key": "Vigintennial / Vicennial"
+        }, {
+            "val": "25 years",
+            "key": "Quadranscentennial"
+        }, {
+            "val": "50 years",
+            "key": "Semicentennial / Quinquagenary"
+        }, {
+            "val": "60 years",
+            "key": "Sexagennial / Sexagenary"
+        }, {
+            "val": "70 years",
+            "key": "Septuagennial"
+        }, {
+            "val": "75 years",
+            "key": "Dodranscentennial"
+        }, {
+            "val": "100 years",
+            "key": "Centennial"
+        }, {
+            "val": "125 years",
+            "key": "Quasquicentennial"
+        }, {
+            "val": "150 years",
+            "key": "Sesquicentennial"
+        }, {
+            "val": "175 years",
+            "key": "Dodransbicentennial"
+        }, {
+            "val": "200 years",
+            "key": "Bicentennial"
+        }, {
+            "val": "250 years",
+            "key": "Sestercentennial"
+        }, {
+            "val": "300 years",
+            "key": "Tercentenary / Tricentenary"
+        }, {
+            "val": "400 years",
+            "key": "Quadricentennial"
+        }, {
+            "val": "500 years",
+            "key": "Quincentenary"
+        }, {
+            "val": "600 years",
+            "key": "Sexcentenary"
+        }, {
+            "val": "700 years",
+            "key": "Septcentennial"
+        }, {
+            "val": "800 years",
+            "key": "Octocentenary"
+        }, {
+            "val": "900 years",
+            "key": "Nonacentennial"
+        }, {
+            "val": "1000 years",
+            "key": "Millennial"
+        }, {
+            "val": "1500 years",
+            "key": "Sesquimillenial"
+        }, {
+            "val": "2000 years",
+            "key": "Bimillennial"
+        }
+    ]
+        }
+}

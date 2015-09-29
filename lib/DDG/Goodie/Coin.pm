@@ -20,7 +20,7 @@ attribution github => [ 'http://github.com/mattlehning', 'mattlehning' ];
 
 handle query_lc => sub {
     my $flips;
-    if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) a coin)$/) {
+    if ($_ =~ /^(heads or tails[ ]?[\?]?)|((flip|toss) (a )?coin)$/) {
         $flips = 1;
     } elsif ($_ =~ /^(?:flip|toss) (\d{0,2}) coins?$/) {
         $flips = $1;

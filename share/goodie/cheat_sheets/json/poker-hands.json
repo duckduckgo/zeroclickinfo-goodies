@@ -1,0 +1,96 @@
+{
+    "id": "poker_hands_cheat_sheet", 
+    "name": "Poker",
+    "description": "Gambling Card Game", 
+    "metadata": { 
+        "sourceName": "Wikipedia",
+        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_poker_hands"
+    },
+    "template_type": "reference",
+    "section_order": [  
+        "Poker Hands in order of rank",
+        "Poker Hands probabilities"
+    ],
+    "sections": {       
+        "Poker Hands in order of rank": [
+            {
+                "key": "Royal flush",
+                "val": "An ace-high straight flush"
+            },
+            {
+                "key": "Straight flush",
+                "val": "Five cards in sequence, all of the same suit"
+            },
+            {
+                "key": "Four of a kind",
+                "val": "Four cards of one rank and any other card"
+            },
+            {
+                "key": "Full house",
+                "val": "Three matching cards of one rank and two matching cards of another rank"
+            },
+            {
+                "key": "Flush",
+                "val": "All five cards of the same suit, but not in sequence"
+            },
+            {
+                "key": "Straight",
+                "val": "Five cards of sequential rank in at least two different suits" 
+            },
+            {
+                "key": "Three of a kind",
+                "val": "Three cards of the same rank, plus two cards of another rank"
+            },
+            {
+                "key": "Two pair",
+                "val": "Two cards of the same rank, plus two cards of another rank that match each other but not the first pair, plus any card not of either rank"
+            },
+            {
+                "key": "One pair",
+                "val": "Two cards of one rank, plus three cards which are not of this rank nor the same as each other"
+            },
+            {
+                "key": "High card",
+                "val": "No hand is made, and the only thing of any potential meaning in the hand is the highest card" 
+            }
+        ],
+        "Poker Hands probabilities": [
+            {
+                "key": "Straight flush",
+                "val": "0.0015%"
+            },
+            {
+                "key": "Four of a kind",
+                "val": "0.024%"
+            },
+            {
+                "key": "Full house",
+                "val": "0.1441%"
+            },
+            {
+                "key": "Flush",
+                "val": "0.196%"
+            },
+            {
+                "key": "Straight",
+                "val": "0.39%"
+            },
+            {
+                "key": "Three of a kind",
+                "val" : "2.11%"
+            },
+            {
+                "key": "Two pair",
+                "val": "4.75%"
+            },
+            {
+                "key": "One pair",
+                "val": "42.26%"
+            },
+            {
+               "key": "High card",
+               "val": "50.11%"
+            }
+        ]
+    }
+}
