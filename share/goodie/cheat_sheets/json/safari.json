@@ -1,6 +1,6 @@
 {
   "id": "safari_cheat_sheet",
-  "name": "Apple Safari",
+  "name": "Safari Browser",
   "description": "Keyboard Shortcuts for Safari Web Browser",
   "template_type": "keyboard",
   "metadata": {
@@ -8,7 +8,7 @@
     "sourceURL": "http://www.shortcutworld.com/en/mac/Safari_5.html"
   },
   "aliases": [
-    "Apple Safari Browser"
+    "Apple Safari Browser", "apple safari", "safari browser"
   ],
   "section_order": [
     "Manage Tabs and Windows",
@@ -17,81 +17,81 @@
   "sections": {
     "Safari Features and Bookmarks": [
       {
-        "key": "[command] [option] [1]",
+        "key": "[Command] [Option] [1]",
         "val": "Show Top Sites"
       },
       {
-        "key": "[command] [option] [2]",
+        "key": "[Command] [Option] [2]",
         "val": "Show Collections"
       },
       {
-        "key": "[command] [D]",
+        "key": "[Command] [D]",
         "val": "Bookmark Page"
       },
       {
-        "key": "[command] [shift] [N]",
+        "key": "[Command] [Shift] [N]",
         "val": "Open New Private Window"
       },
       {
-        "key": "[command] [1]...[9]",
+        "key": "[Command] [1]...[9]",
         "val": "Jump to bookmark #1, #2, … from Bookmark Bar"
       },
       {
-        "key": "[command] [shift] [L]",
+        "key": "[Command] [Shift] [L]",
         "val": "Show Sidebar"
       }
     ],
     "Manage Tabs and Windows": [
       {
-        "key": "[command] [T]",
+        "key": "[Command] [T]",
         "val": "Open new tab"
       },
       {
-        "key": "[command] [shift] [Right Arrow]",
+        "key": "[Command] [Shift] [Right Arrow]",
         "val": "Jump to next tab"
       },
       {
-        "key": "[command] [shift] [Left Arrow]",
+        "key": "[Command] [Shift] [Left Arrow]",
         "val": "Jump to previous tab"
       },
       {
-        "key": "[command] [W]",
+        "key": "[Command] [W]",
         "val": "Close current tab"
       },
       {
-        "key": "[command] [Z]",
+        "key": "[Command] [Z]",
         "val": "Re-open closed tab"
       },
       {
-        "key": "[command] [option] [W]",
+        "key": "[Command] [Option] [W]",
         "val": "Close all tabs except active tab"
       },
       {
-        "key": "[command] [N]",
+        "key": "[Command] [N]",
         "val": "Open New Safari Window"
       },
       {
-        "key": "[command] [M]",
+        "key": "[Command] [M]",
         "val": "Minimize current Window"
       },
       {
-        "key": "[command] [H]",
+        "key": "[Command] [H]",
         "val": "Hide all Safari Windows"
       },
       {
-        "key": "[command] [shift] [W]",
+        "key": "[Command] [Shift] [W]",
         "val": "Close Safari Window"
       },
       {
-        "key": "[command] [`]",
+        "key": "[Command] [`]",
         "val": "Jump to next Safari Windows"
       },
       {
-        "key": "[command] [shift] [`]",
+        "key": "[Command] [Shift] [`]",
         "val": "Jump to previous Safari Windows"
       },
       {
-        "key": "[command] [Q]",
+        "key": "[Command] [Q]",
         "val": "Close Safari"
       }
     ]
