@@ -71,7 +71,7 @@
                 "val":"Jump to Editor Window"
             },
             {
-                "key":"[Ctrl] ([↑]/[↓])",
+                "key":"[Ctrl] ( [↑] / [↓] )",
                 "val":"Switch to next editor / switch to previous editor"
             },
             {
