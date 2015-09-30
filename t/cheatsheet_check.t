@@ -18,9 +18,6 @@ foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
 
     my ($name) = $path =~ /.+\/(.+).json$/;
-
-    print "###### NOW TESTING " . uc $name . " ######\n";
-
     my @tests;
 
     ### File tests ###
@@ -120,10 +117,22 @@ foreach my $path (glob("$json_dir/*.json")){
         }
     }
 
-    ### Print output
+    my $result = print_results($name, \@tests);
+
+    subtest 'can_build' => sub {
+        ok($result->{pass}, $result->{msg});
+    };
+}
+
+sub print_results {
+    my ($name, $tests) = @_;
+    
+    diag("########## NOW TESTING " . uc $name . " ##########\n");
+
     my $tot_pass = 0;
     my $tot_done = 0;
-    for my $test (@tests) {
+    my %result = (pass => 1, msg => $name . ' is build safe');
+    for my $test (@{$tests}) {
         my $temp_msg = $test->{msg};
         my $temp_color = "reset";
 
@@ -131,26 +140,28 @@ foreach my $path (glob("$json_dir/*.json")){
             $tot_done++;
 
             if (!$test->{pass}) {
+                $temp_msg = "FAIL: " . $temp_msg;
+            
                 if ($test->{critical}) {
                     $temp_color = "red";
+                    %result = (pass => 0, msg => $temp_msg);
+                    diag colored([$temp_color], "\t" . $temp_msg);
+                    return \%result;
                 } else {
                     $temp_color = "yellow";
                 }
-                
-                $temp_msg = "FAIL: " . $temp_msg;
             } else {
                 $temp_msg = "PASS: " . $temp_msg;
                 $temp_color = "reset";
                 $tot_pass++;
             }
 
-            print colored([$temp_color], "\t" . $temp_msg, "\n");
-            ok(0, $temp_msg) if ((!$test->{pass}) && $test->{critical});
+            diag colored([$temp_color], "\t" . $temp_msg);
         }
     }
 
-    print colored(["green"], "Total tests passing for " . $name . ": " . $tot_pass . "/" . $tot_done, "\n");
-
-    print "###### END OF TESTS FOR " . uc $name . " ######\n\n";
+    diag colored(["green"], "Total tests passing for " . $name . ": " . $tot_pass . "/" . $tot_done);
+    diag("########## END OF TESTS FOR " . uc $name . " ##########\n\n");
+    return \%result;
 }
 done_testing;
