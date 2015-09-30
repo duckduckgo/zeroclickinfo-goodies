@@ -1,7 +1,7 @@
 {
     "id":"eclipse_cheat_sheet",
     "name":"Eclipse IDE",
-    "description":"Eclipse Keyboard Shortcuts ",
+    "description":"Basic keyboard shortcuts for the Eclipse IDE",
     "template_type":"keyboard",
     "metadata":{
         "sourceName":"shortcutworld",
