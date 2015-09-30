@@ -1,15 +1,15 @@
 {
     "id": "javascript_dom_cheat_sheet",
     "name": "JavaScript and the DOM",
-    "description": "Explanation of JavaScript methods which interact with the DOM",
+    "description": "Explanation of JavaScript methods which interact with the DOM. For core JavaScript methods, query \"javascript cheat sheet\".",
     "metadata": {
         "sourceName": "Over API",
         "sourceUrl": "http://overapi.com/javascript/"
     },
     "aliases": [
-        "js", "java script", "methods", "events"  
+        "js dom", "java script dom", "javascript events", "js events", "java script events"  
     ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "Node Properties", 
         "Node Methods", 

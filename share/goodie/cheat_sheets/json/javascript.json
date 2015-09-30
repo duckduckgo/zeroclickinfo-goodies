@@ -1,13 +1,13 @@
 {
     "id": "javascript_cheat_sheet",
     "name": "JavaScript Methods",
-    "description": "Explanation of core JavaScript methods",
+    "description": "Explanation of core JavaScript methods. For JavaScript DOM methods, query \"javascript DOM cheat sheet\".",
     "metadata": {
         "sourceName": "OverAPI",
         "sourceUrl": "http://overapi.com/javascript/"
     },
     "aliases": [
-        "js", "java script" 
+        "js", "java script", "javascript methods", "js methods", "java script methods", 
     ],
     "template_type": "code",
     "section_order": [
