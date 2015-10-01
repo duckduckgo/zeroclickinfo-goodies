@@ -140,52 +140,52 @@
             "val": "\\",
             "key": "Backslash"
         }, {
-            "val": "\e",
+            "val": "\\e",
             "key": "Escapes"
         }, {
-            "val": "\v",
+            "val": "\\v",
             "key": "Vertical Tab [VT]"
         }, {
-            "val": "\'",
+            "val": "'",
             "key": "Single Quote"
         }, {
             "val": "\f",
             "key": "Formfeed (FF)"
         }, {
-            "val": "\ooo",
+            "val": "\\ooo",
             "key": "Character with octal value "
         }, {
-            "val": "\",
+            "val": " ",
             "key": "Double Quote"
         }, {
-            "val": "\n",
+            "val": "\\n",
             "key": "Linefeed "
         }, {
-            "val": "\a",
+            "val": "\\a",
             "key": "Bell"
         }, {
-            "val": "\r",
+            "val": "\\r",
             "key": "Carriage Return"
         }, {
-            "val": "\xhh",
+            "val": "\\xhh",
             "key": "Char with hex value"
         }, {
-            "val": "\b",
+            "val": "\\b",
             "key": "Backspace"
         }, {
-            "val": "\t",
+            "val": "\\t",
             "key": "Horizontal tab"
         }, {
-            "val": "\uxxxx",
+            "val": "\\uxxxx",
             "key": "Character with 16 bit hex value xxxx (Unicode value)"
         }, {
-            "val": "\Uxxxxxxxx",
+            "val": "\\Uxxxxxxxx",
             "key": "Character with 32-bit hex value xxxxxxxx (Unicode value)"
         }, {
-            "val": "\N{name}",
+            "val": "\\N{name}",
             "key": "Character named in the Unicode database (unicode only)"
         }, {
-            "val": "\AnyOtherChar",
+            "val": "\\AnyOtherChar",
             "key": "left as-is, including the backslash, e.g. str('\z') == '\\z'"
         }],
         "Operations on String": [{
