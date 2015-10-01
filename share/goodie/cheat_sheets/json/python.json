@@ -499,7 +499,7 @@
             "val": "getatime(path)",
             "key": "Returns last access time of path (integer nb of seconds since epoch)."
         }, {
-            "val": "getctime(path),"
+            "val": "getctime(path)",
             "key": "Returns the metadata change time of path (integer nb of seconds since epoch)."
         }, {
             "val": "getmtime(path)",
