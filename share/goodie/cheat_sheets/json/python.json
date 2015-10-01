@@ -13,18 +13,10 @@
         "String Literal Escapes",
         "Operations on String",
         "Format codes",
-        "Fly mode",
-        "Switching modes",
-        "Modeling",
-        "Editing curves",
-        "Sculpting",
-        "Animation",
-        "Node editor",
-        "Armatures",
-        "Pose mode",
-        "Timeline",
-        "Video Sequence Editor",
-        "Advanced"
+        "File operations",
+        "Posix functions",
+        "Posixpath functions",
+        
     ],
     "sections": {
         "Invocation Options": [{
@@ -309,224 +301,255 @@
             "key": "Returns the numeric string left filled with zeros in a string of length width."
         }],
         "Format codes": [{
-            "val": "Change brush size",
-            "key": "f"
+            "val": "d",
+            "key": "Signed integer decimal"
         }, {
-            "val": "Change brush strength",
-            "key": "[Shift] [f]"
+            "val": "i",
+            "key": "Signed integer decimal"
         }, {
-            "val": "Rotate brush texture",
-            "key": "[Ctrl] [f]"
+            "val": "o",
+            "key": "Unsigned octal"
         }, {
-            "val": "Play/Stop animation",
-            "key": "[Alt] [a]"
+            "val": "u",
+            "key": "Unsigned decimal "
         }, {
-            "val": "Play animation in reverse",
-            "key": "[Alt] [Shift] [a]"
+            "val": "x",
+            "key": "Unsigned hexadecimal (lowercase)"
         }, {
-            "val": "Next frame",
-            "key": "→"
+            "val": "X",
+            "key": "Unsigned hexadecimal (uppercase)"
         }, {
-            "val": "Previous frame",
-            "key": "←"
+            "val": "e",
+            "key": "Floating point exponential format (lowercase)"
         }, {
-            "val": "Forward 10 frames",
-            "key": "↑"
+            "val": "E",
+            "key": "Floating point exponential format (uppercase)"
         }, {
-            "val": "Back 10 frames",
-            "key": "↓"
+            "val": "f",
+            "key": "Floating point decimal format"
         }, {
-            "val": "Jump to start point",
-            "key": "[Shift] [←]"
+            "val": "F",
+            "key": "Floating point decimal format"
         }, {
-            "val": "Jump to end point",
-            "key": "[Shift] [→]"
+            "val": "g",
+            "key": "Same as "e" if exponent is greater than -4 or less than precision, "f" otherwise."
         }, {
-            "val": "Scroll through frames",
-            "key": "[Alt] [Mouse wheel]"
+            "val": "G",
+            "key": "Same as "E" if exponent is greater than -4 or less than precision, "F" otherwise."
         }, {
-            "val": "Insert keyframe",
-            "key": "i"
+            "val": "c",
+            "key": "Single character (accepts integer or single character string)."
         }, {
-            "val": "Remove keyframe",
-            "key": "[Alt] [i]"
+            "val": "r",
+            "key": "String (converts any python object using repr())."
         }, {
-            "val": "Jump to next keyframe",
-            "key": "[Ctrl] [Page up]"
+            "val": "s",
+            "key": "String (converts any python object using str())."
         }, {
-            "val": "Jump to previous keyframe",
-            "key": "[Ctrl] [Page down]"
+            "val": "%",
+            "key": "No argument is converted, results in a "%" character in the result. (The complete specification is %%.)"
         }],
-        "Node editor": [{
-            "val": "Add node",
-            "key": "[Shift] [a]"
+        "File operations": [{
+            "val": "f.close()",
+            "key": "Close file f "
         }, {
-            "val": "Cut links",
-            "key": "[Ctrl] [Left mouse]"
+            "val": "f.fileno()",
+            "key": "Get fileno (fd) for file f"
         }, {
-            "val": "(Un-)Hide node",
-            "key": "h"
+            "val": "f.flush()",
+            "key": "Flush file f's internal buffer."
         }, {
-            "val": "Make group",
-            "key": "[Ctrl] [g]"
+            "val": "f.isatty()",
+            "key": "1 if file f is connected to a tty-like dev, else 0."
         }, {
-            "val": "Ungroup",
-            "key": "[Alt] [g]"
+            "val": "f.next()",
+            "key": "Returns the next input line of file f, or raises StopIteration when EOF is hit. Files are their own iterators. next is implicitly called by constructs like for line in f: print line."
         }, {
-            "val": "Edit group",
-            "key": "Tab"
+            "val": "f.read([size])",
+            "key": "Read at most size bytes from file f and return as a string object. If size omitted, read to EOF."
         }, {
-            "val": "Move background",
-            "key": "[Alt] [Middle mouse]"
+            "val": "f.readline()",
+            "key": "Read one entire line from file f. The returned line has a trailing \n, except possibly at EOF. Return '' on EOF."
         }, {
-            "val": "Zoom in background",
-            "key": "v"
+            "val": "f.readlines()",
+            "key": "Read until EOF with readline() and return a list of lines read."
         }, {
-            "val": "Zoom out background",
-            "key": "[Alt] [v]"
+            "val": "f.xreadlines()",
+            "key": "Return a sequence-like object for reading a file line-by-line without reading the entire file into memory."
         }, {
-            "val": "Properties",
-            "key": "n"
+            "val": "f.tell()",
+            "key": "Return file f's current position (byte offset)."
+        } , {
+            "val": "f.truncate([size])",
+            "key": "Truncate f's size. If size is present, f is truncated to (at most) that size,otherwise f is truncated at current position (which remains unchanged)."
+        }, {
+            "val": "f.write(str)",
+            "key": "Write string to file f."
+        }, {
+            "val": "f.writelines(list)",
+            "key": "Write list of strings to file f. No EOL are added."
         }],
-        "Armatures": [{
-            "val": "Add bone",
-            "key": "[e] or [Ctrl] [Click]"
+        "Posix functions": [{
+            "val": "access(path, mode)",
+            "key": "Returns True if the requested access to path is granted. Use mode=F_OK to check for existence, or an OR-ed combination of R_OK, W_OK, and X_OK to check for r, w, x permissions."
         }, {
-            "val": "Rotate",
-            "key": "[Ctrl] [r]"
+            "val": "chdir(path)",
+            "key": "Changes current directory to path."
         }, {
-            "val": "Recalculate roll",
-            "key": "[Ctrl] [n]"
+            "val": "chmod(path, mode)",
+            "key": "Changes the mode of path to the numeric mode"
         }, {
-            "val": "Align bones",
-            "key": "[Ctrl] [Alt] [a]"
+            "val": "close(fd)",
+            "key": "Closes file descriptor fd opened with posix.open."
         }, {
-            "val": "Move to bone layers",
-            "key": "m"
+            "val": "_exit(n)",
+            "key": "Immediate exit, with no cleanups, no SystemExit, etc... Should use this to exit a child process"
         }, {
-            "val": "View bone layers",
-            "key": "[Shift] [m]"
+            "val": "execv(p, args)",
+            "key": "Become executable p with args args"
         }, {
-            "val": "Set bone flag",
-            "key": "[Shift] [w]"
+            "val": "getcwd()",
+            "key": "Returns a string representing the current working directory."
         }, {
-            "val": "Switch bone direction",
-            "key": "[Alt] [f]"
+            "val": "getcwdu()",
+            "key": "Returns a Unicode string representing the current working directory."
         }, {
-            "val": "Scroll hierachy",
-            "key": "{\\]} / {\\[}"
+            "val": "getpid()",
+            "key": "Returns the current process id."
         }, {
-            "val": "Select hierarchy",
-            "key": "[Shift] ({\\]} / {\\[})"
+            "val": "getsid()",
+            "key": "Calls the system call getsid() [Unix]."
         }, {
-            "val": "Select connected",
-            "key": "l"
+            "val": "fork()" ,
+            "key": "Like C's fork(). Returns 0 to child, child pid to parent [Not on Windows]."
+        }, {
+            "val": "kill(pid, signal)" ,
+            "key": "Like C's kill [Not on Windows]."
+        },{
+            "val": "listdir(path)" ,
+            "key": "Lists (base)names of entries in directory path, excluding '.' and '..'. If path is a Unicode string, so will be the returned strings."
+        } ,{
+            "val": "lseek(fd, pos, how)",
+            "key": "Sets current position in file fd to position pos, expressed as an offset relative to beginning of file (how=0), to current position (how=1), or to end of file (how=2)."
+        } ,{
+            "val":"mkdir(path[, mode])" ,
+            "key":"Creates a directory named path with numeric mode (default 0777). Actual permissions = (mode & ~umask & 0777). To set directly the permissions, use chmod() after dir creation." 
+        } , {
+            "val":"open(file, flags, mode)",
+            "key":"Like C's open(). Returns file descriptor. Use file object functions rather than this low level ones."
+        } , {
+            "val":"pipe()",
+            "key":"Creates a pipe. Returns pair of file descriptors (r, w) [Not on Windows]."
+        },{
+            "val": "popen(command, mode='r',bufSize=0)",
+            "key": "Opens a pipe to or from command. Result is a file object to read to or write from, as indicated by mode being 'r' or 'w'. Use it to catch a command output ('r'mode), or to feed it ('w' mode)."
+        } ,{
+            "val":"remove(path)" ,
+            "key":"See unlink."
+        },{
+            "val":"rename(old, new)",
+            "key":"Renames/moves the file or directory old to new. [error if target name already exists]"
+        },{
+            "val":"renames(old, new)",
+             "key":"recursive directory or file renaming function."
+        },{
+            "val":"rmdir(path)" ,
+            "key":"Removes the empty directory path" 
+        },{
+            "val":"read(fd, n)",
+            "key":"Reads n bytes from file descriptor fd and return as string."
+        },{
+            "val":"stat(path)",
+            "key":"Returns st_mode, st_ino, st_dev, st_nlink, st_uid,st_gid, st_size, st_atime,st_mtime, st_ctime. [st_ino, st_uid, st_gid are dummy on Windows]"
+        },{
+            "val":"system(command)",
+            "key":"Executes string command in a subshell. Returns exit status of subshell (usually 0 means OK)."
+        } ,{
+            "val":"times()",
+            "key":"Returns accumulated CPU times in sec (user, system, children's user, children's sys, elapsed real time) "
+        },{
+            "val":"unlink(path)" ,
+            "key":"Unlinks ("deletes") the file (not dir!) path. Same as: remove."
+        },{
+            "val":"utime(path, (aTime, mTime))",
+            "key": "Sets the access & modified time of the file to the given tuple of values."
+        },{
+            "val":"wait()",
+            "key":"Waits for child process completion. Returns tuple of pid, exit_status [Not on Windows]."
+        },{
+            "val":"waitpid(pid, options)",
+            "key":"Waits for process pid to complete. Returns tuple of pid, exit_status [Not on Windows]."
+        },{
+            "val":"walk(top[, topdown=True [,onerror=None[,followlinks=False]]])" ,
+            "key":"Generates a list of file names in a directory tree, by walking the tree either top down or bottom up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames) - more info here. See also os.path.walk()."
+        },{
+            "val":"write(fd, str)" ,
+            "key":"Writes str to file fd. Returns nb of bytes written." 
         }],
-        "Pose mode": [{
-            "val": "Apply pose",
-            "key": "[Ctrl] [a]"
+        "Posixpath functions": [{
+            "val": "abspath(path)",
+            "key": "Returns absolute path for path, taking current working dir in account."
         }, {
-            "val": "Clear pose rotation",
-            "key": "[Alt] [r]"
+            "val": "exists(path)",
+            "key": "True if path is the path of an existing file or directory."
         }, {
-            "val": "Clear pose location",
-            "key": "[Alt] [l]"
+            "val": "expanduser(path)",
+            "key": "Returns a copy of path with "~" expansion done."
         }, {
-            "val": "Clear pose scale",
-            "key": "[Alt] [s]"
+            "val": "getatime(path)",
+            "key": "Returns last access time of path (integer nb of seconds since epoch)."
         }, {
-            "val": "Copy pose",
-            "key": "[Ctrl] [c]"
+            "val": "getctime(path),
+            "key": "Returns the metadata change time of path (integer nb of seconds since epoch)."
         }, {
-            "val": "Paste pose",
-            "key": "[Ctrl] [v]"
+            "val": "getmtime(path)",
+            "key": "Returns last modification time of path (integer nb of seconds since epoch)."
+        } ,{
+            "val": "getsize(path)",
+            "key": "Returns the size in bytes of path. os.error if file inexistent or inaccessible."
         }, {
-            "val": "Add IK",
-            "key": "[Shift] [i]"
+            "val": "isabs(path)",
+            "key": "True if path is absolute.
         }, {
-            "val": "Remove IK",
-            "key": "[Ctrl] [Alt] [i]"
+            "val": "isdir(path)",
+            "key": "True if path is a directory."
         }, {
-            "val": "Add to bone group",
-            "key": "[Ctrl] [g]"
+            "val": "isfile(path),
+            "key": "True if path is a regular file."
         }, {
-            "val": "Relax pose",
-            "key": "[Alt] [e]"
-        }],
-        "Timeline": [{
-            "val": "Set start frame",
-            "key": "s"
+            "val": "islink(path)",
+            "key": "True if path is a symbolic link."
         }, {
-            "val": "Set end frame",
-            "key": "e"
+            "val": "ismount(path)",
+            "key": "True if path is a mount point [true for all dirs on Windows]."
         }, {
-            "val": "Show all frames",
-            "key": "Home"
+            "val": "join(p[,q[,...]])",
+            "key": "Joins one or more path components in a way suitable for the current OS."
         }, {
-            "val": "Add marker",
-            "key": "m"
+            "val": "normcase(path)",
+            "key": "Normalizes case of path. Has no effect under Posix."
         }, {
-            "val": "Move marker",
-            "key": "[Right click \\{drag\\}]"
-        }, {
-            "val": "Toggle frames/seconds",
-            "key": "[Ctrl] [t]"
-        }],
-        "Video Sequence Editor": [{
-            "val": "Next strip",
-            "key": "Page up"
-        }, {
-            "val": "Pervious strip",
-            "key": "Page down"
-        }, {
-            "val": "Split strip",
-            "key": "k"
-        }, {
-            "val": "Lock strip",
-            "key": "[Shift] [l]"
-        }, {
-            "val": "Unlock strip",
-            "key": "[Shift] [Alt] [l]"
-        }, {
-            "val": "Coyp strip",
-            "key": "[Ctrl] [c]"
-        }, {
-            "val": "Paste strip",
-            "key": "[Ctrl] [v]"
-        }, {
-            "val": "Seperate images",
-            "key": "y"
-        }, {
-            "val": "Snap strip to scrubber",
-            "key": "[Shift] [s]"
-        }],
-        "Advanced": [{
-            "val": "Append file",
-            "key": "[Shift] [F1]"
-        }, {
-            "val": "Fullscreen mode",
-            "key": "[Alt] [F11]"
-        }, {
-            "val": "Maximize subwindow",
-            "key": "[Ctrl] [↑]"
-        }, {
-            "val": "Change active camera",
-            "key": "[Ctrl] [o]"
-        }, {
-            "val": "Use render buffer",
-            "key": "j"
-        }, {
-            "val": "Only render selected",
-            "key": "w"
-        }, {
-            "val": "Only render portion",
-            "key": "[Shift] [b]"
-        }, {
-            "val": "Save over default scene",
-            "key": "[Ctrl] [u]"
-        }, {
-            "val": "Make screen cast",
-            "key": "[Ctrl] [F4]"
+            "val": "normpath(path)",
+            "key": "Normalizes path, eliminating double slashes, etc."
+        },{
+            "val":"samefile(f1, f2)",
+            "key":"True if the 2 paths f1 and f2 reference the same file."
+        },{
+            "val":"sameopenfile(f1, f2)",
+            "key":"True if the 2 open file objects f1 and f2 reference the same file."
+        },{
+            "val":"samestat(s1, s2)",
+            "key":"True if the 2 stat buffers s1 and s2 reference the same file."
+        },{
+            "val":"split(p)",
+            "key":"Splits p into (head, tail) where tail is last pathname component and head is everything leading up to that. <=> (dirname(p), basename(p))"
+        },{
+            "val":"splitdrive(p)",
+            "key":"Splits path p in a pair ('drive:', tail) [Windows]" 
+        },{
+            "val":"splitext(p)",
+            "key":"Splits into (root, ext) where last comp of root contains no periods and ext is empty or starts with a period."
+        
         }]
     }
 }
