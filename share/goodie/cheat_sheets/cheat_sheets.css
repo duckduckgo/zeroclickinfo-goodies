@@ -1,49 +1,124 @@
-.zci--cheat_sheets .cheatsheet__container.compressed {
-    max-height: 20em;
-}
-
-.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section,
-.zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section .g {
-    display: none;
-}
-
-.zci--cheat_sheets .cheatsheet__section,
-.zci--cheat_sheets .cheatsheet__section .g {
-    display: inline-block;
-}
-
-.zci--cheat_sheets .cheatsheet__container .cheatsheet__section:nth-child(-n+2) {
-    display: inline-block;
-}
-
-.zci--cheat_sheets .cheatsheet__container .cheatsheet__section:nth-child(-n+2) .g:nth-child(-n+6) {
-    display: inline-block;
-}
-
-.zci--cheat_sheets .cheatsheet__container {
-    overflow: hidden;
+.zci--cheat_sheets.has-chomp-expanded .cw {
+    max-width: none;
 }
 
 .zci--cheat_sheets .cheatsheet__title {
-    font-weight: bold;
+    padding: 16px 0 12px;
     font-size: 1em;
-    color: #444;
-}
-
-.zci--cheat_sheets .cheatsheet__section {
-    margin-bottom: 3px;
-}
-
-.zci--cheat_sheets  .cheatsheet__data {
-    display: block;
-    margin-bottom: 0.4em;
-    color: #444
-}
-
-.zci--cheat_sheets  .cheatsheet__data code {
-    background-color: #e0e0e0;
-    border-radius: 2px;
-    padding: 2px;
     font-weight: bold;
-    line-height: 1;
+}
+
+.zci--cheat_sheets .cheatsheet__container {
+    margin-top: 0.5em;
+}
+
+.zci--cheat_sheets .cheatsheet__container .cheatsheet__section {
+    width: 295px;
+    float: left;
+}
+
+.zci--cheat_sheets td {
+    padding-bottom: 8px;
+}
+
+/* style defaults */
+
+.zci--cheat_sheets code {
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    padding: 3px 4px 1px;
+    border-radius: 2px;
+    font-size: 0.833em;
+    white-space: normal;
+    word-break: normal;
+    margin-bottom: 0.2em;
+    line-height: 1.17;
+}
+
+.zci--cheat_sheets td.cheatsheet__key {
+  vertical-align: top;
+  line-height: 1.7;
+}
+
+.zci--cheat_sheets td.cheatsheet__value {
+  padding-top: 3px;
+  padding-left: 18px;
+  vertical-align: top;
+  line-height: 1.18;
+}
+
+/* terminal-snippets.handlebars */
+.zci--cheat_sheets .terminal table {
+  width: 100%;
+}
+
+
+.zci--cheat_sheets .terminal td {
+  padding-bottom: 12px;
+}
+
+.zci--cheat_sheets .terminal code {
+  width: 100%;
+}
+
+.zci--cheat_sheets .terminal td.cheatsheet__key {
+  display: block;
+  min-width: 100%;
+  padding-bottom: 1px;
+}
+
+.zci--cheat_sheets .terminal td.cheatsheet__value {
+  display: block;
+  min-width: 100%;
+  padding-top: 0px;
+  padding-left: 7px;
+  margin-top: 1px;
+}
+
+/* reference-sheet.handlebars */
+
+.zci--cheat_sheets .reference ul {
+  padding: 0;
+  margin-left: 13px;
+}
+
+.zci--cheat_sheets .reference li {
+  position: relative;
+  padding-bottom: 12px;
+  padding-left: 7px;
+  line-height: 17px;
+}
+
+.zci--cheat_sheets .reference li::before {
+  position: absolute;
+  left: -12px;
+  content: '●';
+  color: inherit;
+  font-size: 7px;
+}
+
+.zci--cheat_sheets .reference li .cheatsheet__key {
+    display: block;
+    font-weight: bold;
+}
+
+/**/
+
+.zci--cheat_sheets .cheatsheet__footer {
+    padding-top: 10px;
+    clear: both;
+}
+
+/* Media queries for smaller screens... */
+@media (max-width:350px) {
+
+    .zci--cheat_sheets .cheatsheet__container .cheatsheet__section,
+    .zci--cheat_sheets .cheatsheet__container.compressed .cheatsheet__section {
+        width: 100%;
+    }
+
+    .zci--cheat_sheets .cheatsheet__value {
+        max-width: none;
+    }
+
 }

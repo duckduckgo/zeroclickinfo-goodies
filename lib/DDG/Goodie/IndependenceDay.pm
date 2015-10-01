@@ -5,6 +5,7 @@ use strict;
 use DDG::Goodie;
 use JSON;
 use utf8;
+use Locale::Country;
 
 zci answer_type => "independence_day";
 zci is_cached   => 1;
@@ -73,16 +74,27 @@ handle query_clean => sub {
     }
 
 
-    # html formatted answer
-    my $html = '<div>';
-    $html .= '<div class="zci__caption">' . $date_str . '</div>';
-    $html .= '<div class="zci__subheader">' . $prolog . '</div>';
-    $html .= '</div>';
-    # plain text answer
+
     my $text = $prolog  . ' ' . $date_str;
 
-    return $text, html => $html;
-
+    return $text,
+      structured_answer => {
+        id => 'independence_day',
+        templates => {
+            group => "icon",
+            item => 0,
+            variants => {
+              iconTitle => 'large',
+              iconImage => 'large'
+            }
+        },
+        data => {
+            country_code => country2code($country_key),
+            title => $date_str,
+            subtitle => $prolog
+        }
+      };
+    
 };
 
 1;

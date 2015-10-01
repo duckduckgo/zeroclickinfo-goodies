@@ -2,6 +2,7 @@ package DDG::Goodie::Pi;
 # ABSTRACT: This Goodie returns 'pi' to a user-specified number of decimal places
 
 use DDG::Goodie;
+use utf8;
 
 zci answer_type => "pi";
 zci is_cached   => 1;

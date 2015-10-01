@@ -61,8 +61,8 @@ handle remainder => sub {
             image => 'https://duckduckgo.com/iu/?u=' . uri_esc( $recipe->{'image'} )
         },
         meta => {
-            sourceName => "Minecraft XL",
-            sourceUrl => "http://www.minecraftxl.com/crafting-recipes/"
+            sourceName => "Minecraft Wiki",
+            sourceUrl => "http://minecraft.gamepedia.com/Crafting#Complete_recipe_list"
         },
         templates => {
             group => 'info',

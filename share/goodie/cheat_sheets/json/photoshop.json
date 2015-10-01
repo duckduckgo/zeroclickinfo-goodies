@@ -1,0 +1,651 @@
+{
+    "id": "photoshop_cheat_sheet",
+    "name": "Photoshop",
+    "description": "Graphics Editor",
+    "metadata": {
+        "sourceName": "PhotoshopCheatSheet"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "File",
+        "Edit",
+        "Image",
+        "Layers",
+        "Select",
+        "Filter",
+        "3D",
+        "View",
+        "Window",
+        "Tools",
+        "Blend Mode",
+        "Toggles",
+        "Movement/Navigation",
+        "Help"
+    ],
+    "sections": {
+        "Help": [
+            {
+                "key": "F1",
+                "val": "Photoshop Help"
+            }
+        ],
+        "Tools": [
+            {
+                "key": "[",
+                "val": "Decrease Brush Size"
+            },
+            {
+                "key": "]",
+                "val": "Increase Brush Size"
+            },
+            {
+                "key": "{",
+                "val": "Decrease Brush Hardness"
+            },
+            {
+                "key": "}",
+                "val": "Increase Brush Hardness"
+            },
+            {
+                "key": ",",
+                "val": "Previous Brush"
+            },
+            {
+                "key": ".",
+                "val": "Next Brush"
+            },
+            {
+                "key": "<",
+                "val": "First Brush"
+            },
+            {
+                "key": ">",
+                "val": "Last Brush"
+            },
+            {
+                "key": "M",
+                "val": "Rectangular Marquee / Elliptical Marquee Tools"
+            },
+            {
+                "key": "L",
+                "val": "Lasso / Polygonal Lasso / Magnetic Lasso Tools"
+            },
+            {
+                "key": "W",
+                "val": "Quick Selection / Magic Wand Tools"
+            },
+            {
+                "key": "I",
+                "val": "Eyedropper / 3D Material Eyedropper / Color Sampler / Ruler / Note / Count Tools"
+            },
+            {
+                "key": "C",
+                "val": "Crop / Perspective Crop / Slice / Slice Select Tools"
+            },
+            {
+                "key": "J",
+                "val": "Spot Healing Brush / Healing Brush / Patch / Content-Aware Move / Red Eye Tools"
+            },
+            {
+                "key": "B",
+                "val": "Brush / Pencil / Color Replacement / Mixer Brush Tools"
+            },
+            {
+                "key": "S",
+                "val": "Clone Stamp / Pattern Stamp Tools"
+            },
+            {
+                "key": "Y",
+                "val": "History Brush / Art History Brush Tools"
+            },
+            {
+                "key": "E",
+                "val": "Eraser / Background Eraser / Magic Eraser Tools"
+            },
+            {
+                "key": "G",
+                "val": "Gradient / Paint Bucket / 3D Material Drop Tools"
+            },
+            {
+                "key": "O",
+                "val": "Dodge / Burn / Sponge Tools"
+            },
+            {
+                "key": "P",
+                "val": "Pen / Freeform Tools"
+            },
+            {
+                "key": "T",
+                "val": "Horizontal Type / Vertical Type / Horizontal Type Mask / Vertical Type Mask Tools"
+            },
+            {
+                "key": "A",
+                "val": "Path Selection / Direct Selection Tools"
+            },
+            {
+                "key": "U",
+                "val": "Rectangle / Rounded Rectangle / Ellipse / Polygon / Line / Custom Shape Tools"
+            }
+        ],
+        "Toggles": [
+            {
+                "key": "D",
+                "val": "Default Foreground/Background Colors"
+            },
+            {
+                "key": "X",
+                "val": "Switch Foreground/Background Colors"
+            },
+            {
+                "key": "Q",
+                "val": "Toggle Standard/Quick Mask Modes"
+            },
+            {
+                "key": "F",
+                "val": "Toggle Screen Modes"
+            },
+            {
+                "key": "/",
+                "val": "Toggle Preserve Transparency"
+            }
+        ],
+        "Movement/Navigation": [
+            {
+                "key": "V",
+                "val": "Move Tool"
+            },
+            {
+                "key": "H",
+                "val": "Hand Tool"
+            },
+            {
+                "key": "R",
+                "val": "Rotate View Tool"
+            },
+            {
+                "key": "Z",
+                "val": "Zoom Tool"
+            }
+        ],
+        "Window": [
+            {
+                "key": "[Alt] [F9] or [F9]",
+                "val": "Actions"
+            },
+            {
+                "key": "F5",
+                "val": "Brush"
+            },
+            {
+                "key": "F6",
+                "val": "Color"
+            },
+            {
+                "key": "F7",
+                "val": "Layers"
+            },
+            {
+                "key": "F8",
+                "val": "Info"
+            }
+        ],
+        "View": [
+            {
+                "key": "[Ctrl] [Y]",
+                "val": "Proof Colors"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Y]",
+                "val": "Gamut Warning"
+            },
+            {
+                "key": "[Ctrl] [+]",
+                "val": "Zoom In"
+            },
+            {
+                "key": "[Ctrl] [-]",
+                "val": "Zoom Out"
+            },
+            {
+                "key": "[Ctrl] [0]",
+                "val": "Fit on Screen"
+            },
+            {
+                "key": "[Ctrl] [1] or [Alt] [Ctrl] [0]",
+                "val": "100%"
+            },
+            {
+                "key": "[Ctrl] [H]",
+                "val": "Extras"
+            },
+            {
+                "key": "[Ctrl] [R]",
+                "val": "Rulers"
+            },
+            {
+                "key": "[Shift] [Ctrl] [H]",
+                "val": "Show Target Path"
+            },
+            {
+                "key": "[Ctrl] [']",
+                "val": "Show Grid"
+            },
+            {
+                "key": "[Ctrl] [;]",
+                "val": "Show Guides"
+            },
+            {
+                "key": "[Shift] [Ctrl] [;]",
+                "val": "Snap"
+            },
+            {
+                "key": "[Alt] [Ctrl] [;]",
+                "val": "Lock Guides"
+            }
+        ],
+        "3D": [
+            {
+                "key": "[Alt] [Ctrl] [X]",
+                "val": "Show/Hide Polygons Within Selection"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [X]",
+                "val": "Reveal All Polygons"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [R]",
+                "val": "Render"
+            }
+        ],
+        "Filter": [
+            {
+                "key": "[Ctrl] [F]",
+                "val": "Last Filter"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [A]",
+                "val": "Adaptive Wide Angle"
+            },
+            {
+                "key": "[Shift] [Ctrl] [A]",
+                "val": "Camera Raw Filter"
+            },
+            {
+                "key": "[Shift] [Ctrl] [R]",
+                "val": "Lens Correction"
+            },
+            {
+                "key": "[Shift] [Ctrl] [X]",
+                "val": "Liquify"
+            },
+            {
+                "key": "[Alt] [Ctrl] [V]",
+                "val": "Vanishing Point"
+            }
+        ],
+        "Select": [
+            {
+                "key": "[Ctrl] [A]",
+                "val": "All"
+            },
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Deselect"
+            },
+            {
+                "key": "[Shift] [Ctrl] [D]",
+                "val": "Reselect"
+            },
+            {
+                "key": "[Shift] [Ctrl] [I] or [Shift] [F7]",
+                "val": "Inverse"
+            },
+            {
+                "key": "[Alt] [Ctrl] [A]",
+                "val": "All Layers"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [F]",
+                "val": "Find Layers"
+            },
+            {
+                "key": "[Alt] [Ctrl] [R]",
+                "val": "Refine Edge"
+            },
+            {
+                "key": "[Shift] [F6]",
+                "val": "Modify Feather"
+            }
+        ],
+        "Layers": [
+            {
+                "key": "[Shift] [Ctrl] [N]",
+                "val": "New Layer"
+            },
+            {
+                "key": "[Ctrl] [J]",
+                "val": "New Layer via Copy"
+            },
+            {
+                "key": "[Shift] [Ctrl] [J]",
+                "val": "New Layer via Cut"
+            },
+            {
+                "key": "[Alt] [Ctrl] [G]",
+                "val": "Create/Release Clipping Mask"
+            },
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Group Layers"
+            },
+            {
+                "key": "[Shift] [Ctrl] [G]",
+                "val": "Ungroup Layers"
+            },
+            {
+                "key": "[Shift] [Ctrl] [\\]]",
+                "val": "Arrange: Bring to Front"
+            },
+            {
+                "key": "[Ctrl] [\\]]",
+                "val": "Arrange: Bring Forward"
+            },
+            {
+                "key": "[Ctrl] [\\[]",
+                "val": "Arrange: Send Backward"
+            },
+            {
+                "key": "[Shift] [Ctrl] [\\[]",
+                "val": "Arrange: Send to Back"
+            },
+            {
+                "key": "[Ctrl] [E]",
+                "val": "Merge Layers"
+            },
+            {
+                "key": "[Shift] [Ctrl] [E]",
+                "val": "Merge Visible"
+            }
+        ],
+        "Image": [
+            {
+                "key": "[Ctrl] [L]",
+                "val": "Adjustments: Levels"
+            },
+            {
+                "key": "[Ctrl] [M]",
+                "val": "Adjustments: Curves"
+            },
+            {
+                "key": "[Ctrl] [U]",
+                "val": "Adjustments: Hue/Saturation"
+            },
+            {
+                "key": "[Ctrl] [B]",
+                "val": "Adjustments: Color Balance"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [B]",
+                "val": "Adjustments: Black & White"
+            },
+            {
+                "key": "[Ctrl] [I]",
+                "val": "Adjustments: Invert"
+            },
+            {
+                "key": "[Shift] [Ctrl] [U]",
+                "val": "Desaturate"
+            },
+            {
+                "key": "[Shift] [Ctrl] [L]",
+                "val": "Auto Tone"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [L]",
+                "val": "Auto Contrast"
+            },
+            {
+                "key": "[Shift] [Ctrl] [B]",
+                "val": "Auto Color"
+            },
+            {
+                "key": "[Alt] [Ctrl] [I]",
+                "val": "Image Size"
+            },
+            {
+                "key": "[Alt] [Ctrl] [C]",
+                "val": "Canvas Size"
+            }
+        ],
+        "Edit": [
+            {
+                "key": "[Ctrl] [Z]",
+                "val": "Undo/Redo"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Z]",
+                "val": "Step Forward"
+            },
+            {
+                "key": "[Alt] [Ctrl] [Z]",
+                "val": "Step Backward"
+            },
+            {
+                "key": "[Shift] [Ctrl] [F]",
+                "val": "Fade"
+            },
+            {
+                "key": "[Ctrl] [X] or [F2]",
+                "val": "Cut"
+            },
+            {
+                "key": "[Ctrl] [C] or [F3]",
+                "val": "Copy"
+            },
+            {
+                "key": "[Shift] [Ctrl] [C]",
+                "val": "Copy Merged"
+            },
+            {
+                "key": "[Ctrl] [V] or [F4]",
+                "val": "Paste"
+            },
+            {
+                "key": "[Shift] [Ctrl] [V]",
+                "val": "Paste in Place"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [V]",
+                "val": "Paste Into"
+            },
+            {
+                "key": "[Shift] [F5]",
+                "val": "Fill"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [C]",
+                "val": "Content-Aware Scale"
+            },
+            {
+                "key": "[Ctrl] [T]",
+                "val": "Free Transform"
+            },
+            {
+                "key": "[Shift] [Ctrl] [T]",
+                "val": "Transform Again"
+            },
+            {
+                "key": "[Shift] [Ctrl] [K]",
+                "val": "Color Settings"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [K]",
+                "val": "Keyboard Shortcuts"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [M]",
+                "val": "Menu"
+            },
+            {
+                "key": "[Ctrl] [K]",
+                "val": "Preferences: General"
+            }
+        ],
+        "File": [
+            {
+                "key": "[Ctrl] [N]",
+                "val": "New"
+            },
+            {
+                "key": "[Ctrl] [O]",
+                "val": "Open"
+            },
+            {
+                "key": "[Alt] [Ctrl] [O] or [Shift] [Ctrl] [O]",
+                "val": "Browse in Bridge"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [O]",
+                "val": "Open As"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "Close"
+            },
+            {
+                "key": "[Alt] [Ctrl] [W]",
+                "val": "Close All"
+            },
+            {
+                "key": "[Shift] [Ctrl] [W]",
+                "val": "Close and Go to Bridge"
+            },
+            {
+                "key": "[Ctrl] [S]",
+                "val": "Save"
+            },
+            {
+                "key": "[Shift] [Ctrl] [S] or [Alt] [Ctrl] [S]",
+                "val": "Save As"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [S]",
+                "val": "Save for Web"
+            },
+            {
+                "key": "F12",
+                "val": "Revert"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [I]",
+                "val": "File Info"
+            },
+            {
+                "key": "[Ctrl] [P]",
+                "val": "Print"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [P]",
+                "val": "Print One Copy"
+            },
+            {
+                "key": "[Ctrl] [Q]",
+                "val": "Quit"
+            }
+        ],
+        "Blend Mode": [
+            {
+                "key": "[Shift] [Alt] [N]",
+                "val": "Normal"
+            },
+            {
+                "key": "[Shift] [Alt] [I]",
+                "val": "Dissolve"
+            },
+            {
+                "key": "[Shift] [Alt] [K]",
+                "val": "Darken"
+            },
+            {
+                "key": "[Shift] [Alt] [M]",
+                "val": "Multiply"
+            },
+            {
+                "key": "[Shift] [Alt] [B]",
+                "val": "Color Burn"
+            },
+            {
+                "key": "[Shift] [Alt] [A]",
+                "val": "Linear Burn"
+            },
+            {
+                "key": "[Shift] [Alt] [G]",
+                "val": "Lighten"
+            },
+            {
+                "key": "[Shift] [Alt] [S]",
+                "val": "Screen"
+            },
+            {
+                "key": "[Shift] [Alt] [D]",
+                "val": "Color Dodge"
+            },
+            {
+                "key": "[Shift] [Alt] [W]",
+                "val": "Linear Dodge"
+            },
+            {
+                "key": "[Shift] [Alt] [O]",
+                "val": "Overlay"
+            },
+            {
+                "key": "[Shift] [Alt] [F]",
+                "val": "Soft Light"
+            },
+            {
+                "key": "[Shift] [Alt] [H]",
+                "val": "Hard Light"
+            },
+            {
+                "key": "[Shift] [Alt] [V]",
+                "val": "Vivid Light"
+            },
+            {
+                "key": "[Shift] [Alt] [J]",
+                "val": "Linear Light"
+            },
+            {
+                "key": "[Shift] [Alt] [Z]",
+                "val": "Pin Light"
+            },
+            {
+                "key": "[Shift] [Alt] [L]",
+                "val": "Hard Mix"
+            },
+            {
+                "key": "[Shift] [Alt] [E]",
+                "val": "Difference"
+            },
+            {
+                "key": "[Shift] [Alt] [X]",
+                "val": "Exclusion"
+            },
+            {
+                "key": "[Shift] [Alt] [U]",
+                "val": "Hue"
+            },
+            {
+                "key": "[Shift] [Alt] [T]",
+                "val": "Saturation"
+            },
+            {
+                "key": "[Shift] [Alt] [C]",
+                "val": "Color"
+            },
+            {
+                "key": "[Shift] [Alt] [Y]",
+                "val": "Luminosity"
+            }
+        ]
+    }
+}

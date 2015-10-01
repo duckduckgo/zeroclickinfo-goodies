@@ -1,0 +1,257 @@
+{
+    "id": "regex_cheat_sheet",
+    "name": "Regex Cheat Sheet",
+    "description": "Regular expression syntax",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/"
+    },
+    "aliases": [
+        "regexp", "regular expression", "regular expressions"
+    ],
+    "template_type": "code",
+    "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"],
+    "sections": {
+        "Assertions": [{
+            "val": "Lookahead assertion",
+            "key": "?="
+        }, {
+            "val": "Negative lookahead",
+            "key": "?!"
+        }, {
+            "val": "Lookbehind assertion",
+            "key": "?<="
+        }, {
+            "val": "Negative lookbehind",
+            "key": "[?!=] / [?<!]"
+        }, {
+            "val": "Once-only Subexpression",
+            "key": "?>"
+        }, {
+            "val": "Condition [if then]",
+            "key": "?()"
+        }, {
+            "val": "Condition [if then else]",
+            "key": "?()|"
+        }, {
+            "val": "Comment",
+            "key": "?#"
+        }],
+        "POSIX Classes": [{
+            "val": "Uppercase letters [A-Z]",
+            "key": "[:upper:]"
+        }, {
+            "val": "Lowercase letters [a-z]",
+            "key": "[:lower:]"
+        }, {
+            "val": "All letters [A-Za-z]",
+            "key": "[:alpha:]"
+        }, {
+            "val": "Digits and letters [A-Za-z0-9]",
+            "key": "[:alnum:]"
+        }, {
+            "val": "Digits [0-9]",
+            "key": "[:digit:]"
+        }, {
+            "val": "Hexadecimal digits [0-9a-f]",
+            "key": "[:xdigit:]"
+        }, {
+            "val": "Punctuation",
+            "key": "[:punct:]"
+        }, {
+            "val": "Space and tab [ \\t]",
+            "key": "[:blank:]"
+        }, {
+            "val": "Blank characters [ \\t\\r\\n\\v\\f]",
+            "key": "[:space:]"
+        }, {
+            "val": "Control characters [\\x00-\\x1F\\x7F]",
+            "key": "[:cntrl:]"
+        }, {
+            "val": "Printed characters [\\x21-\\x7E]",
+            "key": "[:graph:]"
+        }, {
+            "val": "Printed characters and spaces [\\x20-\\x7E]",
+            "key": "[:print:]"
+        }, {
+            "val": "Digits, letters and underscore [A-Za-z0-9_]",
+            "key": "[:word:]"
+        }],
+        "Groups and Ranges": [{
+            "val": "Any character except newline (\\n)",
+            "key": "."
+        }, {
+            "val": "a or b",
+            "key": "(a|b)"
+        }, {
+            "val": "Group",
+            "key": "(...)"
+        }, {
+            "val": "Passive (non-capturing) group",
+            "key": "(?:...)"
+        }, {
+            "val": "Single character (a or b or c)",
+            "key": "[abc]"
+        }, {
+            "val": "Single character (not a or b or c)",
+            "key": "[^abc]"
+        }, {
+            "val": "Single character range (a or b ... or q)",
+            "key": "[a-q]"
+        }, {
+            "val": "Single character range (A or B ... or Z)",
+            "key": "[A-Z]"
+        }, {
+            "val": "Single digit from 0 to 9",
+            "key": "[0-9]"
+        }],
+        "Special Characters": [{
+            "val": "New line",
+            "key": "\\n"
+        }, {
+            "val": "Carriage return",
+            "key": "\\r"
+        }, {
+            "val": "Tab",
+            "key": "\\t"
+        }, {
+            "val": "Vertical tab",
+            "key": "\\v"
+        }, {
+            "val": "Form feed",
+            "key": "\\f"
+        }, {
+            "val": "Octal character ooo",
+            "key": "\\ooo"
+        }, {
+            "val": "Hex character hh",
+            "key": "\\xhh"
+        }],
+        "Escape Sequences": [{
+            "val": "Escape following character",
+            "key": "\\"
+        }, {
+            "val": "Begin literal sequence",
+            "key": "\\Q"
+        }, {
+            "val": "End literal sequence",
+            "key": "\\E"
+        }],
+        "Pattern Modifiers": [{
+            "val": "Global Match (all occurrences)",
+            "key": "//g"
+        }, {
+            "val": "Case-insensitive",
+            "key": "//i"
+        }, {
+            "val": "Multiple line",
+            "key": "//m"
+        }, {
+            "val": "Treat string as single line",
+            "key": "//s"
+        }, {
+            "val": "Allow comments and whitespace",
+            "key": "//x"
+        }, {
+            "val": "Evaluate replacement",
+            "key": "//e"
+        }, {
+            "val": "Ungreedy pattern",
+            "key": "//U"
+        }],
+        "Quantifiers": [{
+            "val": "0 or more",
+            "key": "*"
+        }, {
+            "val": "1 or more",
+            "key": "+"
+        }, {
+            "val": "0 or 1 (optional)",
+            "key": "?"
+        }, {
+            "val": "Exactly 3",
+            "key": "{3}"
+        }, {
+            "val": "3 or more",
+            "key": "{3,}"
+        }, {
+            "val": "2, 3, 4 or 5",
+            "key": "{2,5}"
+        }],
+        "String Replacement": [{
+            "val": "n-th non-passive group",
+            "key": "$n"
+        }, {
+            "val": "\"xyz\" in /^(abc(xyz))$/",
+            "key": "$2"
+        }, {
+            "val": "\"xyz\" in /^(?:abc)(xyz)$/",
+            "key": "$1"
+        }, {
+            "val": "Before matched string",
+            "key": "$`"
+        }, {
+            "val": "After matched string",
+            "key": "$'"
+        }, {
+            "val": "Last matched string",
+            "key": "$+"
+        }, {
+            "val": "Entire matched string",
+            "key": "$&"
+        }],
+        "Character Classes": [{
+            "val": "Control character",
+            "key": "\\c"
+        }, {
+            "val": "Whitespace [ \\t\\r\\n\\v\\f]",
+            "key": "\\s"
+        }, {
+            "val": "Not Whitespace [^ \\t\\r\\n\\v\\f]",
+            "key": "\\S"
+        }, {
+            "val": "Digit [0-9]",
+            "key": "\\d"
+        }, {
+            "val": "Not digit [^0-9]",
+            "key": "\\D"
+        }, {
+            "val": "Word [A-Za-z0-9_]",
+            "key": "\\w"
+        }, {
+            "val": "Not Word [^A-Za-z0-9_]",
+            "key": "\\W"
+        }, {
+            "val": "Hexadecimal digit [A-Fa-f0-9]",
+            "key": "\\x"
+        }, {
+            "val": "Octal Digit [0-7]",
+            "key": "\\O"
+        }],
+        "Anchors": [{
+            "val": "Start of string or line",
+            "key": "^"
+        }, {
+            "val": "Start of string",
+            "key": "\\A"
+        }, {
+            "val": "End of string or line",
+            "key": "$"
+        }, {
+            "val": "End of string",
+            "key": "\\Z"
+        }, {
+            "val": "Word boundary",
+            "key": "\\b"
+        }, {
+            "val": "Not word boundary",
+            "key": "\\B"
+        }, {
+            "val": "Start of word",
+            "key": "\\<"
+        }, {
+            "val": "End of word",
+            "key": "\\>"
+        }]
+    }
+}

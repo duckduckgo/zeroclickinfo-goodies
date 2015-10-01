@@ -5,6 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 use DDG::Goodie::Calculator;    # For function subtests.
+use utf8;
 
 zci answer_type => 'calc';
 zci is_cached   => 1;
@@ -45,6 +46,42 @@ ddg_goodie_test(
             input     => ['2 * 7'],
             operation => 'Calculate',
             result    => qr/>14</
+        }
+    ),
+    '4 ∙ 5' => test_zci(
+        "4 * 5 = 20",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['4 * 5'],
+            operation => 'Calculate',
+            result    => qr/>20</
+        }
+    ),
+    '6 ⋅ 7' => test_zci(
+        "6 * 7 = 42",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['6 * 7'],
+            operation => 'Calculate',
+            result    => qr/>42</
+        }
+    ),
+    '3 × dozen' => test_zci(
+        "3 * dozen = 36",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['3 * dozen'],
+            operation => 'Calculate',
+            result    => qr/>36</
+        }
+    ),
+    'dozen ÷ 4' => test_zci(
+        "dozen / 4 = 3",
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['dozen / 4'],
+            operation => 'Calculate',
+            result    => qr/>3</
         }
     ),
     '1 dozen * 2' => test_zci(
