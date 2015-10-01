@@ -509,7 +509,7 @@
             "key": "Returns the size in bytes of path. os.error if file inexistent or inaccessible."
         }, {
             "val": "isabs(path)",
-            "key": "True if path is absolute.
+            "key": "True if path is absolute."
         }, {
             "val": "isdir(path)",
             "key": "True if path is a directory."
