@@ -1,5 +1,5 @@
 package DDG::Goodie::OnionAddress;
-# ABSTRACT: Provide quick access to HTTP onion services.
+# ABSTRACT: Recognize a web onion service address
 
 use strict;
 use DDG::Goodie;
@@ -9,14 +9,14 @@ zci answer_type => "onion_address";
 
 primary_example_queries '3g2upl4pq6kufc4m.onion';
 secondary_example_queries 'How do I access https://3g2upl4pq6kufc4m.onion:81/?q=dont+track+us?';
-description 'Provide quick access to HTTP onion services';
+description 'Recognize a web onion service address';
 name 'OnionAddress';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/OnionAddress.pm';
 category 'reference';
 topics 'special_interest', 'cryptography';
 attribution email => 'ilv@torproject.org';
 
-# regex to detect an onion address
+# regex to detect an onion service address
 # this cover several cases, including addresses with ports and/or paths
 # e.g. https://3g2upl4pq6kufc4m.onion:5000/?q=dont+track+us
 my $onion_address_qr = qr/(\w+:\/\/)?([a-z0-9]{16})\.onion(:\d+)?(\/.*)?/;
@@ -29,9 +29,29 @@ handle query_lc => sub {
 
     # we only accept queries for web onion services
     # we also assume that an onion service without protocol:// should be web
-    return unless !$1 or $1 eq 'https://' or $1 eq 'http://' or $2;
-    return $2, html => "<div class='zci__caption'>Access $2.onion using the <a href='https://www.torproject.org/projects/torbrowser.html.en'>Tor Browser</a> or via <a href='https://$2.tor2web.org'>Tor2web</a>.</div>";
+    return unless !$1 or ($1 eq 'https://' or $1 eq 'http://' and $2);
 
+    my $plaintext = $2.'.onion';
+    return $plaintext,
+    structured_answer => {
+    	id => 'onion_address',
+    	name => 'OnionAddress',
+    	data => {
+    		title => $2.'.onion',
+            subtitle => 'Onion/Hidden service',
+    		description => 'You are trying to reach an onion/hidden service. To access '.$2.'.onion via web you will have to use the Tor Browser.'
+    	},
+    	meta => {
+            sourceName => "Tor Project",
+            sourceUrl => "https://www.torproject.org/projects/torbrowser.html.en#downloads"
+        },
+        templates => {
+            group => 'text',
+            options => {
+                moreAt => 1
+            }
+        }
+    };
 };
 
 1;
