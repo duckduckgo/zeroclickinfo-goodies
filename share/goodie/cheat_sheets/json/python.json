@@ -186,7 +186,7 @@
             "key": "Character named in the Unicode database (unicode only)"
         }, {
             "val": "\\AnyOtherChar",
-            "key": "left as-is, including the backslash, e.g. str('\z') == '\\z'"
+            "key": "left as-is, including the backslash, e.g. str('\\z') == '\\z'"
         }],
         "Operations on String": [{
             "val": "s.capitalize()",
@@ -332,10 +332,10 @@
             "key": "Floating point decimal format"
         }, {
             "val": "g",
-            "key": "Same as "e" if exponent is greater than -4 or less than precision, "f" otherwise."
+            "key": "Same as e if exponent is greater than -4 or less than precision, f otherwise."
         }, {
             "val": "G",
-            "key": "Same as "E" if exponent is greater than -4 or less than precision, "F" otherwise."
+            "key": "Same as E if exponent is greater than -4 or less than precision, F otherwise."
         }, {
             "val": "c",
             "key": "Single character (accepts integer or single character string)."
@@ -347,7 +347,7 @@
             "key": "String (converts any python object using str())."
         }, {
             "val": "%",
-            "key": "No argument is converted, results in a "%" character in the result. (The complete specification is %%.)"
+            "key": "No argument is converted, results in a % character in the result. (The complete specification is %%.)"
         }],
         "File operations": [{
             "val": "f.close()",
@@ -469,7 +469,7 @@
             "key":"Returns accumulated CPU times in sec (user, system, children's user, children's sys, elapsed real time) "
         },{
             "val":"unlink(path)" ,
-            "key":"Unlinks ("deletes") the file (not dir!) path. Same as: remove."
+            "key":"Unlinks (deletes) the file (not dir!) path. Same as: remove."
         },{
             "val":"utime(path, (aTime, mTime))",
             "key": "Sets the access & modified time of the file to the given tuple of values."
@@ -494,7 +494,7 @@
             "key": "True if path is the path of an existing file or directory."
         }, {
             "val": "expanduser(path)",
-            "key": "Returns a copy of path with "~" expansion done."
+            "key": "Returns a copy of path with ~ expansion done."
         }, {
             "val": "getatime(path)",
             "key": "Returns last access time of path (integer nb of seconds since epoch)."
