@@ -149,14 +149,9 @@ sub print_results {
                     return \%result;
                 } else {
                     $temp_color = "yellow";
+                    diag colored([$temp_color], "\t" . $temp_msg);
                 }
-            } else {
-                $temp_msg = "PASS: " . $temp_msg;
-                $temp_color = "reset";
-                $tot_pass++;
             }
-
-            diag colored([$temp_color], "\t" . $temp_msg);
         }
     }
 
