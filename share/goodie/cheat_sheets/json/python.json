@@ -514,7 +514,7 @@
             "val": "isdir(path)",
             "key": "True if path is a directory."
         }, {
-            "val": "isfile(path),"
+            "val": "isfile(path)" ,
             "key": "True if path is a regular file."
         }, {
             "val": "islink(path)",
