@@ -9,6 +9,13 @@ DDH.cheat_sheets.build = function(ops) {
           path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard'
         };
 
+        // add missing sections in section_order
+        for(var section in sections){
+            if(section_order.indexOf(section) == -1){
+                section_order.push(section);
+            }
+        }
+
         $.each(section_order, function(i, section) {
            if (sections[section]){
 
@@ -34,6 +41,9 @@ DDH.cheat_sheets.build = function(ops) {
 
         var out;
         var codeClass = typeof className === "string" ? className : "bg-clr--white";
+
+        // normalize white space for ( [a] / [b] ) keys
+        string = string.replace(/\(\[(.+)\]\/\[(.+)\]\)/, "( [$1] / [$2] )");
         
         // replace escaped slashes and brackets
         string = string.replace(/\</g, '&lt;')
