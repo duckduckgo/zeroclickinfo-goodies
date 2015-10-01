@@ -6,9 +6,9 @@
         "toontown mod", "toontown commands", "toontown mod commands", "tto mod commands", "tto commands"
     ],
     "metadata" : {
-+      "sourceName" : "Toontown Online Wiki",
-+      "sourceUrl" : "https://wikipedia.org/wiki/Toontown_Online"
-+   },
+      "sourceName" : "Toontown Online Wiki",
+      "sourceUrl" : "https://wikipedia.org/wiki/Toontown_Online"
+   },
 
     "template_type": "terminal",
 
