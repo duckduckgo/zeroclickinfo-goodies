@@ -12,6 +12,10 @@
        
         "Statements - Syntax"    
     ],
+    "aliases": [
+    "sql syntax",
+        "sql statements"
+  ],
     
     "sections": {
         "Statements - Syntax":[
