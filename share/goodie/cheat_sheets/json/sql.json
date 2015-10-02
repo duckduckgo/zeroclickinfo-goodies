@@ -62,7 +62,7 @@
            },
             
             {
-            "key": "DROP DATABASE,
+            "key": "DROP DATABASE",
             "val": "DROP DATABASE database_name"
            },
             
