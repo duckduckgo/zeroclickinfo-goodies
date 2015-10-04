@@ -54,10 +54,10 @@
         }],
         "Discovery Options": [{
             "val": "Perform a ping-only scan",
-            "key": "nmap -sP \\[target\\]"
+            "key": "nmap -sn \\[target\\]"
         }, {
             "val": "Don't ping",
-            "key": "nmap -PN \\[target\\]"
+            "key": "nmap -Pn \\[target\\]"
         }, {
             "val": "TCP SYN ping",
             "key": "nmap -PS \\[target\\]"
