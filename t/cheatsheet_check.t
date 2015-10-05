@@ -109,8 +109,8 @@ foreach my $path (glob("$json_dir/*.json")){
                push(@tests, {msg => "No trailing white space in the value: $entry->{val} from: $name",  critical => 0, pass => 0}) if $entry->{val} =~ /\s"$/;
             }
             if ($entry->{key}) {
-                if (($entry->{val} =~ /\(\[.*\]\/\[.+\]\)/g)) {
-                    push(@tests, {msg => "keys ([a]/[b]) shouldn't have white spaces: $entry->{key} from  $name", critical => 0, pass => 0});
+                if (($entry->{key} =~ /\(\[.*\]\/\[.+\]\)/g)) {
+                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $entry->{key} from  $name", critical => 0, pass => 0});
                 }
                 push(@tests, {msg => "No trailing white space in the value: $entry->{key} from: $name", critical => 0, pass => 0}) if $entry->{key} =~ /\s"$/;
             }
