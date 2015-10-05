@@ -102,6 +102,41 @@
     font-weight: bold;
 }
 
+/* language-sheet.handlebars */
+
+.zci--cheat_sheets .language ul {
+  padding: 0;
+  margin-left: 13px;
+}
+
+.zci--cheat_sheets .language li {
+  position: relative;
+  padding-bottom: 12px;
+  padding-left: 7px;
+  line-height: 17px;
+}
+
+.zci--cheat_sheets .language li::before {
+  position: absolute;
+  left: -12px;
+  content: '●';
+  color: inherit;
+  font-size: 7px;
+}
+
+.zci--cheat_sheets .language li .cheatsheet__key {
+    display: block;
+    font-weight: bold;
+}
+
+.zci--cheat_sheets .language li .cheatsheet__value {
+  display: block;
+}
+
+.zci--cheat_sheets .language li .cheatsheet__translit {
+  display: block;
+}
+
 /**/
 
 .zci--cheat_sheets .cheatsheet__footer {
