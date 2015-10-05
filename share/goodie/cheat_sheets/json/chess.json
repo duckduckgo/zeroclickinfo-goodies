@@ -17,7 +17,7 @@
         "Pieces": [
             {
                 "key": "Pawn", 
-                "val": "In its first move, a pawn can move forward one or two spaces; thereafter, it moves one space forward at a time. Captures pieces 1 square forward diagonally"
+                "val": "Moves forward one or two spaces in its first move; moves one space forward at a time thereafter. Captures pieces 1 square forward diagonally"
             },
             {
                 "key": "Knight",
@@ -37,13 +37,13 @@
             },
             {
                 "key": "King",
-                "val": "Moves and captures one space in any direction, as long as the king won't be in \"check\" in the new square"
+                "val": "Moves and captures one space in any direction, as long as it won't be in \"check\" in the new square"
             }
         ],
         "Gameplay": [
             {
                 "key": "Basic play",
-                "val": "The player using the white pieces goes first, and players alternate turns until the end of the game"
+                "val": "The player using the white pieces goes first; players then alternate turns until the end of the game"
             },
             {
                 "key": "Check",
@@ -51,7 +51,7 @@
             },
             {
                 "key": "Checkmate",
-                "val": "If a player's king is under immediate attack (in check) by an enemy's piece and player cannot get their king out of check (by moving the king, capturing the attacking piece, or blocking the attack), they are checkmated and have lost"
+                "val": "If a player's king is under immediate attack (in check) by an enemy's piece and the player cannot get their king out of check (by moving the king, capturing the attacking piece, or blocking the attack), they are checkmated and have lost"
             },
             {
                 "key": "Stalemate",
@@ -59,7 +59,7 @@
             },
             {
                 "key": "Threefold repetition",
-                "val": "If the same position is repeated three times (does not have to be in succession), either play can claim a draw"
+                "val": "If the same position is repeated three times (does not have to be in succession), either player can claim a draw"
             }
         ],
         "Special Movement": [
