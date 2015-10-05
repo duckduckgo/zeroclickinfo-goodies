@@ -1,0 +1,102 @@
+{
+    "id": "duckduckgo_staff_bands_cheat_sheet",
+    "name": "DuckDuckGo Staff Bands",
+    "description": "Randomly generated bands comprised of DuckDuckGo staff members",
+    "template_type": "reference",
+    "section_order": [
+        "Crocodile And The Zipper Duck Boys",
+        "Wasp Duck Thanksgivings",
+        "The Martian Elbow Ducks",
+        "The Duck Ambush Chesterfield Renegade",
+        "The Sunbeam Ducks Ringing After Summers"
+    ],
+    "sections": {
+        "Crocodile And The Zipper Duck Boys": [
+        {
+            "val": "Saxophone",
+            "key": "Blake J."
+        }, {
+            "val": "Bongos",
+            "key": "Abe Y."
+        }, {
+            "val": "Violin",
+            "key": "Jason D."
+        }, {
+            "val": "Organ",
+            "key": "Prakash S."
+        }, {
+            "val": "Harmonica",
+            "key": "Zac P."
+        }
+    ],
+        "Wasp Duck Thanksgivings": [
+        {
+            "val": "Drums",
+            "key": "Tommy L."
+        }, {
+            "val": "Maracas",
+            "key": "Doug B."
+        }, {
+            "val": "Trombone",
+            "key": "Jag T."
+        }, {
+            "val": "Kazoo",
+            "key": "Gabe W."
+        }, {
+            "val": "Flute",
+            "key": "Caine T."
+        }
+    ],
+        "The Martian Elbow Ducks": [
+        {
+            "val": "Zither",
+            "key": "Thom v. d. W."
+        }, {
+            "val": "Steel Drums",
+            "key": "Russel H."
+        }, {
+            "val": "Snare Drum",
+            "key": "Jaryd M."
+        }, {
+            "val": "Bass Guitar",
+            "key": "Eric J."
+        }, {
+            "val": "Spoons",
+            "key": "Chris M."
+        }
+    ],
+        "The Duck Ambush Chesterfield Renegade": [
+        {
+            "val": "Stylophone",
+            "key": "Zach T."
+        }, {
+            "val": "French Horn",
+            "key": "John B."
+        }, {
+            "val": "Bamboo Flute",
+            "key": "Brian B."
+        }, {
+            "val": "Accordian",
+            "key": "Maria G. A."
+        }, {
+            "val": "Vibraphone",
+            "key": "Andrey P."
+        }
+    ],
+        "The Sunbeam Ducks Ringing After Summers": [
+        {
+            "val": "Xylophone",
+            "key": "Brian S."
+        }, {
+            "val": "Ukelele",
+            "key": "Zaahir M."
+        }, {
+            "val": "Saxophone",
+            "key": "Jeffrey V."
+        },{
+            "val": "Harp",
+            "key": "Marc S."
+        }
+    ]
+    }
+}
