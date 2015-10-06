@@ -7,13 +7,13 @@
         "sourceUrl": "http://docs.openstack.org/user-guide/cli_cheat_sheet.html"
     },
     "section_order": [
-	    "Identity (keystone)",
-	    "Images (glance)",
+	"Identity (keystone)",
+        "Images (glance)",
         "Compute (nova)",
         "Networking (neutron)",
         "Block Storage (cinder)",
         "Volume Management inside Instance",
-	    "Object Storage (swift)"
+	"Object Storage (swift)"
     ],
     "sections": {
         "Identity (keystone)": [
