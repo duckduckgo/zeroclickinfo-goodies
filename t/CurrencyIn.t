@@ -41,21 +41,21 @@ ddg_goodie_test(
     "currency in australia" => test_zci(
         build_structure(
             "Australia",
-            "Australian dollar (AUD)",
+            "Australian Dollar (AUD)",
             "single"
         )
     ),
     "currency in AU" => test_zci(
         build_structure(
             "Australia",
-            "Australian dollar (AUD)",
+            "Australian Dollar (AUD)",
             "single"
         )
     ),
     "currency in poland" => test_zci(
         build_structure(
             "Poland",
-            "Polish z\x{0142}oty (PLN)",
+            "Polish Z\x{0142}oty (PLN)",
             "single"
         )
     ),
@@ -63,9 +63,9 @@ ddg_goodie_test(
         build_structure(
             "Alderney",
             {
-                "Non ISO 4217" => "Alderney pound",
-                "GGP" => "Guernsey pound",
-                "GBP" => "British pound"
+                "NON ISO 4217" => "Alderney Pound",
+                "GGP" => "Guernsey Pound",
+                "GBP" => "British Pound"
             },
             "multiple"
         )
@@ -74,12 +74,12 @@ ddg_goodie_test(
         build_structure(
             "Zimbabwe",
             {
-                "BWP" => "Botswana pula",
+                "BWP" => "Botswana Pula",
                 "EUR" => "Euro",
-                "ZWL" => "Zimbabwean dollar",
-                "ZAR" => "South African rand",
-                "USD" => "United States dollar",
-                "GBP" => "British pound",
+                "ZWL" => "Zimbabwean Dollar",
+                "ZAR" => "South African Rand",
+                "USD" => "United States Dollar",
+                "GBP" => "British Pound",
             },
             "multiple"
         )
