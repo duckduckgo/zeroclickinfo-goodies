@@ -2,8 +2,8 @@
    "id" : "bengali_cheat_sheet",
    "name" : "Bengali Cheat Sheet",
    "metadata" : {
-      "sourceName" : "Wikitionary",
-      "sourceUrl" : "https://en.wiktionary.org/wiki/Appendix:Basic_Bengali_phrases"
+      "sourceName" : "Wikitravel Bengali Phrasebook",
+      "sourceUrl" : "http://wikitravel.org/en/Bengali_phrasebook"
    },
    "aliases": [
        "bengali phrases", "english to bengali", "basic bengali phrases", "basic bengali"
@@ -20,21 +20,6 @@
    "sections" : {
       "Etiquette" : [
          {
-            "key" : "Good morning",
-            "val" : "সুপ্রভাত",
-            "trn" : "Suprobhat"
-         },
-         {
-            "key" : "Good evening",
-            "val" : "শুভ সন্ধ্যা",
-            "trn" : "Shubho Shondha"
-         },
-         {
-            "key" : "Good night",
-            "val" : "শুভ রাত্রি",
-            "trn" : "Shubho Raatri"
-         },
-         {
             "key" : "I'm sorry",
             "val" : "ক্ষমা করবেন",
             "trn" : "Khoma Korben"
@@ -45,9 +30,9 @@
             "trn" : "Dhonyobad"
          },
          {
-            "key" : "Please",
-            "val" : "দয়া করে",
-            "trn" : "Doya kore"
+            "key" : "Please...",
+            "val" : "দয়া করে...",
+            "trn" : "Doya kore..."
          },
          {
             "key" : "Thank you very much!",

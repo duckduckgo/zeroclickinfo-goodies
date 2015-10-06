@@ -124,19 +124,6 @@
   font-size: 7px;
 }
 
-.zci--cheat_sheets .language li .cheatsheet__key {
-    display: block;
-    font-weight: bold;
-}
-
-.zci--cheat_sheets .language li .cheatsheet__value {
-  display: block;
-}
-
-.zci--cheat_sheets .language li .cheatsheet__translit {
-  display: block;
-}
-
 /**/
 
 .zci--cheat_sheets .cheatsheet__footer {
