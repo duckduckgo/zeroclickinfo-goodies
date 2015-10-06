@@ -23,15 +23,15 @@
       "Etiquette" : [
          {
             "val" : "تصبح/تصبحين على خير",
-            "key" : "Good Night"
+            "key" : "Good night"
          },
          {
             "val" : "مساء الخير -من بعد الظهر حتى الغروب",
-            "key" : "Good Afternoon"
+            "key" : "Good afternoon"
          },
          {
             "val" : "مساء الخير",
-            "key" : "Good Evening"
+            "key" : "Good evening"
          },
          {
             "val" : "أنا آسف",
@@ -51,7 +51,7 @@
          },
          {
             "val" : "صباح الخير",
-            "key" : "Good Morning"
+            "key" : "Good morning"
          },
          {
             "val" : "على الرُّحب والسَّعَة",
@@ -73,7 +73,7 @@
          }, 
          {
             "val" : "! إتصل/إتصلي بالشرطة",
-            "key" : "Call the Police!"
+            "key" : "Call the police!"
          },
          {
             "val" : "! تكلم/تكلمي ببطء أكثر من فضلك",
