@@ -12,7 +12,7 @@
     },
 
     "aliases": [
-        "vagrant", "vagrantup"
+        "vagrantup"
     ],
 
     "template_type": "terminal",
