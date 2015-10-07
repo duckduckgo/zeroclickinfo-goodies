@@ -7,7 +7,7 @@
         "sourceName": "AngularDirectiveCommands",
         "sourceUrl": "https://docs.angularjs.org/api/ng/directive"
     },
-    "aliases": ["angular js", "angularjs"],
+    "aliases": ["angular", "angularjs"],
     "template_type": "reference",
     "section_order": [
         "Directives",
@@ -50,7 +50,7 @@
             {
                 "key": "ngMouseleave",
                 "val": "Specify custom behavior on mouseleave event"
-            }                                                                                                                                                                                                                                                                                                                                                                                                              
+            }
           ],
           "Directives (continued)" : [
             {
@@ -92,7 +92,7 @@
             {
                 "key": "ngPaste",
                 "val": "Specify custom behavior on paste event"
-            }                                                                                                                                                                                                                                                                                                                                                                                                              
+            }
           ]
-     }                                                                                                                                                                                                                                                                                                                                                                                                                     
-}                                                                                     
+     }
+}

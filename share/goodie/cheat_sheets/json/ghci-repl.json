@@ -7,7 +7,7 @@
         "sourceUrl": "https://www.haskell.org"
     },
     "aliases": [
-        "ghci"
+        "ghci", "haskell repl"
     ],
     "template_type": "terminal",
     "section_order": [
