@@ -1,11 +1,12 @@
 {
     "id": "bbcode_cheat_sheet",
     "name": "BBCode",
-    "description": "Text Formatting For Popular Online Forums \f\n\r Note: Not all codes are supported by all forums",
+    "description": "Text formatting for popular online forums (Not all codes are supported by all forums)",
     "metadata": {
         "sourceName": "bbcode.org",
         "sourceUrl": "http://www.bbcode.org/reference.php"
-    },   
+    },
+    "template_type": "code",
     "section_order": [
         "Text Formatting",
         "Quoting and fixed-width text",
@@ -33,13 +34,13 @@
             },
             {
                 "key": "\\[size=\\{number\\}\\]\\{text\\}\\[/size\\]",
-                "val": "Changes the font-size of {text}" 
+                "val": "Changes the font-size of {text}"
             },
             {
-                "key": "\\[color=\\{colou\\}\\]\\{text\\}\\[/color\\]",
-                "val": "Changes the colou of {text}"
+                "key": "\\[color=\\{color\\}\\]\\{text\\}\\[/color\\]",
+                "val": "Changes the color of {text}"
             }
-            
+
         ],
         "Quoting and fixed-width text" : [
             {
@@ -47,7 +48,7 @@
                 "val": "Centers {text} on screen"
             },
             {
-                "key": "[quote]{text}[/quote]",
+                "key": "\\[quote\\]\\{text\\}\\[/quote\\]",
                 "val": "Creates a quotation box containing {text}"
             },
             {
@@ -56,11 +57,11 @@
             },
             {
                 "key": "\\[code\\]\\{text\\}\\[/code\\]",
-                "val": "Renders the {text} while maintaining all white spacing (typically in fixed width font)"
+                "val": "Renders {text} as a code block; Maintains white spacing, typically uses fixed width font"
             }
         ],
         "Lists and Tables": [
-                                  
+
             {
                 "key": "\\[list\\]\\{items\\}\\[/list\\]",
                 "val": "Common variant: List of {items}"
@@ -72,7 +73,7 @@
             {
                 "key": "\\[ul\\]\\{items\\}\\[/ul\\]",
                 "val": "Unordered list of {items}"
-            },                   
+            },
             {
                 "key": "\\[table\\]\\{rows\\}\\[/table\\]",
                 "val": "Show a table with {rows} in it"
@@ -82,16 +83,24 @@
                 "val": "Renders a table row containing {cells}"
             },
             {
-                "key": "Heading Cell: \\[th\\]\\{content\\}\\[/th\\]\f\n\rContent Cell: \\[td\\]\\{content\\}\\[/td\\]",
-                "val": "Shows {content} in a table (heading) cell"
+                "key": "\\[th\\]\\{content\\}\\[/th\\]",
+                "val": "Shows {content} in a table heading cell"
+            },
+            {
+                "key": "\\[td\\]\\{content\\}\\[/td\\]",
+                "val": "Shows {content} in a table cell"
             }
         ],
-        "Creating Links": [ 
+        "Creating Links": [
             {
-                "key": "\\[url\\]\\{url\\}\\[/url\\] or: \f\n\r\\{url\\}",
+                "key": "\\[url\\]\\{url\\}\\[/url\\]",
                 "val": "Makes a link to {url}"
             },
-                        {
+            {
+                "key": "\\{url\\}",
+                "val": "Makes a link to {url} (alternative)"
+            },
+            {
                 "key": "\\[url=\\{url\\}\\]\\{text\\}\\[/url\\]",
                 "val": "Makes a named link to {url}"
             }
@@ -100,7 +109,7 @@
             {
                 "key": "\\[img\\]\\{url\\}\\[/img\\]",
                 "val": "Shows the image indicated by {url}"
-            }                 
+            }
         ]
     }
 }
