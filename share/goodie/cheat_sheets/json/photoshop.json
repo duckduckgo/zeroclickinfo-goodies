@@ -1,19 +1,18 @@
 {
-    "id": "photoshop_cheat_sheet", 
+    "id": "photoshop_cheat_sheet",
     "name": "Photoshop",
-    "description": "Graphics Editor", 
-    "metadata": { 
+    "description": "Graphics Editor",
+    "metadata": {
         "sourceName": "PhotoshopCheatSheet"
     },
     "template_type": "keyboard",
-    "section_order": [  
+    "section_order": [
         "File",
         "Edit",
         "Image",
         "Layers",
         "Select",
         "Filter",
-        "Selections",
         "3D",
         "View",
         "Window",
@@ -26,7 +25,7 @@
     "sections": {
         "Help": [
             {
-                "key": "F1", 
+                "key": "F1",
                 "val": "Photoshop Help"
             }
         ],
@@ -42,7 +41,7 @@
             {
                 "key": "{",
                 "val": "Decrease Brush Hardness"
-            }, 
+            },
             {
                 "key": "}",
                 "val": "Increase Brush Hardness"
@@ -58,7 +57,7 @@
             {
                 "key": "<",
                 "val": "First Brush"
-            }, 
+            },
             {
                 "key": ">",
                 "val": "Last Brush"
@@ -69,24 +68,24 @@
             },
             {
                 "key": "L",
-                "val": "Lasso / Polygonal Lasso / Magnetic Lasso Tools"               
-            }, 
+                "val": "Lasso / Polygonal Lasso / Magnetic Lasso Tools"
+            },
             {
                 "key": "W",
                 "val": "Quick Selection / Magic Wand Tools"
             },
             {
                 "key": "I",
-                "val": "Eyedropper / 3D Material Eyedropper / Color Sampler / Ruler / Note / Count Tools"               
-            }, 
+                "val": "Eyedropper / 3D Material Eyedropper / Color Sampler / Ruler / Note / Count Tools"
+            },
             {
                 "key": "C",
                 "val": "Crop / Perspective Crop / Slice / Slice Select Tools"
             },
             {
                 "key": "J",
-                "val": "Spot Healing Brush / Healing Brush / Patch / Content-Aware Move / Red Eye Tools"               
-            }, 
+                "val": "Spot Healing Brush / Healing Brush / Patch / Content-Aware Move / Red Eye Tools"
+            },
             {
                 "key": "B",
                 "val": "Brush / Pencil / Color Replacement / Mixer Brush Tools"
@@ -97,12 +96,12 @@
             },
             {
                 "key": "Y",
-                "val": "History Brush / Art History Brush Tools"               
-            }, 
+                "val": "History Brush / Art History Brush Tools"
+            },
             {
                 "key": "E",
                 "val": "Eraser / Background Eraser / Magic Eraser Tools"
-            }, 
+            },
             {
                 "key": "G",
                 "val": "Gradient / Paint Bucket / 3D Material Drop Tools"
@@ -114,7 +113,7 @@
             {
                 "key": "P",
                 "val": "Pen / Freeform Tools"
-            }, 
+            },
             {
                 "key": "T",
                 "val": "Horizontal Type / Vertical Type / Horizontal Type Mask / Vertical Type Mask Tools"
@@ -122,7 +121,7 @@
             {
                 "key": "A",
                 "val": "Path Selection / Direct Selection Tools"
-            }, 
+            },
             {
                 "key": "U",
                 "val": "Rectangle / Rounded Rectangle / Ellipse / Polygon / Line / Custom Shape Tools"
@@ -140,7 +139,7 @@
             {
                 "key": "Q",
                 "val": "Toggle Standard/Quick Mask Modes"
-            }, 
+            },
             {
                 "key": "F",
                 "val": "Toggle Screen Modes"
@@ -153,7 +152,7 @@
         "Movement/Navigation": [
             {
                 "key": "V",
-                "val": "Move Tool"               
+                "val": "Move Tool"
             },
             {
                 "key": "H",
@@ -162,7 +161,7 @@
             {
                 "key": "R",
                 "val": "Rotate View Tool"
-            }, 
+            },
             {
                 "key": "Z",
                 "val": "Zoom Tool"
@@ -184,7 +183,7 @@
             {
                 "key": "F7",
                 "val": "Layers"
-            }, 
+            },
             {
                 "key": "F8",
                 "val": "Info"
@@ -206,7 +205,7 @@
             {
                 "key": "[Ctrl] [-]",
                 "val": "Zoom Out"
-            }, 
+            },
             {
                 "key": "[Ctrl] [0]",
                 "val": "Fit on Screen"
@@ -218,7 +217,7 @@
             {
                 "key": "[Ctrl] [H]",
                 "val": "Extras"
-            }, 
+            },
             {
                 "key": "[Ctrl] [R]",
                 "val": "Rulers"
@@ -226,7 +225,7 @@
             {
                 "key": "[Shift] [Ctrl] [H]",
                 "val": "Show Target Path"
-            }, 
+            },
             {
                 "key": "[Ctrl] [']",
                 "val": "Show Grid"
@@ -238,7 +237,7 @@
             {
                 "key": "[Shift] [Ctrl] [;]",
                 "val": "Snap"
-            }, 
+            },
             {
                 "key": "[Alt] [Ctrl] [;]",
                 "val": "Lock Guides"
@@ -252,7 +251,7 @@
             {
                 "key": "[Alt] [Shift] [Ctrl] [X]",
                 "val": "Reveal All Polygons"
-            }, 
+            },
             {
                 "key": "[Alt] [Shift] [Ctrl] [R]",
                 "val": "Render"
@@ -274,7 +273,7 @@
             {
                 "key": "[Shift] [Ctrl] [R]",
                 "val": "Lens Correction"
-            }, 
+            },
             {
                 "key": "[Shift] [Ctrl] [X]",
                 "val": "Liquify"
@@ -300,7 +299,7 @@
             {
                 "key": "[Shift] [Ctrl] [I] or [Shift] [F7]",
                 "val": "Inverse"
-            }, 
+            },
             {
                 "key": "[Alt] [Ctrl] [A]",
                 "val": "All Layers"
@@ -334,7 +333,7 @@
             {
                 "key": "[Alt] [Ctrl] [G]",
                 "val": "Create/Release Clipping Mask"
-            }, 
+            },
             {
                 "key": "[Ctrl] [G]",
                 "val": "Group Layers"
@@ -384,7 +383,7 @@
             {
                 "key": "[Ctrl] [B]",
                 "val": "Adjustments: Color Balance"
-            }, 
+            },
             {
                 "key": "[Alt] [Shift] [Ctrl] [B]",
                 "val": "Adjustments: Black & White"
@@ -434,7 +433,7 @@
             {
                 "key": "[Shift] [Ctrl] [F]",
                 "val": "Fade"
-            }, 
+            },
             {
                 "key": "[Ctrl] [X] or [F2]",
                 "val": "Cut"
@@ -508,7 +507,7 @@
             {
                 "key": "[Alt] [Shift] [Ctrl] [O]",
                 "val": "Open As"
-            }, 
+            },
             {
                 "key": "[Ctrl] [W]",
                 "val": "Close"
