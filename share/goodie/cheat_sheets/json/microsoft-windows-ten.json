@@ -8,6 +8,7 @@
     },
     "aliases" : [
         "windows 10",
+        "windows ten",
         "microsoft windows 10"
     ],
     "template_type": "keyboard",
@@ -42,15 +43,15 @@
         "Virtual Desktops": [{
             "val" : "Create a new virtual desktop and switch to it",
             "key" : "[Win] [Ctrl] [d]"
-        },{    
+        },{
             "val" : "Close the current virtual desktop",
             "key" : "[Win] [Ctrl] [F4]"
-        },{  
-                
+        },{
+
             "val" : "Switch to the virtual desktop on the left",
             "key" : "[Win] [Ctrl] [←]"
         },{
-                
+
             "val" : "Switch to the virtual desktop on the right",
             "key" : "[Win] [Ctrl] [→]"
         }],
@@ -63,40 +64,40 @@
         },{
             "val" : "Copy",
             "key" : "[Ctrl] [c]"
-        },{ 
+        },{
             "val" : "Copy (alternative)",
             "key" : "[Ctrl] [Insert]"
-        },{ 
+        },{
             "val" : "Selects all",
             "key" : "[Ctrl] [a]"
-        },{ 
+        },{
             "val" : "Selects text to the left of the cursor",
             "key" : "[Shift] [←]"
         },{
              "val" : "Selects text to the right of the cursor",
             "key" : "[Shift] [→]"
-        },{ 
+        },{
             "val" : "Selects text down a line",
             "key" : "[Shift] [↓]"
-        },{ 
+        },{
             "val" : "Selects text up a line",
             "key" : "[Shift] [↑]"
-        },{ 
+        },{
             "val" : "Moves the cursor, Selects the words along the left",
             "key" : "[Ctrl] [Shift] [←]"
-        },{ 
+        },{
             "val" : "Moves the cursor, Selects the words along the right",
             "key" : "[Ctrl] [Shift] [→]"
         },{
             "val" : "Moves the cursor to the beginning of the current line, selects text along the way",
             "key" : "[Shift] [Home]"
-        },{ 
+        },{
             "val" : "Moves the cursor to the end of the current line, selects text along the way",
             "key" : "[Shift] [End]"
         },{
             "val" : "Moves the cursor up the screen, selects text",
             "key" : "[Shift] [PageUp]"
-        },{ 
+        },{
             "val" : "Moves the cursor down the screen, selects text",
             "key" : "[Shift] [PageDown]"
         },{
@@ -112,19 +113,19 @@
         },{
             "val" : "Moves one line down in the Command Prompt’s history",
             "key" : "[Ctrl] [↓]"
-        },{ 
+        },{
             "val" : "Moves one page up in the Command Prompt’s history",
             "key" : "[Ctrl] [PageUp]"
         },{
              "val" : "Moves one page down in the Command Prompt’s history",
             "key" : "[Ctrl] [PageDown]"
-        },{ 
+        },{
             "val" : "Enter “mark mode,” which helps for selecting text",
             "key" : "[Ctrl] [M]"
-        },{ 
+        },{
             "val" : "Find text in Command Prompt",
             "key" : "[Ctrl] [F]"
-        },{ 
+        },{
             "val" : "Closes the Command Prompt window",
             "key" : "[Alt] [F4]"
         }]
