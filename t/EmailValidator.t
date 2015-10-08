@@ -67,7 +67,7 @@ ddg_goodie_test(
             result    => qr/Please check the top-level domain/,
         }
     ),
-    'validate foo'                      => undef,
+    'validate foo' => undef,
 );
 
 done_testing;

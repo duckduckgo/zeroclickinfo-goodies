@@ -4,6 +4,9 @@ package DDG::Goodie::CheatSheets;
 use JSON::XS;
 use DDG::Goodie;
 use DDP;
+use File::Find::Rule;
+
+no warnings 'uninitialized';
 
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
@@ -21,11 +24,39 @@ triggers startend => (
     'key bindings', 'keys', 'default keys'
 );
 
+sub getAliases {
+    my @files = File::Find::Rule->file()
+                                ->name("*.json")
+                                ->in(share());
+    my %results;
+    
+    foreach my $file (@files) {
+        open my $fh, $file or warn "Error opening file: $file\n" and next;
+        my $json = do { local $/;  <$fh> };
+        my $data = decode_json($json);
+        
+        my $defaultName = File::Basename::fileparse($file);
+        $defaultName =~ s/-/ /g;
+        $defaultName =~ s/.json//;
+        
+        $results{$defaultName} = $file;
+        
+        if ($data->{'aliases'}) {
+            foreach my $alias (@{$data->{'aliases'}}) {
+                $results{$alias} = $file;
+            }
+        }
+    }
+    return \%results;
+}
+
+my $aliases = getAliases();
+
 handle remainder => sub {
     # If needed we could jump through a few more hoops to check
     # terms against file names.
-    my $json_path = share(join('-', split /\s+/o, lc($_) . '.json'));
-    open my $fh, $json_path or return;
+    open my $fh, $aliases->{join(' ', split /\s+/o, lc($_))} or return;
+    
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
 
@@ -38,7 +69,7 @@ handle remainder => sub {
             group => 'base',
             item => 0,
             options => {
-                content => 'DDH.cheat_sheets.detail',
+                content => "DDH.cheat_sheets.detail",
                 moreAt => 0
             }
         }

@@ -41,10 +41,11 @@ triggers query_raw => qr/^
         (.*?)\s*(.+?)\brgb(?:\s+code)?|                 # handles "red rgb code", etc
         (.*?)\s*colou?r(?:\s+code)?(?:\s+for)?\s+(.+?)| # handles "rgb color code for red", "red color code for html", etc
         (.*?)(rgba)\s*:?\s*\(?\s*(.+?)\s*\)?|           # handles "rgba( red )", "rgba:255,0,0", "rgba(255 0 0)", etc
-        (.*?)($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|       # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
+        ([^\s]*?)\s*($typestr)\s*:?\s*\(?\s*(.+?)\s*\)?|       # handles "rgb( red )", "rgb:255,0,0", "rgb(255 0 0)", etc
         \#?([0-9a-f]{6})|\#([0-9a-f]{3})                # handles #00f, #0000ff, etc
     )
     (?:(?:'?s)?\s+(inverse|negative|opposite))?
+    (?:\sto\s(?:$typestr))?
     $/ix;
 
 zci is_cached => 1;
@@ -124,6 +125,8 @@ handle matches => sub {
     my $type    = 'rgb8';    # Default type, can be overridden below.
     my @matches = @_;
 
+    s/\sto\s(?:$typestr)//;
+
     foreach my $q (map { lc $_ } grep { defined $_ } @matches) {
         # $q now contains the defined normalized matches which can be:
         if (exists $types{$q}) {
@@ -136,6 +139,7 @@ handle matches => sub {
     }
 
     return unless $color;                   # Need a color to continue!
+    $color =~ s/\sto\s//;
 
     my $alpha = "1";
     $color =~ s/(,\s*|\s+)/,/g;             # Spaces to commas for things like "hsl 194 0.53 0.79"

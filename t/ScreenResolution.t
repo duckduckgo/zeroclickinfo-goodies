@@ -8,20 +8,23 @@ use DDG::Test::Goodie;
 zci answer_type => "screen_resolution";
 zci is_cached   => 1;
 
-my @answer = test_zci('Javascript required', structured_answer => {
-    id => 'screen_resolution',
-    name => 'Screen Resolution',
-    data => {
-        title => "Your screen resolution is [Loading...]"
-    },
-    templates => {
-        group => 'text',
-        item => 0,
-        options => {
-            moreAt => 0
+my @answer = test_zci(
+    undef,
+    structured_answer => {
+        id => 'screen_resolution',
+        name => 'Answer',
+        data => {
+            title => "Your screen resolution is [Loading...]"
+        },
+        templates => {
+            group => 'icon',
+            item => 0,
+            options => {
+                moreAt => 0
+            }
         }
     }
-});
+);
 
 ddg_goodie_test(
     [qw( DDG::Goodie::ScreenResolution )],
