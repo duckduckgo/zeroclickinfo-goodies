@@ -10,14 +10,11 @@
     "sections": {
         "Desktop Shortcuts": [{
             "val": "Switch between the Activities overview and desktop",
-<<<<<<< HEAD:share/goodie/cheat_sheets/gnome-keyboard.json
             "key": "[Alt] ([F1]/[Super])"
-=======
             "key": "[Alt] [F1]"
         },{
             "val": "Switch between the Activities overview and desktop (alternative)",
             "key": "Super"
->>>>>>> origin/master:share/goodie/cheat_sheets/json/gnome-keyboard.json
         }, {
             "val": "Pop up command window",
             "key": "[Alt] [F2] "

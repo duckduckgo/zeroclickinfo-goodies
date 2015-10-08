@@ -60,11 +60,8 @@
             "key" : "[Cmd] [Enter]",
             "val" : "Open selected item in Finder"
         }, {
-<<<<<<< HEAD:share/goodie/cheat_sheets/mac-keyboard.json
             "key" : "[Cmd] ([↑]/[↓])",
-=======
             "key" : "[Cmd] [↑/↓]",
->>>>>>> origin/master:share/goodie/cheat_sheets/json/mac-keyboard.json
             "val" : "Skip to next/previous result category"
         }], "Text Editing" :[{
             "key" : "[Cmd] [A]",
@@ -118,11 +115,8 @@
             "key" : "[Cmd] [,]",
             "val" : "Open Preferences (if available)"
         }, {
-<<<<<<< HEAD:share/goodie/cheat_sheets/mac-keyboard.json
             "key" : "[Ctrl] ([←]/[→])",
-=======
             "key" : "[Ctrl] [←/→]",
->>>>>>> origin/master:share/goodie/cheat_sheets/json/mac-keyboard.json
             "val" : "Move one desktop left or right"
         }, {
             "key" : "[Cmd] [Opt] [Esc]",
