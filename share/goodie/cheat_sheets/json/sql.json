@@ -1,194 +1,168 @@
-{
-   "id": "sql_statements",
-    "name": "SQL Statements",
-    "description": "SQL is a standard language for accessing and manipulating databases.",
-    "metadata": {
-        "sourceName": "sql",
-        "sourceUrl": "http://www.w3schools.com/sql" 
-                },
-    
-    "template_type": "reference",
-    "section_order": [  
-       
-        "Statements - Syntax"    
-                     ],
-    "aliases": [
-    "sql syntax",
-        "sql statements"
-               ],
-    
-    "sections": {
-        "Statements - Syntax":[
-              {
-            "key": "CREATE TABLE",
-            "val": "CREATE TABLE table_name ( column_name1 data_type,column_name2 data_type,...)"
-              },
-            
-              {
-            "key": "SELECT",
-            "val": "SELECT column_name(s) FROM table_name"
-              },
-            
-              {
-            "key": "SELECT *",
-            "val": "SELECT * FROM table_name"
-              },
-            
-              {
-            "key": "SELECT DISTINCT",
-            "val": "SELECT DISTINCT column_name(s) FROM table_name"
-              },
-            
-              {
-            "key": "INSERT INTO",
-            "val": " INSERT INTO table_name VALUES (value1, value2, value3,....), INSERT INTO table_name (column1, column2, column3,...) VALUES (value1, value2, value3,....)"
-             },
-            
-             {
-            "key": "WHERE",
-            "val": "SELECT column_name(s) FROM table_name WHERE column_name operator value"
-             },
-            
-             {
-            "key": "UPDATE",
-            "val": "UPDATE table_name SET column1=value, column2=value,... WHERE some_column=some_value"
-             },
-            
-             {
-            "key": "DELETE",
-            "val": "DELETE FROM table_name WHERE some_column=some_value, DELETE FROM table_name (Note: Deletes the entire table!!) DELETE * FROM table_name (Note: Deletes the entire table!!) "
-             },
-            
-             {
-            "key": "AND / OR",
-            "val": "SELECT column_name(s) FROM table_name WHERE condition AND|OR condition "               
-             },
-            
-             {
-            "key": "ALTER TABLE",
-            "val": "ALTER TABLE table_name ADD column_name datatype , ALTER TABLE table_name DROP COLUMN column_name"
-             },
-            
-             {
-            "key": "AS (alias)",
-            "val": "SELECT column_name AS column_alias FROM table_name, SELECT column_name FROM table_name  AS table_alias"
-             },
-            
-             {
-            "key": "BETWEEN",
-            "val": "SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2"
-             },
-            
-             {
-            "key": "EXISTS",
-            "val": "IF EXISTS (SELECT * FROM table_name WHERE id = ?) BEGIN --do what needs to be done if exists END ELSE BEGIN --do what needs to be done if not END"
-             },
-            
-             {
-            "key": "GROUP BY",
-            "val": "SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name"
-             },
-             
-             {
-            "key": "HAVING",
-            "val": "SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name HAVING aggregate_function(column_name) operator value"
-             },
-            
-             {
-            "key": "IN",
-            "val": "SELECT column_name(s) FROM table_name WHERE column_name IN (value1,value2,..)"
-             },
-           
-             {
-            "key": "LIKE",
-            "val": "SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern"
-             },
-            
-             {
-            "key": "ORDER BY",
-            "val": "SELECT column_name(s) FROM table_name ORDER BY column_name [ASC|DESC]"
-             },
-            
-             {
-            "key": "CREATE VIEW",
-            "val": "CREATE VIEW view_name AS SELECT column_name(s) FROM table_name WHERE condition"
-             },
-            
-             {
-            "key": "DROP TABLE",
-            "val": "DROP TABLE table_name"
-             },
-            
-             {
-            "key": "SELECT INTO",
-            "val": "SELECT * INTO new_table_name [IN externaldatabase] FROM old_table_name, SELECT column_name(s) INTO new_table_name [IN externaldatabase] FROM old_table_name"
-             },
-            
-             {
-            "key": "SELECT TOP",
-            "val": "SELECT TOP number|percent column_name(s) FROM table_name"
-             },
-            
-             { 
-            "key": "CREATE DATABASE",
-            "val": "CREATE DATABASE database_name"
-             },
-            
-             {
-            "key": "CREATE INDEX",
-            "val": "CREATE INDEX index_name ON table_name (column_name), CREATE UNIQUE INDEX index_name ON table_name (column_name)"
-             },
-           
-             {
-            "key": "DROP DATABASE",
-            "val": "DROP DATABASE database_name"
-             },
-            
-             {
-            "key": "DROP INDEX",
-            "val": "DROP INDEX table_name.index_name (SQL Server),DROP INDEX index_name ON table_name (MS Access),DROP INDEX index_name (DB2/Oracle),ALTER TABLE table_name DROP INDEX index_name (MySQL)"
-             },
-           
-             {
-            "key": "INNER JOIN",
-            "val": "SELECT column_name(s) FROM table_name1 INNER JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
-             },
-            
-             {
-            "key": "LEFT JOIN",
-            "val": "SELECT column_name(s) FROM table_name1 LEFT JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
-             },
-            
-             {
-            "key": "RIGHT JOIN",
-            "val": "SELECT column_name(s) FROM table_name1 RIGHT JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
-             },
-            
-             {
-            "key": "FULL JOIN",
-            "val": "SELECT column_name(s) FROM table_name1 FULL JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
-             },
-            
-             {
-            "key": "TRUNCATE TABLE",
-            "val": "TRUNCATE TABLE table_name"
-             },
-            
-             {
-            "key": "UNION",
-            "val": "SELECT column_name(s) FROM table_name1 UNION SELECT column_name(s) FROM table_name2"
-             },
-            
-             {
-            "key": "UNION ALL",
-            "val": "SELECT column_name(s) FROM table_name1 UNION ALL SELECT column_name(s) FROM table_name2"
-             } 
-           
-           
-            
-        ]
+{  
+   "id":"sql_statements",
+   "name":"SQL Statements",
+   "description":"SQL is a standard language for accessing and manipulating databases.",
+   "metadata":{  
+      "sourceName":"sql",
+      "sourceUrl":"http://www.w3schools.com/sql"
+   },
+   "template_type":"reference",
+   "section_order":[  
+      "Data Definition Language (DDL) Commands",
+      "Data Manipulation Language (DML)Commands",
+      "Arguments Used with Commands"
+   ],
+   "aliases":[  
+      "sql syntax",
+      "sql statements",
+       "sql tutorial"
+   ],
+   "sections":{  
+      "Data Definition Language (DDL) Commands":[  
+         {  
+            "key":"CREATE TABLE",
+            "val":"CREATE TABLE table_name ( column_name1 data_type,column_name2 data_type,...)"
+         },
         
+         
+         {  
+            "key":"ALTER TABLE",
+            "val":"ALTER TABLE table_name ADD column_name datatype , ALTER TABLE table_name DROP COLUMN column_name"
+         },
         
-    }
-   
+         {  
+            "key":"CREATE VIEW",
+            "val":"CREATE VIEW view_name AS SELECT column_name(s) FROM table_name WHERE condition"
+         },
+         {  
+            "key":"DROP TABLE",
+            "val":"DROP TABLE table_name"
+         },
+         
+         {  
+            "key":"CREATE DATABASE",
+            "val":"CREATE DATABASE database_name"
+         },
+         {  
+            "key":"CREATE INDEX",
+            "val":"CREATE INDEX index_name ON table_name (column_name), CREATE UNIQUE INDEX index_name ON table_name (column_name)"
+         },
+         {  
+            "key":"DROP DATABASE",
+            "val":"DROP DATABASE database_name"
+         },
+         {  
+            "key":"DROP INDEX",
+            "val":"DROP INDEX table_name.index_name (SQL Server),DROP INDEX index_name ON table_name (MS Access),DROP INDEX index_name (DB2/Oracle),ALTER TABLE table_name DROP INDEX index_name (MySQL)"
+         },
+         
+         {  
+            "key":"TRUNCATE TABLE",
+            "val":"TRUNCATE TABLE table_name"
+         },
+         {  
+            "key":"UNION",
+            "val":"SELECT column_name(s) FROM table_name1 UNION SELECT column_name(s) FROM table_name2"
+         },
+         {  
+            "key":"UNION ALL",
+            "val":"SELECT column_name(s) FROM table_name1 UNION ALL SELECT column_name(s) FROM table_name2"
+         }
+      ],
+       "Data Manipulation Language (DML)Commands":[
+           
+           {  
+            "key":"SELECT",
+            "val":"SELECT column_name(s) FROM table_name"
+         },
+         {  
+            "key":"SELECT *",
+            "val":"SELECT * FROM table_name"
+         },
+         {  
+            "key":"SELECT DISTINCT",
+            "val":"SELECT DISTINCT column_name(s) FROM table_name"
+         },
+         {  
+            "key":"INSERT INTO",
+            "val":" INSERT INTO table_name VALUES (value1, value2, value3,....), INSERT INTO table_name (column1, column2, column3,...) VALUES (value1, value2, value3,....)"
+         },
+           {  
+            "key":"UPDATE",
+            "val":"UPDATE table_name SET column1=value, column2=value,... WHERE some_column=some_value"
+         },
+           {  
+            "key":"DELETE",
+            "val":"DELETE FROM table_name WHERE some_column=some_value, DELETE FROM table_name (Note: Deletes the entire table!!) DELETE * FROM table_name (Note: Deletes the entire table!!) "
+         },
+           {  
+            "key":"SELECT INTO",
+            "val":"SELECT * INTO new_table_name [IN externaldatabase] FROM old_table_name, SELECT column_name(s) INTO new_table_name [IN externaldatabase] FROM old_table_name"
+         },
+         {  
+            "key":"SELECT TOP",
+            "val":"SELECT TOP number|percent column_name(s) FROM table_name"
+         }
+      ],
+     "Arguments Used with Commands":[
+         {  
+            "key":"WHERE",
+            "val":"SELECT column_name(s) FROM table_name WHERE column_name operator value"
+         },
+         
+         
+         {  
+            "key":"AND / OR",
+            "val":"SELECT column_name(s) FROM table_name WHERE condition AND|OR condition "
+         },
+          {  
+            "key":"AS (alias)",
+            "val":"SELECT column_name AS column_alias FROM table_name, SELECT column_name FROM table_name  AS table_alias"
+         },
+         {  
+            "key":"BETWEEN",
+            "val":"SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2"
+         },
+         {  
+            "key":"EXISTS",
+            "val":"IF EXISTS (SELECT * FROM table_name WHERE id = ?) BEGIN --do what needs to be done if exists END ELSE BEGIN --do what needs to be done if not END"
+         },
+         {  
+            "key":"GROUP BY",
+            "val":"SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name"
+         },
+         {  
+            "key":"HAVING",
+            "val":"SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name HAVING aggregate_function(column_name) operator value"
+         },
+         {  
+            "key":"IN",
+            "val":"SELECT column_name(s) FROM table_name WHERE column_name IN (value1,value2,..)"
+         },
+         {  
+            "key":"LIKE",
+            "val":"SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern"
+         },
+         {  
+            "key":"ORDER BY",
+            "val":"SELECT column_name(s) FROM table_name ORDER BY column_name [ASC|DESC]"
+         },
+         {  
+            "key":"INNER JOIN",
+            "val":"SELECT column_name(s) FROM table_name1 INNER JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+         },
+         {  
+            "key":"LEFT JOIN",
+            "val":"SELECT column_name(s) FROM table_name1 LEFT JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+         },
+         {  
+            "key":"RIGHT JOIN",
+            "val":"SELECT column_name(s) FROM table_name1 RIGHT JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+         },
+         {  
+            "key":"FULL JOIN",
+            "val":"SELECT column_name(s) FROM table_name1 FULL JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+         }
+     ]  
+   }
 }
