@@ -59,15 +59,8 @@
          {  
             "key":"TRUNCATE TABLE",
             "val":"TRUNCATE TABLE table_name"
-         },
-         {  
-            "key":"UNION",
-            "val":"SELECT column_name(s) FROM table_name1 UNION SELECT column_name(s) FROM table_name2"
-         },
-         {  
-            "key":"UNION ALL",
-            "val":"SELECT column_name(s) FROM table_name1 UNION ALL SELECT column_name(s) FROM table_name2"
          }
+        
       ],
        "Data Manipulation Language (DML)Commands":[
            
@@ -162,6 +155,14 @@
          {  
             "key":"FULL JOIN",
             "val":"SELECT column_name(s) FROM table_name1 FULL JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+         },
+          {  
+            "key":"UNION",
+            "val":"SELECT column_name(s) FROM table_name1 UNION SELECT column_name(s) FROM table_name2"
+         },
+         {  
+            "key":"UNION ALL",
+            "val":"SELECT column_name(s) FROM table_name1 UNION ALL SELECT column_name(s) FROM table_name2"
          }
      ]  
    }
