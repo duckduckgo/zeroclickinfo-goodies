@@ -1,7 +1,7 @@
 {
     "id": "mongodb_cheat_sheet",
     "name": "MongoDB",
-    "templete_type": "terminal",
+    "templete_type": "code",
     "description": "Mongo shell",
     "metadata": {
         "sourceName": "MongoDB - Cheat Sheet",
@@ -165,23 +165,23 @@
         ],
         "Working with Indexes": [
             {
-                "key": "db.ships.ensureIndex(\\{name : 1\\})",
+                "key": "db.ships.ensureIndex(keys, options)",
                 "val": "Creating an index"
             },
             {
-                "key": "db.ships.dropIndex(\\{name : 1\\})",
+                "key": "db.ships.dropIndex(keys, options)",
                 "val": "Dropping an index"
             },
             {
-                "key": "db.ships.ensureIndex(\\{name : 1, operator : 1, class : 0\\})",
+                "key": "db.ships.ensureIndex(keys, options)",
                 "val": "Creating a compound index"
             },
             {
-                "key": "db.ships.dropIndex(\\{name : 1, operator : 1, class : 0\\})",
+                "key": "db.ships.dropIndex(\\{keys, options)",
                 "val": "Dropping a compound index"
             },
             {
-                "key": "db.ships.ensureIndex(\\{name : 1, operator : 1, class : 0\\}, \\{unique : true\\})",
+                "key": "db.ships.ensureIndex(keys, options, \\{unique : true\\})",
                 "val": "Creating a unique compound index"
             }
         ],
