@@ -1,0 +1,213 @@
+{
+    "id": "crochet_pattern_cheat_sheet",
+    "name": "Crochet Cheat Sheet",
+    "description": "Crochet pattern abbreviations",
+    "metadata": {
+        "sourceName": "Craft Yarn Council",
+        "sourceUrl": "http://craftyarncouncil.com/crochet.html"
+    },
+    "section_order": ["Abbreviations", " ", "  "],
+    "sections": {
+        "Abbreviations": [{
+            "val": "work instructions within brackets as many times as directed",
+            "key": "[]"
+        }, {
+            "val": "work instructions within parentheses in the place directed",
+            "key": "()"
+        }, {
+            "val": "repeat instructions following the asterisks as directed",
+            "key": "**"
+        }, {
+            "val": "inch(es)",
+            "key": "\""
+        }, {
+            "val": "repeat instructions following the single asterisk as directed",
+            "key": "*"
+        }, {
+            "val": "alternate",
+            "key": "alt"
+        }, {
+            "val": "approximately",
+            "key": "approx"
+        }, {
+            "val": "begin/beginning",
+            "key": "beg"
+        }, {
+            "val": "between",
+            "key": "bet"
+        }, {
+            "val": "back loop(s)",
+            "key": "BL"
+        }, {
+            "val": "bobble",
+            "key": "bo"
+        }, {
+            "val": "back post double crochet",
+            "key": "BP"
+        }, {
+            "val": "back post single crochet",
+            "key": "BPsc"
+        }, {
+            "val": "back post treble crochet",
+            "key": "BPtr"
+        }, {
+            "val": "color A",
+            "key": "CA"
+        }, {
+            "val": "color B",
+            "key": "CB"
+        }, {
+            "val": "contrasting color",
+            "key": "CC"
+        }, {
+            "val": "chain stitch",
+            "key": "ch"
+        }, {
+            "val": "refers to chain or space previously made: e.g., ch-1 space",
+            "key": "ch-"
+        }],
+        " ": [{
+            "val": "chain space",
+            "key": "ch-sp"
+        }, {
+            "val": "cluster",
+            "key": "CL"
+        }, {
+            "val": "centimeter(s)",
+            "key": "cm"
+        }, {
+            "val": "continue",
+            "key": "cont"
+        }, {
+            "val": "double crochet",
+            "key": "dc"
+        }, {
+            "val": "double crochet 2 stitches together",
+            "key": "dc2tog"
+        }, {
+            "val": "decrease/decreases/decreasing",
+            "key": "dec"
+        }, {
+            "val": "double treble",
+            "key": "dtr"
+        }, {
+            "val": "front loop(s)",
+            "key": "FL"
+        }, {
+            "val": "follow/follows/following",
+            "key": "foll"
+        }, {
+            "val": "front post",
+            "key": "FP"
+        }, {
+            "val": "front post double crochet",
+            "key": "FPdc"
+        }, {
+            "val": "front post single crochet",
+            "key": "FPsc"
+        }, {
+            "val": "front post treble crochet",
+            "key": "FPtr"
+        }, {
+            "val": "gram",
+            "key": "g"
+        }, {
+            "val": "half double crochet",
+            "key": "hdc"
+        }, {
+            "val": "increase/increases/increasing",
+            "key": "inc"
+        }, {
+            "val": "loops",
+            "key": "lp(s)"
+        }, {
+            "val": "meter(s)",
+            "key": "m"
+        }, {
+            "val": "main color",
+            "key": "MC"
+        }, {
+            "val": "millimeter(s)",
+            "key": "mm"
+        }, {
+            "val": "ounce(s)",
+            "key": "oz"
+        }, {
+            "val": "picot",
+            "key": "p"
+        }], 
+        "  ": [{
+            "val": "pattern(s)",
+            "key": "pat(s)"
+        }, {
+            "val": "popcorn",
+            "key": "pc"
+        }, {
+            "val": "place marker",
+            "key": "pm"
+        }, {
+            "val": "previous",
+            "key": "prev"
+        }, {
+            "val": "remain/remaining",
+            "key": "rem"
+        }, {
+            "val": "repeat(s)",
+            "key": "rep"
+        }, {
+            "val": "round(s)",
+            "key": "rnd(s)"
+        }, {
+            "val": "right side",
+            "key": "RS"
+        }, {
+            "val": "single crochet",
+            "key": "sc"
+        }, {
+            "val": "single crochet 2 stitches together",
+            "key": "sc2tog"
+        }, {
+            "val": "skip",
+            "key": "sk"
+        }, {
+            "val": "slip stitch",
+            "key": "sL st"
+        },  {
+            "val": "space(s)",
+            "key": "sp(s)"
+        },  {
+            "val": "stitch(es)",
+            "key": "st(s)"
+        },  {
+            "val": "turning chain",
+            "key": "tch"
+        },  {
+            "val": "turning chain",
+            "key": "t-ch"
+        },  {
+            "val": "through back loop",
+            "key": "tbl"
+        },  {
+            "val": "together",
+            "key": "tog"
+        }, {
+            "val": "treble crochet",
+            "key": "tr"
+        }, {
+            "val": "triple treble crochet",
+            "key": "trtr"
+        }, {
+            "val": "wrong side",
+            "key": "WS"
+        }, {
+            "val": "yard(s)",
+            "key": "yd(s)"
+        }, {
+            "val": "yarn over",
+            "key": "yo"
+        }, {
+            "val": "yarn over hook",
+            "key": "yoh"
+        }]
+    }
+}
