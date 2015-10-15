@@ -24,11 +24,11 @@
     "Triggers": [
       {
         "key": "LeBron James news",
-        "val": "Add, \"news\" to your searches to generate instant-answer news results"
+        "val": "Add \"news\" to your searches to generate instant-answer news results"
       },
       {
         "key": "Philadelphia map",
-        "val": "Add, \"map\" to your search to generate instant-answer map results"
+        "val": "Add \"map\" to your search to generate instant-answer map results"
       }
     ],
     "Go directly to other sites": [
