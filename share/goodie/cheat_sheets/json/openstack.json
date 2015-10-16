@@ -7,6 +7,11 @@
         "sourceName": "OpenStack Docs",
         "sourceUrl": "http://docs.openstack.org/user-guide/cli_cheat_sheet.html"
     },
+    "aliases": [
+        "open stack",
+        "open stack cli",
+        "open stack commands"
+    ],
     "section_order": [
 	"Identity (keystone)",
         "Images (glance)",
@@ -45,19 +50,15 @@
                 "val": "Update image"
             },
             {
-                "key": "glance image-create --name \"cirros-threepart-kernel\" \\\\ --disk-format aki --container-format aki --is-public False \\\\  --file ~/images/cirros-0.3.1~pre4-x86_64-vmlinuz",
+                "key": "glance image-create --name \"<IMAGE-NAME>\" --disk-format <DISK-FORMAT> --container-format <CONTAINER-FORMAT> --is-public <True or False> --copy-from <URI>",
                 "val": "Upload kernel image"
             },
 	        {
-                "key": "glance image-create --name \"cirros-threepart-ramdisk\" \\\\ --disk-format ari --container-format ari --is-public False \\\\ --file ~/images/cirros-0.3.1~pre4-x86_64-initrd",
+                "key": "glance image-create --name \"<IMAGE-NAME>\" --disk-format <DISK_FORMAT> --container-format <CONTAINER-FORMAT> --is-public <True or False> --copy-from <URI>",
                 "val": "Upload RAM image"
             },
-       	    { 
-                "key": "glance image-create --name \"cirros-threepart\" --disk-format ami \\\\ --container-format ami --is-public False \\\\ --property kernel_id=$KID-property ramdisk_id=$RID \\\\ --file ~/images/cirros-0.3.1~pre4-x86_64-blank.img",
-                "val": "Upload three-part image"
-            },
 	        {
-                "key": "glance image-create --name \"cirros-qcow2\" --disk-format qcow2 \\\\ --container-format bare --is-public False \\\\ --file ~/images/cirros-0.3.1~pre4-x86_64-disk.img",
+                "key": "glance image-create --name \"<IMAGE-NAME>\" --disk-format <DISK-FORMAT> --container-format <CONTAINER-FORMAT> --is-public <True or False> --copy-from <URI>",
                 "val": "Register raw image"
             }
         ],
@@ -75,16 +76,16 @@
                 "val": "List flavors"
             },
             {
-                "key": "nova boot --image IMAGE --flavor FLAVOR INSTANCE_NAME",
-                "val": "Boot an instance using flavor (if names are unique)"
+                "key": "nova boot --image <IMAGE-NAME> --flavor FLAVOR INSTANCE-NAME",
+                "val": "Boot an instance using flavor"
             },
             {
-                "key": "nova boot --image cirros-0.3.1-x86_64-uec --flavor m1.tiny \\\\ MyFirstInstance",
-                "val": "Boot an instance using image names (if names are unique)"
+                "key": "nova boot --image <IMAGE-NAME> --flavor m1.tiny \\\\ MyFirstInstance",
+                "val": "Boot an instance using image names"
             },
             {
-                "key": "ip netns exec qdhcp-6021a3b4-8587-4f9c-8064-0103885dfba2 \\\\ ssh cirros@10.0.0.2",
-                "val": "Login to instance (ip netns exec NETNS_NAME ssh USER@SERVER)"
+                "key": "ip netns exec <IMAGE-TAG> \\\\ ssh cirros@10.0.0.2",
+                "val": "Login to instance"
             },
             {
                 "key": "nova show MyFirstInstance",
@@ -103,28 +104,12 @@
                 "val": "Create an instance snapshot"
             },
             {
-                "key": "nova pause NAME",
-                "val": "Pause"
+                "key": "nova (pause/unpause/suspend/resume) NAME",
+                "val": "Pause/Unpause/Suspend/Unsuspend"
             },
             {
-                "key": "nova unpause NAME",
-                "val": "Unpause"
-            },
-            {
-                "key": "nova suspend NAME",
-                "val": "Suspend"
-            },
-            {
-                "key": "nova resume NAME",
-                "val": "Unsuspend"
-            },
-            {
-                "key": "nova stop NAME",
-                "val": "Stop"
-            },
-            {
-                "key": "nova start NAME",
-                "val": "Start"
+                "key": "nova (start/stop/reboot) NAME",
+                "val": "Start/Stop/Reboot"
             },
             {
                 "key": "nova rescue NAME",
@@ -139,10 +124,6 @@
                 "val": "Rebuild"
             },
             {
-                "key": "nova reboot NAME",
-                "val": "Reboot"
-            },
-            {
                 "key": "nova boot --user-data FILE INSTANCE",
                 "val": "Inject user data and files into an instance"
             },
@@ -151,16 +132,16 @@
                 "val": "Create keypair"
             },
             {
-                "key": "nova boot --image cirros-0.3.0-x86_64 --flavor m1.small \\\\ --key_name test MyFirstServer",
+                "key": "nova boot --image <IMAGE-NAME> --flavor m1.small \\\\ --key_name test MyFirstServer",
                 "val": "Start an instance (boot)"
             },
             {
-                "key": "ip netns exec qdhcp-98f09f1e-64c4-4301-a897-5067ee6d544f \\\\ ssh -i test.pem cirros@10.0.0.4",
+                "key": "ip netns exec <IMAGE-TAG> \\\\ ssh -i test.pem cirros@10.0.0.4",
                 "val": "Use ssh to connect to the instance"
             },
             {
                 "key": "nova secgroup-add-group-rule default default icmp -1 -1",
-                "val": "Add rules to default security group allowing ping and SSH between instances in the default security group"
+                "val": "Add rules to default security group allowing ping and SSH b/w instances"
             }
         ],
         "Networking (neutron)": [
@@ -169,13 +150,13 @@
                 "val": "Create network"
             },
             {
-                "key": "neutron subnet-create NETWORK_NAME CIDR (neutron subnet-create my-network 10.0.0.0/29)",
+                "key": "neutron subnet-create NETWORK_NAME CIDR",
                 "val": "Create a subnet"
             }
         ],
         "Block Storage (cinder)": [
             {
-                "key": "cinder create SIZE_IN_GB --display-name NAME (cinder create 1 --display-name MyFirstVolume)",
+                "key": "cinder create SIZE_IN_GB --display-name NAME",
                 "val": "Create a new volume"
             },
             {
@@ -187,7 +168,7 @@
                 "val": "List volumes, notice status of volume"
             },
             {
-                "key": "nova volume-attach INSTANCE_ID VOLUME_ID auto (nova volume-attach MyVolumeInstance /dev/vdb auto)",
+                "key": "nova volume-attach INSTANCE_ID VOLUME_ID auto",
                 "val": "Attach volume to instance after instance is active, and volume is available"
             }
         ],
