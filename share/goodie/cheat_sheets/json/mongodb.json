@@ -1,7 +1,7 @@
 {
     "id": "mongodb_cheat_sheet",
     "name": "MongoDB",
-    "templete_type": "terminal",
+    "templete_type": "code",
     "description": "Mongo shell",
     "metadata": {
         "sourceName": "MongoDB - Cheat Sheet",
@@ -28,7 +28,7 @@
         "Basic Conceptes & Shell Commands": [
             {
                 "key": "db.ships.<command>",
-                "val": "db – implicit handle to the used database, ships – name of the used collection"
+                "val": "db – used for database, ships – used for collection"
             },
             {
                 "key": "use <database>",
