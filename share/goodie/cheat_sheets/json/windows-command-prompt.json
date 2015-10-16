@@ -14,9 +14,9 @@
     ],
     "template_type": "keyboard",
     "section_order": [
-        "Keyboard Shortcuts",
-        "Basic commands",
-        "Other commands"
+        "Keyboard Shortcuts"
+        "Basic Commands"
+        "File Management Commands"
     ],
     "sections": {
         "Keyboard Shortcuts": [
@@ -118,7 +118,7 @@
             }
 
         ],
-        "Basic commands": [
+        "Basic Commands": [
             {
                 "key": "ASSOC",
                 "val": "Change file extension associations"
@@ -184,7 +184,7 @@
                 "val": "The command to retrieve extensive information about your system"
             }
        ],
-        "File management commands": [
+        "File Management Commands": [
             {
                 "key": "MKDIR",
                 "val": "Create a new directory"

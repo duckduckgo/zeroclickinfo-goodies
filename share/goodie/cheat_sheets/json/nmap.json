@@ -10,9 +10,8 @@
     "section_order": [
         "Basic Scanning Techniques",
         "Discovery Options",
-        "Advanced Scanning Options",
+        "Advanced Scanning Functions",
         "Port Scanning Options",
-        "Version Detection",
         "Timing Options",
         "Firewall Evasion Techniques",
         "Output Options",
