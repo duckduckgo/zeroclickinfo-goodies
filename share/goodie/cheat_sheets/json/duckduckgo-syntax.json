@@ -51,7 +51,7 @@
         "val": "If you want to include one term or another, use the uppercase keyword OR in between terms. OR will only operate on adjacent words. Foo bar OR baz is equivalent to Foo ((bar)OR(baz))."
       },
       {
-        "key": "\"Eat food\" OR \"Drink water",
+        "key": "\"Eat food\" OR \"Drink water\"",
         "val": "Use double quotes to include an entire phrase inside a syntax block. \"foo bar\" OR baz is equivalent to ((foo bar)OR(baz))."
       },
       {
@@ -89,19 +89,19 @@
     ],
     "Regional search": [
       {
-        "key": "",
+        "key": "apple de",
         "val": "Add region:cc (e.g. de) to boost a region."
       },
       {
-        "key": "",
+        "key": "mango region:none",
         "val": "Similarly you can do region:none to turn off a region if you have one set by default."
       },
       {
-        "key": "",
+        "key": "streets r:de",
         "val": "Use r: as a shorter abbreviation for region."
       },
       {
-        "key": "",
+        "key": "website site:.cc",
         "val": "Use site:.cc to restrict to a country level domain, e.g. site:.uk would only show results from domains ending in .uk."
       }
     ],
@@ -115,21 +115,21 @@
         "val": "To use site-search for multiple domains, just separate them with commas."
       },
       {
-        "key": "",
+        "key": "Other tricks",
         "val": "Click on the site icon at the bottom left of a result to do a site search for the domain related to that result. You can also do the same by clicking the More results link to the right of the URL line for a given result."
       }
     ],
     "Result filters": [
       {
-        "key": "",
+        "key": "google.com inbody:about",
         "val": "Use inbody: (b: for short) to make sure something appears in the body of the page."
       },
       {
-        "key": "",
+        "key": "google.com intitle:about",
         "val": "Use intitle: (t: for short) to make sure something appears in the title of the page."
       },
       {
-        "key": "",
+        "key": "foo bar filetype:pdf",
         "val": "Use filetype: (f: for short) to make sure the results are mostly files of that type, e.g. f:pdf."
       }
     ]
