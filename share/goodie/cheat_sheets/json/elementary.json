@@ -26,15 +26,15 @@
             },
             {
                 "val": "Move Window with Workspace",
-                "key": "[Shift] [⌘] ([Left]/[Right])"
+                "key": "[Shift] [⌘] ( [Left] / [Right] )"
             },
             {
                 "val": "Snap Window to Half of Workspace",
-                "key": "[Ctrl] [⌘] ([Left]/[Right])"
+                "key": "[Ctrl] [⌘] ( [Left] / [Right] )"
             },
             {
                 "val": "Maximize/Unmaximize Window",
-                "key": "[ctrl] [⌘] ([Left]/[Right])"
+                "key": "[ctrl] [⌘] ( [Left] / [Right] )"
             }
         ],
         "Switching": [
@@ -44,7 +44,7 @@
             },
             {
                 "val": "Switch Workspace",
-                "key": "[⌘] ([Left]/[Right])"
+                "key": "[⌘] ( [Left] / [Right] )"
             },
             {
                 "val": "Will switch to a specific workspace (If it currently exists)",
