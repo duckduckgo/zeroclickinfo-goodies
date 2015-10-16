@@ -14,8 +14,8 @@
     ],
     "template_type": "keyboard",
     "section_order": [
-        "Keyboard Shortcuts"
-        "Basic Commands"
+        "Keyboard Shortcuts",
+        "Basic Commands",
         "File Management Commands"
     ],
     "sections": {
