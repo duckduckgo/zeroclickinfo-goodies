@@ -5,7 +5,7 @@ use DDG::Goodie;
 use strict;
 
 zci answer_type => "prime";
-zci is_cached   => 0;
+zci is_cached   => 1;
 
 name "PrimeNumber";
 description "Generates prime numbers";
@@ -19,17 +19,6 @@ attribution github => ["shjnyr", "Haojun Sui"],
 
 # Triggers
 triggers start => "prime", "prime numbers";
-
-# Handle statement
-handle remainder => sub {
-
-    # optional - regex guard
-    # return unless qr/^\w+/;
-
-    return unless $_; # Guard against "no answer"
-
-    return $_;
-};
 
 handle query_lc => sub {
     # q_check (as opposed to q_internal) Allows for decimals.

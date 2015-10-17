@@ -5,18 +5,18 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => "prime_number";
+zci answer_type => "prime";
 zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::PrimeNumber )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => test_zci('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    'prime numbers between 4 and 100' => test_zci(qr/(\d{1,3}\,\s\s)+\d{1,3} \(prime numbers\)/,
+        structured_answer => {
+            input     => [4, 100],
+            operation => 'Prime numbers between',
+            result    => qr/(\d{1,3}\,\s\s)+\d{1,3}/,
+        }
+    ),
 );
 
 done_testing;
