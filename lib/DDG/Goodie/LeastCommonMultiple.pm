@@ -29,14 +29,10 @@ handle remainder => sub {
 
     my $formatted_numbers = join(', ', @numbers);
     $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
-
-    my $gcd = $numbers[0];
+    
+    my $lcm = 1;
     foreach (@numbers) {
-        $gcd = gcf($gcd, $_);
-    }
-    my $lcm = shift @numbers;
-    foreach (@numbers) {
-        $lcm *= $_ / $gcd;
+        $lcm = $lcm * $_ / gcf($lcm, $_);
     }
 
     return "Least common multiple of $formatted_numbers is $lcm.",

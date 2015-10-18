@@ -63,7 +63,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['12, 18 and 24'],
             operation => 'Least common multiple',
-            result    => 144
+            result    => 72
         }
     ),
     'lcm 6, 9, ,,,,     12       15' => test_zci(
@@ -71,7 +71,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['6, 9, 12 and 15'],
             operation => 'Least common multiple',
-            result    => 360
+            result    => 180
         }
     ),
 );
