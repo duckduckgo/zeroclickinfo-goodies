@@ -59,7 +59,7 @@ ddg_goodie_test(
         }
     ),
     'lcm 12 18 24' => test_zci(
-        'Least common multiple of 12, 18 and 24 is 144.',
+        'Least common multiple of 12, 18 and 24 is 72.',
         structured_answer => {
             input     => ['12, 18 and 24'],
             operation => 'Least common multiple',
@@ -67,7 +67,7 @@ ddg_goodie_test(
         }
     ),
     'lcm 6, 9, ,,,,     12       15' => test_zci(
-        'Least common multiple of 6, 9, 12 and 15 is 360.',
+        'Least common multiple of 6, 9, 12 and 15 is 180.',
         structured_answer => {
             input     => ['6, 9, 12 and 15'],
             operation => 'Least common multiple',
