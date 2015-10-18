@@ -10,6 +10,7 @@
    "section_order":[  
       "Data Definition Language (DDL) Commands",
       "Data Manipulation Language (DML)Commands",
+      "SQL Functions",
       "Arguments Used with Commands"
    ],
    "aliases":[  
@@ -21,44 +22,45 @@
       "Data Definition Language (DDL) Commands":[  
          {  
             "key":"CREATE TABLE",
-            "val":"CREATE TABLE table_name ( column_name1 data_type,column_name2 data_type,...)"
+            "val":"define a new table"
          },
-        
-         
          {  
             "key":"ALTER TABLE",
-            "val":"ALTER TABLE table_name ADD column_name datatype , ALTER TABLE table_name DROP COLUMN column_name"
+            "val":"change a database"
          },
-        
          {  
             "key":"CREATE VIEW",
-            "val":"CREATE VIEW view_name AS SELECT column_name(s) FROM table_name WHERE condition"
+            "val":"define a new view"
          },
          {  
             "key":"DROP TABLE",
-            "val":"DROP TABLE table_name"
+            "val":"remove a table"
          },
          
          {  
             "key":"CREATE DATABASE",
-            "val":"CREATE DATABASE database_name"
+            "val":"create a new database"
          },
          {  
             "key":"CREATE INDEX",
-            "val":"CREATE INDEX index_name ON table_name (column_name), CREATE UNIQUE INDEX index_name ON table_name (column_name)"
+            "val":"define a new index"
          },
          {  
             "key":"DROP DATABASE",
-            "val":"DROP DATABASE database_name"
+            "val":"remove a database"
          },
          {  
             "key":"DROP INDEX",
-            "val":"DROP INDEX table_name.index_name (SQL Server),DROP INDEX index_name ON table_name (MS Access),DROP INDEX index_name (DB2/Oracle),ALTER TABLE table_name DROP INDEX index_name (MySQL)"
+            "val":"remove an index"
+         },
+         {  
+            "key":"DROP VIEW",
+            "val":"remove a view"
          },
          
          {  
             "key":"TRUNCATE TABLE",
-            "val":"TRUNCATE TABLE table_name"
+            "val":"empty a table"
          }
         
       ],
@@ -66,103 +68,122 @@
            
            {  
             "key":"SELECT",
-            "val":"SELECT column_name(s) FROM table_name"
+            "val":"retrieve rows from a table or view"
          },
-         {  
-            "key":"SELECT *",
-            "val":"SELECT * FROM table_name"
-         },
-         {  
-            "key":"SELECT DISTINCT",
-            "val":"SELECT DISTINCT column_name(s) FROM table_name"
-         },
+         
          {  
             "key":"INSERT INTO",
-            "val":" INSERT INTO table_name VALUES (value1, value2, value3,....), INSERT INTO table_name (column1, column2, column3,...) VALUES (value1, value2, value3,....)"
+            "val":"create new rows in a table"
          },
            {  
             "key":"UPDATE",
-            "val":"UPDATE table_name SET column1=value, column2=value,... WHERE some_column=some_value"
+            "val":"update rows of a table"
          },
            {  
             "key":"DELETE",
-            "val":"DELETE FROM table_name WHERE some_column=some_value, DELETE FROM table_name (Note: Deletes the entire table!!) DELETE * FROM table_name (Note: Deletes the entire table!!) "
+            "val":"delete rows of a table"
          },
-           {  
+          {  
             "key":"SELECT INTO",
-            "val":"SELECT * INTO new_table_name [IN externaldatabase] FROM old_table_name, SELECT column_name(s) INTO new_table_name [IN externaldatabase] FROM old_table_name"
+            "val":"create a new table from the results of a query"
+         }
+         
+      ],
+      "SQL Functions":[
+         {
+            "key":"AVG()",
+            "val":"returns the average value of a numeric column"
+         },  
+         {
+            "key":"COUNT()",
+            "val":"returns the number of rows that matches a specified criteria"
          },
-         {  
-            "key":"SELECT TOP",
-            "val":"SELECT TOP number|percent column_name(s) FROM table_name"
+         {
+            "key":"MAX()",
+            "val":"returns the largest value of the selected column"
+         },
+         {
+            "key":"MIN()",
+            "val":"returns the smallest value of the selected column"
+         },
+         {
+            "key":"SUM()",
+            "val":"returns the total sum of a numeric column"
          }
       ],
      "Arguments Used with Commands":[
          {  
             "key":"WHERE",
-            "val":"SELECT column_name(s) FROM table_name WHERE column_name operator value"
+            "val":"to retrieve specific information from a table excluding other irrelevant data"
          },
-         
-         
          {  
-            "key":"AND / OR",
-            "val":"SELECT column_name(s) FROM table_name WHERE condition AND|OR condition "
+            "key":"AND",
+            "val":"select rows that must satisfy all the given conditions"
+         },
+         {  
+            "key":"OR",
+            "val":"select rows that satisfy atleast one of the given conditions"
+         },
+         {  
+            "key":"NOT",
+            "val":"select rows that do not satisfy the given condition"
          },
           {  
             "key":"AS (alias)",
-            "val":"SELECT column_name AS column_alias FROM table_name, SELECT column_name FROM table_name  AS table_alias"
+            "val":"used to temporarily rename a table or a column heading"
          },
          {  
-            "key":"BETWEEN",
-            "val":"SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2"
+            "key":"BETWEEN..AND..",
+            "val":"used to select values within a range"
          },
          {  
             "key":"EXISTS",
-            "val":"IF EXISTS (SELECT * FROM table_name WHERE id = ?) BEGIN --do what needs to be done if exists END ELSE BEGIN --do what needs to be done if not END"
+            "val":"used in combination with a subquery and is considered to be met if the subquery returns at least one row"
          },
          {  
             "key":"GROUP BY",
-            "val":"SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name"
+            "val":"to collect data across multiple records and group the results by a column"
          },
          {  
             "key":"HAVING",
-            "val":"SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name HAVING aggregate_function(column_name) operator value"
+            "val":"used to filter data based on the group functions"
          },
          {  
             "key":"IN",
-            "val":"SELECT column_name(s) FROM table_name WHERE column_name IN (value1,value2,..)"
+            "val":"used to reduce the need for multiple OR conditions"
          },
          {  
             "key":"LIKE",
-            "val":"SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern"
+            "val":"used to list all rows in a table whose column values match a specified pattern"
          },
+         
          {  
             "key":"ORDER BY",
-            "val":"SELECT column_name(s) FROM table_name ORDER BY column_name [ASC|DESC]"
+            "val":"used to sort the records in the result based on a column"
          },
          {  
             "key":"INNER JOIN",
-            "val":"SELECT column_name(s) FROM table_name1 INNER JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+            "val":"returns all rows from both tables where there is a match"
          },
          {  
             "key":"LEFT JOIN",
-            "val":"SELECT column_name(s) FROM table_name1 LEFT JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+            "val":"returns all the rows from the first table even if there are no matches in the second table"
          },
          {  
             "key":"RIGHT JOIN",
-            "val":"SELECT column_name(s) FROM table_name1 RIGHT JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+            "val":"returns all the rows from the second table, even if there are no matches in the first table"
          },
          {  
             "key":"FULL JOIN",
-            "val":"SELECT column_name(s) FROM table_name1 FULL JOIN table_name2 ON table_name1.column_name=table_name2.column_name"
+            "val":"returns all rows from both tables with nulls in place where the join condition is not met"
          },
           {  
             "key":"UNION",
-            "val":"SELECT column_name(s) FROM table_name1 UNION SELECT column_name(s) FROM table_name2"
+            "val":"combines the result of two or more SELECT statements and selects only distinct values"
          },
          {  
             "key":"UNION ALL",
-            "val":"SELECT column_name(s) FROM table_name1 UNION ALL SELECT column_name(s) FROM table_name2"
+            "val":"combines the result of two or more SELECT statements and also select duplicate values"
          }
      ]  
    }
