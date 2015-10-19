@@ -77,11 +77,11 @@ foreach my $path (glob("$json_dir/*.json")){
     } keys $sections;
   
     for my $section_name (@$order) {
-        push(@tests, {msg => "Missing section $section_name from $name", critical => 0, pass => 0})  unless $sections->{$section_name};
+        push(@tests, {msg => 'Expected "$section_name" but not found', critical => 0, pass => 0})  unless $sections->{$section_name};
     }
 
     for my $section_name (keys %$sections) {
-        push(@tests, {msg => "Missing $section_name in section order for $name", critical => 0, pass => 0}) unless grep(/\Q$section_name\E/, @$order);
+        push(@tests, {msg => 'Section "$section_name" defined, but not listed in section_order', critical => 0, pass => 0}) unless grep(/\Q$section_name\E/, @$order);
      
         $temp_pass = (ref $sections->{$section_name} eq 'ARRAY')? 1 : 0;
         push(@tests, {msg => "'$section_name' is an array from $name",  critical => 1, pass => $temp_pass});
