@@ -126,8 +126,6 @@ foreach my $path (glob("$json_dir/*.json")){
 
 sub print_results {
     my ($name, $tests) = @_;
-    
-    diag("########## NOW TESTING " . uc $name . " ##########\n");
 
     my $tot_pass = 0;
     my $tot_done = 0;
@@ -151,12 +149,13 @@ sub print_results {
                     $temp_msg = "WARN: " . $temp_msg;
                     diag colored([$temp_color], "\t" . $temp_msg);
                 }
+            } else {
+                $tot_pass++;
             }
         }
     }
 
-    diag colored(["green"], "Total tests passing for " . $name . ": " . $tot_pass . "/" . $tot_done);
-    diag("########## END OF TESTS FOR " . uc $name . " ##########\n\n");
+    diag colored(["green"], "All tests pass for " . $name . ": " . $tot_pass . "/" . $tot_done . "\n");
     return \%result;
 }
 done_testing;
