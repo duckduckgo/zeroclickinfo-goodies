@@ -129,6 +129,7 @@ sub print_results {
 
     my $tot_pass = 0;
     my $tot_done = 0;
+    my $ok = 1;
     my %result = (pass => 1, msg => $name . ' is build safe');
     for my $test (@{$tests}) {
         my $temp_msg = $test->{msg};
@@ -138,16 +139,21 @@ sub print_results {
             $tot_done++;
 
             if (!$test->{pass}) {
+                if ($ok) {
+                    $ok = 0;
+                    diag colored(["reset"], "Testing " . $name . "...........NOT OK");
+                }
+
                 if ($test->{critical}) {
                     $temp_color = "red";
                     $temp_msg = "FAIL: " . $temp_msg;
                     %result = (pass => 0, msg => $temp_msg);
-                    diag colored([$temp_color], "\t" . $temp_msg);
+                    diag colored([$temp_color], "\t -> " . $temp_msg);
                     return \%result;
                 } else {
                     $temp_color = "yellow";
                     $temp_msg = "WARN: " . $temp_msg;
-                    diag colored([$temp_color], "\t" . $temp_msg);
+                    diag colored([$temp_color], "\t -> " . $temp_msg);
                 }
             } else {
                 $tot_pass++;
@@ -155,7 +161,11 @@ sub print_results {
         }
     }
 
-    diag colored(["green"], "All tests pass for " . $name . ": " . $tot_pass . "/" . $tot_done . "\n");
+    if ($ok) {
+        diag colored(["green"], "Testing " . $name . "..........OK");
+    }
+    
+    diag colored(["reset"], "\n");
     return \%result;
 }
 done_testing;
