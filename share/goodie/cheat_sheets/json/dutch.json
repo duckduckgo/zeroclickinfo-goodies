@@ -62,7 +62,7 @@
          },
          {
             "val" : "Politie (po-lee-tsee)",
-            "key" : "Repeat, please."
+            "key" : "Police"
          },
          {
             "val" : "Brandweer (brant-wayr)",
@@ -95,7 +95,7 @@
             "key" : "I'm fine thanks!"
          },
          {
-            "val" : "Hoe gaat het met jouw?",
+            "val" : "Hoe gaat het met jou?",
             "key" : "How are you?"
          },
          {

@@ -22,119 +22,119 @@
     "sections": {
         "Configure Tooling": [{
             "val": "Sets the name you want attached to your commit transactions",
-            "key": "$ git config --global user.name \"\\[name\\]\""
+            "key": "git config --global user.name \"\\[name\\]\""
         }, {
             "val": "Sets the email you want attached to your commit transactions",
-            "key": "$ git config --global user.email \"\\[email address\\]\""
+            "key": "git config --global user.email \"\\[email address\\]\""
         }, {
             "val": "Enables helpful colorizations of command line input",
-            "key": "$ git config --global color.ui auto"
+            "key": "git config --global color.ui auto"
         }],
         "Create Repositories": [{
             "val": "Creates a new local repository with the specified name",
-            "key": "$ git init \\[project-name\\]"
+            "key": "git init \\[project-name\\]"
         }, {
             "val": "Downloads a project and its entire version history",
-            "key": "$ git clone \\[url\\]"
+            "key": "git clone \\[url\\]"
         }],
         "Make Changes": [{
             "val": "Lists all new or modified files to be committed",
-            "key": "$ git status"
+            "key": "git status"
         }, {
             "val": "Shows file differences not yet staged",
-            "key": "$ git diff"
+            "key": "git diff"
         }, {
             "val": "Snapshots the file in preparation for versioning",
-            "key": "$ git add \\[file\\]"
+            "key": "git add \\[file\\]"
         }, {
             "val": "Shows file differences between staging and the last file version",
-            "key": "$ git diff --staged"
+            "key": "git diff --staged"
         }, {
             "val": "Unstages the file, but preserves its contents",
-            "key": "$ git reset \\[file\\]"
+            "key": "git reset \\[file\\]"
         }, {
             "val": "Records the file snapshots permanently in version history",
-            "key": "$ git commit -m \"\\[descriptive message\\]\""
+            "key": "git commit -m \"\\[descriptive message\\]\""
         }],
         "Group Changes": [{
             "val": "Lists all local branches in the current repository",
-            "key": "$ git branch"
+            "key": "git branch"
         }, {
             "val": "Creates a new branch",
-            "key": "$ git branch \\[branch-name\\]"
+            "key": "git branch \\[branch-name\\]"
         }, {
             "val": "Switches to the specified branch and updates the working directory",
-            "key": "$ git checkout \\[branch-name\\]"
+            "key": "git checkout \\[branch-name\\]"
         }, {
             "val": "Combines the specified branch's history into the current branch",
-            "key": "$ git merge \\[branch\\]"
+            "key": "git merge \\[branch\\]"
         }, {
             "val": "Deletes the specified branch",
-            "key": "$ git branch -d \\[branch-name\\]"
+            "key": "git branch -d \\[branch-name\\]"
         }],
         "Refactor Filenames": [{
             "val": "Deletes the file from the working directory and stages the deletion",
-            "key": "$ git rm \\[file\\]"
+            "key": "git rm \\[file\\]"
         }, {
             "val": "Removes the file from version control but preserves the file locally",
-            "key": "$ git rm --cached \\[file\\]"
+            "key": "git rm --cached \\[file\\]"
         }, {
             "val": "Changes the file name and prepares it for commit",
-            "key": "$ git mv \\[file-original\\] \\[file-renamed\\]"
+            "key": "git mv \\[file-original\\] \\[file-renamed\\]"
         }],
         "Suppress Tracking": [{
             "val": "A text file named .gitignore suppresses accidental versioning of files and paths matching the specified patterns",
             "key": "[*.log] [build/] [temp-*]"
         }, {
             "val": "Lists all ignored files in this project",
-            "key": "$ git ls-files --other --ignored --exclude-standard"
+            "key": "git ls-files --other --ignored --exclude-standard"
         }],
         "Save Fragments": [{
             "val": "Temporarily stores all modified tracking files",
-            "key": "$ git stash"
+            "key": "git stash"
         }, {
             "val": "Restores the most recently stashed files",
-            "key": "$ git stash pop"
+            "key": "git stash pop"
         }, {
             "val": "Lists all stashed changesets",
-            "key": "$ git stash list"
+            "key": "git stash list"
         }, {
             "val": "Discards the most recently stashed changeset",
-            "key": "$ git stash drop"
+            "key": "git stash drop"
         }],
         "Review History": [{
             "val": "Lists version history for the current branch",
-            "key": "$ git log"
+            "key": "git log"
         }, {
             "val": "Lists version history for a file, including renames",
-            "key": "$ git log --follow \\[file\\]"
+            "key": "git log --follow \\[file\\]"
         }, {
             "val": "Shows content differences between two branches",
-            "key": "$ git diff \\[first-branch\\]...\\[second-branch\\]"
+            "key": "git diff \\[first-branch\\]...\\[second-branch\\]"
         }, {
             "val": "Outputs metadata and content changes of the specified commit",
-            "key": "$ git show \\[commit\\]"
+            "key": "git show \\[commit\\]"
         }],
         "Redo Commits": [{
             "val": "Undoes all commits after \\[commit\\], preserving changes locally",
-            "key": "$ git reset \\[commit\\]"
+            "key": "git reset \\[commit\\]"
         }, {
             "val": "Discards all history and changes back to the specified commit",
-            "key": "$ git reset --hard \\[commit\\]"
+            "key": "git reset --hard \\[commit\\]"
         }],
         "Synchronize Changes": [{
             "val": "Downloads all history from the repository bookmark",
-            "key": "$ git fetch \\[bookmark\\]"
+            "key": "git fetch \\[bookmark\\]"
 
         }, {
             "val": "Combines bookmark's branch into current local branches",
-            "key": "$ git merge \\[bookmark\\]/\\[branch\\]"
+            "key": "git merge \\[bookmark\\]/\\[branch\\]"
         }, {
             "val": "Uploads all local branch commits to GitHub",
-            "key": "$ git push \\[alias\\] \\[branch\\]"
+            "key": "git push \\[alias\\] \\[branch\\]"
         }, {
             "val": "Downloads bookmark history and incorporates changes",
-            "key": "$ git pull"
+            "key": "git pull"
         }]
     }
 }
