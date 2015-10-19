@@ -3,6 +3,7 @@ package DDG::Goodie::LeastCommonMultiple;
 
 use DDG::Goodie;
 use strict;
+use Math::Prime::Util 'lcm';
 
 zci answer_type => "least_common_multiple";
 zci is_cached   => 1;
@@ -32,7 +33,7 @@ handle remainder => sub {
     
     my $lcm = 1;
     foreach my $num (@numbers) {
-        $lcm = $lcm * $num / greatest_common_factor($lcm, $num);
+        $lcm = lcm($lcm, $num);
     }
 
     return "Least common multiple of $formatted_numbers is $lcm.",
@@ -42,11 +43,5 @@ handle remainder => sub {
         result    => $lcm,
       };
 };
-
-sub greatest_common_factor {
-    my ($x, $y) = @_;
-    ($x, $y) = ($y, $x % $y) while $y;
-    return $x;
-}
 
 1;
