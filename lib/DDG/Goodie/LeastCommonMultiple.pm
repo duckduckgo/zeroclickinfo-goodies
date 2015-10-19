@@ -7,10 +7,10 @@ use strict;
 zci answer_type => "least_common_multiple";
 zci is_cached   => 1;
 
-triggers startend => 'least common multiple', 'lcm';
+triggers startend => 'least common multiple', 'lcm', 'lowest common multiple', 'smallest common multiple';
 
-primary_example_queries 'LCM 121 11';
-secondary_example_queries '99 9 least common multiple';
+primary_example_queries 'LCM 121 11 143';
+secondary_example_queries '99 9 45 least common multiple';
 description 'returns the least common multiple of the two entered numbers';
 name 'LeastCommonMultiple';
 topics 'math';
@@ -31,8 +31,8 @@ handle remainder => sub {
     $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
     
     my $lcm = 1;
-    foreach (@numbers) {
-        $lcm = $lcm * $_ / gcf($lcm, $_);
+    foreach my $num (@numbers) {
+        $lcm = $lcm * $num / greatest_common_factor($lcm, $num);
     }
 
     return "Least common multiple of $formatted_numbers is $lcm.",
@@ -43,7 +43,7 @@ handle remainder => sub {
       };
 };
 
-sub gcf {
+sub greatest_common_factor {
     my ($x, $y) = @_;
     ($x, $y) = ($y, $x % $y) while $y;
     return $x;

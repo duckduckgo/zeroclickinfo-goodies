@@ -18,7 +18,7 @@ ddg_goodie_test(
             result    => 81
         }
     ),
-    'lcm 15 25' => test_zci(
+    'lowest common multiple 15 25' => test_zci(
         'Least common multiple of 15 and 25 is 75.',
         structured_answer => {
             input     => ['15 and 25'],
@@ -42,7 +42,7 @@ ddg_goodie_test(
             result    => 72
         }
     ),
-    'least common multiple 16 24' => test_zci(
+    'smallest common multiple 16 24' => test_zci(
         'Least common multiple of 16 and 24 is 48.',
         structured_answer => {
             input     => ['16 and 24'],
@@ -77,4 +77,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-
