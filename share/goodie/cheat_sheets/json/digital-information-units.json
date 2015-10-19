@@ -1,0 +1,67 @@
+{
+    "id":"digital_information_units_cheat_sheet",
+    "name":"Units of Digital Information",
+    "description":"Unit of information is the capacity of some standard data storage system or communication channel, used to measure the capacities of other systems and channels.",
+    "metadata":{
+        "sourceName":"Wikipedia",
+        "sourceUrl":"https://en.wikipedia.org/wiki/Units_of_information"
+    },
+    "aliases":["units of information", "unit of data", "units of data", "data sizes", "data unit", "data units"],
+    "template_type": "reference",
+    "section_order": ["Decimal", "Binary"],
+    "sections": {
+        "Decimal": [
+        {
+            "val": "10^3 bytes = 1000 bytes",
+            "key": "Kilobyte (kB)"
+        }, {
+            "val": "10^6 bytes = 1000^2 bytes = 1000 kB",
+            "key": "Megabyte (MB)"
+        }, {
+            "val": "10^9 bytes = 1000^3 bytes = 1000 MB",
+            "key": "Gigabyte (GB)"
+        }, {
+            "val": "10^12 bytes = 1000^4 bytes = 1000 GB",
+            "key": "Terabyte (TB)"
+        }, {
+            "val": "10^15 bytes = 1000^5 bytes = 1000 TB",
+            "key": "Petabyte (PB)"
+        }, {
+            "val": "10^18 bytes = 1000^6 bytes = 1000 PB",
+            "key": "Exabyte (EB)"
+        }, {
+            "val": "10^21 bytes = 1000^7 bytes = 1000 EB",
+            "key": "Zettabyte (ZB)"
+        }, {
+            "val": "10^24 bytes = 1000^8 bytes = 1000 ZB",
+            "key": "Yottabyte (YB)"
+        }
+        ],
+        "Binary": [
+        {
+            "val": "2^10 bytes = 1024 bytes",
+            "key": "Kibibyte (KiB)"
+        }, {
+            "val": "2^20 bytes = 1024^2 byte = 1,048,576 bytes = 1024 KiB",
+            "key": "Mebibyte (MiB)"
+        }, {
+            "val": "2^30 bytes = 1024^3 bytes = 1,073,741,824 bytes = 1024 MiB",
+            "key": "Gibibyte (GiB)"
+        }, {
+            "val": "2^40 bytes = 1024^4 bytes = 1,099,511,627,776 bytes = 1024 GiB",
+            "key": "Tebibyte (TiB)"
+        }, {
+            "val": "2^50 bytes = 1024^5 bytes = 1,125,899,906,842,624 bytes = 1024 TiB",
+            "key": "Pebibyte (PiB)"
+        }, {
+            "val": "2^60 bytes = 1024^6 bytes = 1,152,921,504,606,846,976 bytes = 1024 PiB",
+            "key": "Exbiyte (EiB)"
+        }, {
+            "val": "2^70 bytes = 1024^7 bytes = 1,180,591,620,717,411,303,424 bytes = 1024 EiB",
+            "key": "Zebibyte (ZiB)"
+        }, {
+            "val": "2^80 bytes = 1024^8 bytes = 1,208,925,819,614,629,174,706,176 bytes = 1024 ZiB",
+            "key": "Yobibyte (YiB)"
+        }]
+    }
+}

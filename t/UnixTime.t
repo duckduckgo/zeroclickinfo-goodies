@@ -30,6 +30,7 @@ ddg_goodie_test([qw(
     'utc time'                => test_zci(@now),
     'utc now'                 => test_zci(@now),
     'current utc'             => test_zci(@now),
+    'time since epoch'        => test_zci(@now),
     'epoch -1234567890'       => test_zci(@then),
     '-1234567890 epoch'       => test_zci(@then),
     'timestamp -1234567890'   => test_zci(@then),

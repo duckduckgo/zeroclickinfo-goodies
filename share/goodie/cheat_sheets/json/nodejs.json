@@ -10,7 +10,7 @@
     "section_order": [
         "Getting Started",
         "Globals",
-        "stdio",
+        "Stdio",
         "Process",
         "Util",
         "Event Emitter",
@@ -50,7 +50,7 @@
                 "key": "_filename",
                 "val": "Filename of script being executed"
         }],
-        "stdio": [{
+        "Stdio": [{
                 "key": "stdio",
                 "val": "Object for printing out to stdout and stderr"
             },{

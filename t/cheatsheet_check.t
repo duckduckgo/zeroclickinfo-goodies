@@ -7,6 +7,7 @@ use strict;
 use warnings;
 use open ':std', ':encoding(utf8)';
 use Test::More;
+use Term::ANSIColor;
 use JSON;
 use IO::All;
 
@@ -17,88 +18,154 @@ foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
 
     my ($name) = $path =~ /.+\/(.+).json$/;
+    my @tests;
 
-    subtest 'file' => sub {
-      ok my $content < io($path), 'file content can be read';
-      ok $json = decode_json($content), 'content is valid JSON';
-    };
-    
-    subtest 'headers' => sub {
-      ok exists $json->{id} && $json->{id}, 'has id';
-      ok exists $json->{name} && $json->{name}, 'has name';
-      diag( "description is optional but suggested from $name" ) if !exists $json->{description} && !$json->{description}
-    };
-    
-    subtest 'metadata' => sub {
-      my $has_meta = exists $json->{metadata};
-      SKIP: {
-        skip 'metadata is missing, this is optional but suggested to have', 1 unless $has_meta;
+    ### File tests ###
+    my $temp_pass = (my $content < io($path))? 1 : 0;
+    push(@tests, {msg => 'file content can be read', critical => 1, pass => $temp_pass});
+ 
+    $temp_pass = ($json = decode_json($content))? 1 : 0;
+    push(@tests, {msg => 'content is valid JSON', critical => 1, pass => $temp_pass});
 
-        ok exists $json->{metadata}{sourceName}, "has metadata sourceName $name";
 
-        SKIP: {
-            skip "sourceUrl is missing from $name", 1 unless exists $json->{metadata}{sourceUrl};
-            ok my $url = $json->{metadata}{sourceUrl}, "sourceUrl is not undef $name";
-        };
-      };
-    };
+    ### Headers tests ###
+    $temp_pass = (exists $json->{id} && $json->{id})? 1 : 0;
+    push(@tests, {msg => 'has id', critical => 1, pass => $temp_pass});;
     
-    subtest 'sections' => sub {
-      ok my $order = $json->{section_order}, 'has section_order';
-      is ref $order, 'ARRAY', 'section_order is an array of section names';
+    $temp_pass = (exists $json->{name} && $json->{name})? 1 : 0;
+    push(@tests, {msg => 'has name', critical => 1, pass => $temp_pass});
     
-      # we're going to handle section case mismatches on frontend
-      $_ = lc for @$order;
+    $temp_pass = (!exists $json->{description} && !$json->{description})? 0 : 1;
+    push(@tests, {msg => "has description (optional but suggested)", critical => 0, pass => $temp_pass});
+
+
+    ### Metadata tests ###
+    my $has_meta = exists $json->{metadata};
     
-      ok my $sections = $json->{sections}, 'has sections';
-      is ref $sections, 'HASH', 'sections is a hash of section key/pairs';
+    $temp_pass = $has_meta? 1 : 0;
+    push(@tests, {msg => 'has metadata (optional but suggested)', critical => 0, pass => $temp_pass, skip => 1});
+
+    $temp_pass = exists $json->{metadata}{sourceName}? 1 : 0;
+    push(@tests, {msg => "has metadata sourceName $name", critical => 1, pass => $temp_pass, skip => 1});
+
+    $temp_pass = exists $json->{metadata}{sourceUrl}? 1 : 0;
+    push(@tests, {msg => "has metadata sourceUrl $name", critical => 0, pass => $temp_pass, skip => 1});
     
-       map{ 
-         $sections->{lc$_} = $sections->{$_}; 
-         delete $sections->{$_};
-       } keys $sections;
+    $temp_pass = (my $url = $json->{metadata}{sourceUrl})? 1 : 0;
+    push(@tests, {msg => "sourceUrl is not undef $name", critical => 1, pass => $temp_pass, skip => 1});;
+
+
+    ### Sections tests ###
+    $temp_pass = (my $order = $json->{section_order})? 1 : 0;
+    push(@tests, {msg => 'has section_order', critical => 1, pass => $temp_pass});
       
-      for my $section_name (@$order)
-      {
-        diag( "Missing section $section_name from $name") unless $sections->{$section_name};
-      }
-    
-      for my $section_name (keys %$sections)
-      {
-        diag( "Missing $section_name in section order for $name") unless grep(/\Q$section_name\E/, @$order);
-        is ref $sections->{$section_name}, 'ARRAY', "'$section_name' is an array from $name";
-    
+    $temp_pass = (ref $order eq 'ARRAY')? 1 : 0;
+    push(@tests, {msg => 'section_order is an array of section names', critical => 1, pass => $temp_pass});
+
+    # we're going to handle section case mismatches on frontend
+    $_ = lc for @$order;
+
+    $temp_pass = (my $sections = $json->{sections})? 1 : 0;
+    push(@tests, {msg => 'has sections', critical => 1, pass => $temp_pass});
+
+    $temp_pass = (ref $sections eq 'HASH')? 1 : 0;
+    push(@tests, {msg => 'sections is a hash of section key/pairs', critical => 1, pass => $temp_pass});
+
+    map{ 
+        $sections->{lc$_} = $sections->{$_}; 
+        delete $sections->{$_};
+    } keys $sections;
+  
+    for my $section_name (@$order) {
+        push(@tests, {msg => 'Expected "$section_name" but not found', critical => 0, pass => 0})  unless $sections->{$section_name};
+    }
+
+    for my $section_name (keys %$sections) {
+        push(@tests, {msg => 'Section "$section_name" defined, but not listed in section_order', critical => 0, pass => 0}) unless grep(/\Q$section_name\E/, @$order);
+     
+        $temp_pass = (ref $sections->{$section_name} eq 'ARRAY')? 1 : 0;
+        push(@tests, {msg => "'$section_name' is an array from $name",  critical => 1, pass => $temp_pass});
+
         my $entry_count = 0;
-        for my $entry (@{$sections->{$section_name}})
-        {
-          ok exists $entry->{key}, "'$section_name' entry: $entry_count has a key from $name";
-          #ok exists $entry->{val}, "'$section_name' entry: $entry_count has a val from $name";
-          $entry_count++;
+        for my $entry (@{$sections->{$section_name}}) {
+            # Only show it when it fails, otherwise it clutters the output
+            push(@tests, {msg => "'$section_name' entry: $entry_count has a key from $name", critical => 1, pass => 0}) unless exists $entry->{key};
+            
+            #push(@tests, {msg => "'$section_name' entry: $entry_count has a val from $name", critical => 1, pass => 0}) unless exists $entry->{val};
+            $entry_count++;
         }
-      }
-    }; 
+    }
 
-    my $sections = $json->{sections};
+
+    $sections = $json->{sections};
     
-      for my $section_name (keys %$sections)
-      {
-        for my $entry (@{$sections->{$section_name}})
-        {
+    for my $section_name (keys %{$sections}) {
+        for my $entry (@{$sections->{$section_name}}){
+            # spacing in keys ([a]/[b])'
+            if ($entry->{val}) {
+                if (($entry->{val} =~ /\(\[.*\]\/\[.+\]\)/g)) {
+                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $entry->{val} from  $name", critical => 0, pass => 0});
+                }
+               push(@tests, {msg => "No trailing white space in the value: $entry->{val} from: $name",  critical => 0, pass => 0}) if $entry->{val} =~ /\s"$/;
+            }
+            if ($entry->{key}) {
+                if (($entry->{key} =~ /\(\[.*\]\/\[.+\]\)/g)) {
+                    push(@tests, {msg => "keys ([a]/[b]) should have white spaces: $entry->{key} from  $name", critical => 0, pass => 0});
+                }
+                push(@tests, {msg => "No trailing white space in the value: $entry->{key} from: $name", critical => 0, pass => 0}) if $entry->{key} =~ /\s"$/;
+            }
+        }
+    }
 
-         # spacing in keys ([a]/[b])'
-         if($entry->{val}){
-             if($entry->{val} =~ /\(\s+\[.*\]\s+\/\s+\[.+\]\s+\)/g){
-                diag("keys ([a]/[b]) shouldn't have white spaces: $entry->{val} from  $name");
+    my $result = print_results($name, \@tests);
+
+    subtest 'can_build' => sub {
+        ok($result->{pass}, $result->{msg});
+    };
+}
+
+sub print_results {
+    my ($name, $tests) = @_;
+
+    my $tot_pass = 0;
+    my $tot_done = 0;
+    my $ok = 1;
+    my %result = (pass => 1, msg => $name . ' is build safe');
+    for my $test (@{$tests}) {
+        my $temp_msg = $test->{msg};
+        my $temp_color = "reset";
+
+        if (!$test->{skip}) {
+            $tot_done++;
+
+            if (!$test->{pass}) {
+                if ($ok) {
+                    $ok = 0;
+                    diag colored(["reset"], "Testing " . $name . "...........NOT OK");
+                }
+
+                if ($test->{critical}) {
+                    $temp_color = "red";
+                    $temp_msg = "FAIL: " . $temp_msg;
+                    %result = (pass => 0, msg => $temp_msg);
+                    diag colored([$temp_color], "\t -> " . $temp_msg);
+                    return \%result;
+                } else {
+                    $temp_color = "yellow";
+                    $temp_msg = "WARN: " . $temp_msg;
+                    diag colored([$temp_color], "\t -> " . $temp_msg);
+                }
+            } else {
+                $tot_pass++;
             }
-            diag( "No trailing white space in the value: $entry->{val} from: $name") if $entry->{val} =~ /\s"$/;
         }
-         if($entry->{key}){
-             if($entry->{key} =~ /\(\s+\[.*\]\s+\/\s+\[.+\]\s+\)/g){
-                diag("keys ([a]/[b]) shouldn't have white spaces: $entry->{key} from  $name");
-            }
-            diag( "No trailing white space in the value: $entry->{key} from: $name") if $entry->{key} =~ /\s"$/;
-        }
-      }
-  }
+    }
+
+    if ($ok) {
+        diag colored(["green"], "Testing " . $name . "..........OK");
+    }
+    
+    diag colored(["reset"], "\n");
+    return \%result;
 }
 done_testing;

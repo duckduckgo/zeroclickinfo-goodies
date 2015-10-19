@@ -204,28 +204,28 @@
             "val": "Control character",
             "key": "\\c"
         }, {
-            "val": "Whitespace",
+            "val": "Whitespace [ \\t\\r\\n\\v\\f]",
             "key": "\\s"
         }, {
-            "val": "Not Whitespace",
+            "val": "Not Whitespace [^ \\t\\r\\n\\v\\f]",
             "key": "\\S"
         }, {
-            "val": "Digit",
+            "val": "Digit [0-9]",
             "key": "\\d"
         }, {
-            "val": "Not digit",
+            "val": "Not digit [^0-9]",
             "key": "\\D"
         }, {
-            "val": "Word",
+            "val": "Word [A-Za-z0-9_]",
             "key": "\\w"
         }, {
-            "val": "Not Word",
+            "val": "Not Word [^A-Za-z0-9_]",
             "key": "\\W"
         }, {
-            "val": "Hexadecimal digit",
+            "val": "Hexadecimal digit [A-Fa-f0-9]",
             "key": "\\x"
         }, {
-            "val": "Octal Digit",
+            "val": "Octal Digit [0-7]",
             "key": "\\O"
         }],
         "Anchors": [{

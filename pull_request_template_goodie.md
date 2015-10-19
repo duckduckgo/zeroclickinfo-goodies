@@ -63,6 +63,13 @@ Please place an 'X' where appropriate.
 - [] Tested cross-browser compatibility
 
     Please let us know which browsers/devices you've tested on:
+    - Windows 10
+        - [] Google Chrome
+        - [] Firefox
+        - [] Opera
+        - [] IE 11
+        - [] Microsoft edge
+        
     - Windows 8
         - [] Google Chrome
         - [] Firefox
@@ -81,6 +88,10 @@ Please place an 'X' where appropriate.
         - [] IE 7
         - [] IE 8
 
+    - Linux
+        - [] Google Chrome
+        - [] Firefox
+        
     - Mac OSX
         - [] Google Chrome
         - [] Firefox

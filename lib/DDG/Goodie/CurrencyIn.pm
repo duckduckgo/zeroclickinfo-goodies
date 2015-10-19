@@ -21,6 +21,7 @@ use strict;
 use DDG::Goodie;
 use Locale::SubCountry;
 use Text::Trim;
+use Encode;
 
 zci is_cached => 1;
 zci answer_type => "currency_in";
@@ -32,7 +33,8 @@ name 'CurrencyIn';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CurrencyIn.pm';
 category 'facts';
 topics 'travel';
-attribution github => ['http://github.com/Alchymista', 'Alchymista'];
+attribution github => ['https://github.com/Alchymista', 'Alchymista'],
+            github => ['https://github.com/ozdemirburak', 'Burak Özdemir'];
 
 triggers any => 'currency', 'currencies';    # User typed currency...
 
@@ -62,25 +64,49 @@ handle remainder => sub {
 
         if (exists $countries{$country."\n"}){
             my $string_currency = $countries{$country."\n"};    # Load currencies as string (one line from .txt)
-            my @currencies =  split(',', $string_currency);     # Split currencies into array
+            my @currencies =  split(',', decode("utf8", $string_currency)); # Split currencies into array
 
             my $count = $#currencies + 1;                       # Get number of currencies
             my $output_country = $country;                      # Pass country name to the output_country
             $output_country =~ s/\b(\w)/\U$1/g;                 # so it can by capitalized
 
-            my $result = $count == 1 ? "The currency in $output_country is the " : "Currencies in $output_country are: \n";
+            if($count eq 1) {
+                chomp @currencies;
+                return @currencies, structured_answer => {
+                    input     => [html_enc($output_country)],
+                    operation => "Currency in",
+                    result    => @currencies
+                };
+            } else {
+                my %data = ();
 
-            # Append result with all currencies
-            for (@currencies) {
-                chomp;
-                $result .= "$_\n";
+                for(@currencies) {
+                    chomp $_;
+                    if($_ =~ s/\((\w+)\)//) {
+                        trim($_);
+                        $data{$1} = $_; # Exclude the currency shortcode where stored between parantheses and assign it as a key
+                    } else {
+                        trim($_);
+                        $data{"Non ISO 4217"} = $_; # See: https://en.wikipedia.org/wiki/ISO_4217
+                    }
+                }
+
+                return \%data, structured_answer => {
+                    id => "currency_in",
+                    name => "CurrencyIn",
+                    templates => {
+                        group => 'list',
+                        options => {
+                            content => 'record',
+                            moreAt => 0
+                        }
+                    },
+                    data => {
+                        title => "Currencies in $output_country",
+                        record_data => \%data
+                    }
+                };
             }
-
-            chomp $result;
-            my $html = $result;
-            $html =~ s|\n|<br/>|g;
-
-            return $result, html=>$html;
         }
     }
 
