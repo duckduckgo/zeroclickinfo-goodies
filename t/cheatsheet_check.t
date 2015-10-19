@@ -140,15 +140,15 @@ sub print_results {
             $tot_done++;
 
             if (!$test->{pass}) {
-                $temp_msg = "FAIL: " . $temp_msg;
-            
                 if ($test->{critical}) {
                     $temp_color = "red";
+                    $temp_msg = "FAIL: " . $temp_msg;
                     %result = (pass => 0, msg => $temp_msg);
                     diag colored([$temp_color], "\t" . $temp_msg);
                     return \%result;
                 } else {
                     $temp_color = "yellow";
+                    $temp_msg = "WARN: " . $temp_msg;
                     diag colored([$temp_color], "\t" . $temp_msg);
                 }
             }
