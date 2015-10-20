@@ -32,7 +32,6 @@ closedir DIR;
 # Renders a figlet.
 sub render_figlet {
 	my ($font, $text) = @_;
-	$text = html_enc($text);
 	return Text::FIGlet->new(-f=>$font, -d=>share())->figify(-w=>$width, -A=>$text);
 }
 
@@ -63,6 +62,7 @@ handle query => sub {
 
 	# Render the FIGlet
 	$figlet = render_figlet($font, $text);
+	$figlet = html_enc($figlet) if grep /^$font$/i, qw(rot13 mnemonic term); #ensure we escape input for plaintext formatted results
 
 	$html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font</span><pre contenteditable='true'>$figlet</pre></div>";
 
