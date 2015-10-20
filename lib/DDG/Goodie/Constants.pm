@@ -13,22 +13,38 @@ secondary_example_queries "optional -- demonstrate any additional triggers";
 category "formulas";
 topics "math";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Constants.pm";
-attribution github => ["hemanth", "Hemanth.HM"],
+attribution github => ["Roysten", "Roy van der Vegt"], 
+            github => ["hemanth", "Hemanth.HM"],
             twitter => "gnumanth";
          
 my $constants = LoadFile(share("constants.yml"));
-my @triggers = keys %{$constants};
 
+#loop through constants
+foreach my $name (keys %$constants) {
+    #obtain to constant with name $keyword
+    my $constant = $constants->{$name};
+    
+    #add aliases as separate triggers
+    foreach my $alias (@{$constant->{'aliases'}}) {
+        $constants->{$alias} = $constant;
+    }
+}
+
+my @triggers = keys %{$constants};
 triggers startend => @triggers;
 
 # Handle statement
 handle query_lc => sub {
-    return unless my $val = $constants->{$_}->{'value'}->{'html'}; #lookup hash using query as key
+    my $constant = $constants->{$_};
+    return unless my $val = $constant->{'value'};
+    
+    #fallback to plain answer if html is not present
+    my $result = $val->{'html'} ? $val->{'html'} : $val->{'plain'};
 
-    return $val, structured_answer => {
+    return $result, structured_answer => {
         input     => [],
-        operation => 'Constants',
-        result    => $val
+        operation => $constant->{'name'},
+        result    => $result
     };
 };
 
