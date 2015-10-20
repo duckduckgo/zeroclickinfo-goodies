@@ -32,6 +32,7 @@ closedir DIR;
 # Renders a figlet.
 sub render_figlet {
 	my ($font, $text) = @_;
+	$text = html_enc($text);
 	return Text::FIGlet->new(-f=>$font, -d=>share())->figify(-w=>$width, -A=>$text);
 }
 
