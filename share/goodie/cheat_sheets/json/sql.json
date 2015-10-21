@@ -11,10 +11,10 @@
       "Data Definition Language (DDL) Commands",
       "Data Manipulation Language (DML)Commands",
       "SQL Functions",
+      "SQL Constraints",
       "Arguments Used with Commands"
    ],
    "aliases":[  
-      "sql syntax",
       "sql statements",
        "sql tutorial"
    ],
@@ -22,45 +22,45 @@
       "Data Definition Language (DDL) Commands":[  
          {  
             "key":"CREATE TABLE",
-            "val":"define a new table"
+            "val":"Define a new table"
          },
          {  
             "key":"ALTER TABLE",
-            "val":"change a database"
+            "val":"Change a database"
          },
          {  
             "key":"CREATE VIEW",
-            "val":"define a new view"
+            "val":"Define a new view"
          },
          {  
             "key":"DROP TABLE",
-            "val":"remove a table"
+            "val":"Remove a table"
          },
          
          {  
             "key":"CREATE DATABASE",
-            "val":"create a new database"
+            "val":"Create a new database"
          },
          {  
             "key":"CREATE INDEX",
-            "val":"define a new index"
+            "val":"Define a new index"
          },
          {  
             "key":"DROP DATABASE",
-            "val":"remove a database"
+            "val":"Remove a database"
          },
          {  
             "key":"DROP INDEX",
-            "val":"remove an index"
+            "val":"Remove an index"
          },
          {  
             "key":"DROP VIEW",
-            "val":"remove a view"
+            "val":"Remove a view"
          },
          
          {  
             "key":"TRUNCATE TABLE",
-            "val":"empty a table"
+            "val":"Empty a table"
          }
         
       ],
@@ -68,123 +68,153 @@
            
            {  
             "key":"SELECT",
-            "val":"retrieve rows from a table or view"
+            "val":"Retrieve rows from a table or view"
          },
          
          {  
             "key":"INSERT INTO",
-            "val":"create new rows in a table"
+            "val":"Create new rows in a table"
          },
            {  
             "key":"UPDATE",
-            "val":"update rows of a table"
+            "val":"Update rows of a table"
          },
            {  
             "key":"DELETE",
-            "val":"delete rows of a table"
+            "val":"Delete rows of a table"
          },
           {  
             "key":"SELECT INTO",
-            "val":"create a new table from the results of a query"
+            "val":"Create a new table from the results of a query"
+         },
+         {  
+            "key":"SELECT IN",
+            "val":"Select data from table(s) and insert it in another database"
          }
          
       ],
       "SQL Functions":[
          {
             "key":"AVG()",
-            "val":"returns the average value of a numeric column"
+            "val":"Returns the average value of a numeric column"
          },  
          {
             "key":"COUNT()",
-            "val":"returns the number of rows that matches a specified criteria"
+            "val":"Returns the number of rows that matches a specified criteria"
          },
          {
             "key":"MAX()",
-            "val":"returns the largest value of the selected column"
+            "val":"Returns the largest value of the selected column"
          },
          {
             "key":"MIN()",
-            "val":"returns the smallest value of the selected column"
+            "val":"Returns the smallest value of the selected column"
          },
          {
             "key":"SUM()",
-            "val":"returns the total sum of a numeric column"
+            "val":"Returns the total sum of a numeric column"
          }
       ],
      "Arguments Used with Commands":[
          {  
             "key":"WHERE",
-            "val":"to retrieve specific information from a table excluding other irrelevant data"
+            "val":"To retrieve specific information from a table excluding other irrelevant data"
          },
          {  
             "key":"AND",
-            "val":"select rows that must satisfy all the given conditions"
+            "val":"Select rows that must satisfy all the given conditions"
          },
          {  
             "key":"OR",
-            "val":"select rows that satisfy atleast one of the given conditions"
+            "val":"Select rows that satisfy atleast one of the given conditions"
          },
          {  
             "key":"NOT",
-            "val":"select rows that do not satisfy the given condition"
+            "val":"Select rows that do not satisfy the given condition"
          },
           {  
             "key":"AS (alias)",
-            "val":"used to temporarily rename a table or a column heading"
+            "val":"To temporarily rename a table or a column heading"
          },
          {  
             "key":"BETWEEN..AND..",
-            "val":"used to select values within a range"
+            "val":"To select values within a range"
          },
          {  
             "key":"EXISTS",
-            "val":"used in combination with a subquery and is considered to be met if the subquery returns at least one row"
+            "val":"Used in combination with a subquery and is considered to be met if the subquery returns at least one row"
          },
          {  
             "key":"GROUP BY",
-            "val":"to collect data across multiple records and group the results by a column"
+            "val":"To collect data across multiple records and group the results by a column"
          },
          {  
             "key":"HAVING",
-            "val":"used to filter data based on the group functions"
+            "val":"To filter data based on the group functions"
          },
          {  
             "key":"IN",
-            "val":"used to reduce the need for multiple OR conditions"
+            "val":"To test whether a value is in the list of values provided"
          },
          {  
             "key":"LIKE",
-            "val":"used to list all rows in a table whose column values match a specified pattern"
+            "val":"To search for a specified pattern in a column"
          },
-         
+         {  
+            "key":"DISTINCT",
+            "val":"To return only distinct (different) values in a column"
+         },
          {  
             "key":"ORDER BY",
-            "val":"used to sort the records in the result based on a column"
+            "val":"To sort the records in the result based on a column"
          },
          {  
             "key":"INNER JOIN",
-            "val":"returns all rows from both tables where there is a match"
+            "val":"Returns all rows from both tables where there is a match"
          },
          {  
             "key":"LEFT JOIN",
-            "val":"returns all the rows from the first table even if there are no matches in the second table"
+            "val":"Returns all the rows from the first table even if there are no matches in the second table"
          },
          {  
             "key":"RIGHT JOIN",
-            "val":"returns all the rows from the second table, even if there are no matches in the first table"
+            "val":"Returns all the rows from the second table, even if there are no matches in the first table"
          },
          {  
             "key":"FULL JOIN",
-            "val":"returns all rows from both tables with nulls in place where the join condition is not met"
+            "val":"Returns all rows from both tables with nulls in place where the join condition is not met"
          },
           {  
             "key":"UNION",
-            "val":"combines the result of two or more SELECT statements and selects only distinct values"
+            "val":"Combines the result of two or more SELECT statements and selects only distinct values"
          },
          {  
             "key":"UNION ALL",
-            "val":"combines the result of two or more SELECT statements and also select duplicate values"
+            "val":"Combines the result of two or more SELECT statements and also select duplicate values"
          }
-     ]  
+     ],
+     "SQL Constraints":[
+         {  
+            "key":"NOT NULL",
+            "val":"Enforces a column to not accept NULL values"
+         },
+         {  
+            "key":"UNIQUE",
+            "val":"Ensures that each row for a column must have a unique value"
+         },
+         {  
+            "key":"PRIMARY KEY",
+            "val":"Combination of NOT NULL and UNIQUE.It uniquely identifies each record in a database table"
+         },
+         {  
+            "key":"FOREIGN KEY",
+            "val":"Ensure the referential integrity of the data in one table to match values in another table"
+         },
+         
+         {  
+            "key":"DEFAULT",
+            "val":"Specifies a default value for a column"
+         }
+      ]
    }
 }
