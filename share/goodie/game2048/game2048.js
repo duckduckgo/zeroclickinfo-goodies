@@ -225,16 +225,18 @@ DDH.game2048.build = function(ops) {
                 TILE_COUNT = SIZE * SIZE;
                 cells = $('td.boxtile.val-');
                 start();
-                $('html').keydown(function(event){
+
+                $tempArea.keydown(function(e) {
+                    e.preventDefault();
                     var move = false;
                     if (continueGame) {
-                        if (event.keyCode === 87 || event.keyCode === 38) { // w or up arrow
+                        if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
                             move = mov('w');
-                        } else if (event.keyCode === 65 || event.keyCode === 37) { // a or left arrow
+                        } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
                             move = mov('a');
-                        } else if (event.keyCode === 83 || event.keyCode === 40) { // s or dowm arrow
+                        } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
                             move = mov('s');
-                        } else if (event.keyCode === 68 || event.keyCode === 39) { // d or right arrow
+                        } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
                             move = mov('d');
                         }
 
@@ -244,6 +246,7 @@ DDH.game2048.build = function(ops) {
                         }
                         print_area();
                     }
+                    return false;
                 });
             }
         }
