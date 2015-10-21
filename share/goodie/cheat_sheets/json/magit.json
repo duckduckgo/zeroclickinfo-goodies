@@ -107,7 +107,7 @@
         "val": "Execute commit"
       },
       {
-        "key": "C-c C-a",
+        "key": "[C-c], [C-a]",
         "val": "Make the next commit an amend"
       }
     ],
