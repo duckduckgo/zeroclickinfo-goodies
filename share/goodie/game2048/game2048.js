@@ -92,7 +92,11 @@ DDH.game2048.build = function(ops) {
     function print_area() {
         cells.each(function(index) {
             var val = area[index].val;
-            $(this).html(val).attr("class", "boxtile val-" + (val === 0 ? '' : val));
+            if(val === 0) {
+                $(this).html("").attr("class", "boxtile val-");
+            } else {
+                $(this).html(val).attr("class", "boxtile val-" + val);
+            }
         });
     }
 

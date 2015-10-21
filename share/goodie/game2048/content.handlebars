@@ -6,9 +6,16 @@
         <span class="game2048__points">0</span> Points
     </span>
 
-    <table id="game2048__area" class ="game2048__area">
-        {{#loop dimension}}
-            <tr>{{#loop dimension}}<td class="boxtile val-"></td>{{/loop}}</tr>
-        {{/loop}}
-    </table>
+    <div class="game2048__area_container">
+        <table id="game2048__area" class ="game2048__area">
+            {{#loop dimension}}
+                <tr>{{#loop dimension}}<td class="boxtile val-"></td>{{/loop}}</tr>
+            {{/loop}}
+        </table>
+
+        <!--<span class="game2048__info">
+            How to play<br><br>
+            Use your arrow-keys to move the tiles. When two tiles with the same number touch, they merge into one! 
+        </span>-->
+    </div>
 </div>
