@@ -24,7 +24,7 @@
     display:table;
 }
 
-.zci--game2048 .val- { background-color: #BBADA0; }
+.zci--game2048 .val-{ background-color: #BBADA0; }
 .zci--game2048 .val-2 { background-color: #EEE4DA; }
 .zci--game2048 .val-4{ background-color: #EDE0C8; }
 .zci--game2048 .val-8 { background-color: #F2B179; }
