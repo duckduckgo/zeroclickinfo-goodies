@@ -1,7 +1,5 @@
 package DDG::Goodie::MagicEightBall;
-# ABSTRACT: Write an abstract here
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
-# to instant answer development
+# ABSTRACT: provides a random answer just like a magic eight ball
 
 use DDG::Goodie;
 use strict;
@@ -9,30 +7,25 @@ use strict;
 zci answer_type => "magic_eight_ball";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "MagicEightBall";
-description "Provides a random answer just like a magic eight ball";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#category
-# category "";
-# Uncomment and complete: https://duck.co/duckduckhack/metadata#topics
-# topics "";
+description "provides a random answer just like a magic eight ball";
+primary_example_queries "magic eight ball is it going to rain today", "magic 8 ball should I wear red today?";
+secondary_example_queries "are you actually helpful magic eight ball";
+category "random";
+topics "trivia";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MagicEightBall.pm";
-attribution github => ["GitHubAccount", "Friendly Name"],
-            twitter => "twitterhandle";
+attribution github => ["jlbaez", "Jose Baez"];
 
-# Triggers
-triggers start => "magic eight ball";
+triggers startend => "magic eight ball", "magic 8 ball";
 
-# Handle statement
 handle remainder => sub {
     # optional - regex guard
     # return unless qr/^\w+/;
 
-    return unless $_; # Guard against "no answer"
+    return unless $_;
 
-    my @responses = ("It is certain",
+    #These are the standard responses found in a magic eight ball
+    my @eightBallresponses = ("It is certain",
         "It is decidedly so",
         "Without a doubt",
         "Yes, definitely",
@@ -54,10 +47,14 @@ handle remainder => sub {
         "Very doubtful"
     );
 
-    my $size = @responses;
-    my $chosen = int(rand($size));
+    my $response = $eightBallresponses[int rand scalar @eightBallresponses];
 
-    return $responses[$chosen];
+    return $response,
+        structured_answer => {
+            input => [html_enc($_)],
+            operation => "Magic eight ball's answer to",
+            result => html_enc($response),
+        };
 };
 
 1;
