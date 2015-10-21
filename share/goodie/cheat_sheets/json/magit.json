@@ -29,7 +29,7 @@
   "sections": {
     "Buffers": [
       {
-        "key": "M-x magit-status",
+        "key": "[M-x], [magit-status]",
         "val": "Magit's status buffer"
       },
       {
@@ -69,7 +69,7 @@
         "val": "Add file to .gitignore"
       },
       {
-        "key": "C-u i",
+        "key": "[C-u], [i]",
         "val": "Prompt for file/directory to add to .gitignore"
       },
       {
@@ -103,7 +103,7 @@
         "val": "Prepare for commit"
       },
       {
-        "key": "C-c C-c",
+        "key": "[C-c], [C-c]",
         "val": "Execute commit"
       },
       {
@@ -121,7 +121,7 @@
         "val": "Verbose history"
       },
       {
-        "key": "C-u l",
+        "key": "[C-u], [l]",
         "val": "History segment"
       },
       {
@@ -145,7 +145,7 @@
         "val": "Show differences between current and marked commits"
       },
       {
-        "key": "..",
+        "key": "[.], [.]",
         "val": "Mark current commit"
       },
       {
@@ -153,7 +153,7 @@
         "val": "Unmark current commit if marked"
       },
       {
-        "key": "C-u ..",
+        "key": "[C-u], [.], [.]",
         "val": "Unmark marked commit from anywhere"
       }
     ],
@@ -195,7 +195,7 @@
         "val": "Prepare annotated tag"
       },
       {
-        "key": "C-c C-c",
+        "key": "[C-c], [C-c]",
         "val": "Commit annotated tag"
       }
     ],
@@ -251,7 +251,7 @@
         "val": "Toggle ignore branch"
       },
       {
-        "key": "C-u w",
+        "key": "[C-u], [w]",
         "val": "Show all branches including ignored ones"
       }
     ],
@@ -273,7 +273,7 @@
     ],
     "Rewriting": [
       {
-        "key": "r s",
+        "key": "[r], [s]",
         "val": "Start a rewrite"
       },
       {
@@ -281,23 +281,23 @@
         "val": "Revert a given commit"
       },
       {
-        "key": "r t",
+        "key": "[r], [t]",
         "val": "Remove bookkeeping information from buffer"
       },
       {
-        "key": "r a",
+        "key": "[r], [a]",
         "val": "Abort rewriting"
       },
       {
-        "key": "r f",
+        "key": "[r], [f]",
         "val": "Finish rewriting"
       },
       {
-        "key": "r *",
+        "key": "[r], [*]",
         "val": "Toggle the * mark on a pending commit"
       },
       {
-        "key": "r ..",
+        "key": "[r], [.], [.]",
         "val": "Toggle the . mark on a pending commit"
       }
     ],
@@ -307,7 +307,7 @@
         "val": "git push"
       },
       {
-        "key": "C-u P",
+        "key": "[C-u], [P]",
         "val": "git push to specified remote repository"
       },
       {
@@ -321,11 +321,11 @@
     ],
     "Interfacing with Subversion": [
       {
-        "key": "N r",
+        "key": "[N], [r]",
         "val": "git svn rebase"
       },
       {
-        "key": "N c",
+        "key": "[N], [c]",
         "val": "git svn dcommit"
       }
     ]
