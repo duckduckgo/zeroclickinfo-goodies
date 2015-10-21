@@ -4,8 +4,8 @@ DDH.game2048.build = function(ops) {
     // Global Variables Declaration
     var $tempArea, $container, $spanPoints, WINNUM, SIZE, TILE_COUNT;
 
-    var continueGame = true,
-        started = false,
+        var lost_or_won = false,
+        started,
         area,
         cells,
         score = 0;
@@ -17,7 +17,7 @@ DDH.game2048.build = function(ops) {
     //This function moves and sums numbers
     function mov(dir) {
         var points = 0,
-            flag = false;
+            moved = false;
 
         if (dir === 'a' || dir === 'd') {
             transpose_area();
@@ -40,7 +40,7 @@ DDH.game2048.build = function(ops) {
                     if(moves > 0) {
                         area[rc_to_index(row - moves, col)].val = area[i].val;
                         area[i].val = 0;
-                        flag = true;
+                        moved = true;
                     }
 
                     for(var j = row + 1; j < SIZE && exit === false; ++j) {
@@ -52,7 +52,7 @@ DDH.game2048.build = function(ops) {
                             area[rc_to_index(j, col)].val = 0;
                             // add points
                             points = area[rc_to_index(row - moves, col)].val;
-                            flag = true; exit = true;
+                            moved = true; exit = true;
                         // else quit the while loop
                         } else if(area[rc_to_index(j, col)].val !== 0) {
                             exit = true;
@@ -71,14 +71,9 @@ DDH.game2048.build = function(ops) {
 
         increase_points(points);
 
-        if (has_won() /*|| has_lost()*/) {
-            continueGame = false;
-            flag = false;
-        }
-
         //This check is mandatory in order to avoid the appearance of a new
         //value in the area if no moves has been made
-        return flag;
+        return moved;
     }
 
     // Updates the 'points' div
@@ -156,11 +151,8 @@ DDH.game2048.build = function(ops) {
     //prints a congratulation message
     function has_won() {
         for(var i = 0; i < TILE_COUNT; ++i) {
-            console.log(area[i].val + " " + WINNUM);
             if (area[i].val == WINNUM) {
-                alert("You win");
-                //area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-                //area[SIZE-1][0] = 'W'; area[SIZE-1][1] = 'I'; area[SIZE-1][2] = 'N';
+                alert("You won");
                 return true;
             }
         }
@@ -173,25 +165,23 @@ DDH.game2048.build = function(ops) {
             move_possible = false;
 
         for(var i = 0; i < TILE_COUNT; ++i) {
-            if (area[i].val !== 0) {
+            if (area[i].val > 0) {
                 ++full_tiles_count;
             }
 
             var row = area[i].row;
             var col = area[i].col;
+
             // check all available movements
             if ((row !== 0 && area[i].val === area[rc_to_index(row - 1, col)].val) ||
-                (row !== SIZE-1 && area[i].val === area[rc_to_index(row + 1, col)].val) ||
+                (row !== SIZE - 1 && area[i].val === area[rc_to_index(row + 1, col)].val) ||
                 (col !== 0 && area[i].val === area[rc_to_index(row, col - 1)].val) ||
-                (col !== SIZE-1 && area[i].val === area[rc_to_index(row, col + 1)].val)) {
+                (col !== SIZE - 1 && area[i].val === area[rc_to_index(row, col + 1)].val)) {
                 move_possible = true;
             }
         }
-        // if all the cells all full AND no movements are available, return true
-        if (full_tiles_count === TILE_COUNT - 1 && move_possible === false) {
-            //area[0][0] = 'Y'; area[0][1] = 'O'; area[0][2] = 'U';
-            //area[SIZE-1][0] = 'L'; area[SIZE-1][1] = 'O'; area[SIZE-1][2] = 'S'; area[SIZE-1][3] = 'E';
-            //printArea();
+
+        if (full_tiles_count === TILE_COUNT && move_possible === false) {
             alert("You lost");
             return true;
         }
@@ -228,21 +218,26 @@ DDH.game2048.build = function(ops) {
 
                 $tempArea.keydown(function(e) {
                     e.preventDefault();
-                    var move = false;
-                    if (continueGame) {
+
+                    var moved = false;
+
+                    if (!lost_or_won) {
                         if (e.keyCode === 87 || e.keyCode === 38) { // w or up arrow
-                            move = mov('w');
+                            moved = mov('w');
                         } else if (e.keyCode === 65 || e.keyCode === 37) { // a or left arrow
-                            move = mov('a');
+                            moved = mov('a');
                         } else if (e.keyCode === 83 || e.keyCode === 40) { // s or dowm arrow
-                            move = mov('s');
+                            moved = mov('s');
                         } else if (e.keyCode === 68 || e.keyCode === 39) { // d or right arrow
-                            move = mov('d');
+                            moved = mov('d');
                         }
 
-                        // if move is true, a move has been made
-                        if (move) {
+                        if (moved) {
                             add_random_tile();
+                            print_area();
+                            if (has_won() || has_lost()) {
+                                lost_or_won = true;
+                            }
                         }
                         print_area();
                     }
