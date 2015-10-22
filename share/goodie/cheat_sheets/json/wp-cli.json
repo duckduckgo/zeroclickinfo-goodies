@@ -10,7 +10,8 @@
     "section_order": [
         "Installing",
         "Core Commands",
-        "Plugin Management"
+        "Plugin Commands",
+        "Theme Commands"
     ],
     "sections": {
         "Installing": [
@@ -32,14 +33,58 @@
             }
         ],
         "Core Commands": [
-            
-        ],
-        "Plugin Management" : [
             {
-                "key": "wp plugin install hello-dolly",
-                "val": "Installs Hello Dolly plugin from wordpress.org"
+                "key": "wp core download",
+                "val": "Download core WordPress files."
+            },
+            {
+                "key": "wp core install",
+                "val": "Create the WordPress tables in the database."
+            },
+            {
+                "key": "wp core check-update",
+                "val": "Check for update via Version Check API."
+            },
+            {
+                "key": "wp core update",
+                "val": "Update WordPress."
             }
-            
+        ],
+        "Plugin Commands" : [
+            {
+                "key": "wp plugin list",
+                "val": "List all currently installed plugins"
+            },
+            {
+                "key": "wp plugin update --all",
+                "val": "Update all plugins."
+            },
+            {
+                "key": "wp plugin install NAME",
+                "val": "Installs plugin from wordpress.org. Replace NAME with intended plugin name."
+            },
+            {
+                "key": "wp plugin activate NAME",
+                "val": "Activates plugin. Replace NAME with intended plugin name."
+            }
+        ],
+        "Theme Commands" : [
+            {
+                "key": "wp theme list",
+                "val": "List all currently installed themes"
+            },
+            {
+                "key": "wp theme update --all",
+                "val": "Update all themes."
+            },
+            {
+                "key": "wp theme install NAME",
+                "val": "Installs theme from wordpress.org. Replace NAME with intended theme name."
+            },
+            {
+                "key": "wp theme activate NAME",
+                "val": "Activates theme. Replace NAME with intended theme name."
+            }
         ]
     }
 }
