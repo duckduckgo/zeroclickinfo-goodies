@@ -1,7 +1,7 @@
 {
     "id": "emoticon_cheat_sheet",
     "name": "Emoticon",
-    "description": "Pictoral representation of an emotion via text.",
+    "description": "Pictoral representation of an emotion via text",
     "aliases": [
         "emoticons"
     ],
@@ -13,42 +13,42 @@
     ],
     "sections": {
         "Happy": [{
-            "val": "classic happy face",
+            "val": "Classic happy face",
             "key": ":)"
         }, {
-            "val": "happy face with a nose",
+            "val": "Happy face with a nose",
             "key": ":-)"
         },{
-            "val": "excited",
+            "val": "Excited",
             "key": ":D"
         }, {
-            "val": "enamored",
+            "val": "Enamored",
             "key": ":3"
         }],
         "Sad": [{
-            "val": "classic sad face",
+            "val": "Classic sad face",
             "key": ":("
         }, {
-            "val": "sad face with a nose",
+            "val": "Sad face with a nose",
             "key": ":-("
         }, {
-            "val": "crying",
+            "val": "Crying",
             "key": ":'("
         }, {
-            "val": "rivers of tears",
+            "val": "Rivers of tears",
             "key": "T_T"
         }],
         "Angry": [{
-            "val": "classic angry face",
+            "val": "Classic angry face",
             "key": ">:("
         }, {
-            "val": "angry face with a nose",
+            "val": "Angry face with a nose",
             "key": ">:-("
         }, {
-            "val": "furious",
+            "val": "Furious",
             "key": "X-O"
         }, {
-            "val": "annoyed",
+            "val": "Annoyed",
             "key": ">_<*"
         }]
     }
