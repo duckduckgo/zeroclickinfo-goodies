@@ -1,18 +1,11 @@
 {
-    "id": "states_of_india_cheat_sheet",
-    "name": "States Of India",
-    "description": "All the Indian states along with their capital cities",
+    "id":"indian_languages_cheat_sheet",
+    "name":"Indian Languages",
+    "description": "All the Indian states and union territories along with their official languages",
     "metadata": {
         "sourceName": "Wikipedia",
-        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
+        "sourceUrl": "https://en.wikipedia.org/wiki/Languages_with_official_status_in_India"
     },
-    "aliases": [
-        "States of india cheat sheet",
-        "indian states",
-        "capitals of indian states",
-        "capitals of states and union territory in india",
-        "cis"
-    ],
     "template_type": "reference",
     "section_order": [
         "States (A-L)",
@@ -23,151 +16,151 @@
         "States (A-L)": [
             {
                 "key": "Andhra Pradesh",
-                "val": "Hyderabad"
+                "val": "Telugu"
             },
             {
                 "key": "Arunachal Pradesh",
-                "val": "Itanagar"
+                "val": "English"
             },
             {
                 "key": "Assam",
-                "val": "Dispur"
+                "val": "Assamese, English"
             },
             {
                 "key": "Bihar",
-                "val": "Patna"
+                "val": "Bhojpuri"
             },
             {
                 "key": "Chhattisgarh",
-                "val": "Raipur"
+                "val": "Hindi"
             },
             {
                 "key": "Goa",
-                "val": "Panaji"
+                "val": "Konkani"
             },
             {
                 "key": "Gujarat",
-                "val": "Gandhinagar"
+                "val": "Gujarati"
             },
             {
                 "key": "Haryana",
-                "val": "Chandigarh"
+                "val": "Hindi"
             },
             {
                 "key": "Himachal Pradesh",
-                "val": "Shimla"
+                "val": "Hindi"
             },
             {
                 "key": "Jammu & Kashmir",
-                "val": "Srinagar(Summer)/Jammu(Winter)"
+                "val": "Urdu"
             },
             {
                 "key": "Jharkhand",
-                "val": "Ranchi"
+                "val": "Hindi"
             },
             {
                 "key": "Karnataka",
-                "val": "Bengaluru"
+                "val": "Kannada"
             },
             {
                 "key": "Kerala",
-                "val": "Thiruvananthapuram"
+                "val": "Malayalam"
             }
         ],
         "States (M-Z)": [
             {
                 "key": "Madhya Pradesh",
-                "val": "Bhopal"
+                "val": "Hindi"
             },
             {
                 "key": "Maharashtra",
-                "val": "Mumbai"
+                "val": "Marathi"
             },
             {
                 "key": "Manipur",
-                "val": "Imphal"
+                "val": "Meiteilon(Manipuri)"
             },
             {
                 "key": "Meghalaya",
-                "val": "Shillong"
+                "val": "English"
             },
             {
                 "key": "Mizoram",
-                "val": "Aizawl"
+                "val": "Mizo"
             },
             {
                 "key": "Nagaland",
-                "val": "Kohima"
+                "val": "English"
             },
             {
                 "key": "Orissa",
-                "val": "Bhubaneswar"
+                "val": "Odia"
             },
             {
                 "key": "Punjab",
-                "val": "Chandigarh"
+                "val": "Punjabi"
             },
             {
                 "key": "Rajasthan",
-                "val": "Jaipur"
+                "val": "Hindi"
             },
             {
                 "key": "Sikkim",
-                "val": "Gangtok"
+                "val": "Nepali"
             },
             {
                 "key": "Tamil Nadu",
-                "val": "Chennai"
+                "val": "Tamil"
             },
             {
                 "key": "Telangana",
-                "val": "Hyderabad"
+                "val": "Telugu"
             },
             {
                 "key": "Tripura",
-                "val": "Agartala"
+                "val": "Bengali"
             },
             {
                 "key": "Uttar Pradesh",
-                "val": "Lucknow"
+                "val": "Hindi"
             },
             {
                 "key": "Uttaranchal",
-                "val": "Dehradun"
+                "val": "Hindi"
             },
             {
                 "key": "West Bengal",
-                "val": "Kolkata"
+                "val": "Bengali, English"
             }
         ],
         "Union Territories": [
             {
                 "key": " Andaman & Nicobar Islands",
-                "val": "Port Blair"
+                "val": "Hindi, English, Bangali"
             },
             {
                 "key": " Chandigarh",
-                "val": "Chandigarh"
+                "val": "English"
             },
             {
                 "key": " Dadra & Nagar Haveli",
-                "val": "Silvassa"
+                "val": "English"
             },
             {
                 "key": " Daman & Diu",
-                "val": "Daman"
+                "val": "Konkani, Marathi and Gujarati"
             },
             {
                 "key": " Lakshadweep",
-                "val": "Kavaratti"
+                "val": "English"
             },
             {
                 "key": " Puducherry",
-                "val": "Puducherry"
+                "val": "Tamil, Telugu and Malayalam"
             },
             {
                 "key": "Delhi",
-                "val": "New Delhi"
+                "val": "Hindi"
             }
         ]
     }

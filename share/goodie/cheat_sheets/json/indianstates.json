@@ -1,26 +1,18 @@
 {
-    "id": "states_of_india_cheat_sheet",
-    "name": "States Of India",
-    "description": "All the Indian states along with their capital cities",
+    "id": "states_of_india",
+    "name": "Capitals of Indian States and Union Territory",
     "metadata": {
-        "sourceName": "Wikipedia",
+        "sourceName": "States and Union Territory Capitals Reference Manual",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
     },
-    "aliases": [
-        "States of india cheat sheet",
-        "indian states",
-        "capitals of indian states",
-        "capitals of states and union territory in india",
-        "cis"
-    ],
-    "template_type": "reference",
+    "template_type": "code",
     "section_order": [
-        "States (A-L)",
-        "States (M-Z)",
-        "Union Territories"
+        "States",
+        "Union Territory"
     ],
     "sections": {
-        "States (A-L)": [
+        "States": [
+            
             {
                 "key": "Andhra Pradesh",
                 "val": "Hyderabad"
@@ -30,17 +22,19 @@
                 "val": "Itanagar"
             },
             {
-                "key": "Assam",
+                "key": "Aassam",
                 "val": "Dispur"
             },
             {
                 "key": "Bihar",
                 "val": "Patna"
             },
+            
             {
-                "key": "Chhattisgarh",
+                "key": "Chhatisgarh",
                 "val": "Raipur"
             },
+       
             {
                 "key": "Goa",
                 "val": "Panaji"
@@ -58,23 +52,18 @@
                 "val": "Shimla"
             },
             {
-                "key": "Jammu & Kashmir",
-                "val": "Srinagar(Summer)/Jammu(Winter)"
+                "key": "Jammu and Kashmir",
+                "val": "Srinagar(summer),Jammu(winter)"
             },
             {
                 "key": "Jharkhand",
                 "val": "Ranchi"
             },
             {
-                "key": "Karnataka",
-                "val": "Bengaluru"
-            },
-            {
                 "key": "Kerala",
                 "val": "Thiruvananthapuram"
-            }
-        ],
-        "States (M-Z)": [
+            },
+            
             {
                 "key": "Madhya Pradesh",
                 "val": "Bhopal"
@@ -100,9 +89,10 @@
                 "val": "Kohima"
             },
             {
-                "key": "Orissa",
-                "val": "Bhubaneswar"
+                "key": "Odisha",
+                "val": "Bhubhaneshwar"
             },
+            
             {
                 "key": "Punjab",
                 "val": "Chandigarh"
@@ -132,43 +122,44 @@
                 "val": "Lucknow"
             },
             {
-                "key": "Uttaranchal",
+                "key": "Uttarkhand",
                 "val": "Dehradun"
             },
             {
-                "key": "West Bengal",
+                "key": "West Bangal",
                 "val": "Kolkata"
             }
         ],
-        "Union Territories": [
+        "Union Territory": [
             {
-                "key": " Andaman & Nicobar Islands",
+                "key": "Andaman and Nicobar Islands",
                 "val": "Port Blair"
             },
             {
-                "key": " Chandigarh",
+                "key": "Chandigarh",
                 "val": "Chandigarh"
             },
             {
-                "key": " Dadra & Nagar Haveli",
+                "key": "Dadra and Nagar Haveli",
                 "val": "Silvassa"
             },
             {
-                "key": " Daman & Diu",
-                "val": "Daman"
+                "key":"Daman and Diu",
+                "val":"Daman"
             },
             {
-                "key": " Lakshadweep",
+                "key": "National capital territory of  Delhi",
+                "val": "New Delhi"
+            },
+            {
+                "key": "Lakshadweep",
                 "val": "Kavaratti"
             },
             {
-                "key": " Puducherry",
-                "val": "Puducherry"
-            },
-            {
-                "key": "Delhi",
-                "val": "New Delhi"
+                "key": "Punducherry",
+                "val": "Punducherry"
             }
         ]
     }
 }
+       
