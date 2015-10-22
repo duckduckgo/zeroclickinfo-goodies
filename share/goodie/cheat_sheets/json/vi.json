@@ -6,7 +6,7 @@
         "sourceName": "LagMonster",
         "sourceUrl": "http://www.lagmonster.org/docs/vi.html"
     },
-
+    "template_type" : "terminal",
     "section_order": [  
         "Quitting",
         "Inserting Text",
