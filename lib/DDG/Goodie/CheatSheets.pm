@@ -29,7 +29,7 @@ sub getAliases {
                                 ->name("*.json")
                                 ->in(share());
     my %results;
-    
+
     foreach my $file (@files) {
         open my $fh, $file or warn "Error opening file: $file\n" and next;
         my $json = do { local $/;  <$fh> };
@@ -37,13 +37,13 @@ sub getAliases {
 			warn "Failed to decode $file: $@";
 			next;
 		};
-        
+
         my $defaultName = File::Basename::fileparse($file);
         $defaultName =~ s/-/ /g;
         $defaultName =~ s/.json//;
-        
+
         $results{$defaultName} = $file;
-        
+
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
                 $results{$alias} = $file;
@@ -59,7 +59,7 @@ handle remainder => sub {
     # If needed we could jump through a few more hoops to check
     # terms against file names.
     open my $fh, $aliases->{join(' ', split /\s+/o, lc($_))} or return;
-    
+
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
 
