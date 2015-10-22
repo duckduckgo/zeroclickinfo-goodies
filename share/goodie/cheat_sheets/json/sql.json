@@ -84,13 +84,10 @@
             "val":"Delete rows of a table"
          },
           {  
-            "key":"SELECT INTO",
+            "key":"SELECT <columns> INTO",
             "val":"Create a new table from the results of a query"
-         },
-         {  
-            "key":"SELECT IN",
-            "val":"Select data from table(s) and insert it in another database"
          }
+         
          
       ],
       "SQL Functions":[
