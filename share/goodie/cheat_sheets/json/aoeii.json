@@ -7,7 +7,7 @@
         "sourceUrl": "http://www.angelfire.com/biz5/age2/hotkeys.html"
     },
     "aliases": [
-        "aoeii", "aoeiihd", "aoe"
+        "aoeii", "aoeiihd", "aoe", "age of empires 2", "age of empires ii"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -167,10 +167,10 @@
             "key": "Enter"
         }, {
             "val": "Slow Game Speed",
-            "key": "- (On Calculator)"
+            "key": "Numpad -"
         }, {
             "val": "Speed Up Game Speed",
-            "key": "+ (On Calculator)"
+            "key": "Numpad +"
         }],
         "Villager Build Commands": [{
             "val": "Archery Range",
