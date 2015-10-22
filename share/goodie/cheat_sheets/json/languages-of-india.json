@@ -1,0 +1,167 @@
+{
+    "id":"indian_languages_cheat_sheet",
+    "name":"Indian Languages",
+    "description": "All the Indian states and union territories along with their official languages",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Languages_with_official_status_in_India"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "States (A-L)",
+        "States (M-Z)",
+        "Union Territories"
+    ],
+    "sections": {
+        "States (A-L)": [
+            {
+                "key": "Andhra Pradesh",
+                "val": "Telugu"
+            },
+            {
+                "key": "Arunachal Pradesh",
+                "val": "English"
+            },
+            {
+                "key": "Assam",
+                "val": "Assamese, English"
+            },
+            {
+                "key": "Bihar",
+                "val": "Bhojpuri"
+            },
+            {
+                "key": "Chhattisgarh",
+                "val": "Hindi"
+            },
+            {
+                "key": "Goa",
+                "val": "Konkani"
+            },
+            {
+                "key": "Gujarat",
+                "val": "Gujarati"
+            },
+            {
+                "key": "Haryana",
+                "val": "Hindi"
+            },
+            {
+                "key": "Himachal Pradesh",
+                "val": "Hindi"
+            },
+            {
+                "key": "Jammu & Kashmir",
+                "val": "Urdu"
+            },
+            {
+                "key": "Jharkhand",
+                "val": "Hindi"
+            },
+            {
+                "key": "Karnataka",
+                "val": "Kannada"
+            },
+            {
+                "key": "Kerala",
+                "val": "Malayalam"
+            }
+        ],
+        "States (M-Z)": [
+            {
+                "key": "Madhya Pradesh",
+                "val": "Hindi"
+            },
+            {
+                "key": "Maharashtra",
+                "val": "Marathi"
+            },
+            {
+                "key": "Manipur",
+                "val": "Meiteilon(Manipuri)"
+            },
+            {
+                "key": "Meghalaya",
+                "val": "English"
+            },
+            {
+                "key": "Mizoram",
+                "val": "Mizo"
+            },
+            {
+                "key": "Nagaland",
+                "val": "English"
+            },
+            {
+                "key": "Orissa",
+                "val": "Odia"
+            },
+            {
+                "key": "Punjab",
+                "val": "Punjabi"
+            },
+            {
+                "key": "Rajasthan",
+                "val": "Hindi"
+            },
+            {
+                "key": "Sikkim",
+                "val": "Nepali"
+            },
+            {
+                "key": "Tamil Nadu",
+                "val": "Tamil"
+            },
+            {
+                "key": "Telangana",
+                "val": "Telugu"
+            },
+            {
+                "key": "Tripura",
+                "val": "Bengali"
+            },
+            {
+                "key": "Uttar Pradesh",
+                "val": "Hindi"
+            },
+            {
+                "key": "Uttaranchal",
+                "val": "Hindi"
+            },
+            {
+                "key": "West Bengal",
+                "val": "Bengali, English"
+            }
+        ],
+        "Union Territories": [
+            {
+                "key": " Andaman & Nicobar Islands",
+                "val": "Hindi, English, Bangali"
+            },
+            {
+                "key": " Chandigarh",
+                "val": "English"
+            },
+            {
+                "key": " Dadra & Nagar Haveli",
+                "val": "English"
+            },
+            {
+                "key": " Daman & Diu",
+                "val": "Konkani, Marathi and Gujarati"
+            },
+            {
+                "key": " Lakshadweep",
+                "val": "English"
+            },
+            {
+                "key": " Puducherry",
+                "val": "Tamil, Telugu and Malayalam"
+            },
+            {
+                "key": "Delhi",
+                "val": "Hindi"
+            }
+        ]
+    }
+}
