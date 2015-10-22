@@ -3,7 +3,7 @@
     "name": "WP-CLI",
     "description": "WordPress Command Line Interface",
     "metadata": {
-        "sourceName": "WP-CLI Commands",
+        "sourceName": "WP-CLI",
         "sourceUrl": "http://wp-cli.org/"
     },
      "template_type": "terminal",
