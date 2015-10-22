@@ -1,0 +1,258 @@
+{
+    "id": "emacs_cheat_sheet",
+    "name": "Emacs",
+    "description": "Text Editor",
+    "metadata": {
+        "sourceName": "EmacsCheatSheet",
+        "sourceUrl": "http://www.rgrjr.com/emacs/emacs_cheat.html"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Lingo",
+        "Quick Answers",
+        "Cursor Motion",
+        "Editing",
+        "Scrolling and Windows",
+        "Cutting and Pasting",
+        "Files and Buffers",
+        "Command-Related Stuff",
+        "Searching and Replacing",
+        "Help",
+	"Misc"
+    ],
+    "sections": {
+    	"Lingo": [{
+	    "val": "control key (CTRL)",
+	    "key": "C"
+	}, {
+	    "val": "meta key (ALT or ESC)",
+	    "key": "M"
+	}],
+        "Quick Answers": [{
+	    "val": "find file",
+	    "key": "[C-x], [C-f]"
+	}, {
+	    "val": "save file",
+	    "key": "[C-x], [C-s]"
+	}, {
+	    "val": "exit Emacs",
+	    "key": "[C-x], [C-c]"
+	}],
+        "Cursor Motion": [{
+            "val": "Move forward by a character",
+            "key": "C-f"
+        }, {
+            "val": "Move backward by a character",
+            "key": "C-b"
+        }, {
+            "val": "Move forward by a word",
+            "key": "M-f"
+        }, {
+            "val": "Move backward by a word",
+            "key": "M-b"
+        }, {
+            "val": "Move forward by a line",
+            "key": "C-n"
+        }, {
+            "val": "Move backward by a line",
+            "key": "C-p"
+        }, {
+            "val": "Move forward by a sentence",
+            "key": "M-e"
+        }, {
+            "val": "Move backward by a sentence",
+            "key": "M-a"
+        }, {
+            "val": "Move forward by a paragraph",
+            "key": "M-}"
+        }, {
+            "val": "Move backward by a paragraph",
+            "key": "M-{"
+        }, {
+            "val": "Move forward by an expression",
+            "key": "C-M-f"
+        }, {
+            "val": "Move backward by an expression",
+            "key": "C-M-b"
+        }, {
+            "val": "Move to the start of a line",
+            "key": "C-a"
+        }, {
+            "val": "Move to the end of a line",
+            "key": "C-e"
+        }, {
+            "val": "Move to the start of a buffer",
+            "key": "M-<"
+        }, {
+            "val": "Move to the end of a buffer",
+            "key": "M->"
+        }, {
+            "val": "Go to line number #",
+            "key": "[M-g], [g], [#]"
+        }],
+        "Editing": [{
+            "val": "Delete a character (forward)",
+            "key": "C-d"
+        }, {
+            "val": "Delete a character (backward)",
+            "key": "DEL"
+        }, {
+            "val": "Delete a word (forward)",
+            "key": "M-d"
+        }, {
+            "val": "Delete a word (backward)",
+            "key": "M-DEL"
+        }, {
+            "val": "Delete a line (forward)",
+            "key": "C-k"
+        }, {
+            "val": "Delete a line (backward)",
+            "key": "[C-SPC], [C-a], [C-w]"
+        }, {
+            "val": "Delete a sentence (forward)",
+            "key": "M-k"
+        }, {
+            "val": "Delete a sentence (backward)",
+            "key": "[C-x], [DEL]"
+        }, {
+            "val": "Delete an expression (forward)",
+            "key": "C-M-k"
+        }, {
+            "val": "Delete an expression (backward)",
+            "key": "C-M-DEL"
+        }],
+        "Scrolling and Windows": [{
+            "val": "Page Down",
+            "key": "C-v"
+        }, {
+            "val": "Page Up",
+            "key": "M-v"
+        }, {
+            "val": "Page Down other window",
+            "key": "C-M-v"
+        }, {
+            "val": "Make current window only window",
+            "key": "[C-x], [1]"
+        }, {
+            "val": "Split window vertically",
+            "key": "[C-x], [2]"
+        }, {
+            "val": "Split window horizontally",
+            "key": "[C-x], [3]"
+        }, {
+            "val": "Grow window vertically",
+            "key": "[C-x], [^]"
+        }, {
+            "val": "Switch to next window",
+            "key": "[C-x], [o]"
+        }, {
+            "val": "Close current window",
+            "key": "[C-x], [0]"
+        }],
+        "Cutting and Pasting": [{
+            "val": "Set mark",
+            "key": "C-SPC"
+        }, {
+            "val": "Cut (after setting mark and moving to end point)",
+            "key": "C-w"
+        }, {
+            "val": "Copy (after setting mark and moving to end point)",
+            "key": "M-w"
+        }, {
+            "val": "Yank (paste) most recently killed (cut or copied)",
+            "key": "C-y"
+        }, {
+            "val": "Yank next most recently killed",
+            "key": "M-y"
+        }],
+        "Files and Buffers": [{
+            "val": "Find file (or create if not existing)",
+            "key": "[C-x], [C-f]"
+        }, {
+            "val": "Save file",
+            "key": "[C-x], [C-s]"
+        }, {
+            "val": "Write file",
+            "key": "[C-x], [C-w]"
+        }, {
+            "val": "Save modified buffers",
+            "key": "[C-x], [s]"
+        }, {
+            "val": "Select buffer",
+            "key": "[C-x], [b]"
+        }, {
+            "val": "List buffers",
+            "key": "[C-x], [C-b]"
+        }, {
+            "val": "Kill buffer",
+            "key": "[C-x], [k]"
+        }],
+        "Command-Related Stuff": [{
+            "val": "Leave current location",
+            "key": "[ESC], [ESC], [ESC]"
+        }, {
+            "val": "Prefix numeric argument # to next command",
+            "key": "[C-u], [#]"
+        }, {
+            "val": "Stop running command, or cancel partially entered command",
+            "key": "C-g"
+        }],
+        "Searching and Replacing": [{
+            "val": "Incremental search forward",
+            "key": "C-s"
+        }, {
+            "val": "Incremental search backward",
+            "key": "C-r"
+        }, {
+            "val": "Regexp search forward",
+            "key": "C-M-s"
+        }, {
+            "val": "Regexp search backward",
+            "key": "C-M-r"
+        }, {
+            "val": "String replace from here to end of buffer",
+            "key": "[M-x], [<replace-string>], [RET]"
+        }, {
+            "val": "String replace from here to end of buffer, querying for each occurrence",
+            "key": "[M-x], [<query-replace>], [RET]"
+        }, {
+            "val": "Prompts for a grep command, shows hits in a buffer",
+            "key": "[M-x], [<grep>], [RET]"
+        }, {
+            "val": "Visit next grep hit",
+            "key": "[C-x], [`]"
+        }],
+        "Help": [{
+            "val": "Show command documentation",
+            "key": "[C-h], [k]"
+        }, {
+            "val": "\"Command apropos\"",
+            "key": "[C-h], [a]"
+        }, {
+            "val": "Show command name on message line",
+            "key": "[C-h], [c]"
+        }, {
+            "val": "Describe function",
+            "key": "[C-h], [f]"
+        }, {
+            "val": "Info browser",
+            "key": "[C-h], [i]"
+        }],
+        "Misc": [{
+            "val": "Undo/redo",
+            "key": "C-_"
+        }, {
+            "val": "Undo/redo (alternative)",
+            "key": "[C-x], [u]"
+        }, {
+            "val": "Quoted insert",
+            "key": "C-q"
+        }, {
+            "val": "Suspend/iconify emacs (type \"%emacs\" to return",
+            "key": "C-z"
+        }, {
+            "val": "Exit emacs",
+            "key": "[C-x], [C-c]"
+        }]
+    }
+}

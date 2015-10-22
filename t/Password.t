@@ -10,30 +10,6 @@ zci is_cached   => 0;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Password)],
-    'random password weak 5' => test_zci(
-        qr/.{5} \(random password\)/,
-        structured_answer => {
-            input     => ['5 characters', 'low strength'],
-            operation => 'Random password',
-            result    => qr/^.{5}$/
-        }
-    ),
-    'password 5 EaSy' => test_zci(
-        qr/.{5} \(random password\)/,
-        structured_answer => {
-            input     => ['5 characters', 'low strength'],
-            operation => 'Random password',
-            result    => qr/^.{5}$/
-        }
-    ),
-    'password low 5' => test_zci(
-        qr/.{5} \(random password\)/,
-        structured_answer => {
-            input     => ['5 characters', 'low strength'],
-            operation => 'Random password',
-            result    => qr/^.{5}$/
-        }
-    ),
     'pw 15 average' => test_zci(
         qr/.{15} \(random password\)/,
         structured_answer => {
@@ -91,6 +67,95 @@ ddg_goodie_test(
             result    => qr/^.{8}$/
         }
     ),
+    'password strong 15' => test_zci(
+        qr/.{15} \(random password\)/,
+        structured_answer => {
+            input     => ['15 characters', 'high strength'],
+            operation => 'Random password',
+            result    => qr/^.{15}$/
+        }
+    ),
+    'pw' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'average strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
+    # Add some triggers (issue  #1565)
+    'generate password' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'average strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
+    'generate strong password' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'high strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
+    'generate random password' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'average strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
+    'password generator' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'average strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
+    'random password generator' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'average strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
+    'random strong password' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'high strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
+    'random password 16 characters' => test_zci(
+        qr/.{16} \(random password\)/,
+        structured_answer => {
+            input     => ['16 characters', 'average strength'],
+            operation => 'Random password',
+            result    => qr/^.{16}$/
+        }
+    ),
+    'create random password' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'average strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
+    'strong random password' => test_zci(
+        qr/.{8} \(random password\)/,
+        structured_answer => {
+            input     => ['8 characters', 'high strength'],
+            operation => 'Random password',
+            result    => qr/^.{8}$/
+        }
+    ),
     'random password strong 15' => test_zci(
         qr/.{15} \(random password\)/,
         structured_answer => {
@@ -99,23 +164,18 @@ ddg_goodie_test(
             result    => qr/^.{15}$/
         }
     ),
-    'password 15' => test_zci(
-        qr/.{15} \(random password\)/,
-        structured_answer => {
-            input     => ['15 characters', 'average strength'],
-            operation => 'Random password',
-            result    => qr/^.{15}$/
-        }
-    ),
-    'password 33' => test_zci(
-        qr/.{33} \(random password\)/,
-        structured_answer => {
-            input     => ['33 characters', 'average strength'],
-            operation => 'Random password',
-            result    => qr/^.{33}$/
-        }
-    ),
     'password 65' => undef,
+    'random password weak 5' => undef,
+    'password 5 EaSy' => undef,
+    'password low 5' => undef,
+    'generate generate password' => undef,
+    'password pw' => undef,
+    'password fortissimo' => undef,
+    'nice random password' => undef,
+    'excavate strong password' => undef,
+    'not another strong pw' => undef,
+    'generator' => undef,
+    'potatoe generator' => undef
 );
 
 done_testing

@@ -1,0 +1,358 @@
+{
+    "id": "nikto_cheat_sheet",
+    "name": "Nikto",
+    "description": "A Nikto is a perl based vulnerability scanner that scan webservers for thousand of vulnerabilities and other known issues",
+    "metadata": {
+        "sourceName": "r00tsec",
+        "sourceUrl": "http://www.r00tsec.com/2014/06/cheatsheet-nikto-cheat-sheet.html"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Installation",
+        "Display Options",
+        "Evasion Options",
+        "Tuning",
+        "Mutate Options",
+        "Output File Format",
+        "Basic Options",
+        "Advanced Options"
+    ],
+    "sections": {
+        "Installation": [
+            {
+                "val": "Install Nikto on Ubuntu",
+                "key": "sudo apt-get install nikto"
+            },
+            {
+                "val": "Install Nikto on windows (On windows first install the perl interpreter)",
+                "key": "C:\\pentest\\nikto-2.1.5>perl nikto.pl -h example.com"
+            },
+            {
+                "val": "Basic Usage",
+                "key": "nikto -host example.com -port 8080"
+            }
+        ],
+        "Display Options": [
+            {
+                "val": "Show redirects",
+                "key": "1"
+            },
+            {
+                "val": "Show cookies received",
+                "key": "2"
+            },
+            {
+                "val": "Show all 200/OK responses",
+                "key": "3"
+            },
+            {
+                "val": "Show URLs which require authentication",
+                "key": "4"
+            },
+            {
+                "val": "Debug Output",
+                "key": "D"
+            },
+            {
+                "val": "Display all HTTP errors",
+                "key": "E"
+            },
+            {
+                "val": "Print progress to STDOUT",
+                "key": "P"
+            },
+            {
+                "val": "Scrub output of IPs and hostnames",
+                "key": "S"
+            },
+            {
+                "val": "Verbose Output",
+                "key": "V"
+            }
+        ],
+        "Evasion Options": [
+            {
+                "val": "Random URI encoding (non-UTF8)",
+                "key": "1"
+            },
+            {
+                "val": "Directory self-reference (/./)",
+                "key": "2"
+            },
+            {
+                "val": "Premature URL ending",
+                "key": "3"
+            },
+            {
+                "val": "Prepend long random string",
+                "key": "4"
+            },
+            {
+                "val": "Fake parameter",
+                "key": "5"
+            },
+            {
+                "val": "TAB as request spacer",
+                "key": "6"
+            },
+            {
+                "val": "Change the case of the URL",
+                "key": "7"
+            },
+            {
+                "val": "Use Windows directory separator",
+                "key": "8"
+            },
+            {
+                "val": "Use a carriage return (0x0d) as a request spacer",
+                "key": "A"
+            },
+            {
+                "val": "Use binary value 0x0b as a request spacer",
+                "key": "B"
+            }
+        ],
+        "Tuning": [
+            {
+                "val": "File Upload",
+                "key": "0"
+            },
+            {
+                "val": "Interesting File / Seen in logs",
+                "key": "1"
+            },
+            {
+                "val": "Misconfiguration / Default File",
+                "key": "2"
+            },
+            {
+                "val": "Information Disclosure",
+                "key": "3"
+            },
+            {
+                "val": "Injection (XSS/Script/HTML)",
+                "key": "4"
+            },
+            {
+                "val": "Remote File Retrieval - Inside Web Root",
+                "key": "5"
+            },
+            {
+                "val": "Denial of Service",
+                "key": "6"
+            },
+            {
+                "val": "Remote File Retrieval - Server Wide",
+                "key": "7"
+            },
+            {
+                "val": "Command Execution / Remote Shell",
+                "key": "8"
+            },
+            {
+                "val": "SQL Injection",
+                "key": "9"
+            },
+            {
+                "val": "Authentication Bypass",
+                "key": "a"
+            },
+            {
+                "val": "Software Identification",
+                "key": "b"
+            },
+            {
+                "val": "Remote Source Inclusion",
+                "key": "c"
+            },
+             {
+                "val": "Reverse Tuning Options (i.e., include all except specified)",
+                "key": "x"
+            }
+        ],
+        "Mutate Options": [
+            {
+                "val": "Test all files with all root directories",
+                "key": "1"
+            },
+            {
+                "val": "Guess for password file names",
+                "key": "2"
+            },
+            {
+                "val": "Enumerate user names via Apache (/~user type requests)",
+                "key": "3"
+            },
+            {
+                "val": "Enumerate user names via cgiwrap (/cgi-bin/cgiwrap/~user type requests)",
+                "key": "4"
+            },
+            {
+                "val": "Attempt to brute force sub-domain names, assume that the host name is the parent domain",
+                "key": "5"
+            },
+            {
+                "val": "Attempt to guess directory names from the supplied dictionary file",
+                "key": "6"
+            }
+        ],
+        "Output File Format": [
+            {
+                "val": "To save file with file extension",
+                "key": "Use –o (-output) option"
+            },
+            {
+                "val": "Comma-separated-value",
+                "key": "csv"
+            },
+            {
+                "val": "HTML Format",
+                "key": "htm"
+            },
+            {
+                "val": "Log to Metasploit",
+                "key": "msf"
+            },
+            {
+                "val": "Nessus NBE format",
+                "key": "nbe"
+            },
+            {
+                "val": "Plain text",
+                "key": "txt"
+            },
+            {
+                "val": "XML Format",
+                "key": "xml"
+            }
+        ],
+        "Basic Options": [
+            {
+                "val": "Host(s) to target (Can be an IP address, hostname or text file of hosts)",
+                "key": "-host"
+            },
+            {
+                "val": "Specify the Host header to be sent to the target",
+                "key": "-vhost"
+            },
+            {
+                "val": "Specify Port Number",
+                "key": "-port"
+            },
+            {
+                "val": "Only test SSL on the ports specified",
+                "key": "-ssl"
+            },
+            {
+                "val": "Save Request & Response Headers",
+                "key": "-save"
+            },
+            {
+                "val": "Can be replayed with",
+                "key": "replay.pl"
+            },
+            {
+                "val": "Use the HTTP proxy defined in the configuration file",
+                "key": "-useproxy"
+            },
+            {
+                "val": "Maximum testing time per host secs",
+                "key": "-maxtime"
+            },
+            {
+                "val": "Display extended help information",
+                "key": "-H or –h"
+            },
+            {
+                "val": "Run for specified time or duration",
+                "key": "-until"
+            },
+             {
+                "val": "Update the plugins and databases directly from cirt.net",
+                "key": "-update"
+            },
+             {
+                "val": "Check the scan databases for syntax errors",
+                "key": "-dbcheck"
+            },
+             {
+                "val": "Specify an alternative config file to use instead of the Nikto.conf file located in the install directory",
+                "key": "-config"
+            },
+            {
+                "val": "Display the Nikto software, plugin and database versions",
+                "key": "-Version"
+            }
+        ],
+        "Advanced Options": [
+            {
+                "val": "Disables SSL",
+                "key": "-nossl"
+            },
+            {
+                "val": "Force SSL",
+                "key": "-ssl"
+            },
+            {
+                "val": "Disables 404 Guessing",
+                "key": "-no404"
+            },
+            {
+                "val": "Host authentication",
+                "key": "-id (Format is 'id:password')"
+            },
+            {
+                "val": "Client certificate key file",
+                "key": "-key"
+            },
+            {
+                "val": "Whether to ask about submitting updates",
+                "key": "-ask"
+            },
+            {
+                "val": "Scan these CGI directories",
+                "key": "-Cgidirs"
+            },
+            {
+                "val": "Only discover the HTTP(S) ports, do not perform a security scan",
+                "key": "–findonly"
+            },
+            {
+                "val": "Ignore these HTTP codes as negative responses (always)",
+                "key": "–IgnoreCode(Format is '302,301')"
+            },
+            {
+                "val": "All plugins that Nikto can run against targets and then will exit without performing a scan",
+                "key": "-list-plugins"
+            },
+            {
+                "val": "Do not perform name lookups on IP addresses",
+                "key": "-nolookup"
+            },
+            {
+                "val": "Disable response cache",
+                "key": "-nocache"
+            },
+            {
+                "val": "Disable interactive features",
+                "key": "–nointeractive"
+            },
+            {
+                "val": "Seconds (integer or floating point) to delay between each test",
+                "key": "-Pause"
+            },
+            {
+                "val": "Prepend the value specified to the beginning of every request",
+                "key": "-root"
+            },
+            {
+                "val": "Seconds to wait before timing out a request",
+                "key": "-timeout"
+            },
+            {
+                "val": "Load user defined databases instead of standard databases",
+                "key": "-userdbs"
+            }
+        ]
+    }
+}

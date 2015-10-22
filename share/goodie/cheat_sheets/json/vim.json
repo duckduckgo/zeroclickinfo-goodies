@@ -1,0 +1,324 @@
+{
+    "id": "vim_cheat_sheet",
+    "name": "Vim",
+    "description": "Text Editor",
+    "metadata": {
+        "sourceName": "VimCheatSheet",
+        "sourceUrl": "http://vim.rtorr.com"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Cursor movement",
+        "Insert mode - inserting/appending text",
+        "Editing",
+        "Marking text (visual mode)",
+        "Visual commands",
+        "Cut and paste",
+        "Exiting",
+        "Search and replace",
+        "Working with multiple files",
+        "Tabs",
+        "Miscellaneous"
+    ],
+    "sections": {
+        "Tabs": [{
+            "val": "move to tab number #",
+            "key": "#gt"
+        }, {
+            "val": "move the current split window into its own tab",
+            "key": "[Ctrl] [wt]"
+        }, {
+            "val": "move current tab to the #th position (indexed from 0)",
+            "key": ":tabmove #"
+        }, {
+            "val": "open a file in a new tab",
+            "key": "[:tabnew filename] [:tabn filename]"
+        }, {
+            "val": "close the current tab and all its windows",
+            "key": "[:tabclose] / [:tabc]"
+        }, {
+            "val": "close all tabs except for the current one",
+            "key": "[:tabonly] / [:tabo]"
+        }, {
+            "val": "move to the next tab",
+            "key": "[gt] [:tabnext] [:tabn]"
+        }, {
+            "val": "move to the previous tab",
+            "key": "[gT] [:tabprev] [:tabp]"
+        }],
+        "Editing": [{
+            "val": "replace a single character",
+            "key": "r"
+        }, {
+            "val": "join line below to the current one",
+            "key": "J"
+        }, {
+            "val": "change (replace) entire line",
+            "key": "cc"
+        }, {
+            "val": "change (replace) to the end of the word",
+            "key": "cw"
+        }, {
+            "val": "change (replace) to the end of the line",
+            "key": "c$"
+        }, {
+            "val": "delete character and substitute text",
+            "key": "s"
+        }, {
+            "val": "delete line and substitute text (same as cc)",
+            "key": "S"
+        }, {
+            "val": "transpose two letters (delete and paste)",
+            "key": "xp"
+        }, {
+            "val": "undo",
+            "key": "u"
+        }, {
+            "val": "redo",
+            "key": "[Ctrl] [r]"
+        }, {
+            "val": "repeat last command",
+            "key": "."
+        }],
+        "Exiting": [{
+            "val": "write (save) the file, but don't exit",
+            "key": ":w"
+        }, {
+            "val": "write (save) and quit",
+            "key": ":wq"
+        }, {
+            "val": "write (save) and quit",
+            "key": ":x"
+        }, {
+            "val": "quit (fails if there are unsaved changes)",
+            "key": ":q"
+        }, {
+            "val": "quit and throw away unsaved changes",
+            "key": ":q!"
+        }],
+        "Insert mode - inserting/appending text": [{
+            "val": "insert before the cursor",
+            "key": "i"
+        }, {
+            "val": "insert at the beginning of the line",
+            "key": "I"
+        }, {
+            "val": "insert (append) after the cursor",
+            "key": "a"
+        }, {
+            "val": "insert (append) at the end of the line",
+            "key": "A"
+        }, {
+            "val": "append (open) a new line below the current line",
+            "key": "o"
+        }, {
+            "val": "append (open) a new line above the current line",
+            "key": "O"
+        }, {
+            "val": "insert (append) at the end of the word",
+            "key": "ea"
+        }, {
+            "val": "exit insert mode",
+            "key": "Esc"
+        }],
+        "Cut and paste": [{
+            "val": "yank (copy) a line",
+            "key": "yy"
+        }, {
+            "val": "yank (copy) 2 lines",
+            "key": "2yy"
+        }, {
+            "val": "yank (copy) word",
+            "key": "yw"
+        }, {
+            "val": "yank (copy) to end of line",
+            "key": "y$"
+        }, {
+            "val": "put (paste) the clipboard after cursor",
+            "key": "p"
+        }, {
+            "val": "put (paste) before cursor",
+            "key": "P"
+        }, {
+            "val": "delete (cut) a line",
+            "key": "dd"
+        }, {
+            "val": "delete (cut) 2 lines",
+            "key": "2dd"
+        }, {
+            "val": "delete (cut) word",
+            "key": "dw"
+        }, {
+            "val": "delete (cut) to the end of the line",
+            "key": "D"
+        }, {
+            "val": "delete (cut) to the end of the line",
+            "key": "d$"
+        }, {
+            "val": "delete (cut) character",
+            "key": "x"
+        }],
+        "Marking text (visual mode)": [{
+            "val": "start visual mode, mark lines, then do a command (like y-yank)",
+            "key": "v"
+        }, {
+            "val": "start linewise visual mode",
+            "key": "V"
+        }, {
+            "val": "move to other end of marked area",
+            "key": "o"
+        }, {
+            "val": "start visual block mode",
+            "key": "[Ctrl] [v]"
+        }, {
+            "val": "move to other corner of block",
+            "key": "O"
+        }, {
+            "val": "mark a word",
+            "key": "aw"
+        }, {
+            "val": "a block with ()",
+            "key": "ab"
+        }, {
+            "val": "a block with {}",
+            "key": "aB"
+        }, {
+            "val": "inner block with ()",
+            "key": "ib"
+        }, {
+            "val": "inner block with {}",
+            "key": "iB"
+        }, {
+            "val": "exit visual mode",
+            "key": "Esc"
+        }],
+        "Working with multiple files": [{
+            "val": "edit a file in a new buffer",
+            "key": ":e filename"
+        }, {
+            "val": "go to the next buffer",
+            "key": "[:bnext] / [:bn]"
+        }, {
+            "val": "go to the previous buffer",
+            "key": "[:bprev] / [:bp]"
+        }, {
+            "val": "delete a buffer (close a file)",
+            "key": ":bd"
+        }, {
+            "val": "open a file in a new buffer and split window",
+            "key": ":sp filename"
+        }, {
+            "val": "open a file in a new buffer and vertically split window",
+            "key": ":vsp filename"
+        }, {
+            "val": "split window",
+            "key": "[Ctrl] [ws]"
+        }, {
+            "val": "switch windows",
+            "key": "[Ctrl] [ww]"
+        }, {
+            "val": "quit a window",
+            "key": "[Ctrl] [wq]"
+        }, {
+            "val": "split window vertically",
+            "key": "[Ctrl] [wv]"
+        }, {
+            "val": "move cursor to next buffer (right)",
+            "key": "[Ctrl] [wh]"
+        }, {
+            "val": "move cursor to previous buffer (left)",
+            "key": "[Ctrl] [wl]"
+        }],
+        "Cursor movement": [{
+            "val": "move cursor left",
+            "key": "h"
+        }, {
+            "val": "move cursor down",
+            "key": "j"
+        }, {
+            "val": "move cursor up",
+            "key": "k"
+        }, {
+            "val": "move cursor right",
+            "key": "l"
+        }, {
+            "val": "jump forwards to the start of a word",
+            "key": "w"
+        }, {
+            "val": "jump forwards to the start of a word (words can contain punctuation)",
+            "key": "W"
+        }, {
+            "val": "jump forwards to the end of a word",
+            "key": "e"
+        }, {
+            "val": "jump forwards to the end of a word (words can contain punctuation)",
+            "key": "E"
+        }, {
+            "val": "jump backwards to the start of a word",
+            "key": "b"
+        }, {
+            "val": "jump backwards to the start of a word (words can contain punctuation)",
+            "key": "B"
+        }, {
+            "val": "jump to the start of the line",
+            "key": "0"
+        }, {
+            "val": "jump to the first non-blank character of the line",
+            "key": "^"
+        }, {
+            "val": "jump to the end of the line",
+            "key": "$"
+        }, {
+            "val": "go to the last line of the document",
+            "key": "G"
+        }, {
+            "val": "go to line 5",
+            "key": "5G"
+        }, {
+            "val": "To the position before the latest jump, / where the last \"m'\" / \"m`\" command was given.",
+            "key": "''"
+        }],
+        "Visual commands": [{
+            "val": "shift text right",
+            "key": ">"
+        }, {
+            "val": "shift text left",
+            "key": "<"
+        }, {
+            "val": "yank (copy) marked text",
+            "key": "y"
+        }, {
+            "val": "delete marked text",
+            "key": "d"
+        }, {
+            "val": "switch case",
+            "key": "~"
+        }],
+        "Search and replace": [{
+            "val": "search for word under cursor",
+            "key": "*"
+        }, {
+            "val": "search for pattern",
+            "key": "/pattern"
+        }, {
+            "val": "search backward for pattern",
+            "key": "?pattern"
+        }, {
+            "val": "repeat search in same direction",
+            "key": "n"
+        }, {
+            "val": "repeat search in opposite direction",
+            "key": "N"
+        }, {
+            "val": "replace all old with new throughout file",
+            "key": ":%s/old/new/g"
+        }, {
+            "val": "replace all old with new throughout file with confirmations",
+            "key": ":%s/old/new/gc"
+        }],
+        "Miscellaneous": [{
+            "val": "create html representation of current working buffer",
+            "key": ":%TOhtml"
+        }]
+    }
+}
