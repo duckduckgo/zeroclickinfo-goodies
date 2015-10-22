@@ -35,6 +35,10 @@
             
         ],
         "Plugin Management" : [
+            {
+                "key": "wp plugin install hello-dolly",
+                "val": "Installs Hello Dolly plugin from wordpress.org"
+            }
             
         ]
     }
