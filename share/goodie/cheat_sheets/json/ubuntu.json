@@ -1,11 +1,20 @@
 {
+<<<<<<< HEAD:share/goodie/cheat_sheets/json/ubuntu.json
     "id": "ubuntu_cheat_sheet",
     "name": "Linux Ubuntu",
     "description": "Ubuntu Reference",
+=======
+    "id": "ubuntu_unity_cheat_sheet",
+    "name": "Ubuntu Unity Cheat Sheet",
+    "description": "Ubuntu Unity Reference",
+>>>>>>> 53e040940a35f898373295d5a7da63dac441eb79:share/goodie/cheat_sheets/ubuntu.json
     "metadata": {
-        "sourceName": "Ubuntu",
+        "sourceName": "Ubuntu Unity",
         "sourceUrl": "http://www.cheat-sheets.org/saved-copy/ubunturef.pdf"
     },
+     "aliases": [
+        "ubuntu unity", "unity ubuntu cheat sheet", "unity ubuntu"
+    ],
     "section_order": [
         "Privileges",
         "Display",
