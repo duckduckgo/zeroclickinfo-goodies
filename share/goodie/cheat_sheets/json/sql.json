@@ -36,19 +36,12 @@
             "key":"DROP TABLE",
             "val":"Remove a table"
          },
-         
-         {  
-            "key":"CREATE DATABASE",
-            "val":"Create a new database"
-         },
+        
          {  
             "key":"CREATE INDEX",
             "val":"Define a new index"
          },
-         {  
-            "key":"DROP DATABASE",
-            "val":"Remove a database"
-         },
+         
          {  
             "key":"DROP INDEX",
             "val":"Remove an index"
