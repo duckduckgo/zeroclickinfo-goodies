@@ -1,0 +1,41 @@
+{
+    "id": "wp_cli_cheat_sheet",
+    "name": "WP-CLI",
+    "description": "WordPress Command Line Interface",
+    "metadata": {
+        "sourceName": "WP-CLI Commands",
+        "sourceUrl": "http://wp-cli.org/"
+    },
+     "template_type": "terminal",
+    "section_order": [
+        "Installing",
+        "Core Commands",
+        "Plugin Management"
+    ],
+    "sections": {
+        "Installing": [
+            {
+                "key": "curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar",
+                "val": "Downloads wp-cli.phar."
+            },
+            {
+                "key": "chmod +x wp-cli.phar",
+                "val": "Changes file access permissions to executable."
+            },
+            {
+                "key": "sudo mv wp-cli.phar /usr/local/bin/wp",
+                "val": "Moves wp-cli.phar to PATH."
+            },
+            {
+                "key": "wp --info",
+                "val": "Verify that wp-cli has been successfully installed."
+            }
+        ],
+        "Core Commands": [
+            
+        ],
+        "Plugin Management" : [
+            
+        ]
+    }
+}
