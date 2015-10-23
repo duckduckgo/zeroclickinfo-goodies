@@ -9,6 +9,9 @@
      "aliases": [
         "ubuntu unity", "unity ubuntu cheat sheet", "unity ubuntu"
     ],
+    
+    "template_type": "keyboard",
+
     "section_order": [
         "Privileges",
         "Display",
@@ -64,15 +67,6 @@
         }, {
             "val": "Reset xorg.conf configuration",
             "key": "sudo dexconf"
-        }, {
-            "val": "Restart X display if frozen",
-            "key": "[Ctrl] [Alt] [Backspace]"
-        }, {
-            "val": "Switch to TTY N",
-            "key": "[Ctrl] [Alt] [Fn]"
-        }, {
-            "val": "Switch back to X display",
-            "key": "[Ctrl] [Alt] [F7]"
         }],
         "System Services": [{
             "val": "Start job service (Upstart)",
