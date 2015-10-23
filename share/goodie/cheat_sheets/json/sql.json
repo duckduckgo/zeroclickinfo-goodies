@@ -1,5 +1,5 @@
 {  
-   "id":"sql_statements",
+   "id":"sql_cheat_sheet",
    "name":"SQL Statements",
    "description":"SQL is a standard language for accessing and manipulating databases.",
    "metadata":{  
@@ -16,7 +16,7 @@
    ],
    "aliases":[  
       "sql statements",
-       "sql tutorial"
+       "sql commands"
    ],
    "sections":{  
       "Data Definition Language (DDL) Commands":[  
