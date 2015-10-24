@@ -192,7 +192,7 @@
             "val":"To sort the records in the result based on a column"
          },
          {  
-            "key":" IS NULL",
+            "key":"IS NULL",
             "val":"To test for a NULL value in a column"
          },
          {  
