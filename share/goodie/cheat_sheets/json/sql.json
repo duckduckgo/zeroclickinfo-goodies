@@ -8,12 +8,13 @@
    },
    "template_type":"reference",
    "section_order":[  
-      "Data Definition Language (DDL) Commands",
       "Data Manipulation Language (DML) Commands",
+      "Data Definition Language (DDL) Commands",
       "Aggregate Functions",
-      "Scalar Functions",
+      "Arguments Used with Commands",
       "SQL Constraints",
-      "Arguments Used with Commands"
+      "Scalar Functions"
+      
    ],
    "aliases":[  
       "sql statements",
@@ -27,7 +28,7 @@
          },
          {  
             "key":"ALTER TABLE",
-            "val":"Change a database"
+            "val":"Modifies a table definition"
          },
          {  
             "key":"CREATE VIEW",
@@ -189,6 +190,10 @@
          {  
             "key":"ORDER BY",
             "val":"To sort the records in the result based on a column"
+         },
+         {  
+            "key":" IS NULL",
+            "val":"To test for a NULL value in a column"
          },
          {  
             "key":"INNER JOIN",
