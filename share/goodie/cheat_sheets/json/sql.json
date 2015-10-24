@@ -3,14 +3,15 @@
    "name":"SQL Statements",
    "description":"SQL is a standard language for accessing and manipulating databases.",
    "metadata":{  
-      "sourceName":"cheat-sheets",
-      "sourceUrl":"http://www.cheat-sheets.org/sites/sql.su/"
+      "sourceName":"w3schools",
+      "sourceUrl":"http://www.w3schools.com/SQL/sql_quickref.asp"
    },
    "template_type":"reference",
    "section_order":[  
       "Data Definition Language (DDL) Commands",
       "Data Manipulation Language (DML) Commands",
       "Aggregate Functions",
+      "Scalar Functions",
       "SQL Constraints",
       "Arguments Used with Commands"
    ],
@@ -57,7 +58,7 @@
          }
         
       ],
-       "Data Manipulation Language (DML)Commands":[
+       "Data Manipulation Language (DML) Commands":[
            
            {  
             "key":"SELECT",
@@ -83,7 +84,7 @@
          
          
       ],
-      "SQL Functions":[
+      "Aggregate Functions":[
          {
             "key":"AVG()",
             "val":"Returns the average value of a numeric column"
@@ -103,6 +104,37 @@
          {
             "key":"SUM()",
             "val":"Returns the total sum of a numeric column"
+         }
+      ],
+      "Scalar Functions":[
+         {  
+            "key":"UCASE()",
+            "val":"Converts a field to upper case"
+         },
+         {  
+            "key":"LCASE()",
+            "val":"Converts a field to lower case"
+         },
+         {  
+            "key":"MID()",
+            "val":"Extract characters from a text field"
+         },
+         {  
+            "key":"LEN()",
+            "val":"Returns the length of a text field"
+         },
+         
+         {  
+            "key":"ROUND()",
+            "val":"Rounds a numeric field to the number of decimals specified"
+         },
+         {  
+            "key":"NOW()",
+            "val":"Returns the current system date and time"
+         },
+         {  
+            "key":"FORMAT()",
+            "val":"Formats how a field is to be displayed"
          }
       ],
      "Arguments Used with Commands":[
