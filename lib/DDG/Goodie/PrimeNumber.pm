@@ -2,6 +2,7 @@ package DDG::Goodie::PrimeNumber;
 # ABSTRACT: generate prime numbers in the requested range.
 
 use DDG::Goodie;
+use Math::Prime::Util 'primes';
 use strict;
 use POSIX;
 
@@ -40,52 +41,19 @@ handle query_lc => sub {
     $e = 1          if $e <= 0;
     $e += 0;
     
-    my @sieve = (1) x ($e + 1);
-    my @primes = ();
-    my $p = 2;
-    my $j = 0;
+    my $pList = join(", ", @{primes($s, $e)});
     
-    while ($p * $p <= $e) {
-        $j = $p + $p;
-        while ($j <= $e) {
-            $sieve[$j] = 0;
-            $j += $p;
-        }
-        $p += 1;
-        while ($sieve[$p] == 0) {
-            $p += 1;
-        }
-    }
-    for ($p = $s; $p <= $e; $p++) {
-        if ($sieve[$p] == 1) {
-            push @primes, $p;
-        }
+    if ($pList eq "") {
+        $pList = "None";
     }
     
-    return "None",
+    return $pList,
       structured_answer => {
         input     => [$start, $end],
         operation => 'Prime numbers between',
-        result    => "None"
-      } unless @primes;
-      
-    if ($primes[0] == 1){
-        splice @primes, 0, 1;
-    }
-    
-    return "None",
-      structured_answer => {
-        input     => [$start, $end],
-        operation => 'Prime numbers between',
-        result    => "None"
-      } unless @primes;
-    
-    return join(", ", @primes),
-      structured_answer => {
-        input     => [$start, $end],
-        operation => 'Prime numbers between',
-        result    => join(", ", @primes)
+        result    => $pList
       };
 };
 
 1;
+
