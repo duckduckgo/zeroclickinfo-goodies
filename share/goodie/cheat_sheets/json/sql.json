@@ -3,14 +3,14 @@
    "name":"SQL Statements",
    "description":"SQL is a standard language for accessing and manipulating databases.",
    "metadata":{  
-      "sourceName":"sql",
-      "sourceUrl":"http://www.w3schools.com/sql"
+      "sourceName":"cheat-sheets",
+      "sourceUrl":"http://www.cheat-sheets.org/sites/sql.su/"
    },
    "template_type":"reference",
    "section_order":[  
       "Data Definition Language (DDL) Commands",
-      "Data Manipulation Language (DML)Commands",
-      "SQL Functions",
+      "Data Manipulation Language (DML) Commands",
+      "Aggregate Functions",
       "SQL Constraints",
       "Arguments Used with Commands"
    ],
