@@ -19,9 +19,6 @@ attribution github => ["jlbaez", "Jose Baez"];
 triggers startend => "magic eight ball", "magic 8 ball";
 
 handle remainder => sub {
-    # optional - regex guard
-    # return unless qr/^\w+/;
-
     return unless $_;
 
     #These are the standard responses found in a magic eight ball
