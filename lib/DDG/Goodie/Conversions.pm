@@ -91,14 +91,46 @@ handle query_lc => sub {
 
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
-    # But if the second unit is plural, assume we want the the implicit one on the first
+    # But if the second unit is plural, assume we want the the implicit one on the first 
     # It's always ambiguous when they are both countless and plural, so shouldn't be too bad.
+    # Compare factors of both units to ensure proper order when ambiguous
+    # also, check the <connecting_word> of regex for possible user intentions 
+    my @factor1 = (); # conversion factors, not left_num or right_num values
+    my @factor2 = ();
+    
+    # gets factors for comparison
+    foreach my $type (@types) {
+        if($+{'left_unit'} eq $type->{'unit'}) {
+            push(@factor1, $type->{'factor'});
+        }
+        
+        my @aliases1 = @{$type->{'aliases'}};
+        foreach my $alias1 (@aliases1) {
+            if($+{'left_unit'} eq $alias1) {
+                push(@factor1, $type->{'factor'});
+            }
+        }
+        
+        if($+{'right_unit'} eq $type->{'unit'}) {
+            push(@factor2, $type->{'factor'});
+        }
+        
+        my @aliases2 = @{$type->{'aliases'}};
+        foreach my $alias2 (@aliases2) {
+            if($+{'right_unit'} eq $alias2) {
+                push(@factor2, $type->{'factor'});
+            }
+        }
+    }
+
     if (
         "" ne $+{'right_num'}
         || (   "" eq $+{'left_num'}
             && "" eq $+{'right_num'}
             && $+{'question'} !~ qr/convert/i
-            && !looks_plural($+{'right_unit'})))
+            && !looks_plural($+{'right_unit'})
+            && $+{'connecting_word'} !~ qr/to/i
+            && $factor1[0] > $factor2[0]))
     {
         $factor = $+{'right_num'};
         @matches = ($matches[1], $matches[0]);
