@@ -8,15 +8,38 @@ use DDG::Test::Goodie;
 zci answer_type => "magic_eight_ball";
 zci is_cached   => 1;
 
+my $possibleAnswers = qr/(It is certain|It is decidedly so|Without a doubt|Yes, definitely|You may rely on it|As I see it, yes|Most likely|Outlook good|Yes|Signs point to yes|Reply hazy try again|Ask again later|Better not tell you now|Cannot predict now|Concentrate and ask again|Don't count on it|My reply is no|My sources say no|Outlook not so good|Very doubtful)/;
+
+my $possibleStructuredAnswer = qr/^(?:It is certain|It is decidedly so|Without a doubt|Yes, definitely|You may rely on it|As I see it, yes|Most likely|Outlook good|Yes|Signs point to yes|Reply hazy try again|Ask again later|Better not tell you now|Cannot predict now|Concentrate and ask again|Don't count on it|My reply is no|My sources say no|Outlook not so good|Very doubtful)$/;
+
 ddg_goodie_test(
     [qw( DDG::Goodie::MagicEightBall )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => test_zci('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    'magic eight ball is it going to rain today' => test_zci(
+        $possibleAnswers,
+        structured_answer => {
+            input     => ['is it going to rain today'],
+            operation => "Magic eight ball's answer to",
+            result    => $possibleStructuredAnswer,
+        }
+    ),
+    'magic 8 ball should I wear red today?' => test_zci(
+        $possibleAnswers,
+        structured_answer => {
+            input     => ['should I wear red today?'],
+            operation => "Magic eight ball's answer to",
+            result    => $possibleStructuredAnswer,
+        }
+    ),
+    'are you actually helpful magic eight ball' => test_zci(
+        $possibleAnswers,
+        structured_answer => {
+            input     => ['are you actually helpful'],
+            operation => "Magic eight ball's answer to",
+            result    => $possibleStructuredAnswer,
+        }
+    ),
+    'eight ball will this work?' => undef,
+    'Yes or no 8 ball' => undef
 );
 
 done_testing;
