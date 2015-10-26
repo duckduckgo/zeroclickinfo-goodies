@@ -1,19 +1,19 @@
 {
-    "id":"kabaddi_terms",
-    "name":"Kabaddi Terms and its definitions",
-    "description": "Kabaddi has some terms which are used during matches.",
+    "id":"kabaddi_terms_cheat_sheet",
+    "name":"Kabaddi Terms and Definitions",
+    "description": "Common terms used in kabaddi and their definitions.",
     "metadata": {
-        "sourceName": "Wikipedia",
-        "sourceUrl": "https://en.wikipedia.org/wiki/Kabaddi"
+        "sourceName": "ProKabaddi League",
+        "sourceUrl": "http://www.prokabaddi.com/prokabaddi-rules"
     },
     "aliases": ["kabaddi words", "kabaddi definitions", "words used in kabaddi", "terms used in kabaddi"],
     "template_type": "reference",
     "section_order": [
-        "Terms and its definitions-I",
-        "Terms and its definitions-II"
+        "Court related terms",
+        "Play related terms"
     ],
     "sections": {
-        "Terms and its definitions-I": [
+        "Court related terms": [
             {
                 "key": "Field of Play",
                 "val": "The area which shall be covered with the AKFI approved playing mats measuring a minimum of 17 meters x 18 meters and maximum of 20 meters x 20 meters."
@@ -50,6 +50,8 @@
                 "key": "Cant",
                 "val": "The repeated chanting of the approved word “Kabaddi”. The chanting should be without break, at a stretch, and clear aloud sounding."
             },
+        ],
+       "Play related terms": [
             {
                 "key": "Raider",
                 "val": "The player that enters into the opponents’ half court with the cant. The raider must begin his cant before he crosses the mid line to enter the opponents’ half court."
@@ -58,39 +60,37 @@
                 "key": "Defender",
                 "val": "Any player who is in his half court when the raider from the opponents’ side is raiding."
             }
-         ],
-       "Terms and its definitions-II": [
             {
                 "key": "To put out a Defender",
                 "val": "The defender being declared out when a raider touches the defender without any breach in rules of play, or if any part of the body of the defender touches any part of the raider, and then the raider touches his court with the cant."
             },
             {
                 "key": "To hold a Raider",
-                "val": "It means if the if the defender or defenders hold the raider without any breach in the rules of play and keep the raider in their court and do not allow him to reach his court until he loses his cant or the Referee/Umpire blows the whistle."
+                "val": "If the if the defender or defenders hold the raider without any breach in the rules of play and keep the raider in their court and do not allow him to reach his court until he loses his cant or the Referee/Umpire blows the whistle."
             },
             {
                 "key": "Touch",
-                "val": "It means if the raider touches any one or more defender by any part of his body including the defenders clothing, shoes and any other apparel he may be wearing."
+                "val": "If the raider touches any one or more defender by any part of his body including the defenders clothing, shoes and any other apparel he may be wearing."
             },
             {
                 "key": "Struggle",
-                "val": "It means when one of more defenders come into contact with the raider. After touch or struggle, the lobbies are activated and included as part of the court."
+                "val": "When one of more defenders come into contact with the raider. After touch or struggle, the lobbies are activated and included as part of the court."
             },
             {
                 "key": "Raid",
-                "val": "It means when the raider enters the court of opponent with cant. Each raid is restricted to 30 seconds (in both the halves). The clocks will be set / reset as raider crosses the center line or when the raid is over."
+                "val": "When the raider enters the court of opponent with cant. Each raid is restricted to 30 seconds (in both the halves). The clocks will be set / reset as raider crosses the center line or when the raid is over."
             },
             {
                 "key": "Empty Raid",
-                "val": "It means when the raider crosses the Baulk line of the defending team at least once during the course of a raid and returns to his court with cant without scoring any points."
+                "val": "When the raider crosses the Baulk line of the defending team at least once during the course of a raid and returns to his court with cant without scoring any points."
             },
             {
                 "key": "Pursuit",
-                "val": "It means when a defender rushes into the opponent’s court with cant, and without any breach in rules of play, chasing the returning raider with a view to touch."
+                "val": "When a defender rushes into the opponent’s court with cant, and without any breach in rules of play, chasing the returning raider with a view to touch."
             },
             {
                 "key": "Super Catch",
-                "val": "It means when the raider is successfully tackled by 3 defenders or less."
+                "val": "When the raider is successfully tackled by 3 defenders or less."
             }
         ]
     }
