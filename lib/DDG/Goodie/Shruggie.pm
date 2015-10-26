@@ -99,7 +99,7 @@ handle remainder => sub {
          return '¯\_(ツ)_/¯',
             structured_answer => {            
             id => 'shruggie',
-            name => 'Shurggie',
+            name => 'Shruggie',
             description => 'Emojii for everone',
             templates => {
                 group => 'text'
