@@ -14,7 +14,7 @@ sub build_structure
 	my ($string, $data, $keys) = @_;
 	return {
             id => 'shruggie',
-            name => 'Shurggie',
+            name => 'Shruggie',
             description => 'Emojii for everone',
             templates => {
                 group => 'list',
@@ -43,7 +43,7 @@ ddg_goodie_test(
     'shruggie' => test_zci('¯\_(ツ)_/¯',             
         structured_answer => {            
             id => 'shruggie',
-            name => 'Shurggie',
+            name => 'Shruggie',
             description => 'Emojii for everone',
             templates => {
                 group => 'text'
