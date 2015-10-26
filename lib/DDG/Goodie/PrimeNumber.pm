@@ -15,8 +15,8 @@ primary_example_queries "prime numbers between 1 and 12", "prime numbers";
 category "computing_tools";
 topics "cryptography";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PrimeNumber.pm";
-attribution github => ["shjnyr", "Haojun Sui"],
-            github => ["https://github.com/shjnyr", "shjnyr"],
+attribution github => ["haojunsui", "Haojun Sui"],
+            github => ["https://github.com/haojunsui", "Haojun Sui"],
             twitter => ["https://twitter.com/Charles_Sui", "Haojun Sui"];
 
 # Triggers
