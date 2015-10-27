@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 my $possibleAnswers = qr/(It is certain|It is decidedly so|Without a doubt|Yes, definitely|You may rely on it|As I see it, yes|Most likely|Outlook good|Yes|Signs point to yes|Reply hazy try again|Ask again later|Better not tell you now|Cannot predict now|Concentrate and ask again|Don't count on it|My reply is no|My sources say no|Outlook not so good|Very doubtful)/;
 
-my $possibleStructuredAnswer = qr/^(?:It is certain|It is decidedly so|Without a doubt|Yes, definitely|You may rely on it|As I see it, yes|Most likely|Outlook good|Yes|Signs point to yes|Reply hazy try again|Ask again later|Better not tell you now|Cannot predict now|Concentrate and ask again|Don't count on it|My reply is no|My sources say no|Outlook not so good|Very doubtful)$/;
+my $possibleStructuredAnswer = qr/^(?:It is certain|It is decidedly so|Without a doubt|Yes, definitely|You may rely on it|As I see it, yes|Most likely|Outlook good|Yes|Signs point to yes|Reply hazy try again|Ask again later|Better not tell you now|Cannot predict now|Concentrate and ask again|Don&#39;t count on it|My reply is no|My sources say no|Outlook not so good|Very doubtful)$/;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::MagicEightBall )],
@@ -30,7 +30,7 @@ ddg_goodie_test(
             result    => $possibleStructuredAnswer,
         }
     ),
-    'are you actually helpful magic eight ball' => test_zci(
+    'magic eight-ball are you actually helpful' => test_zci(
         $possibleAnswers,
         structured_answer => {
             input     => ['are you actually helpful'],
@@ -39,7 +39,7 @@ ddg_goodie_test(
         }
     ),
     'eight ball will this work?' => undef,
-    'Yes or no 8 ball' => undef
+    'magic 8ball Yes?' => undef
 );
 
 done_testing;
