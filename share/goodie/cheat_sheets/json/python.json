@@ -29,7 +29,7 @@
             "key": "capitalize()"  
         }, {
             "val": "Returns a string with the leading and trailing whitespace removed",
-            "key": "strip ()"  
+            "key": "strip()"  
         }, {
             "val": "Returns a string with the leading whitespace removed",
             "key": "lstrip()"  
