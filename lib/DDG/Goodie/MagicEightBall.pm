@@ -16,7 +16,7 @@ topics "trivia";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MagicEightBall.pm";
 attribution github => ["jlbaez", "Jose Baez"];
 
-triggers startend => "magic eight ball", "magic 8 ball";
+triggers startend => "magic eight ball", "magic 8 ball", "magic eight-ball", "magic 8-ball", "magic 8ball";
 
 handle remainder => sub {
     return unless $_;
