@@ -39,7 +39,8 @@ ddg_goodie_test(
         }
     ),
     'eight ball will this work?' => undef,
-    'magic 8ball Yes?' => undef
+    'magic 8ball Yes?' => undef,
+    'magic 8ball' => undef
 );
 
 done_testing;
