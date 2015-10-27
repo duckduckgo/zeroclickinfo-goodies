@@ -313,13 +313,13 @@
         }],
         "Ndiff": [{
             "val": "Comparison using Ndiff",
-            "key": "$ ndiff \\[scan1.xml\\] \\[scan2.xml\\]"
+            "key": "ndiff \\[scan1.xml\\] \\[scan2.xml\\]"
         }, {
             "val": "Ndiff verbose mode",
-            "key": "$ ndiff -v \\[scan1.xml\\] \\[scan2.xml\\]"
+            "key": "ndiff -v \\[scan1.xml\\] \\[scan2.xml\\]"
         }, {
             "val": "XML output mode",
-            "key": "$ ndiff --xml \\[scan1.xml\\] \\[scan2.xml\\]"
+            "key": "ndiff --xml \\[scan1.xml\\] \\[scan2.xml\\]"
         }]
     }
 }

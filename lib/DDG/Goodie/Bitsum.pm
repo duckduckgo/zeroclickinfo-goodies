@@ -28,7 +28,7 @@ triggers start => "bitsum", "hammingweight", "hw",
 handle remainder => sub {
     
     # Return if input is no hex or decimal number
-    return unless $_ =~ /(^0x[0-9a-f]+$)|(^\d+$)/i;
+    return unless $_ =~ /(^0x[0-9a-f]+$)|(^0b[0-1]+$)|(^\d+$)/i;
 
     my $input_number = $_;
     my $hex_number;
@@ -38,6 +38,8 @@ handle remainder => sub {
     if( $input_number =~ /^0x/) {
         $hex_number = substr($input_number, 2);
         $binstring = unpack ('B*', pack ('H*',$hex_number));
+    } elsif( $input_number =~ /^0b/) {
+        $binstring = substr($input_number, 2);
     } else {
         $binstring = Math::BigInt->new($input_number)->as_bin();
     }
