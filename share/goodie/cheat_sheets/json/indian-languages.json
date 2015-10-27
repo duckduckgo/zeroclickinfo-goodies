@@ -6,6 +6,10 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Languages_with_official_status_in_India"
     },
+    "aliases": [
+        "languages in india",
+        "languages of india"
+    ],
     "template_type": "reference",
     "section_order": [
         "States (A-L)",
