@@ -1,7 +1,7 @@
 package DDG::Goodie::Shruggie;
 # ABSTRACT: A simple goodie to show the shruggie (¯\_(ツ)_/¯) ASCII art
-# when a user enter shruggie as their first search term.  
-# 
+# when a user enter shruggie as their first search term.
+#
 # The goodie # will also show a second random face if the user searches "and friend"
 # If the user does "and friends" all the available faces will show
 # The user can also search "and [name]" to pick a certain friend to show
@@ -33,7 +33,7 @@ attribution github => ["Epik", "Epik"],
 # Triggers
 triggers start => "shruggie";
 
-# Preload the JSON file        
+# Preload the JSON file
 my $externalJSONFile = share('shruggiesfriends.json')->slurp;
 my @arrayOfFriendFacesWithNames = @{decode_json($externalJSONFile)->{'Friends'}};
 
@@ -48,30 +48,30 @@ handle remainder => sub {
 
     # Only search was "shruggie"
     if (!$_) {
-        $isJustShruggie = 1; 
+        $isJustShruggie = 1;
     } elsif (m/^and (.+)/i) { # check if remainder matches pattern "and X"
 
         $stringAfterAnd = lc($1);
-        
+
         if ($stringAfterAnd eq "friend") {
 
             my $pickRandomFriend = $arrayOfFriendFacesWithNames[rand @arrayOfFriendFacesWithNames];
             my $randomFriendsName = $pickRandomFriend->{'name'};
 
 
-            $returnString = 'Shruggie and ' . $randomFriendsName;      
+            $returnString = 'Shruggie and ' . $randomFriendsName;
             $record_data{$randomFriendsName} = $pickRandomFriend->{'image'};
             push @record_keys, $randomFriendsName;
 
         } elsif ($stringAfterAnd eq "friends") {
 
-            $returnString = 'Shruggie and Friends'; 
+            $returnString = 'Shruggie and Friends';
 
             foreach my $iterateThroughFriends (@arrayOfFriendFacesWithNames) {
-                my $currentForeachFriend = $iterateThroughFriends->{'name'};     
+                my $currentForeachFriend = $iterateThroughFriends->{'name'};
                 $record_data{$currentForeachFriend} = $iterateThroughFriends->{'image'};
                 push @record_keys, $currentForeachFriend;
-            }     
+            }
 
         } else {
 
@@ -81,23 +81,23 @@ handle remainder => sub {
                     my $friendsName = $nameEmojiiPair->{'name'};
 
 
-                    $returnString = 'Shruggie and ' . $friendsName;      
+                    $returnString = 'Shruggie and ' . $friendsName;
                     $record_data{$friendsName} = $nameEmojiiPair->{'image'};
-                    push @record_keys, $friendsName;                    
+                    push @record_keys, $friendsName;
                     last;
                 }
 
             }
 
-        }    
+        }
     }
-    
+
     #if the string after shruggie was ill formed
     if (!$returnString && !$isJustShruggie) {
         return;
     } elsif ($isJustShruggie) {
          return '¯\_(ツ)_/¯',
-            structured_answer => {            
+            structured_answer => {
             id => 'shruggie',
             name => 'Shruggie',
             description => 'Emojii for everone',
@@ -108,13 +108,13 @@ handle remainder => sub {
                 title => '¯\_(ツ)_/¯',
                 #subtitle => "Shruggie"  #I like it better without this, but either way is cool
             }
-        }   
+        }
     } else {
 
         return $returnString,
-            structured_answer => {            
+            structured_answer => {
             id => 'shruggie',
-            name => 'Shurggie',
+            name => 'Shruggie',
             description => 'Emojii for everone',
             meta => {
                 sourceName => "Donger List",
