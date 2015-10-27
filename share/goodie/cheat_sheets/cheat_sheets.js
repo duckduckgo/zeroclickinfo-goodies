@@ -9,6 +9,13 @@ DDH.cheat_sheets.build = function(ops) {
           path: template_type ? 'DDH.cheat_sheets.' + template_type : 'DDH.cheat_sheets.keyboard'
         };
 
+        // add missing sections in section_order
+        for(var section in sections){
+            if(section_order.indexOf(section) == -1){
+                section_order.push(section);
+            }
+        }
+
         $.each(section_order, function(i, section) {
            if (sections[section]){
 
@@ -28,12 +35,27 @@ DDH.cheat_sheets.build = function(ops) {
 
     var re_brackets    = /(?:\[|\{|\}|\])/,      // search for [, {, }, or }
         re_whitespace  = /\s+/,                  // search for spaces
-        re_codeblock   = /<code>(.+?)<\/code>/g; // search for <code></code>
+        re_codeblock   = /<code>(.+?)<\/code>/g, // search for <code></code>
+        re_key_spaces  = /\((\[.*\])\)/;     // ([a]/[b]....)
 
     Spice.registerHelper('cheatsheets_codeblock', function(string, className, options) {
 
         var out;
         var codeClass = typeof className === "string" ? className : "bg-clr--white";
+
+        // normalize white space for ( [a] / [b] ... ) keys
+        if( re_key_spaces.test(string) ){
+            var key_string = re_key_spaces.exec(string);
+            var keys = key_string[1].split("/");
+
+            for(var i = 0; i < keys.length; i++){
+                keys[i] = keys[i].trim();
+            }
+
+            var normalized = keys.join(" / ");
+
+            string = string.replace( /\(\[.*\]\)/, "( "+ normalized + " )");
+        }
         
         // replace escaped slashes and brackets
         string = string.replace(/\</g, '&lt;')
