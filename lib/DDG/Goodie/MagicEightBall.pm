@@ -19,7 +19,8 @@ attribution github => ["jlbaez", "Jose Baez"];
 triggers start => "magic eight ball", "magic 8 ball", "magic eight-ball", "magic 8-ball", "magic 8ball";
 
 handle remainder => sub {
-    return unless $_;
+    #only 2 words or more
+    return unless /\S \S/;
 
     #These are the standard responses found in a magic eight ball
     my @eightBallresponses = ("It is certain",
