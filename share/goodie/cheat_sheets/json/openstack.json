@@ -12,14 +12,15 @@
         "open stack cli",
         "open stack commands"
     ],
+    "template_type" : "terminal",
     "section_order": [
-	"Identity (keystone)",
+    "Identity (keystone)",
         "Images (glance)",
         "Compute (nova)",
         "Networking (neutron)",
         "Block Storage (cinder)",
         "Volume Management inside Instance",
-	"Object Storage (swift)"
+    "Object Storage (swift)"
     ],
     "sections": {
         "Identity (keystone)": [
@@ -37,28 +38,28 @@
                 "key": "glance image-list",
                 "val": "List images you can access"
             },
-	        {
+            {
                 "key": "glance image-delete IMAGE",
                 "val": "Delete specified image"
             },
-	        {
+            {
                 "key": "glance image-show IMAGE",
                 "val": "Describe a specific image"
-            }, 
+            },
             {
                 "key": "glance image-update IMAGE",
                 "val": "Update image"
             },
             {
-                "key": "glance image-create --name \"<IMAGE-NAME>\" --disk-format <DISK-FORMAT> --container-format <CONTAINER-FORMAT> --is-public <True or False> --copy-from <URI>",
+                "key": "glance image-create --name \"<NAME>\" --disk-format <FORMAT> --container-format <FORMAT> --is-public <True/False> --copy-from <URI>",
                 "val": "Upload kernel image"
             },
-	        {
-                "key": "glance image-create --name \"<IMAGE-NAME>\" --disk-format <DISK_FORMAT> --container-format <CONTAINER-FORMAT> --is-public <True or False> --copy-from <URI>",
+            {
+                "key": "glance image-create --name \"<NAME>\" --disk-format <DISK_FORMAT> --container-format <FORMAT> --is-public <True/False> --copy-from <URI>",
                 "val": "Upload RAM image"
             },
-	        {
-                "key": "glance image-create --name \"<IMAGE-NAME>\" --disk-format <DISK-FORMAT> --container-format <CONTAINER-FORMAT> --is-public <True or False> --copy-from <URI>",
+            {
+                "key": "glance image-create --name \"<NAME>\" --disk-format <FORMAT> --container-format <FORMAT> --is-public <True/False> --copy-from <URI>",
                 "val": "Register raw image"
             }
         ],
@@ -80,11 +81,11 @@
                 "val": "Boot an instance using flavor"
             },
             {
-                "key": "nova boot --image <IMAGE-NAME> --flavor m1.tiny \\\\ MyFirstInstance",
+                "key": "nova boot --image <IMAGE-NAME> --flavor m1.tiny \\ MyFirstInstance",
                 "val": "Boot an instance using image names"
             },
             {
-                "key": "ip netns exec <IMAGE-TAG> \\\\ ssh cirros@10.0.0.2",
+                "key": "ip netns exec <IMAGE-TAG> \\ ssh cirros@10.0.0.2",
                 "val": "Login to instance"
             },
             {
@@ -132,11 +133,11 @@
                 "val": "Create keypair"
             },
             {
-                "key": "nova boot --image <IMAGE-NAME> --flavor m1.small \\\\ --key_name test MyFirstServer",
+                "key": "nova boot --image <IMAGE-NAME> --flavor m1.small \\ --key_name test MyFirstServer",
                 "val": "Start an instance (boot)"
             },
             {
-                "key": "ip netns exec <IMAGE-TAG> \\\\ ssh -i test.pem cirros@10.0.0.4",
+                "key": "ip netns exec <IMAGE-TAG> \\ ssh -i test.pem cirros@10.0.0.4",
                 "val": "Use ssh to connect to the instance"
             },
             {
