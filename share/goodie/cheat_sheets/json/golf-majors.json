@@ -1,7 +1,7 @@
 {
     "id": "golf_majors_cheat_sheet",
     "name": "Men's Major Golf Championships",
-    "description": "Tidbit on each major golf event",
+    "description": "A list of the four major Golf events, with short descriptions.",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Men%27s_major_golf_championships"
@@ -22,7 +22,7 @@
             "key": "The Open Championship (British Open)"
         }, {
             "val": "August - Open to PGA professionals",
-            "key": "PGA Championsip"
+            "key": "PGA Championship"
         }]
 
     }
