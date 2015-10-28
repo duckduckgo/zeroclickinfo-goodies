@@ -6,7 +6,7 @@
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/adobe/brackets/wiki/Brackets-Shortcuts"
     },
-    "aliases": ["brackets", "brackets editor", "adobe brackets editor"],
+    "aliases": ["brackets", "brackets editor", "adobe brackets editor", "adobe brackets"],
     "template_type": "keyboard",
     "section_order": [
         "View",

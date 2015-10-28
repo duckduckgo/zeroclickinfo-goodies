@@ -1,0 +1,40 @@
+{
+    "id": "golf_majors_cheat_sheet",
+    "name": "Men's Major Golf Championships",
+    "description": "A list of the four major Golf events, with short descriptions.",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Men%27s_major_golf_championships"
+    },
+    "aliases": [
+        "men's golf majors",
+        "mens golf majors",
+        "major golf championships",
+        "men's major golf championships",
+        "mens major golf championships"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "The Majors"
+    ],
+    "sections": {
+        "The Majors": [
+            {
+                "val": "April - Augusta National Golf Club",
+                "key": "The Masters Championship"
+            },
+            {
+                "val": "June - Open to US amateurs",
+                "key": "The US Open"
+            },
+            {
+                "val": "July - Oldest major, links style golf",
+                "key": "The Open Championship (British Open)"
+            },
+            {
+                "val": "August - Open to PGA professionals",
+                "key": "PGA Championship"
+            }
+        ]
+    }
+}
