@@ -1,7 +1,7 @@
 {
     "id": "github_atom_cheat_sheet",
     "name": "GitHub Atom",
-    "description": "A hackable text editor for the 21st Century, made by GitHub Inc.",
+    "description": "A hackable text editor for the 21st Century",
     "metadata":{
         "sourceName": "Bugsnag",
         "sourceUrl": "https://bugsnag.com/blog/atom-editor-cheat-sheet"
