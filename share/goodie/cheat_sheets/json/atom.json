@@ -1,11 +1,15 @@
 {
     "id": "github_atom_cheat_sheet",
     "name": "GitHub Atom",
-    "description": "Open source text editor, made by GitHub Inc.",
+    "description": "A hackable text editor for the 21st Century",
     "metadata":{
         "sourceName": "Bugsnag",
         "sourceUrl": "https://bugsnag.com/blog/atom-editor-cheat-sheet"
     },
+    "aliases": [
+        "atom", "github atom", "atom text editor"
+    ],
+    "template_type": "keyboard",
     "section_order":[
         "General",
         "File Navigation",
@@ -14,7 +18,7 @@
         "Folding",
         "Word Manipulation",
         "Line Manipulation",
-        "Github Integration",
+        "GitHub Integration",
         "Selection"
     ],
     "sections":{
@@ -111,7 +115,7 @@
             },
             {
                 "key": "F3",
-                "val": "Find Next"
+                "val": "Find next"
             },
             {
                 "key": "[Ctrl] [F3]",
@@ -131,7 +135,7 @@
             },
             {
                 "key": "[Ctrl] [F3]",
-                "val": "Quick Find (find current word)"
+                "val": "Quick find (find current word)"
             },
             {
                 "key": "[Alt] [F3]",
@@ -220,30 +224,30 @@
                 "val": "Join current and next lines"
             }
         ],
-        "Github Integration":[
+        "GitHub Integration":[
             {
                 "key": "[Alt] [G] [B]",
-                "val": "Open on Github : blame"
+                "val": "Open on GitHub : blame"
             },
             {
                 "key": "[Alt] [G] [C]",
-                "val": "Open on Github: copy-url"
+                "val": "Open on GitHub: copy-url"
             },
             {
                 "key": "[Alt] [G] [G]",
-                "val": "Open on Github: repository"
+                "val": "Open on GitHub: repository"
             },
             {
                 "key": "[Alt] [G] [H]",
-                "val": "Open on Github: history"
+                "val": "Open on GitHub: history"
             },
             {
                 "key": "[Alt] [G] [I]",
-                "val": "Open on Github: issues"
+                "val": "Open on GitHub: issues"
             },
             {
                 "key": "[Alt] [G] [R]",
-                "val": "Open on Github: branch-compare"
+                "val": "Open on GitHub: branch-compare"
             }
         ],
         "Selection":[
