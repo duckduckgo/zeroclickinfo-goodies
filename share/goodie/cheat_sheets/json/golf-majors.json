@@ -6,7 +6,13 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Men%27s_major_golf_championships"
     },
-    "aliases":["golf majors", "men's golf majors", "mens golf majors", "major golf championships", "men's major golf championships", "mens major golf championships"],
+    "aliases":[
+        "men's golf majors",
+        "mens golf majors",
+        "major golf championships",
+        "men's major golf championships",
+        "mens major golf championships
+    "],
     "template_type": "reference",
     "section_order": ["The Majors"],
     "sections": {
