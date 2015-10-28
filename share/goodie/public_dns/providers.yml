@@ -119,3 +119,40 @@ PowerNS:
     - 194.145.226.26
     - 77.220.232.44
   ip6: []
+DNSReactor:
+  info_url: http://dnsreactor.net/
+  ip4:
+    - 104.236.210.29
+    - 45.55.155.25
+  ip6: []
+Alternate DNS:
+  info_url: http://www.alternate-dns.com/
+  ip4:
+    - 198.101.242.72
+    - 23.253.163.53
+  ip6: []
+FoolDNS:
+  info_url: http://www.fooldns.com/fooldns-community/english-version/
+  ip4:
+    - 87.118.111.215
+    - 213.187.11.62
+  ip6: []
+SafeDNS:
+  info_url: https://www.safedns.com/features
+  ip4:
+    - 195.46.39.39
+    - 195.46.39.40
+  ip6: []
+Xiala.net:
+  info_url: https://xiala.net/services/dns.html
+  ip4:
+    - 77.109.148.136
+    - 77.109.148.137
+  ip6:
+    - 2001:1620:2078:136::
+    - 2001:1620:2078:137::
+SkyDNS:
+  info_url: https://www.skydns.ru/
+  ip4:
+    - 193.58.251.251
+  ip6: []
