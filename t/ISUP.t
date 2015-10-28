@@ -27,12 +27,44 @@ ddg_goodie_test(
             result    => 'Seems to be down!'
         }
     ),
-    'isup codenirvana.net/p/contact-us.html' => test_zci(
+    'isdown www.codenirvana.net' => test_zci(
         'Seems up!',
         structured_answer => {
             input     => [],
-            operation => 'codenirvana.net/p/contact-us.html',
+            operation => 'www.codenirvana.net',
             result    => 'Seems up!'
+        }
+    ),
+    'online codenirvana.net' => test_zci(
+        'Seems up!',
+        structured_answer => {
+            input     => [],
+            operation => 'codenirvana.net',
+            result    => 'Seems up!'
+        }
+    ),
+    'https://duck.co is down' => test_zci(
+        'Seems up!',
+        structured_answer => {
+            input     => [],
+            operation => 'https://duck.co',
+            result    => 'Seems up!'
+        }
+    ),
+    'is up www.gitduck.com' => test_zci(
+        'Seems up!',
+        structured_answer => {
+            input     => [],
+            operation => 'www.gitduck.com',
+            result    => 'Seems to be down!'
+        }
+    ),
+    'is down www.gitduck.com' => test_zci(
+        'Seems up!',
+        structured_answer => {
+            input     => [],
+            operation => 'www.gitduck.com',
+            result    => 'Seems to be down!'
         }
     ),
     'isup 123'    => undef,
