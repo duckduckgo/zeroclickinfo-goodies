@@ -7,7 +7,8 @@
         "sourceUrl": "https://bugsnag.com/blog/atom-editor-cheat-sheet"
     },
     "aliases": [
-        "atom", "github atom", "atom text editor"
+        "github atom",
+        "atom text editor"
     ],
     "template_type": "keyboard",
     "section_order":[
