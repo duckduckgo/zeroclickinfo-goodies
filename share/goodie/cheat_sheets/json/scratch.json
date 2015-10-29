@@ -1,8 +1,8 @@
 {
    "id" : "scratch_cheat_sheet",
-   "name" : "Scratch Cheat Sheet",
+   "name" : "Scratch",
    "metadata" : {
-      "sourceName" : "Scratch wiki",
+      "sourceName" : "Scratch Wiki",
       "sourceUrl" : "http://wiki.scratch.mit.edu/wiki/Scratch_Wiki:Table_of_Contents/Block_Types"
    },
    "template_type": "terminal",
