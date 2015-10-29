@@ -45,6 +45,7 @@ handle remainder => sub {
     #only 2 words or more
     return unless /\S \S/;
 
+    srand();
     my $response = $eightBallresponses[int rand scalar @eightBallresponses];
 
     return $response,
