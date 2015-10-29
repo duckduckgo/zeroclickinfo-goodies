@@ -5,7 +5,7 @@ use DDG::Goodie;
 use strict;
 
 zci answer_type => "magic_eight_ball";
-zci is_cached   => 1;
+zci is_cached   => 0;
 
 name "MagicEightBall";
 description "provides a random answer just like a magic eight ball";
