@@ -2,159 +2,281 @@
     "id": "c_cheat_sheet",
     "name": "C Cheat Sheet",
     "description": "Computer Programming Language",
-    "metadata":
-    {
+    "metadata": {
         "sourceName": "C for Beginners",
         "sourceUrl": "http://www.dummies.com/how-to/content/beginning-c-programming-for-dummies-cheat-sheet.html"
     },
     "aliases": [
-        "C"
+        "c programming",
+	"c language"
     ],
     "template_type": "code",
     "section_order": [
-                      "Comparison Operators",
-                      "Conversion Characters",
-                      "Escape Sequences",
-                      "Order of Precedence"
-                     ],
+        "Arithmetic Operators",
+        "Comparison Operators",
+        "Logical Operators",
+        "Bitwise Operators",
+        "Other Operators",
+        "Conversion Characters",
+        "Escape Sequences",
+        "Order of Precedence"
+    ],
     "sections": {
+        "Arithmetic Operators": [
+            {
+                "val": "Basic assignment",
+                "key": "a = b"
+            },
+            {
+                "val": "Addition",
+                "key": "a + b"
+            },
+            {
+                "val": "Subtraction",
+                "key": "a - b"
+            },
+            {
+                "val": "Unary plus (integer promotion)",
+                "key": "+a"
+            },
+            {
+                "val": "Unary minus (additive inverse)",
+                "key": "-a"
+            },
+            {
+                "val": "Multiplication",
+                "key": "a * b"
+            },
+            {
+                "val": "Division",
+                "key": "a / b"
+            },
+            {
+                "val": "Modulo (integer remainder)",
+                "key": "a % b"
+            },
+            {
+                "val": "Increment Prefix",
+                "key": "++a"
+            },
+            {
+                "val": "Increment Postfix",
+                "key": "a++"
+            },
+            {
+                "val": "Decrement Prefix",
+                "key": "--a"
+            },
+            {
+                "val": "Decrement Postfix",
+                "key": "a--"
+            }
+        ],
         "Comparison Operators": [
-           {
-            "val": "Less than",
-            "key": "<"
-        }, {
-            "val": "Equal to",
-            "key": "=="
-        }, {
-            "val": "Greater than",
-            "key": ">"
-        }, {
-            "val": "Less than equal to",
-            "key": "<="
-        }, {
-            "val": "Greater than equal to",
-            "key": ">="
-        }, {
-            "val": "Not equal to",
-            "key": "!="
-        }
-       ],
-       "Conversion Characters": [
-           {
-            "val": "Displays single character",
-            "key": "%c"
-        }, {
-            "val": "Displays signed decimal integer",
-            "key": "%d"
-        }, {
-            "val": "Displays signed floating point value in E notation",
-            "key": "%e"
-        }, {
-            "val": "Displays signed floating point value",
-            "key": "%f"
-        }, {
-            "val": "Displays the string corresponding to the specified value of the system errno variable",
-            "key": "%m"
-        }, {
-            "val": "Displays a string",
-            "key": "%s"
-        }, {
-            "val": "Displays an unsigned integer",
-            "key": "%u"
-        }, {
-            "val": "Displays an integer as an unsigned hexadecimal number, using lower-case letters",
-            "key": "%x"
-        }, {
-            "val": "Displays a percent sign",
-            "key": "%%"
-        }
-      ],
-     "Escape Sequences": [
-         {
-            "val": "The speaker beeping",
-            "key": "\\a"
-        }, {
-            "val": "Backspace",
-            "key": "\\b"
-        }, {
-            "val": "Form feed",
-            "key": "\\f"
-        }, {
-            "val": "Newline character",
-            "key": "\\n"
-        }, {
-            "val": "Carriage return (moves the cursor to the beginning of the line)",
-            "key": "\\r"
-        }, {
-            "val": "Tab",
-            "key": "\\t"
-        }, {
-            "val": "Vertical tab (moves the cursor down a line)",
-            "key": "\\v"
-        }, {
-            "val": "The backslash character",
-            "key": "\\\\\\"
-        }, {
-            "val": "The apostrophe",
-            "key": "\\'"
-        }, {
-            "val": "The double-quote character",
-            "key": "\\\""
-        }, {
-            "val": "The question mark",
-            "key": "\\?"
-        }, {
-            "val": "The “null” byte (backslash-zero)",
-            "key": "\\0"
-        }
-     ],
-    "Order of Precedence": [
-        {
-            "val": "Unary - Logical not; associativity goes right to left",
-            "key": "!"
-        }, {
-            "val": "Unary - Increment, decrement; associativity goes from right to left",
-            "key": "[++] , [--]"
-        }, {
-            "val": "Math - Multiplication, division, modulo",
-            "key": "[*] , [/] , [%]"
-        }, {
-            "val": "Math - Addition, subtraction",
-            "key": "[+] , [–]"
-        }, {
-            "val": "Binary - Shift left, shift right",
-            "key": "[<<] , [>>]"
-        }, {
-            "val": "Comparison - Less than, greater than, less than or equal to, greater than or equal to",
-            "key": "[<] , [>] , [<=] , [>=]"
-        }, {
-            "val": "Comparison - Is equal to, not equal to",
-            "key": "[==] , [!=]"
-        }, {
-            "val": "Binary - And",
-            "key": "&"
-        }, {
-            "val": "Binary - Exclusive or (XOR)",
-            "key": "^"
-        }, {
-            "val": "Binary - Or",
-            "key": "|"
-        }, {
-            "val": "Logical - And",
-            "key": "&&"
-        }, {
-            "val": "Logical - Or",
-            "key": "||"
-        }, {
-            "val": "Ternary - Weird if thing; associativity goes right to left",
-            "key": "?:"
-        }, {
-            "val": "Assignment - Variable assignment operator, including the +=, *=, and all assignment operators",
-            "key": "="
-        }, {
-            "val": "(None) - The comma separates items in a for statement; precedence from left to right",
-            "key": ","
-        }
-    ]
+            {
+                "val": "a less than b",
+                "key": "a < b"
+            },
+            {
+                "val": "a equal to b",
+                "key": "a == b"
+            },
+            {
+                "val": "a greater than b",
+                "key": "a > b"
+            },
+            {
+                "val": "a less than equal to b",
+                "key": "a <= b"
+            },
+            {
+                "val": "a greater than equal to b",
+                "key": "a >= b"
+            },
+            {
+                "val": "a not equal to b",
+                "key": "a != b"
+            }
+        ],
+        "Logical Operators": [
+            {
+                "val": "Logical negation (NOT)",
+                "key": "!a"
+            },
+            {
+                "val": "Logical AND",
+                "key": "a && b"
+            },
+            {
+                "val": "Logical OR",
+                "key": "a || b"
+            }
+        ],
+        "Bitwise Operators": [
+            {
+                "val": "Bitwise NOT",
+                "key": "~a"
+            },
+            {
+                "val": "Bitwise AND",
+                "key": "a & b"
+            },
+            {
+                "val": "Bitwise OR",
+                "key": "a | b"
+            },
+            {
+                "val": "Bitwise XOR",
+                "key": "a ^ b"
+            },
+            {
+                "val": "Bitwise left shift",
+                "key": "a << b"
+            },
+            {
+                "val": "Bitwise right shift",
+                "key": "a >> b"
+            }
+        ],
+        "Other Operators": [
+            {
+                "val": "Structure reference (member b of object a)",
+                "key": "a.b"
+            },
+            {
+                "val": "Structure dereference (member b of object pointed to by a)",
+                "key": "a->b"
+            },
+            {
+                "val": "Conversion (C-style cast)",
+                "key": "(type) a"
+            },
+            {
+                "val": "Size-of",
+                "key": "sizeof (a)"
+            },
+            {
+                "val": "Ternary conditional",
+                "key": "a ? b : c"
+            },
+            {
+                "val": "Comma",
+                "key": "a, b"
+            }
+        ],
+        "Conversion Characters": [
+            {
+                "val": "Displays single character",
+                "key": "%c"
+            },
+            {
+                "val": "Displays signed decimal integer",
+                "key": "%d"
+            },
+            {
+                "val": "Displays signed floating point value in E notation",
+                "key": "%e"
+            },
+            {
+                "val": "Displays signed floating point value",
+                "key": "%f"
+            },
+            {
+                "val": "Displays the string corresponding to the specified value of the system errno variable",
+                "key": "%m"
+            },
+            {
+                "val": "Displays a string",
+                "key": "%s"
+            },
+            {
+                "val": "Displays an unsigned integer",
+                "key": "%u"
+            },
+            {
+                "val": "Displays an integer as an unsigned hexadecimal number, using lower-case letters",
+                "key": "%x"
+            },
+            {
+                "val": "Displays a percent sign",
+                "key": "%%"
+            }
+        ],
+        "Escape Sequences": [
+            {
+                "val": "The speaker beeping",
+                "key": "\\a"
+            },
+            {
+                "val": "Backspace",
+                "key": "\\b"
+            },
+            {
+                "val": "Form feed",
+                "key": "\\f"
+            },
+            {
+                "val": "Newline character",
+                "key": "\\n"
+            },
+            {
+                "val": "Carriage return (moves the cursor to the beginning of the line)",
+                "key": "\\r"
+            },
+            {
+                "val": "Tab",
+                "key": "\\t"
+            },
+            {
+                "val": "Vertical tab (moves the cursor down a line)",
+                "key": "\\v"
+            },
+            {
+                "val": "The backslash character",
+                "key": "\\\\\\"
+            },
+            {
+                "val": "The apostrophe",
+                "key": "\\'"
+            },
+            {
+                "val": "The double-quote character",
+                "key": "\\\""
+            },
+            {
+                "val": "The question mark",
+                "key": "\\?"
+            },
+            {
+                "val": "The “null” byte (backslash-zero)",
+                "key": "\\0"
+            }
+        ],
+        "Order of Precedence": [
+            {
+                "val": "Primary Expression Operators - associativity goes from left to right",
+                "key": "[()], [\\[\\]], [.], [->], [expr++], [expr--]"
+            },
+            {
+                "val": "Unary Operators - associativity goes from right to left",
+                "key": "[*], [&], [+], [-], [!], [~], [++expr], [--expr], [(typecast)], [sizeof]"
+            },
+            {
+                "val": "Binary Operators - associativity goes from left to right",
+                "key": "[*], [/], [%], [+], [-], [>>], [<<], [<], [>], [<=], [>=], [==], [!=], [&], [^], [|], [&&], [||]"
+            },
+            {
+                "val": "Ternary Operator - associativity goes from right to left",
+                "key": "[?:]"
+            },
+            {
+                "val": "Assignment Operators - associativity goes from right to left",
+                "key": "[=], [+=], [-=], [*=], [/=], [%=], [>>=], [<<=], [&=], [^=], [|=]"
+            },
+            {
+                "val": "Comma - associativity goes from left to right",
+                "key": "[ , ]"
+            }
+        ]
     }
 }
