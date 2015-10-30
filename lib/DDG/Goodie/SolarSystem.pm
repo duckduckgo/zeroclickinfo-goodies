@@ -20,6 +20,9 @@ topics 'special_interest';
 attribution github => ["MrChrisW", "Chris Wilson"],
             web => ["http://chrisjwilson.com", "Chris Wilson"];
 
+# Get Goodie version for use with image paths
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'area');
 my $attributesString = join('|', @attributesArray); 
 
@@ -96,9 +99,6 @@ handle query_lc => sub {
     #$saturn var is provided to handlebars template to set size of image
     $saturn = ($objectName eq "saturn") ? 1 : 0;
 
-    my $share = share();
-    $share =~ s{.+(/share/.+$)}{$1};
-    my $image_path = "$share/img/$objectName";
     #Return result and html
     return $operation." is ".$result,
     structured_answer => {
@@ -107,8 +107,9 @@ handle query_lc => sub {
         data => {
             attributes => $result,
             operation => $operation,
-            imagePath => $image_path,
-            saturn => $saturn
+            imageName => $objectName,
+            saturn => $saturn,
+            goodie_version => $goodieVersion
         },
         meta => {
             sourceUrl => "https://solarsystem.nasa.gov/planets/index.cfm",
