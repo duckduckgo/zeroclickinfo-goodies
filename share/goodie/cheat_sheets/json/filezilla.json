@@ -1,0 +1,71 @@
+{
+    "id": "filezilla_cheat_sheet",
+    "name": "Filezilla",
+    "description": "Filezilla Keyboard Shortcuts ",
+    "metadata": {
+        "sourceName": "Filezilla",
+        "sourceUrl": "https://wiki.filezilla-project.org/Keyboard_shortcuts"
+    },
+    "template_type": "keyboard",
+    "section_order": ["General"],
+    "sections": {
+        "General": [{
+            "key":"F2",
+            "val":"Rename selected file"
+          }, {
+            "key":"F3",
+            "val":"Search remote files"
+          }, {
+            "key":"F5",
+            "val":"Refreshes local and remote file and folder views"
+          }, {
+            "key":"Tab",
+            "val":"Switches to the next view"
+          }, {
+            "key":"[Alt] [↓]",
+            "val":"Transfers the currently selected item to an item of the same name in the other pane"
+          }, {
+            "key":"[Alt] [↑]",
+            "val":"Navigates up one line in a tree view (same as Up Arrow), navigates to parent folder in file view"
+          }, {
+            "key":"[Ctrl] [C]",
+            "val":"Stops the current operation"
+          }, {
+            "key":"[Ctrl] [D]",
+            "val":"Disconnects from server"
+          }, {
+            "key":"[Ctrl] [E]",
+            "val":"Show files currently being edited"
+          }, {
+              "key":"[Ctrl] [M]",
+              "val":"Manual transfer"
+          }, {
+            "key":"[Ctrl] [O]",
+            "val":"Enable directory comparison"
+          }, {
+            "key":"[Ctrl] [P]",
+            "val":"Process queue"
+          }, {
+            "key":"[Ctrl] [Q]",
+            "val":"Exit"
+        }, {
+            "key":"[Ctrl] [R]",
+            "val":"Reconnects to server"
+        }, {
+            "key":"[Ctrl] [S]",
+            "val":"Opens the Site Manager"
+        }, {
+            "key":"[Ctrl] [T]",
+            "val":"Opens a new tab"
+        }, {
+            "key":"[Ctrl] [U]",
+            "val":"Preserve timestamps of transferred files"
+        }, {
+            "key":"[Ctrl] [Y]",
+            "val":"Toggle synchronized browsing"
+        }, {
+            "key":"Enter",
+            "val":"Transfers the currently selected item if it is a file or expands it if it is a directory"
+        }]
+    }
+}
