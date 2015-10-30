@@ -52,8 +52,9 @@ handle remainder => sub {
             $result = "No";
         }
     }
-    
+    #return unless any {/$item/} @safe_keywords
 return $result;
+
 structured_answer => {
     input     => "Is $item paleo-diet friendly", # or just the original query
     operation => "",
