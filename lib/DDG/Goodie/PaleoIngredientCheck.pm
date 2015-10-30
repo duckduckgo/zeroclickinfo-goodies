@@ -2,7 +2,6 @@ package DDG::Goodie::PaleoIngredientCheck;
 # ABSTRACT: Indicates if a given food item is known to be safe or unsafe on the paleo diet.
 
 use DDG::Goodie;
-use List::MoreUtils 'any';
 
 triggers startend => share('triggers.txt')->slurp;
 
@@ -17,49 +16,44 @@ category "food";
 topics "food_and_drink";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PaleoIngredientCheck.pm";
 attribution github => ["murz", "Mike Murray"];
+attribution github => ["javathunderman", "Thomas Denizou"];
 
-my @safe_keywords = share('safe.txt')->slurp;
-my @unsafe_keywords = share('unsafe.txt')->slurp;
+my @safe_array = share('safe.txt')->slurp;
+my %safe_keywords = map { chomp; $_ => 1 } @safe_array;
+my @unsafe_array = share('unsafe.txt')->slurp;
+my %unsafe_keywords = map { chomp; $_ => 1 } @unsafe_array;
+
+# p(%safe_keywords);
+# warn($safe_keywords{"apple"});
 
 handle remainder => sub {
-
+    return unless $_;
     my $item = lc($_);
 
     # Remove any preceding "is" or "are" text from the query.
     $item =~ s/^(is|are)[\W]+//;
 
     my $is_plural = substr($item, -1) eq "s";
-    my($result);
+    my $itemAlt = $is_plural ? substr($item, 0, -1) : $item."s"; # pluralized or unpluralized form
+    my $result;
 
-    if (any {/$item/} @safe_keywords) {
-        
-        $result= "Yes";
-    } elsif (any {/$item/} @unsafe_keywords) {
-        $result= "No"
-    } elsif (!$is_plural) {
-        # If nothing was found and the query was not plural, try it pluralized.
-        if (any {/$item."s"/} @safe_keywords) {
-            $result = "Yes";
-        } elsif (any {/$item."s"/} @unsafe_keywords) {
-            $result = "No";
-        }
-    } elsif ($is_plural) {
-        # If nothing was found and the query was plural, try it depluralized.
-        my $depluralized = substr($item, 0, -1);
-        if (any {/$depluralized/} @safe_keywords) {
-            $result = "Yes";
-        } elsif (any {/$depluralized/} @unsafe_keywords) {
-            $result = "No";
-        }
+    # warn "ITEM IS: $item";
+    # warn "ITEM ALT IS: $itemAlt";
+
+    if (exists $safe_keywords{$item} || exists $safe_keywords{$itemAlt}) {
+        $result = "Yes";
+    } elsif (exists $unsafe_keywords{$item} || exists $unsafe_keywords{$itemAlt}) {
+        $result = "No";
     }
-    #return unless any {/$item/} @safe_keywords
-return $result;
 
-structured_answer => {
-    input     => "Is $item paleo-diet friendly", # or just the original query
-    operation => "",
-    result    => $result, # this could possibly be shortened to a simple "Yes" or "No"
-};
+    return unless $result; # ensure we have a result
+
+    return $result,
+    structured_answer => {
+        input     => [$item], # or just the original query
+        operation => "Paleo Friendly",
+        result    => $result
+    };
 };
 
 1;

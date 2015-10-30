@@ -4,7 +4,7 @@
 ace k
 acesulfame potassium
 acid saccharin
-ack 
+ack
 adzuki beans
 alcohol and mixers
 almond joy
@@ -13,10 +13,8 @@ apm
 apple juice
 aspartame
 aspartame-acesulfame salt
-aspartyl-phenylalanine-1-methyl ester 
+aspartyl-phenylalanine-1-methyl ester
 beans
-beans
-beer
 beer
 black beans
 black-eyed peas
@@ -26,7 +24,7 @@ butter
 butterfinger
 calcium cyclamate
 canderel
-candy bars 
+candy bars
 cereals
 cheese
 chickpeas
@@ -44,10 +42,11 @@ cream cheese
 cream of wheat
 cyclamate
 cyclamate and saccharin
-dairy spreads
-decomalt
 d-glucitol
 d-glucitol syrup
+dairy
+dairy spreads
+decomalt
 diabetisweet
 english muffins
 equal classic
@@ -86,7 +85,7 @@ lactitol
 lasagna
 lasagne
 lentils
-lesys 
+lesys
 licorice
 lima beans
 low fat milk
@@ -99,7 +98,6 @@ maltitol syrup
 mango juice
 mannitol
 mesquite
-milk
 milk
 milky way
 miso
@@ -136,9 +134,9 @@ rebiana
 red beans
 red bull
 red vines
+reeses’s pieces
 reese’s
 reese’s fast break
-reeses’s pieces
 rockstar
 rum
 saccharin
@@ -163,14 +161,7 @@ strawberry juice
 string beans
 sucaryl
 sucralose
-sugar alcohol
-sugar alcohol 
-sugar alcohol
-sugar alcohol
-sugar alcohol
-sugar alcohol
-sugar alcohol
-sugar alcohol
+sugar
 sugar alcohol
 sugar snap peas
 sunchips
@@ -185,7 +176,6 @@ toast
 tofu
 trichlorosucrose
 triscuits
-triscuits
 twinsweet
 twix
 twix peanut butter
@@ -194,7 +184,6 @@ two percent milk
 vault
 vodka
 wheat
-wheat thins
 wheat thins
 whiskey
 white beans
