@@ -7,7 +7,7 @@
         "sourceUrl": "http://www.angelfire.com/biz5/age2/hotkeys.html"
     },
     "aliases": [
-        "aoeii", "aoeiihd", "aoe", "age of empires 2", "age of empires ii"
+        "aoeiihd", "aoe", "age of empires 2", "age of empires ii"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -249,7 +249,7 @@
             "key": "O"
         }],
         "Military Unit Commands": [{
-            "val": "Agressive",
+            "val": "Aggressive",
             "key": "A"
         }, {
             "val": "Box",
