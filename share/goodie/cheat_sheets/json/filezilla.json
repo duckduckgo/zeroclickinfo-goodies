@@ -1,9 +1,9 @@
 {
     "id": "filezilla_cheat_sheet",
-    "name": "Filezilla",
-    "description": "Filezilla Keyboard Shortcuts ",
+    "name": "FileZilla",
+    "description": "FileZilla Keyboard Shortcuts ",
     "metadata": {
-        "sourceName": "Filezilla",
+        "sourceName": "FileZilla",
         "sourceUrl": "https://wiki.filezilla-project.org/Keyboard_shortcuts"
     },
     "template_type": "keyboard",
