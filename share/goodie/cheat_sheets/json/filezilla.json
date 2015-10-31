@@ -7,17 +7,17 @@
         "sourceUrl": "https://wiki.filezilla-project.org/Keyboard_shortcuts"
     },
     "template_type": "keyboard",
-    "section_order": ["General"],
+    "section_order": [
+        "General",
+        "File",
+        "View",
+        "Transfer",
+        "Server"
+    ],
     "sections": {
         "General": [{
             "key":"F2",
             "val":"Rename selected file"
-          }, {
-            "key":"F3",
-            "val":"Search remote files"
-          }, {
-            "key":"F5",
-            "val":"Refreshes local and remote file and folder views"
           }, {
             "key":"Tab",
             "val":"Switches to the next view"
@@ -31,26 +31,21 @@
             "key":"[Ctrl] [C]",
             "val":"Stops the current operation"
           }, {
-            "key":"[Ctrl] [D]",
-            "val":"Disconnects from server"
-          }, {
-            "key":"[Ctrl] [E]",
-            "val":"Show files currently being edited"
-          }, {
-              "key":"[Ctrl] [M]",
-              "val":"Manual transfer"
-          }, {
             "key":"[Ctrl] [O]",
             "val":"Enable directory comparison"
           }, {
-            "key":"[Ctrl] [P]",
-            "val":"Process queue"
+            "key":"[Ctrl] [Y]",
+            "val":"Toggle synchronized browsing"
+        }, {
+            "key":"Enter",
+            "val":"Transfers the currently selected item if it is a file or expands it if it is a directory"
+        }],
+        "File": [{
+            "key":"[Ctrl] [E]",
+            "val":"Show files currently being edited"
           }, {
             "key":"[Ctrl] [Q]",
             "val":"Exit"
-        }, {
-            "key":"[Ctrl] [R]",
-            "val":"Reconnects to server"
         }, {
             "key":"[Ctrl] [S]",
             "val":"Opens the Site Manager"
@@ -58,14 +53,38 @@
             "key":"[Ctrl] [T]",
             "val":"Opens a new tab"
         }, {
+            "key":"[Ctrl] [W]",
+            "val":"Close tab"
+        }],
+        "View": [{
+            "key":"F5",
+            "val":"Refreshes local and remote file and folder views"
+          }, {
+            "key":"[Ctrl] [I]",
+            "val":"Filename Filters"
+          }, {
+            "key":"[Ctrl] [Y]",
+            "val":"Toggle synchronized browsing"
+        }],
+        "Transfer": [{
+            "key":"[Ctrl] [P]",
+            "val":"Process queue"
+          }, {
             "key":"[Ctrl] [U]",
             "val":"Preserve timestamps of transferred files"
         }, {
-            "key":"[Ctrl] [Y]",
-            "val":"Toggle synchronized browsing"
-        }, {
-            "key":"Enter",
-            "val":"Transfers the currently selected item if it is a file or expands it if it is a directory"
+            "key":"[Ctrl] [M]",
+            "val":"Manual transfer"
+        }],
+        "Server": [{
+            "key":"F3",
+            "val":"Search remote files"
+          }, {
+            "key":"[Ctrl] [D]",
+            "val":"Disconnects from server"
+          }, {
+            "key":"[Ctrl] [R]",
+            "val":"Reconnects to server"
         }]
     }
 }
