@@ -7,58 +7,60 @@
         "sourceUrl": "https://support.apple.com/kb/PH17148"
     },
     "template_type": "keyboard",
-    "section_order" : ["General"],
+    "section_order" : ["Tab Management" , "Window Management" , "Bookmark"],
     "sections":{
-        "General":[{
-              "key":"[⌘]  [T]",
+        "Tab Management":[{
+              "key":"[⌘] [T]",
               "val":"Open new tab"
            },{
-              "key":"[⌘]  [←] / [→]",
+              "key":"[⌘] [←] / [→]",
               "val":"Jump to next / jump to previous tab"
            },{
-              "key":"[⌘]  [W]",
+              "key":"[⌘] [W]",
               "val":"Close current tab"
            },{
-              "key":"[⌘]  [Z]",
+              "key":"[⌘] [Z]",
               "val":"Re-open closed tab (undo command)"
            },{
-              "key":"[⌘]  [Option] + [w]",
+              "key":"[⌘] [Option] [w]",
               "val":"Close all tabs except active tab"
-           },{
-              "key":"[⌘]  [N]",
+           }],
+         "Window Management":[{
+              "key":"[⌘] [N]",
               "val":"Open New Safari Window"
            },{
-              "key":"[⌘]  [M]",
+              "key":"[⌘] [M]",
               "val":"Minimize current Window"
            },{
-              "key":"[⌘]  [H]",
+              "key":"[⌘] [H]",
               "val":"Hide all Safari Windows"
            },{
-              "key":"[⌘]  [Shift]  [W]",
+              "key":"[⌘] [Shift] [W]",
               "val":"Close Safari Window (current window, all tabs)"
            },{
-              "key":"[⌘]  [Shift]  [`]",
+              "key":"[⌘] [Shift] [`]",
               "val":"Jump to next / jump to previous Safari Windows"
            },{
-              "key":"[⌘]  [Q]",
+              "key":"[⌘] [Q]",
               "val":"Close Safari (all windows, all tabs)"
            },{
-              "key":"[Option]  [⌘]  [1]",
+              "key":"[⌘] [Shift] [N]",
+              "val":"Open New Private Window (equivalent of Incognito mode in Google Chrome)"
+           }],
+         "Boomark":[{
+              "key":"[Option] [⌘] [1]",
               "val":"Show Top Sites"
            },{
-              "key":"[Option]  [⌘]  [2]",
+              "key":"[Option] [⌘] [2]",
               "val":"Show Collections (history, bookmarks, ...)"
            },{
-              "key":"[⌘]  [D]",
+              "key":"[⌘] [D]",
               "val":"Bookmark Page"
            },{
-              "key":"[⌘]  [Shift]  [N]",
-              "val":"Open New Private Window (equivalent of Incognito mode in Google Chrome)"
-           },{
-              "key":"[⌘]  [1...9]",
+              "key":"[⌘] [1...9]",
               "val":"Jump to bookmark #1, #2, … from Bookmark Bar"
            },{
-              "key":"[⌘]  [Shift]  [L]",
+              "key":"[⌘] [Shift] [L]",
               "val":"Show Sidebar (to display Bookmarks, Reading List, and Shared Links pane)"
            }]
       }
