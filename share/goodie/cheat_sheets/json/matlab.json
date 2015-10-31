@@ -12,7 +12,7 @@
         "Operator Precedence",
         "Line Plot Styles"
     ],
-    "template_type": "keyboard",
+    "template_type": "code",
     "sections":{
         "Common Commands":[
             {
