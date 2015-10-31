@@ -6,6 +6,7 @@
         "sourceName": "w3mCheatSheet",
         "sourceUrl": "http://w3m.sourceforge.net/MANUAL#Key:orig"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Page/Cursor motion",
         "Hyperlink operation",
