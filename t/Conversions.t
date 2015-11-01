@@ -934,38 +934,24 @@ ddg_goodie_test(
             result => '774.330 °F'
         }
     ),
-    #'-87 fahrenheit in fahrenheit' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
-    #'-87 celsius in fahrenheit' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
-    #'-87 kelvin in fahrenheit' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
-    #'-87 rankine in fahrenheit' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
+    '-87 fahrenheit in fahrenheit' => test_zci(
+        '-87 °F = -87 °F',
+        structured_answer => {
+            input => ['-87 °F'],
+            operation => 'Convert',
+            result => '-87 °F'
+        }
+    ),
+    '-87 celsius in fahrenheit' => test_zci(
+        '-87 °C = -124.600 °F',		
+        structured_answer => {
+            input => ['-87 °C'],
+            operation => 'Convert',
+            result => '-124.600 °F'
+        }
+    ),
+    '-87 kelvin in fahrenheit' => undef,
+    '-87 rankine in fahrenheit' => undef,
     #'-7 fahrenheit in fahrenheit' => test_zci(
     #    ' = 0 ',
     #    structured_answer => {
@@ -982,22 +968,8 @@ ddg_goodie_test(
     #        result => '0 '
     #    }
     #),
-    #'-7 kelvin in fahrenheit' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
-    #'-7 rankine in fahrenheit' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
+    #'-7 kelvin in fahrenheit' => undef
+    #'-7 rankine in fahrenheit' => undef
     #'0 fahrenheit in fahrenheit' => test_zci(
     #    '0 fahrenheit = 0 fahrenheit',
     #    structured_answer => {
