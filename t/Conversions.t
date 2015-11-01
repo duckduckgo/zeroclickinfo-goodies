@@ -952,22 +952,22 @@ ddg_goodie_test(
     ),
     '-87 kelvin in fahrenheit' => undef,
     '-87 rankine in fahrenheit' => undef,
-    #'-7 fahrenheit in fahrenheit' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
-    #'-7 celsius in fahrenheit' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
+    '-7 fahrenheit in fahrenheit' => test_zci(
+        '-7 °F = -7 °F',
+        structured_answer => {
+            input => ['-7 °F'],
+            operation => 'Convert',
+            result => '-7 °F'
+        }
+    ),
+    '-7 celsius in fahrenheit' => test_zci(
+        '-7 °C = 19.400 °F',
+        structured_answer => {
+            input => ['-7 °C'],
+            operation => 'Convert',
+            result => '19.400 °F'
+        }
+    ),
     '-7 kelvin in fahrenheit' => undef,
     '-7 rankine in fahrenheit' => undef,
     #'0 fahrenheit in fahrenheit' => test_zci(
