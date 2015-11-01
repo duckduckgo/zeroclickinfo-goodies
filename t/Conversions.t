@@ -1277,39 +1277,38 @@ ddg_goodie_test(
     #    }
     #),
 	
-	
-    #'10 fahrenheit in rankine' => test_zci(
-    #    '10 fahrenheit = 0 rankine',
-    #    structured_answer => {
-    #        input => ['10 fahrenheit'],
-    #        operation => 'Convert',
-    #        result => '0 rankine'
-    #    }
-    #),
-    #'10 celsius in rankine' => test_zci(
-    #    '10 celsius = 0 rankine',
-    #    structured_answer => {
-    #        input => ['10 celsius'],
-    #        operation => 'Convert',
-    #        result => '0 rankine'
-    #    }
-    #),
-    #'10 kelvin in rankine' => test_zci(
-    #    '10 kelvin = 0 rankine',
-    #    structured_answer => {
-    #        input => ['10 kelvin'],
-    #        operation => 'Convert',
-    #        result => '0 rankine'
-    #    }
-    #),
-    #'10 rankine in rankine' => test_zci(
-    #    '10 rankine = 0 rankine',
-    #    structured_answer => {
-    #        input => ['10 rankine'],
-    #        operation => 'Convert',
-    #        result => '0 rankine'
-    #    }
-    #),
+    '10 fahrenheit in rankine' => test_zci(
+        '10 °F = 469.670 °R',
+        structured_answer => {
+            input => ['10 °F'],
+            operation => 'Convert',
+            result => '469.670 °R'
+        }
+    ),
+    '10 celsius in rankine' => test_zci(
+        '10 °C = 509.670 °R',		
+        structured_answer => {
+            input => ['10 °C'],
+            operation => 'Convert',
+            result => '509.670 °R'
+        }
+    ),
+    '10 kelvin in rankine' => test_zci(
+        '10 K = 18 °R',
+        structured_answer => {
+            input => ['10 K'],
+            operation => 'Convert',
+            result => '18 °R'
+        }
+    ),
+    '10 rankine in rankine' => test_zci(
+        '10 °R = 10 °R',
+        structured_answer => {
+            input => ['10 °R'],
+            operation => 'Convert',
+            result => '10 °R'
+        }
+    ),
     #'1234 fahrenheit in rankine' => test_zci(
     #    '1234 fahrenheit = 0 rankine',
     #    structured_answer => {
