@@ -1309,38 +1309,38 @@ ddg_goodie_test(
             result => '10 °R'
         }
     ),
-    #'1234 fahrenheit in rankine' => test_zci(
-    #    '1234 fahrenheit = 0 rankine',
-    #    structured_answer => {
-    #        input => ['1234 fahrenheit'],
-    #        operation => 'Convert',
-    #        result => '0 rankine'
-    #    }
-    #),
-    #'1234 celsius in rankine' => test_zci(
-    #    '1234 celsius = 0 rankine',
-    #    structured_answer => {
-    #        input => ['1234 celsius'],
-    #        operation => 'Convert',
-    #        result => '0 rankine'
-    #    }
-    #),
-    #'1234 kelvin in rankine' => test_zci(
-    #    '1234 kelvin = 0 rankine',
-    #    structured_answer => {
-    #        input => ['1234 kelvin'],
-    #        operation => 'Convert',
-    #        result => '0 rankine'
-    #    }
-    #),
-    #'1234 rankine in rankine' => test_zci(
-    #    '1234 rankine = 0 rankine',
-    #    structured_answer => {
-    #        input => ['1234 rankine'],
-    #        operation => 'Convert',
-    #        result => '0 rankine'
-    #    }
-    #),
+    '1234 fahrenheit in rankine' => test_zci(
+        '1,234 °F = 1,693.670 °R',
+        structured_answer => {
+            input => ['1,234 °F'],
+            operation => 'Convert',
+            result => '1,693.670 °R'
+        }
+    ),
+    '1234 celsius in rankine' => test_zci(
+        '1,234 °C = 2,712.870 °R',
+        structured_answer => {
+            input => ['1,234 °C'],
+            operation => 'Convert',
+            result => '2,712.870 °R'
+        }
+    ),
+    '1234 kelvin in rankine' => test_zci(
+        '1,234 K = 2,221.200 °R',
+        structured_answer => {
+            input => ['1,234 K'],
+            operation => 'Convert',
+            result => '2,221.200 °R'
+        }
+    ),
+    '1234 rankine in rankine' => test_zci(
+        '1,234 °R = 1,234 °R',
+        structured_answer => {
+            input => ['1,234 °R'],
+            operation => 'Convert',
+            result => '1,234 °R'
+        }
+    ),
     #'-87 fahrenheit in rankine' => test_zci(
     #    ' = 0 ',
     #    structured_answer => {
