@@ -1360,20 +1360,21 @@ ddg_goodie_test(
     #),
     '-87 kelvin in rankine' => undef,
     '-87 rankine in rankine' => undef,
+	#TODO: Failing, don't trigger correctly
     #'-7 fahrenheit in rankine' => test_zci(
-    #    ' = 0 ',
+    #    '-7 °F = 452.700 °R',
     #    structured_answer => {
-    #        input => [''],
+    #        input => ['-7 °F'],
     #        operation => 'Convert',
-    #        result => '0 '
+    #        result => '452.700 °R'
     #    }
     #),
     #'-7 celsius in rankine' => test_zci(
-    #    ' = 0 ',
+    #    '-7 °C = 479.100 °R',
     #    structured_answer => {
-    #        input => [''],
+    #        input => ['-7 °C'],
     #        operation => 'Convert',
-    #        result => '0 '
+    #        result => '479.100 °R'
     #    }
     #),
     '-7 kelvin in rankine' => undef,
