@@ -866,6 +866,649 @@ ddg_goodie_test(
             result    => '10,000 centimeters'
         }
     ),
+
+    ## Full suite of tests around temperatures
+    '10 fahrenheit in fahrenheit' => test_zci(
+        '10 fahrenheit = 0 fahrenheit',
+        structured_answer => {
+            input => ['10 fahrenheit'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '10 celsius in fahrenheit' => test_zci(
+        '10 celsius = 0 fahrenheit',
+        structured_answer => {
+            input => ['10 celsius'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '10 kelvin in fahrenheit' => test_zci(
+        '10 kelvin = 0 fahrenheit',
+        structured_answer => {
+            input => ['10 kelvin'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '10 rankine in fahrenheit' => test_zci(
+        '10 rankine = 0 fahrenheit',
+        structured_answer => {
+            input => ['10 rankine'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '1234 fahrenheit in fahrenheit' => test_zci(
+        '1234 fahrenheit = 0 fahrenheit',
+        structured_answer => {
+            input => ['1234 fahrenheit'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '1234 celsius in fahrenheit' => test_zci(
+        '1234 celsius = 0 fahrenheit',
+        structured_answer => {
+            input => ['1234 celsius'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '1234 kelvin in fahrenheit' => test_zci(
+        '1234 kelvin = 0 fahrenheit',
+        structured_answer => {
+            input => ['1234 kelvin'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '1234 rankine in fahrenheit' => test_zci(
+        '1234 rankine = 0 fahrenheit',
+        structured_answer => {
+            input => ['1234 rankine'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '-87 fahrenheit in fahrenheit' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 celsius in fahrenheit' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 kelvin in fahrenheit' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 rankine in fahrenheit' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 fahrenheit in fahrenheit' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 celsius in fahrenheit' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 kelvin in fahrenheit' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 rankine in fahrenheit' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '0 fahrenheit in fahrenheit' => test_zci(
+        '0 fahrenheit = 0 fahrenheit',
+        structured_answer => {
+            input => ['0 fahrenheit'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '0 celsius in fahrenheit' => test_zci(
+        '0 celsius = 0 fahrenheit',
+        structured_answer => {
+            input => ['0 celsius'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '0 kelvin in fahrenheit' => test_zci(
+        '0 kelvin = 0 fahrenheit',
+        structured_answer => {
+            input => ['0 kelvin'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '0 rankine in fahrenheit' => test_zci(
+        '0 rankine = 0 fahrenheit',
+        structured_answer => {
+            input => ['0 rankine'],
+            operation => 'Convert',
+            result => '0 fahrenheit'
+        }
+    ),
+    '10 fahrenheit in celsius' => test_zci(
+        '10 fahrenheit = 0 celsius',
+        structured_answer => {
+            input => ['10 fahrenheit'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '10 celsius in celsius' => test_zci(
+        '10 celsius = 0 celsius',
+        structured_answer => {
+            input => ['10 celsius'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '10 kelvin in celsius' => test_zci(
+        '10 kelvin = 0 celsius',
+        structured_answer => {
+            input => ['10 kelvin'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '10 rankine in celsius' => test_zci(
+        '10 rankine = 0 celsius',
+        structured_answer => {
+            input => ['10 rankine'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '1234 fahrenheit in celsius' => test_zci(
+        '1234 fahrenheit = 0 celsius',
+        structured_answer => {
+            input => ['1234 fahrenheit'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '1234 celsius in celsius' => test_zci(
+        '1234 celsius = 0 celsius',
+        structured_answer => {
+            input => ['1234 celsius'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '1234 kelvin in celsius' => test_zci(
+        '1234 kelvin = 0 celsius',
+        structured_answer => {
+            input => ['1234 kelvin'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '1234 rankine in celsius' => test_zci(
+        '1234 rankine = 0 celsius',
+        structured_answer => {
+            input => ['1234 rankine'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '-87 fahrenheit in celsius' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 celsius in celsius' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 kelvin in celsius' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 rankine in celsius' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 fahrenheit in celsius' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 celsius in celsius' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 kelvin in celsius' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 rankine in celsius' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '0 fahrenheit in celsius' => test_zci(
+        '0 fahrenheit = 0 celsius',
+        structured_answer => {
+            input => ['0 fahrenheit'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '0 celsius in celsius' => test_zci(
+        '0 celsius = 0 celsius',
+        structured_answer => {
+            input => ['0 celsius'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '0 kelvin in celsius' => test_zci(
+        '0 kelvin = 0 celsius',
+        structured_answer => {
+            input => ['0 kelvin'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '0 rankine in celsius' => test_zci(
+        '0 rankine = 0 celsius',
+        structured_answer => {
+            input => ['0 rankine'],
+            operation => 'Convert',
+            result => '0 celsius'
+        }
+    ),
+    '10 fahrenheit in kelvin' => test_zci(
+        '10 fahrenheit = 0 kelvin',
+        structured_answer => {
+            input => ['10 fahrenheit'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '10 celsius in kelvin' => test_zci(
+        '10 celsius = 0 kelvin',
+        structured_answer => {
+            input => ['10 celsius'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '10 kelvin in kelvin' => test_zci(
+        '10 kelvin = 0 kelvin',
+        structured_answer => {
+            input => ['10 kelvin'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '10 rankine in kelvin' => test_zci(
+        '10 rankine = 0 kelvin',
+        structured_answer => {
+            input => ['10 rankine'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '1234 fahrenheit in kelvin' => test_zci(
+        '1234 fahrenheit = 0 kelvin',
+        structured_answer => {
+            input => ['1234 fahrenheit'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '1234 celsius in kelvin' => test_zci(
+        '1234 celsius = 0 kelvin',
+        structured_answer => {
+            input => ['1234 celsius'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '1234 kelvin in kelvin' => test_zci(
+        '1234 kelvin = 0 kelvin',
+        structured_answer => {
+            input => ['1234 kelvin'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '1234 rankine in kelvin' => test_zci(
+        '1234 rankine = 0 kelvin',
+        structured_answer => {
+            input => ['1234 rankine'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '-87 fahrenheit in kelvin' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 celsius in kelvin' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 kelvin in kelvin' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 rankine in kelvin' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 fahrenheit in kelvin' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 celsius in kelvin' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 kelvin in kelvin' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 rankine in kelvin' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '0 fahrenheit in kelvin' => test_zci(
+        '0 fahrenheit = 0 kelvin',
+        structured_answer => {
+            input => ['0 fahrenheit'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '0 celsius in kelvin' => test_zci(
+        '0 celsius = 0 kelvin',
+        structured_answer => {
+            input => ['0 celsius'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '0 kelvin in kelvin' => test_zci(
+        '0 kelvin = 0 kelvin',
+        structured_answer => {
+            input => ['0 kelvin'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '0 rankine in kelvin' => test_zci(
+        '0 rankine = 0 kelvin',
+        structured_answer => {
+            input => ['0 rankine'],
+            operation => 'Convert',
+            result => '0 kelvin'
+        }
+    ),
+    '10 fahrenheit in rankine' => test_zci(
+        '10 fahrenheit = 0 rankine',
+        structured_answer => {
+            input => ['10 fahrenheit'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '10 celsius in rankine' => test_zci(
+        '10 celsius = 0 rankine',
+        structured_answer => {
+            input => ['10 celsius'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '10 kelvin in rankine' => test_zci(
+        '10 kelvin = 0 rankine',
+        structured_answer => {
+            input => ['10 kelvin'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '10 rankine in rankine' => test_zci(
+        '10 rankine = 0 rankine',
+        structured_answer => {
+            input => ['10 rankine'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '1234 fahrenheit in rankine' => test_zci(
+        '1234 fahrenheit = 0 rankine',
+        structured_answer => {
+            input => ['1234 fahrenheit'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '1234 celsius in rankine' => test_zci(
+        '1234 celsius = 0 rankine',
+        structured_answer => {
+            input => ['1234 celsius'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '1234 kelvin in rankine' => test_zci(
+        '1234 kelvin = 0 rankine',
+        structured_answer => {
+            input => ['1234 kelvin'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '1234 rankine in rankine' => test_zci(
+        '1234 rankine = 0 rankine',
+        structured_answer => {
+            input => ['1234 rankine'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '-87 fahrenheit in rankine' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 celsius in rankine' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 kelvin in rankine' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-87 rankine in rankine' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 fahrenheit in rankine' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 celsius in rankine' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 kelvin in rankine' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '-7 rankine in rankine' => test_zci(
+        ' = 0 ',
+        structured_answer => {
+            input => [''],
+            operation => 'Convert',
+            result => '0 '
+        }
+    ),
+    '0 fahrenheit in rankine' => test_zci(
+        '0 fahrenheit = 0 rankine',
+        structured_answer => {
+            input => ['0 fahrenheit'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '0 celsius in rankine' => test_zci(
+        '0 celsius = 0 rankine',
+        structured_answer => {
+            input => ['0 celsius'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '0 kelvin in rankine' => test_zci(
+        '0 kelvin = 0 rankine',
+        structured_answer => {
+            input => ['0 kelvin'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+    '0 rankine in rankine' => test_zci(
+        '0 rankine = 0 rankine',
+        structured_answer => {
+            input => ['0 rankine'],
+            operation => 'Convert',
+            result => '0 rankine'
+        }
+    ),
+
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
