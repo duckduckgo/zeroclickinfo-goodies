@@ -970,38 +970,39 @@ ddg_goodie_test(
     ),
     '-7 kelvin in fahrenheit' => undef,
     '-7 rankine in fahrenheit' => undef,
-    #'0 fahrenheit in fahrenheit' => test_zci(
-    #    '0 fahrenheit = 0 fahrenheit',
+    #TODO: look at this undef
+	#'0 fahrenheit in fahrenheit' => test_zci(
+    #    '0 °F = 0 °F',
     #    structured_answer => {
-    #        input => ['0 fahrenheit'],
+    #        input => ['0 °F'],
     #        operation => 'Convert',
-    #        result => '0 fahrenheit'
+    #        result => '0 °F'
     #    }
     #),
-    #'0 celsius in fahrenheit' => test_zci(
-    #    '0 celsius = 0 fahrenheit',
-    #    structured_answer => {
-    #        input => ['0 celsius'],
-    #        operation => 'Convert',
-    #        result => '0 fahrenheit'
-    #    }
-    #),
-    #'0 kelvin in fahrenheit' => test_zci(
-    #    '0 kelvin = 0 fahrenheit',
-    #    structured_answer => {
-    #        input => ['0 kelvin'],
-    #        operation => 'Convert',
-    #        result => '0 fahrenheit'
-    #    }
-    #),
-    #'0 rankine in fahrenheit' => test_zci(
-    #    '0 rankine = 0 fahrenheit',
-    #    structured_answer => {
-    #        input => ['0 rankine'],
-    #        operation => 'Convert',
-    #        result => '0 fahrenheit'
-    #    }
-    #),
+    '0 celsius in fahrenheit' => test_zci(
+        '0 °C = 32 °F',
+        structured_answer => {
+            input => ['0 °C'],
+            operation => 'Convert',
+            result => '32 °F'
+        }
+    ),
+    '0 kelvin in fahrenheit' => test_zci(
+        '0 K = -459.670 °F',
+        structured_answer => {
+            input => ['0 K'],
+            operation => 'Convert',
+            result => '-459.670 °F'
+        }
+    ),
+    '0 rankine in fahrenheit' => test_zci(
+        '0 °R = -459.670 °F',
+        structured_answer => {
+            input => ['0 °R'],
+            operation => 'Convert',
+            result => '-459.670 °F'
+        }
+    ),
     #'10 fahrenheit in celsius' => test_zci(
     #    '10 fahrenheit = 0 celsius',
     #    structured_answer => {
