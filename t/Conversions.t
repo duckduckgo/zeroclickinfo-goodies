@@ -1242,38 +1242,42 @@ ddg_goodie_test(
     #),
     '-7 kelvin in kelvin' => undef,
     '-7 rankine in kelvin' => undef,
-    #'0 fahrenheit in kelvin' => test_zci(
-    #    '0 fahrenheit = 0 kelvin',
-    #    structured_answer => {
-    #        input => ['0 fahrenheit'],
-    #        operation => 'Convert',
-    #        result => '0 kelvin'
-    #    }
-    #),
-    #'0 celsius in kelvin' => test_zci(
-    #    '0 celsius = 0 kelvin',
-    #    structured_answer => {
-    #        input => ['0 celsius'],
-    #        operation => 'Convert',
-    #        result => '0 kelvin'
-    #    }
-    #),
+    '0 fahrenheit in kelvin' => test_zci(
+        '0 °F = 255.372 K',
+        structured_answer => {
+            input => ['0 °F'],
+            operation => 'Convert',
+            result => '255.372 K'
+        }
+    ),
+    '0 celsius in kelvin' => test_zci(
+        '0 °C = 273.150 K',
+        structured_answer => {
+            input => ['0 °C'],
+            operation => 'Convert',
+            result => '273.150 K'
+        }
+    ),
+	#FAILING:
     #'0 kelvin in kelvin' => test_zci(
-    #    '0 kelvin = 0 kelvin',
+    #    '0 K = 0 K',
     #    structured_answer => {
-    #        input => ['0 kelvin'],
+    #        input => ['0 K'],
     #        operation => 'Convert',
-    #        result => '0 kelvin'
+    #        result => '0 K'
     #    }
     #),
+	# doesn't trigger:
     #'0 rankine in kelvin' => test_zci(
-    #    '0 rankine = 0 kelvin',
+    #    '0 rankine = 0 K',
     #    structured_answer => {
-    #        input => ['0 rankine'],
+    #        input => ['0 °R'],
     #        operation => 'Convert',
-    #        result => '0 kelvin'
+    #        result => '0 K'
     #    }
     #),
+	
+	
     #'10 fahrenheit in rankine' => test_zci(
     #    '10 fahrenheit = 0 rankine',
     #    structured_answer => {
