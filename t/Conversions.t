@@ -1071,22 +1071,22 @@ ddg_goodie_test(
             result => '412.406 °C'
         }
     ),
-    #'-87 fahrenheit in celsius' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
-    #'-87 celsius in celsius' => test_zci(
-    #    ' = 0 ',
-    #    structured_answer => {
-    #        input => [''],
-    #        operation => 'Convert',
-    #        result => '0 '
-    #    }
-    #),
+    '-87 fahrenheit in celsius' => test_zci(
+        '-87 °F = -66.111 °C',
+        structured_answer => {
+            input => ['-87 °F'],
+            operation => 'Convert',
+            result => '-66.111 °C'
+        }
+    ),
+    '-87 celsius in celsius' => test_zci(
+        '-87 °C = -87 °C',
+        structured_answer => {
+            input => ['-87 °C'],
+            operation => 'Convert',
+            result => '-87 °C'
+        }
+    ),
     '-87 kelvin in celsius' => undef,
     '-87 rankine in celsius' => undef,
     #'-7 fahrenheit in celsius' => test_zci(
