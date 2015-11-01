@@ -1107,38 +1107,39 @@ ddg_goodie_test(
     ),
     '-7 kelvin in celsius' => undef,
     '-7 rankine in celsius' => undef,
-    #'0 fahrenheit in celsius' => test_zci(
-    #    '0 fahrenheit = 0 celsius',
-    #    structured_answer => {
-    #        input => ['0 fahrenheit'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
+    '0 fahrenheit in celsius' => test_zci(
+        '0 °F = -17.778 °C',
+        structured_answer => {
+            input => ['0 °F'],
+            operation => 'Convert',
+            result => '-17.778 °C'
+        }
+    ),
+	#TOOD: Also no answer here?
     #'0 celsius in celsius' => test_zci(
-    #    '0 celsius = 0 celsius',
+    #    '0 °C = 0 °C',
     #    structured_answer => {
-    #        input => ['0 celsius'],
+    #        input => ['0 °C'],
     #        operation => 'Convert',
-    #        result => '0 celsius'
+    #        result => '0 °C'
     #    }
     #),
-    #'0 kelvin in celsius' => test_zci(
-    #    '0 kelvin = 0 celsius',
-    #    structured_answer => {
-    #        input => ['0 kelvin'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
-    #'0 rankine in celsius' => test_zci(
-    #    '0 rankine = 0 celsius',
-    #    structured_answer => {
-    #        input => ['0 rankine'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
+    '0 kelvin in celsius' => test_zci(
+        '0 K = -273.150 °C',
+        structured_answer => {
+            input => ['0 K'],
+            operation => 'Convert',
+            result => '-273.150 °C'
+        }
+    ),
+    '0 rankine in celsius' => test_zci(
+        '0 °R = -273.150 °C',
+        structured_answer => {
+            input => ['0 °R'],
+            operation => 'Convert',
+            result => '-273.150 °C'
+        }
+    ),
     #'10 fahrenheit in kelvin' => test_zci(
     #    '10 fahrenheit = 0 kelvin',
     #    structured_answer => {
