@@ -1140,38 +1140,38 @@ ddg_goodie_test(
             result => '-273.150 °C'
         }
     ),
-    #'10 fahrenheit in kelvin' => test_zci(
-    #    '10 fahrenheit = 0 kelvin',
-    #    structured_answer => {
-    #        input => ['10 fahrenheit'],
-    #        operation => 'Convert',
-    #        result => '0 kelvin'
-    #    }
-    #),
-    #'10 celsius in kelvin' => test_zci(
-    #    '10 celsius = 0 kelvin',
-    #    structured_answer => {
-    #        input => ['10 celsius'],
-    #        operation => 'Convert',
-    #        result => '0 kelvin'
-    #    }
-    #),
-    #'10 kelvin in kelvin' => test_zci(
-    #    '10 kelvin = 0 kelvin',
-    #    structured_answer => {
-    #        input => ['10 kelvin'],
-    #        operation => 'Convert',
-    #        result => '0 kelvin'
-    #    }
-    #),
-    #'10 rankine in kelvin' => test_zci(
-    #    '10 rankine = 0 kelvin',
-    #    structured_answer => {
-    #        input => ['10 rankine'],
-    #        operation => 'Convert',
-    #        result => '0 kelvin'
-    #    }
-    #),
+    '10 fahrenheit in kelvin' => test_zci(
+        '10 °F = 260.928 K',
+        structured_answer => {
+            input => ['10 °F'],
+            operation => 'Convert',
+            result => '260.928 K'
+        }
+    ),
+    '10 celsius in kelvin' => test_zci(
+        '10 °C = 283.150 K',
+        structured_answer => {
+            input => ['10 °C'],
+            operation => 'Convert',
+            result => '283.150 K'
+        }
+    ),
+    '10 kelvin in kelvin' => test_zci(
+        '10 K = 10 K',
+        structured_answer => {
+            input => ['10 K'],
+            operation => 'Convert',
+            result => '10 K'
+        }
+    ),
+    '10 rankine in kelvin' => test_zci(
+        '10 °R = 5.556 K',
+        structured_answer => {
+            input => ['10 °R'],
+            operation => 'Convert',
+            result => '5.556 K'
+        }
+    ),
     #'1234 fahrenheit in kelvin' => test_zci(
     #    '1234 fahrenheit = 0 kelvin',
     #    structured_answer => {
