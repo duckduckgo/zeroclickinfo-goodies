@@ -884,552 +884,552 @@ ddg_goodie_test(
         }
     ),
 	
-#    ## Full suite of tests around temperatures
-#	# for computational accuracy rather than
-#	# parsing accuracy
-#    '10 fahrenheit in fahrenheit' => test_zci(
-#        '10 °F = 10 °F',
-#        structured_answer => {
-#            input => ['10 °F'],
-#            operation => 'Convert',
-#            result => '10 °F'
-#        }
-#    ),
-#    '10 celsius in fahrenheit' => test_zci(
-#        '10 °C = 50 °F',
-#        structured_answer => {
-#            input => ['10 °C'],
-#            operation => 'Convert',
-#            result => '50 °F'
-#        }
-#    ),
-#    '10 kelvin in fahrenheit' => test_zci(
-#        '10 K = -441.670 °F',
-#        structured_answer => {
-#            input => ['10 K'],
-#            operation => 'Convert',
-#            result => '-441.670 °F'
-#        }
-#    ),
-#    '10 rankine in fahrenheit' => test_zci(
-#        '10 °R = -449.670 °F',
-#        structured_answer => {
-#            input => ['10 °R'],
-#            operation => 'Convert',
-#            result => '-449.670 °F'
-#        }
-#    ),
-#    '1234 fahrenheit in fahrenheit' => test_zci(
-#        '1,234 °F = 1,234 °F',
-#        structured_answer => {
-#            input => ['1,234 °F'],
-#            operation => 'Convert',
-#            result => '1,234 °F'
-#        }
-#    ),
-#    '1234 celsius in fahrenheit' => test_zci(
-#        '1,234 °C = 2,253.200 °F',
-#        structured_answer => {
-#            input => ['1,234 °C'],
-#            operation => 'Convert',
-#            result => '2,253.200 °F'
-#        }
-#    ),
-#    '1234 kelvin in fahrenheit' => test_zci(
-#        '1,234 K = 1,761.530 °F',
-#        structured_answer => {
-#            input => ['1,234 K'],
-#            operation => 'Convert',
-#            result => '1,761.530 °F'
-#        }
-#    ),
-#    '1234 rankine in fahrenheit' => test_zci(
-#        '1,234 °R = 774.330 °F',
-#        structured_answer => {
-#            input => ['1,234 °R'],
-#            operation => 'Convert',
-#            result => '774.330 °F'
-#        }
-#    ),
-#    '-87 fahrenheit in fahrenheit' => test_zci(
-#        '-87 °F = -87 °F',
-#        structured_answer => {
-#            input => ['-87 °F'],
-#            operation => 'Convert',
-#            result => '-87 °F'
-#        }
-#    ),
-#    '-87 celsius in fahrenheit' => test_zci(
-#        '-87 °C = -124.600 °F',		
-#        structured_answer => {
-#            input => ['-87 °C'],
-#            operation => 'Convert',
-#            result => '-124.600 °F'
-#        }
-#    ),
-#    '-87 kelvin in fahrenheit' => undef,
-#    '-87 rankine in fahrenheit' => undef,
-#    '-7 fahrenheit in fahrenheit' => test_zci(
-#        '-7 °F = -7 °F',
-#        structured_answer => {
-#            input => ['-7 °F'],
-#            operation => 'Convert',
-#            result => '-7 °F'
-#        }
-#    ),
-#    '-7 celsius in fahrenheit' => test_zci(
-#        '-7 °C = 19.400 °F',
-#        structured_answer => {
-#            input => ['-7 °C'],
-#            operation => 'Convert',
-#            result => '19.400 °F'
-#        }
-#    ),
-#    '-7 kelvin in fahrenheit' => undef,
-#    '-7 rankine in fahrenheit' => undef,
-#    #TODO: look at this undef
-#	'0 fahrenheit in fahrenheit' => test_zci(
-#        '0 °F = 0 °F',
-#        structured_answer => {
-#            input => ['0 °F'],
-#            operation => 'Convert',
-#            result => '0 °F'
-#        }
-#    ),
-#    '0 celsius in fahrenheit' => test_zci(
-#        '0 °C = 32 °F',
-#        structured_answer => {
-#            input => ['0 °C'],
-#            operation => 'Convert',
-#            result => '32 °F'
-#        }
-#    ),
-#    '0 kelvin in fahrenheit' => test_zci(
-#        '0 K = -459.670 °F',
-#        structured_answer => {
-#            input => ['0 K'],
-#            operation => 'Convert',
-#            result => '-459.670 °F'
-#        }
-#    ),
-#    '0 rankine in fahrenheit' => test_zci(
-#        '0 °R = -459.670 °F',
-#        structured_answer => {
-#            input => ['0 °R'],
-#            operation => 'Convert',
-#            result => '-459.670 °F'
-#        }
-#    ),
-#    '10 fahrenheit in celsius' => test_zci(
-#        '10 °F = -12.222 °C',
-#        structured_answer => {
-#            input => ['10 °F'],
-#            operation => 'Convert',
-#            result => '-12.222 °C'
-#        }
-#    ),
-#    '10 celsius in celsius' => test_zci(
-#        '10 °C = 10 °C',
-#        structured_answer => {
-#            input => ['10 °C'],
-#            operation => 'Convert',
-#            result => '10 °C'
-#        }
-#    ),
-#    '10 kelvin in celsius' => test_zci(
-#        '10 K = -263.150 °C',
-#        structured_answer => {
-#            input => ['10 K'],
-#            operation => 'Convert',
-#            result => '-263.150 °C'
-#        }
-#    ),
-#	#TODO: investigate accuracy here
-#	# according to WA: 267.6°C;
-#	# https://www.wolframalpha.com/input/?i=10R+in+C
-#    '10 rankine in celsius' => test_zci(
-#        '10 °R = -268 °C',
-#        structured_answer => {
-#            input => ['10 °R'],
-#            operation => 'Convert',
-#            result => '-268 °C'
-#        }
-#    ),
-#	
-#    '1234 fahrenheit in celsius' => test_zci(
-#        '1,234 °F = 667.778 °C',
-#        structured_answer => {
-#            input => ['1,234 °F'],
-#            operation => 'Convert',
-#            result => '667.778 °C'
-#        }
-#    ),
-#    '1234 celsius in celsius' => test_zci(
-#        '1,234 °C = 1,234 °C',
-#        structured_answer => {
-#            input => ['1,234 °C'],
-#            operation => 'Convert',
-#            result => '1,234 °C'
-#        }
-#    ),
-#    '1234 kelvin in celsius' => test_zci(
-#        '1,234 K = 960.850 °C',
-#        structured_answer => {
-#            input => ['1,234 K'],
-#            operation => 'Convert',
-#            result => '960.850 °C'
-#        }
-#    ),
-#    '1234 rankine in celsius' => test_zci(
-#        '1,234 °R = 412.406 °C',
-#        structured_answer => {
-#            input => ['1,234 °R'],
-#            operation => 'Convert',
-#            result => '412.406 °C'
-#        }
-#    ),
-#    '-87 fahrenheit in celsius' => test_zci(
-#        '-87 °F = -66.111 °C',
-#        structured_answer => {
-#            input => ['-87 °F'],
-#            operation => 'Convert',
-#            result => '-66.111 °C'
-#        }
-#    ),
-#    '-87 celsius in celsius' => test_zci(
-#        '-87 °C = -87 °C',
-#        structured_answer => {
-#            input => ['-87 °C'],
-#            operation => 'Convert',
-#            result => '-87 °C'
-#        }
-#    ),
-#    '-87 kelvin in celsius' => undef,
-#    '-87 rankine in celsius' => undef,
-#    '-7 fahrenheit in celsius' => test_zci(
-#        '-7 °F = -21.667 °C',
-#        structured_answer => {
-#            input => ['-7 °F'],
-#            operation => 'Convert',
-#            result => '-21.667 °C'
-#        }
-#    ),
-#    '-7 celsius in celsius' => test_zci(
-#        '-7 °C = -7 °C',
-#        structured_answer => {
-#            input => ['-7 °C'],
-#            operation => 'Convert',
-#            result => '-7 °C'
-#        }
-#    ),
-#    '-7 kelvin in celsius' => undef,
-#    '-7 rankine in celsius' => undef,
-#    '0 fahrenheit in celsius' => test_zci(
-#        '0 °F = -17.778 °C',
-#        structured_answer => {
-#            input => ['0 °F'],
-#            operation => 'Convert',
-#            result => '-17.778 °C'
-#        }
-#    ),
-#	#TODO: Also no answer here?
-#    '0 celsius in celsius' => test_zci(
-#        '0 °C = 0 °C',
-#        structured_answer => {
-#            input => ['0 °C'],
-#            operation => 'Convert',
-#            result => '0 °C'
-#        }
-#    ),
-#    '0 kelvin in celsius' => test_zci(
-#        '0 K = -273.150 °C',
-#        structured_answer => {
-#            input => ['0 K'],
-#            operation => 'Convert',
-#            result => '-273.150 °C'
-#        }
-#    ),
-#    '0 rankine in celsius' => test_zci(
-#        '0 °R = -273.150 °C',
-#        structured_answer => {
-#            input => ['0 °R'],
-#            operation => 'Convert',
-#            result => '-273.150 °C'
-#        }
-#    ),
-#    '10 fahrenheit in kelvin' => test_zci(
-#        '10 °F = 260.928 K',
-#        structured_answer => {
-#            input => ['10 °F'],
-#            operation => 'Convert',
-#            result => '260.928 K'
-#        }
-#    ),
-#    '10 celsius in kelvin' => test_zci(
-#        '10 °C = 283.150 K',
-#        structured_answer => {
-#            input => ['10 °C'],
-#            operation => 'Convert',
-#            result => '283.150 K'
-#        }
-#    ),
-#    '10 kelvin in kelvin' => test_zci(
-#        '10 K = 10 K',
-#        structured_answer => {
-#            input => ['10 K'],
-#            operation => 'Convert',
-#            result => '10 K'
-#        }
-#    ),
-#    '10 rankine in kelvin' => test_zci(
-#        '10 °R = 5.556 K',
-#        structured_answer => {
-#            input => ['10 °R'],
-#            operation => 'Convert',
-#            result => '5.556 K'
-#        }
-#    ),
-#    '1234 fahrenheit in kelvin' => test_zci(
-#        '1,234 °F = 940.928 K',
-#        structured_answer => {
-#            input => ['1,234 °F'],
-#            operation => 'Convert',
-#            result => '940.928 K'
-#        }
-#    ),
-#    '1234 celsius in kelvin' => test_zci(
-#        '1,234 °C = 1,507.150 K',
-#        structured_answer => {
-#            input => ['1,234 °C'],
-#            operation => 'Convert',
-#            result => '1,507.150 K'
-#        }
-#    ),
-#    '1234 kelvin in kelvin' => test_zci(
-#        '1,234 K = 1,234 K',
-#        structured_answer => {
-#            input => ['1,234 K'],
-#            operation => 'Convert',
-#            result => '1,234 K'
-#        }
-#    ),
-#    '1234 rankine in kelvin' => test_zci(
-#        '1,234 °R = 685.556 K',
-#        structured_answer => {
-#            input => ['1,234 °R'],
-#            operation => 'Convert',
-#            result => '685.556 K'
-#        }
-#    ),
-#	#TODO NOT TRIGGERING!!
-#    '-87 fahrenheit in kelvin' => test_zci(
-#        '-87 °F = 212 K',
-#        structured_answer => {
-#            input => ['-87 °F'],
-#            operation => 'Convert',
-#            result => '212 K'
-#        }
-#    ),
-#    '-87 celsius in kelvin' => test_zci(
-#        '-87 °C = 193.150 K ',
-#        structured_answer => {
-#            input => ['-87 °C'],
-#            operation => 'Convert',
-#            result => '193.150 K'
-#        }
-#    ),
-#    '-87 kelvin in kelvin' => undef,
-#    '-87 rankine in kelvin' => undef,
-#	#TODO NOT TRIGGERING!!
-#    '-7 fahrenheit in kelvin' => test_zci(
-#        '-7 °F = 251.500 K',
-#        structured_answer => {
-#            input => ['-7 °F'],
-#            operation => 'Convert',
-#            result => '251.500 K'
-#        }
-#    ),
-#    '-7 celsius in kelvin' => test_zci(
-#        '-7 °C = 266.150 K',
-#        structured_answer => {
-#            input => ['-7 °C'],
-#            operation => 'Convert',
-#            result => '266.150 K'
-#        }
-#    ),
-#    '-7 kelvin in kelvin' => undef,
-#    '-7 rankine in kelvin' => undef,
-#    '0 fahrenheit in kelvin' => test_zci(
-#        '0 °F = 255.372 K',
-#        structured_answer => {
-#            input => ['0 °F'],
-#            operation => 'Convert',
-#            result => '255.372 K'
-#        }
-#    ),
-#    '0 celsius in kelvin' => test_zci(
-#        '0 °C = 273.150 K',
-#        structured_answer => {
-#            input => ['0 °C'],
-#            operation => 'Convert',
-#            result => '273.150 K'
-#        }
-#    ),
-#	#FAILING:
-#    '0 kelvin in kelvin' => test_zci(
-#        '0 K = 0 K',
-#        structured_answer => {
-#            input => ['0 K'],
-#            operation => 'Convert',
-#            result => '0 K'
-#        }
-#    ),
-#	# doesn't trigger:
-#    '0 rankine in kelvin' => test_zci(
-#        '0 rankine = 0 K',
-#        structured_answer => {
-#            input => ['0 °R'],
-#            operation => 'Convert',
-#            result => '0 K'
-#        }
-#    ),
-#	
-#    '10 fahrenheit in rankine' => test_zci(
-#        '10 °F = 469.670 °R',
-#        structured_answer => {
-#            input => ['10 °F'],
-#            operation => 'Convert',
-#            result => '469.670 °R'
-#        }
-#    ),
-#    '10 celsius in rankine' => test_zci(
-#        '10 °C = 509.670 °R',		
-#        structured_answer => {
-#            input => ['10 °C'],
-#            operation => 'Convert',
-#            result => '509.670 °R'
-#        }
-#    ),
-#    '10 kelvin in rankine' => test_zci(
-#        '10 K = 18 °R',
-#        structured_answer => {
-#            input => ['10 K'],
-#            operation => 'Convert',
-#            result => '18 °R'
-#        }
-#    ),
-#    '10 rankine in rankine' => test_zci(
-#        '10 °R = 10 °R',
-#        structured_answer => {
-#            input => ['10 °R'],
-#            operation => 'Convert',
-#            result => '10 °R'
-#        }
-#    ),
-#    '1234 fahrenheit in rankine' => test_zci(
-#        '1,234 °F = 1,693.670 °R',
-#        structured_answer => {
-#            input => ['1,234 °F'],
-#            operation => 'Convert',
-#            result => '1,693.670 °R'
-#        }
-#    ),
-#    '1234 celsius in rankine' => test_zci(
-#        '1,234 °C = 2,712.870 °R',
-#        structured_answer => {
-#            input => ['1,234 °C'],
-#            operation => 'Convert',
-#            result => '2,712.870 °R'
-#        }
-#    ),
-#    '1234 kelvin in rankine' => test_zci(
-#        '1,234 K = 2,221.200 °R',
-#        structured_answer => {
-#            input => ['1,234 K'],
-#            operation => 'Convert',
-#            result => '2,221.200 °R'
-#        }
-#    ),
-#    '1234 rankine in rankine' => test_zci(
-#        '1,234 °R = 1,234 °R',
-#        structured_answer => {
-#            input => ['1,234 °R'],
-#            operation => 'Convert',
-#            result => '1,234 °R'
-#        }
-#    ),
-#	#TOOD: FAILING, don't trigger correctly
-#    '-87 fahrenheit in rankine' => test_zci(
-#        '-87 °F = 372.700 °R',
-#        structured_answer => {
-#            input => ['-87 °F'],
-#            operation => 'Convert',
-#            result => '372.700 °R'
-#        }
-#    ),
-#    '-87 celsius in rankine' => test_zci(
-#        '-87 °C = 335.100 °R',
-#        structured_answer => {
-#            input => ['-87 °C'],
-#            operation => 'Convert',
-#            result => '335.100 °R'
-#        }
-#    ),
-#    '-87 kelvin in rankine' => undef,
-#    '-87 rankine in rankine' => undef,
-#	#TODO: Failing, don't trigger correctly
-#    '-7 fahrenheit in rankine' => test_zci(
-#        '-7 °F = 452.700 °R',
-#        structured_answer => {
-#            input => ['-7 °F'],
-#            operation => 'Convert',
-#            result => '452.700 °R'
-#        }
-#    ),
-#    '-7 celsius in rankine' => test_zci(
-#        '-7 °C = 479.100 °R',
-#        structured_answer => {
-#            input => ['-7 °C'],
-#            operation => 'Convert',
-#            result => '479.100 °R'
-#        }
-#    ),
-#    '-7 kelvin in rankine' => undef,
-#    '-7 rankine in rankine' => undef,
-#    '0 fahrenheit in rankine' => test_zci(
-#        '0 °F = 459.670 °R',
-#        structured_answer => {
-#            input => ['0 °F'],
-#            operation => 'Convert',
-#            result => '459.670 °R'
-#        }
-#    ),
-#    '0 celsius in rankine' => test_zci(
-#        '0 °C = 491.670 °R',
-#        structured_answer => {
-#            input => ['0 °C'],
-#            operation => 'Convert',
-#            result => '491.670 °R'
-#        }
-#    ),
-#	# FAILING: 0 != 0
-#    '0 kelvin in rankine' => test_zci(
-#        '0 K = 0 °R',
-#        structured_answer => {
-#            input => ['0 K'],
-#            operation => 'Convert',
-#            result => '0 °R'
-#        }
-#    ),
-#	# Doesn't Trigger
-#    '0 rankine in rankine' => test_zci(
-#        '0 °R = 0 °R',
-#        structured_answer => {
-#            input => ['0 °R'],
-#            operation => 'Convert',
-#            result => '0 °R'
-#        }
-#    ),
+    ## Full suite of tests around temperatures
+	# for computational accuracy rather than
+	# parsing accuracy
+    '10 fahrenheit in fahrenheit' => test_zci(
+        '10 °F = 10 °F',
+        structured_answer => {
+            input => ['10 °F'],
+            operation => 'Convert',
+            result => '10 °F'
+        }
+    ),
+    '10 celsius in fahrenheit' => test_zci(
+        '10 °C = 50 °F',
+        structured_answer => {
+            input => ['10 °C'],
+            operation => 'Convert',
+            result => '50 °F'
+        }
+    ),
+    '10 kelvin in fahrenheit' => test_zci(
+        '10 K = -441.670 °F',
+        structured_answer => {
+            input => ['10 K'],
+            operation => 'Convert',
+            result => '-441.670 °F'
+        }
+    ),
+    '10 rankine in fahrenheit' => test_zci(
+        '10 °R = -449.670 °F',
+        structured_answer => {
+            input => ['10 °R'],
+            operation => 'Convert',
+            result => '-449.670 °F'
+        }
+    ),
+    '1234 fahrenheit in fahrenheit' => test_zci(
+        '1,234 °F = 1,234 °F',
+        structured_answer => {
+            input => ['1,234 °F'],
+            operation => 'Convert',
+            result => '1,234 °F'
+        }
+    ),
+    '1234 celsius in fahrenheit' => test_zci(
+        '1,234 °C = 2,253.200 °F',
+        structured_answer => {
+            input => ['1,234 °C'],
+            operation => 'Convert',
+            result => '2,253.200 °F'
+        }
+    ),
+    '1234 kelvin in fahrenheit' => test_zci(
+        '1,234 K = 1,761.530 °F',
+        structured_answer => {
+            input => ['1,234 K'],
+            operation => 'Convert',
+            result => '1,761.530 °F'
+        }
+    ),
+    '1234 rankine in fahrenheit' => test_zci(
+        '1,234 °R = 774.330 °F',
+        structured_answer => {
+            input => ['1,234 °R'],
+            operation => 'Convert',
+            result => '774.330 °F'
+        }
+    ),
+    '-87 fahrenheit in fahrenheit' => test_zci(
+        '-87 °F = -87 °F',
+        structured_answer => {
+            input => ['-87 °F'],
+            operation => 'Convert',
+            result => '-87 °F'
+        }
+    ),
+    '-87 celsius in fahrenheit' => test_zci(
+        '-87 °C = -124.600 °F',		
+        structured_answer => {
+            input => ['-87 °C'],
+            operation => 'Convert',
+            result => '-124.600 °F'
+        }
+    ),
+    '-87 kelvin in fahrenheit' => undef,
+    '-87 rankine in fahrenheit' => undef,
+    '-7 fahrenheit in fahrenheit' => test_zci(
+        '-7 °F = -7 °F',
+        structured_answer => {
+            input => ['-7 °F'],
+            operation => 'Convert',
+            result => '-7 °F'
+        }
+    ),
+    '-7 celsius in fahrenheit' => test_zci(
+        '-7 °C = 19.400 °F',
+        structured_answer => {
+            input => ['-7 °C'],
+            operation => 'Convert',
+            result => '19.400 °F'
+        }
+    ),
+    '-7 kelvin in fahrenheit' => undef,
+    '-7 rankine in fahrenheit' => undef,
+    #TODO: look at this undef
+	'0 fahrenheit in fahrenheit' => test_zci(
+        '0 °F = 0 °F',
+        structured_answer => {
+            input => ['0 °F'],
+            operation => 'Convert',
+            result => '0 °F'
+        }
+    ),
+    '0 celsius in fahrenheit' => test_zci(
+        '0 °C = 32 °F',
+        structured_answer => {
+            input => ['0 °C'],
+            operation => 'Convert',
+            result => '32 °F'
+        }
+    ),
+    '0 kelvin in fahrenheit' => test_zci(
+        '0 K = -459.670 °F',
+        structured_answer => {
+            input => ['0 K'],
+            operation => 'Convert',
+            result => '-459.670 °F'
+        }
+    ),
+    '0 rankine in fahrenheit' => test_zci(
+        '0 °R = -459.670 °F',
+        structured_answer => {
+            input => ['0 °R'],
+            operation => 'Convert',
+            result => '-459.670 °F'
+        }
+    ),
+    '10 fahrenheit in celsius' => test_zci(
+        '10 °F = -12.222 °C',
+        structured_answer => {
+            input => ['10 °F'],
+            operation => 'Convert',
+            result => '-12.222 °C'
+        }
+    ),
+    '10 celsius in celsius' => test_zci(
+        '10 °C = 10 °C',
+        structured_answer => {
+            input => ['10 °C'],
+            operation => 'Convert',
+            result => '10 °C'
+        }
+    ),
+    '10 kelvin in celsius' => test_zci(
+        '10 K = -263.150 °C',
+        structured_answer => {
+            input => ['10 K'],
+            operation => 'Convert',
+            result => '-263.150 °C'
+        }
+    ),
+	#TODO: investigate accuracy here
+	# according to WA: 267.6°C;
+	# https://www.wolframalpha.com/input/?i=10R+in+C
+    '10 rankine in celsius' => test_zci(
+        '10 °R = -268 °C',
+        structured_answer => {
+            input => ['10 °R'],
+            operation => 'Convert',
+            result => '-268 °C'
+        }
+    ),
+	
+    '1234 fahrenheit in celsius' => test_zci(
+        '1,234 °F = 667.778 °C',
+        structured_answer => {
+            input => ['1,234 °F'],
+            operation => 'Convert',
+            result => '667.778 °C'
+        }
+    ),
+    '1234 celsius in celsius' => test_zci(
+        '1,234 °C = 1,234 °C',
+        structured_answer => {
+            input => ['1,234 °C'],
+            operation => 'Convert',
+            result => '1,234 °C'
+        }
+    ),
+    '1234 kelvin in celsius' => test_zci(
+        '1,234 K = 960.850 °C',
+        structured_answer => {
+            input => ['1,234 K'],
+            operation => 'Convert',
+            result => '960.850 °C'
+        }
+    ),
+    '1234 rankine in celsius' => test_zci(
+        '1,234 °R = 412.406 °C',
+        structured_answer => {
+            input => ['1,234 °R'],
+            operation => 'Convert',
+            result => '412.406 °C'
+        }
+    ),
+    '-87 fahrenheit in celsius' => test_zci(
+        '-87 °F = -66.111 °C',
+        structured_answer => {
+            input => ['-87 °F'],
+            operation => 'Convert',
+            result => '-66.111 °C'
+        }
+    ),
+    '-87 celsius in celsius' => test_zci(
+        '-87 °C = -87 °C',
+        structured_answer => {
+            input => ['-87 °C'],
+            operation => 'Convert',
+            result => '-87 °C'
+        }
+    ),
+    '-87 kelvin in celsius' => undef,
+    '-87 rankine in celsius' => undef,
+    '-7 fahrenheit in celsius' => test_zci(
+        '-7 °F = -21.667 °C',
+        structured_answer => {
+            input => ['-7 °F'],
+            operation => 'Convert',
+            result => '-21.667 °C'
+        }
+    ),
+    '-7 celsius in celsius' => test_zci(
+        '-7 °C = -7 °C',
+        structured_answer => {
+            input => ['-7 °C'],
+            operation => 'Convert',
+            result => '-7 °C'
+        }
+    ),
+    '-7 kelvin in celsius' => undef,
+    '-7 rankine in celsius' => undef,
+    '0 fahrenheit in celsius' => test_zci(
+        '0 °F = -17.778 °C',
+        structured_answer => {
+            input => ['0 °F'],
+            operation => 'Convert',
+            result => '-17.778 °C'
+        }
+    ),
+	#TODO: Also no answer here?
+    '0 celsius in celsius' => test_zci(
+        '0 °C = 0 °C',
+        structured_answer => {
+            input => ['0 °C'],
+            operation => 'Convert',
+            result => '0 °C'
+        }
+    ),
+    '0 kelvin in celsius' => test_zci(
+        '0 K = -273.150 °C',
+        structured_answer => {
+            input => ['0 K'],
+            operation => 'Convert',
+            result => '-273.150 °C'
+        }
+    ),
+    '0 rankine in celsius' => test_zci(
+        '0 °R = -273.150 °C',
+        structured_answer => {
+            input => ['0 °R'],
+            operation => 'Convert',
+            result => '-273.150 °C'
+        }
+    ),
+    '10 fahrenheit in kelvin' => test_zci(
+        '10 °F = 260.928 K',
+        structured_answer => {
+            input => ['10 °F'],
+            operation => 'Convert',
+            result => '260.928 K'
+        }
+    ),
+    '10 celsius in kelvin' => test_zci(
+        '10 °C = 283.150 K',
+        structured_answer => {
+            input => ['10 °C'],
+            operation => 'Convert',
+            result => '283.150 K'
+        }
+    ),
+    '10 kelvin in kelvin' => test_zci(
+        '10 K = 10 K',
+        structured_answer => {
+            input => ['10 K'],
+            operation => 'Convert',
+            result => '10 K'
+        }
+    ),
+    '10 rankine in kelvin' => test_zci(
+        '10 °R = 5.556 K',
+        structured_answer => {
+            input => ['10 °R'],
+            operation => 'Convert',
+            result => '5.556 K'
+        }
+    ),
+    '1234 fahrenheit in kelvin' => test_zci(
+        '1,234 °F = 940.928 K',
+        structured_answer => {
+            input => ['1,234 °F'],
+            operation => 'Convert',
+            result => '940.928 K'
+        }
+    ),
+    '1234 celsius in kelvin' => test_zci(
+        '1,234 °C = 1,507.150 K',
+        structured_answer => {
+            input => ['1,234 °C'],
+            operation => 'Convert',
+            result => '1,507.150 K'
+        }
+    ),
+    '1234 kelvin in kelvin' => test_zci(
+        '1,234 K = 1,234 K',
+        structured_answer => {
+            input => ['1,234 K'],
+            operation => 'Convert',
+            result => '1,234 K'
+        }
+    ),
+    '1234 rankine in kelvin' => test_zci(
+        '1,234 °R = 685.556 K',
+        structured_answer => {
+            input => ['1,234 °R'],
+            operation => 'Convert',
+            result => '685.556 K'
+        }
+    ),
+	#TODO NOT TRIGGERING!!
+    '-87 fahrenheit in kelvin' => test_zci(
+        '-87 °F = 212 K',
+        structured_answer => {
+            input => ['-87 °F'],
+            operation => 'Convert',
+            result => '212 K'
+        }
+    ),
+    '-87 celsius in kelvin' => test_zci(
+        '-87 °C = 193.150 K ',
+        structured_answer => {
+            input => ['-87 °C'],
+            operation => 'Convert',
+            result => '193.150 K'
+        }
+    ),
+    '-87 kelvin in kelvin' => undef,
+    '-87 rankine in kelvin' => undef,
+	#TODO NOT TRIGGERING!!
+    '-7 fahrenheit in kelvin' => test_zci(
+        '-7 °F = 251.500 K',
+        structured_answer => {
+            input => ['-7 °F'],
+            operation => 'Convert',
+            result => '251.500 K'
+        }
+    ),
+    '-7 celsius in kelvin' => test_zci(
+        '-7 °C = 266.150 K',
+        structured_answer => {
+            input => ['-7 °C'],
+            operation => 'Convert',
+            result => '266.150 K'
+        }
+    ),
+    '-7 kelvin in kelvin' => undef,
+    '-7 rankine in kelvin' => undef,
+    '0 fahrenheit in kelvin' => test_zci(
+        '0 °F = 255.372 K',
+        structured_answer => {
+            input => ['0 °F'],
+            operation => 'Convert',
+            result => '255.372 K'
+        }
+    ),
+    '0 celsius in kelvin' => test_zci(
+        '0 °C = 273.150 K',
+        structured_answer => {
+            input => ['0 °C'],
+            operation => 'Convert',
+            result => '273.150 K'
+        }
+    ),
+	#FAILING:
+    '0 kelvin in kelvin' => test_zci(
+        '0 K = 0 K',
+        structured_answer => {
+            input => ['0 K'],
+            operation => 'Convert',
+            result => '0 K'
+        }
+    ),
+	# doesn't trigger:
+    '0 rankine in kelvin' => test_zci(
+        '0 rankine = 0 K',
+        structured_answer => {
+            input => ['0 °R'],
+            operation => 'Convert',
+            result => '0 K'
+        }
+    ),
+	
+    '10 fahrenheit in rankine' => test_zci(
+        '10 °F = 469.670 °R',
+        structured_answer => {
+            input => ['10 °F'],
+            operation => 'Convert',
+            result => '469.670 °R'
+        }
+    ),
+    '10 celsius in rankine' => test_zci(
+        '10 °C = 509.670 °R',		
+        structured_answer => {
+            input => ['10 °C'],
+            operation => 'Convert',
+            result => '509.670 °R'
+        }
+    ),
+    '10 kelvin in rankine' => test_zci(
+        '10 K = 18 °R',
+        structured_answer => {
+            input => ['10 K'],
+            operation => 'Convert',
+            result => '18 °R'
+        }
+    ),
+    '10 rankine in rankine' => test_zci(
+        '10 °R = 10 °R',
+        structured_answer => {
+            input => ['10 °R'],
+            operation => 'Convert',
+            result => '10 °R'
+        }
+    ),
+    '1234 fahrenheit in rankine' => test_zci(
+        '1,234 °F = 1,693.670 °R',
+        structured_answer => {
+            input => ['1,234 °F'],
+            operation => 'Convert',
+            result => '1,693.670 °R'
+        }
+    ),
+    '1234 celsius in rankine' => test_zci(
+        '1,234 °C = 2,712.870 °R',
+        structured_answer => {
+            input => ['1,234 °C'],
+            operation => 'Convert',
+            result => '2,712.870 °R'
+        }
+    ),
+    '1234 kelvin in rankine' => test_zci(
+        '1,234 K = 2,221.200 °R',
+        structured_answer => {
+            input => ['1,234 K'],
+            operation => 'Convert',
+            result => '2,221.200 °R'
+        }
+    ),
+    '1234 rankine in rankine' => test_zci(
+        '1,234 °R = 1,234 °R',
+        structured_answer => {
+            input => ['1,234 °R'],
+            operation => 'Convert',
+            result => '1,234 °R'
+        }
+    ),
+	#TOOD: FAILING, don't trigger correctly
+    '-87 fahrenheit in rankine' => test_zci(
+        '-87 °F = 372.700 °R',
+        structured_answer => {
+            input => ['-87 °F'],
+            operation => 'Convert',
+            result => '372.700 °R'
+        }
+    ),
+    '-87 celsius in rankine' => test_zci(
+        '-87 °C = 335.100 °R',
+        structured_answer => {
+            input => ['-87 °C'],
+            operation => 'Convert',
+            result => '335.100 °R'
+        }
+    ),
+    '-87 kelvin in rankine' => undef,
+    '-87 rankine in rankine' => undef,
+	#TODO: Failing, don't trigger correctly
+    '-7 fahrenheit in rankine' => test_zci(
+        '-7 °F = 452.700 °R',
+        structured_answer => {
+            input => ['-7 °F'],
+            operation => 'Convert',
+            result => '452.700 °R'
+        }
+    ),
+    '-7 celsius in rankine' => test_zci(
+        '-7 °C = 479.100 °R',
+        structured_answer => {
+            input => ['-7 °C'],
+            operation => 'Convert',
+            result => '479.100 °R'
+        }
+    ),
+    '-7 kelvin in rankine' => undef,
+    '-7 rankine in rankine' => undef,
+    '0 fahrenheit in rankine' => test_zci(
+        '0 °F = 459.670 °R',
+        structured_answer => {
+            input => ['0 °F'],
+            operation => 'Convert',
+            result => '459.670 °R'
+        }
+    ),
+    '0 celsius in rankine' => test_zci(
+        '0 °C = 491.670 °R',
+        structured_answer => {
+            input => ['0 °C'],
+            operation => 'Convert',
+            result => '491.670 °R'
+        }
+    ),
+	# FAILING: 0 != 0
+    '0 kelvin in rankine' => test_zci(
+        '0 K = 0 °R',
+        structured_answer => {
+            input => ['0 K'],
+            operation => 'Convert',
+            result => '0 °R'
+        }
+    ),
+	# Doesn't Trigger
+    '0 rankine in rankine' => test_zci(
+        '0 °R = 0 °R',
+        structured_answer => {
+            input => ['0 °R'],
+            operation => 'Convert',
+            result => '0 °R'
+        }
+    ),
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
