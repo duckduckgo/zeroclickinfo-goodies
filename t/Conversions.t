@@ -1003,38 +1003,42 @@ ddg_goodie_test(
             result => '-459.670 °F'
         }
     ),
-    #'10 fahrenheit in celsius' => test_zci(
-    #    '10 fahrenheit = 0 celsius',
-    #    structured_answer => {
-    #        input => ['10 fahrenheit'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
-    #'10 celsius in celsius' => test_zci(
-    #    '10 celsius = 0 celsius',
-    #    structured_answer => {
-    #        input => ['10 celsius'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
-    #'10 kelvin in celsius' => test_zci(
-    #    '10 kelvin = 0 celsius',
-    #    structured_answer => {
-    #        input => ['10 kelvin'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
-    #'10 rankine in celsius' => test_zci(
-    #    '10 rankine = 0 celsius',
-    #    structured_answer => {
-    #        input => ['10 rankine'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
+    '10 fahrenheit in celsius' => test_zci(
+        '10 °F = -12.222 °C',
+        structured_answer => {
+            input => ['10 °F'],
+            operation => 'Convert',
+            result => '-12.222 °C'
+        }
+    ),
+    '10 celsius in celsius' => test_zci(
+        '10 °C = 10 °C',
+        structured_answer => {
+            input => ['10 °C'],
+            operation => 'Convert',
+            result => '10 °C'
+        }
+    ),
+    '10 kelvin in celsius' => test_zci(
+        '10 K = -263.150 °C',
+        structured_answer => {
+            input => ['10 K'],
+            operation => 'Convert',
+            result => '-263.150 °C'
+        }
+    ),
+	#TODO: investigate accuracy here
+	# according to WA: 267.6°C;
+	# https://www.wolframalpha.com/input/?i=10R+in+C
+    '10 rankine in celsius' => test_zci(
+        '10 °R = -268 °C',
+        structured_answer => {
+            input => ['10 °R'],
+            operation => 'Convert',
+            result => '-268 °C'
+        }
+    ),
+	
     #'1234 fahrenheit in celsius' => test_zci(
     #    '1234 fahrenheit = 0 celsius',
     #    structured_answer => {
