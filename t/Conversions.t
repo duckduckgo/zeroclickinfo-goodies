@@ -902,38 +902,38 @@ ddg_goodie_test(
             result => '-449.670 °F'
         }
     ),
-    #'1234 fahrenheit in fahrenheit' => test_zci(
-    #    '1234 fahrenheit = 0 fahrenheit',
-    #    structured_answer => {
-    #        input => ['1234 fahrenheit'],
-    #        operation => 'Convert',
-    #        result => '0 fahrenheit'
-    #    }
-    #),
-    #'1234 celsius in fahrenheit' => test_zci(
-    #    '1234 celsius = 0 fahrenheit',
-    #    structured_answer => {
-    #        input => ['1234 celsius'],
-    #        operation => 'Convert',
-    #        result => '0 fahrenheit'
-    #    }
-    #),
-    #'1234 kelvin in fahrenheit' => test_zci(
-    #    '1234 kelvin = 0 fahrenheit',
-    #    structured_answer => {
-    #        input => ['1234 kelvin'],
-    #        operation => 'Convert',
-    #        result => '0 fahrenheit'
-    #    }
-    #),
-    #'1234 rankine in fahrenheit' => test_zci(
-    #    '1234 rankine = 0 fahrenheit',
-    #    structured_answer => {
-    #        input => ['1234 rankine'],
-    #        operation => 'Convert',
-    #        result => '0 fahrenheit'
-    #    }
-    #),
+    '1234 fahrenheit in fahrenheit' => test_zci(
+        '1,234 °F = 1,234 °F',
+        structured_answer => {
+            input => ['1,234 °F'],
+            operation => 'Convert',
+            result => '1,234 °F'
+        }
+    ),
+    '1234 celsius in fahrenheit' => test_zci(
+        '1,234 °C = 2,253.200 °F',
+        structured_answer => {
+            input => ['1,234 °C'],
+            operation => 'Convert',
+            result => '2,253.200 °F'
+        }
+    ),
+    '1234 kelvin in fahrenheit' => test_zci(
+        '1,234 K = 1,761.530 °F',
+        structured_answer => {
+            input => ['1,234 K'],
+            operation => 'Convert',
+            result => '1,761.530 °F'
+        }
+    ),
+    '1234 rankine in fahrenheit' => test_zci(
+        '1,234 °R = 774.330 °F',
+        structured_answer => {
+            input => ['1,234 °R'],
+            operation => 'Convert',
+            result => '774.330 °F'
+        }
+    ),
     #'-87 fahrenheit in fahrenheit' => test_zci(
     #    ' = 0 ',
     #    structured_answer => {
