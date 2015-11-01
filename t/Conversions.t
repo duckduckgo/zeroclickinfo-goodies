@@ -1039,38 +1039,38 @@ ddg_goodie_test(
         }
     ),
 	
-    #'1234 fahrenheit in celsius' => test_zci(
-    #    '1234 fahrenheit = 0 celsius',
-    #    structured_answer => {
-    #        input => ['1234 fahrenheit'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
-    #'1234 celsius in celsius' => test_zci(
-    #    '1234 celsius = 0 celsius',
-    #    structured_answer => {
-    #        input => ['1234 celsius'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
-    #'1234 kelvin in celsius' => test_zci(
-    #    '1234 kelvin = 0 celsius',
-    #    structured_answer => {
-    #        input => ['1234 kelvin'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
-    #'1234 rankine in celsius' => test_zci(
-    #    '1234 rankine = 0 celsius',
-    #    structured_answer => {
-    #        input => ['1234 rankine'],
-    #        operation => 'Convert',
-    #        result => '0 celsius'
-    #    }
-    #),
+    '1234 fahrenheit in celsius' => test_zci(
+        '1,234 °F = 667.778 °C',
+        structured_answer => {
+            input => ['1,234 °F'],
+            operation => 'Convert',
+            result => '667.778 °C'
+        }
+    ),
+    '1234 celsius in celsius' => test_zci(
+        '1,234 °C = 1,234 °C',
+        structured_answer => {
+            input => ['1,234 °C'],
+            operation => 'Convert',
+            result => '1,234 °C'
+        }
+    ),
+    '1234 kelvin in celsius' => test_zci(
+        '1,234 K = 960.850 °C',
+        structured_answer => {
+            input => ['1,234 K'],
+            operation => 'Convert',
+            result => '960.850 °C'
+        }
+    ),
+    '1234 rankine in celsius' => test_zci(
+        '1,234 °R = 412.406 °C',
+        structured_answer => {
+            input => ['1,234 °R'],
+            operation => 'Convert',
+            result => '412.406 °C'
+        }
+    ),
     #'-87 fahrenheit in celsius' => test_zci(
     #    ' = 0 ',
     #    structured_answer => {
