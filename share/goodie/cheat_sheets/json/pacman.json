@@ -1,104 +1,135 @@
 {
-	"id": "pacman_cheat_sheet",
-	"name": "Pacman",
-	"description": "Package manager for Arch Linux",
-	"metadata": {
-		"sourceName": "ArchWiki",
-		"sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
-	},
-	"template_type": "terminal",
-	"section_order": [
-		"Installing specific packages",
-		"Installing package groups",
-		"Removing packages",
-		"Upgrading packages",
-		"Querying database",
-		"Cleaning package cache",
-		"Additional commands"
-	],
-
-	"sections": {
-		"Installing specific packages": [{
-				"key": "Install a single package",
-				"val": "pacman -S package_name1"
-			},{
-				"key": "Install a list of packages",
-				"val": "pacman -S package_name1 package_name2 package_name3 ..."
-			},{
-				"key": "Install a list of packages with regex",
-				"val": "pacman -S $(pacman -Ssq package_regex)"
-			}],
-		"Installing package groups": [{
-				"key": "Install a group of packages",
-				"val": "pacman -S package_group_name"
-			},{
-				"key": "See what packages belong to a group",
-				"val": "pacman -Sg package_group_name"
-			}],
-		"Removing packages": [{
-				"key": "Remove a single package",
-				"val": "pacman -R package_name"
-			},{
-				"key": "Remove a package and its dependencies not required by any other installed package",
-				"val": "pacman -Rs package_name"
-			},{
-				"key": "Remove a package, it's dependencies and all packages that depend on the target package",
-				"val": "pacman -Rsc package_name"
-			},{
-				"key": "Remove a package required by another package without removing the dependant package",
-				"val": "pacman -Rdd package_name"
-			}],
-		"Upgrading packages": [{
-				"key": "Synchronize the repository database and update all packages on the system",
-				"val": "pacman -Syu"
-			}],
-		"Querying package databases": [{
-				"key": "Search for packages in the database",
-				"val": "pacman -Ss string1 string2 ..."
-			},{
-				"key": "Search already installed packages",
-				"val": "pacman -Qs string1 string2 ..."
-			},{
-				"key": "Display extensive information about a given package",
-				"val": "pacman -Si package_name"
-			},{
-				"key": "Display extensive information about a locally installed package",
-				"val": "pacman -Qi package_name"
-			},{
-				"key": "Display extensive information about a locally installed package, the list of backup files and their modification states",
-				"val": "pacman -Qii package_name"
-			},{
-				"key": "Retrieve a list of the files installed by a package",
-				"val": "pacman -Ql package_name"
-			},{
-				"key": "Verify the presence of the files installed by a package",
-				"val": "pacman -Qk package_name"
-			},{
-				"key": "Query the database to know which package a file in the system belongs to",
-				"val": "pacman -Qo /path/to/file_name"
-			},{
-				"key": "List all packages no longer required as dependencies(orphans)",
-				"val": "pacman -Qdt"
-			},{
-				"key": "List all packages explicitly installed and not required as dependancies",
-				"val": "pacman -Qet"
-			}],
-		"Cleaning package cache": [{
-				"key": "Remove all cached packages that are not currently installed",
-				"val": "pacman -Sc"
-			}],
-		"Additional commands": [{
-				"key": "Download a package without installing it",
-				"val": "pacman -Sw package_name"
-			},{
-				"key": "Install a 'local' package that is not from a remote repository (e.g. the package is from the AUR)",
-				"val": "pacman -U /path/to/package/package_name-version.pkg.tar.xz"
-			},{
-				"key": "Keep a copy of the local package in pacman's cache",
-				"val": "pacman -U file:///path/to/package/package_name-version.pkg.tar.xz"
-			},{
-				"key": "Install a 'remote' package (not from a repository stated in pacman's configuration files)",
-				"val": "pacman -U http://www.example.com/repo/example.pkg.tar.xz"
-			}]
-	}
+    "id": "pacman_cheat_sheet",
+    "name": "Pacman",
+    "description": "Package manager for Arch Linux",
+    "metadata": {
+        "sourceName": "ArchWiki",
+        "sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Installing specific packages",
+        "Installing package groups",
+        "Removing packages",
+        "Upgrading packages",
+        "Querying database",
+        "Cleaning package cache",
+        "Additional commands"
+    ],
+    "sections": {
+        "Installing specific packages": [
+            {
+                "key": "Install a single package",
+                "val": "pacman -S package_name1"
+            },
+            {
+                "key": "Install a list of packages",
+                "val": "pacman -S package_name1 package_name2 package_name3 ..."
+            },
+            {
+                "key": "Install a list of packages with regex",
+                "val": "pacman -S $(pacman -Ssq package_regex)"
+            }
+        ],
+        "Installing package groups": [
+            {
+                "key": "Install a group of packages",
+                "val": "pacman -S package_group_name"
+            },
+            {
+                "key": "See what packages belong to a group",
+                "val": "pacman -Sg package_group_name"
+            }
+        ],
+        "Removing packages": [
+            {
+                "key": "Remove a single package",
+                "val": "pacman -R package_name"
+            },
+            {
+                "key": "Remove a package and its dependencies not required by any other installed package",
+                "val": "pacman -Rs package_name"
+            },
+            {
+                "key": "Remove a package, it's dependencies and all packages that depend on the target package",
+                "val": "pacman -Rsc package_name"
+            },
+            {
+                "key": "Remove a package required by another package without removing the dependant package",
+                "val": "pacman -Rdd package_name"
+            }
+        ],
+        "Upgrading packages": [
+            {
+                "key": "Synchronize the repository database and update all packages on the system",
+                "val": "pacman -Syu"
+            }
+        ],
+        "Querying package databases": [
+            {
+                "key": "Search for packages in the database",
+                "val": "pacman -Ss string1 string2 ..."
+            },
+            {
+                "key": "Search already installed packages",
+                "val": "pacman -Qs string1 string2 ..."
+            },
+            {
+                "key": "Display extensive information about a given package",
+                "val": "pacman -Si package_name"
+            },
+            {
+                "key": "Display extensive information about a locally installed package",
+                "val": "pacman -Qi package_name"
+            },
+            {
+                "key": "Display extensive information about a locally installed package, the list of backup files and their modification states",
+                "val": "pacman -Qii package_name"
+            },
+            {
+                "key": "Retrieve a list of the files installed by a package",
+                "val": "pacman -Ql package_name"
+            },
+            {
+                "key": "Verify the presence of the files installed by a package",
+                "val": "pacman -Qk package_name"
+            },
+            {
+                "key": "Query the database to know which package a file in the system belongs to",
+                "val": "pacman -Qo /path/to/file_name"
+            },
+            {
+                "key": "List all packages no longer required as dependencies(orphans)",
+                "val": "pacman -Qdt"
+            },
+            {
+                "key": "List all packages explicitly installed and not required as dependancies",
+                "val": "pacman -Qet"
+            }
+        ],
+        "Cleaning package cache": [
+            {
+                "key": "Remove all cached packages that are not currently installed",
+                "val": "pacman -Sc"
+            }
+        ],
+        "Additional commands": [
+            {
+                "key": "Download a package without installing it",
+                "val": "pacman -Sw package_name"
+            },
+            {
+                "key": "Install a 'local' package that is not from a remote repository (e.g. the package is from the AUR)",
+                "val": "pacman -U /path/to/package/package_name-version.pkg.tar.xz"
+            },
+            {
+                "key": "Keep a copy of the local package in pacman's cache",
+                "val": "pacman -U file:///path/to/package/package_name-version.pkg.tar.xz"
+            },
+            {
+                "key": "Install a 'remote' package (not from a repository stated in pacman's configuration files)",
+                "val": "pacman -U http://www.example.com/repo/example.pkg.tar.xz"
+            }
+        ]
+    }
 }
