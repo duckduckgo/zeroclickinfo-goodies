@@ -70,7 +70,7 @@
             "key" : "Can you repeat, please?"
          },
          {
-            "val" : "Wie sagt man \"X\" auf Deutsch?",
+            "val" : "Wie sagt man »X« auf Deutsch?",
             "key" : "How do you say \"X\" in German?"
          },
          {
@@ -112,8 +112,8 @@
       ],
       "Basics" : [
          {
-            "val" : "Meine Name ist...",
-            "key" : "My name is..."
+            "val" : "Meine Name ist …",
+            "key" : "My name is…"
          },
          {
             "val" : "Mir geht es gut, danke!",
@@ -138,7 +138,7 @@
       ],
       "Travelling" : [
          {
-            "val" : "Biegen Sie links ab.",
+            "val" : "Bitte links abbiegen.",
             "key" : "Turn left."
          },
          {
@@ -180,8 +180,8 @@
       ],
       "Going out for dinner" : [
          {
-            "val" : "Haben Sie ein vegetarisches Gericht?",
-            "key" : "Do you have vegetarian dishes?"
+            "val" : "Haben Sie ein veganes/vegetarisches Gericht?",
+            "key" : "Do you have vegan/vegetarian dishes?"
          },
          {
             "val" : "Hauptgericht",
