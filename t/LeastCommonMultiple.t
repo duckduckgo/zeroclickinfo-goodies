@@ -74,6 +74,16 @@ ddg_goodie_test(
             result    => 180
         }
     ),
+    'lcm 0, 4, 5' => test_zci(
+        'Least common multiple of 0, 4 and 5 is 0.',
+        structured_answer => {
+            input     => ['0, 4 and 5'],
+            operation => 'Least common multiple',
+            result    => 0
+        }
+    ),
 );
 
 done_testing;
+
+
