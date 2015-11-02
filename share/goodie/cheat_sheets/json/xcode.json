@@ -6,6 +6,7 @@
         "sourceName": "Apple Developer",
         "sourceUrl": "https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/MenuCommands/MenuCommands014.html"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Xcode Menu",
         "File Menu",

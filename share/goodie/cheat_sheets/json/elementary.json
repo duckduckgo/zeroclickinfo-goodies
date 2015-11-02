@@ -1,109 +1,111 @@
 {
-    "id":"elementary_cheat_sheet",
-    "name":"elementary OS",
-    "metadata":{
-        "sourceName":"Lme Linux",
-        "sourceUrl":"http://lmelinux.net/2014/07/26/elementary-os-keyboard-shortcuts/"
+    "id": "elementary_cheat_sheet",
+    "name": "elementary OS",
+    "metadata": {
+        "sourceName": "Lme Linux",
+        "sourceUrl": "http://lmelinux.net/2014/07/26/elementary-os-keyboard-shortcuts/"
     },
-    "aliases": [ "elementary os" ],
-    "section_order":[
+    "aliases": [
+        "elementary os"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
         "Window",
         "Switching",
         "Launcher",
         "Workspace"
     ],
-    "sections":{
-        
-        "Window":[
+    "sections": {
+        "Window": [
             {
-                "val":"Window Switcher",
-                "key":"[Alt] [Tab]"
+                "val": "Window Switcher",
+                "key": "[Alt] [Tab]"
             },
             {
-                "val":"Window Overview",
-                "key":"[⌘] [W]"
+                "val": "Window Overview",
+                "key": "[⌘] [W]"
             },
             {
-                "val":"Move Window with Workspace",
-                "key":"[⇧] [⌘] ([Left]/[Right])"
+                "val": "Move Window with Workspace",
+                "key": "[Shift] [⌘] ( [Left] / [Right] )"
             },
             {
-                "val":"Snap Window to Half of Workspace",
-                "key":"[Ctrl] [⌘] ([Left]/[Right])"
+                "val": "Snap Window to Half of Workspace",
+                "key": "[Ctrl] [⌘] ( [Left] / [Right] )"
             },
             {
-                "val":"Maximize/Unmaximize Window",
-                "key":"[ctrl] [⌘] ([Left]/[Right])"
+                "val": "Maximize/Unmaximize Window",
+                "key": "[ctrl] [⌘] ( [Left] / [Right] )"
             }
         ],
-        "Switching":[
+        "Switching": [
             {
-                "val":"Switch Windows Backwards",
-                "key":"[⇧] [Alt] [Tab]"
+                "val": "Switch Windows Backwards",
+                "key": "[Shift] [Alt] [Tab]"
             },
             {
-                "val":"Switch Workspace",
-                "key":"[⌘] ([Left]/[Right])"
+                "val": "Switch Workspace",
+                "key": "[⌘] ( [Left] / [Right] )"
             },
             {
-                "val":"Will switch to a specific workspace (If it currently exists)",
-                "key":"[⌘] [1..9]"
+                "val": "Will switch to a specific workspace (If it currently exists)",
+                "key": "[⌘] [1..9]"
             },
             {
-                "val":"Will switch to the first workspace",
-                "key":"[⌘] [Home]"
+                "val": "Will switch to the first workspace",
+                "key": "[⌘] [Home]"
             },
             {
-                "val":"Will switch to the last workspace",
-                "key":"[⌘] [End]"
+                "val": "Will switch to the last workspace",
+                "key": "[⌘] [End]"
             },
             {
-                "val":"Move Window",
-                "key":"[⌘] [Click] [drag]"
+                "val": "Move Window",
+                "key": "[⌘] [Click] [drag]"
             },
             {
-                "val":"Will switch to the next keyboard layout",
-                "key":"[Alt] [Space]"
+                "val": "Will switch to the next keyboard layout",
+                "key": "[Alt] [Space]"
             }
         ],
-        "Launcher":[
+        "Launcher": [
             {
-                "val":"App Launcher",
-                "key":"[⌘] [Space]"
+                "val": "App Launcher",
+                "key": "[⌘] [Space]"
             },
             {
-                "val":"Will start the Pantheon Terminal",
-                "key":"[⌘] [T]"
+                "val": "Will start the Pantheon Terminal",
+                "key": "[⌘] [T]"
             },
             {
-                "val":"New Workspace",
-                "key":"[⌘] [O]"
+                "val": "New Workspace",
+                "key": "[⌘] [O]"
             }
         ],
-        "Workspace":[
+        "Workspace": [
             {
-                "val":"Workspace Overview",
-                "key":"[⌘] [S]"
+                "val": "Workspace Overview",
+                "key": "[⌘] [S]"
             },
             {
-                "val":"Will take the screentshot of entire screen",
-                "key":"prscr"
+                "val": "Will take the screentshot of entire screen",
+                "key": "prscr"
             },
             {
-                "val":"Will allow you to select an area on the screen to be screen shoted",
-                "key":"[Shift] [prscr]"
+                "val": "Will allow you to select an area on the screen to be screen shoted",
+                "key": "[Shift] [prscr]"
             },
             {
-                "val":"will screenshot the specific window",
-                "key":"[Ctrl] [Alt] [Prscr]"
+                "val": "will screenshot the specific window",
+                "key": "[Ctrl] [Alt] [Prscr]"
             },
             {
-                "val":"Lock Screen",
-                "key":"[⌘] [L]"
+                "val": "Lock Screen",
+                "key": "[⌘] [L]"
             },
             {
-                "val":"Resize Window",
-                "key":"[⌘] [Right Click] [drag]"
+                "val": "Resize Window",
+                "key": "[⌘] [Right Click] [drag]"
             }
         ]
     }

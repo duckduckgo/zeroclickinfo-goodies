@@ -78,6 +78,22 @@ ddg_goodie_test(
             result    => "-450.670 °F"
         }
     ),
+    'light year to mm' => test_zci(
+        '1 light year = 9.46 * 10^18 millimeters',
+        structured_answer => {
+            input     => ['1 light year'],
+            operation => 'Convert',
+            result    => '9.46 * 10<sup>18</sup> millimeters'
+        }
+    ),
+    'BTU to KwH' => test_zci(
+        '1 british thermal unit = 0.000293 kilowatt-hours',
+        structured_answer => {
+            input     => ['1 british thermal unit'],
+            operation => 'Convert',
+            result    => '0.000293 kilowatt-hours'
+        }
+    ),
     'convert 25 inches into feet' => test_zci(
         '25 inches = 2.083 feet',
         structured_answer => {

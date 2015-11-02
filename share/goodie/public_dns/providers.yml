@@ -41,3 +41,23 @@ DNS.Watch:
   ip6:
     - 2001:1608:10:25::1c04:b12f
     - 2001:1608:10:25::9249:d69b
+FreeDNS:
+  info_url: http://freedns.zone
+  ip4:
+    - 37.235.1.174
+    - 37.235.1.177
+  ip6: []
+Verisign:
+  info_url: http://www.verisign.com/en_US/innovation/public-dns/index.xhtml
+  ip4:
+    - 64.6.64.6
+    - 64.6.65.6
+  ip6:
+    - 2620:74:1b::1:1
+    - 2620:74:1c::2:2
+FDN:
+  info_url: http://www.fdn.fr/
+  ip4:
+    - 80.67.169.12
+  ip6:
+    - 2001:910:800::12
