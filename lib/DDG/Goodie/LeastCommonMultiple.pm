@@ -32,10 +32,15 @@ handle remainder => sub {
     $formatted_numbers =~ s/, ([^,]*)$/ and $1/;
     
     my $lcm = 1;
-    foreach my $num (@numbers) {
-        $lcm = lcm($lcm, $num);
+    
+    if (grep {$_ eq 0} @numbers) {
+        $lcm = 0;
     }
-
+    else {
+        foreach my $num (@numbers) {
+            $lcm = lcm($lcm, $num);
+        }
+    }
     return "Least common multiple of $formatted_numbers is $lcm.",
       structured_answer => {
         input     => [$formatted_numbers],
@@ -45,3 +50,4 @@ handle remainder => sub {
 };
 
 1;
+
