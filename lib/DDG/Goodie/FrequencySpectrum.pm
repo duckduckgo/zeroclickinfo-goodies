@@ -636,8 +636,6 @@ sub add_marker {
 #Wrap html
 sub wrap_html {
     return <<EOF;
-<!--[if lte IE 8]><div class="ie8-display-none">
-<![endif]-->
 <!--[if gte IE 9]><!-->        
 <div class='zci--conversions text--primary'>$_[0]</div>
 <![endif]-->
