@@ -35,7 +35,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'facts';
 topics 'travel';
 attribution github => ['https://github.com/Alchymista', 'Alchymista'],
-            github => ['https://github.com/ozdemirburak', 'Burak Özdemir'];
+github => ['https://github.com/ozdemirburak', 'Burak Özdemir'];
 
 triggers any => 'currency', 'currencies';
 
@@ -54,47 +54,47 @@ handle remainder => sub {
         my $country = clear_country_name(lc($1));               # Clear country name - white spaces, question mark..
 
         # handle two-letter country codes
-        if ( $country =~ /^[a-z]{2}$/i ) {
+        if ($country =~ /^[a-z]{2}$/i) {
             my $loc;
             eval { $loc = Locale::SubCountry->new(uc($country)) };
             return if $@ || !$loc;
             $country = lc($loc->country);
         }
 
-        if (exists $countries->{$country}){
-            $country = $countries->{$country};
-            my @currencies = @{$country->{"currencies"}};
-            my $output_country = html_enc($country->{"ucwords"});
+        return unless exists $countries->{$country};
 
-            if(scalar @currencies eq 1) {
-                return $currencies[0]{"string"}, structured_answer => {
-                    input     => [$output_country],
-                    operation => "Currency in",
-                    result    => $currencies[0]{"string"}
-                };
-            } else {
-                my %data = ();
+        $country = $countries->{$country};
+        my @currencies = @{$country->{"currencies"}};
+        my $output_country = html_enc($country->{"ucwords"});
 
-                foreach my $key (keys @currencies) {
-                    $data{$currencies[$key]{"shortcode"}} = $currencies[$key]{"currency"};
-                }
+        if(scalar @currencies eq 1) {
+            return $currencies[0]{"string"}, structured_answer => {
+                input     => [$output_country],
+                operation => "Currency in",
+                result    => $currencies[0]{"string"}
+            };
+        } else {
+            my %data = ();
 
-                return \%data, structured_answer => {
-                    id => "currency_in",
-                    name => "CurrencyIn",
-                    templates => {
-                        group => 'list',
-                        options => {
-                            content => 'record',
-                            moreAt => 0
-                        }
-                    },
-                    data => {
-                        title => "Currencies in $output_country",
-                        record_data => \%data
-                    }
-                };
+            foreach my $key (keys @currencies) {
+                $data{$currencies[$key]{"shortcode"}} = $currencies[$key]{"currency"};
             }
+
+            return \%data, structured_answer => {
+                id => "currency_in",
+                name => "CurrencyIn",
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                        moreAt => 0
+                    }
+                },
+                data => {
+                    title => "Currencies in $output_country",
+                    record_data => \%data
+                }
+            };
         }
     }
 
