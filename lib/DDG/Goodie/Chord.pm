@@ -40,7 +40,7 @@ my %chords = (
     "sus4"       => [0, 5, 7],
 );
 
-# Store the instruments that the program will respond to, with a 
+# Store the instruments that the program will respond to, with a
 # list storing the note of each string in order. (Add one to note
 # for sharps, and subtract one for flats)
 my %instruments = (
@@ -62,9 +62,9 @@ sub maximum{
     return $sorted[-1];
 };
 
-# The input parser. Uses regex to find the key to put the chord in, and the 
-# chord if they are conjoined. 
-# Also greps through the input words, looking for matches within the 
+# The input parser. Uses regex to find the key to put the chord in, and the
+# chord if they are conjoined.
+# Also greps through the input words, looking for matches within the
 # chords and instrument hashes
 sub items{
     my @words = split(" ", lc $_[0]);
@@ -95,8 +95,7 @@ sub items{
         $dom = 5;
     };
     my @instr = grep($instruments{$_}, @words);
-    if(!@instr){
-	# FIXME
+    if(!defined @instr){
         @instr = $instrument_aliases{(grep($instrument_aliases{$_}, @words))[0]};
     };
     return $instr[0], $chord, $key, $mod, $dom;
@@ -114,7 +113,7 @@ sub chord{
 # as from the instrument hash.
 # Determines which frets would need to be pressed on that instrument to
 # form that chord.
-# The starting fret determines the lowest fret that the function will try to 
+# The starting fret determines the lowest fret that the function will try to
 # put a note on.
 sub _frets{
     my ($start, $instrument, $values) = @_;
@@ -133,11 +132,11 @@ sub _frets{
     return @final;
 };
 
-# Takes in all the same vales as _fret, besides a start value. Passes them to 
-# _fret with slowly increasing start values. 
-# For each array returned by _fret, determines a "distance" between the notes 
-# on an instrument. 
-# A lower distance then all the previous distances will get that array added 
+# Takes in all the same vales as _fret, besides a start value. Passes them to
+# _fret with slowly increasing start values.
+# For each array returned by _fret, determines a "distance" between the notes
+# on an instrument.
+# A lower distance then all the previous distances will get that array added
 # to the return array.
 sub all_frets{
     my @values;
@@ -164,7 +163,7 @@ sub all_frets{
     return @values;
 };
 
-# Takes a list of frets, such as from the "fret" function. 
+# Takes a list of frets, such as from the "fret" function.
 
 # Handle statement
 handle remainder => sub {
@@ -190,7 +189,7 @@ handle remainder => sub {
 	    foreach (@fret) {$_ = 120 - ($_ * 25) if $_ != 0;}
 	    foreach (@fret) {$_ += 0;} # <- KEEP THIS! Otherwise Perl converts 0 to a string. Why? Not a clue.
 
-	    my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), 
+	    my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )),
 			    $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
 	    my $type = ucfirst($instr_name) . " Chord";
 	    return 'chord', structured_answer => {
