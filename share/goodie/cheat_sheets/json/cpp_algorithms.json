@@ -7,6 +7,7 @@
         "sourceUrl": "http://www.cplusplus.com/reference/algorithm/"
     },
     "template_type": "reference",
+    "aliases": ["c++ algorithms"],
     "section_order": [
         "Non-Modifying sequence operations",
         "Modifying sequence operations",

@@ -1,6 +1,6 @@
 {
-    "name": "Rose Colour Meanings",
     "id": "rose_meanings_cheat_sheet",
+    "name": "Rose Colour Meanings",
     "description": "These are the common meanings for each rose petal colour",
     "template_type": "reference",
     "metadata": {
@@ -8,6 +8,9 @@
         "sourceUrl": "http://rkdn.org/roses/colors.asp"
     },
     "aliases": [
+        "rose",
+        "rose color",
+        "rose colour",
         "rose color meanings",
         "rose colour meanings",
         "rose petal meaning"

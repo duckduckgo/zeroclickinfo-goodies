@@ -1,13 +1,13 @@
 {
     "id": "github_atom_cheat_sheet",
-    "name": "GitHub Atom",
+    "name": "Atom",
     "description": "A hackable text editor for the 21st Century",
     "metadata":{
         "sourceName": "Bugsnag",
         "sourceUrl": "https://bugsnag.com/blog/atom-editor-cheat-sheet"
     },
     "aliases": [
-        "github atom",
+        "atom",
         "atom text editor"
     ],
     "template_type": "keyboard",

@@ -8,6 +8,7 @@
     },
     "template_type": "keyboard",
     "aliases": [
+        "idris emacs",
         "emacs idris-mode",
         "emacs idris mode",
         "idris-mode emacs",

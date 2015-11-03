@@ -7,8 +7,8 @@
         "sourceUrl": "https://docs.angularjs.org/api/ng/directive"
     },
     "aliases": [
-        "angular"
-        "angular js",
+        "angular",
+        "angular js"
     ],
     "template_type": "reference",
     "section_order": [
@@ -95,6 +95,6 @@
                 "key": "ngPaste",
                 "val": "Specify custom behavior on paste event"
             }
-        ]
-    }
+          ]
+     }
 }

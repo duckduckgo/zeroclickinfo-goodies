@@ -6,6 +6,7 @@
         "sourceName": "C++ Reference",
         "sourceUrl": "http://www.cplusplus.com/reference/string/string/"
     },
+    "aliases": ["c++ strings"],
     "template_type": "code",
     "section_order": ["Constructors", "Element Access", "Size"],
     "sections": {
@@ -33,7 +34,6 @@
             "key": "str.length()",
             "val": "Get the size of string str"
         }]
-        
     }
 }
 
