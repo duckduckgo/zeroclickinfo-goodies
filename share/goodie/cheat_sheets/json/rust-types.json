@@ -17,7 +17,7 @@
         "Enumerated Types",
         "Pointer Types"
     ],
-    "template_type": "keyboard",
+    "template_type": "reference",
     "sections": {
         "Primitive Types": [
             {

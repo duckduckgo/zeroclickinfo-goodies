@@ -1,0 +1,230 @@
+hardy ramanujan number:
+    name: Hardy Ramanujan Number 1729
+    aliases:
+        - the hardy ramanujan number
+        - hardy ramanujan number
+        - ramanujan number
+        - 1729
+    symbol:
+    wiki:
+    value:
+        plain: '1^3 + 12^3 = 9^3 + 10^3'
+        html: '1<sup>3</sup> + 12<sup>3</sup> = 9<sup>3</sup> + 10<sup>3</sup>'
+
+avogadros number:
+    name: Avogadro's Number
+    aliases:
+        - avogadro's number #add this alias to be able to detect queries with apostrophes
+    symbol:
+    wiki:
+    value:
+        plain: '6.0221415 × 10^23 mol^-1'
+        html: '6.0221415 × 10<sup>23</sup> mol<sup>-1</sup>'
+
+eulers constant:
+    name: Euler's Constant
+    aliases:
+        - euler's constant #add this alias to be able to detect queries with apostrophes
+    symbol:
+    wiki:
+    value:
+        plain: '0.577215665'
+
+plancks constant:
+    name: Planck's Constant
+    aliases:
+        - planck's constant
+    symbol:
+    wiki:
+    value:
+        plain: '6.626068 × 10^-34 m^2 kg / s'
+        html: '6.626068 × 10<sup>-34</sup> m<sup>2</sup> kg / s'
+
+atomic mass unit:
+    name: 1 Atomic Mass Unit
+    aliases:
+        - amu
+    symbol:
+    wiki:
+    value:
+        plain: '1.66053886 × 10^-27 kilograms'
+        html: '1.66053886 × 10<sup>-27</sup> kilograms'
+
+astronomical unit:
+    name: 1 Astronomical Unit
+    aliases:
+        - au
+    symbol:
+    wiki:
+    value:
+        plain: '149 598 000 kilometers'
+
+boltzmann constant:
+    name: The Stefan Boltzmann Constant
+    aliases:
+        - stefan boltzmann constant
+        - the stefan boltzmann constant
+    symbol:
+    wiki:
+    value:
+        plain: '1.3806503 × 10^-23 m^2 kg s^-2 K^-1'
+        html: '1.3806503 × 10<sup>-23</sup> m<sup>2</sup> kg s<sup>-2</sup> K<sup>-1</sup>'
+
+elementary electric charge:
+    name: Elementary Electric Charge
+    aliases:
+        - elementary charge
+    symbol:
+    wiki:
+    value:
+        plain: '1.60217733 × 10^-19 coulomb'
+        html: '1.60217733 × 10<sup>-19</sup> coulomb'
+
+charge of proton:
+    name: Charge of Proton
+    aliases:
+        - charge of a proton
+        - charge proton
+        - proton charge
+    symbol:
+    wiki:
+    value:
+        plain: '1.60217733 × 10^-19 coulomb'
+        html: '1.60217733 × 10<sup>-19</sup> coulomb'
+
+charge of electron:
+    name: Charge of Electron
+    aliases:
+        - electron charge
+        - charge electron
+        - charge of a electron
+    symbol:
+    wiki:
+    value:
+        plain: '1.60217646 × 10^-19 coulombs'
+        html: '1.60217646 × 10<sup>-19</sup> coulomb'
+
+electron mass:
+    name: Electron Mass
+    symbol:
+    wiki:
+    value:
+        plain: '9.10938188 × 10^-31 kilograms'
+        html: '9.10938188 × 10<sup>-31</sup> kilograms'
+
+electron volt:
+    aliases:
+        - ev
+    name: 1 Electron Volt
+    symbol:
+    wiki:
+    value:
+        plain: '1.60217646 × 10^-19 joules'
+        html: '1.60217646 × 10<sup>-19</sup> joules'
+
+epsilon 0:
+    name: Electric Constant
+    symbol:
+    wiki:
+    value:
+        plain: '8.85418782 × 10^-12 m^-3 kg^-1 s^4 A^2'
+        html: '8.85418782 × 10<sup>-12</sup> m<sup>-3</sup> kg<sup>-1</sup> s<sup>4</sup> A<sup>2</sup>'
+
+faraday constant:
+    name: Faraday Constant
+    symbol:
+    wiki:
+    value:
+        plain: '96 485.3415 s A / mol'
+
+fine structure constant:
+    name: Fine-structure Constant
+    symbol:
+    wiki:
+    value:
+        plain: '0.00729735253'
+
+gravitational constant:
+    name: Gravitational Constant
+    aliases:
+    symbol:
+    wiki:
+    value:
+        plain: '6.67300 × 10^-11 m^3 kg^-1 s^-2'
+        html: '6.67300 × 10<sup>-11</sup> m<sup>3</sup> kg<sup>-1</sup> s<sup>-2</sup>'
+
+hbar:
+    name: hbar
+    symbol:
+    wiki:
+    value:
+        plain: '1.05457148 × 10^-34 m^2 kg / s'
+        html: '1.05457148 × 10<sup>-34</sup> m<sup>2</sup> kg / s'
+
+magnetic flux quantum:
+    name: Magnetic Flux Quantum
+    symbol:
+    wiki:
+    value:
+        plain: '2.06783364 × 10^-15 webers'
+        html: '2.06783364 × 10<sup>-15</sup> webers'
+
+molar gas constant:
+    name: The Molar Gas Constant
+    symbol:
+    wiki:
+    value:
+        plain: '8.314472 × m^2 kg s^-2 K^-1 mol^-1'
+        html: '8.314472 × m<sup>2</sup> kg s<sup>-2</sup> K<sup>-1</sup> mol<sup>-1</sup>'
+
+permeability of free space:
+    name: The Magnetic Constant
+    symbol:
+    wiki:
+    value:
+        plain: '1.25663706 × 10^-6 m kg s^-2 A^-2'
+        html: '1.25663706 × 10<sup>-6</sup> m kg s<sup>-2</sup> A<sup>-2</sup>'
+
+proton mass:
+    name: proton Mass
+    symbol:
+    wiki:
+    value:
+        plain: '1.67262158 × 10^-27 kilograms'
+        html: '1.67262158 × 10<sup>-27</sup> kilograms'
+
+
+rydberg constant:
+    name: Rydberg Constant
+    symbol:
+    wiki:
+    value:
+        plain: '10 973 731.6 m^-1'
+        html: '10 973 731.6 m<sup>-1</sup>'
+
+speed of light:
+    name: The Speed of Light
+    aliases:
+        - light speed
+        - speed light
+    symbol: c
+    wiki:
+    value:
+        plain: '299 792 458 m / s'
+
+speed of sound:
+    name: Speed Of Sound At Sea Level
+    aliases:
+        - speed sound
+        - sound speed
+    symbol:
+    wiki:
+    value:
+        plain: '340.29 m / s'
+
+42:
+    name: Answer to the Ultimate Question of Life, the Universe, and Everything
+    symbol:
+    wiki:
+    value:
+        plain: 42

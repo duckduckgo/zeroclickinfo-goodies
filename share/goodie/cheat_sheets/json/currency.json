@@ -1,0 +1,235 @@
+{
+    "id": "currency_cheat_sheet",
+    "name": "World Currencies",
+    "description": "List of countries and their official currencies, organized by continent",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_countries_and_capitals_with_currency_and_language"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Africa",
+        "Asia",
+        "Europe",
+        "North America",
+        "South America",
+        "Antartica",
+        "Oceania"
+        ],
+    "sections": {
+    "Africa":[{
+           "key":"Algeria",
+           "val":"Dinar"
+          },{
+           "key":"Angola",
+           "val":"Kwanza"
+          },{
+            "key":"Botswana",
+           "val":"Pula"
+          },{
+           "key":"Cameroon",
+           "val":"CFA franc"
+          },{
+            "key":"Egypt",
+           "val":"Egyptian pound"
+          },{
+            "key":"Ethiopia",
+            "val":"Birr "
+          },{
+            "key":"Ghana",
+            "val":"Ghana cedi"
+          },{
+            "key":"Kenya",
+            "val":"Kenyan shilling"
+          },{
+            "key":"Libya",
+            "val":"Dinar"
+          },{
+            "key":"Mali",
+            "val":"CFA franc"
+          },{
+            "key":"Nigeria",
+            "val":"Naira"
+          },{
+            "key":"South Africa",
+            "val":"South African rand"
+          },{
+            "key":"Sudan",
+            "val":"Sudanese pound"
+          },{
+            "key":"Uganda",
+            "val":"Ugandan shilling"
+          } ],
+        "Asia": [{
+            "key":"Afghanistan",
+            "val":"Afghani"
+          },{
+            "key":"Bahrain",
+            "val":"Bahraini dinar"
+          },{
+            "key":"Bangladesh",
+            "val":"Taka"
+          },{
+            "key":"China",
+            "val":"Renminbi (yuan)"
+          },{
+            "key":"Hong Kong",
+            "val":"Hong Kong dollar"
+          },{
+            "key":"India",
+            "val":"Indian rupee"
+          },{
+            "key":"Japan",
+            "val":"Yen"
+          },{
+            "key":"Kuwait",
+            "val":"Kuwaiti dinar"
+          },{
+            "key":"Thailand",
+            "val":"Baht"
+           } ],
+        "Europe":[{
+            "key":"Austria",
+            "val":"Euro"
+          },{
+            "key":"Belgium",
+            "val":"Euro"
+          },{
+            "key":"France",
+            "val":"Euro CFP franc"
+          },{
+            "key":"Germany",
+            "val":"Euro"
+          },{
+            "key":"Hungary",
+            "val":"Forint"
+          },{
+            "key":"Ireland",
+            "val":"Euro"
+          },{
+            "key":"Russia",
+            "val":"Russian ruble"
+          },{
+            "key":"Switzerland",
+            "val":"Swiss franc"
+          },{
+            "key":"Spain",
+            "val":"Euro "
+          } ],
+        "North America": [{
+            "key":"Antigua and Barbuda",
+            "val":"East Caribbean dollar"
+          }, {
+            "key":"Bahamas",
+            "val":"Bahamian dollar"
+          }, {
+            "key":"Barbados",
+            "val":"Barbadian dollar"
+          }, {
+            "key":"Belize",
+            "val":"Belize dollar"
+          }, {
+            "key":"Bermuda",
+            "val":"Bermudian dollar"
+          }, {
+            "key":"Canada",
+            "val":"Canadian dollar"
+          }, {
+            "key":"Costa Rica",
+            "val":"Costa Rican colon"
+          }, {
+            "key":"Cuba",
+            "val":"Cuban Peso"
+          }, {
+            "key":"Dominican Republic",
+            "val":"Dominican Peso"
+          }, {
+            "key":"El Salvador",
+            "val":"United States dollar"
+          }, {
+            "key":"Guatemala",
+            "val":"Guatemalan quetzal"
+          }, {
+            "key":"Jamaica",
+            "val":"Jamaican dollar"
+          }, {
+            "key":"Mexico",
+            "val":"Mexican Peso"
+          }, {
+            "key":"Panama",
+            "val":"United States dollar"
+          }, {
+            "key":"United States of America",
+            "val":"United States dollar"
+          }],
+        "South America": [{
+            "key":"Argentina",
+            "val":"Peso"
+          }, {
+            "key":"Bolivia",
+            "val":"Boliviano"
+          }, {
+            "key":"Brazil",
+            "val":"Real"
+          }, {
+            "key":"Chile",
+            "val":"Peso"
+          }, {
+            "key":"Colombia",
+            "val":"Peso"
+          }, {
+            "key":"Ecuador",
+            "val":"United States dollar"
+          }, {
+            "key":"Falkland Islands",
+            "val":"Falklands Island Pound"
+          }, {
+            "key":"French Guiana",
+            "val":"Euro"
+          }, {
+            "key":"Guyana",
+            "val":"Guyanese dollar"
+          }, {
+            "key":"Paraguay",
+            "val":"Guarani"
+          }, {
+            "key":"Peru",
+            "val":"Nuevo Sol"
+          }, {
+            "key":"Suriname",
+            "val":"Surinamese dollar"
+          }, {
+            "key":"Uruguay",
+            "val":"Uruguayan Peso"
+          }, {
+            "key":"Venezuela",
+            "val":"Bolívar fuerte"
+          }],
+        "Oceania": [{
+            "key":"Australia",
+            "val":"Australian dollar"
+          }, {
+            "key":"Fiji",
+            "val":"Fijian dollar"
+          }, {
+            "key":"New Zealand",
+            "val":"New Zealand dollar"
+          }, {
+            "key":"Vanuatu",
+            "val":"Vanuatu Vatu"
+          }, {
+            "key":"American Samoa",
+            "val":"United States dollar"
+          }, {
+            "key":"Cook Islands",
+            "val":"Cook Islands dollar"
+          }],
+        "Antartica":[{
+            "key":"French Southern Territories",
+            "val":"Euro"
+          }, {
+            "key":"South Georgia and the South Sandwich Islands",
+            "val":"Pound Sterling"
+          }]
+    }
+}

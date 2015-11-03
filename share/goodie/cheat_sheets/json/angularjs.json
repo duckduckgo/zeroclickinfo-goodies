@@ -1,4 +1,3 @@
-
 {
     "id": "angularjs_cheat_sheet",
     "name": "AngularJS",
@@ -7,7 +6,10 @@
         "sourceName": "AngularDirectiveCommands",
         "sourceUrl": "https://docs.angularjs.org/api/ng/directive"
     },
-    "aliases": ["angular", "angularjs"],
+    "aliases": [
+        "angular"
+        "angular js",
+    ],
     "template_type": "reference",
     "section_order": [
         "Directives",
@@ -20,8 +22,8 @@
                 "val": "Use this directive to force the angular.element library"
             },
             {
-                 "key": "ngCsp",
-                 "val": "Angular has some feature that can break CSP(Content Security Policy)rules"
+                "key": "ngCsp",
+                "val": "Angular has some feature that can break CSP(Content Security Policy)rules"
             },
             {
                 "key": "ngClick",
@@ -51,8 +53,8 @@
                 "key": "ngMouseleave",
                 "val": "Specify custom behavior on mouseleave event"
             }
-          ],
-          "Directives (continued)" : [
+        ],
+        "Directives (continued)": [
             {
                 "key": "ngMousemove",
                 "val": "Specify custom behavior on mousemove event"

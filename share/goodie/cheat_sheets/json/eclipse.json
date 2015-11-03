@@ -5,6 +5,7 @@
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html"
         },
+    "template_type": "keyboard",
     "section_order": [
         "Manage Files and Projects",
         "Editor Window",
