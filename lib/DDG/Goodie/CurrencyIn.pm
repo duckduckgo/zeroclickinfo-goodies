@@ -35,7 +35,7 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'facts';
 topics 'travel';
 attribution github => ['https://github.com/Alchymista', 'Alchymista'],
-github => ['https://github.com/ozdemirburak', 'Burak Özdemir'];
+            github => ['https://github.com/ozdemirburak', 'Burak Özdemir'];
 
 triggers any => 'currency', 'currencies';
 
@@ -44,14 +44,14 @@ my $countries = decode_json($data);
 
 sub clear_country_name {
     my $txt = shift;
-    $txt =~ s/^\?$|\?$//g; # Query may end with "?". If so take it away.
+    $txt =~ s/^\?$|\?$//g;  # Query may end with "?". If so take it away.
     return trim($txt);
 }
 
 handle remainder => sub {
 
     if (/^.*(?:in|of|for)(?:\sthe)?\s(.*?)$/i) {
-        my $country = clear_country_name(lc($1));               # Clear country name - white spaces, question mark..
+        my $country = clear_country_name(lc($1));  # Clear country name - white spaces, question mark..
 
         # handle two-letter country codes
         if ($country =~ /^[a-z]{2}$/i) {
@@ -67,7 +67,7 @@ handle remainder => sub {
         my @currencies = @{$country->{"currencies"}};
         my $output_country = html_enc($country->{"ucwords"});
 
-        if(scalar @currencies eq 1) {
+        if (scalar @currencies eq 1) {
             return $currencies[0]{"string"}, structured_answer => {
                 input     => [$output_country],
                 operation => "Currency in",
