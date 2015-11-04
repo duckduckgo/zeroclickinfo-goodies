@@ -25,6 +25,32 @@
    ],
     
     "sections":{
+           "General":[  
+-         {  
+-            "key":"[⌘] [Tab]",
+-            "val":"Switch between apps. Holding Shift reverses."
+-         }, {  
+-            "key":"[⌘] [~]",
+-            "val":"Switch to next window of current app. Holding Shift reverses."
+-         }, {  
+-            "key":"[⌘] [Q]",
+-            "val":"Quit app"
+-         }, {  
+-            "key":"[⌘] [H]",
+-            "val":"Hide windows of current app"
+-         }, {  
+-            "key":"[⌘] [M]",
+-            "val":"Minimize windows of current app"
+-         }, {  
+-            "key":"[⌘] [,]",
+-            "val":"Open Preferences (if available)"
+-         }, {  
+-            "key":"[Ctrl] ( [←] / [→] )",
+-            "val":"Move one desktop left or right"
+-         }, {  
+-            "key":"[⌘] [Option] [Esc]",
+-            "val":"Open force quit dialog"
+-         }],
         "Finder": [{
             "key" : "[Cmd] [C]",
             "val" : "Copy selected files"
