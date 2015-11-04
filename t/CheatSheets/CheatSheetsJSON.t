@@ -14,8 +14,6 @@ use IO::All;
 my $json_dir = "share/goodie/cheat_sheets/json";
 my $json;
 
-print "Testing CheatSheet JSON Files";
-
 # Iterate over all Cheat Sheet JSON files...
 foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
