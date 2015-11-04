@@ -15,18 +15,18 @@ sub getTests {
                                 ->name("*.json")
                                 ->in('share/goodie/cheat_sheets/json/');
     my %tests;
-    
+
     foreach my $file (@files) {
         open my $fh, $file or return;
         my $json = do { local $/;  <$fh> };
         my $data = decode_json($json);
-        
+
         my $defaultName = File::Basename::fileparse($file);
         $defaultName =~ s/-/ /g;
         $defaultName =~ s/.json//;
-        
+
         $tests{$defaultName." cheat sheet"} = test_zci(build_answer($data));
-        
+
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
                 $tests{$alias." cheat sheet"} = test_zci(build_answer($data));
@@ -38,7 +38,7 @@ sub getTests {
 
 sub build_answer {
     my ($data) = @_;
-    
+
     return 'Cheat Sheet', structured_answer => {
         id => 'cheat_sheets',
         dynamic_id => $data->{id},
