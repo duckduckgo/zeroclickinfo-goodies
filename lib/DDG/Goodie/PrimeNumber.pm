@@ -32,26 +32,40 @@ handle query_lc => sub {
     $start = 1000000000 if $start > 1000000000;
     $end = 1000000000 if $end > 1000000000;
     ($end, $start) = ($start, $end) if ($start > $end);
-    
+
     my $s = ceil($start);
     my $e = floor($end);
-    
-    $s = 1          if $s <= 0;
+
+    $s = 1 if $s <= 0;
     $s += 0;
-    $e = 1          if $e <= 0;
+    $e = 1 if $e <= 0;
     $e += 0;
-    
+
     my $pList = join(", ", @{primes($s, $e)});
-    
+
     if ($pList eq "") {
         $pList = "None";
     }
-    
+
     return $pList,
       structured_answer => {
-        input     => [$start, $end],
-        operation => 'Prime numbers between',
-        result    => $pList
+        id => "prime_number",
+        name => "Answer",
+        meta => {
+            sourceName => "Wikipedia",
+            sourceUrl => "https://en.wikipedia.org/wiki/Prime_number"
+        },
+        data => {
+            title => "Prime numbers between $start and $end",
+            description => $pList
+        },
+        templates => {
+            group => "text",
+            options => {
+                moreAt => true,
+                chompContent => 1
+            }
+        }
       };
 };
 
