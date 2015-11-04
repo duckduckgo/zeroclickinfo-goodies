@@ -51,7 +51,7 @@
             "key":"[⌘] [Option] [Esc]",
             "val":"Open force quit dialog"
          }],
-      "Finder": [
+      "Finder":[
         {
             "key" : "[Cmd] [C]",
             "val" : "Copy selected files"
