@@ -51,10 +51,6 @@ handle query_lc => sub {
       structured_answer => {
         id => "prime_number",
         name => "Answer",
-        meta => {
-            sourceName => "Wikipedia",
-            sourceUrl => "https://en.wikipedia.org/wiki/Prime_number"
-        },
         data => {
             title => "Prime numbers between $start and $end",
             description => $pList
@@ -62,7 +58,6 @@ handle query_lc => sub {
         templates => {
             group => "text",
             options => {
-                moreAt => true,
                 chompContent => 1
             }
         }
