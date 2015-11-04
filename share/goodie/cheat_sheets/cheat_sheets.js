@@ -34,7 +34,7 @@ DDH.cheat_sheets.build = function(ops) {
 
         var out;
         var codeClass = typeof className === "string" ? className : "bg-clr--white";
-        
+
         // replace escaped slashes and brackets
         string = string.replace(/\</g, '&lt;')
                 .replace(/\>/g, '&gt;')
