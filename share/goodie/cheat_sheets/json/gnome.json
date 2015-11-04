@@ -4,9 +4,9 @@
     "description": "List of useful keyboard shortcuts for GNOME",
     "metadata": {
         "sourceName": "GNOME Help",
-        "sourceUrl": "https://help.gnome.org/users/gnome-help/stable/shell-keyboard-shortcuts.html.en"
+        "sourceUrl": "https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html.en"
     },
-    "section_order": ["Desktop Shortcuts", "Common Editing", "Screen Capturing"],
+    "section_order": ["Windows", "System", "Navigation", "Common Editing", "Screen Capturing", "Universal Access", "Typing"],
     "sections": {
         "Desktop Shortcuts": [{
             "val": "Switch between the Activities overview and desktop",
@@ -72,8 +72,30 @@
             "val": "Take a screenshot of an area of the screen",
             "key": "[Shift] [Prnt Scrn]"
         }, {
-            "val": "Start and end screencast recording",
-            "key": "[Ctrl] [Alt] [Shift] [R] "
+                       "val": "Start and end screencast recording",
+             "key": "[Ctrl] [Alt] [Shift] [R] "
+            }
+        ],
+        "Universal Access": [
+            {
+               "val": "Turn zoom on or off",
+                "key": "[Alt] [Super] [8]"
+            },
+            {
+                "val": "Zoom in",
+                "key": "[Alt] [Super] [=]"
+            },
+            {
+                "val": "Zoom out",
+                "key": "[Alt] [Super] [-]"
+            }
+        ],
+        "Typing": [
+            {
+                "val": "Switch to next input source",
+                "key": "[Super] [Space]"
+            }
+        ]
         }]
-    }
-}
+     }
+ }
