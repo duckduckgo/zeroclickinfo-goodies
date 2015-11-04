@@ -72,14 +72,9 @@ sub make_structured_answer {
             title => "Prime numbers between $start and $end",
             description => $description,
         },
-         meta => {
-            sourceName => "Wikipedia",
-            sourceUrl => "https://en.wikipedia.org/wiki/Prime_number"
-        },
         templates => {
             group => 'text',
             options => {
-                moreAt => 1,
                 chompContent => 1
             }
         }
