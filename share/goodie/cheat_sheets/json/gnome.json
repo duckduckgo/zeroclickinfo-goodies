@@ -6,9 +6,17 @@
         "sourceName": "GNOME Help",
         "sourceUrl": "https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html.en"
     },
-    "section_order": ["Windows", "System", "Navigation", "Common Editing", "Screen Capturing", "Universal Access", "Typing"],
+    "section_order": [
+        "Windows",
+        "System",
+        "Navigation",
+        "Common Editing",
+        "Screen Capturing",
+        "Universal Access",
+        "Typing"
+    ],
     "sections": {
-         "Windows": [
+        "Windows": [
             {
                 "val": "Maximize window",
                 "key": "[Super] [↑]"
@@ -76,7 +84,7 @@
                 "key": "[Alt] [F6]"
             },
             {
-                "val" : "Switch system controls",
+                "val": "Switch system controls",
                 "key": "[Ctrl] [Alt] [Tab]"
             },
             {
@@ -118,39 +126,49 @@
                 "key": "[Super] [F10]"
             }
         ],
-         "Common Editing": [{
-            "val": "Select all text or items in a list",
-            "key": "[Ctrl] [A] "
-        }, {
-            "val": "Cut selected text or items and place it on the clipboard",
-            "key": "[Ctrl] [X] "
-        }, {
-            "val": "Copy selected text or items to the clipboard",
-            "key": "[Ctrl] [C] "
-        }, {
-            "val": "Paste the contents of the clipboard",
-            "key": "[Ctrl] [V] "
-        }, {
-            "val": "Undo the last action",
-            "key": "[Ctrl] [Z] "
-        }],
-         "Screen Capturing": [{
-            "val": "Take a screenshot",
-            "key": "[Prnt Scrn]"
-        }, {
-            "val": "Take a screenshot of a window",
-            "key": "[Alt] [Prnt Scrn]"
-        }, {
-            "val": "Take a screenshot of an area of the screen",
-            "key": "[Shift] [Prnt Scrn]"
-        }, {
-                       "val": "Start and end screencast recording",
-             "key": "[Ctrl] [Alt] [Shift] [R] "
+        "Common Editing": [
+            {
+                "val": "Select all text or items in a list",
+                "key": "[Ctrl] [A] "
+            },
+            {
+                "val": "Cut selected text or items and place it on the clipboard",
+                "key": "[Ctrl] [X] "
+            },
+            {
+                "val": "Copy selected text or items to the clipboard",
+                "key": "[Ctrl] [C] "
+            },
+            {
+                "val": "Paste the contents of the clipboard",
+                "key": "[Ctrl] [V] "
+            },
+            {
+                "val": "Undo the last action",
+                "key": "[Ctrl] [Z] "
+            }
+        ],
+        "Screen Capturing": [
+            {
+                "val": "Take a screenshot",
+                "key": "[Prnt Scrn]"
+            },
+            {
+                "val": "Take a screenshot of a window",
+                "key": "[Alt] [Prnt Scrn]"
+            },
+            {
+                "val": "Take a screenshot of an area of the screen",
+                "key": "[Shift] [Prnt Scrn]"
+            },
+            {
+                "val": "Start and end screencast recording",
+                "key": "[Ctrl] [Alt] [Shift] [R] "
             }
         ],
         "Universal Access": [
             {
-               "val": "Turn zoom on or off",
+                "val": "Turn zoom on or off",
                 "key": "[Alt] [Super] [8]"
             },
             {
@@ -168,6 +186,5 @@
                 "key": "[Super] [Space]"
             }
         ]
-        }
-     }
- }
+    }
+}
