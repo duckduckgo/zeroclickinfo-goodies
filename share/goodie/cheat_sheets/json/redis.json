@@ -6,101 +6,15 @@
     "sourceUrl": "http://redis.io/commands"
   },
   "section_order": [
-    "Cluster",
-    "Connection",
     "Hashes",
-    "HyperLogLog",
     "Keys",
     "Lists",
-    "Pub/Sub",
-    "Scripting",
-    "Server",
     "Sets",
     "Sorted Sets",
     "Strings",
-    "Transactions"
   ],
   "template_type": "reference",
   "sections": {
-    "Cluster": [
-      {
-        "key": "CLUSTER ADDSLOTS slot [slot ...]",
-        "val": "Assign new hash slots to receiving node"
-      }, {
-        "key": "CLUSTER COUNT-FAILURE-REPORTS node-id",
-        "val": "Return the number of failure reports active for a given node"
-      }, {
-        "key": "CLUSTER COUNTKEYSINSLOT slot",
-        "val": "Return the number of local keys in the specified hash slot"
-      }, {
-        "key": "CLUSTER DELSLOTS slot [slot ...]",
-        "val": "Set hash slots as unbound in receiving node"
-      }, {
-        "key": "CLUSTER FAILOVER [FORCE|TAKEOVER]",
-        "val": "Forces a slave to perform a manual failover of its master."
-      }, {
-        "key": "CLUSTER FORGET node-id",
-        "val": "Remove a node from the nodes table"
-      }, {
-        "key": "CLUSTER GETKEYSINSLOT slot count",
-        "val": "Return local key names in the specified hash slot"
-      }, {
-        "key": "CLUSTER INFO",
-        "val": "Provides info about Redis Cluster node state"
-      }, {
-        "key": "CLUSTER KEYSLOT key",
-        "val": "Returns the hash slot of the specified key"
-      }, {
-        "key": "CLUSTER MEET ip port",
-        "val": "Force a node cluster to handshake with another node"
-      }, {
-        "key": "CLUSTER NODES",
-        "val": "Get Cluster config for the node"
-      }, {
-        "key": "CLUSTER REPLICATE node-id",
-        "val": "Reconfigure a node as a slave of the specified master node"
-      }, {
-        "key": "CLUSTER RESET [HARD|SOFT]",
-        "val": "Reset a Redis Cluster node"
-      }, {
-        "key": "CLUSTER SAVECONFIG",
-        "val": "Forces the node to save cluster state on disk"
-      }, {
-        "key": "CLUSTER SET-CONFIG-EPOCH config-epoch",
-        "val": "Set the configuration epoch in a new node"
-      }, {
-        "key": "CLUSTER SETSLOT slot IMPORTING|MIGRATING|STABLE|NODE [node-id]",
-        "val": "Bind an hash slot to a specific node"
-      }, {
-        "key": "CLUSTER SLAVES node-id",
-        "val": "List slave nodes of the specified master node"
-      }, {
-        "key": "CLUSTER SLOTS",
-        "val": "Get array of Cluster slot to node mappings"
-      }, {
-        "key": "READONLY",
-        "val": "Enables read queries for connection to a cluster slave node"
-      }, {
-        "key": "READWRITE",
-        "val": "Disables read queries for connection to a cluster slave node"
-      }],
-    "Connection": [
-      {
-        "key": "AUTH password",
-        "val": "Authenticate to the server"
-      }, {
-        "key": "ECHO message",
-        "val": "Echo the given string"
-      }, {
-        "key": "PING",
-        "val": "Ping the server"
-      }, {
-        "key": "QUIT",
-        "val": "Close the connection"
-      }, {
-        "key": "SELECT index",
-        "val": "Change the selected database for the current connection"
-      }],
     "Hashes": [
       {
         "key": "HDEL key field [field ...]",
@@ -147,17 +61,6 @@
       }, {
         "key": "HSCAN key cursor [MATCH pattern] [COUNT count]",
         "val": "Incrementally iterate hash fields and associated values"
-      }],
-    "HyperLogLog": [
-      {
-        "key": "PFADD key element [element ...]",
-        "val": "Adds the specified elements to the specified HyperLogLog."
-      }, {
-        "key": "PFCOUNT key [key ...]",
-        "val": "Return the approximated cardinality of the set(s) observed by the HyperLogLog at key(s)."
-      }, {
-        "key": "PFMERGE destkey sourcekey [sourcekey ...]",
-        "val": "Merge N different HyperLogLogs into a single one."
       }],
     "Keys": [
       {
@@ -279,138 +182,6 @@
       }, {
         "key": "RPUSHX key value",
         "val": "Append a value to a list, only if the list exists"
-      }],
-    "Pub/Sub": [
-      {
-        "key": "PSUBSCRIBE pattern [pattern ...]",
-        "val": "Listen for messages published to channels matching the given patterns"
-      }, {
-        "key": "PUBSUB subcommand [argument [argument ...]]",
-        "val": "Inspect the state of the Pub/Sub subsystem"
-      }, {
-        "key": "PUBLISH channel message",
-        "val": "Post a message to a channel"
-      }, {
-        "key": "PUNSUBSCRIBE [pattern [pattern ...]]",
-        "val": "Stop listening for messages posted to channels matching the given patterns"
-      }, {
-        "key": "SUBSCRIBE channel [channel ...]",
-        "val": "Listen for messages published to the given channels"
-      }, {
-        "key": "UNSUBSCRIBE [channel [channel ...]]",
-        "val": "Stop listening for messages posted to the given channels"
-      }],
-    "Scripting": [
-      {
-        "key": "EVAL script numkeys key [key ...] arg [arg ...]",
-        "val": "Execute a Lua script server side"
-      }, {
-        "key": "EVALSHA sha1 numkeys key [key ...] arg [arg ...]",
-        "val": "Execute a Lua script server side"
-      }, {
-        "key": "SCRIPT EXISTS script [script ...]",
-        "val": "Check existence of scripts in the script cache."
-      }, {
-        "key": "SCRIPT FLUSH",
-        "val": "Remove all the scripts from the script cache."
-      }, {
-        "key": "SCRIPT KILL",
-        "val": "Kill the script currently in execution."
-      }, {
-        "key": "SCRIPT LOAD script",
-        "val": "Load the specified Lua script into the script cache."
-      }],
-    "Server": [
-      {
-        "key": "BGREWRITEAOF",
-        "val": "Asynchronously rewrite the append-only file"
-      }, {
-        "key": "BGSAVE",
-        "val": "Asynchronously save the dataset to disk"
-      }, {
-        "key": "CLIENT KILL [ip:port] [ID client-id] [TYPE normal|slave|pubsub] [ADDR ip:port] [SKIPME yes/no]",
-        "val": "Kill the connection of a client"
-      }, {
-        "key": "CLIENT LIST",
-        "val": "Get the list of client connections"
-      }, {
-        "key": "CLIENT GETNAME",
-        "val": "Get the current connection name"
-      }, {
-        "key": "CLIENT PAUSE timeout",
-        "val": "Stop processing commands from clients for some time"
-      }, {
-        "key": "CLIENT SETNAME connection-name",
-        "val": "Set the current connection name"
-      }, {
-        "key": "COMMAND",
-        "val": "Get array of Redis command details"
-      }, {
-        "key": "COMMAND COUNT",
-        "val": "Get total number of Redis commands"
-      }, {
-        "key": "COMMAND GETKEYS",
-        "val": "Extract keys given a full Redis command"
-      }, {
-        "key": "COMMAND INFO command-name [command-name ...]",
-        "val": "Get array of specific Redis command details"
-      }, {
-        "key": "CONFIG GET parameter",
-        "val": "Get the value of a configuration parameter"
-      }, {
-        "key": "CONFIG REWRITE",
-        "val": "Rewrite the configuration file with the in memory configuration"
-      }, {
-        "key": "CONFIG SET parameter value",
-        "val": "Set a configuration parameter to the given value"
-      }, {
-        "key": "CONFIG RESETSTAT",
-        "val": "Reset the stats returned by INFO"
-      }, {
-        "key": "DBSIZE",
-        "val": "Return the number of keys in the selected database"
-      }, {
-        "key": "DEBUG OBJECT key",
-        "val": "Get debugging information about a key"
-      }, {
-        "key": "DEBUG SEGFAULT",
-        "val": "Make the server crash"
-      }, {
-        "key": "FLUSHALL",
-        "val": "Remove all keys from all databases"
-      }, {
-        "key": "FLUSHDB",
-        "val": "Remove all keys from the current database"
-      }, {
-        "key": "INFO [section]",
-        "val": "Get information and statistics about the server"
-      }, {
-        "key": "LASTSAVE",
-        "val": "Get the UNIX time stamp of the last successful save to disk"
-      }, {
-        "key": "MONITOR",
-        "val": "Listen for all requests received by the server in real time"
-      }, {
-        "key": "ROLE",
-        "val": "Return the role of the instance in the context of replication"
-      }, {
-        "key": "SAVE",
-        "val": "Synchronously save the dataset to disk"
-      }, {
-        "key": "SHUTDOWN [NOSAVE] [SAVE]",
-        "val": "Synchronously save the dataset to disk and then shut down the server"
-      }, {
-        "key": "SLAVEOF host port",
-        "val": "Make the server a slave of another instance, or promote it as master"
-      }, {
-        "key": "SLOWLOG subcommand [argument]",
-        "val": "Manages the Redis slow queries log"
-      }, {
-        "key": "SYNC",
-        "val": "Internal command used for replication"
-      }, {
-        "key": "TIME",
-        "val": "Return the current server time"
       }],
     "Sets": [
       {
@@ -594,24 +365,6 @@
       }, {
         "key": "STRLEN key",
         "val": "Get the length of the value stored in a key"
-      }],
-    "Transactions": [
-      {
-        "key": "DISCARD",
-        "val": "Discard all commands issued after MULTI"
-      }, {
-        "key": "EXEC",
-        "val": "Execute all commands issued after MULTI"
-      }, {
-        "key": "MULTI",
-        "val": "Mark the start of a transaction block"
-      }, {
-        "key": "UNWATCH",
-        "val": "Forget about all watched keys"
-      }, {
-        "key": "WATCH key [key ...]",
-        "val": "Watch the given keys to determine execution of the MULTI/EXEC block"
-      }
-    ]
+      }]
   }
 }
