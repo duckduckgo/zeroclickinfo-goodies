@@ -156,3 +156,15 @@ SkyDNS:
   ip4:
     - 193.58.251.251
   ip6: []
+New Nations:
+  info_url: http://www.new-nations.net/
+  ip4:
+    - 5.45.96.220
+    - 185.82.22.133
+  ip6: []
+BlockAid Public DNS (or PeerDNS):
+  info_url: http://www.blockaid.me/
+  ip4:
+    - 205.204.88.60
+    - 178.21.23.150
+  ip6: []
