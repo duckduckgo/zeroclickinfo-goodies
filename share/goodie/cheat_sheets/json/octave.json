@@ -1,0 +1,891 @@
+{
+    "id": "octave_quick_reference",
+    "name": "OCTAVE",
+    "description": "GNU Octave is a high-level interpreted language, primarily intended for numerical computations.",
+    "metadata": {
+        "sourceName": "ntnu",
+        "sourceUrl": "http://folk.ntnu.no/joern/itgk/refcard-a4.pdf"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Starting Octave",
+        "Stopping Octave",
+        "Getting Help",
+        "Motion in Info",
+        "Node Selection in Info",
+        "Searching in Info",
+        "Command-Line Cursor Motion",
+        "Inserting or Changing Text",
+        "Arithmetic and Increment Operators",
+        "Assignment Expressions",
+        "Comparison and Boolean Operators",
+        "C-style Input and Output",
+        "Other Input and Output functions",
+        "Miscellaneous Functions",
+        "Polynomials",
+        "Statistics",
+        "Killing and Yanking",
+        "Shell Commands",
+        "Basic Matrix Manipulations",
+        "Basic Plotting",
+        "Other Plotting Functions",
+        "Strings and Common Escape Sequences",
+        "Index Expressions",
+        "Linear Algebra",
+        "Signal Processing",
+        "Image Processing",
+        "Sets",
+        "Strings"
+    ],
+    "aliases": [
+        "octave language",
+        "octave programming"
+    ],
+    "sections": {
+        "Starting Octave": [
+            {
+                "key": "octave",
+                "val": "Start interactive Octave session"
+            },
+            {
+                "key": "octave file",
+                "val": "Run Octave on commands in file"
+            },
+            {
+                "key": "octave --help",
+                "val": "Describe command line options"
+            }
+        ],
+        "Stopping Octave": [
+            {
+                "key": "quit or exit",
+                "val": "Exit Octave"
+            },
+            {
+                "key": "INTERRUPT",
+                "val": "Terminate current command and return to top-level prompt"
+            }
+        ],
+        "Getting Help": [
+            {
+                "key": "help",
+                "val": "List all commands and built-in variables"
+            },
+            {
+                "key": "help command",
+                "val": "Briefly describe command"
+            },
+            {
+                "key": "help -i",
+                "val": "Use Info to browse Octave manual"
+            },
+            {
+                "key": "help -i command",
+                "val": "Search for command in Octave manual"
+            }
+        ],
+        "Motion in Info": [
+            {
+                "key": "SPC or C-v",
+                "val": "Scroll forward one screenful"
+            },
+            {
+                "key": "DEL or M-v",
+                "val": "Scroll backward one screenful"
+            },
+            {
+                "key": "C-l",
+                "val": "Redraw the display"
+            }
+        ],
+        "Node Selection in Info": [
+            {
+                "key": "n",
+                "val": "Select the next node"
+            },
+            {
+                "key": "p",
+                "val": "Select the previous node"
+            },
+            {
+                "key": "u",
+                "val": "Select the ‘up’ node"
+            },
+            {
+                "key": "t",
+                "val": "Select the ‘top’ node"
+            },
+            {
+                "key": "d",
+                "val": "Select the directory node"
+            },
+            {
+                "key": "<",
+                "val": "Select the first node in the current file"
+            },
+            {
+                "key": ">",
+                "val": "Select the last node in the current file"
+            },
+            {
+                "key": "g",
+                "val": "Reads the name of a node and selects it"
+            },
+            {
+                "key": "C-x k ",
+                "val": "Kills the current node"
+            }
+        ],
+        "Searching in Info": [
+            {
+                "key": "s",
+                "val": "Search for a string"
+            },
+            {
+                "key": "C-s",
+                "val": "Search forward incrementally"
+            },
+            {
+                "key": "C-r",
+                "val": "Search backward incrementally"
+            },
+            {
+                "key": "i",
+                "val": "Search index & go to corresponding node"
+            },
+            {
+                "key": ",",
+                "val": "Go to next match from last ‘i’ command"
+            }
+        ],
+        "Command-Line Cursor Motion": [
+            {
+                "key": "C-b",
+                "val": "Move back one character"
+            },
+            {
+                "key": "C-f",
+                "val": "Move forward one character"
+            },
+            {
+                "key": "C-a",
+                "val": "Move the the start of the line"
+            },
+            {
+                "key": "C-e",
+                "val": "Move to the end of the line"
+            },
+            {
+                "key": "M-f",
+                "val": "Move forward a word"
+            },
+            {
+                "key": "M-b",
+                "val": "Move backward a word"
+            },
+            {
+                "key": "C-l",
+                "val": "Clear screen, reprinting current line at top"
+            }
+        ],
+        "Inserting or Changing Text": [
+            {
+                "key": "M-TAB",
+                "val": "Insert a tab character"
+            },
+            {
+                "key": "DEL",
+                "val": "Delete character to the left of the cursor"
+            },
+            {
+                "key": "C-d",
+                "val": "Delete character under the cursor"
+            },
+            {
+                "key": "C-v",
+                "val": "Add the next character verbatim"
+            },
+            {
+                "key": "C-t",
+                "val": "Transpose characters at the point"
+            },
+            {
+                "key": "M-t",
+                "val": "Transpose words at the point"
+            }
+        ],
+        "Arithmetic and Increment Operators": [
+            {
+                "key": "x + y",
+                "val": "Addition"
+            },
+            {
+                "key": "x - y",
+                "val": "Subtraction"
+            },
+            {
+                "key": "x * y",
+                "val": "Matrix multiplication"
+            },
+            {
+                "key": "x .* y",
+                "val": "Element by element multiplication"
+            },
+            {
+                "key": "x / y",
+                "val": "Right division, conceptually equivalent to (inverse (y’) * x’)’"
+            },
+            {
+                "key": "x ./ y",
+                "val": "Element by element right division"
+            },
+            {
+                "key": "x ^ y",
+                "val": "Power operator"
+            },
+            {
+                "key": "x .^ y",
+                "val": "Element by element power operator"
+            },
+            {
+                "key": "- x",
+                "val": "Negation"
+            },
+            {
+                "key": "x ’",
+                "val": "Complex conjugate transpose"
+            },
+            {
+                "key": "x .’",
+                "val": "Transpose"
+            },
+            {
+                "key": "++ x (-- x)",
+                "val": "Increment (decrement) x, return new value"
+            },
+            {
+                "key": "x ++ (x --)",
+                "val": "Increment (decrement) x, return old value"
+            }
+        ],
+        "Assignment Expressions": [
+            {
+                "key": "var = expr",
+                "val": "Assign expression to variable"
+            },
+            {
+                "key": "var (idx) = expr",
+                "val": "Assign expression to indexed variable"
+            }
+        ],
+        "Comparison and Boolean Operators": [
+            {
+                "key": "x < y",
+                "val": "True if x is less than y"
+            },
+            {
+                "key": "x <= y",
+                "val": "True if x is less than or equal to y"
+            },
+            {
+                "key": "x == y",
+                "val": "True if x is equal to y"
+            },
+            {
+                "key": "x >= y",
+                "val": "True if x is greater than or equal to y"
+            },
+            {
+                "key": "x > y",
+                "val": "True if x is greater than y"
+            },
+            {
+                "key": "x != y",
+                "val": "True if x is not equal to y"
+            },
+            {
+                "key": "x & y",
+                "val": "True if both x and y are true"
+            },
+            {
+                "key": "x | y",
+                "val": "True if at least one of x or y is true"
+            },
+            {
+                "key": "! bool",
+                "val": "True if bool is false"
+            }
+        ],
+        "C-style Input and Output": [
+            {
+                "key": "fopen (name, mode)",
+                "val": "Open file name"
+            },
+            {
+                "key": "fclose (file)",
+                "val": "Close file"
+            },
+            {
+                "key": "printf (fmt, ...) ",
+                "val": "Formatted output to stdout"
+            },
+            {
+                "key": "fprintf (file, fmt, ...)",
+                "val": "Formatted output to file"
+            },
+            {
+                "key": "sprintf (fmt, ...)",
+                "val": "Formatted output to string"
+            },
+            {
+                "key": "scanf (fmt)",
+                "val": "Formatted input from stdin"
+            },
+            {
+                "key": "fscanf (file, fmt)",
+                "val": "Formatted input from file"
+            },
+            {
+                "key": "sscanf (str, fmt)",
+                "val": "Formatted input from string"
+            },
+            {
+                "key": "fgets (file, len) ",
+                "val": "Read len characters from file"
+            },
+            {
+                "key": "fflush (file) ",
+                "val": "Flush pending output to file"
+            },
+            {
+                "key": "ftell (file)",
+                "val": "Return file pointer position"
+            },
+            {
+                "key": "frewind (file)",
+                "val": "Move file pointer to beginning"
+            },
+            {
+                "key": "freport",
+                "val": "Print a info for open files"
+            },
+            {
+                "key": "fread (file, size, prec)",
+                "val": "Read binary data files"
+            },
+            {
+                "key": "fread (file, size, prec)",
+                "val": "Read binary data files"
+            },
+            {
+                "key": "fwrite (file, size, prec)",
+                "val": "Write binary data files"
+            },
+            {
+                "key": "feof (file)",
+                "val": "Determine if pointer is at EOF"
+            }
+        ],
+        "Other Input and Output functions": [
+            {
+                "key": "save file var ...",
+                "val": "Save variables in file"
+            },
+            {
+                "key": "load file",
+                "val": "Load variables from file"
+            },
+            {
+                "key": "disp (var)",
+                "val": "Display value of var to screen"
+            }
+        ],
+        "Miscellaneous Functions": [
+            {
+                "key": "eval (str)",
+                "val": "Evaluate str as a command"
+            },
+            {
+                "key": "feval (str, ...)",
+                "val": "Evaluate function named by str, passing remaining args to called function"
+            },
+            {
+                "key": "error (message)",
+                "val": "Print message and return to top level"
+            },
+            {
+                "key": "clear pattern",
+                "val": "Clear variables matching pattern"
+            },
+            {
+                "key": "exist (str)",
+                "val": "Check existence of variable or function"
+            },
+            {
+                "key": "who",
+                "val": "List current variables"
+            }
+        ],
+        "Polynomials": [
+            {
+                "key": "compan (p)",
+                "val": "Companion matrix"
+            },
+            {
+                "key": "conv (a, b)",
+                "val": "Convolution"
+            },
+            {
+                "key": "deconv (a, b)",
+                "val": "Deconvolve two vectors"
+            },
+            {
+                "key": "poly (a)",
+                "val": "Create polynomial from a matrix"
+            },
+            {
+                "key": "polyderiv (p)",
+                "val": "Derivative of polynomial"
+            },
+            {
+                "key": "polyreduce (p)",
+                "val": "Integral of polynomial"
+            },
+            {
+                "key": "polyval (p, x)",
+                "val": "Value of polynomial at x"
+            },
+            {
+                "key": "polyvalm (p, x)",
+                "val": "Value of polynomial at x"
+            },
+            {
+                "key": "roots (p)",
+                "val": "Polynomial roots"
+            },
+            {
+                "key": "residue (a, b)",
+                "val": "Partial fraction expansion of ratio a/b"
+            }
+        ],
+        "Statistics": [
+            {
+                "key": "corrcoef (x, y)",
+                "val": "Correlation coefficient"
+            },
+            {
+                "key": "cov (x, y)",
+                "val": "Covariance"
+            },
+            {
+                "key": "mean (a)",
+                "val": "Mean value"
+            },
+            {
+                "key": "median (a)",
+                "val": "Median value"
+            },
+            {
+                "key": "std (a)",
+                "val": "Standard deviation"
+            },
+            {
+                "key": "var(a)",
+                "val": "Variance"
+            }
+        ],
+        "KillingandYanking": [
+            {
+                "key": "C-k",
+                "val": "Kill to the end of the line"
+            },
+            {
+                "key": "C-y",
+                "val": "Yank the most recently killed text"
+            },
+            {
+                "key": "M-d",
+                "val": "Kill to the end of the current word"
+            },
+            {
+                "key": "M-DEL",
+                "val": "Kill the word behind the cursor"
+            },
+            {
+                "key": "M-y",
+                "val": "Rotate the kill ring and yank the newtop"
+            }
+        ],
+        "Shell Commands": [
+            {
+                "key": "cd dir",
+                "val": "Change working directory to dir"
+            },
+            {
+                "key": "pwd",
+                "val": "Print working directory"
+            },
+            {
+                "key": "ls [options]",
+                "val": "Print directory listing"
+            },
+            {
+                "key": "getenv (string)",
+                "val": "Return value of named environment variable"
+            },
+            {
+                "key": "system (cmd)",
+                "val": "Execute arbitrary shell command string"
+            }
+        ],
+        "Basic Matrix Manipulations": [
+            {
+                "key": "rows (a)",
+                "val": "Return number of rows of a"
+            },
+            {
+                "key": "columns (a)",
+                "val": "Return number of columns of a"
+            },
+            {
+                "key": "all (a)",
+                "val": "Check if all elements of a nonzero"
+            },
+            {
+                "key": "any (a)",
+                "val": "Check if any elements of a nonzero"
+            },
+            {
+                "key": "find (a)",
+                "val": "Return indices of nonzero elements"
+            },
+            {
+                "key": "sort (a)",
+                "val": "Order elements in each column of a"
+            },
+            {
+                "key": "sum (a)",
+                "val": "Sum elements in columns of a"
+            },
+            {
+                "key": "prod (a)",
+                "val": "Product of elements in columns of a"
+            },
+            {
+                "key": "min (args)",
+                "val": "Find minimum values"
+            },
+            {
+                "key": "max (args)",
+                "val": "Find maximum values"
+            },
+            {
+                "key": "rem (x, y)",
+                "val": "Find remainder of x/y"
+            },
+            {
+                "key": "reshape (a, m, n)",
+                "val": "Reformat a to be m by n"
+            },
+            {
+                "key": "diag (v, k)",
+                "val": "Create diagonal matrices"
+            },
+            {
+                "key": "linspace (b, l, n)",
+                "val": "Create vector of linearly-spaced elements"
+            },
+            {
+                "key": "logspace (b, l, n)",
+                "val": "Create vector of log-spaced elements"
+            },
+            {
+                "key": "eye (n, m)",
+                "val": "Create n by m identity matrix"
+            },
+            {
+                "key": "ones (n, m)",
+                "val": "Create n by m matrix of ones"
+            },
+            {
+                "key": "zeros (n, m)",
+                "val": "Create n by m matrix of zeros"
+            },
+            {
+                "key": "rand (n, m)",
+                "val": "Create n by m matrix of random values"
+            }
+        ],
+        "Basic Plotting": [
+            {
+                "key": "gplot [ranges] expr [using] [title] [style]",
+                "val": "2D plotting"
+            },
+            {
+                "key": "gsplot [ranges] expr [using] [title] [style]",
+                "val": "3D plotting"
+            },
+            {
+                "key": "ranges - Specify data ranges"
+            },
+            {
+                "key": "expr - Expression to plot"
+            },
+            {
+                "key": "using - Specify columns to plot"
+            },
+            {
+                "key": "title - Specify line title for legend"
+            },
+            {
+                "key": "style - Specify line style"
+            }
+        ],
+        "Other Plotting Functions": [
+            {
+                "key": "plot (args)",
+                "val": "2D plot with linear axes"
+            },
+            {
+                "key": "semilogx (args)",
+                "val": "2D plot with logarithmic x-axis"
+            },
+            {
+                "key": "semilogy (args)",
+                "val": "2D plot with logarithmic y-axis"
+            },
+            {
+                "key": "loglog (args)",
+                "val": "2D plot with logarithmic axes"
+            },
+            {
+                "key": "bar (args)",
+                "val": "Plot bar charts"
+            },
+            {
+                "key": "stairs (x, y)",
+                "val": "Plot stairsteps"
+            },
+            {
+                "key": "hist (y, x)",
+                "val": "Plot histograms"
+            },
+            {
+                "key": "title (string)",
+                "val": "Set plot title"
+            },
+            {
+                "key": "axis (limits)",
+                "val": "Set axis ranges"
+            },
+            {
+                "key": "xlabel (string)",
+                "val": "Set x-axis label"
+            },
+            {
+                "key": "ylabel (string)",
+                "val": "Set y-axis label"
+            },
+            {
+                "key": "grid [on|off]",
+                "val": "Set grid state"
+            },
+            {
+                "key": "hold [on|off]",
+                "val": "Set hold state"
+            },
+            {
+                "key": "ishold",
+                "val": "Return 1 if hold is on, 0 otherwise"
+            },
+            {
+                "key": "mesh (x, y, z)",
+                "val": "Plot 3D surface"
+            },
+            {
+                "key": "meshdom (x, y)",
+                "val": "Create mesh coordinate matrices"
+            }
+        ],
+        "Index Expressions": [
+            {
+                "key": "var (idx)",
+                "val": "Select elements of a vector"
+            },
+            {
+                "key": "var (idx1, idx2)",
+                "val": "Select elements of a matrix"
+            },
+            {
+                "key": "scalar",
+                "val": "Select row (column) corresponding to scalar"
+            },
+            {
+                "key": "vector",
+                "val": "Select rows (columns) corresponding to the elements of vector"
+            },
+            {
+                "key": "range",
+                "val": "Select rows (columns) corresponding to the elements of range"
+            },
+            {
+                "key": ":",
+                "val": "Select all rows (columns)"
+            }
+        ],
+        "Linear Algebra": [
+            {
+                "key": "chol (a)",
+                "val": "Cholesky factorization"
+            },
+            {
+                "key": "det (a)",
+                "val": "Compute the determinant of a matrix"
+            },
+            {
+                "key": "eig (a)",
+                "val": "Eigenvalues and Eigenvectors"
+            },
+            {
+                "key": "expm (a)",
+                "val": "Compute the exponential of a matrix"
+            },
+            {
+                "key": "hess (a)",
+                "val": "Compute Hessenberg decomposition"
+            },
+            {
+                "key": "inverse (a)",
+                "val": "Invert a square matrix"
+            },
+            {
+                "key": "norm (a, p)",
+                "val": "Compute the p-norm of a matrix"
+            },
+            {
+                "key": "pinv (a)",
+                "val": "Compute pseudoinverse of a"
+            },
+            {
+                "key": "qr (a)",
+                "val": "Compute the QR factorization of a matrix"
+            },
+            {
+                "key": "rank (a)",
+                "val": "Matrix rank"
+            },
+            {
+                "key": "schur (a)",
+                "val": "Schur decomposition of a matrix"
+            },
+            {
+                "key": "svd (a)",
+                "val": "Singular value decomposition"
+            },
+            {
+                "key": "syl (a, b, c)",
+                "val": "Solve the Sylvester equation"
+            }
+        ],
+        "Signal Processing": [
+            {
+                "key": "*fsolve",
+                "val": "Solve nonlinear algebraic equations"
+            },
+            {
+                "key": "*lsode",
+                "val": "Integrate nonlinear ODEs"
+            },
+            {
+                "key": "*dassl",
+                "val": "Integrate nonlinear DAEs"
+            },
+            {
+                "key": "*quad",
+                "val": "Integrate nonlinear functions"
+            },
+            {
+                "key": "perror (nm, code)",
+                "val": "for functions that return numeric codes, print error message for named function and given error code"
+            }
+        ],
+        "Image Processing": [
+            {
+                "key": "colormap (map)",
+                "val": "Set the current colormap"
+            },
+            {
+                "key": "gray2ind (i, n)",
+                "val": "Convert gray scale to Octave image"
+            },
+            {
+                "key": "image (img, zoom)",
+                "val": "Display an Octave image matrix"
+            },
+            {
+                "key": "imagesc (img, zoom)",
+                "val": "Display scaled matrix as image"
+            },
+            {
+                "key": "imshow (img, map)",
+                "val": "Display Octave image"
+            },
+            {
+                "key": "imshow (i, n)",
+                "val": "Display gray scale image"
+            },
+            {
+                "key": "imshow (r, g, b)",
+                "val": "Display RGB image"
+            },
+            {
+                "key": "ind2gray (img, map)",
+                "val": "Convert Octave image to gray scale"
+            },
+            {
+                "key": "ind2rgb (img, map)",
+                "val": "Convert indexed image to RGB"
+            },
+            {
+                "key": "loadimage (file)",
+                "val": "Load an image file"
+            },
+            {
+                "key": "rgb2ind (r, g, b)",
+                "val": "Convert RGB to Octave image"
+            },
+            {
+                "key": "saveimage (file, img, fmt, map)",
+                "val": "Save a matrix to file"
+            }
+        ],
+        "Sets": [
+            {
+                "key": "create set (a, b)",
+                "val": "Create row vector of unique values"
+            },
+            {
+                "key": "complement (a, b)",
+                "val": "Elements of b not in a"
+            },
+            {
+                "key": "intersection (a, b)",
+                "val": "Intersection of sets a and b"
+            },
+            {
+                "key": "union (a, b)",
+                "val": "Union of sets a and b"
+            }
+        ],
+        "Strings": [
+            {
+                "key": "strcmp (s, t)",
+                "val": "Compare strings"
+            },
+            {
+                "key": "strcat (s, t, ...)",
+                "val": "Concatenate strings"
+            }
+        ]
+    }
+}
