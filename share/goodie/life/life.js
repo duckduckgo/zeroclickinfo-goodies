@@ -1,5 +1,17 @@
 DDH.life = DDH.life || {};
 
+/*
+
+     Conway's Game of Life
+
+     a cellular automata IA
+
+     see
+     https://en.wikipedia.org/wiki/Conway's_Game_of_Life
+
+     russell holt
+*/
+
 (function(env) {
 
     console.log("DDH.life.build");
@@ -31,8 +43,27 @@ DDH.life = DDH.life || {};
                 [ 1, 0, 0, 0, 1 ],
                 [ 0, 1, 1, 1, 1 ]
             ]
+        },
+        // Gosper Glider Gun
+        // data from http://www.argentum.freeserve.co.uk/lex_g.htm#gosperglidergun
+        'gosper': {
+            dim: 5,
+            name: 'Gosper Glider Gun',
+            data: [
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                [1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [1,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            ]
         }
     };
+
+
 
 
     /* generation
@@ -65,6 +96,7 @@ DDH.life = DDH.life || {};
             alive = a[y][x];
 
         // check out the neighbors
+        // this version wraps around with modulus
         n += a[(y - 1 + max_y) % max_y][(x - 1 + max_x) % max_x];
         n += a[(y - 1 + max_y) % max_y][ x                     ];
         n += a[(y - 1 + max_y) % max_y][(x + 1 + max_x) % max_x];
@@ -133,22 +165,24 @@ DDH.life = DDH.life || {};
                 x = e.clientX - rect.left,
                 y = e.clientY - rect.top,
                 xr = Math.floor(x/r),
-                yr = Math.floor(y/r);
+                yr = Math.floor(y/r),
+                i, j, obj, dimx, dimy;
 
-            //prevarray[yr][xr] = ! prevarray[yr][xr];
+            // special case for 'point' since we want to toggle. could be normal behavior for all shape points, but..
+            if (shape == 'point') {
+                prevarray[yr][xr] = ! prevarray[yr][xr];
+            }
+            else {
+                obj = shapes[shape].data,
+                dimy = obj.length, 
+                dimx = shapes[shape].data[0].length; 
 
-            var i, j;
-            //var shape = 'spaceship'; //'glider';
-
-            var obj = shapes[shape].data,
-                dim = shapes[shape].dim;
-
-            for (i=0; i<dim; i++) {
-                for (j=0; j<dim; j++) {
-                    prevarray[yr + i][xr + j] = obj[i][j];
+                for (i=0; i<dimy; i++) {
+                    for (j=0; j<dimx; j++) {
+                        prevarray[yr + i][xr + j] = obj[i][j];  // += would overlay, ie draw only alive cells. might xor to generalize.
+                    }
                 }
             }
-
 
             draw(prevarray, canvas);
         });
