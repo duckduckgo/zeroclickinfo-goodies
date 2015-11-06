@@ -10,9 +10,27 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::NoteFrequency )],
-    "notefreq a4" => test_zci("440"),
-    "notefreq gb5" => test_zci("739.988845423269"),
-    "notefreq c3 432" => test_zci("128.434368420294"),
+    "notefreq a4" => test_zci(
+        "440",
+        structured_answer => {
+            input     => ["A4 in A440 tuning"],
+            operation => "Note Frequency",
+            result    => "440 Hz"
+        }),
+    "notefreq gb5" => test_zci(
+        "739.988845423269",
+        structured_answer => {
+            input     => ["Gb5 in A440 tuning"],
+            operation => "Note Frequency",
+            result    => "739.988845423269 Hz"
+        }),
+    "notefreq c3 432" => test_zci(
+        "128.434368420294",
+        structured_answer => {
+            input     => ["C3 in A432 tuning"],
+            operation => "Note Frequency",
+            result    => "128.434368420294 Hz"
+        }),
     "notefreq a4 100000" => undef,
     "notefreq b#8" => undef,
     "notefreq cb0" => undef,

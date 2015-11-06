@@ -33,9 +33,9 @@ handle remainder => sub {
 
         # regex captures
         if (defined $1) { $letter     = uc($1); } else { $letter     = ""; }
-        if (defined $2) { $accidental = $2;     } else { $accidental = "";  }
-        if (defined $3) { $octave     = $3 + 0; } else { $octave     = 0;   }
-        if (defined $4) { $tuning     = $4 + 0; } else { $tuning     = 0;   }
+        if (defined $2) { $accidental = $2;     } else { $accidental = ""; }
+        if (defined $3) { $octave     = $3 + 0; } else { $octave     = 0;  }
+        if (defined $4) { $tuning     = $4 + 0; } else { $tuning     = 0;  }
 
         # assume 440Hz tuning unless otherwise specified
         if ( $tuning == 0 ) { $tuning = 440; }
