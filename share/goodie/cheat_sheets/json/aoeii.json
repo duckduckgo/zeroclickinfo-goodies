@@ -299,7 +299,7 @@
             "val": "Spearman, Pikeman",
             "key": "E"
         }],
-        "Castle Build Command": [{
+        "Castle Build Commands": [{
             "val": "Build Trebuchet",
             "key": "R"
         }, {
