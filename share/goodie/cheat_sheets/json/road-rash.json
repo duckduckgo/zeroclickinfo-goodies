@@ -2,8 +2,10 @@
     "name": "Road Rash",
     "id": "road_rash_cheat_sheet",
     "description": "First while playing type xyzzy then type the following cheats",
-    "sourceName": "Cheatcc",
-    "sourceUrl": "http://www.cheatcc.com/pc/roadrash.html",
+    "metadata": {
+        "sourceName": "Cheatcc",
+        "sourceUrl": "http://www.cheatcc.com/pc/roadrash.html"
+    },
     "template_type": "reference",
     "section_order": ["Cheats"],
     "sections": {
