@@ -80,11 +80,11 @@ sub items{
     my @chordList = grep($chords{$_}, @words);
     if(defined $chordList[0]){
         $chord = $chordList[0];
-    }elsif(defined $chord and $chord eq "m" or $chord =~ /(min|minor)/i){
+    }elsif(defined $chord && ($chord eq "m" || $chord =~ /(min|minor)/i)){
             $chord = "minor";
-    }elsif(defined $chord and $chord eq "M" or $chord =~ /(maj|major)/i){
+    }elsif(defined $chord && ($chord eq "M" || $chord =~ /(maj|major)/i)){
             $chord = "major";
-    }elsif(defined $chord and $chord =~ /sus[24]/i){
+    }elsif(defined $chord && $chord =~ /sus[24]/i){
             $chord = lc $chord;
     }elsif($dom){
         $chord = "dominant";
@@ -95,8 +95,10 @@ sub items{
         $dom = 5;
     };
     my @instr = grep($instruments{$_}, @words);
-    if(!defined @instr){
-        @instr = $instrument_aliases{(grep($instrument_aliases{$_}, @words))[0]};
+    if(!@instr){
+        if($_ && $instrument_aliases{$_}){
+            @instr = $instrument_aliases{(grep($instrument_aliases{$_}, @words))[0]};
+        };
     };
     return $instr[0], $chord, $key, $mod, $dom;
 };
@@ -168,7 +170,7 @@ sub all_frets{
 # Handle statement
 handle remainder => sub {
     my ($instr_name, $chord_name, $key_name, $mod, $dom) = items($_);
-    if($instr_name and $chord_name and $key_name){
+    if((defined $instr_name) && (defined $chord_name) && (defined $key_name)){
         my @keys = @{$chords{$chord_name}};
         splice(@keys, ($dom+1)/2);
         my @values = chord($notes{lc $key_name}+$mod, \@keys);
@@ -207,6 +209,7 @@ handle remainder => sub {
 	    };
 	};
     };
+    return;
 };
 
 
