@@ -1,251 +1,243 @@
-{  
-   "id":"c_cheat_sheet",
-   "name":"C",
-   "description":"C is a general-purpose, procedural, imperative computer programming language developed in 1972 by Dennis M. Ritchie at the Bell Laboratories",
-   "metadata":{  
-      "sourceName":"utexas",
-      "sourceUrl":"http://users.ece.utexas.edu/~adnan/c-refcard.pdf"
-   },
-   "template_type":"reference",
-   "section_order":[  
-      "C Preprocessor",
-      "Fundamental Data Types",
-      "Conversion Characters",
-      "Storage Classes",
-       "Initialization",
-      "Arithmetic Operators",
-      "Relational Operators",
-       "Logical Operators",
-       "Bitwise Operators",
-       "Pointers"
-      
-   ],
-   "aliases":[  
-      "c programming"
-       
-   ],
-   "sections":{  
-      "C Preprocessor":[  
-         {  
-            "key":"#include <filename>",
-            "val":"Include library file"
-         },
-         {  
-            "key":"#include \"filename\"",
-            "val":"Include user file"
-         },
-         {  
-            "key":"#define name text",
-            "val":"Replacement text"
-         },
-         {  
-            "key":"#define name(var) text",
-            "val":"Replacement macro"
-         },
-        
-         {  
-            "key":"#undef name",
-            "val":"Undefine"
-         },
-         
-         {  
-            "key":"#if, #else, #elif, #endif",
-            "val":"Conditional execution"
-         }
-      ],
-       "Fundamental Data Types":[
-           
-           {  
-            "key":"char",
-            "val":"Character (1 byte)"
-         },
-         
-         {  
-            "key":"int",
-            "val":"Integer "
-         },
-           {  
-            "key":"float",
-            "val":"Float (single precision)"
-         },
-           {  
-            "key":"double",
-            "val":"Float (double precision)"
-         },
-          {  
-            "key":"void",
-            "val":"No value"
-         }
-         
-         
-      ],
-      "Conversion Characters":[
-         {
-            "key":"%c",
-            "val":"Single character"
-         },  
-         {
-            "key":"%d",
-            "val":"Signed decimal integer (int)"
-         },
-         {
-            "key":"%f",
-            "val":"Signed floating-point value (float)"
-         },
-         {
-            "key":"%s",
-            "val":"String of text"
-         },
-         {
-            "key":"%o",
-            "val":"Unsigned octal (base 8) integer"
-         }
-      ],
-      "Storage Classes":[
-         {  
-            "key":"auto",
-            "val":"Default storage class for all local variables"
-         },
-         {  
-            "key":"register",
-            "val":"Define local variables that should be stored in a register instead of RAM"
-         },
-         {  
-            "key":"static",
-            "val":"Maintains values of variables between function calls"
-         },
-         {  
-            "key":"extern",
-            "val":"To give a reference of a global variable that is visible to all the program files"
-         }
-      ],
-     "Arithmetic Operators":[
-         {  
-            "key":"+",
-            "val":"Adds two operands"
-         },
-         {  
-            "key":"−",
-            "val":"Subtracts second operand from the first"
-         },
-         {  
-            "key":"*",
-            "val":"Multiplies both operands"
-         },
-         {  
-            "key":"/",
-            "val":"Divides numerator by de-numerator"
-         },
-          {  
-            "key":"%",
-            "val":"Modulus Operator"
-         },
-         {  
-            "key":"++",
-            "val":"Increases the integer value by one"
-         },
-         {  
-            "key":"--",
-            "val":"Decreases the integer value by one"
-         }
-     ],
-     "Relational Operators":[
-         {  
-            "key":"==",
-            "val":"Checks for equality between operands"
-         },
-         {  
-            "key":"!=",
-            "val":"Checks for non equality between operands"
-         },
-         {  
-            "key":">",
-            "val":"Checks if the value of left operand is greater than the value of right operand. If yes, then the condition becomes true."
-         },
-         {  
-            "key":"<",
-            "val":"Checks if the value of left operand is less than the value of right operand. If yes, then the condition becomes true."
-         },
-         {  
-            "key":">=",
-            "val":"Checks if the value of left operand is greater than or equal to the value of right operand. If yes, then the condition becomes true."
-         },
-         {  
-            "key":"<=",
-            "val":"Checks if the value of left operand is less than or equal to the value of right operand. If yes, then the condition becomes true."
-         }
-      ],
-       "Logical Operators":[
-         {  
-            "key":"&&",
-            "val":"Logical AND operator"
-         },
-         {  
-            "key":"||",
-            "val":"Logical OR Operator"
-         },
-         {  
-            "key":"!",
-            "val":"Logical NOT Operator"
-         }
-      ],
-       "Bitwise Operators":[
-         {  
-            "key":"&",
-            "val":"Does the logical AND on the bits in the corresponding position of the operands in its binary form"
-         },
-         {  
-            "key":"|",
-            "val":"Does the logical OR on the bits in the corresponding position of the operands in its binary form"
-         },
-         {  
-            "key":"^",
-            "val":"Does XOR on the bits in the corresponding position of the operands in its binary form"
-         },
-         {  
-            "key":"~",
-            "val":"Inverts all the bits of operand"
-         },
-         {  
-            "key":"<<",
-            "val":"Takes two numbers, left shifts the bits of first operand, the second operand decides the number of places to shift"
-         },
-         {  
-            "key":">>",
-            "val":"Takes two numbers, right shifts the bits of first operand, the second operand decides the number of places to shift"
-         }
-      ],
-       "Pointers":[
-         {  
-            "key":"type *name",
-            "val":"Declare pointer to type"
-         },
-         {  
-            "key":"type *f()",
-            "val":"Declare function returning pointer to type"
-         },
-         {  
-            "key":"type (*pf)()",
-            "val":"Declare pointer to function returning type"
-         },
-         {  
-            "key":"void *",
-            "val":"Generic pointer type"
-         }
-      ],
-       "Initialization":[
-         {  
-            "key":"type name=value",
-            "val":"Initialize variable"
-         },
-         {  
-            "key":"type name[]={value1,. . . }",
-            "val":"Initialize array"
-         },
-         {  
-            "key":"char name[]=\"string\"",
-            "val":"Initialize char string"
-         }
-      ]
-   }
+{
+    "id": "c_cheat_sheet",
+    "name": "C",
+    "description": "C is a general-purpose, procedural, imperative computer programming language developed in 1972 by Dennis M. Ritchie at the Bell Laboratories",
+    "metadata": {
+        "sourceName": "utexas",
+        "sourceUrl": "http://users.ece.utexas.edu/~adnan/c-refcard.pdf"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "C Preprocessor",
+        "Fundamental Data Types",
+        "Conversion Characters",
+        "Storage Classes",
+        "Initialization",
+        "Arithmetic Operators",
+        "Relational Operators",
+        "Logical Operators",
+        "Bitwise Operators",
+        "Pointers"
+    ],
+    "aliases": [
+        "c programming"
+    ],
+    "sections": {
+        "C Preprocessor": [
+            {
+                "key": "#include <filename>",
+                "val": "Include library file"
+            },
+            {
+                "key": "#include \"filename\"",
+                "val": "Include user file"
+            },
+            {
+                "key": "#define name text",
+                "val": "Replacement text"
+            },
+            {
+                "key": "#define name(var) text",
+                "val": "Replacement macro"
+            },
+            {
+                "key": "#undef name",
+                "val": "Undefine"
+            },
+            {
+                "key": "#if, #else, #elif, #endif",
+                "val": "Conditional execution"
+            }
+        ],
+        "Fundamental Data Types": [
+            {
+                "key": "char",
+                "val": "Character (1 byte)"
+            },
+            {
+                "key": "int",
+                "val": "Integer "
+            },
+            {
+                "key": "float",
+                "val": "Float (single precision)"
+            },
+            {
+                "key": "double",
+                "val": "Float (double precision)"
+            },
+            {
+                "key": "void",
+                "val": "No value"
+            }
+        ],
+        "Conversion Characters": [
+            {
+                "key": "%c",
+                "val": "Single character"
+            },
+            {
+                "key": "%d",
+                "val": "Signed decimal integer (int)"
+            },
+            {
+                "key": "%f",
+                "val": "Signed floating-point value (float)"
+            },
+            {
+                "key": "%s",
+                "val": "String of text"
+            },
+            {
+                "key": "%o",
+                "val": "Unsigned octal (base 8) integer"
+            }
+        ],
+        "Storage Classes": [
+            {
+                "key": "auto",
+                "val": "Default storage class for all local variables"
+            },
+            {
+                "key": "register",
+                "val": "Define local variables that should be stored in a register instead of RAM"
+            },
+            {
+                "key": "static",
+                "val": "Maintains values of variables between function calls"
+            },
+            {
+                "key": "extern",
+                "val": "To give a reference of a global variable that is visible to all the program files"
+            }
+        ],
+        "Arithmetic Operators": [
+            {
+                "key": "+",
+                "val": "Adds two operands"
+            },
+            {
+                "key": "−",
+                "val": "Subtracts second operand from the first"
+            },
+            {
+                "key": "*",
+                "val": "Multiplies both operands"
+            },
+            {
+                "key": "/",
+                "val": "Divides numerator by de-numerator"
+            },
+            {
+                "key": "%",
+                "val": "Modulus/remainder Operator"
+            },
+            {
+                "key": "++",
+                "val": "Increments the integer value by one"
+            },
+            {
+                "key": "--",
+                "val": "Decrements the integer value by one"
+            }
+        ],
+        "Relational Operators": [
+            {
+                "key": "==",
+                "val": "Checks for equality between operands"
+            },
+            {
+                "key": "!=",
+                "val": "Checks for non equality between operands"
+            },
+            {
+                "key": ">",
+                "val": "If the value of left operand is greater than the value of right operand,then the condition becomes true."
+            },
+            {
+                "key": "<",
+                "val": "If the value of left operand is less than the value of right operand,then the condition becomes true."
+            },
+            {
+                "key": ">=",
+                "val": "If the value of left operand is greater than or equal to the value of right operand,then the condition becomes true."
+            },
+            {
+                "key": "<=",
+                "val": "If the value of left operand is less than or equal to the value of right operand,then the condition becomes true."
+            }
+        ],
+        "Logical Operators": [
+            {
+                "key": "&&",
+                "val": "Logical AND operator"
+            },
+            {
+                "key": "||",
+                "val": "Logical OR Operator"
+            },
+            {
+                "key": "!",
+                "val": "Logical NOT Operator"
+            }
+        ],
+        "Bitwise Operators": [
+            {
+                "key": "&",
+                "val": "Does  AND on the bits in the corresponding position of the operands in its binary form"
+            },
+            {
+                "key": "|",
+                "val": "Does  OR on the bits in the corresponding position of the operands in its binary form"
+            },
+            {
+                "key": "^",
+                "val": "Does XOR on the bits in the corresponding position of the operands in its binary form"
+            },
+            {
+                "key": "~",
+                "val": "Inverts all the bits of operand(1's complement)"
+            },
+            {
+                "key": "a<<b",
+                "val": "shifts a left b number of times"
+            },
+            {
+                "key": "a>>b",
+                "val": "shifts a right b number of times"
+            }
+        ],
+        "Pointers": [
+            {
+                "key": "type *name",
+                "val": "Declare pointer to type"
+            },
+            {
+                "key": "type *f()",
+                "val": "Declare function returning pointer to type"
+            },
+            {
+                "key": "type (*pf)()",
+                "val": "Declare pointer to function returning type"
+            },
+            {
+                "key": "void *",
+                "val": "Generic pointer type"
+            }
+        ],
+        "Initialization": [
+            {
+                "key": "type name=value",
+                "val": "Initialize variable"
+            },
+            {
+                "key": "type name[]={value1,. . . }",
+                "val": "Initialize array"
+            },
+            {
+                "key": "char name[]=\"string\"",
+                "val": "Initialize char string"
+            }
+        ]
+    }
 }
