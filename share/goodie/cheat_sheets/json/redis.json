@@ -1,8 +1,8 @@
 {
   "id": "redis_cheat_sheet",
-  "name": "Redis commands",
+  "name": "Redis Commands",
   "metadata": {
-    "sourceName": "redis.io/commands",
+    "sourceName": "Redis",
     "sourceUrl": "http://redis.io/commands"
   },
   "section_order": [
