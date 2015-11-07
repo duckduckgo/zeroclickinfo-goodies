@@ -1,9 +1,9 @@
 {
     "id": "octave_cheat_sheet",
-    "name": "Octave",
-    "description": "GNU Octave is a high-level interpreted language, primarily intended for numerical computations.",
+    "name": "GNU Octave",
+    "description": "A high-level interpreted language, primarily intended for numerical computations.",
     "metadata": {
-        "sourceName": "ntnu",
+        "sourceName": "NTNU",
         "sourceUrl": "http://folk.ntnu.no/joern/itgk/refcard-a4.pdf"
     },
     "template_type": "reference",
