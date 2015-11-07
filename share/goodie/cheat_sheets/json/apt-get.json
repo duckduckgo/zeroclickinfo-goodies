@@ -16,74 +16,74 @@
     "sections": {
         "Installation commands": [
             {
-                "key": "Install a new package",
-                "val": "apt-get install <package_name>"
+                "val": "Install a new package",
+                "key": "apt-get install <package_name>"
             },
             {
-                "key": "Install mutliple packages",
-                "val": "apt-get install <package1_name> <package2_name> <package3_name>"
+                "val": "Install mutliple packages",
+                "key": "apt-get install <package1_name> <package2_name> <package3_name>"
             }
         ],
         "Maintenance commands": [
             {
-                "key": "Update source list",
-                "val": "apt-get update"
+                "val": "Update source list",
+                "key": "apt-get update"
             },
             {
-                "key": "Upgrade all installed packages",
-                "val": "apt-get upgrade"
+                "val": "Upgrade all installed packages",
+                "key": "apt-get upgrade"
             },
             {
-                "key": "Upgrade all installed packages with a 'smart' conflict resolution system",
-                "val": "apt-get dist-upgrade"
+                "val": "Upgrade all installed packages with a 'smart' conflict resolution system",
+                "key": "apt-get dist-upgrade"
             },
             {
-                "key": "Update package lists and check for broken dependencies",
-                "val": "apt-get check"
+                "val": "Update package lists and check for broken dependencies",
+                "key": "apt-get check"
             },
             {
-                "key": "Fix broken packages",
-                "val": "apt-get -f install"
+                "val": "Fix broken packages",
+                "key": "apt-get -f install"
             },
             {
-                "key": "Remove all .deb files for packages that are no longer installed on the system",
-                "val": "apt-get autoclean"
+                "val": "Remove all .deb files for packages that are no longer installed on the system",
+                "key": "apt-get autoclean"
             },
             {
-                "key": "Remove all packages from the package cache",
-                "val": "apt-get clean"
+                "val": "Remove all packages from the package cache",
+                "key": "apt-get clean"
             }
         ],
         "Removal commands": [
             {
-                "key": "Remove an installed package, leaving configuration files intact",
-                "val": "apt-get remove <package_name>"
+                "val": "Remove an installed package, leaving configuration files intact",
+                "key": "apt-get remove <package_name>"
             },
             {
-                "key": "Completely remove a package and the associated configuration files",
-                "val": "apt-get purge <package_name>"
+                "val": "Completely remove a package and the associated configuration files",
+                "key": "apt-get purge <package_name>"
             },
             {
-                "key": "Remove package1 and install package2 in one step (+operator)",
-                "val": "apt-get remove <package1> <package2>+"
+                "val": "Remove package1 and install package2 in one step (+operator)",
+                "key": "apt-get remove <package1> <package2>+"
             },
             {
-                "key": "Remove packages that were installed by other packages and are no longer needed",
-                "val": "apt-get autoremove"
+                "val": "Remove packages that were installed by other packages and are no longer needed",
+                "key": "apt-get autoremove"
             },
             {
-                "key": "Removes an installed package and dependencies",
-                "val": "apt-get autoremove <package_name>"
+                "val": "Removes an installed package and dependencies",
+                "key": "apt-get autoremove <package_name>"
             }
         ],
         "Search commands": [
             {
-                "key": "Find packages that include <search_item>",
-                "val": "apt-cache search <search_term>"
+                "val": "Find packages that include <search_item>",
+                "key": "apt-cache search <search_term>"
             },
             {
-                "key": "Shows the description of package <package_name> and other relevant information including version, size, dependencies and conflicts",
-                "val": "apt-cache show <package_name>"
+                "val": "Shows the description of package <package_name> and other relevant information including version, size, dependencies and conflicts",
+                "key": "apt-cache show <package_name>"
             }
         ]
     }
