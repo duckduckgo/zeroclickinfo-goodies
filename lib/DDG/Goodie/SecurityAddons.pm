@@ -20,28 +20,21 @@ attribution github => ["lights0123", "lights0123"],
             web => ["http://lights0123.com", "lights0123"];
 
 # Triggers
-triggers startend => "how to browse the web anonymously", "search privately", "search anonymously", "how to browse the web privately"; #if the keywords are at the beginning or end, then trigger
+triggers startend => "privacy extensions", "privacy addons", "privacy extension", "privacy addon"; #if the keywords are at the beginning or end, then trigger
 
-# Handle statement
-handle remainder => sub {
-    
-    if (!($_ eq "firefox" || $_ eq "safari" || $_ eq "google chrome" || $_ eq "opera" || $_ eq "chrome" || $_ eq "")) { #if one of the keywords is not found, then exit
-        return;
-    }
-    
-    my $plaintext="Firefox: https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/";
-    $plaintext.="\nSafari: https://extensions.apple.com/?category=security";
-    $plaintext.="\nGoogle Chrome: https://chrome.google.com/webstore/search/anonymous";
-    $plaintext.="\nOpera: https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en";
-    my @record_data = {
-        'Firefox' => "https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/",
-        'Safari' => "https://extensions.apple.com/?category=security",
-        'Google Chrome' => "https://chrome.google.com/webstore/search/anonymous",
-        'Opera' => "https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en"
-    };
-    my @record_keys = ["Firefox", "Safari", "Google Chrome", "Opera"];
-	return $plaintext,
-    structured_answer => {
+my @triggerwords = ("firefox", "safari", "google chrome", "opera", "chrome");
+my $plaintext="Firefox: https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/";
+$plaintext.="\nSafari: https://extensions.apple.com/?category=security";
+$plaintext.="\nGoogle Chrome: https://chrome.google.com/webstore/search/anonymous";
+$plaintext.="\nOpera: https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en";
+my @record_data = {
+    'Firefox' => "https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/",
+    'Safari' => "https://extensions.apple.com/?category=security",
+    'Google Chrome' => "https://chrome.google.com/webstore/search/anonymous",
+    'Opera' => "https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en"
+};
+my @record_keys = ["Firefox", "Safari", "Google Chrome", "Opera"];
+my @structured_answer = {
         id => "security_addons",
         name => "software",
         data => {
@@ -56,6 +49,15 @@ handle remainder => sub {
             },
         },
     };
+
+handle remainder => sub {
+    if($_){
+        my $remainder = $_;
+        return unless grep { $remainder eq $_ } @triggerwords;
+    }
+    
+	return $plaintext,
+    structured_answer => @structured_answer;
 };
 
 1;

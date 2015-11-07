@@ -39,20 +39,20 @@ ddg_goodie_test(
 		'DDG::Goodie::SecurityAddons'
 	],
     
-    'how to browse the web anonymously' => $answer,
-    'search privately' => $answer,
-    'search anonymously' => $answer,
-    'how to browse the web privately' => $answer,
+    'privacy extensions' => $answer,
+    'privacy extension' => $answer,
+    'privacy addons' => $answer,
+    'privacy addon' => $answer,
     
-    'how to browse the web privately firefox' => $answer,
-    'firefox how to browse the web privately' => $answer,
+    'privacy extensions firefox' => $answer,
+    'firefox privacy extension' => $answer,
     
-    'google chrome how to browse the web privately' => $answer,
-    'opera how to browse the web privately' => $answer,
-    'safari how to browse the web privately' => $answer,
+    'google chrome privacy addons' => $answer,
+    'opera privacy addon' => $answer,
+    'safari privacy extensions' => $answer,
     
-    'ie how to browse the web privately' => undef,
-    'internet explorer how to browse the web privately' => undef,
+    'ie privacy extension' => undef,
+    'internet explorer privacy addons' => undef,
 );
 
 done_testing;
