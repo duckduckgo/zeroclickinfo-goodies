@@ -100,7 +100,7 @@ Hurricane Electric:
   ip6:
     - 2001:470:20::2
 Level3:
-  info_url: 
+  info_url: http://www.level3.com/en/
   ip4:
     - 209.244.0.3
     - 209.244.0.4
@@ -111,8 +111,8 @@ Yandex.DNS:
     - 77.88.8.88
     - 77.88.8.2
   ip6:
-    - 2a02:6b8::feed:bad	
-    - 2a02:6b8:0:1::feed:bad	
+    - 2a02:6b8::feed:bad
+    - 2a02:6b8:0:1::feed:bad
 PowerNS:
   info_url: http://www.powerns.de/
   ip4:
