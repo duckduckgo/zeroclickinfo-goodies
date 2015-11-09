@@ -4,8 +4,6 @@ package DDG::Goodie::NoteFrequency;
 use DDG::Goodie;
 use strict;
 
-use Math::Round;
-
 zci answer_type => "note_frequency";
 zci is_cached   => 1;
 
@@ -26,10 +24,12 @@ handle remainder => sub {
 
     return unless $_;
 
-    # must be a note letter, optional sharp or flat, octave number, and optional tuning frequency for A4
-    # e.g. "g#3 432"
+    # must be a note letter, optional sharp or flat,
+    # octave number, optional tuning frequency for A4,
+    # and optional case-insensitive "hz" with or without preceding whitespace
+    # e.g. "g#3 432 hz" or "ab5 435Hz"
 
-    return unless ($_ =~ /^([A-Ga-g])([b#])?([0-8])(\s+[0-9]{1,4})?$/ );
+    return unless ($_ =~ /^([A-Ga-g])([b#])?([0-8])(\s+[0-9]{1,4})?(\s?[hH][zZ])?$/ );
 
     my( $letter, $accidental, $octave, $tuning, $pitchClass, $midi, $frequency );
 
@@ -66,13 +66,15 @@ handle remainder => sub {
 
     # calculate frequency
     $frequency = $tuning * ( 2 ** (($midi-69)/12) );
-    $frequency = nearest(0.01, $frequency);
+
+    # round to two decimal places (is never negative anyway and avoids libs)
+    $frequency = int(100 * ($frequency + 0.005)) / 100;
 
     # result
     return $frequency,
         structured_answer => {
             input => [html_enc($letter.$accidental.$octave." in A".$tuning." tuning")],
-             operation => "Note Frequency",
+            operation => "Note Frequency",
             result => html_enc($frequency." Hz"),
         };
 };

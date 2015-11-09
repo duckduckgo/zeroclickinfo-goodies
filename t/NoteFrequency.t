@@ -31,6 +31,14 @@ ddg_goodie_test(
             operation => "Note Frequency",
             result    => "128.43 Hz"
         }),
+    "notefreq c3 432Hz" => test_zci(
+        "128.43",
+        structured_answer => {
+            input     => ["C3 in A432 tuning"],
+            operation => "Note Frequency",
+            result    => "128.43 Hz"
+        }),
+    "notefreq c3 432  Hz" => undef,
     "notefreq a4 100000" => undef,
     "notefreq b#8" => undef,
     "notefreq cb0" => undef,
