@@ -1,7 +1,7 @@
 {
-    "id": "c++_cheat_sheet",
+    "id": "cpp_cheat_sheet",
     "name": "C++",
-    "description": " A popular object-oriented programming language invented in 1979 by Bjarne Stroustrup",
+    "description": "A quick reference of c++ language",
     "metadata": {
         "sourceName": "cs",
         "sourceUrl": "http://www.cs.ccu.edu.tw/~damon/oop/,c++refcard.pdf"
