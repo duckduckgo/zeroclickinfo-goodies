@@ -1,6 +1,7 @@
 {
     "id": "mongodb_cheat_sheet",
     "name": "MongoDB",
+    "templete_type": "code",
     "description": "Mongo shell",
     "metadata": {
         "sourceName": "MongoDB - Cheat Sheet",
@@ -163,6 +164,23 @@
         ],
         "Working with Indexes": [
             {
+                "key": "db.collection.ensureIndex(keys, options)",
+                "val": "Creating an index"
+            },
+            {
+                "key": "db.collection.dropIndex(keys, options)",
+                "val": "Dropping an index"
+            },
+            {
+                "key": "db.collection.ensureIndex(keys, options)",
+                "val": "Creating a compound index"
+            },
+            {
+                "key": "db.collection.dropIndex(\\{keys, options)",
+                "val": "Dropping a compound index"
+            },
+            {
+                "key": "db.collection.ensureIndex(keys, options, \\{unique : true\\})",
                 "key": "db.collection.ensureIndex(keys, options)",
                 "val": "Creating an index"
             },
