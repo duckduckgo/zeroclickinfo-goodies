@@ -1,0 +1,166 @@
+{
+    "id": "jira_cheat_sheet",
+    "name": "JIRA",
+    "description": "JIRA shortcuts",
+    "metadata": {
+        "sourceName": "cheatography",
+        "sourceUrl": "http://www.cheatography.com/ovi-mihai/cheat-sheets/jira/"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Global",
+        "Navigating Issues",
+        "Agile",
+        "Issue Actions"
+    ],
+    "aliases": [
+        "jira shortcuts",
+        "jira keyboard shortcuts"
+    ],
+    "sections": {
+        "Global": [
+            {
+                "key": "Quick Search",
+                "val": "/"
+            },
+            {
+                "key": "Quick Operations",
+                "val": ". "
+            },
+            {
+                "key": "Create Issue",
+                "val": "c"
+            },
+            {
+                "key": "Next Item",
+                "val": "j"
+            },
+            {
+                "key": "Previous Item",
+                "val": "p"
+            },
+            {
+                "key": "Dashboard",
+                "val": "g d"
+            },
+            {
+                "key": "Browse a Project",
+                "val": "g p"
+            },
+            {
+                "key": "Agile",
+                "val": "g a"
+            },
+            {
+                "key": "Find Issues",
+                "val": "g i"
+            },
+            {
+                "key": "Adm Quick Search",
+                "val": "g g"
+            },
+            {
+                "key": "Submit Form",
+                "val": "Ctrl + s"
+            },
+            {
+                "key": "Help",
+                "val": "?"
+            }
+        ],
+        "Navigating Issues": [
+            {
+                "key": "View selected",
+                "val": "o or Enter"
+            },
+            {
+                "key": "Next Issue",
+                "val": "j"
+            },
+            {
+                "key": "Previous Issue",
+                "val": "k"
+            },
+            {
+                "key": "Assign to me",
+                "val": "i"
+            },
+            {
+                "key": "Assign",
+                "val": "a"
+            },
+            {
+                "key": "Dock/U­ncock Filters",
+                "val": "["
+            },
+            {
+                "key": "Next Activity",
+                "val": "n"
+            },
+            {
+                "key": "Previous Activity",
+                "val": "p"
+            },
+            {
+                "key": "Switch filter view",
+                "val": "t"
+            }
+        ],
+        "Agile": [
+            {
+                "key": "Plan",
+                "val": "1"
+            },
+            {
+                "key": "Work",
+                "val": "2"
+            },
+            {
+                "key": "Report",
+                "val": "3"
+            },
+            {
+                "key": "Presen­tation mode",
+                "val": "z"
+            },
+            {
+                "key": "Next Column",
+                "val": "n"
+            },
+            {
+                "key": "Previous Column",
+                "val": "p"
+            },
+            {
+                "key": "Hide/Show Details",
+                "val": "t"
+            }
+        ],
+        "Issue Actions": [
+            {
+                "key": "Edit Issue",
+                "val": "e"
+            },
+            {
+                "key": "Assign issue",
+                "val": "a"
+            },
+            {
+                "key": "Comment",
+                "val": "m"
+            },
+            {
+                "key": "Edit Labels",
+                "val": "l"
+            },
+            {
+                "key": "Jump to fields for editing",
+                "val": ","
+            },
+            {
+                "key": "Assign To Me",
+                "val": "i"
+            }
+        ]
+    }
+}
