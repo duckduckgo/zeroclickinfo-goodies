@@ -1,0 +1,162 @@
+{
+    "id": "css_cheat_sheet",
+    "name": "CSS",
+    "description": "Explanation of CSS Syntax and Properties",
+    "metadata": {
+        "sourceName": "w3schools",
+        "sourceUrl": "http://www.w3schools.com/css/default.asp"
+    },
+    "aliases": [
+        "css", "cascading style sheets", "style sheet" 
+    ],
+    "template_type": "code",
+    "section_order": [
+        "Inserting Stylesheet",
+        "General Syntax",
+        "General Properties",
+        "Font Properties",
+        "Text Properties",
+        "Box-Model Properties",
+        "Position Properties",
+        "Background Properties",
+        "List Properties"
+    ],
+    "sections": {
+        "Inserting Stylesheet": [{
+            "val": "External stylesheet",
+            "key": "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />"  
+        }, {             
+            "val": "Internal style",
+            "key": "<style type=\"text/css\">selector \\{property: value;\\}</style>"
+        }, {
+            "val": "Inline style",
+            "key": "<tag style=\"property: value\">"  
+        }],
+        "General Syntax": [{
+            "val": "Basic syntax of css declaration block",
+            "key": "selector \\{property: value;\\}"
+        }, {
+            "val": "Class selector selects and styles all elements with class=\"class\"",
+            "key": ".class{}"
+        }, {
+            "val": "ID selector styles the element with id=\"id\"",
+            "key": "#id{}"
+        }],
+        "General Properties": [{
+            "val": "Changes foreground color",
+            "key": "color:"
+        }, {
+            "val": "Specifies appearance of the cursor",
+            "key": "cursor:"
+        }, {
+            "val": "Specifies the type of box used for an HTML element",
+            "key": "display:"
+        }, {
+            "val": "Specifies how content overflowing its box is handled",
+            "key": "overflow:"
+        }, {
+            "val": "Specifies whether or not an element is visible",
+            "key": "visibility:"
+        }],
+        "Font Properties": [{
+            "val": "Specifies the font style for a text",
+            "key": "font-style:"
+        }, {
+            "val": "Specifies whether or not a text should be displayed in a small-caps font",
+            "key": "font-variant:"
+        }, {
+            "val": "Sets how thick or thin characters in text should be displayed",
+            "key": "font-weight:"
+        }, {
+            "val": "Sets the size of a font",
+            "key": "font-size: "
+        }, {
+            "val": "Specific font(s) to be used",
+            "key": "font-family:"
+        }],
+        "Text Properties": [{
+            "val": "Increases or decreases the space between characters in a text",
+            "key": "letter-spacing:"
+        }, {
+            "val": "Specifies the line height",
+            "key": "line-height:"
+        }, {
+            "val": "Specifies the horizontal alignment of text in an element",
+            "key": "text-align:"
+        }, {
+            "val": "Specifies the decoration added to text",
+            "key": "text-decoration:"
+        }, {
+            "val": "Specifies the indentation of the first line in a text-block",
+            "key": "text-indent:"
+        }, {
+            "val": "Controls the capitalization of text",
+            "key": "text-transform:"
+        }, {
+            "val": "Sets the vertical alignment of an element",
+            "key": "vertical-align:"
+        }, {
+            "val": "Increases or decreases the white space between words",
+            "key": "word-spacing:"
+        
+        }],
+        "Box-Model Properties": [{
+            "val": "Sets the height of an element",
+            "key": "height:"
+        }, {
+            "val": "Sets the width of an element",
+            "key": "width:"
+        }, {
+            "val": "Defines the space around elements",
+            "key": "margin:"
+        }, {
+            "val": "Defines the space between the element border and the element content",
+            "key": "padding:"
+        }],
+        "Position Properties": [{
+            "val": "Specifies on which sides of an element where floating elements are not allowed to float",
+            "key": "clear:"
+        }, {
+            "val": "Specifies whether or not an element should float",
+            "key": "float:"
+        }, {       
+            "val": "The left position of an element",
+            "key": "left:"
+        }, {
+            "val": "The top position of an element",
+            "key": "top:"
+        }, {
+            "val": "Specifies the type of positioning method used for an element",
+            "key": "position:"
+        }, {
+            "val": "Specifies the stack order of an elemen",
+            "key": "z-index:"
+        }],
+        "Background Properties": [{
+            "val": "Specifies the background color of an element",
+            "key": "background-color:"
+        }, {
+            "val": "Specifies an image to use as the background of an element",
+            "key": "background-image:"
+        }, {       
+            "val": "Specify how image should be repeated (x or y axis)",
+            "key": "background-repeat:"
+        }, {
+            "val": "Sets whether a background image is fixed or scrolls with the rest of the page",
+            "key": "background-attachment:"
+        }, {
+            "val": "Sets the starting position of a background image.",
+            "key": "background-position:"
+        }],
+        "List Properties": [{
+            "val": "Specifies the type of list-item marker in a list",
+            "key": "list-style-type:"
+        }, {
+            "val": "Specifies if the list-item markers should appear inside or outside the content flow",
+            "key": "list-style-position:"
+        }, {       
+            "val": "Replaces the list-item marker with an image",
+            "key": "list-style-image:"
+        }]
+    }
+}

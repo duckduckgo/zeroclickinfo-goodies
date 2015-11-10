@@ -12,6 +12,7 @@
         "Operator Precedence",
         "Line Plot Styles"
     ],
+    "template_type": "code",
     "sections":{
         "Common Commands":[
             {

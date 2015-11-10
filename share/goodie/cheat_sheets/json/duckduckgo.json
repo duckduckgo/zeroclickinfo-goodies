@@ -9,7 +9,7 @@
     "sections": {
         "Open results": [
             {
-                "key": "[↵] or [l] or [o]",
+                "key": "( [↵] / [l] / [o] )",
                 "val": "Go to the highlighted result, or use it right away to go to the first result"
             },
             {
@@ -21,25 +21,25 @@
                 "val": "Domain search (if a result is highlighted)"
             },
             {
-                "key": "['] or [v]",
+                "key": "( ['] / [v] )",
                 "val": "Open the highlighted result in a new window/tab. Since this uses JavaScript, you need to turn off pop-up blockers first."
             }
         ],
         "Move around": [
             {
-                "key": "[←] or [→]",
+                "key": "( [←] / [→] )",
                 "val": "Navigate instant answer tabs. When an instant answer is open, navigate within the instant answer."
             },
             {
-                "key": "[↓] or [j]",
+                "key": "( [↓] / [j] )",
                 "val": "Next search result"
             },
             {
-                "key": "[↑] or [k]",
+                "key": "( [↑] / [k] )",
                 "val": "Previous search result"
             },
             {
-                "key": "[/] or [h]",
+                "key": "( [/] / [h] )",
                 "val": "Go to search box"
             },
             {

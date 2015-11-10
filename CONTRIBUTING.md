@@ -5,8 +5,8 @@ There are several options for contributing Goodie Instant Answers, explained bel
 You can always find the [Instant Answer Documentation here](https://duck.co/duckduckhack/ddh-intro). Also, if you have any questions at any point, feel free to ask on one of our community channels:
 
 - [DuckDuckHack mailing list](https://www.listbox.com/subscribe/?list_id=197814)
-- [Gitter chat](https://gitter.im/duckduckgo/Ideas)
-- Do not hesitate to email us directly at [open@duckduckgo.com](mailto:open@duckduckgo.com).
+- [Slack](https://duckduckhack.slack.com) - For access, please send an email to quackslack@duckduckgo.com
+- Do not hesitate to email us directly at open@duckduckgo.com.
 
 ## New? Make Your First Contribution Today
 

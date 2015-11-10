@@ -163,7 +163,7 @@
             "val":"Previous result (find in files)"
         }],
         "Folding": [{
-            "key":"[Ctrl] ([\\[]\/[\\]])",
+            "key":"[Ctrl] ( [\\[] / [\\]] )",
             "val":"Fold/expand"
           }, {
             "key":"[Ctrl] [K], [J]",
