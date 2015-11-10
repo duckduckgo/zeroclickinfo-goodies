@@ -11,8 +11,8 @@ zci is_cached   => 1;
 # Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
 name "Security Addons";
 description "Shows addons for popular browsers regarding anonymity";
-primary_example_queries "how to browse the web anonymously", "search privately", "search anonymously", "how to browse the web privately";
-secondary_example_queries "firefox how to browse the web anonymously";
+primary_example_queries "privacy extensions", "privacy extension", "privacy addons", "privacy addon";
+secondary_example_queries "firefox privacy addon";
 category "software";
 topics "computing";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SecurityAddons/lights0123/lights0123.pm";
