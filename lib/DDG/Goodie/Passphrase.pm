@@ -7,15 +7,6 @@ use DDG::Goodie;
 zci answer_type => 'random_passphrase';
 zci is_cached   => 0;
 
-primary_example_queries 'random passphrase', '4 word random passphrase', 'pass phrase 3 words';
-description 'generate a random passphrase';
-name 'Passphrase';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Passphrase.pm';
-category 'computing_tools';
-topics 'cryptography';
-
-attribution github => ['hunterlang', 'Hunter Lang'];
-
 triggers startend => 'passphrase', 'pass phrase', 'random passphrase', 'passphrase random', 'random pass phrase', 'pass phrase random';
 
 # Remove the line endings up front.

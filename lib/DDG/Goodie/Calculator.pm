@@ -12,16 +12,6 @@ use utf8;
 zci answer_type => "calc";
 zci is_cached   => 1;
 
-primary_example_queries '$3.43+$34.45';
-secondary_example_queries '64*343';
-description 'Basic calculations';
-name 'Calculator';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
-category 'calculations';
-topics 'math';
-attribution github  => ['https://github.com/duckduckgo', 'duckduckgo'],
-            github  => ['https://github.com/phylum', 'Daniel Smith'];
-
 triggers query_nowhitespace => qr<
         ^
        ( what is | calculate | solve | math )?

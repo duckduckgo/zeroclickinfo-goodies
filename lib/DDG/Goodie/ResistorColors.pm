@@ -21,19 +21,6 @@ triggers query_nowhitespace => qr/^(\d+[\.kmKM]?\d*[kmKM]?)((ohm|ohms|\x{2126})|
 zci is_cached => 1;
 zci answer_type => 'resistor_colors';
 
-primary_example_queries '4.7k ohm', '10k resistor';
-secondary_example_queries '1Ω', '5.1ohms resistor';
-description 'find resistor color bands';
-name 'ResistorColors';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ResistorColors.pm';
-category 'reference';
-topics 'science';
-
-attribution twitter => 'joewalnes',
-            web => ['http://joewalnes.com', 'Joe Walnes'],
-            email => ['joe@walnes.com', 'Joe Walnes'],
-            github => ["https://github.com/HackOrQuack", "HackOrQuack"];
-
 # These hex codes came from
 # http://en.wikipedia.org/wiki/Electronic_color_code
 my %digits_to_colors = (

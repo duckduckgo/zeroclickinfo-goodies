@@ -6,16 +6,6 @@ use DDG::Goodie;
 
 use YAML::XS 'LoadFile';
 
-primary_example_queries 'duckduckgo help';
-secondary_example_queries 'ddg tor', 'short URL for duck duck go';
-description 'DuckDuckGo help and quick links';
-name 'DuckDuckGo';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DuckDuckGo.pm';
-category 'cheat_sheets';
-topics 'everyday';
-attribution twitter => ['crazedpsyc','crazedpsyc'],
-            cpan    => ['CRZEDPSYC','crazedpsyc'];
-
 my @ddg_aliases = map { ($_, $_ . "'s", $_ . "s") } ('duck duck go', 'duckduck go', 'duck duckgo', 'duckduckgo', 'ddg');
 
 triggers any => @ddg_aliases, "zeroclickinfo", "private search";

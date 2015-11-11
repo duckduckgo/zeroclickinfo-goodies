@@ -9,16 +9,6 @@ triggers startend => "avg", "average", "mean", "median", "root mean square";
 zci is_cached => 1;
 zci answer_type => "average";
 
-primary_example_queries 'average 12, 45, 78, 1234';
-secondary_example_queries 'avg 1,2,3', 'root mean square 1,2,3';
-description 'take the average of a list of numbers';
-name 'Average';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Average.pm';
-category 'calculations';
-topics 'math';
-attribution twitter => ['crazedpsyc','crazedpsyc'],
-            cpan    => ['CRZEDPSYC','crazedpsyc'];
-
 handle remainder => sub {
 
     #Remove leading/trailing text from list of numbers

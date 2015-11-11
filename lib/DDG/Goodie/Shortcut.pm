@@ -11,16 +11,6 @@ triggers any => 'shortcut','keyboard shortcut', 'key combination';
 zci answer_type => 'shortcut';
 zci is_cached   => 1;
 
-primary_example_queries 'windows show desktop shortcut';
-secondary_example_queries 'ubuntu shortcut new folder';
-description 'Keyboard shortcuts';
-name 'Shortcut';
-topics 'computing';
-category 'computing_info';
-attribution github => ['dariog88a','Darío'],
-            email => [ 'dariog88@gmail.com', 'Darío' ],
-            twitter => ['dariog88', 'Darío'];
-
 my @shortcuts = share('shortcuts.csv')->slurp(iomode => '<:encoding(UTF-8)');
 
 handle remainder_lc => sub {
