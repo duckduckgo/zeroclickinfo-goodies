@@ -1,5 +1,10 @@
 ---
 sudo: false
+cache:
+  directories:
+    - $HOME/.cpanm
+    - $HOME/perl5/perlbrew/perls/5.16/lib/site_perl
+    - /var/tmp
 addons:
   apt_packages:
     - libmpfr-dev
