@@ -3,6 +3,7 @@ sudo: false
 cache:
   directories:
     - $HOME/.cpanm
+    - $HOME/.nvm
     - $HOME/perl5/perlbrew/perls/5.16/lib/site_perl
     - /var/tmp
 addons:
