@@ -10,7 +10,6 @@ addons:
   apt_packages:
     - libmpfr-dev
 before_install:
-  - export HARNESS_OPTIONS=j10:c HARNESS_TIMER=1
   - git config --global user.name "Dist Zilla Plugin TravisCI"
   - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
 install:
