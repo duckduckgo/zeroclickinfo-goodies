@@ -4,7 +4,7 @@ cache:
   directories:
     - $HOME/.cpanm
     - $HOME/.nvm
-    - $HOME/perl5/perlbrew/perls/5.16/lib/site_perl
+    - $HOME/perl5/perlbrew/perls/5.16/lib
     - /var/tmp
 addons:
   apt_packages:
