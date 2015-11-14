@@ -20,7 +20,7 @@ DDH.cheat_sheets.build = function(ops) {
                    showhide = false;
                }
                
-               //replaces &#42 and &#47 fixing issue1646
+               //replaces &#42;&#47; and &#47;&#42; to */ and /* fixing issue1646
                var val;
                for (var j = 0; j < sections[section].length; j++){ 
                    val = sections[section][j].val;
