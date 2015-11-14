@@ -394,7 +394,7 @@
             },
             {
                 "key": "[Alt] [Shift] [J]",
-                "val": "Add Element Comment ( adds '&#47;&#42;*; ... &#42;&#47;')"
+                "val": "Add Element Comment ( adds '&#47;&#42;* ... &#42;&#47;')"
             }
         ],
         "Editing Source Code": [
