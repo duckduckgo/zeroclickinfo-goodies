@@ -8,7 +8,7 @@ zci answer_type => "music_scale";
 zci is_cached   => 1;
 
 name "MusicScale";
-description "Generate the notes of the queried musical scale";
+description "Look up musical scales";
 primary_example_queries "c major scale", "f# minor scale";
 category "reference";
 topics "music";
@@ -16,7 +16,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["sublinear", "sublinear"];
 
 # Triggers
-triggers end => "major scale", "ionian scale", "dorian scale", "phrygian scale", "lydian scale", "mixolydian scale", "minor scale", "aeolian scale", "locrian scale";
+triggers end => "major scale", "dorian scale", "phrygian scale", "lydian scale", "mixolydian scale", "minor scale", "locrian scale";
 
 # Handle statement
 handle sub {
