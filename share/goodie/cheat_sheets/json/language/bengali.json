@@ -41,11 +41,11 @@
             "key" : "Thank you"
          },
          {
-            "val" : "দয়া করে ( dya kore)",
+            "val" : "দয়া করে (dya kore)",
             "key" : "Please"
          },
          {
-            "val" : "অনেক ধন্যবাদ!(Onek Dhonyobad)",
+            "val" : "অনেক ধন্যবাদ! (Onek Dhonyobad)",
             "key" : "Thank you very much!"
          },
          {
@@ -65,8 +65,8 @@
             "key" : "Good luck!"
          },
          {
-            "val" : "আপনার সাথে পরিচিত হয়ে খুশি হয়েছি (apanar sathe paricito hoye khub khusi hyechi)",
-            "key" : "Pleased to meet you"
+            "val" : "আপনার সাথে পরিচিত হয়ে খুশি হয়েছি। (apanar sathe paricito hoye khub khusi hyechi)",
+            "key" : "Pleased to meet you."
          },
          {
             "val" : "ভালো থাকবেন! (bhalo thakben)",
@@ -79,11 +79,11 @@
             "key" : "Call the police!"
          },
          {
-            "val" : "দয়া করে একটু ধীরে কথা বলবেন ? (Doya kore ektu dhire kotha bolben)",
+            "val" : "দয়া করে একটু ধীরে কথা বলবেন? (Doya kore ektu dhire kotha bolben)",
             "key" : "Can you speak more slowly, please?"
          },
          {
-            "val" : "দয়া করে আরেকবার বলবেন ? (Doya kore aarekbar bolben)",
+            "val" : "দয়া করে আরেকবার বলবেন? (Doya kore aarekbar bolben)",
             "key" : "Can you repeat, please?"
          },
          {
@@ -99,11 +99,11 @@
             "key" : "Do you speak English?"
          },
          {
-            "val" : "এই যে!(Ei je)",
+            "val" : "এই যে! (Ei je)",
             "key" : "Excuse me!"
          },
          {
-            "val" : "আমার একজন ডাক্তারকে দরকার!(amar ekjon daktarke dorkar)",
+            "val" : "আমার একজন ডাক্তারকে দরকার! (amar ekjon daktarke dorkar)",
             "key" : "I need a doctor!"
          },
          {
@@ -111,11 +111,11 @@
             "key" : "Can you write that down, please?"
          },
          {
-            "val" : "একটা অ্যাম্বুলেন্স ডাকুন!(Ekta ambulance dakun)",
+            "val" : "একটা অ্যাম্বুলেন্স ডাকুন! (Ekta ambulance dakun)",
             "key" : "Call an ambulance!"
          },
          {
-            "val" : "আমি বিপদে পরেছি!(Aami bipode porechhi)",
+            "val" : "আমি বিপদে পরেছি! (Aami bipode porechhi)",
             "key" : "I am in danger!"
          },
          {
@@ -127,13 +127,13 @@
             "key" : "Fire!"
          },
          {
-            "val" : "বাঁচাও!(bachao)",
+            "val" : "বাঁচাও! (bachao)",
             "key" : "Help!"
          }
       ],
       "Basics" : [
          {
-            "val" : "আমার নাম...(Aamar naam)",
+            "val" : "আমার নাম... (Aamar naam)",
             "key" : "My name is..."
          },
          {
@@ -163,19 +163,19 @@
             "key" : "Turn left."
          },
          {
-            "val" : "বাইরে কোনদিক দিয়ে যাবো?(Baire kon din diye jabo)",
+            "val" : "বাইরে কোনদিক দিয়ে যাবো? (Baire kon din diye jabo)",
             "key" : "Where is the exit?"
          },
          {
-            "val" : "কোথায়?(Kothaay)",
+            "val" : "কোথায়? (Kothaay)",
             "key" : "Where?"
          },
          {
-            "val" : "ওটা কি অনেক দূরে?(Ota ki onek dure)",
+            "val" : "ওটা কি অনেক দূরে? (Ota ki onek dure)",
             "key" : "Is it far?"
          },
          {
-            "val" : "সোজা চলে যান।(Soja choley zan)",
+            "val" : "সোজা চলে যান। (Soja choley zan)",
             "key" : "Go straight ahead."
          },
          {
@@ -183,15 +183,15 @@
             "key" : "Do you have a city map?"
          },
          {
-            "val" : "এখানে থামুন।(Ekhane thamun)",
+            "val" : "এখানে থামুন। (Ekhane thamun)",
             "key" : "Please stop here."
          },
          {
-            "val" : "ডান দিকে যান।(Daan dike zan)",
+            "val" : "ডান দিকে যান। (Daan dike zan)",
             "key" : "Turn right."
          },
          {
-            "val" : "ট্যাক্সি কোথায় পাবো?(Taxi kothay pabo)",
+            "val" : "ট্যাক্সি কোথায় পাবো? (Taxi kothay pabo)",
             "key" : "Where can I find the taxis?"
          },
          {
@@ -201,7 +201,7 @@
       ],
       "Going out for dinner" : [
          {
-            "val" : "আপনাদের এখানে নিরামিষ খাবার আছে কি ? (Aapnader ekhane niramish khabar ache ki)",
+            "val" : "আপনাদের এখানে নিরামিষ খাবার আছে কি? (Aapnader ekhane niramish khabar ache ki)",
             "key" : "Do you have vegetarian dishes?"
          },
          {
@@ -217,15 +217,15 @@
             "key" : "I am allergic."
          },
          {
-            "val" : "মিষ্টান্ন(mistanno)",
+            "val" : "মিষ্টান্ন (mistanno)",
             "key" : "Dessert"
          },
          {
-            "val" : "দয়া করে চেক দেবেন!(doya kore Check deben)",
+            "val" : "দয়া করে চেক দেবেন! (doya kore Check deben)",
             "key" : "The check please!"
          },
          {
-            "val" : "এক কাপ কফি দেবেন।(Ek kap coffee deben)",
+            "val" : "এক কাপ কফি দেবেন। (Ek kap coffee deben)",
             "key" : "A cup of coffee please."
          },
          {
@@ -237,11 +237,11 @@
             "key" : "Where is a good restaurant?"
          },
          {
-            "val" : "এক গ্লাস জল দেবেন।(Ek glaas jol deben)",
+            "val" : "এক গ্লাস জল দেবেন। (Ek glaas jol deben)",
             "key" : "A glass of water please."
          },
          {
-            "val" : "দুজনের জন্য একটা টেবিল চাই।(Du joner jonyo ekta table chai)",
+            "val" : "দুজনের জন্য একটা টেবিল চাই। (Du joner jonyo ekta table chai)",
             "key" : "A table for two please!"
          },
          {
