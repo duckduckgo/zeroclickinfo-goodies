@@ -53,29 +53,29 @@
             "key" : "You're welcome"
          },
          {
-            "val" : "আপনি কেমন আছেন? (apni kemon achhen)"
+            "val" : "আপনি কেমন আছেন? (apni kemon achhen)",
             "key" : "How are you?"
          },
          {
-            "val" : "আপনি কেমন আছেন? (apni kemon achhen)"
+            "val" : "আপনি কেমন আছেন? (apni kemon achhen)",
             "key" : "How are you?"
          },
          {
-            "val" : "সৌভাগ্য! (soubhagya)"
+            "val" : "সৌভাগ্য! (soubhagya)",
             "key" : "Good luck!"
          },
          {
-            "val" : "আপনার সাথে পরিচিত হয়ে খুশি হয়েছি (apanar sathe paricito hoye khub khusi hyechi)"
+            "val" : "আপনার সাথে পরিচিত হয়ে খুশি হয়েছি (apanar sathe paricito hoye khub khusi hyechi)",
             "key" : "Pleased to meet you"
          },
          {
-            "val" : "ভালো থাকবেন! (bhalo thakben)"
+            "val" : "ভালো থাকবেন! (bhalo thakben)",
             "key" : "Goodbye !"
          }
       ],
       "Getting Help" : [
          {
-            "val" : "পুলিশ ডাকেন! (Pulish daken)"
+            "val" : "পুলিশ ডাকেন! (Pulish daken)",
             "key" : "Call the police!"
          },
          {
