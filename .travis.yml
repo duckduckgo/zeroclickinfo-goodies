@@ -1,11 +1,5 @@
 ---
 sudo: false
-cache:
-  directories:
-    - $HOME/.cpanm
-    - $HOME/.nvm
-    - $HOME/perl5/perlbrew/perls/5.16/lib
-    - /var/tmp
 addons:
   apt_packages:
     - libmpfr-dev
@@ -21,6 +15,6 @@ install:
   - dzil listdeps | grep -ve '^\W' | cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
 language: perl
 perl:
-  - 5.22
+  - 5.16
 script:
   - dzil smoke --release --author
