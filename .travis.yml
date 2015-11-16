@@ -1,5 +1,11 @@
 ---
 sudo: false
+cache:
+  directories:
+    - $HOME/.cpanm
+    - $HOME/.nvm
+    - $HOME/perl5/perlbrew/perls/5.16/lib
+    - /var/tmp
 addons:
   apt_packages:
     - libmpfr-dev
@@ -8,6 +14,7 @@ before_install:
   - git config --global user.name "Dist Zilla Plugin TravisCI"
   - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
 install:
+  - cpanm libwww LWP::Protocol::https
   - perl -MLWP::UserAgent -e 'warn LWP::UserAgent->new->mirror("https://s3.amazonaws.com/ddg-community/metadata/repo_all.json.bz2", "/var/tmp/metadata.bz2")->status_line'
   - npm install -g uglify-js handlebars
   - cpanm --quiet --notest Dist::Zilla
