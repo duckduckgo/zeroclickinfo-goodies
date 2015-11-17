@@ -57,10 +57,6 @@
             "key" : "How are you?"
          },
          {
-            "val" : "আপনি কেমন আছেন? (apni kemon achhen)",
-            "key" : "How are you?"
-         },
-         {
             "val" : "সৌভাগ্য! (soubhagya)",
             "key" : "Good luck!"
          },
