@@ -6,16 +6,11 @@
         "sourceName": "Dummies",
         "sourceUrl": "http://www.dummies.com/how-to/content/word-2010-for-dummies-cheat-sheet.html"
     },
-    "aliases": [
-        "ms word",
-        "winword"
-    ],
+    "aliases": ["ms word"],
     "template_type": "keyboard",
-    "section_order": [
-       "Common Tasks"
-    ],
+    "section_order": ["Common Tasks", "Formatting"],
     "sections": {
-        "Common Tasks": [ {
+        "Common Tasks": [{
             "val": "Save",
             "key": "[Ctrl] [S]"
         }, {
@@ -42,35 +37,35 @@
         }, {
             "val": "Redo",
             "key": "[Ctrl] [Y]"
-        }, {
-            "val": "Make Letters Bold",
-            "key": "[Ctrl] [B]"
-        }, {
-            "val": "Make Letters Italic",
-            "key": "[Ctrl] [I]"
-        }, {
-            "val": "Underline Letters",
-            "key": "[Ctrl] [U]"
-        }, {
-            "val": "Create a Nonbreaking Space",
-            "key": "[Ctrl] [Shift] [Spacebar]"
-        }, {
-            "val": "Create a Nonbreaking Hyphen",
-            "key": "[Ctrl] [Shift] [Hyphen]"
-        }, {
-            "val": "Decrease Font Size by 1 value",
-            "key": "[Ctrl] [Shift] [<]"
-        }, {
-            "val": "Increase Font Size by 1 value",
-            "key": "[Ctrl] [Shift] [>]"
-        }, {
-            "val": "Remove Paragraph or Character Formatting",
-            "key": "[Ctrl] [Spacebar]"
-        }, {
-            "val": "Paste Special",
-            "key": "[ALT] [Ctrl] [V]"
-        } 
-                         
-    ]}      
+        }],
     
+    "Formatting": [{
+        "val": "Make Letters Bold",
+        "key": "[Ctrl] [B]"
+    }, {
+        "val": "Make Letters Italic",
+        "key": "[Ctrl] [I]"
+    }, {
+        "val": "Underline Letters",
+        "key": "[Ctrl] [U]"
+    }, {
+        "val": "Create a Nonbreaking Space",
+        "key": "[Ctrl] [Shift] [Spacebar]"
+    }, {
+        "val": "Create a Nonbreaking Hyphen",
+        "key": "[Ctrl] [Shift] [Hyphen]"
+    }, {
+        "val": "Decrease Font Size by 1 value",
+        "key": "[Ctrl] [Shift] [<]"
+    }, {
+        "val": "Increase Font Size by 1 value",
+        "key": "[Ctrl] [Shift] [>]"
+    }, {
+        "val": "Remove Paragraph or Character Formatting",
+        "key": "[Ctrl] [Spacebar]"
+    }, {
+        "val": "Paste Special",
+        "key": "[ALT] [Ctrl] [V]"
+    }]
+}
 }
