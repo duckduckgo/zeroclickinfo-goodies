@@ -20,8 +20,6 @@ install:
   - cpanm --quiet --notest Dist::Zilla
   - dzil authordeps | grep -ve '^\W' | xargs -n 5 -P 10 cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
   - dzil listdeps | grep -ve '^\W' | cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
-  - cpanm LWP::UserAgent LWP::Protocol::https
-  - perl -MLWP::UserAgent -e 'warn LWP::UserAgent->new->mirror("https://s3.amazonaws.com/ddg-community/metadata/repo_all.json.bz2", "/var/tmp/metadata.bz2")->status_line'
 language: perl
 perl:
   - 5.16
