@@ -11,80 +11,80 @@
     "sections": {
         "Desktop Navigation": [{
             "val": "Start menu / Access applications",
-            "key": "[Alt] + [F1] "
+            "key": "[Alt] [F1]"
         }, {
             "val": "Pop up new window",
-            "key": "[Alt] + [F2] "
+            "key": "[Alt] [F2]"
         }, {
             "val": "Lock desktop / Switch active user",
-            "key": "[Ctrl] + [Alt] + [L] "
+            "key": "[Ctrl] [Alt] [L]"
         }, {
             "val": "Show desktop",
-            "key": "[Ctrl] + [Alt] + [D] "
+            "key": "[Ctrl] [Alt] [D]"
         }, {
             "val": "Task manager",
-            "key": "[Ctrl] + [Esc] "
+            "key": "[Ctrl] [Esc]"
         }, {
             "val": "Rename file",
-            "key": "[F2]"
+            "key": "F2"
         }],
          "Desktop Shortcuts": [{
             "val": "File menu",
-            "key": "[Alt] + [F] "
+            "key": "[Alt] [F]"
         }, {
             "val": "Edit menu",
-            "key": "[Alt] + [E] "
+            "key": "[Alt] [E]"
         }, {
             "val": "Copy selected text or items to the clipboard",
-            "key": "[Ctrl] + [C] "
+            "key": "[Ctrl] [C]"
         }, {
             "val": "View menu",
-            "key": "[Ctrl] + [V] "
+            "key": "[Ctrl] [V]"
         }, {
             "val": "Undo the last action",
-            "key": "[Ctrl] + [Z] "
+            "key": "[Ctrl] [Z]"
         }, {
             "val": "Paste special",
-            "key": "[Ctrl] + [Shift] + [V] "
+            "key": "[Ctrl] [Shift] [V]"
         }],
          "ScreenShot": [{
             "val": "Take a screenshot",
-            "key": "[Prnt Scrn]"
+            "key": "Prnt Scrn"
         },{
             "val": "Take a screenshot of a Window",
-            "key": "[Shift] + [Prnt Scrn]"
+            "key": "[Shift] [Prnt Scrn]"
         }],
         "Web Browser": [{
             "val": "Bookmarks menu",
-            "key": "[Alt] + [B] "
+            "key": "[Alt] [B]"
         }, {
             "val": "URL Shortcuts (Adds www. + .com)",
-            "key": "[Ctrl] + [Enter] "
+            "key": "[Ctrl] [Enter]"
         }, {
             "val": "URL Shortcuts (Adds www. + .org)",
-            "key": "[Ctrl] + [Shift] + [Enter]"
+            "key": "[Ctrl] [Shift] [Enter]"
         }, {
             "val": "URL Shortcuts (Adds www. + .net)",
-            "key": "[Shift] + [Enter]"
+            "key": "[Shift] [Enter]"
         }, {
             "val": "Add a bookmark for the current location",
-            "key": "[Ctrl] + [B] "
+            "key": "[Ctrl] [B]"
         }, {
             "val": "Manage bookmarks",
-            "key": "[Ctrl] + [Shift] + [R] "
+            "key": "[Ctrl] [Shift] [R]"
         }],
         "Tab Management": [{
             "val": "Create new tab",
-            "key": "[Ctrl] + [Shift] + [N]"
+            "key": "[Ctrl] [Shift] [N]"
         }, {
             "val": "Close current tab",
-            "key": "[Ctrl] + [W] "
+            "key": "[Ctrl] [W]"
         }, {
             "val": "Go to next tab",
-            "key": "[Ctrl] + [,] "
+            "key": "[Ctrl] [,]"
         }, {
             "val": "Go to previous tab",
-            "key": "[Ctrl] + [.] "
+            "key": "[Ctrl] [.]"
         }]
     }
 }
