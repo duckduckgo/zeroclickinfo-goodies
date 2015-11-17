@@ -6,7 +6,8 @@
         "sourceName": "Dummies",
         "sourceUrl": "http://www.dummies.com/how-to/content/word-2010-for-dummies-cheat-sheet.html"
     },
-    "aliases": ["ms word"],
+    "aliases": ["ms word",
+               "winword"],
     "template_type": "keyboard",
     "section_order": ["Common Tasks", "Formatting"],
     "sections": {
