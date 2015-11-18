@@ -132,15 +132,15 @@
             },
             {
                 "key": "killall xyz",
-                "val": "kill all running instances of a process xyz"
+                "val": "Kill all running instances of a process xyz"
             },
             {
                 "key": "chmod +x xyz",
-                "val": "make the file xyz executable"
+                "val": "Make the file xyz executable"
             },
             {
                 "key": "ls -a",
-                "val": "list hidden files"
+                "val": "List hidden files"
             }
         ]
     }
