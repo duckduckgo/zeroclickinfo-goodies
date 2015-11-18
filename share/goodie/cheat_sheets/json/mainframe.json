@@ -13,16 +13,16 @@
         "Main Frame commands"
     ],
     "section_order": [
-	"Job Entry Subsystem 2(JES2)",
-        "Multiple Virtual Storage(MVS)",
-        "Data Facility System Managed Storage(DFSMS)",
-        "Time Sharing Option/Extensions(TSO/E)",
-        "Virtual Telecommunications Access Method(VTAM)",
-        "Virtual Lookaside Facility(VLF)",
-	"System Display and Search Facility(SDSF)"
+	"Job Entry Subsystem 2 (JES2)",
+        "Multiple Virtual Storage (MVS)",
+        "Data Facility System Managed Storage (DFSMS)",
+        "Time Sharing Option/Extensions (TSO/E)",
+        "Virtual Telecommunications Access Method (VTAM)",
+        "Virtual Lookaside Facility (VLF)",
+	"System Display and Search Facility (SDSF)"
     ],
     "sections": {
-        "Job Entry Subsystem 2(JES2)": [
+        "Job Entry Subsystem 2 (JES2)": [
             {
                 "key": "$DSPL,JOBS=5",
                 "val": "Display all jobs using 5% or more of the spool"
@@ -48,11 +48,11 @@
                 "val": "Dynamically define a functional subsystem (FSS) to JES2"
             },
 	    {
-                "key": "$ADD LINE(nnnn)",
+                "key": "$ADD LINE (nnnn)",
                 "val": "Dynamically add a line"
             },
   	    {
-                "key": "$ADD LOGON(nn)",
+                "key": "$ADD LOGON (nn)",
                 "val": "Creates a new LOGON pseudo-device, which defines JES2 as an application program to VTAM"
             },
             {
@@ -64,7 +64,7 @@
                 "val": "Specify redirection for commands entered at the entry console"
             },
  	    {
-                "key": "$ADD RMT(nnnn)",
+                "key": "$ADD RMT (nnnn)",
                 "val": "Add one or more RJE workstations"
             },
 	    {
@@ -108,7 +108,7 @@
                 "val": "Varys offline devices 234,235,236 and dispalys all at JES2 startup"
             }
         ],
-        "Multiple Virtual Storage(MVS)": [
+        "Multiple Virtual Storage (MVS)": [
             {
                 "key": "DS QT,483,1",
                 "val": "Display Status information on device"
@@ -158,7 +158,7 @@
 		"val":"Display SMF Data"
 	    },
 	    {
-  		"key":"D SMS,STORGRP(storgrp)",
+  		"key":"D SMS,STORGRP (storgrp)",
 		"val":"Display storage group status using the DISPLAY SMS command"
 	    },
 	    {
@@ -186,7 +186,7 @@
 		"val":"Display hard copy consoles"
 	    }
         ],
-         "Data Facility System Managed Storage(DFSMS)": [
+         "Data Facility System Managed Storage (DFSMS)": [
             {
                 "key": "F CATALOG,REPORT,CACHE",
                 "val": "Reports caching statistics for both caching approaches of catalog management to cache catalog information"
@@ -196,21 +196,21 @@
                 "val": "This new modify catalog command reports counts for various events and the average elapsed time for these events"
             },
             {
-                "key": "F CATALOG,LIST(id|yyyyyy)|LISTJ(jobname)",
+                "key": "F CATALOG,LIST (id|yyyyyy) | LISTJ (jobname)",
                 "val": "Detail information and used in real-time diagnosis when problems arise"
             }
         ],
-        "Time Sharing Option/Extensions(TSO/E)": [
+        "Time Sharing Option/Extensions (TSO/E)": [
             {
                 "key": "SYNC",
                 "val": "command to initialize SYS1.BRODCAST data set and to synchronize it with the RACF data set, SYS1.UADS, or both"
             },
             {
                 "key": "SHOWMVS",
-                "val": "List all kinds of info on your system(by using ISPF)."
+                "val": "List all kinds of info on your system (by using ISPF)."
             }
         ],
-        "Virtual Telecommunications Access Method(VTAM)": [
+        "Virtual Telecommunications Access Method (VTAM)": [
             {
                 "key": "D NET,MAJNODES",
                 "val": "Display the all active nodes in the domain"
@@ -228,17 +228,17 @@
                 "val": "Display information about VTAM buffer used"
             }
         ],
-        "Virtual Lookaside Facility(VLF)": [
+        "Virtual Lookaside Facility (VLF)": [
             {
                 "key": "F CATALOG,REPORT,CACHE",
                 "val": "Determining Catalogs in VLF"
             },
             {
-                "key": "F CATALOG,NOVLF(your.catname)",
+                "key": "F CATALOG,NOVLF (your.catname)",
                 "val": "Removing Catalogs from VLF"
             }
         ],
-        "System Display and Search Facility(SDSF)": [
+        "System Display and Search Facility (SDSF)": [
             {
                 "key": "XDC",
                 "val": "Typing this command on the line of the job you want to save as a data set. It displays a self explaining menu. Your job is NOT remove for the output queue"
