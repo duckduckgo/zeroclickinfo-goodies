@@ -1,78 +1,78 @@
 {
-    "id": "vitamin_cheat_sheet", 
+    "id": "vitamin_cheat_sheet",
     "name": "Vitamins",
-    "description": "benefits and source of each vitamin", 
-    "metadata": {  
+    "description": "Displays the source and benefits for each vitamin",
+    "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Vitamin"
     },
     "template_type": "reference",
-    "section_order":[  
-    "Source",
-    "Benefits"
+    "section_order": [
+        "Source",
+        "Benefits"
     ],
-    "sections":{
-        "Source":[{  
-                  "key":"Vitamin A",
-                  "val":"Liver/fish/Milk/cheese "
-               },{  
-                  "key":"Vitamin B1",
-                  "val":"Grains/Liver/pork/dried beans/nuts"
-               },{  
-                  "key":"Vitamin B2",
-                  "val":"Soybeans/meat/poultry/liver/eggs"
-               },{  
-                  "key":"Vitamin B3",
-                  "val":"Mushrooms/Peanut butter/meat/fish,"
-               },{  
-                  "key":"Vitamin B6",
-                  "val":"Potatoes/bananas"
-               },{  
-                  "key":"Vitamin B12",
-                  "val":"Milk/cheese/yogurt/fortified soy"
-               },{  
-                  "key":"Vitamin C",
-                  "val":"Citrus fruits"
-               },{  
-                  "key":"Vitamin D",
-                  "val":"fish/eggs/organ meats/fish/liver oils"
-               },{  
-                  "key":"Vitamin E",
-                  "val":"Vegetable oils/Avocados/leafy green vegetables"
-               },{  
-                  "key":"Vitamin K",
-                  "val":"Broccoli/soybeans/dark green leafy vegetables"
-               }],
-        "Benefits":[{  
-                  "key":"Vitamin A",
-                  "val":"Helps you to see in the day and at night."
-               },{  
-                  "key":"Vitamin B1",
-                  "val":"Helps with energy production in your body."
-               },{  
-                  "key":"Vitamin B2",
-                  "val":"Helps with energy production in your body."
-               },{  
-                  "key":"Vitamin B3",
-                  "val":"Helps your body to use protein, fat and carbohydrate to make energy"
-               },{  
-                  "key":"Vitamin B6",
-                  "val":"Helps form hemoglobin which carries oxygen"
-               },{  
-                  "key":"Vitamin B12",
-                  "val":"Helps to make healthy blood cells"
-               },{  
-                  "key":"Vitamin C",
-                  "val":"May help prevent cell damage and reduce risk for certain "
-               },{  
-                  "key":"Vitamin D",
-                  "val":"Making Bone & Teeth stronger and healthier"
-               },{  
-                  "key":"Vitamin E",
-                  "val":"Helps to maintain a healthy immune system"
-               },{  
-                  "key":"Vitamin K",
-                  "val":"Makes proteins that cause our blood to clot"
-               }]
-        }
+    "sections": {
+        "Source": [{
+                "key": "Vitamin A",
+                "val": "Liver,fish,milk,cheese "
+            },{
+                "key": "Vitamin B1",
+                "val": "Grains,liver,pork,dried beans"
+            },{
+                "key": "Vitamin B2",
+                "val": "Soybeans,meat,poultry,liver,eggs"
+            },{
+                "key": "Vitamin B3",
+                "val": "Mushrooms,peanut butter,meat,fish,"
+            },{
+                "key": "Vitamin B6",
+                "val": "Potatoes,bananas"
+            },{
+                "key": "Vitamin B12",
+                "val": "Milk,cheese,yogurt,fortified soy"
+            },{
+                "key": "Vitamin C",
+                "val": "Citrus fruits"
+            },{
+                "key": "Vitamin D",
+                "val": "Fish,eggs,organ meats,fish,liver oils"
+            },{
+                "key": "Vitamin E",
+                "val": "Vegetable oils,avocados,leafy green vegetables"
+            },{
+                "key": "Vitamin K",
+                "val": "Broccoli.soybeans.dark green leafy vegetables"
+            }],
+        "Benefits":[{
+                "key": "Vitamin A",
+                "val": "Prevents night blindness"
+            },{
+                "key": "Vitamin B1",
+                "val": "Helps with energy production in your body"
+            },{
+                "key": "Vitamin B2",
+                "val": "Helps with energy production in your body"
+            },{
+                "key": "Vitamin B3",
+                "val": "Use protein, fat and carbohydrate to make energy"
+            },{
+                "key": "Vitamin B6",
+                "val": "Form haemoglobin which carries oxygen"
+            },{
+                "key": "Vitamin B12",
+                "val": "Make healthy blood cells"
+            },{
+                "key": "Vitamin C",
+                "val": "Prevent cell damage"
+            },{
+                "key": "Vitamin D",
+                "val": "Make Bone & Teeth stronger and healthier"
+            },{
+                "key": "Vitamin E",
+                "val": "Maintain a healthy immune system"
+            },{
+                "key": "Vitamin K",
+                "val": "Makes proteins that cause our blood to clot"
+            }]
+    }
 }
