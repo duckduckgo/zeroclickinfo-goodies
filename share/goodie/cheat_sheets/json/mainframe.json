@@ -203,7 +203,7 @@
         "Time Sharing Option/Extensions (TSO/E)": [
             {
                 "key": "SYNC",
-                "val": "command to initialize SYS1.BRODCAST data set and to synchronize it with the RACF data set, SYS1.UADS, or both"
+                "val": "Command to initialize SYS1.BRODCAST data set and to synchronize it with the RACF data set, SYS1.UADS, or both"
             },
             {
                 "key": "SHOWMVS",
