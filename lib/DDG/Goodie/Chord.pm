@@ -13,7 +13,9 @@ secondary_example_queries "Ebmaj7 uke chord";
 category "reference";
 topics "music";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Chord.pm";
-attribution github => ["GitHubAccount", "gerhuyy", "charles-l"];
+attribution github => ["http://github.com/gerhuyy", "gerhuyy"],
+            web    => ["http://charliethe.ninja", "charles-l"],
+            github => ["http://github.com/charles-l", "charles-l"];
 
 
 triggers any => "chord", "tab";
