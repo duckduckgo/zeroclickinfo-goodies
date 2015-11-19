@@ -197,7 +197,15 @@ handle remainder => sub {
 	    return 'chord', structured_answer => {
 		    id => 'chord',
 		       name => 'Music',
-		       data => {width => $width, string_height=> $string_height, num_frets=>$length, num_strings => $strings, height => $height, points=>[@fret], input=>$input},
+		       data => {
+                           width => $width,
+                           string_height=> $string_height,
+                           num_frets=>$length,
+                           num_strings => $strings,
+                           height => $height,
+                           points=>[@fret],
+                           input=>$input
+                       },
 		       templates => {
 			       group => 'base',
 			       item  => 0,
