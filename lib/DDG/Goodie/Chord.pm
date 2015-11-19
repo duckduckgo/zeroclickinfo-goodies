@@ -76,16 +76,19 @@ sub items{
     if(/( |^)(5|7|9)th( |$)/i){
         ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)th( |$)/i;
     }
-    $mod =  $mod ? ($mod eq "sharp" ? 1 : ($mod eq "b" ? -1 : 0)) : 0;
+    my %mod_hash = (sharp => 1, b => -1);
+    if (defined $mod) {
+        $mod = $mod_hash{$mod} || 0;
+    }
     my @chordList = grep($chords{$_}, @words);
     if(defined $chordList[0]){
         $chord = $chordList[0];
     }elsif(defined $chord && ($chord eq "m" || $chord =~ /(min|minor)/i)){
-            $chord = "minor";
+        $chord = "minor";
     }elsif(defined $chord && ($chord eq "M" || $chord =~ /(maj|major)/i)){
-            $chord = "major";
+        $chord = "major";
     }elsif(defined $chord && $chord =~ /sus[24]/i){
-            $chord = lc $chord;
+        $chord = lc $chord;
     }elsif($dom){
         $chord = "dominant";
     }else{
@@ -174,48 +177,48 @@ handle remainder => sub {
         my @keys = @{$chords{$chord_name}};
         splice(@keys, ($dom+1)/2);
         my @values = chord($notes{lc $key_name}+$mod, \@keys);
-        my @frets = all_frets($instruments{$instr_name}, \@values);
-        my $strings = 0+@{$instruments{$instr_name}};
-        splice(@frets, int(@frets/$strings)*$strings);
-        my @texts;
-        for(my $i = 0; $i < @frets; $i += $strings){
-            my @fret = @frets[$i .. $strings + $i - 1];
-	    my $length = maximum(@fret, (4));
-	    my $width = (@fret * 16);
-	    my $height = ($length * 25)+5;
-	    my $string_height = (($length * 25));
+    my @frets = all_frets($instruments{$instr_name}, \@values);
+my $strings = 0+@{$instruments{$instr_name}};
+splice(@frets, int(@frets/$strings)*$strings);
+my @texts;
+for(my $i = 0; $i < @frets; $i += $strings){
+    my @fret = @frets[$i .. $strings + $i - 1];
+    my $length = maximum(@fret, (4));
+    my $width = (@fret * 16);
+    my $height = ($length * 25)+5;
+    my $string_height = (($length * 25));
 
-            push(@texts, join("-", @fret));
-	    my $text = join(", ", @texts);
+    push(@texts, join("-", @fret));
+    my $text = join(", ", @texts);
 
-	    foreach (@fret) {$_ = 120 - ($_ * 25) if $_ != 0;}
-	    foreach (@fret) {$_ += 0;} # <- KEEP THIS! Otherwise Perl converts 0 to a string. Why? Not a clue.
+    foreach (@fret) {$_ = 120 - ($_ * 25) if $_ != 0;}
+    foreach (@fret) {$_ += 0;} # <- KEEP THIS! Otherwise Perl converts 0 to a string. Why? Not a clue.
 
-	    my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )),
-			    $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
-	    my $type = ucfirst($instr_name) . " Chord";
-	    return 'chord', structured_answer => {
-		    id => 'chord',
-		       name => 'Music',
-		       data => {
-                           width => $width,
-                           string_height=> $string_height,
-                           num_frets=>$length,
-                           num_strings => $strings,
-                           height => $height,
-                           points=>[@fret],
-                           input=>$input
-                       },
-		       templates => {
-			       group => 'base',
-			       item  => 0,
-			       options => {
-				       content => 'DDH.chord.detail'
-			       }
-		       },
-		       meta => {}
-	    };
-	};
+    my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )),
+        $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
+    my $type = ucfirst($instr_name) . " Chord";
+    return 'chord', structured_answer => {
+        id => 'chord',
+        name => 'Music',
+        data => {
+            width => $width,
+            string_height=> $string_height,
+            num_frets=>$length,
+            num_strings => $strings,
+            height => $height,
+            points=>[@fret],
+            input=>$input
+        },
+        templates => {
+            group => 'base',
+            item  => 0,
+            options => {
+                content => 'DDH.chord.detail'
+            }
+        },
+        meta => {}
+    };
+};
     };
     return;
 };
