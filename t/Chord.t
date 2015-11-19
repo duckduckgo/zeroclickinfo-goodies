@@ -35,7 +35,7 @@ sub get_html_draw{
     return $final . "</div>\n";
 };
 ddg_goodie_test(
-    [qw(DDG::Goodie::Chord)],
+    [qw(DDG::Goodie::ChordDiagrams)],
     "C ukulele chord" => test_zci(
         "0-0-0-3",
         structured_answer => {

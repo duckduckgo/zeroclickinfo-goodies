@@ -1,9 +1,9 @@
-package DDG::Goodie::Chord;
+package DDG::Goodie::ChordDiagrams;
 # ABSTRACT: For getting the fingering for chords on popular strings instruments
 
 use DDG::Goodie;
 
-zci answer_type => "chord";
+zci answer_type => "chord_diagrams";
 zci is_cached   => 1;
 
 name "Chord";
@@ -199,7 +199,7 @@ handle remainder => sub {
             my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )),
                 $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
             my $type = ucfirst($instr_name) . " Chord";
-            return 'chord', structured_answer => {
+            return 'chord_diagrams', structured_answer => {
                 id => 'chord_diagrams',
                 name => 'Music',
                 data => {
@@ -215,7 +215,7 @@ handle remainder => sub {
                     group => 'base',
                     item  => 0,
                     options => {
-                        content => 'DDH.chord.detail'
+                        content => 'DDH.chord_diagrams.detail'
                     }
                 },
                 meta => {}
