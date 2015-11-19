@@ -7,12 +7,12 @@ zci answer_type => "chord";
 zci is_cached   => 1;
 
 name "Chord";
-description "Shows a tab representing the correct frets, for a given chord, on a given strings instrument";
 primary_example_queries "C ukulele chord", "F# minor guitar tab";
-secondary_example_queries "Ebmaj7 uke chord";
-category "reference";
-topics "music";
+secondary_example_queries "Ebmaj7 ukulele chord";
+description "Shows a tab representing the correct frets, for a given chord, on a given strings instrument";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Chord.pm";
+topics "music";
+category "reference";
 attribution github => ["http://github.com/gerhuyy", "gerhuyy"],
             web    => ["http://charliethe.ninja", "charles-l"],
             github => ["http://github.com/charles-l", "charles-l"];
@@ -179,48 +179,48 @@ handle remainder => sub {
         my @keys = @{$chords{$chord_name}};
         splice(@keys, ($dom+1)/2);
         my @values = chord($notes{lc $key_name}+$mod, \@keys);
-    my @frets = all_frets($instruments{$instr_name}, \@values);
-my $strings = 0+@{$instruments{$instr_name}};
-splice(@frets, int(@frets/$strings)*$strings);
-my @texts;
-for(my $i = 0; $i < @frets; $i += $strings){
-    my @fret = @frets[$i .. $strings + $i - 1];
-    my $length = maximum(@fret, (4));
-    my $width = (@fret * 16);
-    my $height = ($length * 25)+5;
-    my $string_height = (($length * 25));
+        my @frets = all_frets($instruments{$instr_name}, \@values);
+        my $strings = 0+@{$instruments{$instr_name}};
+        splice(@frets, int(@frets/$strings)*$strings);
+        my @texts;
+        for(my $i = 0; $i < @frets; $i += $strings){
+            my @fret = @frets[$i .. $strings + $i - 1];
+            my $length = maximum(@fret, (4));
+            my $width = (@fret * 16);
+            my $height = ($length * 25)+5;
+            my $string_height = (($length * 25));
 
-    push(@texts, join("-", @fret));
-    my $text = join(", ", @texts);
+            push(@texts, join("-", @fret));
+            my $text = join(", ", @texts);
 
-    foreach (@fret) {$_ = 120 - ($_ * 25) if $_ != 0;}
-    foreach (@fret) {$_ += 0;} # <- KEEP THIS! Otherwise Perl converts 0 to a string. Why? Not a clue.
+            foreach (@fret) {$_ = 120 - ($_ * 25) if $_ != 0;}
+            foreach (@fret) {$_ += 0;} # <- KEEP THIS! Otherwise Perl converts 0 to a string. Why? Not a clue.
 
-    my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )),
-        $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
-    my $type = ucfirst($instr_name) . " Chord";
-    return 'chord', structured_answer => {
-        id => 'chord',
-        name => 'Music',
-        data => {
-            width => $width,
-            string_height=> $string_height,
-            num_frets=>$length,
-            num_strings => $strings,
-            height => $height,
-            points=>[@fret],
-            input=>$input
-        },
-        templates => {
-            group => 'base',
-            item  => 0,
-            options => {
-                content => 'DDH.chord.detail'
-            }
-        },
-        meta => {}
-    };
-};
+            my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )),
+                $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
+            my $type = ucfirst($instr_name) . " Chord";
+            return 'chord', structured_answer => {
+                id => 'chord_diagrams',
+                name => 'Music',
+                data => {
+                    width => $width,
+                    string_height=> $string_height,
+                    num_frets=>$length,
+                    num_strings => $strings,
+                    height => $height,
+                    points=>[@fret],
+                    input=>$input
+                },
+                templates => {
+                    group => 'base',
+                    item  => 0,
+                    options => {
+                        content => 'DDH.chord.detail'
+                    }
+                },
+                meta => {}
+            };
+        };
     };
     return;
 };
