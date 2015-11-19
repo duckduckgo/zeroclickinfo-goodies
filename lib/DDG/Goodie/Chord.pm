@@ -196,7 +196,7 @@ handle remainder => sub {
 	    my $type = ucfirst($instr_name) . " Chord";
 	    return 'chord', structured_answer => {
 		    id => 'chord',
-		       name => 'chord',
+		       name => 'Music',
 		       data => {width => $width, string_height=> $string_height, num_frets=>$length, num_strings => $strings, height => $height, points=>[@fret], input=>$input},
 		       templates => {
 			       group => 'base',
