@@ -2,10 +2,10 @@
     "id": "jira_cheat_sheet",
     "name": "JIRA",
     "metadata": {
-        "sourceName": "cheatography",
+        "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/ovi-mihai/cheat-sheets/jira/"
     },
-    "template_type": "reference",
+    "template_type": "keyboard",
     "section_order": [
         "Global",
         "Navigating Issues",
@@ -19,146 +19,146 @@
     "sections": {
         "Global": [
             {
-                "key": "Quick Search",
-                "val": "/"
+                "val": "Quick Search",
+                "key": "/"
             },
             {
-                "key": "Quick Operations",
-                "val": ". "
+                "val": "Quick Operations",
+                "key": ". "
             },
             {
-                "key": "Create Issue",
-                "val": "c"
+                "val": "Create Issue",
+                "key": "c"
             },
             {
-                "key": "Next Item",
-                "val": "j"
+                "val": "Next Item",
+                "key": "j"
             },
             {
-                "key": "Previous Item",
-                "val": "p"
+                "val": "Previous Item",
+                "key": "p"
             },
             {
-                "key": "Dashboard",
-                "val": "g d"
+                "val": "Dashboard",
+                "key": "g d"
             },
             {
-                "key": "Browse a Project",
-                "val": "g p"
+                "val": "Browse a Project",
+                "key": "g p"
             },
             {
-                "key": "Agile",
-                "val": "g a"
+                "val": "Agile",
+                "key": "g a"
             },
             {
-                "key": "Find Issues",
-                "val": "g i"
+                "val": "Find Issues",
+                "key": "g i"
             },
             {
-                "key": "Adm Quick Search",
-                "val": "g g"
+                "val": "Adm Quick Search",
+                "key": "g g"
             },
             {
-                "key": "Submit Form",
-                "val": "Ctrl + s"
+                "val": "Submit Form",
+                "key": "Ctrl + s"
             },
             {
-                "key": "Help",
-                "val": "?"
+                "val": "Help",
+                "key": "?"
             }
         ],
         "Navigating Issues": [
             {
-                "key": "View selected",
-                "val": "o or Enter"
+                "val": "View selected",
+                "key": "o or Enter"
             },
             {
-                "key": "Next Issue",
-                "val": "j"
+                "val": "Next Issue",
+                "key": "j"
             },
             {
-                "key": "Previous Issue",
-                "val": "k"
+                "val": "Previous Issue",
+                "key": "k"
             },
             {
-                "key": "Assign to me",
-                "val": "i"
+                "val": "Assign to me",
+                "key": "i"
             },
             {
-                "key": "Assign",
-                "val": "a"
+                "val": "Assign",
+                "key": "a"
             },
             {
-                "key": "Dock/U­ncock Filters",
-                "val": "["
+                "val": "Dock/U­ncock Filters",
+                "key": "["
             },
             {
-                "key": "Next Activity",
-                "val": "n"
+                "val": "Next Activity",
+                "key": "n"
             },
             {
-                "key": "Previous Activity",
-                "val": "p"
+                "val": "Previous Activity",
+                "key": "p"
             },
             {
-                "key": "Switch filter view",
-                "val": "t"
+                "val": "Switch filter view",
+                "key": "t"
             }
         ],
         "Agile": [
             {
-                "key": "Plan",
-                "val": "1"
+                "val": "Plan",
+                "key": "1"
             },
             {
-                "key": "Work",
-                "val": "2"
+                "val": "Work",
+                "key": "2"
             },
             {
-                "key": "Report",
-                "val": "3"
+                "val": "Report",
+                "key": "3"
             },
             {
-                "key": "Presen­tation mode",
-                "val": "z"
+                "val": "Presen­tation mode",
+                "key": "z"
             },
             {
-                "key": "Next Column",
-                "val": "n"
+                "val": "Next Column",
+                "key": "n"
             },
             {
-                "key": "Previous Column",
-                "val": "p"
+                "val": "Previous Column",
+                "key": "p"
             },
             {
-                "key": "Hide/Show Details",
-                "val": "t"
+                "val": "Hide/Show Details",
+                "key": "t"
             }
         ],
         "Issue Actions": [
             {
-                "key": "Edit Issue",
-                "val": "e"
+                "val": "Edit Issue",
+                "key": "e"
             },
             {
-                "key": "Assign issue",
-                "val": "a"
+                "val": "Assign issue",
+                "key": "a"
             },
             {
-                "key": "Comment",
-                "val": "m"
+                "val": "Comment",
+                "key": "m"
             },
             {
-                "key": "Edit Labels",
-                "val": "l"
+                "val": "Edit Labels",
+                "key": "l"
             },
             {
-                "key": "Jump to fields for editing",
-                "val": ","
+                "val": "Jump to fields for editing",
+                "key": ","
             },
             {
-                "key": "Assign To Me",
-                "val": "i"
+                "val": "Assign To Me",
+                "key": "i"
             }
         ]
     }
