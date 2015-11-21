@@ -21,7 +21,7 @@ pppppppp
 - - - - 
 PPPPPPPP
 [QRBKN]{1,8}$/,
-            html    => qr/^<div class="zci--fenviewer"><table class="chess_board" cellpadding="0" cellspacing="0">(<tr>(<td id="[A-H][1-8]"><a href="#" class="[a-z ]*">.*<\/a><\/td>){1,8}<\/tr>){1,8}<\/table><\/div>$/,
+            html    => qr/^<div class="zci--fenviewer"><table class="chess_board" cellpadding="0" cellspacing="0">(<tr>(<td id="[A-H][1-8]"><a class="[a-z ]*">.*<\/a><\/td>){1,8}<\/tr>){1,8}<\/table><\/div>$/,
             heading => qr/^Position \d+ \(Chess960\)$/,
         )
     } ('random chess960 position', 'chess960 random')
