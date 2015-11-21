@@ -1,162 +1,233 @@
 {
     "id": "ubuntu_cheat_sheet",
-    "name": "Ubuntu Unity",
-    "description": "Linux Ubuntu Unity default keyboard shortcuts.",
-    "template_type": "keyboard",
+    "name": "Linux Ubuntu",
+    "description": "Ubuntu Reference",
+    "metadata": {
+        "sourceName": "Ubuntu Unity",
+        "sourceUrl": "http://www.cheat-sheets.org/saved-copy/ubunturef.pdf"
+    },
+     "aliases": [
+        "ubuntu unity", "unity ubuntu cheat sheet", "unity ubuntu"
+    ],
+    "template_type": "terminal",
     "section_order": [
-        "Launcher",
-        "HUD",
-        "Switching",
-        "Windows",
-        "System",
-        "Screenshots"
+        "Privileges",
+        "Display",
+        "System Services",
+        "Package Management",
+        "Network",
+        "Special Packages",
+        "Firewall",
+        "Application Names",
+        "System"
     ],
     "sections": {
-        "Dash": [
-            {
-                "key": "[Super]",
-                "val": "Opens Dash"
-            },
-            {
-                "key": "[Super] [A]",
-                "val": "Opens Dash App Lens"
-            },
-            {
-                "key": "[Super] [F]",
-                "val": "Opens Dash File Lens"
-            },
-            {
-                "key": "[Super] [M]",
-                "val": "Opens Dash Music Lens"
-            },
-            {
-                "key": "[Super] [C]",
-                "val": "Opens Dash Photo Lens"
-            },
-            {
-                "key": "[Super] [V]",
-                "val": "Opens Dash Video Lens"
-            },
-            {
-                "key": "[Ctrl] [Tab]",
-                "val": "Switch between Dash Lenses"
-            }
-        ],
-        "Launcher": [
-            {
-                "key": "[Super] (Hold)",
-                "val": "Display shortcuts list"
-            },
-            {
-                "key": "[Alt] [F1]",
-                "val": "Navigate Launcher with Keys"
-            },
-            {
-                "key": "[Super] [Tab]",
-                "val": "Switches applications via launcher."
-            },
-            {
-                "key": "[Super] [1 to 9]",
-                "val": "Open application from launcher icon."
-            },
-            {
-                "key": "[Super] [Shift] [1 to 9]",
-                "val": "Open new window in application."
-            }
-        ],
-        "HUD": [
-            {
-                "key": "Alt",
-                "val": "Open HUD"
-            },
-            {
-                "key": "[Alt] [F10]",
-                "val": "Opens Indicator Menu (move between indicators with arrow keys)"
-            }
-        ],
-        "Switching": [
-            {
-                "key": "[Alt] [Tab]",
-                "val": "Switch between open applications. (Tap Tab or ←/→ to move)"
-            },
-            {
-                "key": "[Alt] [`]",
-                "val": "Switch between windows in applciation. (Tap ` or ←/→ to move)"
-            }
-        ],
-        "Windows": [
-            {
-                "key": "[Super] [W]",
-                "val": "Spread all windows."
-            },
-            {
-                "key": "[Ctrl] [Super] [D]",
-                "val": "Go to Desktop (minimize all windows)."
-            },
-            {
-                "key": "[Ctrl] [Super] ([←]/[→])",
-                "val": "Dock Window to left or right side of screen."
-            },
-            {
-                "key": "[Alt] [F4]",
-                "val": "Closes current window."
-            },
-            {
-                "key": "[Alt] [Space]",
-                "val": "Opens the window accessability menu."
-            },
-            {
-                "key": "[Ctrl] [Alt] [Num (numpad)]",
-                "val": "Places the window in the corresponding position."
-            },
-            {
-                "key": "[Alt] [Left Mouse Drag]",
-                "val": "Moves the window."
-            },
-            {
-                "key": "[Alt] [Middle Mouse Drag]",
-                "val": "Resizes the window."
-            }
-        ],
-        "System": [
-            {
-                "key": "[Ctrl] [Alt] [T]",
-                "val": "Show Terminal."
-            },
-            {
-                "key": "[Ctrl] [Alt] [Delete]",
-                "val": "Logout"
-            },
-            {
-                "key": "[Ctrl] [Alt] [L]",
-                "val": "Lock Screen"
-            }
-        ],
-        "Screenshots": [
-            {
-                "key": "Print",
-                "val": "Take a screenshot."
-            },
-            {
-                "key": "[Alt] [Print]",
-                "val": "Take a screenshot of a window."
-            },
-            {
-                "key": "[Shift] [Print]",
-                "val": "Take a screenshot of an area."
-            },
-            {
-                "key": "[Ctrl] [Print]",
-                "val": "Copy screenshot to clipboard."
-            },
-            {
-                "key": "[Ctrl] [Alt] [Print]",
-                "val": "Copy screenshot of a window to clipboard."
-            },
-            {
-                "key": "[Ctrl] [Shift] [Print]",
-                "val": "Copy screenshot of an area to clipboard."
-            }
-        ]
+        "Privileges": [{
+            "val": "Run command as root ",
+            "key": "sudo command"
+        },  {
+            "val": "Open a root shell",
+            "key": "sudo -s"
+        },  {
+            "val": "Open a shell as user",
+            "key": "sudo -s -u user"
+        },  {
+            "val": "Forget sudo passwords",
+            "key": "sudo -k"
+        },  {
+            "val": "Visual sudo dialog (GNOME)",
+            "key": "gksudo command"
+        },  {
+            "val": "Visual sudo dialog (KDE)",
+            "key": "kdesudo command"
+        },  {
+            "val": "Edit /etc/sudoers",
+            "key": "sudo visudo"
+        },  {
+            "val": "Root file manager (GNOME)",
+            "key": "gksudo nautilus"
+        },  {
+            "val": "Root file manager (KDE)",
+            "key": "kdesudo konqueror"
+        },  {
+            "val": "Change your password",
+            "key": "passwd"
+        }],
+        "Display": [{
+            "val": "Restart X and return to login (GNOME)",
+            "key": "sudo /etc/init.d/gdm restart"
+        }, {
+            "val": "Restart X and return to login (KDE)",
+            "key": "sudo /etc/init.d/kdm restart"
+        }, {
+            "val": "Display configuration",
+            "key": "(file) /etc/X11/xorg.conf"
+        }, {
+            "val": "Reset xorg.conf configuration",
+            "key": "sudo dexconf"
+        }],
+        "System Services": [{
+            "val": "Start job service (Upstart)",
+            "key": "start service"
+        }, {
+            "val": "Stop job service (Upstart)",
+            "key": "stop service"
+        }, {
+            "val": "Check if service is running (Upstart)",
+            "key": "status service"
+        }, {
+            "val": "Start service(SysV)",
+            "key": "/etc/init.d/service start"
+        }, {
+            "val": "Stop service (SysV)",
+            "key": "/etc/init.d/service stop"
+        }, {
+            "val": "Check service (SysV)",
+            "key": "/etc/init.d/service status"
+        }, {
+            "val": "Restart service (SysV)",
+            "key": "/etc/init.d/service restart"
+        },  {
+            "val": "Get current runlevel",
+            "key": "runlevel"
+        }],
+        "Package Management": [{
+            "val": "Refresh available updates",
+            "key": "apt-get update"
+        }, {
+            "val": "Upgrade all packages",
+            "key": "apt-get upgrade"
+        }, {
+            "val": "Upgrade with package replacements; upgrade Ubuntu version",
+            "key": "apt-get dist-upgrade"
+        }, {
+            "val": "Install pkg",
+            "key": "apt-get install pkg"
+        }, {
+            "val": "Uninstall pkg",
+            "key": "apt-get purge pkg"
+        }, {
+            "val": "Remove obsolete packages",
+            "key": "apt-get autoremove"
+        }, {
+            "val": "Try to fix broken packages",
+            "key": "apt-get -f install"
+        }, {
+            "val": "Try to fix broken packages",
+            "key": "dpkg --configure -a"
+        }, {
+            "val": "Install file pkg.deb",
+            "key": "dpkg -i pkg.deb"
+        }, {
+            "val": "APT repository list",
+            "key": "(file) /etc/apt/sources.list"
+        }],
+        "Network": [{
+            "val": "Show network information",
+            "key": "ifconfig"
+        }, {
+            "val": "Show wireless information",
+            "key": "iwconfig"
+        }, {
+            "val": "Scan for wireless networks",
+            "key": "sudo iwlist scan"
+        }, {
+            "val": "Reset network for manual configurations",
+            "key": "sudo /etc/init.d/networking restart"
+        }, {
+            "val": "Manual configuration",
+            "key": "(file) /etc/network/interfaces"
+        }, {
+            "val": "Bring interface online",
+            "key": "ifup interface"
+        }, {
+            "val": "Disable interface",
+            "key": "ifdown interface"
+        }],
+        "Special Packages": [{
+            "val": "Standard Ubuntu environment",
+            "key": "ubuntu-desktop"
+        }, {
+            "val": "KDE desktop",
+            "key": "kubuntu-desktop"
+        }, {
+            "val": "XFCE desktop",
+            "key": "xubuntu-desktop"
+        }, {
+            "val": "Core Ubuntu utilities",
+            "key": "ubuntu-minimal"
+        }, {
+            "val": "Standard Ubuntu utilities",
+            "key": "ubuntu-standard"
+        }, {
+            "val": "Non-free, but useful",
+            "key": "ubuntu-restricted-extras"
+        }, {
+            "val": "KDE of the above",
+            "key": "kubuntu-restricted-extras"
+        }, {
+            "val": "Packages used to compile programs",
+            "key": "xubuntu-restricted-extras"
+        }, {
+            "val": "Latest generic kernel image",
+            "key": "linux-image-generic"
+        }, {
+            "val": "Latest build headers",
+            "key": "linux-headers-generic"
+        }],
+        "Firewall": [{
+            "val": "Turn on the firewall",
+            "key": "ufw enable"
+        }, {
+            "val": "Turn off the firewall",
+            "key": "ufw disable"
+        }, {
+            "val": "Allow all connections by default",
+            "key": "ufw default allow"
+        }, {
+            "val": "Drop all connections by default",
+            "key": "ufw default deny"
+        }, {
+            "val": "Current status and rules",
+            "key": "ufw status"
+        }, {
+            "val": "Allow traffic on port",
+            "key": "ufw allow port"
+        }, {
+            "val": "Block port",
+            "key": "ufw deny port"
+        }, {
+            "val": "Block ip adress",
+            "key": "ufw deny from ip"
+        }],
+        "Application Names": [{
+            "val": "File manager (GNOME)",
+            "key": "nautilus"
+        }, {
+            "val": "File manager (KDE)",
+            "key": "dolphin"
+        }, {
+            "val": "Web browser (KDE)",
+            "key": "konqueror"
+        }, {
+            "val": "Text editor (KDE)",
+            "key": "kate"
+        }, {
+            "val": "Text editor (GNOME)",
+            "key": "gedit"
+        }],
+        "System": [{
+            "val": "Type the phrase REISUB while holding down Alt and SysRq (PrintScrn) with about 1 second between each letter. Your system will reboot",
+            "key": "Recovery"
+        }, {
+            "val": "Get Ubuntu version",
+            "key": "lsb_release -a"
+        }, {
+            "val": "Get kernel version",
+            "key": "uname -r"
+        }, {
+            "val": "Get all kernel information",
+            "key": "uname -a"
+        }]
     }
 }

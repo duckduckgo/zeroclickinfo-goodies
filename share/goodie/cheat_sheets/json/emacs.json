@@ -86,6 +86,9 @@
         }, {
             "val": "Move to the end of a buffer",
             "key": "M->"
+        }, {
+            "val": "Go to line number #",
+            "key": "[M-g], [g], [#]"
         }],
         "Editing": [{
             "val": "Delete a character (forward)",

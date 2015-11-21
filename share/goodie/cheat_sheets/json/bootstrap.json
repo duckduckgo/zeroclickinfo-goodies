@@ -1,0 +1,143 @@
+{
+    "id": "bootstrap_cheat_sheet",
+    "name": "Bootstrap",
+    "description": "Explanation of Bootstrap Classes",
+    "metadata": {
+        "sourceName": "Bootstrap",
+        "sourceUrl": "http://getbootstrap.com/"
+    },
+    "aliases": [
+        "twitter front end framework", "twitter blueprint", "twitter bootstrap", "bootstrap framework"
+    ],
+    "template_type": "code",
+    "section_order": [
+        "Bootstrap Grid System",
+        "Navbars",
+        "Tables",
+        "Buttons",
+        "Images"
+    ],
+    "sections": {
+        "Bootstrap Grid System": [{
+            "val": "Sets one fixed width for each screen size in bootstrap (xs,sm,md,lg)",
+            "key": ".container"  
+        }, {             
+            "val": "Expands screen to fill the available widthe",
+            "key": ".container-fluid"
+        }, {
+            "val": "Containers of columns",
+            "key": ".row"  
+        }, {
+            "val": "For extra small devices phones (<768px)" ,
+            "key": ".col-xs-"  
+        }, {
+            "val": "For small devices tablets (≥768px)",
+            "key": ".col-sm-"  
+        }, {
+            "val": "For medium devices desktops (≥992px)",
+            "key": ".col-md-"  
+        }, {
+            "val": "For large devices desktops (≥1200px)",
+            "key": ".col-lg-"  
+        }],
+        "Navbars": [{
+            "val": "Standard navigation bar",
+            "key": ".navbar-default"
+        }, {
+            "val": "Black navigation bar",
+            "key": ".navbar-inverse"
+        }, {
+            "val": "Navigation bar fixed at the top",
+            "key": ".navbar-fixed-top"
+        }, {
+            "val": "Navigation bar stay at the bottom",
+            "key": ".navbar-fixed-bottom"
+        }, {
+            "val": "Aligns navigation bar buttons to the right",
+            "key": ".navbar-right"
+        }, {
+            "val": "Creates vertical navigation pills",
+            "key": ".nav-pills"
+        }, {
+            "val": "Creates vertical navigation pills",
+            "key": ".nav-stacked"
+        }, {
+            "val": "Creates navigation tabs",
+            "key": ".nav-tabs"
+        }, {
+            "val": "Makes navigation tabs/pills equal widths of their parent",
+            "key": ".nav-justified"
+        }, {
+            "val": "Indicates a unclickable tab/pill",
+            "key": ".disabled"
+        }],
+        "Tables": [{
+            "val": "Adds basic styling to a table",
+            "key": ".table"
+        }, {
+            "val": "Adds zebra-stripes to a table",
+            "key": ".table-striped"
+        }, {
+            "val": "Adds borders on all sides of the table and cells",
+            "key": ".table-bordered"
+        }, {
+            "val": "Enables a hover state on table rows",
+            "key": ".table-hover"
+        }, {
+            "val": "Makes a table more compact by cutting cell padding in half",
+            "key": ".table-condensed"
+        }, {
+            "val": "Creates a responsive table.",
+            "key": ".table-responsive"
+         
+        }],
+        "Buttons": [{
+            "val": "Adds basic styling to any button",
+            "key": ".btn"
+        }, {
+            "val": "Creates large button",
+            "key": ".btn-lg"
+        }, {
+            "val": "Creates medium button",
+            "key": ".btn-md"
+        }, {
+            "val": "Creates small button",
+            "key": ".btn-sm"
+        }, {
+            "val": "Creates medium button",
+            "key": ".btn-xs"
+        }, {
+            "val": "Makes a button appear pressed",
+            "key": ".active"
+        }, {
+            "val": "Makes a button unclickable",
+            "key": ".disabled"
+        }, {
+            "val": "Creates a button group",
+            "key": ".btn-group"
+        }, {
+            "val": "Create a vertical button group",
+            "key": ".btn-group-vertical"
+        }, {
+            "val": "Span buttons to the entire width of the screen",
+            "key": ".btn-group-justified"
+        }],
+        "Images": [{
+            "val": "Adds rounded corners to an image",
+            "key": ".img-rounded"
+        }, {
+            "val": "Shapes the image to a circle",
+            "key": ".img-circle"
+        }, {
+            "val": "Shapes the image to a thumbnail",
+            "key": ".img-thumbnail"
+        }, {
+            "val": "Creates responsive images",
+            "key": ".img-responsive"
+        }, {
+            "val": "Creates an image gallery",
+            "key": ".thumbnail"
+        }]
+
+    }
+}
