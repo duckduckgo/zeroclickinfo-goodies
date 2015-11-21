@@ -90,7 +90,7 @@
             },
             {
                 "key" : "Where is the hospital?",
-                "val" : "Հիւանդանոցը ո՞ւր է",
+                "val" : "Հիւանդանոցը ո՞ւր է:",
                 "trn" : "Heevon-tah-no-tzuh oor eh?"
             }
         ],
@@ -102,12 +102,12 @@
             },
             {
                 "key" : "I'm fine, thanks.  And you?",
-                "val" : "Լաւ եմ, շնորհակալ եմ: Եւ դուք ինչպէ՞ս էք",
-                "trn" : "Laav em, shnor-hagal em. Yev took inch bess ek?"
+                "val" : "Լաւ եմ, մերսի: Դուք ինչպէ՞ս էք:",
+                "trn" : "Laav em,  mer-see. Took inch bess ek?"
             },
             {
                 "key" : "How are you?",
-                "val" : "Ինչպէ՞ս էք",
+                "val" : "Ինչպէ՞ս էք:",
                 "trn" : "Inch bess ek"
             },
             {
@@ -122,29 +122,29 @@
             },
             {
                 "key" : "What's your name?",
-                "val" : "Ձեր անունը ի՞նչ է",
+                "val" : "Ձեր անունը ի՞նչ է:",
                 "trn" : "Tzer a-noo-nuh inch eh"
             }
         ],
         "Travelling" : [
             {
                 "key" : "Do you speak English?",
-                "val" : "Անգլիերէն կը խօսի՞ք",
+                "val" : "Անգլիերէն կը խօսի՞ք:",
                 "trn" : "Ahnc-laren guh kho-seek?"
             },
             {
                 "key" : "Would you help me please?",
-                "val" : "Հաճիս ինծի կրնա՞ք օգնել",
+                "val" : "Հաճիս ինծի կրնա՞ք օգնել:",
                 "trn" : "Huh-jees intzi guhr-nuck ok-nell?"
             },
             {
                 "key" : "Where is the toilet?",
-                "val" : "Պէտքարանը ո՞ւր է",
+                "val" : "Պէտքարանը ո՞ւր է:",
                 "trn" : "Bed-kara-nuh oor eh?"
             },
             {
                 "key" : "How much is this?",
-                "val" : "Ասիկա ինչքա՞ն կ'արժէ",
+                "val" : "Ասիկա ինչքա՞ն կ'արժէ:",
                 "trn" : "Asee-guh inch-kun gar-zheh?"
             },
             {
@@ -154,29 +154,29 @@
             },
             {
                 "key" : "What time does the shop open?",
-                "val" : "Ժամը քանի՞ին խանութը կը բացվի՞",
+                "val" : "Ժամը քանի՞ին խանութը կը բացվի:",
                 "trn" : "Shum-uh kun-ee-in kha-noo-tuh guh patzwee?"
             },
             {
                 "key" : "What time does the shop close?",
-                "val" : "Ժամը քանի՞ին խանութը կը գոցվի՞",
+                "val" : "Ժամը քանի՞ին խանութը կը գոցվի:",
                 "trn" : "Shum-uh kun-ee-in kha-noo-tuh guh kotzvee?"
             },
             {
                 "key" : "Could you talk a bit slower?",
-                "val" : "Հաճիս աւելի կամաց կրնա՞ք խօսիլ",
+                "val" : "Հաճիս աւելի կամաց կրնա՞ք խօսիլ:",
                 "trn" : "Huhjees ave-lee ga-matz guhr-nock khoseel?"
             },
             {
                 "key" : "Could you repeat that please?",
-                "val" : "Հաճիս կրնա՞ք կրկնել",
+                "val" : "Հաճիս կրնա՞ք կրկնել:",
                 "trn" : "Huhjees guhr-nock gurg-nell?"
             }
         ],
         "Going out for dinner" : [
             {
                 "key" : "Do you have vegetarian dishes?",
-                "val" : "Միայն բանջարեղէնով կերակուր ո՞ւնիք",
+                "val" : "Միայն բանջարեղէնով կերակուր ո՞ւնիք:",
                 "trn" : "Mee-uhyn pun-chuh-reh-gheh-nov gue-ruh-goor oo-nik?"
             },
             {
@@ -201,7 +201,7 @@
             },
             {
                 "key" : "Where is a good restaurant?",
-                "val" : "Լաւ ճաշարան մը ուր կը գտնուի",
+                "val" : "Լաւ ճաշարան մը ո՞ւր կը գտնուի:",
                 "trn" : "Lav juh-shu-run muh oor guh kuhd-nuh-vee?"
             },
             {
@@ -211,7 +211,7 @@
             },
             {
                 "key" : "Can I get a menu, please",
-                "val" : "Ճաշացուցակ, խնդրեմ",
+                "val" : "Ճաշացուցակ, խնդրեմ:",
                 "trn" : "Juh-sha-tzoo-tzug, khuhn-trem"
             }
         ]
