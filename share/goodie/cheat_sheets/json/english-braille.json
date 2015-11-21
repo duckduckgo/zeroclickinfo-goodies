@@ -1,6 +1,7 @@
 {
     "id": "english_braille_cheat_sheet",
     "name": "English Braille",
+    "description": "English Braille, also known as Grade-2 Braille,is the braille alphabet used for English",
     "metadata": {
         "sourceName": "EnglishBraille",
         "sourceUrl": "https://en.wikipedia.org/wiki/English_braille"
