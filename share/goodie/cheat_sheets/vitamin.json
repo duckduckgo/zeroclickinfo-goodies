@@ -14,34 +14,34 @@
     "sections": {
         "Source": [{
                 "key": "Vitamin A",
-                "val": "Liver,fish,milk,cheese "
+                "val": "Liver, fish, milk, cheese "
             },{
                 "key": "Vitamin B1",
-                "val": "Grains,liver,pork,dried beans"
+                "val": "Grains, liver, pork, dried beans"
             },{
                 "key": "Vitamin B2",
-                "val": "Soybeans,meat,poultry,liver,eggs"
+                "val": "Soybeans, meat, poultry, liver, eggs"
             },{
                 "key": "Vitamin B3",
-                "val": "Mushrooms,peanut butter,meat,fish,"
+                "val": "Mushrooms, peanut butter, meat, fish"
             },{
                 "key": "Vitamin B6",
-                "val": "Potatoes,bananas"
+                "val": "Potatoes, bananas"
             },{
                 "key": "Vitamin B12",
-                "val": "Milk,cheese,yogurt,fortified soy"
+                "val": "Milk, cheese, yogurt, fortified soy"
             },{
                 "key": "Vitamin C",
                 "val": "Citrus fruits"
             },{
                 "key": "Vitamin D",
-                "val": "Fish,eggs,organ meats,fish,liver oils"
+                "val": "Fish, eggs, organ meats, fish, liver oils"
             },{
                 "key": "Vitamin E",
-                "val": "Vegetable oils,avocados,leafy green vegetables"
+                "val": "Vegetable oils, avocados, leafy green vegetables"
             },{
                 "key": "Vitamin K",
-                "val": "Broccoli.soybeans.dark green leafy vegetables"
+                "val": "Broccoli, soybeans, dark green leafy vegetables"
             }],
         "Benefits":[{
                 "key": "Vitamin A",
