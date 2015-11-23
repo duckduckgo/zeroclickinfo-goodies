@@ -8,7 +8,7 @@
    },
    "template_type":"reference",
    "section_order":[  
-      " ManDataipulation Language (DML)",
+      "Data Manipulation Language (DML)",
       "Data Definition Language (DDL)",
       "Aggregate Functions",
       "Arguments Used with Commands",
