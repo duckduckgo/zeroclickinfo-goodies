@@ -118,7 +118,7 @@ handle query_nowhitespace => sub {
     return unless $style;
 
     $tmp_expr = $style->for_computation($tmp_expr);
-    $tmp_expr =~ s/(Math::BigInt->new\((.*)\))/(Math::BigInt->new\($2\))->bfac()/g;    #correct expression for factorial
+    $tmp_expr =~ s/(Math::BigInt->new\((.*)\))/(Math::BigInt->new\($2\))->bfac()/g;    #correct expression for fact
     # Using functions makes us want answers with more precision than our inputs indicate.
     my $precision = ($query =~ $funcy) ? undef : ($query =~ /^\$/) ? 2 : max(map { $style->precision_of($_) } @numbers);
     my $tmp_result;
