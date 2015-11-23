@@ -20,7 +20,7 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ["https://github.com/codenirvana", "Udit Vasu"],
             twitter => "uditdistro";
 
-triggers any => "factorial", "facs";
+triggers any => "factorial", "fact";
 
 handle remainder => sub {
     my $n = $_;
