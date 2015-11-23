@@ -8,8 +8,8 @@
    },
    "template_type":"reference",
    "section_order":[  
-      "Data Manipulation Language (DML) Commands",
-      "Data Definition Language (DDL) Commands",
+      " ManDataipulation Language (DML)",
+      "Data Definition Language (DDL)",
       "Aggregate Functions",
       "Arguments Used with Commands",
       "SQL Constraints",
@@ -21,7 +21,7 @@
        "sql commands"
    ],
    "sections":{  
-      "Data Definition Language (DDL) Commands":[  
+      "Data Definition Language (DDL)":[  
          {  
             "key":"CREATE TABLE",
             "val":"Define a new table"
@@ -59,7 +59,7 @@
          }
         
       ],
-       "Data Manipulation Language (DML) Commands":[
+       "Data Manipulation Language (DML)":[
            
            {  
             "key":"SELECT",
