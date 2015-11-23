@@ -1,9 +1,9 @@
 {
     "id": "8085_cheat_sheet",
-    "name": "8085",
+    "name": "8085 Instruction Set",
     "description": "8085 instructions and their explanations",
     "metadata": {
-        "sourceName": "iitk",
+        "sourceName": "IITK",
         "sourceUrl": "http://home.iitk.ac.in/~ajalan/8085_is_details.pdf"
     },
     "template_type": "reference",
