@@ -1,0 +1,40 @@
+{
+    "id": "php_cheat_sheet",
+    "name": "php",
+    "description": "server_side_scripting_language",
+    "template_type": "code",
+    "section_order": [
+        "php array functions"
+    ],
+    "sections": {
+        "php array functions": [{
+            "val": "values present in arr1 but not in other arguments",
+            "key": "array_diff(arr1,arr2,..)"
+        }, {
+            "val": "flipped array on success else null",
+            "key": "array_flip(arr)"
+        }, {
+            "val": "values present in arr1 and in other arguments",
+            "key": "array_intersect(arr1,arr2,..)"
+        }, {
+            "val": "merge one or more arrays",
+            "key": "array_merge(arr1,arr2,..)"
+        }, {
+            "val": "pop the element off the end of array",
+            "key": "array_pop(arr)"
+        }, {
+            "val": "push one or more elements onto the end of array",
+            "key": "array_push(arr,var1,var2,..)"
+        }, {
+            "val": "reverse array elements",
+            "key": "array_reverse(arr)"
+        }, {
+            "val": "count all elements in array",
+            "key": "count(arr)"
+        }, {
+            "val": "searches for needle in arr and returns key",
+            "key": "array_search(needle,arr)"
+        }]
+        
+    }
+}
