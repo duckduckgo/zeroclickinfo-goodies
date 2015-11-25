@@ -1,9 +1,9 @@
 {
     "id": "chrome_cheat_sheet", 
 
-    "name": "Chrome",
+    "name": "Google Chrome",
 
-    "description": "Web Browser by Google", 
+    "description": "Google Chrome Keyboard shorcuts", 
 
     "metadata": { 
         "sourceName": "Chrome Help",
@@ -11,7 +11,10 @@
     },
     
     "aliases": [
-        "google chrome"
+        "google chrome",
+        "chrome keyboard shortcuts",
+        "google chrome keyboard shortcuts",
+        "chrome shortcuts"
     ],
     
     "template_type": "keyboard",
