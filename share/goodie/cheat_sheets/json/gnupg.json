@@ -3,7 +3,7 @@
     "name": "GNU Privacy Guard",
     "description": "GNU project's free software implementation of OpenPGP standard.",
     "metadata": {
-        "sourceName": "GnuPG man page",
+        "sourceName": "GnuPG",
         "sourceUrl": "https://www.gnupg.org/documentation/manpage.en.html"
     },
     "aliases": [
