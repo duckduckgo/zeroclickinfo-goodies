@@ -6,6 +6,12 @@
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/cmus/cmus/blob/master/Doc/cmus.txt"
     },
+    "aliases": [
+        "console music player",
+        "cmus keyboard shortcuts",
+        "console music player keyboard shortcuts",
+        "cmus shortcuts"
+    ],
     "template_type": "keyboard",
     "section_order": ["Cursor Movement", "Views", "Song Navigation", "Adding / Removing Tracks", "Browser Movements", "Exiting", "Miscellaneous"],
     "sections": {
