@@ -1,9 +1,9 @@
-DDH.'<: $lia_id :>' = DDH.'<: $lia_id :>' || {};
+DDH.<: $lia_id :> = DDH.<: $lia_id :> || {};
 
 (function(DDH) {
     "use strict";
 
-    console.log("DDH.'<: $lia_id :>'.build"); // remove this before submitting pull request
+    console.log("DDH.<: $lia_id :>.build"); // remove this before submitting pull request
 
     // define private variables and functions here
     //
@@ -13,7 +13,7 @@ DDH.'<: $lia_id :>' = DDH.'<: $lia_id :>' || {};
     //     b = '',
     //     c = '';
 
-    DDH.'<: $lia_id :>'.build = function(ops) {
+    DDH.<: $lia_id :>.build = function(ops) {
 
         return {
 
@@ -40,17 +40,17 @@ DDH.'<: $lia_id :>' = DDH.'<: $lia_id :>' || {};
             //     };
             // },
 
-            templates: {
-                group: 'text',
-
-                // options: {
-                //
-                // },
-
-                // variants: {
-                //
-                // }
-            },
+            // templates: {
+            //     group: 'text',
+            //
+            //     options: {
+            //
+            //     },
+            //
+            //     variants: {
+            //
+            //     }
+            // },
 
             // Function that executes after template content is displayed
             onShow: function() {
