@@ -759,6 +759,24 @@ ddg_goodie_test(
             result => qr"6.28318530717958"
         }
     ),
+    'fact(3)' => test_zci(
+        'fact(3) = 6',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['fact(3)'],
+            operation => 'Calculate',
+            result    => qr/>6</
+        }
+    ),
+    'factorial(3)' => test_zci(
+        'fact(3) = 6',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['fact(3)'],
+            operation => 'Calculate',
+            result    => qr/>6</
+        }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,
