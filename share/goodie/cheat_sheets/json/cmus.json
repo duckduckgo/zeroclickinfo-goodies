@@ -1,16 +1,13 @@
 {
     "id": "cmus_cheat_sheet",
-    "name": "Console Music Player",
+    "name": "CMUS",
     "description": "Keyboard shortcuts of Console Music Player",
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/cmus/cmus/blob/master/Doc/cmus.txt"
     },
     "aliases": [
-        "console music player",
-        "cmus keyboard shortcuts",
-        "console music player keyboard shortcuts",
-        "cmus shortcuts"
+        "console music player"
     ],
     "template_type": "keyboard",
     "section_order": ["Cursor Movement", "Views", "Song Navigation", "Adding / Removing Tracks", "Browser Movements", "Exiting", "Miscellaneous"],
