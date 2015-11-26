@@ -50,6 +50,9 @@ handle remainder => sub {
             },
             templates => {
                 group => "icon",
+                elClass => {
+                    iconImage => "bg-clr--blue-light"
+                }
             }
         };
 };
