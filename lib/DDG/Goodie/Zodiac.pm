@@ -30,17 +30,27 @@ handle remainder => sub {
 
     # Return Nothing if the User Provided Date is Invalid
     return unless $zodiacdate;
+    
+    #Star Sign
+    my $zodiacsign = ucfirst(zodiac_date_name($zodiacdate));
 
     # Return the Star Sign
-    my $result="Zodiac for " . date_output_string($zodiacdate) . ": " . ucfirst(zodiac_date_name($zodiacdate));
+    my $result="Zodiac for " . date_output_string($zodiacdate) . ": " . $zodiacsign;
 
     # Input String
     my $input = date_output_string($zodiacdate);
 
     return $result, structured_answer => {
-            input	=> [html_enc($input)],
-            operation => 'Zodiac',
-            result	=> html_enc(ucfirst(zodiac_date_name($zodiacdate)))
+            id => "zodiac",
+            name => "Zodiac",
+            data => {
+                image => "/share/goodie/zodiac/" . lc($zodiacsign) . ".png",
+                title => $zodiacsign,
+                subtitle => $input
+            },
+            templates => {
+                group => "icon",
+            }
         };
 };
 
