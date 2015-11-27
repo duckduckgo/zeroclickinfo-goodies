@@ -1,12 +1,17 @@
 {
-    "id": "go_lang_script_cheat_sheet",
+    "id": "golang_cheat_sheet",
     "name": "Go Language",
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/a8m/go-lang-cheat-sheet"
     },
     "aliases": [
-        "go, go lang, go-lang, golang operators, golang functions"
+        "go",
+        "go lang",
+        "go-lang",
+        "golang operators",
+        "golang functions",
+        "golang script"
     ],
     "template_type": "terminal",
     "section_order": [

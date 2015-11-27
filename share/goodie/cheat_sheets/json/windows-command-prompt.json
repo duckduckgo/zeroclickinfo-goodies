@@ -1,5 +1,5 @@
 {
-    "id": "windows_cmd_cheat_sheet",
+    "id": "windows_command_prompt_cheat_sheet",
     "name": "Windows Command Prompt",
     "description": "If you’re not sure whether a certain command exist or not, then type the command followed by a /? to find out more",
     "metadata": {
