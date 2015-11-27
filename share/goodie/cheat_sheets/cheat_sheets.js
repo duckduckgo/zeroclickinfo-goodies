@@ -2,7 +2,12 @@ DDH.cheat_sheets = DDH.cheat_sheets || {};
 
 DDH.cheat_sheets.build = function(ops) {
 
-    // Loop over each section, any pass it to the correct template_type sub-template (e.g code.handlebars)
+    var ignoreBracket = false;
+    if (ops.data.ignore_brackets === 1) {
+        ignoreBracket = true;
+    }
+
+    // Loop over each section, and pass it to the correct template_type sub-template (e.g code.handlebars)
     // Passes along a variable indicating if this section should be hidden by default
     // We do this to supress the intial display to only the first 3 elemests of the first 2 sections
     Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, template_type, options) {
@@ -59,7 +64,7 @@ DDH.cheat_sheets.build = function(ops) {
         // no un-escaped brackets
         // e.g "?()", ":sp filename", "\\[:alpha:\\]"
         //  --> wrap whole string in <code></code>
-        if ( !re_brackets.test(string) ){
+        if ( ignoreBracket || !re_brackets.test(string) ){
             out = "<code class=\"" + codeClass + "\">" + string + "</code>";
 
 
