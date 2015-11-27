@@ -4,7 +4,7 @@
     "description": "List of countries and their official currencies, organized by continent",
     "metadata": {
         "sourceName": "Wikipedia",
-        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_countries_and_capitals_with_currency_and_language"
+        "sourceUrl": "https://en.wikipedia.org/wiki/Currency_symbol"
     },
     "template_type": "reference",
     "section_order": [
@@ -36,11 +36,11 @@
             },
             {
                 "key": "Cameroon",
-                "val": "CFA franc"
+                "val": "CFA Franc"
             },
             {
                 "key": "Egypt",
-                "val": "£ (Egyptian pound)"
+                "val": "£ (Egyptian Pound)"
             },
             {
                 "key": "Ethiopia",
@@ -48,11 +48,11 @@
             },
             {
                 "key": "Ghana",
-                "val": "¢ (Ghana cedi)"
+                "val": "¢ (Ghana Cedi)"
             },
             {
                 "key": "Kenya",
-                "val": "Ksh (Kenyan shilling)"
+                "val": "Ksh (Kenyan Shilling)"
             },
             {
                 "key": "Libya",
@@ -60,7 +60,7 @@
             },
             {
                 "key": "Mali",
-                "val": "CFA franc"
+                "val": "CFA Franc"
             },
             {
                 "key": "Nigeria",
@@ -68,15 +68,15 @@
             },
             {
                 "key": "South Africa",
-                "val": "R (South African rand)"
+                "val": "R (South African Rand)"
             },
             {
                 "key": "Sudan",
-                "val": "SDG (Sudanese pound)"
+                "val": "SDG (Sudanese Pound)"
             },
             {
                 "key": "Uganda",
-                "val": "Ush (Ugandan shilling)"
+                "val": "Ush (Ugandan Shilling)"
             }
         ],
         "Asia": [
@@ -86,7 +86,7 @@
             },
             {
                 "key": "Bahrain",
-                "val": "BHD (Bahraini dinar)"
+                "val": "BHD (Bahraini Dinar)"
             },
             {
                 "key": "Bangladesh",
@@ -94,15 +94,15 @@
             },
             {
                 "key": "China",
-                "val": "¥ (Renminbi or yuan)"
+                "val": "¥ (Renminbi or Yuan)"
             },
             {
                 "key": "Hong Kong",
-                "val": "$ (Hong Kong dollar)"
+                "val": "$ (Hong Kong Dollar)"
             },
             {
                 "key": "India",
-                "val": "₹ (Indian rupee)"
+                "val": "₹ (Indian Rupee)"
             },
             {
                 "key": "Japan",
@@ -110,7 +110,7 @@
             },
             {
                 "key": "Kuwait",
-                "val": "KWD (Kuwaiti dinar)"
+                "val": "KWD (Kuwaiti Dinar)"
             },
             {
                 "key": "Thailand",
@@ -128,7 +128,7 @@
             },
             {
                 "key": "France",
-                "val": " (Euro CFP franc)"
+                "val": "€ (Euro)"
             },
             {
                 "key": "Germany",
@@ -144,11 +144,11 @@
             },
             {
                 "key": "Russia",
-                "val": "руб (Russian ruble)"
+                "val": "руб (Russian Ruble)"
             },
             {
                 "key": "Switzerland",
-                "val": "CHF (Swiss franc)"
+                "val": "CHF (Swiss Franc)"
             },
             {
                 "key": "Spain",
@@ -158,31 +158,31 @@
         "North America": [
             {
                 "key": "Antigua and Barbuda",
-                "val": "$ (East Caribbean dollar)"
+                "val": "$ (East Caribbean Dollar)"
             },
             {
                 "key": "Bahamas",
-                "val": "$ (Bahamian dollar)"
+                "val": "$ (Bahamian Dollar)"
             },
             {
                 "key": "Barbados",
-                "val": "$ (Barbadian dollar)"
+                "val": "$ (Barbadian Dollar)"
             },
             {
                 "key": "Belize",
-                "val": "$ (Belize dollar)"
+                "val": "$ (Belize Dollar)"
             },
             {
                 "key": "Bermuda",
-                "val": "$ (Bermudian dollar)"
+                "val": "$ (Bermudian Dollar)"
             },
             {
                 "key": "Canada",
-                "val": "$ (Canadian dollar)"
+                "val": "$ (Canadian Dollar)"
             },
             {
                 "key": "Costa Rica",
-                "val": " (Costa Rican colon)"
+                "val": " (Costa Rican Colon)"
             },
             {
                 "key": "Cuba",
@@ -194,15 +194,15 @@
             },
             {
                 "key": "El Salvador",
-                "val": "$ (United States dollar)"
+                "val": "$ (United States Dollar)"
             },
             {
                 "key": "Guatemala",
-                "val": "Q (Guatemalan quetzal)"
+                "val": "Q (Guatemalan Quetzal)"
             },
             {
                 "key": "Jamaica",
-                "val": "$ (Jamaican dollar)"
+                "val": "$ (Jamaican Dollar)"
             },
             {
                 "key": "Mexico",
@@ -210,11 +210,11 @@
             },
             {
                 "key": "Panama",
-                "val": "$ (United States dollar)"
+                "val": "$ (United States Dollar)"
             },
             {
                 "key": "United States of America",
-                "val": "$ (United States dollar)"
+                "val": "$ (United States Dollar)"
             }
         ],
         "South America": [
@@ -240,7 +240,7 @@
             },
             {
                 "key": "Ecuador",
-                "val": "$ (United States dollar)"
+                "val": "$ (United States Dollar)"
             },
             {
                 "key": "Falkland Islands",
@@ -252,7 +252,7 @@
             },
             {
                 "key": "Guyana",
-                "val": "$ (Guyanese dollar)"
+                "val": "$ (Guyanese Dollar)"
             },
             {
                 "key": "Paraguay",
@@ -264,7 +264,7 @@
             },
             {
                 "key": "Suriname",
-                "val": "SRD (Surinamese dollar)"
+                "val": "SRD (Surinamese Dollar)"
             },
             {
                 "key": "Uruguay",
@@ -272,21 +272,21 @@
             },
             {
                 "key": "Venezuela",
-                "val": "Bs (Bolívar fuerte)"
+                "val": "Bs (Bolívar Fuerte)"
             }
         ],
         "Oceania": [
             {
                 "key": "Australia",
-                "val": "$ (Australian dollar)"
+                "val": "$ (Australian Dollar)"
             },
             {
                 "key": "Fiji",
-                "val": "$ (Fijian dollar)"
+                "val": "$ (Fijian Dollar)"
             },
             {
                 "key": "New Zealand",
-                "val": "$ (New Zealand dollar)"
+                "val": "$ (New Zealand Dollar)"
             },
             {
                 "key": "Vanuatu",
@@ -294,11 +294,11 @@
             },
             {
                 "key": "American Samoa",
-                "val": "$ (United States dollar)"
+                "val": "$ (United States Dollar)"
             },
             {
                 "key": "Cook Islands",
-                "val": "$ (Cook Islands dollar)"
+                "val": "$ (Cook Islands Dollar)"
             }
         ],
         "Antartica": [
