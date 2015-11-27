@@ -4,14 +4,13 @@ DDH.chess960 = DDH.chess960 || {};
     "use strict";
     DDH.chess960.build = function(ops) {
         // Global Variables Declaration
-        var $tempChessboard;
         var squares, started;
         var scheme = [];
         var letters = ["H", "G", "F", "E", "D", "C", "B", "A"];
         var position = ops.data.position;
     
-        for (var i = 0; i<position.length; i++) {
-            scheme[i] = position.substring(i, i + 1);
+        for (var i = 0; i < position.length; i++) {
+            scheme[7 - i] = position.substring(i, i + 1);
         }
 
         // This function creates and prints on page chess board
@@ -84,7 +83,6 @@ DDH.chess960 = DDH.chess960 || {};
                 if (!started) {
                     started = true;
 
-                    $tempChessboard = $('#chess_board');
                     squares = $('td.square');
                 
                     start();
