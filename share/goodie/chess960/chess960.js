@@ -4,7 +4,7 @@ DDH.chess960 = DDH.chess960 || {};
     "use strict";
     DDH.chess960.build = function(ops) {
         // Global Variables Declaration
-        var $tempChessboard, $container;
+        var $tempChessboard;
         var squares, started;
         var scheme = [];
         var letters = ["H", "G", "F", "E", "D", "C", "B", "A"];
@@ -84,7 +84,6 @@ DDH.chess960 = DDH.chess960 || {};
                 if (!started) {
                     started = true;
 
-                    $container = $('#zci--fenviewer');
                     $tempChessboard = $('#chess_board');
                     squares = $('td.square');
                 
