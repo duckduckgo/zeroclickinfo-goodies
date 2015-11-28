@@ -6,6 +6,9 @@
         "sourceName": "Drush Commands",
         "sourceUrl": "http://drushcommands.com"
     },
+    "aliases": [
+        "drush commands"
+    ],
     "template_type": "terminal",
     "section_order": [
         "Project manager commands",
