@@ -12,7 +12,7 @@
         "sc2"
     ],
     "template_type": "reference",
-    "section_order": ["Resources and Research", "Units", "Game Modifications", "Wings of Liberty Only"],
+    "section_order": ["Resources and Research", "Game Modifications", "Units", "Wings of Liberty Only"],
     "sections": {
         "Units": [
             {
@@ -102,7 +102,7 @@
                 "val": "Opens all missions"
             },
             {
-                "key": "horadriccube",
+                "key": "HoradricCube",
                 "val": "Opens all research options"
             },
             {
