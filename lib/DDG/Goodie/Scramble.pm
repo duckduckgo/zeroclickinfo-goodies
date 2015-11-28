@@ -1,0 +1,80 @@
+package DDG::Goodie::Scramble;
+# ABSTRACT: Returns an scramble based on the supplied query.
+
+use strict;
+use DDG::Goodie;
+use List::Util qw( shuffle );
+
+my @keywords   = qw(anagram anagrams);
+my @connectors = qw(of for);
+my @commands   = qw(find show);
+
+my @triggers;
+foreach my $kw (@keywords) {
+    foreach my $con (@connectors) {
+        push @triggers, join(' ', $kw, $con);    # scramble for, scramble of, etc.
+        foreach my $com (@commands) {
+            push @triggers, join(' ', $com, $kw, $con);    # find scramble of, show scrambles for, etc.
+        }
+    }
+    push @triggers, $kw;                                   # Trigger order appears to matter, so the bare keywords after the others
+}
+
+zci answer_type => 'scramble';
+zci is_cached   => 1;
+
+triggers start => @triggers;
+
+primary_example_queries "scramble of filter";
+secondary_example_queries "find scramble for partial men";
+description "find the scramble(s) of your query";
+name "Scramble";
+code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Scramble.pm";
+category "transformations";
+topics "words_and_games";
+
+
+# Handle statement
+handle remainder => sub {
+
+    my $remainder = $_;
+
+    # Optional - Guard against no remainder
+    # I.E. the query is only 'triggerWord' or 'trigger phrase'
+    #
+    # return unless $remainder;
+
+    # Optional - Regular expression guard
+    # Use this approach to ensure the remainder matches a pattern
+    # I.E. it only contains letters, or numbers, or contains certain words
+    #
+    # return unless qr/^\w+|\d{5}$/;
+
+    return "plain text response",
+        structured_answer => {
+
+            # ID - Must be unique and match Instant Answer page
+            # E.g. https://duck.co/ia/view/calculator has `id => 'calculator'``
+            id => '',
+
+            # Name - Used for Answer Bar Tab
+            # Value should be chosen from existing Instant Answer topics
+            # see https://duck.co/duckduckhack/display_reference#codenamecode-emstringem-required
+            name => 'Answer',
+
+            data => {
+              title => "My Instant Answer Title",
+              subtitle => "My Subtitle",
+              # image => "http://website.com/image.png"
+            },
+
+            templates => {
+                group => "text",
+                # options => {
+                #
+                # }
+            }
+        };
+};
+
+1;
