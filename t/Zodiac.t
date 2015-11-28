@@ -17,7 +17,7 @@ ddg_goodie_test([qw(
         'Zodiac for 21 Mar 1967: Aries',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -35,7 +35,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 30 Mar 2015: Aries',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -53,7 +53,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 20 Apr 2015: Aries',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -72,7 +72,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 21 Apr 2014: Taurus',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -89,7 +89,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 27 Apr 2015: Taurus',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -108,7 +108,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 21 May 2015: Gemini',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -126,7 +126,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 22 May 1500: Gemini',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -144,7 +144,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 21 May 1965: Gemini',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -162,7 +162,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 31 May 2015: Gemini',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -180,7 +180,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 21 Jun 2015: Gemini',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -199,7 +199,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 22 Jun 1889: Cancer',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -217,7 +217,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 30 Jun 2017: Cancer',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -235,7 +235,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 22 Jul 2015: Cancer',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -254,7 +254,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 23 Jul 1654: Leo',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -272,7 +272,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 24 Jul 2015: Leo',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -290,7 +290,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 22 Aug 2015: Leo',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -308,7 +308,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 23 Aug 1700: Leo',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -327,7 +327,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 01 Sep 2015: Virgo',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -346,7 +346,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 23 Sep 2015: Libra',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -364,7 +364,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 24 Sep 2001: Libra',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -382,7 +382,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 07 Oct 2015: Libra',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -401,7 +401,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 23 Oct 2015: Scorpius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -419,7 +419,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 24 Oct 1213: Scorpius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -437,7 +437,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 09 Nov 2015: Scorpius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -456,7 +456,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 22 Nov 2015: Sagittarius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -474,7 +474,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 23 Nov 1857: Sagittarius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -492,7 +492,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 06 Dec 2015: Sagittarius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -510,7 +510,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 21 Dec 2015: Sagittarius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -529,7 +529,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 22 Dec 2015: Capricornus',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -547,7 +547,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 23 Dec 1378: Capricornus',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -565,7 +565,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 31 Dec 2009: Capricornus',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -583,7 +583,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 31 Dec 2100: Capricornus',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -601,7 +601,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 01 Jan 2015: Capricornus',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -620,7 +620,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 20 Jan 2015: Aquarius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -638,7 +638,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 21 Jan 2015: Aquarius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -656,7 +656,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 01 Feb 2015: Aquarius',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -675,7 +675,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 19 Feb 2015: Pisces',
         structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -693,7 +693,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 20 Feb 1967: Pisces',
      structured_answer => { 
         id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -710,7 +710,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 01 Mar 2015: Pisces',
     structured_answer => {
         id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',
@@ -728,7 +728,7 @@ ddg_goodie_test([qw(
 	'Zodiac for 20 Mar 2015: Pisces',
     structured_answer => {
         id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => '-ANY-',
             templates => {
                 group => 'icon',

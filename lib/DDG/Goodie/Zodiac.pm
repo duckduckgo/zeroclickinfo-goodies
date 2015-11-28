@@ -67,7 +67,7 @@ handle remainder => sub {
 
     return $result, structured_answer => {
             id => "zodiac",
-            name => "Dates",
+            name => "Answer",
             data => {
                 image => "/share/goodie/zodiac/". $goodieVersion . "/" . lc($zodiacsign) . ".png",
                 title => $zodiacsign,
