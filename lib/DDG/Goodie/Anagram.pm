@@ -102,10 +102,8 @@ handle remainder => sub {
         $response = join ', ', sort { $a cmp $b } @output;
         $operation = 'Anagrams of';
     } else {
-        do {
-            $response = join '', shuffle split(//, $word);
-        } while (length($word) > 1 && $response eq $word);
-        $operation = 'Scrambled letters of';
+         $response = '';
+         $operation = 'There is not anagrams for ';
     }
 
     return $response,

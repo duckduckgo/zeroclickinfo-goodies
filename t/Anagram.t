@@ -38,7 +38,7 @@ ddg_goodie_test(
         '-ANY-',
         structured_answer => {
             input     => ['favorite'],
-            operation => 'Scrambled letters of',
+            operation => 'There is not anagrams for ',
             result    => '-ANY-',
         }
     ),
@@ -46,7 +46,7 @@ ddg_goodie_test(
         '-ANY-',
         structured_answer => {
             input     => ['Mixing it up'],
-            operation => 'Scrambled letters of',
+            operation => 'There is not anagrams for ',
             result    => '-ANY-',
         }
     ),
