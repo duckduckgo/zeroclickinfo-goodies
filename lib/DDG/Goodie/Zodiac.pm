@@ -22,7 +22,10 @@ category "dates";
 topics "special_interest";
 attribution email  => 'nomady@zoho.com',
             github => ['https://github.com/n0mady','NOMADY'];
-            
+
+
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 my @colors = qw(bg-clr--blue-light bg-clr--green bg-clr--red bg-clr--grey);
 
 sub element_sign {
@@ -66,7 +69,7 @@ handle remainder => sub {
             id => "zodiac",
             name => "Dates",
             data => {
-                image => "/share/goodie/zodiac/" . lc($zodiacsign) . ".png",
+                image => "/share/goodie/zodiac/". $goodieVersion . "/" . lc($zodiacsign) . ".png",
                 title => $zodiacsign,
                 subtitle => $input
             },
