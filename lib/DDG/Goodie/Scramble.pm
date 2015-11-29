@@ -33,6 +33,11 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "transformations";
 topics "words_and_games";
 
+attribution github => ["https://github.com/loganom",      'loganom'],
+            github => ["https://github.com/beardlybread", "beardlybread"],
+            github => ['https://github.com/gdrooid',      'gdrooid'],
+            email  => ['gdrooid@openmailbox.org',         'gdrooid'];
+
 # Calculate the frequency of the characters in a string
 sub calc_freq {
     my ($str) = @_;
