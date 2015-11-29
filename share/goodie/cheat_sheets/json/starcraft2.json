@@ -1,13 +1,12 @@
 {
     "id": "starcraft2_cheat_sheet",
-    "name": "Starcraft 2 Cheat Sheet",
+    "name": "Starcraft 2",
     "description": "Cheat codes for the campaign and offline custom games of Starcraft 2",
     "metadata": {
         "sourceName": "Battle.net Cheats",
         "sourceUrl": "http://us.battle.net/sc2/en/blog/9135373/game-guide-starcraft-ii-cheat-codes-3-1-2012"
     },
     "aliases": [
-        "starcraft2",
         "starcraft 2",
         "sc2"
     ],
