@@ -2,7 +2,7 @@
     "id": "scala_cheat_sheet",
     "name": "Scala",
     "metadata": {
-        "sourceName": "Scala docs",
+        "sourceName": "Scala-Lang",
         "sourceUrl": "http://docs.scala-lang.org/cheatsheets/"
     },
     "template_type": "terminal",
