@@ -59,8 +59,8 @@ handle remainder => sub {
 
     my $response;
     do {
-        $response = join '', shuffle split(//, $word);
-    } while (length($word) > 1 && $response eq $word);
+        $response = join '', shuffle split(//, $match_word);
+    } while (length($match_word) > 1 && $response eq $match_word);
 
     my $operation;
     if ($response) {
