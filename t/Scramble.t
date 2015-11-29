@@ -19,7 +19,7 @@ ddg_goodie_test(
             data => '-ANY-',
 
             templates => {
-                group => "text",
+                group => "text"
             }
         },
     ),

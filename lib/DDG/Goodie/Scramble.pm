@@ -83,11 +83,11 @@ handle remainder => sub {
 
             data => {
               title => $response,
-              subtitle => $operation . ' ' . $word,
+              subtitle => $operation . ' ' . $word
             },
 
             templates => {
-                group => "text",
+                group => "text"
             }
         };
 };
