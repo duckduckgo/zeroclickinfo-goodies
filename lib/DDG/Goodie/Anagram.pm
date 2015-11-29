@@ -103,7 +103,7 @@ handle remainder => sub {
         $operation = 'Anagrams of';
     } else {
          $response = '';
-         $operation = 'There is not anagrams for ';
+         $operation = 'There are no anagrams for ';
     }
 
     return $response,
