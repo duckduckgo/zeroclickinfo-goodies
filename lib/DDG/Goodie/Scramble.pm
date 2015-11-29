@@ -5,7 +5,7 @@ use strict;
 use DDG::Goodie;
 use List::Util qw( shuffle );
 
-my @keywords   = qw(anagram anagrams);
+my @keywords   = qw(scramble scrambles);
 my @connectors = qw(of for);
 my @commands   = qw(find show);
 
@@ -33,46 +33,56 @@ code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category "transformations";
 topics "words_and_games";
 
+# Calculate the frequency of the characters in a string
+sub calc_freq {
+    my ($str) = @_;
+    my %freqs;
+
+    for (split //, lc $str) {
+        $freqs{$_} += 1;
+    }
+
+    return \%freqs;
+}
 
 # Handle statement
 handle remainder => sub {
 
-    my $remainder = $_;
+    my $word = $_;
+    $word =~ s/^"(.*)"$/$1/;
 
-    # Optional - Guard against no remainder
-    # I.E. the query is only 'triggerWord' or 'trigger phrase'
-    #
-    # return unless $remainder;
+    return unless $word;    # Need a word.
+    
+    my $match_word = lc $word;
+    $match_word =~ s/[^a-z]//g;
+    return unless $match_word; 
 
-    # Optional - Regular expression guard
-    # Use this approach to ensure the remainder matches a pattern
-    # I.E. it only contains letters, or numbers, or contains certain words
-    #
-    # return unless qr/^\w+|\d{5}$/;
+    my $response;
+    do {
+        $response = join '', shuffle split(//, $word);
+    } while (length($word) > 1 && $response eq $word);
 
-    return "plain text response",
+    my $operation;
+    if ($response) {
+        $operation = 'Scramble of';
+    } else {
+        $response = '';
+        $operation = 'There are no scrambles of';
+    }
+
+    return $operation . ' ' . $word,
         structured_answer => {
 
-            # ID - Must be unique and match Instant Answer page
-            # E.g. https://duck.co/ia/view/calculator has `id => 'calculator'``
-            id => '',
-
-            # Name - Used for Answer Bar Tab
-            # Value should be chosen from existing Instant Answer topics
-            # see https://duck.co/duckduckhack/display_reference#codenamecode-emstringem-required
-            name => 'Answer',
+            id => 'scramble',
+            name => 'Words & games',
 
             data => {
-              title => "My Instant Answer Title",
-              subtitle => "My Subtitle",
-              # image => "http://website.com/image.png"
+              title => $response,
+              subtitle => $operation . ' ' . $word,
             },
 
             templates => {
                 group => "text",
-                # options => {
-                #
-                # }
             }
         };
 };

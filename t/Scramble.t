@@ -10,13 +10,23 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Scramble )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => test_zci('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    'scramble of filter' => test_zci(
+        'Scramble of filter',
+        structured_answer => {
+            id => 'scramble',
+            name => 'Words & games',
+
+            data => '-ANY-',
+
+            templates => {
+                group => "text",
+            }
+        },
+    ),
+    'scramble of'              => undef,
+    'Scramble for'            => undef,
+    'Scrambles for ""'         => undef,
+    'Scrambles for "867-5309"' => undef,
 );
 
 done_testing;
