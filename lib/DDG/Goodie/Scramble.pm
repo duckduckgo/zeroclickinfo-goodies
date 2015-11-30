@@ -38,6 +38,8 @@ attribution github => ["https://github.com/loganom",      'loganom'],
             github => ['https://github.com/gdrooid',      'gdrooid'],
             github => ['https://github.com/Mailkov',      'Mailkov'],
             email  => ['gdrooid@openmailbox.org',         'gdrooid'];
+            
+my $operation = 'Scramble of';            
 
 # Handle statement
 handle remainder_lc => sub {
@@ -56,14 +58,9 @@ handle remainder_lc => sub {
         $response = join '', shuffle split(//, $match_word);
     } while (length($match_word) > 1 && $response eq $match_word);
 
-    my $operation;
-    if ($response) {
-        $operation = 'Scramble of';
-    } else {
-        return;
-    }
+    return unless $response;
 
-    return $operation . ' ' . $word,
+    return "$operation $word",
         structured_answer => {
         input     => [html_enc($word)],
         operation => $operation,
