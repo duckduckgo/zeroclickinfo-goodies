@@ -1,20 +1,20 @@
-package DDG::Goodie::Dice;
+package DDG::Goodie::MaxauDice;
 # ABSTRACT: roll a number of (abstract) dice.
 # https://en.wikipedia.org/wiki/Dice_notation
 
 use strict;
 use DDG::Goodie;
 
-triggers start => "roll", "throw";
+triggers start => "toss";
 
-zci answer_type => "dice_roll";
+zci answer_type => "dice_toss";
 zci is_cached => 0;
 
-primary_example_queries 'throw dice';
+primary_example_queries 'toss dice';
 secondary_example_queries 'roll 5 dice', 'roll 3d12', 'roll 3d12 and 2d4', 'roll 2 dice and 3d5';
-description 'give the results of a random die throw';
+description 'give the results of a random die toss';
 name 'Dice';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Dice.pm';
+# code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MaxauDice.pm';
 category 'random';
 topics 'math';
 attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
@@ -58,30 +58,18 @@ sub set_num_dice {
 # shorthand_roll_output generate shorthand roll output
 # param array of rolls
 # param sum of rolls
-# param subtractive modifier (if not equal to '0')
 # return roll output
 sub shorthand_roll_output {
     my @rolls = @{$_[0]};
     my $sum = $_[1];
-    my $subtractive_modifier = $_[2];
     my $out;
     if (@rolls > 1) { # if( sizeOf(rolls) > 1)
         $out = join(' + ', @rolls); # append current roll to output
         $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
-        if($subtractive_modifier ne '0')
-        {
-            $out = $subtractive_modifier . ' - (' . $out . ')';
-        }
         $out .= " = $sum"; # append sum of rolls to output
     } else {
-    if($subtractive_modifier ne '0')
-    {
-        $out = $subtractive_modifier . ' - ' . $rolls[0] . " = $sum";
-    } else {
-            $out = $sum; # output is roll value if we have just one roll
-        }
+        $out = $sum; # output is roll value if we have just one roll
     }
-    
     return $out . '<br/>';
 }
 
@@ -89,7 +77,7 @@ handle remainder_lc => sub {
     # Ensure rand is seeded for each process
     srand();
 
-    my @values = split(' and ', $_);
+    my @values = split(' and ', $_);    # split(m~((\d*)\s*([+-]\s*)?(\d*)([d|w])(\d+)\s*)*([a][n][d])?\s*((\d*)\s?([+-]\s)?(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?)?~, $_);
     my $values = @values; # size of @values;
     my $out = '';
     my $html = '';
@@ -113,41 +101,21 @@ handle remainder_lc => sub {
                     .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
         }
         else {
-            # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l', '1-4d7', '2+8d2'
+            # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'
             # 'w' is the German form of 'd'
             my (@rolls, $output);
             my $roll_output;
             my $number_of_dice = my $min = 0;
             my $number_of_faces;
             my $max = my $sum = 0; # set max roll and sum to -
-            my $subtractive_modifier = '0';
-            my $param1 = my $param2 = my $param3 = my $param4 = '';
 
-            if ($_ =~ /^(\d+)\s*([+-]\s*)+(\d*)[d|w](\d+)\s*$/) {   #   the left hand side of the notation has an "additive modifier" ('1-4d7', '2+8d2')
-                # check that input is not greater than or equal to 99
-                # check that input is not 0. ex. 'roll 0d3' should not return a value
+            if ($_ =~ /^(\d+)\s*([+-]\s*)+(\d*)[d|w](\d+)\s*$/) {
                 $number_of_dice = set_num_dice($3, 1);
                 if( $number_of_dice >= 100 or $1 eq '0'){
                      return; # do not continue if conditions not met
                 }
                 
                 $min = $number_of_faces = $4;
-                
-                # remove whitespace
-                $param1 = $1;
-                $param2 = $2;
-                $param1 =~ s/^\s+|\s+$//g;
-                $param2 =~ s/^\s+|\s+$//g;
-                # If the modifier is a minus sign, store the value to indicate the sum is being subtracted from a constant.
-                if($param2 eq '-') { # the modifier is a minus sign ("-")
-                    $subtractive_modifier = $param1;
-                }
-                else
-                {
-                    push(@rolls, int("$param2$param1"));  # only push positive modifiers ex.'+3'
-                }
-                
-                # TODO: refactor code from here to end of block to call one or more subroutines that can be used by the next section.
                 for (1 .. $number_of_dice) { # for each die
                     my $roll = roll_die( $number_of_faces ); # roll the die
                     $min = $roll if $roll < $min; # record min roll
@@ -155,15 +123,12 @@ handle remainder_lc => sub {
                     push @rolls, $roll; # add roll to array rolls
                 }
                 
+                push(@rolls, int("$2$1"));  # ex. '-4', '+3'
                 for (@rolls) {
                     $sum += $_; # track sum
                 }
                 
-                if($subtractive_modifier ne '0') {  # if the modifier is subtractive, e.g. '5-4d3', subtract the total from the modifier
-                    $sum = int($subtractive_modifier) - $sum;
-                }
-                
-                $roll_output = shorthand_roll_output( \@rolls, $sum, $subtractive_modifier ); # initialize roll_output
+                $roll_output = shorthand_roll_output( \@rolls, $sum ); # initialize roll_output
                 $out .= $roll_output; # add roll_output to our result
                 $html .= $roll_output; # add roll_output to our HTML result
                 $total += $sum; # add the local sum to the total
@@ -185,29 +150,24 @@ handle remainder_lc => sub {
                 }
                 
                 if (defined($3) && defined($4)) {
-                    # remove whitespace
-                    $param3 = $3;
-                    $param4 = $4;
-                    $param3 =~ s/^\s+|\s+$//g;
-                    $param4 =~ s/^\s+|\s+$//g;
                     # handle special case of " - L" or " - H"
-                    if ($param3 eq '-' && ($param4 eq 'l' || $param4 eq 'h')) {
-                        if ($param4 eq 'l') {
+                    if ($3 eq '-' && ($4 eq 'l' || $4 eq 'h')) {
+                        if ($4 eq 'l') {
                             push(@rolls, -$min); # add -min roll to array rolls
                         } else {
                             push(@rolls, -$max); # add -max roll to array rolls
                         }
-                    } elsif ($param3 eq '+' && ($param4 eq 'l' || $param4 eq 'h')) { # do nothing with '3d5+h'
+                    } elsif ($3 eq '+' && ($4 eq 'l' || $4 eq 'h')) { # do nothing with '3d5+h'
                     return;
                     } else {
-                        push(@rolls, int("$param3$param4")); # ex. '-4', '+3'
+                        push(@rolls, int("$3$4")); # ex. '-4', '+3'
                     }
                 }
                 for (@rolls) {
                     $sum += $_; # track sum
                 }
                 
-                $roll_output = shorthand_roll_output( \@rolls, $sum, $subtractive_modifier ); # initialize roll_output
+                $roll_output = shorthand_roll_output( \@rolls, $sum ); # initialize roll_output
                 $out .= $roll_output; # add roll_output to our result
                 $html .= $roll_output; # add roll_output to our HTML result
                 $total += $sum; # add the local sum to the total

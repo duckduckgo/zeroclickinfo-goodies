@@ -101,6 +101,14 @@ ddg_goodie_test(
                 html => qr/./,
                 heading => $heading
         ),
+        "roll 1 - 3d9 and 3 + 9d4" => test_zci(qr/^1 - \(([1-9] \+ ){2}[1-9]\) = -*\d{1,3}<br\/>3 \+ ([1-4] \+ ){8}[1-4] = \d{1,3}<br\/>Total: -*\d+$/,
+                html => qr/./,
+                heading => $heading
+        ),
+        "roll 11 + 7d2 and 10 + 4d4" => test_zci(qr/^11 \+ ([1-2] \+ ){6}[1-2] = \d{1,3}<br\/>10 \+ ([1-4] \+ ){3}[1-4] = \d{1,3}<br\/>Total: -*\d+$/,
+                html => qr/./,
+                heading => $heading
+        ),
 
         # Don't trigger
         "roll 2d3 2d6 and 3d3" => undef,
@@ -114,6 +122,7 @@ ddg_goodie_test(
         "roll 0 dice" => undef,
         "roll 0d6" => undef,
         "roll 2d3 and 2d4-a" => undef,
+        "roll a+3d" => undef,
 
         # Check the HTML. Just once for a longhand query.
         "throw die" => test_zci(qr/^.$/,
