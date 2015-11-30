@@ -1,11 +1,11 @@
-.zci--answer .average--container {
+.zci--average .c-base__content {
     font-size: 1.2em;
 }
 
-.zci--answer .average--key {
+.zci--average .average--key {
     font-weight: 300;
 }
 
-.zci--answer .average--value {
+.zci--average .average--value {
     font-weight: 500;
 }

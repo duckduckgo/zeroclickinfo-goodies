@@ -65,7 +65,25 @@ handle remainder => sub {
     $rms += ($_ ** 2) for @nums;
     $rms /= $len;
     $rms = sqrt $rms;
-    return "Mean: $mean; Median: $med; Root Mean Square: $rms", html => "<div class='average--container'><div><span class='average--key'>Mean:</span> <span class='average--value'>$mean</span></div> <div><span class='average--key'>Median:</span> <span class='average--value'>$med</span></div> <div><span class='average--key'>Root Mean Square:</span> <span class='average--value'>$rms</span></div></div>";
+    
+    return "Mean: $mean; Median: $med; Root Mean Square: $rms",
+    structured_answer => {
+        id => 'average',
+        name => 'Math',
+        data => {
+            mean => $mean,
+            median => $med,
+            rms => $rms
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.average.content'
+            }
+        }
+    };
+    
 };
 
 1;
