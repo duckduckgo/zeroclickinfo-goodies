@@ -36,29 +36,18 @@ topics "words_and_games";
 attribution github => ["https://github.com/loganom",      'loganom'],
             github => ["https://github.com/beardlybread", "beardlybread"],
             github => ['https://github.com/gdrooid',      'gdrooid'],
+            github => ['https://github.com/Mailkov',      'Mailkov'],
             email  => ['gdrooid@openmailbox.org',         'gdrooid'];
 
-# Calculate the frequency of the characters in a string
-sub calc_freq {
-    my ($str) = @_;
-    my %freqs;
-
-    for (split //, lc $str) {
-        $freqs{$_} += 1;
-    }
-
-    return \%freqs;
-}
-
 # Handle statement
-handle remainder => sub {
+handle remainder_lc => sub {
 
     my $word = $_;
     $word =~ s/^"(.*)"$/$1/;
 
     return unless $word;    # Need a word.
     
-    my $match_word = lc $word;
+    my $match_word = $word;
     $match_word =~ s/[^a-z]//g;
     return unless $match_word; 
 
@@ -71,8 +60,7 @@ handle remainder => sub {
     if ($response) {
         $operation = 'Scramble of';
     } else {
-        $response = '';
-        $operation = 'There are no scrambles of';
+        return;
     }
 
     return $operation . ' ' . $word,

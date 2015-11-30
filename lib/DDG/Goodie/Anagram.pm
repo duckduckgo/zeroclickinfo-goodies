@@ -102,8 +102,7 @@ handle remainder => sub {
         $response = join ', ', sort { $a cmp $b } @output;
         $operation = 'Anagrams of';
     } else {
-         $response = '';
-         $operation = 'There are no anagrams for ';
+         return;
     }
 
     return $response,
