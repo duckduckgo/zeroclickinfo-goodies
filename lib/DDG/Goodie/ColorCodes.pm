@@ -197,11 +197,28 @@ handle matches => sub {
     my ($text, $html_text) = create_output(%outdata);
 
     return $text,
-        html => '<div class="zci--color-codes"><a href="/?q=color%20picker%20%23' . $hex_code . '" '
-          . 'class="colorcodesbox circle" style="background:#' . $hex_code . '">'
-          . '</a>'
-          . $html_text
-          . "</div>";
+        #html => '<div class="zci--color-codes"><a href="/?q=color%20picker%20%23' . $hex_code . '" '
+        #  . 'class="colorcodesbox circle" style="background:#' . $hex_code . '">'
+        #  . '</a>'
+        #  . $html_text
+        #  . "</div>";
+        structured_answer => {
+        id => 'color_codes',
+        name => 'Programming',
+        data => {
+            mean => $mean,
+            median => $med,
+            rms => $rms
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.color_codes.content'
+            }
+        }
+    };
+          
 };
 
 1;
