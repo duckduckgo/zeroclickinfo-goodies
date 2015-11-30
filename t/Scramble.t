@@ -13,15 +13,10 @@ ddg_goodie_test(
     'scramble of filter' => test_zci(
         'Scramble of filter',
         structured_answer => {
-            id => 'scramble',
-            name => 'Words & games',
-
-            data => '-ANY-',
-
-            templates => {
-                group => "text"
-            }
-        },
+            input     => ['filter'],
+            operation => 'Scramble of',
+            result    => '-ANY-',
+        }
     ),
     'scramble of'              => undef,
     'Scramble for'            => undef,

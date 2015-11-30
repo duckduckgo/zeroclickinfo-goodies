@@ -77,19 +77,10 @@ handle remainder => sub {
 
     return $operation . ' ' . $word,
         structured_answer => {
-
-            id => 'scramble',
-            name => 'Words & games',
-
-            data => {
-              title => $response,
-              subtitle => $operation . ' ' . $word
-            },
-
-            templates => {
-                group => "text"
-            }
-        };
+        input     => [html_enc($word)],
+        operation => $operation,
+        result    => html_enc($response)
+      };
 };
 
 1;
