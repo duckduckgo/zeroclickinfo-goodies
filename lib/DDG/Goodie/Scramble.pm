@@ -21,7 +21,7 @@ foreach my $kw (@keywords) {
 }
 
 zci answer_type => 'scramble';
-zci is_cached   => 1;
+zci is_cached   => 0;
 
 triggers start => @triggers;
 
