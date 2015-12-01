@@ -1,7 +1,7 @@
 {
     "id": "c_cheat_sheet",
-    "name": "C Cheat Sheet",
-    "description": "Computer Programming Language",
+    "name": "C Language",
+    "description": "Overview of Basic Operators, Order of Precedence, Escape Sequences and Conversion Characters",
     "metadata": {
         "sourceName": "C for Beginners",
         "sourceUrl": "http://www.dummies.com/how-to/content/beginning-c-programming-for-dummies-cheat-sheet.html"
@@ -114,7 +114,7 @@
         ],
         "Bitwise Operators": [
             {
-                "val": "Bitwise NOT",
+                "val": "Bitwise NOT / One's Complement",
                 "key": "~a"
             },
             {
