@@ -152,7 +152,7 @@ handle matches => sub {
     return "$hexc ~ $rgb ~ $rgb_pct ~ $hslc ~ $cmyb$column_2",
     structured_answer => {
         id => 'color_codes',
-        name => 'Programming',
+        name => 'Answer',
         data => {
             hex_code => $hex_code,
             hexc => $hexc,
