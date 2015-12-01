@@ -1,4 +1,4 @@
-.zci--answer .zci--color-codes .colorcodesbox {
+.zci--color_codes .colorcodesbox {
     height: 120px;
     width: 120px;
     margin: 5px;
@@ -9,12 +9,12 @@
     display: inline-block;
 }
 
-.zci--answer .zci--color-codes .circle {
+.zci--color_codes .circle {
     border-radius: 50%;
     border: 2px solid rgba(0,0,0,0.15);
 }
 
-.zci--answer .zci--color-codes .mini-color {
+.zci--color_codes .mini-color {
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -22,61 +22,61 @@
     vertical-align: bottom;
 }
 
-.zci--answer .zci--color-codes .complementary .mini-color {
+.zci--color_codes .complementary .mini-color {
     margin-left: 23px;
 }
 
-.zci--answer .zci--color-codes .mini-color:nth-of-type(n+2) {
+.zci--color_codes .mini-color:nth-of-type(n+2) {
     margin-left: -0.7em;
 }
 
-.zci--answer .zci--color-codes p.no_vspace {
+.zci--color_codes  p.no_vspace {
     margin: 0;
     padding: 0;
 }
 
-.zci--answer .zci--color-codes .column1
+.zci--color_codes .column1
 {
     display: inline-block;
     height: 125px;
     padding-top: 7px;
 }
 
-.zci--answer .zci--color-codes .column2 {
+.zci--color_codes .column2 {
 	display: inline-block;
 	height: 90px;
     width: 16em;
     margin-left: 2em;
 }
 
-.zci--answer .zci--color-codes .cols_column {
+.zci--color_codes .cols_column {
     display: inline-block;
     width: 5em;
     margin-left: -2px;
     margin-right: 4px;
 }
 
-.zci--answer .zci--color-codes .desc_column {
+.zci--color_codes .desc_column {
     display: inline-block;
     width: 10em;
 }
 
-.zci--answer .zci--color-codes .complementary {
+.zci--color_codes .complementary {
     margin-bottom: 0.25em;
 }
 
-.zci--answer .zci--color-codes .separator {
+.zci--color_codes .separator {
     color: #d0d0d0;
 }
 
 @media screen and (max-width: 420px) {
-    .zci--answer .zci--color-codes .colorcodesbox {
+    .zci--color_codes .colorcodesbox {
         width: 80px;
         height: 80px;
         margin-top: 15px;
     }
 
-    .zci--answer .zci--color-codes .column1 {
+    .zci--color_codes .column1 {
         padding-top: 0;
     }
 }
