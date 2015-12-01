@@ -13,155 +13,67 @@ ddg_goodie_test(
 		DDG::Goodie::Average
 	)],
 	'1 2 3 avg' => test_zci(
-        "Mean: 2; Median: 2; Root Mean Square: 2.16024689946929",
+        "Mean: 2",
         structured_answer => {
-            id => 'average',
-            name => 'Math',
-            data => {
-                mean => 2,
-                median => 2,
-                rms => 2.16024689946929
-            },
-            templates => {
-                group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.average.content'
-                }
-            }
+            input     => ['1 2 3'],
+            operation => "Mean of",
+            result    => '2',
         }
     ),
 	'mean 1, 2, 3' => test_zci(
-        "Mean: 2; Median: 2; Root Mean Square: 2.16024689946929",
+        "Mean: 2",
         structured_answer => {
-            id => 'average',
-            name => 'Math',
-            data => {
-                mean => 2,
-                median => 2,
-                rms => 2.16024689946929
-            },
-            templates => {
-                group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.average.content'
-                }
-            }
+            input     => ['1 2 3'],
+            operation => "Mean of",
+            result    => '2',
         }
     ),
 	'root mean square 1,2,3' => test_zci(
-        "Mean: 2; Median: 2; Root Mean Square: 2.16024689946929", 
+        "Root Mean Square: 2.16024689946929", 
         structured_answer => {
-            id => 'average',
-            name => 'Math',
-            data => {
-                mean => 2,
-                median => 2,
-                rms => 2.16024689946929
-            },
-            templates => {
-                group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.average.content'
-                }
-            }
+            input     => ['1 2 3'],
+            operation => "Root Mean Square of",
+            result    => '2.16024689946929',
         }
     ),
     "average 12 45 78 1234.12" => test_zci(
-        "Mean: 342.28; Median: 61.5; Root Mean Square: 618.72958034993", 
+        "Mean: 342.28", 
         structured_answer => {
-            id => 'average',
-            name => 'Math',
-            data => {
-                mean => 342.28,
-                median => 61.5,
-                rms => 618.72958034993
-            },
-            templates => {
-                group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.average.content'
-                }
-            }
+            input     => ['12 45 78 1234.12'],
+            operation => "Mean of",
+            result    => '342.28',
         }
     ),
     "average 12, 45, 78, 1234.12" => test_zci(
-        "Mean: 342.28; Median: 61.5; Root Mean Square: 618.72958034993", 
+        "Mean: 342.28", 
         structured_answer => {
-            id => 'average',
-            name => 'Math',
-            data => {
-                mean => 342.28,
-                median => 61.5,
-                rms => 618.72958034993
-            },
-            templates => {
-                group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.average.content'
-                }
-            }
+            input     => ['12 45 78 1234.12'],
+            operation => "Mean of",
+            result    => '342.28',
         }
     ),
     "average 12;45;78;1234.12" => test_zci(
-        "Mean: 342.28; Median: 61.5; Root Mean Square: 618.72958034993", 
+        "Mean: 342.28", 
         structured_answer => {
-            id => 'average',
-            name => 'Math',
-            data => {
-                mean => 342.28,
-                median => 61.5,
-                rms => 618.72958034993
-            },
-            templates => {
-                group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.average.content'
-                }
-            }
+            input     => ['12 45 78 1234.12'],
+            operation => "Mean of",
+            result    => '342.28',
         }
     ),
     'average 12, 45, 78, 1234' => test_zci(
-        'Mean: 342.25; Median: 61.5; Root Mean Square: 618.669742269654', 
+        'Mean: 342.25',  
         structured_answer => {
-            id => 'average',
-            name => 'Math',
-            data => {
-                mean => 342.25,
-                median => 61.5,
-                rms => 618.669742269654
-            },
-            templates => {
-                group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.average.content'
-                }
-            }
+            input     => ['12 45 78 1234'],
+            operation => "Mean of",
+            result    => '342.25',
         }
     ),
-    'avg 1,2,3' => test_zci(
-        'Mean: 2; Median: 2; Root Mean Square: 2.16024689946929', 
+    'median 1,2,3' => test_zci(
+        'Median: 2', 
         structured_answer => {
-            id => 'average',
-            name => 'Math',
-            data => {
-                mean => 2,
-                median => 2,
-                rms => 2.16024689946929
-            },
-            templates => {
-                group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.average.content'
-                }
-            }
+            input     => ['1 2 3'],
+            operation => "Median of",
+            result    => '2',
         }
     ),
 
