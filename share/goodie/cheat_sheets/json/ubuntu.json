@@ -6,9 +6,6 @@
         "sourceName": "Ubuntu Unity",
         "sourceUrl": "http://www.cheat-sheets.org/saved-copy/ubunturef.pdf"
     },
-     "aliases": [
-        "ubuntu unity", "unity ubuntu"
-    ],
     "template_type": "terminal",
     "section_order": [
         "Privileges",
