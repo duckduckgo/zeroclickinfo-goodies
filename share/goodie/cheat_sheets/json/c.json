@@ -158,7 +158,7 @@
             {
                 "val": "Ternary conditional",
                 "key": "a ? b : c"
-            },
+            }
         ],
         "Conversion Characters": [
             {
