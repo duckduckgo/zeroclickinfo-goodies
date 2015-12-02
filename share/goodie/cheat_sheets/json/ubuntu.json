@@ -3,7 +3,7 @@
     "name": "Linux Ubuntu",
     "description": "Ubuntu Reference",
     "metadata": {
-        "sourceName": "Ubuntu Unity",
+        "sourceName": "Cheat-Sheets.org",
         "sourceUrl": "http://www.cheat-sheets.org/saved-copy/ubunturef.pdf"
     },
     "template_type": "terminal",
