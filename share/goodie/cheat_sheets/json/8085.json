@@ -207,19 +207,19 @@
             },
             {
                 "key": "DI",
-                "val": "Disable interrupts"
+                "val": "Disable Interrupts"
             },
             {
                 "key": "EI",
-                "val": "Enable interrupts"
+                "val": "Enable Interrupts"
             },
             {
                 "key": "RIM",
-                "val": "Read interrupt mask"
+                "val": "Read Interrupt Mask"
             },
             {
                 "key": "SIM",
-                "val": "Set interrupt mask"
+                "val": "Set Interrupt Mask"
             },
             {
                 "key": "CLI",
