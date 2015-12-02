@@ -159,10 +159,6 @@
                 "val": "Ternary conditional",
                 "key": "a ? b : c"
             },
-            {
-                "val": "Comma",
-                "key": "a, b"
-            }
         ],
         "Conversion Characters": [
             {
