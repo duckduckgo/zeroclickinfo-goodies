@@ -6,10 +6,6 @@
     color: #333;
 }
 
-.zci--resistor_colors .resistor-band.silver {
-    background-color: #d0d0d0;
-}
-
 .zci--resistor_colors .resistor-band.gold {
     background-color: #f2d374;
 }
@@ -58,8 +54,4 @@
 
 .zci--resistor_colors .resistor-band.white {
     background-color: #ffffff;
-}
-
-.zci--resistor_colors .zci__more-at {
-    margin-top: 20px;
 }

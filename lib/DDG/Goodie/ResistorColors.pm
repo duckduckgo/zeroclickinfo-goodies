@@ -186,17 +186,21 @@ sub render {
     structured_answer => {
         id => 'resistor_colors',
         name => 'Answer',
+        meta => {
+            sourceName => "resisto.rs",
+            sourceUrl => "http://resisto.rs/$formatted_value"
+        },
         data => {
             title => $title,
             subtitle => $bands . ' Bands',
-            resistor_bands => \@resistor_bands,
-            formatted_value => $formatted_value
+            resistor_bands => \@resistor_bands
         },
         templates => {
             group => 'text',
             item => 0,
             options => {
-                content => 'DDH.resistor_colors.content'
+                content => 'DDH.resistor_colors.content',
+                moreAt => 1
             }
         }
     };
