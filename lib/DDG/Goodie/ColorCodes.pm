@@ -58,7 +58,7 @@ name 'ColorCodes';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ColorCodes.pm';
 category 'conversions';
 topics 'programming';
-attribution  cpan   => 'CRZEDPSYC',
+attribution  cpan   => ['CRZEDPSYC', 'CRZEDPSYC'],
              github => ['http://github.com/mintsoft', 'Rob Emery'],
              github => ['http://github.com/Mailkov', 'Melchiorre Alastra'];
 
