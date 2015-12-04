@@ -69,11 +69,42 @@ sub maximum{
 sub gen_svg {
     my (%opts) = @_;
     my $svg = SVG->new(width=>$opts{"width"}, height=>$opts{"height"});
-    $svg->line(x1=>0, y1=>0, x2=>20, y2=>20, style=>{
-        'stroke'=>'black',
-        'stroke-width'=>'4'
-    });
-    $svg->circle(cx=>0, cy=>2, r=>20);
+    my $top_pad = 10;
+    $svg->line(
+        x1=>0,
+        y1=>$top_pad,
+        x2=>$opts{"width"},
+        y2=>$top_pad,
+        style=>{
+            'stroke'=>'black',
+            'stroke-width'=>'4'
+        });
+
+    for (my $i = 0; $i < $opts{"frets"}; $i++) {
+        my $fret_dist = (($opts{"height"} - $top_pad) / ($opts{"frets"}));
+        $svg->line(
+            x1=>0,
+            y1=>$top_pad * 3 + 2 + $i * $fret_dist,
+            x2=>$opts{"width"},
+            y2=>$top_pad * 3 + 2 + $i * $fret_dist,
+            style=>{
+                'stroke'=>'black',
+                'stroke-width'=>'2'
+            });
+    }
+
+    for (my $i = 0; $i < $opts{"strings"}; $i++) {
+        $svg->line(
+            x1=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
+            y1=>$top_pad,
+            x2=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
+            y2=>$opts{"height"},
+            style=>{
+                'stroke'=>'black',
+                'stroke-width'=>'2'
+            });
+    }
+    # $svg->circle(cx=>0, cy=>2, r=>20);
     return $svg;
 };
 
@@ -217,7 +248,12 @@ handle remainder => sub {
                 id => 'chord_diagrams',
                 name => 'Music',
                 data => {
-                    svg => gen_svg('width'=>200, 'height'=>200)->xmlify,
+                    svg => gen_svg(
+                        'width'=>100,
+                        'height'=>100,
+                        'frets'=>$length,
+                        'strings'=>$strings
+                    )->xmlify,
                     input => $input
                 },
                 templates => {
