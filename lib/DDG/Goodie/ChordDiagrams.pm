@@ -2,6 +2,7 @@ package DDG::Goodie::ChordDiagrams;
 # ABSTRACT: For getting the fingering for chords on popular strings instruments
 
 use DDG::Goodie;
+use SVG;
 
 zci answer_type => "chord_diagrams";
 zci is_cached   => 1;
@@ -62,6 +63,18 @@ sub minimum{
 sub maximum{
     my @sorted = sort{ $a <=> $b } (@_);
     return $sorted[-1];
+};
+
+# Generate chord SVG
+sub gen_svg {
+    my (%opts) = @_;
+    my $svg = SVG->new(width=>$opts{"width"}, height=>$opts{"height"});
+    $svg->line(x1=>0, y1=>0, x2=>20, y2=>20, style=>{
+        'stroke'=>'black',
+        'stroke-width'=>'4'
+    });
+    $svg->circle(cx=>0, cy=>2, r=>20);
+    return $svg;
 };
 
 # The input parser. Uses regex to find the key to put the chord in, and the
@@ -197,19 +210,15 @@ handle remainder => sub {
             foreach (@fret) {$_ += 0;} # <- KEEP THIS! Otherwise Perl converts 0 to a string. Why? Not a clue.
 
             my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )),
-                $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
+            $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
             my $type = ucfirst($instr_name) . " Chord";
+
             return 'chord_diagrams', structured_answer => {
                 id => 'chord_diagrams',
                 name => 'Music',
                 data => {
-                    width => $width,
-                    string_height=> $string_height,
-                    num_frets=>$length,
-                    num_strings => $strings,
-                    height => $height,
-                    points=>[@fret],
-                    input=>$input
+                    svg => gen_svg('width'=>200, 'height'=>200)->xmlify,
+                    input => $input
                 },
                 templates => {
                     group => 'base',
