@@ -36,7 +36,8 @@ topics "words_and_games";
 attribution github => ["https://github.com/loganom",      'loganom'],
             github => ["https://github.com/beardlybread", "beardlybread"],
             github => ['https://github.com/gdrooid',      'gdrooid'],
-            email  => ['gdrooid@openmailbox.org',         'gdrooid'];
+            email  => ['gdrooid@openmailbox.org',         'gdrooid'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 # Calculate the frequency of the characters in a string
 sub calc_freq {
