@@ -80,8 +80,8 @@ sub gen_svg {
             'stroke-width'=>'4'
         });
 
+    my $fret_dist = (($opts{"height"} - $top_pad) / ($opts{"frets"}));
     for (my $i = 0; $i < $opts{"frets"}; $i++) {
-        my $fret_dist = (($opts{"height"} - $top_pad) / ($opts{"frets"}));
         $svg->line(
             x1=>0,
             y1=>$top_pad * 3 + 2 + $i * $fret_dist,
@@ -104,7 +104,13 @@ sub gen_svg {
                 'stroke-width'=>'2'
             });
     }
-    # $svg->circle(cx=>0, cy=>2, r=>20);
+
+    my $i = 0;
+    my $p_dist = ($opts{"width"} - 2) / ($opts{"strings"} - 1);
+    for my $p (@{$opts{"points"}}) {
+        $svg->circle(cx=>$i * $p_dist + 1, cy=>$top_pad + $fret_dist * $p, r=>5);
+        $i++;
+    }
     return $svg;
 };
 
@@ -252,7 +258,8 @@ handle remainder => sub {
                         'width'=>100,
                         'height'=>100,
                         'frets'=>$length,
-                        'strings'=>$strings
+                        'strings'=>$strings,
+                        'points'=>\@frets
                     )->xmlify,
                     input => $input
                 },
