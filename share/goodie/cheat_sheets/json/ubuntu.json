@@ -3,12 +3,9 @@
     "name": "Linux Ubuntu",
     "description": "Ubuntu Reference",
     "metadata": {
-        "sourceName": "Ubuntu Unity",
+        "sourceName": "Cheat-Sheets.org",
         "sourceUrl": "http://www.cheat-sheets.org/saved-copy/ubunturef.pdf"
     },
-     "aliases": [
-        "ubuntu unity", "unity ubuntu"
-    ],
     "template_type": "terminal",
     "section_order": [
         "Privileges",
