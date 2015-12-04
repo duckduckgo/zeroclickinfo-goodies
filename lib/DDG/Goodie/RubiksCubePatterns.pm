@@ -15,7 +15,8 @@ topics 'special_interest';
 source 'http://math.cos.ucf.edu/~reid/Rubik/patterns.html';
 attribution web => ['robert.io', 'Robert Picard'], 
             twitter => ['__rlp', 'Robert Picard'], 
-            github => ['rpicard', 'Robert Picard'];
+            github => ['rpicard', 'Robert Picard'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 triggers start =>	"rcube", "rubik", "rubiks", "rubix",
 					"rubicks", "rubik's", "rubic's", "rubick's",
@@ -25,7 +26,7 @@ triggers start =>	"rcube", "rubik", "rubiks", "rubix",
 zci answer_type => "rubiks_cube";
 zci is_cached   => 1;
 
-our %patterns = (
+my %patterns = (
 	"stripes" => "F U F R L2 B D' R D2 L D' B R2 L F U F",
 	"crosses" => "U F B' L2 U2 L2 F' B U2 L2 U",
 	"swap centers" => "U D' R L' F B' U D'",
@@ -53,34 +54,41 @@ sub render_text($) {
 	return to_titlecase($name) . ": $patterns{$name} \n";
 }
 
-sub render_html($) {
-	my $name = pop;
-	my $output = "<div><i>" . to_titlecase($name) . "</i>";
-	$output .= ": $patterns{$name}</div>\n";
-	return $output;
-}
-
-handle remainder => sub {
-
-	$_ = lc($_);
+handle remainder_lc => sub {
 
 	#support British English!
 	s/centre/center/;
 
 	#hack for the trigger "rubiks cube in a cube"
 	s/^in a cube/cube in a cube/;
+	
+	my %patterns_answer;
+	my $output;
+    
+    if ($patterns{$_}) {
+        $output = render_text($_);
+        $patterns_answer{$_ . ":"} .= $patterns{$_};
+    } else {
+	    foreach my $pattern (keys %patterns) {
+		    $output .= render_text($pattern);
+	    }
+        %patterns_answer = %patterns;
+    }
 
-	#show answer
-	return render_text($_), html => render_html($_) if ($patterns{$_});
-
-	#display the cheatsheet
-	my $output = my $html_output = "";
-	foreach my $pattern (keys %patterns) {
-		$output .= render_text($pattern);
-		$html_output .= render_html($pattern);
-	}
-
-	return $output, html => $html_output, heading => "Rubik's Cube Patterns";
+	return $output,
+    structured_answer => {
+        id => 'rubiks_cube_patterns',
+        name => 'Answer',
+        data => {
+            record_data => \%patterns_answer,
+        },
+        templates => {
+                group => 'list',
+                options => {
+                    content => 'record',
+                }
+            }
+    };
 };
 
 1;

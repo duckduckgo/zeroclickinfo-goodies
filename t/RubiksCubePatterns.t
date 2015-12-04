@@ -14,40 +14,138 @@ ddg_goodie_test(
         )],
         'rubics cube stripes' => test_zci(
         	"Stripes: F U F R L2 B D' R D2 L D' B R2 L F U F \n",
-        	"html" => "<div><i>Stripes</i>: F U F R L2 B D' R D2 L D' B R2 L F U F</div>\n"
+            structured_answer => {
+                id => 'rubiks_cube_patterns',
+                name => 'Answer',
+                data => {
+                    record_data => {'stripes:', "F U F R L2 B D' R D2 L D' B R2 L F U F"},                   
+                },
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                    }
+                }
+            }
        	),
         'rubiks cube cube in a cube' => test_zci(
         	"Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
-        	"html" => "<div><i>Cube in a Cube</i>: F L F U' R U F2 L2 U' L' B D' B' L2 U</div>\n"
+            structured_answer => {
+                id => 'rubiks_cube_patterns',
+                name => 'Answer',
+                data => {
+                    record_data => {'cube in a cube:', "F L F U' R U F2 L2 U' L' B D' B' L2 U"},                   
+                },
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                    }
+                }
+            }
+        	#"html" => "<div><i>Cube in a Cube</i>: F L F U' R U F2 L2 U' L' B D' B' L2 U</div>\n"
         ),
         'rubic cube swap centers' => test_zci(
         	"Swap Centers: U D' R L' F B' U D' \n",
-        	"html" => "<div><i>Swap Centers</i>: U D' R L' F B' U D'</div>\n"
+            structured_answer => {
+                id => 'rubiks_cube_patterns',
+                name => 'Answer',
+                data => {
+                    record_data => {'swap centers:', "U D' R L' F B' U D'"},                   
+                },
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                    }
+                }
+            }
+        	#"html" => "<div><i>Swap Centers</i>: U D' R L' F B' U D'</div>\n"
         ),
         'rubiks cube in a cube' => test_zci(
         	"Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
-        	"html" => "<div><i>Cube in a Cube</i>: F L F U' R U F2 L2 U' L' B D' B' L2 U</div>\n"
+            structured_answer => {
+                id => 'rubiks_cube_patterns',
+                name => 'Answer',
+                data => {
+                    record_data => {'cube in a cube:', "F L F U' R U F2 L2 U' L' B D' B' L2 U"},                   
+                },
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                    }
+                }
+            }
+        	#"html" => "<div><i>Cube in a Cube</i>: F L F U' R U F2 L2 U' L' B D' B' L2 U</div>\n"
         ),
         'rubiks cube in a cube in a cube' => test_zci(
         	"Cube in a Cube in a Cube: U' L' U' F' R2 B' R F U B2 U B' L U' F U R F' \n",
-        	"html" => "<div><i>Cube in a Cube in a Cube</i>: U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'</div>\n"
-        ),
-        "rubik's cube patterns" => test_zci(
-        	qr/.+: .+/s,
-        	"html" => qr{<div><i>.+</i>: .+</div>}s,
-        	"heading" => "Rubik's Cube Patterns"
+            structured_answer => {
+                id => 'rubiks_cube_patterns',
+                name => 'Answer',
+                data => {
+                    record_data => {'cube in a cube in a cube:', "U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'"},                   
+                },
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                    }
+                }
+            }
+        	#"html" => "<div><i>Cube in a Cube in a Cube</i>: U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'</div>\n"
         ),
         'rcube stripes' => test_zci(
             "Stripes: F U F R L2 B D' R D2 L D' B R2 L F U F \n",
-            html => "<div><i>Stripes</i>: F U F R L2 B D' R D2 L D' B R2 L F U F</div>\n",
+            structured_answer => {
+                id => 'rubiks_cube_patterns',
+                name => 'Answer',
+                data => {
+                    record_data => {'stripes:', "F U F R L2 B D' R D2 L D' B R2 L F U F"},                   
+                },
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                    }
+                }
+            }
+            #html => "<div><i>Stripes</i>: F U F R L2 B D' R D2 L D' B R2 L F U F</div>\n",
         ),
         'rcube cube in a cube' => test_zci(
             "Cube in a Cube: F L F U' R U F2 L2 U' L' B D' B' L2 U \n",
-            html => "<div><i>Cube in a Cube</i>: F L F U' R U F2 L2 U' L' B D' B' L2 U</div>\n",
+            structured_answer => {
+                id => 'rubiks_cube_patterns',
+                name => 'Answer',
+                data => {
+                    record_data => {'cube in a cube:', "F L F U' R U F2 L2 U' L' B D' B' L2 U"},                   
+                },
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                    }
+                }
+            }
+            #html => "<div><i>Cube in a Cube</i>: F L F U' R U F2 L2 U' L' B D' B' L2 U</div>\n",
         ),
         'rcube swap centers' => test_zci(
             "Swap Centers: U D' R L' F B' U D' \n",
-            html => "<div><i>Swap Centers</i>: U D' R L' F B' U D'</div>\n",
+            structured_answer => {
+                id => 'rubiks_cube_patterns',
+                name => 'Answer',
+                data => {
+                    record_data => {'swap centers:', "U D' R L' F B' U D'"},                   
+                },
+                templates => {
+                    group => 'list',
+                    options => {
+                        content => 'record',
+                    }
+                }
+            }
+            #html => "<div><i>Swap Centers</i>: U D' R L' F B' U D'</div>\n",
         ),
 );
 
