@@ -21,7 +21,8 @@ name "zodiac";
 category "dates";
 topics "special_interest";
 attribution email  => 'nomady@zoho.com',
-            github => ['https://github.com/n0mady','NOMADY'];
+            github => ['https://github.com/n0mady','NOMADY'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 
 my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
