@@ -22,9 +22,9 @@ attribution twitter => ['crazedpsyc','crazedpsyc'],
 
 
 
-handle query => sub {
+handle remainder => sub {
 
-    my $query = $_;
+    my $query = $req->query_lc;
     
     my $type;
     if ($query =~ m/root mean square/) {
