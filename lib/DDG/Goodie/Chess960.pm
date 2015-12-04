@@ -13,8 +13,9 @@ description 'Generates a random starting position for Chess960';
 topics 'gaming', 'entertainment';
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Chess960.pm";
 category 'random';
-attribution github  => 'https://github.com/koosha--',
-            twitter => 'https://twitter.com/_koosha_';
+attribution github  => ['https://github.com/koosha--', 'koosha--']
+            twitter => 'https://twitter.com/_koosha_',
+            github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 
 my @all_positions = qw(
