@@ -64,14 +64,19 @@ handle remainder_lc => sub {
 	
 	my %patterns_answer;
 	my $output;
+    my $title;
+    my $subtitle;
     
     if ($patterns{$_}) {
         $output = render_text($_);
-        $patterns_answer{$_ . ":"} .= $patterns{$_};
+        $title = $patterns{$_};
+        $subtitle = "Rubiks cube '" . to_titlecase($_) . "' pattern";
     } else {
+        return if ($_ ne '');
 	    foreach my $pattern (keys %patterns) {
 		    $output .= render_text($pattern);
 	    }
+        $title = 'Rubiks cube patterns';
         %patterns_answer = %patterns;
     }
 
@@ -80,6 +85,8 @@ handle remainder_lc => sub {
         id => 'rubiks_cube_patterns',
         name => 'Answer',
         data => {
+            title => $title,
+            subtitle => $subtitle,
             record_data => \%patterns_answer,
         },
         templates => {
