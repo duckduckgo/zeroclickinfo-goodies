@@ -69,7 +69,7 @@ sub maximum{
 sub gen_svg {
     my (%opts) = @_;
     my $svg = SVG->new(width=>$opts{"width"}, height=>$opts{"height"});
-    my $top_pad = 10;
+    my $top_pad = 30;
     $svg->line(
         x1=>0,
         y1=>$top_pad,
@@ -84,9 +84,9 @@ sub gen_svg {
     for (my $i = 0; $i < $opts{"frets"}; $i++) {
         $svg->line(
             x1=>0,
-            y1=>$top_pad * 3 + 2 + $i * $fret_dist,
+            y1=>$top_pad + 2 + $i * $fret_dist,
             x2=>$opts{"width"},
-            y2=>$top_pad * 3 + 2 + $i * $fret_dist,
+            y2=>$top_pad + 2 + $i * $fret_dist,
             style=>{
                 'stroke'=>'black',
                 'stroke-width'=>'2'
@@ -112,7 +112,7 @@ sub gen_svg {
         $fill = 'none' if ($p == 0);
         $svg->circle(
             cx=>$i * $p_dist + 1,
-            cy=>$top_pad + $fret_dist * $p - $fret_dist/2 - 1,
+            cy=>$top_pad + $fret_dist * $p - $fret_dist/2 + 1,
             r=>5,
             style=>{
                 'stroke'=>'black',
@@ -266,7 +266,7 @@ handle remainder => sub {
                 data => {
                     svg => gen_svg(
                         'width'=>100,
-                        'height'=>100,
+                        'height'=>120,
                         'frets'=>$length,
                         'strings'=>$strings,
                         'points'=>\@frets
