@@ -27,43 +27,43 @@ zci answer_type => "rubiks_cube";
 zci is_cached   => 1;
 
 my %patterns = (
-	"stripes" => "F U F R L2 B D' R D2 L D' B R2 L F U F",
-	"crosses" => "U F B' L2 U2 L2 F' B U2 L2 U",
-	"swap centers" => "U D' R L' F B' U D'",
-	"checkerboard" => "F2 B2 R2 L2 U2 D2",
-	"cube in a cube" => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
-	"cube in a cube in a cube" => "U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'",
-	"exchanged peaks" => "F2 R2 D R2 U D F2 D' R' D' F L2 F' D R U'",
-	"t's" => "F2 R2 U2 F' B D2 L2 F B",
-	"anaconda" => "L U B' U' R L' B R' F B' D R D' F'",
-	"python" => "F2 R' B' U R' L F' L F' B D' R B L2",
-	"black mamba" => "R D L F' R L' D R' U D' B U' R' D'",
+    "stripes" => "F U F R L2 B D' R D2 L D' B R2 L F U F",
+    "crosses" => "U F B' L2 U2 L2 F' B U2 L2 U",
+    "swap centers" => "U D' R L' F B' U D'",
+    "checkerboard" => "F2 B2 R2 L2 U2 D2",
+    "cube in a cube" => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
+    "cube in a cube in a cube" => "U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'",
+    "exchanged peaks" => "F2 R2 D R2 U D F2 D' R' D' F L2 F' D R U'",
+    "t's" => "F2 R2 U2 F' B D2 L2 F B",
+    "anaconda" => "L U B' U' R L' B R' F B' D R D' F'",
+    "python" => "F2 R' B' U R' L F' L F' B D' R B L2",
+    "black mamba" => "R D L F' R L' D R' U D' B U' R' D'",
 );
 
 sub to_titlecase($)
 {
-	$a = pop;
-	$a =~ s/(\w\S*)/\u\L$1/g;
-	$a =~ s/ In / in /g;
-	$a =~ s/ A / a /g;
-	return $a;
+    $a = pop;
+    $a =~ s/(\w\S*)/\u\L$1/g;
+    $a =~ s/ In / in /g;
+    $a =~ s/ A / a /g;
+    return $a;
 }
 
 sub render_text($) {
-	my $name = pop;
-	return to_titlecase($name) . ": $patterns{$name} \n";
+    my $name = pop;
+    return to_titlecase($name) . ": $patterns{$name} \n";
 }
 
 handle remainder_lc => sub {
 
-	#support British English!
-	s/centre/center/;
+    #support British English!
+    s/centre/center/;
 
-	#hack for the trigger "rubiks cube in a cube"
-	s/^in a cube/cube in a cube/;
+    #hack for the trigger "rubiks cube in a cube"
+    s/^in a cube/cube in a cube/;
 	
-	my %patterns_answer;
-	my $output;
+    my %patterns_answer;
+    my $output;
     my $title;
     my $subtitle;
     
@@ -73,14 +73,14 @@ handle remainder_lc => sub {
         $subtitle = "Rubiks cube '" . to_titlecase($_) . "' pattern";
     } else {
         return if ($_ ne '');
-	    foreach my $pattern (keys %patterns) {
-		    $output .= render_text($pattern);
-	    }
+        foreach my $pattern (keys %patterns) {
+            $output .= render_text($pattern);
+        }
         $title = 'Rubiks cube patterns';
         %patterns_answer = %patterns;
     }
 
-	return $output,
+    return $output,
     structured_answer => {
         id => 'rubiks_cube_patterns',
         name => 'Answer',
@@ -90,12 +90,12 @@ handle remainder_lc => sub {
             record_data => \%patterns_answer,
         },
         templates => {
-                group => 'list',
-                options => {
-                    content => 'record',
-                }
+            group => 'list',
+            options => {
+                content => 'record',
             }
-    };
+        }
+     };
 };
 
 1;
