@@ -108,7 +108,17 @@ sub gen_svg {
     my $i = 0;
     my $p_dist = ($opts{"width"} - 2) / ($opts{"strings"} - 1);
     for my $p (@{$opts{"points"}}) {
-        $svg->circle(cx=>$i * $p_dist + 1, cy=>$top_pad + $fret_dist * $p, r=>5);
+        my $fill = 'black';
+        $fill = 'none' if ($p == 0);
+        $svg->circle(
+            cx=>$i * $p_dist + 1,
+            cy=>$top_pad + $fret_dist * $p - $fret_dist/2 - 1,
+            r=>5,
+            style=>{
+                'stroke'=>'black',
+                'stroke-width'=>2,
+                'fill'=>$fill
+            });
         $i++;
     }
     return $svg;
