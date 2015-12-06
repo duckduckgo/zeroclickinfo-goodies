@@ -24,11 +24,15 @@ code_url 'http://github.com/koosha--';
 category 'computing_tools';
 topics 'programming';
 attribution github  => ['koosha--', 'Koosha K. M.'],
-            twitter => '_koosha_';
+            twitter => '_koosha_',
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 my $delim = ', ';
 
 handle remainder => sub {
+
+    return unless $_;
+    
     my $input = $_;
     $input =~ s/[\(\{\[]
                 |
