@@ -42,8 +42,8 @@
          },
          {
             "key" : "You're welcome",
-            "val" : "നതാങ്കൾക്ക് സ്വാഗതം ",
-            "trn" : "Thaangalku swagatham"
+            "val" : " താങ്കൾക്ക് സ്വാഗതം ",
+            "trn" : "Thaangalku swaagatham"
          }
       ],
       "Getting Help" : [
@@ -54,7 +54,7 @@
          },
          {
             "key" : "Can you speak more slowly, please?",
-            "val" : "നതാങ്കൾക്ക് കുറച്ചുകൂടി പതുക്കെ സംസാരിക്കാൻ കഴിയുമോ ?",
+            "val" : "താങ്കൾക്ക് കുറച്ചുകൂടി പതുക്കെ സംസാരിക്കാൻ കഴിയുമോ ?",
             "trn" : "Thangalku kurachukoodi pathukke samsarikkan kazhiyumo?"
          },
          {
@@ -85,7 +85,7 @@
          {
             "key" : "I need a doctor!",
             "val" : "എനിക്ക് ഒരു ഡോക്ടറെ ആവശ്യമുണ്ട്  !",
-            "trn" : "Enik oru doctore aavashyamund!"
+            "trn" : "Enikku oru doctore aavashyamund!"
          },
          {
             "key" : "Can you write that down, please?",
@@ -95,11 +95,11 @@
          {
             "key" : "Call an ambulance!",
             "val" : "ഒരു ആംബുലൻസ് വിളിക്കു !",
-            "trn" : "Oru ambulance viliku!"
+            "trn" : "Oru ambulance vilikku!"
          },
          {
             "key" : "I am in danger!",
-            "val" : "ഞാൻ അപകടതിലാണ്ണ്‍  !",
+            "val" : "ഞാൻ അപകടത്തിലാണ് !",
             "trn" : "Njan apakadathil aanu!"
          },
          {
@@ -132,7 +132,7 @@
          {
             "key" : "Welcome",
             "val" : "സ്വാഗതം",
-            "trn" : "Swagatham"
+            "trn" : "Swaagatham"
          },
          {
             "key" : "What's your name?",
@@ -168,7 +168,7 @@
          },
          {
             "key" : "Do you have a city map?",
-            "val" : "നിങ്ങളുടെ കയ്യില പട്ടണത്തിന്റെ മാപ് ഉണ്ടോ ?",
+            "val" : "നിങ്ങളുടെ കൈയ്യിൽ പട്ടണത്തിൻറെ മാപ്പ് ഉണ്ടോ ?",
             "trn" : "Ningalude kayyil pattanathinte map undo?"
          },
          {
@@ -184,7 +184,7 @@
          {
             "key" : "Where can I find the taxis?",
             "val" : "എനിക്ക് എവിടെ ടാക്സി കണ്ടെത്താൻ കഴിയും ?",
-            "trn" : "Enik evide taxi kandethan kazhiyum?"
+            "trn" : "Enik evide taxis kandethan kazhiyum?"
          },
          {
             "key" : "How can I get a taxi?",
@@ -195,7 +195,7 @@
       "Going out for dinner" : [
          {
             "key" : "Do you have vegetarian dishes?",
-            "val" : "എവിടെ വെഗിടരിയൻ വിഭവങ്ങൾ ഉണ്ടോ ?",
+            "val" : "ഇവിടെ വെജിറ്റേറിയൻ വിഭവങ്ങൾ ഉണ്ടോ ?",
             "trn" : "Ivide vegetarian vibhavangal undo?"
          },
          {
@@ -205,7 +205,7 @@
          },
          {
             "key" : "The cheque please!",
-            "val" : "പരിശോധിക്കുക !",
+            "val" : "ചെക്ക്‌ നല്കു !",
             "trn" : "Cheque nalku!"
          },
          {
@@ -215,8 +215,8 @@
          },
          {
             "key" : "Where is a good restaurant?",
-            "val" : "എവിടെ ആണ്‍ നല്ല ഭക്ഷണശാല ?",
-            "trn" : "Evide annu nalla bhakshanashaala ullathu?"
+            "val" : "എവിടെ ആണ് നല്ല ഭക്ഷണശാല ഉള്ളത് ?",
+            "trn" : "Evide aanu nalla bhakshanashaala ullathu?"
          },
          {
             "key" : "A glass of water please.",
@@ -225,7 +225,7 @@
          },
          {
             "key" : "A table for two please!",
-            "val" : "ദയവായി രണ്ട് ആള്കുള്ള ടേബിൾ വേണം !",
+            "val" : "ദയവായി രണ്ട് ആളുകൾക്കുള്ള ടേബിൾ വേണം !",
             "trn" : "Dayavaayi rand aalukalkkulla table venam"
          },
          {
