@@ -30,6 +30,19 @@ my %utf8_dice = (
     6 => "\x{2685}",
 );
 
+# remove whitespace from string
+sub remove_whitespace
+{
+    my $str = $_[0];
+    if( defined($str)) {
+        $str=~ s/\s//g;
+    } else {
+        $str='';
+    }
+    return $str;
+}
+
+
 # roll_dice generate pseudo random roll
 # param $_[0] number of faces
 # return roll
@@ -58,31 +71,44 @@ sub set_num_dice {
 # shorthand_roll_output generate shorthand roll output
 # param array of rolls
 # param sum of rolls
-# param subtractive modifier (if not equal to '0')
+# param left-hand ("lh") or right-hand ("rh")
+# param plus ('+') or minus ('-')
+# param modifier value e.g. for "1-6dh" the modifier value is '1'
+# param is second modifier = determine whether or not a left hand modifier was sent for same roll.
 # return roll output
 sub shorthand_roll_output {
     my @rolls = @{$_[0]};
     my $sum = $_[1];
-    my $subtractive_modifier = $_[2];
+    my $right_or_left_hand = $_[2];
+    my $plus_or_minus = $_[3];
+    my $modifier_value = $_[4];
+    my $is_second_modifier = defined($_[5]) ? $_[5] : '0';
     my $out;
-    if (@rolls > 1) { # if( sizeOf(rolls) > 1)
-        $out = join(' + ', @rolls); # append current roll to output
-        $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
-        if($subtractive_modifier ne '0')
-        {
-            $out = $subtractive_modifier . ' - (' . $out . ')';
-        }
-        $out .= " = $sum"; # append sum of rolls to output
-    } else {
-    if($subtractive_modifier ne '0')
-    {
-        $out = $subtractive_modifier . ' - ' . $rolls[0] . " = $sum";
-    } else {
-            $out = $sum; # output is roll value if we have just one roll
-        }
-    }
     
-    return $out . '<br/>';
+    if ($is_second_modifier eq '0') {
+        if(@rolls > 1) {
+            $out = join(' + ', @rolls); # append current roll to output
+            $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
+        } else {
+            $out = $rolls[0];
+        }
+    } else {
+        $out = '';
+    }
+     
+     if($modifier_value ne '0') {
+        if($is_second_modifier eq '0') {
+            $out = '(' . $out . ')';
+        }
+        
+        if ($right_or_left_hand eq "lh") {
+            $out = $modifier_value . ' ' . $plus_or_minus . ' ' . $out;
+        } else {
+            $out .= ' ' . $plus_or_minus . ' ' . $modifier_value;
+        }
+     }
+
+    return $out;
 }
 
 handle remainder_lc => sub {
@@ -107,6 +133,7 @@ handle remainder_lc => sub {
                 $sum += $roll; # track sum
                 push @output, $utf8_dice{$roll}; # add our roll to array output
             }
+            
             $total += $sum; # track total of all rolls
             $out .= join(', ', @output) . '<br/>';
             $html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
@@ -120,33 +147,31 @@ handle remainder_lc => sub {
             my $number_of_dice = my $min = 0;
             my $number_of_faces;
             my $max = my $sum = 0; # set max roll and sum to -
-            my $subtractive_modifier = '0';
-            my $param1 = my $param2 = my $param3 = my $param4 = '';
+            my $modifer_value = '0';
+            my $param1 = my $param2 = my $param3 = my $param4 = my $param5 = my $param6 = '';
+            my $plus_or_minus = '';
 
-            if ($_ =~ /^(\d+)\s*([+-]\s*)+(\d*)[d|w](\d+)\s*$/) {   #   the left hand side of the notation has an "additive modifier" ('1-4d7', '2+8d2')
+            if ($_ =~ /^(\d+)\s*([+-])\s*(\d*)[d|w](\d*)\s*([+-]?)\s*(\d*)\s*$/) {   # the left hand side of the notation has an "additive modifier" ('1-4d7', '2+8d2')
+                                                                                     # and the right hand side may, also: e.g. '1 - 3d7 + 5'
+                # remove whitespace
+                $param1 = remove_whitespace($1);
+                $param2 = remove_whitespace($2);
+                $param3 = remove_whitespace($3);
+                $param4 = remove_whitespace($4);
+                $param5 = remove_whitespace($5);
+                $param6 = remove_whitespace($6);
+                
                 # check that input is not greater than or equal to 99
                 # check that input is not 0. ex. 'roll 0d3' should not return a value
-                $number_of_dice = set_num_dice($3, 1);
-                if( $number_of_dice >= 100 or $1 eq '0'){
+                $number_of_dice = set_num_dice($param3, 1);
+                if( $number_of_dice >= 100 or $param3 eq '0'){
                      return; # do not continue if conditions not met
                 }
                 
-                $min = $number_of_faces = $4;
-                
-                # remove whitespace
-                $param1 = $1;
-                $param2 = $2;
-                $param1 =~ s/^\s+|\s+$//g;
-                $param2 =~ s/^\s+|\s+$//g;
-                # If the modifier is a minus sign, store the value to indicate the sum is being subtracted from a constant.
-                if($param2 eq '-') { # the modifier is a minus sign ("-")
-                    $subtractive_modifier = $param1;
-                }
-                else
-                {
-                    push(@rolls, int("$param2$param1"));  # only push positive modifiers ex.'+3'
-                }
-                
+                $min = $number_of_faces = $param4;         
+                $modifer_value = $param1;
+                $plus_or_minus = $param2;
+
                 # TODO: refactor code from here to end of block to call one or more subroutines that can be used by the next section.
                 for (1 .. $number_of_dice) { # for each die
                     my $roll = roll_die( $number_of_faces ); # roll the die
@@ -158,17 +183,45 @@ handle remainder_lc => sub {
                 for (@rolls) {
                     $sum += $_; # track sum
                 }
-                
-                if($subtractive_modifier ne '0') {  # if the modifier is subtractive, e.g. '5-4d3', subtract the total from the modifier
-                    $sum = int($subtractive_modifier) - $sum;
+
+                # Identify the modifier and store it for formatting and total.
+                if($plus_or_minus eq '-') { # the modifier is a minus sign ("-")
+                    $sum = int($modifer_value) - $sum;
+                } else {
+                    $sum = int($modifer_value) + $sum;
                 }
+                $roll_output = shorthand_roll_output( \@rolls, $sum, "lh", $plus_or_minus, $modifer_value ); # initialize roll_output
                 
-                $roll_output = shorthand_roll_output( \@rolls, $sum, $subtractive_modifier ); # initialize roll_output
+				if($param5 ne '' && $param6 ne '') {   # check right-hand side for '+n' or '-n'
+					if( $param5 eq '+' || $param5 eq '-') {
+                        $plus_or_minus = $param5;
+                        $modifer_value = $param6;
+                        
+                        if($plus_or_minus eq '-') {
+                            $sum = $sum - int($modifer_value);
+                        } else {
+                            $sum = int($modifer_value) + $sum;
+                        }
+					}
+                
+                    $roll_output .= shorthand_roll_output( \@rolls, $sum, "rh", $plus_or_minus, $modifer_value, '1' ); # initialize roll_output
+				}
+                
+                if( @rolls > 1) {
+                    $roll_output .= " = $sum";
+                }
+                $roll_output .= '<br/>';
                 $out .= $roll_output; # add roll_output to our result
                 $html .= $roll_output; # add roll_output to our HTML result
                 $total += $sum; # add the local sum to the total
             }
-            elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
+            elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # no modifier or only a right-hand modifier: e.g. 6d7 or 2d9=3
+                # remove whitespace
+                $param1 = remove_whitespace($1);
+                $param2 = remove_whitespace($2);
+                $param3 = remove_whitespace($3);
+                $param4 = remove_whitespace($4);
+                
                 # check that input is not greater than or equal to 99
                 # check that input is not 0. ex. 'roll 0d3' should not return a value
                 $number_of_dice = set_num_dice($1, 1); # set number of dice, default 1                
@@ -176,7 +229,7 @@ handle remainder_lc => sub {
                      return; # do not continue if conditions not met
                 }
                 
-                $min = $number_of_faces = $2; # set min and number_of_faces to max possible roll
+                $min = $number_of_faces = $param2; # set min and number_of_faces to max possible roll
                 for (1 .. $number_of_dice) { # for each die
                     my $roll = roll_die( $number_of_faces ); # roll the die
                     $min = $roll if $roll < $min; # record min roll
@@ -184,12 +237,7 @@ handle remainder_lc => sub {
                     push @rolls, $roll; # add roll to array rolls
                 }
                 
-                if (defined($3) && defined($4)) {
-                    # remove whitespace
-                    $param3 = $3;
-                    $param4 = $4;
-                    $param3 =~ s/^\s+|\s+$//g;
-                    $param4 =~ s/^\s+|\s+$//g;
+                if ($param3 ne '' && $param4 ne '') {
                     # handle special case of " - L" or " - H"
                     if ($param3 eq '-' && ($param4 eq 'l' || $param4 eq 'h')) {
                         if ($param4 eq 'l') {
@@ -200,14 +248,20 @@ handle remainder_lc => sub {
                     } elsif ($param3 eq '+' && ($param4 eq 'l' || $param4 eq 'h')) { # do nothing with '3d5+h'
                     return;
                     } else {
-                        push(@rolls, int("$param3$param4")); # ex. '-4', '+3'
+                        $plus_or_minus = $param3;
+                        $modifer_value = $param4;
                     }
                 }
+                
                 for (@rolls) {
                     $sum += $_; # track sum
                 }
                 
-                $roll_output = shorthand_roll_output( \@rolls, $sum, $subtractive_modifier ); # initialize roll_output
+                $roll_output = shorthand_roll_output( \@rolls, $sum, "rh", $plus_or_minus, $modifer_value ); # initialize roll_output
+                if( @rolls > 1) {
+                    $roll_output .= " = $sum";
+                }
+                $roll_output .= '<br/>';
                 $out .= $roll_output; # add roll_output to our result
                 $html .= $roll_output; # add roll_output to our HTML result
                 $total += $sum; # add the local sum to the total
