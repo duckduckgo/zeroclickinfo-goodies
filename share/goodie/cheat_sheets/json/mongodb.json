@@ -4,13 +4,12 @@
     "templete_type": "code",
     "description": "Mongo shell",
     "metadata": {
-        "sourceName": "MongoDB - Cheat Sheet",
+        "sourceName": "Codecentric",
         "sourceUrl": "https://blog.codecentric.de/files/2012/12/MongoDB-CheatSheet-v1_0.pdf"
     },
     "aliases": [
         "mongodb",
         "mongo db",
-        "mongodb commands",
         "mongo db shell"
     ],
     "template_type": "terminal",
@@ -35,7 +34,7 @@
         "Basic Conceptes & Shell Commands": [
             {
                 "key": "db.collection.<command>",
-                "val": "db – implicit handle to the used database, collection – name of the used collection"
+                "val": "Db – implicit handle to the used database, collection – name of the used collection"
             },
             {
                 "key": "use <database>",
@@ -145,21 +144,21 @@
             },
             {
                 "key": "db.collection.update(\\{key:value\\},\\{$set : \\{operator:opt, class:c\\}\\})",
-                "val": "sets / changes certain attributes of a given document"
+                "val": "Sets / changes certain attributes of a given document"
             },
             {
                 "key": "db.collection.update(\\{key:value\\},\\{$unset : \\{operator : 1\\}\\})",
-                "val": "removes an attribute from a given document"
+                "val": "Removes an attribute from a given document"
             }
         ],
         "Removing Documents": [
             {
                 "key": "db.collection.remove(\\{key:value\\})",
-                "val": "removes the document"
+                "val": "Removes the document"
             },
             {
                 "key": "db.collection.remove(\\{key:\\{$regex:’^USS\\sE’\\}\\})",
-                "val": "removes using operator"
+                "val": "Removes using operator"
             }
         ],
         "Working with Indexes": [
