@@ -12,7 +12,6 @@
         "mongo db",
         "mongo db shell"
     ],
-    "template_type": "terminal",
     "section_order": [
         "Basic Conceptes & Shell Commands",
         "BSON Types",
@@ -34,7 +33,7 @@
         "Basic Conceptes & Shell Commands": [
             {
                 "key": "db.collection.<command>",
-                "val": "Db – implicit handle to the used database, collection – name of the used collection"
+                "val": "Db – implicit handle to the used database, collection – name of the used collection"              
             },
             {
                 "key": "use <database>",
@@ -147,6 +146,10 @@
                 "val": "Sets / changes certain attributes of a given document"
             },
             {
+                "key": "db.collection.update(\\{key:value\\},\\{$unset : \\{operator : 1\\}\\})",               
+                "val": "Sets / changes certain attributes of a given document"
+            },
+            {
                 "key": "db.collection.update(\\{key:value\\},\\{$unset : \\{operator : 1\\}\\})",
                 "val": "Removes an attribute from a given document"
             }
@@ -158,28 +161,11 @@
             },
             {
                 "key": "db.collection.remove(\\{key:\\{$regex:’^USS\\sE’\\}\\})",
-                "val": "Removes using operator"
+                "val": "Removes using operator"                
             }
         ],
         "Working with Indexes": [
             {
-                "key": "db.collection.ensureIndex(keys, options)",
-                "val": "Creating an index"
-            },
-            {
-                "key": "db.collection.dropIndex(keys, options)",
-                "val": "Dropping an index"
-            },
-            {
-                "key": "db.collection.ensureIndex(keys, options)",
-                "val": "Creating a compound index"
-            },
-            {
-                "key": "db.collection.dropIndex(\\{keys, options)",
-                "val": "Dropping a compound index"
-            },
-            {
-                "key": "db.collection.ensureIndex(keys, options, \\{unique : true\\})",
                 "key": "db.collection.ensureIndex(keys, options)",
                 "val": "Creating an index"
             },
@@ -355,4 +341,3 @@
             }
         ]
     }
-}
