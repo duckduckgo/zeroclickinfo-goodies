@@ -8,7 +8,7 @@
     },
 	
 	"aliases": [
-		"default port numbers", "default port", 
+		"default port numbers", "default port" 
 	],
     "template_type": "keyboard",
     "section_order": [
