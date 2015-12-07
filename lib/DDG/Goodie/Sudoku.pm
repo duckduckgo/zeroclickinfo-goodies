@@ -19,24 +19,8 @@ name 'Sudoku';
 category 'random';
 attribution github => ['DrDub', 'Pablo Duboue'],
 	web => ['http://duboue.net/', 'Pablo Duboue'],
-	github => ['https://github.com/mintsoft', 'Rob Emery'];
-
-sub parse_to_html_table(@)
-{
-	my @sudoku_lines = @_;
-	my $html_table = "<table class='sudoku'>\n";
-	for my $line (@sudoku_lines)
-	{
-		my @chars = split(/ /, $line);
-		for my $char (@chars)
-		{
-			$char = "<input maxlength='1'/>" if $char eq "_";
-		}
-		$html_table .= "<tr><td>" . join("</td><td>", @chars) . "</td></tr>\n";
-	}
-	$html_table .= "</table>";
-	return $html_table;
-}
+	github => ['https://github.com/mintsoft', 'Rob Emery'],
+    github => ['https://github.com/Mailkov', 'Melchiorre Alastra'];
 
 handle remainder => sub {
 
@@ -55,13 +39,40 @@ handle remainder => sub {
 	$sudoku->generate(blanks => (9 ** 2) * $blanks);
 	my $str_output = $sudoku->as_string();
 
-	#switch 0 to more sensible placeholders
-	$str_output =~ s/0/_/g;
-
 	my @sudoku_lines = split(/\n/, $str_output);
-	my $html_table = parse_to_html_table(@sudoku_lines);
 
-	return $str_output, html => $html_table;
+	my @sudoku_tables;
+    
+    my @number;
+    for my $line (@sudoku_lines) {
+        $line =~ s/0//g;
+        @number = split(/ /, $line);
+        if (scalar(@number) == 8) {
+            push @number, "";
+        }
+		push @sudoku_tables, [@number];
+    }    
+    
+    #switch 0 to more sensible placeholders
+	$str_output =~ s/0/_/g;
+    
+	return $str_output,
+    structured_answer => {
+        id => 'sudoku',
+        name => 'Answer',
+        data => {
+            title => 'Sudoku',
+            subtitle => 'Level: ' . $difficulty,
+            sudoku_tables => \@sudoku_tables
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.sudoku.content'
+            }
+        }
+    };
 };
 
 1;

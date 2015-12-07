@@ -15,29 +15,95 @@ ddg_goodie_test(
 	],
 	"sudoku" => test_zci(
 		qr/^[0-9_].*[0-9_]$/s,
-		html => qr/.*\<table.*\<\/table\>.*/s,
+		structured_answer => {
+            id => 'sudoku',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"play sudoku" => test_zci(
 		qr/^[0-9_].*[0-9_]$/s,
-		html => qr/.*\<table.*\<\/table\>.*/s,
+		structured_answer => {
+            id => 'sudoku',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"easy sudoku" => test_zci(
 		qr/^[0-9_].*[0-9_]$/s,
-		html => qr/.*\<table.*\<\/table\>.*/s,
+		structured_answer => {
+            id => 'sudoku',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"sudoku hard" => test_zci(
 		qr/^[0-9_].*[0-9_]$/s,
-		html => qr/.*\<table.*\<\/table\>.*/s,
+		structured_answer => {
+            id => 'sudoku',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"generate sudoku" => test_zci(
 		qr/^[0-9_].*[0-9_]$/s,
-		html => qr/.*\<table.*\<\/table\>.*/s,
+		structured_answer => {
+            id => 'sudoku',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
 	),
 	"sudoku party" => undef,
 	"sudoku toys" => undef,
     'sudoku easy' => test_zci(
         qr/[0-9_].*[0-9_]$/s,
-        html => qr/.*\<table.*\<\/table\>.*/s,
+        structured_answer => {
+            id => 'sudoku',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.sudoku.content'
+                }
+            }
+        }
     ),
 );
 

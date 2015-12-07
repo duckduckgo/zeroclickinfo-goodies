@@ -1,0 +1,13 @@
+<table class='sudoku'> 
+    {{#each sudoku_tables}}
+        <tr>
+            {{#each this}}
+                    {{#if this}}
+                        <td>{{this}}</td>
+                    {{else}}
+                        <td><input maxlength='1'/></td>
+                    {{/if}}
+            {{/each}}
+        </tr>
+    {{/each}}
+</table>
