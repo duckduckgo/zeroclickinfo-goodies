@@ -1,9 +1,9 @@
 {
     "id": "wunderlist_cheat_sheet",
     "name": "Wunderlist",
-    "description": "To-do list manager",
+    "description": "Keyboard shortcuts for the Wunderlist to-do list manager",
     "metadata": {
-        "sourceName": "Wunderlist Support Center",
+        "sourceName": "Wunderlist",
         "sourceURL": "https://support.wunderlist.com/customer/en/portal/articles/889536-shortcuts"
     },
     "template_type": "keyboard",
