@@ -32,7 +32,7 @@ my %typeMap = (
 
 handle remainder => sub {
     
-    return unless ($_ =~ /^(O|A|B|AB)(\-|\+)$/i);
+    return unless ($_ =~ /^(O|A|B|AB)((\-|\+)|(\-ve|\+ve))$/i);
 
     my $type = uc $1;
     my $rh = $2;
@@ -48,6 +48,9 @@ handle remainder => sub {
         if($rh eq '+') {
             # only when access to same Rh is impossible
             push(@criticalResults, $donorType . '-');
+        } 
+        if($rh eq '+ve') {
+            push(@criticalResults, $donorType . '-ve');
         }
     }
 
@@ -60,7 +63,7 @@ handle remainder => sub {
     );
     my @record_keys = ("Ideal donor", "Other donors");
     
-    if($rh eq '+') {
+    if($rh eq '+ve' || $rh eq '+') {
         push @record_keys,"Only if no Rh(+) found";
         $record_data{"Only if no Rh(+) found"} = $criticalStr;
     }
