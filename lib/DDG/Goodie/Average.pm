@@ -4,7 +4,7 @@ package DDG::Goodie::Average;
 use strict;
 use DDG::Goodie;
 
-triggers startend => "avg", "average", "mean", "median", "root mean square";
+triggers startend => "avg", "average", "mean", "median", "root mean square", "rms";
 
 zci is_cached => 1;
 zci answer_type => "average";
@@ -27,7 +27,7 @@ handle remainder => sub {
     my $query = $req->query_lc;
     
     my $type;
-    if ($query =~ m/root mean square/) {
+    if ($query =~ m/root mean square|rms/) {
         $type = "Root Mean Square";
     } elsif ($query =~ m/avg|average|mean/) {
         $type = "Mean";
