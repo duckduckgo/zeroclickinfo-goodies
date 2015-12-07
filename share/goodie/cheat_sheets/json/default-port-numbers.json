@@ -22,7 +22,7 @@
             "val": "FTP control (command)",
             "key": "21"
         }, {
-            "val": "Secure Shell (SSH)"
+            "val": "Secure Shell (SSH)",
             "key": "22"
         }, {
             "val": "Telnet Protocol",
@@ -45,6 +45,9 @@
         }, {
             "val": "Remote Procedure Call (RPC)",
             "key": "530"
-        }]
+        }, {
+			"val": "Telent Protocol over TLS/SSL",
+			"key": "992"
+		}]
     }
 }
