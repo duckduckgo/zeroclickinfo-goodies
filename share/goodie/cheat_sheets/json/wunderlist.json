@@ -9,7 +9,7 @@
     "template_type": "keyboard",
     "section_order": [
         "To-dos and Lists",
-        "Copy and pasting",
+        "Copying and Pasting",
         "Searching",
         "Navigation",
         "Syncing"
@@ -34,7 +34,7 @@
             "val": "Delete Selected List or To-do",
             "key": "[Ctrl] [Backspace]"
         }],
-        "Copy and pasting": [{
+        "Copying and Pasting": [{
             "val": "Copy Selected To-do",
             "key": "[Ctrl] [c]"
         }, {
