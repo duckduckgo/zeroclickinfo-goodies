@@ -1,0 +1,190 @@
+{
+    "id": "gnome_cheat_sheet",
+    "name": "GNOME",
+    "description": "List of useful keyboard shortcuts for GNOME",
+    "metadata": {
+        "sourceName": "GNOME Help",
+        "sourceUrl": "https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html.en"
+    },
+    "section_order": [
+        "Windows",
+        "System",
+        "Navigation",
+        "Common Editing",
+        "Screen Capturing",
+        "Universal Access",
+        "Typing"
+    ],
+    "sections": {
+        "Windows": [
+            {
+                "val": "Maximize window",
+                "key": "[Super] [↑]"
+            },
+            {
+                "val": "Restore window",
+                "key": "[Super] [↓]"
+            },
+            {
+                "val": "Close window",
+                "key": "[Alt] [F4]"
+            },
+            {
+                "val": "Hide window",
+                "key": "[Super] [H]"
+            },
+            {
+                "val": "View split on left",
+                "key": "[Super] [←]"
+            },
+            {
+                "val": "View split on right",
+                "key": "[Super] [→]"
+            },
+            {
+                "val": "Move window",
+                "key": "[Alt] [F7]"
+            },
+            {
+                "val": "Resize window",
+                "key": "[Alt] [F8]"
+            },
+            {
+                "val": "Activate the window menu",
+                "key": "[Alt] [Space]"
+            }
+        ],
+        "Navigation": [
+            {
+                "val": "Move to workspace above",
+                "key": "[Super] [Page Up]"
+            },
+            {
+                "val": "Move to workspace below",
+                "key": "[Super] [Page Down]"
+            },
+            {
+                "val": "Move window one workspace up",
+                "key": "[Shift] [Super] [Page Up]"
+            },
+            {
+                "val": "Move window one workspace down",
+                "key": "[Shift] [Super] [Page Down]"
+            },
+            {
+                "val": "Switch applications",
+                "key": "[Super] [Tab]"
+            },
+            {
+                "val": "Switch windows directly",
+                "key": "[Alt] [Esc]"
+            },
+            {
+                "val": "Switch windows of an application directly",
+                "key": "[Alt] [F6]"
+            },
+            {
+                "val": "Switch system controls",
+                "key": "[Ctrl] [Alt] [Tab]"
+            },
+            {
+                "val": "Switch system controls directly",
+                "key": "[Ctrl] [Alt] [Esc]"
+            }
+        ],
+        "System": [
+            {
+                "val": "Show the run command prompt",
+                "key": "[Alt] [F2]"
+            },
+            {
+                "val": "Show the activities overview",
+                "key": "Super"
+            },
+            {
+                "val": "Power Off",
+                "key": "[Ctrl] [Alt] [Delete]"
+            },
+            {
+                "val": "Lock Screen",
+                "key": "[Super] [L]"
+            },
+            {
+                "val": "Show the message tray",
+                "key": "[Super] [M]"
+            },
+            {
+                "val": "Focus the active notification",
+                "key": "[Super] [N]"
+            },
+            {
+                "val": "Show all applications",
+                "key": "[Super] [A]"
+            },
+            {
+                "val": "Open the application menu",
+                "key": "[Super] [F10]"
+            }
+        ],
+        "Common Editing": [
+            {
+                "val": "Select all text or items in a list",
+                "key": "[Ctrl] [A] "
+            },
+            {
+                "val": "Cut selected text or items and place it on the clipboard",
+                "key": "[Ctrl] [X] "
+            },
+            {
+                "val": "Copy selected text or items to the clipboard",
+                "key": "[Ctrl] [C] "
+            },
+            {
+                "val": "Paste the contents of the clipboard",
+                "key": "[Ctrl] [V] "
+            },
+            {
+                "val": "Undo the last action",
+                "key": "[Ctrl] [Z] "
+            }
+        ],
+        "Screen Capturing": [
+            {
+                "val": "Take a screenshot",
+                "key": "[Prnt Scrn]"
+            },
+            {
+                "val": "Take a screenshot of a window",
+                "key": "[Alt] [Prnt Scrn]"
+            },
+            {
+                "val": "Take a screenshot of an area of the screen",
+                "key": "[Shift] [Prnt Scrn]"
+            },
+            {
+                "val": "Start and end screencast recording",
+                "key": "[Ctrl] [Alt] [Shift] [R] "
+            }
+        ],
+        "Universal Access": [
+            {
+                "val": "Turn zoom on or off",
+                "key": "[Alt] [Super] [8]"
+            },
+            {
+                "val": "Zoom in",
+                "key": "[Alt] [Super] [=]"
+            },
+            {
+                "val": "Zoom out",
+                "key": "[Alt] [Super] [-]"
+            }
+        ],
+        "Typing": [
+            {
+                "val": "Switch to next input source",
+                "key": "[Super] [Space]"
+            }
+        ]
+    }
+}

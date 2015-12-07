@@ -1,4 +1,4 @@
-.zci--answer .zci--fenviewer a {
+.zci--chess960 .chess_board span {
 	color:#333;
 	display:block;
 	font-size:27px;
@@ -9,8 +9,8 @@
     line-height: 1.5;
 }
 
-.zci--answer .zci--fenviewer .chess_board { border: 2px solid #333; }
-.zci--answer .zci--fenviewer .chess_board td {
+.zci--chess960 .chess_board { border: 2px solid #333; }
+.zci--chess960 .chess_board td {
 	background:#fff;
 	height:40px;
 	text-align:center;
@@ -18,7 +18,7 @@
 	width:40px;
 }
 
-.zci--answer .zci--fenviewer .chess_board tr:nth-child(odd) td:nth-child(even),
-.zci--answer .zci--fenviewer .chess_board tr:nth-child(even) td:nth-child(odd) {
+.zci--chess960 .chess_board tr:nth-child(odd) td:nth-child(even),
+.zci--chess960 .chess_board tr:nth-child(even) td:nth-child(odd) {
 	background-color: #ddd;
 }

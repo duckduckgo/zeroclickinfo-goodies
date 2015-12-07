@@ -1,0 +1,64 @@
+{
+    "id": "duckduckgo_cheat_sheet",
+    "name": "DuckDuckGo Shortcuts",
+    "template_type": "keyboard",
+    "description": "A set of keyboard shortcuts to use duckduckgo efficiently",
+    "section_order": [
+        "Open results",
+        "Move around"
+    ],
+     "aliases": [
+        "duck duck go shortcuts",
+        "ddg shortcuts"
+    ],
+    "sections": {
+        "Open results": [
+            {
+                "key": "( [↵] / [l] / [o] )",
+                "val": "Go to the highlighted result, or use it right away to go to the first result"
+            },
+            {
+                "key": "( [Ctrl] / [⌘] ) [↵]",
+                "val": "Open a result in the background"
+            },
+            {
+                "key": "d",
+                "val": "Domain search (if a result is highlighted)"
+            },
+            {
+                "key": "( ['] / [v] )",
+                "val": "Open the highlighted result in a new window/tab. Since this uses JavaScript, you need to turn off pop-up blockers first."
+            }
+        ],
+        "Move around": [
+            {
+                "key": "( [←] / [→] )",
+                "val": "Navigate instant answer tabs. When an instant answer is open, navigate within the instant answer."
+            },
+            {
+                "key": "( [↓] / [j] )",
+                "val": "Next search result"
+            },
+            {
+                "key": "( [↑] / [k] )",
+                "val": "Previous search result"
+            },
+            {
+                "key": "( [/] / [h] )",
+                "val": "Go to search box"
+            },
+            {
+                "key": "s",
+                "val": "Go to misspelt link (if any)"
+            },
+            {
+                "key": "t",
+                "val": "Go to top"
+            },
+            {
+                "key": "m",
+                "val": "Go to main results"
+            }
+        ]
+    }
+}

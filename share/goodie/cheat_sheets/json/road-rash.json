@@ -1,0 +1,36 @@
+{
+    "name": "Road Rash",
+    "id": "road_rash_cheat_sheet",
+    "description": "While playing, enter 'XYZZY', then enter one of the following codes",
+    "metadata": {
+        "sourceName": "Cheatcc",
+        "sourceUrl": "http://www.cheatcc.com/pc/roadrash.html"
+    },
+    "aliases": [ "roadrash" ],
+    "template_type": "reference",
+    "section_order": ["Cheats"],
+    "sections": {
+        "Cheats": [{
+            "val": "No more cops",
+            "key": "bribe"
+        }, {
+            "val": "Refill nitros",
+            "key": "spoon!"
+        }, {
+            "val": "Get chain",
+            "key": "thwack!"
+        }, {
+            "val": "Overkill mode",
+            "key": "overkill"
+        }, {
+            "val": "Get club",
+            "key": "k'thunk!"
+        }, {
+            "val": "Eliminate police",
+            "key": "yes,occifer"
+        }, {
+            "val": "Disable all cheats",
+            "key": "plugh"
+        }]
+    }
+}

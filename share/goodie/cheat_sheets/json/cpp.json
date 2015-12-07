@@ -1,0 +1,194 @@
+ {
+    "id": "cpp_cheat_sheet",
+    "name": "C++",
+    "metadata": {
+        "sourceName": "CCU",
+        "sourceUrl": "http://www.cs.ccu.edu.tw/~damon/oop/,c++refcard.pdf"
+    },
+    "template_type": "reference", 
+    "section_order": [
+        "Fundamental Data Types",
+        "Preprocessor Directives",
+        "Arithmetic Operators",
+        "Relational Operators",
+        "Logical Operators",
+        "Bitwise Operators",
+        "Namespaces",
+        "Console Input/Output",
+        "Class Member Protections"
+    ],
+    "aliases": [
+        "c++",
+        "c plus plus"
+    ],
+    "sections": {
+        "Fundamental Data Types": [
+            {
+                "key": "char",
+                "val": "Character (1 byte)"
+            },
+            {
+                "key": "int",
+                "val": "Integer "
+            },
+            {
+                "key": "float",
+                "val": "Floating point"
+            },
+            {
+                "key": "bool",
+                "val": "True or false"
+            },
+            {
+                "key": "void",
+                "val": "No value"
+            }
+        ],
+        "Preprocessor Directives": [
+            {
+                "key": "#include <filename>",
+                "val": "Include library file"
+            },
+            {
+                "key": "#include \"filename\"",
+                "val": "Include user file"
+            },
+            {
+                "key": "#define name text",
+                "val": "Define a macro"
+            },
+            {
+                "key": "#define name(var) text",
+                "val": "Define a parameterized macro"
+            },
+            {
+                "key": "#undef name",
+                "val": "Undefine a previously defined macro"
+            },
+            {
+                "key": "#if, #else, #elif, #endif",
+                "val": "Conditional execution"
+            }
+        ],
+        "Arithmetic Operators": [
+            {
+                "key": "+",
+                "val": "Adds two operands"
+            },
+            {
+                "key": "−",
+                "val": "Subtracts second operand from the first"
+            },
+            {
+                "key": "*",
+                "val": "Multiplies both operands"
+            },
+            {
+                "key": "/",
+                "val": "Divides numerator by de-numerator"
+            },
+            {
+                "key": "%",
+                "val": "Modulus Operator"
+            },
+            {
+                "key": "++",
+                "val": "Increases the integer value by one"
+            },
+            {
+                "key": "--",
+                "val": "Decreases the integer value by one"
+            }
+        ],
+        "Relational Operators": [
+            {
+                "key": "==",
+                "val": "Checks for equality between operands"
+            },
+            {
+                "key": "!=",
+                "val": "Checks for non equality between operands"
+            },
+            {
+                "key": ">",
+                "val": "Checks if the value of left operand is greater than the value of right operand. If yes, then the condition becomes true."
+            },
+            {
+                "key": "<",
+                "val": "Checks if the value of left operand is less than the value of right operand. If yes, then the condition becomes true."
+            },
+            {
+                "key": ">=",
+                "val": "Checks if the value of left operand is greater than or equal to the value of right operand. If yes, then the condition becomes true."
+            },
+            {
+                "key": "<=",
+                "val": "Checks if the value of left operand is less than or equal to the value of right operand. If yes, then the condition becomes true."
+            }
+        ],
+        "Logical Operators": [
+            {
+                "key": "&&",
+                "val": "Logical AND operator"
+            },
+            {
+                "key": "||",
+                "val": "Logical OR Operator"
+            },
+            {
+                "key": "!",
+                "val": "Logical NOT Operator"
+            }
+        ],
+        "Bitwise Operators": [
+            {
+                "key": "&",
+                "val": "Does the logical AND on the bits in the corresponding position of the operands in its binary form"
+            },
+            {
+                "key": "|",
+                "val": "Does the logical OR on the bits in the corresponding position of the operands in its binary form"
+            },
+            {
+                "key": "^",
+                "val": "Does XOR on the bits in the corresponding position of the operands in its binary form"
+            },
+            {
+                "key": "~",
+                "val": "Inverts all the bits of operand"
+            },
+            {
+                "key": "<<",
+                "val": "Takes two numbers, left shifts the bits of first operand, the second operand decides the number of places to shift"
+            },
+            {
+                "key": ">>",
+                "val": "Takes two numbers, right shifts the bits of first operand, the second operand decides the number of places to shift"
+            }
+        ],
+        "Namespaces": [
+            {
+                "key": "namespace name {...}",
+                "val": "Define namespace for the enclosed code"
+            },
+            {
+                "key": "using name;",
+                "val": "Import function and variable definition from the given namespace into the current namespace"
+            }
+        ],
+        "Class Member Protections": [
+            {
+                "key": "public",
+                "val": "Anyone outside the class may access these member functions and variables"
+            },
+            {
+                "key": "private",
+                "val": "Only the class's member functions and friends may access the data."
+            },
+            {
+                "key": "protected",
+                "val": "Only the class's member functions, friends, and derived classes may access."
+            }
+        ]
+    }
+}

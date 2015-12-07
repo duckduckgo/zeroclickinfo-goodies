@@ -759,6 +759,24 @@ ddg_goodie_test(
             result => qr"6.28318530717958"
         }
     ),
+    'fact(3)' => test_zci(
+        'fact(3) = 6',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['fact(3)'],
+            operation => 'Calculate',
+            result    => qr/>6</
+        }
+    ),
+    'factorial(3)' => test_zci(
+        'fact(3) = 6',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['fact(3)'],
+            operation => 'Calculate',
+            result    => qr/>6</
+        }
+    ),
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,
@@ -774,6 +792,18 @@ ddg_goodie_test(
     '$5'                              => undef,
     'calculate 5'                     => undef,
     'solve $50'                       => undef,
+    '382-538-2546'                    => undef,    # Calling DuckDuckGo
+    '(382) 538-2546'                  => undef,
+    '382-538-2546 x1234'              => undef,
+    '1-382-538-2546'                  => undef,
+    '+1-(382)-538-2546'               => undef,
+    '382.538.2546'                    => undef,
+    '+38-2538111111'                  => undef,
+    '+382538-111-111'                 => undef,
+    '+38 2538 111-111'                => undef,
+    '01780-111-111'                   => undef,
+    '01780-111-111x400'               => undef,
+    '(01780) 111 111'                 => undef,
 );
 
 done_testing;

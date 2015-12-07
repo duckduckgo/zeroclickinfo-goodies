@@ -3,7 +3,7 @@
 }
 
 .zci--cheat_sheets .cheatsheet__title {
-    padding-bottom: 1em;
+    padding: 16px 0 12px;
     font-size: 1em;
     font-weight: bold;
 }
@@ -15,38 +15,120 @@
 .zci--cheat_sheets .cheatsheet__container .cheatsheet__section {
     width: 295px;
     float: left;
-    margin-bottom: 30px;
 }
 
 .zci--cheat_sheets td {
-    vertical-align: top;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
+
+/* style defaults */
 
 .zci--cheat_sheets code {
     display: inline-block;
     border: 1px solid #e0e0e0;
-    padding: 2px 5px 0px;
+    padding: 3px 4px 1px;
     border-radius: 2px;
     font-size: 0.833em;
-    color: #333;
-    background-color: #fff;
     white-space: normal;
     word-break: normal;
     margin-bottom: 0.2em;
-    line-height: 1.4;
+    line-height: 1.17;
 }
 
 .zci--cheat_sheets td.cheatsheet__key {
-    min-width: 80px;
-    line-height: 1.7;
+  vertical-align: top;
+  line-height: 1.7;
 }
 
 .zci--cheat_sheets td.cheatsheet__value {
-    padding-top: 3px;
-    padding-left: 14px;
-    line-height: 1.4;
+  padding-top: 3px;
+  padding-left: 18px;
+  vertical-align: top;
+  line-height: 1.18;
 }
+
+/* terminal-snippets.handlebars */
+.zci--cheat_sheets .terminal table {
+  width: 100%;
+}
+
+.zci--cheat_sheets .terminal td {
+  padding-bottom: 12px;
+}
+
+.zci--cheat_sheets .terminal code {
+  width: 100%;
+  white-space: break-all;
+  word-break: break-all;
+}
+
+.zci--cheat_sheets .terminal td.cheatsheet__key {
+  display: block;
+  min-width: 100%;
+  padding-bottom: 1px;
+}
+
+.zci--cheat_sheets .terminal td.cheatsheet__value {
+  display: block;
+  min-width: 100%;
+  padding-top: 0px;
+  padding-left: 7px;
+  margin-top: 1px;
+}
+
+/* reference-sheet.handlebars */
+
+.zci--cheat_sheets .reference ul,
+.zci--cheat_sheets .links ul {
+  padding: 0;
+  margin-left: 13px;
+}
+
+.zci--cheat_sheets .reference li,
+.zci--cheat_sheets .links li {
+  position: relative;
+  padding-bottom: 12px;
+  padding-left: 7px;
+  line-height: 17px;
+}
+
+.zci--cheat_sheets .reference li::before,
+.zci--cheat_sheets .links li::before {
+  position: absolute;
+  left: -12px;
+  content: '●';
+  color: inherit;
+  font-size: 7px;
+}
+
+.zci--cheat_sheets .reference li .cheatsheet__key {
+    display: block;
+    font-weight: bold;
+}
+
+/* language-sheet.handlebars */
+
+.zci--cheat_sheets .language ul {
+  padding: 0;
+  margin-left: 13px;
+}
+
+.zci--cheat_sheets .language li {
+  position: relative;
+  padding-bottom: 12px;
+  padding-left: 7px;
+  line-height: 17px;
+}
+
+.zci--cheat_sheets .language li::before {
+  position: absolute;
+  left: -12px;
+  content: '●';
+  color: inherit;
+  font-size: 7px;
+}
+
+/**/
 
 .zci--cheat_sheets .cheatsheet__footer {
     padding-top: 10px;

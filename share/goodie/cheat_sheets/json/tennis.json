@@ -1,0 +1,192 @@
+{
+    "id": "tennis_cheat_sheet",
+    "name": "Tennis",
+    "description": "Key facts about the game of tennis",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Tennis"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Major Tournaments",
+        "Match Types",
+        "History",
+        "Common Shots",
+        "Dimensions",
+        "Scoring System"
+    ],
+    "sections": {
+        "Dimensions": [{
+            "key": "Court length",
+            "val": "78 feet (23.77 m)"
+        },{
+            "key": "Court width (singles)",
+            "val": "27 feet (8.23 m)"
+        },{
+            "key": "Court width (doubles)",
+            "val": "36 feet (10.97 m)"
+        },{
+            "key": "Net height (post)",
+            "val": "3 feet 6 inches (1.067 m)"
+        },{
+            "key": "Net height (middle)",
+            "val": "3 feet (0.914 m)"
+        },{
+            "key": "Net to service line",
+            "val": "21 feet (6.4 m)"
+        },{
+            "key": "Racquet frame length",
+            "val": "No more than 29 inches (73.66 cm)"
+        },{
+            "key": "Racquet frame width",
+            "val": "No more than 12.5 inches (31.75 cm)"
+        },{
+            "key": "Ball diameter",
+            "val": "2.575-2.7 inches (65.41-68.58 mm)"
+        },{
+            "key": "Ball weight",
+            "val": "1.975-2.095 ounces (56.0-59.4 grams)"
+        }],
+        "Scoring System": [{
+            "key": "Game",
+            "val": "A sequence of points played with the same player serving. A game is won by the first player to win at least four points in total and at least two points more than the opponent."
+        },{
+            "key": "Set",
+            "val": "A sequence of games played with service alternating between games, ending when the count of games won meets certain criteria, typically at least six games and at least two games more than the opponent."
+        },{
+            "key": "Match",
+            "val": "A sequence of sets. The outcome is determined through a best of three or five sets system."
+        },{
+            "key": "Love",
+            "val": "0 points won"
+        },{
+            "key": "15",
+            "val": "1 point won"
+        },{
+            "key": "30",
+            "val": "2 points won"
+        },{
+            "key": "40",
+            "val": "3 points won"
+        },{
+            "key": "Deuce",
+            "val": "3 points each for both players"
+        },{
+            "key": "Advantage",
+            "val": "A point won after deuce"
+        },{
+            "key": "Tie-break",
+            "val": "A game played when a set finishes at 6-6. Points are counted using ordinary numbering. The set is decided by the player who wins at least seven points in the tiebreak but also has two points more than his opponent."
+        }],
+        "History": [{
+            "key": "12th century",
+            "val": "Jeu de paume (\"game of the palm\") born in Northern France, played by hitting the ball with the palm of the hand."
+        },{
+            "key": "16th century",
+            "val": "Racquets came into use and the game began to be called \"tennis\"."
+        },{
+            "key": "1872",
+            "val": "World's first tennis club founded in Leamington Spa, UK."
+        },{
+            "key": "1873",
+            "val": "Major Walter Clopton Wingfield patented a game (sphairistikè) and court similar to modern tennis with net, racquets, balls and rules."
+        },{
+            "key": "1875",
+            "val": "Wingfield's court design was altered to become the layout used today."
+        },{
+            "key": "1877",
+            "val": "The world's oldest tennis tournament, the Wimbledon Championships, were first played in London."
+        },{
+            "key": "1881",
+            "val": "The first U.S. National Men's Singles Championship, now the US Open, was held in Rhode Island."
+        },{
+            "key": "1891",
+            "val": "The first French Championships took place."
+        },{
+            "key": "1900",
+            "val": "The first Davis Cup tournament was held."
+        },{
+            "key": "1905",
+            "val": "The Australasian Championships, now the Australian Open, were first held in Melbourne."
+        },{
+            "key": "1913",
+            "val": "The International Lawn Tennis Federation, now International Tennis Federation (ITF) was established."
+        },{
+            "key": "1924",
+            "val": "Official \"ILTF Rules of Tennis\" were published."
+        },{
+            "key": "1963",
+            "val": "The first Federation Cup, now Fed Cup, tournament was held."
+        },{
+            "key": "1968",
+            "val": "Open Era begins, Grand Slams allow professionals to compete with amateurs."
+        },{
+            "key": "1970",
+            "val": "Tie-break first used in a Grand Slam tournament (US Open)."
+        }],
+        "Match Types": [{
+            "key": "Men's singles",
+            "val": "Best of three or five sets."
+        },{
+            "key": "Women's singles",
+            "val": "Usually best of three sets."
+        },{
+            "key": "Men's doubles",
+            "val": "Best of three or five sets."
+        },{
+            "key": "Women's doubles",
+            "val": "Usually best of three sets."
+        },{
+            "key": "Mixed doubles",
+            "val": "Usually best of three sets."
+        },{
+            "key": "Wheelchair tennis",
+            "val": "The ball may bounce twice before being hit."
+        }],
+        "Major Tournaments": [{
+            "key": "Australian Open",
+            "val": "January-February in Melbourne (hard surface)"
+        },{
+            "key": "French Open",
+            "val": "May-June in Paris (clay)"
+        },{
+            "key": "Wimbledon",
+            "val": "June-July in London (grass)"
+        },{
+            "key": "US Open",
+            "val": "August-September in New York City (hard surface)"
+        },{
+            "key": "Davis Cup",
+            "val": "Men's team tournament played over four weekends through the year."
+        },{
+            "key": "Fed Cup",
+            "val": "Women's team tournament played over three weekends through the year."
+        }],
+        "Common Shots": [{
+            "key": "Serve",
+            "val": "A shot to start a point."
+        },{
+            "key": "Forehand",
+            "val": "A stroke that begins on the right side of the body, continues across the body as contact is made with the ball, and ends on the left side of the body (right-handed players)."
+        },{
+            "key": "Backhand",
+            "val": "A stroke that begins on the left side of their body, continues across their body as contact is made with the ball, and ends on the right side of their body (right-handed players)."
+        },{
+            "key": "Volley",
+            "val": "A shot returned to the opponent in mid-air before the ball bounces, generally performed near the net, and is usually made with a stiff-wristed punching motion to hit the ball into an open area of the opponent's court."
+        },{
+            "key": "Half-volley",
+            "val": "Hitting the ball on the rise just after it has bounced, also generally in the vicinity of the net, and played with the racquet close to the ground."
+        },{
+            "key": "Overhead smash",
+            "val": "A hard, serve-like shot, to try to end the point."
+        },{
+            "key": "Drop shot",
+            "val": "Softly tapping the ball just over the net so that the opponent is unable to run in fast enough to retrieve it."
+        },{
+            "key": "Lob",
+            "val": "Hitting the ball high and deep into the opponent's court to either enable the lobber to get into better defensive position or to win the point outright by hitting it over the opponent's head."
+        }]
+    }
+}
+

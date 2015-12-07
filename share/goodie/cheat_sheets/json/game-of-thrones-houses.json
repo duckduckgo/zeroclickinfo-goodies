@@ -1,0 +1,71 @@
+{
+    "id": "game_of_thrones_houses_cheat_sheet",
+    "name": "Game of Thrones Houses",
+    "description": "Describes the Great houses in Game of Thrones",
+    "metadata": {
+        "sourceName": "Game of Thrones Wikia",
+        "sourceUrl": "http://gameofthrones.wikia.com/wiki/Great_House"
+    },
+    "template_type": "reference",
+    "section_order": [
+        "Current Great Houses",
+        "Exiled Great Houses",
+        "Extinct Great Houses"
+    ],
+    "sections": {
+        "Current Great Houses": [
+        {
+            "val": "Rulers of the Vale of Arryn from the castle of the Eyrie.",
+            "key": "House Arryn"
+        }, {
+            "val": "The Seven Kingdoms royal house, currently divided into two main branches (Kings Landing & Dragonstone).",
+            "key": "House Baratheon"
+        }, {
+            "val": "Rulers of the North from the castle of the Dreadfort.",
+            "key": "House Bolton"
+        }, {
+            "val": "Rulers of the Riverlands from the castle of Riverrun.",
+            "key": "House Frey"
+        }, {
+            "val": "Rulers of the Iron Islands from the castle of Pyke.",
+            "key": "House Greyjoy"
+        }, {
+            "val": "Rulers of the Westerlands from the castle of Casterly Rock.",
+            "key": "House Lannister"
+        }, {
+            "val": "Rulers of Dorne from the castle of Sunspear.",
+            "key": "House Martell"
+        }, {
+            "val": "Rulers of the Reach from the castle of Highgarden.",
+            "key": "House Tyrell"
+        }
+    ],
+        
+    "Exiled Great Houses": [
+         {
+            "val": "The former rulers of the North, ruling from the now sacked castle of Winterfell until the Red Wedding. The remaining Starks are scattered.",
+            "key": "House Stark"
+        }, {
+            "val": "The former royal house, currently in exile following Robert's Rebellion.",
+            "key": "House Targaryen"
+        }, {
+            "val": "The former rulers of the Riverlands, ruling from Riverrun, until the Red Wedding.",
+            "key": "House Tully"
+        }
+    ],
+        
+    "Extinct Great Houses": [
+         {
+            "val": "Rulers of the Stormlands. Orys Baratheon, founder of House Baratheon, married the daughter of the last king of House Durrendon, thus House Baratheon descends from the Durrandons through the female line.",
+            "key": "House Durrandon"
+        }, {
+            "val": "Rulers of the Reach. House Tyrell claims descent from House Gardener through the female line, and House Florent is actually a cadet branch of House Gardener, with a better claim to rule based on lineage than the Tyrells. Several other Houses from the Reach also descend from House Gardener.",
+            "key": "House Gardener"
+        }, {
+            "val": "Rulers of the Iron Islands and (through conquest) the Riverlands. After their defeat, Aegon Targaryen commanded the ironborn to select a new family from among their number to rule over the rest, under the Targaryens. They selected House Greyjoy.",
+            "key": "House Hoare"
+        }
+    ]
+
+    }
+}
