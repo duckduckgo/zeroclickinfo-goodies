@@ -58,8 +58,9 @@ name 'ColorCodes';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ColorCodes.pm';
 category 'conversions';
 topics 'programming';
-attribution  cpan   => 'CRZEDPSYC',
-             github => ['http://github.com/mintsoft', 'Rob Emery'];
+attribution  cpan   => ['CRZEDPSYC', 'CRZEDPSYC'],
+             github => ['http://github.com/mintsoft', 'Rob Emery'],
+             github => ['http://github.com/Mailkov', 'Melchiorre Alastra'];
 
 my %trigger_invert = map { $_ => 1 } (qw( inverse negative opposite ));
 my %trigger_filler = map { $_ => 1 } (qw( code ));
@@ -70,61 +71,6 @@ sub percentify {
     my @out;
     push @out, ($_ <= 1 ? round(($_ * 100))."%" : round($_)) for @_;
     return @out;
-}
-
-sub create_output {
-    my (%input) = @_;
-    my ($text, $html) = ("","");
-
-    (my $hex_for_links = $input{'hex'}) =~ s/^#//;
-    my $hex = "Hex: ".uc($input{'hex'});
-    my $rgb = "RGBA(" . join(", ", @{$input{'rgb'}}) . ", ".$input{'alpha'}.")";
-    my $rgb_pct = "RGB(" . join(", ", @{$input{'rgb_percentage'}}) . ")";
-    my $hsl = "HSL(" . join(", ", @{$input{'hsl'}}) . ")";
-    my $cmyb = "CMYB(" . join(", ", @{$input{'cmyb'}}) . ")";
-    my @analogous_colors = @{$input{'analogous'}};
-    my $complementary = uc $input{'complementary'};
-
-    #greyscale colours have no hue and saturation
-    my $show_column_2 = !($input{'hsl'}->[0] eq 0 && $input{'hsl'}->[1] eq '0%');
-    
-    $text = "$hex ~ $rgb ~ $rgb_pct ~ $hsl ~ $cmyb";
-    my $column_2_text = "\n" .
-            "Complementary: #$complementary\n" .
-            "Analogous: ".(join ", ", map { "#".uc $_ } @analogous_colors);
-
-    my $comps = "<div class='cols_column'>"
-              . "<a href='/?q=color%20picker%20%23$complementary' class='mini-color circle' style='background: #$complementary'>"
-              . "</a></div>"
-              . "<div class='desc_column'><p class='no_vspace'>Complementary #:</p><p class='no_vspace'>"
-              . qq[<a onclick='document.x.q.value="#$complementary";document.x.q.focus();' href='javascript:' class='tx-clr--lt'>$complementary</a>]
-              . "</p></div>";
-
-    my $analogs = "<div class='cols_column'>"
-                . (join "", map { "<a href='/?q=color%20picker%20%23".$_."' class='mini-color circle' style='background: #" . $_ . "'> </a>"; } @analogous_colors)
-                . "</div>"
-                . "<div class='desc_column'><p class='no_vspace'>Analogous #:</p><p class='no_vspace'>" . (join ", ", map { qq[<a onclick='document.x.q.value="#] .(uc $_). qq[";document.x.q.focus();' href='javascript:' class='tx-clr--lt'>].(uc $_).'</a>' } @analogous_colors) . "</p></div>";
-
-    $html = "<div class='column1 tx-clr--dk2'>"
-          . "<p class='hex tx-clr--dk zci__caption'>$hex</p><p class='no_vspace'>$rgb</p><p class='no_vspace'>$hsl</p><p class='no_vspace'>$cmyb</p>"
-          . "<p><a href='http://labs.tineye.com/multicolr/#colors=" . $hex_for_links . ";weights=100;' class='tx-clr--dk2'>Images</a>"
-          . "<span class='separator'> | </span>"
-          . "<a href='http://www.color-hex.com/color/" . $hex_for_links . "' title='Tints, information and similar colors on color-hex.com' class='tx-clr--dk2'>Info</a>"
-          . "<span class='separator'> | </span>"
-          . "<a href='/?q=color%20picker%20%23" . $hex_for_links . "' class='tx-clr--dk2'>Picker</a></p>"
-          . "</div>";
-          
-    my $column_2_html = "<div class='column2 tx-clr--dk2'>"
-          . "<div class='complementary'>$comps</div>"
-          . "<div>$analogs</div>"
-          . "</div>";
-    
-    if ($show_column_2) {
-        $html.= $column_2_html;
-        $text.= $column_2_text;
-    }
-    
-    return ($text, $html);
 }
 
 handle matches => sub {
@@ -165,8 +111,8 @@ handle matches => sub {
             $type = 'rgb8';    # We asked for rgb8 from our dictionary, so make sure our type matches.
         };
     }
-
-    my $col = try { Convert::Color->new("$type:$color") };    # Everything should be ready for conversion now.
+    
+    my $col = try  { Convert::Color->new("$type:$color") };    # Everything should be ready for conversion now.
     return unless $col;                                       # Guess not.
 
     if ($inverse) {                                           # We triggered on the inverse, so do the flip.
@@ -178,30 +124,53 @@ handle matches => sub {
 
     my $complementary = $color_mix->complementary($hex_code);
     my @analogous = $color_mix->analogous($hex_code,12,12);
-    @analogous = ($analogous[1], $analogous[11]);
+    @analogous = (uc($analogous[1]), uc($analogous[11]));
     my @rgb = $col->as_rgb8->rgb8;
     my $hsl = $col->as_hsl;
     my @rgb_pct = percentify($col->as_rgb->rgb);
     my @cmyk = percentify($col->as_cmyk->cmyk);
-    my %outdata = (
-        hex => '#' . $hex_code,
-        rgb => \@rgb,
-        rgb_percentage => \@rgb_pct,
-        hsl => [round($hsl->hue), percentify($hsl->saturation), percentify($hsl->lightness)],
-        cmyb => \@cmyk,
-        alpha => $alpha,
-        complementary => $complementary,
-        analogous => \@analogous
-    );
 
-    my ($text, $html_text) = create_output(%outdata);
+    my @hsl = (round($hsl->hue), percentify($hsl->saturation), percentify($hsl->lightness));
 
-    return $text,
-        html => '<div class="zci--color-codes"><a href="/?q=color%20picker%20%23' . $hex_code . '" '
-          . 'class="colorcodesbox circle" style="background:#' . $hex_code . '">'
-          . '</a>'
-          . $html_text
-          . "</div>";
+    my $hexc = 'Hex: #' . uc($hex_code);
+    my $rgb = 'RGBA(' . join(', ', @rgb) . ', ' . $alpha . ')';
+    my $hslc = 'HSL(' . join(', ', @hsl) . ')';
+    my $cmyb = 'CMYB(' . join(', ', @cmyk) . ')';
+    my $rgb_pct = 'RGB(' . join(', ', @rgb_pct) . ')';
+    
+    $complementary = uc($complementary);
+    
+    #greyscale colours have no hue and saturation
+    my $show_column_2 = !($hsl[0] eq 0 && $hsl[1] eq '0%');
+    
+    my $column_2 = '';
+    
+    if ($show_column_2) {
+        $column_2 = "\n" . "Complementary: #$complementary" . "\n" . "Analogous: #$analogous[0], #$analogous[1]";
+    }
+    
+    return "$hexc ~ $rgb ~ $rgb_pct ~ $hslc ~ $cmyb$column_2",
+    structured_answer => {
+        id => 'color_codes',
+        name => 'Answer',
+        data => {
+            hex_code => $hex_code,
+            hexc => $hexc,
+            rgb => $rgb,
+            hslc => $hslc,
+            cmyb => $cmyb,
+            show_column_2 => $show_column_2,
+            analogous => \@analogous,
+            complementary => $complementary,
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.color_codes.content'
+            }
+        }
+    };      
 };
 
 1;

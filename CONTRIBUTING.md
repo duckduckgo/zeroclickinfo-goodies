@@ -51,7 +51,7 @@ We've made sure to identify these throughout our repositories for new contributo
 
 **2. Dive in**
 
-Go ahead and comment on any issues you're interested in helping with. Let us know what you're thinking and if you'd like any help or guidance. 
+Go ahead and **comment on any issues you're interested in helping with.** Let us know what you're thinking and if you'd like any help or guidance. 
 	
 As always, feel free to [ask us anything](mailto:open@duckduckgo.com), and don't forget the handy [Instant Answer documentation](https://duck.co/duckduckhack/ddh-intro).
 

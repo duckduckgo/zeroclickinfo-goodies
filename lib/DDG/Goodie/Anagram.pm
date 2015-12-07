@@ -36,7 +36,8 @@ topics "words_and_games";
 attribution github => ["https://github.com/loganom",      'loganom'],
             github => ["https://github.com/beardlybread", "beardlybread"],
             github => ['https://github.com/gdrooid',      'gdrooid'],
-            email  => ['gdrooid@openmailbox.org',         'gdrooid'];
+            email  => ['gdrooid@openmailbox.org',         'gdrooid'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 # Calculate the frequency of the characters in a string
 sub calc_freq {
@@ -102,10 +103,7 @@ handle remainder => sub {
         $response = join ', ', sort { $a cmp $b } @output;
         $operation = 'Anagrams of';
     } else {
-        do {
-            $response = join '', shuffle split(//, $word);
-        } while (length($word) > 1 && $response eq $word);
-        $operation = 'Scrambled letters of';
+         return;
     }
 
     return $response,
