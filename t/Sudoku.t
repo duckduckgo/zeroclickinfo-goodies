@@ -10,14 +10,14 @@ zci answer_type => 'sudoku';
 zci is_cached => 0;
 
 ddg_goodie_test(
-	[
-		'DDG::Goodie::Sudoku'
-	],
-	"sudoku" => test_zci(
-		qr/^[0-9_].*[0-9_]$/s,
-		structured_answer => {
+    [
+        'DDG::Goodie::Sudoku'
+    ],
+    "sudoku" => test_zci(
+        qr/^[0-9_].*[0-9_]$/s,
+        structured_answer => {
             id => 'sudoku',
-            name => 'Answer',
+            name => 'Games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -27,12 +27,12 @@ ddg_goodie_test(
                 }
             }
         }
-	),
-	"play sudoku" => test_zci(
-		qr/^[0-9_].*[0-9_]$/s,
-		structured_answer => {
+    ),
+    "play sudoku" => test_zci(
+        qr/^[0-9_].*[0-9_]$/s,
+        structured_answer => {
             id => 'sudoku',
-            name => 'Answer',
+            name => 'Games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -42,12 +42,12 @@ ddg_goodie_test(
                 }
             }
         }
-	),
-	"easy sudoku" => test_zci(
-		qr/^[0-9_].*[0-9_]$/s,
-		structured_answer => {
+    ),,
+    "easy sudoku" => test_zci(
+        qr/^[0-9_].*[0-9_]$/s,
+        structured_answer => {
             id => 'sudoku',
-            name => 'Answer',
+            name => 'Games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -57,12 +57,12 @@ ddg_goodie_test(
                 }
             }
         }
-	),
-	"sudoku hard" => test_zci(
-		qr/^[0-9_].*[0-9_]$/s,
-		structured_answer => {
+    ),,
+    "sudoku hard" => test_zci(
+        qr/^[0-9_].*[0-9_]$/s,
+        structured_answer => {
             id => 'sudoku',
-            name => 'Answer',
+            name => 'Games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -72,12 +72,12 @@ ddg_goodie_test(
                 }
             }
         }
-	),
-	"generate sudoku" => test_zci(
-		qr/^[0-9_].*[0-9_]$/s,
-		structured_answer => {
+    ),,
+    "generate sudoku" => test_zci(
+        qr/^[0-9_].*[0-9_]$/s,
+        structured_answer => {
             id => 'sudoku',
-            name => 'Answer',
+            name => 'Games',
             data => '-ANY-',
             templates => {
                 group => 'text',
@@ -87,14 +87,14 @@ ddg_goodie_test(
                 }
             }
         }
-	),
-	"sudoku party" => undef,
-	"sudoku toys" => undef,
+    ),
+    "sudoku party" => undef,
+    "sudoku toys" => undef,
     'sudoku easy' => test_zci(
         qr/[0-9_].*[0-9_]$/s,
         structured_answer => {
             id => 'sudoku',
-            name => 'Answer',
+            name => 'Games',
             data => '-ANY-',
             templates => {
                 group => 'text',
