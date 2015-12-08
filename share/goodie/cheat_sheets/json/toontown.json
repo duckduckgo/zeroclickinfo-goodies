@@ -1,12 +1,12 @@
 {
     "id": "toontown_cheat_sheet", 
-    "name": "Toontown Commands Cheet Sheet",
+    "name": "Toontown",
     "description": "Commands For the Toontown Private Servers", 
 	"aliases": [
-        "toontown mod", "toontown commands", "toontown mod commands", "tto mod commands", "tto commands"
+        "toontown mod", "tto"
     ],
     "metadata" : {
-      "sourceName" : "Toontown Online Wiki",
+      "sourceName" : "Wikipedia",
       "sourceUrl" : "https://wikipedia.org/wiki/Toontown_Online"
    },
 
