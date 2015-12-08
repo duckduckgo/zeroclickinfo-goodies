@@ -3,7 +3,7 @@
     "name": "Toontown",
     "description": "Commands For the Toontown Private Servers", 
 	"aliases": [
-        "toontown mod", "tto"
+        "toontown mod", "tto", "tto mod"
     ],
     "metadata" : {
       "sourceName" : "Wikipedia",
