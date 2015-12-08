@@ -1,15 +1,14 @@
 {
-    "id": "default_port_numbers",
+    "id": "default_port_numbers_cheat_sheet",
     "name": "Default Port Numbers",
     "description": "Default port numbers in networking",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers"
     },
-	
-	"aliases": [
-		"default port numbers", "default port", "default port number", "netowrk ports" 
-	],
+    "aliases": [
+	"default port", "default port number", "netowrk ports" 
+    ],
     "template_type": "keyboard",
     "section_order": [
         "Default Port Numbers"
@@ -34,12 +33,12 @@
             "val": "Domain Name System (DNS)",
             "key": "53"
         }, {
-			"val": "Dynamic Host Configuration Protocol (DHCP) Server",
-			"key": "67"
-		}, {
-			"val": "Dynamic Host Configuration Protocol (DHCP) Client",
-			"key": "68"
-		}, {
+	    "val": "Dynamic Host Configuration Protocol (DHCP) Server",
+	    "key": "67"
+	}, {
+	    "val": "Dynamic Host Configuration Protocol (DHCP) Client",
+	    "key": "68"
+	}, {
             "val": "Hypertext Transfer Protocol (HTTP)",
             "key": "80"
         }, {
@@ -52,8 +51,8 @@
             "val": "Remote Procedure Call (RPC)",
             "key": "530"
         }, {
-			"val": "Telent Protocol over TLS/SSL",
-			"key": "992"
-		}]
+	    "val": "Telent Protocol over TLS/SSL",
+	    "key": "992"
+	}]
     }
 }
