@@ -36,6 +36,14 @@ ddg_goodie_test(
             result    => '2.16024689946929',
         }
     ),
+    'rms 1,2,3' => test_zci(
+        "Root Mean Square: 2.16024689946929", 
+        structured_answer => {
+            input     => ['1 2 3'],
+            operation => "Root Mean Square of",
+            result    => '2.16024689946929',
+        }
+    ),
     "average 12 45 78 1234.12" => test_zci(
         "Mean: 342.28", 
         structured_answer => {
