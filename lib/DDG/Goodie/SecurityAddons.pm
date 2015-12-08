@@ -27,25 +27,24 @@ my $plaintext="Firefox: https://addons.mozilla.org/en-US/firefox/collections/moz
 $plaintext.="\nSafari: https://extensions.apple.com/?category=security";
 $plaintext.="\nGoogle Chrome: https://chrome.google.com/webstore/search/anonymous";
 $plaintext.="\nOpera: https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en";
-my @record_data = {
-    'Firefox' => "https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/",
-    'Safari' => "https://extensions.apple.com/?category=security",
-    'Google Chrome' => "https://chrome.google.com/webstore/search/anonymous",
-    'Opera' => "https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en"
-};
-my @record_keys = ["Firefox", "Safari", "Google Chrome", "Opera"];
+my @list_data = [
+    { browser => "Firefox", link => "https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/" },
+    { browser => "Safari", link => "https://extensions.apple.com/?category=security" },
+    { browser => "Google Chrome", link => "https://chrome.google.com/webstore/search/anonymous" },
+    { browser => "Opera", link => "https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en" }
+];
 my @structured_answer = {
         id => "security_addons",
         name => "software",
         data => {
             title => "Security Addons",
-            record_data => @record_data
+            list => @list_data
         },
         meta => {},
         templates => {      
             group => 'list',
             options => {
-                content => "record"
+                list_content => "DDH.security_addons.list_content"
             },
         },
     };
