@@ -723,6 +723,24 @@ ddg_goodie_test(
             result    => qr/>0.0056</
         }
     ),
+    '6 * 2e-11' => test_zci(
+        '6 * (2  *  10 ^- 11) = 1.2 * 10^-10',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['6 * (2  *  10 ^- 11)'],
+            operation => 'Calculate',
+            result    => qr/>1\.2 \* 10<sup>-10<\/sup></
+        }
+    ),
+    '7 + 7e-7' => test_zci(
+        '7 + (7  *  10 ^- 7) = 7.0000007',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['7 + (7  *  10 ^- 7)'],
+            operation => 'Calculate',
+            result    => qr/>7.0000007</
+        }
+    ),
     'pi/1e9' => test_zci(
         'pi / (1  *  10 ^ 9) = 3.14159265358979 * 10^-9',
         heading           => 'Calculator',
