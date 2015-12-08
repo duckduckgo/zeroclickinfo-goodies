@@ -7,7 +7,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers"
     },
     "aliases": [
-	"default port", "network ports" 
+    "default port", "network ports" 
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -33,12 +33,12 @@
             "val": "Domain Name System (DNS)",
             "key": "53"
         }, {
-		    "val": "Dynamic Host Configuration Protocol (DHCP) Server",
-		    "key": "67"
-		}, {
-		    "val": "Dynamic Host Configuration Protocol (DHCP) Client",
-		    "key": "68"
-		}, {
+            "val": "Dynamic Host Configuration Protocol (DHCP) Server",
+            "key": "67"
+        }, {
+            "val": "Dynamic Host Configuration Protocol (DHCP) Client",
+            "key": "68"
+        }, {
             "val": "Hypertext Transfer Protocol (HTTP)",
             "key": "80"
         }, {
@@ -51,24 +51,24 @@
             "val": "Remote Procedure Call (RPC)",
             "key": "530"
         }, {
-		    "val": "Telnet Protocol over TLS/SSL",
-		    "key": "992"
-		}],
-		"Registered Protocols": [{
-			"val": "SOCKS Proxy",
-			"key": "1080"
-		}, {
-			"val": "OpenVPN",
-			"key": "1194"
-		}, {
-			"val": "Internet Protocol Security (IPSec)",
-			"key": "1293"
-		}, {
-			"val": "Real-time Transport Protocol media data (RTP)",
-			"key": "5004"
-		}, {
-			"val": "Real-time Transport Protocol control protocol (RTCP)",
-			"key": "5005"
-		}]
+            "val": "Telnet Protocol over TLS/SSL",
+            "key": "992"
+        }],
+        "Registered Protocols": [{
+            "val": "SOCKS Proxy",
+            "key": "1080"
+        }, {
+            "val": "OpenVPN",
+            "key": "1194"
+        }, {
+            "val": "Internet Protocol Security (IPSec)",
+            "key": "1293"
+        }, {
+            "val": "Real-time Transport Protocol media data (RTP)",
+            "key": "5004"
+        }, {
+            "val": "Real-time Transport Protocol control protocol (RTCP)",
+            "key": "5005"
+        }]
     }
 }
