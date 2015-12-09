@@ -56,6 +56,7 @@ sub render_text($) {
 
 handle remainder_lc => sub {
 
+    return if ($req->query_lc eq 'rubics cube');
     #support British English!
     s/centre/center/;
 
