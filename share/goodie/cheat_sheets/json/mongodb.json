@@ -8,9 +8,9 @@
         "sourceUrl": "https://blog.codecentric.de/files/2012/12/MongoDB-CheatSheet-v1_0.pdf"
     },
     "aliases": [
-        "mongodb",
         "mongo db",
-        "mongo db shell"
+        "mongo db shell",
+        "mongodb commands"
     ],
     "section_order": [
         "Basic Conceptes & Shell Commands",
@@ -341,3 +341,4 @@
             }
         ]
     }
+}
