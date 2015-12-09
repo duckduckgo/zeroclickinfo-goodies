@@ -1,9 +1,9 @@
-DDH.<: $lia_id :> = DDH.<: $lia_id :> || {};
+DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
 
 (function(DDH) {
     "use strict";
 
-    console.log("DDH.<: $lia_id :>.build"); // remove this before submitting pull request
+    console.log("DDH.<: $ia_id :>.build"); // remove this before submitting pull request
 
     // define private variables and functions here
     //
@@ -13,11 +13,11 @@ DDH.<: $lia_id :> = DDH.<: $lia_id :> || {};
     //     b = '',
     //     c = '';
 
-    DDH.<: $lia_id :>.build = function(ops) {
+    DDH.<: $ia_id :>.build = function(ops) {
 
         return {
 
-            id: '<: $lia_id :>',
+            id: '<: $ia_id :>',
 
             meta: {
                 sourceName: "Source Domain",
@@ -57,7 +57,7 @@ DDH.<: $lia_id :> = DDH.<: $lia_id :> || {};
 
                 // define any callbacks or event handlers here
                 //
-                // var $dom = $(".zci--'<: $lia_id :>'");
+                // var $dom = $(".zci--'<: $ia_id :>'");
                 // $dom.find(".my-special-class").click(funtcion(){
                 //
                 // });
