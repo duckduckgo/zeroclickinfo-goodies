@@ -30,6 +30,8 @@ ddg_goodie_test(
         'unicode white smiling face' => test_zci("\x{263A} U+263A WHITE SMILING FACE, decimal: 9786, HTML: &#9786;, UTF-8: 0xE2 0x98 0xBA, block: Miscellaneous Symbols"),
 
         '\x{2764}' => test_zci("\x{2764} U+2764 HEAVY BLACK HEART, decimal: 10084, HTML: &#10084;, UTF-8: 0xE2 0x9D 0xA4, block: Dingbats"),
+
+        'unicode unknown' => undef
 );
 
 done_testing;

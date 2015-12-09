@@ -41,7 +41,8 @@ handle sub {
 
     # Search term starts with "unicode "
     if ($term =~ UNICODE_RE) {
-        return unicode_lookup($1);
+        return unless my $result = unicode_lookup($1);
+        return $result;
     }
 
     return codepoint_description($term);
