@@ -741,6 +741,24 @@ ddg_goodie_test(
             result    => qr/>7.0000007</
         }
     ),
+    '1 * 7 + e-7' => test_zci(
+        '1 * 7 + e - 7 = 2.71828182845905',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['1 * 7 + e - 7'],
+            operation => 'Calculate',
+            result    => qr/>2.71828182845905</
+        }
+    ),
+    '7 * e- 5' => test_zci(
+        '7 * e - 5 = 14.0279727992134',
+        heading           => 'Calculator',
+        structured_answer => {
+            input     => ['7 * e - 5'],
+            operation => 'Calculate',
+            result    => qr/>14.0279727992134</
+        }
+    ),
     'pi/1e9' => test_zci(
         'pi / (1  *  10 ^ 9) = 3.14159265358979 * 10^-9',
         heading           => 'Calculator',
