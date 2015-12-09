@@ -1,13 +1,13 @@
 {
     "id": "perl_cheat_sheet",
     "name": "Perl",
-    "description": "Perl Cheat Sheet",
+    "description": "Essential Perl basic syntax, methods, functions, variables, references and data structure ",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/mishin/cheat-sheets/perl-reference-card/"
     },
     "aliases": [
-        "perl", "perl cheat sheet", "perl cheatsheet"	
+        "perl"	
     ],
     "template_type": "code",
     "section_order": ["Input/Output", "Scalars and Strings", "Arrays and Lists", "Hashes", "Basic Syntax", "References and Data Structures", "System Interaction"], 
