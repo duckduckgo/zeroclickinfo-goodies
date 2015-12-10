@@ -14,7 +14,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'cheat_sheets';
 topics 'sysadmin';
 
-attribution github => ['warthurton', 'Wayne Arthurton'];
+attribution github => ['warthurton', 'Wayne Arthurton'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 triggers end => "public dns", "dns server", "dns servers";
 
