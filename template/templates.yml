@@ -29,6 +29,11 @@ templates:
         input:  share/goodie/example/example.css
         output: share/goodie/<:$ia_path_lc:>/<:$ia_id:>.css
 
+    handlebars:
+        label:  Handlebars
+        input:  share/goodie/example/example.handlebars
+        output: share/goodie/<:$ia_path_lc:>/<:$ia_id:>.handlebars
+
     cheatsheet_json:
         label:  CheatSheet JSON
         input:  share/goodie/cheat_sheets/json/example.json
@@ -43,7 +48,7 @@ template_sets:
     default:
         description: Standard Goodie Instant Answer
         required: [ pm, test ]
-        optional: [ js, css  ]
+        optional: [ js, css, handlebars  ]
 
     cheatsheet:
         description: Cheat Sheet Instant Answer
@@ -51,6 +56,6 @@ template_sets:
 
     all:
         description: Goodie with all backend and frontend files
-        required: [ pm, test, js, css ]
+        required: [ pm, test, js, css, handlebars ]
 ...
 
