@@ -1,20 +1,20 @@
 {
     "id": "default_port_numbers_cheat_sheet",
-    "name": "Default Port Numbers",
-    "description": "List of port numbers used in computer networks",
+    "name": "Standard Port Numbers",
+    "description": "List of official TCP and UDP Port Numbers",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers"
     },
     "aliases": [
-    "default port", "network ports" 
+        "default port", "network ports", "tcp ports", "udp ports", "tcp port numbers", "udp port numbers" 
     ],
-    "template_type": "keyboard",
+    "template_type": "reference",
     "section_order": [
-        "Well Known Protocols", "Registered Protocols"
+        "Well Known Protocols (Standard Ports)", "Registered Ports"
     ],
     "sections": {
-        "Well Known Protocols": [{
+        "Well Known Protocols (Standard Ports)": [{
             "val": "FTP Data Transfer",
             "key": "20"
         }, {
@@ -27,7 +27,7 @@
             "val": "Telnet Protocol",
             "key": "23"
         }, {
-            "val": "Simple Mail Transfer Protocol",
+            "val": "Simple Mail Transfer Protocol (SMTP)",
             "key": "25"
         }, {
             "val": "Domain Name System (DNS)",
@@ -42,8 +42,11 @@
             "val": "Hypertext Transfer Protocol (HTTP)",
             "key": "80"
         }, {
-            "val": "Internet Message Access Protocol",
+            "val": "Internet Message Access Protocol (IMAP)",
             "key": "143"
+        }, {
+            "val": "Internet Relay Chat (IRC)",
+            "key": "194"
         }, {
             "val": "Hypertext Transfer Protocol over TLS/SSL (HTTPS)",
             "key": "443"
@@ -54,7 +57,7 @@
             "val": "Telnet Protocol over TLS/SSL",
             "key": "992"
         }],
-        "Registered Protocols": [{
+        "Registered Ports": [{
             "val": "SOCKS Proxy",
             "key": "1080"
         }, {
