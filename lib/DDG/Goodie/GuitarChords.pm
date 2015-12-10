@@ -4,6 +4,7 @@ package DDG::Goodie::GuitarChords;
 use DDG::Goodie;
 use strict;
 with 'DDG::GoodieRole::ImageLoader';
+use Path::Tiny;
 
 # guitar script is stored in share directory
 # including this way, because it limits duplicated code
@@ -23,9 +24,12 @@ primary_example_queries 'G#m6 guitar chord', 'G guitar chord', 'Dbdim guitar cho
 
 attribution github  => ["charles-l",                  "Charles Saternos"],
             twitter => ["theninjacharlie",            "Charles Saternos"],
-            web     => ["http://charels-l.github.io", "Charles Saternos"];
+            web     => ["http://charels-l.github.io", "Charles Saternos"],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 triggers startend => ('guitar chord');
+
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
 handle remainder => sub
 {
@@ -37,10 +41,24 @@ handle remainder => sub
         $f =~ s/([^dim])m/$1minor/g;
         $f =~ s/M/major/g;
 
-        return
-            heading => "$c",
-            answer => "$c",
-            html => "<div class='text--secondary'>Guitar chord diagram for $c</div>" . get_chord_img($f);
+        return $c,
+        structured_answer => {
+            id => 'guitarchords',
+            name => 'Answer',
+        data => {
+            description => "Guitar chord diagram for $c",
+            image => "/share/goodie/guitar_chords/". $goodieVersion . "/G%23minor6.png",
+        },
+        templates => {
+            group => "text",
+            variants => {
+                iconImage => 'medium'
+            }
+        }
+    };
+           # heading => "$c",
+           # answer => "$c",
+           # html => "<div class='text--secondary'>Guitar chord diagram for $c</div>" . get_chord_img($f);
     }
     return;
 };
@@ -77,9 +95,9 @@ sub check_chord
 }
 
 # Returns an image tag with the correct filename and width.
-sub get_chord_img
-{
-    goodie_img_tag({filename=>$_[0].'.png', width=>78});
-}
+#sub get_chord_img
+#{
+#    goodie_img_tag({filename=>$_[0].'.png', width=>78});
+#}
 
 1;
