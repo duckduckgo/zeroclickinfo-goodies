@@ -7,7 +7,8 @@
         "sourceUrl": "http://overapi.com/javascript/"
     },
     "aliases": [
-        "js", "java script" 
+        "js",
+        "java script" 
     ],
     "template_type": "code",
     "section_order": [
@@ -21,7 +22,7 @@
     "sections": {
         "Array Methods": [{
             "val": "Joins two or more arrays, and returns a copy of the joined arrays",
-            "key": "concact()"
+            "key": "concat()"
         }, {
             "val": "Searches array for an element, and returns element's position",
             "key": "indexOf()"  
