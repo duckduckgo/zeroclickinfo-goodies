@@ -44,6 +44,8 @@ templates:
 # sub-type of an Instant Answer type. Each set can have some 'required'
 # templates (which are always applied) and some 'optional' templates (which are
 # applied after asking the user).
+# The 'subdir_support' field specifies if IAs created with the template set
+# support being created inside a subdirectory. It defaults to 'true'.
 template_sets:
     default:
         description: Standard Goodie Instant Answer
@@ -53,6 +55,7 @@ template_sets:
     cheatsheet:
         description: Cheat Sheet Instant Answer
         required: [ cheatsheet_json ]
+        subdir_support: false
 
     all:
         description: Goodie with all backend and frontend files
