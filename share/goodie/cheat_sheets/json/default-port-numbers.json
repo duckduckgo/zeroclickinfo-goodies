@@ -11,7 +11,8 @@
     ],
     "template_type": "reference",
     "section_order": [
-        "Well Known Protocols (Standard Ports)", "Registered Ports"
+        "Well Known Protocols (Standard Ports)",
+        "Registered Ports"
     ],
     "sections": {
         "Well Known Protocols (Standard Ports)": [{
