@@ -9,7 +9,7 @@ zci is_cached   => 1;
 
 primary_example_queries "is 12:00am noon?", "is 1200pm midnight?";
 secondary_example_queries "when is noon?", "when is midnight?";
-description "Succinct explanation of what this instant answer does";
+description "Tells you whether 12 o'clock is noon or midnight.";
 name "TwelveOclock";
 code_url "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Spice/TwelveOclock.pm";
 category "reference";
