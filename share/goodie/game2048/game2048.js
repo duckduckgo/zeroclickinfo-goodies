@@ -152,7 +152,7 @@ DDH.game2048.build = function(ops) {
     function has_won() {
         for(var i = 0; i < TILE_COUNT; ++i) {
             if (area[i].val == WINNUM) {
-                alert("You won");
+                game_over_message(true);
                 return true;
             }
         }
@@ -182,7 +182,7 @@ DDH.game2048.build = function(ops) {
         }
 
         if (full_tiles_count === TILE_COUNT && move_possible === false) {
-            alert("You lost");
+           game_over_message(false);
             return true;
         }
 
@@ -190,8 +190,14 @@ DDH.game2048.build = function(ops) {
     }
 
     // This function shows game over message
-    function game_over_message() {
-        //
+    function game_over_message(game_won) {
+        var result = $('.zci--game2048 .game2048__area .game2048__message');
+        if (game_won == true) {
+            result.text("You Won!");
+        } else {
+            result.text("You Lost!");
+        }
+        result.css("display", "flex");
     }
     
     // This function creates and prints on page the gaming table

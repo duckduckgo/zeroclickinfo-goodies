@@ -21,6 +21,10 @@
 
 .zci--game2048 .game2048__area .game2048__message {
     display: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: xx-large;
     background-color: rgba(238, 228, 218, 0.5);
     position: absolute;
     top: 0;
