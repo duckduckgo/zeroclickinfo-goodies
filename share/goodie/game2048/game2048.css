@@ -1,17 +1,42 @@
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
 .zci--game2048 .game2048__area {
     background-color: #F5F6F7;
     padding: 5px;
     border: 1px solid #DDD;
     float: left;
     position: relative;
+    -webkit-touch-callout: none;
+    -ms-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -ms-touch-action: none;
+    touch-action: none;
 }
 
 .zci--game2048 .game2048__area .boxtile {
     height: 75px;
     width: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: 75px;
     font-weight: bold;
     font-size: x-large;
     border-radius: 6px;
@@ -21,16 +46,33 @@
 
 .zci--game2048 .game2048__area .game2048__message {
     display: none;
-    justify-content: center;
-    align-items: center;
-    font-weight: bolder;
-    font-size: xx-large;
     background-color: rgba(238, 228, 218, 0.5);
+    color: #737373;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 100;
+    text-align: center;
+    -webkit-animation: fade-in 800ms ease 1200ms;
+    -moz-animation: fade-in 800ms ease 1200ms;
+    animation: fade-in 800ms ease 1200ms;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.zci--game2048 .game2048__area .game2048__message.game2048__won {
+    background: rgba(237, 194, 46, 0.5);
+    color: #f9f6f2;
+}
+
+.zci--game2048 .game2048__area .game2048__message p{
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-top: 140px;
+    text-shadow: 2px 2px 5px #B3B3B3;
 }
 
 .zci--game2048 .game2048__info {
@@ -47,17 +89,17 @@
 }
 
 .zci--game2048 .val-{ background-color: #DDD; }
-.zci--game2048 .val-2, .val-4, .val-8, .val-16 { 
+.zci--game2048 .val-2, .val-4, .val-8, .val-16 {
     background-color: #FFF; color: #000;
     box-shadow: 0px 4px 0px 0px #A9CCE8;
 }
-.zci--game2048 .val-32, .val-64, .val-128, .val-256 { 
+.zci--game2048 .val-32, .val-64, .val-128, .val-256 {
     background-color: #F2A032;
     color: #FFF;
     box-shadow: 0px 4px 0px 0px #B1803D;
 }
-.zci--game2048 .val-512, .val-1024, .val-2048, .val-4096, .val-8192 { 
-    background-color:#DE5833; 
+.zci--game2048 .val-512, .val-1024, .val-2048, .val-4096, .val-8192 {
+    background-color:#DE5833;
     color: #FFF;
     box-shadow: 0px 4px 0px 0px #9B3B22;
 }

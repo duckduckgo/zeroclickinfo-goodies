@@ -193,11 +193,12 @@ DDH.game2048.build = function(ops) {
     function game_over_message(game_won) {
         var result = $('.zci--game2048 .game2048__area .game2048__message');
         if (game_won == true) {
-            result.text("You Won!");
+            result.find('p').text("You Won!");
+            result.addClass("game2048__won");
         } else {
-            result.text("You Lost!");
+            result.find('p').text("You Lost!");
         }
-        result.css("display", "flex");
+        result.show();
     }
     
     // This function creates and prints on page the gaming table

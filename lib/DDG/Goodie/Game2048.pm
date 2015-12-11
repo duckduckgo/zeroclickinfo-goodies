@@ -15,7 +15,8 @@ topics "gaming";
 code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Game2048.pm";
 attribution 
     github => ["Roysten", "Roy van der Vegt"],
-    github => ["https://github.com/puskin94", "puskin"];
+    github => ["https://github.com/puskin94", "puskin"],
+    github => ["https://github.com/codenirvana", "Udit Vasu"];
 
 my @game_modes = qw (128 256 512 1024 2048 4096 8192);
 my @triggers = map { "play $_" } @game_modes;
