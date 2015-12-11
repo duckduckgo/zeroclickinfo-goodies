@@ -1,0 +1,228 @@
+{
+	"id": "books_of_bible_cheat_sheet",
+	"name": "Books of The Holy Bible",
+	"description": "List of books in The Holy Bible along with their Number of Chapters and Number of Verses",
+	"metadata": {
+		"sourceName": "Bible Believers",
+		"sourceUrl": "http://www.biblebelievers.com/believers-org/kjv-stats.html"
+	},
+	"aliases": [
+		"books in bible",
+		"books of the holy bible",
+		"books in old testament",
+		"old testament books",
+		"new testament books",
+		"books in new testament",
+		"bible books",
+		"holy bible books"
+	],
+	"template_type": "reference",
+	"section_order": [
+		"Old Testament",
+		"New Testament"
+	],
+	"sections": {
+		"Old Testament": [{
+				"key": "Genesis",
+				"val": "No.of Chapters : 50 , No.of Verses : 1,533"
+			}, {
+				"key": "Exodus",
+				"val": "No.of Chapters : 40 , No.of Verses : 1,213"
+			}, {
+				"key": "Leviticus",
+				"val": "No.of Chapters :27 , No.of Verses : 859"
+			}, {
+				"key": "Numbers",
+				"val": "No.of Chapters : 36 , No.of Verses : 1288"
+			}, {
+				"key": "Deuteronomy",
+				"val": "No.of Chapters : 34 , No.of Verses : 959"
+			}, {
+				"key": "Joshua",
+				"val": "No.of Chapters : 24 , No.of Verses : 658"
+			}, {
+				"key": "Judges",
+				"val": "No.of Chapters : 21 , No.of Verses : 618"
+			}, {
+				"key": "Ruth",
+				"val": "No.of Chapters : 4 , No.of Verses : 85"
+			}, {
+				"key": "1 Samuel",
+				"val": "No.of Chapters : 31 , No.of Verses : 810"
+			}, {
+				"key": "2 Samuel",
+				"val": "No.of Chapters : 24 , No.of Verses : 695"
+			}, {
+				"key": "1 Kings",
+				"val": "No.of Chapters : 22 , No.of Verses : 816"
+			}, {
+				"key": "2 Kings",
+				"val": "No.of Chapters : 25 , No.of Verses : 719"
+			}, {
+				"key": "1 Chronicles",
+				"val": "No.of Chapters : 29 , No.of Verses : 942"
+			}, {
+				"key": "2 Chronicles",
+				"val": "No.of Chapters : 36 , No.of Verses : 822"
+			}, {
+				"key": "Ezra",
+				"val": "No.of Chapters : 10 , No.of Verses : 280"
+			}, {
+				"key": "Nehemiah",
+				"val": "No.of Chapters : 13 , No.of Verses : 406"
+			}, {
+				"key": "Esther",
+				"val": "No.of Chapters : 10 , No.of Verses : 167"
+			}, {
+				"key": "Job",
+				"val": "No.of Chapters : 42 , No.of Verses : 1,070"
+			}, {
+				"key": "Psalms",
+				"val": "No.of Chapters : 150 , No.of Verses : 2,461"
+			}, {
+				"key": "Proverbs",
+				"val": "No.of Chapters : 31 , No.of Verses : 915"
+			}, {
+				"key": "Ecclesiastes",
+				"val": "No.of Chapters : 12 , No.of Verses : 222"
+			}, {
+				"key": "Song of Solomon",
+				"val": "No.of Chapters : 8 , No.of Verses : 117"
+			}, {
+				"key": "Isaiah",
+				"val": "No.of Chapters : 66 , No.of Verses : 1,292"
+			}, {
+				"key": "Jeremiah",
+				"val": "No.of Chapters : 52 , No.of Verses : 1,364"
+			}, {
+				"key": "Lamentations",
+				"val": "No.of Chapters : 5 , No.of Verses : 154"
+			}, {
+				"key": "Ezekiel",
+				"val": "No.of Chapters : 48 , No.of Verses : 1,273"
+			}, {
+				"key": "Daniel",
+				"val": "No.of Chapters : 12 , No.of Verses : 357"
+			}, {
+				"key": "Hosea",
+				"val": "No.of Chapters : 14 , No.of Verses : 197"
+			}, {
+				"key": "Joel",
+				"val": "No.of Chapters : 3 , No.of Verses : 73"
+			}, {
+				"key": "Amos",
+				"val": "No.of Chapters : 9 , No.of Verses : 146"
+			}, {
+				"key": "Obadiah",
+				"val": "No.of Chapters : 1 , No.of Verses : 21"
+			}, {
+				"key": "Jonah",
+				"val": "No.of Chapters : 4 , No.of Verses : 48"
+			}, {
+				"key": "Micah",
+				"val": "No.of Chapters : 7 , No.of Verses : 105"
+			}, {
+				"key": "Nahum",
+				"val": "No.of Chapters : 3 , No.of Verses : 47"
+			}, {
+				"key": "Habakkuk",
+				"val": "No.of Chapters : 3 , No.of Verses : 56"
+			}, {
+				"key": "Zephaniah",
+				"val": "No.of Chapters : 3 , No.of Verses : 53"
+			}, {
+				"key": "Haggai",
+				"val": "No.of Chapters : 2 , No.of Verses : 38"
+			}, {
+				"key": "Zechariah",
+				"val": "No.of Chapters : 14 , No.of Verses : 211"
+			}, {
+				"key": "Malachi",
+				"val": "No.of Chapters : 4 , No.of Verses : 55"
+			}
+
+		],
+		"New Testament": [{
+			"key": "Matthew",
+			"val": "No.of Chapters : 28 , No.of Verses : 1,071"
+		}, {
+			"key": "Mark",
+			"val": "No.of Chapters : 16 , No.of Verses : 678"
+		}, {
+			"key": "Luke",
+			"val": "No.of Chapters : 24 , No.of Verses : 1,151"
+		}, {
+			"key": "John",
+			"val": "No.of Chapters : 21 , No.of Verses : 879"
+		}, {
+			"key": "Acts",
+			"val": "No.of Chapters : 28 , No.of Verses : 1,007"
+		}, {
+			"key": "Romans",
+			"val": "No.of Chapters : 16 , No.of Verses : 433"
+		}, {
+			"key": "1 Corinthians",
+			"val": "No.of Chapters : 16 , No.of Verses : 437"
+		}, {
+			"key": "2 Corinthians",
+			"val": "No.of Chapters : 13  , No.of Verses : 257"
+		}, {
+			"key": "Galatians",
+			"val": "No.of Chapters : 6 , No.of Verses : 149"
+		}, {
+			"key": "Ephesians",
+			"val": "No.of Chapters : 6 , No.of Verses : 155"
+		}, {
+			"key": "Philippians",
+			"val": "No.of Chapters : 4 , No.of Verses : 104"
+		}, {
+			"key": "Colossians",
+			"val": "No.of Chapters : 4 , No.of Verses : 95"
+		}, {
+			"key": "1 Thessalonians",
+			"val": "No.of Chapters : 5 , No.of Verses : 89"
+		}, {
+			"key": "2 Thessalonians",
+			"val": "No.of Chapters : 3 , No.of Verses : 47"
+		}, {
+			"key": "1 Timothy",
+			"val": "No.of Chapters : 6 , No.of Verses : 133"
+		}, {
+			"key": "2 Timothy",
+			"val": "No.of Chapters : 4 , No.of Verses : 83"
+		}, {
+			"key": "Titus",
+			"val": "No.of Chapters : 3 , No.of Verses : 46"
+		}, {
+			"key": "Philemon",
+			"val": "No.of Chapters : 1 , No.of Verses : 25"
+		}, {
+			"key": "Hebrews",
+			"val": "No.of Chapters : 13 , No.of Verses : 303"
+		}, {
+			"key": "James",
+			"val": "No.of Chapters : 5 , No.of Verses : 108"
+		}, {
+			"key": "1 Peter",
+			"val": "No.of Chapters : 5 , No.of Verses : 105"
+		}, {
+			"key": "2 Peter",
+			"val": "No.of Chapters : 3 , No.of Verses : 61"
+		}, {
+			"key": "1 John",
+			"val": "No.of Chapters : 5 , No.of Verses : 105"
+		}, {
+			"key": "2 John",
+			"val": "No.of Chapters : 1 , No.of Verses : 13"
+		}, {
+			"key": "3 John",
+			"val": "No.of Chapters : 1 , No.of Verses : 14"
+		}, {
+			"key": "Jude",
+			"val": "No.of Chapters : 1 , No.of Verses : 25"
+		}, {
+			"key": "Revelation",
+			"val": "No.of Chapters : 22 , No.of Verses : 404"
+		}]
+	}
+}
