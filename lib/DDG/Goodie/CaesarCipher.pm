@@ -18,3 +18,33 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'transformations';
 topics 'cryptography';
 attribution github => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
+
+handle remainder => sub {
+    return unless $_ =~ /(\-?\d+)\s+([[:ascii:]]+)$/;
+    my ($shift_val, $to_cipher) = ($1, $2);
+
+    my $amount = $shift_val % 26;
+    my @alphabet = ('a' ... 'z');
+    my @second_alphabet = (@alphabet[$amount...25],
+                           @alphabet[0..$amount-1]);
+    my $alphabet = join '', @alphabet;
+    my $result;
+    foreach my $char (split //, $to_cipher) {
+        if ($char =~ /[[:alpha:]]/) {
+            my $uppercase = $char =~ /[A-Z]/;
+            my $idx = index $alphabet, lc $char;
+            $char = $second_alphabet[$idx] if ($idx != -1);
+            $char = uc $char if ($uppercase);
+        }
+        $result .= $char;
+    }
+
+    return "$result",
+      structured_answer => {
+        input     => ["$shift_val", "$to_cipher"],
+        operation => 'Caesar cipher',
+        result    => html_enc($result),
+      };
+};
+
+1;
