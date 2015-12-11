@@ -189,7 +189,11 @@ DDH.game2048.build = function(ops) {
         return false;
     }
 
-
+    // This function shows game over message
+    function game_over_message() {
+        //
+    }
+    
     // This function creates and prints on page the gaming table
     function start() {
         init_area();
@@ -213,7 +217,7 @@ DDH.game2048.build = function(ops) {
                 WINNUM = ops.data[0].inputNum;
                 SIZE = ops.data[0].dimension;
                 TILE_COUNT = SIZE * SIZE;
-                cells = $('td.boxtile.val-');
+                cells = $('.game2048__row .boxtile.val-');
                 start();
 
                 $tempArea.keydown(function(e) {

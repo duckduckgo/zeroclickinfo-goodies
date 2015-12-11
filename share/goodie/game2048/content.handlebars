@@ -7,11 +7,12 @@
     </span>
 
     <div class="game2048__area_container">
-        <table id="game2048__area" class ="game2048__area" tabindex="0">
+        <div id="game2048__area" class ="game2048__area">
             {{#loop dimension}}
-                <tr>{{#loop dimension}}<td class="boxtile val-"></td>{{/loop}}</tr>
+                <div class="game2048__row">{{#loop dimension}}<div class="boxtile val-"></div>{{/loop}}</div>
             {{/loop}}
-        </table>
+            <div class="game2048__message">cover</div>
+        </div>
         
         <span class="game2048__info">
             <h5>How to play</h5>
