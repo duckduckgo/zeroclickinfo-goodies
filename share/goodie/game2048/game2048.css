@@ -209,7 +209,7 @@
 }
 
 .zci--game2048 .val-4096, .val-8192 {
-    background-color:#DE5833;
+    background-color: #FFD700;
     color: #FFF;
-    box-shadow: 0px 4px 0px 0px #9B3B22;
+    box-shadow: 0px 3px 0px 0px #E2BF00;
 }
