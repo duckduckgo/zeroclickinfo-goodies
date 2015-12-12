@@ -56,15 +56,15 @@
     -ms-touch-action: none;
     touch-action: none;
     outline: none;
-    transition: box-shadow 0.5s ease-in;
-    -webkit-transition: box-shadow 0.5s ease-in;
-    -moz-transition: box-shadow 0.5s ease-in;
+    transition: box-shadow 0.3s ease-in;
+    -webkit-transition: box-shadow 0.3s ease-in;
+    -moz-transition: box-shadow 0.3s ease-in;
 }
 
 .zci--game2048 .game2048__area:focus {
-    box-shadow: 0 0 8px #ccc;
-    -webkit-box-shadow: 0 0 8px #ccc;
-    -moz-box-shadow: 0 0 8px #ccc;
+    box-shadow: 2px 4px 10px #ccc;
+    -webkit-box-shadow: 2px 4px 10px #ccc;
+    -moz-box-shadow: 2px 4px 10px #ccc;
 }
 
 .zci--game2048 .game2048__area .boxtile {
@@ -107,7 +107,7 @@
 .zci--game2048 .game2048__area .game2048__message p{
     font-weight: bolder;
     font-size: xx-large;
-    margin-top: 140px;
+    line-height: 350px;
     text-shadow: 2px 2px 5px #B3B3B3;
 }
 
@@ -158,6 +158,21 @@
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+
+.zci--game2048 .game2048__new_game {
+    background: #5DA4DC;
+    color: #fff;
+    text-decoration: none;
+    font-size: large;
+    padding: 10px 15px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 3px;
+}
+
+.zci--game2048 .game2048__new_game:active {
+    background: #4793D0;
 }
 
 .zci--game2048 .val-{ background-color: #EEE; }

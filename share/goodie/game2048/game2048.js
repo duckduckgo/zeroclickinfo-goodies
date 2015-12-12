@@ -2,7 +2,7 @@ DDH.game2048 = DDH.game2048 || {};
 
 DDH.game2048.build = function(ops) {
     // Global Variables Declaration
-    var $tempArea, $container, $spanPoints, $pointsCounter, WINNUM, SIZE, TILE_COUNT;
+    var $tempArea, $container, $spanPoints, $pointsCounter, $newGame, $result_box, WINNUM, SIZE, TILE_COUNT;
 
         var lost_or_won = false,
         started,
@@ -195,19 +195,23 @@ DDH.game2048.build = function(ops) {
 
     // This function shows game over message
     function game_over_message(game_won) {
-        var result_box = $('#game2048__area .game2048__message');
         var result_msg = $('#game2048__area .game2048__message p');
         if (game_won == true) {
             result_msg.text("You Won!");
-            result_box.addClass("game2048__won");
+            $result_box.addClass("game2048__won");
         } else {
             result_msg.text("You Lost!");
+            $result_box.removeClass("game2048__won");
         }
-        result_box.show();
+        $result_box.show();
     }
     
-    // This function creates and prints on page the gaming table
+    // This function reset game_area, points, result
     function start() {
+        increase_points(-score);    // Set to 0
+        lost_or_won = false;        // New game
+        $result_box.hide();         // Hide previous result
+        $tempArea.focus();          // Focus on game by default
         init_area();
         add_random_tile();
         print_area();
@@ -227,6 +231,8 @@ DDH.game2048.build = function(ops) {
                 $spanPoints = $('.game2048__points');
                 $pointsCounter = $('.game2048__points_addition');
                 $tempArea = $('#game2048__area');
+                $newGame = $(".zci--game2048 .game2048__new_game");
+                $result_box = $('#game2048__area .game2048__message');
                 WINNUM = ops.data[0].inputNum;
                 SIZE = ops.data[0].dimension;
                 TILE_COUNT = SIZE * SIZE;
@@ -259,6 +265,11 @@ DDH.game2048.build = function(ops) {
                         print_area();
                     }
                     return false;
+                });
+
+                $newGame.on("click", function(e){
+                    e.preventDefault();
+                    start();
                 });
             }
         }
