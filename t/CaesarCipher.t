@@ -82,6 +82,14 @@ ddg_goodie_test(
             result    => '&quot;Zber Grfg Grkg&quot;'
         },
     ),
+    'shift cipher 7 Mxlm mxqm' => test_zci(
+        'Test text',
+        structured_answer => {
+            input     => ['7', 'Mxlm mxqm'],
+            operation => 'Caesar cipher',
+            result    => 'Test text'
+        },
+    ),
     'caesar cipher hello' => undef,
 );
 

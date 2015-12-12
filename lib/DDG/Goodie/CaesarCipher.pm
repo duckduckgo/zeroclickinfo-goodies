@@ -5,7 +5,8 @@ use strict;
 use DDG::Goodie;
 
 triggers start => "caesar cipher", "caesar",
-                  "ceasar", "ceasar cipher";
+                  "ceasar", "ceasar cipher",
+                  "shift cipher";
 
 zci is_cached => 1;
 zci answer_type => "caesar_cipher";
