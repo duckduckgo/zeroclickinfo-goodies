@@ -7,11 +7,11 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers"
     },
     "aliases": [
-        "default port", "network ports", "tcp ports", "udp ports", "tcp port numbers", "udp port numbers" 
+        "default ports", "network ports", "tcp ports", "udp ports", "tcp port numbers", "udp port numbers"
     ],
     "template_type": "reference",
     "section_order": [
-        "Well Known Protocols (Standard Ports)",
+        "Well Known Ports (System Ports)",
         "Registered Ports"
     ],
     "sections": {
