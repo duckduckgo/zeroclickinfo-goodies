@@ -2,7 +2,7 @@ DDH.game2048 = DDH.game2048 || {};
 
 DDH.game2048.build = function(ops) {
     // Global Variables Declaration
-    var $tempArea, $container, $spanPoints, WINNUM, SIZE, TILE_COUNT;
+    var $tempArea, $container, $spanPoints, $pointsCounter, WINNUM, SIZE, TILE_COUNT;
 
         var lost_or_won = false,
         started,
@@ -79,6 +79,10 @@ DDH.game2048.build = function(ops) {
     // Updates the 'points' div
     function increase_points(points) {
         score += points;
+        if (points > 0){
+            var addition = "<div class='score-addition'>+" + points + "</div>";
+            $pointsCounter.html(addition);
+        }
         $spanPoints.text(score);
     }
 
@@ -221,6 +225,7 @@ DDH.game2048.build = function(ops) {
 
                 $container = $('#game2048__container');
                 $spanPoints = $('.game2048__points');
+                $pointsCounter = $('.game2048__points_addition');
                 $tempArea = $('#game2048__area');
                 WINNUM = ops.data[0].inputNum;
                 SIZE = ops.data[0].dimension;

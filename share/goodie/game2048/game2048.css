@@ -11,6 +11,37 @@
   100% { opacity: 1; }
 }
 
+@-webkit-keyframes move-up {
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: -25px;
+    opacity: 0;
+  }
+}
+@-moz-keyframes move-up {
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: -25px;
+    opacity: 0;
+  }
+}
+@keyframes move-up {
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: -25px;
+    opacity: 0;
+  }
+}
+
 .zci--game2048 .game2048__area {
     background-color: #FFF;
     padding: 5px;
@@ -85,12 +116,48 @@
     width: 40%;
 }
 
+.zci--game2048 .game2048__help {
+    font-size: small;
+    color: #888;
+    margin-top: 15px;
+}
+
 .zci--game2048 .game2048__counter {
-    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
 }
 
 .zci--game2048 .game2048__points {
-    font-weight: normal;
+    color: #888;
+    font-size: 60px;
+    line-height: 60px;
+}
+.zci--game2048 .game2048__points:before {
+    content: "Score";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.zci--game2048 .game2048__counter .game2048__points_addition .score-addition{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    color: rgba(119, 110, 101, 0.9);
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 .zci--game2048 .val-{ background-color: #EEE; }
