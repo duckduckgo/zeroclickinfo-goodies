@@ -24,13 +24,13 @@
     -ms-user-select: none;
     -ms-touch-action: none;
     touch-action: none;
+    outline: none;
     transition: box-shadow 0.5s ease-in;
     -webkit-transition: box-shadow 0.5s ease-in;
     -moz-transition: box-shadow 0.5s ease-in;
 }
 
 .zci--game2048 .game2048__area:focus {
-    outline: none;
     box-shadow: 0 0 8px #ccc;
     -webkit-box-shadow: 0 0 8px #ccc;
     -moz-box-shadow: 0 0 8px #ccc;
