@@ -15,7 +15,7 @@
         "Registered Ports"
     ],
     "sections": {
-        "Well Known Protocols (Standard Ports)": [{
+        "Well Known Ports (System Ports)": [{
             "val": "FTP Data Transfer",
             "key": "20"
         }, {
