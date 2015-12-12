@@ -12,7 +12,7 @@
 }
 
 .zci--game2048 .game2048__area {
-    background-color: #F5F6F7;
+    background-color: #FFF;
     padding: 5px;
     border: 1px solid #DDD;
     float: left;
@@ -39,11 +39,12 @@
 .zci--game2048 .game2048__area .boxtile {
     height: 75px;
     width: 75px;
+    color: #FFF;
     text-align: center;
     line-height: 75px;
     font-weight: bold;
     font-size: x-large;
-    border-radius: 6px;
+    border-radius: 4px;
     float: left;
     margin: 5px;
 }
@@ -92,17 +93,55 @@
     font-weight: normal;
 }
 
-.zci--game2048 .val-{ background-color: #DDD; }
-.zci--game2048 .val-2, .val-4, .val-8, .val-16 {
-    background-color: #FFF; color: #000;
-    box-shadow: 0px 4px 0px 0px #A9CCE8;
+.zci--game2048 .val-{ background-color: #EEE; }
+.zci--game2048 .val-2 {
+    background-color: #7CB5E2;
+    box-shadow: 0px 3px 0px 0px #5FA5D9;
 }
-.zci--game2048 .val-32, .val-64, .val-128, .val-256 {
+.zci--game2048 .val-4 {
+    background-color: #4495D4;
+    box-shadow: 0px 3px 0px 0px #397FB3;
+}
+.zci--game2048 .val-8 {
+    background-color: #2F6895;
+    box-shadow: 0px 3px 0px 0px #255174;
+}
+.zci--game2048 .val-16 {
+    background-color: #F5BD70;
+    box-shadow: 0px 3px 0px 0px #F3AE4F;
+}
+.zci--game2048 .val-32 {
     background-color: #F2A032;
-    color: #FFF;
-    box-shadow: 0px 4px 0px 0px #B1803D;
+    box-shadow: 0px 3px 0px 0px #CD8829;
 }
-.zci--game2048 .val-512, .val-1024, .val-2048, .val-4096, .val-8192 {
+.zci--game2048 .val-64 {
+    background-color: #CD8829;
+    box-shadow: 0px 3px 0px 0px #A87023;
+}
+.zci--game2048 .val-128 {
+    background-color: #E37051;
+    box-shadow: 0px 3px 0px 0px #DE5833;
+}
+.zci--game2048 .val-256 {
+    background-color: #DE5833;
+    box-shadow: 0px 3px 0px 0px #BD4A2B;
+}
+.zci--game2048 .val-512 {
+    background-color: #BD4A2B;
+    box-shadow: 0px 3px 0px 0px #9B3D24;
+}
+
+.zci--game2048 .val-1024 {
+    background-color: #5454DA;
+    box-shadow: 0px 3px 0px 0px #4747B9;
+}
+
+.zci--game2048 .val-2048 {
+    background-color: #3B3C99;
+    box-shadow: 0px 3px 0px 0px #2E2E78;
+}
+
+.zci--game2048 .val-4096, .val-8192 {
     background-color:#DE5833;
     color: #FFF;
     box-shadow: 0px 4px 0px 0px #9B3B22;
