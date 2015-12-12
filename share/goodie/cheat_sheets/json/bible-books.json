@@ -1,7 +1,7 @@
 {
-    "id": "books_of_bible_cheat_sheet",
+    "id": "bible_books_cheat_sheet",
     "name": "Books of The Holy Bible",
-    "description": "List of books in The Holy Bible along with their Number of Chapters and Number of Verses",
+    "description": "List of books in The Holy Bible along with their number of chapters and number of verses",
     "metadata": {
         "sourceName": "Bible Believers",
         "sourceUrl": "http://www.biblebelievers.com/believers-org/kjv-stats.html"
@@ -13,7 +13,7 @@
         "old testament books",
         "new testament books",
         "books in new testament",
-        "bible books",
+        "books of bible",
         "holy bible books"
     ],
     "template_type": "reference",
@@ -25,269 +25,269 @@
         "Old Testament": [
             {
                 "key": "Genesis",
-                "val": "No.of Chapters : 50 , No.of Verses : 1,533"
+                "val": "Chapters : 50 , Verses : 1,533"
             },
             {
                 "key": "Exodus",
-                "val": "No.of Chapters : 40 , No.of Verses : 1,213"
+                "val": "Chapters : 40 , Verses : 1,213"
             },
             {
                 "key": "Leviticus",
-                "val": "No.of Chapters :27 , No.of Verses : 859"
+                "val": "Chapters :27 , Verses : 859"
             },
             {
                 "key": "Numbers",
-                "val": "No.of Chapters : 36 , No.of Verses : 1288"
+                "val": "Chapters : 36 , Verses : 1288"
             },
             {
                 "key": "Deuteronomy",
-                "val": "No.of Chapters : 34 , No.of Verses : 959"
+                "val": "Chapters : 34 , Verses : 959"
             },
             {
                 "key": "Joshua",
-                "val": "No.of Chapters : 24 , No.of Verses : 658"
+                "val": "Chapters : 24 , Verses : 658"
             },
             {
                 "key": "Judges",
-                "val": "No.of Chapters : 21 , No.of Verses : 618"
+                "val": "Chapters : 21 , Verses : 618"
             },
             {
                 "key": "Ruth",
-                "val": "No.of Chapters : 4 , No.of Verses : 85"
+                "val": "Chapters : 4 , Verses : 85"
             },
             {
                 "key": "1 Samuel",
-                "val": "No.of Chapters : 31 , No.of Verses : 810"
+                "val": "Chapters : 31 , Verses : 810"
             },
             {
                 "key": "2 Samuel",
-                "val": "No.of Chapters : 24 , No.of Verses : 695"
+                "val": "Chapters : 24 , Verses : 695"
             },
             {
                 "key": "1 Kings",
-                "val": "No.of Chapters : 22 , No.of Verses : 816"
+                "val": "Chapters : 22 , Verses : 816"
             },
             {
                 "key": "2 Kings",
-                "val": "No.of Chapters : 25 , No.of Verses : 719"
+                "val": "Chapters : 25 , Verses : 719"
             },
             {
                 "key": "1 Chronicles",
-                "val": "No.of Chapters : 29 , No.of Verses : 942"
+                "val": "Chapters : 29 , Verses : 942"
             },
             {
                 "key": "2 Chronicles",
-                "val": "No.of Chapters : 36 , No.of Verses : 822"
+                "val": "Chapters : 36 , Verses : 822"
             },
             {
                 "key": "Ezra",
-                "val": "No.of Chapters : 10 , No.of Verses : 280"
+                "val": "Chapters : 10 , Verses : 280"
             },
             {
                 "key": "Nehemiah",
-                "val": "No.of Chapters : 13 , No.of Verses : 406"
+                "val": "Chapters : 13 , Verses : 406"
             },
             {
                 "key": "Esther",
-                "val": "No.of Chapters : 10 , No.of Verses : 167"
+                "val": "Chapters : 10 , Verses : 167"
             },
             {
                 "key": "Job",
-                "val": "No.of Chapters : 42 , No.of Verses : 1,070"
+                "val": "Chapters : 42 , Verses : 1,070"
             },
             {
                 "key": "Psalms",
-                "val": "No.of Chapters : 150 , No.of Verses : 2,461"
+                "val": "Chapters : 150 , Verses : 2,461"
             },
             {
                 "key": "Proverbs",
-                "val": "No.of Chapters : 31 , No.of Verses : 915"
+                "val": "Chapters : 31 , Verses : 915"
             },
             {
                 "key": "Ecclesiastes",
-                "val": "No.of Chapters : 12 , No.of Verses : 222"
+                "val": "Chapters : 12 , Verses : 222"
             },
             {
                 "key": "Song of Solomon",
-                "val": "No.of Chapters : 8 , No.of Verses : 117"
+                "val": "Chapters : 8 , Verses : 117"
             },
             {
                 "key": "Isaiah",
-                "val": "No.of Chapters : 66 , No.of Verses : 1,292"
+                "val": "Chapters : 66 , Verses : 1,292"
             },
             {
                 "key": "Jeremiah",
-                "val": "No.of Chapters : 52 , No.of Verses : 1,364"
+                "val": "Chapters : 52 , Verses : 1,364"
             },
             {
                 "key": "Lamentations",
-                "val": "No.of Chapters : 5 , No.of Verses : 154"
+                "val": "Chapters : 5 , Verses : 154"
             },
             {
                 "key": "Ezekiel",
-                "val": "No.of Chapters : 48 , No.of Verses : 1,273"
+                "val": "Chapters : 48 , Verses : 1,273"
             },
             {
                 "key": "Daniel",
-                "val": "No.of Chapters : 12 , No.of Verses : 357"
+                "val": "Chapters : 12 , Verses : 357"
             },
             {
                 "key": "Hosea",
-                "val": "No.of Chapters : 14 , No.of Verses : 197"
+                "val": "Chapters : 14 , Verses : 197"
             },
             {
                 "key": "Joel",
-                "val": "No.of Chapters : 3 , No.of Verses : 73"
+                "val": "Chapters : 3 , Verses : 73"
             },
             {
                 "key": "Amos",
-                "val": "No.of Chapters : 9 , No.of Verses : 146"
+                "val": "Chapters : 9 , Verses : 146"
             },
             {
                 "key": "Obadiah",
-                "val": "No.of Chapters : 1 , No.of Verses : 21"
+                "val": "Chapters : 1 , Verses : 21"
             },
             {
                 "key": "Jonah",
-                "val": "No.of Chapters : 4 , No.of Verses : 48"
+                "val": "Chapters : 4 , Verses : 48"
             },
             {
                 "key": "Micah",
-                "val": "No.of Chapters : 7 , No.of Verses : 105"
+                "val": "Chapters : 7 , Verses : 105"
             },
             {
                 "key": "Nahum",
-                "val": "No.of Chapters : 3 , No.of Verses : 47"
+                "val": "Chapters : 3 , Verses : 47"
             },
             {
                 "key": "Habakkuk",
-                "val": "No.of Chapters : 3 , No.of Verses : 56"
+                "val": "Chapters : 3 , Verses : 56"
             },
             {
                 "key": "Zephaniah",
-                "val": "No.of Chapters : 3 , No.of Verses : 53"
+                "val": "Chapters : 3 , Verses : 53"
             },
             {
                 "key": "Haggai",
-                "val": "No.of Chapters : 2 , No.of Verses : 38"
+                "val": "Chapters : 2 , Verses : 38"
             },
             {
                 "key": "Zechariah",
-                "val": "No.of Chapters : 14 , No.of Verses : 211"
+                "val": "Chapters : 14 , Verses : 211"
             },
             {
                 "key": "Malachi",
-                "val": "No.of Chapters : 4 , No.of Verses : 55"
+                "val": "Chapters : 4 , Verses : 55"
             }
         ],
         "New Testament": [
             {
                 "key": "Matthew",
-                "val": "No.of Chapters : 28 , No.of Verses : 1,071"
+                "val": "Chapters : 28 , Verses : 1,071"
             },
             {
                 "key": "Mark",
-                "val": "No.of Chapters : 16 , No.of Verses : 678"
+                "val": "Chapters : 16 , Verses : 678"
             },
             {
                 "key": "Luke",
-                "val": "No.of Chapters : 24 , No.of Verses : 1,151"
+                "val": "Chapters : 24 , Verses : 1,151"
             },
             {
                 "key": "John",
-                "val": "No.of Chapters : 21 , No.of Verses : 879"
+                "val": "Chapters : 21 , Verses : 879"
             },
             {
                 "key": "Acts",
-                "val": "No.of Chapters : 28 , No.of Verses : 1,007"
+                "val": "Chapters : 28 , Verses : 1,007"
             },
             {
                 "key": "Romans",
-                "val": "No.of Chapters : 16 , No.of Verses : 433"
+                "val": "Chapters : 16 , Verses : 433"
             },
             {
                 "key": "1 Corinthians",
-                "val": "No.of Chapters : 16 , No.of Verses : 437"
+                "val": "Chapters : 16 , Verses : 437"
             },
             {
                 "key": "2 Corinthians",
-                "val": "No.of Chapters : 13  , No.of Verses : 257"
+                "val": "Chapters : 13  , Verses : 257"
             },
             {
                 "key": "Galatians",
-                "val": "No.of Chapters : 6 , No.of Verses : 149"
+                "val": "Chapters : 6 , Verses : 149"
             },
             {
                 "key": "Ephesians",
-                "val": "No.of Chapters : 6 , No.of Verses : 155"
+                "val": "Chapters : 6 , Verses : 155"
             },
             {
                 "key": "Philippians",
-                "val": "No.of Chapters : 4 , No.of Verses : 104"
+                "val": "Chapters : 4 , Verses : 104"
             },
             {
                 "key": "Colossians",
-                "val": "No.of Chapters : 4 , No.of Verses : 95"
+                "val": "Chapters : 4 , Verses : 95"
             },
             {
                 "key": "1 Thessalonians",
-                "val": "No.of Chapters : 5 , No.of Verses : 89"
+                "val": "Chapters : 5 , Verses : 89"
             },
             {
                 "key": "2 Thessalonians",
-                "val": "No.of Chapters : 3 , No.of Verses : 47"
+                "val": "Chapters : 3 , Verses : 47"
             },
             {
                 "key": "1 Timothy",
-                "val": "No.of Chapters : 6 , No.of Verses : 133"
+                "val": "Chapters : 6 , Verses : 133"
             },
             {
                 "key": "2 Timothy",
-                "val": "No.of Chapters : 4 , No.of Verses : 83"
+                "val": "Chapters : 4 , Verses : 83"
             },
             {
                 "key": "Titus",
-                "val": "No.of Chapters : 3 , No.of Verses : 46"
+                "val": "Chapters : 3 , Verses : 46"
             },
             {
                 "key": "Philemon",
-                "val": "No.of Chapters : 1 , No.of Verses : 25"
+                "val": "Chapters : 1 , Verses : 25"
             },
             {
                 "key": "Hebrews",
-                "val": "No.of Chapters : 13 , No.of Verses : 303"
+                "val": "Chapters : 13 , Verses : 303"
             },
             {
                 "key": "James",
-                "val": "No.of Chapters : 5 , No.of Verses : 108"
+                "val": "Chapters : 5 , Verses : 108"
             },
             {
                 "key": "1 Peter",
-                "val": "No.of Chapters : 5 , No.of Verses : 105"
+                "val": "Chapters : 5 , Verses : 105"
             },
             {
                 "key": "2 Peter",
-                "val": "No.of Chapters : 3 , No.of Verses : 61"
+                "val": "Chapters : 3 , Verses : 61"
             },
             {
                 "key": "1 John",
-                "val": "No.of Chapters : 5 , No.of Verses : 105"
+                "val": "Chapters : 5 , Verses : 105"
             },
             {
                 "key": "2 John",
-                "val": "No.of Chapters : 1 , No.of Verses : 13"
+                "val": "Chapters : 1 , Verses : 13"
             },
             {
                 "key": "3 John",
-                "val": "No.of Chapters : 1 , No.of Verses : 14"
+                "val": "Chapters : 1 , Verses : 14"
             },
             {
                 "key": "Jude",
-                "val": "No.of Chapters : 1 , No.of Verses : 25"
+                "val": "Chapters : 1 , Verses : 25"
             },
             {
                 "key": "Revelation",
-                "val": "No.of Chapters : 22 , No.of Verses : 404"
+                "val": "Chapters : 22 , Verses : 404"
             }
         ]
     }
