@@ -2,7 +2,7 @@
     "id":"linux_cheat_sheet",
     "name":"Linux",
     "metadata":{
-        "sourceName":"linuxstall",
+        "sourceName":"Linux Stall",
         "sourceUrl":"http://www.linuxstall.com/wp-content/uploads/2012/01/"
     },
     "template_type":"terminal",
