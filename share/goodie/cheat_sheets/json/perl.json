@@ -6,9 +6,6 @@
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/mishin/cheat-sheets/perl-reference-card/"
     },
-    "aliases": [
-        "perl"	
-    ],
     "template_type": "code",
     "section_order": ["Input/Output", "Scalars and Strings", "Arrays and Lists", "Hashes", "Basic Syntax", "References and Data Structures", "System Interaction"], 
     "sections": {
