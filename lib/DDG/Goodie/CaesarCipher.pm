@@ -20,21 +20,25 @@ category 'transformations';
 topics 'cryptography';
 attribution github => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
 
+
+my @alphabet = ('a' ... 'z');
+
+my $string_alphabet = join '', @alphabet;
+
 handle remainder => sub {
     return unless $_ =~ /(\-?\d+)\s+([[:ascii:]]+)$/;
     my ($shift_val, $to_cipher) = ($1, $2);
 
     my $amount = $shift_val % 26;
-    my @alphabet = ('a' ... 'z');
-    my @second_alphabet = (@alphabet[$amount...25],
-                           @alphabet[0..$amount-1]);
-    my $alphabet = join '', @alphabet;
+    # This creates the cipher by shifting the alphabet.
+    my @shifted_alphabet = (@alphabet[$amount...25],
+                            @alphabet[0..$amount-1]);
     my $result;
     foreach my $char (split //, $to_cipher) {
         if ($char =~ /[[:alpha:]]/) {
             my $uppercase = $char =~ /[A-Z]/;
-            my $idx = index $alphabet, lc $char;
-            $char = $second_alphabet[$idx] if ($idx != -1);
+            my $idx = index $string_alphabet, lc $char;
+            $char = $shifted_alphabet[$idx] if ($idx != -1);
             $char = uc $char if ($uppercase);
         }
         $result .= $char;
