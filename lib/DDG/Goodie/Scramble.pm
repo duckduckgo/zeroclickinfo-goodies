@@ -62,7 +62,7 @@ handle remainder_lc => sub {
 
     return "$operation $word",
         structured_answer => {
-        input     => [html_enc($word)],
+        input     => [$word],
         operation => $operation,
         result    => html_enc($response)
       };

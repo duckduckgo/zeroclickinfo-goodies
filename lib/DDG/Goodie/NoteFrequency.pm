@@ -73,7 +73,7 @@ handle remainder => sub {
     # result
     return $frequency,
         structured_answer => {
-            input => [html_enc($letter.$accidental.$octave." in A".$tuning." tuning")],
+            input => [$letter.$accidental.$octave." in A".$tuning." tuning"],
             operation => "Note Frequency",
             result => html_enc($frequency." Hz"),
         };

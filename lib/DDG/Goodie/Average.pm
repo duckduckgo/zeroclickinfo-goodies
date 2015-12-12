@@ -84,7 +84,7 @@ handle remainder => sub {
     
     return "$type: $result",
     structured_answer => {
-        input     => [html_enc($_)],
+        input     => [$_],
         operation => $type . ' of',
         result    => html_enc($result),
     };

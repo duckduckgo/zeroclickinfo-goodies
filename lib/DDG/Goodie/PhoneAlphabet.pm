@@ -34,7 +34,7 @@ handle remainder => sub {
 
     return "Phone Number: $num",
     structured_answer => {
-        input     => [html_enc($input)],
+        input     => [$input],
         operation => "Phone Number",
         result    => "$num",
     };

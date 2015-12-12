@@ -108,7 +108,7 @@ handle remainder => sub {
 
     return $response,
       structured_answer => {
-        input     => [html_enc($word)],
+        input     => [$word],
         operation => $operation,
         result    => html_enc($response)
       };

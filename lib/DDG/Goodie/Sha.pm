@@ -46,7 +46,7 @@ handle query => sub {
 
     return $out,
       structured_answer => {
-        input     => [html_enc($str)],
+        input     => [$str],
         operation => 'SHA-' . $ver . ' ' . $enc . ' hash',
         result    => $out
       };

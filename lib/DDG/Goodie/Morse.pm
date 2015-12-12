@@ -34,7 +34,7 @@ handle remainder => sub {
 
     return $result,
       structured_answer => {
-        input     => [html_enc($input)],
+        input     => [$input],
         operation => 'Morse code conversion',
         result    => html_enc($result),
       };

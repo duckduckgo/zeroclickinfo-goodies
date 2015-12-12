@@ -43,7 +43,7 @@ handle remainder => sub {
 
     return "$operation: $result",
       structured_answer => {
-        input     => [html_enc($in_string)],
+        input     => [$in_string],
         operation => $operation,
         result    => html_enc($result),
       };

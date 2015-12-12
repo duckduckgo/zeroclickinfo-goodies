@@ -50,7 +50,7 @@ handle remainder => sub {
 
     return $response,
         structured_answer => {
-            input => [html_enc($_)],
+            input => [$_],
             operation => "Magic eight ball's answer to",
             result => html_enc($response),
         };

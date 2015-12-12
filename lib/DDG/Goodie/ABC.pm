@@ -53,7 +53,7 @@ handle remainder => sub {
 
     return $selection . " (" . $selection_type . ")",
       structured_answer => {
-        input     => [html_enc($choice_string)],
+        input     => [$choice_string],
         operation => $operation,
         result    => html_enc($selection),
       };

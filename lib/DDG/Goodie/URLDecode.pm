@@ -48,7 +48,7 @@ handle query_raw => sub {
 
     return $text,
       structured_answer => {
-        input     => [html_enc($in)],
+        input     => [$in],
         operation => 'URL decode',
         result    => html_enc($decoded)
       };

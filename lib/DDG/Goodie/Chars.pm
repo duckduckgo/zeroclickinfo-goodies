@@ -59,7 +59,7 @@ handle remainder => sub {
 
     return $text_out,
       structured_answer => {
-        input     => [html_enc($str)],
+        input     => [$str],
         operation => 'Character count',
         result    => $len
       };
