@@ -15,6 +15,17 @@ use utf8;
 zci answer_type => "calc";
 zci is_cached   => 1;
 
+primary_example_queries '$3.43+$34.45';
+secondary_example_queries '64*343';
+description 'Basic calculations';
+name 'Calculator';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
+category 'calculations';
+topics 'math';
+attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'],
+            github  => ['https://github.com/duckduckgo', 'duckduckgo'],
+            github  => ['https://github.com/phylum', 'Daniel Smith'];
+
 triggers query_nowhitespace => qr<
         ^
        ( what is | calculate | solve | math )?
@@ -48,28 +59,44 @@ lexeme default = action => [ start, length, value ]
 Calculator ::= Expression
 
 Expression ::=
-       NumTerm                    bless => primary
+       Function                   bless => primary
+    || NumTerm                    bless => primary
     || NumTerm 'e':i NumTerm      bless => exp
     |  '(' Expression ')'         bless => paren assoc => group
-    || Operation                 bless => operation
+    || Operation                  bless => operation
+    | Special                     bless => primary
 
 Operation ::=
       Expression '**' Expression bless => exponentiate assoc => right
+    | Expression '^'  Expression bless => exponentiate assoc => right
    || Expression '*'  Expression bless => multiply
     | Expression '/'  Expression bless => divide
    || Expression '+'  Expression bless => add
     | Expression '-'  Expression bless => subtract
 
+Special ::=
+    Expression 'squared':i bless => square
+
 NumTerm ::=
-      Constant bless => primary
-    | Number   bless => primary
+       Number Constant bless => constant_coefficent
+    || Constant        bless => primary
+    |  Number          bless => primary
 
 Constant ::=
       pi    bless => const_pi
     | euler bless => const_euler
+    | dozen bless => const_dozen
+    | score bless => const_score
+
+Function ::=
+    'sqrt' Argument bless => square_root
+
+Argument ::= '(' Expression ')' bless => primary
 
 pi ~ 'pi':i
 euler ~ 'e':i
+dozen ~ 'dozen':i
+score ~ 'score':i
 
 Number ::=
     Integer   bless => init_integer
@@ -99,7 +126,6 @@ sub result_value {
 
 sub result_show {
   my $result_ref = $_;
-  CORE::say "ref (in result_show): $result_ref";
   my $show_result = ${$result_ref}->show();
   return $show_result;
 }
@@ -152,12 +178,15 @@ handle query_nowhitespace => sub {
     $query =~ s/^(?:whatis|calculate|solve|math)//;
     my $recce = Marpa::R2::Scanless::R->new(
         { grammar => $grammar,
-          trace_terminals => 1,
+#          trace_terminals => 1,
         } );
     my $parsed = get_parse $recce, $query;
     return unless defined $parsed;
     my $str_result = ${$parsed}->show();
     my $val_result = ${$parsed}->doit();
+    my $val_result = sprintf('%0.14g', $val_result);
+    $val_result =~ s/(-?[0-9.]+)e(-?[\d.]+)/($1 * 10^$2)/g;
+    $val_result =~ s/^\((.*)\)$/$1/;
     # my $str_result = result_show $$parsed;
     # my $val_result = result_value $parsed;
     my $result = "$val_result";
@@ -299,7 +328,6 @@ sub Calculator::Number::show  { return "$_[0]->[2]" };
 sub Calculator::paren::doit   { my ($self) = @_; $self->[1]->doit() }
 sub Calculator::paren::show   {
     my ($self) = @_;
-    Data::Printer::p $self->[1];
     return '( ' . $self->[1]->show() . ' )'
 }
 sub Calculator::operation::doit { return $_[0]->[0]->doit() };
@@ -352,6 +380,14 @@ sub Calculator::init_integer::show {
   my ($self) = @_;
   return "$self->[0]->[2]";
 }
+sub Calculator::init_decimal::doit {
+  my ($self) = @_;
+  return $self->[0]->[2];
+}
+sub Calculator::init_decimal::show {
+  my ($self) = @_;
+  return "$self->[0]->[2]";
+}
 # singleton_doit qw(init_integer), (sub { return $_ });
 # singleton_show qw(init_integer);
 
@@ -381,8 +417,32 @@ sub Calculator::exponentiate::doit {
 }
 sub Calculator::exponentiate::show {
     my ($self) = @_;
-    return $self->[0]->show() . '^' . $self->[2]->show();
+    return $self->[0]->show() . ' ^ ' . $self->[2]->show();
 }
+
+sub doit {
+    my ($name, $sub) = @_;
+    my $full_name = 'Calculator::' . $name . '::doit';
+    no strict 'refs';
+    *$full_name = *{uc $full_name} = $sub;
+}
+sub show {
+    my ($name, $sub) = @_;
+    my $full_name = 'Calculator::' . $name . '::show';
+    no strict 'refs';
+    *$full_name = *{uc $full_name} = $sub;
+}
+
+doit qw(square), sub {
+    my ($self) = @_;
+    my $val = $self->[0]->doit();
+    return $val * $val;
+};
+
+show qw(square), sub {
+    my ($self) = @_;
+    return $self->[0]->show() . ' squared';
+};
 
 sub Calculator::exp::doit {
   my ($self) = @_;
@@ -402,7 +462,49 @@ sub Calculator::Calculator::show {
   my ($self) = @_;
   return join q{ }, map { $_->show() } @{$self};
 }
+
+doit qw(square_root), sub {
+    my ($self) = @_;
+    return $self->[0]->doit()->bsqrt();
+};
+show qw(square_root), sub {
+    my ($self) = @_;
+    return 'sqrt(' . $self->[0]->show() . ')';
+};
+
+doit 'constant_coefficent', sub {
+    my ($self) = @_;
+    return $self->[0]->doit() * $self->[1]->doit();
+};
+show 'constant_coefficent', sub {
+    my ($self) = @_;
+    return $self->[0]->show() . ' ' . $self->[1]->show();
+};
+
+sub const_doit {
+    my ($name, $val) = @_;
+    my $full_name = 'Calculator::const_' . $name . '::doit';
+    no strict 'refs';
+    *$full_name = *{uc $full_name} = sub {
+        return $val;
+    };
+}
+sub const_show {
+    my ($name, $rep) = @_;
+    my $full_name = 'Calculator::const_' . $name . '::show';
+    no strict 'refs';
+    *$full_name = *{uc $full_name} = sub {
+        return $rep;
+    };
+}
 sub Calculator::const_pi::doit { return Math::BigFloat->bpi() }
 sub Calculator::const_pi::show { return 'pi' };
+
+const_doit qw(dozen), 12;
+const_show qw(dozen), 'dozen';
+const_doit qw(euler), Math::BigFloat->bexp(1);
+const_show qw(euler), 'e';
+const_doit qw(score), 20;
+const_show qw(score), 'score';
 
 1;
