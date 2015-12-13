@@ -388,20 +388,11 @@ sub Calculator::add::doit {
 }
 
 
-sub Calculator::subtract::doit {
-    my ($self) = @_;
-    $self->[0]->doit() - $self->[1]->doit();
-}
 sub Calculator::subtract::show {
     my ($self) = @_;
     return $self->[0]->show() . ' - ' . $self->[1]->show();
 }
 
-
-sub Calculator::multiply::doit {
-    my ($self) = @_;
-    $self->[0]->doit() * $self->[1]->doit();
-}
 
 sub singleton_doit {
   my ($name, $sub) = @_;
@@ -458,15 +449,6 @@ show_binary qw(add), '+';
 show_binary qw(divide), '/';
 
 
-sub Calculator::divide::doit {
-    my ($self) = @_;
-    $self->[0]->doit() / $self->[1]->doit();
-}
-
-sub Calculator::exponentiate::doit {
-    my ($self) = @_;
-    $self->[0]->doit()**$self->[1]->doit();
-}
 sub Calculator::exponentiate::show {
     my ($self) = @_;
     return $self->[0]->show() . ' ^ ' . $self->[1]->show();
@@ -488,7 +470,7 @@ sub binary_doit {
     my ($name, $sub) = @_;
     doit $name, sub {
         my ($self) = @_;
-        return $sub($self->[0]->doit(), $self->[1]->doit());
+        return $sub->($self->[0]->doit(), $self->[1]->doit());
     };
 }
 
@@ -503,10 +485,6 @@ show qw(square), sub {
     return $self->[0]->show() . ' squared';
 };
 
-sub Calculator::exp::doit {
-  my ($self) = @_;
-  return $self->[0]->doit() * (10 ** $self->[1]->doit());
-}
 sub Calculator::exp::show {
   my ($self) = @_;
   return $self->[0]->show() . 'e' . $self->[1]->show();
@@ -542,7 +520,8 @@ show 'constant_coefficent', sub {
 
 doit 'sine', sub {
     my ($self) = @_;
-    return $self->[0]->doit->bsin();
+    # return $self->[0]->doit->bsin();
+    return sin($self->[0]->doit());
 };
 show 'sine', sub {
     my ($self) = @_;
@@ -550,7 +529,8 @@ show 'sine', sub {
 };
 doit 'cosine', sub {
     my ($self) = @_;
-    return $self->[0]->doit->bcos(30);
+    # return $self->[0]->doit->bcos(30);
+    return cos($self->[0]->doit());
 };
 show 'cosine', sub {
     my ($self) = @_;
@@ -567,9 +547,13 @@ show 'hyperbolic_tangent', sub { return 'tanh(' . $_[0]->[0]->show() . ')' };
 doit 'tangent', sub {
     my ($self) = @_;
     my $num = $self->[0]->doit();
-    my $denom = cos($num);
-    my $numer = sin($num);
-    return $numer / $denom;
+    my $num2 = Math::BigFloat->new($num);
+    return $num->bsin() / $num2->bcos();
+    # my $num = $self->[0]->doit();
+    # my $denom = cos($num);
+    # my $numer = sin($num);
+    # return tan($self->[0]->doit());#  $denom;
+    # return $numer / $denom;
     # return Math::Trig->tan($self->[0]->doit());
 };
 
@@ -616,6 +600,12 @@ sub const_show {
 }
 sub Calculator::const_pi::doit { return Math::BigFloat->bpi() }
 sub Calculator::const_pi::show { return 'pi' };
+
+binary_doit 'subtract', sub { $_[0] - $_[1] };
+binary_doit 'add', sub { $_[0] + $_[1] };
+binary_doit 'exponentiate', sub { $_[0] ** $_[1] };
+binary_doit 'multiply', sub { $_[0] * $_[1] };
+binary_doit 'divide', sub { $_[0] / $_[1] };
 
 const_doit qw(dozen), 12;
 const_show qw(dozen), 'dozen';
