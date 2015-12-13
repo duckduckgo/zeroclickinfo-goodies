@@ -24,75 +24,75 @@
     "Short Variables": [
       {
         "key": "$!",
-        "val": "The exception information message set by 'raise'."
+        "val": "Last raised exception."
       },
       {
         "key": "$@",
-        "val": "Array of backtrace of the last exception thrown."
+        "val": "Backtrace array of the last raised exception."
       },
       {
         "key": "$&",
-        "val": "The string matched by the last successful match."
+        "val": "Last successfully matched string."
       },
       {
         "key": "$`",
-        "val": "The string to the left  of the last successful match."
+        "val": "String to the left  of the last successful match."
       },
       {
         "key": "$'",
-        "val": "The string to the right of the last successful match."
+        "val": "String to the right of the last successful match."
       },
       {
         "key": "$+",
-        "val": "The highest group matched by the last successful match."
+        "val": "Highest group matched by the last successful match."
       },
       {
         "key": "$1",
-        "val": "The Nth group of the last successful match. May be > 1."
+        "val": "Nth group of the last successful match, may be > 1."
       },
       {
         "key": "$~",
-        "val": "The information about the last match in the current scope."
+        "val": "Match data from the last match in the current scope."
       },
       {
         "key": "$=",
-        "val": "The flag for case insensitive, nil by default."
+        "val": "Case insensitive flag, nil by default, ineffective."
       },
       {
         "key": "$/",
-        "val": "The input record separator, newline by default."
+        "val": "Input record separator, newline by default."
       },
       {
         "key": "$\\",
-        "val": "The output record separator for the print and IO#write. Default is nil."
+        "val": "Output record separator for print and IO#write, nil by default."
       },
       {
         "key": "$,",
-        "val": "The output field separator for the print and Array#join."
+        "val": "Output field separator for print and Array#join, nil by default."
       },
       {
         "key": "$;",
-        "val": "The default separator for String#split."
+        "val": "Default split pattern for String#split, nil by default."
       },
       {
         "key": "$.",
-        "val": "The current input line number of the last file that was read."
+        "val": "Current input line number of the last file that was read."
       },
       {
         "key": "$<",
-        "val": "The virtual concatenation file of the files given on command line (or from $stdin if no files were given)."
+        "val": "Virtual concatenation file of files from command line or $stdin."
       },
       {
         "key": "$>",
-        "val": "The default output for print, printf. $stdout by default."
+        "val": "Default output for print and printf, $stdout by default."
       },
       {
         "key": "$_",
-        "val": "The last input line of string by gets or readline."
+        "val": "Last input line of string by gets or readline."
       },
       {
         "key": "$0",
-        "val": "Contains the name of the script being executed. May be assignable."
+        "val": "Name of the script being executed, may be assignable."
       },
       {
         "key": "$*",
@@ -100,11 +100,11 @@
       },
       {
         "key": "$$",
-        "val": "The process number of the Ruby running this script."
+        "val": "Process number of the Ruby running this script."
       },
       {
         "key": "$?",
-        "val": "The status of the last executed child process.  This value is thread-local."
+        "val": "Status of the last executed child process, thread-local."
       },
       {
         "key": "$:",
@@ -112,137 +112,137 @@
       },
       {
         "key": "$\"",
-        "val": "The array contains the module names loaded by require."
+        "val": "Array of module names loaded by require."
       }
     ],
     "Long Variables": [
       {
         "key": "$DEBUG",
-        "val": "The debug flag, which is set by the -d switch.  Enabling debug output prints each exception raised to $stderr (but not its backtrace).  Setting this to a true value enables debug output as if -d were given on the command line.  Setting this to a false value disables debug output."
+        "val": "Debug flag, set by -d switch, enables printing of each exception raised to $stderr (but not its backtrace) when true."
       },
       {
         "key": "$LOADED_FEATURES",
-        "val": "The alias to the $\"."
+        "val": "Alias of $\"."
       },
       {
         "key": "$FILENAME",
-        "val": "Current input file from $<. Same as $<.filename."
+        "val": "Current input file from $<, same as $<.filename."
       },
       {
         "key": "$LOAD_PATH",
-        "val": "The alias to the $:."
+        "val": "Alias of $:."
       },
       {
         "key": "$stderr",
-        "val": "The current standard error output."
+        "val": "Current standard error output."
       },
       {
         "key": "$stdin",
-        "val": "The current standard input."
+        "val": "Current standard input."
       },
       {
         "key": "$stdout",
-        "val": "The current standard output."
+        "val": "Current standard output."
       },
       {
         "key": "$VERBOSE",
-        "val": "The verbose flag, which is set by the -w or -v switch.  Setting this to a true value enables warnings as if -w or -v were given on the command line.  Setting this to nil disables warnings, including from Kernel#warn."
+        "val": "Verbose flag, set by -w or -v switch, enables warnings when true."
       }
     ],
     "Command Line Switches": [
       {
         "key": "$-0",
-        "val": "The alias to $/."
+        "val": "Alias of input record separator $/."
       },
       {
         "key": "$-a",
-        "val": "True if option -a is set. Read-only variable."
+        "val": "Autosplit mode flag, read-only."
       },
       {
         "key": "$-d",
-        "val": "The alias of $DEBUG.  See $DEBUG above for further discussion."
+        "val": "Alias of $DEBUG."
       },
       {
         "key": "$-F",
-        "val": "The alias to $;."
+        "val": "Alias of split pattern $;."
       },
       {
         "key": "$-i",
-        "val": "In in-place-edit mode, this variable holds the extension, otherwise nil."
+        "val": "Extension for in-place-edit mode, otherwise nil."
       },
       {
         "key": "$-I",
-        "val": "The alias to $:."
+        "val": "Alias of load path $:."
       },
       {
         "key": "$-l",
-        "val": "True if option -l is set. Read-only variable."
+        "val": "Line ending processing mode flag, read-only."
       },
       {
         "key": "$-p",
-        "val": "True if option -p is set. Read-only variable."
+        "val": "Print loop flag, read-only."
       },
       {
         "key": "$-v",
-        "val": "An alias of $VERBOSE.  See $VERBOSE above for further discussion."
+        "val": "Alias of $VERBOSE."
       },
       {
         "key": "$-w",
-        "val": "An alias of $VERBOSE.  See $VERBOSE above for further discussion."
+        "val": "Alias of $VERBOSE."
       }
     ],
     "Global Constants": [
       {
         "key": "TRUE",
-        "val": "The typical true value."
+        "val": "Value of true, the singleton instance of TrueClass."
       },
       {
         "key": "FALSE",
-        "val": "The false itself."
+        "val": "Value of false, the singleton instance of FalseClass."
       },
       {
         "key": "NIL",
-        "val": "The nil itself."
+        "val": "Value of nil, the singleton instance of NilClass."
       },
       {
         "key": "STDIN",
-        "val": "The standard input. The default value for $stdin."
+        "val": "Standard input, default value for $stdin."
       },
       {
         "key": "STDOUT",
-        "val": "The standard output. The default value for $stdout."
+        "val": "Standard output, default value for $stdout."
       },
       {
         "key": "STDERR",
-        "val": "The standard error output. The default value for $stderr."
+        "val": "Standard error output, default value for $stderr."
       },
       {
         "key": "ENV",
-        "val": "The hash contains current environment variables."
+        "val": "Hash of current environment variables."
       },
       {
         "key": "ARGF",
-        "val": "The alias to the $<."
+        "val": "Alias of virtual input file $<."
       },
       {
         "key": "ARGV",
-        "val": "The alias to the $*."
+        "val": "Alias of command line arguments $*."
       },
       {
         "key": "DATA",
-        "val": "The file object of the script, pointing just after __END__."
+        "val": "Script file object, pointing just after __END__."
       },
       {
         "key": "RUBY_VERSION",
-        "val": "The ruby version string (VERSION was deprecated)."
+        "val": "Version string."
       },
       {
         "key": "RUBY_RELEASE_DATE",
-        "val": "The release date string."
+        "val": "Release date string."
       },
       {
         "key": "RUBY_PLATFORM",
-        "val": "The platform identifier."
+        "val": "Platform identifier string."
       }
     ]
   }
