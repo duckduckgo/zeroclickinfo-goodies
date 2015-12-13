@@ -25,16 +25,14 @@ handle remainder => sub {
 
     my $lower = lc $input;
 
-    if ($lower eq $input) {
-    	return;
-    } else {
-	    return $lower,
-	      structured_answer => {
-	        input     => [html_enc($input)],
-	        operation => 'Lowercase',
-	        result    => html_enc($lower)
-	      };
-    }
+    return if ($lower eq $input);
+
+    return $lower,
+      structured_answer => {
+        input     => [html_enc($input)],
+        operation => 'Lowercase',
+        result    => html_enc($lower)
+      };
 };
 
 1;
