@@ -89,9 +89,9 @@ Constant ::=
     | score bless => const_score
 
 Function ::=
-    'sqrt' Argument bless => square_root
+    ('sqrt') Argument bless => square_root
 
-Argument ::= '(' Expression ')' bless => primary
+Argument ::= ('(') Expression (')') bless => primary
 
 pi ~ 'pi':i
 euler ~ 'e':i
@@ -184,7 +184,7 @@ handle query_nowhitespace => sub {
     return unless defined $parsed;
     my $str_result = ${$parsed}->show();
     my $val_result = ${$parsed}->doit();
-    my $val_result = sprintf('%0.14g', $val_result);
+    my $val_result = sprintf('%0.15g', $val_result);
     $val_result =~ s/(-?[0-9.]+)e(-?[\d.]+)/($1 * 10^$2)/g;
     $val_result =~ s/^\((.*)\)$/$1/;
     # my $str_result = result_show $$parsed;
@@ -374,7 +374,8 @@ sub singleton_show {
 
 sub Calculator::init_integer::doit {
   my ($self) = @_;
-  return $self->[0]->[2];
+  #return $self->[0]->[2];
+  return Math::BigFloat->new($self->[0]->[2]);
 }
 sub Calculator::init_integer::show {
   my ($self) = @_;
@@ -382,7 +383,8 @@ sub Calculator::init_integer::show {
 }
 sub Calculator::init_decimal::doit {
   my ($self) = @_;
-  return $self->[0]->[2];
+  # return $self->[0]->[2];
+  return Math::BigFloat->new($self->[0]->[2]);
 }
 sub Calculator::init_decimal::show {
   my ($self) = @_;
@@ -465,7 +467,7 @@ sub Calculator::Calculator::show {
 
 doit qw(square_root), sub {
     my ($self) = @_;
-    return $self->[0]->doit()->bsqrt();
+    return $self->[0]->doit->bsqrt();
 };
 show qw(square_root), sub {
     my ($self) = @_;
