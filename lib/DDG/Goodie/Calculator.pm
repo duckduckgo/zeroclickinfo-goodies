@@ -9,6 +9,7 @@ use Marpa::R2;
 use List::Util qw( max );
 use Math::Trig;
 use Math::BigInt;
+use Math::BigFloat;
 use utf8;
 
 zci answer_type => "calc";
@@ -70,18 +71,15 @@ Constant ::=
 pi ~ 'pi':i
 euler ~ 'e':i
 
-Number ~ [\d]+
+Number ::=
+    Integer   bless => init_integer
+    | Decimal bless => init_decimal
+
+Integer ~ '-' digits | digits
+Decimal ~ '-' digits '.' digits | digits '.' digits
+digits ~ [\d]+
 :discard ~ whitespace
 whitespace ~ [\s]+
-# allow comments
-:discard ~ <hash comment>
-<hash comment> ~ <terminated hash comment> | <unterminated
-   final hash comment>
-<terminated hash comment> ~ '#' <hash comment body> <vertical space char>
-<unterminated final hash comment> ~ '#' <hash comment body>
-<hash comment body> ~ <hash comment char>*
-<vertical space char> ~ [\x{A}\x{B}\x{C}\x{D}\x{2028}\x{2029}]
-<hash comment char> ~ [^\x{A}\x{B}\x{C}\x{D}\x{2028}\x{2029}]
 END_OF_SOURCE
     }
 );
@@ -165,12 +163,22 @@ handle query_nowhitespace => sub {
     my $result = "$val_result";
     return $result,
         structured_answer => {
-            text       => $str_result . ' = ' . $result,
-            structured => {
-                input     => [$str_result],
-                operation => 'Calculate',
-                result => html_enc($result),
-                # result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
+            id         => 'calculator',
+            name       => 'Answer',
+            # text       => $str_result . ' = ' . $result,
+            data       => {
+                title => "$result",
+                subtitle => $str_result . ' = ' . $result,
+            },
+            # structured => {
+            #     input     => [$str_result],
+            #     operation => 'Calculate',
+            #     result => html_enc($result),
+            #     # result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
+            # },
+            templates => {
+              group => "text",
+              moreAt => 0,
             },
         };
 };
@@ -317,6 +325,35 @@ sub Calculator::multiply::doit {
     $self->[0]->doit() * $self->[2]->doit();
 }
 
+sub singleton_doit {
+  my ($name, $sub) = @_;
+  my $full_name = 'Calculator::' . $name . '::doit';
+  no strict 'refs';
+  *$full_name = *{uc $full_name} = sub {
+    my ($self) = @_;
+    return $sub->($self->[0]->[2]);
+  };
+}
+sub singleton_show {
+  my ($name) = @_;
+  my $full_name = 'Calculator::' . $name . '::show';
+  no strict 'refs';
+  *$full_name = *{uc $full_name} = sub {
+    my ($self) = @_;
+    return "$self->[0]->[2]";
+  };
+}
+
+sub Calculator::init_integer::doit {
+  my ($self) = @_;
+  return $self->[0]->[2];
+}
+sub Calculator::init_integer::show {
+  my ($self) = @_;
+  return "$self->[0]->[2]";
+}
+# singleton_doit qw(init_integer), (sub { return $_ });
+# singleton_show qw(init_integer);
 
 sub show_binary {
   my ($operation_name, $operation_symbol) = @_;
@@ -324,12 +361,13 @@ sub show_binary {
   no strict 'refs';
   *$full_name = *{uc $full_name} = sub {
     my ($self) = @_;
-    return $self->[0]->show . " $operation_symbol " . $self->[2]->show();
+    return $self->[0]->show() . " $operation_symbol " . $self->[2]->show();
   };
 }
 
 show_binary qw(multiply), '*';
 show_binary qw(add), '+';
+show_binary qw(divide), '/';
 
 
 sub Calculator::divide::doit {
@@ -364,7 +402,6 @@ sub Calculator::Calculator::show {
   my ($self) = @_;
   return join q{ }, map { $_->show() } @{$self};
 }
-
 sub Calculator::const_pi::doit { return Math::BigFloat->bpi() }
 sub Calculator::const_pi::show { return 'pi' };
 
