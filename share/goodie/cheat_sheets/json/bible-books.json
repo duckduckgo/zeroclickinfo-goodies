@@ -18,11 +18,16 @@
     ],
     "template_type": "reference",
     "section_order": [
-        "Old Testament",
-        "New Testament"
+        "Old Testament (1-10)",
+        "Old Testament (11-20)",
+        "Old Testament (21-31)",
+        "Old Testament (31-39)",
+        "New Testament (1-10)",
+        "New Testament (11-20)",
+        "New Testament (21-27)"
     ],
     "sections": {
-        "Old Testament": [
+        "Old Testament (1-10)": [
             {
                 "key": "Genesis",
                 "val": "Chapters : 50 , Verses : 1,533"
@@ -33,7 +38,7 @@
             },
             {
                 "key": "Leviticus",
-                "val": "Chapters :27 , Verses : 859"
+                "val": "Chapters : 27 , Verses : 859"
             },
             {
                 "key": "Numbers",
@@ -62,7 +67,9 @@
             {
                 "key": "2 Samuel",
                 "val": "Chapters : 24 , Verses : 695"
-            },
+            }
+        ],
+        "Old Testament (11-20)": [
             {
                 "key": "1 Kings",
                 "val": "Chapters : 22 , Verses : 816"
@@ -102,7 +109,9 @@
             {
                 "key": "Proverbs",
                 "val": "Chapters : 31 , Verses : 915"
-            },
+            }
+        ],
+        "Old Testament (21-30)": [
             {
                 "key": "Ecclesiastes",
                 "val": "Chapters : 12 , Verses : 222"
@@ -142,7 +151,9 @@
             {
                 "key": "Amos",
                 "val": "Chapters : 9 , Verses : 146"
-            },
+            }
+        ],
+        "Old Testament (31-39)": [
             {
                 "key": "Obadiah",
                 "val": "Chapters : 1 , Verses : 21"
@@ -180,7 +191,7 @@
                 "val": "Chapters : 4 , Verses : 55"
             }
         ],
-        "New Testament": [
+        "New Testament (1-10)": [
             {
                 "key": "Matthew",
                 "val": "Chapters : 28 , Verses : 1,071"
@@ -220,7 +231,9 @@
             {
                 "key": "Ephesians",
                 "val": "Chapters : 6 , Verses : 155"
-            },
+            }
+        ],
+        "New Testament (11-20)": [
             {
                 "key": "Philippians",
                 "val": "Chapters : 4 , Verses : 104"
@@ -260,7 +273,9 @@
             {
                 "key": "James",
                 "val": "Chapters : 5 , Verses : 108"
-            },
+            }
+        ],
+        "New Testament (21-27)": [
             {
                 "key": "1 Peter",
                 "val": "Chapters : 5 , Verses : 105"
