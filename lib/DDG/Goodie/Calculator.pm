@@ -60,22 +60,44 @@ Calculator ::= Expression
 
 Expression ::=
        Function                   bless => primary
-    || NumTerm                    bless => primary
-    || NumTerm 'e':i NumTerm      bless => exp
+    || Factor bless => primary
+    # || NumTerm                    bless => primary
+    # || NumTerm 'e':i NumTerm      bless => exp
     |  '(' Expression ')'         bless => paren assoc => group
-    || Operation                  bless => operation
-    | Special                     bless => primary
+    || ExprOp                     bless => primary
+    | Term                        bless => primary
+    # | Special                     bless => primary
 
-Operation ::=
-      Expression '**' Expression bless => exponentiate assoc => right
-    | Expression '^'  Expression bless => exponentiate assoc => right
-   || Expression '*'  Expression bless => multiply
-    | Expression '/'  Expression bless => divide
-   || Expression '+'  Expression bless => add
-    | Expression '-'  Expression bless => subtract
+Factor ::=
+    NumTerm bless => primary
+    || NumTerm 'e':i NumTerm bless => exp
 
-Special ::=
-    Expression 'squared':i bless => square
+# Operation ::=
+#       Expression ('**') Expression bless => exponentiate assoc => right
+#     | Expression ('^')  Expression bless => exponentiate assoc => right
+#    || Expression ('*')  Expression bless => multiply
+#     | Expression ('/')  Expression bless => divide
+#    || Expression ('+')  Expression bless => add
+#     | Expression ('-')  Expression bless => subtract
+
+Term ::=
+    TermOp bless => primary
+    || Factor bless => primary
+
+TermOp ::=
+    Expression ('^') Term bless => exponentiate assoc => right
+    || Factor ('squared') bless => square
+    || Term ('*') Factor bless => multiply
+    | Term ('/') Factor bless => divide
+    | Term ('divided') ('by') Factor bless => divide
+
+ExprOp ::=
+    Expression ('+') Term bless => add
+    | Expression ('-') Term bless => subtract
+
+
+# Special ::=
+#     Expression 'squared':i bless => square
 
 NumTerm ::=
        Number Constant bless => constant_coefficent
@@ -89,7 +111,17 @@ Constant ::=
     | score bless => const_score
 
 Function ::=
-    ('sqrt') Argument bless => square_root
+      ('sqrt' ) Argument bless => square_root
+    | ('sin'  ) Argument bless => sine
+    | ('cos'  ) Argument bless => cosine
+    | ('tanh' ) Argument bless => hyperbolic_tangent
+    | ('tan'  ) Argument bless => tangent
+    | ('csc'  ) Argument bless => cosec
+    | ('sec'  ) Argument bless => secant
+    | ('cotan') Argument bless => cotangent
+    | ('log'  ) NumTerm Argument bless => logarithm
+    | ('ln'   ) Argument bless => natural_logarithm
+    | ('log'  ) Argument bless => natural_logarithm
 
 Argument ::= ('(') Expression (')') bless => primary
 
@@ -150,15 +182,15 @@ my %named_operations = (
     'fact'        => 'Math::BigInt->new',
 );
 
-my %named_constants = (
-    dozen => 12,
-    e     => 2.71828182845904523536028747135266249,                         # This should be computed.
-    pi    => pi,                                                            # pi constant from Math::Trig
-    gross => 144,
-    score => 20,
-);
+# my %named_constants = (
+#     dozen => 12,
+#     e     => 2.71828182845904523536028747135266249,                         # This should be computed.
+#     pi    => pi,                                                            # pi constant from Math::Trig
+#     gross => 144,
+#     score => 20,
+# );
 
-my $ored_constants = join('|', keys %named_constants);                      # For later substitutions
+# my $ored_constants = join('|', keys %named_constants);                      # For later substitutions
 
 my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                          # Each octet should look like a number between 0 and 255.
 my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                          # There should be 4 of them separated by 3 dots.
@@ -173,23 +205,37 @@ sub get_parse {
   return $value_ref;
 };
 
+Math::BigFloat->round_mode('+inf');
+
 handle query_nowhitespace => sub {
     my $query = $_;
     $query =~ s/^(?:whatis|calculate|solve|math)//;
+    $query =~ s/[∙⋅×]/*/g;
+    $query =~ s#[÷]#/#g;
     my $recce = Marpa::R2::Scanless::R->new(
         { grammar => $grammar,
-#          trace_terminals => 1,
+            # trace_terminals => 1,
         } );
     my $parsed = get_parse $recce, $query;
     return unless defined $parsed;
     my $str_result = ${$parsed}->show();
     my $val_result = ${$parsed}->doit();
-    my $val_result = sprintf('%0.15g', $val_result);
+    # my $vr = Math::BigFloat->new($val_result);
+    # $vr->bfround(13);
+    # $val_result = $vr->bstr();
+    # $val_result = Math::BigFloat->new($val_result)->bfround(13)->bstr();
+    $val_result = sprintf('%0.16g', $val_result);
+    $val_result = Math::BigFloat->new($val_result)->bround(15)->bstr;
+    $val_result = sprintf('%0.15g', $val_result);
     $val_result =~ s/(-?[0-9.]+)e(-?[\d.]+)/($1 * 10^$2)/g;
     $val_result =~ s/^\((.*)\)$/$1/;
     # my $str_result = result_show $$parsed;
     # my $val_result = result_value $parsed;
-    my $result = "$val_result";
+    my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $val_result);
+    my $style = number_style_for(@numbers);
+    return unless $style;
+    my $result = $style->for_display($val_result);
+    # my $result = "$val_result";
     return $result,
         structured_answer => {
             id         => 'calculator',
@@ -321,6 +367,9 @@ handle query_nowhitespace => sub {
 # }
 package Calculator;
 
+use Math::Trig;
+use Math::BigFloat;
+
 sub Calculator::primary::doit { return $_[0]->[0]->doit() }
 sub Calculator::primary::show { return $_[0]->[0]->show() }
 sub Calculator::Number::doit  { return $_[0]->[2] }
@@ -328,29 +377,30 @@ sub Calculator::Number::show  { return "$_[0]->[2]" };
 sub Calculator::paren::doit   { my ($self) = @_; $self->[1]->doit() }
 sub Calculator::paren::show   {
     my ($self) = @_;
-    return '( ' . $self->[1]->show() . ' )'
+    return '(' . $self->[1]->show() . ')'
 }
 sub Calculator::operation::doit { return $_[0]->[0]->doit() };
 sub Calculator::operation::show { return $_[0]->[0]->show() };
 
 sub Calculator::add::doit {
     my ($self) = @_;
-    $self->[0]->doit() + $self->[2]->doit();
+    $self->[0]->doit() + $self->[1]->doit();
 }
 
 
 sub Calculator::subtract::doit {
     my ($self) = @_;
-    $self->[0]->doit() - $self->[2]->doit();
+    $self->[0]->doit() - $self->[1]->doit();
 }
 sub Calculator::subtract::show {
     my ($self) = @_;
-    return $self->[0]->show() . ' - ' . $self->[2]->show();
+    return $self->[0]->show() . ' - ' . $self->[1]->show();
 }
+
 
 sub Calculator::multiply::doit {
     my ($self) = @_;
-    $self->[0]->doit() * $self->[2]->doit();
+    $self->[0]->doit() * $self->[1]->doit();
 }
 
 sub singleton_doit {
@@ -399,7 +449,7 @@ sub show_binary {
   no strict 'refs';
   *$full_name = *{uc $full_name} = sub {
     my ($self) = @_;
-    return $self->[0]->show() . " $operation_symbol " . $self->[2]->show();
+    return $self->[0]->show() . " $operation_symbol " . $self->[1]->show();
   };
 }
 
@@ -410,16 +460,16 @@ show_binary qw(divide), '/';
 
 sub Calculator::divide::doit {
     my ($self) = @_;
-    $self->[0]->doit() / $self->[2]->doit();
+    $self->[0]->doit() / $self->[1]->doit();
 }
 
 sub Calculator::exponentiate::doit {
     my ($self) = @_;
-    $self->[0]->doit()**$self->[2]->doit();
+    $self->[0]->doit()**$self->[1]->doit();
 }
 sub Calculator::exponentiate::show {
     my ($self) = @_;
-    return $self->[0]->show() . ' ^ ' . $self->[2]->show();
+    return $self->[0]->show() . ' ^ ' . $self->[1]->show();
 }
 
 sub doit {
@@ -433,6 +483,13 @@ sub show {
     my $full_name = 'Calculator::' . $name . '::show';
     no strict 'refs';
     *$full_name = *{uc $full_name} = $sub;
+}
+sub binary_doit {
+    my ($name, $sub) = @_;
+    doit $name, sub {
+        my ($self) = @_;
+        return $sub($self->[0]->doit(), $self->[1]->doit());
+    };
 }
 
 doit qw(square), sub {
@@ -448,11 +505,11 @@ show qw(square), sub {
 
 sub Calculator::exp::doit {
   my ($self) = @_;
-  return $self->[0]->doit() * (10 ** $self->[2]->doit());
+  return $self->[0]->doit() * (10 ** $self->[1]->doit());
 }
 sub Calculator::exp::show {
   my ($self) = @_;
-  return $self->[0]->show() . 'e' . $self->[2]->show();
+  return $self->[0]->show() . 'e' . $self->[1]->show();
 }
 
 sub Calculator::Calculator::doit {
@@ -483,6 +540,64 @@ show 'constant_coefficent', sub {
     return $self->[0]->show() . ' ' . $self->[1]->show();
 };
 
+doit 'sine', sub {
+    my ($self) = @_;
+    return $self->[0]->doit->bsin();
+};
+show 'sine', sub {
+    my ($self) = @_;
+    return 'sin(' . $self->[0]->show() . ')';
+};
+doit 'cosine', sub {
+    my ($self) = @_;
+    return $self->[0]->doit->bcos(30);
+};
+show 'cosine', sub {
+    my ($self) = @_;
+    return 'cos(' . $self->[0]->show() . ')';
+};
+doit 'cosec', sub { return csc($_[0]->[0]->doit()) };
+show 'cosec', sub { return 'csc(' . $_[0]->[0]->show() . ')' };
+doit 'secant', sub { return sec($_[0]->[0]->doit()) };
+show 'secant', sub { return 'sec(' . $_[0]->[0]->show() . ')' };
+doit 'cotangent', sub { return cot($_[0]->[0]->doit()) };
+show 'cotangent', sub { return 'cotan(' . $_[0]->[0]->show() . ')' };
+doit 'hyperbolic_tangent', sub { return tanh($_[0]->[0]->doit()) };
+show 'hyperbolic_tangent', sub { return 'tanh(' . $_[0]->[0]->show() . ')' };
+doit 'tangent', sub {
+    my ($self) = @_;
+    my $num = $self->[0]->doit();
+    my $denom = cos($num);
+    my $numer = sin($num);
+    return $numer / $denom;
+    # return Math::Trig->tan($self->[0]->doit());
+};
+
+show 'tangent', sub { return 'tan(' . $_[0]->[0]->show() . ')' };
+# show 'tangent', sub {
+#     my ($self) = @_;
+#     return 'tan(' . $self->[0]->show() . ')';
+# };
+
+doit 'logarithm', sub {
+    my ($self) = @_;
+    my ($base, $num) = ($self->[0]->doit(), $self->[1]->doit());
+    return $num->logbase($base);
+};
+show 'logarithm', sub {
+    my ($self) = @_;
+    my ($base, $num) = ($self->[0]->show(), $self->[1]->show());
+    return "log$base($num)";
+};
+doit 'natural_logarithm', sub {
+    my ($self) = @_;
+    return log($self->[0]->doit());
+};
+show 'natural_logarithm', sub {
+    my ($self) = @_;
+    return 'ln(' . $self->[0]->show() . ')';
+};
+
 sub const_doit {
     my ($name, $val) = @_;
     my $full_name = 'Calculator::const_' . $name . '::doit';
@@ -510,3 +625,6 @@ const_doit qw(score), 20;
 const_show qw(score), 'score';
 
 1;
+
+
+# (pi^4+pi^5)^(1/6)+1 is quite slow!
