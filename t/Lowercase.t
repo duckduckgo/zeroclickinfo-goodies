@@ -13,6 +13,7 @@ ddg_goodie_test(
     ['DDG::Goodie::Lowercase'],
     'lowercase foo' => undef,
     'lowercase 123' => undef,
+    'lower case foo123' => undef,
     'lower case foO' => test_zci(
         'foo',
         structured_answer => {
