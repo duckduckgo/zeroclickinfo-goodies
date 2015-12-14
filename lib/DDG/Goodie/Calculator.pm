@@ -59,18 +59,18 @@ lexeme default = action => [ start, length, value ]
 Calculator ::= Expression
 
 Expression ::=
-       Function                   bless => primary
-    || Factor bless => primary
+    #   Function                   bless => primary
+     Term                        bless => primary
+    # || Factor bless => primary
     # || NumTerm                    bless => primary
     # || NumTerm 'e':i NumTerm      bless => exp
     |  '(' Expression ')'         bless => paren assoc => group
     || ExprOp                     bless => primary
-    | Term                        bless => primary
     # | Special                     bless => primary
 
 Factor ::=
     NumTerm bless => primary
-    || NumTerm 'e':i NumTerm bless => exp
+    || NumTerm ('e':i) NumTerm bless => exp
 
 # Operation ::=
 #       Expression ('**') Expression bless => exponentiate assoc => right
@@ -81,13 +81,14 @@ Factor ::=
 #     | Expression ('-')  Expression bless => subtract
 
 Term ::=
-    TermOp bless => primary
+    Function bless => primary
+    | TermOp bless => primary
     || Factor bless => primary
 
 TermOp ::=
-    Expression ('^') Term bless => exponentiate assoc => right
+    Expression ('^') Expression bless => exponentiate assoc => right
     || Factor ('squared') bless => square
-    || Term ('*') Factor bless => multiply
+    || Expression ('*') Expression bless => multiply
     | Term ('/') Factor bless => divide
     | Term ('divided') ('by') Factor bless => divide
 
@@ -119,9 +120,12 @@ Function ::=
     | ('csc'  ) Argument bless => cosec
     | ('sec'  ) Argument bless => secant
     | ('cotan') Argument bless => cotangent
+    | ('log_' ) NumTerm Argument bless => logarithm
     | ('log'  ) NumTerm Argument bless => logarithm
     | ('ln'   ) Argument bless => natural_logarithm
     | ('log'  ) Argument bless => natural_logarithm
+    | ('fact' ) Argument bless => factorial
+    | ('factorial') Argument bless => factorial
 
 Argument ::= ('(') Expression (')') bless => primary
 
@@ -131,11 +135,15 @@ dozen ~ 'dozen':i
 score ~ 'score':i
 
 Number ::=
+    '$' BaseNumber bless => init_dollars
+    | BaseNumber bless => primary
+
+BaseNumber ::=
     Integer   bless => init_integer
     | Decimal bless => init_decimal
 
 Integer ~ '-' digits | digits
-Decimal ~ '-' digits '.' digits | digits '.' digits
+Decimal ~ '-' digits '.' digits | digits '.' digits | '.' digits | digits '.'
 digits ~ [\d]+
 :discard ~ whitespace
 whitespace ~ [\s]+
@@ -207,16 +215,37 @@ sub get_parse {
 
 Math::BigFloat->round_mode('+inf');
 
+
+sub to_dollars {
+    my $old = $_;
+    return '$' . sprintf('%0.2f', $old);
+}
+
 handle query_nowhitespace => sub {
     my $query = $_;
+
+    # my $has_dollars = $query =~ s/\$//g;
+    my $has_dollars = $query =~ /\$/;
+    # Probably are searching for a phone number, not making a calculation
+    return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/);
+    return if ($query =~ /\b0x/);      # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+    return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
+    return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
+
     $query =~ s/^(?:whatis|calculate|solve|math)//;
-    $query =~ s/[∙⋅×]/*/g;
+    # FIXME: Currently just replacing 'x', might occur in functions!
+    $query =~ s/[∙⋅×x]/*/g;
     $query =~ s#[÷]#/#g;
+    my @numbers = grep { $_ =~ /^$number_re$/ } (split /[^\d,.]+/, $query);
+    CORE::say join ' ', @numbers;
+    my $style = number_style_for(@numbers);
+    return unless $style;
+    # my $turk_mode = $query =~ s#(\d+)\.(\d+),(\d{2})#$1.$2$3#g;
     my $recce = Marpa::R2::Scanless::R->new(
         { grammar => $grammar,
             # trace_terminals => 1,
         } );
-    my $parsed = get_parse $recce, $query;
+    my $parsed = get_parse $recce, $style->for_computation($query);
     return unless defined $parsed;
     my $str_result = ${$parsed}->show();
     my $val_result = ${$parsed}->doit();
@@ -224,18 +253,21 @@ handle query_nowhitespace => sub {
     # $vr->bfround(13);
     # $val_result = $vr->bstr();
     # $val_result = Math::BigFloat->new($val_result)->bfround(13)->bstr();
-    $val_result = sprintf('%0.16g', $val_result);
-    $val_result = Math::BigFloat->new($val_result)->bround(15)->bstr;
+    # $val_result = sprintf('%0.16g', $val_result);
+    $val_result = Math::BigFloat->new($val_result)->bfround(-14)->bstr;
     $val_result = sprintf('%0.15g', $val_result);
-    $val_result =~ s/(-?[0-9.]+)e(-?[\d.]+)/($1 * 10^$2)/g;
+    # $val_result =~ s/(-?[0-9.]+)e(-?[\d.]+)/($1 * 10^$2)/g;
     $val_result =~ s/^\((.*)\)$/$1/;
     # my $str_result = result_show $$parsed;
     # my $val_result = result_value $parsed;
-    my @numbers = grep { $_ =~ /^$number_re$/ } (split /\s+/, $val_result);
-    my $style = number_style_for(@numbers);
-    return unless $style;
+    # my $style = number_style_for(@numbers);
+    $val_result = sprintf('%0.2f', $val_result) if $has_dollars;
     my $result = $style->for_display($val_result);
+    $result = '$' . $result if $has_dollars; # sprintf('0%.2f', $result) if $has_dollars;
+    $str_result =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
+    # $str_result =~ s/[\d.,]+/${to_dollars($1)}/g if $has_dollars;
     # my $result = "$val_result";
+    # $result =~ s/(\d+)\.(\d+)(\d{2})/$1.$2,$3/ if $turk_mode;
     return $result,
         structured_answer => {
             id         => 'calculator',
@@ -369,11 +401,12 @@ package Calculator;
 
 use Math::Trig;
 use Math::BigFloat;
+use Math::Complex;
 
 sub Calculator::primary::doit { return $_[0]->[0]->doit() }
 sub Calculator::primary::show { return $_[0]->[0]->show() }
-sub Calculator::Number::doit  { return $_[0]->[2] }
-sub Calculator::Number::show  { return "$_[0]->[2]" };
+sub Calculator::Number::doit  { return $_[0]->[2]->doit() }
+sub Calculator::Number::show  { return $_[0]->[2]->show() };
 sub Calculator::paren::doit   { my ($self) = @_; $self->[1]->doit() }
 sub Calculator::paren::show   {
     my ($self) = @_;
@@ -381,17 +414,6 @@ sub Calculator::paren::show   {
 }
 sub Calculator::operation::doit { return $_[0]->[0]->doit() };
 sub Calculator::operation::show { return $_[0]->[0]->show() };
-
-sub Calculator::add::doit {
-    my ($self) = @_;
-    $self->[0]->doit() + $self->[1]->doit();
-}
-
-
-sub Calculator::subtract::show {
-    my ($self) = @_;
-    return $self->[0]->show() . ' - ' . $self->[1]->show();
-}
 
 
 sub singleton_doit {
@@ -447,6 +469,7 @@ sub show_binary {
 show_binary qw(multiply), '*';
 show_binary qw(add), '+';
 show_binary qw(divide), '/';
+show_binary qw(subtract), '-';
 
 
 sub Calculator::exponentiate::show {
@@ -473,6 +496,14 @@ sub binary_doit {
         return $sub->($self->[0]->doit(), $self->[1]->doit());
     };
 }
+doit qw(init_dollars), sub {
+    my ($self) = @_;
+    return $self->[1]->doit();
+};
+show qw(init_dollars), sub {
+    my ($self) = @_;
+    return '$' . sprintf('%0.2f', $self->[1]->show());
+};
 
 doit qw(square), sub {
     my ($self) = @_;
@@ -490,6 +521,7 @@ sub Calculator::exp::show {
   return $self->[0]->show() . 'e' . $self->[1]->show();
 }
 
+
 sub Calculator::Calculator::doit {
     my ($self) = @_;
     return join q{ }, map { $_->doit() } @{$self};
@@ -502,7 +534,7 @@ sub Calculator::Calculator::show {
 
 doit qw(square_root), sub {
     my ($self) = @_;
-    return $self->[0]->doit->bsqrt();
+    return sqrt($self->[0]->doit());# bsqrt();
 };
 show qw(square_root), sub {
     my ($self) = @_;
@@ -547,8 +579,9 @@ show 'hyperbolic_tangent', sub { return 'tanh(' . $_[0]->[0]->show() . ')' };
 doit 'tangent', sub {
     my ($self) = @_;
     my $num = $self->[0]->doit();
-    my $num2 = Math::BigFloat->new($num);
-    return $num->bsin() / $num2->bcos();
+    # my $num2 = Math::BigFloat->new($num);
+    return sin($num) / cos($num);
+    # return $num->bsin() / $num2->bcos();
     # my $num = $self->[0]->doit();
     # my $denom = cos($num);
     # my $numer = sin($num);
@@ -563,10 +596,17 @@ show 'tangent', sub { return 'tan(' . $_[0]->[0]->show() . ')' };
 #     return 'tan(' . $self->[0]->show() . ')';
 # };
 
+sub logarithm {
+    my ($base, $num) = @_;
+    return log($num) / log($base);
+}
+
 doit 'logarithm', sub {
     my ($self) = @_;
     my ($base, $num) = ($self->[0]->doit(), $self->[1]->doit());
-    return $num->logbase($base);
+    return logarithm($base, $num);
+    #return $num->copy->blog($base);
+    # return $num->logbase($base);
 };
 show 'logarithm', sub {
     my ($self) = @_;
@@ -580,6 +620,15 @@ doit 'natural_logarithm', sub {
 show 'natural_logarithm', sub {
     my ($self) = @_;
     return 'ln(' . $self->[0]->show() . ')';
+};
+
+doit 'factorial', sub {
+    my ($self) = @_;
+    return $self->[1]->doit->bfact();
+};
+show 'factorial', sub {
+    my ($self) = @_;
+    return 'factorial(' . $self->[1]->show() . ')';
 };
 
 sub const_doit {
@@ -606,6 +655,13 @@ binary_doit 'add', sub { $_[0] + $_[1] };
 binary_doit 'exponentiate', sub { $_[0] ** $_[1] };
 binary_doit 'multiply', sub { $_[0] * $_[1] };
 binary_doit 'divide', sub { $_[0] / $_[1] };
+binary_doit 'exp', sub { $_[0] * 10 ** $_[1] };
+
+
+# sub Calculator::subtract::show {
+#     my ($self) = @_;
+#     return $self->[0]->show() . ' - ' . $self->[1]->show();
+# }
 
 const_doit qw(dozen), 12;
 const_show qw(dozen), 'dozen';
