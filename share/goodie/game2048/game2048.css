@@ -90,7 +90,6 @@
     left: 0;
     right: 0;
     z-index: 100;
-    text-align: center;
     -webkit-animation: fade-in 800ms ease 1200ms;
     -moz-animation: fade-in 800ms ease 1200ms;
     animation: fade-in 800ms ease 1200ms;
@@ -107,7 +106,11 @@
 .zci--game2048 .game2048__area .game2048__message p{
     font-weight: bolder;
     font-size: xx-large;
-    line-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
     text-shadow: 2px 2px 5px #B3B3B3;
 }
 
