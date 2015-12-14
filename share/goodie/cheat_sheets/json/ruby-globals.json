@@ -3,7 +3,7 @@
   "name": "Ruby Globals",
   "description": "Pre-defined global variables and constants in the Ruby programming language",
   "metadata": {
-    "sourceName": "Documentation for Ruby",
+    "sourceName": "Ruby Lang",
     "sourceUrl": "http://docs.ruby-lang.org/en/trunk/globals_rdoc.html"
   },
   "aliases": [
