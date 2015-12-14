@@ -1,12 +1,13 @@
 {
    "id" : "malayalam_cheat_sheet",
    "name" : "Malayalam Cheat Sheet",
+   "description" : "Basic Malayalam words and phrases", 
    "metadata" : {
       "sourceName" : "Pravasi Malayalam",
       "sourceUrl" : "http://www.pravasimalayalam.com/index.shtml"
    },
    "aliases": [
-       "malayalam", "malayalam phrases", "Malayalam phrases", "english to malayalam",
+       "malayalam phrases", "english to malayalam",
        "basic malayalam phrases", "basic malayalam"
    ],
    "template_type": "language",
@@ -17,7 +18,6 @@
       "Travelling",
       "Going out for dinner"
    ],
-   "description" : "Basic Malayalam words and phrases",
    "sections" : {
       "Etiquette" : [
          {
