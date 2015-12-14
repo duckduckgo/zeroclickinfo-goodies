@@ -2,9 +2,10 @@ package DDG::GoodiePackageTracking::BRT;
 # ABSTRACT: Track a shipment from BRT (formerly Bartolini)
 
 use strict;
+use Moo::Role;
 
-isPackageTracking sub {
-    return unless /^brt\s+(?:(?<c_brt>[0-9]{12})|(?<c_brtcode>[0-9]{19}))$/;
+sub isPackageTracking {
+    return '1' unless $_[1] =~ m/(?:(?<c_brt>[0-9]{12})|(?<c_brtcode>[0-9]{19}))$/;
     my $brt_num = $+{'c_brt'};
     my $brtcode_num = $+{'c_brtcode'};
 
@@ -16,7 +17,7 @@ isPackageTracking sub {
     if ( $brtcode_num ) {
         return "http://as777.brt.it/vas/sped_det_show.htm?brtCode=$brtcode_num&urltype=a";
     }
-    return;
+    return '2';
 };
 
 1;

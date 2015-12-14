@@ -2,13 +2,13 @@ package DDG::Goodie::PackageTracking;
 # ABSTRACT:  Track a shipment from any courier
 
 use DDG::Goodie;
-use DDG::GoodiePackageTracking;
 use strict;
+use YAML::XS 'LoadFile';
 
 zci answer_type => 'package_tracking';
 zci is_cached   => 1;
 
-triggers any => 'triggerWord', 'trigger phrase';
+triggers start => '123456789012', '1234567890123456789';
 
 primary_example_queries "123456789012";
 secondary_example_queries "1234567890123456789";
@@ -19,31 +19,38 @@ topics "special_interest";
 attribution github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 #load all couriers
+my @couriers = @{LoadFile(share('couriers.yml'))};
 
+my @trackclass;
+#create and load class
+foreach (@couriers) { 
+    my $nameclass = "DDG::GoodiePackageTracking::$_"; 
+    with $nameclass;
+    push @trackclass, $nameclass;
+}
 
 # Handle statement
-handle remainder => sub {
+handle query => sub {
 
-    my $remainder = $_;
+    my $query = $_;
     
-    my @packagecouriers;
-    #validation package for couriers
+    #verify package number for all couriers
+    my @response;
+    foreach (@trackclass) { 
+        my $nameclass = $_;
+        push @response, $nameclass->isPackageTracking($query);
+    }
     
-    
-    
-    
-
-    return "plain text response",
+    return "$query",
         structured_answer => {
             id => 'package_tracking',
             name => 'Answer',
-
             data => {
               title => "My Instant Answer Title",
               subtitle => "My Subtitle",
-              list => 
+              image => "",
+              list => \@response,
             },
-
             templates => {
                 group => "list",
             }
@@ -51,3 +58,8 @@ handle remainder => sub {
 };
 
 1;
+
+sub opera {
+    my $name = "DDG::GoodiePackageTracking::$_[0]";
+    return $name->isPackageTracking("123456789012");
+};
