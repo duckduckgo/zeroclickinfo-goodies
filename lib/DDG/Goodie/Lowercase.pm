@@ -25,6 +25,8 @@ handle remainder => sub {
 
     my $lower = lc $input;
 
+    return if ($lower eq $input);
+
     return $lower,
       structured_answer => {
         input     => [html_enc($input)],
