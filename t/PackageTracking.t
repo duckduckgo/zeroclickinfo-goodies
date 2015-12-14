@@ -10,12 +10,9 @@ zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::PackageTracking )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
-    'example query' => test_zci('query'),
-    # Try to include some examples of queries on which it might
-    # appear that your answer will trigger, but does not.
+
+    #'example query' => test_zci('query'),
+
     'bad example query' => undef,
 );
 
