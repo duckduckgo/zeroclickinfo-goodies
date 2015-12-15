@@ -1,20 +1,17 @@
 {
-    "id": "kde_keyboard_cheat_sheet", 
-    "name": "KDE Keyboard Shortcuts",
-    "description": "List of useful keyboard shortcuts for KDE", 
+    "id": "kde_cheat_sheet", 
+    "name": "KDE",
+    "description": "List of useful keyboard commands for KDE", 
     "metadata": {
         "sourceName": "KDE Help",
         "sourceUrl": "http://community.linuxmint.com/tutorial/view/47"
     },
     "template_type": "keyboard",
-    "section_order": ["Desktop Navigation", "Desktop Shortcuts", "ScreenShot" , "Web Browser" , "Tab Management"],
+    "section_order": ["Desktop Navigation", "Desktop Commands", "ScreenShot" , "Web Browser" , "Tab Management"],
     "sections": {
         "Desktop Navigation": [{
             "val": "Start menu / Access applications",
             "key": "[Alt] [F1]"
-        }, {
-            "val": "Pop up new window",
-            "key": "[Alt] [F2]"
         }, {
             "val": "Lock desktop / Switch active user",
             "key": "[Ctrl] [Alt] [L]"
@@ -28,7 +25,7 @@
             "val": "Rename file",
             "key": "F2"
         }],
-         "Desktop Shortcuts": [{
+         "Desktop Commands": [{
             "val": "File menu",
             "key": "[Alt] [F]"
         }, {
@@ -57,17 +54,20 @@
         "Web Browser": [{
             "val": "Bookmarks menu",
             "key": "[Alt] [B]"
+        },{
+            "val": "Pop up new window",
+            "key": "[Alt] [F2]"
         }, {
-            "val": "URL Shortcuts (Adds www. + .com)",
+            "val": "Insert (www.) + (.com)",
             "key": "[Ctrl] [Enter]"
         }, {
-            "val": "URL Shortcuts (Adds www. + .org)",
+            "val": "Insert (www.) + (.org)",
             "key": "[Ctrl] [Shift] [Enter]"
         }, {
-            "val": "URL Shortcuts (Adds www. + .net)",
+            "val": "Insert (www.) + (.net)",
             "key": "[Shift] [Enter]"
         }, {
-            "val": "Add a bookmark for the current location",
+            "val": "Add a bookmark for the current URL",
             "key": "[Ctrl] [B]"
         }, {
             "val": "Manage bookmarks",
