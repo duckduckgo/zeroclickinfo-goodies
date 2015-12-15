@@ -21,7 +21,7 @@
         "Spotlight",
         "Text Editing",
         "Screenshots (Hold Ctrl to copy screenshot to the clipboard)",
-        "Web Browsing"
+        "Web Browsing (Works on most modern browsers)"
     ],
     "sections": {
         "General": [
@@ -84,7 +84,7 @@
                 "val": "Delete selected folder or file"
             },
             {
-                "key": "([Return]/[Enter])",
+                "key": "([Return] / [Enter])",
                 "val": "Rename the selected file/folder"
             },
             {
@@ -188,7 +188,7 @@
                 "val": "Go to end of next word"
             }
         ],
-        "Screenshots (Hold Ctrl with any of these to copy screenshot to clipboard)": [
+        "Screenshots (Hold Ctrl to copy screenshot to the clipboard)": [
             {
                 "key": "[⌘] [Shift] [3]",
                 "val": "Take picture of the entire screen"
