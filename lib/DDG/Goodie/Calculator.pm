@@ -115,7 +115,7 @@ Function ::=
       ('sqrt' ) Argument bless => square_root
     | ('sin'  ) Argument bless => sine
     | ('cos'  ) Argument bless => cosine
-    | ('tanh' ) Argument bless => hyperbolic_tangent
+    # | ('tanh' ) Argument bless => hyperbolic_tangent
     | ('tan'  ) Argument bless => tangent
     | ('csc'  ) Argument bless => cosec
     | ('sec'  ) Argument bless => secant
@@ -247,38 +247,38 @@ handle query_nowhitespace => sub {
         } );
     my $parsed = get_parse $recce, $style->for_computation($query);
     return unless defined $parsed;
-    my $str_result = ${$parsed}->show();
+    my $generated_input = ${$parsed}->show();
     my $val_result = ${$parsed}->doit();
     # my $vr = Math::BigFloat->new($val_result);
     # $vr->bfround(13);
     # $val_result = $vr->bstr();
     # $val_result = Math::BigFloat->new($val_result)->bfround(13)->bstr();
     # $val_result = sprintf('%0.16g', $val_result);
-    $val_result = Math::BigFloat->new($val_result)->bfround(-14)->bstr;
+    $val_result = Math::BigFloat->new($val_result)->bround(15)->bstr;
     $val_result = sprintf('%0.15g', $val_result);
     # $val_result =~ s/(-?[0-9.]+)e(-?[\d.]+)/($1 * 10^$2)/g;
     $val_result =~ s/^\((.*)\)$/$1/;
-    # my $str_result = result_show $$parsed;
+    # my $generated_input = result_show $$parsed;
     # my $val_result = result_value $parsed;
     # my $style = number_style_for(@numbers);
     $val_result = sprintf('%0.2f', $val_result) if $has_dollars;
     my $result = $style->for_display($val_result);
     $result = '$' . $result if $has_dollars; # sprintf('0%.2f', $result) if $has_dollars;
-    $str_result =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
-    # $str_result =~ s/[\d.,]+/${to_dollars($1)}/g if $has_dollars;
+    $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
+    # $generated_input =~ s/[\d.,]+/${to_dollars($1)}/g if $has_dollars;
     # my $result = "$val_result";
     # $result =~ s/(\d+)\.(\d+)(\d{2})/$1.$2,$3/ if $turk_mode;
     return $result,
         structured_answer => {
             id         => 'calculator',
             name       => 'Answer',
-            # text       => $str_result . ' = ' . $result,
+            # text       => $generated_input . ' = ' . $result,
             data       => {
                 title => "$result",
-                subtitle => $str_result . ' = ' . $result,
+                subtitle => $generated_input . ' = ' . $result,
             },
             # structured => {
-            #     input     => [$str_result],
+            #     input     => [$generated_input],
             #     operation => 'Calculate',
             #     result => html_enc($result),
             #     # result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
@@ -496,6 +496,21 @@ sub binary_doit {
         return $sub->($self->[0]->doit(), $self->[1]->doit());
     };
 }
+sub unary_doit {
+    my ($name, $sub) = @_;
+    doit $name, sub {
+        my ($self) = @_;
+        return $sub->($self->[0]->doit->copy());
+    };
+}
+sub unary_fun_show {
+    my ($name, $fun_name) = @_;
+    show $name, sub {
+        my ($self) = @_;
+        return "$fun_name(" . $self->[0]->show() . ')';
+    };
+}
+
 doit qw(init_dollars), sub {
     my ($self) = @_;
     return $self->[1]->doit();
@@ -532,15 +547,8 @@ sub Calculator::Calculator::show {
   return join q{ }, map { $_->show() } @{$self};
 }
 
-doit qw(square_root), sub {
-    my ($self) = @_;
-    return sqrt($self->[0]->doit());# bsqrt();
-};
-show qw(square_root), sub {
-    my ($self) = @_;
-    return 'sqrt(' . $self->[0]->show() . ')';
-};
-
+unary_doit 'square_root', sub { $_[0]->bsqrt() };
+unary_fun_show 'square_root', 'sqrt';
 doit 'constant_coefficent', sub {
     my ($self) = @_;
     return $self->[0]->doit() * $self->[1]->doit();
@@ -550,86 +558,45 @@ show 'constant_coefficent', sub {
     return $self->[0]->show() . ' ' . $self->[1]->show();
 };
 
-doit 'sine', sub {
-    my ($self) = @_;
-    # return $self->[0]->doit->bsin();
-    return sin($self->[0]->doit());
-};
-show 'sine', sub {
-    my ($self) = @_;
-    return 'sin(' . $self->[0]->show() . ')';
-};
-doit 'cosine', sub {
-    my ($self) = @_;
-    # return $self->[0]->doit->bcos(30);
-    return cos($self->[0]->doit());
-};
-show 'cosine', sub {
-    my ($self) = @_;
-    return 'cos(' . $self->[0]->show() . ')';
-};
-doit 'cosec', sub { return csc($_[0]->[0]->doit()) };
+unary_doit 'sine', sub { $_[0]->bsin() };
+unary_fun_show 'sine', 'sin';
+unary_doit 'cosine', sub { $_[0]->bcos() };
+unary_fun_show 'cosine', 'cos';
+unary_doit 'cosec', sub { 1 / $_[0]->bsin() };
 show 'cosec', sub { return 'csc(' . $_[0]->[0]->show() . ')' };
-doit 'secant', sub { return sec($_[0]->[0]->doit()) };
+unary_doit 'secant', sub { 1 / $_[0]->bcos() };
 show 'secant', sub { return 'sec(' . $_[0]->[0]->show() . ')' };
-doit 'cotangent', sub { return cot($_[0]->[0]->doit()) };
+doit 'cotangent', sub {
+    my $val = $_[0]->[0]->doit();
+    my $cos = $val->copy->bcos();
+    my $sin = $val->copy->bsin();
+    return $cos / $sin;
+};
 show 'cotangent', sub { return 'cotan(' . $_[0]->[0]->show() . ')' };
-doit 'hyperbolic_tangent', sub { return tanh($_[0]->[0]->doit()) };
-show 'hyperbolic_tangent', sub { return 'tanh(' . $_[0]->[0]->show() . ')' };
+# doit 'hyperbolic_tangent', sub { return tanh($_[0]->[0]->doit()) };
+# show 'hyperbolic_tangent', sub { return 'tanh(' . $_[0]->[0]->show() . ')' };
 doit 'tangent', sub {
     my ($self) = @_;
     my $num = $self->[0]->doit();
-    # my $num2 = Math::BigFloat->new($num);
     return sin($num) / cos($num);
-    # return $num->bsin() / $num2->bcos();
-    # my $num = $self->[0]->doit();
-    # my $denom = cos($num);
-    # my $numer = sin($num);
-    # return tan($self->[0]->doit());#  $denom;
-    # return $numer / $denom;
-    # return Math::Trig->tan($self->[0]->doit());
 };
 
-show 'tangent', sub { return 'tan(' . $_[0]->[0]->show() . ')' };
-# show 'tangent', sub {
-#     my ($self) = @_;
-#     return 'tan(' . $self->[0]->show() . ')';
-# };
-
-sub logarithm {
-    my ($base, $num) = @_;
-    return log($num) / log($base);
-}
+unary_fun_show 'tangent', 'tan';
 
 doit 'logarithm', sub {
     my ($self) = @_;
     my ($base, $num) = ($self->[0]->doit(), $self->[1]->doit());
-    return logarithm($base, $num);
-    #return $num->copy->blog($base);
-    # return $num->logbase($base);
+    return $num->copy->blog($base);
 };
 show 'logarithm', sub {
     my ($self) = @_;
     my ($base, $num) = ($self->[0]->show(), $self->[1]->show());
     return "log$base($num)";
 };
-doit 'natural_logarithm', sub {
-    my ($self) = @_;
-    return log($self->[0]->doit());
-};
-show 'natural_logarithm', sub {
-    my ($self) = @_;
-    return 'ln(' . $self->[0]->show() . ')';
-};
-
-doit 'factorial', sub {
-    my ($self) = @_;
-    return $self->[1]->doit->bfact();
-};
-show 'factorial', sub {
-    my ($self) = @_;
-    return 'factorial(' . $self->[1]->show() . ')';
-};
+unary_doit 'natural_logarithm', sub { $_[0]->blog() };
+unary_fun_show 'natural_logarithm', 'ln';
+unary_doit 'factorial', sub { $_[0]->bfact() };
+unary_fun_show 'factorial', 'factorial';
 
 sub const_doit {
     my ($name, $val) = @_;
@@ -647,9 +614,6 @@ sub const_show {
         return $rep;
     };
 }
-sub Calculator::const_pi::doit { return Math::BigFloat->bpi() }
-sub Calculator::const_pi::show { return 'pi' };
-
 binary_doit 'subtract', sub { $_[0] - $_[1] };
 binary_doit 'add', sub { $_[0] + $_[1] };
 binary_doit 'exponentiate', sub { $_[0] ** $_[1] };
@@ -663,12 +627,16 @@ binary_doit 'exp', sub { $_[0] * 10 ** $_[1] };
 #     return $self->[0]->show() . ' - ' . $self->[1]->show();
 # }
 
+my $big_pi = Math::BigFloat->bpi();
+
+const_doit 'pi', $big_pi;
 const_doit qw(dozen), 12;
 const_show qw(dozen), 'dozen';
 const_doit qw(euler), Math::BigFloat->bexp(1);
 const_show qw(euler), 'e';
 const_doit qw(score), 20;
 const_show qw(score), 'score';
+const_show 'pi', 'pi';
 
 1;
 
