@@ -1,7 +1,7 @@
 {
     "id": "bible_books_cheat_sheet",
     "name": "Books of The Holy Bible",
-    "description": "List of books in The Holy Bible along with their number of chapters and number of verses",
+    "description": "List of books in The Holy Bible along with their number of verses and number of chapters",
     "metadata": {
         "sourceName": "Bible Believers",
         "sourceUrl": "http://www.biblebelievers.com/believers-org/kjv-stats.html"
@@ -30,279 +30,279 @@
         "Old Testament (1-10)": [
             {
                 "key": "Genesis",
-                "val": "Chapters : 50 , Verses : 1,533"
+                "val": "1,533 Verses, 50 Chapters"
             },
             {
                 "key": "Exodus",
-                "val": "Chapters : 40 , Verses : 1,213"
+                "val": "1,213 Verses, 40 Chapters"
             },
             {
                 "key": "Leviticus",
-                "val": "Chapters : 27 , Verses : 859"
+                "val": "859 Verses, 27 Chapters"
             },
             {
                 "key": "Numbers",
-                "val": "Chapters : 36 , Verses : 1288"
+                "val": "1288 Verses, 36 Chapters"
             },
             {
                 "key": "Deuteronomy",
-                "val": "Chapters : 34 , Verses : 959"
+                "val": "959 Verses, 34 Chapters"
             },
             {
                 "key": "Joshua",
-                "val": "Chapters : 24 , Verses : 658"
+                "val": "658 Verses, 24 Chapters"
             },
             {
                 "key": "Judges",
-                "val": "Chapters : 21 , Verses : 618"
+                "val": "618 Verses, 21 Chapters"
             },
             {
                 "key": "Ruth",
-                "val": "Chapters : 4 , Verses : 85"
+                "val": "85 Verses, 4 Chapters"
             },
             {
                 "key": "1 Samuel",
-                "val": "Chapters : 31 , Verses : 810"
+                "val": "810 Verses, 31 Chapters"
             },
             {
                 "key": "2 Samuel",
-                "val": "Chapters : 24 , Verses : 695"
+                "val": "695 Verses, 24 Chapters"
             }
         ],
         "Old Testament (11-20)": [
             {
                 "key": "1 Kings",
-                "val": "Chapters : 22 , Verses : 816"
+                "val": "816 Verses, 22 Chapters"
             },
             {
                 "key": "2 Kings",
-                "val": "Chapters : 25 , Verses : 719"
+                "val": "719 Verses, 25 Chapters"
             },
             {
                 "key": "1 Chronicles",
-                "val": "Chapters : 29 , Verses : 942"
+                "val": "942 Verses, 29 Chapters"
             },
             {
                 "key": "2 Chronicles",
-                "val": "Chapters : 36 , Verses : 822"
+                "val": "822 Verses, 36 Chapters"
             },
             {
                 "key": "Ezra",
-                "val": "Chapters : 10 , Verses : 280"
+                "val": "280 Verses, 10Chapters"
             },
             {
                 "key": "Nehemiah",
-                "val": "Chapters : 13 , Verses : 406"
+                "val": "406 Verses, 13 Chapters"
             },
             {
                 "key": "Esther",
-                "val": "Chapters : 10 , Verses : 167"
+                "val": "167 Verses, 10 Chapters"
             },
             {
                 "key": "Job",
-                "val": "Chapters : 42 , Verses : 1,070"
+                "val": "1,070 Verses, 42 Chapters"
             },
             {
                 "key": "Psalms",
-                "val": "Chapters : 150 , Verses : 2,461"
+                "val": "2,461 Verses, 150 Chapters"
             },
             {
                 "key": "Proverbs",
-                "val": "Chapters : 31 , Verses : 915"
+                "val": "915 Verses, 31 Chapters"
             }
         ],
         "Old Testament (21-30)": [
             {
                 "key": "Ecclesiastes",
-                "val": "Chapters : 12 , Verses : 222"
+                "val": "222 Verses, 12 Chapters"
             },
             {
                 "key": "Song of Solomon",
-                "val": "Chapters : 8 , Verses : 117"
+                "val": "117 Verses, 8 Chapters"
             },
             {
                 "key": "Isaiah",
-                "val": "Chapters : 66 , Verses : 1,292"
+                "val": "1,292 Verses, 66 Chapters"
             },
             {
                 "key": "Jeremiah",
-                "val": "Chapters : 52 , Verses : 1,364"
+                "val": "1,364 Verses, 52 Chapters"
             },
             {
                 "key": "Lamentations",
-                "val": "Chapters : 5 , Verses : 154"
+                "val": "154 Verses, 5 Chapters"
             },
             {
                 "key": "Ezekiel",
-                "val": "Chapters : 48 , Verses : 1,273"
+                "val": "1,273 Verses, 48 Chapters"
             },
             {
                 "key": "Daniel",
-                "val": "Chapters : 12 , Verses : 357"
+                "val": "357 Verses, 12 Chapters"
             },
             {
                 "key": "Hosea",
-                "val": "Chapters : 14 , Verses : 197"
+                "val": "197 Verses, 14 Chapters"
             },
             {
                 "key": "Joel",
-                "val": "Chapters : 3 , Verses : 73"
+                "val": "73 Verses, 3 Chapters"
             },
             {
                 "key": "Amos",
-                "val": "Chapters : 9 , Verses : 146"
+                "val": "146 Verses, 9 Chapters"
             }
         ],
         "Old Testament (31-39)": [
             {
                 "key": "Obadiah",
-                "val": "Chapters : 1 , Verses : 21"
+                "val": "21 Verses, 1 Chapters"
             },
             {
                 "key": "Jonah",
-                "val": "Chapters : 4 , Verses : 48"
+                "val": "48 Verses, 4 Chapters"
             },
             {
                 "key": "Micah",
-                "val": "Chapters : 7 , Verses : 105"
+                "val": "105 Verses, 7 Chapters"
             },
             {
                 "key": "Nahum",
-                "val": "Chapters : 3 , Verses : 47"
+                "val": "47 Verses, 3 Chapters"
             },
             {
                 "key": "Habakkuk",
-                "val": "Chapters : 3 , Verses : 56"
+                "val": "56 Verses, 3 Chapters"
             },
             {
                 "key": "Zephaniah",
-                "val": "Chapters : 3 , Verses : 53"
+                "val": "53 Verses, 3 Chapters"
             },
             {
                 "key": "Haggai",
-                "val": "Chapters : 2 , Verses : 38"
+                "val": "38 Verses, 2 Chapters"
             },
             {
                 "key": "Zechariah",
-                "val": "Chapters : 14 , Verses : 211"
+                "val": "211 Verses, 14 Chapters"
             },
             {
                 "key": "Malachi",
-                "val": "Chapters : 4 , Verses : 55"
+                "val": "55 Verses, 4 Chapters"
             }
         ],
         "New Testament (1-10)": [
             {
                 "key": "Matthew",
-                "val": "Chapters : 28 , Verses : 1,071"
+                "val": "1,071 Verses, 28 Chapters"
             },
             {
                 "key": "Mark",
-                "val": "Chapters : 16 , Verses : 678"
+                "val": "678 Verses, 16 Chapters"
             },
             {
                 "key": "Luke",
-                "val": "Chapters : 24 , Verses : 1,151"
+                "val": "1,151 Verses, 24 Chapters"
             },
             {
                 "key": "John",
-                "val": "Chapters : 21 , Verses : 879"
+                "val": "879 Verses, 21 Chapters"
             },
             {
                 "key": "Acts",
-                "val": "Chapters : 28 , Verses : 1,007"
+                "val": "1,007 Verses, 28 Chapters"
             },
             {
                 "key": "Romans",
-                "val": "Chapters : 16 , Verses : 433"
+                "val": "433 Verses, 16 Chapters"
             },
             {
                 "key": "1 Corinthians",
-                "val": "Chapters : 16 , Verses : 437"
+                "val": "437 Verses, 16 Chapters"
             },
             {
                 "key": "2 Corinthians",
-                "val": "Chapters : 13  , Verses : 257"
+                "val": "257 Verses, 13  Chapters"
             },
             {
                 "key": "Galatians",
-                "val": "Chapters : 6 , Verses : 149"
+                "val": "149 Verses, 6 Chapters"
             },
             {
                 "key": "Ephesians",
-                "val": "Chapters : 6 , Verses : 155"
+                "val": "155 Verses, 6 Chapters"
             }
         ],
         "New Testament (11-20)": [
             {
                 "key": "Philippians",
-                "val": "Chapters : 4 , Verses : 104"
+                "val": "104 Verses, 4 Chapters"
             },
             {
                 "key": "Colossians",
-                "val": "Chapters : 4 , Verses : 95"
+                "val": "95 Verses, 4 Chapters"
             },
             {
                 "key": "1 Thessalonians",
-                "val": "Chapters : 5 , Verses : 89"
+                "val": "89 Verses, 5 Chapters"
             },
             {
                 "key": "2 Thessalonians",
-                "val": "Chapters : 3 , Verses : 47"
+                "val": "47 Verses, 3 Chapters"
             },
             {
                 "key": "1 Timothy",
-                "val": "Chapters : 6 , Verses : 133"
+                "val": "133 Verses, 6 Chapters"
             },
             {
                 "key": "2 Timothy",
-                "val": "Chapters : 4 , Verses : 83"
+                "val": "83 Verses, 4 Chapters"
             },
             {
                 "key": "Titus",
-                "val": "Chapters : 3 , Verses : 46"
+                "val": "46 Verses, 3 Chapters"
             },
             {
                 "key": "Philemon",
-                "val": "Chapters : 1 , Verses : 25"
+                "val": "25 Verses, 1 Chapter"
             },
             {
                 "key": "Hebrews",
-                "val": "Chapters : 13 , Verses : 303"
+                "val": "303 Verses, 13 Chapters"
             },
             {
                 "key": "James",
-                "val": "Chapters : 5 , Verses : 108"
+                "val": "108 Verses, 5 Chapters"
             }
         ],
         "New Testament (21-27)": [
             {
                 "key": "1 Peter",
-                "val": "Chapters : 5 , Verses : 105"
+                "val": "105 Verses, 5 Chapters"
             },
             {
                 "key": "2 Peter",
-                "val": "Chapters : 3 , Verses : 61"
+                "val": "61 Verses, 3 Chapters"
             },
             {
                 "key": "1 John",
-                "val": "Chapters : 5 , Verses : 105"
+                "val": "105 Verses, 5 Chapters"
             },
             {
                 "key": "2 John",
-                "val": "Chapters : 1 , Verses : 13"
+                "val": "13 Verses, 1 Chapter"
             },
             {
                 "key": "3 John",
-                "val": "Chapters : 1 , Verses : 14"
+                "val": "14 Verses, 1 Chapter"
             },
             {
                 "key": "Jude",
-                "val": "Chapters : 1 , Verses : 25"
+                "val": "25 Verses, 1 Chapter"
             },
             {
                 "key": "Revelation",
-                "val": "Chapters : 22 , Verses : 404"
+                "val": "404 Verses, 22 Chapters"
             }
         ]
     }
