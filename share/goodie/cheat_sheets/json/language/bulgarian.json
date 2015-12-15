@@ -1,10 +1,14 @@
 {
    "id" : "bulgarian_cheat_sheet",
-   "name" : "Bulgarian Phrases",
+   "name" : "Bulgarian Cheat Sheet",
    "metadata" : {
       "sourceName" : "Linguanaut",
       "sourceUrl" : "http://www.linguanaut.com/english_bulgarian.htm"
    },
+   "aliases": [
+       "bulgarian phrases", "english to bulgarian", "basic bulgarian phrases", "basic bulgarian"
+   ],
+   "template_type": "reference",
    "section_order" : [
       "Basics",
       "Getting Help",
