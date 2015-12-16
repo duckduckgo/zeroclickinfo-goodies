@@ -17,7 +17,9 @@ name 'FrequencySpectrum';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FrequencySpectrum.pm';
 category 'physical_properties';
 topics 'science';
-attribution web => "https://machinepublishers.com", twitter => 'machinepub';
+attribution web => "https://machinepublishers.com", 
+            twitter => 'machinepub',
+            github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 #Javascript to dynamically resize and/or hide elements
 my $dynamicwidths = <<EOF;
