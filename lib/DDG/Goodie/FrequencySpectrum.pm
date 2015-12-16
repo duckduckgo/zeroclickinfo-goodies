@@ -253,7 +253,21 @@ handle query => sub {
         $html .= $plot->xmlify;
     }
 
-    return $answer, html => wrap_html($html) if $answer;
+    return $answer, #html => wrap_html($html) if $answer;
+    structured_answer => {
+        id => 'frequency_spectrum',
+        name => 'Answer',
+        data => {
+            title => $answer,
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.frequency_spectrum.content'
+            }
+        }
+    };
     return;
 };
 

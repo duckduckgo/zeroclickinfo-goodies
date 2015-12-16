@@ -1,4 +1,4 @@
-DDH.frequency_spectrum = frequency_spectrum || {};
+DDH.frequency_spectrum = DDH.frequency_spectrum || {};
 
 (function(DDH) {
     "use strict";
@@ -63,7 +63,7 @@ DDH.frequency_spectrum = frequency_spectrum || {};
             }
         }
     }
-    DDH.chess960.build = function(ops) {
+    DDH.frequency_spectrum.build = function(ops) {
         // Global Variables Declaration
 
     
