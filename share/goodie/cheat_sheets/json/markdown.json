@@ -108,7 +108,7 @@
       },
       {
         "key": "[You can use numbers for reference-style link definitions][1]",
-        "val": "Liks with a reference number. The number eeds to be defined as [1]: http://slashdot.org"
+        "val": "Links with a reference number. The number eeds to be defined as [1]: http://slashdot.org"
       }
     ],
     "Images": [
