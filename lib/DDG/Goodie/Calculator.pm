@@ -59,37 +59,24 @@ lexeme default = action => [ start, length, value ]
 Calculator ::= Expression
 
 Expression ::=
-    #   Function                   bless => primary
      Term                        bless => primary
-    # || Factor bless => primary
-    # || NumTerm                    bless => primary
-    # || NumTerm 'e':i NumTerm      bless => exp
-    |  '(' Expression ')'         bless => paren assoc => group
     || ExprOp                     bless => primary
-    # | Special                     bless => primary
 
 Factor ::=
     NumTerm bless => primary
     || NumTerm ('e':i) NumTerm bless => exp
 
-# Operation ::=
-#       Expression ('**') Expression bless => exponentiate assoc => right
-#     | Expression ('^')  Expression bless => exponentiate assoc => right
-#    || Expression ('*')  Expression bless => multiply
-#     | Expression ('/')  Expression bless => divide
-#    || Expression ('+')  Expression bless => add
-#     | Expression ('-')  Expression bless => subtract
-
 Term ::=
     Function bless => primary
-    | TermOp bless => primary
-    || Factor bless => primary
+    | ('(') Expression (')') bless => paren assoc => group
+    | Factor bless => primary
+    || TermOp bless => primary
 
 TermOp ::=
     Expression ('^') Expression bless => exponentiate assoc => right
     || Factor ('squared') bless => square
     || Expression ('*') Expression bless => multiply
-    | Term ('/') Factor bless => divide
+    | Expression ('/') Expression bless => divide
     | Term ('divided') ('by') Factor bless => divide
 
 ExprOp ::=
@@ -221,26 +208,38 @@ sub to_dollars {
     return '$' . sprintf('%0.2f', $old);
 }
 
+my %phone_number_regexes = (
+    'US' => qr/[0-9]{3}(?: |\-)[0-9]{3}\-[0-9]{4}/,
+    'UK' => qr/0[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}/,
+    'UK2' => qr/0[0-9]{4}[ -][0-9]{3}[ -][0-9]{3}/,
+);
+sub should_not_trigger {
+    my $query = $_;
+    return 1 if $query =~ /^\$\d+(?:\.\d+)?$/;
+    # Probably are searching for a phone number, not making a calculation
+    for my $phone_regex (%phone_number_regexes) {
+        return 1 if $query =~ $phone_regex;
+    };
+    return 1 if $query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
+    # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+    return 1 if ($query =~ /\b0x/);
+    # Probably want to talk about addresses, not calculations.
+    return 1 if ($query =~ $network);
+    return 1 if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
+    return 0;
+}
 handle query_nowhitespace => sub {
     my $query = $_;
 
-    # my $has_dollars = $query =~ s/\$//g;
+    return if should_not_trigger $query;
     my $has_dollars = $query =~ /\$/;
-    # Probably are searching for a phone number, not making a calculation
-    return if ($query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/);
-    return if ($query =~ /\b0x/);      # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
-    return if ($query =~ $network);    # Probably want to talk about addresses, not calculations.
-    return if ($query =~ qr/(?:(?<pcnt>\d+)%(?<op>(\+|\-|\*|\/))(?<num>\d+)) | (?:(?<num>\d+)(?<op>(\+|\-|\*|\/))(?<pcnt>\d+)%)/);    # Probably want to calculate a percent ( will be used PercentOf )
-
     $query =~ s/^(?:whatis|calculate|solve|math)//;
     # FIXME: Currently just replacing 'x', might occur in functions!
     $query =~ s/[∙⋅×x]/*/g;
     $query =~ s#[÷]#/#g;
     my @numbers = grep { $_ =~ /^$number_re$/ } (split /[^\d,.]+/, $query);
-    CORE::say join ' ', @numbers;
     my $style = number_style_for(@numbers);
     return unless $style;
-    # my $turk_mode = $query =~ s#(\d+)\.(\d+),(\d{2})#$1.$2$3#g;
     my $recce = Marpa::R2::Scanless::R->new(
         { grammar => $grammar,
             # trace_terminals => 1,
@@ -249,25 +248,16 @@ handle query_nowhitespace => sub {
     return unless defined $parsed;
     my $generated_input = ${$parsed}->show();
     my $val_result = ${$parsed}->doit();
-    # my $vr = Math::BigFloat->new($val_result);
-    # $vr->bfround(13);
-    # $val_result = $vr->bstr();
-    # $val_result = Math::BigFloat->new($val_result)->bfround(13)->bstr();
-    # $val_result = sprintf('%0.16g', $val_result);
-    $val_result = Math::BigFloat->new($val_result)->bround(15)->bstr;
+    return if ($val_result eq 'inf');
+    $val_result = Math::BigFloat->new($val_result)->bround(15);
+    $val_result = sprintf('%0.30f', $val_result) == 0 ? 0 : $val_result->bstr();
     $val_result = sprintf('%0.15g', $val_result);
-    # $val_result =~ s/(-?[0-9.]+)e(-?[\d.]+)/($1 * 10^$2)/g;
     $val_result =~ s/^\((.*)\)$/$1/;
-    # my $generated_input = result_show $$parsed;
-    # my $val_result = result_value $parsed;
-    # my $style = number_style_for(@numbers);
     $val_result = sprintf('%0.2f', $val_result) if $has_dollars;
     my $result = $style->for_display($val_result);
     $result = '$' . $result if $has_dollars; # sprintf('0%.2f', $result) if $has_dollars;
     $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
-    # $generated_input =~ s/[\d.,]+/${to_dollars($1)}/g if $has_dollars;
-    # my $result = "$val_result";
-    # $result =~ s/(\d+)\.(\d+)(\d{2})/$1.$2,$3/ if $turk_mode;
+    return if ($generated_input eq $result);
     return $result,
         structured_answer => {
             id         => 'calculator',
@@ -405,15 +395,11 @@ use Math::Complex;
 
 sub Calculator::primary::doit { return $_[0]->[0]->doit() }
 sub Calculator::primary::show { return $_[0]->[0]->show() }
-sub Calculator::Number::doit  { return $_[0]->[2]->doit() }
-sub Calculator::Number::show  { return $_[0]->[2]->show() };
-sub Calculator::paren::doit   { my ($self) = @_; $self->[1]->doit() }
+sub Calculator::paren::doit   { my ($self) = @_; $self->[0]->doit() }
 sub Calculator::paren::show   {
     my ($self) = @_;
-    return '(' . $self->[1]->show() . ')'
+    return '(' . $self->[0]->show() . ')'
 }
-sub Calculator::operation::doit { return $_[0]->[0]->doit() };
-sub Calculator::operation::show { return $_[0]->[0]->show() };
 
 
 sub singleton_doit {
@@ -575,10 +561,10 @@ doit 'cotangent', sub {
 show 'cotangent', sub { return 'cotan(' . $_[0]->[0]->show() . ')' };
 # doit 'hyperbolic_tangent', sub { return tanh($_[0]->[0]->doit()) };
 # show 'hyperbolic_tangent', sub { return 'tanh(' . $_[0]->[0]->show() . ')' };
-doit 'tangent', sub {
-    my ($self) = @_;
-    my $num = $self->[0]->doit();
-    return sin($num) / cos($num);
+unary_doit 'tangent', sub {
+    my ($num) = @_;
+    my $denom = $num->copy();
+    return $num->bsin() / $denom->bcos();
 };
 
 unary_fun_show 'tangent', 'tan';
@@ -595,7 +581,7 @@ show 'logarithm', sub {
 };
 unary_doit 'natural_logarithm', sub { $_[0]->blog() };
 unary_fun_show 'natural_logarithm', 'ln';
-unary_doit 'factorial', sub { $_[0]->bfact() };
+unary_doit 'factorial', sub { $_[0]->bfac() };
 unary_fun_show 'factorial', 'factorial';
 
 sub const_doit {
@@ -603,9 +589,12 @@ sub const_doit {
     my $full_name = 'Calculator::const_' . $name . '::doit';
     no strict 'refs';
     *$full_name = *{uc $full_name} = sub {
-        return $val;
+        return Math::BigFloat->new($val);
     };
 }
+# const_show NAME, REP;
+# will generate a routine for displaying the constant NAME with
+# the representation REP.
 sub const_show {
     my ($name, $rep) = @_;
     my $full_name = 'Calculator::const_' . $name . '::show';
@@ -614,25 +603,20 @@ sub const_show {
         return $rep;
     };
 }
-binary_doit 'subtract', sub { $_[0] - $_[1] };
-binary_doit 'add', sub { $_[0] + $_[1] };
+binary_doit 'subtract',     sub { $_[0] - $_[1] };
+binary_doit 'add',          sub { $_[0] + $_[1] };
 binary_doit 'exponentiate', sub { $_[0] ** $_[1] };
-binary_doit 'multiply', sub { $_[0] * $_[1] };
-binary_doit 'divide', sub { $_[0] / $_[1] };
-binary_doit 'exp', sub { $_[0] * 10 ** $_[1] };
-
-
-# sub Calculator::subtract::show {
-#     my ($self) = @_;
-#     return $self->[0]->show() . ' - ' . $self->[1]->show();
-# }
+binary_doit 'multiply',     sub { $_[0] * $_[1] };
+binary_doit 'divide',       sub { $_[0] / $_[1] };
+binary_doit 'exp',          sub { $_[0] * 10 ** $_[1] };
 
 my $big_pi = Math::BigFloat->bpi();
+my $big_e = Math::BigFloat->bexp(1);
 
 const_doit 'pi', $big_pi;
 const_doit qw(dozen), 12;
 const_show qw(dozen), 'dozen';
-const_doit qw(euler), Math::BigFloat->bexp(1);
+const_doit qw(euler), $big_e;
 const_show qw(euler), 'e';
 const_doit qw(score), 20;
 const_show qw(score), 'score';
