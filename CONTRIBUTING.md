@@ -1,6 +1,6 @@
 # Contribute to Goodie Instant Answers
 
-There are several options for contributing Goodie Instant Answers, explained below.
+You don't need to use perl to contribute Goodie Instant Answers.
 
 You can always find the [Instant Answer Documentation here](https://duck.co/duckduckhack/ddh-intro). Also, if you have any questions at any point, feel free to ask on one of our community channels:
 
