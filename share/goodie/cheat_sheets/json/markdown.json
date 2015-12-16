@@ -1,7 +1,7 @@
 {
   "id": "markdown_cheat_sheet",
-  "name": "Markdown cheat sheet",
-  "description": "Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML",
+  "name": "Markdown",
+  "description": "It is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML",
   "metadata": {
     "sourceName": "GitHub",
     "sourceUrl": "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"
@@ -16,7 +16,7 @@
     "Emphasis",
     "Lists",
     "Links",
-    "Imaages",
+    "Images",
     "Code and Syntax Highlighting",
     "Blockquotes",
     "Inline HTML",
@@ -48,7 +48,7 @@
     "Emphasis": [
       {
         "key": "* Text *",
-        "val": "Displays text in Italics"
+        "val": "Displays text in italics"
       },
       {
         "key": "** Text **",
@@ -82,7 +82,7 @@
       },
       {
         "key": "⋅⋅* Item",
-        "val": "⋅Unordered sub-list item"
+        "val": "Unordered sub-list item"
       }
     ],
     "Links": [
@@ -96,11 +96,11 @@
       },
       {
         "key": "\\[I'm a reference-style link\\]\\[Arbitrary case-insensitive reference text\\]",
-        "val": "Reference style lnik"
+        "val": "Reference style link"
       },
       {
         "key": "\\[You can use numbers for reference-style link definitions\\]\\[1\\]",
-        "val": "Links with a reference number. The number eeds to be defined as \\[1\\]: http://slashdot.org"
+        "val": "Links with a reference number. The number needs to be defined as \\[1\\]: http://slashdot.org"
       }
     ],
     "Images": [
@@ -116,7 +116,7 @@
     "Code and Syntax Highlighting": [
       {
         "key": "`code`",
-        "val": "Inline code has back-ticks around it."
+        "val": "Inline code has back-ticks around it"
       },
       {
         "key": "``` Code blocks  ```",
@@ -126,13 +126,13 @@
     "Blockquotes": [
       {
         "key": "> Blockquotes",
-        "val": "Blockquotes are very handy in email to emulate reply text."
+        "val": "Blockquotes are very handy in email to emulate reply text"
       }
     ],
     "Inline HTML": [
       {
         "key": "<ul>list</ul>",
-        "val": "You can use the raw HTML in your Markdown "
+        "val": "You can use the raw HTML in your Markdown"
       }
     ],
     "Horizontal Rule": [
