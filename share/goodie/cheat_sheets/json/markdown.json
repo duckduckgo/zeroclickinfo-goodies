@@ -83,42 +83,34 @@
       {
         "key": "⋅⋅* Item",
         "val": "⋅Unordered sub-list item"
-      },
-      {
-        "key": "DEL",
-        "val": "Delete files or directory"
-      },
-      {
-        "key": "RMDIR",
-        "val": "Removes a directory"
       }
     ],
     "Links": [
       {
-        "key": "[I'm an inline-style link](https://www.duckduckgo.com)",
+        "key": "\\[I'm an inline-style link\\](https://www.duckduckgo.com)",
         "val": "Inline-style link"
       },
       {
-        "key": "[I'm an inline-style link with title](https://www.google.com \"Google's Homepage\")",
+        "key": "\\[I'm an inline-style link with title\\](https://www.google.com \"Google's Homepage\")",
         "val": "Inline-style link with title"
       },
       {
-        "key": "[I'm a reference-style link][Arbitrary case-insensitive reference text]",
+        "key": "\\[I'm a reference-style link\\]\\[Arbitrary case-insensitive reference text\\]",
         "val": "Reference style lnik"
       },
       {
-        "key": "[You can use numbers for reference-style link definitions][1]",
-        "val": "Links with a reference number. The number eeds to be defined as [1]: http://slashdot.org"
+        "key": "\\[You can use numbers for reference-style link definitions\\]\\[1\\]",
+        "val": "Links with a reference number. The number eeds to be defined as \\[1\\]: http://slashdot.org"
       }
     ],
     "Images": [
       {
-        "key": "![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 1\")",
+        "key": "!\\[alt text\\](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 1\")",
         "val": "Inline style"
       },
       {
-        "key": "[alt text][logo]",
-        "val": "The reference style. Reference need to be declared as [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 2\""
+        "key": "\\[alt text\\][logo\\]",
+        "val": "The reference style. Reference need to be declared as \\[logo\\]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 2\""
       }
     ],
     "Code and Syntax Highlighting": [
@@ -134,7 +126,7 @@
     "Blockquotes": [
       {
         "key": "> Blockquotes",
-        "val": "> Blockquotes are very handy in email to emulate reply text."
+        "val": "Blockquotes are very handy in email to emulate reply text."
       }
     ],
     "Inline HTML": [
