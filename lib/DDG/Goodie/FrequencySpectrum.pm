@@ -22,13 +22,7 @@ attribution web => "https://machinepublishers.com",
             github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 #Javascript to dynamically resize and/or hide elements
-my $dynamicwidths = <<EOF;
-<script type="text/javascript">
-
-    -
-
-</script>
-EOF
+my $dynamicwidths = "";
 
 #Regex to match a valid query
 # Used for trigger and later for parsing
