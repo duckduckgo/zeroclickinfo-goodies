@@ -1,6 +1,7 @@
-<svg class="zci--plot" height="230" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                                                                                                                                                          
+{{#with plot}}
+<svg class="zci--plot" height="{{height}}" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                                                                                                                                                          
     <g class="plot_background">                                                                                                                             
-        <rect height="230" width="100%" x="0" y="0" />                                                                                                  
+        <rect height={{height}} width="100%" x="0" y="0" />                                                                                                  
     </g>                                                                                                                                                    
     <g class="plot_panel">                                                                                                                                  
         <rect height="150" width="75%" x="20%" y="30" />                                                                                                
@@ -116,4 +117,5 @@
     <g class="marker">                                                                                                                                      
         <line id="marker" style="stroke: #F7614F" x1="25.0969100130081%" x2="25.0969100130081%" y1="22.5" y2="180" />                                   
     </g>                                                                                                                                                          
-</svg>    
+</svg>
+{{/with}}

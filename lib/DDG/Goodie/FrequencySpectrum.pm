@@ -139,6 +139,7 @@ handle query => sub {
     my $freq_formatted;
     my $answer;
     my $html;
+    my $plot;
 
     #If wavelength provided, convert to frequency in hz
     if ($wavelength) {
@@ -178,7 +179,7 @@ handle query => sub {
         my $subspectrum = $emMatch->{subspectrum};
 
         #Set up the plot panel
-        my $plot = generate_plot($rangeMin, $rangeMax, scalar keys %emSpectrum);
+        $plot = generate_plot($rangeMin, $rangeMax, scalar keys %emSpectrum);
 
         #Add a major range for each subspectrum (e.g. radio or UV)
         foreach (sort {$emSpectrum{$a}{'track'} <=> $emSpectrum{$b}{'track'} } keys %emSpectrum) {
@@ -252,13 +253,18 @@ handle query => sub {
         #Generate the SVG
         $html .= $plot->xmlify;
     }
+    
+    $plot->{svg} = "";
+    $plot->{transform} = ""; 
 
-    return $answer, #html => wrap_html($html) if $answer;
+    my @temp = $plot;
+    return "$answer ---  $html", #html => wrap_html($html) if $answer;
     structured_answer => {
         id => 'frequency_spectrum',
         name => 'Answer',
         data => {
             title => $answer,
+            plot => $plot,
         },
         templates => {
             group => 'text',
@@ -354,14 +360,14 @@ sub generate_plot {
     }
 
     #Add plot background
-    $plot->{svg}->group(
-        class => 'plot_background',
-    )->rect(
-        width => '100%',
-        height => $plot->{height}, 
-        x => 0,
-        y => 0
-    );
+#    $plot->{svg}->group(
+#        class => 'plot_background',
+#    )->rect(
+#        width => '100%',
+#        height => $plot->{height}, 
+#        x => 0,
+#        y => 0
+#    );
 
     #Add panel background
     $plot->{svg}->group(
