@@ -2,15 +2,14 @@
     "id": "mongodb_cheat_sheet",
     "name": "MongoDB",
     "template_type": "terminal",
-    "description": "Mongo shell",
+    "description": "MongoDB is an open-source, scalable, high-performance, document database with a dynamic schema written in the C++ programming language.",
     "metadata": {
         "sourceName": "Codecentric",
         "sourceUrl": "https://blog.codecentric.de/files/2012/12/MongoDB-CheatSheet-v1_0.pdf"
     },
     "aliases": [
         "mongo db",
-        "mongo db shell",
-        "MongoDB"
+        "mongo db shell"
     ],
     "section_order": [
         "Basic Conceptes & Shell Commands",
@@ -41,7 +40,7 @@
             },
             {
                 "key": "show collections",
-                "val": "Lists the available collections"
+                "val": "List the available collections"
             },
             {
                 "key": "help",
@@ -99,29 +98,29 @@
         "Finding Documents": [
             {
                 "key": "db.collection.findOne()",
-                "val": "Finds one arbitrary document"
+                "val": "Find one arbitrary document"
             },
             {
                 "key": "db.collection.find().prettyPrint()",
-                "val": "Finds all documents and using nice formatting"
+                "val": "Find all documents and using nice formatting"
             },
             {
                 "key": "db.collection.find(\\{\\}, \\{key:true, _id:false\\})",
-                "val": "Shows only the respective key of the collection"
+                "val": "Show only the respective key of the collection"
             },
             {
                 "key": "db.collection.findOne(\\{'key':'value'\\})",
-                "val": "Finds one document by corresponding attribute"
+                "val": "Find one document by corresponding attribute"
             }
         ],
         "Finding Documents using Operators": [
             {
                 "key": "db.collection.find(\\{class:\\{$gt:’P'\\}\\})",
-                "val": "Greater than / greater than equals"
+                "val": "Greater than / greater than or equal"
             },
             {
                 "key": "db.collection.find(\\{class:\\{$lte:’P'\\}\\})",
-                "val": "Lesser than / lesser than equals"
+                "val": "Less than / less than or equal"
             },
             {
                 "key": "db.collection.find(\\{type:\\{$exists:true\\}\\})",
