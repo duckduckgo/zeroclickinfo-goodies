@@ -87,25 +87,25 @@
     ],
     "Links": [
       {
-        "key": "\\[I'm an inline-style link\\](https://www.duckduckgo.com)",
+        "key": "\\[link text\\](https://duckduckgo.com)",
         "val": "Inline-style link"
       },
       {
-        "key": "\\[I'm an inline-style link with title\\](https://www.google.com \"Google's Homepage\")",
+        "key": "\\[link text\\](https://duckduckgo.com \"DDG Home\")",
         "val": "Inline-style link with title"
       },
       {
-        "key": "\\[I'm a reference-style link\\]\\[Arbitrary case-insensitive reference text\\]",
+        "key": "\\[Reference-style link\\]\\[Arbitrary case-insensitive reference text\\]",
         "val": "Reference style link"
       },
       {
-        "key": "\\[You can use numbers for reference-style link definitions\\]\\[1\\]",
+        "key": "\\[Use numbers for reference-style link definitions\\]\\[1\\]",
         "val": "Links with a reference number. The number needs to be defined as \\[1\\]: http://slashdot.org"
       }
     ],
     "Images": [
       {
-        "key": "!\\[alt text\\](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 1\")",
+        "key": "!\\[alt text\\](https://github.com/n48.png \"Logo Title\")",
         "val": "Inline style"
       },
       {
