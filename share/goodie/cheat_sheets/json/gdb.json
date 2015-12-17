@@ -24,7 +24,7 @@
     "sections": {
         "Starting GDB": [
             {
-                "val": "Starting GDB, with no debugging files",
+                "val": "Starting GDB with no debugging files",
                 "key": "gdb"
             },
             {
