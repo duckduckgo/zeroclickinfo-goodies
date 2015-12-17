@@ -1,0 +1,68 @@
+{
+  "id": "github_flavoured_markdown_cheat_sheet",
+  "name": "Github Flavoured Markdown",
+  "description": "GitHub uses GFM, across the site in \nissues, comments, and pull requests. It differs from standard Markdown in a few significant ways, and adds some additional functionality.",
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "https://help.github.com/articles/github-flavored-markdown/"
+  },
+  "aliases": [
+    "ghfm",
+    "ghfmd"
+  ],
+  "template_type": "terminal",
+  "section_order": [
+    "Multiple underscores in words",
+    "URL autolinking",
+    "Strikethrough",
+    "Fenced code blocks",
+    "Syntax highlighting",
+    "Tables",
+    "Blockquotes",
+    "Inline HTML"
+  ],
+  "sections": {
+    "Multiple underscores in words": [
+      {
+        "key": "eat_apple_daily",
+        "val": "Markdown transforms underscores (_) into italics, GFM ignores underscores in words"
+      }
+    ],
+    "URL autolinking": [
+      {
+        "key": "http://example.com",
+        "val": "GFM will autolink standard URLs, so if you want to link to a URL, instead of setting link text"
+      }
+    ],
+    "Strikethrough": [
+      {
+        "key": "~~text~~",
+        "val": "GFM adds syntax to create strikethrough text, which is missing from standard Markdown"
+      }
+    ],
+    "Fenced code blocks": [
+      {
+        "key": "``` Code block... ``` ",
+        "val": "Standard Markdown converts text with four spaces at the beginning of \neach line into a code block; GFM also supports fenced blocks."
+      }
+    ],
+    "Syntax highlighting": [
+      {
+        "key": "```ruby ... code block ```",
+        "val": "Code blocks can be taken a step further by adding syntax highlighting. In your fenced block, add an optional language identifier"
+      }
+    ],
+    "Tables": [
+      {
+        "key": "First Header  | Second Header\n------------- | -------------\nContent Cell  | Content Cell\nContent Cell  | Content Cell",
+        "val": "You can create tables by assembling a list of words and dividing them with hyphens -\n(for the first row), and then separating each column with a pipe |"
+      }
+    ],
+    "Inline HTML": [
+      {
+        "key": "<p>text</p>",
+        "val": "You can use a subset of HTML within your READMEs, issues, and pull requests"
+      }
+    ]
+  }
+}
