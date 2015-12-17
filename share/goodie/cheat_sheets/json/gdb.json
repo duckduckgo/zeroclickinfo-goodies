@@ -3,7 +3,7 @@
     "name": "GNU Debugger",
     "description": "Basic GDB commands",
     "metadata": {
-        "sourceName": "GDB refcard",
+        "sourceName": "UTEXAS",
         "sourceUrl": "http://users.ece.utexas.edu/~adnan/gdb-refcard.pdf"
     },
     "aliases": [
