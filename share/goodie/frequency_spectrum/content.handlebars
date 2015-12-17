@@ -4,46 +4,31 @@
         <rect height={{height}} width="100%" x="0" y="0" />                                                                                                  
     </g>                                                                                                                                                    
     <g class="plot_panel">                                                                                                                                  
-        <rect height="150" width="75%" x="20%" y="30" />                                                                                                
+        <rect height="{{panelHeight}}" width="{{plot_panel_width}}%" x="{{leftGutter}}%" y="{{topGutter}}" />                                                                                                
     </g>                                                                                                                                                    
-    <g id="x_axis">                                                                                                                                         
-        <text class="x_axis_text" dy="1em" text-anchor="middle" x="20%" y="184">                                                                        
-            <tspan >1</tspan>                                                                                                                       
+    <g id="x_axis">
+        {{#each x_axis}}                                                                                                                                        
+        <text class="x_axis_text" dy="1em" text-anchor="middle" x="{{x}}%" y="{{y}}">                                                                        
+            <tspan >10</tspan>
+            {{#if tspan_cdata}}
+            <tspan baseline-shift="super" dx="-0.5em" dy="-0.2em" style="font-size: 0.5em">{{tspan_cdata}}</tspan>
+            {{/if}}
         </text>                                                                                                                                         
-        <text class="x_axis_text" dy="1em" text-anchor="middle" x="32%" y="184">                                                                        
-            <tspan >10</tspan>                                                                                                                      
-            <tspan baseline-shift="super" dx="-0.5em" dy="-0.2em" style="font-size: 0.5em">4</tspan>                                                
-        </text>                                                                                                                                         
-        <text class="x_axis_text" dy="1em" text-anchor="middle" x="44%" y="184">                                                                        
-            <tspan >10</tspan>                                                                                                                      
-            <tspan baseline-shift="super" dx="-0.5em" dy="-0.2em" style="font-size: 0.5em">8</tspan>                                                
-        </text>                                                                                                                                         
-        <text class="x_axis_text" dy="1em" text-anchor="middle" x="56%" y="184">                                                                        
-            <tspan >10</tspan>                                                                                                                      
-            <tspan baseline-shift="super" dx="-0.5em" dy="-0.2em" style="font-size: 0.5em">12</tspan>                                               
-        </text>                                                                                                                                         
-        <text class="x_axis_text" dy="1em" text-anchor="middle" x="68%" y="184">
-            <tspan >10</tspan>                                                                                                                      
-            <tspan baseline-shift="super" dx="-0.5em" dy="-0.2em" style="font-size: 0.5em">16</tspan>                                               
-        </text>                                                                                                                                         
-        <text class="x_axis_text" dy="1em" text-anchor="middle" x="80%" y="184">                                                                        
-            <tspan >10</tspan>                                                                                                                      
-            <tspan baseline-shift="super" dx="-0.5em" dy="-0.2em" style="font-size: 0.5em">20</tspan>                                               
-        </text>                                                                                                                                         
-        <text class="x_axis_text" dy="1em" text-anchor="middle" x="92%" y="184">                                                                        
-            <tspan >10</tspan>                                                                                                                      
-            <tspan baseline-shift="super" dx="-0.5em" dy="-0.2em" style="font-size: 0.5em">24</tspan>                                               
-        </text>                                                                                                                                         
-        <text class="x_axis_label" dy="1em" text-anchor="middle" x="50%" y="205">                                                                       
+        {{/each}}
+        <text class="x_axis_label" dy="1em" text-anchor="middle" x="50%" y="{{axis_label_y}}">                                                                       
             <tspan >Frequency (Hz)</tspan>                                                                                                          
-        </text>                                                                                                                                         
+        </text>
     </g>                                                                                                                                                    
     <g class="axis_line">                                                                                                                                   
         <g >                                                                                                                                            
-            <line x1="20%" x2="95%" y1="180" y2="180" />                                                                                            
+            {{#with x_axis_line}}
+            <line x1="{{x1}}%" x2="{{x2}}%" y1="{{y1}}" y2="{{y2}}" />
+            {{/with}}
         </g>                                                                                                                                            
-        <g >                                                                                                                                            
-            <line x1="20%" x2="20%" y1="30" y2="180" />                                                                                             
+        <g >
+            {{#with y_axis_line}}
+            <line x1="{{x1}}%" x2="{{x2}}%" y1="{{y1}}" y2="{{y2}}" />
+            {{/with}}
         </g>                                                                                                                                            
     </g>                                                                                                                                                    
     <g id="major_range_radio">                                                                                                                              
@@ -114,8 +99,10 @@
             <tspan id="marker_label">50 Hz</tspan>                                                                                                  
         </text>                                                                                                                                         
     </g>                                                                                                                                                    
-    <g class="marker">                                                                                                                                      
-        <line id="marker" style="stroke: #F7614F" x1="25.0969100130081%" x2="25.0969100130081%" y1="22.5" y2="180" />                                   
+    <g class="marker">
+        {{#with marker_line}}
+        <line id="marker" style="stroke: {{color}}" x1="{{x1}}%" x2="{{x2}}%" y1="{{y1}}" y2="{{y2}}" />
+        {{/with}}
     </g>                                                                                                                                                          
 </svg>
 {{/with}}
