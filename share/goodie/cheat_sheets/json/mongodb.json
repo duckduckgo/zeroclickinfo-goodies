@@ -213,31 +213,31 @@
         "Pipeline Stages": [
             {
                 "key": "$project",
-                "val": "Change the set of documents by modifying keys and values. This is a 1:1 mapping."
+                "val": "Reshapes each document in the stream (add or remove) and for each input document, outputs one document."
             },
             {
                 "key": "$match",
-                "val": "This is a filtering operation and thus this can reduce the amount of documents that are given as input to the next stage. This can be used for example if aggregation should only happen on a subset of the data."
+                "val": "Filters the document stream to allow only matching documents to pass and for each input document, outputs either one document (a match) or zero documents (no match)."
             },
             {
                 "key": "$group",
-                "val": "This does the actual aggregation and as we are grouping by one or more keys this can have a reducing effect on the amount of documents."
+                "val": "Groups input documents by a specified identifier expression and applies the accumulator expression(s) on all input documents and outputs single document."
             },
             {
                 "key": "$sort",
-                "val": "Sorting the documents one way or the other for the next stage. It should be noted that this might use a lot of memory. Thus if possible one should always try to reduce the amount of documents first."
+                "val": "Reorders the document stream by a specified sort key. For each input document, outputs one document."
             },
             {
                 "key": "$skip",
-                "val": "With this it is possible to skip forward in the list of documents for a given amount of documents. This allows for example starting only from the 10th document. Typically this will be used together with “$sort” and especially together with “$limit”."
+                "val": "Skips the first n documents where n is the specified skip number and passes the remaining documents unmodified to the pipeline."
             },
             {
                 "key": "$limit",
-                "val": "This limits the amount of documents to look at by the given number starting from the current position."
+                "val": "Passes the first n documents unmodified to the pipeline where n is the specified limit."
             },
             {
                 "key": "$unwind",
-                "val": "This is used to unwind document that are using arrays. When using an array the data is kind of pre-joined and this operation will be undone with this to have individual documents again. Thus with this stage we will increase the amount of documents for the next stage."
+                "val": "Deconstructs an array field from the input documents to output a document for each element. For each input document, outputs n documents where n is the number of array elements and can be zero for an empty array."
             }
         ],
         "Comparison with SQL": [
@@ -285,7 +285,7 @@
             },
             {
                 "key": "Arbiter",
-                "val": "Arbiter nodes are only there for voting purposes. They can be used to ensure that there is a certain amount of nodes in a replica set even though there are not that many physical servers."
+                "val": "Arbiter nodes are only there for voting purposes and to ensure that number of nodes, even not that physical servers."
             },
             {
                 "key": "Delayed",
@@ -324,20 +324,24 @@
         ],
         "Durability of Writes": [
             {
-                "key": "w=0 && j=0",
-                "val": "This is “fire and forget”."
+                "key": "\\{ w: <value>, j: <boolean>, wtimeout: <number> \\}",
+                "val": "The w option to request acknowledgment that the write operation has propagated to a specified number of mongod instances. j, write operation written to the journal and wtimeout prevent write from blocking indefinitely."
             },
             {
-                "key": "w=1 && j=0",
-                "val": "Waits for an acknowledgement that the write was received and no indexes have been violated. Data can still be lost."
+                "key": "w : 1",
+                "val": "Requests acknowledgement that the write operation has propagated to the standalone mongod and is the default write concern for MongoDB."
             },
             {
-                "key": "w=1 && j=1",
-                "val": "The most save configuration by waiting for the write to the journal to be completed"
+                "key": "w : 0",
+                "val": "Requests no acknowledgment of the write operation. It might return information about socket exceptions and networking errors to the application."
             },
             {
-                "key": "w=0 && j=1",
-                "val": "Basically as same as above."
+                "key": "w : 0 && j : true",
+                "val": "It prevails to request acknowledgement from the standalone mongod or the primary of a replica set."
+            },
+            {
+                "key": "w : \"majority\"",
+                "val": "It  implies j: true. Along, the primary also writes to the on-disk journal before acknowledging the write."
             }
         ]
     }
