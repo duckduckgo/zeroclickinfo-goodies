@@ -1,16 +1,17 @@
 {
   "id": "github_flavoured_markdown_cheat_sheet",
   "name": "Github Flavoured Markdown",
-  "description": "GitHub uses GFM which is different from standard Markdown in a few significant ways, and adds some additional functionality.",
+  "description": "Overview of syntax and common elements for GitHub Flavoured Markdown, a special form of Markdown used across GitHub",
   "metadata": {
     "sourceName": "GitHub",
     "sourceUrl": "https://help.github.com/articles/github-flavored-markdown/"
   },
   "aliases": [
     "ghfm",
+    "gfm",
     "ghfmd"
   ],
-  "template_type": "terminal",
+  "template_type": "code",
   "section_order": [
     "Multiple underscores in words",
     "URL autolinking",
