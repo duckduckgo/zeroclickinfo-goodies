@@ -1,5 +1,5 @@
 package DDG::Goodie::Calculator;
-# ABSTRACT: do simple arthimetical calculations
+# ABSTRACT: do simple arithmetical calculations
 
 use strict;
 use DDG::Goodie;
@@ -26,26 +26,13 @@ attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'],
             github  => ['https://github.com/duckduckgo', 'duckduckgo'],
             github  => ['https://github.com/phylum', 'Daniel Smith'];
 
-triggers query_nowhitespace => qr<
-        ^
-       ( what is | calculate | solve | math )?
-
-        [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -]*
-
-        (?: [0-9 \. ,]* )
-        (?: gross | dozen | pi | e | c | squared | score |)
-        [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]*
-
-        (?(1) (?: -? [0-9 \. , _ ]+ |) |)
-        (?: [\( \) x X × ∙ ⋅ * % + ÷ / \^ \$ -] | times | divided by | plus | minus | fact | factorial | cos | sin | tan | cotan | log | ln | log[_]?\d{1,3} | exp | tanh | sec | csc | squared | sqrt | pi | e )+
-
-        (?: [0-9 \. ,]* )
-        (?: gross | dozen | pi | e | c | squared | score |)
-
-        [\( \) x X × ∙ ⋅ * % + ÷ / \^ 0-9 \. , _ \$ -]* =?
-
-        $
-        >xi;
+my $decimal = qr/(\d+(?:\.\d+))?/;
+# Check for binary operations
+triggers query_nowhitespace => qr/$decimal.*[+\-*\/^].*$decimal/;
+# Check for functions
+triggers query_nowhitespace => qr/\w+\(.*\)/;
+# Check for constants and named operations
+triggers query_nowhitespace => qr/$decimal\w+/;
 
 my $grammar = Marpa::R2::Scanless::G->new(
     {   bless_package => 'Calculator',
@@ -63,24 +50,24 @@ Expression ::=
     || ExprOp                     bless => primary
 
 Factor ::=
-    NumTerm bless => primary
+       NumTerm                 bless => primary
     || NumTerm ('e':i) NumTerm bless => exp
 
 Term ::=
-    Function bless => primary
-    | ('(') Expression (')') bless => paren assoc => group
-    | Factor bless => primary
+       Function bless => primary
+    |  ('(') Expression (')') bless => paren assoc => group
+    |  Factor bless => primary
     || TermOp bless => primary
 
 TermOp ::=
-    Expression ('^') Expression bless => exponentiate assoc => right
+       Expression ('^') Expression bless => exponentiate assoc => right
     || Factor ('squared') bless => square
     || Expression ('*') Expression bless => multiply
-    | Expression ('/') Expression bless => divide
-    | Term ('divided') ('by') Factor bless => divide
+    |  Expression ('/') Expression bless => divide
+    |  Term ('divided') ('by') Factor bless => divide
 
 ExprOp ::=
-    Expression ('+') Term bless => add
+      Expression ('+') Term bless => add
     | Expression ('-') Term bless => subtract
 
 NumTerm ::=
@@ -158,6 +145,7 @@ my %phone_number_regexes = (
     'UK' => qr/0[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}/,
     'UK2' => qr/0[0-9]{4}[ -][0-9]{3}[ -][0-9]{3}/,
 );
+
 sub should_not_trigger {
     my $query = $_;
     return 1 if $query =~ /^\$\d+(?:\.\d+)?$/;
@@ -178,31 +166,63 @@ sub get_style {
     my @numbers = grep { $_ =~ /^$number_re$/ } (split /[^\d,.]+/, $text);
     return number_style_for(@numbers);
 }
+
+sub get_currency {
+    my $text = $_;
+    # Add new currency symbols here.
+    $text =~ /(?<currency>[\$])$decimal/;
+    return $+{'currency'};
+}
+
+# For prefix currencies that round to 2 decimal places.
+sub format_for_currency {
+    my ($text, $currency) = @_;
+    return $text unless defined $currency;
+    my $result = sprintf('%0.2f', $text);
+    return $currency . $result;
+}
+
+sub standardize_operator_symbols {
+    my $text = shift;
+    # FIXME: Currently just replacing 'x', might occur in functions!
+    $text =~ s/[∙⋅×x]/*/g;
+    $text =~ s#[÷]#/#g;
+    return $text;
+}
+
+sub get_results {
+    my $to_compute = shift;
+    my $recce = Marpa::R2::Scanless::R->new(
+        { grammar => $grammar,
+        } );
+    my $parsed = get_parse($recce, $to_compute) or return;
+    my $generated_input = ${$parsed}->show();
+    my $val_result = ${$parsed}->doit();
+    return ($generated_input, $val_result);
+}
+
+sub to_display {
+    my $query = shift;
+    my $currency = get_currency $query;
+    $query = standardize_operator_symbols $query;
+    my $style = get_style $query or return;
+    my $to_compute = $style->for_computation($query);
+    my ($generated_input, $val_result) = get_results $to_compute or return;
+    return if ($val_result eq 'inf');
+    $val_result = format_for_currency $val_result, $currency;
+    my $result = $style->for_display($val_result);
+    $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
+    # Didn't come up with anything the user didn't already know.
+    return if ($generated_input eq $result);
+    return ($generated_input, $result);
+}
+
 handle query_nowhitespace => sub {
     my $query = $_;
 
     return if should_not_trigger $query;
-    my $has_dollars = $query =~ /\$/;
     $query =~ s/^(?:whatis|calculate|solve|math)//;
-    # FIXME: Currently just replacing 'x', might occur in functions!
-    $query =~ s/[∙⋅×x]/*/g;
-    $query =~ s#[÷]#/#g;
-    my $style = get_style $query or return;
-    my $recce = Marpa::R2::Scanless::R->new(
-        { grammar => $grammar,
-            # trace_terminals => 1,
-        } );
-    my $to_compute = $style->for_computation($query);
-    my $parsed = get_parse($recce, $to_compute) or return;
-    my $generated_input = ${$parsed}->show();
-    my $val_result = ${$parsed}->doit();
-    return if ($val_result eq 'inf');
-    $val_result =~ s/^\((.*)\)$/$1/;
-    $val_result = sprintf('%0.2f', $val_result) if $has_dollars;
-    my $result = $style->for_display($val_result);
-    $result = '$' . $result if $has_dollars;
-    $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
-    return if ($generated_input eq $result);
+    my ($generated_input, $result) = to_display $query or return;
     return $result,
         structured_answer => {
             id         => 'calculator',
@@ -212,7 +232,7 @@ handle query_nowhitespace => sub {
                 subtitle => $generated_input . ' = ' . $result,
             },
             templates => {
-              group => "text",
+              group => 'text',
               moreAt => 0,
             },
         };
@@ -230,6 +250,13 @@ sub show {
     no strict 'refs';
     *$full_name = *{uc $full_name} = $sub;
 }
+
+# Usage: binary_doit NAME, SUB
+# SUB should take 2 arguments and return the result of the doit
+# action.
+#
+# A subroutine of the form Calculator::NAME::doit will be created
+# in the global namespace.
 sub binary_doit {
     my ($name, $sub) = @_;
     doit $name, sub {
@@ -290,6 +317,8 @@ sub Calculator::Calculator::doit {
     $result = Math::BigFloat->new($result)->bround(15);
     my $to_report = sprintf('%0.30f', $result) == 0 ? 0 : $result;
     $to_report  = sprintf('%0.15g', $to_report);
+    $to_report =~ s/^\((.*)\)$/$1/;
+    return $to_report;
 }
 
 unary_show 'Calculator', sub { $_[0] };
@@ -300,6 +329,18 @@ show 'constant_coefficient', sub {
     return $self->[0]->show() . ' ' . $self->[1]->show();
 };
 
+# Usage: new_unary_function NAME, REP, SUB
+# A subroutine of the form Calculator::NAME::doit and
+# Calculator::NAME::show will be created in the global namespace.
+#
+# REP is the string that will be displayed as the function name
+# in the formatted input (e.g, using 'sin' for the sine function,
+# would display as 'sin(ARG)').
+# SUB can either be a string or a routine.
+# If SUB is a string, then it should represent a method of the
+# Math::BigFloat package.
+# If SUB is a routine, then it should take a single argument
+# and return the result of applying the function.
 sub new_unary_function {
     my ($name, $rep, $sub) = @_;
     if (ref $sub ne 'CODE') {
