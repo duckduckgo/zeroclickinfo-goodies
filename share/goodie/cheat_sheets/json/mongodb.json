@@ -212,31 +212,31 @@
         "Pipeline Stages": [
             {
                 "key": "$project",
-                "val": "Reshapes each document in the stream (add or remove) and for each input document, outputs one document."
+                "val": "Reshapes each document in the stream (add or remove) and for each input document, outputs one document"
             },
             {
                 "key": "$match",
-                "val": "Filters the document stream to allow only matching documents to pass and for each input document, outputs either one document (a match) or zero documents (no match)."
+                "val": "Filters the document stream to allow only matching documents to pass and for each input document, outputs either one document (a match) or zero documents (no match)"
             },
             {
                 "key": "$group",
-                "val": "Groups input documents by a specified identifier expression and applies the accumulator expression(s) on all input documents and outputs single document."
+                "val": "Groups input documents by a specified identifier expression and applies the accumulator expression(s) on all input documents and outputs single document"
             },
             {
                 "key": "$sort",
-                "val": "Reorders the document stream by a specified sort key. For each input document, outputs one document."
+                "val": "Reorders the document stream by a specified sort key and for each input document, outputs one document"
             },
             {
                 "key": "$skip",
-                "val": "Skips the first n documents where n is the specified skip number and passes the remaining documents unmodified to the pipeline."
+                "val": "Skips the first n documents where n is the specified skip number and passes the remaining documents unmodified to the pipeline"
             },
             {
                 "key": "$limit",
-                "val": "Passes the first n documents unmodified to the pipeline where n is the specified limit."
+                "val": "Passes the first n documents unmodified to the pipeline where n is the specified limit"
             },
             {
                 "key": "$unwind",
-                "val": "Deconstructs an array field from the input documents to output a document for each element. For each input document, outputs n documents where n is the number of array elements and can be zero for an empty array."
+                "val": "Deconstructs an array field from the input documents to output a document for each element and each input document, outputs n documents where n is the number of array elements and can be zero for an empty array"
             }
         ],
         "Comparison with SQL": [
@@ -280,45 +280,45 @@
         "Replica Sets": [
             {
                 "key": "Regular",
-                "val": "This is the most typical kind of node. It can act as a primary or secondary node"
+                "val": "This is the most typical kind of node and act as a primary or secondary node"
             },
             {
                 "key": "Arbiter",
-                "val": "Arbiter nodes are only there for voting purposes and to ensure that number of nodes, even not that physical servers."
+                "val": "Arbiter nodes are only there for voting purposes and to ensure that number of nodes, even not that physical servers"
             },
             {
                 "key": "Delayed",
-                "val": "Often used as a disaster recovery node. The data stored here is usually a few hours behind the real working data."
+                "val": "Often used as a disaster recovery node and the data stored here is usually a few hours behind the real working data"
             },
             {
                 "key": "Hidden",
-                "val": "Often used for analytics in the replica set."
+                "val": "Often used for analytics in the replica set"
             }
         ],
         "Sharding": [
             {
                 "key": "1",
-                "val": "Every document has to define a shard-key."
+                "val": "Every document has to define a shard-key"
             },
             {
                 "key": "2",
-                "val": "The value of the shard-key is immutable."
+                "val": "The value of the shard-key is immutable"
             },
             {
                 "key": "3",
-                "val": "The shard-key must be part of an index and it must be the first field in that index."
+                "val": "The shard-key must be part of an index and it must be the first field in that index"
             },
             {
                 "key": "4",
-                "val": "There can be no unique index unless the shard-key is part of it and is then the first field."
+                "val": "There can be no unique index unless the shard-key is part of it and is then the first field"
             },
             {
                 "key": "5",
-                "val": "Reads done without specifying the shard-key will lead to requests to all the different shards."
+                "val": "Reads done without specifying the shard-key will lead to requests to all the different shards"
             },
             {
                 "key": "6",
-                "val": "The shard-key must offer sufficient cardinality to be able to utilize all shards."
+                "val": "The shard-key must offer sufficient cardinality to be able to utilize all shards"
             }
         ],
         "Durability of Writes": [
