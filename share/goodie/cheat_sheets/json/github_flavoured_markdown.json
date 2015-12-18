@@ -42,7 +42,7 @@
     ],
     "Fenced code blocks": [
       {
-        "key": "``` Code block... ``` ",
+        "key": "``` Code block... ```",
         "val": "Standard Markdown converts text with four spaces at the beginning of each line into a code block; GFM also supports fenced blocks."
       }
     ],
