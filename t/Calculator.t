@@ -172,6 +172,10 @@ ddg_goodie_test(
     '01780-111-111'      => undef,
     '01780-111-111x400'  => undef,
     '(01780) 111 111'    => undef,
+    # Optional numbers around decimal points
+    '1.' => build_test('1', '1.'),
+    '.7' => build_test('0.7', '.7'),
+    '-23.' => build_test('-23', '-23.'),
 );
 
 done_testing;

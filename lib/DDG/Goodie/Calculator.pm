@@ -46,24 +46,24 @@ lexeme default = action => [ start, length, value ]
 Calculator ::= Expression
 
 Expression ::=
-     Term                        bless => primary
-    || ExprOp                     bless => primary
+     Term     bless => primary
+    || ExprOp bless => primary
 
 Factor ::=
        NumTerm                 bless => primary
     || NumTerm ('e':i) NumTerm bless => exp
 
 Term ::=
-       Function bless => primary
+       Function               bless => primary
     |  ('(') Expression (')') bless => paren assoc => group
-    |  Factor bless => primary
-    || TermOp bless => primary
+    |  Factor                 bless => primary
+    || TermOp                 bless => primary
 
 TermOp ::=
-       Expression ('^') Expression bless => exponentiate assoc => right
-    || Factor ('squared') bless => square
-    || Expression ('*') Expression bless => multiply
-    |  Expression ('/') Expression bless => divide
+       Expression ('^') Expression    bless => exponentiate assoc => right
+    || Factor ('squared')             bless => square
+    || Expression ('*') Expression    bless => multiply
+    |  Expression ('/') Expression    bless => divide
     |  Term ('divided') ('by') Factor bless => divide
 
 ExprOp ::=
@@ -82,31 +82,31 @@ Constant ::=
     | score bless => const_score
 
 Function ::=
-      ('sqrt' ) Argument bless => square_root
-    | ('sin'  ) Argument bless => sine
-    | ('cos'  ) Argument bless => cosine
-    | ('tan'  ) Argument bless => tangent
-    | ('csc'  ) Argument bless => cosec
-    | ('sec'  ) Argument bless => secant
-    | ('cotan') Argument bless => cotangent
+      ('sqrt' ) Argument         bless => square_root
+    | ('sin'  ) Argument         bless => sine
+    | ('cos'  ) Argument         bless => cosine
+    | ('tan'  ) Argument         bless => tangent
+    | ('csc'  ) Argument         bless => cosec
+    | ('sec'  ) Argument         bless => secant
+    | ('cotan') Argument         bless => cotangent
     | ('log_' ) NumTerm Argument bless => logarithm
     | ('log'  ) NumTerm Argument bless => logarithm
-    | ('ln'   ) Argument bless => natural_logarithm
-    | ('log'  ) Argument bless => natural_logarithm
-    | ('fact' ) Argument bless => factorial
-    | ('factorial') Argument bless => factorial
+    | ('ln'   ) Argument         bless => natural_logarithm
+    | ('log'  ) Argument         bless => natural_logarithm
+    | ('fact' ) Argument         bless => factorial
+    | ('factorial') Argument     bless => factorial
 
 # Argument for a unary function.
 Argument ::= ('(') Expression (')') bless => primary
 
-pi ~ 'pi':i
+pi    ~ 'pi':i
 euler ~ 'e':i
 dozen ~ 'dozen':i
 score ~ 'score':i
 
 Number ::=
     [$] BaseNumber bless => prefix_currency
-    | BaseNumber bless => primary
+    | BaseNumber   bless => primary
 
 BaseNumber ::=
     Integer   bless => integer
@@ -114,9 +114,12 @@ BaseNumber ::=
 
 Integer ~ '-' digits | digits
 Decimal ~ '-' digits '.' digits | digits '.' digits
-           | '.' digits | digits '.'
-digits ~ [\d]+
-:discard ~ whitespace
+           | '.' digits         | digits '.'
+           | '-' digits '.'
+
+digits     ~ [\d]+
+
+:discard   ~ whitespace
 whitespace ~ [\s]+
 END_OF_SOURCE
     }
