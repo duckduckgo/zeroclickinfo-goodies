@@ -69,7 +69,7 @@ sub should_not_trigger {
     };
     return 1 if $query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
     # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
-    return 1 if ($query =~ /\b0x/);
+    return 1 if ($query =~ /\b0\s*x/);
     # Probably want to talk about addresses, not calculations.
     return 1 if ($query =~ $network);
     return 0;
@@ -131,11 +131,11 @@ sub to_display {
     return ($generated_input, $result);
 }
 
-handle query_nowhitespace => sub {
+handle query => sub {
     my $query = $_;
 
     return if should_not_trigger $query;
-    $query =~ s/^(?:whatis|calculate|solve|math)//;
+    $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
     my ($generated_input, $result) = to_display $query or return;
     return $result,
         structured_answer => {
