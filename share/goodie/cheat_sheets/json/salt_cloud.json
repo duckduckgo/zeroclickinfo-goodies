@@ -1,5 +1,5 @@
 {
-    "id": "saltcloud_cheat_sheet",
+    "id": "salt_cloud_cheat_sheet",
      "name": "Salt Cloud",
     "description": "Common commands for salt cloud CLI",
     "metadata": {
