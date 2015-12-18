@@ -13,38 +13,108 @@ ddg_goodie_test(
     ],
     "bash [ -a b ]" => test_zci(
 	qr/.+ true if b exists./,
-	html => qr/.+/,
-	heading => "[ -a b ] (Bash)",
+	structured_answer => {
+        id => 'bash_primary_expressions',
+        name => 'Answer',
+        data => '-ANY-',
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.bash_primary_expressions.content'
+            }
+        }
+    }
     ),
     'bash [[ "abc" < "cba" ]]' => test_zci(
 	qr/.+ true if "abc" string-sorts before "cba" in the current locale./,
-	html => qr/.+/,
-	heading => '[[ &quot;abc&quot; &lt; &quot;cba&quot; ]] (Bash)',
+	structured_answer => {
+        id => 'bash_primary_expressions',
+        name => 'Answer',
+        data => '-ANY-',
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.bash_primary_expressions.content'
+            }
+        }
+    }
     ),
     'bash [ 2 -gt 1 ]' => test_zci(
 	qr/.+ true if 2 is numerically greater than 1./,
-	html => qr/.+/,
-	heading => '[ 2 -gt 1 ] (Bash)',
+	structured_answer => {
+        id => 'bash_primary_expressions',
+        name => 'Answer',
+        data => '-ANY-',
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.bash_primary_expressions.content'
+            }
+        }
+    }
     ),
     'bash [ ! hello == world ]' => test_zci(
 	qr/.+ false if the strings hello and world are equal./,
-	html => qr/.+/,
-	heading => '[ ! hello == world ] (Bash)',
+	structured_answer => {
+        id => 'bash_primary_expressions',
+        name => 'Answer',
+        data => '-ANY-',
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.bash_primary_expressions.content'
+            }
+        }
+    }
     ),
     'bash [[ /tmp/hello -nt /etc/test ]]' => test_zci (
 	qr#.+ true if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not.#,
-	html => qr/.+/,
-	heading => '[[ /tmp/hello -nt /etc/test ]] (Bash)',
+	structured_answer => {
+        id => 'bash_primary_expressions',
+        name => 'Answer',
+        data => '-ANY-',
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.bash_primary_expressions.content'
+            }
+        }
+    }
     ),
     'bash [ -z hello ]' => test_zci(
         qr/.+ true if the length of 'hello' is zero./,
-        html => qr/.+/,
-	heading => '[ -z hello ] (Bash)',
+        structured_answer => {
+        id => 'bash_primary_expressions',
+        name => 'Answer',
+        data => '-ANY-',
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.bash_primary_expressions.content'
+            }
+        }
+    }
     ),
     'bash if [[ "abc" -lt "cba" ]]' => test_zci(
         qr/.+ true if "abc" is numerically less than "cba"./,
-        html => qr/.+/,
-	heading => '[[ &quot;abc&quot; -lt &quot;cba&quot; ]] (Bash)',
+        structured_answer => {
+        id => 'bash_primary_expressions',
+        name => 'Answer',
+        data => '-ANY-',
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.bash_primary_expressions.content'
+            }
+        }
+    }
     ),
     'bash if [ 1 -lt 2 -a 1 -lt 3 ]' => undef,
     'bash if [ ![ 1 -lt 2 ] ]' => undef,
