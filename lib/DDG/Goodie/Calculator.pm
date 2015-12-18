@@ -1,5 +1,5 @@
 package DDG::Goodie::Calculator;
-# ABSTRACT: do simple arithmetical calculations
+# ABSTRACT: perform simple arithmetical calculations
 
 use strict;
 use DDG::Goodie;
