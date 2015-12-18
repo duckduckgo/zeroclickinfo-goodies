@@ -19,7 +19,7 @@ sub build_result {
         name => 'Answer',
         data => {
             title => $result,
-            subtitle => "$formatted_input = $result",
+            subtitle => "Calculate: $formatted_input",
         },
         templates => {
             group => 'text',
