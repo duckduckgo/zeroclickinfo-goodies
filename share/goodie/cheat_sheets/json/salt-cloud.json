@@ -3,20 +3,20 @@
      "name": "Salt Cloud",
     "description": "Common commands for salt cloud CLI",
     "metadata": {
-        "sourceName": "SaltStack Website",
+        "sourceName": "SaltStack",
         "sourceUrl": "https://docs.saltstack.com/en/latest/ref/cli/"
     },
     "template_type": "terminal",
     "section_order": [
-        "OPTIONS",
-        "EXECUTION OPTIONS",
-        "QUERY OPTIONS",
-        "CLOUD PROVIDERS LISTINGS",
-        "OUTPUT OPTIONS"
+        "Options",
+        "Execution Options",
+        "Query Options",
+        "Cloud Providers Listings",
+        "Output Options"
     ],
     "sections": {
         "OPTIONS": [{
-            "val": "Print the version of Salt that is running.",
+            "val": "Print the version of Salt that is running",
             "key": "salt --version"
         }, {
             "val": "Show program's dependencies and version number, and then exit",
@@ -29,14 +29,14 @@
             "key": "salt -c"
         }],
         
-        "EXECUTION OPTIONS": [{
-            "val": "Specify which region to connect to.",
+        "Execution Options": [{
+            "val": "Specify which region to connect to",
             "key": "salt-cloud -L"
         }, {
             "val": "Perform an action that may be specific to this cloud provider. This argument requires one or more instance names to be specified",
             "key": "salt-cloud -a"
         }, {
-            "val": "Perform an function that may be specific to this cloud provider, that does not apply to an instance. This argument requires a provider to be specified (i.e.: nova)",
+            "val": "Perform a function that may be specific to this cloud provider, that does not apply to an instance. This argument requires a provider to be specified (i.e.: nova)",
             "key": "salt-cloud -f <FUNC-NAME> <PROVIDER>"
         }, {
             "val": "Specify a map file to use. If used without any other options, this option will ensure that all of the mapped VMs are created. If the named VM already exists then it will be skipped",
@@ -67,7 +67,7 @@
             "key": "salt-cloud --script-args"
         }],
         
-         "QUERY OPTIONS": [{
+         "Query Options": [{
             "val": "Execute a query and return some information about the nodes running on configured cloud providers",
             "key": "salt-cloud -Q"
         }, {
@@ -84,7 +84,7 @@
             "key": "salt-cloud --list-profiles"
         }],
         
-        "CLOUD PROVIDERS LISTINGS": [{
+        "Cloud Providers Listings": [{
             "val": "Display a list of locations available in configured cloud providers. Pass the cloud provider that available locations are desired on, aka \"linode\", or pass \"all\" to list locations for all configured cloud providers",
             "key": "salt-cloud --list-locations"
         }, {
@@ -95,7 +95,7 @@
             "key": "salt-cloud --list-sizes"
         }],
         
-        "OUTPUT OPTIONS": [{
+        "Output Options": [{
             "val": "Pass in an alternative outputter to display the return of data. This outputter can be any of the available outputters",
             "key": "salt-cloud --out"
         }, {
