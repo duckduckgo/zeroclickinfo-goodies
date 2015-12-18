@@ -814,7 +814,7 @@ ddg_goodie_test(
         }
     ),
     'fact(3)' => test_zci(
-        'fact(3) = 6',
+        'factorial(3) = 6',
         heading           => 'Calculator',
         structured_answer => {
             input     => ['fact(3)'],
@@ -823,7 +823,7 @@ ddg_goodie_test(
         }
     ),
     'factorial(3)' => test_zci(
-        'fact(3) = 6',
+        'factorial(3) = 6',
         heading           => 'Calculator',
         structured_answer => {
             input     => ['fact(3)'],
