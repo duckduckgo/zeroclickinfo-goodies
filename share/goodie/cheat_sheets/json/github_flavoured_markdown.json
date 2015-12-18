@@ -1,7 +1,7 @@
 {
   "id": "github_flavoured_markdown_cheat_sheet",
   "name": "Github Flavoured Markdown",
-  "description": "GitHub uses GFM, across the site in issues, comments, and pull requests. It differs from standard Markdown in a few significant ways, and adds some additional functionality.",
+  "description": "GitHub uses GFM which is different from standard Markdown in a few significant ways, and adds some additional functionality.",
   "metadata": {
     "sourceName": "GitHub",
     "sourceUrl": "https://help.github.com/articles/github-flavored-markdown/"
