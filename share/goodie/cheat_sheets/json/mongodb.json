@@ -2,7 +2,7 @@
     "id": "mongodb_cheat_sheet",
     "name": "MongoDB",
     "template_type": "terminal",
-    "description": "MongoDB is an open-source, scalable, high-performance, document database with a dynamic schema written in the C++ programming language.",
+    "description": "An open-source, scalable, high-performance, document database with a dynamic schema written in the C++ programming language.",
     "metadata": {
         "sourceName": "Codecentric",
         "sourceUrl": "https://blog.codecentric.de/files/2012/12/MongoDB-CheatSheet-v1_0.pdf"
@@ -40,7 +40,7 @@
             },
             {
                 "key": "show collections",
-                "val": "List the available collections"
+                "val": "Lists the available collections"
             },
             {
                 "key": "help",
@@ -106,7 +106,7 @@
             },
             {
                 "key": "db.collection.find(\\{\\}, \\{key:true, _id:false\\})",
-                "val": "Show only the respective key of the collection"
+                "val": "Shows only the respective key of the collection"
             },
             {
                 "key": "db.collection.findOne(\\{'key':'value'\\})",
@@ -324,23 +324,23 @@
         "Durability of Writes": [
             {
                 "key": "\\{ w: <value>, j: <boolean>, wtimeout: <number> \\}",
-                "val": "The w option to request acknowledgment that the write operation has propagated to a specified number of mongod instances. j, write operation written to the journal and wtimeout prevent write from blocking indefinitely."
+                "val": "The w option to request acknowledgment that the write operation has propagated to a specified number of mongod instances. j, write operation written to the journal and wtimeout prevent write from blocking indefinitely"
             },
             {
                 "key": "w : 1",
-                "val": "Requests acknowledgement that the write operation has propagated to the standalone mongod and is the default write concern for MongoDB."
+                "val": "Requests acknowledgement that the write operation has propagated to the standalone mongod and is the default write concern for MongoDB"
             },
             {
                 "key": "w : 0",
-                "val": "Requests no acknowledgment of the write operation. It might return information about socket exceptions and networking errors to the application."
+                "val": "Requests no acknowledgment of the write operation and might return information about socket exceptions and networking errors to the application"
             },
             {
                 "key": "w : 0 && j : true",
-                "val": "It prevails to request acknowledgement from the standalone mongod or the primary of a replica set."
+                "val": "It prevails to request acknowledgement from the standalone mongod or the primary of a replica set"
             },
             {
                 "key": "w : \"majority\"",
-                "val": "It  implies j: true. Along, the primary also writes to the on-disk journal before acknowledging the write."
+                "val": "It  implies j: true along, the primary also writes to the on-disk journal before acknowledging the write"
             }
         ]
     }
