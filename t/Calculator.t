@@ -43,6 +43,8 @@ ddg_goodie_test(
     'dozen + dozen' => build_test('24', 'dozen + dozen'),
     '4 score + 7'   => build_test('87', '4 score + 7'),
     '2pi'           => build_test('6.28318530717959', '2 pi'),
+    '(pi^4+pi^5)^(1/6)'   => build_test('2.71828180861192', '(pi ^ 4 + pi ^ 5) ^ (1 / 6)'),
+    '(pi^4+pi^5)^(1/6)+1' => build_test('3.71828180861192', '(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1'),
     # Misc
     '2^2'                 => build_test('4', '2 ^ 2'),
     '2^0.2'               => build_test('1.14869835499704', '2 ^ 0.2'),
@@ -51,8 +53,6 @@ ddg_goodie_test(
     '2 *7'                => build_test('14', '2 * 7'),
     '418.1 / 2'           => build_test('209.05', '418.1 / 2'),
     '418.005 / 8'         => build_test('52.250625', '418.005 / 8'),
-    '(pi^4+pi^5)^(1/6)'   => build_test('2.71828180861192', '(pi ^ 4 + pi ^ 5) ^ (1 / 6)'),
-    '(pi^4+pi^5)^(1/6)+1' => build_test('3.71828180861192', '(pi ^ 4 + pi ^ 5) ^ (1 / 6) + 1'),
     '5^4^(3-2)^1'         => build_test('625', '5 ^ 4 ^ (3 - 2) ^ 1'),
     '(5-4)^(3-2)^1'       => build_test('1', '(5 - 4) ^ (3 - 2) ^ 1'),
     '(5+4-3)^(2-1)'       => build_test('6', '(5 + 4 - 3) ^ (2 - 1)'),
@@ -60,6 +60,8 @@ ddg_goodie_test(
     '0.8^2 + 0.6^2'       => build_test('1', '0.8 ^ 2 + 0.6 ^ 2'),
     '0.8158 - 0.8157'     => build_test('0.0001', '0.8158 - 0.8157'),
     '424334+2253828'      => build_test('2,678,162', '424,334 + 2,253,828'),
+    '1 + 7'               => build_test('8', '1 + 7'),
+    '8 / 4',              => build_test('2', '8 / 4'),
     # Logarithms
     'log(3)'         => build_test('1.09861228866811', 'ln(3)'),
     'ln(3)'          => build_test('1.09861228866811', 'ln(3)'),
@@ -73,6 +75,7 @@ ddg_goodie_test(
     '$3.45+$34.45' => build_test('$37.90', '$3.45 + $34.45'),
     '$3+$34'       => build_test('$37.00', '$3.00 + $34.00'),
     '$3,4+$34,4'   => build_test('$37,80', '$3,40 + $34,40'),
+    '$2 + $7'      => build_test('$9.00',  '$2.00 + $7.00'),
     '$5'           => undef,
     'solve $50'    => undef,
     # Exponential notation
@@ -98,6 +101,7 @@ ddg_goodie_test(
     '1 - 1'       => build_test('0', '1 - 1'),
     # Trigonometric functions
     '1 + sin(pi)'          => build_test('1', '1 + sin(pi)'),
+    '1 + (3 / cos(pi))'    => build_test('-2', '1 + (3 / cos(pi))'),
     'sin(pi/2)'            => build_test('1', 'sin(pi / 2)'),
     'sin(pi)'              => build_test('0', 'sin(pi)'),
     'sin(1,0) + 1,05'      => build_test('1,8914709848079', 'sin(1,0) + 1,05'),
@@ -123,6 +127,7 @@ ddg_goodie_test(
     '2^3 squared'           => build_test('512', '2 ^ 3 squared'),
     '1.0 + 5 squared'       => build_test('26', '1.0 + 5 squared'),
     '2divided by 4'         => build_test('0.5', '2 / 4'),
+    '60 divided by 15'      => build_test('4', '60 / 15'),
 
     # Misc functions
     'sqrt(4)'                => build_test('2', 'sqrt(4)'),

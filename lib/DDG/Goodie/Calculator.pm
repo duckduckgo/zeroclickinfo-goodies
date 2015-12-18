@@ -15,8 +15,11 @@ use utf8;
 zci answer_type => "calc";
 zci is_cached   => 1;
 
-primary_example_queries '$3.43+$34.45';
-secondary_example_queries '64*343';
+primary_example_queries '1 + 7', '5 squared', '8 / 4';
+secondary_example_queries
+    '$2 + $7',
+    '60 divided by 15',
+    '1 + (3 / cos(pi))';
 description 'Basic calculations';
 name 'Calculator';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
