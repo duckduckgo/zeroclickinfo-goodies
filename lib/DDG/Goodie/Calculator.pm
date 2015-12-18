@@ -4,15 +4,12 @@ package DDG::Goodie::Calculator;
 use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
-
-use Marpa::R2;
-use List::Util qw( max );
-use Math::Trig;
-use Math::BigInt;
-use Math::BigFloat;
 use utf8;
 
-zci answer_type => "calc";
+use Marpa::R2;
+use Math::BigFloat;
+
+zci answer_type => "calculation";
 zci is_cached   => 1;
 
 primary_example_queries '1 + 7', '5 squared', '8 / 4';
@@ -20,14 +17,12 @@ secondary_example_queries
     '$2 + $7',
     '60 divided by 15',
     '1 + (3 / cos(pi))';
-description 'Basic calculations';
+description 'Perform arithmetical calculations';
 name 'Calculator';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
 category 'calculations';
 topics 'math';
-attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'],
-            github  => ['https://github.com/duckduckgo', 'duckduckgo'],
-            github  => ['https://github.com/phylum', 'Daniel Smith'];
+attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
 
 my $decimal = qr/(\d+(?:\.\d+))?/;
 # Check for binary operations
@@ -49,12 +44,8 @@ lexeme default = action => [ start, length, value ]
 Calculator ::= Expression
 
 Expression ::=
-     Term     bless => primary
+       Term   bless => primary
     || ExprOp bless => primary
-
-Factor ::=
-       NumTerm                 bless => primary
-    || NumTerm ('e':i) NumTerm bless => exp
 
 Term ::=
        Function               bless => primary
@@ -73,6 +64,10 @@ ExprOp ::=
       Expression ('+') Term bless => add
     | Expression ('-') Term bless => subtract
 
+Factor ::=
+       NumTerm                 bless => primary
+    || NumTerm ('e':i) NumTerm bless => exp
+
 NumTerm ::=
        Number Constant bless => constant_coefficient
     || Constant        bless => primary
@@ -84,40 +79,40 @@ Constant ::=
     | dozen bless => const_dozen
     | score bless => const_score
 
-Function ::=
-      ('sqrt' ) Argument         bless => square_root
-    | ('sin'  ) Argument         bless => sine
-    | ('cos'  ) Argument         bless => cosine
-    | ('tan'  ) Argument         bless => tangent
-    | ('csc'  ) Argument         bless => cosec
-    | ('sec'  ) Argument         bless => secant
-    | ('cotan') Argument         bless => cotangent
-    | ('log_' ) NumTerm Argument bless => logarithm
-    | ('log'  ) NumTerm Argument bless => logarithm
-    | ('ln'   ) Argument         bless => natural_logarithm
-    | ('log'  ) Argument         bless => natural_logarithm
-    | ('fact' ) Argument         bless => factorial
-    | ('factorial') Argument     bless => factorial
-
-# Argument for a unary function.
-Argument ::= ('(') Expression (')') bless => primary
-
 pi    ~ 'pi':i
 euler ~ 'e':i
 dozen ~ 'dozen':i
 score ~ 'score':i
 
+Function ::=
+      ('sqrt' )         Argument bless => square_root
+    | ('sin'  )         Argument bless => sine
+    | ('cos'  )         Argument bless => cosine
+    | ('tan'  )         Argument bless => tangent
+    | ('csc'  )         Argument bless => cosec
+    | ('sec'  )         Argument bless => secant
+    | ('cotan')         Argument bless => cotangent
+    | ('log_' ) NumTerm Argument bless => logarithm
+    | ('log'  ) NumTerm Argument bless => logarithm
+    | ('ln'   )         Argument bless => natural_logarithm
+    | ('log'  )         Argument bless => natural_logarithm
+    | ('fact' )         Argument bless => factorial
+    | ('factorial')     Argument bless => factorial
+
+# Argument for a unary function.
+Argument ::= ('(') Expression (')') bless => primary
+
 Number ::=
-    [$] BaseNumber bless => prefix_currency
-    | BaseNumber   bless => primary
+      [$] BaseNumber bless => prefix_currency
+    |     BaseNumber bless => primary
 
 BaseNumber ::=
-    Integer   bless => integer
+      Integer bless => integer
     | Decimal bless => decimal
 
-Integer ~ '-' digits | digits
-Decimal ~ '-' digits '.' digits | digits '.' digits
-           | '.' digits         | digits '.'
+Integer ~    '-' digits     | digits
+Decimal ~    '-' digits '.'   digits | digits '.' digits
+           | '.' digits     | digits '.'
            | '-' digits '.'
 
 digits     ~ [\d]+
@@ -129,22 +124,11 @@ END_OF_SOURCE
 );
 
 
-my $number_re = number_style_regex();
-
-my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;                          # Each octet should look like a number between 0 and 255.
-my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;                          # There should be 4 of them separated by 3 dots.
-my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;                                # 0-32
-my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;         # Looks like network notation, either CIDR or subnet mask
-
-
 sub get_parse {
   my ($recce, $input) = @_;
   eval { $recce->read(\$input) } or return undef;
-  my $value_ref = $recce->value();
-  return $value_ref;
+  return $recce->value();
 };
-
-Math::BigFloat->round_mode('+inf');
 
 my %phone_number_regexes = (
     'US' => qr/[0-9]{3}(?: |\-)[0-9]{3}\-[0-9]{4}/,
@@ -152,9 +136,17 @@ my %phone_number_regexes = (
     'UK2' => qr/0[0-9]{4}[ -][0-9]{3}[ -][0-9]{3}/,
 );
 
+my $number_re = number_style_regex();
+# Each octet should look like a number between 0 and 255.
+my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;
+# There should be 4 of them separated by 3 dots.
+my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;
+# 0-32
+my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;
+# Looks like network notation, either CIDR or subnet mask
+my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;
 sub should_not_trigger {
     my $query = $_;
-    return 1 if $query =~ /^\$\d+(?:\.\d+)?$/;
     # Probably are searching for a phone number, not making a calculation
     for my $phone_regex (%phone_number_regexes) {
         return 1 if $query =~ $phone_regex;
@@ -244,6 +236,11 @@ handle query_nowhitespace => sub {
         };
 };
 
+
+# Functionality
+
+Math::BigFloat->round_mode('+inf');
+
 sub doit {
     my ($name, $sub) = @_;
     my $full_name = 'Calculator::' . $name . '::doit';
@@ -267,7 +264,8 @@ sub binary_doit {
     my ($name, $sub) = @_;
     doit $name, sub {
         my $self = shift;
-        return $sub->($self->[0]->doit->copy(), $self->[1]->doit->copy());
+        return $sub->($self->[0]->doit->copy(),
+                      $self->[1]->doit->copy());
     };
 }
 sub binary_show {
@@ -357,9 +355,10 @@ sub new_unary_function {
     unary_show $name, sub { "$rep($_[0])" };
 }
 
-new_unary_function 'square_root',   'sqrt', 'bsqrt';
-new_unary_function 'sine',   'sin',   'bsin';
+# Trigonometric unary functions
+new_unary_function 'sine',   'sin', 'bsin';
 new_unary_function 'cosine', 'cos', 'bcos';
+
 new_unary_function 'secant', 'sec', sub { 1 / $_[0]->bcos() };
 new_unary_function 'cosec',  'csc', sub { 1 / $_[0]->bsin() };
 new_unary_function 'cotangent', 'cotan', sub {
@@ -368,33 +367,49 @@ new_unary_function 'cotangent', 'cotan', sub {
 new_unary_function 'tangent', 'tan', sub {
     return $_[0]->copy->bsin() / $_[0]->copy->bcos();
 };
-new_unary_function 'natural_logarithm', 'ln', 'blog';
-new_unary_function 'factorial', 'factorial', 'bfac';
 
+# Log functions
+new_unary_function 'natural_logarithm', 'ln', 'blog';
 binary_doit 'logarithm', sub { $_[1]->blog($_[0]) };
 binary_show 'logarithm', sub { "log$_[0]($_[1])" };
 
+# Misc functions
+new_unary_function 'square_root', 'sqrt',      'bsqrt';
+new_unary_function 'factorial',   'factorial', 'bfac';
 
-###############
-#  Operators  #
-###############
+
+# OPERATORS
 
 # new_binary_operator NAME, SYMBOL, ROUTINE
+# or
+# new_binary_operator NAME, SYMBOL, METHOD
 sub new_binary_operator {
     my ($name, $operator, $sub) = @_;
-    no strict 'refs';
-    binary_doit $name, $sub;
-    binary_show $name, sub {
-        "$_[0] $operator $_[1]";
+    if (ref $sub ne 'CODE') {
+        binary_doit $name, sub { $_[0]->$sub($_[1]) };
+    } else {
+        binary_doit $name, $sub;
     };
+    binary_show $name, sub { "$_[0] $operator $_[1]" };
 }
-new_binary_operator 'subtract', '-',     sub { $_[0] - $_[1] };
-new_binary_operator 'add', '+',          sub { $_[0] + $_[1] };
-new_binary_operator 'multiply', '*',     sub { $_[0] * $_[1] };
-new_binary_operator 'divide', '/',       sub { $_[0] / $_[1] };
-new_binary_operator 'exponentiate', '^', sub { $_[0] ** $_[1] };
-binary_doit 'exp',                       sub { $_[0] * 10 ** $_[1] };
 
+new_binary_operator 'subtract',     '-', 'bsub';
+new_binary_operator 'add',          '+', 'badd';
+new_binary_operator 'multiply',     '*', 'bmul';
+new_binary_operator 'divide',       '/', 'bdiv';
+new_binary_operator 'exponentiate', '^', 'bpow';
+
+binary_doit 'exp', sub { $_[0] * 10 ** $_[1] };
+
+
+# new_constant NAME, VALUE
+# will create a new constant that can be referred to through
+# 'Calculator::const_NAME', will have the value VALUE and be
+# represented in output by NAME.
+#
+# new_constant NAME, VALUE, REP
+# will do the same as the previous form, but use REP to represent
+# the constant in output.
 sub new_constant {
     my ($name, $val, $print_name) = @_;
     $print_name = $name unless defined $print_name;
@@ -407,9 +422,9 @@ my $big_pi = Math::BigFloat->bpi();
 my $big_e = Math::BigFloat->bexp(1);
 
 # Constants go here.
-new_constant 'pi', $big_pi, 'pi';
+new_constant 'pi',    $big_pi, 'pi';
 new_constant 'dozen', 12;
-new_constant 'euler', $big_e, 'e';
+new_constant 'euler', $big_e,  'e';
 new_constant 'score', 20;
 
 1;
