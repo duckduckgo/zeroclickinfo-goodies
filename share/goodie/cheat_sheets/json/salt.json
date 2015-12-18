@@ -3,7 +3,7 @@
     "name": "Salt",
     "description": "Common commands for SaltStack Master/Minion",
     "metadata": {
-        "sourceName": "SaltStack Website",
+        "sourceName": "SaltStack",
         "sourceUrl": "https://docs.saltstack.com/en/latest/ref/cli/"
     },
     "template_type": "terminal",
