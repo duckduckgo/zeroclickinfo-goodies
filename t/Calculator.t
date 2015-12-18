@@ -7,7 +7,7 @@ use DDG::Test::Goodie;
 # use DDG::Goodie::Calculator;    # For function subtests.
 use utf8;
 
-zci answer_type => 'calc';
+zci answer_type => 'calculation';
 zci is_cached   => 1;
 
 sub build_result {
