@@ -4,8 +4,8 @@
 	"description": "Common meanings for each rose petal colour",
 	"template_type": "reference",
 	"metadata": {
-		"sourceName": "RKDN",
-		"sourceUrl": "http://rkdn.org/roses/colors.asp"
+	"sourceName": "RKDN",
+	"sourceUrl": "http://rkdn.org/roses/colors.asp"
 	},
 	"aliases": [
 		"rose colors",
