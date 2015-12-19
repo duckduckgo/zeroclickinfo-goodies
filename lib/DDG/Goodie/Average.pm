@@ -4,7 +4,7 @@ package DDG::Goodie::Average;
 use strict;
 use DDG::Goodie;
 
-triggers startend => "avg", "average", "mean", "median", "root mean square";
+triggers startend => "avg", "average", "mean", "median", "root mean square", "rms";
 
 zci is_cached => 1;
 zci answer_type => "average";
@@ -17,9 +17,23 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'math';
 attribution twitter => ['crazedpsyc','crazedpsyc'],
-            cpan    => ['CRZEDPSYC','crazedpsyc'];
+            cpan    => ['CRZEDPSYC','crazedpsyc'],
+            github  => ['http://github.com/Mailkov', 'Melchiorre Alastra'];
+
+
 
 handle remainder => sub {
+
+    my $query = $req->query_lc;
+    
+    my $type;
+    if ($query =~ m/root mean square|rms/) {
+        $type = "Root Mean Square";
+    } elsif ($query =~ m/avg|average|mean/) {
+        $type = "Mean";
+    } else {
+        $type = "Median";
+    }
 
     #Remove leading/trailing text from list of numbers
     s/^[a-zA-Z\s]+//;
@@ -46,26 +60,35 @@ handle remainder => sub {
     # get the length of the array
     my $len = @nums;
 
-    # calculate the mean
-    my $mean = $sum/$len;
-
-    # sort the list numerically, least to greatest
-    @nums = sort { $a <=> $b } @nums;
-    my $med;
-    if ($len % 2 eq 0) {
-        # get the two middle numbers, since the
-        # length is even, and calculate their mean
-        $med = ($nums[$len/2] + $nums[$len/2-1])/2;
+    my $result;
+    
+    if ($type eq "Mean") {
+        # calculate the mean
+        $result = $sum/$len;
+    } elsif ($type eq "Median")  {
+        # sort the list numerically, least to greatest
+        @nums = sort { $a <=> $b } @nums;
+        if ($len % 2 eq 0) {
+            # get the two middle numbers, since the
+            # length is even, and calculate their mean
+            $result = ($nums[$len/2] + $nums[$len/2-1])/2;
+        } else {
+            # get the middle number
+            $result = $nums[int($len/2)]
+        }
     } else {
-        # get the middle number
-        $med = $nums[int($len/2)]
+        $result += ($_ ** 2) for @nums;
+        $result /= $len;
+        $result = sqrt $result;  
     }
-
-    my $rms;
-    $rms += ($_ ** 2) for @nums;
-    $rms /= $len;
-    $rms = sqrt $rms;
-    return "Mean: $mean; Median: $med; Root Mean Square: $rms", html => "<div class='average--container'><div><span class='average--key'>Mean:</span> <span class='average--value'>$mean</span></div> <div><span class='average--key'>Median:</span> <span class='average--value'>$med</span></div> <div><span class='average--key'>Root Mean Square:</span> <span class='average--value'>$rms</span></div></div>";
+    
+    return "$type: $result",
+    structured_answer => {
+        input     => [html_enc($_)],
+        operation => $type . ' of',
+        result    => html_enc($result),
+    };
+    
 };
 
 1;

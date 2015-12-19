@@ -1,0 +1,78 @@
+{
+    "id": "default_port_numbers_cheat_sheet",
+    "name": "Standard Port Numbers",
+    "description": "List of official TCP and UDP Port Numbers",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers"
+    },
+    "aliases": [
+        "default ports", "network ports", "tcp ports", "udp ports", "tcp port numbers", "udp port numbers"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Well Known Ports (System Ports)",
+        "Registered Ports"
+    ],
+    "sections": {
+        "Well Known Ports (System Ports)": [{
+            "val": "FTP Data Transfer",
+            "key": "20"
+        }, {
+            "val": "FTP control (command)",
+            "key": "21"
+        }, {
+            "val": "Secure Shell (SSH)",
+            "key": "22"
+        }, {
+            "val": "Telnet Protocol",
+            "key": "23"
+        }, {
+            "val": "Simple Mail Transfer Protocol (SMTP)",
+            "key": "25"
+        }, {
+            "val": "Domain Name System (DNS)",
+            "key": "53"
+        }, {
+            "val": "Dynamic Host Configuration Protocol (DHCP) Server",
+            "key": "67"
+        }, {
+            "val": "Dynamic Host Configuration Protocol (DHCP) Client",
+            "key": "68"
+        }, {
+            "val": "Hypertext Transfer Protocol (HTTP)",
+            "key": "80"
+        }, {
+            "val": "Internet Message Access Protocol (IMAP)",
+            "key": "143"
+        }, {
+            "val": "Internet Relay Chat (IRC)",
+            "key": "194"
+        }, {
+            "val": "Hypertext Transfer Protocol over TLS/SSL (HTTPS)",
+            "key": "443"
+        }, {
+            "val": "Remote Procedure Call (RPC)",
+            "key": "530"
+        }, {
+            "val": "Telnet Protocol over TLS/SSL",
+            "key": "992"
+        }],
+        "Registered Ports": [{
+            "val": "SOCKS Proxy",
+            "key": "1080"
+        }, {
+            "val": "OpenVPN",
+            "key": "1194"
+        }, {
+            "val": "Internet Protocol Security (IPSec)",
+            "key": "1293"
+        }, {
+            "val": "Real-time Transport Protocol media data (RTP)",
+            "key": "5004"
+        }, {
+            "val": "Real-time Transport Protocol control protocol (RTCP)",
+            "key": "5005"
+        }]
+    }
+}

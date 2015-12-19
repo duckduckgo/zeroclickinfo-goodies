@@ -9,9 +9,10 @@ use Test::MockTime qw( :all );
 zci answer_type => 'timezone_converter';
 zci is_cached   => 1;
 
+
 ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
-    '3:14 in GMT' =>
+    '3:14 UTC in GMT' =>
         test_zci('3:14 GMT',
         structured_answer => {
             input => ['3:14 UTC to GMT'],
@@ -35,7 +36,7 @@ ddg_goodie_test(
             result => '7:00 PM UTC+2',
         },
     ),
-    '0pm into GMT' =>
+    '0pm UTC into GMT' =>
         test_zci('Noon GMT',
         structured_answer => {
             input => ['Noon UTC to GMT'],
@@ -43,7 +44,7 @@ ddg_goodie_test(
             result => 'Noon GMT',
         },
     ),
-    '0am into UTC' =>
+    '0am UTC into UTC' =>
         test_zci('Midnight UTC',
         structured_answer => {
             input => ['Midnight UTC to UTC'],
@@ -51,7 +52,7 @@ ddg_goodie_test(
             result => 'Midnight UTC',
         },
     ),
-    '1 into UTC -2 ' =>
+    '1 UTC into UTC -2 ' =>
         test_zci('23:00 UTC-2 (1 day prior)',
         structured_answer => {
             input => ['1:00 UTC to UTC-2'],
@@ -59,7 +60,7 @@ ddg_goodie_test(
             result => '23:00 UTC-2 (1 day prior)',
         },
     ),
-    ' 1 into UTC-1' =>
+    ' 1 UTC into UTC-1' =>
         test_zci('0:00 UTC-1',
         structured_answer => {
             input => ['1:00 UTC to UTC-1'],
@@ -75,7 +76,7 @@ ddg_goodie_test(
             result => '1:00 EET (1 day after)',
         },
     ),
-    '23:00:00  InTo  UTC+1' =>
+    '23:00:00  UTC InTo  UTC+1' =>
         test_zci('0:00 UTC+1 (1 day after)',
         structured_answer => {
             input => ['23:00 UTC to UTC+1'],
@@ -83,7 +84,7 @@ ddg_goodie_test(
             result => '0:00 UTC+1 (1 day after)',
         },
     ),
-    '23:00:01  Into    UTC+1' =>
+    '23:00:01  UTC Into    UTC+1' =>
         test_zci('0:00:01 UTC+1 (1 day after)',
         structured_answer => {
             input => ['23:00:01 UTC to UTC+1'],
@@ -177,6 +178,7 @@ ddg_goodie_test(
     '12 in binary' => undef,
 );
 
+
 # Summertime
 my $test_location_tz = q/EDT (UTC-4)/;
 set_fixed_time("2014-10-14T00:00:00");
@@ -184,6 +186,14 @@ ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
     # Location-specific tests (variable with DST)
     '13:00 GMT in my time' =>
+        test_zci(q/9:00 EDT/,
+        structured_answer => {
+            input => [qq/13:00 GMT to $test_location_tz/],
+            operation => 'Convert Timezone',
+            result => q/9:00 EDT/,
+        },
+    ),
+    '13:00 GMT' =>
         test_zci(q/9:00 EDT/,
         structured_answer => {
             input => [qq/13:00 GMT to $test_location_tz/],
@@ -215,6 +225,14 @@ ddg_goodie_test(
             result => qr/5:22 AM EDT/,
         },
     ),
+    '11:22am cest' =>
+        test_zci(qr/5:22 AM EDT/,
+        structured_answer => {
+            input => [qq/11:22 AM CEST (UTC+2) to $test_location_tz/],
+            operation => 'Convert Timezone',
+            result => qr/5:22 AM EDT/,
+        },
+    ),
     '12pm my time in CEST' =>
         test_zci(q/6:00 PM CEST/,
         structured_answer => {
@@ -224,6 +242,14 @@ ddg_goodie_test(
         },
     ),
     '12pm local timezone in CEST' =>
+        test_zci(q/6:00 PM CEST/,
+        structured_answer => {
+            input => [qq/Noon $test_location_tz to CEST (UTC+2)/],
+            operation => 'Convert Timezone',
+            result => q/6:00 PM CEST/,
+        },
+    ),
+    '12pm in CEST' =>
         test_zci(q/6:00 PM CEST/,
         structured_answer => {
             input => [qq/Noon $test_location_tz to CEST (UTC+2)/],
@@ -247,6 +273,14 @@ ddg_goodie_test(
             result => q/4:00 AM UTC/,
         },
     ),
+    '12am in UTC' =>
+        test_zci(q/4:00 AM UTC/,
+        structured_answer => {
+            input => [qq/Midnight $test_location_tz to UTC/],
+            operation => 'Convert Timezone',
+            result => q/4:00 AM UTC/,
+        },
+    )
 );
 restore_time();
 
@@ -256,6 +290,14 @@ ddg_goodie_test(
     ['DDG::Goodie::TimezoneConverter'],
     # Location-specific tests (variable with DST)
     '13:00 GMT in my time' =>
+        test_zci(qq/8:00 EST/,
+        structured_answer => {
+            input => [qq/13:00 GMT to $test_location_tz/],
+            operation => 'Convert Timezone',
+            result => q/8:00 EST/,
+        },
+    ),
+    '13:00 GMT' =>
         test_zci(qq/8:00 EST/,
         structured_answer => {
             input => [qq/13:00 GMT to $test_location_tz/],
@@ -287,6 +329,14 @@ ddg_goodie_test(
             result => q/4:22 AM EST/,
         },
     ),
+    '11:22am cest' =>
+        test_zci(q/4:22 AM EST/,
+        structured_answer => {
+            input => [qq/11:22 AM CEST (UTC+2) to $test_location_tz/],
+            operation => 'Convert Timezone',
+            result => q/4:22 AM EST/,
+        },
+    ),
     '12pm my time in CEST' =>
         test_zci(q/7:00 PM CEST/,
         structured_answer => {
@@ -303,6 +353,14 @@ ddg_goodie_test(
             result => q/7:00 PM CEST/,
         },
     ),
+    '12pm in CEST' =>
+        test_zci(q/7:00 PM CEST/,
+        structured_answer => {
+            input => [qq/Noon $test_location_tz to CEST (UTC+2)/],
+            operation => 'Convert Timezone',
+            result => q/7:00 PM CEST/,
+        },
+    ),
     '12am my timezone in UTC' =>
         test_zci(qr/5:00 AM UTC/,
         structured_answer => {
@@ -312,6 +370,14 @@ ddg_goodie_test(
         },
     ),
     '12am local time in UTC' =>
+        test_zci(qr/5:00 AM UTC/,
+        structured_answer => {
+            input => [qq/Midnight $test_location_tz to UTC/],
+            operation => 'Convert Timezone',
+            result => q/5:00 AM UTC/,
+        },
+    ),
+    '12am in UTC' =>
         test_zci(qr/5:00 AM UTC/,
         structured_answer => {
             input => [qq/Midnight $test_location_tz to UTC/],

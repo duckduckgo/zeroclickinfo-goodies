@@ -10,7 +10,7 @@ use Encode qw/encode_utf8/;
 
 attribution github => ['cosimo', 'Cosimo Streppone'];
 primary_example_queries 'U+590c';
-secondary_example_queries 'unicode white smiling face';
+secondary_example_queries 'unicode white smiling face', 'utf-8 smile';
 description 'get information about a unicode character';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Unicode.pm';
 name 'Unicode';
@@ -22,7 +22,7 @@ use constant {
     CODEPOINT_RE => qr/^ \s* (?:U \+|\\(?:u|x{(?=.*}))) (?<codepoint> [a-f0-9]{4,6})}? \s* $/xi,
     NAME_RE      => qr/^ (?<name> [A-Z][A-Z\s]+) $/xi,
     CHAR_RE      => qr/^ \s* (?<char> .) \s* $/x,
-    UNICODE_RE   => qr/^ unicode \s+ (.+) $/xi,
+    UNICODE_RE   => qr/^ (?:unicode|utf-(?:8|16|32)) \s+ (.+) $/xi,
     CODEPOINT    => 1,
     NAME         => 2,
     CHAR         => 3,
@@ -41,7 +41,8 @@ handle sub {
 
     # Search term starts with "unicode "
     if ($term =~ UNICODE_RE) {
-        return unicode_lookup($1);
+        return unless my $result = unicode_lookup($1);
+        return $result;
     }
 
     return codepoint_description($term);

@@ -1,0 +1,194 @@
+{
+    "id": "python_cheat_sheet",
+    "name": "Python",
+    "description": "Explanation of Python Methods v. 2.7.10",
+    "metadata": {
+        "sourceName": "OverAPI",
+        "sourceUrl": "http://overapi.com/python/"
+    },
+    "aliases": [
+        "python language", "py", "pycon" 
+    ],
+    "template_type": "code",
+    "section_order": [
+        "String Methods",
+        "Array Methods",
+        "File Methods and Constants",
+        "Date and Time Methods",
+        "Math Functions and Constants"
+    ],
+    "sections": {
+        "String Methods": [{
+            "val": "Returns a string in all uppercase",
+            "key": "upper()"  
+        }, {             
+            "val": "Returns a string in all lowercase",
+            "key": "lower()"
+        }, {
+            "val": "Returns a string with first character capitalized, the rest lower",
+            "key": "capitalize()"  
+        }, {
+            "val": "Returns a string with the leading and trailing whitespace removed",
+            "key": "strip()"  
+        }, {
+            "val": "Returns a string with the leading whitespace removed",
+            "key": "lstrip()"  
+        }, {
+            "val": "Returns a string with the trailing whitespace removed",
+            "key": "rstrip()"  
+        }, {
+            "val": "Returns the number of occurrences of item",
+            "key": "count()"  
+        }, {
+            "val": "Replaces all occurrences of old substring with new",
+            "key": "replace()"  
+        }, {
+            "val": "Returns a string centered in a field of width spaces",
+            "key": "center()"  
+        }, {
+            "val": "Returns a string left justified in a field of width spaces",
+            "key": "ljust()"  
+        }, {
+            "val": "Returns a string right justified in a field of width spaces",
+            "key": "rjust()"  
+        }, {
+            "val": "Returns the leftmost index where the substring item is found",
+            "key": "find()" 
+        }, {
+            "val": "Returns the rightmost index where the substring item is found",
+            "key": "rfind()" 
+        }, {
+            "val": "Like find except causes a runtime error if item is not found",
+            "key": "index()" 
+        }, {
+            "val": "Like rfind except causes a runtime error if item is not found",
+            "key": "rindex()" 
+        }],
+        "Array Methods": [{
+            "val": "Add an item to the end of the list",
+            "key": "append()"
+        }, {
+            "val": "Extend the list by appending all the items in the given list",
+            "key": "extend()"
+        }, {
+            "val": "Insert an item at a given position",
+            "key": "insert()"
+        }, {
+            "val": "Remove the first item from the list with aforementioned parameter value",
+            "key": "remove()"
+        }, {
+            "val": "Remove the item at the given position in the list, and return it",
+            "key": "pop()"
+        }, {
+            "val": "Return the index in the list",
+            "key": "index()"
+        }, {
+            "val": "Return the number of times that appears in the list.",
+            "key": "count()"
+        }, {
+            "val": "Sort the items of the list in place",
+            "key": "sort()"
+        }, {
+            "val": "Reverse the elements of the list, in place.",
+            "key": "reverse()"
+        }],
+        "File Methods and Constants": [{
+            "val": "Close the file; a closed file cannot be read or written any more",
+            "key": "close()"
+        }, {
+            "val": "Flush the internal buffer",
+            "key": "flush()"
+        }, {
+            "val": "Return the integer “file descriptor” that is used by the underlying implementation to request I/O operations from the operating system",
+            "key": "fileno()"
+        }, {
+            "val": "Return True if the file is connected to a tty(-like) device",
+            "key": "isatty()"
+        }, {
+            "val": "Return the file’s current position",
+            "key": "tell()"
+        }, {
+            "val": "Truncate the file’s size",
+            "key": "truncate()"
+        }, {
+            "val": "Write a string to the file",
+            "key": "write()"
+         }, {
+            "val": "Write a sequence of strings to the file",
+            "key": "writelines()"
+         }, {
+            "val": "Bool indicating the current state of the file object",
+            "key": "closed"
+        }, {
+            "val": "The encoding that this file uses",
+            "key": "encoding"
+         }, {
+            "val": "The Unicode error handler used along with the encoding",
+            "key": "errors"
+         }, {
+            "val": "The I/O mode for the file",
+            "key": "mode"
+         }, {
+            "val": "The name of the file",
+            "key": "name"
+        }, {
+            "val": "Boolean that indicates whether a space character needs to be printed before another value when using the print statement",
+            "key": "softspace"
+         
+        }],
+        "Date and Time Methods": [{
+            "val": "Give new values by whichever keyword arguments are specified",
+            "key": "replace()"
+        }, {
+            "val": "Return the proleptic Gregorian ordinal of the date, where January 1 of year 1 has ordinal 1",
+            "key": "toordinal()"
+        }, {
+            "val": "Return the day of the week as an integer, where Monday is 0 and Sunday is 6",
+            "key": "weekday()"
+        }, {
+            "val": "Return the day of the week as an integer, where Monday is 1 and Sunday is 7",
+            "key": "isoweekday()"
+        }, {
+            "val": "Return a 3-tuple, (ISO year, ISO week number, ISO weekday)",
+            "key": "isocalendar()"
+        }, {
+            "val": "Return a string representing the date in ISO 8601 format, \"YYYY-MM-DD\"",
+            "key": "isoformat()"
+        }, {
+            "val": "For a date d, str(d) is equivalent to d.isoformat()",
+            "key": "__str__()"
+        }, {
+            "val": "Return a string representing the date",
+            "key": "ctime()"
+        }, {
+            "val": "Return a string representing the date, controlled by an explicit format string",
+            "key": "strftime()"
+        }, {
+            "val": "Same as date.strftime(). This makes it possible to specify format string for a date object when using str.format()",
+            "key": "__format__()"
+        }],
+        "Math Functions and Constants": [{
+            "val": "Return factorial of the argument value",
+            "key": "factorial()"
+        }, {
+            "val": "Return the argument raised to a power (e**x)",
+            "key": "exp()"
+        }, {
+            "val": "Return logarithm of argument value",
+            "key": "log()"
+        }, {
+            "val": "Return first parameter raised to the power by second parameter",
+            "key": "pow()"
+        }, {
+            "val": "Takes squareroot of argument value",
+            "key": "sqrt()"
+        }, {
+            "val": "The mathematical constant π = 3.141592...",
+            "key": "pi"
+        }, {
+            "val": "The mathematical constant e = 2.718281",
+            "key": "e"
+        }]
+
+    }
+}

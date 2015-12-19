@@ -5,7 +5,7 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 
-zci answer_type => "<: $lia_name :>";
+zci answer_type => "<: $ia_id :>";
 zci is_cached   => 1;
 
 ddg_goodie_test(

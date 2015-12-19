@@ -34,9 +34,9 @@ sub getAliases {
         open my $fh, $file or warn "Error opening file: $file\n" and next;
         my $json = do { local $/;  <$fh> };
         my $data = eval { decode_json($json) } or do {
-			warn "Failed to decode $file: $@";
-			next;
-		};
+            warn "Failed to decode $file: $@";
+            next;
+        };
 
         my $defaultName = File::Basename::fileparse($file);
         $defaultName =~ s/-/ /g;
@@ -46,7 +46,7 @@ sub getAliases {
 
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
-                $results{$alias} = $file;
+                $results{lc($alias)} = $file;
             }
         }
     }

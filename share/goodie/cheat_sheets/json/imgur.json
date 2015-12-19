@@ -6,6 +6,7 @@
     "sourceName": "Imgur",
     "sourceUrl": "https://i.imgur.com/nz63EPD.png"
   },
+  "template_type": "keyboard",
   "section_order": [
     "Voting",
     "Accessibility",

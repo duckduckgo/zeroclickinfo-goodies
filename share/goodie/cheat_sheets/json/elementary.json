@@ -8,6 +8,7 @@
     "aliases": [
         "elementary os"
     ],
+    "template_type": "keyboard",
     "section_order": [
         "Window",
         "Switching",

@@ -17,14 +17,14 @@
     "template_type": "reference",
 
     "section_order": [  
-        "SI base units",
-        "SI derived units",
-        "SI derived units with special names and symbols",
-        "Examples of SI derived units whose names and symbols include SI derived units with special names and symbols"
+        "SI Base Units",
+        "SI Derived Units",
+        "SI Derived Units with special names and symbols",
+        "Examples of SI Derived Units whose names and symbols include SI Derived Units with special names and symbols"
     ],
 
     "sections": {
-        "SI base units": [
+        "SI Base Units": [
             {
                 "key": "length", 
                 "val": "meter (m)"
@@ -54,7 +54,7 @@
                 "val": "candela (cd)"
             }
         ],        
-        "SI derived units": [
+        "SI Derived Units": [
             {
                 "key": "area",
                 "val": "square meter (m²)"               
@@ -100,7 +100,7 @@
                 "val": "candela per square meter (cd/m²)"               
             }
         ],
-        "SI derived units with special names and symbols": [
+        "SI Derived Units with special names and symbols": [
             {
                 "key": "plane angle", 
                 "val": "radian (rad)"
@@ -170,7 +170,7 @@
                 "val": "gray (Gy)"
             }
         ],
-        "Examples of SI derived units whose names and symbols include SI derived units with special names and symbols": [
+        "Examples of SI Derived Units whose names and symbols include SI Derived Units with special names and symbols": [
             {
                 "key": "dynamic viscosity", 
                 "val": "pascal second (Pa·s)"

@@ -15,7 +15,7 @@ category 'ids';
 topics 'special_interest';
 attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
 
-triggers query_nowhitespace_nodash => qr/(l[a-z]\d{8})/i;
+triggers query_nowhitespace_nodash => qr/(^l[a-z]\d{8}$)/i;
 
 handle query_nowhitespace_nodash => sub {
     return $1, heading => "Lasership Shipment Tracking", html => qq(Track this shipment at <a href="http://lasership.com/track/$1">Lasership</a>.) if $1;

@@ -1,0 +1,120 @@
+{
+    "id": "starcraft2_cheat_sheet",
+    "name": "StarCraft 2",
+    "description": "Cheat codes for the campaign and offline custom games of StarCraft 2",
+    "metadata": {
+        "sourceName": "Battle.net Cheats",
+        "sourceUrl": "http://us.battle.net/sc2/en/blog/9135373/game-guide-starcraft-ii-cheat-codes-3-1-2012"
+    },
+    "aliases": [
+        "starcraft 2",
+        "star craft 2",
+        "starcraft ii",
+        "star craft ii",
+        "sc2"
+    ],
+    "template_type": "reference",
+    "section_order": ["Resources and Research", "Game Modifications", "Units", "Wings of Liberty Only"],
+    "sections": {
+        "Units": [
+            {
+                "key": "TerribleTerribleDamage",
+                "val": "Units enter God Mode"
+            },
+            {
+                "key": "MoreDotsMoreDots",
+                "val": "All units and buildings are free to build (No cost)"
+            },
+            {
+                "key": "ImADoctorNotARoachJim",
+                "val": "Enable fast unit healing"
+            },
+            {
+                "key": "HanShotFirst",
+                "val": "Disable cooldown on spells"
+            }
+        ],
+        "Resources and Research": [
+            {
+                "key": "SpectralTiger",
+                "val": "5,000 minerals"
+            },
+            {
+                "key": "RealMenDrillDeep",
+                "val": "5,000 gas"
+            },
+            {
+                "key": "Jaynestown",
+                "val": "5,000 Terrazine on custom maps using Terrazine"
+            },
+            {
+                "key": "WhoRunBartertown",
+                "val": "5,000 of each resource"
+            },
+            {
+                "key": "IAmIronMan",
+                "val": "Instantly allows all upgrades"
+            },
+            {
+                "key": "SoSayWeAll",
+                "val": "Allows the use of all tech"
+            },
+            {
+                "key": "CatFoodForPrawnGuns",
+                "val": "Enables fast building and fast upgrades"
+            },
+            {
+                "key": "Bunker55AliveInside",
+                "val": "Disables the need for supplies (Food)"
+            }
+        ],
+        "Game Modifications": [
+            {
+                "key": "TookTheRedPill",
+                "val": "Disable fog of war"
+            },
+            {
+                "key": "NeverGiveUpNeverSurrender",
+                "val": "Disable defeat conditions"
+            },
+            {
+                "key": "TyuHasLeftTheGame",
+                "val": "Disable victory conditions to allow continued play"
+            },
+            {
+                "key": "WhatIsBestInLife",
+                "val": "Win current game"
+            },
+            {
+                "key": "LetsJustBugOutAndCallItEven",
+                "val": "Lose current game"
+            },
+            {
+                "key": "OverEngineeredCodPiece",
+                "val": "Plays the Level 80 Elite Tauren Chieftain (Blizzard employee band) song 'Terran up the Night'"
+            }
+        ],
+        "Wings of Liberty Only": [
+            {
+                "key": "WhySoSerious",
+                "val": "Adds 5,000,000 credits"
+            },
+            {
+                "key": "LeaveYourSleep",
+                "val": "Opens all missions"
+            },
+            {
+                "key": "HoradricCube",
+                "val": "Opens all research options"
+            },
+            {
+                "key": "EyeOfSauron",
+                "val": "Allows access to all cinematics"
+            },
+            {
+                "key": "StayClassyMarsara",
+                "val": "Allows access to all UNN broadcasts"
+            }
+        ]
+    }
+}

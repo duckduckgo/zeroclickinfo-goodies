@@ -1,6 +1,7 @@
 {
     "id": "irc_cheat_sheet",
-    "name": "IRC Cheat Sheet",
+    "name": "IRC",
+    "description": "Internet Relay Chat (IRC) is an application layer protocol that facilitates communication in the form of text",
     "metadata": {
         "sourceName": "Internet Relay Chat WikiHow",
         "sourceUrl": "http://www.cheat-sheets.org/saved-copy/wikiHow_IRC_Cheat_Sheet.pdf"
