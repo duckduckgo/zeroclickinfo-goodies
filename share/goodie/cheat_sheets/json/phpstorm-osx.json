@@ -4,9 +4,9 @@
     "descriptions": "Keyboard shortcuts for OS X version PHPStorm IDE, a PHP IDE developed by JetBrains",
     "metadata": {
         "sourceName": "OverAPI",
-        "sourceUrl": "http://overapi.com/phpstorm/"
+        "sourceUrl": "http://overapi.com/static/cs/PhpStorm_ReferenceCard.pdf"
     },
-    "aliases": ["phpstorm os x", "phpstorm mac"],
+    "aliases": ["phpstorm os x", "phpstorm mac", "phpstorm macos", "phpstorm mac os"],
     "template_type": "keyboard",
     "section_order": ["General", "Productivity", "Editing", "Searching/Replacing", "Navigation"],
     "sections": {
@@ -53,7 +53,7 @@
             "key": "[Shift] [Shift]",
             "val": "Search everywhere"
         }, {
-            "key": "[⌘]  [F]",
+            "key": "[⌘] [F]",
             "val": "Find"
         }, {
             "key": "[⌘] [G]",
@@ -62,7 +62,7 @@
             "key": "[Shift] [⌘] [G]",
             "val": "Find previous"
         }, {
-            "key": "[⌘]  [R]",
+            "key": "[⌘] [R]",
             "val": "Replace"
         }],
         "Navigation": [{
