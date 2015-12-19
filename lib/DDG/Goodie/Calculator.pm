@@ -7,7 +7,12 @@ with 'DDG::GoodieRole::NumberStyler';
 use utf8;
 
 use Marpa::R2;
-use Math::BigFloat;
+use Math::Cephes qw(:constants);
+use Math::Cephes qw(:trigs);
+use Math::Cephes qw(exp);
+use Math::Cephes qw(fac);
+use Math::Round;
+use Number::Fraction;
 
 zci answer_type => "calculation";
 zci is_cached   => 1;
@@ -81,6 +86,19 @@ sub get_style {
     return number_style_for(@numbers);
 }
 
+
+sub is_fraction {
+    my $to_check = shift;
+    return (ref $to_check eq 'Number::Fraction');
+}
+sub to_decimal {
+    my $to_convert = shift;
+    if (is_fraction($to_convert)) {
+        return eval { $to_convert->to_num() } or undef;
+    }
+    return $to_convert;
+}
+
 sub get_currency {
     my $text = $_;
     # Add new currency symbols here.
@@ -92,7 +110,7 @@ sub get_currency {
 sub format_for_currency {
     my ($text, $currency) = @_;
     return $text unless defined $currency;
-    my $result = sprintf('%0.2f', $text);
+    my $result = sprintf('%0.2f', to_decimal($text));
     return $currency . $result;
 }
 
@@ -115,14 +133,39 @@ sub get_results {
     return ($generated_input, $val_result);
 }
 
+sub should_display_decimal {
+    my ($computable_query, $result) = @_;
+    return 1 unless is_fraction($result);
+    return ($computable_query eq $result);
+}
+
+# Generates either a fraction or decimal representation of the
+# answer.
+sub display_for_fraction_decimal {
+    my ($to_compute, $val_result) = @_;
+    if (should_display_decimal $to_compute, $val_result) {
+        my $decimal = to_decimal($val_result);
+        return unless defined $decimal;
+        my ($nom, $expt) = split 'e', $decimal;
+        if (defined $expt) {
+            my $num = nearest(1e-12, $nom);
+            return $num . 'e' . $expt;
+        };
+        my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
+        return nearest(1e-12, $s) * 10 ** $e;
+    };
+    return $val_result;
+}
+
 sub to_display {
     my $query = shift;
     my $currency = get_currency $query;
     $query = standardize_operator_symbols $query;
     my $style = get_style $query or return;
     my $to_compute = $style->for_computation($query);
-    my ($generated_input, $val_result) = get_results $to_compute or return;
-    return if ($val_result eq 'inf');
+    my ($generated_input, $val_result) = eval { get_results $to_compute } or return;
+    $val_result = display_for_fraction_decimal $to_compute, $val_result;
+    return unless defined $val_result;
     $val_result = format_for_currency $val_result, $currency;
     my $result = $style->for_display($val_result);
     $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
@@ -155,7 +198,6 @@ handle query => sub {
 
 # Functionality
 
-Math::BigFloat->round_mode('+inf');
 
 sub doit {
     my ($name, $sub) = @_;
@@ -180,8 +222,8 @@ sub binary_doit {
     my ($name, $sub) = @_;
     doit $name, sub {
         my $self = shift;
-        return $sub->($self->[0]->doit->copy(),
-                      $self->[1]->doit->copy());
+        return $sub->($self->[0]->doit(),
+                      $self->[1]->doit());
     };
 }
 sub binary_show {
@@ -196,7 +238,7 @@ sub unary_doit {
     no strict 'refs';
     doit $name, sub {
         my $self = shift;
-        return $sub->($self->[0]->doit->copy());
+        return $sub->($self->[0]->doit());
     };
 }
 sub unary_show {
@@ -214,9 +256,19 @@ sub unary_fun_show {
     my ($name, $fun_name) = @_;
     unary_show $name, sub { "$fun_name($_[0])" };
 }
-doit 'integer', sub { Math::BigFloat->new($_[0]->[0]->[2]) };
+doit 'integer', sub {
+    my $self = shift;
+    return Number::Fraction->new($self->[0]->[2]);
+};
 show 'integer', sub { "$_[0]->[0]->[2]" };
-doit 'decimal', sub { Math::BigFloat->new($_[0]->[0]->[2]) };
+doit 'decimal', sub {
+    my $self = shift;
+    my $as_s = $self->[0]->[2];
+    $as_s =~ /(?<intpart>-?\d*)\.(?<fracpart>\d*)/;
+    my $mant = $+{'intpart'} . $+{'fracpart'};
+    my $required_shift = length $+{'fracpart'};
+    return Number::Fraction->new($mant, 10 ** $required_shift);
+};
 show 'decimal', sub { "$_[0]->[0]->[2]" };
 
 doit 'prefix_currency', sub { $_[0]->[1]->doit() };
@@ -231,14 +283,15 @@ unary_show 'square', sub { "$_[0] squared" };
 binary_show 'exp', sub { "$_[0]e$_[1]" };
 
 
+sub is_exact {
+    my $to_check = shift;
+    return (ref $to_check eq 'Number::Fraction');
+}
+
 sub Calculator::Calculator::doit {
     my $self = shift;
     my $result = $self->[0]->doit();
-    $result = Math::BigFloat->new($result)->bround(15);
-    my $to_report = sprintf('%0.30f', $result) == 0 ? 0 : $result;
-    $to_report  = sprintf('%0.15g', $to_report);
-    $to_report =~ s/^\((.*)\)$/$1/;
-    return $to_report;
+    return $result;
 }
 
 unary_show 'Calculator', sub { $_[0] };
@@ -272,26 +325,23 @@ sub new_unary_function {
 }
 
 # Trigonometric unary functions
-new_unary_function 'sine',   'sin', 'bsin';
-new_unary_function 'cosine', 'cos', 'bcos';
+                                        # sine seems to round weirdly
+new_unary_function 'sine',   'sin', sub { "@{[nearest(1e-15, sin $_[0])]}" };
+new_unary_function 'cosine', 'cos', sub { cos $_[0] };
 
-new_unary_function 'secant', 'sec', sub { 1 / $_[0]->bcos() };
-new_unary_function 'cosec',  'csc', sub { 1 / $_[0]->bsin() };
-new_unary_function 'cotangent', 'cotan', sub {
-    return $_[0]->copy->bcos() / $_[0]->copy->bsin();
-};
-new_unary_function 'tangent', 'tan', sub {
-    return $_[0]->copy->bsin() / $_[0]->copy->bcos();
-};
+new_unary_function 'secant', 'sec', sub { 1 / (cos $_[0]) };
+new_unary_function 'cosec',  'csc', sub { 1 / (sin $_[0]) };
+new_unary_function 'cotangent', 'cotan', sub { cot $_[0] };
+new_unary_function 'tangent', 'tan', sub { tan $_[0] };
 
 # Log functions
-new_unary_function 'natural_logarithm', 'ln', 'blog';
-binary_doit 'logarithm', sub { $_[1]->blog($_[0]) };
+new_unary_function 'natural_logarithm', 'ln', sub { log $_[0] };
+binary_doit 'logarithm', sub { (log $_[1]) / (log $_[0]) };
 binary_show 'logarithm', sub { "log$_[0]($_[1])" };
 
 # Misc functions
-new_unary_function 'square_root', 'sqrt',      'bsqrt';
-new_unary_function 'factorial',   'factorial', 'bfac';
+new_unary_function 'square_root', 'sqrt', sub { sqrt $_[0] };
+new_unary_function 'factorial',   'factorial', sub { return fac($_[0]) };
 
 
 # OPERATORS
@@ -309,14 +359,13 @@ sub new_binary_operator {
     binary_show $name, sub { "$_[0] $operator $_[1]" };
 }
 
-new_binary_operator 'subtract',     '-', 'bsub';
-new_binary_operator 'add',          '+', 'badd';
-new_binary_operator 'multiply',     '*', 'bmul';
-new_binary_operator 'divide',       '/', 'bdiv';
-new_binary_operator 'exponentiate', '^', 'bpow';
+new_binary_operator 'subtract',     '-', sub { $_[0] - $_[1] };
+new_binary_operator 'add',          '+', sub { $_[0] + $_[1] };
+new_binary_operator 'multiply',     '*', sub { $_[0] * $_[1] };
+new_binary_operator 'divide',       '/', sub { $_[0] / $_[1] };
+new_binary_operator 'exponentiate', '^', sub { $_[0] ** $_[1] };
 
 binary_doit 'exp', sub { $_[0] * 10 ** $_[1] };
-
 
 # new_constant NAME, VALUE
 # will create a new constant that can be referred to through
@@ -330,12 +379,12 @@ sub new_constant {
     my ($name, $val, $print_name) = @_;
     $print_name = $name unless defined $print_name;
     my $const_name = "const_$name";
-    doit $const_name, sub { Math::BigFloat->new($val) };
+    doit $const_name, sub { $val };
     show $const_name, sub { $print_name };
 }
 
-my $big_pi = Math::BigFloat->bpi();
-my $big_e = Math::BigFloat->bexp(1);
+my $big_pi = $PI;
+my $big_e = exp(1);
 
 # Constants go here.
 new_constant 'pi',    $big_pi, 'pi';
