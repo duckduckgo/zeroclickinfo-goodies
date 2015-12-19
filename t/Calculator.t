@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
-# use DDG::Goodie::Calculator;    # For function subtests.
 use utf8;
 
 zci answer_type => 'calculation';
@@ -185,4 +184,3 @@ ddg_goodie_test(
 );
 
 done_testing;
-# ^/test_zciciWbuild_test(j$dT=k$pi', ?test(f(lr'j^ldt=k$p$i'),jd7j
