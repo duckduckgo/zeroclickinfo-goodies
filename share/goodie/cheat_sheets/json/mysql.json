@@ -1,27 +1,27 @@
 {
     "id": "mysql_cheat_sheet",
     "name": "MySQL",
-    "description": "This is MySQL Basic command cheat sheeet",
+    "description": "A quick reference for MySQL (My Structured Query Language), an open source relational database management system",
     "metadata": {
-        "sourceName": "cheatography",
-        "sourceUrl": "http://www.cheatography.com/davechild/"
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/mysql/"
     },
     "aliases": [
         "mysql"
     ],
     "template_type": "reference",
     "section_order": [
-        "MySql Data Types",
-        "MySql Type Conversion",
-        "MySql String Functions (count)",
-        "MySql Grouping Functions",
-        "MySql Date and Time Functions",
-        "MySql Mathematical Functions",
-        "MySql String Functions",
-        "MySql Control Flow Functions"
+        "MySQL Data Types",
+        "MySQL Type Conversion",
+        "MySQL String Functions (count)",
+        "MySQL Grouping Functions",
+        "MySQL Date and Time Functions",
+        "MySQL Mathematical Functions",
+        "MySQL String Functions",
+        "MySQL Control Flow Functions"
     ],
     "sections": {
-        "MySql String Functions (count)": [{
+        "MySQL String Functions (count)": [{
             "val": "Return the length of a string in bytes",
             "key": "LENGTH"
         }, {
@@ -76,7 +76,7 @@
             "val": "Escape the argument for use in an SQL statement",
             "key": "QUOTE"
         }],
-        "MySql String Functions": [{
+        "MySQL String Functions": [{
             "val": "Return numeric value of left-most character",
             "key": "ASCII"
         }, {
@@ -131,7 +131,7 @@
             "val": "Replace occurrences of a specified string",
             "key": "REPLACE"
         }],
-        "MySql Type Conversion": [{
+        "MySQL Type Conversion": [{
             "val": "BINARY(String)",
             "key": "BINARY"
         }, {
@@ -141,7 +141,7 @@
             "val": "CONVERT(expression, datatype)",
             "key": "CONVERT"
         }],
-        "MySql Mathematical Functions": [{
+        "MySQL Mathematical Functions": [{
             "val": "Return the absolute value",
             "key": "ABS"
         }, {
@@ -220,7 +220,7 @@
             "val": "Truncate to specified number of decimal places",
             "key": "TRUNCATE"
         }],
-        "MySql Grouping Functions": [{
+        "MySQL Grouping Functions": [{
             "val": "Take average of various records set using GROUP BY clause",
             "key": "AVG"
         }, {
@@ -254,7 +254,7 @@
             "val": "Returns the population standard variance of an expression",
             "key": "VARIANCE"
         }],
-        "MySql Data Types": [{
+        "MySQL Data Types": [{
             "val": "String (0 - 255)",
             "key": "CHAR"
         }, {
@@ -324,7 +324,7 @@
             "val": "Selection of preset options",
             "key": "SET"
         }],
-        "MySql Date and Time Functions": [{
+        "MySQL Date and Time Functions": [{
             "val": "Return the month from the date passed",
             "key": "MONTH"
         }, {
@@ -424,7 +424,7 @@
             "val": "Return the argument converted to seconds",
             "key": "TIME_TO_SEC"
         }],
-        "MySql Control Flow Functions": [{
+        "MySQL Control Flow Functions": [{
             "val": "If/else construct",
             "key": "IF"
         }, {
