@@ -6,9 +6,6 @@
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/mysql/"
     },
-    "aliases": [
-        "mysql"
-    ],
     "template_type": "reference",
     "section_order": [
         "MySQL Data Types",
