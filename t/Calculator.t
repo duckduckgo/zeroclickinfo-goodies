@@ -183,9 +183,12 @@ ddg_goodie_test(
     '01780-111-111x400'  => undef,
     '(01780) 111 111'    => undef,
     # Optional numbers around decimal points
-    '1.' => build_test('1', '1.'),
-    '.7' => build_test('7/10', '.7'),
-    '-23.' => build_test('-23', '-23.'),
+    '1. * 10.1 + .9' => build_test('11', '1. * 10.1 + .9'),
+    '.7 + .3'        => build_test('1', '.7 + .3'),
+    '.9'             => build_test('9/10', '.9'),
+    '0.625'          => build_test('5/8', '0.625'),
+    ',75'            => build_test('3/4', '.75'),
+    '-23.'           => undef, # No new information to be gained
 );
 
 done_testing;

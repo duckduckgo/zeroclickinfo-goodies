@@ -29,13 +29,15 @@ category 'calculations';
 topics 'math';
 attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
 
-my $decimal = qr/(\d+(?:\.\d+))?/;
+my $decimal = qr/(-?\d++[,.]?\d*+)|([,.]\d++)/;
 # Check for binary operations
-triggers query_nowhitespace => qr/$decimal.*[+\-*\/^].*$decimal/;
+triggers query_nowhitespace => qr/($decimal|\w+)\W+($decimal|\w+)/;
 # Check for functions
 triggers query_nowhitespace => qr/\w+\(.*\)/;
 # Check for constants and named operations
-triggers query_nowhitespace => qr/$decimal\w+/;
+triggers query_nowhitespace => qr/$decimal\W*\w+/;
+# They might want to find out what fraction a decimal represents
+triggers query_nowhitespace => qr/[,.]\d+/;
 
 my $grammar_text = scalar share('grammar.txt')->slurp();
 my $grammar = Marpa::R2::Scanless::G->new(
