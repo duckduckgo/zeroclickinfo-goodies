@@ -32,6 +32,8 @@ attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
 my $decimal = qr/(-?\d++[,.]?\d*+)|([,.]\d++)/;
 # Check for binary operations
 triggers query_nowhitespace => qr/($decimal|\w+)\W+($decimal|\w+)/;
+# Factorial
+triggers query_nowhitespace => qr/\d+[!]/;
 # Check for functions
 triggers query_nowhitespace => qr/\w+\(.*\)/;
 # Check for constants and named operations
@@ -402,6 +404,12 @@ new_binary_operator 'exponentiate', '^', sub {
 };
 
 binary_doit 'exp', sub { $_[0] * 10 ** $_[1] };
+
+unary_doit 'factorial_operator', sub {
+    return if $_[0] < 0 or $_[0] > 33;
+    fac($_[0]);
+};
+unary_show 'factorial_operator', sub { $_[0] . '!' };
 
 # new_constant NAME, VALUE
 # will create a new constant that can be referred to through

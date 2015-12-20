@@ -155,8 +155,16 @@ ddg_goodie_test(
     '1_234 + 5_432'      => build_test('6,666', '1,234 + 5,432'),
     '4.243,34+22.538,28' => build_test('1.339.081/50', '4.243,34 + 22.538,28'),
     # Factorial
-    'fact(3)'                         => build_test('6', 'factorial(3)'),
-    'factorial(3)'                    => build_test('6', 'factorial(3)'),
+    'fact(3)'      => build_test('6', 'factorial(3)'),
+    'factorial(3)' => build_test('6', 'factorial(3)'),
+    '5!'           => build_test('120', '5!'),
+    '1 + 3!'       => build_test('7', '1 + 3!'),
+    '0!'           => build_test('1', '0!'),
+    '0.3!'         => undef,
+    '-7!'          => undef,
+    '34!'          => undef,
+    '1000000!'     => undef,
+
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,
     '9 + 0 x 07'                      => undef,
