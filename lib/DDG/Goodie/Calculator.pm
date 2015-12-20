@@ -123,6 +123,7 @@ sub standardize_operator_symbols {
     $text =~ s/(?<![[:alpha:]])x(?![[:alpha:]])/*/g;
     $text =~ s/[∙⋅×]/*/g;
     $text =~ s#[÷]#/#g;
+    $text =~ s/\*{2}/^/g;
     return $text;
 }
 
@@ -265,13 +266,21 @@ doit 'integer', sub {
     return Number::Fraction->new($self->[0]->[2]);
 };
 show 'integer', sub { "$_[0]->[0]->[2]" };
+
+# Attempt to generate a fraction, but just return a real number
+# if that fails.
+sub to_fraction_or_real {
+    my $to_convert = shift;
+    $to_convert =~ /(?<intpart>-?\d*)\.(?<fracpart>\d*)/;
+    my $mant = $+{'intpart'} .  $+{'fracpart'};
+    my $required_shift = length $+{'fracpart'};
+    my $fraction = eval { Number::Fraction->new($mant, 10 ** $required_shift) };
+    return defined $fraction ? $fraction : $to_convert;
+}
+
 doit 'decimal', sub {
     my $self = shift;
-    my $as_s = $self->[0]->[2];
-    $as_s =~ /(?<intpart>-?\d*)\.(?<fracpart>\d*)/;
-    my $mant = $+{'intpart'} . $+{'fracpart'};
-    my $required_shift = length $+{'fracpart'};
-    return Number::Fraction->new($mant, 10 ** $required_shift);
+    return to_fraction_or_real($self->[0]->[2]);
 };
 show 'decimal', sub { "$_[0]->[0]->[2]" };
 
@@ -364,11 +373,33 @@ sub new_binary_operator {
     binary_show $name, sub { "$_[0] $operator $_[1]" };
 }
 
+sub fraction_parts {
+    my $num = shift;
+    my ($numerator, $denominator) = split '/', $num;
+    return ($numerator, $denominator) if defined $numerator and defined $denominator;
+    return ($num, 1);
+}
 new_binary_operator 'subtract',     '-', sub { $_[0] - $_[1] };
 new_binary_operator 'add',          '+', sub { $_[0] + $_[1] };
 new_binary_operator 'multiply',     '*', sub { $_[0] * $_[1] };
 new_binary_operator 'divide',       '/', sub { $_[0] / $_[1] };
-new_binary_operator 'exponentiate', '^', sub { $_[0] ** $_[1] };
+
+# Little bit hacky for exponents because of the way Number::Fraction
+# handles them. Basically have to deal with the case when the base and
+# exponent are valid fractions, and the exponent is negative - other cases
+# are handled fine by Number::Fraction.
+new_binary_operator 'exponentiate', '^', sub {
+    if (is_fraction $_[0] and $_[1] < 0) {
+        my ($numerator, $denominator) = fraction_parts $_[0];
+        my (undef, $pow_denom)        = fraction_parts $_[1];
+        my ($new_numerator, $new_denominator) = ($denominator ** abs($_[1]),
+                                                 $numerator   ** abs($_[1]));
+        return ($pow_denom != 1)
+            ? Number::Fraction->new($new_numerator, $new_denominator)
+            : $new_numerator / $new_denominator;
+    };
+    return $_[0] ** $_[1];
+};
 
 binary_doit 'exp', sub { $_[0] * 10 ** $_[1] };
 
