@@ -1,7 +1,7 @@
 {
     "id": "mysql_cheat_sheet",
     "name": "MySQL",
-    "description": "A quick reference for MySQL (My Structured Query Language), an open source relational database management system",
+    "description": "A quick reference for MySQL, an open source relational database management system",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/davechild/cheat-sheets/mysql/"
