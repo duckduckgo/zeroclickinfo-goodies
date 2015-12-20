@@ -1,7 +1,7 @@
 {
     "id": "perldoc_cheat_sheet",
     "name": "perldoc",
-    "description": "Perl Documentation",
+    "description": "Perl Programming Documentation",
     "metadata": {
         "sourceName": "PERL",
         "sourceUrl": "http://perldoc.perl.org/perldoc.html"
