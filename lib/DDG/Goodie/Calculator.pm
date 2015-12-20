@@ -116,8 +116,10 @@ sub format_for_currency {
 
 sub standardize_operator_symbols {
     my $text = shift;
-    # FIXME: Currently just replacing 'x', might occur in functions!
-    $text =~ s/[∙⋅×x]/*/g;
+    # Only replace x's surrounding by non-alpha characters so it
+    # can occur in function names.
+    $text =~ s/(?<![[:alpha:]])x(?![[:alpha:]])/*/g;
+    $text =~ s/[∙⋅×]/*/g;
     $text =~ s#[÷]#/#g;
     return $text;
 }
@@ -342,6 +344,7 @@ binary_show 'logarithm', sub { "log$_[0]($_[1])" };
 # Misc functions
 new_unary_function 'square_root', 'sqrt', sub { sqrt $_[0] };
 new_unary_function 'factorial',   'factorial', sub { return fac($_[0]) };
+new_unary_function 'exponential', 'exp', sub { exp($_[0]) };
 
 
 # OPERATORS

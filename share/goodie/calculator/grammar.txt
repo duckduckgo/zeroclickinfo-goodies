@@ -61,6 +61,7 @@ Function ::=
     | ('log'  )         Argument bless => natural_logarithm
     | ('fact' )         Argument bless => factorial
     | ('factorial')     Argument bless => factorial
+    | ('exp')           Argument bless => exponential
 
 # Argument for a unary function.
 Argument ::= ('(') Expression (')') bless => primary
