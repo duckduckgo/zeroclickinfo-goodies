@@ -1,4 +1,4 @@
-:default ::= action => [value] bless => ::lhs
+:default ::= action => [value] bless => primary
 lexeme default = action => [ start, length, value ]
     bless => ::name latm => 1
 
@@ -29,6 +29,7 @@ ExprOp ::=
 
 Factor ::=
        NumTerm                 bless => primary
+    || Integer ('!')           bless => factorial_operator
     || NumTerm ('e':i) NumTerm bless => exp
 
 NumTerm ::=
@@ -71,11 +72,13 @@ Number ::=
     |     BaseNumber bless => primary
 
 BaseNumber ::=
-      Integer bless => integer
-    | Decimal bless => decimal
+      Integer
+    | Decimal
 
-Integer ~    '-' digits     | digits
-Decimal ~    '-' digits '.'   digits | digits '.' digits
+Integer ::= integer bless => integer
+Decimal ::= decimal bless => decimal
+integer ~    '-' digits     | digits
+decimal ~    '-' digits '.'   digits | digits '.' digits
            | '.' digits     | digits '.'
            | '-' digits '.'
 
