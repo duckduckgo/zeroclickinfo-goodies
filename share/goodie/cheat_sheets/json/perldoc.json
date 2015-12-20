@@ -1,6 +1,6 @@
 {
     "id": "perldoc_cheat_sheet",
-    "name": "Perldoc",
+    "name": "perldoc",
     "description": "Perl Documentation",
     "metadata": {
         "sourceName": "PERL",
