@@ -71,7 +71,7 @@ my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;
 # Looks like network notation, either CIDR or subnet mask
 my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;
 sub should_not_trigger {
-    my $query = $_;
+    my $query = shift;
     # Probably are searching for a phone number, not making a calculation
     for my $phone_regex (%phone_number_regexes) {
         return 1 if $query =~ $phone_regex;
@@ -85,7 +85,7 @@ sub should_not_trigger {
 }
 
 sub get_style {
-    my $text = $_;
+    my $text = shift;
     my @numbers = grep { $_ =~ /^$number_re$/ } (split /[^\d,.]+/, $text);
     return number_style_for(@numbers);
 }
@@ -110,7 +110,7 @@ sub to_fraction_or_real {
 }
 
 sub get_currency {
-    my $text = $_;
+    my $text = shift;
     # Add new currency symbols here.
     $text =~ /(?<currency>[\$])$decimal/;
     return $+{'currency'};
