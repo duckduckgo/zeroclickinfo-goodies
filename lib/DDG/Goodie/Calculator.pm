@@ -90,17 +90,23 @@ sub get_style {
     return number_style_for(@numbers);
 }
 
+sub is_fraction { ref shift eq 'Number::Fraction' }
 
-sub is_fraction {
-    my $to_check = shift;
-    return (ref $to_check eq 'Number::Fraction');
-}
-sub to_decimal {
+sub is_integer { shift !~ /(\.|e\+|\/)/ }
+
+sub to_decimal { is_fraction($_[0]) ? $_[0]->to_num() : $_[0] }
+
+sub new_fraction { Number::Fraction->new(@_) };
+
+# Attempt to generate a fraction, but just return a real number if that
+# fails.
+sub to_fraction_or_real {
     my $to_convert = shift;
-    if (is_fraction($to_convert)) {
-        return eval { $to_convert->to_num() } or undef;
-    }
-    return $to_convert;
+    $to_convert =~ /(?<intpart>-?\d*)\.(?<fracpart>\d*)/;
+    my $mant = $+{'intpart'} .  $+{'fracpart'};
+    my $required_shift = length $+{'fracpart'};
+    my $fraction = eval { new_fraction($mant, 10 ** $required_shift) };
+    return defined $fraction ? $fraction : $to_convert;
 }
 
 sub get_currency {
@@ -116,6 +122,11 @@ sub format_for_currency {
     return $text unless defined $currency;
     my $result = sprintf('%0.2f', to_decimal($text));
     return $currency . $result;
+}
+
+sub format_currency_for_display {
+    my ($style, $text, $currency) = @_;
+    return $style->for_display(format_for_currency($text, $currency));
 }
 
 sub standardize_operator_symbols {
@@ -141,27 +152,81 @@ sub get_results {
 }
 
 sub should_display_decimal {
-    my ($computable_query, $result) = @_;
-    return 1 unless is_fraction($result);
-    return ($computable_query eq $result);
+    my ($to_compute, $result) = @_;
+    if (is_fraction $result) {
+        return 1 if not decimal_strings_equal($to_compute, to_decimal($result));
+    } else {
+        return 1 if $to_compute ne $result;
+    }
+    return 0;
+}
+sub no_whitespace { $_[0] =~ s/\s*//gr };
+
+sub should_display_fraction {
+    my ($to_compute, $result) = @_;
+    is_fraction $result and no_whitespace $to_compute ne $result
 }
 
-# Generates either a fraction or decimal representation of the
-# answer.
-sub display_for_fraction_decimal {
-    my ($to_compute, $val_result) = @_;
-    if (should_display_decimal $to_compute, $val_result) {
-        my $decimal = to_decimal($val_result);
-        return unless defined $decimal;
-        my ($nom, $expt) = split 'e', $decimal;
-        if (defined $expt) {
-            my $num = nearest(1e-12, $nom);
-            return $num . 'e' . $expt;
-        };
-        my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
-        return nearest(1e-12, $s) * 10 ** $e;
+# Check if two strings represent the same decimal number.
+sub decimal_strings_equal {
+    my ($first, $second) = @_;
+    $first =~ s/^\./0\./;
+    $second =~ s/^\./0\./;
+    return $first eq $second;
+}
+
+# Round a decimal number to the correct number of
+# decimal places for display.
+sub round_decimal {
+    my $decimal = shift;
+    my ($nom, $expt) = split 'e', $decimal;
+    if (defined $expt) {
+        my $num = nearest(1e-12, $nom);
+        return $num . 'e' . $expt;
     };
-    return $val_result;
+    my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
+    return nearest(1e-12, $s) * 10 ** $e;
+}
+
+sub got_rounded {
+    my ($original, $to_test) = @_;
+    return 0 if $original == $to_test;
+    my $formatted = to_fraction_or_real $to_test;
+    return $original != $formatted;
+}
+
+sub format_number_for_display {
+    my ($style, $number) = @_;
+    return $style->for_display($number);
+}
+
+sub is_bad_result {
+    my $result = shift;
+    return 1 unless defined $result;
+    return 1 if is_fraction($result) and denominator($result) == 0;
+}
+
+sub format_for_display {
+    my ($style, $to_compute, $value, $currency) = @_;
+    return format_currency_for_display $style, $value, $currency if defined $currency;
+    return format_number_for_display $style, $value if is_integer $value;
+    my $result;
+    my $displayed_fraction;
+    if (should_display_fraction($to_compute, $value)) {
+        $result .= format_number_for_display($style, $value) . ' ';
+        $displayed_fraction = 1;
+    };
+    if (should_display_decimal($to_compute, $value)) {
+        my $decimal = round_decimal $value;
+        if (got_rounded($value, $decimal)) {
+            $result .= '≈ ';
+        } else {
+            $result .= '= ' if $displayed_fraction;
+        }
+        $result .= format_number_for_display($style, $decimal);
+    };
+    $result =~ s/\s+$//;
+    return $result;
 }
 
 sub to_display {
@@ -170,11 +235,9 @@ sub to_display {
     $query = standardize_operator_symbols $query;
     my $style = get_style $query or return;
     my $to_compute = $style->for_computation($query);
-    my ($generated_input, $val_result) = eval { get_results $to_compute } or return;
-    $val_result = display_for_fraction_decimal $to_compute, $val_result;
-    return unless defined $val_result;
-    $val_result = format_for_currency $val_result, $currency;
-    my $result = $style->for_display($val_result);
+    my ($generated_input, $val_result) = eval { get_results $to_compute };
+    return if is_bad_result $val_result;
+    my $result = format_for_display $style, $to_compute, $val_result, $currency;
     $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
     # Didn't come up with anything the user didn't already know.
     return if ($generated_input eq $result);
@@ -187,6 +250,7 @@ handle query => sub {
     return if should_not_trigger $query;
     $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
     my ($generated_input, $result) = to_display $query or return;
+    return unless defined $result and defined $generated_input;
     return $result,
         structured_answer => {
             id         => 'calculator',
@@ -265,20 +329,10 @@ sub unary_fun_show {
 }
 doit 'integer', sub {
     my $self = shift;
-    return Number::Fraction->new($self->[0]->[2]);
+    return new_fraction($self->[0]->[2]);
 };
 show 'integer', sub { "$_[0]->[0]->[2]" };
 
-# Attempt to generate a fraction, but just return a real number
-# if that fails.
-sub to_fraction_or_real {
-    my $to_convert = shift;
-    $to_convert =~ /(?<intpart>-?\d*)\.(?<fracpart>\d*)/;
-    my $mant = $+{'intpart'} .  $+{'fracpart'};
-    my $required_shift = length $+{'fracpart'};
-    my $fraction = eval { Number::Fraction->new($mant, 10 ** $required_shift) };
-    return defined $fraction ? $fraction : $to_convert;
-}
 
 doit 'decimal', sub {
     my $self = shift;
@@ -381,6 +435,10 @@ sub fraction_parts {
     return ($numerator, $denominator) if defined $numerator and defined $denominator;
     return ($num, 1);
 }
+sub denominator {
+    my (undef, $denominator) = fraction_parts shift;
+    return $denominator;
+}
 new_binary_operator 'subtract',     '-', sub { $_[0] - $_[1] };
 new_binary_operator 'add',          '+', sub { $_[0] + $_[1] };
 new_binary_operator 'multiply',     '*', sub { $_[0] * $_[1] };
@@ -390,20 +448,26 @@ new_binary_operator 'divide',       '/', sub { $_[0] / $_[1] };
 # handles them. Basically have to deal with the case when the base and
 # exponent are valid fractions, and the exponent is negative - other cases
 # are handled fine by Number::Fraction.
-new_binary_operator 'exponentiate', '^', sub {
+sub exponentiate_fraction {
     if (is_fraction $_[0] and $_[1] < 0) {
         my ($numerator, $denominator) = fraction_parts $_[0];
         my (undef, $pow_denom)        = fraction_parts $_[1];
         my ($new_numerator, $new_denominator) = ($denominator ** abs($_[1]),
                                                  $numerator   ** abs($_[1]));
         return ($pow_denom != 1)
-            ? Number::Fraction->new($new_numerator, $new_denominator)
+            ? new_fraction($new_numerator, $new_denominator)
             : $new_numerator / $new_denominator;
     };
     return $_[0] ** $_[1];
+}
+
+new_binary_operator 'exponentiate', '^', sub {
+    return exponentiate_fraction($_[0], $_[1]);
 };
 
-binary_doit 'exp', sub { $_[0] * 10 ** $_[1] };
+binary_doit 'exp', sub {
+    $_[0] * exponentiate_fraction(new_fraction(10), $_[1])
+};
 
 unary_doit 'factorial_operator', sub {
     return if $_[0] < 0 or $_[0] > 33;
