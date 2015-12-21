@@ -21,7 +21,7 @@ attribution web => ['robert.io', 'Robert Picard'],
 triggers start =>	"rcube", "rubik", "rubiks", "rubix",
 					"rubicks", "rubik's", "rubic's", "rubick's",
 					"rubik cube", "rubiks cube", "rubic cube", "rubics cube",
-					"rubik's cube patterns", "rubiks cube patterns";
+					"rubik's cube";
 
 zci answer_type => "rubiks_cube";
 zci is_cached   => 1;
@@ -56,6 +56,7 @@ sub render_text($) {
 
 handle remainder_lc => sub {
 
+    return if ($_ eq '');
     #support British English!
     s/centre/center/;
 
@@ -72,7 +73,7 @@ handle remainder_lc => sub {
         $title = $patterns{$_};
         $subtitle = "Rubiks cube '" . to_titlecase($_) . "' pattern";
     } else {
-        return if ($_ ne '');
+        return if ($_ ne 'patterns');
         foreach my $pattern (keys %patterns) {
             $output .= render_text($pattern);
         }
