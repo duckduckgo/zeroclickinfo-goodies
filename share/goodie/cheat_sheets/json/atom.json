@@ -98,7 +98,7 @@
 			"key": "[Ctrl] [Enter]"
 		}, {
 			"val": "Indent / outdent selected lines",
-			"key": "[Ctrl] [[] / []]"
+			"key": "[Ctrl] [\\[] / [\\]]"
 		}, {
 			"val": "Join lines",
 			"key": "[Ctrl] [j]"
