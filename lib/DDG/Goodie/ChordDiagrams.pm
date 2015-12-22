@@ -3,6 +3,7 @@ package DDG::Goodie::ChordDiagrams;
 
 use DDG::Goodie;
 use SVG;
+# docs: http://search.cpan.org/~ronan/SVG-2.33/lib/SVG/Manual.pm
 
 zci answer_type => "chord_diagrams";
 zci is_cached   => 1;
@@ -108,6 +109,7 @@ sub gen_svg {
     my $i = 0;
     my $p_dist = ($opts{"width"} - 2) / ($opts{"strings"} - 1);
     for my $p (@{$opts{"points"}}) {
+        last if ($i >= $opts{"strings"});
         my $fill = 'black';
         $fill = 'none' if ($p == 0);
         $svg->circle(

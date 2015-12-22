@@ -1,42 +1,9 @@
-.zci--chord_diagrams .chord{
-    position: relative;
-    background-color: #ddd;
-    margin: 3px 20px 2px;
+.zci--chord_diagrams .chord {
+    margin: 0;
     padding: 0;
     float: left;
 }
-.zci--chord_diagrams .topfret{
-    height: 5px;
-    background-color: #888;
-}
-.zci--chord_diagrams .string{
-    float: left;
-    margin: 0 7px;
-    background-color: #888;
-    width: 2px;
-}
-.zci--chord_diagrams .fret{
-    margin: 23px 0 0;
-    background-color: #888;
-    height: 2px;
-}
-.zci--chord_diagrams .zeropoint{
-    background-color: #ddd;
-    width: 6px;
-    height: 6px;
-    border: 1px #222 solid;
-    border-radius: 3px;
-    position: relative;
-    margin: 0 4px;
-    float: left;
-}
 
-.zci--chord_diagrams .point{
-    background-color: #222;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    position: relative;
-    margin: 0 3px;
-    float: left;
+.zci--chord_diagrams .chord * {
+    overflow: visible;
 }
