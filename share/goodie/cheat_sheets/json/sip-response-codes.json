@@ -1,6 +1,7 @@
 {
     "id": "sip_response_codes_cheat_sheet",
     "name": "SIP Response Codes",
+    "description":"Session Initiation Protocol is a signalling protocol used for controlling communication sessions such as VOIP",
     "metadata":{
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_SIP_response_codes"
