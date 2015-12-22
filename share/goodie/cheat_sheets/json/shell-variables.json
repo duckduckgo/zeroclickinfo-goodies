@@ -1,6 +1,7 @@
 {
     "id": "shell_variables_cheat_sheet",
     "name": "Shell Variables",
+    "description":"A collection of useful shell variables"
     "metadata": {
         "sourceName": "Variables",
         "sourceUrl": "http://bash.cyberciti.biz/guide/Variables"
