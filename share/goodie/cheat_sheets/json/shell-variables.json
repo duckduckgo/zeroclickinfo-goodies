@@ -3,7 +3,7 @@
     "name": "Shell Variables",
     "description":"A collection of useful shell variables",
     "metadata": {
-        "sourceName": "Variables",
+        "sourceName": "cyberciti",
         "sourceUrl": "http://bash.cyberciti.biz/guide/Variables"
     },
     "aliases": [
