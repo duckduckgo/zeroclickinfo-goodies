@@ -1,10 +1,11 @@
  {
     "id": "cpp_cheat_sheet",
     "name": "C++",
+    "description":"Cpp is  is a general-purpose programming language which has imperative, object-oriented and generic programming features"
     "metadata": {
         "sourceName": "CCU",
         "sourceUrl": "http://www.cs.ccu.edu.tw/~damon/oop/,c++refcard.pdf"
-    },
+    }desc
     "template_type": "reference", 
     "section_order": [
         "Fundamental Data Types",
@@ -14,7 +15,7 @@
         "Logical Operators",
         "Bitwise Operators",
         "Namespaces",
-        "Console Input/Output",
+        "Console Input/Output",desc
         "Class Member Protections"
     ],
     "aliases": [
