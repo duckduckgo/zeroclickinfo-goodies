@@ -1,9 +1,10 @@
 {
     "id": "illustrator_cheat_sheet",
-    "name": "illustrator",
-    "description": "Graphics Editor",
+    "name": "Illustrator",
+    "description": "Keyboard shortcuts for Adobe Illustrator, a vector graphics editor,
     "metadata": {
-        "sourceName": "IllustratorCheatSheet"
+        "sourceName": "Adobe helpx"
+        "sourceUrl": "https://helpx.adobe.com/illustrator/using/default-keyboard-shortcuts.html"
     },
     "aliases": [
         "adobe illustrator", "illustrator cc", "adobe illustrator cc"
@@ -64,7 +65,7 @@
                 "val": "Type"
             },
             {
-                "key": "[Shift]   [T]",
+                "key": "[Shift] [T]",
                 "val": "Touch Type"
             },
             {
