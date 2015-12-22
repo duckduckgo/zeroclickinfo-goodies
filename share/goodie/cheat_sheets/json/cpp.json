@@ -2,7 +2,7 @@
     "id": "cpp_cheat_sheet",
     "name": "C++",
     "description":"Cpp is  is a general-purpose programming language which has imperative, object-oriented and generic programming features"
-    "metadata": {
+    "metadata":{
         "sourceName": "CCU",
         "sourceUrl": "http://www.cs.ccu.edu.tw/~damon/oop/,c++refcard.pdf"
     },
