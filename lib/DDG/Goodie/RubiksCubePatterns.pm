@@ -38,6 +38,7 @@ my %patterns = (
     "anaconda" => "L U B' U' R L' B R' F B' D R D' F'",
     "python" => "F2 R' B' U R' L F' L F' B D' R B L2",
     "black mamba" => "R D L F' R L' D R' U D' B U' R' D'",
+    "slash" => "R L F B R L F B R L F B",
 );
 
 sub to_titlecase($)
