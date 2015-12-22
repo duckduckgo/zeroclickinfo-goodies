@@ -3,7 +3,7 @@
     "name": "Shell",
     "description":"Shell is a user interface for access to an operating system's services",
     "metadata": {
-        "sourceName": "Bash Cheat Sheet",
+        "sourceName": "johnstowers",
         "sourceUrl": "http://www.johnstowers.co.nz/blog/pages/bash-cheat-sheet.html"
     },
     "aliases": [
