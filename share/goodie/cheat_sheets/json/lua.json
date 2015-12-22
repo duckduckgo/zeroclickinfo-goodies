@@ -1,6 +1,7 @@
 {
   "id": "lua_cheat_sheet",
   "name": "Lua",
+  "description":"Lua is the popular programming language often used as a embedded scripting language",
   "metadata": {
     "sourceName": "Lua Cheat Sheet for Programmers",
     "sourceUrl": "http://coffeeghost.net/2010/11/01/lua-cheat-sheet-for-programmers/"
