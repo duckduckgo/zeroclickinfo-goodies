@@ -1,7 +1,7 @@
 {
     "id": "golang_cheat_sheet",
     "name": "Go Language",
-    "description":"Basic Syntax, functions and expressions of golang",
+    "description":"Basic Syntax, functions, and expressions of golang",
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/a8m/go-lang-cheat-sheet"
