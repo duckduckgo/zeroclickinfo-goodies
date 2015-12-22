@@ -1,7 +1,7 @@
 {
     "id": "github_atom_mac_cheat_sheet",
     "name": "Atom",
-    "description": "A hackable text editor for the 21st Century. ",
+    "description": "A hackable text editor for the 21st Century",
     "metadata":{
         "sourceName": "Bugsnag",
         "sourceUrl": "https://bugsnag.com/blog/atom-editor-cheat-sheet"
