@@ -6,7 +6,7 @@
         "sourceName": "Freebsd",
         "sourceUrl": "https://www.freebsd.org/cgi/man.cgi?ed%281%29"
     },
-    "template_type": "keyboard",
+    "template_type": "terminal",
     "section_order": [
         "Editing Commands",
         "File Manipulation Commands",
@@ -18,11 +18,11 @@
     "sections": {
         "Invocation": [
             {
-                "key": "[ed \\[parameters\\] \\[filename\\]]",
+                "key": "ed \\[parameters\\] \\[filename\\]",
                 "val": "Invoke ed(1) with optional parameters and/or filename"
             },
             {
-                "key": "[-p \\[string\\]]",
+                "key": "-p \\[string\\]",
                 "val": "Use [string] as a prompt"
             },
             {
@@ -64,57 +64,57 @@
                 "val": "The previous line containing [pattern]"
             },
             {
-                "key": "+[number]",
-                "val": "[number] lines after the current line"
+                "key": "+\\{number\\}",
+                "val": "{number} lines after the current line"
             },
             {
-                "key": "-[number]",
-                "val": "[number] lines before the current line"
+                "key": "-\\{number\\}",
+                "val": "{number} lines before the current line"
             },
             {
-                "key": "'{letter}",
+                "key": "'\\{letter\\}",
                 "val": "A line marked with {letter} (see the [k] command below)"
             }
         ],
         "Editing Commands": [
             {
-                "key": "[.]a",
+                "key": "\\[.\\]a",
                 "val": "Insert below the current line, end with a single period"
             },
             {
-                "key": "[.,.]c",
+                "key": "\\[.,.\\]c",
                 "val": "Change the specified range, end with a single period"
             },
             {
-                "key": "[.,.]d",
+                "key": "\\[.,.\\]d",
                 "val": "Delete the specified range"
             },
             {
-                "key": "[.]i",
+                "key": "\\[.\\]i",
                 "val": "Insert above the current line, end with a single period"
             },
             {
-                "key": "[.,+]j",
+                "key": "\\[.,+\\]j",
                 "val": "Join the specified range"
             },
             {
-                "key": "[.,.]m[.]",
+                "key": "\\[.,.\\]m\\[.\\]",
                 "val": "Move the specified range"
             },
             {
-                "key": "[.,.]s/regexp/replacement/flags",
+                "key": "\\[.,.\\]s/regexp/replacement/flags",
                 "val": "Perform a substitution on the specified range"
             },
             {
-                "key": "[.,.]t[.]",
+                "key": "\\[.,.\\]t\\[.\\]",
                 "val": "Copy the specified range"
             },
             {
-                "key": "[.]x",
+                "key": "\\[.\\]x",
                 "val": "Paste the cut buffer (GNU extension)"
             },
             {
-                "key": "[.,.]y",
+                "key": "\\[.,.\\]y",
                 "val": "Copy (yank) the specified range (GNU extension)"
             }
         ],
@@ -182,15 +182,15 @@
                 "val": "Toggle printing of errors"
             },
             {
-                "key": "[.]l",
+                "key": "\\[.\\]l",
                 "val": "Display the specified range unambiguously"
             },
             {
-                "key": "[.]n",
+                "key": "\\[.\\]n",
                 "val": "Number and print the specified range"
             },
             {
-                "key": "[.]p",
+                "key": "\\[.\\]p",
                 "val": "Print the specified range"
             },
             {
@@ -198,21 +198,21 @@
                 "val": "Toggle command-prompt printing"
             },
             {
-                "key": "[.+1]z{N}",
+                "key": "\\[.+1\\]z\\{N\\}",
                 "val": "Display N lines of text"
             }
         ],
         "Other Commands": [
             {
-                "key": "[1,$]g/\\{re\\}/\\{command-list\\}",
+                "key": "\\[1,$\\]g/\\{re\\}/\\{command-list\\}",
                 "val": "Execute {command-list} on all lines matching {re}"
             },
             {
-                "key": "[1,$]G/{re}/",
+                "key": "\\[1,$\\]G/\\{re\\}/",
                 "val": "Interactively edit all lines matching {re}"
             },
             {
-                "key": "[.]k\\{letter\\}",
+                "key": "\\[.\\]k\\{letter\\}",
                 "val": "Mark the line with the specified lower-case letter"
             },
             {
@@ -220,23 +220,23 @@
                 "val": "Undo"
             },
             {
-                "key": "[1,$]v/re/\\{command-list\\}",
+                "key": "\\[1,$\\]v/re/\\{command-list\\}",
                 "val": "Execute {command-list} on all lines that do not match {re}"
             },
             {
-                "key": "[1,$]V/re/",
+                "key": "\\[1,$\\]V/re/",
                 "val": "Interactively edit all lines that do not match {re}"
             },
             {
-                "key": "[$]=",
+                "key": "\\[$\\]=",
                 "val": "Print the line number of the addressed line"
             },
             {
-                "key": "[.+1]{newline}",
+                "key": "\\[.+1\\]\\{newline\\}",
                 "val": "Print and select the addressed line"
             },
             {
-                "key": "[.,.]#",
+                "key": "\\[.,.\\]#",
                 "val": "Comment the remainder of the line (GNU extension)"
             }
         ]

@@ -2,6 +2,14 @@ DDH.cheat_sheets = DDH.cheat_sheets || {};
 
 DDH.cheat_sheets.build = function(ops) {
 
+    var ignoreBracket = false;
+    if (ops.data.ignore_brackets === 1) {
+        ignoreBracket = true;
+    }
+
+    // Loop over each section, and pass it to the correct template_type sub-template (e.g code.handlebars)
+    // Passes along a variable indicating if this section should be hidden by default
+    // We do this to supress the intial display to only the first 3 elemests of the first 2 sections
     Spice.registerHelper('cheatsheets_ordered', function(sections, section_order, template_type, options) {
         var result = "";
         var template = {
@@ -36,8 +44,7 @@ DDH.cheat_sheets.build = function(ops) {
     });
 
     var re_brackets    = /(?:\[|\{|\}|\])/,      // search for [, {, }, or }
-        re_whitespace  = /\s+/,                  // search for spaces
-        re_codeblock   = /<code>(.+?)<\/code>/g; // search for <code></code>
+        re_codeblock   = /<code>(.+?)<\/code>/g; // search for <code>...</code>
 
     Spice.registerHelper('cheatsheets_codeblock', function(string, className, options) {
 
@@ -45,24 +52,22 @@ DDH.cheat_sheets.build = function(ops) {
         var codeClass = typeof className === "string" ? className : "bg-clr--white";
 
         // replace escaped slashes and brackets
-        string = string.replace(/\</g, '&lt;')
-                .replace(/\>/g, '&gt;')
-                .replace(/\\\\/, "<bks>")
-                .replace(/\\\[/g, "<lbr>")
-                .replace(/\\\{/g, "<lcbr>")
-                .replace(/\\\]/g, "<rbr>")
-                .replace(/\\\}/g, "<rcbr>");
+        string = Handlebars.Utils.escapeExpression(string)
+            .replace(/\n/g, "<br>")
+            .replace(/\t/g, "&nbsp;&nbsp;")
+            .replace(/\\\\/g, "<bks>")
+            .replace(/\\\[/g, "<lbr>")
+            .replace(/\\\{/g, "<lcbr>")
+            .replace(/\\\]/g, "<rbr>")
+            .replace(/\\\}/g, "<rcbr>");
 
-        // no spaces
-        // OR
-        // spaces and no un-escaped brackets
-        // e.g "?()", ":sp filename"
-        //  --> wrap whole sting in <code></code>
-        if ( !re_whitespace.test(string) || !re_brackets.test(string) ){
-            out = "<code class='"+codeClass+"'>" + string + "</code>";
+        // no un-escaped brackets
+        // e.g "?()", ":sp filename", "\\[:alpha:\\]"
+        //  --> wrap whole string in <code></code>
+        if ( ignoreBracket || !re_brackets.test(string) ){
+            out = "<code class=\"" + codeClass + "\">" + string + "</code>";
 
-        // spaces
-        // AND
+
         // un-escaped brackets
         // e.g "[Ctrl] [B]"
         //  --> replace [] & {} with <code></code>
@@ -70,7 +75,7 @@ DDH.cheat_sheets.build = function(ops) {
 
             // replace unescaped brackets
             out = string
-                .replace(/\[|\{/g, "<code class='"+codeClass+"'>")
+                .replace(/\[|\{/g, "<code class=\"" + codeClass + "\">")
                 .replace(/\]|\}/g, "</code>");
         }
 
@@ -82,11 +87,6 @@ DDH.cheat_sheets.build = function(ops) {
                 .replace(/<lcbr>/g, "{")
                 .replace(/<rbr>/g,  "]")
                 .replace(/<rcbr>/g, "}");
-
-        out = out.replace(re_codeblock, function esc_codeblock (match, p1, offset, string, codeClass){
-            var escaped = Handlebars.Utils.escapeExpression(p1);
-            return "<code class='"+codeClass+">" + escaped + "</code>";
-        });
 
         return new Handlebars.SafeString(out);
     });

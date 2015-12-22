@@ -10,7 +10,18 @@
         "regexp", "regular expression", "regular expressions"
     ],
     "template_type": "code",
-    "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"],
+    "section_order": [
+        "Anchors",
+        "Character Classes",
+        "POSIX Classes",
+        "Pattern Modifiers",
+        "Escape Sequences",
+        "Quantifiers",
+        "Groups and Ranges",
+        "Assertions",
+        "Special Characters",
+        "String Replacement"
+    ],
     "sections": {
         "Assertions": [{
             "val": "Lookahead assertion",
@@ -39,43 +50,43 @@
         }],
         "POSIX Classes": [{
             "val": "Uppercase letters [A-Z]",
-            "key": "[:upper:]"
+            "key": "\\[:upper:\\]"
         }, {
             "val": "Lowercase letters [a-z]",
-            "key": "[:lower:]"
+            "key": "\\[:lower:\\]"
         }, {
             "val": "All letters [A-Za-z]",
-            "key": "[:alpha:]"
+            "key": "\\[:alpha:\\]"
         }, {
             "val": "Digits and letters [A-Za-z0-9]",
-            "key": "[:alnum:]"
+            "key": "\\[:alnum:\\]"
         }, {
             "val": "Digits [0-9]",
-            "key": "[:digit:]"
+            "key": "\\[:digit:\\]"
         }, {
             "val": "Hexadecimal digits [0-9a-f]",
-            "key": "[:xdigit:]"
+            "key": "\\[:xdigit:\\]"
         }, {
             "val": "Punctuation",
-            "key": "[:punct:]"
+            "key": "\\[:punct:\\]"
         }, {
-            "val": "Space and tab [ \\t]",
-            "key": "[:blank:]"
+            "val": "Space and tab [\\t]",
+            "key": "\\[:blank:\\]"
         }, {
-            "val": "Blank characters [ \\t\\r\\n\\v\\f]",
-            "key": "[:space:]"
+            "val": "Blank characters [\\t\\r\\n\\v\\f]",
+            "key": "\\[:space:\\]"
         }, {
             "val": "Control characters [\\x00-\\x1F\\x7F]",
-            "key": "[:cntrl:]"
+            "key": "\\[:cntrl:\\]"
         }, {
             "val": "Printed characters [\\x21-\\x7E]",
-            "key": "[:graph:]"
+            "key": "\\[:graph:\\]"
         }, {
             "val": "Printed characters and spaces [\\x20-\\x7E]",
-            "key": "[:print:]"
+            "key": "\\[:print:\\]"
         }, {
             "val": "Digits, letters and underscore [A-Za-z0-9_]",
-            "key": "[:word:]"
+            "key": "\\[:word:\\]"
         }],
         "Groups and Ranges": [{
             "val": "Any character except newline (\\n)",
@@ -91,19 +102,19 @@
             "key": "(?:...)"
         }, {
             "val": "Single character (a or b or c)",
-            "key": "[abc]"
+            "key": "\\[abc\\]"
         }, {
             "val": "Single character (not a or b or c)",
-            "key": "[^abc]"
+            "key": "\\[^abc\\]"
         }, {
             "val": "Single character range (a or b ... or q)",
-            "key": "[a-q]"
+            "key": "\\[a-q\\]"
         }, {
             "val": "Single character range (A or B ... or Z)",
-            "key": "[A-Z]"
+            "key": "\\[A-Z\\]"
         }, {
             "val": "Single digit from 0 to 9",
-            "key": "[0-9]"
+            "key": "\\[0-9\\]"
         }],
         "Special Characters": [{
             "val": "New line",
@@ -170,13 +181,13 @@
             "key": "?"
         }, {
             "val": "Exactly 3",
-            "key": "{3}"
+            "key": "\\{3\\}"
         }, {
             "val": "3 or more",
-            "key": "{3,}"
+            "key": "\\{3,\\}"
         }, {
             "val": "2, 3, 4 or 5",
-            "key": "{2,5}"
+            "key": "\\{2,5\\}"
         }],
         "String Replacement": [{
             "val": "n-th non-passive group",
