@@ -1,6 +1,7 @@
 {
   "id": "ssh_cheat_sheet",
   "name": "SSH",
+  "description":"Secure Shell is a UNIX-based command interface and protocol for securely getting access to a remote computer",
   "metadata": {
     "sourceName": "Linux Command",
     "sourceUrl": " http://linuxcommand.org/man_pages/ssh1.html"
