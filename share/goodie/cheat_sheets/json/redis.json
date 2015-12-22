@@ -1,6 +1,7 @@
 {
   "id": "redis_cheat_sheet",
   "name": "Redis Commands",
+  "description": "Redis is a data structure server. It is open-source, networked, in-memory, and stores keys with optional durability",
   "metadata": {
     "sourceName": "Redis",
     "sourceUrl": "http://redis.io/commands"
