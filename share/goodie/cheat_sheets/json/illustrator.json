@@ -1,9 +1,9 @@
 {
     "id": "illustrator_cheat_sheet",
     "name": "Illustrator",
-    "description": "Keyboard shortcuts for Adobe Illustrator, a vector graphics editor,
+    "description": "Keyboard shortcuts for Adobe Illustrator, a vector graphics editor",
     "metadata": {
-        "sourceName": "Adobe helpx"
+        "sourceName": "Adobe help",
         "sourceUrl": "https://helpx.adobe.com/illustrator/using/default-keyboard-shortcuts.html"
     },
     "aliases": [
