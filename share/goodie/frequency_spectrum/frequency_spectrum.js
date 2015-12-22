@@ -42,38 +42,19 @@ DDH.frequency_spectrum = DDH.frequency_spectrum || {};
             // Marker tag and label
             markerlabel.style.visibility = "hidden";
             markertag.style.visibility = "hidden";
-
+            
+            var obj = { "Radio" : "Rad.", "Infrared" : "Inf.", "Visible light" : "Vis.", "Ultraviolet" : "UV", "X-ray" : "X-ray", "Gamma" : "Gam." };
             // Major range labels
             for (var i = majrangelabels.length - 1; i >= 0; i--) {
-                var labeltext;
-                labeltext = majrangelabels[i].childNodes[1].childNodes[0].textContent;
-                if (labeltext === "Radio") {
-                    majrangelabels[i].childNodes[1].childNodes[0].textContent = "Rad.";
-                } else if (labeltext === "Infrared") {
-                    majrangelabels[i].childNodes[1].childNodes[0].textContent = "Inf.";
-                } else if (labeltext === "Visible light") {
-                    majrangelabels[i].childNodes[1].childNodes[0].textContent = "Vis.";
-                } else if (labeltext === "Ultraviolet") {
-                    majrangelabels[i].childNodes[1].childNodes[0].textContent = "UV";
-                } else if (labeltext === "X-ray") {
-                    majrangelabels[i].childNodes[1].childNodes[0].textContent = "X-ray";
-                } else if (labeltext === "Gamma") {
-                    majrangelabels[i].childNodes[1].childNodes[0].textContent = "Gam.";
-                }
+                majrangelabels[i].childNodes[1].childNodes[0].textContent = obj[ scheme[majrangelabels[i].childNodes[1].childNodes[0].textContent] ];
             }
         }
     }
     DDH.frequency_spectrum.build = function(ops) {
-        // Global Variables Declaration
-
     
         return {
             onShow: function() {
 
-                //'started' is a boolean variable used in order to avoid the
-                //duplication of the chess area. Moving around the DDG tabs the
-                //'onShow' function is executed over and over. This simple solution
-                //prevents the problem
                 if (!started) {
                     started = true;
                 
