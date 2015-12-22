@@ -1,7 +1,7 @@
 {
     "id": "golang_cheat_sheet",
     "name": "Go Language",
-    "description":"Golang, is a programming language developed at Google in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson."
+    "description":"Golang, is a programming language developed at Google in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson,
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/a8m/go-lang-cheat-sheet"
