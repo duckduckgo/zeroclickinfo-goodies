@@ -327,18 +327,7 @@ sub is_integer { shift !~ /(\.|e\+|\/)/ }
 
 sub to_decimal { is_fraction($_[0]) ? $_[0]->to_num() : $_[0] }
 
-sub new_fraction { Number::Fraction->new(@_) };
-
-# Attempt to generate a fraction, but just return a real number if that
-# fails.
-sub to_fraction_or_real {
-    my $to_convert = shift;
-    $to_convert =~ /(?<intpart>-?\d*)\.(?<fracpart>\d*)/;
-    my $mant = $+{'intpart'} .  $+{'fracpart'};
-    my $required_shift = length $+{'fracpart'};
-    my $fraction = eval { new_fraction($mant, 10 ** $required_shift) };
-    return defined $fraction ? $fraction : $to_convert;
-}
+sub new_fraction { Math::BigRat->new(@_) };
 
 sub get_currency {
     my $text = shift;
@@ -507,6 +496,7 @@ sub doit {
     no strict 'refs';
     *$full_name = *{uc $full_name} = $sub;
 }
+
 sub show {
     my ($name, $sub) = @_;
     my $full_name = 'Calculator::' . $name . '::show';
@@ -515,19 +505,16 @@ sub show {
 }
 
 # Usage: binary_doit NAME, SUB
-# SUB should take 2 arguments and return the result of the doit
-# action.
-#
-# A subroutine of the form Calculator::NAME::doit will be created
-# in the global namespace.
+# SUB should take 2 arguments and return the result of the action.
 sub binary_doit {
     my ($name, $sub) = @_;
     doit $name, sub {
         my $self = shift;
-        return $sub->($self->[0]->doit(),
-                      $self->[1]->doit());
+        my $new_sub = untaint_when(sub { $_[0] =~ /^\d+$/ }, $sub);
+        return $new_sub->($self->[0]->doit(), $self->[1]->doit());
     };
 }
+
 sub binary_show {
     my ($name, $sub) = @_;
     show $name, sub {
@@ -535,14 +522,17 @@ sub binary_show {
         return $sub->($self->[0]->show(), $self->[1]->show());
     };
 }
+
 sub unary_doit {
     my ($name, $sub) = @_;
     no strict 'refs';
     doit $name, sub {
         my $self = shift;
-        return $sub->($self->[0]->doit());
+        my $new_sub = untaint_when sub { $_[0] =~ /^\d+$/ }, $sub;
+        return $new_sub->($self->[0]->doit());
     };
 }
+
 sub unary_show {
     my ($name, $sub) = @_;
     show $name, sub {
@@ -550,26 +540,24 @@ sub unary_show {
         return $sub->($self->[0]->show());
     };
 }
+
 unary_doit 'paren', sub { $_[0] };
 unary_show 'paren', sub { '(' . $_[0] . ')' };
 unary_doit 'primary', sub { $_[0] };
 unary_show 'primary', sub { $_[0] };
-sub unary_fun_show {
-    my ($name, $fun_name) = @_;
-    unary_show $name, sub { "$fun_name($_[0])" };
+
+# Integers, decimals etc...
+sub new_base_value {
+    my ($name, $val_sub, $show) = @_;
+    doit $name, sub { $val_sub->($_[0]->[0]->[2]) };
+    my $showf = defined $show
+        ? sub { $show->($_[0]->[0]->[2]) }
+        : sub {        "$_[0]->[0]->[2]" };
+    show $name, $showf;
 }
-doit 'integer', sub {
-    my $self = shift;
-    return new_fraction($self->[0]->[2]);
-};
-show 'integer', sub { "$_[0]->[0]->[2]" };
 
-
-doit 'decimal', sub {
-    my $self = shift;
-    return to_fraction_or_real($self->[0]->[2]);
-};
-show 'decimal', sub { "$_[0]->[0]->[2]" };
+new_base_value 'integer', sub { pure(new_fraction($_[0])) };
+new_base_value 'decimal', sub { pure(new_fraction($_[0])) };
 
 doit 'prefix_currency', sub { $_[0]->[1]->doit() };
 show 'prefix_currency', sub {
@@ -578,15 +566,10 @@ show 'prefix_currency', sub {
     return $self->[0] . sprintf('%0.2f', $self->[1]->show());
 };
 
-unary_doit 'square', sub { $_[0] * $_[0] };
+unary_doit 'square', taint_when_longer_than(10, sub { $_[0] * $_[0] });
 unary_show 'square', sub { "$_[0] squared" };
 binary_show 'exp', sub { "$_[0]e$_[1]" };
 
-
-sub is_exact {
-    my $to_check = shift;
-    return (ref $to_check eq 'Number::Fraction');
-}
 
 sub Calculator::Calculator::doit {
     my $self = shift;
@@ -602,6 +585,7 @@ show 'constant_coefficient', sub {
     return $self->[0]->show() . ' ' . $self->[1]->show();
 };
 
+
 # Usage: new_unary_function NAME, REP, SUB
 # A subroutine of the form Calculator::NAME::doit and
 # Calculator::NAME::show will be created in the global namespace.
@@ -609,107 +593,77 @@ show 'constant_coefficient', sub {
 # REP is the string that will be displayed as the function name
 # in the formatted input (e.g, using 'sin' for the sine function,
 # would display as 'sin(ARG)').
-# SUB can either be a string or a routine.
-# If SUB is a string, then it should represent a method of the
-# Math::BigFloat package.
-# If SUB is a routine, then it should take a single argument
-# and return the result of applying the function.
+# SUB should take a single argument and return the result of applying the
+# function.
 sub new_unary_function {
     my ($name, $rep, $sub) = @_;
-    if (ref $sub ne 'CODE') {
-        unary_doit $name, sub { $_[0]->$sub() };
-    } else {
-        unary_doit $name, $sub;
-    };
+    unary_doit $name, $sub;
     unary_show $name, sub { "$rep($_[0])" };
 }
 
-# Trigonometric unary functions
-                                        # sine seems to round weirdly
-new_unary_function 'sine',   'sin', sub { "@{[nearest(1e-15, sin $_[0])]}" };
-new_unary_function 'cosine', 'cos', sub { cos $_[0] };
+# Result should not be displayed as a fraction if result a long decimal.
+sub new_unary_bounded {
+    my ($name, $rep, $sub) = @_;
+    new_unary_function $name, $rep, untaint_when(
+        sub { length $_[0]->rounded(1e-15) < 15 },
+        taint_when_longer_than(10, $sub));
+}
 
-new_unary_function 'secant', 'sec', sub { 1 / (cos $_[0]) };
-new_unary_function 'cosec',  'csc', sub { 1 / (sin $_[0]) };
-new_unary_function 'cotangent', 'cotan', sub { cot $_[0] };
-new_unary_function 'tangent', 'tan', sub { tan $_[0] };
+new_unary_bounded 'sine', 'sin',        sub { sin $_[0] };
+new_unary_bounded 'cosine', 'cos',      sub { cos $_[0] };
+new_unary_bounded 'secant', 'sec',      sub { pure(1) / (cos $_[0]) };
+new_unary_bounded 'cosec', 'csc',       sub { pure(1) / (sin $_[0]) };
+new_unary_bounded 'cotangent', 'cotan', sub { (cos $_[0]) / (sin $_[0]) };
+new_unary_bounded 'tangent', 'tan',     sub { (sin $_[0]) / (cos $_[0]) };
 
 # Log functions
-new_unary_function 'natural_logarithm', 'ln', sub { log $_[0] };
-binary_doit 'logarithm', sub { (log $_[1]) / (log $_[0]) };
+new_unary_function 'natural_logarithm', 'ln', taint_when_longer_than(10,
+    sub { log $_[0] });
+binary_doit 'logarithm', taint_when_longer_than(10,
+    sub { (log $_[1]) / (log $_[0]) });
 binary_show 'logarithm', sub { "log$_[0]($_[1])" };
 
 # Misc functions
-new_unary_function 'square_root', 'sqrt', sub { sqrt $_[0] };
-new_unary_function 'factorial',   'factorial', sub { return fac($_[0]) };
-new_unary_function 'exponential', 'exp', sub { exp($_[0]) };
+new_unary_bounded 'square_root', 'sqrt', sub { sqrt $_[0] };
+# Update this for other factorial!
+new_unary_function 'factorial',   'factorial', sub { $_[0]->on_result(\&fac) };
+new_unary_function 'exponential', 'exp', taint_result_unless(
+    sub { $_[0] =~ /^\d+$/ }, \&exp );
 
 
 # OPERATORS
 
 # new_binary_operator NAME, SYMBOL, ROUTINE
-# or
-# new_binary_operator NAME, SYMBOL, METHOD
 sub new_binary_operator {
     my ($name, $operator, $sub) = @_;
-    if (ref $sub ne 'CODE') {
-        binary_doit $name, sub { $_[0]->$sub($_[1]) };
-    } else {
-        binary_doit $name, $sub;
-    };
+    binary_doit $name, $sub;
     binary_show $name, sub { "$_[0] $operator $_[1]" };
 }
 
-sub fraction_parts {
-    my $num = shift;
-    my ($numerator, $denominator) = split '/', $num;
-    return ($numerator, $denominator) if defined $numerator and defined $denominator;
-    return ($num, 1);
-}
-sub denominator {
-    my (undef, $denominator) = fraction_parts shift;
-    return $denominator;
-}
 new_binary_operator 'subtract',     '-', sub { $_[0] - $_[1] };
 new_binary_operator 'add',          '+', sub { $_[0] + $_[1] };
 new_binary_operator 'multiply',     '*', sub { $_[0] * $_[1] };
 new_binary_operator 'divide',       '/', sub { $_[0] / $_[1] };
 
-# Little bit hacky for exponents because of the way Number::Fraction
-# handles them. Basically have to deal with the case when the base and
-# exponent are valid fractions, and the exponent is negative - other cases
-# are handled fine by Number::Fraction.
-sub exponentiate_fraction {
-    if (is_fraction $_[0] and $_[1] < 0) {
-        my ($numerator, $denominator) = fraction_parts $_[0];
-        my (undef, $pow_denom)        = fraction_parts $_[1];
-        my ($new_numerator, $new_denominator) = ($denominator ** abs($_[1]),
-                                                 $numerator   ** abs($_[1]));
-        return ($pow_denom != 1)
-            ? new_fraction($new_numerator, $new_denominator)
-            : $new_numerator / $new_denominator;
-    };
-    return $_[0] ** $_[1];
+sub taint_when_longer_than {
+    my ($amount, $sub) = @_;
+    return taint_result_when sub { length $_[0] > $amount }, $sub;
 }
 
-new_binary_operator 'exponentiate', '^', sub {
-    return exponentiate_fraction($_[0], $_[1]);
-};
+new_binary_operator 'exponentiate', '^', taint_when_longer_than(10,
+    sub { $_[0] ** $_[1] });
 
-binary_doit 'exp', sub {
-    $_[0] * exponentiate_fraction(new_fraction(10), $_[1])
-};
+binary_doit 'exp', sub { $_[0] * pure(10) ** $_[1] };
 
 unary_doit 'factorial_operator', sub {
-    return if $_[0] < 0 or $_[0] > 33;
-    fac($_[0]);
+    return if $_[0] < pure(0) or $_[0] > pure(33);
+    return $_[0]->on_result(\&fac);
 };
 unary_show 'factorial_operator', sub { $_[0] . '!' };
 
 # new_constant NAME, VALUE
-# will create a new constant that can be referred to through
-# 'Calculator::const_NAME', will have the value VALUE and be
-# represented in output by NAME.
+# will create a new constant that has the value `VALUE`
+# and will be displayed as `NAME`.
 #
 # new_constant NAME, VALUE, REP
 # will do the same as the previous form, but use REP to represent
@@ -722,13 +676,17 @@ sub new_constant {
     show $const_name, sub { $print_name };
 }
 
-my $big_pi = $PI;
-my $big_e = exp(1);
+my $big_pi = Math::BigRat->new(Math::BigFloat->bpi());
+my $big_e =  Math::BigRat->new(1)->bexp();
+
+# If any constants cannot be displayed as a fraction, wrap them with this
+sub irrational { new_tainted(@_) };
 
 # Constants go here.
-new_constant 'pi',    $big_pi, 'pi';
-new_constant 'dozen', 12;
-new_constant 'euler', $big_e,  'e';
-new_constant 'score', 20;
+new_constant 'pi',    irrational($big_pi), 'pi';
+new_constant 'dozen', pure(12);
+new_constant 'euler', irrational($big_e),  'e';
+new_constant 'score', pure(20);
+
 
 1;
