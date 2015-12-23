@@ -70,11 +70,13 @@ handle remainder_lc => sub {
     my $output;
     my $title;
     my $subtitle;
+    my $filename;
     
     if ($patterns{$_}) {
         $output = render_text($_);
         $title = $patterns{$_};
         $subtitle = "Rubiks cube '" . to_titlecase($_) . "' pattern";
+        $filename = get_file_name($_);
     } else {
         return if ($_ ne 'patterns');
         foreach my $pattern (keys %patterns) {
@@ -90,16 +92,22 @@ handle remainder_lc => sub {
         name => 'Answer',
         data => {
             title => $title,
-            subtitle => $subtitle,
-            image => "/share/goodie/rubiks_cube_patterns/". $goodieVersion . "/slash.svg"
+            description => $subtitle,
+            image => $filename
         },
         templates => {
-            group => 'info',
-            options => {
-                content => 'record',
-            }
+            group => 'info',       
         }
      };
 };
 
 1;
+
+sub get_file_name {
+    my $fn = shift;
+    #e.g transforms "swap centers" into "swap_centers"
+    $fn =~ s/ /_/g;
+    #e.g transforms "t's" into "ts"
+    $fn =~ s/'//g;
+    return "/share/goodie/rubiks_cube_patterns/$goodieVersion/$fn.svg";
+}
