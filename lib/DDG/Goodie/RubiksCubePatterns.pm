@@ -66,37 +66,44 @@ handle remainder_lc => sub {
     #hack for the trigger "rubiks cube in a cube"
     s/^in a cube/cube in a cube/;
 	
-    my %patterns_answer;
+    my @items;
     my $output;
     my $title;
-    my $subtitle;
-    my $filename;
     
     if ($patterns{$_}) {
         $output = render_text($_);
         $title = $patterns{$_};
-        $subtitle = "Rubiks cube '" . to_titlecase($_) . "' pattern";
-        $filename = get_file_name($_);
+        my $subtitle = "Rubiks cube '" . to_titlecase($_) . "' pattern";
+        my $filename = get_file_name($_);
+        @items = {
+            title => $title,
+            description => $subtitle,
+            image => $filename
+        };
     } else {
         return if ($_ ne 'patterns');
         foreach my $pattern (keys %patterns) {
             $output .= render_text($pattern);
+            my %result = (
+                title => to_titlecase($pattern),
+                description => $patterns{$pattern},
+                image => get_file_name($pattern),
+            );
+            $title = $patterns{$_};
+            push @items, \%result;
         }
-        $title = 'Rubiks cube patterns';
-        %patterns_answer = %patterns;
     }
 
     return $output,
     structured_answer => {
         id => 'rubiks_cube_patterns',
         name => 'Answer',
-        data => {
-            title => $title,
-            description => $subtitle,
-            image => $filename
-        },
+        data => \@items,
         templates => {
-            group => 'info',       
+            group => 'info',
+            variants => {
+                tile => 'poster'
+            }
         }
      };
 };
