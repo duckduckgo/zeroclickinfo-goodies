@@ -85,7 +85,7 @@ handle remainder_lc => sub {
         foreach my $pattern (keys %patterns) {
             $output .= render_text($pattern);
             my %result = (
-                title => to_titlecase($pattern),
+                title => to_titlecase($pattern) . " pattern",
                 description => $patterns{$pattern},
                 image => get_file_name($pattern),
             );
