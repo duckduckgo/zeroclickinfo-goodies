@@ -175,6 +175,7 @@ ddg_goodie_test(
     '1 + e x exp(0)'  => build_test('≈ 3.718281828459', '1 + e * exp(0)'),
     'exp(exp(0))'     => build_test('≈ 2.718281828459', 'exp(exp(0))'),
     'e x pi + exp(0)' => build_test('≈ 9.539734222674', 'e * pi + exp(0)'),
+    'e x pi'          => build_test('≈ 8.539734222674', 'e * pi'),
     # Undefined values
     '1 / 0'              => undef,
     '0x07'               => undef,
