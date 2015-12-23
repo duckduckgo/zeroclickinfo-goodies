@@ -223,10 +223,61 @@ sub exponentiate_fraction {
 *sqrt_result = upon_result sub { sqrt $_[0] };
 *int_result = upon_result sub { int $_[0] };
 
+sub as_fraction_string {
+    my $self = shift;
+    my $show = "$self";
+    my $value = $self->value();
+    if ($self->is_fraction()) {
+        return "$value";
+    }
+}
+
+sub is_integer {
+    my $self = shift;
+    my $tolerance = shift;
+    my $value = $self->value();
+    return pure($self->rounded($tolerance))->is_integer() if defined $tolerance;
+    return $value->is_int() if ref $value eq 'Math::BigRat';
+    return $value =~ /^\d+$/;
+}
+
+sub is_fraction {
+    my $self = shift;
+    my $value = $self->value();
+    ref $value eq 'Math::BigRat' ? 1 : 0;
+}
+
+sub as_rounded_decimal {
+    my $self = shift;
+    my $decimal = $self->value();
+    my ($nom, $expt) = split 'e', $decimal;
+    if (defined $expt) {
+        my $num = nearest(1e-12, $nom);
+        return $num . 'e' . $expt;
+    };
+    my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
+    return nearest(1e-12, $s) * 10 ** $e;
+}
+
+sub as_decimal {
+    my $self = shift;
+    my $value = $self->value();
+    return $value->as_float->bstr() if ref $value eq 'Math::BigRat';
+    return $value->bstr() if ref $value eq 'Math::BigFloat';
+    return $value;
+}
+
 *rounded = preserving_taint sub {
     my ($self, $round_to) = @_;
     return to_rat("@{[nearest($round_to, $self->as_decimal())]}");
 };
+
+sub contains_bad_result {
+    my $self = shift;
+    return 1 unless defined $self->value();
+    return 1 if $self->is_fraction()
+        && $self->value->denominator() == 0;
+}
 
 
 package DDG::Goodie::Calculator;
