@@ -11,7 +11,32 @@ BEGIN {
                      untaint_when);
 }
 
+use Math::BigRat try => 'GMP';
+use Math::Cephes qw(:explog);
+use Math::Cephes qw(:trigs);
+use Math::Round;
 use Moo;
+
+use overload
+    '""'    => 'to_string',
+    # Basic arithmetic
+    '+'     => 'add_results',
+    '-'     => 'subtract_results',
+    '*'     => 'multiply_results',
+    '/'     => 'divide_results',
+    '%'     => 'modulo_results',
+    '**'    => 'exponent_results',
+    # Comparisons
+    '<=>'   => 'num_compare_results',
+    # Trig
+    'atan2' => 'atan2_results',
+    'cos'   => 'cos_result',
+    'sin'   => 'sin_result',
+    # Misc functions
+    'exp'   => 'exp_result',
+    'log'   => 'log_result',
+    'sqrt'  => 'sqrt_result',
+    'int'   => 'int_result';
 
 # If an irrational (or ungodly) number was produced, so a fraction
 # should not be displayed.
@@ -98,6 +123,24 @@ sub to_string {
     return "$res" if defined $res;
 }
 
+# Combine two Results using the given operation. Preserves appropriate
+# attributes.
+sub combine_results {
+    my ($sub, $swapsub) = @_;
+    my $resf = sub {
+        my ($self, $other, $swap) = @_;
+        my $first_val = $self->value();
+        my $second_val = $other->value();
+        my $res = $sub->($first_val, $second_val)
+            if (defined $first_val && defined $second_val);
+        $res = $swapsub->($res)
+            if (defined $swapsub && defined $res && $swap);
+        return $res;
+    };
+    my $cond = sub { shift; $_[0]->tainted() || $_[1]->tainted() };
+    return preserve_taintf($resf, $cond, \&taint);
+}
+
 sub preserving_taint {
     my $sub = shift;
     preserve_taintf($sub, sub { shift; $_[0]->tainted() }, \&taint);
@@ -114,6 +157,76 @@ sub upon_result {
 }
 
 sub on_result { upon_result($_[1])->($_[0]) };
+
+*add_results = combine_results(sub { $_[0] + $_[1] });
+*subtract_results = combine_results(sub { $_[0] - $_[1] });
+*multiply_results = combine_results(sub { $_[0] * $_[1] });
+*divide_results = combine_results(sub { $_[0] / $_[1] });
+*modulo_results = combine_results(sub { $_[0] % $_[1] });
+
+sub num_compare_results {
+    my ($self, $other, $swap) = @_;
+    return $other->value() <=> $self->value() if $swap;
+    return $self->value()  <=> $other->value();
+}
+
+sub from_big {
+    my $to_convert = shift;
+    return $to_convert->numify() if ref $to_convert eq 'Math::BigRat';
+    return $to_convert->bstr() if ref $to_convert eq 'Math::BigFloat';
+    return $to_convert->bstr() if ref $to_convert eq 'Math::BigInt';
+    return $to_convert;
+}
+
+sub to_rat {
+    my $num = shift;
+    return $num if ref $num eq 'Math::BigRat';
+    return Math::BigRat->new($num);
+}
+
+# Unwrap the arguments from Big{Float,Rat} for operations such as sine
+# and log.
+sub with_unwrap {
+    my $sub = shift;
+    return sub {
+        my @args = @_;
+        return $sub->(map { from_big($_) } @args);
+    };
+}
+
+sub wrap_unwrap {
+    my $sub = shift;
+    return sub {
+        return to_rat(with_unwrap($sub)->(@_));
+    };
+}
+
+# Little bit hacky for exponents because of the way Number::Fraction
+# handles them. Basically have to deal with the case when the base and
+# exponent are valid fractions, and the exponent is negative - other cases
+# are handled fine by Number::Fraction.
+sub exponentiate_fraction {
+    if ($_[1] < 0) {
+        my $res = 1 / $_[0] ** abs($_[1]);
+        return $res;
+    };
+    my $res = wrap_unwrap(sub { $_[0] ** $_[1] })->(@_);
+    return $res;
+}
+
+*exponent_results = combine_results \&exponentiate_fraction;
+*atan2_results = combine_results \&atan2;
+*cos_result = upon_result sub { "@{[nearest(1e-15, cos $_[0])]}" };
+*sin_result = upon_result sub { "@{[nearest(1e-15, sin $_[0])]}" };
+*exp_result = upon_result sub { exp $_[0] };
+*log_result = upon_result sub { "@{[nearest(1e-15, log $_[0])]}" };
+*sqrt_result = upon_result sub { sqrt $_[0] };
+*int_result = upon_result sub { int $_[0] };
+
+*rounded = preserving_taint sub {
+    my ($self, $round_to) = @_;
+    return to_rat("@{[nearest($round_to, $self->as_decimal())]}");
+};
 
 
 package DDG::Goodie::Calculator;
