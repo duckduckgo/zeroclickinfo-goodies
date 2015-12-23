@@ -1,3 +1,121 @@
+package DDG::Goodie::Calculator::Result;
+# Defines the result form used by the Calculator Goodie to
+# allow for more detailed and curated results.
+
+BEGIN {
+    require Exporter;
+
+    our @ISA    = qw(Exporter);
+    our @EXPORT = qw(pure new_tainted
+                     taint_result_when taint_result_unless
+                     untaint_when);
+}
+
+use Moo;
+
+# If an irrational (or ungodly) number was produced, so a fraction
+# should not be displayed.
+has 'tainted' => (
+    is => 'ro',
+    isa => sub { die unless $_[0] =~ /^[01]$/ },
+    default => 0,
+);
+
+# The wrapped value.
+has 'value' => (
+    is => 'rw',
+);
+
+sub taint {
+    my $self = shift;
+    $self->{'tainted'} = 1;
+}
+
+sub untaint {
+    my $self = shift;
+    $self->{'tainted'} = 0;
+}
+
+# Creates a new, untainted result.
+sub pure {
+    my $value = shift;
+    return DDG::Goodie::Calculator::Result->new({ value => $value });
+}
+
+# Creates a new tainted result.
+sub new_tainted {
+    my $value = shift;
+    return DDG::Goodie::Calculator::Result->new({
+            tainted => 1,
+            value   => $value,
+        });
+}
+
+sub wrap_result {
+    my $result = shift;
+    return $result if ref $result eq 'DDG::Goodie::Calculator::Result';
+    return pure($result);
+}
+
+# preserve_taintf SUB, COND, FUNC
+# Expects SUB to produce a result to be wrapped,
+# COND to determine whether FUNC should be run
+# when passed the result from SUB as well as its
+# arguments, and FUNC to modify the final result.
+sub preserve_taintf {
+    my ($sub, $taintf_cond, $taintf) = @_;
+    return sub {
+        my $res = $sub->(@_);
+        my $should_taintf = $taintf_cond->($res, @_);
+        my $result = wrap_result($res);
+        $taintf->($result) if $should_taintf;
+        return $result;
+    };
+}
+
+# Modify the taint of the result if the inner-result returns true
+# for the given condition.
+sub modify_taint_when {
+    my ($taintf, $condition, $sub) = @_;
+    preserve_taintf(
+        $sub,
+        sub { $condition->($_[0]) if defined $_[0] },
+        sub { $taintf->($_[0]) });
+}
+
+sub taint_result_when { modify_taint_when(\&taint, @_) }
+
+sub taint_result_unless {
+    my ($condition, $sub) = @_;
+    taint_result_when(sub { not $condition->(@_) }, $sub);
+}
+
+sub untaint_when { modify_taint_when(\&untaint, @_) }
+
+sub to_string {
+    my $self = shift;
+    my $res = $self->value();
+    return "$res" if defined $res;
+}
+
+sub preserving_taint {
+    my $sub = shift;
+    preserve_taintf($sub, sub { shift; $_[0]->tainted() }, \&taint);
+}
+
+sub upon_result {
+    my $sub = shift;
+    return preserving_taint sub {
+        my $self = shift;
+        my $value = $self->value();
+        my $res = $sub->($value) if defined $value;
+        return $res;
+    }
+}
+
+sub on_result { upon_result($_[1])->($_[0]) };
+
+
 package DDG::Goodie::Calculator;
 # ABSTRACT: perform simple arithmetical calculations
 
@@ -13,6 +131,7 @@ use Math::Cephes qw(exp);
 use Math::Cephes qw(fac);
 use Math::Round;
 use Number::Fraction;
+use DDG::Goodie::Calculator::Result;
 
 zci answer_type => "calculation";
 zci is_cached   => 1;
