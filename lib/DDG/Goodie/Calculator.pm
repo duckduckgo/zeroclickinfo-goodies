@@ -31,7 +31,7 @@ attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
 
 my $decimal = qr/(-?\d++[,.]?\d*+)|([,.]\d++)/;
 # Check for binary operations
-triggers query_nowhitespace => qr/($decimal|\w+)\W+($decimal|\w+)/;
+triggers query_nowhitespace => qr/($decimal|\w+)(\W+|x)($decimal|\w+)/;
 # Factorial
 triggers query_nowhitespace => qr/\d+[!]/;
 # Check for functions
@@ -76,7 +76,6 @@ sub should_not_trigger {
     for my $phone_regex (%phone_number_regexes) {
         return 1 if $query =~ $phone_regex;
     };
-    return 1 if $query =~ /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
     # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
     return 1 if ($query =~ /\b0\s*x/);
     # Probably want to talk about addresses, not calculations.
@@ -131,7 +130,7 @@ sub format_currency_for_display {
 
 sub standardize_operator_symbols {
     my $text = shift;
-    # Only replace x's surrounding by non-alpha characters so it
+    # Only replace x's surrounded by non-alpha characters so it
     # can occur in function names.
     $text =~ s/(?<![[:alpha:]])x(?![[:alpha:]])/*/g;
     $text =~ s/[∙⋅×]/*/g;
@@ -234,8 +233,8 @@ sub to_display {
     my $currency = get_currency $query;
     $query = standardize_operator_symbols $query;
     my $style = get_style $query or return;
-    my $to_compute = $style->for_computation($query);
-    my ($generated_input, $val_result) = eval { get_results $to_compute };
+    my $to_compute = $query =~ s/((?:[,.\d][\d,. _]*[,.\d]?))/$style->for_computation($1)/ger;
+    my ($generated_input, $val_result) = eval { get_results $to_compute } or return;
     return if is_bad_result $val_result;
     my $result = format_for_display $style, $to_compute, $val_result, $currency;
     $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
@@ -250,7 +249,7 @@ handle query => sub {
     return if should_not_trigger $query;
     $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
     my ($generated_input, $result) = to_display $query or return;
-    return unless defined $result and defined $generated_input;
+    return unless defined $result && defined $generated_input;
     return $result,
         structured_answer => {
             id         => 'calculator',
@@ -261,7 +260,7 @@ handle query => sub {
             },
             templates => {
               group => 'text',
-              moreAt => 0,
+              moreAt => '0',
             },
         };
 };
