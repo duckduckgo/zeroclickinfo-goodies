@@ -289,12 +289,8 @@ with 'DDG::GoodieRole::NumberStyler';
 use utf8;
 
 use Marpa::R2;
-use Math::Cephes qw(:constants);
-use Math::Cephes qw(:trigs);
 use Math::Cephes qw(exp);
 use Math::Cephes qw(fac);
-use Math::Round;
-use Number::Fraction;
 use DDG::Goodie::Calculator::Result;
 
 zci answer_type => "calculation";
@@ -372,12 +368,6 @@ sub get_style {
     return number_style_for(@numbers);
 }
 
-sub is_fraction { ref shift eq 'Number::Fraction' }
-
-sub is_integer { shift !~ /(\.|e\+|\/)/ }
-
-sub to_decimal { is_fraction($_[0]) ? $_[0]->to_num() : $_[0] }
-
 sub new_fraction { Math::BigRat->new(@_) };
 
 sub get_currency {
@@ -391,7 +381,7 @@ sub get_currency {
 sub format_for_currency {
     my ($text, $currency) = @_;
     return $text unless defined $currency;
-    my $result = sprintf('%0.2f', to_decimal($text));
+    my $result = sprintf('%0.2f', $text->as_decimal());
     return $currency . $result;
 }
 
@@ -419,23 +409,29 @@ sub get_results {
     my $parsed = get_parse($recce, $to_compute) or return;
     my $generated_input = ${$parsed}->show();
     my $val_result = ${$parsed}->doit();
+    return unless defined $val_result->value();
     return ($generated_input, $val_result);
 }
 
 sub should_display_decimal {
     my ($to_compute, $result) = @_;
     if (is_fraction $result) {
-        return 1 if not decimal_strings_equal($to_compute, to_decimal($result));
+        return 1 if not decimal_strings_equal($to_compute, $result->as_decimal());
     } else {
-        return 1 if $to_compute ne $result;
+        return 1 if $to_compute ne $result->value();
     }
     return 0;
 }
-sub no_whitespace { $_[0] =~ s/\s*//gr };
 
 sub should_display_fraction {
     my ($to_compute, $result) = @_;
-    is_fraction $result and no_whitespace $to_compute ne $result
+    if ($result->is_fraction()) {
+        my $tainted = $result->tainted();
+        return 0 if $result->tainted();
+        my $no_whitespace_input = $to_compute =~ s/\s*//gr;
+        return $no_whitespace_input ne $result->as_fraction_string;
+    }
+    return 0;
 }
 
 # Check if two strings represent the same decimal number.
@@ -446,24 +442,11 @@ sub decimal_strings_equal {
     return $first eq $second;
 }
 
-# Round a decimal number to the correct number of
-# decimal places for display.
-sub round_decimal {
-    my $decimal = shift;
-    my ($nom, $expt) = split 'e', $decimal;
-    if (defined $expt) {
-        my $num = nearest(1e-12, $nom);
-        return $num . 'e' . $expt;
-    };
-    my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
-    return nearest(1e-12, $s) * 10 ** $e;
-}
-
 sub got_rounded {
     my ($original, $to_test) = @_;
-    return 0 if $original == $to_test;
-    my $formatted = to_fraction_or_real $to_test;
-    return $original != $formatted;
+    return 0 if $original->value() == $to_test;
+    my $formatted = new_fraction $to_test;
+    return $original->value() != $formatted;
 }
 
 sub format_number_for_display {
@@ -471,16 +454,10 @@ sub format_number_for_display {
     return $style->for_display($number);
 }
 
-sub is_bad_result {
-    my $result = shift;
-    return 1 unless defined $result;
-    return 1 if is_fraction($result) and denominator($result) == 0;
-}
-
 sub format_for_display {
     my ($style, $to_compute, $value, $currency) = @_;
     return format_currency_for_display $style, $value, $currency if defined $currency;
-    return format_number_for_display $style, $value if is_integer $value;
+    return format_number_for_display $style, $value if $value->is_integer();
     my $result;
     my $displayed_fraction;
     if (should_display_fraction($to_compute, $value)) {
@@ -488,7 +465,7 @@ sub format_for_display {
         $displayed_fraction = 1;
     };
     if (should_display_decimal($to_compute, $value)) {
-        my $decimal = round_decimal $value;
+        my $decimal = $value->as_rounded_decimal();
         if (got_rounded($value, $decimal)) {
             $result .= '≈ ';
         } else {
@@ -498,6 +475,12 @@ sub format_for_display {
     };
     $result =~ s/\s+$//;
     return $result;
+}
+
+sub is_bad_result {
+    my $result = shift;
+    return 1 unless defined $result;
+    return $result->contains_bad_result();
 }
 
 sub to_display {
