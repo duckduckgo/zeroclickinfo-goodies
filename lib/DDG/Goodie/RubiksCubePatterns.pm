@@ -26,6 +26,8 @@ triggers start =>	"rcube", "rubik", "rubiks", "rubix",
 zci answer_type => "rubiks_cube";
 zci is_cached   => 1;
 
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+
 my %patterns = (
     "stripes" => "F U F R L2 B D' R D2 L D' B R2 L F U F",
     "crosses" => "U F B' L2 U2 L2 F' B U2 L2 U",
@@ -89,10 +91,10 @@ handle remainder_lc => sub {
         data => {
             title => $title,
             subtitle => $subtitle,
-            record_data => \%patterns_answer,
+            image => "/share/goodie/rubiks_cube_patterns/". $goodieVersion . "/slash.svg"
         },
         templates => {
-            group => 'list',
+            group => 'info',
             options => {
                 content => 'record',
             }
