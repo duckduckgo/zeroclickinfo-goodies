@@ -415,7 +415,7 @@ sub get_results {
 
 sub should_display_decimal {
     my ($to_compute, $result) = @_;
-    if (is_fraction $result) {
+    if ($result->is_fraction()) {
         return 1 if not decimal_strings_equal($to_compute, $result->as_decimal());
     } else {
         return 1 if $to_compute ne $result->value();
