@@ -275,8 +275,8 @@ sub as_decimal {
 sub contains_bad_result {
     my $self = shift;
     return 1 unless defined $self->value();
-    return 1 if $self->is_fraction()
-        && $self->value->denominator() == 0;
+    return 1 if $self->is_fraction() && $self->value->denominator() == 0;
+    return $self->value() =~ /(inf|nan)/i;
 }
 
 
