@@ -280,261 +280,80 @@ sub contains_bad_result {
 }
 
 
-package DDG::Goodie::Calculator;
-# ABSTRACT: perform simple arithmetical calculations
+package DDG::Goodie::Calculator::Parser;
+# Contains the grammar and parsing actions used by the Calculator Goodie.
+
+BEGIN {
+    require Exporter;
+
+    our @ISA    = qw(Exporter);
+    our @EXPORT = qw(get_parse_results
+                     generate_grammar);
+}
 
 use strict;
-use DDG::Goodie;
-with 'DDG::GoodieRole::NumberStyler';
 use utf8;
 
 use Marpa::R2;
 use Math::Cephes qw(exp);
-use Math::Cephes qw(fac);
 use DDG::Goodie::Calculator::Result;
+use Moo;
 
-zci answer_type => "calculation";
-zci is_cached   => 1;
-
-primary_example_queries '1 + 7', '5 squared', '8 / 4';
-secondary_example_queries
-    '$2 + $7',
-    '60 divided by 15',
-    '1 + (3 / cos(pi))';
-description 'Perform arithmetical calculations';
-name 'Calculator';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
-category 'calculations';
-topics 'math';
-attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
-
-my $decimal = qr/(-?\d++[,.]?\d*+)|([,.]\d++)/;
-# Check for binary operations
-triggers query_nowhitespace => qr/($decimal|\w+)(\W+|x)($decimal|\w+)/;
-# Factorial
-triggers query_nowhitespace => qr/\d+[!]/;
-# Check for functions
-triggers query_nowhitespace => qr/\w+\(.*\)/;
-# Check for constants and named operations
-triggers query_nowhitespace => qr/$decimal\W*\w+/;
-# They might want to find out what fraction a decimal represents
-triggers query_nowhitespace => qr/[,.]\d+/;
-
-my $grammar_text = scalar share('grammar.txt')->slurp();
-my $grammar = Marpa::R2::Scanless::G->new(
-    {   bless_package => 'Calculator',
-        source        => \$grammar_text,
-    }
-);
-
-
-sub get_parse {
-  my ($recce, $input) = @_;
-  eval { $recce->read(\$input) } or return undef;
-  return $recce->value();
-};
-
-my %phone_number_regexes = (
-    'US' => qr/[0-9]{3}(?: |\-)[0-9]{3}\-[0-9]{4}/,
-    'UK' => qr/0[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}/,
-    'UK2' => qr/0[0-9]{4}[ -][0-9]{3}[ -][0-9]{3}/,
-);
-
-my $number_re = number_style_regex();
-# Each octet should look like a number between 0 and 255.
-my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;
-# There should be 4 of them separated by 3 dots.
-my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;
-# 0-32
-my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;
-# Looks like network notation, either CIDR or subnet mask
-my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;
-sub should_not_trigger {
-    my $query = shift;
-    # Probably are searching for a phone number, not making a calculation
-    for my $phone_regex (%phone_number_regexes) {
-        return 1 if $query =~ $phone_regex;
+# Generate a pretty grammar!
+sub generate_sub_grammar {
+    my ($grammar_name, $definitions) = @_;
+    my $str_grammar = "$grammar_name ::= \n";
+    my ($first_term, @terms) = keys $definitions;
+    my ($first_refer, $first_refer_def) = generate_alternate_forms($first_term, $definitions->{$first_term});
+    my @alternate_forms = ($first_refer_def) if defined $first_refer_def;
+    $str_grammar .= generate_grammar_line(["($first_refer)", 'Argument'], $first_term, 1);
+    foreach my $function_name (@terms) {
+        my ($refer, $refer_def) = generate_alternate_forms($function_name, $definitions->{$function_name});
+        push @alternate_forms, $refer_def if defined $refer_def;
+        $str_grammar .= generate_grammar_line(["($refer)", 'Argument'], $function_name, 0);
     };
-    # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
-    return 1 if ($query =~ /\b0\s*x/);
-    # Probably want to talk about addresses, not calculations.
-    return 1 if ($query =~ $network);
-    return 0;
+    foreach my $alternate_form (@alternate_forms) {
+        $str_grammar .= "\n$alternate_form\n";
+    };
+    return $str_grammar;
 }
 
-sub get_style {
-    my $text = shift;
-    my @numbers = grep { $_ =~ /^$number_re$/ } (split /[^\d,.]+/, $text);
-    return number_style_for(@numbers);
+sub generate_grammar_line {
+    my ($rhs, $blessf, $is_first) = @_;
+    my $start = '    ' . ($is_first ? '  ' : '| ');
+    my $components = join ' ', @$rhs;
+    my $bless = " bless => $blessf";
+    return $start . $components . $bless . "\n";
 }
+
+sub generate_alternate_forms {
+    my $name = shift;
+    my $forms = shift;
+    my ($refer_to, $refer_definition);
+    if (ref $forms eq 'ARRAY') {
+        $refer_to = "<gen @{[$name =~ s/[^[:alnum:]]/ /gr]} forms>";
+        $refer_definition = $refer_to . ' ~ ' . join(' | ', map { "'$_'" } @$forms);
+    } else {
+        $refer_to = "'$forms'";
+    };
+    return ($refer_to, $refer_definition);
+}
+
+my %unary_function_grammar;
 
 sub new_fraction { Math::BigRat->new(@_) };
-
-sub get_currency {
-    my $text = shift;
-    # Add new currency symbols here.
-    $text =~ /(?<currency>[\$])$decimal/;
-    return $+{'currency'};
-}
-
-# For prefix currencies that round to 2 decimal places.
-sub format_for_currency {
-    my ($text, $currency) = @_;
-    return $text unless defined $currency;
-    my $result = sprintf('%0.2f', $text->as_decimal());
-    return $currency . $result;
-}
-
-sub format_currency_for_display {
-    my ($style, $text, $currency) = @_;
-    return $style->for_display(format_for_currency($text, $currency));
-}
-
-sub standardize_symbols {
-    my $text = shift;
-    # Only replace x's surrounded by non-alpha characters so it
-    # can occur in function names.
-    $text =~ s/(?<![[:alpha:]])x(?![[:alpha:]])/*/g;
-    $text =~ s/[∙⋅×]/*/g;
-    $text =~ s#[÷]#/#g;
-    $text =~ s/\*{2}/^/g;
-    $text =~ s/π/pi/g;
-    return $text;
-}
-
-sub get_results {
-    my $to_compute = shift;
-    my $recce = Marpa::R2::Scanless::R->new(
-        { grammar => $grammar,
-        } );
-    my $parsed = get_parse($recce, $to_compute) or return;
-    my $generated_input = ${$parsed}->show();
-    my $val_result = ${$parsed}->doit();
-    return unless defined $val_result->value();
-    return ($generated_input, $val_result);
-}
-
-sub should_display_decimal {
-    my ($to_compute, $result) = @_;
-    if ($result->is_fraction()) {
-        return 1 if not decimal_strings_equal($to_compute, $result->as_decimal());
-    } else {
-        return 1 if $to_compute ne $result->value();
-    }
-    return 0;
-}
-
-sub should_display_fraction {
-    my ($to_compute, $result) = @_;
-    if ($result->is_fraction()) {
-        my $tainted = $result->tainted();
-        return 0 if $result->tainted();
-        my $no_whitespace_input = $to_compute =~ s/\s*//gr;
-        return $no_whitespace_input ne $result->as_fraction_string;
-    }
-    return 0;
-}
-
-# Check if two strings represent the same decimal number.
-sub decimal_strings_equal {
-    my ($first, $second) = @_;
-    $first =~ s/^\./0\./;
-    $second =~ s/^\./0\./;
-    return $first eq $second;
-}
-
-sub got_rounded {
-    my ($original, $to_test) = @_;
-    return 0 if $original->value() == $to_test;
-    my $formatted = new_fraction $to_test;
-    return $original->value() != $formatted;
-}
-
-sub format_number_for_display {
-    my ($style, $number) = @_;
-    return $style->for_display($number);
-}
-
-sub format_for_display {
-    my ($style, $to_compute, $value, $currency) = @_;
-    return format_currency_for_display $style, $value, $currency if defined $currency;
-    return format_number_for_display $style, $value if $value->is_integer();
-    my $result;
-    my $displayed_fraction;
-    if (should_display_fraction($to_compute, $value)) {
-        $result .= format_number_for_display($style, $value) . ' ';
-        $displayed_fraction = 1;
-    };
-    if (should_display_decimal($to_compute, $value)) {
-        my $decimal = $value->as_rounded_decimal();
-        if (got_rounded($value, $decimal)) {
-            $result .= '≈ ';
-        } else {
-            $result .= '= ' if $displayed_fraction;
-        }
-        $result .= format_number_for_display($style, $decimal);
-    };
-    $result =~ s/\s+$//;
-    return $result;
-}
-
-sub is_bad_result {
-    my $result = shift;
-    return 1 unless defined $result;
-    return $result->contains_bad_result();
-}
-
-sub to_display {
-    my $query = shift;
-    my $currency = get_currency $query;
-    $query = standardize_symbols $query;
-    my $style = get_style $query or return;
-    my $to_compute = $query =~ s/((?:[,.\d][\d,. _]*[,.\d]?))/$style->for_computation($1)/ger;
-    my ($generated_input, $val_result) = eval { get_results $to_compute } or return;
-    return if is_bad_result $val_result;
-    my $result = format_for_display $style, $to_compute, $val_result, $currency;
-    $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
-    # Didn't come up with anything the user didn't already know.
-    return if ($generated_input eq $result);
-    return ($generated_input, $result);
-}
-
-handle query => sub {
-    my $query = $_;
-
-    return if should_not_trigger $query;
-    $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
-    my ($generated_input, $result) = to_display $query or return;
-    return unless defined $result && defined $generated_input;
-    return $result,
-        structured_answer => {
-            id         => 'calculator',
-            name       => 'Answer',
-            data       => {
-                title => "$result",
-                subtitle => "Calculate: $generated_input",
-            },
-            templates => {
-              group => 'text',
-              moreAt => '0',
-            },
-        };
-};
-
-
-# Functionality
 
 
 sub doit {
     my ($name, $sub) = @_;
-    my $full_name = 'Calculator::' . $name . '::doit';
+    my $full_name = 'DDG::Goodie::Calculator::Parser::' . $name . '::doit';
     no strict 'refs';
     *$full_name = *{uc $full_name} = $sub;
 }
 
 sub show {
     my ($name, $sub) = @_;
-    my $full_name = 'Calculator::' . $name . '::show';
+    my $full_name = 'DDG::Goodie::Calculator::Parser::' . $name . '::show';
     no strict 'refs';
     *$full_name = *{uc $full_name} = $sub;
 }
@@ -606,12 +425,7 @@ unary_show 'square', sub { "$_[0] squared" };
 binary_show 'exp', sub { "$_[0]e$_[1]" };
 
 
-sub Calculator::Calculator::doit {
-    my $self = shift;
-    my $result = $self->[0]->doit();
-    return $result;
-}
-
+unary_doit 'Calculator', sub { $_[0] };
 unary_show 'Calculator', sub { $_[0] };
 
 binary_doit 'constant_coefficient', sub { $_[0] * $_[1] };
@@ -621,19 +435,28 @@ show 'constant_coefficient', sub {
 };
 
 
+
 # Usage: new_unary_function NAME, REP, SUB
-# A subroutine of the form Calculator::NAME::doit and
-# Calculator::NAME::show will be created in the global namespace.
 #
 # REP is the string that will be displayed as the function name
 # in the formatted input (e.g, using 'sin' for the sine function,
 # would display as 'sin(ARG)').
+# If REP is an ARRAY reference, then the first element will be used
+# for generating the formatted input, but all of the forms will be
+# allowed in the grammar.
 # SUB should take a single argument and return the result of applying the
 # function.
 sub new_unary_function {
-    my ($name, $rep, $sub) = @_;
+    my ($name, $reps, $sub) = @_;
     unary_doit $name, $sub;
+    my $rep;
+    if (ref $reps eq 'ARRAY') {
+        $rep = $reps->[0];
+    } else {
+        $rep = $reps;
+    };
     unary_show $name, sub { "$rep($_[0])" };
+    $unary_function_grammar{$name} = $reps;
 }
 
 # Result should not be displayed as a fraction if result a long decimal.
@@ -652,8 +475,8 @@ new_unary_bounded 'cotangent', 'cotan', sub { (cos $_[0]) / (sin $_[0]) };
 new_unary_bounded 'tangent', 'tan',     sub { (sin $_[0]) / (cos $_[0]) };
 
 # Log functions
-new_unary_function 'natural_logarithm', 'ln', taint_when_longer_than(10,
-    sub { log $_[0] });
+new_unary_function 'natural_logarithm', ['ln', 'log'],
+    taint_when_longer_than(10, sub { log $_[0] });
 binary_doit 'logarithm', taint_when_longer_than(10,
     sub { (log $_[1]) / (log $_[0]) });
 binary_show 'logarithm', sub { "log$_[0]($_[1])" };
@@ -667,7 +490,7 @@ sub calculate_factorial {
     return $_[0]->on_result(sub { $_[0]->bfac() });
 }
 
-new_unary_function 'factorial', 'factorial', \&calculate_factorial;
+new_unary_function 'factorial', ['factorial', 'fact'], \&calculate_factorial;
 new_unary_function 'exponential', 'exp', taint_result_unless(
     sub { $_[0] =~ /^\d+$/ }, \&exp );
 
@@ -726,5 +549,249 @@ new_constant 'dozen', pure(12);
 new_constant 'euler', irrational($big_e),  'e';
 new_constant 'score', pure(20);
 
+sub generate_grammar {
+    my $initial_grammar_text = shift;
+    my $generated_unary_function_grammar =
+        generate_sub_grammar("GenUnaryFunction", \%unary_function_grammar);
+    my $grammar_text = join "\n", ($initial_grammar_text, $generated_unary_function_grammar);
+    my $grammar = Marpa::R2::Scanless::G->new(
+        {   bless_package => 'DDG::Goodie::Calculator::Parser',
+            source        => \$grammar_text,
+        }
+    );
+}
+
+sub get_parse {
+  my ($recce, $input) = @_;
+  eval { $recce->read(\$input) } or return undef;
+  return $recce->value();
+}
+
+
+sub get_parse_results {
+    my ($grammar, $to_compute) = @_;
+    my $recce = Marpa::R2::Scanless::R->new(
+        { grammar => $grammar,
+        } );
+    my $parsed = get_parse($recce, $to_compute) or return;
+    my $generated_input = ${$parsed}->show();
+    my $val_result = ${$parsed}->doit();
+    return unless defined $val_result->value();
+    return ($generated_input, $val_result);
+}
+
+
+
+package DDG::Goodie::Calculator;
+# ABSTRACT: perform simple arithmetical calculations
+
+use strict;
+use DDG::Goodie;
+with 'DDG::GoodieRole::NumberStyler';
+use utf8;
+
+use DDG::Goodie::Calculator::Parser;
+
+zci answer_type => "calculation";
+zci is_cached   => 1;
+
+primary_example_queries '1 + 7', '5 squared', '8 / 4';
+secondary_example_queries
+    '$2 + $7',
+    '60 divided by 15',
+    '1 + (3 / cos(pi))';
+description 'Perform arithmetical calculations';
+name 'Calculator';
+code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
+category 'calculations';
+topics 'math';
+attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
+
+my $decimal = qr/(-?\d++[,.]?\d*+)|([,.]\d++)/;
+# Check for binary operations
+triggers query_nowhitespace => qr/($decimal|\w+)(\W+|x)($decimal|\w+)/;
+# Factorial
+triggers query_nowhitespace => qr/\d+[!]/;
+# Check for functions
+triggers query_nowhitespace => qr/\w+\(.*\)/;
+# Check for constants and named operations
+triggers query_nowhitespace => qr/$decimal\W*\w+/;
+# They might want to find out what fraction a decimal represents
+triggers query_nowhitespace => qr/[,.]\d+/;
+
+my %phone_number_regexes = (
+    'US' => qr/[0-9]{3}(?: |\-)[0-9]{3}\-[0-9]{4}/,
+    'UK' => qr/0[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}/,
+    'UK2' => qr/0[0-9]{4}[ -][0-9]{3}[ -][0-9]{3}/,
+);
+
+my $number_re = number_style_regex();
+# Each octet should look like a number between 0 and 255.
+my $ip4_octet = qr/([01]?\d\d?|2[0-4]\d|25[0-5])/;
+# There should be 4 of them separated by 3 dots.
+my $ip4_regex = qr/(?:$ip4_octet\.){3}$ip4_octet/;
+# 0-32
+my $up_to_32  = qr/([1-2]?[0-9]{1}|3[1-2])/;
+# Looks like network notation, either CIDR or subnet mask
+my $network   = qr#^$ip4_regex\s*/\s*(?:$up_to_32|$ip4_regex)\s*$#;
+sub should_not_trigger {
+    my $query = shift;
+    # Probably are searching for a phone number, not making a calculation
+    for my $phone_regex (%phone_number_regexes) {
+        return 1 if $query =~ $phone_regex;
+    };
+    # Probably attempt to express a hexadecimal number, query_nowhitespace makes this overreach a bit.
+    return 1 if ($query =~ /\b0\s*x/);
+    # Probably want to talk about addresses, not calculations.
+    return 1 if ($query =~ $network);
+    return 0;
+}
+
+sub get_style {
+    my $text = shift;
+    my @numbers = grep { $_ =~ /^$number_re$/ } (split /[^\d,.]+/, $text);
+    return number_style_for(@numbers);
+}
+
+sub get_currency {
+    my $text = shift;
+    # Add new currency symbols here.
+    $text =~ /(?<currency>[\$])$decimal/;
+    return $+{'currency'};
+}
+
+# For prefix currencies that round to 2 decimal places.
+sub format_for_currency {
+    my ($text, $currency) = @_;
+    return $text unless defined $currency;
+    my $result = sprintf('%0.2f', $text->as_decimal());
+    return $currency . $result;
+}
+
+sub format_currency_for_display {
+    my ($style, $text, $currency) = @_;
+    return $style->for_display(format_for_currency($text, $currency));
+}
+
+sub standardize_symbols {
+    my $text = shift;
+    # Only replace x's surrounded by non-alpha characters so it
+    # can occur in function names.
+    $text =~ s/(?<![[:alpha:]])x(?![[:alpha:]])/*/g;
+    $text =~ s/[∙⋅×]/*/g;
+    $text =~ s#[÷]#/#g;
+    $text =~ s/\*{2}/^/g;
+    $text =~ s/π/pi/g;
+    return $text;
+}
+
+sub should_display_decimal {
+    my ($to_compute, $result) = @_;
+    if ($result->is_fraction()) {
+        return 1 if not decimal_strings_equal($to_compute, $result->as_decimal());
+    } else {
+        return 1 if $to_compute ne $result->value();
+    }
+    return 0;
+}
+
+sub should_display_fraction {
+    my ($to_compute, $result) = @_;
+    if ($result->is_fraction()) {
+        my $tainted = $result->tainted();
+        return 0 if $result->tainted();
+        my $no_whitespace_input = $to_compute =~ s/\s*//gr;
+        return $no_whitespace_input ne $result->as_fraction_string;
+    }
+    return 0;
+}
+
+# Check if two strings represent the same decimal number.
+sub decimal_strings_equal {
+    my ($first, $second) = @_;
+    $first =~ s/^\./0\./;
+    $second =~ s/^\./0\./;
+    return $first eq $second;
+}
+
+sub got_rounded {
+    my ($original, $to_test) = @_;
+    return $original->value() != $to_test;
+}
+
+sub format_number_for_display {
+    my ($style, $number) = @_;
+    return $style->for_display($number);
+}
+
+sub format_for_display {
+    my ($style, $to_compute, $value, $currency) = @_;
+    return format_currency_for_display $style, $value, $currency if defined $currency;
+    return format_number_for_display $style, $value if $value->is_integer();
+    my $result;
+    my $displayed_fraction;
+    if (should_display_fraction($to_compute, $value)) {
+        $result .= format_number_for_display($style, $value) . ' ';
+        $displayed_fraction = 1;
+    };
+    if (should_display_decimal($to_compute, $value)) {
+        my $decimal = $value->as_rounded_decimal();
+        if (got_rounded($value, $decimal)) {
+            $result .= '≈ ';
+        } else {
+            $result .= '= ' if $displayed_fraction;
+        }
+        $result .= format_number_for_display($style, $decimal);
+    };
+    $result =~ s/\s+$//;
+    return $result;
+}
+
+sub is_bad_result {
+    my $result = shift;
+    return 1 unless defined $result;
+    return $result->contains_bad_result();
+}
+
+my $grammar_text = scalar share('grammar.txt')->slurp();
+my $grammar = generate_grammar($grammar_text);
+sub to_display {
+    my $query = shift;
+    my $currency = get_currency $query;
+    $query = standardize_symbols $query;
+    my $style = get_style $query or return;
+    my $to_compute = $query =~ s/((?:[,.\d][\d,. _]*[,.\d]?))/$style->for_computation($1)/ger;
+    my ($generated_input, $val_result) = eval { get_parse_results $grammar, $to_compute } or return;
+    return if is_bad_result $val_result;
+    my $result = format_for_display $style, $to_compute, $val_result, $currency;
+    $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
+    # Didn't come up with anything the user didn't already know.
+    return if ($generated_input eq $result);
+    return ($generated_input, $result);
+}
+
+
+
+handle query => sub {
+    my $query = $_;
+
+    return if should_not_trigger $query;
+    $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
+    my ($generated_input, $result) = to_display $query or return;
+    return unless defined $result && defined $generated_input;
+    return $result,
+        structured_answer => {
+            id         => 'calculator',
+            name       => 'Answer',
+            data       => {
+                title => "$result",
+                subtitle => "Calculate: $generated_input",
+            },
+            templates => {
+              group => 'text',
+              moreAt => '0',
+            },
+        };
+};
 
 1;

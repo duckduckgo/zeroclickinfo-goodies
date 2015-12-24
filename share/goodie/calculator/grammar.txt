@@ -49,20 +49,12 @@ dozen ~ 'dozen':i
 score ~ 'score':i
 
 Function ::=
-      ('sqrt' )         Argument bless => square_root
-    | ('sin'  )         Argument bless => sine
-    | ('cos'  )         Argument bless => cosine
-    | ('tan'  )         Argument bless => tangent
-    | ('csc'  )         Argument bless => cosec
-    | ('sec'  )         Argument bless => secant
-    | ('cotan')         Argument bless => cotangent
-    | ('log_' ) NumTerm Argument bless => logarithm
+      GenUnaryFunction
+    | UnaryFunction
+
+UnaryFunction ::=
+      ('log_' ) NumTerm Argument bless => logarithm
     | ('log'  ) NumTerm Argument bless => logarithm
-    | ('ln'   )         Argument bless => natural_logarithm
-    | ('log'  )         Argument bless => natural_logarithm
-    | ('fact' )         Argument bless => factorial
-    | ('factorial')     Argument bless => factorial
-    | ('exp')           Argument bless => exponential
 
 # Argument for a unary function.
 Argument ::= ('(') Expression (')') bless => primary
