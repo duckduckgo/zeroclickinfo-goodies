@@ -8,9 +8,10 @@
   },
   "aliases": [
     "vice city"
-    ],
+  ],
   "section_order": [
-    "Cheat codes"
+    "Cheat codes i",
+    "Cheat codes ii"
   ],
   "sections": {
     "Cheat codes": [
@@ -42,7 +43,7 @@
         "val": "All traffic lights are green",
         "key": "GREENLIGHT"
       },
-       {
+      {
         "val": "Blow up nearby cars",
         "key": "BIGBANG"
       },
@@ -65,7 +66,9 @@
       {
         "val": "Full Armor",
         "key": "PRECIOUSPROTECTION"
-      },
+      }
+    ],
+    "Cheat codes ii": [
       {
         "val": "Full Health",
         "key": "ASPIRINE"
