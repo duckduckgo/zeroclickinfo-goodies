@@ -295,7 +295,7 @@ use strict;
 use utf8;
 
 use Marpa::R2;
-use Math::Cephes qw(exp);
+use Math::Cephes qw(exp floor ceil);
 use DDG::Goodie::Calculator::Result;
 use Moo;
 
@@ -489,6 +489,9 @@ new_unary_bounded 'cotangent', ['cotan', 'cot', 'cotangent'],
     sub { (cos $_[0]) / (sin $_[0]) };
 new_unary_bounded 'tangent',   ['tan', 'tangent'],
     sub { (sin $_[0]) / (cos $_[0]) };
+
+new_unary_function 'floor', 'floor', sub { $_[0]->on_result(\&floor) };
+new_unary_function 'ceil', ['ceil', 'ceiling'], sub { $_[0]->on_result(\&ceil) };
 
 # Log functions
 new_unary_function 'natural_logarithm', ['ln', 'log'],
