@@ -477,12 +477,18 @@ sub new_unary_bounded {
         taint_when_longer_than(10, $sub));
 }
 
-new_unary_bounded 'sine', 'sin',        sub { sin $_[0] };
-new_unary_bounded 'cosine', 'cos',      sub { cos $_[0] };
-new_unary_bounded 'secant', 'sec',      sub { pure(1) / (cos $_[0]) };
-new_unary_bounded 'cosec', 'csc',       sub { pure(1) / (sin $_[0]) };
-new_unary_bounded 'cotangent', 'cotan', sub { (cos $_[0]) / (sin $_[0]) };
-new_unary_bounded 'tangent', 'tan',     sub { (sin $_[0]) / (cos $_[0]) };
+new_unary_bounded 'sine',      ['sin', 'sine'],
+    sub { sin $_[0] };
+new_unary_bounded 'cosine',    ['cos', 'cosine'],
+    sub { cos $_[0] };
+new_unary_bounded 'secant',    ['sec', 'secant'],
+    sub { pure(1) / (cos $_[0]) };
+new_unary_bounded 'cosec',     ['csc', 'cosec', 'cosecant'],
+    sub { pure(1) / (sin $_[0]) };
+new_unary_bounded 'cotangent', ['cotan', 'cot', 'cotangent'],
+    sub { (cos $_[0]) / (sin $_[0]) };
+new_unary_bounded 'tangent',   ['tan', 'tangent'],
+    sub { (sin $_[0]) / (cos $_[0]) };
 
 # Log functions
 new_unary_function 'natural_logarithm', ['ln', 'log'],
