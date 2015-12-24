@@ -23,31 +23,34 @@ attribution github => ["lights0123", "lights0123"],
 triggers startend => "privacy extensions", "privacy addons", "privacy extension", "privacy addon"; #if the keywords are at the beginning or end, then trigger
 
 my @triggerwords = ("firefox", "safari", "google chrome", "opera", "chrome");
-my $plaintext="Firefox: https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/";
-$plaintext.="\nSafari: https://extensions.apple.com/?category=security";
-$plaintext.="\nGoogle Chrome: https://chrome.google.com/webstore/search/anonymous";
-$plaintext.="\nOpera: https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en";
-my @list_data = [
+my $list_data = [
     { browser => "Firefox", link => "https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/" },
     { browser => "Safari", link => "https://extensions.apple.com/?category=security" },
     { browser => "Google Chrome", link => "https://chrome.google.com/webstore/search/anonymous" },
-    { browser => "Opera", link => "https://addons.opera.com/en/extensions/category/privacy-security/?order=popular&language=en" }
+    { browser => "Opera", link => "https://addons.opera.com/en/extensions/category/privacy-security/" }
 ];
+my $plaintext="";
+foreach(@$list_data){
+    $plaintext.=$_->{browser};
+    $plaintext.=": ";
+    $plaintext.=$_->{link};
+    $plaintext.="\n";
+}
 my @structured_answer = {
-        id => "security_addons",
-        name => "software",
-        data => {
-            title => "Security Addons",
-            list => @list_data
+    id => "security_addons",
+    name => "software",
+    data => {
+        title => "Security Addons",
+        list => $list_data
+    },
+    meta => {},
+    templates => {      
+        group => 'list',
+        options => {
+            list_content => "DDH.security_addons.list_content"
         },
-        meta => {},
-        templates => {      
-            group => 'list',
-            options => {
-                list_content => "DDH.security_addons.list_content"
-            },
-        },
-    };
+    },
+};
 
 handle remainder => sub {
     if($_){
