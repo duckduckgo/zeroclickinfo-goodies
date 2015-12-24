@@ -16,10 +16,12 @@ Term ::=
     || Factor   bless => primary
 
 TermOp ::=
-       Factor ('^')        Term bless => exponentiate assoc => right
-    || Term   ('*')        Term bless => multiply
-    |  Term (<divided by>) Term bless => divide
-    |  Factor ('!')             bless => factorial_operator
+       Factor (<to the power>) Term bless => exponentiate assoc => right
+    || Term   ('*')            Term bless => multiply
+    |  Term   (<divided by>)   Term bless => divide
+    |  Factor ('!')                 bless => factorial_operator
+
+<to the power> ~ '^' | 'to the power':i | 'to the power of':i
 
 <divided by> ~ '/' | 'divided by':i
 
