@@ -167,6 +167,12 @@ ddg_goodie_test(
     'sqrt(4)'                => build_test('2', 'sqrt(4)'),
     'sqrt(2)'                => build_test('≈ 1.414213562373', 'sqrt(2)'),
     'sqrt(3 pi / 4 + 1) + 1' => build_test('≈ 2.831991945996', 'sqrt(3π / 4 + 1) + 1'),
+    'floor(7.99)'            => build_test('7', 'floor(7.99)'),
+    'floor(12)'              => build_test('12', 'floor(12)'),
+    '1.3 + floor(1.3)'       => build_test('23/10 = 2.3', '1.3 + floor(1.3)'),
+    'ceil(7.99)'             => build_test('8', 'ceil(7.99)'),
+    'ceil(12)'               => build_test('12', 'ceil(12)'),
+    '1.3 + ceiling(1.3)'     => build_test('33/10 = 3.3', '1.3 + ceil(1.3)'),
     # Alternate Symbols
     '20x07'                           => build_test('140', '20 * 07'),
     '4 ∙ 5'                           => build_test('20', '4 * 5'),
