@@ -1,14 +1,15 @@
 {
     "id": "indesign_cheat_sheet",
     "name": "InDesign",
-    "description": "InDesign provides shortcuts to help quickly work in documents without using the mouse",
+    "description": "Keyboard shortcuts for Adobe InDesign, a desktop publishing software application",
     "metadata": {
         "sourceName": "InDesign Help/Default keyboard shortcuts",
         "sourceUrl": "https://helpx.adobe.com/indesign/using/default-keyboard-shortcuts.html"
     },
     "aliases": [
         "adobe indesign cc",
-        "indesign cc"
+        "indesign cc",
+        "adobe indesign"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -29,7 +30,6 @@
         "Character and Paragraph Styles",
         "Tabs Panel",
         "Layers Panel",
-        "Pages Panel",
         "Color Panel",
         "Separations Preview Panel",
         "Swatches Panel",
@@ -44,10 +44,6 @@
             {
                 "key": "[Ctrl] [Spacebar]",
                 "val": "Temporarily select Zoom In tool"
-            },
-            {
-                "key": "[Alt] [Ctrl] [Spacebar]",
-                "val": "Temporarily select Zoom Out tool"
             },
             {
                 "key": "[Ctrl] [5/2/4]",
@@ -70,10 +66,6 @@
                 "val": "Switch to next/previous document window"
             },
             {
-                "key": "Page Up/Down",
-                "val": "Scroll up/down one screen"
-            },
-            {
                 "key": "[Ctrl] [Page Up/Down]",
                 "val": "Go back/forward to last-viewed page"
             },
@@ -94,14 +86,6 @@
                 "val": "Fit selection in window"
             },
             {
-                "key": "[Ctrl] [Alt] [+]",
-                "val": "Display the entire object"
-            },
-            {
-                "key": "[Ctrl] [J]",
-                "val": "Go to master page while panel is closed"
-            },
-            {
                 "key": "[Shift] [Alt] [Ctrl] [U]",
                 "val": "Cycle through units of measurement"
             },
@@ -114,28 +98,16 @@
                 "val": "Switch between page and spread guides"
             },
             {
-                "key": "[Ctrl] [Drag from zero point]",
-                "val": "Create vertical and horizontal ruler guides for the spread"
-            },
-            {
                 "key": "[Alt] [Ctrl] [G]",
                 "val": "Select all guides"
             },
             {
-                "key": "Right-click zero point and choose an option",
-                "val": "Lock or unlock zero point"
-            },
-            {
                 "key": "[Alt] [Drag Guide]",
-                "val": "Use current magnification for view threshold of new guide   "
-            },
-            {
-                "key": "Press first letter of button name, if underlined",
-                "val": "Select buttons in alert dialog boxes"
+                "val": "Use current magnification for view threshold of new guide"
             },
             {
                 "key": "[Ctrl] [Help]",
-                "val": "Show information on installed plug‑ins and InDesign components"
+                "val": "Show information on installed plug‑ins"
             }
         ],
         "Tools": [
@@ -286,10 +258,6 @@
         ],
         "Editing paths and Frames": [
             {
-                "key": "[Direct Selection tool] [Alt] [Ctrl]",
-                "val": "Temporarily select Convert Direction Point tool"
-            },
-            {
                 "key": "Alt",
                 "val": "Temporarily switch between Add Anchor Point and Delete Anchor Point tool"
             },
@@ -312,16 +280,8 @@
         ],
         "Tables": [
             {
-                "key": "[Begin dragging row] [then hold down Alt as you drag]",
-                "val": "Insert or delete rows or columns while dragging"
-            },
-            {
                 "key": "Shift–drag interior row",
                 "val": "Resize rows or columns without changing the size of the table"
-            },
-            {
-                "key": "Shift–drag right",
-                "val": "Resize rows or columns proportionally"
             },
             {
                 "key": "Tab",
@@ -336,28 +296,12 @@
                 "val": "Move to first/last cell in row"
             },
             {
-                "key": "Page Down/Up",
-                "val": "Move to first/last row in frame"
-            },
-            {
-                "key": "Up/Down Arrow",
-                "val": "Move up/down one cell"
-            },
-            {
-                "key": "Left/Right Arrow",
-                "val": "Move left/right one cell"
-            },
-            {
                 "key": "[Shift] [Up/Down Arrow]",
                 "val": "Select cell above/below the current cell"
             },
             {
                 "key": "[Shift] [Right/Left Arrow]",
                 "val": "Select cell to the right/left of the current cell"
-            },
-            {
-                "key": "Enter",
-                "val": "Start row on next column"
             },
             {
                 "key": "[Shift] [Enter]",
@@ -374,16 +318,8 @@
                 "val": "Insert selected text into Find What box"
             },
             {
-                "key": "[Shift] [F1]",
-                "val": "Insert selected text into Find What box and finds next"
-            },
-            {
                 "key": "[Shift] [F2]",
                 "val": "Find next occurrence of Find What text"
-            },
-            {
-                "key": "[Ctrl] [F2]",
-                "val": "Insert selected text into Change To box"
             },
             {
                 "key": "[Ctrl] [F3]",
@@ -396,10 +332,6 @@
                 "val": "Temporarily select Selection or Direct Selection tool"
             },
             {
-                "key": "[Direct Selection tool] [Alt]",
-                "val": "Temporarily select Group Selection tool"
-            },
-            {
                 "key": "Esc",
                 "val": "Select container of selected content"
             },
@@ -408,36 +340,8 @@
                 "val": "Select content of selected container"
             },
             {
-                "key": "[Group Selection tool] [Shift-Click]",
-                "val": "Add to or subtract from a selection of multiple objects"
-            },
-            {
                 "key": "[Group Selection tool] [Alt-Drag]",
                 "val": "Duplicate selection"
-            },
-            {
-                "key": "[Alt] [Left Arrow/Right Arrow/Up Arrow/Down Arrow]",
-                "val": "Duplicate and offset selection"
-            },
-            {
-                "key": "[Alt] [Shift] [Left Arrow/Right Arrow/Up Arrow/Down Arrow]",
-                "val": "Duplicate and offset selection by 10 times"
-            },
-            {
-                "key": "[Left Arrow/Right Arrow/Up Arrow/Down Arrow]",
-                "val": "Move selection"
-            },
-            {
-                "key": "[Ctrl] [Shift] [Left Arrow/Right Arrow/Up Arrow/Down Arrow]",
-                "val": "Move selection by 10th"
-            },
-            {
-                "key": "[Shift] [Left Arrow/Right Arrow/Up Arrow/Down Arrow]",
-                "val": "Move selection by 10 times"
-            },
-            {
-                "key": "[Direct Selection tool] [Ctrl] [Shift-Click]",
-                "val": "Select master page item from document page"
             },
             {
                 "key": "[Selection tool] [Ctrl-Click]",
@@ -446,10 +350,6 @@
             {
                 "key": "[Alt] [Ctrl] [Page Up/Down]",
                 "val": "Select next or previous frame in story"
-            },
-            {
-                "key": "[Shift] [Alt] [Ctrl] [Page Down/Up]",
-                "val": "Select first or last frame in story"
             }
         ],
         "Working with Type": [
@@ -478,16 +378,8 @@
                 "val": "All caps"
             },
             {
-                "key": "[Shift] [Ctrl] [K]",
-                "val": "Asian language hyphenation"
-            },
-            {
                 "key": "[Shift] [Ctrl] [H]",
                 "val": "Small caps"
-            },
-            {
-                "key": "[Shift] [Ctrl] [H]",
-                "val": "Tate-chu-yoko setting"
             },
             {
                 "key": "[Shift] [Ctrl] [+]",
@@ -502,10 +394,6 @@
                 "val": "Reset horizontal or vertical scale to 100%"
             },
             {
-                "key": "[Shift] [Ctrl] [X]",
-                "val": "Basic letter group setting or detail setting"
-            },
-            {
                 "key": "[Shift] [Ctrl] [L/R/C]",
                 "val": "Align left, right, or center"
             },
@@ -514,32 +402,12 @@
                 "val": "Justify all lines"
             },
             {
-                "key": "[Shift] [Ctrl] [F/J]",
-                "val": "Align both ends or equal spacing"
-            },
-            {
                 "key": "[Shift] [Ctrl] [>/<]",
                 "val": "Increase or decrease point size"
             },
             {
-                "key": "[Alt] [Shift] [Ctrl] [>/<]",
-                "val": "Increase or decrease point size by five times"
-            },
-            {
                 "key": "[Alt] [Up/Down Arrow]",
                 "val": "Increase or decrease leading (horizontal text)"
-            },
-            {
-                "key": "[Alt] [Right/Left Arrow]",
-                "val": "Increase or decrease leading (vertical text)"
-            },
-            {
-                "key": "[Alt] [Ctrl] [Up/Down Arrow]",
-                "val": "Increase or decrease leading by five times (horizontal text)"
-            },
-            {
-                "key": "[Alt] [Ctrl] [Right/Left Arrow]",
-                "val": "Increase or decrease leading by five times (vertical text)"
             },
             {
                 "key": "[Alt] [Shift] [Ctrl] [A]",
@@ -554,28 +422,8 @@
                 "val": "Auto-hyphenate (on/off)"
             },
             {
-                "key": "[Alt] [Left/Right Arrow]",
-                "val": "Increase or decrease kerning and tracking (horizontal text)"
-            },
-            {
                 "key": "[Alt] [Up/Down Arrow]",
                 "val": "Increase or decrease kerning and tracking (vertical text)"
-            },
-            {
-                "key": "[Alt] [Ctrl] [Left/Right Arrow]",
-                "val": "Increase or decrease kerning and tracking by five times (horizontal text)"
-            },
-            {
-                "key": "[Alt] [Ctrl] [Up/Down Arrow]",
-                "val": "Increase or decrease kerning and tracking by five times (vertical text)"
-            },
-            {
-                "key": "[Alt] [Ctrl] [\\]",
-                "val": "Increase kerning between words"
-            },
-            {
-                "key": "[Alt] [Ctrl] [Backspace]",
-                "val": "Decrease kerning between words"
             },
             {
                 "key": "[Alt] [Ctrl] [Q]",
@@ -584,18 +432,6 @@
             {
                 "key": "[Shift] [Alt] [Up/Down Arrow]",
                 "val": "Increase or decrease baseline shift (horizontal text)"
-            },
-            {
-                "key": "[Shift] [Alt] [Right/Left Arrow]",
-                "val": "Increase or decrease baseline shift (vertical text)"
-            },
-            {
-                "key": "[Shift] [Alt] [Ctrl] [Up/Down Arrow]",
-                "val": "Increase or decrease baseline shift by five times (horizontal text)"
-            },
-            {
-                "key": "[Shift] [Alt] [Ctrl] [Right/Left Arrow]",
-                "val": "Increase or decrease baseline shift by five times (vertical text)"
             },
             {
                 "key": "[Alt] [Ctrl] [/]",
@@ -607,14 +443,6 @@
             }
         ],
         "Transforming objects": [
-            {
-                "key": "[Transformation tool] [Alt] [Drag]",
-                "val": "Duplicate and transform selection"
-            },
-            {
-                "key": "[Select object] [Double Click Scale tool/Rotate tool/Shear tool]",
-                "val": "Display Transform tool dialog box"
-            },
             {
                 "key": "[Ctrl] [,]",
                 "val": "Decrease scale by 1%"
@@ -628,20 +456,8 @@
                 "val": "Increase scale by 1%"
             },
             {
-                "key": "[Ctrl] [Alt] [.]",
-                "val": "Increase scale by 5%"
-            },
-            {
                 "key": "[Selection tool] [Ctrl] [Drag]",
                 "val": "Resize frame and content"
-            },
-            {
-                "key": "[Selection tool] [Shift] [Ctrl] [Drag]",
-                "val": "Resize frame and content proportionately"
-            },
-            {
-                "key": "[Ellipse tool/Polygon tool/Rectangle tool] [Shift-Drag]",
-                "val": "Constrain proportion"
             },
             {
                 "key": "[Ctrl] [Alt] [Shift] [Z]",
@@ -650,20 +466,8 @@
         ],
         "Navigating through and Selecting text": [
             {
-                "key": "Right/Left Arrow",
-                "val": "Move to right or left one character"
-            },
-            {
-                "key": "Up/Down Arrow",
-                "val": "Move up or down one line"
-            },
-            {
                 "key": "[Ctrl] [Right/Left Arrow]",
                 "val": "Move to right or left one word"
-            },
-            {
-                "key": "Home/End",
-                "val": "Move to start or end of line"
             },
             {
                 "key": "[Ctrl] [Up/Down Arrow]",
@@ -672,10 +476,6 @@
             {
                 "key": "[Ctrl] [Home/End]",
                 "val": "Move to start or end of story"
-            },
-            {
-                "key": "Double-Click word",
-                "val": "Select one word"
             },
             {
                 "key": "[Shift] [Right/Left Arrow]",
@@ -690,32 +490,8 @@
                 "val": "Select start or end of line"
             },
             {
-                "key": "[Shift] [Ctrl] [Up/Down Arrow]",
-                "val": "Select one paragraph before or after"
-            },
-            {
-                "key": "[Shift] [Ctrl] [\\]",
-                "val": "Select current line"
-            },
-            {
-                "key": "[Shift] [Click]",
-                "val": "Select characters from insertion point"
-            },
-            {
-                "key": "[Shift] [Ctrl] [Home/End]",
-                "val": "Select start or end of story"
-            },
-            {
                 "key": "[Ctrl] [A]",
                 "val": "Select all in story"
-            },
-            {
-                "key": "[Shift] [Alt] [Ctrl] [Page Up/Down]",
-                "val": "Select first/last frame"
-            },
-            {
-                "key": "[Alt] [Ctrl] [Page Up/Down]",
-                "val": "Select previous/next frame"
             },
             {
                 "key": "[Ctrl] [Backspace/Delete]",
@@ -732,20 +508,8 @@
                 "val": "Expand/Collapse element"
             },
             {
-                "key": "[Alt] [Right/Left Arrow]",
-                "val": "Expand/Collapse element and child elements"
-            },
-            {
                 "key": "[Shift] [Up/Down Arrow]",
                 "val": "Extend XML selection up/down"
-            },
-            {
-                "key": "Up/Down Arrow",
-                "val": "Move XML selection up/down"
-            },
-            {
-                "key": "Page Up/Down",
-                "val": "Scroll structure pane up/down one screen"
             },
             {
                 "key": "Home/ End",
@@ -780,10 +544,6 @@
         ],
         "Panels": [
             {
-                "key": "Alt-click Delete icon",
-                "val": "Delete without confirmation"
-            },
-            {
                 "key": "Alt-click New button",
                 "val": "Create item and set options"
             },
@@ -794,14 +554,6 @@
             {
                 "key": "[Ctrl] [Alt] [~]",
                 "val": "Activate last-used option in last-used panel"
-            },
-            {
-                "key": "Shift-Click",
-                "val": "Select range of styles, layers, links, swatches, or library objects in a panel"
-            },
-            {
-                "key": "Ctrl-Click",
-                "val": "Select nonadjacent styles, layers, links, swatches, or library objects in a panel"
             },
             {
                 "key": "Tab",
@@ -824,14 +576,6 @@
                 "val": "Open or close all stashed panels"
             },
             {
-                "key": "[Alt] [Drag any panel tab to edge of screen]",
-                "val": "Stash a panel group"
-            },
-            {
-                "key": "[Alt] [Ctrl-Click in list]",
-                "val": "Select item by name"
-            },
-            {
                 "key": "[Alt] [Ctrl] [M]",
                 "val": "Open the Drop Shadow panel"
             }
@@ -848,18 +592,6 @@
             {
                 "key": "[Alt] [Down Arrow]",
                 "val": "Display the pop-up menu that has focus"
-            },
-            {
-                "key": "[Alt] [Click X/Y icon]",
-                "val": "Open the Move dialog box"
-            },
-            {
-                "key": "Alt-click Angle icon",
-                "val": "Open the Rotate dialog box"
-            },
-            {
-                "key": "Alt-click X or Y Scale icon",
-                "val": "Open the Scale dialog box"
             },
             {
                 "key": "Alt-click Shear icon",
@@ -894,10 +626,6 @@
                 "val": "Make character style definition match text"
             },
             {
-                "key": "[Select text and press Shift] [Alt] [Ctrl] [R]",
-                "val": "Make paragraph style definition match text"
-            },
-            {
                 "key": "[Shift] [Alt] [Ctrl] [Double-Click Style]",
                 "val": "Change options without applying style"
             },
@@ -906,12 +634,8 @@
                 "val": "Remove style and local formatting"
             },
             {
-                "key": "[Alt] [Shift-Click Paragraph Style Name]",
-                "val": "Clear overrides from paragraph style"
-            },
-            {
                 "key": "F11",
-                "val": "Show/hide Paragraph and Character Styles panels, respectively"
+                "val": "Show/hide Paragraph and Character Styles panels"
             }
         ],
         "Tabs Panel": [
@@ -936,36 +660,6 @@
             {
                 "key": "Ctrl-Click Create New Layer",
                 "val": "Add new layer below selected layer"
-            },
-            {
-                "key": "[Shift] [Ctrl-Click Create New Layer]",
-                "val": "Add new layer to the top of the layer list"
-            },
-            {
-                "key": "[Shift] [Alt] [Ctrl-Click Create New Layer]",
-                "val": "Add new layer to the top of the layer list and open New Layer dialog box"
-            },
-            {
-                "key": "Alt-Click Create New Layer",
-                "val": "Add new layer and open New Layer dialog box"
-            }
-        ],
-        "Pages Panel": [
-            {
-                "key": "Alt-Click Master",
-                "val": "Apply master to selected page"
-            },
-            {
-                "key": "Ctrl-Click Create New Page button",
-                "val": "Create master page"
-            },
-            {
-                "key": "Alt-Click New Page button",
-                "val": "Display Insert Pages dialog box"
-            },
-            {
-                "key": "[Shift] [Ctrl] [P]",
-                "val": "Add new page after last page"
             }
         ],
         "Color Panel": [
@@ -1010,14 +704,6 @@
             {
                 "key": "[Ctrl] [Alt] [Shift] [5]",
                 "val": "Show 1st Spot plate"
-            },
-            {
-                "key": "[Ctrl] [Alt] [Shift] [6]",
-                "val": "Show 2nd Spot plate"
-            },
-            {
-                "key": "[Ctrl] [Alt] [Shift] [7]",
-                "val": "Show 3rd Spot plate"
             }
         ],
         "Swatches Panel": [
@@ -1028,10 +714,6 @@
             {
                 "key": "[Alt] [Ctrl-Click New Swatch button]",
                 "val": "Create spot color swatch based on the current swatch"
-            },
-            {
-                "key": "[Shift] [Alt] [Ctrl-Double-Click Swatch]",
-                "val": "Change options without applying swatch"
             }
         ],
         "Transform Panel": [
