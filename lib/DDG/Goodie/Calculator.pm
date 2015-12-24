@@ -624,18 +624,6 @@ use DDG::Goodie::Calculator::Parser;
 zci answer_type => "calculation";
 zci is_cached   => 1;
 
-primary_example_queries '1 + 7', '5 squared', '8 / 4';
-secondary_example_queries
-    '$2 + $7',
-    '60 divided by 15',
-    '1 + (3 / cos(pi))';
-description 'Perform arithmetical calculations';
-name 'Calculator';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Calculator.pm';
-category 'calculations';
-topics 'math';
-attribution github  => ['https://github.com/GuiltyDolphin', 'Ben Moon'];
-
 my $decimal = qr/(-?\d++[,.]?\d*+)|([,.]\d++)/;
 # Check for binary operations
 triggers query_nowhitespace => qr/($decimal|\w+)(\W+|x)($decimal|\w+)/;
