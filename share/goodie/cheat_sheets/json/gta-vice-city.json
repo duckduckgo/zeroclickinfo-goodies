@@ -1,15 +1,13 @@
 {
   "id": "gta_vice_city_cheat_sheet",
-  "name": "gta vice city",
-  "description": " GTA Vice City",
+  "name": "Gta Vice City",
+  "description": "A set of cheat codes for GTA Vice City gameplay",
   "metadata": {
-    "sourceName": "Game faqs",
-    "sourceUrl": "http://www.gamefaqs.com/pc/561641-grand-theft-auto-vice-city/cheats",
+    "sourceName": "Game Faqs",
+    "sourceUrl": "http://www.gamefaqs.com/pc/561641-grand-theft-auto-vice-city/cheats"
   },
   "aliases": [
-    "gta cheat codes",
-    "gta 2 cheats",
-    "gta vicecity cheats"
+    "vice city",
   ],
   "section_order": [
     "Cheat codes"
