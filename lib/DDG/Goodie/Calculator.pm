@@ -544,7 +544,7 @@ sub binary_doit {
     my ($name, $sub) = @_;
     doit $name, sub {
         my $self = shift;
-        my $new_sub = untaint_when(sub { $_[0] =~ /^\d+$/ }, $sub);
+        my $new_sub = untaint_when(sub { length $_[0]->rounded(1e-15) < 10 }, $sub);
         return $new_sub->($self->[0]->doit(), $self->[1]->doit());
     };
 }

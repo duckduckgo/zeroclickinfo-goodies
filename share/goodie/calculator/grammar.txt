@@ -7,30 +7,30 @@ lexeme default = action => [ start, length, value ]
 Calculator ::= Expression
 
 Expression ::=
-       Term   bless => primary
-    || ExprOp bless => primary
+       ExprOp bless => primary
+    || Term   bless => primary
 
 Term ::=
-       Function               bless => primary
-    |  ('(') Expression (')') bless => paren assoc => group
-    |  Factor                 bless => primary
-    || TermOp                 bless => primary
+       Function bless => primary
+    || TermOp   bless => primary
+    || Factor   bless => primary
 
 TermOp ::=
-       Expression ('^') Expression    bless => exponentiate assoc => right
-    || Factor ('squared')             bless => square
-    || Expression ('*') Expression    bless => multiply
-    |  Expression ('/') Expression    bless => divide
-    |  Term ('divided') ('by') Factor bless => divide
+       Factor ('^') Term              bless => exponentiate assoc => right
+    || Factor ('*') Term              bless => multiply
+    |  Factor ('/') Term              bless => divide
+    |  Factor ('divided') ('by') Term bless => divide
 
 ExprOp ::=
-      Expression ('+') Term bless => add
-    | Expression ('-') Term bless => subtract
+      Term ('+') Expression bless => add
+    | Term ('-') Expression bless => subtract
 
 Factor ::=
-       NumTerm                 bless => primary
+       ('(') Expression (')')  bless => paren assoc => group
+    || NumTerm                 bless => primary
     || Integer ('!')           bless => factorial_operator
     || NumTerm ('e':i) NumTerm bless => exp
+    || Factor ('squared')      bless => square
 
 NumTerm ::=
        Number Constant bless => constant_coefficient
