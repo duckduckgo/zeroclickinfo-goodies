@@ -1,0 +1,73 @@
+{
+  "id": "gta_vice_city_cheat_sheet",
+  "name": "gta vice city",
+  "description": " GTA Vice City",
+  "metadata": {
+    "sourceName": "Game faqs",
+    "sourceUrl": "http://www.gamefaqs.com/pc/561641-grand-theft-auto-vice-city/cheats",
+  },
+  "aliases": [
+    "gta cheat codes",
+    "gta 2 cheats",
+    "gta vicecity cheats"
+  ],
+  "section_order": [
+    "Cheat codes"
+  ],
+  "sections": {
+    "Cheat codes": [
+      {
+        "val": "Aggressive Drivers.",
+        "key": "MIAMITRAFFIC"
+      },
+      {
+        "val": "All light weapon.",
+        "key": "THUGTOOLS"
+      },
+      {
+        "val": "All ''heavy'' weapons.",
+        "key": "NUTTERTOOLS"
+      },
+      {
+        "val": "All ''medium'' weapons.",
+        "key": "PROFESSIONALTOOLS"
+      },
+      {
+        "val": "All cars are black.",
+        "key": "IWANTITPAINTEDBLACK"
+      },
+      {
+        "val": "Blow up nearby cars",
+        "key": "BIGBANG"
+      },
+      {
+        "val": "Cars can drive/hover over water.",
+        "key": "SEAWAYS"
+      },
+      {
+        "val": "Cars can fly",
+        "key": "COMEFLYWITHME"
+      },
+      {
+        "val": "Dense Clouds.",
+        "key": "ABITDRIEG"
+      },
+      {
+        "val": "Light Clouds.",
+        "key": "APLEASANTDAY"
+      },
+      {
+        "val": "Play as Hilary King",
+        "key": "ILOOKLIKEHILARY"
+      },
+      {
+        "val": "Play as Lance Vance.",
+        "key": "LOOKLIKELANCE"
+      },
+      {
+        "val": "Raise Wanted Level.",
+        "key": "YOUWONTTAKEMEALIVE"
+      }
+    ]
+  }
+}
