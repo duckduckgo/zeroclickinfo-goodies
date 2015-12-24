@@ -299,24 +299,6 @@ use Math::Cephes qw(exp);
 use DDG::Goodie::Calculator::Result;
 use Moo;
 
-# Generate a pretty grammar!
-sub generate_sub_grammar {
-    my ($grammar_name, $definitions) = @_;
-    my $str_grammar = "$grammar_name ::= \n";
-    my ($first_term, @terms) = keys $definitions;
-    my ($first_refer, $first_refer_def) = generate_alternate_forms($first_term, $definitions->{$first_term});
-    my @alternate_forms = ($first_refer_def) if defined $first_refer_def;
-    $str_grammar .= generate_grammar_line(["($first_refer)", 'Argument'], $first_term, 1);
-    foreach my $function_name (@terms) {
-        my ($refer, $refer_def) = generate_alternate_forms($function_name, $definitions->{$function_name});
-        push @alternate_forms, $refer_def if defined $refer_def;
-        $str_grammar .= generate_grammar_line(["($refer)", 'Argument'], $function_name, 0);
-    };
-    foreach my $alternate_form (@alternate_forms) {
-        $str_grammar .= "\n$alternate_form\n";
-    };
-    return $str_grammar;
-}
 sub generate_sub_grammar_gen {
     my ($grammar_name, $grammar_specf) = @_;
     return sub {
