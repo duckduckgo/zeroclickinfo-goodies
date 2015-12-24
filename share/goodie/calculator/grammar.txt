@@ -20,6 +20,7 @@ TermOp ::=
     || Factor ('*') Term              bless => multiply
     |  Factor ('/') Term              bless => divide
     |  Factor ('divided') ('by') Term bless => divide
+    |  Factor ('!')                   bless => factorial_operator
 
 ExprOp ::=
       Term ('+') Expression bless => add
@@ -28,7 +29,6 @@ ExprOp ::=
 Factor ::=
        ('(') Expression (')')  bless => paren assoc => group
     || NumTerm                 bless => primary
-    || Integer ('!')           bless => factorial_operator
     || NumTerm ('e':i) NumTerm bless => exp
     || Factor ('squared')      bless => square
 
