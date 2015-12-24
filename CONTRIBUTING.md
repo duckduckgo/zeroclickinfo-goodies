@@ -1,44 +1,73 @@
-# Contribute to Goodie Instant Answers
+# Welcome to DuckDuckHack's Goodies Instant Answers Repository
 
-You don't need to use perl to contribute Goodie Instant Answers.
+![](http://docs.duckduckhack.com/assets/hack search engine.png)
 
-You can always find the [Instant Answer Documentation here](https://duck.co/duckduckhack/ddh-intro). Also, if you have any questions at any point, feel free to ask on one of our community channels:
+**Instant Answers are an opportunity for anyone to create their own search results.**
 
-- [DuckDuckHack mailing list](https://www.listbox.com/subscribe/?list_id=197814)
-- [Slack](https://duckduckhack.slack.com) - For access, please send an email to quackslack@duckduckgo.com
-- Do not hesitate to email us directly at open@duckduckgo.com.
+Instant Answers appear on DuckDuckGo.com above ads and organic links, on [millions of searches](https://duckduckgo.com/traffic.html). Instant Answers are created by an open source community of developers [around the world](http://duckduckgo.meetup.com/) like you. Welcome!
 
+You can find the [full documentation here](http://docs.duckduckhack.com). This is the repository for [one type of Instant Answers](http://docs.duckduckhack.com/welcome/determining-ia-type.html), called Goodies.
 
 ## Create a New Instant Answer
 
+Learn to make an Instant Answer by starting with any of our quick tutorials. All of these are self-contained and will get you up and running. Pick whatever looks most interesting!
 
-**1. Plan your implementation**
+- **[Create a programming syntax cheat sheet](http://docs.duckduckhack.com/walkthroughs/programming-syntax.html)**
+- **[Create a quick online calculation](http://docs.duckduckhack.com/walkthroughs/calculation.html)**
+- **[Build an API-based lookup](http://docs.duckduckhack.com/walkthroughs/forum-lookup.html)**
 
-The first step is to research and plan your Instant Answer. Consider [the best way to implement](https://duck.co/duckduckhack/determine_your_instant_answer_type) your idea, and review the [docs and guidelines](https://duck.co/duckduckhack/ddh-intro) that apply.
-	
-**2. Involve us**
+## Improve a Live Instant Answer
 
-Before you start coding, [let us know your plans](mailto:open@duckduckgo.com). By involving us early we can provide guidance and potentially save you a lot of time and effort. Email us at [open@duckduckgo.com](mailto:open@duckduckgo.com) with what idea you're working on and how you're thinking of going about it.
+We welcome new contributors to dive in and improve live Instant Answers. It's a great, hands-on way to learn how things work. Start by [setting up your development environment](http://docs.duckduckhack.com/welcome/setup-dev-environment.html).
 
-In addition, we'll promptly set up a [central Instant Answer page](http://www.duck.co/ia) on the community platform so others can know you're working on it and how they can help you.
+You can see all "low-hanging fruit" issues neatly organized in one place on our [Live Issues Page](https://duck.co/ia/dev/issues?tag=lowhangingfruit), or get an overview of all [Instant Answers in development](https://duck.co/ia/dev/pipeline).
 
-## Improve an Existing Instant Answer
+Have a [favorite Instant Answer](http://duck.co/ia) that you want to make even better? Feel free to dive in and make changes. 
 
-Another great way to contribute is to improve an existing, live Instant Answer. It's a great way to get further acquainted with Instant Answers, as well as get implementation ideas. (Many contributors report completing their first fix within two hours of forking the repository!)
+## Inspiration
 
-**1. Choose a "low-hanging fruit"**
+Instant Answers allow you to create your own search results. Here are some examples of what contributors have created. You can see [all live Instant Answers listed here](https://duck.co/ia).
 
-We've made sure to identify these throughout our repositories for new contributors.
+Instant Answers can be quite dynamic...
 
-- [Goodie Low Hanging Fruit](https://github.com/duckduckgo/zeroclickinfo-goodies/issues?q=is%3Aopen+is%3Aissue+label%3A%22Low-Hanging+Fruit%22) ([Goodie docs](https://duck.co/duckduckhack/goodie_overview))
-- [Spice Low Hanging Fruit](https://github.com/duckduckgo/zeroclickinfo-spice/issues?q=is%3Aopen+is%3Aissue+label%3A%22Low-Hanging+Fruit%22) ([Spice docs](https://duck.co/duckduckhack/spice_overview))
+![](http://docs.duckduckhack.com/assets/parking_ny.png)
 
-**2. Dive in**
+...or simply convenient:
 
-Go ahead and **comment on any issues you're interested in helping with.** Let us know what you're thinking and if you'd like any help or guidance. 
-	
-As always, feel free to [ask us anything](mailto:open@duckduckgo.com), and don't forget the handy [Instant Answer documentation](https://duck.co/duckduckhack/ddh-intro).
+![](http://docs.duckduckhack.com/assets/sales_tax.png)
 
+Some are just cool: 
 
+![](http://docs.duckduckhack.com/assets/heads_tails.png)
 
+Many are absolutely delightful and unexpected:
 
+![](http://docs.duckduckhack.com/assets/bpm_ms.png)
+
+Many are super practical...
+
+![](http://docs.duckduckhack.com/assets/air_quality.png)
+
+...in ways we never imagined:
+
+![](http://docs.duckduckhack.com/assets/blue_pill.png)
+
+Some Instant Answers are built from pure code:
+
+![](http://docs.duckduckhack.com/assets/url_encode.png)
+
+Other Instant Answers channel external sources (API requests):
+
+![App search Instant Answer example](http://docs.duckduckhack.com/assets/app_search_example.png)
+
+The [possibilities are endless](https://duck.co/ia). **Our community's mission is to cover every topic with a community-generated Instant Answer.**
+
+## Discuss with Us
+
+Want help? Need to think out loud? 
+
+[![slack](http://docs.duckduckhack.com/assets/slack.png) Talk to us on Slack](mailto:QuackSlack@duckduckgo.com?subject=AddMe) or [email us](mailto:open@duckduckgo.com).
+
+We're a digital community, but real people - we frequently meet up to hack together. Check out our [global meetups](http://duckduckgo.meetup.com/).
+
+You can find the [full documentation here](http://docs.duckduckhack.com).
