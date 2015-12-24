@@ -57,6 +57,8 @@ ddg_goodie_test(
     '4.7 / 10',                   => build_test('47/100 = 0.47', '4.7 / 10'),
     '1 / 50',                     => build_test('0.02', '1 / 50'),
     '0.9999999999 + 0.0000000001' => build_test('1', '0.9999999999 + 0.0000000001'),
+    '2 + (2 + 2) ^ 2 - 0 + 0'     => build_test('18', '2 + (2 + 2) ^ 2 - 0 + 0'),
+    '3 * 4 / 12 + 3'              => build_test('4', '3 * 4 / 12 + 3'),
     # Powers
     '10 ^ 5'            => build_test('100,000', '10 ^ 5'),
     '2 ** 10'           => build_test('1,024', '2 ^ 10'),
@@ -74,6 +76,7 @@ ddg_goodie_test(
     '(5-4)^(3-2)^1'     => build_test('1', '(5 - 4) ^ (3 - 2) ^ 1'),
     '(5+4-3)^(2-1)'     => build_test('6', '(5 + 4 - 3) ^ (2 - 1)'),
     '32 ^ 0.2'          => build_test('2', '32 ^ 0.2'),
+    '2 ^ 2 ^ 3'         => build_test('256', '2 ^ 2 ^ 3'),
     # Logarithms
     'log(3)'         => build_test('≈ 1.098612288668', 'ln(3)'),
     'ln(3)'          => build_test('≈ 1.098612288668', 'ln(3)'),
@@ -147,6 +150,7 @@ ddg_goodie_test(
     '1.0 + 5 squared'       => build_test('26', '1.0 + 5 squared'),
     '2divided by 4'         => build_test('1/2 = 0.5', '2 / 4'),
     '60 divided by 15'      => build_test('4', '60 / 15'),
+    '7 divided by (3 + 4)'  => build_test('1', '7 / (3 + 4)'),
 
     # Misc functions
     'sqrt(4)'                => build_test('2', 'sqrt(4)'),
