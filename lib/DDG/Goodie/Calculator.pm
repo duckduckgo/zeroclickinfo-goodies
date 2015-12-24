@@ -428,13 +428,10 @@ binary_show 'exp', sub { "$_[0]e$_[1]" };
 unary_doit 'Calculator', sub { $_[0] };
 unary_show 'Calculator', sub { $_[0] };
 
-binary_doit 'constant_coefficient', sub { $_[0] * $_[1] };
-show 'constant_coefficient', sub {
-    my $self = shift;
-    return $self->[0]->show() . ' ' . $self->[1]->show();
-};
-
-
+binary_doit 'factored_word_constant', sub { $_[0] * $_[1] };
+binary_show 'factored_word_constant', sub { "$_[0] $_[1]" };
+binary_doit 'factored_symbol_constant', sub { $_[0] * $_[1] };
+binary_show 'factored_symbol_constant', sub { "$_[0]$_[1]" };
 
 # Usage: new_unary_function NAME, REP, SUB
 #
