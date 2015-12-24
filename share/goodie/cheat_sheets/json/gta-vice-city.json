@@ -15,43 +15,83 @@
   "sections": {
     "Cheat codes": [
       {
-        "val": "Aggressive Drivers.",
+        "val": "Aggressive Drivers",
         "key": "MIAMITRAFFIC"
       },
       {
-        "val": "All light weapon.",
+        "val": "All light weapon",
         "key": "THUGTOOLS"
       },
       {
-        "val": "All ''heavy'' weapons.",
+        "val": "All ''heavy'' weapons",
         "key": "NUTTERTOOLS"
       },
       {
-        "val": "All ''medium'' weapons.",
+        "val": "All ''medium'' weapons",
         "key": "PROFESSIONALTOOLS"
       },
       {
-        "val": "All cars are black.",
+        "val": "All cars are black",
         "key": "IWANTITPAINTEDBLACK"
       },
       {
+        "val": "All cars are pink",
+        "key": "AHAIRDRESSERSCAR"
+      },
+      {
+        "val": "All traffic lights are green",
+        "key": "GREENLIGHT"
+      },
+       {
         "val": "Blow up nearby cars",
         "key": "BIGBANG"
       },
       {
-        "val": "Cars can drive/hover over water.",
-        "key": "SEAWAYS"
+        "val": "Change Skin/Clothes",
+        "key": "STILLLIKEDRESSINGUP"
       },
       {
         "val": "Cars can fly",
         "key": "COMEFLYWITHME"
       },
       {
-        "val": "Dense Clouds.",
+        "val": "Commit Suicide",
+        "key": "ICANTTAKEITANYMORE"
+      },
+      {
+        "val": "Decrease Wanted Level",
+        "key": "LEAVEMEALONE"
+      },
+      {
+        "val": "Full Armor",
+        "key": "PRECIOUSPROTECTION"
+      },
+      {
+        "val": "Full Health",
+        "key": "ASPIRINE"
+      },
+      {
+        "val": "Girls Carry Guns",
+        "key": "CHICKSWITHGUNS"
+      },
+      {
+        "val": "Makes everything faster",
+        "key": "ONSPEED"
+      },
+      {
+        "val": "Makes everything slower",
+        "key": "BOOOOOORING"
+      },
+      {
+        "val": "Cars can drive/hover over water",
+        "key": "SEAWAYS"
+      },
+      {
+        "val": "Dense Clouds",
         "key": "ABITDRIEG"
       },
       {
-        "val": "Light Clouds.",
+        "val": "Light Clouds",
         "key": "APLEASANTDAY"
       },
       {
@@ -59,11 +99,11 @@
         "key": "ILOOKLIKEHILARY"
       },
       {
-        "val": "Play as Lance Vance.",
+        "val": "Play as Lance Vance",
         "key": "LOOKLIKELANCE"
       },
       {
-        "val": "Raise Wanted Level.",
+        "val": "Raise Wanted Level",
         "key": "YOUWONTTAKEMEALIVE"
       }
     ]
