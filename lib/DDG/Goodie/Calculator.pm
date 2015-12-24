@@ -390,7 +390,7 @@ sub format_currency_for_display {
     return $style->for_display(format_for_currency($text, $currency));
 }
 
-sub standardize_operator_symbols {
+sub standardize_symbols {
     my $text = shift;
     # Only replace x's surrounded by non-alpha characters so it
     # can occur in function names.
@@ -398,6 +398,7 @@ sub standardize_operator_symbols {
     $text =~ s/[∙⋅×]/*/g;
     $text =~ s#[÷]#/#g;
     $text =~ s/\*{2}/^/g;
+    $text =~ s/π/pi/g;
     return $text;
 }
 
@@ -486,7 +487,7 @@ sub is_bad_result {
 sub to_display {
     my $query = shift;
     my $currency = get_currency $query;
-    $query = standardize_operator_symbols $query;
+    $query = standardize_symbols $query;
     my $style = get_style $query or return;
     my $to_compute = $query =~ s/((?:[,.\d][\d,. _]*[,.\d]?))/$style->for_computation($1)/ger;
     my ($generated_input, $val_result) = eval { get_results $to_compute } or return;
@@ -720,7 +721,7 @@ my $big_e =  Math::BigRat->new(1)->bexp();
 sub irrational { new_tainted(@_) };
 
 # Constants go here.
-new_constant 'pi',    irrational($big_pi), 'pi';
+new_constant 'pi',    irrational($big_pi), 'π';
 new_constant 'dozen', pure(12);
 new_constant 'euler', irrational($big_e),  'e';
 new_constant 'score', pure(20);
