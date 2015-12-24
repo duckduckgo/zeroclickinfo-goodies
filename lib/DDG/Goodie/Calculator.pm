@@ -317,6 +317,26 @@ sub generate_sub_grammar {
     };
     return $str_grammar;
 }
+sub generate_sub_grammar_gen {
+    my ($grammar_name, $grammar_specf) = @_;
+    return sub {
+        my $definitions = shift;
+        my $str_grammar = "$grammar_name ::= \n";
+        my ($first_term, @terms) = keys $definitions;
+        my ($first_refer, $first_refer_def) = generate_alternate_forms($first_term, $definitions->{$first_term});
+        my @alternate_forms = ($first_refer_def) if defined $first_refer_def;
+        $str_grammar .= generate_grammar_line($grammar_specf->($first_refer), $first_term, 1);
+        foreach my $function_name (@terms) {
+            my ($refer, $refer_def) = generate_alternate_forms($function_name, $definitions->{$function_name});
+            push @alternate_forms, $refer_def if defined $refer_def;
+            $str_grammar .= generate_grammar_line($grammar_specf->($refer), $function_name, 0);
+        };
+        foreach my $alternate_form (@alternate_forms) {
+            $str_grammar .= "\n$alternate_form\n";
+        };
+        return $str_grammar;
+    };
+}
 
 sub generate_grammar_line {
     my ($rhs, $blessf, $is_first) = @_;
@@ -340,6 +360,17 @@ sub generate_alternate_forms {
 }
 
 my %unary_function_grammar;
+my %word_constant_grammar;
+my %symbol_constant_grammar;
+
+*generate_unary_function_grammar = generate_sub_grammar_gen(
+    "GenUnaryFunction", sub { ["($_[0])", 'Argument'] });
+
+*generate_word_constant_grammar = generate_sub_grammar_gen(
+    "WordConstant", sub { ["($_[0]:i)"] });
+
+*generate_symbol_constant_grammar = generate_sub_grammar_gen(
+    "SymbolConstant", sub { ["($_[0]:i)"] });
 
 sub new_fraction { Math::BigRat->new(@_) };
 
@@ -534,6 +565,17 @@ sub new_constant {
     show $const_name, sub { $print_name };
 }
 
+sub new_symbol_constant {
+    my ($name, $val, $rep, $show) = @_;
+    new_constant $name, $val, ($show or $rep);
+    $symbol_constant_grammar{"const_$name"} = $rep;
+}
+sub new_word_constant {
+    my ($name, $val) = @_;
+    new_constant $name, $val, $name;
+    $word_constant_grammar{"const_$name"} = $name;
+}
+
 my $big_pi = Math::BigRat->new(Math::BigFloat->bpi());
 my $big_e =  Math::BigRat->new(1)->bexp();
 
@@ -541,16 +583,24 @@ my $big_e =  Math::BigRat->new(1)->bexp();
 sub irrational { new_tainted(@_) };
 
 # Constants go here.
-new_constant 'pi',    irrational($big_pi), 'π';
-new_constant 'dozen', pure(12);
-new_constant 'euler', irrational($big_e),  'e';
-new_constant 'score', pure(20);
+new_symbol_constant 'pi',    irrational($big_pi), 'pi', 'π';
+new_word_constant 'dozen', pure(12);
+new_symbol_constant 'euler', irrational($big_e),  'e';
+new_word_constant 'score', pure(20);
 
 sub generate_grammar {
     my $initial_grammar_text = shift;
     my $generated_unary_function_grammar =
-        generate_sub_grammar("GenUnaryFunction", \%unary_function_grammar);
-    my $grammar_text = join "\n", ($initial_grammar_text, $generated_unary_function_grammar);
+        generate_unary_function_grammar(\%unary_function_grammar);
+    my $generated_word_constant_grammar =
+        generate_word_constant_grammar(\%word_constant_grammar);
+    my $generated_symbol_constant_grammar =
+        generate_symbol_constant_grammar(\%symbol_constant_grammar);
+    my $grammar_text = join "\n",
+        ($initial_grammar_text,
+         $generated_unary_function_grammar,
+         $generated_word_constant_grammar,
+         $generated_symbol_constant_grammar);
     my $grammar = Marpa::R2::Scanless::G->new(
         {   bless_package => 'DDG::Goodie::Calculator::Parser',
             source        => \$grammar_text,

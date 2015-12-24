@@ -41,22 +41,9 @@ FactoredConstant ::=
       Number WordConstant   bless => factored_word_constant
     | Number SymbolConstant bless => factored_symbol_constant
 
-WordConstant ::=
-      dozen bless => const_dozen
-    | score bless => const_score
-
-SymbolConstant ::=
-      pi    bless => const_pi
-    | euler bless => const_euler
-
 Constant ::=
       WordConstant
     | SymbolConstant
-
-pi    ~ 'pi':i
-euler ~ 'e':i
-dozen ~ 'dozen':i
-score ~ 'score':i
 
 Function ::=
       GenUnaryFunction
