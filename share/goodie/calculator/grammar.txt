@@ -16,15 +16,16 @@ Term ::=
     || Factor   bless => primary
 
 TermOp ::=
-       Factor ('^') Term              bless => exponentiate assoc => right
-    || Factor ('*') Term              bless => multiply
-    |  Factor ('/') Term              bless => divide
-    |  Factor ('divided') ('by') Term bless => divide
-    |  Factor ('!')                   bless => factorial_operator
+       Factor ('^')        Term bless => exponentiate assoc => right
+    || Term   ('*')        Term bless => multiply
+    |  Term (<divided by>) Term bless => divide
+    |  Factor ('!')             bless => factorial_operator
+
+<divided by> ~ '/' | 'divided by':i
 
 ExprOp ::=
-      Term ('+') Expression bless => add
-    | Term ('-') Expression bless => subtract
+      Expression ('+') Expression bless => add
+    | Expression ('-') Expression bless => subtract
 
 Factor ::=
        ('(') Expression (')')  bless => paren assoc => group
