@@ -175,10 +175,15 @@ ddg_goodie_test(
     '5!'           => build_test('120', '5!'),
     '1 + 3!'       => build_test('7', '1 + 3!'),
     '0!'           => build_test('1', '0!'),
+    '(7 - 3)!'     => build_test('24', '(7 - 3)!'),
+    '2 ^ 3!'       => build_test('64', '2 ^ 3!'),
+    'fact(0.3)'    => undef,
     '0.3!'         => undef,
     '-7!'          => undef,
-    '34!'          => undef,
-    '1000000!'     => undef,
+    'fact(-7)'     => undef,
+    '3!!'          => undef, # This is technically the semi-factorial
+    '(3!)!'        => build_test('720', '(3!)!'),
+    '1001!'        => undef, # Limited it to this.
 
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,

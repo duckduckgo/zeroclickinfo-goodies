@@ -659,8 +659,14 @@ binary_show 'logarithm', sub { "log$_[0]($_[1])" };
 
 # Misc functions
 new_unary_bounded 'square_root', 'sqrt', sub { sqrt $_[0] };
-# Update this for other factorial!
-new_unary_function 'factorial',   'factorial', sub { $_[0]->on_result(\&fac) };
+
+sub calculate_factorial {
+    return if $_[0] > pure(1000); # Much larger than this and I start
+                                  # to notice a delay.
+    return $_[0]->on_result(sub { $_[0]->bfac() });
+}
+
+new_unary_function 'factorial', 'factorial', \&calculate_factorial;
 new_unary_function 'exponential', 'exp', taint_result_unless(
     sub { $_[0] =~ /^\d+$/ }, \&exp );
 
@@ -689,10 +695,7 @@ new_binary_operator 'exponentiate', '^', taint_when_longer_than(10,
 
 binary_doit 'exp', sub { $_[0] * pure(10) ** $_[1] };
 
-unary_doit 'factorial_operator', sub {
-    return if $_[0] < pure(0) or $_[0] > pure(33);
-    return $_[0]->on_result(\&fac);
-};
+unary_doit 'factorial_operator', \&calculate_factorial;
 unary_show 'factorial_operator', sub { $_[0] . '!' };
 
 # new_constant NAME, VALUE
