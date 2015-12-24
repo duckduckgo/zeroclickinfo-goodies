@@ -33,15 +33,25 @@ Factor ::=
     || Factor ('squared')      bless => square
 
 NumTerm ::=
-       Number Constant bless => constant_coefficient
-    || Constant        bless => primary
-    |  Number          bless => primary
+       FactoredConstant bless => primary
+    || Constant         bless => primary
+    |  Number           bless => primary
 
-Constant ::=
+FactoredConstant ::=
+      Number WordConstant   bless => factored_word_constant
+    | Number SymbolConstant bless => factored_symbol_constant
+
+WordConstant ::=
+      dozen bless => const_dozen
+    | score bless => const_score
+
+SymbolConstant ::=
       pi    bless => const_pi
     | euler bless => const_euler
-    | dozen bless => const_dozen
-    | score bless => const_score
+
+Constant ::=
+      WordConstant
+    | SymbolConstant
 
 pi    ~ 'pi':i
 euler ~ 'e':i
