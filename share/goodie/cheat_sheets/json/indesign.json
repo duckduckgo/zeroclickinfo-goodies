@@ -530,7 +530,7 @@
         ],
         "Indexing": [
             {
-                "key": "[Shift] [Ctrl] [Alt] [[]",
+                "key": "[Shift] [Ctrl] [Alt] [\\[]",
                 "val": "Create index entry without dialog box"
             },
             {
@@ -538,7 +538,7 @@
                 "val": "Open index entry dialog box"
             },
             {
-                "key": "[Shift] [Ctrl] [Alt] []]",
+                "key": "[Shift] [Ctrl] [Alt] [\\]]",
                 "val": "Create proper name index entry"
             }
         ],
