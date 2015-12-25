@@ -15,7 +15,6 @@
         "Tools",
         "Edit Commands",
         "Viewing Artwork",
-        "Brushes Panel",
         "Swatches Panel",
         "Function Commands",
         "Editing Shapes",
@@ -213,10 +212,6 @@
                 "val": "Show/Hide All Pannel"
             },
             {
-                "key": "[Shift] [Tab]",
-                "val": "Show/Hide All But ToolBox"
-            },
-            {
                 "key": "]",
                 "val": "Increase Diameter"
             },
@@ -239,14 +234,6 @@
         ],
         "Moving Selections": [
             {
-                "key": "Right arrow, Left arrow, Up arrow, or Down arrow",
-                "val": "Move selection in user-defined increments"
-            },
-            {
-                "key": "[Shift] [Right arrow, Left arrow, Up arrow, or Down arrow]",
-                "val": "Move selection 10x in user-defined increments"
-            },
-            {
                 "key": "[Ctrl] [Alt] [Shift] [2]",
                 "val": "Lock all deselected artwork"
             },
@@ -258,30 +245,26 @@
         "Selection Commands": [
             {
                 "key": "Ctrl",
-                "val": "Switch to last used selection tool(Selection tool, Direct tool, or Group tool)"
+                "val": "Switch to last used selection tool"
             },
             {
                 "key": "Alt",
                 "val": "Switch between Direct Selection tool and Group Selection tool"
             },
             {
-                "key": "[Shift] [Click]",
-                "val": "Add to a selection with Selection tool, Direct selection tool, Group Selection tool, Live Paint Selection tool, or Magic wand tool"
-            },
-            {
-                "key": "[Shift] [Click]",
-                "val": "Subtract a selection with Selection tool, Direct selection tool, Group Selection tool,or Live Paint Selection tool"
+                "key": "[Shift-Click]",
+                "val": "Add to a selection with Selection/Direct selection/Group Selection/Live Paint Selection/Magic wand tool"
             },
             {
                 "key": "[Alt] [Click]",
                 "val": "Subtract from selection with Magic wand tool"
             },
             {
-                "key": "[Shift] [Drag]",
+                "key": "[Shift-Drag]",
                 "val": "Add to selection with Lasso tool"
             },
             {
-                "key": "[Alt] [Drag]",
+                "key": "[Alt-Drag]",
                 "val": "Subtract from selection with Lasso tool"
             },
             {
@@ -295,14 +278,6 @@
             {
                 "key": "[Alt] [C] [O]",
                 "val": "Create crop marks around selected object"
-            },
-            {
-                "key": "[Ctrl] [Click twice]",
-                "val": "Select behind an object"
-            },
-            {
-                "key": "[Ctrl] [Click twice]",
-                "val": "Select behind in isolation mode"
             }
         ],
         "Editing Shapes": [
@@ -311,44 +286,20 @@
                 "val": "Switch Pen tool to convert Anchor Point tool"
             },
             {
-                "key": "Alt",
-                "val": "Switch between Add Anchor Point tool and Delete Anchor Point tool"
-            },
-            {
-                "key": "Alt",
-                "val": "Switch Scissors tool to Add Anchor Point tool"
-            },
-            {
-                "key": "Alt",
-                "val": "Switch Pencil tool to Smooth tool"
-            },
-            {
-                "key": "[Spacebar] [Drag]",
+                "key": "[Spacebar-Drag]",
                 "val": "Move current anchor point while drawing pencil tool"
             },
             {
-                "key": "[Alt] [Drag]",
+                "key": "[Alt-Drag]",
                 "val": "Cut a straight line with knife tool"
             },
             {
-                "key": "[Shift] [Alt] [Drag]",
+                "key": "[Shift] [Alt-Drag]",
                 "val": "Cut 45 deg or 90 deg with Knife tool"
-            },
-            {
-                "key": "[Alt] [Space mode]",
-                "val": "Use shape mode buttons in Pathfinder panel to create compond paths"
-            },
-            {
-                "key": "[Alt] [Click] [the] [closed] [region]",
-                "val": "Erase unwanted closed regions created using Shape Builder tool"
             },
             {
                 "key": "[Shift] [M]",
                 "val": "Select the Shape Builder tool"
-            },
-            {
-                "key": "[Shift] [Click] [Drag]",
-                "val": "Display the rectangular marquee to easily merge the multiple paths"
             }
         ],
         "Function Commands": [
@@ -403,38 +354,6 @@
             {
                 "key": "F12",
                 "val": "Revert"
-            },
-            {
-                "key": "[Shift] [F5]",
-                "val": "Show/Hide Graphics Styles Panel"
-            },
-            {
-                "key": "[Shift] [F6]",
-                "val": "Show/Hide Appearance Panel"
-            },
-            {
-                "key": "[Shift] [F7]",
-                "val": "Show/Hide Align Panel"
-            },
-            {
-                "key": "[Shift] [F8]",
-                "val": "Show/Hide Tranform Panel"
-            },
-            {
-                "key": "[Shift] [Ctrl] [F9]",
-                "val": "Show/Hide Pathfinder Panel"
-            },
-            {
-                "key": "[Shift] [Ctrl] [F10]",
-                "val": "Show/Hide Transparency Panel"
-            },
-            {
-                "key": "[Shift] [Ctrl] [F11]",
-                "val": "Show/Hide Symbols Panel"
-            },
-            {
-                "key": "[Ctrl] [Shift] [I]",
-                "val": "Show/Hide perspective grid"
             }
         ],
         "Swatches Panel": [
@@ -451,28 +370,10 @@
                 "val": "Replace with another"
             }
         ],
-        "Brushes Panel": [
-            {
-                "key": "[Double] [Click] [Brush]",
-                "val": "Open brush options dialog box"
-            },
-            {
-                "key": "[Drag] [brush] [to] [new] [brush] [button]",
-                "val": "Duplicate brush"
-            }
-        ],
         "Viewing Artwork": [
             {
                 "key": "F",
-                "val": "Toggle between screen modes: Normal Screen Mode, Full Screen Mode with Menu bar, Full Screen Mode"
-            },
-            {
-                "key": "[Double] [Click] [Hand] [Tool]",
-                "val": "Fit imageable area in window"
-            },
-            {
-                "key": "[Double] [Click] [Zoom] [Tool]",
-                "val": "Magnify 100%"
+                "val": "Toggle between screen modes"
             },
             {
                 "key": "Spacebar",
@@ -491,20 +392,12 @@
                 "val": "Hide Unselected Artwork"
             },
             {
-                "key": "[Alt] [Drag Guide]",
+                "key": "[Alt-Drag Guide]",
                 "val": "Convert between horizontal and vertical guide"
-            },
-            {
-                "key": "[Ctrl] [Shift] [Double] [Click] [Guide]",
-                "val": "Release guide"
             },
             {
                 "key": "[Ctrl] [Shift] [H]",
                 "val": "Show/Hide ArtBoards"
-            },
-            {
-                "key": "[Alt] [Ctrl] [R]",
-                "val": "Show/Hide ArtBoard rulers"
             },
             {
                 "key": "[Alt] [Ctrl] [0]",
@@ -519,55 +412,19 @@
                 "val": "Exit artboard tool mode"
             },
             {
-                "key": "[Shift] [Drag]",
+                "key": "Shift-Drag",
                 "val": "Create artboard inside another artboard"
-            },
-            {
-                "key": "[Ctrl] [Click]",
-                "val": "Select multiple artboards in artboard panel"
             },
             {
                 "key": "[Ctrl] [F6]",
                 "val": "Navigate to next document"
             },
             {
-                "key": "[Shift] [Ctrl] [F6]",
-                "val": "Navigate to previous document"
-            },
-            {
                 "key": "[Alt] [Ctrl] [F6]",
                 "val": "Navigate to next document group"
-            },
-            {
-                "key": "[Alt] [Ctrl] [Shift] [F6]",
-                "val": "Navigate to previous document group"
-            },
-            {
-                "key": "[Alt] [V]",
-                "val": "Save multiple artboards to illustrator CS3 or earlier format"
             }
         ],
         "Edit Commands": [
-            {
-                "key": "[Ctrl] [Z]",
-                "val": "Undo"
-            },
-            {
-                "key": "[Shift] [Ctrl] [Z]",
-                "val": "Redo"
-            },
-            {
-                "key": "[Ctrl] [X]",
-                "val": "Cut"
-            },
-            {
-                "key": "[Ctrl] [C]",
-                "val": "Copy"
-            },
-            {
-                "key": "[Ctrl] [V]",
-                "val": "Paste"
-            },
             {
                 "key": "[Ctrl] [F]",
                 "val": "Paste in Front"
@@ -603,16 +460,8 @@
         ],
         "File Commands": [
             {
-                "key": "[Ctrl] [N]",
-                "val": "New"
-            },
-            {
                 "key": "[Shift] [Ctrl] [N]",
                 "val": "New from Template"
-            },
-            {
-                "key": "[Ctrl] [O]",
-                "val": "Open"
             },
             {
                 "key": "[Alt] [Ctrl] [O]",
@@ -621,14 +470,6 @@
             {
                 "key": "[Ctrl] [W]",
                 "val": "Close"
-            },
-            {
-                "key": "[Ctrl] [S]",
-                "val": "Save"
-            },
-            {
-                "key": "[Shift] [Ctrl] [S]",
-                "val": "Save As"
             },
             {
                 "key": "[Alt] [Shift] [Ctrl] [S]",
