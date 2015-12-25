@@ -296,6 +296,7 @@ use utf8;
 
 use Marpa::R2;
 use Math::Cephes qw(exp floor ceil);
+use Math::Cephes qw(:hypers);
 use DDG::Goodie::Calculator::Result;
 use Moo;
 
@@ -492,6 +493,17 @@ new_unary_bounded 'tangent',   ['tan', 'tangent'],
 
 new_unary_function 'floor', 'floor', sub { $_[0]->on_result(\&floor) };
 new_unary_function 'ceil', ['ceil', 'ceiling'], sub { $_[0]->on_result(\&ceil) };
+
+# Hyperbolic functions
+new_unary_bounded 'hyp_sine', 'sinh', sub { $_[0]->on_result(\&sinh) };
+new_unary_bounded 'hyp_cosine', 'cosh', sub { $_[0]->on_result(\&cosh) };
+new_unary_bounded 'hyp_tangent', 'tanh', sub { $_[0]->on_result(\&tanh) };
+new_unary_bounded 'inv_hyp_tangent', ['artanh', 'atanh'],
+    sub { $_[0]->on_result(\&atanh) };
+new_unary_bounded 'inv_hyp_cosine', ['arcosh', 'acosh'],
+    sub { $_[0]->on_result(\&acosh) };
+new_unary_bounded 'inv_hyp_sine', ['arsinh', 'asinh'],
+    sub { $_[0]->on_result(\&asinh) };
 
 # Log functions
 new_unary_function 'natural_logarithm', ['ln', 'log'],
