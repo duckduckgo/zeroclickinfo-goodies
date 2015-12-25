@@ -16,7 +16,9 @@ topics 'cryptography';
 
 attribution github => ['hunterlang', 'Hunter Lang'];
 
-triggers startend => 'passphrase', 'pass phrase', 'random passphrase', 'passphrase random', 'random pass phrase', 'pass phrase random';
+my @trigger_words = ('passphrase', 'pass phrase', 'random passphrase', 'passphrase random', 'random pass phrase', 'pass phrase random');
+
+triggers startend => @trigger_words;
 
 # Remove the line endings up front.
 my @word_list = map { chomp $_; $_ } share('words.txt')->slurp;
@@ -29,7 +31,7 @@ handle query_lc => sub {
     my $query = shift;
     my $word_count;
     $query =~ s/^(?:generate|create)\s+//g;    # Just in case they want to make a command of it.
-    if ($query eq 'random passphrase') {
+    if ( grep {$query eq $_} @trigger_words ) {
         # If this is our entire (remaining) query, we'll still handle it and
         # set the word count to 4 in honor of correct horse battery staple.
         $word_count = 4;
