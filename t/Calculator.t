@@ -150,6 +150,20 @@ ddg_goodie_test(
     'sec(1)'               => build_test('≈ 1.850815717681', 'sec(1)'),
     'secant(1)'            => build_test('≈ 1.850815717681', 'sec(1)'),
     '2,90 + sec(4,6)'      => build_test('≈ -6,01642861136', '2,90 + sec(4,6)'),
+    # Hyperbolic functions
+    'sinh(1)'                => build_test('≈ 1.175201193644', 'sinh(1)'),
+    'sinh(0)'                => build_test('0', 'sinh(0)'),
+    'cosh(1)'                => build_test('≈ 1.543080634815', 'cosh(1)'),
+    'cosh(0)'                => build_test('1', 'cosh(0)'),
+    'cos(0) + cosh(0)'       => build_test('2', 'cos(0) + cosh(0)'),
+    'tanh(1)'                => build_test('≈ 0.7615941559558', 'tanh(1)'),
+    'tanh(0)'                => build_test('0', 'tanh(0)'),
+    'artanh(tanh(0))'        => build_test('0', 'artanh(tanh(0))'),
+    'atanh(0.7615941559558)' => build_test('≈ 1', 'artanh(0.7615941559558)'),
+    'arcosh(1)'              => build_test('0', 'arcosh(1)'),
+    'acosh(cosh(1))'         => build_test('1', 'arcosh(cosh(1))'),
+    'arsinh(0)'              => build_test('0', 'arsinh(0)'),
+    'asinh(sinh(1))'         => build_test('1', 'arsinh(sinh(1))'),
 
     # Word functions
     '5 squared'             => build_test('25', '5 squared'),
