@@ -64,10 +64,6 @@
                 "val": "Type"
             },
             {
-                "key": "[Shift] [T]",
-                "val": "Touch Type"
-            },
-            {
                 "key": "M",
                 "val": "Rectangle"
             },
@@ -86,10 +82,6 @@
             {
                 "key": "[Shift] [B]",
                 "val": "Bold Brush"
-            },
-            {
-                "key": "[Shift] [O]",
-                "val": "ArtBoard"
             },
             {
                 "key": "[Shift] [E]",
@@ -130,18 +122,6 @@
             {
                 "key": "k",
                 "val": "Live Paint Bucket"
-            },
-            {
-                "key": "[Shift] [L]",
-                "val": "Live Paint Selection"
-            },
-            {
-                "key": "[Shift] [P]",
-                "val": "Perspective Grid"
-            },
-            {
-                "key": "[Shift] [V]",
-                "val": "Perspective Selection"
             },
             {
                 "key": "U",
@@ -188,10 +168,6 @@
                 "val": "Default Fill and Stroke"
             },
             {
-                "key": "[Shift] [X]",
-                "val": "Swap Fill and Stroke"
-            },
-            {
                 "key": ".",
                 "val": "Gradient"
             },
@@ -220,14 +196,6 @@
                 "val": "Decrease Diameter"
             },
             {
-                "key": "[Shift] [}]",
-                "val": "Symbolism Tool: Increase"
-            },
-            {
-                "key": "[Shift] [{]",
-                "val": "Symbolism Tool: Decrease"
-            },
-            {
                 "key": "[Shift] [D]",
                 "val": "Toggle Drawing Mode"
             }
@@ -252,22 +220,6 @@
                 "val": "Switch between Direct Selection tool and Group Selection tool"
             },
             {
-                "key": "[Shift-Click]",
-                "val": "Add to a selection with Selection/Direct selection/Group Selection/Live Paint Selection/Magic wand tool"
-            },
-            {
-                "key": "[Alt] [Click]",
-                "val": "Subtract from selection with Magic wand tool"
-            },
-            {
-                "key": "[Shift-Drag]",
-                "val": "Add to selection with Lasso tool"
-            },
-            {
-                "key": "[Alt-Drag]",
-                "val": "Subtract from selection with Lasso tool"
-            },
-            {
                 "key": "Caps Lock",
                 "val": "Change Pointer to Cross hair for Lasso tool"
             },
@@ -286,11 +238,11 @@
                 "val": "Switch Pen tool to convert Anchor Point tool"
             },
             {
-                "key": "[Spacebar-Drag]",
+                "key": "Spacebar-Drag",
                 "val": "Move current anchor point while drawing pencil tool"
             },
             {
-                "key": "[Alt-Drag]",
+                "key": "Alt-Drag",
                 "val": "Cut a straight line with knife tool"
             },
             {
@@ -392,10 +344,6 @@
                 "val": "Hide Unselected Artwork"
             },
             {
-                "key": "[Alt-Drag Guide]",
-                "val": "Convert between horizontal and vertical guide"
-            },
-            {
                 "key": "[Ctrl] [Shift] [H]",
                 "val": "Show/Hide ArtBoards"
             },
@@ -410,10 +358,6 @@
             {
                 "key": "Esc",
                 "val": "Exit artboard tool mode"
-            },
-            {
-                "key": "Shift-Drag",
-                "val": "Create artboard inside another artboard"
             },
             {
                 "key": "[Ctrl] [F6]",
