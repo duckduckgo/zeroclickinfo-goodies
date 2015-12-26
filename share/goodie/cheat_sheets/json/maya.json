@@ -1,7 +1,7 @@
 {
   "id": "maya_cheat_sheet",
   "name": "Autodesk Maya",
-  "description": "A list of useful Autodesk Maya keyboard shortcuts",
+  "description": "Keyboard shortcuts for Autodesk Maya, a 3D computer graphics software",
   "metadata": {
     "sourceName": "Shortcutmania",
     "sourceUrl": "http://www.shortcutmania.com/Maya-Keyboard-Shortcuts-printable-cheatsheet.htm"
@@ -45,7 +45,7 @@
       },
       {
         "val": "Display Quality marking menu",
-        "key": "[d] + [LMB]"
+        "key": "[d] [LMB]"
       },
       {
         "val": "Low Quality Display setting",
@@ -63,11 +63,11 @@
     "Playback Control": [
       {
         "val": "Move forward one frame",
-        "key": "[Alt] + [.]"
+        "key": "[Alt] [.]"
       },
       {
         "val": "Move backward one frame",
-        "key": "[Alt] + [,]"
+        "key": "[Alt] [,]"
       },
       {
         "val": "Go to Next key",
@@ -79,11 +79,11 @@
       },
       {
         "val": "Turn Playback on/off",
-        "key": "[Alt] + [v]"
+        "key": "[Alt] [v]"
       },
       {
         "val": "Go to Min Frame",
-        "key": "[Alt]+ [Shift] + [v]"
+        "key": "[Alt] [Shift] [v]"
       }
     ],
     "Snapping Commands": [
@@ -105,29 +105,29 @@
       },
       {
         "val": "Move. Rotate. Scale Tool relative snapping",
-        "key": "[Shift]+[J]                    "
+        "key": "[Shift] [J]"
       }
     ],
     "Painting Commands": [
       {
         "val": "Flood with the current value",
-        "key": "[Alt] + [f]"
+        "key": "[Alt] [f]"
       },
       {
         "val": "Turn Show Wireframe on/off",
-        "key": "[Alt] + [a]"
+        "key": "[Alt] [a]"
       },
       {
         "val": "Turn Color Feedback on/off",
-        "key": "[Alt] + [c]"
+        "key": "[Alt] [c]"
       },
       {
         "val": "Toggle Reflection on/off",
-        "key": "[Alt] + [r]"
+        "key": "[Alt] [r]"
       },
       {
         "val": "Artisan Paint Operation marking menu",
-        "key": "[u] + [LMB]."
+        "key": "[u] [LMB]."
       },
       {
         "val": "Modify upper brush radius",
@@ -135,11 +135,11 @@
       },
       {
         "val": "Modify lower brush radius",
-        "key": "[Shift] + [b]"
+        "key": "[Shift] [b]"
       },
       {
         "val": "Edit Paint Effects template brush settings",
-        "key": "[Ctrl] + [b]"
+        "key": "[Ctrl] [b]"
       },
       {
         "val": "Modify Artisan brush Stamp Depth",
@@ -167,45 +167,45 @@
       },
       {
         "val": "Poly Brush Tool marking menu",
-        "key": "[o] + [LMB]"
+        "key": "[o] [LMB]"
       },
       {
         "val": "Poly UV Tool marking menu",
-        "key": "[o] + [MMB]"
+        "key": "[o] [MMB]"
       }
     ],
     "Tumble, Track, Dolly": [
       {
         "val": "Tumble Tool",
-        "key": "[Alt] + [LMB]"
+        "key": "[Alt] [LMB]"
       },
       {
         "val": "Track Tool",
-        "key": "[Alt] + [MMB]"
+        "key": "[Alt] [MMB]"
       },
       {
         "val": "Dolly Tool",
-        "key": "[Alt] + [RMB]"
+        "key": "[Alt] [RMB]"
       }
     ],
     "Objects Show / Hide": [
       {
         "val": "Display > Hide > Hide Selection",
-        "key": "[Ctrl] + [h]"
+        "key": "[Ctrl] [h]"
       },
       {
         "val": "Display > Show > Show Last Hidden",
-        "key": "[Alt] + [h]"
+        "key": "[Alt] [h]"
       },
       {
         "val": "Show > Isolate Select > View SelectedDecelerate",
-        "key": "[Shift] + [I]"
+        "key": "[Shift] [I]"
       }
     ],
     "Tool Commands": [
       {
         "val": "Complete current tool",
-        "key": "[Return]"
+        "key": "Return"
       },
       {
         "val": "Abort current tool",
@@ -217,7 +217,7 @@
       },
       {
         "val": "Select Tool",
-        "key": "[Shift] [menu} + [Q]"
+        "key": "[Shift] [menu] [Q]"
       },
       {
         "val": "Logic editor",
@@ -225,19 +225,19 @@
       },
       {
         "val": "Component marking",
-        "key": "[Shift] [menu] + [Q] + [LMB]"
+        "key": "[Shift] [menu] [Q] [LMB]"
       },
       {
         "val": "Select tool",
-        "key": "[Alt] + [q]"
+        "key": "[Alt] [q]"
       },
       {
         "val": "Polygon marking menu",
-        "key": "[Alt] + [q] + [LMB]"
+        "key": "[Alt] [q] [LMB]"
       },
       {
         "val": "Mask marking menu",
-        "key": "[q] + [LMB]"
+        "key": "[q] [LMB]"
       },
       {
         "val": "Move tool",
@@ -245,7 +245,7 @@
       },
       {
         "val": "Move tool marking menu",
-        "key": "[w] + [LMB]"
+        "key": "[w]  [LMB]"
       },
       {
         "val": "Rotate tool",
@@ -257,7 +257,7 @@
       },
       {
         "val": "Scale tool marking menu",
-        "key": "[r] + [LMB]"
+        "key": "[r] [LMB]"
       },
       {
         "val": "Show manipulator tool",
@@ -273,7 +273,7 @@
       },
       {
         "val": "Increase manipulator size",
-        "key": "[=] or [+]"
+        "key": "[=] or []"
       },
       {
         "val": "Decrease manipulator size",
@@ -291,27 +291,27 @@
       },
       {
         "val": "Keyframe marking menu",
-        "key": "[Shift] + [S] + [LMB]"
+        "key": "[Shift] [S] [LMB]"
       },
       {
         "val": "Tangent marking menu",
-        "key": "[Shift] + [S] + [MMB]"
+        "key": "[Shift] [S] [MMB]"
       },
       {
         "val": "Set key for Rotate",
-        "key": "[Shift] + [E]"
+        "key": "[Shift] [E]"
       },
       {
-        "val": "Ser key for Scale",
-        "key": "[Shift] + [R]"
+        "val": "Set key for Scale",
+        "key": "[Shift] [R]"
       },
       {
         "val": "Set key for Translate",
-        "key": "[Shift] + [W]"
+        "key": "[Shift] [W]"
       },
       {
         "val": "Cycle handle stiky state (for IK handles)",
-        "key": "[Alt] + [s]"
+        "key": "[Alt] [s]"
       }
     ],
     "Hotbox Display": [
@@ -321,13 +321,13 @@
       },
       {
         "val": "Default Hotbox Style (Zones and Menus Rows)",
-        "key": "[Alt] + [m]"
+        "key": "[Alt] [m]"
       }
     ],
     "Window & View Commands": [
       {
         "val": "Toogle Attribute Editor and Channel Box",
-        "key": "[Crtl] + [a]"
+        "key": "[Crtl] [a]"
       },
       {
         "val": "Frame all in active panel",
@@ -335,11 +335,11 @@
       },
       {
         "val": "History Operations marking menu",
-        "key": "[a] + [LMB]"
+        "key": "[a] [LMB]"
       },
       {
         "val": "Frame All in all views",
-        "key": "[Shift] + [A]"
+        "key": "[Shift] [A]"
       },
       {
         "val": "Frame selected in active panel",
@@ -347,7 +347,7 @@
       },
       {
         "val": "Frame selected in all views",
-        "key": "[Shift] + [F]"
+        "key": "[Shift] [F]"
       },
       {
         "val": "Redo view change",
@@ -363,7 +363,7 @@
       },
       {
         "val": "Set keyboard focus to numeric input line",
-        "key": "[Alt] + [`]"
+        "key": "[Alt] [`]"
       },
       {
         "val": "Help > Contents and Search",
@@ -373,95 +373,95 @@
     "Moving Selected Objects": [
       {
         "val": "Move up one pixel",
-        "key": "[Alt] + [Up arrow]"
+        "key": "[Alt] [Up arrow]"
       },
       {
         "val": "Move down one pixel",
-        "key": "[Alt] +[Down arrow]"
+        "key": "[Alt] [Down arrow]"
       },
       {
         "val": "Move left one pixel",
-        "key": "[Alt] + [Left arrow]"
+        "key": "[Alt] [Left arrow]"
       },
       {
         "val": "Move right one pixel",
-        "key": "[Alt] + [Right arrow]"
+        "key": "[Alt] [Right arrow]"
       }
     ],
     "Traversing the Hierarchy": [
       {
         "val": "Walk up the current hierarchy",
-        "key": "Up arrow"
+        "key": "↑"
       },
       {
         "val": "Walk down current hierarchy",
-        "key": "Down arrow"
+        "key": "↓"
       },
       {
         "val": "Walk left current hierarchy",
-        "key": "Left arrow"
+        "key": "←"
       },
       {
         "val": "Walk right current hierarchy",
-        "key": "Right arrow"
+        "key": "→"
       }
     ],
     "Modeling Commands": [
       {
         "val": "Display coarser Sub-d level",
-        "key": "[Crtl] + [Up arrow]"
+        "key": "[Crtl] [Up arrow]"
       },
       {
         "val": "Select/refine Sub-d component",
-        "key": "[Crtl] + [Down arrow]"
+        "key": "[Crtl] [Down arrow]"
       },
       {
         "val": "Convert poly selection to Vertices",
-        "key": "[Crtl] + [F9]"
+        "key": "[Crtl] [F9]"
       },
       {
         "val": "Convert poly selction to Edges",
-        "key": "[Crtl] + [F10]"
+        "key": "[Crtl] [F10]"
       },
       {
         "val": "Covert poly selection to Faces",
-        "key": "[Crtl] + [F11]"
+        "key": "[Crtl] [F11]"
       },
       {
         "val": "Convert poly selction to UVs",
-        "key": "[Crtl] + [F12]"
+        "key": "[Crtl] [F12]"
       }
     ],
     "File Commands": [
       {
         "val": "File > New Scene",
-        "key": "[Ctrl] + [n]"
+        "key": "[Ctrl] [n]"
       },
       {
         "val": "File > Open Scene",
-        "key": "[Ctrl] + [o]"
+        "key": "[Ctrl] [o]"
       },
       {
         "val": "File > Save Scene",
-        "key": "[Ctrl] + [s]"
+        "key": "[Ctrl] [s]"
       },
       {
         "val": "File > Exit",
-        "key": "[Ctrl] + [q]"
+        "key": "[Ctrl] [q]"
       }
     ],
     "Selecting Menus": [
       {
         "val": "Show/Hide main menu bar",
-        "key": "[Ctrl] + [m]"
+        "key": "[Ctrl] [m]"
       },
       {
         "val": "Show/Hide panel menu bar",
-        "key": "[Shift] + [m]"
+        "key": "[Shift] [m]"
       },
       {
         "val": "Menu Set marking menu",
-        "key": "[h] + [LMB]"
+        "key": "[h] [LMB]"
       },
       {
         "val": "Show Animationmenu set",
@@ -483,11 +483,11 @@
     "Edit Operations": [
       {
         "val": "Edit > Undo",
-        "key": "[Ctrl] + [z]"
+        "key": "[Ctrl] [z]"
       },
       {
         "val": "Edit > Redo",
-        "key": "[Shift] + [z]"
+        "key": "[Shift] [z]"
       },
       {
         "val": "Edit > Repeat",
@@ -495,19 +495,19 @@
       },
       {
         "val": "Repeat command at mouse position",
-        "key": "[Shift] + [G]"
+        "key": "[Shift] [G]"
       },
       {
         "val": "Edit > Duplicate",
-        "key": "[Ctrl] + [d]"
+        "key": "[Ctrl] [d]"
       },
       {
         "val": "Edit > Duplicate with Transform",
-        "key": "[Shift] + [D]"
+        "key": "[Shift] [D]"
       },
       {
         "val": "Edit > Group",
-        "key": "[Crtl] + [g]"
+        "key": "[Crtl] [g]"
       },
       {
         "val": "Edit > Parent",
@@ -515,19 +515,19 @@
       },
       {
         "val": "Edit > Unparent",
-        "key": "[Shift] + [P]"
+        "key": "[Shift] [P]"
       },
       {
         "val": "Edit > Cut",
-        "key": "[Crtl' + [x]"
+        "key": "[Crtl] [x]"
       },
       {
         "val": "Edit > Copy",
-        "key": "[Crtl] + [c]"
+        "key": "[Crtl] [c]"
       },
       {
         "val": "Edit > Paste",
-        "key": "[Ctrl] + [v]"
+        "key": "[Ctrl] [v]"
       }
     ],
     "Selecting Objects & Components": [
@@ -553,11 +553,11 @@
       },
       {
         "val": "Select next intermediate onject",
-        "key": "[Ctrl] + [i]"
+        "key": "[Ctrl] [i]"
       },
       {
         "val": "Select Polygon Vertex/Faces",
-        "key": "[Alt] + [F9]"
+        "key": "[Alt] [F9]"
       },
       {
         "val": "Shrink polygon selection region",
