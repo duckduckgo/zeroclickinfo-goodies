@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use utf8;
 use Test::More;
 use DDG::Test::Goodie;
 
@@ -99,6 +100,14 @@ ddg_goodie_test(
             input     => ['https%3A%2F%2Fduckduckgo.com%2F'],
             operation => 'URL decode',
             result    => 'https://duckduckgo.com/'
+        }
+    ),
+    '%E4%F6%FC' => test_zci(
+        "URL Decoded: äöü",
+        structured_answer => {
+            input     => ['%E4%F6%FC'],
+            operation => 'URL decode',
+            result    => 'äöü'
         }
     ),
     '%20' => test_zci(

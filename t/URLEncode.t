@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use utf8;
 use Test::More;
 use DDG::Test::Goodie;
 
@@ -68,20 +69,29 @@ ddg_goodie_test(
     ),
 
     'urlescape https://example.org/the answer to "[life], (the universe) .and. <everything>"' => test_zci(
-        "Percent-encoded URL: https%3A%2F%2Fexample.org%2Fthe%20answer%20to%20%22%5Blife%5D%2C%20(the%20universe)%20.and.%20%3Ceverything%3E%22",
+        "Percent-encoded URL: https%3A%2F%2Fexample.org%2Fthe%20answer%20to%20%22%5Blife%5D%2C%20%28the%20universe%29%20.and.%20%3Ceverything%3E%22",
         structured_answer => {
             input     => ['https://example.org/the answer to &quot;[life], (the universe) .and. &lt;everything&gt;&quot;'],
             operation => 'URL percent-encode',
-            result    => 'https%3A%2F%2Fexample.org%2Fthe%20answer%20to%20%22%5Blife%5D%2C%20(the%20universe)%20.and.%20%3Ceverything%3E%22'
+            result    => 'https%3A%2F%2Fexample.org%2Fthe%20answer%20to%20%22%5Blife%5D%2C%20%28the%20universe%29%20.and.%20%3Ceverything%3E%22'
         }
     ),
 
     'www.heroku.com/{rawwr!@#$%^&*()+=__} escapeurl' => test_zci(
-        "Percent-encoded URL: www.heroku.com%2F%7Brawwr!%40%23%24%25%5E%26*()%2B%3D__%7D",
+        "Percent-encoded URL: www.heroku.com%2F%7Brawwr%21%40%23%24%25%5E%26%2A%28%29%2B%3D__%7D",
         structured_answer => {
             input     => ['www.heroku.com/{rawwr!@#$%^&amp;*()+=__}'],
             operation => 'URL percent-encode',
-            result    => 'www.heroku.com%2F%7Brawwr!%40%23%24%25%5E%26*()%2B%3D__%7D',
+            result    => 'www.heroku.com%2F%7Brawwr%21%40%23%24%25%5E%26%2A%28%29%2B%3D__%7D',
+        }
+    ),
+
+    'äöü escapeurl' => test_zci(
+        "Percent-encoded URL: %E4%F6%FC",
+        structured_answer => {
+            input     => ['äöü'],
+            operation => 'URL percent-encode',
+            result    => '%E4%F6%FC',
         }
     ),
 
