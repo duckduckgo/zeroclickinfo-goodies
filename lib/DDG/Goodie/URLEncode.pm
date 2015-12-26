@@ -29,9 +29,9 @@ handle remainder => sub {
 
     return unless $in;
 
-	## URI::Escape::XS::uri_escape expects a byte string, so downgrade our string
-	## https://metacpan.org/pod/URI::Escape::XS#uri_escape
-	utf8::downgrade($in);
+    ## URI::Escape::XS::uri_escape expects a byte string, so downgrade our string
+    ## https://metacpan.org/pod/URI::Escape::XS#uri_escape
+    utf8::downgrade($in);
 
     my $encoded_url = uri_escape($in);
 
