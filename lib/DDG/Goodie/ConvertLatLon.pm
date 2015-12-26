@@ -214,12 +214,13 @@ handle query_nowhitespace => sub {
     }
 
     my $answer = join(' ' , @results);
+    my $result = join(", ",@results);
 
     return $answer,
     structured_answer => {
         input     => [@queries],
         operation => "Convert in $toFormat",
-        result    => html_enc(@results),
+        result    => html_enc($result),
     };
 };
 
