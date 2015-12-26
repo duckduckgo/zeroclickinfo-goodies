@@ -213,11 +213,8 @@ handle query_nowhitespace => sub {
     }
 
     my $answer = join(' ' , @results);
-    #my $html = wrap_html(\@queries, \@results, $toFormat);
-    my $queries = join (', '), html_enc(@queries);
-    my $results = join (', '), html_enc(@results);
 
-    return $answer, #html => $html;
+    return $answer,
     structured_answer => {
         input     => [@queries],
         operation => "Convert in $toFormat",
@@ -264,23 +261,5 @@ sub format_decimal {
     return $formatted;
 
 }
-
-#sub wrap_secondary {
-#    my $secondary = shift;
-#    return "<span class='text--secondary'>" . $secondary . "</span>";
-#}
-
-#sub wrap_html {
-
-#    my @queries = @{$_[0]};
-#    my @results = @{$_[1]};
-#    my $toFormat = $_[2];
-
-#    my $queries = join wrap_secondary(', '), html_enc(@queries);
-#    my $results = join wrap_secondary(', '), html_enc(@results);
-
-#    my $html = "<div class='zci--conversions text--primary'>" . $queries . wrap_secondary(' in ' . $toFormat . ': ') . $results . "</div>";
-#    return $html;
-#}
 
 1;
