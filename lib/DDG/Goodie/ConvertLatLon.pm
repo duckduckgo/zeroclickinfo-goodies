@@ -214,8 +214,15 @@ handle query_nowhitespace => sub {
 
     my $answer = join(' ' , @results);
     #my $html = wrap_html(\@queries, \@results, $toFormat);
+    my $queries = join (', '), html_enc(@queries);
+    my $results = join (', '), html_enc(@results);
 
     return $answer, #html => $html;
+    structured_answer => {
+        input     => [@queries],
+        operation => "Convert in $toFormat",
+        result    => html_enc(@results),
+    };
 };
 
 #Format a degrees-minutes-seconds expression
