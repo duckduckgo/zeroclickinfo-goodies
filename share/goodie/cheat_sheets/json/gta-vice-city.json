@@ -1,6 +1,6 @@
 {
   "id": "gta_vice_city_cheat_sheet",
-  "name": "Grand Theft Auto Vice City",
+  "name": "Grand Theft Auto: Vice City",
   "description": "A set of cheat codes for GTA Vice City gameplay",
   "metadata": {
     "sourceName": "Game Faqs",
@@ -10,11 +10,11 @@
     "vice city"
   ],
   "section_order": [
-    "Cheat codes i",
-    "Cheat codes ii"
+    "Cheat codes I",
+    "Cheat codes II"
   ],
   "sections": {
-    "Cheat codes i": [
+    "Cheat codes I": [
       {
         "val": "Aggressive Drivers",
         "key": "MIAMITRAFFIC"
@@ -68,7 +68,7 @@
         "key": "PRECIOUSPROTECTION"
       }
     ],
-    "Cheat codes ii": [
+    "Cheat codes II": [
       {
         "val": "Full Health",
         "key": "ASPIRINE"
