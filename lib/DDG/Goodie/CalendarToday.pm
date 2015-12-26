@@ -124,7 +124,20 @@ sub format_result {
     $rText .= "\n";
     $rHtml .="</tr></table>";
 
-    return $rText, html => $rHtml;
+    return $rText, #html => $rHtml;
+    structured_answer => {
+        id => 'calendar_today',
+        name => 'Answer',
+        data => {
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.calendar_today.content'
+            }
+        }
+    }
 }
 
 1;
