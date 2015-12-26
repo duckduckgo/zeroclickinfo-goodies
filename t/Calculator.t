@@ -195,6 +195,10 @@ ddg_goodie_test(
     'ceil(7.99)'             => build_test('8', 'ceil(7.99)'),
     'ceil(12)'               => build_test('12', 'ceil(12)'),
     '1.3 + ceiling(1.3)'     => build_test('33/10 = 3.3', '1.3 + ceil(1.3)'),
+    'mod(7; 3)'              => build_test('1', 'mod(7; 3)'),
+    'mod(100; 7)'            => build_test('2', 'mod(100; 7)'),
+    'mod(mod(123;100); 12)'  => build_test('11', 'mod(mod(123; 100); 12)'),
+    'mod(1.7; 1)'            => build_test('7/10 = 0.7', 'mod(1.7; 1)'),
     # Alternate Symbols
     '20x07'                           => build_test('140', '20 * 07'),
     '4 ∙ 5'                           => build_test('20', '4 * 5'),

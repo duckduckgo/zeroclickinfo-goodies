@@ -518,6 +518,8 @@ sub new_unary_function  { function_gen(
 sub new_binary_function { function_gen(
     \&binary_doit, \&binary_show, \%binary_function_grammar)->(@_) };
 
+new_binary_function 'mod', 'mod', sub { $_[0] % $_[1] };
+
 
 # Result should not be displayed as a fraction if result a long decimal.
 sub new_unary_bounded {
