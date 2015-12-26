@@ -99,7 +99,120 @@ S M T W T F S      November 2009
         structured_answer => {
             id => 'calendar_today',
             name => 'Answer',
-            data => '-ANY-',
+            data => {
+                month_year => "November 2009",                                                                                                               
+                next_month => "December 2009",                                                                                                               
+                previous_month => "October 2009",
+                weeks => [ 
+                    [ 
+                        {day => 1, today => ""},                                                                                                                                      
+                        {day => 2, today => ""},                                                                                                                                      
+                        {day => 3, today => ""},                                                                                                                                      
+                        {day => 4, today => ""},                                                                                                                                      
+                        {day => 5, today => ""},                                                                                                                                      
+                        {day => 6, today => ""},                                                                                                                                      
+                        {day => 7, today => ""},                                                                                                                                      
+                    ],
+                    [ 
+                        {day => 8, today => ""},                                                                                                                                      
+                        {day => 9, today => ""},                                                                                                                                      
+                        {day => 10, today => ""},                                                                                                                                      
+                        {day => 11, today => ""},                                                                                                                                      
+                        {day => 12, today => ""},                                                                                                                                      
+                        {day => 13, today => ""},                                                                                                                                      
+                        {day => 14, today => ""},                                                                                                                                      
+                    ],
+                    [ 
+                        {day => 15, today => ""},                                                                                                                                      
+                        {day => 16, today => ""},                                                                                                                                      
+                        {day => 17, today => ""},                                                                                                                                      
+                        {day => 18, today => ""},                                                                                                                                      
+                        {day => 19, today => ""},                                                                                                                                      
+                        {day => 20, today => ""},                                                                                                                                      
+                        {day => 21, today => ""},                                                                                                                                      
+                    ],
+                    [ 
+                        {day => 22, today => ""},                                                                                                                                      
+                        {day => 23, today => ""},                                                                                                                                      
+                        {day => 24, today => ""},                                                                                                                                      
+                        {day => 25, today => ""},                                                                                                                                      
+                        {day => 26, today => ""},                                                                                                                                      
+                        {day => 27, today => ""},                                                                                                                                      
+                        {day => 28, today => ""},                                                                                                                                      
+                    ],
+                    [ 
+                        {day => 29, today => ""},                                                                                                                                      
+                        {day => 30, today => ""},                                                                                                                                                                                                                                                                            
+                    ],
+                ]
+            },    
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.calendar_today.content'
+                }
+            }
+        }
+    ),
+    'calendar 10 nov 2009' => test_zci("
+S M T W T F S      November 2009
+  1   2   3   4   5   6   7 
+  8   9 |10| 11  12  13  14 
+ 15  16  17  18  19  20  21 
+ 22  23  24  25  26  27  28 
+ 29  30 
+", 
+        structured_answer => {
+            id => 'calendar_today',
+            name => 'Answer',
+            data => {
+                month_year => "November 2009",                                                                                                               
+                next_month => "December 2009",                                                                                                               
+                previous_month => "October 2009",
+                weeks => [ 
+                    [ 
+                        {day => 1, today => ""},                                                                                                                                      
+                        {day => 2, today => ""},                                                                                                                                      
+                        {day => 3, today => ""},                                                                                                                                      
+                        {day => 4, today => ""},                                                                                                                                      
+                        {day => 5, today => ""},                                                                                                                                      
+                        {day => 6, today => ""},                                                                                                                                      
+                        {day => 7, today => ""},                                                                                                                                      
+                    ],
+                    [ 
+                        {day => 8, today => ""},                                                                                                                                      
+                        {day => 9, today => ""},                                                                                                                                      
+                        {day => 10, today => "1"},                                                                                                                                      
+                        {day => 11, today => ""},                                                                                                                                      
+                        {day => 12, today => ""},                                                                                                                                      
+                        {day => 13, today => ""},                                                                                                                                      
+                        {day => 14, today => ""},                                                                                                                                      
+                    ],
+                    [ 
+                        {day => 15, today => ""},                                                                                                                                      
+                        {day => 16, today => ""},                                                                                                                                      
+                        {day => 17, today => ""},                                                                                                                                      
+                        {day => 18, today => ""},                                                                                                                                      
+                        {day => 19, today => ""},                                                                                                                                      
+                        {day => 20, today => ""},                                                                                                                                      
+                        {day => 21, today => ""},                                                                                                                                      
+                    ],
+                    [ 
+                        {day => 22, today => ""},                                                                                                                                      
+                        {day => 23, today => ""},                                                                                                                                      
+                        {day => 24, today => ""},                                                                                                                                      
+                        {day => 25, today => ""},                                                                                                                                      
+                        {day => 26, today => ""},                                                                                                                                      
+                        {day => 27, today => ""},                                                                                                                                      
+                        {day => 28, today => ""},                                                                                                                                      
+                    ],
+                    [ 
+                        {day => 29, today => ""},                                                                                                                                      
+                        {day => 30, today => ""},                                                                                                                                                                                                                                                                            
+                    ],
+                ]
+            },    
             templates => {
                 group => 'text',
                 item => 0,
