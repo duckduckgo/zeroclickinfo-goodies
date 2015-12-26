@@ -26,38 +26,29 @@ triggers startend => "minecraft";
 my $json = share('crafting-guide.json')->slurp;
 my $decoded = decode_json($json);
 my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
+my @recipe_names = keys %recipes;
 
-# Good words: All the words that recipe names consist of.
-# Okay words: Words that could be a part of the query, but not part of a recipe.
-# Bad words: Words related to Minecraft, but not related to recipes.
-my %good_words = map { $_ => 1 } map { split /\s+/ } (keys %recipes);
-my %bad_words  = map { $_ => 1 } (qw(download server tutorial mod mods skins skin texture pack packs project projects));
-my @okay_words = ('a','an','in','crafting','recipe','how to make','how to craft','how do I make','how do I craft');
+# Extra words: Words that could be a part of the query, but not part of a recipe.
+my @extra_words = ('a','an','in','crafting','recipe','how to make','how to craft','how do I make','how do I craft');
 
 handle remainder => sub {
 	my $remainder = $_;
-	# remove the ok words (or phrases)
-	foreach my $ok_word (@okay_words) {
-		$remainder =~ s/\b$ok_word\b//gi;
+
+	my $recipe;
+	# find recipe name
+	foreach my $recipe_name (@recipe_names) {
+		if ($remainder =~ s/$recipe_name//i) {
+			$recipe = $recipes{$recipe_name};
+			last;
+		}	
 	}
-	$remainder =~ s/(^\s*|\s*$)//; # trim leading/trailing whitespace
-    my @query = split /\s+/, lc $remainder; # Split on whitespaces.
-    my @lookup;
-    my @unhandled;
-
-    # Loop through the query.
-    foreach (@query) {
-        return if(exists($bad_words{$_})); # Not looking for a recipe.
-        if (exists($good_words{$_})) {
-        	push (@lookup, $_); # Word exists in a recipe, add it.
-        } else {
-        	push (@unhandled, $_); # otherwise word is not part of recipe, add it to unhandled
-        }
-    }
-	return if scalar(@unhandled);
-
-    my $recipe = $recipes{join(' ', @lookup)};
     return unless $recipe;
+    
+	# remove the extra words (or phrases)
+	foreach my $extra_word (@extra_words) {
+		$remainder =~ s/\b$extra_word\b//gi;
+	}
+	return if $remainder && $remainder !~ m/^\s+$/; # return if we had leftover unwanted words (not just whitespace)
 
     # Recipe found, let's return an answer.
     my $plaintext = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
