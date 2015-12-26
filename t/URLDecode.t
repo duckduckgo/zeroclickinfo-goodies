@@ -107,7 +107,7 @@ ddg_goodie_test(
         structured_answer => {
             input     => ['%E4%F6%FC'],
             operation => 'URL decode',
-            result    => 'äöü'
+            result    => '&auml;&ouml;&uuml;'
         }
     ),
     '%20' => test_zci(
