@@ -101,7 +101,10 @@ sub format_result {
    # $rHtml .= "<td>&nbsp;</td>" x $first_day_num;
 
     my @weeks;
-    my @week_day = (" ") x $first_day_num;
+    my @week_day;
+    for (my $t = 1; $t <= $first_day_num; $t++) {
+        push @week_day, {"day", " ", "today", ""};
+    }
     my $weekDayNum = $first_day_num;
     
     # Printing the month
@@ -110,11 +113,12 @@ sub format_result {
         if ($dayNum == $highlightDay) {
             $rText .= '|' . $padded_date . '|';
            # $rHtml .= '<td><span class="calendar__today circle">' . $dayNum . '</span></td>';
+            push @week_day, {"day", $dayNum, "today", "1"};
         } else {
             $rText .= ' ' . $padded_date . ' ';
            # $rHtml .= "<td>$dayNum</td>";
+            push @week_day, {"day", $dayNum, "today", ""};
         }
-        push @week_day, $dayNum;
         # next row after 7 cells
         $weekDayNum++;
         if ($weekDayNum == 7) {
@@ -125,7 +129,7 @@ sub format_result {
          # $rHtml .= "</tr><tr>";
         }
     }
-    if (@week_day ne "") {
+    if (@week_day) {
         push @weeks, [@week_day];
     }
     $rText .= "\n";

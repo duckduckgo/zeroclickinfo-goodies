@@ -28,7 +28,13 @@
     {{#each weeks}}
         <tr>
         {{#each this}}
-        <td>{{this}}</td>
+            <td>
+                {{#unless today}}
+                    {{../day}}
+                {{else}}
+                    <span class="calendar__today circle">{{../day}}</span>
+                {{/unless}}
+            </td>
         {{/each}}    
         </tr>
     {{/each}}
