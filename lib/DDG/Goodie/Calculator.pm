@@ -16,6 +16,7 @@ use Math::Cephes qw(:explog);
 use Math::Cephes qw(:trigs);
 use Math::Round;
 use Moo;
+use Math::Trig qw(deg2rad);
 
 use overload
     '""'    => 'to_string',
@@ -30,8 +31,6 @@ use overload
     '<=>'   => 'num_compare_results',
     # Trig
     'atan2' => 'atan2_results',
-    'cos'   => 'cos_result',
-    'sin'   => 'sin_result',
     # Misc functions
     'exp'   => 'exp_result',
     'log'   => 'log_result',
@@ -49,6 +48,11 @@ has 'tainted' => (
 # The wrapped value.
 has 'value' => (
     is => 'rw',
+);
+
+has 'is_degrees' => (
+    is => 'rw',
+    default => 0,
 );
 
 sub taint {
@@ -123,6 +127,12 @@ sub to_string {
     return "$res" if defined $res;
 }
 
+# Tell the Calculator that the value is an angle in degrees.
+sub make_degrees {
+    my $self = shift;
+    $self->is_degrees(1);
+}
+
 # Combine two Results using the given operation. Preserves appropriate
 # attributes.
 sub combine_results {
@@ -156,7 +166,13 @@ sub upon_result {
     }
 }
 
-sub on_result { upon_result($_[1])->($_[0]) };
+sub on_result { (upon_result($_[1]))->($_[0]) };
+
+*on_decimal = preserving_taint sub {
+    my ($self, $sub) = @_;
+    my $res = $sub->($self->as_decimal());
+    return $res;
+};
 
 *add_results = combine_results(sub { $_[0] + $_[1] });
 *subtract_results = combine_results(sub { $_[0] - $_[1] });
@@ -216,12 +232,24 @@ sub exponentiate_fraction {
 
 *exponent_results = combine_results \&exponentiate_fraction;
 *atan2_results = combine_results \&atan2;
-*cos_result = upon_result sub { "@{[nearest(1e-15, cos $_[0])]}" };
-*sin_result = upon_result sub { "@{[nearest(1e-15, sin $_[0])]}" };
 *exp_result = upon_result sub { exp $_[0] };
 *log_result = upon_result sub { "@{[nearest(1e-15, log $_[0])]}" };
 *sqrt_result = upon_result sub { sqrt $_[0] };
 *int_result = upon_result sub { int $_[0] };
+
+sub to_radians { $_[0]->is_degrees() ? $_[0]->on_decimal(\&deg2rad) : $_[0] }
+
+sub with_radians {
+    my $sub = shift;
+    return sub {
+        my $self = shift;
+        my $rads = $self->to_radians();
+        return ($rads->on_result($sub))->rounded(1e-15);
+    };
+}
+
+*rsin = with_radians(\&sin);
+*rcos = with_radians(\&cos);
 
 sub as_fraction_string {
     my $self = shift;
@@ -426,6 +454,11 @@ sub new_base_value {
 
 new_base_value 'integer', sub { pure(new_fraction($_[0])) };
 new_base_value 'decimal', sub { pure(new_fraction($_[0])) };
+unary_doit 'angle_degrees', sub {
+    $_[0]->make_degrees();
+    return $_[0];
+};
+unary_show 'angle_degrees', sub { "$_[0]°" };
 
 doit 'prefix_currency', sub { $_[0]->[1]->doit() };
 show 'prefix_currency', sub {
@@ -479,17 +512,17 @@ sub new_unary_bounded {
 }
 
 new_unary_bounded 'sine',      ['sin', 'sine'],
-    sub { sin $_[0] };
+    sub {$_[0]->rsin() };
 new_unary_bounded 'cosine',    ['cos', 'cosine'],
-    sub { cos $_[0] };
+    sub { $_[0]->rcos() };
 new_unary_bounded 'secant',    ['sec', 'secant'],
-    sub { pure(1) / (cos $_[0]) };
+    sub { pure(1) / $_[0]->rcos() };
 new_unary_bounded 'cosec',     ['csc', 'cosec', 'cosecant'],
-    sub { pure(1) / (sin $_[0]) };
+    sub { pure(1) / $_[0]->rsin() };
 new_unary_bounded 'cotangent', ['cotan', 'cot', 'cotangent'],
-    sub { (cos $_[0]) / (sin $_[0]) };
+    sub { $_[0]->rcos() / $_[0]->rsin() };
 new_unary_bounded 'tangent',   ['tan', 'tangent'],
-    sub { (sin $_[0]) / (cos $_[0]) };
+    sub { $_[0]->rsin() / $_[0]->rcos() };
 
 new_unary_function 'floor', 'floor', sub { $_[0]->on_result(\&floor) };
 new_unary_function 'ceil', ['ceil', 'ceiling'], sub { $_[0]->on_result(\&ceil) };
@@ -720,6 +753,7 @@ sub standardize_symbols {
     $text =~ s#[÷]#/#g;
     $text =~ s/\*{2}/^/g;
     $text =~ s/π/pi/g;
+    $text =~ s/°/degrees/g;
     return $text;
 }
 

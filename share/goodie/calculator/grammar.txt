@@ -60,8 +60,9 @@ UnaryFunction ::=
 Argument ::= ('(') Expression (')') bless => primary
 
 Number ::=
-      [$] BaseNumber bless => prefix_currency
-    |     BaseNumber bless => primary
+      [$] BaseNumber             bless => prefix_currency
+    |     BaseNumber             bless => primary
+    |     BaseNumber ('degrees') bless => angle_degrees
 
 BaseNumber ::=
       Integer
