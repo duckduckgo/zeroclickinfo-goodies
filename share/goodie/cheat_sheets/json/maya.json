@@ -29,19 +29,19 @@
     "Display": [
       {
         "val": "Shading > Wireframe",
-        "key": "[4]"
+        "key": "4"
       },
       {
         "val": "Shaded display",
-        "key": "[5]"
+        "key": "5"
       },
       {
         "val": "Shaded and Textured display",
-        "key": "[6]"
+        "key": "6"
       },
       {
         "val": "Lighting > Use All Lights",
-        "key": "[7]"
+        "key": "7"
       },
       {
         "val": "Display Quality marking menu",
@@ -49,15 +49,15 @@
       },
       {
         "val": "Low Quality Display setting",
-        "key": "[1]"
+        "key": "1"
       },
       {
         "val": "Medium Quality Display setting",
-        "key": "[2]"
+        "key": "2"
       },
       {
         "val": "High Quality Display setting",
-        "key": "[3]"
+        "key": "3"
       }
     ],
     "Playback Control": [
@@ -71,11 +71,11 @@
       },
       {
         "val": "Go to Next key",
-        "key": "[.]"
+        "key": "."
       },
       {
         "val": "Go to previous key",
-        "key": "[,]"
+        "key": ","
       },
       {
         "val": "Turn Playback on/off",
@@ -89,19 +89,19 @@
     "Snapping Commands": [
       {
         "val": "Snap to curves",
-        "key": "[c]"
+        "key": "c"
       },
       {
         "val": "Snap to grids",
-        "key": "[x]"
+        "key": "x"
       },
       {
         "val": "Snap to points",
-        "key": "[v]"
+        "key": "v"
       },
       {
         "val": "Move. Rotate. Scale Tool snapping",
-        "key": "[j]"
+        "key": "j"
       },
       {
         "val": "Move. Rotate. Scale Tool relative snapping",
@@ -131,7 +131,7 @@
       },
       {
         "val": "Modify upper brush radius",
-        "key": "[b]"
+        "key": "b"
       },
       {
         "val": "Modify lower brush radius",
@@ -143,15 +143,15 @@
       },
       {
         "val": "Modify Artisan brush Stamp Depth",
-        "key": "[i]"
+        "key": "i"
       },
       {
         "val": "Modify Max Displacement (Of Sculpt Surfaces and Sculpt Polygons Tool)",
-        "key": "[m]"
+        "key": "m"
       },
       {
         "val": "Modify Value",
-        "key": "[n]"
+        "key": "n"
       },
       {
         "val": "Switch to pick colour mode",
@@ -159,11 +159,11 @@
       },
       {
         "val": "Select cluster mode (Of Paint Weights Tool )",
-        "key": "[']"
+        "key": "'"
       },
       {
         "val": "Open Paint Effects panel",
-        "key": "[8]"
+        "key": "8"
       },
       {
         "val": "Poly Brush Tool marking menu",
@@ -171,7 +171,7 @@
       },
       {
         "val": "Poly UV Tool marking menu",
-        "key": "o+MMB"
+        "key": "[o] + [MMB]"
       }
     ],
     "Tumble, Track, Dolly": [
@@ -209,11 +209,11 @@
       },
       {
         "val": "Abort current tool",
-        "key": "[~]"
+        "key": "~"
       },
       {
         "val": "Enter tool Edit mode",
-        "key": "[Insert]"
+        "key": "Insert"
       },
       {
         "val": "Select Tool",
@@ -241,7 +241,7 @@
       },
       {
         "val": "Move tool",
-        "key": "[w]"
+        "key": "w"
       },
       {
         "val": "Move tool marking menu",
@@ -249,11 +249,11 @@
       },
       {
         "val": "Rotate tool",
-        "key": "[e]"
+        "key": "e"
       },
       {
         "val": "Scale tool",
-        "key": "[r]"
+        "key": "r"
       },
       {
         "val": "Scale tool marking menu",
@@ -261,15 +261,15 @@
       },
       {
         "val": "Show manipulator tool",
-        "key": "[t]"
+        "key": "t"
       },
       {
         "val": "Select last used tool (Excluding Select. Move. Rotate and Scale)",
-        "key": "[y]"
+        "key": "y"
       },
       {
         "val": "Snap Move. Rotate. Scale tool",
-        "key": "[j]"
+        "key": "j"
       },
       {
         "val": "Increase manipulator size",
@@ -277,17 +277,17 @@
       },
       {
         "val": "Decrease manipulator size",
-        "key": "[-]"
+        "key": "-"
       }
     ],
     "Animation Commands": [
       {
         "val": "Animate > Set keyClose path",
-        "key": "[s]"
+        "key": "s"
       },
       {
         "val": "Insert Keys tool (for graph editor)",
-        "key": "[i]"
+        "key": "i"
       },
       {
         "val": "Keyframe marking menu",
@@ -317,7 +317,7 @@
     "Hotbox Display": [
       {
         "val": "Hotbox",
-        "key": "[Space]"
+        "key": "Space"
       },
       {
         "val": "Default Hotbox Style (Zones and Menus Rows)",
@@ -327,11 +327,11 @@
     "Window & View Commands": [
       {
         "val": "Toogle Attribute Editor and Channel Box",
-        "key": "Crtl+a"
+        "key": "[Crtl] + [a]"
       },
       {
         "val": "Frame all in active panel",
-        "key": "[a]"
+        "key": "a"
       },
       {
         "val": "History Operations marking menu",
@@ -343,7 +343,7 @@
       },
       {
         "val": "Frame selected in active panel",
-        "key": "[f]"
+        "key": "f"
       },
       {
         "val": "Frame selected in all views",
@@ -359,7 +359,7 @@
       },
       {
         "val": "Set keyboard focus to command line",
-        "key": "[`]"
+        "key": "`"
       },
       {
         "val": "Set keyboard focus to numeric input line",
@@ -367,7 +367,7 @@
       },
       {
         "val": "Help > Contents and Search",
-        "key": "[F1]"
+        "key": "F1"
       }
     ],
     "Moving Selected Objects": [
@@ -391,19 +391,19 @@
     "Traversing the Hierarchy": [
       {
         "val": "Walk up the current hierarchy",
-        "key": "[Up arrow]"
+        "key": "Up arrow"
       },
       {
         "val": "Walk down current hierarchy",
-        "key": "[Down arrow]"
+        "key": "Down arrow"
       },
       {
         "val": "Walk left current hierarchy",
-        "key": "[Left arrow]"
+        "key": "Left arrow"
       },
       {
         "val": "Walk right current hierarchy",
-        "key": "[Right arrow]"
+        "key": "Right arrow"
       }
     ],
     "Modeling Commands": [
@@ -453,15 +453,15 @@
     "Selecting Menus": [
       {
         "val": "Show/Hide main menu bar",
-        "key": "Ctrl+m"
+        "key": "[Ctrl] + [m]"
       },
       {
         "val": "Show/Hide panel menu bar",
-        "key": "Shift+m"
+        "key": "[Shift] + [m]"
       },
       {
         "val": "Menu Set marking menu",
-        "key": "h+LMB"
+        "key": "[h] + [LMB]"
       },
       {
         "val": "Show Animationmenu set",
