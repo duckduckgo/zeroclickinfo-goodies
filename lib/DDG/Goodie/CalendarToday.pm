@@ -85,20 +85,20 @@ sub format_result {
 
     # Print heading
     my $rText = "\n";
-    my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="/?q=' . encodeURIComponent('calendar ' . $previous->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-left"></span></a></span><span class="calendar__header"><b>';
-    $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="/?q=' . encodeURIComponent('calendar ' . $next->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-right"></span></a></span></th>';
-    $rHtml .= '</tr><tr>';
+  #  my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="/?q=' . encodeURIComponent('calendar ' . $previous->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-left"></span></a></span><span class="calendar__header"><b>';
+  #  $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="/?q=' . encodeURIComponent('calendar ' . $next->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-right"></span></a></span></th>';
+  #  $rHtml .= '</tr><tr>';
 
     for my $dayHeading (@weekDays) {
         $rText .= $dayHeading . ' ';
-        $rHtml .= '<th>' . $dayHeading . '</th>';
+  #      $rHtml .= '<th>' . $dayHeading . '</th>';
     }
     $rText .= "     ".$firstDay->strftime("%B %Y")."\n";
-    $rHtml .= "</tr><tr>";
+  #  $rHtml .= "</tr><tr>";
 
     # Skip to the first day of the week
     $rText .= "    " x $first_day_num;
-    $rHtml .= "<td>&nbsp;</td>" x $first_day_num;
+   # $rHtml .= "<td>&nbsp;</td>" x $first_day_num;
     my $weekDayNum = $first_day_num;
 
     # Printing the month
@@ -106,10 +106,10 @@ sub format_result {
         my $padded_date = sprintf('%2s', $dayNum);
         if ($dayNum == $highlightDay) {
             $rText .= '|' . $padded_date . '|';
-            $rHtml .= '<td><span class="calendar__today circle">' . $dayNum . '</span></td>';
+           # $rHtml .= '<td><span class="calendar__today circle">' . $dayNum . '</span></td>';
         } else {
             $rText .= ' ' . $padded_date . ' ';
-            $rHtml .= "<td>$dayNum</td>";
+           # $rHtml .= "<td>$dayNum</td>";
         }
 
         # next row after 7 cells
@@ -117,18 +117,21 @@ sub format_result {
         if ($weekDayNum == 7) {
           $weekDayNum = 0;
           $rText .= "\n";
-          $rHtml .= "</tr><tr>";
+         # $rHtml .= "</tr><tr>";
         }
     }
 
     $rText .= "\n";
-    $rHtml .="</tr></table>";
+   # $rHtml .="</tr></table>";
 
     return $rText, #html => $rHtml;
     structured_answer => {
         id => 'calendar_today',
         name => 'Answer',
         data => {
+            month_year => $firstDay->strftime("%B %Y"),
+            previous_month => $previous->strftime("%B %Y"),
+            next_month => $next->strftime("%B %Y"),
         },
         templates => {
             group => 'text',
