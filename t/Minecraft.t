@@ -77,6 +77,8 @@ ddg_goodie_test(
     'how do i craft a cheeseburger in minecraft' => undef,
     'minecraft download' => undef,
     'cool texture packs for minecraft' => undef,
+    'minecraft cake design' => undef,
+    'minecraft cake guide' => undef,
 );
 
 sub make_structured_answer {

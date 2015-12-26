@@ -28,23 +28,35 @@ my $decoded = decode_json($json);
 my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
 
 # Good words: All the words that recipe names consist of.
-# Okay words: Words that are in the good words list, but also could be a part of the query.
+# Okay words: Words that could be a part of the query, but not part of a recipe.
 # Bad words: Words related to Minecraft, but not related to recipes.
 my %good_words = map { $_ => 1 } map { split /\s+/ } (keys %recipes);
-my %okay_words = map { $_ => 1 } (qw(a crafting));
 my %bad_words  = map { $_ => 1 } (qw(download server tutorial mod mods skins skin texture pack packs project projects));
+my @okay_words = ('a','an','in','crafting','recipe','how to make','how to craft','how do I make','how do I craft');
 
 handle remainder => sub {
-    my @query = split /\s+/, lc $_; # Split on whitespaces.
+	my $remainder = $_;
+	# remove the ok words (or phrases)
+	foreach my $ok_word (@okay_words) {
+		$remainder =~ s/\b$ok_word\b//gi;
+	}
+	$remainder =~ s/(^\s*|\s*$)//; # trim leading/trailing whitespace
+    my @query = split /\s+/, lc $remainder; # Split on whitespaces.
     my @lookup;
+    my @unhandled;
 
     # Loop through the query.
     foreach (@query) {
         return if(exists($bad_words{$_})); # Not looking for a recipe.
-        push (@lookup, $_) if(exists($good_words{$_})); # Word exists in a recipe, add it.
+        if (exists($good_words{$_})) {
+        	push (@lookup, $_); # Word exists in a recipe, add it.
+        } else {
+        	push (@unhandled, $_); # otherwise word is not part of recipe, add it to unhandled
+        }
     }
+	return if scalar(@unhandled);
 
-    my $recipe = $recipes{join(' ', @lookup)} || $recipes{join(' ', grep { !$okay_words{$_} } @lookup)};
+    my $recipe = $recipes{join(' ', @lookup)};
     return unless $recipe;
 
     # Recipe found, let's return an answer.
