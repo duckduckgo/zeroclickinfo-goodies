@@ -152,7 +152,7 @@ sub format_result {
                 content => 'DDH.calendar_today.content'
             }
         }
-    }
-}
+    };
+};
 
 1;
