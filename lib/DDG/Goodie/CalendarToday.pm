@@ -99,8 +99,11 @@ sub format_result {
     # Skip to the first day of the week
     $rText .= "    " x $first_day_num;
    # $rHtml .= "<td>&nbsp;</td>" x $first_day_num;
-    my $weekDayNum = $first_day_num;
 
+    my @weeks;
+    my @week_day = (" ") x $first_day_num;
+    my $weekDayNum = $first_day_num;
+    
     # Printing the month
     for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
         my $padded_date = sprintf('%2s', $dayNum);
@@ -111,16 +114,20 @@ sub format_result {
             $rText .= ' ' . $padded_date . ' ';
            # $rHtml .= "<td>$dayNum</td>";
         }
-
+        push @week_day, $dayNum;
         # next row after 7 cells
         $weekDayNum++;
         if ($weekDayNum == 7) {
-          $weekDayNum = 0;
-          $rText .= "\n";
+            push @weeks, [@week_day];
+            $weekDayNum = 0;
+            undef @week_day;
+            $rText .= "\n";
          # $rHtml .= "</tr><tr>";
         }
     }
-
+    if (@week_day ne "") {
+        push @weeks, [@week_day];
+    }
     $rText .= "\n";
    # $rHtml .="</tr></table>";
 
@@ -132,6 +139,7 @@ sub format_result {
             month_year => $firstDay->strftime("%B %Y"),
             previous_month => $previous->strftime("%B %Y"),
             next_month => $next->strftime("%B %Y"),
+            weeks => \@weeks,
         },
         templates => {
             group => 'text',
