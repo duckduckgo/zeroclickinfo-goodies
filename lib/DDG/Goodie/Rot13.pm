@@ -29,7 +29,7 @@ handle remainder => sub {
 
     return "ROT13: $out",
       structured_answer => {
-        input     => [html_enc($in)],
+        input     => [$in],
         operation => 'ROT13',
         result    => html_enc($out),
       };

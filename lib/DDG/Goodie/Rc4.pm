@@ -26,7 +26,7 @@ triggers startend => "rc4";
 
 # Handle statement
 
-handle remainder => sub { 
+handle remainder => sub {
 
     (my $type, my $key, my $plaintext) = split / /;
     my $operation;
@@ -55,8 +55,8 @@ handle remainder => sub {
 
     return "$operation: $plaintext, with key: $key is $result",
     structured_answer => {
+        input => ["$plaintext, Key: $key"],
         operation => $operation,
-        input => [html_enc($plaintext) . ", Key: $key"],
         result => $result
     };
 

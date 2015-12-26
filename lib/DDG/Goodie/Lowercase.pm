@@ -29,7 +29,7 @@ handle remainder => sub {
 
     return $lower,
       structured_answer => {
-        input     => [html_enc($input)],
+        input     => [$input],
         operation => 'Lowercase',
         result    => html_enc($lower)
       };

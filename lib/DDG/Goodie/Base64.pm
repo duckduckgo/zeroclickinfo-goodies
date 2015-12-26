@@ -40,7 +40,7 @@ handle remainder => sub {
     my $text_output = $operation . 'd: ' . $output;
     return $text_output,
       structured_answer => {
-        input     => [html_enc($input)],
+        input     => [$input],
         operation => $operation,
         result    => html_enc($output),
       };

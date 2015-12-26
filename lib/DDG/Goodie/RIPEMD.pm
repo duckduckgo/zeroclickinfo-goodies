@@ -62,7 +62,7 @@ handle query => sub {
 
     return $out,
       structured_answer => {
-        input     => [html_enc($str)],
+        input     => [$str],
         operation => html_enc('RIPEMD-' . $ver . ' ' . $enc . ' hash'),
         result    => html_enc($out)
       };

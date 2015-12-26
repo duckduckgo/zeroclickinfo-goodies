@@ -49,7 +49,7 @@ handle remainder => sub {
     
     return $result,
         structured_answer => {
-            input     => [html_enc($input_number)],
+            input     => [$input_number],
             operation => 'Hamming Weight',
             result    => html_enc($result),
         };

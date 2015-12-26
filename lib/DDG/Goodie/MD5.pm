@@ -47,7 +47,7 @@ handle remainder => sub {
 
     return $md5,
       structured_answer => {
-        input     => [html_enc($str)],
+        input     => [$str],
         operation => 'MD5 ' . $format . ' hash',
         result    => $md5
       };

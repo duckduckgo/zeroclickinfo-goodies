@@ -29,7 +29,7 @@ handle query_raw => sub {
 
     return $result . ' (Braille)',
       structured_answer => {
-        input     => [html_enc($query)],
+        input     => [$query],
         operation => 'Braille translation',
         result    => html_enc($result),
       };
