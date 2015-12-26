@@ -373,19 +373,19 @@
     "Moving Selected Objects": [
       {
         "val": "Move up one pixel",
-        "key": "[Alt] [Up arrow]"
+        "key": "[Alt] [↑]"
       },
       {
         "val": "Move down one pixel",
-        "key": "[Alt] [Down arrow]"
+        "key": "[Alt] [↓]"
       },
       {
         "val": "Move left one pixel",
-        "key": "[Alt] [Left arrow]"
+        "key": "[Alt] [←]"
       },
       {
         "val": "Move right one pixel",
-        "key": "[Alt] [Right arrow]"
+        "key": "[Alt] [→]"
       }
     ],
     "Traversing the Hierarchy": [
@@ -409,11 +409,11 @@
     "Modeling Commands": [
       {
         "val": "Display coarser Sub-d level",
-        "key": "[Crtl] [Up arrow]"
+        "key": "[Crtl] [↑]"
       },
       {
         "val": "Select/refine Sub-d component",
-        "key": "[Crtl] [Down arrow]"
+        "key": "[Crtl] [↓]"
       },
       {
         "val": "Convert poly selection to Vertices",
