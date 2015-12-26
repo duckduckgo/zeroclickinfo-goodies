@@ -25,7 +25,8 @@ name "Calendar Today";
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CalendarToday.pm';
 category "dates";
 topics "everyday";
-attribution email   => ['webmaster@quovadit.org', 'webmaster@quovadit.org'];
+attribution email   => ['webmaster@quovadit.org', 'webmaster@quovadit.org'],
+            github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 triggers startend => 'calendar', 'cal';
 
 # define variables
