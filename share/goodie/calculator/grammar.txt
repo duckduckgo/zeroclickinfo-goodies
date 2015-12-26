@@ -51,6 +51,7 @@ Constant ::=
 Function ::=
       GenUnaryFunction
     | UnaryFunction
+    | GenBinaryFunction
 
 UnaryFunction ::=
       ('log_' ) NumTerm Argument bless => logarithm

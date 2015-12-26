@@ -373,6 +373,7 @@ sub generate_alternate_forms {
 my %unary_function_grammar;
 my %word_constant_grammar;
 my %symbol_constant_grammar;
+my %binary_function_grammar;
 
 *generate_unary_function_grammar = generate_sub_grammar_gen(
     "GenUnaryFunction", sub { ["($_[0])", 'Argument'] });
@@ -382,6 +383,11 @@ my %symbol_constant_grammar;
 
 *generate_symbol_constant_grammar = generate_sub_grammar_gen(
     "SymbolConstant", sub { ["($_[0]:i)"] });
+
+*generate_binary_function_grammar = generate_sub_grammar_gen(
+    "GenBinaryFunction", sub { ["($_[0])", "('(')", 'Expression',
+                                "(';')", 'Expression', "(')')"
+                            ] });
 
 sub new_fraction { Math::BigRat->new(@_) };
 
@@ -480,6 +486,22 @@ binary_show 'factored_word_constant', sub { "$_[0] $_[1]" };
 binary_doit 'factored_symbol_constant', sub { $_[0] * $_[1] };
 binary_show 'factored_symbol_constant', sub { "$_[0]$_[1]" };
 
+sub function_gen {
+    my ($doit_sub, $show_sub, $grammar_hash) = @_;
+    return sub {
+        my ($name, $reps, $sub) = @_;
+        $doit_sub->($name, $sub);
+        my $rep;
+        if (ref $reps eq 'ARRAY') {
+            $rep = $reps->[0];
+        } else {
+            $rep = $reps;
+        };
+        $show_sub->($name, sub { "$rep(@{[join '; ', @_]})" });
+        $grammar_hash->{$name} = $reps;
+    };
+}
+
 # Usage: new_unary_function NAME, REP, SUB
 #
 # REP is the string that will be displayed as the function name
@@ -490,18 +512,12 @@ binary_show 'factored_symbol_constant', sub { "$_[0]$_[1]" };
 # allowed in the grammar.
 # SUB should take a single argument and return the result of applying the
 # function.
-sub new_unary_function {
-    my ($name, $reps, $sub) = @_;
-    unary_doit $name, $sub;
-    my $rep;
-    if (ref $reps eq 'ARRAY') {
-        $rep = $reps->[0];
-    } else {
-        $rep = $reps;
-    };
-    unary_show $name, sub { "$rep($_[0])" };
-    $unary_function_grammar{$name} = $reps;
-}
+sub new_unary_function  { function_gen(
+    \&unary_doit, \&unary_show, \%unary_function_grammar)->(@_) };
+
+sub new_binary_function { function_gen(
+    \&binary_doit, \&binary_show, \%binary_function_grammar)->(@_) };
+
 
 # Result should not be displayed as a fraction if result a long decimal.
 sub new_unary_bounded {
@@ -632,11 +648,15 @@ sub generate_grammar {
         generate_word_constant_grammar(\%word_constant_grammar);
     my $generated_symbol_constant_grammar =
         generate_symbol_constant_grammar(\%symbol_constant_grammar);
+    my $generated_binary_function_grammar =
+        generate_binary_function_grammar(\%binary_function_grammar);
     my $grammar_text = join "\n",
         ($initial_grammar_text,
          $generated_unary_function_grammar,
          $generated_word_constant_grammar,
-         $generated_symbol_constant_grammar);
+         $generated_symbol_constant_grammar,
+         $generated_binary_function_grammar,
+        );
     my $grammar = Marpa::R2::Scanless::G->new(
         {   bless_package => 'DDG::Goodie::Calculator::Parser',
             source        => \$grammar_text,
