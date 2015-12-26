@@ -213,9 +213,9 @@ handle query_nowhitespace => sub {
     }
 
     my $answer = join(' ' , @results);
-    my $html = wrap_html(\@queries, \@results, $toFormat);
+    #my $html = wrap_html(\@queries, \@results, $toFormat);
 
-    return $answer, html => $html;
+    return $answer, #html => $html;
 };
 
 #Format a degrees-minutes-seconds expression
@@ -258,22 +258,22 @@ sub format_decimal {
 
 }
 
-sub wrap_secondary {
-    my $secondary = shift;
-    return "<span class='text--secondary'>" . $secondary . "</span>";
-}
+#sub wrap_secondary {
+#    my $secondary = shift;
+#    return "<span class='text--secondary'>" . $secondary . "</span>";
+#}
 
-sub wrap_html {
+#sub wrap_html {
 
-    my @queries = @{$_[0]};
-    my @results = @{$_[1]};
-    my $toFormat = $_[2];
+#    my @queries = @{$_[0]};
+#    my @results = @{$_[1]};
+#    my $toFormat = $_[2];
 
-    my $queries = join wrap_secondary(', '), html_enc(@queries);
-    my $results = join wrap_secondary(', '), html_enc(@results);
+#    my $queries = join wrap_secondary(', '), html_enc(@queries);
+#    my $results = join wrap_secondary(', '), html_enc(@results);
 
-    my $html = "<div class='zci--conversions text--primary'>" . $queries . wrap_secondary(' in ' . $toFormat . ': ') . $results . "</div>";
-    return $html;
-}
+#    my $html = "<div class='zci--conversions text--primary'>" . $queries . wrap_secondary(' in ' . $toFormat . ': ') . $results . "</div>";
+#    return $html;
+#}
 
 1;
