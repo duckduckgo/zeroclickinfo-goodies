@@ -85,20 +85,14 @@ sub format_result {
 
     # Print heading
     my $rText = "\n";
-  #  my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="/?q=' . encodeURIComponent('calendar ' . $previous->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-left"></span></a></span><span class="calendar__header"><b>';
-  #  $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="/?q=' . encodeURIComponent('calendar ' . $next->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-right"></span></a></span></th>';
-  #  $rHtml .= '</tr><tr>';
 
     for my $dayHeading (@weekDays) {
         $rText .= $dayHeading . ' ';
-  #      $rHtml .= '<th>' . $dayHeading . '</th>';
     }
     $rText .= "     ".$firstDay->strftime("%B %Y")."\n";
-  #  $rHtml .= "</tr><tr>";
 
     # Skip to the first day of the week
     $rText .= "    " x $first_day_num;
-   # $rHtml .= "<td>&nbsp;</td>" x $first_day_num;
 
     my @weeks;
     my @week_day;
@@ -112,11 +106,9 @@ sub format_result {
         my $padded_date = sprintf('%2s', $dayNum);
         if ($dayNum == $highlightDay) {
             $rText .= '|' . $padded_date . '|';
-           # $rHtml .= '<td><span class="calendar__today circle">' . $dayNum . '</span></td>';
             push @week_day, {"day", $dayNum, "today", "1"};
         } else {
             $rText .= ' ' . $padded_date . ' ';
-           # $rHtml .= "<td>$dayNum</td>";
             push @week_day, {"day", $dayNum, "today", ""};
         }
         # next row after 7 cells
@@ -126,16 +118,14 @@ sub format_result {
             $weekDayNum = 0;
             undef @week_day;
             $rText .= "\n";
-         # $rHtml .= "</tr><tr>";
         }
     }
     if (@week_day) {
         push @weeks, [@week_day];
     }
     $rText .= "\n";
-   # $rHtml .="</tr></table>";
 
-    return $rText, #html => $rHtml;
+    return $rText,
     structured_answer => {
         id => 'calendar_today',
         name => 'Answer',
