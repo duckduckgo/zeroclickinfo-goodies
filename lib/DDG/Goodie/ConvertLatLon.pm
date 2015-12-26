@@ -17,7 +17,8 @@ secondary_example_queries '71 degrees 10 minutes 3 seconds east in decimal', '- 
 category 'transformations';
 topics 'geography', 'math', 'science';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ConvertLatLon.pm';
-attribution github => ['http://github.com/wilkox', 'wilkox'];
+attribution github => ['http://github.com/wilkox', 'wilkox'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 triggers any => "convert", "dms", "decimal", "latitude", "longitude", "minutes", "seconds";
 
