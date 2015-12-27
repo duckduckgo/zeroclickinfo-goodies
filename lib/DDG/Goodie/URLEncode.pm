@@ -2,7 +2,7 @@ package DDG::Goodie::URLEncode;
 # ABSTRACT: Displays the percent-encoded url.
 
 use DDG::Goodie;
-use URI::Escape::XS qw(encodeURIComponent);
+use URI::Escape::XS qw(uri_escape);
 use warnings;
 use strict;
 
@@ -29,16 +29,27 @@ handle remainder => sub {
 
     return unless $in;
 
-    my $encoded_url = encodeURIComponent($in);
+    ## URI::Escape::XS::uri_escape expects a byte string, so downgrade our string
+    ## https://metacpan.org/pod/URI::Escape::XS#uri_escape
+    utf8::downgrade($in);
+
+    my $encoded_url = uri_escape($in);
 
     my $text = "Percent-encoded URL: $encoded_url";
+    my $subtitle = "URL percent-encode: $in";
 
-    return $text,
-      structured_answer => {
-        input     => [html_enc($in)],
-        operation => 'URL percent-encode',
-        result    => html_enc($encoded_url),
-      };
+    return $text, structured_answer => {
+        id => 'url_encode',
+        name => 'Answer',
+        data => {
+            title => $encoded_url,
+            subtitle => $subtitle
+        },
+        templates => {
+            group => 'text',
+            moreAt => 0
+        }
+    };
 };
 
 1;
