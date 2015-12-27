@@ -1,15 +1,15 @@
 {
-  "id": "python_escape_sequences",
-  "name": "Python Escape Sequences",
-  "description": "Python string literal syntax",
+  "id": "common_escape_sequences",
+  "name": "Common Escape Sequences",
+  "description": "Escape Sequences for common programming languages",
 
   "metadata": {
-    "sourceName": "Python Software Foundation",
-    "sourceUrl": "https://docs.python.org/2.0/ref/strings.html"
+    "sourceName": "wikipedia",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Escape_sequences_in_C"
   },
 
   "aliases": [
-    "python escape sequences", "python escapeseq", "python string literals", "python string literal", "python escape sequence"
+    "common escape sequence", "common escape sequences", "common escape seq", "python escape sequences", "java escape sequences", "javascript escape sequences", "C escape sequences", "C++ escape sequences", "C# escape sequences"
   ],
 
   "template_type": "keyboard",
@@ -19,10 +19,6 @@
 
   "sections": {
     "Escape Sequences": [
-      {
-        "val": "new line",
-        "key": "\\newline"
-      },
       {
         "val": "Backslash(\\)",
         "key": "\\\\"
@@ -43,7 +39,7 @@
         "val": "ASCII Formfeed (FF)"
       }, {
         "key": "\\n",
-        "val": "ASCII Linefeed (LF)"
+        "val": "newline or ASCII Linefeed (LF)"
       }, {
         "key": "\\r",
         "val": "ASCII Carriage Return (CR)"
