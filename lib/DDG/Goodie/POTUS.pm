@@ -25,19 +25,13 @@ attribution github  => ['numbertheory', 'John-Peter Etcheber'],
 my @presidents = @{LoadFile(share('presidents.yml'))};
 my $prez_count = scalar @presidents;
 
-handle remainder => sub {
+handle query_clean => sub {
     my $rem = shift;
-    $rem =~ s/
-      |who\s+(is|was)\s+the\s+
-      |^POTUS\s+
-      |\s+(POTUS|president\s+of\s+the\s+united\s+states)$
-      |^(POTUS|president\s+of\s+the\s+united\s+states)\s+
-    //gix;
-
+    return unless my ($tense, $index, $text) = $rem =~ /^(?:who (?:is|was) the )?(\d+(?:st|nd|rd|th))?(?:potus|president of the (?:us|united states|usa)) ?(\d+)?$/;
     my $num = ($rem =~ /^\d+$/) ? $rem : words2nums($rem) || $prez_count;
-    my $index = $num - 1;
+    $index = $num - 1;
     return if $index < 0 or $index > $#presidents;
-
+    
     my $fact = ($num == $prez_count ? 'is' : 'was') . ' the';
 
     my $POTUS   = 'President of the United States';
