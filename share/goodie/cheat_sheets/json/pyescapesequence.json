@@ -1,0 +1,68 @@
+{
+  "id": "python_escape_sequences",
+  "name": "Python Escape Sequences",
+  "description": "Python string literal syntax",
+
+  "metadata": {
+    "sourceName": "Python Software Foundation",
+    "sourceUrl": "https://docs.python.org/2.0/ref/strings.html"
+  },
+
+  "aliases": [
+    "python escape sequences", "python escapeseq", "python string literals", "python string literal", "python escape sequence"
+  ],
+
+  "template_type": "keyboard",
+
+  "section_order": ["Escape Sequences"],
+
+
+  "sections": {
+    "Escape Sequences": [
+      {
+        "val": "new line",
+        "key": "\\newline"
+      },
+      {
+        "val": "Backslash(\\)",
+        "key": "\\\\"
+      }, {
+        "key": "\\'",
+        "val": "Single quote (')"
+      }, {
+        "key": "\\\"",
+        "val": "Double quote(\")"
+      }, {
+        "key": "\\a",
+        "val": "ASCII Bell (BEL)"
+      }, {
+        "key": "\\b",
+        "val": "ASCII Backspace (BS)"
+      }, {
+        "key": "\\f",
+        "val": "ASCII Formfeed (FF)"
+      }, {
+        "key": "\\n",
+        "val": "ASCII Linefeed (LF)"
+      }, {
+        "key": "\\r",
+        "val": "ASCII Carriage Return (CR)"
+      }, {
+        "key": "\\t",
+        "val": "ASCII Horizontal Tab (TAB)"
+      }, {
+        "key": "\\v",
+        "val": "ASCII Vertical Tab (VT)"
+      }, {
+        "key": "\\ooo",
+        "val": "ASCII character with ocatal value ooo"
+      }, {
+        "key": "\\xhh...",
+        "val": "ASCII character with hex value hh..."
+      }
+    ]
+  }
+
+
+
+}
