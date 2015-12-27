@@ -26,7 +26,7 @@ sub pluralise {
     return $amount == 1 ? $to_pluralise : ($to_pluralise . 's');
 }
 
-my $types       = qr/(?<type>word|sentence)/i;
+my $types       = qr/(?<type>word|sentence|line)/i;
 my $modifier_re = qr/(?<modifier>English|German|French|Swedish|Shakespearean)/i;
 my $amountre    = qr/(?<amount>\d+)/;
 my $nonsense_re = qr/(?:nonsense|gibberish)/i;
@@ -50,6 +50,8 @@ sub generate_werds {
     } elsif ($type eq 'word') {
         $werd->set_werds_num($amount, $amount);
         $werds = $werd->sentence();
+    } elsif ($type eq 'line') {
+        $werds = join "\n", map { $werd->line() } (1..$amount);
     };
     return $werds;
 }
