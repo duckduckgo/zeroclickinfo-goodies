@@ -6,6 +6,7 @@ use DDG::Goodie;
 use utf8;
 
 use Silly::Werder qw(sentence get_werd);
+use Lingua::EN::Numericalize;
 
 triggers any => qw(nonsense gibberish);
 
@@ -55,7 +56,11 @@ sub generate_werds {
 
 handle query_lc => sub {
     my $query   = $_;
-    return unless $query =~ $forms;
+    # Treat 'a' as 'one' for the purposes of amounts.
+    $query =~ s/^a /one /i;
+    # Convert initial words into numbers if possible.
+    my $formatted = $query =~ s/^\w+[a-rt-z](?=\b)/str2nbr($&)/ier;
+    return unless $formatted =~ $forms;
     my $amount   = $+{'amount'} // 1;
     my $modifier = $+{'modifier'} // 'english';
     my $type     = $+{'type'};

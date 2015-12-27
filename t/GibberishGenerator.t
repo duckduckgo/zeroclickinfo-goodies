@@ -41,12 +41,15 @@ ddg_goodie_test(
     [qw( DDG::Goodie::GibberishGenerator )],
     # First form
     '5 words of gibberish'                    => build_test(werds($english_word, 5)),
+    'a word of gibberish'                     => build_test(werds($english_word, 1)),
     'sentence of nonsense'                    => build_test(sentence($english_word)),
     '3 words of utter Shakespearean nonsense' => build_test(werds($shake_word, 3)),
     '2 words of french gibberish'             => build_test(werds($french_word, 2)),
+    'seven words of german nonsense'          => build_test(werds($german_word, 7)),
     # Second form
     '3 nonsense words'               => build_test(werds($english_word, 3)),
     '7 Swedish nonsense words'       => build_test(werds($swedish_word, 7)),
+    'two swedish nonsense sentences' => build_test(paragraph($swedish_word, 2)),
     # Non-matchers
     'utter nonsense'                        => undef,
     'nonsense word'                         => undef,
