@@ -43,12 +43,12 @@ sub generate_werds {
     my @modifier_args = @{$languages{$modifier}};
 
     my $werd = Silly::Werder->new();
+    $werd->set_language(@modifier_args);
     my $werds;
     if ($type eq 'sentence') {
-        $werds .= join ' ', map { sentence() } (1..$amount);
+        $werds = join ' ', map { $werd->sentence() } (1..$amount);
     } elsif ($type eq 'word') {
         $werd->set_werds_num($amount, $amount);
-        $werd->set_language(@modifier_args);
         $werds = $werd->sentence();
     };
     return $werds;
