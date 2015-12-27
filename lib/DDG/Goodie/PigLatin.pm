@@ -11,16 +11,21 @@ zci answer_type => "translation";
 zci is_cached   => 1;
 
 handle remainder => sub {
-    my $in = shift;
-    return unless $in;
+    my $query = shift;
+    return unless $query;
 
-    my $out = piglatin($in);
-
-    return "Pig Latin: " . $out,
-      structured_answer => {
-        input     => [html_enc($in)],
-        operation => 'Translate to Pig Latin',
-        result    => html_enc($out)
+    my $result = piglatin($query);
+    return $result, structured_answer => {
+        id   => 'pig_latin',
+        name => 'Answer',
+        data => {
+            title    => "$result",
+            subtitle => "Translate to Pig Latin: $query",
+        },
+        templates => {
+            group  => 'text',
+            moreAt => 0,
+        },
       };
 };
 
