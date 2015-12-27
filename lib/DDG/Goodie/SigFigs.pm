@@ -36,6 +36,17 @@ handle remainder => sub {
         $_ =~ s/\.?0*$//;
         $len = length $_;
     }
-    return "Significant figures: $len";
+    return $len, structured_answer => {
+        id   => 'sig_figs',
+        name => 'Answer',
+        data => {
+            title    => "$len",
+            subtitle => "Significant figures of $_",
+        },
+        templates => {
+            group  => 'text',
+            moreAt => 0,
+        },
+    };
 };
 1;
