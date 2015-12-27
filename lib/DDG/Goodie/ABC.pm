@@ -43,11 +43,11 @@ handle remainder => sub {
 
     return $selection . " (" . $selection_type . ")",
         structured_answer => {
-            id => 'abc',
+            id => 'atbash',
             name => 'Answer',
             data => {
-                title => html_enc("$selection"),
-                subtitle => html_enc("$operation: $choice_string")
+                title => "$selection",
+                subtitle => "$operation: $choice_string"
             },
             templates => {
                 group => 'text',
