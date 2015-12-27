@@ -24,6 +24,9 @@ triggers startend => "minecraft";
 
 # Fetch and store recipes in a hash.
 my $json = share('crafting-guide.json')->slurp;
+## following throws error when testing:
+## malformed UTF-8 character in JSON string, at character offset 504 (before "\x{fffd} crafting gr...")
+#my $json = share('crafting-guide.json')->slurp(iomode => '<:encoding(UTF-8)'); # descriptions contain unicode
 my $decoded = decode_json($json);
 my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
 my @recipe_names = keys %recipes;
