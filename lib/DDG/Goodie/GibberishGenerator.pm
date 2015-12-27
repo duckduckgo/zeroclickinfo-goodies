@@ -73,7 +73,7 @@ handle query_lc => sub {
     my $formatted_input = "$amount @{[pluralise $amount, $type]} of $fmodifier gibberish";
 
     return $result, structured_answer => {
-        id   => 'gibberishgenerator',
+        id   => 'gibberish_generator',
         name => 'Answer',
         data => {
             title    => $result,
