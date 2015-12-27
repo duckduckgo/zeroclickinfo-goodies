@@ -34,6 +34,8 @@ ddg_goodie_test(
             result    => 'iway ovelay uckduckgoday'
         }
     ),
+    'pig latin' => undef,
+    'piglatin'  => undef,
 );
 
 done_testing;

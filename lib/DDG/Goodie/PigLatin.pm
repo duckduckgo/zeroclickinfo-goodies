@@ -12,6 +12,7 @@ zci is_cached   => 1;
 
 handle remainder => sub {
     my $in = shift;
+    return unless $in;
 
     my $out = piglatin($in);
 
