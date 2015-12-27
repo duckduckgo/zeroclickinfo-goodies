@@ -219,7 +219,7 @@ handle query_nowhitespace => sub {
     return $answer,
     structured_answer => {
         input     => [@queries],
-        operation => "Convert in $toFormat",
+        operation => "Convert to $toFormat",
         result    => html_enc($result),
     };
 };
