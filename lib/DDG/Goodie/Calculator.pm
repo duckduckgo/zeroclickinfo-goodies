@@ -325,6 +325,7 @@ use utf8;
 use Marpa::R2;
 use Math::Cephes qw(exp floor ceil);
 use Math::Cephes qw(:hypers);
+use Math::Cephes qw(asin acos atan);
 use DDG::Goodie::Calculator::Result;
 use Moo;
 
@@ -541,6 +542,9 @@ new_unary_bounded 'cotangent', ['cotan', 'cot', 'cotangent'],
     sub { $_[0]->rcos() / $_[0]->rsin() };
 new_unary_bounded 'tangent',   ['tan', 'tangent'],
     sub { $_[0]->rsin() / $_[0]->rcos() };
+new_unary_bounded 'inv_sine', ['arcsin', 'asin'], sub { $_[0]->on_result(\&asin) };
+new_unary_bounded 'inv_cosine', ['arccos', 'acos'], sub { $_[0]->on_result(\&acos) };
+new_unary_bounded 'inv_tangent', ['arctan', 'atan'], sub { $_[0]->on_result(\&atan) };
 
 new_unary_function 'floor', 'floor', sub { $_[0]->on_result(\&floor) };
 new_unary_function 'ceil', ['ceil', 'ceiling'], sub { $_[0]->on_result(\&ceil) };
