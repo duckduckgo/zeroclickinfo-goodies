@@ -41,16 +41,16 @@ handle remainder => sub {
 
     return "Atbash: $result",
         structured_answer => {
-			id => 'atbash',
-			name => 'Answer',
-			data => {
-				title => "$result",
-				subtitle => "Atbash: '$in_string'"
-			},
-			templates => {
-				group => 'text',
-				moreAt => 0
-			}
+            id => 'atbash',
+            name => 'Answer',
+            data => {
+                title => "$result",
+                subtitle => "Atbash: '$in_string'"
+            },
+            templates => {
+                group => 'text',
+                moreAt => 0
+            }
       };
 };
 
