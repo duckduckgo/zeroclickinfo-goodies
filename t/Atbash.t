@@ -57,7 +57,7 @@ ddg_goodie_test(
             }
         }
     ),
-    'atbash abcdefghijklmnopqrstuvwxyz' => test_zci(
+    'Atbash abcdefghijklmnopqrstuvwxyz' => test_zci(
         'Atbash: zyxwvutsrqponmlkjihgfedcba',
         structured_answer => {
             id => 'atbash',
