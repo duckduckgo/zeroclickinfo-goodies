@@ -10,14 +10,10 @@ zci is_cached   => 0;
 
 sub create_structured_answer
 {
-    my ($query, $subtitle, $answer) = @_;
     return {
         id => 'abc',
         name => 'Answer',
-        data => {
-            title => $answer,
-            subtitle => "$subtitle: $query"
-        },
+        data => '-ANY-',
         templates => {
             group => 'text',
             moreAt => 0
@@ -36,35 +32,35 @@ ddg_goodie_test(
     'choose from products like turkey or venison' => undef,
     'choose pick or axe'                          => test_zci(
         qr/(pick|axe) \(Random\)/,
-        structured_answer => create_structured_answer('pick or axe', 'Random selection from', qr/^(?:pick|axe)$/)
+        structured_answer => create_structured_answer()
     ),
     'choose yes or no' => test_zci(
         qr/(yes|no) \(Random\)/,
-        structured_answer => create_structured_answer('yes or no', 'Random selection from', qr/^(?:yes|no)$/)
+        structured_answer => create_structured_answer()
     ),
     'choose this or that or none' => test_zci(
         qr/(this|that|none) \(Random\)/,
-        structured_answer => create_structured_answer('this, that or none','Random selection from', qr/^(?:this|that|none)$/)
+        structured_answer => create_structured_answer()
     ),
     'pick this or that or none' => test_zci(
         qr/(this|that|none) \(Random\)/,
-        structured_answer => create_structured_answer('this, that or none', 'Random selection from', qr/^(?:this|that|none)$/)
+        structured_answer => create_structured_answer()
     ),
     'select heads or tails' => test_zci(
         qr/(heads|tails) \(Random\)/,
-        structured_answer => create_structured_answer('heads or tails', 'Random selection from', qr/^(?:heads|tails)$/)
+        structured_answer => create_structured_answer()
     ),
     'choose heads or tails' => test_zci(
         qr/(heads|tails) \(Random\)/,
-        structured_answer => create_structured_answer('heads or tails', 'Random selection from', qr/^(?:heads|tails)$/)
+        structured_answer => create_structured_answer()
     ),
     'choose duckduckgo or google or bing or something' => test_zci(
         'duckduckgo (Non-random)',
-        structured_answer => create_structured_answer('duckduckgo, google, bing or something', 'Non-random selection from', 'duckduckgo')
+        structured_answer => create_structured_answer()
     ),
     'choose Google OR DuckDuckGo OR Bing OR SOMETHING' => test_zci(
         'DuckDuckGo (Non-random)',
-        structured_answer => create_structured_answer('Google, DuckDuckGo, Bing or SOMETHING', 'Non-random selection from', 'DuckDuckGo')
+        structured_answer => create_structured_answer()
     ),
 );
 
