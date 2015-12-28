@@ -81,6 +81,7 @@ handle remainder_lc => sub {
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
     my $out = '';
+    my @result;
    # my $html = '';
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls
@@ -98,6 +99,7 @@ handle remainder_lc => sub {
             }
             $total += $sum; # track total of all rolls
             $out .= join(', ', @output); # . '<br/>';
+            $out .= " = ". $sum;
             #$html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
             #        .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
         }
@@ -138,6 +140,7 @@ handle remainder_lc => sub {
             }
             my $roll_output = shorthand_roll_output( \@rolls, $sum ); # initialize roll_output
             $out .= $roll_output; # add roll_output to our result
+            push @result, $roll_output;
             #$html .= $roll_output; # add roll_output to our HTML result
             $total += $sum; # add the local sum to the total
         }else{
@@ -154,7 +157,21 @@ handle remainder_lc => sub {
     if($out eq ''){
         return; # nothing to return
     }else{
-        return  answer => $out,
+        return  $out,
+        structured_answer => {
+            id => 'dice',
+            name => 'Answer',
+            data => {
+                total => $total,
+                rools => \@result,
+            },
+            templates => {
+                group => 'text',
+                options => {
+                    content => 'DDH.dice.content'
+                }
+            }
+       };
                 #html => $html,
                 #heading => $heading;
     }
