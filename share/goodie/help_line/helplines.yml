@@ -34,6 +34,11 @@ IE:
   - phone: 1850 60 90 90
     web: http://www.samaritans.org/how-we-can-help-you/contact-us
   display_country: Ireland
+IN:
+  contacts:
+  - phone: 022 2754 6669
+    web: http://www.aasra.info
+  display_country: India
 NZ:
   contacts:
   - phone: 0800 543 354
