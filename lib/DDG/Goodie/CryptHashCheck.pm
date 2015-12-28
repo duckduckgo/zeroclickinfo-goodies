@@ -93,6 +93,18 @@ handle remainder => sub {
 
         #return $text, html => $html;
     #}
+    my $wiki = "https://en.wikipedia.org/wiki/";
+    
+    my @moretext;
+    my $linkname = $cryptohash{$chars}; 
+    
+    if ($cryptohash{$chars} eq "SHA-2/SHA-3") {
+        @moretext = {
+            text => "SHA-3",
+            href => $wiki . "SHA-3" 
+        };
+        $linkname = "SHA-2";
+    }
     
     return $text,
     structured_answer => {
@@ -101,8 +113,16 @@ handle remainder => sub {
         data => {
             title => $text,
         },
+        meta => {
+            sourceName => "Wikipedia " . $linkname,
+            sourceUrl => "$wiki" . $linkname
+        },
         templates => {
             group => 'text',
+            options => {
+                moreAt => 1,
+                moreText => \@moretext
+            }
         }
     };
 
