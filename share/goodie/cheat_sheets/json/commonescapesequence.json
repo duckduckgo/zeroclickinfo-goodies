@@ -1,10 +1,10 @@
 {
-  "id": "common_escape_sequences",
+  "id": "common_escape_sequences_cheat_sheet",
   "name": "Common Escape Sequences",
   "description": "Escape Sequences for common programming languages",
 
   "metadata": {
-    "sourceName": "wikipedia",
+    "sourceName": "Wikipedia",
     "sourceUrl": "https://en.wikipedia.org/wiki/Escape_sequences_in_C"
   },
 
