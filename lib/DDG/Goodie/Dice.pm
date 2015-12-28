@@ -19,7 +19,8 @@ category 'random';
 topics 'math';
 attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
             twitter => [ 'loganmccamon', 'loganom'],
-            github => ['loganom', 'loganom'];
+            github => ['loganom', 'loganom'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 my %utf8_dice = (
     1 => "\x{2680}",
