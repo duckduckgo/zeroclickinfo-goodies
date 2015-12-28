@@ -17,11 +17,6 @@ ddg_goodie_test(
         structured_answer => {
 
             data => '-ANY-',
-
-            # data => [{
-            #     dimension => 4,
-            #     inputNum => 2048
-            # }],
             id => "game2048",
             name => 2048,
             templates => {
@@ -33,27 +28,7 @@ ddg_goodie_test(
             }
         }
     ),
-    'play 256 7' => test_zci(
-        'Play 256',
-        structured_answer => {
-
-            data => '-ANY-',
-
-            # data => [{
-            #     dimension => 7,
-            #     inputNum => 256
-            # }],
-            id => "game2048",
-            name => 2048,
-            templates => {
-                group => "text",
-                item => 0,
-                options => {
-                    content => "DDH.game2048.content"
-                },
-            }
-        }
-    ),
+    'play 2048 4'  => undef,
     '2048 online' => undef
 );
 
