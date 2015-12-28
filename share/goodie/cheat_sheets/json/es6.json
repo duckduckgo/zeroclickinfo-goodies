@@ -1,6 +1,6 @@
 {
-	"id": "es6_cheat_sheet",
-	"name": "ES6",
+    "id": "es6_cheat_sheet",
+    "name": "ES6",
 	"description": "ECMAScript6 (Javascript 2015 specification) syntax and information.",
 	"metadata": {
 		"sourceName": "Mozilla Developer Network",
