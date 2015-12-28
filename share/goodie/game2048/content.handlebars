@@ -2,8 +2,12 @@
 
     <div class="game2048__area_container">
         <div id="game2048__area" class="game2048__area" tabindex="0">
-            {{#loop dimension}}
-                <div class="game2048__row">{{#loop dimension}}<div class="boxtile val-"></div>{{/loop}}</div>
+            {{#loop 4}}
+                <div class="game2048__row">
+                    {{#loop 4}}
+                        <div class="boxtile val-"></div>
+                    {{/loop}}
+                </div>
             {{/loop}}
             <div class="game2048__message">
                 <p></p>

@@ -233,8 +233,8 @@ DDH.game2048.build = function(ops) {
                 $tempArea = $('#game2048__area');
                 $newGame = $(".zci--game2048 .game2048__new_game");
                 $result_box = $('#game2048__area .game2048__message');
-                WINNUM = ops.data[0].inputNum;
-                SIZE = ops.data[0].dimension;
+                WINNUM = 2048;
+                SIZE = 4;
                 TILE_COUNT = SIZE * SIZE;
                 cells = $('.game2048__row .boxtile.val-');
                 start();
@@ -257,7 +257,6 @@ DDH.game2048.build = function(ops) {
 
                         if (moved) {
                             add_random_tile();
-                            print_area();
                             if (has_won() || has_lost()) {
                                 lost_or_won = true;
                             }
