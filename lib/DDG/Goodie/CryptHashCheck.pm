@@ -6,10 +6,10 @@ use DDG::Goodie;
 
 # A comprehensive reference for hashing functions from Wikipedia.
 
-use constant MD5HERF =>  "http://en.wikipedia.org/wiki/MD5";
-use constant SHA1HREF => "http://en.wikipedia.org/wiki/SHA-1";
-use constant SHA2HREF => "http://en.wikipedia.org/wiki/SHA-2";
-use constant SHA3HREF => "http://en.wikipedia.org/wiki/SHA-3"; 
+#use constant MD5HERF =>  "http://en.wikipedia.org/wiki/MD5";
+#use constant SHA1HREF => "http://en.wikipedia.org/wiki/SHA-1";
+#use constant SHA2HREF => "http://en.wikipedia.org/wiki/SHA-2";
+#use constant SHA3HREF => "http://en.wikipedia.org/wiki/SHA-3"; 
 
 zci is_cached => 1;
 
@@ -27,17 +27,16 @@ topics 'cryptography';
 attribution github => ['https://github.com/digit4lfa1l', 'digit4lfa1l'],
             github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
+my %cryptohash = (
+    128 => "MD5",
+    160 => "SHA-1",
+    224 => "SHA-2/SHA-3",
+    256 => "SHA-2/SHA-3",
+    384 => "SHA-2/SHA-3",
+    512 => "SHA-2/SHA-3"
+);
+
 # Remainder function with links to the Wikipedia resources.
-
-my %cryptohash = {
-    "32" => "MD5",
-    "40" => "SHA-1",
-    "56" => "SHA-2/SHA-3",
-    "64" => "SHA-2/SHA-3",
-    "96" => "SHA-2/SHA-3",
-    "128" => "SHA-2/SHA-3"
-};
-
 handle remainder => sub {
 
     return unless /^[0-9a-f]{32}$|^[0-9a-f]{40}$|^[0-9a-f]{56}$|^[0-9a-f]{64}$|^[0-9a-f]{96}$|^[0-9a-f]{128}$/i;
@@ -45,57 +44,68 @@ handle remainder => sub {
     my $chars = length $_;
     $chars *= 4;
  
-    my $text = "This is a $chars bit " . $criptohash{$chars} . "cryptographic hash." 
+    my $text = "This is a $chars bit " . $cryptohash{$chars} . " cryptographic hash."; 
     
-    my ($md5) = /^[0-9a-f]{32,128}$/i;
-    if ($md5){
+    #my ($md5) = /^[0-9a-f]{32,128}$/i;
+    #if ($md5){
         #my $text = sprintf qq(This is a 128 bit MD5 cryptographic hash.);
         #my $html = sprintf qq(This is a 128 bit <a href="%s">MD5</a> cryptographic hash.),MD5HERF;
 
         #return $text, html => $html;
-    }
+    #}
 
-    my ($sha1)  = /^[0-9a-f]{40}$/i;
-    if ($sha1){
+    #my ($sha1)  = /^[0-9a-f]{40}$/i;
+    #if ($sha1){
         #my $text = sprintf qq(This is a 160 bit SHA-1 cryptographic hash.);
         #my $html = sprintf qq(This is a 160 bit <a href="%s">SHA-1</a> cryptographic hash.),SHA1HREF;
 
         #return $text, html => $html;
-    }
+    #}
 
-    my ($sha224) = /^[0-9a-f]{56}$/i;
-    if ($sha224){
+    #my ($sha224) = /^[0-9a-f]{56}$/i;
+    #if ($sha224){
         #my $text = sprintf qq(This is a 224 bit SHA-2/SHA-3 cryptographic hash.);
         #my $html = sprintf qq(This is a 224 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;
 
         #return $text, html => $html;
-    }
+    #}
 
-    my ($sha256) = /^[0-9a-f]{64}$/i;
-    if ($sha256){
+    #my ($sha256) = /^[0-9a-f]{64}$/i;
+    #if ($sha256){
         #my $text = sprintf qq(This is a 256 bit SHA-2/SHA-3 cryptographic hash.);
         #my $html = sprintf qq(This is a 256 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;
 
         #return $text, html => $html;
-    }
+    #}
 
-    my ($sha384) = /^[0-9a-f]{96}$/i;
-    if ($sha384){
+    #my ($sha384) = /^[0-9a-f]{96}$/i;
+    #if ($sha384){
         #my $text = sprintf qq(This is a 384 bit SHA-2/SHA-3 cryptographic hash.);
         #my $html = sprintf qq(This is a 384 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;
 
         #return $text, html => $html;
-    }
+    #}
 
-    my ($sha512) = /^[0-9a-f]{128}$/i;
-    if ($sha512){
+    #my ($sha512) = /^[0-9a-f]{128}$/i;
+    #if ($sha512){
         #my $text = sprintf qq(This is a 512 bit SHA-2/SHA-3 cryptographic hash.);
         #my $html = sprintf qq(This is a 512 bit <a href="%s">SHA-2</a>/<a href="%s">SHA-3</a> cryptographic hash.),SHA2HREF,SHA3HREF;
 
         #return $text, html => $html;
-    }
+    #}
+    
+    return $text,
+    structured_answer => {
+        id => 'crypt_hash_check',
+        name => 'Answer',
+        data => {
+            title => $text,
+        },
+        templates => {
+            group => 'text',
+        }
+    };
 
-    return;
 };
 
 1;
