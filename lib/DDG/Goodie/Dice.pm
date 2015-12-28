@@ -71,7 +71,7 @@ sub shorthand_roll_output {
     } else {
         $out = $sum; # output is roll value if we have just one roll
     }
-    return $out . '<br/>';
+    return $out;# . '<br/>';
 }
 
 handle remainder_lc => sub {
@@ -81,7 +81,7 @@ handle remainder_lc => sub {
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
     my $out = '';
-    my $html = '';
+   # my $html = '';
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls
     foreach (@values) {
@@ -97,9 +97,9 @@ handle remainder_lc => sub {
                 push @output, $utf8_dice{$roll}; # add our roll to array output
             }
             $total += $sum; # track total of all rolls
-            $out .= join(', ', @output) . '<br/>';
-            $html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
-                    .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
+            $out .= join(', ', @output); # . '<br/>';
+            #$html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
+            #        .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
             # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'
@@ -138,7 +138,7 @@ handle remainder_lc => sub {
             }
             my $roll_output = shorthand_roll_output( \@rolls, $sum ); # initialize roll_output
             $out .= $roll_output; # add roll_output to our result
-            $html .= $roll_output; # add roll_output to our HTML result
+            #$html .= $roll_output; # add roll_output to our HTML result
             $total += $sum; # add the local sum to the total
         }else{
             # an element of @value was not valid
@@ -148,15 +148,15 @@ handle remainder_lc => sub {
     if($values > 1) {
         # display total sum if more than one value was specified
         $out .= 'Total: ' . $total;
-        $html .= 'Total: ' . $total;
+        #$html .= 'Total: ' . $total;
     }
     $out =~ s/<br\/>$//g; # remove trailing newline
     if($out eq ''){
         return; # nothing to return
     }else{
         return  answer => $out,
-                html => $html,
-                heading => $heading;
+                #html => $html,
+                #heading => $heading;
     }
 };
 
