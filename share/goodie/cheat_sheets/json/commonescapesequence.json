@@ -9,7 +9,7 @@
   },
 
   "aliases": [
-    "common escape sequence", "common escape sequences", "common escape seq", "python escape sequences", "java escape sequences", "javascript escape sequences", "C escape sequences", "C++ escape sequences", "C# escape sequences"
+    "common escape sequence", "common escape sequences", "common escape seq", "python escape sequences", "java escape sequences", "javascript escape sequences", "c escape sequences", "c++ escape sequences", "c# escape sequences"
   ],
 
   "template_type": "keyboard",
@@ -21,7 +21,7 @@
     "Escape Sequences": [
       {
         "val": "Backslash(\\)",
-        "key": "\\\\"
+        "key": "\\\\\\\\"
       }, {
         "key": "\\'",
         "val": "Single quote (')"
@@ -39,7 +39,7 @@
         "val": "ASCII Formfeed (FF)"
       }, {
         "key": "\\n",
-        "val": "newline or ASCII Linefeed (LF)"
+        "val": "ASCII Linefeed (LF) or Newline"
       }, {
         "key": "\\r",
         "val": "ASCII Carriage Return (CR)"
