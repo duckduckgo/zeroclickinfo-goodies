@@ -14,8 +14,8 @@ secondary_example_queries "cusip check 38259P706", "844741108 cusip check";
 category "finance";
 topics "economy_and_finance";
 code_url "https://github.com/tommytommytommy/zeroclickinfo-goodies/lib/DDG/Goodie/Cusip.pm";
-attribution github => ["https://github.com/tommytommytommy", 'tommytommytommy'];
-
+attribution github => ["https://github.com/tommytommytommy", 'tommytommytommy'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 triggers startend => "cusip", "check cusip", "cusip check";
 
 zci answer_type => "cusip";
