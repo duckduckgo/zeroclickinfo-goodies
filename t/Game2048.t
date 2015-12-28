@@ -28,7 +28,6 @@ ddg_goodie_test(
             }
         }
     ),
-    'play 2048 4'  => undef,
     '2048 online' => undef
 );
 
