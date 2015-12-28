@@ -1,0 +1,35 @@
+{
+    "id": "es6_cheat_sheet",
+    "name": "ES6 Cheat Sheet",
+    "description": "Ecmascript6 (Javascript 2015 specification) syntax and information. To eventually be merged with the JS cheatsheet.",
+    "metadata": {
+        "sourceName": "Mozilla Developer Network",
+        "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+    },
+    "aliases": [
+        "new javascript", "es6", "ecmascript6"
+    ],
+    "template_type": "terminal",
+    
+    "section_order": [
+        "Declarations",
+        "Functions and classes",
+        "String Template"
+    ],
+    "sections": {
+        "Declarations": [{
+            "val": "Declares a read-only named constant",
+            "key": "const name = 'yourName';"
+        }, {
+            "val": "Declares a block scope local variable, optionally initializing it to a value.",
+            "key": "let index = 0;"
+        }], 
+        "Functions and classes": [{
+            "val": "The class declaration creates a new class using prototype-based inheritance.",
+            "key": "class name [extends] { }"
+        }, {
+            
+ 
+        }]
+    
+}
