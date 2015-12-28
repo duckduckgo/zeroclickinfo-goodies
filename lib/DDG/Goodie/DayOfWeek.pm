@@ -1,5 +1,5 @@
 package DDG::Goodie::DayOfWeek;
-# ABSTRACT: Calculates what day of the week a given day falls on
+# ABSTRACT: Calculates day of the week a given date falls on
 
 use strict;
 use DDG::Goodie;
