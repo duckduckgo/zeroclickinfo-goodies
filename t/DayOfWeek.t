@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
-use DateTime;
+use Test::MockTime qw( :all );
 
 zci answer_type => "day_of_week";
 zci is_cached   => 1;
@@ -27,11 +27,7 @@ sub build_answer {
     }
 }
 
-
-# my $dt = DateTime->now(time_zone => $loc->time_zone);
-my $dt_today     = DateTime->now;
-my $dt_tomorrow  = $dt_today->clone->add( days => 1 );
-my $dt_yesterday = $dt_today->clone->subtract( days => 1 );
+set_fixed_time('2015-07-14T12:00:00');
 
 ddg_goodie_test(
     [qw( DDG::Goodie::DayOfWeek )],
@@ -49,17 +45,19 @@ ddg_goodie_test(
 
     'day of week 1/12/2005'   => test_zci( build_answer( 'Wednesday', '12 Jan 2005' ) ),
     'day of week 12/1/2005'   => test_zci( build_answer( 'Thursday',  '01 Dec 2005' ) ),
-    'day of week 12-1-2005'   => test_zci( build_answer( 'Thursday',  '01 Dec 2005' ) ),
     'day of week 13/1/2005'   => test_zci( build_answer( 'Thursday',  '13 Jan 2005' ) ),
+    'day of week 12-1-2005'   => test_zci( build_answer( 'Thursday',  '01 Dec 2005' ) ),
     'day of week 2005-01-02'  => test_zci( build_answer( 'Sunday',    '02 Jan 2005' ) ),
     'day of week 15 Jan 2005' => test_zci( build_answer( 'Saturday',  '15 Jan 2005' ) ),
 
-    'day of week today'     => test_zci( build_answer( $dt_today->day_name,     $dt_today->strftime("%d %b %Y") ) ),
-    'day of week tomorrow'  => test_zci( build_answer( $dt_tomorrow->day_name,  $dt_tomorrow->strftime("%d %b %Y") ) ),
-    'day of week yesterday' => test_zci( build_answer( $dt_yesterday->day_name, $dt_yesterday->strftime("%d %b %Y") ) ),
+    'day of week today'     => test_zci( build_answer( 'Tuesday',   '14 Jul 2015' ) ),
+    'day of week tomorrow'  => test_zci( build_answer( 'Wednesday', '15 Jul 2015' ) ),
+    'day of week yesterday' => test_zci( build_answer( 'Monday',    '13 Jul 2015' ) ),
 
     'day of week' => undef,
     'day of week' => undef,
 );
+
+restore_time();
 
 done_testing;
