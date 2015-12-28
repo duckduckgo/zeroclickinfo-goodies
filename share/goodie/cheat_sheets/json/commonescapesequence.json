@@ -21,7 +21,7 @@
     "Escape Sequences": [
       {
         "val": "Backslash(\\)",
-        "key": "\\\\\\\\"
+        "key": "\\\\\\"
       }, {
         "key": "\\'",
         "val": "Single quote (')"
