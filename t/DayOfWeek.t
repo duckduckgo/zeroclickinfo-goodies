@@ -47,9 +47,12 @@ ddg_goodie_test(
     'What day will November 23 2050 be?' => test_zci( build_answer( 'Wednesday', '23 Nov 2050' ) ),
     'What day will 23 November 2050 be?' => test_zci( build_answer( 'Wednesday', '23 Nov 2050' ) ),
 
-    'day of week 1/12/2005' => test_zci( build_answer( 'Wednesday', '12 Jan 2005' ) ),
-    'day of week 12/1/2005' => test_zci( build_answer( 'Thursday',  '01 Dec 2005' ) ),
-    'day of week 13/1/2005' => test_zci( build_answer( 'Thursday',  '13 Jan 2005' ) ),
+    'day of week 1/12/2005'   => test_zci( build_answer( 'Wednesday', '12 Jan 2005' ) ),
+    'day of week 12/1/2005'   => test_zci( build_answer( 'Thursday',  '01 Dec 2005' ) ),
+    'day of week 12-1-2005'   => test_zci( build_answer( 'Thursday',  '01 Dec 2005' ) ),
+    'day of week 13/1/2005'   => test_zci( build_answer( 'Thursday',  '13 Jan 2005' ) ),
+    'day of week 2005-01-02'  => test_zci( build_answer( 'Sunday',    '02 Jan 2005' ) ),
+    'day of week 15 Jan 2005' => test_zci( build_answer( 'Saturday',  '15 Jan 2005' ) ),
 
     'day of week today'     => test_zci( build_answer( $dt_today->day_name,     $dt_today->strftime("%d %b %Y") ) ),
     'day of week tomorrow'  => test_zci( build_answer( $dt_tomorrow->day_name,  $dt_tomorrow->strftime("%d %b %Y") ) ),

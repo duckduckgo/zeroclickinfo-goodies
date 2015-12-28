@@ -10,7 +10,7 @@ zci answer_type => 'day_of_week';
 zci is_cached   => 1;
 
 primary_example_queries 'day of week for June 22 1907';
-secondary_example_queries 'day of week for 1/1/2012', 'what day will 1/1/2025 be', 'what day was 1/1/2005', '1/1/2005 was what day';
+secondary_example_queries 'day of week for 1/1/2012', 'what day will 15 Jan 2025 be', 'what day was 2015-01-02', '01/13/2015 was what day';
 description 'calculate day of the week for a date';
 name 'DayOfWeek';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DayOfWeek.pm';
