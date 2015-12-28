@@ -1,13 +1,13 @@
 {
     "id": "es6_cheat_sheet",
-    "name": "ES6+ Cheat Sheet",
-    "description": "Ecmascript6 (Javascript 2015 specification) syntax and information. To eventually be merged with the JS cheatsheet.",
+    "name": "ES6 Cheat Sheet",
+    "description": "ECMAscript6 (Javascript 2015 specification) syntax and information. To eventually be merged with the JS cheatsheet.",
     "metadata": {
         "sourceName": "Mozilla Developer Network",
         "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
     },
     "aliases": [
-        "new javascript", "es6", "ecmascript6"
+        "new javascript syntax", "es6", "ecmascript6", "es2015"
     ],
     "template_type": "terminal",
     
@@ -16,6 +16,7 @@
         "Template Strings",
 		"Modules",
         "Functions and classes",
+		"Arrays",
 		"Proxies and Promises",
 		"Left-hand-side expressions"
         
@@ -51,6 +52,28 @@
         }, {
 			"val": "The rest parameter syntax allows us to represent an indefinite number of arguments as an array.",
 			"key": "function(a, b, ...theArgs) { }"
+		}],
+		"Arrays": [{
+			"val": "The copyWithin() method copies the sequence of array elements within the array to the position starting at target.",
+			"key": "arr.copyWithin(target, start[, end = this.length])"
+		}, {
+			"val": "The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.",
+			"key": "arr.entries()"
+		}, {
+			"val": "The find method executes the callback function once for each element in the array. If such an element is found, it immediately returns the value of that element. Otherwise, it returns undefined.",
+			"key": "arr.find(callback[, thisArg])"
+		}, {
+			"val": "The fill() method fills all the elements of an array from a start index to an end index with a static value.",
+			"key": "arr.fill(value[, start = 0[, end = this.length]])"
+		}, {
+			"val": "The findIndex() method returns an index in the array, if an element in the array satisfies the provided testing function. Otherwise -1 is returned.",
+			"key": "arr.findIndex(callback[, thisArg])"
+		}, {
+			"val": "The keys() method returns a new Array Iterator that contains the keys for each index in the array.",
+			"key": "arr.keys()"
+		}, {
+			"val": "The values() method returns a new Array Iterator object that contains the values for each index in the array.",
+			"key": "arr.values()"
 		}],
 		"Proxies and Promises" : [{
 			"val": "The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).",
