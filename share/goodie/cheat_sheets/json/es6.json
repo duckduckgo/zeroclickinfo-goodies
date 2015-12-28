@@ -33,18 +33,36 @@
 			"key": "`Hello, my name is $\\{firstName\\}`"
 		}],
 		"Modules": [{
-			"val": "To import functions, objects or primitives exported from an external module. These are the most common types of importing",
-			"key": "import name from 'module-name'; OR import * as name from 'module-name'; OR import \\{foo, bar\\} from 'module-name';"
+			"val": "",
+			"key": "import name from 'module-name';" 
+		}, {
+            "val": "",
+            "key": "import * as name from 'module-name';"
+        }, {
+            "val": "To import functions, objects or primitives exported from an external module. These are the most common types of importing",
+            "key": "import \\{foo, bar\\} from 'module-name';"
+        },{
+			"val": "",
+			"key": "export \\{ myFunction \\};"
+		}, {
+			"val": "",
+			"key": "export const name = 'yourName';"
 		}, {
 			"val": "To export functions, objects or primitives from a given file or module",
-			"key": "export \\{ myFunction \\}; OR export const name = 'yourName'; OR export default myFunctionOrClass"
+			"key": "export default myFunctionOrClass"
 		}],
 		"Functions and Classes": [{
 			"val": "The class declaration creates a new class using prototype-based inheritance",
 			"key": "class name \\[extends\\] \\{ \\}"
 		}, {
+			"val": "",
+			"key": "singleParam => \\{ statements \\}"
+		}, {
+			"val": "",
+			"key": "() => \\{ statements \\}"
+		}, {
 			"val": "Arrow function expression. Shorter syntax & lexically binds the 'this' value. Arrow functions are anonymous",
-			"key": "singleParam => \\{ statements \\} OR () => \\{ statements \\} OR (param1, param2) => expression"
+			"key": "(param1, param2) => expression"
 		}, {
 			"val": "function* declaration defines a generator function. Generators are functions which can be exited and later re-entered. See yield and yield* for more info",
 			"key": "function* name(params) \\{ statements \\}"
@@ -95,11 +113,17 @@
 			"key": "Promise.race(\\[p1, p2, p3\\]);"
 		}],
 		"Left-hand-side Expressions": [{
+			"val": "",
+			"key": "myFunction(...iterableObject);"
+		}, {
 			"val": "The spread operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected",
-			"key": "myFunction(...iterableObject); OR \\[...iterableObject, 4, 5, 6\\]"
+			"key": "\\[...iterableObject, 4, 5, 6\\]"
+		}, {
+			"val": "",
+			"key": "super(\\[arguments\\]);"
 		}, {
 			"val": "The super keyword is used to call functions on an object's parent. When used in a constructor, super appears alone and must be used before the this keyword can be used",
-			"key": "super(\\[arguments\\]); OR super.functionOnParent(\\[arguments\\]);"
+			"key": "super.functionOnParent(\\[arguments\\]);"
 		}, {
 			"val": "The new.target property detects whether a function or constructor was called using the new operator",
 			"key": "new.target"
