@@ -1,6 +1,6 @@
 {
     "id": "es6_cheat_sheet",
-    "name": "ES6 Cheat Sheet",
+    "name": "ES6+ Cheat Sheet",
     "description": "Ecmascript6 (Javascript 2015 specification) syntax and information. To eventually be merged with the JS cheatsheet.",
     "metadata": {
         "sourceName": "Mozilla Developer Network",
@@ -13,8 +13,12 @@
     
     "section_order": [
         "Declarations",
+        "Template Strings",
+		"Modules",
         "Functions and classes",
-        "String Template"
+		"Proxies and Promises",
+		"Left-hand-side expressions"
+        
     ],
     "sections": {
         "Declarations": [{
@@ -23,13 +27,59 @@
         }, {
             "val": "Declares a block scope local variable, optionally initializing it to a value.",
             "key": "let index = 0;"
+        }],
+        "Template Strings" : [{
+            "val": "Using backticks, a dollar sign and curly braces, strings can embed expressions and variables.",
+            "key": "const name = 'yourName'; console.log(`Hello, my name is ${name}`);"
         }], 
+		"Modules": [{
+			"val": "The import statement is used to import functions, objects or primitives that have been exported from an external module. There are a number of ways to import but these are the most common types.",
+			"key": "import name from 'module-name'; OR import * as name from 'module-name'; OR import {foo, bar} from 'module-name';"
+		}, {
+			"val": "The export statement is used to export functions, objects or primitives from a given file or module.",
+			"key": "export { myFunction }; OR export const name = 'yourName'; OR export default myFunctionOrClass"
+		}],
         "Functions and classes": [{
             "val": "The class declaration creates a new class using prototype-based inheritance.",
             "key": "class name [extends] { }"
         }, {
-            
- 
-        }]
-    
+            "val": "Arrow function expression. Shorter syntax compared to function expressions and lexically binds the 'this' value. Arrow functions are anonymous. There are several ways of expressing arrow functions but these are some common forms.",
+            "key": "singleParam => { statements } OR () => { statements } OR (param1, param2) => expression"
+        }, {
+            "val": "function* declaration defines a generator function. Generators are functions which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances. See yield and yield* for more information.",
+            "key": "function* name(params) { statements }"
+        }, {
+			"val": "The rest parameter syntax allows us to represent an indefinite number of arguments as an array.",
+			"key": "function(a, b, ...theArgs) { }"
+		}],
+		"Proxies and Promises" : [{
+			"val": "The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).",
+			"key": "var p = new Proxy(target, handler);"
+		}, {
+			"val": "A Promise is used in asynchronous computations to represent an operation that hasn't completed yet, but is expected in the future.",
+			"key": "new Promise(function(resolve, reject) { ... });"
+		}, {
+			"val": "The catch() method returns a Promise and deals with rejected cases only.",
+			"key": "p.catch(reason => rejection);"
+		}, {
+			"val": "The then() method returns a Promise. It takes two arguments: callback functions for the success and failure cases of the Promise.",
+			"key": "p.then(value => fulfillment, reason => rejection);"
+		}, {
+			"val": "The Promise.all(iterable) method returns a promise that resolves when all of the promises in the iterable argument have resolved, or rejects with the reason of the first passed promise that rejects.",
+			"key": "Promise.all([p1, p2, p3]).then(values => console.log(values));"
+		}, {
+			"val": "The race function returns a Promise that is settled the same way as the first passed promise to settle. It resolves or rejects, whichever happens first.",
+			"key": "Promise.race([p1, p2, p3]);"
+		}],
+		"Left-hand-side expressions": [{
+			"val": "The spread operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.",
+			"key": "myFunction(...iterableObject); OR [...iterableObject, 4, 5, 6]"
+		}, {
+			"val": "The super keyword is used to call functions on an object's parent. When used in a constructor, super appears alone and must be used before the this keyword can be used.",
+			"key": "super([arguments]); OR super.functionOnParent([arguments]);"
+		}, {
+			"val": "The new.target property lets you detect whether a function or constructor was called using the new operator. In constructors and functions, it returns a reference to the constructor or function. In normal function calls, new.target is undefined.",
+			"key": "new.target"
+		}]
+    }   
 }
