@@ -18,14 +18,15 @@ category 'physical_properties';
 topics 'science';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PeriodicTable.pm';
 attribution github => [ 'zblair', 'Zachary D Blair' ],
-            github  => ['skywickenden', 'Sky Wickenden'];
+            github  => ['skywickenden', 'Sky Wickenden'],
+            github  => ['amitdev', 'Amit Ranjit'];
 
 my @elements = @{ LoadFile(share('elements.yml')) };
 
 # Triggers
 my @element_triggers = [map { lc($_->[2]) } @elements];
 triggers start => $element_triggers[0];
-triggers any => 'atomic mass', 'atomic weight', 'atomic number', 'proton number', 'chemical symbol', 'chemical name for';
+triggers any => 'atomic mass', 'atomic weight', 'atomic number', 'proton number', 'chemical symbol', 'chemical name';
 
 
 # Handle statement
@@ -33,9 +34,9 @@ handle query_lc => sub {
 
     my $query = $_;
 
-    # Determine if this is a query for atomic mass or atomic number
+    # Determine if this is a query for atomic mass or chemical name
     my $is_mass_query = $query =~ /atomic mass|atomic weight/;
-    my $is_atomic_query = $query =~ /atomic number|proton number/;
+    my $is_name_query = $query =~ /name/;
 
     # Strip out irrelevant words in the query
     $query =~ s/(?:atomic (?:mass|weight|number)|proton number|of|the|for|element|elemental|chemical symbol|what is|chemical name)//g;
@@ -46,19 +47,17 @@ handle query_lc => sub {
     my $match = first { lc $_->[2] eq $query || lc $_->[3] eq $query } @elements or return;
     my ( $atomic_number, $atomic_mass, $element_name, $element_symbol, $element_type ) = @{$match};
 
-    # Default to displaying chemical symbol info.
-    my $title = $element_name;
-    my $subtitle = "Chemical Element";
-    my $raw = "$element_symbol, chemical symbol for " . lc($element_name);
+    # Default display
+    my $title = "$atomic_number";
+    my $subtitle = "$element_name (atomic mass: $atomic_mass u)";
+    my $raw = "$element_name ($element_symbol), atomic number $atomic_number, atomic mass $atomic_mass u";
     if ($is_mass_query) {
         $title = "$atomic_mass u";
-        $subtitle = "$element_name - atomic mass";
-        $raw = "$element_name ($element_symbol), atomic mass $atomic_mass u"
+        $subtitle = "$element_name (atomic number: $atomic_number)";
     }
-    elsif ($is_atomic_query) {
-        $title = "$atomic_number";
-        $subtitle = "$element_name - atomic number";
-        $raw = "$element_name ($element_symbol), atomic number $atomic_number"
+    elsif ($is_name_query) {
+        $title = "$element_name";
+        $subtitle = "$atomic_number (atomic mass: $atomic_mass u)";
     }    
 
     # The text size of the icon needs to change depending on the length of the chemical symbol.
