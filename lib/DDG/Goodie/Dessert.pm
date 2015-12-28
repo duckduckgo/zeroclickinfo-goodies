@@ -26,13 +26,13 @@ source 'http://food.sulekha.com/dishes/course/desserts/alphabets/a.htm';
 triggers start => 'dessert', 'desserts', 'a dessert';
 
 # Returns HTML version of our dessert.
-sub to_html {
-    my $dessert_name = shift;
-    my $dessert_link = $dessert_name;
-    $dessert_link =~ s/\s/+/g;
+#sub to_html {
+#    my $dessert_name = shift;
+#    my $dessert_link = $dessert_name;
+#    $dessert_link =~ s/\s/+/g;
 
-    return "<a href='http://duckduckgo.com/?q=$dessert_link+recipe'>" . $dessert_name . "</a>";
-}
+#    return "<a href='http://duckduckgo.com/?q=$dessert_link+recipe'>" . $dessert_name . "</a>";
+#}
 
 # This function picks a dessert from our lists.
 sub itemify {
@@ -41,8 +41,23 @@ sub itemify {
 
     my $i = rand scalar @{$dessert_list};
     my $dessert = $dessert_list->[$i];
-
-    return $dessert . $end, html => to_html($dessert) . $end;
+    
+    my $dessert_link = $dessert;
+    $dessert_link =~ s/\s/+/g;
+    
+    return $dessert . $end, #html => to_html($dessert) . $end;
+     structured_answer => {
+        id => 'dessert',
+        name => 'Answer',
+        data => {
+            title => $dessert,
+            subtitle => $end,
+            url => "http://duckduckgo.com/?q=$dessert_link+recipe"
+        },
+        templates => {
+            group => 'info',
+        }
+    };
 };
 
 # This is our list of desserts.
