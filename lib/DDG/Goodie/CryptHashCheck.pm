@@ -24,7 +24,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'computing_tools';
 topics 'cryptography';
 
-attribution github => ['https://github.com/digit4lfa1l', 'digit4lfa1l'];
+attribution github => ['https://github.com/digit4lfa1l', 'digit4lfa1l'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 # Remainder function with links to the Wikipedia resources.
 
