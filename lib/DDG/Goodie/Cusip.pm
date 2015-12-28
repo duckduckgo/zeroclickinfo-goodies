@@ -37,14 +37,12 @@ handle remainder => sub {
 
     if ($cusip->is_valid) {
         $output = "$_ is a properly formatted CUSIP number.";
-        #$htmlOutput = "<div class='zci--cusip text--primary'>".html_enc($_)." is a properly formatted <span class='text--secondary'>CUSIP number.</span></div>";
     } else {
         $output = "$_ is not a properly formatted CUSIP number.";
-        #$htmlOutput = "<div class='zci--cusip text--primary'>".html_enc($_)." is not a properly formatted <span class='text--secondary'>CUSIP number.</span></div>";
     }
 
     # output results
-    return $output, #html => $htmlOutput;
+    return $output,
     structured_answer => {
         id => 'cusip',
         name => 'Answer',
