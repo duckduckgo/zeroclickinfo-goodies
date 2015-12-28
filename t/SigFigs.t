@@ -36,10 +36,15 @@ ddg_goodie_test(
     "sd 045.30"                     => build_test('4', '045.30'),
     'sigfigs 01.1234000'            => build_test('8', '01.1234000'),
     'significant figures 000123000' => build_test('3', '000,123,000'),
+    'sigfigs 0'                     => build_test('0', '0'),
     'sf 001,70'                     => build_test('3', '001,70'),
     'sf 1_200.'                     => build_test('4', '1,200.'),
     'sf 1. 5h'                      => undef,
     'sig figs 501,.3'               => undef,
+    'sf'                            => undef,
+    'significant figures a'         => undef,
+    'significant figures of 1.230'  => build_test('4', '1.230'),
+    'sigdigs 000.'                  => build_test('0', '000.'),
 );
 
 done_testing;
