@@ -30,12 +30,16 @@ ddg_goodie_test(
     [qw( DDG::Goodie::SigFigs)],
     'sf 78'                         => build_test('2', '78'),
     "sigfigs 10.12404"              => build_test('7', '10.12404'),
-    "sigdigs 3030."                 => build_test('4', '3030'),
-    "significant figures 0.0100235" => build_test('6', '.0100235'),
+    "sigdigs 3030."                 => build_test('4', '3,030.'),
+    "significant figures 0.0100235" => build_test('6', '0.0100235'),
     "sf 302.056"                    => build_test('6', '302.056'),
-    "sd 045.30"                     => build_test('4', '45.30'),
-    'sigfigs 01.1234000'            => build_test('8', '1.1234000'),
-    'significant figures 000123000' => build_test('3', '123'),
+    "sd 045.30"                     => build_test('4', '045.30'),
+    'sigfigs 01.1234000'            => build_test('8', '01.1234000'),
+    'significant figures 000123000' => build_test('3', '000,123,000'),
+    'sf 001,70'                     => build_test('3', '001,70'),
+    'sf 1_200.'                     => build_test('4', '1,200.'),
+    'sf 1. 5h'                      => undef,
+    'sig figs 501,.3'               => undef,
 );
 
 done_testing;
