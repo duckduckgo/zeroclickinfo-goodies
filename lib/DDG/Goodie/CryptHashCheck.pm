@@ -9,7 +9,7 @@ use DDG::Goodie;
 use constant MD5HERF =>  "http://en.wikipedia.org/wiki/MD5";
 use constant SHA1HREF => "http://en.wikipedia.org/wiki/SHA-1";
 use constant SHA2HREF => "http://en.wikipedia.org/wiki/SHA-2";
-use constant SHA3HREF => "http://en.wikipedia.org/wiki/SHA-3";
+use constant SHA3HREF => "http://en.wikipedia.org/wiki/SHA-3"; 
 
 zci is_cached => 1;
 
@@ -29,6 +29,15 @@ attribution github => ['https://github.com/digit4lfa1l', 'digit4lfa1l'],
 
 # Remainder function with links to the Wikipedia resources.
 
+my %cryptohash = {
+    "32" => "MD5",
+    "40" => "SHA-1",
+    "56" => "SHA-2/SHA-3",
+    "64" => "SHA-2/SHA-3",
+    "96" => "SHA-2/SHA-3",
+    "128" => "SHA-2/SHA-3"
+};
+
 handle remainder => sub {
 
     return unless /^[0-9a-f]{32}$|^[0-9a-f]{40}$|^[0-9a-f]{56}$|^[0-9a-f]{64}$|^[0-9a-f]{96}$|^[0-9a-f]{128}$/i;
@@ -36,7 +45,7 @@ handle remainder => sub {
     my $chars = length $_;
     $chars *= 4;
  
-    my $text = "This is a $chars bit "+ +"cryptographic hash." 
+    my $text = "This is a $chars bit " . $criptohash{$chars} . "cryptographic hash." 
     
     my ($md5) = /^[0-9a-f]{32,128}$/i;
     if ($md5){
