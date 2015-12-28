@@ -106,9 +106,8 @@
 .zci--game2048 .game2048__area .game2048__message p{
     font-weight: bolder;
     font-size: xx-large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: 350px;
     height: 100%;
     padding: 0;
     text-shadow: 2px 2px 5px #B3B3B3;
