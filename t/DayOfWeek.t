@@ -54,8 +54,10 @@ ddg_goodie_test(
     'day of week tomorrow'  => test_zci( build_answer( 'Wednesday', '15 Jul 2015' ) ),
     'day of week yesterday' => test_zci( build_answer( 'Monday',    '13 Jul 2015' ) ),
 
-    'day of week' => undef,
-    'day of week' => undef,
+    'day of week'      => undef,
+    'day of the week'  => undef,
+    'what day was'     => undef,
+    'what day will'    => undef,
 );
 
 restore_time();
