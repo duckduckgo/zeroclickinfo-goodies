@@ -5,7 +5,7 @@ use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
-triggers start => 'sigfigs', 'sigdigs', 'sf', 'sd', 'significant';
+triggers any => 'sigfigs', 'sig figs', 'sf', 'significant';
 
 zci answer_type => "sig_figs";
 zci is_cached => 1;
@@ -31,15 +31,18 @@ sub get_sig_figs {
     return length $int_part;
 }
 
-handle remainder => sub {
+my $number_re = number_style_regex();
+
+handle query_raw => sub {
     my $query = $_;
-    $query =~ s/^(figures|digits)\s*//i;
-    $query =~ s/^of\s*//i;
+    $query =~ s/.*?(sf|sig(nificant)? ?(fig(ure)?|digit)s)[^,.\d]*+//i;
     return if $query eq '';
-    my $style = number_style_for($query);
+    $query =~ /^($number_re)\D*?$/ or return;
+    my $number_match = $1;
+    my $style = number_style_for($number_match);
     return unless $style;
-    my $formatted_input = $style->for_display($query);
-    my $to_compute = $style->for_computation($query);
+    my $formatted_input = $style->for_display($number_match);
+    my $to_compute = $style->for_computation($number_match);
     my $sigfigs = get_sig_figs $to_compute;
     return unless defined $sigfigs;
 
