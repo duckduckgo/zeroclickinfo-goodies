@@ -19,7 +19,8 @@ name 'Dessert';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Dessert.pm';
 category 'food';
 topics 'food_and_drink', 'special_interest';
-attribution github => ['https://github.com/kennydude', 'kennydude'];
+attribution github => ['https://github.com/kennydude', 'kennydude'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 source 'http://food.sulekha.com/dishes/course/desserts/alphabets/a.htm';
 
 triggers start => 'dessert', 'desserts', 'a dessert';
