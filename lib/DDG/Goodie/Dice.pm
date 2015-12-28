@@ -81,6 +81,7 @@ handle remainder_lc => sub {
     my @values = split(' and ', $_);
     my $values = @values; # size of @values;
     my $out = '';
+    my $diceroll;
     my @result;
    # my $html = '';
     my $heading = "Random Dice Roll";
@@ -100,6 +101,10 @@ handle remainder_lc => sub {
             $total += $sum; # track total of all rolls
             $out .= join(', ', @output); # . '<br/>';
             $out .= " = ". $sum;
+            $diceroll = join(' ', @output);
+            $diceroll .= " = ". $sum;
+            push @result, {roll => $diceroll, isdiceroll =>1};
+            
             #$html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
             #        .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
         }
@@ -140,7 +145,7 @@ handle remainder_lc => sub {
             }
             my $roll_output = shorthand_roll_output( \@rolls, $sum ); # initialize roll_output
             $out .= $roll_output; # add roll_output to our result
-            push @result, $roll_output;
+            push @result, {roll => $roll_output, isdiceroll =>0};
             #$html .= $roll_output; # add roll_output to our HTML result
             $total += $sum; # add the local sum to the total
         }else{
@@ -148,9 +153,11 @@ handle remainder_lc => sub {
             return;
         }
     }
+    my $ismulti;
     if($values > 1) {
         # display total sum if more than one value was specified
         $out .= 'Total: ' . $total;
+        $ismulti = 1;
         #$html .= 'Total: ' . $total;
     }
     $out =~ s/<br\/>$//g; # remove trailing newline
@@ -163,10 +170,12 @@ handle remainder_lc => sub {
             name => 'Answer',
             data => {
                 total => $total,
-                rools => \@result,
+                rolls => \@result,
+                ismulti => $ismulti,
             },
             templates => {
                 group => 'text',
+                item => 0,
                 options => {
                     content => 'DDH.dice.content'
                 }

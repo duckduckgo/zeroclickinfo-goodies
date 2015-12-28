@@ -1,0 +1,12 @@
+{{#each rolls}}
+    {{#if isdiceroll}}
+        <p class="zci--dice-die">{{roll}}</p>
+    {{else}}
+        <p>{{roll}}</p>
+    {{/if}}
+{{/each}}
+{{#if ismulti}}
+    <p>Total: {{total}}</p>
+{{/if}}
+
+
