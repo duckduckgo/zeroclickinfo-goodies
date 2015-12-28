@@ -25,15 +25,6 @@ source 'http://food.sulekha.com/dishes/course/desserts/alphabets/a.htm';
 
 triggers start => 'dessert', 'desserts', 'a dessert';
 
-# Returns HTML version of our dessert.
-#sub to_html {
-#    my $dessert_name = shift;
-#    my $dessert_link = $dessert_name;
-#    $dessert_link =~ s/\s/+/g;
-
-#    return "<a href='http://duckduckgo.com/?q=$dessert_link+recipe'>" . $dessert_name . "</a>";
-#}
-
 # This function picks a dessert from our lists.
 sub itemify {
     # This has our list of desserts.
@@ -45,7 +36,7 @@ sub itemify {
     my $dessert_link = $dessert;
     $dessert_link =~ s/\s/+/g;
     
-    return $dessert . $end, #html => to_html($dessert) . $end;
+    return $dessert . $end,
     structured_answer => {
         id => 'dessert',
         name => 'Answer',
