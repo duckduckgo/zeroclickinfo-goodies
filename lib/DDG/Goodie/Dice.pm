@@ -100,7 +100,7 @@ handle remainder_lc => sub {
             }
             $total += $sum; # track total of all rolls
             $out .= join(', ', @output); # . '<br/>';
-            $out .= " = ". $sum;
+            #$out .= " = ". $sum;
             $diceroll = join(' ', @output);
             $diceroll .= " = ". $sum;
             push @result, {roll => $diceroll, isdiceroll =>1};
