@@ -26,8 +26,7 @@ my $datestring_regex = datestring_regex();
 # Handle statement
 handle remainder => sub {
     my $remainder = $_;
-    return unless $remainder && 
-                  $remainder =~ qr/(?<date>$datestring_regex)/x;
+    return unless $remainder =~ qr/(?<date>$datestring_regex)/x;
     
     my $input_date   = parse_datestring_to_date($+{date});
     return unless $input_date;
