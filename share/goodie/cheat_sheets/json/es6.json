@@ -1,6 +1,6 @@
 {
     "id": "es6_cheat_sheet",
-    "name": "ES6 Cheat Sheet",
+    "name": "ES6+ Cheat Sheet",
     "description": "ECMAscript6 (Javascript 2015 specification) syntax and information. To eventually be merged with the JS cheatsheet.",
     "metadata": {
         "sourceName": "Mozilla Developer Network",
@@ -30,49 +30,50 @@
             "key": "let index = 0;"
         }],
         "Template Strings" : [{
-            "val": "Using backticks, a dollar sign and curly braces, strings can embed expressions and variables.",
+            "val": "Using the `${}` syntax, strings can embed expressions.",
             "key": "const name = 'yourName'; console.log(`Hello, my name is ${name}`);"
         }], 
 		"Modules": [{
-			"val": "The import statement is used to import functions, objects or primitives that have been exported from an external module. There are a number of ways to import but these are the most common types.",
+			"val": "To import functions, objects or primitives exported from an external module. The most common types of importing.",
 			"key": "import name from 'module-name'; OR import * as name from 'module-name'; OR import {foo, bar} from 'module-name';"
 		}, {
-			"val": "The export statement is used to export functions, objects or primitives from a given file or module.",
+			"val": "To export functions, objects or primitives from a given file or module.",
 			"key": "export { myFunction }; OR export const name = 'yourName'; OR export default myFunctionOrClass"
 		}],
         "Functions and classes": [{
             "val": "The class declaration creates a new class using prototype-based inheritance.",
             "key": "class name [extends] { }"
         }, {
-            "val": "Arrow function expression. Shorter syntax compared to function expressions and lexically binds the 'this' value. Arrow functions are anonymous. There are several ways of expressing arrow functions but these are some common forms.",
+            "val": "Arrow function expression. Shorter syntax & lexically binds the 'this' value. Arrow functions are anonymous.",
             "key": "singleParam => { statements } OR () => { statements } OR (param1, param2) => expression"
         }, {
-            "val": "function* declaration defines a generator function. Generators are functions which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances. See yield and yield* for more information.",
+            "val": "function* declaration defines a generator function. Generators are functions which can be exited and later re-entered. See yield and yield* for more info.",
             "key": "function* name(params) { statements }"
         }, {
-			"val": "The rest parameter syntax allows us to represent an indefinite number of arguments as an array.",
+			"val": "The rest parameter syntax to represent an indefinite number of arguments as an array.",
 			"key": "function(a, b, ...theArgs) { }"
 		}],
 		"Arrays": [{
-			"val": "The copyWithin() method copies the sequence of array elements within the array to the position starting at target.",
+			"val": "Copies the sequence of array elements within the array to the position starting at target.",
 			"key": "arr.copyWithin(target, start[, end = this.length])"
 		}, {
-			"val": "The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.",
+			"val": "Returns a new Array Iterator object that contains the key/value pairs for each index in the array.",
 			"key": "arr.entries()"
+
 		}, {
-			"val": "The find method executes the callback function once for each element in the array. If such an element is found, it immediately returns the value of that element. Otherwise, it returns undefined.",
+			"val": "Executes the callback function once for each element. If such element is found, it returns the value of that element. Otherwise, returns undefined.",
 			"key": "arr.find(callback[, thisArg])"
 		}, {
-			"val": "The fill() method fills all the elements of an array from a start index to an end index with a static value.",
+			"val": "Fills all the elements from a start index to an end index with a static value.",
 			"key": "arr.fill(value[, start = 0[, end = this.length]])"
 		}, {
-			"val": "The findIndex() method returns an index in the array, if an element in the array satisfies the provided testing function. Otherwise -1 is returned.",
+			"val": "Returns an index in the array, if an element satisfies the given testing function. Otherwise -1 is returned.",
 			"key": "arr.findIndex(callback[, thisArg])"
 		}, {
-			"val": "The keys() method returns a new Array Iterator that contains the keys for each index in the array.",
+			"val": "Returns a new Array Iterator that contains the keys for each index in the array.",
 			"key": "arr.keys()"
 		}, {
-			"val": "The values() method returns a new Array Iterator object that contains the values for each index in the array.",
+			"val": "Returns a new Array Iterator object that contains the values for each index in the array.",
 			"key": "arr.values()"
 		}],
 		"Proxies and Promises" : [{
@@ -85,7 +86,7 @@
 			"val": "The catch() method returns a Promise and deals with rejected cases only.",
 			"key": "p.catch(reason => rejection);"
 		}, {
-			"val": "The then() method returns a Promise. It takes two arguments: callback functions for the success and failure cases of the Promise.",
+			"val": "The then() method returns a Promise. It takes 2 arguments: callback for the success & failure cases.",
 			"key": "p.then(value => fulfillment, reason => rejection);"
 		}, {
 			"val": "The Promise.all(iterable) method returns a promise that resolves when all of the promises in the iterable argument have resolved, or rejects with the reason of the first passed promise that rejects.",
@@ -101,7 +102,7 @@
 			"val": "The super keyword is used to call functions on an object's parent. When used in a constructor, super appears alone and must be used before the this keyword can be used.",
 			"key": "super([arguments]); OR super.functionOnParent([arguments]);"
 		}, {
-			"val": "The new.target property lets you detect whether a function or constructor was called using the new operator. In constructors and functions, it returns a reference to the constructor or function. In normal function calls, new.target is undefined.",
+			"val": "The new.target property detects whether a function or constructor was called using the new operator.",
 			"key": "new.target"
 		}]
     }   
