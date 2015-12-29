@@ -24,6 +24,12 @@ attribution github => ['seanheaton','Sean Heaton'],
 zci answer_type => 'teredo';
 zci is_cached   => 1;
 
+# Params: server, port, client
+sub to_text {
+	return "Teredo Server IPv4: " . $_[0]->ip() . "\nNAT Public IPv4: " . $_[2]->ip()
+		. "\nClient Port: " . $_[1];
+}
+
 handle remainder => sub {
     my @output = ();
 
@@ -45,12 +51,6 @@ handle remainder => sub {
 	    return answer => to_text(@output), #html => to_html(@output);
     }
     return;
-
-    # Params: server, port, client
-    sub to_text {
-	    return "Teredo Server IPv4: " . $_[0]->ip() . "\nNAT Public IPv4: " . $_[2]->ip()
-		    . "\nClient Port: " . $_[1];
-    }
 
     # Params: server, port, client
     #sub to_html {
