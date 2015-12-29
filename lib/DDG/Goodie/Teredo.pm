@@ -38,22 +38,21 @@ handle remainder => sub {
 
     # Verify the query value is a valid Teredo IPv6 address
     if ((defined $ip) && ($ip->version() == 6) && (substr($ip->ip(),0,9) eq "2001:0000")) {
-	    my $binip = $ip->binip();
+        my $binip = $ip->binip();
 
-	    # bits 32 to 64 designate IPv4 address of the Teredo server used
-	    my $netip = new Net::IP (Net::IP::ip_bintoip((substr $binip, 32, 32),4));
+        # bits 32 to 64 designate IPv4 address of the Teredo server used
+        my $netip = new Net::IP (Net::IP::ip_bintoip((substr $binip, 32, 32),4));
         my $teredo = $netip->ip();
-	    push @output, $teredo;
+        push @output, $teredo;
 
-	    # negation of bits 80 to 96, converted to decimal, designate NAT port number
-	    my $port = (65535 - cnv((substr $binip, 80, 16),2,10));
-	    push @output, $port;
+        # negation of bits 80 to 96, converted to decimal, designate NAT port number
+        my $port = (65535 - cnv((substr $binip, 80, 16),2,10));
+        push @output, $port;
 
-	    # negation of bits 96 to 128 designate IPv4 address of NAT device
-	    $netip = new Net::IP (Net::IP::ip_bintoip(~(substr $binip, 96, 32),4));
+        # negation of bits 96 to 128 designate IPv4 address of NAT device
+        $netip = new Net::IP (Net::IP::ip_bintoip(~(substr $binip, 96, 32),4));
         my $nat = $netip->ip();
-	    push @output, $netip->ip();
-        
+        push @output, $netip->ip();
         
         my %output  =  ( 
             'Teredo Server IPv4:' => $teredo,
@@ -61,7 +60,7 @@ handle remainder => sub {
             'Client Port:' => $port,  
         );
                
-	    return to_text(@output),
+        return to_text(@output),
         structured_answer => {
             id => 'teredo',
             name => 'Answer',
