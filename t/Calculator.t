@@ -234,6 +234,8 @@ ddg_goodie_test(
     '3!!'          => undef, # This is technically the semi-factorial
     '(3!)!'        => build_test('720', '(3!)!'),
     '1001!'        => undef, # Limited it to this.
+    '30!'          => build_test('≈ 26,525,285,981,219,105,864 * 10^13', '30!'),
+    '28!'          => build_test('304,888,344,611,713,860,501,504,000,000', '28!'),
 
     '123.123.123.123/255.255.255.255' => undef,
     '83.166.167.160/27'               => undef,

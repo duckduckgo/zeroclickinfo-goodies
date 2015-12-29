@@ -1020,10 +1020,20 @@ sub format_number_for_display {
     return $style->for_display($number);
 }
 
+sub format_integer_for_display {
+    my ($style, $number) = @_;
+    my $result = '';
+    if ($number->value->length() > 30) {
+        $result .= '≈ ';
+        $number = $number->value->as_int->bround(20)->bsstr();
+    };
+    return $result . $style->for_display($number);
+}
+
 sub format_for_display {
     my ($style, $to_compute, $value, $currency) = @_;
     return format_currency_for_display $style, $value, $currency if defined $currency;
-    return format_number_for_display $style, $value if $value->is_integer();
+    return format_integer_for_display $style, $value if $value->is_integer();
     my $result;
     my $displayed_fraction;
     if (should_display_fraction($to_compute, $value)) {
