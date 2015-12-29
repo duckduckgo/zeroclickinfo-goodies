@@ -35,6 +35,7 @@ handle query_raw => sub {
     my $result = $action eq 'to'
         ? to_piglatin($to_translate)
         : from_piglatin($to_translate);
+    return if $result eq $to_translate;
 
     return $result, structured_answer => {
         id   => 'pig_latin',

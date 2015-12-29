@@ -53,6 +53,7 @@ ddg_goodie_test(
     'piglatin'             => undef,
     'what is piglatin?'    => undef,
     'what is in piglatin?' => undef,
+    'piglatin 0'           => undef,
 );
 
 done_testing;
