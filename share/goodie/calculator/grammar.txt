@@ -22,10 +22,10 @@ StaticTermOp ::= Factor ('!') bless => factorial_operator
 ExprOp ::= GenExprOp
 
 Factor ::=
-       ('(') Expression (')')  bless => paren assoc => group
-    || NumTerm                 bless => primary
-    || NumTerm ('e':i) NumTerm bless => exp
-    || Factor ('squared')      bless => square
+       ('(') Expression (')')   bless => paren assoc => group
+    || NumTerm                  bless => primary
+    || NumTerm ('e':i) NumTerm  bless => exp
+    || GenPostFixFactorModifier
 
 NumTerm ::=
        FactoredConstant bless => primary
