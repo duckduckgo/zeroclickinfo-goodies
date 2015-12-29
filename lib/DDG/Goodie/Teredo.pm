@@ -61,7 +61,7 @@ handle remainder => sub {
             'Client Port:' => $port,  
         );
                
-	    return to_text(@output), #html => to_html(@output);
+	    return to_text(@output),
         structured_answer => {
             id => 'teredo',
             name => 'Answer',
@@ -78,13 +78,6 @@ handle remainder => sub {
         };
     }
     return;
-
-    # Params: server, port, client
-    #sub to_html {
-	#return "<div><span class=\"teredo__label text--secondary\">Teredo Server IPv4: </span><span class=\"text--primary\">" . $_[0]->ip()
-	#. "</span></div><div><span class=\"teredo__label text--secondary\">NAT Public IPv4: </span><span class=\"text--primary\">" . $_[2]->ip()
-	#. "</span></div><div><span class=\"teredo__label text--secondary\">Client Port: </span><span class=\"text--primary\">" . $_[1] . "</span></div>";
-   #}
 };
 
 1;
