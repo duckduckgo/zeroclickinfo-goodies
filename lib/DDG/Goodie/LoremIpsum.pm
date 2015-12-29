@@ -1,45 +1,49 @@
 package DDG::Goodie::LoremIpsum;
-# ABSTRACT: Lorem Ipsum Generator
+# ABSTRACT: generates random latin
 
+use strict;
 use DDG::Goodie;
-use Text::Lorem;
-zci answer_type => "lorem_ipsum";
-zci is_cached   => 1;
+use utf8;
 
-triggers startend => "lorem ipsum", "lipsum";
-my $text = Text::Lorem->new();
+use Text::Lorem::More;
+use Lingua::EN::Numericalize;
 
-handle remainder => sub {
-    my $loop = 3;
-    $loop = $_ if $_ && $_ =~ /(^\d+$)/;
-    $loop = 10 if $loop > 10;
+triggers any => 'lorem ipsum', 'lipsum', 'latin';
 
-    my @lorem;
-    map { push (@lorem, $text->paragraphs(1).$text->paragraphs(1)) } (1..$loop);
+zci is_cached => 0;
+zci answer_type => 'lorem_ipsum';
 
-    my $plaintext = join " ", @lorem;
-    my $default = 1 if !$_;
-    my $plural = 1 if $loop > 1;
-       
-    return $plaintext,
-    structured_answer => {
-        id => 'lorem_ipsum',
+handle query_lc => sub {
+    my $query   = $_;
+    # Treat 'a' as 'one' for the purposes of amounts.
+    $query =~ s/line/sentence/g;
+    my $default = 0;
+    my $result = '';
+    my $amount = 0;
+    my $formatted_input;
+    if ($query =~ /^\s*l(orem )?ipsum\s*$/) {
+        $default = 1;
+        $result = Text::Lorem::More->paragraphs(4);
+    } else {
+        ($result, $formatted_input) = get_result_and_formatted($query) or return;
+    };
+
+    return $result, structured_answer => {
+        id   => 'lorem_ipsum',
         name => 'Answer',
         data => {
-            title => 'Lorem Ipsum',
-            is_default => $default,
-            is_plural => $plural,
-            lorem_array => \@lorem,
+            description => "$result",
+            is_default  => $default,
+            title       => ' ',
+            subtitle    => "$formatted_input",
         },
         meta => {
             sourceName => "Lipsum",
-            sourceUrl => "http://lipsum.com/"
+            sourceUrl  => "http://lipsum.com/"
         },
         templates => {
-            group => 'text',
-            options =>{
-                subtitle_content => 'DDH.lorem_ipsum.subtitle',
-                content => 'DDH.lorem_ipsum.content',
+            group => 'info',
+            options => {
                 moreAt => 1
             }
         }
