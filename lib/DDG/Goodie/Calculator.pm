@@ -308,59 +308,83 @@ sub contains_bad_result {
 }
 
 
-package DDG::Goodie::Calculator::Parser;
-# Contains the grammar and parsing actions used by the Calculator Goodie.
+
+
+package DDG::Goodie::Calculator::Parser::Grammar;
 
 BEGIN {
     require Exporter;
 
     our @ISA    = qw(Exporter);
-    our @EXPORT = qw(get_parse_results
-                     generate_grammar);
+    our @EXPORT = qw(new_sub_grammar);
 }
 
-use strict;
-use utf8;
+use Moose;
+use namespace::autoclean;
 
-use Marpa::R2;
-use Math::Cephes qw(exp floor ceil);
-use Math::Cephes qw(:hypers);
-use Math::Cephes qw(asin acos atan);
-use DDG::Goodie::Calculator::Result;
-use Moo;
+has spec => (
+    is => 'ro',
+    required => 1,
+    isa => 'CodeRef',
+);
+has name => (
+    is => 'ro',
+    required => 1,
+    isa => 'Str',
+);
+has terms => (
+    is => 'rw',
+    isa => sub { [] },
+);
+has bless_counter => (
+    is => 'ro',
+    default => 0,
+    isa => 'Int',
+);
 
-sub generate_sub_grammar_gen {
-    my ($grammar_name, $grammar_specf) = @_;
-    return sub {
-        my $definitions = shift;
-        my $str_grammar = "$grammar_name ::= \n";
-        my ($first_term, @terms) = keys $definitions;
-        my ($first_refer, $first_refer_def) = generate_alternate_forms($first_term, $definitions->{$first_term});
-        my @alternate_forms = ($first_refer_def) if defined $first_refer_def;
-        $str_grammar .= generate_grammar_line($grammar_specf->($first_refer), $first_term, 1);
-        foreach my $function_name (@terms) {
-            my ($refer, $refer_def) = generate_alternate_forms($function_name, $definitions->{$function_name});
-            push @alternate_forms, $refer_def if defined $refer_def;
-            $str_grammar .= generate_grammar_line($grammar_specf->($refer), $function_name, 0);
-        };
-        foreach my $alternate_form (@alternate_forms) {
-            $str_grammar .= "\n$alternate_form\n";
-        };
-        return $str_grammar;
+sub generate_sub_grammar {
+    my $self = shift;
+    my $str_grammar = $self->{name} . " ::= \n";
+    my ($first_term, @terms) = @{$self->terms()};
+    my ($first_refer, $first_refer_def) = generate_alternate_forms($first_term);
+    my @alternate_forms = ($first_refer_def) if defined $first_refer_def;
+    $str_grammar .= generate_grammar_line($self->{spec}->($first_refer), $first_term, 1);
+    foreach my $term (@terms) {
+        my ($refer, $refer_def) = generate_alternate_forms($term);
+        push @alternate_forms, $refer_def if defined $refer_def;
+        $str_grammar .= generate_grammar_line($self->{spec}->($refer), $term, 0);
     };
+    foreach my $alternate_form (@alternate_forms) {
+        $str_grammar .= "\n$alternate_form\n";
+    };
+    return $str_grammar;
 }
+sub add_term {
+    my ($self, $term) = @_;
+    $self->{bless_counter}++;
+    $term->{name} = ($self->name . $self->bless_counter)
+        unless defined $term->{name};
+    $term->{forms} = $term->{forms} // $term->{rep};
+    push @{$self->{terms}}, $term;
+}
+
+__PACKAGE__->meta->make_immutable;
 
 sub generate_grammar_line {
-    my ($rhs, $blessf, $is_first) = @_;
-    my $start = '    ' . ($is_first ? '  ' : '| ');
-    my $components = join ' ', @$rhs;
-    my $bless = " bless => $blessf";
-    return $start . $components . $bless . "\n";
+    my ($rhs, $term, $is_first) = @_;
+    my $result;
+    my $blessf = $term->{name};
+    $result .= '    ' . ($is_first ? '  ' : '| ');
+    $result .= join ' ', @$rhs;
+    $result .= " bless => $blessf";
+    $result .= ' assoc => ' . $term->{assoc} if defined $term->{assoc};
+    return "$result\n";
 }
 
 sub generate_alternate_forms {
-    my $name = shift;
-    my $forms = shift;
+    my $term = shift;
+    my $name = $term->{name};
+    my $forms = $term->{forms};
     my ($refer_to, $refer_definition);
     if (ref $forms eq 'ARRAY') {
         $refer_to = "<gen @{[$name =~ s/[^[:alnum:]]/ /gr]} forms>";
@@ -381,9 +405,30 @@ my %binary_function_grammar;
 
 *generate_word_constant_grammar = generate_sub_grammar_gen(
     "WordConstant", sub { ["($_[0]:i)"] });
+package DDG::Goodie::Calculator::Parser;
+# Contains the grammar and parsing actions used by the Calculator Goodie.
+
+BEGIN {
+    require Exporter;
+
+    our @ISA    = qw(Exporter);
+    our @EXPORT = qw(get_parse_results
+                     generate_grammar);
+}
+
+use strict;
+use utf8;
 
 *generate_symbol_constant_grammar = generate_sub_grammar_gen(
     "SymbolConstant", sub { ["($_[0]:i)"] });
+use Marpa::R2;
+use Math::Cephes qw(exp floor ceil);
+use Math::Cephes qw(:hypers);
+use Math::Cephes qw(asin acos atan);
+use DDG::Goodie::Calculator::Result;
+use DDG::Goodie::Calculator::Parser::Grammar;
+use Moo;
+
 
 *generate_binary_function_grammar = generate_sub_grammar_gen(
     "GenBinaryFunction", sub { ["($_[0])", "('(')", 'Expression',
