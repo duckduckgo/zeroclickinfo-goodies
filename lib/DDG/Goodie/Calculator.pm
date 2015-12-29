@@ -454,6 +454,15 @@ my $expression_operator_grammar = new_branch {
     spec => sub { ['Expression', "($_[0])", 'Expression'] }
 };
 
+my $term_operator_grammar = new_branch {
+    name => "GenTermOp",
+    spec => sub { ['Term', "($_[0])", 'Term'] }
+};
+
+my $factor_term_operator_grammar = new_branch({
+    name => "GenFactorTermOp",
+    spec => sub { ['Factor', "($_[0])", 'Term'] }
+});
 
 sub new_fraction { Math::BigRat->new(@_) };
 
@@ -756,19 +765,43 @@ new_unary_function {
 # new_binary_operator NAME, SYMBOL, ROUTINE
 sub new_binary_operator {
     my ($name, $operator, $sub) = @_;
-    binary_doit $name, $sub;
-    binary_show $name, sub { "$_[0] $operator $_[1]" };
+    new_binary $name, $sub, sub { "$_[0] $operator $_[1]" };
 }
+sub binary_operator_gen {
+    my $grammar_hash = shift;
+    my $shower = sub { my $operator = shift; return sub { "$_[0] $operator $_[1]" } };
+    return grammar_term_gen(\&new_binary, $grammar_hash, $shower);
+}
+sub new_expression_operator { binary_operator_gen($expression_operator_grammar)->(@_) }
+sub new_term_operator { binary_operator_gen($term_operator_grammar)->(@_) }
+sub new_factor_term_operator { binary_operator_gen($factor_term_operator_grammar)->(@_) }
 
-new_binary_operator 'subtract',     '-', sub { $_[0] - $_[1] };
-new_binary_operator 'add',          '+', sub { $_[0] + $_[1] };
-new_binary_operator 'multiply',     '*', sub { $_[0] * $_[1] };
-new_binary_operator 'divide',       '/', sub { $_[0] / $_[1] };
+new_expression_operator {
+    rep => '-',
+    action => sub { $_[0] - $_[1] },
+};
+new_expression_operator {
+    rep => '+',
+    action => sub { $_[0] + $_[1] },
+};
+new_term_operator {
+    rep => '*',
+    action => sub { $_[0] * $_[1] },
+};
+new_term_operator {
+    rep => '/',
+    forms => ['/', 'divided by'],
+    action => sub { $_[0] / $_[1] },
+};
 
 sub taint_when_long { taint_result_when(sub { length $_[0] > 10 }, @_) }
 
-new_binary_operator 'exponentiate', '^', taint_when_longer_than(10,
-    sub { $_[0] ** $_[1] });
+new_factor_term_operator {
+    rep => '^',
+    forms => ['^', 'to the power', 'to the power of'],
+    assoc => 'right',
+    action => taint_when_long(sub { $_[0] ** $_[1] }),
+};
 
 new_binary_misc {
     name => 'exp',

@@ -15,19 +15,11 @@ Term ::=
     || TermOp   bless => primary
     || Factor   bless => primary
 
-TermOp ::=
-       Factor (<to the power>) Term bless => exponentiate assoc => right
-    || Term   ('*')            Term bless => multiply
-    |  Term   (<divided by>)   Term bless => divide
-    |  Factor ('!')                 bless => factorial_operator
+TermOp ::= GenFactorTermOp | GenTermOp | StaticTermOp
 
-<to the power> ~ '^' | 'to the power':i | 'to the power of':i
+StaticTermOp ::= Factor ('!') bless => factorial_operator
 
-<divided by> ~ '/' | 'divided by':i
-
-ExprOp ::=
-      Expression ('+') Expression bless => add
-    | Expression ('-') Expression bless => subtract
+ExprOp ::= GenExprOp
 
 Factor ::=
        ('(') Expression (')')  bless => paren assoc => group
