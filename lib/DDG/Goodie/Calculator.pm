@@ -525,15 +525,21 @@ sub new_unary {
     unary_show $name, $show;
 }
 
-unary_doit 'paren', sub { $_[0] };
-unary_show 'paren', sub { '(' . $_[0] . ')' };
-unary_doit 'primary', sub { $_[0] };
-unary_show 'primary', sub { $_[0] };
 sub new_unary_misc {
     my $term = shift;
     unary_doit $term->{name}, $term->{doit};
     unary_show $term->{name}, $term->{show};
 }
+new_unary_misc {
+    name => 'paren',
+    doit => sub { $_[0] },
+    show => sub { "($_[0])" },
+};
+new_unary_misc {
+    name => 'primary',
+    doit => sub { $_[0] },
+    show => sub { $_[0] },
+};
 
 # Integers, decimals etc...
 sub new_base_value {
@@ -542,37 +548,46 @@ sub new_base_value {
     show $term->{name}, sub { "$_[0]->[0]->[2]" };
 }
 
-new_base_value 'integer', sub { pure(new_fraction($_[0])) };
-new_base_value 'decimal', sub { pure(new_fraction($_[0])) };
-unary_doit 'angle_degrees', sub {
-    $_[0]->make_degrees();
-    return $_[0];
-};
-unary_show 'angle_degrees', sub { "$_[0]°" };
+new_base_value { name => 'integer' };
+new_base_value { name => 'decimal' };
 
-doit 'prefix_currency', sub { $_[0]->[1]->doit() };
-show 'prefix_currency', sub {
-    my $self = shift;
-    # Things like $5.00, &pound.75
-    return $self->[0] . sprintf('%0.2f', $self->[1]->show());
+new_unary_misc {
+    name => 'angle_degrees',
+    doit => sub { $_[0]->make_degrees(); return $_[0]; },
+    show => sub { "$_[0]°" },
 };
 
-unary_doit 'square', taint_when_longer_than(10, sub { $_[0] * $_[0] });
-unary_show 'square', sub { "$_[0] squared" };
-binary_show 'exp', sub { "$_[0]e$_[1]" };
+new_base {
+    name => 'prefix_currency',
+    doit => sub { $_[0]->[1]->doit() },
+    show => sub {
+        my $self = shift;
+        # Things like $5.00, &pound.75
+        return $self->[0] . sprintf('%0.2f', $self->[1]->show());
+    },
+};
 
+new_unary_misc {
+    name => 'square',
+    doit => taint_when_long(sub { $_[0] * $_[0] }),
+    show => sub { "$_[0] squared" },
+};
 
-unary_doit 'Calculator', sub { $_[0] };
-unary_show 'Calculator', sub { $_[0] };
 sub new_binary_misc {
     my $term = shift;
     new_binary $term->{name}, $term->{doit}, $term->{show};
 }
 
-binary_doit 'factored_word_constant', sub { $_[0] * $_[1] };
-binary_show 'factored_word_constant', sub { "$_[0] $_[1]" };
-binary_doit 'factored_symbol_constant', sub { $_[0] * $_[1] };
-binary_show 'factored_symbol_constant', sub { "$_[0]$_[1]" };
+new_binary_misc {
+    name => 'factored_word_constant',
+    doit => sub { $_[0] * $_[1] },
+    show => sub { "$_[0] $_[1]" },
+};
+new_binary_misc {
+    name => 'factored_symbol_constant',
+    doit => sub { $_[0] * $_[1] },
+    show => sub { "$_[0]$_[1]" },
+};
 
 sub grammar_term_gen {
     my ($bsub, $grammar_hash, $show_sub_gen) = @_;
@@ -596,7 +611,11 @@ sub new_unary_function  { function_gen(
 sub new_binary_function { function_gen(
     \&new_binary, $binary_function_grammar)->(@_) };
 
-new_binary_function 'mod', 'mod', sub { $_[0] % $_[1] };
+new_binary_function {
+    rep    => 'mod',
+    forms  => ['mod'],
+    action => sub { $_[0] % $_[1] },
+};
 
 
 # Result should not be displayed as a fraction if result a long decimal.
@@ -604,48 +623,116 @@ sub new_unary_bounded {
     my $unary = shift;
     $unary->{action} = untaint_when(
         sub { length $_[0]->rounded(1e-15) < 15 },
-        taint_when_longer_than(10, $sub));
+        taint_when_long($unary->{action}));
+    new_unary_function $unary;
 }
 
-new_unary_bounded 'sine',      ['sin', 'sine'],
-    sub {$_[0]->rsin() };
-new_unary_bounded 'cosine',    ['cos', 'cosine'],
-    sub { $_[0]->rcos() };
-new_unary_bounded 'secant',    ['sec', 'secant'],
-    sub { pure(1) / $_[0]->rcos() };
-new_unary_bounded 'cosec',     ['csc', 'cosec', 'cosecant'],
-    sub { pure(1) / $_[0]->rsin() };
-new_unary_bounded 'cotangent', ['cotan', 'cot', 'cotangent'],
-    sub { $_[0]->rcos() / $_[0]->rsin() };
-new_unary_bounded 'tangent',   ['tan', 'tangent'],
-    sub { $_[0]->rsin() / $_[0]->rcos() };
-new_unary_bounded 'inv_sine', ['arcsin', 'asin'], sub { $_[0]->on_result(\&asin) };
-new_unary_bounded 'inv_cosine', ['arccos', 'acos'], sub { $_[0]->on_result(\&acos) };
-new_unary_bounded 'inv_tangent', ['arctan', 'atan'], sub { $_[0]->on_result(\&atan) };
+new_unary_bounded {
+    rep    => 'sin',
+    forms  => ['sin', 'sine'],
+    action => sub { $_[0]->rsin() },
+};
+new_unary_bounded {
+    rep    => 'cos',
+    forms  => ['cos', 'cosine'],
+    action => sub { $_[0]->rcos() },
+};
+new_unary_bounded {
+    rep    => 'sec',
+    forms  => ['sec', 'secant'],
+    action => sub { pure(1) / $_[0]->rcos() },
+};
+new_unary_bounded {
+    rep    => 'csc',
+    forms  => ['csc', 'cosec', 'cosecant'],
+    action => sub { pure(1) / $_[0]->rsin() },
+};
+new_unary_bounded {
+    rep    => 'cotan',
+    forms  => ['cotan', 'cot', 'cotangent'],
+    action => sub { $_[0]->rcos() / $_[0]->rsin() },
+};
+new_unary_bounded {
+    rep    => 'tan',
+    forms  => ['tan', 'tangent'],
+    action => sub { $_[0]->rsin() / $_[0]->rcos() },
+};
+sub on_result { my $f = shift; return sub { $_[0]->on_result($f) } }
 
-new_unary_function 'floor', 'floor', sub { $_[0]->on_result(\&floor) };
-new_unary_function 'ceil', ['ceil', 'ceiling'], sub { $_[0]->on_result(\&ceil) };
+new_unary_bounded {
+    forms  => ['arcsin', 'asin'],
+    action => on_result(\&asin),
+    rep    => 'arcsin',
+};
+new_unary_bounded {
+    forms  => ['arccos', 'acos'],
+    rep    => 'arccos',
+    action => on_result(\&acos),
+};
+new_unary_bounded {
+    forms  => ['arctan', 'atan'],
+    action => on_result(\&atan),
+    rep    => 'arctan',
+};
+
+new_unary_function {
+    rep    => 'floor',
+    action => on_result(\&floor),
+};
+new_unary_function {
+    rep    => 'ceil',
+    forms  => ['ceil', 'ceiling'],
+    action => on_result(\&ceil),
+};
+
 
 # Hyperbolic functions
-new_unary_bounded 'hyp_sine', 'sinh', sub { $_[0]->on_result(\&sinh) };
-new_unary_bounded 'hyp_cosine', 'cosh', sub { $_[0]->on_result(\&cosh) };
-new_unary_bounded 'hyp_tangent', 'tanh', sub { $_[0]->on_result(\&tanh) };
-new_unary_bounded 'inv_hyp_tangent', ['artanh', 'atanh'],
-    sub { $_[0]->on_result(\&atanh) };
-new_unary_bounded 'inv_hyp_cosine', ['arcosh', 'acosh'],
-    sub { $_[0]->on_result(\&acosh) };
-new_unary_bounded 'inv_hyp_sine', ['arsinh', 'asinh'],
-    sub { $_[0]->on_result(\&asinh) };
+new_unary_bounded {
+    rep    => 'sinh',
+    action => on_result(\&sinh),
+};
+new_unary_bounded {
+    rep    => 'cosh',
+    action => on_result(\&cosh),
+};
+new_unary_bounded {
+    rep    => 'tanh',
+    action => on_result(\&tanh),
+};
+new_unary_bounded {
+    rep    => 'artanh',
+    forms  => ['artanh', 'atanh'],
+    action => on_result(\&atanh),
+};
+new_unary_bounded {
+    forms  => ['arcosh', 'acosh'],
+    rep    => 'arcosh',
+    action => on_result(\&acosh),
+};
+new_unary_bounded {
+    forms  => ['arsinh', 'asinh'],
+    rep    => 'arsinh',
+    action => on_result(\&asinh),
+};
 
 # Log functions
-new_unary_function 'natural_logarithm', ['ln', 'log'],
-    taint_when_longer_than(10, sub { log $_[0] });
-binary_doit 'logarithm', taint_when_longer_than(10,
-    sub { (log $_[1]) / (log $_[0]) });
-binary_show 'logarithm', sub { "log$_[0]($_[1])" };
+new_unary_function {
+    forms  => ['ln', 'log'],
+    rep    => 'ln',
+    action => taint_when_long(sub { log $_[0] }),
+};
+
+new_binary_misc {
+    name => 'logarithm',
+    doit => taint_when_long(sub { (log $_[1]) / (log $_[0]) }),
+    show => sub { "log$_[0]($_[1])" },
+};
 
 # Misc functions
-new_unary_bounded 'square_root', 'sqrt', sub { sqrt $_[0] };
+new_unary_bounded {
+    rep    => 'sqrt',
+    action => sub { sqrt $_[0] },
+};
 
 sub calculate_factorial {
     return if $_[0] > pure(1000); # Much larger than this and I start
@@ -653,9 +740,15 @@ sub calculate_factorial {
     return $_[0]->on_result(sub { $_[0]->bfac() });
 }
 
-new_unary_function 'factorial', ['factorial', 'fact'], \&calculate_factorial;
-new_unary_function 'exponential', 'exp', taint_result_unless(
-    sub { $_[0] =~ /^\d+$/ }, \&exp );
+new_unary_function {
+    rep    => 'factorial',
+    forms  => ['factorial', 'fact'],
+    action => \&calculate_factorial,
+};
+new_unary_function {
+    rep    => 'exp',
+    action => taint_result_unless(sub { $_[0] =~ /^\d+$/ }, \&exp ),
+};
 
 
 # OPERATORS
@@ -677,10 +770,17 @@ sub taint_when_long { taint_result_when(sub { length $_[0] > 10 }, @_) }
 new_binary_operator 'exponentiate', '^', taint_when_longer_than(10,
     sub { $_[0] ** $_[1] });
 
-binary_doit 'exp', sub { $_[0] * pure(10) ** $_[1] };
+new_binary_misc {
+    name => 'exp',
+    doit => sub { $_[0] * pure(10) ** $_[1] },
+    show => sub { "$_[0]e$_[1]" },
+};
 
-unary_doit 'factorial_operator', \&calculate_factorial;
-unary_show 'factorial_operator', sub { $_[0] . '!' };
+new_unary_misc {
+    name => 'factorial_operator',
+    doit => \&calculate_factorial,
+    show => sub { "$_[0]!" },
+};
 
 sub new_constant {
     my ($constant, $grammar_ref) = @_;
@@ -705,10 +805,23 @@ my $big_e =  Math::BigRat->new(1)->bexp();
 sub irrational { new_tainted(@_) };
 
 # Constants go here.
-new_symbol_constant 'pi',    irrational($big_pi), 'pi', 'π';
-new_word_constant 'dozen', pure(12);
-new_symbol_constant 'euler', irrational($big_e),  'e';
-new_word_constant 'score', pure(20);
+new_symbol_constant {
+    forms => 'pi',
+    rep => 'π',
+    value => irrational($big_pi),
+};
+new_word_constant {
+    rep => 'dozen',
+    value => pure(12),
+};
+new_symbol_constant {
+    rep => 'e',
+    value => irrational($big_e),
+};
+new_word_constant {
+    rep => 'score',
+    value => pure(20),
+};
 
 sub generate_grammar {
     my $initial_grammar_text = shift;
