@@ -18,7 +18,8 @@ topics 'sysadmin';
 category 'transformations';
 attribution github => ['seanheaton','Sean Heaton'],
             twitter => ['seanograph','Sean Heaton'],
-            email => ['seanoftime@gmail.com','seanoftime@gmail.com'];
+            email => ['seanoftime@gmail.com','seanoftime@gmail.com'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 zci answer_type => 'teredo';
 zci is_cached   => 1;
