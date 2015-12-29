@@ -8,7 +8,7 @@
     },
     "aliases": ["c++ strings"],
     "template_type": "code",
-    "section_order": ["Constructors", "Element Access", "Size"],
+    "section_order": ["Constructors", "Capacity", "Element Access", "Modifiers", "String operations"],
     "sections": {
         "Constructors": [{
             "key": "std::string str (\"Another character sequence\");",
