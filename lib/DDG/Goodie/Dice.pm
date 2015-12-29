@@ -105,7 +105,7 @@ handle remainder_lc => sub {
             if ($values > 1) {
                 $diceroll .= " = ". $sum;
             }    
-            push @result, $diceroll;#{roll => $diceroll, isdiceroll =>1};
+            push @result, $diceroll;
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
             # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'
@@ -144,7 +144,7 @@ handle remainder_lc => sub {
             }
             my $roll_output = shorthand_roll_output( \@rolls, $sum, $values ); # initialize roll_output
             $out .= $roll_output; # add roll_output to our result
-            push @result, $roll_output;#{roll => $roll_output, isdiceroll =>0};
+            push @result, $roll_output;
             $total += $sum; # add the local sum to the total
         }else{
             # an element of @value was not valid
