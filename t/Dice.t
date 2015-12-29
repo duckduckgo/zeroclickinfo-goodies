@@ -24,10 +24,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -39,10 +35,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -54,10 +46,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -72,27 +60,19 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
 
     # Simple shorthand query
     "roll 2d6" => test_zci(
-        qr/^\d (\+|-) \d = \d+$/,
+        qr/^\d (\+|-) \d$/,
         structured_answer => {
             id => 'dice',
             name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -104,10 +84,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -119,57 +95,41 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
 
     # Simple shorthand queries with +-
     "roll 3d12 + 4" => test_zci(
-        qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} = \d{1,2}$/,
+        qr/^\d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2} (\+|-) \d{1,2}$/,
         structured_answer => {
             id => 'dice',
             name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
     "roll 3d8 - 8" => test_zci(
-        qr/^\d (\+|-) \d (\+|-) \d (\+|-) \d = -?\d+$/,
+        qr/^\d (\+|-) \d (\+|-) \d (\+|-) \d$/,
         structured_answer => {
             id => 'dice',
             name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
     "roll 4d6-l" => test_zci(
-        qr/^([1-6] \+ ){3}[1-6] - [1-6] = \d{1,2}$/,
+        qr/^([1-6] \+ ){3}[1-6] - [1-6]$/,
         structured_answer => {
             id => 'dice',
             name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -183,10 +143,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -200,10 +156,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -217,10 +169,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -232,10 +180,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -247,10 +191,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -262,10 +202,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -277,10 +213,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -292,10 +224,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -321,26 +249,18 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
 
     'roll 3d12' => test_zci(
-        qr/\d{1,2} \+ \d{1,2} \+ \d{1,2} = \d+/,
+        qr/\d{1,2} \+ \d{1,2} \+ \d{1,2}/,
         structured_answer => {
             id => 'dice',
             name => 'Answer',
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -352,10 +272,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),
@@ -367,10 +283,6 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        }
     ),

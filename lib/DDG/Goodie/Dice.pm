@@ -67,7 +67,9 @@ sub shorthand_roll_output {
     if (@rolls > 1) { # if( sizeOf(rolls) > 1)
         $out = join(' + ', @rolls); # append current roll to output
         $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
-        $out .= " = $sum"; # append sum of rolls to output
+        if ($_[2] > 1) {
+            $out .= " = $sum"; # append sum of rolls to output
+        }    
     } else {
         $out = $sum; # output is roll value if we have just one roll
     }
@@ -83,7 +85,6 @@ handle remainder_lc => sub {
     my $out = '';
     my $diceroll;
     my @result;
-   # my $html = '';
     my $heading = "Random Dice Roll";
     my $total; # total of all dice rolls
     foreach (@values) {
@@ -101,8 +102,10 @@ handle remainder_lc => sub {
             $total += $sum; # track total of all rolls
             $out .= join(', ', @output);
             $diceroll = join(' ', @output);
-            $diceroll .= " = ". $sum;
-            push @result, {roll => $diceroll, isdiceroll =>1};
+            if ($values > 1) {
+                $diceroll .= " = ". $sum;
+            }    
+            push @result, $diceroll;#{roll => $diceroll, isdiceroll =>1};
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
             # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'
@@ -139,9 +142,9 @@ handle remainder_lc => sub {
             for (@rolls) {
                 $sum += $_; # track sum
             }
-            my $roll_output = shorthand_roll_output( \@rolls, $sum ); # initialize roll_output
+            my $roll_output = shorthand_roll_output( \@rolls, $sum, $values ); # initialize roll_output
             $out .= $roll_output; # add roll_output to our result
-            push @result, {roll => $roll_output, isdiceroll =>0};
+            push @result, $roll_output;#{roll => $roll_output, isdiceroll =>0};
             $total += $sum; # add the local sum to the total
         }else{
             # an element of @value was not valid
@@ -163,16 +166,11 @@ handle remainder_lc => sub {
             id => 'dice',
             name => 'Answer',
             data => {
-                total => $total,
-                rolls => \@result,
-                ismulti => $ismulti,
+                title => $total,
+                subtitle => \@result,
             },
             templates => {
                 group => 'text',
-                item => 0,
-                options => {
-                    content => 'DDH.dice.content'
-                }
             }
        };
     }
