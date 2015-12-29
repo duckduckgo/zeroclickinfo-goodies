@@ -61,6 +61,15 @@ sub get_result_and_formatted {
     return ($result, $formatted_input);
 }
 
+sub build_infobox_element {
+    my $query = shift;
+    my @split = split ' ', $query;
+    return {
+        label => $query,
+        url   => 'https://duckduckgo.com/?q=' . (join '+', @split) . '&ia=answer',
+    };
+}
+
 handle query_lc => sub {
     my $query   = $_;
     # Treat 'a' as 'one' for the purposes of amounts.
@@ -84,6 +93,12 @@ handle query_lc => sub {
             is_default  => $default,
             title       => ' ',
             subtitle    => "$formatted_input",
+            infoboxData => [
+                { heading => "Example Queries", },
+                build_infobox_element('5 sentences of lorem ipsum'),
+                build_infobox_element('20 words of random latin'),
+                build_infobox_element('5 paragraphs of lorem ipsum'),
+            ],
         },
         meta => {
             sourceName => "Lipsum",
