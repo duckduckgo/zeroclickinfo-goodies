@@ -13,7 +13,7 @@ zci is_cached   => 1;
 handle query_raw => sub {
     my $query = shift;
     $query =~ s/\s*(?<action>to|from|in)\s*pig ?latin\s*$//i;
-    $query =~ s/^\s*(?<action>to|from|in)?+\s*pig ?latin\s*//i unless $+{'action'};
+    $+{'action'} // ($query =~ s/^\s*(?<action>to|from|in)?+\s*pig ?latin\s*//i or return);
     return unless $query;
     my $action = lc ($+{'action'} // 'to');
     $action = 'to' if $action eq 'in';

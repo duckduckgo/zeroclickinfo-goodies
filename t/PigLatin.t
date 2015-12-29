@@ -28,16 +28,19 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 
 ddg_goodie_test(
     [qw( DDG::Goodie::PigLatin )],
-    'pig latin will this work?'   => build_test('illway isthay orkway?', 'to', 'will this work?'),
-    'piglatin i love duckduckgo'  => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
-    'pig latin i love duckduckgo' => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
-    'What is this? in piglatin'   => build_test('Atwhay isway isthay?', 'to', 'What is this?'),
-    'in piglatin foo'             => build_test('oofay', 'to', 'foo'),
-    'from pigLatiN oofay'         => build_test('foo', 'from', 'oofay'),
-    'piglatin in piglatin'        => build_test('iglatinpay', 'to', 'piglatin'),
-    'iglatinpay from piglatin'    => build_test('piglatin', 'from', 'iglatinpay'),
-    'pig latin'                   => undef,
-    'piglatin'                    => undef,
+    'pig latin will this work?'       => build_test('illway isthay orkway?', 'to', 'will this work?'),
+    'piglatin i love duckduckgo'      => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
+    'pig latin i love duckduckgo'     => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
+    'What is this? in piglatin'       => build_test('Atwhay isway isthay?', 'to', 'What is this?'),
+    'in piglatin foo'                 => build_test('oofay', 'to', 'foo'),
+    'from pigLatiN oofay'             => build_test('foo', 'from', 'oofay'),
+    'piglatin in piglatin'            => build_test('iglatinpay', 'to', 'piglatin'),
+    'iglatinpay from piglatin'        => build_test('piglatin', 'from', 'iglatinpay'),
+    'pig latin'                       => undef,
+    'piglatin'                        => undef,
+    'what is piglatin?'               => undef,
+    'from piglatin in piglatin'       => build_test('romfay iglatinpay', 'to', 'from piglatin'),
+    'romfay iglatinpay from piglatin' => build_test('from piglatin', 'from', 'romfay iglatinpay'),
 );
 
 done_testing;
