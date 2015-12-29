@@ -62,6 +62,7 @@ sub taint {
 
 sub untaint {
     my $self = shift;
+    $self->{'value'} = to_rat($self->{'value'});
     $self->{'tainted'} = 0;
 }
 
@@ -831,7 +832,7 @@ sub new_word_constant {
     new_constant $constant, $word_constant_grammar;
 }
 
-my $big_pi = Math::BigRat->new(Math::BigFloat->bpi());
+my $big_pi = Math::BigRat->new()->bpi();
 my $big_e =  Math::BigRat->new(1)->bexp();
 
 # If any constants cannot be displayed as a fraction, wrap them with this

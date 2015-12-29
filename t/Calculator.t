@@ -192,6 +192,7 @@ ddg_goodie_test(
     # Misc functions
     'sqrt(4)'                => build_test('2', 'sqrt(4)'),
     'sqrt(2)'                => build_test('≈ 1.414213562373', 'sqrt(2)'),
+    'sqrt(pi)'               => build_test('≈ 1.772453850906', 'sqrt(π)'),
     'sqrt(3 pi / 4 + 1) + 1' => build_test('≈ 2.831991945996', 'sqrt(3π / 4 + 1) + 1'),
     'floor(7.99)'            => build_test('7', 'floor(7.99)'),
     'floor(12)'              => build_test('12', 'floor(12)'),
