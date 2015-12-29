@@ -42,7 +42,7 @@ handle remainder => sub {
 
 	# negation of bits 96 to 128 designate IPv4 address of NAT device
 	push @output, (new Net::IP (Net::IP::ip_bintoip(~(substr $binip, 96, 32),4)));
-	return answer => to_text(@output), html => to_html(@output);
+	return answer => to_text(@output), #html => to_html(@output);
     }
     return;
 
@@ -53,11 +53,11 @@ handle remainder => sub {
     }
 
     # Params: server, port, client
-    sub to_html {
-	return "<div><span class=\"teredo__label text--secondary\">Teredo Server IPv4: </span><span class=\"text--primary\">" . $_[0]->ip()
-	. "</span></div><div><span class=\"teredo__label text--secondary\">NAT Public IPv4: </span><span class=\"text--primary\">" . $_[2]->ip()
-	. "</span></div><div><span class=\"teredo__label text--secondary\">Client Port: </span><span class=\"text--primary\">" . $_[1] . "</span></div>";
-    }
+    #sub to_html {
+	#return "<div><span class=\"teredo__label text--secondary\">Teredo Server IPv4: </span><span class=\"text--primary\">" . $_[0]->ip()
+	#. "</span></div><div><span class=\"teredo__label text--secondary\">NAT Public IPv4: </span><span class=\"text--primary\">" . $_[2]->ip()
+	#. "</span></div><div><span class=\"teredo__label text--secondary\">Client Port: </span><span class=\"text--primary\">" . $_[1] . "</span></div>";
+   #}
 };
 
 1;
