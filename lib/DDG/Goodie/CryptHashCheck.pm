@@ -29,6 +29,8 @@ my %cryptohash = (
     512 => "SHA-2/SHA-3"
 );
 
+my $wiki = "https://en.wikipedia.org/wiki/";
+
 # Remainder function with links to the Wikipedia resources.
 handle remainder => sub {
 
@@ -39,16 +41,11 @@ handle remainder => sub {
  
     my $text = "This is a $chars bit " . $cryptohash{$chars} . " cryptographic hash."; 
     
-    my $wiki = "https://en.wikipedia.org/wiki/";
-    
-    my @moretext;
+    my $moretext;
     my $linkname = $cryptohash{$chars}; 
     
     if ($cryptohash{$chars} eq "SHA-2/SHA-3") {
-        @moretext = {
-            text => "SHA-3",
-            href => $wiki . "SHA-3" 
-        };
+        $moretext = [{ text => "SHA-3", href => $wiki . "SHA-3" }];
         $linkname = "SHA-2";
     }
     
@@ -67,7 +64,7 @@ handle remainder => sub {
             group => 'text',
             options => {
                 moreAt => 1,
-                moreText => \@moretext
+                moreText => $moretext
             }
         }
     };

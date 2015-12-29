@@ -28,7 +28,7 @@ ddg_goodie_test(
                 group => 'text',
                 options => {
                     moreAt => 1,
-                    moreText => []
+                    moreText => undef
                 }
             }
         }    
@@ -75,7 +75,7 @@ ddg_goodie_test(
                 group => 'text',
                 options => {
                     moreAt => 1,
-                    moreText => []
+                    moreText => undef
                 }
             }
         }                
@@ -148,7 +148,7 @@ ddg_goodie_test(
                 group => 'text',
                 options => {
                     moreAt => 1,
-                    moreText => []
+                    moreText => undef
                 }
             }
         }       
