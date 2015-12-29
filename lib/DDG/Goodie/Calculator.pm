@@ -342,6 +342,11 @@ has bless_counter => (
     default => 0,
     isa => 'Int',
 );
+has ignore_case => (
+    is => 'ro',
+    default => 0,
+    isa => 'Bool',
+);
 
 sub generate_sub_grammar {
     my $self = shift;
@@ -363,9 +368,9 @@ sub generate_sub_grammar {
 sub add_term {
     my ($self, $term) = @_;
     $self->{bless_counter}++;
-    $term->{name} = ($self->name . $self->bless_counter)
-        unless defined $term->{name};
-    $term->{forms} = $term->{forms} // $term->{rep};
+    $term->{name} //= ($self->name . $self->bless_counter);
+    $term->{forms} //= [$term->{rep}];
+    $term->{ignore_case} //= $self->ignore_case;
     push @{$self->{terms}}, $term;
 }
 
@@ -389,7 +394,8 @@ sub generate_alternate_forms {
     my ($refer_to, $refer_definition);
     if (ref $forms eq 'ARRAY') {
         $refer_to = "<gen @{[$name =~ s/[^[:alnum:]]/ /gr]} forms>";
-        $refer_definition = $refer_to . ' ~ ' . join(' | ', map { "'$_'" } @$forms);
+        $refer_definition = $refer_to . ' ~ ' . join(' | ',
+            map { $term->{ignore_case} ? "'$_':i" : "'$_'" } @$forms);
     } else {
         $refer_to = "'$forms'";
     };
@@ -433,13 +439,15 @@ my $unary_function_grammar = new_branch {
 };
 
 my $word_constant_grammar = new_branch {
-    name => "WordConstant",
-    spec => sub { ["($_[0]:i)"] },
+    name        => "WordConstant",
+    spec        => sub { ["($_[0])"] },
+    ignore_case => 1,
 };
 
 my $symbol_constant_grammar = new_branch {
-    name => "SymbolConstant",
-    spec => sub { ["($_[0]:i)"] }
+    name        => "SymbolConstant",
+    spec        => sub { ["($_[0])"] },
+    ignore_case => 1,
 };
 
 my $binary_function_grammar = new_branch {
@@ -448,6 +456,12 @@ my $binary_function_grammar = new_branch {
         [ "($_[0])", "('(')", 'Expression',
           "(';')", 'Expression', "(')')",
         ] }
+};
+
+my $postfix_fmodifier_grammar = new_branch {
+    name        => "GenPostFixFactorModifier",
+    spec        => sub { [ 'Factor', "($_[0])" ] },
+    ignore_case => 1,
 };
 
 my $expression_operator_grammar = new_branch {
@@ -577,10 +591,19 @@ new_base {
     },
 };
 
-new_unary_misc {
-    name => 'square',
-    doit => taint_when_long(sub { $_[0] * $_[0] }),
-    show => sub { "$_[0] squared" },
+sub new_postfix_fmodifier {
+    my $term = shift;
+    $postfix_fmodifier_grammar->add_term($term);
+    new_unary_misc {
+        name => $term->{name},
+        doit => $term->{action},
+        show => sub { "$_[0] " . $term->{rep} },
+    };
+}
+
+new_postfix_fmodifier {
+    rep    => 'squared',
+    action => taint_when_long(sub { $_[0] * $_[0] }),
 };
 
 sub new_binary_misc {
