@@ -75,7 +75,7 @@
         "val": "Default split pattern for String#split, nil by default"
       },
       {
-        "key": "$",
+        "key": "$.",
         "val": "Current input line number of the last file that was read"
       },
       {
