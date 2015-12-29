@@ -395,16 +395,9 @@ sub generate_alternate_forms {
     return ($refer_to, $refer_definition);
 }
 
-my %unary_function_grammar;
-my %word_constant_grammar;
-my %symbol_constant_grammar;
-my %binary_function_grammar;
+sub new_sub_grammar { DDG::Goodie::Calculator::Parser::Grammar->new(@_) };
 
-*generate_unary_function_grammar = generate_sub_grammar_gen(
-    "GenUnaryFunction", sub { ["($_[0])", 'Argument'] });
 
-*generate_word_constant_grammar = generate_sub_grammar_gen(
-    "WordConstant", sub { ["($_[0]:i)"] });
 package DDG::Goodie::Calculator::Parser;
 # Contains the grammar and parsing actions used by the Calculator Goodie.
 
@@ -419,8 +412,6 @@ BEGIN {
 use strict;
 use utf8;
 
-*generate_symbol_constant_grammar = generate_sub_grammar_gen(
-    "SymbolConstant", sub { ["($_[0]:i)"] });
 use Marpa::R2;
 use Math::Cephes qw(exp floor ceil);
 use Math::Cephes qw(:hypers);
@@ -429,11 +420,40 @@ use DDG::Goodie::Calculator::Result;
 use DDG::Goodie::Calculator::Parser::Grammar;
 use Moo;
 
+my @grammars;
+sub new_branch {
+    my $new_grammar = new_sub_grammar @_;
+    push @grammars, $new_grammar;
+    return $new_grammar;
+}
+my $unary_function_grammar = new_branch {
+    name => "GenUnaryFunction",
+    spec => sub { ["($_[0])", 'Argument'] },
+};
 
-*generate_binary_function_grammar = generate_sub_grammar_gen(
-    "GenBinaryFunction", sub { ["($_[0])", "('(')", 'Expression',
-                                "(';')", 'Expression', "(')')"
-                            ] });
+my $word_constant_grammar = new_branch {
+    name => "WordConstant",
+    spec => sub { ["($_[0]:i)"] },
+};
+
+my $symbol_constant_grammar = new_branch {
+    name => "SymbolConstant",
+    spec => sub { ["($_[0]:i)"] }
+};
+
+my $binary_function_grammar = new_branch {
+    name => "GenBinaryFunction",
+    spec => sub {
+        [ "($_[0])", "('(')", 'Expression',
+          "(';')", 'Expression', "(')')",
+        ] }
+};
+
+my $expression_operator_grammar = new_branch {
+    name => "GenExprOp",
+    spec => sub { ['Expression', "($_[0])", 'Expression'] }
+};
+
 
 sub new_fraction { Math::BigRat->new(@_) };
 
@@ -693,21 +713,8 @@ new_word_constant 'score', pure(20);
 
 sub generate_grammar {
     my $initial_grammar_text = shift;
-    my $generated_unary_function_grammar =
-        generate_unary_function_grammar(\%unary_function_grammar);
-    my $generated_word_constant_grammar =
-        generate_word_constant_grammar(\%word_constant_grammar);
-    my $generated_symbol_constant_grammar =
-        generate_symbol_constant_grammar(\%symbol_constant_grammar);
-    my $generated_binary_function_grammar =
-        generate_binary_function_grammar(\%binary_function_grammar);
-    my $grammar_text = join "\n",
-        ($initial_grammar_text,
-         $generated_unary_function_grammar,
-         $generated_word_constant_grammar,
-         $generated_symbol_constant_grammar,
-         $generated_binary_function_grammar,
-        );
+    my @generated_grammars = map { $_->generate_sub_grammar() } @grammars;
+    my $grammar_text = join "\n", ($initial_grammar_text, @generated_grammars);
     my $grammar = Marpa::R2::Scanless::G->new(
         {   bless_package => 'DDG::Goodie::Calculator::Parser',
             source        => \$grammar_text,
