@@ -471,6 +471,11 @@ sub show {
     no strict 'refs';
     *$full_name = *{uc $full_name} = $sub;
 }
+sub new_base {
+    my $term = shift;
+    doit $term->{name}, $term->{doit};
+    show $term->{name}, $term->{show};
+}
 
 # Usage: binary_doit NAME, SUB
 # SUB should take 2 arguments and return the result of the action.
@@ -483,12 +488,18 @@ sub binary_doit {
     };
 }
 
+
 sub binary_show {
     my ($name, $sub) = @_;
     show $name, sub {
         my $self = shift;
         return $sub->($self->[0]->show(), $self->[1]->show());
     };
+}
+sub new_binary {
+    my ($name, $doit, $show) = @_;
+    binary_doit $name, $doit;
+    binary_show $name, $show;
 }
 
 sub unary_doit {
@@ -508,20 +519,27 @@ sub unary_show {
         return $sub->($self->[0]->show());
     };
 }
+sub new_unary {
+    my ($name, $doit, $show) = @_;
+    unary_doit $name, $doit;
+    unary_show $name, $show;
+}
 
 unary_doit 'paren', sub { $_[0] };
 unary_show 'paren', sub { '(' . $_[0] . ')' };
 unary_doit 'primary', sub { $_[0] };
 unary_show 'primary', sub { $_[0] };
+sub new_unary_misc {
+    my $term = shift;
+    unary_doit $term->{name}, $term->{doit};
+    unary_show $term->{name}, $term->{show};
+}
 
 # Integers, decimals etc...
 sub new_base_value {
-    my ($name, $val_sub, $show) = @_;
-    doit $name, sub { $val_sub->($_[0]->[0]->[2]) };
-    my $showf = defined $show
-        ? sub { $show->($_[0]->[0]->[2]) }
-        : sub {        "$_[0]->[0]->[2]" };
-    show $name, $showf;
+    my $term = shift;
+    doit $term->{name}, sub { pure(new_fraction($_[0]->[0]->[2])) };
+    show $term->{name}, sub { "$_[0]->[0]->[2]" };
 }
 
 new_base_value 'integer', sub { pure(new_fraction($_[0])) };
@@ -546,51 +564,45 @@ binary_show 'exp', sub { "$_[0]e$_[1]" };
 
 unary_doit 'Calculator', sub { $_[0] };
 unary_show 'Calculator', sub { $_[0] };
+sub new_binary_misc {
+    my $term = shift;
+    new_binary $term->{name}, $term->{doit}, $term->{show};
+}
 
 binary_doit 'factored_word_constant', sub { $_[0] * $_[1] };
 binary_show 'factored_word_constant', sub { "$_[0] $_[1]" };
 binary_doit 'factored_symbol_constant', sub { $_[0] * $_[1] };
 binary_show 'factored_symbol_constant', sub { "$_[0]$_[1]" };
 
-sub function_gen {
-    my ($doit_sub, $show_sub, $grammar_hash) = @_;
+sub grammar_term_gen {
+    my ($bsub, $grammar_hash, $show_sub_gen) = @_;
     return sub {
-        my ($name, $reps, $sub) = @_;
-        $doit_sub->($name, $sub);
-        my $rep;
-        if (ref $reps eq 'ARRAY') {
-            $rep = $reps->[0];
-        } else {
-            $rep = $reps;
-        };
-        $show_sub->($name, sub { "$rep(@{[join '; ', @_]})" });
-        $grammar_hash->{$name} = $reps;
+        my $term = shift;
+        $grammar_hash->add_term($term);
+        my $doit = $term->{action};
+        my $show = $show_sub_gen->($term->{rep});
+        $bsub->($term->{name}, $doit, $show);
     };
 }
 
-# Usage: new_unary_function NAME, REP, SUB
-#
-# REP is the string that will be displayed as the function name
-# in the formatted input (e.g, using 'sin' for the sine function,
-# would display as 'sin(ARG)').
-# If REP is an ARRAY reference, then the first element will be used
-# for generating the formatted input, but all of the forms will be
-# allowed in the grammar.
-# SUB should take a single argument and return the result of applying the
-# function.
+sub function_gen {
+    my $shower = sub { my $rep = shift; return sub { "$rep(@{[join '; ', @_]})" }; };
+    return grammar_term_gen(@_, $shower);
+}
+
 sub new_unary_function  { function_gen(
-    \&unary_doit, \&unary_show, \%unary_function_grammar)->(@_) };
+    \&new_unary, $unary_function_grammar)->(@_) };
 
 sub new_binary_function { function_gen(
-    \&binary_doit, \&binary_show, \%binary_function_grammar)->(@_) };
+    \&new_binary, $binary_function_grammar)->(@_) };
 
 new_binary_function 'mod', 'mod', sub { $_[0] % $_[1] };
 
 
 # Result should not be displayed as a fraction if result a long decimal.
 sub new_unary_bounded {
-    my ($name, $rep, $sub) = @_;
-    new_unary_function $name, $rep, untaint_when(
+    my $unary = shift;
+    $unary->{action} = untaint_when(
         sub { length $_[0]->rounded(1e-15) < 15 },
         taint_when_longer_than(10, $sub));
 }
@@ -660,10 +672,7 @@ new_binary_operator 'add',          '+', sub { $_[0] + $_[1] };
 new_binary_operator 'multiply',     '*', sub { $_[0] * $_[1] };
 new_binary_operator 'divide',       '/', sub { $_[0] / $_[1] };
 
-sub taint_when_longer_than {
-    my ($amount, $sub) = @_;
-    return taint_result_when sub { length $_[0] > $amount }, $sub;
-}
+sub taint_when_long { taint_result_when(sub { length $_[0] > 10 }, @_) }
 
 new_binary_operator 'exponentiate', '^', taint_when_longer_than(10,
     sub { $_[0] ** $_[1] });
@@ -673,30 +682,20 @@ binary_doit 'exp', sub { $_[0] * pure(10) ** $_[1] };
 unary_doit 'factorial_operator', \&calculate_factorial;
 unary_show 'factorial_operator', sub { $_[0] . '!' };
 
-# new_constant NAME, VALUE
-# will create a new constant that has the value `VALUE`
-# and will be displayed as `NAME`.
-#
-# new_constant NAME, VALUE, REP
-# will do the same as the previous form, but use REP to represent
-# the constant in output.
 sub new_constant {
-    my ($name, $val, $print_name) = @_;
-    $print_name = $name unless defined $print_name;
-    my $const_name = "const_$name";
-    doit $const_name, sub { $val };
-    show $const_name, sub { $print_name };
+    my ($constant, $grammar_ref) = @_;
+    $grammar_ref->add_term($constant);
+    doit $constant->{name}, sub { $constant->{value} };
+    show $constant->{name}, sub { $constant->{rep} };
 }
 
 sub new_symbol_constant {
-    my ($name, $val, $rep, $show) = @_;
-    new_constant $name, $val, ($show or $rep);
-    $symbol_constant_grammar{"const_$name"} = $rep;
+    my $constant = shift;
+    new_constant $constant, $symbol_constant_grammar;
 }
 sub new_word_constant {
-    my ($name, $val) = @_;
-    new_constant $name, $val, $name;
-    $word_constant_grammar{"const_$name"} = $name;
+    my $constant = shift;
+    new_constant $constant, $word_constant_grammar;
 }
 
 my $big_pi = Math::BigRat->new(Math::BigFloat->bpi());
