@@ -26,8 +26,8 @@ zci is_cached   => 1;
 
 # Params: server, port, client
 sub to_text {
-	return "Teredo Server IPv4: " . $_[0] . "\nNAT Public IPv4: " . $_[2]
-		. "\nClient Port: " . $_[1];
+    return "Teredo Server IPv4: " . $_[0] . "\nNAT Public IPv4: " . $_[2]
+        . "\nClient Port: " . $_[1];
 }
 
 handle remainder => sub {
