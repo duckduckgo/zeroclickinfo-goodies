@@ -14,13 +14,14 @@ zci is_cached   => 0;
 
 triggers startend => 'sunrise', 'sunset', 'what time is sunset', 'what time is sunrise';
 
-primary_example_queries 'sunrise',              'sunset';
+primary_example_queries 'sunrise', 'sunset';
 secondary_example_queries 'sunrise for aug 30', 'sunset on 2015-01-01';
 description 'Compute the sunrise and sunset for a given day';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SunInfo.pm';
 category 'calculations';
 topics 'everyday';
 attribution github => ['duckduckgo', 'DuckDuckGo'];
+            github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 my $time_format      = '%l:%M %p';
 my $datestring_regex = datestring_regex();
