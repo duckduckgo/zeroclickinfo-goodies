@@ -16,8 +16,9 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "14.007 u",
-            "Nitrogen (atomic number: 7)",
+            "Atomic mass 14.007 u",
+            "Nitrogen",
+            "Atomic number 7",
             "green"
         )
     ),
@@ -27,8 +28,9 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "14.007 u",
-            "Nitrogen (atomic number: 7)",
+            "Atomic mass 14.007 u",
+            "Nitrogen",
+            "Atomic number 7",
             "green"
         )
     ),
@@ -38,8 +40,9 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "14.007 u",
-            "Nitrogen (atomic number: 7)",
+            "Atomic mass 14.007 u",
+            "Nitrogen",
+            "Atomic number 7",
             "green"
         )
     ),    
@@ -55,8 +58,9 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "7",
-            "Nitrogen (atomic mass: 14.007 u)",
+            "Atomic number 7",
+            "Nitrogen",
+            "Atomic mass 14.007 u",
             "green"
         )
     ),
@@ -65,8 +69,9 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "7",
-            "Nitrogen (atomic mass: 14.007 u)",
+            "Atomic number 7",
+            "Nitrogen",
+            "Atomic mass 14.007 u",
             "green"
         )
     ),    
@@ -76,8 +81,9 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "7",
-            "Nitrogen (atomic mass: 14.007 u)",
+            "Atomic number 7",
+            "Nitrogen",
+            "Atomic mass 14.007 u",
             "green"
         )
     ),     
@@ -92,8 +98,9 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "7",
-            "Nitrogen (atomic mass: 14.007 u)",
+            "Atomic number 7",
+            "Nitrogen",
+            "Atomic mass 14.007 u",
             "green"
         )
     ),  
@@ -103,8 +110,9 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "7",
-            "Nitrogen (atomic mass: 14.007 u)",
+            "Atomic number 7",
+            "Nitrogen",
+            "Atomic mass 14.007 u",
             "green"
         )
     ),  
@@ -119,7 +127,8 @@ ddg_goodie_test(
             "Au",
             "Gold",
             "Gold",
-            "79 (atomic mass: 196.97 u)",
+            "Atomic number 79",
+            "Atomic mass 196.97 u",
             "red"
         )
     ),  
@@ -130,7 +139,8 @@ ddg_goodie_test(
             "Ag",
             "Silver",
             "Silver",
-            "47 (atomic mass: 107.87 u)",
+            "Atomic number 47",
+            "Atomic mass 107.87 u",
             "red"
         )
     ),  
@@ -145,8 +155,9 @@ ddg_goodie_test(
         make_structured_answer(
             "O",
             "Oxygen",
-            "8",
-            "Oxygen (atomic mass: 15.999 u)",
+            "Atomic number 8",
+            "Oxygen",
+            "Atomic mass 15.999 u",
             "green"
         )
     ),
@@ -156,8 +167,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Li",
             "Lithium",
-            "3",
-            "Lithium (atomic mass: 6.94 u)",
+            "Atomic number 3",
+            "Lithium",
+            "Atomic mass 6.94 u",
             "gold"
         )
     ),
@@ -167,8 +179,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Be",
             "Beryllium",
-            "4",
-            "Beryllium (atomic mass: 9.0122 u)",
+            "Atomic number 4",
+            "Beryllium",
+            "Atomic mass 9.0122 u",
             "gold"
         )
     ),
@@ -178,8 +191,9 @@ ddg_goodie_test(
         make_structured_answer(
             "La",
             "Lanthanum",
-            "57",
-            "Lanthanum (atomic mass: 138.91 u)",
+            "Atomic number 57",
+            "Lanthanum",
+            "Atomic mass 138.91 u",
             "red"
         )
     ),
@@ -189,8 +203,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Ac",
             "Actinium",
-            "89",
-            "Actinium (atomic mass: [227.03] u)",
+            "Atomic number 89",
+            "Actinium",
+            "Atomic mass [227.03] u",
             "red"
         )
     ), 
@@ -200,8 +215,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Sc",
             "Scandium",
-            "21",
-            "Scandium (atomic mass: 44.956 u)",
+            "Atomic number 21",
+            "Scandium",
+            "Atomic mass 44.956 u",
             "red"
         )
     ),
@@ -211,8 +227,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Al",
             "Aluminium",
-            "13",
-            "Aluminium (atomic mass: 26.982 u)",
+            "Atomic number 13",
+            "Aluminium",
+            "Atomic mass 26.982 u",
             "green"
         )
     ),
@@ -222,8 +239,9 @@ ddg_goodie_test(
         make_structured_answer(
             "B",
             "Boron",
-            "5",
-            "Boron (atomic mass: 10.81 u)",
+            "Atomic number 5",
+            "Boron",
+            "Atomic mass 10.81 u",
             "green"
         )
     ),
@@ -233,8 +251,9 @@ ddg_goodie_test(
         make_structured_answer(
             "C",
             "Carbon",
-            "6",
-            "Carbon (atomic mass: 12.011 u)",
+            "Atomic number 6",
+            "Carbon",
+            "Atomic mass 12.011 u",
             "green"
         )
     ),
@@ -244,8 +263,9 @@ ddg_goodie_test(
         make_structured_answer(
             "He",
             "Helium",
-            "2",
-            "Helium (atomic mass: 4.0026 u)",
+            "Atomic number 2",
+            "Helium",
+            "Atomic mass 4.0026 u",
             "blue-light"
         )
     ),    
@@ -255,8 +275,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Mt",
             "Meitnerium",
-            "109",
-            "Meitnerium (atomic mass: [276.15] u)",
+            "Atomic number 109",
+            "Meitnerium",
+            "Atomic mass [276.15] u",
             "red"
         )
     ),  
@@ -267,8 +288,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Hg",
             "Mercury",
-            "80",
-            "Mercury (atomic mass: 200.59 u)",
+            "Atomic number 80",
+            "Mercury",
+            "Atomic mass 200.59 u",
             "red"
         )
     ), 
@@ -277,8 +299,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Hg",
             "Hydrargyrum",
-            "80",
-            "Hydrargyrum (atomic mass: 200.59 u)",
+            "Atomic number 80",
+            "Hydrargyrum",
+            "Atomic mass 200.59 u",
             "red"
         )
     ), 
@@ -289,8 +312,9 @@ ddg_goodie_test(
         make_structured_answer(
             "O",
             "Oxygen",
-            "8",
-            "Oxygen (atomic mass: 15.999 u)",
+            "Atomic number 8",
+            "Oxygen",
+            "Atomic mass 15.999 u",
             "green"
         )
     ),
@@ -299,8 +323,9 @@ ddg_goodie_test(
         make_structured_answer(
             "Li",
             "Lithium",
-            "3",
-            "Lithium (atomic mass: 6.94 u)",
+            "Atomic number 3",
+            "Lithium",
+            "Atomic mass 6.94 u",
             "gold"
         )
     ),
@@ -309,15 +334,16 @@ ddg_goodie_test(
         make_structured_answer(
             "Uuo",
             "Ununoctium",
-            "118",
-            "Ununoctium (atomic mass: [294] u)",
+            "Atomic number 118",
+            "Ununoctium",
+            "Atomic mass [294] u",
             "red"
         )
     ),    
 );
 
 sub make_structured_answer {
-    my ($badge, $element_name, $title, $subtitle, $color) = @_;
+    my ($badge, $element_name, $title, $subtitle, $alt_subtitle, $color) = @_;
 
     my $badge_class = "";
     my $symbol_length = length($badge);
@@ -331,6 +357,7 @@ sub make_structured_answer {
             badge => $badge,
             title => $title,
             subtitle => $subtitle,
+            altSubtitle => $alt_subtitle,
             url => "https://en.wikipedia.org/wiki/$element_name",
         },        
         meta => {

@@ -48,16 +48,17 @@ handle query_lc => sub {
     my ( $atomic_number, $atomic_mass, $element_name, $element_symbol, $element_type ) = @{$match};
 
     # Default display
-    my $title = "$atomic_number";
-    my $subtitle = "$element_name (atomic mass: $atomic_mass u)";
+    my $title = "Atomic number $atomic_number";
+    my $subtitle = "$element_name";
+    my $alt_subtitle = "Atomic mass $atomic_mass u";
     my $raw = "$element_name ($element_symbol), atomic number $atomic_number, atomic mass $atomic_mass u";
     if ($is_mass_query) {
-        $title = "$atomic_mass u";
-        $subtitle = "$element_name (atomic number: $atomic_number)";
+        $title = "Atomic mass $atomic_mass u";
+        $alt_subtitle = "Atomic number $atomic_number";
     }
     elsif ($is_name_query) {
         $title = "$element_name";
-        $subtitle = "$atomic_number (atomic mass: $atomic_mass u)";
+        $subtitle = "Atomic number $atomic_number";
     }    
 
     # The text size of the icon needs to change depending on the length of the chemical symbol.
@@ -74,6 +75,7 @@ handle query_lc => sub {
             badge => $element_symbol,
             title => $title,
             subtitle => $subtitle,
+            altSubtitle => $alt_subtitle,
             url => "https://en.wikipedia.org/wiki/$element_name",
         },
         meta => {
