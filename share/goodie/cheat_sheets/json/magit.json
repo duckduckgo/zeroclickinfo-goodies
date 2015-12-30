@@ -3,7 +3,7 @@
   "name": "Magit",
   "description": "Git Version Control via Emacs",
   "metadata": {
-    "sourceName": "MagitCheatSheet",
+    "sourceName": "Daemian Mack",
     "sourceUrl": "http://daemianmack.com/magit-cheatsheet.html"
   },
   "template_type": "keyboard",
@@ -34,11 +34,11 @@
       },
       {
         "key": "$",
-        "val": "magit-process buffer"
+        "val": "Magit-process buffer"
       },
       {
         "key": "g",
-        "val": "reload status buffer"
+        "val": "Reload status buffer"
       }
     ],
     "Section Visibility": [

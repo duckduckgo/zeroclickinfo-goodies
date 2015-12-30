@@ -12,6 +12,9 @@ zci is_cached   => 1;
 # Triggers
 triggers start => "prime", "prime numbers";
 
+# 2015.12.29 (caine): moved max from 1B to 1M.
+my $max = 1_000_000;
+
 handle query_lc => sub {
     # q_check (as opposed to q_internal) Allows for decimals.
     return unless ($_ =~ /^\!?(?:prime num(?:ber(?:s|)|) between|)[\s]*([-]{0,1}[\d\.]+|)(?: and|)[\s]*([-]{0,1}[\d\.]+|)$/i);
@@ -19,8 +22,8 @@ handle query_lc => sub {
     my $start = $1 || 1;
     my $end   = $2 || 1;
 
-    $start = 1000000000 if $start > 1000000000;
-    $end = 1000000000 if $end > 1000000000;
+    $start = $max if $start > $max;
+    $end = $max if $end > $max;
     ($end, $start) = ($start, $end) if ($start > $end);
 
     my $s = ceil($start);

@@ -5,7 +5,7 @@ use strict;
 use DDG::Goodie;
 use URI::Escape::XS;
 
-triggers startend => "unicode", "emoji";
+triggers startend => "unicode", "emoji", "utf-8", "utf-16", "utf-32";
 
 zci is_cached => 1;
 

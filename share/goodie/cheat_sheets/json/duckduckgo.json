@@ -2,9 +2,14 @@
     "id": "duckduckgo_cheat_sheet",
     "name": "DuckDuckGo Shortcuts",
     "template_type": "keyboard",
+    "description": "A set of keyboard shortcuts to use duckduckgo efficiently",
     "section_order": [
         "Open results",
         "Move around"
+    ],
+     "aliases": [
+        "duck duck go shortcuts",
+        "ddg shortcuts"
     ],
     "sections": {
         "Open results": [

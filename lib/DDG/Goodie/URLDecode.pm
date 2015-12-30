@@ -2,7 +2,7 @@ package DDG::Goodie::URLDecode;
 # ABSTRACT: Displays the decoded URL for a percent encoded uri
 
 use DDG::Goodie;
-use URI::Escape::XS qw(decodeURIComponent);
+use URI::Escape::XS qw(uri_unescape);
 use warnings;
 use strict;
 
@@ -23,7 +23,7 @@ handle query_raw => sub {
     s/(^\s+)|(\s+$)//;
 
     my $in      = $_;
-    my $decoded = decodeURIComponent($in);
+    my $decoded = uri_unescape($in);
 
     if ($decoded =~ /^\s+$/) {
         $decoded =~ s/\r/CReturn/;
@@ -33,13 +33,20 @@ handle query_raw => sub {
     }
 
     my $text = "URL Decoded: $decoded";
+    my $subtitle = "URL decode: $in";
 
-    return $text,
-      structured_answer => {
-        input     => [html_enc($in)],
-        operation => 'URL decode',
-        result    => html_enc($decoded)
-      };
+    return $text, structured_answer => {
+        id => 'url_decode',
+        name => 'Answer',
+        data => {
+            title => $decoded,
+            subtitle => $subtitle
+        },
+        templates => {
+            group => 'text',
+            moreAt => 0
+        }
+    };
 };
 
 1;

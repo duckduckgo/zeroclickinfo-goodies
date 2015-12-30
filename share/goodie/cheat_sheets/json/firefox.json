@@ -1,10 +1,14 @@
 {
     "id":"firefox_cheat_sheet",
     "name":"Mozilla Firefox",
+    "description": "Mozilla Firefox (known simply as Firefox) is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary",
     "metadata":{
         "sourceName":"Mozilla Firefox",
         "sourceUrl":"https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly"
     },
+  "aliases": [
+    "mozilla firefox"
+  ],
     "template_type": "keyboard",
     "section_order":[
         "Navigation",

@@ -3,7 +3,6 @@ package DDG::Goodie::Chess960;
 
 use strict;
 use DDG::Goodie;
-with 'DDG::GoodieRole::Chess';
 
 triggers any => 'random', 'chess960';
 zci is_cached => 0;
@@ -108,13 +107,6 @@ RBKRNQBN RKRBNQBN RKRNQBBN RKRNQNBB BBRKRNNQ BRKBRNNQ BRKRNBNQ BRKRNNQB RBBKRNNQ
 RKBRNBNQ RKBRNNQB RBKRBNNQ RKRBBNNQ RKRNBBNQ RKRNBNQB RBKRNNBQ RKRBNNBQ RKRNNBBQ RKRNNQBB
 );
 
-sub make_fen {
-    my ($position) = @_;
-    my ($position_lc) = lc$position;
-    my ($fen) = "${position_lc}/pppppppp/8/8/8/8/PPPPPPPP/${position}";
-    return parse_position($fen);
-}
-
 handle query => sub {
     # Ensure rand is seeded for each process
     srand();
@@ -128,13 +120,29 @@ handle query => sub {
 
     my $position = $all_positions[$index];
     
-    my @fen = make_fen($position);
-
     my $position_num = $index + 1;
-    
-    my $html = draw_chessboard_html(@fen);
+
     $query =~ s/^ chess960|chess960 $|chess960 //i;
-    return draw_chessboard_ascii(@fen), html => $html, heading => "Position $position_num (Chess960)";
+    
+    return 'Chess 960',
+    structured_answer => {
+        id => 'chess960',
+        name => 'Answer',
+        data => {
+            title => 'Chess960',
+            subtitle => 'Position ' . $position_num,
+            rows => 8,
+            columns => 8,
+            position => $position
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.chess960.content'
+            }
+        }
+    };
 };
 
 1;

@@ -1,13 +1,13 @@
 {
     "id": "cmus_cheat_sheet",
-    "name": "Cmus",
-    "description": "Console music player",
+    "name": "cmus",
+    "description": "cmus keyboard shortcuts",
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/cmus/cmus/blob/master/Doc/cmus.txt"
     },
     "template_type": "keyboard",
-    "section_order": ["Cursor Movement", "Views", "Song navigation", "Adding / Removing tracks", "Browser movements", "Exiting", "Miscellaneous"],
+    "section_order": ["Cursor Movement", "Views", "Song Navigation", "Adding / Removing Tracks", "Browser Movements", "Exiting", "Miscellaneous"],
     "sections": {
         "Cursor Movement": [
             {
@@ -49,7 +49,7 @@
                 "key": "7"
             }
         ],
-        "Song navigation": [
+        "Song Navigation": [
             {
                 "val": "Play / Restart",
                 "key": "x"
@@ -87,7 +87,7 @@
                 "key": ","
             }
         ],
-        "Adding / Removing tracks": [
+        "Adding / Removing Tracks": [
             {
                 "val": "Add track / folder to library from browser view",
                 "key": "a"
@@ -109,7 +109,7 @@
                 "key": "[Shift] [d]"
             }
         ],
-        "Browser movements": [
+        "Browser Movements": [
             {
                 "val": "Activate selection",
                 "key": "[Space bar] / [Enter]"
@@ -173,4 +173,3 @@
         ]
     }
 }
-

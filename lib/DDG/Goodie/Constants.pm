@@ -12,7 +12,7 @@ my $constants = LoadFile(share("constants.yml"));
 foreach my $name (keys %$constants) {
     #obtain to constant with name $keyword
     my $constant = $constants->{$name};
-    
+
     #add aliases as separate triggers
     foreach my $alias (@{$constant->{'aliases'}}) {
         $constants->{$alias} = $constant;
@@ -26,7 +26,7 @@ triggers startend => @triggers;
 handle query_lc => sub {
     my $constant = $constants->{$_};
     return unless my $val = $constant->{'value'};
-    
+
     #fallback to plain answer if html is not present
     my $result = $val->{'html'} ? $val->{'html'} : $val->{'plain'};
 

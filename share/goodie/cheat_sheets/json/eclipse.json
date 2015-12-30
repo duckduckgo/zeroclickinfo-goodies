@@ -1,6 +1,7 @@
 {
     "id": "eclipse_cheat_sheet",
     "name": "Eclipse IDE",
+    "description": "Eclipse is an integrated development environment which is fully customizable",
     "metadata": {
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html"
@@ -386,7 +387,7 @@
             },
             {
                 "key": "[Ctrl] [Shift] [/]",
-                "val": "Add Block Comment around selection ( adds '/... */' )"
+                "val": "Add Block Comment around selection ( adds '/... &#42;&#47;' )"
             },
             {
                 "key": "[Ctrl] [Shift] [\\\\]",
@@ -394,7 +395,7 @@
             },
             {
                 "key": "[Alt] [Shift] [J]",
-                "val": "Add Element Comment ( adds '/** ... */')"
+                "val": "Add Element Comment ( adds '&#47;&#42;* ... &#42;&#47;')"
             }
         ],
         "Editing Source Code": [

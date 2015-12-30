@@ -19,6 +19,9 @@ zci is_cached   => 1;
 my $delim = ', ';
 
 handle remainder => sub {
+
+    return unless $_;
+    
     my $input = $_;
     $input =~ s/[\(\{\[]
                 |
