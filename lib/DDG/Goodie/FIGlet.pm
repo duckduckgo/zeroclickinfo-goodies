@@ -66,9 +66,20 @@ handle query => sub {
     $figlet = html_enc($figlet) if grep /^$font$/i, qw(rot13 mnemonic term); #ensure we escape input for plaintext formatted results
 
     #$html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font</span><pre contenteditable='true'>$figlet</pre></div>";
-
+    return unless $figlet;
+    
     return $figlet, #html => $html if $figlet;
-    return;
+    structured_answer => {
+        id => 'figlet',
+        name => 'Answer',
+        data => {
+            title => $figlet,
+            subtitle => "Font: $font",
+        },
+        templates => {
+            group => 'text',
+        }
+    };
 };
 
 1;
