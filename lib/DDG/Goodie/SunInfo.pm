@@ -129,19 +129,19 @@ sub pretty_output {
 
     my $text = "On $when, sunrise in $where is at $rise; sunset at $set.";
 
-    my $html = "<div class='zci--suninfo'>";
-    $html .= "<div class='suninfo--header text--secondary'><span class='ddgsi'>@</span>$where on $when</div>";
-    $html .= "<div class='suninfo--row'>".
-        "<span class='suninfo--risebox'>"
-      . $sunrise_svg
-      . "</span><span class='suninfo--timeboxes suninfo--border-right'><span class='text--primary suninfo--times'>$rise</span></span>";
-    $html .=
-        "<span class='suninfo--setbox'>"
-      . $sunset_svg
-      . "</span><span class='suninfo--timeboxes'><span class='text--primary suninfo--times'>$set</span></span>";
-    $html .= "</div></div>";
+    #my $html = "<div class='zci--suninfo'>";
+    #$html .= "<div class='suninfo--header text--secondary'><span class='ddgsi'>@</span>$where on $when</div>";
+    #$html .= "<div class='suninfo--row'>".
+    #    "<span class='suninfo--risebox'>"
+    #  . $sunrise_svg
+    #  . "</span><span class='suninfo--timeboxes suninfo--border-right'><span class='text--primary suninfo--times'>$rise</span></span>";
+    #$html .=
+    #    "<span class='suninfo--setbox'>"
+    #  . $sunset_svg
+    #  . "</span><span class='suninfo--timeboxes'><span class='text--primary suninfo--times'>$set</span></span>";
+    #$html .= "</div></div>";
 
-    return ($text, html => $html);
+    return $text, #html => $html);
 }
 
 1;
