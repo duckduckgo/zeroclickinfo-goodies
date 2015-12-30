@@ -20,7 +20,9 @@ sub build_result {
         templates => {
             group   => 'info',
             options => {
-                moreAt => 1
+                moreAt       => 1,
+                content      => 'DDH.lorem_ipsum.content',
+                chompContent => 1,
             }
         }
     };
@@ -71,10 +73,14 @@ ddg_goodie_test(
     '7 random latin paragraphs'    => build_test(paragraphs(7)),
     'two random latin sentences'   => build_test(sentences(2)),
     'three lorem ipsum paragraphs' => build_test(paragraphs(3)),
+    # Third form
+    'lorem ipsum' => build_test(paragraphs(5)),
+    'lipsum'      => build_test(paragraphs(5)),
+    'latin'       => undef,
     # Non-matchers
     'utter latin'                         => undef,
     'lipsum word'                         => undef,
-    'what is a word of lopem ipsum'       => undef,
+    'what is a word of lorem ipsum'       => undef,
     'three french hens and a lipsum word' => undef,
 );
 

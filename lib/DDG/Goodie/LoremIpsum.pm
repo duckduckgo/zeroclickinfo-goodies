@@ -80,34 +80,36 @@ handle query_lc => sub {
     my $formatted_input;
     if ($query =~ /^\s*l(orem )?ipsum\s*$/) {
         $default = 1;
-        $result = Text::Lorem::More->paragraphs(4);
+        $result = Text::Lorem::More->new->paragraphs(5);
+        $formatted_input = "5 paragraphs of Lorem Ipsum";
     } else {
         ($result, $formatted_input) = get_result_and_formatted($query) or return;
     };
+    my @paragraphs = split "\n\n", $result;
 
     return $result, structured_answer => {
         id   => 'lorem_ipsum',
         name => 'Answer',
         data => {
-            description => "$result",
-            is_default  => $default,
-            title       => ' ',
-            subtitle    => "$formatted_input",
-            infoboxData => [
+            title            => "$formatted_input",
+            lorem_paragraphs => \@paragraphs,
+            infoboxData      => $default ? [
                 { heading => "Example Queries", },
                 build_infobox_element('5 sentences of lorem ipsum'),
                 build_infobox_element('20 words of random latin'),
-                build_infobox_element('5 paragraphs of lorem ipsum'),
-            ],
+                build_infobox_element('10 paragraphs of lorem ipsum'),
+            ] : 0,
         },
         meta => {
             sourceName => "Lipsum",
             sourceUrl  => "http://lipsum.com/"
         },
         templates => {
-            group => 'info',
+            group   => 'info',
             options => {
-                moreAt => 1
+                moreAt       => 1,
+                content      => 'DDH.lorem_ipsum.content',
+                chompContent => 1,
             }
         }
     };
