@@ -6,8 +6,9 @@ BEGIN {
     require Exporter;
 
     our @ISA    = qw(Exporter);
-    our @EXPORT = qw(pure new_tainted
+    our @EXPORT = qw(pure new_tainted new_result
                      taint_result_when taint_result_unless
+                     produces_angle
                      untaint_when);
 }
 
@@ -15,9 +16,10 @@ use Math::BigRat try => 'GMP';
 use Math::Cephes qw(:explog);
 use Math::Cephes qw(:trigs);
 use Math::Round;
-use Math::Trig qw(deg2rad);
+use Math::Trig qw(deg2rad rad2deg);
 use Moose;
 use Moose::Util::TypeConstraints;
+use utf8;
 
 use overload
     '""'    => 'to_string',
@@ -61,9 +63,28 @@ has 'angle_type' => (
     default => undef,
 );
 
+# Will want a more robust solution than this. Allows checking if user
+# specified /explicitly/ that an angle was in radians.
+has 'declared' => (
+    is => 'ro',
+    isa => 'Maybe[Str]',
+    default => undef,
+);
+sub declare {
+    my ($self, $declare) = @_;
+    my $copy = $self->copy;
+    $copy->{declared} = $declare;
+    return $copy;
+}
+
 sub is_degrees {
     my $self = shift;
     ($self->angle_type // '') eq 'degree'
+};
+
+sub is_radians {
+    my $self = shift;
+    ($self->angle_type // '') eq 'radian'
 };
 
 sub taint {
@@ -125,6 +146,13 @@ sub modify_taint_when {
         sub { $condition->($_[0]) if defined $_[0] },
         sub { $taintf->($_[0]) });
 }
+sub produces_angle {
+    my ($angle, $sub) = @_;
+    return sub {
+        my $result = $sub->(@_);
+        return $result->make_angle($angle);
+    };
+}
 
 sub taint_result_when { modify_taint_when(\&taint, @_) }
 
@@ -144,30 +172,59 @@ sub to_string {
 # Tell the Calculator that the value is an angle in degrees.
 sub make_degrees {
     my $self = shift;
-    $self->{angle_type} = 'degree';
+    my $copy = $self->copy;
+    $copy->{angle_type} = 'degree';
+    return $copy;
+    # $self->{angle_type} = 'degree';
+}
+sub make_angle {
+    my ($self, $angle) = @_;
+    my $copy = $self->copy;
+    $copy->{angle_type} = $angle;
+    return $copy;
 }
 
 sub make_radians {
     my $self = shift;
-    $self->{angle_type} = 'radian';
+    my $copy = $self->copy;
+    $copy->{angle_type} = 'radian';
+    return $copy;
+}
+sub copy {
+    my $self = shift;
+    return new_result {
+        tainted    => $self->tainted,
+        value      => $self->value,
+        angle_type => $self->angle_type,
+        declared   => $self->declared,
+    };
 }
 
 # Combine two Results using the given operation. Preserves appropriate
 # attributes.
 sub combine_results {
     my ($sub, $swapsub) = @_;
-    my $resf = sub {
+    return sub {
         my ($self, $other, $swap) = @_;
+        my $tainted = $self->tainted || $other->tainted;
+        my $angle = $self->angle_type // $other->angle_type;
+        return if (defined $angle)
+            && (($self->angle_type // $angle) ne ($other->angle_type // $angle));
         my $first_val = $self->value();
+        my $declared = $self->declared // $other->declared;
         my $second_val = $other->value();
         my $res = $sub->($first_val, $second_val)
             if (defined $first_val && defined $second_val);
         $res = $swapsub->($res)
             if (defined $swapsub && defined $res && $swap);
+        return new_result {
+            tainted    => $tainted,
+            value      => $res,
+            angle_type => $angle,
+            declared   => $declared,
+        };
         return $res;
     };
-    my $cond = sub { shift; $_[0]->tainted() || $_[1]->tainted() };
-    return preserve_taintf($resf, $cond, \&taint);
 }
 
 sub preserving_taint {
@@ -258,13 +315,21 @@ sub exponentiate_fraction {
 
 sub to_radians {
     my $self = shift;
-    my $is_deg = $self->is_degrees();
-    if ($is_deg) {
+    if ($self->is_degrees) {
         my $res = $self->on_decimal(\&deg2rad);
-        $res->make_radians();
-        return $res;
+        return $res->make_radians();
     };
-    return $self;
+    $self->make_radians();
+};
+
+sub to_degrees {
+    my $self = shift;
+    my $is_radians = $self->is_radians();
+    if ($self->is_radians) {
+        my $res = $self->on_decimal(\&rad2deg);
+        return $res->make_degrees();
+    };
+    $self->make_degrees();
 };
 
 sub with_radians {
@@ -313,6 +378,26 @@ sub as_rounded_decimal {
     };
     my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
     return nearest(1e-12, $s) * 10 ** $e;
+}
+
+sub angle_symbol {
+    my $self = shift;
+    if ($self->is_degrees) {
+        return '°';
+    } elsif ($self->is_radians) {
+        return ' ㎭' if $self->declared;
+    };
+    return '';
+}
+
+sub as_formatted_integer {
+    my $self = shift;
+    my $result = '';
+    my $number = $self->value;
+    if ($number->length() > 30) {
+        $result .= '≈ ' . $number->as_int->bround(20)->bsstr();
+    };
+    return $result . $self->angle_symbol;
 }
 
 sub as_decimal {
@@ -602,12 +687,6 @@ sub new_base_value {
 new_base_value { name => 'integer' };
 new_base_value { name => 'decimal' };
 
-new_unary_misc {
-    name => 'angle_degrees',
-    doit => sub { $_[0]->make_degrees(); return $_[0]; },
-    show => sub { "$_[0]°" },
-};
-
 new_base {
     name => 'prefix_currency',
     doit => sub { $_[0]->[1]->doit() },
@@ -624,14 +703,38 @@ sub new_postfix_fmodifier {
     new_unary_misc {
         name => $term->{name},
         doit => $term->{action},
-        show => sub { "$_[0] " . $term->{rep} },
+        show => sub { "$_[0]" . $term->{rep} },
     };
 }
 
+sub optional_prefix {
+    my ($opt_prefix, $to_prefix) = @_;
+    my @with_prefixes;
+    foreach my $tp (@$to_prefix) {
+        foreach my $op (@$opt_prefix) {
+            push @with_prefixes, ($op . $tp);
+        };
+    };
+    push @with_prefixes, @$to_prefix;
+    return \@with_prefixes;
+}
+
 new_postfix_fmodifier {
-    rep    => 'squared',
+    rep    => ' squared',
+    forms  => 'squared',
     action => taint_when_long(sub { $_[0] * $_[0] }),
 };
+new_postfix_fmodifier {
+    rep    => '°',
+    forms  => optional_prefix(['in ', 'to '], ['degree', 'degrees']),
+    action => sub { $_[0]->to_degrees() },
+};
+new_postfix_fmodifier {
+    rep    => ' ㎭',
+    forms  => optional_prefix(['in ', 'to '], ['rad', 'rads', 'radians', 'radii']),
+    action => sub { ($_[0]->to_radians())->declare('radians') },
+};
+
 
 sub new_binary_misc {
     my $term = shift;
@@ -721,17 +824,17 @@ sub on_result { my $f = shift; return sub { $_[0]->on_result($f) } }
 
 new_unary_bounded {
     forms  => ['arcsin', 'asin'],
-    action => on_result(\&asin),
+    action => produces_angle('radian', on_result(\&asin)),
     rep    => 'arcsin',
 };
 new_unary_bounded {
     forms  => ['arccos', 'acos'],
     rep    => 'arccos',
-    action => on_result(\&acos),
+    action => produces_angle('radian', on_result(\&acos)),
 };
 new_unary_bounded {
     forms  => ['arctan', 'atan'],
-    action => on_result(\&atan),
+    action => produces_angle('radian', on_result(\&atan)),
     rep    => 'arctan',
 };
 
@@ -762,17 +865,17 @@ new_unary_bounded {
 new_unary_bounded {
     rep    => 'artanh',
     forms  => ['artanh', 'atanh'],
-    action => on_result(\&atanh),
+    action => produces_angle('radian', on_result(\&atanh)),
 };
 new_unary_bounded {
     forms  => ['arcosh', 'acosh'],
     rep    => 'arcosh',
-    action => on_result(\&acosh),
+    action => produces_angle('radian', on_result(\&acosh)),
 };
 new_unary_bounded {
     forms  => ['arsinh', 'asinh'],
     rep    => 'arsinh',
-    action => on_result(\&asinh),
+    action => produces_angle('radian', on_result(\&asinh)),
 };
 
 # Log functions
@@ -892,7 +995,11 @@ sub irrational { new_tainted(@_) };
 new_symbol_constant {
     forms => 'pi',
     rep => 'π',
-    value => irrational($big_pi),
+    value => new_result {
+        tainted    => 1,
+        value      => $big_pi,
+        angle_type => 'radian',
+    },
 };
 new_word_constant {
     rep => 'dozen',
@@ -1051,12 +1158,12 @@ sub format_as_integer {
         $result .= '≈ ';
         $number = $number->as_int->bround(20)->bsstr();
     };
-    return $result . $self->style->for_display($number);
+    return $result . $self->style->for_display($number) . $self->result->angle_symbol;
 }
 
 sub format_as_decimal {
     my $self = shift;
-    return $self->style->for_display($self->result->as_rounded_decimal());
+    return $self->style->for_display($self->result->as_rounded_decimal) . $self->result->angle_symbol;
 }
 sub format_as_fraction {
     my $self = shift;
@@ -1121,6 +1228,8 @@ triggers query_nowhitespace => qr/\w+\(.*\)/;
 triggers query_nowhitespace => qr/$decimal\W*\w+/;
 # They might want to find out what fraction a decimal represents
 triggers query_nowhitespace => qr/[,.]\d+/;
+# Misc checks for other words
+triggers query_lc => qr/(radian|degree|square|\b(pi|e)\b)/;
 
 my %phone_number_regexes = (
     'US' => qr/[0-9]{3}(?: |\-)[0-9]{3}\-[0-9]{4}/,
@@ -1173,6 +1282,7 @@ sub standardize_symbols {
     $text =~ s/\*{2}/^/g;
     $text =~ s/π/pi/g;
     $text =~ s/°/degrees/g;
+    $text =~ s/㎭/radians/g;
     return $text;
 }
 

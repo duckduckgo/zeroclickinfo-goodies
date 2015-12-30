@@ -125,16 +125,13 @@ ddg_goodie_test(
     'sin(pi/2)'            => build_test('1', 'sin(π / 2)'),
     'sine(pi)'             => build_test('0', 'sin(π)'),
     'sin(800)'             => build_test('≈ 0.893969648197', 'sin(800)'),
-    'asin(sin(800))'       => build_test('≈ 1.106126665397', 'arcsin(sin(800))'),
     'sin(90 degrees)'      => build_test('1', 'sin(90°)'),
     'cos(60°)'             => build_test('1/2 = 0.5', 'cos(60°)'),
-    'arccos(1)'            => build_test('0', 'arccos(1)'),
     'sin(pi) + sin(180°)'  => build_test('0', 'sin(π) + sin(180°)'),
     '1 + sin(pi)'          => build_test('1', '1 + sin(π)'),
     'sin(1,0) + 1,05'      => build_test('≈ 1,891470984808', 'sin(1,0) + 1,05'),
     'sin(1.0) + 1,05'      => undef,
     'sin(pi) + 1.37'       => build_test('137/100 = 1.37', 'sin(π) + 1.37'),
-    'arcsin(0)'            => build_test('0', 'arcsin(0)'),
     'cos(2pi)'             => build_test('1', 'cos(2π)'),
     'cosine(0)'            => build_test('1', 'cos(0)'),
     'cos(pi/2)'            => build_test('0', 'cos(π / 2)'),
@@ -162,6 +159,11 @@ ddg_goodie_test(
     'sec(60 degrees)'      => build_test('2', 'sec(60°)'),
     'secant(1)'            => build_test('≈ 1.850815717681', 'sec(1)'),
     '2,90 + sec(4,6)'      => build_test('≈ -6,01642861136', '2,90 + sec(4,6)'),
+    # Inverse trig
+    'arccos(1/2) in degrees' => build_test('60°', 'arccos(1 / 2)°'),
+    'arcsin(0)'              => build_test('0', 'arcsin(0)'),
+    'arccos(1)'              => build_test('0', 'arccos(1)'),
+    'asin(sin(800))'         => build_test('≈ 1.106126665397', 'arcsin(sin(800))'),
     # Hyperbolic functions
     'sinh(1)'                => build_test('≈ 1.175201193644', 'sinh(1)'),
     'sinh(0)'                => build_test('0', 'sinh(0)'),
@@ -178,6 +180,10 @@ ddg_goodie_test(
     'asinh(sinh(1))'         => build_test('1', 'arsinh(sinh(1))'),
 
     # Word functions
+    '2divided by 4'         => build_test('1/2 = 0.5', '2 / 4'),
+    '60 divided by 15'      => build_test('4', '60 / 15'),
+    '7 divided by (3 + 4)'  => build_test('1', '7 / (3 + 4)'),
+    # Modifiers
     '5 squared'             => build_test('25', '5 squared'),
     '3 squared + 4 squared' => build_test('25', '3 squared + 4 squared'),
     '2,2 squared'           => build_test('121/25 = 4,84', '2,2 squared'),
@@ -185,9 +191,14 @@ ddg_goodie_test(
     '2 squared ^ 3.06'      => build_test('≈ 69.55103120167', '2 squared ^ 3.06'),
     '2^3 squared'           => build_test('512', '2 ^ 3 squared'),
     '1.0 + 5 squared'       => build_test('26', '1.0 + 5 squared'),
-    '2divided by 4'         => build_test('1/2 = 0.5', '2 / 4'),
-    '60 divided by 15'      => build_test('4', '60 / 15'),
-    '7 divided by (3 + 4)'  => build_test('1', '7 / (3 + 4)'),
+    'sqrt(4) squared'       => build_test('4', 'sqrt(4) squared'),
+    '3° + 7°'               => build_test('10°', '3° + 7°'),
+    '4 degrees - 2°'        => build_test('2°', '4° - 2°'),
+    '3㎭ + 3 radians'       => build_test('6 ㎭', '3 ㎭ + 3 ㎭'),
+    '2 rads + 7 rad'        => build_test('9 ㎭', '2 ㎭ + 7 ㎭'),
+    '2 radians + 3 degrees' => undef,
+    'pi radians in degrees' => build_test('180°', 'π ㎭°'),
+    '180° in radians'       => build_test('≈ 3.14159265359 ㎭', '180° ㎭'),
 
     # Misc functions
     'sqrt(4)'                => build_test('2', 'sqrt(4)'),
