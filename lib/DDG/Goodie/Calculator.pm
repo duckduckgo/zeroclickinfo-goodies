@@ -66,8 +66,8 @@ has 'angle_type' => (
 # Will want a more robust solution than this. Allows checking if user
 # specified /explicitly/ that an angle was in radians.
 has 'declared' => (
-    is => 'ro',
-    isa => 'Maybe[Str]',
+    is      => 'ro',
+    isa     => 'Maybe[Str]',
     default => undef,
 );
 sub declare {
@@ -436,28 +436,28 @@ use Moose;
 use namespace::autoclean;
 
 has spec => (
-    is => 'ro',
+    is       => 'ro',
     required => 1,
-    isa => 'CodeRef',
+    isa      => 'CodeRef',
 );
 has name => (
-    is => 'ro',
+    is       => 'ro',
     required => 1,
-    isa => 'Str',
+    isa      => 'Str',
 );
 has terms => (
-    is => 'rw',
+    is  => 'rw',
     isa => sub { [] },
 );
 has bless_counter => (
-    is => 'ro',
+    is      => 'ro',
     default => 0,
-    isa => 'Int',
+    isa     => 'Int',
 );
 has ignore_case => (
-    is => 'ro',
+    is      => 'ro',
     default => 0,
-    isa => 'Bool',
+    isa     => 'Bool',
 );
 
 sub generate_sub_grammar {
@@ -931,29 +931,29 @@ sub new_term_operator { binary_operator_gen($term_operator_grammar)->(@_) }
 sub new_factor_term_operator { binary_operator_gen($factor_term_operator_grammar)->(@_) }
 
 new_expression_operator {
-    rep => '-',
+    rep    => '-',
     action => sub { $_[0] - $_[1] },
 };
 new_expression_operator {
-    rep => '+',
+    rep    => '+',
     action => sub { $_[0] + $_[1] },
 };
 new_term_operator {
-    rep => '*',
+    rep    => '*',
     action => sub { $_[0] * $_[1] },
 };
 new_term_operator {
-    rep => '/',
-    forms => ['/', 'divided by'],
+    rep    => '/',
+    forms  => ['/', 'divided by'],
     action => sub { $_[0] / $_[1] },
 };
 
 sub taint_when_long { taint_result_when(sub { length $_[0] > 10 }, @_) }
 
 new_factor_term_operator {
-    rep => '^',
-    forms => ['^', 'to the power', 'to the power of'],
-    assoc => 'right',
+    rep    => '^',
+    forms  => ['^', 'to the power', 'to the power of'],
+    assoc  => 'right',
     action => taint_when_long(sub { $_[0] ** $_[1] }),
 };
 
@@ -994,7 +994,7 @@ sub irrational { new_tainted(@_) };
 # Constants go here.
 new_symbol_constant {
     forms => 'pi',
-    rep => 'π',
+    rep   => 'π',
     value => new_result {
         tainted    => 1,
         value      => $big_pi,
@@ -1002,15 +1002,15 @@ new_symbol_constant {
     },
 };
 new_word_constant {
-    rep => 'dozen',
+    rep   => 'dozen',
     value => pure(12),
 };
 new_symbol_constant {
-    rep => 'e',
+    rep   => 'e',
     value => irrational($big_e),
 };
 new_word_constant {
-    rep => 'score',
+    rep   => 'score',
     value => pure(20),
 };
 
