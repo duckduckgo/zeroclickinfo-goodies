@@ -146,7 +146,12 @@ sub pretty_output {
         id => 'sun_info',
         name => 'Answer',
         data => {
-
+            where => $where,
+            when_data => $when,
+            sunrise_svg => $sunrise_svg,
+            rise => $rise,
+            sunset_svg => $sunset_svg,
+            set_data => $set
         },
         templates => {
             group => 'text',
