@@ -4,7 +4,7 @@ package DDG::Goodie::SunInfo;
 use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
-with 'DDG::GoodieRole::ImageLoader';
+#with 'DDG::GoodieRole::ImageLoader';
 
 use DateTime::Event::Sunrise;
 use utf8;
@@ -20,22 +20,23 @@ description 'Compute the sunrise and sunset for a given day';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SunInfo.pm';
 category 'calculations';
 topics 'everyday';
-attribution github => ['duckduckgo', 'DuckDuckGo'];
+attribution github => ['duckduckgo', 'DuckDuckGo'],
             github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 my $time_format      = '%l:%M %p';
 my $datestring_regex = datestring_regex();
 
-my $sunrise_svg = goodie_img_tag({
-    filename => 'sunrise.svg',
-    height   => 48,
-    width    => 48,
-});
-my $sunset_svg = goodie_img_tag({
-    filename => 'sunset.svg',
-    height   => 48,
-    width    => 48,
-});
+my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
+#my $sunrise_svg = goodie_img_tag({
+#    filename => 'sunrise.svg',
+#    height   => 48,
+#    width    => 48,
+#});
+#my $sunset_svg = goodie_img_tag({
+#    filename => 'sunset.svg',
+#    height   => 48,
+#    width    => 48,
+#});
 
 my $lat_lon_regex = qr/[\+\-]?[0-9]+(?:
         (?:\.[0-9]+[°]?)
@@ -148,9 +149,9 @@ sub pretty_output {
         data => {
             where => $where,
             when_data => $when,
-            sunrise_svg => $sunrise_svg,
+            sunrise_svg => "/share/goodie/sun_info/$goodieVersion/sunrise.svg",
             rise => $rise,
-            sunset_svg => $sunset_svg,
+            sunset_svg => "/share/goodie/sun_info/$goodieVersion/sunset.svg",
             set_data => $set
         },
         templates => {
