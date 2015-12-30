@@ -199,6 +199,7 @@ ddg_goodie_test(
     '2 radians + 3 degrees' => undef,
     'pi radians in degrees' => build_test('180°', 'π ㎭°'),
     '180° in radians'       => build_test('≈ 3.14159265359 ㎭', '180° ㎭'),
+    '3 * 4 ㎭'              => build_test('12 ㎭', '3 * 4 ㎭'),
 
     # Misc functions
     'sqrt(4)'                => build_test('2', 'sqrt(4)'),
