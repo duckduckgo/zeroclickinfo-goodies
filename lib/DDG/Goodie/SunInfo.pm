@@ -142,6 +142,21 @@ sub pretty_output {
     #$html .= "</div></div>";
 
     return $text, #html => $html);
+    structured_answer => {
+        id => 'sun_info',
+        name => 'Answer',
+        data => {
+
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.sun_info.content'
+            }
+        }
+    };
+    
 }
 
 1;
