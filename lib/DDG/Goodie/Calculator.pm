@@ -6,7 +6,7 @@ BEGIN {
     require Exporter;
 
     our @ISA    = qw(Exporter);
-    our @EXPORT = qw(pure new_tainted new_result
+    our @EXPORT = qw(pure new_result
                      taint_result_when taint_result_unless
                      produces_angle
                      untaint_when);
@@ -104,15 +104,6 @@ sub pure {
     return DDG::Goodie::Calculator::Result->new({ value => $value });
 }
 
-# Creates a new tainted result.
-sub new_tainted {
-    my $value = shift;
-    return DDG::Goodie::Calculator::Result->new({
-            tainted => 1,
-            value   => $value,
-        });
-}
-
 sub new_result { DDG::Goodie::Calculator::Result->new(@_) };
 
 sub wrap_result {
@@ -175,8 +166,8 @@ sub make_degrees {
     my $copy = $self->copy;
     $copy->{angle_type} = 'degree';
     return $copy;
-    # $self->{angle_type} = 'degree';
 }
+
 sub make_angle {
     my ($self, $angle) = @_;
     my $copy = $self->copy;
@@ -203,27 +194,22 @@ sub copy {
 # Combine two Results using the given operation. Preserves appropriate
 # attributes.
 sub combine_results {
-    my ($sub, $swapsub) = @_;
+    my $sub = shift;
     return sub {
-        my ($self, $other, $swap) = @_;
+        my ($self, $other) = @_;
         my $tainted = $self->tainted || $other->tainted;
         my $angle = $self->angle_type // $other->angle_type;
-        return if (defined $angle)
-            && (($self->angle_type // $angle) ne ($other->angle_type // $angle));
+        return if (defined $self->angle_type && defined $other->angle_type && $self->angle_type ne $other->angle_type);
         my $first_val = $self->value();
         my $declared = $self->declared // $other->declared;
         my $second_val = $other->value();
-        my $res = $sub->($first_val, $second_val)
-            if (defined $first_val && defined $second_val);
-        $res = $swapsub->($res)
-            if (defined $swapsub && defined $res && $swap);
+        my $res = $sub->($first_val, $second_val);
         return new_result {
             tainted    => $tainted,
             value      => $res,
             angle_type => $angle,
             declared   => $declared,
         };
-        return $res;
     };
 }
 
@@ -237,7 +223,7 @@ sub upon_result {
     return preserving_taint sub {
         my $self = shift;
         my $value = $self->value();
-        my $res = $sub->($value) if defined $value;
+        my $res = $sub->($value);
         return $res;
     }
 }
@@ -257,8 +243,7 @@ sub on_result { (upon_result($_[1]))->($_[0]) };
 *modulo_results = combine_results(sub { $_[0] % $_[1] });
 
 sub num_compare_results {
-    my ($self, $other, $swap) = @_;
-    return $other->value() <=> $self->value() if $swap;
+    my ($self, $other) = @_;
     return $self->value()  <=> $other->value();
 }
 
@@ -266,7 +251,6 @@ sub from_big {
     my $to_convert = shift;
     return $to_convert->numify() if ref $to_convert eq 'Math::BigRat';
     return $to_convert->bstr() if ref $to_convert eq 'Math::BigFloat';
-    return $to_convert->bstr() if ref $to_convert eq 'Math::BigInt';
     return $to_convert;
 }
 
@@ -348,16 +332,12 @@ sub as_fraction_string {
     my $self = shift;
     my $show = "$self";
     my $value = $self->value();
-    if ($self->is_fraction()) {
-        return "$value";
-    }
+    return "$value";
 }
 
 sub is_integer {
     my $self = shift;
-    my $tolerance = shift;
     my $value = $self->value();
-    return pure($self->rounded($tolerance))->is_integer() if defined $tolerance;
     return $value->is_int() if ref $value eq 'Math::BigRat';
     return $value =~ /^\d+$/;
 }
@@ -372,10 +352,6 @@ sub as_rounded_decimal {
     my $self = shift;
     my $decimal = $self->value();
     my ($nom, $expt) = split 'e', $decimal;
-    if (defined $expt) {
-        my $num = nearest(1e-12, $nom);
-        return $num . 'e' . $expt;
-    };
     my ($s, $e) = split 'e', sprintf('%0.13e', $decimal);
     return nearest(1e-12, $s) * 10 ** $e;
 }
@@ -388,16 +364,6 @@ sub angle_symbol {
         return ' ㎭' if $self->declared;
     };
     return '';
-}
-
-sub as_formatted_integer {
-    my $self = shift;
-    my $result = '';
-    my $number = $self->value;
-    if ($number->length() > 30) {
-        $result .= '≈ ' . $number->as_int->bround(20)->bsstr();
-    };
-    return $result . $self->angle_symbol;
 }
 
 sub as_decimal {
@@ -415,8 +381,6 @@ sub as_decimal {
 
 sub contains_bad_result {
     my $self = shift;
-    return 1 unless defined $self->value();
-    return 1 if $self->is_fraction() && $self->value->denominator() == 0;
     return $self->value() =~ /(inf|nan)/i;
 }
 
@@ -469,7 +433,7 @@ sub generate_sub_grammar {
     $str_grammar .= generate_grammar_line($self->{spec}->($first_refer), $first_term, 1);
     foreach my $term (@terms) {
         my ($refer, $refer_def) = generate_alternate_forms($term);
-        push @alternate_forms, $refer_def if defined $refer_def;
+        push @alternate_forms, $refer_def;
         $str_grammar .= generate_grammar_line($self->{spec}->($refer), $term, 0);
     };
     foreach my $alternate_form (@alternate_forms) {
@@ -480,9 +444,9 @@ sub generate_sub_grammar {
 sub add_term {
     my ($self, $term) = @_;
     $self->{bless_counter}++;
-    $term->{name} //= ($self->name . $self->bless_counter);
+    $term->{name} = ($self->name . $self->bless_counter);
     $term->{forms} //= [$term->{rep}];
-    $term->{ignore_case} //= $self->ignore_case;
+    $term->{ignore_case} = $self->ignore_case;
     push @{$self->{terms}}, $term;
 }
 
@@ -913,14 +877,6 @@ new_unary_function {
     action => taint_result_unless(sub { $_[0] =~ /^\d+$/ }, \&exp ),
 };
 
-
-# OPERATORS
-
-# new_binary_operator NAME, SYMBOL, ROUTINE
-sub new_binary_operator {
-    my ($name, $operator, $sub) = @_;
-    new_binary $name, $sub, sub { "$_[0] $operator $_[1]" };
-}
 sub binary_operator_gen {
     my $grammar_hash = shift;
     my $shower = sub { my $operator = shift; return sub { "$_[0] $operator $_[1]" } };
@@ -988,9 +944,6 @@ sub new_word_constant {
 my $big_pi = Math::BigRat->new()->bpi();
 my $big_e =  Math::BigRat->new(1)->bexp();
 
-# If any constants cannot be displayed as a fraction, wrap them with this
-sub irrational { new_tainted(@_) };
-
 # Constants go here.
 new_symbol_constant {
     forms => 'pi',
@@ -1007,7 +960,10 @@ new_word_constant {
 };
 new_symbol_constant {
     rep   => 'e',
-    value => irrational($big_e),
+    value => new_result {
+        tainted => 1,
+        value   => $big_e,
+    },
 };
 new_word_constant {
     rep   => 'score',
@@ -1112,7 +1068,6 @@ sub BUILD {
 # For prefix currencies that round to 2 decimal places.
 sub format_as_currency {
     my $self = shift;
-    return $self->result unless defined $self->currency;
     my $result = sprintf('%0.2f', $self->result->as_decimal());
     return $self->style->for_display($self->currency . $result);
 }
@@ -1122,7 +1077,7 @@ sub should_display_decimal {
     if ($self->result->is_fraction) {
         return 1 if not decimal_strings_equal($self->to_compute, $self->result->as_decimal());
     } else {
-        return 1 if $self->to_compute ne $self->result->value();
+        return 1;
     }
     return 0;
 }
@@ -1299,7 +1254,6 @@ sub to_display {
         grammar   => $grammar,
         currency  => $currency,
     });
-    return unless defined $user_result;
     my $formatted_input = $user_result->formatted_input;
     my $result = $user_result->format_for_display;
     return unless defined $result;
