@@ -938,6 +938,163 @@ sub get_parse_results {
 }
 
 
+package DDG::Goodie::Calculator::Result::User;
+# Generate formatted results for display.
+
+BEGIN {
+    require Exporter;
+
+    our @ISA    = qw(Exporter);
+}
+
+use strict;
+use utf8;
+use DDG::Goodie::Calculator::Parser;
+
+use Moose;
+
+has 'raw_query' => (
+    is       => 'ro',
+    isa      => 'Str',
+    required => 1,
+);
+
+has 'style' => (
+    is       => 'ro',
+    isa      => 'DDG::GoodieRole::NumberStyle',
+    required => 1,
+);
+
+has 'grammar' => (
+    is       => 'ro',
+    required => 1,
+);
+
+has 'currency' => (
+    is  => 'ro',
+    isa => 'Maybe[Str]',
+);
+
+has 'formatted_input' => (
+    is  => 'ro',
+    isa => 'Str',
+);
+
+has 'result' => (
+    is  => 'ro',
+    isa => 'DDG::Goodie::Calculator::Result',
+);
+
+has 'to_compute' => (
+    is  => 'ro',
+    isa => 'Str',
+);
+
+
+sub BUILD {
+    my $self = shift;
+    my $to_compute = $self->raw_query =~ s/((?:[,.\d][\d,. _]*[,.\d]?))/$self->style->for_computation($1)/ger;
+    my ($generated_input, $val_result) = eval { get_parse_results $self->grammar, $to_compute } or return;
+    $generated_input =~ s/(\d+(?:\.\d+)?)/$self->style->for_display($1)/ge;
+    $self->{formatted_input} = $generated_input;
+    $self->{result} = $val_result;
+    $self->{to_compute} = $to_compute;
+    return $self;
+};
+
+# For prefix currencies that round to 2 decimal places.
+sub format_as_currency {
+    my $self = shift;
+    return $self->result unless defined $self->currency;
+    my $result = sprintf('%0.2f', $self->result->as_decimal());
+    return $self->style->for_display($self->currency . $result);
+}
+
+sub should_display_decimal {
+    my $self = shift;
+    if ($self->result->is_fraction) {
+        return 1 if not decimal_strings_equal($self->to_compute, $self->result->as_decimal());
+    } else {
+        return 1 if $self->to_compute ne $self->result->value();
+    }
+    return 0;
+}
+
+sub should_display_fraction {
+    my $self = shift;
+    if ($self->result->is_fraction) {
+        return 0 if $self->result->tainted();
+        my $no_whitespace_input = $self->to_compute =~ s/\s*//gr;
+        return $no_whitespace_input ne $self->result->as_fraction_string;
+    }
+    return 0;
+}
+
+# Check if two strings represent the same decimal number.
+sub decimal_strings_equal {
+    my ($first, $second) = @_;
+    $first =~ s/^\./0\./;
+    $second =~ s/^\./0\./;
+    return $first eq $second;
+}
+
+sub got_rounded {
+    my ($original, $to_test) = @_;
+    return $original->value() != $to_test;
+}
+
+sub format_as_integer {
+    my $self = shift;
+    my $result = '';
+    my $number = $self->result->value;
+    if ($number->length() > 30) {
+        $result .= '≈ ';
+        $number = $number->as_int->bround(20)->bsstr();
+    };
+    return $result . $self->style->for_display($number);
+}
+
+sub format_as_decimal {
+    my $self = shift;
+    return $self->style->for_display($self->result->as_rounded_decimal());
+}
+sub format_as_fraction {
+    my $self = shift;
+    return $self->style->for_display($self->result->value);
+}
+
+sub format_for_display {
+    my $self = shift;
+    return if $self->is_bad_result;
+    return $self->format_as_currency if defined $self->currency;
+    return $self->format_as_integer if $self->result->is_integer;
+    my $result;
+    my $displayed_fraction;
+    if ($self->should_display_fraction) {
+        $result .= $self->format_as_fraction . ' ';
+        $displayed_fraction = 1;
+    };
+    if ($self->should_display_decimal) {
+        my $decimal = $self->result->as_rounded_decimal();
+        if (got_rounded($self->result, $decimal)) {
+            $result .= '≈ ';
+        } else {
+            $result .= '= ' if $displayed_fraction;
+        }
+        $result .= $self->format_as_decimal;
+    };
+    $result =~ s/\s+$//;
+    return $result;
+}
+
+sub is_bad_result {
+    my $self = shift;
+    return 1 unless defined $self->result;
+    return $self->result->contains_bad_result();
+}
+
+__PACKAGE__->meta->make_immutable;
+
 
 package DDG::Goodie::Calculator;
 # ABSTRACT: perform simple arithmetical calculations
@@ -948,6 +1105,7 @@ with 'DDG::GoodieRole::NumberStyler';
 use utf8;
 
 use DDG::Goodie::Calculator::Parser;
+use DDG::Goodie::Calculator::Result::User;
 
 zci answer_type => "calculation";
 zci is_cached   => 1;
@@ -1005,19 +1163,6 @@ sub get_currency {
     return $+{'currency'};
 }
 
-# For prefix currencies that round to 2 decimal places.
-sub format_for_currency {
-    my ($text, $currency) = @_;
-    return $text unless defined $currency;
-    my $result = sprintf('%0.2f', $text->as_decimal());
-    return $currency . $result;
-}
-
-sub format_currency_for_display {
-    my ($style, $text, $currency) = @_;
-    return $style->for_display(format_for_currency($text, $currency));
-}
-
 sub standardize_symbols {
     my $text = shift;
     # Only replace x's surrounded by non-alpha characters so it
@@ -1031,99 +1176,26 @@ sub standardize_symbols {
     return $text;
 }
 
-sub should_display_decimal {
-    my ($to_compute, $result) = @_;
-    if ($result->is_fraction()) {
-        return 1 if not decimal_strings_equal($to_compute, $result->as_decimal());
-    } else {
-        return 1 if $to_compute ne $result->value();
-    }
-    return 0;
-}
-
-sub should_display_fraction {
-    my ($to_compute, $result) = @_;
-    if ($result->is_fraction()) {
-        my $tainted = $result->tainted();
-        return 0 if $result->tainted();
-        my $no_whitespace_input = $to_compute =~ s/\s*//gr;
-        return $no_whitespace_input ne $result->as_fraction_string;
-    }
-    return 0;
-}
-
-# Check if two strings represent the same decimal number.
-sub decimal_strings_equal {
-    my ($first, $second) = @_;
-    $first =~ s/^\./0\./;
-    $second =~ s/^\./0\./;
-    return $first eq $second;
-}
-
-sub got_rounded {
-    my ($original, $to_test) = @_;
-    return $original->value() != $to_test;
-}
-
-sub format_number_for_display {
-    my ($style, $number) = @_;
-    return $style->for_display($number);
-}
-
-sub format_integer_for_display {
-    my ($style, $number) = @_;
-    my $result = '';
-    if ($number->value->length() > 30) {
-        $result .= '≈ ';
-        $number = $number->value->as_int->bround(20)->bsstr();
-    };
-    return $result . $style->for_display($number);
-}
-
-sub format_for_display {
-    my ($style, $to_compute, $value, $currency) = @_;
-    return format_currency_for_display $style, $value, $currency if defined $currency;
-    return format_integer_for_display $style, $value if $value->is_integer();
-    my $result;
-    my $displayed_fraction;
-    if (should_display_fraction($to_compute, $value)) {
-        $result .= format_number_for_display($style, $value) . ' ';
-        $displayed_fraction = 1;
-    };
-    if (should_display_decimal($to_compute, $value)) {
-        my $decimal = $value->as_rounded_decimal();
-        if (got_rounded($value, $decimal)) {
-            $result .= '≈ ';
-        } else {
-            $result .= '= ' if $displayed_fraction;
-        }
-        $result .= format_number_for_display($style, $decimal);
-    };
-    $result =~ s/\s+$//;
-    return $result;
-}
-
-sub is_bad_result {
-    my $result = shift;
-    return 1 unless defined $result;
-    return $result->contains_bad_result();
-}
-
 my $grammar_text = scalar share('grammar.txt')->slurp();
 my $grammar = generate_grammar($grammar_text);
 sub to_display {
     my $query = shift;
     my $currency = get_currency $query;
-    $query = standardize_symbols $query;
-    my $style = get_style $query or return;
-    my $to_compute = $query =~ s/((?:[,.\d][\d,. _]*[,.\d]?))/$style->for_computation($1)/ger;
-    my ($generated_input, $val_result) = eval { get_parse_results $grammar, $to_compute } or return;
-    return if is_bad_result $val_result;
-    my $result = format_for_display $style, $to_compute, $val_result, $currency;
-    $generated_input =~ s/(\d+(?:\.\d+)?)/$style->for_display($1)/ge;
+    $query       = standardize_symbols $query;
+    my $style    = get_style $query or return;
+    my $user_result = DDG::Goodie::Calculator::Result::User->new({
+        raw_query => $query,
+        style     => $style,
+        grammar   => $grammar,
+        currency  => $currency,
+    });
+    return unless defined $user_result;
+    my $formatted_input = $user_result->formatted_input;
+    my $result = $user_result->format_for_display;
+    return unless defined $result;
     # Didn't come up with anything the user didn't already know.
-    return if ($generated_input eq $result);
-    return ($generated_input, $result);
+    return if ($formatted_input eq $result);
+    return ($formatted_input, $result);
 }
 
 
