@@ -1,7 +1,7 @@
 {
     "id": "c_sharp_snippets_cheat_sheet",
-    "name": "Visual Studio C# Snippets Cheat Sheet",
-    "description": "Visual C# code snippets",
+    "name": "Visual Studio C# Snippets",
+    "description": "Code Snippets",
     "metadata": {
         "sourceName": "MSDN",
         "sourceUrl": "https://msdn.microsoft.com/en-us/library/z41h7fat.aspx"
