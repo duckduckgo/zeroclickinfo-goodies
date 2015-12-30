@@ -40,7 +40,7 @@ handle query => sub {
     my $font;
     my $text;
     my $figlet;
-    my $html;
+    #my $html;
 
     # Return if no input provided.
     return if ((lc $_ eq 'figlet') || (lc $_ eq 'bigtext') || (lc $_ eq 'big text'));
@@ -65,9 +65,9 @@ handle query => sub {
     $figlet = render_figlet($font, $text);
     $figlet = html_enc($figlet) if grep /^$font$/i, qw(rot13 mnemonic term); #ensure we escape input for plaintext formatted results
 
-    $html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font</span><pre contenteditable='true'>$figlet</pre></div>";
+    #$html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font</span><pre contenteditable='true'>$figlet</pre></div>";
 
-    return $figlet, html => $html if $figlet;
+    return $figlet, #html => $html if $figlet;
     return;
 };
 
