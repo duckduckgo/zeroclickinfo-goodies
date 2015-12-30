@@ -19,6 +19,9 @@ sub build_result {
             title => $result,
             subtitle => "Calculate: $formatted_input",
         },
+        meta => {
+            signal => 'high',
+        },
         templates => {
             group => 'text',
             moreAt => 0,
