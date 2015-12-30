@@ -10,11 +10,11 @@ zci is_cached => 1;
 zci answer_type => 'ohms';
 
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::ReverseResistorColours
-	)],
+    [qw(
+        DDG::Goodie::ReverseResistorColours
+    )],
 
-	'black green red resistor' => test_zci(
+    'black green red resistor' => test_zci(
         'A black green red resistor has a resistance of 500 Ω ± 20%.',
         structured_answer => {
             id => 'reverse_resistor_colours',
@@ -35,7 +35,7 @@ ddg_goodie_test(
             }
         }
     ),
-	'red orange yellow gold resistor' => test_zci(
+    'red orange yellow gold resistor' => test_zci(
         'A red orange yellow gold resistor has a resistance of 230 kΩ ± 5%.',
         structured_answer => {
             id => 'reverse_resistor_colours',
@@ -56,7 +56,7 @@ ddg_goodie_test(
             }
         }
     ),
-	'resistor yellow blue purple'=> test_zci(
+    'resistor yellow blue purple'=> test_zci(
         'A yellow blue violet resistor has a resistance of 460 MΩ ± 20%.',
          structured_answer => {
             id => 'reverse_resistor_colours',
@@ -78,9 +78,9 @@ ddg_goodie_test(
         }
     ),
 
-	'resistor yellow green' => undef,
-	'resistor red orange blue red green' => undef,
-	'resistor red banana orangutan' => undef,
+    'resistor yellow green' => undef,
+    'resistor red orange blue red green' => undef,
+    'resistor red banana orangutan' => undef,
     'red yellow white gold resistor' => test_zci(
         'A red yellow white gold resistor has a resistance of 24 GΩ ± 5%.',
         structured_answer => {
