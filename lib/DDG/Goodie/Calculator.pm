@@ -1279,9 +1279,12 @@ handle query => sub {
                 title    => "$result",
                 subtitle => "Calculate: $generated_input",
             },
+            meta => {
+                signal => 'high',
+            },
             templates => {
-              group  => 'text',
-              moreAt => '0',
+                group  => 'text',
+                moreAt => '0',
             },
         };
 };
