@@ -74,9 +74,8 @@ handle query_raw => sub {
 	my $title = "$resistance $append\x{2126} \x{00B1} $marginE\%";
     my $subtitle = "Resistance of $_ resistor:";
 	my $answer = "A $_ resistor has a resistance of $title.";
-	#my $source = '<a href="https://en.wikipedia.org/wiki/Electronic_color_code">More at Wikipedia</a>';
 
-	return $answer, #html => "$answer $source";
+	return $answer,
     structured_answer => {
         id => 'reverse_resistor_colours',
         name => 'Answer',
