@@ -17,6 +17,7 @@ name 'ReverseResistorColours';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/lib/DDG/Goodie/ReverseResistorColours.pm';
 category 'reference';
 topics 'science';
+attribution github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 my %coloursToDigits = (
 	'black'  => { value => 0,   tolerance => ''  },
