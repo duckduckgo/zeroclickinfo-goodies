@@ -71,10 +71,30 @@ handle query_raw => sub {
 		$append = "G";
 	}
 	#U+2126 is the ohm symbol, U+00B1 is the plus-minus sign.
-	my $answer = "A $_ resistor has a resistance of $resistance $append\x{2126} \x{00B1} $marginE\%.";
+	my $title = "$resistance $append\x{2126} \x{00B1} $marginE\%";
+    my $subtitle = "Resistance of $_ resistor:";
+	my $answer = "A $_ resistor has a resistance of $title.";
 	#my $source = '<a href="https://en.wikipedia.org/wiki/Electronic_color_code">More at Wikipedia</a>';
 
 	return $answer, #html => "$answer $source";
+    structured_answer => {
+        id => 'reverse_resistor_colours',
+        name => 'Answer',
+        data => {
+            title => $title,
+            subtitle => $subtitle
+        },
+        meta => {
+            sourceName => "Wikipedia",
+            sourceUrl => "https://en.wikipedia.org/wiki/Electronic_color_code",
+        },
+        templates => {
+            group => 'text',
+            options => {          
+                moreAt => 1,
+            }
+        }
+    };
 };
 
 1;
