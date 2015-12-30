@@ -15,8 +15,9 @@ use Math::BigRat try => 'GMP';
 use Math::Cephes qw(:explog);
 use Math::Cephes qw(:trigs);
 use Math::Round;
-use Moo;
 use Math::Trig qw(deg2rad);
+use Moose;
+use Moose::Util::TypeConstraints;
 
 use overload
     '""'    => 'to_string',
@@ -40,8 +41,8 @@ use overload
 # If an irrational (or ungodly) number was produced, so a fraction
 # should not be displayed.
 has 'tainted' => (
-    is => 'ro',
-    isa => sub { die unless $_[0] =~ /^[01]$/ },
+    is      => 'ro',
+    isa     => 'Bool',
     default => 0,
 );
 
@@ -50,10 +51,20 @@ has 'value' => (
     is => 'rw',
 );
 
-has 'is_degrees' => (
-    is => 'rw',
-    default => 0,
+subtype 'DDG::Goodie::Calculator::Angle',
+    as 'Str',
+    where { $_ =~ /^radian|degree$/ };
+
+has 'angle_type' => (
+    is      => 'ro',
+    isa     => 'Maybe[DDG::Goodie::Calculator::Angle]',
+    default => undef,
 );
+
+sub is_degrees {
+    my $self = shift;
+    ($self->angle_type // '') eq 'degree'
+};
 
 sub taint {
     my $self = shift;
@@ -80,6 +91,8 @@ sub new_tainted {
             value   => $value,
         });
 }
+
+sub new_result { DDG::Goodie::Calculator::Result->new(@_) };
 
 sub wrap_result {
     my $result = shift;
@@ -131,7 +144,12 @@ sub to_string {
 # Tell the Calculator that the value is an angle in degrees.
 sub make_degrees {
     my $self = shift;
-    $self->is_degrees(1);
+    $self->{angle_type} = 'degree';
+}
+
+sub make_radians {
+    my $self = shift;
+    $self->{angle_type} = 'radian';
 }
 
 # Combine two Results using the given operation. Preserves appropriate
@@ -238,7 +256,16 @@ sub exponentiate_fraction {
 *sqrt_result = upon_result sub { sqrt $_[0] };
 *int_result = upon_result sub { int $_[0] };
 
-sub to_radians { $_[0]->is_degrees() ? $_[0]->on_decimal(\&deg2rad) : $_[0] }
+sub to_radians {
+    my $self = shift;
+    my $is_deg = $self->is_degrees();
+    if ($is_deg) {
+        my $res = $self->on_decimal(\&deg2rad);
+        $res->make_radians();
+        return $res;
+    };
+    return $self;
+};
 
 sub with_radians {
     my $sub = shift;
@@ -308,7 +335,7 @@ sub contains_bad_result {
     return $self->value() =~ /(inf|nan)/i;
 }
 
-
+__PACKAGE__->meta->make_immutable;
 
 
 package DDG::Goodie::Calculator::Parser::Grammar;
