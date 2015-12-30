@@ -59,7 +59,6 @@ my @exact = (
             }
         }
     }
-     # qr{^<div class='zci--suninfo'><div class='suninfo--header text--secondary'><span class='ddgsi'>.*<img.*4:46 PM</span></span></div></div>$},
 );
 
 ddg_goodie_test(
@@ -89,7 +88,7 @@ ddg_goodie_test(
             }
         }
     ),
-    'sunset at 1S 1W'                     => test_zci(qr"On .*, sunrise in Coordinates -1°N -1°E is at .*AM; sunset at .*PM.",
+    'sunset at 1S 1W' => test_zci(qr"On .*, sunrise in Coordinates -1°N -1°E is at .*AM; sunset at .*PM.",
         structured_answer => {
             id => 'sun_info',
             name => 'Answer',
@@ -103,7 +102,7 @@ ddg_goodie_test(
             }
         }
     ),
-    'sunset at 53N 2E on 2014-01-01'      => test_zci("On 01 Jan 2014, sunrise in Coordinates 53°N 2°E is at 8:05 AM; sunset at 3:46 PM.",
+    'sunset at 53N 2E on 2014-01-01' => test_zci("On 01 Jan 2014, sunrise in Coordinates 53°N 2°E is at 8:05 AM; sunset at 3:46 PM.",
         structured_answer => {
             id => 'sun_info',
             name => 'Answer',
@@ -117,7 +116,7 @@ ddg_goodie_test(
             }
         }
     ),
-    'sunset at 53N 2W on 2014-01-08'      => test_zci("On 08 Jan 2014, sunrise in Coordinates 53°N -2°E is at 8:18 AM; sunset at 4:11 PM.",
+    'sunset at 53N 2W on 2014-01-08' => test_zci("On 08 Jan 2014, sunrise in Coordinates 53°N -2°E is at 8:18 AM; sunset at 4:11 PM.",
         structured_answer => {
             id => 'sun_info',
             name => 'Answer',
@@ -131,12 +130,12 @@ ddg_goodie_test(
             }
         }
     ),
-    'sunset for philly'                   => undef,
-    'sunrise on mars'                     => undef,
-    'sunset boulevard'                    => undef,
-    'tequila sunrise'                     => undef,
-    'sunrise mall'                        => undef,
-    'after the sunset'                    => undef,
+    'sunset for philly' => undef,
+    'sunrise on mars'   => undef,
+    'sunset boulevard'  => undef,
+    'tequila sunrise'   => undef,
+    'sunrise mall'      => undef,
+    'after the sunset'  => undef,
 );
 
 done_testing;
