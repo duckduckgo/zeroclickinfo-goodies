@@ -72,9 +72,9 @@ handle query_raw => sub {
 	}
 	#U+2126 is the ohm symbol, U+00B1 is the plus-minus sign.
 	my $answer = "A $_ resistor has a resistance of $resistance $append\x{2126} \x{00B1} $marginE\%.";
-	my $source = '<a href="https://en.wikipedia.org/wiki/Electronic_color_code">More at Wikipedia</a>';
+	#my $source = '<a href="https://en.wikipedia.org/wiki/Electronic_color_code">More at Wikipedia</a>';
 
-	return $answer, html => "$answer $source";
+	return $answer, #html => "$answer $source";
 };
 
 1;
