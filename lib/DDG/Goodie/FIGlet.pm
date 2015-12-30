@@ -16,8 +16,9 @@ category 'transformations';
 topics 'words_and_games';
 code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Figlet.pm';
 attribution
-	web => ['http://engvik.nu', 'Lars Jansøn Engvik'],
-	github => [ 'larseng', 'Lars Jansøn Engvik'];
+    web => ['http://engvik.nu', 'Lars Jansøn Engvik'],
+	github => [ 'larseng', 'Lars Jansøn Engvik'],
+    github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 zci answer_type => 'figlet';
 zci is_cached => 1;
@@ -31,7 +32,7 @@ closedir DIR;
 
 # Renders a figlet.
 sub render_figlet {
-	my ($font, $text) = @_;
+    my ($font, $text) = @_;
 	return Text::FIGlet->new(-f=>$font, -d=>share())->figify(-w=>$width, -A=>$text);
 }
 
