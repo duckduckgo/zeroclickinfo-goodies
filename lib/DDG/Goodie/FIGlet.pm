@@ -62,7 +62,6 @@ handle query => sub {
 
     # Render the FIGlet
     $figlet = render_figlet($font, $text);
-    $figlet = html_enc($figlet) if grep /^$font$/i, qw(rot13 mnemonic term); #ensure we escape input for plaintext formatted results
 
     return unless $figlet;
     
