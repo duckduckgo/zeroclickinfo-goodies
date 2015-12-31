@@ -7,7 +7,7 @@
         "sourceUrl": "http://overapi.com/javascript/"
     },
     "aliases": [
-        "js", "java script", "javascript methods", "js methods", "java script methods", 
+        "js", "java script", "javascript methods", "js methods", "java script methods" 
     ],
     "template_type": "code",
     "section_order": [
@@ -71,31 +71,31 @@
         }],
         "Math Methods": [{
             "val": "Returns the absolute value of x",
-            "key": "abs(x)"
+            "key": "Math.abs(x)"
         }, {
             "val": "Returns x, rounded upwards to the nearest integer",
-            "key": "ceil()"
+            "key": "Math.ceil()"
         }, {
             "val": "Returns x, rounded downwards to the nearest integer",
-            "key": "floor()"
+            "key": "Math.floor()"
         }, {
             "val": "Returns the number with the highest value",
-            "key": "max(x,y,z,...,n)"
+            "key": "Math.max(x,y,z,...,n)"
         }, {
             "val": "Returns the number with the lowest value",
-            "key": "min(x,y,z,...,n)"
+            "key": "Math.min(x,y,z,...,n)"
         }, {
             "val": "Returns the value of x to the power of y",
-            "key": "pow(x,y)"
+            "key": "Math.pow(x,y)"
         }, {
             "val": "Returns a random number between 0 (inclusive) and 1 (exclusive)",
-            "key": "random()"        
+            "key": "Math.random()"        
         }, {
             "val": "Rounds x to the nearest integer",
-            "key": "round(x)"
+            "key": "Math.round(x)"
         }, {
             "val": "Returns the square root of x",
-            "key": "sqrt(x)"
+            "key": "Math.sqrt(x)"
         }],
         "Number Methods": [{
             "val": "Converts a number into an exponential notation",
