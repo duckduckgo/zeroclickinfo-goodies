@@ -1003,7 +1003,14 @@ ddg_goodie_test(
     '-7 kelvin in fahrenheit' => undef,
     '-7 rankine in fahrenheit' => undef,
     
-    '0 fahrenheit in fahrenheit' => undef,
+    '0 fahrenheit in fahrenheit' => test_zci(
+        '0 degrees fahrenheit = 0 degrees fahrenheit',
+        structured_answer => {
+            input => ['0 degrees fahrenheit'],
+            operation => 'convert',
+            result => '0 degrees fahrenheit'
+        }
+    ),,
     '0 celsius in fahrenheit' => test_zci(
         '0 degrees celsius = 32 degrees fahrenheit',
         structured_answer => {
@@ -1137,7 +1144,14 @@ ddg_goodie_test(
             result => '-17.778 degrees celsius'
         }
     ),
-    '0 celsius in celsius' => undef,
+    '0 celsius in celsius' => test_zci(
+        '0 degrees celsius = 0 degrees celsius',
+        structured_answer => {
+            input => ['0 degrees celsius'],
+            operation => 'convert',
+            result => '0 degrees celsius'
+        }
+    ),,
     '0 kelvin in celsius' => test_zci(
         '0 kelvin = -273.150 degrees celsius',
         structured_answer => {
@@ -1271,9 +1285,16 @@ ddg_goodie_test(
             result => '273.150 kelvin'
         }
     ),
-    '0 kelvin in kelvin' => undef,
+    '0 kelvin in kelvin' => test_zci(
+        '0 kelvin = 0 kelvin',
+        structured_answer => {
+            input => ['0 kelvin'],
+            operation => 'convert',
+            result => '0 kelvin'
+        }
+    ),,
     '0 rankine in kelvin' => test_zci(
-        '0 rankine = 0 kelvin',
+        '0 degrees rankine = 0 kelvin',
         structured_answer => {
             input => ['0 degrees rankine'],
             operation => 'convert',
@@ -1405,7 +1426,14 @@ ddg_goodie_test(
             result => '0 degrees rankine'
         }
     ),
-    '0 rankine in rankine' => undef,
+    '0 rankine in rankine' => test_zci(
+        '0 degrees rankine = 0 degrees rankine',
+        structured_answer => {
+            input => ['0 degrees rankine'],
+            operation => 'convert',
+            result => '0 degrees rankine'
+        }
+    ),,
         
     '84856 fahrenheit in fahrenheit' => test_zci(
         '84,856 degrees fahrenheit = 84,856 degrees fahrenheit',

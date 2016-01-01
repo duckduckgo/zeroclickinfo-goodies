@@ -130,15 +130,15 @@ handle query_lc => sub {
 #warn("LINE 130");
     my $styler = number_style_for($factor);
     return unless $styler;
-
+    
     my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
         'to_unit' => $matches[1],
     });
 
-#warn("LINE 139");
-    return if !$result->{'result'};
+#warn("LINE 139 ". dump($result));
+    return unless defined $result->{'result'};
 #warn("LINE 141");
     my $formatted_result = sprintf("%.${precision}f", $result->{'result'});
 
