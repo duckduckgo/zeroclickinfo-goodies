@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 sub make_answer(%){
     my ($input) = @_;
-    
+
     return {
         data => {
             raw_input         => $input->{'raw_input'},
@@ -131,7 +131,7 @@ ddg_goodie_test(
         })
     ),
     'light year to mm' => test_zci(
-        '1 light year = 9.46 * 10^18 millimeters',
+        '1 light year = 9.46 * 10 ^ 18 millimeters',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
@@ -152,7 +152,7 @@ ddg_goodie_test(
             raw_answer => '0.000293',
             to_unit => 'kilowatt-hours',
             physical_quantity => 'energy'
-            
+
         })
     ),
     'convert 25 inches into feet' => test_zci(
@@ -589,7 +589,7 @@ ddg_goodie_test(
         })
     ),
     '42 kilowatt hours in joules' => test_zci(
-        '42 kilowatt-hours = 1.51 * 10^8 joules',
+        '42 kilowatt-hours = 1.51 * 10 ^ 8 joules',
         structured_answer => make_answer({
             markup_input => '42',
             raw_input => '42',
@@ -637,7 +637,7 @@ ddg_goodie_test(
         })
     ),
     '1 gigawatt in horsepower' => test_zci(
-        '1 gigawatt = 1.34 * 10^6 horsepower',
+        '1 gigawatt = 1.34 * 10 ^ 6 horsepower',
         structured_answer => make_answer({
             markup_input => '1',
             raw_input => '1',
@@ -709,7 +709,7 @@ ddg_goodie_test(
         })
     ),
     '10 mg to tons' => test_zci(
-        '10 milligrams = 1.1 * 10^-8 tons',
+        '10 milligrams = 1.1 * 10 ^ -8 tons',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
@@ -721,7 +721,7 @@ ddg_goodie_test(
         })
     ),
     '10000 minutes in microseconds' => test_zci(
-        '10,000 minutes = 6 * 10^11 microseconds',
+        '10,000 minutes = 6 * 10 ^ 11 microseconds',
         structured_answer => make_answer({
             markup_input => '10,000',
             raw_input => '10000',
@@ -1142,7 +1142,7 @@ ddg_goodie_test(
     ),
     # Unusual number formats
     '3e60 degrees in revolutions' => test_zci(
-        '3 * 10^60 degrees = 8.33 * 10^57 revolutions',
+        '3 * 10 ^ 60 degrees = 8.33 * 10 ^ 57 revolutions',
         structured_answer => make_answer({
             markup_input => '3 * 10<sup>60</sup>',
             raw_input => '3*10^60',
@@ -1154,7 +1154,7 @@ ddg_goodie_test(
         })
     ),
     '4,1E5 newtons to pounds force' => test_zci(
-        '4,1 * 10^5 newtons = 92.171,667 pounds force',
+        '4,1 * 10 ^ 5 newtons = 92.171,667 pounds force',
         structured_answer => make_answer({
             markup_input => '4,1 * 10<sup>5</sup>',
             raw_input => '4.1*10^5',
@@ -1166,7 +1166,7 @@ ddg_goodie_test(
         })
     ),
     '4E5 newtons to pounds force' => test_zci(
-        '4 * 10^5 newtons = 89,923.577 pounds force',
+        '4 * 10 ^ 5 newtons = 89,923.577 pounds force',
         structured_answer => make_answer({
             markup_input => '4 * 10<sup>5</sup>',
             raw_input => '4*10^5',
@@ -1190,7 +1190,7 @@ ddg_goodie_test(
         })
     ),
     '3.5e-2 miles to inches' => test_zci(
-        '3.5 * 10^-2 miles = 2,217.600 inches',
+        '3.5 * 10 ^ -2 miles = 2,217.600 inches',
         structured_answer => make_answer({
             markup_input => '3.5 * 10<sup>-2</sup>',
             raw_input => '3.5*10^-2',
@@ -1227,7 +1227,7 @@ ddg_goodie_test(
         })
     ),
     '5 sq mi in square meters' => test_zci(
-        '5 square miles = 1.29 * 10^7 square meters',
+        '5 square miles = 1.29 * 10 ^ 7 square meters',
         structured_answer => make_answer({
             markup_input => '5',
             raw_input => '5',
@@ -1575,7 +1575,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    
+
     ## Full suite of tests around temperatures
     # for computational accuracy rather than
     # parsing accuracy
@@ -1688,7 +1688,7 @@ ddg_goodie_test(
         })
     ),
     '-87 celsius in fahrenheit' => test_zci(
-        '-87 degrees celsius = -124.600 degrees fahrenheit',        
+        '-87 degrees celsius = -124.600 degrees fahrenheit',
         structured_answer => make_answer({
             markup_input => '-87',
             raw_input => '-87',
@@ -1727,7 +1727,7 @@ ddg_goodie_test(
     ),
     '-7 kelvin in fahrenheit' => undef,
     '-7 rankine in fahrenheit' => undef,
-    
+
     '0 fahrenheit in fahrenheit' => test_zci(
         '0 degrees fahrenheit = 0 degrees fahrenheit',
         structured_answer => make_answer({
@@ -1824,7 +1824,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    
+
     '1234 fahrenheit in celsius' => test_zci(
         '1,234 degrees fahrenheit = 667.778 degrees celsius',
         structured_answer => make_answer({
@@ -2095,7 +2095,7 @@ ddg_goodie_test(
     ),
     '-87 kelvin in kelvin' => undef,
     '-87 rankine in kelvin' => undef,
-    
+
     '-7 fahrenheit in kelvin' => test_zci(
         '-7 degrees fahrenheit = 251.483 kelvin',
         structured_answer => make_answer({
@@ -2170,7 +2170,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    
+
     '10 fahrenheit in rankine' => test_zci(
         '10 degrees fahrenheit = 469.670 degrees rankine',
         structured_answer => make_answer({
@@ -2184,7 +2184,7 @@ ddg_goodie_test(
         })
     ),
     '10 celsius in rankine' => test_zci(
-        '10 degrees celsius = 509.670 degrees rankine',        
+        '10 degrees celsius = 509.670 degrees rankine',
         structured_answer => make_answer({
             markup_input => '10',
             raw_input => '10',
@@ -2367,7 +2367,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),,
-        
+
     '84856 fahrenheit in fahrenheit' => test_zci(
         '84,856 degrees fahrenheit = 84,856 degrees fahrenheit',
         structured_answer => make_answer({
@@ -2560,7 +2560,7 @@ ddg_goodie_test(
             physical_quantity => 'temperature'
         })
     ),
-    
+
     #Question format:
     'How to convert meters to inches' => test_zci(
         '1 meter = 39.370 inches',
@@ -2599,7 +2599,7 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
 	),
-    
+
     '3000000000000000 km to m' => test_zci(
         '3 * 10^15 kilometers = 3 * 10^18 meters',
 		structured_answer => make_answer({
