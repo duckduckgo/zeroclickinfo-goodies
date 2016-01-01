@@ -479,7 +479,7 @@ ddg_goodie_test(
             result    => "-17.222 degrees celsius"
         }
     ),
-    '0 c in k' => test_zci(
+    '0 c in kelvin' => test_zci(
         '0 degrees celsius = 273.150 kelvin',
         structured_answer => {
             input     => ['0 degrees celsius'],
@@ -495,7 +495,7 @@ ddg_goodie_test(
             result    => "112.222 degrees celsius"
         }
     ),
-    '234 f to k' => test_zci(
+    '234 f to kelvin' => test_zci(
         '234 degrees fahrenheit = 385.372 kelvin',
         structured_answer => {
             input     => ['234 degrees fahrenheit'],
@@ -883,19 +883,19 @@ ddg_goodie_test(
         }
     ),
     '-40 fahrenheit in celsius' => test_zci(
-        '-40 °F = -40 °C',
+        '-40 degrees fahrenheit = -40 degrees celsius',
         structured_answer => {
-            input => ['-40 °F'],
-            operation => 'Convert',
-            result => '-40 °C'
+            input => ['-40 degrees fahrenheit'],
+            operation => 'convert',
+            result => '-40 degrees celsius'
         }
     ),
     '-40 celsius in fahrenheit' => test_zci(
-        '-40 °C = -40 °F',
+        '-40 degrees celsius = -40 degrees fahrenheit',
         structured_answer => {
-            input => ['-40 °C'],
-            operation => 'Convert',
-            result => '-40 °F'
+            input => ['-40 degrees celsius'],
+            operation => 'convert',
+            result => '-40 degrees fahrenheit'
         }
     ),
     
@@ -903,676 +903,676 @@ ddg_goodie_test(
     # for computational accuracy rather than
     # parsing accuracy
     '10 fahrenheit in fahrenheit' => test_zci(
-        '10 °F = 10 °F',
+        '10 degrees fahrenheit = 10 degrees fahrenheit',
         structured_answer => {
-            input => ['10 °F'],
-            operation => 'Convert',
-            result => '10 °F'
+            input => ['10 degrees fahrenheit'],
+            operation => 'convert',
+            result => '10 degrees fahrenheit'
         }
     ),
     '10 celsius in fahrenheit' => test_zci(
-        '10 °C = 50 °F',
+        '10 degrees celsius = 50 degrees fahrenheit',
         structured_answer => {
-            input => ['10 °C'],
-            operation => 'Convert',
-            result => '50 °F'
+            input => ['10 degrees celsius'],
+            operation => 'convert',
+            result => '50 degrees fahrenheit'
         }
     ),
     '10 kelvin in fahrenheit' => test_zci(
-        '10 K = -441.670 °F',
+        '10 kelvin = -441.670 degrees fahrenheit',
         structured_answer => {
-            input => ['10 K'],
-            operation => 'Convert',
-            result => '-441.670 °F'
+            input => ['10 kelvin'],
+            operation => 'convert',
+            result => '-441.670 degrees fahrenheit'
         }
     ),
     '10 rankine in fahrenheit' => test_zci(
-        '10 °R = -449.670 °F',
+        '10 degrees rankine = -449.670 degrees fahrenheit',
         structured_answer => {
-            input => ['10 °R'],
-            operation => 'Convert',
-            result => '-449.670 °F'
+            input => ['10 degrees rankine'],
+            operation => 'convert',
+            result => '-449.670 degrees fahrenheit'
         }
     ),
     '1234 fahrenheit in fahrenheit' => test_zci(
-        '1,234 °F = 1,234 °F',
+        '1,234 degrees fahrenheit = 1,234 degrees fahrenheit',
         structured_answer => {
-            input => ['1,234 °F'],
-            operation => 'Convert',
-            result => '1,234 °F'
+            input => ['1,234 degrees fahrenheit'],
+            operation => 'convert',
+            result => '1,234 degrees fahrenheit'
         }
     ),
     '1234 celsius in fahrenheit' => test_zci(
-        '1,234 °C = 2,253.200 °F',
+        '1,234 degrees celsius = 2,253.200 degrees fahrenheit',
         structured_answer => {
-            input => ['1,234 °C'],
-            operation => 'Convert',
-            result => '2,253.200 °F'
+            input => ['1,234 degrees celsius'],
+            operation => 'convert',
+            result => '2,253.200 degrees fahrenheit'
         }
     ),
     '1234 kelvin in fahrenheit' => test_zci(
-        '1,234 K = 1,761.530 °F',
+        '1,234 kelvin = 1,761.530 degrees fahrenheit',
         structured_answer => {
-            input => ['1,234 K'],
-            operation => 'Convert',
-            result => '1,761.530 °F'
+            input => ['1,234 kelvin'],
+            operation => 'convert',
+            result => '1,761.530 degrees fahrenheit'
         }
     ),
     '1234 rankine in fahrenheit' => test_zci(
-        '1,234 °R = 774.330 °F',
+        '1,234 degrees rankine = 774.330 degrees fahrenheit',
         structured_answer => {
-            input => ['1,234 °R'],
-            operation => 'Convert',
-            result => '774.330 °F'
+            input => ['1,234 degrees rankine'],
+            operation => 'convert',
+            result => '774.330 degrees fahrenheit'
         }
     ),
     '-87 fahrenheit in fahrenheit' => test_zci(
-        '-87 °F = -87 °F',
+        '-87 degrees fahrenheit = -87 degrees fahrenheit',
         structured_answer => {
-            input => ['-87 °F'],
-            operation => 'Convert',
-            result => '-87 °F'
+            input => ['-87 degrees fahrenheit'],
+            operation => 'convert',
+            result => '-87 degrees fahrenheit'
         }
     ),
     '-87 celsius in fahrenheit' => test_zci(
-        '-87 °C = -124.600 °F',        
+        '-87 degrees celsius = -124.600 degrees fahrenheit',        
         structured_answer => {
-            input => ['-87 °C'],
-            operation => 'Convert',
-            result => '-124.600 °F'
+            input => ['-87 degrees celsius'],
+            operation => 'convert',
+            result => '-124.600 degrees fahrenheit'
         }
     ),
     '-87 kelvin in fahrenheit' => undef,
     '-87 rankine in fahrenheit' => undef,
     '-7 fahrenheit in fahrenheit' => test_zci(
-        '-7 °F = -7 °F',
+        '-7 degrees fahrenheit = -7 degrees fahrenheit',
         structured_answer => {
-            input => ['-7 °F'],
-            operation => 'Convert',
-            result => '-7 °F'
+            input => ['-7 degrees fahrenheit'],
+            operation => 'convert',
+            result => '-7 degrees fahrenheit'
         }
     ),
     '-7 celsius in fahrenheit' => test_zci(
-        '-7 °C = 19.400 °F',
+        '-7 degrees celsius = 19.400 degrees fahrenheit',
         structured_answer => {
-            input => ['-7 °C'],
-            operation => 'Convert',
-            result => '19.400 °F'
+            input => ['-7 degrees celsius'],
+            operation => 'convert',
+            result => '19.400 degrees fahrenheit'
         }
     ),
     '-7 kelvin in fahrenheit' => undef,
     '-7 rankine in fahrenheit' => undef,
     #TODO: look at this undef
     '0 fahrenheit in fahrenheit' => test_zci(
-        '0 °F = 0 °F',
+        '0 degrees fahrenheit = 0 degrees fahrenheit',
         structured_answer => {
-            input => ['0 °F'],
-            operation => 'Convert',
-            result => '0 °F'
+            input => ['0 degrees fahrenheit'],
+            operation => 'convert',
+            result => '0 degrees fahrenheit'
         }
     ),
     '0 celsius in fahrenheit' => test_zci(
-        '0 °C = 32 °F',
+        '0 degrees celsius = 32 degrees fahrenheit',
         structured_answer => {
-            input => ['0 °C'],
-            operation => 'Convert',
-            result => '32 °F'
+            input => ['0 degrees celsius'],
+            operation => 'convert',
+            result => '32 degrees fahrenheit'
         }
     ),
     '0 kelvin in fahrenheit' => test_zci(
-        '0 K = -459.670 °F',
+        '0 kelvin = -459.670 degrees fahrenheit',
         structured_answer => {
-            input => ['0 K'],
-            operation => 'Convert',
-            result => '-459.670 °F'
+            input => ['0 kelvin'],
+            operation => 'convert',
+            result => '-459.670 degrees fahrenheit'
         }
     ),
     '0 rankine in fahrenheit' => test_zci(
-        '0 °R = -459.670 °F',
+        '0 degrees rankine = -459.670 degrees fahrenheit',
         structured_answer => {
-            input => ['0 °R'],
-            operation => 'Convert',
-            result => '-459.670 °F'
+            input => ['0 degrees rankine'],
+            operation => 'convert',
+            result => '-459.670 degrees fahrenheit'
         }
     ),
     '10 fahrenheit in celsius' => test_zci(
-        '10 °F = -12.222 °C',
+        '10 degrees fahrenheit = -12.222 degrees celsius',
         structured_answer => {
-            input => ['10 °F'],
-            operation => 'Convert',
-            result => '-12.222 °C'
+            input => ['10 degrees fahrenheit'],
+            operation => 'convert',
+            result => '-12.222 degrees celsius'
         }
     ),
     '10 celsius in celsius' => test_zci(
-        '10 °C = 10 °C',
+        '10 degrees celsius = 10 degrees celsius',
         structured_answer => {
-            input => ['10 °C'],
-            operation => 'Convert',
-            result => '10 °C'
+            input => ['10 degrees celsius'],
+            operation => 'convert',
+            result => '10 degrees celsius'
         }
     ),
     '10 kelvin in celsius' => test_zci(
-        '10 K = -263.150 °C',
+        '10 kelvin = -263.150 degrees celsius',
         structured_answer => {
-            input => ['10 K'],
-            operation => 'Convert',
-            result => '-263.150 °C'
+            input => ['10 kelvin'],
+            operation => 'convert',
+            result => '-263.150 degrees celsius'
         }
     ),
     #TODO: investigate accuracy here
-    # according to WA: 267.6°C;
+    # according to WA: 267.6degrees celsius;
     # https://www.wolframalpha.com/input/?i=10R+in+C
     '10 rankine in celsius' => test_zci(
-        '10 °R = -268 °C',
+        '10 degrees rankine = -268 degrees celsius',
         structured_answer => {
-            input => ['10 °R'],
-            operation => 'Convert',
-            result => '-268 °C'
+            input => ['10 degrees rankine'],
+            operation => 'convert',
+            result => '-268 degrees celsius'
         }
     ),
     
     '1234 fahrenheit in celsius' => test_zci(
-        '1,234 °F = 667.778 °C',
+        '1,234 degrees fahrenheit = 667.778 degrees celsius',
         structured_answer => {
-            input => ['1,234 °F'],
-            operation => 'Convert',
-            result => '667.778 °C'
+            input => ['1,234 degrees fahrenheit'],
+            operation => 'convert',
+            result => '667.778 degrees celsius'
         }
     ),
     '1234 celsius in celsius' => test_zci(
-        '1,234 °C = 1,234 °C',
+        '1,234 degrees celsius = 1,234 degrees celsius',
         structured_answer => {
-            input => ['1,234 °C'],
-            operation => 'Convert',
-            result => '1,234 °C'
+            input => ['1,234 degrees celsius'],
+            operation => 'convert',
+            result => '1,234 degrees celsius'
         }
     ),
     '1234 kelvin in celsius' => test_zci(
-        '1,234 K = 960.850 °C',
+        '1,234 kelvin = 960.850 degrees celsius',
         structured_answer => {
-            input => ['1,234 K'],
-            operation => 'Convert',
-            result => '960.850 °C'
+            input => ['1,234 kelvin'],
+            operation => 'convert',
+            result => '960.850 degrees celsius'
         }
     ),
     '1234 rankine in celsius' => test_zci(
-        '1,234 °R = 412.406 °C',
+        '1,234 degrees rankine = 412.406 degrees celsius',
         structured_answer => {
-            input => ['1,234 °R'],
-            operation => 'Convert',
-            result => '412.406 °C'
+            input => ['1,234 degrees rankine'],
+            operation => 'convert',
+            result => '412.406 degrees celsius'
         }
     ),
     '-87 fahrenheit in celsius' => test_zci(
-        '-87 °F = -66.111 °C',
+        '-87 degrees fahrenheit = -66.111 degrees celsius',
         structured_answer => {
-            input => ['-87 °F'],
-            operation => 'Convert',
-            result => '-66.111 °C'
+            input => ['-87 degrees fahrenheit'],
+            operation => 'convert',
+            result => '-66.111 degrees celsius'
         }
     ),
     '-87 celsius in celsius' => test_zci(
-        '-87 °C = -87 °C',
+        '-87 degrees celsius = -87 degrees celsius',
         structured_answer => {
-            input => ['-87 °C'],
-            operation => 'Convert',
-            result => '-87 °C'
+            input => ['-87 degrees celsius'],
+            operation => 'convert',
+            result => '-87 degrees celsius'
         }
     ),
     '-87 kelvin in celsius' => undef,
     '-87 rankine in celsius' => undef,
     '-7 fahrenheit in celsius' => test_zci(
-        '-7 °F = -21.667 °C',
+        '-7 degrees fahrenheit = -21.667 degrees celsius',
         structured_answer => {
-            input => ['-7 °F'],
-            operation => 'Convert',
-            result => '-21.667 °C'
+            input => ['-7 degrees fahrenheit'],
+            operation => 'convert',
+            result => '-21.667 degrees celsius'
         }
     ),
     '-7 celsius in celsius' => test_zci(
-        '-7 °C = -7 °C',
+        '-7 degrees celsius = -7 degrees celsius',
         structured_answer => {
-            input => ['-7 °C'],
-            operation => 'Convert',
-            result => '-7 °C'
+            input => ['-7 degrees celsius'],
+            operation => 'convert',
+            result => '-7 degrees celsius'
         }
     ),
     '-7 kelvin in celsius' => undef,
     '-7 rankine in celsius' => undef,
     '0 fahrenheit in celsius' => test_zci(
-        '0 °F = -17.778 °C',
+        '0 degrees fahrenheit = -17.778 degrees celsius',
         structured_answer => {
-            input => ['0 °F'],
-            operation => 'Convert',
-            result => '-17.778 °C'
+            input => ['0 degrees fahrenheit'],
+            operation => 'convert',
+            result => '-17.778 degrees celsius'
         }
     ),
     #TODO: Also no answer here?
     '0 celsius in celsius' => test_zci(
-        '0 °C = 0 °C',
+        '0 degrees celsius = 0 degrees celsius',
         structured_answer => {
-            input => ['0 °C'],
-            operation => 'Convert',
-            result => '0 °C'
+            input => ['0 degrees celsius'],
+            operation => 'convert',
+            result => '0 degrees celsius'
         }
     ),
     '0 kelvin in celsius' => test_zci(
-        '0 K = -273.150 °C',
+        '0 kelvin = -273.150 degrees celsius',
         structured_answer => {
-            input => ['0 K'],
-            operation => 'Convert',
-            result => '-273.150 °C'
+            input => ['0 kelvin'],
+            operation => 'convert',
+            result => '-273.150 degrees celsius'
         }
     ),
     '0 rankine in celsius' => test_zci(
-        '0 °R = -273.150 °C',
+        '0 degrees rankine = -273.150 degrees celsius',
         structured_answer => {
-            input => ['0 °R'],
-            operation => 'Convert',
-            result => '-273.150 °C'
+            input => ['0 degrees rankine'],
+            operation => 'convert',
+            result => '-273.150 degrees celsius'
         }
     ),
     '10 fahrenheit in kelvin' => test_zci(
-        '10 °F = 260.928 K',
+        '10 degrees fahrenheit = 260.928 kelvin',
         structured_answer => {
-            input => ['10 °F'],
-            operation => 'Convert',
-            result => '260.928 K'
+            input => ['10 degrees fahrenheit'],
+            operation => 'convert',
+            result => '260.928 kelvin'
         }
     ),
     '10 celsius in kelvin' => test_zci(
-        '10 °C = 283.150 K',
+        '10 degrees celsius = 283.150 kelvin',
         structured_answer => {
-            input => ['10 °C'],
-            operation => 'Convert',
-            result => '283.150 K'
+            input => ['10 degrees celsius'],
+            operation => 'convert',
+            result => '283.150 kelvin'
         }
     ),
     '10 kelvin in kelvin' => test_zci(
-        '10 K = 10 K',
+        '10 kelvin = 10 kelvin',
         structured_answer => {
-            input => ['10 K'],
-            operation => 'Convert',
-            result => '10 K'
+            input => ['10 kelvin'],
+            operation => 'convert',
+            result => '10 kelvin'
         }
     ),
     '10 rankine in kelvin' => test_zci(
-        '10 °R = 5.556 K',
+        '10 degrees rankine = 5.556 kelvin',
         structured_answer => {
-            input => ['10 °R'],
-            operation => 'Convert',
-            result => '5.556 K'
+            input => ['10 degrees rankine'],
+            operation => 'convert',
+            result => '5.556 kelvin'
         }
     ),
     '1234 fahrenheit in kelvin' => test_zci(
-        '1,234 °F = 940.928 K',
+        '1,234 degrees fahrenheit = 940.928 kelvin',
         structured_answer => {
-            input => ['1,234 °F'],
-            operation => 'Convert',
-            result => '940.928 K'
+            input => ['1,234 degrees fahrenheit'],
+            operation => 'convert',
+            result => '940.928 kelvin'
         }
     ),
     '1234 celsius in kelvin' => test_zci(
-        '1,234 °C = 1,507.150 K',
+        '1,234 degrees celsius = 1,507.150 kelvin',
         structured_answer => {
-            input => ['1,234 °C'],
-            operation => 'Convert',
-            result => '1,507.150 K'
+            input => ['1,234 degrees celsius'],
+            operation => 'convert',
+            result => '1,507.150 kelvin'
         }
     ),
     '1234 kelvin in kelvin' => test_zci(
-        '1,234 K = 1,234 K',
+        '1,234 kelvin = 1,234 kelvin',
         structured_answer => {
-            input => ['1,234 K'],
-            operation => 'Convert',
-            result => '1,234 K'
+            input => ['1,234 kelvin'],
+            operation => 'convert',
+            result => '1,234 kelvin'
         }
     ),
     '1234 rankine in kelvin' => test_zci(
-        '1,234 °R = 685.556 K',
+        '1,234 degrees rankine = 685.556 kelvin',
         structured_answer => {
-            input => ['1,234 °R'],
-            operation => 'Convert',
-            result => '685.556 K'
+            input => ['1,234 degrees rankine'],
+            operation => 'convert',
+            result => '685.556 kelvin'
         }
     ),
     #TODO NOT TRIGGERING!!
     '-87 fahrenheit in kelvin' => test_zci(
-        '-87 °F = 212 K',
+        '-87 degrees fahrenheit = 212 kelvin',
         structured_answer => {
-            input => ['-87 °F'],
-            operation => 'Convert',
-            result => '212 K'
+            input => ['-87 degrees fahrenheit'],
+            operation => 'convert',
+            result => '212 kelvin'
         }
     ),
     '-87 celsius in kelvin' => test_zci(
-        '-87 °C = 193.150 K ',
+        '-87 degrees celsius = 193.150 K ',
         structured_answer => {
-            input => ['-87 °C'],
-            operation => 'Convert',
-            result => '193.150 K'
+            input => ['-87 degrees celsius'],
+            operation => 'convert',
+            result => '193.150 kelvin'
         }
     ),
     '-87 kelvin in kelvin' => undef,
     '-87 rankine in kelvin' => undef,
     #TODO NOT TRIGGERING!!
     '-7 fahrenheit in kelvin' => test_zci(
-        '-7 °F = 251.500 K',
+        '-7 degrees fahrenheit = 251.500 kelvin',
         structured_answer => {
-            input => ['-7 °F'],
-            operation => 'Convert',
-            result => '251.500 K'
+            input => ['-7 degrees fahrenheit'],
+            operation => 'convert',
+            result => '251.500 kelvin'
         }
     ),
     '-7 celsius in kelvin' => test_zci(
-        '-7 °C = 266.150 K',
+        '-7 degrees celsius = 266.150 kelvin',
         structured_answer => {
-            input => ['-7 °C'],
-            operation => 'Convert',
-            result => '266.150 K'
+            input => ['-7 degrees celsius'],
+            operation => 'convert',
+            result => '266.150 kelvin'
         }
     ),
     '-7 kelvin in kelvin' => undef,
     '-7 rankine in kelvin' => undef,
     '0 fahrenheit in kelvin' => test_zci(
-        '0 °F = 255.372 K',
+        '0 degrees fahrenheit = 255.372 kelvin',
         structured_answer => {
-            input => ['0 °F'],
-            operation => 'Convert',
-            result => '255.372 K'
+            input => ['0 degrees fahrenheit'],
+            operation => 'convert',
+            result => '255.372 kelvin'
         }
     ),
     '0 celsius in kelvin' => test_zci(
-        '0 °C = 273.150 K',
+        '0 degrees celsius = 273.150 kelvin',
         structured_answer => {
-            input => ['0 °C'],
-            operation => 'Convert',
-            result => '273.150 K'
+            input => ['0 degrees celsius'],
+            operation => 'convert',
+            result => '273.150 kelvin'
         }
     ),
     #FAILING:
     '0 kelvin in kelvin' => test_zci(
-        '0 K = 0 K',
+        '0 kelvin = 0 kelvin',
         structured_answer => {
-            input => ['0 K'],
-            operation => 'Convert',
-            result => '0 K'
+            input => ['0 kelvin'],
+            operation => 'convert',
+            result => '0 kelvin'
         }
     ),
     # doesn't trigger:
     '0 rankine in kelvin' => test_zci(
-        '0 rankine = 0 K',
+        '0 rankine = 0 kelvin',
         structured_answer => {
-            input => ['0 °R'],
-            operation => 'Convert',
-            result => '0 K'
+            input => ['0 degrees rankine'],
+            operation => 'convert',
+            result => '0 kelvin'
         }
     ),
     
     '10 fahrenheit in rankine' => test_zci(
-        '10 °F = 469.670 °R',
+        '10 degrees fahrenheit = 469.670 degrees rankine',
         structured_answer => {
-            input => ['10 °F'],
-            operation => 'Convert',
-            result => '469.670 °R'
+            input => ['10 degrees fahrenheit'],
+            operation => 'convert',
+            result => '469.670 degrees rankine'
         }
     ),
     '10 celsius in rankine' => test_zci(
-        '10 °C = 509.670 °R',        
+        '10 degrees celsius = 509.670 degrees rankine',        
         structured_answer => {
-            input => ['10 °C'],
-            operation => 'Convert',
-            result => '509.670 °R'
+            input => ['10 degrees celsius'],
+            operation => 'convert',
+            result => '509.670 degrees rankine'
         }
     ),
     '10 kelvin in rankine' => test_zci(
-        '10 K = 18 °R',
+        '10 kelvin = 18 degrees rankine',
         structured_answer => {
-            input => ['10 K'],
-            operation => 'Convert',
-            result => '18 °R'
+            input => ['10 kelvin'],
+            operation => 'convert',
+            result => '18 degrees rankine'
         }
     ),
     '10 rankine in rankine' => test_zci(
-        '10 °R = 10 °R',
+        '10 degrees rankine = 10 degrees rankine',
         structured_answer => {
-            input => ['10 °R'],
-            operation => 'Convert',
-            result => '10 °R'
+            input => ['10 degrees rankine'],
+            operation => 'convert',
+            result => '10 degrees rankine'
         }
     ),
     '1234 fahrenheit in rankine' => test_zci(
-        '1,234 °F = 1,693.670 °R',
+        '1,234 degrees fahrenheit = 1,693.670 degrees rankine',
         structured_answer => {
-            input => ['1,234 °F'],
-            operation => 'Convert',
-            result => '1,693.670 °R'
+            input => ['1,234 degrees fahrenheit'],
+            operation => 'convert',
+            result => '1,693.670 degrees rankine'
         }
     ),
     '1234 celsius in rankine' => test_zci(
-        '1,234 °C = 2,712.870 °R',
+        '1,234 degrees celsius = 2,712.870 degrees rankine',
         structured_answer => {
-            input => ['1,234 °C'],
-            operation => 'Convert',
-            result => '2,712.870 °R'
+            input => ['1,234 degrees celsius'],
+            operation => 'convert',
+            result => '2,712.870 degrees rankine'
         }
     ),
     '1234 kelvin in rankine' => test_zci(
-        '1,234 K = 2,221.200 °R',
+        '1,234 kelvin = 2,221.200 degrees rankine',
         structured_answer => {
-            input => ['1,234 K'],
-            operation => 'Convert',
-            result => '2,221.200 °R'
+            input => ['1,234 kelvin'],
+            operation => 'convert',
+            result => '2,221.200 degrees rankine'
         }
     ),
     '1234 rankine in rankine' => test_zci(
-        '1,234 °R = 1,234 °R',
+        '1,234 degrees rankine = 1,234 degrees rankine',
         structured_answer => {
-            input => ['1,234 °R'],
-            operation => 'Convert',
-            result => '1,234 °R'
+            input => ['1,234 degrees rankine'],
+            operation => 'convert',
+            result => '1,234 degrees rankine'
         }
     ),
     #TOOD: FAILING, don't trigger correctly
     '-87 fahrenheit in rankine' => test_zci(
-        '-87 °F = 372.700 °R',
+        '-87 degrees fahrenheit = 372.700 degrees rankine',
         structured_answer => {
-            input => ['-87 °F'],
-            operation => 'Convert',
-            result => '372.700 °R'
+            input => ['-87 degrees fahrenheit'],
+            operation => 'convert',
+            result => '372.700 degrees rankine'
         }
     ),
     '-87 celsius in rankine' => test_zci(
-        '-87 °C = 335.100 °R',
+        '-87 degrees celsius = 335.100 degrees rankine',
         structured_answer => {
-            input => ['-87 °C'],
-            operation => 'Convert',
-            result => '335.100 °R'
+            input => ['-87 degrees celsius'],
+            operation => 'convert',
+            result => '335.100 degrees rankine'
         }
     ),
     '-87 kelvin in rankine' => undef,
     '-87 rankine in rankine' => undef,
     #TODO: Failing, don't trigger correctly
     '-7 fahrenheit in rankine' => test_zci(
-        '-7 °F = 452.700 °R',
+        '-7 degrees fahrenheit = 452.700 degrees rankine',
         structured_answer => {
-            input => ['-7 °F'],
-            operation => 'Convert',
-            result => '452.700 °R'
+            input => ['-7 degrees fahrenheit'],
+            operation => 'convert',
+            result => '452.700 degrees rankine'
         }
     ),
     '-7 celsius in rankine' => test_zci(
-        '-7 °C = 479.100 °R',
+        '-7 degrees celsius = 479.100 degrees rankine',
         structured_answer => {
-            input => ['-7 °C'],
-            operation => 'Convert',
-            result => '479.100 °R'
+            input => ['-7 degrees celsius'],
+            operation => 'convert',
+            result => '479.100 degrees rankine'
         }
     ),
     '-7 kelvin in rankine' => undef,
     '-7 rankine in rankine' => undef,
     '0 fahrenheit in rankine' => test_zci(
-        '0 °F = 459.670 °R',
+        '0 degrees fahrenheit = 459.670 degrees rankine',
         structured_answer => {
-            input => ['0 °F'],
-            operation => 'Convert',
-            result => '459.670 °R'
+            input => ['0 degrees fahrenheit'],
+            operation => 'convert',
+            result => '459.670 degrees rankine'
         }
     ),
     '0 celsius in rankine' => test_zci(
-        '0 °C = 491.670 °R',
+        '0 degrees celsius = 491.670 degrees rankine',
         structured_answer => {
-            input => ['0 °C'],
-            operation => 'Convert',
-            result => '491.670 °R'
+            input => ['0 degrees celsius'],
+            operation => 'convert',
+            result => '491.670 degrees rankine'
         }
     ),
     # FAILING: 0 != 0
     '0 kelvin in rankine' => test_zci(
-        '0 K = 0 °R',
+        '0 kelvin = 0 degrees rankine',
         structured_answer => {
-            input => ['0 K'],
-            operation => 'Convert',
-            result => '0 °R'
+            input => ['0 kelvin'],
+            operation => 'convert',
+            result => '0 degrees rankine'
         }
     ),
     # Doesn't Trigger
     '0 rankine in rankine' => test_zci(
-        '0 °R = 0 °R',
+        '0 degrees rankine = 0 degrees rankine',
         structured_answer => {
-            input => ['0 °R'],
-            operation => 'Convert',
-            result => '0 °R'
+            input => ['0 degrees rankine'],
+            operation => 'convert',
+            result => '0 degrees rankine'
         }
     ),
     
     
     '84856 fahrenheit in fahrenheit' => test_zci(
-        '84,856 °F = 84,856 °F',
+        '84,856 degrees fahrenheit = 84,856 degrees fahrenheit',
         structured_answer => {
-            input => ['84,856 °F'],
-            operation => 'Convert',
-            result => '84,856 °F'
+            input => ['84,856 degrees fahrenheit'],
+            operation => 'convert',
+            result => '84,856 degrees fahrenheit'
         }
     ),
     '84856 celsius in fahrenheit' => test_zci(
-        '84,856 °C = 152,772.800 °F',
+        '84,856 degrees celsius = 152,772.800 degrees fahrenheit',
         structured_answer => {
-            input => ['84,856 °C'],
-            operation => 'Convert',
-            result => '152,772.800 °F'
+            input => ['84,856 degrees celsius'],
+            operation => 'convert',
+            result => '152,772.800 degrees fahrenheit'
         }
     ),
     '84856 kelvin in fahrenheit' => test_zci(
-        '84,856 K = 152,281.130 °F',
+        '84,856 kelvin = 152,281.130 degrees fahrenheit',
         structured_answer => {
-            input => ['84,856 K'],
-            operation => 'Convert',
-            result => '152,281.130 °F'
+            input => ['84,856 kelvin'],
+            operation => 'convert',
+            result => '152,281.130 degrees fahrenheit'
         }
     ),
     '84856 rankine in fahrenheit' => test_zci(
-        '84,856 °R = 84,396.330 °F',
+        '84,856 degrees rankine = 84,396.330 degrees fahrenheit',
         structured_answer => {
-            input => ['84,856 °R'],
-            operation => 'Convert',
-            result => '84,396.330 °F'
+            input => ['84,856 degrees rankine'],
+            operation => 'convert',
+            result => '84,396.330 degrees fahrenheit'
         }
     ),
     '84856 fahrenheit in celsius' => test_zci(
-        '84,856 °F = 47,124.444 °C',
+        '84,856 degrees fahrenheit = 47,124.444 degrees celsius',
         structured_answer => {
-            input => ['84,856 °F'],
-            operation => 'Convert',
-            result => '47,124.444 °C'
+            input => ['84,856 degrees fahrenheit'],
+            operation => 'convert',
+            result => '47,124.444 degrees celsius'
         }
     ),
     '84856 celsius in celsius' => test_zci(
-        '84,856 °C = 84,856 °C',
+        '84,856 degrees celsius = 84,856 degrees celsius',
         structured_answer => {
-            input => ['84,856 °C'],
-            operation => 'Convert',
-            result => '84,856 °C'
+            input => ['84,856 degrees celsius'],
+            operation => 'convert',
+            result => '84,856 degrees celsius'
         }
     ),
     '84856 kelvin in celsius' => test_zci(
-        '84,856 K = 84,582.850 °C',
+        '84,856 kelvin = 84,582.850 degrees celsius',
         structured_answer => {
-            input => ['84,856 K'],
-            operation => 'Convert',
-            result => '84,582.850 °C'
+            input => ['84,856 kelvin'],
+            operation => 'convert',
+            result => '84,582.850 degrees celsius'
         }
     ),
     '84856 rankine in celsius' => test_zci(
-        '84,856 °R = 46,869.072 °C',
+        '84,856 degrees rankine = 46,869.072 degrees celsius',
         structured_answer => {
-            input => ['84,856 °R'],
-            operation => 'Convert',
-            result => '46,869.072 °C'
+            input => ['84,856 degrees rankine'],
+            operation => 'convert',
+            result => '46,869.072 degrees celsius'
         }
     ),
     '84856 fahrenheit in kelvin' => test_zci(
-        '84,856 °F = 47,397.594 K',
+        '84,856 degrees fahrenheit = 47,397.594 kelvin',
         structured_answer => {
-            input => ['84,856 °F'],
-            operation => 'Convert',
-            result => '47,397.594 K'
+            input => ['84,856 degrees fahrenheit'],
+            operation => 'convert',
+            result => '47,397.594 kelvin'
         }
     ),
     '84856 celsius in kelvin' => test_zci(
-        '84,856 °C = 85,129.150 K',
+        '84,856 degrees celsius = 85,129.150 kelvin',
         structured_answer => {
-            input => ['84,856 °C'],
-            operation => 'Convert',
-            result => '85,129.150 K'
+            input => ['84,856 degrees celsius'],
+            operation => 'convert',
+            result => '85,129.150 kelvin'
         }
     ),
     '84856 kelvin in kelvin' => test_zci(
-        '84,856 K = 84,856 K',
+        '84,856 kelvin = 84,856 kelvin',
         structured_answer => {
-            input => ['84,856 K'],
-            operation => 'Convert',
-            result => '84,856 K'
+            input => ['84,856 kelvin'],
+            operation => 'convert',
+            result => '84,856 kelvin'
         }
     ),
     '84856 rankine in kelvin' => test_zci(
-        '84,856 °R = 47,142.222 K',
+        '84,856 degrees rankine = 47,142.222 kelvin',
         structured_answer => {
-            input => ['84,856 °R'],
-            operation => 'Convert',
-            result => '47,142.222 K'
+            input => ['84,856 degrees rankine'],
+            operation => 'convert',
+            result => '47,142.222 kelvin'
         }
     ),
     '84856 fahrenheit in rankine' => test_zci(
-        '84,856 °F = 85,315.670 °R',
+        '84,856 degrees fahrenheit = 85,315.670 degrees rankine',
         structured_answer => {
-            input => ['84,856 °F'],
-            operation => 'Convert',
-            result => '85,315.670 °R'
+            input => ['84,856 degrees fahrenheit'],
+            operation => 'convert',
+            result => '85,315.670 degrees rankine'
         }
     ),
     '84856 celsius in rankine' => test_zci(
-        '84,856 °C = 153,232.470 °R',
+        '84,856 degrees celsius = 153,232.470 degrees rankine',
         structured_answer => {
-            input => ['84,856 °C'],
-            operation => 'Convert',
-            result => '153,232.470 °R'
+            input => ['84,856 degrees celsius'],
+            operation => 'convert',
+            result => '153,232.470 degrees rankine'
         }
     ),
     '84856 kelvin in rankine' => test_zci(
-        '84,856 K = 152,740.800 °R',
+        '84,856 kelvin = 152,740.800 degrees rankine',
         structured_answer => {
-            input => ['84,856 K'],
-            operation => 'Convert',
-            result => '152,740.800 °R'
+            input => ['84,856 kelvin'],
+            operation => 'convert',
+            result => '152,740.800 degrees rankine'
         }
     ),
     '84856 rankine in rankine' => test_zci(
-        '84,856 °R = 84,856 °R',
+        '84,856 degrees rankine = 84,856 degrees rankine',
         structured_answer => {
-            input => ['84,856 °R'],
-            operation => 'Convert',
-            result => '84,856 °R'
+            input => ['84,856 degrees rankine'],
+            operation => 'convert',
+            result => '84,856 degrees rankine'
         }
     ),
     
