@@ -68,12 +68,46 @@ handle query_lc => sub {
     # hack support for "degrees" prefix on temperatures
     $_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
     
+    # hack - convert "oz" to "fl oz" if "ml" contained in query
+    s/(oz|ounces)/fl oz/ if(/ml/ && not /fl oz/);
+    
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
     
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
+
+    # Compare factors of both units to ensure proper order when ambiguous
+    # also, check the <connecting_word> of regex for possible user intentions 
+    my @factor1 = (); # conversion factors, not left_num or right_num values
+    my @factor2 = ();
+	    
+    # gets factors for comparison
+    foreach my $type (@types) {
+        if($+{'left_unit'} eq $type->{'unit'}) {
+            push(@factor1, $type->{'factor'});
+        }
+        
+        my @aliases1 = @{$type->{'aliases'}};
+        foreach my $alias1 (@aliases1) {
+            if($+{'left_unit'} eq $alias1) {
+                push(@factor1, $type->{'factor'});
+            }
+        }
+        
+        if($+{'right_unit'} eq $type->{'unit'}) {
+            push(@factor2, $type->{'factor'});
+        }
+        
+        my @aliases2 = @{$type->{'aliases'}};
+        foreach my $alias2 (@aliases2) {
+            if($+{'right_unit'} eq $alias2) {
+                push(@factor2, $type->{'factor'});
+            }
+        }
+    }
+
 
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
@@ -84,7 +118,9 @@ handle query_lc => sub {
         || (   "" eq $+{'left_num'}
             && "" eq $+{'right_num'}
             && $+{'question'} !~ qr/convert/i
-            && !looks_plural($+{'right_unit'})))
+            && !looks_plural($+{'right_unit'})
+            && $+{'connecting_word'} !~ qr/to/i
+            && $factor1[0] > $factor2[0]))
     {
         $factor = $+{'right_num'};
         @matches = ($matches[1], $matches[0]);
