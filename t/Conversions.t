@@ -1002,7 +1002,7 @@ ddg_goodie_test(
     ),
     '-7 kelvin in fahrenheit' => undef,
     '-7 rankine in fahrenheit' => undef,
-    #TODO: look at this undef
+    
     '0 fahrenheit in fahrenheit' => test_zci(
         '0 degrees fahrenheit = 0 degrees fahrenheit',
         structured_answer => {
@@ -1059,15 +1059,12 @@ ddg_goodie_test(
             result => '-263.150 degrees celsius'
         }
     ),
-    #TODO: investigate accuracy here
-    # according to WA: 267.6degrees celsius;
-    # https://www.wolframalpha.com/input/?i=10R+in+C
     '10 rankine in celsius' => test_zci(
-        '10 degrees rankine = -268 degrees celsius',
+        '10 degrees rankine = -267.594 degrees celsius',
         structured_answer => {
             input => ['10 degrees rankine'],
             operation => 'convert',
-            result => '-268 degrees celsius'
+            result => '-267.594 degrees celsius'
         }
     ),
     

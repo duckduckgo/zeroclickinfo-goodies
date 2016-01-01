@@ -33,7 +33,7 @@ foreach my $type (@types) {
 }
 
 # build triggers based on available conversion units:
-triggers any => @units;
+triggers any => map { lc $_ } @units;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
@@ -189,34 +189,27 @@ sub looks_plural {
     return exists $singular_exceptions{$unit} || $unit_letters[-1] eq 's';
 }
 sub convert_temperatures {
-    my ($from, $to, $factor) = @_;
-    # ##
-    # F  = (C * 1.8) + 32            # celsius to fahrenheit
-    # F  = 1.8 * (K - 273.15) + 32   # kelvin  to fahrenheit
-    # F  = R - 459.67                # rankine to fahrenheit
-    # F  = (Ra * 2.25) + 32          # reaumur to fahrenheit
-    #
-    # C  = (F - 32) * 0.555          # fahrenheit to celsius
-    # K  = (F + 459.67) * 0.555      # fahrenheit to kelvin
-    # R  = F + 459.67                # fahrenheit to rankine
-    # Ra = (F - 32) * 0.444          # fahrenheit to reaumur
-    # ##
-   
-    # convert $from to fahrenheit:
-    if    ($from =~ /fahrenheit|f/i) { $factor = $factor;                           }
-    elsif ($from =~ /celsius|c/i)    { $factor = ($factor * (9 / 5)) + 32;          }
-    elsif ($from =~ /kelvin|k/i)     { $factor = (9 / 5) * ($factor - 273.15) + 32; }
-    elsif ($from =~ /rankine|r/i)    { $factor = $factor - 459.67;                  }
-    else                             { $factor = ($factor * (9 / 4)) + 32;          } 
-    
-    # convert fahrenheit $to:
-    if    ($to   =~ /fahrenheit|f/i) { $factor = $factor;                           }
-    elsif ($to   =~ /celsius|c/i)    { $factor = ($factor - 32) * (5 / 9);          }
-    elsif ($to   =~ /kelvin|k/i)     { $factor = ($factor + 459.67) * (5 / 9);      }
-    elsif ($to   =~ /rankine|r/i)    { $factor = $factor + 459.67;                  }
-    else                             { $factor = ($factor - 32) * (4 / 9);          }
+    my ($from, $to, $in_temperature) = @_;
 
-    return $factor;
+    my $kelvin;
+    # Convert to SI (Kelvin)
+    if    ($from =~ /^f(?:ahrenheit)?$/i) { $kelvin = ($in_temperature + 459.67) * 5/9; }
+    elsif ($from =~ /^c(?:elsius)?$/i)    { $kelvin = $in_temperature + 273.15; }
+    elsif ($from =~ /^k(?:elvin)?$/i)     { $kelvin = $in_temperature; }
+    elsif ($from =~ /^r(?:ankine)?$/i)    { $kelvin = $in_temperature * 5/9; }
+    elsif ($from =~ /^reaumur$/i)         { $kelvin = $in_temperature * 5/4 + 273.15 }
+    else { die; }
+    
+    my $out_temperature;
+    # Convert to Target Unit
+    if    ($to   =~ /^f(?:ahrenheit)?$/i) { $out_temperature = $kelvin * 9/5 - 459.67; }
+    elsif ($to   =~ /^c(?:elsius)?$/i)    { $out_temperature = $kelvin - 273.15; }
+    elsif ($to   =~ /^k(?:elvin)?$/i)     { $out_temperature = $kelvin; }
+    elsif ($to   =~ /^r(?:ankine)?$/i)    { $out_temperature = $kelvin * 9/5; }
+    elsif ($to   =~ /^reaumur$/i)         { $out_temperature = ($kelvin - 273.15) * 4/5; }
+    else { die; }
+
+    return $out_temperature;
 }
 sub get_matches {
     my @input_matches = @_;
