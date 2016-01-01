@@ -65,6 +65,7 @@ ddg_goodie_test(
     '3 * 4 / 12 + 3'              => build_test('4', '3 * 4 / 12 + 3'),
     '2 - 3 - 4'                   => build_test('-5', '2 - 3 - 4'),
     '2 - 3 + 4 - 7'               => build_test('-4', '2 - 3 + 4 - 7'),
+    'exp(0) - log(e) + sqrt(9) / tan(45°)' => build_test('3', 'exp(0) - ln(e) + sqrt(9) / tan(45°)'),
     # Powers
     '10 ^ 5'               => build_test('100,000', '10 ^ 5'),
     '2 ** 10'              => build_test('1,024', '2 ^ 10'),
