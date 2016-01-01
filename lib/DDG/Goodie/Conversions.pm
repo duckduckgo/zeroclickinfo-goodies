@@ -9,7 +9,7 @@ use Math::Round qw/nearest/;
 use bignum;
 use utf8;
 use YAML qw(Load);
-use Data::Dump qw(dump);
+
 name                      'Conversions';
 description               'convert between various units of measurement';
 category                  'calculations';
@@ -71,14 +71,14 @@ handle query_lc => sub {
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
     s/(oz|ounces)/fl oz/ if(/ml/ && not /fl oz/);
-#warn("LINE 74");    
+    
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-#warn("LINE 77");    
+    
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
-#warn("LINE 81");
+
     # Compare factors of both units to ensure proper order when ambiguous
     # also, check the <connecting_word> of regex for possible user intentions 
     my @factor1 = (); # conversion factors, not left_num or right_num values
@@ -109,7 +109,6 @@ handle query_lc => sub {
         }
     }
 
-#warn("LINE 112");
     # if the query is in the format <unit> in <num> <unit> we need to flip
     # also if it's like "how many cm in metre"; the "1" is implicitly metre so also flip
     # But if the second unit is plural, assume we want the the implicit one on the first
@@ -127,7 +126,7 @@ handle query_lc => sub {
         @matches = ($matches[1], $matches[0]);
     }
     $factor = 1 if ($factor =~ qr/^(a[n]?)?$/);
-#warn("LINE 130");
+
     my $styler = number_style_for($factor);
     return unless $styler;
     
@@ -137,9 +136,9 @@ handle query_lc => sub {
         'to_unit' => $matches[1],
     });
 
-#warn("LINE 139 ". dump($result));
+
     return unless defined $result->{'result'};
-#warn("LINE 141");
+
     my $formatted_result = sprintf("%.${precision}f", $result->{'result'});
 
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
@@ -192,8 +191,6 @@ sub looks_plural {
 sub convert_temperatures {
     my ($from, $to, $in_temperature) = @_;
 
-    #warn("'$from' '$to' '$in_temperature'\n");
-
     my $kelvin;
     # Convert to SI (Kelvin)
     if    ($from =~ /^f(?:ahrenheit)?$/i) { $kelvin = ($in_temperature + 459.67) * 5/9; }
@@ -236,11 +233,11 @@ sub get_matches {
 sub convert {
     my ($conversion) = @_;
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
-#warn("line 239 ---  ".dump($conversion));
+
     return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
-#warn("line 243");
+
     my $result;
     # run the conversion:
     # temperatures don't have 1:1 conversions, so they get special treatment:
@@ -249,7 +246,7 @@ sub convert {
     }
     else {
         $result = $conversion->{'factor'} * ($matches[1]->{'factor'} / $matches[0]->{'factor'});
-    }#warn("line 252");
+    }
     return {
         "result" => $result,
         "from_unit" => $matches[0]->{'unit'},
