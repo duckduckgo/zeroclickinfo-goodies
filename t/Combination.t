@@ -24,34 +24,34 @@ ddg_goodie_test(
             result    => '120',
         }
     ),
-    '25 permute 16' => test_zci('4.27447366714368 * 10^19',
+    '25 permute 16' => test_zci('4.27447366714368 * 10 ^ 19',
         structured_answer =>  {
             input     => ['25 permute 16'],
             operation => 'Calculate',
-            result    => '4.27447366714368 * 10^19'
+            result    => '4.27447366714368 * 10 ^ 19'
         }
-    ), 
+    ),
     '16 permutation 3' => test_zci('3,360',
         structured_answer =>  {
             input     => ['16 permute 3'],
             operation => 'Calculate',
             result    => '3,360'
         }
-    ), 
+    ),
     '15 permutation 0' => test_zci('1',
         structured_answer  => {
             input     => ['15 permute 0'],
             operation => 'Calculate',
             result    => '1'
         }
-    ), 
+    ),
     '1,000 choose 2' => test_zci('499,500',
         structured_answer  => {
             input     => ['1,000 choose 2'],
             operation => 'Calculate',
             result    => '499,500'
         }
-    ), 
+    ),
     '0 choose 100' => undef,
     '10 choose 100' => undef,
     '10.5 choose 1' => undef,
