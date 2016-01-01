@@ -165,7 +165,7 @@ ddg_goodie_test(
     'secant(1)'            => build_test('≈ 1.850815717681', 'sec(1)'),
     '2,90 + sec(4,6)'      => build_test('≈ -6,01642861136', '2,90 + sec(4,6)'),
     # Inverse trig
-    'arccos(1/2) in degrees' => build_test('60°', 'arccos(1 / 2)°'),
+    'arccos(1/2) in degrees' => build_test('60°', 'arccos(1 / 2) in degrees'),
     'arcsin(0)'              => build_test('0', 'arcsin(0)'),
     'arccos(1)'              => build_test('0', 'arccos(1)'),
     'asin(sin(800))'         => build_test('≈ 1.106126665397', 'arcsin(sin(800))'),
@@ -202,9 +202,9 @@ ddg_goodie_test(
     '3㎭ + 3 radians'       => build_test('6 ㎭', '3 ㎭ + 3 ㎭'),
     '2 rads + 7 rad'        => build_test('9 ㎭', '2 ㎭ + 7 ㎭'),
     '2 radians + 3 degrees' => undef,
-    'pi radians in degrees' => build_test('180°', 'π ㎭°'),
-    '180° in radians'       => build_test('≈ 3.14159265359 ㎭', '180° ㎭'),
-    '3 * 4 ㎭'              => build_test('12 ㎭', '3 * 4 ㎭'),
+    'pi radians in degrees' => undef,
+    '180° in radians'       => undef,
+    '3 * 4 ㎭'              => undef,
 
     # Misc functions
     'sqrt(4)'                => build_test('2', 'sqrt(4)'),
