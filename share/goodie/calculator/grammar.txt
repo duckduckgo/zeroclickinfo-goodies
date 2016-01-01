@@ -25,7 +25,11 @@ Factor ::=
     || ('(') Expression (')')   bless => paren assoc => group
     || NumTerm                  bless => primary
     || NumTerm ('e':i) NumTerm  bless => exp
-    || GenPostFixFactorModifier
+    || PostfixModifier
+
+PostfixModifier ::=
+       GenPostfixFunctionModifier
+    || GenPostfixFactorModifier
 
 NumTerm ::=
        FactoredConstant bless => primary
@@ -53,8 +57,14 @@ UnaryFunction ::=
 Argument ::= ('(') Expression (')') bless => primary
 
 Number ::=
-      [$] BaseNumber bless => prefix_currency
-    |     BaseNumber bless => primary
+      [$] BaseNumber                  bless => prefix_currency
+    |     BaseNumber                  bless => primary
+    |     BaseNumber (<degree forms>) bless => angle_degrees
+    |     BaseNumber (<radian forms>) bless => angle_radians
+
+<degree forms> ~ 'degrees':i | 'degree':i | 'degs':i | 'deg':i
+
+<radian forms> ~ 'radians':i | 'radian':i | 'rads':i | 'rad':i
 
 BaseNumber ::=
       Integer
