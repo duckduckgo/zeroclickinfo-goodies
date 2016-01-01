@@ -7,6 +7,7 @@ with 'DDG::GoodieRole::NumberStyler';
 
 use Math::Round qw/nearest/;
 use bignum;
+use utf8;
 use YAML qw(Load);
 
 name                      'Conversions';
