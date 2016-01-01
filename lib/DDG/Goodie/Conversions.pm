@@ -8,7 +8,7 @@ with 'DDG::GoodieRole::NumberStyler';
 use Math::Round qw/nearest/;
 use bignum;
 use utf8;
-use YAML qw(Load);
+use YAML::XS 'LoadFile';
 
 name                      'Conversions';
 description               'convert between various units of measurement';
@@ -24,7 +24,7 @@ attribution                github  => 'https://github.com/elohmrow',
 zci answer_type => 'conversions';
 zci is_cached   => 1;
 
-my @types = Load(scalar share('ratios.yml')->slurp);
+my @types = LoadFile(share('ratios.yml'));
 
 my @units = ();
 foreach my $type (@types) {
@@ -33,7 +33,9 @@ foreach my $type (@types) {
 }
 
 # build triggers based on available conversion units:
-triggers any => map { lc $_ } @units;
+my @triggers = map { lc $_ } @units;
+
+triggers any => @triggers;
 
 # match longest possible key (some keys are sub-keys of other keys):
 my $keys = join '|', reverse sort { length($a) <=> length($b) } @units;
