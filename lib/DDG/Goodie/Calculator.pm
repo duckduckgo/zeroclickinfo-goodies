@@ -916,7 +916,7 @@ new_factor_term_operator {
 new_binary_misc {
     name => 'exp',
     doit => sub { $_[0] * pure(10) ** $_[1] },
-    show => sub { "$_[0]e$_[1]" },
+    show => sub { "$_[0] * 10 ^ $_[1]" },
 };
 
 new_unary_misc {
@@ -1109,6 +1109,7 @@ sub format_as_integer {
     my $self = shift;
     my $result = '';
     my $number = $self->result->value;
+    return if $self->result_not_informative;
     if ($number->length() > 30) {
         $result .= '≈ ';
         $number = $number->as_int->bround(20)->bsstr();
@@ -1120,9 +1121,19 @@ sub format_as_decimal {
     my $self = shift;
     return $self->style->for_display($self->result->as_rounded_decimal) . $self->result->angle_symbol;
 }
+
 sub format_as_fraction {
     my $self = shift;
     return $self->style->for_display($self->result->value);
+}
+
+# Result is just another format of the input
+sub result_not_informative {
+    my $self = shift;
+    if ($self->to_compute =~ /^(\d++)(\.?(\d++))?(e[+-]?\d++)?$/) {
+        return 1 if sprintf('%.e', $self->to_compute) eq sprintf('%.e', $self->result->value);
+    };
+    return 0;
 }
 
 sub format_for_display {
@@ -1137,6 +1148,7 @@ sub format_for_display {
         $displayed_fraction = 1;
     };
     if ($self->should_display_decimal) {
+        return if $self->result_not_informative;
         my $decimal = $self->result->as_rounded_decimal();
         if (got_rounded($self->result, $decimal)) {
             $result .= '≈ ';
