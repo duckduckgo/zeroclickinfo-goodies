@@ -20,6 +20,7 @@ use Math::Trig qw(deg2rad rad2deg);
 use Moose;
 use Moose::Util::TypeConstraints;
 use utf8;
+use List::Util qw(any);
 
 use overload
     '""'    => 'to_string',
@@ -67,15 +68,9 @@ has 'angle_type' => (
 # specified /explicitly/ that an angle was in radians.
 has 'declared' => (
     is      => 'ro',
-    isa     => 'Maybe[Str]',
-    default => undef,
+    isa     => 'ArrayRef[Str]',
+    default => sub { [] },
 );
-sub declare {
-    my ($self, $declare) = @_;
-    my $copy = $self->copy;
-    $copy->{declared} = $declare;
-    return $copy;
-}
 
 sub is_degrees {
     my $self = shift;
@@ -138,10 +133,11 @@ sub modify_taint_when {
         sub { $taintf->($_[0]) });
 }
 sub produces_angle {
-    my ($angle, $sub) = @_;
+    my $sub = shift;
     return sub {
         my $result = $sub->(@_);
-        return $result->make_angle($angle);
+        my $copy = $result->declare('angle');
+        return $copy;
     };
 }
 
@@ -172,14 +168,12 @@ sub make_angle {
     my ($self, $angle) = @_;
     my $copy = $self->copy;
     $copy->{angle_type} = $angle;
-    return $copy;
+    return ($copy->declare('angle'))->declare($angle);
 }
 
 sub make_radians {
     my $self = shift;
-    my $copy = $self->copy;
-    $copy->{angle_type} = 'radian';
-    return $copy;
+    $self->make_angle('radian');
 }
 sub copy {
     my $self = shift;
@@ -198,8 +192,8 @@ sub combine_results {
     return sub {
         my ($self, $other) = @_;
         my $tainted = $self->tainted || $other->tainted;
-        my $angle = $self->angle_type // $other->angle_type;
-        return if (defined $self->angle_type && defined $other->angle_type && $self->angle_type ne $other->angle_type);
+        my $angle = $self->angle_type;
+        return unless ($self->angle_type // '') eq ($other->angle_type // '');
         my $first_val = $self->value();
         my $declared = $self->declared // $other->declared;
         my $second_val = $other->value();
@@ -309,7 +303,8 @@ sub to_radians {
 sub to_degrees {
     my $self = shift;
     my $is_radians = $self->is_radians();
-    if ($self->is_radians) {
+    return $self if $self->is_degrees();
+    if ($self->is_radians || $self->declares('angle')) {
         my $res = $self->on_decimal(\&rad2deg);
         return $res->make_degrees();
     };
@@ -361,9 +356,20 @@ sub angle_symbol {
     if ($self->is_degrees) {
         return '°';
     } elsif ($self->is_radians) {
-        return ' ㎭' if $self->declared;
+        return ' ㎭' if $self->declares('radian');
     };
     return '';
+}
+
+sub declare {
+    my ($self, $to_declare) = @_;
+    my $copy = $self->copy();
+    push $copy->{declared}, $to_declare;
+    return $copy;
+}
+sub declares {
+    my ($self, $to_check) = @_;
+    return any { $_ eq $to_check } @{$self->declared};
 }
 
 sub as_decimal {
@@ -534,9 +540,14 @@ my $binary_function_grammar = new_branch {
         ] }
 };
 
-my $postfix_fmodifier_grammar = new_branch {
-    name        => "GenPostFixFactorModifier",
+my $postfix_factor_modifier_grammar = new_branch {
+    name        => "GenPostfixFactorModifier",
     spec        => sub { [ 'Factor', "($_[0])" ] },
+    ignore_case => 1,
+};
+my $postfix_func_modifier_grammar = new_branch {
+    name        => "GenPostfixFunctionModifier",
+    spec        => sub { [ 'Function', "($_[0])" ] },
     ignore_case => 1,
 };
 
@@ -660,10 +671,29 @@ new_base {
         return $self->[0] . sprintf('%0.2f', $self->[1]->show());
     },
 };
+new_unary_misc {
+    name => 'angle_degrees',
+    doit => sub { $_[0]->make_degrees() },
+    show => sub { "$_[0]°" },
+};
+new_unary_misc {
+    name => 'angle_radians',
+    doit => sub { $_[0]->make_radians() },
+    show => sub { "$_[0] ㎭" },
+};
 
-sub new_postfix_fmodifier {
+sub new_postfix_factor_modifier {
     my $term = shift;
-    $postfix_fmodifier_grammar->add_term($term);
+    $postfix_factor_modifier_grammar->add_term($term);
+    new_unary_misc {
+        name => $term->{name},
+        doit => $term->{action},
+        show => sub { "$_[0]" . $term->{rep} },
+    };
+}
+sub new_postfix_func_modifier {
+    my $term = shift;
+    $postfix_func_modifier_grammar->add_term($term);
     new_unary_misc {
         name => $term->{name},
         doit => $term->{action},
@@ -683,20 +713,20 @@ sub optional_prefix {
     return \@with_prefixes;
 }
 
-new_postfix_fmodifier {
+new_postfix_factor_modifier {
     rep    => ' squared',
     forms  => 'squared',
     action => taint_when_long(sub { $_[0] * $_[0] }),
 };
-new_postfix_fmodifier {
-    rep    => '°',
-    forms  => optional_prefix(['in ', 'to '], ['degree', 'degrees']),
-    action => sub { $_[0]->to_degrees() },
+new_postfix_func_modifier {
+    rep    => ' in degrees',
+    forms  => ['in degrees'],
+    action => sub { return unless $_[0]->declares('angle'); $_[0]->to_degrees() },
 };
-new_postfix_fmodifier {
-    rep    => ' ㎭',
-    forms  => optional_prefix(['in ', 'to '], ['rad', 'rads', 'radians', 'radii']),
-    action => sub { ($_[0]->to_radians())->declare('radians') },
+new_postfix_func_modifier {
+    rep    => ' in radians',
+    forms  => ['in radians'],
+    action => sub { return unless $_[0]->declares('angle'); $_[0]->to_radians() },
 };
 
 
@@ -788,17 +818,17 @@ sub on_result { my $f = shift; return sub { $_[0]->on_result($f) } }
 
 new_unary_bounded {
     forms  => ['arcsin', 'asin'],
-    action => produces_angle('radian', on_result(\&asin)),
+    action => produces_angle(on_result(\&asin)),
     rep    => 'arcsin',
 };
 new_unary_bounded {
     forms  => ['arccos', 'acos'],
     rep    => 'arccos',
-    action => produces_angle('radian', on_result(\&acos)),
+    action => produces_angle(on_result(\&acos)),
 };
 new_unary_bounded {
     forms  => ['arctan', 'atan'],
-    action => produces_angle('radian', on_result(\&atan)),
+    action => produces_angle(on_result(\&atan)),
     rep    => 'arctan',
 };
 
@@ -829,17 +859,17 @@ new_unary_bounded {
 new_unary_bounded {
     rep    => 'artanh',
     forms  => ['artanh', 'atanh'],
-    action => produces_angle('radian', on_result(\&atanh)),
+    action => produces_angle(on_result(\&atanh)),
 };
 new_unary_bounded {
     forms  => ['arcosh', 'acosh'],
     rep    => 'arcosh',
-    action => produces_angle('radian', on_result(\&acosh)),
+    action => produces_angle(on_result(\&acosh)),
 };
 new_unary_bounded {
     forms  => ['arsinh', 'asinh'],
     rep    => 'arsinh',
-    action => produces_angle('radian', on_result(\&asinh)),
+    action => produces_angle(on_result(\&asinh)),
 };
 
 # Log functions
@@ -944,15 +974,18 @@ sub new_word_constant {
 my $big_pi = Math::BigRat->new()->bpi();
 my $big_e =  Math::BigRat->new(1)->bexp();
 
+sub irrational {
+    my $value = shift;
+    return new_result {
+        tainted => 1,
+        value   => $value,
+    };
+}
 # Constants go here.
 new_symbol_constant {
     forms => 'pi',
     rep   => 'π',
-    value => new_result {
-        tainted    => 1,
-        value      => $big_pi,
-        angle_type => 'radian',
-    },
+    value => irrational($big_pi),
 };
 new_word_constant {
     rep   => 'dozen',
@@ -960,10 +993,7 @@ new_word_constant {
 };
 new_symbol_constant {
     rep   => 'e',
-    value => new_result {
-        tainted => 1,
-        value   => $big_e,
-    },
+    value => irrational($big_e),
 };
 new_word_constant {
     rep   => 'score',
