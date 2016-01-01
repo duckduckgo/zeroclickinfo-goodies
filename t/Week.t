@@ -92,6 +92,7 @@ ddg_goodie_test(
             operation => 'Assuming the week starts on Monday',
             result    => "The 8th week of 2015 began on February 16th.",
         },
+    ),
     # Nth Week Queries
     "what was the 5th week of this year" => test_zci(
         qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
@@ -100,7 +101,7 @@ ddg_goodie_test(
             operation => "Assuming the week starts on Monday",
             result    => qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
         }
-    ),    )
+    )
 );
 restore_time();
 
