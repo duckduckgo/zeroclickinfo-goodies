@@ -142,6 +142,7 @@ unit: millimeter
 ---
 aliases:
   - miles
+  - mi
   - statute mile
   - statute miles
   - land mile
@@ -319,6 +320,7 @@ unit: square millimeter
 ---
 aliases:
   - square miles
+  - sq mi
   - square statute mile
   - square statute miles
   - square land mile
