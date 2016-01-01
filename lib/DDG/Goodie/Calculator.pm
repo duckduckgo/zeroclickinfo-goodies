@@ -918,14 +918,17 @@ sub new_factor_term_operator { binary_operator_gen($factor_term_operator_grammar
 
 new_expression_operator {
     rep    => '-',
+    forms  => ['-', 'take', 'subtract', 'minus'],
     action => sub { $_[0] - $_[1] },
 };
 new_expression_operator {
     rep    => '+',
+    forms  => ['+', 'add', 'plus'],
     action => sub { $_[0] + $_[1] },
 };
 new_term_operator {
     rep    => '*',
+    forms  => ['*', 'times', 'multiplied by'],
     action => sub { $_[0] * $_[1] },
 };
 new_term_operator {
