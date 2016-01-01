@@ -188,6 +188,13 @@ ddg_goodie_test(
     '2divided by 4'         => build_test('1/2 = 0.5', '2 / 4'),
     '60 divided by 15'      => build_test('4', '60 / 15'),
     '7 divided by (3 + 4)'  => build_test('1', '7 / (3 + 4)'),
+    '2 plus 4'              => build_test('6', '2 + 4'),
+    '2 add 9'               => build_test('11', '2 + 9'),
+    '3 minus 7'             => build_test('-4', '3 - 7'),
+    '3 take 7'              => build_test('-4', '3 - 7'),
+    '3 subtract 4'          => build_test('-1', '3 - 4'),
+    '8 times 6'             => build_test('48', '8 * 6'),
+    '8 multiplied by 6'     => build_test('48', '8 * 6'),
     # Modifiers
     '5 squared'             => build_test('25', '5 squared'),
     '3 squared + 4 squared' => build_test('25', '3 squared + 4 squared'),
