@@ -45,13 +45,22 @@ ddg_goodie_test([qw( DDG::Goodie::Regexp )],
         'Full Match'       => 'How are you today?',
         'Number Match (1)' => 'today',
     }, 'How are (?:we|you) (doing|today)\?', 'How are you today?'),
+    'abc =~ /[abc]+/' => build_test({
+        'Full Match' => 'abc',
+    }, '[abc]+', 'abc'),
+    'DDG::Goodie::Regexp =~ /^DDG::Goodie::(?<goodie>\w+)$/' => build_test({
+        'Full Match'           => 'DDG::Goodie::Regexp',
+        'Named Match (goodie)' => 'Regexp',
+        'Number Match (1)'     => 'Regexp',
+    }, '^DDG::Goodie::(?<goodie>\w+)$', 'DDG::Goodie::Regexp'),
+    'regexp /foo/ foo' => build_test({
+        'Full Match' => 'foo',
+    }, 'foo', 'foo'),
+    # Primary example query
     'regexp /(.*)/ ddg' => build_test({
         'Full Match'       => 'ddg',
         'Number Match (1)' => 'ddg',
     }, '(.*)', 'ddg'),
-    'regexp /foo/ foo' => build_test({
-        'Full Match' => 'foo',
-    }, 'foo', 'foo'),
     # Does not match.
     'regexp /foo/ bar'      => undef,
     'match /^foo$/ foo bar' => undef,
@@ -59,6 +68,8 @@ ddg_goodie_test([qw( DDG::Goodie::Regexp )],
     'What is regex?'   => undef,
     'regex cheatsheet' => undef,
     'regex'            => undef,
+    '/foo/ =~ foo'     => undef,
+    'regex foo /foo/'  => undef,
 );
 
 done_testing;

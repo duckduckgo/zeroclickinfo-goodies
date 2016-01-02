@@ -10,6 +10,7 @@ zci answer_type => "regexp";
 zci is_cached   => 1;
 
 triggers start => 'regex', 'match', 'regexp';
+triggers any   => '=~';
 
 sub compile_re {
     my ($re, $compiler) = @_;
@@ -46,14 +47,17 @@ sub get_match_record {
     return $matches;
 }
 
+sub extract_regex_text {
+    my $query = shift;
+    $query =~ /^(?<text>.+) =~ \/(?<regex>.+)\/$/;
+    ($+{regex} && $+{text}) || ($query =~ /^(?:match\s*regexp?|regexp?)\s*\/(?<regex>.+)\/\s+(?<text>.+)$/);
+    return unless defined $+{regex} && defined $+{text};
+    return ($+{regex}, $+{text});
+}
+
 handle query => sub {
     my $query = $_;
-    $query =~ s/^(?:match)?(?:\s*regexp?)?\s*//;
-    $query =~ /(?:\/(.+)\/)\s+(.+)/;
-    my $regexp = $1;
-    my $str    = $2;
-    return unless defined $regexp && defined $str;
-
+    my ($regexp, $str) = extract_regex_text($query) or return;
     my $matches = get_match_record($regexp, $str) or return;
 
     return $matches,
