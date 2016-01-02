@@ -13,8 +13,8 @@ triggers start => 'regex', 'match', 'regexp';
 triggers any   => '=~';
 
 sub compile_re {
-    my ($re, $compiler) = @_;
-    $compiler->($re);
+    my ($re, $modifiers, $compiler) = @_;
+    $compiler->($re, $modifiers);
 }
 
 # Using $& causes a performance penalty, apparently.
@@ -30,9 +30,9 @@ sub real_number_matches {
 }
 
 sub get_match_record {
-    my ($regexp, $str) = @_;
-    my $compiler = Safe->new->reval(q{ sub { qr/$_[0]/ } });
-    my @numbered = $str =~ compile_re($regexp, $compiler) or return;
+    my ($regexp, $str, $modifiers) = @_;
+    my $compiler = Safe->new->reval(q{ sub { qr/(?$_[1])$_[0]/ } });
+    my @numbered = $str =~ compile_re($regexp, $modifiers, $compiler) or return;
     @numbered = real_number_matches($1, @numbered);
 		my $matches = {};
 		$matches->{'Full Match'} = get_full_match($str);
@@ -47,18 +47,21 @@ sub get_match_record {
     return $matches;
 }
 
+my $regex_re = qr/\/(?<regex>.+)\/(?<modifiers>i)?/;
+
 sub extract_regex_text {
     my $query = shift;
-    $query =~ /^(?<text>.+) =~ \/(?<regex>.+)\/$/;
-    ($+{regex} && $+{text}) || ($query =~ /^(?:match\s*regexp?|regexp?)\s*\/(?<regex>.+)\/\s+(?<text>.+)$/);
+    $query =~ /^(?<text>.+) =~ $regex_re$/;
+    ($+{regex} && $+{text}) || ($query =~ /^(?:match\s*regexp?|regexp?)\s*$regex_re\s+(?<text>.+)$/);
     return unless defined $+{regex} && defined $+{text};
-    return ($+{regex}, $+{text});
+    my $modifiers = $+{modifiers} // '';
+    return ($+{regex}, $+{text}, $modifiers);
 }
 
 handle query => sub {
     my $query = $_;
-    my ($regexp, $str) = extract_regex_text($query) or return;
-    my $matches = get_match_record($regexp, $str) or return;
+    my ($regexp, $str, $modifiers) = extract_regex_text($query) or return;
+    my $matches = get_match_record($regexp, $str, $modifiers) or return;
 
     return $matches,
         structured_answer => {
@@ -66,7 +69,7 @@ handle query => sub {
             name => 'Answer',
             data => {
                 title       => "Regular Expression Match",
-                subtitle    => "Match regular expression /$regexp/ on $str",
+                subtitle    => "Match regular expression /$regexp/$modifiers on $str",
                 record_data => $matches,
             },
             templates => {
