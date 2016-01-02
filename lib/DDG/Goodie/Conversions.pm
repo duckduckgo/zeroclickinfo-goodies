@@ -85,7 +85,7 @@ handle query_lc => sub {
     # also, check the <connecting_word> of regex for possible user intentions 
     my @factor1 = (); # conversion factors, not left_num or right_num values
     my @factor2 = ();
-	    
+        
     # gets factors for comparison
     foreach my $type (@types) {
         if($+{'left_unit'} eq $type->{'unit'}) {

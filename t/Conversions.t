@@ -868,7 +868,7 @@ ddg_goodie_test(
     ),
     '1 acres in square kilometers' => test_zci(
         '1 acre = 0.004 square kilometers',
-		structured_answer => {
+        structured_answer => {
             input     => ['1 acre'],
             operation => 'convert',
             result    => '0.004 square kilometers'
@@ -876,7 +876,7 @@ ddg_goodie_test(
     ),
     '1 acres in square meters' => test_zci(
         '1 acre = 4,046.873 square meters',
-		structured_answer => {
+        structured_answer => {
             input     => ['1 acre'],
             operation => 'convert',
             result    => '4,046.873 square meters'
