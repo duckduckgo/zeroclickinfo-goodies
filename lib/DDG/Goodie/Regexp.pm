@@ -65,6 +65,7 @@ handle query => sub {
     my ($regexp, $str, $modifiers) = extract_regex_text($query) or return;
     my $matches = get_match_record($regexp, $str, $modifiers) or return;
     my @key_order = get_match_keys($matches);
+    return unless $matches->{'Full Match'} ne '';
 
     return $matches,
         structured_answer => {
