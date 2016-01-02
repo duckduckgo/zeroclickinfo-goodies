@@ -37,11 +37,11 @@ sub get_match_record {
 		my $matches = {};
 		$matches->{'Full Match'} = get_full_match($str);
     foreach my $match (keys %+) {
-		    $matches->{"Named Match ($match)"} = $+{$match};
+		    $matches->{"Named Capture <$match>"} = $+{$match};
     };
     my $i = 1;
     foreach my $match (@numbered) {
-        $matches->{"Number Match ($i)"} = $match;
+        $matches->{"Subpattern Match $i"} = $match;
         $i++;
     };
     return $matches;
