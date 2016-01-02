@@ -2,6 +2,7 @@ package DDG::Goodie::LoremIpsum;
 # ABSTRACT: generates random latin
 
 use strict;
+use warnings;
 use DDG::Goodie;
 use utf8;
 
@@ -10,7 +11,7 @@ use Lingua::EN::Numericalize;
 
 triggers any => 'lorem ipsum', 'lipsum', 'latin';
 
-zci is_cached => 0;
+zci is_cached   => 0;
 zci answer_type => 'lorem_ipsum';
 
 sub pluralise {
@@ -46,7 +47,9 @@ sub generate_latin {
 
 sub get_result_and_formatted {
     my $query = shift;
+    # Treat 'a' as 'one' for the purposes of amounts.
     $query =~ s/^a /one /i;
+    $query =~ s/line/sentence/g;
     # Convert initial words into numbers if possible.
     my $formatted = $query =~ s/^\w+[a-rt-z](?=\b)/str2nbr($&)/ier;
     return unless $formatted =~ $forms;
@@ -70,21 +73,16 @@ sub build_infobox_element {
     };
 }
 
+my $infobox = [ { heading => "Example Queries", },
+                build_infobox_element('5 sentences of lorem ipsum'),
+                build_infobox_element('20 words of random latin'),
+                build_infobox_element('10 paragraphs of lorem ipsum'),
+              ];
+
 handle query_lc => sub {
     my $query   = $_;
-    # Treat 'a' as 'one' for the purposes of amounts.
-    $query =~ s/line/sentence/g;
-    my $default = 0;
-    my $result = '';
-    my $amount = 0;
-    my $formatted_input;
-    if ($query =~ /^\s*l(orem )?ipsum\s*$/) {
-        $default = 1;
-        $result = Text::Lorem::More->new->paragraphs(5);
-        $formatted_input = "5 paragraphs of Lorem Ipsum";
-    } else {
-        ($result, $formatted_input) = get_result_and_formatted($query) or return;
-    };
+    my $default = "5 paragraphs of lorem ipsum" if $query =~ /^\s*l(orem )?ipsum\s*$/;
+    my ($result, $formatted_input) = get_result_and_formatted($default // $query) or return;
     my @paragraphs = split "\n\n", $result;
 
     return $result, structured_answer => {
@@ -93,12 +91,7 @@ handle query_lc => sub {
         data => {
             title            => "$formatted_input",
             lorem_paragraphs => \@paragraphs,
-            infoboxData      => $default ? [
-                { heading => "Example Queries", },
-                build_infobox_element('5 sentences of lorem ipsum'),
-                build_infobox_element('20 words of random latin'),
-                build_infobox_element('10 paragraphs of lorem ipsum'),
-            ] : 0,
+            infoboxData      => $default ? $infobox : 0,
         },
         meta => {
             sourceName => "Lipsum",
