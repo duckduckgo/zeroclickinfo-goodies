@@ -58,10 +58,13 @@ sub extract_regex_text {
     return ($+{regex}, $+{text}, $modifiers);
 }
 
+sub get_match_keys { return sort (keys %{$_[0]}) }
+
 handle query => sub {
     my $query = $_;
     my ($regexp, $str, $modifiers) = extract_regex_text($query) or return;
     my $matches = get_match_record($regexp, $str, $modifiers) or return;
+    my @key_order = get_match_keys($matches);
 
     return $matches,
         structured_answer => {
@@ -71,6 +74,7 @@ handle query => sub {
                 title       => "Regular Expression Match",
                 subtitle    => "Match regular expression /$regexp/$modifiers on $str",
                 record_data => $matches,
+                record_keys => \@key_order,
             },
             templates => {
                 group   => 'list',

@@ -18,6 +18,7 @@ sub build_structured_answer {
                 title       => 'Regular Expression Match',
                 subtitle    => "Match regular expression $expression on $text",
                 record_data => $result,
+                record_keys => \@{[sort (keys %$result)]},
             },
             templates => {
                 group   => 'list',
