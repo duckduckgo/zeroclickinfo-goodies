@@ -51,7 +51,7 @@ handle query_raw => sub {
         name => 'Answer',
         data => {
             title    => "$sigfigs",
-            subtitle => "Significant figures of $formatted_input",
+            subtitle => "Number of Significant Figures in $formatted_input",
         },
         templates => {
             group  => 'text',

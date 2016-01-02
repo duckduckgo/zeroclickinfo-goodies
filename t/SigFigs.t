@@ -15,7 +15,7 @@ sub build_structured_answer {
         name => 'Answer',
         data => {
             title    => "$exp_result",
-            subtitle => "Significant figures of $exp_input",
+            subtitle => "Number of Significant Figures in $exp_input",
         },
         templates => {
             group  => 'text',
