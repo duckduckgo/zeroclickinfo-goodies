@@ -27,8 +27,23 @@ handle query => sub {
 		@results = $str =~ compile_re($regexp, $compiler);
     };
 
-    return join( ' | ', @results ), heading => 'Regexp Result' if @results;
-    return;
+    return $matches,
+        structured_answer => {
+            id   => 'regexp',
+            name => 'Answer',
+            data => {
+                title       => "Regular Expression Match",
+                subtitle    => "Match regular expression /$regexp/ on $str",
+                record_data => $matches,
+            },
+            templates => {
+                group   => 'list',
+                options => {
+                    content => 'record',
+                },
+                moreAt  => 0,
+            },
+        };
 };
 
 1;
