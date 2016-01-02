@@ -49,6 +49,9 @@ ddg_goodie_test([qw( DDG::Goodie::Regexp )],
         'Full Match'       => 'ddg',
         'Number Match (1)' => 'ddg',
     }, '(.*)', 'ddg'),
+    'regexp /foo/ foo' => build_test({
+        'Full Match' => 'foo',
+    }, 'foo', 'foo'),
     # Does not match.
     'regexp /foo/ bar'      => undef,
     'match /^foo$/ foo bar' => undef,

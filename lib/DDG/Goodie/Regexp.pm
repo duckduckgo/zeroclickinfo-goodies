@@ -21,10 +21,18 @@ sub get_full_match {
     return substr(shift, $-[0], $+[0] - $-[0]);
 }
 
+# Ensures that the correct numbered matches are being produced.
+sub real_number_matches {
+    my ($one, @numbered) = @_;
+    # If the first match isn't defined then neither are the others!
+    return defined $one ? @numbered : ();
+}
+
 sub get_match_record {
     my ($regexp, $str) = @_;
     my $compiler = Safe->new->reval(q{ sub { qr/$_[0]/ } });
     my @numbered = $str =~ compile_re($regexp, $compiler) or return;
+    @numbered = real_number_matches($1, @numbered);
 		my $matches = {};
 		$matches->{'Full Match'} = get_full_match($str);
     foreach my $match (keys %+) {
