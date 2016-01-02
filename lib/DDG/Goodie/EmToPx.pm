@@ -27,10 +27,21 @@ handle query_raw => sub {
     my ($target, $num, $source, $fontsize) = map { $+{$_} } qw(target num source fs);
     $fontsize ||= 16;
 
+sub em_to_px {
+    my ($to_convert, $fontsize) = @_;
+    return $to_convert * $fontsize;
+}
+
+sub px_to_em {
+    my ($to_convert, $fontsize) = @_;
+    return sprintf('%.3f', $to_convert / $fontsize) =~ s/\.?0+$//r;
+}
+
     return if ($target eq $source || !$num);
 
-    my $result = ($target eq 'px') ? $num * $fontsize : $num / $fontsize;
     my $plur   = $result == 1      ? "is"             : "are";
+    my $result = ($target eq 'px') ? em_to_px($num, $fontsize) . 'px'
+                                   : px_to_em($num, $fontsize) . 'em';
 
     return $result,
         structured_answer => {
