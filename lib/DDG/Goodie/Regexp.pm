@@ -9,7 +9,7 @@ use Safe;
 zci answer_type => "regexp";
 zci is_cached   => 1;
 
-triggers query_lc => qr/^regex[p]? [\/\\](.+?)[\/\\] (.+)$/i;
+triggers start => 'regex', 'match', 'regexp';
 
 handle query => sub {
     my $regexp = $1;
@@ -17,15 +17,15 @@ handle query => sub {
 
     my $compiler = Safe->new->reval(q{ sub { qr/$_[0]/ } });
 
-    sub compile_re {
-        my ( $re, $compiler ) = @_;
-        $compiler->($re);
-    }
+handle query => sub {
+    my $query = $_;
+    $query =~ s/^(?:match)?(?:\s*regexp?)?\s*//;
+    $query =~ /(?:\/(.+)\/)\s+(.+)/;
+    my $regexp = $1;
+    my $str    = $2;
+    return unless defined $regexp && defined $str;
 
-    my @results = ();
-    eval {
-		@results = $str =~ compile_re($regexp, $compiler);
-    };
+    my $matches = get_match_record($regexp, $str) or return;
 
     return $matches,
         structured_answer => {
