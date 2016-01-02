@@ -8,25 +8,29 @@ use DDG::Test::Goodie;
 zci answer_type => 'regexp';
 zci is_cached   => 1;
 
-ddg_goodie_test(
-        [qw( DDG::Goodie::Regexp )],
-        'regexp /(hello\s)/ hello probably' => test_zci(
-        	"hello ",
-        	heading => 'Regexp Result',
-        ),
-        'regexp /(dd)/ ddg' => test_zci(
-        	"dd",
-        	heading => 'Regexp Result',
-        ),
-        'regex /(poss)/ many possibilities' => test_zci(
-        	"poss",
-        	heading => 'Regexp Result',
-        ),
-        'regexp /(.*)/ ddg' => test_zci(
-            'ddg',
-            heading => 'Regexp Result'
-        ),
-);
+sub build_structured_answer {
+    my ($result, $expression, $text) = @_;
+    return $result,
+        structured_answer => {
+            id   => 'regexp',
+            name => 'Answer',
+            data => {
+                title       => 'Regular Expression Match',
+                subtitle    => "Match regular expression /$expression/ on $text",
+                record_data => $result,
+            },
+            templates => {
+                group   => 'list',
+                options => {
+                    content => 'record',
+                },
+                moreAt  => 0,
+            },
+        };
+}
+
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 
 done_testing;
 
