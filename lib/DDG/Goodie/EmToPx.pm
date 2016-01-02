@@ -2,6 +2,7 @@ package DDG::Goodie::EmToPx;
 # ABSTRACT: em <-> px for font sizes.
 
 use strict;
+use warnings;
 use DDG::Goodie;
 
 triggers any => "em", "px";
@@ -31,12 +32,19 @@ handle query_raw => sub {
     my $result = ($target eq 'px') ? $num * $fontsize : $num / $fontsize;
     my $plur   = $result == 1      ? "is"             : "are";
 
-    return "There $plur $result $target in $num $source (assuming a ${fontsize}px font size)",
-      structured_answer => {
-        input     => [$num . $source, $fontsize . 'px font size'],
-        operation => 'Convert to ' . $target,
-        result    => $result . $target
-      };
+    return $result,
+        structured_answer => {
+            id   => 'em_to_px',
+            name => 'Answer',
+            data => {
+                title    => $result,
+                subtitle => $formatted_input,
+            },
+            templates => {
+                group  => 'text',
+                moreAt => 0,
+            },
+        };
 };
 
 1;
