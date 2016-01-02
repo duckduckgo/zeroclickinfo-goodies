@@ -11,11 +11,32 @@ zci is_cached   => 1;
 
 triggers start => 'regex', 'match', 'regexp';
 
-handle query => sub {
-    my $regexp = $1;
-    my $str    = $2;
+sub compile_re {
+    my ($re, $compiler) = @_;
+    $compiler->($re);
+}
 
+# Using $& causes a performance penalty, apparently.
+sub get_full_match {
+    return substr(shift, $-[0], $+[0] - $-[0]);
+}
+
+sub get_match_record {
+    my ($regexp, $str) = @_;
     my $compiler = Safe->new->reval(q{ sub { qr/$_[0]/ } });
+    my @numbered = $str =~ compile_re($regexp, $compiler) or return;
+		my $matches = {};
+		$matches->{'Full Match'} = get_full_match($str);
+    foreach my $match (keys %+) {
+		    $matches->{"Named Match ($match)"} = $+{$match};
+    };
+    my $i = 1;
+    foreach my $match (@numbered) {
+        $matches->{"Number Match ($i)"} = $match;
+        $i++;
+    };
+    return $matches;
+}
 
 handle query => sub {
     my $query = $_;
