@@ -234,9 +234,9 @@ subtest 'Dates' => sub {
 
         restore_time();
     };
-    
+
     subtest 'Relative naked months' => sub {
-        
+
         my %time_strings = (
             "2015-01-13T00:00:00Z" => {
                 src    => ['january', 'february'],
@@ -254,16 +254,16 @@ subtest 'Dates' => sub {
                 src    => ['january', 'february'],
                 output => ['2015-01-01T00:00:00',  '2015-02-01T00:00:00'],
             },
-            
+
         );
-        
+
         foreach my $query_time (sort keys %time_strings) {
             set_fixed_time($query_time);
-            
+
             my @source = @{$time_strings{$query_time}{src}};
             my @expectation = @{$time_strings{$query_time}{output}};
             my @result = DatesRoleTester::parse_all_datestrings_to_date(@source);
-            
+
             is_deeply(\@result, \@expectation);
         }
     };
@@ -587,6 +587,15 @@ subtest 'ImageLoader' => sub {
             'File disappeared does not die';
             is($tag_content, '', '... but yields an empty tag');
         };
+    };
+};
+
+subtest 'WhatIs' => sub {
+
+    { package WhatIsTester; use Moo; with 'DDG::GoodieRole::WhatIs'; 1; }
+
+    subtest 'Initialization' => sub {
+        new_ok('WhatIsTester', [], 'Applied to a class');
     };
 };
 
