@@ -613,4 +613,13 @@ subtest 'ImageLoader' => sub {
     };
 };
 
+subtest 'WhatIs' => sub {
+
+    { package WhatIsTester; use Moo; with 'DDG::GoodieRole::WhatIs'; 1; }
+
+    subtest 'Initialization' => sub {
+        new_ok('WhatIsTester', [], 'Applied to a class');
+    };
+};
+
 done_testing;
