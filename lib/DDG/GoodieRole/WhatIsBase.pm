@@ -33,7 +33,10 @@ has 'spoken' => (
 
 sub match {
     my ($self, $to_match) = @_;
-    $to_match =~ $self->_match_regex ? 1 : 0;
+    $to_match =~ $self->_match_regex or return;
+    return {
+        value => $+{'to_translate'},
+    };
 }
 
 my $whatis_re = qr/what is/i;
@@ -58,7 +61,7 @@ sub _build_in_regexes {
     my $self = shift;
     my @ins = ($whatis_re);
     push @ins, $spoken_forms if $self->spoken;
-    return qr/(?:@{[join '|', @ins]}) @{[$self->match_constraint]} in @{[$self->to]}/i;
+    return qr/(?:@{[join '|', @ins]}) (?<to_translate>@{[$self->match_constraint]}) in @{[$self->to]}/i;
 }
 
 sub _to_regexes {
