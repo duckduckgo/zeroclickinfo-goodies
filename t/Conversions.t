@@ -1564,6 +1564,16 @@ ddg_goodie_test(
         }
     ),
     
+    #Question format:
+    'How to convert meters to inches' => test_zci(
+        '1 meter = 39.370 inches',
+        structured_answer => {
+            input => ['1 meter'],
+            operation => 'convert',
+            result => '39.370 inches'
+        }
+    ),
+    
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,
