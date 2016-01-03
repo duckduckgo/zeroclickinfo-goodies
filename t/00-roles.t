@@ -639,6 +639,16 @@ subtest 'WhatIs' => sub {
             "How to say so much testing! in $name",
         );
     }
+    sub written_valid_tos {
+        my $name = shift;
+        return (
+            "How do I write foo in $name?",
+            "How would I write bar in $name",
+            "how to write baz in $name",
+            "How would you write bribble in $name",
+            "How to write so much testing! in $name",
+        );
+    }
 
     sub build_match_test {
         my ($matcher, $expected, @forms) = @_;
@@ -692,6 +702,30 @@ subtest 'WhatIs' => sub {
         });
         isa_ok($trans, 'DDG::GoodieRole::WhatIsBase', 'wi_translation');
         my @valid_tos = (basic_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
+        subtest 'Matching Valid Tos' => build_match_test($trans, 1, @valid_tos);
+        my @invalid_tos = ('How to say foo', 'What is Lingo');
+        subtest 'Not Matching Invalid Tos' => build_match_test($trans, 0, @invalid_tos);
+    };
+
+    subtest 'Written Forms' => sub {
+        my $trans = WhatIsTester::wi_translation({
+            to      => 'Lingo',
+            written => 1,
+        });
+        isa_ok($trans, 'DDG::GoodieRole::WhatIsBase', 'wi_translation');
+        my @valid_tos = (basic_valid_tos('Lingo'), written_valid_tos('Lingo'));
+        subtest 'Matching Valid Tos' => build_match_test($trans, 1, @valid_tos);
+        my @invalid_tos = ('How to say foo', 'What is Lingo', spoken_valid_tos('Lingo'));
+        subtest 'Not Matching Invalid Tos' => build_match_test($trans, 0, @invalid_tos);
+    };
+    subtest 'Written and Spoken Forms' => sub {
+        my $trans = WhatIsTester::wi_translation({
+            to      => 'Lingo',
+            written => 1,
+            spoken  => 1,
+        });
+        isa_ok($trans, 'DDG::GoodieRole::WhatIsBase', 'wi_translation');
+        my @valid_tos = (basic_valid_tos('Lingo'), written_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
         subtest 'Matching Valid Tos' => build_match_test($trans, 1, @valid_tos);
         my @invalid_tos = ('How to say foo', 'What is Lingo');
         subtest 'Not Matching Invalid Tos' => build_match_test($trans, 0, @invalid_tos);
