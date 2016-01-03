@@ -660,7 +660,27 @@ subtest 'WhatIs' => sub {
         subtest 'Valid Tos Matching' => build_match_test($btrans, 1, @valid_tos);
 
         subtest 'Invalid Tos Not Matching' => build_match_test($btrans, 0, @invalid_tos);
-    }
+    };
+
+    subtest 'Match Constraints' => sub {
+        my $trans = WhatIsTester::wi_translation({
+            match_constraint => qr/\d+/,
+            to               => 'Binary',
+        });
+
+        isa_ok($trans, 'DDG::GoodieRole::WhatIsBase', 'wi_translation');
+
+        my @valid_tos = (
+            'What is 11 in Binary?',
+            'what is 573 in binary',
+        );
+        my @invalid_tos = (
+            'what is five in binary?',
+            'What is hello in Binary',
+        );
+        subtest 'Matches Valid Tos' => build_match_test($trans, 1, @valid_tos);
+        subtest 'Not Matching Invalid Tos' => build_match_test($trans, 0, @invalid_tos);
+    };
 };
 
 done_testing;
