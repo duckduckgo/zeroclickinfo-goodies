@@ -635,6 +635,8 @@ subtest 'WhatIs' => sub {
             "How do I say foo in $name?",
             "How would I say bar in $name",
             "how to say baz in $name",
+            "How would you say bribble in $name",
+            "How to say so much testing! in $name",
         );
     }
 
@@ -679,6 +681,18 @@ subtest 'WhatIs' => sub {
             'What is hello in Binary',
         );
         subtest 'Matches Valid Tos' => build_match_test($trans, 1, @valid_tos);
+        subtest 'Not Matching Invalid Tos' => build_match_test($trans, 0, @invalid_tos);
+    };
+
+    subtest 'Spoken Forms' => sub {
+        my $trans = WhatIsTester::wi_translation({
+            to     => 'Lingo',
+            spoken => 1,
+        });
+        isa_ok($trans, 'DDG::GoodieRole::WhatIsBase', 'wi_translation');
+        my @valid_tos = (basic_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
+        subtest 'Matching Valid Tos' => build_match_test($trans, 1, @valid_tos);
+        my @invalid_tos = ('How to say foo', 'What is Lingo');
         subtest 'Not Matching Invalid Tos' => build_match_test($trans, 0, @invalid_tos);
     };
 };

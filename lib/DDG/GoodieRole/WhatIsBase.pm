@@ -24,6 +24,13 @@ has 'match_constraint' => (
     default => sub { qr/.+/ },
 );
 
+# This switch enables matching of forms such as 'How do I say X in Y?'.
+has 'spoken' => (
+    is      => 'ro',
+    isa     => 'Bool',
+    default => 0,
+);
+
 sub match {
     my ($self, $to_match) = @_;
     $to_match =~ $self->_match_regex ? 1 : 0;
@@ -34,7 +41,7 @@ my $whatis_re = qr/what is/i;
 sub _build_regex {
     my $self = shift;
     my $prefix_forms = $whatis_re;
-    return qr/$prefix_forms @{[$self->match_constraint]} in @{[$self->to]}/i;
+    return $self->_build_in_regexes();
 }
 
 sub BUILD {
@@ -44,6 +51,15 @@ sub BUILD {
 
 # Various ways of saying "How would I say";
 my $additional_forms = qr/(?:what is|how (?:(?:do|would) (?:you|I)| to) say)/i;
+my $spoken_forms = qr/(?:how (?:(?:do|would) (?:you|I)|to) say)/i;
+
+# Matching for "What is X in Y", "How to say X in Y" etc...
+sub _build_in_regexes {
+    my $self = shift;
+    my @ins = ($whatis_re);
+    push @ins, $spoken_forms if $self->spoken;
+    return qr/(?:@{[join '|', @ins]}) @{[$self->match_constraint]} in @{[$self->to]}/i;
+}
 
 sub _to_regexes {
     my $name = shift;
