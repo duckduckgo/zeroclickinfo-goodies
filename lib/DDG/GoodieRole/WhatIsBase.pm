@@ -16,6 +16,14 @@ has '_match_regex' => (
     isa => 'Regexp',
 );
 
+# What text should actually match to be translated.
+# The 'X' in 'What is X in Y'.
+has 'match_constraint' => (
+    is => 'ro',
+    isa => 'Regexp',
+    default => sub { qr/.+/ },
+);
+
 sub match {
     my ($self, $to_match) = @_;
     $to_match =~ $self->_match_regex ? 1 : 0;
@@ -26,7 +34,7 @@ my $whatis_re = qr/what is/i;
 sub _build_regex {
     my $self = shift;
     my $prefix_forms = $whatis_re;
-    return qr/$prefix_forms .+ in @{[$self->to]}/i;
+    return qr/$prefix_forms @{[$self->match_constraint]} in @{[$self->to]}/i;
 }
 
 sub BUILD {
