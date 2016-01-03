@@ -7,12 +7,13 @@ use warnings;
 use Moose;
 
 has 'to' => (
-    is => 'ro',
+    is  => 'ro',
     isa => 'Str',
 );
 
 has '_match_regex' => (
-    is => 'ro',
+    is  => 'ro',
+    isa => 'Regexp',
 );
 
 sub match {
@@ -20,9 +21,12 @@ sub match {
     $to_match =~ $self->_match_regex ? 1 : 0;
 }
 
+my $whatis_re = qr/what is/i;
+
 sub _build_regex {
     my $self = shift;
-    return _to_regexes($self->to);
+    my $prefix_forms = $whatis_re;
+    return qr/$prefix_forms .+ in @{[$self->to]}/i;
 }
 
 sub BUILD {
