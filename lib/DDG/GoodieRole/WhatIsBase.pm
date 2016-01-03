@@ -31,6 +31,13 @@ has 'spoken' => (
     default => 0,
 );
 
+# This switch enables matching of forms such as 'How do I write X in Y?'.
+has 'written' => (
+    is      => 'ro',
+    isa     => 'Bool',
+    default => 0,
+);
+
 sub match {
     my ($self, $to_match) = @_;
     $to_match =~ $self->_match_regex or return;
@@ -53,20 +60,17 @@ sub BUILD {
 }
 
 # Various ways of saying "How would I say";
-my $additional_forms = qr/(?:what is|how (?:(?:do|would) (?:you|I)| to) say)/i;
-my $spoken_forms = qr/(?:how (?:(?:do|would) (?:you|I)|to) say)/i;
+my $how_forms = qr/(?:how (?:(?:do|would) (?:you|I))|to)/i;
+my $spoken_forms = qr/(?:$how_forms say)/i;
+my $written_forms = qr/(?:$how_forms write)/i;
 
 # Matching for "What is X in Y", "How to say X in Y" etc...
 sub _build_in_regexes {
     my $self = shift;
     my @ins = ($whatis_re);
     push @ins, $spoken_forms if $self->spoken;
+    push @ins, $written_forms if $self->written;
     return qr/(?:@{[join '|', @ins]}) (?<to_translate>@{[$self->match_constraint]}) in @{[$self->to]}/i;
-}
-
-sub _to_regexes {
-    my $name = shift;
-    return qr/(?:$additional_forms (?<to_translate>.+) (?<action>in) $name|translate (?<to_translate>.+) (?<action>to) $name)/i;
 }
 
 __PACKAGE__->meta->make_immutable();
