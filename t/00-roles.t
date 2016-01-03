@@ -645,7 +645,8 @@ subtest 'WhatIs' => sub {
         return sub {
             foreach my $form (@forms) {
                 my $message = "$matcher @{[$expected ? 'did not match ' : 'matched ']} $form";
-                is($matcher->match($form), $expected, $message);
+                $expected ? isa_ok($matcher->match($form), 'HASH', $message)
+                          : is($matcher->match($form), undef, $message);
             };
         };
     }
@@ -694,6 +695,28 @@ subtest 'WhatIs' => sub {
         subtest 'Matching Valid Tos' => build_match_test($trans, 1, @valid_tos);
         my @invalid_tos = ('How to say foo', 'What is Lingo');
         subtest 'Not Matching Invalid Tos' => build_match_test($trans, 0, @invalid_tos);
+    };
+
+    sub build_value_test {
+        my ($trans, $forms) = @_;
+        return sub {
+            foreach my $key (keys %$forms) {
+                my $expected = $forms->{$key};
+                my $result = $trans->match($key);
+                is($result->{'value'}, $expected, "$result did not equal $expected");
+            };
+        };
+    }
+
+    subtest 'Extracting Values' => sub {
+        my $trans = WhatIsTester::wi_translation({
+            to => 'Bleh',
+        });
+        my $valid_tos = {
+            'What is the day of the week in Bleh?' => 'the day of the week',
+            'what is foo in bleh' => 'foo',
+        };
+        subtest 'Correct Values' => build_value_test($trans, $valid_tos);
     };
 };
 
