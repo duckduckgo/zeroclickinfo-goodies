@@ -1,10 +1,9 @@
 package DDG::GoodieRole::WhatIs;
-# ABSTRACT: Role for working with translations between various systems.
+# ABSTRACT: Role for query matching.
 
 use strict;
 use warnings;
 
-use Hash::Merge qw(merge);
 use Moo::Role;
 use DDG::GoodieRole::WhatIsBase;
 
@@ -12,12 +11,13 @@ use DDG::GoodieRole::WhatIsBase;
 # 'What is X in Y?'.
 sub wi_translation {
     my $got_options = shift;
+    my $groups = ['translation'];
+    push $groups, @{$got_options->{groups}} if defined $got_options->{groups};
     my $presets = {
-        type => 'translation',
+        groups => $groups,
     };
-    my %options = %{ merge($got_options, $presets) };
+    my %options = (%$got_options, %$presets);
     return DDG::GoodieRole::WhatIsBase->new(\%options);
 }
-
 
 1;
