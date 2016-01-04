@@ -38,7 +38,7 @@ sub match {
     my ($self, $to_match) = @_;
     $to_match =~ $self->_match_regex or return;
     return {
-        value => $+{'to_translate'},
+        value => $+{'primary'},
     };
 }
 
