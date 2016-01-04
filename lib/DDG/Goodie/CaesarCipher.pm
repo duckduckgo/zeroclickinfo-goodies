@@ -46,9 +46,16 @@ handle remainder => sub {
 
     return "$result",
       structured_answer => {
-        input     => ["$shift_val", "$to_cipher"],
-        operation => 'Caesar cipher',
-        result    => html_enc($result),
+          id   => 'caesar_cipher',
+          name => 'Answer',
+          data => {
+              title    => "$result",
+              subtitle => "Caesar cipher $shift_val $to_cipher",
+          },
+          templates => {
+              group  => 'text',
+              moreAt => 0,
+          },
       };
 };
 
