@@ -8,89 +8,39 @@ use DDG::Test::Goodie;
 zci answer_type => 'caesar_cipher';
 zci is_cached   => 1;
 
+sub build_structured_answer {
+    my ($result, $amount, $to_cipher) = @_;
+    return "$result",
+      structured_answer => {
+          id   => 'caesar_cipher',
+          name => 'Answer',
+          data => {
+              title    => "$result",
+              subtitle => "Caesar cipher $amount $to_cipher",
+          },
+          templates => {
+              group  => 'text',
+              moreAt => 0,
+          },
+      };
+}
+
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 ddg_goodie_test(
     [qw( DDG::Goodie::CaesarCipher )],
-    'caesar 2 abc' => test_zci(
-        'cde',
-        structured_answer => {
-            input     => ['2', 'abc'],
-            operation => 'Caesar cipher',
-            result    => 'cde'
-        },
-    ),
-    'caesar cipher -2 cde' => test_zci(
-        'abc',
-        structured_answer => {
-            input     => ['-2', 'cde'],
-            operation => 'Caesar cipher',
-            result    => 'abc'
-        },
-    ),
-    'caesar 52 abc' => test_zci(
-        'abc',
-        structured_answer => {
-            input     => ['52', 'abc'],
-            operation => 'Caesar cipher',
-            result    => 'abc'
-        },
-    ),
-    'caesar 1 TtEeSsTt' => test_zci(
-        'UuFfTtUu',
-        structured_answer => {
-            input     => ['1', 'TtEeSsTt'],
-            operation => 'Caesar cipher',
-            result    => 'UuFfTtUu'
-        },
-    ),
-    'caesar 0 test' => test_zci(
-        'test',
-        structured_answer => {
-            input     => ['0', 'test'],
-            operation => 'Caesar cipher',
-            result    => 'test'
-        },
-    ),
-    'caesar -26 test\\' => test_zci(
-        'test\\',
-        structured_answer => {
-            input     => ['-26', 'test\\'],
-            operation => 'Caesar cipher',
-            result    => 'test\\'
-        },
-    ),
-    'caesar 5 #test{]17TEST#' => test_zci(
-        '#yjxy{]17YJXY#',
-        structured_answer => {
-            input     => ['5', '#test{]17TEST#'],
-            operation => 'Caesar cipher',
-            result    => '#yjxy{]17YJXY#'
-        },
-    ),
-    'Caesar cipher 26 test text.' => test_zci(
-        'test text.',
-        structured_answer => {
-            input     => ['26', 'test text.'],
-            operation => 'Caesar cipher',
-            result    => 'test text.'
-        },
-    ),
-    'ceasar 13 "More Test Text"' => test_zci(
-        '"Zber Grfg Grkg"',
-        structured_answer => {
-            input     => ['13', '"More Test Text"'],
-            operation => 'Caesar cipher',
-            result    => '&quot;Zber Grfg Grkg&quot;'
-        },
-    ),
-    'shift cipher 7 Mxlm mxqm' => test_zci(
-        'Test text',
-        structured_answer => {
-            input     => ['7', 'Mxlm mxqm'],
-            operation => 'Caesar cipher',
-            result    => 'Test text'
-        },
-    ),
-    'caesar cipher hello' => undef,
+    'caesar 2 abc'                => build_test('cde', 2, 'abc'),
+    'caesar cipher -2 cde'        => build_test('abc', -2, 'cde'),
+    'caesar 52 abc'               => build_test('abc', 52, 'abc'),
+    'caesar 1 TtEeSsTt'           => build_test('UuFfTtUu', 1, 'TtEeSsTt'),
+    'caesar 0 test'               => build_test('test', 0, 'test'),
+    'caesar -26 test\\'           => build_test('test\\', -26, 'test\\'),
+    'caesar 5 #test{]17TEST#'     => build_test('#yjxy{]17YJXY#', 5, '#test{]17TEST#'),
+    'Caesar cipher 26 test text.' => build_test('test text.', 26, 'test text.'),
+    'ceasar 13 "More Test Text"'  => build_test('"Zber Grfg Grkg"', 13, '"More Test Text"'),
+    'shift cipher 7 Mxlm mxqm'    => build_test('Test text', 7, 'Mxlm mxqm'),
+    'caesar cipher hello'         => undef,
+    'caesar cipher'               => undef,
 );
 
 done_testing;
