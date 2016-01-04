@@ -65,6 +65,43 @@ instead allowing you to specify certain properties of your Goodie
 (it is a C<'translation'>, makes sense to be called C<'written'>)
 and have the Role do the hard work.
 
+=head2 Entries
+
+To create a matcher, you use the functions, prefixed with C<wi_>,
+that are available after using the role.
+
+Entries are used like so:
+
+    my $matcher = entry({
+        # Optionally specify any additional groups.
+        groups => [group1, group2, group3, ...],
+        # Optionally specify any modifier-specific options.
+        # Some modifiers may have required options that will
+        # cause the creation of the matcher to fail if they
+        # aren't specified.
+        options => {
+            option1 => value1,
+            option2 => value2,
+            ...
+        },
+    });
+
+The following describes the entry functions and their intended
+purposes.
+
+=over
+
+=item wi_translation()
+
+When the query should be in a synonymous form with
+"What is X in Y?".
+
+=item wi_custom()
+
+Use if you want to create a matcher with no presets.
+
+=back
+
 =head2 Groups
 
 You use groups to specify certain properties of your Goodie that
