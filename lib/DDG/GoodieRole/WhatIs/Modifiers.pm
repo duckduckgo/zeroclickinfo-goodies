@@ -25,19 +25,19 @@ sub new_modifier {
 new_modifier 'written translation' => {
     required_groups => [['translation', 'written']],
     required_options => ['to'],
-    optional_options => { match_constraint => qr/.+/ },
+    optional_options => { primary => qr/.+/ },
     action => \&written_translation,
 };
 new_modifier 'spoken translation' => {
     required_groups => [['translation', 'spoken']],
     required_options => ['to'],
-    optional_options => { match_constraint => qr/.+/ },
+    optional_options => { primary => qr/.+/ },
     action => \&spoken_translation,
 };
 new_modifier 'what is conversion' => {
-    required_groups => [[]],
+    required_groups => [['translation']],
     required_options => ['to'],
-    optional_options => { match_constraint => qr/.+/ },
+    optional_options => { primary => qr/.+/ },
     action => \&whatis_translation,
 };
 
@@ -49,7 +49,7 @@ my $written_forms = qr/(?:$how_forms write)/i;
 sub _in_re {
     my ($options, $re) = @_;
     my $to = $options->{to};
-    my $constraint = $options->{match_constraint} // qr/.+/;
+    my $constraint = $options->{primary} // qr/.+/;
     return qr/$re (?<to_translate>$constraint) in $to/i;
 }
 
