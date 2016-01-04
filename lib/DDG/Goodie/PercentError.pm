@@ -22,7 +22,6 @@ attribution twitter => ['crazedpsyc', 'Michael Smith'],
 
 handle remainder => sub {
     my $length = length($_);
-#return unless $length == 2;
 
     my ( $acc, $exp ) = split /\s*[\s;,]\s*/, $_;
     return unless $acc =~ /^-?\d+?(?:\.\d+|)$/ && $exp =~ /^-?\d+?(?:\.\d+|)$/;
@@ -30,10 +29,8 @@ handle remainder => sub {
     my $diff = abs $acc - $exp;
     my $per = abs ($diff/$acc);
     my $err = $per*100;
-
-    #my $html = qq(Accepted: $acc Experimental: $exp Error: <a href="javascript:;" onclick="document.x.q.value='$per';document.x.q.focus();">$err%</a>);
-
-    return "Accepted: $acc Experimental: $exp Error: $err%", #html => $html;
+    
+    return "Accepted: $acc Experimental: $exp Error: $err%",
     structured_answer => {
         id => 'percent_error',
         name => 'Answer',
