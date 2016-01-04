@@ -31,7 +31,7 @@ __END__
 
 =head1 NAME
 
-DDG::GoodieRole::WhatIs - Abstracts query matching.
+DDG::GoodieRole::WhatIs - abstracts query matching
 
 =head1 SYNOPSIS
 
@@ -43,14 +43,16 @@ Including it in your Goodie:
 Creating matchers:
 
     my $matcher = wi_translation({
-        to     => 'Goatee',
-        groups => ['spoken', 'written'],
+        groups  => ['spoken', 'written'],
+        options => {
+            to => 'Goatee',
+        },
     });
 
 Retrieving values:
 
     my $result = $matcher->match("What is hello in Goatee?");
-    my $value = $result->{value};
+    my $value = $result->{primary};
     print $value;
     # 'hello'
 
@@ -96,14 +98,16 @@ The aim is for queries such as "How do I write X in Goatee?",
     # it makes sense to be able to say "How do I say...",
     # it makes sense to be able to say "How do I write..."
     my $matcher = wi_translation({
-        groups => ['spoken', 'written'],
-        to     => 'Goatee',
+        groups  => ['spoken', 'written'],
+        options => {
+            to => 'Goatee',
+        },
     });
 
     handle query_raw => sub {
         my $query = $_;
         my $match_result = $matcher->match($query) or return;
-        my $to_translate = $match_result->{value} or return;
+        my $to_translate = $match_result->{primary} or return;
         my $result = english_to_goatee $to_translate;
 
         return $result,
@@ -123,7 +127,6 @@ The aim is for queries such as "How do I write X in Goatee?",
 
 =head1 AUTHOR
 
-Ben Moon aka GuiltyDolphin E<lt>guiltydolphin@gmail.comE<gt> or
-E<64>GuiltyDolphin on GitHub and others.
+Ben Moon aka GuiltyDolphin E<lt>guiltydolphinE<64>gmail.comE<gt>
 
 =cut
