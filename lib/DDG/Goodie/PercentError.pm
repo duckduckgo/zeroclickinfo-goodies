@@ -34,6 +34,17 @@ handle remainder => sub {
     #my $html = qq(Accepted: $acc Experimental: $exp Error: <a href="javascript:;" onclick="document.x.q.value='$per';document.x.q.focus();">$err%</a>);
 
     return "Accepted: $acc Experimental: $exp Error: $err%", #html => $html;
+    structured_answer => {
+        id => 'percent_error',
+        name => 'Answer',
+        data => {
+            title => "Error: $err%",
+            subtitle => "Accepted: $acc Experimental: $exp",
+        },
+        templates => {
+            group => 'text',
+        }
+    };
 };
 
 1;
