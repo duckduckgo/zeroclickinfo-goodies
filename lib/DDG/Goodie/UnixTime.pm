@@ -55,7 +55,6 @@ handle query => sub {
     my @table_data = map { [ $_ => $table_data{$_} ] } keys %table_data;
     my $text = join(' | ', (map { join(' => ', @{$_}) } @table_data));
     
-    
     return $text,
     structured_answer => {
         id => 'unix_time',
