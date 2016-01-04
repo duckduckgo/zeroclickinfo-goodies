@@ -6,7 +6,7 @@
         "sourceName": "Cplusplus",
         "sourceUrl": "http://www.cplusplus.com/reference/string/string/"
     },
-    "aliases": ["c++ strings","c++ string","cpp strings","cpp string"],
+    "aliases": ["c++ strings","c++ string","cpp string"],
     "template_type": "code",
     "section_order": ["Constructors", "Element Access", "Size"],
     "sections": {
