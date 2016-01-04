@@ -21,19 +21,19 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 attribution github => ['http://github.com/wilkox', 'wilkox'],
             github => ['https://github.com/Sloff', 'Sloff'];
 
-my %animal_to_language = (
-    'hare' => { en => 'Rabbit', zh => '兔' },
-    'dragon' => { en => 'Dragon', zh => '龙' },
-    'snake' => { en => 'Snake', zh => '蛇' },
-    'horse' => { en => 'Horse', zh => '马' },
-    'sheep' => { en => 'Goat', zh => '羊' },
-    'monkey' => { en => 'Monkey', zh => '猴' },
-    'fowl' => { en => 'Rooster', zh => '鸡' },
-    'dog' => { en => 'Dog', zh => '狗' },
-    'pig' => { en => 'Pig', zh => '猪' },
-    'rat' => { en => 'Rat', zh => '鼠' },
-    'ox' => { en => 'Ox', zh => '牛' },
-    'tiger' => { en => 'Tiger', zh => '虎' }
+my %animal_to_language_and_path_and_class = (
+    'hare' => { en => 'Rabbit', zh => '兔' , path => "share/goodie/chinese_zodiac/rabbit.png", class => "bg-clr--wood"},
+    'dragon' => { en => 'Dragon', zh => '龙' , path => "share/goodie/chinese_zodiac/dragon.png", class => "bg-clr--green"},
+    'snake' => { en => 'Snake', zh => '蛇' , path => "share/goodie/chinese_zodiac/snake.png", class => "bg-clr--red"},
+    'horse' => { en => 'Horse', zh => '马' , path => "share/goodie/chinese_zodiac/horse.png", class => "bg-clr--red"},
+    'sheep' => { en => 'Goat', zh => '羊' , path => "share/goodie/chinese_zodiac/goat.png", class => "bg-clr--green"},
+    'monkey' => { en => 'Monkey', zh => '猴' , path => "share/goodie/chinese_zodiac/monkey.png", class => "bg-clr--grey"},
+    'fowl' => { en => 'Rooster', zh => '鸡' , path => "share/goodie/chinese_zodiac/rooster.png", class => "bg-clr--grey"},
+    'dog' => { en => 'Dog', zh => '狗' , path => "share/goodie/chinese_zodiac/dog.png", class => "bg-clr--green"},
+    'pig' => { en => 'Pig', zh => '猪' , path => "share/goodie/chinese_zodiac/pig.png", class => "bg-clr--blue-light"},
+    'rat' => { en => 'Rat', zh => '鼠' , path => "share/goodie/chinese_zodiac/rat.png", class => "bg-clr--blue-light"},
+    'ox' => { en => 'Ox', zh => '牛' , path => "share/goodie/chinese_zodiac/ox.png", class => "bg-clr--green"},
+    'tiger' => { en => 'Tiger', zh => '虎' , path => "share/goodie/chinese_zodiac/tiger.png", class => "bg-clr--wood"}
 );
 
 my $chinese_zodiac_tz            = 'Asia/Shanghai';
@@ -80,28 +80,39 @@ handle remainder => sub {
     my $year_end = chinese_new_year_after($date_gregorian)->subtract(days => 1)->set_time_zone($chinese_zodiac_tz);
 
     my $animal = $year_chinese->zodiac_animal;
-    my $english = $animal_to_language{$animal}{'en'};
-    my $character = $animal_to_language{$animal}{'zh'};
+    my $english = $animal_to_language_and_path_and_class{$animal}{'en'};
+    my $character = $animal_to_language_and_path_and_class{$animal}{'zh'};
+    my $path = $animal_to_language_and_path_and_class{$animal}{'path'};
+    my $class = $animal_to_language_and_path_and_class{$animal}{'class'};
 
     my $statement = $year_start->strftime("%b %d, %Y") . " – " . $year_end->strftime("%b %d, %Y");
 
-    return format_answer($character, $english, $statement);
+    return format_answer($character, $english, $statement, $path, $class);
 };
 
 sub format_answer {
-    my ($character, $english, $statement) = @_;
+    my ($character, $english, $statement, $path, $class) = @_;
 
     return "$character ($english)", structured_answer => {
         id => "chinese_zodiac",
         name => "Chinese Zodiac",
         data => {
             title => "$character ($english)",
-            subtitle => $statement
+            subtitle => $statement,
+            image => $path,
+            url => 'https://en.wikipedia.org/wiki/'.$english.'_(zodiac)'
         },
         templates => {
-            group => "text",
+            group => "icon",
             item => 0,
-            moreAt => 1
+            moreAt => 1,
+            variants => {
+                iconTitle => 'large',
+                iconImage => 'large'
+            },
+            elClass => {
+                iconImage => $class.' circle'
+            }
         },
         meta => {
             sourceName => "Wikipedia",
