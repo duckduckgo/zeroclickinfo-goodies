@@ -656,7 +656,7 @@ subtest 'WhatIs' => sub {
             foreach my $key (keys %forms) {
                 my $expected = $expecting_value ? $forms{$key} : undef;
                 my $result = $trans->match($key);
-                is($result->{'value'}, $expected, defined($expected) ? "$result did not equal $expected" : "Expecting undef but got $result"); # "$result did not equal $expected");
+                is($result->{'value'}, $expected, defined($expected) ? "$result did not equal $expected" : "Expecting undef but got $result");
             };
         };
     }
@@ -699,7 +699,7 @@ subtest 'WhatIs' => sub {
     subtest 'Spoken Forms' => sub {
         my $trans = get_trans_with_test({
             to     => 'Lingo',
-            spoken => 1,
+            groups => ['spoken'],
         });
         my %valid_tos = (basic_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
         subtest 'Matching Valid Tos' => build_value_test($trans, 1, %valid_tos);
@@ -710,7 +710,7 @@ subtest 'WhatIs' => sub {
     subtest 'Written Forms' => sub {
         my $trans = get_trans_with_test({
             to      => 'Lingo',
-            written => 1,
+            groups  => ['written'],
         });
         my %valid_tos = (basic_valid_tos('Lingo'), written_valid_tos('Lingo'));
         subtest 'Matching Valid Tos' => build_value_test($trans, 1, %valid_tos);
@@ -720,8 +720,7 @@ subtest 'WhatIs' => sub {
     subtest 'Written and Spoken Forms' => sub {
         my $trans = get_trans_with_test {
             to      => 'Lingo',
-            written => 1,
-            spoken  => 1,
+            groups  => ['written', 'spoken'],
         };
         my %valid_tos = (basic_valid_tos('Lingo'), written_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
         subtest 'Matching Valid Tos' => build_value_test($trans, 1, %valid_tos);
