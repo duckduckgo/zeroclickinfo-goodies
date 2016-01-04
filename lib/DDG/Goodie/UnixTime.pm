@@ -45,20 +45,18 @@ handle query => sub {
 
     my $time_output;
     my %table_data = ('Unix Epoch' => $time_input);
-   # my @table_data = ['Unix Epoch' => $time_input];
     
     foreach my $tz (uniq grep { $_ } ($loc->time_zone, $default_tz)) {
         $dt->set_time_zone($tz);
-        #push @table_data, (sprintf($header_format, $tz), $dt->strftime($time_format));
         $table_data{sprintf($header_format, $tz)} = $dt->strftime($time_format);
     }
-   # my %table_data = map { $_ => $_[1] } @table_data;
-    my @table_keys = sort {$b cmp $a} keys %table_data; #keys %table_data;
+   
+    my @table_keys = sort {$b cmp $a} keys %table_data;
     my @table_data = map { [ $_ => $table_data{$_} ] } keys %table_data;
     my $text = join(' | ', (map { join(' => ', @{$_}) } @table_data));
     
     
-    return $text,# html => to_html(@table_data);
+    return $text,
     structured_answer => {
         id => 'unix_time',
         name => 'Answer',
@@ -74,16 +72,5 @@ handle query => sub {
         }
     };
 };
-
-#sub to_html {
-#    my $results  = "";
-#    my $minwidth = "90px";
-#    foreach my $result (@_) {
-#        $results .=
-#          "<div><span class=\"unixtime__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
-#        $minwidth = "180px" if length($result->[0]) > 10;
-#    }
-#    return $results . "<style> .zci--answer .unixtime__label {display: inline-block; min-width: $minwidth}</style>";
-#}
 
 1;
