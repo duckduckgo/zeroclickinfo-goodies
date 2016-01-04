@@ -9,27 +9,75 @@ zci answer_type => 'vin';
 zci is_cached => 1;
 
 ddg_goodie_test(
-        [qw( DDG::Goodie::VIN )],
+    [qw( DDG::Goodie::VIN )],
         '1g8gg35m1g7123101' => test_zci(
-        	"1G8GG35M1G7123101",
-        	heading => 'Vehicle Identification Number',
-        	html => "Check the automobile's VIN at <a href='http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101'>Decode This</a>."
-        ),
+        "1G8GG35M1G7123101",
+        structured_answer => {
+            id => 'vin',
+            name => 'Answer',
+            data => {
+                title => 'Check the automobile\'s VIN',
+            },
+            meta => {
+                sourceName => 'Decode This',
+                sourceUrl => 'http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101'
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
         'vin 1g8gg35m1g7123101' => test_zci(
-        	"1G8GG35M1G7123101",
-        	heading => 'Vehicle Identification Number',
-        	html => "Check the automobile's VIN at <a href='http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101'>Decode This</a>."
-        ),
+        "1G8GG35M1G7123101",
+        structured_answer => {
+            id => 'vin',
+            name => 'Answer',
+            data => {
+                title => 'Check the automobile\'s VIN',
+            },
+            meta => {
+                sourceName => 'Decode This',
+                sourceUrl => 'http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101'
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
         '1g8gg35m1g7123101 vehicle identification number' => test_zci(
-        	"1G8GG35M1G7123101",
-        	heading => 'Vehicle Identification Number',
-        	html => "Check the automobile's VIN at <a href='http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101'>Decode This</a>."
-        ),
+        "1G8GG35M1G7123101",
+        structured_answer => {
+            id => 'vin',
+            name => 'Answer',
+            data => {
+                title => 'Check the automobile\'s VIN',
+            },
+            meta => {
+                sourceName => 'Decode This',
+                sourceUrl => 'http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101'
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
         '1g8gg35m1g7123101 tracking' => test_zci(
-        	"1G8GG35M1G7123101",
-        	heading => 'Vehicle Identification Number',
-        	html => "Check the automobile's VIN at <a href='http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101'>Decode This</a>."
-        ),
+        "1G8GG35M1G7123101",
+        structured_answer => {
+            id => 'vin',
+            name => 'Answer',
+            data => {
+                title => 'Check the automobile\'s VIN',
+            },
+            meta => {
+                sourceName => 'Decode This',
+                sourceUrl => 'http://www.decodethis.com/VIN-Decoded/vin/1G8GG35M1G7123101'
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
 );
 
 done_testing;

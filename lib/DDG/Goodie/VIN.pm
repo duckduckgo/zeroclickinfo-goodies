@@ -149,7 +149,7 @@ handle query_nowhitespace_nodash => sub {
             },
             meta => {
                 sourceName => 'Decode This',
-                sourceUrl => 'http://www.decodethis.com/VIN-Decoded/vin/$vin_number'
+                sourceUrl => 'http://www.decodethis.com/VIN-Decoded/vin/' . $vin_number
             },
             templates => {
                 group => 'text',
