@@ -17,7 +17,8 @@ code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DD
 category 'calculations';
 topics 'math';
 attribution twitter => ['crazedpsyc', 'Michael Smith'],
-            cpan    => ['CRZEDPSYC', 'Michael Smith'];
+            cpan    => ['CRZEDPSYC', 'Michael Smith'],
+            github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 handle remainder => sub {
     my $length = length($_);
