@@ -21,7 +21,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => '500 Ω ± 20%',
-                subtitle => 'Resistance of black green red resistor:'
+                subtitle => 'Resistance of black green red resistor'
             },
             meta => {
                 sourceName => "Wikipedia",
@@ -42,7 +42,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => '230 kΩ ± 5%',
-                subtitle => 'Resistance of red orange yellow gold resistor:'
+                subtitle => 'Resistance of red orange yellow gold resistor'
             },
             meta => {
                 sourceName => "Wikipedia",
@@ -63,7 +63,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => '460 MΩ ± 20%',
-                subtitle => 'Resistance of yellow blue violet resistor:'
+                subtitle => 'Resistance of yellow blue violet resistor'
             },
             meta => {
                 sourceName => "Wikipedia",
@@ -88,7 +88,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => '24 GΩ ± 5%',
-                subtitle => 'Resistance of red yellow white gold resistor:'
+                subtitle => 'Resistance of red yellow white gold resistor'
             },
             meta => {
                 sourceName => "Wikipedia",
@@ -109,7 +109,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => '24 GΩ ± 20%',
-                subtitle => 'Resistance of red yellow white resistor:'
+                subtitle => 'Resistance of red yellow white resistor'
             },
             meta => {
                 sourceName => "Wikipedia",
