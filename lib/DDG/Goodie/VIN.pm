@@ -17,7 +17,8 @@ category 'ids';
 topics 'special_interest';
 attribution web => ['https://www.duckduckgo.com', 'DuckDuckGo'],
             github => ['duckduckgo', 'DuckDuckGo'],
-            twitter => ['duckduckgo', 'DuckDuckGo'];
+            twitter => ['duckduckgo', 'DuckDuckGo'],
+            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 
 triggers query_lc => qr/([\d+a-z]{17})|
                         (^\d+$)
