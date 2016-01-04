@@ -108,7 +108,33 @@ You use groups to specify certain properties of your Goodie that
 you want to be reflected in the queries that your Goodie will
 match.
 
-B<Coming Soon!>
+There is no guarantee that adding a particular group will
+actually change the way in which your query is processed - often
+more than one group will need to be combined to produce a
+particular effect.
+
+The following is a list of available groups:
+
+=over
+
+=item translation
+
+Use if your Goodie performs conversions between one thing and
+another.
+
+=item written
+
+It makes sense to want to I<write> your answer.
+
+=item spoken
+
+It makes sense to want to I<say> your answer.
+
+=item meaning
+
+The Goodie produces a meaning from the query.
+
+=back
 
 =head1 EXAMPLES
 
