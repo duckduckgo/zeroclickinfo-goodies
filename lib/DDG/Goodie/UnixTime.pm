@@ -44,16 +44,35 @@ handle query => sub {
     return unless $dt;
 
     my $time_output;
-    my @table_data = (['Unix Epoch', $time_input]);
-
+    my %table_data = ('Unix Epoch' => $time_input);
+   # my @table_data = ['Unix Epoch' => $time_input];
+    
     foreach my $tz (uniq grep { $_ } ($loc->time_zone, $default_tz)) {
         $dt->set_time_zone($tz);
-        push @table_data, [sprintf($header_format, $tz), $dt->strftime($time_format)];
+        #push @table_data, (sprintf($header_format, $tz), $dt->strftime($time_format));
+        $table_data{sprintf($header_format, $tz)} = $dt->strftime($time_format);
     }
-
+   # my %table_data = map { $_ => $_[1] } @table_data;
+    my @table_keys = sort {$b cmp $a} keys %table_data; #keys %table_data;
+    my @table_data = map { [ $_ => $table_data{$_} ] } keys %table_data;
     my $text = join(' | ', (map { join(' => ', @{$_}) } @table_data));
-    return $text,# html => to_html(@table_data);
     
+    
+    return $text,# html => to_html(@table_data);
+    structured_answer => {
+        id => 'unix_time',
+        name => 'Answer',
+        data => {
+            record_data => \%table_data, 
+            record_keys => \@table_keys
+        },
+        templates => {
+            group => 'list',
+            options => {
+                content => 'record'
+            }
+        }
+    };
 };
 
 #sub to_html {
