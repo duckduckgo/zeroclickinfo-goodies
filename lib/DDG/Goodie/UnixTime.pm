@@ -52,18 +52,19 @@ handle query => sub {
     }
 
     my $text = join(' | ', (map { join(' => ', @{$_}) } @table_data));
-    return $text, html => to_html(@table_data);
+    return $text,# html => to_html(@table_data);
+    
 };
 
-sub to_html {
-    my $results  = "";
-    my $minwidth = "90px";
-    foreach my $result (@_) {
-        $results .=
-          "<div><span class=\"unixtime__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
-        $minwidth = "180px" if length($result->[0]) > 10;
-    }
-    return $results . "<style> .zci--answer .unixtime__label {display: inline-block; min-width: $minwidth}</style>";
-}
+#sub to_html {
+#    my $results  = "";
+#    my $minwidth = "90px";
+#    foreach my $result (@_) {
+#        $results .=
+#          "<div><span class=\"unixtime__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
+#        $minwidth = "180px" if length($result->[0]) > 10;
+#    }
+#    return $results . "<style> .zci--answer .unixtime__label {display: inline-block; min-width: $minwidth}</style>";
+#}
 
 1;
