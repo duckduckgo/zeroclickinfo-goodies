@@ -139,7 +139,6 @@ handle query_nowhitespace_nodash => sub {
 
 
     if ($is_vin) {
-        #return $vin_number, heading => "Vehicle Identification Number", html => qq(Check the automobile's VIN at <a href='http://www.decodethis.com/VIN-Decoded/vin/$vin_number'>Decode This</a>.);
         return $vin_number,
         structured_answer => {
             id => 'vin',
