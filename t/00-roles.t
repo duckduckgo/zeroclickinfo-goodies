@@ -663,6 +663,12 @@ subtest 'WhatIs' => sub {
         };
     }
 
+    sub wi_with_test {
+        my $options = shift;
+        my $trans = WhatIsTester::wi_custom($options);
+        isa_ok($trans, 'DDG::GoodieRole::WhatIs::Base', 'wi_custom');
+        return $trans;
+    }
     sub get_trans_with_test {
         my $options = shift;
         my $trans = WhatIsTester::wi_translation($options);
@@ -725,6 +731,24 @@ subtest 'WhatIs' => sub {
             );
             subtest 'Valid Queries' => build_value_test($trans, 1, %valid_tos);
             subtest 'Invalid Queries' => build_value_test($trans, 0, %invalid_tos);
+        };
+    };
+
+    subtest 'Custom' => sub {
+        subtest 'Meaning' => sub {
+            my $wi = wi_with_test {
+                groups => ['meaning'],
+            };
+            my %valid_queries = (
+                'What is the meaning of bar' => 'bar',
+                'What does foobar mean?' => 'foobar',
+            );
+            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
+            my %invalid_queries = (
+                'What means foobar?' => '?',
+                'How do I baz' => '?',
+            );
+            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
         };
     };
 

@@ -7,8 +7,8 @@ use warnings;
 use Moo::Role;
 use DDG::GoodieRole::WhatIs::Base;
 
-# Use for translations between systems where it makes sense to say
-# 'What is X in Y?'.
+# Use for translations between systems where it makes sense to
+# say 'What is X in Y?'.
 sub wi_translation {
     my $got_options = shift;
     my $groups = ['translation'];
@@ -18,6 +18,11 @@ sub wi_translation {
     };
     my %options = (%$got_options, %$presets);
     return DDG::GoodieRole::WhatIs::Base->new(\%options);
+}
+
+# Matcher with no defaults.
+sub wi_custom {
+    return DDG::GoodieRole::WhatIs::Base->new($_[0]);
 }
 
 1;
