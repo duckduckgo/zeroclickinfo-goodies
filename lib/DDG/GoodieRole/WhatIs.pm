@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 use Moo::Role;
-use DDG::GoodieRole::WhatIsBase;
+use DDG::GoodieRole::WhatIs::Base;
 
 # Use for translations between systems where it makes sense to say
 # 'What is X in Y?'.
@@ -17,7 +17,7 @@ sub wi_translation {
         groups => $groups,
     };
     my %options = (%$got_options, %$presets);
-    return DDG::GoodieRole::WhatIsBase->new(\%options);
+    return DDG::GoodieRole::WhatIs::Base->new(\%options);
 }
 
 1;
