@@ -664,13 +664,13 @@ subtest 'WhatIs' => sub {
     sub get_trans_with_test {
         my $options = shift;
         my $trans = WhatIsTester::wi_translation($options);
-        isa_ok($trans, 'DDG::GoodieRole::WhatIsBase', 'wi_translation');
+        isa_ok($trans, 'DDG::GoodieRole::WhatIs::Base', 'wi_translation');
         return $trans;
     }
 
     subtest 'Basic Translations' => sub {
         my $btrans = get_trans_with_test({
-            to => 'Goatee',
+            options => { to => 'Goatee'},
         });
         my %valid_tos = basic_valid_tos 'Goatee';
         my %invalid_tos = spoken_valid_tos 'Goatee';
@@ -680,8 +680,10 @@ subtest 'WhatIs' => sub {
 
     subtest 'Match Constraints' => sub {
         my $trans = get_trans_with_test({
-            match_constraint => qr/\d+/,
-            to               => 'Binary',
+            options => {
+                match_constraint => qr/\d+/,
+                to               => 'Binary',
+            },
         });
 
         my %valid_tos = (
@@ -698,8 +700,8 @@ subtest 'WhatIs' => sub {
 
     subtest 'Spoken Forms' => sub {
         my $trans = get_trans_with_test({
-            to     => 'Lingo',
-            groups => ['spoken'],
+            options => { to => 'Lingo'},
+            groups  => ['spoken'],
         });
         my %valid_tos = (basic_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
         subtest 'Matching Valid Tos' => build_value_test($trans, 1, %valid_tos);
@@ -709,7 +711,7 @@ subtest 'WhatIs' => sub {
 
     subtest 'Written Forms' => sub {
         my $trans = get_trans_with_test({
-            to      => 'Lingo',
+            options => { to => 'Lingo'},
             groups  => ['written'],
         });
         my %valid_tos = (basic_valid_tos('Lingo'), written_valid_tos('Lingo'));
@@ -719,7 +721,7 @@ subtest 'WhatIs' => sub {
     };
     subtest 'Written and Spoken Forms' => sub {
         my $trans = get_trans_with_test {
-            to      => 'Lingo',
+            options => { to => 'Lingo' },
             groups  => ['written', 'spoken'],
         };
         my %valid_tos = (basic_valid_tos('Lingo'), written_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
@@ -730,7 +732,7 @@ subtest 'WhatIs' => sub {
 
     subtest 'Extracting Values' => sub {
         my $trans = get_trans_with_test({
-            to => 'Bleh',
+            options => { to => 'Bleh' },
         });
         my %valid_tos = (
             'What is the day of the week in Bleh?' => 'the day of the week',
