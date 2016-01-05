@@ -94,32 +94,31 @@ sub begins_with {
     if(exists $desserts{$letter}) {
 	    my $value = $desserts{$letter};
 
-	    # Check if a certain dessert begins with our query string.
-	    for my $dessert (@{$value}) {
-	        if($dessert =~ /^$query/i) {
-		        push @items, $dessert;
-	        }
-	    }
+        # Check if a certain dessert begins with our query string.
+        for my $dessert (@{$value}) {
+            if($dessert =~ /^$query/i) {
+                push @items, $dessert;
+            }
+        }
     }
 
     return @items;
 }
 
 handle remainder => sub {
-	# Ensure rand is seeded for each process
-	srand();
+    # Ensure rand is seeded for each process
+    srand();
 
     # Check the query. See if it matches this regular expression.
     if(lc $_ =~ m/^(?:that )?(?:start|beginn?)s?(?:ing)? (?:with)? (the letter )?([a-z].*)$/i) {
-	    # Check which desserts begin with this letter (or word).
-	    my @items = begins_with($2);
+        # Check which desserts begin with this letter (or word).
+        my @items = begins_with($2);
 
-	    # Check if we found any results.
-	    if(@items > 0) {
-	        return itemify(\@items, " is a dessert that begins with '$2'.");
-	    }
+        # Check if we found any results.
+        if(@items > 0) {
+            return itemify(\@items, " is a dessert that begins with '$2'.");
+        }
     }
-
     return;
 };
 
