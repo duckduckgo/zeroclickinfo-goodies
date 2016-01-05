@@ -29,7 +29,7 @@ my $json = share('crafting-guide.json')->slurp;
 #my $json = share('crafting-guide.json')->slurp(iomode => '<:encoding(UTF-8)'); # descriptions contain unicode
 my $decoded = decode_json($json);
 my %recipes = map{ lc $_->{'name'} => $_ } (@{ $decoded->{'items'} });
-my @recipe_names = keys %recipes;
+my @recipe_names = sort { length($b) <=> length($a) } keys %recipes;
 
 # Extra words: Words that could be a part of the query, but not part of a recipe.
 my @extra_words = ('a','an','in','crafting','recipe','how to make','how to craft','how do I make','how do I craft');
