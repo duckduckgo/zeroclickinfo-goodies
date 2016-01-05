@@ -7,7 +7,7 @@
 		"sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
 	},
 	"aliases": [
-		"new javascript syntax", "ecmascript6", "es2015"
+		"new javascript syntax", "ecmascript6", "es2015", "es 6"
 	],
 	"template_type": "terminal",
 
@@ -67,7 +67,7 @@
 			"val": "function* declaration defines a generator function. Generators are functions which can be exited and later re-entered. See yield and yield* for more info",
 			"key": "function* name(params) \\{ statements \\}"
 		}, {
-			"val": "The rest parameter syntax to represent an indefinite number of arguments as an array",
+			"val": "The rest parameter syntax allows us to represent an indefinite number of arguments as an array",
 			"key": "function(a, b, ...theArgs) \\{ \\}"
 		}],
 		"Arrays": [{
