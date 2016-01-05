@@ -2,6 +2,7 @@ package DDG::Goodie::Regexp;
 # ABSTRACT: Parse a regexp.
 
 use strict;
+use warnings;
 use DDG::Goodie;
 
 use Safe;
@@ -31,11 +32,17 @@ sub real_number_matches {
 
 sub get_match_record {
     my ($regexp, $str, $modifiers) = @_;
-    my $compiler = Safe->new->reval(q{ sub { qr/(?$_[1])$_[0]/ } });
+    my $compiler = Safe->new->reval(q { sub { qr/(?$_[1])$_[0]/ } }) or return;
+    BEGIN {
+        $SIG{'__WARN__'} = sub {
+            warn $_[0] if $_[0] !~ /Use of uninitialized value in regexp compilation/i;
+        }
+    }
+
     my @numbered = $str =~ compile_re($regexp, $modifiers, $compiler) or return;
     @numbered = real_number_matches($1, @numbered);
-		my $matches = {};
-		$matches->{'Full Match'} = get_full_match($str);
+    my $matches = {};
+    $matches->{'Full Match'} = get_full_match($str);
     foreach my $match (keys %+) {
 		    $matches->{"Named Capture <$match>"} = $+{$match};
     };
