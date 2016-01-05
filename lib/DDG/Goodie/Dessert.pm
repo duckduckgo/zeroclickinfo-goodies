@@ -92,7 +92,7 @@ sub begins_with {
 
     # Check if a value exists given our key.
     if(exists $desserts{$letter}) {
-	    my $value = $desserts{$letter};
+        my $value = $desserts{$letter};
 
         # Check if a certain dessert begins with our query string.
         for my $dessert (@{$value}) {
