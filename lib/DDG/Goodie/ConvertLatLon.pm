@@ -85,7 +85,6 @@ my %cardinalName = (
 
 handle query_nowhitespace => sub {
 
-    #return unless /$latLonQR/;
     my $query = $_;
     return if $query !~ /(([-−﹣－‒–—‐]|(minus)|(negative))?
         [\d\.]+([º°⁰]|((arc[-]?)?deg(ree)?s?))
