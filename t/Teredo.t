@@ -21,6 +21,7 @@ ddg_goodie_test(
             id => 'teredo',
             name => 'Answer',
             data => {
+                title => 'Teredo Address Details',
                 record_data => {                                                                                                                                 
                     'Client Port:' => 40000,                                                                                                              
                     'Nat Public IPv4:' => "192.0.2.45",                                                                                                       
@@ -43,6 +44,7 @@ ddg_goodie_test(
             id => 'teredo',
             name => 'Answer',
             data => {
+                title => 'Teredo Address Details',
                 record_data => {                                                                                                                                 
                     'Client Port:' => 5000,                                                                                                              
                     'Nat Public IPv4:' => "131.107.0.1",                                                                                                       
@@ -65,6 +67,7 @@ ddg_goodie_test(
             id => 'teredo',
             name => 'Answer',
             data => {
+                title => 'Teredo Address Details',
                 record_data => {                                                                                                                                 
                     'Client Port:' => 4096,                                                                                                              
                     'Nat Public IPv4:' => "157.60.0.1",                                                                                                       
