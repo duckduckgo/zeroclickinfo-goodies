@@ -1,18 +1,23 @@
 package DDG::Goodie::Zodiac;
-#ABSTRACT: Find the Zodiac Sign by feeding Date as Input
-
-use DDG::Goodie;
-with 'DDG::GoodieRole::Dates';
+# ABSTRACT: Find the Zodiac for a given date.
 
 use strict;
 use warnings;
 
-use DateTime::Event::Zodiac qw(zodiac_date_name);
+use DDG::Goodie;
+with 'DDG::GoodieRole::Dates';
 
-zci is_cached => 0;
+use DateTime;
+use JSON;
+
+zci is_cached   => 0;
 zci answer_type => "zodiac";
 
-triggers startend => "zodiac","zodiac sign","starsign","star sign";
+my @triggers = ('zodiac', 'zodiac sign',
+                'starsign', 'star sign');
+
+triggers startend => @triggers;
+
 
 my $json = share('dates.json')->slurp;
 my $decoded = decode_json($json);
@@ -27,7 +32,6 @@ sub make_zodiac_date {
     );
 }
 
-my @colors = qw(bg-clr--blue-light bg-clr--green bg-clr--red bg-clr--grey);
 sub is_zodiac {
     my ($date, $zodiac) = @_;
     my $zodiac_start = make_zodiac_date($date->year, $zodiac->{start});
@@ -46,55 +50,48 @@ sub get_zodiac_for {
     };
 }
 
+my @colors = qw(bg-clr--blue-light
+                bg-clr--green
+                bg-clr--red
+                bg-clr--grey);
+
 sub element_sign {
-        my @sign = @_;
-        my $versign = lc($sign[0]);
-        # element Water
-        return 0 if ($versign =~ m/(cancer|scorpius|pisces)/);
-        # element Water
-        return 1 if ($versign =~ m/(taurus|virgo|capricornus)/);
-        # element Water
-        return 2 if ($versign =~ m/(aries|sagittarius|leo)/);
-        # element Water
-        return 3 if ($versign =~ m/(libra|gemini|aquarius)/);
-        return 0;
+        my $zodiac = shift;
+        return $colors[0] if $zodiac =~ /(cancer|scorpius|pisces)/i;
+        return $colors[1] if $zodiac =~ /(taurus|virgo|capricornus)/i;
+        return $colors[2] if $zodiac =~ /(aries|sagittarius|leo)/i;
+        return $colors[3] if $zodiac =~ /(libra|gemini|aquarius)/i;
+}
+
+sub get_image {
+    my $zodiac = shift;
+    my $image_path = "/share/goodie/zodiac/@{[lc($zodiac)]}.png";
+    my $icon = "@{[element_sign $zodiac]} circle";
+    return ($image_path, $icon);
 }
 
 handle remainder => sub {
-    my $datestring = $_;    # The remainder should just be the string for their date.
+    my $date_string = $_;
+    $date_string =~ s/^\s*(for|on)\s*//;
 
-    # Parse the Given Date String
-    my $zodiacdate = parse_datestring_to_date($datestring);
+    my $zodiac_date = parse_datestring_to_date($date_string) or return;
 
-    # Return Nothing if the User Provided Date is Invalid
-    return unless $zodiacdate;
+    my $zodiac = get_zodiac_for $zodiac_date or return;
+    my $formatted_input = "Zodiac for @{[date_output_string($zodiac_date)]}";
+    my ($image_path, $icon) = get_image $zodiac;
 
-    #Star Sign
-    my $zodiacsign = ucfirst(zodiac_date_name($zodiacdate));
-
-    # Return the Star Sign
-    my $result="Zodiac for " . date_output_string($zodiacdate) . ": " . $zodiacsign;
-
-    # Input String
-    my $input = date_output_string($zodiacdate);
-
-    my $index = element_sign($zodiacsign);
-
-    # Background Color Icon
-    my $bgcolor = $colors[$index];
-
-    return $result, structured_answer => {
-            id => "zodiac",
+    return $zodiac, structured_answer => {
+            id   => "zodiac",
             name => "Answer",
             data => {
-                image => "/share/goodie/zodiac/". $goodieVersion . "/" . lc($zodiacsign) . ".png",
-                title => $zodiacsign,
-                subtitle => $input
+                image    => $image_path,
+                title    => $zodiac,
+                subtitle => $formatted_input,
             },
             templates => {
-                group => "icon",
+                group   => "icon",
                 elClass => {
-                    iconImage => $bgcolor . " circle"
+                    iconImage => $icon,
                 },
                 variants => {
                      iconImage => 'large'
