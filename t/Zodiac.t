@@ -6,16 +6,9 @@ use Test::More;
 use DDG::Test::Goodie;
 use Test::MockTime qw( :all );
 
-zci answer_type => 'zodiac';
-set_fixed_time("2015-12-30T00:00:00");
-ddg_goodie_test([qw(
-          DDG::Goodie::Zodiac
-          )
-    ],
-
-    #Test Aries
-    'Zodiac 21st March 1967' => test_zci(
-        'Zodiac for 21 Mar 1967: Aries',
+sub build_structured_answer {
+    my ($image, $formatted) = @_;
+    return $formatted,
         structured_answer => {
             id => "zodiac",
             name => "Answer",
@@ -23,14 +16,14 @@ ddg_goodie_test([qw(
             templates => {
                 group => 'icon',
                 elClass => {
-                    iconImage => 'bg-clr--red circle'
+                    iconImage => $image,
                 },
                 variants => {
                      iconImage => 'large'
                 }
             }
-        }    
-    ),
+        };
+}
 
     'StarSign 30 Mar'        => test_zci(
 	'Zodiac for 30 Mar 2015: Aries',
@@ -49,6 +42,7 @@ ddg_goodie_test([qw(
             }
         }
     ),
+sub build_test { test_zci(build_structured_answer(@_)) }
 
     '20 April star sign'     => test_zci(
 	'Zodiac for 20 Apr 2015: Aries',
