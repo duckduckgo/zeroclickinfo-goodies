@@ -12,23 +12,23 @@
   ],
   "template_type": "code",
   "section_order": [
-    "Multiple underscores in words",
-    "URL autolinking",
+    "Multiple Underscores In Words",
+    "URL Autolinking",
     "Strikethrough",
-    "Fenced code blocks",
-    "Syntax highlighting",
+    "Fenced Code Blocks",
+    "Syntax Highlighting",
     "Tables",
     "Blockquotes",
     "Inline HTML"
   ],
   "sections": {
-    "Multiple underscores in words": [
+    "Multiple Underscores In Words": [
       {
         "key": "eat_apple_daily",
         "val": "Markdown transforms underscores (_) into italics, GFM ignores underscores in words"
       }
     ],
-    "URL autolinking": [
+    "URL Autolinking": [
       {
         "key": "http://example.com",
         "val": "GFM will autolink standard URLs, so if you want to link to a URL, instead of setting link text"
@@ -40,13 +40,13 @@
         "val": "GFM adds syntax to create strikethrough text, which is missing from standard Markdown"
       }
     ],
-    "Fenced code blocks": [
+    "Fenced Code Blocks": [
       {
         "key": "``` Code block... ```",
         "val": "Standard Markdown converts text with four spaces at the beginning of each line into a code block; GFM also supports fenced blocks."
       }
     ],
-    "Syntax highlighting": [
+    "Syntax Highlighting": [
       {
         "key": "```ruby ... code block ```",
         "val": "Code blocks can be taken a step further by adding syntax highlighting. In your fenced block, add an optional language identifier"
