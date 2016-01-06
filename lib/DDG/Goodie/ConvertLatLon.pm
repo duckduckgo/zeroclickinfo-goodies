@@ -64,6 +64,13 @@ my $latLonQR = qr/
     ((?<seconds>$numQR)$secQR)?)?
     (?<cardinal>[NSEW]|(north)|(south)|(east)|(west))?
     /ix;
+    
+    #((?<minus>([-−﹣－‒–—‐]|(minus)|(negative)))?
+    #(?<degrees>[\d\.]+)([º°⁰]|((arc[-]?)?deg(ree)?s?))
+    #((?<minutes>[\d\.]+)(['`ʹ′‵‘’‛]|((arc[-]?)?min(ute)?s?)))?
+    #((?<seconds>[\d\.]+)(["″″‶“”〝〞‟]|['`ʹ′‵‘’‛]{2}|(arc[-]?)?sec(ond)?s?))?
+    #(?<cardinal>[NSEW]|(north)|(south)|(east)|(west))?
+    #(,|)){1,2}(longitude|latitude|convert|)(in|to|as|)(decimal|dms|degreesminutesseconds|)(form|)$
 
 my %cardinalSign = (
     N => 1,
@@ -85,7 +92,13 @@ my %cardinalName = (
 
 handle query_nowhitespace => sub {
 
-    return unless /$latLonQR/;
+    #return unless /$latLonQR/;
+    return unless qr/((?<minus>([-−﹣－‒–—‐]|(minus)|(negative)))?
+    (?<degrees>[\d\.]+)([º°⁰]|((arc[-]?)?deg(ree)?s?))
+    ((?<minutes>[\d\.]+)(['`ʹ′‵‘’‛]|((arc[-]?)?min(ute)?s?)))?
+    ((?<seconds>[\d\.]+)(["″″‶“”〝〞‟]|['`ʹ′‵‘’‛]{2}|(arc[-]?)?sec(ond)?s?))?
+    (?<cardinal>[NSEW]|(north)|(south)|(east)|(west))?
+    (,|)){1,2}(longitude|latitude|convert|)(in|to|as|)(decimal|dms|degreesminutesseconds|)(form|)$/ix;
 
     #Loop over all provided latitudes/longitudes
     # Not going to try and enforce strict latitude/longitude
@@ -94,7 +107,7 @@ handle query_nowhitespace => sub {
     # as they're all in the same format
     my @queries;
     my @results;
-    my $toFormat;
+    my $toFormat='';
     while (/$latLonQR/g) {
 
         my $minus = $+{minus};
