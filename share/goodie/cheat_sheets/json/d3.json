@@ -7,7 +7,7 @@
         "sourceUrl": "http://d3js.org/"
     },
     "aliases": [
-        "D3", "DataDrivenDocument", "Data Driven Document"
+        "D3", "DataDrivenDocument", "Data Driven Document", "D3js", "d3js"
     ],
     "template_type": "code",
     "section_order": ["Selections", "Data", "Transitions", "Scales", "Axes", "Interactivity", "Other Useful JavaScript"],
