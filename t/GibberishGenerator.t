@@ -12,11 +12,15 @@ sub build_result {
     return $result, structured_answer => {
         id   => 'gibberish_generator',
         name => 'Answer',
-        data => '-ANY-',
-        templates  => {
-            group  => 'text',
-            moreAt => 0,
-        },
+        data => "-ANY-",
+        templates => {
+            group   => 'info',
+            options => {
+                moreAt       => 0,
+                content      => 'DDH.gibberish_generator.content',
+                chompContent => 1,
+            }
+        }
     };
 }
 

@@ -71,19 +71,25 @@ handle query_lc => sub {
     my $fmodifier = $modifier =~ s/^\w/\u$&/r;
     # E.g, "3 words of Swedish gibberish"
     my $formatted_input = "$amount @{[pluralise $amount, $type]} of $fmodifier gibberish";
+    my @paragraphs = split "\n", $result;
 
     return $result, structured_answer => {
         id   => 'gibberish_generator',
         name => 'Answer',
         data => {
-            title    => $result,
-            subtitle => $formatted_input,
+            title                => "$formatted_input",
+            gibberish_paragraphs => \@paragraphs,
+            use_paragraphs       => $#paragraphs,
         },
         templates => {
-            group  => 'text',
-            moreAt => 0,
+            group   => 'info',
+            options => {
+                moreAt       => 0,
+                content      => 'DDH.gibberish_generator.content',
+                chompContent => 1,
+            }
         }
-    }
+    };
 };
 
 1;
