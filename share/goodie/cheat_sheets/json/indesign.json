@@ -20,7 +20,6 @@
         "Tables",
         "Finding and Changing text",
         "Working with Type",
-        "Navigating through and Selecting text",
         "Viewing Documents and Document workspaces",
         "Working with XML",
         "Indexing",
@@ -32,15 +31,10 @@
         "Layers Panel",
         "Color Panel",
         "Separations Preview Panel",
-        "Swatches Panel",
         "Transform Panel"
     ],
     "sections": {
         "Viewing Documents and Document workspaces": [
-            {
-                "key": "[Alt] [Spacebar]",
-                "val": "Temporarily select Hand tool"
-            },
             {
                 "key": "[Ctrl] [Spacebar]",
                 "val": "Temporarily select Zoom In tool"
@@ -66,14 +60,6 @@
                 "val": "Switch to next/previous document window"
             },
             {
-                "key": "[Ctrl] [Page Up/Down]",
-                "val": "Go back/forward to last-viewed page"
-            },
-            {
-                "key": "[Alt] [Page Up/Down]",
-                "val": "Go to previous/next spread"
-            },
-            {
                 "key": "Double-Click Hand tool",
                 "val": "Fit spread in window"
             },
@@ -90,20 +76,8 @@
                 "val": "Cycle through units of measurement"
             },
             {
-                "key": "[Shift] [Drag Guide]",
-                "val": "Snap guide to ruler increments"
-            },
-            {
-                "key": "[Ctrl] [Drag Guide]",
-                "val": "Switch between page and spread guides"
-            },
-            {
                 "key": "[Alt] [Ctrl] [G]",
                 "val": "Select all guides"
-            },
-            {
-                "key": "[Alt] [Drag Guide]",
-                "val": "Use current magnification for view threshold of new guide"
             },
             {
                 "key": "[Ctrl] [Help]",
@@ -118,14 +92,6 @@
             {
                 "key": "A",
                 "val": "Direct Selection tool"
-            },
-            {
-                "key": "[Ctrl] [Tab]",
-                "val": "Toggle Selection and Direct Selection tool"
-            },
-            {
-                "key": "[Shift] [P]",
-                "val": "Page tool"
             },
             {
                 "key": "U",
@@ -152,14 +118,6 @@
                 "val": "Type tool"
             },
             {
-                "key": "[Shift] [T]",
-                "val": "Type On A Path tool"
-            },
-            {
-                "key": "\\",
-                "val": "Line tool"
-            },
-            {
                 "key": "F",
                 "val": "Rectangle Frame tool"
             },
@@ -178,10 +136,6 @@
             {
                 "key": "S",
                 "val": "Scale tool"
-            },
-            {
-                "key": "O",
-                "val": "Shear tool"
             },
             {
                 "key": "E",
@@ -212,32 +166,12 @@
                 "val": "Temporarily selects Hand tool"
             },
             {
-                "key": "Z",
-                "val": "Zoom tool"
-            },
-            {
                 "key": "[Ctrl] [Spacebar]",
                 "val": "Temporarily selects Zoom In tool"
             },
             {
                 "key": "X",
                 "val": "Toggle Fill and Stroke"
-            },
-            {
-                "key": "[Shift] [X]",
-                "val": "Swap Fill and Stroke"
-            },
-            {
-                "key": "J",
-                "val": "Toggle between Formatting Affects Container and Formatting Affects Text"
-            },
-            {
-                "key": ",",
-                "val": "Apply Color"
-            },
-            {
-                "key": ".",
-                "val": "Apply Gradient"
             },
             {
                 "key": "W",
@@ -250,10 +184,6 @@
             {
                 "key": "Q",
                 "val": "Frame Grid tool (vertical)"
-            },
-            {
-                "key": "[Shift] [G]",
-                "val": "Gradient Feather tool"
             }
         ],
         "Editing paths and Frames": [
@@ -279,10 +209,6 @@
             }
         ],
         "Tables": [
-            {
-                "key": "Shift–drag interior row",
-                "val": "Resize rows or columns without changing the size of the table"
-            },
             {
                 "key": "Tab",
                 "val": "Move to next/previous cell"
@@ -366,22 +292,6 @@
                 "val": "Normal"
             },
             {
-                "key": "[Shift] [Ctrl] [U]",
-                "val": "Underline"
-            },
-            {
-                "key": "[Shift] [Ctrl] [/]",
-                "val": "Strikethrough"
-            },
-            {
-                "key": "[Shift] [Ctrl] [K]",
-                "val": "All caps"
-            },
-            {
-                "key": "[Shift] [Ctrl] [H]",
-                "val": "Small caps"
-            },
-            {
                 "key": "[Shift] [Ctrl] [+]",
                 "val": "Superscript"
             },
@@ -392,10 +302,6 @@
             {
                 "key": "[Shift] [Ctrl] [X]",
                 "val": "Reset horizontal or vertical scale to 100%"
-            },
-            {
-                "key": "[Shift] [Ctrl] [L/R/C]",
-                "val": "Align left, right, or center"
             },
             {
                 "key": "[Shift] [Ctrl] [F/J]",
@@ -422,16 +328,8 @@
                 "val": "Auto-hyphenate (on/off)"
             },
             {
-                "key": "[Alt] [Up/Down Arrow]",
-                "val": "Increase or decrease kerning and tracking (vertical text)"
-            },
-            {
                 "key": "[Alt] [Ctrl] [Q]",
                 "val": "Clear all manual kerning and reset tracking to 0"
-            },
-            {
-                "key": "[Shift] [Alt] [Up/Down Arrow]",
-                "val": "Increase or decrease baseline shift (horizontal text)"
             },
             {
                 "key": "[Alt] [Ctrl] [/]",
@@ -462,44 +360,6 @@
             {
                 "key": "[Ctrl] [Alt] [Shift] [Z]",
                 "val": "Switch image from High Quality Display to Fast Display"
-            }
-        ],
-        "Navigating through and Selecting text": [
-            {
-                "key": "[Ctrl] [Right/Left Arrow]",
-                "val": "Move to right or left one word"
-            },
-            {
-                "key": "[Ctrl] [Up/Down Arrow]",
-                "val": "Move to previous or next paragraph"
-            },
-            {
-                "key": "[Ctrl] [Home/End]",
-                "val": "Move to start or end of story"
-            },
-            {
-                "key": "[Shift] [Right/Left Arrow]",
-                "val": "Select one character right or left"
-            },
-            {
-                "key": "[Shift] [Up/Down Arrow]",
-                "val": "Select one line above or below"
-            },
-            {
-                "key": "[Shift] [Home/End]",
-                "val": "Select start or end of line"
-            },
-            {
-                "key": "[Ctrl] [A]",
-                "val": "Select all in story"
-            },
-            {
-                "key": "[Ctrl] [Backspace/Delete]",
-                "val": "Delete word in front of insertion point "
-            },
-            {
-                "key": "[Ctrl] [Alt] [Shift] [/]",
-                "val": "Update missing font list"
             }
         ],
         "Working with XML": [
@@ -568,10 +428,6 @@
                 "val": "Show/Hide all panels, Toolbox, and Control panel"
             },
             {
-                "key": "[Shift] [Tab]",
-                "val": "Show/Hide all panels except the Toolbox and Control panel"
-            },
-            {
                 "key": "[Ctrl] [Alt] [Tab]",
                 "val": "Open or close all stashed panels"
             },
@@ -621,10 +477,6 @@
             }
         ],
         "Character and Paragraph Styles": [
-            {
-                "key": "[Select text and press Shift] [Alt] [Ctrl] [C]",
-                "val": "Make character style definition match text"
-            },
             {
                 "key": "[Shift] [Alt] [Ctrl] [Double-Click Style]",
                 "val": "Change options without applying style"
@@ -704,16 +556,6 @@
             {
                 "key": "[Ctrl] [Alt] [Shift] [5]",
                 "val": "Show 1st Spot plate"
-            }
-        ],
-        "Swatches Panel": [
-            {
-                "key": "Alt-Click New Swatch button",
-                "val": "Create new swatch based on the current swatch"
-            },
-            {
-                "key": "[Alt] [Ctrl-Click New Swatch button]",
-                "val": "Create spot color swatch based on the current swatch"
             }
         ],
         "Transform Panel": [
