@@ -87,11 +87,11 @@ handle query_nowhitespace => sub {
 
     #return unless /$latLonQR/;
     my $query = $_;
-    return if $query !~ /((?<minus>([-−﹣－‒–—‐]|(minus)|(negative)))?
-        (?<degrees>[\d\.]+)([º°⁰]|((arc[-]?)?deg(ree)?s?))
-        ((?<minutes>[\d\.]+)(['`ʹ′‵‘’‛]|((arc[-]?)?min(ute)?s?)))?
-        ((?<seconds>[\d\.]+)(["″″‶“”〝〞‟]|['`ʹ′‵‘’‛]{2}|(arc[-]?)?sec(ond)?s?))?
-        (?<cardinal>[NSEW]|(north)|(south)|(east)|(west))?
+    return if $query !~ /(([-−﹣－‒–—‐]|(minus)|(negative))?
+        [\d\.]+([º°⁰]|((arc[-]?)?deg(ree)?s?))
+        ([\d\.]+(['`ʹ′‵‘’‛]|((arc[-]?)?min(ute)?s?)))?
+        ([\d\.]+(["″″‶“”〝〞‟]|['`ʹ′‵‘’‛]{2}|(arc[-]?)?sec(ond)?s?))?
+        ([NSEW]|(north)|(south)|(east)|(west)|)
         (,|)){1,2}(longitude|latitude|convert|)(in|to|as|)(decimal|dms|degreesminutesseconds|)(form|)$/ix;
 
     #Loop over all provided latitudes/longitudes
