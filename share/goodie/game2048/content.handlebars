@@ -1,21 +1,30 @@
 <div class="game2048__container">
 
-    <div id="dimContainer"></div>
-
-    <span class="game2048__counter">
-        Score: <span class="game2048__points">0</span>
-    </span>
-
     <div class="game2048__area_container">
-        <table id="game2048__area" class ="game2048__area" tabindex="0">
-            {{#loop dimension}}
-                <tr>{{#loop dimension}}<td class="boxtile val-"></td>{{/loop}}</tr>
+        <div id="game2048__area" class="game2048__area" tabindex="0">
+            {{#loop 4}}
+                <div class="game2048__row">
+                    {{#loop 4}}
+                        <div class="boxtile val-"></div>
+                    {{/loop}}
+                </div>
             {{/loop}}
-        </table>
+            <div class="game2048__message">
+                <p></p>
+            </div>
+        </div>
         
-        <span class="game2048__info">
-            <h5>How to play</h5>
-            Use your <strong>arrow-keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one</strong>! 
-        </span>
+        <div class="game2048__info">
+            <div class="game2048__counter">
+                <div class="game2048__points_addition"></div>
+                <div class="game2048__points">0</div>
+            </div>
+            
+            <div class="game2048__help">
+                Use your <strong>arrow-keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one</strong>! 
+            </div>
+
+            <a class="game2048__new_game"href="javascript:void(0);">New Game</a>
+        </div>
     </div>
 </div>
