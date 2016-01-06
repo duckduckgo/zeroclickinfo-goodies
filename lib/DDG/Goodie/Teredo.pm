@@ -65,6 +65,7 @@ handle remainder => sub {
             id => 'teredo',
             name => 'Answer',
             data => {
+                title => 'Teredo Address Details',
                 record_data => \%output,
                 record_keys => ['Teredo Server IPv4:', 'Nat Public IPv4:', 'Client Port:'],
             },
