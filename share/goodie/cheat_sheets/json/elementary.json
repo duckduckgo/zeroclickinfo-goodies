@@ -1,6 +1,7 @@
 {
     "id": "elementary_cheat_sheet",
     "name": "elementary OS",
+    "description": "It is a fast and open replacement for Windows and OS X. Pay what you want or download for free."
     "metadata": {
         "sourceName": "Lme Linux",
         "sourceUrl": "http://lmelinux.net/2014/07/26/elementary-os-keyboard-shortcuts/"
