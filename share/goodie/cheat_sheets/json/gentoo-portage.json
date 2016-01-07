@@ -13,7 +13,7 @@
     "sections": {
         "Package Installation/Removal": [
             {
-                "val": "Install the www-client/firefox package and its dependencies",
+                "val": "Install a package and its dependencies",
                 "key": "emerge www-client/firefox"
             },
             {
@@ -21,11 +21,7 @@
                 "key": "emerge =www-client/firefox-24.8.0"
             },
             {
-                "val": "Install the package, but list all packages that would be installed and ask for confirmation first",
-                "key": "emerge -av www-client/firefox"
-            },
-            {
-                "val": "Remove a package and the dependencies that no other packages depend on",
+                "val": "Remove a package and its dependencies",
                 "key": "emerge -cav www-client/firefox"
             },
             {
@@ -39,21 +35,21 @@
         ],
         "Package Upgrades": [
             {
-                "val": "Upgrade all installed packages, dependencies, and deep dependencies that are outdated or have USE flag changes (avoiding unnecessary rebuilds when USE changes have no impact)",
-                "key": "emerge -uDU --with-bdeps=y @world"
+                "val": "Upgrade installed packages",
+                "key": "emerge -u @world"
             },
             {
-                "val": "Upgrade all installed packages, dependencies, and deep dependencies that are outdated or have USE flag changes (avoiding unnecessary rebuilds when USE changes have no impact). Keep going (having recalculated dependencies) even if some upgrades fail. List all packages to be installed/upgraded and ask first.",
+                "val": "Upgrade installed packages and dependencies",
                 "key": "emerge -avuDU --with-bdeps=y --keep-going=y @world"
             }
         ],
-        "Portage Tree Sync Methods": [
+        "Updating the Repositories": [
             {
-                "val": "Sync the Portage tree using the mirrors by fetching the latest differences",
+                "val": "Update repositories",
                 "key": "emerge --sync"
             },
             {
-                "val": "Sync the Portage tree using the mirrors by obtaining a Portage snapshot that is at most a day old",
+                "val": "Update repositories by fetching snapshots",
                 "key": "emerge-webrsync"
             }
         ],
