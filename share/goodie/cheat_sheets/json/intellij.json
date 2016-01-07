@@ -1,7 +1,7 @@
 {
     "id": "intellij_cheat_sheet",
     "name": "JetBrains IntelliJ IDEA",
-    "descriptions": "Keyboard shortcuts for IntelliJ IDEA, a Java IDE developed by JetBrains",
+    "description": "Keyboard shortcuts for IntelliJ IDEA, a Java IDE developed by JetBrains",
     "metadata": {
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/IntelliJ.html"
