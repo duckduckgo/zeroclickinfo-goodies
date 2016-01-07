@@ -10,6 +10,10 @@
         "gentoo", "portage", "emerge", "gentoo package management"
     ],
     "template_type": "terminal",
+    "section_order": ["Package Installation/Removal",
+                      "Package Upgrades",
+                      "Portage Tree Sync Methods",
+                      "Miscellaneous Operations"],
     "sections": {
         "Package Installation/Removal": [
             {
