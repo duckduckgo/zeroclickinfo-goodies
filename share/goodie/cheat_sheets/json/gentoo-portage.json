@@ -1,0 +1,75 @@
+{
+    "id": "gentoo_portage_cheat_sheet",
+    "name": "Portage Cheat Sheet",
+    "description": "Common Gentoo package management operations",
+    "metadata": {
+        "sourceName": "Gentoo Wiki",
+        "sourceUrl": "https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet#Portage_package_management"
+    },
+    "aliases": [
+        "gentoo", "portage", "emerge", "gentoo package management"
+    ],
+    "template_type": "terminal",
+    "sections": {
+        "Package Installation/Removal": [
+            {
+                "val": "Install the www-client/firefox package and its dependencies",
+                "key": "emerge www-client/firefox"
+            },
+            {
+                "val": "Install a specific version of a package",
+                "key": "emerge =www-client/firefox-24.8.0"
+            },
+            {
+                "val": "Install the package, but list all packages that would be installed and ask for confirmation first",
+                "key": "emerge -av www-client/firefox"
+            },
+            {
+                "val": "Remove a package and the dependencies that no other packages depend on",
+                "key": "emerge -cav www-client/firefox"
+            },
+            {
+                "val": "Remove a package but not its dependencies",
+                "key": "emerge -C www-client/firefox"
+            },
+            {
+                "val": "Remove no longer needed packages",
+                "key": "emerge -av --depclean"
+            }
+        ],
+        "Package Upgrades": [
+            {
+                "val": "Upgrade all installed packages, dependencies, and deep dependencies that are outdated or have USE flag changes (avoiding unnecessary rebuilds when USE changes have no impact)",
+                "key": "emerge -uDU --with-bdeps=y @world"
+            },
+            {
+                "val": "Upgrade all installed packages, dependencies, and deep dependencies that are outdated or have USE flag changes (avoiding unnecessary rebuilds when USE changes have no impact). Keep going (having recalculated dependencies) even if some upgrades fail. List all packages to be installed/upgraded and ask first.",
+                "key": "emerge -avuDU --with-bdeps=y --keep-going=y @world"
+            }
+        ],
+        "Portage Tree Sync Methods": [
+            {
+                "val": "Sync the Portage tree using the mirrors by fetching the latest differences",
+                "key": "emerge --sync"
+            },
+            {
+                "val": "Sync the Portage tree using the mirrors by obtaining a Portage snapshot that is at most a day old",
+                "key": "emerge-webrsync"
+            }
+        ],
+        "Miscellaneous Operations": [
+            {
+                "val": "Check for and rebuild missing libraries",
+                "key": "revdep-rebuild -v"
+            },
+            {
+                "val": "After updating perl-core packages",
+                "key": "perl-cleaner --all"
+            },
+            {
+                "val": "After updating python core packages",
+                "key": "python-updater"
+            }
+        ]
+    }
+}
