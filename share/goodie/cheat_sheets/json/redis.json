@@ -518,3 +518,9 @@
         "val": "Query a sorted set representing a geospatial index to fetch members matching a given maximum distance from a point"
       },
       {
+        "key": "GEORADIUSBYMEMBER key member radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count]",
+        "val": "Query a sorted set representing a geospatial index to fetch members matching a given maximum distance from a member"
+      }
+    ]
+  }
+}
