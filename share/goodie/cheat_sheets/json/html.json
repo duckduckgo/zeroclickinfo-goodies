@@ -1,6 +1,7 @@
 {
     "id": "html_cheat_sheet",
     "name": "HTML Elements",
+    "description":"Hyper Text Markup Language"
     "metadata": {
         "sourceName": "Mozilla Developer Network",
         "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
