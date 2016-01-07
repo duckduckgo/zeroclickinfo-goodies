@@ -10,17 +10,6 @@ triggers any => "em", "px";
 zci answer_type => "conversion";
 zci is_cached   => 1;
 
-primary_example_queries '10 px to em';
-secondary_example_queries '12.2 px in em assuming a 12.2 font size';
-description 'convert from px to em';
-name 'EmToPx';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/EmToPx.pm';
-category 'conversions';
-topics 'programming';
-attribution twitter => ['crazedpsyc','crazedpsyc'],
-            cpan    => ['CRZEDPSYC','crazedpsyc'];
-
-
 sub em_to_px {
     my ($to_convert, $fontsize) = @_;
     return $to_convert * $fontsize;

@@ -10,19 +10,6 @@ use DDG::GoodieRole::Dates;
 use DateTime;
 use POSIX qw(fmod);
 
-attribution github => ['GlitchMr', 'GlitchMr'],
-            github => ['https://github.com/samph',   'samph'],
-            github => 'cwallen';
-
-
-primary_example_queries '10:00AM MST to PST';
-secondary_example_queries '19:00 UTC to EST', '1am UTC';
-description 'convert times between timezones';
-name 'Timezone Converter';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/TimezoneConverter.pm';
-category 'calculations';
-topics 'travel';
-
 my %timezones = DDG::GoodieRole::Dates::get_timezones();
 
 triggers any => lc for keys %timezones;

@@ -14,16 +14,6 @@ triggers startend => @trigger_words;
 zci answer_type => "time_conversion";
 zci is_cached   => 0;
 
-attribution github => ['codejoust', 'Iain '],
-            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
-
-primary_example_queries 'unix time 0000000000000';
-secondary_example_queries 'epoch 0', 'epoch 2147483647';
-description 'convert a unix epoch to human-readable time';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UnixTime.pm';
-category 'calculations';
-topics 'sysadmin';
-
 my $default_tz          = 'UTC';
 my $time_format         = '%a %b %d %T %Y %Z';
 my $header_format       = "Time (%s)";
@@ -45,22 +35,22 @@ handle query => sub {
 
     my $time_output;
     my %table_data = ('Unix Epoch' => $time_input);
-    
+
     foreach my $tz (uniq grep { $_ } ($loc->time_zone, $default_tz)) {
         $dt->set_time_zone($tz);
         $table_data{sprintf($header_format, $tz)} = $dt->strftime($time_format);
     }
-   
+
     my @table_keys = sort {$b cmp $a} keys %table_data;
     my @table_data = map { [ $_ => $table_data{$_} ] } keys %table_data;
     my $text = join(' | ', (map { join(' => ', @{$_}) } @table_data));
-    
+
     return $text,
     structured_answer => {
         id => 'unix_time',
         name => 'Answer',
         data => {
-            record_data => \%table_data, 
+            record_data => \%table_data,
             record_keys => \@table_keys
         },
         templates => {

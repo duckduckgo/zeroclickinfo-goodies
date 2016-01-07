@@ -12,16 +12,6 @@ with 'DDG::GoodieRole::Chess';
 zci answer_type => "fen_viewer";
 zci is_cached   => 1;
 
-name "FenViewer";
-description "This instant answer parses a chess position in the Forsyth-Edwards notation, and draws a chessboard on screen representing that position.";
-primary_example_queries "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", "fen rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1";
-
-category "entertainment";
-topics "gaming";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FENViewer.pm";
-attribution github => ["rouzbeh", "Ali Neishabouri"],
-            twitter => "Rou7_beh";
-
 triggers start => "fen";
 
 handle remainder => sub {

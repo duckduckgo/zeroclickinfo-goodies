@@ -27,16 +27,6 @@ use JSON;
 zci is_cached => 1;
 zci answer_type => "currency_in";
 
-primary_example_queries 'currency in australia';
-secondary_example_queries 'currency in AU';
-description 'find the official currency of a country';
-name 'CurrencyIn';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CurrencyIn.pm';
-category 'facts';
-topics 'travel';
-attribution github => ['https://github.com/Alchymista', 'Alchymista'],
-            github => ['https://github.com/ozdemirburak', 'Burak Özdemir'];
-
 triggers any => 'currency', 'currencies';
 
 my $data = share('currencies.json')->slurp;

@@ -10,15 +10,6 @@ use Math::Round;
 
 zci is_cached => 1;
 
-name 'Convert Latitude and Longitude';
-description 'Convert between latitudes and longitudes expressed in degrees of arc and decimal';
-primary_example_queries '71º 10\' 3" in decimal';
-secondary_example_queries '71 degrees 10 minutes 3 seconds east in decimal', '- 16º 30\' 0" - 68º 9\' 0" as decimal';
-category 'transformations';
-topics 'geography', 'math', 'science';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ConvertLatLon.pm';
-attribution github => ['http://github.com/wilkox', 'wilkox'];
-
 triggers any => "convert", "dms", "decimal", "latitude", "longitude", "minutes", "seconds";
 
 #Regexes for latitude/longitude, in either dms or decimal format
