@@ -12,7 +12,7 @@
     "template_type": "terminal",
     "section_order": ["Package Installation/Removal",
                       "Package Upgrades",
-                      "Portage Tree Sync Methods",
+                      "Updating the Repositories",
                       "Miscellaneous Operations"],
     "sections": {
         "Package Installation/Removal": [
