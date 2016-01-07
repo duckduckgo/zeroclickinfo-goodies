@@ -150,7 +150,6 @@ ddg_goodie_test(
             result    => '40 bits'
         }
     ),
-    # Implicit conversion requests
     '3 kilogramme to pound' => test_zci(
         '3 kilograms = 6.614 pounds',
         structured_answer => {
