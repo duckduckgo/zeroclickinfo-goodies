@@ -26,15 +26,23 @@ handle remainder => sub {
     my ($output, $htmlOutput);
 
     if ($cusip->is_valid) {
-        $output = html_enc($_)." is a properly formatted CUSIP number.";
-        $htmlOutput = "<div class='zci--cusip text--primary'>".html_enc($_)." is a properly formatted <span class='text--secondary'>CUSIP number.</span></div>";
+        $output = "$_ is a properly formatted CUSIP number.";
     } else {
-        $output = html_enc($_)." is not a properly formatted CUSIP number.";
-        $htmlOutput = "<div class='zci--cusip text--primary'>".html_enc($_)." is not a properly formatted <span class='text--secondary'>CUSIP number.</span></div>";
+        $output = "$_ is not a properly formatted CUSIP number.";
     }
 
     # output results
-    return $output, html => $htmlOutput;
+    return $output,
+    structured_answer => {
+        id => 'cusip',
+        name => 'Answer',
+        data => {
+            title => $output,
+        },
+        templates => {
+            group => 'text',
+        }
+    };
 };
 
 1;
