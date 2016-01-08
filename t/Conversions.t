@@ -639,6 +639,14 @@ ddg_goodie_test(
             result => '1 quart'
         }
     ),
+    'how many ounces in a cup' => test_zci(
+        '1 us cup = 16 fluid ounces',
+        structured_answer => {
+            input => ['1 us cup'],
+            operation => 'convert',
+            result => '16 fluid ounces'
+        }
+    ),
     # Unusual number formats
     '3e60 degrees in revolutions' => test_zci(
         '3 * 10^60 degrees = 8.33 * 10^57 revolutions',
