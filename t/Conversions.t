@@ -623,6 +623,22 @@ ddg_goodie_test(
             result    => '25.400 millimeters'
         }
     ),
+    'how many fl oz in a cup' => test_zci (
+        '1 us cup = 8 us fluid ounces',
+        structured_answer => {
+            input => ['1 us cup'],
+            operation => 'convert',
+            result => '8 us fluid ounces'
+        }
+    ),
+    '4 cups in quarts' => test_zci(
+        '4 us cups = 1 quart',
+        structured_answer => {
+            input => ['4 us cups'],
+            operation => 'convert',
+            result => '1 quart'
+        }
+    ),
     # Unusual number formats
     '3e60 degrees in revolutions' => test_zci(
         '3 * 10^60 degrees = 8.33 * 10^57 revolutions',
