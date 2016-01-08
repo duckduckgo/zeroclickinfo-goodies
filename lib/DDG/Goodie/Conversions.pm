@@ -72,7 +72,7 @@ handle query_lc => sub {
     $_ =~ s/ degrees (celsius|fahrenheit)/ $1/;
     
     # hack - convert "oz" to "fl oz" if "ml" contained in query
-    s/(oz|ounces)/fl oz/ if(/ml/ && not /fl oz/);
+    s/\b(oz|ounces)/fl oz/ if(/(ml|cup[s]?)/ && not /fl oz/);
     
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;

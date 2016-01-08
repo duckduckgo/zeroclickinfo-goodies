@@ -640,11 +640,11 @@ ddg_goodie_test(
         }
     ),
     'how many ounces in a cup' => test_zci(
-        '1 us cup = 16 fluid ounces',
+        '1 us cup = 8 us fluid ounces',
         structured_answer => {
             input => ['1 us cup'],
             operation => 'convert',
-            result => '16 fluid ounces'
+            result => '8 us fluid ounces'
         }
     ),
     # Unusual number formats
