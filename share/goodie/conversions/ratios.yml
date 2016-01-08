@@ -505,6 +505,14 @@ type: volume
 unit: us fluid ounce
 ---
 aliases:
+  - us cups
+  - cups
+  - cup
+factor: 4.2267528
+type: volume
+unit: us cup
+---
+aliases:
   - days
   - dy
   - dys
