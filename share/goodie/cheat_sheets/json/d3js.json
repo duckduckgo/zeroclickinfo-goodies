@@ -1,10 +1,7 @@
 {
     "id": "d3js_cheat_sheet",
-<<<<<<< HEAD
-    "name": "D3js Cheat Sheet",
-=======
     "name": "d3js Cheat Sheet",
->>>>>>> 71cfff381b618090c99db696a3238823c9e885aa
+
     "description": "Data Driven Document syntax",
     "metadata": {
         "sourceName": "DataDrivenDocument",
