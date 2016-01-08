@@ -6,6 +6,7 @@
         "sourceName": "Bash Reference Manual",
         "sourceUrl": "https://www.gnu.org/software/bash/"
     },
+    "template_type": "terminal",
     "section_order": [
         "Lingo",
         "Shortcuts",
