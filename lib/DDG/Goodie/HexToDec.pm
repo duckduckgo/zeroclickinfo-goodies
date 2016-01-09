@@ -10,16 +10,6 @@ triggers query_raw => qr/^\s*0x[0-9a-fA-F]+(?:(?:\s+hex)?\s+(?:in|as|to)\s+(?:de
 zci answer_type => 'hex_to_dec';
 zci is_cached   => 1;
 
-primary_example_queries '0x44696f21';
-description 'convert hexidecimal to decimal';
-name 'HexToDec';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HexToDec.pm';
-category 'conversions';
-topics 'math', 'programming';
-attribution cpan   => 'majuscule',
-            github => ['nospampleasemam', 'Dylan Lloyd'],
-            web    => ['https://dylansserver.com', 'Dylan Lloyd'] ;
-
 handle query_raw => sub {
     return unless (m/0x([0-9a-fA-F]+)/);
 

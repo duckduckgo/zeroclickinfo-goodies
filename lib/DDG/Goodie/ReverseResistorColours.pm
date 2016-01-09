@@ -10,14 +10,6 @@ triggers query_raw => qr/^resistors?|resistors?$/i;
 zci is_cached => 1;
 zci answer_type => 'ohms';
 
-primary_example_queries 'red yellow white gold resistor';
-secondary_example_queries 'resistor red yellow white';
-description 'find resistance based on colour bands';
-name 'ReverseResistorColours';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/lib/DDG/Goodie/ReverseResistorColours.pm';
-category 'reference';
-topics 'science';
-
 my %coloursToDigits = (
 	'black'  => { value => 0,   tolerance => ''  },
 	'brown'  => { value => 1,   tolerance => 1,  },

@@ -4,9 +4,10 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use Test::MockTime qw( :all );
 
 zci answer_type => 'zodiac';
-
+set_fixed_time("2015-12-30T00:00:00");
 ddg_goodie_test([qw(
           DDG::Goodie::Zodiac
           )
@@ -748,5 +749,5 @@ ddg_goodie_test([qw(
     'Zodiac 5thMay1200'      => undef,
 
 );
-
+restore_time();
 done_testing;

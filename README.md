@@ -1,5 +1,7 @@
 # Welcome to DuckDuckHack's Goodies Instant Answers Repository
 
+[![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.png?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
+
 ![](http://docs.duckduckhack.com/assets/hack search engine.png)
 
 **Instant Answers are an opportunity for anyone to create their own search results.**
