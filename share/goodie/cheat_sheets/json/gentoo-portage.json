@@ -1,6 +1,6 @@
 {
     "id": "gentoo_portage_cheat_sheet",
-    "name": "Portage Cheat Sheet",
+    "name": "Portage",
     "description": "Common Gentoo package management operations",
     "metadata": {
         "sourceName": "Gentoo Wiki",
