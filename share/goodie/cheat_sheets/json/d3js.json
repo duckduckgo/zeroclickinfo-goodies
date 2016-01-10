@@ -4,11 +4,11 @@
 
     "description": "Data Driven Document syntax",
     "metadata": {
-        "sourceName": "DataDrivenDocument",
+        "sourceName": "D3js",
         "sourceUrl": "http://d3js.org/"
     },
     "aliases": [
-        "d3", "datadrivendocument"
+        "d3", "datadrivendocument", "data-driven document", "data driven document"
     ],
     "template_type": "code",
     "section_order": ["Selections", "Data", "Transitions", "Scales", "Axes", "Interactivity", "Other Useful JavaScript"],
