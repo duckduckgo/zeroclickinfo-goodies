@@ -1,13 +1,13 @@
 {
 	"id": "atom_cheat_sheet",
 	"name": "Atom",
-	"description": "Keyboard shortcuts for Atom text editor",
+	"description": "Keyboard shortcuts for Atom text editor ",
 	"metadata": {
 		"sourceName": "ShortcutWorld",
 		"sourceUrl": "http://www.shortcutworld.com/en/linux/Atom-(text-editor)_1.0.html"
 	},
 	"aliases": [
-		"atom text editor", "atom for windows", "atom for linux", "linux atom", "windows atom"
+		"atom text editor", "atom for windows", "atom for linux", "linux atom", "windows atom",
 	],
 	"template_type": "keyboard",
 	"section_order": [
