@@ -1,16 +1,22 @@
 <div class='zci__conversions-controls'>
 	<div class='zci__conversions_left'>
-		<input name='conversions-left-in' type='number' value='{{value_in}}' />
-		<select name='conversions-left-unit'>
+		<input name='zci__conversions-left-in' id='zci__conversions-left-in' type='number' value='{{value_in}}' />
+		<input name='zci__conversions-left-unit' id='zci__conversions-left-unit' type='text' value= '{{unit_from}}' />
+<!--
+		<select name='zci__conversions-left-unit'>
 			<option value='{{unit_from}}'>{{unit_from}}</option>
 		</select>
+-->
 	</div>
 	<div class='zci__conversions_equals'> = </div>
 	<div class='zci__conversions_right'>
-		<input name='conversions-right-in' type='number' value='{{value_out}}' />
-		<select name='conversions-right-unit'>
+		<input name='zci__conversions-right-in' type='number' value='{{value_out}}' />
+		<input name='zci__conversions-right-unit' id='zci__conversions-right-unit' type='text' value= '{{unit_to}}' />
+<!--
+		<select name='zci__conversions-right-unit'>
 			<option value='{{unit_to}}'>{{unit_to}}</option>
 		</select>
+-->
 	</div>
 	<div class='zci__conversions_physical_quantity'>
 		<select name='conversions-physical-quantity'>
