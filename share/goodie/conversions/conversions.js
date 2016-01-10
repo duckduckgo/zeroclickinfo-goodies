@@ -1,38 +1,24 @@
 DDH.conversions = DDH.conversions || {};
 
 DDH.conversions.build = function(){
-	// http://api.duckduckgo.com/?q=minecraft+cake&format=json&pretty=1
-	
 	return {
 		onShow: function() {
-			$("#zci__conversions-left-in").change(function(){
-				console.log("onchange executed");
-				var query = $(this).val() + " " + $("#zci__conversions-left-unit").val() + " in " + $("#zci__conversions-right-unit").val();
+			$("#zci__conversions-left-in, #zci__conversions-left-unit").change(function(){
+			
+				var query = $("#zci__conversions-left-in").val() + " " + $("#zci__conversions-left-unit").val() + " in " + $("#zci__conversions-right-unit").val();
 				
-				$.ajax({
-					url: "https://set.mintsoft.net/ddg-api/proxy.php",
-					data: { 
-						q: query,
-						format: 'json'
-					},
-					method: 'get',
-					dataType: 'json',
-					done: function(data) {
-						console.log("AJAX success",data);
-						
-						var answerComponents = data.Answer.match(/^[0-9\.]+ ([a-zA-Z].*)$/);
-						
-						$("#zci__conversions-right-in").val(answerComponents[0]);
-						$("#zci__conversions-right-unit").val(answerComponents[1]);
-					},
-					always: function(x) {
-						console.log("always", x);
-					},
-					fail: function(f) {
-						console.log("fail", f);
-					}
+				$.getJSON("https://set.mintsoft.net/ddg-api/proxy.php?format=json&q="+query, function(data){
+//				$.getJSON("https://api.duckduckgo.com/?format=json&q="+query, function(data){
+					var answerComponents = data.Answer.match(/^([0-9\.,]+) ([a-zA-Z].*)$/);
+					// numbers are output with "," delimiters from the text output, which nothing supports in the
+					// input type=number fields
+					var answerValue = answerComponents[1].replace(/,/g,"");
+					
+					console.log(answerValue);
+					
+					$("#zci__conversions-right-in").val(answerValue);
+					$("#zci__conversions-right-unit").val(answerComponents[2]);
 				});
-				
 			});
 		}
 	};
