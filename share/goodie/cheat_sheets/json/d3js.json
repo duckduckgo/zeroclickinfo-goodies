@@ -2,13 +2,13 @@
     "id": "d3js_cheat_sheet",
     "name": "D3js",
 
-    "description": "Data Driven Document syntax",
+    "description": "Data Driven Document (d3js) syntax",
     "metadata": {
         "sourceName": "D3js",
         "sourceUrl": "http://d3js.org/"
     },
     "aliases": [
-        "d3", "datadrivendocument", "data-driven document", "data driven document"
+        "d3", "datadrivendocument", "data-driven document", "data driven document", "d3 js"
     ],
     "template_type": "code",
     "section_order": ["Selections", "Data", "Transitions", "Scales", "Axes", "Interactivity", "Other Useful JavaScript"],
