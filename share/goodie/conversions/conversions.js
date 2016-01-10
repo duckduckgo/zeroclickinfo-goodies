@@ -19,6 +19,11 @@ DDH.conversions.build = function(){
 					dataType: 'json',
 					done: function(data) {
 						console.log("AJAX success",data);
+						
+						var answerComponents = data.Answer.match(/^[0-9\.]+ ([a-zA-Z].*)$/);
+						
+						$("#zci__conversions-right-in").val(answerComponents[0]);
+						$("#zci__conversions-right-unit").val(answerComponents[1]);
 					}
 				});
 				
