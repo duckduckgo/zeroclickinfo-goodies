@@ -10,7 +10,7 @@ DDH.conversions.build = function(){
 				var query = $(this).val() + " " + $("#zci__conversions-left-unit").val() + " in " + $("#zci__conversions-right-unit").val();
 				
 				$.ajax({
-					url: "https://api.duckduckgo.com/",
+					url: "https://set.mintsoft.net/ddg-api/proxy.php",
 					data: { 
 						q: query,
 						format: 'json'
@@ -24,6 +24,12 @@ DDH.conversions.build = function(){
 						
 						$("#zci__conversions-right-in").val(answerComponents[0]);
 						$("#zci__conversions-right-unit").val(answerComponents[1]);
+					},
+					always: function(x) {
+						console.log("always", x);
+					},
+					fail: function(f) {
+						console.log("fail", f);
 					}
 				});
 				
