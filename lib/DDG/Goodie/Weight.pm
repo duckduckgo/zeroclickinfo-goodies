@@ -9,15 +9,6 @@ use Text::Trim;
 zci answer_type => "weight";
 zci is_cached   => 1;
 
-# Metadata.  See https://duck.co/duckduckhack/metadata for help in filling out this section.
-name "Weight";
-description "Calculate the weight of provided mass (in kg).";
-primary_example_queries "What is the weight of a 5kg mass on Earth?", "Weight 5.12g", "Weight of 5.1 kg on earth";
-category "physical_properties";
-topics "math", "science";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Weight.pm";
-attribution github => ["https://github.com/wongalvis", "wongalvis"];
-
 # Triggers
 triggers any => "weight";
 

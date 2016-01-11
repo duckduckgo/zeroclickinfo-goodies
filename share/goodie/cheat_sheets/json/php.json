@@ -1,0 +1,124 @@
+{
+    "id": "php_cheat_sheet",
+    "name": "PHP",
+    "description": "List of common php functions",
+    "template_type": "code",
+    "section_order": [
+        "php array functions",
+        "php string functions",
+        "regular expressions syntax"
+    ],
+    "sections": {
+        "php array functions": [{
+            "val": "values present in first argument but not in other arguments",
+            "key": "array_diff()"
+        }, {
+            "val": "flipped array on success else null",
+            "key": "array_flip()"
+        }, {
+            "val": "values present in first argument and in other arguments",
+            "key": "array_intersect()"
+        }, {
+            "val": "merge one or more arrays in the first argument",
+            "key": "array_merge()"
+        }, {
+            "val": "pop the element off the end of array",
+            "key": "array_pop()"
+        }, {
+            "val": "push one or more elements onto the end of array",
+            "key": "array_push()"
+        }, {
+            "val": "reverse array elements",
+            "key": "array_reverse()"
+        }, {
+            "val": "count all elements in array",
+            "key": "count()"
+        }, {
+            "val": "searches for needle in array and returns key",
+            "key": "array_search()"
+        }],
+        "php string functions":[{
+            "val": "return part of a string",
+            "key": "substr()"
+        }, {
+            "val": "output one or more string",
+            "key": "echo"
+        }, {    
+            "val": "position of first occurrence of case insensitive substring",
+            "key": "strpos()"
+        }, {
+            "val": "make string lowercase",
+            "key": "strtolower()"
+        }, {
+            "val": "make string uppercase",
+            "key": "strtoupper()"
+        }, {
+            "val": "reverse a string",
+            "key": "strrev()"
+        }, {
+            "val": "returns string length",
+            "key": "strlen()"
+        }, {
+            "val": "convert a string to array",
+            "key": "str_split()"
+        }, {
+            "val": "binary safe string comparison",
+            "key": "strcmp()"
+        }, {
+            "val": "translate characters or replace substrings",
+            "key": "strtr()"
+        }, {
+            "val": "output a string",
+            "key": "print"
+        }],
+        "regular expressions syntax":[{
+            "val": "start of string",
+            "key": "^"
+        }, {
+            "val": "end of string",
+            "key": "$"
+        }, {    
+            "val": "any single character",
+            "key": "."
+        }, {
+            "val": "a or b",
+            "key": "(a|b)"
+        }, {
+            "val": "group section",
+            "key": "(...)"
+        }, {
+            "val": "in range (a, b or c)",
+            "key": "[abc]"
+        }, {
+            "val": "not in range",
+            "key": "[^abc]"
+        }, {
+            "val": "zero or one of a",
+            "key": "a?"
+        }, {
+            "val": "zero or more of a",
+            "key": "a*"
+        }, {
+            "val": "zero or more, ungreedy",
+            "key": "a*?"
+        }, {
+            "val": "one or more of a",
+            "key": "a+"
+        }, {
+            "val": "one or more, ungreedy",
+            "key": "a+?"
+        }, {
+            "val": "exactly 3 of a",
+            "key": "a{3}"
+        }, {
+            "val": "3 or more of a",
+            "key": "a{3,}"
+        }, {
+            "val": "up to 6 a",
+            "key": "a{,6}"
+        }, {
+            "val": "3 to 6 of a",
+            "key": "a{3,6}"
+        }]
+    }
+}
