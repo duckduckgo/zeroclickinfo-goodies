@@ -6,6 +6,12 @@
         "sourceName": "Bash Reference Manual",
         "sourceUrl": "https://www.gnu.org/software/bash/"
     },
+    "aliases": [
+        "shell",
+        "shell language",
+        "posix shell",
+        "sh"
+    ],
     "section_order": [
         "Lingo",
         "Shortcuts",
