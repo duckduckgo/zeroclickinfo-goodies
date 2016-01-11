@@ -1,5 +1,10 @@
 {{#each rolls}}
-        {{#each this.rolls}}{{this}}{{#unless @last}} + {{/unless}}{{/each}}{{#if modifier}} ({{modifier}}){{/if}} = {{this.total}}<br>
+    {{#each this.rolls}}
+        {{#if ../this.standard }}<img class="zci--dice-die" src="/share/goodie/dice/dice_{{ ../../this.faces }}-{{this}}.png" alt={{this}} />{{else}}{{this}}{{/if}} {{#unless @last}} + {{/unless}}
+    {{/each}}
+    {{#if modifier}} ({{modifier}}){{/if}}
+    {{#if this.multiple }}= {{this.total}}{{/if}}
+    <br>
 {{/each}}
 {{#if show_total }}
     <span class="zci--dice-sum">Total: {{total}}</span>
