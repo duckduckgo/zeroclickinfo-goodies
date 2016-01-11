@@ -8,16 +8,6 @@ use DDG::Goodie;
 zci answer_type => 'phone_alphabet';
 zci is_cached   => 1;
 
-name "PhoneAlphabet";
-description "Returns the phone number from a word phone number";
-primary_example_queries "1-800-FUN-HACK to digits", "1-800-LAWYR-UP to phone number";
-category 'reference';
-topics 'special_interest';
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PhoneAlphabet.pm";
-attribution github => ["https://github.com/stevelippert", "Steve Lippert"],
-            twitter => ["https://twitter.com/stevelippert", "stevelippert"],
-            github => ["https://github.com/samph", "samph"];
-
 triggers any => 'to digit', 'to digits', 'to phone', 'to phone number', 'to numbers';
 
 handle remainder => sub {

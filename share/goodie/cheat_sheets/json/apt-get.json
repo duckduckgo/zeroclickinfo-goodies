@@ -6,6 +6,9 @@
         "sourceName": "Ubuntu Wiki",
         "sourceUrl": "https://help.ubuntu.com/community/AptGet/Howto"
     },
+    "aliases": [
+        "aptget", "apt-get"
+    ],
     "template_type": "terminal",
     "section_order": [
         "Installation commands",

@@ -10,16 +10,6 @@ use Text::Trim;
 zci answer_type => 'periodic_table';
 zci is_cached   => 1;
 
-name 'Periodic Table';
-description 'Chemical symbols, atomic masses and numbers for chemical elements';
-primary_example_queries 'rubidium', 'chemical symbol for argon', 'atomic mass of nitrogen', 'atomic number of oxygen';
-secondary_example_queries 'atomic weight of Na', 'what is the chemical symbol for argon', 'chemical name for He';
-category 'physical_properties';
-topics 'science';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PeriodicTable.pm';
-attribution github => [ 'zblair', 'Zachary D Blair' ],
-            github  => ['skywickenden', 'Sky Wickenden'];
-
 my @elements = @{ LoadFile(share('elements.yml')) };
 
 # Triggers

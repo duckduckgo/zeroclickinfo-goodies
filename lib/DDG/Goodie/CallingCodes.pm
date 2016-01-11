@@ -9,19 +9,6 @@ use Telephony::CountryDialingCodes;
 zci answer_type => "calling_codes";
 zci is_cached   => 1;
 
-name        "CallingCodes";
-description "Matches country names to international calling codes";
-source      "https://en.wikipedia.org/wiki/List_of_country_calling_codes#Alphabetical_listing_by_country_or_region";
-code_url    "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/CallingCodes.pm";
-category    "geography";
-topics      "travel", "geography";
-
-primary_example_queries   "calling code 55", "dialing code brazil";
-secondary_example_queries "dialing code +55", "country calling code 55";
-
-attribution github  => ["kablamo",            "Eric Johnson"],
-            web     => ["http://kablamo.org", "Eric Johnson"];
-
 my @codewords   = qw(code codes);
 my @descriptors = ('calling', 'dialing', 'dial-in', 'dial in');
 my @extras      = qw(international country);
