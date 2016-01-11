@@ -3,11 +3,11 @@
     "name": "OpenBoot",
     "description": "Quick reference of OpenBoot commands on SUN Workstations",
     "metadata": {
-        "sourceName": "SUN OpenBoot Quick Reference",
+        "sourceName": "IfA Hawaii",
         "sourceUrl": "http://irtfweb.ifa.hawaii.edu/~spex/computers/spex1/techdocs/1201-hilodog/SunOBP_Quick_Ref.pdf"
     },
     "aliases": [
-        "sun boot prompt", "sun openboot"
+        "sun boot prompt", "sun openboot", "sun open boot prom"
     ],
     "template_type": "code",
     "section_order": ["Basic Commands", "Other Helpful Commands"],

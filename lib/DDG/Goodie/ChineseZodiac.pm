@@ -11,16 +11,6 @@ use utf8;
 triggers any => 'chinese zodiac', 'shēngxiào', 'shengxiao', 'shēng xiào', 'sheng xiao';
 zci is_cached => 0;
 
-name 'Chinese Zodiac';
-description 'Return the Chinese zodiac animal for a given year';
-primary_example_queries 'chinese zodiac for 1969';
-secondary_example_queries '2004 chinese zodiac animal', 'what was the chinese zodiac animal in 1992', 'what will the chinese zodiac animal be for 2056', 'last year\'s chinese zodiac';
-category 'dates';
-topics 'special_interest';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ChineseZodiac.pm';
-attribution github => ['http://github.com/wilkox', 'wilkox'],
-            github => ['https://github.com/Sloff', 'Sloff'];
-
 my %animal_to_language = (
     'hare' => { en => 'Rabbit', zh => '兔' },
     'dragon' => { en => 'Dragon', zh => '龙' },

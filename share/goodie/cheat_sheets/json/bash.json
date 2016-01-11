@@ -1,7 +1,7 @@
 {
     "id": "bash_cheat_sheet",
     "name": "Bash",
-    "description": "Bourne-Again shell",
+    "description": "Bash is a Unix shell and command language written by Brian Fox as a replacement for the Bourne shell",
     "metadata": {
         "sourceName": "Bash Reference Manual",
         "sourceUrl": "https://www.gnu.org/software/bash/"
