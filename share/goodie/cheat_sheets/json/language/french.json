@@ -42,8 +42,8 @@
             "val": "Pourriez-vous parler un peu moins vite?",
             "key": "Can you speak more slowly, please?"
         }, {
-            "val": "Je suis allergique.",
-            "key": "I am allergic."
+            "val": "Je suis allergique",
+            "key": "I am allergic"
         }, {
             "val": "Pourriez-vous répéter?",
             "key": "Can you repeat, please?"
@@ -107,8 +107,8 @@
             "key": "What's your name?"
         }],
         "Travelling": [{
-            "val": "Tournez à gauche.",
-            "key": "Turn left."
+            "val": "Tournez à gauche",
+            "key": "Turn left"
         }, {
             "val": "Où est la sortie?",
             "key": "Where is the exit?"
@@ -125,11 +125,11 @@
             "val": "Avez-vous une carte de la ville?",
             "key": "Do you have a city map?"
         }, {
-            "val": "S'il vous plaît arrêtez ici.",
-            "key": "Please stop here."
+            "val": "S'il vous plaît arrêtez ici",
+            "key": "Please stop here"
         }, {
-            "val": "Tournez à doite.",
-            "key": "Turn right."
+            "val": "Tournez à doite",
+            "key": "Turn right"
         }, {
             "val": "Où puis-je trouver les taxis?",
             "key": "Where can I find the taxis?"
@@ -147,8 +147,8 @@
             "val": "Entrée",
             "key": "Entrée"
         }, {
-            "val": "Je suis allergique.",
-            "key": "I am allergic."
+            "val": "Je suis allergique",
+            "key": "I am allergic"
         }, {
             "val": "Dessert",
             "key": "Dessert"
@@ -156,8 +156,8 @@
             "val": "L'addition, s'il vous plaît!",
             "key": "The check please!"
         }, {
-            "val": "Un café s'il vous plaît.",
-            "key": "A cup of coffee please."
+            "val": "Un café s'il vous plaît",
+            "key": "A cup of coffee please"
         }, {
             "val": "Avez-vous des plats sans gluten?",
             "key": "Do you have gluten-free dishes?"
@@ -165,8 +165,8 @@
             "val": "Où puis-je trouver un bon restaurant?",
             "key": "Where is a good restaurant?"
         }, {
-            "val": "Un verre d'eau s'il vous plaît.",
-            "key": "A glass of water please."
+            "val": "Un verre d'eau s'il vous plaît",
+            "key": "A glass of water please"
         }, {
             "val": "Une table pour deux s'il vous plait!",
             "key": "A table for two please!"
