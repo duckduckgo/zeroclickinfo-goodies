@@ -156,7 +156,7 @@ aliases:
   - yd
   - yds
   - yrds
-factor: 1.0936133
+factor: 1.0936132983377077865266841644794
 type: length
 unit: yard
 ---
@@ -167,7 +167,7 @@ aliases:
   - international feet
   - survey foot
   - survey feet
-factor: 3.28084
+factor: 3.2808398950131233595800524934383
 type: length
 unit: foot
 ---
@@ -175,7 +175,7 @@ aliases:
   - inches
   - in
   - ins
-factor: 39.3701
+factor: 39.37007874015748031496062992126
 type: length
 unit: inch
 ---

@@ -528,11 +528,11 @@ ddg_goodie_test(
         }
     ),
     'inches in 5 meters' => test_zci(
-        '5 meters = 196.851 inches',
+        '5 meters = 196.850 inches',
         structured_answer => {
             input     => ['5 meters'],
             operation => 'convert',
-            result    => '196.851 inches'
+            result    => '196.850 inches'
         }
     ),
     '5 inches in meters' => test_zci(
@@ -689,11 +689,11 @@ ddg_goodie_test(
         }
     ),
     '3.5e-2 miles to inches' => test_zci(
-        '3.5 * 10^-2 miles = 2,217.601 inches',
+        '3.5 * 10^-2 miles = 2,217.600 inches',
         structured_answer => {
             input     => ['3.5 * 10<sup>-2</sup> miles'],
             operation => 'convert',
-            result    => '2,217.601 inches'
+            result    => '2,217.600 inches'
         }
     ),
     # Areas and volumes
@@ -1603,6 +1603,14 @@ ddg_goodie_test(
             input => ['1 meter'],
             operation => 'convert',
             result => '39.370 inches'
+        }
+    ),
+    '250 feet to inches' => test_zci(
+        '250 feet = 3,000 inches',
+        structured_answer => {
+            input => ['250 feet'],
+            operation => 'convert',
+            result => '3,000 inches'
         }
     ),
     
