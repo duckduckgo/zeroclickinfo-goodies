@@ -7,7 +7,7 @@ package DDG::Goodie::<: $ia_package_name :>;
 use DDG::Goodie;
 use strict;
 
-zci answer_type => '<: $lia_name :>';
+zci answer_type => '<: $ia_id :>';
 
 # Caching - https://duck.co/duckduckhack/spice_advanced_backend#caching-api-responses
 zci is_cached   => 1;
@@ -36,7 +36,7 @@ handle remainder => sub {
 
             # ID - Must be unique and match Instant Answer page
             # E.g. https://duck.co/ia/view/calculator has `id => 'calculator'``
-            id => '<: $lia_id :>',
+            id => '<: $ia_id :>',
 
             # Name - Used for Answer Bar Tab
             # Value should be chosen from existing Instant Answer topics

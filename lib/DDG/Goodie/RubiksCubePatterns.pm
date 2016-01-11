@@ -4,24 +4,10 @@ package DDG::Goodie::RubiksCubePatterns;
 use strict;
 use DDG::Goodie;
 
-
-primary_example_queries 'rcube stripes';
-secondary_example_queries 'rcube cube in a cube', 'rcube swap centers';
-description "create interesting patterns from a solved Rubik's Cube";
-name 'Rubiks Cube';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RubiksCubePatterns.pm';
-category 'random';
-topics 'special_interest';
-source 'http://math.cos.ucf.edu/~reid/Rubik/patterns.html';
-attribution web => ['robert.io', 'Robert Picard'], 
-            twitter => ['__rlp', 'Robert Picard'], 
-            github => ['rpicard', 'Robert Picard'],
-            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
-
 triggers start =>	"rcube", "rubik", "rubiks", "rubix",
 					"rubicks", "rubik's", "rubic's", "rubick's",
 					"rubik cube", "rubiks cube", "rubic cube", "rubics cube",
-					"rubik's cube patterns", "rubiks cube patterns";
+					"rubik's cube";
 
 zci answer_type => "rubiks_cube";
 zci is_cached   => 1;
@@ -56,6 +42,7 @@ sub render_text($) {
 
 handle remainder_lc => sub {
 
+    return if ($_ eq '');
     #support British English!
     s/centre/center/;
 
@@ -72,7 +59,7 @@ handle remainder_lc => sub {
         $title = $patterns{$_};
         $subtitle = "Rubiks cube '" . to_titlecase($_) . "' pattern";
     } else {
-        return if ($_ ne '');
+        return if ($_ ne 'patterns');
         foreach my $pattern (keys %patterns) {
             $output .= render_text($pattern);
         }

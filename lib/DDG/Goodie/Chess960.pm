@@ -8,16 +8,6 @@ triggers any => 'random', 'chess960';
 zci is_cached => 0;
 zci answer_type => 'chess960_position';
 
-primary_example_queries 'chess960 random';
-description 'Generates a random starting position for Chess960';
-topics 'gaming', 'entertainment';
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Chess960.pm";
-category 'random';
-attribution github  => ['https://github.com/koosha--', 'koosha--'],
-            twitter => 'https://twitter.com/_koosha_',
-            github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
-
-
 my @all_positions = qw(
 BBQNNRKR BQNBNRKR BQNNRBKR BQNNRKRB QBBNNRKR QNBBNRKR QNBNRBKR QNBNRKRB QBNNBRKR QNNBBRKR
 QNNRBBKR QNNRBKRB QBNNRKBR QNNBRKBR QNNRKBBR QNNRKRBB BBNQNRKR BNQBNRKR BNQNRBKR BNQNRKRB
