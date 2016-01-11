@@ -11,18 +11,6 @@ use Lingua::EN::Numbers::Ordinate qw/ordinate ordsuf/;
 use DateTime;
 use Date::Calc qw(:all);
 
-# File metadata
-primary_example_queries "what is the current week";
-secondary_example_queries "what was the 5th week of this year",
-                          "what was the 5th week of 1944";
-description "find the current week number or when a week began";
-name "Week";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Week.pm";
-category "dates";
-topics "everyday", "special_interest";
-attribution twitter => ["garrettsquire", 'Garrett Squire'],
-            github => ["gsquire", 'Garrett Squire'];
-
 triggers any => 'week';
 
 zci is_cached => 1;

@@ -3,10 +3,10 @@
     "name": "C++ Strings",
     "description": "List of basic String operations in C++",
     "metadata": {
-        "sourceName": "C++ Reference",
+        "sourceName": "Cplusplus",
         "sourceUrl": "http://www.cplusplus.com/reference/string/string/"
     },
-    "aliases": ["c++ strings"],
+    "aliases": ["c++ strings","c++ string","cpp string"],
     "template_type": "code",
     "section_order": ["Constructors", "Element Access", "Size"],
     "sections": {
