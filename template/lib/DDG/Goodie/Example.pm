@@ -10,10 +10,10 @@ use strict;
 zci answer_type => '<: $ia_id :>';
 
 # Caching - https://duck.co/duckduckhack/spice_advanced_backend#caching-api-responses
-zci is_cached   => 1;
+zci is_cached => 1;
 
 # Triggers - https://duck.co/duckduckhack/goodie_triggers
-triggers any => 'triggerWord', 'trigger phrase';
+triggers any => 'triggerword', 'trigger phrase';
 
 # Handle statement
 handle remainder => sub {
