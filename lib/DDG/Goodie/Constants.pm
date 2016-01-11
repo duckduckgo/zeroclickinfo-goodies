@@ -6,17 +6,6 @@ use YAML::XS qw( LoadFile );
 zci answer_type => "constants";
 zci is_cached   => 1;
 
-name "Constants";
-description "Provides the value, unit, symbol and other information for Mathematical and Scientific constants";
-primary_example_queries "first example query", "second example query";
-secondary_example_queries "optional -- demonstrate any additional triggers";
-category "formulas";
-topics "math";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Constants.pm";
-attribution github => ["Roysten", "Roy van der Vegt"],
-            github => ["hemanth", "Hemanth.HM"],
-            twitter => "gnumanth";
-
 my $constants = LoadFile(share("constants.yml"));
 
 #loop through constants

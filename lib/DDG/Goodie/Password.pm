@@ -8,15 +8,6 @@ use List::MoreUtils qw( none );
 use List::Util qw( min max first );
 use Scalar::Util qw( looks_like_number );
 
-primary_example_queries 'random password', 'password strong 15';
-secondary_example_queries 'generate password', 'generate weak password', 'pw', 'pwgen strong 25';
-description 'generates a random password';
-name 'Password';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/Password.pm';
-attribution github => ['duckduckgo', 'DuckDuckGo'];
-category 'computing_tools';
-topics 'cryptography';
-
 zci answer_type => 'pw';
 zci is_cached   => 0;
 

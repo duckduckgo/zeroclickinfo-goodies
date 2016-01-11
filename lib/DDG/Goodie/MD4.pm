@@ -8,19 +8,6 @@ use Digest::MD4;
 zci answer_type => "md4";
 zci is_cached   => 1;
 
-name "MD4";
-description "MD4 hash algorithm";
-primary_example_queries "md4 this string";
-secondary_example_queries "md4sum this string",
-                          "MD4 this string",
-                          "md4 hash of this string",
-                          "md4 base64 this string";
-category "calculations";
-topics "cryptography";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MD4.pm";
-attribution github => ["rafacas", "Rafa Casado"],
-            twitter => "rafacas";
-
 triggers start => "md4", "md4sum";
 
 handle remainder => sub {
