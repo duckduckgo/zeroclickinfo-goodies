@@ -7,16 +7,6 @@ use DDG::Goodie;
 use List::Util qw(max);
 use YAML::XS 'LoadFile';
 
-primary_example_queries 'public dns';
-description 'list common public DNS servers and their IP addresses';
-name 'Public DNS';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PublicDNS.pm';
-category 'cheat_sheets';
-topics 'sysadmin';
-
-attribution github => ['warthurton', 'Wayne Arthurton'],
-            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
-
 triggers end => "public dns", "dns server", "dns servers";
 
 zci is_cached   => 1;

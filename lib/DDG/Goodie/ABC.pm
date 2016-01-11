@@ -10,16 +10,6 @@ triggers startend => qw/choose pick select/;
 zci answer_type => "choice";
 zci is_cached   => 0;
 
-primary_example_queries 'choose yes or no';
-secondary_example_queries 'choose heads or tails', 'pick this or that or none';
-description 'make a random choice';
-name 'ABC';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
-category 'random';
-topics 'trivia';
-attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
-            github  => ['kablamo', 'Eric Johnson'];
-
 handle remainder => sub {
 
     my $query = $_;

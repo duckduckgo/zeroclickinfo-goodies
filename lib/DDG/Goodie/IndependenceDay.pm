@@ -10,18 +10,6 @@ use Locale::Country;
 zci answer_type => "independence_day";
 zci is_cached   => 1;
 
-name "independence day";
-description "Gives the date of when a nation assumed independence";
-primary_example_queries "what is the independence day of norway", "independence day, papua new guinea";
-category "dates";
-topics "trivia";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IndependenceDay.pm";
-attribution github => ["jarmokivekas", "Jarmo Kivekäs"],
-            web => ["http://guttula.com", "Jarmo Kivekäs"],
-            github => ["YouriAckx", "Youri Ackx"],
-            twitter => ["YouriAckx", "Youri Ackx"];
-
-
 # Triggers
 triggers any => "independence day", "day of independence";
 

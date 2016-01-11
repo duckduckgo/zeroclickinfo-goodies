@@ -11,20 +11,6 @@ use Crypt::Digest::RIPEMD320;
 zci answer_type => "ripemd";
 zci is_cached   => 1;
 
-name "RIPEMD";
-description "RIPEMD hash algorithms";
-primary_example_queries "RIPEMD this", 
-                        "RIPEMD-256 that";
-secondary_example_queries "ripemd-320 this string", 
-                          "ripemd-128 hash of string", 
-                          "ripemd320 secret",
-                          "ripemdsum message";
-category "calculations";
-topics "cryptography";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/RIPEMD.pm";
-attribution github => ["rafacas", "Rafa Casado"],
-            twitter => "rafacas";
-
 my @triggers = qw(ripemd ripemdsum ripemd128 ripemd128sum ripemd-128 ripemd160 ripemd160sum ripemd-160
                ripemd256 ripemd256sum ripemd-256 ripemd320 ripemd320sum ripemd-320);
 
