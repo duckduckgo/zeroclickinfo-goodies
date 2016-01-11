@@ -7,19 +7,6 @@ use DDG::Goodie;
 zci answer_type => "brt";
 zci is_cached   => 1;
 
-name "BRT";
-description "Track a shipment from BRT";
-icon_url "https://afelicioni.github.io/assets/i/www.brt.it.ico";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/BRT.pm";
-primary_example_queries "brt 123456789012";
-secondary_example_queries "brt 1234567890123456789";
-source "BRT";
-category 'ids';
-topics 'special_interest';
-attribution web => ["https://afelicioni.github.io/", "Alessio Felicioni"],
-            github => ["afelicioni", "Alessio Felicioni"],
-            twitter => ["afelicioni_pro", "Alessio Felicioni"];
-
 triggers start => "brt";
 
 handle query_lc => sub {

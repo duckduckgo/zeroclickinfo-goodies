@@ -6,20 +6,10 @@ use DDG::Goodie;
 use Net::Domain::TLD;
 use Email::Valid;
 
-primary_example_queries 'validate foo@example.com';
-description 'Checks given email address.';
-name 'Email';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/EmailValidator.pm';
-topics 'sysadmin';
-category 'computing_info';
-
 zci answer_type => 'email_validation';
 zci is_cached   => 1;
 
 triggers start => 'validate', 'validate my email', 'validate my e-mail';
-
-attribution github  => ['https://github.com/stelim', 'Stefan Limbacher'],
-            twitter => ['http://twitter.com/stefanlimbacher', 'Stefan Limbacher'];
 
 my $message_part = {
     tldcheck         => 'top-level domain',

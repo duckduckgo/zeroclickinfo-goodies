@@ -1,7 +1,7 @@
 {
     "id": "mercurial_cheat_sheet",
     "name": "Mercurial(hg)",
-    "description": "Mercurial(hg) cheat sheet",
+    "description": "Mercurial(hg) is a free, distributed source control management tool",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/codeshane/cheat-sheets/mercurial-hg/"

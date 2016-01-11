@@ -12,15 +12,6 @@ triggers any => qw( plus minus + - date day week month year days weeks months ye
 zci is_cached => 1;
 zci answer_type => 'date_math';
 
-primary_example_queries 'Jan 1 2012 plus 32 days';
-secondary_example_queries '1/1/2012 plus 5 months', 'January first minus ten days', 'in 5 weeks', '2 weeks ago', '1 month from today';
-description 'calculate the date with an offset';
-name 'DateMath';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/DateMath.pm';
-category 'time_sensitive';
-topics 'everyday';
-attribution github => ['http://github.com/cj01101', 'cj01101'];
-
 my $datestring_regex = datestring_regex();
 
 handle query_lc => sub {

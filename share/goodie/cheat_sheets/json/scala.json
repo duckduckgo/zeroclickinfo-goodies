@@ -1,6 +1,7 @@
 {
     "id": "scala_cheat_sheet",
     "name": "Scala",
+    "description": "Scala is a programming language for general software applications",
     "metadata": {
         "sourceName": "Scala-Lang",
         "sourceUrl": "http://docs.scala-lang.org/cheatsheets/"
