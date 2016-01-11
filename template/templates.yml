@@ -8,6 +8,11 @@ templates:
         input:  lib/DDG/Goodie/Example.pm
         output: lib/DDG/Goodie/<:$ia_path:>.pm
 
+    min-pm:
+        label:  Minimal Perl Module
+        input:  lib/DDG/Goodie/Minimal.pm
+        output: lib/DDG/Goodie/<:$ia_path:>.pm
+
     test:
         label:  Perl Module Test
         input:  t/Example.t
@@ -49,6 +54,11 @@ template_sets:
         description: Cheat Sheet Instant Answer
         required: [ cheatsheet_json ]
         subdir_support: false
+
+    javascript:
+        description: Javascript-focused instant answer
+        required: [ min-pm, js, test ]
+        optional: [ css, handlebars  ]
 
     all:
         description: Goodie with all backend and frontend files
