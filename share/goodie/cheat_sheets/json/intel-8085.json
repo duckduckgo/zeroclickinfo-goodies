@@ -1,6 +1,6 @@
 {
-    "id": "8085_cheat_sheet",
-    "name": "8085 Instruction Set",
+    "id": "intel_8085_cheat_sheet",
+    "name": "Intel 8085 Instruction Set",
     "description": "8085 instructions and their explanations",
     "metadata": {
         "sourceName": "IITK",
@@ -16,6 +16,7 @@
         "Control Instructions"
     ],
     "aliases": [
+        "8085",
         "8085 instructionset",
         "8085 instruction set",
         "8085 programming",

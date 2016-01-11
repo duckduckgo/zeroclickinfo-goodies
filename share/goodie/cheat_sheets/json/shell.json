@@ -1,8 +1,9 @@
 {
     "id": "shell_cheat_sheet",
     "name": "Shell",
+    "description":"Shell is a user interface for access to an operating system's services",
     "metadata": {
-        "sourceName": "Bash Cheat Sheet",
+        "sourceName": "johnstowers",
         "sourceUrl": "http://www.johnstowers.co.nz/blog/pages/bash-cheat-sheet.html"
     },
     "aliases": [
@@ -32,7 +33,7 @@
         "Built-in Variables": [
             {
                 "key": "$0",
-                "val": "Name of the shell script this variable is used in."
+                "val": "Name of the shell script this variable is used in"
             },
             {
                 "key": "$1",
@@ -40,23 +41,23 @@
             },
             {
                 "key": "$#",
-                "val": "The number of command line parameters."
+                "val": "The number of command line parameters"
             },
             {
                 "key": "$*",
-                "val": "All command line parameters."
+                "val": "All command line parameters"
             },
             {
                 "key": "$-",
-                "val": "Options given to the shell."
+                "val": "Options given to the shell"
             },
             {
                 "key": "$?",
-                "val": "The exit status of the last command."
+                "val": "The exit status of the last command"
             },
             {
                 "key": "$$",
-                "val": "Process ID of the script (ID of the shell running the script)."
+                "val": "Process ID of the script (ID of the shell running the script)"
             }
         ],
         "Operators": [
@@ -100,7 +101,7 @@
             },
             {
                 "key": "a) echo world ;;",
-                "val": "Case entry \"a\"."
+                "val": "Case entry \"a\""
             },
             {
                 "key": "esac",
@@ -110,11 +111,11 @@
         "Loops": [
             {
                 "key": "for ((i = 1; i <= 10; i++)) ; do",
-                "val": "For loop running 10 times."
+                "val": "For loop running 10 times"
             },
             {
                 "key": "for i in $list ; do",
-                "val": "For loop being executed for every item in $list."
+                "val": "For loop being executed for every item in $list"
             },
             {
                 "key": "while (i <= 10) ; do",
@@ -134,15 +135,15 @@
         "Other": [
             {
                 "key": "cmd1 && cmd2",
-                "val": "Run cmd1 and cmd2 if cmd1 ran successfully."
+                "val": "Run cmd1 and cmd2 if cmd1 ran successfully"
             },
             {
                 "key": "cmd1 || cmd2",
-                "val": "Run cmd1 or cmd2 if cmd2 did not run successfully."
+                "val": "Run cmd1 or cmd2 if cmd2 did not run successfully"
             },
             {
                 "key": "cmd1 & cmd2",
-                "val": "Run cmd1 and run cmd2 while cmd1 is still running."
+                "val": "Run cmd1 and run cmd2 while cmd1 is still running"
             }
         ]
     }

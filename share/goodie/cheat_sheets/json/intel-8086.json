@@ -1,6 +1,6 @@
 {
-    "id": "8086_cheat_sheet",
-    "name": "8086 Instruction Set",
+    "id": "intel_8086_cheat_sheet",
+    "name": "Intel 8086 Instruction Set",
     "description": "8086 instructions and their explanations",
     "metadata": {
         "sourceName": "utcluj",
@@ -16,6 +16,7 @@
         "Flag Manipulation Instructions"
     ],
     "aliases": [
+        "8086",
         "8086 instructionset",
         "8086 instruction set",
         "8086 programming",

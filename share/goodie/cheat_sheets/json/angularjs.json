@@ -1,9 +1,9 @@
 {
     "id": "angularjs_cheat_sheet",
     "name": "AngularJS",
-    "description": "Extended HTML attributes",
+    "description": "A quick reference of AngularJS directives",
     "metadata": {
-        "sourceName": "AngularDirectiveCommands",
+        "sourceName": "AngularJS",
         "sourceUrl": "https://docs.angularjs.org/api/ng/directive"
     },
     "aliases": [

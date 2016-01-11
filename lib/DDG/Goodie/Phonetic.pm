@@ -8,15 +8,6 @@ triggers start => 'phonetic';
 
 zci is_cached => 1;
 
-primary_example_queries 'phonetic what duck';
-description 'spell a string phonetically with the NATO alphabet';
-name 'Phonetic';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Phonetic.pm';
-category 'reference';
-topics 'special_interest';
-attribution github    => [ 'robotmay', 'Robert May' ],
-            twitter => [ 'robotmay', 'Robert May' ];
-
 sub components {
     my %nato = (
       a => "Alfa",

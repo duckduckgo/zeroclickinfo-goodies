@@ -6,6 +6,9 @@
         "sourceName":"Mozilla Firefox",
         "sourceUrl":"https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly"
     },
+  "aliases": [
+    "mozilla firefox"
+  ],
     "template_type": "keyboard",
     "section_order":[
         "Navigation",
