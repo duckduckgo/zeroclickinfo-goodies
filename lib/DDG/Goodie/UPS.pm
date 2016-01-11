@@ -7,18 +7,6 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "ups";
 
-primary_example_queries '1Z2807700371226497';
-secondary_example_queries 'ups 1Z2807700371226497';
-description 'Track a UPS package';
-icon_url "/i/www.ups.com.ico";
-name 'UPS';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UPS.pm';
-category 'ids';
-topics 'special_interest';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'duckduckgo', 'DuckDuckGo'],
-            twitter => ['duckduckgo', 'DuckDuckGo'];
-
 # Regex for ups.
 my $ups_qr = qr/ups/i;
 

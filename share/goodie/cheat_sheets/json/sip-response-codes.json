@@ -1,6 +1,7 @@
 {
     "id": "sip_response_codes_cheat_sheet",
     "name": "SIP Response Codes",
+    "description":"Session Initiation Protocol is a signalling protocol used for controlling communication sessions such as VOIP",
     "metadata":{
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/List_of_SIP_response_codes"
@@ -21,223 +22,223 @@
     "sections":{
         "1xx - Provisional Responses":[{
                   "key":"100 Trying",
-                  "val":"Extended search being performed may take a significant time so a forking proxy must send a 100 Trying response."
+                  "val":"Extended search being performed may take a significant time so a forking proxy must send a 100 Trying response"
                },{
                   "key":"180 Ringing",
-                  "val":"Destination user agent received INVITE, and is alerting user of call."
+                  "val":"Destination user agent received INVITE, and is alerting user of call"
                },{
                   "key":"181 Call is Being Forwarded",
-                  "val":"Servers can optionally send this response to indicate a call is being forwarded."
+                  "val":"Servers can optionally send this response to indicate a call is being forwarded"
                },{
                   "key":"182 Queued",
-                  "val":"Indicates that the destination was temporarily unavailable, so the server has queued the call until the destination is available. A server may send multiple 182 responses to update progress of the queue."
+                  "val":"Indicates that the destination was temporarily unavailable, so the server has queued the call until the destination is available. A server may send multiple 182 responses to update progress of the queue"
                },{
                   "key":"183 Session in Progress",
-                  "val":"This response may be used to send extra information for a call which is still being set up."
+                  "val":"This response may be used to send extra information for a call which is still being set up"
                },{
                   "key":"199 Early Dialog Terminated",
-                  "val":"Can be used by User Agent Server to indicate to upstream SIP entities (including the User Agent Client (UAC)) that an early dialog has been terminated."
+                  "val":"Can be used by User Agent Server to indicate to upstream SIP entities (including the User Agent Client (UAC)) that an early dialog has been terminated"
                }],
         "2xx - Successful Responses":[{
                   "key":"200 OK",
-                  "val":"Indicates the request was successful."
+                  "val":"Indicates the request was successful"
                },{
                   "key":"202 Accepted",
-                  "val":"Indicates that the request has been accepted for processing, but the processing has not been completed. Deprecated."
+                  "val":"Indicates that the request has been accepted for processing, but the processing has not been completed. Deprecated"
                },{
                   "key":"204 No Notification",
-                  "val":"Indicates the request was successful, but the corresponding response will not be received."
+                  "val":"Indicates the request was successful, but the corresponding response will not be received"
                }],
         "3xx - Redirection Responses":[{
                   "key":"300 Multiple Choices",
-                  "val":"The address resolved to one of several options for the user or client to choose between, which are listed in the message body or the message's Contact fields."
+                  "val":"The address resolved to one of several options for the user or client to choose between, which are listed in the message body or the message's Contact fields"
                },{
                   "key":"301 Moved Permanently",
-                  "val":"The original Request-URI is no longer valid, the new address is given in the Contact header field, and the client should update any records of the original Request-URI with the new value."
+                  "val":"The original Request-URI is no longer valid, the new address is given in the Contact header field, and the client should update any records of the original Request-URI with the new value"
                },{
                   "key":"302 Moved Temporarily",
-                  "val":"The client should try at the address in the Contact field. If an Expires field is present, the client may cache the result for that period of time."
+                  "val":"The client should try at the address in the Contact field. If an Expires field is present, the client may cache the result for that period of time"
                },{
                   "key":"305 Use Proxy",
-                  "val":"The Contact field details a proxy that must be used to access the requested destination."
+                  "val":"The Contact field details a proxy that must be used to access the requested destination"
                },{
                   "key":"380 Alternative Service",
-                  "val":"The call failed, but alternatives are detailed in the message body."
+                  "val":"The call failed, but alternatives are detailed in the message body"
                }],
         "4xx - Client Failure Responses":[{
                   "key":"400 Bad Request",
-                  "val":"The request could not be understood due to malformed syntax."
+                  "val":"The request could not be understood due to malformed syntax"
                },{
                   "key":"401 Unauthorized",
-                  "val":"The request requires user authentication. This response is issued by UASs and registrars."
+                  "val":"The request requires user authentication. This response is issued by UASs and registrars"
                },{
                   "key":"402 Payment Required",
-                  "val":"Reserved for future use."
+                  "val":"Reserved for future use"
                },{
                   "key":"403 Forbidden",
-                  "val":"The server understood the request, but is refusing to fulfil it."
+                  "val":"The server understood the request, but is refusing to fulfil it"
                },{
                   "key":"404 Not Found",
-                  "val":"The server has definitive information that the user does not exist at the domain specified in the Request-URI. This status is also returned if the domain in the Request-URI does not match any of the domains handled by the recipient of the request."
+                  "val":"The server has definitive information that the user does not exist at the domain specified in the Request-URI. This status is also returned if the domain in the Request-URI does not match any of the domains handled by the recipient of the request"
                },{
                   "key":"405 Method Not Allowed",
-                  "val":"The method specified in the Request-Line is understood, but not allowed for the address identified by the Request-URI."
+                  "val":"The method specified in the Request-Line is understood, but not allowed for the address identified by the Request-URI"
                },{
                   "key":"406 Not Acceptable",
-                  "val":"The resource identified by the request is only capable of generating response entities that have content characteristics but not acceptable according to the Accept header field sent in the request."
+                  "val":"The resource identified by the request is only capable of generating response entities that have content characteristics but not acceptable according to the Accept header field sent in the request"
                },{
                   "key":"407 Proxy Authentication Required",
-                  "val":"The request requires user authentication. This response is issued by proxys."
+                  "val":"The request requires user authentication. This response is issued by proxys"
                },{
                   "key":"408 Request Timeout",
-                  "val":"Couldn't find the user in time. The server could not produce a response within a suitable amount of time, for example, if it could not determine the location of the user in time. The client MAY repeat the request without modifications at any later time."
+                  "val":"Couldn't find the user in time. The server could not produce a response within a suitable amount of time, for example, if it could not determine the location of the user in time. The client MAY repeat the request without modifications at any later time"
                },{
                   "key":"409 Conflict",
-                  "val":"User already registered. Deprecated by omission from later RFCs and by non-registration with the IANA."
+                  "val":"User already registered. Deprecated by omission from later RFCs and by non-registration with the IANA"
                },{
                   "key":"410 Gone",
-                  "val":"The user existed once, but is not available here any more."
+                  "val":"The user existed once, but is not available here any more"
                },{
                   "key":"411 Length Required",
-                  "val":"The server will not accept the request without a valid Content-Length. Deprecated by omission from later RFCs and by non-registration with the IANA."
+                  "val":"The server will not accept the request without a valid Content-Length. Deprecated by omission from later RFCs and by non-registration with the IANA"
                },{
                   "key":"412 Conditional Request Failed",
-                  "val":"The given precondition has not been met."
+                  "val":"The given precondition has not been met"
                },{
                   "key":"413 Request Entity Too Large",
-                  "val":"Request body too large."
+                  "val":"Request body too large"
                },{
                   "key":"414 Request-URI Too Long",
-                  "val":"The server is refusing to service the request because the Request-URI is longer than the server is willing to interpret."
+                  "val":"The server is refusing to service the request because the Request-URI is longer than the server is willing to interpret"
                },{
                   "key":"415 Unsupported Media Type",
-                  "val":"Request body in a format not supported."
+                  "val":"Request body in a format not supported"
                },{
                   "key":"416 Unsupported URI Scheme",
-                  "val":"Request-URI is unknown to the server."
+                  "val":"Request-URI is unknown to the server"
                },{
                   "key":"417 Unknown Resource-Priority",
-                  "val":"There was a resource-priority option tag, but no Resource-Priority header."
+                  "val":"There was a resource-priority option tag, but no Resource-Priority header"
                },{
                   "key":"420 Bad Extension",
-                  "val":"Bad SIP Protocol Extension used, not understood by the server."
+                  "val":"Bad SIP Protocol Extension used, not understood by the server"
                },{
                   "key":"421 Extension Required",
-                  "val":"The server needs a specific extension not listed in the Supported header."
+                  "val":"The server needs a specific extension not listed in the Supported header"
                },{
                   "key":"422 Session Interval Too Small",
-                  "val":"The received request contains a Session-Expires header field with a duration below the minimum timer."
+                  "val":"The received request contains a Session-Expires header field with a duration below the minimum timer"
                },{
                   "key":"423 Interval Too Brief",
-                  "val":"Expiration time of the resource is too short."
+                  "val":"Expiration time of the resource is too short"
                },{
                   "key":"424 Bad Location Information",
-                  "val":"The request's location content was malformed or otherwise unsatisfactory."
+                  "val":"The request's location content was malformed or otherwise unsatisfactory"
                },{
                   "key":"428 Use Identity Header",
-                  "val":"The server policy requires an Identity header, and one has not been provided."
+                  "val":"The server policy requires an Identity header, and one has not been provided"
                },{
                   "key":"429 Provide Referrer Identity",
-                  "val":"The server did not receive a valid Referred-By token on the request."
+                  "val":"The server did not receive a valid Referred-By token on the request"
                },{
                   "key":"430 Flow Failed",
-                  "val":"A specific flow to a user agent has failed, although other flows may succeed. This response is intended for use between proxy devices, and should not be seen by an endpoint (and if it is seen by one, should be treated as a 400 Bad Request response)."
+                  "val":"A specific flow to a user agent has failed, although other flows may succeed. This response is intended for use between proxy devices, and should not be seen by an endpoint (and if it is seen by one, should be treated as a 400 Bad Request response)"
                },{
                   "key":"433 Anonymity Disallowed",
-                  "val":"The request has been rejected because it was anonymous."
+                  "val":"The request has been rejected because it was anonymous"
                },{
                   "key":"436 Bad Identity-Info",
-                  "val":"The request has an Identity-Info header, and the URI scheme in that header cannot be dereferenced."
+                  "val":"The request has an Identity-Info header, and the URI scheme in that header cannot be dereferenced"
                },{
                   "key":"437 Unsupported Certificate",
-                  "val":"The server was unable to validate a certificate for the domain that signed the request."
+                  "val":"The server was unable to validate a certificate for the domain that signed the request"
                },{
                   "key":"438 Invalid Identity Header",
-                  "val":"The server obtained a valid certificate that the request claimed was used to sign the request, but was unable to verify that signature."
+                  "val":"The server obtained a valid certificate that the request claimed was used to sign the request, but was unable to verify that signature"
                },{
                   "key":"439 First Hop Lacks Outbound Support",
-                  "val":"The first outbound proxy the user is attempting to register through does not support the \"outbound\" feature of RFC 5626, although the registrar does."
+                  "val":"The first outbound proxy the user is attempting to register through does not support the \"outbound\" feature of RFC 5626, although the registrar does"
                }],
         "4xx - Client Failure Responses (continued)":[{
                   "key":"470 Consent Needed",
-                  "val":"The source of the request did not have the permission of the recipient to make such a request."
+                  "val":"The source of the request did not have the permission of the recipient to make such a request"
                },{
                   "key":"480 Temporarily Unavailable",
-                  "val":"Callee currently unavailable."
+                  "val":"Callee currently unavailable"
                },{
                   "key":"481 Call/Transaction Does Not Exist",
-                  "val":"Server received a request that does not match any dialog or transaction."
+                  "val":"Server received a request that does not match any dialog or transaction"
                },{
                   "key":"482 Loop Detected",
-                  "val":"Server has detected a loop."
+                  "val":"Server has detected a loop"
                },{
                   "key":"483 Too Many Hops",
-                  "val":"Max-Forwards header has reached the value '0'."
+                  "val":"Max-Forwards header has reached the value '0'"
                },{
                   "key":"484 Address Incomplete",
-                  "val":"Request-URI incomplete."
+                  "val":"Request-URI incomplete"
                },{
                   "key":"485 Ambiguous",
-                  "val":"Request-URI is ambiguous."
+                  "val":"Request-URI is ambiguous"
                },{
                   "key":"486 Busy Here",
-                  "val":"Callee is busy."
+                  "val":"Callee is busy"
                },{
                   "key":"487 Request Terminated",
-                  "val":"Request has terminated by bye or cancel."
+                  "val":"Request has terminated by bye or cancel"
                },{
                   "key":"488 Not Acceptable Here",
-                  "val":"Some aspect of the session description or the Request-URI is not acceptable."
+                  "val":"Some aspect of the session description or the Request-URI is not acceptable"
                },{
                   "key":"489 Bad Event",
-                  "val":"The server did not understand an event package specified in an Event header field."
+                  "val":"The server did not understand an event package specified in an Event header field"
                },{
                   "key":"491 Request Pending",
-                  "val":"Server has some pending request from the same dialog."
+                  "val":"Server has some pending request from the same dialog"
                },{
                   "key":"493 Undecipherable",
-                  "val":"Request contains an encrypted MIME body, which recipient can not decrypt."
+                  "val":"Request contains an encrypted MIME body, which recipient can not decrypt"
                },{
                   "key":"494 Security Agreement Required",
-                  "val":"The server has received a request that requires a negotiated security mechanism, and the response contains a list of suitable security mechanisms for the requester to choose between, or a digest authentication challenge."
+                  "val":"The server has received a request that requires a negotiated security mechanism, and the response contains a list of suitable security mechanisms for the requester to choose between, or a digest authentication challenge"
                }],
         "5xx - Server Failure Responses":[{
                   "key":"500 Server Internal Error",
-                  "val":"The server could not fulfill the request due to some unexpected condition."
+                  "val":"The server could not fulfill the request due to some unexpected condition"
                },{
                   "key":"501 Not Implemented",
                   "val":"The server does not have the ability to fulfill the request, such as because it does not recognize the request method. (Compare with 405 Method Not Allowed, where the server recognizes the method but does not allow or support it.)"
                },{
                   "key":"502 Bad Gateway",
-                  "val":"The server is acting as a gateway or proxy, and received an invalid response from a downstream server while attempting to fulfill the request."
+                  "val":"The server is acting as a gateway or proxy, and received an invalid response from a downstream server while attempting to fulfill the request"
                },{
                   "key":"503 Service Unavailable",
-                  "val":"The server is undergoing maintenance or is temporarily overloaded and so cannot process the request. A \"Retry-After\" header field may specify when the client may reattempt its request."
+                  "val":"The server is undergoing maintenance or is temporarily overloaded and so cannot process the request. A \"Retry-After\" header field may specify when the client may reattempt its request"
                },{
                   "key":"504 Server Time-out",
-                  "val":"The server attempted to access another server in attempting to process the request, and did not receive a prompt response."
+                  "val":"The server attempted to access another server in attempting to process the request, and did not receive a prompt response"
                },{
                   "key":"505 Version Not Supported",
-                  "val":"The SIP protocol version in the request is not supported by the server."
+                  "val":"The SIP protocol version in the request is not supported by the server"
                },{
                   "key":"513 Message Too Large",
-                  "val":"The request message length is longer than the server can process."
+                  "val":"The request message length is longer than the server can process"
                },{
                   "key":"580 Precondition Failure",
-                  "val":"The server is unable or unwilling to meet some constraints specified in the offer."
+                  "val":"The server is unable or unwilling to meet some constraints specified in the offer"
                }],
         "6xx - Global Failure Responses":[{
                   "key":"600 Busy Everywhere",
-                  "val":"All possible destinations are busy. Unlike the 486 response, this response indicates the destination knows there are no alternative destinations (such as a voicemail server) able to accept the call."
+                  "val":"All possible destinations are busy. Unlike the 486 response, this response indicates the destination knows there are no alternative destinations (such as a voicemail server) able to accept the call"
                },{
                   "key":"603 Decline",
-                  "val":"The destination does not wish to participate in the call, or cannot do so, and additionally the destination knows there are no alternative destinations (such as a voicemail server) willing to accept the call."
+                  "val":"The destination does not wish to participate in the call, or cannot do so, and additionally the destination knows there are no alternative destinations (such as a voicemail server) willing to accept the call"
                },{
                   "key":"604 Does Not Exist Anywhere",
-                  "val":"The server has authoritative information that the requested user does not exist anywhere."
+                  "val":"The server has authoritative information that the requested user does not exist anywhere"
                },{
                   "key":"606 Not Acceptable",
-                  "val":"The user's agent was contacted successfully but some aspects of the session description such as the requested media, bandwidth, or addressing style were not acceptable."
+                  "val":"The user's agent was contacted successfully but some aspects of the session description such as the requested media, bandwidth, or addressing style were not acceptable"
                }]
     }
 }

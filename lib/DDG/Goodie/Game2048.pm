@@ -6,17 +6,6 @@ use DDG::Goodie;
 zci answer_type => "2048";
 zci is_cached   => 1;
 
-name "2048";
-description "Javascript IA for online 2048";
-primary_example_queries "play 512";
-secondary_example_queries "play 4096";
-category "entertainment";
-topics "gaming";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Game2048.pm";
-attribution 
-    github => ["Roysten", "Roy van der Vegt"],
-    github => ["https://github.com/puskin94", "puskin"];
-
 my @game_modes = qw (128 256 512 1024 2048 4096 8192);
 my @triggers = map { "play $_" } @game_modes;
 triggers start => @triggers;
