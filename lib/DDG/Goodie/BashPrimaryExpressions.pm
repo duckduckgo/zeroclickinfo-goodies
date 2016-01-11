@@ -7,17 +7,6 @@ use warnings;
 use DDG::Goodie;
 
 triggers startend => 'bash if', 'bash';
-primary_example_queries 'bash [ -z hello ]';
-secondary_example_queries 'bash if [[ "abc" -lt "cba" ]]';
-
-description 'Bash Primary Expressions Help';
-name 'Bash Help';
-source 'http://tille.garrels.be/training/bash/ch07.html';
-attribution github => [ 'http://github.com/mintsoft', 'Rob Emery' ];
-
-category 'computing_tools';
-topics 'sysadmin';
-
 zci answer_type => 'expression_description';
 zci is_cached   => 1;
 

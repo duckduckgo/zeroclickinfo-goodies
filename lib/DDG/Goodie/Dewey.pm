@@ -10,16 +10,6 @@ zci answer_type => 'dewey_decimal';
 
 zci is_cached => 1;
 
-primary_example_queries 'dewey 644';
-secondary_example_queries 'etymology in the dewey decimal system', 'dewey decimal system 640s', 'dewey decimal system naturalism';
-description 'get the topic or reference number of a Dewey Decimal class';
-name 'Dewey';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Dewey.pm';
-category 'reference';
-topics 'special_interest';
-attribution twitter => 'crazedpsyc',
-            cpan    => 'CRZEDPSYC' ;
-
 my %nums = share('dewey.txt')->slurp;
 my %types = reverse %nums;
 

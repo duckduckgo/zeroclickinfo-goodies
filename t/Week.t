@@ -28,17 +28,6 @@ ddg_goodie_test(
     "what's   the current week? " => test_zci(@current_week),
     "whats the current week of the year" => test_zci(@current_week),
 
-
-    # Nth Week Queries
-    "what was the 5th week of this year" => test_zci(
-        qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
-        structured_answer => {
-            input     => [],
-            operation => "Assuming the week starts on Monday",
-            result    => qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
-        }
-    ),
-
     "what was the 43rd week of 1984" => test_zci(
         "The 43rd week of 1984 began on October 22nd.",
         structured_answer => {
@@ -102,6 +91,15 @@ ddg_goodie_test(
             input     => [],
             operation => 'Assuming the week starts on Monday',
             result    => "The 8th week of 2015 began on February 16th.",
+        },
+    ),
+    # Nth Week Queries
+    "what was the 5th week of this year" => test_zci(
+        qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
+        structured_answer => {
+            input     => [],
+            operation => "Assuming the week starts on Monday",
+            result    => qr/The \d{1,2}\w{2} week of \d{4} (begins|began) on January \d{1,2}\w{2}\./,
         }
     )
 );

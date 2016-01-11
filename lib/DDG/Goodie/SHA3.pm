@@ -8,25 +8,6 @@ use Digest::SHA3;
 zci answer_type => "sha3";
 zci is_cached   => 1;
 
-name "SHA3";
-description "SHA-3 hash function";
-primary_example_queries "sha3 this string",
-                        "sha3-224 this string",
-                        "sha3-256 this string",
-                        "sha3-384 this string",
-                        "sha3-512 this string";
-secondary_example_queries "sha3sum this string",
-                          "sha3-224 base64 this string",
-                          "sha3-256 hash this string",
-                          "sha3-384 hash of this string",
-                          "shake128 this string",
-                          "shake256 this string";
-category "calculations";
-topics "cryptography";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/SHA3.pm";
-attribution github => ["rafacas", "Rafa Casado"],
-            twitter => "rafacas";
-
 my @triggers = qw(sha3 sha3sum sha3-224 sha3-256 sha3-384 sha3-512 
                   shake128 shake-128 shake256 shake-256);
 triggers start => @triggers;

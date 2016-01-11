@@ -1,6 +1,7 @@
 {
     "id": "github_cheat_sheet",
     "name": "GitHub",
+    "description":"GitHub is a Web-based Git repository hosting service. It offers all of the distributed revision control and source code management",
     "metadata": {
         "sourceName": "GitHub Help",
         "sourceUrl": "https://help.github.com/articles/using-keyboard-shortcuts/"
