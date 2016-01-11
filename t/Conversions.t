@@ -463,6 +463,14 @@ ddg_goodie_test(
             result    => '1 revolution'
         }
     ),
+    '1 degree fahrenheit to celsius' => test_zci(
+        '1 degree fahrenheit = -17.222 degrees celsius',
+        structured_answer => {
+            input => ['1 degree fahrenheit'],
+            operation => 'convert',
+            result => '-17.222 degrees celsius'
+        }
+    ),
     '12 degrees Celsius to Fahrenheit' => test_zci(
         '12 degrees celsius = 53.600 degrees fahrenheit',
         structured_answer => {
