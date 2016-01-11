@@ -11,17 +11,6 @@ zci answer_type => 'dessert';
 # We add is_cached so that we get different results for the same query.
 zci is_cached => 0;
 
-# Metadata for our instant answer.
-primary_example_queries 'a dessert that starts with the letter a';
-secondary_example_queries 'dessert that begins with the letter z';
-description 'Returns a dessert given a letter.';
-name 'Dessert';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Dessert.pm';
-category 'food';
-topics 'food_and_drink', 'special_interest';
-attribution github => ['https://github.com/kennydude', 'kennydude'];
-source 'http://food.sulekha.com/dishes/course/desserts/alphabets/a.htm';
-
 triggers start => 'dessert', 'desserts', 'a dessert';
 
 # Returns HTML version of our dessert.

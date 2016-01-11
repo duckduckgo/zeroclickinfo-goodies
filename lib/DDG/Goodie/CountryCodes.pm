@@ -8,19 +8,6 @@ use Locale::Country qw/country2code code2country/;
 zci answer_type => "country_codes";
 zci is_cached   => 1;
 
-name        "CountryCodes";
-description "Matches country names to ISO 3166 codes";
-source      "https://en.wikipedia.org/wiki/ISO_3166-1";
-code_url    "https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/CountryCodes.pm";
-category    "geography";
-topics      "travel", "geography";
-
-primary_example_queries   "country code Japan", "iso code for Spain";
-secondary_example_queries "Russia two letter country code", "3 letter country code of China";
-
-attribution github  => ["killerfish", "Usman Raza"],
-            twitter => ["f1shie",     "Usman Raza"];
-
 triggers any => 'country code', 'iso code', 'iso 3166';
 
 my %numbers    = (two   => 2, three => 3);

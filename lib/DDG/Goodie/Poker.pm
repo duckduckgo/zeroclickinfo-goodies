@@ -9,14 +9,6 @@ triggers any => 'poker';
 zci answer_type => "poker";
 zci is_cached => 1;
 
-primary_example_queries 'poker odds three of a kind';
-secondary_example_queries 'probability poker flush';
-description 'returns requested statistic of the requested poker hand';
-name 'Poker';
-topics 'gaming', 'entertainment';
-category 'random';
-attribution github => [ 'austinheimark', 'Austin Heimark' ];
-
 my %odds = (
 	"royal flush" => "649,739",
 	"straight flush" => "72,192",

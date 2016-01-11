@@ -4,18 +4,6 @@ package DDG::Goodie::AltCalendars;
 use strict;
 use DDG::Goodie;
 
-primary_example_queries 'heisei 24';
-secondary_example_queries 'meiji 1';
-description 'Convert non-Gregorian years to the Gregorian calendar';
-name 'Alternative Calendars';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/AltCalendars.pm';
-category 'conversions';
-topics 'everyday';
-
-attribution web => ['http://kyokodaniel.com/tech/', 'Daniel Davis'],
-            github => ['https://github.com/tagawa', 'tagawa'],
-            twitter => ['https://twitter.com/ourmaninjapan', 'ourmaninjapan'];
-
 triggers any => 'juche', 'minguo', 'meiji', 'taisho', 'taishou', 'showa', 'shouwa', 'heisei';
 
 zci answer_type => 'date_conversion';

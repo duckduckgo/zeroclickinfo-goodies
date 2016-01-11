@@ -9,17 +9,6 @@ zci is_cached => 1;
 # Only one trigger enabled.
 triggers start => "hash";
 
-primary_example_queries 'hash 624d420035fc9471f6e16766b7132dd6bb34ea62';
-secondary_example_queries 'hash 1f9b59a2390bb77d2c446837d6aeab067f01b05732735f47099047cd7d3e9f85';
-description 'Identifies cryptographic hash function type.';
-name 'CryptHashCheck';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CryptHashCheck.pm';
-category 'computing_tools';
-topics 'cryptography';
-
-attribution github => ['https://github.com/digit4lfa1l', 'digit4lfa1l'],
-            github => ["https://github.com/Mailkov", "Melchiorre Alastra"];
-
 my %cryptohash = (
     128 => "MD5",
     160 => "SHA-1",

@@ -9,16 +9,6 @@ use Safe;
 zci answer_type => "regexp";
 zci is_cached   => 1;
 
-primary_example_queries 'regexp /(.*)/ ddg';
-description 'Regular expressions';
-name 'regexp';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Regexp.pm';
-category 'computing_tools';
-topics 'programming', 'sysadmin';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'duckduckgo', 'DuckDuckGo'],
-            twitter => ['duckduckgo', 'DuckDuckGo'];
-
 triggers query_lc => qr/^regex[p]? [\/\\](.+?)[\/\\] (.+)$/i;
 
 handle query => sub {

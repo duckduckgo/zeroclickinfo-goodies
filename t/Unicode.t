@@ -32,6 +32,9 @@ ddg_goodie_test(
         # Lookup by name, "utf-32 custard"
         "utf-32 custard" => test_zci("\x{1F36E} U+1F36E CUSTARD, decimal: 127854, HTML: &#127854;, UTF-8: 0xF0 0x9F 0x8D 0xAE, block: Miscellaneous Symbols And Pictographs"),
 
+        # Lookup by name, "emoji rocket"
+        "emoji rocket" => test_zci("\x{1F680} U+1F680 ROCKET, decimal: 128640, HTML: &#128640;, UTF-8: 0xF0 0x9F 0x9A 0x80, block: Transport And Map Symbols"),
+
         # Lookup by character, "unicode à"
         "unicode \x{263B}" => test_zci("\x{263B} U+263B BLACK SMILING FACE, decimal: 9787, HTML: &#9787;, UTF-8: 0xE2 0x98 0xBB, block: Miscellaneous Symbols"),
 
