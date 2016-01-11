@@ -47,6 +47,10 @@ ddg_goodie_test(
             rolls_of([2, 6]),
             structured_answer => $structured_answer
         ),
+        'throw dices' => test_zci(
+            rolls_of([2, 6]),
+            structured_answer => $structured_answer
+        ),
         'roll dice' => test_zci(
             rolls_of([2, 6]),
             structured_answer => $structured_answer

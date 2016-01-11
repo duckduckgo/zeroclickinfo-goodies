@@ -66,7 +66,7 @@ handle remainder_lc => sub {
     my @all_rolls; # each of each homogeneous rolls
 
     foreach (@values) {
-        if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?e)$/) {
+        if ($_ =~ /^(?:a? ?die|(\d{0,2})\s*dic?es?)$/) {
             # ex. 'a die', '2 dice', '5dice'
             my @rolls;
             my $sum = 0;
