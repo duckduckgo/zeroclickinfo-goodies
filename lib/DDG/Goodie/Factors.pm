@@ -11,14 +11,6 @@ zci is_cached   => 1;
 
 triggers startend => 'factors', 'factors of';
 
-primary_example_queries 'factors of 30';
-secondary_example_queries '72 factors';
-description 'Returns the factors of the entered number';
-name 'Factors';
-topics 'math';
-category 'calculations';
-attribution github => [ 'https://github.com/austinheimark', 'Austin Heimark' ];
-
 handle remainder => sub {
     my $query = $_;
     return unless $query =~ /^\d+$/;

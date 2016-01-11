@@ -10,15 +10,6 @@ use Math::SigFigs qw(:all);
 zci answer_type => "frequency_spectrum";
 zci is_cached   => 1;
 
-primary_example_queries '50 hz';
-secondary_example_queries '400 thz';
-description 'Returns information about light, radio, and sound frequencies';
-name 'FrequencySpectrum';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FrequencySpectrum.pm';
-category 'physical_properties';
-topics 'science';
-attribution web => "https://machinepublishers.com", twitter => 'machinepub';
-
 #Javascript to dynamically resize and/or hide elements
 my $dynamicwidths = <<EOF;
 <script type="text/javascript">

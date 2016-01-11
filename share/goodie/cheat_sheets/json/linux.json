@@ -1,6 +1,7 @@
 {
     "id":"linux_cheat_sheet",
     "name":"Linux",
+    "description": "Linux is an open-source Unix-like operating system dveloped by Linus Torvalds",
     "metadata":{
         "sourceName":"Linux Stall",
         "sourceUrl":"http://www.linuxstall.com/wp-content/uploads/2012/01/"

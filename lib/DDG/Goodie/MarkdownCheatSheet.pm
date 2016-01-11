@@ -8,16 +8,6 @@ use HTML::Entities;
 zci answer_type => "markdown_cheat";
 zci is_cached   => 1;
 
-name "MarkdownCheatSheet";
-description "Markdown cheat sheet";
-source "http://daringfireball.net/projects/markdown/syntax";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MarkdownCheatSheet.pm";
-category "cheat_sheets";
-topics "computing", "geek", "web_design";
-
-primary_example_queries 'markdown help header', 'markdown cheat sheet h1', 'markdown syntax list';
-secondary_example_queries 'markdown quick reference image', 'markdown guide headers';
-
 triggers startend => (
     'markdown', 'md',
     'markdown help', 'md help',
@@ -28,8 +18,6 @@ triggers startend => (
     'markdown quick reference', 'md quick reference',
     'markdown reference', 'md reference',
 );
-
-attribution github  => ["marianosimone", "Mariano Simone"];
 
 # Base snippet definitions
 my %snippets = (
