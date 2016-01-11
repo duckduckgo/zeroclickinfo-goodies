@@ -1,6 +1,6 @@
 {
     "id": "radare2_cheat_sheet",
-    "name": "radare2 Cheat Sheet",
+    "name": "Radare2",
     "description": "Commands for radare2, a framework for reverse engineering and binary analysis",
     "metadata": {
         "sourceName": "Github",
