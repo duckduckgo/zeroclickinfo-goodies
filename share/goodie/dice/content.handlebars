@@ -1,0 +1,6 @@
+{{#each rolls}}
+        {{#each this.rolls}}{{this}}{{#unless @last}} + {{/unless}}{{/each}}{{#if modifier}} ({{modifier}}){{/if}} = {{this.total}}<br>
+{{/each}}
+{{#if show_total }}
+    <span class="zci--dice-sum">Total: {{total}}</span>
+{{/if}}
