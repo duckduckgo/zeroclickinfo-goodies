@@ -10,20 +10,6 @@ use Encode qw(encode);
 zci answer_type => 'md5';
 zci is_cached => 1;
 
-primary_example_queries 'md5 digest this!';
-secondary_example_queries 'duckduckgo md5',
-                          'md5sum the sum of a string',
-                          'md5 base64 this string';
-
-name 'MD5';
-description 'Calculate the MD5 digest of a string.';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/MD5.pm';
-category 'calculations';
-topics 'cryptography';
-attribution web => ['http://www.guttula.com', 'Jarmo Kivekäs'],
-            github => ['jarmokivekas', 'Jarmo Kivekäs'];
-
-
 triggers startend => 'md5', 'md5sum';
 
 handle remainder => sub {

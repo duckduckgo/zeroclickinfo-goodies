@@ -7,13 +7,6 @@ use DDG::Goodie;
 zci answer_type => "percent_of";
 zci is_cached   => 1;
 
-name "PercentOf";
-description "Makes Operations with percentuals";
-primary_example_queries "4-50%", "349*16%";
-
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PercentOf/PercentOf.pm";
-attribution github => ["puskin94", "puskin"];
-
 my $result;
 
 triggers query_nowhitespace => qr/\d{1,3}\%$/;

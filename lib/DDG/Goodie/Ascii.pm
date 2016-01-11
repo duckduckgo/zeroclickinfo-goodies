@@ -6,13 +6,6 @@ use DDG::Goodie;
 
 triggers end => "ascii";
 
-primary_example_queries '0110100001100101011011000110110001101111 to ascii';
-description 'convert binary data to readable characters';
-name 'Ascii';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Binary.pm';
-category 'transformations';
-topics 'cryptography';
-
 zci answer_type => "ascii_conversion";
 zci is_cached   => 1;
 

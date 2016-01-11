@@ -12,21 +12,6 @@ with 'DDG::GoodieRole::Dates';
 zci answer_type => 'calendar';
 zci is_cached   => 0;
 
-primary_example_queries "calendar";
-secondary_example_queries "calendar november",
-                          "calendar next november",
-                          "calendar november 2015",
-                          "cal 29 nov 1980",
-                          "cal 29.11.1980",
-                          "cal 1980-11-29";
-
-description "Print calendar of current / given month and highlight (to)day";
-name "Calendar Today";
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CalendarToday.pm';
-category "dates";
-topics "everyday";
-attribution email   => ['webmaster@quovadit.org', 'webmaster@quovadit.org'],
-            github  => ["https://github.com/Mailkov", "Melchiorre Alastra"];
 triggers startend => 'calendar', 'cal';
 
 # define variables

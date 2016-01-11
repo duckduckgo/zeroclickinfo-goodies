@@ -8,18 +8,6 @@ use JSON;
 zci answer_type => 'minecraft';
 zci is_cached => 1;
 
-primary_example_queries 'cake minecraft';
-secondary_example_queries 'how do i craft a cake in minecraft';
-name 'Minecraft';
-description 'Minecraft crafting recipes.';
-source 'http://thejool.com/api/crafting-guide.json';
-category 'special';
-topics 'words_and_games';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Minecraft.pm';
-attribution
-    web => ['http://engvik.nu', 'Lars Jansøn Engvik'],
-    github => [ 'larseng', 'Lars Jansøn Engvik'];
-
 triggers startend => "minecraft";
 
 # Fetch and store recipes in a hash.

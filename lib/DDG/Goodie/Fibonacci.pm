@@ -11,14 +11,6 @@ triggers any => 'fib', 'fibonacci';
 zci answer_type => 'fibonacci';
 zci is_cached   => 1;
 
-primary_example_queries 'fib 7';
-secondary_example_queries 'fibonacci 33';
-description 'Returns the n-th element of Fibonacci sequence';
-attribution github => ['https://github.com/koosha--', 'koosha--'];
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Fibonacci.pm';
-topics 'math';
-category 'calculations';
-
 my @fib = (0, 1);
 
 handle remainder => sub {

@@ -6,6 +6,7 @@
         "sourceName": "Internet Relay Chat WikiHow",
         "sourceUrl": "http://www.cheat-sheets.org/saved-copy/wikiHow_IRC_Cheat_Sheet.pdf"
     },
+    "aliases": ["internet relay chat"],
     "template_type": "terminal",
     "section_order": [
         "Main",
