@@ -157,6 +157,7 @@ ddg_goodie_test(
     'rcube swap cented' => undef,
     'rcube cube in a cuve' => undef,
     'rubiks cube other words' => undef,
+    'rubics cube' => undef,
 );
 
 done_testing;

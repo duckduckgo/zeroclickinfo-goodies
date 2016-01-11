@@ -1,6 +1,7 @@
 {
   "id": "ssh_cheat_sheet",
   "name": "SSH",
+  "description":"Secure Shell is a UNIX-based command interface and protocol for securely getting access to a remote computer",
   "metadata": {
     "sourceName": "Linux Command",
     "sourceUrl": " http://linuxcommand.org/man_pages/ssh1.html"
@@ -66,7 +67,7 @@
         "key": "ssh -D 9999 user@remotehost.com"
       },
       {
-        "val": "Launch a local x11 session for a given application.",
+        "val": "Launch a local x11 session for a given application",
         "key": "ssh -X user@remotehost.com \"xterm\""
       },
       {
@@ -78,7 +79,7 @@
         "key": "ssh -f -N -L 1521:destinationhost.com:80 servertoproxyfrom.com"
       },
       {
-        "val": "Launch a local x11 session for a given application.",
+        "val": "Launch a local x11 session for a given application",
         "key": "ssh -X user@remotehost.com \"xterm\""
       },
       {
@@ -94,7 +95,7 @@
         "key": "ssh -L 3306:serverB.com:3306 user@serverA.com"
       },
       {
-        "val": "Reverse SSH Tunneling.",
+        "val": "Reverse SSH Tunneling",
         "key": " ssh -R 3333:localhost:22 user@mynitor.com"
       },
       {

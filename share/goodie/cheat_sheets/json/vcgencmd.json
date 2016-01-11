@@ -7,7 +7,8 @@
         "sourceUrl": "http://elinux.org/RPI_vcgencmd_usage"
     },
     "aliases": [
-        "vcgencmd"
+        "raspberry pi firmware",
+        "raspi firmware"
     ],
     "template_type": "terminal",
     "section_order": [

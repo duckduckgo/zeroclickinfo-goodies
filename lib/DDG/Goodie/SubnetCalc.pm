@@ -12,15 +12,6 @@ triggers query => qr#^(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})[\s/](?:(?:[1-3]?[0-9])|(
 zci answer_type => "subnet_calc";
 zci is_cached => 1;
 
-attribution github => ['mintsoft', 'Rob Emery'];
-
-primary_example_queries '10.92.24.0/22';
-secondary_example_queries '46.51.197.88 255.255.254.0', '176.34.131.233/32';
-
-category 'computing_tools';
-topics 'sysadmin';
-description 'calculates IPv4 subnets and range information';
-
 handle query => sub {
     # Convert an integer into an IP address.
     sub int_to_str {

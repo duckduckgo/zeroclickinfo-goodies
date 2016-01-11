@@ -1,6 +1,7 @@
 {
     "id": "eclipse_cheat_sheet",
     "name": "Eclipse IDE",
+    "description": "Eclipse is an integrated development environment which is fully customizable",
     "metadata": {
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html"
@@ -28,11 +29,11 @@
             },
             {
                 "key": "[Ctrl] [Alt] [N]",
-                "val": "Create new project, file, class, etc."
+                "val": "Create new project, file, class, etc"
             },
             {
                 "key": "[Alt] [F], [.]",
-                "val": "Open project, file, etc."
+                "val": "Open project, file, etc"
             },
             {
                 "key": "[Ctrl] [Shift] [R]",
@@ -121,7 +122,7 @@
             },
             {
                 "key": "End",
-                "val": "Jump to end of indention."
+                "val": "Jump to end of indention"
             },
             {
                 "key": "[Ctrl] [Home]",
@@ -524,7 +525,7 @@
         "The Rest": [
             {
                 "key": "[Ctrl] [F7]",
-                "val": "Switch forward between views (panels). Useful for switching back and forth between Package Explorer and Editor."
+                "val": "Switch forward between views (panels). Useful for switching back and forth between Package Explorer and Editor"
             },
             {   "key": "[Ctrl] [Shift] [F7]",
                 "val": "Switch backward between views"

@@ -10,16 +10,6 @@ use Math::BaseConvert;
 
 triggers start => 'teredo';
 
-primary_example_queries 'teredo 2001:0000:4136:e378:8000:63bf:3fff:fdd2';
-description 'Teredo address analyzer';
-name 'Teredo extractor';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Teredo.pm';
-topics 'sysadmin';
-category 'transformations';
-attribution github => ['seanheaton','Sean Heaton'],
-            twitter => ['seanograph','Sean Heaton'],
-            email => ['seanoftime@gmail.com','seanoftime@gmail.com'];
-
 zci answer_type => 'teredo';
 zci is_cached   => 1;
 
