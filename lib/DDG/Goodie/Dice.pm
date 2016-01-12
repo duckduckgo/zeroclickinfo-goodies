@@ -35,10 +35,6 @@ sub set_num_dice {
     }
 }
 
-# shorthand_roll_output generate shorthand roll output
-# param array of rolls
-# param sum of rolls
-# return roll output
 sub plaintext_output {
     my $data = shift;
     my $out;
@@ -136,7 +132,11 @@ handle remainder_lc => sub {
 
     return unless @all_rolls;
 
-    return join('\n', map { plaintext_output($_) } @all_rolls), structured_answer => {
+    my $plaintext = join('\n', map { plaintext_output($_) } @all_rolls);
+    if (scalar @all_rolls > 1) {
+        $plaintext .= '\nTotal = '.$total;
+    }
+    return $plaintext, structured_answer => {
         id => 'dice',
         name => 'Random Dice',
         result => $total,

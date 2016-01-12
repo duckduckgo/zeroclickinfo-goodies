@@ -36,7 +36,10 @@ sub rolls_of {
     my @values = (@_);
     my @rolls = map { [$_->[0], valid_roll_of_faces($_->[1]), $_->[2]] } @values;
     my $regex = join('\\\\n', map { join(' \+ ', ($_->[1]) x $_->[0]).( $_->[2] ? ' \('.$_->[2].'\)': '').($_->[0] > 1 ? ' = \d+' : '') } @rolls);
-    return qr/^$regex/;
+    if (scalar @rolls > 1) {
+        $regex .= '\\\\nTotal = \d+';
+    }
+    return qr/^$regex$/;
 }
 
 ddg_goodie_test(
@@ -85,8 +88,8 @@ ddg_goodie_test(
             rolls_of([3, 12, '\+4']),
             structured_answer => $structured_answer
         ),
-        "roll 3d8 - 8" => test_zci(
-            rolls_of([3, 8, '\-8']),
+        "roll 3d8 - 3" => test_zci(
+            rolls_of([3, 8, '\-3']),
             structured_answer => $structured_answer
         ),
         "roll 4d6-l" => test_zci(
