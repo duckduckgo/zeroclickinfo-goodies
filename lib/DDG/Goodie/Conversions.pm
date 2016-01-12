@@ -196,7 +196,7 @@ handle query_lc => sub {
         templates => {
             group => 'text',
             options => {
-                content => 'DDH.conversions.converted'
+                content => 'DDH.conversions.content'
             }
         }
       };
