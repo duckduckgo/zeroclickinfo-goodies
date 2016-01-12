@@ -42,9 +42,9 @@ sub plaintext_output {
     if (scalar @rolls > 1) {
         $out = join(' + ', @rolls); # append current roll to output
         if ($data->{'modifier'}) {
-            $out .= ' ('.$data->{'modifier'}.')';
+            $out .= " ($data->{'modifier'})";
         }
-        $out .= " = ".$data->{'total'}; # append sum of rolls to output
+        $out .= " = $data->{'total'}"; # append sum of rolls to output
      } else {
          $out = $data->{'total'}; # output is roll value if we have just one roll
    }
@@ -134,22 +134,20 @@ handle remainder_lc => sub {
 
     my $plaintext = join('\n', map { plaintext_output($_) } @all_rolls);
     if (scalar @all_rolls > 1) {
-        $plaintext .= '\nTotal = '.$total;
+        $plaintext .= "\\nTotal = $total";
     }
     return $plaintext, structured_answer => {
         id => 'dice',
-        name => 'Random Dice',
+        name => 'Answer',
         result => $total,
         data => {
-            rolls => \@all_rolls,
-            total => $total,
-            show_total => $values > 1
+            title => "The total is $total",
+            list => \@all_rolls
         },
         templates => {
-            group => 'text',
-            item => 0,
+            group => 'list',
             options => {
-                content => 'DDH.dice.content'
+                list_content => 'DDH.dice.content'
             }
         }
     };

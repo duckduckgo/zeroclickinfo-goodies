@@ -10,20 +10,18 @@ zci is_cached => 0;
 
 my $structured_answer = {
     id => 'dice',
-	name => 'Random Dice',
+	name => 'Answer',
     result => qr/^\d+$/,
     templates => {
-        group => 'text',
-        item => 0,
+        group => 'list',
         options => {
-            content => 'DDH.dice.content'
+            list_content => 'DDH.dice.content'
         }
     },
     data => '-ANY-'
     #{
     #    rolls => 'An array containing each different set of rolls',
-    #    total => qr/^\d*$/,
-    #    show_total => 'empty or 1, depending on how many requests were made'
+    #    title => 'A string containing the total'
     #}
 };
 
