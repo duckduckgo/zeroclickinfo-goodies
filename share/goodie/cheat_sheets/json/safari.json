@@ -13,8 +13,11 @@
               "key":"[⌘] [T]",
               "val":"Open new tab"
            },{
-              "key":"[⌘] [←] / [→]",
-              "val":"Jump to next / jump to previous tab"
+              "key":"[Ctrl] [Tab]",
+              "val":"Switch to next tab"
+           },{
+              "key":"[Ctrl] [Shift [Tab]",
+              "val":"Switch to previous tab"
            },{
               "key":"[⌘] [W]",
               "val":"Close current tab"
