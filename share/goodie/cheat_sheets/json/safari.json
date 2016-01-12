@@ -1,8 +1,8 @@
 {
-    "id": "safari_cheat_sheet", 
+    "id": "safari_cheat_sheet",
     "name": "Safari",
-    "description": "List of useful keyboard shortcuts for Safari Browser", 
-    "metadata": { 
+    "description": "List of useful keyboard shortcuts for Safari Browser",
+    "metadata": {
         "sourceName": "Apple",
         "sourceUrl": "https://support.apple.com/kb/PH17148"
     },
@@ -47,7 +47,7 @@
               "key":"[⌘] [Shift] [N]",
               "val":"Open New Private Window (equivalent of Incognito mode in Google Chrome)"
            }],
-         "Boomark":[{
+         "Bookmark":[{
               "key":"[Option] [⌘] [1]",
               "val":"Show Top Sites"
            },{
