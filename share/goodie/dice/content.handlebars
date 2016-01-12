@@ -1,7 +1,5 @@
-<div>
 {{#each this.rolls}}
     {{#if ../this.standard }}<img src="/share/goodie/dice/dice_{{ ../../this.faces }}-{{this}}.png" alt={{this}} />{{else}}{{this}}{{/if}} {{#unless @last}} + {{/unless}}
 {{/each}}
 {{#if modifier}} ({{modifier}}){{/if}}
 {{#if this.multiple }}= {{this.total}}{{/if}}
-</div>
