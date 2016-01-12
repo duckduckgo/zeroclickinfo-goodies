@@ -7,7 +7,7 @@
         "sourceUrl": "https://support.apple.com/kb/PH17148"
     },
     "template_type": "keyboard",
-    "section_order" : ["Tab Management" , "Window Management" , "Bookmark"],
+    "section_order" : ["Tab Management" , "Window Management" , "Bookmarks"],
     "sections":{
         "Tab Management":[{
               "key":"[⌘] [T]",
@@ -23,34 +23,34 @@
               "val":"Close current tab"
            },{
               "key":"[⌘] [Z]",
-              "val":"Re-open closed tab (undo command)"
+              "val":"Re-open closed tab"
            },{
               "key":"[⌘] [Option] [w]",
               "val":"Close all tabs except active tab"
            }],
          "Window Management":[{
               "key":"[⌘] [N]",
-              "val":"Open New Safari Window"
+              "val":"Open new Safari window"
            },{
               "key":"[⌘] [M]",
-              "val":"Minimize current Window"
+              "val":"Minimize current window"
            },{
               "key":"[⌘] [H]",
-              "val":"Hide all Safari Windows"
+              "val":"Hide all Safari windows"
            },{
               "key":"[⌘] [Shift] [W]",
-              "val":"Close Safari Window (current window, all tabs)"
+              "val":"Close current Safari window"
            },{
               "key":"[⌘] [Shift] [`]",
-              "val":"Jump to next / jump to previous Safari Windows"
+              "val":"Jump to the next Safari window"
            },{
               "key":"[⌘] [Q]",
-              "val":"Close Safari (all windows, all tabs)"
+              "val":"Quit Safari"
            },{
               "key":"[⌘] [Shift] [N]",
-              "val":"Open New Private Window (equivalent of Incognito mode in Google Chrome)"
+              "val":"Open new Private window"
            }],
-         "Bookmark":[{
+         "Bookmarks":[{
               "key":"[Option] [⌘] [1]",
               "val":"Show Top Sites"
            },{
