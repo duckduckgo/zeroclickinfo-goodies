@@ -1,0 +1,1272 @@
+---
+aliases:
+  - tonne
+  - t
+  - mt
+  - te
+  - metric tons
+  - tonnes
+  - ts
+  - mts
+  - tes
+factor: 1
+type: mass
+unit: metric ton
+---
+aliases:
+  - oz
+  - ounces
+  - ozs
+factor: 35274
+type: mass
+unit: ounce
+---
+aliases:
+  - lb
+  - lbm
+  - pound mass
+  - pounds
+  - lbs
+  - lbms
+  - pounds mass
+factor: 2204.62
+type: mass
+unit: pound
+---
+aliases:
+  - st
+  - stones
+  - sts
+factor: 157.473
+type: mass
+unit: stone
+---
+aliases:
+  - weight ton
+  - imperial ton
+  - long tons
+  - weight tons
+  - imperial tons
+factor: 0.984207
+type: mass
+unit: long ton
+---
+aliases:
+  - mcg
+  - micrograms
+  - mcgs
+factor: 1000000000000
+type: mass
+unit: microgram
+---
+aliases:
+  - kg
+  - kilo
+  - kilogramme
+  - kilograms
+  - kgs
+  - kilos
+  - kilogrammes
+factor: 1000
+type: mass
+unit: kilogram
+---
+aliases:
+  - g
+  - gm
+  - gramme
+  - grams
+  - gs
+  - gms
+  - grammes
+factor: 1000000
+type: mass
+unit: gram
+---
+aliases:
+  - mg
+  - milligrams
+  - mgs
+factor: 1000000000
+type: mass
+unit: milligram
+---
+aliases:
+  - short ton
+  - short tons
+  - tons
+factor: 1.10231
+type: mass
+unit: ton
+---
+aliases:
+  - meters
+  - metre
+  - metres
+  - m
+factor: 1
+type: length
+unit: meter
+---
+aliases:
+  - kilometers
+  - kilometre
+  - kilometres
+  - km
+  - kms
+  - klick
+  - klicks
+factor: 0.001
+type: length
+unit: kilometer
+---
+aliases:
+  - centimeters
+  - centimetre
+  - centimetres
+  - cm
+  - cms
+factor: 100
+type: length
+unit: centimeter
+---
+aliases:
+  - millimeters
+  - millimetre
+  - millimetres
+  - mm
+  - mms
+factor: 1000
+type: length
+unit: millimeter
+---
+aliases:
+  - miles
+  - mi
+  - statute mile
+  - statute miles
+  - land mile
+  - land miles
+factor: 0.000621371192237334
+type: length
+unit: mile
+---
+aliases:
+  - yards
+  - yd
+  - yds
+  - yrds
+factor: 1.0936132983377077865266841644794
+type: length
+unit: yard
+---
+aliases:
+  - feet
+  - ft
+  - international foot
+  - international feet
+  - survey foot
+  - survey feet
+factor: 3.2808398950131233595800524934383
+type: length
+unit: foot
+---
+aliases:
+  - inches
+  - in
+  - ins
+factor: 39.37007874015748031496062992126
+type: length
+unit: inch
+---
+aliases:
+  - nautical miles
+  - n
+  - ns
+  - nm
+  - nms
+  - nmi
+  - nmis
+factor: 0.000539957
+type: length
+unit: nautical mile
+---
+aliases:
+  - furlongs
+factor: 0.00497096953789867
+type: length
+unit: furlong
+---
+aliases:
+  - gunter's chains
+  - chains
+factor: 0.0497096953789867
+type: length
+unit: chain
+---
+aliases:
+  - gunter's links
+  - links
+factor: 4.97096953789867
+type: length
+unit: link
+---
+aliases:
+  - rods
+factor: 0.198838781515947
+type: length
+unit: rod
+---
+aliases:
+  - fathoms
+  - ftm
+  - ftms
+factor: 0.539611824837685
+type: length
+unit: fathom
+---
+aliases:
+  - leagues
+factor: 0.000207123730745778
+type: length
+unit: league
+---
+aliases:
+  - cables
+factor: 0.00539611824837685
+type: length
+unit: cable
+---
+aliases:
+  - light years
+  - ly
+  - lys
+factor: 1.05700083402462e-16
+type: length
+unit: light year
+---
+aliases:
+  - parsecs
+  - pc
+  - pcs
+factor: 3.24077923047971e-17
+type: length
+unit: parsec
+---
+aliases:
+  - astronomical units
+  - au
+  - aus
+factor: 6.68458712226845e-12
+type: length
+unit: astronomical unit
+---
+aliases:
+  - hectares
+  - ha
+factor: 1
+type: area
+unit: hectare
+---
+aliases:
+  - acres
+factor: 2.4710439
+type: area
+unit: acre
+---
+aliases:
+  - square meters
+  - metre^2
+  - meter^2
+  - metres^2
+  - meters^2
+  - square metre
+  - square metres
+  - m^2
+  - m²
+factor: 10000
+type: area
+unit: square meter
+---
+aliases:
+  - square kilometers
+  - square kilometre
+  - square kilometres
+  - km^2
+  - km²
+factor: 0.01
+type: area
+unit: square kilometer
+---
+aliases:
+  - square centimeters
+  - square centimetre
+  - square centimetres
+  - cm^2
+  - cm²
+factor: 100000000
+type: area
+unit: square centimeter
+---
+aliases:
+  - square millimeters
+  - square millimetre
+  - square millimetres
+  - mm^2
+  - mm²
+factor: 10000000000
+type: area
+unit: square millimeter
+---
+aliases:
+  - square miles
+  - sq mi
+  - square statute mile
+  - square statute miles
+  - square land mile
+  - square land miles
+  - miles^2
+  - miles²
+factor: 0.00386102160083284
+type: area
+unit: square mile
+---
+aliases:
+  - square yards
+  - yard^2
+  - yard²
+  - yards²
+  - yards^2
+  - yd^2
+  - yd²
+  - yrd^2
+  - yrd²
+factor: 11959.9
+type: area
+unit: square yard
+---
+aliases:
+  - square feet
+  - feet^2
+  - feet²
+  - foot^2
+  - foot²
+  - ft²
+  - ft^2
+factor: 107639.1
+type: area
+unit: square foot
+---
+aliases:
+  - square inches
+  - inch^2
+  - inches^2
+  - squinch
+  - in^2
+  - in²
+factor: 15500031
+type: area
+unit: square inch
+---
+aliases:
+  - liter
+  - litres
+  - liters
+  - l
+  - litter
+  - litters
+factor: 1
+type: volume
+unit: litre
+---
+aliases:
+  - milliliter
+  - millilitres
+  - milliliters
+  - ml
+factor: 1000
+type: volume
+unit: millilitre
+---
+aliases:
+  - metre^3
+  - meter^3
+  - metres^3
+  - meters^3
+  - m^3
+  - m³
+factor: 0.001
+type: volume
+unit: cubic metre
+---
+aliases:
+  - centimetre^3
+  - centimeter^3
+  - centimetres^3
+  - centimeters^3
+  - cm^3
+  - cm³
+factor: 1000
+type: volume
+unit: cubic centimetre
+---
+aliases:
+  - millimetre^3
+  - millimeter^3
+  - millimetres^3
+  - millimeters^3
+  - mm^3
+  - mm³
+factor: 1000000
+type: volume
+unit: cubic millimetre
+---
+aliases:
+  - liquid pints
+  - us pints
+  - us liquid pint
+  - us liquid pints
+factor: 2.11337641886519
+type: volume
+unit: liquid pint
+---
+aliases:
+  - dry pints
+factor: 1.81616596853771
+type: volume
+unit: dry pint
+---
+aliases:
+  - pints
+  - pint
+  - imperial pints
+  - uk pint
+  - british pint
+  - pts
+factor: 1.7597539863927
+type: volume
+unit: imperial pint
+---
+aliases:
+  - imperial gallon
+  - uk gallon
+  - british gallon
+  - british gallons
+  - uk gallons
+factor: 0.219969248299088
+type: volume
+unit: imperial gallon
+---
+aliases:
+  - fluid gallon
+  - us fluid gallon
+  - fluid gallons
+  - us gallons
+  - gallon
+  - gallons
+factor: 0.264172052358148
+type: volume
+unit: us gallon
+---
+aliases:
+  - liquid quart
+  - us quart
+  - us quarts
+  - quarts
+  - liquid quarts
+factor: 1.05668820943259
+type: volume
+unit: quart
+---
+aliases:
+  - imperial quarts
+  - british quarts
+  - british quart
+factor: 7.03901594557081
+type: volume
+unit: imperial quart
+---
+aliases:
+  - imperial fluid ounces
+  - imperial fl oz
+  - imperial fluid oz
+factor: 28.1560637822832
+type: volume
+unit: imperial fluid ounce
+---
+aliases:
+  - us fluid ounces
+  - us fl oz
+  - fl oz
+  - fl. oz
+  - fluid oz
+factor: 33.814022701843
+type: volume
+unit: us fluid ounce
+---
+aliases:
+  - us cups
+  - cups
+  - cup
+factor: 4.2267528
+type: volume
+unit: us cup
+---
+aliases:
+  - days
+  - dy
+  - dys
+  - d
+factor: 1
+type: duration
+unit: day
+---
+aliases:
+  - seconds
+  - sec
+  - s
+factor: 86400
+type: duration
+unit: second
+---
+aliases:
+  - milliseconds
+  - millisec
+  - millisecs
+  - ms
+factor: 86400000
+type: duration
+unit: millisecond
+---
+aliases:
+  - microseconds
+  - microsec
+  - microsecs
+  - us
+factor: 86400000000
+type: duration
+unit: microsecond
+---
+aliases:
+  - nanoseconds
+  - nanosec
+  - nanosecs
+  - ns
+factor: 86400000000000
+type: duration
+unit: nanosecond
+---
+aliases:
+  - minutes
+  - min
+  - mins
+factor: 1440
+type: duration
+unit: minute
+---
+aliases:
+  - hours
+  - hr
+  - hrs
+  - h
+factor: 24
+type: duration
+unit: hour
+---
+aliases:
+  - weeks
+  - wks
+  - wk
+factor: 0.142857142857143
+type: duration
+unit: week
+---
+aliases: []
+factor: 0.0714285714285714
+type: duration
+unit: fortnight
+---
+aliases:
+  - months
+  - mons
+  - mns
+  - mn
+factor: 0.0328767123287671
+type: duration
+unit: month
+---
+aliases:
+  - years
+  - yr
+  - yrs
+factor: 0.00273972602739726
+type: duration
+unit: year
+---
+aliases:
+  - leap years
+  - leapyear
+  - leapyr
+  - leapyrs
+factor: 0.00273224043715847
+type: duration
+unit: leap year
+---
+aliases:
+  - pascals
+  - pa
+  - pas
+factor: 1
+type: pressure
+unit: pascal
+---
+aliases:
+  - kilopascals
+  - kpa
+  - kpas
+factor: 0.001
+type: pressure
+unit: kilopascal
+---
+aliases:
+  - megapascals
+  - megapa
+  - megapas
+factor: 1e-06
+type: pressure
+unit: megapascal
+---
+aliases:
+  - gigapascals
+  - gpa
+  - gpas
+factor: 1e-09
+type: pressure
+unit: gigapascal
+---
+aliases:
+  - bars
+  - pa
+  - pas
+factor: 1e-05
+type: pressure
+unit: bar
+---
+aliases:
+  - atmospheres
+  - atm
+  - atms
+factor: 9.86923266716013e-06
+type: pressure
+unit: atmosphere
+---
+aliases:
+  - psis
+  - psi
+  - lbs/inch^2
+  - p.s.i.
+  - p.s.i
+factor: 0.000145036839357197
+type: pressure
+unit: pounds per square inch
+---
+aliases:
+  - joules
+  - j
+  - js
+factor: 1
+type: energy
+unit: joule
+---
+aliases:
+  - watt second
+  - watt seconds
+  - ws
+factor: 1
+type: energy
+unit: watt-second
+---
+aliases:
+  - watt hour
+  - watt hours
+  - wh
+factor: 0.000277777777777778
+type: energy
+unit: watt-hour
+---
+aliases:
+  - kilowatt hour
+  - kilowatt hours
+  - kwh
+factor: 2.77777777777778e-07
+type: energy
+unit: kilowatt-hour
+---
+aliases:
+  - ergon
+  - ergs
+  - ergons
+factor: 1e-07
+type: energy
+unit: erg
+---
+aliases:
+  - electronvolt
+  - electron volts
+  - ev
+  - evs
+factor: 6.2415096e+18
+type: energy
+unit: electron volt
+---
+aliases:
+  - small calories
+  - thermochemical gram calories
+  - chemical calorie
+  - chemical calories
+factor: 0.239005736137667
+type: energy
+unit: thermochemical gram calorie
+---
+aliases:
+  - large calories
+  - food calorie
+  - food calories
+  - kcals
+  - kcal
+factor: 0.000239005736137667
+type: energy
+unit: large calorie
+---
+aliases:
+  - british thermal units
+  - btu
+  - btus
+factor: 0.000948316737790422
+type: energy
+unit: british thermal unit
+---
+aliases:
+  - tnt equivilent
+  - tonnes of tnt
+  - tnt
+  - tons of tnt
+factor: 2.39005736137667e-10
+type: energy
+unit: ton of TNT
+---
+aliases:
+  - watts
+  - w
+factor: 1
+type: power
+unit: watt
+---
+aliases:
+  - kilowatts
+  - kw
+factor: 0.001
+type: power
+unit: kilowatt
+---
+aliases:
+  - megawatts
+  - mw
+factor: 1e-06
+type: power
+unit: megawatt
+---
+aliases:
+  - gigawatts
+  - jiggawatts
+  - gw
+factor: 1e-09
+type: power
+unit: gigawatt
+---
+aliases:
+  - terawatts
+  - tw
+factor: 1e-12
+type: power
+unit: terawatt
+---
+aliases:
+  - petawatts
+  - pw
+factor: 1e-15
+type: power
+unit: petawatt
+---
+aliases:
+  - milliwatts
+factor: 1000
+type: power
+unit: milliwatt
+---
+aliases:
+  - microwatts
+factor: 1000000
+type: power
+unit: microwatt
+---
+aliases:
+  - nanowatts
+  - nw
+factor: 1000000000
+type: power
+unit: nanowatt
+---
+aliases:
+  - picowatts
+  - pw
+factor: 1000000000000
+type: power
+unit: picowatt
+---
+aliases:
+  - metric horsepowers
+  - mhp
+  - hp
+  - ps
+  - cv
+  - hk
+  - ks
+  - ch
+factor: 0.0013596216173039
+type: power
+unit: metric horsepower
+---
+aliases:
+  - mechnical horsepower
+  - horsepower
+  - hp
+  - hp
+  - bhp
+factor: 0.00134102208959503
+type: power
+unit: horsepower
+---
+aliases:
+  - electical horsepowers
+  - hp
+  - hp
+factor: 0.00134048257372654
+type: power
+unit: electical horsepower
+---
+aliases:
+  - degrees
+  - deg
+  - degs
+factor: 1
+type: angle
+unit: degree
+---
+aliases:
+  - radians
+  - rad
+  - rads
+factor: 0.0174532925199433
+type: angle
+unit: radian
+---
+aliases:
+  - gradians
+  - grad
+  - grads
+  - gon
+  - gons
+  - grade
+  - grades
+factor: 1.11111111111111
+type: angle
+unit: gradian
+---
+aliases:
+  - quadrants
+  - quads
+  - quad
+factor: 0.0111111111111111
+type: angle
+unit: quadrant
+---
+aliases:
+  - semi circle
+  - semicircle
+  - semi circles
+  - semicircles
+  - semi-circles
+factor: 0.00555555555555556
+type: angle
+unit: semi-circle
+---
+aliases:
+  - revolutions
+  - circle
+  - circles
+  - revs
+factor: 0.00277777777777778
+type: angle
+unit: revolution
+---
+aliases:
+  - newtons
+  - n
+factor: 1
+type: force
+unit: newton
+---
+aliases:
+  - kilonewtons
+  - kn
+factor: 0.001
+type: force
+unit: kilonewton
+---
+aliases:
+  - meganewtons
+  - mn
+factor: 1e-06
+type: force
+unit: meganewton
+---
+aliases:
+  - giganewtons
+  - gn
+factor: 1e-09
+type: force
+unit: giganewton
+---
+aliases:
+  - dynes
+factor: 1e-05
+type: force
+unit: dyne
+---
+aliases:
+  - kilodynes
+factor: 0.01
+type: force
+unit: kilodyne
+---
+aliases:
+  - megadynes
+factor: 10
+type: force
+unit: megadyne
+---
+aliases:
+  - lbs force
+  - pounds force
+factor: 0.224808943099711
+type: force
+unit: pounds force
+---
+aliases:
+  - poundals
+  - pdl
+factor: 7.23301385120989
+type: force
+unit: poundal
+---
+aliases:
+  - f
+can_be_negative: 1
+factor: 1
+type: temperature
+unit: fahrenheit
+---
+aliases:
+  - c
+can_be_negative: 1
+factor: 1
+type: temperature
+unit: celsius
+---
+aliases:
+  - k
+factor: 1
+type: temperature
+unit: kelvin
+---
+aliases:
+  - r
+factor: 1
+type: temperature
+unit: rankine
+---
+aliases:
+  - re
+can_be_negative: 1
+factor: 1
+type: temperature
+unit: reaumur
+---
+aliases:
+  - bits
+factor: 1
+type: digital
+unit: bit
+---
+aliases:
+  - kbit
+  - kbits
+  - kilobits
+factor: 0.001
+type: digital
+unit: kilobit
+---
+aliases:
+  - mbit
+  - mbits
+  - megabits
+factor: 1e-06
+type: digital
+unit: megabit
+---
+aliases:
+  - gbit
+  - gigabits
+  - gbits
+factor: 1e-09
+type: digital
+unit: gigabit
+---
+aliases:
+  - tbit
+  - tbits
+  - terabits
+factor: 1e-12
+type: digital
+unit: terabit
+---
+aliases:
+  - pbit
+  - pbits
+  - petabits
+factor: 1e-15
+type: digital
+unit: petabit
+---
+aliases:
+  - ebit
+  - ebits
+  - exabits
+factor: 1e-18
+type: digital
+unit: exabit
+---
+aliases:
+  - zbit
+  - zbits
+  - zettabits
+factor: 1e-21
+type: digital
+unit: zettabit
+---
+aliases:
+  - ybit
+  - ybits
+  - yottabits
+factor: 1e-24
+type: digital
+unit: yottabit
+---
+aliases:
+  - kibit
+  - kibits
+  - kibibits
+factor: 0.0009765625
+type: digital
+unit: kibibit
+---
+aliases:
+  - mibit
+  - mibits
+  - mebibits
+factor: 9.5367431640625e-07
+type: digital
+unit: mebibit
+---
+aliases:
+  - gibit
+  - gibits
+  - gibibits
+factor: 9.31322574615479e-10
+type: digital
+unit: gibibit
+---
+aliases:
+  - tibit
+  - tibits
+  - tebibits
+factor: 9.09494701772928e-13
+type: digital
+unit: tebibit
+---
+aliases:
+  - pibit
+  - pibits
+  - pebibits
+factor: 8.88178419700125e-16
+type: digital
+unit: pebibit
+---
+aliases:
+  - eibit
+  - eibits
+  - exbibits
+factor: 8.67361737988404e-19
+type: digital
+unit: exbibit
+---
+aliases:
+  - zibit
+  - zibits
+  - zebibits
+factor: 8.470329472543e-22
+type: digital
+unit: zebibit
+---
+aliases:
+  - yibit
+  - yibits
+  - yobibits
+factor: 8.27180612553028e-25
+type: digital
+unit: yobibit
+---
+aliases:
+  - bytes
+factor: 0.125
+type: digital
+unit: byte
+---
+aliases:
+  - kb
+  - kbs
+  - kilobytes
+factor: 0.000125
+type: digital
+unit: kilobyte
+---
+aliases:
+  - mb
+  - mbs
+  - megabytes
+factor: 1.25e-07
+type: digital
+unit: megabyte
+---
+aliases:
+  - gb
+  - gbs
+  - gigabytes
+factor: 1.25e-10
+type: digital
+unit: gigabyte
+---
+aliases:
+  - tb
+  - tbs
+  - terabytes
+factor: 1.25e-13
+type: digital
+unit: terabyte
+---
+aliases:
+  - pb
+  - pbs
+  - petabytes
+factor: 1.25e-16
+type: digital
+unit: petabyte
+---
+aliases:
+  - eb
+  - ebs
+  - exabytes
+factor: 1.25e-19
+type: digital
+unit: exabyte
+---
+aliases:
+  - zb
+  - zbs
+  - zettabytes
+factor: 1.25e-22
+type: digital
+unit: zettabyte
+---
+aliases:
+  - yb
+  - ybs
+  - yottabytes
+factor: 1.25e-25
+type: digital
+unit: yottabyte
+---
+aliases:
+  - kib
+  - kibs
+  - kibibytes
+factor: 0.0001220703125
+type: digital
+unit: kibibyte
+---
+aliases:
+  - mib
+  - mibs
+  - mebibytes
+factor: 1.19209289550781e-07
+type: digital
+unit: mebibyte
+---
+aliases:
+  - gib
+  - gibs
+  - gibibytes
+factor: 1.16415321826935e-10
+type: digital
+unit: gibibyte
+---
+aliases:
+  - tib
+  - tibs
+  - tebibytes
+factor: 1.13686837721616e-13
+type: digital
+unit: tebibyte
+---
+aliases:
+  - pib
+  - pibs
+  - pebibytes
+factor: 1.11022302462516e-16
+type: digital
+unit: pebibyte
+---
+aliases:
+  - eib
+  - eibs
+  - exbibytes
+factor: 1.0842021724855e-19
+type: digital
+unit: exbibyte
+---
+aliases:
+  - zib
+  - zibs
+  - zebibytes
+factor: 1.05879118406788e-22
+type: digital
+unit: zebibyte
+---
+aliases:
+  - yib
+  - yibs
+  - yobibytes
+factor: 1.03397576569129e-25
+type: digital
+unit: yobibyte
