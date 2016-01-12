@@ -16,7 +16,7 @@
               "key":"[Ctrl] [Tab]",
               "val":"Switch to next tab"
            },{
-              "key":"[Ctrl] [Shift [Tab]",
+              "key":"[Ctrl] [Shift] [Tab]",
               "val":"Switch to previous tab"
            },{
               "key":"[⌘] [W]",
