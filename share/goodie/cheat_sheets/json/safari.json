@@ -4,7 +4,7 @@
     "description": "List of useful keyboard shortcuts for Safari Browser",
     "metadata": {
         "sourceName": "Apple",
-        "sourceUrl": "https://support.apple.com/kb/PH17148"
+        "sourceUrl": "https://support.apple.com/kb/PH21483"
     },
     "template_type": "keyboard",
     "section_order" : ["Tab Management" , "Window Management" , "Bookmarks"],
