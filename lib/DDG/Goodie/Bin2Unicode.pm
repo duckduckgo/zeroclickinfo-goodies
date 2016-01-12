@@ -9,7 +9,7 @@ no warnings 'non_unicode';
 zci answer_type => 'bin2unicode';
 zci is_cached   => 1;
 
-triggers query => qr{^([01\s]+)(?:(?:to\s+)?(?:unicode|text|ascii))?$};
+triggers query => qr{^([01\s]{8,})(?:(?:to\s+)?(?:unicode|text|ascii))?$};
 
 handle matches => sub {
 
