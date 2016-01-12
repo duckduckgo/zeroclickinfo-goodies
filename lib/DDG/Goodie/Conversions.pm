@@ -181,9 +181,23 @@ handle query_lc => sub {
 
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
-        input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
-        operation => 'convert',
-        result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
+        id => 'conversions',
+        name => 'conversions',
+        data => {
+            raw_input         => $styler->for_computation($factor),
+            raw_answer        => $styler->for_computation($result->{'result'}),
+            left_unit         => $result->{'from_unit'},
+            right_unit        => $result->{'to_unit'},
+            markup_input      => $styler->with_html($factor),
+            styled_output     => $styler->with_html($result->{'result'}),
+            physical_quantity => $result->{'type'}
+        },
+        templates => {
+            group => 'text',
+            options => {
+                content => 'DDH.conversions.converted'
+            }
+        }
       };
 };
 
