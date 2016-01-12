@@ -19,22 +19,22 @@
     ],
     "template_type": "keyboard",
     "section_order": [
-        "General shortcuts",
+        "General Shortcuts",
         "Navigation",
-        "Power management",
+        "Power Management",
         "Screenshots",
-        "Text editing",
-        "Text formatting",
+        "Text Editing",
+        "Text Formatting",
         "Browsers",
-        "Web browsers",
-        "Tab management",
-        "Window management",
-        "User interface navigation",
-        "Command line shortcuts",
+        "Web Browsers",
+        "Tab Management",
+        "Window Management",
+        "User Interface Navigation",
+        "Command Line Shortcuts",
         "Accessibility"
     ],
     "sections": {
-        "General shortcuts": [
+        "General Shortcuts": [
             {
             "val": "File menu",
             "key": "[Alt] [f]"
@@ -158,7 +158,7 @@
             "val": "Search (alternative)",
             "key": "F3"
         }],
-        "Power management": [{
+        "Power Management": [{
             "val": "Place computer into sleep/standby mode",
             "key": "Sleep"
         }, {
@@ -181,7 +181,7 @@
             "val": "Copy screenshot of window to clipboard",
             "key": "[Alt] [Print Screen]"
         }],
-        "Text editing": [{
+        "Text Editing": [{
             "val": "Delete char to the right of cursor",
             "key": "Del"
         }, {
@@ -248,7 +248,7 @@
             "val": "Search and replace",
             "key": "[Ctrl] [h]"
         }],
-        "Text formatting": [{
+        "Text Formatting": [{
             "val": "Bold",
             "key": "[Ctrl] [b]"
         }, {
@@ -313,7 +313,7 @@
             "val": "Go to the starting page defined by the user or application",
             "key": "[Alt] [Home]"
         }],
-        "Web browsers": [{
+        "Web Browsers": [{
             "val": "Bookmarks menu",
             "key": "[Ctrl] [b]"
         }, {
@@ -368,7 +368,7 @@
             "val": "Zoom 100%",
             "key": "[Ctrl] [0]"
         }],
-        "Tab management": [{
+        "Tab Management": [{
             "val": "New tab",
             "key": "[Ctrl] [t]"
         }, {
@@ -390,7 +390,7 @@
             "val": "Open a previously closed window",
             "key": "[Ctrl] [Shift] [n]"
         }],
-        "Window management": [{
+        "Window Management": [{
             "val": "Force window mode",
             "key": "[Alt] [Enter]"
         }, {
@@ -490,7 +490,7 @@
             "val": "External display options (Windows 7 and Windows 8)",
             "key": "[Win] [p]"
         }],
-        "User interface navigation": [{
+        "User Interface Navigation": [{
             "val": "Moves keyboard focus to next control",
             "key": "Tab"
         }, {
@@ -524,7 +524,7 @@
             "val": "Switch focus to the next/previous tab within a window",
             "key": "[Ctrl] [Tab]"
         }],
-        "Command line shortcuts": [{
+        "Command Line Shortcuts": [{
             "val": "Scroll through History of typed commands",
             "key": "[↑] / [↓]"
         }, {
