@@ -8,10 +8,10 @@
     },
     "aliases": ["r2"],
     "template_type": "code",
-    "section_order": ["Survival Guide", "Flagspaces", "Flags", "Info", "Print string", "Visual mode", "Searching", "Saving", "Usable variables in expression"],
+    "section_order": ["Survival Guide", "Flagspaces", "Flags", "Info", "Print String", "Visual Mode", "Searching", "Saving", "Usable Variables in Expression"],
     "sections": {
         "Survival Guide": [{
-            "val": "auto analyze",
+            "val": "Auto analyze",
             "key": "aa"
         }, {
             "val": "Disassemble function",
@@ -33,29 +33,29 @@
             "key": "arf <flag>"
         }],
         "Flagspaces": [{
-            "val": "display flagspaces",
+            "val": "Display flagspaces",
             "key": "fs"
         }, {
-            "val": "select all flagspaces",
+            "val": "Select all flagspaces",
             "key": "fs *"
         }, {
-            "val": "select one flagspace",
+            "val": "Select one flagspace",
             "key": "fs <sections>"
         }],
         "Flags": [{
-            "val": "list flags",
+            "val": "List flags",
             "key": "f"
         }, {
-            "val": "display flags in json",
+            "val": "Display flags in json",
             "key": "fj"
         }, {
-            "val": "show flag length",
+            "val": "Show flag length",
             "key": "fl"
         }, {
-            "val": "show hexdump of flag",
+            "val": "Show hexdump of flag",
             "key": "fx"
         }, {
-            "val": "set flag comment",
+            "val": "Set flag comment",
             "key": "fC <name> <cmt>"
         }],
         "Info": [{
@@ -74,8 +74,8 @@
             "val": "Display relocations",
             "key": "ir"
         }],
-        "Print string": [{
-            "val": "Print stringZ'",
+        "Print String": [{
+            "val": "Print string",
             "key": "psz <offset>"
         }, {
             "val": "Print strings in current block",
@@ -90,11 +90,11 @@
             "val": "Print wide string",
             "key": "psw <offset>"
         }],
-        "Visual mode": [{
+        "Visual Mode": [{
             "val": "Enter visual mode",
             "key": "V"
         }, {
-            "val": "rotate modes (hex, disasm, debug, words, buf)",
+            "val": "Rotate modes (hex, disasm, debug, words, buf)",
             "key": "(p / P)"
         }, {
             "val": "Toggle (c)ursor",
@@ -106,253 +106,253 @@
             "val": "Move around (left-down-up-right)",
             "key": "hjkl"
         }, {
-            "val": "follow address of jump/call",
+            "val": "Follow address of jump/call",
             "key": "[Enter]"
         }, {
-            "val": "step / step over",
+            "val": "Step / step over",
             "key": "sS"
         }, {
-            "val": "follow address of jump/call",
+            "val": "Follow address of jump/call",
             "key": "[Enter]"
         }, {
-            "val": "go/seek to given offset",
+            "val": "Go/seek to given offset",
             "key": "o"
         }, {
-            "val": "seek to program counter",
+            "val": "Seek to program counter",
             "key": "."
         }, {
-            "val": "in cursor mode search in current block",
+            "val": "In cursor mode search in current block",
             "key": "\/"
         }, {
-            "val": "run radare command",
+            "val": "Run radare command",
             "key": ":cmd"
         }, {
-            "val": "add/remove comment",
+            "val": "Add/remove comment",
             "key": ";\\[-\\]cmt"
         }, {
-            "val": "change block size, [] = resize hex.cols",
+            "val": "Change block size, [] = resize hex.cols",
             "key": "/*+-\\[\\]"
         }, {
-            "val": "seek aligned to block size",
+            "val": "Seek aligned to block size",
             "key": ">||<"
         }, {
-            "val": "(i)nsert code",
+            "val": "Insert code",
             "key": "i"
         }, {
-            "val": "(a)ssemble code",
+            "val": "Assemble code",
             "key": "a"
         }, {
-            "val": "visual (A)ssembler",
+            "val": "Visual Assembler",
             "key": "A"
         }, {
-            "val": "toggle breakpoint",
+            "val": "Toggle breakpoint",
             "key": "b"
         }, {
-            "val": "automatic block size",
+            "val": "Automatic block size",
             "key": "B"
         }, {
-            "val": "define function, data, code, ...",
+            "val": "Define function, data, code, ...",
             "key": "d\\[f?\\]"
         }, {
-            "val": "enter visual diff mode (set diff.from/to)",
+            "val": "Enter visual diff mode (set diff.from/to)",
             "key": "D"
         }, {
-            "val": "edit eval configuration variables",
+            "val": "Edit eval configuration variables",
             "key": "e"
         }, {
-            "val": "set/unset flag",
+            "val": "Set/unset flag",
             "key": "f/F"
         }, {
-            "val": "go seek to begin and end of file (0-$s)",
+            "val": "Go seek to begin and end of file (0-$s)",
             "key": "gG"
         }, {
-            "val": "mark/go to Key (any key)",
+            "val": "Mark/go to Key (any key)",
             "key": "mK/’K"
         }, {
-            "val": "walk the mounted filesystems",
+            "val": "Walk the mounted filesystems",
             "key": "M"
         }, {
-            "val": "seek next/prev function/flag/hit (scr.nkey)",
+            "val": "Seek next/prev function/flag/hit (scr.nkey)",
             "key": "n/N"
         }, {
-            "val": "toggle (C)olors",
+            "val": "Toggle (C)olors",
             "key": "C"
         }, {
-            "val": "randomize color palette (ecr)",
+            "val": "Randomize color palette (ecr)",
             "key": "R"
         }, {
-            "val": "track flags (browse symbols, functions..)",
+            "val": "Track flags (browse symbols, functions..)",
             "key": "t"
         }, {
-            "val": "browse anal info and comments",
+            "val": "Browse anal info and comments",
             "key": "T"
         }, {
-            "val": "visual code analysis menu",
+            "val": "Visual code analysis menu",
             "key": "v"
         }, {
-            "val": "(V)iew graph (agv?)",
+            "val": "View graph (agv?)",
             "key": "V"
         }, {
-            "val": "open (W)ebUI",
+            "val": "Open WebUI",
             "key": "W"
         }, {
-            "val": "undo/redo seek",
+            "val": "Undo/redo seek",
             "key": "uU"
         }, {
-            "val": "show xrefs to seek between them",
+            "val": "Show xrefs to seek between them",
             "key": "x"
         }, {
-            "val": "copy and paste selection",
+            "val": "Copy and paste selection",
             "key": "yY"
         }, {
-            "val": "toggle zoom mode",
+            "val": "Toggle zoom mode",
             "key": "z"
         }],
         "Searching": [{
-            "val": "search for string foo\\0",
+            "val": "Search for string foo\\0",
             "key": "\/ foo\\\\00"
         }, {
-            "val": "search backwards",
+            "val": "Search backwards",
             "key": "\/b"
         }, {
-            "val": "repeat last search",
+            "val": "Repeat last search",
             "key": "\/\/"
         }, {
-            "val": "search for wide string f\\0o\\0o\\0",
+            "val": "Search for wide string f\\0o\\0o\\0",
             "key": "\/w foo"
         }, {
-            "val": "search for wide string ignoring case",
+            "val": "Search for wide string ignoring case",
             "key": "\/wi foo"
         }, {
-            "val": "search for first occurrence not matching",
+            "val": "Search for first occurrence not matching",
             "key": "\/! ff"
         }, {
-            "val": "search for string foo ignoring case",
+            "val": "Search for string foo ignoring case",
             "key": "\/i foo"
         }, {
-            "val": "match regular expression",
+            "val": "Match regular expression",
             "key": "\/e \/E.F\/i"
         }, {
-            "val": "search for hex string",
+            "val": "Search for hex string",
             "key": "\/x ff0.23"
         }, {
-            "val": "search for hex string ignoring some nibbles",
+            "val": "Search for hex string ignoring some nibbles",
             "key": "\/x ff..33"
         }, {
-            "val": "search for hexpair with mask",
+            "val": "Search for hexpair with mask",
             "key": "\/x ff43 ffd0"
         }, {
-            "val": "search for a deltified sequence of bytes",
+            "val": "Search for a deltified sequence of bytes",
             "key": "\/d 101112"
         }, {
-            "val": "inverse hexa search (find first byte != 0x00)",
+            "val": "Inverse hexa search (find first byte != 0x00)",
             "key": "\/!x 00"
         }, {
-            "val": "search for asm code (see search.asmstr)",
+            "val": "Search for asm code (see search.asmstr)",
             "key": "\/c jmp <esp>"
         }, {
-            "val": "assemble opcode and search its bytes",
+            "val": "Assemble opcode and search its bytes",
             "key": "\/a jmp eax"
         }, {
-            "val": "search for AES expanded keys",
+            "val": "Search for AES expanded keys",
             "key": "\/A"
         }, {
-            "val": "analyze opcode reference an offset",
+            "val": "Analyze opcode reference an offset",
             "key": "\/r sym.printf"
         }, {
-            "val": "search for ROP gadgets",
+            "val": "Search for ROP gadgets",
             "key": "\/R"
         }, {
-            "val": "show offset of previous instruction",
+            "val": "Show offset of previous instruction",
             "key": "\/P"
         }, {
-            "val": "search for matching magic file",
+            "val": "Search for matching magic file",
             "key": "\/m magicfile"
         }, {
-            "val": "search for pattern of given size",
+            "val": "Search for pattern of given size",
             "key": "\/p patternsize"
         }, {
-            "val": "search for strings of given size",
+            "val": "Search for strings of given size",
             "key": "\/z min max"
         }, {
-            "val": "look for a asm.bigendian 32bit value",
+            "val": "Look for a asm.bigendian 32bit value",
             "key": "\/v\\[?248\\] num"
         }],
         "Saving": [{
-            "val": "open project",
+            "val": "Open project",
             "key": "Po <file>"
         }, {
-            "val": "save project",
+            "val": "Save project",
             "key": "Ps <file>"
         }, {
-            "val": "show project information",
+            "val": "Show project information",
             "key": "Pi <file>"
         }],
-        "Usable variables in expression": [{
-            "val": "here (current virtual seek)",
+        "Usable Variables in Expression": [{
+            "val": "Here (current virtual seek)",
             "key": "$$"
         }, {
-            "val": "here (current disk io offset)",
+            "val": "Here (current disk io offset)",
             "key": "$o"
         }, {
-            "val": "file size",
+            "val": "File size",
             "key": "$s"
         }, {
-            "val": "block size",
+            "val": "Block size",
             "key": "$b"
         }, {
-            "val": "get word size, 4 if asm.bits=32, 8 if 64",
+            "val": "Get word size, 4 if asm.bits=32, 8 if 64",
             "key": "$w"
         }, {
-            "val": "get width of terminal",
+            "val": "Get width of terminal",
             "key": "$c"
         }, {
-            "val": "get height of terminal",
+            "val": "Get height of terminal",
             "key": "$r"
         }, {
-            "val": "section offset",
+            "val": "Section offset",
             "key": "$S"
         }, {
-            "val": "section size",
+            "val": "Section size",
             "key": "$SS"
         }, {
-            "val": "jump address (jmp 0x10, jz 0x10 => 0x10)",
+            "val": "Jump address (jmp 0x10, jz 0x10 => 0x10)",
             "key": "$j"
         }, {
-            "val": "jump fail address (jz 0x10 => next instruction)",
+            "val": "Jump fail address (jz 0x10 => next instruction)",
             "key": "$f"
         }, {
-            "val": "number of instructions of current function",
+            "val": "Number of instructions of current function",
             "key": "$I"
         }, {
-            "val": "current function size",
+            "val": "Current function size",
             "key": "$F"
         }, {
-            "val": "get nth jump of function",
+            "val": "Get nth jump of function",
             "key": "$Jn"
         }, {
-            "val": "get nth call of function",
+            "val": "Get nth call of function",
             "key": "$Cn"
         }, {
-            "val": "get nth data reference in function",
+            "val": "Get nth data reference in function",
             "key": "$Dn"
         }, {
-            "val": " get nth xref of function",
+            "val": "Get nth xref of function",
             "key": "$Xn"
         }, {
-            "val": "opcode memory reference (mov eax,[0x10] => 0x10)",
+            "val": "Opcode memory reference (mov eax,[0x10] => 0x10)",
             "key": "$m"
         }, {
-            "val": "opcode length",
+            "val": "Opcode length",
             "key": "$l"
         }, {
             "val": "1 if end of block, else 0",
             "key": "$e"
         }, {
-            "val": "get value of eval config variable",
+            "val": "Get value of eval config variable",
             "key": "$ev"
         }, {
-            "val": "last comparision value",
+            "val": "Last comparision value",
             "key": "$?"
         }]
     }
