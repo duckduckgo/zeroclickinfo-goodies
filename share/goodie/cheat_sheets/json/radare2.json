@@ -3,7 +3,7 @@
     "name": "Radare2",
     "description": "Commands for radare2, a framework for reverse engineering and binary analysis",
     "metadata": {
-        "sourceName": "Github",
+        "sourceName": "GitHub",
         "sourceUrl": "https://github.com/radare/radare2book/blob/master/refcard/radare2_rc.pdf"
     },
     "aliases": ["r2"],
