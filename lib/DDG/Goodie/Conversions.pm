@@ -181,7 +181,7 @@ handle query_lc => sub {
 
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
-        id => 'conversions',
+        id   => 'conversions',
         name => 'conversions',
         data => {
             raw_input         => $styler->for_computation($factor),
