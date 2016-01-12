@@ -9,13 +9,11 @@ no warnings 'non_unicode';
 zci answer_type => 'bin2unicode';
 zci is_cached   => 1;
 
-triggers query => qr{[ 01]+(?:(?:to\s+)?unicode|text|ascii)?};
+triggers query => qr{^([01\s]+)(?:(?:to\s+)?(?:unicode|text|ascii))?$};
 
-handle query_lc => sub {
+handle matches => sub {
 
-    return unless /([\s01]+)(?:(?:to\s+)?unicode|text|ascii)?/;
-
-    my $bin = my $unicode = $1;
+    my $bin = my $unicode = shift;
     $unicode =~ s/([01]+)/chr(oct("0b$1"))/ge;
     return "Binary '$bin' converted to unicode is '$unicode'",,
         structured_answer => {
