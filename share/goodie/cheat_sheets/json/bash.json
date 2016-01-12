@@ -12,6 +12,7 @@
         "posix shell",
         "sh"
     ],
+    "template_type": "code",
     "section_order": [
         "Lingo",
         "Shortcuts",
