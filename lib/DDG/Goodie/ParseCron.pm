@@ -25,15 +25,6 @@ triggers start => 'crontab', 'cron', 'cronjob';
 
 zci is_cached => 0;
 
-primary_example_queries 'crontab * */3 * * *';
-secondary_example_queries 'crontab 42 12 3 Feb Sat';
-description 'show the next occurrence of a cron job in human-readable form';
-name 'ParseCron';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ParseCron.pm';
-category 'computing_info';
-topics 'sysadmin';
-attribution github  => [ 'https://github.com/W25', 'W25' ] ;
-
 # Get ordinal (for days)
 sub get_ordinal {
     my $num = shift;

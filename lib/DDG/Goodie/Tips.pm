@@ -8,15 +8,6 @@ with 'DDG::GoodieRole::NumberStyler';
 # Yes, 'of' is very generic, the gaurd should kick back false positives very quickly.
 triggers any => 'tip', 'tips', 'of';
 
-primary_example_queries '20% tip on $21.63';
-secondary_example_queries '20 percent tip for a $20 bill';
-description 'calculate a total including a percentage tip';
-name 'Tips';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Tips.pm';
-category 'calculations';
-topics 'everyday';
-attribution github => [ 'mattlehning', 'Matt Lehning' ];
-
 zci answer_type => 'tip';
 zci is_cached   => 1;
 

@@ -10,14 +10,6 @@ triggers any => 'reverse complement', 'revcomp';
 zci answer_type => 'reverse_complement';
 zci is_cached   => 1;
 
-name 'Reverse Complement';
-description 'Give the DNA reverse complement of a DNA or RNA sequence';
-primary_example_queries 'revcomp AAAACCCGGT';
-category 'transformations';
-topics 'science';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ReverseComplement.pm';
-attribution github => ['http://github.com/wilkox', 'David Wilkins'];
-
 handle remainder => sub {
 
   my $sequence = $_;

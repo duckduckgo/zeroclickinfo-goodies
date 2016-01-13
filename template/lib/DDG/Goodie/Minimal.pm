@@ -18,19 +18,6 @@ triggers any => 'triggerword', 'trigger phrase';
 # Handle statement
 handle remainder => sub {
 
-    my $remainder = $_;
-
-    # Optional - Guard against no remainder
-    # I.E. the query is only 'triggerWord' or 'trigger phrase'
-    #
-    # return unless $remainder;
-
-    # Optional - Regular expression guard
-    # Use this approach to ensure the remainder matches a pattern
-    # I.E. it only contains letters, or numbers, or contains certain words
-    #
-    # return unless qr/^\w+|\d{5}$/;
-
     return "plain text response",
         structured_answer => {
 
@@ -44,9 +31,7 @@ handle remainder => sub {
             name => 'Answer',
 
             data => {
-              title => "My Instant Answer Title",
-              subtitle => "My Subtitle",
-              # image => "http://website.com/image.png"
+                remainder => $_
             },
 
             templates => {

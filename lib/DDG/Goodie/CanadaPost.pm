@@ -4,15 +4,6 @@ package DDG::Goodie::CanadaPost;
 use strict;
 use DDG::Goodie;
 
-primary_example_queries 'canada post 123456789';
-description 'Track a package from Canada Post';
-name 'canadapost';
-icon_url "/i/www.canadapost.ca.ico";
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CanadaPost.pm';
-category 'ids';
-topics 'special_interest';
-attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
-
 zci is_cached => 1;
 zci answer_type => "canadapost";
 

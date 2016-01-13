@@ -7,18 +7,6 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "fedex";
 
-primary_example_queries "fedex 9241990100130206401644";
-secondary_example_queries "federal express 9241990100130206401644";
-
-description "Track a FedEx package";
-name "FedEx";
-icon_url "/i/fedex.com.ico";
-source "FedEx";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/FedEx.pm";
-category 'ids';
-topics 'special_interest';
-attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
-
 # Regex for fedex.
 my $fedex_qr = qr/fed(?:eral|)ex(?:press|)/io;
 my $tracking_qr = qr/package|track(?:ing|)|num(?:ber|)|\#/i;
