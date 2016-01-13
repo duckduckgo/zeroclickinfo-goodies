@@ -32,8 +32,12 @@ handle remainder => sub {
     # only 3-6 digits are accepted
     return unless $_ =~ /^\d{3,6}$/;
     
-    my @results = @{$prefix_db{$remainder}};
-    return unless @results;
+    my @results;
+    if (exists $prefix_db{$remainder}) {
+        @results = @{$prefix_db{$remainder}};
+    } else {
+        return;
+    }
     
     @results = sort @results; 
     my $result = join(", ", @results);

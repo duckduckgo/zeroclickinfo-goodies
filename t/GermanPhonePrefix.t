@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use utf8;
 
 zci answer_type => "german_phone_prefix";
 zci is_cached   => 1;
@@ -31,6 +32,7 @@ ddg_goodie_test(
                                     operation => "Lookup German phone prefix",                                                                                                                                                                                       
                                     result => 'M&uuml;nchen'              
                                 }),
+    'vorwahl 12345' => undef,
     'vorwahl 12' => undef,
     'vorwahl 1234567' => undef,
     'vorwahl' => undef
