@@ -4,16 +4,12 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
-use utf8;
 
 zci answer_type => "german_phone_prefix";
 zci is_cached   => 1;
 
 ddg_goodie_test(
     [qw( DDG::Goodie::GermanPhonePrefix )],
-    # At a minimum, be sure to include tests for all:
-    # - primary_example_queries
-    # - secondary_example_queries
     'vorwahl 05491'         => test_zci(
                                 'Damme Dümmer',
                                 structured_answer => {

@@ -10,7 +10,6 @@ zci answer_type => 'german_phone_prefix';
 # Caching - https://duck.co/duckduckhack/spice_advanced_backend#caching-api-responses
 zci is_cached => 1;
 
-# Triggers - https://duck.co/duckduckhack/goodie_triggers
 # triggers are in German deliberately
 triggers any => 'vorwahl', 'telefonvorwahl';
 
