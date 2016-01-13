@@ -1646,6 +1646,14 @@ ddg_goodie_test(
             result => '3 * 10<sup>14</sup> meters'
         }
     ),
+    '4e-15 km to mm' => test_zci(
+        '4 * 10^-15 kilometers = 4 * 10^-9 millimeters',
+        structured_answer => {
+            input => ['4 * 10<sup>-15</sup> kilometers'],
+            operation => 'convert',
+            result => '4 * 10<sup>-9</sup> millimeters'
+        }
+    ),
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
