@@ -1,7 +1,8 @@
 package DDG::Goodie::<: $ia_package_name :>;
 
 # ABSTRACT: Write an abstract here
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
+
+# Start at http://docs.duckduckhack.com/walkthroughs/calculation.html if you are new
 # to instant answer development
 
 use DDG::Goodie;
@@ -9,10 +10,10 @@ use strict;
 
 zci answer_type => '<: $ia_id :>';
 
-# Caching - https://duck.co/duckduckhack/spice_advanced_backend#caching-api-responses
+# Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching`
 zci is_cached => 1;
 
-# Triggers - https://duck.co/duckduckhack/goodie_triggers
+# Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
 triggers any => 'triggerword', 'trigger phrase';
 
 # Handle statement
@@ -40,7 +41,7 @@ handle remainder => sub {
 
             # Name - Used for Answer Bar Tab
             # Value should be chosen from existing Instant Answer topics
-            # see https://duck.co/duckduckhack/display_reference#codenamecode-emstringem-required
+            # see http://docs.duckduckhack.com/frontend-reference/display-reference.html#name-string-required
             name => 'Answer',
 
             data => {
