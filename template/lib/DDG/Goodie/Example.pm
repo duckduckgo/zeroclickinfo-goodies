@@ -2,7 +2,7 @@ package DDG::Goodie::<: $ia_package_name :>;
 
 # ABSTRACT: Write an abstract here
 
-# Start at https://duck.co/duckduckhack/goodie_overview if you are new
+# Start at http://docs.duckduckhack.com/walkthroughs/calculation.html if you are new
 # to instant answer development
 
 use DDG::Goodie;
