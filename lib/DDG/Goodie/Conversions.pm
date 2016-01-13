@@ -52,6 +52,14 @@ my %singular_exceptions = reverse %plural_exceptions;
 my $precision = 3;
 my $nearest = '.' . ('0' x ($precision-1)) . '1';
 
+# For a number represented as XeY, returns 1 + Y
+sub magnitude_order {
+    my $number = shift;
+    my $to_check = sprintf("%e", $number);
+    $to_check =~ /\d++\.?\d++e\+?(?<mag>-?\d++)/i;
+    return 1 + $+{mag};
+}
+
 handle query_lc => sub {
     # hack around issues with feet and inches for now
     $_ =~ s/"/inches/;
@@ -135,7 +143,7 @@ handle query_lc => sub {
     # if $result = 1.00000 .. 000n, where n <> 0 then $result != 1 and throws off pluralization, so:
     $result->{'result'} = nearest($nearest, $result->{'result'});
 
-    if ($result->{'result'} == 0 || length($result->{'result'}) > 2*$precision + 1) {
+    if ($result->{'result'} == 0 || magnitude_order($result->{result}) >= 2*$precision + 1) {
         # rounding error
         $result = convert({
             'factor' => $styler->for_computation($factor),
@@ -164,6 +172,10 @@ handle query_lc => sub {
     $result->{'result'} =~ s/\.0{$precision}$//;
     $result->{'result'} = $styler->for_display($result->{'result'});
 
+    my $computable_factor = $styler->for_computation($factor);
+    if (magnitude_order($computable_factor) > 2*$precision + 1) {
+        $factor = sprintf('%g', $computable_factor);
+    };
     $factor = $styler->for_display($factor);
 
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
