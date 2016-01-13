@@ -125,8 +125,9 @@ ddg_goodie_test(
             markup_input => '5',
             raw_input => '5',
             from_unit => 'kelvin',
-            styled_output => "-450.670 degrees fahrenheit",
-            raw_answer => "-450.670 degrees fahrenheit",
+            styled_output => '-450.670',
+            raw_answer => '-450.670',
+			to_unit => 'degrees fahrenheit',
             physical_quantity => 'temperature'
         })
     ),
@@ -137,8 +138,8 @@ ddg_goodie_test(
             raw_input => '1',
             from_unit => 'light year',
             styled_output => '9.46 * 10<sup>18</sup>',
-            raw_answer => '9.46',
-            to_unit => '* 10<sup>18</sup> millimeters',
+            raw_answer => '9.46*10^18',
+            to_unit => 'millimeters',
             physical_quantity => 'length'
         })
     ),
@@ -148,7 +149,7 @@ ddg_goodie_test(
             markup_input => '1',
             raw_input => '1',
             from_unit => 'british thermal unit',
-            styled_output => '0.000293 kilowatt-hour',
+            styled_output => '0.000293',
             raw_answer => '0.000293',
             to_unit => 'kilowatt-hours',
             physical_quantity => 'energy'
@@ -173,8 +174,9 @@ ddg_goodie_test(
             markup_input => '5',
             raw_input => '5',
             from_unit => 'degrees fahrenheit',
-            styled_output => "-15 degrees celsius",
-            raw_answer => "-15 degrees celsius",
+            styled_output => '-15',
+            raw_answer => '-15',
+			to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
@@ -199,7 +201,7 @@ ddg_goodie_test(
             styled_output => '0.010',
             raw_answer => '0.010',
             to_unit => 'seconds',
-            physical_quantity => 'time'
+            physical_quantity => 'duration'
         })
     ),
     'convert 1 yb to yib' => test_zci(
@@ -211,7 +213,7 @@ ddg_goodie_test(
             styled_output => '0.827',
             raw_answer => '0.827',
             to_unit => 'yobibytes',
-            physical_quantity => 'information'
+            physical_quantity => 'digital'
         })
     ),
     'convert 1stone to lbs' => test_zci(
@@ -235,7 +237,7 @@ ddg_goodie_test(
             styled_output => '40',
             raw_answer => '40',
             to_unit => 'bits',
-            physical_quantity => 'information'
+            physical_quantity => 'digital'
         })
     ),
     # Implicit conversion requests
@@ -404,7 +406,7 @@ ddg_goodie_test(
             styled_output => '3',
             raw_answer => '3',
             to_unit => 'years',
-            physical_quantity => 'time'
+            physical_quantity => 'duration'
         })
     ),
     '43200 seconds in hours' => test_zci(
@@ -416,7 +418,7 @@ ddg_goodie_test(
             styled_output => '12',
             raw_answer => '12',
             to_unit => 'hours',
-            physical_quantity => 'time'
+            physical_quantity => 'duration'
         })
     ),
     '4 hours to minutes' => test_zci(
@@ -428,7 +430,7 @@ ddg_goodie_test(
             styled_output => '240',
             raw_answer => '240',
             to_unit => 'minutes',
-            physical_quantity => 'time'
+            physical_quantity => 'duration'
         })
     ),
     '1 bar to pascal' => test_zci(
@@ -498,8 +500,8 @@ ddg_goodie_test(
             raw_input => '42',
             from_unit => 'kilowatt-hours',
             styled_output => '1.51 * 10<sup>8</sup>',
-            raw_answer => '1.51',
-            to_unit => '* 10<sup>8</sup> joules',
+            raw_answer => '1.51*10^8',
+            to_unit => 'joules',
             physical_quantity => 'energy'
         })
     ),
@@ -534,8 +536,8 @@ ddg_goodie_test(
             raw_input => '1',
             from_unit => 'gigawatt',
             styled_output => '1.34 * 10<sup>6</sup>',
-            raw_answer => '1.34',
-            to_unit => '* 10<sup>6</sup> horsepower',
+            raw_answer => '1.34*10^6',
+            to_unit => 'horsepower',
             physical_quantity => 'power'
         })
     ),
@@ -606,8 +608,8 @@ ddg_goodie_test(
             raw_input => '10',
             from_unit => 'milligrams',
             styled_output => '1.1 * 10<sup>-8</sup>',
-            raw_answer => '1.1',
-            to_unit => '* 10<sup>-8</sup> tons',
+            raw_answer => '1.1*10^-8',
+            to_unit => 'tons',
             physical_quantity => 'mass'
         })
     ),
@@ -618,9 +620,9 @@ ddg_goodie_test(
             raw_input => '10000',
             from_unit => 'minutes',
             styled_output => '6 * 10<sup>11</sup>',
-            raw_answer => '6',
-            to_unit => '* 10<sup>11</sup> microseconds',
-            physical_quantity => 'time'
+            raw_answer => '6*10^11',
+            to_unit => 'microseconds',
+            physical_quantity => 'duration'
         })
     ),
     '5 GB to megabyte' => test_zci(
@@ -632,7 +634,7 @@ ddg_goodie_test(
             styled_output => '5,000',
             raw_answer => '5000',
             to_unit => 'megabytes',
-            physical_quantity => 'information'
+            physical_quantity => 'digital'
         })
     ),
     '0.013 mb in bits' => test_zci(
@@ -644,19 +646,19 @@ ddg_goodie_test(
             styled_output => '104,000',
             raw_answer => '104000',
             to_unit => 'bits',
-            physical_quantity => 'information'
+            physical_quantity => 'digital'
         })
     ),
     '0,013 mb in bits' => test_zci(
         '0,013 megabytes = 104.000 bits',
         structured_answer => make_answer({
             markup_input => '0,013',
-            raw_input => '0,013',
+            raw_input => '0.013',
             from_unit => 'megabytes',
             styled_output => '104.000',
-            raw_answer => '104.000',
+            raw_answer => '104000',
             to_unit => 'bits',
-            physical_quantity => 'information'
+            physical_quantity => 'digital'
         })
     ),
     '1 exabyte to pib' => test_zci(
@@ -668,7 +670,7 @@ ddg_goodie_test(
             styled_output => '888.178',
             raw_answer => '888.178',
             to_unit => 'pebibytes',
-            physical_quantity => 'information'
+            physical_quantity => 'digital'
         })
     ),
     '16 years in months' => test_zci(
@@ -680,7 +682,7 @@ ddg_goodie_test(
             styled_output => '192',
             raw_answer => '192',
             to_unit => 'months',
-            physical_quantity => 'time'
+            physical_quantity => 'duration'
         })
     ),
     '1 year in months' => test_zci(
@@ -692,7 +694,7 @@ ddg_goodie_test(
             styled_output => '12',
             raw_answer => '12',
             to_unit => 'months',
-            physical_quantity => 'time'
+            physical_quantity => 'duration'
         })
     ),
     '360 degrees in revolutions' => test_zci(
@@ -725,8 +727,9 @@ ddg_goodie_test(
             markup_input => '12',
             raw_input => '12',
             from_unit => 'degrees celsius',
-            styled_output => "53.600 degrees fahrenheit",
-            raw_answer => "53.600 degrees fahrenheit",
+            styled_output => '53.600',
+            raw_answer => '53.600',
+			to_unit => 'degrees fahrenheit',
             physical_quantity => 'temperature'
         })
     ),
@@ -736,8 +739,9 @@ ddg_goodie_test(
             markup_input => '1',
             raw_input => '1',
             from_unit => 'degree fahrenheit',
-            styled_output => "-17.222 degrees celsius",
-            raw_answer => "-17.222 degrees celsius",
+            styled_output => '-17.222',
+            raw_answer => '-17.222',
+			to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
@@ -759,8 +763,9 @@ ddg_goodie_test(
             markup_input => '234',
             raw_input => '234',
             from_unit => 'degrees fahrenheit',
-            styled_output => "112.222 degrees celsius",
-            raw_answer => "112.222 degrees celsius",
+            styled_output => '112.222',
+            raw_answer => '112.222',
+			to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
@@ -879,7 +884,7 @@ ddg_goodie_test(
             raw_input => '1',
             from_unit => 'us gallon',
             styled_output => '3,785.412',
-            raw_answer => '3,785.412',
+            raw_answer => '3785.412',
             to_unit => 'millilitres',
             physical_quantity => 'volume'
         })
@@ -996,23 +1001,23 @@ ddg_goodie_test(
     '3e60 degrees in revolutions' => test_zci(
         '3 * 10^60 degrees = 8.33 * 10^57 revolutions',
         structured_answer => make_answer({
-            markup_input => '3',
-            raw_input => '3',
-            from_unit => '* 10<sup>60</sup> degrees',
+            markup_input => '3 * 10<sup>60</sup>',
+            raw_input => '3*10^60',
+            from_unit => 'degrees',
             styled_output => '8.33 * 10<sup>57</sup>',
-            raw_answer => '8.33',
-            to_unit => '* 10<sup>57</sup> revolutions',
+            raw_answer => '8.33*10^57',
+            to_unit => 'revolutions',
             physical_quantity => 'angle'
         })
     ),
     '4,1E5 newtons to pounds force' => test_zci(
         '4,1 * 10^5 newtons = 92.171,667 pounds force',
         structured_answer => make_answer({
-            markup_input => '4,1',
-            raw_input => '4,1',
-            from_unit => '* 10<sup>5</sup> newtons',
+            markup_input => '4,1 * 10<sup>5</sup>',
+            raw_input => '4.1*10^5',
+            from_unit => 'newtons',
             styled_output => '92.171,667',
-            raw_answer => '92.171,667',
+            raw_answer => '92171.667',
             to_unit => 'pounds force',
             physical_quantity => 'force'
         })
@@ -1020,11 +1025,11 @@ ddg_goodie_test(
     '4E5 newtons to pounds force' => test_zci(
         '4 * 10^5 newtons = 89,923.577 pounds force',
         structured_answer => make_answer({
-            markup_input => '4',
-            raw_input => '4',
-            from_unit => '* 10<sup>5</sup> newtons',
+            markup_input => '4 * 10<sup>5</sup>',
+            raw_input => '4*10^5',
+            from_unit => 'newtons',
             styled_output => '89,923.577',
-            raw_answer => '89,923.577',
+            raw_answer => '89923.577',
             to_unit => 'pounds force',
             physical_quantity => 'force'
         })
@@ -1033,22 +1038,22 @@ ddg_goodie_test(
         '5,0 gigabytes = 5.000 megabytes',
         structured_answer => make_answer({
             markup_input => '5,0',
-            raw_input => '5,0',
+            raw_input => '5.0',
             from_unit => 'gigabytes',
             styled_output => '5.000',
-            raw_answer => '5.000',
+            raw_answer => '5000',
             to_unit => 'megabytes',
-            physical_quantity => 'information'
+            physical_quantity => 'digital'
         })
     ),
     '3.5e-2 miles to inches' => test_zci(
         '3.5 * 10^-2 miles = 2,217.600 inches',
         structured_answer => make_answer({
-            markup_input => '3.5',
-            raw_input => '3.5',
-            from_unit => '* 10<sup>-2</sup> miles',
+            markup_input => '3.5 * 10<sup>-2</sup>',
+            raw_input => '3.5*10^-2',
+            from_unit => 'miles',
             styled_output => '2,217.600',
-            raw_answer => '2,217.600',
+            raw_answer => '2217.600',
             to_unit => 'inches',
             physical_quantity => 'length'
         })
@@ -1085,8 +1090,8 @@ ddg_goodie_test(
             raw_input => '5',
             from_unit => 'square miles',
             styled_output => '1.29 * 10<sup>7</sup>',
-            raw_answer => '1.29',
-            to_unit => '* 10<sup>7</sup> square meters',
+            raw_answer => '1.29*10^7',
+            to_unit => 'square meters',
             physical_quantity => 'area'
         })
     ),
@@ -1121,7 +1126,7 @@ ddg_goodie_test(
             raw_input => '1',
             from_unit => 'hectare',
             styled_output => '10,000',
-            raw_answer => '10,000',
+            raw_answer => '10000',
             to_unit => 'square meters',
             physical_quantity => 'area'
         })
@@ -1145,7 +1150,7 @@ ddg_goodie_test(
             raw_input => '1',
             from_unit => 'acre',
             styled_output => '4,046.873',
-            raw_answer => '4,046.873',
+            raw_answer => '4046.873',
             to_unit => 'square meters',
             physical_quantity => 'area'
         })
@@ -1182,9 +1187,9 @@ ddg_goodie_test(
             raw_input => '42',
             from_unit => 'days',
             styled_output => '60,480',
-            raw_answer => '60,480',
+            raw_answer => '60480',
             to_unit => 'minutes',
-            physical_quantity => 'time'
+            physical_quantity => 'duration'
         })
     ),
     'how much is 40 kelvin in celsius' => test_zci(
@@ -1205,8 +1210,9 @@ ddg_goodie_test(
             markup_input => '40',
             raw_input => '40',
             from_unit => 'kelvin',
-            styled_output => "-233.150 degrees celsius",
-            raw_answer => "-233.150 degrees celsius",
+            styled_output => '-233.150',
+            raw_answer => '-233.150',
+            to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
     ),
@@ -1349,7 +1355,7 @@ ddg_goodie_test(
             raw_input => '100',
             from_unit => 'meters',
             styled_output => '10,000',
-            raw_answer => '10,000',
+            raw_answer => '10000',
             to_unit => 'centimeters',
             physical_quantity => 'length'
         })
@@ -1373,7 +1379,7 @@ ddg_goodie_test(
             raw_input => '1',
             from_unit => 'acre',
             styled_output => '4,046.873',
-            raw_answer => '4,046.873',
+            raw_answer => '4046.873',
             to_unit => 'square meters',
             physical_quantity => 'area'
         })
@@ -1458,10 +1464,10 @@ ddg_goodie_test(
         '1,234 degrees fahrenheit = 1,234 degrees fahrenheit',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees fahrenheit',
             styled_output => '1,234',
-            raw_answer => '1,234',
+            raw_answer => '1234',
             to_unit => 'degrees fahrenheit',
             physical_quantity => 'temperature'
         })
@@ -1470,10 +1476,10 @@ ddg_goodie_test(
         '1,234 degrees celsius = 2,253.200 degrees fahrenheit',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees celsius',
             styled_output => '2,253.200',
-            raw_answer => '2,253.200',
+            raw_answer => '2253.200',
             to_unit => 'degrees fahrenheit',
             physical_quantity => 'temperature'
         })
@@ -1482,10 +1488,10 @@ ddg_goodie_test(
         '1,234 kelvin = 1,761.530 degrees fahrenheit',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'kelvin',
             styled_output => '1,761.530',
-            raw_answer => '1,761.530',
+            raw_answer => '1761.530',
             to_unit => 'degrees fahrenheit',
             physical_quantity => 'temperature'
         })
@@ -1494,7 +1500,7 @@ ddg_goodie_test(
         '1,234 degrees rankine = 774.330 degrees fahrenheit',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees rankine',
             styled_output => '774.330',
             raw_answer => '774.330',
@@ -1656,7 +1662,7 @@ ddg_goodie_test(
         '1,234 degrees fahrenheit = 667.778 degrees celsius',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees fahrenheit',
             styled_output => '667.778',
             raw_answer => '667.778',
@@ -1668,10 +1674,10 @@ ddg_goodie_test(
         '1,234 degrees celsius = 1,234 degrees celsius',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees celsius',
             styled_output => '1,234',
-            raw_answer => '1,234',
+            raw_answer => '1234',
             to_unit => 'degrees celsius',
             physical_quantity => 'temperature'
         })
@@ -1680,7 +1686,7 @@ ddg_goodie_test(
         '1,234 kelvin = 960.850 degrees celsius',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'kelvin',
             styled_output => '960.850',
             raw_answer => '960.850',
@@ -1692,7 +1698,7 @@ ddg_goodie_test(
         '1,234 degrees rankine = 412.406 degrees celsius',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees rankine',
             styled_output => '412.406',
             raw_answer => '412.406',
@@ -1852,7 +1858,7 @@ ddg_goodie_test(
         '1,234 degrees fahrenheit = 940.928 kelvin',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees fahrenheit',
             styled_output => '940.928',
             raw_answer => '940.928',
@@ -1864,10 +1870,10 @@ ddg_goodie_test(
         '1,234 degrees celsius = 1,507.150 kelvin',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees celsius',
             styled_output => '1,507.150',
-            raw_answer => '1,507.150',
+            raw_answer => '1507.150',
             to_unit => 'kelvin',
             physical_quantity => 'temperature'
         })
@@ -1876,10 +1882,10 @@ ddg_goodie_test(
         '1,234 kelvin = 1,234 kelvin',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'kelvin',
             styled_output => '1,234',
-            raw_answer => '1,234',
+            raw_answer => '1234',
             to_unit => 'kelvin',
             physical_quantity => 'temperature'
         })
@@ -1888,7 +1894,7 @@ ddg_goodie_test(
         '1,234 degrees rankine = 685.556 kelvin',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees rankine',
             styled_output => '685.556',
             raw_answer => '685.556',
@@ -2050,10 +2056,10 @@ ddg_goodie_test(
         '1,234 degrees fahrenheit = 1,693.670 degrees rankine',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees fahrenheit',
             styled_output => '1,693.670',
-            raw_answer => '1,693.670',
+            raw_answer => '1693.670',
             to_unit => 'degrees rankine',
             physical_quantity => 'temperature'
         })
@@ -2062,10 +2068,10 @@ ddg_goodie_test(
         '1,234 degrees celsius = 2,712.870 degrees rankine',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees celsius',
             styled_output => '2,712.870',
-            raw_answer => '2,712.870',
+            raw_answer => '2712.870',
             to_unit => 'degrees rankine',
             physical_quantity => 'temperature'
         })
@@ -2074,10 +2080,10 @@ ddg_goodie_test(
         '1,234 kelvin = 2,221.200 degrees rankine',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'kelvin',
             styled_output => '2,221.200',
-            raw_answer => '2,221.200',
+            raw_answer => '2221.200',
             to_unit => 'degrees rankine',
             physical_quantity => 'temperature'
         })
@@ -2086,10 +2092,10 @@ ddg_goodie_test(
         '1,234 degrees rankine = 1,234 degrees rankine',
         structured_answer => make_answer({
             markup_input => '1,234',
-            raw_input => '1,234',
+            raw_input => '1234',
             from_unit => 'degrees rankine',
             styled_output => '1,234',
-            raw_answer => '1,234',
+            raw_answer => '1234',
             to_unit => 'degrees rankine',
             physical_quantity => 'temperature'
         })
