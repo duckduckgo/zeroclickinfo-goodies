@@ -247,7 +247,7 @@ handle query => sub {
     $plot->{transform} = ""; 
 
     my @temp = $plot;
-    return "$answer ---  $html", #html => wrap_html($html) if $answer;
+    return "$answer", #html => wrap_html($html) if $answer;
     structured_answer => {
         id => 'frequency_spectrum',
         name => 'Answer',

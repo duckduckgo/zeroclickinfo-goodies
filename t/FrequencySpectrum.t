@@ -20,83 +20,259 @@ ddg_goodie_test(
     '50 hz' => test_zci(
       #qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
         qr/radio/,
-        html => qr/radio/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
 
     #Secondary example
     '400 thz' => test_zci(
         qr/infrared/,
-        html => qr/infrared/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
 
     #Misc
     '1,000 hz' => test_zci(
       #qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
       qr/radio/,
-        html => qr/radio.+/
+      structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
     '1000000.99 hz' => test_zci(
         qr/radio.+MF/,
-        html => qr/radio.+MF/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
     '29.1 hz' => test_zci(
         qr/radio.+ELF/,
-        html => qr/radio.+ELF/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
 
     #No whitespace between number and unit
     '50hz' => test_zci(
       #qr/radio.+SLF.+audible.+double-bass.+piano.+tuba/,
         qr/radio/,
-        html => qr/radio/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
     '400terahertz' => test_zci(
         qr/infrared/,
-        html => qr/infrared/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
 
     #Mixed case
     '400 THz' => test_zci(
         qr/infrared/,
-        html => qr/infrared/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
 
     '1000 HZ' => test_zci(
       #qr/radio.+audible.+human.+voice.+viola.+violin.+guitar.+mandolin.+banjo.+piano.+saxophone.+flute.+clarinet.+oboe/,
       qr/radio/,
-        html => qr/radio.+/
+      structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
 
     #Commas in number
     '1,000,000.99 hz' => test_zci(
         qr/radio.+MF/,
-        html => qr/radio.+MF/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
 
     #Can you test with all the colours of the wind?
     '650 nm' => test_zci(
         qr/visible.+red/,
-        html => qr/visible.+red/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
     '610 nanometers' => test_zci(
         qr/visible.+orange/,
-        html => qr/visible.+orange/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
     '580 nanometres' => test_zci(
         qr/visible.+yellow/,
-        html => qr/visible.+yellow/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
     '536 nanometer' => test_zci(
         qr/visible.+green/,
-        html => qr/visible.+green/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
     '478.1 nm' => test_zci(
         qr/visible.+blue/,
-        html => qr/visible.+blue/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
     '380.000000000 nanometres' => test_zci(
         qr/visible.+violet/,
-        html => qr/visible.+violet/
+        structured_answer => {
+            id => 'frequency_spectrum',
+            name => 'Answer',
+            data => '-ANY-',
+            templates => {
+                group => 'text',
+                item => 0,
+                options => {
+                    content => 'DDH.frequency_spectrum.content'
+                }
+            }
+        }
     ),
 
     #Only visible light wavelengths should trigger 
