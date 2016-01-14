@@ -2,7 +2,7 @@
     "id": "d3js_cheat_sheet",
     "name": "D3js",
 
-    "description": "Data Driven Document (d3js) syntax", // changed syntax from Data Driven Document syntax to Data Driven Document (d3js) syntax
+    "description": "Data Driven Document (d3js) syntax",
     "metadata": {
         "sourceName": "D3js",
         "sourceUrl": "http://d3js.org/"
