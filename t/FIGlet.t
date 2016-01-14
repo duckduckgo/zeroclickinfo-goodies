@@ -166,6 +166,58 @@ ddg_goodie_test(
             }
         }
     ),
+    
+	'figlet rot13 </fpevcg>' => test_zci(
+        "&lt;/script&gt;
+",
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => "&lt;/script&gt;
+",
+                subtitle => "Font: rot13",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
+    
+	'figlet mnemonic </script>' => test_zci(
+        "&lt;/script&gt;
+",
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => "&lt;/script&gt;
+",
+                subtitle => "Font: mnemonic",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),
+    
+	'figlet term </script>' => test_zci(
+        "&lt;/script&gt;
+",
+        structured_answer => {
+            id => 'figlet',
+            name => 'Answer',
+            data => {
+                title => "&lt;/script&gt;
+",
+                subtitle => "Font: term",
+            },
+            templates => {
+                group => 'text',
+            }
+        }
+    ),    
+    
 	'figlet' => undef,
 	'bigtext' => undef,
 	'big text' => undef,
