@@ -60,11 +60,11 @@ my @help_result = (
         }
     });
 my @irc_result = (
-    'Want to chat with DuckDuckGo on IRC? http://webchat.freenode.net/?channels=duckduckgo',
+    'Want to chat with us on IRC? http://webchat.freenode.net/?channels=duckduckgo',
     structured_answer => {
         id => $id,
         data => {
-            title => 'Want to chat with DuckDuckGo on IRC?',
+            title => 'Want to chat with us on IRC?',
             subtitle_text => 'Visit #duckduckgo on irc.freenode.net',
             subtitle_url => 'http://webchat.freenode.net/?channels=duckduckgo'
         },

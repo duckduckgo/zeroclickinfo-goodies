@@ -62,8 +62,8 @@ develop:
   subtitle: "Visit DuckDuckHack to learn more"
   url: http://duckduckhack.com/
 doodle:
-  title: "Sometimes we change our logo for special occassions"
-  subtitle: "View our old holiday logos"
+  title: "Sometimes Dax gets dressed up for special occassions"
+  subtitle: "View our past holiday logos"
   url: https://duck.co/help/settings/holiday-logos
 duck:
   aliases:
@@ -73,7 +73,7 @@ duck:
     - whostheduck
     - whoistheduck
     - mirrormirroronthewallwhosthefairestofthemall
-  title: <img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.
+  title: "Dax is our friendly mascot"
 engine:
   title: "DuckDuckGo. The search engine that doesn't track you"
   url: https://duckduckgo.com/
