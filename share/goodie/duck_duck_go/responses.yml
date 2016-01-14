@@ -73,7 +73,8 @@ duck:
     - whostheduck
     - whoistheduck
     - mirrormirroronthewallwhosthefairestofthemall
-  title: "Dax is our friendly mascot"
+  title: "Hi! I'm Dax"
+  image: "https://duckduckgo.com/assets/logo_header.v101.png"
 engine:
   title: "DuckDuckGo. The search engine that doesn't track you"
   url: https://duckduckgo.com/

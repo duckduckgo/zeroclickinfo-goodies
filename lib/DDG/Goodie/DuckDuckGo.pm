@@ -59,6 +59,7 @@ handle remainder => sub {
         id => 'duck_duck_go',
         data => {
             title => $response->{title},
+            image => $response->{image},
             subtitle_text => $response->{subtitle},
             subtitle_url => $response->{url}
         },
