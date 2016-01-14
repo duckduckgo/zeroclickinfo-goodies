@@ -17,7 +17,7 @@ my @about_result = (
         id => $id,
         data => {
             title => 'Want to know more about us?',
-            image => undef,
+            subtitle_image => undef,
             subtitle_text => 'Visit our About page',
             subtitle_url => 'https://duckduckgo.com/about'
         },
@@ -34,7 +34,7 @@ my @blog_result = (
         id => $id,
         data => {
             title => 'Want to stay up to date with DuckDuckGo?',
-            image => undef,
+            subtitle_image => undef,
             subtitle_text => 'Visit the official DuckDuckGo blog',
             subtitle_url => 'https://duck.co/blog'
         },
@@ -51,7 +51,7 @@ my @help_result = (
         id => $id,
         data => {
             title => 'Need some help?',
-            image => undef,
+            subtitle_image => undef,
             subtitle_text => 'Visit our help page',
             subtitle_url => 'https://duck.co/help'
         },
@@ -68,7 +68,7 @@ my @irc_result = (
         id => $id,
         data => {
             title => 'Want to chat with us on IRC?',
-            image => undef,
+            subtitle_image => undef,
             subtitle_text => 'Visit #duckduckgo on irc.freenode.net',
             subtitle_url => 'http://webchat.freenode.net/?channels=duckduckgo'
         },
@@ -85,7 +85,7 @@ my @merch_result = (
         id => $id,
         data => {
             title => 'Looking for some swag? (Thanks for the support!)',
-            image => undef,
+            subtitle_image => undef,
             subtitle_text => 'Check out the DuckDuckGo store for t-shirts, stickers, and other items',
             subtitle_url => 'https://duck.co/help/community/swag'
         },
@@ -102,7 +102,7 @@ my @tor_result = (
         id => $id,
         data => {
             title => 'DuckDuckGo is available on Tor',
-            image => undef,
+            subtitle_image => undef,
             subtitle_text => 'Visit our onion address',
             subtitle_url => 'http://3g2upl4pq6kufc4m.onion'
         },
@@ -119,7 +119,7 @@ my @shorturl_result = (
         id => $id,
         data => {
             title => 'Need a quicker way to visit DuckDuckGo?',
-            image => undef,
+            subtitle_image => undef,
             subtitle_text => 'You can also find us at https://ddg.gg',
             subtitle_url => 'https://ddg.gg'
         },
@@ -136,7 +136,7 @@ my @zci_result = (
         id => $id,
         data => {
             title => 'Zero Click Info is another term for our Instant Answers that show above the search results',
-            image => undef,
+            subtitle_image => undef,
             subtitle_text => 'Learn more about Instant Answers',
             subtitle_url => 'http://duckduckhack.com'
         },
