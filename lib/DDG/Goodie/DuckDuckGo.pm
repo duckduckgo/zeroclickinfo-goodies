@@ -18,31 +18,18 @@ my $responses = LoadFile(share('responses.yml'));
 # Now we make something computer-friendly.
 foreach my $keyword (keys %$responses) {
     my $response = $responses->{$keyword};
-    if (my $base_format = $response->{base_format}) {
-        # We need to produce the output for each version.
-        if (my $info_url = $response->{info_url}) {
-            $response->{text} = $base_format;
-            $response->{text} =~ s/[\[\]]//g;    # No internal linking.
-            $response->{text} .= ': ' . $response->{info_url};    # Stick the link on the end.
 
-            $response->{html} = $base_format;
-            $response->{html} =~ s#\[#<a href='$info_url'>#;      # Insert link.
-            $response->{html} =~ s#\]#</a>#;
-            $response->{html} .= '.';
-        } else {
-            # No link to insert, so it must be ready for both.
-            $response->{text} = $response->{html} = $response->{base_format};
-        }
+    if ($response->{title}) {
+        $response->{text} = $response->{title}.' '.$response->{url};
+    } else {
+        $response->{text} = '';
     }
+
     if (ref($response->{aliases}) eq 'ARRAY') {
         foreach my $alias (@{$response->{aliases}}) {
             # Assume we didn't add an alias for an existing keyword.
             $responses->{$alias} = $response;
         }
-    }
-    foreach my $key (keys %$response) {
-        # No matter what they added, we only use the following keys for the actual response.
-        delete $response->{$key} unless (grep { $key eq $_ } (qw(text html)));
     }
 }
 
@@ -58,11 +45,22 @@ handle remainder => sub {
     my $response = $responses->{$key};
 
     return unless ($response);
+
     return $response->{text},
-      structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result    => $response->{html}};
+    structured_answer => {
+        id => 'duck_duck_go',
+        data => {
+            title => $response->{title},
+            subtitle_text => $response->{subtitle},
+            subtitle_url => $response->{url}
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
+    };
 };
 
 1;

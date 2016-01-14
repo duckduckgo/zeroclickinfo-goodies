@@ -7,8 +7,9 @@
 # If more than one keyword applies, add an aliases key with an array ref of string aliases.
 ---
 about:
-  base_format: "DuckDuckGo's [about page]"
-  info_url: https://duckduckgo.com/about
+  title: "Want to know more about us?"
+  subtitle: "Visit our About page"
+  url: https://duckduckgo.com/about
 ads:
   aliases:
     - businessmodel
