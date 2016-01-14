@@ -20,9 +20,17 @@ foreach my $keyword (keys %$responses) {
     my $response = $responses->{$keyword};
 
     if ($response->{title}) {
-        $response->{text} = $response->{title}.' '.$response->{url};
+        $response->{text} = $response->{title};
+        if ($response->{url}) {
+            $response->{text} .= ' '.$response->{url};
+        }
     } else {
         $response->{text} = '';
+    }
+
+    # if there's no subtitle, make the subtitle the url text:
+    unless ($response->{subtitle}) {
+        $response->{subtitle} = $response->{url};
     }
 
     if (ref($response->{aliases}) eq 'ARRAY') {
