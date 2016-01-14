@@ -3,24 +3,24 @@
     "name": "VimL",
     "description": "Explanation of commonly used VimL methods",
     "metadata": {
-		"sourceName": "Write a Vim script",
+		"sourceName": "Sourceforge",
 		"sourceUrl": "http://vimdoc.sourceforge.net/htmldoc/usr_41.html"
 	},
     "aliases": [
-        "viml", "vim scripting"
+        "vim language", "vim scripting", "vim script"
     ],
     "template_type": "code",
     "section_order": [
-        "Variable scope",
-        "Data types",
-        "Buffer interaction",
-        "String manipulation",
+        "Variable Scope",
+        "Data Types",
+        "Buffer Interaction",
+        "String Manipulation",
         "I/O",
-        "List manipulation",
-        "Cursor manipulation"
+        "List Manipulation",
+        "Cursor Manipulation"
     ],
     "sections" : {
-        "Variable scope" : [
+        "Variable Scope" : [
             {
                 "key": "b:var",
                 "val": "Variable local to buffer"
@@ -50,7 +50,7 @@
                 "val": "Variable for function argument"
             }
         ],
-        "Data types" : [
+        "Data Types" : [
             {
                 "key": "'String'",
                 "val": "String with no keycode expansion"
@@ -68,7 +68,7 @@
                 "val": "List"
             }
         ],
-        "Buffer interaction" : [
+        "Buffer Interaction" : [
             {
                 "key": "getbufline(1, 1)",
                 "val": "Get the line 1 of the first buffer"
@@ -90,7 +90,7 @@
                 "val": "Search the current buffer for DuckDuckGo, no wrap around"
             }
         ],
-        "String manipulation" : [
+        "String Manipulation" : [
             {
                 "key": "printf('%03g', 17)",
                 "val": "Create a formatted string '017'"
@@ -123,7 +123,7 @@
             },
                         {
                 "key": "systemlist('echo DuckDuckGo')",
-                "val": "Get the output of the command echo as a lsit of lines"
+                "val": "Get the output of the command echo as a list of lines"
             },
             {
                 "key": "readfile('/tmp/file.txt')",
@@ -134,7 +134,7 @@
                 "val": "Write two lines to a file"
             }
         ],
-        "List manipulation" : [
+        "List Manipulation" : [
             {
                 "key": "add(varlist, 3)",
                 "val": "Add an item to varlist"
@@ -156,7 +156,7 @@
                 "val": "Split a string at a list, with space as the delimiter"
             }
         ],
-        "Cursor manipulation" : [
+        "Cursor Manipulation" : [
             {
                 "key": "getpos('.')",
                 "val": "Get the position of mark . (the cursor)"
