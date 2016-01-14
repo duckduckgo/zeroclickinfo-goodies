@@ -45,6 +45,10 @@ ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     'in 3 weeks'               => build_test('02 Apr 2014', 'in 3 weeks'),
     'date today'               => build_test('12 Mar 2014', 'today'),
     'January 1st plus 32 days' => build_test('02 Feb 2014', '01 Jan 2014 + 32 days'),
+    '5 minutes from now'       => build_test('12 Mar 2014 06:05:00', '12 Mar 2014 06:00:00 + 5 minutes'),
+    'twelve seconds ago'       => build_test('12 Mar 2014 05:59:48', '12 Mar 2014 06:00:00 - 12 seconds'),
+    '01 Jan + 12 hours'        => build_test('01 Jan 2014 12:00:00', '01 Jan 2014 00:00:00 + 12 hours'),
+    'date today plus 24 hours' => build_test('13 Mar 2014 06:00:00', '12 Mar 2014 06:00:00 + 24 hours'),
     # Misc
     '1 jan 2014 plus 2 weeks' => build_test('15 Jan 2014', '01 Jan 2014 + 2 weeks'),
     # / form
@@ -57,6 +61,7 @@ ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     '1/1/2012 plus 1 days'    => build_test(@first_sec),
     '01/01/2012 + 1 day'      => build_test(@first_sec),
     '1/1/2012 minus ten days' => build_test('22 Dec 2011', '01 Jan 2012 - 10 days'),
+    '1/1/2012 + 1 second'     => build_test('01 Jan 2012 00:00:01', '01 Jan 2012 00:00:00 + 1 second'),
     # Should not trigger
     'yesterday'  => undef,
     'today'      => undef,
