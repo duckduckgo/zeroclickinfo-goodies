@@ -17,6 +17,20 @@ my @overjan = (
         result    => '02 Feb 2012',
     },
 );
+sub build_structured_answer {
+    my ($result, $input) = @_;
+    return $result, structured_answer => {
+        id   => 'date_math',
+        name => 'Answer',
+        data => {
+            title    => "$result",
+            subtitle => "$input",
+        },
+        templates => {
+            group => 'text',
+        },
+    };
+}
 
 my @first_sec = (
     '01 Jan 2012 + 1 day is 02 Jan 2012',
@@ -26,6 +40,8 @@ my @first_sec = (
         result    => '02 Jan 2012',
     },
 );
+sub build_test { test_zci(build_structured_answer(@_)) }
+
 
 set_fixed_time("2014-03-12T10:00:00");
 
