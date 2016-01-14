@@ -1,55 +1,15 @@
-.zci--sun_info {
-    font-size: 1.75em;
-    font-weight: 400;
-}
-
-.zci--sun_info .suninfo--header {
-    font-size: 0.5em;
-    margin-bottom: 0.25em;
-    margin-top: 0.25em;
-}
-
-.zci--sun_info .ddgsi {
-	position: relative;
-	top: 2px;
-}
-
-.zci--sun_info .suninfo--row span {
+.zci--sun_info span {
 	vertical-align: middle;
 }
 
-.zci--sun_info .ddgsi {
-	margin-right: 0.5em;
-}
-
-.zci--sun_info .suninfo--timeboxes {
-    display: inline-block;
-    height: 30px;
-}
-
-.zci--sun_info .suninfo--border-right {
+.suninfo--border-right {
 	border-right: 1px solid #ccc;
 	padding-right: 2px;
 }
 
-.zci--sun_info .suninfo--times {
-    margin: 0 0.5em;
-    position: relative;
-    top: -3px;
-}
-
-.zci--sun_info .suninfo--setbox,
-.zci--sun_info .suninfo--risebox {
+.suninfo--setbox,
+.suninfo--risebox {
     display: inline-block;
     width: 48px;
     height: 48px;
-}
-
-.zci--sun_info .suninfo--setbox {
-	padding-left: 0.5em;
-}
-
-.zci--sun_info .suninfo--risebox {
-	padding: 0;
-	margin-left: -3px;
 }
