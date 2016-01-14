@@ -23,10 +23,9 @@ my $wiki = "https://en.wikipedia.org/wiki/";
 # Remainder function with links to the Wikipedia resources.
 handle remainder => sub {
 
-    return unless /^[0-9a-f]{32}$|^[0-9a-f]{40}$|^[0-9a-f]{56}$|^[0-9a-f]{64}$|^[0-9a-f]{96}$|^[0-9a-f]{128}$/i;
-    
-    my $chars = length $_;
-    $chars *= 4;
+    my $matches = /^([0-9A-Fa-f]{32,128})$/ or return;
+    my $chars = 4 * length($1);
+    return unless defined $cryptohash{$chars};
  
     my $text = "This is a $chars bit " . $cryptohash{$chars} . " cryptographic hash."; 
     
