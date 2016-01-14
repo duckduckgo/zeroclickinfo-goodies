@@ -26,11 +26,16 @@ handle query_lc => sub {
 
     if (!exists $+{'number'}) {
         my $out_date = date_output_string(parse_datestring_to_date($+{'date'}));
-        return $out_date,
-            structured_answer => {
-            input     => [$+{'date'}],
-            operation => 'Date math',
-            result    => $out_date
+        return $out_date, structured_answer => {
+            id => 'date_math',
+            name => 'Answer',
+            data => {
+                title => "$out_date",
+                subtitle => "$+{date}",
+            },
+            templates => {
+                group => 'text',
+            },
         };
     }
 
@@ -68,13 +73,20 @@ handle query_lc => sub {
     my $out_date   = date_output_string($input_date->clone->add_duration($dur));
     my $in_date    = date_output_string($input_date);
     my $out_action = "$action $input_number $unit";
+    my $result = $out_date;
+    my $formatted_input = "$in_date $out_action";
 
-    return "$in_date $out_action is $out_date",
-      structured_answer => {
-        input     => [$in_date . ' ' . $out_action],
-        operation => 'Date math',
-        result    => $out_date
-      };
+    return $result, structured_answer => {
+        id => 'date_math',
+        name => 'Answer',
+        data => {
+            title => "$result",
+            subtitle => "$formatted_input",
+        },
+        templates => {
+            group => 'text',
+        },
+    };
 };
 
 1;
