@@ -27,6 +27,7 @@ app:
     - ios
     - android
     - mobile
+    - download
   title: "Looking for our app?"
   url: https://duckduckgo.com/app/
 bangs:
