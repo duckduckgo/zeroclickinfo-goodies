@@ -125,7 +125,7 @@ handle query_lc => sub {
 
     my $dur = get_duration $number, $unit;
 
-    $unit .= 's' if $input_number > 1;
+    $unit .= 's' if $input_number != 1;
     my $out_date = $input_date->clone->add_duration($dur);
     my $result = format_result $out_date, $unit;
     my $formatted_input = format_input $input_date, $action, $unit, $input_number;
