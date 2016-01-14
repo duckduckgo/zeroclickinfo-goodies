@@ -37,7 +37,7 @@ bangs:
     - newbangs
   title: "Search thousands of sites directly from DuckDuckGo."
   subtitle: "Learn more about !bangs (or submit a new one!)"
-  url: https://duck.co/help/features/bangs
+  url: https://duckduckgo.com/bang
 blog:
   title: "Want to stay up to date with DuckDuckGo?"
   subtitle: "Visit the official DuckDuckGo blog"
@@ -48,7 +48,7 @@ chrome:
   url: https://duck.co/help/desktop/chrome
 community:
   title: "Join our growing community"
-  url: https://duck.co/
+  url: http://duckduckhack.com/
 develop:
   aliases:
     - developers
@@ -59,7 +59,7 @@ develop:
     - hack
     - hacking
     - developer
-  title: "Interested in hacking your search engine?"
+  title: "Want to improve our search results?"
   subtitle: "Visit DuckDuckHack to learn more"
   url: http://duckduckhack.com/
 doodle:
@@ -85,18 +85,18 @@ facebook:
   url: https://www.facebook.com/duckduckgo
 fathead:
   title: "Interested in creating a Fathead Instant Answer?"
-  subtitle: "Visit the DuckDuckHack Fathead repository"
-  url: https://github.com/duckduckgo/zeroclickinfo-fathead
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html#fathead-instant-answers/
 firefox:
   title: "Need help with the Firefox browser?"
   subtitle: "Visit the DuckDuckGo help page for Firefox"
   url: https://duck.co/help/desktop/firefox
 goodies:
   title: "Interested in creating a Goodie Instant Answer?"
-  subtitle: "Visit the DuckDuckHack Goodie repository"
-  url: https://github.com/duckduckgo/zeroclickinfo-goodies
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html
 help:
-  title: "Need some help?"
+  title: "Need some help with your DuckDuckGo questions?"
   subtitle: "Visit our help page"
   url: https://duck.co/help
 hiring:
@@ -125,12 +125,12 @@ irc:
   url: http://webchat.freenode.net/?channels=duckduckgo
 longtail:
   title: "Interested in creating a Longtail Instant Answer?"
-  subtitle: "Visit the DuckDuckHack Longtail repository"
-  url: https://github.com/duckduckgo/zeroclickinfo-longtail
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html#longtail-instant-answers/
 opensource:
   title: "Looking for the DuckDuckGo open source projects?"
   subtitle: "Learn more about open source at DuckDuckGo"
-  url: https://duck.co/help/open-source/opensource-overview
+  url: http://duckduckhack.com/
 opera:
   title: "Need help with the Opera browser?"
   subtitle: "Visit the DuckDuckGo help page for Opera"
@@ -171,12 +171,12 @@ short:
   url: https://ddg.gg
 spice:
   title: "Interested in creating a Spice Instant Answer?"
-  subtitle: "Visit the DuckDuckHack Spice repository"
+  subtitle: "Visit our documentation"
   url: https://github.com/duckduckgo/zeroclickinfo-spice
 spread:
   title: "Interested in spreading the word?"
   subtitle: "Visit DuckDuckGo's Spread page"
-  url: https://duckduckgo.com/supportus.html
+  url: https://duckduckgo.com/spread
 swag:
   aliases:
     - merch
@@ -192,7 +192,7 @@ swag:
     - t
     - sticker
     - stickers
-  title: "Looking for some swag? (Thanks for the support!)"
+  title: "Looking for DuckDuckGo gear? (Thanks for the support!)"
   subtitle: "Check out the DuckDuckGo store for t-shirts, stickers, and other items"
   url: https://duck.co/help/community/swag
 syntax:
