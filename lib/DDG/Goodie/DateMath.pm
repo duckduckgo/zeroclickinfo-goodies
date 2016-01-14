@@ -7,7 +7,10 @@ with 'DDG::GoodieRole::Dates';
 use DateTime::Duration;
 use Lingua::EN::Numericalize;
 
-triggers any => qw( plus minus + - date day week month year days weeks months years);
+triggers any => qw(second minute hour day week month year);
+triggers any => qw(seconds minutes hours days weeks months years);
+triggers any => qw(plus minus + -);
+triggers any => qw(date);
 
 zci is_cached => 1;
 zci answer_type => 'date_math';
