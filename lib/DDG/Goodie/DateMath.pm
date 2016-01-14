@@ -19,6 +19,26 @@ my $datestring_regex = datestring_regex();
 
 my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 
+sub get_duration {
+    my ($number, $unit) = @_;
+    my $years  = $number     if $unit eq "year";
+    my $months = $number     if $unit eq "month";
+    my $weeks   = $number if $unit eq "week";
+    my $days   = $number     if $unit eq "day";
+    my $hours  = $number     if $unit eq "hour";
+    my $minutes = $number    if $unit eq "minute";
+    my $seconds = $number if $unit eq "second";
+    my $dur = DateTime::Duration->new(
+        years  => $years // 0,
+        months => $months // 0,
+        weeks => $weeks // 0,
+        days   => $days // 0,
+        hours => $hours // 0,
+        minutes => $minutes // 0,
+        seconds => $seconds // 0,
+    );
+}
+
 
 
 
@@ -75,18 +95,8 @@ handle query_lc => sub {
     my $number = $action eq '-' ? 0 - $input_number : $input_number;
 
     $unit =~ s/s$//g;
+    my $dur = get_duration $number, $unit;
 
-    my ($years, $months, $days, $weeks) = (0, 0, 0, 0);
-    $years  = $number     if $unit eq "year";
-    $months = $number     if $unit eq "month";
-    $days   = $number     if $unit eq "day";
-    $days   = 7 * $number if $unit eq "week";
-
-    my $dur = DateTime::Duration->new(
-        years  => $years,
-        months => $months,
-        days   => $days
-    );
 
     $unit .= 's' if $input_number > 1;    # plural?
     my $out_date   = date_output_string($input_date->clone->add_duration($dur));
