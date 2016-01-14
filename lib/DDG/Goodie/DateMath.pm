@@ -17,8 +17,6 @@ zci answer_type => 'date_math';
 
 my $datestring_regex = datestring_regex();
 
-handle query_lc => sub {
-    my $query = $_;
 
     my $relative_regex = qr!(?<number>\d+|[a-z\s-]+)\s+(?<unit>(?:day|week|month|year)s?)!;
 
@@ -27,19 +25,30 @@ handle query_lc => sub {
         $relative_regex\s+(?<action>from)\s+(?<date>$datestring_regex)?
     )$!x;
 
-    if (!exists $+{'number'}) {
-        my $out_date = date_output_string(parse_datestring_to_date($+{'date'}));
-        return $out_date, structured_answer => {
-            id => 'date_math',
+
+sub build_result {
+    my ($result, $formatted) = @_;
+        return $result, structured_answer => {
+            id   => 'date_math',
             name => 'Answer',
             data => {
-                title => "$out_date",
-                subtitle => "$+{date}",
+                title    => "$result",
+                subtitle => "$formatted",
             },
             templates => {
                 group => 'text',
             },
         };
+
+}
+
+handle query_lc => sub {
+    my $query = $_;
+
+
+    if (!exists $+{'number'}) {
+        my $out_date = date_output_string(parse_datestring_to_date($+{'date'}));
+        return build_result($out_date, $+{date});
     }
 
     my $input_date   = parse_datestring_to_date($+{date});
@@ -78,18 +87,7 @@ handle query_lc => sub {
     my $out_action = "$action $input_number $unit";
     my $result = $out_date;
     my $formatted_input = "$in_date $out_action";
-
-    return $result, structured_answer => {
-        id => 'date_math',
-        name => 'Answer',
-        data => {
-            title => "$result",
-            subtitle => "$formatted_input",
-        },
-        templates => {
-            group => 'text',
-        },
-    };
+    return build_result($result, $formatted_input);
 };
 
 1;
