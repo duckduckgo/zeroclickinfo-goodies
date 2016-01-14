@@ -17,14 +17,19 @@ zci answer_type => 'date_math';
 
 my $datestring_regex = datestring_regex();
 
+my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 
-    my $relative_regex = qr!(?<number>\d+|[a-z\s-]+)\s+(?<unit>(?:day|week|month|year)s?)!;
 
-    return unless $query =~ qr!^(?:date\s+)?(
-        (?<date>$datestring_regex)(?:\s+(?<action>plus|\+|\-|minus)\s+$relative_regex)?|
-        $relative_regex\s+(?<action>from)\s+(?<date>$datestring_regex)?
-    )$!x;
 
+
+my $relative_regex = qr/(?<number>\d+|[a-z\s-]+)\s+$units/;
+
+my $action_re = qr/(?<action>plus|\+|\-|minus)/i;
+my $date_re = qr/(?<date>$datestring_regex)/;
+
+my $operation_re = qr/$date_re(?:\s+$action_re\s+$relative_regex)?/;
+my $from_re = qr/$relative_regex\s+(?<action>from)\s+$date_re?/i;
+my $ago_re = qr/$relative_regex\s+(?<action>ago)/i;
 
 sub build_result {
     my ($result, $formatted) = @_;
@@ -45,6 +50,8 @@ sub build_result {
 handle query_lc => sub {
     my $query = $_;
 
+
+    return unless $query =~ /^(?:date\s+)?($operation_re|$from_re|$ago_re)$/i;
 
     if (!exists $+{'number'}) {
         my $out_date = date_output_string(parse_datestring_to_date($+{'date'}));
