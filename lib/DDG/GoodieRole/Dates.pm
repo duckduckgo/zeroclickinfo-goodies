@@ -292,6 +292,12 @@ sub short_day_of_week_regex {
 sub relative_dates_regex {
     return $relative_dates;
 }
+sub time_24h_regex {
+    return $time_24h;
+}
+sub time_12h_regex {
+    return $time_12h;
+}
 
 # Accessors for matching regexes
 # These matches are for "in the right format"/"looks about right"
