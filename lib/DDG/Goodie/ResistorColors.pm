@@ -174,7 +174,7 @@ sub render {
         name => 'Answer',
         meta => {
             sourceName => "resisto.rs",
-            sourceUrl => "http://resisto.rs/$formatted_value"
+            sourceUrl => "http://resisto.rs/#$formatted_value"
         },
         data => {
             title => $title,
