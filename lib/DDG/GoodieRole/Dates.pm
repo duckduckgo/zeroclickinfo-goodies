@@ -391,6 +391,11 @@ sub parse_formatted_datestring_to_date {
     $d =~ s/($tz_strings)$/$tz_offsets{$1}/i;                                    # Convert trailing timezones to actual offsets.
 
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
+    if (ref $maybe_date_object eq 'DateTime') {
+        if ($maybe_date_object->strftime('%Z') eq 'floating') {
+            $maybe_date_object->set_time_zone(_get_timezone());
+        };
+    };
 
     return $maybe_date_object;
 }
