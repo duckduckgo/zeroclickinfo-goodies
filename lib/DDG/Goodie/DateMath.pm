@@ -13,7 +13,7 @@ triggers any => qw(seconds minutes hours days weeks months years);
 triggers any => qw(plus minus + -);
 triggers any => qw(date time);
 
-zci is_cached => 1;
+zci is_cached => 0;
 zci answer_type => 'date_math';
 
 

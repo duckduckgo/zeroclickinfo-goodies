@@ -7,7 +7,7 @@ use Test::MockTime qw( :all );
 use DDG::Test::Goodie;
 
 zci answer_type => 'date_math';
-zci is_cached   => 1;
+zci is_cached   => 0;
 
 sub build_structured_answer {
     my ($result, $input) = @_;
