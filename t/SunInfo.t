@@ -5,10 +5,12 @@ use warnings;
 use Test::More;
 use DDG::Test::Goodie;
 use utf8;
+use Test::MockTime qw(set_fixed_time);
 
 zci answer_type => 'sun_info';
 zci is_cached   => 0;
 
+set_fixed_time('2014-08-01T00:00:00Z');
 # Presume sun will rise in the morning and set at night year round in PA.
 my @now = (qr/^On.*Phoenixville, Pennsylvania.*AM.*PM\.$/,
     structured_answer => {
