@@ -330,10 +330,11 @@ subtest 'Dates' => sub {
     };
     subtest 'Valid clock string format' => sub {
         my %date_strings = (
-            '01 Jan 2012 00:01:20 UTC' => ['01 Jan 2012 00:01:20 UTC'],
-            '22 Jun 1998 00:00:02 UTC' => ['22 Jun 1998 00:00:02 GMT'],
-            '07 Sep 2014 20:11:44 EST' => ['07 Sep 2014 20:11:44 EST'],
-            '09 Aug 2014 18:20:00 UTC' => ['09 Aug 2014 18:20:00'],
+            '01 Jan 2012 00:01:20 UTC'   => ['01 Jan 2012 00:01:20 UTC'],
+            '22 Jun 1998 00:00:02 UTC'   => ['22 Jun 1998 00:00:02 GMT'],
+            '07 Sep 2014 20:11:44 EST'   => ['07 Sep 2014 20:11:44 EST'],
+            '07 Sep 2014 20:11:44 -0400' => ['07 Sep 2014 20:11:44 EDT'],
+            '09 Aug 2014 18:20:00 UTC'   => ['09 Aug 2014 18:20:00'],
         );
         foreach my $result (sort keys %date_strings) {
             foreach my $test_string (@{$date_strings{$result}}) {

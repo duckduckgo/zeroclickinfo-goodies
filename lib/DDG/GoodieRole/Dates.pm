@@ -393,7 +393,7 @@ sub parse_formatted_datestring_to_date {
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
     if (ref $maybe_date_object eq 'DateTime') {
         if (exists $+{tz}) {
-            $maybe_date_object->set_time_zone($+{tz});
+            try { $maybe_date_object->set_time_zone($+{tz}) };
         }
         if ($maybe_date_object->strftime('%Z') eq 'floating') {
             $maybe_date_object->set_time_zone(_get_timezone());
