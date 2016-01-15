@@ -105,6 +105,8 @@ my $date_re = qr/(?<date>$datestring_regex)/;
 my $operation_re = qr/$date_re(?:\s+$action_re\s+$relative_regex)?/;
 my $from_re = qr/$relative_regex\s+(?<action>from)\s+$date_re?/i;
 my $ago_re = qr/$relative_regex\s+(?<action>ago)/i;
+my $time_24h = time_24h_regex();
+my $time_12h = time_12h_regex();
 
 sub build_result {
     my ($result, $formatted) = @_;
@@ -122,12 +124,18 @@ sub build_result {
 
 }
 
-handle query_lc => sub {
+handle query => sub {
     my $query = $_;
 
 
     return unless $query =~ /^(?:(?<dort>date|time)\s+)?($operation_re|$from_re|$ago_re)$/i;
+    my $number = $+{number};
+    my $action = $+{action};
+    my $unit   = $+{unit};
+    my $date   = $+{date};
+    my $dort   = $+{dort};
 
+    my $specified_time = $query =~ /$time_24h|$time_12h/;
     unless (defined $number) {
         my $use_clock = should_use_clock undef, $dort;
         my $out_date = parse_datestring_to_date($date);
@@ -155,7 +163,8 @@ handle query_lc => sub {
 
     $unit .= 's' if abs($compute_num) != 1;
     my $out_date = $input_date->clone->add_duration($dur);
-    my $use_clock = $specified_time || should_use_clock $unit, $dort;
+    $out_date->set_time_zone($input_date->time_zone);
+    my $use_clock = $specified_time || should_use_clock($unit, $dort);
     my $result = format_result($out_date, $use_clock);
     my $formatted_input = format_input($input_date, $action, $unit, $out_num, $use_clock);
 

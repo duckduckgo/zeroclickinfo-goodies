@@ -29,7 +29,7 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 my @overjan = ('02 Feb 2012', '01 Jan 2012 + 32 days');
 my @first_sec = ('02 Jan 2012', '01 Jan 2012 + 1 day');
 
-set_fixed_time("2014-03-12T10:00:00");
+set_fixed_time("2014-01-12T10:00:00");
 
 ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     # 2012 Jan tests
@@ -39,22 +39,25 @@ ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     'January 1st 2012 plus 32 days' => build_test(@overjan),
     '32 days from January 1st 2012' => build_test(@overjan),
     # Relative (to today)
-    'date January 1st'         => build_test('01 Jan 2014', 'january 1st'),
-    '6 weeks ago'              => build_test('29 Jan 2014', '6 weeks ago'),
-    '2 weeks from today'       => build_test('26 Mar 2014', '12 Mar 2014 + 2 weeks'),
-    'in 3 weeks'               => build_test('02 Apr 2014', 'in 3 weeks'),
-    'date today'               => build_test('12 Mar 2014', 'today'),
+    'date January 1st'         => build_test('01 Jan 2014', 'January 1st'),
+    '6 weeks ago'              => build_test('01 Dec 2013', '6 weeks ago'),
+    '2 weeks from today'       => build_test('26 Jan 2014', '12 Jan 2014 + 2 weeks'),
+    'in 3 weeks'               => build_test('02 Feb 2014', 'in 3 weeks'),
+    'date today'               => build_test('12 Jan 2014', 'today'),
     'January 1st plus 32 days' => build_test('02 Feb 2014', '01 Jan 2014 + 32 days'),
-    '5 minutes from now'       => build_test('12 Mar 2014 06:05:00', '12 Mar 2014 06:00:00 + 5 minutes'),
-    'twelve seconds ago'       => build_test('12 Mar 2014 05:59:48', '12 Mar 2014 06:00:00 - 12 seconds'),
-    '01 Jan + 12 hours'        => build_test('01 Jan 2014 12:00:00', '01 Jan 2014 00:00:00 + 12 hours'),
-    'date today plus 24 hours' => build_test('13 Mar 2014 06:00:00', '12 Mar 2014 06:00:00 + 24 hours'),
+    '5 minutes from now'       => build_test('12 Jan 2014 05:05:00 EST', '12 Jan 2014 05:00:00 EST + 5 minutes'),
+    'twelve seconds ago'       => build_test('12 Jan 2014 04:59:48 EST', '12 Jan 2014 05:00:00 EST - 12 seconds'),
+    '01 Jan + 12 hours'        => build_test('01 Jan 2014 12:00:00 EST', '01 Jan 2014 00:00:00 EST + 12 hours'),
+    'date today plus 24 hours' => build_test('13 Jan 2014 05:00:00 EST', '12 Jan 2014 05:00:00 EST + 24 hours'),
     # time form
-    'time now' => build_test('12 Jan 2014 05:00:00 EST', 'now'),
+    'time now'        => build_test('12 Jan 2014 05:00:00 EST', 'now'),
     'time 3 days ago' => build_test('09 Jan 2014 05:00:00 EST', '3 days ago'),
+    # Specifying time
+    '01 Jan 2012 00:05:00 - 5 minutes'    => build_test('01 Jan 2012 00:00:00 EST', '01 Jan 2012 00:05:00 EST - 5 minutes'),
+    '03 Mar 2015 07:07:07 GMT + 12 hours' => build_test('03 Mar 2015 19:07:07 UTC', '03 Mar 2015 07:07:07 UTC + 12 hours'),
     # Misc
     '1 jan 2014 plus 2 weeks'     => build_test('15 Jan 2014', '01 Jan 2014 + 2 weeks'),
-    '2nd Jan 2013 - 3000 seconds' => build_test('01 Jan 2013 23:10:00', '02 Jan 2013 00:00:00 - 3,000 seconds'),
+    '2nd Jan 2013 - 3000 seconds' => build_test('01 Jan 2013 23:10:00 EST', '02 Jan 2013 00:00:00 EST - 3,000 seconds'),
     # / form
     '1/1/2012 plus 32 days'   => build_test(@overjan),
     '1/1/2012 plus 5 weeks'   => build_test('05 Feb 2012', '01 Jan 2012 + 5 weeks'),
@@ -65,7 +68,10 @@ ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     '1/1/2012 plus 1 days'    => build_test(@first_sec),
     '01/01/2012 + 1 day'      => build_test(@first_sec),
     '1/1/2012 minus ten days' => build_test('22 Dec 2011', '01 Jan 2012 - 10 days'),
-    '1/1/2012 + 1 second'     => build_test('01 Jan 2012 00:00:01', '01 Jan 2012 00:00:00 + 1 second'),
+    '1/1/2012 + 1 second'     => build_test('01 Jan 2012 00:00:01 EST', '01 Jan 2012 00:00:00 EST + 1 second'),
+    # Plurals
+    '3 days ago + 1 second'  => build_test('09 Jan 2014 05:00:01 EST', '09 Jan 2014 05:00:00 EST + 1 second'),
+    '3 days ago + 1 seconds' => build_test('09 Jan 2014 05:00:01 EST', '09 Jan 2014 05:00:00 EST + 1 second'),
     # Feb 29
     'Jan 1st 2012 + 59 days' => build_test('29 Feb 2012', '01 Jan 2012 + 59 days'),
     'Jan 1st 2013 + 59 days' => build_test('01 Mar 2013', '01 Jan 2013 + 59 days'),
