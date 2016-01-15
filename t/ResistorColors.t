@@ -35,7 +35,7 @@ sub get_structured_answer {
             name => 'Answer',
             meta => {
                 sourceName => "resisto.rs",
-                sourceUrl => "http://resisto.rs/" . $_[0]
+                sourceUrl => "http://resisto.rs/#" . $_[0]
             },
             data => '-ANY-',
             templates => {
