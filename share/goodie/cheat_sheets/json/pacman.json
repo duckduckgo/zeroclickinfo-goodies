@@ -12,7 +12,7 @@
         "Installing package groups",
         "Removing packages",
         "Upgrading packages",
-        "Querying database",
+        "Querying package databases",
         "Cleaning package cache",
         "Additional commands"
     ],
