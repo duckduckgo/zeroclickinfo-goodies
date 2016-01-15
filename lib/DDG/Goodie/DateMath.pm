@@ -11,14 +11,11 @@ use Lingua::EN::Numericalize;
 triggers any => qw(second minute hour day week month year);
 triggers any => qw(seconds minutes hours days weeks months years);
 triggers any => qw(plus minus + -);
-triggers any => qw(date);
+triggers any => qw(date time);
 
 zci is_cached => 1;
 zci answer_type => 'date_math';
 
-my $datestring_regex = datestring_regex();
-
-my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 
 sub get_duration {
     my ($number, $unit) = @_;
@@ -53,14 +50,15 @@ sub normalize_number {
 
 sub is_clock_unit {
     my $unit = shift;
-    return $unit =~ /hour|minute|second/i;
+    return $unit =~ /hour|minute|second/i if defined $unit;
+    return 0;
 }
 
-sub format_result {
-    my ($out_date, $unit) = @_;
-    my $clock_rep = $out_date->strftime("%T");
-    $out_date = date_output_string($out_date);
-    return "${out_date}@{[is_clock_unit($unit) ? ' ' . $clock_rep : '']}";
+sub should_use_clock {
+    my ($unit, $form) = @_;
+    return 1 if is_clock_unit($unit);
+    return $form =~ /time/i if defined $form;
+    return 0;
 }
 
 sub get_clock_time {
@@ -68,15 +66,36 @@ sub get_clock_time {
     return $date->strftime("%T");
 }
 
+sub format_result {
+    my ($out_date, $use_clock) = @_;
+    my $output_date = date_output_string($out_date, $use_clock);
+    return $output_date;
+}
+
+
 sub format_input {
-    my ($input_date, $action, $unit, $input_number) = @_;
-    my $in_date    = date_output_string($input_date);
-    $in_date = "$in_date @{[get_clock_time $input_date]}" if is_clock_unit $unit;
+    my ($input_date, $action, $unit, $input_number, $use_clock) = @_;
+    my $in_date    = date_output_string($input_date, $use_clock);
     my $out_action = "$action $input_number $unit";
     return "$in_date $out_action";
 }
 
+sub format_input_no_action {
+    my ($input_date, $use_clock) = @_;
+    my $in_date = date_output_string($input_date, $use_clock);
+    return $in_date;
+}
+
+sub format_result_no_action {
+    my ($out_date, $use_clock) = @_;
+    my $output_date = date_output_string($out_date, $use_clock);
+    return $output_date;
+}
+
 my $number_re = number_style_regex();
+my $datestring_regex = datestring_regex();
+
+my $units = qr/(?<unit>second|minute|hour|day|week|month|year)s?/i;
 
 my $relative_regex = qr/(?<number>$number_re|[a-z\s-]+)\s+$units/;
 
@@ -107,34 +126,38 @@ handle query_lc => sub {
     my $query = $_;
 
 
-    return unless $query =~ /^(?:date\s+)?($operation_re|$from_re|$ago_re)$/i;
+    return unless $query =~ /^(?:(?<dort>date|time)\s+)?($operation_re|$from_re|$ago_re)$/i;
 
-    if (!exists $+{'number'}) {
-        my $out_date = date_output_string(parse_datestring_to_date($+{'date'}));
-        return build_result($out_date, $+{date});
-    }
+    unless (defined $number) {
+        my $use_clock = should_use_clock undef, $dort;
+        my $out_date = parse_datestring_to_date($date);
+        my $in_date = parse_datestring_to_date($date);
+        my $formatted_input = format_input_no_action $in_date, $use_clock;
+        my $result = format_result_no_action $out_date, $use_clock or return;
+        return build_result($result, $date);
+    };
 
-    my $action = get_action_for $+{action} or return;
+    $action = get_action_for $action or return;
     my $input_date;
-    unless (defined $+{date}) {
+    unless (defined $date) {
         $input_date = parse_datestring_to_date("today");
     } else {
-        $input_date   = parse_datestring_to_date($+{date});
+        $input_date   = parse_datestring_to_date($date) or return;
     };
-    my $input_number = normalize_number $+{number};
+    my $input_number = normalize_number $number;
     my $style = number_style_for($input_number) or return;
     my $compute_num = $style->for_computation($input_number);
     my $out_num = $style->for_display($input_number);
-    my $unit = $+{unit};
 
     my $compute_number = $action eq '-' ? 0 - $compute_num : $compute_num;
 
     my $dur = get_duration $compute_number, $unit;
 
-    $unit .= 's' if $compute_num != 1;
+    $unit .= 's' if abs($compute_num) != 1;
     my $out_date = $input_date->clone->add_duration($dur);
-    my $result = format_result $out_date, $unit;
-    my $formatted_input = format_input $input_date, $action, $unit, $out_num;
+    my $use_clock = $specified_time || should_use_clock $unit, $dort;
+    my $result = format_result($out_date, $use_clock);
+    my $formatted_input = format_input($input_date, $action, $unit, $out_num, $use_clock);
 
     return build_result($result, $formatted_input);
 };

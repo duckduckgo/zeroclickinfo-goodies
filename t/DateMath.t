@@ -49,6 +49,9 @@ ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     'twelve seconds ago'       => build_test('12 Mar 2014 05:59:48', '12 Mar 2014 06:00:00 - 12 seconds'),
     '01 Jan + 12 hours'        => build_test('01 Jan 2014 12:00:00', '01 Jan 2014 00:00:00 + 12 hours'),
     'date today plus 24 hours' => build_test('13 Mar 2014 06:00:00', '12 Mar 2014 06:00:00 + 24 hours'),
+    # time form
+    'time now' => build_test('12 Jan 2014 05:00:00 EST', 'now'),
+    'time 3 days ago' => build_test('09 Jan 2014 05:00:00 EST', '3 days ago'),
     # Misc
     '1 jan 2014 plus 2 weeks'     => build_test('15 Jan 2014', '01 Jan 2014 + 2 weeks'),
     '2nd Jan 2013 - 3000 seconds' => build_test('01 Jan 2013 23:10:00', '02 Jan 2013 00:00:00 - 3,000 seconds'),
