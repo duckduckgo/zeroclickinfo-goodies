@@ -63,6 +63,9 @@ ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     '01/01/2012 + 1 day'      => build_test(@first_sec),
     '1/1/2012 minus ten days' => build_test('22 Dec 2011', '01 Jan 2012 - 10 days'),
     '1/1/2012 + 1 second'     => build_test('01 Jan 2012 00:00:01', '01 Jan 2012 00:00:00 + 1 second'),
+    # Feb 29
+    'Jan 1st 2012 + 59 days' => build_test('29 Feb 2012', '01 Jan 2012 + 59 days'),
+    'Jan 1st 2013 + 59 days' => build_test('01 Mar 2013', '01 Jan 2013 + 59 days'),
     # Should not trigger
     'yesterday'  => undef,
     'today'      => undef,
@@ -70,6 +73,7 @@ ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     'two months' => undef,
     '2 months'   => undef,
     '5 years'    => undef,
+    'time ago'   => undef,
 );
 
 done_testing;
