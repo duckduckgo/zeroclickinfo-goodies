@@ -46,7 +46,7 @@ my $relative_dates      = qr#
     now | today | tomorrow | yesterday |
     (?:(?:current|previous|next)\sday) |
     (?:next|last|this)\s(?:week|month|year) |
-    (?:in\s(?:a|[0-9]+)\s(?:day|week|month|year)[s]?)(?:\stime)? | 
+    (?:in\s(?:a|[0-9]+)\s(?:day|week|month|year)[s]?)(?:\stime)? |
     (?:(?:a|[0-9]+)\s(?:day|week|month|year)[s]?\sago)
 #ix;
 
@@ -419,12 +419,12 @@ sub parse_all_datestrings_to_date {
             return if $month > 12;    #there's a mish-mash of formats; give up
             $date = "$year-$month-$day";
         }
-        
+
         my $date_object = ($dates_to_return[0]
                             ? parse_datestring_to_date($date, $dates_to_return[0])
                             : parse_datestring_to_date($date)
                         );
-        
+
         return unless $date_object;
         push @dates_to_return, $date_object;
     }
@@ -538,7 +538,6 @@ sub date_output_string {
     my $string     = '';            # By default we've got nothing.
     # They didn't give us a DateTime object, let's try to make one from whatever we got.
     $dt = parse_datestring_to_date($dt) if (ref($dt) !~ /DateTime/);
-
     $string = $dt->strftime($date_format) if ($dt);
 
     return $string;
