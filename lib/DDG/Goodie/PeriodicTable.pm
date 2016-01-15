@@ -36,7 +36,7 @@ handle query_lc => sub {
 
     # Determine if this is a query for atomic mass or chemical name
     my $is_mass_query = $query =~ /atomic mass|atomic weight/;
-    my $is_name_query = $query =~ /name/;
+    my $is_number_query = $query =~ /atomic number|proton number/;
 
     # Strip out irrelevant words in the query
     $query =~ s/(?:atomic (?:mass|weight|number)|proton number|of|the|for|element|elemental|chemical symbol|what is|chemical name)//g;
@@ -48,18 +48,8 @@ handle query_lc => sub {
     my ( $atomic_number, $atomic_mass, $element_name, $element_symbol, $element_type ) = @{$match};
 
     # Default display
-    my $title = "Atomic number $atomic_number";
-    my $subtitle = "$element_name";
-    my $alt_subtitle = "Atomic mass $atomic_mass u";
+    my $title = "$element_name";
     my $raw = "$element_name ($element_symbol), atomic number $atomic_number, atomic mass $atomic_mass u";
-    if ($is_mass_query) {
-        $title = "Atomic mass $atomic_mass u";
-        $alt_subtitle = "Atomic number $atomic_number";
-    }
-    elsif ($is_name_query) {
-        $title = "$element_name";
-        $subtitle = "Atomic number $atomic_number";
-    }    
 
     # The text size of the icon needs to change depending on the length of the chemical symbol.
     my $badge_class = "";
@@ -74,8 +64,12 @@ handle query_lc => sub {
         data => {
             badge => $element_symbol,
             title => $title,
-            subtitle => $subtitle,
-            altSubtitle => $alt_subtitle,
+            subtitle => 'Chemical Element',
+            atomic_number => $atomic_number,
+            atomic_mass => $atomic_mass,
+            element_type => $element_type,
+            is_mass_query => $is_mass_query,
+            is_number_query => $is_number_query,
             url => "https://en.wikipedia.org/wiki/$element_name",
         },
         meta => {
@@ -94,6 +88,7 @@ handle query_lc => sub {
                 iconBadge => "medium"
             },           
             options => {
+                content => 'DDH.periodic_table.content',
                 moreAt => 1
             }
         }

@@ -16,9 +16,11 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Atomic mass 14.007 u",
-            "Nitrogen",
-            "Atomic number 7",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "1",
+            "",
             "green"
         )
     ),
@@ -28,9 +30,11 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Atomic mass 14.007 u",
-            "Nitrogen",
-            "Atomic number 7",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "1",
+            "",
             "green"
         )
     ),
@@ -40,9 +44,11 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Atomic mass 14.007 u",
-            "Nitrogen",
-            "Atomic number 7",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "1",
+            "",
             "green"
         )
     ),    
@@ -58,9 +64,11 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Atomic number 7",
-            "Nitrogen",
-            "Atomic mass 14.007 u",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "1",
             "green"
         )
     ),
@@ -69,9 +77,11 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Atomic number 7",
-            "Nitrogen",
-            "Atomic mass 14.007 u",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "1",
             "green"
         )
     ),    
@@ -81,9 +91,11 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Atomic number 7",
-            "Nitrogen",
-            "Atomic mass 14.007 u",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "1",
             "green"
         )
     ),     
@@ -98,9 +110,11 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Atomic number 7",
-            "Nitrogen",
-            "Atomic mass 14.007 u",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),  
@@ -110,9 +124,11 @@ ddg_goodie_test(
         make_structured_answer(
             "N",
             "Nitrogen",
-            "Atomic number 7",
-            "Nitrogen",
-            "Atomic mass 14.007 u",
+            "7",
+            "14.007",
+            "Diatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),  
@@ -126,9 +142,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Au",
             "Gold",
-            "Gold",
-            "Atomic number 79",
-            "Atomic mass 196.97 u",
+            "79",
+            "196.97",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ),  
@@ -138,9 +156,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Ag",
             "Silver",
-            "Silver",
-            "Atomic number 47",
-            "Atomic mass 107.87 u",
+            "47",
+            "107.87",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ),  
@@ -155,9 +175,11 @@ ddg_goodie_test(
         make_structured_answer(
             "O",
             "Oxygen",
-            "Atomic number 8",
-            "Oxygen",
-            "Atomic mass 15.999 u",
+            "8",
+            "15.999",
+            "Diatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),
@@ -167,9 +189,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Li",
             "Lithium",
-            "Atomic number 3",
-            "Lithium",
-            "Atomic mass 6.94 u",
+            "3",
+            "6.94",
+            "Alkali metal",
+            "",
+            "",
             "gold"
         )
     ),
@@ -179,9 +203,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Be",
             "Beryllium",
-            "Atomic number 4",
-            "Beryllium",
-            "Atomic mass 9.0122 u",
+            "4",
+            "9.0122",
+            "Alkaline earth metal",
+            "",
+            "",
             "gold"
         )
     ),
@@ -191,9 +217,11 @@ ddg_goodie_test(
         make_structured_answer(
             "La",
             "Lanthanum",
-            "Atomic number 57",
-            "Lanthanum",
-            "Atomic mass 138.91 u",
+            "57",
+            "138.91",
+            "Lanthanide",
+            "",
+            "",
             "red"
         )
     ),
@@ -203,9 +231,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Ac",
             "Actinium",
-            "Atomic number 89",
-            "Actinium",
-            "Atomic mass [227.03] u",
+            "89",
+            "[227.03]",
+            "Actinide",
+            "",
+            "",
             "red"
         )
     ), 
@@ -215,9 +245,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Sc",
             "Scandium",
-            "Atomic number 21",
-            "Scandium",
-            "Atomic mass 44.956 u",
+            "21",
+            "44.956",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ),
@@ -227,9 +259,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Al",
             "Aluminium",
-            "Atomic number 13",
-            "Aluminium",
-            "Atomic mass 26.982 u",
+            "13",
+            "26.982",
+            "Post-transition metal",
+            "",
+            "",
             "green"
         )
     ),
@@ -239,9 +273,11 @@ ddg_goodie_test(
         make_structured_answer(
             "B",
             "Boron",
-            "Atomic number 5",
-            "Boron",
-            "Atomic mass 10.81 u",
+            "5",
+            "10.81",
+            "Metalloid",
+            "",
+            "",
             "green"
         )
     ),
@@ -251,9 +287,11 @@ ddg_goodie_test(
         make_structured_answer(
             "C",
             "Carbon",
-            "Atomic number 6",
-            "Carbon",
-            "Atomic mass 12.011 u",
+            "6",
+            "12.011",
+            "Polyatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),
@@ -263,9 +301,11 @@ ddg_goodie_test(
         make_structured_answer(
             "He",
             "Helium",
-            "Atomic number 2",
-            "Helium",
-            "Atomic mass 4.0026 u",
+            "2",
+            "4.0026",
+            "Noble gas",
+            "",
+            "",
             "blue-light"
         )
     ),    
@@ -275,9 +315,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Mt",
             "Meitnerium",
-            "Atomic number 109",
-            "Meitnerium",
-            "Atomic mass [276.15] u",
+            "109",
+            "[276.15]",
+            "Unknown",
+            "",
+            "",
             "red"
         )
     ),  
@@ -288,9 +330,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Hg",
             "Mercury",
-            "Atomic number 80",
-            "Mercury",
-            "Atomic mass 200.59 u",
+            "80",
+            "200.59",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ), 
@@ -299,9 +343,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Hg",
             "Hydrargyrum",
-            "Atomic number 80",
-            "Hydrargyrum",
-            "Atomic mass 200.59 u",
+            "80",
+            "200.59",
+            "Transition metal",
+            "",
+            "",
             "red"
         )
     ), 
@@ -312,9 +358,11 @@ ddg_goodie_test(
         make_structured_answer(
             "O",
             "Oxygen",
-            "Atomic number 8",
-            "Oxygen",
-            "Atomic mass 15.999 u",
+            "8",
+            "15.999",
+            "Diatomic nonmetal",
+            "",
+            "",
             "green"
         )
     ),
@@ -323,9 +371,11 @@ ddg_goodie_test(
         make_structured_answer(
             "Li",
             "Lithium",
-            "Atomic number 3",
-            "Lithium",
-            "Atomic mass 6.94 u",
+            "3",
+            "6.94",
+            "Alkali metal",
+            "",
+            "",
             "gold"
         )
     ),
@@ -334,16 +384,18 @@ ddg_goodie_test(
         make_structured_answer(
             "Uuo",
             "Ununoctium",
-            "Atomic number 118",
-            "Ununoctium",
-            "Atomic mass [294] u",
+            "118",
+            "[294]",
+            "Unknown",
+            "",
+            "",
             "red"
         )
     ),    
 );
 
 sub make_structured_answer {
-    my ($badge, $element_name, $title, $subtitle, $alt_subtitle, $color) = @_;
+    my ($badge, $element_name, $atomic_number, $atomic_mass, $element_type,$is_mass_query, $is_number_query, $color) = @_;
 
     my $badge_class = "";
     my $symbol_length = length($badge);
@@ -355,9 +407,13 @@ sub make_structured_answer {
         name => "Periodic Table",
         data => {
             badge => $badge,
-            title => $title,
-            subtitle => $subtitle,
-            altSubtitle => $alt_subtitle,
+            title => $element_name,
+            subtitle => 'Chemical Element',
+            atomic_number => $atomic_number,
+            atomic_mass => $atomic_mass,
+            element_type => $element_type,
+            is_mass_query => $is_mass_query,
+            is_number_query => $is_number_query,
             url => "https://en.wikipedia.org/wiki/$element_name",
         },        
         meta => {
@@ -376,6 +432,7 @@ sub make_structured_answer {
                 iconBadge => "medium"
             },
             options => {
+                content => 'DDH.periodic_table.content',
                 moreAt => 1
             }
         }
