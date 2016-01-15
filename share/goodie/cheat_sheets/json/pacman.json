@@ -3,7 +3,7 @@
     "name": "Pacman",
     "description": "Package manager for Arch Linux",
     "metadata": {
-        "sourceName": "ArchWiki",
+        "sourceName": "Arch Linux",
         "sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
     },
     "template_type": "terminal",
