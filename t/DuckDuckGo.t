@@ -80,11 +80,11 @@ my @irc_result = (
         }
     });
 my @merch_result = (
-    'Looking for some swag? (Thanks for the support!) https://duck.co/help/community/swag',
+    'Looking for DuckDuckGo gear? (Thanks for the support!) https://duck.co/help/community/swag',
     structured_answer => {
         id => $id,
         data => {
-            title => 'Looking for some swag? (Thanks for the support!)',
+            title => 'Looking for DuckDuckGo gear? (Thanks for the support!)',
             subtitle_image => undef,
             subtitle_text => 'Check out the DuckDuckGo store for t-shirts, stickers, and other items',
             subtitle_url => 'https://duck.co/help/community/swag'
