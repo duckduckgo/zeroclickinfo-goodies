@@ -8,16 +8,16 @@
     },
     "template_type": "terminal",
     "section_order": [
-        "Installing specific packages",
-        "Installing package groups",
-        "Removing packages",
-        "Upgrading packages",
-        "Querying package databases",
-        "Cleaning package cache",
-        "Additional commands"
+        "Installing Specific Packages",
+        "Installing Package Groups",
+        "Removing Packages",
+        "Upgrading Packages",
+        "Querying Package Databases",
+        "Cleaning Package Cache",
+        "Additional Commands"
     ],
     "sections": {
-        "Installing specific packages": [
+        "Installing Specific Packages": [
             {
                 "val": "Install a single package",
                 "key": "pacman -S package_name1"
@@ -31,7 +31,7 @@
                 "key": "pacman -S $(pacman -Ssq package_regex)"
             }
         ],
-        "Installing package groups": [
+        "Installing Package Groups": [
             {
                 "val": "Install a group of packages",
                 "key": "pacman -S package_group_name"
@@ -41,7 +41,7 @@
                 "key": "pacman -Sg package_group_name"
             }
         ],
-        "Removing packages": [
+        "Removing Packages": [
             {
                 "val": "Remove a single package",
                 "key": "pacman -R package_name"
@@ -59,13 +59,13 @@
                 "key": "pacman -Rdd package_name"
             }
         ],
-        "Upgrading packages": [
+        "Upgrading Packages": [
             {
                 "val": "Synchronize the repository database and update all packages on the system",
                 "key": "pacman -Syu"
             }
         ],
-        "Querying package databases": [
+        "Querying Package Databases": [
             {
                 "val": "Search for packages in the database",
                 "key": "pacman -Ss string1 string2 ..."
@@ -107,13 +107,13 @@
                 "key": "pacman -Qet"
             }
         ],
-        "Cleaning package cache": [
+        "Cleaning Package Cache": [
             {
                 "val": "Remove all cached packages that are not currently installed",
                 "key": "pacman -Sc"
             }
         ],
-        "Additional commands": [
+        "Additional Commands": [
             {
                 "val": "Download a package without installing it",
                 "key": "pacman -Sw package_name"
