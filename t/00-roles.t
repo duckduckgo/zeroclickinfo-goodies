@@ -94,6 +94,12 @@ subtest 'Dates' => sub {
             'Sun Sep 7 20:11:44 BST 2014'  => 1410117104,
             # RFC 2822
             'Sat, 13 Mar 2010 11:29:05 -0800' => 1268508545,
+            # HTTP (without day) - any TZ
+            # %d %b %Y %H:%M:%S %Z
+            '01 Jan 2012 00:01:20 UTC' => 1325376080,
+            '22 Jun 1998 00:00:02 UTC' => 898473602,
+            '07 Sep 2014 20:11:44 BST' => 1410117104,
+            '09 Aug 2014 18:20:00'     => 1407608400,
             #Undefined/Natural formats:
             '13/12/2011'        => 1323734400,     #DMY
             '01/01/2001'        => 978307200,      #Ambiguous, but valid

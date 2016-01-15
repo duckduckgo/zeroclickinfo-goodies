@@ -326,6 +326,9 @@ sub build_datestring_regex {
     # HTTP: Sat, 09 Aug 2014 18:20:00
     push @regexes, qr#$short_day_of_week, [0-9]{2} $short_month $full_year $time_24h?#i;
 
+    # HTTP (without day) any TZ: 09 Aug 2014 18:20:00 UTC
+    push @regexes, qr#[0-9]{2} $short_month $full_year $time_24h(?: ?$tz_suffixes)?#i;
+
     # RFC850 08-Feb-94 14:15:29 GMT
     push @regexes, qr#[0-9]{2}-$short_month-(?:[0-9]{2}|$full_year) $time_24h?(?: ?$tz_suffixes)#i;
 
@@ -385,6 +388,7 @@ sub parse_formatted_datestring_to_date {
     $d =~ s/,//i;                                                                # Strip any random commas.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
     $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    # Switching Jun-01-2012 to 01 Jun 2012
+    $d =~ s/($tz_strings)$/$tz_offsets{$1}/i;                                    # Convert trailing timezones to actual offsets.
 
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
 
