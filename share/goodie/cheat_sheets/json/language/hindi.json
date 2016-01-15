@@ -1,40 +1,40 @@
 {
-	"id": "english_to_hindi",
+	"id": "hindi_cheat_sheet",
 	"name": "Hindi Cheat Sheet",
 	"description": "Basic hindi words and phrases",
 	"metadata": {
-		"sourceName": "Linguanau",
-		"sourceUrl": "http://www.linguanaut.com/english_hindi.htm"
+	"sourceName": "Linguanau",
+	"sourceUrl": "http://www.linguanaut.com/english_hindi.htm"
 	},
 
 	"aliases": [
-		"Hindi phrases", "english to hindi", "basic hindi phrases", "basic hindi", "useful hindi phrases"
+	"hindi phrases", "english to hindi", "basic hindi phrases", "basic hindi", "useful hindi phrases"
 	],
 	"template_type": "reference",
 	"section_order": [
-		"Basics",
-		"Getting Help",
-		"Travelling",
-		"Etiquette",
-		"Going out for dinner"
+	"Basics",
+	"Getting Help",
+    "Travelling",
+	"Etiquette",
+    "Going out for dinner"
 	],
 
 	"description": "Basic Hindi words and phrases",
 	"sections": {
-		"Etiquette": [{
-				"key": "Good morning",
-				"val": "सुप्रभात",
-				"trn": "Suprabhaat"
+	"Etiquette": [{
+                "key": "Good morning",
+	            "val": "सुप्रभात",
+                "trn": "Suprabhaat"
 			}, {
-				"key": "Good evening",
-				"val": "शुभ संध्या",
-				"trn": "Shubh sundhyaa"
+                "key": "Good evening",
+	            "val": "शुभ संध्या",
+	            "trn": "Shubh sundhyaa"           
 			}, {
 				"key": "Good night",
 				"val": "शुभ रात्री",
 				"trn": "Shubh raatri"
 			}, {
-				"key": "I'm sorry.",
+				"key": "I'm sorry",
 				"val": "मुझे अफसोस है",
 				"trn": "Mujhe afsos hai"
 			}, {
@@ -63,7 +63,7 @@
 				"val": "शुभकामनाएँ!",
 				"trn": "śubhkāmnāen!"
 			}, {
-				"key": "Nice to meet you (formal).",
+				"key": "Nice to meet you (formal)",
 				"val": "आपसे मिलकर बहुत खुशी हुई।",
 				"trn": "āpsē milkar bahut k͟hūśī huī"
 			}, {
@@ -93,10 +93,10 @@
 			"trn": "main rasta bhul gaya"
 		}, {
 			"key": "Stop! Thief!",
-			"val": "पुरुको ! चोर !",
+			"val": "रुको ! चोर !",
 			"trn": "rukho! chor!"
 		}, {
-			"key": "I need your help.",
+			"key": "I need your help",
 			"val": "मुझे अपकी सहायता चाहिये ।",
 			"trn": "mujhe āpki sahayta chahie"
 		}, {
@@ -104,7 +104,7 @@
 			"val": "हिंदी में \"X\" कैसे कह्ते हैं ?",
 			"trn": "hindi meṅ \"X\" kaise kahte haiṅ?"
 		}, {
-			"key": "I lost my bag.",
+			"key": "I lost my bag",
 			"val": "मेरा बैग गुम हो गया ।",
 			"trn": "mera bag alage ho gaya"
 		}, {
@@ -117,8 +117,8 @@
 			"trn": "phone kar sakta hoon main ?"
 		}, {
 			"key": "Please write it down",
-			"val": "कृपया यह मेरे लिए लिखें",
-			"trn": "kṛipayā yaha mere liye likheṅ"
+			"val": "कृपया इसे लिखिए",
+			"trn": "kṛipayā isse likheṅ"
 		}, {
 			"key": "Excuse me!",
 			"val": "ज़रा सुनिये!",
@@ -146,7 +146,7 @@
 			"val": "मैं ठीक हूँ।",
 			"trn": "maĩ ṭhīk hū̃"
 		}, {
-			"key": "OK/fine (colloq.)",
+			"key": "OK/fine (colloquialism)",
 			"val": "ठीक है",
 			"trn": "ṭhīk hai"
 		}, {
@@ -196,7 +196,7 @@
 				"val": "एक .... की टिकट दीजिये",
 				"trn": "Ek .... ki ticket dijiye"
 			}, {
-				"key": "How much does it cost to get to _____?",
+				"key": "How much does it cost to get to ....?",
 				"val": ".... जाने को कितना लगता है?",
 				"trn": ".... jaane ko kitnaa lagtaa hAI"
 			}, {
@@ -210,8 +210,8 @@
 		"Going out for dinner": [
 
 			{
-				"key": "A table for one person/two people, (please).",
-				"val": "एक/दो लोग/-ओं के लिये जगह चाहिये",
+				"key": "A table for one person/two people, (please)",
+				"val": "एक/दो लोग के लिये जगह चाहिये",
 				"trn": "ek/do log/-on ke liye jagah cāhiye"
 			}, {
 				"key": "Can I look at the menu, please?",
@@ -227,7 +227,7 @@
 				"trn": "ek dām ka khāna"
 			}, {
 				"key": "I want ....",
-				"val": "मु३ो .... चाहिये",
+				"val": "मुझे .... चाहिये",
 				"trn": "mujhe .... cāhiyei"
 			}, {
 				"key": "The check, please",
@@ -240,11 +240,8 @@
 			}, {
 				"key": "The check, please",
 				"val": "बिल/चेक लाइये",
-				"trn": "bil/cek lāiye"
+				"trn": "bil/chek lāiye"
 			}
-
-
 		]
-
 	}
 }
