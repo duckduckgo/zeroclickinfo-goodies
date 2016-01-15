@@ -4,6 +4,7 @@ package DDG::Goodie::DateMath;
 use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
+with 'DDG::GoodieRole::NumberStyler';
 use DateTime::Duration;
 use Lingua::EN::Numericalize;
 
@@ -75,7 +76,9 @@ sub format_input {
     return "$in_date $out_action";
 }
 
-my $relative_regex = qr/(?<number>\d+|[a-z\s-]+)\s+$units/;
+my $number_re = number_style_regex();
+
+my $relative_regex = qr/(?<number>$number_re|[a-z\s-]+)\s+$units/;
 
 my $action_re = qr/(?<action>plus|\+|\-|minus)/i;
 my $date_re = qr/(?<date>$datestring_regex)/;
@@ -119,16 +122,19 @@ handle query_lc => sub {
         $input_date   = parse_datestring_to_date($+{date});
     };
     my $input_number = normalize_number $+{number};
+    my $style = number_style_for($input_number) or return;
+    my $compute_num = $style->for_computation($input_number);
+    my $out_num = $style->for_display($input_number);
     my $unit = $+{unit};
 
-    my $number = $action eq '-' ? 0 - $input_number : $input_number;
+    my $compute_number = $action eq '-' ? 0 - $compute_num : $compute_num;
 
-    my $dur = get_duration $number, $unit;
+    my $dur = get_duration $compute_number, $unit;
 
-    $unit .= 's' if $input_number != 1;
+    $unit .= 's' if $compute_num != 1;
     my $out_date = $input_date->clone->add_duration($dur);
     my $result = format_result $out_date, $unit;
-    my $formatted_input = format_input $input_date, $action, $unit, $input_number;
+    my $formatted_input = format_input $input_date, $action, $unit, $out_num;
 
     return build_result($result, $formatted_input);
 };

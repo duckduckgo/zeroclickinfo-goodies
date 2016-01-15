@@ -50,7 +50,8 @@ ddg_goodie_test([ qw( DDG::Goodie::DateMath ) ],
     '01 Jan + 12 hours'        => build_test('01 Jan 2014 12:00:00', '01 Jan 2014 00:00:00 + 12 hours'),
     'date today plus 24 hours' => build_test('13 Mar 2014 06:00:00', '12 Mar 2014 06:00:00 + 24 hours'),
     # Misc
-    '1 jan 2014 plus 2 weeks' => build_test('15 Jan 2014', '01 Jan 2014 + 2 weeks'),
+    '1 jan 2014 plus 2 weeks'     => build_test('15 Jan 2014', '01 Jan 2014 + 2 weeks'),
+    '2nd Jan 2013 - 3000 seconds' => build_test('01 Jan 2013 23:10:00', '02 Jan 2013 00:00:00 - 3,000 seconds'),
     # / form
     '1/1/2012 plus 32 days'   => build_test(@overjan),
     '1/1/2012 plus 5 weeks'   => build_test('05 Feb 2012', '01 Jan 2012 + 5 weeks'),
