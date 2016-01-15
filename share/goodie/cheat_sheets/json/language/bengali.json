@@ -9,7 +9,7 @@
    "aliases": [
        "Bengali phrases", "english to bengali", "basic bengali phrases", "basic bengali"
    ],
-   "template_type": "reference",
+   "template_type": "language",
    "section_order" : [
       "Basics",
       "Getting Help",
@@ -59,7 +59,7 @@
             "key" : "You're welcome",
             "val" : "স্বাগতম",
             "trn" : "Shagotom"
-            
+
          },
          {
             "key" : "How are you?",
@@ -117,7 +117,7 @@
             "key" : "Excuse me!",
             "val" : "এই যে!",
             "trn" : "Ei Je"
-            
+
          },
          {
             "key" : "I need a doctor!",
@@ -222,7 +222,7 @@
             "key" : "Please stop here.",
             "val" : "এখানে থামুন।",
             "trn" : "Ekhane Thamun"
-            
+
          },
          {
             "key" : "Turn right.",

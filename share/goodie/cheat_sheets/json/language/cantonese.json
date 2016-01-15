@@ -1,11 +1,11 @@
 {
-    "id": "cantonese_cheat_sheet", 
+    "id": "cantonese_cheat_sheet",
 
     "name": "Cantonese Cheat Sheet",
 
-    "description": "Basic Cantonese words and phrases", 
-    
-    "metadata": { 
+    "description": "Basic Cantonese words and phrases",
+
+    "metadata": {
         "sourceName": "Linguanaut",
         "sourceUrl": "http://www.linguanaut.com/english_cantonese.htm"
     },
@@ -14,7 +14,7 @@
         "cantonese words", "cantonese phrases", "basic cantonese words", "basic cantonese phrases", "basic cantonese"
     ],
 
-    "template_type": "reference",
+    "template_type": "language",
 
     "section_order" : [
       "Basics",
