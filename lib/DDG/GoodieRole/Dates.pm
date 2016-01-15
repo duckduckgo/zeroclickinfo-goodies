@@ -388,10 +388,13 @@ sub parse_formatted_datestring_to_date {
     $d =~ s/,//i;                                                                # Strip any random commas.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
     $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    # Switching Jun-01-2012 to 01 Jun 2012
-    $d =~ s/($tz_strings)$/$tz_offsets{$1}/i;                                    # Convert trailing timezones to actual offsets.
+    $d =~ s/(?<tz>$tz_strings)$/$tz_offsets{$1}/i;                               # Convert trailing timezones to actual offsets.
 
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
     if (ref $maybe_date_object eq 'DateTime') {
+        if (exists $+{tz}) {
+            $maybe_date_object->set_time_zone($+{tz});
+        }
         if ($maybe_date_object->strftime('%Z') eq 'floating') {
             $maybe_date_object->set_time_zone(_get_timezone());
         };
@@ -527,14 +530,16 @@ sub _util_add_unit {
 # Takes a DateTime object (or a string which can be parsed into one)
 # and returns a standard formatted output string or an empty string if it cannot be parsed.
 sub date_output_string {
-    my $dt = shift;
+    my ($dt, $use_clock) = @_;
 
     my $ddg_format = "%d %b %Y";    # Just here to make it easy to see.
+    my $ddg_clock_format = "%d %b %Y %T %Z"; # 01 Jan 2012 00:00:00 UTC (HTTP without day)
+    my $date_format = $use_clock ? $ddg_clock_format : $ddg_format;
     my $string     = '';            # By default we've got nothing.
     # They didn't give us a DateTime object, let's try to make one from whatever we got.
     $dt = parse_datestring_to_date($dt) if (ref($dt) !~ /DateTime/);
 
-    $string = $dt->strftime($ddg_format) if ($dt);
+    $string = $dt->strftime($date_format) if ($dt);
 
     return $string;
 }
