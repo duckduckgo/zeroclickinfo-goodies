@@ -202,6 +202,16 @@ Required Options: C<prefix_command> I<or> C<command>.
 
 Optional Options: C<primary>.
 
+=item C<postfix imperative>
+
+Form: B<"PRIMARY POSTFIX_COMMAND">
+
+Required Groups: C<postfix>, C<imperative>.
+
+Required Options: C<postfix_command> I<or> C<command>.
+
+Optional Options: C<primary>.
+
 =back
 
 =head2 Groups

@@ -57,6 +57,12 @@ new_modifier 'prefix imperative' => {
     required_options => [['prefix_command', 'command']],
     action => \&prefix_imperative,
 };
+new_modifier 'postfix imperative' => {
+    required_groups => [['postfix', 'imperative']],
+    optional_options => { primary => qr/.+/ },
+    required_options => [['postfix_command', 'command']],
+    action => \&postfix_imperative,
+};
 
 # Various ways of saying "How would I say";
 my $how_forms = qr/(?:how (?:(?:do|would) (?:you|I))|to)/i;
@@ -105,6 +111,12 @@ sub prefix_imperative {
     my $command = $options->{prefix_command};
     my $primary = $options->{primary};
     $matcher->_add_re(qr/$command (?<primary>$primary)/);
+}
+sub postfix_imperative {
+    my ($options, $matcher) = @_;
+    my $command = $options->{postfix_command};
+    my $primary = $options->{primary};
+    $matcher->_add_re(qr/(?<primary>$primary) $command/);
 }
 
 use List::MoreUtils qw(all any uniq);
