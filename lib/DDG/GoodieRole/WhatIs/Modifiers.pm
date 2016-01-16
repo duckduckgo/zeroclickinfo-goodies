@@ -45,17 +45,30 @@ new_modifier 'meaning' => {
     optional_options => { primary => qr/.+/ },
     action => \&meaning,
 };
+new_modifier 'base conversion' => {
+    required_groups => [['conversion']],
+    optional_options => { primary => qr/.+/ },
+    required_options => ['to'],
+    action => \&base_conversion,
+};
 
 # Various ways of saying "How would I say";
 my $how_forms = qr/(?:how (?:(?:do|would) (?:you|I))|to)/i;
-my $spoken_forms = qr/(?:$how_forms say)/i;
-my $written_forms = qr/(?:$how_forms write)/i;
+my $spoken_forms = qr/(?:$how_forms say) /i;
+my $written_forms = qr/(?:$how_forms write) /i;
 
 sub _in_re {
     my ($options, $re) = @_;
     my $to = $options->{to};
     my $constraint = $options->{primary} // qr/.+/;
-    return qr/$re (?<primary>$constraint) in $to/i;
+    return qr/$re(?<primary>$constraint) in $to/i;
+}
+
+sub _to_re {
+    my ($options, $re) = @_;
+    my $to = $options->{to};
+    my $constraint = $options->{primary} // qr/.+/;
+    return qr/$re(?<primary>$constraint) to $to/i;
 }
 
 sub written_translation {
@@ -68,13 +81,18 @@ sub spoken_translation {
 }
 sub whatis_translation {
     my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, qr/what is/i));
+    $matcher->_add_re(_in_re($options, qr/what is /i));
 }
 sub meaning {
     my ($options, $matcher) = @_;
     my $primary = qr/(?<primary>@{[$options->{primary}]})/;
     my $re = qr/what (?:is the meaning of $primary|does $primary mean)/i;
     $matcher->_add_re($re);
+}
+sub base_conversion {
+    my ($options, $matcher) = @_;
+    $matcher->_add_re(_to_re($options, qr//));
+    $matcher->_add_re(_in_re($options, qr//));
 }
 
 use List::MoreUtils qw(all any uniq);

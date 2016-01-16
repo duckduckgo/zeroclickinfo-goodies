@@ -182,6 +182,16 @@ Required Options: I<None>.
 
 Optional Options: C<primary>.
 
+=item C<base conversion>
+
+Form: B<"PRIMARY in TO">
+
+Required Groups: C<conversion>.
+
+Required Options: C<to>.
+
+Optional Options: C<primary>.
+
 =back
 
 =head2 Groups
