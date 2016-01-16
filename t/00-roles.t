@@ -613,6 +613,7 @@ subtest 'ImageLoader' => sub {
     };
 };
 
+my %wi_valid_queries = ();
 subtest 'WhatIs' => sub {
 
     { package WhatIsTester; use Moo; with 'DDG::GoodieRole::WhatIs'; 1; }
@@ -620,37 +621,6 @@ subtest 'WhatIs' => sub {
     subtest 'Initialization' => sub {
         new_ok('WhatIsTester', [], 'Applied to a class');
     };
-
-    sub basic_valid_tos {
-        my $name = shift;
-        return (
-            "What is foo in $name?"   => 'foo',
-            "what is bar in $name"    => 'bar',
-            "What is $name in $name?" => "$name",
-        );
-    }
-
-    sub spoken_valid_tos {
-        my $name = shift;
-        return (
-            "How do I say foo in $name?" => 'foo',
-            "How would I say bar in $name" => 'bar',
-            "how to say baz in $name" => 'baz',
-            "How would you say bribble in $name" => 'bribble',
-            "How to say so much testing! in $name" => 'so much testing!',
-        );
-    }
-
-    sub written_valid_tos {
-        my $name = shift;
-        return (
-            "How do I write foo in $name?" => 'foo',
-            "How would I write bar in $name" => 'bar',
-            "how to write baz in $name" => 'baz',
-            "How would you write bribble in $name" => 'bribble',
-            "How to write so much testing! in $name" => 'so much testing!',
-        );
-    }
 
     sub build_value_test {
         my ($trans, $expecting_value, %forms) = @_;
@@ -663,156 +633,156 @@ subtest 'WhatIs' => sub {
         };
     }
 
-    sub wi_with_test {
-        my $options = shift;
-        my $trans = WhatIsTester::wi_custom($options);
-        isa_ok($trans, 'DDG::GoodieRole::WhatIs::Base', 'wi_custom');
-        return $trans;
+    sub entry_builder {
+        my $func = shift;
+        return sub {
+            my $options = shift;
+            no strict 'refs';
+            my $f = \&{"WhatIsTester::$func"};
+            my $wi = $f->($options);
+            isa_ok($wi, 'DDG::GoodieRole::WhatIs::Base', "$func");
+            return $wi;
+        };
     }
-    sub get_trans_with_test {
-        my $options = shift;
-        my $trans = WhatIsTester::wi_translation($options);
-        isa_ok($trans, 'DDG::GoodieRole::WhatIs::Base', 'wi_translation');
-        return $trans;
+    sub wi_with_test { entry_builder('wi_custom')->(@_) };
+    sub get_trans_with_test { entry_builder('wi_translation')->(@_) };
+
+    sub add_valid_queries {
+        my ($name, %queries) = @_;
+        $wi_valid_queries{$name} = \%queries;
     }
 
-    subtest 'Translations' => sub {
-        subtest 'No Groups' => sub {
-            my $trans = get_trans_with_test {
-                options => { to => 'Goatee' },
+    sub modifier_test {
+        my $testf = shift;
+        my %wi_options = (
+            to => 'Goatee',
+            primary => qr/[10]{4} ?[10]{4}/,
+            command => qr/lower ?case|lc/i,
+            postfix_command => qr/lowercased/i,
+        );
+        return sub {
+            my %options = @_;
+            my @use_options = @{$options{'use_options'} or []};
+            my $use_groups = $options{'use_groups'};
+            my @modifiers = @{$options{'modifiers'}};
+            my %valid_queries;
+            foreach my $modifier (@modifiers) {
+                %valid_queries = (%valid_queries, %{$wi_valid_queries{$modifier}});
             };
-            subtest 'Valid Queries' => build_value_test($trans, 1, basic_valid_tos('Goatee'));
-            subtest 'Invalid Queries' => build_value_test($trans, 0, spoken_valid_tos('Goatee'));
-        };
-        subtest 'Spoken' => sub {
-            my $trans = get_trans_with_test {
-                options => { to => 'Lingo' },
-                groups  => ['spoken'],
+            my %wi_opts;
+            @wi_opts{@use_options} = @wi_options{@use_options};
+            my $wi = $testf->({
+                groups => $use_groups,
+                options => \%wi_opts,
+            });
+            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
+            my %invalid_queries = %{$options{'invalid_queries'} or return};
+            foreach my $invalid (keys %wi_valid_queries) {
+                next if grep { $_ eq $invalid } @modifiers;
+                %invalid_queries = (%invalid_queries, %{$wi_valid_queries{$invalid}});
             };
-            my %valid_tos = (basic_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
-            subtest 'Valid Queries' => build_value_test($trans, 1, %valid_tos);
-            my %invalid_tos = ('How to say foo', 'What is Lingo');
-            subtest 'Invalid Queries' => build_value_test($trans, 0, %invalid_tos);
+            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
         };
-        subtest 'Written' => sub {
-            my $trans = get_trans_with_test {
-                options => { to => 'Lingo'},
-                groups  => ['written'],
-            };
-            my %valid_tos = (basic_valid_tos('Lingo'), written_valid_tos('Lingo'));
-            subtest 'Valid Queries' => build_value_test($trans, 1, %valid_tos);
-            my %invalid_tos = ('How to say foo', 'What is Lingo', spoken_valid_tos('Lingo'));
-            subtest 'Invalid Queries' => build_value_test($trans, 0, %invalid_tos);
-        };
-        subtest 'Written and Spoken' => sub {
-            my $trans = get_trans_with_test {
-                options => { to => 'Lingo' },
-                groups  => ['written', 'spoken'],
-            };
-            my %valid_tos = (basic_valid_tos('Lingo'), written_valid_tos('Lingo'), spoken_valid_tos('Lingo'));
-            subtest 'Valid Queries' => build_value_test($trans, 1, %valid_tos);
-            my %invalid_tos = ('How to say foo', 'What is Lingo');
-            subtest 'Invalid Queries' => build_value_test($trans, 0, %invalid_tos);
-        };
-        subtest 'Primary Constraint' => sub {
-            my $trans = get_trans_with_test {
-                options => {
-                    primary => qr/\d+/,
-                    to      => 'Binary',
-                },
-            };
-            my %valid_tos = (
-                'What is 11 in Binary?' => '11',
-                'what is 573 in binary' => '573',
-            );
-            my %invalid_tos = (
-                'what is five in binary?' => 'five',
-                'What is hello in Binary' => 'hello',
-            );
-            subtest 'Valid Queries' => build_value_test($trans, 1, %valid_tos);
-            subtest 'Invalid Queries' => build_value_test($trans, 0, %invalid_tos);
-        };
-    };
+    }
+    sub test_custom { modifier_test(\&wi_with_test)->(@_) };
+    sub test_translation { modifier_test(\&get_trans_with_test)->(@_) };
 
-    subtest 'Custom' => sub {
-        subtest 'Meaning' => sub {
-            my $wi = wi_with_test {
-                groups => ['meaning'],
-            };
-            my %valid_queries = (
-                'What is the meaning of bar' => 'bar',
-                'What does foobar mean?' => 'foobar',
-            );
-            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
-            my %invalid_queries = (
-                'What means foobar?' => '?',
-                'How do I baz' => '?',
-            );
-            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
-        };
-        subtest 'Base Conversion' => sub {
-            my $wi = wi_with_test {
-                groups => ['conversion'],
-                options => {
-                    to => qr/ascii/i,
-                    primary => qr/[10]{4} ?[10]{4}/,
-                },
-            };
-            my %valid_queries = (
-                '1011 0101 in ascii' => '1011 0101',
-                '11111111 to ASCII' => '11111111',
-            );
-            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
-            my %invalid_queries = (
-                'ascii 1011 1011' => '?',
-                '100 in ascii' => '?',
-            );
-            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
-        };
-        subtest 'Prefix Imperative' => sub {
-            my $wi = wi_with_test {
-                groups => ['prefix', 'imperative'],
-                options => {
-                    command => qr/lower ?case|lc/i,
-                },
-            };
-            my %valid_queries = (
-                'lowercase FOO' => 'FOO',
-                'lc bar' => 'bar',
-                'loWer case baz' => 'baz',
-            );
-            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
-            my %invalid_queries = (
-                'uppercase FOO' => '?',
-                'lowercased FOO' => '?',
-            );
-            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
-        };
-        subtest 'Postfix + Prefix Imperative' => sub {
-            my $wi = wi_with_test {
-                groups => ['postfix', 'prefix', 'imperative'],
-                options => {
-                    command => qr/lower ?case|lc/i,
-                    postfix_command => qr/lower ?cased/i,
-                },
-            };
-            my %valid_queries = (
-                'lowercase FOO' => 'FOO',
-                'lc bar' => 'bar',
-                'loWer case baz' => 'baz',
-                'FriBble lowercased' => 'FriBble',
-            );
-            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
-            my %invalid_queries = (
-                'uppercase FOO' => '?',
-                'lowercased FOO' => '?',
-                'flerb uppercased' => '?',
-                'uhto lowercase' => '?',
-            );
-            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
-        };
-    };
+    add_valid_queries 'what is conversion' => (
+        "What is foo in Goatee?"    => 'foo',
+        "what is bar in Goatee"     => 'bar',
+        "What is Goatee in Goatee?" => "Goatee",
+    );
+    add_valid_queries 'spoken translation' => (
+        "How do I say foo in Goatee?"           => 'foo',
+        "How would I say bar in Goatee"         => 'bar',
+        "how to say baz in Goatee"              => 'baz',
+        "How would you say bribble in Goatee"   => 'bribble',
+        "How to say so much testing! in Goatee" => 'so much testing!',
+    );
+    add_valid_queries 'written translation' => (
+        "How do I write foo in Goatee?"           => 'foo',
+        "How would I write bar in Goatee"         => 'bar',
+        "how to write baz in Goatee"              => 'baz',
+        "How would you write bribble in Goatee"   => 'bribble',
+        "How to write so much testing! in Goatee" => 'so much testing!',
+    );
+    add_valid_queries 'prefix imperative' => (
+        'lowercase FOO'  => 'FOO',
+        'lc bar'         => 'bar',
+        'loWer case baz' => 'baz',
+    );
+    add_valid_queries 'meaning' => (
+        'What is the meaning of bar' => 'bar',
+        'What does foobar mean?'     => 'foobar',
+    );
+    add_valid_queries 'base conversion' => (
+        '1011 0101 in Goatee' => '1011 0101',
+        '11111111 to Goatee'  => '11111111',
+    );
+    add_valid_queries 'postfix imperative' => (
+        'FriBble lowercased' => 'FriBble',
+    );
 
+    sub hash_tester {
+        my $hashf = shift;
+        return sub {
+            my %tests = @_;
+            return sub {
+                while (my ($test_name, $params) = each %tests) {
+                    subtest $test_name => sub { $hashf->(%{$params}) };
+                };
+            };
+        };
+    }
+
+    sub wi_translation_tests { hash_tester(\&test_translation)->(@_) }
+
+    subtest 'Translations' => wi_translation_tests(
+        'What is conversion' => {
+            use_options => ['to'],
+            modifiers => ['what is conversion'],
+        },
+        'Spoken' => {
+            use_options => ['to'],
+            use_groups => ['spoken'],
+            modifiers => ['spoken translation', 'what is conversion'],
+        },
+        'Written' => {
+            use_options => ['to'],
+            use_groups => ['written'],
+            modifiers => ['written translation', 'what is conversion'],
+        },
+        'Written and Spoken' => {
+            use_options => ['to'],
+            use_groups => ['written', 'spoken'],
+            modifiers => ['spoken translation',
+                          'written translation',
+                          'what is conversion'],
+        },
+    );
+    sub wi_custom_tests { hash_tester(\&test_custom)->(@_) }
+
+    subtest 'Custom' => wi_custom_tests(
+        'Meaning' => {
+            use_groups => ['meaning'],
+            modifiers => ['meaning'],
+        },
+        'Base Conversion' => {
+            use_options => ['to', 'primary'],
+            use_groups => ['conversion'],
+            modifiers => ['base conversion'],
+        },
+        'Prefix Imperative' => {
+            use_options => ['command'],
+            use_groups => ['prefix', 'imperative'],
+            modifiers => ['prefix imperative'],
+        },
+        'Postfix + Prefix Imperative' => {
+            use_options => ['command', 'postfix_command'],
+            use_groups => ['postfix', 'prefix', 'imperative'],
+            modifiers => ['prefix imperative', 'postfix imperative'],
+        },
+    );
 };
 
 done_testing;
