@@ -3,9 +3,9 @@
     "name": "VimL",
     "description": "Explanation of commonly used VimL methods",
     "metadata": {
-		"sourceName": "Sourceforge",
-		"sourceUrl": "http://vimdoc.sourceforge.net/htmldoc/usr_41.html"
-	},
+        "sourceName": "Sourceforge",
+        "sourceUrl": "http://vimdoc.sourceforge.net/htmldoc/usr_41.html"
+    },
     "aliases": [
         "vim language", "vim scripting", "vim script"
     ],
