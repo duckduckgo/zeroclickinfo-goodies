@@ -769,6 +769,25 @@ subtest 'WhatIs' => sub {
             );
             subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
         };
+        subtest 'Prefix Imperative' => sub {
+            my $wi = wi_with_test {
+                groups => ['imperative'],
+                options => {
+                    command => qr/lower ?case|lc/i,
+                },
+            };
+            my %valid_queries = (
+                'lowercase FOO' => 'FOO',
+                'lc bar' => 'bar',
+                'loWer case baz' => 'baz',
+            );
+            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
+            my %invalid_queries = (
+                'uppercase FOO' => '?',
+                'lowercased FOO' => '?',
+            );
+            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
+        };
     };
 
 };

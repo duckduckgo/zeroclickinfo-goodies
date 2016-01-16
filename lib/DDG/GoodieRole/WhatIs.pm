@@ -192,6 +192,16 @@ Required Options: C<to>.
 
 Optional Options: C<primary>.
 
+=item C<prefix imperative>
+
+Form: B<"COMMAND PRIMARY">
+
+Required Groups: C<imperative>.
+
+Required Options: C<command>.
+
+Optional Options: C<primary>.
+
 =back
 
 =head2 Groups
