@@ -80,18 +80,6 @@ sub format_input {
     return "$in_date $out_action";
 }
 
-sub format_input_no_action {
-    my ($input_date, $use_clock) = @_;
-    my $in_date = date_output_string($input_date, $use_clock);
-    return $in_date;
-}
-
-sub format_result_no_action {
-    my ($out_date, $use_clock) = @_;
-    my $output_date = date_output_string($out_date, $use_clock);
-    return $output_date;
-}
-
 my $number_re = number_style_regex();
 my $datestring_regex = datestring_regex();
 
@@ -130,12 +118,11 @@ sub get_result_relative {
     return unless $date =~ $relative_dates;
     my $use_clock = $specified_time || should_use_clock undef, $dort;
     my $parsed_date = parse_datestring_to_date($date);
-    my $formatted_input = format_input_no_action $parsed_date, $use_clock;
-    my $result = format_result_no_action $parsed_date, $use_clock or return;
-    return build_result($result, $date);
+    my $result = format_result $parsed_date, $use_clock or return;
+    return build_result($result, ucfirst $date);
 }
 
-handle query => sub {
+handle query_lc => sub {
     my $query = $_;
 
 

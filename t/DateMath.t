@@ -57,15 +57,15 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     # Relative (to today)
     '6 weeks ago'              => build_test('01 Dec 2013', '6 weeks ago'),
     '2 weeks from today'       => build_test('26 Jan 2014', '12 Jan 2014 + 2 weeks'),
-    'in 3 weeks'               => build_test('02 Feb 2014', 'in 3 weeks'),
-    'date today'               => build_test('12 Jan 2014', 'today'),
+    'in 3 weeks'               => build_test('02 Feb 2014', 'In 3 weeks'),
+    'date today'               => build_test('12 Jan 2014', 'Today'),
     'January 1st plus 32 days' => build_test('02 Feb 2014', '01 Jan 2014 + 32 days'),
     '5 minutes from now'       => build_test('12 Jan 2014 15:35:00 IST', '12 Jan 2014 15:30:00 IST + 5 minutes'),
     'twelve seconds ago'       => build_test('12 Jan 2014 15:29:48 IST', '12 Jan 2014 15:30:00 IST - 12 seconds'),
     '01 Jan + 12 hours'        => build_test('01 Jan 2014 12:00:00 IST', '01 Jan 2014 00:00:00 IST + 12 hours'),
     'date today plus 24 hours' => build_test('13 Jan 2014 15:30:00 IST', '12 Jan 2014 15:30:00 IST + 24 hours'),
     # time form
-    'time now'        => build_test('12 Jan 2014 15:30:00 IST', 'now'),
+    'time now'        => build_test('12 Jan 2014 15:30:00 IST', 'Now'),
     'time 3 days ago' => build_test('09 Jan 2014 15:30:00 IST', '3 days ago'),
     # Specifying time
     '01 Jan 2012 00:05:00 - 5 minutes'    => build_test('01 Jan 2012 00:00:00 IST', '01 Jan 2012 00:05:00 IST - 5 minutes'),
@@ -90,6 +90,9 @@ location_test([ qw( DDG::Goodie::DateMath ) ],
     # Feb 29
     'Jan 1st 2012 + 59 days' => build_test('29 Feb 2012', '01 Jan 2012 + 59 days'),
     'Jan 1st 2013 + 59 days' => build_test('01 Mar 2013', '01 Jan 2013 + 59 days'),
+    # Casing
+    '3 Years Ago'          => build_test('12 Jan 2011', '3 years ago'),
+    'Time Now + 3 Minutes' => build_test('12 Jan 2014 15:33:00 IST', '12 Jan 2014 15:30:00 IST + 3 minutes'),
     # Specified relative
     'date 21st Jan'     => undef,
     'date January 1st'  => undef,
