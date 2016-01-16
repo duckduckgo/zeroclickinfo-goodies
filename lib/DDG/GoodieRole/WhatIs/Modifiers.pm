@@ -51,6 +51,12 @@ new_modifier 'base conversion' => {
     required_options => ['to'],
     action => \&base_conversion,
 };
+new_modifier 'prefix imperative' => {
+    required_groups => [['imperative']],
+    optional_options => { primary => qr/.+/ },
+    required_options => ['command'],
+    action => \&prefix_imperative,
+};
 
 # Various ways of saying "How would I say";
 my $how_forms = qr/(?:how (?:(?:do|would) (?:you|I))|to)/i;
@@ -93,6 +99,12 @@ sub base_conversion {
     my ($options, $matcher) = @_;
     $matcher->_add_re(_to_re($options, qr//));
     $matcher->_add_re(_in_re($options, qr//));
+}
+sub prefix_imperative {
+    my ($options, $matcher) = @_;
+    my $command = $options->{command};
+    my $primary = $options->{primary};
+    $matcher->_add_re(qr/$command (?<primary>$primary)/);
 }
 
 use List::MoreUtils qw(all any uniq);
