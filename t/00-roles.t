@@ -788,6 +788,29 @@ subtest 'WhatIs' => sub {
             );
             subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
         };
+        subtest 'Postfix + Prefix Imperative' => sub {
+            my $wi = wi_with_test {
+                groups => ['postfix', 'prefix', 'imperative'],
+                options => {
+                    command => qr/lower ?case|lc/i,
+                    postfix_command => qr/lower ?cased/i,
+                },
+            };
+            my %valid_queries = (
+                'lowercase FOO' => 'FOO',
+                'lc bar' => 'bar',
+                'loWer case baz' => 'baz',
+                'FriBble lowercased' => 'FriBble',
+            );
+            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
+            my %invalid_queries = (
+                'uppercase FOO' => '?',
+                'lowercased FOO' => '?',
+                'flerb uppercased' => '?',
+                'uhto lowercase' => '?',
+            );
+            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
+        };
     };
 
 };
