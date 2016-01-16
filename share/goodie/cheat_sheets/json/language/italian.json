@@ -138,43 +138,43 @@
 +      ],
 +      "Travelling" : [
 +         {
-+            "val" : "Zavii na lyavo.",
++            "val" : "Gira a sinistra.",
 +            "key" : "Turn left."
 +         },
 +         {
-+            "val" : "Kade e izhoda?",
++            "val" : "Dov'è l'uscita?",
 +            "key" : "Where is the exit?"
 +         },
 +         {
-+            "val" : "Kade?",
++            "val" : "Dove?",
 +            "key" : "Where?"
 +         },
 +         {
-+            "val" : "Dalech li e?",
++            "val" : "É distante?",
 +            "key" : "Is it far?"
 +         },
 +         {
-+            "val" : "Varvi pravo napred.",
++            "val" : "Prosegui dritto.",
 +            "key" : "Go straight ahead."
 +         },
 +         {
-+            "val" : "Imate li karta na grada?",
++            "val" : "Hai una cartina della mappa?",
 +            "key" : "Do you have a city map?"
 +         },
 +         {
-+            "val" : "Molya sprete tuk.",
++            "val" : "Fermati qui per favore.",
 +            "key" : "Stop here please."
 +         },
 +         {
-+            "val" : "Zavii na dyasno.",
++            "val" : "Gira a destra.",
 +            "key" : "Turn right."
 +         },
 +         {
-+            "val" : "Kade moga da namerya taxi?",
++            "val" : "Dove posso trovare dei taxi?",
 +            "key" : "Where can I find the taxis?"
 +         },
 +         {
-+            "val" : "Kak moga da vikna taxi?",
++            "val" : "Come posso prendere un taxi?",
 +            "key" : "How can I get a taxi?"
 +         }
 +      ],
