@@ -194,11 +194,11 @@ Optional Options: C<primary>.
 
 =item C<prefix imperative>
 
-Form: B<"COMMAND PRIMARY">
+Form: B<"PREFIX_COMMAND PRIMARY">
 
-Required Groups: C<imperative>.
+Required Groups: C<prefix>, C<imperative>.
 
-Required Options: C<command>.
+Required Options: C<prefix_command> I<or> C<command>.
 
 Optional Options: C<primary>.
 

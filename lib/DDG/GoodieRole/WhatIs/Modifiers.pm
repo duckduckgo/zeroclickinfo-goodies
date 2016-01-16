@@ -52,9 +52,9 @@ new_modifier 'base conversion' => {
     action => \&base_conversion,
 };
 new_modifier 'prefix imperative' => {
-    required_groups => [['imperative']],
+    required_groups => [['prefix', 'imperative']],
     optional_options => { primary => qr/.+/ },
-    required_options => ['command'],
+    required_options => [['prefix_command', 'command']],
     action => \&prefix_imperative,
 };
 
@@ -102,7 +102,7 @@ sub base_conversion {
 }
 sub prefix_imperative {
     my ($options, $matcher) = @_;
-    my $command = $options->{command};
+    my $command = $options->{prefix_command};
     my $primary = $options->{primary};
     $matcher->_add_re(qr/$command (?<primary>$primary)/);
 }
