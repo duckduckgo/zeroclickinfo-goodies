@@ -54,59 +54,59 @@
 +      ],
 +      "Getting Help" : [
 +         {
-+            "val" : "Viknete Policya!",
++            "val" : "Chiama la Polizia!",
 +            "key" : "Call the Police!"
 +         },
 +         {
-+            "val" : "Govorete po bavno!",
++            "val" : "Per favore parla più lentamente!",
 +            "key" : "Please speak more slowly!"
 +         },
 +         {
-+            "val" : "Az sum alergichen.",
++            "val" : "Sono allergico.",
 +            "key" : "I am allergic."
 +         },
 +         {
-+            "val" : "Molya, povtorete.",
++            "val" : "Ripeti, per piacere.",
 +            "key" : "Repeat, please."
 +         },
 +         {
-+            "val" : "Kak kazvate \"X\" na bulgarski?",
-+            "key" : "How do you say \"X\" in German?"
++            "val" : "Come dici \"X\" in italiano?",
++            "key" : "How do you say \"X\" in Italian?"
 +         },
 +         {
-+            "val" : "Spri!",
++            "val" : "Fermo!",
 +            "key" : "Stop!"
 +         },
 +         {
-+            "val" : "Govorite li angliiski?",
++            "val" : "Parli l'Inglese?",
 +            "key" : "Do you speak English?"
 +         },
 +         {
-+            "val" : "Izvinete!",
++            "val" : "Scusami!",
 +            "key" : "Excuse me!"
 +         },
 +         {
-+            "val" : "Imam nujda ot lekar!",
++            "val" : "Ho bisogno di un dottore!",
 +            "key" : "I need a doctor!"
 +         },
 +         {
-+            "val" : "Moje li da napishete tova?",
++            "val" : "Puoi scriverlo?",
 +            "key" : "Can you write that down?"
 +         },
 +         {
-+            "val" : "Viknete lineika!",
++            "val" : "Chiama un'ambulanza!",
 +            "key" : "Call an ambulance!"
 +         },
 +         {
-+            "val" : "Pomosht!",
++            "val" : "Sono in pericolo!",
 +            "key" : "I am in danger!"
 +         },
 +         {
-+            "val" : "Mojete li da mi pomognete?",
++            "val" : "Puoi aiutarmi?",
 +            "key" : "Can you help me?"
 +         },
 +         {
-+            "val" : "Pojar!",
++            "val" : "Fuoco!",
 +            "key" : "Fire!"
 +         }
 +      ],
