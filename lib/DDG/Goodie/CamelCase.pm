@@ -2,6 +2,7 @@ package DDG::Goodie::CamelCase;
 # ABSTRACT: Converts text to camelCase
 
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 use strict;
 
 zci answer_type => "camel_case";
@@ -10,16 +11,23 @@ zci is_cached   => 1;
 # Triggers
 triggers start => "camelcase", "camel case";
 
+my $matcher = wi_custom({
+    groups => ['imperative'],
+    options => {
+        command => qr/camel ?case/i,
+    },
+});
+
 # Handle statement
-handle remainder => sub {
+handle query_raw => sub {
     my $input = shift;
 
-    return unless $input; # Guard against "no answer"
-    
-    my ($first_word, @words) = split(/\s+/, lc $input);
-    
+    my $result = $matcher->match($input) or return;
+
+    my ($first_word, @words) = split(/\s+/, lc $result->{value});
+
     return unless @words;
-    
+
     my $camelCase = join(
         '',
         $first_word,
