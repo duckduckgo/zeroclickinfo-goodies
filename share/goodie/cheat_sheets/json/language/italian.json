@@ -180,51 +180,51 @@
 +      ],
 +      "Dinner on the Town" : [
 +         {
-+            "val" : "Imate li vegerataryanski yastya?",
++            "val" : "Avete piatti vegetariani?",
 +            "key" : "Do you have vegetaryan dishes?"
 +         },
 +         {
-+            "val" : "Osnovno yastie.",
++            "val" : "Portata principale.",
 +            "key" : "Main dish."
 +         },
 +         {
-+            "val" : "Starter.",
-+            "key" : "Entrée."
++            "val" : ".",
++            "key" : "Primo piatto."
 +         },
 +         {
 +            "val" : "Az sum alergichen.",
 +            "key" : "I am allergic."
 +         },
 +         {
-+            "val" : "Desert.",
++            "val" : "Dolce.",
 +            "key" : "Dessert"
 +         },
 +         {
-+            "val" : "Smetkata, molya!",
++            "val" : "Il conto per favore!",
 +            "key" : "The check please!"
 +         },
 +         {
-+            "val" : "Chasha kafe ako moje.",
++            "val" : "Una tazza di caffè, per favore.",
 +            "key" : "A cup of coffee please."
 +         },
 +         {
-+            "val" : "Imate li yastya bez gluten?",
++            "val" : "Avete piatti senza glutine?",
 +            "key" : "Do you have gluten-free dishes?"
 +         },
 +         {
-+            "val" : "Kade ima dobar restorant?",
++            "val" : "Dove si trova un buon ristorante?",
 +            "key" : "Where is a good restaurant?"
 +         },
 +         {
-+            "val" : "Chasha voda, molya.",
++            "val" : "Una bottiglia di vino, per favore.",
 +            "key" : "A glass of water please."
 +         },
 +         {
-+            "val" : "Masa za dvama, molya!",
++            "val" : "Un tavolo per due, per favore!",
 +            "key" : "A table for two please!"
 +         },
 +         {
-+            "val" : "Shte moje li da vidya menu, molya?",
++            "val" : "Posso avere il menu, per favore?",
 +            "key" : "Can I get a menu, please?"
 +         }
 +      ]
