@@ -107,6 +107,7 @@ my $from_re = qr/$relative_regex\s+(?<action>from)\s+$date_re?/i;
 my $ago_re = qr/$relative_regex\s+(?<action>ago)/i;
 my $time_24h = time_24h_regex();
 my $time_12h = time_12h_regex();
+my $relative_dates = relative_dates_regex();
 
 sub build_result {
     my ($result, $formatted) = @_;
@@ -124,6 +125,16 @@ sub build_result {
 
 }
 
+sub get_result_relative {
+    my ($specified_time, $dort, $date) = @_;
+    return unless $date =~ $relative_dates;
+    my $use_clock = $specified_time || should_use_clock undef, $dort;
+    my $parsed_date = parse_datestring_to_date($date);
+    my $formatted_input = format_input_no_action $parsed_date, $use_clock;
+    my $result = format_result_no_action $parsed_date, $use_clock or return;
+    return build_result($result, $date);
+}
+
 handle query => sub {
     my $query = $_;
 
@@ -137,12 +148,7 @@ handle query => sub {
 
     my $specified_time = $query =~ /$time_24h|$time_12h/;
     unless (defined $number) {
-        my $use_clock = should_use_clock undef, $dort;
-        my $out_date = parse_datestring_to_date($date);
-        my $in_date = parse_datestring_to_date($date);
-        my $formatted_input = format_input_no_action $in_date, $use_clock;
-        my $result = format_result_no_action $out_date, $use_clock or return;
-        return build_result($result, $date);
+        return get_result_relative($specified_time, $dort, $date);
     };
 
     $action = get_action_for $action or return;
