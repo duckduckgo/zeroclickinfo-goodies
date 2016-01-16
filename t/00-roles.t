@@ -750,6 +750,25 @@ subtest 'WhatIs' => sub {
             );
             subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
         };
+        subtest 'Base Conversion' => sub {
+            my $wi = wi_with_test {
+                groups => ['conversion'],
+                options => {
+                    to => qr/ascii/i,
+                    primary => qr/[10]{4} ?[10]{4}/,
+                },
+            };
+            my %valid_queries = (
+                '1011 0101 in ascii' => '1011 0101',
+                '11111111 to ASCII' => '11111111',
+            );
+            subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
+            my %invalid_queries = (
+                'ascii 1011 1011' => '?',
+                '100 in ascii' => '?',
+            );
+            subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
+        };
     };
 
 };
