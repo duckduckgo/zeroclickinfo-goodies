@@ -33,11 +33,17 @@ has 'optional_options' => (
     default => sub { {} },
 );
 
+has 'name' => (
+    is       => 'ro',
+    isa      => 'Str',
+    required => 1,
+);
+
 sub parse_options {
     my ($self, $options) = @_;
     foreach my $required (@{$self->required_options}) {
         unless (defined $options->{$required}) {
-            warn "Modifier '@{[$self->name]}' requires the '$required' option to be set - but it wasn't!\n";
+            die "Modifier '@{[$self->name]}' requires the '$required' option to be set - but it wasn't!\n";
             return undef;
         };
         $self->_set_option($required, $options->{$required});
