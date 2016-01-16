@@ -101,6 +101,7 @@ subtest 'Dates' => sub {
             '01 Jan 2012 00:01:20 UTC' => 1325376080,
             '22 Jun 1998 00:00:02 GMT' => 898473602,
             '07 Sep 2014 20:11:44 CET' => 1410117104,
+            '07 Sep 2014 20:11:44 cet' => 1410117104,
             '09 Aug 2014 18:20:00'     => 1407608400,
             #Undefined/Natural formats:
             '13/12/2011'        => 1323734400,     #DMY
@@ -332,7 +333,7 @@ subtest 'Dates' => sub {
     };
     subtest 'Valid clock string format' => sub {
         my %date_strings = (
-            '01 Jan 2012 00:01:20 UTC'   => ['01 Jan 2012 00:01:20 UTC'],
+            '01 Jan 2012 00:01:20 UTC'   => ['01 Jan 2012 00:01:20 UTC', '01 Jan 2012 00:01:20 utc'],
             '22 Jun 1998 00:00:02 UTC'   => ['22 Jun 1998 00:00:02 GMT'],
             '07 Sep 2014 20:11:44 EST'   => ['07 Sep 2014 20:11:44 EST'],
             '07 Sep 2014 20:11:44 -0400' => ['07 Sep 2014 20:11:44 EDT'],

@@ -394,12 +394,12 @@ sub parse_formatted_datestring_to_date {
     $d =~ s/,//i;                                                                # Strip any random commas.
     $d =~ s/($full_month)/$full_month_to_short{lc $1}/i;                         # Parser deals better with the shorter month names.
     $d =~ s/^($short_month)$date_delim(\d{1,2})/$2-$short_month_fix{lc $1}/i;    # Switching Jun-01-2012 to 01 Jun 2012
-    $d =~ s/(?<tz>$tz_strings)$/$tz_offsets{$1}/i;                               # Convert trailing timezones to actual offsets.
+    $d =~ s/(?<tz>$tz_strings)$/$tz_offsets{uc $1}/i;                            # Convert trailing timezones to actual offsets.
 
     my $maybe_date_object = try { DateTime::Format::HTTP->parse_datetime($d) };  # Don't die no matter how bad we did with checking our string.
     if (ref $maybe_date_object eq 'DateTime') {
         if (exists $+{tz}) {
-            try { $maybe_date_object->set_time_zone($+{tz}) };
+            try { $maybe_date_object->set_time_zone(uc $+{tz}) };
         }
         if ($maybe_date_object->strftime('%Z') eq 'floating') {
             $maybe_date_object->set_time_zone(_get_timezone());
