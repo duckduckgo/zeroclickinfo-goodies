@@ -3,9 +3,9 @@
     "name": "Asciidoc",
     "description": "A text document format for writing notes, documentation, articles, books, ebooks, slideshows, web pages, man pages and blogs",
     "metadata": {
-		"sourceName": "Asciidoc cheat sheet",
-		"sourceUrl": "http://powerman.name/doc/asciidoc"
-	},
+        "sourceName": "Asciidoc Cheat Sheet",
+        "sourceUrl": "http://powerman.name/doc/asciidoc"
+    },
     "aliases": [
         "adoc"
     ],
