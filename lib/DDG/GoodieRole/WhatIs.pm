@@ -102,6 +102,88 @@ Use if you want to create a matcher with no presets.
 
 =back
 
+=head2 Modifiers
+
+The modifiers allocated to your matcher determine what queries
+will match, and the way in which they will be matched.
+
+Modifiers are assigned based on which groups (attributes) have
+been specified for your matcher. For example, having the
+C<'translation'> and C<'spoken'> groups will cause the
+C<'spoken translation'> modifier to be allocated.
+
+Multiple modifiers may be assigned to a single matcher.
+
+Each modifier has a set of optional and required options; if any
+of the required options for a modifier are not set (see
+L<Setting Modifier Options>) the package will die and tell you
+which options need to be set. Optional options do not need to
+be set and will not cause the package to die.
+
+=head3 List of Modifiers
+
+The following is a complete list of modifiers provided by
+B<WhatIs>.
+
+In each case:
+
+'Form' is a representative example of the types
+of queries the modifier will match. The form is in bold so as
+to make it easier to locate the desired modifier.
+
+'Required Groups' is a list of groups that must be specified
+for the modifier to be assigned.
+
+'Required Options' is a list of options that must be specified
+when using this modifier.
+
+'Optional Options' is a list of options that can be optionally
+specified when using this group.
+
+=over
+
+=item C<written translation>
+
+Form: B<"How do I write PRIMARY in TO?">
+
+Required Groups: C<translation>, C<written>.
+
+Required Options: C<to>.
+
+Optional Options: C<primary>.
+
+=item C<spoken translation>
+
+Form: B<"How do I say PRIMARY in TO?">
+
+Required Groups: C<translation>, C<spoken>.
+
+Required Options: C<to>.
+
+Optional Options: C<primary>.
+
+=item C<what is conversion>
+
+Form: B<"What is PRIMARY in TO?">
+
+Required Groups: C<translation>.
+
+Required Options: C<to>.
+
+Optional Options: C<primary>.
+
+=item C<meaning>
+
+Form: B<"What is the meaning of PRIMARY?">
+
+Required Groups: C<meaning>.
+
+Required Options: I<None>.
+
+Optional Options: C<primary>.
+
+=back
+
 =head2 Groups
 
 You use groups to specify certain properties of your Goodie that
