@@ -3,6 +3,7 @@ package DDG::Goodie::Phonetic;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 
 triggers start => 'phonetic';
 
@@ -52,11 +53,19 @@ sub components {
     return join("-", @components);
 }
 
-handle remainder => sub {
-    return unless $_;
-    $_ = lc;
-    my @words = split(/\s+/, $_);
-    my @phonetics = map { components($_) } @words;
+my $matcher = wi_custom({
+    groups => ['imperative'],
+    options => {
+        command => qr/phonetic/i,
+    },
+});
+
+handle query_raw => sub {
+    my $query = shift;
+    my $match = $matcher->match($query) // return;
+    my $value = $match->{value};
+    my @words = split(/\s+/, lc $value);
+    my @phonetics = map { components($value) } @words;
     return "Phonetic: " . join(" ", @phonetics);
 };
 
