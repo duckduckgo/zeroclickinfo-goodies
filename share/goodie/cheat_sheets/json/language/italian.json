@@ -112,27 +112,27 @@
 +      ],
 +      "Basics" : [
 +         {
-+            "val" : "Kazvam se...",
++            "val" : "Il mio nome è...",
 +            "key" : "My name is..."
 +         },
 +         {
-+            "val" : "Dobre sum, blagodarya!",
++            "val" : "Sto bene, grazie!",
 +            "key" : "I'm fine thanks!"
 +         },
 +         {
-+            "val" : "Kak ste?",
++            "val" : "Come stai?",
 +            "key" : "How are you?"
 +         },
 +         {
-+            "val" : "Zdrawei",
++            "val" : "Ciao",
 +            "key" : "Hello"
 +         },
 +         {
-+            "val" : "Dobre doshli",
++            "val" : "Benvenuto",
 +            "key" : "Welcome"
 +         },
 +         {
-+            "val" : "Kak se kazvate?",
++            "val" : "Qual è il tuo nome?",
 +            "key" : "What's your name?"
 +         }
 +      ],
