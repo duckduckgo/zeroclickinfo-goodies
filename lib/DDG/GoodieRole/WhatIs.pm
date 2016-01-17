@@ -229,6 +229,32 @@ Required Options: C<postfix_command> I<or> C<command>.
 
 Optional Options: C<primary>.
 
+=item C<targeted property>
+
+Form:
+
+=over
+
+B<"What is the SINGULAR_PROPERTY of PRIMARY?">,
+
+B<"What are the PLURAL_PROPERTY of PRIMARY?">
+
+=back
+
+Required Groups: C<property>.
+
+Required Options:
+
+=over
+
+C<singular_property> I<or> C<property>,
+
+C<plural_property> I<or> C<singular_property>.
+
+=back
+
+Optional Options: C<primary>.
+
 =back
 
 =head2 Groups

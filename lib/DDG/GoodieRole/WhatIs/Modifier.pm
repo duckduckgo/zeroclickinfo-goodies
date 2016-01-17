@@ -42,27 +42,29 @@ has 'name' => (
 sub parse_options {
     my ($self, $options) = @_;
     foreach my $required (@{$self->required_options}) {
-        my $option_key;
-        my $req_option = $required;
         if (ref $required eq 'ARRAY') {
+            my $option_key;
             my $prefer = $required->[0];
             foreach my $potential (@{$required}) {
                 if (defined $options->{$potential}) {
                     $option_key = $potential;
+                    $self->_set_option($prefer, $options->{$option_key});
+                    last;
+                } elsif (defined $self->_fetch_option($potential)) {
+                    $option_key = $potential;
+                    $self->_set_option($prefer, $self->_fetch_option($option_key));
                     last;
                 };
             };
             unless (defined $option_key) {
                 die "Modifier '@{[$self->name]}' requires at least on of the @{[join ' or ', map { '\'' . $_ . '\'' } @{$required}]} options to be set, but none were.\n";
             };
-            $req_option = $prefer;
         } else {
-            $option_key = $req_option;
-            unless (defined $options->{$option_key}) {
-                die "Modifier '@{[$self->name]}' requires the '$req_option' option to be set - but it wasn't!\n";
+            unless (defined $options->{$required}) {
+                die "Modifier '@{[$self->name]}' requires the '$required' option to be set - but it wasn't!\n";
             };
+            $self->_set_option($required, $options->{$required});
         };
-        $self->_set_option($req_option, $options->{$option_key});
     };
     while (my ($option, $default) = each %{$self->optional_options}) {
         my $value = defined($options->{$option}) ? $options->{$option} : $default;
@@ -73,6 +75,11 @@ sub parse_options {
 sub _set_option {
     my ($self, $option, $value) = @_;
     $self->{_options}->{$option} = $value;
+}
+
+sub _fetch_option {
+    my ($self, $option) = @_;
+    return $self->{_options}->{$option};
 }
 
 sub run_action {

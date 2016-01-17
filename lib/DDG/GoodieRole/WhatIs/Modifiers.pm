@@ -74,13 +74,20 @@ new_modifier_spec 'postfix imperative' => {
     required_options => [['postfix_command', 'command']],
     action => \&postfix_imperative,
 };
+new_modifier_spec 'targeted property' => {
+    required_groups  => [['property']],
+    required_options => [['singular_property', 'property'],
+                         ['plural_property', 'singular_property']],
+    optional_options => { 'primary' => qr/.+/ },
+    action => \&targeted_property,
+};
 
 # Various ways of saying "How would I say";
 my $how_forms = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
 my $spoken_forms = qr/(?:$how_forms say) /i;
 my $written_forms = qr/(?:$how_forms write) /i;
 
-my $question_end = qr/[?]?/;
+my $question_end = qr/[?]/;
 
 sub re_gen {
     my $sub = shift;
@@ -123,21 +130,21 @@ sub _from_re {
 
 sub written_translation {
     my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, $written_forms, $question_end));
+    $matcher->_add_re(_in_re($options, $written_forms, qr/$question_end?/));
 }
 sub spoken_translation {
     my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, $spoken_forms, $question_end));
+    $matcher->_add_re(_in_re($options, $spoken_forms, qr/$question_end?/));
 }
 sub whatis_translation {
     my ($options, $matcher) = @_;
     my $re = _in_re($options, qr/what is /i, $question_end);
-    $matcher->_add_re(_in_re($options, qr/what is /i, $question_end));
+    $matcher->_add_re(_in_re($options, qr/what is /i, qr/$question_end?/));
 }
 sub meaning {
     my ($options, $matcher) = @_;
     my $primary = qr/(?<primary>@{[$options->{primary}]})/;
-    my $re = qr/what (?:is the meaning of $primary|does $primary mean)$question_end/i;
+    my $re = qr/what (?:is the meaning of $primary|does $primary mean)$question_end?/i;
     $matcher->_add_re($re);
 }
 sub base_conversion {
@@ -161,6 +168,23 @@ sub postfix_imperative {
     my $command = $options->{postfix_command};
     my $primary = $options->{primary};
     $matcher->_add_re(qr/(?<primary>$primary) $command/);
+}
+
+sub primary_end_with {
+    my ($before, $check, $primary, $end) = @_;
+    return qr/$before(?(<$check>)((?<primary>$primary)(?=$end)$end|(?<primary>$primary))|(?<primary>$primary))/;
+}
+
+sub targeted_property {
+    my ($options, $matcher) = @_;
+    my $singular = $options->{singular_property};
+    my $plural = $options->{plural_property};
+    $plural = qr/${singular}s/i if $singular eq $plural;
+    my $primary = $options->{primary};
+    my $what = qr/(?<_what>what ((?<_is>is)|(?<_are>are)) )/i;
+    my $what_re = qr/$what?(the )?(?(<_is>)$singular|(?(<_are>)$plural|($singular|$plural))) (of|for) /i;
+    my $re = primary_end_with $what_re, '_what', $primary, $question_end;
+    $matcher->_add_re($re);
 }
 
 use List::MoreUtils qw(all any uniq);

@@ -660,6 +660,7 @@ subtest 'WhatIs' => sub {
             primary => qr/[10]{4} ?[10]{4}/,
             command => qr/lower ?case|lc/i,
             postfix_command => qr/lowercased/i,
+            property => 'prime factor',
         );
         return sub {
             my %options = @_;
@@ -741,6 +742,14 @@ subtest 'WhatIs' => sub {
     add_valid_queries 'postfix imperative' => (
         'FriBble lowercased' => 'FriBble',
     );
+    add_valid_queries 'targeted property' => (
+        'What are the prime factors of 122?' => '122',
+        'What is the prime factor of 3'      => '3',
+        'prime factors of 27'                => '27',
+        'prime factor of 7'                  => '7',
+        'what is the prime factor for 29'    => '29',
+        'what are the prime factors for 15'  => '15',
+    );
 
     sub hash_tester {
         my $hashf = shift;
@@ -812,6 +821,11 @@ subtest 'WhatIs' => sub {
             use_options => ['command', 'postfix_command'],
             use_groups => ['postfix', 'prefix', 'imperative'],
             modifiers => ['prefix imperative', 'postfix imperative'],
+        },
+        'Targeted Property' => {
+            use_options => ['property'],
+            use_groups  => ['property'],
+            modifiers   => ['targeted property'],
         },
     );
 };
