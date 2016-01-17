@@ -1,5 +1,5 @@
 {
-   "id" : "bulgarian_cheat_sheet",
+   "id" : "italian_cheat_sheet",
    "name" : "Italian Phrases",
    "metadata" : {
       "sourceName" : "Linguanaut",
@@ -188,8 +188,8 @@
             "key" : "Main dish."
          },
          {
-            "val" : ".",
-            "key" : "Primo piatto."
+            "val" : "Primo piatto",
+            "key" : "Entrée"
          },
          {
             "val" : "Az sum alergichen.",
