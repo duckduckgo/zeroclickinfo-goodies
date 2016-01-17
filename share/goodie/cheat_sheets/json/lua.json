@@ -129,7 +129,7 @@
                 "val": "If statement"
             },
             {
-                "key": "else if a == b then", 
+                "key": "elseif a == b then", 
                 "val": "Else if statement"
             },
             {
