@@ -3,6 +3,7 @@ package DDG::Goodie::PrimeFactors;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 
 use Math::Prime::Util 'factor_exp', 'is_prime';
 
@@ -13,15 +14,19 @@ zci is_cached => 1;
 
 use bignum;
 
-triggers startend => (
+triggers any => (
     'prime factors',
-    'prime factors of',
-    'the prime factors of',
-    'factorization of',
-    'prime factorization',
-    'prime factorization of',
+    'factorization',
     'factorize',
-    'prime factorize',
+);
+my $matcher = wi_custom(
+    groups => ['property', 'imperative', 'prefix', 'postfix'],
+    options => {
+        command => qr/(prime )?factor(iz(e|ation)|s)/i,
+        property => qr/(prime )?factor(ization|s)/i,
+        # TODO: We should accept different number formats.
+        primary => qr/\d+/,
+    },
 );
 
 sub convert_to_superscripts (_) {
@@ -87,29 +92,29 @@ sub format_answer {
     };
 }
 
-handle remainder => sub {
-    # Exit if it's not a digit.
-    # TODO: We should accept different number formats.
-    return unless /^\d+$/;
+handle query => sub {
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
 
     my $start_time = time();
     my @factors = ();
 
     # Provide only one second for computing the factors.
+    my $to_factorize = $match->{value};
     eval {
         alarm(1);
-        @factors = factor_exp($_);
+        @factors = factor_exp($to_factorize);
     };
     # Exit if we didn't find anything.
     if(@factors == 0) {
         return;
     }
 
-    my $formatted = commify($_);
+    my $formatted = commify($to_factorize);
 
     # If it has only one factor then it is a prime. Except if it's 0 or 1.
     my @result;
-    if(is_prime($_)) {
+    if(is_prime($to_factorize)) {
         @result = format_answer("$formatted is a prime number");
     } else {
         my ($text, $answer) = format_prime(@factors);
