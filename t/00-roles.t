@@ -750,6 +750,9 @@ subtest 'WhatIs' => sub {
         'what is the prime factor for 29'    => '29',
         'what are the prime factors for 15'  => '15',
     );
+    add_valid_queries 'language translation' => (
+        'translate hello to Goatee' => 'hello',
+    );
 
     sub hash_tester {
         my $hashf = shift;
@@ -786,6 +789,11 @@ subtest 'WhatIs' => sub {
             modifiers => ['spoken translation',
                           'written translation',
                           'what is conversion'],
+        },
+        'Language' => {
+            use_options => ['to'],
+            use_groups => ['language'],
+            modifiers => ['language translation', 'what is conversion'],
         },
     );
     sub wi_custom_tests { hash_tester(\&test_custom)->(@_) }
