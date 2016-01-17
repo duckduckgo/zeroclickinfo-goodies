@@ -3,16 +3,25 @@ package DDG::Goodie::Rot13;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 
 triggers start => 'rot13';
 
 zci answer_type => 'rot13';
 zci is_cached   => 1;
 
-handle remainder => sub {
-    my $in = shift;
+my $matcher = wi_custom(
+    groups => ['imperative', 'prefix'],
+    options => {
+        command => 'rot13',
+    },
+);
 
-    return unless $in;
+handle query => sub {
+    my $query = shift;
+
+    my $match = $matcher->full_match($query) or return;
+    my $in = $match->{value};
     my $out = $in;
 
     $out =~ tr[a-zA-Z][n-za-mN-ZA-M];
