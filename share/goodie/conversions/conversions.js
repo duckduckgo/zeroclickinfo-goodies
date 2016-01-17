@@ -3,7 +3,7 @@ DDH.conversions = DDH.conversions || {};
 DDH.conversions.build = function(){
 	return {
 		onShow: function() {
-			$("#zci__conversions-left-in, #zci__conversions-left-unit").change(function(){
+			$("#zci__conversions-left-in, #zci__conversions-left-unit, #zci__conversions-right-unit").change(function(){
 			
 				var query = $("#zci__conversions-left-in").val() + " " + $("#zci__conversions-left-unit").val() + " in " + $("#zci__conversions-right-unit").val();
 				
