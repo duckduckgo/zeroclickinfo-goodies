@@ -5,6 +5,7 @@ package DDG::Goodie::Teredo;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 use Net::IP;
 use Math::BaseConvert;
 
@@ -19,11 +20,20 @@ sub to_text {
         . "\nClient Port: " . $_[1];
 }
 
-handle remainder => sub {
+my $matcher = wi_custom(
+    groups => ['imperative', 'prefix'],
+    options => {
+        command => qr/teredo/i,
+    },
+);
+
+handle query => sub {
+    my $query = shift;
     my @output = ();
+    my $match = $matcher->full_match($query) or return;
 
     # Create an IPv6 address from the query value
-    my $ip = new Net::IP ($_,6) if $_;
+    my $ip = new Net::IP ($match->{value},6);
 
     # Verify the query value is a valid Teredo IPv6 address
     if ((defined $ip) && ($ip->version() == 6) && (substr($ip->ip(),0,9) eq "2001:0000")) {
@@ -42,13 +52,13 @@ handle remainder => sub {
         $netip = new Net::IP (Net::IP::ip_bintoip(~(substr $binip, 96, 32),4));
         my $nat = $netip->ip();
         push @output, $netip->ip();
-        
-        my %output  =  ( 
+
+        my %output  =  (
             'Teredo Server IPv4:' => $teredo,
             'Nat Public IPv4:' => $nat,
-            'Client Port:' => $port,  
+            'Client Port:' => $port,
         );
-               
+
         return to_text(@output),
         structured_answer => {
             data => {
