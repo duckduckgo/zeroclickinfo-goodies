@@ -727,15 +727,15 @@ subtest 'WhatIs' => sub {
         'What is the meaning of bar' => 'bar',
         'What does foobar mean?'     => 'foobar',
     );
-    add_valid_queries 'base conversion' => (
+    add_valid_queries 'conversion in' => (
         '1011 0101 in Goatee' => '1011 0101',
-        '11111111 to Goatee'  => '11111111',
     );
     add_valid_queries 'conversion from' => (
         'hello from Gribble' => 'hello',
     );
     add_valid_queries 'conversion to' => (
-        'hello to Goatee' => 'hello',
+        'hello to Goatee'          => 'hello',
+        'convert 5 peas to Goatee' => '5 peas',
     );
     add_valid_queries 'bidirectional conversion (only to)' => (
         'hello to Goatee'   => 'hello',
@@ -805,10 +805,10 @@ subtest 'WhatIs' => sub {
             use_groups => ['meaning'],
             modifiers => ['meaning'],
         },
-        'Base Conversion' => {
+        'Conversion in' => {
             use_options => ['to', 'primary'],
             use_groups => ['conversion'],
-            modifiers => ['base conversion'],
+            modifiers => ['conversion in'],
         },
         'Conversion to' => {
             use_options => ['to'],
@@ -826,12 +826,6 @@ subtest 'WhatIs' => sub {
             use_options => ['to', 'from'],
             use_groups  => ['bidirectional', 'conversion'],
             modifiers   => ['conversion from', 'conversion to'],
-            ignore      => qr/ (to|in) /i,
-        },
-        'Bidirectional Conversion (only to)' => {
-            use_options => ['to'],
-            use_groups  => ['bidirectional', 'conversion'],
-            modifiers   => ['base conversion', 'bidirectional conversion (only to)'],
             ignore      => qr/ (to|in) /i,
         },
         'Prefix Imperative' => {
