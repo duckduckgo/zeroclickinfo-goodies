@@ -169,6 +169,16 @@ Required Options: C<to>.
 
 Optional Options: C<primary>.
 
+=item C<language translation>
+
+Form: B<"Translate PRIMARY to TO">
+
+Required Groups: C<translation>, C<language>.
+
+Required Options: C<to>.
+
+Optional Options: C<primary>.
+
 =item C<what is conversion>
 
 Form: B<"What is PRIMARY in TO?">

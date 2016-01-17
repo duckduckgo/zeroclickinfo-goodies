@@ -81,6 +81,12 @@ new_modifier_spec 'targeted property' => {
     optional_options => { 'primary' => qr/.+/ },
     action => \&targeted_property,
 };
+new_modifier_spec 'language translation' => {
+    required_groups  => [['translation', 'language']],
+    required_options => ['to'],
+    optional_options => { 'primary' => qr/.+/ },
+    action => \&language_translation,
+};
 
 # Various ways of saying "How would I say";
 my $how_forms = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
@@ -168,6 +174,10 @@ sub postfix_imperative {
     my $command = $options->{postfix_command};
     my $primary = $options->{primary};
     $matcher->_add_re(qr/(?<primary>$primary) $command/);
+}
+sub language_translation {
+    my ($options, $matcher) = @_;
+    $matcher->_add_re(_to_re($options, qr/translate /i));
 }
 
 sub primary_end_with {
