@@ -3,6 +3,7 @@ package DDG::Goodie::BirthStone;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 
 triggers startend => 'birthstone', 'birth stone';
 
@@ -24,8 +25,18 @@ my %birthstones = (
     "December"  => "Turquoise"
 );
 
-handle remainder => sub {
-    my $month = ucfirst lc $_;
+my $matcher = wi_custom({
+    groups => ['imperative', 'prefix', 'postfix'],
+    options => {
+        command => qr/birth ?stone/i,
+        primary => qr/@{[join '|', keys %birthstones]}/i,
+    },
+});
+
+handle query_raw => sub {
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
+    my $month = ucfirst lc $match->{value};
 
     return unless $month;
     my $stone = $birthstones{$month};
