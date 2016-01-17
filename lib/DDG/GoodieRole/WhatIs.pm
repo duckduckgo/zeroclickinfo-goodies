@@ -209,13 +209,35 @@ Required Options: C<to>.
 
 Optional Options: C<primary>.
 
-=item C<bidirectional conversion>
+=item C<conversion to>
 
-Form: B<"PRIMARY to TO">, B<"PRIMARY from FROM">
+Form: B<"PRIMARY to TO">
 
-Required Groups: C<conversion>, C<bidirectional>.
+Required Groups:
 
-Required Options: C<to>, C<from> I<or> C<to>.
+=over
+
+C<conversion>, C<bidirectional> I<or> C<conversion>, C<to>.
+
+=back
+
+Required Options: C<to>.
+
+Optional Options: C<primary>.
+
+=item C<conversion from>
+
+Form: B<"PRIMARY from FROM">
+
+Required Groups:
+
+=over
+
+C<conversion>, C<bidirectional> I<or> C<conversion>, C<from>.
+
+=back
+
+Required Options: C<from> I<or> C<to>.
 
 Optional Options: C<primary>.
 

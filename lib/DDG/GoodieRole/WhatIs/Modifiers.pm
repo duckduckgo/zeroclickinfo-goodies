@@ -53,14 +53,22 @@ new_modifier_spec 'meaning' => {
 new_modifier_spec 'base conversion' => {
     required_groups => [['conversion']],
     optional_options => { primary => qr/.+/ },
-    required_options => ['to'],
+    required_options => [['to', 'from']],
     action => \&base_conversion,
 };
-new_modifier_spec 'bidirectional conversion' => {
-    required_groups => [['conversion', 'bidirectional']],
-    required_options => ['to', ['from', 'to']],
+new_modifier_spec 'conversion to' => {
+    required_groups  => [['conversion', 'bidirectional'],
+                         ['conversion', 'to']],
+    required_options => ['to'],
     optional_options => { primary => qr/.+/ },
-    action => \&bidirectional_conversion,
+    action => \&conversion_to,
+};
+new_modifier_spec 'conversion from' => {
+    required_groups  => [['conversion', 'bidirectional'],
+                         ['conversion', 'from']],
+    required_options => [['from', 'to']],
+    optional_options => { primary => qr/.+/ },
+    action => \&conversion_from,
 };
 new_modifier_spec 'prefix imperative' => {
     required_groups => [['prefix', 'imperative']],
@@ -158,9 +166,12 @@ sub base_conversion {
     $matcher->_add_re(_to_re($options, qr//));
     $matcher->_add_re(_in_re($options, qr//));
 }
-sub bidirectional_conversion {
+sub conversion_to {
     my ($options, $matcher) = @_;
     $matcher->_add_re(_to_re($options));
+}
+sub conversion_from {
+    my ($options, $matcher) = @_;
     $matcher->_add_re(_from_re($options));
 }
 sub prefix_imperative {
