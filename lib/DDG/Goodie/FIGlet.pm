@@ -7,17 +7,6 @@ use DDG::Goodie;
 use Text::FIGlet;
 
 triggers startend => "figlet", "bigtext", "big text";
-primary_example_queries 'figlet DuckDuckGo';
-secondary_example_queries 'figlet computer DuckDuckGo';
-
-name 'FIGlet';
-description 'Uses FIGlet to make large letters out of ordinary text.';
-category 'transformations';
-topics 'words_and_games';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Figlet.pm';
-attribution
-	web => ['http://engvik.nu', 'Lars Jansøn Engvik'],
-	github => [ 'larseng', 'Lars Jansøn Engvik'];
 
 zci answer_type => 'figlet';
 zci is_cached => 1;
@@ -62,6 +51,7 @@ handle query => sub {
 
 	# Render the FIGlet
 	$figlet = render_figlet($font, $text);
+	$figlet = html_enc($figlet) if grep /^$font$/i, qw(rot13 mnemonic term); #ensure we escape input for plaintext formatted results
 
 	$html = "<div id='figlet-wrapper'><span>Font: </span><span id='figlet-font'>$font</span><pre contenteditable='true'>$figlet</pre></div>";
 

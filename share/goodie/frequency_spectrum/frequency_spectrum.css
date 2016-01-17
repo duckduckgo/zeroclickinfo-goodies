@@ -1,8 +1,3 @@
-/* Conditional for IE8 and lower */
-.ie8-display-none {
-  display: none;
-}
-
 .zci--answer .zci--conversions {
     font-size: 1.5em;
     font-weight: 300;

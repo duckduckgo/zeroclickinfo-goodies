@@ -1,17 +1,17 @@
 {
     "id": "ed_cheat_sheet",
-    "name": "ed(1)",
-    "description": "Line-oriented Text Editor",
+    "name": "ed",
+    "description": "Basic commands for ed, a line-oriented text editor",
     "metadata": {
-        "sourceName": "EdCheatSheet",
+        "sourceName": "Freebsd",
         "sourceUrl": "https://www.freebsd.org/cgi/man.cgi?ed%281%29"
     },
     "template_type": "keyboard",
     "section_order": [
-        "Editing commands",
-        "File manipulation commands",
-        "Display commands",
-        "Other commands",
+        "Editing Commands",
+        "File Manipulation Commands",
+        "Display Commands",
+        "Other Commands",
         "Addressing",
         "Invocation"
     ],
@@ -76,7 +76,7 @@
                 "val": "A line marked with {letter} (see the [k] command below)"
             }
         ],
-        "Editing commands": [
+        "Editing Commands": [
             {
                 "key": "[.]a",
                 "val": "Insert below the current line, end with a single period"
@@ -118,7 +118,7 @@
                 "val": "Copy (yank) the specified range (GNU extension)"
             }
         ],
-        "File manipulation commands": [
+        "File Manipulation Commands": [
             {
                 "key": "e \\[filename\\]",
                 "val": "Edit the file [filename]"
@@ -172,7 +172,7 @@
                 "val": "Prompt for the DES encryption key (BSD extension)"
             }
         ],
-        "Display commands": [
+        "Display Commands": [
             {
                 "key": "h",
                 "val": "Print help on the last error"
@@ -202,7 +202,7 @@
                 "val": "Display N lines of text"
             }
         ],
-        "Other commands": [
+        "Other Commands": [
             {
                 "key": "[1,$]g/\\{re\\}/\\{command-list\\}",
                 "val": "Execute {command-list} on all lines matching {re}"

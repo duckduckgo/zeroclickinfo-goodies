@@ -7,20 +7,10 @@ use warnings;
 
 use DDG::Goodie;
 
-# TODO: This (sh|c)ould be re-written to be more precise
-triggers query => qr#^([0-9]{1,3}\.){3}([0-9]{1,3})[\s/](([1-3]?[0-9])|(([0-9]{1,3}\.){3}([0-9]{1,3})))$#;
+triggers query => qr#^(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})[\s/](?:(?:[1-3]?[0-9])|(?:(?:[0-9]{1,3}\.){3}(?:[0-9]{1,3})))$#x;
 
-zci answer_type => "subnet_info";
+zci answer_type => "subnet_calc";
 zci is_cached => 1;
-
-attribution github => ['mintsoft', 'Rob Emery'];
-
-primary_example_queries '10.92.24.0/22';
-secondary_example_queries '46.51.197.88 255.255.254.0', '176.34.131.233/32';
-
-category 'computing_tools';
-topics 'sysadmin';
-description 'calculates IPv4 subnets and range information';
 
 handle query => sub {
     # Convert an integer into an IP address.
@@ -98,37 +88,44 @@ handle query => sub {
     $which_specified = "Point-To-Point (".int_to_str($end).", ".int_to_str($start).")" if ($cidr == 31);
     $which_specified = "Host Only" if ($cidr == 32);
 
-    sub to_html {
-	my $results = "";
-    my $minwidth = "70px";
-	foreach my $result (@_) {
-	    $results .= "<div><span class=\"subnet__label text--secondary\">$result->[0]: </span><span class=\"text--primary\">$result->[1]</span></div>";
-        $minwidth = "140px" if $result->[0] eq "Host Address Range";
-	}
-	return $results . "<style> .zci--answer .subnet__label {display: inline-block; min-width: $minwidth}</style>";
-    }
-
-    sub to_text {
-	my $results = "";
-	foreach my $result (@_) {
-	    $results .= "$result->[0]: $result->[1]\n";
-	}
-	return $results;
-    }
-
-    # We're putting them into an array because we want the output to be sorted.
-    my @output = (
-	["Network", int_to_str($network) . "/$cidr (Class $class)"],
-	["Netmask", int_to_str($mask)],
-	["Specified", "$which_specified"],
+    my %output = (
+        "Network" => int_to_str($network) . "/$cidr (Class $class)",
+        "Netmask" => int_to_str($mask),
+        "Specified" => "$which_specified",
     );
 
+    my @output_keys = qw(Network Netmask Specified);
+
     unless($cidr > 30) {
-	push @output, (["Host Address Range", int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)"],
-		       ["Broadcast", int_to_str($broadcast)]);
+        $output{"Host Address Range"} = int_to_str($start) . "-" . int_to_str($end) . " ($host_count hosts)";
+        $output{"Broadcast"} = int_to_str($broadcast);
+        push @output_keys, "Host Address Range";
+        push @output_keys, "Broadcast";
     }
 
-    return answer => to_text(@output), html => to_html(@output);
+    sub to_text
+    {
+        my ($data, $keys) = @_;
+        return join "\n", map {"$_: $data->{$_}";} @{$keys};
+    }
+
+    return to_text(\%output, \@output_keys),
+        structured_answer => {
+            id => "subnet_calculator",
+            name => "Subnet Calculator",
+            templates => {
+                group => 'list',
+                options => {
+                    content => 'record',
+                    moreAt => 0
+                }
+            },
+            data => {
+                title => 'IPv4 Subnet',
+                record_data => \%output,
+                record_keys => \@output_keys,
+            }
+        };
 };
 
 1;

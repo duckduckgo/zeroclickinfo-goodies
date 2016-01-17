@@ -20,6 +20,15 @@ DDH.cheat_sheets.build = function(ops) {
                    showhide = false;
                }
 
+               //replaces &#42;&#47; and &#47;&#42; to */ and /* fixing issue1646
+               var val;
+               for (var j = 0; j < sections[section].length; j++){
+                   if (sections[section][j].hasOwnProperty(val)){
+                       sections[section][j].val.replace(/&#42;&#47;/g, "*/")
+                            .replace(/&#47;&#42;/g, "/*");
+                   }
+               }
+
                result += options.fn({ name: section, items: sections[section], template: template, showhide: showhide });
             }
         });
@@ -34,7 +43,7 @@ DDH.cheat_sheets.build = function(ops) {
 
         var out;
         var codeClass = typeof className === "string" ? className : "bg-clr--white";
-        
+
         // replace escaped slashes and brackets
         string = string.replace(/\</g, '&lt;')
                 .replace(/\>/g, '&gt;')

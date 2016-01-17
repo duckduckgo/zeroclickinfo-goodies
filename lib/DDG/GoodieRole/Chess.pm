@@ -76,8 +76,8 @@ sub draw_chessboard_html {
         for ($j = 0; $j < 8; $j++){
             # Columns
             $html_chessboard .= '<td id="'.$arr[$j].(8-$i).'">';
-            $html_chessboard .= '<a href="#" class="'.$class_dict{$position[$counter]};
-            $html_chessboard .= '">'.$unicode_dict{$position[$counter]}.'</a>';
+            $html_chessboard .= '<span class="'.$class_dict{$position[$counter]};
+            $html_chessboard .= '">'.$unicode_dict{$position[$counter]}.'</span>';
             $html_chessboard .= '</td>';
             $counter++;
         }

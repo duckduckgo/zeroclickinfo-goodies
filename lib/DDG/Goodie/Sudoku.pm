@@ -12,15 +12,6 @@ triggers startend => 'sudoku';
 zci is_cached => 0;
 zci answer_type => "sudoku";
 
-primary_example_queries 'sudoku easy';
-description 'show a little sudoku you can play in the browser';
-
-name 'Sudoku';
-category 'random';
-attribution github => ['DrDub', 'Pablo Duboue'],
-	web => ['http://duboue.net/', 'Pablo Duboue'],
-	github => ['https://github.com/mintsoft', 'Rob Emery'];
-
 sub parse_to_html_table(@)
 {
 	my @sudoku_lines = @_;

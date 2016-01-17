@@ -5,6 +5,13 @@ use strict;
 use warnings;
 use DDG::Goodie;
 use Text::Trim;
+use HTML::Entities 'decode_entities';
+use utf8;
+
+triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
+
+zci answer_type =>          'html_entity';
+zci is_cached   =>          1;
 
 # '&' and ';' not included in the hash value -- they are added in make_text() and make_html()
 my %codes = (
@@ -210,47 +217,46 @@ my %accented_chars = (
 
 sub make_text {
     # Returns a text string of the form: "Encoded HTML Entity: <<entity>>"
-    my $text = "";
-    foreach my $i (0 .. scalar(@{$_[0]}) - 1) {
-        $text = $i ? ("$text" . "\n" . "Encoded HTML Entity: &$_[0][$i][1];") : ("$text" . "Encoded HTML Entity: &$_[0][$i][1];"); # No \n in the first line of the answer
-    }
-    return $text;
+    my @input = @{$_[0]};
+    return join ("\n", map {"Encoded HTML Entity: &$_->[1];"} @input);
 };
 
-sub make_html {
-    # Returns a html formatted string with css class names (no inline styles)
-    my $html;
-    if (scalar(@{$_[0]}) == 1) { # single line answer
-        $html = qq(<div class="zci--htmlentitiesencode"><span class="text--secondary">Encoded HTML Entity (&$_[0][0][1];): </span><span class="text--primary">&<span>$_[0][0][1]</span>;</span></div>) ; # link in the same line for single line answers
-    } else {
-        $html = qq(<div class="zci--htmlentitiesencode">);
-        foreach my $i (0 .. scalar(@{$_[0]}) - 1) { # multiple line answer
-            $html = $html . qq(<div><span class="text--secondary">$_[0][$i][0] (&$_[0][$i][1];): </span><span class="text--primary">&<span>$_[0][$i][1]</span>;</span></div>);
+sub make_structured_answer {
+    my ($answer, $question) = @_;
+    my @input = @$answer;
+    
+    if (scalar(@input) == 1) {
+        return {
+            input       => [$input[0][0]],
+            operation   => "HTML Entity Encode",
+            result      => html_enc("&$input[0][1];")." (&$input[0][1];)",
         }
-        $html = $html . "</div>";
+    } else {
+        my (%output, @output_keys);
+        foreach my $i (0 .. scalar(@input) - 1) {
+            my $rowkey = "$input[$i][0] (" . decode_entities("&$input[$i][1];").")";
+            $output{$rowkey} = "&$input[$i][1];";
+            push @output_keys, $rowkey;
+        }
+
+        return {
+            id => "htmlentitiesencode",
+            name => "HTML Entities",
+            templates => {
+                group => 'list',
+                options => {
+                    content => 'record'
+                }
+            },
+            data => {
+                title => "$question",
+                subtitle => "HTML Entity Encode",
+                record_data => \%output,
+                record_keys => \@output_keys,
+            }
+        };
     }
-    return $html;
-};
-
-triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
-
-primary_example_queries     'html em dash', 'html entity A-acute', 'html escape &';
-secondary_example_queries   'html code em-dash', 'html entity for E grave', '$ sign htmlentity', 'pound sign html encode', 'html character code for trademark symbol',
-                            'what is the html entity for greater than sign', 'how to encode an apostrophe in html';
-
-name                        'HTMLEntitiesEncode';
-description                 'Displays the HTML entity code for the query name';
-category                    'cheat_sheets';
-topics                      'programming', 'web_design';
-code_url                    'https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/HTMLEntitiesEncode.pm';
-zci answer_type =>          'html_entity';
-zci is_cached   =>          1;
-
-attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"],
-            github  =>      ["https://github.com/nishanths", "Nishanth Shanmugham"],
-            twitter =>      ["https://twitter.com/nshanmugham", "Nishanth Shanmugham"],
-            twitter =>      ['crazedpsyc','crazedpsyc'],
-            cpan    =>      ['CRZEDPSYC','crazedpsyc'];
+}
 
 handle remainder => sub {
     # General query cleanup
@@ -288,9 +294,7 @@ handle remainder => sub {
         }
         # Make final answer
         if (defined $value) {
-            my $text = make_text($value);
-            my $html = make_html($value);
-            return $text, html => $html;
+            return make_text($value), structured_answer => make_structured_answer($value, $_);
         }
     }
 
@@ -309,9 +313,7 @@ handle remainder => sub {
         $entity =~ s/;$//g;
         # Make final answer
         my $answer = [[$_, $entity]];
-        my $text = make_text($answer);
-        my $html = make_html($answer);
-        return $text, html => $html;
+        return make_text($answer), structured_answer => make_structured_answer($answer, $_);
     }
 
     return;

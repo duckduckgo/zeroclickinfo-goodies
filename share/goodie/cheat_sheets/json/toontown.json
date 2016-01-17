@@ -1,0 +1,386 @@
+{
+    "id": "toontown_cheat_sheet", 
+    "name": "Toontown",
+    "description": "Commands For the Toontown Private Servers", 
+	"aliases": [
+        "toontown mod", "tto", "tto mod"
+    ],
+    "metadata" : {
+      "sourceName" : "Wikipedia",
+      "sourceUrl" : "https://wikipedia.org/wiki/Toontown_Online"
+   },
+
+    "template_type": "terminal",
+
+    "section_order": [ 
+        "Toon",
+        "Toontasks",
+        "Items",
+        "Cogs",
+        "Games",
+        "System"
+    ],
+
+    "sections": {
+        "Toon": [
+            {
+                "key": "~correctlaff()", 
+                "val": "Corrects toon's laff."
+            },
+            {
+                "key": "~nametag(styleName)]",
+                "val": "Set the style of target's nametag."
+            },
+            {
+                "key": "~emotes", 
+                "val": "Unlock all emote animations on the target toon."
+            },
+            {
+                "key": "~phrase(phraseStringOrId)", 
+                "val": "Unlocks a new phrase and adds it to target's list of their phrases."
+            },
+            {
+                "key": "~setCE(CEValue, CEHood, CEExpire)", 
+                "val": "Set Cheesy Effect of the target."
+            },
+            {
+                "key": "~setHp(hpVal)", 
+                "val": "Set target's current laff."
+            },
+            {
+                "key": "~setMaxHp(hpVal)", 
+                "val": "Set target's laff."
+            },
+            {
+                "key": "~maxToon", 
+                "val": "Max out the toons stats."
+            },
+            {
+                "key": "~setMaxMoney(Amount to be able to hold)", 
+                "val": "Set target's money and maxMoney values."
+            },
+            {
+                "key": "~setName(name)", 
+                "val": "Set target's name."
+            },
+            {
+                "key": "~setHat(hatId, hatTex=0)", 
+                "val": "Set hat of target toon."
+            },
+            {
+                "key": "~setGlasses(glassesId, glassesTex=0)", 
+                "val": "Set glasses of target toon."
+            },
+            {
+                "key": "~setBackpack(bpId, bpTex=0)", 
+                "val": "Set backpack of target toon."
+            },
+            {
+                "key": "~setShoes(shoesId, shoesTex=0)", 
+                "val": "Set shoes of target toon."
+            },
+            {
+                "key": "~togGM()", 
+                "val": "Toggle GM Icon for toon."
+            },
+            {
+                "key": "~ghost()", 
+                "val": "Set toon to invisible."
+            },
+            {
+                "key": "~setGM(gmId)", 
+                "val": "Set the target's GM level (used for icon)."
+            },
+            {
+                "key": "~setCogIndex(indexVal)", 
+                "val": "Transform into a cog/suit."
+            },
+            {
+                "key": "~setCogSuit", 
+                "val": "Set cog suit and level"
+            },
+            {
+                "key": "~dna(part, value)", 
+                "val": "Set a specific part of DNA for the target toon."
+            },
+            {
+                "key": "~immortal()", 
+                "val": "Make target or self immortal."
+            },
+            {
+                "key": "~houseType(type)", 
+                "val": "Set target house type."
+            },
+            {
+                "key": "~setBattleSkip(bs)", 
+                "val": "Skip battle."
+            },
+            {
+                "key": "~sleep", 
+                "val": "Never fall asleep."
+            }
+        ],        
+        "Toontasks": [
+            {
+                "key": "~setQP(questId, progress)",
+                "val": "Get current questId in progress via ~setQP. Set questId progress via ~setQP questId value."
+            }, 
+            {
+                "key": "~questTier(tier)",
+                "val": "Set toon's tier to specified value."
+            }
+        ],
+        "Items": [
+            {
+                "key": "~setTrackAccess(gagtrack)",
+                "val": "Set target's gag track acess."
+            },
+            {
+                "key": "~tracks(gagtrack)",
+                "val": "Set access for each of the 7 gag tracks. (EX: ~tracks 1 1 0 0 1 1 0)"
+            },
+            {
+                "key": "~exp(track, amount)",
+                "val": "Set your experience to the amount specified for a single track."
+            },
+            {
+                "key": "~merits(corp, amount)",
+                "val": "Set the target's merits to the value specified."
+            },
+            {
+                "key": "~fanfare()",
+                "val": "Give target toon a fanfare."
+            },
+            {
+                "key": "~catalog()",
+                "val": "Delivers target's catalog."
+            },
+            {
+                "key": "~pouch(number of gags)",
+                "val": "Set the target's max gag limit."
+            },
+            {
+                "key": "~givePies(pieType, number of Pies)",
+                "val": "Give target Y number of X pies."
+            },
+            {
+                "key": "~unlimitedGags()",
+                "val": "Restock avatar's gags at the start of each round."
+            },
+            {
+                "key": "~sos(amount)(SOS name)",
+                "val": " Gives the player the SOS toon."
+            },
+            {
+                "key": "~goodsos()",
+                "val": "Restock all *good* VP SOS toons."
+            },
+            {
+                "key": "~unites()",
+                "val": "Restock all CFO phrases."
+            },
+            {
+                "key": "~summons()",
+                "val": "Restock all CJ summons."
+            },
+            {
+                "key": "~pinkslips()",
+                "val": "Restock (to 99) CEO pink slips."
+            }
+        ],
+        "Cogs": [
+            {
+                "key": "~invasionstatus",
+                "val": "Returns the number of cogs available in an invasion."
+            },
+            {
+                "key": "~spawnCog(cog)",
+                "val": "Spawn cog. Names must use the first letter of each word (ex: The Big Cheese : tbc)."
+            },
+            {
+                "key": "~spawnBuilding",
+                "val": "Spawn a cog building."
+            },
+            {
+                "key": "~spawnFO",
+                "val": "Spawn a Field Office (For a lawbot Field Office type ~spawnFO lawbot)."
+            },
+            {
+                "key": "~invasion(cmd, name, num, specialSuit)",
+                "val": "Spawn an invasion on the current AI if one doesn't exist."
+            },
+            {
+                "key": "~boss(cmd, val, val2)",
+                "val": "Commands that can be run on the current boss in the invoker's zone."
+            },
+            {
+                "key": "~skipCEO",
+                "val": " Skip a ceo round."
+            },
+            {
+                "key": "~skipVP",
+                "val": "Skip a VP round."
+            },
+            {
+                "key": "~skipCJ",
+                "val": "Skip a CJ round."
+            },
+            {
+                "key": "~skipCFO",
+                "val": "Skip a CFO round."
+            }
+        ],
+        "Games": [
+            {
+                "key": "~gibfish(fishName)",
+                "val": "Sets a flag on the avatar, that upon casting a fishing rod (that is valid), gives the avatar the requested fish."
+            },
+            {
+                "key": "~nogibfish",
+                "val": "Deletes a request for a fish if it exists."
+            },
+            {
+                "key": "~stopBingo",
+                "val": "Stops Fish Bingo."
+            },
+            {
+                "key": "~startBingo",
+                "val": "Starts Fish Bingo."
+            },
+            {
+                "key": "~requestBingoCard(cardName, seed)",
+                "val": "Send request for bingo card."
+            },
+            {
+                "key": "~setFishingRod(rodVal)",
+                "val": "Set target's fishing rod value."
+            },
+            {
+                "key": "~setMaxFishTank(tankVal)",
+                "val": "Set target's max fish tank value."
+            },
+            {
+                "key": "~abortMinigame",
+                "val": "Abort any minigame you are currently in."
+            },
+            {
+                "key": "~winMinigame",
+                "val": "Win the current minigame you are in."
+            },
+            {
+                "key": "~requestMinigame(minigameName, minigameKeep, minigameDiff, minigamePG)",
+                "val": "Request a certain trolley game."
+            },
+            {
+                "key": "~setTickets(Amount you want to change to)",
+                "val": "Set the target's racing ticket's value."
+            },
+            {
+                "key": "~leaveRace",
+                "val": "Leave the current race you are in."
+            },
+            {
+                "key": "~setTrophyScore(value)",
+                "val": "Set the trophy score of target."
+            },
+            {
+                "key": "~travel(target)",
+                "val": "Trolley tracks."
+            }
+        ],
+        "System": [
+            {
+                "key": "~system",
+                "val": "Broadcast a message to your entire district."
+            },
+            {
+                "key": "~garbage(arg)",
+                "val": "Reports the total garbage use for this process."
+            },
+            {
+                "key": "~heap()",
+                "val": "Counts the number of objects in Python's object memory."
+            },
+            {
+                "key": "~objects(minimum)",
+                "val": "Write the objects down to log."
+            },
+            {
+                "key": "~containers(limit)",
+                "val": "Write the container report to log."
+            },
+            {
+                "key": "~clickNametag(avId)",
+                "val": "Simulate a click on an avatar's nametag, given their ID."
+            },
+            {
+                "key": "~showTarget()",
+                "val": "Show the moderators current Magic Word target."
+            },
+            {
+                "key": "~accId()",
+                "val": "Get the accountId from the target player."
+            },
+            {
+                "key": "~run()",
+                "val": "Toggle running, which makes you move much faster."
+            },
+            {
+                "key": "~collisionsOff()",
+                "val": "Turn off collisions. This allows you to run through things, and walk in air."
+            },
+            {
+                "key": "~collisionsOn()",
+                "val": "Re-enable collisions."
+            },
+            {
+                "key": "~setGravity(gravityValue, overrideWarning)",
+                "val": "Set your gravity value!."
+            },
+            {
+                "key": "~getPos()",
+                "val": "Get current position of your toon."
+            },
+            {
+                "key": "~setPos(toonX, toonY, toonZ)",
+                "val": "Set position of your toon."
+            },
+            {
+                "key": "~chatmode(mode=)",
+                "val": "Set the chat mode of the current avatar."
+            },
+            {
+                "key": "~oobe()",
+                "val": "Toggle out of body experience view."
+            },
+            {
+                "key": "~oobeCull()",
+                "val": "Toggle out of body experience view, with culling debugging."
+            },
+            {
+                "key": "~wire()",
+                "val": "Toggle wireframe view."
+            },
+            {
+                "key": "~textures()",
+                "val": "Toggle textures on and off."
+            },
+            {
+                "key": "~fps()",
+                "val": "Toggle frame rate meter on or off."
+            },
+            {
+                "key": "~showAvIds()",
+                "val": "Show avId in Nametags."
+            },
+            {
+                "key": "~showNames()",
+                "val": "Remove avIds in Nametags."
+            },
+            {
+                "key": "~showAccess()",
+                "val": "Show access level."
+            }
+        ]
+    }
+}

@@ -1,13 +1,14 @@
 {
     "id": "gnupg_cheat_sheet",
-    "name": "GnuPG",
-    "description": "GNU Privacy Guard is the GNU project's free software implementation of the OpenPGP standard.",
+    "name": "GNU Privacy Guard",
+    "description": "GNU project's free software implementation of OpenPGP standard.",
     "metadata": {
-        "sourceName": "GnuPG man page",
+        "sourceName": "GnuPG",
         "sourceUrl": "https://www.gnupg.org/documentation/manpage.en.html"
     },
     "aliases": [
-        "gpg"
+        "gpg",
+        "gnu privacy guard"
     ],
     "template_type": "terminal",
     "section_order": [
@@ -20,97 +21,97 @@
         "Encrypting / Decrypting": [
             {
                 "val": "Encrypt a file to a recipient",
-                "key": "$ gpg -e -r \\[recipient key\\] \\[file\\]"
+                "key": "gpg -e -r \\[recipient key\\] \\[file\\]"
             },
             {
                 "val": "Encrypt and sign a file to a recipient",
-                "key": "$ gpg -se -r \\[recipient key\\] \\[file\\]"
+                "key": "gpg -se -r \\[recipient key\\] \\[file\\]"
             },
             {
                 "val": "Encrypt a file with a password",
-                "key": "$ gpg -c \\[file\\]"
+                "key": "gpg -c \\[file\\]"
             },
             {
                 "val": "Decrypt a file",
-                "key": "$ gpg -d \\[file\\]"
+                "key": "gpg -d \\[file\\]"
             }
         ],
         "Signing": [
             {
                 "val": "Sign a file (detached ASCII signature)",
-                "key": "$ gpg --detach-sign -a \\[file\\]"
+                "key": "gpg --detach-sign -a \\[file\\]"
             },
             {
                 "val": "Clear-sign a file",
-                "key": "$ gpg --clearsign \\[file\\]"
+                "key": "gpg --clearsign \\[file\\]"
             },
             {
                 "val": "Sign a file",
-                "key": "$ gpg -s -a \\[file\\]"
+                "key": "gpg -s -a \\[file\\]"
             },
             {
                 "val": "Verify a signature",
-                "key": "$ gpg -v \\[file\\]"
+                "key": "gpg -v \\[file\\]"
             },
             {
                 "val": "Sign a key",
-                "key": "$ gpg --sign-key \\[key\\]"
+                "key": "gpg --sign-key \\[key\\]"
             }
         ],
         "Key Management": [
             {
                 "val":"Export a public key to an ascii-armoured file",
-                "key": "$ gpg -o \\[file.asc\\] --export -a \\[key\\]"
+                "key": "gpg -o \\[file.asc\\] --export -a \\[key\\]"
             },
             {
                 "val":"Export a secret key to an ascii-armoured file",
-                "key": "$ gpg -o \\[file.asc\\] --export-secret-key -a \\[key\\]"
+                "key": "gpg -o \\[file.asc\\] --export-secret-key -a \\[key\\]"
             },
             {
                 "val":"Import key(s) into the local keychain",
-                "key": "$ gpg --import \\[file\\]"
+                "key": "gpg --import \\[file\\]"
             },
             {
                 "val":"Delete key(s) from the local keychain",
-                "key": "$ gpg --delete-keys \\[key(s)\\]"
+                "key": "gpg --delete-keys \\[key(s)\\]"
             },
             {
                 "val":"List keys in local keychain",
-                "key": "$ gpg --list \\[optional search\\]"
+                "key": "gpg --list \\[optional search\\]"
             },
             {
                 "val":"List key fingerprint(s)",
-                "key": "$ gpg --fingerprint \\[key(s)\\]"
+                "key": "gpg --fingerprint \\[key(s)\\]"
             },
             {
                 "val":"Generate a new key pair",
-                "key": "$ gpg --gen-key"
+                "key": "gpg --gen-key"
             },
             {
                 "val":"Generate a revocation certificate for a key",
-                "key": "$ gpg --gen-revoke \\[key\\]"
+                "key": "gpg --gen-revoke \\[key\\]"
             },
             {
                 "val":"Sign or edit a key",
-                "key": "$ gpg --edit \\[key\\]"
+                "key": "gpg --edit \\[key\\]"
             }
         ],
         "Key Server": [
             {
                 "val":"Send a key to a key server",
-                "key": "$ gpg --send-keys \\[key(s)\\]"
+                "key": "gpg --send-keys \\[key(s)\\]"
             },
             {
                 "val":"Retrieve a key from a key server",
-                "key": "$ gpg --recv-keys \\[key(s)\\]"
+                "key": "gpg --recv-keys \\[key(s)\\]"
             },
             {
                 "val":"Search for keys on a key server",
-                "key": "$ gpg --search-keys \\[search\\]"
+                "key": "gpg --search-keys \\[search\\]"
             },
             {
                 "val":"Refresh all keys in local keyring",
-                "key": "$ gpg --refresh-keys"
+                "key": "gpg --refresh-keys"
             }
         ]
     }

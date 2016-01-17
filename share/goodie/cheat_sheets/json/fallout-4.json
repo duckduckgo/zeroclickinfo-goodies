@@ -1,0 +1,54 @@
+{
+    "id": "fallout_4_cheat_sheet",
+    "name": "Fallout 4",
+    "description": "Default PC key bindings",
+    "metadata": {
+        "sourceName": "Fallout 4",
+        "sourceUrl": "https://fallout4.com/"
+    },
+    "aliases": [
+        "fallout4",
+        "fo4"
+    ],
+    "template_type": "keyboard",
+    "section_order": ["Movement", "Combat", "Interaction", "Quick", "Misc"],
+    "sections": {
+        "Movement": [
+            { "key": "W", "val": "Forward" },
+            { "key": "S", "val": "Back" },
+            { "key": "A", "val": "Strafe Left" },
+            { "key": "D", "val": "Strafe Right" },
+            { "key": "Space", "val": "Jump" },
+            { "key": "Left Shift", "val": "Sprint" },
+            { "key": "Left Ctrl", "val": "Sneak" },
+            { "key": "C", "val": "Run" },
+            { "key": "Caps Lock", "val": "Toggle Always Run" },
+            { "key": "X", "val": "Auto-Move" }
+        ],
+        "Combat": [
+            { "key": "Left Mouse Button", "val": "Attack" },
+            { "key": "Right Mouse Button", "val": "Aim/Block" },
+            { "key": "Left Alt", "val": "Bash/Power Attack/Grenade" },
+            { "key": "Q", "val": "VATS" },
+            { "key": "R", "val": "Ready/Reload" }
+        ],
+        "Interaction": [
+            { "key": "E", "val": "Activate" },
+            { "key": "Tab", "val": "Pip-Boy" }
+        ],
+        "Quick": [
+            { "key": "F", "val": "Favorites" },
+            { "key": "F5", "val": "Quicksave" },
+            { "key": "F9", "val": "Quickload" },
+            { "key": "Esc", "val": "Pause" },
+            { "key": "K", "val": "Quick Stats" },
+            { "key": "I", "val": "Quick Inventory" },
+            { "key": "J", "val": "Quick Data" },
+            { "key": "M", "val": "Quick Map" },
+            { "key": "O", "val": "Quick Radio" }
+        ],
+        "Misc": [
+            { "key": "Mouse 3", "val": "Toggle POV/Workshop" }
+        ]
+    }
+}

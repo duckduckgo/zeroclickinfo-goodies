@@ -1,0 +1,204 @@
+{
+    "id": "java_cheat_sheet",
+    "name": "Java",
+    "description": "A set of java Syntax, functions, and expressions",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/sschaub/cheat-sheets/java-fundamentals/"
+    },
+    "template_type": "terminal",
+    "section_order": [  "Program Compilation and Execution",
+                        "Data Types",
+                        "Statements",
+                        "Data Conver­sions",
+                        "Text Formatting",
+                        "String Methods",
+                        "Ar­rayList Methods",
+                        "Ha­shMap Methods"],
+    "sections": {
+        "Program Compilation and Execution" : [
+            {
+                "key" : "javac Hello.j­ava",
+                "val" : "Compile Java File"
+            },
+            {
+                "key" : "java Hello",
+                "val" : "Execute Java Program"
+            }
+        ],
+        "Data Types": [
+            {
+                "key" : "byte/short/int/long",
+                "val" : "Integer Datatype"
+            },
+            {
+                "key" : "float/double",
+                "val" : "Floating Point Datatype"
+             },
+            {
+                "key" : "char",
+                "val" : "A Single Character"
+            },
+            {
+                "key" : "boolean",
+                "val" : "Represents True,False"
+            },
+            {
+                "key" : "String",
+                "val" : "Java object To Represent A Sequence Of Characters"
+            }
+
+            ],
+        "Statements": [
+            {
+                "val" : "If Statement",
+                "key" : "if(expre­ssion)&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;else&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"
+                
+            },
+            {
+                
+                "val" : "While Loop",
+                "key" : "while(expre­ssion)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}"
+            },
+            {
+                "val" : "Do While Loop ",
+                "key" : "do&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;while(expre­ssion)"
+                
+            },
+            {   "val" : "For Loop ",
+                "key" : "for(Initialization;&nbsp;Condition;&nbsp;Updation)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"                
+            },
+            {   "val" : "For Each Loop ",
+                "key" : "for(var&nbsp;:&nbsp;colle­ction)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"                
+            },
+            {
+                "val" : "Exce­ption Handling",
+                "key" : "try&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents<br>\\}&nbsp;catch(Exce­pti­onType&nbsp;e1)\\{<br>&nbsp;­&nbsp;&nbsp;&nbsp;­sta­tem­ents<br>\\}&nbsp;catch(Exception&nbsp;e2)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;cat­ch-all&nbsp;statem­ents<br>\\}&nbsp;finally&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents&nbsp;\\}"                
+            }
+        ],
+        "Data Conver­sions": [
+            {
+                "val" : "String to Number",
+                "key" : "int&nbsp;i&nbsp;=&nbsp;Intege­r.p­ars­eIn­t(­str);<br><br>double&nbsp;d&nbsp;=&nbsp;Double.pa­rse­Dou­ble­(s­tr);"
+            },
+            {
+                "val" : "Any Type to String",
+                "key" : "String&nbsps&nbsp=&nbspString.va­lue­Of(­va­lue);"
+            },
+            {
+                "val" : "Numeric Conver­sions",
+                "key" : "int&nbspi&nbsp=&nbsp(int)&nbspnumeric&nbspexpres­sion;"
+            }
+            ],
+        "Text Formatting": [
+            {
+                "val" : "printf style format­ting",
+                "key" : "System.ou­t.p­rin­tf(­\"­Count&nbsp;is&nbsp;%d\n\",&nbsp;count);<br><br>s&nbsp;=&nbsp;String.fo­rma­t(\"Count&nbsp;is&nbsp;%d\",&nbsp;count);"
+            },
+            {
+                "val" : "Mess­age­Format style format­ting",
+                "key" : "Messag­eFo­rma­t.f­ormat(\"{0}&nbsp;rows.\",&nbsp;5);"
+            },
+            {
+                "val" : "Indi­vidual Numbers and Dates",
+                "key" : "Number­For­mat.ge­tCu­rre­ncy­Ins­tance().fo­rma­t(x);<br><br>Simple­Dat­eFo­rma­t(\"\"h:mm&nbsp;a\"\").fo­rma­t(new&nbsp;Date());<br><br>Decima­lFo­rma­t(\"#­,##­0.0­0\").fo­rma­t(1­25.32);"
+            }
+        ],
+        "String Methods": [
+        {    
+            
+            "key" : "s.le­ngth()",
+            "val" : "Length Of S"
+        },
+        {    
+            
+            "key" : "s.ch­arA­t(i)",
+            "val" : "Extract ith Character"
+        },
+        {    
+            
+            "key" : "s.su­bst­rin­g(­start, end)",
+            "val" : "Substring From Start To End"
+        },
+        {    
+            
+            "key" : "s.to­Upp­erC­ase()/lowerCase()",
+            "val" : "Returns Copy Of s In Caps/Lower Case"
+        },
+        {    
+            
+            "key" : "s.in­dex­Of(x)",
+            "val" : "Index Of First Occurence Of x"
+        },
+        {    
+            
+            "key" : "s.re­pla­ce(­old, new)",
+            "val" : "Search And Replace"
+        },
+        {    
+            
+            "key" : "s.sp­lit­(r­egex)",
+            "val" : "Splits Into Tokens"
+        },
+        {    
+            
+            "key" : "s.trim()",
+            "val" : "Trims Surrounding White Space"
+        },
+        {    
+            
+            "key" : "s.eq­ual­s(s2)",
+            "val" : "True If s Equals s2"
+        },
+        {    
+            
+            "key" : "s.co­mpa­reT­o(s2)",
+            "val" : "0 if Equal or +ve If s > s2 or-ve If s < s2"
+        }
+        ],
+        "Ar­rayList Methods" : [
+            {    
+            
+            "key" : "l.ad­d(­item)",
+            "val" : "Add Item To List"
+        },
+        {    
+            
+            "key" : "l.ge­t(i)",
+            "val" : "Return ith Item"
+        },
+        {    
+            
+            "key" : "l.size()",
+            "val" : "Returns The Number Of Items"
+        },
+        {    
+            
+            "key" : "l.re­mov­e(i)",
+            "val" : "Remove ith Item"
+        },
+
+        {    
+            
+            "key" : "l.se­t(i, value)",
+            "val" : "Put value At Position i"
+        }
+        ],
+    "Ha­shMap Methods" : [
+        {
+            "key" : "m.pu­t(­key­,­value)",
+            "val" : "Inserts Value With Key"
+        },
+        {
+            "key" : "m.ge­t(­key)",
+            "val" : "Retrieves Value With Key"
+        },
+        {   
+            "key" : "m.co­nta­ins­Key­(key)",
+            "val" : "True If m Contains Key"
+        }
+
+    ]
+
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "id": "openboot_cheat_sheet",
+    "name": "OpenBoot",
+    "description": "Quick reference of OpenBoot commands on SUN Workstations",
+    "metadata": {
+        "sourceName": "IfA Hawaii",
+        "sourceUrl": "http://irtfweb.ifa.hawaii.edu/~spex/computers/spex1/techdocs/1201-hilodog/SunOBP_Quick_Ref.pdf"
+    },
+    "aliases": [
+        "sun boot prompt", "sun openboot", "sun open boot prom"
+    ],
+    "template_type": "code",
+    "section_order": ["Basic Commands", "Other Helpful Commands"],
+    "sections": {
+        "Basic Commands": [{
+            "val": "Shows up the startup banner",
+            "key": "banner"
+        }, {
+            "val": "Boots the system from its default device",
+            "key": "boot"
+        }, {
+            "val": "Boots from hard drive #1",
+            "key": "boot disk"
+        }, {
+            "val": "Boots from floppy",
+            "key": "boot floppy"
+        }, {
+            "val": "Quickboots from network",
+            "key": "boot net"
+        }, {
+            "val": "Boots from CD drive",
+            "key": "boot cdrom"
+        }, {
+            "val": "Switches off the machine",
+            "key": "power-off"
+        }],
+        "Other Helpful Commands": [{
+            "val": "Ejects the floppy",
+            "key": "eject floppy"
+        }, {
+            "val": "Ejects the CD drive",
+            "key": "eject cdrom"
+        }, {
+            "val": "Re-sets all NVRAM contents",
+            "key": "[Stop] [N]"
+        }, {
+            "val": "Sets the entire PROM to default values",
+            "key": "set-defaults"
+        }, {
+            "val": "Restarts the system",
+            "key": "reset"
+        }, {
+            "val": "Shows all device aliases",
+            "key": "devalias"
+        }, {
+            "val": "Shows all NVRAM envs",
+            "key": "printenv"
+        }, {
+            "val": "Re-Scans devices on all SCSI buses",
+            "key": "probe-scsi-all"
+        }]
+    }
+}

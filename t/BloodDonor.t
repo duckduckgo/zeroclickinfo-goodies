@@ -80,6 +80,15 @@ ddg_goodie_test(
 			["Ideal donor", "Other donors", "Only if no Rh(+) found"]
 		)
     ),
+    'donor o+ve' => test_zci("Ideal donor: O+VE\nOther donors: O+ve\nOnly if no Rh(+) found: O-ve",
+        structured_answer => build_structure("O+VE",{
+				"Ideal donor" => "O+VE",
+				"Other donors" => "O+ve",
+				"Only if no Rh(+) found" => "O-ve"
+			},
+			["Ideal donor", "Other donors", "Only if no Rh(+) found"]
+		)
+    ),
 );
 
 done_testing;

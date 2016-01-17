@@ -1,11 +1,12 @@
 {
     "id": "w3m_cheat_sheet",
     "name": "w3m",
-    "description": "Text based Web browser",
+    "description": "Keyboard shortcuts for w3m,a text based Web browser",
     "metadata": {
-        "sourceName": "w3mCheatSheet",
+        "sourceName": "SourceForge",
         "sourceUrl": "http://w3m.sourceforge.net/MANUAL#Key:orig"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Page/Cursor motion",
         "Hyperlink operation",
@@ -141,7 +142,7 @@
             "val": "Browse link using external browser (use 2ESC M and 3ESC M to invoke second and third browser)",
             "key": "[ESC] [M]"
         }],
-        "File/Stream operation`": [{
+        "File/Stream operation": [{
             "val": "Open URL",
             "key": "U"
         }, {

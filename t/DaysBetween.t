@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use Test::MockTime qw( :all );
 
 zci answer_type => 'days_between';
 zci is_cached   => 1;
@@ -114,7 +115,38 @@ ddg_goodie_test(
             result    => 45
         },
     ),
+    'days between today and tomorrow' => test_zci(
+        qr/^There are 1 days between.+ and.+\.$/,
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Days between',
+            result    => 1
+        },
+    ),
+    'how many days between feb 2 and feb 17' => test_zci(
+        qr/^There are 15 days between.+ and.+\.$/,
+        structured_answer => {
+            input     => '-ANY-',
+            operation => 'Days between',
+            result    => 15
+        },
+    ),
     'days between jan 1 2012 and jan 1 123456' => undef,
 );
 
+set_fixed_time('2015-07-14T22:36:00');
+
+ddg_goodie_test(
+    [qw( DDG::Goodie::DaysBetween)],
+    'days between 22nd may and today' => test_zci(
+        'There are 53 days between 22 May 2015 and 14 Jul 2015.',
+        structured_answer => {
+            input     => ['22 May 2015', '14 Jul 2015'],
+            operation => 'Days between',
+            result    => 53
+        },
+    ),
+);
+
+restore_time();
 done_testing;

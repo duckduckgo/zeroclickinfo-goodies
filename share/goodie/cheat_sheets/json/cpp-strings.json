@@ -1,0 +1,39 @@
+{
+    "id": "cpp_strings_cheat_sheet",
+    "name": "C++ Strings",
+    "description": "List of basic String operations in C++",
+    "metadata": {
+        "sourceName": "Cplusplus",
+        "sourceUrl": "http://www.cplusplus.com/reference/string/string/"
+    },
+    "aliases": ["c++ strings","c++ string","cpp string"],
+    "template_type": "code",
+    "section_order": ["Constructors", "Element Access", "Size"],
+    "sections": {
+        "Constructors": [{
+            "key": "std::string str (\"Another character sequence\");",
+            "val": "From Buffer"
+        }, {
+            "key": "std::string str (str1);",
+            "val": "Copy Constructor"
+        }, {
+            "key": "std::string str (str1, 8, 3);",
+            "val": "Substring Constructor"
+        }, {
+            "key": "std::string str (\"A character sequence\", 6);",
+            "val": "From C-String"
+        }, {
+            "key": "std::string str;",
+            "val": "Empty String Constructor (Default Constructor)"
+        }],
+        "Element Access": [{
+            "key": "str[i]",
+            "val": "Access i-th element of string str"
+        }],
+        "Size": [{
+            "key": "str.length()",
+            "val": "Get the size of string str"
+        }]
+    }
+}
+

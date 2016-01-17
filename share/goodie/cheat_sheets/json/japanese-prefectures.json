@@ -1,0 +1,232 @@
+{
+    "id": "japanese_prefectures_cheat_sheet",
+    "name": "Japanese Prefectures",
+    "description": "Japanese prefectures grouped by region, along with their capital cities",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Prefectures_of_Japan"
+    },
+    "aliases": [
+        "japan prefecture",
+        "japan prefectures",
+        "japanese prefecture",
+        "prefectures of japan"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Hokkaidō",
+        "Tōhoku",
+        "Kantō",
+        "Chūbu",
+        "Kansai",
+        "Chūgoku",
+        "Shikoku",
+        "Kyūshū"
+    ],
+    "sections": {
+        "Hokkaidō": [
+            {
+                "key": "Hokkaidō (北海道)",
+                "val": "Sapporō (札幌市)"
+            }
+        ],
+        "Tōhoku": [
+            {
+                "key": "Aomori (青森県)",
+                "val": "Aomori (青森市)"
+            },
+            {
+                "key": "Iwate (岩手県)",
+                "val": "Morioka (盛岡市)"
+            },
+            {
+                "key": "Miyagi (宮城県)",
+                "val": "Sendai (仙台市)"
+            },
+            {
+                "key": "Akita (秋田県)",
+                "val": "Akita (秋田市)"
+            },
+            {
+                "key": "Yamagata (山形県)",
+                "val": "Yamagata (山形市)"
+            },
+            {
+                "key": "Fukushima (福島県)",
+                "val": "Fukushima (福島市)"
+            }
+        ],
+        "Kantō": [
+            {
+                "key": "Ibaraki (茨城県)",
+                "val": "Mito (水戸市)"
+            },
+            {
+                "key": "Tochigi (栃木県)",
+                "val": "Utsunomiya (宇都宮市)"
+            },
+            {
+                "key": "Gunma (群馬県)",
+                "val": "Maebashi (前橋市)"
+            },
+            {
+                "key": "Saitama (埼玉県)",
+                "val": "Saitama (さいたま市)"
+            },
+            {
+                "key": "Chiba (千葉県)",
+                "val": "Chiba (千葉市)"
+            },
+            {
+                "key": "Tōkyō (東京都)",
+                "val": "Tōkyō (東京)"
+            },
+            {
+                "key": "Kanagawa (神奈川県)",
+                "val": "Yokohama (横浜市)"
+            }
+        ],
+        "Chūbu": [
+            {
+                "key": "Niigata (新潟県)",
+                "val": "Niigata (新潟市)"
+            },
+            {
+                "key": "Toyama (富山県)",
+                "val": "Toyama (富山市)"
+            },
+            {
+                "key": "Ishikawa (石川県)",
+                "val": "Kanazawa (金沢市)"
+            },
+            {
+                "key": "Fukui (福井県)",
+                "val": "Fukui (福井市)"
+            },
+            {
+                "key": "Yamanashi (山梨県)",
+                "val": "Kōfu (甲府市)"
+            },
+            {
+                "key": "Nagano (長野県)",
+                "val": "Nagano (長野市)"
+            },
+            {
+                "key": "Gifu (岐阜県)",
+                "val": "Gifu (岐阜市)"
+            },
+            {
+                "key": "Shizuoka (静岡県)",
+                "val": "Shizuoka (静岡市)"
+            },
+            {
+                "key": "Aichi (愛知県)",
+                "val": "Nagoya (名古屋市)"
+            }
+        ],
+        "Kansai": [
+            {
+                "key": "Mie (三重県)",
+                "val": "Tsu (津市)"
+            },
+            {
+                "key": "Shiga (滋賀県)",
+                "val": "Ōtsu (大津市)"
+            },
+            {
+                "key": "Kyōto (京都府)",
+                "val": "Kyōto (京都市)"
+            },
+            {
+                "key": "Ōsaka (大阪府)",
+                "val": "Ōsaka (大阪市)"
+            },
+            {
+                "key": "Hyōgo (兵庫県)",
+                "val": "Kōbe (神戸市)"
+            },
+            {
+                "key": "Nara (奈良県)",
+                "val": "Nara (奈良市)"
+            },
+            {
+                "key": "Wakayama (和歌山県)",
+                "val": "Wakayama (和歌山市)"
+            }
+        ],
+        "Chūgoku": [
+            {
+                "key": "Tottori (鳥取県)",
+                "val": "Tottori (鳥取市)"
+            },
+            {
+                "key": "Shimane (島根県)",
+                "val": "Matsue (松江市)"
+            },
+            {
+                "key": "Okayama (岡山県)",
+                "val": "Okayama (岡山市)"
+            },
+            {
+                "key": "Hiroshima (広島県)",
+                "val": "Hiroshima (広島市)"
+            },
+            {
+                "key": "Yamaguchi (山口県)",
+                "val": "Yamaguchi (山口市)"
+            }
+        ],
+        "Shikoku": [
+            {
+                "key": "Tokushima (徳島県)",
+                "val": "Tokushima (徳島市)"
+            },
+            {
+                "key": "Kagawa (香川県)",
+                "val": "Takamatsu (高松市)"
+            },
+            {
+                "key": "Ehime (愛媛県)",
+                "val": "Matsuyama (松山市)"
+            },
+            {
+                "key": "Kōchi (高知県)",
+                "val": "Kōchi (高知市)"
+            }
+        ],
+        "Kyūshū": [
+            {
+                "key": "Fukuoka (福岡県)",
+                "val": "Fukuoka (福岡市)"
+            },
+            {
+                "key": "Saga (佐賀県)",
+                "val": "Saga (佐賀市)"
+            },
+            {
+                "key": "Nagasaki (長崎県)",
+                "val": "Nagasaki (長崎市)"
+            },
+            {
+                "key": "Kumamoto (熊本県)",
+                "val": "Kumamoto (熊本市)"
+            },
+            {
+                "key": "Ōita (大分県)",
+                "val": "Ōita (大分市)"
+            },
+            {
+                "key": "Miyazaki (宮崎県)",
+                "val": "Miyazaki (宮崎市)"
+            },
+            {
+                "key": "Kagoshima (鹿児島県)",
+                "val": "Kagoshima (鹿児島市)"
+            },
+            {
+                "key": "Okinawa (沖縄県)",
+                "val": "Naha (那覇市)"
+            }
+        ]
+    }
+}

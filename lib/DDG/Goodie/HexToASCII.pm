@@ -12,15 +12,6 @@ triggers start => 'ascii';
 zci is_cached   => 1;
 zci answer_type => 'ascii';
 
-primary_example_queries 'ascii 0x74657374';
-secondary_example_queries 'ascii 0x5468697320697320612074657374';
-description 'Return the ASCII representation of a given printable HEX number.';
-name 'HexToASCII';
-code_url 'http://github.com';
-category 'computing_tools';
-topics 'programming';
-attribution github => ['https://github.com/koosha--', 'koosha--'];
-
 handle remainder => sub {
     my $value = $_;
     $value =~ s/^\s+//;

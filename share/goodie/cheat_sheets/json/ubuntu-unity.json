@@ -1,9 +1,10 @@
 {
-    "id": "unity_unity_cheat_sheet",
+    "id": "ubuntu_unity_cheat_sheet",
     "name": "Ubuntu Unity",
     "description": "Linux Ubuntu Unity default keyboard shortcuts.",
     "template_type": "keyboard",
     "section_order": [
+        "Dash",
         "Launcher",
         "HUD",
         "Switching",

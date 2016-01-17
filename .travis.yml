@@ -1,5 +1,13 @@
 ---
 sudo: false
+env:
+  - PERL_LWP_SSL_VERIFY_HOSTNAME=0
+cache:
+  directories:
+    - $HOME/.cpanm
+    - $HOME/.nvm
+    - $HOME/perl5/perlbrew/perls/5.16/lib
+    - /var/tmp
 addons:
   apt_packages:
     - libmpfr-dev
