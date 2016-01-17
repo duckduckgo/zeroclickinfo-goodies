@@ -42,6 +42,14 @@ sub match {
     };
 }
 
+sub full_match {
+    my ($self, $to_match) = @_;
+    my $re = $self->_match_regex;
+    $to_match =~ /^$re$/ or return;
+    return {
+        value => $+{'primary'},
+    };
+}
 
 sub _build_regex {
     my $self = shift;
