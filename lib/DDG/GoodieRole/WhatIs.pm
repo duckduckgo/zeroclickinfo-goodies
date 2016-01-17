@@ -199,19 +199,9 @@ Required Options: I<None>.
 
 Optional Options: C<primary>.
 
-=item C<base conversion>
-
-Form: B<"PRIMARY in TO">
-
-Required Groups: C<conversion>.
-
-Required Options: C<to>.
-
-Optional Options: C<primary>.
-
 =item C<conversion to>
 
-Form: B<"PRIMARY to TO">
+Form: B<"Convert PRIMARY to TO">
 
 Required Groups:
 
@@ -238,6 +228,16 @@ C<conversion>, C<bidirectional> I<or> C<conversion>, C<from>.
 =back
 
 Required Options: C<from> I<or> C<to>.
+
+Optional Options: C<primary>.
+
+=item C<conversion in>
+
+Form: B<"PRIMARY in TO">
+
+Required Groups: C<conversion>.
+
+Required Options: C<to>.
 
 Optional Options: C<primary>.
 

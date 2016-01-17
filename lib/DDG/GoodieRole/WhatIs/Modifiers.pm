@@ -50,12 +50,6 @@ new_modifier_spec 'meaning' => {
     optional_options => { primary => qr/.+/ },
     action => \&meaning,
 };
-new_modifier_spec 'base conversion' => {
-    required_groups => [['conversion']],
-    optional_options => { primary => qr/.+/ },
-    required_options => [['to', 'from']],
-    action => \&base_conversion,
-};
 new_modifier_spec 'conversion to' => {
     required_groups  => [['conversion', 'bidirectional'],
                          ['conversion', 'to']],
@@ -66,9 +60,15 @@ new_modifier_spec 'conversion to' => {
 new_modifier_spec 'conversion from' => {
     required_groups  => [['conversion', 'bidirectional'],
                          ['conversion', 'from']],
-    required_options => [['from', 'to']],
+    required_options => ['from'],
     optional_options => { primary => qr/.+/ },
     action => \&conversion_from,
+};
+new_modifier_spec 'conversion in' => {
+    required_groups  => [['conversion']],
+    required_options => [['to', 'from']],
+    optional_options => { primary => qr/.+/ },
+    action => \&conversion_in,
 };
 new_modifier_spec 'prefix imperative' => {
     required_groups => [['prefix', 'imperative']],
@@ -152,7 +152,6 @@ sub spoken_translation {
 }
 sub whatis_translation {
     my ($options, $matcher) = @_;
-    my $re = _in_re($options, qr/what is /i, $question_end);
     $matcher->_add_re(_in_re($options, qr/what is /i, qr/$question_end?/));
 }
 sub meaning {
@@ -161,18 +160,17 @@ sub meaning {
     my $re = qr/what (?:is the meaning of $primary|does $primary mean)$question_end?/i;
     $matcher->_add_re($re);
 }
-sub base_conversion {
-    my ($options, $matcher) = @_;
-    $matcher->_add_re(_to_re($options, qr//));
-    $matcher->_add_re(_in_re($options, qr//));
-}
 sub conversion_to {
     my ($options, $matcher) = @_;
-    $matcher->_add_re(_to_re($options));
+    $matcher->_add_re(_to_re($options, qr/(convert )?/i));
 }
 sub conversion_from {
     my ($options, $matcher) = @_;
     $matcher->_add_re(_from_re($options));
+}
+sub conversion_in {
+    my ($options, $matcher) = @_;
+    $matcher->_add_re(_in_re($options));
 }
 sub prefix_imperative {
     my ($options, $matcher) = @_;
