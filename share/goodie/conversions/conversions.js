@@ -20,6 +20,10 @@ DDH.conversions.build = function(){
 					$("#zci__conversions-right-unit").val(answerComponents[2]);
 				});
 			});
+			$("#zci__conversions-physical-quantity").change(function(data){
+				console.log(data);
+				console.log($(this).val());
+			});
 		}
 	};
 };
