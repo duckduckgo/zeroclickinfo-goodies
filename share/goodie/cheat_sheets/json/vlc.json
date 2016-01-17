@@ -1,6 +1,7 @@
 {
     "id": "vlc_cheat_sheet",
     "name": "VLC Media Player Keyboard Shortcuts",
+    "description":"It is a free and open source cross-platform multimedia player and framework"
     "metadata": {
         "sourceName": "VideoLAN",
         "sourceUrl": "https://wiki.videolan.org/Hotkeys_table"
