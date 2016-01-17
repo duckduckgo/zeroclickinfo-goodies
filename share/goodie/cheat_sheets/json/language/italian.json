@@ -28,7 +28,7 @@
             "key" : "Good Evening!"
          },
          {
-            "val" : "Mi dispiace.",
+            "val" : "Mi dispiace",
             "key" : "I'm sorry."
          },
          {
@@ -36,7 +36,7 @@
             "key" : "Thank you!"
          },
          {
-            "val" : "Per piacere. / Per favore.",
+            "val" : "Per piacere / Per favore",
             "key" : "Please."
          },
          {
@@ -62,11 +62,11 @@
             "key" : "Please speak more slowly!"
          },
          {
-            "val" : "Sono allergico.",
+            "val" : "Sono allergico",
             "key" : "I am allergic."
          },
          {
-            "val" : "Ripeti, per piacere.",
+            "val" : "Ripeti, per piacere",
             "key" : "Repeat, please."
          },
          {
@@ -138,7 +138,7 @@
       ],
       "Travelling" : [
          {
-            "val" : "Gira a sinistra.",
+            "val" : "Gira a sinistra",
             "key" : "Turn left."
          },
          {
@@ -154,7 +154,7 @@
             "key" : "Is it far?"
          },
          {
-            "val" : "Prosegui dritto.",
+            "val" : "Prosegui dritto",
             "key" : "Go straight ahead."
          },
          {
@@ -162,11 +162,11 @@
             "key" : "Do you have a city map?"
          },
          {
-            "val" : "Fermati qui per favore.",
+            "val" : "Fermati qui per favore",
             "key" : "Stop here please."
          },
          {
-            "val" : "Gira a destra.",
+            "val" : "Gira a destra",
             "key" : "Turn right."
          },
          {
@@ -184,7 +184,7 @@
             "key" : "Do you have vegetaryan dishes?"
          },
          {
-            "val" : "Portata principale.",
+            "val" : "Portata principale",
             "key" : "Main dish."
          },
          {
@@ -192,11 +192,11 @@
             "key" : "Entrée"
          },
          {
-            "val" : "Sono allergico.",
+            "val" : "Sono allergico",
             "key" : "I am allergic."
          },
          {
-            "val" : "Dolce.",
+            "val" : "Dolce",
             "key" : "Dessert"
          },
          {
@@ -204,7 +204,7 @@
             "key" : "The check please!"
          },
          {
-            "val" : "Una tazza di caffè, per favore.",
+            "val" : "Una tazza di caffè, per favore",
             "key" : "A cup of coffee please."
          },
          {
@@ -216,7 +216,7 @@
             "key" : "Where is a good restaurant?"
          },
          {
-            "val" : "Una bottiglia di vino, per favore.",
+            "val" : "Una bottiglia di vino, per favore",
             "key" : "A glass of water please."
          },
          {
