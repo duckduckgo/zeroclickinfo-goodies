@@ -29,7 +29,7 @@
          },
          {
             "val" : "Mi dispiace",
-            "key" : "I'm sorry."
+            "key" : "I'm sorry"
          },
          {
             "val" : "Grazie!",
@@ -37,7 +37,7 @@
          },
          {
             "val" : "Per piacere / Per favore",
-            "key" : "Please."
+            "key" : "Please"
          },
          {
             "val" : "Grazie mille!",
@@ -63,11 +63,11 @@
          },
          {
             "val" : "Sono allergico",
-            "key" : "I am allergic."
+            "key" : "I am allergic"
          },
          {
             "val" : "Ripeti, per piacere",
-            "key" : "Repeat, please."
+            "key" : "Repeat, please"
          },
          {
             "val" : "Come dici \"X\" in italiano?",
@@ -139,7 +139,7 @@
       "Travelling" : [
          {
             "val" : "Gira a sinistra",
-            "key" : "Turn left."
+            "key" : "Turn left"
          },
          {
             "val" : "Dov'è l'uscita?",
@@ -155,7 +155,7 @@
          },
          {
             "val" : "Prosegui dritto",
-            "key" : "Go straight ahead."
+            "key" : "Go straight ahead"
          },
          {
             "val" : "Hai una cartina della mappa?",
@@ -163,11 +163,11 @@
          },
          {
             "val" : "Fermati qui per favore",
-            "key" : "Stop here please."
+            "key" : "Stop here please"
          },
          {
             "val" : "Gira a destra",
-            "key" : "Turn right."
+            "key" : "Turn right"
          },
          {
             "val" : "Dove posso trovare dei taxi?",
@@ -185,7 +185,7 @@
          },
          {
             "val" : "Portata principale",
-            "key" : "Main dish."
+            "key" : "Main dish"
          },
          {
             "val" : "Primo piatto",
@@ -193,7 +193,7 @@
          },
          {
             "val" : "Sono allergico",
-            "key" : "I am allergic."
+            "key" : "I am allergic"
          },
          {
             "val" : "Dolce",
@@ -205,7 +205,7 @@
          },
          {
             "val" : "Una tazza di caffè, per favore",
-            "key" : "A cup of coffee please."
+            "key" : "A cup of coffee please"
          },
          {
             "val" : "Avete piatti senza glutine?",
@@ -217,7 +217,7 @@
          },
          {
             "val" : "Una bottiglia di vino, per favore",
-            "key" : "A glass of water please."
+            "key" : "A glass of water please"
          },
          {
             "val" : "Un tavolo per due, per favore!",
