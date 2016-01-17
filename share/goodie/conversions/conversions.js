@@ -36,8 +36,9 @@ DDH.conversions.build = function(){
 	return {
 		onShow: function() {
 			$("#zci__conversions-left-in, #zci__conversions-left-unit, #zci__conversions-right-unit").change(function(){
-				//updateGui();
+				updateGui();
 			});
+			
 			$("#zci__conversions-physical-quantity").change(function(data){
 				$("#zci__conversions-left-in").val(1);
 				$("#zci__conversions-right-in").val("");
