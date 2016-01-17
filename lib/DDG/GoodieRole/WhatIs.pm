@@ -7,23 +7,30 @@ use warnings;
 use Moo::Role;
 use DDG::GoodieRole::WhatIs::Base;
 
-# Use for translations between systems where it makes sense to
-# say 'What is X in Y?'.
-sub wi_translation {
-    my $got_options = shift;
-    my $groups = ['translation'];
-    push $groups, @{$got_options->{groups}} if defined $got_options->{groups};
-    my $presets = {
-        groups => $groups,
+sub _build_wi {
+    my ($name, $sub) = @_;
+    no strict 'refs';
+    *$name = *{uc $name} = sub {
+        my %options = ref $_[0] eq 'HASH' ? %{$_[0]} : @_;
+        my %new_options = $sub->(%options);
+        return DDG::GoodieRole::WhatIs::Base->new(%new_options);
     };
-    my %options = (%$got_options, %$presets);
-    return DDG::GoodieRole::WhatIs::Base->new(\%options);
 }
 
+# Use for translations between systems where it makes sense to
+# say 'What is X in Y?'.
+_build_wi wi_translation => sub {
+    my %got_options = @_;
+    my $groups = ['translation'];
+    push $groups, @{$got_options{groups}} if defined $got_options{groups};
+    my %presets = (
+        groups => $groups,
+    );
+    return (%got_options, %presets);
+};
+
 # Matcher with no defaults.
-sub wi_custom {
-    return DDG::GoodieRole::WhatIs::Base->new($_[0]);
-}
+_build_wi wi_custom => sub { @_ };
 
 1;
 
@@ -42,12 +49,12 @@ Including it in your Goodie:
 
 Creating matchers:
 
-    my $matcher = wi_translation({
+    my $matcher = wi_translation(
         groups  => ['spoken', 'written'],
         options => {
             to => 'Goatee',
         },
-    });
+    );
 
 Retrieving values:
 
@@ -72,7 +79,7 @@ that are available after using the role.
 
 Entries are used like so:
 
-    my $matcher = entry({
+    my $matcher = entry(
         # Optionally specify any additional groups.
         groups => [group1, group2, group3, ...],
         # Optionally specify any modifier-specific options.
@@ -84,7 +91,7 @@ Entries are used like so:
             option2 => value2,
             ...
         },
-    });
+    );
 
 The following describes the entry functions and their intended
 purposes.
@@ -282,12 +289,12 @@ The aim is for queries such as "How do I write X in Goatee?",
     # The Goatee Goodie performs a translation,
     # it makes sense to be able to say "How do I say...",
     # it makes sense to be able to say "How do I write..."
-    my $matcher = wi_translation({
+    my $matcher = wi_translation(
         groups  => ['spoken', 'written'],
         options => {
             to => 'Goatee',
         },
-    });
+    );
 
     handle query_raw => sub {
         my $query = $_;

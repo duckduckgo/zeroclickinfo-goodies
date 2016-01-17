@@ -639,7 +639,7 @@ subtest 'WhatIs' => sub {
             my $options = shift;
             no strict 'refs';
             my $f = \&{"WhatIsTester::$func"};
-            my $wi = $f->($options);
+            my $wi = $f->(%{$options});
             isa_ok($wi, 'DDG::GoodieRole::WhatIs::Base', "$func");
             return $wi;
         };
