@@ -1,6 +1,20 @@
 DDH.conversions = DDH.conversions || {};
 
 DDH.conversions.build = function(){
+	var defaultUnit = {
+		mass: {left: 'ton', right: 'kilogram'},
+		length: {left: 'km', right: 'metres'},
+		area: {left: 'hectare', right: 'square metres'},
+		volume : { left: 'litre', right: 'cubic cm'},
+		duration: {left: 'day', right: 'seconds'},
+		pressure: {left: 'atmosphere', right: 'pascal'},
+		energy: {left: 'kilowatt hour',right: 'joule'},
+		power: {left: 'kilowatt', right: 'watt'},
+		angle: {left: 'radian', right: 'degrees'},
+		force: {left: 'newton', right: 'dyne'},
+		temperature: {left: 'celsius', right:'kelvin'},
+		digital: {left:' kibibyte', right:'byte'}
+	};
 	return {
 		onShow: function() {
 			$("#zci__conversions-left-in, #zci__conversions-left-unit, #zci__conversions-right-unit").change(function(){
@@ -21,8 +35,10 @@ DDH.conversions.build = function(){
 				});
 			});
 			$("#zci__conversions-physical-quantity").change(function(data){
-				console.log(data);
-				console.log($(this).val());
+				$("#zci__conversions-left-in").val(1);
+				
+				$("#zci__conversions-left-unit").val( defaultUnit[$(this).val()].left );
+				$("#zci__conversions-right-unit").val( defaultUnit[$(this).val()].right );
 			});
 		}
 	};
