@@ -41,7 +41,7 @@
                 "val": "Temporarily select Zoom In tool"
             },
             {
-                "key": "[Ctrl] [5/2/4]",
+                "key": "[Ctrl] [5 / 2 / 4]",
                 "val": "Zoom to 50%, 200%, or 400%"
             },
             {
@@ -215,19 +215,19 @@
                 "val": "Move to next/previous cell"
             },
             {
-                "key": "[Alt] [Page Up/Down]",
+                "key": "[Alt] [Page Up / Down]",
                 "val": "Move to first/last cell in column"
             },
             {
-                "key": "[Alt] [Home/End]",
+                "key": "[Alt] [Home / End]",
                 "val": "Move to first/last cell in row"
             },
             {
-                "key": "[Shift] [Up/Down Arrow]",
+                "key": "[Shift] [↑ / ↓]",
                 "val": "Select cell above/below the current cell"
             },
             {
-                "key": "[Shift] [Right/Left Arrow]",
+                "key": "[Shift] [← / →]",
                 "val": "Select cell to the right/left of the current cell"
             },
             {
@@ -275,7 +275,7 @@
                 "val": "Select next object behind or in front"
             },
             {
-                "key": "[Alt] [Ctrl] [Page Up/Down]",
+                "key": "[Alt] [Ctrl] [Page Up / Down]",
                 "val": "Select next or previous frame in story"
             }
         ],
@@ -305,15 +305,15 @@
                 "val": "Reset horizontal or vertical scale to 100%"
             },
             {
-                "key": "[Shift] [Ctrl] [F/J]",
+                "key": "[Shift] [Ctrl] [F / J]",
                 "val": "Justify all lines"
             },
             {
-                "key": "[Shift] [Ctrl] [>/<]",
+                "key": "[Shift] [Ctrl] [> / <]",
                 "val": "Increase or decrease point size"
             },
             {
-                "key": "[Alt] [Up/Down Arrow]",
+                "key": "[Alt] [↑ / ↓]",
                 "val": "Increase or decrease leading (horizontal text)"
             },
             {
@@ -365,11 +365,11 @@
         ],
         "Working with XML": [
             {
-                "key": "Right/Left Arrow",
+                "key": "← / →",
                 "val": "Expand/Collapse element"
             },
             {
-                "key": "[Shift] [Up/Down Arrow]",
+                "key": "[Shift] [↑ / ↓]",
                 "val": "Extend XML selection up/down"
             },
             {
@@ -377,11 +377,11 @@
                 "val": "Select first/last XML node"
             },
             {
-                "key": "[Shift] [Home/End]",
+                "key": "[Shift] [Home / End]",
                 "val": "Extend selection to first/last XML node"
             },
             {
-                "key": "[Ctrl] [Left/Right Arrow]",
+                "key": "[Ctrl] [← / →]",
                 "val": "Go to previous/next validation error"
             },
             {
@@ -397,10 +397,6 @@
             {
                 "key": "[Ctrl] [7]",
                 "val": "Open index entry dialog box"
-            },
-            {
-                "key": "[Shift] [Ctrl] [Alt] [\\]]",
-                "val": "Create proper name index entry"
             }
         ],
         "Panels": [
@@ -447,7 +443,7 @@
                 "val": "Toggle Character"
             },
             {
-                "key": "[Alt] [Down Arrow]",
+                "key": "[Alt] [↓]",
                 "val": "Display the pop-up menu that has focus"
             },
             {
