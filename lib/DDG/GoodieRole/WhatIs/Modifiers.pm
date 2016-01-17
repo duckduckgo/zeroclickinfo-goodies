@@ -12,58 +12,63 @@ BEGIN {
     our @EXPORT_OK = qw(get_modifiers);
 }
 
-my @modifiers;
+my @modifier_specs;
 
-sub new_modifier {
+sub new_modifier_spec {
     my ($name, $options) = @_;
     my %opts = (name => $name);
     %opts = (%opts, %$options);
-    my $modifier = DDG::GoodieRole::WhatIs::Modifier->new(\%opts);
-    push @modifiers, $modifier;
+    my $modifier_spec = \%opts;
+    push @modifier_specs, $modifier_spec;
 }
 
-new_modifier 'written translation' => {
+sub new_modifier {
+    my $modifier_spec = shift;
+    return DDG::GoodieRole::WhatIs::Modifier->new(%$modifier_spec);
+}
+
+new_modifier_spec 'written translation' => {
     required_groups => [['translation', 'written']],
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&written_translation,
 };
-new_modifier 'spoken translation' => {
+new_modifier_spec 'spoken translation' => {
     required_groups => [['translation', 'spoken']],
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&spoken_translation,
 };
-new_modifier 'what is conversion' => {
+new_modifier_spec 'what is conversion' => {
     required_groups => [['translation']],
     required_options => ['to'],
     optional_options => { primary => qr/.+/ },
     action => \&whatis_translation,
 };
-new_modifier 'meaning' => {
+new_modifier_spec 'meaning' => {
     required_groups => [['meaning']],
     optional_options => { primary => qr/.+/ },
     action => \&meaning,
 };
-new_modifier 'base conversion' => {
+new_modifier_spec 'base conversion' => {
     required_groups => [['conversion']],
     optional_options => { primary => qr/.+/ },
     required_options => ['to'],
     action => \&base_conversion,
 };
-new_modifier 'bidirectional conversion' => {
+new_modifier_spec 'bidirectional conversion' => {
     required_groups => [['conversion', 'bidirectional']],
     required_options => ['to', ['from', 'to']],
     optional_options => { primary => qr/.+/ },
     action => \&bidirectional_conversion,
 };
-new_modifier 'prefix imperative' => {
+new_modifier_spec 'prefix imperative' => {
     required_groups => [['prefix', 'imperative']],
     optional_options => { primary => qr/.+/ },
     required_options => [['prefix_command', 'command']],
     action => \&prefix_imperative,
 };
-new_modifier 'postfix imperative' => {
+new_modifier_spec 'postfix imperative' => {
     required_groups => [['postfix', 'imperative']],
     optional_options => { primary => qr/.+/ },
     required_options => [['postfix_command', 'command']],
@@ -172,11 +177,11 @@ sub get_modifiers {
     my $groups = shift;
     my @applicable_modifiers = ();
     return unless @$groups;
-    foreach my $modifier (@modifiers) {
-        my $required_groups = $modifier->required_groups;
+    foreach my $modifier (@modifier_specs) {
+        my $required_groups = $modifier->{required_groups};
         foreach my $req_group (@$required_groups) {
             if (sublist_uniques($req_group, $groups)) {
-                push @applicable_modifiers, $modifier;
+                push @applicable_modifiers, new_modifier($modifier);
                 last;
             };
         };
