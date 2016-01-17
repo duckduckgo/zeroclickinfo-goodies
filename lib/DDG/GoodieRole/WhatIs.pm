@@ -192,6 +192,16 @@ Required Options: C<to>.
 
 Optional Options: C<primary>.
 
+=item C<bidirectional conversion>
+
+Form: B<"PRIMARY to TO">, B<"PRIMARY from FROM">
+
+Required Groups: C<conversion>, C<bidirectional>.
+
+Required Options: C<to>, C<from> I<or> C<to>.
+
+Optional Options: C<primary>.
+
 =item C<prefix imperative>
 
 Form: B<"PREFIX_COMMAND PRIMARY">

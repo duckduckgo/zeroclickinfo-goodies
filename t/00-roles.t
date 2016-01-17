@@ -627,8 +627,8 @@ subtest 'WhatIs' => sub {
         return sub {
             foreach my $key (keys %forms) {
                 my $expected = $expecting_value ? $forms{$key} : undef;
-                my $result = $trans->match($key);
-                is($result->{'value'}, $expected, "Got an incorrect result");
+                my $result = $trans->full_match($key);
+                is($result->{'value'}, $expected, "Got an incorrect result for: $key");
             };
         };
     }
@@ -656,6 +656,7 @@ subtest 'WhatIs' => sub {
         my $testf = shift;
         my %wi_options = (
             to => 'Goatee',
+            from => 'Gribble',
             primary => qr/[10]{4} ?[10]{4}/,
             command => qr/lower ?case|lc/i,
             postfix_command => qr/lowercased/i,
@@ -665,6 +666,7 @@ subtest 'WhatIs' => sub {
             my @use_options = @{$options{'use_options'} or []};
             my $use_groups = $options{'use_groups'};
             my @modifiers = @{$options{'modifiers'}};
+            my $ignore_re = $options{'ignore'};
             my %valid_queries;
             foreach my $modifier (@modifiers) {
                 %valid_queries = (%valid_queries, %{$wi_valid_queries{$modifier}});
@@ -676,10 +678,19 @@ subtest 'WhatIs' => sub {
                 options => \%wi_opts,
             });
             subtest 'Valid Queries' => build_value_test($wi, 1, %valid_queries);
-            my %invalid_queries = %{$options{'invalid_queries'} or return};
+            my %invalid_queries = %{$options{'invalid_queries'}} if defined $options{'invalid_queries'};
             foreach my $invalid (keys %wi_valid_queries) {
                 next if grep { $_ eq $invalid } @modifiers;
-                %invalid_queries = (%invalid_queries, %{$wi_valid_queries{$invalid}});
+                if (defined $ignore_re) {
+                    my %to_add;
+                    foreach my $query (keys %{$wi_valid_queries{$invalid}}) {
+                        next if $query =~ $ignore_re;
+                        $to_add{$query} = $wi_valid_queries{$invalid}->{$query};
+                    };
+                    %invalid_queries = (%invalid_queries, %to_add);
+                } else {
+                    %invalid_queries = (%invalid_queries, %{$wi_valid_queries{$invalid}});
+                };
             };
             subtest 'Invalid Queries' => build_value_test($wi, 0, %invalid_queries);
         };
@@ -718,6 +729,14 @@ subtest 'WhatIs' => sub {
     add_valid_queries 'base conversion' => (
         '1011 0101 in Goatee' => '1011 0101',
         '11111111 to Goatee'  => '11111111',
+    );
+    add_valid_queries 'bidirectional conversion' => (
+        'hello to Goatee'    => 'hello',
+        'hello from Gribble' => 'hello',
+    );
+    add_valid_queries 'bidirectional conversion (only to)' => (
+        'hello to Goatee'   => 'hello',
+        'hello from Goatee' => 'hello',
     );
     add_valid_queries 'postfix imperative' => (
         'FriBble lowercased' => 'FriBble',
@@ -771,6 +790,18 @@ subtest 'WhatIs' => sub {
             use_options => ['to', 'primary'],
             use_groups => ['conversion'],
             modifiers => ['base conversion'],
+        },
+        'Bidirectional Conversion' => {
+            use_options => ['to', 'from'],
+            use_groups  => ['bidirectional', 'conversion'],
+            modifiers   => ['bidirectional conversion'],
+            ignore      => qr/ (to|in) /i,
+        },
+        'Bidirectional Conversion (only to)' => {
+            use_options => ['to'],
+            use_groups  => ['bidirectional', 'conversion'],
+            modifiers   => ['base conversion', 'bidirectional conversion (only to)'],
+            ignore      => qr/ (to|in) /i,
         },
         'Prefix Imperative' => {
             use_options => ['command'],

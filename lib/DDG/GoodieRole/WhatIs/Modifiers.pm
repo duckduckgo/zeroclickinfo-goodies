@@ -51,6 +51,12 @@ new_modifier 'base conversion' => {
     required_options => ['to'],
     action => \&base_conversion,
 };
+new_modifier 'bidirectional conversion' => {
+    required_groups => [['conversion', 'bidirectional']],
+    required_options => ['to', ['from', 'to']],
+    optional_options => { primary => qr/.+/ },
+    action => \&bidirectional_conversion,
+};
 new_modifier 'prefix imperative' => {
     required_groups => [['prefix', 'imperative']],
     optional_options => { primary => qr/.+/ },
@@ -65,46 +71,79 @@ new_modifier 'postfix imperative' => {
 };
 
 # Various ways of saying "How would I say";
-my $how_forms = qr/(?:how (?:(?:do|would) (?:you|I))|to)/i;
+my $how_forms = qr/(?:how (?:(?:(?:do|would) (?:you|I))|to))/i;
 my $spoken_forms = qr/(?:$how_forms say) /i;
 my $written_forms = qr/(?:$how_forms write) /i;
 
+my $question_end = qr/[?]?/;
+
+sub re_gen {
+    my $sub = shift;
+    return sub {
+        my ($options, $start_re, $end_re) = @_;
+        $start_re //= qr//;
+        $end_re //= qr//;
+        my $re = $sub->($options);
+        my $ret = qr/${start_re}${re}${end_re}/i;
+        return $ret;
+    };
+}
+
 sub _in_re {
-    my ($options, $re) = @_;
-    my $to = $options->{to};
-    my $constraint = $options->{primary} // qr/.+/;
-    return qr/$re(?<primary>$constraint) in $to/i;
+    return re_gen(sub {
+        my $options = shift;
+        my $to = $options->{to};
+        my $constraint = $options->{primary} // qr/.+/;
+        return qr/(?<primary>$constraint) in $to/i;
+    })->(@_);
 }
 
 sub _to_re {
-    my ($options, $re) = @_;
-    my $to = $options->{to};
-    my $constraint = $options->{primary} // qr/.+/;
-    return qr/$re(?<primary>$constraint) to $to/i;
+    return re_gen(sub {
+        my $options = shift;
+        my $to = $options->{to};
+        my $constraint = $options->{primary} // qr/.+/;
+        return qr/(?<primary>$constraint) to $to/i;
+    })->(@_);
+}
+
+sub _from_re {
+    re_gen(sub {
+        my $options = shift;
+        my $from = $options->{from};
+        my $constraint = $options->{primary};
+        return qr/(?<primary>$constraint) from $from/i;
+    })->(@_);
 }
 
 sub written_translation {
     my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, $written_forms));
+    $matcher->_add_re(_in_re($options, $written_forms, $question_end));
 }
 sub spoken_translation {
     my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, $spoken_forms));
+    $matcher->_add_re(_in_re($options, $spoken_forms, $question_end));
 }
 sub whatis_translation {
     my ($options, $matcher) = @_;
-    $matcher->_add_re(_in_re($options, qr/what is /i));
+    my $re = _in_re($options, qr/what is /i, $question_end);
+    $matcher->_add_re(_in_re($options, qr/what is /i, $question_end));
 }
 sub meaning {
     my ($options, $matcher) = @_;
     my $primary = qr/(?<primary>@{[$options->{primary}]})/;
-    my $re = qr/what (?:is the meaning of $primary|does $primary mean)/i;
+    my $re = qr/what (?:is the meaning of $primary|does $primary mean)$question_end/i;
     $matcher->_add_re($re);
 }
 sub base_conversion {
     my ($options, $matcher) = @_;
     $matcher->_add_re(_to_re($options, qr//));
     $matcher->_add_re(_in_re($options, qr//));
+}
+sub bidirectional_conversion {
+    my ($options, $matcher) = @_;
+    $matcher->_add_re(_to_re($options));
+    $matcher->_add_re(_from_re($options));
 }
 sub prefix_imperative {
     my ($options, $matcher) = @_;
