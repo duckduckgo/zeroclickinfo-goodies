@@ -708,9 +708,11 @@ subtest 'WhatIs' => sub {
         '1011 0101 in Goatee' => '1011 0101',
         '11111111 to Goatee'  => '11111111',
     );
-    add_valid_queries 'bidirectional conversion' => (
-        'hello to Goatee'    => 'hello',
+    add_valid_queries 'conversion from' => (
         'hello from Gribble' => 'hello',
+    );
+    add_valid_queries 'conversion to' => (
+        'hello to Goatee' => 'hello',
     );
     add_valid_queries 'bidirectional conversion (only to)' => (
         'hello to Goatee'   => 'hello',
@@ -785,10 +787,22 @@ subtest 'WhatIs' => sub {
             use_groups => ['conversion'],
             modifiers => ['base conversion'],
         },
+        'Conversion to' => {
+            use_options => ['to'],
+            use_groups  => ['conversion', 'to'],
+            modifiers   => ['conversion to'],
+            ignore      => qr/ (to|in) /i,
+        },
+        'Conversion from' => {
+            use_options => ['from'],
+            use_groups  => ['conversion', 'from'],
+            modifiers   => ['conversion from'],
+            ignore      => qr/ (to|in) /i,
+        },
         'Bidirectional Conversion' => {
             use_options => ['to', 'from'],
             use_groups  => ['bidirectional', 'conversion'],
-            modifiers   => ['bidirectional conversion'],
+            modifiers   => ['conversion from', 'conversion to'],
             ignore      => qr/ (to|in) /i,
         },
         'Bidirectional Conversion (only to)' => {
