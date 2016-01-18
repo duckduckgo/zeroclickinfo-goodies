@@ -661,6 +661,10 @@ subtest 'WhatIs' => sub {
             command => qr/lower ?case|lc/i,
             postfix_command => qr/lowercased/i,
             property => 'prime factor',
+            unit => {
+                symbol => 'm',
+                word => qr/meters?/i,
+            },
         );
         return sub {
             my %options = @_;
@@ -736,6 +740,11 @@ subtest 'WhatIs' => sub {
     add_valid_queries 'conversion to' => (
         'hello to Goatee'          => 'hello',
         'convert 5 peas to Goatee' => '5 peas',
+    );
+    add_valid_queries 'conversion to (unit)' => (
+        'hello meters to Goatee' => 'hello',
+        'convert 5 m to Goatee'  => '5',
+        '5m to Goatee'           => '5',
     );
     add_valid_queries 'bidirectional conversion (only to)' => (
         'hello to Goatee'   => 'hello',
@@ -814,6 +823,12 @@ subtest 'WhatIs' => sub {
             use_options => ['to'],
             use_groups  => ['conversion', 'to'],
             modifiers   => ['conversion to'],
+            ignore      => qr/ (to|in) /i,
+        },
+        'Conversion to (unit)' => {
+            use_options => ['to', 'unit'],
+            use_groups  => ['conversion', 'to'],
+            modifiers   => ['conversion to (unit)'],
             ignore      => qr/ (to|in) /i,
         },
         'Conversion from' => {

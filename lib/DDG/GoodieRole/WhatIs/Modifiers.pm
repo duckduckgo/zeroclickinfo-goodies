@@ -54,7 +54,10 @@ new_modifier_spec 'conversion to' => {
     required_groups  => [['conversion', 'bidirectional'],
                          ['conversion', 'to']],
     required_options => ['to'],
-    optional_options => { primary => qr/.+/ },
+    optional_options => {
+        primary => qr/.+/,
+        unit    => qr//,
+    },
     action => \&conversion_to,
 };
 new_modifier_spec 'conversion from' => {
@@ -160,9 +163,28 @@ sub meaning {
     my $re = qr/what (?:is the meaning of $primary|does $primary mean)$question_end?/i;
     $matcher->_add_re($re);
 }
+sub primary_prefer_alts {
+    my ($primary, @alts) = @_;
+    return qr/@{[join '|', map { "(?<primary>$primary)(?=$_)$_" } @alts]}/;
+}
 sub conversion_to {
     my ($options, $matcher) = @_;
-    $matcher->_add_re(_to_re($options, qr/(convert )?/i));
+    my $to = $options->{to};
+    my $primary = $options->{primary};
+    my $unit = $options->{unit};
+    my @unit_alternatives;
+    if (ref $unit eq 'HASH') {
+        my $symbol = $unit->{symbol};
+        my $word = $unit->{word};
+        die "unit specified, but neither 'symbol' nor 'word' were specified." unless defined ($symbol // $word);
+        $word //= $symbol;
+        @unit_alternatives = (qr/ $symbol/, qr/ $word/, qr/$symbol/);
+    } else {
+        @unit_alternatives = ($unit);
+    };
+    my $prim = primary_prefer_alts $primary, @unit_alternatives;
+    my $re = qr/(convert )?$prim to $to/i;
+    $matcher->_add_re($re);
 }
 sub conversion_from {
     my ($options, $matcher) = @_;

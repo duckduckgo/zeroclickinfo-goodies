@@ -213,7 +213,7 @@ C<conversion>, C<bidirectional> I<or> C<conversion>, C<to>.
 
 Required Options: C<to>.
 
-Optional Options: C<primary>.
+Optional Options: C<primary>, C<unit>.
 
 =item C<conversion from>
 
