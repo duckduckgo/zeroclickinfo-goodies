@@ -628,7 +628,7 @@ subtest 'WhatIs' => sub {
             foreach my $key (keys %forms) {
                 my $expected = $expecting_value ? $forms{$key} : undef;
                 my $result = $trans->full_match($key);
-                is($result->{'value'}, $expected, "Got an incorrect result for: $key");
+                is($result->{'primary'}, $expected, "Got an incorrect result for: $key");
             };
         };
     }

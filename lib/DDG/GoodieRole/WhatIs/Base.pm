@@ -37,18 +37,16 @@ has 'options' => (
 sub match {
     my ($self, $to_match) = @_;
     $to_match =~ $self->_match_regex or return;
-    return {
-        value => $+{'primary'},
-    };
+    my %results = %+;
+    return \%results;
 }
 
 sub full_match {
     my ($self, $to_match) = @_;
     my $re = $self->_match_regex;
     $to_match =~ /^$re$/ or return;
-    return {
-        value => $+{'primary'},
-    };
+    my %results = %+;
+    return \%results;
 }
 
 sub _build_regex {
