@@ -47,7 +47,7 @@
     ],
     "Emphasis": [
       {
-        "key": "*Text*",
+        "key": "_Text_",
         "val": "Displays text in italics"
       },
       {
