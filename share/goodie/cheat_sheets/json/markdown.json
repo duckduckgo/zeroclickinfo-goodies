@@ -47,19 +47,19 @@
     ],
     "Emphasis": [
       {
-        "key": "* Text *",
+        "key": "_Text_",
         "val": "Displays text in italics"
       },
       {
-        "key": "** Text **",
+        "key": "**Text**",
         "val": "Displays the text in bold"
       },
       {
-        "key": "** _Text_ ** ",
+        "key": "**_Text_** ",
         "val": "Displays the text in bold and italics"
       },
       {
-        "key": "~~ Text ~~",
+        "key": "~~Text~~",
         "val": "Adds strikethrough effect to the text"
       }
     ],
