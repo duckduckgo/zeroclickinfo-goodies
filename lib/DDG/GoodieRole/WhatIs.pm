@@ -58,8 +58,8 @@ Creating matchers:
 
 Retrieving values:
 
-    my $result = $matcher->match("What is hello in Goatee?");
-    my $value = $result->{primary};
+    my $result = $matcher->full_match("What is hello in Goatee?");
+    my $value = $result->{value};
     print $value;
     # 'hello'
 
@@ -356,8 +356,8 @@ The aim is for queries such as "How do I write X in Goatee?",
 
     handle query_raw => sub {
         my $query = $_;
-        my $match_result = $matcher->match($query) or return;
-        my $to_translate = $match_result->{primary} or return;
+        my $match_result = $matcher->full_match($query) or return;
+        my $to_translate = $match_result->{value};
         my $result = english_to_goatee $to_translate;
 
         return $result,
