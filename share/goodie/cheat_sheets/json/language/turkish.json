@@ -6,7 +6,7 @@
     "sourceName" : "Linguanaut",
     "sourceUrl" : "http://www.linguanaut.com/english_turkish.htm"
   },
-  "template_type": "reference",
+  "template_type": "language",
   "section_order" : ["Basics", "Etiquette", "Getting Help", "Travelling", "Going out for dinner"],
   "sections" : {
     "Basics" : [
