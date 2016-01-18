@@ -3,6 +3,7 @@ package DDG::Goodie::ABC;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 use List::AllUtils qw/none/;
 
 triggers startend => qw/choose pick select/;
@@ -10,14 +11,21 @@ triggers startend => qw/choose pick select/;
 zci answer_type => "choice";
 zci is_cached   => 0;
 
-handle remainder => sub {
+my $matcher = wi_custom(
+    groups => ['imperative', 'prefix', 'postfix'],
+    options => {
+        command => qr/choose|pick|select/i,
+        primary => qr/(\w+\s+or\s+)+\w+/i,
+    },
+);
 
-    my $query = $_;
+handle query_raw => sub {
+
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
 
     # split the query on whitespace and rm whitespace
-    my @words = grep { length } split /\s+/, $query;
-
-    return if query_is_malformed(@words);
+    my @words = grep { length } split /\s+/, $match->{value};
 
     # rm every 'or' from the list
     my @choices = grep { lc $_ ne 'or' } @words;
@@ -53,29 +61,5 @@ handle remainder => sub {
             }
         };
 };
-
-# The query must look like
-#   '<choice> or <choice> or <choice>'
-#
-# Note this method also prevents choices from being > 1 word long as this
-# generates false positives for queries such as
-#   'choose from a selection of products like venison, turkey, quail, or fish'
-#
-# Returns 0 if the query looks good
-# Returns 1 if the query looks malformed
-sub query_is_malformed {
-    my @words = @_;
-
-    return 1 if none { lc $_ eq 'or' } @words;  # ignore queries like 'i choose'
-    return 1 if @words <= 1;                    # ignore queries like 'choose or'
-
-    # Ensure every other element of @$words is 'or'
-    foreach my $i (1..$#words) {
-        next if $i % 2 == 0; # skip even indices
-        return 1 if lc $words[$i] ne 'or';
-    }
-
-    return 0;
-}
 
 1;
