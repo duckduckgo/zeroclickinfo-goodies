@@ -25,7 +25,7 @@ handle query_raw => sub {
     my $match = $matcher->full_match($query) or return;
 
     # split the query on whitespace and rm whitespace
-    my @words = grep { length } split /\s+/, $match->{value};
+    my @words = grep { length } split /\s+/, $match->{primary};
 
     # rm every 'or' from the list
     my @choices = grep { lc $_ ne 'or' } @words;

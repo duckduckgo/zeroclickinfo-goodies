@@ -21,7 +21,7 @@ handle query => sub {
     my $query = shift;
 
     my $match = $matcher->full_match($query) or return;
-    my $in = $match->{value};
+    my $in = $match->{primary};
     my $out = $in;
 
     $out =~ tr[a-zA-Z][n-za-mN-ZA-M];

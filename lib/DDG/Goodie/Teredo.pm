@@ -33,7 +33,7 @@ handle query => sub {
     my $match = $matcher->full_match($query) or return;
 
     # Create an IPv6 address from the query value
-    my $ip = new Net::IP ($match->{value},6);
+    my $ip = new Net::IP ($match->{primary},6);
 
     # Verify the query value is a valid Teredo IPv6 address
     if ((defined $ip) && ($ip->version() == 6) && (substr($ip->ip(),0,9) eq "2001:0000")) {

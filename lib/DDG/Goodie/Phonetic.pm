@@ -63,7 +63,7 @@ my $matcher = wi_custom({
 handle query_raw => sub {
     my $query = shift;
     my $match = $matcher->match($query) // return;
-    my $value = $match->{value};
+    my $value = $match->{primary};
     my @words = split(/\s+/, lc $value);
     my @phonetics = map { components($value) } @words;
     return "Phonetic: " . join(" ", @phonetics);

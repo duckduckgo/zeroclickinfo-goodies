@@ -24,7 +24,7 @@ handle query_raw => sub {
 
     my $result = $matcher->match($input) or return;
 
-    my ($first_word, @words) = split(/\s+/, lc $result->{value});
+    my ($first_word, @words) = split(/\s+/, lc $result->{primary});
 
     return unless @words;
 

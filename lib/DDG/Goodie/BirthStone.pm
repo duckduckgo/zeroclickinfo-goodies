@@ -36,7 +36,7 @@ my $matcher = wi_custom({
 handle query_raw => sub {
     my $query = shift;
     my $match = $matcher->full_match($query) or return;
-    my $month = ucfirst lc $match->{value};
+    my $month = ucfirst lc $match->{primary};
 
     return unless $month;
     my $stone = $birthstones{$month};

@@ -36,7 +36,7 @@ my $matcher = wi_custom(
 handle query => sub {
     my $query = shift;
     my $match = $matcher->full_match($query) or return;
-    my $bpm = $match->{value};
+    my $bpm = $match->{primary};
 
     my @straight_values = map { int( $straight_whole_note / ($bpm * $_) + 0.5) } @divisors;
     my @triplet_values = map { int( $triplet_whole_note / ($bpm * $_) + 0.5) } @divisors;

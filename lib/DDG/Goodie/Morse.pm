@@ -24,7 +24,7 @@ handle query_raw => sub {
     my $input = shift;
 
     my $match = $matcher->match($input) or return;
-    my $to_morse = $match->{value};
+    my $to_morse = $match->{primary};
     return if($to_morse =~ /^cheat ?sheet$/);
     my $convertor = is_morse($to_morse) ? \&as_ascii : \&as_morse;
     my $result = $convertor->($to_morse);

@@ -100,7 +100,7 @@ handle query => sub {
     my @factors = ();
 
     # Provide only one second for computing the factors.
-    my $to_factorize = $match->{value};
+    my $to_factorize = $match->{primary};
     eval {
         alarm(1);
         @factors = factor_exp($to_factorize);

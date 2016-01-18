@@ -24,7 +24,7 @@ handle query => sub {
 
   #Filter out requests for DNA/RNA reverse complements, handled
   # by the ReverseComplement goodie
-  my $in = $match->{value};
+  my $in = $match->{primary};
 
   my $out = reverse $in;
 
