@@ -3,12 +3,12 @@ package DDG::Goodie::BPMToMs;
 
 use strict;
 use DDG::Goodie;
+with 'DDG::GoodieRole::WhatIs';
 
 zci answer_type => "bpmto_ms";
 zci is_cached   => 1;
 
-triggers end => "bpm to ms", "bpm to milliseconds", "bpm to note values", "bpm to note lengths", "bpm", "bpm timings", "beats per minute to milliseconds",
-                "beats per minute to ms", "beats per minute to note values", "beats per minute to note lengths", "beats per minute", "beats per minute timings";
+triggers end => 'ms', 'milliseconds', 'note value', 'timings';
 
 my @note_names  = ( "Whole Note", "Half Note", "Quarter Note", "1/8 Note", "1/16 Note", "1/32 Note" );
 my @note_links  = ( "whole note", "half note", "quarter note", "eighth note", "sixteenth note", "thirty-second note" );
@@ -21,10 +21,22 @@ my $triplet_whole_note = 160000;
 my $dotted_whole_note = 360000;
 my @divisors = map { 2 ** $_ } 0 .. 5; # Create a list of divisors to calculate the values of half notes, quarter notes etc.
 
-handle remainder => sub {
-    my $bpm = shift;
+my $matcher = wi_custom(
+    groups => ['conversion', 'to'],
+    options => {
+        primary => qr/\d+/,
+        unit => {
+            symbol => qr/bpm/,
+            word => qr/beats per minute/,
+        },
+        to => qr/note value|ms|milliseconds|timings/,
+    },
+);
 
-    return unless $bpm =~ /^\d+$/i; # Only integer values accepted
+handle query => sub {
+    my $query = shift;
+    my $match = $matcher->full_match($query) or return;
+    my $bpm = $match->{value};
 
     my @straight_values = map { int( $straight_whole_note / ($bpm * $_) + 0.5) } @divisors;
     my @triplet_values = map { int( $triplet_whole_note / ($bpm * $_) + 0.5) } @divisors;
