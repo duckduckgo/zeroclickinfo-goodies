@@ -1,9 +1,9 @@
 {
     "id": "asciidoc_cheat_sheet",
     "name": "Asciidoc",
-    "description": "A text document format for writing notes, documentation, articles, books, ebooks, slideshows, web pages, man pages and blogs",
+    "description": "A text document format for writing notes and structured documents",
     "metadata": {
-        "sourceName": "Asciidoc Cheat Sheet",
+        "sourceName": "powerman",
         "sourceUrl": "http://powerman.name/doc/asciidoc"
     },
     "aliases": [
