@@ -9,14 +9,13 @@
     "template_type": "reference",
     "section_order": [
         "Data Transfer Instructions",
-        "Arithmetic Instructions",
-        "Logical Instructions",
-        "Rotate Instructions",
         "Control Transfer Instructions",
+        "Logical Instructions",
+        "Rotate Instructions", 
+        "Arithmetic Instructions",
         "Control Instructions"
     ],
     "aliases": [
-        "8085",
         "8085 instructionset",
         "8085 instruction set",
         "8085 programming",
@@ -38,15 +37,15 @@
             },
             {
                 "key": "LXI Reg.Pair, 16-bit data",
-                "val": "Loads 16-bit data in the register pair "
+                "val": "Loads 16-bit data in the register pair"
             },
             {
                 "key": "STA 16-bit address",
-                "val": "Stores the content of Accumulator in memory location specified by the 16-bit address "
+                "val": "Stores the content of Accumulator in memory location specified by the 16-bit address"
             },
             {
                 "key": "XCHG",
-                "val": "Contents of register H are exchanged with the contents of register D, and the contents of register L are exchanged with the contents of register E "
+                "val": "Contents of register H are exchanged with the contents of register D, and the contents of register L are exchanged with the contents of register E"
             },
             {
                 "key": "LHLD 16-bit address",
@@ -62,7 +61,7 @@
             },
             {
                 "key": "IN 8-bit port address",
-                "val": "Contents of the input port designated in the operand are read and loaded into the accumulator."
+                "val": "Contents of the input port designated in the operand are read and loaded into the accumulator"
             }
         ],
         "Arithmetic Instructions": [
@@ -76,11 +75,11 @@
             },
             {
                 "key": "INX Reg.pair",
-                "val": "Contents of the designated register pair are incremented by 1 "
+                "val": "Contents of the designated register pair are incremented by 1"
             },
             {
                 "key": "DCX Reg.pair",
-                "val": "Contents of the designated register pair are decremented by 1 "
+                "val": "Contents of the designated register pair are decremented by 1"
             },
             {
                 "key": "INR R/M",
