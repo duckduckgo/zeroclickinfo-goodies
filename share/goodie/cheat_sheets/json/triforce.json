@@ -1,0 +1,111 @@
+{
+    "id": "triforce_cheat_sheet",
+    "name": "How to Tri-Force",
+    "description": "Step-by-step Tri-Forcing guide for Windows, Mac and Linux computers",
+    "metadata": {
+        "sourceName": "eHow",
+        "sourceUrl": "http://www.ehow.com/how_8460794_triforce.html"
+    },
+    "aliases": [
+        "tri-force",
+        "tri force"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Linux",
+        "Mac",
+        "Windows"
+    ],
+    "sections": {
+        "Windows": [
+            {
+                "key": "[Alt] [255]",
+                "val": "Step 1"
+            },
+            {
+                "key": "[Alt] [255]",
+                "val": "Step 2"
+            },
+            {
+                "key": "[Alt] [30]",
+                "val": "Step 3"
+            },
+            {
+                "key": "[Enter]",
+                "val": "Step 4"
+            },
+            {
+                "key": "[Alt] [30]",
+                "val": "Step 5"
+            },
+            {
+                "key": "[Alt] [255]",
+                "val": "Step 6"
+            },
+            {
+                "key": "[Alt] [30]",
+                "val": "Step 7"
+            }
+        ],
+        "Mac": [
+            {
+                "key": "[Option] [Space]",
+                "val": "Step 1"
+            },
+            {
+                "key": "[Option] [Space]",
+                "val": "Step 2"
+            },
+            {
+                "key": "[Option] [J]",
+                "val": "Step 3"
+            },
+            {
+                "key": "[Enter]",
+                "val": "Step 4"
+            },
+            {
+                "key": "[Option] [J]",
+                "val": "Step 5"
+            },
+            {
+                "key": "[Option] [Space]",
+                "val": "Step 6"
+            },
+            {
+                "key": "[Option] [J]",
+                "val": "Step 7"
+            }
+        ],
+        "Linux": [
+            {
+                "key": "[Ctrl] [Shift] [U] [a0]",
+                "val": "Step 1"
+            },
+            {
+                "key": "[Ctrl] [Shift] [U] [a0]",
+                "val": "Step 2"
+            },
+            {
+                "key": "[Ctrl] [Shift] [U] [25b2]",
+                "val": "Step 3"
+            },
+            {
+                "key": "[Enter]",
+                "val": "Step 4"
+            },
+            {
+                "key": "[Ctrl] [Shift] [U] [25b2]",
+                "val": "Step 5"
+            },
+            {
+                "key": "[Ctrl] [Shift] [U] [a0]",
+                "val": "Step 6"
+            },
+            {
+                "key": "[Ctrl] [Shift] [U] [25b2]",
+                "val": "Step 7"
+            }
+        ]
+    }
+}

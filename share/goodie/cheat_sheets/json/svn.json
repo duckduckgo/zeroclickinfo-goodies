@@ -1,9 +1,9 @@
 {
     "id": "svn_cheat_sheet", 
     "name": "Subversion",
-    "description": "Useful commands for working with Subversion version control system", 
+    "description": "Useful commands for Subversion version control system", 
     "metadata": { 
-        "sourceName": "Version Control with Subversion",
+        "sourceName": "Red Bean",
         "sourceUrl": "http://svnbook.red-bean.com/"
     },
     "aliases": [
@@ -11,57 +11,57 @@
     ],
     "template_type": "terminal",
     "section_order": [  
-        "Basic usage",
-        "Advanced usage"
+        "Basic Usage",
+        "Advanced Usage"
     ],
     "sections": {
-        "Basic usage": [{
+        "Basic Usage": [{
                 "val": "Create a working copy",
-                "key": "$ svn checkout http://svn.example.com/svn/repo/trunk"
+                "key": "svn checkout http://svn.example.com/svn/repo/trunk"
             }, {
                 "val": "Update your working copy",
-                "key": "$ svn update"
+                "key": "svn update"
             }, {
                 "val": "Add file",
-                "key": "$ svn add \\[file\\]"
+                "key": "svn add \\[file\\]"
             }, {
                 "val": "Delete file",
-                "key": "$ svn delete \\[file\\]"
+                "key": "svn delete \\[file\\]"
             }, {
                 "val": "List changed files",
-                "key": "$ svn status"
+                "key": "svn status"
             }, {
                 "val": "View changes",
-                "key": "$ svn diff"
+                "key": "svn diff"
             }, {
                 "val": "Revert changes made to file",
-                "key": "$ svn revert \\[file\\]"
+                "key": "svn revert \\[file\\]"
             }, {
                 "val": "Send changes made in working copy to the repository",
-                "key": "$ svn commit -m \"\\[descriptive commit message\\]\""
+                "key": "svn commit -m \"\\[descriptive commit message\\]\""
             }
         ],
-        "Advanced usage": [{
+        "Advanced Usage": [{
                 "val": "Fetch specific revision to working copy",
-                "key": "$ svn update -r \\[revision\\]"
+                "key": "svn update -r \\[revision\\]"
             }, {
                 "val": "Remove changes made in specific revision",
-                "key": "$ svn merge -c -\\[revision\\] ."
+                "key": "svn merge -c -\\[revision\\] ."
             }, {
                 "val": "Apply changes from a patch file to the working copy",
-                "key": "$ svn patch \\[patch\\]"
+                "key": "svn patch \\[patch\\]"
             }, {
                 "val": "View repository information",
-                "key": "$ svn info"
+                "key": "svn info"
             }, {
                 "val": "Copy file",
-                "key": "$ svn copy \\[source file\\] \\[destination file\\]"
+                "key": "svn copy \\[source file\\] \\[destination file\\]"
             }, {
                 "val": "Move file (same as running svn copy followed by svn delete)",
-                "key": "$ svn move \\[source file\\] \\[destination file\\]"
+                "key": "svn move \\[source file\\] \\[destination file\\]"
             }, {
                 "val": "Create directory (same as running mkdir followed by svn add)",
-                "key": "$ svn mkdir \\[directory name\\] \\[destination file\\]"
+                "key": "svn mkdir \\[directory name\\] \\[destination file\\]"
             }
         ]
     }

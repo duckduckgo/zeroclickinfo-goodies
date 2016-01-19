@@ -1,0 +1,247 @@
+{  
+   "id":"sql_cheat_sheet",
+   "name":"SQL Statements",
+   "description":"SQL is a standard language for accessing and manipulating databases.",
+   "metadata":{  
+      "sourceName":"w3schools",
+      "sourceUrl":"http://www.w3schools.com/SQL/sql_quickref.asp"
+   },
+   "template_type":"reference",
+   "section_order":[  
+      "Data Manipulation Language (DML)",
+      "Data Definition Language (DDL)",
+      "Aggregate Functions",
+      "Arguments Used with Commands",
+      "SQL Constraints",
+      "Scalar Functions"
+      
+   ],
+   "aliases":[  
+      "sql statements",
+       "sql commands"
+   ],
+   "sections":{  
+      "Data Definition Language (DDL)":[  
+         {  
+            "key":"CREATE TABLE",
+            "val":"Define a new table"
+         },
+         {  
+            "key":"ALTER TABLE",
+            "val":"Modifies a table definition"
+         },
+         {  
+            "key":"CREATE VIEW",
+            "val":"Define a new view"
+         },
+         {  
+            "key":"DROP TABLE",
+            "val":"Remove a table"
+         },
+        
+         {  
+            "key":"CREATE INDEX",
+            "val":"Define a new index"
+         },
+         
+         {  
+            "key":"DROP INDEX",
+            "val":"Remove an index"
+         },
+         {  
+            "key":"DROP VIEW",
+            "val":"Remove a view"
+         },
+         
+         {  
+            "key":"TRUNCATE TABLE",
+            "val":"Empty a table"
+         }
+        
+      ],
+       "Data Manipulation Language (DML)":[
+           
+           {  
+            "key":"SELECT",
+            "val":"Retrieve rows from a table or view"
+         },
+         
+         {  
+            "key":"INSERT INTO",
+            "val":"Create new rows in a table"
+         },
+           {  
+            "key":"UPDATE",
+            "val":"Update rows of a table"
+         },
+           {  
+            "key":"DELETE",
+            "val":"Delete rows of a table"
+         },
+          {  
+            "key":"SELECT <columns> INTO",
+            "val":"Create a new table from the results of a query"
+         }
+         
+         
+      ],
+      "Aggregate Functions":[
+         {
+            "key":"AVG()",
+            "val":"Returns the average value of a numeric column"
+         },  
+         {
+            "key":"COUNT()",
+            "val":"Returns the number of rows that matches a specified criteria"
+         },
+         {
+            "key":"MAX()",
+            "val":"Returns the largest value of the selected column"
+         },
+         {
+            "key":"MIN()",
+            "val":"Returns the smallest value of the selected column"
+         },
+         {
+            "key":"SUM()",
+            "val":"Returns the total sum of a numeric column"
+         }
+      ],
+      "Scalar Functions":[
+         {  
+            "key":"UCASE()",
+            "val":"Converts a field to upper case"
+         },
+         {  
+            "key":"LCASE()",
+            "val":"Converts a field to lower case"
+         },
+         {  
+            "key":"MID()",
+            "val":"Extract characters from a text field"
+         },
+         {  
+            "key":"LEN()",
+            "val":"Returns the length of a text field"
+         },
+         
+         {  
+            "key":"ROUND()",
+            "val":"Rounds a numeric field to the number of decimals specified"
+         },
+         {  
+            "key":"NOW()",
+            "val":"Returns the current system date and time"
+         },
+         {  
+            "key":"FORMAT()",
+            "val":"Formats how a field is to be displayed"
+         }
+      ],
+     "Arguments Used with Commands":[
+         {  
+            "key":"WHERE",
+            "val":"To retrieve specific information from a table excluding other irrelevant data"
+         },
+         {  
+            "key":"AND",
+            "val":"Select rows that must satisfy all the given conditions"
+         },
+         {  
+            "key":"OR",
+            "val":"Select rows that satisfy atleast one of the given conditions"
+         },
+         {  
+            "key":"NOT",
+            "val":"Select rows that do not satisfy the given condition"
+         },
+          {  
+            "key":"AS (alias)",
+            "val":"To temporarily rename a table or a column heading"
+         },
+         {  
+            "key":"BETWEEN..AND..",
+            "val":"To select values within a range"
+         },
+         {  
+            "key":"EXISTS",
+            "val":"Used in combination with a subquery and is considered to be met if the subquery returns at least one row"
+         },
+         {  
+            "key":"GROUP BY",
+            "val":"To collect data across multiple records and group the results by a column"
+         },
+         {  
+            "key":"HAVING",
+            "val":"To filter data based on the group functions"
+         },
+         {  
+            "key":"IN",
+            "val":"To test whether a value is in the list of values provided"
+         },
+         {  
+            "key":"LIKE",
+            "val":"To search for a specified pattern in a column"
+         },
+         {  
+            "key":"DISTINCT",
+            "val":"To return only distinct (different) values in a column"
+         },
+         {  
+            "key":"ORDER BY",
+            "val":"To sort the records in the result based on a column"
+         },
+         {  
+            "key":"IS NULL",
+            "val":"To test for a NULL value in a column"
+         },
+         {  
+            "key":"INNER JOIN",
+            "val":"Returns all rows from both tables where there is a match"
+         },
+         {  
+            "key":"LEFT JOIN",
+            "val":"Returns all the rows from the first table even if there are no matches in the second table"
+         },
+         {  
+            "key":"RIGHT JOIN",
+            "val":"Returns all the rows from the second table, even if there are no matches in the first table"
+         },
+         {  
+            "key":"FULL JOIN",
+            "val":"Returns all rows from both tables with nulls in place where the join condition is not met"
+         },
+          {  
+            "key":"UNION",
+            "val":"Combines the result of two or more SELECT statements and selects only distinct values"
+         },
+         {  
+            "key":"UNION ALL",
+            "val":"Combines the result of two or more SELECT statements and also select duplicate values"
+         }
+     ],
+     "SQL Constraints":[
+         {  
+            "key":"NOT NULL",
+            "val":"Enforces a column to not accept NULL values"
+         },
+         {  
+            "key":"UNIQUE",
+            "val":"Ensures that each row for a column must have a unique value"
+         },
+         {  
+            "key":"PRIMARY KEY",
+            "val":"Combination of NOT NULL and UNIQUE.It uniquely identifies each record in a database table"
+         },
+         {  
+            "key":"FOREIGN KEY",
+            "val":"Ensure the referential integrity of the data in one table to match values in another table"
+         },
+         
+         {  
+            "key":"DEFAULT",
+            "val":"Specifies a default value for a column"
+         }
+      ]
+   }
+}

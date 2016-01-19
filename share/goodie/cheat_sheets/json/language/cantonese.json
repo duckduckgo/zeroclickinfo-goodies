@@ -1,0 +1,227 @@
+{
+    "id": "cantonese_cheat_sheet",
+
+    "name": "Cantonese Cheat Sheet",
+
+    "description": "Basic Cantonese words and phrases",
+
+    "metadata": {
+        "sourceName": "Linguanaut",
+        "sourceUrl": "http://www.linguanaut.com/english_cantonese.htm"
+    },
+
+	"aliases": [
+        "cantonese words", "cantonese phrases", "basic cantonese words", "basic cantonese phrases", "basic cantonese"
+    ],
+
+    "template_type": "language",
+
+    "section_order" : [
+      "Basics",
+      "Getting Help",
+      "Travelling",
+      "Etiquette",
+      "Dinner on the Town"
+   ],
+
+    "sections" : {
+      "Etiquette" : [
+         {
+            "val" : "晚安/早抖 (maan on/jo tau)",
+            "key" : "Good Night"
+         },
+         {
+            "val" : "對唔住 (deoi m zyu)",
+            "key" : "I'm sorry"
+         },
+         {
+            "val" : "多謝 (dor ze)",
+            "key" : "Thank you"
+         },
+         {
+            "val" : "唔該 (m goi)",
+            "key" : "Please"
+         },
+         {
+            "val" : "多謝晒! (dor ze sai)",
+            "key" : "Thank you very much!"
+         },
+         {
+            "val" : "早晨 (jo san)",
+            "key" : "Good Morning"
+         },
+         {
+            "val" : "唔使客氣 (m sai hak hey)",
+            "key" : "You're welcome"
+         }
+      ],
+      "Getting Help" : [
+         {
+            "val" : "報警! (bo ging)",
+            "key" : "Call the Police!"
+         },
+         {
+            "val" : "唔該講慢啲! (m goi gong maan d)",
+            "key" : "Please speak more slowly!"
+         },
+         {
+            "val" : "我有過敏. (ngo yau gwo maan)",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "請重複 (cheng chung fuk)",
+            "key" : "Repeat, please."
+         },
+         {
+            "val" : "停! (ting)",
+            "key" : "Stop!"
+         },
+         {
+            "val" : "唔好意思! (m ho yi see)",
+            "key" : "Excuse me!"
+         },
+         {
+            "val" : "我要睇醫生! (ngo yiu tai yi sang)",
+            "key" : "I need a doctor!"
+         },
+         {
+            "val" : "唔該可唔可以寫低? (m goi hor m hor yi seh daai)",
+            "key" : "Can you write that down?"
+         },
+         {
+            "val" : "叫救護車! (giu gau wu che)",
+            "key" : "Call an ambulance!"
+         },
+         {
+            "val" : "我有危險! (ngo yau ngai him)",
+            "key" : "I am in danger!"
+         },
+         {
+            "val" : "唔該可唔可以幫我? (m goi hor m hor yi bong ngo)",
+            "key" : "Can you help me?"
+         },
+         {
+            "val" : "火燭! (for juk)",
+            "key" : "Fire!"
+         }
+      ],
+      "Basics" : [
+         {
+            "val" : "我個名係... (ngo gor meng hai)",
+            "key" : "My name is..."
+         },
+         {
+            "val" : "我幾好, 多謝! (ngo gei ho, dor ze)",
+            "key" : "I'm fine thanks!"
+         },
+         {
+            "val" : "你好嗎? (nei ho ma)",
+            "key" : "How are you?"
+         },
+         {
+            "val" : "你好 (nei ho)",
+            "key" : "Hello"
+         },
+         {
+            "val" : "歡迎 (foon ying)",
+            "key" : "Welcome"
+         },
+         {
+            "val" : "你叫咩名? (nei giu meh meng)",
+            "key" : "What's your name?"
+         }
+      ],
+      "Travelling" : [
+         {
+            "val" : "轉左. (zyun zo)",
+            "key" : "Turn left."
+         },
+         {
+            "val" : "出口係邊到? (chut hau hai bin dou)",
+            "key" : "Where is the exit?"
+         },
+         {
+            "val" : "邊度? (bin dou)",
+            "key" : "Where?"
+         },
+         {
+            "val" : "遠唔遠? (yuen m yuen)",
+            "key" : "Is it far?"
+         },
+         {
+            "val" : "直行. (jik haang)",
+            "key" : "Go straight ahead."
+         },
+         {
+            "val" : "你有冇地圖? (nei yau mo dei to)",
+            "key" : "Do you have a city map?"
+         },
+         {
+            "val" : "唔該呢度停. (m goi lay dou ting)",
+            "key" : "Stop here please."
+         },
+         {
+            "val" : "轉右. (zyun yau)",
+            "key" : "Turn right."
+         },
+         {
+            "val" : "邊度有的士? (bin dou yau dik see)",
+            "key" : "Where can I find the taxis?"
+         },
+         {
+            "val" : "點樣叫的士? (dim yeung giu dik see)",
+            "key" : "How can I get a taxi?"
+         }
+      ],
+      "Dinner on the Town" : [
+         {
+            "val" : "請問有無素菜? (cheng maan yau mo so choi)",
+            "key" : "Do you have vegetarian dishes?"
+         },
+         {
+            "val" : "主菜 (zyu choi)",
+            "key" : "Main dish"
+         },
+         {
+            "val" : "主菜 (zyu choi)",
+            "key" : "Entrée"
+         },
+         {
+            "val" : "我有過敏. (ngo yau gwo maa)",
+            "key" : "I am allergic."
+         },
+         {
+            "val" : "甜品 (tim bun)",
+            "key" : "Dessert"
+         },
+         {
+            "val" : "唔該埋單! (m goi maai daan)",
+            "key" : "The check please!"
+         },
+         {
+            "val" : "唔該一杯咖啡 (m goi yut bui ga feh)",
+            "key" : "A cup of coffee please."
+         },
+         {
+            "val" : "你有冇無麩質菜餚? (nei yau mo moe fu jak choi ngaau)",
+            "key" : "Do you have gluten-free dishes?"
+         },
+         {
+            "val" : "邊度有好嘅餐廳? (bin dou yau ho geh chaan teng)",
+            "key" : "Where is a good restaurant?"
+         },
+         {
+            "val" : "唔該比一杯水我 (m goi bay yut bui sui ngo)",
+            "key" : "A glass of water please."
+         },
+         {
+            "val" : "二人枱唔該! (yi yan toi m goi)",
+            "key" : "A table for two please!"
+         },
+         {
+            "val" : "唔該我可唔可以要份餐單? (m goi ngo hor m hor yi yiu faan chaan daan)",
+            "key" : "Can I get a menu, please?"
+         }
+      ]
+   }
+}

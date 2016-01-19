@@ -1,145 +1,142 @@
 {
-    "id": "rust_types_cheat_sheet", 
-
+    "id": "rust_types_cheat_sheet",
     "name": "Rust Types",
-
-    "description": "Rust Language object types", 
-    
-    "metadata": { 
-        "sourceName": "The Rust Reference",
+    "description": "Rust Language object types",
+    "metadata": {
+        "sourceName": "Rust Lang",
         "sourceUrl": "https://doc.rust-lang.org/stable/reference.html#types"
     },
-
-    "section_order": [  
-        "Primitive types",
-        "Machine types",
-        "Machine-dependent integer types",
-        "Textual types",
-        "Tuple types",
-        "Array, and Slice types",
-        "Structure types",
-        "Enumerated types",
-        "Pointer types"
-        
+    "aliases": [
+        "rust objects",
+        "rust object types"
     ],
-    
-    "template_type": "keyboard",
-
+    "section_order": [
+        "Primitive Types",
+        "Machine Types",
+        "Machine-dependent Integer Types",
+        "Textual Types",
+        "Tuple Types",
+        "Array and Slice Types",
+        "Structure Types",
+        "Enumerated Types",
+        "Pointer Types"
+    ],
+    "template_type": "reference",
     "sections": {
-        "Primitive types": [
+        "Primitive Types": [
             {
                 "key": "bool",
-                "val": "boolean, true or false"             
+                "val": "Boolean, True or False"
             }
         ],
-        "Machine types": [
+        "Machine Types": [
             {
                 "key": "u8",
-                "val": "Unsigned integer in the range of [0, 2^8 - 1]"               
+                "val": "Unsigned integer in the range of [0, 2^8 - 1]"
             },
             {
                 "key": "u16",
-                "val": "Unsigned integer in the range of [0, 2^16 - 1]"               
+                "val": "Unsigned integer in the range of [0, 2^16 - 1]"
             },
             {
                 "key": "u32",
-                "val": "Unsigned integer in the range of [0, 2^32 - 1]"               
+                "val": "Unsigned integer in the range of [0, 2^32 - 1]"
             },
             {
                 "key": "u64",
-                "val": "Unsigned integer in the range of [0, 2^64 - 1]"               
+                "val": "Unsigned integer in the range of [0, 2^64 - 1]"
             },
             {
                 "key": "i8",
-                "val": "Signed integer in the range of [-(2^7), 2^7 - 1]"               
+                "val": "Signed integer in the range of [-(2^7), 2^7 - 1]"
             },
             {
                 "key": "i16",
-                "val": "Signed integer in the range of [-(2^15), 2^15 - 1]"               
+                "val": "Signed integer in the range of [-(2^15), 2^15 - 1]"
             },
             {
                 "key": "i32",
-                "val": "Signed integer in the range of [[-(2^31), 2^31 - 1]"               
+                "val": "Signed integer in the range of [[-(2^31), 2^31 - 1]"
             },
             {
                 "key": "i64",
-                "val": "Signed integer in the range of [-(2^63), 2^63 - 1]"               
+                "val": "Signed integer in the range of [-(2^63), 2^63 - 1]"
             }
         ],
-        "Machine-dependent integer types": [
+        "Machine-dependent Integer Types": [
             {
                 "key": "usize",
-                "val": "Unsigned integer type with the same number of bits as the platform's pointer type."
+                "val": "Unsigned integer type with the same number of bits as the platform's pointer type"
             },
             {
                 "key": "isize",
-                "val": "Signed integer type with the same number of bits as the platform's pointer type."
+                "val": "Signed integer type with the same number of bits as the platform's pointer type"
             }
         ],
-        "Textual types": [
+        "Textual Types": [
             {
                 "key": "char",
-                "val": "A Unicode scalar value (i.e. a code point that is not a surrogate), represented as a 32-bit unsigned word in the 0x0000 to 0xD7FF or 0xE000 to 0x10FFFF range."
+                "val": "A Unicode scalar value (i.e. a code point that is not a surrogate), represented as a 32-bit unsigned word in the 0x0000 to 0xD7FF or 0xE000 to 0x10FFFF range"
             },
             {
                 "key": "str",
-                "val": "Unicode string, represented as an array of 8-bit unsigned bytes holding a sequence of UTF-8 code points."
+                "val": "Unicode string, represented as an array of 8-bit unsigned bytes holding a sequence of UTF-8 code points"
             }
         ],
-        "Tuple types": [
+        "Tuple Types": [
             {
                 "key": "tuple",
-                "val": "Tuple types and values are denoted by listing the types or values of their elements, respectively, in a parenthesized, comma-separated list."
+                "val": "Tuple types and values are denoted by listing the types or values of their elements, respectively, in a parenthesized, comma-separated list"
             }
         ],
-        "Array and Slice types": [
+        "Array and Slice Types": [
             {
                 "key": "array",
-                "val": "An array has a fixed size, and can be allocated on either the stack or the heap."
-            },  
+                "val": "An array has a fixed size, and can be allocated on either the stack or the heap"
+            },
             {
                 "key": "slice",
-                "val": "A slice is a 'view' into an array. It doesn't own the data it points to, it borrows it."
+                "val": "A slice is a 'view' into an array. It doesn't own the data it points to, it borrows it"
             },
             {
                 "key": "vector",
                 "val": "A dynamic or ‘growable’ array, implemented as a standard library type"
             }
         ],
-        "Structure types": [
+        "Structure Types": [
             {
                 "key": "struct",
-                "val": "The memory layout of a struct is undefined by default to allow for compiler optimizations like field reordering, but it can be fixed with the #[repr(...)] attribute."
-            },  
+                "val": "The memory layout of a struct is undefined by default to allow for compiler optimizations like field reordering, but it can be fixed with the #[repr(...)] attribute"
+            },
             {
                 "key": "tuple struct",
-                "val": "Just like a structure type, except that the fields are anonymous."
+                "val": "Just like a structure type, except that the fields are anonymous"
             },
             {
                 "key": "unit-like struct",
-                "val": "Like a structure type, except that it has no fields. The one value constructed by the associated structure expression is the only value that inhabits such a type."
+                "val": "Like a structure type, except that it has no fields. The one value constructed by the associated structure expression is the only value that inhabits such a type"
             }
         ],
-        "Enumerated types": [
+        "Enumerated Types": [
             {
                 "key": "enumerated type",
-                "val": "A nominal, heterogeneous disjoint union type, denoted by the name of an enum item. "
-            },  
+                "val": "A nominal, heterogeneous disjoint union type, denoted by the name of an enum item"
+            },
             {
                 "key": "enum item",
-                "val": "Declares both the type and a number of variant constructors, each of which is independently named and takes an optional tuple of arguments."
+                "val": "Declares both the type and a number of variant constructors, each of which is independently named and takes an optional tuple of arguments"
             }
         ],
-        "Pointer types": [
+        "Pointer Types": [
             {
                 "key": "reference (&)",
-                "val": "Point to memory owned by some other value."
-            },  
+                "val": "Point to memory owned by some other value"
+            },
             {
                 "key": "raw (*)",
-                "val": "Pointers without safety or liveness guarantees."
+                "val": "Pointers without safety or liveness guarantees"
             }
         ]
     }
 }
- 
+

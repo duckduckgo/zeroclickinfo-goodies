@@ -1,11 +1,18 @@
 {
     "id": "bash_cheat_sheet",
     "name": "Bash",
-    "description": "Bourne-Again shell",
+    "description": "Bash is a Unix shell and command language written by Brian Fox as a replacement for the Bourne shell",
     "metadata": {
         "sourceName": "Bash Reference Manual",
         "sourceUrl": "https://www.gnu.org/software/bash/"
     },
+    "aliases": [
+        "shell",
+        "shell language",
+        "posix shell",
+        "sh"
+    ],
+    "template_type": "code",
     "section_order": [
         "Lingo",
         "Shortcuts",
@@ -14,6 +21,8 @@
         "Arithmetic Operators",
         "IO Redirection",
         "Expansion And Other Operators",
+        "Conditionals",
+        "Loops",
         "Exit Statuses",
         "Auto-Completion",
         "Misc"
@@ -167,7 +176,7 @@
             {
                 "key": "!$",
                 "val": "Last argument of last command"
-            }, 
+            },
             {
                 "key": "$<N>",
                 "val": "Nth argument of current process (positional parameter)"
@@ -407,6 +416,58 @@
             {
                 "key": "${#var}",
                 "val": "String length operator"
+            }
+        ],
+        "Conditionals": [
+            {
+                "key": "if \\[$hello == \"world\"\\] ; then",
+                "val": "If statement"
+            },
+            {
+                "key": "elif \\[$hello == \"world\"\\] ; then",
+                "val": "Else if statement"
+            },
+            {
+                "key": "else",
+                "val": "Else statement"
+            },
+            {
+                "key": "fi",
+                "val": "End if statement"
+            },
+            {
+                "key": "case \"$hello\" in",
+                "val": "Case statement"
+            },
+            {
+                "key": "a) echo world ;;",
+                "val": "Case entry \"a\""
+            },
+            {
+                "key": "*) echo default ;;",
+                "val": "Default case entry (matches everything)"
+            },
+            {
+                "key": "esac",
+                "val": "End case statement"
+            }
+        ],
+        "Loops": [
+            {
+                "key": "for ((i = 1; i <= 10; i++)) ; do",
+                "val": "For loop running 10 times"
+            },
+            {
+                "key": "for i in $list ; do",
+                "val": "For loop being executed for every item in $list"
+            },
+            {
+                "key": "while (i <= 10) ; do",
+                "val": "While loop"
+            },
+            {
+                "key": "done",
+                "val": "End loop"
             }
         ],
         "Exit Statuses": [

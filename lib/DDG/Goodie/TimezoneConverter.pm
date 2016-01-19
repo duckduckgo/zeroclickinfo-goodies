@@ -10,25 +10,12 @@ use DDG::GoodieRole::Dates;
 use DateTime;
 use POSIX qw(fmod);
 
-attribution github => ['GlitchMr', 'GlitchMr'],
-            github => ['https://github.com/samph',   'samph'],
-            github => 'cwallen';
+my %timezones = DDG::GoodieRole::Dates::get_timezones();
 
-
-primary_example_queries '10:00AM MST to PST';
-secondary_example_queries '19:00 UTC to EST', '1am UTC to PST';
-description 'convert times between timezones';
-name 'Timezone Converter';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/TimezoneConverter.pm';
-category 'calculations';
-topics 'travel';
-
-triggers any => qw(in into to);
+triggers any => lc for keys %timezones;
 
 zci is_cached   => 1;
 zci answer_type => 'timezone_converter';
-
-my %timezones = DDG::GoodieRole::Dates::get_timezones();
 
 my $default_tz   = 'UTC';
 my $localtime_re = qr/(?:(?:my|local|my local)\s*time(?:zone)?)/i;
@@ -36,15 +23,14 @@ my $timezone_re  = qr/(?:\w+(?:\s*[+-]0*[0-9]{1,5}(?::[0-5][0-9])?)?|$localtime_
 
 sub parse_timezone {
     my $timezone = shift;
-
-    # They said "my timezone" or similar.
-    if ($timezone =~ /$localtime_re/i) {
+    
+    # They said "my timezone" or nothing at all.
+    if (!defined($timezone) || !$timezone || $timezone =~ /$localtime_re/i) {
         my $dt = DateTime->now(time_zone => $loc->time_zone || $default_tz );
         return ($dt->time_zone_short_name, $dt->offset / 3600);
     }
 
     # Normalize
-    $timezone ||= $default_tz;
     $timezone = uc $timezone;
     $timezone =~ s/\s+//g;
 
@@ -119,13 +105,13 @@ handle query => sub {
         # Optional input timezone
         (?<from_tz>$timezone_re)
         # Spaces
-        \s+
+        (?:\s+
         # in keywords
         (?: IN (?: TO )? | TO )
         # Spaces
         \s+
         # Output timezone
-        (?<to_tz>$timezone_re)
+        (?<to_tz>$timezone_re))?
         \s* \z
     }ix or return;
 

@@ -1,5 +1,5 @@
 {
-    "id": "coffee_script_cheat_sheet",
+    "id": "coffeescript_cheat_sheet",
     "name": "CoffeeScript Cheat Sheet",
     "description": "CoffeeScript help",
     "metadata": {
@@ -20,22 +20,22 @@
     "sections": {
         "Usage": [{
             "val": "Run CoffeeScript file",
-            "key": "$ coffee src\/file.coffee"
+            "key": "coffee src\/file.coffee"
         }, {
             "val": "Compile files from src to output",
-            "key": "$ coffee -c -o output\/ src\/"
+            "key": "coffee -c -o output\/ src\/"
         }, {
             "val": "Evaluate CoffeeScript code",
-            "key": "$ coffee -e \"console.log 'Hello World'\""
+            "key": "coffee -e \"console.log 'Hello World'\""
         }, {
             "val": "Concatenate the source CoffeeScript before compiling",
-            "key": "$ coffee --join output\/all.js --compile src\/*.coffee"
+            "key": "coffee --join output\/all.js --compile src\/*.coffee"
         }, {
             "val": "Start Read-eval-print loop",
-            "key": "$ coffee"
+            "key": "coffee"
         }, {
             "val": "Watch directory src for changes",
-            "key": "$ coffee --output output\/ -cw src\/"
+            "key": "coffee --output output\/ -cw src\/"
         }],
         "Variables": [{
             "val": "Initialize a variable",

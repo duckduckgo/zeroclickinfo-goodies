@@ -8,64 +8,144 @@ use DDG::Test::Goodie;
 zci answer_type => 'duckduckgo';
 zci is_cached   => 1;
 
+my $id = 'duck_duck_go';
+
 # The results should be static, so these facilitate easier testing of triggers.
 my @about_result = (
-    "DuckDuckGo's about page: https://duckduckgo.com/about",
+    'Want to know more about us? https://duckduckgo.com/about',
     structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result    => "DuckDuckGo's <a href='https://duckduckgo.com/about'>about page</a>."
+        id => $id,
+        data => {
+            title => 'Want to know more about us?',
+            subtitle_image => undef,
+            subtitle_text => 'Visit our About page',
+            subtitle_url => 'https://duckduckgo.com/about'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
     });
 my @blog_result = (
-    "DuckDuckGo's official blog: https://duck.co/blog",
+    'Want to stay up to date with DuckDuckGo? https://duck.co/blog',
     structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result    => "DuckDuckGo's <a href='https://duck.co/blog'>official blog</a>."
+        id => $id,
+        data => {
+            title => 'Want to stay up to date with DuckDuckGo?',
+            subtitle_image => undef,
+            subtitle_text => 'Visit the official DuckDuckGo blog',
+            subtitle_url => 'https://duck.co/blog'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
     });
 my @help_result = (
-    "Need help? Visit our help page: http://dukgo.com/help/",
+    'Need some help? https://duck.co/help',
     structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result    => "Need help? Visit our <a href='http://dukgo.com/help/'>help page</a>."
+        id => $id,
+        data => {
+            title => 'Need some help?',
+            subtitle_image => undef,
+            subtitle_text => 'Visit our help page',
+            subtitle_url => 'https://duck.co/help'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
     });
 my @irc_result = (
-    "DuckDuckGo's official IRC channel is #duckduckgo on irc.freenode.net.",
+    'Want to chat with us on IRC? http://webchat.freenode.net/?channels=duckduckgo',
     structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result =>
-          "DuckDuckGo's official IRC channel is <a href='http://webchat.freenode.net/?channels=duckduckgo'>#duckduckgo</a> on <a href='http://freenode.net/'>irc.freenode.net</a>"
+        id => $id,
+        data => {
+            title => 'Want to chat with us on IRC?',
+            subtitle_image => undef,
+            subtitle_text => 'Visit #duckduckgo on irc.freenode.net',
+            subtitle_url => 'http://webchat.freenode.net/?channels=duckduckgo'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
     });
 my @merch_result = (
-    "Thanks for the support! Check out the DuckDuckGo store for t-shirts, stickers, and other items: https://duck.co/help/community/swag",
+    'Looking for DuckDuckGo gear? (Thanks for the support!) https://duck.co/help/community/swag',
     structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result =>
-          "Thanks for the support! Check out the <a href='https://duck.co/help/community/swag'>DuckDuckGo store</a> for t-shirts, stickers, and other items."
+        id => $id,
+        data => {
+            title => 'Looking for DuckDuckGo gear? (Thanks for the support!)',
+            subtitle_image => undef,
+            subtitle_text => 'Check out the DuckDuckGo store for t-shirts, stickers, and other items',
+            subtitle_url => 'https://duck.co/help/community/swag'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
     });
 my @tor_result = (
-    "DuckDuckGo's service on Tor: http://3g2upl4pq6kufc4m.onion",
+    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion',
     structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result    => "DuckDuckGo's <a href='http://3g2upl4pq6kufc4m.onion'>service on Tor</a>."
+        id => $id,
+        data => {
+            title => 'DuckDuckGo is available on Tor',
+            subtitle_image => undef,
+            subtitle_text => 'Visit our onion address',
+            subtitle_url => 'http://3g2upl4pq6kufc4m.onion'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
     });
 my @shorturl_result = (
-    "DuckDuckGo's short URL: http://ddg.gg/",
+    'Need a quicker way to visit DuckDuckGo? https://ddg.gg',
     structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result    => "DuckDuckGo's short URL: <a href='http://ddg.gg/'>http://ddg.gg/</a>."
+        id => $id,
+        data => {
+            title => 'Need a quicker way to visit DuckDuckGo?',
+            subtitle_image => undef,
+            subtitle_text => 'You can also find us at https://ddg.gg',
+            subtitle_url => 'https://ddg.gg'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
     });
 my @zci_result = (
-    "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful Instant Answers above traditional results.",
+    'Zero Click Info is another term for our Instant Answers that show above the search results http://duckduckhack.com',
     structured_answer => {
-        input     => [],
-        operation => 'DuckDuckGo info',
-        result => "Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful Instant Answers above traditional results."
+        id => $id,
+        data => {
+            title => 'Zero Click Info is another term for our Instant Answers that show above the search results',
+            subtitle_image => undef,
+            subtitle_text => 'Learn more about Instant Answers',
+            subtitle_url => 'http://duckduckhack.com'
+        },
+        templates => {
+            group => 'text',
+            options => {
+                subtitle_content => 'DDH.duck_duck_go.subtitle_content'
+            }
+        }
     });
 
 ddg_goodie_test(
@@ -86,13 +166,13 @@ ddg_goodie_test(
     "ddgs irc"                              => test_zci(@irc_result),
     "the duckduckgo blog"                   => test_zci(@blog_result),
     'the short url of duck duck go'         => test_zci(@shorturl_result),
-    "about duckduck go"                     => test_zci(@about_result),
-    "duck duckgos help"                     => test_zci(@help_result),
+    'about duckduck go'                     => test_zci(@about_result),
+    'duck duckgos help'                     => test_zci(@help_result),
     "where is the ddg irc"                  => test_zci(@irc_result),
     'what is the short url for duckduckgo?' => test_zci(@shorturl_result),
-    "ddg on onion"                          => test_zci(@tor_result),
-    "tor on duck duck go"                   => test_zci(@tor_result),
-    "duckduckgo onion service"              => test_zci(@tor_result),
+    'ddg on onion'                          => test_zci(@tor_result),
+    'tor on duck duck go'                   => test_zci(@tor_result),
+    'duckduckgo onion service'              => test_zci(@tor_result),
     "ddg in tor"                            => test_zci(@tor_result),
     'duckduckgo t-shirt'                    => test_zci(@merch_result),
     'ddg t shirts'                          => test_zci(@merch_result),

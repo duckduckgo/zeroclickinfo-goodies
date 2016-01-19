@@ -8,18 +8,11 @@ use List::MoreUtils qw( none );
 use List::Util qw( min max first );
 use Scalar::Util qw( looks_like_number );
 
-primary_example_queries 'random password', 'random password strong 15';
-description 'generates a random password';
-name 'Password';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodies/Password.pm';
-attribution github => ['duckduckgo', 'DuckDuckGo'];
-category 'computing_tools';
-topics 'cryptography';
-
 zci answer_type => 'pw';
 zci is_cached   => 0;
 
-triggers start => 'password', 'random password', 'pw', 'random pw', 'pwgen';
+triggers start => 'random password', 'generate password', 'generate random password', 'password generator', 'pw', 'generate pw', 'random pw', 'pwgen';
+triggers startend => 'password';
 
 use constant MAX_PWD_LENGTH => 64;
 use constant MIN_PWD_LENGTH => 8;
@@ -49,8 +42,14 @@ my $strengths = join('|', keys %pw_strengths);
 
 handle remainder => sub {
 
-    my $query = shift;
-
+    my $query = lc(shift);
+    
+    # Remove stopwords from remainder before checking format
+    my @stopwords = ('generate', 'generator', 'random', 'characters', 'create');
+    for my $stopwd (@stopwords) {
+        $query =~ s/$stopwd//;
+    }
+    
     return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s*(?<sw>\d+|$strengths|)$/i);
 
     srand();                           # Reseed on each request.

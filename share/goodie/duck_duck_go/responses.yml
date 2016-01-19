@@ -1,5 +1,6 @@
 # If the text and HTML versions can be reasonably generated from the same format
-# use base_format.  If info_url is included, the words surrounded with [] will be linked
+# use title.  If info_url is included, the words surrounded with  will be linked
+#
 # in the HTML version.  The url will be appended to the text version.
 #
 # Otherwise, include both text and html keys.
@@ -7,54 +8,64 @@
 # If more than one keyword applies, add an aliases key with an array ref of string aliases.
 ---
 about:
-  base_format: "DuckDuckGo's [about page]"
-  info_url: https://duckduckgo.com/about
+  title: "Want to know more about us?"
+  subtitle: "Visit our About page"
+  url: https://duckduckgo.com/about
 ads:
   aliases:
     - businessmodel
     - advertisements
-  base_format: '[Advertising and Affiliates on DuckDuckGo]'
-  info_url: https://duck.co/help/company/advertising-and-affiliates
+  title: "Interested in advertising on DuckDuckGo?"
+  subtitle: "Learn more about DuckDuckGo advertising and affiliates"
+  url: https://duck.co/help/company/advertising-and-affiliates
 api:
-  base_format: "DuckDuckGo's [API]"
-  info_url: https://duckduckgo.com/api
+  title: "Interested in using our Instant Answers?"
+  subtitle: "Learn more about the DuckDuckGo Instant Answer API"
+  url: https://duckduckgo.com/api
 app:
   aliases:
     - ios
     - android
     - mobile
-  base_format: "DuckDuckGo's [mobile app]"
-  info_url: https://duckduckgo.com/app/
+    - download
+  title: "Looking for our app?"
+  url: https://duckduckgo.com/app/
 bangs:
   aliases:
     - bang
     - newbang
     - newbangs
-  base_format: "Learn more about DuckDuckGo's [!bangs]. You can submit new ones too!"
-  info_url: https://duck.co/help/features/bangs
+  title: "Search thousands of sites directly from DuckDuckGo."
+  subtitle: "Learn more about !bangs (or submit a new one!)"
+  url: https://duckduckgo.com/bang
 blog:
-  base_format: "DuckDuckGo's [official blog]"
-  info_url: https://duck.co/blog
+  title: "Want to stay up to date with DuckDuckGo?"
+  subtitle: "Visit the official DuckDuckGo blog"
+  url: https://duck.co/blog
 chrome:
-  base_format: "DuckDuckGo's [Chrome help page]"
-  info_url: https://duck.co/help/desktop/chrome
+  title: "Need help with the Chrome browser?"
+  subtitle: "Visit the DuckDuckgo help page for Chrome"
+  url: https://duck.co/help/desktop/chrome
 community:
-  base_format: 'Join our [growing community]'
-  info_url: https://duck.co/
-contributing:
-  base_format: '[Contributing to DuckDuckGo]'
-  info_url: https://duck.co/help/community/contributing
+  title: "Join our growing community"
+  url: http://duckduckhack.com/
 develop:
   aliases:
     - developers
     - improve
     - relevancy
     - contribute
-  base_format: '[Develop Instant Answers for DuckDuckGo search results]'
-  info_url: http://duckduckhack.com/
+    - contributing
+    - hack
+    - hacking
+    - developer
+  title: "Want to improve our search results?"
+  subtitle: "Visit DuckDuckHack to learn more"
+  url: http://duckduckhack.com/
 doodle:
-  base_format: 'Take a look at our [holiday logos]'
-  info_url: https://duck.co/help/settings/holiday-logos
+  title: "Sometimes Dax gets dressed up for special occassions"
+  subtitle: "View our past holiday logos"
+  url: https://duck.co/help/settings/holiday-logos
 duck:
   aliases:
     - dax
@@ -63,99 +74,109 @@ duck:
     - whostheduck
     - whoistheduck
     - mirrormirroronthewallwhosthefairestofthemall
-  html: <img src='https://duckduckgo.com/assets/logo_header.v101.png' alt='Dax' /><br/>I am the duck. Dax the duck.
-  text: I am the duck. Dax the duck.
+  title: "Hi! I'm Dax"
+  image: "https://duckduckgo.com/assets/logo_header.v101.png"
 engine:
-  base_format: '[DuckDuckGo. The search engine that doesn''t track you]'
-  info_url: https://duckduckgo.com/
+  title: "DuckDuckGo. The search engine that doesn't track you"
+  url: https://duckduckgo.com/
 facebook:
-  base_format: 'Like us on [Facebook]'
-  info_url: https://www.facebook.com/duckduckgo
+  title: "Looking for us on Facebook?"
+  subtitle: "Visit the official DuckDuckGo Facebook page"
+  url: https://www.facebook.com/duckduckgo
 fathead:
-  base_format: "DuckDuckGo's [Fathead repository]"
-  info_url: https://github.com/duckduckgo/zeroclickinfo-fathead
+  title: "Interested in creating a Fathead Instant Answer?"
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html#fathead-instant-answers/
 firefox:
-  base_format: "DuckDuckGo's [Firefox help page]"
-  info_url: https://duck.co/help/desktop/firefox
+  title: "Need help with the Firefox browser?"
+  subtitle: "Visit the DuckDuckGo help page for Firefox"
+  url: https://duck.co/help/desktop/firefox
 goodies:
-  base_format: "DuckDuckGo's [Goodie repository]"
-  info_url: https://github.com/duckduckgo/zeroclickinfo-goodies
+  title: "Interested in creating a Goodie Instant Answer?"
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html
 help:
-  base_format: 'Need help? Visit our [help page]'
-  info_url: http://dukgo.com/help/
+  title: "Need some help?"
+  subtitle: "Visit our help page"
+  url: https://duck.co/help
 hiring:
   aliases:
     - job
     - jobs
-  base_format: 'Check out [DuckDuckGo''s article on how we hire and what we''re looking for]'
-  info_url: https://duck.co/help/company/hiring
+  title: "Interested in working with us?"
+  subtitle: "Visit our hiring page for more info"
+  url: https://duck.co/help/company/hiring
 ia:
   aliases:
     - instantanswer
     - instantanswers
-  html: DuckDuckGo's Instant Answers display helpful information at the top of the search page (like this box).<br>Suggest or develop them on <a href='http://duckduckhack.com/'>DuckDuckHack</a> and see all the current Instant Answers <a href='https://duck.co/ia'>here</a>.
-  text: |-
-    DuckDuckGo's Instant Answers display helpful information at the top of the search page (like this box).
-    Suggest or develop them on http://duckduckhack.com and see all the current Instant Answers here https://duck.co/ia.
+  title: "DuckDuckGo's Instant Answers display helpful information at the top of the search page (like this box)"
+  subtitle: "Suggest, develop and learn more about Instant Answers at DuckDuckHack"
+  url: http://duckduckhack.com/
 ie:
   aliases:
     - internetexplorer
-  base_format: "DuckDuckGo's [Internet Explorer help page]"
-  info_url: https://duck.co/help/desktop/internet-explorer
+  title: "Need help with the Internet Explorer browser?"
+  subtitle: "Visit the DuckDuckGo help page for Internet Explorer"
+  url: https://duck.co/help/desktop/internet-explorer
 irc:
-  html: "DuckDuckGo's official IRC channel is <a href='http://webchat.freenode.net/?channels=duckduckgo'>#duckduckgo</a> on <a href='http://freenode.net/'>irc.freenode.net</a>"
-  text: "DuckDuckGo's official IRC channel is #duckduckgo on irc.freenode.net."
+  title: "Want to chat with us on IRC?"
+  subtitle: "Visit #duckduckgo on irc.freenode.net"
+  url: http://webchat.freenode.net/?channels=duckduckgo
 longtail:
-  base_format: "DuckDuckGo's [Longtail repository]"
-  info_url: https://github.com/duckduckgo/zeroclickinfo-longtail
+  title: "Interested in creating a Longtail Instant Answer?"
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html#longtail-instant-answers/
 opensource:
-  base_format: "DuckDuckGo's [open source projects]"
-  info_url: https://duck.co/help/open-source/opensource-overview
+  title: "Looking for the DuckDuckGo open source projects?"
+  subtitle: "Learn more about open source at DuckDuckGo"
+  url: http://duckduckhack.com/
 opera:
-  base_format: "DuckDuckGo's [Opera help page]"
-  info_url: https://duck.co/help/desktop/opera
+  title: "Need help with the Opera browser?"
+  subtitle: "Visit the DuckDuckGo help page for Opera"
+  url: https://duck.co/help/desktop/opera
 partnership:
-  base_format: '[Partnering with DuckDuckGo]'
-  info_url: https://duck.co/help/company/partnerships
+  title: "Interested in working with DuckDuckGo?"
+  subtitle: "Learn more about DuckDuckGo partnerships"
+  url: https://duck.co/help/company/partnerships
 press:
-  base_format: "DuckDuckGo's [press page]"
-  info_url: https://duck.co/help/company/press
+  title: "Curious to know who's talking about DuckDuckGo?"
+  subtitle: "Visit our press page"
+  url: https://duck.co/help/company/press
 privacy:
-  base_format: "DuckDuckGo's [privacy policy]"
-  info_url: https://duckduckgo.com/privacy
+  title: "Want to know more about the DuckDuckGo's privacy policy?"
+  subtitle: "Read our privacy policy here"
+  url: https://duckduckgo.com/privacy
 remove:
   aliases:
     - removing
     - removal
-  html: "To remove DuckDuckGo from your browser, take a look <a href='https://duck.co/help/desktop'>here</a>. Please <a href='https://duckduckgo.com/feedback'>let us know</a> why you are leaving!"
-  text: 'To remove DuckDuckGo from your browser, take a look at https://duck.co/help/desktop. Please let us know why you are leaving at https://duckduckgo.com/feedback!'
-roboduck:
-  base_format: "DuckDuckGo's official [IRC bot]"
-  info_url: https://github.com/Getty/duckduckgo-roboduck
+  title: "Want to remove DuckDuckGo from your browser? (We're sorry to see you go!)"
+  subtitle: "Learn how here"
+  url: https://duck.co/help/desktop
 safari:
-  base_format: "DuckDuckGo's [Safari help page]"
-  info_url: https://duck.co/help/desktop/safari
-searchbox:
-  aliases:
-    - searchbar
-    - sitesearch
-  base_format: "Add a DuckDuckGo [search box] to your site!"
-  info_url: https://duckduckgo.com/search_box
+  title: "Need help with the Safari browser?"
+  subtitle: "Visit DuckDuckGo's Safari help page"
+  url: https://duck.co/help/desktop/safari
 settings:
-  base_format: 'DuckDuckGo [settings]'
-  info_url: https://duckduckgo.com/settings
+  title: "Want to adjust your settings?"
+  subtitle: "Visit the DuckDuckGo settings page"
+  url: https://duckduckgo.com/settings
 short:
   aliases:
     - shorturl
     - shortdomain
-  html: "DuckDuckGo's short URL: <a href='http://ddg.gg/'>http://ddg.gg/</a>."
-  text: "DuckDuckGo's short URL: http://ddg.gg/"
+  title: "Need a quicker way to visit DuckDuckGo?"
+  subtitle: "You can also find us at https://ddg.gg"
+  url: https://ddg.gg
 spice:
-  base_format: "DuckDuckGo's [Spice repository]"
-  info_url: https://github.com/duckduckgo/zeroclickinfo-spice
+  title: "Interested in creating a Spice Instant Answer?"
+  subtitle: "Visit our documentation"
+  url: https://github.com/duckduckgo/zeroclickinfo-spice
 spread:
-  base_format: "DuckDuckGo's [Spread page]"
-  info_url: https://duckduckgo.com/supportus.html
+  title: "Interested in spreading the word?"
+  subtitle: "Visit DuckDuckGo's Spread page"
+  url: https://duckduckgo.com/spread
 swag:
   aliases:
     - merch
@@ -171,35 +192,42 @@ swag:
     - t
     - sticker
     - stickers
-  base_format: 'Thanks for the support! Check out the [DuckDuckGo store] for t-shirts, stickers, and other items'
-  info_url: https://duck.co/help/community/swag
+  title: "Looking for DuckDuckGo gear? (Thanks for the support!)"
+  subtitle: "Check out the DuckDuckGo store for t-shirts, stickers, and other items"
+  url: https://duck.co/help/community/swag
 syntax:
-  base_format: "DuckDuckGo's [available search syntax]"
-  info_url: https://duck.co/help/results/syntax
+  title: "Need some help with searching?"
+  subtitle: "Learn about DuckDuckGo's search syntax"
+  url: https://duck.co/help/results/syntax
 tor:
   aliases:
     - hiddenservice
     - onion
     - onionservice
     - torhiddenservice
-  base_format: "DuckDuckGo's [service on Tor]"
-  info_url: http://3g2upl4pq6kufc4m.onion
+  title: "DuckDuckGo is available on Tor"
+  subtitle: "Visit our onion address"
+  url: http://3g2upl4pq6kufc4m.onion
 traffic:
-  base_format: "DuckDuckGo's [traffic page]"
-  info_url: https://duckduckgo.com/traffic.html
+  title: "Looking for our traffic stats?"
+  subtitle: "Visit the DuckDuckGo traffic page"
+  url: https://duckduckgo.com/traffic.html
 translation:
   aliases:
     - translations
     - language
     - languages
-  html: Help <a href='https://duck.co/translate'>translate DuckDuckGo</a> or adjust your language in the <a href='https://duckduckgo.com/settings'>settings menu</a>.
-  text: Help translate DuckDuckGo (https://duck.co/translate) or adjust your language in the settings menu (https://duckduckgo.com/settings).
+  title: "Interested in translating DuckDuckGo?"
+  subtitle: "Get started now"
+  url: https://duck.co/translate
 twitter:
-  base_format: 'Follow us on [@duckduckgo]'
-  info_url: https://twitter.com/duckduckgo
+  title: "Looking for us on Twitter?"
+  subtitle: "Follow us on @duckduckgo"
+  url: https://twitter.com/duckduckgo
 xmpp:
-  base_format: "DuckDuckGo's [XMPP service]"
-  info_url: https://duck.co/blog/using-pidgin-with-xmpp-jabber
+  title: "Looking for the DuckDuckGo XMPP Service?"
+  subtitle: "Learn how to get connected now!"
+  url: https://duck.co/blog/using-pidgin-with-xmpp-jabber
 zci:
   aliases:
     - zeroclickinfo
@@ -209,4 +237,6 @@ zci:
     - zero 0
     - zero click info
     - zero-click info
-  base_format: 'Zero Click Info is the term DuckDuckGo uses for these boxes, which often provide useful Instant Answers above traditional results.'
+  title: "Zero Click Info is another term for our Instant Answers that show above the search results"
+  subtitle: "Learn more about Instant Answers"
+  url: http://duckduckhack.com

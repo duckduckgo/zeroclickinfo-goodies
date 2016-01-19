@@ -58,7 +58,7 @@
             "val":"Smaller font"
           }, {
             "key":"[Ctrl] [-]",
-            "val":"Larger font" 
+            "val":"Larger font"
         }],
         "File Navigation": [{
             "key":"[Ctrl] [P]",
@@ -70,7 +70,7 @@
             "key":"[Ctrl] [R]",
             "val":"Goto symbol (function name, table, etc.)"
           }, {
-            "key":"[Ctrl] ( [Pageup] / [Pagedown] )",
+            "key":"[Ctrl] ( [Page Up] / [Page Down] )",
             "val":"Goto next/prev file"
           }, {
             "key":"[Ctrl] [K], [C]",
@@ -163,7 +163,7 @@
             "val":"Previous result (find in files)"
         }],
         "Folding": [{
-            "key":"[Ctrl] ([\\[]\/[\\]])",
+            "key":"[Ctrl] ( [\\[] / [\\]] )",
             "val":"Fold/expand"
           }, {
             "key":"[Ctrl] [K], [J]",
@@ -280,7 +280,7 @@
           }
         ],
         "Tools": [{
-            "key": "[Ctrl] [Shift] [P]", 
+            "key": "[Ctrl] [Shift] [P]",
             "val": "Command Palette"
         }, {
             "key": "[Ctrl] [B]",
