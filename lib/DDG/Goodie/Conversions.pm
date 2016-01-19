@@ -60,6 +60,7 @@ sub magnitude_order {
     $to_check =~ /\d++\.?\d++e\+?(?<mag>-?\d++)/i;
     return 1 + $+{mag};
 }
+my $maximum_input = 10**100;
 
 handle query_lc => sub {
     # hack around issues with feet and inches for now
@@ -130,12 +131,13 @@ handle query_lc => sub {
     my $styler = number_style_for($factor);
     return unless $styler;
     
+    return unless $styler->for_computation($factor) < $maximum_input;
+    
     my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
         'to_unit' => $matches[1],
     });
-
 
     return unless defined $result->{'result'};
 
