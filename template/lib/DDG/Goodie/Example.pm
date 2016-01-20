@@ -17,9 +17,9 @@ zci is_cached => 1;
 triggers any => 'triggerword', 'trigger phrase';
 
 # Handle statement
-handle remainder => sub {
+handle <: $ia_handler :> => sub {
 
-    my $remainder = $_;
+    my <: $ia_handler_var :><: $ia_handler :> = <: $ia_handler_var :>_;
 
     # Optional - Guard against no remainder
     # I.E. the query is only 'triggerWord' or 'trigger phrase'
