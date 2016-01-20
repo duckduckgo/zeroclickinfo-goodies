@@ -975,7 +975,7 @@ sub new_word_constant {
     new_constant $constant, $word_constant_grammar;
 }
 
-my $big_pi = Math::BigRat->new()->bpi();
+my $big_pi = Math::BigFloat->new(1)->bpi();
 my $big_e =  Math::BigRat->new(1)->bexp();
 
 sub irrational {
