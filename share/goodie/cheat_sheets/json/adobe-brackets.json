@@ -1,7 +1,7 @@
 {
     "id": "adobe_brackets_cheat_sheet",
     "name": "Adobe Brackets",
-    "description": "Text Editor",
+    "description": "Keyboard shortcuts for Brackets, an open source text editor from Adobe",
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/adobe/brackets/wiki/Brackets-Shortcuts"
@@ -9,10 +9,10 @@
     "aliases": ["brackets", "brackets editor", "adobe brackets editor"],
     "template_type": "keyboard",
     "section_order": [
-        "View",
-        "Files",
         "Editing",
+        "Files",
         "Navigation",
+        "View", 
         "Debug"
     ],
     "sections": {
@@ -58,7 +58,7 @@
             "key": "[Ctrl] [Shift] [S]"
         }, {
             "val": "Rename file",
-            "key": "[F2]"
+            "key": "F2"
         }, {
             "val": "Close file",
             "key": "[Ctrl] [W]"
