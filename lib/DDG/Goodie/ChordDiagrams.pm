@@ -3,6 +3,7 @@ package DDG::Goodie::ChordDiagrams;
 
 use DDG::Goodie;
 use SVG;
+use JSON;
 # docs: http://search.cpan.org/~ronan/SVG-2.33/lib/SVG/Manual.pm
 
 zci answer_type => "chord_diagrams";
@@ -21,6 +22,11 @@ attribution github => ["http://github.com/gerhuyy", "gerhuyy"],
 
 
 triggers any => "chord", "tab";
+
+local $/;
+open(my $fh, '<', share('guitar.json'));
+my $json_text = <$fh>;
+my $new_chords = decode_json($json_text);
 
 # Map note letters to indexes
 my %notes = (
@@ -66,44 +72,72 @@ sub maximum{
     return $sorted[-1];
 };
 
+# create svg X for muted strings
+sub mk_x {
+    my $svg = shift;
+    my $x = shift;
+    my $y = shift;
+    my $size = shift;
+
+    $svg->line(
+    x1=>$x - $size/2,
+    y1=>$y - $size/2,
+    x2=>$x + $size/2,
+    y2=>$y + $size/2,
+    style=>{
+        'stroke'=>'black',
+        'stroke-width'=>'2'
+    });
+
+    $svg->line(
+    x1=>$x - $size/2,
+    y1=>$y + $size/2,
+    x2=>$x + $size/2,
+    y2=>$y - $size/2,
+    style=>{
+        'stroke'=>'black',
+        'stroke-width'=>'2'
+    });
+};
+
 # Generate chord SVG
 sub gen_svg {
     my (%opts) = @_;
     my $svg = SVG->new(width=>$opts{"width"}, height=>$opts{"height"});
     my $top_pad = 30;
     $svg->line(
-        x1=>0,
-        y1=>$top_pad,
-        x2=>$opts{"width"},
-        y2=>$top_pad,
-        style=>{
-            'stroke'=>'black',
-            'stroke-width'=>'4'
-        });
+    x1=>0,
+    y1=>$top_pad,
+    x2=>$opts{"width"},
+    y2=>$top_pad,
+    style=>{
+        'stroke'=>'black',
+        'stroke-width'=>'4'
+    });
 
     my $fret_dist = (($opts{"height"} - $top_pad) / ($opts{"frets"}));
     for (my $i = 0; $i < $opts{"frets"}; $i++) {
         $svg->line(
-            x1=>0,
-            y1=>$top_pad + 2 + $i * $fret_dist,
-            x2=>$opts{"width"},
-            y2=>$top_pad + 2 + $i * $fret_dist,
-            style=>{
-                'stroke'=>'black',
-                'stroke-width'=>'2'
-            });
+        x1=>0,
+        y1=>$top_pad + 2 + $i * $fret_dist,
+        x2=>$opts{"width"},
+        y2=>$top_pad + 2 + $i * $fret_dist,
+        style=>{
+            'stroke'=>'black',
+            'stroke-width'=>'2'
+        });
     }
 
     for (my $i = 0; $i < $opts{"strings"}; $i++) {
         $svg->line(
-            x1=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
-            y1=>$top_pad,
-            x2=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
-            y2=>$opts{"height"},
-            style=>{
-                'stroke'=>'black',
-                'stroke-width'=>'2'
-            });
+        x1=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
+        y1=>$top_pad,
+        x2=>1 + $i * (($opts{"width"} - 2) / ($opts{"strings"} - 1)),
+        y2=>$opts{"height"},
+        style=>{
+            'stroke'=>'black',
+            'stroke-width'=>'2'
+        });
     }
 
     my $i = 0;
@@ -112,7 +146,13 @@ sub gen_svg {
         last if ($i >= $opts{"strings"});
         my $fill = 'black';
         $fill = 'none' if ($p == 0);
-        $svg->circle(
+        if ($p == -1) {
+            mk_x($svg,
+            $i * $p_dist + 1,
+            $top_pad - $fret_dist/2 + 1,
+            10)
+        } else {
+            $svg->circle(
             cx=>$i * $p_dist + 1,
             cy=>$top_pad + $fret_dist * $p - $fret_dist/2 + 1,
             r=>5,
@@ -121,6 +161,7 @@ sub gen_svg {
                 'stroke-width'=>2,
                 'fill'=>$fill
             });
+        }
         $i++;
     }
     return $svg;
@@ -232,7 +273,20 @@ sub all_frets{
     return @values;
 };
 
-# Takes a list of frets, such as from the "fret" function.
+sub get_chord {
+    my $chord = shift;
+    my $name = shift; # maj, 5, min, etc.
+    $chord =~ tr/a-z/A-Z/;
+    foreach(@$new_chords) {
+        if (grep(/^$chord$/, @{%$_{'root'}})) {
+            foreach(@{%$_{'types'}}) {
+                if(%$_{'name'} eq $name) {
+                    return(\@{%$_{'variations'}});
+                }
+            }
+        }
+    }
+};
 
 # Handle statement
 handle remainder => sub {
@@ -267,11 +321,11 @@ handle remainder => sub {
                 name => 'Music',
                 data => {
                     svg => gen_svg(
-                        'width'=>100,
-                        'height'=>120,
-                        'frets'=>$length,
-                        'strings'=>$strings,
-                        'points'=>\@frets
+                    'width'=>100,
+                    'height'=>120,
+                    'frets'=>$length,
+                    'strings'=>$strings,
+                    'points'=>\@{@{get_chord('g#', 'maj')}[0]}
                     )->xmlify,
                     input => $input
                 },
