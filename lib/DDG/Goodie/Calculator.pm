@@ -404,6 +404,7 @@ BEGIN {
 
 use Moose;
 use namespace::autoclean;
+use utf8;
 
 has spec => (
     is       => 'ro',
