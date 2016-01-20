@@ -86,7 +86,7 @@ ddg_goodie_test(
         '1 light year = 9.46 * 10 ^ 18 millimeters',
         structured_answer => {
             input     => ['1 light year'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '9.46 * 10 <sup> 18</sup> millimeters'
         }
     ),
@@ -327,7 +327,7 @@ ddg_goodie_test(
         '42 kilowatt-hours = 1.51 * 10 ^ 8 joules',
         structured_answer => {
             input     => ['42 kilowatt-hours'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '1.51 * 10 <sup> 8</sup> joules'
         }
     ),
@@ -351,7 +351,7 @@ ddg_goodie_test(
         '1 gigawatt = 1.34 * 10 ^ 6 horsepower',
         structured_answer => {
             input     => ['1 gigawatt'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '1.34 * 10 <sup> 6</sup> horsepower'
         }
     ),
@@ -399,7 +399,7 @@ ddg_goodie_test(
         '10 milligrams = 1.1 * 10 ^ -8 tons',
         structured_answer => {
             input     => ['10 milligrams'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '1.1 * 10 <sup> </sup>-8 tons'
         }
     ),
@@ -407,7 +407,7 @@ ddg_goodie_test(
         '10,000 minutes = 6 * 10 ^ 11 microseconds',
         structured_answer => {
             input     => ['10,000 minutes'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '6 * 10 <sup> 11</sup> microseconds'
         }
     ),
@@ -664,7 +664,7 @@ ddg_goodie_test(
         '3 * 10 ^ 60 degrees = 8.33 * 10 ^ 57 revolutions',
         structured_answer => {
             input     => ['3 * 10 <sup> 60</sup> degrees'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '8.33 * 10 <sup> 57</sup> revolutions'
         }
     ),
@@ -672,7 +672,7 @@ ddg_goodie_test(
         '4,1 * 10 ^ 5 newtons = 92.171,667 pounds force',
         structured_answer => {
             input     => ['4,1 * 10 <sup> 5</sup> newtons'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '92.171,667 pounds force'
         }
     ),
@@ -680,7 +680,7 @@ ddg_goodie_test(
         '4 * 10 ^ 5 newtons = 89,923.577 pounds force',
         structured_answer => {
             input     => ['4 * 10 <sup> 5</sup> newtons'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '89,923.577 pounds force'
         }
     ),
@@ -693,11 +693,11 @@ ddg_goodie_test(
         }
     ),
     '3.5e-2 miles to inches' => test_zci(
-        '3.5 * 10 ^ -2 miles = 2,217.601 inches',
+        '3.5 * 10 ^ -2 miles = 2,217.600 inches',
         structured_answer => {
             input     => ['3.5 * 10 <sup> </sup>-2 miles'],
-            operation => 'Convert',
-            result    => '2,217.601 inches'
+            operation => 'convert',
+            result    => '2,217.600 inches'
         }
     ),
     # Areas and volumes
@@ -721,7 +721,7 @@ ddg_goodie_test(
         '5 square miles = 1.29 * 10 ^ 7 square meters',
         structured_answer => {
             input     => ['5 square miles'],
-            operation => 'Convert',
+            operation => 'convert',
             result    => '1.29 * 10 <sup> 7</sup> square meters'
         }
     ),
