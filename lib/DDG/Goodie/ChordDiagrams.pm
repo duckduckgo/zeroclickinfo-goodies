@@ -189,15 +189,15 @@ sub items{
     if(defined $chordList[0]){
         $chord = $chordList[0];
     }elsif(defined $chord && ($chord eq "m" || $chord =~ /(min|minor)/i)){
-        $chord = "minor";
+        $chord = "min";
     }elsif(defined $chord && ($chord eq "M" || $chord =~ /(maj|major)/i)){
-        $chord = "major";
+        $chord = "maj";
     }elsif(defined $chord && $chord =~ /sus[24]/i){
         $chord = lc $chord;
     }elsif($dom){
         $chord = "dominant";
     }else{
-        $chord = "major";
+        $chord = "maj";
     };
     if(!$dom){
         $dom = 5;
@@ -208,7 +208,7 @@ sub items{
             @instr = $instrument_aliases{(grep($instrument_aliases{$_}, @words))[0]};
         };
     };
-    return $instr[0], $chord, $key, $mod, $dom;
+    return $instr[0], $chord, uc $key, $mod, $dom;
 };
 
 # Turns a root notes, and a chord (such as from the chord hash), and
@@ -292,52 +292,31 @@ sub get_chord {
 handle remainder => sub {
     my ($instr_name, $chord_name, $key_name, $mod, $dom) = items($_);
     if((defined $instr_name) && (defined $chord_name) && (defined $key_name)){
-        my @keys = @{$chords{$chord_name}};
-        splice(@keys, ($dom+1)/2);
-        my @values = chord($notes{lc $key_name}+$mod, \@keys);
-        my @frets = all_frets($instruments{$instr_name}, \@values);
         my $strings = 0+@{$instruments{$instr_name}};
-        splice(@frets, int(@frets/$strings)*$strings);
-        my @texts;
-        for(my $i = 0; $i < @frets; $i += $strings){
-            my @fret = @frets[$i .. $strings + $i - 1];
-            my $length = maximum(@fret, (4));
-            my $width = (@fret * 16);
-            my $height = ($length * 25)+5;
-            my $string_height = (($length * 25));
+        my $length = 4;
+        my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), $chord_name);
 
-            push(@texts, join("-", @fret));
-            my $text = join(", ", @texts);
-
-            foreach (@fret) {$_ = 120 - ($_ * 25) if $_ != 0;}
-            foreach (@fret) {$_ += 0;} # <- KEEP THIS! Otherwise Perl converts 0 to a string. Why? Not a clue.
-
-            my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )),
-            $chord_name . (@keys == 3 ? "" : (" " . (@keys*2 - 1) . "th")));
-            my $type = ucfirst($instr_name) . " Chord";
-
-            return 'chord_diagrams', structured_answer => {
-                id => 'chord_diagrams',
-                name => 'Music',
-                data => {
-                    svg => gen_svg(
-                    'width'=>100,
-                    'height'=>120,
-                    'frets'=>$length,
-                    'strings'=>$strings,
-                    'points'=>\@{@{get_chord('g#', 'maj')}[0]}
-                    )->xmlify,
-                    input => $input
-                },
-                templates => {
-                    group => 'base',
-                    item  => 0,
-                    options => {
-                        content => 'DDH.chord_diagrams.detail'
-                    }
-                },
-                meta => {}
-            };
+        return 'chord_diagrams', structured_answer => {
+            id => 'chord_diagrams',
+            name => 'Music',
+            data => {
+                svg => gen_svg(
+                'width'=>100,
+                'height'=>120,
+                'frets'=>$length,
+                'strings'=>$strings,
+                'points'=>\@{@{get_chord($key_name, $chord_name)}[0]}
+                )->xmlify,
+                input => $input
+            },
+            templates => {
+                group => 'base',
+                item  => 0,
+                options => {
+                    content => 'DDH.chord_diagrams.detail'
+                }
+            },
+            meta => {}
         };
     };
     return;
