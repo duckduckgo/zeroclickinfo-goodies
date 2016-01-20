@@ -1,7 +1,7 @@
 {
     "id": "adobe_brackets_cheat_sheet",
     "name": "Adobe Brackets",
-    "description": "A modern, open source text editor from Adobe",
+    "description": "Keyboard shortcuts for Brackets, an open source text editor from Adobe",
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://github.com/adobe/brackets/wiki/Brackets-Shortcuts"
@@ -58,7 +58,7 @@
             "key": "[Ctrl] [Shift] [S]"
         }, {
             "val": "Rename file",
-            "key": "[F2]"
+            "key": "F2"
         }, {
             "val": "Close file",
             "key": "[Ctrl] [W]"
