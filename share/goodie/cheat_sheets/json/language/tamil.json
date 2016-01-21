@@ -139,8 +139,8 @@
     ],
     "Travelling": [
       {
-        "key": "Turn left.",
-        "val": "இடப்பக்கம் திரும்பு .",
+        "key": "Turn left",
+        "val": "இடப்பக்கம் திரும்பு ",
         "trn": "idappakkam thirumbu"
       },
       {
@@ -181,7 +181,7 @@
     ],
     "Going out for dinner": [
       {
-        "key": "A cup of coffee please.",
+        "key": "A cup of coffee please",
         "val": "ஒரு கப் காபி தயவு செய்து கொடுக்க.",
         "trn": "oru cup coffee thaiyavu seidhu kudunga"
       },
@@ -191,7 +191,7 @@
         "trn": "enge oru nalla unavagam ulladhu?"
       },
       {
-        "key": "A glass of water please.",
+        "key": "A glass of water please",
         "val": "ஒரு கிளாஸ் தண்ணீர் தயவு செய்து கொடுக்க .",
         "trn": "Oru glass thanni thaiyavu seidhu kudunga"
       },
