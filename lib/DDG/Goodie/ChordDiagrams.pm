@@ -137,7 +137,7 @@ sub gen_svg {
 sub items{
     my @words = split(" ", lc $_[0]);
     $_[0] = join("sharp", split("#", $_[0]));
-    my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)([a-g])(sharp|b|)(m|min|minor|M|maj|major|sus[24]|)(5|7|9|11|13|)( |$)/i ;
+    my ($temp, $key, $mod, $chord, $dom, $temp2) = /( |^)([a-g])(sharp|b|)(m|min|minor|M|maj|major|sus[24]|aug9?|)(5|7|9|11|13|)( |$)/i ;
     if(/( |^)(5|7|9)( |$)/i){
         ($temp, $dom, $temp2) = /( |^)(5|7|9|11|13)( |$)/i;
     }
@@ -154,13 +154,15 @@ sub items{
         $chord = "maj";
     }elsif(defined $chord && $chord =~ /sus[24]/i){
         $chord = lc $chord;
+    }elsif(defined $chord && $chord =~ /aug/i){
+        $chord = lc $chord;
     }elsif($dom){
         $chord = "dominant";
     }else{
         $chord = "maj";
     };
     if(!$dom){
-        $dom = 5;
+        $dom = "";
     };
     my $instr = grep(@instruments, @words);
     return $instr, $chord, uc $key, $mod, $dom;
@@ -196,8 +198,9 @@ handle remainder => sub {
         } else {
             $mod = '';
         }
-        my $results = \@{@{get_chord($key_name . $mod, $chord_name)}[0]};
-        return if not defined get_chord($key_name . $mod, $chord_name);
+        my $r = get_chord($key_name . $mod, $chord_name . $dom);
+        return if not defined $r;
+        my $results = \@{@{$r}[0]};
         return 'chord_diagrams', structured_answer => {
             id => 'chord_diagrams',
             name => 'Music',
