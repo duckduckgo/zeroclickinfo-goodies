@@ -1,0 +1,62 @@
+{
+    "id": "salt_cheat_sheet",
+    "name": "Salt",
+    "description": "Common commands for SaltStack Master/Minion",
+    "metadata": {
+        "sourceName": "SaltStack",
+        "sourceUrl": "https://docs.saltstack.com/en/latest/ref/cli/"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Salt key commands",
+        "Salt minion/master commands",
+        "Other helpful commands"
+    ],
+    "sections": {
+        "Salt key commands": [{
+            "val": "List all keys",
+            "key": "salt-key -l"
+        }, {
+            "val": "Accept the specified public key (use --include-all to match rejected keys in addition to pending keys). Globs are supported",
+            "key": "salt-key -a <minion_name> "
+        }, {
+            "val": "Reject the specified public key (use --include-all to match accepted keys in addition to pending keys). Globs are supported",
+            "key": "salt-key -r"
+        }, {
+            "val": "Rejects all pending keys",
+            "key": "salt-key -A"
+        }, {
+            "val": "Delete the specified key. Globs are supported",
+            "key": "salt-key -d  <minion_name>"
+        }, {
+            "val": "Delete all keys",
+            "key": "salt-key -D"
+        }],
+        "Salt minion/master commands": [{
+            "val": "Print the version of Salt that is running",
+            "key": "salt --version"
+        }, {
+            "val": "Show program's dependencies and version number, and then exit",
+            "key": "salt --versions-report"
+        }, {
+            "val": "Show the help message and exit",
+            "key": "salt -h"
+        }, {
+            "val": "The location of the Salt configuration directory. This directory contains the configuration files for Salt master and minions. The default location on most systems is /etc/salt",
+            "key": "salt -c"
+        }, {
+            "val": "Specify user to run salt-minion",
+            "key": "salt -u"
+        }, {
+            "val": "Run salt-minion as a daemon",
+            "key": "salt -d"
+        }, {
+            "val": "Specify the location of the pidfile. Default: /var/run/salt-minion.pid",
+            "key": "salt --pid-file"
+        }],
+        "Other helpful commands": [{
+            "val": "After setting up the master it's a good idea to tap the even bus to watch what's going on around the network",
+            "key": "salt-run state.event pretty=True"
+        }]
+    }
+}
