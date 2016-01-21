@@ -57,7 +57,7 @@
       {
         "key": "Can you speak more slowly please?",
         "val": "நீங்கள் மிகவும் மெதுவாக தயவு செய்து பேச முடியுமா?",
-        "trn": "Neengal Migavum medhuvaga thaiyavu seidhu pesa mudiyuma?"
+        "trn": "Neengal migavum medhuvaga thaiyavu seidhu pesa mudiyuma?"
       },
       {
         "key": "Can you repeat please?",
@@ -146,7 +146,7 @@
       {
         "key": "Where is the exit?",
         "val": "எங்கே வெளியேறும் உள்ளது ?",
-        "trn": "Engae Exit ulladhu?"
+        "trn": "Engae exit ulladhu?"
       },
       {
         "key": "Where?",
