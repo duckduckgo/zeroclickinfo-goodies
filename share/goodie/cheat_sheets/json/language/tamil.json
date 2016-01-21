@@ -57,17 +57,17 @@
       {
         "key": "Can you speak more slowly, please?",
         "val": "நீங்கள் மிகவும் மெதுவாக தயவு செய்து பேச முடியுமா?",
-        "trn": "Neengal Migavum medhuvaga thaiyavu seidhu pesa mudiyuma"
+        "trn": "Neengal Migavum medhuvaga thaiyavu seidhu pesa mudiyuma?"
       },
       {
         "key": "Can you repeat, please?",
         "val": "தயவு செய்து மீண்டும் கூற முடியுமா?",
-        "trn": "thaiyavu seidhu meendum kura mudiyuma"
+        "trn": "thaiyavu seidhu meendum kura mudiyuma?"
       },
       {
         "key": "How do you say something in Tamil?",
         "val": "நீங்கள் எப்படி தமிழ் ஏதாவது சொல்ல?",
-        "trn": "neengal tamil lil epadi edavadu solla"
+        "trn": "neengal tamil lil epadi edavadu solla?"
       },
       {
         "key": "Stop!",
