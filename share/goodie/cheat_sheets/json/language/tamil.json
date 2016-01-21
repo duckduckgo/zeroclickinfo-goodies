@@ -1,7 +1,7 @@
 {
   "id": "Tamil_cheat_sheet",
   "name": "Tamil Cheat Sheet",
-  "description": "Basic Tamil words and phrases",
+  "description": "Basic Tamil Words and Phrases",
   "metadata": {
     "sourceName": "Linguanaut",
     "sourceUrl": "http://www.linguanaut.com/english_tamil.html"
@@ -39,7 +39,7 @@
       },
       {
         "key": "Thank you very much!",
-        "val": "மிக்க நன்றி",
+        "val": "மிக்க நன்றி!",
         "trn": "Mikka nanri!"
       },
       {
@@ -55,19 +55,19 @@
         "trn": "Kavalthuraiyinarai azhaiyungal!"
       },
       {
-        "key": "Can you speak more slowly, please?",
+        "key": "Can you speak more slowly please?",
         "val": "நீங்கள் மிகவும் மெதுவாக தயவு செய்து பேச முடியுமா?",
         "trn": "Neengal Migavum medhuvaga thaiyavu seidhu pesa mudiyuma?"
       },
       {
-        "key": "Can you repeat, please?",
+        "key": "Can you repeat please?",
         "val": "தயவு செய்து மீண்டும் கூற முடியுமா?",
-        "trn": "thaiyavu seidhu meendum kura mudiyuma?"
+        "trn": "Tayavu seidhu meendum kura mudiyuma?"
       },
       {
         "key": "How do you say something in Tamil?",
         "val": "நீங்கள் எப்படி தமிழ் ஏதாவது சொல்ல?",
-        "trn": "neengal tamil lil epadi edavadu solla?"
+        "trn": "Neengal tamizhil epadi edavadu solla?"
       },
       {
         "key": "Stop!",
@@ -77,17 +77,17 @@
       {
         "key": "Do you speak English?",
         "val": "நீங்கள் ஆங்கிலம் பேசுவீர்களா?",
-        "trn": "neengal aangilam pesuveergala"
+        "trn": "Neengal aangilam pesuveergala"
       },
       {
         "key": "Excuse me!",
-        "val": "என்னை மன்னியுங்கள்",
-        "trn": "ennai maniyungal!"
+        "val": "என்னை மன்னியுங்கள்!",
+        "trn": "Ennai maniyungal!"
       },
       {
         "key": "I need a doctor!",
-        "val": "எனக்கு வைத்தியர் உதவி தேவை",
-        "trn": "ennaku doctor udhavi thevai"
+        "val": "எனக்கு வைத்தியர் உதவி தேவை!",
+        "trn": "Ennaku doctor udhavi thevai!"
       },
       {
         "key": "Call an ambulance!",
@@ -97,12 +97,12 @@
       {
         "key": "I am in danger!",
         "val": "நான் ஆபத்தில் இருக்கிறேன் !",
-        "trn": "naan aabathil irukinren!"
+        "trn": "Naan aabathil irukinren!"
       },
       {
         "key": "Can you help me?",
         "val": "நீங்கள் எனக்கு உதவ முடியுமா ?",
-        "trn": "neengal enaku udhava mudiyuma?"
+        "trn": "Neengal enaku udhava mudiyuma?"
       },
       {
         "key": "Fire!",
@@ -114,34 +114,34 @@
       {
         "key": "My name is...",
         "val": "என் பெயர்...",
-        "trn": "En peyar.."
+        "trn": "En peyar..."
       },
       {
         "key": "I'm fine, thanks!",
         "val": "நான் நலம். நன்றி!",
-        "trn": "naan nalam, nanri!"
+        "trn": "Naan nalam, nanri!"
       },
       {
         "key": "How are you?",
         "val": "எப்படி இருக்கிறீர்கள்?",
-        "trn": "epadi irukeeringal?"
+        "trn": "Epadi irukeeringal?"
       },
       {
         "key": "Welcome",
         "val": "வரவேற்கிறோம்",
-        "trn": "varaverkirom"
+        "trn": "Varaverkirom"
       },
       {
         "key": "What's your name?",
         "val": "உங்கள் பெயர் என்ன ?",
-        "trn": "ungal peyar enna?"
+        "trn": "Ungal peyar enna?"
       }
     ],
     "Travelling": [
       {
         "key": "Turn left",
         "val": "இடப்பக்கம் திரும்பு ",
-        "trn": "idappakkam thirumbu"
+        "trn": "Idappakkam thirumbu"
       },
       {
         "key": "Where is the exit?",
@@ -151,7 +151,7 @@
       {
         "key": "Where?",
         "val": "எங்கே?",
-        "trn": "engae?"
+        "trn": "Engae?"
       },
       {
         "key": "Is it far?",
@@ -161,12 +161,12 @@
       {
         "key": "Please stop here",
         "val": "இங்கே நிறுத்துங்கள் ",
-        "trn": "inge niruthungal"
+        "trn": "Inge niruthungal"
       },
       {
         "key": "Turn right",
         "val": "வலதுபுறம் திரும்ப ",
-        "trn": "valathupuram thirumba"
+        "trn": "Valathupuram thirumba"
       },
       {
         "key": "Where can I find the taxis?",
@@ -183,12 +183,12 @@
       {
         "key": "A cup of coffee please",
         "val": "ஒரு கப் காபி தயவு செய்து கொடுக்க",
-        "trn": "oru cup coffee thaiyavu seidhu kudunga"
+        "trn": "Oru cup coffee thaiyavu seidhu kudunga"
       },
       {
         "key": "Where is a good restaurant?",
-        "val": "எங்கே ஒரு நல்ல உணவகம் உள்ளது??",
-        "trn": "enge oru nalla unavagam ulladhu?"
+        "val": "எங்கே ஒரு நல்ல உணவகம் உள்ளது?",
+        "trn": "Enge oru nalla unavagam ulladhu?"
       },
       {
         "key": "A glass of water please",
@@ -198,7 +198,7 @@
       {
         "key": "Can I get a menu, please?",
         "val": "நான்  ஒரு மெனு தயவு செய்து பெற முடியும் ?",
-        "trn": "naan oru menu thaiyavu seidhu pera mudiyuma?"
+        "trn": "Naan oru menu thaiyavu seidhu pera mudiyuma?"
       }
     ]
   }
