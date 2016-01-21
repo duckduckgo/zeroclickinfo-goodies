@@ -77,7 +77,7 @@
       {
         "key": "Do you speak English?",
         "val": "நீங்கள் ஆங்கிலம் பேசுவீர்களா?",
-        "trn": "neengal aangilam pesuveergala "
+        "trn": "neengal aangilam pesuveergala"
       },
       {
         "key": "Excuse me!",
@@ -141,12 +141,12 @@
       {
         "key": "Turn left.",
         "val": "இடப்பக்கம் திரும்பு .",
-        "trn": "idappakkam thirumbu."
+        "trn": "idappakkam thirumbu"
       },
       {
         "key": "Where is the exit?",
         "val": "எங்கே வெளியேறும் உள்ளது ?",
-        "trn": "Engae Exit ulladhu ?"
+        "trn": "Engae Exit ulladhu?"
       },
       {
         "key": "Where?",
@@ -161,12 +161,12 @@
       {
         "key": "Please stop here.",
         "val": "இங்கே நிறுத்துங்கள் .",
-        "trn": "inge niruthungal."
+        "trn": "inge niruthungal"
       },
       {
         "key": "Turn right.",
         "val": "வலதுபுறம் திரும்ப .",
-        "trn": "valathupuram thirumba."
+        "trn": "valathupuram thirumba"
       },
       {
         "key": "Where can I find the taxis?",
@@ -183,7 +183,7 @@
       {
         "key": "A cup of coffee please.",
         "val": "ஒரு கப் காபி தயவு செய்து கொடுக்க.",
-        "trn": "oru cup coffee thaiyavu seidhu kuduka."
+        "trn": "oru cup coffee thaiyavu seidhu kuduka"
       },
       {
         "key": "Where is a good restaurant?",
@@ -193,7 +193,7 @@
       {
         "key": "A glass of water please.",
         "val": "ஒரு கிளாஸ் தண்ணீர் தயவு செய்து கொடுக்க .",
-        "trn": "Oru glass thanni thaiyavu seidhu kudunga."
+        "trn": "Oru glass thanni thaiyavu seidhu kudunga"
       },
       {
         "key": "Can I get a menu, please?",
