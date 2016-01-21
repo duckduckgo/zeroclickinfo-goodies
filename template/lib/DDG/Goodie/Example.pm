@@ -14,7 +14,7 @@ zci answer_type => '<: $ia_id :>';
 zci is_cached => 1;
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers any => 'triggerword', 'trigger phrase';
+triggers <: $ia_trigger :>;
 
 # Handle statement
 handle <: $ia_handler :> => sub {
