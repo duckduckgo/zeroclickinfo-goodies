@@ -6,6 +6,10 @@ use DDG::Goodie;
 
 use Math::Int2Base qw/int2base/;
 use 5.010;
+
+zci answer_type => "conversion";
+zci is_cached => 1;
+
 use bigint;
 
 my %base_map = (
@@ -19,9 +23,6 @@ my $map_keys = join '|', keys %base_map;
 
 triggers any => 'base', keys %base_map;
 
-zci answer_type => "conversion";
-zci is_cached => 1;
-
 handle query_clean => sub {
     return unless /^(?<num>[0-9]+)\s*(?:(?:in|as|to)\s+)?(?:(?<bt>$map_keys)|(?:base\s*(?<bn>[0-9]+)))$/;
     my $number = $+{'num'};
@@ -33,7 +34,7 @@ handle query_clean => sub {
         input     => ["$number"],
         operation => 'Decimal to base ' . $base,
         result    => $based
-      };
+    };
 };
 
 1;

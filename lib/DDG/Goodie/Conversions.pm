@@ -6,12 +6,13 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
 use Math::Round qw/nearest/;
-use bignum;
 use utf8;
 use YAML::XS 'LoadFile';
 
 zci answer_type => 'conversions';
 zci is_cached   => 1;
+
+use bignum;
 
 my @types = LoadFile(share('ratios.yml'));
 

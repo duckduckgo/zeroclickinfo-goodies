@@ -6,11 +6,12 @@ use DDG::Goodie;
 
 use Math::Prime::Util 'factor_exp', 'is_prime';
 
-use bignum;
 use utf8;
 
 zci answer_type => "prime_factors";
 zci is_cached => 1;
+
+use bignum;
 
 triggers startend => (
     'prime factors',
