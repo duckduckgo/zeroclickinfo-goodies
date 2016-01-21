@@ -8,7 +8,11 @@ use DDG::Test::Goodie;
 use utf8;
 
 zci answer_type => 'conversions';
+
+# Match the promotion to BigInt in the IA
+use bignum;
 zci is_cached   => 1;
+no bignum;
 
 ddg_goodie_test(
     ['DDG::Goodie::Conversions'],
