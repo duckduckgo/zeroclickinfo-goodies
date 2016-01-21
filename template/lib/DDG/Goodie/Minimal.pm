@@ -13,7 +13,7 @@ zci answer_type => '<: $ia_id :>';
 zci is_cached => 1;
 
 # Triggers - https://duck.co/duckduckhack/goodie_triggers
-triggers any => 'triggerword', 'trigger phrase';
+triggers <: $ia_trigger :>;
 
 # Handle statement
 handle <: $ia_handler :> => sub {
