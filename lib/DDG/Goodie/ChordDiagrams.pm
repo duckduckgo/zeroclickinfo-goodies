@@ -189,7 +189,7 @@ handle remainder => sub {
     if((defined $instr_name) && (defined $chord_name) && (defined $key_name)){
         my $strings = 6;
         my $length = 4;
-        my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), $chord_name);
+        my $input = join(" ", (uc $key_name) . (($mod == -1)? "b" :(($mod == 1)? "#" : "" )), $chord_name . $dom, "guitar chord");
 
         if ($mod == -1) {
             $mod = 'b';
