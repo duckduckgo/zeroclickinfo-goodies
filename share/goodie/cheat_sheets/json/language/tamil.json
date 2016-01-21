@@ -33,7 +33,7 @@
         "trn": "Nanri"
       },
       {
-        "key": "Please...",
+        "key": "Please",
         "val": "தயவு செய்து",
         "trn": "Tayavu seidhu"
       },
@@ -159,13 +159,13 @@
         "trn": "Athu dhoorathil irukiradha?"
       },
       {
-        "key": "Please stop here.",
-        "val": "இங்கே நிறுத்துங்கள் .",
+        "key": "Please stop here",
+        "val": "இங்கே நிறுத்துங்கள் ",
         "trn": "inge niruthungal"
       },
       {
-        "key": "Turn right.",
-        "val": "வலதுபுறம் திரும்ப .",
+        "key": "Turn right",
+        "val": "வலதுபுறம் திரும்ப ",
         "trn": "valathupuram thirumba"
       },
       {
@@ -182,7 +182,7 @@
     "Going out for dinner": [
       {
         "key": "A cup of coffee please",
-        "val": "ஒரு கப் காபி தயவு செய்து கொடுக்க.",
+        "val": "ஒரு கப் காபி தயவு செய்து கொடுக்க",
         "trn": "oru cup coffee thaiyavu seidhu kudunga"
       },
       {
@@ -192,7 +192,7 @@
       },
       {
         "key": "A glass of water please",
-        "val": "ஒரு கிளாஸ் தண்ணீர் தயவு செய்து கொடுக்க .",
+        "val": "ஒரு கிளாஸ் தண்ணீர் தயவு செய்து கொடுக்க ",
         "trn": "Oru glass thanni thaiyavu seidhu kudunga"
       },
       {
