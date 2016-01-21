@@ -3,13 +3,14 @@ package DDG::Goodie::SumOfNaturalNumbers;
 
 use strict;
 use DDG::Goodie;
-use bignum;
 
 triggers start => "add", "sum from";
 triggers startend => "sum";
 
 zci is_cached => 1;
 zci answer_type => "sum";
+
+use bignum;
 
 # This adds commas to the number.
 # It converts 10000000 to 10,000,000.
