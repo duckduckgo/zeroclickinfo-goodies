@@ -1,7 +1,7 @@
 {
   "id": "swift_cheat_sheet",
   "name": "Swift",
-  "description": "A quick cheat sheet and reference guide for Apple's Swift language",
+  "description": "A quick reference of Apple's Swift language, a multi-paradigm, compiled programming language",
   "template_type": "terminal",
   "aliases":["apple swift","swift language"],
   "metadata": {
