@@ -1,6 +1,6 @@
 {
   "id": "postgresql_cheat_sheet",
-  "name": "Postgre SQL",
+  "name": "PostgreSQL",
   "description": "PostgreSQL is an object-relational database management system",
   "template_type": "terminal",
   "metadata": {
