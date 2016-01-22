@@ -80,7 +80,7 @@
       },
       {
         "key": "days\\[\"tue\"\\] = nil",
-        "val": "remove tue from the dictionary"
+        "val": "Remove tue from the dictionary"
       }
     ],
     "Conditionals": [
