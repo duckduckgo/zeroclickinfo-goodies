@@ -33,12 +33,8 @@
         "val": "Declares a new string"
       },
       {
-        "key": "var myString ",
-        "val": "Declares a new string"
-      },
-      {
         "key": "var colors = \\[\"red\", \"blue\"\\]",
-        "val": "Declares string array"
+        "val": "Declares a new string array"
       }
     ],
     "Logical Operators": [
