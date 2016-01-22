@@ -3,7 +3,7 @@
   "name": "Swift",
   "description": "A quick cheat sheet and reference guide for Apple's Swift language",
   "template_type": "terminal",
-  "aliases":["apple swift","swift language"]
+  "aliases":["apple swift","swift language"],
   "metadata": {
     "sourceName": "GitHub",
     "sourceUrl": "http://kpbp.github.io/swiftcheatsheet/"
