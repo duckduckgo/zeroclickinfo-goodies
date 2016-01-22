@@ -12,7 +12,7 @@
     "User Access",
     "New User and Database",
     "PostgreSQL Service Management",
-    "List Existing Database Clusters"
+    "Database Clusters"
   ],
   "sections": {
     "Installation (Debian)": [
@@ -59,7 +59,7 @@
         "val": "Reload postgresql"
       }
     ],
-    "Listing Existing Database Clusters": [
+    "Database Clusters": [
       {
         "key": "pg_lsclusters",
         "val": "Check installed clusters and obtain some basic informations"
