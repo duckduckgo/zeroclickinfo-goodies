@@ -110,7 +110,7 @@
     "Functions": [
       {
         "key": "func sayHello(personName: String) -> String \\{//statements\\}",
-        "val": "Function definition
+        "val": "Function definition"
       }
     ],
     "Classes": [
