@@ -5,17 +5,17 @@
   "template_type": "terminal",
   "metadata": {
     "sourceName": "Debian wiki",
-    "sourceUrl": "https://wiki.debian.org/PostgretionSql"
+    "sourceUrl": "https://wiki.debian.org/PostgreSql"
   },
   "section_order": [
-    "Installation",
+    "Installation (Debian)",
     "User Access",
     "New User and Database",
-    "Postgresql Service",
+    "PostgreSQL Service Management",
     "List Existing Database Clusters"
   ],
   "sections": {
-    "Installation": [
+    "Installation (Debian)": [
       {
         "key": "apt-get install postgresql postgresql-client",
         "val": "Installs PostgreSQL and PostgreSQL client"
@@ -40,7 +40,7 @@
       },
       {
         "key": "psql -d mypgdatabase -U mypguser",
-        "val": "Connect as user mypguser to mypgdatabase"
+        "val": "Connect to localhost as mypguser"
       }
     ],
     "New User and Database": [
@@ -53,9 +53,9 @@
         "val": "Create a database"
       }
     ],
-    "Postgresql Service": [
+    "PostgreSQL Service Management": [
       {
-        "key": "//etc//init.d//postgresql reload",
+        "key": "sudo service postgresql reload",
         "val": "Reload postgresql"
       }
     ],
@@ -63,6 +63,18 @@
       {
         "key": "pg_lsclusters",
         "val": "Check installed clusters and obtain some basic informations"
+      },
+      {
+        "key": "pg_ctlcluster",
+        "val": "Start/stop/restart/reload a PostgreSQL cluster"
+      },
+      {
+        "key": " pg_dropcluster",
+        "val": "Completely delete a PostgreSQL cluster"
+      },
+      {
+        "key": " pg_createcluster",
+        "val": "Create a new PostgreSQL cluster"
       }
     ]
   }
