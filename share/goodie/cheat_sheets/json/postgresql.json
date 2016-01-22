@@ -1,7 +1,7 @@
 {
   "id": "postgresql_cheat_sheet",
   "name": "Postgre SQL",
-  "description": "PostgreSQL, often simply Postgres, is an object-relational database management system",
+  "description": "PostgreSQL is an object-relational database management system",
   "template_type": "terminal",
   "metadata": {
     "sourceName": "Debian wiki",
@@ -9,10 +9,10 @@
   },
   "section_order": [
     "Installation",
-    "User access",
-    "New User and database",
-    "Postgresql service",
-    "Listing existing database clusters"
+    "User Access",
+    "New User and Database",
+    "Postgresql Service",
+    "List Existing Database Clusters"
   ],
   "sections": {
     "Installation": [
@@ -23,7 +23,7 @@
       {
         "key": "apt-get install postgresql-doc",
         "val": "Installs PostgreSQL documentation"
-      },
+      },l
       {
         "key": "apt-get install pgadmin3",
         "val": "Installs PostgreSQL administration GUI"
@@ -33,7 +33,7 @@
         "val": "Installs PostgreSQL web-based administration tool"
       }
     ],
-    "User access": [
+    "User Access": [
       {
         "key": "psql",
         "val": "Connect to the database"
@@ -43,7 +43,7 @@
         "val": "Connect as user mypguser to mypgdatabase"
       }
     ],
-    "New User and database": [
+    "New User and Database": [
       {
         "key": "CREATE USER mypguser WITH PASSWORD 'mypguserpass';",
         "val": "Create a user"
@@ -53,13 +53,13 @@
         "val": "Create a database"
       }
     ],
-    "Postgresql service": [
+    "Postgresql Service": [
       {
         "key": "//etc//init.d//postgresql reload",
-        "val": "reload postgresql"
+        "val": "Reload postgresql"
       }
     ],
-    "Listing existing database clusters": [
+    "Listing Existing Database Clusters": [
       {
         "key": "pg_lsclusters",
         "val": "Check installed clusters and obtain some basic informations"
