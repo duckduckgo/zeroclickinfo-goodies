@@ -23,7 +23,7 @@
       {
         "key": "apt-get install postgresql-doc",
         "val": "Installs PostgreSQL documentation"
-      },l
+      },
       {
         "key": "apt-get install pgadmin3",
         "val": "Installs PostgreSQL administration GUI"
