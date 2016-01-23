@@ -7,9 +7,13 @@
         "sourceUrl": "http://overapi.com/javascript/"
     },
     "aliases": [
-        "js", "java script", "methods", "events"
+        "js dom",
+        "java script dom",
+        "javascript events",
+        "js events",
+        "java script events"
     ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "Node Properties",
         "Node Methods",
