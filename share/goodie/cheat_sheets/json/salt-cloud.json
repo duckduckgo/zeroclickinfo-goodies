@@ -15,7 +15,7 @@
         "Output Options"
     ],
     "sections": {
-        "OPTIONS": [{
+        "Options": [{
             "val": "Print the version of Salt that is running",
             "key": "salt --version"
         }, {
@@ -28,7 +28,6 @@
             "val": "The location of the Salt configuration directory. This directory contains the configuration files for Salt master and minions. The default location on most systems is /etc/salt",
             "key": "salt -c"
         }],
-        
         "Execution Options": [{
             "val": "Specify which region to connect to",
             "key": "salt-cloud -L"
@@ -66,7 +65,7 @@
             "val": "Script arguments to be fed to the bootstrap script when deploying the VM",
             "key": "salt-cloud --script-args"
         }],
-        
+
          "Query Options": [{
             "val": "Execute a query and return some information about the nodes running on configured cloud providers",
             "key": "salt-cloud -Q"
@@ -83,7 +82,7 @@
             "val": "New in version 2014.7.0. | Display a list of configured profiles. Pass in a cloud provider to view the provider's associated profiles, such as digital_ocean, or pass in all to list all the configured profiles",
             "key": "salt-cloud --list-profiles"
         }],
-        
+
         "Cloud Providers Listings": [{
             "val": "Display a list of locations available in configured cloud providers. Pass the cloud provider that available locations are desired on, aka \"linode\", or pass \"all\" to list locations for all configured cloud providers",
             "key": "salt-cloud --list-locations"
@@ -94,7 +93,7 @@
             "val": "Display a list of sizes available in configured cloud providers. Pass the cloud provider that available sizes are desired on, aka \"AWS\", or pass \"all\" to list sizes for all configured cloud providers",
             "key": "salt-cloud --list-sizes"
         }],
-        
+
         "Output Options": [{
             "val": "Pass in an alternative outputter to display the return of data. This outputter can be any of the available outputters",
             "key": "salt-cloud --out"
