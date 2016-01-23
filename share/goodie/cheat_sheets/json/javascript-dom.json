@@ -7,16 +7,16 @@
         "sourceUrl": "http://overapi.com/javascript/"
     },
     "aliases": [
-        "js", "java script", "methods", "events"  
+        "js", "java script", "methods", "events"
     ],
     "template_type": "code",
     "section_order": [
-        "Node Properties", 
-        "Node Methods", 
-        "Document Methods", 
+        "Node Properties",
+        "Node Methods",
+        "Document Methods",
         "Element Methods",
         "Event Object Methods",
-        "EventTarget", 
+        "EventTarget",
         "DOM Events-Mouse",
         "DOM Events-Keyboard",
         "DOM Events-UI/Frame",
@@ -84,7 +84,7 @@
             "key": "keydown"
         }, {
             "val": "The event occurs when the user is pressing a key or holding down a key",
-            "key": "keypress" 
+            "key": "keypress"
         }, {
             "val": "The event occurs when a keyboard key is released",
             "key": "keyup"
@@ -107,7 +107,7 @@
         }, {
             "val": "The event occurs when a user moves the mouse pointer out of an element",
             "key": "mouseout"
-        }, { 
+        }, {
             "val": "The event occurs when a user releases a mouse button over an element",
             "key": "mouseup"
         }],
@@ -139,7 +139,7 @@
         }, {
             "val": "Returns a collection of all child elements with the specified tagname",
             "key": "getElementsByTagName()"
-        }, {    
+        }, {
             "val": "Returns true if the element has the specified attribute, otherwise it returns false",
             "key": "hasAttribute()"
         }, {
@@ -217,7 +217,7 @@
             "key": "contains()"
         }, {
             "val": "Returns true if a node has any child nodes, otherwise it returns false",
-            "key": "hasChildNodes()"     
+            "key": "hasChildNodes()"
         }, {
             "val": "Inserts a new child node before a specified, existing, child node",
             "key": "insertBefore()"
@@ -225,7 +225,7 @@
             "val": "Checks if two nodes are equal",
             "key": "isEqualNode()"
         }, {
-            "val": "Joins adjacent text nodes and removes empty text nodes", 
+            "val": "Joins adjacent text nodes and removes empty text nodes",
             "key": "normalize()"
         }, {
             "val": "Removes a child node",
