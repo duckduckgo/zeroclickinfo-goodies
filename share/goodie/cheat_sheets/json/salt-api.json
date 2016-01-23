@@ -3,13 +3,13 @@
     "name": "Salt API",
     "description": "Common commands for SaltStack API",
     "metadata": {
-        "sourceName": "SaltStack Website",
+        "sourceName": "SaltStack",
         "sourceUrl": "https://docs.saltstack.com/en/latest/ref/cli/"
     },
     "template_type": "terminal",
     "section_order": [
         "Options",
-        "Logging options"
+        "Logging Options"
     ],
     "sections": {
         "Options": [{
