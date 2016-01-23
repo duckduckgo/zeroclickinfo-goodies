@@ -1,0 +1,249 @@
+{
+  "id": "ruby_globals_cheat_sheet",
+  "name": "Ruby Globals",
+  "description": "Pre-defined global variables and constants in the Ruby programming language",
+  "metadata": {
+    "sourceName": "Ruby Lang",
+    "sourceUrl": "http://docs.ruby-lang.org/en/trunk/globals_rdoc.html"
+  },
+  "aliases": [
+    "ruby global constant",
+    "ruby global constants",
+    "ruby global variable",
+    "ruby global variables",
+    "ruby global"
+  ],
+  "template_type": "code",
+  "section_order": [
+    "Short Variables",
+    "Long Variables",
+    "Command Line Switches",
+    "Global Constants"
+  ],
+  "sections": {
+    "Short Variables": [
+      {
+        "key": "$!",
+        "val": "Last raised exception"
+      },
+      {
+        "key": "$@",
+        "val": "Backtrace array of the last raised exception"
+      },
+      {
+        "key": "$&",
+        "val": "Last successfully matched string"
+      },
+      {
+        "key": "$`",
+        "val": "String to the left  of the last successful match"
+      },
+      {
+        "key": "$'",
+        "val": "String to the right of the last successful match"
+      },
+      {
+        "key": "$+",
+        "val": "Highest group matched by the last successful match"
+      },
+      {
+        "key": "$1",
+        "val": "Nth group of the last successful match, may be > 1"
+      },
+      {
+        "key": "$~",
+        "val": "Match data from the last match in the current scope"
+      },
+      {
+        "key": "$=",
+        "val": "Case insensitive flag, nil by default, ineffective"
+      },
+      {
+        "key": "$/",
+        "val": "Input record separator, newline by default"
+      },
+      {
+        "key": "$\\",
+        "val": "Output record separator for print and IO#write, nil by default"
+      },
+      {
+        "key": "$,",
+        "val": "Output field separator for print and Array#join, nil by default"
+      },
+      {
+        "key": "$;",
+        "val": "Default split pattern for String#split, nil by default"
+      },
+      {
+        "key": "$.",
+        "val": "Current input line number of the last file that was read"
+      },
+      {
+        "key": "$<",
+        "val": "Virtual concatenation file of files from command line or $stdin"
+      },
+      {
+        "key": "$>",
+        "val": "Default output for print and printf, $stdout by default"
+      },
+      {
+        "key": "$_",
+        "val": "Last input line of string by gets or readline"
+      },
+      {
+        "key": "$0",
+        "val": "Name of the script being executed, may be assignable"
+      },
+      {
+        "key": "$*",
+        "val": "Command line arguments given for the script sans args"
+      },
+      {
+        "key": "$$",
+        "val": "Process number of the Ruby running this script"
+      },
+      {
+        "key": "$?",
+        "val": "Status of the last executed child process, thread-local"
+      },
+      {
+        "key": "$:",
+        "val": "Load path for scripts and binary modules by load or require"
+      },
+      {
+        "key": "$\"",
+        "val": "Array of module names loaded by require"
+      }
+    ],
+    "Long Variables": [
+      {
+        "key": "$DEBUG",
+        "val": "Debug flag, set by -d switch, enables printing of each exception raised to $stderr (but not its backtrace) when true"
+      },
+      {
+        "key": "$LOADED_FEATURES",
+        "val": "Alias of $\""
+      },
+      {
+        "key": "$FILENAME",
+        "val": "Current input file from $<, same as $<.filename"
+      },
+      {
+        "key": "$LOAD_PATH",
+        "val": "Alias of $:"
+      },
+      {
+        "key": "$stderr",
+        "val": "Current standard error output"
+      },
+      {
+        "key": "$stdin",
+        "val": "Current standard input"
+      },
+      {
+        "key": "$stdout",
+        "val": "Current standard output"
+      },
+      {
+        "key": "$VERBOSE",
+        "val": "Verbose flag, set by -w or -v switch, enables warnings when true"
+      }
+    ],
+    "Command Line Switches": [
+      {
+        "key": "$-0",
+        "val": "Alias of input record separator $/"
+      },
+      {
+        "key": "$-a",
+        "val": "Autosplit mode flag, read-only"
+      },
+      {
+        "key": "$-d",
+        "val": "Alias of $DEBUG"
+      },
+      {
+        "key": "$-F",
+        "val": "Alias of split pattern $;"
+      },
+      {
+        "key": "$-i",
+        "val": "Extension for in-place-edit mode, otherwise nil"
+      },
+      {
+        "key": "$-I",
+        "val": "Alias of load path $:"
+      },
+      {
+        "key": "$-l",
+        "val": "Line ending processing mode flag, read-only"
+      },
+      {
+        "key": "$-p",
+        "val": "Print loop flag, read-only"
+      },
+      {
+        "key": "$-v",
+        "val": "Alias of $VERBOSE"
+      },
+      {
+        "key": "$-w",
+        "val": "Alias of $VERBOSE"
+      }
+    ],
+    "Global Constants": [
+      {
+        "key": "TRUE",
+        "val": "Value of true, the singleton instance of TrueClass"
+      },
+      {
+        "key": "FALSE",
+        "val": "Value of false, the singleton instance of FalseClass"
+      },
+      {
+        "key": "NIL",
+        "val": "Value of nil, the singleton instance of NilClass"
+      },
+      {
+        "key": "STDIN",
+        "val": "Standard input, default value for $stdin"
+      },
+      {
+        "key": "STDOUT",
+        "val": "Standard output, default value for $stdout"
+      },
+      {
+        "key": "STDERR",
+        "val": "Standard error output, default value for $stderr"
+      },
+      {
+        "key": "ENV",
+        "val": "Hash of current environment variables"
+      },
+      {
+        "key": "ARGF",
+        "val": "Alias of virtual input file $<"
+      },
+      {
+        "key": "ARGV",
+        "val": "Alias of command line arguments $*"
+      },
+      {
+        "key": "DATA",
+        "val": "Script file object, pointing just after __END__"
+      },
+      {
+        "key": "RUBY_VERSION",
+        "val": "Version string"
+      },
+      {
+        "key": "RUBY_RELEASE_DATE",
+        "val": "Release date string"
+      },
+      {
+        "key": "RUBY_PLATFORM",
+        "val": "Platform identifier string"
+      }
+    ]
+  }
+}
