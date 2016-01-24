@@ -50,7 +50,7 @@ handle remainder => sub {
           name => 'Answer',
           data => {
               title    => "$result",
-              subtitle => "Caesar cipher $shift_val $to_cipher",
+              subtitle => html_enc("Caesar cipher $shift_val $to_cipher"),
           },
           templates => {
               group  => 'text',
