@@ -16,6 +16,7 @@
         "Standard Grid Medium",
         "Standard Grid Small",
         "Buttons",
+        "Color Classes",
         "Random Utilities"
     ],
     "sections": {
@@ -164,7 +165,7 @@
         }, {
             "val": "Green",
             "key": "success"
-        }, {}, {
+        }, {
             "val": "Red",
             "key": "Alert"
         }, {
