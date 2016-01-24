@@ -68,6 +68,19 @@
             "val": "year",
             "key": "%Y"
         }],
+        "Date": [{
+            "val": "locale's date and time (e.g., Thu Mar 3 23:05:25 2005",
+            "key": "%c"
+        }, {
+            "val": "date; same as %m/%d/%y",
+            "key": "%D"
+        }, {
+            "val": "full date; same as %Y-%m-%d",
+            "key": "%F"
+        }, {
+            "val": "locale's date representation (e.g., 12/31/99)",
+            "key": "%x"
+        }],
         "Misc": [{
             "val": "a literal %",
             "key": "%%"
