@@ -1,7 +1,7 @@
 {
     "id": "unix_time_format_cheat_sheet",
     "name": "Unix Time Format Sequences",
-    "description": "Common sequences for formatting time in Unix.",
+    "description": "Common sequences for formatting time in Unix",
     "aliases":["time format", "format time", "time formatting",
                "strftime", "strptime", "linux date", "linux time",
                "unix date"],
@@ -75,7 +75,7 @@
             "key": "%Y"
         }],
         "Date": [{
-            "val": "locale's date and time (e.g., Thu Mar 3 23:05:25 2005",
+            "val": "locale's date and time (e.g., Thu Mar 3 23:05:25 2005)",
             "key": "%c"
         }, {
             "val": "date; same as %m/%d/%y",
