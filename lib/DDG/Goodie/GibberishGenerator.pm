@@ -56,6 +56,13 @@ sub generate_werds {
     return $werds;
 }
 
+sub get_approximate_amount_werds {
+    my ($num, $type) = @_;
+    return $num if $type eq 'word';
+    return $num * 8 if $type eq 'sentence';
+    return $num * 8 if $type eq 'line';
+}
+
 handle query_lc => sub {
     my $query   = $_;
     # Treat 'a' as 'one' for the purposes of amounts.
@@ -66,6 +73,7 @@ handle query_lc => sub {
     my $amount   = $+{'amount'} // 1;
     my $modifier = $+{'modifier'} // 'english';
     my $type     = $+{'type'};
+    return if get_approximate_amount_werds($amount, $type) > 200;
     my $result = generate_werds($amount, $modifier, $type);
     # Proper-case modifier (english -> English)
     my $fmodifier = $modifier =~ s/^\w/\u$&/r;
