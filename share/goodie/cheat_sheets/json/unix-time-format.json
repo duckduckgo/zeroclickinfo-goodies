@@ -124,6 +124,22 @@
             "val": "locale's time representation (e.g., 23:13:48)",
             "key": "%X"
         }],
+        "Time Zone": [{
+            "val": "+hhmm numeric time zone (e.g., -0400)",
+            "key": "%z"
+        }, {
+            "val": "+hh:mm numeric time zone (e.g., -04:00)",
+            "key": "%:z"
+        }, {
+            "val": "+hh:mm:ss numeric time zone (e.g., -04:00:00)",
+            "key": "%::z"
+        }, {
+            "val": "numeric time zone with : to necessary precision (e.g., -04, +05:30)",
+            "key": "%:::z"
+        }, {
+            "val": "alphabetic time zone abbreviation (e.g., EDT)",
+            "key": "%Z"
+        }],
         "Misc": [{
             "val": "a literal %",
             "key": "%%"
