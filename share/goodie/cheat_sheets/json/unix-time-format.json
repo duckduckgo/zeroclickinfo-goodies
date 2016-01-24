@@ -52,6 +52,22 @@
             "val": "month (01..12)",
             "key": "%m"
         }],
+        "Year": [{
+            "val": "century; like %Y, except omit last two digits (e.g., 20)",
+            "key": "%C"
+        }, {
+            "val": "last two digits of year of ISO week number (see %G)",
+            "key": "%g"
+        }, {
+            "val": "year of ISO week number (see %V); normally useful only with %V",
+            "key": "%G"
+        }, {
+            "val": "last two digits of year (00..99)",
+            "key": "%y"
+        }, {
+            "val": "year",
+            "key": "%Y"
+        }],
         "Misc": [{
             "val": "a literal %",
             "key": "%%"
