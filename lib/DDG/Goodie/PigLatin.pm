@@ -42,7 +42,7 @@ handle query_raw => sub {
         name => 'Answer',
         data => {
             title    => "$result",
-            subtitle => "Translate $action Pig Latin: $to_translate",
+            subtitle => html_enc("Translate $action Pig Latin: $to_translate"),
         },
         templates => {
             group  => 'text',
