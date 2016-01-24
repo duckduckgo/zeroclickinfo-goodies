@@ -3,83 +3,82 @@
 	"name": "Hindi Cheat Sheet",
 	"description": "Basic hindi words and phrases",
 	"metadata": {
-	"sourceName": "Linguanaut",
-	"sourceUrl": "http://www.linguanaut.com/english_hindi.htm"
+		"sourceName": "Linguanaut",
+		"sourceUrl": "http://www.linguanaut.com/english_hindi.htm"
 	},
 
 	"aliases": [
-	"hindi phrases", "english to hindi", "basic hindi phrases", "basic hindi", "useful hindi phrases"
+		"hindi phrases", "english to hindi", "basic hindi phrases", "basic hindi", "useful hindi phrases"
 	],
 	"template_type": "language",
 	"section_order": [
-	"Basics",
-	"Getting Help",
-    "Travelling",
-	"Etiquette",
-    "Going out for dinner"
+		"Basics",
+		"Getting Help",
+		"Travelling",
+		"Etiquette",
+		"Going out for dinner"
 	],
 
 	"description": "Basic Hindi words and phrases",
 	"sections": {
-	"Etiquette": [{
-                "key": "Good morning",
-	            "val": "सुप्रभात",
-                "trn": "Suprabhaat"
-			}, {
-                "key": "Good evening",
-	            "val": "शुभ संध्या",
-	            "trn": "Shubh sundhyaa"           
-			}, {
-				"key": "Good night",
-				"val": "शुभ रात्री",
-				"trn": "Shubh raatri"
-			}, {
-				"key": "I'm sorry",
-				"val": "मुझे अफसोस है",
-				"trn": "Mujhe afsos hai"
-			}, {
-				"key": "Thank you",
-				"val": "शुक्रीया",
-				"trn": "Shukriyaa"
-			}, {
-				"key": "Please",
-				"val": "कृपया",
-				"trn": "krpyaa"
-			}, {
-				"key": "Thank you very much!",
-				"val": "बहुत बहुत (धन्यवाद / शुक्रिया)!",
-				"trn": "bahut bahut (dhanyavad/sukriyaa)"
-			}, {
-				"key": "You're welcome",
-				"val": "आपका स्वागत है",
-				"trn": "Aap ka swagat hai"
+		"Etiquette": [{
+			"key": "Good morning",
+			"val": "सुप्रभात",
+			"trn": "Suprabhaat"
+		}, {
+			"key": "Good evening",
+			"val": "शुभ संध्या",
+			"trn": "Shubh sundhyaa"
+		}, {
+			"key": "Good night",
+			"val": "शुभ रात्री",
+			"trn": "Shubh raatri"
+		}, {
+			"key": "I'm sorry",
+			"val": "मुझे अफसोस है",
+			"trn": "Mujhe afsos hai"
+		}, {
+			"key": "Thank you",
+			"val": "शुक्रीया",
+			"trn": "Shukriyaa"
+		}, {
+			"key": "Please",
+			"val": "कृपया",
+			"trn": "krpyaa"
+		}, {
+			"key": "Thank you very much!",
+			"val": "बहुत बहुत (धन्यवाद / शुक्रिया)!",
+			"trn": "bahut bahut (dhanyavad/sukriyaa)"
+		}, {
+			"key": "You're welcome",
+			"val": "आपका स्वागत है",
+			"trn": "Aap ka swagat hai"
 
-			}, {
-				"key": "How are you?",
-				"val": "आप कैसे/कैसी हैं??",
-				"trn": "aap kaise/kaisi hai? "
-			}, {
-				"key": "Good luck!",
-				"val": "शुभकामनाएँ!",
-				"trn": "śubhkāmnāen!"
-			}, {
-				"key": "Nice to meet you (formal)",
-				"val": "आपसे मिलकर बहुत खुशी हुई।",
-				"trn": "āpsē milkar bahut k͟hūśī huī"
-			}, {
-				"key": "Nice to meet you too (reply)",
-				"val": "मुझे भी ",
-				"trn": "mujhē bhī"
-			}, {
-				"key": "Hello/Goodbye",
-				"val": "नमस्कार",
-				"trn": "namaskār"
-			}, {
-				"key": "Hello/Goodbye(respectful)",
-				"val": "प्रणाम",
-				"trn": "praṇām"
-			}
-                ],
+		}, {
+			"key": "How are you?",
+			"val": "आप कैसे/कैसी हैं??",
+			"trn": "aap kaise/kaisi hai? "
+		}, {
+			"key": "Good luck!",
+			"val": "शुभकामनाएँ!",
+			"trn": "śubhkāmnāen!"
+		}, {
+			"key": "Nice to meet you (formal)",
+			"val": "आपसे मिलकर बहुत खुशी हुई।",
+			"trn": "āpsē milkar bahut k͟hūśī huī"
+		}, {
+			"key": "Nice to meet you too (reply)",
+			"val": "मुझे भी ",
+			"trn": "mujhē bhī"
+		}, {
+			"key": "Hello/Goodbye",
+			"val": "नमस्कार",
+			"trn": "namaskār"
+		}, {
+			"key": "Hello/Goodbye(respectful)",
+			"val": "प्रणाम",
+			"trn": "praṇām"
+		}],
 		"Getting Help": [{
 			"key": "Call the police!",
 			"val": "पुलिस की बुलाओ!",
