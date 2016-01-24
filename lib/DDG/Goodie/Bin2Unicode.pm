@@ -24,7 +24,8 @@ handle matches => sub {
     my $str;
     for my $b (@bins){
         if($b =~ /^[01]+$/){
-		    # Overflow/non-portable warnings expected
+            return if length($b) % 8;
+            # Overflow/non-portable warnings expected
             my $i = oct("0b$b");
             # Assume ascii if out of range or explicitly requested.
             # This will work for characters all in the same string
