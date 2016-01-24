@@ -39,6 +39,19 @@
             "val": "week number of year, with Monday as first day of week (00..53)",
             "key": "%w"
         }],
+        "Month": [{
+            "val": "locale's abbreviated month name (e.g., Jan)",
+            "key": "%b"
+        }, {
+            "val": "locale's full month name (e.g., January)",
+            "key": "%B"
+        }, {
+            "val": "same as %b",
+            "key": "%h"
+        }, {
+            "val": "month (01..12)",
+            "key": "%m"
+        }],
         "Misc": [{
             "val": "a literal %",
             "key": "%%"
