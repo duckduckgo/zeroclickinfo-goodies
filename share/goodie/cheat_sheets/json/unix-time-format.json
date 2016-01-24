@@ -29,6 +29,16 @@
             "val": "day of week (0..6); 0 is Sunday",
             "key": "%w"
         }],
+        "Week": [{
+            "val": "week number of year, with Sunday as first day of week (00..53)",
+            "key": "%U"
+        }, {
+            "val": "ISO week number, with Monday as first day of week (01..53)",
+            "key": "%V"
+        }, {
+            "val": "week number of year, with Monday as first day of week (00..53)",
+            "key": "%w"
+        }],
         "Misc": [{
             "val": "a literal %",
             "key": "%%"
