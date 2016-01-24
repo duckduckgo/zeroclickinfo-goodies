@@ -1,4 +1,15 @@
 .zci__conversions_left, .zci__conversions_equals, .zci__conversions_right {
-    display: inline-block;
-    font-size: 20px;
+    float: left;
+	padding: 12px;	
+	margin: 0px;
+	font-size: 20px;
+}
+
+.zci__conversions_equals {
+	font-weight: bold;
+}
+
+.zci__conversions_left, .zci__conversions_right {
+	border: 1px solid #d0d0d0;
+	background: #fafafa;
 }
