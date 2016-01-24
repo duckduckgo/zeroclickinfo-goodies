@@ -29,12 +29,15 @@ If your IA is new, use the format: `"New {IA TOPIC} {IA TYPE}"`. For example:
 	- "New Firefox Cheat Sheet"
 	- "New Color Hex Goodie"
 	
-If you're submitting a fix, use the format: `"{IA NAME}: Fixes #ISSUE"` as the title and description (Conveniently, this syntax will auto-close the Github issue when your pull request is merged.). For example:
-	
-	- "Forecast: Fixes #3434"
-	- "Cheat Sheet: Fixes #4102"
+If you're submitting a fix, use the format: `"{IA NAME}: Fixes #ISSUE" - {Explanation}` as the title (Conveniently, this syntax will auto-close the Github issue when your pull request is merged.). For example:
 
-**Finally, don't forget to paste your [Instant Answer Page URL](https://duck.co/ia/new_ia) in the description field**, while creating new pull requests. This will automatically link the two.
+	- "PeopleInSpace: Fixes #3434 - use smaller local image, fallback to API when needed."
+
+Also, for fix pull requests, describe your motivation, thought process, and solution in the description. For example:
+
+	- "The images used by the API are very large and don't change often. I've but a smaller version of each image (and a 2x version for retina screens) in the share directory. The callback will try and load a local image based on the astronauts name and fallback to using the API's image if one does not exist."
+
+**Finally, don't forget to paste the relevant [Instant Answer Page URL](https://duck.co/ia/new_ia) in the description field**, while creating new pull requests. This will automatically link the two.
 
 > **IMPORTANT:** Don't worry if you get an initial error regarding failing Travis tests. The reason is that your IA page hasn't yet been moved out of the "Planning" status - which only community leaders/staff can do. As long as the ID in your IA page matches the ID in your code, and you've pasted the URL to your IA page, you can ignore this initial error.
 	
