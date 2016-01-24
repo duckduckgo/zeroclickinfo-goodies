@@ -44,11 +44,11 @@
             "key" : "Thank you very much!"
          },
          {
-            "val" : "Buona Mattina!",
+            "val" : "Buongiorno!",
             "key" : "Good Morning!"
          },
          {
-            "val" : "Sei il benvenuto!",
+            "val" : "Prego!",
             "key" : "You're welcome!"
          }
       ],
@@ -150,7 +150,7 @@
             "key" : "Where?"
          },
          {
-            "val" : "É distante?",
+            "val" : "È distante?",
             "key" : "Is it far?"
          },
          {
@@ -158,7 +158,7 @@
             "key" : "Go straight ahead"
          },
          {
-            "val" : "Hai una cartina della mappa?",
+            "val" : "Hai una cartina della mappa? / Hai una mappa della città?",
             "key" : "Do you have a city map?"
          },
          {
