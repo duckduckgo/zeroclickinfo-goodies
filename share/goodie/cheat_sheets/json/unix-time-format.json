@@ -7,6 +7,28 @@
     "section_order": ["Day", "Week", "Month", "Year", "Date",
                       "Time", "Time Zone", "Misc"],
     "sections": {
+        "Day": [{
+            "val": "locale's abbreviated weekday name (e.g., Sun)",
+            "key": "%a"
+        }, {
+            "val": "locale's full weekday name (e.g., Sunday)",
+            "key": "%A"
+        }, {
+            "val": "day of month (e.g., 01)",
+            "key": "%d"
+        }, {
+            "val": "day of month, space padded; same as %_d",
+            "key": "%e"
+        }, {
+            "val": "day of year (001..366)",
+            "key": "%j"
+        }, {
+            "val": "day of week (1..7); 1 is Monday",
+            "key": "%u"
+        }, {
+            "val": "day of week (0..6); 0 is Sunday",
+            "key": "%w"
+        }],
         "Misc": [{
             "val": "a literal %",
             "key": "%%"
