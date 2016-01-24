@@ -46,8 +46,8 @@ handle remainder => sub {
             id => 'abc',
             name => 'Answer',
             data => {
-                title => "$selection",
-                subtitle => "$operation: $choice_string"
+                title => html_enc("$selection"),
+                subtitle => html_enc("$operation: $choice_string")
             },
             templates => {
                 group => 'text',
