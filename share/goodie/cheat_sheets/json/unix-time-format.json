@@ -6,4 +6,16 @@
     "template_type": "reference",
     "section_order": ["Day", "Week", "Month", "Year", "Date",
                       "Time", "Time Zone", "Misc"],
+    "sections": {
+        "Misc": [{
+            "val": "a literal %",
+            "key": "%%"
+        }, {
+            "val": "a newline",
+            "key": "%n"
+        }, {
+            "val": "a tab",
+            "key": "%t"
+        }]
+    }
 }
