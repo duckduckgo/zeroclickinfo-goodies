@@ -1,7 +1,7 @@
 {
     "id": "npm_cheat_sheet",
     "name": "NPM",
-    "description": "Package Manager for the Node JavaScript platform",
+    "description": "Command Line Interface (CLI) commands for npm",
     "metadata": {
         "sourceName": "NPM Docs",
         "sourceUrl": "https://docs.npmjs.com/#cli"
@@ -9,7 +9,7 @@
     "template_type": "terminal",
     "section_order": [
         "Getting Started",
-        "Installing packages",
+        "Installing Packages",
         "Package Details"
     ],
     "sections": {
@@ -27,11 +27,15 @@
                 "key": "npm search <term>"
             },
             {
-                "val": "This command will update all the packages listed to the latest version, respecting semver",
-                "key": "npm update <package_name>"
+                "val": "Updates all the packages to the latest version, respecting semver",
+                "key": "npm update -g <package_name>"
+            },
+            {
+                "val": "Show help for the especific command",
+                "key": "npm help <command>"
             }
         ],
-        "Installing packages": [
+        "Installing Packages": [
             {
                 "val": "Install the latest version of a package",
                 "key": "npm install <package_name>"
