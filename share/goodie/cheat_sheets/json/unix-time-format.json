@@ -1,0 +1,9 @@
+{
+    "id": "unix_time_format_cheat_sheet",
+    "name": "Unix Time Format Sequences",
+    "description": "Common sequences for formatting time in Unix.",
+    "aliases":["time format", "format time", "time formatting", "strftime", "strptime", "linux date"],
+    "template_type": "reference",
+    "section_order": ["Day", "Week", "Month", "Year", "Date",
+                      "Time", "Time Zone", "Misc"],
+}
