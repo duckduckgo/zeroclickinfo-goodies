@@ -1,5 +1,6 @@
 package DDG::Goodie::Bin2Unicode;
-# ABSTRACT: Convert binary to unicode 
+
+# ABSTRACT: Convert binary to unicode
 
 use DDG::Goodie;
 use strict;
@@ -33,12 +34,12 @@ handle matches => sub {
                 ? pack('B*', $b)
                 : chr($i);
         }
-        else{
+        else {
             $str .= $b;
         }
     }
 
-    return "Binary '$bin_string' converted to " . $want_ascii ? 'ascii' : 'unicode' . " is '$str'",,
+    return "Binary '$bin_string' converted to " . $want_ascii ? 'ascii' : 'unicode' . " is '$str'",
         structured_answer => {
             id => 'bin2unicode',
             name => 'Answer',
@@ -46,7 +47,6 @@ handle matches => sub {
               title => $str,
               subtitle => "Input: $q",
             },
-
             templates => {
                 group => 'text',
                 moreAt => 0
