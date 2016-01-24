@@ -1,0 +1,570 @@
+
+{
+    "id": "indesign_cheat_sheet",
+    "name": "InDesign",
+    "description": "Keyboard shortcuts for Adobe InDesign, a desktop publishing software application",
+    "metadata": {
+        "sourceName": "Adobe InDesign",
+        "sourceUrl": "https://helpx.adobe.com/indesign/using/default-keyboard-shortcuts.html"
+    },
+    "aliases": [
+        "adobe indesign cc",
+        "indesign cc",
+        "adobe indesign"
+    ],
+    "template_type": "keyboard",
+    "section_order": [
+        "Tools",
+        "Selecting and Moving Objects",
+        "Transforming objects",
+        "Editing paths and Frames",
+        "Tables",
+        "Finding and Changing text",
+        "Working with Type",
+        "Viewing Documents and Document workspaces",
+        "Working with XML",
+        "Indexing",
+        "Panels",
+        "Control Panel",
+        "Type Panels and Dialog boxes",
+        "Character and Paragraph Styles",
+        "Separations Preview Panel",
+        "Tabs Panel",
+        "Layers Panel",
+        "Color Panel",
+        "Transform Panel"
+    ],
+    "sections": {
+        "Viewing Documents and Document workspaces": [
+            {
+                "key": "[Ctrl] [Spacebar]",
+                "val": "Temporarily select Zoom In tool"
+            },
+            {
+                "key": "[Ctrl] [5 / 2 / 4]",
+                "val": "Zoom to 50%, 200%, or 400%"
+            },
+            {
+                "key": "[Shift] [F5]",
+                "val": "Redraw screen"
+            },
+            {
+                "key": "[Ctrl] [Alt] [N]",
+                "val": "Open new default document"
+            },
+            {
+                "key": "[Alt] [Ctrl] [2]",
+                "val": "Switch between current and previous zoom levels"
+            },
+            {
+                "key": "[Shift] [Ctrl] [F6]",
+                "val": "Switch to next/previous document window"
+            },
+            {
+                "key": "Double-Click Hand tool",
+                "val": "Fit spread in window"
+            },
+            {
+                "key": "[Ctrl] [J]",
+                "val": "Activate the Go To command"
+            },
+            {
+                "key": "[Ctrl] [Alt] [+]",
+                "val": "Fit selection in window"
+            },
+            {
+                "key": "[Shift] [Alt] [Ctrl] [U]",
+                "val": "Cycle through units of measurement"
+            },
+            {
+                "key": "[Alt] [Ctrl] [G]",
+                "val": "Select all guides"
+            },
+            {
+                "key": "[Ctrl] [Help]",
+                "val": "Show information on installed plug‑ins"
+            }
+        ],
+        "Tools": [
+            {
+                "key": "V",
+                "val": "Selection tool"
+            },
+            {
+                "key": "A",
+                "val": "Direct Selection tool"
+            },
+            {
+                "key": "U",
+                "val": "Gap tool"
+            },
+            {
+                "key": "P",
+                "val": "Pen tool"
+            },
+            {
+                "key": "=",
+                "val": "Add Anchor Point tool"
+            },
+            {
+                "key": "-",
+                "val": "Delete Anchor Point tool"
+            },
+            {
+                "key": "[Shift] [C]",
+                "val": "Convert Direction Point tool"
+            },
+            {
+                "key": "T",
+                "val": "Type tool"
+            },
+            {
+                "key": "F",
+                "val": "Rectangle Frame tool"
+            },
+            {
+                "key": "M",
+                "val": "Rectangle tool"
+            },
+            {
+                "key": "L",
+                "val": "Ellipse tool"
+            },
+            {
+                "key": "R",
+                "val": "Rotate tool"
+            },
+            {
+                "key": "S",
+                "val": "Scale tool"
+            },
+            {
+                "key": "E",
+                "val": "Free Transform tool"
+            },
+            {
+                "key": "I",
+                "val": "Eyedropper tool"
+            },
+            {
+                "key": "K",
+                "val": "Measure tool"
+            },
+            {
+                "key": "G",
+                "val": "Gradient tool"
+            },
+            {
+                "key": "C",
+                "val": "Scissors tool"
+            },
+            {
+                "key": "H",
+                "val": "Hand tool"
+            },
+            {
+                "key": "[Alt] [Spacebar]",
+                "val": "Temporarily selects Hand tool"
+            },
+            {
+                "key": "[Ctrl] [Spacebar]",
+                "val": "Temporarily selects Zoom In tool"
+            },
+            {
+                "key": "X",
+                "val": "Toggle Fill and Stroke"
+            },
+            {
+                "key": "W",
+                "val": "Switch between Normal View and Preview Mode"
+            },
+            {
+                "key": "Y",
+                "val": "Frame Grid tool (horizontal)"
+            },
+            {
+                "key": "Q",
+                "val": "Frame Grid tool (vertical)"
+            }
+        ],
+        "Editing paths and Frames": [
+            {
+                "key": "Alt",
+                "val": "Temporarily switch between Add Anchor Point and Delete Anchor Point tool"
+            },
+            {
+                "key": "[Scissors tool] [Alt]",
+                "val": "Temporarily select Add Anchor Point tool"
+            },
+            {
+                "key": "[Pen tool] [Shift]",
+                "val": "Keep Pen tool selected when pointer is over path or anchor point"
+            },
+            {
+                "key": "[Pen tool] [Spacebar]",
+                "val": "Move anchor point and handles while drawing"
+            },
+            {
+                "key": "F10",
+                "val": "Display the Stroke panel"
+            }
+        ],
+        "Tables": [
+            {
+                "key": "Tab",
+                "val": "Move to next/previous cell"
+            },
+            {
+                "key": "[Alt] [Page Up / Down]",
+                "val": "Move to first/last cell in column"
+            },
+            {
+                "key": "[Alt] [Home / End]",
+                "val": "Move to first/last cell in row"
+            },
+            {
+                "key": "[Shift] [↑ / ↓]",
+                "val": "Select cell above/below the current cell"
+            },
+            {
+                "key": "[Shift] [← / →]",
+                "val": "Select cell to the right/left of the current cell"
+            },
+            {
+                "key": "[Shift] [Enter]",
+                "val": "Start row on next frame"
+            },
+            {
+                "key": "Esc",
+                "val": "Toggle between text selection and cell selection"
+            }
+        ],
+        "Finding and Changing text": [
+            {
+                "key": "[Ctrl] [F1]",
+                "val": "Insert selected text into Find What box"
+            },
+            {
+                "key": "[Shift] [F2]",
+                "val": "Find next occurrence of Find What text"
+            },
+            {
+                "key": "[Ctrl] [F3]",
+                "val": "Replace selection with Change To text"
+            }
+        ],
+        "Selecting and Moving Objects": [
+            {
+                "key": "[Ctrl] [Any tool]",
+                "val": "Temporarily select Selection or Direct Selection tool"
+            },
+            {
+                "key": "Esc",
+                "val": "Select container of selected content"
+            },
+            {
+                "key": "[Shift] [Esc]",
+                "val": "Select content of selected container"
+            },
+            {
+                "key": "[Group Selection tool] [Alt-Drag]",
+                "val": "Duplicate selection"
+            },
+            {
+                "key": "[Selection tool] [Ctrl-Click]",
+                "val": "Select next object behind or in front"
+            },
+            {
+                "key": "[Alt] [Ctrl] [Page Up / Down]",
+                "val": "Select next or previous frame in story"
+            }
+        ],
+        "Working with Type": [
+            {
+                "key": "[Shift] [Ctrl] [B]",
+                "val": "Bold"
+            },
+            {
+                "key": "[Shift] [Ctrl] [I]",
+                "val": "Italic"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Y]",
+                "val": "Normal"
+            },
+            {
+                "key": "[Shift] [Ctrl] [+]",
+                "val": "Superscript"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Alt] [+]",
+                "val": "Subscript"
+            },
+            {
+                "key": "[Shift] [Ctrl] [X]",
+                "val": "Reset horizontal or vertical scale to 100%"
+            },
+            {
+                "key": "[Shift] [Ctrl] [F / J]",
+                "val": "Justify all lines"
+            },
+            {
+                "key": "[Shift] [Ctrl] [> / <]",
+                "val": "Increase or decrease point size"
+            },
+            {
+                "key": "[Alt] [↑ / ↓]",
+                "val": "Increase or decrease leading (horizontal text)"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [A]",
+                "val": "Auto leading"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [G]",
+                "val": "Align to grid (on/off)"
+            },
+            {
+                "key": "[Alt] [Shift] [Ctrl] [H]",
+                "val": "Auto-hyphenate (on/off)"
+            },
+            {
+                "key": "[Alt] [Ctrl] [Q]",
+                "val": "Clear all manual kerning and reset tracking to 0"
+            },
+            {
+                "key": "[Alt] [Ctrl] [/]",
+                "val": "Recompose all stories"
+            },
+            {
+                "key": "[Alt] [Ctrl] [N]",
+                "val": "Insert current page number"
+            }
+        ],
+        "Transforming objects": [
+            {
+                "key": "[Ctrl] [,]",
+                "val": "Decrease scale by 1%"
+            },
+            {
+                "key": "[Ctrl] [Alt] [,]",
+                "val": "Decrease scale by 5%"
+            },
+            {
+                "key": "[Ctrl] [.]",
+                "val": "Increase scale by 1%"
+            },
+            {
+                "key": "[Selection tool] [Ctrl] [Drag]",
+                "val": "Resize frame and content"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [Z]",
+                "val": "Switch image from High Quality Display to Fast Display"
+            }
+        ],
+        "Working with XML": [
+            {
+                "key": "← / →",
+                "val": "Expand/Collapse element"
+            },
+            {
+                "key": "[Shift] [↑ / ↓]",
+                "val": "Extend XML selection up/down"
+            },
+            {
+                "key": "Home/ End",
+                "val": "Select first/last XML node"
+            },
+            {
+                "key": "[Shift] [Home / End]",
+                "val": "Extend selection to first/last XML node"
+            },
+            {
+                "key": "[Ctrl] [← / →]",
+                "val": "Go to previous/next validation error"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [F7]",
+                "val": "Automatically tag text frames and tables"
+            }
+        ],
+        "Indexing": [
+            {
+                "key": "[Shift] [Ctrl] [Alt] [\\[]",
+                "val": "Create index entry without dialog box"
+            },
+            {
+                "key": "[Ctrl] [7]",
+                "val": "Open index entry dialog box"
+            }
+        ],
+        "Panels": [
+            {
+                "key": "Alt-click New button",
+                "val": "Create item and set options"
+            },
+            {
+                "key": "[Shift] [Enter]",
+                "val": "Apply value and keep focus on option"
+            },
+            {
+                "key": "[Ctrl] [Alt] [~]",
+                "val": "Activate last-used option in last-used panel"
+            },
+            {
+                "key": "Tab",
+                "val": "Apply value and select next value"
+            },
+            {
+                "key": "Esc",
+                "val": "Move focus to selected object, text, or window"
+            },
+            {
+                "key": "Tab",
+                "val": "Show/Hide all panels, Toolbox, and Control panel"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Tab]",
+                "val": "Open or close all stashed panels"
+            },
+            {
+                "key": "[Alt] [Ctrl] [M]",
+                "val": "Open the Drop Shadow panel"
+            }
+        ],
+        "Control Panel": [
+            {
+                "key": "[Ctrl] [6]",
+                "val": "Toggle focus to Control panel"
+            },
+            {
+                "key": "[Ctrl] [Alt] [7]",
+                "val": "Toggle Character"
+            },
+            {
+                "key": "[Alt] [↓]",
+                "val": "Display the pop-up menu that has focus"
+            },
+            {
+                "key": "Alt-click Shear icon",
+                "val": "Open the Shear dialog box"
+            }
+        ],
+        "Type Panels and Dialog boxes": [
+            {
+                "key": "[Alt] [Ctrl] [Shift] [J]",
+                "val": "Open Justification dialog box"
+            },
+            {
+                "key": "[Alt] [Shift] [J]",
+                "val": "Open Paragraph Rules dialog box"
+            },
+            {
+                "key": "[Alt] [Ctrl] [K]",
+                "val": "Open Keep Options dialog box"
+            },
+            {
+                "key": "[Ctrl] [T]",
+                "val": "Activate Character panel"
+            },
+            {
+                "key": "[Ctrl] [Alt] [T]",
+                "val": "Activate Paragraph panel"
+            }
+        ],
+        "Character and Paragraph Styles": [
+            {
+                "key": "[Shift] [Alt] [Ctrl] [Double-Click Style]",
+                "val": "Change options without applying style"
+            },
+            {
+                "key": "Alt-Click Paragraph Style Name",
+                "val": "Remove style and local formatting"
+            },
+            {
+                "key": "F11",
+                "val": "Show/hide Paragraph and Character Styles panels"
+            }
+        ],
+        "Tabs Panel": [
+            {
+                "key": "[Shift] [Ctrl] [T]",
+                "val": "Activate Tabs panel"
+            },
+            {
+                "key": "Alt-Click Tab",
+                "val": "Switch between alignment options"
+            }
+        ],
+        "Layers Panel": [
+            {
+                "key": "Alt-Click Layer",
+                "val": "Select all objects on layer"
+            },
+            {
+                "key": "Alt-Drag Small Square to New Layer",
+                "val": "Copy selection to new layer"
+            },
+            {
+                "key": "Ctrl-Click Create New Layer",
+                "val": "Add new layer below selected layer"
+            }
+        ],
+        "Color Panel": [
+            {
+                "key": "Shift-Drag Slider",
+                "val": "Move color sliders in tandem"
+            },
+            {
+                "key": "Alt-Click Color bar",
+                "val": "Select a color for the nonactive fill or stroke"
+            },
+            {
+                "key": "Shift-Click Color bar",
+                "val": "Switch between color modes"
+            }
+        ],
+        "Separations Preview Panel": [
+            {
+                "key": "[Ctrl] [Alt] [Shift] [Y]",
+                "val": "Turn on Overprint preview"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [~]",
+                "val": "Show all plates"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [1]",
+                "val": "Show Cyan plate"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [2]",
+                "val": "Show Magenta plate"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [3]",
+                "val": "Show Yellow plate"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [4]",
+                "val": "Show Black plate"
+            },
+            {
+                "key": "[Ctrl] [Alt] [Shift] [5]",
+                "val": "Show 1st Spot plate"
+            }
+        ],
+        "Transform Panel": [
+            {
+                "key": "[Alt] [Enter]",
+                "val": "Apply value and copy object"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Apply width, height, or scale value proportionally"
+            }
+        ]
+
+    }
+}
