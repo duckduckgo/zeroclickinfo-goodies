@@ -5,6 +5,10 @@
     "aliases":["time format", "format time", "time formatting",
                "strftime", "strptime", "linux date", "linux time",
                "unix date"],
+    "metadata": {
+        "sourceName": "Debian",
+        "sourceUrl": "http://manpages.debian.org/cgi-bin/man.cgi?query=date"
+    },
     "template_type": "reference",
     "section_order": ["Day", "Week", "Month", "Year", "Date",
                       "Time", "Time Zone", "Misc"],
