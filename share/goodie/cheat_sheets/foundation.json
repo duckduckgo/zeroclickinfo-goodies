@@ -8,10 +8,9 @@
     },
     "aliases": [
         "foundation 6",
-        "foundation 5",
         "zurb foundation"
     ],
-    "template_type": "reference",
+    "template_type": "code",
     "section_order": [
         "Standard Grid Large",
         "Standard Grid Medium",
@@ -21,144 +20,144 @@
     ],
     "sections": {
         "Standard Grid Large": [{
-            "val": "column large-12",
-            "key": "Large-12"
+            "val": "1 Columns, Large Window2",
+            "key": "column large-12"
         }, {
-            "val": "columns large-11",
-            "key": "Large-11"
+            "val": "1 Columns, Large Window1",
+            "key": "columns large-11"
         }, {
-            "val": "columns large-10",
-            "key": "Large-10"
+            "val": "1 Columns, Large Window0",
+            "key": "columns large-10"
         }, {
-            "val": "columns large-9",
-            "key": "Large-9"
+            "val": "9 Columns, Large Window",
+            "key": "columns large-9"
         }, {
-            "val": "columns large-8",
-            "key": "Large-8."
+            "val": "8 Columns, Large Window.",
+            "key": "columns large-8"
         }, {
-            "val": "columns large-7",
-            "key": "Large-7"
+            "val": "7 Columns, Large Window",
+            "key": "columns large-7"
         }, {
-            "val": "columns large-6",
-            "key": "Large-6"
+            "val": "6 Columns, Large Window",
+            "key": "columns large-6"
         }, {
-            "val": "columns large-5",
-            "key": "Large-5"
+            "val": "5 Columns, Large Window",
+            "key": "columns large-5"
         }, {
-            "val": "columns large-4",
-            "key": "Large-4"
+            "val": "4 Columns, Large Window",
+            "key": "columns large-4"
         }, {
-            "val": "columns large-3",
-            "key": "Large-3"
+            "val": "3 Columns, Large Window",
+            "key": "columns large-3"
         }, {
-            "val": "columns large-2",
-            "key": "Large-2"
+            "val": "2 Columns, Large Window",
+            "key": "columns large-2"
         }, {
-            "val": "columns large-1",
-            "key": "Large-1"
+            "val": "1 Columns, Large Window",
+            "key": "columns large-1"
         }],
         "Standard Grid Medium": [{
-            "val": "column medium-12",
-            "key": "Medium-12"
+            "val": "1 Columns, Medium Window2",
+            "key": "column medium-12"
         }, {
-            "val": "columns medium-11",
-            "key": "Medium-11"
+            "val": "1 Columns, Medium Window1",
+            "key": "columns medium-11"
         }, {
-            "val": "columns medium-10",
-            "key": "Medium-10"
+            "val": "1 Columns, Medium Window0",
+            "key": "columns medium-10"
         }, {
-            "val": "columns medium-9",
-            "key": "Medium-9"
+            "val": "9 Columns, Medium Window",
+            "key": "columns medium-9"
         }, {
-            "val": "columns medium-8",
-            "key": "Medium-9."
+            "val": "9 Columns, Medium Window.",
+            "key": "columns medium-8"
         }, {
-            "val": "columns medium-7",
-            "key": "Medium-7"
+            "val": "7 Columns, Medium Window",
+            "key": "columns medium-7"
         }, {
-            "val": "columns medium-6",
-            "key": "Medium-6"
+            "val": "6 Columns, Medium Window",
+            "key": "columns medium-6"
         }, {
-            "val": "columns medium-5",
-            "key": "Medium-5"
+            "val": "5 Columns, Medium Window",
+            "key": "columns medium-5"
         }, {
-            "val": "columns medium-4",
-            "key": "Medium-4"
+            "val": "4 Columns, Medium Window",
+            "key": "columns medium-4"
         }, {
-            "val": "columns medium-3",
-            "key": "Medium-3"
+            "val": "3 Columns, Medium Window",
+            "key": "columns medium-3"
         }, {
-            "val": "columns medium-2",
-            "key": "Medium-2"
+            "val": "2 Columns, Medium Window",
+            "key": "columns medium-2"
         }, {
-            "val": "columns medium-1",
-            "key": "Medium-1"
+            "val": "1 Columns, Medium Window",
+            "key": "columns medium-1"
         }],
         "Standard Grid Small": [{
-            "val": "column small-12",
-            "key": "small-12"
+            "val": "1 Columns, Small Window",
+            "key": "column small-12"
         }, {
-            "val": "columns small-11",
-            "key": "small-11"
+            "val": "1 Columns, Small Window",
+            "key": "columns small-11"
         }, {
-            "val": "columns small-10",
-            "key": "small-10"
+            "val": "1 Columns, Small Window",
+            "key": "columns small-10"
         }, {
-            "val": "columns small-9",
-            "key": "small-9"
+            "val": "9 Columns, Small Window",
+            "key": "columns small-9"
         }, {
-            "val": "columns small-8",
-            "key": "small-9."
+            "val": "9 Columns, Small Window.",
+            "key": "columns small-8"
         }, {
-            "val": "columns small-7",
-            "key": "small-7"
+            "val": "7 Columns, Small Window",
+            "key": "columns small-7"
         }, {
-            "val": "columns small-6",
-            "key": "small-6"
+            "val": "6 Columns, Small Window",
+            "key": "columns small-6"
         }, {
-            "val": "columns small-5",
-            "key": "small-5"
+            "val": "5 Columns, Small Window",
+            "key": "columns small-5"
         }, {
-            "val": "columns small-4",
-            "key": "small-4"
+            "val": "4 Columns, Small Window",
+            "key": "columns small-4"
         }, {
-            "val": "columns small-3",
-            "key": "small-3"
+            "val": "3 Columns, Small Window",
+            "key": "columns small-3"
         }, {
-            "val": "columns small-2",
-            "key": "small-2"
+            "val": "2 Columns, Small Window",
+            "key": "columns small-2"
         }, {
-            "val": "columns small-1",
-            "key": "small-1"
+            "val": "1 Columns, Small Window",
+            "key": "columns small-1"
         }],
         "Buttons": [{
-            "val": "button",
-            "key": "Normal Button"
+            "val": "Normal",
+            "key": "button"
         }, {
-            "val": "tiny button",
-            "key": "Tiny"
+            "val": "Tiny",
+            "key": "tiny button"
         }, {
-            "val": "small button",
-            "key": "Small"
+            "val": "Small",
+            "key": "small button"
         }, {
-            "val": "large button",
-            "key": "Large"
+            "val": "Large",
+            "key": "large button"
         }, {
-            "val": "expanded button",
-            "key": "Expanded"
+            "val": "Expanded",
+            "key": "expanded button"
         }, {
-            "val": "small expanded button",
-            "key": "Expanded with small text"
+            "val": "Expanded with small text",
+            "key": "small expanded button"
         }],
         "Random Utilities": [{
-            "val": "flex-video",
-            "key": "Video"
+            "val": "Video",
+            "key": "flex-video"
         }, {
-            "val": "label",
-            "key": "Labels"
+            "val": "Labels",
+            "key": "label"
         }, {
-            "val": "badge",
-            "key": "Badge"
+            "val": "Badge",
+            "key": "badge"
         }]
     }
 }
