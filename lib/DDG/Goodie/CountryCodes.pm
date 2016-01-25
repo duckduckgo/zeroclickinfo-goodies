@@ -1,4 +1,5 @@
 package DDG::Goodie::CountryCodes;
+
 # ABSTRACT: Matches country names to ISO 3166 codes and vice versa
 
 use strict;
@@ -18,7 +19,7 @@ handle remainder => sub {
     my $input = $_;
     # Strip and match descriptors.
     $input =~ s/(?<count>$counts)\s*letters?|(?<num>number|numeric(?:al)?)//ig;
-    
+
     my $count = $+{'count'} || '';    # Get any code set indication if present e.g. 3, two
     my $expr = ($count) ? 'alpha-' . ($numbers{$count} || $count) : ($+{'num'}) ? 'numeric' : 'alpha-2';
     $input =~ s/^\s*$connectors?\s+|\s+$//ig;         # Trim remainder to get country.
@@ -52,4 +53,3 @@ sub result {
 }
 
 1;
-
