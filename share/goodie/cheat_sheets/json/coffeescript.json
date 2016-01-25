@@ -1,7 +1,7 @@
 {
     "id": "coffeescript_cheat_sheet",
     "name": "CoffeeScript Cheat Sheet",
-    "description": "CoffeeScript help",
+    "description": "CoffeeScript is a programming language that transcompiles to JavaScript",
     "metadata": {
         "sourceName": "CoffeeScript",
         "sourceUrl": "http://coffeescript.org"
