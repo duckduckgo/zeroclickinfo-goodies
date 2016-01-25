@@ -364,7 +364,8 @@ sub angle_symbol {
 sub declare {
     my ($self, $to_declare) = @_;
     my $copy = $self->copy();
-    push $copy->{declared}, $to_declare;
+    my @declared = (@{$copy->{declared}}, $to_declare);
+    $copy->{declared} = \@declared;
     return $copy;
 }
 sub declares {
