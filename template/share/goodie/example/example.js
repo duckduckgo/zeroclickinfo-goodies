@@ -35,7 +35,7 @@ DDH.<: $ia_id :> = DDH.<: $ia_id :> || {};
             //     to the properties required for your chosen template
             //
             //     return {
-            //         title: item.myTitle
+            //         title: item.myTitle,
             //         subtitle: item.foo.subtitle
             //     };
             // },
