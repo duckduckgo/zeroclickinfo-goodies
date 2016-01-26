@@ -3,7 +3,7 @@ package DDG::Goodie::UltimateAnswer;
 
 use strict;
 use DDG::Goodie;
-triggers start => 'what is the ultimate answer', 'what is the ultimate answer to life the universe and everything', 'what is the answer to the ultimate question of life the universe and everything';
+triggers start => 'what is the ultimate answer', 'what is the ultimate answer to life the universe and everything', 'what is the answer to the ultimate question of life the universe and everything', 'answer to life the universe and everything';
 
 zci answer_type => 'ultimate_answer';
 zci is_cached   => 1;

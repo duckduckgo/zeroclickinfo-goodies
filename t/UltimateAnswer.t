@@ -20,6 +20,14 @@ ddg_goodie_test(
             result    => 'Forty-two',
         }
     ),
+    'answer to life the universe and everything' => test_zci(
+        'Forty-two',
+        structured_answer => {
+            input     => [],
+            operation => 'The answer to the ultimate question of life, the universe and everything',
+            result    => 'Forty-two',
+        }
+    ),
     'what is the answer to my homework question' => undef,
     'why?'                                       => undef,
 );
