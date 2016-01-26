@@ -1,9 +1,9 @@
 {
-  "id": "uttorrent_brackets_cheat_sheet",
+  "id": "utorrent_cheat_sheet",
   "name": "UTorrent",
   "description": "Keyboard shortcuts for UTorrent",
   "metadata": {
-    "sourceName": "Softwaretipsandtricks",
+    "sourceName": "Software tips and tricks",
     "sourceUrl": "http://www.softwaretipsandtricks.com/guides/articles/960/1/List-of-uTorrent-Shortcuts/Page1.html"
   },
   "aliases": [
@@ -30,11 +30,11 @@
       },
       {
         "val": "Move Down Queue",
-        "key": "[Ctrl] [Alt] [DownArrow]"
+        "key": "[Ctrl] [Alt] [↓]"
       },
       {
         "val": "Move Up Queue",
-        "key": ".[Ctrl] [Alt] [Up Arrow]"
+        "key": ".[Ctrl] [Alt] [↑]"
       },
       {
         "val": "Remove",
