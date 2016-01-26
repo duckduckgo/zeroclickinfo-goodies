@@ -20,7 +20,6 @@ handle query_lc => sub {
         },
         templates => {
             group => 'base',
-            detail => 0,
             options => {
                 content => 'DDH.interactive_bmi_calculator.content'
             }
