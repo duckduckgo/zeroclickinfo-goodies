@@ -3,5 +3,17 @@
     margin-bottom: 0.75em;
 }
 
+#bmi_calculator {
+    font-size: 1.5em;
+}
+
+.bmi_var { 
+    border: 1px solid #aaa;
+    border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
+}
+
 .bmi_switch { color: #aaa; }
 .bmi_switch.bmi_selected_switch { color: #333; }
