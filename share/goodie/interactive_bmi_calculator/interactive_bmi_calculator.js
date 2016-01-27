@@ -24,7 +24,7 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                         bmi = weight / (height * height);
                     }
 
-                    $("#bmi_result").val(bmi);
+                    $("#bmi_result").text(bmi);
                 }
             });
 
