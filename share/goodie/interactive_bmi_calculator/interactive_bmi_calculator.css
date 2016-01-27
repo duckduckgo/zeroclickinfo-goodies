@@ -13,6 +13,7 @@
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     -o-border-radius: 0.2em;
+    font-size: 0.75em;
 }
 
 .bmi_switch { color: #aaa; }
