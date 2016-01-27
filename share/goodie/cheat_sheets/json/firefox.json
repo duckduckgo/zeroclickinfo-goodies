@@ -156,7 +156,7 @@
                 "key":"/"
             },
             {
-                "val":"Close the Find or Quick Find bar (When Focused)",
+                "val":"Close the Find or Quick Find bar (when focused)",
                 "key":"Esc"
             },
             {
@@ -168,11 +168,11 @@
                 "key":"[Ctrl] [J]"
             },
             {
-                "val":"Quickly switch between search engines (When Search Bar is focused)",
+                "val":"Quickly switch between search engines (when Search Bar is focused)",
                 "key":"[Ctrl] ( [↑] / [↓] )"
             },
             {
-                "val":"View menu to switch, add or manage search engines (When Search Bar Focused)",
+                "val":"View menu to switch, add or manage search engines (when Search Bar is focused)",
                 "key":"[Alt] ( [↑] / [↓] )"
             }
         ],
@@ -182,7 +182,7 @@
                 "key":"[Ctrl] [W]"
             },
             {
-                "val":"Close Tab",
+                "val":"Close Tab (Alternative)",
                 "key":"[Ctrl] [F4]"
             },
             {
@@ -254,11 +254,11 @@
                 "key":"Esc"
             },
             {
-                "val":"Next Tab Group (only for some keyboard layouts )",
+                "val":"Next Tab Group (only for some keyboard layouts)",
                 "key":"[Ctrl] [`]"
             },
             {
-                "val":"Previous Tab Group (only for some keyboard layouts )",
+                "val":"Previous Tab Group (only for some keyboard layouts)",
                 "key":"[Ctrl] [Shift] [`]"
             }
         ],
@@ -291,13 +291,13 @@
             },
             {
                 "val":"Library window (Bookmarks)",
-                "key":"[Ctrl] [Shift] [O]"
+                "key":"[Ctrl] [Shift] [B]"
             }
         ],
         "Tools":[
             {
                 "val":"Downloads",
-                "key":"[Ctrl] [Shift] [Y]"
+                "key":"[Ctrl] [J]"
             },
             {
                 "val":"Add-ons",
@@ -354,10 +354,6 @@
             {
                 "val":"Browser Console",
                 "key":"[Ctrl] [Shift] [J]"
-            },
-            {
-                "val":"Page Info",
-                "key":"[Ctrl] [I]"
             }
         ],
         "PDF Viewer":[

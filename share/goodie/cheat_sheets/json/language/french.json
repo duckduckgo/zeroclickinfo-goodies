@@ -29,56 +29,56 @@
             "val": "S'il vous plaît",
             "key": "Please"
         }, {
-            "val": "Merci Beaucoup!",
+            "val": "Merci Beaucoup !",
             "key": "Thank you very much!"
         }, {
             "val": "De rien",
             "key": "You're welcome"
         }],
         "Getting Help": [{
-            "val": "Appelez la police!",
+            "val": "Appelez la police !",
             "key": "Call the police!"
         }, {
-            "val": "Pourriez-vous parler un peu moins vite?",
+            "val": "Pourriez-vous parler un peu moins vite ?",
             "key": "Can you speak more slowly, please?"
         }, {
             "val": "Je suis allergique",
             "key": "I am allergic"
         }, {
-            "val": "Pourriez-vous répéter?",
+            "val": "Pourriez-vous répéter ?",
             "key": "Can you repeat, please?"
         }, {
-            "val": "Comment dit-on \"X\" en français?",
+            "val": "Comment dit-on \"X\" en français ?",
             "key": "How do you say \"X\" in French?"
         }, {
-            "val": "Arrêtez!",
+            "val": "Arrêtez !",
             "key": "Stop!"
         }, {
-            "val": "Parlez-vous Anglais?",
+            "val": "Parlez-vous Anglais ?",
             "key": "Do you speak English?"
         }, {
-            "val": "Excusez-moi!",
+            "val": "Excusez-moi !",
             "key": "Excuse me!"
         }, {
-            "val": "J'ai besoin d'un docteur!",
+            "val": "J'ai besoin d'un docteur !",
             "key": "I need a doctor!"
         }, {
-            "val": "Est-ce que vous pourriez l'écrire?",
+            "val": "Est-ce que vous pourriez l'écrire ?",
             "key": "Can you write that down?"
         }, {
-            "val": "Appelez une ambulance!",
+            "val": "Appelez une ambulance !",
             "key": "Call an ambulance!"
         }, {
-            "val": "Je suis en danger!",
+            "val": "Je suis en danger !",
             "key": "I am in danger!"
         }, {
-            "val": "Je ne comprends pas!",
+            "val": "Je ne comprends pas !",
             "key": "I don't understand!"
         }, {
-            "val": "Pouvez-vous m'aider?",
+            "val": "Pouvez-vous m'aider ?",
             "key": "Can you help me?"
         }, {
-            "val": "Au feu!",
+            "val": "Au feu !",
             "key": "Fire!"
         }],
         "Basics": [{
@@ -91,10 +91,10 @@
             "val": "Je m'appelle...",
             "key": "My name is..."
         }, {
-            "val": "Je vais bien, merci!",
+            "val": "Je vais bien, merci !",
             "key": "I'm fine, thanks!"
         }, {
-            "val": "Comment allez-vous?",
+            "val": "Comment allez-vous ?",
             "key": "How are you?"
         }, {
             "val": "Salut",
@@ -103,26 +103,26 @@
             "val": "Bienvenue",
             "key": "Welcome"
         }, {
-            "val": "Comment vous appelez-vous?",
+            "val": "Comment vous appelez-vous ?",
             "key": "What's your name?"
         }],
         "Travelling": [{
             "val": "Tournez à gauche",
             "key": "Turn left"
         }, {
-            "val": "Où est la sortie?",
+            "val": "Où est la sortie ?",
             "key": "Where is the exit?"
         }, {
-            "val": "Où?",
+            "val": "Où ?",
             "key": "Where?"
         }, {
-            "val": "Est-ce loin?",
+            "val": "Est-ce loin ?",
             "key": "Is it far?"
         }, {
-            "val": "Allez tout droit!",
+            "val": "Allez tout droit !",
             "key": "Go straight ahead!"
         }, {
-            "val": "Avez-vous une carte de la ville?",
+            "val": "Avez-vous une carte de la ville ?",
             "key": "Do you have a city map?"
         }, {
             "val": "S'il vous plaît arrêtez ici",
@@ -131,14 +131,14 @@
             "val": "Tournez à doite",
             "key": "Turn right"
         }, {
-            "val": "Où puis-je trouver les taxis?",
+            "val": "Où puis-je trouver les taxis ?",
             "key": "Where can I find the taxis?"
         }, {
-            "val": "Comment puis-je obtenir un taxi?",
+            "val": "Comment puis-je obtenir un taxi ?",
             "key": "How can I get a taxi?"
         }],
         "Going out for dinner": [{
-            "val": "Avez-vous des plats végétariens?",
+            "val": "Avez-vous des plats végétariens ?",
             "key": "Do you have vegetarian dishes?"
         }, {
             "val": "Plat principal",
@@ -153,25 +153,25 @@
             "val": "Dessert",
             "key": "Dessert"
         }, {
-            "val": "L'addition, s'il vous plaît!",
+            "val": "L'addition, s'il vous plaît !",
             "key": "The check please!"
         }, {
             "val": "Un café s'il vous plaît",
             "key": "A cup of coffee please"
         }, {
-            "val": "Avez-vous des plats sans gluten?",
+            "val": "Avez-vous des plats sans gluten ?",
             "key": "Do you have gluten-free dishes?"
         }, {
-            "val": "Où puis-je trouver un bon restaurant?",
+            "val": "Où puis-je trouver un bon restaurant ?",
             "key": "Where is a good restaurant?"
         }, {
             "val": "Un verre d'eau s'il vous plaît",
             "key": "A glass of water please"
         }, {
-            "val": "Une table pour deux s'il vous plait!",
+            "val": "Une table pour deux s'il vous plait !",
             "key": "A table for two please!"
         }, {
-            "val": "Puis-je obtenir un menu, s'il vous plaît?",
+            "val": "Puis-je obtenir un menu, s'il vous plaît ?",
             "key": "Can I get a menu, please?"
         }]
     }
