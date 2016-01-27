@@ -1,2 +1,7 @@
+#bmi_unit_switches { 
+    cursor: pointer;
+    margin-bottom: 0.75em;
+}
+
 .bmi_switch { color: #aaa; }
 .bmi_switch.bmi_selected_switch { color: #333; }
