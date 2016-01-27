@@ -12,20 +12,18 @@ zci is_cached   => 1;
 ddg_goodie_test(
     ['DDG::Goodie::InteractiveBmiCalculator'],
     'body mass index' => test_zci(
-        'Body Mass Index',
+        'Calculate your Body Mass Index',
         structured_answer => {
             id => 'interactive_bmi_calculator',
             name => 'BMI Calculator',
-            data => {
-                title => $text
-            },
+            data => '-ANY-',
             templates => {
                 group => 'base',
                 options => {
                     content => 'DDH.interactive_bmi_calculator.content'
                 }
             }
-        };
+        }
     )
 );
 
