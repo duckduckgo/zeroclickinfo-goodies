@@ -3,13 +3,38 @@ package DDG::Goodie::UltimateAnswer;
 
 use strict;
 use DDG::Goodie;
-triggers start => 'what is the ultimate answer', 'what is the ultimate answer to life the universe and everything', 'what is the answer to the ultimate question of life the universe and everything', 'answer to life the universe and everything';
+
+triggers any =>
+    'life the universe and everything',
+    'ultimate answer',
+    'answer to the ultimate question';
 
 zci answer_type => 'ultimate_answer';
 zci is_cached   => 1;
 
-handle remainder => sub {
-    return unless ($_ eq '' || $_ eq '?');
+handle query => sub {
+    
+    return if (
+        # 'life the universe and everything' is the name of a book in the series.
+        # Want to restrict this query a bit.
+        (
+            $_ =~ /life the universe and everything/ &&
+            !($_ =~ /question|answer|what is|meaning/)
+        ) ||
+        # 'ultimate answer' can refer to other topics (e.g. 'ultimate answer to kings')
+        # Also want to restrict this query.
+        (
+            $_ =~ /ultimate answer/ &&
+            !( $_ =~ /^(what is the )?ultimate answer(\?)?$/) &&
+            !( $_ =~ /life the universe and everything/ )
+        ) ||
+        # Restrict 'answer to the ultimate question' just to be safe
+        (
+            $_ =~ /answer to the ultimate question/ &&
+            !( $_ =~ /^((what is the )?(ultimate )?answer to the ultimate question(\?)?)$/) &&
+            !( $_ =~ /life the universe and everything/)
+        )
+    );
 
     my $answer = 'Forty-two';
 
