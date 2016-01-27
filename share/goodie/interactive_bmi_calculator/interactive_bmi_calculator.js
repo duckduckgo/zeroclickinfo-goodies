@@ -6,13 +6,18 @@ DDH.interactive_bmi_calculator.build = function(ops) {
             var $height = $("#bmi_height");
             var $weight = $("#bmi_weight");
             var is_metric = DDG.settings.get('kaj') === 'm';
-            updateSwitches();
+            updateUnits();
 
             $(".bmi_var").keydown(function(evt) {
                 if (evt.keyCode === 13) { //Enter
                     var height = $height.val()? parseFloat($height.val()) : 0;
                     var weight = $weight.val()? parseFloat($weight.val()) : 0;
                     var bmi;
+
+                    // When using imperial units the formula is slightly different
+                    if (!is_metric) {
+                        weight = weight * 703;
+                    }
 
                     //Calculate BMI
                     if (height !== 0) {
@@ -25,18 +30,21 @@ DDH.interactive_bmi_calculator.build = function(ops) {
 
             $(".bmi_switch").click(function(evt) {
                 is_metric = $(this).attr("id") === "bmi_metric";
-                updateSwitches();
+                updateUnits();
                 
                 //Update settings in the cloud too
                 DDG.settings.set('kaj', is_metric? 'm' : 'u', { saveToCloud: true });
             });
 
-            function updateSwitches() {
+            function updateUnits() {
                 var selected_class = "bmi_selected_switch";
                 $("." + selected_class).removeClass(selected_class);
 
-                var $active_switch = is_metric? $("#bmi_metric") : $("#bmi_imperial");
-                $active_switch.addClass(selected_class);
+                var units = is_metric? "metric" : "imperial";
+                $("#bmi_" + units).addClass(selected_class);
+                
+                $(".bmi_text").addClass("hide");
+                $("#bmi_weight_text_" + units + ", #bmi_height_text_" + units).removeClass("hide");
             }
         }
     };
