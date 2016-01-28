@@ -9,7 +9,7 @@ zci is_cached   => 1;
 triggers startend => "bmi calculator", "body mass index", "calculate bmi", "bmi formula", "how to calculate bmi";
 
 handle query_lc => sub {
-    my $text = 'Calculate your Body Mass Index';
+    my $text = 'Body Mass Index';
 
     return $text,
     structured_answer => {
