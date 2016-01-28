@@ -1290,8 +1290,94 @@ sub standardize_symbols {
     return $text;
 }
 
-my $grammar_text = scalar share('grammar.txt')->slurp();
+my $grammar_text = <<'END_OF_GRAMMAR';
+:default ::= action => [value] bless => primary
+lexeme default = action => [ start, length, value ]
+    bless => ::name latm => 1
+
+:start ::= Calculator
+
+Calculator ::= Expression
+
+Expression ::=
+       ExprOp bless => primary
+    || Term   bless => primary
+
+Term ::=
+       TermOp   bless => primary
+    || Factor   bless => primary
+
+TermOp ::= GenFactorTermOp | GenTermOp | StaticTermOp
+
+StaticTermOp ::= Factor ('!') bless => factorial_operator
+
+ExprOp ::= GenExprOp
+
+Factor ::=
+       Function                 bless => primary
+    || ('(') Expression (')')   bless => paren assoc => group
+    || NumTerm                  bless => primary
+    || NumTerm ('e':i) NumTerm  bless => exp
+    || PostfixModifier
+
+PostfixModifier ::=
+       GenPostfixFunctionModifier
+    || GenPostfixFactorModifier
+
+NumTerm ::=
+       FactoredConstant bless => primary
+    || Constant         bless => primary
+    |  Number           bless => primary
+
+FactoredConstant ::=
+      Number WordConstant   bless => factored_word_constant
+    | Number SymbolConstant bless => factored_symbol_constant
+
+Constant ::=
+      WordConstant
+    | SymbolConstant
+
+Function ::=
+      GenUnaryFunction
+    | UnaryFunction
+    | GenBinaryFunction
+
+UnaryFunction ::=
+      ('log_' ) NumTerm Argument bless => logarithm
+    | ('log'  ) NumTerm Argument bless => logarithm
+
+# Argument for a unary function.
+Argument ::= ('(') Expression (')') bless => primary
+
+Number ::=
+      [$] BaseNumber                  bless => prefix_currency
+    |     BaseNumber                  bless => primary
+    |     BaseNumber (<degree forms>) bless => angle_degrees
+    |     BaseNumber (<radian forms>) bless => angle_radians
+
+<degree forms> ~ 'degrees':i | 'degree':i | 'degs':i | 'deg':i
+
+<radian forms> ~ 'radians':i | 'radian':i | 'rads':i | 'rad':i
+
+BaseNumber ::=
+      Integer
+    | Decimal
+
+Integer ::= integer bless => integer
+Decimal ::= decimal bless => decimal
+integer ~    '-' digits     | digits
+decimal ~    '-' digits '.'   digits | digits '.' digits
+           | '.' digits     | digits '.'
+           | '-' digits '.'
+
+digits     ~ [\d]+
+
+:discard   ~ whitespace
+whitespace ~ [\s]+
+END_OF_GRAMMAR
+
 my $grammar = generate_grammar($grammar_text);
+
 sub to_display {
     my $query = shift;
     my $currency = get_currency $query;
