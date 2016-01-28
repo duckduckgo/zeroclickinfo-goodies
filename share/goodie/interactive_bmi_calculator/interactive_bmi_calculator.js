@@ -26,6 +26,14 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                         }
                         
                         bmi = weight / (height * height);
+                        
+                        // Truncate all decimal digits but the first
+                        var bmi_arr = bmi.toString().split(".");
+                        if (bmi_arr[1] && (bmi_arr[1].charAt(0) !== "0")) {
+                            bmi = bmi_arr[0] + "." + bmi_arr[1].charAt(0);
+                        } else {
+                            bmi = bmi_arr[0];
+                        }
                     } else {
                         if ((!$.isNumeric(height)) || (height === 0)) {
                             $height.addClass(error);
