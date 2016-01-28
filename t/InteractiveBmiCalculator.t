@@ -12,13 +12,13 @@ zci is_cached   => 1;
 ddg_goodie_test(
     ['DDG::Goodie::InteractiveBmiCalculator'],
     'body mass index' => test_zci(
-        'Calculate your Body Mass Index',
+        'Body Mass Index',
         structured_answer => {
             id => 'interactive_bmi_calculator',
             name => 'BMI Calculator',
             data => '-ANY-',
             templates => {
-                group => 'base',
+                group => 'info',
                 options => {
                     content => 'DDH.interactive_bmi_calculator.content'
                 }
