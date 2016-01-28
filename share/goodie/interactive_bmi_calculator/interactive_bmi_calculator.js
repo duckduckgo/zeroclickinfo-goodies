@@ -9,11 +9,12 @@ DDH.interactive_bmi_calculator.build = function(ops) {
             updateUnits();
 
             $(".bmi_var").keydown(function(evt) {
-                $height.removeClass("bmi_error");
+                $(this).removeClass("bmi_error");
 
                 if (evt.keyCode === 13) { //Enter
-                    var height = $height.val()? parseFloat($height.val()) : 0;
-                    var weight = $weight.val()? parseFloat($weight.val()) : 0;
+                    var height = $height.val()? parseFloat($height.val()) : null;
+                    var weight = $weight.val()? parseFloat($weight.val()) : null;
+                    var error = "bmi_error";
                     var bmi;
 
                     // When using imperial units the formula is slightly different
@@ -22,10 +23,12 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                     }
 
                     //Calculate BMI
-                    if (height !== 0) {
+                    if (height.isNumeric() && weight.isNumeric() && height !== 0) {
                         bmi = weight / (height * height);
-                    } else {
-                        $height.addClass("bmi_error");
+                    } else if ((!height.isNumeric()) || (height === 0)){
+                        $height.addClass(error);
+                    } else if (!weight.isNumeric()) {
+                        $weight.addClass(error);
                     }
 
                     $("#bmi_result").text(bmi);
