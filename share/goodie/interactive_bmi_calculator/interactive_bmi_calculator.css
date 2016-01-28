@@ -10,6 +10,7 @@
     -webkit-border-radius: 0.2em;
     -o-border-radius: 0.2em;
     padding-left: 0.3em;
+    width: 20%;
 }
 
 .bmi_var.bmi_error {
