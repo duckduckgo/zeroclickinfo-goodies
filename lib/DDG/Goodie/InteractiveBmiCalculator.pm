@@ -16,10 +16,27 @@ handle query_lc => sub {
         id => 'interactive_bmi_calculator',
         name => 'BMI Calculator',
         data => {
-            title => $text
+            title => $text,
+            infoboxData => [{
+                label => "Underweight",
+                value => "< 18.5"
+            },
+            {
+                label => "Normal Weight",
+                value => "18.5 - 24.9"
+            },
+            {
+                label => "Overweight",
+                value => "25 - 29.9"
+            },
+            {
+                label => "Obesity",
+                value => "30 or greater"
+            }
+            ]
         },
         templates => {
-            group => 'base',
+            group => 'info',
             options => {
                 content => 'DDH.interactive_bmi_calculator.content'
             }
