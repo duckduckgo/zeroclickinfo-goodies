@@ -12,7 +12,7 @@ triggers any =>
 zci answer_type => 'ultimate_answer';
 zci is_cached   => 1;
 
-handle query => sub {
+handle query_lc => sub {
     
     return if (
         # 'life the universe and everything' is the name of a book in the series.
@@ -40,8 +40,8 @@ handle query => sub {
 
     return $answer,
         structured_answer => {
-            id        => 'ultimateanswer',
-            name      => 'Ultimate Answer',
+            id        => 'ultimate_answer',
+            name      => 'Answer',
             data      => {
                 title      => $answer,
                 subtitle   => 'The answer to the ultimate question of life, the universe and everything.'

@@ -11,8 +11,8 @@ zci is_cached   => 1;
 
 my $answer = 'Forty-two';
 my $structuredAnswer = {
-    id        => 'ultimateanswer',
-    name      => 'Ultimate Answer',
+    id        => 'ultimate_answer',
+    name      => 'Answer',
     data      => {
         title      => $answer,
         subtitle   => 'The answer to the ultimate question of life, the universe and everything.'
@@ -30,6 +30,10 @@ ddg_goodie_test(
     ['DDG::Goodie::UltimateAnswer'],
 
     'what is the answer to life the universe and everything' => test_zci(
+        $answer,
+        structured_answer => $structuredAnswer
+    ),
+    '!What is the Answer to Life the Universe and Everything' => test_zci(
         $answer,
         structured_answer => $structuredAnswer
     ),
@@ -57,6 +61,10 @@ ddg_goodie_test(
         $answer,
         structured_answer => $structuredAnswer
     ),
+    'Ultimate Answer' => test_zci(
+        $answer,
+        structured_answer => $structuredAnswer
+    ),
     'what is the ultimate answer' => test_zci(
         $answer,
         structured_answer => $structuredAnswer
@@ -70,6 +78,10 @@ ddg_goodie_test(
         structured_answer => $structuredAnswer
     ),
     'answer to the ultimate question' => test_zci(
+        $answer,
+        structured_answer => $structuredAnswer
+    ),
+    'Answer to the Ultimate Question' => test_zci(
         $answer,
         structured_answer => $structuredAnswer
     ),
