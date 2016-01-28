@@ -39,11 +39,21 @@ handle query => sub {
     my $answer = 'Forty-two';
 
     return $answer,
-      structured_answer => {
-        input     => [],
-        operation => 'The answer to the ultimate question of life, the universe and everything',
-        result    => $answer
-      };
+        structured_answer => {
+            id        => 'ultimateanswer',
+            name      => 'Ultimate Answer',
+            data      => {
+                title      => $answer,
+                subtitle   => 'The answer to the ultimate question of life, the universe and everything.'
+            },
+            meta      => {
+                sourceName => 'Wikipedia',
+                sourceUrl  => 'https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Answer_to_the_Ultimate_Question_of_Life.2C_the_Universe.2C_and_Everything_.2842.29'
+            },
+            templates => {
+                group      => 'text'
+            }
+    };
 };
 
 1;
