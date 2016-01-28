@@ -33,7 +33,7 @@ ddg_goodie_test(
         $answer,
         structured_answer => $structuredAnswer
     ),
-    '!What is the Answer to Life the Universe and Everything' => test_zci(
+    'What is the Answer to Life the Universe and Everything' => test_zci(
         $answer,
         structured_answer => $structuredAnswer
     ),
@@ -41,15 +41,7 @@ ddg_goodie_test(
         $answer,
         structured_answer => $structuredAnswer
     ),
-    'question life the universe and everything' => test_zci(
-        $answer,
-        structured_answer => $structuredAnswer
-    ),
     'answer to life the universe and everything' => test_zci(
-        $answer,
-        structured_answer => $structuredAnswer
-    ),
-    'what is life the universe and everything' => test_zci(
         $answer,
         structured_answer => $structuredAnswer
     ),
