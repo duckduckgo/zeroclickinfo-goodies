@@ -9,6 +9,8 @@ DDH.interactive_bmi_calculator.build = function(ops) {
             updateUnits();
 
             $(".bmi_var").keydown(function(evt) {
+                $height.removeClass("bmi_error");
+
                 if (evt.keyCode === 13) { //Enter
                     var height = $height.val()? parseFloat($height.val()) : 0;
                     var weight = $weight.val()? parseFloat($weight.val()) : 0;
@@ -22,6 +24,8 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                     //Calculate BMI
                     if (height !== 0) {
                         bmi = weight / (height * height);
+                    } else {
+                        $height.addClass("bmi_error");
                     }
 
                     $("#bmi_result").text(bmi);
@@ -37,11 +41,12 @@ DDH.interactive_bmi_calculator.build = function(ops) {
             });
 
             function updateUnits() {
-                var selected_class = "bmi_selected_switch";
-                $("." + selected_class).removeClass(selected_class);
+                var selected = "tx-clr--dk";
+                var unselected = "tx-clr--lt";
+                $("." + selected).removeClass(selected).addClass(unselected);
 
                 var units = is_metric? "metric" : "imperial";
-                $("#bmi_" + units).addClass(selected_class);
+                $("#bmi_" + units).addClass(selected).removeClass(unselected);
                 
                 $(".bmi_text").addClass("hide");
                 $("#bmi_weight_text_" + units + ", #bmi_height_text_" + units).removeClass("hide");

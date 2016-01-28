@@ -1,6 +1,6 @@
 #bmi_unit_switches { 
     cursor: pointer;
-    margin-bottom: 0.75em;
+    margin-top: 0.5em;
 }
 
 .bmi_var { 
@@ -12,4 +12,6 @@
     padding-left: 0.3em;
 }
 
-.bmi_switch.bmi_selected_switch { color: #333; }
+.bmi_var.bmi_error {
+    border: 1px solid #de5833;
+}
