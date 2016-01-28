@@ -369,6 +369,12 @@ type: area
 unit: square inch
 ---
 aliases:
+  - ping
+factor: 3024.80338778
+type: area
+unit: 坪
+---
+aliases:
   - liter
   - litres
   - liters
