@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "perforce", "workshop", "dvcs", "perforce workshop", "perforce open source"
+        "perforce", "workshop", "dvcs", "perforce workshop", "perforce open source", "p4workshop"
     ],
 
     "template_type": "terminal",
@@ -24,39 +24,39 @@
     "sections": {
          "Setup": [
             {
-                "key": "$ export P4USER=<user_name>",
+                "key": "export P4USER=<user_name>",
                 "val": "Sets the user name"
             },
             {
-                "key": "$ export P4PORT=workshop.perforce.com:1666",
+                "key": "export P4PORT=workshop.perforce.com:1666",
                  "val": "Sets the Workshop's server and port"
             },
             {
-                "key": "$ p4 login",
+                "key": "p4 login",
                 "val": "Log into the Perforce Workshop"
             }
         ],
         "Create Repositories": [
             {
-                "key": "$ p4 init",
+                "key": "p4 init",
                 "val": "Initalize a personal server"
             },
             {
-                "key": "$ p4 clone -p workshop.perforce.com:1666 -f //guest/depot/path/to/project/...",
+                "key": "p4 clone -p workshop.perforce.com:1666 -f //guest/depot/path/to/project/...",
                 "val": "Clone a project using depot path syntax"
             }
         ],
         "Making Changes": [
             {
-                "key": "$ p4 status",
+                "key": "p4 status",
                 "val": "Show status of added, deleted, or modified files to be submitted"
             },
             {
-                "key": "$ p4 reconcile",
+                "key": "p4 reconcile",
                 "val": "Stage changes to be submitted"
             },
             {
-                "key": "$ p4 submit -d \"Description\"",
+                "key": "p4 submit -d \"Description\"",
                 "val": "Submits changes to local repository"
             }
         ],
