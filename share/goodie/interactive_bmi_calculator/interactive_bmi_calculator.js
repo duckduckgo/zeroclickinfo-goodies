@@ -17,18 +17,23 @@ DDH.interactive_bmi_calculator.build = function(ops) {
                     var error = "bmi_error";
                     var bmi;
 
-                    // When using imperial units the formula is slightly different
-                    if (!is_metric) {
-                        weight = weight * 703;
-                    }
-
                     //Calculate BMI
-                    if (height.isNumeric() && weight.isNumeric() && height !== 0) {
+                    if ($.isNumeric(height) && $.isNumeric(weight) && height !== 0) {
+                        
+                        // When using imperial units the formula is slightly different
+                        if (!is_metric) {
+                            weight = weight * 703;
+                        }
+                        
                         bmi = weight / (height * height);
-                    } else if ((!height.isNumeric()) || (height === 0)){
-                        $height.addClass(error);
-                    } else if (!weight.isNumeric()) {
-                        $weight.addClass(error);
+                    } else {
+                        if ((!$.isNumeric(height)) || (height === 0)) {
+                            $height.addClass(error);
+                        } 
+                        
+                        if (!$.isNumeric(weight)) {
+                            $weight.addClass(error);
+                        }
                     }
 
                     $("#bmi_result").text(bmi);
