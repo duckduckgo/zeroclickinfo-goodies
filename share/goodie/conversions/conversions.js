@@ -19,7 +19,7 @@ DDH.conversions.build = function(){
 	var updateGui = function(){
 		var query = $("#zci__conversions-left-in").val() + " " + $("#zci__conversions-left-unit").val() + " in " + $("#zci__conversions-right-unit").val();
 				
-		$.getJSON("https://crossorigin.me/"+"https://api.duckduckgo.com/?format=json&q="+query, function(data){
+		$.getJSON("https://crossorigin.me/"+"https://api.duckduckgo.com/?format=json&q="+encodeURIComponent(query), function(data){
 //		$.getJSON("https://api.duckduckgo.com/?format=json&q="+query, function(data){
 			var answerComponents = data.Answer.match(/^([0-9\.,]+) ([a-zA-Z].*)$/);
 			// numbers are output with "," delimiters from the text output, which nothing supports in the
