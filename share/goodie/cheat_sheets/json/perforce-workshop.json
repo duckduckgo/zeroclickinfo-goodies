@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "perforce", "workshop", "dvcs", "perforce workshop", "perforce open source", "p4workshop"
+        "perforce", "perforce open source", "p4workshop"
     ],
 
     "template_type": "terminal",
