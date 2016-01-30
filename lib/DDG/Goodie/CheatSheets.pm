@@ -54,7 +54,7 @@ my @all_triggers = (
     'cheatsheet',
 );
 
-sub generate_triggers {
+sub generate_standard_triggers {
     my @triggers = @all_triggers;
     foreach my $trigger_set (values %standard_triggers) {
         push @triggers, @{$trigger_set};
@@ -62,8 +62,28 @@ sub generate_triggers {
     return uniq @triggers;
 }
 
-triggers startend => generate_triggers();
+my %additional_triggers = (
+    any      => [],
+    end      => [],
+    start    => [],
+    startend => [],
+);
 
+# Used for determining who triggered something.
+my %trigger_lookup = ();
+
+sub add_triggers {
+    my ($name, $type, $triggers) = @_;
+    my $existing = $additional_triggers{$type};
+    foreach my $trigger (@{$triggers}) {
+        if (any { $_ eq $trigger } @{$existing}) {
+            die "Trigger '$trigger' already in use!\n";
+        };
+    };
+    my @new_triggers = (@{$existing}, @{$triggers});
+    $additional_triggers{$type} = \@new_triggers;
+    @trigger_lookup{@{$triggers}} = $name;
+}
 
 sub getAliases {
     my @files = File::Find::Rule->file()
@@ -85,6 +105,12 @@ sub getAliases {
 
         $results{$defaultName} = $file;
 
+        if ($data->{triggers}) {
+            while (my ($type, $triggers) = each $data->{triggers}) {
+                add_triggers($file, $type, $triggers);
+            };
+        };
+
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
                 $results{lc($alias)} = $file;
@@ -96,14 +122,35 @@ sub getAliases {
 
 my $aliases = getAliases();
 
+triggers any      => @{$additional_triggers{any}}
+    if $additional_triggers{any};
+triggers end      => @{$additional_triggers{end}}
+    if $additional_triggers{end};
+triggers start    => @{$additional_triggers{start}}
+    if $additional_triggers{start};
+triggers startend => (
+    generate_standard_triggers(),
+    @{$additional_triggers{startend}}
+);
+
+# (was custom trigger?, trigger file)
+sub who_triggered {
+    my ($remainder, $trigger) = @_;
+    return (1, $trigger_lookup{$trigger})
+        if defined($trigger_lookup{$trigger});
+    return (0, $aliases->{join(' ', split /\s+/o, lc($remainder))});
+}
+
 handle remainder => sub {
+    my $remainder = shift;
     # If needed we could jump through a few more hoops to check
     # terms against file names.
-    open my $fh, $aliases->{join(' ', split /\s+/o, lc($_))} or return;
+    my ($was_additional, $who) = who_triggered($remainder, $req->matched_trigger);
+    open my $fh, $who or return;
 
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
-    unless (any { $_ eq $req->matched_trigger } @all_triggers) {
+    unless ($was_additional || any { $_ eq $req->matched_trigger } @all_triggers) {
         my $template_type = ($data->{template_type});
         my @categories = ($template_type);
         push @categories, @{$data->{additional_categories}}
