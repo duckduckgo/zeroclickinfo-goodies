@@ -9,7 +9,7 @@
     },
     "aliases": [
         "kubernetes cli",
-	"basic kubernetes "
+	    "basic kubernetes"
     ],
     "section_order": [
 	"Physical Layout",
