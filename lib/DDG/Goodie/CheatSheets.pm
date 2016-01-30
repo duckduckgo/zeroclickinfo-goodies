@@ -5,24 +5,65 @@ use JSON::XS;
 use DDG::Goodie;
 use DDP;
 use File::Find::Rule;
+use List::Util qw(any);
+use List::MoreUtils qw(uniq);
 
 no warnings 'uninitialized';
 
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
-triggers startend => (
-    'char', 'chars',
-    'character', 'characters',
-    'cheat sheet', 'cheatsheet',
-    'command', 'commands',
-    'example', 'examples',
-    'guide', 'help',
-    'quick reference', 'reference',
-    'shortcut', 'shortcuts',
-    'symbol', 'symbols',
-    'key bindings', 'keys', 'default keys'
+sub maybe_plural {
+    my $phrase = shift;
+    return ($phrase, $phrase . 's');
+}
+
+my %standard_triggers = (
+    'keyboard' => [
+        'quick reference',
+        'reference',
+        maybe_plural('shortcut'),
+        'key bindings',
+        'keys',
+        'default keys',
+    ],
+    'reference' => [
+        'quick reference',
+        'reference',
+    ],
+    'terminal' => [
+        maybe_plural('char'),
+        maybe_plural('character'),
+        maybe_plural('command'),
+        maybe_plural('symbol'),
+    ],
+    'language' => [
+        'guide',
+        maybe_plural('example'),
+    ],
+    'code' => [
+        'quick reference',
+        'reference',
+    ],
 );
+
+# All cheat sheets are triggered by these.
+my @all_triggers = (
+    'help',
+    'cheat sheet',
+    'cheatsheet',
+);
+
+sub generate_triggers {
+    my @triggers = @all_triggers;
+    foreach my $trigger_set (values %standard_triggers) {
+        push @triggers, @{$trigger_set};
+    }
+    return uniq @triggers;
+}
+
+triggers startend => generate_triggers();
+
 
 sub getAliases {
     my @files = File::Find::Rule->file()
@@ -62,6 +103,11 @@ handle remainder => sub {
 
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
+    unless (any { $_ eq $req->matched_trigger } @all_triggers) {
+        my $template_type = $data->{template_type};
+        my @triggers = @{$standard_triggers{$template_type}};
+        return unless any { $_ eq $req->matched_trigger } @triggers;
+    };
 
     return 'Cheat Sheet', structured_answer => {
         id => 'cheat_sheets',
