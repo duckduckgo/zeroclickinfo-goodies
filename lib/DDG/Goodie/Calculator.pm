@@ -1312,6 +1312,22 @@ sub to_display {
 }
 
 
+my %operations = (
+    trig_functions => [
+        'sine' => {
+            name => 'FN_SIN',
+            rep  => 'sin',
+        },
+        'cosine' => {
+            name => 'FN_COS',
+            rep  => 'cos',
+        },
+        'tangent' => {
+            name => 'FN_TAN',
+            rep  => 'tan',
+        },
+    ],
+);
 
 handle query => sub {
     my $query = $_;
@@ -1320,19 +1336,32 @@ handle query => sub {
     $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
     my ($generated_input, $result) = to_display $query or return;
     return unless defined $result && defined $generated_input;
+    warn "Generated answer!\n";
     return $result,
         structured_answer => {
             id   => 'calculator',
-            name => 'Answer',
+            name => 'Calculator',
             data => {
-                title    => "$result",
-                subtitle => "Calculate: $generated_input",
+                parsed_input => "$generated_input",
+                text_result  => "$result",
+                operations   => \%operations,
+                nums => [7, 8, 9],
+                # trigFunctions => [
+                #     'sine' => {
+                #         name => 'FN_SIN',
+                #         rep => 'sin',
+                #     },
+                # ],
             },
             meta => {
                 signal => 'high',
             },
             templates => {
-                group  => 'text',
+                # group  => 'text',
+                group => 'base',
+                options => {
+                    content => 'DDH.calculator.calculator',
+                },
                 moreAt => '0',
             },
         };

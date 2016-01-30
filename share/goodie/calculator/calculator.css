@@ -1,3 +1,567 @@
-.zci--calculator .c-base__title {
-    word-wrap: break-word;
+/* TODOs
+1. Support dark theme
+2. Support extremely small viewports
+*/
+
+/* Typography */
+.zci--calculator,
+.zci--calculator .tile__ctrl__btn,
+.zci--calculator .tile__ctrl__toggle,
+.zci--calculator .tile__skip-calc {
+    font-family: "DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
+}
+
+/* Show UI when CSS is loaded */
+.tile--calculator {
+    display: block !important;
+}
+
+/* Layout */
+.tile__calc {
+    height: 352px;
+}
+.tile__calc__col {
+    height: 251px;
+    width: 35%;
+    float: left;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Tabs */
+.tile__calc .tile__tabs {
+    box-sizing: border-box;
+}
+
+/* Controllers */
+.tile__calc .tile__ctrl__btn,
+.tile__calc .tile__ctrl__toggle {
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+/* Toggle */
+.tile__calc .tile__ctrl__toggle {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    background: #ebebeb;
+    border: 1px solid #c8c8c8;
+    border-bottom: 0;
+    border-right: 0;
+    color: #2e2e2e;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.tile__calc .tile__ctrl__toggle-indicator {
+    display: inline-block;
+    height: 0.8em;
+    width: 2.5em;
+    border: 1px solid #999;
+    border-radius: 1em;
+    margin: 0 0.4em;
+    position: relative;
+}
+
+.tile__calc .tile__ctrl__toggle-indicator::before {
+    content: "";
+    display: inline-block;
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 100%;
+    border: 1px solid #999;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: #dbdbdb;
+    margin-left: -1px;
+    margin-top: -1px;
+    transition: background 0.2s;
+}
+
+.tile__calc .tile__ctrl__toggle:hover .tile__ctrl__toggle-indicator::before {
+    background: #999;
+}
+
+
+/* Buttons */
+.tile__calc .tile__ctrl__btn {
+    width: 25%;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    border: 1px solid #c8c8c8;
+    border-bottom: 0;
+    border-right: 0;
+    color: #2e2e2e;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.tile__calc .tile__ctrl--double {
+    width: 50%;
+}
+
+.tile__calc .tile__ctrl--ops, .tile__calc .tile__tab__sci .tile__ctrl__btn {
+    background: #ebebeb;
+    font-weight: lighter;
+}
+
+.tile__calc .tile__tab__basic .tile__ctrl__btn:first-child {
+    color: red;
+}
+
+.tile__calc .tile__ctrl--important {
+    background: #ffd90b;
+    font-family: "DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
+    font-weight: lighter;
+    font-size: 2em;
+    padding-bottom: 0.1em;
+}
+
+/* Ctrl (Button, Toggle) */
+.tile__calc .tile__ctrl__btn, .tile__calc .tile__ctrl__toggle {
+    cursor: pointer;
+}
+
+.tile__calc .tile__ctrl__btn:focus, .tile__calc .tile__ctrl__toggle:focus, .tile__calc .tile__ctrl__btn:active, .tile__calc .tile__ctrl__toggle:active {
+    outline: 0;
+}
+
+.tile__calc .tile__ctrl__btn:focus, .tile__calc .tile__ctrl__toggle:focus {
+    box-shadow: inset 0px 0px 5px #a5bdcb; /* TOREVISIT */
+}
+
+.tile__calc .tile__ctrl__btn:hover, .tile__calc .tile__ctrl__toggle:hover {
+    background-color: #dadada;
+}
+.tile__calc .tile__ctrl__btn:active, .tile__calc .tile__ctrl__toggle:active {
+    background-color: #cacaca;
+}
+
+.tile__calc .tile__ctrl--important:hover {
+    background-color: #ddc750;
+}
+
+.tile__calc .tile__ctrl--important:active {
+    background-color: #c8a900;
+}
+
+/* Accessibility skip handle */
+.tile__calc .tile__skip-calc {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -9999;
+    background: #e8e8e8;
+    border: 0;
+    padding: 0.3em 0.8em;
+    font-size: 1em;
+    margin: 1px;
+}
+.tile__calc .tile__skip-calc:focus {
+    pointer-events: all;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Input trap */
+.tile__calc .tile__input-trap {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    height: 1px;
+    width: 1px;
+    z-index: -9999;
+}
+
+/* Display */
+.tile__calc .tile__display {
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    border-bottom: 0;
+    padding: 0.8em;
+    max-width: 43.2em; /* TOREMOVE IF POSSIBLE */
+    box-sizing: border-box;
+    width: 70%;
+    border-right: 0;
+    height: 100px;
+    position: relative;
+    box-shadow: inset -1px -1px 0px #fff, inset 1px 1px 0px #fff;
+    transition: box-shadow 0.3s;
+}
+
+.tile__calc .tile__input-trap:focus + .tile__display,
+.tile__calc .tile__display--focused {
+    box-shadow: inset -1px -1px 0px #61a0c7, inset 1px 1px 0px #61a0c7;
+}
+
+.tile__calc .tile__display__main,
+.tile__calc .tile__display__aside {
+    text-align: right;
+    display: block;
+}
+
+.tile__calc .tile__display__aside {
+    font-size: 1.1em;
+    letter-spacing: 0.025em;
+    color: #909090;
+    font-weight: lighter;
+    margin-top: -0.2em;
+    height: 1em;
+}
+
+.tile__calc .tile__display__main {
+    color: #101010;
+    font-weight: lighter;
+    font-size: 3em;
+    letter-spacing: -0.05em;
+    padding-right: 0.05em;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: 0;
+}
+
+/* Display EG */
+.tile__calc .tile__display__main .tile__calc__eg {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: block;
+    height: 2px;
+    width: 2px;
+    overflow: hidden;
+    padding: 0;
+    background: #ffe1e1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.3em;
+    letter-spacing: initial;
+    transition: 0.5s all 0.2s;
+}
+.tile__calc .tile__display__main:hover .tile__calc__eg {
+    transition-delay: 3.14s;
+    height: 1.6em;
+    width: 7em;
+    top: 0;
+    padding: 0.2em 0.3em;
+    background: #f07e7e;
+    text-align: center;
+}
+
+/* Formula presentation: Big */
+.tile__calc .tile__display__main sup {
+    top: -0.8em;
+    left: 0.1em;
+    padding-right: 0.2em;
+}
+.tile__calc .tile__display__main .formula__placeholder {
+    color: #909090;
+}
+
+/* Formula presentation: Small */
+.tile__calc .tile__display__aside sup {
+    top: -0.8em;
+}
+
+/* Calc display options */
+.tile__calc .tile__options {
+    bottom: 0.4em;
+    padding: 0 0.8em;
+    width: 100%;
+    right: 0;
+    left: 0;
+    position: absolute;
+    display: table;
+    box-sizing: border-box;
+}
+.tile__calc .tile__option {
+    transition: width 0.5s;
+    font-size: 0.8em;
+    width: auto;
+    text-align: center;
+    display: table-cell;
+    color: #9e9e9e;
+    width: 50%;
+    font-weight: 200;
+    letter-spacing: 0.03em;
+}
+    .tile__calc .tile__option span {
+        cursor: pointer;
+        padding: 0.2em 0.5em;
+        margin: -0.5em;
+    }
+.tile__calc .tile__option--active {
+    color: #54a3bb;
+    font-weight: 400;
+}
+    .tile__calc .tile__option--active span {
+        cursor: default;
+    }
+
+.tile__calc .tile__option__sci {
+    text-align: left;
+}
+.tile__calc .tile__option__basic {
+    text-align: right;
+}
+.tile__calc .tile__option__history {
+    display: none;
+    text-align: right;
+}
+.tile__calc .tile__option:hover {
+    text-decoration: none;
+}
+
+/* History tab */
+.tile__calc .tile__history {
+    width: 30%;
+    background-color: #f9f9f9;
+    position: relative;
+    width: 30%;
+    float: none;
+    margin-top: -100px;
+    padding: 0;
+    border: 1px solid #ccc;
+    height: 351px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.3s;
+}
+.tile__calc .tile__history--hidden {
+    width: 0px;
+}
+
+/* History item */
+.tile__calc .tile__past-calc {
+    box-sizing: border-box;
+    padding: 0.4em 0.6em 0.4em;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: right;
+    font-size: 1.1em;
+    overflow: hidden;
+    transition: 0.5s all;
+}
+.tile__calc .tile__past-calc.tile__past-calc--hidden {
+    height: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/******************/
+/* TEXT SIZE ADJS */
+/******************/
+
+/* Largest */
+.set-text--largest .tile__calc .tile__display__main {
+    font-size: 2em;
+    font-weight: 400;
+}
+.set-text--largest .tile__calc .tile__past-calc {
+    padding: 0.2em 0.4em;
+}
+.set-text--largest .tile__calc .zci--calculator .zci__main--detail {
+    max-width: 61.9em;
+}
+.set-text--largest .tile__calc .tile__past-result {
+    margin-top: -0.2em;
+}
+
+.tile__calc .tile__past-calc:hover {
+    background: #eee;
+}
+.tile__calc .tile__past-formula {
+    display: block;
+    color: #aaa;
+    font-weight: 100;
+    font-size: 0.8em;
+}
+.tile__calc .tile__past-result {
+    font-weight: 700;
+    color: #191919;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+/* Big Widescreens >= 1200px (Default) */
+.zci--calculator .zci__main {
+    max-width: 60em;
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+/* Monitors <= 1200 */
+@media only screen and (min-width: 75em) {
+    .zci--calculator .zci__main {
+        padding-left: 90px;
+    }
+}
+
+/* Monitors with MQs >= 960 */
+@media only screen and (min-width: 60em) {
+    .tile__calc .tile__options {
+        bottom: -1em;
+    }
+}
+
+
+/* Tablets <= 960 */
+@media only screen and (max-width: 60em) {
+    /* show only one calc tab */
+    .tile__calc .tile__tabs {
+        overflow: hidden;
+    }
+    .tile__calc .tile__calc__col {
+        width: 310px;
+    }
+    /* default: basic tab */
+    .tile__calc .tile__tabs .tile__tab__sci /*:first-child*/ {
+        margin-left: -310px;
+    }
+    .tile__calc .tile__display {
+        /*max-width: 21.6em;*/
+        max-width: 310px;
+    }
+    .zci--calculator .zci__main--detail {
+        max-width: 43.8em;
+    }
+    .tile__calc .tile__history {
+        transition: width 0.6s;
+        position: absolute;
+    }
+
+    /* show 3 tab options */
+    .tile__calc .tile__display__main {
+        margin-top: -0.2em;
+    }
+    .tile__calc .tile__display .tile__options {
+        /*margin-top: 0em;*/
+    }
+    .tile__calc .tile__display .tile__option {
+        float: left;
+    }
+    .tile__calc .tile__display .tile__option__sci {
+        text-align: left;
+    }
+    .tile__calc .tile__display .tile__option__basic {
+        text-align: right;
+    }
+}
+
+/* Mobiles <= 740 */
+@media only screen and (max-width: 46.25em) {
+    .tile__calc .tile__history {
+        width: 260px;
+    }
+}
+
+/* Custom <= 660 */
+/*@media only screen and (max-width: 42.8em) {*/
+@media only screen and (max-width: 37.4em) {
+    .tile--calculator {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tile__calc {
+        overflow: hidden;
+        width: 310px;
+    }
+
+    .tile__calc .tile__display {
+        width: 100%;
+        max-width: none;
+        border-right: 1px solid #d8d8d8;
+    }
+
+    .tile__calc .tile__tabs {
+        width: 930px;
+        position: relative;
+        left: -310px; /* default: basic tab */
+        transition: left 0.7s;
+    }
+
+    .tile__calc .tile__tabs.tile__tabs--single-basic {
+        left: -310px;
+    }
+    .tile__calc .tile__tabs.tile__tabs--single-sci {
+        left: 0;
+    }
+    .tile__calc .tile__tabs.tile__tabs--single-history {
+        left: -620px;
+    }
+
+    .tile__calc .tile__calc__col {
+        border-right: 1px solid #ccc;
+    }
+
+    .tile__calc .tile__tabs .tile__tab__sci:first-child {
+        margin-left: 0;
+    }
+
+    .tile__calc .tile__history {
+        position: relative;
+        margin-left: 0;
+        margin-top: 0;
+        width: 310px;
+        height: 251px;
+    }
+
+    /* 3 tab options */
+    .tile__calc .tile__display .tile__option {
+        width: 33%;
+    }
+    .tile__calc .tile__display .tile__option__basic {
+        text-align: center;
+    }
+    .tile__calc .tile__display .tile__option__history {
+        display: table-cell;
+    }
+
+    .is-mobile .zci--calculator .zci__body {
+        padding-right: 0px;
+        margin-left: -4px;
+    }
+}
+
+
+/* Custom >= 660  & Tablets <= 960 */
+@media only screen and (min-width: 37.4em) and (max-width: 60em) {
+    .tile__tabs.tile__tabs--single-sci .tile__tab__basic {
+        width: 0;
+    }
+    .tile__tabs.tile__tabs--single-sci  .tile__tab__sci {
+        margin-left: 0;
+    }
+    .tile__tabs.tile__tabs--single-basic .tile__tab__basic {
+
+    }
+}
+
+@media only screen and (max-width: 21em) {
+    .is-mobile .zci--calculator .zci__body {
+        padding-right: 0px;
+        margin-left: 0;
+        padding-left: 1px;
+    }
+}
+
+/* Small mobiles <= 310 */
+@media only screen and (max-width: 19.375em) {
+    .tile__calc .tile__history {
+        position: relative;
+        margin-top: 0;
+    }
 }
