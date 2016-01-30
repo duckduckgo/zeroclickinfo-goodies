@@ -1,0 +1,67 @@
+{
+  "id": "facebook_emotions",
+  "name": "Facebook emotions",
+  "description": "A list of useful Facebook emotions",
+  "metadata": {
+    "sourceName": "Symbols-N-Emoticons",
+    "sourceUrl": "http://www.symbols-n-emoticons.com/p/facebook-emoticons-list.html"
+  },
+  "aliases": [
+    "View"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "Editing",
+    "Files",
+    "Navigation",
+    "View",
+    "Debug"
+  ],
+  "sections": {
+    "View": [
+      {
+        "val": "Poop Facebook Chat Emoticon",
+        "key": ":poop:"
+      },
+      {
+        "val": "Like / Thumb Up Facebook Chat",
+        "key": "(y) (Y)"
+      },
+      {
+        "val": "Angel FaceBook Chat Emoticon",
+        "key": "O:)/ O:-)"
+      },
+      {
+        "val": "Cry / Tears Eye FaceBook Chat",
+        "key": ":'("
+      },
+      {
+        "val": "Curly Lips Facebook Emoticon ",
+        "key": ":3"
+      },
+      {
+        "val": "Devil / Satan / Vampire FaceBook",
+        "key": "3:) 3:-)"
+      },
+      {
+        "val": "Kiki FaceBook Chat",
+        "key": "^_^"
+      },
+       
+       {
+        "val": "Kiss Facebook Chat",
+        "key": ":-* :*"
+      },
+      {
+        "val": "Pacman Facebook",
+        "key": ":v"
+      },
+      {
+        "val": "Robot Facebook Chat",
+        "key": ":|]"
+      }
+      
+  
+    ]
+  }
+}
