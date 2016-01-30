@@ -1,0 +1,84 @@
+
+<div id="tile--calculator" class="tile--calculator" style="display:none;">
+    <div class="tile__calc clearfix">
+        <button class="tile__skip-calc">Skip calculator</button>
+        <button class="tile__input-trap"></button>
+        <div class="tile__display">
+            <span class="tile__display__aside"></span>
+            <span class="tile__display__main"></span>
+
+            <ul class="tile__options">
+                <li class="tile__option tile__option__sci" data-tab="sci"><span>Scientific</span></li>
+                <li class="tile__option tile__option__basic tile__option--active" data-tab="basic"><span>Basic</span></li>
+                <li class="tile__option tile__option__history" data-tab="history"><span>History</span></li>
+            </ul>
+        </div>
+        <div class="tile__tabs">
+            <div class="tile__calc__col tile__tab__sci">
+                <button class="tile__ctrl__toggle" data-cmd="NO">
+                    <!-- TODO Replace with label + input[type=checkbox] -->
+                    <span>DEG</span>
+                    <div class="tile__ctrl__toggle-indicator"></div>
+                    <span>RAD</span>
+                </button>
+                <button class="tile__ctrl__btn" data-cmd="META_PAR_OPEN" disabled>(</button>
+                <button class="tile__ctrl__btn" data-cmd="META_PAR_CLOSE" disabled>)</button>
+
+                {{#each operations.trig_functions}}
+                    <button class="tile__ctrl__btn" data-cmd={{name}}>{{rep}}</button>
+                {{/each}}
+                <!-- <button class="tile__ctrl__btn" data-cmd="FN_SIN">sin</button>
+                <button class="tile__ctrl__btn" data-cmd="FN_COS">cos</button>
+                <button class="tile__ctrl__btn" data-cmd="FN_TAN">tan</button>
+                -->
+                <button class="tile__ctrl__btn" data-cmd="CONST_PI" disabled>&#x3c0;</button>
+
+                <button class="tile__ctrl__btn" data-cmd="FN_FACT">x!</button>
+                <button class="tile__ctrl__btn" data-cmd="FN_POW_2">x<sup>2</sup></button>
+                <button class="tile__ctrl__btn" data-cmd="FN_POW_3">x<sup>3</sup></button>
+                <button class="tile__ctrl__btn" data-cmd="FN_POW_N">x<sup>y</sup></button>
+
+                <button class="tile__ctrl__btn" data-cmd="FN_DIV_1">1/x</button>
+                <button class="tile__ctrl__btn" data-cmd="FN_SQRT">&#x221A;x</button>
+                <button class="tile__ctrl__btn" data-cmd="FN_SQRT_N"><sup>x</sup>&#x221A;y</button>
+                <button class="tile__ctrl__btn" data-cmd="FN_EE">&#x22FF;&#x22FF;</button>
+
+                <button class="tile__ctrl__btn" data-cmd="FN_LOG">log</button>
+                <button class="tile__ctrl__btn" data-cmd="FN_LN">ln</button>
+                <button class="tile__ctrl__btn" data-cmd="FN_POW_E" disabled>e<sup>x</sup></button>
+                <button class="tile__ctrl__btn" data-cmd="CONST_E" disabled>e</button>
+            </div><!--
+         --><div class="tile__calc__col tile__tab__basic">
+                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_CLEAR">C</button>
+                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="META_INV">+/-</button>
+                <button class="tile__ctrl__btn tile__ctrl--ops" data-cmd="OP_PCT">%</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_DIV">&divide;</button>
+
+                {{#iterate 3 start=7 }}
+                    <button class="tile__ctrl__btn">{{this}}</button>
+                {{/iterate}}
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_MULT">&times;</button>
+
+                {{#iterate 3 start=4}}
+                    <button class="tile__ctrl__btn">{{this}}</button>
+                {{/iterate}}
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_MINUS">&minus;</button>
+
+                {{#iterate 3 start=1}}
+                    <button class="tile__ctrl__btn">{{this}}</button>
+                {{/iterate}}
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="OP_PLUS">+</button>
+
+                <button class="tile__ctrl__btn tile__ctrl--double">0</button>
+                <button class="tile__ctrl__btn">.</button>
+                <button class="tile__ctrl__btn tile__ctrl--important" data-cmd="META_PROCEED">=</button>
+            </div><!--
+         --><ul class="tile__calc__col tile__history">
+                <li class="tile__past-calc tile__past-calc__tpl hide tile__past-calc--hidden">
+                    <span class="tile__past-formula"> </span>
+                    <output class="tile__past-result"> </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
