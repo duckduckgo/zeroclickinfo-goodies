@@ -1,140 +1,140 @@
-{
-    "id":"saints",
-    "name":"Saints Row IV",
-    "description": "Pause the game, and select the "Extras" option, then choose the "Cheats" selection. Select "Add Cheat" and enter one of the following codes to activate the corresponding cheat function. If you entered the code correctly, you will hear a sound. Note: Trophies and auto save are disabled when cheats are activated. However, you are still allowed to manually save while cheats are enabled.",
-    "metadata":{
-        "sourceName":"Saints Row IV",
-        "sourceUrl":"http://www.cheatcc.com/ps3/saintsrow4cheatscodes.html"
-    },
- "aliases": [
-    "saints row 4"
-  ],
-"template_type": "keyboard",
-    "section_order":[
-        "All Unlockables",
-        "Player Ability",
-        "World"
-    ],
- "sections":{
-        "All Unlockables":[
-            {
-                "val":"All Unlockables",
-                "key":"	unlockitall"
-            }
-            ],
-     "Player Ability":[
-            {
-                "val":"Give Cash ($100,000)",
-                "key":"cheese"
-            },
-            {
-                "val":"Weapons",
-                "key":"letsrock"
-            },
-            {
-                "val":"Vehicle No Damage",
-                "key":"vroom"
-            },
-            {
-                "val":"Repair current Vehicle",
-                "key":"repaircar"
-            },
-            {
-                "val":"Clear Notoriety"
-                "key":"goodygoody"
-            },
-            {
-                "val":"infinite sprint"
-                "key":"runfast"
-            },
-             {
-                "val":"Disable Warden Spawns"
-                "key":"	nowardens"
-            },
-            {
-                "val":"Instant Warden Notoriety"
-                "key":"instantwarden"
-            },
-            {
-                "val":"Unlock Blast"
-                "key":"superblast"
-            },
-             {
-                "val":"Unlock Buff"
-                "key":"superbuff"
-            },
-             {
-                "val":"Unlock Death From Above"
-                "key":"	superdfa"
-            },
-             {
-                "val":"Unlock Stomp"
-                "key":"superstomp"
-            },
-             {
-                "val":"Unlock Telekinesis"
-                "key":"supertk"
-            },
-             {
-                "val":"Disable Super Movement"
-                "key":"	nosupermove"
-            },
-             {
-                "val":"Disable Super Powers"
-                "key":"	nosuperpowers"
-            }
-        ],
-    "vehicles":[
-        {
-                "val":"Spawn alien hover tank",
-                "key":"givehovertank"
-            },
-         {
-                "val":"Spawn XOR",
-                "key":"givetrouble"
-            }
-        ]
-     "World":[
-         {
-                "val":"Ascii mode",
-                "key":"ascii"
-            },
-             {
-                "val":"Big Head Mode",
-                "key":"bigheadmode"
-            },
-             {
-                "val":"Disable Glitch FX",
-                "key":"	noglitchcity"
-            },
-            {
-                "val":"Evil Cars",
-                "key":"evilcars"
-            },
-            {
-                "val":"Fast Forward (time speeds up)",
-                "key":"fastforward"
-            },
-             {
-                "val":"Heaven Bound (corpses rise into the air)",
-                "key":"	fryhole"
-            },
-            {
-                "val":"Insane City",
-                "key":"insanecity"
-            },
-            {
-                "val":"Mascots (mascot pedestrians)",
-                "key":"mascot"
-            },
-             {
-                "val":"Pimps and Hos (pimps and prostitutes pedestrians)",
-                "key":"hohoho"
-            },
-             {
-                "val":"Vehicle Smash (smash vehicles easily)",
-                "key":"isquishyou"
-            }
-    ]
-    }
+{  
+   "id":"saints",
+   "name":"Saints Row IV",
+   "description":"Pause the game, and select the 'Extras' option, then choose the 'Cheats' selection. Select 'Add Cheat' and enter one of the following codes to activate the corresponding cheat function. If you entered the code correctly, you will hear a sound. Note: Trophies and auto save are disabled when cheats are activated. However, you are still allowed to manually save while cheats are enabled.",
+   "metadata":{  
+      "sourceName":"Saints Row IV",
+      "sourceUrl":"http://www.cheatcc.com/ps3/saintsrow4cheatscodes.html"
+   },
+   "aliases":[  
+      "saints row 4"
+   ],
+   "template_type":"keyboard",
+   "section_order":[  
+      "All Unlockables",
+      "Player Ability",
+      "World"
+   ],
+   "sections":{  
+      "All Unlockables":[  
+         {  
+            "val":"All Unlockables",
+            "key":"unlockitall"
+         }
+      ],
+      "Player Ability":[  
+         {  
+            "val":"Give Cash ($100,000)",
+            "key":"cheese"
+         },
+         {  
+            "val":"Weapons",
+            "key":"letsrock"
+         },
+         {  
+            "val":"Vehicle No Damage",
+            "key":"vroom"
+         },
+         {  
+            "val":"Repair current Vehicle",
+            "key":"repaircar"
+         },
+         {  
+            "val":"Clear Notoriety",
+            "key":"goodygoody"
+         },
+         {  
+            "val":"infinite sprint",
+            "key":"runfast"
+         },
+         {  
+            "val":"Disable Warden Spawns",
+            "key":"nowardens"
+         },
+         {  
+            "val":"Instant Warden Notoriety",
+            "key":"instantwarden"
+         },
+         {  
+            "val":"Unlock Blast",
+            "key":"superblast"
+         },
+         {  
+            "val":"Unlock Buff",
+            "key":"superbuff"
+         },
+         {  
+            "val":"Unlock Death From Above",
+            "key":"superdfa"
+         },
+         {  
+            "val":"Unlock Stomp",
+            "key":"superstomp"
+         },
+         {  
+            "val":"Unlock Telekinesis",
+            "key":"supertk"
+         },
+         {  
+            "val":"Disable Super Movement",
+            "key":"nosupermove"
+         },
+         {  
+            "val":"Disable Super Powers",
+            "key":"nosuperpowers"
+         }
+      ],
+      "vehicles":[  
+         {  
+            "val":"Spawn alien hover tank",
+            "key":"givehovertank"
+         },
+         {  
+            "val":"Spawn XOR",
+            "key":"givetrouble"
+         }
+      ],
+      "World":[  
+         {  
+            "val":"Ascii mode",
+            "key":"ascii"
+         },
+         {  
+            "val":"Big Head Mode",
+            "key":"bigheadmode"
+         },
+         {  
+            "val":"Disable Glitch FX",
+            "key":"noglitchcity"
+         },
+         {  
+            "val":"Evil Cars",
+            "key":"evilcars"
+         },
+         {  
+            "val":"Fast Forward (time speeds up)",
+            "key":"fastforward"
+         },
+         {  
+            "val":"Heaven Bound (corpses rise into the air)",
+            "key":"fryhole"
+         },
+         {  
+            "val":"Insane City",
+            "key":"insanecity"
+         },
+         {  
+            "val":"Mascots (mascot pedestrians)",
+            "key":"mascot"
+         },
+         {  
+            "val":"Pimps and Hos (pimps and prostitutes pedestrians)",
+            "key":"hohoho"
+         },
+         {  
+            "val":"Vehicle Smash (smash vehicles easily)",
+            "key":"isquishyou"
+         }
+      ]
+   }
 }
