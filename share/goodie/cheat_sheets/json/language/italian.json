@@ -5,6 +5,7 @@
       "sourceName" : "Linguanaut",
       "sourceUrl" : "http://www.linguanaut.com/english_italian.htm"
    },
+   "template_type": "reference",
    "section_order" : [
       "Basics",
       "Getting Help",
