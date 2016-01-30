@@ -1,0 +1,109 @@
+{
+    "id": "englishpremierleague",
+    "name": "EPL",
+    "description": "A quick reference for the English Premier League (Soccer)",
+    "metadata": {
+        "sourceName": "EPL",
+        "sourceUrl": "http://www.premierleague.com/en-gb.html"
+    },
+    "aliases": [
+        "epl",
+        "bpl"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "2015/2016 Clubs",
+        "Glossary"
+    ],
+    "sections": {
+        "2015/2016 Clubs": [
+            {
+                "key": "ARS",
+                "val": "Arsenal"
+            },
+            {
+                "key": "SOU",
+                "val": "Southampton"
+            },
+            {
+                "key": "LEI",
+                "val": "Leicester City"
+            },
+            {
+                "key": "LIV",
+                "val": "Liverpool"
+            },
+            {
+                "key": "NOR",
+                "val": "Norwich"
+            },
+            {
+                "key": "TOT",
+                "val": "Tottenham Hotspur"
+            },
+            {
+                "key": "SUN",
+                "val": "Sunderland"
+            },
+            {
+                "key": "MCI",
+                "val": "Manchester City"
+            },
+            {
+                "key": "WHU",
+                "val": "West Ham United"
+            },
+            {
+                "key": "AVL",
+                "val": "Aston Villa"
+            },
+            {
+                "key": "CRY",
+                "val": "Crystal Palace"
+            },
+            {
+                "key": "BOU",
+                "val": "Bournemouth"
+            },
+            {
+                "key": "MUN",
+                "val": "Manchester United"
+            },
+            {
+                "key": "STK",
+                "val": "Stoke"
+            },
+            {
+                "key": "WBA",
+                "val": "West Bromwich Albion"
+            },
+            {
+                "key": "SWA",
+                "val": "Swansea"
+            },
+            {
+                "key": "EVE",
+                "val": "Everton"
+            },
+            {
+                "key": "NEW",
+                "val": "Newcastle"
+            },
+            {
+                "key": "WAT",
+                "val": "Watford"
+            },
+            {
+                "key": "CHE",
+                "val": "Chelsea"
+            }
+        ],
+        "Glossary": [
+            {
+                "key": "Relegation",
+                "val": "At the end of each season the teams that finish in the bottom three positions in the EPL are relegated to the league below (the Championship)"
+            }
+          ]
+     }
+}
+
