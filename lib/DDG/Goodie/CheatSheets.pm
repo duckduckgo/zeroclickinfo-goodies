@@ -73,7 +73,7 @@ my %additional_triggers = (
 my %trigger_lookup = ();
 
 sub add_triggers {
-    my ($name, $type, $triggers) = @_;
+    my ($options, $type, $triggers) = @_;
     my $existing = $additional_triggers{$type};
     foreach my $trigger (@{$triggers}) {
         if (any { $_ eq $trigger } @{$existing}) {
@@ -82,7 +82,7 @@ sub add_triggers {
     };
     my @new_triggers = (@{$existing}, @{$triggers});
     $additional_triggers{$type} = \@new_triggers;
-    @trigger_lookup{@{$triggers}} = $name;
+    @trigger_lookup{@{$triggers}} = map { $options } (1..@{$triggers});
 }
 
 sub getAliases {
@@ -106,8 +106,17 @@ sub getAliases {
         $results{$defaultName} = $file;
 
         if ($data->{triggers}) {
+            my $options = {
+                file => $file,
+            };
+            if ($data->{triggers}->{options}) {
+                my $trigger_options = delete $data->{triggers}->{options};
+                my %new_options = (%{$trigger_options}, %{$options});
+                $options = \%new_options;
+            };
             while (my ($type, $triggers) = each $data->{triggers}) {
-                add_triggers($file, $type, $triggers);
+                my %options = %{$options};
+                add_triggers(\%options, $type, $triggers);
             };
         };
 
@@ -136,9 +145,14 @@ triggers startend => (
 # (was custom trigger?, trigger file)
 sub who_triggered {
     my ($remainder, $trigger) = @_;
-    return (1, $trigger_lookup{$trigger})
-        if defined($trigger_lookup{$trigger});
-    return (0, $aliases->{join(' ', split /\s+/o, lc($remainder))});
+    my $who = $trigger_lookup{$trigger};
+    my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))};
+    if (defined $who) {
+        return (1, $who->{file}) unless $who->{require_name};
+        return (1, $file) if $file eq $who->{file};
+    } else {
+        return (0, $file);
+    };
 }
 
 handle remainder => sub {
