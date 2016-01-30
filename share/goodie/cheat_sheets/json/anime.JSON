@@ -1,0 +1,69 @@
+{
+   "id":"anime_cheat_sheet",
+   "name":"anime cheat sheet",
+   "description":"all about anime",
+   "metadata":{
+      "sourceName":"DuckDuckHack",
+      "sourceUrl":"https://duck.co/duckduckhack/"
+   },
+   "aliases":[
+      "manga",
+      "anime and manga",
+      "anime&manga",
+      "anime to watch"
+   ],
+   "template_type":"reference",
+   "section_order":[
+      "TO read",
+      "TO watch",
+      "TO download"
+   ],
+   "sections":{
+      "TO read":[
+         {
+            "val":"http://www.mangareader.net/",
+            "key":"manga reader"
+         },
+         {
+            "val":"http://mangastream.com/",
+            "key":"manga stream "
+         },
+         {
+            "val":"http://www.mangahere.co/",
+            "key":"manga here"
+         },
+         {
+            "val":"http://http://mangable.com/",
+            "key":"mangable"
+         }
+      ],
+      "TO watch":[
+         {
+            "val":"http://anime-joy.tv/",
+            "key":"animejoy.tv"
+         },
+         {
+            "val":"http://animeshow.tv/",
+            "key":"animeShow.tv"
+         },
+         {
+            "val":"http://www.crunchyroll.com/",
+            "key":"crunchyroll"
+         }
+      ],
+      "TO download(use app only)":[
+         {
+            "val":"https://duck.co/ia?repo=goodies",
+            "key":"windows phone"
+         },
+         {
+            "val":"https://duck.co/ia?repo=spice",
+            "key":"iphone(ios)"
+         },
+         {
+            "val":"https://duck.co/ia?repo=longtail",
+            "key":"android "
+         }
+      ]
+   }
+}

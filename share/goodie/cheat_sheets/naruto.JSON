@@ -1,0 +1,10 @@
+/**
+* Created with DuckDuckHack1.
+* User: stakle
+* Date: 2016-01-30
+* Time: 06:27 AM
+* To change this template use Tools | Templates.
+*/
+define(function() {
+return {};
+});
