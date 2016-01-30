@@ -1,9 +1,9 @@
 {
     "id": "interview_dress_code_cheat_sheet",
-    "name": "Interview",
+    "name": "Interview Dress Codes",
     "description": "A quick guide to interview dress codes",
     "metadata": {
-        "sourceName": "Western dress codes - Wikipedia",
+        "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Western_dress_codes"
     },
     "aliases": ["interview uniforms", "interview apparels"],
@@ -15,10 +15,10 @@
     "sections": {
         "Boys": [{
             "key":"Shirt Color",
-            "val":"Light blue/white"
+            "val":"Light blue / white"
           }, {  
             "key":"Trouser and Coat Color",
-            "val":"Navy Blue/Black/Charcoal Gray"
+            "val":"Navy Blue / Black / Charcoal Gray"
           }, {  
             "key":"Tie",
             "val":"Silk tie and solid color with simple pattern"
@@ -27,44 +27,42 @@
             "val":"Black/Brown leather, laced and polished shoes"
           }, {  
             "key":"Socks",
-            "val":"Its color should match with shoes or trouser"
+            "val":"Their color should match with shoes or trouser"
           }, {  
             "key":"Belt",
-            "val":"Black leather with simple buckle or it should match with shoes"
-          },
-             {  
-            "key":"Hairs",
-            "val":"Short hairs and finely trimmed"
-          }, 
-             {
-              "key":"Shave",
-              "val":"Clean shave"
+            "val":"Black leather with simple buckle or it should match the shoes"
+          }, {  
+            "key":"Hairstye",
+            "val":"Short hair and finely trimmed"
+          }, {
+            "key":"Facial hair",
+            "val":"Clean shaven"
           }],
         "Girls": [{  
             "key":"Shirt Color",
-            "val":"Any light shade/white"
+            "val":"Any light shade / white"
           }, {  
             "key":"Trouser and Coat Color",
-            "val":"Navy Blue/Black/Charcoal Gray with narrow bottom trouser"
+            "val":"Navy Blue / Black / Charcoal Gray with narrow bottom trouser"
           }, {  
             "key":"Skirt and Coat Color",
-            "val":"Navy Blue/Black/Charcoal Gray with stockings"
+            "val":"Navy Blue / Black / Charcoal Gray with stockings"
           }, {  
             "key":"Tie or Scarf",
             "val":"Silk and solid color with simple pattern"
-          },{  
+          }, {  
             "key":"Belt",
-            "val":"Black leather with simple buckle or it should match with bellies"
-          },{  
+            "val":"Black leather with simple buckle or it should match the stilettos"
+          }, {  
             "key":"Socks",
-            "val":"Its color should match with bellies or trouser"
-          },{  
+            "val":"Their color should match with bellies or trouser"
+          }, {  
             "key":"Footwear",
-            "val":"Black leather, heeled and polished bellies"
-          },{  
-            "key":"Hairs",
+            "val":"Black leather, heeled and polished stilettos"
+          }, {  
+            "key":"Hairstyle",
             "val":"Perfectly tied and no bangs on the face"
-          },{  
+          }, {  
             "key":"Makeup",
             "val":"Light makeup"
           }]
