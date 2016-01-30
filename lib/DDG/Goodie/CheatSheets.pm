@@ -104,9 +104,19 @@ handle remainder => sub {
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
     unless (any { $_ eq $req->matched_trigger } @all_triggers) {
-        my $template_type = $data->{template_type};
-        my @triggers = @{$standard_triggers{$template_type}};
-        return unless any { $_ eq $req->matched_trigger } @triggers;
+        my $template_type = ($data->{template_type});
+        my @categories = ($template_type);
+        push @categories, @{$data->{additional_categories}}
+            if defined $data->{additional_categories};
+        my $matched = 0;
+        foreach my $category (@categories) {
+            my @triggers = @{$standard_triggers{$category}};
+            if (any { $_ eq $req->matched_trigger } @triggers) {
+                $matched = 1;
+                last;
+            };
+        };
+        return unless $matched;
     };
 
     return 'Cheat Sheet', structured_answer => {
