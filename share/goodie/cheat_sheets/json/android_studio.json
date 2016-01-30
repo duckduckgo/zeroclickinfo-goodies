@@ -1,73 +1,69 @@
 {
     "id": "android_studio_cheat_sheet",
-    "name": "AndroidStudioCheatSheet",
+    "name": "Android Studio",
     "description": "The cheat codes for android studio.",
 
     "metadata": {
         "sourceName": "DEVELOPERS",
         "sourceUrl" : "http://developer.android.com/sdk/installing/studio-tips.html"
     },
-
-    "aliases": [
-        "android studio cheatsheeet", "cheat sheet android studio", "etc"
-    ],
-
-    "template_type": "one of: keyboard, terminal, code, reference",
+    "template_type": "keyboard",
 
     "section_order": [
-        "ACTION"],
+        "ACTIONS" 
+        ],
 
     "sections": {
-        "ACTION  -  ANDROID STUDIO COMMANDs": [
+        "ACTIONS": [
             {
                 "key": "Command look-up (autocomplete command name)",
-                "val": "CTRL + SHIFT + A"
+                "val": "[CTRL] + [SHIFT] + [A]"
             },
             {
                 "key": "Project quick fix",
-                "val": "ALT + ENTER"
+                "val": "[ALT]  +  [ENTER]"
             },
             {
                 "key": "Reformat code",
-                "val": "CTRL + ALT + L (Win) OPTION + CMD + L "
+                "val": "[CTRL]  +  [ALT] + [L]  "
 
             },
             {
                 "key": "Show docs for selected API",
-                "val": "CTRL + Q (Win) F1 (Mac) "
+                "val": "[CTRL] + [Q] "
             },
            {
             "key": "Show parameters ",
-                "val": "CTRL + P"
+                "val": "[CTRL] + [P]"
             },
             {
               "key":"Generate method", 
-             "val":"ALT + Insert (Win) CMD + N (Mac)"       
+             "val":"[ALT] + [Insert] "       
             },
             {
               "key":"Jump to source" ,
-             "val":"F4 Win CMD + down-arrow Mac"           
+             "val":"[F4] "           
             },
             {
               "key":"Delete line" ,
-             "val":"CTRL + Y (Win) CMD + Backspace (Mac)"           
+             "val":"[CTRL] + [Y] "           
             },
                 {
               "key":"Search by symbol name" ,
-             "val":"CTRL + ALT + SHIFT + N (Win) OPTION + CMD + O (Mac)"
+             "val":"[CTRL] + [ALT] + [SHIFT] + [N] "
  
             },{
               "key":"Build",
-              "val":"CTRL + F9 (Win) CMD + F9 (Mac)"
+              "val":"[CTRL] + [F9] "
                   },{
               "key":"Build and run",
-              "val":"SHIFT + F10 (Win) CTRL + R (Mac)"
+              "val":"[SHIFT] + [F10] "
                   },{
               "key":"Toggle project visibility",
-              "val":"ALT + 1 (Win) CMD + 1 (Mac)"
+              "val":"[ALT] + [1] "
                   },{
               "key":"Navigate open tabs",
-              "val":"ALT + left-arrow; ALT + right-arrow (Win) CTRL + left-arrow; CTRL + right-arrow (Mac)"
+              "val":"[ALT] + [left-arrow] ; [ALT] + [right-arrow]"
                   }
           
         ]
