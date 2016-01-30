@@ -1,0 +1,46 @@
+{
+    "id": "pdfimage_cheat_sheet", 
+    "name": "pdfimage",
+    "description": "Pdfimages saves images from a Portable Document Format (PDF) file as Portable Pixmap (PPM), Portable Bitmap (PBM), or JPEG files. ", 
+    "metadata": { 
+        "sourceName": "Linux ManualPage",
+        "sourceUrl": "http://www.linuxcommand.org/man_pages/pdfimages1.html "
+    },
+    "template_type" : "keyboard",
+    "section_order": [  
+        "Options"
+    ],
+
+    "sections": {
+        "Options": [
+            {
+                "key": "-f number", 
+                "val": "Specifies the first page to scan."
+            },
+            {
+                "key": "-l number",
+                "val": "Specifies the last page to scan."
+            },
+            {
+                "key": "-j",
+                "val": "Normally, all images are written as PBM or  PPM files.With this option,images in DCT format are  saved as JPEG files.All non-DCT images are saved in PBM/PPM format as usual."
+            },
+            {
+                "key": "-opw password",
+                "val": "Specify the user password for the PDF file."
+            },
+            {
+                "key": "-q",
+                "val": "Don’t print any messages or errors."
+            },
+            {
+                "key": "-v",
+                "val": "Print copyright and version information."
+            },
+            {
+                "key": "-h",
+                "val": "Print usage information.  (-help and --help are equivalent.)"
+            }
+        ]
+    }
+}
