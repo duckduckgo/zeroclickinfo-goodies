@@ -1,0 +1,75 @@
+{
+    "id": "android_studio_cheat_sheet",
+    "name": "AndroidStudioCheatSheet",
+    "description": "The cheat codes for android studio.",
+
+    "metadata": {
+        "sourceName": "DEVELOPERS",
+        "sourceUrl" : "http://developer.android.com/sdk/installing/studio-tips.html"
+    },
+
+    "aliases": [
+        "android studio cheatsheeet", "cheat sheet android studio", "etc"
+    ],
+
+    "template_type": "one of: keyboard, terminal, code, reference",
+
+    "section_order": [
+        "ACTION"],
+
+    "sections": {
+        "ACTION  -  ANDROID STUDIO COMMANDs": [
+            {
+                "key": "Command look-up (autocomplete command name)",
+                "val": "CTRL + SHIFT + A"
+            },
+            {
+                "key": "Project quick fix",
+                "val": "ALT + ENTER"
+            },
+            {
+                "key": "Reformat code",
+                "val": "CTRL + ALT + L (Win) OPTION + CMD + L "
+
+            },
+            {
+                "key": "Show docs for selected API",
+                "val": "CTRL + Q (Win) F1 (Mac) "
+            },
+           {
+            "key": "Show parameters ",
+                "val": "CTRL + P"
+            },
+            {
+              "key":"Generate method", 
+             "val":"ALT + Insert (Win) CMD + N (Mac)"       
+            },
+            {
+              "key":"Jump to source" ,
+             "val":"F4 Win CMD + down-arrow Mac"           
+            },
+            {
+              "key":"Delete line" ,
+             "val":"CTRL + Y (Win) CMD + Backspace (Mac)"           
+            },
+                {
+              "key":"Search by symbol name" ,
+             "val":"CTRL + ALT + SHIFT + N (Win) OPTION + CMD + O (Mac)"
+ 
+            },{
+              "key":"Build",
+              "val":"CTRL + F9 (Win) CMD + F9 (Mac)"
+                  },{
+              "key":"Build and run",
+              "val":"SHIFT + F10 (Win) CTRL + R (Mac)"
+                  },{
+              "key":"Toggle project visibility",
+              "val":"ALT + 1 (Win) CMD + 1 (Mac)"
+                  },{
+              "key":"Navigate open tabs",
+              "val":"ALT + left-arrow; ALT + right-arrow (Win) CTRL + left-arrow; CTRL + right-arrow (Mac)"
+                  }
+          
+        ]
+    
+}}
