@@ -29,7 +29,7 @@
       "Pager",
       "Pagination",
       "Popover",
-      "Position ",
+      "Position",
       "Progressbar",
       "Rating",
       "Tabs",
@@ -74,7 +74,7 @@
             "val": "uib-collapse provides a simple way to hide and show an element with a css transition"
          }
       ],
-      "Dateparser ": [  
+      "Dateparser": [  
          {  
             "key": "(ui.bootstrap.dateparser)",
             "val": "The uibDateParser is what the uib-datepicker uses internally to parse the dates. You can use it standalone by injecting the uibDateParser service where you need it."
@@ -92,7 +92,7 @@
             "val": "Dropdown is a simple directive which will toggle a dropdown menu on click or programmatically."
          }
       ],
-      "Modal ": [  
+      "Modal": [  
          {  
             "key": "(ui.bootstrap.modal)",
             "val": "$uibModal is a service to create modal windows. Creating modals is straightforward: create a template, a controller and reference them when using $uibModal."
