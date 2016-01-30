@@ -1,0 +1,99 @@
+{
+  "id": "adobe_brackets_cheat_sheet",
+  "name": "Adobe Brackets",
+  "description": "Keyboard shortcuts for Brackets, an open source text editor from Adobe",
+  "metadata": {
+    "sourceName": "GitHub",
+    "sourceUrl": "https://github.com/adobe/brackets/wiki/Brackets-Shortcuts"
+  },
+  "aliases": [
+    "brackets",
+    "brackets editor",
+    "adobe brackets editor"
+  ],
+  "template_type": "keyboard",
+  "section_order": [
+    "code"
+  ],
+  "sections": {
+    "code": [
+      {
+        "val": "Main Shortcuts",
+        "key": "[ # ]   and  [ 1 ]"
+      },
+      {
+        "val": "Background Tab open",
+        "key": "[ # 1 ]  or  [ 11 ] "
+      },
+      {
+        "val": "Close one Tab.",
+        "key": "[ # 6 ]  or  [ 12 ]"
+      },
+      {
+        "val": " Add Bookmark.",
+        "key": "[ # 4 ]  or  [ 15 ]"
+      },
+      {
+        "val": "Page up / Move Left.",
+        "key": "[ 4 ] "
+      },
+      {
+        "val": "Page down / Move Right.",
+        "key": "[ 6 ] "
+      },
+      {
+        "val": "Switch Next  Window.",
+        "key": "[ 3 ] "
+      },
+      {
+        "val": "Reload (Refresh).",
+        "key": "[ * ]"
+      },
+      {
+        "val": " Go Forward.",
+        "key": "[ 9 ] "
+      },
+      {
+        "val": "Go Backward.",
+        "key": "[ 7 ] "
+      },
+      {
+        "val": "Copy ",
+        "key": "[ 13 ] "
+      },
+      {
+        "val": " Free Copy (131)",
+        "key": "[ # 8 ]"
+      },
+      {
+        "val": "Saved Bookmarks.",
+        "key": "[ # 2 ]"
+      },
+      {
+        "val": "Go Previous Tab.",
+        "key": "[ # 3 ]"
+      },
+      {
+        "val": "Go Top / Bottom",
+        "key": "[ # 9 ]"
+      },
+      {
+        "val": "Switch Full Screen",
+        "key": "[ # # ]"
+      },
+      {
+        "val": "Enter URL",
+        "key": "[ # 0 ]"
+      },
+      {
+        "val": "Quick Search (17)",
+        "key": "[ # 5 ]"
+      },
+      {
+        "val": "Switch Themes",
+        "key": "[ # * ]"
+      },
+      {}
+    ]
+  }
+}
