@@ -1,0 +1,92 @@
+{
+    "id": "linux_command_line",
+    "name": "Linux Command Line",
+    "description": "Linux command line descriptions",
+    "metadata": {
+        "sourceName": "LinuxDevCenter",
+        "sourceUrl": "http://www.linuxdevcenter.com/cmd/"
+    },
+    "template_type": "code",
+    "section_order": [
+        "Shortcuts",
+        "Navigate"
+    ],
+    "sections": {
+        "Shortcuts": [{
+            "key": "cat",
+            "val": "Read one or more files and print them to standard output."
+        }, {
+            "key": "chown",
+            "val": "Change the ownership of one or more files."
+        }, {
+            "key": "chmod",
+            "val": "Change the access modes for one or more files."
+        }, {
+            "key": "clear",
+            "val": "Clear the terminal display."
+        }, {
+            "key": "cut",
+            "val": "Cut out selected columns or fields from one or more files."
+        }, {
+            "key": "date",
+            "val": "Print the current date and time."
+        }, {
+            "key": "dd",
+            "val": "Make a copy of an input file and send results to an output file."
+        }, {
+            "key": "diff",
+            "val": "Compares two text files."
+        },{
+            "key": "dir",
+            "val": "List the contents of a directory."
+        },{
+            "key": "echo",
+            "val": "Send input string to standard output."
+        }, {
+            "key": "find",
+            "val": "Find files inside directories."
+        }, {
+            "key": "file",
+            "val": "Classify the named files according to the type of data they contain."
+        }, {
+            "key": "grep",
+            "val": "Search one or more files for lines that match a regular expression pattern."
+        }, {
+            "key": "mv",
+            "val": "Move one or more files to a directory."
+        }, {
+            "key": "man",
+            "val": "Display information from the online reference manuals."
+        }, {
+            "key": "mkdir",
+            "val": "Create one or more directories."
+        },{
+            "key": "pwd",
+            "val": "Displays the present working directory."
+        },{
+            "key": "passwd",
+            "val": "Create or change a password associated with a user name."
+        },{
+            "key": "rm",
+            "val": "Delete one or more files."
+        },{
+            "key": "rmdir",
+            "val": "Delete the named directories. Directories are deleted from the parent directory and must be empty."
+        },{
+            "key": "strings",
+            "val": "Search each file specified and print any printable character strings found that are at least four characters long and followed by an unprintable character."
+        },{
+            "key": "tail",
+            "val": "Print the last 10 lines of each named file to standard output."
+        },{
+            "key": "which",
+            "val": "List the full pathnames of the files that would be executed if the named commands had been run, by searching the user's $PATH environment variable."
+        },{
+            "key": "who",
+            "val": "Show who is logged into the system."
+        },{
+            "key": "whoami",
+            "val": "Present current user ID."
+        }]
+    }
+}
