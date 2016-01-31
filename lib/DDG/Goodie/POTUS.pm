@@ -7,8 +7,7 @@ use Lingua::EN::Numbers::Ordinate qw(ordsuf ordinate);
 use Lingua::EN::Words2Nums;
 use YAML::XS 'LoadFile';
 
-triggers startend => 'potus';
-triggers any => 'president of the united states', 'president of the us';
+triggers query_lc => qr/^((who\s+(is|was)\s+(the\s)?((\d+(?:st|nd|rd|th)\s+)?))?(POTUS|(president\s+of\s+(USA|US|united\s+states|united\s+states\s+of\s+america))))$/i; 
 
 zci answer_type => 'potus';
 zci is_cached   => 1;
