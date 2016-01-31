@@ -7,7 +7,7 @@
         "sourceUrl": "http://www.linguanaut.com/english_hindi.htm"
     },
     "aliases": [
-        "hindi phrases", "english to hindi", "basic hindi phrases", "basic hindi", "useful hindi phrases"
+        "hindi phrases", "english to hindi", "basic hindi phrases", "basic hindi", "useful hindi phrases", "spices in hindi"
     ],
     "template_type": "language",
     "section_order": [
@@ -15,7 +15,8 @@
         "Getting Help",
         "Travelling",
         "Etiquette",
-        "Going out for dinner"
+        "Going out for dinner",
+        "Spices"
     ],
     "description": "Basic Hindi words and phrases",
     "sections": {
@@ -229,6 +230,29 @@
                 "key": "The check, please",
                 "val": "बिल/चेक लाइये",
                 "trn": "bil/chek lāiye"
+            }
+        ],
+        "Spices": [
+            {
+                "key": "Asafoetida",
+                "val": "हींग",
+                "trn": "Hing"
+            }, {
+                "key": "Capsicum",
+                "val": "शिमला मिर्च",
+                "trn": "Shimla Mirch"
+            }, {
+                "key": "Cinnamon",
+                "val": "दालचीनी",
+                "trn": "Dalchini"
+            }, {
+                "key": "Cloves",
+                "val": "लौंग",
+                "trn": "Long"
+            }, {
+                "key": "Fennel",
+                "val": "सौंफ",
+                "trn": "Saunf"
             }
         ]
     }
