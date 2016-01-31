@@ -63,8 +63,8 @@
          },
          {
             "key" : "Good luck!",
-            "val" : "সুভাগ্য",
-            "trn" : "xubhagyô"
+            "val" : "সুভাগ্য!",
+            "trn" : "xubhagyô!"
          },
          {
             "key" : "Pleased to meet you.",
@@ -72,14 +72,14 @@
             "trn" : "apûnak lôg pai bhal lagil"
          },
          {
-            "key" : "Goodbye !",
-            "val" : "বিদায়",
-            "trn" : "biday"
+            "key" : "Goodbye!",
+            "val" : "বিদায়!",
+            "trn" : "biday!"
          },
          {
             "key" : "Congratulations!",
-            "val" : "কংগ্রেশ্বুলেশ্বনছ",
-            "trn" : "hubeshya"
+            "val" : "কংগ্রেশ্বুলেশ্বনছ!",
+            "trn" : "hubeshya!"
          }
       ],
       "Getting Help" : [
@@ -91,12 +91,12 @@
          {
             "key" : "Can you speak more slowly, please?",
             "val" : "অনুগ্ৰহ কৰি লাহে লাহে কওঁক?",
-            "trn" : "ônugrôh kôri lahe lahe kôûk"
+            "trn" : "ônugrôh kôri lahe lahe kôûk?"
          },
          {
             "key" : "Please say that again?",
             "val" : "অনুগ্ৰহ কৰি আকৌ এবাৰ ক’ব?",
-            "trn" : "ônugrôh kôri akow ebar kobo"
+            "trn" : "ônugrôh kôri akow ebar kobo?"
          },
          {
             "key" : "How do you say \"X\" in Assamese?",
@@ -121,13 +121,13 @@
          },
          {
             "key" : "I need a doctor!",
-            "val" : "মোক এজন ডাক্তৰৰ প্রয়োজন।",
-            "trn" : "Muk eta doctor lagibo"
+            "val" : "মোক এজন ডাক্তৰৰ প্রয়োজন।!",
+            "trn" : "Muk eta doctor lagibo!"
          },
          {
             "key" : "Can you write that down, please?",
             "val" : "অনুগ্ৰহ কৰি লিখি দিয়ক?",
-            "trn" : "ônugrôh kôri likhi diyôk"
+            "trn" : "ônugrôh kôri likhi diyôk?"
          },
          {
             "key" : "Call an ambulance!",
@@ -169,7 +169,7 @@
          {
             "key" : "How old are you?",
             "val" : "আপোনাৰ বয়স কিমান?",
-            "trn" : "apunar boyokh"
+            "trn" : "apunar boyokh?"
          },
          {
             "key" : "Hello",
@@ -196,7 +196,7 @@
          {
             "key" : "Where?",
             "val" : "ক'ত?",
-            "trn" : "Kota"
+            "trn" : "Kota?"
          },
          {
             "key" : "Do you have rooms available?",
