@@ -1,0 +1,41 @@
+<table class="calendar">
+    <tr>
+        <th colspan="7">
+            <span class="circle t_left">
+                <a href="/?q=calendar {{previous_month}}">
+                    <span class="ddgsi ddgsi-arrow-left"></span>
+                </a>
+            </span>
+            <span class="calendar__header">
+                <b>{{month_year}}</b>
+            </span>
+            <span class="circle t_right">
+                <a href="/?q=calendar {{next_month}}">
+                    <span class="ddgsi ddgsi-arrow-right"></span>
+                </a>
+            </span>
+        </th>
+    </tr>
+    <tr>
+        <th>S</th>
+        <th>M</th>
+        <th>T</th>
+        <th>W</th>
+        <th>T</th>
+        <th>F</th>
+        <th>S</th>
+    </tr>
+    {{#each weeks}}
+        <tr>
+        {{#each this}}
+            <td>
+                {{#unless today}}
+                    {{../day}}
+                {{else}}
+                    <span class="calendar__today circle">{{../day}}</span>
+                {{/unless}}
+            </td>
+        {{/each}}    
+        </tr>
+    {{/each}}
+</table>
