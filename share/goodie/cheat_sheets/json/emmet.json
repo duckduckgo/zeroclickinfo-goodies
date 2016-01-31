@@ -6,9 +6,6 @@
 		"sourceName": "Emmet Documentation",
 		"sourceUrl": "http://docs.emmet.io/cheat-sheet/"
 	},
-	"aliases": [
-		"emmet help"
-	],
 	"template_type": "code",
 	"section_order": ["General syntax", "HTML", "CSS"],
 	"sections": {
