@@ -63,9 +63,8 @@
               "val":"[ALT]  [1] "
                   },{
               "key":"Navigate open tabs",
-              "val":"[ALT]  [<-] ; [ALT] [->]"
+              "val":"[ALT]  [←] ; [ALT] [→]"
                   }
           
-        ]
-    
+        ]    
 }}
