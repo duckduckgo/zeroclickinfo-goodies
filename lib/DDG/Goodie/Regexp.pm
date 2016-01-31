@@ -1,5 +1,6 @@
 package DDG::Goodie::Regexp;
-# ABSTRACT: Parse a regexp.
+
+# ABSTRACT: Parse a regexp and list the matches
 
 use strict;
 use warnings;
@@ -20,7 +21,7 @@ sub compile_re {
 
 # Using $& causes a performance penalty, apparently.
 sub get_full_match {
-    return substr(shift, $-[0], $+[0] - $-[0]);
+    return html_enc(substr(shift, $-[0], $+[0] - $-[0]));
 }
 
 # Ensures that the correct numbered matches are being produced.
@@ -44,11 +45,11 @@ sub get_match_record {
     my $matches = {};
     $matches->{'Full Match'} = get_full_match($str);
     foreach my $match (keys %+) {
-		    $matches->{"Named Capture <$match>"} = $+{$match};
+        $matches->{"Named Capture <$match>"} = html_enc($+{$match});
     };
     my $i = 1;
     foreach my $match (@numbered) {
-        $matches->{"Subpattern Match $i"} = $match;
+        $matches->{"Subpattern Match $i"} = html_enc($match);
         $i++;
     };
     return $matches;
@@ -80,7 +81,7 @@ handle query => sub {
             name => 'Answer',
             data => {
                 title       => "Regular Expression Match",
-                subtitle    => "Match regular expression /$regexp/$modifiers on $str",
+                subtitle    => html_enc("Match regular expression /$regexp/$modifiers on $str"),
                 record_data => $matches,
                 record_keys => \@key_order,
             },
