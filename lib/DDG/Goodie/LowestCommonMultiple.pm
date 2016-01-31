@@ -1,7 +1,11 @@
 package DDG::Goodie::LowestCommonMultiple;
 
-use DDG::Goodie;
+
 use strict;
+use DDG::Goodie;
+
+zci answer_type => "greatest_common_factor";
+zci is_cached   => 1;
 triggers startend => 'lowest common multiple', 'lowest common multiple of', 'lcm','lcm of','least common multiple';
 
 handle remainder => sub {
