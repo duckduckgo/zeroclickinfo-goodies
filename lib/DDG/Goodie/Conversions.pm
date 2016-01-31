@@ -167,11 +167,25 @@ handle query_lc => sub {
 
     $factor = $styler->for_display($factor);
 
-    return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
+    return "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
-        input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
-        operation => 'convert',
-        result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
+        id   => 'conversions',
+        name => 'conversions',
+        data => {
+            parsed_input      => $styler->with_html($factor) . ' ' . $result->{'from_unit'},
+            text_result       => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
+            unit_from         => $result->{'from_unit'},
+            unit_to           => $result->{'to_unit'},
+            value_in          => $styler->for_computation($factor),
+            value_out         => $styler->for_computation($result->{'result'}),
+            physical_quantity => $result->{'type'}
+        },
+        templates => {
+            group => 'text',
+            options => {
+                content => 'DDH.conversions.content'
+            }
+        }
       };
 };
 

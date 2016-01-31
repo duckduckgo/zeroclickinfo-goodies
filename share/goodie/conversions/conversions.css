@@ -1,0 +1,16 @@
+.zci__conversions_left, .zci__conversions_equals, .zci__conversions_right {
+	display: inline-block;
+}
+
+.zci__conversions-controls input {
+	width: 5em;
+}
+
+.zci__conversions-controls input, .zci__conversions-controls select {
+	font-size: 20px;
+	padding: 5px;
+}
+
+.zci__conversions_physical_quantity {
+	margin-top: 10px;
+}
