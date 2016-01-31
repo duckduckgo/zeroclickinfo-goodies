@@ -1,15 +1,15 @@
 {
   "id": "itunes_export_and_import_cheat_sheet",
-  "name": "itunes_importexport",
+  "name": "itunes_importexport.json",
   "description": "Keyboard shortcuts for Brackets, an open source text editor from Adobe",
   "metadata": {
     "sourceName": "Autismate",
     "sourceUrl": "http://autismate.com/Support/TeachMate/How-To/Managing-Users/Import-User-from-iTunes/"
   },
   "aliases": [
-    "brackets",
-    "brackets editor",
-    "adobe brackets editor"
+    "Itunes",
+    "import and export",
+    "Itunes import and export"
   ],
   "template_type": "keyboard",
   "section_order": [
