@@ -3,11 +3,11 @@
     "name": "Pandas",
     "description": "Explanation of Pandas library with syntax and properties",
     "metadata": {
-        "sourceName": "analyticsvidhya",
+        "sourceName": "Analytics Vidhya",
         "sourceUrl": "http://www.analyticsvidhya.com/blog/2015/07/11-steps-perform-data-analysis-pandas-python/"
     },
     "aliases": [
-        "python pandas", "pandas cheatsheet" 
+        "python pandas", "pandas" 
     ],
     "template_type": "terminal",
     "section_order": [
@@ -48,7 +48,7 @@
             "key": "df.columns"
         }],
         "Rename Columns of Dataframe": [{
-            "val": "This method will create a new dataframe with new column name",
+            "val": "Create a new dataframe",
             "key": "df2=df.rename(columns={'old_columnname':'new_columnname'})"
         }, {
             "val": "To rename the column of existing dataframe",
@@ -68,16 +68,16 @@
             "key": "df\\[(df\\['column1'\\]>10) | df\\['column2'\\]==50\\]"
         }],
         "Handling Missing Values": [{
-            "val": "It is used to drop rows and columns having missing data",
+            "val": "Drop rows and columns having missing data",
             "key": "df1.dropna()"
         }, {
-            "val": "It replace all missing values with 5",
+            "val": "Replace all missing values with 5",
             "key": "df2.filna(value=5)"
         }, {
             "val": "Find mean value of column",
             "key": "mean=df2['column1'].mean()"
         }, {
-            "val": "It replace all the missing values of column1 with mean of available values",
+            "val": "Replace all the missing values of column1 with mean of available values",
             "key": "df2['column1'].filna(mean)"
         }],
         "Creating New Columns": [{
@@ -104,7 +104,7 @@
             "key": "pd.crosstab(df.column1,df.column2)"
         }],
         "Merging/Concatinating Dataframes": [{
-            "val": "It concatinate two or more dataframes based on columns",
+            "val": "Concatinate two or more dataframes based on columns",
             "key": "pd.concat([df1,df2])"
         }, {
             "val": "We can perform right, left and inner joins also",
@@ -114,24 +114,24 @@
             "val": "Map: This will add 10 to each element of column1",
             "key": "df\\['column1'\\].map(lambda x:10+x)"
         }, {
-            "val": "This will concatinate 'hello' at the beginning of each elements",
+            "val": "Concatinate 'hello' at the beginning of each elements",
             "key": "df\\['column1'\\].map(lambda x:'hello'+x)"
         }, {
-            "val": "Apply: It applies a fucntion along any axis of the dataframe",
+            "val": "Apply: Applies a fucntion along any axis of the dataframe",
             "key": "df[['column1','column2']].apply(sum)"
         }],
         "Identify Unique Values": [{
-            "val": "This fucntion helps to return unique values of a column",
+            "val": "Returns unique values of a column",
             "key": "df['column1'].unique()"
         }],
         "Basic Statical Methods": [{
-            "val": "This returns a quick stats(count, mean, std, min, first quartile) on suitable columns",
+            "val": "Returns a quick stats(count, mean, std, min, first quartile) on suitable columns",
             "key": "df.describe()"
         }, {
-            "val": "It returns co-variance between suitable columns",
+            "val": "Returns co-variance between suitable columns",
             "key": "df.cov()"
         }, {
-            "val": "It returns co-relation between suitable columns",
+            "val": "Returns co-relation between suitable columns",
             "key": "df.corr()"
         }]
     }
