@@ -1,12 +1,12 @@
 {
     "id": "angular2_cheat_sheet",
     "name": "Angular2",
-    "description": "Angular 2 for TypeScript Cheat Sheet ",
+    "description": "Reference for Angular 2 Templates, Directives Components, Decorators & Dependency Injection.",
     "metadata": {
         "sourceName": "Angular",
         "sourceUrl": "https://angular.io/docs/ts/latest/guide/cheatsheet.html"
     },
-    "aliases": ["angular2", "angularjs 2", "angular 2"],
+    "aliases": ["angularjs 2", "angular 2"],
     "template_type": "terminal",
     "section_order": ["Bootstraping", "Template Syntax", "Built-in Directives", "Forms", "Class Decorators", "Directive Configuration", "Component Configuration", "Dependency Injection"],
     "sections": {
