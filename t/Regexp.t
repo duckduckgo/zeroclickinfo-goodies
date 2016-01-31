@@ -37,7 +37,7 @@ ddg_goodie_test([qw( DDG::Goodie::Regexp )],
         'Full Match'           => 'Harry is awesome',
         'Named Capture <name>' => 'Harry',
         'Subpattern Match 1'   => 'Harry',
-    }, '/(?<name>Harry|Larry) is awesome/', 'Harry is awesome'),
+    }, '/(?&lt;name&gt;Harry|Larry) is awesome/', 'Harry is awesome'),
     'regex /(he|she) walked away/ he walked away' => build_test({
         'Full Match'         => 'he walked away',
         'Subpattern Match 1' => 'he',
@@ -53,7 +53,7 @@ ddg_goodie_test([qw( DDG::Goodie::Regexp )],
         'Full Match'             => 'DDG::Goodie::Regexp',
         'Named Capture <goodie>' => 'Regexp',
         'Subpattern Match 1'     => 'Regexp',
-    }, '/^DDG::Goodie::(?<goodie>\w+)$/', 'DDG::Goodie::Regexp'),
+    }, '/^DDG::Goodie::(?&lt;goodie&gt;\w+)$/', 'DDG::Goodie::Regexp'),
     'regexp /foo/ foo' => build_test({
         'Full Match' => 'foo',
     }, '/foo/', 'foo'),
@@ -84,4 +84,3 @@ ddg_goodie_test([qw( DDG::Goodie::Regexp )],
 );
 
 done_testing;
-
