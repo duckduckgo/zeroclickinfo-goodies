@@ -46,7 +46,9 @@ sub getAliases {
 
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
-                $results{lc($alias)} = $file;
+                my $lc_alias = lc $alias;
+                die "Name already in use '$lc_alias' in $file" if defined($results{$lc_alias});
+                $results{lc($lc_alias)} = $file;
             }
         }
     }
