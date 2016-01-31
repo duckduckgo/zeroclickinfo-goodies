@@ -37,21 +37,21 @@ handle remainder => sub {
         (?:on|for)?\s?
         (?<when>$datestring_regex)?
     $/xi;
-    
+
     my ($lat, $lon, $tz) = ($loc->latitude, $loc->longitude, $loc->time_zone);
     my $where = where_string();
     return unless (($lat || $lon) && $tz && $where);    # We'll need a real location and time zone.
     my $dt = DateTime->now;;
     $dt = parse_datestring_to_date($+{'when'}) if($+{'when'});
-    
+
     return unless $dt;                                  # Also going to need to know which day.
     $dt->set_time_zone($tz) unless ($+{'lat'} && $+{'lon'});
-    
+
     $lon = parse_arc($+{'lon'}) if ($+{'lon'});
     $lat = parse_arc($+{'lat'}) if ($+{'lat'});
-    
+
     $where = "Coordinates ${lat}°N ${lon}°E" if($+{'lat'} && $+{'lon'});
-    
+
     my $sun_at_loc = DateTime::Event::Sunrise->new(
         longitude => $lon,
         latitude  => $lat,
@@ -126,11 +126,12 @@ sub pretty_output {
             group => 'text',
             item => 0,
             options => {
+                title_content => 'DDH.sun_info.title',
                 content => 'DDH.sun_info.content'
             }
         }
     };
-    
+
 }
 
 1;
