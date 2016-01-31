@@ -45,6 +45,11 @@ my %standard_triggers = (
         'quick reference',
         'reference',
     ],
+    'math' => [
+        maybe_plural('equation'),
+        maybe_plural('formula'),
+        'formulae',
+    ],
 );
 
 # All cheat sheets are triggered by these.
