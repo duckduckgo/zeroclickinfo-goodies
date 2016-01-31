@@ -90,6 +90,7 @@ ddg_goodie_test(
             result    => 'Abraham Lincoln'
         }
     ),
+    "vice president of the united states" => undef,
 );
 
 done_testing;
