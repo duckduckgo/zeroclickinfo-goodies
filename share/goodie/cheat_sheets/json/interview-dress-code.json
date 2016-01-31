@@ -15,7 +15,7 @@
     "sections": {
         "Boys": [{
             "key":"Shirt Color",
-            "val":"Light blue / white"
+            "val":"Light Blue / White"
           }, {  
             "key":"Trouser and Coat Color",
             "val":"Navy Blue / Black / Charcoal Gray"
@@ -40,7 +40,7 @@
           }],
         "Girls": [{  
             "key":"Shirt Color",
-            "val":"Any light shade / white"
+            "val":"Any light shade / White"
           }, {  
             "key":"Trouser and Coat Color",
             "val":"Navy Blue / Black / Charcoal Gray with narrow bottom trouser"
