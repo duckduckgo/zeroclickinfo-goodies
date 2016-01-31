@@ -36,20 +36,6 @@ DDH.calculator.build = function() {
         }
     };
 
-    // var MathHelper = {
-    //     _factorialCache: [],
-    //     factorial: function(n) {
-    //         // TOREVISIT - from http://stackoverflow.com/a/3959275/1139682
-    //         if (n === 0 || n === 1)
-    //             return 1;
-    //         if (MathHelper._factorialCache[n] > 0)
-    //             return MathHelper._factorialCache[n];
-    //         MathHelper._factorialCache[n] = MathHelper.factorial(n-1) * n;
-    //         return MathHelper._factorialCache[n];
-    //         // return MathHelper._factorialCache[n] = MathHelper.factorial(n-1) * n;
-    //     }
-    // };
-
     /**
      * Keycodes of keys
      * @type {Object}
@@ -90,8 +76,6 @@ DDH.calculator.build = function() {
     }
 
     CalcField.prototype.asText = function() {
-        // console.log('[CF.asText] typeof this.rep: ' + typeof(this.rep));
-        // console.log('[CF.asText] jQuery.type this.rep: ' + jQuery.type(this.rep));
         if (typeof this.rep === 'string') {
           return this.rep;
         }
@@ -130,9 +114,7 @@ DDH.calculator.build = function() {
             console.warn("[CalcField.accessField] field access is greater than num fields!: " + this.numFields + ", " + thisFieldToAccess);
         } else {
             if (pos.length === 0) {
-                // return this.fields[thisFieldToAccess];
                 return this;
-                // return this.fields[thisFieldToAccess];
             }
             var restToAccess = pos.slice(1);
             clog("[accessField] Rest: " + restToAccess);
@@ -144,25 +126,15 @@ DDH.calculator.build = function() {
     CalcField.prototype.setField = function(pos, val) {
       console.log('[CF.setField] setting field: ' + pos + ' to ' + val);
       var thisFieldToAccess = pos[0];
-      // if (thisFieldToAccess >= this.fields.length) {
-      //     clog("[accessField] Attempt to access a field not yet defined!");
-      //     return;
-      // }
       if (thisFieldToAccess >= this.numFields) {
           console.warn("[CF.setField] field access is greater than num fields!: " + this.numFields + ", " + thisFieldToAccess);
       } else {
           if (pos.length === 1) {
             this.fields[pos[0]] = val;
           }
-          // if (pos.length === 0) {
-          //     // return this.fields[thisFieldToAccess];
-          //     return this;
-          //     // return this.fields[thisFieldToAccess];
-          // }
           var newPos = pos.slice(1);
           clog("[C.setField] Rest: " + newPos);
           return this.fields[thisFieldToAccess].setField(newPos, val);
-          // return this.fields[thisFieldToAccess].accessField(restToAccess);
       }
     };
 
@@ -1049,74 +1021,30 @@ DDH.calculator.build = function() {
         // var query = this.storage.join('');
         var query = this.toText();
         console.log("Query: " + query);
-        // $.getJSON("https://crossorigin.me/" + "https://api.duckduckgo.com/?format=json&q=" + query, function(data) {
-        // $.getJSON("https://crossorigin.me/" + "https://api.duckduckgo.com/?format=json&q=1+7", function(data) {
-        // $.getJSON("https://crossorigin.me/" + "https://api.duckduckgo.com/?format=json&q=" + encodeURIComponent(query), function(data) {
-        var answer;
         // $.getJSON("https://crossorigin.me/" + "https://beta.duckduckgo.com/?format=json&q=" + encodeURIComponent(query), function(data) {
         $.getJSON("http://localhost:5000/?format=json&q=" + encodeURIComponent(query), function(data) {
-            // console.log("Data: " + data);
-            // console.log("Answer: " + data.Answer);
-            // var answ1 = data.Answer.data.subtitle;
-            // console.log("sub: " + answ1);
             var answerValue = data.Answer.data.text_result;
             var formattedInput = data.Answer.data.parsed_input;
-            // var answerComponents = data.Answer.match(/^([0-9\.,]+) ([a-zA-Z].*)$/);
-            // var answerValue = answerComponents[1].replace(/,/g,"");
-            // console.log("Value: " + answerValue);
-            // $("#tile__past-calc").text(answerValue);
-            // $("#tile__past-formula").text(answerValue);
             calc._cache.$inputField.text(answerValue);
             calc.history.add(formattedInput, answerValue);
             answer = answerValue;
             return answerValue;
         });
-        return answer;
-        // var arr = _arr || [].concat(this.storage);
-        // var path = _path || [];
-        // var type = jQuery.type(arr);
-
-        // // arr should be an array
-        // var flatArr = [];
-        // for (var i = 0; i < arr.length; i++) {
-        //     type = jQuery.type(arr[i]);
-        //     switch (type) {
-        //     case 'array':
-        //         flatArr[i] = this.calculateFragment(arr[i]);
-        //         break;
-        //     default: //case 'string':
-        //         // check Constants handling
-        //         flatArr[i] = /*temp*/ (isNumber(arr[i]) ? +arr[i] : arr[i]);
-        //         break;
-        //     }
-        // }
-
-        // // OP_*
-        // flatArr = this.calculateOperations(flatArr);
-        // // TEMP FIX: For push
-        // if (jQuery.isArray(flatArr)) {
-        //     for (i = 0; i < flatArr.length; i++) {
-        //         if (typeof flatArr[i] !== 'undefined') {
-        //             return flatArr[i];
-        //         }
-        //     }
-        // }
-        // return flatArr;
     };
 
     Formula.prototype.calculate = function() {
         this.isCalculated = true;
         var html = this.toHtml();
-        var result = this.calculateResult();
-        clog('[calculate] result:', result);
+        this.calculateResult();
+        var result = $("#zci__calculator-display-main").text();
+        clog('[calculate] result: ' + result);
         calc._cache.$formulaMinor.html(html);
         // calc._cache.$inputField.text(result);
 
         // calc.history.add(html, result);
         // Prepare for next calculation
         console.log('next formula:', ''+result);
-        calc.formula = new Formula(''+result);
-        calc.formula.isCalculated = true;
+        calc.formula.reset();
 
         // Shhhh... ;)
         if (result === 42) {
@@ -1367,7 +1295,7 @@ DDH.calculator.build = function() {
         ui: {
             bindBtnEvents: function() {
                 $('.tile__tabs .tile__ctrl__btn', calc._cache.$ctx)
-                    .on('click keypress', function(e){
+                    .on('click keypress', function(e) {
                         if (e.type === 'keypress' && e.which === K.BACKSPACE) {
                             calc.process.backspace();
                             return;
