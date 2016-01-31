@@ -185,16 +185,16 @@ handle remainder => sub {
     };
 
     return 'Cheat Sheet', structured_answer => {
-        id => 'cheat_sheets',
+        id         => 'cheat_sheets',
         dynamic_id => $data->{id},
-        name => 'Cheat Sheet',
-        data => $data,
-        templates => {
-            group => 'base',
-            item => 0,
+        name       => 'Cheat Sheet',
+        data       => $data,
+        templates  => {
+            group   => 'base',
+            item    => 0,
             options => {
                 content => "DDH.cheat_sheets.detail",
-                moreAt => 0
+                moreAt  => 0
             }
         }
     };
