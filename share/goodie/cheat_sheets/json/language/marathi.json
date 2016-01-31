@@ -38,7 +38,7 @@
          {
             "key" : "Thank you very much!",
             "val" : "खूप खूप धन्यवाद!",
-            "trn" : "Khup khup dhannywad"
+            "trn" : "Khup khup dhannywad!"
          },
          {
             "key" : "You're welcome",
@@ -142,9 +142,9 @@
       ],
       "Travelling" : [
          {
-            "key" : "Turn left.",
-            "val" : "डावीकडे वळा.",
-            "trn" : "Davikade vala."
+            "key" : "Turn left",
+            "val" : "डावीकडे वळा",
+            "trn" : "Davikade vala"
          },
          {
             "key" : "Where is the exit?",
@@ -162,9 +162,9 @@
             "trn" : "To dur ahe ka?"
          },
          {
-            "key" : "Go straight ahead.",
-            "val" : "सरळ पुढे जा.",
-            "trn" : "Saral pudhe ja."
+            "key" : "Go straight ahead",
+            "val" : "सरळ पुढे जा",
+            "trn" : "Saral pudhe ja"
          },
          {
             "key" : "Do you have a city map?",
@@ -172,14 +172,14 @@
             "trn" : "Tuzyakade shahar nakasha ahe ka?"
          },
          {
-            "key" : "Please stop here.",
-            "val" : "येथे थांबवणे.",
-            "trn" : "Yethe thamavane."
+            "key" : "Please stop here",
+            "val" : "येथे थांबवणे",
+            "trn" : "Yethe thamavane"
          },
          {
-            "key" : "Turn right.",
-            "val" : "उजवीकडे वळा.",
-            "trn" : "Ujavikade vala."
+            "key" : "Turn right",
+            "val" : "उजवीकडे वळा",
+            "trn" : "Ujavikade vala"
          },
          {
             "key" : "Where can I find the taxis?",
@@ -209,9 +209,9 @@
             "trn" : "Krupaya, Dhanadesh!"
          },
          {
-            "key" : "A cup of coffee please.",
-            "val" : "कॉफी एक कप करा.",
-            "trn" : "Coffy ek cup kara."
+            "key" : "A cup of coffee please",
+            "val" : "कॉफी एक कप करा",
+            "trn" : "Coffy ek cup kara"
          },
          {
             "key" : "Where is a good restaurant?",
@@ -219,9 +219,9 @@
             "trn" : "Kuthe ek changla upahargruha ahe?"
          },
          {
-            "key" : "A glass of water please.",
-            "val" : "कृपया एक पेला पाणी.",
-            "trn" : "Krupaya ek pela pani."
+            "key" : "A glass of water please",
+            "val" : "कृपया एक पेला पाणी",
+            "trn" : "Krupaya ek pela pani"
          },
          {
             "key" : "A table for two please!",
