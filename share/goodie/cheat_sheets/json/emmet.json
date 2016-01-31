@@ -48,26 +48,23 @@
 			"key": "table+"
 		}],
 		"CSS": [{
-				"val": "top, right, bottom, left",
-				"key": "t, r, b, l"
-			}, {
-				"val": "visibility, overflow",
-				"key": "v, ov"
-			}, {
-				"val": "margin, padding",
-				"key": "m, p"
-			}, {
-				"val": "background, color",
-				"key": "bg, c"
-			}, {
-				"val": "list-style",
-				"key": "lis"
-			}, {
-				"val": "border",
-				"key": "bd"
-			}
-
-		]
-
+			"val": "top, right, bottom, left",
+			"key": "t, r, b, l"
+		}, {
+			"val": "visibility, overflow",
+			"key": "v, ov"
+		}, {
+			"val": "margin, padding",
+			"key": "m, p"
+		}, {
+			"val": "background, color",
+			"key": "bg, c"
+		}, {
+			"val": "list-style",
+			"key": "lis"
+		}, {
+			"val": "border",
+			"key": "bd"
+		}]
 	}
 }
