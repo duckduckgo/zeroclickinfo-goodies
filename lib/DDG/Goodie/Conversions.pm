@@ -5,6 +5,9 @@ use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
+zci answer_type => 'conversions';
+zci is_cached   => 1;
+
 use Math::Round qw/nearest/;
 use bignum;
 use utf8;
@@ -21,8 +24,7 @@ attribution                github  => 'https://github.com/elohmrow',
                            github => ['https://github.com/mintsoft', 'Rob Emery'],
                            email   => 'bradley@pvnp.us';
 
-zci answer_type => 'conversions';
-zci is_cached   => 1;
+
 
 my @types = LoadFile(share('ratios.yml'));
 
@@ -180,7 +182,7 @@ handle query_lc => sub {
     return "$factor $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
         id   => 'conversions',
-        name => 'conversions',
+        name => 'Conversions',
         data => {
             parsed_input      => $styler->with_html($factor) . ' ' . $result->{'from_unit'},
             text_result       => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
@@ -194,7 +196,7 @@ handle query_lc => sub {
             group => 'text',
             options => {
                 content => 'DDH.conversions.content'
-            }
+            },
         }
       };
 };
