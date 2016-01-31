@@ -67,7 +67,7 @@
             "trn" : "xubhagyô!"
          },
          {
-            "key" : "Pleased to meet you.",
+            "key" : "Pleased to meet you",
             "val" : "আপোনাক লগ পাই ভাল লাগিল",
             "trn" : "apûnak lôg pai bhal lagil"
          },
@@ -184,12 +184,12 @@
       ],
       "Travelling" : [
          {
-            "key" : "Turn left.",
+            "key" : "Turn left",
             "val" : "বাওঁফালে ঘূৰক।",
             "trn" : "Bao fale ghuribo"
          },
          {
-            "key" : "Turn right.",
+            "key" : "Turn right",
             "val" : "ডান দিকে যান।",
             "trn" : "Daan Dike Zan"
          },
