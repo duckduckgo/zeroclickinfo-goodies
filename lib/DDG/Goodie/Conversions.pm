@@ -188,7 +188,7 @@ handle query_lc => sub {
             unit_to           => $result->{'to_unit'},
             value_in          => $styler->for_computation($factor),
             value_out         => $styler->for_computation($result->{'result'}),
-			physical_quantity => $result->{'type'}
+            physical_quantity => $result->{'type'}
         },
         templates => {
             group => 'text',
