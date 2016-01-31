@@ -10,8 +10,7 @@
     "template_type": "keyboard",
 
     "section_order": [
-        "Actions" 
-        ],
+        "Actions"  ],
 
     "sections": {
         "Actions": [
