@@ -1,21 +1,22 @@
 {  
-   "id":"saints",
-   "name":"Saints Row IV",
-   "description":"Pause the game, and select the 'Extras' option, then choose the 'Cheats' selection. Select 'Add Cheat' and enter one of the following codes to activate the corresponding cheat function. If you entered the code correctly, you will hear a sound. Note: Trophies and auto save are disabled when cheats are activated. However, you are still allowed to manually save while cheats are enabled.",
+   "id":"saints_row_cheat_sheet",
+   "name":"Saints Row IV Cheats",
+   "description":"Saints Row IV is a 2013 open world, action-adventure video game in the Saints Row series developed by Volition and published by Deep Silver.",
    "metadata":{  
-      "sourceName":"Saints Row IV",
+      "sourceName":"cheatcc.com",
       "sourceUrl":"http://www.cheatcc.com/ps3/saintsrow4cheatscodes.html"
    },
    "aliases":[  
-      "saints row 4"
+      "saints row 4","sr 4"
    ],
-   "template_type":"keyboard",
+    "template_type":"reference",
    "section_order":[  
-      "All Unlockables",
       "Player Ability",
-      "World"
+        "World",
+      "All Unlockables"
    ],
    "sections":{  
+      
       "All Unlockables":[  
          {  
             "val":"All Unlockables",
