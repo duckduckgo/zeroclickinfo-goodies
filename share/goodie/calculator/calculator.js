@@ -433,7 +433,7 @@ DDH.calculator.build = function() {
         this.isCalculated = false;
 
         if (!(initialFormStr === undefined)) {
-            console.log('[Formula] initial is undefined!');
+            console.log('[Formula] initial is defined!');
             this.handleString(''+initialFormStr);
         } else {
             this.handleString('0');
@@ -807,77 +807,7 @@ DDH.calculator.build = function() {
     Formula.prototype.fragmentNew = function(val) {
         console.log('[F.fragmentNew] new fragment value: ' + val);
         this.appendFragmentChild(val);
-        // clog('[fragmentNew] Adding fragment: ' + val);
-        // if (val === undefined) {
-        //   console.warn('[fragmentNew] got an undefined value!');
-        //   return;
-        // }
-        // if (pos === undefined) {
-        //     clog('[fragmentNew] Position was undefined');
-        //     pos = this.nextFragmentPos();
-        //     clog('[fragmentNew] new pos: ' + pos);
-        // }
-
-        // var i, ctx = this.storage;
-        // console.log('[fragmentNew] ctx before: ' + ctx);
-        // // for (i = 0; i < pos.length - 1; ++i) {
-        // //     ctx = ctx[pos[i]];
-        // // }
-        // console.log('[fragmentNew] ctx after: ' + ctx);
-        // if (pos.length > 1) {
-        //     var targetField = ctx[pos[0]];
-        //     // if (typeof targetField === 'CalcField') {
-        //     if (targetField instanceof CalcField) {
-        //         targetField.setField(pos.slice(1), val);
-        //     } else {
-        //         console.warn("[fragmentNew]: Tried to set invalid field!");
-        //     }
-        // } else {
-        //     ctx[pos[0] || 0] = val;
-        // }
-        // if (val.needsField) {
-        //     var potNextCursorPos = 0;
-        //     console.log('[F.fragmentNew] moving cursor to ' + pos.concat([0]) + ' (if)');
-        //     this.moveCursorTo(this.nextFieldToFillPos());
-        //     clog('[F.fragmentNew] typeof pos: ' + typeof pos);
-        //     // this.moveCursorTo(pos.concat([0]));
-        // } else {
-        //     console.log('[F.fragmentNew] moving cursor to ' + pos + ' (else)');
-        //     this.moveCursorTo(pos);
-        // }
-        // ctx[pos[i] || 0] = val;
-
-        // if (jQuery.isArray(val)) {
-        //     var potNextCursorPos = val.indexOf('');
-        //     if (potNextCursorPos !== -1) {
-        //         this.moveCursorTo(pos.concat([potNextCursorPos]));
-        //     } else {
-        //         // TODO
-        //         // What to do when fragment is filled
-        //         // Probably case by case
-        //     }
-        // } else {
-        //     this.moveCursorTo(pos);
-        // }
     };
-
-    /**
-     * Continue filling existing fragment of the formula storage
-     * @param  {String} str Value to append to a fragment
-     * @param  {Array?} pos Target position on storage array
-     *                      - by default the cursor fragment
-     */
-    // Formula.prototype.fragmentAppend = function(str, pos) {
-    //     if (pos === undefined) {
-    //         pos = [].concat(this.cursor);
-    //     }
-
-    //     var i, ctx = this.storage;
-    //     for (i = 0; i < pos.length - 1; ++i) {
-    //         ctx = ctx[pos[i]];
-    //     }
-    //     ctx[pos[i] || 0] += str;
-    // };
 
     /**
      * Replace existing fragment of the formula storage
@@ -898,11 +828,6 @@ DDH.calculator.build = function() {
             return;
         }
         this.storage[pos[0]].setField(pos.slice(1), str);
-        // var i, ctx = this.storage;
-        // for (i = 0; i < pos.length - 1; ++i) {
-        //     ctx = ctx[pos[i]];
-        // }
-        // ctx[pos[i] || 0] = str;
 
         this.moveCursorTo(pos);
     };
@@ -1017,22 +942,26 @@ DDH.calculator.build = function() {
 
     // Cursor is at start.
     Formula.prototype.atStart = function() {
-        return (this.atTopLevel && this.cursor[0] === 0);
+        return (this.atTopLevel && (this.cursor[0] === 0));
     };
 
     Formula.prototype.deleteBackwards = function() {
         var pos = this.cursor;
         var deleted;
         if (this.atTopLevel) {
-            if (this.atStart) {
+            if (this.atStart()) {
+                console.log('[F.deleteBackwards] at start for pos: ' + pos);
                 deleted = this.currentField();
-                this.modifyField(BTS.PLACEHOLDER);
+                this.modifyField(BTS['0']);
                 return deleted;
             }
+            console.log('[F.deleteBackwards] storage (before): ' + this.storage);
             deleted = this.storage.pop();
+            console.log('[F.deleteBackwards] storage (after): ' + this.storage);
             this.moveCursorBackward();
             return deleted;
         }
+        console.warn('[F.deleteBackwards] not at top level for pos ' + pos);
     };
     /**
      * Backspace logic
@@ -1046,61 +975,6 @@ DDH.calculator.build = function() {
         }
 
         this.deleteBackwards();
-        // var curField = this.getActiveField();
-        // console.log('[F.handleBackspace] curField:' + curField);
-        // this.fragmentReplace(curField);
-        // if (curField.length > 0 && isNumber(curField)) {
-        //     curField = curField.slice(0, -1);
-        //     this.fragmentReplace(curField);
-        // } else {
-        //     // if there is a previous field
-        //     //     if previous field is FN|PARENTHS
-        //     //        remove fragmentArr|replace with empty ''
-        //     //        remove FN|replace with empty ''
-        //     //     else if previous field is CONST|OP
-        //     //        replace fragment with empty ''
-        //     //     else if previous field is NUM
-        //     //        move to that field's end
-        //     //     else if previous field is ''
-        //     //        move to that field
-        //     // else if there is no field
-        //     //      replace fragmentArr with ''
-
-        //     if (this.hasPreviousField()) {
-        //         var prevField = this.getPreviousFieldInFragment();
-        //         if (prevField === false || !prevField.indexOf('FN_')) {
-        //             this.fragmentReplace('', this.cursor.slice(0, -1));
-        //         } else if (!prevField.indexOf('CONST_') || !prevField.indexOf('OP_')) {
-        //             this.fragmentReplace('');
-        //         } else if (prevField.length > 0) { // NUM
-        //             this.fragmentRemove();
-        //         } else if (prevField === '') {
-        //             var prevPos = this.getPreviousFieldPos();
-        //             if (this.getStartingFieldInFragment().indexOf('FN_') === -1) {
-        //                 // delete field and move cursor to prevField
-        //                 this.fragmentRemove();
-        //             } else {
-        //                 // move cursor to prevField
-        //             }
-        //             this.moveCursorTo(prevPos);
-
-        //         } else {
-        //             console.warn('TOIMPLEMENT: [handleBackspace] had prevField:', prevField);
-        //         }
-        //     } else {
-        //         //clog('BACKSPACE WHILE EMPTY');
-        //     }
-
-        //     // ---after replacements
-        //     // if currField is '' and has previous field
-        //     //    if previous field is NUM
-        //     //       move to that field's send
-        //     //    else
-        //     //       stay
-
-        //     //remove last fragment
-        // }
-
         this.render();
     };
 
@@ -1158,12 +1032,22 @@ DDH.calculator.build = function() {
     //     }
     // };
 
+    Formula.prototype.toText = function() {
+        var i;
+        var textArr = [];
+        for (i=0; i<this.storage.length; i++) {
+            textArr[i] = this.storage[i].asText();
+        }
+        return textArr.join('');
+    };
+
     Formula.prototype.calculateResult = function(_arr, _path) {
         // var query = $("#tile__past-formula").val();
         console.log("Rep: " + calc._cache.$inputField.value);
         console.log("Storage: " + this.storage);
         console.log("Storage[0]: " + this.storage[0]);
-        var query = this.storage.join('');
+        // var query = this.storage.join('');
+        var query = this.toText();
         console.log("Query: " + query);
         // $.getJSON("https://crossorigin.me/" + "https://api.duckduckgo.com/?format=json&q=" + query, function(data) {
         // $.getJSON("https://crossorigin.me/" + "https://api.duckduckgo.com/?format=json&q=1+7", function(data) {
@@ -1254,14 +1138,14 @@ DDH.calculator.build = function() {
         console.log('[F.toHtml] with _arr ' + _arr + ' and _path ' + _path);
         // var arr = _arr || [].concat(this.storage);
         var arr = _arr || this.storage;
-        var path = _path || [];
-        var type = jQuery.type(arr);
-        var compiledStr = '';
+        // var path = _path || [];
+        // var type = jQuery.type(arr);
+        // var compiledStr = '';
 
         // arr should be an array
         var i;
         var flatArr = [];
-        console.log("[toHtml] arr: " + arr);
+        console.log("[F.toHtml] arr: " + arr);
         for (i=0; i<arr.length; i++) {
             // console.log('[F.toHtml] current element: ' + arr[i]);
             // console.log('[F.toHtml] typeof current element: ' + typeof(arr[i]));
@@ -1308,11 +1192,11 @@ DDH.calculator.build = function() {
         // }
 
         //[OP_*]
-        for (i = 0; i < flatArr.length; i++) {
-            if (!(OPS[flatArr[i]] === undefined)) {
-                flatArr[i] = OPS[flatArr[i]].tpl;
-            }
-        }
+        // for (i = 0; i < flatArr.length; i++) {
+        //     if (!(OPS[flatArr[i]] === undefined)) {
+        //         flatArr[i] = OPS[flatArr[i]].tpl;
+        //     }
+        // }
         console.log('[F.toHtml] flatArr: ' + flatArr);
         return '<span>'+flatArr.join(' ')+'</span>';
     };
@@ -1593,62 +1477,17 @@ DDH.calculator.build = function() {
                 }
             },
             cmd: function(cmd) {
-                console.log('[calc.process.cmd] got command: ' + cmd);
+                if (cmd === undefined) {
+                    console.warn('[calc.process.cmd] got undefined command!');
+                    return;
+                }
                 var type = cmd.actionType;
-                // var type = cmd.split('_', 1)[0];
                 if (type === 'META') {
                     cmd.runAction();
                     return;
-                    // switch(cmd.name) {
-                    // case 'CLEAR':
-                    //     // TODO: If holds Shift, force full calc/formula clearing
-                    //     calc.process.backspace();
-                    //     return;
-                    // case 'PROCEED':
-                    //     calc.formula.calculate();
-                    //     return;
-                    // case 'PAR_OPEN':
-                    //     calc.formula.levelUp();
-                    //     return;
-                    // case 'PAR_CLOSE':
-                    //     calc.formula.levelDown();
-                    //     return;
-                    // default:
-                    //     clog('[calc.process.cmd] TODO Unhandled META:', cmd.name);
-                    // }
                 }
-                // if (typeof KEY_ALIASES[chr] !== 'undefined') {
-                //     calc.process.cmd(KEY_ALIASES[chr]);
-                //     return;
-                // }
                 calc.formula.handleCmd(cmd);
-                // calc.formula.handleChr(cmd);
             },
-            // cmd: function(cmd) {
-            //     var type = cmd.split('_', 1)[0];
-
-            //     if (type === 'META') {
-            //         switch(cmd) {
-            //         case 'META_CLEAR':
-            //             // TODO: If holds Shift, force full calc/formula clearing
-            //             calc.process.backspace();
-            //             return;
-            //         case 'META_PROCEED':
-            //             calc.formula.calculate();
-            //             return;
-            //         case 'META_PAR_OPEN':
-            //             calc.formula.levelUp();
-            //             return;
-            //         case 'META_PAR_CLOSE':
-            //             calc.formula.levelDown();
-            //             return;
-            //         default:
-            //             clog('[calc.process.cmd] TODO Unhandled META:', cmd);
-            //         }
-            //     }
-
-            //     calc.formula.handleCmd(type, cmd);
-            // },
 
             // Low level
             key: function (key) {
