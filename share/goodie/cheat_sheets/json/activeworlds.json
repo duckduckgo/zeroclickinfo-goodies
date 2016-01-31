@@ -90,7 +90,11 @@
             {
                 "key": "[numpad /]",
                 "val": "camera zoom out"
-            }                 
+            },      
+            {
+                "key": "[middle mouse]",
+                "val": "toggle mouselook mode on/off"
+            }       
         ],
         "Chat": [   
             {
