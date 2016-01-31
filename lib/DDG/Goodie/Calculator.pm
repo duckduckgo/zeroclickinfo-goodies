@@ -1345,19 +1345,11 @@ handle query => sub {
                 parsed_input => "$generated_input",
                 text_result  => "$result",
                 operations   => \%operations,
-                nums => [7, 8, 9],
-                # trigFunctions => [
-                #     'sine' => {
-                #         name => 'FN_SIN',
-                #         rep => 'sin',
-                #     },
-                # ],
             },
             meta => {
                 signal => 'high',
             },
             templates => {
-                # group  => 'text',
                 group => 'base',
                 options => {
                     content => 'DDH.calculator.calculator',
