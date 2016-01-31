@@ -1,7 +1,7 @@
 {
     "id": "minionese_cheat_sheet",
     "name": "Minionese Cheat Sheet",
-    "description": "A List Of Minion Words And Their English Translations",
+    "description": "A list of Minion words and their English translations",
     "metadata": {
         "sourceName": "Wikia",
         "sourceUrl" : "http://minionpedia.wikia.com/wiki/Dictionary"
@@ -92,7 +92,7 @@
             },
             {
                 "key": "Fire",
-                "val": "BEE DO BEE DO BEE DO"
+                "val": "Bee do"
             },
             {
                 "key": "Kiss Kiss",
