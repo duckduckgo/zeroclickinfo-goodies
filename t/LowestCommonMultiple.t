@@ -12,7 +12,7 @@ ddg_goodie_test(
 
     [qw( DDG::Goodie::LowestCommonMultiple )],
 
-    'gcf 9 81' => test_zci(
+    'lcm 9 81' => test_zci(
 
         'Lowest Common Multiple of 9 and 81 is 81.',
 
@@ -28,7 +28,7 @@ ddg_goodie_test(
 
     ),
 
-    'gcf 9 10' => test_zci(
+    'lcm 9 10' => test_zci(
 
         'Lowest Common Multiple of 9 and 10 is 90.',
 
@@ -44,7 +44,7 @@ ddg_goodie_test(
 
     ),
 
-'gcf 11 2' => test_zci(
+'lcm 11 2' => test_zci(
 
         'Lowest Common Multiple of 11 and 2 is 22.',
 
