@@ -10,11 +10,11 @@
     "template_type": "keyboard",
 
     "section_order": [
-        "ACTIONS" 
+        "Actions" 
         ],
 
     "sections": {
-        "ACTIONS": [
+        "Actions": [
             {
                 "key": "Command look-up (autocomplete command name)",
                 "val": "[CTRL] [SHIFT] [A]"
@@ -46,21 +46,21 @@
             },
             {
               "key":"Delete line" ,
-             "val":"[CTRL] Y "           
+             "val":"[CTRL] [Y] "           
             },
                 {
               "key":"Search by symbol name" ,
-             "val":"[CTRL] [ALT] [SHIFT] N "
+             "val":"[CTRL] [ALT] [SHIFT] [N] "
  
             },{
               "key":"Build",
-              "val":"[CTRL] F9 "
+              "val":"[CTRL] [F9] "
                   },{
               "key":"Build and run",
-              "val":"[SHIFT]  F10 "
+              "val":"[SHIFT]  [F10] "
                   },{
               "key":"Toggle project visibility",
-              "val":"[ALT]  1 "
+              "val":"[ALT]  [1] "
                   },{
               "key":"Navigate open tabs",
               "val":"[ALT]  [<-] ; [ALT] [->]"
