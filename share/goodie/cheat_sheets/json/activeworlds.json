@@ -27,209 +27,209 @@
         "Avatar Movement": [
             {
                 "key": "[↑] / [numpad 8]",
-                "val": "move avatar forward"
+                "val": "Move avatar forward"
             },
             {
                 "key": "[↓] / [numpad 2]",
-                "val": "move avatar backward"
+                "val": "Move avatar backward"
             },
             {
                 "key": "[←] / [numpad 4]",
-                "val": "turn avatar left"
+                "val": "Turn avatar left"
             },
             {
                 "key": "[→] / [numpad 6]",
-                "val": "turn avatar right"
+                "val": "Turn avatar right"
             },
             {
                 "key": "[left shift] / [right shift]",
-                "val": "sidestep"
+                "val": "Sidestep"
             },
             {
                 "key": "ctrl",
-                "val": "run"
+                "val": "Run"
             },
             {
                 "key": "[left alt] [f12] / [numpad 0]",
-                "val": "jump"
+                "val": "Jump"
             },
             {
                 "key": "[numpad -]",
-                "val": "move up (fly)"
+                "val": "Move up (fly)"
             },     
             {
                 "key": "[numpad +]",
-                "val": "move down (fly)"
+                "val": "Move down (fly)"
             },    
             {
                 "key": "[numpad 5]",
-                "val": "stop"
+                "val": "Stop"
             }              
         ],
         "Camera": [
             {
                 "key": "[page up] / [numpad 9]",
-                "val": "look up"
+                "val": "Look up"
             },
             {
                 "key": "[page down] / [numpad 3]",
-                "val": "look down"
+                "val": "Look down"
             },
             {
                 "key": "[home] [numpad 7]",
-                "val": "first person view"
+                "val": "First person view"
             },          
             {
                 "key": "[end] / [numpad 1]",
-                "val": "change camera view"
+                "val": "Change camera view"
             },       
             {
                 "key": "[numpad *]",
-                "val": "camera zoom in"
+                "val": "Camera zoom in"
             },        
             {
                 "key": "[numpad /]",
-                "val": "camera zoom out"
+                "val": "Camera zoom out"
             },      
             {
                 "key": "[middle mouse]",
-                "val": "toggle mouselook mode on/off"
+                "val": "Toggle mouselook mode on / off"
             }       
         ],
         "Chat": [   
             {
                 "key": "[ctrl] [f4]",
-                "val": "show chat window"
+                "val": "Show chat window"
             },  
             {
                 "key": "tab",
-                "val": "focus chat window"
+                "val": "Focus chat window"
             },                 
             {
                 "key": "f8",
-                "val": "show whisper dialog"
+                "val": "Show whisper dialog"
             }      
         ],           
         "World Interaction": [
             {
                 "key": "[left mouse]",
-                "val": "activate object"
+                "val": "Activate object"
             },
             {
                 "key": "[right mouse]",
-                "val": "inspect object (opens object properties dialog)"
+                "val": "Inspect object (opens object properties dialog)"
             },      
             {
                 "key": "[shift] [right mouse]",
-                "val": "inspect multiple objects (opens object properties dialog)"
+                "val": "Inspect multiple objects (opens object properties dialog)"
             },      
             {
                 "key": "[ctrl] [shift] [right mouse]",
-                "val": "inspect all objects in a cell (opens object properties dialog)"
+                "val": "Inspect all objects in a cell (opens object properties dialog)"
             },    
             {
                 "key": "f10",
-                "val": "show cell grid"
+                "val": "Show cell grid"
             },        
             {
                 "key": "f11",
-                "val": "show your position"
+                "val": "Show your position"
             },              
             {
                 "key": "f12",
-                "val": "detach movers"
+                "val": "Detach movers"
             },
             {
                 "key": "shift",
-                "val": "pass through solid objects"
+                "val": "Pass through solid objects"
             }              
         ],
         "Browser": [
             {
                 "key": "[ctrl] [f2]",
-                "val": "show toolbar"
+                "val": "Show toolbar"
             },
             {
                 "key": "f3",
-                "val": "show downloads"
+                "val": "Show downloads"
             },        
             {
                 "key": "[ctrl] [f3]",
-                "val": "show gestures"
+                "val": "Show gestures"
             },
             {
                 "key": "[ctrl] [f5]",
-                "val": "show status bar"
+                "val": "Show status bar"
             },
             {
                 "key": "[ctrl] [f7]",
-                "val": "show credit info"
+                "val": "Show credit info"
             },
             {
                 "key": "f7",
-                "val": "show web browser"
+                "val": "Show web browser"
             },   
             {
                 "key": "f9",
-                "val": "show tabs"
+                "val": "Show tabs"
             }         
         ],     
         "Object Properties": [
             {
                 "key": "delete",
-                "val": "delete current selection"
+                "val": "Delete current selection"
             },
             {
                 "key": "[numpad 0]",
-                "val": "duplicate current selection"
+                "val": "Duplicate current selection"
             },     
             {
                 "key": "↑",
-                "val": "move current selection forward"
+                "val": "Move current selection forward"
             },
             {
                 "key": "↓",
-                "val": "move current selection back"
+                "val": "Move current selection back"
             },
             {
                 "key": "←",
-                "val": "move current selection left"
+                "val": "Move current selection left"
             },
             {
                 "key": "→",
-                "val": "move current selection right"
+                "val": "Move current selection right"
             },            
             {
                 "key": "[numpad +]",
-                "val": "move current selection up"
+                "val": "Move current selection up"
             },
             {
                 "key": "[numpad -]",
-                "val": "move current selection down"
+                "val": "Move current selection down"
             },      
             {
                 "key": "[numpad /]",
-                "val": "tilt current selection 15 degrees on +x axis"
+                "val": "Tilt current selection 15 degrees on +x axis"
             },     
             {
                 "key": "[numpad *]",
-                "val": "tilt current selection 15 degrees on -x axis"
+                "val": "Tilt current selection 15 degrees on -x axis"
             },  
             {
                 "key": "[page down]",
-                "val": "rotate current selection 15 degrees on +y axis"
+                "val": "Rotate current selection 15 degrees on +y axis"
             },  
             {
                 "key": "[page up]",
-                "val": "rotate current selection 15 degrees on -y axis"
+                "val": "Rotate current selection 15 degrees on -y axis"
             },  
             {
                 "key": "home",
-                "val": "roll current selection 15 degrees on +z axis"
+                "val": "Roll current selection 15 degrees on +z axis"
             },  
             {
                 "key": "end",
-                "val": "roll current selection 15 degrees on -z axis"
+                "val": "Roll current selection 15 degrees on -z axis"
             }             
         ]         
     }
