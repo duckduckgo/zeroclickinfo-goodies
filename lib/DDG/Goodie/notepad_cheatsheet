@@ -3,7 +3,7 @@
   "name": "Notepad",
   "description": "Keyboard shortcuts for Notepad, an open source text editor for microsoft",
   "metadata": {
-    "sourceName": "GitHub",
+    "sourceName": "Pnotepad",
     "sourceUrl": "http://www.pnotepad.org/docs/navigation/keyboard_shortcuts/"
   },
   "aliases": [
