@@ -7,7 +7,7 @@
 		"sourceUrl": "http://docs.emmet.io/cheat-sheet/"
 	},
 	"aliases": [
-		"emmet", "emmet help", "emmet cheat sheet"
+		"emmet help"
 	],
 	"template_type": "code",
 	"section_order": ["General syntax", "HTML", "CSS"],
