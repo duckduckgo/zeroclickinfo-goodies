@@ -8,13 +8,14 @@
    },
    "template_type":"reference",
    "section_order":[  
-      "Data Manipulation Language (DML)",
       "Data Definition Language (DDL)",
+      "Data Manipulation Language (DML)",
+      "Data Control Language (DCL)", 
+      "Transaction Control Language (TCL)",
       "Aggregate Functions",
+      "Scalar Functions",
       "Arguments Used with Commands",
-      "SQL Constraints",
-      "Scalar Functions"
-      
+      "SQL Constraints"   
    ],
    "aliases":[  
       "sql statements",
@@ -38,12 +39,10 @@
             "key":"DROP TABLE",
             "val":"Remove a table"
          },
-        
          {  
             "key":"CREATE INDEX",
             "val":"Define a new index"
-         },
-         
+         }, 
          {  
             "key":"DROP INDEX",
             "val":"Remove an index"
@@ -52,12 +51,10 @@
             "key":"DROP VIEW",
             "val":"Remove a view"
          },
-         
          {  
             "key":"TRUNCATE TABLE",
             "val":"Empty a table"
          }
-        
       ],
        "Data Manipulation Language (DML)":[
            
@@ -65,7 +62,6 @@
             "key":"SELECT",
             "val":"Retrieve rows from a table or view"
          },
-         
          {  
             "key":"INSERT INTO",
             "val":"Create new rows in a table"
@@ -81,10 +77,32 @@
           {  
             "key":"SELECT <columns> INTO",
             "val":"Create a new table from the results of a query"
-         }
-         
-         
+         }    
       ],
+       "Data Control Language (DCL)":[  
+         {  
+            "key":"GRANT",
+            "val":"To allow specified users to perform specified tasks"
+         },
+         {  
+            "key":"REVOKE",
+            "val":"Removes user access rights or privileges to the database objects"
+         }     
+      ],
+       "Transaction Control Language (TCL)":[  
+         {  
+            "key":"COMMIT",
+            "val":"Save or enable DML changes to the database"
+         },
+         {  
+            "key":"ROLLBACK",
+            "val":"To undo DML changes till in a transaction"
+         },
+         {  
+            "key":"SAVEPOINT",
+            "val":"To divide a transaction"
+         }  
+      ]
       "Aggregate Functions":[
          {
             "key":"AVG()",
@@ -124,7 +142,6 @@
             "key":"LEN()",
             "val":"Returns the length of a text field"
          },
-         
          {  
             "key":"ROUND()",
             "val":"Rounds a numeric field to the number of decimals specified"
@@ -211,7 +228,7 @@
             "key":"FULL JOIN",
             "val":"Returns all rows from both tables with nulls in place where the join condition is not met"
          },
-          {  
+         {  
             "key":"UNION",
             "val":"Combines the result of two or more SELECT statements and selects only distinct values"
          },
@@ -236,8 +253,7 @@
          {  
             "key":"FOREIGN KEY",
             "val":"Ensure the referential integrity of the data in one table to match values in another table"
-         },
-         
+         },   
          {  
             "key":"DEFAULT",
             "val":"Specifies a default value for a column"
