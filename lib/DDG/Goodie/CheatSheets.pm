@@ -80,6 +80,7 @@ my %trigger_lookup = ();
 sub add_triggers {
     my ($options, $type, $triggers) = @_;
     my $existing = $additional_triggers{$type};
+    $triggers = [$triggers] unless ref $triggers eq 'ARRAY';
     foreach my $trigger (@{$triggers}) {
         if (any { $_ eq $trigger } @{$existing}) {
             die "Trigger '$trigger' already in use!\n";
