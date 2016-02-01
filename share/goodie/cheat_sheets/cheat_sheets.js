@@ -77,6 +77,9 @@ DDH.cheat_sheets.build = function(ops) {
         out = out
                 // re-replace escaped slash
                 .replace(/<bks>/g,  "\\")
+                //re-replace angle bracket
+                .replace(/&lt;/g, "<")
+                .replace(/&gt;/g, ">")
                 // re-replace escaped brackets
                 .replace(/<lbr>/g,  "[")
                 .replace(/<lcbr>/g, "{")
