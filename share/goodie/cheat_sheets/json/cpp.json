@@ -12,11 +12,10 @@
         "Preprocessor Directives",
         "Arithmetic Operators",
         "Relational Operators",
-        "Logical Operators",
+        "Class Member Protections",
         "Bitwise Operators",
-        "Namespaces",
-        "Console Input/Output",
-        "Class Member Protections"
+        "Logical Operators",     
+        "Namespaces"
     ],
     "aliases": [
         "c++",
@@ -26,11 +25,11 @@
         "Fundamental Data Types": [
             {
                 "key": "char",
-                "val": "Character (1 byte)"
+                "val": "Character"
             },
             {
                 "key": "int",
-                "val": "Integer "
+                "val": "Integer"
             },
             {
                 "key": "float",
@@ -51,7 +50,7 @@
                 "val": "Include library file"
             },
             {
-                "key": "#include \"filename\"",
+                "key": "#include \"filename\" ",
                 "val": "Include user file"
             },
             {
@@ -112,19 +111,19 @@
             },
             {
                 "key": ">",
-                "val": "Checks if the value of left operand is greater than the value of right operand. If yes, then the condition becomes true."
+                "val": "Checks if the value of left operand is greater than the value of right operand"
             },
             {
                 "key": "<",
-                "val": "Checks if the value of left operand is less than the value of right operand. If yes, then the condition becomes true."
+                "val": "Checks if the value of left operand is less than the value of right operand"
             },
             {
                 "key": ">=",
-                "val": "Checks if the value of left operand is greater than or equal to the value of right operand. If yes, then the condition becomes true."
+                "val": "Checks if the value of left operand is greater than or equal to the value of right operand"
             },
             {
                 "key": "<=",
-                "val": "Checks if the value of left operand is less than or equal to the value of right operand. If yes, then the condition becomes true."
+                "val": "Checks if the value of left operand is less than or equal to the value of right operand"
             }
         ],
         "Logical Operators": [
@@ -160,11 +159,11 @@
             },
             {
                 "key": "<<",
-                "val": "Takes two numbers, left shifts the bits of first operand, the second operand decides the number of places to shift"
+                "val": "Takes two numbers, left shifts the bits of first operand, the second operand decides the number of places to shift "
             },
             {
                 "key": ">>",
-                "val": "Takes two numbers, right shifts the bits of first operand, the second operand decides the number of places to shift"
+                "val": "Takes two numbers, right shifts the bits of first operand, the second operand decides the number of places to shift. "
             }
         ],
         "Namespaces": [
@@ -184,11 +183,11 @@
             },
             {
                 "key": "private",
-                "val": "Only the class's member functions and friends may access the data."
+                "val": "Only the class's member functions and friends may access the data"
             },
             {
                 "key": "protected",
-                "val": "Only the class's member functions, friends, and derived classes may access."
+                "val": "Only the class's member functions, friends, and derived classes may access"
             }
         ]
     }
