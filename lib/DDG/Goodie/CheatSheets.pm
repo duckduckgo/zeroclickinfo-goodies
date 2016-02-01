@@ -91,11 +91,24 @@ sub add_triggers {
     @trigger_lookup{@{$triggers}} = map { $options } (1..@{$triggers});
 }
 
+sub cheat_sheet_file_for {
+    my $name = shift;
+    $name =~ s/ /-/g;
+    return "$name.json";
+}
+
+sub cheat_names_equal {
+    my ($first, $second) = @_;
+    return ($first eq $second) ||
+        (cheat_sheet_file_for $first) eq (cheat_sheet_file_for $second);
+}
+
 sub getAliases {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
                                 ->in(share());
     my %results;
+    my $cheat_dir = File::Basename::dirname($files[0]);
 
     foreach my $file (@files) {
         open my $fh, $file or warn "Error opening file: $file\n" and next;
@@ -105,8 +118,8 @@ sub getAliases {
             next;
         };
 
-        my $defaultName = File::Basename::fileparse($file);
-        $defaultName =~ s/-/ /g;
+        my $name = File::Basename::fileparse($file);
+        my $defaultName = $name =~ s/-/ /gr;
         $defaultName =~ s/.json//;
 
         $results{$defaultName} = $file;
@@ -132,9 +145,12 @@ sub getAliases {
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
                 my $lc_alias = lc $alias;
-                if (defined $results{$lc_alias}) {
-                    die "Name already in use '$lc_alias' in $file" unless $lc_alias eq $defaultName;
-                };
+                unless (cheat_names_equal $lc_alias, $defaultName) {
+                    die "Cannot use an alias that is another cheat sheet's name ($lc_alias) in $file"
+                        if -f "$cheat_dir/@{[cheat_sheet_file_for $lc_alias]}";
+                    die "Name already in use '$lc_alias' in $file"
+                        if defined($results{$lc_alias});
+                }
                 $results{$lc_alias} = $file;
             }
         }
