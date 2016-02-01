@@ -1,22 +1,22 @@
 {
   "id": "itunes_export_and_import_cheat_sheet",
-  "name": "itunes import & expert",
-  "description": "Keyboard shortcuts for itunes,a software by apple INC",
+  "name": "iTunes import & expert",
+  "description": "Keyboard shortcuts for itunes,a software by apple.inc",
   "metadata": {
     "sourceName": "Autismate",
     "sourceUrl": "http://autismate.com/Support/TeachMate/How-To/Managing-Users/Import-User-from-iTunes/"
   },
   "aliases": [
-    "Itunes",
+    "itunes",
     "import and export",
-    "Itunes import and export"
+    "itunes import and export"
   ],
   "template_type": "keyboard",
   "section_order": [
     "playback",
     "Library and playlist shortcuts",
     "iTunes Store shortcuts",
-    "File and window shortcuts"
+    "file and window shortcuts"
   ],
   "sections": {
     "playback": [
