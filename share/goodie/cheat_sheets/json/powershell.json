@@ -353,7 +353,7 @@
             },    
             {
                 "key": "@( exp1; exp2 )",
-                "val": "Returns the result of one or more contained statements as an array"
+                "val": "Array subexpression operator; Returns the result of one or more contained statements as an array"
             },       
             {
                 "key": "\\[datetime\\]::now",
