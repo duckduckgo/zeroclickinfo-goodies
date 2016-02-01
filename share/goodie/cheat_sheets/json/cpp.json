@@ -159,7 +159,7 @@
             },
             {
                 "key": "<<",
-                "val": "Takes two numbers, left shifts the bits of first operand, the second operand decides the number of places to shift "
+                "val": "Takes two numbers, left shifts the bits of first operand, the second operand decides the number of places to shift"
             },
             {
                 "key": ">>",
