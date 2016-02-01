@@ -15,13 +15,12 @@ zci is_cached   => 1;
 my @presidents = @{LoadFile(share('presidents.yml'))};
 my $prez_count = scalar @presidents;
 
-handle remainder => sub {
+handle query_lc => sub {
     my $rem = shift;
     $rem =~ s/
       |who\s+(is|was)\s+the\s+
       |^POTUS\s+
-      |\s+(POTUS|president\s+of\s+the\s+united\s+states)$
-      |^(POTUS|president\s+of\s+the\s+united\s+states)\s+
+      |\s+(POTUS|president\s+of\s+(the\s+)?(united\s+states|us|usa|united\s+states\s+of\s+america))$  
     //gix;
 
     my $num = ($rem =~ /^\d+$/) ? $rem : words2nums($rem) || $prez_count;
