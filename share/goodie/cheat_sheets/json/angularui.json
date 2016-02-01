@@ -1,18 +1,14 @@
 {  
-   "id": "angularui_cheat_sheet",
-   "name": "Angularui bootstrap",
-   "description": "Explanation of angularui bootstrap",
+   "id": "angularUI_cheat_sheet",
+   "name": "AngularUI Bootstrap",
+   "description": "Explanation of angularUI Bootstrap",
    "metadata": {  
       "sourceName": "Angularui",
       "sourceUrl": "https://angular-ui.github.io/bootstrap/"
    },
-   "aliases": [  
-      "js",
-      "java script",
-      "Angularjs",
-      "Angularjs Bootstrap",
-      "Angularui",
-      "Angularui Bootstrap"
+   "aliases": [
+      "AngularUI",
+      "AngularUI Bootstrap"
    ],
    "template_type": "code",
    "section_order": [  
