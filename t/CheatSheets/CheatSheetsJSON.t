@@ -19,6 +19,7 @@ foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
 
     my ($name) = $path =~ /.+\/(.+).json$/;
+    my $defaultName = $name =~ s/-/ /gr;
     my @tests;
 
     ### File tests ###
@@ -54,6 +55,16 @@ foreach my $path (glob("$json_dir/*.json")){
 
     $temp_pass = (my $url = $json->{metadata}{sourceUrl})? 1 : 0;
     push(@tests, {msg => "sourceUrl is not undef $name", critical => 1, pass => $temp_pass, skip => 1});;
+
+    ### Alias tests ###
+    my $has_aliases = exists $json->{aliases};
+    my $has_file_name_alias = 0;
+    if ($has_aliases) {
+        my @aliases = map { lc } @{$json->{aliases}};
+        $has_file_name_alias = scalar (grep { $_ eq $defaultName } @aliases);
+    }
+    push(@tests, {msg => "aliases should not contain the cheat sheet name ($defaultName)",
+        critical => 0, pass => not $has_file_name_alias});
 
 
     ### Sections tests ###
