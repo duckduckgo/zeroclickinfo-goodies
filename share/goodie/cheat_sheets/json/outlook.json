@@ -1,7 +1,7 @@
 {
     "id": "outlook_cheat_sheet",
-    "name": "Outlook",
-    "description": "Outlook Email Client",
+    "name": "Microsoft Outlook",
+    "description": "Outlook is a personal email service from Microsoft.",
     "metadata": {
         "sourceName": "Keyboard shortcuts in Outlook.com",
         "sourceUrl": "http://windows.microsoft.com/en-IN/windows/outlook/keyboard-shortcuts"
