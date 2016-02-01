@@ -48,11 +48,11 @@
       },
       {
         "val": "Refresh a Genius Playlist (when the playlist is selected)",
-        "key": "[f5]"
+        "key": "[F4]"
       },
       {
         "val": "Export files to library",
-        "key": "[alt] [E]"
+        "key": "[Alt] [E]"
       },
       {
         "val": "Select or deselect all the songs in a list",
@@ -68,10 +68,10 @@
       },
       {
         "val": "Open the Store menu",
-        "key": "[Atl] [S]"
+        "key": "[Alt] [S]"
       }
     ],
-    "File and window shortcuts": [
+    "file and window shortcuts": [
       {
         "val": "In the Get Info window, see the info for the next or previous song in the list",
         "key": "[Alt] [N] / [Alt] [P]"
