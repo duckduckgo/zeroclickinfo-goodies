@@ -102,7 +102,7 @@
             "key":"SAVEPOINT",
             "val":"To divide a transaction"
          }  
-      ]
+      ],
       "Aggregate Functions":[
          {
             "key":"AVG()",
