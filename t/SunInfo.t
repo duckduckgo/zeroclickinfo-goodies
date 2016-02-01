@@ -10,7 +10,7 @@ zci answer_type => 'sun_info';
 zci is_cached   => 0;
 
 # Presume sun will rise in the morning and set at night year round in PA.
-my @now = (qr/^On.*Phoenixville, Pennsylvania.*AM.*PM\.$/, 
+my @now = (qr/^On.*Phoenixville, Pennsylvania.*AM.*PM\.$/,
     structured_answer => {
         id => 'sun_info',
         name => 'Answer',
@@ -19,12 +19,13 @@ my @now = (qr/^On.*Phoenixville, Pennsylvania.*AM.*PM\.$/,
             group => 'text',
             item => 0,
             options => {
+                title_content => 'DDH.sun_info.title',
                 content => 'DDH.sun_info.content'
             }
         }
     }
 );
-my @aug = (qr/^On 30 Aug.*AM.*PM\.$/, 
+my @aug = (qr/^On 30 Aug.*AM.*PM\.$/,
     structured_answer => {
         id => 'sun_info',
         name => 'Answer',
@@ -33,6 +34,7 @@ my @aug = (qr/^On 30 Aug.*AM.*PM\.$/,
             group => 'text',
             item => 0,
             options => {
+                title_content => 'DDH.sun_info.title',
                 content => 'DDH.sun_info.content'
             }
         }
@@ -43,18 +45,19 @@ my @exact = (
     structured_answer => {
         id => 'sun_info',
         name => 'Answer',
-        data => {                                                                                                                                       
-            rise => "7:23 AM",                                                                                                                        
-            set_data => "4:46 PM",                                                                                                                        
-            sunrise_svg => "/share/goodie/sun_info/999/sunrise.svg",                                                                                         
-            sunset_svg => "/share/goodie/sun_info/999/sunset.svg",                                                                                          
-            when_data => "01 Jan 2015",                                                                                                                    
-            where => "Phoenixville, Pennsylvania"                                                                                                      
+        data => {
+            rise => "7:23 AM",
+            set_data => "4:46 PM",
+            sunrise_svg => "/share/goodie/sun_info/999/sunrise.svg",
+            sunset_svg => "/share/goodie/sun_info/999/sunset.svg",
+            when_data => "01 Jan 2015",
+            where => "Phoenixville, Pennsylvania"
         },
         templates => {
             group => 'text',
             item => 0,
             options => {
+                title_content => 'DDH.sun_info.title',
                 content => 'DDH.sun_info.content'
             }
         }
@@ -74,7 +77,7 @@ ddg_goodie_test(
     'sunset on 2015-01-01'                => test_zci(@exact),
     'what time is sunrise on 2015-01-01?' => test_zci(@exact),
     'January 1st, 2015 sunrise'           => test_zci(@exact),
-    q{sunrise at 39°57'N 5°10'W}          => test_zci(qr"On.*Coordinates .*AM.*PM", 
+    q{sunrise at 39°57'N 5°10'W}          => test_zci(qr"On.*Coordinates .*AM.*PM",
         structured_answer => {
             id => 'sun_info',
             name => 'Answer',
@@ -83,6 +86,7 @@ ddg_goodie_test(
                 group => 'text',
                 item => 0,
                 options => {
+                    title_content => 'DDH.sun_info.title',
                     content => 'DDH.sun_info.content'
                 }
             }
@@ -97,6 +101,7 @@ ddg_goodie_test(
                 group => 'text',
                 item => 0,
                 options => {
+                    title_content => 'DDH.sun_info.title',
                     content => 'DDH.sun_info.content'
                 }
             }
@@ -111,6 +116,7 @@ ddg_goodie_test(
                 group => 'text',
                 item => 0,
                 options => {
+                    title_content => 'DDH.sun_info.title',
                     content => 'DDH.sun_info.content'
                 }
             }
@@ -125,6 +131,7 @@ ddg_goodie_test(
                 group => 'text',
                 item => 0,
                 options => {
+                    title_content => 'DDH.sun_info.title',
                     content => 'DDH.sun_info.content'
                 }
             }
