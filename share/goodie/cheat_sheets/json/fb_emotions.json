@@ -1,5 +1,5 @@
 {
-  "id": "facebook_emotions",
+  "id": "facebook emoticons",
   "name": "Facebook emotions",
   "description": "A list of useful Facebook emotions",
   "metadata": {
@@ -61,7 +61,6 @@
         "key": ":|]"
       }
       
-  
     ]
   }
 }
