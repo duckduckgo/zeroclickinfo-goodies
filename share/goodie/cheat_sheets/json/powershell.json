@@ -278,28 +278,28 @@
                 "val": "Does not match using the wildcard character (*)"
             },    
             {
-                "key": "\"MyString\" -match \"String\"",
+                "key": "\"MyString\" -match \"$String^\"",
                 "val": "Matches a string using regular expressions"
             },    
             {
-                "key": "\"MyString\" -notmatch \"Other\"",
+                "key": "\"MyString\" -notmatch \"$Other^\"",
                 "val": "Does not match a string using regular expressions"
             },         
             {
                 "key": "\"abc\", \"def\" -contains \"def\"",
-                "val": "Returns boolean true only when the test value (right) exactly matches at least one of the reference values (left)"
+                "val": "Returns true when the value (right) is present in the array (left)"
             },  
             {
                 "key": "\"abc\", \"def\" -notcontains \"123\"",
-                "val": "Returns boolean true only when the test value (right) does not exactly match at least one of the reference values (left)"
+                "val": "Returns true when the value (right) is not present in the array (left)"
             },  
             {
                 "key": "\"def\" -in \"abc\", \"def\"",
-                "val": "Returns boolean true only when the test value (left) exactly matches at least one of the reference values (right)"
+                "val": "Returns true when the value (left) is present in the array (right)"
             },  
             {
                 "key": "\"123\" -in \"abc\", \"def\"",
-                "val": "Returns boolean true when the test value (left) is not an exact match for at least one of the reference values (right)"
+                "val": "Returns true when the value (left) is not present in the array (right)"
             },        
             {
                 "key": "\"Get-Process\" -replace \"Get\", \"Stop\"",
@@ -331,15 +331,15 @@
         "Type Operators": [
             {
                 "key": "(get-date) -is \\[DateTime\\]",
-                "val": "Returns boolean true when the input is an instance of the specified .NET Framework type."
+                "val": "Returns true when the input (left) is an instance of the specified .NET Framework type (right)"
             },
             {
                 "key": "(get-date) -isNot \\[DateTime\\]",
-                "val": "Returns boolean true when the input is not an instance of the specified .NET Framework type"
+                "val": "Returns true when the input (left) is not an instance of the specified .NET Framework type (right)"
             },  
             {
                 "key": "01/01/16 -as \\[DateTime\\]",
-                "val": "Converts the input to the specified .NET Framework type"
+                "val": "Converts the input (left) to the specified .NET Framework type (right)"
             }                   
         ],                   
         "Special Operators": [
@@ -352,21 +352,25 @@
                 "val": "Subexpression operator; Returns the result of one or more contained statements"
             },    
             {
-                "key": "@( exp1; exp2 )",
+                "key": "@( 1 )",
                 "val": "Array subexpression operator; Returns the result of one or more contained statements as an array"
-            },       
+            },
             {
-                "key": "\\[datetime\\]::now",
+                "key": "@( expression1 ; expression2 )",
+                "val": "Array subexpression operator; Returns the result of one or more contained statements as an array"
+            },            
+            {
+                "key": "\\[DateTime\\]::now",
                 "val": "Static member operator; Calls the static properties operator and methods of a .NET Framework class"
-            },       
+            },           
+            {
+                "key": "$arr = ,1",
+                "val": "Comma operator (unary); the comma creates an array with one member (place the comma before the member)"
+            }, 
             {
                 "key": "$arr = 1,2,3",
                 "val": "Comma operator (binary); the comma creates an array"
-            },     
-            {
-                "key": "$arr = ,1",
-                "val": "Comma operator (unary); the comma creates an array with one member. Place the comma before the member"
-            },               
+            },             
             {
                 "key": "& notepad.exe",
                 "val": "Call operator; Runs a command, script, or script block"
