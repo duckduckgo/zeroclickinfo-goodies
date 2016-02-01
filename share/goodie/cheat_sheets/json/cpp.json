@@ -50,7 +50,7 @@
                 "val": "Include library file"
             },
             {
-                "key": "#include \"filename\" ",
+                "key": "#include \"filename\"",
                 "val": "Include user file"
             },
             {
