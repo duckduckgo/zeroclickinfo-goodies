@@ -163,7 +163,7 @@
             },
             {
                 "key": ">>",
-                "val": "Takes two numbers, right shifts the bits of first operand, the second operand decides the number of places to shift. "
+                "val": "Takes two numbers, right shifts the bits of first operand, the second operand decides the number of places to shift"
             }
         ],
         "Namespaces": [
