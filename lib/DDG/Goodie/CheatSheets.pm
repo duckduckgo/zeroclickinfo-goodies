@@ -133,9 +133,7 @@ sub getAliases {
             foreach my $alias (@{$data->{'aliases'}}) {
                 my $lc_alias = lc $alias;
                 if (defined $results{$lc_alias}) {
-                    ($lc_alias eq $defaultName)
-                        ?  warn "Aliases should not contain the cheat sheet name ($defaultName) in $file"
-                        :  die "Name already in use '$lc_alias' in $file";
+                    die "Name already in use '$lc_alias' in $file" unless $lc_alias eq $defaultName;
                 };
                 $results{$lc_alias} = $file;
             }
