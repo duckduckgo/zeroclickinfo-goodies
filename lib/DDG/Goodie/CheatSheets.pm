@@ -112,6 +112,9 @@ sub getAliases {
         $results{$defaultName} = $file;
 
         if ($data->{triggers}) {
+            my %default_options = (
+                require_name => 1,
+            );
             my $options = {
                 file => $file,
             };
@@ -121,7 +124,7 @@ sub getAliases {
                 $options = \%new_options;
             };
             while (my ($type, $triggers) = each $data->{triggers}) {
-                my %options = %{$options};
+                my %options = (%default_options, %{$options});
                 add_triggers(\%options, $type, $triggers);
             };
         };
