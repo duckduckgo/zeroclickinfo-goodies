@@ -80,7 +80,7 @@ ddg_goodie_test([qw( DDG::Goodie::Regexp )],
     '/foo/ =~ foo'            => undef,
     'regex foo /foo/'         => undef,
     'BaR =~ /bar/x'           => undef,
-    'regexp /(?<hh(h)h>h)/ h' => undef,
+    #'regexp /(?<hh(h)h>h)/ h' => undef,
 );
 
 done_testing;
