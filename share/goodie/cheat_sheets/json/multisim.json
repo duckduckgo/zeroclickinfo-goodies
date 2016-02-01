@@ -1,0 +1,98 @@
+{
+  "id": "multisim_cheat_sheet",
+  "name": "Multisim",
+  "description": "NI Multisim (formerly MultiSIM) is an electronic schematic capture and simulation program which is part of a suite of circuit design programs",
+  "metadata": {
+    "sourceName": "NI Multisim",
+    "sourceUrl": "https://en.wikipedia.org/wiki/NI_Multisim"
+  },
+ "aliases": [
+        "multisim syntax", "multisim help", "multisim details"
+    ],
+  "template_type": "reference",
+    "section_order": [
+    "General Informations",
+    "Opening Technique",
+    "Instructions",
+    "Components"
+  ],
+     "sections": {
+    "General Informations": [
+      {
+        "key": "Developer",
+        "val": "National Instruments Electronics Workbench Group (formerly by Interactive Image Technologies"
+      },
+      {
+        "key": "Stable release",
+        "val": "14.0 / 2015"
+      },
+      {
+        "key": "Operating system",
+        "val": "Microsoft Windows"
+      },
+      {
+        "key": "Type",
+        "val": "Electronic design automation"
+      },
+      {
+        "key": "License",
+        "val": "Proprietary EULA"
+      }
+    ],
+         "Opening Technique": [
+      {
+        "key": "start",
+        "val": "Click on Start ->All Programs ->National Instruments ->Circuit Design Suite 10.0-> Multisim"
+      }
+    ],
+          "Instructions": [
+      {
+        "key": "Open a Schematic",
+        "val": "A blank schematic Circuit 1 is automatically created. To create a new schematic click on File New Schematic Capture. To save the schematic click on File /Save As. To open an existing file click on File/ Open in the toolbar. "
+      },
+               {
+        "key": "Place Components",
+        "val": "To Place Components click on Place/Components. On the Select Component Window click on Group to select the components needed for the circuit. Click OK to place the component on the schematic."
+      },
+               {
+        "key": "Rotate Components",
+        "val": "To rotate the components right click on the Resistor to flip the component on 90 Clockwise (Ctrl +R) and 90 Counter Clockwise (Ctrl+Shift+R)."
+      },
+               {
+        "key": " Place Wire/Connect Components",
+        "val": "To connect resistors click on Place/Wire drag and place the wire. Components can also be connected by clicking the mouse over the terminal edge of one component and dragging to the edge of another component"
+      },
+               {
+        "key": "Change Component Values",
+        "val": "To change component values double click on the component this brings up a window that display the properties of the component"
+      },
+               {
+        "key": "Grounding",
+        "val": "All circuits must be grounded before the circuit can be simulated. Click on Ground in the toolbar to ground the circuit. If the circuit is not grounded Multisim will not run the simulation"
+      },
+               {
+        "key": "Simulation",
+        "val": "To simulate the completed circuit Click on Simulate/Run or F5. This feature can also be accessed from the toolbar "
+      }
+      
+    ],
+         "Components":[
+            {
+        "key": " Multimeter",
+        "val": "Use the Multimeter to measure AC or DC voltage or current, and resistance or decibel loss between two nodes in a circuit. To use the Multimeter click on the Multimeter button in the Instruments toolbar "
+      },
+              {
+        "key": "Wattmeter",
+        "val": "The wattmeter measures power. It is used to measure the magnitude of the active power"
+      },
+              {
+        "key": "Ammeter",
+        "val": "The ammeter offers advantages over the multimeter for measuring current in a circuit. Always connect the ammeter in series with the load"
+      },
+              {
+        "key": " Voltmeter",
+        "val": "The Voltmeter offers advantages over the multimeter for measuring voltage in a circuit. Always connect the voltmeter in parallel with the load."
+      }
+         ]
+     }
+}
