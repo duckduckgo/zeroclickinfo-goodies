@@ -1,7 +1,7 @@
 {
   "id": "notepad_cheat_sheet",
   "name": "Notepad",
-  "description": "Keyboard shortcuts for Notepad, a text editor for microsoft",
+  "description": "Keyboard shortcuts for Notepad, a text editor for Microsoft Windows",
   "metadata": {
     "sourceName": "Pnotepad",
     "sourceUrl": "http://www.pnotepad.org/docs/navigation/keyboard_shortcuts/"
