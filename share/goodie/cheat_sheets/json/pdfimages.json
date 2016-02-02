@@ -1,12 +1,12 @@
 {
-    "id": "pdfimage_cheat_sheet", 
-    "name": "pdfimage",
+    "id": "pdfimages_cheat_sheet", 
+    "name": "pdfimages",
     "description": "Pdfimages saves images from a Portable Document Format (PDF) file as Portable Pixmap (PPM), Portable Bitmap (PBM), or JPEG files. ", 
     "metadata": { 
         "sourceName": "Linux ManualPage",
         "sourceUrl": "http://www.linuxcommand.org/man_pages/pdfimages1.html "
     },
-    "template_type" : "keyboard",
+    "template_type" : "terminal",
     "section_order": [  
         "Options"
     ],
