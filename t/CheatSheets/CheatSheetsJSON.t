@@ -14,11 +14,19 @@ use IO::All;
 my $json_dir = "share/goodie/cheat_sheets/json";
 my $json;
 
+sub file_name_to_id {
+    my $file_name = shift;
+    $file_name =~ s/\.json//;
+    $file_name =~ s/-/_/g;
+    return $file_name . "_cheat_sheet";
+}
+
 # Iterate over all Cheat Sheet JSON files...
 foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
 
-    my ($name) = $path =~ /.+\/(.+).json$/;
+    my ($file_name) = $path =~ /$json_dir\/(.+)/;
+    my ($name) = $path =~ /.+\/(.+)\.json$/;
     my $defaultName = $name =~ s/-/ /gr;
     my @tests;
 
@@ -47,6 +55,13 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = (!exists $json->{description} && !$json->{description})? 0 : 1;
     push(@tests, {msg => "has description (optional but suggested)", critical => 0, pass => $temp_pass});
 
+    ### ID tests ###
+    my $cheat_id = $json->{id};
+    if ($cheat_id) {
+        my $expected = file_name_to_id $file_name;
+        $temp_pass = $cheat_id eq $expected;
+        push(@tests, {msg => "bad id '$cheat_id', should be '$expected'", critical => 1, pass => $temp_pass});
+    }
 
     ### Metadata tests ###
     my $has_meta = exists $json->{metadata};
