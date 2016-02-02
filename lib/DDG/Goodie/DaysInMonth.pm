@@ -13,16 +13,16 @@ zci answer_type => 'number_days_month';
 zci is_cached => 1;
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers any => 'how many days are in', 'what is the number of days in', 'number of days in';
+triggers any => 'how many days in','how many days are in', 'what is the number of days in', 'number of days in';
 
 # Handle statement
 handle remainder => sub {
     my $remainder = $_;
-	return unless $remainder =~ qr/^\s*\w+\s*$/;
-	my ($month) = $remainder =~ qr/(\w+)/;
+    return unless $remainder =~ qr/^\s*\w+\s*$/i;
+    my ($month) = $remainder =~ qr/(\w+)/;
+    return unless grep {$_ eq lc($month)} qw/january jan february feb march mar april apr may june jun july jul august aug september sep october oct november nov december dec/;
     my $days = calculateNumberOfDaysForMonthString($month);
-	return if $days == -1;
-	return "Number of days in $month is $days.",
+    return "Number of days in $month is $days.",
     structured_answer => {
         input => [ucfirst $month],
         operation => 'Number of days in month',
@@ -42,11 +42,8 @@ sub calculateNumberOfDays{
 }
 
 sub calculateNumberOfDaysForMonthString{
-    my $month = lc($_[0]);
-	my %months;
-	if(length $month == 3 && $month ne "may")
-	{
-		%months = (
+    my $month = substr(lc($_[0]),0,3);
+    my %months = (
         "jan" => 1,
         "feb" => 2,
         "mar" => 3,
@@ -59,24 +56,8 @@ sub calculateNumberOfDaysForMonthString{
         "oct" => 10,
         "nov" => 11,
         "dec" => 12
-		);
-	}else{
-		%months = (
-        "january" =>     1,
-        "february" =>    2,
-        "march" =>       3,
-        "april" =>       4,
-        "may" =>         5,
-        "june" =>        6,
-        "july" =>        7,
-        "august" =>      8,
-        "september" =>   9,
-        "october" =>     10,
-        "november" =>    11,
-        "december" =>    12
-		);
-	}
-	return exists $months{$month} ? calculateNumberOfDays($months{$month}) : -1;
+    );
+    return calculateNumberOfDays($months{$month});
 }
 
 1;

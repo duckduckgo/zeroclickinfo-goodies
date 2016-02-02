@@ -18,7 +18,7 @@ ddg_goodie_test(
             result    => 31
         }
     ),
-    'how many days are in' => test_zci(
+    'how many days are in mar' => test_zci(
         'Number of days in mar is 31.',
         structured_answer => {
             input     => ['Mar'],
@@ -27,17 +27,26 @@ ddg_goodie_test(
         }
     ),
     'Number of days in may' => test_zci(
-        'Sorry, no hit for your instant answer',
+        'Number of days in may is 30.',
         structured_answer => {
             input     => ['May'],
             operation => 'Number of days in month',
             result    => 30
         }
     ),
+    'how many days in Feb' => test_zci(
+        'Number of days in Feb is 28.',
+        structured_answer => {
+            input     => ['Feb'],
+            operation => 'Number of days in month',
+            result    => 28
+        }
+    ),
     'number of days in test' => undef,
+    'number of days in febtest' => undef,
     'how many test are in' => undef,
     'quantity of days in december' => undef
-	
+    
 );
 
 done_testing;
