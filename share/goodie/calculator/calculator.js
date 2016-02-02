@@ -222,7 +222,7 @@ DDH.calculator.build = function() {
 
     function calcFieldOperator(symbol) {
         return new CalcField({
-            rep: symbol,
+            rep: ' ' + symbol + ' ',
             numFields: 0
         });
     }
@@ -1141,7 +1141,7 @@ DDH.calculator.build = function() {
         //     }
         // }
         console.log('[F.toHtml] flatArr: ' + flatArr);
-        return '<span>'+flatArr.join(' ')+'</span>';
+        return '<span>'+flatArr.join('')+'</span>';
     };
 
     Formula.prototype.render = function() {
