@@ -9,21 +9,42 @@ use utf8;
 zci answer_type => 'calculation';
 zci is_cached   => 1;
 
+my %operations = (
+    trig_functions => [
+        'sine' => {
+            name => 'FN_SIN',
+            rep  => 'sin',
+        },
+        'cosine' => {
+            name => 'FN_COS',
+            rep  => 'cos',
+        },
+        'tangent' => {
+            name => 'FN_TAN',
+            rep  => 'tan',
+        },
+    ],
+);
+
 sub build_result {
     my ($result, $formatted_input) = @_;
     $formatted_input = '' unless $formatted_input;
     return $result, structured_answer => {
-        id => 'calculator',
-        name => 'Answer',
+        id   => 'calculator',
+        name => 'Calculator',
         data => {
-            title => $result,
-            subtitle => "Calculate: $formatted_input",
+            text_result  => $result,
+            parsed_input => "$formatted_input",
+            operations   => \%operations,
         },
         meta => {
             signal => 'high',
         },
         templates => {
-            group => 'text',
+            group   => 'base',
+            options => {
+                content => 'DDH.calculator.calculator',
+            },
             moreAt => 0,
         }
     };
