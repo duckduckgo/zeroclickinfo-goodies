@@ -410,6 +410,7 @@ DDH.calculator.build = function() {
         this.storage = [BTS['0']];
         this._cursor = [0];
         this.isCalculated = false;
+        this.initialDisplay = true;
 
         if (!(initialFormStr === undefined)) {
             console.log('[Formula] initial is defined!');
@@ -785,7 +786,12 @@ DDH.calculator.build = function() {
      */
     Formula.prototype.fragmentNew = function(val) {
         console.log('[F.fragmentNew] new fragment value: ' + val);
-        this.appendFragmentChild(val);
+        if (this.initialDisplay) {
+            this.modifyField(val);
+            this.initialDisplay = false;
+        } else {
+            this.appendFragmentChild(val);
+        }
     };
 
     /**
@@ -932,6 +938,7 @@ DDH.calculator.build = function() {
                 console.log('[F.deleteBackwards] at start for pos: ' + pos);
                 deleted = this.currentField();
                 this.modifyField(BTS['0']);
+                this.initialDisplay = true;
                 return deleted;
             }
             console.log('[F.deleteBackwards] storage (before): ' + this.storage);
@@ -1028,6 +1035,7 @@ DDH.calculator.build = function() {
         // var query = this.storage.join('');
         var query = this.toText();
         console.log("Query: " + query);
+        // Use the below link in production
         // $.getJSON("https://crossorigin.me/" + "https://beta.duckduckgo.com/?format=json&q=" + encodeURIComponent(query), function(data) {
         $.getJSON("http://localhost:5000/?format=json&q=" + encodeURIComponent(query), function(data) {
             var answerValue = data.Answer.data.text_result;
@@ -1149,6 +1157,7 @@ DDH.calculator.build = function() {
         // this.storage = ['0'];
         this.storage = [BTS['0']];
         this._cursor = [0];
+        this.initialDisplay = true;
         this.render();
     };
 
