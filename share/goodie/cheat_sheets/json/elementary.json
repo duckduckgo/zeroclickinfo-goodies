@@ -1,7 +1,7 @@
 {
     "id": "elementary_cheat_sheet",
     "name": "elementary OS",
-    "description": "A Fast and open replacement for Windows and OS X",
+    "description": "Keyboard shortcuts for Elementary OS, a Linux distribution based on Ubuntu",
     "metadata": {
         "sourceName": "Lme Linux",
         "sourceUrl": "http://lmelinux.net/2014/07/26/elementary-os-keyboard-shortcuts/"
@@ -13,8 +13,8 @@
     "section_order": [
         "Window",
         "Switching",
-        "Launcher",
-        "Workspace"
+        "Workspace",
+        "Launcher"
     ],
     "sections": {
         "Window": [
