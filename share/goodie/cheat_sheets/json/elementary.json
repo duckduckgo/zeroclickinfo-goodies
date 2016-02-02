@@ -13,8 +13,8 @@
     "section_order": [
         "Window",
         "Switching",
-        "Launcher",
-        "Workspace"
+        "Workspace",
+        "Launcher"
     ],
     "sections": {
         "Window": [
