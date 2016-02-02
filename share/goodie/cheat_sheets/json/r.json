@@ -1,0 +1,189 @@
+{
+	"id": "r_cheat_sheet",
+	"name": "R",
+	"description": "Overview of basic functions of R",
+
+	"metadata": {
+		"sourceName": "List of useful R commands",
+		"sourceUrl": "http://www.webpages.uidaho.edu/~stevel/251/comR.pdf"
+	},
+
+	"aliases": [
+		"R", "r programming", "r language"
+	],
+
+	"template_type": "code",
+
+	"section_order": [
+		"Others",
+		"Input and Display",
+		"Moving Around",
+		"Data Manipulation",
+		"Statistical Tools",
+		"Distributions"
+	],
+
+	"sections": {
+		"Others": [{
+				"key": "help() ",
+				"val": "give help regarding a command, e.g. help(hist)"
+			}, {
+				"key": "c()",
+				"val": "concatenate objects, e.g. x = c(3,5,8,9) or y = c(”Jack”,”Queen”,”King”)"
+			}, {
+				"key": "matrix()",
+				"val": "fill in (by row) the values from y in a matrix of 4 rows and 3 columns by giving"
+			}, {
+				"key": "dim()",
+				"val": "gives the number of rows and the number of columns of a matrix, or a data frame"
+			}, {
+				"key": "head()",
+				"val": "gives the first 6 rows of a large matrix, or data frame"
+			}, {
+				"key": "tail()",
+				"val": "gives the last 6 rows of a large matrix, or data frame"
+			}, {
+				"key": "m[ ,3]",
+				"val": "gives the 3rd column of the matrix m"
+			}, {
+				"key": "m[2, ]",
+				"val": "gives the 2nd row of the matrix m"
+			}, {
+				"key": "sum() ",
+				"val": "get the sum of the values in x by sum(x)"
+			}, {
+				"key": "mean()",
+				"val": "get the mean of the values in x by mean(x)"
+			}, {
+				"key": "median()",
+				"val": "get the median of the values in x by median(x)"
+			}, {
+				"key": "sd()",
+				"val": "get the standard deviation of the values by x"
+			}, {
+				"key": "var()",
+				"val": "get the variance of the values in x"
+			}, {
+				"key": "summary()",
+				"val": "get the summary statistics of a single variable, or of all variables in a data frame"
+			}, {
+				"key": "help() ",
+				"val": "give help regarding a command, e.g. help(hist)"
+			}, {
+				"key": "sort()",
+				"val": "sort the values in x by giving sort(x)"
+			}, {
+				"key": "plot()",
+				"val": "scatterplot of x vs. y by plot(x,y); for more parameters see help(plot.default)"
+			}, {
+				"key": "lm()",
+				"val": "fit a least squares regression of y (response) on x (predictor) by fit = lm(y~x)"
+			}, {
+				"key": "read.table()",
+				"val": "read spreadsheet data (i.e. more than one variable) from a text file"
+			}, {
+				"key": "write()",
+				"val": "write the values of a variable y in a file data.txt by write(y,file=”data.txt”)"
+			}, {
+				"key": "rep()",
+				"val": "repeat n times the value x, e.g. rep(2,5) gives 2 2 2 2 2"
+			}, {
+				"key": "getwd()",
+				"val": "get the current working directory."
+			}, {
+				"key": "setwd()",
+				"val": "change the directory to. E.g. setwd(\"c: /RESEARCH/GENE.project / Chunks /\")"
+			}, {
+				"key": "dir()",
+				"val": "list files in the current working directory"
+			}, {
+				"key": "search()",
+				"val": "searching through reachable datasets and packages"
+			}
+
+		],
+		"Input and Display": [{
+			"key": "load(\"c: /RData/pennstate1. RData \")",
+			"val": "load a R data frame"
+		}, {
+			"key": "read.csv(filename=\"c: /stat251/ui.csv \",header=T)",
+			"val": "read .csv file with labels in first row"
+		}, {
+			"key": "vect=c(x,y)",
+			"val": "combine them into one vector of length 2n"
+		}, {
+			"key": "mat[4,2]",
+			"val": "display the 4th row and the 2nd column"
+		}, {
+			"key": "subset(dataset,logical) ",
+			"val": "those objects meeting a logical criterion"
+		}, {
+			"key": "x[order(x$B),] ",
+			"val": "sort a dataframe by the order of the elements in B"
+		}],
+		"Moving Around": [{
+			"key": "ls()",
+			"val": "list the R objects in the current workspace"
+		}, {
+			"key": "rm(x)",
+			"val": "remove x from the workspace"
+		}, {
+			"key": "rm(list=ls())",
+			"val": "remove all the variables from the workspace"
+		}, {
+			"key": "attach(mat)",
+			"val": "make the names of the variables in the matrix or data frame"
+		}, {
+			"key": "complete = subset(data.df,complete.cases(data.df)) ",
+			"val": "find those cases with no missing values"
+		}, {
+			"key": "new=old[n1:n2,n3:n4]",
+			"val": "select the n1 through n2 rows of variables n3 through n4)"
+		}],
+		"Data Manipulation": [{
+			"key": "x.df=data.frame(x1,x2,x3 ...)",
+			"val": "combine different kinds of data into a data frame"
+		}, {
+			"key": "scale()",
+			"val": "converts a data frame to standardized scores"
+		}, {
+			"key": "round(x,n)",
+			"val": "rounds the values of x to n decimal places"
+		}, {
+			"key": "ceiling(x)",
+			"val": "vector x of smallest integers > x"
+		}, {
+			"key": "floor(x)",
+			"val": "vector x of largest interger < x"
+		}, {
+			"key": "as.integer(x)",
+			"val": "truncates real x to integers (compare to round(x,0)"
+		}, {
+			"key": "factor(ifelse(a < cutpoint, \"Neg\", \"Pos\"))",
+			"val": "is another way to dichotomize and to make a factor for analysis"
+		}],
+		"Statistical Tools": [{
+			"key": "prop.test()",
+			"val": "perform test with proportion(s)"
+		}, {
+			"key": "t.test() ",
+			"val": "perform t test"
+		}, {
+			"key": "chisq.test()",
+			"val": "perform Chi-square test"
+		}],
+		"Distributions": [{
+			"key": "sample(x, size, replace = FALSE, prob = NULL)",
+			"val": "take a simple random sample of size n from the population x with or without replacement"
+		}, {
+			"key": "rnorm(n,mean,sd)",
+			"val": "randomly generate n numbers from a Normal distribution with the specific mean and sd"
+		}, {
+			"key": "pnorm()",
+			"val": "find probability (area under curve) of a Normal(10,3^2) distribution to the left of 8,i.e. P(X <= 8), by pnorm(8,mean=10,sd=3)"
+		}, {
+			"key": "qnorm()",
+			"val": "find quantity or value x such that area under Normal(10,3^2) curve and to the left of x equals 0.25 by qnorm(0.25,mean=10,sd=3)"
+		}]
+	}
+}
