@@ -9,7 +9,7 @@ zci answer_type => "number_days_month";
 zci is_cached   => 1;
 
 ddg_goodie_test(
-    [qw( DDG::Goodie::NumberDaysMonth )],
+    [qw( DDG::Goodie::DaysInMonth )],
     'number of days in january' => test_zci(
         'Number of days in january is 31.',
         structured_answer => {
@@ -34,12 +34,12 @@ ddg_goodie_test(
             result    => 30
         }
     ),
-    'how many days in Feb' => test_zci(
-        'Number of days in Feb is 28.',
+    'how many days in Jan' => test_zci(
+        'Number of days in Jan is 31.',
         structured_answer => {
-            input     => ['Feb'],
+            input     => ['Jan'],
             operation => 'Number of days in month',
-            result    => 28
+            result    => 31
         }
     ),
     'number of days in test' => undef,

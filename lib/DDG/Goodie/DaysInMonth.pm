@@ -1,4 +1,4 @@
-package DDG::Goodie::NumberDaysMonth;
+package DDG::Goodie::DaysInMonth;
 # ABSTRACT: Returns number of days in a given month
 
 # Start at http://docs.duckduckhack.com/walkthroughs/calculation.html if you are new
