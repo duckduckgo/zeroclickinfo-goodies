@@ -15,8 +15,6 @@ handle remainder => sub {
 
     return unless $in_string;
 
-    my $operation = 'Atbash';
-
     my $result;
     foreach my $char (split //, $in_string) {
         if ($char =~ /([a-z])/) {
@@ -29,11 +27,18 @@ handle remainder => sub {
         $result .= $char;
     }
 
-    return "$operation: $result",
-      structured_answer => {
-        input     => [html_enc($in_string)],
-        operation => $operation,
-        result    => html_enc($result),
+    return "Atbash: $result",
+        structured_answer => {
+            id => 'atbash',
+            name => 'Answer',
+            data => {
+                title => "$result",
+                subtitle => html_enc("Atbash: $in_string")
+            },
+            templates => {
+                group => 'text',
+                moreAt => 0
+            }
       };
 };
 
