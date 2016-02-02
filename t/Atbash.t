@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
+use HTML::Escape;
 
 zci answer_type => 'atbash';
 zci is_cached   => 1;
@@ -19,7 +20,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => "gvhg",
-                subtitle => "Atbash: 'test'"
+                subtitle => "Atbash: test"
             },
             templates => {
                 group => 'text',
@@ -34,7 +35,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => "Gsrh rh z gvhg",
-                subtitle => "Atbash: 'This is a test'"
+                subtitle => "Atbash: This is a test"
             },
             templates => {
                 group => 'text',
@@ -49,7 +50,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => "Tlmmz kzigb orpv rg'h 1999!",
-                subtitle => "Atbash: 'Gonna party like it's 1999!'"
+                subtitle => "Atbash: Gonna party like it&#39;s 1999!"
             },
             templates => {
                 group => 'text',
@@ -64,7 +65,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => "zyxwvutsrqponmlkjihgfedcba",
-                subtitle => "Atbash: 'abcdefghijklmnopqrstuvwxyz'"
+                subtitle => "Atbash: abcdefghijklmnopqrstuvwxyz"
             },
             templates => {
                 group => 'text',
@@ -79,7 +80,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => "svool",
-                subtitle => "Atbash: 'hello'"
+                subtitle => "Atbash: hello"
             },
             templates => {
                 group => 'text',
@@ -94,7 +95,7 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => "hello",
-                subtitle => "Atbash: 'svool'"
+                subtitle => "Atbash: svool"
             },
             templates => {
                 group => 'text',

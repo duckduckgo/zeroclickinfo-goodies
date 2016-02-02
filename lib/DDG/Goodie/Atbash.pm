@@ -45,7 +45,7 @@ handle remainder => sub {
             name => 'Answer',
             data => {
                 title => "$result",
-                subtitle => "Atbash: '$in_string'"
+                subtitle => html_enc("Atbash: $in_string")
             },
             templates => {
                 group => 'text',
