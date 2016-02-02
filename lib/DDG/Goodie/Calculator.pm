@@ -1336,7 +1336,6 @@ handle query => sub {
     $query =~ s/^\s*(?:what\s*is|calculate|solve|math)\s*//;
     my ($generated_input, $result) = to_display $query or return;
     return unless defined $result && defined $generated_input;
-    warn "Generated answer!\n";
     return $result,
         structured_answer => {
             id   => 'calculator',
