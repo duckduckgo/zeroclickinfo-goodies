@@ -1491,7 +1491,11 @@ DDH.calculator.build = function() {
                 // $('#tile__past-calc').change(function() {
                 //     updateGUI();
                 // });
-                calc.process.calculation(DDG.get_query());
+                var query = DDG.get_query();
+                if (query !== 'calculator') {
+                    calc.process.calculation(query);
+                    calc.formula.calculate();
+                }
             }
         }
     };
