@@ -129,7 +129,7 @@ handle query_nowhitespace_nodash => sub {
 
     my $moreUrl = 'http://www.decodethis.com/VIN-Decoded/vin/' . $vin_number;
 
-    return $vin_number,
+    return "Decode VIN ($vin_number) at Decode This: $moreUrl",
     structured_answer => {
         id => 'vin',
         name => 'Answer',
