@@ -231,6 +231,14 @@ DDH.calculator.build = function() {
         new what();
     }
 
+    function calcMeta(action) {
+        return new CalcNonDisplay({
+            actionType: 'META',
+            runAction: action
+        });
+    }
+
+
     // Buttons
     var BTS = {
         'OP_DIV': calcFieldOperator('÷'),
@@ -248,22 +256,10 @@ DDH.calculator.build = function() {
         '8': CalcFieldChar('8'),
         '9': CalcFieldChar('9'),
         ' ': CalcFieldChar(' '),
-        'META_CLEAR': new CalcNonDisplay({
-            actionType: 'META',
-            runAction: function() { calc.process.backspace(); }
-        }),
-        'META_PROCEED': new CalcNonDisplay({
-            actionType: 'META',
-            runAction: function() { calc.formula.calculate(); }
-        }),
-        'META_PAR_OPEN': new CalcNonDisplay({
-            actionType: 'META',
-            runAction: function() { calc.formula.levelUp(); }
-        }),
-        'META_PAR_CLOSE': new CalcNonDisplay({
-            actionType: 'META',
-            runAction: function() { calc.formula.levelDown(); }
-        }),
+        'META_CLEAR': calcMeta(function () { calc.process.backspace(); }),
+        'META_PROCEED': calcMeta(function () { calc.formula.calculate(); }),
+        'META_PAR_OPEN': calcMeta(function () { calc.formula.levelUp(); }),
+        'META_PAR_CLOSE': calcMeta(function () { calc.formula.levelDown(); }),
         'PLACE_HOLDER': new CalcNonDisplay({
             actionType: 'PLACE_HOLDER',
             runAction: function() { log.error('Place holder called!'); }
