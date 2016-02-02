@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use Test::More;
 use DDG::Test::Goodie;
-use HTML::Escape;
 
 zci answer_type => 'atbash';
 zci is_cached   => 1;
