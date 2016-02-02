@@ -88,10 +88,10 @@
             "key": "(...)"
         }, {
             "val": "in range (a, b or c)",
-            "key": "[abc]"
+            "key": "\\[abc\\]"
         }, {
             "val": "not in range",
-            "key": "[^abc]"
+            "key": "\\[^abc\\]"
         }, {
             "val": "zero or one of a",
             "key": "a?"
@@ -109,16 +109,16 @@
             "key": "a+?"
         }, {
             "val": "exactly 3 of a",
-            "key": "a{3}"
+            "key": "a\\{3\\}"
         }, {
             "val": "3 or more of a",
-            "key": "a{3,}"
+            "key": "a\\{3,\\}"
         }, {
             "val": "up to 6 a",
-            "key": "a{,6}"
+            "key": "a\\{,6\\}"
         }, {
             "val": "3 to 6 of a",
-            "key": "a{3,6}"
+            "key": "a\\{3,6\\}"
         }]
     }
 }
