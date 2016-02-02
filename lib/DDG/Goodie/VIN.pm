@@ -140,7 +140,7 @@ handle query_nowhitespace_nodash => sub {
         templates => {
             group => 'text',
             options => {
-                subtitle_content => 'DDH.vin.title'
+                subtitle_content => 'DDH.vin.subtitle'
             }
         }
     };
