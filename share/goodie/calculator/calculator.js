@@ -426,10 +426,6 @@ DDH.calculator.build = function() {
         }
     };
 
-    // Formula.prototype.cursor = function() {
-    //     return [].concat(this._cursor);
-    // };
-
     ////////////////////
     /// Virtual cursor
     ////////////////////
@@ -730,7 +726,7 @@ DDH.calculator.build = function() {
 
     // Predicate: is the cursor at the top level?
     Formula.prototype.atTopLevel = function() {
-        return atTopLevel(cursor);
+        return atTopLevel(this.cursor);
     };
 
     // Move the cursor forward by amount (default 1)
