@@ -12,7 +12,6 @@
   "template_type": "reference",
     "section_order": [
     "General Informations",
-    "Opening Technique",
     "Instructions",
     "Components"
   ],
@@ -22,10 +21,7 @@
         "key": "Developer",
         "val": "National Instruments Electronics Workbench Group (formerly by Interactive Image Technologies"
       },
-      {
-        "key": "Stable release",
-        "val": "14.0 / 2015"
-      },
+    
       {
         "key": "Operating system",
         "val": "Microsoft Windows"
@@ -39,12 +35,7 @@
         "val": "Proprietary EULA"
       }
     ],
-         "Opening Technique": [
-      {
-        "key": "start",
-        "val": "Click on Start ->All Programs ->National Instruments ->Circuit Design Suite 10.0-> Multisim"
-      }
-    ],
+       
           "Instructions": [
       {
         "key": "Open a Schematic",
@@ -79,7 +70,7 @@
          "Components":[
             {
         "key": " Multimeter",
-        "val": "Use the Multimeter to measure AC or DC voltage or current, and resistance or decibel loss between two nodes in a circuit. To use the Multimeter click on the Multimeter button in the Instruments toolbar "
+        "val": "Use the Multimeter to measure AC or DC voltage or current, and resistance or decibel loss between two nodes in a circuit. To use the Multimeter click on the Multimeter button in the Instruments toolbar"
       },
               {
         "key": "Wattmeter",
@@ -91,7 +82,7 @@
       },
               {
         "key": " Voltmeter",
-        "val": "The Voltmeter offers advantages over the multimeter for measuring voltage in a circuit. Always connect the voltmeter in parallel with the load."
+        "val": "The Voltmeter offers advantages over the multimeter for measuring voltage in a circuit. Always connect the voltmeter in parallel with the load"
       }
          ]
      }
