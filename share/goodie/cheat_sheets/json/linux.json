@@ -8,19 +8,20 @@
     },
     "template_type":"terminal",
     "section_order":[
+        "Navigation",
         "File Commands",
         "SSH",
         "Installation",
         "Network",
         "System Info",
-        "Searching",
+        "Searching and Sorting",
         "Process Management",
+        "Shortcuts",
         "File Permissions",
-        "Compression",
-        "Shortcuts"
+        "Compression"
     ],
     "sections":{
-        "File Commands":[
+        "Navigation":[
             {
                 "val":"directory listing",
                 "key":"ls"
@@ -38,9 +39,19 @@
                 "key":"cd"
             },
             {
+                "val":"go to root",
+                "key":"cd /"
+            },
+            {
+                "val":"go up one folder",
+                "key":"cd .."
+            },
+            {
                 "val":"show current directory",
                 "key":"pwd"
-            },
+            }  
+        ],
+        "File Commands":[
             {
                 "val":"create directory dir",
                 "key":"mkdir dir"
@@ -218,7 +229,7 @@
                 "key":"which app"
             }
         ],
-        "Searching":[
+        "Searching and Sorting":[
             {
                 "val":"search for pattern in files",
                 "key":"grep pattern files"
@@ -235,6 +246,19 @@
                 "val":"find all instances of file",
                 "key":"locate file"
             }
+            ,
+            {
+                "val":"sort the content of files alphabetically",
+                "key":"sort filename"
+            },
+            {
+                "val":"sort in reverse",
+                "key":"sort -r filename"
+            },
+            {
+                "val":"sort randomly",
+                "key":"sort -R filename"
+            }            
         ],
         "Process Management":[
             {
@@ -345,31 +369,59 @@
         "Shortcuts":[
             {
                 "val":"backgrounds current command",
-                "key":"[ctrl] [c]"
+                "key":"[Ctrl] [L]"
+            },
+            {
+                "val":"backgrounds current command",
+                "key":"[Ctrl] [C]"
             },
             {
                 "val":"stops current command",
-                "key":"[ctrl] [z]"
+                "key":"[Ctrl] [Z]"
+            },
+            {
+                "val":"Cursor to the start of line",
+                "key":"[Ctrl] [A]"
+            },
+            {
+                "val":"Cursor to the end of line",
+                "key":"[Ctrl] [E]"
+            },
+            {
+                "val":"Go up the terminal",
+                "key":"[Shift] [Page Up]"
+            },
+            {
+                "val":"Go down the terminal",
+                "key":"[Shift] [Page Down]"
             },
             {
                 "val":"log out of current session",
-                "key":"[ctrl] [d]"
+                "key":"[Ctrl] [D]"
             },
             {
-                "val":"erases one word in current line",
-                "key":"[ctrl] [w]"
+                "val":"Delete word on the left in current line",
+                "key":"[Ctrl] [W]"
             },
             {
-                "val":"erases whole line",
-                "key":"[ctrl] [u]"
+                "val":"Delete left of the cursor",
+                "key":"[Ctrl] [U]"
             },
             {
-                "val":"reverse lookup of previous commands",
-                "key":"[Ctrl] [r]"
+                "val":"Delete right of the cursor",
+                "key":"[Ctrl] [K]"
+            },
+            {
+                "val":"reverse search history",
+                "key":"[Ctrl] [R]"
             },
             {
                 "val":"repeat last command",
                 "key":"!!"
+            },
+            {
+                "val":"auto completion of command",
+                "key":"[TAB]"
             },
             {
                 "val":"log out of current session",
