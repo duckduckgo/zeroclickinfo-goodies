@@ -1391,6 +1391,12 @@ DDH.calculator.build = function() {
                 setTimeout(function() {
                     $newCalc.removeClass('tile__past-calc--hidden');
                 }, 20);
+                // Clicking the history adds the result to the input.
+                $('.tile__past-calc').on('click', function(event) {
+                    event.stopImmediatePropagation();
+                    var val = $(this).find('.tile__past-result').val();
+                    calc.process.calculation(val);
+                });
             },
             remove: function(formulaId) {
                 // TODO
