@@ -220,22 +220,33 @@ DDH.calculator.build = function() {
         };
     }
 
+    function calcFieldOperator(symbol) {
+        return new CalcField({
+            rep: symbol,
+            numFields: 0
+        });
+    }
+
     function maker(what) {
         new what();
     }
 
     // Buttons
     var BTS = {
-        'OP_PLUS': new CalcField({
-            numFields: 0,
-            rep: '+'
-            // rep: function() {
-            //   return this.fields[0].asText + ' + ' + this.fields[1].asText;
-            // }
-        }),
+        'OP_DIV': calcFieldOperator('÷'),
+        'OP_MULT': calcFieldOperator('×'),
+        'OP_PLUS': calcFieldOperator('+'),
+        'OP_MINUS': calcFieldOperator('-'),
         '0': CalcFieldChar('0'),
         '1': CalcFieldChar('1'),
+        '2': CalcFieldChar('2'),
+        '3': CalcFieldChar('3'),
+        '4': CalcFieldChar('4'),
+        '5': CalcFieldChar('5'),
+        '6': CalcFieldChar('6'),
         '7': CalcFieldChar('7'),
+        '8': CalcFieldChar('8'),
+        '9': CalcFieldChar('9'),
         ' ': CalcFieldChar(' '),
         'META_CLEAR': new CalcNonDisplay({
             actionType: 'META',
