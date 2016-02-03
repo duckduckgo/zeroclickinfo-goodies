@@ -109,7 +109,7 @@ ddg_goodie_test(
             }
         }
     ),
-    'sunset at 53N 2E on 2014-01-01' => test_zci("On 01 Jan 2014, sunrise in Coordinates 53°N 2°E is at 8:05 AM; sunset at 3:46 PM.",
+    'sunset at 53N 2E on 2014-01-01' => test_zci("On 01 Jan 2014, sunrise in Coordinates 53°N 2°E is at 3:05 AM; sunset at 10:46 AM.",
         structured_answer => {
             id => 'sun_info',
             name => 'Answer',
@@ -124,7 +124,7 @@ ddg_goodie_test(
             }
         }
     ),
-    'sunset at 53N 2W on 2014-01-08' => test_zci("On 08 Jan 2014, sunrise in Coordinates 53°N -2°E is at 8:18 AM; sunset at 4:11 PM.",
+    'sunset at 53N 2W on 2014-01-08' => test_zci("On 08 Jan 2014, sunrise in Coordinates 53°N -2°E is at 3:18 AM; sunset at 11:11 AM.",
         structured_answer => {
             id => 'sun_info',
             name => 'Answer',
