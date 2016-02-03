@@ -42,8 +42,11 @@ my %standard_triggers = (
         maybe_plural('example'),
     ],
     'code' => [
+        'functions',
+        'methods',
         'quick reference',
         'reference',
+        'syntax',
     ],
     'math' => [
         maybe_plural('equation'),
