@@ -245,6 +245,7 @@ DDH.calculator.build = function() {
         'OP_MULT': calcFieldOperator('×'),
         'OP_PLUS': calcFieldOperator('+'),
         'OP_MINUS': calcFieldOperator('-'),
+        'CONST_PI': CalcFieldChar('π'),
         '0': CalcFieldChar('0'),
         '1': CalcFieldChar('1'),
         '2': CalcFieldChar('2'),
