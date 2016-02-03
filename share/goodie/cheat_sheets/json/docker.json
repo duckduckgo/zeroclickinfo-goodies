@@ -12,6 +12,8 @@
         "Container Info",
         "Container Import/Export",
         "Container Executing Commands",
+        "Networks",
+        "Volumes",
         "Image Lifecycle",
         "Image Info",
         "Registry and Repository"
@@ -37,6 +39,14 @@
             {
                 "key": "docker restart",
                 "val": "restarts a container"
+            },
+            {
+                "key": "docker pause",
+                "val": "pauses a running container freezing it in place"
+            },
+            {
+                "key": "docker unpause",
+                "val": "un-suspend all processes in a container"
             },
             {
                 "key": "docker rm",
@@ -103,6 +113,50 @@
             {
                 "key": "docker exec",
                 "val": "to execute a command in container"
+            }
+        ],
+        "Networks": [
+            {
+                "key": "docker network create",
+                "val": "creates a new network"
+            },
+            {
+                "key": "docker network rm",
+                "val": "removes a network by name or identifier"
+            },
+            {
+                "key": "docker network ls",
+                "val": "lists all the networks the engine daemon knows"
+            },
+            {
+                "key": "docker network inspect",
+                "val": "returns information about one or more networks"
+            },
+            {
+                "key": "docker network connect",
+                "val": "connects a running container to a network"
+            },
+            {
+                "key": "docker network disconnect",
+                "val": "disconnects a container from a network"
+            }
+        ],
+        "Volumes": [
+            {
+                "key": "docker volumes create",
+                "val": "creates a new volume that containers can consume and store data"
+            },
+            {
+                "key": "docker volumes rm",
+                "val": "removes one or more volumes"
+            },
+            {
+                "key": "docker volumes ls",
+                "val": "lists all the volumes docker knows about"
+            },
+            {
+                "key": "docker volumes inspect",
+                "val": "returns information about a volume"
             }
         ],
         "Image Lifecycle": [
