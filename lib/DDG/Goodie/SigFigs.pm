@@ -5,7 +5,7 @@ use strict;
 use DDG::Goodie;
 with 'DDG::GoodieRole::NumberStyler';
 
-triggers any => 'sigfigs', 'sig figs', 'sf', 'significant';
+triggers any => 'sigfigs', 'sig figs', 'significant';
 
 zci answer_type => "sig_figs";
 zci is_cached => 1;
@@ -35,9 +35,9 @@ my $number_re = number_style_regex();
 
 handle query_raw => sub {
     my $query = $_;
-    $query =~ s/.*?(sf|sig(nificant)? ?(fig(ure)?|digit)s)[^,.\d]*+//i;
+    $query =~ s/.*?(sig(nificant)? ?(fig(ure)?|digit)s)[^,.\d]*+//i;
     return if $query eq '';
-    $query =~ /^($number_re)\D*?$/ or return;
+    $query =~ /^($number_re)\??$/ or return;
     my $number_match = $1;
     my $style = number_style_for($number_match);
     return unless $style;
