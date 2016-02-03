@@ -17,6 +17,7 @@
     "section_order": [
         "Calendar",
         "Rule changes",
+        "Tyres",
         "Points system",
         "Teams & Drivers"
     ],
@@ -198,13 +199,49 @@
         ],
          "Rule changes": [
              {
-                "key": "Tyres",
-                "val": "blablabla"
+                "key": "New Ultrasoft tyre",
+                 "val": ""
             },
             {
-                "key": "Other changes",
-                "val": "blablabla"
+                "key": "Three tyre types allowed per race",
+                 "val": ""
+            },
+            {
+                "key": "Five engines allowed per season",
+                 "val": ""
             }
-        ]
+             
+        ],
+          "Tyres": [
+            {
+                "key": "Ultrasoft (purple)",
+                 "val": ""
+            },
+            {
+                "key": "Supersoft (red)",
+                 "val": ""
+            },
+            {
+                "key": "Soft (yellow)",
+                 "val": ""
+            },
+            {
+                "key": "Medium (white)",
+                 "val": ""
+            },
+            {
+                "key": "Hard (orange)",
+                 "val": ""
+            },
+            {
+                "key": "Intermediate (green)",
+                 "val": "Wet weather tyre"
+            },
+            {
+                "key": "Wet (blue)",
+                 "val": "Wet weather tyre"
+            }
+          ]
+ 
     }
 }
