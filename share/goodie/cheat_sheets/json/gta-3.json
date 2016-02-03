@@ -1,0 +1,78 @@
+{
+  "id": "gta_3_cheat_sheet",
+  "name": "Grand Theft Auto III",
+  "description": "A set of cheat codes for GTA 3 gameplay",
+  "metadata": {
+    "sourceName": "Game Faqs",
+    "sourceUrl": "http://www.gamefaqs.com/pc/548931-grand-theft-auto-iii/cheats"
+  },
+  "aliases": [
+    "gta 3"
+  ],
+  "section_order": [
+    "Most needed",
+    "Weather",
+    "Other Cheats"
+  ],
+  "sections": {
+    "Most needed": [
+      {
+        "val": "Health Cheat",
+        "key": "GESUNDHEIT"
+      },
+      {
+        "val": "Weapons Cheat",
+        "key": "GUNSGUNSGUNS"
+      },
+      {
+        "val": "Money Cheat",
+        "key": "IFIWEREARICHMAN"
+      },
+      {
+        "val": "Armor Cheat",
+        "key": "TORTOISE"
+      },
+      {
+        "val": "Blow Up Cars Around You",
+        "key": "BANGBANGBANG"
+      }
+    ],
+    "Weather": [
+      {
+        "val": "Nice Weather",
+        "key": "SKINCANCERFORME"
+      },
+      {
+        "val": "Fog Thickness Level 1",
+        "key": "ILIKESCOTLAND"
+      },
+      {
+        "val": "Fog Thickness Level 2",
+        "key": "ILOVESCOTLAND"
+      },
+      {
+        "val": "Fog Thickness Level 3",
+        "key": "PEASOUP"
+      }
+    ],
+      "Other Cheats": [
+      {
+        "val": "Wanted Level Up",
+        "key": "MOREPOLICEPLEASE"
+      },
+      {
+        "val": "Wanted Level Down",
+        "key": "NOPOLICEPLEASE"
+      },
+      {
+        "val": "Spawn Tank",
+        "key": "GIVEUSATANK"
+      },
+      {
+        "val": "Flying Cars",
+        "key": "CHITTYCHITTYBB"
+      }
+    ]
+  }
+}
+
