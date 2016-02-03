@@ -47,20 +47,20 @@
         "key": "[Ctrl] [Z]"
       },
       {
-        "key": "[Ctrl] [Y]",
-        "val": "Redo"
+        "val":  "Redo",
+        "key": "[Ctrl] [Y]"
       },
       {
-        "key": "[Ctrl] [X] ",
-        "val": "Cut"
+        "val":  "Cut",
+        "key": "[Ctrl] [X] "
       },
       {
-        "key": "[Ctrl] [V] ",
-        "val": "Paste"
+        "val": "Paste",
+        "key": "[Ctrl] [V] "
       },
       {
-        "key": "[Ctrl] [C] ",
-        "val": "Copy"
+        "val":  "Copy",
+        "key": "[Ctrl] [C] "
       }
     ]
   }
