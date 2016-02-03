@@ -6,6 +6,7 @@
         "sourceName": "GNOME Help",
         "sourceUrl": "https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html.en"
     },
+    "template_type": "keyboard",
     "section_order": [
         "Windows",
         "System",
