@@ -37,7 +37,7 @@ handle query_raw => sub {
     my $query = $_;
     $query =~ s/.*?(sig(nificant)? ?(fig(ure)?|digit)s)[^,.\d]*+//i;
     return if $query eq '';
-    $query =~ /^($number_re)\D*?$/ or return;
+    $query =~ /^($number_re)\??$/ or return;
     my $number_match = $1;
     my $style = number_style_for($number_match);
     return unless $style;
