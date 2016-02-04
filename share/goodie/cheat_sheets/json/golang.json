@@ -58,10 +58,10 @@
             "val": "Bool is the set of boolean values, true and false",
             "key": "bool"
         }, {
-            "val": "string is the set of all strings of 8-bit bytes, conventionally but not necessarily representing UTF-8-encoded text. A string may be empty, but not nil. Values of string type are immutable",
+            "val": "string is the set of all strings of 8-bit bytes. A string may be empty, but not nil",
             "key": "string"
         }, {
-            "val": "int is a signed integer type that is at least 32 bits in size. It is a distinct type, however, and not an alias for, say, int32",
+            "val": "int is a signed integer type that is at least 32 bits in size",
             "key": "int"
         },  {
             "val": "int8 is the set of all signed 8-bit integers. Range: -128 through 127",
@@ -76,7 +76,7 @@
             "val": "int64 is the set of all signed 64-bit integers. Range: -9223372036854775808 through 9223372036854775807",
             "key": "int64"
         },  {
-            "val": "uint is an unsigned integer type that is at least 32 bits in size. It is a distinct type, however, and not an alias for, say, uint32",
+            "val": "uint is an unsigned integer type that is at least 32 bits in size",
             "key": "uint"
         },  {
             "val": "uint8 is the set of all unsigned 8-bit integers. Range: 0 through 255",
@@ -94,10 +94,10 @@
             "val": "uintptr is an integer type that is large enough to hold the bit pattern of any pointer",
             "key": "uintptr"
         },  {
-            "val": "byte is an alias for uint8 and is equivalent to uint8 in all ways. It is used, by convention, to distinguish byte values from 8-bit unsigned integer values",
+            "val": "It is used, by convention, to distinguish byte values from 8-bit unsigned integer values",
             "key": "byte"
         },  {
-            "val": "rune is an alias for int32 and is equivalent to int32 in all ways. It is used, by convention, to distinguish character values from integer values",
+            "val": "It is used, by convention, to distinguish character values from integer values",
             "key": "rune"
         },  {
             "val": "float32 is the set of all IEEE-754 32-bit floating-point numbers",
@@ -109,7 +109,7 @@
             "val": "complex64 is the set of all complex numbers with float32 real and imaginary parts",
             "key": "complex64"
         },  {
-            "val": "complex128 is the set of all complex numbers with float64 real and imaginary parts.",
+            "val": "complex128 is the set of all complex numbers with float64 real and imaginary parts",
             "key": "complex128"
         } ],
         "Control Structures": [{
@@ -157,7 +157,7 @@
             "val": "Shorthand"
         }, {
             "key":"chars := \\[\\]string\\{0: \"a\", 2:\"c\", 1:\"b\"\\}",
-            "val": "\\[ \"a\", \"b\", \"c\" \\]"
+            "val": "\\['a', 'b', 'c'\\]"
         }, {
             "key": "var b = a\\[lo:hi\\]",
             "val": "Creates a slice (view of the array) from index lo to hi-1"
