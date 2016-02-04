@@ -63,6 +63,10 @@ foreach my $path (glob("$json_dir/*.json")){
         push(@tests, {msg => "bad id '$cheat_id', should be '$expected'", critical => 1, pass => $temp_pass});
     }
 
+    ### Template Type tests ###
+    $temp_pass = (exists $json->{template_type} && $json->{template_type})? 1 : 0;
+    push(@tests, {msg => 'must specify a template type', critical => 1, pass => $temp_pass});
+
     ### Metadata tests ###
     my $has_meta = exists $json->{metadata};
 
