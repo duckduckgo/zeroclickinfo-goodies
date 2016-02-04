@@ -57,12 +57,6 @@ sub cheat_sheet_file_for {
     return "$name.json";
 }
 
-sub cheat_names_equal {
-    my ($first, $second) = @_;
-    return ($first eq $second) ||
-        (cheat_sheet_file_for $first) eq (cheat_sheet_file_for $second);
-}
-
 sub getAliases {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
@@ -105,7 +99,8 @@ sub getAliases {
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
                 my $lc_alias = lc $alias;
-                unless (cheat_names_equal $lc_alias, $defaultName) {
+                if (defined $results{$lc_alias}
+                    && $results{$lc_alias} ne $file) {
                     die "Cannot use an alias that is another cheat sheet's name ($lc_alias) in $file"
                         if -f "$cheat_dir/@{[cheat_sheet_file_for $lc_alias]}";
                     die "Name already in use '$lc_alias' in $file"
