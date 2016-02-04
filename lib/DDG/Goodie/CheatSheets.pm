@@ -5,7 +5,6 @@ use JSON::XS;
 use DDG::Goodie;
 use DDP;
 use File::Find::Rule;
-use List::Util qw(any);
 use JSON;
 
 no warnings 'uninitialized';
@@ -17,16 +16,17 @@ my $triggers_json = share('triggers.json')->slurp();
 my %standard_triggers = %{decode_json($triggers_json)};
 
 # All cheat sheets are triggered by these.
-my @all_triggers = (
+my %all_triggers;
+@all_triggers{(
     'help',
     'cheat sheet',
-    'cheatsheet',
-);
+    'cheatsheet'
+)} = undef;
 
 sub generate_standard_triggers {
     my %triggers;
-    grep { @triggers{@{$_}} = undef }
-        (\@all_triggers, values %standard_triggers);
+    @triggers{keys %all_triggers} = undef;
+    grep { @triggers{@{$_}} = undef } values %standard_triggers;
     return keys %triggers;
 }
 
@@ -143,20 +143,22 @@ handle remainder => sub {
     my $remainder = shift;
     # If needed we could jump through a few more hoops to check
     # terms against file names.
-    my ($was_additional, $who) = who_triggered($remainder, $req->matched_trigger);
+    my $matched_trigger = $req->matched_trigger;
+    my ($was_additional, $who) = who_triggered($remainder, $matched_trigger);
     open my $fh, $who or return;
 
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
-    unless ($was_additional || any { $_ eq $req->matched_trigger } @all_triggers) {
+    unless ($was_additional || exists($all_triggers{$matched_trigger})) {
         my $template_type = ($data->{template_type});
         my @categories = ($template_type);
         push @categories, @{$data->{additional_categories}}
             if defined $data->{additional_categories};
         my $matched = 0;
         foreach my $category (@categories) {
-            my @triggers = @{$standard_triggers{$category}};
-            if (any { $_ eq $req->matched_trigger } @triggers) {
+            my %triggers;
+            @triggers{@{$standard_triggers{$category}}} = undef;
+            if (exists $triggers{$matched_trigger}) {
                 $matched = 1;
                 last;
             };
