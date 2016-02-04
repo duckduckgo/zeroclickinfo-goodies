@@ -82,19 +82,15 @@ sub getAliases {
             my %default_options = (
                 require_name => 1,
             );
-            my $options = {
+            my %options = (
                 file => $file,
-            };
-            if ($data->{triggers}->{options}) {
-                my $trigger_options = delete $data->{triggers}->{options};
-                my %new_options = (%{$trigger_options}, %{$options});
-                $options = \%new_options;
-            };
+            );
+            my %trigger_options = %{delete $data->{triggers}{options} || {}};
+            %options = (%default_options, %trigger_options, %options);
             while (my ($type, $triggers) = each $data->{triggers}) {
-                my %options = (%default_options, %{$options});
                 add_triggers(\%options, $type, $triggers);
             };
-        };
+        }
 
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
