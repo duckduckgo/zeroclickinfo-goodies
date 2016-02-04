@@ -51,12 +51,6 @@ sub add_triggers {
     @trigger_lookup{@triggers} = map { $options } (1..@triggers);
 }
 
-sub cheat_sheet_file_for {
-    my $name = shift;
-    $name =~ s/ /-/g;
-    return "$name.json";
-}
-
 sub getAliases {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
@@ -97,10 +91,8 @@ sub getAliases {
                 my $lc_alias = lc $alias;
                 if (defined $results{$lc_alias}
                     && $results{$lc_alias} ne $file) {
-                    die "Cannot use an alias that is another cheat sheet's name ($lc_alias) in $file"
-                        if -f "$cheat_dir/@{[cheat_sheet_file_for $lc_alias]}";
-                    die "Name already in use '$lc_alias' in $file"
-                        if defined($results{$lc_alias});
+                    my $other_file = $results{$lc_alias} =~ s/$cheat_dir\///r;
+                    die "$name and $other_file both using alias '$lc_alias'";
                 }
                 $results{$lc_alias} = $file;
             }
