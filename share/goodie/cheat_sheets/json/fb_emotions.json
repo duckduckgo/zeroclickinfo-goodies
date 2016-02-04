@@ -1,13 +1,11 @@
 {
-  "id": "facebook emoticons",
-  "name": "Facebook emotions",
-  "description": "A list of useful Facebook emotions",
+  "id": "facebook_emoticons_cheatsheet",
+  "name": "Facebook emotcons",
+  "description": "A list of useful Facebook emoticons",
   "metadata": {
     "sourceName": "Symbols-N-Emoticons",
     "sourceUrl": "http://www.symbols-n-emoticons.com/p/facebook-emoticons-list.html"
   },
-  "aliases": [
-    "View"
   ],
   "template_type": "keyboard",
   "section_order": [
@@ -53,14 +51,12 @@
         "key": ":-* :*"
       },
       {
-        "val": "Pacman Emoticon",
+        "val": "Pacman emoticon",
         "key": ":v"
       },
       {
-        "val": "Robot Emoticon",
+        "val": "Robot emoticon",
         "key": ":|]"
       }
-      
-    ]
+    ] 
   }
-}
