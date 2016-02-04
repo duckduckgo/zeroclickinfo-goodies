@@ -33,20 +33,22 @@ sub generate_standard_triggers {
 my %additional_triggers;
 
 # Used for determining who triggered something.
-my %trigger_lookup = ();
+my %trigger_lookup;
 
 sub add_triggers {
     my ($options, $type, $triggers) = @_;
-    my $existing = $additional_triggers{$type};
-    $triggers = [$triggers] unless ref $triggers eq 'ARRAY';
-    foreach my $trigger (@{$triggers}) {
-        if (any { $_ eq $trigger } @{$existing}) {
+    my @triggers = ref $triggers eq 'ARRAY' ? @{$triggers} : $triggers;
+    my %existing;
+    @existing{@{$additional_triggers{$type}}} = 1
+        if defined($additional_triggers{$type});
+    foreach my $trigger (@triggers) {
+        if (exists($existing{$trigger})) {
             die "Trigger '$trigger' already in use!\n";
         };
     };
-    my @new_triggers = (@{$existing}, @{$triggers});
+    my @new_triggers = (keys %existing, @triggers);
     $additional_triggers{$type} = \@new_triggers;
-    @trigger_lookup{@{$triggers}} = map { $options } (1..@{$triggers});
+    @trigger_lookup{@triggers} = map { $options } (1..@triggers);
 }
 
 sub cheat_sheet_file_for {
