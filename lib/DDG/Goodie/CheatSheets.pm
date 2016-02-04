@@ -6,7 +6,6 @@ use DDG::Goodie;
 use DDP;
 use File::Find::Rule;
 use List::Util qw(any);
-use List::MoreUtils qw(uniq);
 use JSON;
 
 no warnings 'uninitialized';
@@ -25,11 +24,10 @@ my @all_triggers = (
 );
 
 sub generate_standard_triggers {
-    my @triggers = @all_triggers;
-    foreach my $trigger_set (values %standard_triggers) {
-        push @triggers, @{$trigger_set};
-    }
-    return uniq @triggers;
+    my %triggers;
+    grep { @triggers{@{$_}} = undef }
+        (\@all_triggers, values %standard_triggers);
+    return keys %triggers;
 }
 
 my %additional_triggers;
