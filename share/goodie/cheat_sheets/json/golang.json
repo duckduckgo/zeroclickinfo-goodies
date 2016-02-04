@@ -145,7 +145,7 @@
             "val": "Shorthand"
         }, {
             "key": "a := \\[...\\]int\\{1, 2\\}",
-            "val": "Elipsis -&gt; Compiler figures out array length"
+            "val": "Elipsis -> Compiler figures out array length"
         }, {
             "key": "var a \\[\\]int",
             "val": "Declare a slice - similar to an array, but length is unspecified"
@@ -206,7 +206,7 @@
             "key": "v.Abs()",
             "val": "Call method"
         }, {
-            "key": "point := struct \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;X, Y int<br>\\}\\{1, 2\\}",
+            "key": "point := struct \\{X, Y int\\}\\{1, 2\\}",
             "val": "Anonymous structs"
         }],
         "Pointers": [{
@@ -248,7 +248,7 @@
             "key": "%",
             "val":"Remainder"
         }, {
-            "key": "&amp;",
+            "key": "&",
             "val":"Bitwise and"
         }, {
             "key": "|",
@@ -257,13 +257,13 @@
             "key": "^",
             "val":"Bitwise xor"
         }, {
-            "key": "&amp;^",
+            "key": "&^",
             "val":"Bit clear (and not)"
         }, {
-            "key": "&lt;&lt;",
+            "key": "<<",
             "val":"Left shift"
         }, {
-            "key": "&gt;&gt;",
+            "key": ">>",
             "val":"Right shift"
         }, {
             "key": "==",
@@ -272,19 +272,19 @@
             "key": "!=",
             "val":"Not equal"
         }, {
-            "key": "&lt;",
+            "key": "<",
             "val":"Less than"
         }, {
-            "key": "&lt;=",
+            "key": "<=",
             "val":"Less than or equal"
         }, {
-            "key": "&gt;",
+            "key": ">",
             "val":"Greater than"
         }, {
-            "key": "&gt;=",
+            "key": ">=",
             "val":"Greater than or equal"
         }, {
-            "key": "&amp;&amp;",
+            "key": "&&",
             "val":"Logical and"
         }, {
             "key": "||",
@@ -293,13 +293,13 @@
             "key": "!",
             "val":"Logical not"
         },  {
-            "key": "&amp;",
+            "key": "&",
             "val":"Address of / create pointer"
         }, {
             "key": "*",
             "val":"Dereference pointer"
         }, {
-            "key": "&lt;-",
+            "key": "<-",
             "val":"Send / receive operator"
         } ]
     }
