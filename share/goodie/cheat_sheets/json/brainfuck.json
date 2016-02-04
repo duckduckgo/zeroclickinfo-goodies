@@ -1,0 +1,46 @@
+{
+	"id": "brainfuck_cheat_sheet",
+	"name": "Brainfuck",
+
+	"metadata": {
+		"sourceName": "Wikipedia",
+		"sourceUrl": "https://en.wikipedia.org/wiki/Brainfuck#Commands"
+	},
+
+
+	"template_type": "code",
+
+	"section_order": [
+		"Commands"
+	],
+
+	"sections": {
+		"Commands": [{
+				"key": ">",
+				"val": "Increment data pointer"
+			}, {
+				"key": "<",
+				"val": "Decrement data pointer"
+			}, {
+				"key": "+",
+				"val": "Increment byte at data pointer"
+			}, {
+				"key": "-",
+				"val": "Decrement byte at data pointer"
+			}, {
+				"key": ".",
+				"val": "Output byte at data pointer"
+			}, {
+				"key": ",",
+				"val": "Accept a byte at input, and store at data pointer"
+			}, {
+				"key": "[",
+				"val": "If byte at data pointer is zero, move data pointer to right of matching ]"
+			}, {
+				"key": "]",
+				"val": "If byte at data pointer is non-zero, move data pointer to right of matching ["
+			}
+
+		]
+	}
+}
