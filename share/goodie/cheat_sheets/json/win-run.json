@@ -10,11 +10,11 @@
     “run"
   ],
   "section_order": [
-    "Commands set 1",
-    "Commands set 2"
+    "Commands I",
+    "Commands II"
   ],
   "sections": {
-    "Commands set 1": [
+    "Commands I": [
       {
         "val": "Open Documents Folder",
         "key": "documents"
@@ -64,7 +64,7 @@
         "key": "control"
       }   
     ],
-    "Commands set 2": [
+    "Commands II": [
       {
         "val": "Date And Time",
         "key": "timedate.cpl"
