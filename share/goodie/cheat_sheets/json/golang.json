@@ -223,13 +223,13 @@
             "val": "new creates a pointer to a new struct instance"
         }],
         "Interfaces": [{
-            "key": "type Awesomizer interface \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;Awesomize() string<br>\\}",
+            "key": "type Awesomizer interface \\{ Awesomize() string\\}",
             "val": "Interface declaration"
         }, {
             "key":"type Foo struct \\{\\}",
             "val": "Types do *not* declare to implement interfaces"
         }, {
-            "key": "func (foo Foo) Awesomize() string \\{<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Awesome!\"<br>\\}",
+            "key": "func (foo Foo) Awesomize() string \\{ return \"Awesome!\"\\}",
             "val": "Rather, types implicitly satisfy an interface if they implement all required methods"
         }],
         "Operators and aliases": [{
