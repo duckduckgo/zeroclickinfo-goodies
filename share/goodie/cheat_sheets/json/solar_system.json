@@ -1,0 +1,200 @@
+{
+    "id": "solar_system_cheat_sheet",
+    "name": "SolarSystem",
+    "description": "This cheat sheet displays basic information of our solar system",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Solar_System"
+    },
+    "aliases": [
+        "Solar system",
+        "solar",
+        "planet",
+        "planets",
+        "solarsystem",
+        "sun",
+        "earth",
+        "mercury",
+        "mars",
+        "jupiter",
+        "saturn",
+        "uranus",
+        "neptune"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Sun",
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune"
+    ],
+    "sections": {
+        "Sun": [
+            {
+                "key": "Distance (earth)",
+                "val": "149,597,900 km"
+            },
+            {
+                "key": "Mass",
+                "val": "1.989 x 10^30 kg"
+            },
+            {
+                "key": "Temperature(center)",
+                "val": "1.57×10^7 K"
+            },
+            {
+                "key": "Volume",
+                "val": "1.41×1018 km^3"
+            }
+        ],
+        "Mercury": [
+            {
+                "key": "Distance from Sun (minimum/maximum)",
+                "val": " 46,001,200/69,816,900 km"
+            },
+            {
+                "key": "Mass",
+                "val": "3.3011×10^23 kg"
+            },
+            {
+                "key": "Temperature(mean)",
+                "val": "340 K"
+            },
+            {
+                "key": "Volume",
+                "val": "6.083×1010 km^3"
+            }
+        ],
+        "Venus": [
+            {
+                "key": "Distance from Sun (minimum/maximum)",
+                "val": "107,477,000/108,939,000 km"
+            },
+            {
+                "key": "Mass",
+                "val": "4.8675×10^24 kg"
+            },
+            {
+                "key": "Temperature(mean)",
+                "val": "737 K"
+            },
+            {
+                "key": "Volume",
+                "val": "9.2843×10^11 km^3"
+            }
+        ],
+        "Earth": [
+            {
+                "key": "Distance from Sun (minimum/maximum)",
+                "val": "147,095,000/152,100,000 km"
+            },
+            {
+                "key": "Mass",
+                "val": "5.97237×10^24 kg"
+            },
+            {
+                "key": "Temperature(mean)",
+                "val": "288 K"
+            },
+            {
+                "key": "Volume",
+                "val": "1.08321×10^12 km^3 "
+            }
+        ],
+        "Mars": [
+            {
+                "key": "Distance from Sun (minimum/maximum)",
+                "val": "206,669,000/249,209,300 km"
+            },
+            {
+                "key": "Mass",
+                "val": "6.4171×10^23 kg"
+            },
+            {
+                "key": "Temperature(mean)",
+                "val": "210 K"
+            },
+            {
+                "key": "Volume",
+                "val": "1.6318×10^11 km^3 "
+            }
+        ],
+        "Jupiter": [
+            {
+                "key": "Distance from Sun (minimum/maximum)",
+                "val": "740,573,600/816,520,800 km"
+            },
+            {
+                "key": "Mass",
+                "val": "1.8986×10^27 kg"
+            },
+            {
+                "key": "Temperature(mean)",
+                "val": "165 K"
+            },
+            {
+                "key": "Volume",
+                "val": "1.43128×10^15 km^3 "
+            }
+        ],
+        "Saturn": [
+            {
+                "key": "Distance from Sun (minimum/maximum)",
+                "val": "1,353,572,956/1,513,325,783 km"
+            },
+            {
+                "key": "Mass",
+                "val": "5.6846×10^26 kg"
+            },
+            {
+                "key": "Temperature(mean)",
+                "val": "134 K"
+            },
+            {
+                "key": "Volume",
+                "val": "8.2713×10^14 km^3 "
+            }
+        ],
+        "Uranus": [
+            {
+                "key": "Distance from Sun (minimum/maximum)",
+                "val": "2,748,938,461/3,004,419,704 km"
+            },
+            {
+                "key": "Mass",
+                "val": "(8.6810 ± 0.0013)×10^25 kg"
+            },
+            {
+                "key": "Temperature(mean)",
+                "val": "76 K"
+            },
+            {
+                "key": "Volume",
+                "val": "6.833×10^13 km^3 "
+            }
+        ],
+        "Neptune": [
+            {
+                "key": "Distance from Sun (minimum/maximum)",
+                "val": "4,452,940,833/4,553,946,490 km"
+            },
+            {
+                "key": "Mass",
+                "val": "1.0243×10^26 kg"
+            },
+            {
+                "key": "Temperature(mean)",
+                "val": "72 K"
+            },
+            {
+                "key": "Volume",
+                "val": "6.254×10^13 km^3 "
+            }
+        ]
+    }
+}
