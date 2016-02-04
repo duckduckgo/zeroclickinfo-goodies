@@ -7,53 +7,15 @@ use DDP;
 use File::Find::Rule;
 use List::Util qw(any);
 use List::MoreUtils qw(uniq);
+use JSON;
 
 no warnings 'uninitialized';
 
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
-sub maybe_plural {
-    my $phrase = shift;
-    return ($phrase, $phrase . 's');
-}
-
-my %standard_triggers = (
-    'keyboard' => [
-        'quick reference',
-        'reference',
-        maybe_plural('shortcut'),
-        'key bindings',
-        'keys',
-        'default keys',
-    ],
-    'reference' => [
-        'quick reference',
-        'reference',
-    ],
-    'terminal' => [
-        maybe_plural('char'),
-        maybe_plural('character'),
-        maybe_plural('command'),
-        maybe_plural('symbol'),
-    ],
-    'language' => [
-        'guide',
-        maybe_plural('example'),
-    ],
-    'code' => [
-        'functions',
-        'methods',
-        'quick reference',
-        'reference',
-        'syntax',
-    ],
-    'math' => [
-        maybe_plural('equation'),
-        maybe_plural('formula'),
-        'formulae',
-    ],
-);
+my $triggers_json = share('triggers.json')->slurp();
+my %standard_triggers = %{decode_json($triggers_json)};
 
 # All cheat sheets are triggered by these.
 my @all_triggers = (
@@ -109,7 +71,7 @@ sub cheat_names_equal {
 sub getAliases {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
-                                ->in(share());
+                                ->in(share('json'));
     my %results;
     my $cheat_dir = File::Basename::dirname($files[0]);
 
