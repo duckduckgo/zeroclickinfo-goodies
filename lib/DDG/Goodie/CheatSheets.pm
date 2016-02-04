@@ -32,12 +32,7 @@ sub generate_standard_triggers {
     return uniq @triggers;
 }
 
-my %additional_triggers = (
-    any      => [],
-    end      => [],
-    start    => [],
-    startend => [],
-);
+my %additional_triggers;
 
 # Used for determining who triggered something.
 my %trigger_lookup = ();
