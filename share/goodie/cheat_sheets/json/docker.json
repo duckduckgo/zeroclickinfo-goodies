@@ -46,7 +46,7 @@
             },
             {
                 "key": "docker unpause",
-                "val": "un-suspend all processes in a container"
+                "val": "resumes all processes in a container"
             },
             {
                 "key": "docker rm",
