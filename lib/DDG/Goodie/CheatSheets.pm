@@ -152,8 +152,9 @@ sub acceptable_triggers_for {
     my @categories = categories_for $data;
     my %triggers;
     foreach my $category (@categories) {
-        my %cat_triggers = %{$category_triggers{$category}};
-        %triggers = (%triggers, %cat_triggers);
+        my $cat = $category_triggers{$category};
+        die "Unknown category '$category'" unless defined $cat;
+        %triggers = (%triggers, %{$cat});
     }
     return %triggers;
 }
