@@ -1,13 +1,13 @@
 {
-  "id": "windows_run_cheat_sheet",
-  "name": "Windows Run",
+  "id": "windows_run_command_cheat_sheet",
+  "name": "Windows Run Command",
   "description": "A single-line command line interface used to directly open an application or document whose path is known.",
   "metadata": {
     "sourceName": "Symantec",
     "sourceUrl": "http://www.symantec.com/connect/articles/list-run-commands-windows-7-and-8"
   },
   "aliases": [
-   "run"
+   "Windows Run"
   ],
   "section_order": [
     "Commands I",
