@@ -1,46 +1,62 @@
 {
-    "keyboard": [
-        "quick reference",
-        "reference",
-        "shortcuts",
-        "key bindings",
-        "keys",
-        "default keys"
-    ],
-    "reference": [
-        "quick reference",
-        "reference"
-    ],
-    "terminal": [
-        "char",
-        "chars",
-        "character",
-        "characters",
-        "command",
-        "commands",
-        "symbol"
-    ],
-    "language": [
-        "guide",
-        "example"
-    ],
-    "code": [
-        "functions",
-        "methods",
-        "quick reference",
-        "reference",
-        "syntax"
-    ],
-    "math": [
-        "equation",
-        "equations",
-        "formula",
-        "formulas",
-        "formulae"
-    ],
-    "standard": [
-        "help",
-        "cheat sheet",
-        "cheatsheet"
-    ]
+    "standard": {
+        "keyboard": {
+            "startend": [
+                "quick reference",
+                "reference",
+                "shortcuts",
+                "key bindings",
+                "keys",
+                "default keys"
+            ]
+      },
+      "reference": {
+          "startend": [
+              "quick reference",
+              "reference"
+          ]
+      },
+      "terminal": {
+          "startend": [
+              "char",
+              "chars",
+              "character",
+              "characters",
+              "command",
+              "commands",
+              "symbols"
+          ]
+      },
+      "language": {
+          "startend": [
+              "guide",
+              "example"
+          ]
+      },
+      "code": {
+          "startend": [
+              "functions",
+              "methods",
+              "quick reference",
+              "reference",
+              "syntax"
+          ]
+      },
+      "math": {
+          "startend": [
+              "equation",
+              "equations",
+              "formula",
+              "formulas",
+              "formulae"
+          ]
+      },
+      "standard": {
+          "startend": [
+              "help",
+              "cheat sheet",
+              "cheatsheet"
+          ]
+      }
+    }
 }
