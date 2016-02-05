@@ -15,17 +15,8 @@ zci is_cached   => 1;
 my $triggers_json = share('triggers.json')->slurp();
 my %standard_triggers = %{decode_json($triggers_json)};
 
-# All cheat sheets are triggered by these.
-my %all_triggers;
-@all_triggers{(
-    'help',
-    'cheat sheet',
-    'cheatsheet'
-)} = undef;
-
 sub generate_standard_triggers {
     my %triggers;
-    @triggers{keys %all_triggers} = undef;
     grep { @triggers{@{$_}} = undef } values %standard_triggers;
     return keys %triggers;
 }
@@ -127,6 +118,15 @@ sub who_triggered {
     };
 }
 
+sub categories_for {
+    my $data = shift;
+    my $template_type = ($data->{template_type});
+    my @categories = ('standard', $template_type);
+    push @categories, @{$data->{additional_categories}}
+        if defined $data->{additional_categories};
+    return @categories;
+}
+
 handle remainder => sub {
     my $remainder = shift;
     # If needed we could jump through a few more hoops to check
@@ -137,11 +137,8 @@ handle remainder => sub {
 
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
-    unless ($was_additional || exists($all_triggers{$matched_trigger})) {
-        my $template_type = ($data->{template_type});
-        my @categories = ($template_type);
-        push @categories, @{$data->{additional_categories}}
-            if defined $data->{additional_categories};
+    unless ($was_additional) {
+        my @categories = categories_for $data;
         my $matched = 0;
         foreach my $category (@categories) {
             my %triggers;
