@@ -4,8 +4,8 @@
     "description": "A quick reference to Jekyll, a static site generator",
     "template_type": "terminal",
     "metadata": {
-        "sourceName": "Jekyll quickrefs",
-        "sourceUrl": "https://github.com/planetjekyll/quickrefs/blob/master/JEKYLL.md"
+        "sourceName": "Jekyllrb",
+        "sourceUrl": "https://jekyllrb.com/"
     },
     "section_order": [
         "Jekyll Commands",
@@ -126,53 +126,53 @@
         ],
         "Liquid Template Filters": [
             {
-                "key": "{{ | capitalize }}",
+                "key": "\\{\\{ | capitalize \\}\\}",
                 "val": "Capitalize words in the input sentence"
             },
             {
-                "key": "{{ 'foobarfoobar' | remove:'foo' }}",
+                "key": "\\{\\{ 'foobarfoobar' | remove:'foo' \\}\\}",
                 "val": "Remove each occurrence"
             },
             {
-                "key": "{{ | date }}",
+                "key": "\\{\\{ | date \\}\\}",
                 "val": "Reformat a date"
             },
             {
-                "key": "{{ | first }}",
+                "key": "\\{\\{ | first \\}\\}",
                 "val": "Get the first element of the passed in array"
             },
             {
-                "key": "{{ 4  | minus:2 }}",
+                "key": "\\{\\{ 4  | minus:2 \\}\\}",
                 "val": "Subtraction"
             },
             {
-                "key": "{{ | escape }}",
+                "key": "\\{\\{ | escape \\}\\}",
                 "val": "Escape a string"
             }
         ],
         "Jekyll Filters": [
             {
-                "key": "{{ site.time | date_to_rfc822 }}",
+                "key": "\\{\\{ site.time | date_to_rfc822 \\}\\}",
                 "val": "Convert date to RFC-822 format"
             },
             {
-                "key": "{{ site.posts | sort: 'author' }}",
+                "key": "\\{\\{ site.posts | sort: 'author' \\}\\}",
                 "val": "Optional args for hashes"
             },
             {
-                "key": "{{ page.content | xml_escape }}",
+                "key": "\\{\\{ page.content | xml_escape \\}\\}",
                 "val": "Escape some text for use in XML"
             },
             {
-                "key": "{{ page.tags | sort }}",
+                "key": "\\{\\{ page.tags | sort \\}\\}",
                 "val": "Sort an array"
             },
             {
-                "key": "{{ page.excerpt | markdownify }}",
+                "key": "\\{\\{ page.excerpt | markdownify \\}\\}",
                 "val": "Convert a Markdown-formatted string into HTML"
             },
             {
-                "key": "{{ page.content | number_of_words }}",
+                "key": "\\{\\{ page.content | number_of_words \\}\\}",
                 "val": "Count the number of words in some text"
             }
         ]
