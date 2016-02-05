@@ -20,14 +20,8 @@ sub generate_triggers {
     delete $triggers->{standard};
     my %custom_triggers = %{$triggers};
     %custom_triggers = make_identity_triggers(%custom_triggers);
-    my %triggers;
+    my %triggers = %custom_triggers;
     while (my ($trigger_type, $triggers) = each %cat_triggers) {
-        my @triggers = $triggers{$trigger_type}
-            if defined $triggers{$trigger_type};
-        @triggers = (@triggers, @{$triggers});
-        $triggers{$trigger_type} = \@triggers;
-    }
-    while (my ($trigger_type, $triggers) = each %custom_triggers) {
         my @triggers = $triggers{$trigger_type}
             if defined $triggers{$trigger_type};
         @triggers = (@triggers, @{$triggers});
@@ -46,7 +40,8 @@ sub make_triggers {
         while (my ($id, $trigger_hash) = each %spec_triggers) {
             my @track_triggers;
             while (my ($trigger_type, $add_triggers) = each $trigger_hash) {
-                my @triggers = @{$triggers{$trigger_type}} if exists($triggers{$trigger_type});
+                my @triggers = @{$triggers{$trigger_type}}
+                    if exists($triggers{$trigger_type});
                 @triggers = (@triggers, @{$add_triggers});
                 @track_triggers = (@track_triggers, @{$add_triggers});
                 $triggers{$trigger_type} = \@triggers;
@@ -75,7 +70,7 @@ sub make_category_triggers {
     return make_triggers($add_categories)->(@_);
 }
 
-sub getAliases {
+sub get_aliases {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
                                 ->in(share('json'));
@@ -111,7 +106,7 @@ sub getAliases {
     return \%results;
 }
 
-my $aliases = getAliases();
+my $aliases = get_aliases();
 
 my %cheat_triggers = generate_triggers();
 
