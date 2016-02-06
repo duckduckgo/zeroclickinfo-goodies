@@ -3,7 +3,6 @@ package DDG::Goodie::MarkdownReference;
 
 use strict;
 use DDG::Goodie;
-use HTML::Entities;
 
 zci answer_type => 'markdown_reference';
 zci is_cached   => 1;
