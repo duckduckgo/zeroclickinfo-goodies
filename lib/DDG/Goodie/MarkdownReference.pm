@@ -10,13 +10,6 @@ zci is_cached   => 1;
 
 triggers startend => (
     'markdown', 'md',
-    'markdown help', 'md help',
-    'markdown cheat sheet', 'md cheat sheet',
-    'markdown cheatsheet', 'md cheatsheet',
-    'markdown syntax', 'md syntax',
-    'markdown guide', 'md guide',
-    'markdown quick reference', 'md quick reference',
-    'markdown reference', 'md reference',
 );
 
 my %synonyms = (

@@ -43,26 +43,28 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 ddg_goodie_test(
 	[ 'DDG::Goodie::MarkdownReference' ],
 	  # Headers
-    'md header'                   => build_test('header', 'Header'),
-    'markdown header'             => build_test('header', 'Header'),
-    'markdown cheat sheet header' => build_test('header', 'Header'),
-    'md cheat sheet header'       => build_test('header', 'Header'),
-    'h1 markdown cheat sheet'     => build_test('header', 'Header'),
-    'markdown help h1'            => build_test('header', 'Header'),
+    'md header'        => build_test('header', 'Header'),
+    'markdown header'  => build_test('header', 'Header'),
+    'markdown headers' => build_test('header', 'Header'),
+    'md header'        => build_test('header', 'Header'),
+    'h1 markdown'      => build_test('header', 'Header'),
+    'markdown h1'      => build_test('header', 'Header'),
     # Lists
-    'markdown syntax list' => build_test('list', 'List'),
+    'markdown list' => build_test('list', 'List'),
     # Emphasis
-    'markdown quick reference em' => build_test('emphasis', 'Emphasis'),
+    'markdown em' => build_test('emphasis', 'Emphasis'),
     # Bold
-    'markdown guide strong' => build_test('bold', 'Bold'),
+    'markdown strong' => build_test('bold', 'Bold'),
     # Block Quote
-    'markdown reference blockquote' => build_test('blockquote', 'Blockquote'),
+    'markdown blockquote' => build_test('blockquote', 'Blockquote'),
     # Image
-    'markdown cheatsheet insert image' => build_test('image', 'Image'),
+    'markdown insert image' => build_test('image', 'Image'),
     # Links
-    'markdown cheat sheet link' => build_test('link', 'Link'),
+    'markdown link' => build_test('link', 'Link'),
     # Should not trigger
-    'markdown cheat sheet random stuff' => undef,
+    'markdown random stuff'     => undef,
+    'markdown cheat sheet'      => undef,
+    'markdown cheat sheet list' => undef,
 );
 
 done_testing;
