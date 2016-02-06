@@ -102,18 +102,34 @@ sub element_to_subtitle {
     return 'Markdown ' . ucfirst $element . 's';
 }
 
+sub get_results {
+    my $query = shift;
+    my $element_type = get_element_type $query or return;
+    my %elements = map { $_ => 0 } (
+        'header',
+        'list',
+        'emphasis',
+        'bold',
+        'blockquote',
+        'image',
+        'link',
+    );
+    $elements{$element_type} = 1;
+    my $subtitle = element_to_subtitle $element_type;
+    return ($subtitle, \%elements);
+}
+
 handle remainder => sub {
     my $query = shift;
     return unless $query;
-    my $element_type = get_element_type $query or return;
-    my $subtitle = element_to_subtitle $element_type;
-    return $element_type,
+    my ($subtitle, $elements) = get_results $query or return;
+    return $subtitle,
         structured_answer => {
             id   => 'markdown_reference',
             name => 'Answer',
             data => {
-                element_type => $element_type,
-                subtitle    =>  $subtitle,
+                elements => $elements,
+                subtitle => $subtitle,
             },
             templates => {
                 group   => 'base',

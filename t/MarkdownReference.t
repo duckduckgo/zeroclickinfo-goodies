@@ -11,13 +11,23 @@ zci is_cached   => 1;
 
 sub build_structured_answer {
     my ($result_type, $formatted_input) = shift;
+    my %elements = map { $_ => 0 } (
+        'header',
+        'list',
+        'emphasis',
+        'bold',
+        'blockquote',
+        'image',
+        'link',
+    );
+    $elements{$result_type} = 1;
     return $result_type,
         structured_answer => {
             id   => 'markdown_reference',
             name => 'Answer',
             data => {
-                element_type => $result_type,
-                subtitle     => $formatted_input,
+                elements => \%elements,
+                subtitle => $formatted_input,
             },
             templates => {
                 group   => 'base',
