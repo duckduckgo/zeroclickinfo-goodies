@@ -1,7 +1,7 @@
 {
     "id": "solar_system_cheat_sheet",
     "name": "Solar System",
-    "description": "This cheat sheet displays basic information of our solar system",
+    "description": "Basic information about our solar system",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Solar_System"
