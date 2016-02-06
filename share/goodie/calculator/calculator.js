@@ -4,27 +4,6 @@ DDH.calculator = DDH.calculator || {};
 
 /* global DDG, Goodie, isNumber */
 DDH.calculator.build = function() {
-    function clog() {
-        if (console && !(console === undefined)) {
-            var args = Array.prototype.slice.apply(arguments);
-            args.unshift('%c[ia:calculator]', 'font-weight:bold');
-            console.log.apply(console, args);
-        }
-    }
-    function cwarn() {
-        if (console && !(console === undefined)) {
-            var args = Array.prototype.slice.apply(arguments);
-            args.unshift('%c[ia:calculator]', 'font-weight:bold');
-            console.warn.apply(console, args);
-        }
-    }
-    function cerror() {
-        if (console && !(console === undefined)) {
-            var args = Array.prototype.slice.apply(arguments);
-            args.unshift('%c[ia:calculator]', 'font-weight:bold');
-            console.cerror.apply(console, args);
-        }
-    }
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
@@ -70,20 +49,39 @@ DDH.calculator.build = function() {
         this.rep = options.rep;
         this.numFields = options.numFields || 0;
         // this.fields = options.startFields || [];
-        this.fields = options.startFields || 'undef'.repeat(this.numFields);
+        // this.fields = options.fields || 'undef'.repeat(this.numFields);
+        this.fields = options.fields || [];
         this.actionType = options.actionType || 'NONE';
         this.name = options.name || this.rep;
+        this.htmlRep = options.htmlRep || this.rep;
     }
 
     CalcField.prototype.asText = function() {
+        console.log("[CF.asText] typeof rep: " + typeof(this.rep));
         if (typeof this.rep === 'string') {
-          return this.rep;
+            return this.rep;
         }
-        if (typeof this.rep === Function) {
-          return this.rep();
+        if (typeof this.rep === 'function') {
+            console.log("[CF.asText] got function");
+            return this.rep();
         }
         console.warn('[CF.asText] did not generate any text!');
     };
+
+    // Produces HTML output for representing the field.
+    CalcField.prototype.toHtml = function() {
+        if (typeof this.htmlRep === 'string') {
+            return this.htmlRep;
+        }
+        if (typeof this.htmlRep === 'function') {
+            return this.htmlRep();
+        }
+        console.warn('[CF.toHtml] did not generate any html!');
+    };
+
+    // CalcField.prototype.onLastField = function(pos) {
+    //     if (this.numFields
+    // };
 
     // Get the very last field (maybe of children).
     CalcField.prototype.recurseLastField = function () {
@@ -117,8 +115,8 @@ DDH.calculator.build = function() {
                 return this;
             }
             var restToAccess = pos.slice(1);
-            clog("[accessField] Rest: " + restToAccess);
-            clog("[accessField] thisFieldToAccess: " + thisFieldToAccess);
+            console.log("[accessField] Rest: " + restToAccess);
+            console.log("[accessField] thisFieldToAccess: " + thisFieldToAccess);
             return this.fields[thisFieldToAccess].accessField(restToAccess);
         }
     };
@@ -133,7 +131,7 @@ DDH.calculator.build = function() {
             this.fields[pos[0]] = val;
           }
           var newPos = pos.slice(1);
-          clog("[C.setField] Rest: " + newPos);
+          console.log("[C.setField] Rest: " + newPos);
           return this.fields[thisFieldToAccess].setField(newPos, val);
       }
     };
@@ -172,7 +170,7 @@ DDH.calculator.build = function() {
         var currentLate;
         for (i=this.numFields-1; i>0; i--) {
             currentLate = this.fields[i];
-            if (currentLate.actionType === 'PLACE_HOLDER') {
+            if (isPlaceHolder(currentLate.actionType)) {
                 console.log('[CF.latest needs] got place holder, returning: ' + pos.concat([i]));
                 return pos.concat([i]);
             }
@@ -211,13 +209,84 @@ DDH.calculator.build = function() {
         });
     }
 
+    // A field collector is used to group fields together under a single
+    // position - for example, in function arguments.
     function FieldCollector(options) {
         this.actionType = 'COLLECT';
         this.allow = options.allow;
-        this.fields = [];
+        this.fields = options.fields || [];
         this.rep = function() {
-            this.fields.join();
+            var arrRep = this.fields.map(function (index, element) {
+                return element.asText();
+            });
+            return arrRep.join('');
         };
+    }
+
+    FieldCollector.prototype.asText = function() {
+        return this.fields.map(function(field) { return field.asText(); }).join('');
+    };
+
+    FieldCollector.prototype.toHtml = function() {
+        console.log("Making html");
+        console.log("Fields: " + this.fields);
+        var html = this.fields.map(function(field) {
+            console.log("Got field: %s", field);
+            return field.toHtml();
+        }).join('');
+        return '<span>' + html + '</span>';
+    };
+
+    FieldCollector.prototype.setField = function(pos, val) {
+        console.log('[FC.setField] setting field: ' + pos + ' to ' + val);
+        var thisFieldToAccess = pos[0];
+        if (pos.length === 1) {
+            this.fields[pos[0]] = val;
+        } else {
+            var newPos = pos.slice(1);
+            console.log("[FC.setField] Rest: " + newPos);
+            return this.fields[thisFieldToAccess].setField(newPos, val);
+        }
+      // if (thisFieldToAccess >= this.numFields) {
+      //     console.warn("[CF.setField] field access is greater than num fields!: " + this.numFields + ", " + thisFieldToAccess);
+      // } else {
+      //     if (pos.length === 1) {
+      //       this.fields[pos[0]] = val;
+      //     }
+      //     var newPos = pos.slice(1);
+      //     console.log("[C.setField] Rest: " + newPos);
+      //     return this.fields[thisFieldToAccess].setField(newPos, val);
+      // }
+    };
+
+    // Retrieve the Field accessed through pos.
+    FieldCollector.prototype.accessField = function(pos) {
+        console.log('[FC.accessField] Accessing field at pos: ' + pos);
+        var thisFieldToAccess = pos[0];
+        if (thisFieldToAccess >= this.fields.length) {
+            console.warn("[FC.accessField] Attempt to access a field not yet defined! (" + thisFieldToAccess + ')');
+            return;
+        }
+        if (pos.length === 0) {
+            console.error("[FC.accessField] Attempt to access a Collector!");
+            return this;
+        }
+        var restToAccess = pos.slice(1);
+        console.log("[FC.accessField] Rest: " + restToAccess);
+        console.log("[FC.accessField] thisFieldToAccess: " + thisFieldToAccess);
+        return this.fields[thisFieldToAccess].accessField(restToAccess);
+    };
+
+    FieldCollector.prototype.deleteLast = function() {
+        console.log("[FC.deleteLast] deleting...");
+        return this.fields.pop();
+    };
+
+    // The 'zero' field collector for the default display.
+    function newZeroFieldCollector() {
+        return new FieldCollector({
+            fields: [BTS['0']]
+        });
     }
 
     function calcFieldOperator(symbol) {
@@ -225,6 +294,10 @@ DDH.calculator.build = function() {
             rep: ' ' + symbol + ' ',
             numFields: 0
         });
+    }
+
+    function isPlaceHolder(field) {
+        return field.actionType === 'PLACE_HOLDER';
     }
 
     function maker(what) {
@@ -238,6 +311,29 @@ DDH.calculator.build = function() {
         });
     }
 
+    function calcFieldPlaceHolder() {
+        return new CalcField({
+            actionType: 'PLACE_HOLDER',
+            rep: ' ',
+            htmlRep: ' ',
+            runAction: function() { log.error('Place holder called!'); }
+        });
+    }
+
+    function calcFieldUnaryFn(name) {
+        return new CalcField({
+            actionType: 'FN',
+            numFields: 1,
+            rep: function() {
+                return name + '(' + this.fields[0].toHtml() + ')';
+            },
+            fields: [calcFieldPlaceHolder()],
+            htmlRep: function() {
+                return name + '(<span class="calc-field">' + this.fields[0].toHtml() + '</span>)';
+            }
+        });
+    }
+
 
     // Buttons
     var BTS = {
@@ -246,6 +342,7 @@ DDH.calculator.build = function() {
         'OP_PLUS': calcFieldOperator('+'),
         'OP_MINUS': calcFieldOperator('-'),
         'CONST_PI': CalcFieldChar('π'),
+        'FN_SIN': calcFieldUnaryFn('sin'),
         '0': CalcFieldChar('0'),
         '1': CalcFieldChar('1'),
         '2': CalcFieldChar('2'),
@@ -259,8 +356,8 @@ DDH.calculator.build = function() {
         ' ': CalcFieldChar(' '),
         'META_CLEAR': calcMeta(function () { calc.process.backspace(); }),
         'META_PROCEED': calcMeta(function () { calc.formula.calculate(); }),
-        'META_PAR_OPEN': calcMeta(function () { calc.formula.levelUp(); }),
-        'META_PAR_CLOSE': calcMeta(function () { calc.formula.levelDown(); }),
+        // 'META_PAR_OPEN': calcMeta(function () { calc.formula.levelUp(); }),
+        // 'META_PAR_CLOSE': calcMeta(function () { calc.formula.levelDown(); }),
         'PLACE_HOLDER': new CalcNonDisplay({
             actionType: 'PLACE_HOLDER',
             runAction: function() { log.error('Place holder called!'); }
@@ -408,12 +505,13 @@ DDH.calculator.build = function() {
      */
     function Formula(initialFormStr) {
         // this.storage = [''];
-        this.storage = [BTS['0']];
+        this.storage = newZeroFieldCollector();
+        // this.storage = [BTS['0']];
         this._cursor = [0];
         this.isCalculated = false;
         this.initialDisplay = true;
 
-        if (!(initialFormStr === undefined)) {
+        if (initialFormStr !== undefined) {
             console.log('[Formula] initial is defined!');
             this.handleString(''+initialFormStr);
         } else {
@@ -436,8 +534,8 @@ DDH.calculator.build = function() {
      * @param  {Array} pos Field position
      */
     Formula.prototype.moveCursorTo = function(pos) {
-        clog('[F.moveCursorTo] type of pos: ' + typeof pos);
-        clog('[F.moveCursorTo] pos:', pos.join(', '));
+        console.log('[F.moveCursorTo] type of pos: ' + typeof pos);
+        console.log('[F.moveCursorTo] pos:', pos.join(', '));
         console.log('[F.moveCursorTo] initial position: ' + this.cursor);
         this._cursor = pos;
         console.log('[F.moveCursorTo] new position: ' + this.cursor);
@@ -465,23 +563,10 @@ DDH.calculator.build = function() {
      */
     Formula.prototype.getField = function(pos) {
         console.log("[F.getField] getting field at position: " + pos);
-        var ctx = this.storage;
-        // var maxDepth = pos.length;
-        // top level entry - after this will be recursing into forms.
-        var topLevel = ctx[pos[0]];
-        return topLevel.accessField(pos.slice(1));
-        // ctx = ctx[pos[0]];
-        // if (pos.length > 1) {
-        //     var toRecurse = pos.slice(1);
-        //     ctx = ctx.accessField(toRecurse);
-        // }
-        // // for (var i = 0; i < toRecurse.length; i++) {
-        // //     ctx = ctx.fields[pos[i]];
-        // //     // ctx = ctx[pos[i]];
-        // // }
-        // return (ctx === undefined ? '' : (
-        //     (jQuery.isArray(ctx) ? ctx  : '' + ctx)
-        // ));
+        // var ctx = this.storage;
+        return this.storage.accessField(pos);
+        // var topLevel = ctx[pos[0]];
+        // return topLevel.accessField(pos.slice(1));
     };
 
 
@@ -493,168 +578,11 @@ DDH.calculator.build = function() {
         return this.getField(this.cursor);
     };
 
-    /**
-     * Get next fragment's position
-     * @return {Array} Position index
-     */
-    Formula.prototype.nextFragmentPos = function() {
-        // TOREVISIT
-        // if (this.cursor.length > 1) {
-        //     clog('[nextFragmentPos]: multilevel ');
-        // }
-        // return [0];
-        // var pos = this.cursor;
-        // pos[-1]++;
-        // return pos;
-        // return [2];
-        console.log('[F.nextFragmentPos] cursor: ' + this.cursor);
-        var pos = this.cursor;
-        console.log('[F.nextFragmentPos] pos(before): ' + pos);
-        pos[0]++;
-        console.log('[F.nextFragmentPos] cursor: ' + this.cursor);
-        console.log('[F.nextFragmentPos] pos(after): ' + pos);
-        return pos;
-        // return this.cursor;
-        // var pos = [].concat(this.cursor);
-        // pos[pos.length - 1]++;
-        // return pos;
-    };
-
-
-    /**
-     * Traverse storage from right to left and upwards until it encounters:
-     * - a number (not constant)
-     * - the most left empty field
-     * @param  {Array?} posCtx
-     * @return {Array}          Position index
-     */
-    Formula.prototype.nextFieldToFillPos = function(posCtx) {
-        console.log('[F.nextFieldToFillPos] posCtx: ' + posCtx);
-        if (posCtx === undefined) {
-            posCtx = this.cursor;
-            // posCtx = [];
-        }
-
-        // if lastField is Array
-        //     recursive
-        // else if lastField is empty (fragment is: FN_)
-        //     loop backwardsWithinFragment until lastField is not empty
-        //         when lastField is not empty
-        //             go forwards once
-        // else
-        //     newFragment
-        var lastFragment = this.getField(posCtx);
-        console.log('[F.nextFieldToFillPos] lastFragment: ' + lastFragment);
-        if (lastFragment instanceof CalcField) {
-            var lastFieldPos = posCtx.concat(lastFragment.recursePosLast());
-            // var lastField = lastFragment.recurseLastField();
-            // var lastField = lastFragment.accessField([lastFieldIndex]);
-            // console.log('[F.nextFieldToFillPos] lastField: ' + lastField);
-            // var lastField = lastFragment[lastFieldIndex];
-            // if (jQuery.isArray(lastField)) {
-            // if (typeof(lastField) === 'CalcField') {
-            console.log('[F.nextFieldToFillPos] lastFieldPos: ' + lastFieldPos);
-            return lastFieldPos;
-            // return posCtx.concat(lastFragment.recursePosLast());
-            // return posCtx.concat(lastFragment.recursePosLast());
-            // return lastField;
-            // if (lastField.instanceOf(CalcField)) {
-            //     return this.nextFieldToFillPos(
-            //         posCtx.concat([lastFieldIndex])
-            //     );
-            // }
-            // if (lastField === '') {
-            //     while (lastFieldIndex > 0) {
-            //         if (lastFragment[lastFieldIndex - 1] === '') {
-            //             lastFieldIndex--;
-            //         }
-            //     }
-            //     if (lastFieldIndex > 0) {
-            //         if (isNumber(lastFragment[lastFieldIndex - 1])) {
-            //             lastFieldIndex--;
-            //         }
-            //     }
-            //     return posCtx.concat([lastFieldIndex]);
-            // }
-            // if (!FNS.indexOf(lastFragment[0])) {
-            //     console.log('[F.nextFieldToFillPos] withinFnArr lastFragment:', lastFragment);
-            //     // TODO: Depends on cursor having pressed closing parenthesis
-            //     //posCtx
-            // }
-        } else {
-            // NESTED?
-            console.warn('[F.nextFieldToFillPos] lastFragment: none array:', lastFragment);
-        }
-        // if (jQuery.isArray(lastFragment)) {
-        //     var lastFieldIndex = lastFragment.length - 1;
-        //     var lastField = lastFragment[lastFieldIndex];
-        //     // if (jQuery.isArray(lastField)) {
-        //     // if (typeof(lastField) === 'CalcField') {
-        //     if (lastField.instanceOf(CalcField)) {
-        //         return this.nextFieldToFillPos(
-        //             posCtx.concat([lastFieldIndex])
-        //         );
-        //     }
-        //     if (lastField === '') {
-        //         while (lastFieldIndex > 0) {
-        //             if (lastFragment[lastFieldIndex - 1] === '') {
-        //                 lastFieldIndex--;
-        //             }
-        //         }
-        //         if (lastFieldIndex > 0) {
-        //             if (isNumber(lastFragment[lastFieldIndex - 1])) {
-        //                 lastFieldIndex--;
-        //             }
-        //         }
-        //         return posCtx.concat([lastFieldIndex]);
-        //     }
-        //     if (!FNS.indexOf(lastFragment[0])) {
-        //         console.log('[F.nextFieldToFillPos] withinFnArr lastFragment:', lastFragment);
-        //         // TODO: Depends on cursor having pressed closing parenthesis
-        //         //posCtx
-        //     }
-        // } else {
-        //     // NESTED?
-        //     console.warn('[F.nextFieldToFillPos] lastFragment: none array:', lastFragment);
-        // }
-    };
-
-    // TODO: Better name
-    Formula.prototype.getPreviousFieldPosWhole = function(ctx, pos) {
-        if (ctx === undefined) {
-            ctx = this.storage;
-            pos = [];
-        }
-
-        var ctxIndex = Math.max(0, ctx.length - 1, 0);
-        var prevFieldToFill = ctx[ctxIndex];
-        pos.push(ctxIndex);
-
-        // if (jQuery.isArray(prevFieldToFill)) {
-        // if (typeof(prevFieldToFill) === 'CalcField') {
-        if (prevFieldToFill.instanceOf(CalcField)) {
-            return this.getPreviousFieldPosWhole(prevFieldToFill, pos);
-        }
-        return pos;
-    };
-
-    Formula.prototype.hasPreviousField = function() {
-        return (this.cursor[this.cursor.length - 1] > 0);
-    };
-
     Formula.prototype.getPreviousFieldPos = function() {
         var prevCursor = [].concat(this.cursor);
         if (prevCursor[prevCursor.length - 1] > 0) {
             prevCursor[prevCursor.length - 1] -= 1;
             return prevCursor;
-        }
-        return false;
-    };
-
-    Formula.prototype.getPreviousFieldInFragment = function() {
-        var prevCursor = this.getPreviousFieldPos();
-        if (prevCursor !== false) {
-            return this.getField(prevCursor);
         }
         return false;
     };
@@ -696,30 +624,6 @@ DDH.calculator.build = function() {
         return this.cursor;
     };
 
-    /**
-     * fieldName: {
-     *     fields: [],
-     *     rep: function () { bleh! }
-     * }
-
-
-    /**
-     * Get the first field of a fragment
-     * @param  {Array?} pos Fragment's position on storage array
-     *                      - by default cursor's position
-     */
-    Formula.prototype.getStartingFieldInFragment = function(pos) {
-        if (pos === undefined) {
-            pos = [].concat(this.cursor);
-        }
-
-        var i, ctx = this.storage;
-        for (i = 0; i < pos.length - 1; ++i) {
-            ctx = ctx[pos[i]];
-        }
-        return ctx[0];
-    };
-
     ///////////////
     /// STORAGE:
     /// Manipulate
@@ -746,14 +650,50 @@ DDH.calculator.build = function() {
         return this.cursor;
     };
 
+    Formula.prototype.moveCursorUpward = function() {
+        console.log('[F.moveCursorUpward] moving cursor upwards');
+        this._cursor.pop();
+        return this.cursor;
+    };
+
+    // Is there room for the cursor to move backwards on the same level?
+    Formula.prototype.canMoveBackSameLevel = function() {
+        return (this.cursor.slice(-1)[0] !== 0);
+    };
+
+    Formula.prototype.canMoveDown = function() {
+        var current = this.getActiveField();
+
+    };
+
+    // Attempt to move the cursor backwards, but move if up if there is
+    // no room.
+    Formula.prototype.moveCursorBackOrUp = function(amount) {
+        if (this.atTopLevel()) {
+            if (!this.canMoveBackSameLevel()) {
+                console.warn("[moveCursorBackOrUp] already at start!");
+                return this.cursor;
+            }
+            this.moveCursorBackward();
+            return this.cursor;
+        }
+        if (this.canMoveBackSameLevel()) {
+            this.moveCursorBackward();
+        } else {
+            this.moveCursorUpward();
+        }
+        return this.cursor;
+    };
+
 
     // Get the field at pos (default cursor)
     Formula.prototype.currentField = function(pos) {
         pos = pos || this.cursor;
-        if (atTopLevel(pos)) {
-            return this.storage[pos[0]];
-        }
-        return this.storage[pos[0]].getField(pos.slice(1));
+        return this.storage.accessField(pos);
+        // if (atTopLevel(pos)) {
+        //     return this.storage[pos[0]];
+        // }
+        // return this.storage[pos[0]].getField(pos.slice(1));
     };
 
     // Is the given position at the top level?
@@ -764,12 +704,13 @@ DDH.calculator.build = function() {
     // Modify the field at 'pos' (default cursor) to value.
     Formula.prototype.modifyField = function(value, pos) {
         pos = pos || this.cursor;
-        if (atTopLevel(pos)) {
-            this.storage[pos[0]] = value;
-            return;
-        }
-        var topLevel = this.storage[pos[0]];
-        topLevel.setField(pos.slice(1), value);
+        this.storage.setField(pos, value);
+        // if (atTopLevel(pos)) {
+        //     this.storage[pos[0]] = value;
+        //     return;
+        // }
+        // var topLevel = this.storage[pos[0]];
+        // topLevel.setField(pos.slice(1), value);
     };
     // Append a new fragment with value 'val' after the cursor.
     Formula.prototype.appendFragmentChild = function(val) {
@@ -783,66 +724,12 @@ DDH.calculator.build = function() {
      */
     Formula.prototype.fragmentNew = function(val) {
         console.log('[F.fragmentNew] new fragment value: ' + val);
-        if (this.initialDisplay) {
+        if (this.initialDisplay || isPlaceHolder(this.getActiveField())) {
             this.modifyField(val);
             this.initialDisplay = false;
         } else {
             this.appendFragmentChild(val);
         }
-    };
-
-    /**
-     * Replace existing fragment of the formula storage
-     * @param  {Mixed}  val  Value to put on the fragment
-     * @param  {Array?} pos  Target position on storage array
-     *                       - by default the cursor fragment
-     */
-    Formula.prototype.fragmentReplace = function(str, pos) {
-        console.log('[F.fragmentReplace] replacing fragment at ' + pos + ' with ' + str);
-        if (pos === undefined) {
-            pos = [].concat(this.cursor);
-        }
-        console.log('[F.fragmentReplace] replacing fragment at ' + pos + ' with ' + str);
-
-        if (pos.length === 1) {
-            this.storage[pos[0]] = str;
-            this.moveCursorTo(pos);
-            return;
-        }
-        this.storage[pos[0]].setField(pos.slice(1), str);
-
-        this.moveCursorTo(pos);
-    };
-
-    /**
-     * Remove fragment from the formula storage
-     * @param  {Array?} pos  Target position on storage array
-     *                       - by default the cursor fragment
-     */
-    Formula.prototype.fragmentRemove = function(pos) {
-        console.log('[F.fragmentRemove] pos: ' + pos);
-        if (pos === undefined) {
-            pos = [].concat(this.cursor);
-        }
-        clog('[fragmentRemove] before:', this.storage);
-        var i, ctx = this.storage;
-        for (i = 0; i < pos.length - 1; ++i) {
-            ctx = ctx[pos[i]];
-        }
-        ctx.splice(pos[i], 1);
-        this.storage = ctx;
-
-        clog('[fragmentRemove] after:', this.storage);
-
-        this.moveCursorTo(this.getPreviousFieldPosWhole());
-    };
-
-    /**
-     * Remove the ending fragment from the formula storage
-     */
-    Formula.prototype.fragmentRemoveEnding = function() {
-
-        //endingFragment
     };
 
     ////////////////////
@@ -863,59 +750,23 @@ DDH.calculator.build = function() {
             return;
         }
         this.fragmentNew(chr);
-        // var curField = this.getActiveField();
-        // if (chr === ' ') {
-        //     // TODO
-        //     // 1. if in FN go to next field of FN
-        // } else if (isNumber(curField + chr)) {
-        //     if (curField === '0' && chr !== '.') {
-        //         curField = '';
-        //     }
-        //     this.fragmentReplace((curField + chr).trim());
-        // } else if (isNumber(chr)) {
-        //     this.fragmentNew(chr);
-        // } else {
-        //     // TODO
-        //     // this.fragmentNew(chr);
-        // }
 
         console.log('[F.handleChr] new storage: ' + this.storage);
-        // clog('[pushChr]('+chr+') storage:', this.storage);
+        // console.log('[pushChr]('+chr+') storage:', this.storage);
         if (!skipRender) {
             this.render();
         }
     };
 
     Formula.prototype.handleCmd = function(cmd, skipRender) {
-        console.log('[F.handleCmd] handling cmd: ' + cmd);
+        // console.log('[F.handleCmd] handling cmd: ' + cmd);
         var lastFieldPos = this.getLastReplaceableFieldPos();
-        console.log('[F.handleCmd] lastFieldPos: ' + lastFieldPos);
+        // console.log('[F.handleCmd] lastFieldPos: ' + lastFieldPos);
         var lastField = (lastFieldPos !== false ? this.getField(lastFieldPos) : false);
-        console.log('[F.handleCmd] lastField: ' + lastField);
+        // console.log('[F.handleCmd] lastField: ' + lastField);
         var type = cmd.actionType;
-        clog('[F.handleCmd] type:', type, 'cmd:', cmd, 'lastField:', lastField);
+        // console.log('[F.handleCmd] type:', type, 'cmd:', cmd, 'lastField:', lastField);
         this.fragmentNew(cmd);
-        // if (type === 'OP' && typeof OPS[cmd] !== 'undefined') {
-        //     // this.fragmentNew(cmd);
-        //     console.log("Rep: " + OPS[cmd].rep);
-        //     this.fragmentNew(OPS[cmd].rep);
-        // } else if (type === 'FN' && typeof FNS[cmd] !== 'undefined') {
-        //     // var newFragValue = [cmd].concat(Array(FNS[cmd].fields).join('.').split('.'));
-        //     // var newFragValue = [cmd.rep].concat(Array(FNS[cmd].fields).join('.').split('.'));
-        //     console.log("Fields: " + FNS[cmd].fields);
-        //     var newFragValue = [cmd].concat(Array(FNS[cmd].fields).join('.').split('.'));
-        //     // var newFragValue = FNS[cmd].rep(Array(FNS[cmd].fields));
-        //     if (lastField !== false && (
-        //         !lastField.indexOf('CONST_') || isNumber(lastField)
-        //     )) {
-        //         newFragValue[1] = lastField;
-        //         this.fragmentRemove();
-        //         this.fragmentNew(newFragValue);
-        //         //TODO Move cursor to nextToFillPos this.
-        //     } else {
-        //         this.fragmentNew(newFragValue);
-        //     }
-        // }
 
         if (!skipRender) {
             this.render();
@@ -932,27 +783,20 @@ DDH.calculator.build = function() {
         var deleted;
         if (this.atTopLevel) {
             if (this.atStart()) {
-                console.log('[F.deleteBackwards] at start for pos: ' + pos);
                 deleted = this.currentField();
                 this.modifyField(BTS['0']);
                 this.initialDisplay = true;
                 return deleted;
             }
-            console.log('[F.deleteBackwards] storage (before): ' + this.storage);
-            deleted = this.storage.pop();
-            console.log('[F.deleteBackwards] storage (after): ' + this.storage);
-            this.moveCursorBackward();
+            deleted = this.storage.deleteLast();
+            this.moveCursorBackOrUp();
             return deleted;
         }
         console.warn('[F.deleteBackwards] not at top level for pos ' + pos);
     };
-    /**
-     * Backspace logic
-     *    *** UNDER CONSTRUCTION ***
-     */
+
     Formula.prototype.handleBackspace = function() {
         if (this.isCalculated) {
-            console.log('[F.handleBackspace] was calculated, resetting');
             this.reset();
             return;
         }
@@ -961,75 +805,13 @@ DDH.calculator.build = function() {
         this.render();
     };
 
-    ////////////////////
-    /// Calculations ///
-
-    /**
-     * Calculate operations of a fragment (OPS)
-     * @param  {Array} _frag  Subset of Formula.storage
-     * @return {Number}       Computed result of the fragment
-     */
-    // Formula.prototype.calculateOperations = function(_frag) {
-    //     clog('[calculateOperations]:', _frag);
-    //     var frag = [].concat(_frag);
-    //     jQuery.each(OPS, function(opName) {
-    //         var opPosition = frag.indexOf(opName);
-    //         while (opPosition !== -1) {
-    //             clog('FOUND OP:', opPosition, opName, 'opFrag:', frag[opPosition]);
-    //             var opCalc = OPS[frag[opPosition]].calc;
-    //             var args = [frag[opPosition - 1]];
-    //             if (opCalc.length === 2) {
-    //                 args.push(frag[opPosition + 1]);
-    //             }
-    //             frag[opPosition - 1] = opCalc.apply(null, args);
-
-    //             // remove calc'd arguments
-    //             frag.splice(opPosition, opCalc.length);
-    //             opPosition = frag.indexOf(opName);
-    //         }
-    //     });
-    //     if (frag.length > 1) {
-    //         clog('[F.calculateOperations] INVESTIGATE:', frag);
-    //         return frag;
-    //     }
-    //     return frag[0];
-    // };
-
-    // Formula.prototype.calculateFragment = function(frag) {
-    //     clog('[calculateFragment]', frag);
-    //     if (jQuery.isArray(frag)) {
-    //         if (typeof FNS[frag[0]] !== 'undefined') {
-    //             for (var i = 1; i < frag.length; i++) {
-    //                 frag[i] = this.calculateFragment(frag[i]);
-    //             }
-    //             clog('FNS:',frag[0]);
-    //             return FNS[frag[0]].calc.apply(this, frag.slice(1));
-    //         } else { // Parenthesis
-    //             return this.calculateOperations(frag);
-    //         }
-    //     } else if (isNumber(frag)) {
-    //         return +frag;
-    //     //} else if () { // TODO CONSTS++
-    //     } else {
-
-    //     }
-    // };
-
     Formula.prototype.toText = function() {
-        var i;
-        var textArr = [];
-        for (i=0; i<this.storage.length; i++) {
-            textArr[i] = this.storage[i].asText();
-        }
-        return textArr.join('');
+        return this.storage.asText();
     };
 
     Formula.prototype.calculateResult = function(_arr, _path) {
-        // var query = $("#tile__past-formula").val();
         console.log("Rep: " + calc._cache.$inputField.value);
         console.log("Storage: " + this.storage);
-        console.log("Storage[0]: " + this.storage[0]);
-        // var query = this.storage.join('');
         var query = this.toText();
         console.log("Query: " + query);
         // Use the below link in production
@@ -1049,7 +831,7 @@ DDH.calculator.build = function() {
         var html = this.toHtml();
         this.calculateResult();
         var result = $("#zci__calculator-display-main").text();
-        clog('[calculate] result: ' + result);
+        console.log('[calculate] result: ' + result);
         calc._cache.$formulaMinor.html(html);
         // calc._cache.$inputField.text(result);
 
@@ -1059,7 +841,7 @@ DDH.calculator.build = function() {
         calc.formula.reset();
 
         // Shhhh... ;)
-        if (result === 42) {
+        if (result === '42') {
             calc._cache.$inputField
                 .prepend(
                     '<span class="tile__calc__eg">' +
@@ -1076,69 +858,16 @@ DDH.calculator.build = function() {
 
     Formula.prototype.toHtml = function(_arr, _path) {
         console.log('[F.toHtml] with _arr ' + _arr + ' and _path ' + _path);
-        // var arr = _arr || [].concat(this.storage);
-        var arr = _arr || this.storage;
-        // var path = _path || [];
-        // var type = jQuery.type(arr);
-        // var compiledStr = '';
-
-        // arr should be an array
-        var i;
-        var flatArr = [];
-        console.log("[F.toHtml] arr: " + arr);
-        for (i=0; i<arr.length; i++) {
-            // console.log('[F.toHtml] current element: ' + arr[i]);
-            // console.log('[F.toHtml] typeof current element: ' + typeof(arr[i]));
-            // console.log('[F.toHtml] current element.asText: ' + arr[i].asText());
-            flatArr[i] = arr[i].asText();
-        }
+        return '<span>' + this.storage.toHtml() + '</span>';
+        // var arr = _arr || this.storage;
+        // var i;
         // var flatArr = [];
-        // for (var i = 0; i < arr.length; i++) {
-        //     type = jQuery.type(arr[i]);
-        //     switch (type) {
-        //     case 'array':
-        //         if (
-        //             arr.length === 1 && jQuery.isArray(arr[0]) &&
-        //             (typeof FNS[arr[0]] === 'undefined')
-        //         ) {
-        //             // Parenthesis
-        //             flatArr[i] = '(' + this.toHtml(arr[i], path.concat([i])) + ')';
-        //         } else {
-        //             // Normal expressions
-        //             flatArr[i] = this.toHtml(arr[i], path.concat([i]));
-        //         }
-        //         break;
-        //     default: //case 'string':
-        //         // check Constants handling
-        //         flatArr[i] = /*temp*/ arr[i];
-        //         break;
-        //     }
+        // console.log("[F.toHtml] arr: " + arr);
+        // for (i=0; i<arr.length; i++) {
+        //     flatArr[i] = arr[i].toHtml();
         // }
-
-        // flattened array ready
-        // [FN_*, (.+)+]
-        // var fn = FNS[flatArr[0]];
-        // if (typeof fn !== 'undefined') {
-        //     // TOREF
-        //     //compiledStr = this.fnTpl(flatArr); //fn.tpl(flatArr[i]);
-        //     compiledStr = fn.tpl.replace(/{{(\d+)}}/g, function($1, i) {
-        //         //clog('FN['+i+']:', flatArr[i], 'empty?:', !(''+flatArr[i]).trim());
-        //         if (typeof flatArr[i] === 'undefined' || !(''+flatArr[i]).trim()) {
-        //             return '<span class="formula__placeholder">' + String.fromCharCode(+i + 119) + '</span>';
-        //         }
-        //         return flatArr[i];
-        //     });
-        //     return compiledStr;
-        // }
-
-        //[OP_*]
-        // for (i = 0; i < flatArr.length; i++) {
-        //     if (!(OPS[flatArr[i]] === undefined)) {
-        //         flatArr[i] = OPS[flatArr[i]].tpl;
-        //     }
-        // }
-        console.log('[F.toHtml] flatArr: ' + flatArr);
-        return '<span>'+flatArr.join('')+'</span>';
+        // console.log('[F.toHtml] flatArr: ' + flatArr);
+        // return '<span>'+flatArr.join('')+'</span>';
     };
 
     Formula.prototype.render = function() {
@@ -1147,12 +876,14 @@ DDH.calculator.build = function() {
         calc._cache.inputField.innerHTML = this.toHtml();
     };
 
+    // Reset the display.
     Formula.prototype.reset = function() {
         console.log('[F.reset] reset!');
         calc._cache.$formulaMinor.html('');
         calc._cache.inputField.innerHTML = '0';
         // this.storage = ['0'];
-        this.storage = [BTS['0']];
+        this.storage = newZeroFieldCollector();
+        // this.storage = [BTS['0']];
         this._cursor = [0];
         this.initialDisplay = true;
         this.render();
@@ -1219,11 +950,11 @@ DDH.calculator.build = function() {
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 if (e.type === 'keydown' && [K.SPACE, K.ENTER].indexOf(e.which) !== -1) {
-                    clog('e [CAUG]:', e);
+                    console.log('e [CAUG]:', e);
                     $(window).scrollTo('.content-wrap'); // TORETHINK: too much?
                     $('.content-wrap a, .content-wrap input').get(0).focus(); // TORETHINK: No visual indication
                 } else {
-                    clog('e:', e);
+                    console.log('e:', e);
                 }
             });
         },
@@ -1233,7 +964,7 @@ DDH.calculator.build = function() {
          */
         bindTrapKeyEvents: function bindTrapKeyEvents() {
             calc._cache.$inputTrap.keydown(function(e) {
-                clog('[inputTrap.keydown] e', e);
+                console.log('[inputTrap.keydown] e', e);
                 if (e.which === K.BACKSPACE) {
                     if (e.shiftKey) {
                         calc.process.clearFull();
@@ -1248,14 +979,14 @@ DDH.calculator.build = function() {
                 e.stopImmediatePropagation();
             });
             calc._cache.$inputTrap.keypress(function(e) {
-                clog('[inputTrap.keypress] e', e);
+                console.log('[inputTrap.keypress] e', e);
                 // process key
                 calc.process.key(e.which);
                 calc.ui.focusInput();
                 Utils.cancelEvent(e);
             });
             calc._cache.$inputTrap.keyup(function(e) {
-                clog('[inputTrap.keyup] e', e);
+                console.log('[inputTrap.keyup] e', e);
                 if (e.which === K.ESC) {
                     e.target.blur();
                 }
@@ -1283,18 +1014,18 @@ DDH.calculator.build = function() {
                     )
                 ) {
                     // Ignore keys to inputs foreign to the calculator
-                    clog('[handlers] ignore due to target:', e);
+                    console.log('[handlers] ignore due to target:', e);
                     return;
                 }
                 var chr = String.fromCharCode(e.which || 0);
                 if (calc.settings.keys.global.indexOf(chr) !== -1) {
-                    clog('[calc.keypress.global] [CAUGHT] globalKey:', e.which, 'char:', chr, 'e:', e);
+                    console.log('[calc.keypress.global] [CAUGHT] globalKey:', e.which, 'char:', chr, 'e:', e);
                     Utils.cancelEvent(e);
                     // process key
                     calc.process.key(e.which);
                     return false;
                 } else {
-                    clog('[calc.keypress.global] [IGNORED] globalKey:', e.which, 'char:', chr, 'e:', e);
+                    console.log('[calc.keypress.global] [IGNORED] globalKey:', e.which, 'char:', chr, 'e:', e);
                 }
             },
 
@@ -1328,17 +1059,17 @@ DDH.calculator.build = function() {
                         if (cmd === 'NO') return;
 
                         if (cmd === undefined) {
-                            clog("[bindBtnEvents] got undefined command");
+                            console.log("[bindBtnEvents] got undefined command");
                             // calc.process.chr(this.textContent);
                             calc.process.chr(this.textContent);
                         } else {
                             // calc.process.cmd(cmd);
-                            clog('[bindBtnEvents] processing command: ' + cmd);
+                            console.log('[bindBtnEvents] processing command: ' + cmd);
                             calc.process.cmd(BTS[cmd]);
                         }
 
                         if (e.type === 'click') {
-                            clog('[AMPER] btn.click:', e);
+                            console.log('[AMPER] btn.click:', e);
                             calc.ui.focusInput();
                         }
                     });
@@ -1364,7 +1095,7 @@ DDH.calculator.build = function() {
                 });
             },
             focusInput: function () {
-                clog('FOCUS on inputTrap');
+                console.log('FOCUS on inputTrap');
                 calc._cache.$inputTrap.focus();
             },
             blurInput: function () {
@@ -1384,6 +1115,8 @@ DDH.calculator.build = function() {
          */
         history: {
             add: function(formula, result) {
+                // TODO Set the previous result so it can be used in
+                // calculations.
                 var $newCalc = calc._cache.$historyItemTpl.clone();
                 $newCalc.removeClass('hide tile__past-calc__tpl');
                 $newCalc.find('.tile__past-formula').html(formula);
@@ -1402,7 +1135,9 @@ DDH.calculator.build = function() {
             remove: function(formulaId) {
                 // TODO
             },
+            // Gonna assume this is put result back into input...
             replay: function(formulaId) {
+                console.log('[replay] formulaId: ' + formulaId);
                 // TODO
             }
         },
@@ -1416,10 +1151,11 @@ DDH.calculator.build = function() {
 
             // Called by search query init
             calculation: function (formulaStr) {
-                clog("[calc.process.calculation] got formulaStr: " + formulaStr);
+                console.log("[calc.process.calculation] got formulaStr: " + formulaStr);
                 // sanitize
                 // decimal dots?
                 for (var i = 0; i < formulaStr.length; i++) {
+                    console.log('[calc.process.calculation] passing character');
                     calc.process.chr(formulaStr[i]);
                 }
             },
@@ -1439,7 +1175,7 @@ DDH.calculator.build = function() {
             // Low level
             key: function (key) {
                 calc.ui.focusInput();
-                clog('[calc.process.key] got key: ' + key);
+                console.log('[calc.process.key] got key: ' + key);
                 switch (key) {
                 case K.ENTER:
                     // return calc.process.cmd('META_PROCEED');
@@ -1484,7 +1220,7 @@ DDH.calculator.build = function() {
     return {
         onShow: function() {
             var isInited = $('#zci-calculator').data('is-inited');
-            // clog('[calc] onShow. inited:', isInited);
+            // console.log('[calc] onShow. inited:', isInited);
             if (!isInited) {
                 $('#zci-calculator').data('is-inited', true);
                 calc.init('#zci-calculator');

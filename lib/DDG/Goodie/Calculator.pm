@@ -1498,7 +1498,7 @@ handle query => sub {
                 signal => 'high',
             },
             templates => {
-                group => 'base',
+                group   => 'base',
                 options => {
                     content => 'DDH.calculator.calculator',
                 },
