@@ -5,7 +5,7 @@ use strict;
 use DDG::Goodie;
 use HTML::Entities;
 
-zci answer_type => "markdown_cheat";
+zci answer_type => 'markdown_reference';
 zci is_cached   => 1;
 
 triggers startend => (
@@ -94,14 +94,32 @@ sub make_html {
     return 'Markdown:<pre>'.$snippets{$element}->{'text'}.'</pre>HTML:<pre>'.$snippets{$element}->{'html'}.'</pre>'.$more_at
 };
 
+sub get_element_type {
+}
+
+sub element_to_subtitle {
+    my $element = shift;
+    return 'Markdown ' . ucfirst $element . 's';
+}
+
 handle remainder => sub {
-    return unless $_;
-    my $requested = $snippets{$_};
-    return unless $requested;
-    return
-        heading => 'Markdown Cheat Sheet',
-        html    => make_html($_),
-        answer  => $snippets{$_}->{'text'}
+    my $query = shift;
+    return unless $query;
+    my $element_type = get_element_type $query or return;
+    my $subtitle = element_to_subtitle $element_type;
+    return $element_type,
+        structured_answer => {
+            id   => 'markdown_reference',
+            name => 'Answer',
+            data => {
+                element_type => $element_type,
+                subtitle    =>  $subtitle,
+            },
+            templates => {
+                group   => 'text',
+                content => 'DDH.markdown_reference.content',
+            },
+        };
 };
 
 1;
