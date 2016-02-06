@@ -55,8 +55,6 @@ sub get_element_from_alias {
     };
 }
 
-my $more_at = '<a href="http://daringfireball.net/projects/markdown/syntax" class="zci__more-at--info"><img src="http://daringfireball.net/favicon.ico" class="zci__more-at__icon"/>More at Daring Fireball</a>';
-
 sub get_element_type {
     my $query = shift;
     return get_element_from_alias $query;
