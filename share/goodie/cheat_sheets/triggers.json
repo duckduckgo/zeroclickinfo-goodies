@@ -1,69 +1,69 @@
 {
     "standard": {
         "keyboard": {
-            "startend": [
-                "quick reference",
-                "reference",
-                "shortcuts",
-                "key bindings",
-                "keys",
-                "default keys"
-            ]
+            "startend": {
+                "quick reference": 1,
+                "reference": 1,
+                "shortcuts": 1,
+                "key bindings": 1,
+                "keys": 1,
+                "default keys": 1
+            }
       },
       "reference": {
-          "startend": [
-              "quick reference",
-              "reference"
-          ]
+          "startend": {
+              "quick reference": 1,
+              "reference": 1
+          }
       },
       "terminal": {
-          "startend": [
-              "char",
-              "chars",
-              "character",
-              "characters",
-              "command",
-              "commands",
-              "symbols"
-          ]
+          "startend": {
+              "char": 1,
+              "chars": 1,
+              "character": 1,
+              "characters": 1,
+              "command": 1,
+              "commands": 1,
+              "symbols": 1
+          }
       },
       "language": {
-          "startend": [
-              "guide",
-              "example"
-          ]
+          "startend": {
+              "guide": 1,
+              "example": 1
+          }
       },
       "code": {
-          "startend": [
-              "functions",
-              "methods",
-              "quick reference",
-              "reference",
-              "syntax"
-          ]
+          "startend": {
+              "functions": 1,
+              "methods": 1,
+              "quick reference": 1,
+              "reference": 1,
+              "syntax": 1
+          }
       },
       "math": {
-          "startend": [
-              "equation",
-              "equations",
-              "formula",
-              "formulas",
-              "formulae"
-          ]
+          "startend": {
+              "equation": 1,
+              "equations": 1,
+              "formula": 1,
+              "formulas": 1,
+              "formulae": 1
+          }
       },
       "links": {
-          "startend": [
-              "links",
-              "sites",
-              "websites"
-          ]
+          "startend": {
+              "links": 1,
+              "sites": 1,
+              "websites": 1
+          }
       },
       "standard": {
-          "startend": [
-              "help",
-              "cheat sheet",
-              "cheatsheet"
-          ]
+          "startend": {
+              "help": 1,
+              "cheat sheet": 1,
+              "cheatsheet": 1
+          }
       }
     }
 }
