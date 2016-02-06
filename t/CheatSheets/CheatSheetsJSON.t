@@ -21,6 +21,13 @@ sub file_name_to_id {
     return $file_name . "_cheat_sheet";
 }
 
+sub id_to_file_name {
+    my $id = shift;
+    $id =~ s/_cheat_sheet//;
+    $id =~ s/_/-/g;
+    return "$id.json";
+}
+
 # Iterate over all Cheat Sheet JSON files...
 foreach my $path (glob("$json_dir/*.json")){
     next if $ARGV[0] && $path ne  "$json_dir/$ARGV[0].json";
@@ -61,6 +68,10 @@ foreach my $path (glob("$json_dir/*.json")){
         my $expected = file_name_to_id $file_name;
         $temp_pass = $cheat_id eq $expected;
         push(@tests, {msg => "bad id '$cheat_id', should be '$expected'", critical => 1, pass => $temp_pass});
+
+        $expected = id_to_file_name $cheat_id;
+        $temp_pass = $file_name eq $expected;
+        push(@tests, {msg => "file name ($file_name) does not match ID, should be '$expected'", critical => 1, pass => $temp_pass});
     }
 
     ### Template Type tests ###
