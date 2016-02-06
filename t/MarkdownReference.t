@@ -18,7 +18,7 @@ sub test_success {
 }
 
 ddg_goodie_test(
-	[ 'DDG::Goodie::MarkdownCheatSheet' ],
+	[ 'DDG::Goodie::MarkdownReference' ],
     'md header' => test_success('#', 'h1'),
     'markdown header' => test_success('#', 'h1'),
     'markdown cheat sheet header' => test_success('#', 'h1'),

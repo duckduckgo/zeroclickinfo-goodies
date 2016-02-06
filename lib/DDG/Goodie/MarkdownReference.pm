@@ -1,4 +1,4 @@
-package DDG::Goodie::MarkdownCheatSheet;
+package DDG::Goodie::MarkdownReference;
 # ABSTRACT: Provide a cheatsheet for common Markdown syntax
 
 use strict;
@@ -67,7 +67,7 @@ my %snippets = (
 > > This is nested blockquote.
 >
 > Back to the first level.'
-    }    
+    }
 );
 
 my %synonyms = (
