@@ -3,6 +3,7 @@ package DDG::Goodie::MarkdownReference;
 
 use strict;
 use DDG::Goodie;
+use JSON;
 
 zci answer_type => 'markdown_reference';
 zci is_cached   => 1;
@@ -11,44 +12,12 @@ triggers startend => (
     'markdown', 'md',
 );
 
-sub build_synonyms {
-    my %header_synonyms = map { $_ => 1 } (
-        'h1', 'headers', 'h2', 'h3',
-        'h4', 'h5', 'h6', 'heading',
-    );
-    my %emphasis_synonyms = map { $_ => 1 } (
-        'em', 'emphasize', 'italic', 'italics',
-    );
-    my %bold_synonyms = map { $_ => 1 } (
-        'strong',
-    );
-    my %image_synonyms = map { $_ => 1 } (
-        'img', 'images', 'insert image',
-    );
-    my %link_synonyms = map { $_ => 1 } (
-        'a', 'href', 'links',
-    );
-    my %blockquote_synonyms = map { $_ => 1 } (
-        'quote', 'quotation',
-    );
-    my %list_synonyms = map { $_ => 1 } (
-        'lists', 'ordered list', 'unordered list',
-        'ul', 'ol', 'bullet', 'bullets',
-    );
-    return (
-        'header' => \%header_synonyms,
-        'emphasis' => \%emphasis_synonyms,
-        'bold' => \%bold_synonyms,
-        'image' => \%image_synonyms,
-        'link' => \%link_synonyms,
-        'blockquote' => \%blockquote_synonyms,
-        'list' => \%list_synonyms,
-    );
-}
+my $json = share('synonyms.json')->slurp();
+my $synonyms = decode_json($json);
 
 sub get_element_from_alias {
     my $name = shift;
-    my %synonyms = build_synonyms();
+    my %synonyms = %{$synonyms};
     while (my ($elt_type, $syns) = each %synonyms) {
         return $elt_type if $name eq $elt_type;
         return $elt_type if defined $syns->{$name};

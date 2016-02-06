@@ -1,0 +1,44 @@
+{
+    "header": {
+        "h1": 1,
+        "headers": 1,
+        "h2": 1,
+        "h3": 1,
+        "h4": 1,
+        "h5": 1,
+        "h6": 1,
+        "heading": 1
+    },
+    "emphasis": {
+        "em": 1,
+        "emphisize": 1,
+        "italic": 1,
+        "italics": 1
+    },
+    "bold": {
+        "strong": 1
+    },
+    "image": {
+        "img": 1,
+        "images": 1,
+        "insert image": 1
+    },
+    "link": {
+        "a": 1,
+        "href": 1,
+        "links": 1
+    },
+    "blockquote": {
+        "quote": 1,
+        "quotation": 1
+    },
+    "list": {
+        "lists": 1,
+        "ordered list": 1,
+        "unordered list": 1,
+        "ul": 1,
+        "ol": 1,
+        "bullet": 1,
+        "bullets": 1
+    }
+}
