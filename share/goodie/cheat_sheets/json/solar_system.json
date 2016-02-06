@@ -7,7 +7,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Solar_System"
     },
     "aliases": [
-        "Solar system",
+        "solar system",
         "solar",
         "planet",
         "planets",
@@ -41,15 +41,15 @@
             },
             {
                 "key": "Mass",
-                "val": "1.989 x 10^30 kg"
+                "val": "1.989 x 10\u00B3\u2070 kg"
             },
             {
                 "key": "Temperature (core)",
-                "val": "1.57×10^7 K"
+                "val": "1.57×10\u2077 K"
             },
             {
                 "key": "Volume",
-                "val": "1.41×1018 km^3"
+                "val": "1.41×1018 km\u00B3"
             }
         ],
         "Mercury": [
@@ -59,7 +59,7 @@
             },
             {
                 "key": "Mass",
-                "val": "3.3011×10^23 kg"
+                "val": "3.3011×10\u00B2\u00B3 kg"
             },
             {
                 "key": "Surface Temperature (mean)",
@@ -67,7 +67,7 @@
             },
             {
                 "key": "Volume",
-                "val": "6.083×1010 km^3"
+                "val": "6.083×10\u00B9\u2070 km\u00B3"
             }
         ],
         "Venus": [
@@ -77,7 +77,7 @@
             },
             {
                 "key": "Mass",
-                "val": "4.8675×10^24 kg"
+                "val": "4.8675×10\u00B2\u2074 kg"
             },
             {
                 "key": "Surface Temperature (mean)",
@@ -85,7 +85,7 @@
             },
             {
                 "key": "Volume",
-                "val": "9.2843×10^11 km^3"
+                "val": "9.2843×10\u00B9\u00B9 km\u00B3"
             }
         ],
         "Earth": [
@@ -95,7 +95,7 @@
             },
             {
                 "key": "Mass",
-                "val": "5.97237×10^24 kg"
+                "val": "5.97237×10\u00B2\u2074 kg"
             },
             {
                 "key": "Surface Temperature (mean)",
@@ -103,7 +103,7 @@
             },
             {
                 "key": "Volume",
-                "val": "1.08321×10^12 km^3"
+                "val": "1.08321×10\u00B9\u00B2 km\u00B3"
             }
         ],
         "Mars": [
@@ -113,7 +113,7 @@
             },
             {
                 "key": "Mass",
-                "val": "6.4171×10^23 kg"
+                "val": "6.4171×10\u00B2\u00B3 kg"
             },
             {
                 "key": "Surface Temperature (mean)",
@@ -121,7 +121,7 @@
             },
             {
                 "key": "Volume",
-                "val": "1.6318×10^11 km^3"
+                "val": "1.6318×10\u00B9\u00B9 km\u00B3"
             }
         ],
         "Jupiter": [
@@ -131,7 +131,7 @@
             },
             {
                 "key": "Mass",
-                "val": "1.8986×10^27 kg"
+                "val": "1.8986×10\u00B2\u2077 kg"
             },
             {
                 "key": "Surface Temperature (mean)",
@@ -139,7 +139,7 @@
             },
             {
                 "key": "Volume",
-                "val": "1.43128×10^15 km^3"
+                "val": "1.43128×10\u00B9\u2075 km\u00B3"
             }
         ],
         "Saturn": [
@@ -149,7 +149,7 @@
             },
             {
                 "key": "Mass",
-                "val": "5.6846×10^26 kg"
+                "val": "5.6846×10\u00B2\u2076 kg"
             },
             {
                 "key": "Surface Temperature (mean)",
@@ -157,7 +157,7 @@
             },
             {
                 "key": "Volume",
-                "val": "8.2713×10^14 km^3"
+                "val": "8.2713×10\u2071\u2074 km\u00B3"
             }
         ],
         "Uranus": [
@@ -167,7 +167,7 @@
             },
             {
                 "key": "Mass",
-                "val": "(8.6810 ± 0.0013)×10^25 kg (not known precisely)"
+                "val": "(8.6810 ± 0.0013)×10\u00B2\u2075 kg (not known precisely)"
             },
             {
                 "key": "Surface Temperature (mean)",
@@ -175,7 +175,7 @@
             },
             {
                 "key": "Volume",
-                "val": "6.833×10^13 km^3"
+                "val": "6.833×10\u00B9\u00B3 km\u00B3"
             }
         ],
         "Neptune": [
@@ -185,7 +185,7 @@
             },
             {
                 "key": "Mass",
-                "val": "1.0243×10^26 kg"
+                "val": "1.0243×10\u00B2\u2076 kg"
             },
             {
                 "key": "Surface Temperature (mean)",
@@ -193,7 +193,7 @@
             },
             {
                 "key": "Volume",
-                "val": "6.254×10^13 km^3"
+                "val": "6.254×10\u00B9\u00B3 km\u00B3"
             }
         ]
     }
