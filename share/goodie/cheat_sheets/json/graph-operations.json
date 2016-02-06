@@ -6,6 +6,9 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Graph_theory"
     },
+    "aliases": [
+        "graph operation" 
+    ],
     "template_type": "reference",
     "section_order": [
         "Adjacency list",
