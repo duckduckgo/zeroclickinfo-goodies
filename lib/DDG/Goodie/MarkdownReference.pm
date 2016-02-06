@@ -116,8 +116,10 @@ handle remainder => sub {
                 subtitle    =>  $subtitle,
             },
             templates => {
-                group   => 'text',
-                content => 'DDH.markdown_reference.content',
+                group   => 'base',
+                options => {
+                    content => 'DDH.markdown_reference.content',
+                },
             },
         };
 };

@@ -20,8 +20,10 @@ sub build_structured_answer {
                 subtitle     => $formatted_input,
             },
             templates => {
-                group   => 'text',
-                content => 'DDH.markdown_reference.content',
+                group   => 'base',
+                options => {
+                    content => 'DDH.markdown_reference.content',
+                },
             },
         };
 }
