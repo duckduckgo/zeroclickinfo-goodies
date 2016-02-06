@@ -11,24 +11,48 @@ triggers startend => (
     'markdown', 'md',
 );
 
-my %synonyms = (
-    'header', ['h1', 'headers', 'h2', 'h3', 'h4', 'h5', 'h6', 'heading'],
-    'emphasis', ['em', 'emphasize', 'italic', 'italics'],
-    'bold', ['strong'],
-    'image', ['img', 'images', 'insert image'],
-    'link', ['a', 'href', 'links'],
-    'blockquote', ['quote', 'quotation'],
-    'list', ['lists', 'ordered list', 'unordered list', 'ul', 'ol', 'bullet', 'bullets']
-);
+sub build_synonyms {
+    my %header_synonyms = map { $_ => 1 } (
+        'h1', 'headers', 'h2', 'h3',
+        'h4', 'h5', 'h6', 'heading',
+    );
+    my %emphasis_synonyms = map { $_ => 1 } (
+        'em', 'emphasize', 'italic', 'italics',
+    );
+    my %bold_synonyms = map { $_ => 1 } (
+        'strong',
+    );
+    my %image_synonyms = map { $_ => 1 } (
+        'img', 'images', 'insert image',
+    );
+    my %link_synonyms = map { $_ => 1 } (
+        'a', 'href', 'links',
+    );
+    my %blockquote_synonyms = map { $_ => 1 } (
+        'quote', 'quotation',
+    );
+    my %list_synonyms = map { $_ => 1 } (
+        'lists', 'ordered list', 'unordered list',
+        'ul', 'ol', 'bullet', 'bullets',
+    );
+    return (
+        'header' => \%header_synonyms,
+        'emphasis' => \%emphasis_synonyms,
+        'bold' => \%bold_synonyms,
+        'image' => \%image_synonyms,
+        'link' => \%link_synonyms,
+        'blockquote' => \%blockquote_synonyms,
+        'list' => \%list_synonyms,
+    );
+}
 
 sub get_element_from_alias {
     my $name = shift;
-    foreach my $key (keys(%synonyms)) {
-        return $key if $name eq $key;
-        foreach my $v (@{$synonyms{$key}}) {
-            return $key if $v eq $name;
-        }
-    }
+    my %synonyms = build_synonyms();
+    while (my ($elt_type, $syns) = each %synonyms) {
+        return $elt_type if $name eq $elt_type;
+        return $elt_type if defined $syns->{$name};
+    };
 }
 
 my $more_at = '<a href="http://daringfireball.net/projects/markdown/syntax" class="zci__more-at--info"><img src="http://daringfireball.net/favicon.ico" class="zci__more-at__icon"/>More at Daring Fireball</a>';
