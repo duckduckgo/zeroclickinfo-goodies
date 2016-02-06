@@ -42,8 +42,9 @@ sub make_triggers {
             while (my ($trigger_type, $add_triggers) = each $trigger_hash) {
                 my @triggers = @{$triggers{$trigger_type}}
                     if exists($triggers{$trigger_type});
-                @triggers = (@triggers, @{$add_triggers});
-                @track_triggers = (@track_triggers, @{$add_triggers});
+                my @enabled_triggers = grep { $_ if $add_triggers->{$_} } (keys %{$add_triggers});
+                @triggers = (@triggers, @enabled_triggers);
+                @track_triggers = (@track_triggers, @enabled_triggers);
                 $triggers{$trigger_type} = \@triggers;
             }
             $runner->($id, @track_triggers);
