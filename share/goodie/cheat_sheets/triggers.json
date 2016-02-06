@@ -2,14 +2,14 @@
     "standard": {
         "keyboard": {
             "startend": {
-                "quick reference": 1,
-                "reference": 1,
-                "shortcuts": 1,
+                "default keybindings": 1,
+                "default keys": 1,
                 "key bindings": 1,
                 "keyboard shortcuts": 1,
                 "keys": 1,
-                "default keys": 1,
-                "default keybindings": 1
+                "quick reference": 1,
+                "reference": 1,
+                "shortcuts": 1
             }
       },
       "reference": {
@@ -20,19 +20,17 @@
       },
       "terminal": {
           "startend": {
-              "char": 1,
-              "chars": 1,
-              "character": 1,
               "characters": 1,
-              "command": 1,
+              "chars": 1,
               "commands": 1,
               "symbols": 1
           }
       },
       "language": {
           "startend": {
-              "guide": 1,
-              "example": 1
+              "example": 1,
+              "examples": 1,
+              "guide": 1
           }
       },
       "code": {
@@ -46,11 +44,9 @@
       },
       "math": {
           "startend": {
-              "equation": 1,
               "equations": 1,
-              "formula": 1,
-              "formulas": 1,
-              "formulae": 1
+              "formulae": 1,
+              "formulas": 1
           }
       },
       "links": {
@@ -62,9 +58,9 @@
       },
       "standard": {
           "startend": {
-              "help": 1,
               "cheat sheet": 1,
-              "cheatsheet": 1
+              "cheatsheet": 1,
+              "help": 1
           }
       }
     }
