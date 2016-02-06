@@ -10,7 +10,7 @@ zci answer_type => 'markdown_reference';
 zci is_cached   => 1;
 
 sub build_structured_answer {
-    my ($result_type, $formatted_input) = @_;
+    my ($result_type, $element_type) = @_;
     my %elements = map { $_ => 0 } (
         'header',
         'list',
@@ -21,18 +21,24 @@ sub build_structured_answer {
         'link',
     );
     $elements{$result_type} = 1;
-    return $formatted_input,
+    return $element_type,
         structured_answer => {
             id   => 'markdown_reference',
             name => 'Answer',
             data => {
-                elements => \%elements,
-                subtitle => $formatted_input,
+                elements     => \%elements,
+                element_type => $element_type,
+                title        => "Markdown Reference",
+            },
+            meta => {
+                sourceName => 'Daring Fireball',
+                sourceUrl  => 'https://daringfireball.net/projects/markdown/syntax',
             },
             templates => {
-                group   => 'base',
+                group   => 'text',
                 options => {
-                    content => 'DDH.markdown_reference.content',
+                    subtitle_content => 'DDH.markdown_reference.content',
+                    moreAt           => 1,
                 },
             },
         };

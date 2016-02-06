@@ -70,13 +70,19 @@ handle remainder => sub {
             id   => 'markdown_reference',
             name => 'Answer',
             data => {
-                elements => $elements,
-                subtitle => $subtitle,
+                elements     => $elements,
+                element_type => $subtitle,
+                title        => "Markdown Reference",
+            },
+            meta => {
+                sourceName => 'Daring Fireball',
+                sourceUrl  => 'https://daringfireball.net/projects/markdown/syntax',
             },
             templates => {
-                group   => 'base',
+                group   => 'text',
                 options => {
-                    content => 'DDH.markdown_reference.content',
+                    subtitle_content => 'DDH.markdown_reference.content',
+                    moreAt           => 1,
                 },
             },
         };
