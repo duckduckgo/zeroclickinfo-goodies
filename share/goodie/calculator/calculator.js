@@ -357,7 +357,7 @@ DDH.calculator.build = function() {
                 actionType: 'FN',
                 numFields: 1,
                 rep: function() {
-                    var rep = name + '(' + this.fields[0].toHtml() + ')';
+                    var rep = name + '(' + this.fields[0].asText() + ')';
                     console.log('rep for ' + name + ': ' + rep);
                     return rep;
                 },
