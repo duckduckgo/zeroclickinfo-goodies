@@ -7,10 +7,7 @@
         "sourceUrl": "http://www.yaml.org/spec/1.2/spec.html"
     },
     "aliases": [
-        "yaml ain’t markup language",
-        "yaml aint markup language",
-        "yet another markup language",
-        "yaml"
+        "yet another markup language"
     ],
     "template_type": "code",
     "section_order": [
