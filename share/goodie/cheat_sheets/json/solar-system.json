@@ -35,7 +35,7 @@
     "sections": {
         "Sun": [
             {
-                "key": "Distance from earth",
+                "key": "Mean distance from earth",
                 "val": "149,597,900 km"
             },
             {
