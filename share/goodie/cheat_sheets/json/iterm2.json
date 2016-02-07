@@ -1,7 +1,7 @@
 {  
    "id":"iterm2_cheat_sheet",
    "name":"Iterm2",
-   "description":"Keyboard shortcuts for iterm2 terminal",
+   "description":"Keyboard shortcuts for iTerm2, a terminal emulator for OS X",
    "metadata":{  
       "sourceName":"Github",
       "sourceUrl":"https://github.com/vikashvverma/Goodies/blob/master/Shortcuts/Iterm2.md"
@@ -20,11 +20,11 @@
    "sections":{  
       "Tabs and Windows":[  
          {  
-            "key":"[⌘] [Left Arrow]",
+            "key":"[⌘] [←]",
             "val":"Previous Tab"
          },
          {  
-            "key":"[⌘] [Right Arrow]",
+            "key":"[⌘] [↑]",
             "val":"Next Tab"
          },
          {  
@@ -36,7 +36,7 @@
             "val":"Go to Window"
          },
          {  
-            "key":"[⌘] [Option] [Arrow]",
+            "key":"[⌘] [Option] [←/↑/→/↓]",
             "val":"Go to Split Pane by Direction"
          },
          {  
