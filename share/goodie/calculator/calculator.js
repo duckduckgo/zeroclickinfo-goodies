@@ -40,8 +40,8 @@ DDH.calculator.build = function() {
         '+': 'OP_PLUS',
         '-': 'OP_MINUS',
         '^': 'FN_POW_N',
-        '(': 'META_PAR_OPEN',
-        ')': 'META_PAR_CLOSE',
+        '(': 'PAR_OPEN',
+        ')': 'PAR_CLOSE',
         '=': 'META_PROCEED',
         'E': 'FN_EE'
     };
@@ -364,6 +364,8 @@ DDH.calculator.build = function() {
         '9': calcFieldChar('9'),
         ' ': calcFieldChar(' '),
         '.': calcFieldChar('.'),
+        'PAR_OPEN': calcFieldChar('('),
+        'PAR_CLOSE': calcFieldChar(')'),
         'META_CLEAR': calcMeta(function () { calc.process.backspace(); }),
         'META_PROCEED': calcMeta(function () { calc.formula.calculate(); }),
         // 'META_PAR_OPEN': calcMeta(function () { calc.formula.levelUp(); }),
