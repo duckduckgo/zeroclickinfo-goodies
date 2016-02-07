@@ -349,6 +349,8 @@ DDH.calculator.build = function() {
         'OP_MINUS': calcFieldOperator('-'),
         'CONST_PI': calcFieldChar('π'),
         'FN_SIN': calcFieldUnaryFn('sin'),
+        'FN_COS': calcFieldUnaryFn('cos'),
+        'FN_TAN': calcFieldUnaryFn('tan'),
         'FN_FACT': calcFieldChar('!'),
         '0': calcFieldChar('0'),
         '1': calcFieldChar('1'),
