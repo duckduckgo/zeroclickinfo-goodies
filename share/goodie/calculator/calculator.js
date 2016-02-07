@@ -354,6 +354,7 @@ DDH.calculator.build = function() {
         '8': CalcFieldChar('8'),
         '9': CalcFieldChar('9'),
         ' ': CalcFieldChar(' '),
+        '.': CalcFieldChar('.'),
         'META_CLEAR': calcMeta(function () { calc.process.backspace(); }),
         'META_PROCEED': calcMeta(function () { calc.formula.calculate(); }),
         // 'META_PAR_OPEN': calcMeta(function () { calc.formula.levelUp(); }),
