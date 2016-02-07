@@ -685,9 +685,19 @@ DDH.calculator.build = function() {
     Formula.prototype.appendFragmentChild = function(val) {
         this.storage.appendFieldAfter(this.cursor, val);
         this.moveCursorForward();
-        this.moveCursorDown();
-        if (this.getActiveField().actionType === 'COLLECT') {
+        this.tryEnterFn();
+        // this.moveCursorDown();
+        // if (this.getActiveField().actionType === 'COLLECT') {
+        //     this.moveCursorDown();
+        // }
+    };
+
+    Formula.prototype.tryEnterFn = function() {
+        if (this.getActiveField().actionType === 'FN') {
             this.moveCursorDown();
+            if (isCollector(this.getActiveField())) {
+                this.moveCursorDown();
+            }
         }
     };
     /**
@@ -699,6 +709,7 @@ DDH.calculator.build = function() {
         if (this.initialDisplay || isPlaceHolder(this.getActiveField())) {
             this.modifyCurrentField(val);
             this.initialDisplay = false;
+            this.tryEnterFn();
         } else {
             this.appendFragmentChild(val);
         }
