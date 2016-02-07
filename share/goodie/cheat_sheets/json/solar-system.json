@@ -3,8 +3,8 @@
     "name": "Solar System",
     "description": "Basic information about our solar system",
     "metadata": {
-        "sourceName": "Wikipedia",
-        "sourceUrl": "https://en.wikipedia.org/wiki/Solar_System"
+        "sourceName": "NASA",
+        "sourceUrl": "http://nssdc.gsfc.nasa.gov/planetary/factsheet/"
     },
     "aliases": [
         "solar",
@@ -44,7 +44,7 @@
             },
             {
                 "key": "Temperature (core)",
-                "val": "1.57×10⁷ K"
+                "val": "1.56×10⁷ K"
             },
             {
                 "key": "Volume",
@@ -62,7 +62,7 @@
             },
             {
                 "key": "Surface Temperature (mean)",
-                "val": "340 K"
+                "val": "440 K"
             },
             {
                 "key": "Volume",
@@ -116,7 +116,7 @@
             },
             {
                 "key": "Surface Temperature (mean)",
-                "val": "210 K"
+                "val": "208 K"
             },
             {
                 "key": "Volume",
@@ -134,7 +134,7 @@
             },
             {
                 "key": "Surface Temperature (mean)",
-                "val": "165 K"
+                "val": "163 K"
             },
             {
                 "key": "Volume",
@@ -152,7 +152,7 @@
             },
             {
                 "key": "Surface Temperature (mean)",
-                "val": "134 K"
+                "val": "133 K"
             },
             {
                 "key": "Volume",
@@ -166,11 +166,11 @@
             },
             {
                 "key": "Mass",
-                "val": "(8.6810 ± 0.0013)×10²⁵ kg (not known precisely)"
+                "val": "8.68×10²⁵ kg"
             },
             {
                 "key": "Surface Temperature (mean)",
-                "val": "76 K"
+                "val": "78 K"
             },
             {
                 "key": "Volume",
@@ -188,7 +188,7 @@
             },
             {
                 "key": "Surface Temperature (mean)",
-                "val": "72 K"
+                "val": "73 K"
             },
             {
                 "key": "Volume",
