@@ -1,15 +1,15 @@
 {
-  "id": "virtual_box_cheetsheet",
+  "id": "virtual_box_cheat_sheet",
   "name": "Oracle Virtual Box",
   "description": "Keyboard shortcuts for virtualbox",
   "aliases": [
-    "virtualbox",
-    "oracle virtualbox",
-    "vbox"
+      "virtualbox",
+      "oracle virtualbox",
+      "vbox"
   ],
   "template_type": "keyboard",
   "section_order": [
-    "Common Shortcuts"
+      "Common Shortcuts"
   ],
   "sections": {
     "Common Shortcuts": [
