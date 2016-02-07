@@ -18,7 +18,7 @@ zci is_cached   => 1;
 
 handle remainder => sub {
     
-    return unless $_ =~ qr/^(what is)?( )?(the)?$/i;
+    return unless $_ =~ qr/^(what is )?(the)?$/i;
 
     my $answer = 'Forty-two';
 
