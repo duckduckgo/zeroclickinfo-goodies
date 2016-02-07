@@ -171,7 +171,7 @@ DDH.calculator.build = function() {
     }
 
 
-    function CalcFieldChar(n) {
+    function calcFieldChar(n) {
         return new CalcField({
             numFields: 0,
             actionType: 'CHAR',
@@ -321,20 +321,20 @@ DDH.calculator.build = function() {
         'OP_MULT': calcFieldOperator('×'),
         'OP_PLUS': calcFieldOperator('+'),
         'OP_MINUS': calcFieldOperator('-'),
-        'CONST_PI': CalcFieldChar('π'),
+        'CONST_PI': calcFieldChar('π'),
         'FN_SIN': calcFieldUnaryFn('sin'),
-        '0': CalcFieldChar('0'),
-        '1': CalcFieldChar('1'),
-        '2': CalcFieldChar('2'),
-        '3': CalcFieldChar('3'),
-        '4': CalcFieldChar('4'),
-        '5': CalcFieldChar('5'),
-        '6': CalcFieldChar('6'),
-        '7': CalcFieldChar('7'),
-        '8': CalcFieldChar('8'),
-        '9': CalcFieldChar('9'),
-        ' ': CalcFieldChar(' '),
-        '.': CalcFieldChar('.'),
+        '0': calcFieldChar('0'),
+        '1': calcFieldChar('1'),
+        '2': calcFieldChar('2'),
+        '3': calcFieldChar('3'),
+        '4': calcFieldChar('4'),
+        '5': calcFieldChar('5'),
+        '6': calcFieldChar('6'),
+        '7': calcFieldChar('7'),
+        '8': calcFieldChar('8'),
+        '9': calcFieldChar('9'),
+        ' ': calcFieldChar(' '),
+        '.': calcFieldChar('.'),
         'META_CLEAR': calcMeta(function () { calc.process.backspace(); }),
         'META_PROCEED': calcMeta(function () { calc.formula.calculate(); }),
         // 'META_PAR_OPEN': calcMeta(function () { calc.formula.levelUp(); }),
