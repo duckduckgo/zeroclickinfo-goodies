@@ -1,7 +1,7 @@
 {
     "id": "graph_operations_cheat_sheet",
     "name": "Graph Operations",
-    "description": "A quick reference to Big-O complexities of graph operations",
+    "description": "Summary of Big-O run-time complexities for common graph operations",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Graph_theory"
@@ -56,16 +56,16 @@
             "key": "Query"
         }],
         "Adjacency matrix": [{
-            "val": "O(|V|^2)",
+            "val": "O(|V|²)",
             "key": "Storage"
         }, {
-            "val": "O(|V|^2)",
+            "val": "O(|V|²)",
             "key": "Add Vertex"
         }, {
             "val": "O(1)",
             "key": "Add Edge"
         }, {
-            "val": "O(|V|^2)",
+            "val": "O(|V|²)",
             "key": "Remove Vertex"
         }, {
             "val": "O(1)",
