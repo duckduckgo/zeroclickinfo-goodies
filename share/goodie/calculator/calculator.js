@@ -50,10 +50,15 @@ DDH.calculator.build = function() {
     function CalcField(options) {
         this.rep = options.rep;
         this.numFields = options.numFields || 0;
-        this.fields = options.fields || Array(this.numFields).map(function() {
-            newEmptyCollector();
+        // this.fields = [newEmptyCollector()];
+        this.fields = options.fields || Array.apply(null, Array(this.numFields)).map(function() {
+            return newEmptyCollector();
         });
-        console.log("[CF (new)] fields: %s", this.fields);
+        // this.fields = options.fields || Array(this.numFields).map(function() {
+        //     return newEmptyCollector();
+        // });
+        console.log("[CF (new)] fields: " + this.fields);
+        console.log("[CF (new)] fields.length: " + this.fields.length);
         this.actionType = options.actionType || 'NONE';
         this.name = options.name || this.rep;
         this.htmlRep = options.htmlRep || this.rep;
@@ -104,15 +109,14 @@ DDH.calculator.build = function() {
 
     // Retrieve the Field accessed through pos.
     CalcField.prototype.accessField = function(pos) {
-        console.log("[CF.accessField] Accessing field at pos: %s", pos);
+        console.log("[CF.accessField] Accessing field at pos: " + pos);
         var thisFieldToAccess = pos.topLevel();
-        if (thisFieldToAccess >= this.fields.length) {
-            console.warn("[CF.accessField] Attempt to access a field not yet defined! (" + thisFieldToAccess + ')');
-            return;
-        }
         if (thisFieldToAccess >= this.numFields) {
             console.warn("[CF.accessField] field access is greater than num fields!: " + this.numFields + ", " + thisFieldToAccess);
             return;
+        }
+        if (pos.atTopLevel()) {
+            return this.fields[thisFieldToAccess];
         }
         if (pos._pos.length === 0) {
             console.error("[CF.accessField] attempt to access with zero-length");
@@ -122,7 +126,7 @@ DDH.calculator.build = function() {
     };
 
     CalcField.prototype.setField = function(pos, val) {
-      console.log("[CF.setField] setting field at %s to %s", pos, val);
+      console.log("[CF.setField] setting field at " + pos + " to " + val);
       var thisFieldToAccess = pos.topLevel();
       if (thisFieldToAccess >= this.numFields) {
           console.warn("[CF.setField] field access is greater than num fields!: " + this.numFields + ", " + thisFieldToAccess);
@@ -148,7 +152,7 @@ DDH.calculator.build = function() {
         var currentEarly;
         for (i=0; i<this.fields.length; i++) {
             currentEarly = this.fields[i].getPosEarliestFieldNeedsFilling(pos.concat([i]));
-            if (!(currentEarly === undefined)) {
+            if (currentEarly !== undefined) {
                 return currentEarly;
             }
         }
@@ -160,11 +164,19 @@ DDH.calculator.build = function() {
     // Append 'value' after position 'pos'.
     CalcField.prototype.appendFieldAfter = function(pos, value) {
         if (this.numFields <= (pos.topLevel())) {
-            console.warn("[CF.appendFieldAfter] position too great: %s", pos);
+            console.warn("[CF.appendFieldAfter] position too great: " + pos);
             return;
         }
         this.fields[pos.topLevel()].appendFieldAfter(pos.childLevel(), value);
         return value;
+    };
+
+    CalcField.prototype.deleteField = function(pos) {
+        if (pos.atTopLevel()) {
+            console.error('[CF.deleteField] attempt to delete unprotected field!');
+            return;
+        }
+        return this.fields[pos.topLevel()].deleteField(pos.childLevel());
     };
 
     function CalcNonDisplay(options) {
@@ -181,6 +193,16 @@ DDH.calculator.build = function() {
         });
     }
 
+    function calcFieldPlaceHolder() {
+        return new CalcField({
+            actionType: 'PLACE_HOLDER',
+            rep: 'P',
+            htmlRep: 'P',
+            runAction: function() { console.error('Place holder called!'); }
+        });
+    }
+
+
     // A field collector is used to group fields together under a single
     // position - for example, in function arguments.
     function FieldCollector(options) {
@@ -188,9 +210,13 @@ DDH.calculator.build = function() {
         this.allow = options.allow;
         this.fields = options.fields || [];
         this.rep = function() {
-            var arrRep = this.fields.map(function (index, element) {
-                return element.asText();
+            var arrRep = this.fields.map(function (element) {
+                var asText = element.asText();
+                console.log("[arrRep map] produced: " + asText);
+                return asText;
+                // return element.asText();
             });
+            console.log("Arr rep: " + arrRep);
             return arrRep.join('');
         };
     }
@@ -199,15 +225,25 @@ DDH.calculator.build = function() {
         return this.fields.map(function(field) { return field.asText(); }).join('');
     };
 
+    FieldCollector.prototype.toString = function() {
+        var str = 'FC[' + this.fields.join(', ') + ']';
+        console.log("[FC.toString] str: " + str);
+        return str;
+        // return 'FC:' + this.fields;
+    };
+
     FieldCollector.prototype.toHtml = function() {
+        console.log('[FC.toHtml] making html!');
         var html = this.fields.map(function(field) {
+            // console.error('[FC.toHtml] getting html for field: ' + field);
             return field.toHtml();
         }).join('');
+        // console.log('[FC.toHtml] html: ' + html);
         return '<span>' + html + '</span>';
     };
 
     FieldCollector.prototype.setField = function(pos, val) {
-        console.log("[FC.setField] setting field at %s to %s", pos, val);
+        console.log("[FC.setField] setting field at " + pos + " to " + val);
         var thisFieldToAccess = pos.topLevel();
         if (pos.atTopLevel()) {
             this.fields[thisFieldToAccess] = val;
@@ -228,7 +264,7 @@ DDH.calculator.build = function() {
         }
         if (pos._pos.length === 0) {
             console.error("[FC.accessField] Attempt to access a Collector!");
-            return this;
+            return;
         }
         if (pos.atTopLevel()) {
             return this.fields[thisFieldToAccess];
@@ -249,15 +285,41 @@ DDH.calculator.build = function() {
         console.log("[FC.appendFieldAfter] appending at pos: " + pos);
         var topLevel = pos.topLevel();
         if (pos.atTopLevel()) {
+            console.log('[FC.appendFieldAfter] before: ' + this.fields);
             this.fields.splice(topLevel + 1, 1, value);
+            console.log('[FC.appendFieldAfter] after: ' + this.fields);
             return value;
+        }
+        if (pos._pos.length === 0) {
+            console.error('[FC.appendFieldAfter] got empty position!');
+            return;
         }
         return this.fields[topLevel].appendFieldAfter(pos.childLevel(), value);
     };
 
+    FieldCollector.prototype.deleteField = function(pos) {
+        console.log('[FC.deleteField] deleting field at ' + pos);
+        if (pos.atTopLevel()) {
+            var deleted;
+            if (this.fields.length === 1) {
+                console.log('[FC.deleteField] at start of fields');
+                deleted = this.fields.splice(0, 1, calcFieldPlaceHolder())[0];
+                console.log('[FC.deleteField] deleted: ' + deleted);
+                return deleted;
+                // return this.fields.splice(0, 1, calcFieldPlaceHolder())[0];
+            }
+            console.log('[FC.deleteField] at top level');
+            deleted = this.fields.splice(pos.topLevel(), 1)[0];
+            console.log('[FC.deleteField] deleted: ' + deleted);
+            return deleted;
+            // return this.fields.splice(pos.topLevel(), 1)[0];
+        }
+        return this.fields[pos.topLevel()].deleteField(pos.childLevel());
+    };
+
     // Collector with no fields.
     function newEmptyCollector() {
-        return new FieldCollector({});
+        return new FieldCollector({ fields: [calcFieldPlaceHolder()]});
     }
 
     // The 'zero' field collector for the default display.
@@ -278,23 +340,14 @@ DDH.calculator.build = function() {
         return field.actionType === 'PLACE_HOLDER';
     }
 
-    function maker(what) {
-        new what();
+    function isCollector(field) {
+        return field.actionType === 'COLLECT';
     }
 
     function calcMeta(action) {
         return new CalcNonDisplay({
             actionType: 'META',
             runAction: action
-        });
-    }
-
-    function calcFieldPlaceHolder() {
-        return new CalcField({
-            actionType: 'PLACE_HOLDER',
-            rep: 'P',
-            htmlRep: 'P',
-            runAction: function() { log.error('Place holder called!'); }
         });
     }
 
@@ -305,11 +358,11 @@ DDH.calculator.build = function() {
                 numFields: 1,
                 rep: function() {
                     var rep = name + '(' + this.fields[0].toHtml() + ')';
-                    console.log('rep for %s: %s', name, rep);
+                    console.log('rep for ' + name + ': ' + rep);
                     return rep;
                 },
                 htmlRep: function() {
-                    console.log("[htmlRep] fields: %s", this.fields);
+                    console.log("[htmlRep] fields: " + this.fields);
                     return name + '(<span class="calc-field">' + this.fields[0].toHtml() + '</span>)';
                 }
             });
@@ -485,7 +538,10 @@ DDH.calculator.build = function() {
 
     // Is the position at the top level?
     DisplayPos.prototype.atTopLevel = function() {
-        return this._pos.length === 1;
+        var atTop = this._pos.length === 1;
+        console.log("[DP.atTopLevel] at top?: " + atTop + ' for pos: ' + this._pos);
+        return atTop;
+        // return this._pos.length === 1;
     };
 
     DisplayPos.prototype.atStart = function() {
@@ -497,7 +553,16 @@ DDH.calculator.build = function() {
     };
 
     DisplayPos.prototype.childLevel = function() {
-        return new DisplayPos(this._pos.slice(1));
+        var newL = new DisplayPos(this._pos.slice(1));
+        console.log('[DP.childLevel] new pos: ' + newL);
+        return newL;
+    };
+
+    // All but the very last position.
+    DisplayPos.prototype.outerLevel = function() {
+        var newL = new DisplayPos(this._pos.slice(0,-2));
+        console.log('[DP.outerLevel] new pos: ' + newL);
+        return newL;
     };
 
     DisplayPos.prototype.topLevel = function() {
@@ -533,7 +598,8 @@ DDH.calculator.build = function() {
     function Formula(initialFormStr) {
         // this.storage = [''];
         this.storage = newZeroFieldCollector();
-        this._cursor = new DisplayPos([0]);
+        this.cursor = new DisplayPos([0]);
+        // this._cursor = new DisplayPos([0]);
         this.isCalculated = false;
         this.initialDisplay = true;
 
@@ -545,11 +611,11 @@ DDH.calculator.build = function() {
         }
     }
 
-    Formula.prototype = {
-        get cursor() {
-            return this._cursor;
-        }
-    };
+    // Formula.prototype = {
+    //     get cursor() {
+    //         return this._cursor;
+    //     }
+    // };
 
     ///////////////
     /// STORAGE:
@@ -571,7 +637,7 @@ DDH.calculator.build = function() {
      * @return {String} value
      */
     Formula.prototype.getActiveField = function() {
-        console.log("[F.getActiveField] getting field at %s", this.cursor);
+        console.log("[F.getActiveField] getting field at " + this.cursor);
         return this.getField(this.cursor);
     };
 
@@ -614,7 +680,8 @@ DDH.calculator.build = function() {
 
     Formula.prototype.canMoveDown = function() {
         var current = this.getActiveField();
-        return current.numFields > 0;
+        console.log('[F.canMoveDown] current: ' + current);
+        return current.actionType === 'COLLECT' || current.numFields > 0;
     };
 
 
@@ -632,16 +699,17 @@ DDH.calculator.build = function() {
         if (this.canMoveBackSameLevel()) {
             this.cursor.decrementLast(amount);
         } else {
-            this.moveCursorUpward();
+            this.moveCursorIntoOuterCollector();
+            // this.moveCursorUpward();
         }
         return this.cursor;
     };
 
 
     // Modify the field at 'pos' (default cursor) to value.
-    Formula.prototype.modifyField = function(value, pos) {
-        pos = pos || this.cursor;
-        this.storage.setField(pos, value);
+    Formula.prototype.modifyCurrentField = function(value) {
+        console.log("[F.modifyCurrentField] position: " + this.cursor);
+        this.storage.setField(this.cursor, value);
     };
 
     // Increase the cursor depth, if possible.
@@ -659,8 +727,13 @@ DDH.calculator.build = function() {
     Formula.prototype.appendFragmentChild = function(val) {
         this.storage.appendFieldAfter(this.cursor, val);
         this.moveCursorForward();
-        console.log("[F.appendFragmentChild] value at cursor: " + this.getActiveField().asText());
+        console.log("[F.appendFragmentChild] value at cursor: " + this.getActiveField());
         this.moveCursorDown();
+        console.log("[F.appendFragmentChild] value at cursor (after move): " + this.getActiveField());
+        if (this.getActiveField().actionType === 'COLLECT') {
+            console.log('[F.appendFragmentChild] moving down...');
+            this.moveCursorDown();
+        }
     };
     /**
      * Add new fragment to formula storage
@@ -670,7 +743,7 @@ DDH.calculator.build = function() {
     Formula.prototype.fragmentNew = function(val) {
         console.log('[F.fragmentNew] new fragment value: ' + val);
         if (this.initialDisplay || isPlaceHolder(this.getActiveField())) {
-            this.modifyField(val);
+            this.modifyCurrentField(val);
             this.initialDisplay = false;
         } else {
             this.appendFragmentChild(val);
@@ -707,21 +780,79 @@ DDH.calculator.build = function() {
         }
     };
 
+    Formula.prototype.moveCursorIntoOuterCollector = function() {
+        if (this.cursor.atTopLevel()) {
+            console.error('[F.moveCursorIntoOuterCollector] attempt to use at top level!');
+            return;
+        }
+        console.log('[F.moveCursorIntoOuterCollector] position: ' + this.cursor);
+        this.exitCurrentCollector();
+        if (this.cursor.atTopLevel()) {
+            console.log('[F.moveCursorIntoOuterCollector] in top level after exit');
+            return;
+        }
+        console.log('[F.moveCursorIntoOuterCollector] position (after exit): ' + this.cursor);
+        while (!isCollector(this.getField(this.cursor.outerLevel()))) {
+            this.cursor.decreaseDepth();
+            if (this.cursor.atTopLevel()) {
+                console.warn('[F.moveCursorIntoOuterCollector] now in top level!');
+                return;
+            }
+        }
+        console.log('[F.moveCursorIntoOuterCollector] freeeeeeedom!');
+    };
+
+    Formula.prototype.exitCurrentCollector = function() {
+        if (this.cursor.atTopLevel()) {
+            console.error('[F.exitCurrentCollector] cannot exit from top level!');
+            return;
+        }
+        if (isCollector(this.getActiveField())) {
+            this.cursor.decreaseDepth();
+            return;
+        }
+        this.cursor.decreaseDepth();
+        this.exitCurrentCollector();
+    };
+
+    Formula.prototype.deleteCurrentField = function() {
+        var deleted = this.storage.deleteField(this.cursor);
+        if (isPlaceHolder(deleted)) {
+            this.moveCursorIntoOuterCollector();
+            this.deleteCurrentField();
+        }
+        console.log('[F.deleteCurrentField] got deleted: ' + deleted);
+        return deleted;
+        // return this.storage.deleteField(this.cursor);
+    };
+
     Formula.prototype.deleteBackwards = function() {
         var pos = this.cursor;
         var deleted;
         if (this.cursor.atTopLevel()) {
             if (this.cursor.atStart()) {
+                console.log('[F.deleteBackwards] at start');
                 deleted = this.getActiveField();
-                this.modifyField(BTS['0']);
+                this.modifyCurrentField(BTS['0']);
                 this.initialDisplay = true;
                 return deleted;
             }
+            console.log('[F.deleteBackwards] at top level');
             deleted = this.storage.deleteLast();
             this.moveCursorBackward();
             return deleted;
         }
         console.warn('[F.deleteBackwards] not at top level for pos ' + pos);
+        deleted = this.deleteCurrentField();
+        console.log('[F.deleteBackwards] got deleted: ' + deleted);
+        // if (isPlaceHolder(deleted)) {
+        //     console.log('[F.deleteBackwards] was a place holder');
+        //     this.deleteBackwards();
+        // }
+        console.log('[F.deleteBackwards] moving backwards');
+        this.moveCursorBackward();
+        console.log('[F.deleteBackwards] rendering');
+        this.render();
     };
 
     Formula.prototype.handleBackspace = function() {
@@ -782,7 +913,6 @@ DDH.calculator.build = function() {
     // }
 
     Formula.prototype.toHtml = function(_arr, _path) {
-        console.log('[F.toHtml] with _arr ' + _arr + ' and _path ' + _path);
         return '<span>' + this.storage.toHtml() + '</span>';
     };
 
@@ -798,7 +928,8 @@ DDH.calculator.build = function() {
         calc._cache.$formulaMinor.html('');
         calc._cache.inputField.innerHTML = '0';
         this.storage = newZeroFieldCollector();
-        this._cursor = new DisplayPos([0]);
+        // this._cursor = new DisplayPos([0]);
+        this.cursor = new DisplayPos([0]);
         this.initialDisplay = true;
         this.render();
     };
@@ -978,7 +1109,7 @@ DDH.calculator.build = function() {
 
                         if (cmd === undefined) {
                             console.log("[bindBtnEvents] got undefined command");
-                            console.log("textContent: %s", this.textContent);
+                            console.log("textContent: " + this.textContent);
                             calc.process.chr(this.textContent);
                         } else {
                             console.log('[bindBtnEvents] processing command: ' + cmd);
@@ -1107,7 +1238,7 @@ DDH.calculator.build = function() {
             },
             chr: function (chr) {
                 console.log('[calc.process.chr] got chr: ' + chr);
-                if (!(KEY_ALIASES[chr] === undefined)) {
+                if (KEY_ALIASES[chr] !== undefined) {
                     var alias = KEY_ALIASES[chr];
                     console.log('[calc.process.chr] alias: ' + alias);
                     calc.process.cmd(BTS[alias]);
