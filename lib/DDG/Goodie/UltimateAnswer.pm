@@ -28,7 +28,7 @@ handle remainder => sub {
             name      => 'Answer',
             data      => {
                 title      => $answer,
-                subtitle   => 'The answer to the ultimate question of life, the universe and everything.'
+                subtitle   => 'The Answer to the Ultimate Question of Life, the Universe, and Everything.'
             },
             meta      => {
                 sourceName => 'Wikipedia',

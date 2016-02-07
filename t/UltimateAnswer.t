@@ -15,7 +15,7 @@ my $structuredAnswer = {
     name      => 'Answer',
     data      => {
         title      => $answer,
-        subtitle   => 'The answer to the ultimate question of life, the universe and everything.'
+        subtitle   => 'The Answer to the Ultimate Question of Life, the Universe, and Everything.'
     },
     meta      => {
         sourceName => 'Wikipedia',
@@ -74,6 +74,14 @@ ddg_goodie_test(
         structured_answer => $structuredAnswer
     ),
     'Answer to the Ultimate Question' => test_zci(
+        $answer,
+        structured_answer => $structuredAnswer
+    ),
+    'Answer to the Ultimate Question of Life, the Universe, and Everything' => test_zci(
+        $answer,
+        structured_answer => $structuredAnswer
+    ),
+    'The Answer to the Ultimate Question of Life, the Universe, and Everything' => test_zci(
         $answer,
         structured_answer => $structuredAnswer
     ),
