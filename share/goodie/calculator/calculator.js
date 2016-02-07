@@ -23,7 +23,9 @@ DDH.calculator.build = function() {
         BACKSPACE: 8,
         ENTER: 13,
         ESC: 27,
-        SPACE: 32
+        SPACE: 32,
+        RIGHT_ARROW: 39,
+        LEFT_ARROW: 37
     };
 
     /**
@@ -885,6 +887,10 @@ DDH.calculator.build = function() {
                     }
                     Utils.cancelEvent(e);
                     return false;
+                } else if (e.which === K.RIGHT_ARROW) {
+                    calc.process.rightArrow();
+                } else if (e.which === K.LEFT_ARROW) {
+                    calc.process.leftArrow();
                 } else {
                     e.stopPropagation();
                 }
@@ -1114,6 +1120,12 @@ DDH.calculator.build = function() {
             },
             clearFull: function () {
                 calc.formula.reset();
+            },
+            leftArrow: function() {
+                calc.formula.moveCursorBackward();
+            },
+            rightArrow: function() {
+                calc.formula.moveCursorForward();
             }
         }
     };
