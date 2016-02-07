@@ -529,7 +529,7 @@ DDH.calculator.build = function() {
 
     // All but the very last position.
     DisplayPos.prototype.outerLevel = function() {
-        var newL = new DisplayPos(this._pos.slice(0,-2));
+        var newL = new DisplayPos(this._pos.slice(0,-1));
         return newL;
     };
 
@@ -694,10 +694,16 @@ DDH.calculator.build = function() {
 
     Formula.prototype.tryEnterFn = function() {
         if (this.getActiveField().actionType === 'FN') {
-            this.moveCursorDown();
-            if (isCollector(this.getActiveField())) {
+            console.log('[F.tryEnterFn] entering function');
+            while (this.canMoveDown()) {
                 this.moveCursorDown();
             }
+            // while (this.moveCursorDown()) {
+            // }
+            // this.moveCursorDown();
+            // if (isCollector(this.getActiveField())) {
+            //     this.moveCursorDown();
+            // }
         }
     };
     /**
@@ -755,11 +761,11 @@ DDH.calculator.build = function() {
             return;
         }
         while (!isCollector(this.getField(this.cursor.outerLevel()))) {
-            this.cursor.decreaseDepth();
             if (this.cursor.atTopLevel()) {
                 console.warn('[F.moveCursorIntoOuterCollector] now in top level!');
                 return;
             }
+            this.cursor.decreaseDepth();
         }
     };
 
