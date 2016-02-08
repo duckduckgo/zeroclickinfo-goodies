@@ -89,7 +89,7 @@
 			"key": "[Ctrl] [Shift] [k]"
 		}, {
 			"val": "Move line up/down",
-			"key": "[Ctrl] [Up Arrow] / [Down Arrow]"
+			"key": "[Ctrl] ([↑] / [↓])"
 		}, {
 			"val": "Toggle comment line",
 			"key": "[Ctrl] [/]"
@@ -98,7 +98,7 @@
 			"key": "[Ctrl] [Enter]"
 		}, {
 			"val": "Indent / outdent selected lines",
-			"key": "[Ctrl] [\\[] / [\\]]"
+			"key": "[Ctrl] ([\\[] / [\\]])"
 		}, {
 			"val": "Join lines",
 			"key": "[Ctrl] [j]"
@@ -130,7 +130,7 @@
 
 		"View": [{
 			"val": "Increase / decrease text size",
-			"key": "[Ctrl] [Shift] [=] / [-]"
+			"key": "[Ctrl] [Shift] ([=] / [-])"
 		}, {
 			"val": "Reset text size",
 			"key": "[Ctrl] [0]"
