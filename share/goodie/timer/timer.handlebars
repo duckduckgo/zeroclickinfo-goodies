@@ -1,0 +1,32 @@
+<div class="timer_container tile status_not_started">
+    <div class="tx-clr--slate play_pause">
+        <a href=""></a>
+        <div class="progress">
+            <div class="fill">
+                <span class="rotated_fill"></span>
+                <span class="first_half_fill"></span>
+            </div>
+        </div>
+    </div>
+    <div class="display_container">
+        <div class="name">
+            <input type="text" class="bg-clr--silver tx-clr--slate name_input" value="Timer 1"/>
+        </div>
+        <div class="time">
+            <div class="time_display">
+                <span class="tx-clr--slate hours_minutes">00:00</span>
+                <span class="seconds">00</span>
+            </div>
+            <div class="time_input">
+                <input type="tel" pattern="\d*" maxlength="2" class="bg-clr--silver tx-clr--slate hours" placeholder="HH">
+                <span class="separator">:</span>
+                <input type="tel" pattern="\d*" maxlength="2" class="bg-clr--silver tx-clr--slate minutes" placeholder="MM">
+                <span class="separator">:</span>
+                <input type="tel" pattern="\d*" maxlength="2" class="bg-clr--silver tx-clr--slate seconds" placeholder="SS">
+            </div>
+        </div>
+    </div>
+    <a href="" class="corner_btn reset">RESET</a>
+    <a href="" class="corner_btn add_minute bg-clr--silver">+1</a>
+    <a href="" class="corner_btn close">&times;</a>
+</div>
