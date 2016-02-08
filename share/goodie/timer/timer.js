@@ -156,7 +156,7 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
         this.halfComplete = false;
 
         // dom setup
-        this.$element = $(Spice.timer.timer());
+        this.$element = $(Goodie.timer.timer());
 
         this.$nameInput = this.$element.find(".name_input");
 
@@ -448,7 +448,7 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
         }
     });
 
-    env.ddg_spice_timer = function(api_result) {
+    env.ddg_goodie_timer = function(api_result) {
         var timers = [],
             timerInterval,
             $addTimerBtn;
@@ -474,7 +474,7 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
 
             var lastUpdate = new Date().getTime(),
                 enteredTime = parseQueryForTime(),
-                $dom = Spice.getDOM("timer"),
+                $dom = Goodie.getDOM("timer"),
                 oldTitle = document.title;
 
             $addTimerBtn = $dom.find("#add_timer_btn");
@@ -514,7 +514,7 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
             });
         }
 
-        Spice.add({
+        Goodie.add({
             id: 'timer',
             name: 'Timer',
             signal: 'high',
@@ -526,11 +526,11 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
                 itemType: 'timer'
             },
             templates: {
-                detail: Spice.timer.timer_wrapper,
+                detail: Goodie.timer.timer_wrapper,
                 wrap_detail: 'base_detail'
             },
 
-            //wait for the spice to load before displaying things
+            //wait for the Goodie to load before displaying things
             //this makes sure the divs display at the right time so the layout doesn't break
             onShow: onShow
         });
@@ -539,4 +539,4 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
     };
 }(this));
 
-ddg_spice_timer();
+ddg_goodie_timer();
