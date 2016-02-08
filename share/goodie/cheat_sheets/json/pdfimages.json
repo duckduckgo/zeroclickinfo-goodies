@@ -14,32 +14,33 @@
     "sections": {
         "Options": [
             {
-                "key": "-f number", 
-                "val": "Specifies the first page to scan."
+                "key": "-f number",
+                "val": "Specifies the first page to scan"
+
             },
             {
                 "key": "-l number",
-                "val": "Specifies the last page to scan."
+                "val": "Specifies the last page to scan"
             },
             {
                 "key": "-j",
-                "val": "Normally, all images are written as PBM or  PPM files.With this option,images in DCT format are  saved as JPEG files.All non-DCT images are saved in PBM/PPM format as usual."
+                "val": "Normally, all images are written as PBM or  PPM files.With this option,images in DCT format are  saved as JPEG files.All non-DCT images are saved in PBM/PPM format as usual"
             },
             {
                 "key": "-opw password",
-                "val": "Specify the user password for the PDF file."
+                "val": "Specify the user password for the PDF file"
             },
             {
                 "key": "-q",
-                "val": "Don’t print any messages or errors."
+                "val": "Don’t print any messages or errors"
             },
             {
                 "key": "-v",
-                "val": "Print copyright and version information."
+                "val": "Print copyright and version information"
             },
             {
                 "key": "-h",
-                "val": "Print usage information.  (-help and --help are equivalent.)"
+                "val": "Print usage information  (-help and --help are equivalent)"
             }
         ]
     }
