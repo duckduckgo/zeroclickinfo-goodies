@@ -1,16 +1,14 @@
 {
-    "id": "ibm-db2_cheat_sheet",
+    "id": "ibm_db2_cheat_sheet",
     "name": "IBMdb2",
     "template_type": "terminal",
     "description": "A database software offers industry leading performance, scale, and reliability on your choice of platform from Linux to z/OS",
     "metadata": {
-        "sourceName": "DB2 Commands",
+        "sourceName": "Dublin Tech",
         "sourceUrl": "http://dublintech.blogspot.in/2011/10/db2-cheat-sheet.html"
     },
     "aliases": [
         "ibm db2",
-	    "ibmdb2 cmd",
-	    "ibmdb2 commands",
         "ibm db2 shell"
     ],
     "section_order": [
@@ -33,33 +31,33 @@
         "DB2 System Commands": [
             {
                 "key": "DB2LEVEL",
-                "val": "Checks version of DB2 installed"              
+                "val": "Check version of DB2 installed"              
             },
             {
                 "key": "DB2ILIST",
-                "val": "Lists all instances installed"
+                "val": "List all instances installed"
             },
             {
                 "key": "DB2CMD",
-                "val": "Opens a command line processor"
+                "val": "Open a command line processor"
             },
             {
                 "key": "DB2CC",
-                "val": "Opens db2 control center"
+                "val": "Open db2 control center"
             },
 	    {
                 "key": "DB2LICM -l",
-                "val": "Gets db2 type"
+                "val": "Get db2 type"
             }
         ],
         "Command Line Processor": [
             {
                 "key": "DB2 LIST NODE",
-                "val": "Lists all nodes"
+                "val": "List all nodes"
             },
             {
                 "key": "DB2 CATALOG",
-                "val": "Stores database location information in the system database directory"
+                "val": "Store database location information in the system database directory"
             },
             {
                 "key": "DB2 LIST DATABASE",
@@ -79,7 +77,7 @@
             },
             {
                 "key": "DB2 LIST APPLICATIONS SHOW DETAIL",
-                "val": "Shows all running datatbases"
+                "val": "Show all running datatbases"
             },
             {
                 "key": "DB2 GET DBM CFG",
@@ -97,15 +95,15 @@
         "Database commands via Command Line Processor (CLP)": [
             {
                 "key": "DB2 GET DATABASE CONFIGURATION",
-                "val": "Gets current database configuration"
+                "val": "Get current database configuration"
             },
 	        {
 		        "key": "DB2 VALUES CURRENT USER",
-                "val": "Gets the current user"
+                "val": "Get the current user"
 	        },
 	        {
 		        "key": "DB2 VALUES CURRENT SCHEMA",
-                "val": "Gets the current schema"
+                "val": "Get the current schema"
 	        },
 	        {
 		        "key": "DB2 VALUES CURRENT QUERY OPTIMIZATION",
@@ -141,7 +139,7 @@
             },
             {
                 "key": "CREATE TABLE MQT",
-                "val": "Creates a materialised query table"
+                "val": "Create a materialised query table"
             }
         ],
         "Tablespaces": [
@@ -183,15 +181,15 @@
             },
             {
                 "key": "SYSCAT.SEQUENCES",
-                "val": "Gets systcat info on sequences"
+                "val": "Get systcat info on sequences"
             },
             {
                 "key": "VALUES NEXT VALUE FOR MYSEQ",
-                "val": "Gets next value from sequence Myseq"
+                "val": "Get next value from sequence Myseq"
             },
             {
                 "key": "ALTER SEQUENCE MYSEQ",
-                "val": "Changes MySeq sequence"
+                "val": "Change MySeq sequence"
             }
         ],
         "Locksize": [
@@ -207,7 +205,7 @@
             },
             {
                 "key": "TABLESPACE.BUFFERPOOLID",
-                "val": "Gets buffer pool and corresponding tablespace info"
+                "val": "Get buffer pool and corresponding tablespace info"
             }
         ],
         "Indexes": [
@@ -225,7 +223,7 @@
         "SYSDUMMY1 commands": [
             {
                 "key": "SELECT CURRENT DATE",
-                "val": "Gets current date"
+                "val": "Get current date"
             },
             {
                 "key": "SELECT HEX(36)",
@@ -233,7 +231,7 @@
             },
             {
                 "key": "SELECT XMLCOMMENT",
-                "val": "Returns an XML value with a single XQuery comment node"
+                "val": "Return an XML value with a single XQuery comment node"
             }
         ],
         "Runstats": [
