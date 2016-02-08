@@ -1,7 +1,7 @@
 {
     "id": "brainfuck_cheat_sheet",
     "name": "Brainfuck",
-
+    "description": "List of Brainfuck commands, an esoteric programming language",
     "metadata": {
         "sourceName": "Muppetlabs",
         "sourceUrl": "http://www.muppetlabs.com/~breadbox/bf/"
