@@ -1,11 +1,11 @@
-package DDG::Spice::Timer;
+package DDG::Goodie::Timer;
 # ABSTRACT: Shows a countdown timer
 
 use strict;
-use DDG::Spice;
+use DDG::Goodie;
 
 my @triggers = qw(timer countdown alarm);
-# Triggers that are valid in start only 
+# Triggers that are valid in start only
 my @startTringgers = qw(start begin set run);
 # Beautifies the trigger can be appended in front/back of trigger
 my @beautifierTringgers = qw(online);
@@ -15,8 +15,6 @@ my @joiners = qw(for on at with);
 my @triggersStartEnd = (@triggers, @startTringgers, @beautifierTringgers);
 
 triggers startend => @triggersStartEnd;
-
-spice call_type => 'self';
 
 handle remainder => sub {
     my $qry = $_;
@@ -29,7 +27,7 @@ handle remainder => sub {
     my $joinTrgx = join('|', @joiners);
     my $btfrTrigStart = $btfrTrgx.'|'.$stTrgx;
     my $btfrTrigSize = $stTrgxSize+$btfrTrgxSize;
-    
+
     # Verify that the trigger words are wrapped with whitespace or that
     # the trigger is at the start or end of the string with white space
     # on either side of it. This prevents triggering on queries such as
@@ -58,9 +56,9 @@ handle remainder => sub {
     # the extra bounding whitespace. The trigger is
     # set to startend, causing "online timer for ..." to trigger.
     #
-    # 
+    #
     # Note: Beautifiers surrounds the triggers and joiners connect it to the value
-    # 
+    #
     # Matches on...
     # <specific time> <beautifierTringgers> <trigger> ------------------------------ 10 minute online timer
     # <trigger> <beautifierTringgers> <specific time> ------------------------------ timer online 10 minutes
