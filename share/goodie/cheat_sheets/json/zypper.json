@@ -1,0 +1,94 @@
+{
+    "id": "zypper_cheat_sheet",
+    "name": "Zypper",
+    "description": "Zypper is a command line tool for package management in OpenSUSE and SUSE Enterprise Linux platforms.",
+
+    "metadata": {
+        "sourceName": "OpenSUSE",
+        "sourceUrl": "https://en.opensuse.org/SDB:Zypper_usage"
+    },
+
+    "aliases": [
+        "OpenSUSE package manager", "apt-get alternative OpenSUSE"
+    ],
+
+    "template_type": "terminal",
+
+    "section_order": [
+        "Quick Reference",
+        "Repository Management",
+        "Package Management",
+        "Scripts and Applications"
+    ],
+
+    "sections": {
+        "Quick Reference": [{
+            "key": "zypper",
+            "val": "to print the list of available global options and commands"
+        }, {
+            "key": "zypper help \\[command\\]",
+            "val": "to print help for the given command"
+        }, {
+            "key": "zypper lp",
+            "value": "to see what patch updates are needed"
+        }, {
+            "key": "zypper patch",
+            "value": "to apply the needed patches"
+        }, {
+            "key": "zypper se \\[package-name\\]",
+            "value": "to search for the given package"
+        }, {
+            "key": "zypper rm [package-name\\]",
+            "value": "to remove the given package"
+        }, {
+            "key": "zypper in \\[package-name\\]",
+            "value": "to install the given package"
+        }, {
+            "key": "zypper up \\[package-name\\]",
+            "value": "to update the given or all installed packages with newer versions, where possible"
+        }],
+        "Repository Management": [{
+                "key": "zypper repos \\[repo-name\\] or zypper lr \\[repo-name\\]",
+                "val": "listing defined repositories"
+            }, {
+                "key": "zypper refresh \\[repo-name\\] or zypper ref \\[repo-name\\]",
+                "val": "refreshing repositories"
+            }, {
+                "key": "zypper modifyrepo \\[repo-name\\] or zypper mr \\[repo-name\\]",
+                "val": "modifying repositories"
+            }, {
+                "key": "zypper addrepo \\[repo-name\\] or zypper ar \\[repo-name\\]",
+                "val": "adding the given Repository"
+            }, {
+                "key": "zypper removerepo \\[repo-name\\] or zypper rr \\[repo-name\\]",
+                "val": "removing a given repository"
+            }, {
+                "key": "zypper namerepo \\[old-repo-name\\] or zypper nr \\[new-repo-name\\]",
+                "val": "renaming repositories"
+            }, {
+                "key": "zypper repos --export \\[repo-path\\] or zypper lr -e \\[repo-path\\]",
+                "val": "Import/Export Repositories"
+            }
+
+        ],
+        "Package Management": [{
+                "key": "zypper install \\[package-name\\] or zypper in \\[package-name\\]",
+                "val": "installing packages"
+
+            }, {
+                "key": "zypper remove \\[package-name\\] or zypper rm \\[package-name\\]",
+                "val": "removing packages"
+
+            }, {
+                "key": "zypper source-install \\[package-name\\] or zypper si \\[package-name\\]",
+                "val": "source packages and build dependencies"
+            }, {
+                "key": "zypper update \\[package-name\\] or zypper up \\[package-name\\]",
+                "val": "Update packages"
+            }
+
+        ]
+
+    }
+
+}
