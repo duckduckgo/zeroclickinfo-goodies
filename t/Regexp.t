@@ -20,6 +20,9 @@ sub build_structured_answer {
                 record_data => $result,
                 record_keys => \@{[sort (keys %$result)]},
             },
+            meta => {
+                signal => 'high',
+            },
             templates => {
                 group   => 'list',
                 options => {
