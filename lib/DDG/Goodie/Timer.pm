@@ -19,8 +19,46 @@ my @triggersStartEnd = (@triggers, @startTringgers, @beautifierTringgers);
 
 triggers startend => @triggersStartEnd;
 
+my $MAX_TIME = 359999; # 99 hrs 59 mins 59 secs
+
+sub normalize_time_format {
+    my $time = shift;
+    $time =~ /(?:(?<h>\d{1,2}):)?(?<min>\d{1,2}):(?<sec>\d{2})/;
+    my $min_sec = $+{min} . 'min ' . $+{sec} . 'sec';
+    return (defined $+{h} ? $+{h} . 'h ' : '') . $min_sec;
+}
+
+sub parse_query_for_time {
+    my $query = shift;
+    $query =~ s/^\s*//;
+    $query =~ s/(timer|online)\s*//gi;
+    $query =~ s/(?!\w)s/sec/i;
+    $query =~ s/(?!\w)m/min/i;
+    $query =~ s/mins/min/i;
+    $query =~ s/secs/sec/i;
+    my $timer_re = qr/(?<val>[\d]+\.?[\d]*) ?(?<unit>min|sec|h)/;
+    my $time = 0;
+    my ($match, $val, $unit);
+    $query = normalize_time_format $query if $query =~ /:/;
+    while ($query =~ $timer_re) {
+        $val = $+{val};
+        $unit = $+{unit};
+        if ($unit eq 'h') {
+            $time += $val * 3600;
+        } elsif ($unit eq 'min') {
+            $time += $val * 60;
+        } elsif ($unit eq 'sec') {
+            $time += $val;
+        }
+        $query =~ s/$timer_re//;
+    }
+    return ($time <= $MAX_TIME) ? $time : $MAX_TIME;
+}
+
 sub build_result {
-    return '',
+    my $req = shift;
+    my $time = parse_query_for_time($req->query_lc);
+    return "$time",
         structured_answer => {
             id     =>  'timer',
             name   => 'Timer',
@@ -29,7 +67,9 @@ sub build_result {
                 sourceName => 'Timer',
                 itemType   => 'timer',
             },
-            data => {},
+            data => {
+                time => "$time",
+            },
             templates => {
                 group       => 'base',
                 detail      => 'DDH.timer.timer_wrapper',
@@ -61,7 +101,7 @@ handle remainder => sub {
     # When the query is empty and we know that the trigger word matches
     # the trigger exactly (whitespace check) we can return a valid result
     if($qry eq '') {
-        return build_result();
+        return build_result($req);
     }
 
     # Trim both sides of the raw query to have the raw regex work
@@ -97,11 +137,11 @@ handle remainder => sub {
     $raw =~ s/\s*($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?\s*//ig;
 
     if($raw eq '') {
-        return build_result();
+        return build_result($req);
     }elsif($raw =~ /^(\s?([\d.]+ ?(m(in((ute)?s?)?)?|s(ec((ond)?s?)?)?|h(ours?)?|hr))\s?)+$/) {
-        return build_result();
+        return build_result($req);
     }elsif($raw =~ /^( ?((\d{1,2}:)?\d{1,2}:\d{2}) ?)/) {
-        return build_result();
+        return build_result($req);
     }
     return;
 };
