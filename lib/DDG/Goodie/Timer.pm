@@ -32,10 +32,8 @@ sub parse_query_for_time {
     my $query = shift;
     $query =~ s/^\s*//;
     $query =~ s/(timer|online)\s*//gi;
-    $query =~ s/(?!\w)s/sec/i;
-    $query =~ s/(?!\w)m/min/i;
-    $query =~ s/mins/min/i;
-    $query =~ s/secs/sec/i;
+    $query =~ s/(?!\a)s/sec/i;
+    $query =~ s/(?!\a)m/min/i;
     my $timer_re = qr/(?<val>[\d]+\.?[\d]*) ?(?<unit>min|sec|h)/;
     my $time = 0;
     my ($match, $val, $unit);
