@@ -6,11 +6,10 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
 
 DDH.timer = DDH.timer || {};
 
-DDH.timer.build = function() {
+DDH.timer.build = function(ops) {
     'use strict';
 
-    var MAX_TIME = 359999, // => 99 hrs 59 mins 59 secs
-        SOUND_NAME = "alarm-sound",
+    var SOUND_NAME = "alarm-sound",
         soundUrl = DDG.get_asset_path('timer', 'alarm.mp3'),
         soundIsPlaying = false,
         hasShown = false,
@@ -39,45 +38,6 @@ DDH.timer.build = function() {
         result.seconds = Math.floor(totalSeconds % 60);
 
         return result;
-    }
-
-    // get time in seconds from query
-    function parseQueryForTime() {
-        var q = DDG.get_query().replace('timer', '').replace('online', '').replace('s','sec').replace('m','min'),
-            regex = new RegExp(/([\d]+\.?[\d]*) ?(min|sec|h)/),
-            time = 0,
-            match,
-            val,
-            unit;
-
-        // for queries where time is specified like 2:30 or 1:20:30
-        // transform it into a value like 1h 20min 30sec so we can parse it
-        if (q.indexOf(":") > -1) {
-            q = q.replace(/(?:(\d{1,2}):)?(\d{1,2}):(\d{2})/, "$1h $2min $3sec");
-        }
-
-        while (true) {
-            match = regex.exec(q);
-            if (match) {
-                val = parseFloat(match[1]);
-                unit = match[2];
-                if (unit === 'h') {
-                    time += val * 60 * 60;
-                }
-                else if (unit === 'min') {
-                    time += val * 60;
-                }
-                else if (unit === 'sec') {
-                    val = Math.round(val);
-                    time += val;
-                }
-                q = q.replace(match[0], '');
-            } else {
-                break;
-            }
-        }
-
-        return (time <= MAX_TIME) ? time : MAX_TIME;
     }
 
     function shakeElement($element) {
@@ -473,7 +433,7 @@ DDH.timer.build = function() {
         hasShown = true;
 
         var lastUpdate = new Date().getTime(),
-            enteredTime = parseQueryForTime(),
+            enteredTime = parseInt(ops.data[0].time),
             $dom = DDH.getDOM('timer'),
             oldTitle = document.title;
 
