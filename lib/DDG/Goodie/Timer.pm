@@ -4,6 +4,9 @@ package DDG::Goodie::Timer;
 use strict;
 use DDG::Goodie;
 
+zci answer_type => 'timer';
+zci is_cached   => 1;
+
 my @triggers = qw(timer countdown alarm);
 # Triggers that are valid in start only
 my @startTringgers = qw(start begin set run);
@@ -15,6 +18,23 @@ my @joiners = qw(for on at with);
 my @triggersStartEnd = (@triggers, @startTringgers, @beautifierTringgers);
 
 triggers startend => @triggersStartEnd;
+
+sub build_result {
+    return '',
+        structured_answer => {
+            id     =>  'timer',
+            name   => 'Timer',
+            signal => 'high',
+            meta => {
+                sourceName => 'Timer',
+                itemType   => 'timer',
+            },
+            templates => {
+                detail      => 'DDH.timer.timer_wrapper',
+                wrap_detail => 'base_detail',
+            },
+        };
+}
 
 handle remainder => sub {
     my $qry = $_;
@@ -39,7 +59,7 @@ handle remainder => sub {
     # When the query is empty and we know that the trigger word matches
     # the trigger exactly (whitespace check) we can return a valid result
     if($qry eq '') {
-        return '';
+        return build_result();
     }
 
     # Trim both sides of the raw query to have the raw regex work
@@ -75,13 +95,12 @@ handle remainder => sub {
     $raw =~ s/\s*($btfrTrgx\s*)?(\b(\s*($trgx)\s*)\b)($btfrTrgx)?\s*($joinTrgx)?\s*//ig;
 
     if($raw eq '') {
-        return '';
+        return build_result();
     }elsif($raw =~ /^(\s?([\d.]+ ?(m(in((ute)?s?)?)?|s(ec((ond)?s?)?)?|h(ours?)?|hr))\s?)+$/) {
-        return '';
+        return build_result();
     }elsif($raw =~ /^( ?((\d{1,2}:)?\d{1,2}:\d{2}) ?)/) {
-        return '';
+        return build_result();
     }
-
     return;
 };
 
