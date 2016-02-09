@@ -19,7 +19,7 @@
     "General Informations": [
       {
         "key": "Developer",
-        "val": "National Instruments Electronics Workbench Group (formerly by Interactive Image Technologies"
+        "val": "National Instruments Electronics Workbench Group (formerly by Interactive Image Technologies)"
       },
     
       {
@@ -39,15 +39,15 @@
           "Instructions": [
       {
         "key": "Open a Schematic",
-        "val": "A blank schematic Circuit 1 is automatically created. To create a new schematic click on File New Schematic Capture. To save the schematic click on File /Save As. To open an existing file click on File/ Open in the toolbar. "
+        "val": "A blank schematic Circuit 1 is automatically created. To create a new schematic click on File New Schematic Capture. To save the schematic click on File /Save As. To open an existing file click on File/ Open in the toolbar"
       },
                {
         "key": "Place Components",
-        "val": "To Place Components click on Place/Components. On the Select Component Window click on Group to select the components needed for the circuit. Click OK to place the component on the schematic."
+        "val": "To Place Components click on Place/Components. On the Select Component Window click on Group to select the components needed for the circuit. Click OK to place the component on the schematic"
       },
                {
         "key": "Rotate Components",
-        "val": "To rotate the components right click on the Resistor to flip the component on 90 Clockwise (Ctrl +R) and 90 Counter Clockwise (Ctrl+Shift+R)."
+        "val": "To rotate the components right click on the Resistor to flip the component on 90 Clockwise (Ctrl +R) and 90 Counter Clockwise (Ctrl+Shift+R)"
       },
                {
         "key": " Place Wire/Connect Components",
