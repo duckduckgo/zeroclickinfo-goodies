@@ -1,7 +1,7 @@
 {
     "id": "zypper_cheat_sheet",
     "name": "Zypper",
-    "description": "Zypper is a command line tool for package management in OpenSUSE and SUSE Enterprise Linux platforms.",
+    "description": "It is a command line tool for package management in OpenSUSE and SUSE Enterprise Linux platforms.",
 
     "metadata": {
         "sourceName": "OpenSUSE",
@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "OpenSUSE package manager", "apt-get alternative OpenSUSE"
+        "opensuse package manager", "apt-get alternative opensuse"
     ],
 
     "template_type": "terminal",
@@ -17,54 +17,53 @@
     "section_order": [
         "Quick Reference",
         "Repository Management",
-        "Package Management",
-        "Scripts and Applications"
+        "Package Management"
     ],
 
     "sections": {
         "Quick Reference": [{
             "key": "zypper",
-            "val": "to print the list of available global options and commands"
+            "val": "Print the list of available global options and commands"
         }, {
             "key": "zypper help \\[command\\]",
-            "val": "to print help for the given command"
+            "val": "Print help for the given command"
         }, {
             "key": "zypper lp",
-            "value": "to see what patch updates are needed"
+            "value": "See what patch updates are needed"
         }, {
             "key": "zypper patch",
-            "value": "to apply the needed patches"
+            "value": "Apply the needed patches"
         }, {
             "key": "zypper se \\[package-name\\]",
-            "value": "to search for the given package"
+            "value": "Search for the given package"
         }, {
             "key": "zypper rm [package-name\\]",
-            "value": "to remove the given package"
+            "value": "Remove the given package"
         }, {
             "key": "zypper in \\[package-name\\]",
-            "value": "to install the given package"
+            "value": "Install the given package"
         }, {
             "key": "zypper up \\[package-name\\]",
-            "value": "to update the given or all installed packages with newer versions, where possible"
+            "value": "Update the given or all installed packages with newer versions, where possible"
         }],
         "Repository Management": [{
                 "key": "zypper repos \\[repo-name\\] or zypper lr \\[repo-name\\]",
-                "val": "listing defined repositories"
+                "val": "List defined repositories"
             }, {
                 "key": "zypper refresh \\[repo-name\\] or zypper ref \\[repo-name\\]",
-                "val": "refreshing repositories"
+                "val": "Refresh repositories"
             }, {
                 "key": "zypper modifyrepo \\[repo-name\\] or zypper mr \\[repo-name\\]",
-                "val": "modifying repositories"
+                "val": "Modify repositories"
             }, {
                 "key": "zypper addrepo \\[repo-name\\] or zypper ar \\[repo-name\\]",
-                "val": "adding the given Repository"
+                "val": "Add the given Repository"
             }, {
                 "key": "zypper removerepo \\[repo-name\\] or zypper rr \\[repo-name\\]",
-                "val": "removing a given repository"
+                "val": "Remove a given repository"
             }, {
                 "key": "zypper namerepo \\[old-repo-name\\] or zypper nr \\[new-repo-name\\]",
-                "val": "renaming repositories"
+                "val": "Rename repositories"
             }, {
                 "key": "zypper repos --export \\[repo-path\\] or zypper lr -e \\[repo-path\\]",
                 "val": "Import/Export Repositories"
@@ -73,15 +72,15 @@
         ],
         "Package Management": [{
                 "key": "zypper install \\[package-name\\] or zypper in \\[package-name\\]",
-                "val": "installing packages"
+                "val": "Install package"
 
             }, {
                 "key": "zypper remove \\[package-name\\] or zypper rm \\[package-name\\]",
-                "val": "removing packages"
+                "val": "Remove package"
 
             }, {
                 "key": "zypper source-install \\[package-name\\] or zypper si \\[package-name\\]",
-                "val": "source packages and build dependencies"
+                "val": "Source packages and build dependencies"
             }, {
                 "key": "zypper update \\[package-name\\] or zypper up \\[package-name\\]",
                 "val": "Update packages"
