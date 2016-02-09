@@ -29,7 +29,7 @@
                 "val": "O(n log(n))",
                 "key": "Average"
         }, {
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Worst"
         }],
         "Mergesort": [{
@@ -56,40 +56,40 @@
                 "val": "O(n)",
                 "key": "Best"
         }, {
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Average"
         }, {
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Worst"
         }],
         "Insertion Sort": [{
                 "val": "O(n)",
                 "key": "Best"
         }, {
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Average"
         }, {
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Worst"
         }],
         "Selection Sort": [{
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Best"
         }, {
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Average"
         }, {
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Worst"
         }],
         "Shell Sort": [{
                 "val": "O(n)",
                 "key": "Best"
         }, {
-                "val": "O((nlog(n))^2)",
+                "val": "O((nlog(n))²)",
                 "key": "Average"
         }, {
-                "val": "O((nlog(n))^2)",
+                "val": "O((nlog(n))²)",
                 "key": "Worst"
         }],
         "Bucket Sort": [{
@@ -99,7 +99,7 @@
                 "val": "O(n+k)",
                 "key": "Average"
         }, {
-                "val": "O(n^2)",
+                "val": "O(n²)",
                 "key": "Worst"
         }],
         "Radix Sort": [{
