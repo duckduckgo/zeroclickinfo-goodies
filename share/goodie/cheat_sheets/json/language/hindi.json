@@ -61,28 +61,28 @@
 		}, {
 			"key": "Good luck!",
 			"val": "शुभकामनाएँ!",
-			"trn": "śubhkāmnāen!"
+			"trn": "subhkamnaen!"
 		}, {
 			"key": "Nice to meet you (formal)",
 			"val": "आपसे मिलकर बहुत खुशी हुई।",
-			"trn": "āpsē milkar bahut k͟hūśī huī"
+			"trn": "apse milkar bahut khusi hui"
 		}, {
 			"key": "Nice to meet you too (reply)",
 			"val": "मुझे भी ",
-			"trn": "mujhē bhī"
+			"trn": "mujhe bhi"
 		}, {
 			"key": "Hello/Goodbye",
 			"val": "नमस्कार",
-			"trn": "namaskār"
+			"trn": "namaskar"
 		}, {
 			"key": "Hello/Goodbye(respectful)",
 			"val": "प्रणाम",
-			"trn": "praṇām"
+			"trn": "praṇam"
 		}],
 		"Getting Help": [{
 			"key": "Call the police!",
 			"val": "पुलिस की बुलाओ!",
-			"trn": "pulis ko bulāo!"
+			"trn": "pulis ko bulao!"
 		}, {
 			"key": "I'm lost",
 			"val": "मैं रास्ता भूल गया ।",
@@ -94,15 +94,15 @@
 		}, {
 			"key": "I need your help",
 			"val": "मुझे अपकी सहायता चाहिये ।",
-			"trn": "mujhe āpki sahayta chahie"
+			"trn": "mujhe apki sahayta chahie"
 		}, {
 			"key": "How do you say \"X\" in Hindi?",
 			"val": "हिंदी में \"X\" कैसे कह्ते हैं ?",
-			"trn": "hindi meṅ \"X\" kaise kahte haiṅ?"
+			"trn": "hindi mai \"X\" kaise kahte hain?"
 		}, {
 			"key": "I lost my bag",
 			"val": "मेरा बैग गुम हो गया ।",
-			"trn": "mera bag alage ho gaya"
+			"trn": "mera bag ghoom ho gaya"
 		}, {
 			"key": "I lost my wallet",
 			"val": "मेरा पर्स गुम हो गया |",
@@ -110,23 +110,23 @@
 		}, {
 			"key": "Can I use your phone?",
 			"val": "फ़ोन कर सकता हूं ?",
-			"trn": "phone kar sakta hoon main ?"
+			"trn": "phone kar sakta hoon ?"
 		}, {
 			"key": "Please write it down",
 			"val": "कृपया इसे लिखिए",
-			"trn": "kṛipayā isse likheṅ"
+			"trn": "kṛipaya isse likhen"
 		}, {
 			"key": "Excuse me!",
 			"val": "ज़रा सुनिये!",
-			"trn": "zarā suniye"
+			"trn": "zara suniye"
 		}, {
 			"key": "Help!",
 			"val": "मदद!",
-			"trn": "maḍaḍ!"
+			"trn": "madad!"
 		}, {
 			"key": "Stop !",
 			"val": "रुको!",
-			"trn": "kṛipayā yaha mere liye likheṅ"
+			"trn": "roko"
 		}, {
 			"key": "Fire!",
 			"val": "आग!",
@@ -136,31 +136,31 @@
 		"Basics": [{
 			"key": "My name is ___ ",
 			"val": "मेरा नाम ___ है।",
-			"trn": "mērā nām ___ hai"
+			"trn": "mera nam ___ hai"
 		}, {
 			"key": "I am fine",
 			"val": "मैं ठीक हूँ।",
-			"trn": "maĩ ṭhīk hū̃"
+			"trn": "mai thik hu"
 		}, {
 			"key": "OK/fine (colloquialism)",
 			"val": "ठीक है",
-			"trn": "ṭhīk hai"
+			"trn": "thik hai"
 		}, {
 			"key": "How are you?",
 			"val": "आप कैसे/कैसी हैं?",
-			"trn": "āp kaisē/kaisī haĩ?"
+			"trn": "aap kaise/kaisi hai?"
 		}, {
 			"key": "Hello",
 			"val": "नमस्ते",
-			"trn": "namastē"
+			"trn": "namaste"
 		}, {
 			"key": "You're welcome",
 			"val": "आपका स्वागत है।",
-			"trn": "āpkā svāgat hai"
+			"trn": "apka svagat hai"
 		}, {
 			"key": "What is your name?",
 			"val": "आपका नाम क्या है?",
-			"trn": "āpkā nām kyā hai?"
+			"trn": "apka naam kya hai?"
 		}, {
 			"key": "Yes",
 			"val": "हाँ",
@@ -168,25 +168,25 @@
 		}, {
 			"key": "No/not",
 			"val": "नहीं",
-			"trn": "nahī̃"
+			"trn": "nahi"
 		}],
 
 		"Travelling": [{
 				"key": "Turn left",
 				"val": "बायीं तरफ़ मुड़िये",
-				"trn": "bāyīn muDiye"
+				"trn": "baye mudiye"
 			}, {
 				"key": "Turn right",
 				"val": "दाहिनी तरफ़ मुड़िये",
-				"trn": "dāhinī muDiye"
+				"trn": "dahini muiye"
 			}, {
 				"key": "Can you show me on the map?",
 				"val": "मुझे नक़्शे में दिखा दीजिये",
-				"trn": "mujhe nakSHE mEIN dikhaa deejiYE"
+				"trn": "mujhe nakshe mein dikhaa deejiye"
 			}, {
 				"key": "Can you tell me the way to ....?",
 				"val": "मुझे .... का रास्ता बताइए?",
-				"trn": "muJHE .... kaa rasta bataIYE"
+				"trn": "mujhe .... kaa rasta bataiye"
 			}, {
 				"key": "One ticket to ....",
 				"val": "एक .... की टिकट दीजिये",
@@ -194,7 +194,7 @@
 			}, {
 				"key": "How much does it cost to get to ....?",
 				"val": ".... जाने को कितना लगता है?",
-				"trn": ".... jaane ko kitnaa lagtaa hAI"
+				"trn": ".... jaane ko kitnaa lagtaa hai"
 			}, {
 				"key": "Where is the pharmacy?",
 				"val": "फार्मेसी कहां है?",
@@ -208,7 +208,7 @@
 			{
 				"key": "A table for one person/two people, (please)",
 				"val": "एक/दो लोग के लिये जगह चाहिये",
-				"trn": "ek/do log/-on ke liye jagah cāhiye"
+				"trn": "ek/do log/-on ke liye jagah chahiye"
 			}, {
 				"key": "Can I look at the menu, please?",
 				"val": "मेणयू कर्ड दीजिये",
@@ -216,27 +216,23 @@
 			}, {
 				"key": "I'm a vegetarian",
 				"val": "मैं शाकाहारी हूँ",
-				"trn": "main śākāhār hun"
+				"trn": "main sakahari hun"
 			}, {
 				"key": "fixed-price meal",
 				"val": "एक दाम का खाना",
-				"trn": "ek dām ka khāna"
+				"trn": "ek dam ka khana"
 			}, {
 				"key": "I want ....",
 				"val": "मुझे .... चाहिये",
-				"trn": "mujhe .... cāhiyei"
+				"trn": "mujhe .... chahiye"
 			}, {
 				"key": "The check, please",
 				"val": "बिल/चेक लाइये",
-				"trn": "bil/cek lāiye"
+				"trn": "bil/cek laiye"
 			}, {
 				"key": "main dish",
 				"val": "मुख्य पकवान",
 				"trn": "mukhy pakavaan"
-			}, {
-				"key": "The check, please",
-				"val": "बिल/चेक लाइये",
-				"trn": "bil/chek lāiye"
 			}
 		]
 	}
