@@ -4,7 +4,9 @@ Used with permission.
 License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
 */
 
-(function (env) {
+DDH.timer = DDH.timer || {};
+
+DDH.timer.build = function() {
     'use strict';
 
     var MAX_TIME = 359999, // => 99 hrs 59 mins 59 secs
@@ -78,6 +80,33 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
         return (time <= MAX_TIME) ? time : MAX_TIME;
     }
 
+    function shakeElement($element) {
+        var initialAmount = 10,
+            swings = 7,
+            swingDuration = 100;
+
+        function shake($element, amount, swingsLeft, direction) {
+            $element.animate({ left: (direction * amount) + "px" }, swingDuration,
+                function () {
+                    // decrement values as appropriate
+                    swingsLeft--;
+                    amount /= 1.2;
+
+                    if (swingsLeft > 0) {
+                        // if there's more swings left, have a go at another one
+                        // (flipping the direction)
+                        shake($element, amount, swingsLeft, direction * -1);
+                    } else {
+                        // else swing to original position
+                        $element.animate({ left: 0 }, swingDuration);
+                    }
+                });
+        }
+
+        // let it loose
+        shake($element, initialAmount, swings, 1);
+    }
+
     function loop() {
         shakeElement($lastTimerToFinish);
         cachedPlayer.play(SOUND_NAME, soundUrl, {
@@ -120,32 +149,6 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
     }
 
     // shake it like a timer that's just finished
-    function shakeElement($element) {
-        var initialAmount = 10,
-            swings = 7,
-            swingDuration = 100;
-
-        function shake($element, amount, swingsLeft, direction) {
-            $element.animate({ left: (direction * amount) + "px" }, swingDuration,
-                function () {
-                    // decrement values as appropriate
-                    swingsLeft--;
-                    amount /= 1.2;
-
-                    if (swingsLeft > 0) {
-                        // if there's more swings left, have a go at another one
-                        // (flipping the direction)
-                        shake($element, amount, swingsLeft, direction * -1);
-                    } else {
-                        // else swing to original position
-                        $element.animate({ left: 0 }, swingDuration);
-                    }
-                });
-        }
-
-        // let it loose
-        shake($element, initialAmount, swings, 1);
-    }
 
     Timer = function (number, startingTime) {
         // tells whether timer should update or not
@@ -156,7 +159,7 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
         this.halfComplete = false;
 
         // dom setup
-        this.$element = $(Goodie.timer.timer());
+        this.$element = $(DDH.timer.timer());
 
         this.$nameInput = this.$element.find(".name_input");
 
@@ -448,11 +451,10 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
         }
     });
 
-    env.ddg_goodie_timer = function(api_result) {
+    function onShow() {
         var timers = [],
             timerInterval,
             $addTimerBtn;
-
         function addTimer(startingTime) {
             var timer = new Timer(timers.length + 1, startingTime);
             timer.$element.insertBefore($addTimerBtn.parent());
@@ -463,63 +465,58 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
                 timer.start();
             }
         }
-
-        function onShow() {
-            // make sure this runs only once
-            if (hasShown) {
-                return;
-            }
-
-            hasShown = true;
-
-            var lastUpdate = new Date().getTime(),
-                enteredTime = parseQueryForTime(),
-                $dom = Goodie.getDOM("timer"),
-                oldTitle = document.title;
-
-            $addTimerBtn = $dom.find("#add_timer_btn");
-
-            // have at least one timer when the IA is displayed
-            if (timers.length === 0) {
-                addTimer(enteredTime);
-            }
-
-            // every 100 ms, update timers
-            timerInterval = setInterval(function () {
-                var timeDifference = new Date().getTime() - lastUpdate;
-
-                // update all timers
-                for (var i = 0; i < timers.length; i++) {
-                    timers[i].update(timeDifference);
-                }
-
-                // do a sweep for any destroyed timers
-                for (var i = 0; i < timers.length; i++) {
-                    if (timers[i].destroyed) {
-                        timers.splice(i, 1);
-                        // very very very small chance of two timers destroyed in the same loop
-                        // so just break
-                        break;
-                    }
-                }
-
-                lastUpdate = new Date().getTime();
-            }, 100);
-
-            $addTimerBtn.click(function (e) {
-                e.preventDefault();
-
-                // create new timer and insert it before the add button
-                addTimer();
-            });
+        // make sure this runs only once
+        if (hasShown) {
+            return;
         }
-    };
+
+        hasShown = true;
+
+        var lastUpdate = new Date().getTime(),
+            enteredTime = parseQueryForTime(),
+            $dom = DDH.getDOM('timer'),
+            oldTitle = document.title;
+
+        $addTimerBtn = $dom.find("#add_timer_btn");
+
+        // have at least one timer when the IA is displayed
+        if (timers.length === 0) {
+            addTimer(enteredTime);
+        }
+
+        // every 100 ms, update timers
+        timerInterval = setInterval(function () {
+            var timeDifference = new Date().getTime() - lastUpdate;
+            var i;
+
+            // update all timers
+            for (i = 0; i < timers.length; i++) {
+                timers[i].update(timeDifference);
+            }
+
+            // do a sweep for any destroyed timers
+            for (i = 0; i < timers.length; i++) {
+                if (timers[i].destroyed) {
+                    timers.splice(i, 1);
+                    // very very very small chance of two timers destroyed in the same loop
+                    // so just break
+                    break;
+                }
+            }
+
+            lastUpdate = new Date().getTime();
+        }, 100);
+
+        $addTimerBtn.click(function (e) {
+            e.preventDefault();
+
+            // create new timer and insert it before the add button
+            addTimer();
+        });
+    }
     return {
         //wait for the Goodie to load before displaying things
         //this makes sure the divs display at the right time so the layout doesn't break
-        onShow: env.ddg_goodie_timer.onShow,
-        data: {
-            isMobile: DDG.device.isMobile()
-        }
+        onShow: onShow,
     };
 };

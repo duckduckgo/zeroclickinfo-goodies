@@ -29,7 +29,9 @@ sub build_result {
                 sourceName => 'Timer',
                 itemType   => 'timer',
             },
+            data => {},
             templates => {
+                group       => 'base',
                 detail      => 'DDH.timer.timer_wrapper',
                 wrap_detail => 'base_detail',
             },
