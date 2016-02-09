@@ -478,5 +478,8 @@ DDH.timer.build = function(ops) {
         //wait for the Goodie to load before displaying things
         //this makes sure the divs display at the right time so the layout doesn't break
         onShow: onShow,
+        data: {
+            isMobile: DDG.device.isMobile
+        }
     };
 };
