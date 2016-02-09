@@ -1,7 +1,7 @@
 {
     "id": "zypper_cheat_sheet",
     "name": "Zypper",
-    "description": "It is a command line tool for package management in OpenSUSE and SUSE Enterprise Linux platforms.",
+    "description": "It is a command line tool for package management in OpenSUSE and SUSE Enterprise Linux platforms",
 
     "metadata": {
         "sourceName": "OpenSUSE",
@@ -37,7 +37,7 @@
             "key": "zypper se \\[package-name\\]",
             "value": "Search for the given package"
         }, {
-            "key": "zypper rm [package-name\\]",
+            "key": "zypper rm \\[package-name\\]",
             "value": "Remove the given package"
         }, {
             "key": "zypper in \\[package-name\\]",
