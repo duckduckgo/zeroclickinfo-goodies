@@ -513,30 +513,13 @@ License: CC BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
                 addTimer();
             });
         }
-
-        Goodie.add({
-            id: 'timer',
-            name: 'Timer',
-            signal: 'high',
-            data: {
-                isMobile: DDG.device.isMobile
-            },
-            meta: {
-                sourceName: 'Timer',
-                itemType: 'timer'
-            },
-            templates: {
-                detail: Goodie.timer.timer_wrapper,
-                wrap_detail: 'base_detail'
-            },
-
-            //wait for the Goodie to load before displaying things
-            //this makes sure the divs display at the right time so the layout doesn't break
-            onShow: onShow
-        });
-
-
     };
-}(this));
-
-ddg_goodie_timer();
+    return {
+        //wait for the Goodie to load before displaying things
+        //this makes sure the divs display at the right time so the layout doesn't break
+        onShow: env.ddg_goodie_timer.onShow,
+        data: {
+            isMobile: DDG.device.isMobile()
+        }
+    };
+};
