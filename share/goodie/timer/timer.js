@@ -10,7 +10,7 @@ DDH.timer.build = function(ops) {
     'use strict';
 
     var SOUND_NAME = "alarm-sound",
-        soundUrl = DDG.get_asset_path('timer', 'alarm.mp3'),
+        soundUrl = '/share/goodie/timer/alarm.mp3',
         soundIsPlaying = false,
         hasShown = false,
         $lastTimerToFinish,
