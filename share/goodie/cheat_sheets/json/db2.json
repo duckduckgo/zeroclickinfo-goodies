@@ -14,7 +14,7 @@
     "section_order": [
         "DB2 System Commands",
         "Command Line Processor",
-        "Database commands via Command Line Processor (CLP)",
+        "Database Commands via Command Line Processor (CLP)",
         "Schemas",
         "Tables",
         "Tablespaces",
@@ -92,7 +92,7 @@
                 "val": "Get authorisation level"
             }
         ],
-        "Database commands via Command Line Processor (CLP)": [
+        "Database Commands via Command Line Processor (CLP)": [
             {
                 "key": "DB2 GET DATABASE CONFIGURATION",
                 "val": "Get current database configuration"
