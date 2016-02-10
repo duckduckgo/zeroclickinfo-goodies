@@ -514,9 +514,7 @@ DDH.calculator.build = function() {
 
     // Is the position at the top level?
     DisplayPos.prototype.atTopLevel = function() {
-        var atTop = this._pos.length === 1;
-        return atTop;
-        // return this._pos.length === 1;
+        return this._pos.length === 1;
     };
 
     DisplayPos.prototype.atStart = function() {
@@ -788,11 +786,20 @@ DDH.calculator.build = function() {
     };
 
     Formula.prototype.deleteCurrentField = function() {
-        var deleted = this.storage.deleteField(this.cursor);
+        var deleted;
+        if (this.cursor.atStart()) {
+            deleted = this.getActiveField();
+            this.modifyCurrentField(BTS['0']);
+            this.initialDisplay = true;
+            this.render();
+            return deleted;
+        }
+        deleted = this.storage.deleteField(this.cursor);
         if (isPlaceHolder(deleted)) {
             this.moveCursorIntoOuterCollector();
             this.deleteCurrentField();
         }
+        this.render();
         return deleted;
         // return this.storage.deleteField(this.cursor);
     };
@@ -801,23 +808,11 @@ DDH.calculator.build = function() {
         var pos = this.cursor;
         var deleted;
         if (this.cursor.atTopLevel()) {
-            if (this.cursor.atStart()) {
-                deleted = this.getActiveField();
-                this.modifyCurrentField(BTS['0']);
-                this.initialDisplay = true;
-                return deleted;
-            }
-            deleted = this.storage.deleteLast();
+            deleted = this.deleteCurrentField();
             this.moveCursorBackward();
             return deleted;
         }
-        console.warn('[F.deleteBackwards] not at top level for pos ' + pos);
         deleted = this.deleteCurrentField();
-        // if (isPlaceHolder(deleted)) {
-        //     this.deleteBackwards();
-        // }
-        this.moveCursorBackward();
-        this.render();
     };
 
     Formula.prototype.handleBackspace = function() {
