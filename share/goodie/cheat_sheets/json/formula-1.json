@@ -5,7 +5,7 @@
 
     "metadata": {
         "sourceName": "Wikipedia",
-        "sourceUrl" : "https://en.m.wikipedia.org/wiki/2016_Formula_One_season"
+        "sourceUrl" : "https://en.wikipedia.org/wiki/2016_Formula_One_season"
     },
 
     "aliases": [
@@ -148,7 +148,7 @@
             },
             {
                 "key": "Manor Racing",
-                "val": "[?] TBA, [?] TBA"
+                "val": "[94] Pascal Wehrlein, [?] TBA"
             },
             {
                 "key": "Haas F1 Team",
