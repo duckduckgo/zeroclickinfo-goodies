@@ -1,7 +1,7 @@
 {
     "id": "linux_cheat_sheet",
     "name": "Linux",
-    "description": "Linux is an open-source Unix-like operating system dveloped by Linus Torvalds",
+    "description": "An open-source Unix-like operating system dveloped by Linus Torvalds",
     "metadata": {
         "sourceName": "Linux Stall",
         "sourceUrl": "http://www.linuxstall.com/wp-content/uploads/2012/01/"
@@ -188,7 +188,7 @@
                 "key": "w"
             },
             {
-                "val": "who are you logged in as",
+                "val": "display current user",
                 "key": "whoami"
             },
             {
@@ -264,7 +264,7 @@
                 "key": "ps"
             },
             {
-                "val": "ps with a lot of details",
+                "val": "show processes for all users",
                 "key": "ps aux"
             },
             {
@@ -312,7 +312,7 @@
                 "key": "tar xf file.tar"
             },
             {
-                "val": "show contents of archive",
+                "val": "list the contents of an archive",
                 "key": "tar tf file.tar"
             },
             {
