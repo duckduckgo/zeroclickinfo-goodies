@@ -21,6 +21,8 @@ my $imperial_precision = 0.1;
 my $imperial_to_water = 16;
 my $metric_to_water = 16.6945;
 
+my $MAX_WEIGHT = 100000; # limit to 100,000
+
 my %wt = (
     'ounce' => {
         'fluid_units' => $imperial_fluid_units,
@@ -84,6 +86,7 @@ handle remainder => sub {
     my ($unit) = $_ =~ /(ounce[s]?|gram[s]?|oz|g)/i;
 
     return unless defined $unit and defined $weight;
+    return unless $weight > 0 && $weight <= $MAX_WEIGHT;
 
     my $lc_unit = lc($unit);
 
