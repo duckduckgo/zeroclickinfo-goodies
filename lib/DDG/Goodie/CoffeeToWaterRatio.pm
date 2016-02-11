@@ -53,8 +53,6 @@ sub convertResult {
     };
 }
 
-
-# Handle statement
 handle remainder => sub {
 
     return "1 g to 16.7 ml (0.035 oz. to 0.56 fl. oz.)", structured_answer => {
