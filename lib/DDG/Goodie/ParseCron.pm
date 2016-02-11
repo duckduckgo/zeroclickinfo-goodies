@@ -91,7 +91,7 @@ sub parse_field {
     
     my @components = ();
     my $i = 0;
-    
+   
     for (split ',', $field) {
         die "Invalid $singular $_\n" unless $_ =~ m!^(\d+|[a-z]{3})(?:-(\d+|[a-z]{3})(?:/(\d+))?)?$!i;
         my ($start, $stop, $freq) = ($1, $2, $3);
@@ -125,8 +125,18 @@ sub parse_field {
 # An alternative parser that returns an array of all possible values
 sub get_all_values {
     my ($field, $singular, $min, $max) = @_;
+    my @components;
     
-    my @components = split ',', $field;
+    if ($singular eq 'hour' && $field =~ m!^([0-9]|1[0-9]|2[0-3])/([0-9]|1[0-9]|2[0-3])$!) {
+        @components = ();
+        for (my $i = $1; $i < 24; $i += $2) {
+            push @components, $i;
+        }
+    }
+    
+    if (!exists $components[0]) {
+        @components = split ',', $field;
+    }
     
     if ($field =~ m!^\*(?:/(\d+))?$!) { # "every X days" ("*/X" or just "*")
         if (defined $1) {
@@ -137,7 +147,6 @@ sub get_all_values {
     }
     
     my @values = ();
-    
     for (@components) {
         die "Invalid $singular $_\n" unless $_ =~ m!^(\d+)(?:-(\d+)(?:/(\d+))?)?$!;
         
@@ -211,6 +220,14 @@ sub parse_time {
             $out .= ' after ';
         }
     }
+       
+    if ($hour =~ m!^([0-9]|1[0-9]|2[0-3])/([0-9]|1[0-9]|2[0-3])$!) {
+        my $temp = "";
+        for (my $i = $1; $i < 24; $i += $2) {
+            $temp = $temp . "$i,";
+        }
+        $hour = $temp;
+    } 
     
     # Parse hours
     $out .= parse_field($hour, 'hour', 'hours', 0, 23, sub {
