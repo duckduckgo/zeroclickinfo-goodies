@@ -2,7 +2,7 @@
 
 An overview of how to submit an Instant Answer can [be found over in our docs](http://docs.duckduckhack.com/submitting/submitting-overview.html).
 
-#### Chosing a title for your pull request: 
+#### Choosing a title for your pull request: 
 
 If your IA is new, use the format: `"New {IA TOPIC} {IA TYPE}"`. For example:
 
