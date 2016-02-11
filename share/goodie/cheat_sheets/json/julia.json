@@ -43,7 +43,7 @@
                 "val": "Start IJulia browser"
             },
             {
-                "key": "//[Shift//] //[Enter//]",
+                "key": "\\[Shift\\]+\\[Enter\\]",
                 "val": "Execute input cell in IJulia"
             }
 
@@ -55,32 +55,32 @@
                 "val": "Define variable x to be 3"
             },
             {
-                "key": "x=[1,2,3]",
-                "val": "Define array\/“column”-vector (1,2,3)"
+                "key": "x=\\[1,2,3\\]",
+                "val": ""
             },
             {
-                "key": "y=[1 2 3]",
-                "value": "1x3 row vector (1,2,3)"
+                "key": "y=\\[1 2 3\\]",
+                "val": " Define a 1x3 row vector (1,2,3)"
             },
             {
-                "key": "A=[1 2 3 4; 5 6 7 8; 9 10 11 12]",
-                "value": "Set A to 3 × 4 matrix with rows 1,2,3,4 etc."
+                "key": "A=\\[1 2 3 4; 5 6 7 8; 9 10 11 12\\]",
+                "val": "Set A to 3 × 4 matrix with rows 1,2,3,4 etc."
             },
             {
-                "key": "x[2]=7",
-                "value": "Change x from (1,2,3) to (1,7,3)"
+                "key": "x\\[2\\]=7",
+                "val": "Change x from (1,2,3) to (1,7,3)"
             },
             {
-                "key": "A[2,1]=0",
-                "value": "Change element A(second row, first column) to 0"
+                "key": "A\\[2,1\\]=0",
+                "val": "Change element A(second row, first column) to 0"
             },
             {
                 "key": "u, v = (15.03, 1.2e-27)",
-                "value": "Set u=15.03, v=1.2×10^(–27)"
+                "val": "Set u=15.03, v=1.2×10^(–27)"
             },
             {
                 "key": "f(x)=3x",
-                "value": "Define a function f(x)"
+                "val": "Define a function f(x)"
             },
             {
                 "key": "x -> 3x",
@@ -90,46 +90,46 @@
         "Simple Matrices": [
             {
                 "key": "rand(12), rand(12,4)",
-                "value": "Random 12-length vector or 12x4 matrix with uniform random numbers in [0,1)"
+                "val": "Random 12-length vector or 12x4 matrix with uniform random numbers in \\[0,1)"
             },
             {
                 "key": "randn(12)",
-                "value": "Gaussian random numbers (mean 0, std. dev. 1)"
+                "val": "Gaussian random numbers (mean 0, std. dev. 1)"
             },
             {
                 "key": "eye(5)",
-                "value": "5x5 identity matrix I"
+                "val": "5x5 identity matrix I"
             },
             {
                 "key": "linspace(1.2,4.7,100)",
-                "value": "100 equally spaced points from 1.2 to 4.7"
+                "val": "100 equally spaced points from 1.2 to 4.7"
             },
             {
                 "key": "diagm(x)",
-                "value": "Matrix whose diagonal is the entries of x"
+                "val": "Matrix whose diagonal is the entries of x"
             }
             
         ],
         "Matrices and Vectors": [
             {
-                "key": "x[2:12]",
-                "value": "The 2nd to 12th elements of x"
+                "key": "x\\[2:12\\]",
+                "val": "The 2nd to 12th elements of x"
             },
             {
-                "key": "x[2:end]",
-                "value": "The 2nd to the last elements of x"
+                "key": "x\\[2:end\\]",
+                "val": "The 2nd to the last elements of x"
             },
             {
-                "key": "A[5,1:3]",
-                "value": "Row vector of 1st 3 elements in 5th row of A"
+                "key": "A\\[5,1:3\\]",
+                "val": "Row vector of 1st 3 elements in 5th row of A"
             },
             {
-                "key": "A[5,:]",
-                "value": "Row vector of 5th row of A"
+                "key": "A\\[5,:\\]",
+                "val": "Row vector of 5th row of A"
             },
             {
                 "key": "diag(A)",
-                "value": "Vector of diagonals of A"
+                "val": "Vector of diagonals of A"
             }
         ],
         "Arithmetic of Numbers": [
@@ -223,7 +223,7 @@
                 "val": "Set labels"
             },
             {
-                "key": "legend([“curve 1”, “curve 2”], “northwest”)",
+                "key": "legend(\\[“curve 1”, “curve 2”\\], “northwest”)",
                 "val": "Legend at upper-left"
             },
             {
@@ -231,7 +231,7 @@
                 "val": "Add grid lines, use equal x and y scaling"
             },
             {
-                "key": "title(L”the curve $e^\\\\sqrt{x}$”)",
+                "key": "title(L”the curve $e^\\\\sqrt\\{x\\}$”)",
                 "val": "Title with LaTeX equation"
             },
             {
