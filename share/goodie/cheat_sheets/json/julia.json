@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "julia-cheatsheet", "julialang programming"
+        "julia cheatsheet", "julialang programming"
     ],
 
     "template_type": "code",
@@ -19,7 +19,7 @@
         "Defining\/Changing variables",
         "Simple Matrices",
         "Matrices and Vectors",
-        "Arithmeic of Numbers",
+        "Arithmetic of Numbers",
         "Arithmetic of Vectors and Matrices",
         "Plotting"
     ],
