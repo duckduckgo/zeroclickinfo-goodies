@@ -138,11 +138,8 @@ sub parse_field {
 # An alternative parser that returns an array of all possible values
 sub get_all_values {
     my ($field, $singular, $min, $max) = @_;
-    my @components;
-    
-    if (!exists $components[0]) {
-        @components = split ',', $field;
-    }
+
+    my @components = split ',', $field;
     
     if ($field =~ m!^\*(?:/(\d+))?$!) { # "every X days" ("*/X" or just "*")
         if (defined $1) {
