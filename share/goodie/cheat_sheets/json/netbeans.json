@@ -1,0 +1,364 @@
+{  
+   "id":"netbeans_cheat_sheet",
+   "name":"Netbeans IDE",
+   "description":"NetBeans is an open-source integrated development environment (IDE) for developing with Java, PHP, C++, and other programming languages. ",
+   "metadata":{  
+      "sourceName":"Shortcut World",
+      "sourceUrl":"https://netbeans.org/features/index.html"
+   },
+   "template_type":"keyboard",
+   "section_order":[  
+      "Manage Files and Projects",
+      "Editor Window",
+      "Search and Replace",
+      "Navigate",
+      "Window Option",
+      "Profile",
+      "Refactor",
+      "Run",
+      "Debug",
+      "The Rest"
+   ],
+   "sections":{  
+      "Manage Files and Projects":[  
+         {  
+            "key":"[Ctrl] [shift] [N]",
+            "val":"Create new project using the Wizard"
+         },
+         {  
+            "key":"[Ctrl] [N]",
+            "val":"Create new file"
+         },
+         {  
+            "key":"[Ctrl] [shift] [O]",
+            "val":"Open project, file, etc"
+         },
+         {  
+            "key":"[Ctrl] [S]",
+            "val":"Save current file"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [S]",
+            "val":"Save all files"
+         },
+         {  
+            "key":"F5",
+            "val":"Refresh content"
+         }
+      ],
+      "Editor Window":[  
+         {  
+            "key":"[Ctrl] [X]",
+            "val":"Cut"
+         },
+         {  
+            "key":"[Ctrl] [C]",
+            "val":"Copy"
+         },
+         {  
+            "key":"[Ctrl] [V]",
+            "val":"Paste"
+         },
+         {  
+            "key":"[Ctrl] [Z]",
+            "val":"Undo last action"
+         },
+         {  
+            "key":"[Ctrl] [Y]",
+            "val":"Redo last (undone) action"
+         },
+         {  
+            "key":"[Delete]",
+            "val":"Delete "
+         },
+         {  
+            "key":"[Ctrl] [shift] [D]",
+            "val":"Paste from history"
+         }
+      ],
+      "Search and Replace":[  
+         {  
+            "key":"[Ctrl] [F]",
+            "val":"To find "
+         },
+         {  
+            "key":"[Ctrl] [H]",
+            "val":"Replace"
+         },
+         {  
+            "key":"[Alt] [F7]",
+            "val":"Find usages"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [F]",
+            "val":"Find in projects"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [H]",
+            "val":"Replace in projects"
+         }
+      ],
+      "Navigate":[  
+         {  
+            "key":"[Alt] [Shift] [O]",
+            "val":"Go to files"
+         },
+         {  
+            "key":"[Ctrl] [O]",
+            "val":"Got to type"
+         },
+         {  
+            "key":"[Ctrl] [Alt] [Shift] [O]",
+            "val":"Go to symbol"
+         },
+         {  
+            "key":"[Alt] [Shift] [B]",
+            "val":"Go to spring beans"
+         },
+         {  
+            "key":"[Ctrl] [Alt] [T]",
+            "val":"Go to test/tested class"
+         },
+         {  
+            "key":"[Ctrl] [B]",
+            "val":"Go to declarations"
+         },
+         {  
+            "key":"[Ctrl] [G]",
+            "val":"Go to line"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [M]",
+            "val":"Toogle Bookmark"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [period]",
+            "val":"Bookmark History popup next"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [comma]",
+            "val":"Bookmark History popup previous"
+         },
+         {  
+            "key":"[Ctrl] [period]",
+            "val":"Next Error"
+         },
+         {  
+            "key":"[Ctrl] [comma]",
+            "val":"Previous Error"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [1]",
+            "val":"Select in projects"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [2]",
+            "val":"Select in files"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [3]",
+            "val":"Select in favourites"
+         }
+      ],
+      "Window Option":[  
+         {  
+            "key":"[Ctrl] [1]",
+            "val":"Projects"
+         },
+         {  
+            "key":"[Ctrl] [2]",
+            "val":"Files"
+         },
+         {  
+            "key":"[Ctrl] [3]",
+            "val":"Favourites"
+         },
+         {  
+            "key":"[Ctrl] [5]",
+            "val":"Services"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [6]",
+            "val":"Tasks"
+         },
+         {  
+            "key":"[Ctrl] [7]",
+            "val":"Output"
+         },
+         {  
+            "key":"[Ctrl] [6]",
+            "val":"Editor"
+         },
+         {  
+            "key":"[Ctrl] [4]",
+            "val":"Projects"
+         },
+         {  
+            "key":"[Ctrl] [0]",
+            "val":"Projects"
+         },
+         {  
+            "key":"[Ctrl] [W]",
+            "val":"Close window"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [W]",
+            "val":"Close all documents"
+         },
+         {  
+            "key":"[Shift] [F4]",
+            "val":"Documents"
+         }
+      ],
+      "Profile":[  
+         {  
+            "key":"[Alt] [F2]",
+            "val":"Profile project"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [F2]",
+            "val":"Rerun profiling session"
+         },
+         {  
+            "key":"[Alt] [Shift] [F2]",
+            "val":"Modify profiling session "
+         },
+         {  
+            "key":"[Shift] [F2]",
+            "val":"Stop profiling session"
+         },
+         {  
+            "key":"[Alt] [Shift] [F2]",
+            "val":"Reset collected results "
+         },
+         {  
+            "key":"[Ctrl] [F2]",
+            "val":"Take snapshot of collected results"
+         }
+      ],
+      "Refactor":[  
+         {  
+            "key":"[Alt] [Delete]",
+            "val":"Samely delete"
+         },
+         {  
+            "key":"[Ctrl] [R]",
+            "val":"Rename "
+         },
+         {  
+            "key":"[Ctrl] [M]",
+            "val":"Move "
+         }
+      ],
+      "Run":[  
+         {  
+            "key":"[F6]",
+            "val":"Run Project"
+         },
+         {  
+            "key":"[Alt] [F6]",
+            "val":"Test projects"
+         },
+         {  
+            "key":"F11",
+            "val":"Build Project"
+         },
+         {  
+            "key":"[Shift] [F11]",
+            "val":"Clean and Build project"
+         },
+         {  
+            "key":"[Shift] [F6]",
+            "val":"Run file"
+         },
+         {  
+            "key":"[Ctrl] [F6]",
+            "val":"Test file"
+         },
+         {  
+            "key":"F9",
+            "val":"Compile file"
+         },
+         {  
+            "key":"[Alt] [F9]",
+            "val":"Run file"
+         },
+         {  
+            "key":"[Alt] [Shift] [F9]",
+            "val":"Run file"
+         },
+         {  
+            "key":"[Ctrl] [F11]",
+            "val":"Repeat build/run"
+         }
+      ],
+      "Debug":[  
+         {  
+            "key":"[Ctrl] [F5]",
+            "val":"Debug project"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [F5]",
+            "val":"Debug file"
+         },
+         {  
+            "key":"[Ctrl] [Shift] [F6]",
+            "val":"Debug test file"
+         },
+         {  
+            "key":"[Shift] [F5]",
+            "val":"Finish debugger session"
+         },
+         {  
+            "key":"F5",
+            "val":"Continue"
+         },
+         {  
+            "key":"F8",
+            "val":"Step over"
+         },
+         {  
+            "key":"[Shift] [F8]",
+            "val":"Step over expression"
+         },
+         {  
+            "key":"F7",
+            "val":"Step info"
+         },
+         {  
+            "key":"[Shift] [F7]",
+            "val":"Step into next method"
+         },
+         {  
+            "key":"[Ctrl] [F7]",
+            "val":"Step out"
+         },
+         {  
+            "key":"F4",
+            "val":"Run to cursor"
+         },
+         {  
+            "key":"[Ctrl] [F8]",
+            "val":"Toggle line breakpoint"
+         },
+         {  
+            "key":"[Ctrl [Shift] [F8]",
+            "val":"New breakpoint"
+         },
+         {  
+            "key":"[Ctrl [Shift] [F7]",
+            "val":"New watch"
+         },
+         {  
+            "key":"[Ctrl] [F9]",
+            "val":"Evaluate expression"
+         }
+      ],
+      "The Rest":[  
+         {  
+            "key":"[Shift] [F1]",
+            "val":"Javadoc index search"
+         }
+      ]
+   }
+}
