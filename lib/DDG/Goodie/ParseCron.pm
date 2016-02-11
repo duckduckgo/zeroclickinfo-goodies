@@ -279,6 +279,17 @@ sub parse_date {
         return get_ordinal($_[0]);
     });
     
+    if ($month =~ m!^([1-12])/([1-12])$!) {
+        my $temp = "";
+        for (my $i = $1; $i < 13; $i += $2) {
+            if ($temp ne '') {
+                $temp .= ',';
+            }
+            $temp .= "$i";
+        }
+        $month = $temp;
+    }
+    
     my $monthres = parse_field($month, 'month', 'months', 1, 12, sub {
         return $month_names[$_[0] - 1];
     }, \%month_short_names);
