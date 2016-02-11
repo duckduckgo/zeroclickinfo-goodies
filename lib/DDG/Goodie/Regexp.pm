@@ -85,6 +85,9 @@ handle query => sub {
                 record_data => $matches,
                 record_keys => \@key_order,
             },
+            meta => {
+                signal => 'high',
+            },
             templates => {
                 group   => 'list',
                 options => {
