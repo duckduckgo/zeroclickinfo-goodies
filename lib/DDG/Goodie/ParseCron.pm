@@ -263,6 +263,17 @@ sub parse_date {
     
     return 'every day' if (is_every($day) && is_every($month) && is_every($weekday));
     
+    if ($day =~ m!^([1-31])/([1-31])$!) {
+        my $temp = "";
+        for (my $i = $1; $i < 32; $i += $2) {
+            if ($temp ne '') {
+                $temp .= ',';
+            }
+            $temp .= "$i";
+        }
+        $day = $temp;
+    } 
+    
     my $dayres = parse_field($day, 'day', 'days', 1, 31, sub {
         return 'on the ' . get_ordinal($_[0]) if $_[1] eq 'single/0'; # insert the preposition for the first single value
         return get_ordinal($_[0]);
