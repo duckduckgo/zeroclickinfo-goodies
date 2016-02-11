@@ -7,15 +7,6 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "onion_address";
 
-primary_example_queries '3g2upl4pq6kufc4m.onion';
-secondary_example_queries 'How do I access https://3g2upl4pq6kufc4m.onion:81/?q=dont+track+us?';
-description 'Recognize a web onion service address';
-name 'OnionAddress';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/OnionAddress.pm';
-category 'reference';
-topics 'special_interest', 'cryptography';
-attribution email => 'ilv@torproject.org';
-
 # regex to detect an onion service address
 # this cover several cases, including addresses with ports and/or paths
 # e.g. https://3g2upl4pq6kufc4m.onion:5000/?q=dont+track+us
