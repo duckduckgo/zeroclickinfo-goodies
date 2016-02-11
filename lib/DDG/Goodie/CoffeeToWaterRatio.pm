@@ -24,37 +24,22 @@ my $metric_to_water = 16.6945;
 my $MAX_WEIGHT = 100000; # limit to 100,000
 
 my %wt = (
-    'ounce' => {
-        'fluid_units' => $imperial_fluid_units,
-        'precision' => $imperial_precision,
-        'ratio' => $imperial_to_water,
-    },
-    'ounces' => {
-        'fluid_units' => $imperial_fluid_units,
-        'precision' => $imperial_precision,
-        'ratio' => $imperial_to_water,
-    },
     'oz' => {
         'fluid_units' => $imperial_fluid_units,
         'precision' => $imperial_precision,
         'ratio' => $imperial_to_water,
     },
-    'gram' => {
-        'fluid_units' => $metric_fluid_units,
-        'precision' => $metric_precision,
-        'ratio' => $metric_to_water,
-    },
-    'grams' => {
-        'fluid_units' => $metric_fluid_units,
-        'precision' => $metric_precision,
-        'ratio' => $metric_to_water,
-    },
     'g' => {
         'fluid_units' => $metric_fluid_units,
         'precision' => $metric_precision,
         'ratio' => $metric_to_water,
-    },
+    }
 );
+
+$wt{ounce} = $wt{oz};
+$wt{ounces} = $wt{oz};
+$wt{gram} = $wt{g};
+$wt{grams} = $wt{g};
 
 my $weight_re = number_style_regex();
 
