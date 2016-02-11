@@ -1,16 +1,16 @@
-# Welcome to DuckDuckHack
+# Welcome to DuckDuckHack's Spice Instant Answers Repository
 
-![](http://docs.duckduckhack.com/assets/hack_search_engine.png)
+[![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-spice.png?branch=bttf)](https://travis-ci.org/duckduckgo/zeroclickinfo-spice)
 
-**Instant Answers use the Web's best data to solve searches in few or zero clicks. With your knowledge of the Web and a little bit of coding, DuckDuckGo can show the best possible result for the topics you care about most!**
+![](http://docs.duckduckhack.com/assets/hack search engine.png)
 
-[Instant Answers](https://duck.co/ia) are created and maintained by a community of open source developers around the world so that millions of searches on DuckDuckGo (like [who's in space?](https://duckduckgo.com/?q=who%27s+in+space%3F&ia=answer) and [tennis help](https://duckduckgo.com/?q=tennis+help&ia=cheatsheet&iax=1)) show a perfect result, above any ads or regular links. Just like the Wikipedia community creates articles for topics -- the DuckDuckHack community creates Instant Answers for searches!
+**Instant Answers are an opportunity for anyone to create their own search results.**
 
-1. Use these docs and our help to improve search results for the topics you care about.
-2. Join our [dev list](https://www.listbox.com/subscribe/?list_id=197814) to keep in touch with all the latest news and DuckDuckHack events.
-3. Become a leader and all-star contributor helping to change the world of search through community!
+Instant Answers appear on DuckDuckGo.com above ads and organic links, on [millions of searches](https://duckduckgo.com/traffic.html). Instant Answers are created by an open source community of developers [around the world](http://duckduckgo.meetup.com/) like you. Welcome!
 
-[![slack](http://docs.duckduckhack.com/assets/slack.png) Ask questions on Slack](mailto:QuackSlack@duckduckgo.com?subject=AddMe) or [email us](mailto:open@duckduckgo.com) directly.
+You can find the [full documentation here](http://docs.duckduckhack.com).
+
+[![slack](http://docs.duckduckhack.com/assets/slack.png) Talk to us on Slack](mailto:QuackSlack@duckduckgo.com?subject=AddMe) or [email us](mailto:open@duckduckgo.com).
 
 ## Create a New Instant Answer
 
