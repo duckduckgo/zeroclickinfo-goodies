@@ -51,6 +51,9 @@ foreach my $path (glob("$json_dir/*.json")){
     $temp_pass = not ($content =~ /^(?!( {4})*(\S|$))/m);
     push(@tests, {msg => 'indentation not a multiple of 4', critical => 0, pass => $temp_pass});
 
+    $temp_pass = not ($content =~ /[\t ]+$/m);
+    push(@tests, {msg => 'trailing whitespace detected', critical => 0, pass => $temp_pass});
+
 
     ### Headers tests ###
     $temp_pass = (exists $json->{id} && $json->{id})? 1 : 0;
