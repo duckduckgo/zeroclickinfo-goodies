@@ -299,6 +299,17 @@ sub parse_date {
         return "$dayres of $monthres";
     }
     
+    if ($weekday =~ m!^([0-6])/([0-6])$!) {
+        my $temp = "";
+        for (my $i = $1; $i < 7; $i += $2) {
+            if ($temp ne '') {
+                $temp .= ',';
+            }
+            $temp .= "$i";
+        }
+        $weekday = $temp;
+    }
+    
     my $weekres = parse_field($weekday, 'day of the week', 'days of the week', 0, 7, sub {
         return 'on ' . $weekday_names[$_[0]] if $_[1] eq 'single/0';
         return $weekday_names[$_[0]];
