@@ -134,6 +134,13 @@ sub get_all_values {
         }
     }
     
+    if ($singular eq 'minute' && $field =~ m!^([0-9]|[1-5][0-9])/([0-9]|[1-5][0-9])$!) {
+        @components = ();
+        for (my $i = $1; $i < 60; $i += $2) {
+            push @components, $i;
+        }
+    }
+    
     if (!exists $components[0]) {
         @components = split ',', $field;
     }
@@ -200,6 +207,17 @@ sub parse_time {
     # The common case
     $out = '';
     
+    if ($minute =~ m!^([0-9]|[1-5][0-9])/([0-9]|[1-5][0-9])$!) {
+        my $temp = "";
+        for (my $i = $1; $i < 60; $i += $2) {
+            if ($temp ne '') {
+                $temp .= ',';
+            }
+            $temp .= "$i";
+        }
+        $minute = $temp;
+    } 
+    
     # Parse minutes
     if ($minute =~ /^\d+(?:,\d+)*$/ && $minute ne '0') { # a simple comma-separated list
         my @components = split ',', $minute;
@@ -224,7 +242,10 @@ sub parse_time {
     if ($hour =~ m!^([0-9]|1[0-9]|2[0-3])/([0-9]|1[0-9]|2[0-3])$!) {
         my $temp = "";
         for (my $i = $1; $i < 24; $i += $2) {
-            $temp = $temp . "$i,";
+            if ($temp ne '') {
+                $temp .= ',';
+            }
+            $temp .= "$i";
         }
         $hour = $temp;
     } 
