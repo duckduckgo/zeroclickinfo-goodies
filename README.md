@@ -1,30 +1,43 @@
-# Welcome to DuckDuckHack's Goodies Instant Answers Repository
+# Welcome to DuckDuckHack
 
-[![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.png?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
+![](http://docs.duckduckhack.com/assets/hack_search_engine.png)
 
-![](http://docs.duckduckhack.com/assets/hack search engine.png)
+**Instant Answers use the Web's best data to solve searches in few or zero clicks. With your knowledge of the Web and a little bit of coding, DuckDuckGo can show the best possible result for the topics you care about most!**
 
-**Instant Answers are an opportunity for anyone to create their own search results.**
+[Instant Answers](https://duck.co/ia) are created and maintained by a community of open source developers around the world so that millions of searches on DuckDuckGo (like [who's in space?](https://duckduckgo.com/?q=who%27s+in+space%3F&ia=answer) and [tennis help](https://duckduckgo.com/?q=tennis+help&ia=cheatsheet&iax=1)) show a perfect result, above any ads or regular links. Just like the Wikipedia community creates articles for topics -- the DuckDuckHack community creates Instant Answers for searches!
 
-Instant Answers appear on DuckDuckGo.com above ads and organic links, on [millions of searches](https://duckduckgo.com/traffic.html). Instant Answers are created by an open source community of developers [around the world](http://duckduckgo.meetup.com/) like you. Welcome!
+1. Use these docs and our help to improve search results for the topics you care about.
+2. Join our [dev list](https://www.listbox.com/subscribe/?list_id=197814) to keep in touch with all the latest news and DuckDuckHack events.
+3. Become a leader and all-star contributor helping to change the world of search through community!
 
-You can find the [full documentation here](http://docs.duckduckhack.com). This is the repository for [one type of Instant Answers](http://docs.duckduckhack.com/welcome/determining-ia-type.html), called Goodies.
+[![slack](http://docs.duckduckhack.com/assets/slack.png) Ask questions on Slack](mailto:QuackSlack@duckduckgo.com?subject=AddMe) or [email us](mailto:open@duckduckgo.com) directly.
 
 ## Create a New Instant Answer
 
-Learn to make an Instant Answer by starting with any of our quick tutorials. All of these are self-contained and will get you up and running. Pick whatever looks most interesting!
+For every search, there can be a great Instant Answer. Use these docs and help from the community to create Instant Answers for the searches you care about or do most frequently! 
 
-- **[Create a programming syntax cheat sheet](http://docs.duckduckhack.com/walkthroughs/programming-syntax.html)**
-- **[Create a quick online calculation](http://docs.duckduckhack.com/walkthroughs/calculation.html)**
-- **[Build an API-based lookup](http://docs.duckduckhack.com/walkthroughs/forum-lookup.html)**
+*If you'd like to help us with something specific, we're aiming to have multiple Instant Answers for every programming language and framework. Help us [fill in the blanks](https://github.com/duckduckgo/duckduckgo/wiki/Programming-IA-Coverage).*
+
+Learn by exploring! 
+
+- Check out the [current Instant Answers](https://duck.co/ia) for inspiration.
+- Watch [videos on creating](https://vimeo.com/channels/duckduckhack) Instant Answers. 
+
+Learn by example! Read through the tutorials for Instant Answers we've built in the past. All of these are self-contained and will get you up and running. 
+
+- (Beginner Progammers) **[Create a programming syntax cheat sheet.](http://docs.duckduckhack.com/walkthroughs/programming-syntax.html)**
+- (Intermediate Programmers) **[Create an Instant Answer that performs calculations.](http://docs.duckduckhack.com/walkthroughs/calculation.html)**
+- (Experienced Programmers) **[Use your favorite API to build an Instant Answer.](http://docs.duckduckhack.com/walkthroughs/forum-lookup.html)**
 
 ## Improve a Live Instant Answer
 
-We welcome new contributors to dive in and improve live Instant Answers. It's a great, hands-on way to learn how things work. Start by [setting up your development environment](http://docs.duckduckhack.com/welcome/setup-dev-environment.html).
+We welcome new contributors to dive in and improve live Instant Answers. It's a great, hands-on way to learn how things work!
 
-You can see all "low-hanging fruit" issues neatly organized in one place on our [Live Issues Page](https://duck.co/ia/dev/issues?tag=lowhangingfruit), or get an overview of all [Instant Answers in development](https://duck.co/ia/dev/pipeline).
+- Start by [setting up your development environment](http://docs.duckduckhack.com/welcome/setup-dev-environment.html)
+- Tackle some of the "low-hanging fruit" and, "high priority" issues on our [Live Issues Page](https://duck.co/ia/dev/issues?tag=lowhangingfruit)
+- Help other DuckDuckHackers with their [Instant Answers in development](https://duck.co/ia/dev/pipeline)
+- Suggest improvements & file bugs for [live Instant Answers](https://duck.co/ia) through the, "Create Issue" button on each IA page
 
-Have a [favorite Instant Answer](http://duck.co/ia) that you want to make even better? Feel free to dive in and make changes. 
 
 ## Inspiration
 
