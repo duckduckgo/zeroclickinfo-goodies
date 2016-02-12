@@ -1,14 +1,18 @@
 {
     "id": "angularjs_cheat_sheet",
     "name": "AngularJS",
-    "description": "A quick reference of AngularJS directives and services",
+    "description": "A quick reference of AngularJS services and directives",
     "metadata": {
         "sourceName": "AngularJS",
         "sourceUrl": "https://docs.angularjs.org/api/"
     },
     "aliases": ["angular", "angular js"],
     "template_type": "reference",
-    "section_order": ["Services","Directives", "Directives (continued)"],
+    "section_order": [
+        "Services",
+        "Directives",
+        "Directives (continued)"
+    ],
     "sections": {
         "Directives": [{
             "key": "ngJq",
