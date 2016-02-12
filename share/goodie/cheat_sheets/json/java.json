@@ -52,34 +52,34 @@
         "Statements": [
             {
                 "val" : "If Statement",
-                "key" : "if(expre­ssion)&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;else&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"
+                "key" : "if(expre­ssion)\\{­st­ate­ments\\}else\\{­st­ate­ments\\}"
                 
             },
             {
                 
                 "val" : "While Loop",
-                "key" : "while(expre­ssion)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}"
+                "key" : "while(expre­ssion)\\{­st­ate­ments\\}"
             },
             {
                 "val" : "Do While Loop ",
-                "key" : "do&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;while(expre­ssion)"
+                "key" : "do\\{­st­ate­ments\\}while(expre­ssion)"
                 
             },
             {   "val" : "For Loop ",
-                "key" : "for(Initialization;&nbsp;Condition;&nbsp;Updation)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"                
+                "key" : "for(Initialization;Condition;Updation)\\{­st­ate­ments\\}"                
             },
             {   "val" : "For Each Loop ",
-                "key" : "for(var&nbsp;:&nbsp;colle­ction)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"                
+                "key" : "for(var:colle­ction)\\{­st­ate­ments\\}"                
             },
             {
                 "val" : "Exce­ption Handling",
-                "key" : "try&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents<br>\\}&nbsp;catch(Exce­pti­onType&nbsp;e1)\\{<br>&nbsp;­&nbsp;&nbsp;&nbsp;­sta­tem­ents<br>\\}&nbsp;catch(Exception&nbsp;e2)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;cat­ch-all&nbsp;statem­ents<br>\\}&nbsp;finally&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents&nbsp;\\}"                
+                "key" : "try\\{­sta­tem­ents\\}catch(Exce­pti­onTypee1)\\{­­sta­tem­ents\\}catch(Exceptione2)\\{­cat­ch-allstatem­ents\\}finally\\{sta­tem­ents\\}"                
             }
         ],
         "Data Conver­sions": [
             {
                 "val" : "String to Number",
-                "key" : "int&nbsp;i&nbsp;=&nbsp;Intege­r.p­ars­eIn­t(­str);<br><br>double&nbsp;d&nbsp;=&nbsp;Double.pa­rse­Dou­ble­(s­tr);"
+                "key" : "inti=Intege­r.p­ars­eIn­t(­str);doubled=Double.pa­rse­Dou­ble­(s­tr);"
             },
             {
                 "val" : "Any Type to String",
@@ -93,15 +93,15 @@
         "Text Formatting": [
             {
                 "val" : "printf style format­ting",
-                "key" : "System.ou­t.p­rin­tf(­\"­Count&nbsp;is&nbsp;%d\n\",&nbsp;count);<br><br>s&nbsp;=&nbsp;String.fo­rma­t(\"Count&nbsp;is&nbsp;%d\",&nbsp;count);"
+                "key" : "System.ou­t.p­rin­tf(­\"­Countis%d\n\",count);s=String.fo­rma­t(\"Countis%d\",count);"
             },
             {
                 "val" : "Mess­age­Format style format­ting",
-                "key" : "Messag­eFo­rma­t.f­ormat(\"{0}&nbsp;rows.\",&nbsp;5);"
+                "key" : "Messag­eFo­rma­t.f­ormat(\"{0}rows.\",5);"
             },
             {
                 "val" : "Indi­vidual Numbers and Dates",
-                "key" : "Number­For­mat.ge­tCu­rre­ncy­Ins­tance().fo­rma­t(x);<br><br>Simple­Dat­eFo­rma­t(\"\"h:mm&nbsp;a\"\").fo­rma­t(new&nbsp;Date());<br><br>Decima­lFo­rma­t(\"#­,##­0.0­0\").fo­rma­t(1­25.32);"
+                "key" : "Number­For­mat.ge­tCu­rre­ncy­Ins­tance().fo­rma­t(x);Simple­Dat­eFo­rma­t(\"\"h:mma\"\").fo­rma­t(newDate());Decima­lFo­rma­t(\"#­,##­0.0­0\").fo­rma­t(1­25.32);"
             }
         ],
         "String Methods": [
