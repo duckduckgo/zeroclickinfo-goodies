@@ -13,10 +13,10 @@ ddg_goodie_test(
     # At a minimum, be sure to include tests for all:
     # - primary_example_queries
     # - secondary_example_queries
-    'example query' => test_zci('query'),
+    'fa cheat sheet' => test_zci('fa cheat sheet'),
     # Try to include some examples of queries on which it might
     # appear that your answer will trigger, but does not.
-    'bad example query' => undef,
+    'bad example query' => undef
 );
 
 done_testing;
