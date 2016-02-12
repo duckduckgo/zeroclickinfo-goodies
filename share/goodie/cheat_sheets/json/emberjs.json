@@ -31,7 +31,7 @@
         }],
         "Ember.Application": [{
             "val": "Creates an instance that will be app and app's namespace",
-            "key": "Ember.Application.create: ( \\{"
+            "key": "Ember.Application.create: ( {"
         }, {
             "val": "Activate logging of automatically generated routes and controllers",
             "key": "LOG_ACT/IVE_GENERATION: true"
@@ -44,16 +44,16 @@
         }],
         "Ember.View": [{
             "val": "Array of View's property names used to calculate View's DOM element's attributes",
-            "key": "attributeBindings: \\['dataSize', 'href'\\]"
+            "key": "attributeBindings: ['dataSize', 'href']"
         }, {
             "val": "Array of View's property names used to calculate View's DOM element's class attribute",
-            "key": "classNameBindings: \\['isAvailable', 'color'\\]"
+            "key": "classNameBindings: ['isAvailable', 'color']"
         }, {
             "val": "Array or string of View's class attribute",
-            "key": "classNames: \\['color', 'size'\\]"
+            "key": "classNames: ['color', 'size']"
         }, {
             "val": "CONVERT(expression, datatype)",
-            "key": "Controller: Ember.Controller.create( \\{\\} )"
+            "key": "Controller: Ember.Controller.create({})"
         }],
         "Ember.Application.initializer": [{
             "val": "Name of the initializer to run before running this initializer",
