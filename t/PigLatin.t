@@ -29,13 +29,11 @@ sub build_test { test_zci(build_structured_answer(@_)) }
 ddg_goodie_test(
     [qw( DDG::Goodie::PigLatin )],
     # Basic forms
-    'pig latin will this work?'   => build_test('illway isthay orkway?', 'to', 'will this work?'),
-    'piglatin i love duckduckgo'  => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
-    'pig latin i love duckduckgo' => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
-    'in piglatin foo'             => build_test('oofay', 'to', 'foo'),
-    'from pigLatiN oofay'         => build_test('foo', 'from', 'oofay'),
-    'piglatin in piglatin'        => build_test('iglatinpay', 'to', 'piglatin'),
-    'iglatinpay from piglatin'    => build_test('piglatin', 'from', 'iglatinpay'),
+    'in pig latin i love duckduckgo' => build_test('iway ovelay uckduckgoday', 'to', 'i love duckduckgo'),
+    'in piglatin foo'                => build_test('oofay', 'to', 'foo'),
+    'from pigLatiN oofay'            => build_test('foo', 'from', 'oofay'),
+    'piglatin in piglatin'           => build_test('iglatinpay', 'to', 'piglatin'),
+    'iglatinpay from piglatin'       => build_test('piglatin', 'from', 'iglatinpay'),
     # Additional forms
     'from piglatin in piglatin'                 => build_test('romfay iglatinpay', 'to', 'from piglatin'),
     'romfay iglatinpay from piglatin'           => build_test('from piglatin', 'from', 'romfay iglatinpay'),
@@ -49,11 +47,13 @@ ddg_goodie_test(
     'translate to piglatin'                     => build_test('ranslatetay', 'to', 'translate'),
     'what is in piglatin'                       => build_test('atwhay isway', 'to', 'what is'),
     # Non-matchers
-    'pig latin'            => undef,
-    'piglatin'             => undef,
-    'what is piglatin?'    => undef,
-    'what is in piglatin?' => undef,
-    'piglatin 0'           => undef,
+    'piglatin i love duckduckgo' => undef,
+    'pig latin will this work?'  => undef,
+    'pig latin'                  => undef,
+    'piglatin'                   => undef,
+    'what is piglatin?'          => undef,
+    'what is in piglatin?'       => undef,
+    'piglatin 0'                 => undef,
 );
 
 done_testing;

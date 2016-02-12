@@ -23,7 +23,7 @@ sub get_action {
     $+{'action'} // ($query =~ s/\s*$actions\s*$piglatin$//i);
     $+{'action'} // ($query =~ s/^$actions?+\s*$piglatin\s*//i or return);
     return if $query eq '';
-    my $action = lc ($+{'action'} // 'to');
+    my $action = lc ($+{'action'} // return);
     $action = 'to' if $action eq 'in';
     return ($query, $action);
 }
