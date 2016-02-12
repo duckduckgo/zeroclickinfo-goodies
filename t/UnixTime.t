@@ -114,6 +114,7 @@ ddg_goodie_test([qw(
     'timestamp'               => undef,
     'time'                    => undef,
     'epoch'                   => undef,
+    'unix time info'          => undef,
 );
 
 done_testing;
