@@ -19,6 +19,19 @@ my %utf8_dice = (
     6 => "\x{2685}",
 );
 
+# remove whitespace from string
+sub remove_whitespace
+{
+    my $str = $_[0];
+    if( defined($str)) {
+        $str=~ s/\s//g;
+    } else {
+        $str='';
+    }
+    return $str;
+}
+
+
 # roll_dice generate pseudo random roll
 # param $_[0] number of faces
 # return roll
@@ -47,19 +60,44 @@ sub set_num_dice {
 # shorthand_roll_output generate shorthand roll output
 # param array of rolls
 # param sum of rolls
+# param left-hand ("lh") or right-hand ("rh")
+# param plus ('+') or minus ('-')
+# param modifier value e.g. for "1-6dh" the modifier value is '1'
+# param is second modifier = determine whether or not a left hand modifier was sent for same roll.
 # return roll output
 sub shorthand_roll_output {
     my @rolls = @{$_[0]};
     my $sum = $_[1];
+    my $right_or_left_hand = $_[2];
+    my $plus_or_minus = $_[3];
+    my $modifier_value = $_[4];
+    my $is_second_modifier = defined($_[5]) ? $_[5] : '0';
     my $out;
-    if (@rolls > 1) { # if( sizeOf(rolls) > 1)
-        $out = join(' + ', @rolls); # append current roll to output
-        $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
-        $out .= " = $sum"; # append sum of rolls to output
+    
+    if ($is_second_modifier eq '0') {
+        if(@rolls > 1) {
+            $out = join(' + ', @rolls); # append current roll to output
+            $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
+        } else {
+            $out = $rolls[0];
+        }
     } else {
-        $out = $sum; # output is roll value if we have just one roll
+        $out = '';
     }
-    return $out . '<br/>';
+     
+     if($modifier_value ne '0') {
+        if($is_second_modifier eq '0') {
+            $out = '(' . $out . ')';
+        }
+        
+        if ($right_or_left_hand eq "lh") {
+            $out = $modifier_value . ' ' . $plus_or_minus . ' ' . $out;
+        } else {
+            $out .= ' ' . $plus_or_minus . ' ' . $modifier_value;
+        }
+     }
+
+    return $out;
 }
 
 handle remainder_lc => sub {
@@ -84,53 +122,143 @@ handle remainder_lc => sub {
                 $sum += $roll; # track sum
                 push @output, $utf8_dice{$roll}; # add our roll to array output
             }
+            
             $total += $sum; # track total of all rolls
             $out .= join(', ', @output) . '<br/>';
             $html .= '<span class="zci--dice-die">' . join(' ', @output).'</span>'
                     .'<span class="zci--dice-sum">'." = ". $sum.'</span></br>';
         }
-        elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
-            # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'
+        else {
+            # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l', '1-4d7', '2+8d2'
             # 'w' is the German form of 'd'
             my (@rolls, $output);
-            my $number_of_dice = set_num_dice($1, 1); # set number of dice, default 1
-            # check that input is not greater than or equal to 99
-            # check that input is not 0. ex. 'roll 0d3' should not return a value
-            if( $number_of_dice >= 100 or $1 eq '0'){
-                return; # do not continue if conditions not met
-            }
-            my $min = my $number_of_faces = $2; # set min and number_of_faces to max possible roll
+            my $roll_output;
+            my $number_of_dice = my $min = 0;
+            my $number_of_faces;
             my $max = my $sum = 0; # set max roll and sum to -
-            for (1 .. $number_of_dice) { # for each die
-                my $roll = roll_die( $number_of_faces ); # roll the die
-                $min = $roll if $roll < $min; # record min roll
-                $max = $roll if $roll > $max; # record max roll
-                push @rolls, $roll; # add roll to array rolls
-            }
-            if (defined($3) && defined($4)) {
-                # handle special case of " - L" or " - H"
-                if ($3 eq '-' && ($4 eq 'l' || $4 eq 'h')) {
-                    if ($4 eq 'l') {
-                        push(@rolls, -$min); # add -min roll to array rolls
-                    } else {
-                        push(@rolls, -$max); # add -max roll to array rolls
-                    }
-                } elsif ($3 eq '+' && ($4 eq 'l' || $4 eq 'h')) { # do nothing with '3d5+h'
-                    return;
-                } else {
-                    push(@rolls, int("$3$4")); # ex. '-4', '+3'
+            my $modifer_value = '0';
+            my $param1 = my $param2 = my $param3 = my $param4 = my $param5 = my $param6 = '';
+            my $plus_or_minus = '';
+
+            if ($_ =~ /^(\d+)\s*([+-])\s*(\d*)[d|w](\d*)\s*([+-]?)\s*(\d*)\s*$/) {   # the left hand side of the notation has an "additive modifier" ('1-4d7', '2+8d2')
+                                                                                     # and the right hand side may, also: e.g. '1 - 3d7 + 5'
+                # remove whitespace
+                $param1 = remove_whitespace($1);
+                $param2 = remove_whitespace($2);
+                $param3 = remove_whitespace($3);
+                $param4 = remove_whitespace($4);
+                $param5 = remove_whitespace($5);
+                $param6 = remove_whitespace($6);
+                
+                # check that input is not greater than or equal to 99
+                # check that input is not 0. ex. 'roll 0d3' should not return a value
+                $number_of_dice = set_num_dice($param3, 1);
+                if( $number_of_dice >= 100 or $param3 eq '0'){
+                     return; # do not continue if conditions not met
                 }
+                
+                $min = $number_of_faces = $param4;         
+                $modifer_value = $param1;
+                $plus_or_minus = $param2;
+
+                # TODO: refactor code from here to end of block to call one or more subroutines that can be used by the next section.
+                for (1 .. $number_of_dice) { # for each die
+                    my $roll = roll_die( $number_of_faces ); # roll the die
+                    $min = $roll if $roll < $min; # record min roll
+                    $max = $roll if $roll > $max; # record max roll
+                    push @rolls, $roll; # add roll to array rolls
+                }
+                
+                for (@rolls) {
+                    $sum += $_; # track sum
+                }
+
+                # Identify the modifier and store it for formatting and total.
+                if($plus_or_minus eq '-') { # the modifier is a minus sign ("-")
+                    $sum = int($modifer_value) - $sum;
+                } else {
+                    $sum = int($modifer_value) + $sum;
+                }
+                $roll_output = shorthand_roll_output( \@rolls, $sum, "lh", $plus_or_minus, $modifer_value ); # initialize roll_output
+                
+				if($param5 ne '' && $param6 ne '') {   # check right-hand side for '+n' or '-n'
+					if( $param5 eq '+' || $param5 eq '-') {
+                        $plus_or_minus = $param5;
+                        $modifer_value = $param6;
+                        
+                        if($plus_or_minus eq '-') {
+                            $sum = $sum - int($modifer_value);
+                        } else {
+                            $sum = int($modifer_value) + $sum;
+                        }
+					}
+                
+                    $roll_output .= shorthand_roll_output( \@rolls, $sum, "rh", $plus_or_minus, $modifer_value, '1' ); # initialize roll_output
+				}
+                
+                if( @rolls > 1) {
+                    $roll_output .= " = $sum";
+                }
+                $roll_output .= '<br/>';
+                $out .= $roll_output; # add roll_output to our result
+                $html .= $roll_output; # add roll_output to our HTML result
+                $total += $sum; # add the local sum to the total
             }
-            for (@rolls) {
-                $sum += $_; # track sum
+            elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) { # no modifier or only a right-hand modifier: e.g. 6d7 or 2d9=3
+                # remove whitespace
+                $param1 = remove_whitespace($1);
+                $param2 = remove_whitespace($2);
+                $param3 = remove_whitespace($3);
+                $param4 = remove_whitespace($4);
+                
+                # check that input is not greater than or equal to 99
+                # check that input is not 0. ex. 'roll 0d3' should not return a value
+                $number_of_dice = set_num_dice($1, 1); # set number of dice, default 1                
+                if( $number_of_dice >= 100 or $1 eq '0'){
+                     return; # do not continue if conditions not met
+                }
+                
+                $min = $number_of_faces = $param2; # set min and number_of_faces to max possible roll
+                for (1 .. $number_of_dice) { # for each die
+                    my $roll = roll_die( $number_of_faces ); # roll the die
+                    $min = $roll if $roll < $min; # record min roll
+                    $max = $roll if $roll > $max; # record max roll
+                    push @rolls, $roll; # add roll to array rolls
+                }
+                
+                if ($param3 ne '' && $param4 ne '') {
+                    # handle special case of " - L" or " - H"
+                    if ($param3 eq '-' && ($param4 eq 'l' || $param4 eq 'h')) {
+                        if ($param4 eq 'l') {
+                            push(@rolls, -$min); # add -min roll to array rolls
+                        } else {
+                            push(@rolls, -$max); # add -max roll to array rolls
+                        }
+                    } elsif ($param3 eq '+' && ($param4 eq 'l' || $param4 eq 'h')) { # do nothing with '3d5+h'
+                    return;
+                    } else {
+                        $plus_or_minus = $param3;
+                        $modifer_value = $param4;
+                    }
+                }
+                
+                for (@rolls) {
+                    $sum += $_; # track sum
+                }
+                
+                $roll_output = shorthand_roll_output( \@rolls, $sum, "rh", $plus_or_minus, $modifer_value ); # initialize roll_output
+                if( @rolls > 1) {
+                    $roll_output .= " = $sum";
+                }
+                $roll_output .= '<br/>';
+                $out .= $roll_output; # add roll_output to our result
+                $html .= $roll_output; # add roll_output to our HTML result
+                $total += $sum; # add the local sum to the total
             }
-            my $roll_output = shorthand_roll_output( \@rolls, $sum ); # initialize roll_output
-            $out .= $roll_output; # add roll_output to our result
-            $html .= $roll_output; # add roll_output to our HTML result
-            $total += $sum; # add the local sum to the total
-        }else{
-            # an element of @value was not valid
-            return;
+            else{
+                # an element of @value was not valid
+                return;
+            }
         }
     }
     if($values > 1) {
@@ -140,8 +268,8 @@ handle remainder_lc => sub {
     }
     $out =~ s/<br\/>$//g; # remove trailing newline
     if($out eq ''){
-        return; # nothing to return
-    }else{
+        return;
+        }else{
         return  answer => $out,
                 html => $html,
                 heading => $heading;
