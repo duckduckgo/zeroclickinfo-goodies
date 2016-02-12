@@ -87,7 +87,7 @@ handle query_lc => sub {
         data => {
             title                => "$formatted_input",
             gibberish_paragraphs => \@paragraphs,
-            use_paragraphs       => $#paragraphs,
+            use_paragraphs       => $#paragraphs ? 1 : 0,
         },
         templates => {
             group   => 'info',
