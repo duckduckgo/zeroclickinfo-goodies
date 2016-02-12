@@ -23,23 +23,23 @@ my @recipe_names = sort { length($b) <=> length($a) } keys %recipes;
 my @extra_words = ('a','an','in','crafting','recipe','how to make','how to craft','how do I make','how do I craft');
 
 handle remainder => sub {
-	my $remainder = $_;
+    my $remainder = $_;
 
-	my $recipe;
-	# find recipe name
-	foreach my $recipe_name (@recipe_names) {
-		if ($remainder =~ s/$recipe_name//i) {
-			$recipe = $recipes{$recipe_name};
-			last;
-		}	
-	}
+    my $recipe;
+    # find recipe name
+    foreach my $recipe_name (@recipe_names) {
+        if ($remainder =~ s/$recipe_name//i) {
+            $recipe = $recipes{$recipe_name};
+            last;
+        }
+    }
     return unless $recipe;
-    
-	# remove the extra words (or phrases)
-	foreach my $extra_word (@extra_words) {
-		$remainder =~ s/\b$extra_word\b//gi;
-	}
-	return if $remainder && $remainder !~ m/^\s+$/; # return if we had leftover unwanted words (not just whitespace)
+
+    # remove the extra words (or phrases)
+    foreach my $extra_word (@extra_words) {
+        $remainder =~ s/\b$extra_word\b//gi;
+    }
+    return if $remainder && $remainder !~ m/^\s+$/; # return if we had leftover unwanted words (not just whitespace)
 
     # Recipe found, let's return an answer.
     my $plaintext = 'Minecraft ' . $recipe->{'name'} . ' ingredients: ' . $recipe->{'ingredients'} . '.';
