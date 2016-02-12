@@ -41,7 +41,7 @@ handle query_raw => sub {
         id   => 'pig_latin',
         name => 'Answer',
         data => {
-            title    => "$result",
+            title    => html_enc("$result"),
             subtitle => html_enc("Translate $action Pig Latin: $to_translate"),
         },
         templates => {
