@@ -73,7 +73,7 @@
             },
             {
                 "val" : "Exce­ption Handling",
-                "key" : "try\\{­sta­tem­ents\\}catch(Exce­pti­onTypee1)\\{­­sta­tem­ents\\}catch(Exceptione2)\\{­cat­ch-allstatem­ents\\}finally\\{sta­tem­ents\\}"                
+                "key" : "try\\{­sta­tem­ents\\}catch(Exce­pti­onTypee1)\\{sta­tem­ents\\}catch(Exceptione2)\\{­cat­ch-allstatem­ents\\}finally\\{sta­tem­ents\\}"                
             }
         ],
         "Data Conver­sions": [
@@ -101,7 +101,7 @@
             },
             {
                 "val" : "Indi­vidual Numbers and Dates",
-                "key" : "Number­For­mat.ge­tCu­rre­ncy­Ins­tance().fo­rma­t(x);Simple­Dat­eFo­rma­t(\"\"h:mma\"\").fo­rma­t(newDate());Decima­lFo­rma­t(\"#­,##­0.0­0\").fo­rma­t(1­25.32);"
+                "key" : "Number­For­mat.ge­tCu­rre­ncy­Ins­tance().fo­rma­t(x);Simple­Dat­eFo­rma­t(\"h:mma\").fo­rma­t(newDate());Decima­lFo­rma­t(\"#­,##­0.0­0\").fo­rma­t(1­25.32);"
             }
         ],
         "String Methods": [
