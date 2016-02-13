@@ -1,15 +1,16 @@
 {
     "id": "mozilla_thunderbird_cheat_sheet",
     "name": "Mozilla Thunderbird",
-    "description": "Mozilla Thunderbird is a free, open source, cross-platform email, news, and chat client developed by the Mozilla Foundation",
+    "description": "A free, open source, cross-platform email, news, and chat client developed by the Mozilla Foundation",
 
     "metadata": {
-        "sourceName": "Leslie Frank",
+        "sourceName": "Leslie Franke",
         "sourceUrl" : "http://lesliefranke.com/files/reference/thunderbirdcheatsheet.html"
     },
 
     "aliases": [
-        "thunderbird"
+        "thunderbird",
+        "thunderbird shortcuts"
     ],
 
     "template_type": "keyboard",
