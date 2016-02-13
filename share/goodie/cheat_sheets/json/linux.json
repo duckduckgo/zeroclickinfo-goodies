@@ -1,0 +1,380 @@
+{
+    "id":"linux_cheat_sheet",
+    "name":"Linux",
+    "description": "Linux is an open-source Unix-like operating system dveloped by Linus Torvalds",
+    "metadata":{
+        "sourceName":"Linux Stall",
+        "sourceUrl":"http://www.linuxstall.com/wp-content/uploads/2012/01/"
+    },
+    "template_type":"terminal",
+    "section_order":[
+        "File Commands",
+        "SSH",
+        "Installation",
+        "Network",
+        "System Info",
+        "Searching",
+        "Process Management",
+        "File Permissions",
+        "Compression",
+        "Shortcuts"
+    ],
+    "sections":{
+        "File Commands":[
+            {
+                "val":"directory listing",
+                "key":"ls"
+            },
+            {
+                "val":"formatted listing with hidden files",
+                "key":"ls -al"
+            },
+            {
+                "val":"change directory to dir",
+                "key":"cd dir"
+            },
+            {
+                "val":"change to home",
+                "key":"cd"
+            },
+            {
+                "val":"show current directory",
+                "key":"pwd"
+            },
+            {
+                "val":"create directory dir",
+                "key":"mkdir dir"
+            },
+            {
+                "val":"delete file",
+                "key":"rm file"
+            },
+            {
+                "val":"delete directory dir",
+                "key":"rm -r dir"
+            },
+            {
+                "val":"force remove file",
+                "key":"rm -f file"
+            },
+            {
+                "val":"remove directory file",
+                "key":"rm -rf dir"
+            },
+            {
+                "val":"copy file1 to file2",
+                "key":"cp file1 file2"
+            },
+            {
+                "val":"rename file1 to file2",
+                "key":"mv file1 file2"
+            },
+            {
+                "val":"create symbolic link 'link' to file",
+                "key":"ln -s file link"
+            },
+            {
+                "val":"create or update file",
+                "key":"touch file"
+            },
+            {
+                "val":"place standard input into file",
+                "key":"cat > file"
+            },
+            {
+                "val":"display the contents of the file",
+                "key":"more file"
+            },
+            {
+                "val":"output the contents of the file",
+                "key":"less file"
+            },
+            {
+                "val":"output first 10 lines of file",
+                "key":"head file"
+            },
+            {
+                "val":"output last 10 lines of file",
+                "key":"tail file"
+            },
+            {
+                "val":"output contents of file as it grows",
+                "key":"tail -f file"
+            }
+        ],
+        "SSH":[
+            {
+                "val":"connect to host as user",
+                "key":"ssh user@host"
+            },
+            {
+                "val":"connect using port p",
+                "key":"ssh -p port user@host"
+            },
+            {
+                "val":"connect and use bind port",
+                "key":"ssh -D port user@host"
+            }
+        ],
+        "Installation":[
+            {
+                "val":"configure the source file",
+                "key":"./configure"
+            },
+            {
+                "val":"compile the source code",
+                "key":"make"
+            },
+            {
+                "val":"install the compiled source code",
+                "key":"make install"
+            }
+        ],
+        "Network":[
+            {
+                "val":"ping host 'host'",
+                "key":"ping host"
+            },
+            {
+                "val":"get whois for domain",
+                "key":"whois domain"
+            },
+            {
+                "val":"get DNS for domain",
+                "key":"dig domain"
+            },
+            {
+                "val":"reverse lookup host",
+                "key":"dig -x host"
+            },
+            {
+                "val":"download file",
+                "key":"wget file"
+            },
+            {
+                "val":"continue stopped download",
+                "key":"wget -c file"
+            },
+            {
+                "val":"recursively download files from url",
+                "key":"wget -r url"
+            }
+        ],
+        "System Info":[
+            {
+                "val":"show current date/time",
+                "key":"date"
+            },
+            {
+                "val":"show this month's calendar",
+                "key":"cal"
+            },
+            {
+                "val":"show uptime",
+                "key":"uptime"
+            },
+            {
+                "val":"display who is online",
+                "key":"w"
+            },
+            {
+                "val":"who are you logged in as",
+                "key":"whoami"
+            },
+            {
+                "val":"show kernel config",
+                "key":"uname -a"
+            },
+            {
+                "val":"cpu info",
+                "key":"cat /proc/cpuinfo"
+            },
+            {
+                "val":"memory information",
+                "key":"cat /proc/meminfo"
+            },
+            {
+                "val":"show disk usage",
+                "key":"df"
+            },
+            {
+                "val":"show directory space usage",
+                "key":"du"
+            },
+            {
+                "val":"human readable size in GB",
+                "key":"du -sh"
+            },
+            {
+                "val":"show memory and swap usage",
+                "key":"free"
+            },
+            {
+                "val":"show the location of the executable 'app'",
+                "key":"whereis app"
+            },
+            {
+                "val":"show which app will be run by default",
+                "key":"which app"
+            }
+        ],
+        "Searching":[
+            {
+                "val":"search for pattern in files",
+                "key":"grep pattern files"
+            },
+            {
+                "val":"search recursively for pattern in dir",
+                "key":"grep -r pattern dir"
+            },
+            {
+                "val":"search for the pattern in in the output of command",
+                "key":"command | grep pattern"
+            },
+            {
+                "val":"find all instances of file",
+                "key":"locate file"
+            }
+        ],
+        "Process Management":[
+            {
+                "val":"display currrently active processes",
+                "key":"ps"
+            },
+            {
+                "val":"ps with a lot of details",
+                "key":"ps aux"
+            },
+            {
+                "val":"kill process with pid 'pid'",
+                "key":"kill pid"
+            },
+            {
+                "val":"lists stopped/background jobs, resume stopped job in the background",
+                "key":"bg"
+            },
+            {
+                "val":"bring most recent job to foreground",
+                "key":"fg"
+            },
+            {
+                "val":"bring job n to the foreground",
+                "key":"fg n"
+            }
+        ],
+        "File Permissions":[
+            {
+                "val":"change permission of file",
+                "key":"chmod octal file"
+            },
+            {
+                "val":"read (r)",
+                "key":"4"
+            },
+            {
+                "val":"write (w)",
+                "key":"2"
+            },
+            {
+                "val":"execute (x)",
+                "key":"1"
+            }
+        ],
+        "Compression":[
+            {
+                "val":"tar files into file.tar",
+                "key":"tar cf file.tar files"
+            },
+            {
+                "val":"untar into current directory",
+                "key":"tar xf file.tar"
+            },
+            {
+                "val":"show contents of archive",
+                "key":"tar tf file.tar"
+            },
+            {
+                "val":"create archive",
+                "key":"c"
+            },
+            {
+                "val":"table of contents",
+                "key":"t"
+            },
+            {
+                "val":"extract",
+                "key":"x"
+            },
+            {
+                "val":"specifies filename",
+                "key":"f"
+            },
+            {
+                "val":"use zip/gzip",
+                "key":"z"
+            },
+            {
+                "val":"bzip2 Compression",
+                "key":"j"
+            },
+            {
+                "val":"do not overwrite",
+                "key":"k"
+            },
+            {
+                "val":"files from file",
+                "key":"T"
+            },
+            {
+                "val":"ask for confirmation",
+                "key":"w"
+            },
+            {
+                "val":"verbose",
+                "key":"v"
+            },
+            {
+                "val":"compress file and rename to file.gz",
+                "key":"gzip file"
+            },
+            {
+                "val":"decompress file.gz",
+                "key":"gzip -d file.gz"
+            }
+        ],
+        "Shortcuts":[
+            {
+                "val":"backgrounds current command",
+                "key":"[ctrl] [c]"
+            },
+            {
+                "val":"stops current command",
+                "key":"[ctrl] [z]"
+            },
+            {
+                "val":"log out of current session",
+                "key":"[ctrl] [d]"
+            },
+            {
+                "val":"erases one word in current line",
+                "key":"[ctrl] [w]"
+            },
+            {
+                "val":"erases whole line",
+                "key":"[ctrl] [u]"
+            },
+            {
+                "val":"reverse lookup of previous commands",
+                "key":"[Ctrl] [r]"
+            },
+            {
+                "val":"repeat last command",
+                "key":"!!"
+            },
+            {
+                "val":"log out of current session",
+                "key":"exit"
+            }
+        ]
+    }
+}

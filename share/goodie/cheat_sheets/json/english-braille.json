@@ -1,0 +1,198 @@
+{
+    "id": "english_braille_cheat_sheet",
+    "name": "English Braille",
+    "description": "English Braille, also known as Grade-2 Braille,is the braille alphabet used for English",
+    "metadata": {
+        "sourceName": "EnglishBraille",
+        "sourceUrl": "https://en.wikipedia.org/wiki/English_braille"
+    },
+    "template_type": "code",
+    "section_order": [
+        "Alphabet (A-L)",
+        "Alphabet (M-Z)",
+        "Digit",
+        "Formatting Marks"
+    ],
+    "sections": {
+        "Alphabet (A-L)": [
+            {
+                "val": "a",
+                "key": "⠁"
+            },
+            {
+                "val": "b",
+                "key": "⠃"
+            },
+            {
+                "val": "c",
+                "key": "⠉"
+            },
+            {
+                "val": "d",
+                "key": "⠙"
+            },
+            {
+                "val": "e",
+                "key": "⠑"
+            },
+            {
+                "val": "f",
+                "key": "⠋"
+            },
+            {
+                "val": "g",
+                "key": "⠛"
+            },
+            {
+                "val": "h",
+                "key": "⠓"
+            },
+            {
+                "val": "i",
+                "key": "⠊"
+            },
+            {
+                "val": "j",
+                "key": "⠚"
+            },
+            {
+                "val": "k",
+                "key": "⠅"
+            },
+            {
+                "val": "l",
+                "key": "⠇"
+            }
+        ],
+        "Alphabet (M-Z)": [
+            {
+                "val": "m",
+                "key": "⠍"
+            },
+            {
+                "val": "n",
+                "key": "⠝"
+            },
+            {
+                "val": "o",
+                "key": "⠕"
+            },
+            {
+                "val": "p",
+                "key": "⠏"
+            },
+            {
+                "val": "q",
+                "key": "⠟"
+            },
+            {
+                "val": "r",
+                "key": "⠗"
+            },
+            {
+                "val": "s",
+                "key": "⠎"
+            },
+            {
+                "val": "t",
+                "key": "⠞"
+            },
+            {
+                "val": "u",
+                "key": "⠥"
+            },
+            {
+                "val": "v",
+                "key": "⠧"
+            },
+            {
+                "val": "w",
+                "key": "⠺"
+            },
+            {
+                "val": "x",
+                "key": "⠭"
+            },
+            {
+                "val": "y",
+                "key": "⠽"
+            },
+            {
+                "val": "z",
+                "key": "⠵"
+            }
+        ],
+        "Digit": [
+            {
+                "val": "0",
+                "key": "⠚"
+            },
+            {
+                "val": "1",
+                "key": "⠁"
+            },
+            {
+                "val": "2",
+                "key": "⠃"
+            },
+            {
+                "val": "3",
+                "key": "⠉"
+            },
+            {
+                "val": "4",
+                "key": "⠙"
+            },
+            {
+                "val": "5",
+                "key": "⠑"
+            },
+            {
+                "val": "6",
+                "key": "⠋"
+            },
+            {
+                "val": "7",
+                "key": "⠛"
+            },
+            {
+                "val": "8",
+                "key": "⠓"
+            },
+            {
+                "val": "9",
+                "key": "⠊"
+            }
+        ],
+        "Formatting Marks": [
+            {
+                "val": "number sign marks the beginning of a sequence of number(s)",
+                "key": "⠼"
+            },
+            {
+                "val": "letter sign force the end of a series of numbers",
+                "key": "⠰"
+            },
+            {
+                "val": "4a",
+                "key": "⠼⠙⠰⠁"
+            },
+            {
+                "val": "capitalization sign marks the following letter to be capitalized",
+                "key": "⠠"
+            },
+            {
+                "val": "DuckDuckGo",
+                "key": "⠠⠙⠥⠉⠅⠠⠙⠥⠉⠅⠠⠛⠕"
+            },
+            {
+                "val": "double capitalization sign marks the following word to be in all caps",
+                "key": "⠠⠠"
+            },
+            {
+                "val": "DDG",
+                "key": "⠠⠠⠙⠙⠛"
+            }
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+<ul>
+  {{#each items}}
+    <li class="text--primary">
+      <div class="cheatsheet__key">{{key}}</div>
+      <div class="cheatsheet__value text--secondary">{{val}}</div>
+      {{#if trn}}
+        <div class="cheatsheet__translit text--secondary"><em>{{trn}}</em></div>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

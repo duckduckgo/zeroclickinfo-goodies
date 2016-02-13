@@ -1,0 +1,100 @@
+{
+    "id": "angularjs_cheat_sheet",
+    "name": "AngularJS",
+    "description": "A quick reference of AngularJS directives",
+    "metadata": {
+        "sourceName": "AngularJS",
+        "sourceUrl": "https://docs.angularjs.org/api/ng/directive"
+    },
+    "aliases": [
+        "angular",
+        "angular js"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Directives",
+        "Directives (continued)"
+    ],
+    "sections": {
+        "Directives": [
+            {
+                "key": "ngJq",
+                "val": "Use this directive to force the angular.element library"
+            },
+            {
+                "key": "ngCsp",
+                "val": "Angular has some feature that can break CSP(Content Security Policy)rules"
+            },
+            {
+                "key": "ngClick",
+                "val": "The ngClick directive allows you to specify custom behavior when an element is clicked"
+            },
+            {
+                "key": "ngDisabled",
+                "val": "This directive sets the disabled attribute on the element if the expression inside ngDisabled evaluates to truthy"
+            },
+            {
+                "key": "ngMousedown",
+                "val": "The ngMousedown directive allows you to specify custom behavior on mousedown event"
+            },
+            {
+                "key": "ngMouseup",
+                "val": "Specify custom behavior on mouseup event"
+            },
+            {
+                "key": "ngMouseover",
+                "val": "Specify custom behavior on mouseover event"
+            },
+            {
+                "key": "ngMouseenter",
+                "val": "Specify custom behavior on mouseover event"
+            },
+            {
+                "key": "ngMouseleave",
+                "val": "Specify custom behavior on mouseleave event"
+            }
+        ],
+        "Directives (continued)": [
+            {
+                "key": "ngMousemove",
+                "val": "Specify custom behavior on mousemove event"
+            },
+            {
+                "key": "ngKeydown",
+                "val": "Specify custom behavior on keydown event"
+            },
+            {
+                "key": "ngKeyup",
+                "val": "Specify custom behavior on keyup event"
+            },
+            {
+                "key": "ngKeypress",
+                "val": "Specify custom behavior on keypress event"
+            },
+            {
+                "key": "ngSubmit",
+                "val": "Enables binding angular expressions to onsubmit events"
+            },
+            {
+                "key": "ngFocus",
+                "val": "Specify custom behavior on focus event"
+            },
+            {
+                "key": "ngBlur",
+                "val": "Specify custom behavior on blur event"
+            },
+            {
+                "key": "ngCopy",
+                "val": "Specify custom behavior on copy event"
+            },
+            {
+                "key": "ngCut",
+                "val": "Specify custom behavior on cut event"
+            },
+            {
+                "key": "ngPaste",
+                "val": "Specify custom behavior on paste event"
+            }
+          ]
+     }
+}

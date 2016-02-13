@@ -1,0 +1,242 @@
+# If the text and HTML versions can be reasonably generated from the same format
+# use title.  If info_url is included, the words surrounded with  will be linked
+#
+# in the HTML version.  The url will be appended to the text version.
+#
+# Otherwise, include both text and html keys.
+#
+# If more than one keyword applies, add an aliases key with an array ref of string aliases.
+---
+about:
+  title: "Want to know more about us?"
+  subtitle: "Visit our About page"
+  url: https://duckduckgo.com/about
+ads:
+  aliases:
+    - businessmodel
+    - advertisements
+  title: "Interested in advertising on DuckDuckGo?"
+  subtitle: "Learn more about DuckDuckGo advertising and affiliates"
+  url: https://duck.co/help/company/advertising-and-affiliates
+api:
+  title: "Interested in using our Instant Answers?"
+  subtitle: "Learn more about the DuckDuckGo Instant Answer API"
+  url: https://duckduckgo.com/api
+app:
+  aliases:
+    - ios
+    - android
+    - mobile
+    - download
+  title: "Looking for our app?"
+  url: https://duckduckgo.com/app/
+bangs:
+  aliases:
+    - bang
+    - newbang
+    - newbangs
+  title: "Search thousands of sites directly from DuckDuckGo."
+  subtitle: "Learn more about !bangs (or submit a new one!)"
+  url: https://duckduckgo.com/bang
+blog:
+  title: "Want to stay up to date with DuckDuckGo?"
+  subtitle: "Visit the official DuckDuckGo blog"
+  url: https://duck.co/blog
+chrome:
+  title: "Need help with the Chrome browser?"
+  subtitle: "Visit the DuckDuckgo help page for Chrome"
+  url: https://duck.co/help/desktop/chrome
+community:
+  title: "Join our growing community"
+  url: http://duckduckhack.com/
+develop:
+  aliases:
+    - developers
+    - improve
+    - relevancy
+    - contribute
+    - contributing
+    - hack
+    - hacking
+    - developer
+  title: "Want to improve our search results?"
+  subtitle: "Visit DuckDuckHack to learn more"
+  url: http://duckduckhack.com/
+doodle:
+  title: "Sometimes Dax gets dressed up for special occassions"
+  subtitle: "View our past holiday logos"
+  url: https://duck.co/help/settings/holiday-logos
+duck:
+  aliases:
+    - dax
+    - whosdax
+    - whoisdax
+    - whostheduck
+    - whoistheduck
+    - mirrormirroronthewallwhosthefairestofthemall
+  title: "Hi! I'm Dax"
+  image: "https://duckduckgo.com/assets/logo_header.v101.png"
+engine:
+  title: "DuckDuckGo. The search engine that doesn't track you"
+  url: https://duckduckgo.com/
+facebook:
+  title: "Looking for us on Facebook?"
+  subtitle: "Visit the official DuckDuckGo Facebook page"
+  url: https://www.facebook.com/duckduckgo
+fathead:
+  title: "Interested in creating a Fathead Instant Answer?"
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html#fathead-instant-answers/
+firefox:
+  title: "Need help with the Firefox browser?"
+  subtitle: "Visit the DuckDuckGo help page for Firefox"
+  url: https://duck.co/help/desktop/firefox
+goodies:
+  title: "Interested in creating a Goodie Instant Answer?"
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html
+help:
+  title: "Need some help?"
+  subtitle: "Visit our help page"
+  url: https://duck.co/help
+hiring:
+  aliases:
+    - job
+    - jobs
+  title: "Interested in working with us?"
+  subtitle: "Visit our hiring page for more info"
+  url: https://duck.co/help/company/hiring
+ia:
+  aliases:
+    - instantanswer
+    - instantanswers
+  title: "DuckDuckGo's Instant Answers display helpful information at the top of the search page (like this box)"
+  subtitle: "Suggest, develop and learn more about Instant Answers at DuckDuckHack"
+  url: http://duckduckhack.com/
+ie:
+  aliases:
+    - internetexplorer
+  title: "Need help with the Internet Explorer browser?"
+  subtitle: "Visit the DuckDuckGo help page for Internet Explorer"
+  url: https://duck.co/help/desktop/internet-explorer
+irc:
+  title: "Want to chat with us on IRC?"
+  subtitle: "Visit #duckduckgo on irc.freenode.net"
+  url: http://webchat.freenode.net/?channels=duckduckgo
+longtail:
+  title: "Interested in creating a Longtail Instant Answer?"
+  subtitle: "Visit our documentation"
+  url: http://docs.duckduckhack.com/welcome/determining-ia-type.html#longtail-instant-answers/
+opensource:
+  title: "Looking for the DuckDuckGo open source projects?"
+  subtitle: "Learn more about open source at DuckDuckGo"
+  url: http://duckduckhack.com/
+opera:
+  title: "Need help with the Opera browser?"
+  subtitle: "Visit the DuckDuckGo help page for Opera"
+  url: https://duck.co/help/desktop/opera
+partnership:
+  title: "Interested in working with DuckDuckGo?"
+  subtitle: "Learn more about DuckDuckGo partnerships"
+  url: https://duck.co/help/company/partnerships
+press:
+  title: "Curious to know who's talking about DuckDuckGo?"
+  subtitle: "Visit our press page"
+  url: https://duck.co/help/company/press
+privacy:
+  title: "Want to know more about the DuckDuckGo's privacy policy?"
+  subtitle: "Read our privacy policy here"
+  url: https://duckduckgo.com/privacy
+remove:
+  aliases:
+    - removing
+    - removal
+  title: "Want to remove DuckDuckGo from your browser? (We're sorry to see you go!)"
+  subtitle: "Learn how here"
+  url: https://duck.co/help/desktop
+safari:
+  title: "Need help with the Safari browser?"
+  subtitle: "Visit DuckDuckGo's Safari help page"
+  url: https://duck.co/help/desktop/safari
+settings:
+  title: "Want to adjust your settings?"
+  subtitle: "Visit the DuckDuckGo settings page"
+  url: https://duckduckgo.com/settings
+short:
+  aliases:
+    - shorturl
+    - shortdomain
+  title: "Need a quicker way to visit DuckDuckGo?"
+  subtitle: "You can also find us at https://ddg.gg"
+  url: https://ddg.gg
+spice:
+  title: "Interested in creating a Spice Instant Answer?"
+  subtitle: "Visit our documentation"
+  url: https://github.com/duckduckgo/zeroclickinfo-spice
+spread:
+  title: "Interested in spreading the word?"
+  subtitle: "Visit DuckDuckGo's Spread page"
+  url: https://duckduckgo.com/spread
+swag:
+  aliases:
+    - merch
+    - merchandise
+    - shirt
+    - shirts
+    - tshirt
+    - tshirts
+    - t-shirt
+    - t-shirts
+    - tee
+    - tees
+    - t
+    - sticker
+    - stickers
+  title: "Looking for DuckDuckGo gear? (Thanks for the support!)"
+  subtitle: "Check out the DuckDuckGo store for t-shirts, stickers, and other items"
+  url: https://duck.co/help/community/swag
+syntax:
+  title: "Need some help with searching?"
+  subtitle: "Learn about DuckDuckGo's search syntax"
+  url: https://duck.co/help/results/syntax
+tor:
+  aliases:
+    - hiddenservice
+    - onion
+    - onionservice
+    - torhiddenservice
+  title: "DuckDuckGo is available on Tor"
+  subtitle: "Visit our onion address"
+  url: http://3g2upl4pq6kufc4m.onion
+traffic:
+  title: "Looking for our traffic stats?"
+  subtitle: "Visit the DuckDuckGo traffic page"
+  url: https://duckduckgo.com/traffic.html
+translation:
+  aliases:
+    - translations
+    - language
+    - languages
+  title: "Interested in translating DuckDuckGo?"
+  subtitle: "Get started now"
+  url: https://duck.co/translate
+twitter:
+  title: "Looking for us on Twitter?"
+  subtitle: "Follow us on @duckduckgo"
+  url: https://twitter.com/duckduckgo
+xmpp:
+  title: "Looking for the DuckDuckGo XMPP Service?"
+  subtitle: "Learn how to get connected now!"
+  url: https://duck.co/blog/using-pidgin-with-xmpp-jabber
+zci:
+  aliases:
+    - zeroclickinfo
+    - zeroclick
+    - 0click
+    - 0clickinfo
+    - zero 0
+    - zero click info
+    - zero-click info
+  title: "Zero Click Info is another term for our Instant Answers that show above the search results"
+  subtitle: "Learn more about Instant Answers"
+  url: http://duckduckhack.com

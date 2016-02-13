@@ -1,0 +1,219 @@
+{
+  "id" : "turkish_cheat_sheet",
+  "name" : "Turkish Cheat Sheet",
+  "description" : "Basic Turkish words and phrases",
+  "metadata" : {
+    "sourceName" : "Linguanaut",
+    "sourceUrl" : "http://www.linguanaut.com/english_turkish.htm"
+  },
+  "template_type": "language",
+  "section_order" : ["Basics", "Etiquette", "Getting Help", "Travelling", "Going out for dinner"],
+  "sections" : {
+    "Basics" : [
+      {
+        "val" : "Merhaba",
+        "key" : "Hello"
+      },
+      {
+        "val" : "Nasılsınız?",
+        "key" : "How are you?"
+      },
+      {
+        "val" : "İyiyim, teşekkür ederim!",
+        "key" : "I'm fine, thanks!"
+      },
+      {
+        "val" : "Adınız nedir?",
+        "key" : "What's your name?"
+      },
+      {
+        "val" : "Benim adım …",
+        "key" : "My name is …"
+      },
+      {
+        "val" : "Nerelisiniz?",
+        "key" : "Where are you from?"
+      },
+      {
+        "val" : "Hoşgeldiniz",
+        "key" : "Welcome"
+      }
+    ],
+    "Etiquette" : [
+      {
+        "val" : "Günaydın",
+        "key" : "Good Morning"
+      },
+      {
+        "val" : "İyi akşamlar",
+        "key" : "Good Evening"
+      },
+      {
+        "val" : "İyi geceler",
+        "key" : "Good night"
+      },
+      {
+        "val" : "Teşekkürler",
+        "key" : "Thank you"
+      },
+      {
+        "val" : "Rica ederim",
+        "key" : "You're welcome"
+      },
+      {
+        "val" : "Özür dilerim",
+        "key" : "I'm sorry"
+      },
+      {
+        "val" : "Lütfen!",
+        "key" : "Please!"
+      },
+      {
+        "val" : "Tebrikler!",
+        "key" : "Congratulations!"
+      },
+      {
+        "val" : "İyi şanslar!",
+        "key" : "Good luck!"
+      },
+      {
+        "val" : "Çok yaşa!",
+        "key" : "Bless you!"
+      }
+    ],
+    "Getting Help" : [
+      {
+        "val" : "Yardım edebilir misiniz?",
+        "key" : "Can you help me?"
+      },
+      {
+        "val" : "Pardon / Bakabilir misiniz?",
+        "key" : "Excuse me!"
+      },
+      {
+        "val" : "Tekrar edebilir misiniz?",
+        "key" : "Repeat, please."
+      },
+      {
+        "val" : "Daha yavaş konuşabilir misiniz?",
+        "key" : "Can you please speak slower?"
+      },
+      {
+        "val" : "\"X\" Türkçede nasıl söylenir?",
+        "key" : "How do you say \"X\" in Turkish?"
+      },
+      {
+        "val" : "İngilizce konuşabiliyor musunuz?",
+        "key" : "Do you speak English?"
+      },
+      {
+        "val" : "Bunu yazabilir misiniz?",
+        "key" : "Can you write that down?"
+      },
+      {
+        "val" : "Polis çağırın!",
+        "key" : "Call the police!"
+      },
+      {
+        "val" : "Doktora ihtiyacım var!",
+        "key" : "I need a doctor!"
+      },
+      {
+        "val" : "Ambulans çağırın!",
+        "key" : "Call an ambulance!"
+      },
+      {
+        "val" : "Tehlike içerisindeyim!",
+        "key" : "I am in danger!"
+      },
+      {
+        "val" : "Yangın!",
+        "key" : "Fire!"
+      },
+      {
+        "val" : "Dur!",
+        "key" : "Stop!"
+      }
+    ],
+    "Travelling" : [
+      {
+        "val" : "Nerede?",
+        "key" : "Where?"
+      },
+      {
+        "val" : "Uzak mı?",
+        "key" : "Is it far?"
+      },
+      {
+        "val" : "Düz gidin.",
+        "key" : "Go straight ahead."
+      },
+      {
+        "val" : "Sola dönün.",
+        "key" : "Turn left."
+      },
+      {
+        "val" : "Sağa dönün.",
+        "key" : "Turn right."
+      },
+      {
+        "val" : "Çıkış nerede?",
+        "key" : "Where is the exit?"
+      },
+      {
+        "val" : "Burada durabilir misiniz?",
+        "key" : "Stop here please."
+      },
+      {
+        "val" : "Nerede taksi bulabilirim?",
+        "key" : "Where can I find the taxis?"
+      },
+      {
+        "val" : "Nasıl taksi çağırabilirim?",
+        "key" : "How can I get a taxi?"
+      },
+      {
+        "val" : "Şehir haritanız var mı?",
+        "key" : "Do you have a city map?"
+      }
+    ],
+    "Going out for dinner" : [
+      {
+        "val" : "Ara sıcak",
+        "key" : "Entrée"
+      },
+      {
+        "val" : "Ana yemek",
+        "key" : "Main dish"
+      },
+      {
+        "val" : "Tatlı",
+        "key" : "Dessert"
+      },
+      {
+        "val" : "Hesabı alabilir miyim?",
+        "key" : "The check please!"
+      },
+      {
+        "val" : "Bir bardak su alabilir miyim?",
+        "key" : "A glass of water please."
+      },
+      {
+        "val" : "Bir fincan kahve alabilir miyim?",
+        "key" : "A cup of coffee please."
+      },
+      {
+        "val" : "İki kişilik masa, lütfen.",
+        "key" : "A table for two please."
+      },
+      {
+        "val" : "Menü alabilir miyim?",
+        "key" : "Can I get a menu, please?"
+      },
+      {
+        "val" : "Nerede güzel bir restoran bulabilirim?",
+        "key" : "Where can I find a good restaurant?"
+      }
+    ]
+  }
+}

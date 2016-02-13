@@ -1,0 +1,30 @@
+.zci--figlet h3 {
+    display: block;
+    word-wrap: normal;
+    white-space: pre;
+    overflow: auto;
+    font-family: monospace;
+    font-weight: normal;
+    background-color: inherit;
+    border: 0;
+    height: auto;
+    width: 100%;
+    padding-left: 0px;
+    outline: none;
+}
+
+.zci--figlet h4 {
+    font-family: monospace;
+}
+
+@media screen and (max-width:768px) {
+    .zci--figlet h3 {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .zci--figlet h3 {
+        font-size: 5px;
+    }
+}

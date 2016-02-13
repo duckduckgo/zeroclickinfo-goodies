@@ -1,0 +1,464 @@
+{
+    "id": "gimp_cheat_sheet", 
+    "name": "GIMP",
+    "description": "Keyboard shortcuts for GIMP (GNU Image Manipulation Program) graphics editor", 
+    "metadata": { 
+        "sourceName": "Jeffkayser",
+        "sourceUrl": "https://jeffkayser.com/static/cheatsheets/cheatsheet_gimp.png"
+    },
+    "template_type": "keyboard",
+    "section_order": [  
+        "Tools",
+        "File",
+        "Dialogs",
+        "View",
+        "Edit",
+        "Layers",
+        "Selections",
+        "Filters",
+        "Zoom Tool",
+        "Help"
+    ],
+    "sections": {
+        "Help": [
+            {
+                "key": "F1", 
+                "val": "Help"
+            },
+            {
+                "key": "[Shift] [F1]",
+                "val": "Context Help"
+            }
+        ],
+        "Zoom Tool": [
+            {
+                "key": "click",
+                "val": "Zoom in"               
+            }, 
+            {
+                "key": "[Ctrl] [click]",
+                "val": "Zoom out"
+            },
+            {
+                "key": "mouse drag",
+                "val": "Zoom into the area"
+            }
+        ],
+        "Filters": [
+            {
+                "key": "[Ctrl] [click]",
+                "val": "Repeat last filter"
+            },
+            {
+                "key": "[Shift] [Ctrl] [F]",
+                "val": "Reshow last filter"
+            }
+        ],
+        "Selections": [
+            {
+                "key": "[Ctrl] [T]",
+                "val": "Toggle selections"
+            },
+            {
+                "key": "[Ctrl] [A]",
+                "val": "Select all"
+            },
+            {
+                "key": "[Shift] [Ctrl] [A]",
+                "val": "Select none"
+            },
+            {
+                "key": "[Ctrl] [I]",
+                "val": "Invert selection"
+            },
+            {
+                "key": "[Shift] [Ctrl] [L]",
+                "val": "Float selection"
+            },
+            {
+                "key": "[Shift] [V]",
+                "val": "Path to selection"
+            }
+        ],
+        "Layers": [
+            {
+                "key": "[PgUp] or [Ctrl] [Tab]",
+                "val": "Select the layer above"
+            },
+            {
+                "key": "[PgDn] or [Shift] [Ctrl] [Tab]",
+                "val": "Select the layer below"
+            },
+            {
+                "key": "Home",
+                "val": "Select the first layer"
+            },
+            {
+                "key": "End",
+                "val": "Select the last layer"
+            },
+            {
+                "key": "[Ctrl] [M]",
+                "val": "Merge visible layers"
+            },
+            {
+                "key": "[Ctrl] [H]",
+                "val": "Anchor layer"
+            }
+        ],
+        "Edit": [
+            {
+                "key": "[Ctrl] [Z]",
+                "val": "Undo"
+            },
+            {
+                "key": "[Ctrl] [Y]",
+                "val": "Redo"
+            },
+            {
+                "key": "[Ctrl] [C]",
+                "val": "Copy selection"
+            },
+            {
+                "key": "[Ctrl] [X]",
+                "val": "Cut selection"
+            },
+            {
+                "key": "[Ctrl] [V]",
+                "val": "Paste clipboard"
+            },
+            {
+                "key": "Del",
+                "val": "Erase selection"
+            },
+            {
+                "key": "[Shift] [Ctrl] [C]",
+                "val": "Named copy selection"
+            },
+            {
+                "key": "[Shift] [Ctrl] [X]",
+                "val": "Named cut selection"
+            },
+            {
+                "key": "[Shift] [Ctrl] [V]",
+                "val": "Named paste clipboard"
+            },
+            {
+                "key": "[Ctrl] [,]",
+                "val": "Fill with FG color"
+            },
+            {
+                "key": "[Ctrl] [.]",
+                "val": "Fill with BG color"
+            },
+            {
+                "key": "[Ctrl] [;]",
+                "val": "Fill with Pattern"
+            }
+        ],
+        "Tools": [
+            {
+                "key": "R",
+                "val": "Rect Select"
+            },
+            {
+                "key": "E",
+                "val": "Ellipse Select"
+            },
+            {
+                "key": "F",
+                "val": "Free Select"
+            },
+            {
+                "key": "Z",
+                "val": "Fuzzy Select"
+            },
+            {
+                "key": "[Shift] [O]",
+                "val": "Select by Color"
+            },
+            {
+                "key": "I",
+                "val": "Scissors"
+            },
+            {
+                "key": "B",
+                "val": "Paths"
+            },
+            {
+                "key": "O",
+                "val": "Color Picker"
+            },
+            {
+                "key": "M",
+                "val": "Move"
+            },
+            {
+                "key": "[Shift] [C]",
+                "val": "Crop and Resize"
+            },
+            {
+                "key": "[Shift] [R]",
+                "val": "Rotate"
+            },
+            {
+                "key": "[Shift] [T]",
+                "val": "Scale"
+            },
+            {
+                "key": "[Shift] [S]",
+                "val": "Shear"
+            },
+            {
+                "key": "[Shift] [P]",
+                "val": "Perspective"
+            },
+            {
+                "key": "[Shift] [F]",
+                "val": "Flip"
+            },
+            {
+                "key": "T",
+                "val": "Text"
+            },
+            {
+                "key": "[Shift] [B]",
+                "val": "Bucket Fill"
+            },
+            {
+                "key": "L",
+                "val": "Blend"
+            },
+            {
+                "key": "N",
+                "val": "Pencil"
+            },
+            {
+                "key": "P",
+                "val": "Paintbrush"
+            },
+            {
+                "key": "[Shift] [E]",
+                "val": "Eraser"
+            },
+            {
+                "key": "A",
+                "val": "Airbrush"
+            },
+            {
+                "key": "K",
+                "val": "Ink"
+            },
+            {
+                "key": "C",
+                "val": "Clone"
+            },
+            {
+                "key": "[Shift] [U]",
+                "val": "Blur / Sharpen"
+            },
+            {
+                "key": "S",
+                "val": "Smudge"
+            },
+            {
+                "key": "[Shift] [D]",
+                "val": "Dodge / Burn"
+            },
+            {
+                "key": "X",
+                "val": "Swap Colors"
+            },
+            {
+                "key": "D",
+                "val": "Default Colors"
+            }
+        ],
+        "File": [
+            {
+                "key": "[Ctrl] [N]",
+                "val": "New image"
+            },
+            {
+                "key": "[Ctrl] [O]",
+                "val": "Open image"
+            },
+            {
+                "key": "[Ctrl] [Alt] [O]",
+                "val": "Open image as new layer"
+            },
+            {
+                "key": "[Ctrl] [D]",
+                "val": "Duplicate"
+            },
+            {
+                "key": "[Ctrl] [1]",
+                "val": "Open recent image #1"
+            },
+            {
+                "key": "[Ctrl] [2]",
+                "val": "Open recent image #2"
+            },
+            {
+                "key": "[Ctrl] [3]",
+                "val": "Open recent image #3"
+            },
+            {
+                "key": "[Ctrl] [4]",
+                "val": "Open recent image #4"
+            },
+            {
+                "key": "[Ctrl] [5]",
+                "val": "Open recent image #5"
+            },
+            {
+                "key": "[Ctrl] [6]",
+                "val": "Open recent image #6"
+            },
+            {
+                "key": "[Ctrl] [7]",
+                "val": "Open recent image #7"
+            },
+            {
+                "key": "[Ctrl] [8]",
+                "val": "Open recent image #8"
+            },
+            {
+                "key": "[Ctrl] [9]",
+                "val": "Open recent image #9"
+            },
+            {
+                "key": "[Ctrl] [10]",
+                "val": "Open recent image #10"
+            },
+            {
+                "key": "[Ctrl] [S]",
+                "val": "Save image"
+            },
+            {
+                "key": "[Shift] [Ctrl] [S]",
+                "val": "Save under a new name"
+            },
+            {
+                "key": "[Ctrl] [Q]",
+                "val": "Quit"
+            }
+        ],
+        "Dialogs": [
+            {
+                "key": "[Ctrl] [L]",
+                "val": "Layers"
+            },
+            {
+                "key": "[Shift] [Ctrl] [B]",
+                "val": "Brushes"
+            },
+            {
+                "key": "[Shift] [Ctrl] [P]",
+                "val": "Patterns"
+            },
+            {
+                "key": "[Ctrl] [G]",
+                "val": "Gradients"
+            },
+            {
+                "key": "[Alt] [F4] or [Ctrl] [W]",
+                "val": "Close the window"
+            },
+            {
+                "key": "Tab",
+                "val": "Jump to next widget"
+            },
+            {
+                "key": "[Shift] [Tab]",
+                "val": "Jump to previous widget"
+            },
+            {
+                "key": "Enter",
+                "val": "Set the new value"
+            },
+            {
+                "key": "[Space] or [Enter]",
+                "val": "Activate current button or list"
+            },
+            {
+                "key": "[Ctrl] [Alt] [PgUp] / [PgDn]",
+                "val": "Switch tabs (multi-tab dialog)"
+            },
+            {
+                "key": "[Shift] [L]",
+                "val": "Open Location"
+            },
+            {
+                "key": "[Alt] [Up]",
+                "val": "Up-Folder"
+            },
+            {
+                "key": "[Alt] [Down]",
+                "val": "Down-Folder"
+            },
+            {
+                "key": "[Alt] [Home]",
+                "val": "Home-Folder"
+            },
+            {
+                "key": "Esc",
+                "val": "Close Dialog"
+            }
+        ],
+        "View": [
+            {
+                "key": "F10",
+                "val": "Main Menu"
+            },
+            {
+                "key": "[Shift] [F10] or [right click]",
+                "val": "Drop-down Menu"
+            },
+            {
+                "key": "F11",
+                "val": "Toggle fullscreen"
+            },
+            {
+                "key": "[Shift] [Q]",
+                "val": "Toggle quickmask"
+            },
+            {
+                "key": "[Ctrl] [W]",
+                "val": "Close document window"
+            },
+            {
+                "key": "+",
+                "val": "Zoom in"
+            },
+            {
+                "key": "-",
+                "val": "Zoom out"
+            },
+            {
+                "key": "1",
+                "val": "Zoom 1:1"
+            },
+            {
+                "key": "[Ctrl] [E]",
+                "val": "Shrink wrap"
+            },
+            {
+                "key": "mouse drag",
+                "val": "Drag off a ruler to create guide"
+            },
+            {
+                "key": "[Ctrl] [mouse drag]",
+                "val": "Drag a sample point out of the rulers"
+            },
+            {
+                "key": "[Shift] [Ctrl] [R]",
+                "val": "Toggle rulers"
+            },
+            {
+                "key": "[Shift] [Ctrl] [T]",
+                "val": "Toggle guides"
+            }
+        ]
+    }
+}

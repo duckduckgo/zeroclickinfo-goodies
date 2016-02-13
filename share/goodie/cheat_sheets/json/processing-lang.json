@@ -1,0 +1,241 @@
+{
+    "id": "processing_lang_cheat_sheet",
+    "name": "Processing",
+    "description": "Processing is a flexible language for learning how to code within the context of the visual arts",
+    "metadata": {
+        "sourceName": "Processing",
+        "sourceUrl": "https://www.processing.org/reference/"
+    },
+    "template_type": "terminal",
+    "aliases": [ "processing" ],
+    "section_order": [
+        "Basic Structure",
+        "Basic Functions",
+        "Random and Noise",
+        "Matrix Operations",
+        "Basic Geometry",
+        "Image Functions",
+        "Events Capture",
+        "Array Functions",
+        "Color Functions",
+        "Camera"
+    ],
+    "sections": {
+        "Basic Structure": [
+            {
+                "key": "void setup()",
+                "val": "Runs once"
+            },
+            {
+                "key": "void draw()",
+                "val": "Runs repeatedly during execution"
+            }
+        ],
+        "Basic Functions": [
+            {
+                "key": "size(width,height)",
+                "val": "Sets main window size"
+            },
+            {
+                "key": "background(color)",
+                "val": "Sets window background color"
+            },
+            {
+                "key": "smooth()",
+                "val": "Set antialiasing on"
+            },
+            {
+                "key": "frameRate(fps)",
+                "val": "Sets the fps"
+            },
+            {
+                "key": "println(string)",
+                "val": "Writes a string to console"
+            }
+        ],
+        "Random and Noise": [
+            {
+                "key": "random(low,high)",
+                "val": "Returns a random value within the limits"
+            },
+            {
+                "key": "randomSeed(seed)",
+                "val": "Changes random seed"
+            },
+            {
+                "key": "noise(value)",
+                "val": "Returns a value in Perlin Noise sequence"
+            },
+            {
+                "key": "noiseDetail(octaves)",
+                "val": "Sets threshold for noise function result"
+            },
+            {
+                "key": "noiseSeed(seed)",
+                "val": "Changes noise seed"
+            }
+        ],
+        "Matrix Operations": [
+            {
+                "key": "pushMatrix()",
+                "val": "Saves currrent matrix"
+            },
+            {
+                "key": "popMatrix()",
+                "val": "Go back to last saved matrix"
+            },
+            {
+                "key": "translate(posx,posy)",
+                "val": "Move anchor point to position"
+            },
+            {
+                "key": "scale(x.y)",
+                "val": "Scale the plane"
+            },
+            {
+                "key": "shearX(radians)",
+                "val": "Apply a shear on x-axis"
+            },
+            {
+                "key": "rotate(X)",
+                "val": "Apply rotation to x-axis"
+            },
+            {
+                "key": "pushStyle()",
+                "val": "Saves current style"
+            }
+        ],
+        "Basic Geometry": [
+            {
+                "key": "ellipse(posx,posy,width,height)",
+                "val": "Draws ellipse with given values"
+            },
+            {
+                "key": "rect(posx,posy,width,height)",
+                "val": "Draws rectangle with given values"
+            },
+            {
+                "key": "line(posx,posy,width,height)",
+                "val": "Draws line with given values"
+            }
+        ],
+        "Image Functions": [
+            {
+                "key": "image(img,posx,posy,width,height)",
+                "val": "Draws an image in main screen"
+            },
+            {
+                "key": "loadImage(filename)",
+                "val": "Initializes PI image"
+            },
+            {
+                "key": "tint(color)",
+                "val": "Sets tint value"
+            },
+            {
+                "key": "noTint()",
+                "val": "Disables image tint"
+            },
+            {
+                "key": "saveFrame(filename)",
+                "val": "Saves screenshot to current frame"
+            }
+        ],
+        "Events Capture": [
+            {
+                "key": "void mousePressed()",
+                "val": "Runs when mouse button is pressed"
+            },
+            {
+                "key": "void mouseClick()",
+                "val": "Runs when mouse button is pressed and released"
+            },
+            {
+                "key": "void mouseMoved()",
+                "val": "Runs everytime mouse is moved"
+            },
+            {
+                "key": "void keyPressed()",
+                "val": "Runs on key press event"
+            },
+            {
+                "key": "void keyReleased()",
+                "val": "Runs on key release event"
+            }
+        ],
+        "Array Functions": [
+            {
+                "key": "append(array,value)",
+                "val": "Add a value to an array"
+            },
+            {
+                "key": "concat(a,b)",
+                "val": "Concatenates two strings"
+            },
+            {
+                "key": "expand(array,newSize)",
+                "val": "Expands array's size value"
+            },
+            {
+                "key": "reverse(array)",
+                "val": "Reverses an array"
+            },
+            {
+                "key": "shorten(array)",
+                "val": "Reduces array size"
+            },
+            {
+                "key": "sort(array)",
+                "val": "Sort array in increasing order"
+            }
+        ],
+        "Color Functions": [
+            {
+                "key": "colorMode(mode)",
+                "val": "Set color mode"
+            },
+            {
+                "key": "red(color)",
+                "val": "Returns red value of color"
+            },
+            {
+                "key": "hue(color)",
+                "val": "Returns hue value of color"
+            },
+            {
+                "key": "saturation(color)",
+                "val": "Returns saturation value of color"
+            },
+            {
+                "key": "alpha(color)",
+                "val": "Returns transparency value of color"
+            },
+            {
+                "key": "lerpColor(color1,color2,moment)",
+                "val": "Returns a color value between two colors"
+            }
+        ],
+        "Camera": [
+            {
+                "key": "beginCamera()",
+                "val": "Runs when mouse button is pressed"
+            },
+            {
+                "key": "camera()",
+                "val": "Runs when mouse button is pressed and released"
+            },
+            {
+                "key": "perspective()",
+                "val": "Runs everytime mouse is moved"
+            },
+            {
+                "key": "printCamera()",
+                "val": "Runs on key press event"
+            },
+            {
+                "key": "printProjection()",
+                "val": "Runs on key release event"
+            }
+        ]
+    }
+}

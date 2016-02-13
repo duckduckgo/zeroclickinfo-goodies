@@ -1,0 +1,120 @@
+{
+    "id": "tmux_cheat_sheet",
+    "name": "tmux",
+    "description": "Terminal multiplexer",
+    "metadata": {
+        "sourceName": "OpenBSD",
+        "sourceUrl": "http://www.openbsd.org/cgi-bin/man.cgi?query=tmux&sektion=1"
+    },
+    "template_type": "keyboard",
+    "section_order": ["Session Control (from the command line)", "Pane Control", "Window Control", "Copy-Mode (Emacs)", "Copy-Mode (vi)"],
+    "sections": {
+        "Copy-Mode (Emacs)": [{
+            "val": "Enter copy mode",
+            "key": "[Ctrl-B] {\\[}"
+        }, {
+            "val": "Bottom of history",
+            "key": "[Ctrl-B] [M-<]"
+        }, {
+            "val": "Top of histroy",
+            "key": "[Ctrl-B] [M->]"
+        }, {
+            "val": "Copy selection",
+            "key": "[Ctrl-B] [M-w]"
+        }, {
+            "val": "Paste selection",
+            "key": "[Ctrl-B] [M-y]"
+        }, {
+            "val": "Cursor Up",
+            "key": "[Ctrl-B] [Up]"
+        }, {
+            "val": "Cursor Down",
+            "key": "[Ctrl-B] [Down]"
+        }, {
+            "val": "Cursor Left",
+            "key": "[Ctrl-B] [Left]"
+        }, {
+            "val": "Cursor Right",
+            "key": "[Ctrl-B] [Right]"
+        }],
+        "Window Control": [{
+            "val": "Create new window",
+            "key": "[Ctrl-B] [c]"
+        }, {
+            "val": "Detach from session",
+            "key": "[Ctrl-B] [d]"
+        }, {
+            "val": "Rename a window",
+            "key": "[Ctrl-B] [,]"
+        }, {
+            "val": "List windows",
+            "key": "[Ctrl-B] [w]"
+        }],
+        "Pane Control": [{
+            "val": "Split pane horizontally",
+            "key": "[Ctrl-B] [\"]"
+        }, {
+            "val": "Split pane vertically",
+            "key": "[Ctrl-B] [%]"
+        }, {
+            "val": "Next pane",
+            "key": "[Ctrl-B] [o]"
+        }, {
+            "val": "Previous pane",
+            "key": "[Ctrl-B] [;]"
+        }, {
+            "val": "Kill current pane",
+            "key": "[Ctrl-B] [x]"
+        }, {
+            "val": "Kill all panes but the current one",
+            "key": "[Ctrl-B] [!]"
+        }, {
+            "val": "Swap panes",
+            "key": "[Ctrl-B] [Ctrl-O]"
+        }, {
+            "val": "Display clock",
+            "key": "[Ctrl-B] [t]"
+        }, {
+            "val": "Transpose two letters (delete and paste)",
+            "key": "[Ctrl-B] [q]"
+        }],
+        "Copy-Mode (vi)": [{
+            "val": "Enter copy mode",
+            "key": "[Ctrl-B] {\\[}"
+        }, {
+            "val": "Bottom of history",
+            "key": "[Ctrl-B] [G]"
+        }, {
+            "val": "Top of histroy",
+            "key": "[Ctrl-B] [g]"
+        }, {
+            "val": "Copy selection",
+            "key": "[Ctrl-B] [Enter]"
+        }, {
+            "val": "Paste selection",
+            "key": "[Ctrl-B] [p]"
+        }, {
+            "val": "Cursor Up",
+            "key": "[Ctrl-B] [k]"
+        }, {
+            "val": "Cursor Down",
+            "key": "[Ctrl-B] [j]"
+        }, {
+            "val": "Cursor Left",
+            "key": "[Ctrl-B] [h]"
+        }, {
+            "val": "Cursor Right",
+            "key": "[Ctrl-B] [l]"
+        }],
+        "Session Control (from the command line)": [{
+            "val": "Start a new session",
+            "key": "tmux"
+        }, {
+            "val": "Re-attach a detached session",
+            "key": "tmux attach"
+        }, {
+            "val": "Re-attach a detached session (and detach it from elsewhere)",
+            "key": "tmux attach -d"
+        }]
+    }
+}

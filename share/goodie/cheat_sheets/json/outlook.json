@@ -1,0 +1,135 @@
+{
+    "id": "outlook_cheat_sheet",
+    "name": "Microsoft Outlook",
+    "description": "Overview of common commands for Microsoft Outlook",
+    "metadata": {
+        "sourceName": "Microsoft Help",
+        "sourceUrl": "http://windows.microsoft.com/en-IN/windows/outlook/keyboard-shortcuts"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Write email",
+        "Read email",
+        "Go to",
+        "Email actions",
+        "Email list"
+    ],
+    "sections": {
+        "Write email": [{
+            "key": "[N] / [Ctrl] [N]",
+            "val": "Create a new email"
+        }, {
+            "key": "[Alt] [.]",
+            "val": "Show address book"
+        },{
+            "key": "[Alt] [S] / [Ctrl] [Enter]",
+            "val": "Send an email"
+        }, {
+            "key": "R",
+            "val": "Reply to an email"
+        },{
+            "key": "[Shift] [R]",
+            "val": "Reply all to an email"
+        }, {
+            "key": "[Shift] [F]",
+            "val": "Forward an email"
+        }, {
+            "key": "[Alt] [+]",
+            "val": "Show address book"
+        }, {
+            "key": "F7",
+            "val": "Check spelling"
+        }, {
+            "key": "[Ctrl] [Y]",
+            "val": "Insert an Emoji"
+        }, {
+            "key": "[Ctrl] [S]",
+            "val": "Save draft"
+        }],
+        "Read email": [{
+            "key": "[O] / [Enter]",
+            "val": "Open an email"
+        }, {
+            "key": "[Shift], [I]",
+            "val": "Show blocked content"
+        }, {
+            "key": "/",
+            "val": "Search your email"
+        }, {
+            "key": "Esc",
+            "val": "Close an email"
+        }, {
+            "key": "X",
+            "val": "Expand/Collapse a conversation"
+        }],
+        "Go to": [{
+            "key": "[G], [I]",
+            "val": "Go to Inbox"
+        }, {
+            "key": "[G], [I]",
+            "val": "Show blocked content"
+        }, {
+            "key": "[G], [D]",
+            "val": "Go to Drafts"
+        }, {
+            "key": "[G], [S]",
+            "val": "Go to Sent"
+        }, {
+            "key": "[Ctrl] [3]",
+            "val": "Go to People"
+        }],
+        "Email actions": [{
+            "key": "Del",
+            "val": "Delete an email"
+        }, {
+            "key": "E",
+            "val": "Archive"
+        }, {
+            "key": "J",
+            "val": "Mark an email as junk"
+        }, {
+            "key": "V",
+            "val": "Move to a folder"
+        }, {
+            "key": "[Shift] [E]",
+            "val": "New folder"
+        },{
+            "key": "C",
+            "val": "Categorize an email"
+        }, {
+            "key": "[Shift] [G]",
+            "val": "New Category"
+        }, {
+            "key": "Y",
+            "val": "Remove all categories"
+        }, {
+            "key": "Q",
+            "val": "Mark an email as read"
+        }, {
+            "key": "U",
+            "val": "Mark an email as unread"
+        }, {
+            "key": "Insert",
+            "val": "Flag an email"
+        }, {
+            "key": "[Shift] [P]",
+            "val": "Print an email"
+        }],
+        "Email list": [{
+            "key": "[S], [A]",
+            "val": "Select all emails"
+        }, {
+            "key": "[S], [N]",
+            "val": "Deselect all emails"
+        }, {
+            "key": "[Ctrl] [.] / [↓]",
+            "val": "Move selection downwards"
+        }, {
+            "key": "[Ctrl] [,] / [↑]",
+            "val": "Move selection upwards"
+        }, {
+            "key": "[M] / [F9]",
+            "val": "Refresh"
+        }]
+    }
+}

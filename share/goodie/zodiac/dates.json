@@ -1,0 +1,65 @@
+{
+  "zodiacs": [
+      {
+        "name": "aries",
+        "start": [21, 3],
+        "end": [20, 4]
+      },
+      {
+        "name": "taurus",
+        "start": [21, 4],
+        "end": [20, 5]
+      },
+      {
+        "name": "gemini",
+        "start": [21, 5],
+        "end": [21, 6]
+      },
+      {
+        "name": "cancer",
+        "start": [22, 6],
+        "end": [22, 7]
+      },
+      {
+        "name": "leo",
+        "start": [23, 7],
+        "end": [23, 8]
+      },
+      {
+        "name": "virgo",
+        "start": [24, 8],
+        "end": [22, 9]
+      },
+      {
+        "name": "libra",
+        "start": [23, 9],
+        "end": [22, 10]
+      },
+      {
+        "name": "scorpius",
+        "start": [23, 10],
+        "end": [21, 11]
+      },
+      {
+        "name": "sagittarius",
+        "start": [22, 11],
+        "end": [21, 12]
+      },
+      {
+        "name": "capricornus",
+        "start": [22, 12],
+        "end": [19, 1]
+      },
+      {
+        "name": "aquarius",
+        "start": [20, 1],
+        "end": [18, 2]
+      },
+      {
+        "name": "pisces",
+        "start": [19, 2],
+        "end": [20, 3]
+      }
+  ]
+}
+

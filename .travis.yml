@@ -1,0 +1,27 @@
+---
+sudo: false
+env:
+  - PERL_LWP_SSL_VERIFY_HOSTNAME=0
+cache:
+  directories:
+    - $HOME/.cpanm
+    - $HOME/.nvm
+    - $HOME/perl5/perlbrew/perls/5.16/lib
+    - /var/tmp
+addons:
+  apt_packages:
+    - libmpfr-dev
+before_install:
+  - export HARNESS_OPTIONS=j10:c HARNESS_TIMER=1
+  - git config --global user.name "Dist Zilla Plugin TravisCI"
+  - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
+install:
+  - npm install -g uglify-js handlebars
+  - cpanm --quiet --notest Dist::Zilla
+  - dzil authordeps | grep -ve '^\W' | xargs -n 5 -P 10 cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
+  - dzil listdeps | grep -ve '^\W' | cpanm --quiet --notest --mirror http://www.cpan.org/ --mirror http://duckpan.org
+language: perl
+perl:
+  - 5.16
+script:
+  - dzil smoke --release --author

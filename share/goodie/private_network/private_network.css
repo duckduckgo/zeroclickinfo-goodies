@@ -1,0 +1,11 @@
+.zci--answer .private_network .record__cell__key {
+    padding: 0.4em;
+}
+
+.zci--answer .private_network .record__cell__value {
+    padding: 0.4em;
+}
+
+.zci--answer .private_network p {
+    padding: 0;
+}

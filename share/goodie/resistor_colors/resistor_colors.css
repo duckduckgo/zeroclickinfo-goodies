@@ -1,0 +1,57 @@
+.zci--resistor_colors .resistor-band {
+    padding: 5px 15px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 5px;
+    color: #333;
+}
+
+.zci--resistor_colors .resistor-band.gold {
+    background-color: #f2d374;
+}
+
+.zci--resistor_colors .resistor-band.black {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.zci--resistor_colors .resistor-band.brown {
+    background-color: #726258;
+    color: #ffffff;
+}
+
+.zci--resistor_colors .resistor-band.red {
+    background-color: #de4f33;
+    color: #ffffff;
+}
+
+.zci--resistor_colors .resistor-band.orange {
+    background-color: #f4912d;
+}
+
+.zci--resistor_colors .resistor-band.yellow {
+    background-color: #ffc240;
+}
+
+.zci--resistor_colors .resistor-band.green {
+    background-color: #8fc547;
+}
+
+.zci--resistor_colors .resistor-band.blue {
+    background-color: #4a96d1;
+    color: #ffffff;
+}
+
+.zci--resistor_colors .resistor-band.purple {
+    background-color: #8461a7;
+    color: #ffffff;
+}
+
+.zci--resistor_colors .resistor-band.gray {
+    background-color: #a0a0a0;
+    color: #ffffff;
+}
+
+.zci--resistor_colors .resistor-band.white {
+    background-color: #ffffff;
+}

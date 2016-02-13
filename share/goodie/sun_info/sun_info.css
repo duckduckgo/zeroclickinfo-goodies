@@ -1,0 +1,38 @@
+.zci--sun_info .sun_info--title .ddgsi {
+    margin-right: 0.5em;
+}
+
+.zci--sun_info .c-base__content {
+	margin-top: 0.1em;
+}
+
+.zci--sun_info span {
+	vertical-align: middle;
+}
+
+.zci--sun_info .sun_info--times {
+    margin: 0 0.5em;
+    position: relative;
+    top: -3px;
+}
+
+.zci--sun_info .sun_info--setbox {
+    padding-left: 0.5em;
+}
+
+.zci--sun_info  .sun_info--border-right {
+	border-right: 1px solid #ccc;
+	padding-right: 2px;
+}
+
+.zci--sun_info .sun_info--setbox,
+.zci--sun_info .sun_info--risebox {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+}
+
+.zci--sun_info .sun_info--timeboxes {
+    display: inline-block;
+    height: 25px;
+}

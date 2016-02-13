@@ -1,0 +1,194 @@
+{
+    "id": "github_cheat_sheet",
+    "name": "GitHub",
+    "description":"GitHub is a Web-based Git repository hosting service. It offers all of the distributed revision control and source code management",
+    "metadata": {
+        "sourceName": "GitHub Help",
+        "sourceUrl": "https://help.github.com/articles/using-keyboard-shortcuts/"
+    },
+    "template_type": "keyboard",
+    "section_order": [
+        "Site Wide Shortcuts",
+        "Repositories",
+        "Source Code Browsing",
+        "Issues",
+        "Browsing Commits",
+        "Commit List",
+        "Dashboards",
+        "Notifications",
+        "Pull Request List",
+        "Network Graph"
+    ],
+    "sections": {
+        "Site Wide Shortcuts": [{
+            "val": "Focus search bar",
+            "key": "s"
+        }, {
+            "val": "Go to Notifications",
+            "key": "[g] [n]"
+        }, {
+            "val": "Go to Dashboard",
+            "key": "[g] [d]"
+        }, {
+            "val": "Show keyboard shortcuts",
+            "key": "?"
+        }, {
+            "val": "Move selection down",
+            "key": "j"
+        }, {
+            "val": "Move selection up",
+            "key": "k"
+        }, {
+            "val": "Toggle selection",
+            "key": "x"
+        }, {
+            "val": "Open selection",
+            "key": "[o] / [enter]"
+        }],
+
+        "Repositories": [{
+            "val": "Go to Code",
+            "key": "[g] [c]"
+        }, {
+            "val": "Go to Issues",
+            "key": "[g] [i]"
+        }, {
+            "val": "Go to Pull Requests",
+            "key": "[g] [p]"
+        }, {
+            "val": "Go to Wiki",
+            "key": "[g] [w]"
+        }],
+
+        "Source Code Browsing": [{
+            "val": "Activates the file finder",
+            "key": "t"
+        }, {
+            "val": "Jump to line",
+            "key": "l"
+        }, {
+            "val": "Switch branch/tag",
+            "key": "w"
+        }, {
+            "val": "Expand URL to its canonical form (permanent link)",
+            "key": "y"
+        }, {
+            "val": "Show/hide all inline notes",
+            "key": "i"
+        }],
+
+        "Issues": [{
+            "val": "Create an issue",
+            "key": "c"
+        }, {
+            "val": "Focus the issues search bar",
+            "key": "/"
+        }, {
+            "val": "Filter by or edit labels",
+            "key": "l"
+        }, {
+            "val": "Filter by or edit milestones",
+            "key": "m"
+        }, {
+            "val": "Filter by or edit assignee",
+            "key": "a"
+        }, {
+            "val": "Reply (quoting selected text)",
+            "key": "r"
+        }, {
+            "val": "Submit comment",
+            "key": "[Ctrl] [enter]"
+        }, {
+            "val": "Preview comment",
+            "key": "[Ctrl] [Shift] [p]"
+        }, {
+            "val": "Go fullscreen",
+            "key": "[Ctrl] [Shift] [l]"
+        }],
+
+        "Browsing Commits": [{
+            "val": "Submit comment",
+            "key": "[Ctrl] [enter]"
+        }, {
+            "val": "Close form",
+            "key": "escape"
+        }, {
+            "val": "Parent commit",
+            "key": "p"
+        }, {
+            "val": "Other parent commit",
+            "key": "o"
+        }],
+
+        "Commit List": [{
+            "val": "Expand URL to its canonical form",
+            "key": "y"
+        }],
+
+        "Dashboards": [{
+            "val": "Go to your issues",
+            "key": "[g] [i]"
+        }, {
+            "val": "Go to your pull requests",
+            "key": "[g] [p]"
+        }],
+
+
+        "Notifications": [{
+            "val": "Mark as read",
+            "key": "[e] / [I] / [y]"
+        }, {
+            "val": "Mute thread",
+            "key": "[Shift] [m]"
+        }],
+
+        "Pull Request List": [{
+            "val": "Reply (quoting selected text)",
+            "key": "r"
+        }, {
+            "val": "Focus the pull request search bar",
+            "key": "/"
+        }, {
+            "val": "Open issue",
+            "key": "[o] / [enter]"
+        }, {
+            "val": "Submit comment",
+            "key": "[Ctrl] [enter]"
+        }, {
+            "val": "Preview comment",
+            "key": "[Ctrl] [Shift] [p]"
+        }, {
+            "val": "Go fullscreen",
+            "key": "[Ctrl] [Shift] [l]"
+        }],
+
+        "Network Graph": [{
+            "val": "Scroll left",
+            "key": "[←] / [h]"
+        }, {
+            "val": "Scroll right",
+            "key": "[→] / [l]"
+        }, {
+            "val": "Scroll down",
+            "key": "[↓] / [j]"
+        }, {
+            "val": "Scroll up",
+            "key": "[↑] / [k]"
+        }, {
+            "val": "Scroll all the way down",
+            "key": "[Shift] ( [↓] / [j] )"
+        }, {
+            "val": "Scroll all the way left",
+            "key": "[Shift] ( [←] / [h] )"
+        }, {
+            "val": "Scroll all the way right",
+            "key": "[Shift] ( [→] / [l] )"
+        }, {
+            "val": "Scroll all the way up",
+            "key": "[Shift] ( [↑] / [k] )"
+        }, {
+            "val": "Scroll all the way down",
+            "key": "[Shift] ( [↓] / [j] )"
+        }]
+    }
+}

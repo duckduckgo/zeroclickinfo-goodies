@@ -1,0 +1,325 @@
+{
+    "id": "nmap_cheat_sheet",
+    "name": "Nmap",
+    "description": "Quick reference for Nmap Security Scanner",
+    "metadata": {
+        "sourceName": "Nmap Cookbook",
+        "sourceUrl": "http://nmapcookbook.blogspot.com.br/2010/02/nmap-cheat-sheet.html"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Basic Scanning Techniques",
+        "Discovery Options",
+        "Advanced Scanning Functions",
+        "Port Scanning Options",
+        "Timing Options",
+        "Firewall Evasion Techniques",
+        "Output Options",
+        "Troubleshooting and Debugging",
+        "Nmap Scripting Engine",
+        "Ndiff"
+    ],
+    "sections": {
+        "Basic Scanning Techniques": [{
+            "val": "Scan a single target",
+            "key": "nmap \\[target\\]"
+        }, {
+            "val": "Scan multiple targets",
+            "key": "nmap \\[target1, target2, etc\\]"
+        }, {
+            "val": "Scan a list of targets",
+            "key": "nmap -iL \\[list.txt\\]"
+        }, {
+            "val": "Scan a range of hosts",
+            "key": "nmap \\[range of IP adresses\\]"
+        }, {
+            "val": "Scan an entire subnet",
+            "key": "nmap \\[ip address/cdir\\]"
+        }, {
+            "val": "Scan random hosts",
+            "key": "nmap -iR \\[number\\]"
+        }, {
+            "val": "Excluding targets from a scan",
+            "key": "nmap \\[targets\\] --exclude \\[targets\\]"
+        }, {
+            "val": "Excluding targets using a list",
+            "key": "nmap \\[targets\\] --excludefile \\[list.txt\\]"
+        }, {
+            "val": "Perform an agressive scan",
+            "key": "nmap -A \\[target\\]"
+        }, {
+            "val": "Scan an IPv6 target",
+            "key": "nmap -6 \\[target\\]"
+        }],
+        "Discovery Options": [{
+            "val": "Perform a ping-only scan",
+            "key": "nmap -sn \\[target\\]"
+        }, {
+            "val": "Don't ping",
+            "key": "nmap -Pn \\[target\\]"
+        }, {
+            "val": "TCP SYN ping",
+            "key": "nmap -PS \\[target\\]"
+        }, {
+            "val": "TCP ACK ping",
+            "key": "nmap -PA \\[target\\]"
+        }, {
+            "val": "UDP ping",
+            "key": "nmap -PU \\[target\\]"
+        }, {
+            "val": "SCTP INIT ping",
+            "key": "nmap -PY \\[target\\]"
+        }, {
+            "val": "ICMP echo ping",
+            "key": "nmap -PE \\[target\\]"
+        }, {
+            "val": "ICMP timestamp ping",
+            "key": "nmap -PP \\[target\\]"
+        }, {
+            "val": "ICMP address mask ping",
+            "key": "nmap -PM \\[target\\]"
+        }, {
+            "val": "IP protocol ping",
+            "key": "nmap -PO \\[target\\]"
+        }, {
+            "val": "ARP ping",
+            "key": "nmap -PR \\[target\\]"
+        }, {
+            "val": "Traceroute",
+            "key": "nmap --traceroute \\[target\\]"
+        }, {
+            "val": "Force reverse DNS resolution",
+            "key": "nmap -R \\[target\\]"
+        }, {
+            "val": "Disable reverse DNS resolution",
+            "key": "nmap -n \\[target\\]"
+        }, {
+            "val": "Alternative DNS lookup",
+            "key": "nmap --system-dns \\[target\\]"
+        }, {
+            "val": "Manually specify DNS server(s)",
+            "key": "nmap --dns-servers \\[servers\\] \\[target\\]"
+        }, {
+            "val": "Create a host list",
+            "key": "nmap -sL \\[targets\\]"
+        }],
+        "Advanced Scanning Functions": [{
+            "val": "TCP SYN scan",
+            "key": "nmap -sS \\[target\\]"
+        }, {
+            "val": "TCP connect scan",
+            "key": "nmap -sT \\[target\\]"
+        }, {
+            "val": "UDP scan",
+            "key": "nmap -sU \\[target\\]"
+        }, {
+            "val": "TCP NULL scan",
+            "key": "nmap -sN \\[target\\]"
+        }, {
+            "val": "TCP FIN scan",
+            "key": "nmap -sF \\[target\\]"
+        }, {
+            "val": "Xmas scan",
+            "key": "nmap -sA \\[target\\]"
+        }, {
+            "val": "TCP ACK scan",
+            "key": "nmap -sA \\[target\\]"
+        }, {
+            "val": "Custom TCP scan",
+            "key": "nmap --scanflags \\[flags\\] \\[target\\]"
+        }, {
+            "val": "IP protocol scan",
+            "key": "nmap -sO \\[target\\]"
+        }, {
+            "val": "Send raw ethernet packets",
+            "key": "nmap --send-eth \\[target\\]"
+        }, {
+            "val": "Send IP packets",
+            "key": "nmap --send-ip \\[target\\]"
+        }],
+        "Port Scanning Options": [{
+            "val": "Perform a fast scan",
+            "key": "nmap -F \\[target\\]"
+        }, {
+            "val": "Scan specific ports",
+            "key": "nmap -p \\[port(s)\\] \\[target\\]"
+        }, {
+            "val": "Scan ports by name",
+            "key": "nmap -p \\[port name(s)\\] \\[target\\]"
+        }, {
+            "val": "Scan ports by protocol",
+            "key": "nmap -sU -sT -p U:\\[ports\\],T:\\[ports\\] \\[target\\]"
+        }, {
+            "val": "Scan all ports",
+            "key": "nmap -p \"*\" \\[target\\]"
+        }, {
+            "val": "Scan top ports",
+            "key": "nmap --top-ports \\[number\\] \\[target\\]"
+        }, {
+            "val": "Perform a sequential port scan",
+            "key": "nmap -r \\[target\\]"
+        }, {
+            "val": "Attempt to guess an unknown OS",
+            "key": "nmap -O --osscan-guess \\[target\\]"
+        }, {
+            "val": "Service version detection",
+            "key": "nmap -sV \\[target\\]"
+        }, {
+            "val": "Troubleshooting version scans",
+            "key": "nmap -sV --version-trace \\[target\\]"
+        }, {
+            "val": "Perform a RPC scan",
+            "key": "nmap -sR \\[target\\]"
+        }],
+        "Timing Options": [{
+            "val": "Timing templates",
+            "key": "nmap -T\\[0-5\\] \\[target\\]"
+        }, {
+            "val": "Set the packet TTL",
+            "key": "nmap --ttl \\[time\\] \\[target\\]"
+        }, {
+            "val": "Minimum number of parallel operations",
+            "key": "nmap --min-parallelism \\[number\\] \\[target\\]"
+        }, {
+            "val": "Maximum number of parallel operations",
+            "key": "nmap --max-parallelism \\[number\\] \\[target\\]"
+        }, {
+            "val": "Minimum host group size",
+            "key": "nmap --min-hostgroup \\[number\\] \\[targets\\]"
+        }, {
+            "val": "Maximum host group size",
+            "key": "nmap --max-hostgroup \\[number\\] \\[targets\\]"
+        }, {
+            "val": "Maximum RTT timeout",
+            "key": "nmap --initial-rtt-timeout \\[time\\] \\[target\\]"
+        }, {
+            "val": "Initial RTT timeout",
+            "key": "nmap --max-rtt-timeout \\[TTL\\] \\[target\\]"
+        }, {
+            "val": "Maximum number of retries",
+            "key": "nmap --max-retries \\[number\\] \\[target\\]"
+        }, {
+            "val": "Host timeout",
+            "key": "nmap --host-timeout \\[time\\] \\[target\\]"
+        }, {
+            "val": "Minimum scan delay",
+            "key": "nmap --scan-delay \\[time\\] \\[target\\]"
+        }, {
+            "val": "Maximum scan delay",
+            "key": "nmap --max-scan-delay \\[time\\] \\[target\\]"
+        }, {
+            "val": "Minimum packet rate",
+            "key": "nmap --min-rate \\[number\\] \\[target\\]"
+        }, {
+            "val": "Maximum packet rate",
+            "key": "nmap --max-rate \\[number\\] \\[target\\]"
+        }, {
+            "val": "Defeat reset rate limits",
+            "key": "nmap --defeat-rst-ratelimit \\[target]"
+        }],
+        "Firewall Evasion Techniques": [{
+            "val": "Fragment packets",
+            "key": "nmap -f \\[target\\]"
+        }, {
+            "val": "Specify a specific MTU",
+            "key": "nmap --mtu \\[MTU\\] \\[target\\]"
+        }, {
+            "val": "Use a decoy",
+            "key": "nmap -D RND:\\[number\\] \\[target\\]"
+        }, {
+            "val": "Idle zombie scan",
+            "key": "nmap -sI \\[zombie\\] \\[target\\]"
+        }, {
+            "val": "Manually specify a source port",
+            "key": "nmap --source-port \\[port\\] \\[target\\]"
+        }, {
+            "val": "Append random data",
+            "key": "nmap --data-length \\[size\\] \\[target\\]"
+        }, {
+            "val": "Randomize target scan order",
+            "key": "nmap --randomize-hosts \\[target\\]"
+        }, {
+            "val": "Spoof MAC address",
+            "key": "nmap --spoof-mac \\[MAC|0|vendor\\] \\[target\\]"
+        }, {
+            "val": "Send bad checksums",
+            "key": "nmap --badsum \\[target\\]"
+        }],
+        "Output Options": [{
+            "val": "Save output to a text file",
+            "key": "nmap -oN \\[scan.txt\\] \\[target\\]"
+        }, {
+            "val": "Save output to a XML file",
+            "key": "nmap -oX \\[scan.xml\\] \\[target\\]"
+        }, {
+            "val": "Grepable output",
+            "key": "nmap -oG \\[scan.txt\\] \\[target\\]"
+        }, {
+            "val": "Output all supported file types",
+            "key": "nmap -oA \\[path\/filename\\] \\[target\\]"
+        }, {
+            "val": "Periodically display statistics",
+            "key": "nmap --stats-every \\[time\\] \\[target\\]"
+        }, {
+            "val": "1337 output",
+            "key": "nmap -oS \\[scan.txt\\] \\[target\\]"
+        }],
+        "Troubleshooting and Debugging": [{
+            "val": "Getting help",
+            "key": "nmap -h"
+        }, {
+            "val": "Display nmap version",
+            "key": "nmap -V"
+        }, {
+            "val": "Verbose output",
+            "key": "nmap -v \\[target\\]"
+        }, {
+            "val": "Debugging",
+            "key": "nmap -d \\[target\\]"
+        }, {
+            "val": "Display port state reason",
+            "key": "nmap --reason \\[target\\]"
+        }, {
+            "val": "Only display open ports",
+            "key": "nmap --open \\[target\\]"
+        }, {
+            "val": "Trace packets",
+            "key": "nmap --packet-trace \\[target\\]"
+        }, {
+            "val": "Display host networking",
+            "key": "nmap --iflist"
+        }, {
+            "val": "Specify a network interface",
+            "key": "nmap -e \\[interface\\] \\[target\\]"
+        }],
+        "Nmap Scripting Engine": [{
+            "val": "Execute individual scripts",
+            "key": "nmap --script \\[script.nse\\] \\[target\\]"
+        }, {
+            "val": "Execute multiple scripts",
+            "key": "nmap --script \\[expression\\] \\[target\\]"
+        }, {
+            "val": "Execute scripts by category",
+            "key": "nmap --script \\[category\\] \\[target\\]"
+        }, {
+            "val": "Execute multiple script categories",
+            "key": "nmap --script \\[category1,category2,etc\\]"
+        }, {
+            "val": "Troubleshoot scripts",
+            "key": "nmap --script \\[script\\] --script-trace \\[target\\]"
+        }, {
+            "val": "Update the script database",
+            "key": "nmap --script-updatedb"
+        }],
+        "Ndiff": [{
+            "val": "Comparison using Ndiff",
+            "key": "ndiff \\[scan1.xml\\] \\[scan2.xml\\]"
+        }, {
+            "val": "Ndiff verbose mode",
+            "key": "ndiff -v \\[scan1.xml\\] \\[scan2.xml\\]"
+        }, {
+            "val": "XML output mode",
+            "key": "ndiff --xml \\[scan1.xml\\] \\[scan2.xml\\]"
+        }]
+    }
+}

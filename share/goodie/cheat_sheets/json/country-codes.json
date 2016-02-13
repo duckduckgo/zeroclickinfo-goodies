@@ -1,0 +1,1089 @@
+{
+    "id": "country_codes_cheat_sheet",
+    "name": "Country codes (ISO 3166-1)",
+    "description": "Alpha-2 (two-letter) country codes are defined in ISO 3166-1 standard. The list contain english names, alpha-3 codes and numeric codes of the country too.",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/ISO_3166-1"
+    },
+    "aliases": [
+        "country code",
+        "iso 3166-1"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "Y",
+        "Z"
+    ],
+    "sections": {
+        "A": [
+            {
+                "key": "AD",
+                "val": "Andorra, AND/020"
+            },
+            {
+                "key": "AE",
+                "val": "United Arab Emirates, ARE/784"
+            },
+            {
+                "key": "AF",
+                "val": "Afghanistan, AFG/004"
+            },
+            {
+                "key": "AG",
+                "val": "Antigua and Barbuda, ATG/028"
+            },
+            {
+                "key": "AI",
+                "val": "Anguilla, AIA/660"
+            },
+            {
+                "key": "AL",
+                "val": "Albania, ALB/008"
+            },
+            {
+                "key": "AM",
+                "val": "Armenia, ARM/051"
+            },
+            {
+                "key": "AO",
+                "val": "Angola, AGO/024"
+            },
+            {
+                "key": "AQ",
+                "val": "Antarctica, ATA/010"
+            },
+            {
+                "key": "AR",
+                "val": "Argentina, ARG/032"
+            },
+            {
+                "key": "AS",
+                "val": "American Samoa, ASM/016"
+            },
+            {
+                "key": "AT",
+                "val": "Austria, AUT/040"
+            },
+            {
+                "key": "AU",
+                "val": "Australia, AUS/036"
+            },
+            {
+                "key": "AW",
+                "val": "Aruba, ABW/533"
+            },
+            {
+                "key": "AX",
+                "val": "Åland Islands, ALA/248"
+            },
+            {
+                "key": "AZ",
+                "val": "Azerbaijan, AZE/031"
+            }
+        ],
+        "B": [
+            {
+                "key": "BA",
+                "val": "Bosnia and Herzegovina, BIH/070"
+            },
+            {
+                "key": "BB",
+                "val": "Barbados, BRB/052"
+            },
+            {
+                "key": "BD",
+                "val": "Bangladesh, BGD/050"
+            },
+            {
+                "key": "BE",
+                "val": "Belgium, BEL/056"
+            },
+            {
+                "key": "BF",
+                "val": "Burkina Faso, BFA/854"
+            },
+            {
+                "key": "BG",
+                "val": "Bulgaria, BGR/100"
+            },
+            {
+                "key": "BH",
+                "val": "Bahrain, BHR/048"
+            },
+            {
+                "key": "BI",
+                "val": "Burundi, BDI/108"
+            },
+            {
+                "key": "BJ",
+                "val": "Benin, BEN/204"
+            },
+            {
+                "key": "BL",
+                "val": "Saint Barthélemy, BLM/652"
+            },
+            {
+                "key": "BM",
+                "val": "Bermuda, BMU/060"
+            },
+            {
+                "key": "BN",
+                "val": "Brunei Darussalam, BRN/096"
+            },
+            {
+                "key": "BO",
+                "val": "Bolivia (Plurinational State of), BOL/068"
+            },
+            {
+                "key": "BQ",
+                "val": "Bonaire, Sint Eustatius and Saba, BES/535"
+            },
+            {
+                "key": "BR",
+                "val": "Brazil, BRA/076"
+            },
+            {
+                "key": "BS",
+                "val": "Bahamas, BHS/044"
+            },
+            {
+                "key": "BT",
+                "val": "Bhutan, BTN/064"
+            },
+            {
+                "key": "BV",
+                "val": "Bouvet Island, BVT/074"
+            },
+            {
+                "key": "BW",
+                "val": "Botswana, BWA/072"
+            },
+            {
+                "key": "BY",
+                "val": "Belarus, BLR/112"
+            },
+            {
+                "key": "BZ",
+                "val": "Belize, BLZ/084"
+            }
+        ],
+        "C": [
+            {
+                "key": "CA",
+                "val": "Canada, CAN/124"
+            },
+            {
+                "key": "CC",
+                "val": "Cocos (Keeling) Islands, CCK/166"
+            },
+            {
+                "key": "CD",
+                "val": "Congo (Democratic Republic of the), COD/180"
+            },
+            {
+                "key": "CF",
+                "val": "Central African Republic, CAF/140"
+            },
+            {
+                "key": "CG",
+                "val": "Congo, COG/178"
+            },
+            {
+                "key": "CH",
+                "val": "Switzerland, CHE/756"
+            },
+            {
+                "key": "CI",
+                "val": "Côte d'Ivoire, CIV/384"
+            },
+            {
+                "key": "CK",
+                "val": "Cook Islands, COK/184"
+            },
+            {
+                "key": "CL",
+                "val": "Chile, CHL/152"
+            },
+            {
+                "key": "CM",
+                "val": "Cameroon, CMR/120"
+            },
+            {
+                "key": "CN",
+                "val": "China, CHN/156"
+            },
+            {
+                "key": "CO",
+                "val": "Colombia, COL/170"
+            },
+            {
+                "key": "CR",
+                "val": "Costa Rica, CRI/188"
+            },
+            {
+                "key": "CU",
+                "val": "Cuba, CUB/192"
+            },
+            {
+                "key": "CV",
+                "val": "Cabo Verde, CPV/132"
+            },
+            {
+                "key": "CW",
+                "val": "Curaçao, CUW/531"
+            },
+            {
+                "key": "CX",
+                "val": "Christmas Island, CXR/162"
+            },
+            {
+                "key": "CY",
+                "val": "Cyprus, CYP/196"
+            },
+            {
+                "key": "CZ",
+                "val": "Czech Republic, CZE/203"
+            }
+        ],
+        "D": [
+            {
+                "key": "DE",
+                "val": "Germany, DEU/276"
+            },
+            {
+                "key": "DJ",
+                "val": "Djibouti, DJI/262"
+            },
+            {
+                "key": "DK",
+                "val": "Denmark, DNK/208"
+            },
+            {
+                "key": "DM",
+                "val": "Dominica, DMA/212"
+            },
+            {
+                "key": "DO",
+                "val": "Dominican Republic, DOM/214"
+            },
+            {
+                "key": "DZ",
+                "val": "Algeria, DZA/012"
+            }
+        ],
+        "E": [
+            {
+                "key": "EC",
+                "val": "Ecuador, ECU/218"
+            },
+            {
+                "key": "EE",
+                "val": "Estonia, EST/233"
+            },
+            {
+                "key": "EG",
+                "val": "Egypt, EGY/818"
+            },
+            {
+                "key": "EH",
+                "val": "Western Sahara, ESH/732"
+            },
+            {
+                "key": "ER",
+                "val": "Eritrea, ERI/232"
+            },
+            {
+                "key": "ES",
+                "val": "Spain, ESP/724"
+            },
+            {
+                "key": "ET",
+                "val": "Ethiopia, ETH/231"
+            }
+        ],
+        "F": [
+            {
+                "key": "FI",
+                "val": "Finland, FIN/246"
+            },
+            {
+                "key": "FJ",
+                "val": "Fiji, FJI/242"
+            },
+            {
+                "key": "FK",
+                "val": "Falkland Islands (Malvinas), FLK/238"
+            },
+            {
+                "key": "FM",
+                "val": "Micronesia (Federated States of), FSM/583"
+            },
+            {
+                "key": "FO",
+                "val": "Faroe Islands, FRO/234"
+            },
+            {
+                "key": "FR",
+                "val": "France, FRA/250"
+            }
+        ],
+        "G": [
+            {
+                "key": "GA",
+                "val": "Gabon, GAB/266"
+            },
+            {
+                "key": "GB",
+                "val": "United Kingdom of Great Britain and Northern Ireland, GBR/826"
+            },
+            {
+                "key": "GD",
+                "val": "Grenada, GRD/308"
+            },
+            {
+                "key": "GE",
+                "val": "Georgia, GEO/268"
+            },
+            {
+                "key": "GF",
+                "val": "French Guiana, GUF/254"
+            },
+            {
+                "key": "GG",
+                "val": "Guernsey, GGY/831"
+            },
+            {
+                "key": "GH",
+                "val": "Ghana, GHA/288"
+            },
+            {
+                "key": "GI",
+                "val": "Gibraltar, GIB/292"
+            },
+            {
+                "key": "GL",
+                "val": "Greenland, GRL/304"
+            },
+            {
+                "key": "GM",
+                "val": "Gambia, GMB/270"
+            },
+            {
+                "key": "GN",
+                "val": "Guinea, GIN/324"
+            },
+            {
+                "key": "GP",
+                "val": "Guadeloupe, GLP/312"
+            },
+            {
+                "key": "GQ",
+                "val": "Equatorial Guinea, GNQ/226"
+            },
+            {
+                "key": "GR",
+                "val": "Greece, GRC/300"
+            },
+            {
+                "key": "GS",
+                "val": "South Georgia and the South Sandwich Islands, SGS/239"
+            },
+            {
+                "key": "GT",
+                "val": "Guatemala, GTM/320"
+            },
+            {
+                "key": "GU",
+                "val": "Guam, GUM/316"
+            },
+            {
+                "key": "GW",
+                "val": "Guinea-Bissau, GNB/624"
+            },
+            {
+                "key": "GY",
+                "val": "Guyana, GUY/328"
+            }
+        ],
+        "H": [
+            {
+                "key": "HK",
+                "val": "Hong Kong, HKG/344"
+            },
+            {
+                "key": "HM",
+                "val": "Heard Island and McDonald Islands, HMD/334"
+            },
+            {
+                "key": "HN",
+                "val": "Honduras, HND/340"
+            },
+            {
+                "key": "HR",
+                "val": "Croatia, HRV/191"
+            },
+            {
+                "key": "HT",
+                "val": "Haiti, HTI/332"
+            },
+            {
+                "key": "HU",
+                "val": "Hungary, HUN/348"
+            }
+        ],
+        "I": [
+            {
+                "key": "ID",
+                "val": "Indonesia, IDN/360"
+            },
+            {
+                "key": "IE",
+                "val": "Ireland, IRL/372"
+            },
+            {
+                "key": "IL",
+                "val": "Israel, ISR/376"
+            },
+            {
+                "key": "IM",
+                "val": "Isle of Man, IMN/833"
+            },
+            {
+                "key": "IN",
+                "val": "India, IND/356"
+            },
+            {
+                "key": "IO",
+                "val": "British Indian Ocean Territory, IOT/086"
+            },
+            {
+                "key": "IQ",
+                "val": "Iraq, IRQ/368"
+            },
+            {
+                "key": "IR",
+                "val": "Iran (Islamic Republic of), IRN/364"
+            },
+            {
+                "key": "IS",
+                "val": "Iceland, ISL/352"
+            },
+            {
+                "key": "IT",
+                "val": "Italy, ITA/380"
+            }
+        ],
+        "J": [
+            {
+                "key": "JE",
+                "val": "Jersey, JEY/832"
+            },
+            {
+                "key": "JM",
+                "val": "Jamaica, JAM/388"
+            },
+            {
+                "key": "JO",
+                "val": "Jordan, JOR/400"
+            },
+            {
+                "key": "JP",
+                "val": "Japan, JPN/392"
+            }
+        ],
+        "K": [
+            {
+                "key": "KE",
+                "val": "Kenya, KEN/404"
+            },
+            {
+                "key": "KG",
+                "val": "Kyrgyzstan, KGZ/417"
+            },
+            {
+                "key": "KH",
+                "val": "Cambodia, KHM/116"
+            },
+            {
+                "key": "KI",
+                "val": "Kiribati, KIR/296"
+            },
+            {
+                "key": "KM",
+                "val": "Comoros, COM/174"
+            },
+            {
+                "key": "KN",
+                "val": "Saint Kitts and Nevis, KNA/659"
+            },
+            {
+                "key": "KP",
+                "val": "Korea (Democratic People's Republic of), PRK/408"
+            },
+            {
+                "key": "KR",
+                "val": "Korea (Republic of), KOR/410"
+            },
+            {
+                "key": "KW",
+                "val": "Kuwait, KWT/414"
+            },
+            {
+                "key": "KY",
+                "val": "Cayman Islands, CYM/136"
+            },
+            {
+                "key": "KZ",
+                "val": "Kazakhstan, KAZ/398"
+            }
+        ],
+        "L": [
+            {
+                "key": "LA",
+                "val": "Lao People's Democratic Republic, LAO/418"
+            },
+            {
+                "key": "LB",
+                "val": "Lebanon, LBN/422"
+            },
+            {
+                "key": "LC",
+                "val": "Saint Lucia, LCA/662"
+            },
+            {
+                "key": "LI",
+                "val": "Liechtenstein, LIE/438"
+            },
+            {
+                "key": "LK",
+                "val": "Sri Lanka, LKA/144"
+            },
+            {
+                "key": "LR",
+                "val": "Liberia, LBR/430"
+            },
+            {
+                "key": "LS",
+                "val": "Lesotho, LSO/426"
+            },
+            {
+                "key": "LT",
+                "val": "Lithuania, LTU/440"
+            },
+            {
+                "key": "LU",
+                "val": "Luxembourg, LUX/442"
+            },
+            {
+                "key": "LV",
+                "val": "Latvia, LVA/428"
+            },
+            {
+                "key": "LY",
+                "val": "Libya, LBY/434"
+            }
+        ],
+        "M": [
+            {
+                "key": "MA",
+                "val": "Morocco, MAR/504"
+            },
+            {
+                "key": "MC",
+                "val": "Monaco, MCO/492"
+            },
+            {
+                "key": "MD",
+                "val": "Moldova (Republic of), MDA/498"
+            },
+            {
+                "key": "ME",
+                "val": "Montenegro, MNE/499"
+            },
+            {
+                "key": "MF",
+                "val": "Saint Martin (French part), MAF/663"
+            },
+            {
+                "key": "MG",
+                "val": "Madagascar, MDG/450"
+            },
+            {
+                "key": "MH",
+                "val": "Marshall Islands, MHL/584"
+            },
+            {
+                "key": "MK",
+                "val": "Macedonia (the former Yugoslav Republic of), MKD/807"
+            },
+            {
+                "key": "ML",
+                "val": "Mali, MLI/466"
+            },
+            {
+                "key": "MM",
+                "val": "Myanmar, MMR/104"
+            },
+            {
+                "key": "MN",
+                "val": "Mongolia, MNG/496"
+            },
+            {
+                "key": "MO",
+                "val": "Macao, MAC/446"
+            },
+            {
+                "key": "MP",
+                "val": "Northern Mariana Islands, MNP/580"
+            },
+            {
+                "key": "MQ",
+                "val": "Martinique, MTQ/474"
+            },
+            {
+                "key": "MR",
+                "val": "Mauritania, MRT/478"
+            },
+            {
+                "key": "MS",
+                "val": "Montserrat, MSR/500"
+            },
+            {
+                "key": "MT",
+                "val": "Malta, MLT/470"
+            },
+            {
+                "key": "MU",
+                "val": "Mauritius, MUS/480"
+            },
+            {
+                "key": "MV",
+                "val": "Maldives, MDV/462"
+            },
+            {
+                "key": "MW",
+                "val": "Malawi, MWI/454"
+            },
+            {
+                "key": "MX",
+                "val": "Mexico, MEX/484"
+            },
+            {
+                "key": "MY",
+                "val": "Malaysia, MYS/458"
+            },
+            {
+                "key": "MZ",
+                "val": "Mozambique, MOZ/508"
+            }
+        ],
+        "N": [
+            {
+                "key": "NA",
+                "val": "Namibia, NAM/516"
+            },
+            {
+                "key": "NC",
+                "val": "New Caledonia, NCL/540"
+            },
+            {
+                "key": "NE",
+                "val": "Niger, NER/562"
+            },
+            {
+                "key": "NF",
+                "val": "Norfolk Island, NFK/574"
+            },
+            {
+                "key": "NG",
+                "val": "Nigeria, NGA/566"
+            },
+            {
+                "key": "NI",
+                "val": "Nicaragua, NIC/558"
+            },
+            {
+                "key": "NL",
+                "val": "Netherlands, NLD/528"
+            },
+            {
+                "key": "NO",
+                "val": "Norway, NOR/578"
+            },
+            {
+                "key": "NP",
+                "val": "Nepal, NPL/524"
+            },
+            {
+                "key": "NR",
+                "val": "Nauru, NRU/520"
+            },
+            {
+                "key": "NU",
+                "val": "Niue, NIU/570"
+            },
+            {
+                "key": "NZ",
+                "val": "New Zealand, NZL/554"
+            }
+        ],
+        "O": [
+            {
+                "key": "OM",
+                "val": "Oman, OMN/512"
+            }
+        ],
+        "P": [
+            {
+                "key": "PA",
+                "val": "Panama, PAN/591"
+            },
+            {
+                "key": "PE",
+                "val": "Peru, PER/604"
+            },
+            {
+                "key": "PF",
+                "val": "French Polynesia, PYF/258"
+            },
+            {
+                "key": "PG",
+                "val": "Papua New Guinea, PNG/598"
+            },
+            {
+                "key": "PH",
+                "val": "Philippines, PHL/608"
+            },
+            {
+                "key": "PK",
+                "val": "Pakistan, PAK/586"
+            },
+            {
+                "key": "PL",
+                "val": "Poland, POL/616"
+            },
+            {
+                "key": "PM",
+                "val": "Saint Pierre and Miquelon, SPM/666"
+            },
+            {
+                "key": "PN",
+                "val": "Pitcairn, PCN/612"
+            },
+            {
+                "key": "PR",
+                "val": "Puerto Rico, PRI/630"
+            },
+            {
+                "key": "PS",
+                "val": "Palestine, State of, PSE/275"
+            },
+            {
+                "key": "PT",
+                "val": "Portugal, PRT/620"
+            },
+            {
+                "key": "PW",
+                "val": "Palau, PLW/585"
+            },
+            {
+                "key": "PY",
+                "val": "Paraguay, PRY/600"
+            }
+        ],
+        "Q": [
+            {
+                "key": "QA",
+                "val": "Qatar, QAT/634"
+            }
+        ],
+        "R": [
+            {
+                "key": "RE",
+                "val": "Réunion, REU/638"
+            },
+            {
+                "key": "RO",
+                "val": "Romania, ROU/642"
+            },
+            {
+                "key": "RS",
+                "val": "Serbia, SRB/688"
+            },
+            {
+                "key": "RU",
+                "val": "Russian Federation, RUS/643"
+            },
+            {
+                "key": "RW",
+                "val": "Rwanda, RWA/646"
+            }
+        ],
+        "S": [
+            {
+                "key": "SA",
+                "val": "Saudi Arabia, SAU/682"
+            },
+            {
+                "key": "SB",
+                "val": "Solomon Islands, SLB/090"
+            },
+            {
+                "key": "SC",
+                "val": "Seychelles, SYC/690"
+            },
+            {
+                "key": "SD",
+                "val": "Sudan, SDN/729"
+            },
+            {
+                "key": "SE",
+                "val": "Sweden, SWE/752"
+            },
+            {
+                "key": "SG",
+                "val": "Singapore, SGP/702"
+            },
+            {
+                "key": "SH",
+                "val": "Saint Helena, Ascension and Tristan da Cunha, SHN/654"
+            },
+            {
+                "key": "SI",
+                "val": "Slovenia, SVN/705"
+            },
+            {
+                "key": "SJ",
+                "val": "Svalbard and Jan Mayen, SJM/744"
+            },
+            {
+                "key": "SK",
+                "val": "Slovakia, SVK/703"
+            },
+            {
+                "key": "SL",
+                "val": "Sierra Leone, SLE/694"
+            },
+            {
+                "key": "SM",
+                "val": "San Marino, SMR/674"
+            },
+            {
+                "key": "SN",
+                "val": "Senegal, SEN/686"
+            },
+            {
+                "key": "SO",
+                "val": "Somalia, SOM/706"
+            },
+            {
+                "key": "SR",
+                "val": "Suriname, SUR/740"
+            },
+            {
+                "key": "SS",
+                "val": "South Sudan, SSD/728"
+            },
+            {
+                "key": "ST",
+                "val": "Sao Tome and Principe, STP/678"
+            },
+            {
+                "key": "SV",
+                "val": "El Salvador, SLV/222"
+            },
+            {
+                "key": "SX",
+                "val": "Sint Maarten (Dutch part), SXM/534"
+            },
+            {
+                "key": "SY",
+                "val": "Syrian Arab Republic, SYR/760"
+            },
+            {
+                "key": "SZ",
+                "val": "Swaziland, SWZ/748"
+            }
+        ],
+        "T": [
+            {
+                "key": "TC",
+                "val": "Turks and Caicos Islands, TCA/796"
+            },
+            {
+                "key": "TD",
+                "val": "Chad, TCD/148"
+            },
+            {
+                "key": "TF",
+                "val": "French Southern Territories, ATF/260"
+            },
+            {
+                "key": "TG",
+                "val": "Togo, TGO/768"
+            },
+            {
+                "key": "TH",
+                "val": "Thailand, THA/764"
+            },
+            {
+                "key": "TJ",
+                "val": "Tajikistan, TJK/762"
+            },
+            {
+                "key": "TK",
+                "val": "Tokelau, TKL/772"
+            },
+            {
+                "key": "TL",
+                "val": "Timor-Leste, TLS/626"
+            },
+            {
+                "key": "TM",
+                "val": "Turkmenistan, TKM/795"
+            },
+            {
+                "key": "TN",
+                "val": "Tunisia, TUN/788"
+            },
+            {
+                "key": "TO",
+                "val": "Tonga, TON/776"
+            },
+            {
+                "key": "TR",
+                "val": "Turkey, TUR/792"
+            },
+            {
+                "key": "TT",
+                "val": "Trinidad and Tobago, TTO/780"
+            },
+            {
+                "key": "TV",
+                "val": "Tuvalu, TUV/798"
+            },
+            {
+                "key": "TW",
+                "val": "Taiwan, Province of China, TWN/158"
+            },
+            {
+                "key": "TZ",
+                "val": "Tanzania, United Republic of, TZA/834"
+            }
+        ],
+        "U": [
+            {
+                "key": "UA",
+                "val": "Ukraine, UKR/804"
+            },
+            {
+                "key": "UG",
+                "val": "Uganda, UGA/800"
+            },
+            {
+                "key": "UM",
+                "val": "United States Minor Outlying Islands, UMI/581"
+            },
+            {
+                "key": "US",
+                "val": "United States of America, USA/840"
+            },
+            {
+                "key": "UY",
+                "val": "Uruguay, URY/858"
+            },
+            {
+                "key": "UZ",
+                "val": "Uzbekistan, UZB/860"
+            }
+        ],
+        "V": [
+            {
+                "key": "VA",
+                "val": "Holy See, VAT/336"
+            },
+            {
+                "key": "VC",
+                "val": "Saint Vincent and the Grenadines, VCT/670"
+            },
+            {
+                "key": "VE",
+                "val": "Venezuela (Bolivarian Republic of), VEN/862"
+            },
+            {
+                "key": "VG",
+                "val": "Virgin Islands (British), VGB/092"
+            },
+            {
+                "key": "VI",
+                "val": "Virgin Islands (U.S.), VIR/850"
+            },
+            {
+                "key": "VN",
+                "val": "Viet Nam, VNM/704"
+            },
+            {
+                "key": "VU",
+                "val": "Vanuatu, VUT/548"
+            }
+        ],
+        "W": [
+            {
+                "key": "WF",
+                "val": "Wallis and Futuna, WLF/876"
+            },
+            {
+                "key": "WS",
+                "val": "Samoa, WSM/882"
+            }
+        ],
+        "Y": [
+            {
+                "key": "YE",
+                "val": "Yemen, YEM/887"
+            },
+            {
+                "key": "YT",
+                "val": "Mayotte, MYT/175"
+            }
+        ],
+        "Z": [
+            {
+                "key": "ZA",
+                "val": "South Africa, ZAF/710"
+            },
+            {
+                "key": "ZM",
+                "val": "Zambia, ZMB/894"
+            },
+            {
+                "key": "ZW",
+                "val": "Zimbabwe, ZWE/716"
+            }
+        ]
+    }
+}

@@ -1,0 +1,53 @@
+.zci--calendar_today table.calendar {
+    text-align: center;
+}
+
+.zci--calendar_today .calendar th, .calendar td {
+    width: 2.5em;
+    text-align: center;
+    height: 1.6em;
+    position:relative;
+}
+
+.zci--calendar_today .calendar__header {
+    vertical-align: top;
+    height: 2em;
+    font-size: 1.25em;
+}
+
+.zci--calendar_today .calendar__today {
+    color: white;
+    background-color: #808080;
+}
+
+.zci--calendar_today .calendar .circle {
+    display: inline-block;
+    line-height: 1.6em;
+    text-align: center;
+    width: 1.6em;
+}
+
+.zci--calendar_today .calendar a {
+    color: white;
+    font-size: 1.1em;
+}
+
+.zci--calendar_today .calendar .t_left {
+    position: absolute;
+    left:0.4em;
+    background-color: #bfbfbf;
+}
+
+.zci--calendar_today .calendar .t_right {
+    position: absolute;
+    right:0.4em;
+    background-color: #bfbfbf;
+}
+
+.zci--calendar_today .ddgsi-arrow-left {
+    font-size: 0.75em;
+}
+
+.zci--calendar_today .ddgsi-arrow-right {
+    font-size: 0.75em;
+} 

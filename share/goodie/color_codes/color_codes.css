@@ -1,0 +1,82 @@
+.zci--color_codes .colorcodesbox {
+    height: 120px;
+    width: 120px;
+    margin: 5px;
+    margin-right: 20px;
+    margin-top: 4px;
+    margin-left: 0px;
+    float: left;
+    display: inline-block;
+}
+
+.zci--color_codes .circle {
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.15);
+}
+
+.zci--color_codes .mini-color {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(0,0,0,0.15);
+    vertical-align: bottom;
+}
+
+.zci--color_codes .complementary .mini-color {
+    margin-left: 23px;
+}
+
+.zci--color_codes .mini-color:nth-of-type(n+2) {
+    margin-left: -0.7em;
+}
+
+.zci--color_codes  p.no_vspace {
+    margin: 0;
+    padding: 0;
+}
+
+.zci--color_codes .column1
+{
+    display: inline-block;
+    height: 125px;
+    padding-top: 7px;
+}
+
+.zci--color_codes .column2 {
+	display: inline-block;
+	height: 90px;
+    width: 16em;
+    margin-left: 2em;
+}
+
+.zci--color_codes .cols_column {
+    display: inline-block;
+    width: 5em;
+    margin-left: -2px;
+    margin-right: 4px;
+}
+
+.zci--color_codes .desc_column {
+    display: inline-block;
+    width: 10em;
+}
+
+.zci--color_codes .complementary {
+    margin-bottom: 0.25em;
+}
+
+.zci--color_codes .separator {
+    color: #d0d0d0;
+}
+
+@media screen and (max-width: 420px) {
+    .zci--color_codes .colorcodesbox {
+        width: 80px;
+        height: 80px;
+        margin-top: 15px;
+    }
+
+    .zci--color_codes .column1 {
+        padding-top: 0;
+    }
+}

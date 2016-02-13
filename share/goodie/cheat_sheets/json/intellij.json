@@ -1,0 +1,262 @@
+{
+    "id": "intellij_cheat_sheet",
+    "name": "JetBrains IntelliJ IDEA",
+    "description": "Keyboard shortcuts for IntelliJ IDEA, a Java IDE developed by JetBrains",
+    "metadata": {
+        "sourceName": "Shortcut World",
+        "sourceUrl": "http://www.shortcutworld.com/en/win/IntelliJ.html"
+    },
+    "aliases": ["intellij idea", "intellij editor", "intellij ide", "idea ide"],
+    "template_type": "keyboard",
+    "section_order": ["General", "Productivity", "Editing", "Searching/Replacing", "Compile and Run", "Debugging", "Live Templates", "Navigation"],
+    "sections": {
+        "General": [{
+            "key": "[Alt] [0...9]",
+            "val": "Open corresponding tool window"
+        }, {
+            "key": "[Ctrl] [S]",
+            "val": "Save all"
+        }, {
+            "key": "[Ctrl] [Alt] [Y]",
+            "val": "Sychronise"
+        }, {
+            "key": "[Alt] [Shift] [F]",
+            "val": "Add to favorites"
+        }, {
+            "key": "[Ctrl] [Alt] [S]",
+            "val": "Open settings dialog"
+        }, {
+            "key": "[Ctrl] [Alt] [Shift] [S]",
+            "val": "Open project structure dialog"
+        }, {
+            "key": "[Ctrl] [Shift] [A]",
+            "val": "Find action"
+        }, {
+            "key": "[Ctrl] [Tab]",
+            "val": "Swith between tabs and tool window"
+        }],
+        "Productivity": [{
+            "key": "[Ctrl] [N]",
+            "val": "Open any class"
+        }, {
+            "key": "[Ctrl] [Shift] [N]",
+            "val": "Open any file"
+        }, {
+            "key": "[Ctrl] [Space]",
+            "val": "Code completion"
+        }, {
+            "key": "[Ctrl] [Shift] [Space]",
+            "val": "Smart code completion"
+        }, {
+            "key": "[Ctrl] [P]",
+            "val": "See code or method documentation"
+        }],
+        "Editing": [{
+            "key": "[Ctrl] [O]",
+            "val": "Override method"
+        }, {
+            "key": "[Ctrl] [I]",
+            "val": "Implement method"
+        }, {
+            "key": "[Ctrl] [/]",
+            "val": "Comment or uncomment with line comment"
+        }, {
+            "key": "[Ctrl] [Shift] [/]",
+            "val": "Comment or uncomment with block comment"
+        }, {
+            "key": "[Ctrl] [Alt] [L]",
+            "val": "Reformat code"
+        }, {
+            "key": "[Ctrl] [Alt] [O]",
+            "val": "Optimize imports"
+        }, {
+            "key": "[Ctrl] [Alt] [I]",
+            "val": "Auto indent lines"
+        }, {
+            "key": "[Ctrl] [X]",
+            "val": "Cut current line to clipboard"
+        }, {
+            "key": "[Ctrl] [F7]",
+            "val": "Find usages in file"
+        }, {
+            "key": "[Ctrl] [Shift] [F7]",
+            "val": "Highlight usages in file"
+        }, {
+            "key": "[Alt] [Delete]",
+            "val": "Safe delete"
+        }, {
+            "key": "[Shift] [F6]",
+            "val": "Rename"
+        }],
+        "Searching/Replacing": [{
+            "key": "[Ctrl] [`]",
+            "val": "Show/Hide Console"
+        }, {
+            "key": "[Shift] [Shift]",
+            "val": "Search everywhere"
+        }, {
+            "key": "[Ctrl]  [F]",
+            "val": "Find"
+        }, {
+            "key": "F3",
+            "val": "Find next"
+        }, {
+            "key": "[Shift] [F3]",
+            "val": "Find previous"
+        }, {
+            "key": "[Ctrl] [Shift] [F]",
+            "val": "Find in path"
+        }, {
+            "key": "[Ctrl] [Shift] [R]",
+            "val": "Replace in path"
+        }],
+        "Compile and Run": [{
+            "key": "[Ctrl] [F9]",
+            "val": "Make project"
+        }, {
+            "key": "[Ctrl] [Shift] [F9]",
+            "val": "Compile selected file, package or module"
+        }, {
+            "key": "[Alt] [Shift] [F10]",
+            "val": "Select configuration and run"
+        }, {
+            "key": "[Shift] [F10]",
+            "val": "Run"
+        }, {
+            "key": "[Ctrl] [Shift] [F10]",
+            "val": "Run context configuration from editor"
+        }],
+        "Debugging": [{
+            "key": "[Ctrl] [K]",
+            "val": "Commit project to VCS"
+        }, {
+            "key": "[Ctrl] [T]",
+            "val": "Update project from VCS"
+        }, {
+            "key": "F8",
+            "val": "Step over"
+        }, {
+            "key": "F7",
+            "val": "Step into"
+        }, {
+            "key": "[Shift] [F7]",
+            "val": "Smart step into"
+        }, {
+            "key": "[Shift] [F8]",
+            "val": "Step out"
+        }, {
+            "key": "[Alt] [F9]",
+            "val": "Run to cursor"
+        }, {
+            "key": "[Alt] [F8]",
+            "val": "Evaluate expression"
+        }, {
+            "key": "[Ctrl] [F8]",
+            "val": "Toggle breakpoint"
+        }, {
+            "key": "[Ctrl] [Shift] [F8]",
+            "val": "View breakpoints"
+        }],
+        "Live Templates": [{
+            "key": "[Ctrl] [Alt] [J]",
+            "val": "Surround with live template"
+        }, {
+            "key": "[Ctrl] [J]",
+            "val": "Insert live template"
+        }, {
+            "key": "[Ctrl] [J] [-Iter]",
+            "val": "Iteration"
+        }, {
+            "key": "[Ctrl] [J] [-Inst]",
+            "val": "Check object type with instanceof and downcast it"
+        }, {
+            "key": "[Ctrl] [J] [-Itco]",
+            "val": "Iterate Collection"
+        }, {
+            "key": "[Ctrl] [J] [-Itit]",
+            "val": "Iterate Iterator"
+        }, {
+            "key": "[Ctrl] [J] [-Itil]",
+            "val": "Iterate List"
+        }, {
+            "key": "[Ctrl] [J] [-Psf]",
+            "val": "Public static final"
+        }, {
+            "key": "[Ctrl] [J] [-Thr]",
+            "val": "Throw new"
+        }],
+        "Navigation": [{
+            "key": "[Alt] ( [←] / [→] )",
+            "val": "Go to next or previous tab"
+        }, {
+            "key": "[F12]",
+            "val": "Go back to previous tool window"
+        }, {
+            "key": "[Esc]",
+            "val": "Go to editor window"
+        }, {
+            "key": "[Shift] [Esc]",
+            "val": "Hide active window"
+        }, {
+            "key": "[Ctrl] [Shift] [F4]",
+            "val": "Close active run/messages tab"
+        }, {
+            "key": "[Ctrl] [G]",
+            "val": "Go to line"
+        }, {
+            "key": "[Ctrl] [E]",
+            "val": "Recent files"
+        }, {
+            "key": "[Ctrl] [Shift] [Backspace]",
+            "val": "Go to last edit location"
+        }, {
+            "key": "[Ctrl] [B]",
+            "val": "Go to declaration"
+        }, {
+            "key": "[Ctrl] [Alt] [B]",
+            "val": "Go to implementation"
+        }, {
+            "key": "[Ctrl] [Shift] [I]",
+            "val": "Quick definition lookup"
+        }, {
+            "key": "[Ctrl] [Shift] [B]",
+            "val": "Go to type declaration"
+        }, {
+            "key": "[Ctrl] [U]",
+            "val": "Go to super method"
+        }, {
+            "key": "[Alt] ( [↑] / [↓] )",
+            "val": "Go to previous/next method"
+        }, {
+            "key": "[Ctrl] ( [\\]] / [\\[] )",
+            "val": "Move to code block end/start"
+        }, {
+            "key": "[Ctrl] [F12]",
+            "val": "File structure popup"
+        }, {
+            "key": "[Ctrl] [H]",
+            "val": "Type hierarchy"
+        }, {
+            "key": "[Ctrl] [Alt] [H]",
+            "val": "Call hierarchy"
+        }, {
+            "key": "[Ctrl] [Shift] [H]",
+            "val": "Method hierarchy"
+        }, {
+            "key": "[F2] / [Shift] [F2]",
+            "val": "Next error/Previous error"
+        }, {
+            "key": "[Alt] [Home]",
+            "val": "Show navigation bar"
+        }, {
+            "key": "F11",
+            "val": "Toggle bookmark"
+        }, {
+            "key": "[Ctrl] [0..9]",
+            "val": "Go to numbered bookmark"
+        }, {
+            "key": "[Shift] [F11]",
+            "val": "Show bookmarks"
+        }]
+    }
+}

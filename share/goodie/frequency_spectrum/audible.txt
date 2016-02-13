@@ -1,0 +1,22 @@
+87	1046	human voice
+82.407	329.63	bass vocalists
+87.307	349.23	baritone vocalists
+130.81	440.00	tenor vocalists
+196.00	698.46	alto vocalists
+220.00	880.00	mezzo-soprano vocalists
+261.63	880.00	soprano vocalists
+41.203	523.25	double-bass
+130.81	1760.00	viola
+196.00	2637.00	violin
+82.41	1046.5	guitar
+196.00	1396.9	mandolin
+130.81	1046.5	banjo
+27.500	4186.0	piano
+38.891	440.00	tuba
+82.407	523.25	trombone
+164.81	932.33	trumpet
+207.65	1244.5	saxophone
+261.63	2093.0	flute
+146.83	1864.7	clarinet
+58.270	783.99	bassoon
+233.08	1760.0	oboe

@@ -1,0 +1,24 @@
+.zci--answer .zci--fenviewer span {
+	color:#333;
+	display:block;
+	font-size:27px;
+	height:40px;
+	position:relative;
+	text-decoration:none;
+	width:40px;
+    line-height: 1.5;
+}
+
+.zci--answer .zci--fenviewer .chess_board { border: 2px solid #333; }
+.zci--answer .zci--fenviewer .chess_board td {
+	background:#fff;
+	height:40px;
+	text-align:center;
+	vertical-align:middle;
+	width:40px;
+}
+
+.zci--answer .zci--fenviewer .chess_board tr:nth-child(odd) td:nth-child(even),
+.zci--answer .zci--fenviewer .chess_board tr:nth-child(even) td:nth-child(odd) {
+	background-color: #ddd;
+}

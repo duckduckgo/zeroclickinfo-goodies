@@ -1,0 +1,65 @@
+.zci__body, .zero_click_answer {
+    color: #333;
+}
+
+.zci--name_days .name-days-country {
+    padding-right: 2em;
+    white-space: nowrap;
+    vertical-align: top;
+    width: 25%;
+}
+
+.zci--name_days .name-days-dates {
+    width: 75%;
+}
+
+.zci--name_days .name-days-country-name,
+.zci--name_days .name-days-tile {
+    line-height: 1.6;
+}
+
+.zci--name_days .name-days-country-name {
+    vertical-align: middle;
+    padding-left: 0.4em;
+}
+
+.zci--name_days .name-days-country .flag-sm {
+    vertical-align: middle;
+}
+
+.zci--name_days .name-days-country,
+.zci--name_days .name-days-dates {
+    border-bottom: solid 1px #DDD;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+.zci--name_days tr:last-of-type .name-days-country,
+.zci--name_days tr:last-of-type .name-days-dates {
+    border-bottom: none;
+}
+
+.zci--name_days .name-days-tile span {
+    padding: 0 0.5em 0 0;
+}
+
+.zci--name_days .name-days-tile {
+    display: inline-block;
+    min-width: 33%;
+}
+
+@media (max-width: 600px) {
+    .zci--name_days .name-days-tile {
+        min-width: 50%;
+    }
+}
+
+@media (max-width: 400px) {
+    .zci--name_days .name-days-tile {
+        width: 100%;
+    }
+}
+
+.zci--name_days {
+    max-width: 44em;
+}

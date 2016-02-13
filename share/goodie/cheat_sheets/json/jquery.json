@@ -1,0 +1,254 @@
+{
+    "id": "jquery_cheat_sheet",
+    "name": "jQuery",
+    "description": "jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML",
+    "metadata": {
+        "sourceName": "jQuery API Documentation",
+        "sourceUrl": "http://api.jquery.com/"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Selectors",
+		"Traversing",
+		"CSS",
+		"Manipulation",
+		"Events",
+		"Event Object",
+		"Effects",
+		"Ajax",
+		"Utilities"
+    ],
+    "sections": {
+        "Selectors": [{
+                "val": "Selects all elements",
+                "key": "*"
+            }, {
+                "val": "Selects all elements with class",
+                "key": ".class"
+            }, {
+                "val": "Selects all elements with given tag name",
+                "key": "element"
+            }, {
+                "val": "Selects a single element with given id",
+                "key": "#id"
+            }, {
+                "val": "Selects the first matched element",
+                "key": ":first"
+            }, {
+                "val": "Selects the last matched element",
+                "key": ":last"
+            }],
+	    "Traversing": [{
+                "val": "Execute a function on each element",
+                "key": ".each(function)"
+            }, {
+                "val": "Get all ancestors filtered by selector",
+                "key": ".parent(selector)"
+            }, {
+                "val": "Get all descendants filtered by selector",
+                "key": ".find(selector)"
+            }, {
+                "val": "Get immediate children filterd by selector",
+                "key": ".children(selector)"
+            }, {
+                "val": "Get next sibling",
+                "key": ".next()"
+            }, {
+                "val": "Get all siblings filtered by selector",
+                "key": ".nextAll(selector)"
+            }, {
+                "val": "Get preceding sibling",
+                "key": ".prev()"
+            }],
+	    "CSS": [{
+                "val": "Adds the specified class(es) to element(s)",
+                "key": ".addClass(className)"
+            }, {
+                "val": "Remove class(es) from element(s)",
+                "key": ".removeClass(className)"
+            }, {
+                "val": "Toggle classes from element(s)",
+                "key": ".toggleClass(className)"
+            },{
+                "val": "Get computed height for first element or set all elements' height",
+                "key": ".height(value)"
+            }, {
+                "val": "Get inner height (includes padding) for first element or set all elements' inner height",
+                "key": ".innerHeight(value)"
+            }, {
+                "val": "Get and set outer height (includes padding, border and optionally margin)",
+                "key": ".outerHeight(includeMargin)"
+            }, {
+                "val": "Get computed width for the first element or set all elements' width",
+                "key": ".width(value)"
+            }, {
+                "val": "Get an object with properties .top and .left of the first element, relative to parent",
+                "key": ".position()"
+            },  {
+                "val": "Get an object with properties .top and .left of the first element, relative to document",
+                "key": ".offset()"
+            }],
+		"Manipulation": [{
+                "val": "Insert content after element(s)",
+                "key": ".after(content)"
+            }, {
+                "val": "Insert content before element(s)",
+                "key": ".before(content)"
+            }, {
+                "val": "Insert every element in the set to the end of the target",
+                "key": ".appendTo(target)"
+            }, {
+                "val": "Remove matched elements from the DOM",
+                "key": ".detach(selector)"
+            }, {
+                "val": "Remove all child nodes of the element(s) from the DOM",
+                "key": ".empty()"
+            }, {
+                "val": "Set the HTML contents of the element(s)",
+                "key": ".html(htmlString)"
+            }, {
+                "val": "Wrap an HTML structure around the element(s)",
+                "key": ".wrap(wrappingElement)"
+            }, {
+                "val": "Remove the parents from the DOM, leaving the element(s) in their spot",
+                "key": ".unwrap()"
+            }, {
+                "val": "Set value of all element(s) or get the value of first element",
+                "key": ".val(value)"
+            }, {
+                "val": "Replace element(s) in the set with new content and return removed ones",
+                "key": ".replaceWith(newContent)"
+            }],
+		"Events": [{
+                "val": "Bind handler to 'load' event",
+                "key": ".load(handler)"
+            }, {
+                "val": "Run handler when DOM is fully loaded",
+                "key": ".ready(handler)"
+            }, {
+                "val": "Bind handler to 'unload' event",
+                "key": ".unload(handler)"
+            }, {
+                "val": "Bind handler to 'click' event",
+                "key": ".click(handler)"
+            }, {
+                "val": "Bind handler to 'dblclick' event",
+                "key": ".dblclick(handler)"
+            }, {
+                "val": "Bind handler to 'mousedown' event",
+                "key": ".mousedown(handler)"
+            }, {
+                "val": "Bind handler to 'mouseup' event",
+                "key": ".mouseup(handler)"
+            }, {
+                "val": "Bind handler to 'mousemove' event",
+                "key": ".mousemove(handler)"
+            }, {
+                "val": "Bind handlers to run when mouse pointer enters and leaves element(s)",
+                "key": ".hover( handlerIn, handlerOut )"
+            }, {
+                "val": "Bind handler to 'keydown' event",
+                "key": ".keydown(handler)"
+            }, {
+                "val": "Bind handler to 'keypress' event",
+                "key": ".keypress(handler)"
+            }, {
+                "val": "Bind handler to 'keyup' event",
+                "key": ".keyup(handler)"
+            }, {
+                "val": "Bind handler to 'change' event",
+                "key": ".change(handler)"
+            }, {
+                "val": "Bind handler to 'focus' event",
+                "key": ".focus(handler)"
+            }, {
+                "val": "Bind handler to 'select' event",
+                "key": ".select(handler)"
+            }, {
+                "val": "Bind handler to 'submit' event",
+                "key": ".submit(handler)"
+            }],
+		"Event Object": [{
+                "val": "Mouse X position relative to document's left",
+                "key": "event.pageX"
+            }, {
+                "val": "Mouse Y position relative to document's top",
+                "key": "event.pageY"
+            }, {
+                "val": "DOM element that initiated the event",
+                "key": "event.target"
+            }, {
+                "val": "Time of the event",
+                "key": "event.timeStamp"
+            }, {
+                "val": "Description of the event",
+                "key": "event.type"
+            }, {
+                "val": "Indicates the specific key or button that was pressed",
+                "key": "event.which"
+            }],
+		"Effects": [{
+                "val": "Perform a custom animation of a set of CSS properties",
+                "key": ".animate(properties, duration, easing, complete)"
+            }, {
+                "val": "Display the element(s) by fading them to opaque",
+                "key": ".fadeIn(duration, complete)"
+            }, {
+                "val": "Hide the element(s) by fading them to transparent",
+                "key": ".fadeOut(duration, complete)"
+            }, {
+                "val": "Hide the element(s)",
+                "key": ".hide()"
+            }, {
+                "val": "Display the element(s)",
+                "key": ".show()"
+            }, {
+                "val": "Toggle elements' visibility",
+                "key": ".toggle()"
+            }, {
+                "val": "Display the element(s) with a sliding motion",
+                "key": ".slideDown(duration, complete)"
+            }, {
+                "val": "Display or hide the element(s) with a sliding motion",
+                "key": ".slideToggle(duration, complete)"
+            }, {
+                "val": "Hide element(s) with a sliding motion",
+                "key": ".slideUp(duration, complete)"
+            }],
+		"Ajax": [{
+                "val": "Perform an asynchronous HTTP (Ajax) request",
+                "key": "$.ajax(settings)"
+            }, {
+                "val": "Load data from the server using a HTTP GET request",
+                "key": "$.get(url, data, success, dataType)"
+            }, {
+                "val": "Load JSON-encoded data from the server",
+                "key": "$.getJSON(url, data, success)"
+            }, {
+                "val": "Load and execute JavaScript file from the server",
+                "key": "$.getScript(url, success)"
+            }, {
+                "val": "Create a serialized representation for use in a query or Ajax request",
+                "key": "$.param(obj)"
+            }, {
+                "val": "Load data from the server using a HTTP POST request",
+                "key": "$.post(url, data, success, dataType)"
+            }, {
+                "val": "Encode a form's elements as a string for submission",
+                "key": ".serialize()"
+            }, {
+                "val": "Encode a form's elements as an array of names and values",
+                "key": ".serializeArray()"
+            }],
+        "Utilities": [{
+                "val": "Parses a string into an array of DOM nodes",
+                "key": "$.parseHTML(htmlString, context, keepScripts )"
+            }, {
+                "val": "Convert JSON string to JavaScript object",
+                "key": "$.parseJSON(jsonString)"
+            }, {
+                "val": "Parses a string into an XML document",
+                "key": "$.parseXML(string)"
+        }]
+    }
+}

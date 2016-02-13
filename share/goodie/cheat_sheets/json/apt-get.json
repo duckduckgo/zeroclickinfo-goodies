@@ -1,0 +1,93 @@
+{
+    "id": "apt_get_cheat_sheet",
+    "name": "AptGet",
+    "description": "Package manager for Debian-based distros",
+    "metadata": {
+        "sourceName": "Ubuntu Wiki",
+        "sourceUrl": "https://help.ubuntu.com/community/AptGet/Howto"
+    },
+    "aliases": [
+        "aptget", "apt-get"
+    ],
+    "template_type": "terminal",
+    "section_order": [
+        "Installation commands",
+        "Maintenance commands",
+        "Removal commands",
+        "Search commands"
+    ],
+    "sections": {
+        "Installation commands": [
+            {
+                "val": "Install a new package",
+                "key": "apt-get install <package_name>"
+            },
+            {
+                "val": "Install mutliple packages",
+                "key": "apt-get install <package1_name> <package2_name> <package3_name>"
+            }
+        ],
+        "Maintenance commands": [
+            {
+                "val": "Update source list",
+                "key": "apt-get update"
+            },
+            {
+                "val": "Upgrade all installed packages",
+                "key": "apt-get upgrade"
+            },
+            {
+                "val": "Upgrade all installed packages with a 'smart' conflict resolution system",
+                "key": "apt-get dist-upgrade"
+            },
+            {
+                "val": "Update package lists and check for broken dependencies",
+                "key": "apt-get check"
+            },
+            {
+                "val": "Fix broken packages",
+                "key": "apt-get -f install"
+            },
+            {
+                "val": "Remove all .deb files for packages that are no longer installed on the system",
+                "key": "apt-get autoclean"
+            },
+            {
+                "val": "Remove all packages from the package cache",
+                "key": "apt-get clean"
+            }
+        ],
+        "Removal commands": [
+            {
+                "val": "Remove an installed package, leaving configuration files intact",
+                "key": "apt-get remove <package_name>"
+            },
+            {
+                "val": "Completely remove a package and the associated configuration files",
+                "key": "apt-get purge <package_name>"
+            },
+            {
+                "val": "Remove package1 and install package2 in one step (+operator)",
+                "key": "apt-get remove <package1> <package2>+"
+            },
+            {
+                "val": "Remove packages that were installed by other packages and are no longer needed",
+                "key": "apt-get autoremove"
+            },
+            {
+                "val": "Removes an installed package and dependencies",
+                "key": "apt-get autoremove <package_name>"
+            }
+        ],
+        "Search commands": [
+            {
+                "val": "Find packages that include <search_item>",
+                "key": "apt-cache search <search_term>"
+            },
+            {
+                "val": "Shows the description of package <package_name> and other relevant information including version, size, dependencies and conflicts",
+                "key": "apt-cache show <package_name>"
+            }
+        ]
+    }
+}
