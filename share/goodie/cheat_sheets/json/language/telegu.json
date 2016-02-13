@@ -114,45 +114,6 @@
             "trn": "aunu"
         }
             
-        ],
-        
-        "Travelling": [
-            {
-                "key": "Turn left",
-                "val": "बायीं तरफ़ मुड़िये",
-                "trn": "bāyīn muDiye"
-            },
-            
-            {
-                "key": "Turn right",
-                "val": "दाहिनी तरफ़ मुड़िये",
-                "trn": "dāhinī muDiye"
-            },
-            {
-                "key": "Can you show me on the map?",
-                "val": "मुझे नक़्शे में दिखा दीजिये",
-                "trn": "mujhe nakSHE mEIN dikhaa deejiYE"
-            }, 
-            {
-                "key": "Can you tell me the way to ....?",
-                "val": "मुझे .... का रास्ता बताइए?",
-                "trn": "muJHE .... kaa rasta bataIYE"
-            },
-            {
-                "key": "One ticket to ....",
-                "val": "एक .... की टिकट दीजिये",
-                "trn": "Ek .... ki ticket dijiye"
-            }, 
-            {
-                "key": "How much does it cost to get to ....?",
-                "val": ".... जाने को कितना लगता है?",
-                "trn": ".... jaane ko kitnaa lagtaa hAI"
-            }, 
-            {
-                "key": "Where is the pharmacy?",
-                "val": "फार्मेसी कहां है?",
-                "trn": "pharmacy kahaan hai?"
-            }
         ]
     }
 }
