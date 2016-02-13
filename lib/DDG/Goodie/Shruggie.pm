@@ -13,32 +13,32 @@ use strict;
 use utf8; # needed to properly use the various unicode characters in the emoticons
 use JSON; # encoded the various other ASCII items in a JSON file
 
-
-zci answer_type => "shruggie";
+zci answer_type => 'shruggie';
 zci is_cached   => 1;
 
 # Triggers
-triggers start => "shruggie";
+triggers any => 'shruggie','ascii emoji','ascii emoji art','emoji','emojicon','emoticon','emojiton','kaomoji','face mark';
+triggers end => 'ascii';
 
 # Preload the JSON file
 my $externalJSONFile = share('shruggiesfriends.json')->slurp;
 my @arrayOfFriendFacesWithNames = @{decode_json($externalJSONFile)->{'Friends'}};
-
 # Handle statement
 handle remainder => sub {
 
     my $returnString;
-    my $isJustShruggie = 0;
     my $stringAfterAnd;
-    my %record_data = ("Shruggie", '¯\_(ツ)_/¯');
-    my @record_keys = ("Shruggie");
-
-    # Only search was "shruggie"
+    my %record_data;
+    my @record_keys;
     if (!$_) {
-        $isJustShruggie = 1;
-    } elsif (m/^and (.+)/i) { # check if remainder matches pattern "and X"
+        $returnString = '¯\_(ツ)_/¯';
+        $record_data{'Shruggie'} = '¯\_(ツ)_/¯';
+        push @record_keys, 'Shruggie';
+    } elsif (m/and (.+)/i) { # check if remainder matches pattern "and X"
 
         $stringAfterAnd = lc($1);
+        $record_data{'Shruggie'} = '¯\_(ツ)_/¯';
+        push @record_keys, 'Shruggie';
 
         if ($stringAfterAnd eq "friend") {
 
@@ -59,15 +59,13 @@ handle remainder => sub {
                 $record_data{$currentForeachFriend} = $iterateThroughFriends->{'image'};
                 push @record_keys, $currentForeachFriend;
             }
-
+            
         } else {
 
             foreach my $nameEmojiiPair (@arrayOfFriendFacesWithNames) {
 
                 if (lc($nameEmojiiPair->{'name'}) eq $stringAfterAnd) {
                     my $friendsName = $nameEmojiiPair->{'name'};
-
-
                     $returnString = 'Shruggie and ' . $friendsName;
                     $record_data{$friendsName} = $nameEmojiiPair->{'image'};
                     push @record_keys, $friendsName;
@@ -77,25 +75,21 @@ handle remainder => sub {
             }
 
         }
+    } elsif (m/(\w+)/i) { # case "Shruggie X"
+        
+        my $emojiiName = lc($_);
+        if(my ($match) = grep{lc($_->{'name'}) eq $emojiiName} @arrayOfFriendFacesWithNames) {
+            $returnString = 'Shruggie '.ucfirst($emojiiName);
+            %record_data = ();
+            $record_data{ucfirst($emojiiName)} = $match->{'image'};
+            @record_keys = (ucfirst($emojiiName));
+        }
+        
     }
 
     #if the string after shruggie was ill formed
-    if (!$returnString && !$isJustShruggie) {
+    if (!$returnString) {
         return;
-    } elsif ($isJustShruggie) {
-         return '¯\_(ツ)_/¯',
-            structured_answer => {
-            id => 'shruggie',
-            name => 'Shruggie',
-            description => 'Emojii for everone',
-            templates => {
-                group => 'text'
-            },
-            data => {
-                title => '¯\_(ツ)_/¯',
-                #subtitle => "Shruggie"  #I like it better without this, but either way is cool
-            }
-        }
     } else {
 
         return $returnString,
