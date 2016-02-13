@@ -1,0 +1,25 @@
+{
+    "id": "regex1_cheat_sheet",
+    "name": "Regex1",
+    "description": "Regular expression sytax",
+
+    "metadata": {
+        "sourceName": "Chetagraphy",
+        "sourceUrl" : "http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/"
+    },
+
+    "aliases": [
+        "regexp", "regular expression", "regular expressions"
+    ],
+
+    "template_type": "code",
+"sections": {
+        "Assertions": [
+
+        ],
+        "POSIX Classes": [
+
+        ]
+    },
+    "section_order": ["Anchors", "Character Classes", "POSIX Classes", "Pattern Modifiers", "Escape Sequences", "Quantifiers", "Groups and Ranges", "Assertions", "Special Characters", "String Replacement"]
+}
