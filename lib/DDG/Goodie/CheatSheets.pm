@@ -40,6 +40,7 @@ sub normalize_triggers {
             while (my ($trigger, $opts) = each $triggersh) {
                 next if $opts == 0;
                 if (ref $opts eq 'HASH') {
+                    next if $opts->{disabled};
                     $normalized_set->{$trigger} = $opts;
                     next;
                 }
