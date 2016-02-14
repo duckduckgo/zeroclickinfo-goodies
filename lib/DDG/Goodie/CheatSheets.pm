@@ -73,18 +73,30 @@ sub generate_triggers {
 
 }
 
-# Parse the category map defined in 'categories.json'.
-sub get_category_map {
-    my $categories_json = share('categories.json')->slurp();
-    my $categories = decode_json($categories_json);
-    return $categories;
+# Retrieve the categories that can trigger the given cheat sheet.
+sub supported_categories {
+    my ($category_map, $data) = @_;
+    my $template_type = $data->{template_type};
+    my @additional_categories = @{$data->{categories}}
+        if defined $data->{categories};
+    my %categories = %{$category_map->{$template_type}};
+    my @categories = (@additional_categories,
+                      grep { $categories{$_} } (keys %categories));
+    return \@categories;
 }
 
-sub get_aliases {
+# Initialize aliases and categories.
+sub get_aliases_categories {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
                                 ->in(share('json'));
     my %results;
+
+    # Initialize category maps
+    my %categories;
+    my $categories_json = share('categories.json')->slurp();
+    my $category_map = decode_json($categories_json);
+
     my $cheat_dir = File::Basename::dirname($files[0]);
 
     foreach my $file (@files) {
@@ -101,6 +113,9 @@ sub get_aliases {
 
         $results{$defaultName} = $file;
 
+        # Add supported categories for the given cheat sheet
+        $categories{$file} = supported_categories($category_map, $data);
+
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
                 my $lc_alias = lc $alias;
@@ -113,26 +128,12 @@ sub get_aliases {
             }
         }
     }
-    return \%results;
+    return (\%results, \%categories);
 }
 
-my $aliases = get_aliases();
-
-my $category_map = get_category_map();
+my ($aliases, $categories) = get_aliases_categories();
 
 my $trigger_lookup = generate_triggers($aliases);
-
-# Retrieve the categories that can trigger the given cheat sheet.
-sub supported_categories {
-    my $data = shift;
-    my $template_type = $data->{template_type};
-    my @additional_categories = @{$data->{categories}}
-        if defined $data->{categories};
-    my %categories = %{$category_map->{$template_type}};
-    my @categories = (@additional_categories,
-                      grep { $categories{$_} } (keys %categories));
-    return @categories;
-}
 
 # Parse the JSON data contained within $file.
 sub read_cheat_json {
@@ -157,7 +158,7 @@ sub get_cheat_json {
         $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
         my $data = read_cheat_json($file) or return;
         return $data if defined $lookup->{$file};
-        my @allowed_categories = supported_categories($data);
+        my @allowed_categories = @{$categories->{$file}};
         foreach my $category (@allowed_categories) {
             return $data if defined $lookup->{$category};
         }
