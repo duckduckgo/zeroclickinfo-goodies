@@ -18,10 +18,7 @@ sub generate_triggers {
     my $aliases = shift;
     my $triggers_json = share('triggers.json')->slurp();
     my $json_triggers = decode_json($triggers_json);
-    my $standard_triggers = $json_triggers->{standard};
-    delete $json_triggers->{standard};
-    my %all_triggers = (%{$standard_triggers}, %{$json_triggers});
-    my $trigger_lookup = make_all_triggers($aliases, \%all_triggers);
+    my $trigger_lookup = make_all_triggers($aliases, $json_triggers);
     return $trigger_lookup;
 }
 
