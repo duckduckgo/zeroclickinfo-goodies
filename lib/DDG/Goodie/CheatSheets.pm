@@ -147,39 +147,47 @@ sub cheat_sheet_name_from_id {
     return $id;
 }
 
-# (was custom trigger?, trigger file)
-sub who_triggered {
-    my ($remainder, $trigger) = @_;
-    my $lookup = $trigger_lookup->{$trigger};
-    unless (ref $lookup eq 'HASH') {
-        return (1, $lookup);
-    }
-    my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))};
-    return (0, $file);
-}
-
-sub categories_for {
+# Retrieve the categories that can trigger the given cheat sheet.
+sub supported_categories {
     my $data = shift;
-    my $template_type = ($data->{template_type});
-    my @categories = ('standard', $template_type);
-    @categories = (@categories, @{$data->{additional_categories}})
-        if defined $data->{additional_categories};
+    my $template_type = $data->{template_type};
+    my @categories = ("standard", $data->{template_type});
     return @categories;
 }
 
+# Parse the JSON data contained within $file.
+sub read_cheat_json {
+    my $file = shift;
+    open my $fh, $file or return;
+    my $json = do { local $/;  <$fh> };
+    my $data = decode_json($json);
+    return $data;
+}
 
+# Attempt to retrieve the JSON data based on the used trigger.
+sub get_cheat_json {
+    my ($remainder, $req) = @_;
+    my $trigger = $req->matched_trigger;
+    my $file;
+    my $lookup = $trigger_lookup->{$trigger};
+    unless (ref $lookup eq 'HASH') {
+        $file = $lookup;
+        return read_cheat_json($file);
+    } else {
+        $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
+        my $data = read_cheat_json($file) or return;
+        return $data if defined $lookup->{$file};
+        my @allowed_categories = supported_categories($data);
+        foreach my $category (@allowed_categories) {
+            return $data if defined $lookup->{$category};
+        }
+    }
+}
 
 handle remainder => sub {
     my $remainder = shift;
-    # If needed we could jump through a few more hoops to check
-    # terms against file names.
-    my $matched_trigger = $req->matched_trigger;
-    my ($was_custom, $who) = who_triggered($remainder, $matched_trigger);
-    open my $fh, $who or return;
 
-    my $json = do { local $/;  <$fh> };
-    my $data = decode_json($json);
-    return unless $was_custom;
+    my $data = get_cheat_json($remainder, $req) or return;
 
     return 'Cheat Sheet', structured_answer => {
         id         => 'cheat_sheets',
