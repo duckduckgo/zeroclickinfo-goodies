@@ -1,0 +1,65 @@
+{
+    "cheat_sheets": {
+        "keyboard": {
+            "startend": {
+                "default keybindings": 1,
+                "default keys": 1,
+                "key bindings": 1,
+                "keyboard shortcuts": 1,
+                "keys": 1,
+                "quick reference": 1,
+                "reference": 1,
+                "shortcuts": 1
+            }
+        },
+        "reference": {
+            "startend": {
+                "quick reference": 1,
+                "reference": 1
+            }
+        },
+        "terminal": {
+            "startend": {
+                "characters": 1,
+                "chars": 1,
+                "commands": 1,
+                "symbols": 1
+            }
+        },
+        "language": {
+            "startend": {
+                "example": 1,
+                "examples": 1,
+                "guide": 1
+            }
+        },
+        "code": {
+            "startend": {
+                "quick reference": 1,
+                "reference": 1,
+                "syntax": 1
+            }
+        },
+        "math": {
+            "startend": {
+                "equations": 1,
+                "formulae": 1,
+                "formulas": 1
+            }
+        },
+        "links": {
+            "startend": {
+                "links": 1,
+                "sites": 1,
+                "websites": 1
+            }
+        },
+        "ALL": {
+            "startend": {
+                "cheat sheet": 1,
+                "cheatsheet": 1,
+                "help": 1
+            }
+        }
+    }
+}
