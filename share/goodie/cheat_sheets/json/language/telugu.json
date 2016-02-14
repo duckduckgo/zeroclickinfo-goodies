@@ -52,7 +52,7 @@
                 "trn":"Maa saṅthoashaṅ"
             },
             {  
-                "key":"Good luck!",
+                "key":"Good luck !",
                 "val":"మీకు అంతా శుభం కలగాలని కొరుకుంటున్నాన !",
                 "trn":"Meeku aṅthaa shubhaṅ kalagaalani korukuṅtunnaanu !"
             },
@@ -65,7 +65,7 @@
         "Getting Help":[  
             {  
                 "key":"Call the police!",
-                "val":"రక్షక భటులని పిలవండి !",
+                "val":"రక్షక భటులని పిలవండి!",
                 "trn":"Rakshaka bhatulani pilavaṅdi!"
             },
             {  
@@ -80,7 +80,7 @@
             },
             {  
                 "key":"Help!",
-                "val":"సహాయం !",
+                "val":"సహాయం!",
                 "trn":"Sahaayaṅ!"
             },
             {  
@@ -91,18 +91,18 @@
         ],
         "Basics":[  
             {  
-                "key":"My name is ___ ",
+                "key":"My name is ___",
                 "val":"నా పేరు ___",
                 "trn":"Naa paeru ___"
             },
             {  
                 "key":"How are you?",
-                "val":"నేను బాగున్నాను. మీరు ఏలా ఉన్నారు ?",
+                "val":"నేను బాగున్నాను. మీరు ఏలా ఉన్నారు?",
                 "trn":"Naenu baagunnaanu, meeru aelaa unnaaru?"
             },
             {  
                 "key":"What is your name?",
-                "val":"మీ పేరేమండి ?",
+                "val":"మీ పేరేమండి?",
                 "trn":"Mee paeraemaṅdi?"
             },
             {  
@@ -111,7 +111,7 @@
             },
             {  
                 "key":"Look out!/Look over there!",
-                "val":"Atu choodu! "
+                "val":"Atu choodu!"
             },
             {  
                 "key":"Good evening",
@@ -119,7 +119,7 @@
             },
             {  
                 "key":"Do you speak English?",
-                "val":"Meeru English/anglamu matladuthara ?"
+                "val":"Meeru English/anglamu matladuthara?"
             },
             {  
                 "key":"I'm sorry/Forgive me",
@@ -178,7 +178,7 @@
                 "val":"Nannu muttukoku!"
             },
             {  
-                "key":"I need your help. ",
+                "key":"I need your help.",
                 "val":"Naaku mee sahayam kavali"
             },
             {  
@@ -206,7 +206,7 @@
                 "val":"Naaku Doctor Kavali."
             },
             {  
-                "key":"Who is this ?",
+                "key":"Who is this?",
                 "val":"Evaru?"
             },
             {  
