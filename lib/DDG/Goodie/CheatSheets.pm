@@ -12,21 +12,16 @@ no warnings 'uninitialized';
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
-# Instantiate triggers as defined in 'triggers.json', return a hash that
-# allows category and/or cheat sheet look-up based on trigger.
+# Instantiate triggers as defined in 'triggers.json', return a
+# hash that allows category and/or cheat sheet look-up based on
+# trigger.
 sub generate_triggers {
     my $aliases = shift;
     my $triggers_json = share('triggers.json')->slurp();
     my $json_triggers = decode_json($triggers_json);
-    my $trigger_lookup = make_all_triggers($aliases, $json_triggers);
-    return $trigger_lookup;
-}
-
-sub make_all_triggers {
-    my ($aliases, $spec_triggers) = @_;
     # This will contain the actual triggers, with the triggers as values and
     # the trigger positions as keys (e.g., 'startend' => ['foo'])
-    my %triggers = ();
+    my %triggers;
     # This will contain a lookup from triggers to categories and/or files.
     my $trigger_lookup = {};
 
@@ -36,7 +31,7 @@ sub make_all_triggers {
         full_match   => 1,
     );
 
-    while (my ($name, $trigger_setsh) = each $spec_triggers) {
+    while (my ($name, $trigger_setsh) = each $json_triggers) {
         if ($name =~ /cheat_sheet$/) {
             my $file = $name =~ s/_cheat_sheet//r;
             $file =~ s/_/ /g;
