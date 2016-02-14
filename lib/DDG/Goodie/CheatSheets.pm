@@ -20,40 +20,8 @@ sub generate_triggers {
     my $standard_triggers = $json_triggers->{standard};
     delete $json_triggers->{standard};
     my %all_triggers = (%{$standard_triggers}, %{$json_triggers});
-    my $normalized_triggers = normalize_triggers(\%all_triggers);
-    my ($trigger_lookup, $triggers) = make_all_triggers($aliases, $normalized_triggers);
+    my ($trigger_lookup, $triggers) = make_all_triggers($aliases, \%all_triggers);
     return ($trigger_lookup, $triggers);
-}
-
-# Normalize triggers to a default form - i.e, any triggers without options
-# will be assigned the defaults.
-sub normalize_triggers {
-    my $triggers = shift;
-    my $normalized_triggers = {};
-    my $defaults = {
-        require_name => 1,
-        full_match   => 1,
-    };
-    while (my ($name, $trigger_setsh) = each $triggers) {
-        my $normalized_sets = {};
-        while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
-            my $normalized_set = {};
-            while (my ($trigger, $opts) = each $triggersh) {
-                next if $opts == 0;
-                if (ref $opts eq 'HASH') {
-                    next if $opts->{disabled};
-                    my %opts = (%{$defaults}, %{$opts});
-                    $normalized_set->{$trigger} = \%opts;
-                    next;
-                }
-                $normalized_set->{$trigger} = $defaults;
-            }
-            $normalized_sets->{$trigger_type} = $normalized_set
-                if (keys $normalized_set);
-        }
-        $normalized_triggers->{$name} = $normalized_sets;
-    }
-    return $normalized_triggers;
 }
 
 sub make_all_triggers {
@@ -63,6 +31,12 @@ sub make_all_triggers {
     my $triggers = {};
     # This will contain a lookup from triggers to categories and/or files.
     my $trigger_lookup = {};
+
+    # Default settings for custom triggers.
+    my $defaults = {
+        require_name => 1,
+        full_match   => 1,
+    };
     while (my ($name, $trigger_setsh) = each $spec_triggers) {
         if ($name =~ /cheat_sheet$/) {
             my $file = $aliases->{cheat_sheet_name_from_id($name)};
@@ -72,7 +46,15 @@ sub make_all_triggers {
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
             my %triggers_for_type;
             while (my ($trigger, $opts) = each $triggersh) {
-                my $require_name = $opts->{require_name};
+                next if $opts == 0;
+                my %opts;
+                if (ref $opts eq 'HASH') {
+                    next if $opts->{disabled};
+                    %opts = (%{$defaults}, %{$opts});
+                } else {
+                    %opts = %{$defaults};
+                }
+                my $require_name = $opts{require_name};
                 $triggers_for_type{$trigger} = 1;
                 unless ($require_name) {
                     warn "Overriding trigger '$trigger' with custom for '$name'"
@@ -80,7 +62,7 @@ sub make_all_triggers {
                     $trigger_lookup->{$trigger} = {
                         is_custom => 1,
                         file      => $name,
-                        options   => $opts,
+                        options   => \%opts,
                     };
                     next;
                 }
@@ -88,6 +70,7 @@ sub make_all_triggers {
                 $new_triggers{$name} = 1;
                 $trigger_lookup->{$trigger} = \%new_triggers;
             }
+            next unless (keys %triggers_for_type);
             my @old_triggers_for_type = @{$triggers->{$trigger_type}}
                 if defined $triggers->{$trigger_type};
             @triggers_for_type{@old_triggers_for_type} = undef;
