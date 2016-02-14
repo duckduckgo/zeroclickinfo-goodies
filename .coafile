@@ -1,0 +1,12 @@
+[spacing]
+bears = SpaceConsistencyBear
+use_spaces = True
+files = **
+ignore = **/*.(png|flf|idx|pack|ttf),.git/**
+default_actions = SpaceConsistencyBear: ApplyPatchAction
+
+[json]
+bears = JSONFormatBear
+files = **/*.json
+default_actions = JSONFormatBear: ApplyPatchAction
+keep_unicode = yeah
