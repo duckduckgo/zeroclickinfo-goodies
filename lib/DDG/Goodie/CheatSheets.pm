@@ -38,21 +38,19 @@ sub make_all_triggers {
 
     while (my ($name, $trigger_setsh) = each $spec_triggers) {
         if ($name =~ /cheat_sheet$/) {
-            my $file = $aliases->{cheat_sheet_name_from_id($name)};
-            warn "Bad ID: '$name'" unless defined $file;
+            my $file = $name =~ s/_cheat_sheet//r;
+            $file =~ s/_/ /g;
+            $file = $aliases->{$file};
+            die "Bad ID: '$name'" unless defined $file;
             $name = $file;
         }
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
             while (my ($trigger, $opts) = each $triggersh) {
                 next if $opts == 0;
                 # Normalize options to use default options where not provided.
-                my %opts;
-                if (ref $opts eq 'HASH') {
-                    next if $opts->{disabled};
-                    %opts = (%defaults, %{$opts});
-                } else {
-                    %opts = %defaults;
-                }
+                my %opts = %defaults;
+                %opts = (%opts, %{$opts}) if ref $opts eq 'HASH';
+                next if $opts{disabled};
                 my $require_name = $opts{require_name};
                 $triggers{$trigger_type}{$trigger} = 1;
                 # In this case, we can only ever have one cheat sheet using
@@ -67,7 +65,8 @@ sub make_all_triggers {
                     };
                     next;
                 }
-                my %new_triggers = map { $_ => 1 } (keys %{$trigger_lookup->{$trigger}}, $name);
+                my %new_triggers = map { $_ => 1 }
+                    (keys %{$trigger_lookup->{$trigger}}, $name);
                 $trigger_lookup->{$trigger} = \%new_triggers;
             }
         }
@@ -127,13 +126,6 @@ my $aliases = get_aliases();
 my $category_map = get_category_map();
 
 my $trigger_lookup = generate_triggers($aliases);
-
-sub cheat_sheet_name_from_id {
-    my $id = shift;
-    $id =~ s/_cheat_sheet//;
-    $id =~ s/_/ /g;
-    return $id;
-}
 
 # Retrieve the categories that can trigger the given cheat sheet.
 sub supported_categories {
