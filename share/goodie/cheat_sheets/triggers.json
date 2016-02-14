@@ -7,8 +7,6 @@
                 "key bindings": 1,
                 "keyboard shortcuts": 1,
                 "keys": 1,
-                "quick reference": 1,
-                "reference": 1,
                 "shortcuts": 1
             }
       },
@@ -35,8 +33,6 @@
       },
       "code": {
           "startend": {
-              "quick reference": 1,
-              "reference": 1,
               "syntax": 1
           }
       },
