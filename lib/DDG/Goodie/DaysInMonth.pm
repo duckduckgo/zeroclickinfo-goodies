@@ -21,7 +21,7 @@ handle remainder => sub {
     my $remainder = $_;
     return unless $remainder;
     my $month_regex = month_regex();
-    my ($month) = $remainder =~ /^($month_regex)$/i;
+    my ($month) = $remainder =~ qr/^($month_regex)$/;
     return unless $month;
     my $days = calculateNumberOfDaysForMonthString($month);
     return "Number of days in $month is $days.",
