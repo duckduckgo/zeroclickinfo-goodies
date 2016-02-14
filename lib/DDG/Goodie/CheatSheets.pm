@@ -32,6 +32,7 @@ sub normalize_triggers {
     my $normalized_triggers = {};
     my $defaults = {
         require_name => 1,
+        full_match   => 1,
     };
     while (my ($name, $trigger_setsh) = each $triggers) {
         my $normalized_sets = {};
@@ -178,6 +179,7 @@ sub get_cheat_json {
     my $file;
     my $lookup = $trigger_lookup->{$trigger};
     if ($lookup->{is_custom}) {
+        return if $lookup->{options}{full_match} && $remainder ne '';
         $file = $lookup->{file};
         return read_cheat_json($file);
     } else {
