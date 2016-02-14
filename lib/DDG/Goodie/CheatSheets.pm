@@ -146,7 +146,7 @@ sub read_cheat_json {
 # Attempt to retrieve the JSON data based on the used trigger.
 sub get_cheat_json {
     my ($remainder, $req) = @_;
-    my $trigger = lc $req->matched_trigger;
+    my $trigger = (lc $req->matched_trigger) =~ s/(\t|\s{2,})/ /gr;
     my $file;
     my $lookup = $trigger_lookup->{$trigger};
     if ($lookup->{is_custom}) {
