@@ -68,7 +68,6 @@ ddg_goodie_test(
             title => "DuckDuckGo",
             subtitle => "Non-random selection from: Google, DuckDuckGo, Bing or SOMETHING"
         })
-        #'DuckDuckGo')
     ),
 );
 
