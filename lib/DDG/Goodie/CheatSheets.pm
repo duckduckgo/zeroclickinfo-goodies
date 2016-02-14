@@ -65,11 +65,11 @@ sub make_all_triggers {
             $name = $file;
         }
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
-            my @triggers_for_type;
+            my %triggers_for_type;
             while (my ($trigger, $opts) = each $triggersh) {
                 next if $opts == 0;
                 my $require_name = $opts->{require_name};
-                push @triggers_for_type, $trigger;
+                $triggers_for_type{$trigger} = 1;
                 unless ($require_name) {
                     warn "Overriding trigger '$trigger' with custom for '$name'"
                         if exists $trigger_lookup->{$trigger};
@@ -80,10 +80,10 @@ sub make_all_triggers {
                 $new_triggers{$name} = 1;
                 $trigger_lookup->{$trigger} = \%new_triggers;
             }
-            my @new_triggers_for_type = @{$triggers->{$trigger_type}}
+            my @old_triggers_for_type = @{$triggers->{$trigger_type}}
                 if defined $triggers->{$trigger_type};
-            @new_triggers_for_type = (@new_triggers_for_type,
-                                      @triggers_for_type);
+            @triggers_for_type{@old_triggers_for_type} = undef;
+            my @new_triggers_for_type = keys %triggers_for_type;
             $triggers->{$trigger_type} = \@new_triggers_for_type;
         }
     }
