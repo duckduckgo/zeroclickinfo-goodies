@@ -99,6 +99,13 @@ sub make_all_triggers {
 
 }
 
+# Parse the category map defined in 'categories.json'.
+sub get_category_map {
+    my $categories_json = share('categories.json')->slurp();
+    my $categories = decode_json($categories_json);
+    return $categories;
+}
+
 sub get_aliases {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
@@ -137,6 +144,8 @@ sub get_aliases {
 
 my $aliases = get_aliases();
 
+my $category_map = get_category_map();
+
 my ($trigger_lookup, $cheat_triggers) = generate_triggers($aliases);
 
 triggers any      => @{$cheat_triggers->{any}}
@@ -159,7 +168,11 @@ sub cheat_sheet_name_from_id {
 sub supported_categories {
     my $data = shift;
     my $template_type = $data->{template_type};
-    my @categories = ("standard", $data->{template_type});
+    my @additional_categories = @{$data->{categories}}
+        if defined $data->{categories};
+    my %categories = %{$category_map->{$template_type}};
+    my @categories = (@additional_categories,
+                      grep { $categories{$_} } (keys %categories));
     return @categories;
 }
 

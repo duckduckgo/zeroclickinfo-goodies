@@ -1,0 +1,32 @@
+{
+    "keyboard": {
+        "keyboard": 1,
+        "reference": 1,
+        "standard": 1
+    },
+    "reference": {
+        "reference": 1,
+        "standard": 1
+    },
+    "terminal": {
+        "terminal": 1,
+        "standard": 1
+    },
+    "language": {
+        "language": 1,
+        "standard": 1
+    },
+    "code": {
+        "code": 1,
+        "reference": 1,
+        "standard": 1
+    },
+    "math": {
+        "math": 1,
+        "standard": 1
+    },
+    "links": {
+        "links": 1,
+        "standard": 1
+    }
+}
