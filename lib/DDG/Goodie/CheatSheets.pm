@@ -54,7 +54,7 @@ sub generate_triggers{
 
     my (%cs_triggers, %trigger_lookup);
     while(my ($id, $x) = each %$data){
-        # The cheat_sheets ID is for all cheat sheets and has a slight different structure
+        # The cheat_sheets ID is for all cheat sheets and has a slightly different structure
         if($id eq 'cheat_sheets'){
             while(my ($group, $trigger_types) = each %$x){
                 my $all = $group eq 'ALL' ? $group : 0;
@@ -97,6 +97,7 @@ sub generate_triggers{
     return \%trigger_lookup;
 }
 
+# let's just dereference these once
 my %aliases = %{get_aliases()};
 my %trigger_lookup = %{generate_triggers()};
 
