@@ -6,6 +6,7 @@ package DDG::Goodie::DaysInMonth;
 
 use DDG::Goodie;
 use strict;
+with 'DDG::GoodieRole::Dates';
 
 zci answer_type => 'days_in_month';
 
@@ -18,9 +19,10 @@ triggers any => 'how many days in','how many days are in', 'what is the number o
 # Handle statement
 handle remainder => sub {
     my $remainder = $_;
-    return unless $remainder =~ qr/^\s*\w+\s*$/i;
-    my ($month) = $remainder =~ qr/(\w+)/;
-    return unless grep {$_ eq lc($month)} qw/january jan february feb march mar april apr may june jun july jul august aug september sep october oct november nov december dec/;
+    return unless $remainder;
+    my $month_regex = month_regex();
+    my ($month) = $remainder =~ /^($month_regex)$/i;
+    return unless $month;
     my $days = calculateNumberOfDaysForMonthString($month);
     return "Number of days in $month is $days.",
     structured_answer => {
