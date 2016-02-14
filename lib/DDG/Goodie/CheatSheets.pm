@@ -38,13 +38,15 @@ sub normalize_triggers {
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
             my $normalized_set = {};
             while (my ($trigger, $opts) = each $triggersh) {
-                if ($opts == 0 || ref $opts eq 'HASH') {
+                next if $opts == 0;
+                if (ref $opts eq 'HASH') {
                     $normalized_set->{$trigger} = $opts;
                     next;
                 }
                 $normalized_set->{$trigger} = $defaults;
             }
-            $normalized_sets->{$trigger_type} = $normalized_set;
+            $normalized_sets->{$trigger_type} = $normalized_set
+                if (keys $normalized_set);
         }
         $normalized_triggers->{$name} = $normalized_sets;
     }
@@ -67,7 +69,6 @@ sub make_all_triggers {
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
             my %triggers_for_type;
             while (my ($trigger, $opts) = each $triggersh) {
-                next if $opts == 0;
                 my $require_name = $opts->{require_name};
                 $triggers_for_type{$trigger} = 1;
                 unless ($require_name) {
