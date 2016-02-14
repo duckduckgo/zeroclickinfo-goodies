@@ -53,7 +53,7 @@
             },
             {  
                 "key":"Good luck!",
-                "val":"మీకు అంతా శుభం కలగాలని కొరుకుంటున్నాన !ు",
+                "val":"మీకు అంతా శుభం కలగాలని కొరుకుంటున్నాన !",
                 "trn":"Meeku aṅthaa shubhaṅ kalagaalani korukuṅtunnaanu !"
             },
             {  
@@ -65,7 +65,7 @@
         "Getting Help":[  
             {  
                 "key":"Call the police!",
-                "val":"రక్షక భటులని పిలవండి ! ",
+                "val":"రక్షక భటులని పిలవండి !",
                 "trn":"Rakshaka bhatulani pilavaṅdi!"
             },
             {  
@@ -85,7 +85,7 @@
             },
             {  
                 "key":"Fire!",
-                "val":"మం టలు ! ",
+                "val":"మం టలు!",
                 "trn":"Maṅ talu!"
             }
         ],
@@ -137,19 +137,19 @@
             },
             {  
                 "key":"2",
-                "val":"Reṇḍu "
+                "val":"Reṇḍu"
             },
             {  
                 "key":"3",
-                "val":"Mūḍu "
+                "val":"Mūḍu"
             },
             {  
                 "key":"4",
-                "val":"Nālugu "
+                "val":"Nālugu"
             },
             {  
                 "key":"5",
-                "val":"Ayidu "
+                "val":"Ayidu"
             },
             {  
                 "key":"6",
@@ -174,16 +174,16 @@
         ],
         "Problems":[  
             {  
-                "key":"Don't touch me! ",
+                "key":"Don't touch me!",
                 "val":"Nannu muttukoku!"
             },
             {  
                 "key":"I need your help. ",
-                "val":"Naaku mee sahayam kavali "
+                "val":"Naaku mee sahayam kavali"
             },
             {  
                 "key":"It's an emergency.",
-                "val":"Idi atyavasarmu "
+                "val":"Idi atyavasarmu"
             },
             {  
                 "key":"I lost my bag.",
@@ -202,7 +202,7 @@
                 "val":"Nannu vantariga vodileyyandi"
             },
             {  
-                "key":"I need a doctor. ",
+                "key":"I need a doctor.",
                 "val":"Naaku Doctor Kavali."
             },
             {  
@@ -210,7 +210,7 @@
                 "val":"Evaru?"
             },
             {  
-                "key":"I've been injured. ",
+                "key":"I've been injured.",
                 "val":"Naaku debba tagilindi"
             }
         ],
