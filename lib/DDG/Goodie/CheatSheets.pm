@@ -125,18 +125,13 @@ sub read_cheat_json {
 sub get_cheat_json {
     my ($remainder, $req) = @_;
     my $trigger = (lc $req->matched_trigger) =~ s/(\t|\s{2,})/ /gr;
-    my $file;
     my $lookup = $trigger_lookup->{$trigger};
-    if (ref $lookup eq 'HASH') {
-        $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
-        my $data = read_cheat_json($file) or return;
-        return $data if defined $lookup->{$file};
-        my @allowed_categories = @{$categories->{$file}};
-        foreach my $category (@allowed_categories) {
-            return $data if defined $lookup->{$category};
-        }
-    } else {
-        return read_cheat_json($file);
+    my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
+    my $data = read_cheat_json($file) or return;
+    return $data if defined $lookup->{$file};
+    my @allowed_categories = @{$categories->{$file}};
+    foreach my $category (@allowed_categories) {
+        return $data if defined $lookup->{$category};
     }
 }
 
