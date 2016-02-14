@@ -34,8 +34,8 @@ sub generate_triggers {
             $name = $file;
         }
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
-            while (my ($trigger, $opts) = each $triggersh) {
-                next if $opts == 0;
+            while (my ($trigger, $enabled) = each $triggersh) {
+                next unless $enabled;
                 $triggers{$trigger_type}{$trigger} = 1;
                 my %new_triggers = map { $_ => 1 }
                     (keys %{$trigger_lookup->{$trigger}}, $name);
@@ -43,8 +43,8 @@ sub generate_triggers {
             }
         }
     }
-    while (my ($trigger_type, $triggers_a) = each %triggers) {
-        triggers $trigger_type => (keys %{$triggers_a});
+    while (my ($trigger_type, $triggers) = each %triggers) {
+        triggers $trigger_type => (keys %{$triggers});
     }
     return $trigger_lookup;
 
