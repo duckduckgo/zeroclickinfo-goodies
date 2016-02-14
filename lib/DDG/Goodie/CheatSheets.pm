@@ -12,63 +12,83 @@ no warnings 'uninitialized';
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
+# Generate all the possible triggers as specified in the 'triggers.json' file.
 sub generate_triggers {
+    my $aliases = shift;
     my $triggers_json = share('triggers.json')->slurp();
-    my $triggers = decode_json($triggers_json);
-    my %cat_triggers = %{$triggers->{standard}};
-    %cat_triggers = make_category_triggers(%cat_triggers);
-    delete $triggers->{standard};
-    my %custom_triggers = %{$triggers};
-    %custom_triggers = make_identity_triggers(%custom_triggers);
-    my %triggers = %custom_triggers;
-    while (my ($trigger_type, $triggers) = each %cat_triggers) {
-        my @triggers = $triggers{$trigger_type}
-            if defined $triggers{$trigger_type};
-        @triggers = (@triggers, @{$triggers});
-        $triggers{$trigger_type} = \@triggers;
-    }
-    return %triggers;
+    my $json_triggers = decode_json($triggers_json);
+    my $standard_triggers = $json_triggers->{standard};
+    delete $json_triggers->{standard};
+    my %all_triggers = (%{$standard_triggers}, %{$json_triggers});
+    my $normalized_triggers = normalize_triggers(\%all_triggers);
+    my ($trigger_lookup, $triggers) = make_all_triggers($aliases, $normalized_triggers);
+    return ($trigger_lookup, $triggers);
 }
 
-my %identity_triggers;
-
-sub make_triggers {
-    my $runner = shift;
-    return sub {
-        my %spec_triggers = @_;
-        my %triggers;
-        while (my ($id, $trigger_hash) = each %spec_triggers) {
-            my @track_triggers;
-            while (my ($trigger_type, $add_triggers) = each $trigger_hash) {
-                my @triggers = @{$triggers{$trigger_type}}
-                    if exists($triggers{$trigger_type});
-                my @enabled_triggers = grep { $_ if $add_triggers->{$_} } (keys %{$add_triggers});
-                @triggers = (@triggers, @enabled_triggers);
-                @track_triggers = (@track_triggers, @enabled_triggers);
-                $triggers{$trigger_type} = \@triggers;
+# Normalize triggers to a default form - i.e, any triggers without options
+# will be assigned the defaults.
+sub normalize_triggers {
+    my $triggers = shift;
+    my $normalized_triggers = {};
+    my $defaults = {
+        require_name => 1,
+    };
+    while (my ($name, $trigger_setsh) = each $triggers) {
+        my $normalized_sets = {};
+        while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
+            my $normalized_set = {};
+            while (my ($trigger, $opts) = each $triggersh) {
+                if ($opts == 0 || ref $opts eq 'HASH') {
+                    $normalized_set->{$trigger} = $opts;
+                    next;
+                }
+                $normalized_set->{$trigger} = $defaults;
             }
-            $runner->($id, @track_triggers);
+            $normalized_sets->{$trigger_type} = $normalized_set;
         }
-        return %triggers;
-    };
-}
-sub make_identity_triggers {
-    my $add_identities = sub {
-        my ($id, @identity_triggers) = @_;
-        map { $identity_triggers{$_} = $id } @identity_triggers;
-    };
-    return make_triggers($add_identities)->(@_);
+        $normalized_triggers->{$name} = $normalized_sets;
+    }
+    return $normalized_triggers;
 }
 
-my %category_triggers;
+sub make_all_triggers {
+    my ($aliases, $spec_triggers) = @_;
+    # This will contain the actual triggers, with the triggers as values and
+    # the trigger positions as keys (e.g., 'startend' => ['foo'])
+    my $triggers = {};
+    # This will contain a lookup from triggers to categories and/or files.
+    my $trigger_lookup = {};
+    while (my ($name, $trigger_setsh) = each $spec_triggers) {
+        if ($name =~ /cheat_sheet$/) {
+            my $file = $aliases->{cheat_sheet_name_from_id($name)};
+            warn "Bad ID: '$name'" unless defined $file;
+            $name = $file;
+        }
+        while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
+            my @triggers_for_type;
+            while (my ($trigger, $opts) = each $triggersh) {
+                next if $opts == 0;
+                my $require_name = $opts->{require_name};
+                push @triggers_for_type, $trigger;
+                unless ($require_name) {
+                    warn "Overriding trigger '$trigger' with custom for '$name'"
+                        if exists $trigger_lookup->{$trigger};
+                    $trigger_lookup->{$trigger} = $name;
+                    next;
+                }
+                my %new_triggers = map { $_ => 1 } (keys %{$trigger_lookup->{$trigger}});
+                $new_triggers{$name} = 1;
+                $trigger_lookup->{$trigger} = \%new_triggers;
+            }
+            my @new_triggers_for_type = @{$triggers->{$trigger_type}}
+                if defined $triggers->{$trigger_type};
+            @new_triggers_for_type = (@new_triggers_for_type,
+                                      @triggers_for_type);
+            $triggers->{$trigger_type} = \@new_triggers_for_type;
+        }
+    }
+    return ($trigger_lookup, $triggers);
 
-sub make_category_triggers {
-    my $add_categories = sub {
-        my ($category, @category_triggers) = @_;
-        my %new_triggers = map { $_ => 1 } @category_triggers;
-        $category_triggers{$category} = \%new_triggers;
-    };
-    return make_triggers($add_categories)->(@_);
 }
 
 sub get_aliases {
@@ -109,16 +129,16 @@ sub get_aliases {
 
 my $aliases = get_aliases();
 
-my %cheat_triggers = generate_triggers();
+my ($trigger_lookup, $cheat_triggers) = generate_triggers($aliases);
 
-triggers any      => @{$cheat_triggers{any}}
-    if $cheat_triggers{any};
-triggers end      => @{$cheat_triggers{end}}
-    if $cheat_triggers{end};
-triggers start    => @{$cheat_triggers{start}}
-    if $cheat_triggers{start};
-triggers startend => @{$cheat_triggers{startend}}
-    if $cheat_triggers{startend};
+triggers any      => @{$cheat_triggers->{any}}
+    if $cheat_triggers->{any};
+triggers end      => @{$cheat_triggers->{end}}
+    if $cheat_triggers->{end};
+triggers start    => @{$cheat_triggers->{start}}
+    if $cheat_triggers->{start};
+triggers startend => @{$cheat_triggers->{startend}}
+    if $cheat_triggers->{startend};
 
 sub cheat_sheet_name_from_id {
     my $id = shift;
@@ -130,10 +150,10 @@ sub cheat_sheet_name_from_id {
 # (was custom trigger?, trigger file)
 sub who_triggered {
     my ($remainder, $trigger) = @_;
-    my $who = $identity_triggers{$trigger}
-        if exists $identity_triggers{$trigger};
-    return (1, $aliases->{cheat_sheet_name_from_id $who})
-        if defined $who;
+    my $lookup = $trigger_lookup->{$trigger};
+    unless (ref $lookup eq 'HASH') {
+        return (1, $lookup);
+    }
     my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))};
     return (0, $file);
 }
@@ -148,23 +168,6 @@ sub categories_for {
 }
 
 
-sub acceptable_triggers_for {
-    my $data = shift;
-    my @categories = categories_for $data;
-    my %triggers;
-    foreach my $category (@categories) {
-        my $cat = $category_triggers{$category};
-        die "Unknown category '$category'" unless defined $cat;
-        %triggers = (%triggers, %{$cat});
-    }
-    return %triggers;
-}
-
-sub has_trigger {
-    my ($data, $matched_trigger) = @_;
-    my %acceptable_triggers = acceptable_triggers_for $data;
-    return $acceptable_triggers{$matched_trigger};
-}
 
 handle remainder => sub {
     my $remainder = shift;
@@ -176,7 +179,7 @@ handle remainder => sub {
 
     my $json = do { local $/;  <$fh> };
     my $data = decode_json($json);
-    return unless $was_custom || has_trigger($data, $matched_trigger);# $acceptable_triggers{$matched_trigger};
+    return unless $was_custom;
 
     return 'Cheat Sheet', structured_answer => {
         id         => 'cheat_sheets',
