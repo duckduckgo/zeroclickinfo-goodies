@@ -25,12 +25,6 @@ sub generate_triggers {
     # This will contain a lookup from triggers to categories and/or files.
     my $trigger_lookup = {};
 
-    # Default settings for custom triggers.
-    my %defaults = (
-        require_name => 1,
-        full_match   => 1,
-    );
-
     while (my ($name, $trigger_setsh) = each $json_triggers) {
         if ($name =~ /cheat_sheet$/) {
             my $file = $name =~ s/_cheat_sheet//r;
@@ -42,24 +36,7 @@ sub generate_triggers {
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
             while (my ($trigger, $opts) = each $triggersh) {
                 next if $opts == 0;
-                # Normalize options to use default options where not provided.
-                my %opts = %defaults;
-                %opts = (%opts, %{$opts}) if ref $opts eq 'HASH';
-                next if $opts{disabled};
-                my $require_name = $opts{require_name};
                 $triggers{$trigger_type}{$trigger} = 1;
-                # In this case, we can only ever have one cheat sheet using
-                # this particular trigger else the triggering would be ambiguous.
-                unless ($require_name) {
-                    warn "Overriding trigger '$trigger' with custom for '$name'"
-                        if exists $trigger_lookup->{$trigger};
-                    $trigger_lookup->{$trigger} = {
-                        is_custom => 1,
-                        file      => $name,
-                        options   => \%opts,
-                    };
-                    next;
-                }
                 my %new_triggers = map { $_ => 1 }
                     (keys %{$trigger_lookup->{$trigger}}, $name);
                 $trigger_lookup->{$trigger} = \%new_triggers;
@@ -150,11 +127,7 @@ sub get_cheat_json {
     my $trigger = (lc $req->matched_trigger) =~ s/(\t|\s{2,})/ /gr;
     my $file;
     my $lookup = $trigger_lookup->{$trigger};
-    if ($lookup->{is_custom}) {
-        return if $lookup->{options}{full_match} && $remainder ne '';
-        $file = $lookup->{file};
-        return read_cheat_json($file);
-    } else {
+    if (ref $lookup eq 'HASH') {
         $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
         my $data = read_cheat_json($file) or return;
         return $data if defined $lookup->{$file};
@@ -162,6 +135,8 @@ sub get_cheat_json {
         foreach my $category (@allowed_categories) {
             return $data if defined $lookup->{$category};
         }
+    } else {
+        return read_cheat_json($file);
     }
 }
 
