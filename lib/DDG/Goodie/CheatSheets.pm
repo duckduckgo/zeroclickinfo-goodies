@@ -41,7 +41,8 @@ sub normalize_triggers {
                 next if $opts == 0;
                 if (ref $opts eq 'HASH') {
                     next if $opts->{disabled};
-                    $normalized_set->{$trigger} = $opts;
+                    my %opts = (%{$defaults}, %{$opts});
+                    $normalized_set->{$trigger} = \%opts;
                     next;
                 }
                 $normalized_set->{$trigger} = $defaults;
@@ -75,7 +76,11 @@ sub make_all_triggers {
                 unless ($require_name) {
                     warn "Overriding trigger '$trigger' with custom for '$name'"
                         if exists $trigger_lookup->{$trigger};
-                    $trigger_lookup->{$trigger} = $name;
+                    $trigger_lookup->{$trigger} = {
+                        is_custom => 1,
+                        file      => $name,
+                        options   => $opts,
+                    };
                     next;
                 }
                 my %new_triggers = map { $_ => 1 } (keys %{$trigger_lookup->{$trigger}});
@@ -172,8 +177,8 @@ sub get_cheat_json {
     my $trigger = $req->matched_trigger;
     my $file;
     my $lookup = $trigger_lookup->{$trigger};
-    unless (ref $lookup eq 'HASH') {
-        $file = $lookup;
+    if ($lookup->{is_custom}) {
+        $file = $lookup->{file};
         return read_cheat_json($file);
     } else {
         $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
