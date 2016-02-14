@@ -17,8 +17,8 @@
     "sections":{
 	"General Formatting": [
 	    {
-		"key": "%\\[flags\\][width\\]\\[.precision\\]\\[length\\]specifier",
-		"value": "string formatting syntax"
+    "key": "%\\[flags\\][width\\]\\[.precision\\]\\[length\\]specifier",
+    "value": "string formatting syntax"
             }
 	],
 	"Specifier": [
