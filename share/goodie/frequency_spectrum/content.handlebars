@@ -1,0 +1,108 @@
+{{#with plot}}
+<svg class="zci--plot" height="{{height}}" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                                                                                                                                                          
+    <g class="plot_background">                                                                                                                             
+        <rect height={{height}} width="100%" x="0" y="0" />                                                                                                  
+    </g>                                                                                                                                                    
+    <g class="plot_panel">                                                                                                                                  
+        <rect height="{{panelHeight}}" width="{{plot_panel_width}}%" x="{{leftGutter}}%" y="{{topGutter}}" />                                                                                                
+    </g>                                                                                                                                                    
+    <g id="x_axis">
+        {{#each x_axis}}                                                                                                                                        
+        <text class="x_axis_text" dy="1em" text-anchor="middle" x="{{x}}%" y="{{y}}">                                                                        
+            <tspan >10</tspan>
+            {{#if tspan_cdata}}
+            <tspan baseline-shift="super" dx="-0.5em" dy="-0.2em" style="font-size: 0.5em">{{tspan_cdata}}</tspan>
+            {{/if}}
+        </text>                                                                                                                                         
+        {{/each}}
+        <text class="x_axis_label" dy="1em" text-anchor="middle" x="50%" y="{{axis_label_y}}">                                                                       
+            <tspan >Frequency (Hz)</tspan>                                                                                                          
+        </text>
+    </g>                                                                                                                                                    
+    <g class="axis_line">                                                                                                                                   
+        <g >                                                                                                                                            
+            {{#with x_axis_line}}
+            <line x1="{{x1}}%" x2="{{x2}}%" y1="{{y1}}" y2="{{y2}}" />
+            {{/with}}
+        </g>                                                                                                                                            
+        <g >
+            {{#with y_axis_line}}
+            <line x1="{{x1}}%" x2="{{x2}}%" y1="{{y1}}" y2="{{y2}}" />
+            {{/with}}
+        </g>                                                                                                                                            
+    </g>                                                                                                                                                    
+    <g id="major_range_radio">                                                                                                                              
+        <g >                                                                                                                                            
+            <rect class="major_range" height="18" width="37.431363764159%" x="20%" y="33.5" />                                                      
+        </g>                                                                                                                                            
+        <g >                                                                                                                                            
+            <text class="major_range_label" dy="7.5" text-anchor="end" x="19%" y="37">                                                              
+                <tspan >Radio</tspan>                                                                                                           
+            </text>                                                                                                                                 
+        </g>                                                                                                                                            
+    </g>                                                                                                                                                    
+    <g id="major_range_infrared">                                                                                                                           
+        <g >                                                                                                                                            
+            <rect class="major_range" height="18" width="6.3748162098249%" x="57.431363764159%" y="58.5" />                                         
+        </g>                                                                                                                                            
+        <g >                                                                                                                                            
+            <text class="major_range_label" dy="7.5" text-anchor="end" x="19%" y="62">                                                              
+                <tspan >Infrared</tspan>                                                                                                        
+            </text>                                                                                                                                 
+        </g>                                                                                                                                            
+    </g>                                                                                                                                                    
+    <g id="major_range_visible light">                                                                                                                      
+        <g >                                                                                                                                            
+            <rect class="major_range" height="18" width="0.903089986991951%" x="63.8061799739839%" y="83.5" />                                      
+        </g>                                                                                                                                            
+        <g >                                                                                                                                            
+            <text class="major_range_label" dy="7.5" text-anchor="end" x="19%" y="87">                                                              
+                <tspan >Visible light</tspan>
+            </text>                                                                                                                                 
+        </g>                                                                                                                                            
+    </g>                                                                                                                                                    
+    <g id="major_range_ultraviolet">                                                                                                                        
+        <g >                                                                                                                                            
+            <rect class="major_range" height="18" width="4.8070488526061%" x="64.6243149115529%" y="108.5" />                                       
+        </g>                                                                                                                                            
+        <g >                                                                                                                                            
+            <text class="major_range_label" dy="7.5" text-anchor="end" x="19%" y="112">                                                             
+                <tspan >Ultraviolet</tspan>                                                                                                     
+            </text>                                                                                                                                 
+        </g>                                                                                                                                            
+    </g>                                                                                                                                                    
+    <g id="major_range_x-ray">                                                                                                                              
+        <g >                                                                                                                                            
+            <rect class="major_range" height="18" width="9%" x="69.431363764159%" y="133.5" />                                                      
+        </g>                                                                                                                                            
+        <g >                                                                                                                                            
+            <text class="major_range_label" dy="7.5" text-anchor="end" x="19%" y="137">                                                             
+                <tspan >X-ray</tspan>                                                                                                           
+            </text>                                                                                                                                 
+        </g>                                                                                                                                            
+    </g>                                                                                                                                                    
+    <g id="major_range_gamma">                                                                                                                              
+        <g >                                                                                                                                            
+            <rect class="major_range" height="18" width="15%" x="78.431363764159%" y="158.5" />                                                     
+        </g>                                                                                                                                            
+        <g >                                                                                                                                            
+            <text class="major_range_label" dy="7.5" text-anchor="end" x="19%" y="162">                                                             
+                <tspan >Gamma</tspan>                                                                                                           
+            </text>                                                                                                                                 
+        </g>                                                                                                                                            
+    </g>                                                                                                                                                    
+    <g class="marker_tag">                                                                                                                                  
+        <rect height="14" id="marker_tag" style="fill: #F7614F" width="1" x="24.5969100130081%" y="9.5" />                                              
+    </g>                                                                                                                                                    
+    <g >                                                                                                                                                    
+        <text class="marker_label" text-anchor="middle" x="25.0969100130081%" y="19.5">                                                                 
+            <tspan id="marker_label">50 Hz</tspan>                                                                                                  
+        </text>                                                                                                                                         
+    </g>                                                                                                                                                    
+    <g class="marker">
+        {{#with marker_line}}
+        <line id="marker" style="stroke: {{color}}" x1="{{x1}}%" x2="{{x2}}%" y1="{{y1}}" y2="{{y2}}" />
+        {{/with}}
+    </g>                                                                                                                                                          
+</svg>
+{{/with}}
