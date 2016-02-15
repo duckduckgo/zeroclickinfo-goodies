@@ -148,7 +148,7 @@
         "val": "Define a method"
       }
     ],
-    "Instance": [
+    "Instances": [
       {
         "key": "var a = MyClass()\na.myProperty",
         "val": "Creating/Using an Instance"
