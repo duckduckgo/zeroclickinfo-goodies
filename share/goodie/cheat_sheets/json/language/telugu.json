@@ -107,142 +107,164 @@
             },
             {  
                 "key":"Nice to meet you",
-                "val":"Mimmalni kalisi nanduku santhosam ga unnadi."
+                "val": "మిమ్ములని కలసినందుకు సంతోషం",
+                "trn":"Mimmalni kalisi nanduku santhosam ga unnadi"
             },
             {  
                 "key":"Look out!/Look over there!",
-                "val":"Atu choodu!"
+                "val":"అక్కడ చూడు",
+                "trn":"Atu choodu!"
             },
             {  
                 "key":"Good evening",
-                "val":"Namastheyు"
+                "val":"శుభ సాయంత్రం",
+                "trn":"Śubha sāyantraṁ"
             },
             {  
                 "key":"Do you speak English?",
-                "val":"Meeru English/anglamu matladuthara?"
+                "val":"నువ్వు ఇంగ్లీష్ మాట్లాడతావా?",
+                "trn":"Nuvvu iṅglīṣ māṭlāḍatāvā?"
             },
             {  
                 "key":"I'm sorry/Forgive me",
-                "val":"Nannu kshaminchandi/manninchandi."
+                "val":"నన్ను క్షమించండి",
+                "trn":"Nannu kshaminchandi/manninchandi"
             }
         ],
         "Numbers":[  
             {  
                 "key":"0",
-                "val":"Sunna"
+                "val":"సున్నా",
+                "trn":"Sunna"
             },
             {  
                 "key":"1",
-                "val":"Oka"
+                "val":"ఒకటి",
+                "trn":"Okati"
             },
             {  
                 "key":"2",
-                "val":"Reṇḍu"
+                "val":"ఇద్దరు",
+                "trn":"Iddaru"
             },
             {  
                 "key":"3",
-                "val":"Mūḍu"
+                "val":"మూడు",
+                "trn":"Mūḍu"
             },
             {  
                 "key":"4",
-                "val":"Nālugu"
+                "val":"నాలుగు",
+                "trn":"Nālugu"
             },
             {  
                 "key":"5",
-                "val":"Ayidu"
+                "val":"ఐదు",
+                "trn":"Ayidu"
             },
             {  
                 "key":"6",
-                "val":"Aaru"
+                "val":"ఆరు",
+                "trn":"Aaru"
             },
             {  
                 "key":"7",
-                "val":"Aeru"
+                "val":"ఏడు",
+                "trn":"Ēḍu"
             },
             {  
                 "key":"8",
-                "val":"Enmidi"
+                "val":"ఎనిమిది",
+                "trn":"Enmidi"
             },
             {  
                 "key":"9",
-                "val":"Tommidi"
+                "val":"తొమ్మిది",
+                "trn":"Tommidi"
             },
             {  
                 "key":"10",
-                "val":"Padi"
+                "val":"పది",
+                "trn":"Padi"
             }
         ],
         "Problems":[  
+            
             {  
-                "key":"Don't touch me!",
-                "val":"Nannu muttukoku!"
+                "key":"I need your help",
+                "val":"నాకు నీ సహాయం కావాలి",
+                "trn":"Naaku mee sahayam kavali"
             },
             {  
-                "key":"I need your help.",
-                "val":"Naaku mee sahayam kavali"
+                "key":"It's an emergency",
+                "val":"అది ఒక అత్యవసర వార్తలు",
+                "trn":"Adi oka atyavasara vārtalu"
             },
             {  
-                "key":"It's an emergency.",
-                "val":"Idi atyavasarmu"
+                "key":"I lost my bag",
+                "val":"నేను నా బ్యాగ్ కోల్పోయింది",
+                "trn":"Nēnu nā byāg kōlpōyindi"
             },
             {  
-                "key":"I lost my bag.",
-                "val":"Naa bag poyindhi"
-            },
-            {  
-                "key":"I lost my wallet.",
-                "val":"Naa wallet (purse) poyindi"
+                "key":"I lost my wallet",
+                "val":"నా జేబు కోల్పోయింది",
+                "trn":"Nā jēbu kōlpōyindi"
             },
             {  
                 "key":"I'm sick",
-                "val":"Naaku vontlo baaga ledu"
+                "val":"నా అరోగ్యము బాగా లేదు",
+                "trn":"Naaku vontlo baaga ledu"
             },
             {  
-                "key":"Leave me alone.",
-                "val":"Nannu vantariga vodileyyandi"
+                "key":"Leave me alone",
+                "val":"నన్ను ఒంటరిగా వదిలేయ్",
+                "trn":"Nannu oṇṭarigā vadilēy"
             },
             {  
-                "key":"I need a doctor.",
-                "val":"Naaku Doctor Kavali."
+                "key":"I need a doctor",
+                "val":"నాకు ఒక వైద్యుడు కావాలి",
+                "trn":"Nāku oka vaidyuḍu kāvāli"
             },
             {  
                 "key":"Who is this?",
-                "val":"Evaru?"
+                "val":"ఎవరిది?",
+                "trn":"Evaridi?"
             },
             {  
-                "key":"I've been injured.",
-                "val":"Naaku debba tagilindi"
+                "key":"I've been injured",
+                "val":",నేను గాయపడ్డారు చేసిన",
+                "trn":"Naaku debba tagilindi"
             }
         ],
         "Time":[  
             {  
                 "key":"Morning",
-                "value":"Udayam",
+                "val":"Udayam",
                 "trn":"ఉదయం"
             },
             {  
                 "key":"Before",
-                "value":"Mundu",
-                "trb":"ముందు"
+                "val":"Mundu",
+                "trn":"ముందు"
             },
             {  
                 "key":"Afternoon",
-                "value":"Madhyahnam",
+                "val":"Madhyahnam",
                 "trn":"మధ్యాహ్నం"
             },
             {  
                 "key":"Later",
-                "value":"taruvata",
+                "val":"taruvata",
                 "trn":"తర్వాత"
             },
             {  
                 "key":"Evening",
-                "value":"Sayantram",
+                "val":"Sayantram",
                 "trn":" సాయంత్రం"
             },
             {  
                 "key":"Night",
-                "value":"Ratri",
+                "val":"Ratri",
                 "trn":"రాత్రి"
             }
         ]
