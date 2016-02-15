@@ -12,11 +12,25 @@ ddg_goodie_test(
      'DDG::Goodie::BashPrimaryExpressions'
     ],
     "bash [ -a b ]" => test_zci(
-	qr/.+ true if b exists./,
-	structured_answer => {
+    qr/.+ true if b exists./,
+    structured_answer => {
         id => 'bash_primary_expressions',
         name => 'Answer',
-        data => '-ANY-',
+        data => {
+            intro => "[ -a b ]",
+            results => [
+                {
+                    text => "true if ",
+                    value => ""
+                }, {
+                    text => "",
+                    value => "b"
+                }, {
+                    text => " exists",
+                    value => ""
+                }
+            ]
+        },
         templates => {
             group => 'text',
             item => 0,
@@ -27,8 +41,8 @@ ddg_goodie_test(
     }
     ),
     'bash [[ "abc" < "cba" ]]' => test_zci(
-	qr/.+ true if "abc" string-sorts before "cba" in the current locale./,
-	structured_answer => {
+    qr/.+ true if "abc" string-sorts before "cba" in the current locale./,
+    structured_answer => {
         id => 'bash_primary_expressions',
         name => 'Answer',
         data => '-ANY-',
@@ -42,8 +56,8 @@ ddg_goodie_test(
     }
     ),
     'bash [ 2 -gt 1 ]' => test_zci(
-	qr/.+ true if 2 is numerically greater than 1./,
-	structured_answer => {
+    qr/.+ true if 2 is numerically greater than 1./,
+    structured_answer => {
         id => 'bash_primary_expressions',
         name => 'Answer',
         data => '-ANY-',
@@ -57,8 +71,8 @@ ddg_goodie_test(
     }
     ),
     'bash [ ! hello == world ]' => test_zci(
-	qr/.+ false if the strings hello and world are equal./,
-	structured_answer => {
+    qr/.+ false if the strings hello and world are equal./,
+    structured_answer => {
         id => 'bash_primary_expressions',
         name => 'Answer',
         data => '-ANY-',
@@ -72,8 +86,8 @@ ddg_goodie_test(
     }
     ),
     'bash [[ /tmp/hello -nt /etc/test ]]' => test_zci (
-	qr#.+ true if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not.#,
-	structured_answer => {
+    qr#.+ true if /tmp/hello has been changed more recently than /etc/test or if /tmp/hello exists and /etc/test does not.#,
+    structured_answer => {
         id => 'bash_primary_expressions',
         name => 'Answer',
         data => '-ANY-',
