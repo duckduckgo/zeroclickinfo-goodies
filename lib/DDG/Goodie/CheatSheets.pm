@@ -23,7 +23,7 @@ sub generate_triggers {
     # the trigger positions as keys (e.g., 'startend' => ['foo'])
     my %triggers;
     # This will contain a lookup from triggers to categories and/or files.
-    my $trigger_lookup = {};
+    my %trigger_lookup;
 
     while (my ($name, $trigger_setsh) = each $json_triggers) {
         if ($name =~ /cheat_sheet$/) {
@@ -38,15 +38,15 @@ sub generate_triggers {
                 next unless $enabled;
                 $triggers{$trigger_type}{$trigger} = 1;
                 my %new_triggers = map { $_ => 1 }
-                    (keys %{$trigger_lookup->{$trigger}}, $name);
-                $trigger_lookup->{$trigger} = \%new_triggers;
+                    (keys %{$trigger_lookup{$trigger}}, $name);
+                $trigger_lookup{$trigger} = \%new_triggers;
             }
         }
     }
     while (my ($trigger_type, $triggers) = each %triggers) {
         triggers $trigger_type => (keys %{$triggers});
     }
-    return $trigger_lookup;
+    return %trigger_lookup;
 
 }
 
@@ -110,7 +110,7 @@ sub get_aliases_categories {
 
 my ($aliases, $categories) = get_aliases_categories();
 
-my $trigger_lookup = generate_triggers($aliases);
+my %trigger_lookup = generate_triggers($aliases);
 
 # Parse the JSON data contained within $file.
 sub read_cheat_json {
@@ -125,7 +125,7 @@ sub read_cheat_json {
 sub get_cheat_json {
     my ($remainder, $req) = @_;
     my $trigger = (lc $req->matched_trigger) =~ s/(\t|\s{2,})/ /gr;
-    my $lookup = $trigger_lookup->{$trigger};
+    my $lookup = $trigger_lookup{$trigger};
     my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
     my $data = read_cheat_json($file) or return;
     return $data if defined $lookup->{$file};
