@@ -12,68 +12,68 @@ ddg_goodie_test(
     [qw( DDG::Goodie::Bitsum )],
     'bitsum 127' => test_zci('7',
             structured_answer => {
-                input     => ['127'],
+                input     => ['127 (input treated as decimal)'],
                 operation => 'Hamming Weight',
                 result    => '7'
         }),
     'bitsum of 127' => test_zci('7',
             structured_answer => {
-                input     => ['127'],
+                input     => ['127 (input treated as decimal)'],
                 operation => 'Hamming Weight',
                 result    => '7'
         }),
     'bitsum 0b1111111' => test_zci('7',
             structured_answer => {
-                input     => ['0b1111111'],
+                input     => ['0b1111111 (input treated as binary)'],
                 operation => 'Hamming Weight',
                 result    => '7'
         }),
     'bitsum for 0x1234' => test_zci('5',
             structured_answer => {
-                input     => ['0x1234'],
+                input     => ['0x1234 (input treated as hexadecimal)'],
                 operation => 'Hamming Weight',
                 result    => '5'
         }), 
     'hammingweight 1024' => test_zci('1',
             structured_answer => {
-                input     => ['1024'],
+                input     => ['1024 (input treated as decimal)'],
                 operation => 'Hamming Weight',
                 result    => '1'
         }),
     'hammingweight 0b10101' => test_zci('3',
             structured_answer => {
-                input     => ['0b10101'],
+                input     => ['0b10101 (input treated as binary)'],
                 operation => 'Hamming Weight',
                 result    => '3'
         }),
     'hw 0xff' => test_zci('8',
             structured_answer => {
-                input     => ['0xff'],
+                input     => ['0xff (input treated as hexadecimal)'],
                 operation => 'Hamming Weight',
                 result    => '8'
         }),
     'hw for 0xaa' => test_zci('4',
             structured_answer => {
-                input     => ['0xaa'],
+                input     => ['0xaa (input treated as hexadecimal)'],
                 operation => 'Hamming Weight',
                 result    => '4'
         }),
     'hw for 0b11' => test_zci('2',
             structured_answer => {
-                input     => ['0b11'],
+                input     => ['0b11 (input treated as binary)'],
                 operation => 'Hamming Weight',
                 result    => '2'
         }),
     # Long number tests
     'hw 123456789123456789123456789' => test_zci('50',
             structured_answer => {
-                input     => ['123456789123456789123456789'],
+                input     => ['123456789123456789123456789 (input treated as decimal)'],
                 operation => 'Hamming Weight',
                 result    => '50'
         }),
     'bitsum 0x123456789ABCDEF123456789ABCDEF' => test_zci('64',
             structured_answer => {
-                input     => ['0x123456789ABCDEF123456789ABCDEF'],
+                input     => ['0x123456789ABCDEF123456789ABCDEF (input treated as hexadecimal)'],
                 operation => 'Hamming Weight',
                 result    => '64'
         }),
