@@ -13,10 +13,14 @@
     "Logical Operators",
     "Printing",
     "Dictionaries",
+    "Arrays",
     "Conditionals",
     "Loops",
     "Functions",
-    "Classes"
+    "Classes",
+    "Methods",
+    "Instances",
+    "Enums"
   ],
   "sections": {
     "Basics": [
@@ -83,6 +87,25 @@
         "val": "Remove \"tue\" from the dictionary"
       }
     ],
+    
+    "Arrays": [
+      {
+        "key": "var someInts = [Int]()",
+        "val": "Creating an Empty Array"
+      },
+      {
+        "key": "var threeDoubles = \\[Double\\](count: 3, repeatedValue: 0.0)",
+        "val": "Creating an Array with a Default Value"
+      },
+      {
+        "key": "var shoppingList: \\[String\\] = [\"Eggs\", \"Milk\"] ",
+        "val": "Creating an Array with an Array Literal"
+      },
+      {
+        "key": "for item in shoppingList \\{\nprint(item)\n\\}",
+        "val": "Iterating Over an Array"
+      }
+    ],
     "Conditionals": [
       {
         "key": "if condition \\{ //statements\\} ",
@@ -117,6 +140,24 @@
       {
         "key": "class SomeClass \\{// class definition\\}",
         "val": "Define a new class"
+      }
+    ],
+    "Methods": [
+      {
+        "key": "func doIt() -> Int \\{\nreturn 0\n\\}\nfunc doIt(a:Int) -> Int \\{\nreturn a\n\\}\nfunc doIt(a:Int, b:Int) -> Int \\{\n return a+b\n\\}",
+        "val": "Define a method"
+      }
+    ],
+    "Instances": [
+      {
+        "key": "var a = MyClass()\na.myProperty",
+        "val": "Creating/Using an Instance"
+      }
+    ],
+    "Enums": [
+      {
+        "key": "enum CollisionType: Int \\{\ncase Player = 1\ncase Enemy = 2\n\\}\nvar type = CollisionType.Player",
+        "val": "Define a new Enum"
       }
     ]
   }
