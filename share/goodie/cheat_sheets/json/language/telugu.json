@@ -239,33 +239,39 @@
         "Time":[  
             {  
                 "key":"Morning",
-                "val":"Udayam",
-                "trn":"ఉదయం"
+                "val":"ఉదయం",
+                "trn":"Udayam"
+                
             },
             {  
                 "key":"Before",
-                "val":"Mundu",
-                "trn":"ముందు"
+                "val":"ముందు",
+                "trn":"Mundu"
+                
             },
             {  
                 "key":"Afternoon",
-                "val":"Madhyahnam",
-                "trn":"మధ్యాహ్నం"
+                "val":"మధ్యాహ్నం",
+                "trn":"Madhyahnam"
+                
             },
             {  
                 "key":"Later",
-                "val":"taruvata",
-                "trn":"తర్వాత"
+                "val":"తర్వాత",
+                "trn":"taruvata"
+                
             },
             {  
                 "key":"Evening",
-                "val":"Sayantram",
-                "trn":" సాయంత్రం"
+                "val":" సాయంత్రం"
+                "trn":"Sayantram"
+                
             },
             {  
                 "key":"Night",
-                "val":"Ratri",
-                "trn":"రాత్రి"
+                "val":"రాత్రి",
+                "trn":"Ratri"
+                
             }
         ]
     }
