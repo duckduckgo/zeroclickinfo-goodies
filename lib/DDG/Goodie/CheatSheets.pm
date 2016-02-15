@@ -16,7 +16,7 @@ zci is_cached   => 1;
 # hash that allows category and/or cheat sheet look-up based on
 # trigger.
 sub generate_triggers {
-    my $aliases = shift;
+    my ($aliases, $categories) = @_;
     my $triggers_json = share('triggers.json')->slurp();
     my $json_triggers = decode_json($triggers_json);
     # This will contain the actual triggers, with the triggers as values and
@@ -26,19 +26,27 @@ sub generate_triggers {
     my %trigger_lookup;
 
     while (my ($name, $trigger_setsh) = each $json_triggers) {
+        my $is_standard = 1;
         if ($name =~ /cheat_sheet$/) {
             my $file = $name =~ s/_cheat_sheet//r;
             $file =~ s/_/ /g;
             $file = $aliases->{$file};
             die "Bad ID: '$name'" unless defined $file;
             $name = $file;
+            $is_standard = 0;
         }
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
             while (my ($trigger, $enabled) = each $triggersh) {
                 next unless $enabled;
+                # Add trigger to global triggers.
                 $triggers{$trigger_type}{$trigger} = 1;
-                my %new_triggers = map { $_ => 1 }
-                    (keys %{$trigger_lookup{$trigger}}, $name);
+                my %new_triggers = map { $_ => 1}
+                    (keys %{$trigger_lookup{$trigger}});
+                if ($is_standard) {
+                    %new_triggers = (%new_triggers, %{$categories->{$name}});
+                } else {
+                    $new_triggers{$name} = 1;
+                }
                 $trigger_lookup{$trigger} = \%new_triggers;
             }
         }
@@ -50,29 +58,25 @@ sub generate_triggers {
 
 }
 
-# Retrieve the categories that can trigger the given cheat sheet.
-sub supported_categories {
-    my ($category_map, $data) = @_;
-    my $template_type = $data->{template_type};
-    my @additional_categories = @{$data->{categories}}
-        if defined $data->{categories};
-    my %categories = %{$category_map->{$template_type}};
-    my @categories = (@additional_categories,
-                      grep { $categories{$_} } (keys %categories));
-    return \@categories;
+sub get_categories {
+    my %categories;
+    my $categories_json = share('categories.json')->slurp();
+    my $category_map = decode_json($categories_json);
+
+    while (my ($template_type, $categories) = each $category_map) {
+        while (my ($category, $enabled) = each $categories) {
+            $categories{$category}{$template_type} = 1 if $enabled;
+        }
+    }
+    return \%categories;
 }
 
 # Initialize aliases and categories.
-sub get_aliases_categories {
+sub get_aliases {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
                                 ->in(share('json'));
     my %results;
-
-    # Initialize category maps
-    my %categories;
-    my $categories_json = share('categories.json')->slurp();
-    my $category_map = decode_json($categories_json);
 
     my $cheat_dir = File::Basename::dirname($files[0]);
 
@@ -90,9 +94,6 @@ sub get_aliases_categories {
 
         $results{$defaultName} = $file;
 
-        # Add supported categories for the given cheat sheet
-        $categories{$file} = supported_categories($category_map, $data);
-
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
                 my $lc_alias = lc $alias;
@@ -105,40 +106,28 @@ sub get_aliases_categories {
             }
         }
     }
-    return (\%results, \%categories);
+    return \%results;
 }
 
-my ($aliases, $categories) = get_aliases_categories();
+my $aliases = get_aliases();
 
-my %trigger_lookup = generate_triggers($aliases);
+my $categories = get_categories();
 
-# Parse the JSON data contained within $file.
-sub read_cheat_json {
-    my $file = shift;
-    open my $fh, $file or return;
-    my $json = do { local $/;  <$fh> };
-    my $data = decode_json($json);
-    return $data;
-}
-
-# Attempt to retrieve the JSON data based on the used trigger.
-sub get_cheat_json {
-    my ($remainder, $req) = @_;
-    my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
-    my $lookup = $trigger_lookup{$trigger};
-    my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
-    my $data = read_cheat_json($file) or return;
-    return $data if defined $lookup->{$file};
-    my @allowed_categories = @{$categories->{$file}};
-    foreach my $category (@allowed_categories) {
-        return $data if defined $lookup->{$category};
-    }
-}
+my %trigger_lookup = generate_triggers($aliases, $categories);
 
 handle remainder => sub {
     my $remainder = shift;
 
-    my $data = get_cheat_json($remainder, $req) or return;
+    my $trigger = join(' ', split /\s+/o, lc($req->matched_trigger));
+    my $lookup = $trigger_lookup{$trigger};
+    my $file = $aliases->{join(' ', split /\s+/o, lc($remainder))} or return;
+    open my $fh, $file or return;
+    my $json = do { local $/; <$fh> };
+    my $data = decode_json($json) or return;
+    # Either the template type of the cheat sheet must support
+    # the trigger category, or the lookup must explicitly allow
+    # the current file.
+    return unless $lookup->{$data->{template_type}} || $lookup->{$file};
 
     return 'Cheat Sheet', structured_answer => {
         id         => 'cheat_sheets',
