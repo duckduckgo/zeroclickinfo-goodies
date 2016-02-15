@@ -23,20 +23,25 @@ handle remainder => sub {
     my $input_number = $_;
     my $hex_number;
     my $binstring;
-    
+    my $base;
+
     # Construct binary representation for both hex and decimal numbers
     if( $input_number =~ /^0x/) {
         $hex_number = substr($input_number, 2);
         $binstring = unpack ('B*', pack ('H*',$hex_number));
+	$base = 'hexadecimal';
     } elsif( $input_number =~ /^0b/) {
         $binstring = substr($input_number, 2);
+	$base = 'binary';
     } else {
         $binstring = Math::BigInt->new($input_number)->as_bin();
+	$base = 'decimal';
     }
     
     # Count ones
     my $result = $binstring =~ tr/1/1/;
-    
+    $input_number .= ' (input treated as '.$base.')';
+
     return $result,
         structured_answer => {
             input     => [html_enc($input_number)],
