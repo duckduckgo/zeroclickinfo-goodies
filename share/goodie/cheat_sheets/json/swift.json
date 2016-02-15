@@ -102,7 +102,7 @@
         "val": "Creating an Array with an Array Literal"
       },
       {
-        "key": "for item in shoppingList {\nprint(item)\n}",
+        "key": "for item in shoppingList \\{\nprint(item)\n\\}",
         "val": "Iterating Over an Array"
       }
     ],
