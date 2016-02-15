@@ -240,38 +240,32 @@
             {  
                 "key":"Morning",
                 "val":"ఉదయం",
-                "trn":"Udayam"
-                
+                "trn":"Udayam"  
             },
             {  
                 "key":"Before",
                 "val":"ముందు",
                 "trn":"Mundu"
-                
             },
             {  
                 "key":"Afternoon",
                 "val":"మధ్యాహ్నం",
-                "trn":"Madhyahnam"
-                
+                "trn":"Madhyahnam"    
             },
             {  
                 "key":"Later",
                 "val":"తర్వాత",
                 "trn":"taruvata"
-                
             },
             {  
                 "key":"Evening",
                 "val":" సాయంత్రం",
-                "trn":"Sayantram"
-                
+                "trn":"Sayantram"              
             },
             {  
                 "key":"Night",
                 "val":"రాత్రి",
-                "trn":"Ratri"
-                
+                "trn":"Ratri" 
             }
         ]
     }
