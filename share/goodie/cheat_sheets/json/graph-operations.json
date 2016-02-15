@@ -1,0 +1,97 @@
+{
+    "id": "graph_operations_cheat_sheet",
+    "name": "Graph Operations",
+    "description": "Summary of Big-O run-time complexities for common graph operations",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Graph_theory"
+    },
+    "aliases": [
+        "graph operation" 
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Adjacency list",
+        "Incidence list",
+        "Adjacency matrix",
+        "Incidence matrix"
+    ],
+    "sections": {
+        "Adjacency list": [{
+            "val": "O(|V|+|E|)",
+            "key": "Storage"
+        }, {
+            "val": "O(1)",
+            "key": "Add Vertex"
+        }, {
+            "val": "O(1)",
+            "key": "Add Edge"
+        }, {
+            "val": "O(|V| + |E|)",
+            "key": "Remove Vertex"
+        }, {
+            "val": "O(|E|)",
+            "key": "Remove Edge"
+        }, {
+            "val": "O(|V|)",
+            "key": "Query"
+        }],
+        "Incidence list": [{
+            "val": "O(|V|+|E|)",
+            "key": "Storage"
+        }, {
+            "val": "O(1)",
+            "key": "Add Vertex"
+        }, {
+            "val": "O(1)",
+            "key": "Add Edge"
+        }, {
+            "val": "O(|E|)",
+            "key": "Remove Vertex"
+        }, {
+            "val": "O(|E|)",
+            "key": "Remove Edge"
+        }, {
+            "val": "O(|E|)",
+            "key": "Query"
+        }],
+        "Adjacency matrix": [{
+            "val": "O(|V|²)",
+            "key": "Storage"
+        }, {
+            "val": "O(|V|²)",
+            "key": "Add Vertex"
+        }, {
+            "val": "O(1)",
+            "key": "Add Edge"
+        }, {
+            "val": "O(|V|²)",
+            "key": "Remove Vertex"
+        }, {
+            "val": "O(1)",
+            "key": "Remove Edge"
+        }, {
+            "val": "O(1)",
+            "key": "Query"
+        }],
+        "Incidence matrix": [{
+            "val": "O(|V| ⋅ |E|)",
+            "key": "Storage"
+        }, {
+            "val": "O(|V| ⋅ |E|)",
+            "key": "Add Vertex"
+        }, {
+            "val": "O(|V| ⋅ |E|)",
+            "key": "Add Edge"
+        }, {
+            "val": "O(|V| ⋅ |E|)",
+            "key": "Remove Vertex"
+        }, {
+            "val": "O(|V| ⋅ |E|)",
+            "key": "Remove Edge"
+        }, {
+            "val": "O(|E|)",
+            "key": "Query"
+        }]
+    }
+}
