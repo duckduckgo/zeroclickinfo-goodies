@@ -1,0 +1,88 @@
+categories:
+  code:
+    startend:
+      - "syntax"
+  keyboard:
+    startend:
+      - "default keys"
+      - "shortcuts"
+      - "keyboard shortcuts"
+      - "keys"
+      - "key bindings"
+      - "default keybindings"
+  language:
+    startend:
+      - "example"
+      - "guide"
+      - "examples"
+  links:
+    startend:
+      - "websites"
+      - "sites"
+      - "links"
+  math:
+    startend:
+      - "equations"
+      - "formulas"
+      - "formulae"
+  reference:
+    startend:
+      - "reference"
+      - "quick reference"
+  standard:
+    startend:
+      - "cheatsheet"
+      - "help"
+      - "cheat sheet"
+  terminal:
+    startend:
+      - "commands"
+      - "symbols"
+      - "chars"
+      - "characters"
+
+# You shouldn't need to touch this.
+#
+# Specifies the categories that are automatically assigned to any
+# cheat sheet using the given template_type.
+template_map:
+  code:
+    - "standard"
+    - "reference"
+    - "code"
+  keyboard:
+    - "standard"
+    - "reference"
+    - "keyboard"
+  language:
+    - "standard"
+    - "language"
+  links:
+    - "standard"
+    - "links"
+  math:
+    - "standard"
+    - "math"
+  reference:
+    - "standard"
+    - "reference"
+  terminal:
+    - "standard"
+    - "terminal"
+
+
+# Custom cheat sheet triggers.
+#
+# Format:
+#
+# cheat_sheet_id:
+#   additional_categories:
+#     - "category1",
+#     - "category2"
+#   triggers:
+#     startend:
+#       - "some trigger"
+#       - "another trigger"
+#     any:
+#       - "yet another trigger"
+custom_triggers:

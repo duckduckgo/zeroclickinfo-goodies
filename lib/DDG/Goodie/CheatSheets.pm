@@ -6,44 +6,61 @@ use DDG::Goodie;
 use DDP;
 use File::Find::Rule;
 use JSON;
+use YAML;
 
 no warnings 'uninitialized';
 
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
+my $yaml_triggers = share('triggers.yaml')->slurp();
+my $trigger_data = Load($yaml_triggers);
+
 # Instantiate triggers as defined in 'triggers.json', return a
 # hash that allows category and/or cheat sheet look-up based on
 # trigger.
 sub generate_triggers {
-    my ($aliases, $categories) = @_;
-    my $triggers_json = share('triggers.json')->slurp();
-    my $json_triggers = decode_json($triggers_json);
+    my $aliases = @_;
+
+    # Initialize categories
+    my %categories;
+    my $category_map = $trigger_data->{template_map};
+    my %spec_triggers = %{$trigger_data->{categories}};
+    # Initialize custom triggers
+    foreach (my ($id, $spec) = each ($trigger_data->{custom_triggers} || {})) {
+        $category_map->{$id} = $spec->{additional_categories}
+            if defined $spec->{additional_categories};
+        $spec_triggers{$id} = $spec->{triggers}
+            if defined $spec->{triggers};
+    }
+
+    while (my ($template_type, $categories) = each $category_map) {
+        foreach my $category (@{$categories}) {
+            $categories{$category}{$template_type} = 1;
+        }
+    }
+
+    # Initialize triggers
+
     # This will contain the actual triggers, with the triggers as values and
     # the trigger positions as keys (e.g., 'startend' => ['foo'])
     my %triggers;
     # This will contain a lookup from triggers to categories and/or files.
     my %trigger_lookup;
 
-    while (my ($name, $trigger_setsh) = each $json_triggers) {
+    while (my ($name, $trigger_setsh) = each %spec_triggers) {
         my $is_standard = 1;
         if ($name =~ /cheat_sheet$/) {
-            my $file = $name =~ s/_cheat_sheet//r;
-            $file =~ s/_/ /g;
-            $file = $aliases->{$file};
-            die "Bad ID: '$name'" unless defined $file;
-            $name = $file;
             $is_standard = 0;
         }
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
-            while (my ($trigger, $enabled) = each $triggersh) {
-                next unless $enabled;
+            foreach my $trigger (@{$triggersh}) {
                 # Add trigger to global triggers.
                 $triggers{$trigger_type}{$trigger} = 1;
                 my %new_triggers = map { $_ => 1}
                     (keys %{$trigger_lookup{$trigger}});
                 if ($is_standard) {
-                    %new_triggers = (%new_triggers, %{$categories->{$name}});
+                    %new_triggers = (%new_triggers, %{$categories{$name}});
                 } else {
                     $new_triggers{$name} = 1;
                 }
@@ -58,20 +75,7 @@ sub generate_triggers {
 
 }
 
-sub get_categories {
-    my %categories;
-    my $categories_json = share('categories.json')->slurp();
-    my $category_map = decode_json($categories_json);
-
-    while (my ($template_type, $categories) = each $category_map) {
-        while (my ($category, $enabled) = each $categories) {
-            $categories{$category}{$template_type} = 1 if $enabled;
-        }
-    }
-    return \%categories;
-}
-
-# Initialize aliases and categories.
+# Initialize aliases.
 sub get_aliases {
     my @files = File::Find::Rule->file()
                                 ->name("*.json")
@@ -111,9 +115,7 @@ sub get_aliases {
 
 my $aliases = get_aliases();
 
-my $categories = get_categories();
-
-my %trigger_lookup = generate_triggers($aliases, $categories);
+my %trigger_lookup = generate_triggers($aliases);
 
 handle remainder => sub {
     my $remainder = shift;
@@ -126,8 +128,8 @@ handle remainder => sub {
     my $data = decode_json($json) or return;
     # Either the template type of the cheat sheet must support
     # the trigger category, or the lookup must explicitly allow
-    # the current file.
-    return unless $lookup->{$data->{template_type}} || $lookup->{$file};
+    # the current id.
+    return unless $lookup->{$data->{template_type}} || $lookup->{$data->{id}};
 
     return 'Cheat Sheet', structured_answer => {
         id         => 'cheat_sheets',
