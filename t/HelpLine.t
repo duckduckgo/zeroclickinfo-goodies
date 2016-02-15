@@ -25,6 +25,12 @@ my @queries = (
     'suicide pill',
     'suicide prevention',
     'kill myself',
+    'self harm',
+    'how to kill self',
+    'my life is over',
+    'suicide prevention hotline',
+    'suicide howto',
+    'suicide instructions',
 );
 
 my @locations = (
@@ -35,6 +41,7 @@ my @locations = (
 my @ok_queries = (
     'suicide girls',
     'suicide silence',
+    'suicide squad',
 );
 
 ddg_goodie_test(
