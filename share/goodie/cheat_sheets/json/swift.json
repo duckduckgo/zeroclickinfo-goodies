@@ -144,7 +144,7 @@
     ],
     "Methods": [
       {
-        "key": "func doIt() -> Int {\nreturn 0\n}\nfunc doIt(a:Int) -> Int {\nreturn a\n}\nfunc doIt(a:Int, b:Int) -> Int {\n return a+b\n}",
+        "key": "func doIt() -> Int \\{\nreturn 0\n\\}\nfunc doIt(a:Int) -> Int \\{\nreturn a\n\\}\nfunc doIt(a:Int, b:Int) -> Int \\{\n return a+b\n\\}",
         "val": "Define a method"
       }
     ],
@@ -156,7 +156,7 @@
     ],
     "Enums": [
       {
-        "key": "enum CollisionType: Int {\ncase Player = 1\ncase Enemy = 2\n}\nvar type = CollisionType.Player",
+        "key": "enum CollisionType: Int \\{\ncase Player = 1\ncase Enemy = 2\n\\}\nvar type = CollisionType.Player",
         "val": "Define a new Enum"
       }
     ]
