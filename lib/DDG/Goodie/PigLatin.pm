@@ -28,7 +28,7 @@ sub get_action {
     return ($query, $action);
 }
 
-handle query_raw => sub {
+handle query => sub {
     my $query = shift;
     my ($to_translate, $action) = get_action $query or return;
     return if $to_translate eq '';
