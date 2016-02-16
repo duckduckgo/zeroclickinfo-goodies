@@ -58,10 +58,6 @@
                 "val": "Open force quit dialog"
             },
             {
-                "key": "[⌘] [Shift] [3]",
-                "val": "Take a screenshot (saved in Desktop)"
-            },
-            {
                 "key": "[Ctrl] [Shift] [⌽ (Power)]",
                 "val": "Lock the screen"
             }
