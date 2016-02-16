@@ -105,6 +105,14 @@
                 "val": "₹ (Indian Rupee)"
             },
             {
+                "key": "Nepal",
+                "val": "रू (Nepalese Rupee)"
+            },
+            {
+                "key": "Sri Lanka",
+                "val": "රු (Sri Lankan Rupee)"
+            },
+            {
                 "key": "Iran",
                 "val": "﷼ (Iranian Rial)"
             },
