@@ -1,3 +1,25 @@
+# Categories represent sets of triggers that can be
+# assigned to templates or individual cheat sheets.
+#
+# Each category consists of a name, along with a set
+# of trigger types (specifically WORD triggers - start,
+# end, startend, and any) and the associated triggers.
+#
+# The only special category is 'default', which should be
+# assigned to all template types, and will trigger any cheat
+# sheet.
+#
+# Category syntax:
+#
+# category_name:
+#   trigger_type1:
+#     - "trigger1"
+#     - "trigger2"
+#   trigger_type2:
+#     - "trigger3"
+#     - "trigger4"
+#
+# Where "trigger_type" is one of start, end, startend, or any.
 categories:
   code:
     startend:
@@ -85,4 +107,36 @@ template_map:
 #       - "another trigger"
 #     any:
 #       - "yet another trigger"
+#
+# 'cheat_sheet_id' MUST match the ID of the cheat sheet you wish
+# these changes to apply to.
+#
+# 'additional_categories' specifies a list of categories, as defined
+# in the 'categories' section, and may be omitted.
+#
+# For the format of 'triggers', please see the comments above
+# the 'categories' section. The 'triggers' section may be omitted.
+#
+# For example, say we had a cheat sheet
+# called 'calculus cheat sheet', that presented various formulae for
+# working with calculus.
+#
+# The cheat sheet is contained in the 'calculus.json' file, and has the ID
+# 'calculus_cheat_sheet'.
+#
+# As there is (at the time of writing) no support for a 'math' template type,
+# yet it is desirable to trigger on things like 'calculus equations', and
+# 'calculus formula sheet', we can use the 'math' category with custom triggers,
+# this would be specified like so:
+#
+# calculus_cheat_sheet:
+#   additional_categories:
+#     - "math"
+#   triggers:
+#     startend:
+#       - "formula sheet"
+#       - "equation sheet"
+#
+# And now it will be able to trigger on 'calculus equations',
+# 'calculus formula sheet', 'equation sheet calculus' etc...
 custom_triggers:
