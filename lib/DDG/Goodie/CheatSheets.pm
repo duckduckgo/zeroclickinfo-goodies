@@ -6,15 +6,14 @@ use DDG::Goodie;
 use DDP;
 use File::Find::Rule;
 use JSON;
-use YAML;
+use YAML qw(LoadFile);
 
 no warnings 'uninitialized';
 
 zci answer_type => 'cheat_sheet';
 zci is_cached   => 1;
 
-my $yaml_triggers = share('triggers.yaml')->slurp();
-my $trigger_data = Load($yaml_triggers);
+my $trigger_data = LoadFile(share('triggers.yaml'));
 
 # Instantiate triggers as defined in 'triggers.json', return a
 # hash that allows category and/or cheat sheet look-up based on
