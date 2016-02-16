@@ -13,10 +13,10 @@ zci answer_type => '<: $ia_id :>';
 zci is_cached => 1;
 
 # Triggers - https://duck.co/duckduckhack/goodie_triggers
-triggers any => 'triggerword', 'trigger phrase';
+triggers <: $ia_trigger :>;
 
 # Handle statement
-handle remainder => sub {
+handle <: $ia_handler :> => sub {
 
     return "plain text response",
         structured_answer => {
@@ -31,7 +31,7 @@ handle remainder => sub {
             name => 'Answer',
 
             data => {
-                remainder => $_
+                <: $ia_handler :> => \<: $ia_handler_var :>_
             },
 
             templates => {
