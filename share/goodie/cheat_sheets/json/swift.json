@@ -61,10 +61,6 @@
     ],
     "Printing": [
       {
-        "key": "println(\"Hello\")",
-        "val": "Prints Hello"
-      },
-      {
         "key": "print(\"Hi\")",
         "val": "Prints Hi"
       }
@@ -144,7 +140,7 @@
     ],
     "Methods": [
       {
-        "key": "func doIt() -> Int \\{\nreturn 0\n\\}\nfunc doIt(a:Int) -> Int \\{\nreturn a\n\\}\nfunc doIt(a:Int, b:Int) -> Int \\{\n return a+b\n\\}",
+        "key": "func doIt() -> Int \\{\nreturn 0\n\\}\n\n\t func doIt(a:Int) -> Int \\{\nreturn a\n\\}\nfunc doIt(a:Int, b:Int) -> Int \\{\n return a+b\n\\}",
         "val": "Define a method"
       }
     ],
