@@ -200,20 +200,20 @@ handle remainder => sub {
         }
         my $r = get_chord($key_name . $mod, $chord_name . $dom);
         return if not defined $r;
-        my $results = \@{@{$r}[0]};
+        my @results = @{$r};
+        @results = map {
+            svg => gen_svg(
+            'width'=>100,
+            'height'=>120,
+            'frets'=>$length,
+            'strings'=>$strings,
+            'points'=> $_,
+            )->xmlify,
+        }, @results;
         return 'chord_diagrams', structured_answer => {
             id => 'chord_diagrams',
             name => 'Music',
-            data => {
-                svg => gen_svg(
-                'width'=>100,
-                'height'=>120,
-                'frets'=>$length,
-                'strings'=>$strings,
-                'points'=> $results
-                )->xmlify,
-                input => $input
-            },
+            data => \@results,
             templates => {
                 detail => 0,
                 item  => 'base_item',
