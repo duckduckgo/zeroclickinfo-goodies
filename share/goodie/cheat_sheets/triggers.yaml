@@ -29,7 +29,7 @@ categories:
     startend:
       - "reference"
       - "quick reference"
-  standard:
+  default:
     startend:
       - "cheatsheet"
       - "help"
@@ -47,27 +47,27 @@ categories:
 # cheat sheet using the given template_type.
 template_map:
   code:
-    - "standard"
+    - "default"
     - "reference"
     - "code"
   keyboard:
-    - "standard"
+    - "default"
     - "reference"
     - "keyboard"
   language:
-    - "standard"
+    - "default"
     - "language"
   links:
-    - "standard"
+    - "default"
     - "links"
   math:
-    - "standard"
+    - "default"
     - "math"
   reference:
-    - "standard"
+    - "default"
     - "reference"
   terminal:
-    - "standard"
+    - "default"
     - "terminal"
 
 
