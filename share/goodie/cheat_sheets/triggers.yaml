@@ -67,6 +67,20 @@ categories:
 #
 # Specifies the categories that are automatically assigned to any
 # cheat sheet using the given template_type.
+#
+# Each map takes the form:
+#
+# template_type:
+#   - "category1"
+#   - "category2"
+#   - ...
+#
+# Where the categories allowed are those specified in the 'categories'
+# section.
+#
+# When specifying a template map, you should always include the "default"
+# category unless you have good reason - as this will ensure cheat sheets
+# using that category will use the default triggers.
 template_map:
   code:
     - "default"
@@ -117,16 +131,15 @@ template_map:
 # For the format of 'triggers', please see the comments above
 # the 'categories' section. The 'triggers' section may be omitted.
 #
-# For example, say we had a cheat sheet
-# called 'calculus cheat sheet', that presented various formulae for
-# working with calculus.
+# For example, say we have a cheat sheet called 'calculus cheat sheet',
+# that presents various formulae for working with calculus.
 #
 # The cheat sheet is contained in the 'calculus.json' file, and has the ID
 # 'calculus_cheat_sheet'.
 #
 # As there is (at the time of writing) no support for a 'math' template type,
-# yet it is desirable to trigger on things like 'calculus equations', and
-# 'calculus formula sheet', we can use the 'math' category with custom triggers,
+# yet it is desirable to trigger on things like 'calculus equations' and
+# 'calculus formula sheet', we can use the 'math' category with custom triggers;
 # this would be specified like so:
 #
 # calculus_cheat_sheet:
