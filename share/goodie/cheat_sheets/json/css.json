@@ -33,7 +33,7 @@
             "key": "<tag style=\"property: value\">"  
         }, {
             "val": "Import CSS",
-            "key": "@import [ <string> | <url> ] [<media-query-list>]?;"
+            "key": "@import \\[ <string> | <url> \\] \\[<media-query-list>\\]?;"
         }],
         "General Syntax": [{
             "val": "Basic syntax of css declaration block",
