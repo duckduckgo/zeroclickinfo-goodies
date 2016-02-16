@@ -14,12 +14,12 @@ zci answer_type => '<: $ia_id :>';
 zci is_cached => 1;
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers <: $ia_trigger :>;
+triggers any => 'triggerword', 'trigger phrase';
 
 # Handle statement
-handle <: $ia_handler :> => sub {
+handle remainder => sub {
 
-    my <: $ia_handler_var :><: $ia_handler :> = <: $ia_handler_var :>_;
+    my $remainder = $_;
 
     # Optional - Guard against no remainder
     # I.E. the query is only 'triggerWord' or 'trigger phrase'
