@@ -90,7 +90,7 @@
     
     "Arrays": [
       {
-        "key": "var someInts = [Int]()",
+        "key": "var someInts = \\[Int\\]()",
         "val": "Creating an Empty Array"
       },
       {
@@ -98,7 +98,7 @@
         "val": "Creating an Array with a Default Value"
       },
       {
-        "key": "var shoppingList: \\[String\\] = [\"Eggs\", \"Milk\"] ",
+        "key": "var shoppingList: \\[String\\] = \\[\"Eggs\", \"Milk\"\\] ",
         "val": "Creating an Array with an Array Literal"
       },
       {
