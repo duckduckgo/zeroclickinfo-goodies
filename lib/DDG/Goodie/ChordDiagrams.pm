@@ -117,7 +117,7 @@ sub gen_svg {
         } else {
             $svg->circle(
             cx=>$i * $p_dist + 1,
-            cy=>$top_pad + $fret_dist * $p - $fret_dist/2 + 1,
+            cy=>$top_pad + $fret_dist * $p - $fret_dist/2 + 2,
             r=>5,
             style=>{
                 'stroke'=>'black',
@@ -215,10 +215,14 @@ handle remainder => sub {
                 input => $input
             },
             templates => {
-                group => 'base',
-                item  => 0,
+                detail => 0,
+                item  => 'base_item',
                 options => {
+                    url => "www.google.com",
                     content => 'DDH.chord_diagrams.detail'
+                },
+                variants => {
+                    tile => 'narrow'
                 }
             },
             meta => {}
