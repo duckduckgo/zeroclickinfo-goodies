@@ -5,7 +5,6 @@ use JSON::XS;
 use DDG::Goodie;
 use DDP;
 use File::Find::Rule;
-use JSON;
 use YAML qw(LoadFile);
 
 no warnings 'uninitialized';
