@@ -1,7 +1,6 @@
 {
     "id":"visual_studio_cheat_sheet",
-    "name":"Visual Studio",
-    "description": "Visual Studio IDE",
+    "name":"Microsoft Visual Studio",
     "metadata": {
         "sourceName": "Microsoft",
         "sourceUrl": "https://msdn.microsoft.com/en-us/library/da5kh0wa.aspx"
