@@ -10,10 +10,10 @@
     "sections": {
         "Edit": [{
             "val": "Find",
-            "key": "Ctrl-F"
+            "key": "[Ctrl] [F]"
         }, {
             "val": "Go to Declaration",
-            "key": "Ctrl-F12"
+            "key": "[Ctrl] [F12]"
         },
         {
             "val": "Go To Definition",
@@ -21,27 +21,27 @@
         },
         {
             "val": "Open File",
-            "key": "Ctrl-Shift-G"
+            "key": "[Ctrl] [Shift] [G]"
         },
         {
             "val": "Replace",
-            "key": "Ctrl-H"
+            "key": "[Ctrl] [H]"
         },
         {
             "val": "Replace in Files",
-            "key": "Ctrl-Shift-H"
+            "key": "[Ctrl] [Shift] [H]"
         },
         {
             "val": "Undo",
-            "key": "Ctrl-Z"
+            "key": "[Ctrl] [Z]"
         },
         {
             "val": "Save ALL tabs",
-            "key": "Ctrl-Shift-S"
+            "key": "[Ctrl] [Shift] [S]"
         }],
         "Debug": [{
             "val": "Run to Cursor",
-            "key": "Ctrl-F10"
+            "key": "[Ctrl] [F10]"
         },
         {   
             "val": "Start Debug",
@@ -57,39 +57,39 @@
         },
         {   
             "val": "Disassembly",
-            "key": "Ctrl-Alt-D"
+            "key": "[Ctrl] [Alt] [D]
         },
         {
             "val": "Apply Code Changes",
-            "key": "Alt-F10"
+            "key": "[Alt] [F10]"
         },
         {
             "val": "Locals",
-            "key": "Ctrl-Alt-V, L"
+            "key": "[Ctrl-Alt-V],[L]"
                   }
                  ],
         "Build": [{
             "val": "Build Solution",
-            "key": "Ctrl-Shift-B"
+            "key": "[Ctrl] [Shift] [B]"
         },
         {  
             "val": "Cancel",
-            "key": "Ctrl-Break"
+            "key": "[Ctrl] [Break]"
         },
         {   
             "val": "Compile",
-            "key": "Ctrl-F7"
+            "key": "[Ctrl] [F7]"
         }],
         "Project": [{
             "val": "Add Existing Item",
-            "key": "Shift-Alt-A"
+            "key": "[Shift] [Alt] [A]"
         },
         {   "val": "Add New Item",
-            "key": "Ctrl-Shift-A"
+            "key": "[Ctrl] [Shift] [A]"
         },
         {
             "val": "Class Wizard",
-            "key": "Ctrl-Shift-X"
+            "key": "[Ctrl] [Shift] [X]"
         }]
         
     }
