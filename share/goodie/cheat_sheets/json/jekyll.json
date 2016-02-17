@@ -1,0 +1,180 @@
+{
+    "id": "jekyll_cheat_sheet",
+    "name": "Jekyll",
+    "description": "A quick reference to Jekyll, a static site generator",
+    "template_type": "terminal",
+    "metadata": {
+        "sourceName": "Jekyllrb",
+        "sourceUrl": "https://jekyllrb.com/"
+    },
+    "section_order": [
+        "Jekyll Commands",
+        "Global Variables",
+        "Site Variables",
+        "Page Variables",
+        "Liquid Template Filters",
+        "Jekyll Filters"
+    ],
+    "sections": {
+        "Jekyll Commands": [
+            {
+                "key": "jekyll server",
+                "val": "Serve your site locally"
+            },
+            {
+                "key": "jekyll docs",
+                "val": "Launch local server with docs for Jekyll"
+            },
+            {
+                "key": "jekyll build",
+                "val": "Build your site"
+            },
+            {
+                "key": "jekyll doctor",
+                "val": "Search site and print specific deprecation warnings"
+            },
+            {
+                "key": "jekyll new",
+                "val": "Creates a new Jekyll site scaffold in PATH"
+            },
+            {
+                "key": "jekyll help",
+                "val": "Show the help message, optionally for a given subcommand"
+            }
+        ],
+        "Global Variables": [
+            {
+                "key": "site",
+                "val": "Sitewide information plus configuration settings from  _config.yml"
+            },
+            {
+                "key": "page",
+                "val": "Page specific information plus the front matter"
+            },
+            {
+                "key": "content",
+                "val": "In layout files, the rendered content of the Post or Page being wrapped"
+            },
+            {
+                "key": "docker events",
+                "val": "gets events from container"
+            },
+            {
+                "key": "docker port",
+                "val": "shows public facing port of container"
+            },
+            {
+                "key": "paginator",
+                "val": "When the paginate configuration option is set variable becomes available"
+            }
+        ],
+         "Site Variables": [
+            {
+                "key": "site.time",
+                "val": "The current time (when you run the jekyll command)"
+            },
+            {
+                "key": "site.pages",
+                "val": "A list of all Pages"
+            },
+            {
+                "key": "site.posts",
+                "val": "A reverse chronological list of all Posts"
+            },
+            {
+                "key": "site.html_pages",
+                "val": "A list of all HTML Pages"
+            },
+            {
+                "key": "site.collections",
+                "val": "A list of all the collections"
+            },
+            {
+                "key": "site.data",
+                "val": "A list containing the data loaded from the files located in the _data folder"
+            },
+            {
+                "key": "site.tags.TAG",
+                "val": "The list of all Posts with tag TAG"
+            }
+        ],
+        "Page Variables": [
+            {
+                "key": "page.content",
+                "val": "The content of the Page, rendered or un-rendered"
+            },
+            {
+                "key": "page.title",
+                "val": "The title of the Page"
+            },
+            {
+                "key": "page.excerpt",
+                "val": "The un-rendered excerpt of the Page"
+            },
+            {
+                "key": "page.url",
+                "val": "The URL of the Post without the domain, but with a leading slash"
+            },
+            {
+                "key": "page.id",
+                "val": "An identifier unique to the Post"
+            },
+            {
+                "key": "page.date",
+                "val": "The Date assigned to the Post"
+            }
+        ],
+        "Liquid Template Filters": [
+            {
+                "key": "\\{\\{ | capitalize \\}\\}",
+                "val": "Capitalize words in the input sentence"
+            },
+            {
+                "key": "\\{\\{ 'foobarfoobar' | remove:'foo' \\}\\}",
+                "val": "Remove each occurrence"
+            },
+            {
+                "key": "\\{\\{ | date \\}\\}",
+                "val": "Reformat a date"
+            },
+            {
+                "key": "\\{\\{ | first \\}\\}",
+                "val": "Get the first element of the passed in array"
+            },
+            {
+                "key": "\\{\\{ 4  | minus:2 \\}\\}",
+                "val": "Subtraction"
+            },
+            {
+                "key": "\\{\\{ | escape \\}\\}",
+                "val": "Escape a string"
+            }
+        ],
+        "Jekyll Filters": [
+            {
+                "key": "\\{\\{ site.time | date_to_rfc822 \\}\\}",
+                "val": "Convert date to RFC-822 format"
+            },
+            {
+                "key": "\\{\\{ site.posts | sort: 'author' \\}\\}",
+                "val": "Optional args for hashes"
+            },
+            {
+                "key": "\\{\\{ page.content | xml_escape \\}\\}",
+                "val": "Escape some text for use in XML"
+            },
+            {
+                "key": "\\{\\{ page.tags | sort \\}\\}",
+                "val": "Sort an array"
+            },
+            {
+                "key": "\\{\\{ page.excerpt | markdownify \\}\\}",
+                "val": "Convert a Markdown-formatted string into HTML"
+            },
+            {
+                "key": "\\{\\{ page.content | number_of_words \\}\\}",
+                "val": "Count the number of words in some text"
+            }
+        ]
+    }
+}
