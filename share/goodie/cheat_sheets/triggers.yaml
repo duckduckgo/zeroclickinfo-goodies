@@ -11,6 +11,8 @@
 #
 # Category syntax:
 #
+# # Short description of the category - i.e, what would be the general use case
+# # for this category (follow the existing format as much as possible)?
 # category_name:
 #   trigger_type1:
 #     - "trigger1"
@@ -25,14 +27,17 @@
 # triggers and trigger types as well) - this ensures it is as easy as possible
 # to find relevant categories.
 categories:
+  # Describes or introduces syntax of a programming language.
   code:
     startend:
       - "syntax"
+  # Default triggers - all cheat sheets should be triggered by these.
   default:
     startend:
       - "cheat sheet"
       - "cheatsheet"
       - "help"
+  # Describes keyboard shortcuts.
   keyboard:
     startend:
       - "default keybindings"
@@ -41,25 +46,30 @@ categories:
       - "keyboard shortcuts"
       - "keys"
       - "shortcuts"
+  # Introduces basic phrases/sayings for a human language.
   language:
     startend:
       - "example"
       - "examples"
       - "guide"
+  # Shows links to other sites.
   links:
     startend:
       - "links"
       - "sites"
       - "websites"
+  # Shows mathematical equations.
   math:
     startend:
       - "equations"
       - "formulae"
       - "formulas"
+  # Serves as a fairly in-depth reference for a particular topic.
   reference:
     startend:
       - "quick reference"
       - "reference"
+  # Describes commands that can be entered at a terminal.
   terminal:
     startend:
       - "characters"
