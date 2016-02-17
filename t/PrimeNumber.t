@@ -8,10 +8,6 @@ use DDG::Test::Goodie;
 zci answer_type => "prime";
 zci is_cached   => 1;
 
-sub make_structued_answer {
-    return
-}
-
 ddg_goodie_test(
     [qw( DDG::Goodie::PrimeNumber )],
     'prime numbers between 4 and 100' => test_zci(
