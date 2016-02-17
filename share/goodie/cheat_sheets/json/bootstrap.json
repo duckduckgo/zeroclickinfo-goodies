@@ -7,7 +7,10 @@
         "sourceUrl": "http://getbootstrap.com/"
     },
     "aliases": [
-        "twitter front end framework", "twitter blueprint", "twitter bootstrap", "bootstrap framework"
+        "twitter front end framework",
+        "twitter blueprint",
+        "twitter bootstrap",
+        "bootstrap framework"
     ],
     "template_type": "code",
     "section_order": [
@@ -15,7 +18,8 @@
         "Navbars",
         "Tables",
         "Buttons",
-        "Images"
+        "Images",
+        "Responsive Utilities"
     ],
     "sections": {
         "Bootstrap Grid System": [{
@@ -137,6 +141,37 @@
         }, {
             "val": "Creates an image gallery",
             "key": ".thumbnail"
+        }],
+        "Responsive Utilities": [{
+            "val": "Makes element visible on extra small devices (<768px)",
+            "key": ".visible-xs-*"
+        }, {
+            "val": "Makes element visible on small devices (≥768px)",
+            "key": ".visible-sm-*"
+        }, {
+            "val": "Makes element visible on medium devices (≥992px)",
+            "key": ".visible-md-*"
+        }, {
+            "val": "Makes element visible on large devices (≥1200px)",
+            "key": ".visible-lg-*"
+        }, {
+            "val": "Makes element hidden on extra small devices (<768px)",
+            "key": ".hidden-xs"
+        }, {
+            "val": "Makes element hidden on small devices (≥768px)",
+            "key": ".hidden-sm"
+        }, {
+            "val": "Makes element hidden on medium devices (≥992px)",
+            "key": ".hidden-md"
+        }, {
+            "val": "Makes element hidden on large devices (≥1200px)",
+            "key": ".hidden-lg"
+        }, {
+            "val": "Makes element visible for print",
+            "key": ".visible-print"
+        }, {
+            "val": "Makes element hidden for print",
+            "key": ".hidden-print"
         }]
 
     }
