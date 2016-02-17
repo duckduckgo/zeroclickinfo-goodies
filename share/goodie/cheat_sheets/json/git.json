@@ -133,8 +133,14 @@
             "val": "Uploads all local branch commits to GitHub",
             "key": "git push \\[alias\\] \\[branch\\]"
         }, {
+            "val": "Deletes remote branch",
+            "key": "git push \\[alias\\] :\\[branch\\]"
+        }, {
             "val": "Downloads bookmark history and incorporates changes",
             "key": "git pull"
+        }, {
+            "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
+            "key": "git pull --rebase"
         }]
     }
 }
