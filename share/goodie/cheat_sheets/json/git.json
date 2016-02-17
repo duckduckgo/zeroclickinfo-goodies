@@ -141,6 +141,15 @@
         }, {
             "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
             "key": "git pull --rebase"
+        }, {
+            "val": "Rebase the current HEAD onto branch",
+            "key": "git rebase \\[branch\\]"
+        }, {
+            "val": "Abort a rebase",
+            "key": "git rebase --abort"
+        }, {
+            "val": "Continue a rebase after resolving conflicts",
+            "key": "git rebase --continue"
         }]
     }
 }
