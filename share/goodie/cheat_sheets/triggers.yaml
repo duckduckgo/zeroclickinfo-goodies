@@ -62,6 +62,12 @@ categories:
       - "cheat sheet"
       - "cheatsheet"
       - "help"
+  # Provides a step-by-step guide.
+  guide:
+    startend:
+      - "guide"
+      - "steps"
+      - "walkthrough"
   # Describes keyboard shortcuts.
   keyboard:
     startend:
@@ -76,7 +82,6 @@ categories:
     startend:
       - "example"
       - "examples"
-      - "guide"
       - "phrases"
   # Shows links to other sites.
   links:
