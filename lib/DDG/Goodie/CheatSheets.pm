@@ -47,17 +47,13 @@ sub generate_triggers {
     my %trigger_lookup;
 
     while (my ($name, $trigger_setsh) = each %spec_triggers) {
-        my $is_standard = 1;
-        if ($name =~ /cheat_sheet$/) {
-            $is_standard = 0;
-        }
         while (my ($trigger_type, $triggersh) = each $trigger_setsh) {
             foreach my $trigger (@{$triggersh}) {
                 # Add trigger to global triggers.
                 $triggers{$trigger_type}{$trigger} = 1;
                 my %new_triggers = map { $_ => 1}
                     (keys %{$trigger_lookup{$trigger}});
-                if ($is_standard) {
+                if ($name !~ /cheat_sheet$/) {
                     %new_triggers = (%new_triggers, %{$categories{$name}});
                 } else {
                     $new_triggers{$name} = 1;
