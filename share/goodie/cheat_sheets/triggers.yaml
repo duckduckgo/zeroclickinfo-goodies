@@ -64,45 +64,60 @@ categories:
   code:
     startend:
       - "syntax"
+      - "code snippets"
   # Default triggers - all cheat sheets should be triggered by these.
   default:
     startend:
       - "cheat sheet"
       - "cheatsheet"
-      - "help"
   # Provides a step-by-step guide.
   guide:
     startend:
       - "guide"
+      - "help"
       - "steps"
       - "walkthrough"
+    ignore:
+      - "step by step"
+      - "step-by-step"
   # Describes keyboard shortcuts.
   keyboard:
     startend:
-      - "default keybindings"
-      - "default keys"
       - "key bindings"
+      - "keybindings"
       - "keyboard shortcuts"
       - "keys"
       - "shortcuts"
-  # Introduces basic phrases/sayings for a human language.
+    ignore:
+      - "default"
+      - "standard"
+      - "list of"
+  # Introduces basic translations for a human language.
   language:
     startend:
-      - "example"
-      - "examples"
       - "phrases"
+      - "translations"
+    ignore:
+      - "simple"
+      - "basic"
+      - "example"
+      - "list of"
   # Shows links to other sites.
   links:
     startend:
       - "links"
       - "sites"
       - "websites"
+    ignore:
+      - "list of"
   # Shows mathematical equations.
   math:
     startend:
       - "equations"
       - "formulae"
       - "formulas"
+    ignore:
+      - "list of"
   # Serves as a fairly in-depth reference for a particular topic.
   reference:
     startend:
@@ -115,6 +130,8 @@ categories:
       - "chars"
       - "commands"
       - "symbols"
+    ignore:
+      - "list of"
 
 # You shouldn't need to touch this.
 #
