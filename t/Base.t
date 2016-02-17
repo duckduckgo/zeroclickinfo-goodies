@@ -6,11 +6,7 @@ use Test::More;
 use DDG::Test::Goodie;
 
 zci answer_type => 'conversion';
-
-# is_cached is promoted in the IA
-use bigint;
 zci is_cached   => 1;
-no bigint;
 
 ddg_goodie_test([qw(
           DDG::Goodie::Base
