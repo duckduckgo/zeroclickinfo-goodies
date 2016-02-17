@@ -59,7 +59,7 @@ sub generate_triggers {
                 my %new_triggers = map { $_ => 1}
                     (keys %{$trigger_lookup{$trigger}});
                 if ($name !~ /cheat_sheet$/) {
-                    %new_triggers = (%new_triggers, %{$categories{$name}});
+                    %new_triggers = (%new_triggers, %{$categories{$name} || {}});
                 } else {
                     $new_triggers{$name} = 1;
                 }
