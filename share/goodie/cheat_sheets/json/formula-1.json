@@ -5,154 +5,106 @@
 
     "metadata": {
         "sourceName": "Wikipedia",
-        "sourceUrl" : "https://en.wikipedia.org/wiki/2016_Formula_One_season"
+        "sourceUrl" : "https://en.wikipedia.org/wiki/Formula_One"
     },
 
     "aliases": [
-        "f1", "formula one"
+        "f1", "formula 1", "formula one"
     ],
 
     "template_type": "reference",
 
     "section_order": [
-        "Calendar",
-        "Rule changes (2016)",
+        "Grand Prix",
         "Tyres",
-        "Points system",
-        "Teams & Drivers"
+        "Points system"
     ],
 
     "sections": {
-        "Calendar": [
+        "Grand Prix": [
             {
-                "key": "20 March - Australian Grand Prix",
+                "key": "Australian Grand Prix",
                 "val": "Melbourne Grand Prix Circuit, Melbourne"
             },
             {
-                "key": "3 April - Bahrain Grand Prix",
+                "key": "Bahrain Grand Prix",
                 "val": "Bahrain International Circuit, Sakhir"
             },
             {
-                "key": "17 April - Chinese Grand Prix",
+                "key": "Chinese Grand Prix",
                 "val": "Shanghai International Circuit, Shanghai"
             },
             	    {
-                "key": "1 May - Russian Grand Prix",
+                "key": "Russian Grand Prix",
                 "val": "Sochi Autodrom, Sochi"
             },
             {
-                "key": "15 May - Spanish Grand Prix",
+                "key": "Spanish Grand Prix",
                 "val": "Circuit de Barcelona-Catalunya, Barcelona"
             },
- 	    {
-                "key": "29 May - Monaco Grand Prix",
+ 	        {
+                "key": "Monaco Grand Prix",
                 "val": "Circuit de Monaco, Monte Carlo"
             },
             {
-                "key": "12 June - Canadian Grand Prix",
+                "key": "Canadian Grand Prix",
                 "val": "Circuit Gilles Villeneuve, Montreal"
             },
             {
-                "key": "19 June - European Grand Prix",
+                "key": "European Grand Prix",
                 "val": "Baku City Circuit, Baku"
             },
  	    {
-                "key": "3 July - Austrian Grand Prix",
+                "key": "Austrian Grand Prix",
                 "val": "Red Bull Ring, Spielberg"
             },
             {
-                "key": "10 July - British Grand Prix",
+                "key": "British Grand Prix",
                 "val": "Silverstone Circuit, Silverstone"
             },
              	    {
-                "key": "24 July - Hungarian Grand Prix",
+                "key": "Hungarian Grand Prix",
                 "val": "Hungaroring, Budapest"
             },
             {
-                "key": "31 July - German Grand Prix",
+                "key": "German Grand Prix",
                 "val": "Hockenheimring, Hockenheim"
             },
  	    {
-                "key": "28 August - Belgian Grand Prix",
+                "key": "Belgian Grand Prix",
                 "val": "Circuit de Spa-Francorchamps, Stavelot"
             },
             {
-                "key": "4 September - Italian Grand Prix",
+                "key": "Italian Grand Prix",
                 "val": "Autodromo Nazionale Monza, Monza"
             },
  	    {
-                "key": "18 September - Singapore Grand Prix",
+                "key": "Singapore Grand Prix",
                 "val": "Marina Bay Street Circuit, Singapore"
             },
             {
-                "key": "2 October - Malaysian Grand Prix",
+                "key": "Malaysian Grand Prix",
                 "val": "Sepang International Circuit, Kuala Lumpur"
             },
  	    {
-                "key": "9 October - Japanese Grand Prix",
+                "key": "Japanese Grand Prix",
                 "val": "Suzuka International Racing Course, Suzuka"
             },
             {
-                "key": "23 October - United States Grand Prix",
+                "key": "United States Grand Prix",
                 "val": "Circuit of the Americas, Austin, Texas"
             },
  	    {
-                "key": "30 October - Mexican Grand Prix",
+                "key": "Mexican Grand Prix",
                 "val": "Autodromo Hermanos Rodriguez, Mexico City"
             },
             {
-                "key": "13 November - Brazilian Grand Prix",
+                "key": "Brazilian Grand Prix",
                 "val": "Autodromo José Carlos Pace, Sao Paulo"
             },
  	    {
-                "key": "27 November - Abu Dhabi Grand Prix",
+                "key": "Abu Dhabi Grand Prix",
                 "val": "Yas Marina Circuit, Abu Dhabi"
-            }
-        ],
-        "Teams & Drivers": [
-            {
-                "key": "Mercedes AMG Petronas F1 Team",
-                "val": "[6] Nico Rosberg, [44] Lewis Hamilton"
-            },
-            {
-                "key": "Scuderia Ferrari",
-                "val": "[5] Sebastian Vettel, [7] Kimi Räikkönen"
-            },
-            {
-                "key": "Williams Martini Racing",
-                "val": "[19] Felipe Massa, [77] Valtteri Bottas"
-            },
-            {
-                "key": "Red Bull Racing",
-                "val": "[3] Daniel Ricciardo, [26] Daniil Kvyat"
-            },
-            {
-                "key": "Force India F1 Team",
-                "val": "[11] Sergio Pérez, [27] Nico Hülkenberg"
-            },
-            {
-                "key": "Renault F1 Team",
-                "val": "[20] Kevin Magnussen, [30] Joylon Palmer"
-            },
-            {
-                "key": "Scuderia Toro Rosso",
-                "val": "[33] Max Verstappen, [55] Carlos Sainz, jr."
-            },
-            {
-                "key": "Sauber F1 Team",
-                "val": "[9] Marcus Ericsson, [12] Felipe Nasr"
-            },
-            {
-                "key": "McLaren Honda",
-                "val": "[14] Fernando Alonso, [22] Jenson Button"
-            },
-            {
-                "key": "Manor Racing",
-                "val": "[94] Pascal Wehrlein, [?] TBA"
-            },
-            {
-                "key": "Haas F1 Team",
-                "val": "[8] Romain Grosjean, [21] Esteban Gutiérrez"
             }
         ],
          "Points system": [
@@ -197,21 +149,6 @@
                 "val": "1 point"
             }
         ],
-         "Rule changes (2016)": [
-             {
-                "key": "New Ultrasoft tyre",
-                 "val": ""
-            },
-            {
-                "key": "Three tyre types allowed per race",
-                 "val": ""
-            },
-            {
-                "key": "Five engines allowed per season",
-                 "val": ""
-            }
-             
-        ],
           "Tyres": [
             {
                 "key": "Ultrasoft",
@@ -242,6 +179,5 @@
                  "val": "Blue (wet weather tyre)"
             }
           ]
- 
-    }
+     }
 }
