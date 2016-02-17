@@ -52,6 +52,14 @@
 # triggers and trigger types as well) - this ensures it is as easy as possible
 # to find relevant categories.
 categories:
+  # Provides cheats for a game.
+  cheats:
+    startend:
+      - "cheat codes"
+      - "cheats"
+      - "secrets"
+    ignore:
+      - "list of"
   # Describes or introduces syntax of a programming language.
   code:
     startend:
