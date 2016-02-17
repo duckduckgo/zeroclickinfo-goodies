@@ -169,9 +169,6 @@ template_map:
   links:
     - "default"
     - "links"
-  math:
-    - "default"
-    - "math"
   reference:
     - "default"
     - "reference"
