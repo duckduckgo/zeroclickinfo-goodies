@@ -20,8 +20,33 @@
 #   trigger_type2:
 #     - "trigger3"
 #     - "trigger4"
+#   # This is optional
+#   ignore:
+#     - "phrase to ignore"
 #
 # Where "trigger_type" is one of start, end, startend, or any.
+#
+# The 'ignore' option (may be omitted) allows you to specify some text that will
+# be globally removed from the query if one of the triggers matches - this
+# allows common phrases to be included with the query but not affect the
+# triggering.
+#
+# As an example, it might be useful to be able to specify a 'list of X links'
+# for the 'links' category, without the 'ignore' option this would not be
+# possible as you would always have 'list of X' in the remainder (even if you
+# allowed 'list of' as a trigger, you would end up with 'X links'). By
+# specifying the ignore option like so:
+#
+# links:
+#   startend:
+#     - "links"
+#     - "sites"
+#     - "websites"
+#   ignore:
+#     - "list of"
+#
+# You can now do queries such as 'list of X links', but still keep the remainder
+# as 'X'.
 #
 # NOTE: Categories should be in alphabetical (lexical) order (and preferably the
 # triggers and trigger types as well) - this ensures it is as easy as possible
@@ -138,6 +163,8 @@ template_map:
 #       - "another trigger"
 #     any:
 #       - "yet another trigger"
+#     ignore:
+#       - "some phrase that is ignored"
 #
 # 'cheat_sheet_id' MUST match the ID of the cheat sheet you wish
 # these changes to apply to.
@@ -145,8 +172,8 @@ template_map:
 # 'additional_categories' specifies a list of categories, as defined
 # in the 'categories' section, and may be omitted.
 #
-# For the format of 'triggers', please see the comments above
-# the 'categories' section. The 'triggers' section may be omitted.
+# For the format of 'triggers', please see the section describing the syntax
+# of 'categories' - the format is the same (bar the name).
 #
 # For example, say we have a cheat sheet called 'calculus cheat sheet',
 # that presents various formulae for working with calculus.
