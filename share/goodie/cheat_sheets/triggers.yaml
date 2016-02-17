@@ -20,48 +20,52 @@
 #     - "trigger4"
 #
 # Where "trigger_type" is one of start, end, startend, or any.
+#
+# NOTE: Categories should be in alphabetical (lexical) order (and preferably the
+# triggers and trigger types as well) - this ensures it is as easy as possible
+# to find relevant categories.
 categories:
   code:
     startend:
       - "syntax"
+  default:
+    startend:
+      - "cheat sheet"
+      - "cheatsheet"
+      - "help"
   keyboard:
     startend:
+      - "default keybindings"
       - "default keys"
-      - "shortcuts"
+      - "key bindings"
       - "keyboard shortcuts"
       - "keys"
-      - "key bindings"
-      - "default keybindings"
+      - "shortcuts"
   language:
     startend:
       - "example"
-      - "guide"
       - "examples"
+      - "guide"
   links:
     startend:
-      - "websites"
-      - "sites"
       - "links"
+      - "sites"
+      - "websites"
   math:
     startend:
       - "equations"
-      - "formulas"
       - "formulae"
+      - "formulas"
   reference:
     startend:
-      - "reference"
       - "quick reference"
-  default:
-    startend:
-      - "cheatsheet"
-      - "help"
-      - "cheat sheet"
+      - "reference"
   terminal:
     startend:
+      - "characters"
+      - "chars"
       - "commands"
       - "symbols"
-      - "chars"
-      - "characters"
 
 # You shouldn't need to touch this.
 #
@@ -81,15 +85,18 @@ categories:
 # When specifying a template map, you should always include the "default"
 # category unless you have good reason - as this will ensure cheat sheets
 # using that category will use the default triggers.
+#
+# NOTE: Templates and categories should be in alphabetical order - this makes
+# it easier to find appropriate templates.
 template_map:
   code:
+    - "code"
     - "default"
     - "reference"
-    - "code"
   keyboard:
     - "default"
-    - "reference"
     - "keyboard"
+    - "reference"
   language:
     - "default"
     - "language"
@@ -147,9 +154,12 @@ template_map:
 #     - "math"
 #   triggers:
 #     startend:
-#       - "formula sheet"
 #       - "equation sheet"
+#       - "formula sheet"
 #
 # And now it will be able to trigger on 'calculus equations',
 # 'calculus formula sheet', 'equation sheet calculus' etc...
+#
+# NOTE: IDs should be in alphabetical order (and the categories and triggers) as
+# much as possible to ensure it is as easy as possible to locate triggers.
 custom_triggers:
