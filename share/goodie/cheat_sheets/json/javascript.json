@@ -62,6 +62,18 @@
         }, {
             "val": "Returns the primitive value of an array",
             "key": "valueOf()"
+        }, {
+            "val": "Creates a new array with the results of calling a provided function on every element in this array",
+            "key": "map()"
+        }, {
+            "val": "Creates a new array with all elements that pass the test implemented by the provided function",
+            "key": "filter()"
+        }, {
+            "val": "Tests whether all elements in the array pass the test implemented by the provided function",
+            "key": "every()"
+        }, {
+            "val": "Executes a provided function once per array element",
+            "key": "foreach()"
         }],
         "Boolean Methods": [{
             "val": "Converts a Boolean value to a string and returns the result",
