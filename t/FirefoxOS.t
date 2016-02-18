@@ -15,10 +15,10 @@ my $templateData = {
             name => "About",
             meta => {
                 sourceName => "Mozilla Developer Network",
-                sourceUrl => "https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_device_APIs" 
+                sourceUrl => "https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_device_APIs"
             },
             templates => {
-                group => "info",       
+                group => "info",
                 options => {
                     moreAt => 1
                 }

@@ -42,7 +42,7 @@
                 "val": "Use \"verbose\" mode (GNU only)"
             }
         ],
-        "Addressing" : [
+        "Addressing": [
             {
                 "key": ".",
                 "val": "The current line"
@@ -242,4 +242,3 @@
         ]
     }
 }
-

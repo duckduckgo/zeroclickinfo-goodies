@@ -53,7 +53,7 @@
                 "val": "Update WordPress."
             }
         ],
-        "Plugin Commands" : [
+        "Plugin Commands": [
             {
                 "key": "wp plugin list",
                 "val": "List all currently installed plugins"
@@ -71,7 +71,7 @@
                 "val": "Activates plugin. Replace NAME with intended plugin name."
             }
         ],
-        "Theme Commands" : [
+        "Theme Commands": [
             {
                 "key": "wp theme list",
                 "val": "List all currently installed themes"

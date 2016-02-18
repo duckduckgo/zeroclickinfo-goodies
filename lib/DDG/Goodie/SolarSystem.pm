@@ -14,21 +14,21 @@ zci is_cached   => 1;
 my $goodieVersion = $DDG::GoodieBundle::OpenSourceDuckDuckGo::VERSION // 999;
 
 my @attributesArray = ( 'size', 'radius', 'volume', 'mass', 'surface area', 'area');
-my $attributesString = join('|', @attributesArray); 
+my $attributesString = join('|', @attributesArray);
 
 my @unitTriggers = ( 'kg', 'km2', 'km3', 'km', 'mi2', 'mi3', 'mi', 'lbs', 'metric', 'imperial');
-my $unitsString = join('|', @unitTriggers); 
+my $unitsString = join('|', @unitTriggers);
 
 triggers any => 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'pluto', 'sun', 'moon';
 
-# Load object data 
+# Load object data
 my $objects = LoadFile(share('objects.yml'));
 
 # Handle statement
 handle query_lc => sub {
     # Declare vars
     my ($attribute, $result, $objectObj, $objectName, $saturn, $unitType, $operation);
-    
+
     s/(^what is)|(the)|(of)|(object)|(in)//g; # Remove common words
 
     return unless /$attributesString/; # Ensure we match at least one attribute, eg. size, volume
@@ -64,20 +64,20 @@ handle query_lc => sub {
     $objectObj = $objects->{$_}; # Get object data
     return unless $objectObj; # Return if we don't have a valid object
     return unless $unitType; # Guard against no $unitType - should never occur
-    $result = $objectObj->{$unitType}; # Get data using correct unit type 
-    $objectName = $_;    
-    
+    $result = $objectObj->{$unitType}; # Get data using correct unit type
+    $objectName = $_;
+
     # Convert attribute surface_area = Surface Area
     # Human friendly object name + attribute
     if($attribute =~ "surface_area") { $attribute = "Surface Area"; }
     $operation = ucfirst($_)." - ".ucfirst($attribute);
 
-    # Superscript for km3, mi3, km2 or mi2 
+    # Superscript for km3, mi3, km2 or mi2
     if($result =~ m/(km|mi)(\d)/) {
         my ($symbol, $superscript) = ($1, $2);
         $result =~ s/$symbol$superscript/$symbol<sup>$superscript<\/sup>/;
     }
-    
+
     # Superscript for scientific notation
     # Convert x to HTML entity &times;
     if($result =~ m/x\s(10)(\d\d)/) {

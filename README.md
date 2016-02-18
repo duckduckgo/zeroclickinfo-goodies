@@ -24,7 +24,7 @@ We welcome new contributors to dive in and improve live Instant Answers. It's a 
 
 You can see all "low-hanging fruit" issues neatly organized in one place on our [Live Issues Page](https://duck.co/ia/dev/issues?tag=lowhangingfruit), or get an overview of all [Instant Answers in development](https://duck.co/ia/dev/pipeline).
 
-Have a [favorite Instant Answer](http://duck.co/ia) that you want to make even better? Feel free to dive in and make changes. 
+Have a [favorite Instant Answer](http://duck.co/ia) that you want to make even better? Feel free to dive in and make changes.
 
 ## Inspiration
 
@@ -38,7 +38,7 @@ Instant Answers can be quite dynamic...
 
 ![](http://docs.duckduckhack.com/assets/sales_tax.png)
 
-Some are just cool: 
+Some are just cool:
 
 ![](http://docs.duckduckhack.com/assets/heads_tails.png)
 
@@ -66,7 +66,7 @@ The [possibilities are endless](https://duck.co/ia). **Our community's mission i
 
 ## Discuss with Us
 
-Want help? Need to think out loud? 
+Want help? Need to think out loud?
 
 [![slack](http://docs.duckduckhack.com/assets/slack.png) Talk to us on Slack](mailto:QuackSlack@duckduckgo.com?subject=AddMe) or [email us](mailto:open@duckduckgo.com).
 

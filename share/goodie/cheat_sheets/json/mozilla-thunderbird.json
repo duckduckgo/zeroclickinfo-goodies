@@ -2,18 +2,14 @@
     "id": "mozilla_thunderbird_cheat_sheet",
     "name": "Mozilla Thunderbird",
     "description": "A free, open source, cross-platform email, news, and chat client developed by the Mozilla Foundation",
-
     "metadata": {
         "sourceName": "Mozilla Support",
-        "sourceUrl" : "https://support.mozilla.org/en-US/kb/keyboard-shortcuts"
+        "sourceUrl": "https://support.mozilla.org/en-US/kb/keyboard-shortcuts"
     },
-
     "aliases": [
         "thunderbird"
     ],
-
     "template_type": "keyboard",
-
     "section_order": [
         "General Shortcuts",
         "Message Shortcuts",
@@ -22,7 +18,6 @@
         "Text Shortcuts",
         "Mouse Shortcuts"
     ],
-
     "sections": {
         "General Shortcuts": [
             {
@@ -68,7 +63,7 @@
             {
                 "key": "[Ctrl]  [⇧]  [⏎]",
                 "val": "Send Message Later"
-            },            
+            },
             {
                 "key": "Esc",
                 "val": "Stop"
@@ -139,9 +134,8 @@
                 "key": "[Ctrl]  [N]",
                 "val": "New Message"
             }
-            
         ],
-        "Navigation Shortcuts":[
+        "Navigation Shortcuts": [
             {
                 "key": "[Ctrl]  [W]",
                 "val": "Close Window"
@@ -183,101 +177,99 @@
                 "val": "Open Message in New Window"
             }
         ],
-        "Search Shortcuts":[
+        "Search Shortcuts": [
             {
-                "key":"F3",
-                "val":"Find Again"
+                "key": "F3",
+                "val": "Find Again"
             },
             {
-                "key":"'",
-                "val":"Find Link As You Type"
+                "key": "'",
+                "val": "Find Link As You Type"
             },
             {
-                "key":"[⇧]  [F3]",
-                "val":"Find Previous"
+                "key": "[⇧]  [F3]",
+                "val": "Find Previous"
             },
             {
-                "key":"[Ctrl]  [F]",
-                "val":"Find Text in This Message"
+                "key": "[Ctrl]  [F]",
+                "val": "Find Text in This Message"
             },
             {
-                "key":"[Ctrl]  [K]",
-                "val":"Search Bar"
+                "key": "[Ctrl]  [K]",
+                "val": "Search Bar"
             },
             {
-                "key":"[Ctrl]  [⇧]  [F]",
-                "val":"Search Messages"
+                "key": "[Ctrl]  [⇧]  [F]",
+                "val": "Search Messages"
             }
         ],
-        "Text Shortcuts":[
+        "Text Shortcuts": [
             {
-                "key":"[Ctrl]  [-]",
-                "val":"Text Size Decrease"
+                "key": "[Ctrl]  [-]",
+                "val": "Text Size Decrease"
             },
             {
-                "key":"[Ctrl]  [+]",
-                "val":"Text Size Increase"
+                "key": "[Ctrl]  [+]",
+                "val": "Text Size Increase"
             },
             {
-                "key":"[Ctrl]  [0]",
-                "val":"Text Size Default"
+                "key": "[Ctrl]  [0]",
+                "val": "Text Size Default"
             },
             {
-                "key":"[Ctrl]  [Y]",
-                "val":"Redo"
+                "key": "[Ctrl]  [Y]",
+                "val": "Redo"
             },
             {
-                "key":"[Ctrl]  [U]",
-                "val":"Undo"
+                "key": "[Ctrl]  [U]",
+                "val": "Undo"
             },
             {
-                "key":"[Ctrl]  [A]",
-                "val":"Select All"
+                "key": "[Ctrl]  [A]",
+                "val": "Select All"
             },
             {
-                "key":"[Ctrl]  [C]",
-                "val":"Copy"
+                "key": "[Ctrl]  [C]",
+                "val": "Copy"
             },
             {
-                "key":"[Ctrl]  [X]",
-                "val":"Cut"
+                "key": "[Ctrl]  [X]",
+                "val": "Cut"
             },
             {
-                "key":"[Ctrl]  [V]",
-                "val":"Paste"
+                "key": "[Ctrl]  [V]",
+                "val": "Paste"
             },
             {
-                "key":"Del",
-                "val":"Delete"
+                "key": "Del",
+                "val": "Delete"
             }
-            
         ],
-        "Mouse Shortcuts":[
+        "Mouse Shortcuts": [
             {
-                "key":"[Ctrl]  [Scroll Up]",
-                "val":"Decrease Text Size"
+                "key": "[Ctrl]  [Scroll Up]",
+                "val": "Decrease Text Size"
             },
             {
-                "key":"[Ctrl]  [Scroll Down]",
-                "val":"Increase Text Size"
+                "key": "[Ctrl]  [Scroll Down]",
+                "val": "Increase Text Size"
             },
             {
-                "key":"[⇧]  [Create a New Message]",
-                "val":"New Plain Text Message"
+                "key": "[⇧]  [Create a New Message]",
+                "val": "New Plain Text Message"
             },
             {
-                "key":"[⇧]  [Reply]",
-                "val":"Plain Text Reply"
+                "key": "[⇧]  [Reply]",
+                "val": "Plain Text Reply"
             },
             {
-                "key":"[⇧]  [Reply All]",
-                "val":"Plain Text Reply All"
+                "key": "[⇧]  [Reply All]",
+                "val": "Plain Text Reply All"
             },
             {
-                "key":"[⇧]  [Forward]",
-                "val":"Plain Text Forward"
+                "key": "[⇧]  [Forward]",
+                "val": "Plain Text Forward"
             }
-            
         ]
     }
 }

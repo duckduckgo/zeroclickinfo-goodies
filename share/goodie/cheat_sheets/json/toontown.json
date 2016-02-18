@@ -1,18 +1,18 @@
 {
-    "id": "toontown_cheat_sheet", 
+    "id": "toontown_cheat_sheet",
     "name": "Toontown",
-    "description": "Commands For the Toontown Private Servers", 
-	"aliases": [
-        "toontown mod", "tto", "tto mod"
+    "description": "Commands For the Toontown Private Servers",
+    "aliases": [
+        "toontown mod",
+        "tto",
+        "tto mod"
     ],
-    "metadata" : {
-      "sourceName" : "Wikipedia",
-      "sourceUrl" : "https://wikipedia.org/wiki/Toontown_Online"
-   },
-
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://wikipedia.org/wiki/Toontown_Online"
+    },
     "template_type": "terminal",
-
-    "section_order": [ 
+    "section_order": [
         "Toon",
         "Toontasks",
         "Items",
@@ -20,11 +20,10 @@
         "Games",
         "System"
     ],
-
     "sections": {
         "Toon": [
             {
-                "key": "~correctlaff()", 
+                "key": "~correctlaff()",
                 "val": "Corrects toon's laff."
             },
             {
@@ -32,99 +31,99 @@
                 "val": "Set the style of target's nametag."
             },
             {
-                "key": "~emotes", 
+                "key": "~emotes",
                 "val": "Unlock all emote animations on the target toon."
             },
             {
-                "key": "~phrase(phraseStringOrId)", 
+                "key": "~phrase(phraseStringOrId)",
                 "val": "Unlocks a new phrase and adds it to target's list of their phrases."
             },
             {
-                "key": "~setCE(CEValue, CEHood, CEExpire)", 
+                "key": "~setCE(CEValue, CEHood, CEExpire)",
                 "val": "Set Cheesy Effect of the target."
             },
             {
-                "key": "~setHp(hpVal)", 
+                "key": "~setHp(hpVal)",
                 "val": "Set target's current laff."
             },
             {
-                "key": "~setMaxHp(hpVal)", 
+                "key": "~setMaxHp(hpVal)",
                 "val": "Set target's laff."
             },
             {
-                "key": "~maxToon", 
+                "key": "~maxToon",
                 "val": "Max out the toons stats."
             },
             {
-                "key": "~setMaxMoney(Amount to be able to hold)", 
+                "key": "~setMaxMoney(Amount to be able to hold)",
                 "val": "Set target's money and maxMoney values."
             },
             {
-                "key": "~setName(name)", 
+                "key": "~setName(name)",
                 "val": "Set target's name."
             },
             {
-                "key": "~setHat(hatId, hatTex=0)", 
+                "key": "~setHat(hatId, hatTex=0)",
                 "val": "Set hat of target toon."
             },
             {
-                "key": "~setGlasses(glassesId, glassesTex=0)", 
+                "key": "~setGlasses(glassesId, glassesTex=0)",
                 "val": "Set glasses of target toon."
             },
             {
-                "key": "~setBackpack(bpId, bpTex=0)", 
+                "key": "~setBackpack(bpId, bpTex=0)",
                 "val": "Set backpack of target toon."
             },
             {
-                "key": "~setShoes(shoesId, shoesTex=0)", 
+                "key": "~setShoes(shoesId, shoesTex=0)",
                 "val": "Set shoes of target toon."
             },
             {
-                "key": "~togGM()", 
+                "key": "~togGM()",
                 "val": "Toggle GM Icon for toon."
             },
             {
-                "key": "~ghost()", 
+                "key": "~ghost()",
                 "val": "Set toon to invisible."
             },
             {
-                "key": "~setGM(gmId)", 
+                "key": "~setGM(gmId)",
                 "val": "Set the target's GM level (used for icon)."
             },
             {
-                "key": "~setCogIndex(indexVal)", 
+                "key": "~setCogIndex(indexVal)",
                 "val": "Transform into a cog/suit."
             },
             {
-                "key": "~setCogSuit", 
+                "key": "~setCogSuit",
                 "val": "Set cog suit and level"
             },
             {
-                "key": "~dna(part, value)", 
+                "key": "~dna(part, value)",
                 "val": "Set a specific part of DNA for the target toon."
             },
             {
-                "key": "~immortal()", 
+                "key": "~immortal()",
                 "val": "Make target or self immortal."
             },
             {
-                "key": "~houseType(type)", 
+                "key": "~houseType(type)",
                 "val": "Set target house type."
             },
             {
-                "key": "~setBattleSkip(bs)", 
+                "key": "~setBattleSkip(bs)",
                 "val": "Skip battle."
             },
             {
-                "key": "~sleep", 
+                "key": "~sleep",
                 "val": "Never fall asleep."
             }
-        ],        
+        ],
         "Toontasks": [
             {
                 "key": "~setQP(questId, progress)",
                 "val": "Get current questId in progress via ~setQP. Set questId progress via ~setQP questId value."
-            }, 
+            },
             {
                 "key": "~questTier(tier)",
                 "val": "Set toon's tier to specified value."

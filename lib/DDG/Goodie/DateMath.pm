@@ -16,14 +16,14 @@ my $datestring_regex = datestring_regex();
 
 handle query_lc => sub {
     my $query = $_;
-    
+
     my $relative_regex = qr!(?<number>\d+|[a-z\s-]+)\s+(?<unit>(?:day|week|month|year)s?)!;
-    
+
     return unless $query =~ qr!^(?:date\s+)?(
         (?<date>$datestring_regex)(?:\s+(?<action>plus|\+|\-|minus)\s+$relative_regex)?|
         $relative_regex\s+(?<action>from)\s+(?<date>$datestring_regex)?
     )$!x;
-    
+
     if (!exists $+{'number'}) {
         my $out_date = date_output_string(parse_datestring_to_date($+{'date'}));
         return $out_date,
@@ -33,7 +33,7 @@ handle query_lc => sub {
             result    => $out_date
         };
     }
-    
+
     my $input_date   = parse_datestring_to_date($+{date});
     my $input_number = str2nbr($+{number});
     my $unit = $+{unit};

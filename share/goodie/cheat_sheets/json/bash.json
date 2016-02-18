@@ -226,7 +226,7 @@
                 "val": "Execute last command starting with <string>"
             }
         ],
-         "Standard File Descriptors": [
+        "Standard File Descriptors": [
             {
                 "key": "0",
                 "val": "stdin"

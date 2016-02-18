@@ -84,24 +84,24 @@ sub format_result {
 }
 
 handle remainder => sub {
-    
+
     my $year = (localtime)[5] + 1900;
     my @result;
-    
+
     if ($_ =~ /(last|previous) ([0-9][0-9]?)$/i) {
         my @years = search_leaps($2, -1, 0, $year);
         @years = map(format_year, @years);
         my $pretty_years = join(', ', @years);
-        
+
         @result = format_result("The last $2 leap years were $pretty_years", $pretty_years, "The last $2 leap years");
-        
+
     } elsif ($_ =~ /(next|future) ([0-9][0-9]?)$/i) {
         my @years = search_leaps($2, 1, 0, $year);
         @years = map(format_year, @years);
         my $pretty_years = join(', ', @years);
-        
+
         @result = format_result("The $1 $2 leap years will be $pretty_years", $pretty_years, "The $1 $2 leap years");
-        
+
     } elsif ($_ =~ /^(after|before) ([0-9]+) ?(ad|bce|bc|ce)?$/) {
         my $cyear = $2;
         my $direction = $1;
@@ -116,29 +116,29 @@ handle remainder => sub {
         @years = map(format_year, @years);
         my $pretty_years = join(', ', @years);
         my $pretty_year = format_year($cyear);
-        
+
         @result = format_result("The 5 leap years $direction $pretty_year are $pretty_years",
                                 $pretty_years,
                                 "The 5 leap years $direction $pretty_year");
-        
+
     } elsif ($_ =~ /(next|future|upcoming)$/i) {
         my ($nyear) = search_leaps(1, 1, 0, $year);
         $nyear = format_year($nyear);
-        
+
         @result = format_result("$nyear will be the $1 leap year", $nyear, "The $1 leap year");
-        
+
     } elsif ($_ =~ /(latest|last|previous)$/i) {
         my ($pyear) = search_leaps(1, -1, 0, $year);
         $pyear = format_year($pyear);
-        
+
         @result = format_result("$pyear was the $1 leap year", $pyear, "The $1 leap year");
-        
+
     } elsif ($_ =~ /(most recent)$/i) {
         my ($ryear) = search_leaps(1, -1, 1, $year);
         $ryear = format_year($ryear);
-        
+
         @result = format_result("$ryear is the $1 leap year", $ryear, "The $1 leap year");
-        
+
     } elsif($_ =~ /^(was|is|will) ([0-9]+) ?(ad|bce|bc|ce)?( be)? a$/i) {
         my $cyear = $2;
         if(defined($3) && $3 =~ /^(bce|bc)$/i) {
@@ -147,27 +147,27 @@ handle remainder => sub {
         my $fyear = format_year($cyear);
         my $tense = find_tense($cyear, $year);
         if(isleap($cyear)) {
-            
+
             @result = format_result("Yes! $fyear $is_tense{$tense} a leap year");
-            
+
         } else {
-        
+
             @result = format_result("No. $fyear $is_not_tense{$tense} a leap year");
-            
+
         }
     } elsif($_ =~ /^is it( now | currently)? a|are we in a$/i) {
         my $fyear = format_year($year);
         if(isleap($year)) {
-            
+
             @result = format_result("Yes! $fyear is a leap year");
-            
+
         } else {
-            
+
             @result = format_result("No. $fyear is not a leap year"),
-            
+
         }
     }
-    
+
     return @result;
 };
 

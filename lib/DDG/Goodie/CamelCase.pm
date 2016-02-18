@@ -15,11 +15,11 @@ handle remainder => sub {
     my $input = shift;
 
     return unless $input; # Guard against "no answer"
-    
+
     my ($first_word, @words) = split(/\s+/, lc $input);
-    
+
     return unless @words;
-    
+
     my $camelCase = join(
         '',
         $first_word,

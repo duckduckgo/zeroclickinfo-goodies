@@ -165,7 +165,7 @@
                 "val": "Remote Source Inclusion",
                 "key": "c"
             },
-             {
+            {
                 "val": "Reverse Tuning Options (i.e., include all except specified)",
                 "key": "x"
             }
@@ -267,15 +267,15 @@
                 "val": "Run for specified time or duration",
                 "key": "-until"
             },
-             {
+            {
                 "val": "Update the plugins and databases directly from cirt.net",
                 "key": "-update"
             },
-             {
+            {
                 "val": "Check the scan databases for syntax errors",
                 "key": "-dbcheck"
             },
-             {
+            {
                 "val": "Specify an alternative config file to use instead of the Nikto.conf file located in the install directory",
                 "key": "-config"
             },

@@ -68,7 +68,7 @@
                 "val": "When the paginate configuration option is set variable becomes available"
             }
         ],
-         "Site Variables": [
+        "Site Variables": [
             {
                 "key": "site.time",
                 "val": "The current time (when you run the jekyll command)"

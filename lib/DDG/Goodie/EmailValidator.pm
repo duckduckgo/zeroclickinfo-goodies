@@ -14,7 +14,7 @@ triggers start => 'validate', 'validate my email', 'validate my e-mail';
 my $message_part = {
     tldcheck         => 'top-level domain',
     fqdn             => 'fully qualified domain name',
-    localpart	     => 'localpart',
+    localpart        => 'localpart',
     address_too_long => 'address length',
 };
 

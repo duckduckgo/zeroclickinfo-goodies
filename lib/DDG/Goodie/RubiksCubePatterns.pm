@@ -4,10 +4,10 @@ package DDG::Goodie::RubiksCubePatterns;
 use strict;
 use DDG::Goodie;
 
-triggers start =>	"rcube", "rubik", "rubiks", "rubix",
-					"rubicks", "rubik's", "rubic's", "rubick's",
-					"rubik cube", "rubiks cube", "rubic cube", "rubics cube",
-					"rubik's cube";
+triggers start =>   "rcube", "rubik", "rubiks", "rubix",
+                    "rubicks", "rubik's", "rubic's", "rubick's",
+                    "rubik cube", "rubiks cube", "rubic cube", "rubics cube",
+                    "rubik's cube";
 
 zci answer_type => "rubiks_cube";
 zci is_cached   => 1;
@@ -48,12 +48,12 @@ handle remainder_lc => sub {
 
     #hack for the trigger "rubiks cube in a cube"
     s/^in a cube/cube in a cube/;
-	
+
     my %patterns_answer;
     my $output;
     my $title;
     my $subtitle;
-    
+
     if ($patterns{$_}) {
         $output = render_text($_);
         $title = $patterns{$_};

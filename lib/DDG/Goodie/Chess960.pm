@@ -119,11 +119,11 @@ handle query => sub {
     my $index = ($pos && 1 <= $pos && $pos <= 960) ? $pos - 1 : int rand @all_positions;
 
     my $position = $all_positions[$index];
-    
+
     my $position_num = $index + 1;
 
     $query =~ s/^ chess960|chess960 $|chess960 //i;
-    
+
     return 'Chess 960',
     structured_answer => {
         id => 'chess960',

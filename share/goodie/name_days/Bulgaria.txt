@@ -26,7 +26,7 @@ Grigor, Grigorena
 Zhivka, Zhivko, Zoya
 
 
-	
+
 
 
 Lozan, Trifon
@@ -43,7 +43,7 @@ Valentin, Valentina, Valya, Lambi, Haralambi
 
 Evlogi
 
-	
+
 
 
 
@@ -87,7 +87,7 @@ Blagovest, Blagovesta, Blagoy, Blaga, Bonka, Boncho, Marian, Mariana, Mariyan, M
 
 Albena, Boyko, Boyka, Boyan, Boyana
 
-	
+
 
 Guido, Gwidon, Hido, Gwidonus
 
@@ -149,7 +149,7 @@ Kiril, Kiro, Kirilka, Metodi, Metodiy, Metodiya
 
 Spas, Spaska, Spasena, Spasenia, Spasimir, Spasimira, Sotir
 
-	
+
 
 
 
@@ -179,7 +179,7 @@ Encho, Enyo, Yanka, Yanko, Yancho, Yanaki, Yani, Yanislav
 
 David
 Apostol, Kamen, Pavel, Pavlin, Pavlina, Peyo, Penka, Pencho, Petrana, Petar, Petya, Petso
-	
+
 Dame, Damyan
 Rumen, Rumyana, Chavdar
 Anatoliy
@@ -210,7 +210,7 @@ Kliment, Panteley, Panko, Panto
 
 Goran, Kalin
 
-	
+
 
 Nikodim
 
@@ -272,7 +272,7 @@ Oleg, Olga
 
 
 
-	
+
 
 Ruska
 Vladimir
@@ -301,7 +301,7 @@ Dimitrina, Dimitar, Dima, Dimo, Dragan, Mitro, Mitra
 Nestor
 Lachezar
 
-	
+
 
 
 
@@ -334,7 +334,7 @@ Stiliyan, Shtery, Ballsan
 
 Adrian, Adriana, Andriana, Andrea, Andrej
 
-	
+
 
 Varvara
 Sava, Savka, Svetoslav, Svetoslava, Slavi, Slavcho, Sabi

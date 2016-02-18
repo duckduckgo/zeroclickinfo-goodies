@@ -20,7 +20,7 @@ handle remainder => sub {
     my $plaintext = join " ", @lorem;
     my $default = 1 if !$_;
     my $plural = 1 if $loop > 1;
-       
+
     return $plaintext,
     structured_answer => {
         id => 'lorem_ipsum',

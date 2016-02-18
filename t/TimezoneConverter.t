@@ -172,8 +172,8 @@ ddg_goodie_test(
             operation => 'Convert Timezone',
             result => '17:00 BST',
         },
-    ),  
-    
+    ),
+
     # Intentional non-answers
     '12 in binary' => undef,
 );

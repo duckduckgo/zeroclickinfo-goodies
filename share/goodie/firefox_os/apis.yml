@@ -215,7 +215,7 @@ storage:
   access: none
   granted: Allow
   platform: FxOS 1.0.1, Desktop (early versions)
-  url: "" 
+  url: ""
 systemxhr:
   aliases:
     - xhr

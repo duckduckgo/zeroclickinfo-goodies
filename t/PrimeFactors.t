@@ -16,7 +16,7 @@ no bignum;
 
 sub build_answer {
     my ($subtitle, $title) = @_;
-    
+
     return structured_answer => {
         id => 'prime_factors',
         name => 'Answer',
@@ -31,9 +31,9 @@ sub build_answer {
 }
 
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::PrimeFactors
-	)],
+    [qw(
+        DDG::Goodie::PrimeFactors
+    )],
     '72 prime factors' => test_zci('The prime factorization of 72 is 2^3 × 3^2',
                                     build_answer('72 - Prime Factors', '2³ × 3²')),
     'prime factors of 111' => test_zci('The prime factorization of 111 is 3 × 37',

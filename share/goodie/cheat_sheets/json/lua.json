@@ -1,7 +1,7 @@
 {
     "id": "lua_cheat_sheet",
     "name": "Lua",
-    "description":"Lua is the popular programming language often used as a embedded scripting language",
+    "description": "Lua is the popular programming language often used as a embedded scripting language",
     "metadata": {
         "sourceName": "Coffeeghost",
         "sourceUrl": "http://coffeeghost.net/2010/11/01/lua-cheat-sheet-for-programmers/"
@@ -23,7 +23,7 @@
     "sections": {
         "Variables": [
             {
-                "key": "hello = \"Hello World\"", 
+                "key": "hello = \"Hello World\"",
                 "val": "Initialize a variable"
             },
             {
@@ -33,11 +33,11 @@
         ],
         "Operators": [
             {
-                "key": "==", 
+                "key": "==",
                 "val": "Equal"
             },
             {
-                "key": "~=", 
+                "key": "~=",
                 "val": "Not equal"
             },
             {
@@ -45,7 +45,7 @@
                 "val": "And"
             },
             {
-                "key": "or", 
+                "key": "or",
                 "val": "Or"
             }
         ],

@@ -7,7 +7,15 @@
         "sourceUrl": "https://github.com/cmus/cmus/blob/master/Doc/cmus.txt"
     },
     "template_type": "keyboard",
-    "section_order": ["Cursor Movement", "Views", "Song Navigation", "Adding / Removing Tracks", "Browser Movements", "Exiting", "Miscellaneous"],
+    "section_order": [
+        "Cursor Movement",
+        "Views",
+        "Song Navigation",
+        "Adding / Removing Tracks",
+        "Browser Movements",
+        "Exiting",
+        "Miscellaneous"
+    ],
     "sections": {
         "Cursor Movement": [
             {

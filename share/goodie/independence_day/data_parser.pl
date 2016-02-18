@@ -34,7 +34,7 @@ sub text{
 }
 
 # triggered when parser encouters tag start
-sub start { 
+sub start {
     my ($self, $tagname, $attr, $attrseq, $origtext) = @_;
     # stated parsing new table row
     if ($tagname eq 'tr'){

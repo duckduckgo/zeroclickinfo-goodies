@@ -33,13 +33,13 @@ handle remainder => sub {
 
     # Check for the existence of "api" and remove from query
     return unless my ($a, $b) = $_ =~ /^(.*)(?:api)(.*)$/i;
-    
+
     $key = trim $a . ' ' . trim $b;
-    
+
     my $api = $apis->{$key};
 
     return unless ($api);
-    
+
     return $api->{permission},
       structured_answer => {
         id => "firefox_os",
@@ -65,10 +65,10 @@ handle remainder => sub {
         },
         meta => {
             sourceName => "Mozilla Developer Network",
-            sourceUrl => "https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_device_APIs" 
-        }, 
+            sourceUrl => "https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_device_APIs"
+        },
         templates => {
-            group => "info",       
+            group => "info",
             options => {
                 moreAt => 1
             }

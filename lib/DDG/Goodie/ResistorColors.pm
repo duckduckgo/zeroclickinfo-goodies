@@ -154,14 +154,14 @@ sub render {
             if ($index != scalar(@$digits - 1)) {
                 $text .= ','; # Comma delimit all but last
             }
-            
+
            push (@resistor_bands, {
                class => $class,
                name => $name,
                html_prefix => $html_prefix,
                display_digit => $display_digit
            });
-           
+
         } else {
             return;
         }

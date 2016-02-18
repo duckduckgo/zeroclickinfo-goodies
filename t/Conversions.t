@@ -930,7 +930,7 @@ ddg_goodie_test(
             result => '-40 degrees fahrenheit'
         }
     ),
-    
+
     ## Full suite of tests around temperatures
     # for computational accuracy rather than
     # parsing accuracy
@@ -1007,7 +1007,7 @@ ddg_goodie_test(
         }
     ),
     '-87 celsius in fahrenheit' => test_zci(
-        '-87 degrees celsius = -124.600 degrees fahrenheit',        
+        '-87 degrees celsius = -124.600 degrees fahrenheit',
         structured_answer => {
             input => ['-87 degrees celsius'],
             operation => 'convert',
@@ -1034,7 +1034,7 @@ ddg_goodie_test(
     ),
     '-7 kelvin in fahrenheit' => undef,
     '-7 rankine in fahrenheit' => undef,
-    
+
     '0 fahrenheit in fahrenheit' => test_zci(
         '0 degrees fahrenheit = 0 degrees fahrenheit',
         structured_answer => {
@@ -1099,7 +1099,7 @@ ddg_goodie_test(
             result => '-267.594 degrees celsius'
         }
     ),
-    
+
     '1234 fahrenheit in celsius' => test_zci(
         '1,234 degrees fahrenheit = 667.778 degrees celsius',
         structured_answer => {
@@ -1282,7 +1282,7 @@ ddg_goodie_test(
     ),
     '-87 kelvin in kelvin' => undef,
     '-87 rankine in kelvin' => undef,
-    
+
     '-7 fahrenheit in kelvin' => test_zci(
         '-7 degrees fahrenheit = 251.483 kelvin',
         structured_answer => {
@@ -1333,7 +1333,7 @@ ddg_goodie_test(
             result => '0 kelvin'
         }
     ),
-    
+
     '10 fahrenheit in rankine' => test_zci(
         '10 degrees fahrenheit = 469.670 degrees rankine',
         structured_answer => {
@@ -1343,7 +1343,7 @@ ddg_goodie_test(
         }
     ),
     '10 celsius in rankine' => test_zci(
-        '10 degrees celsius = 509.670 degrees rankine',        
+        '10 degrees celsius = 509.670 degrees rankine',
         structured_answer => {
             input => ['10 degrees celsius'],
             operation => 'convert',
@@ -1466,7 +1466,7 @@ ddg_goodie_test(
             result => '0 degrees rankine'
         }
     ),,
-        
+
     '84856 fahrenheit in fahrenheit' => test_zci(
         '84,856 degrees fahrenheit = 84,856 degrees fahrenheit',
         structured_answer => {
@@ -1595,7 +1595,7 @@ ddg_goodie_test(
             result => '84,856 degrees rankine'
         }
     ),
-    
+
     #Question format:
     'How to convert meters to inches' => test_zci(
         '1 meter = 39.370 inches',

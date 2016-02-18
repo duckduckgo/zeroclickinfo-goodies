@@ -8,16 +8,16 @@ use DDG::Test::Goodie;
 zci answer_type => 'time_conversion';
 zci is_cached   => 0;
 
-my @zero  = (qr/Thu Jan 01 00:00:00 1970 UTC/, 
+my @zero  = (qr/Thu Jan 01 00:00:00 1970 UTC/,
     structured_answer => {
         id => 'unix_time',
         name => 'Answer',
         data => {
-            record_data => {                                                                                                                                 
-                    'Time (America/New_York)' => "Wed Dec 31 19:00:00 1969 EST",                                                                                 
-                    'Time (UTC)' => "Thu Jan 01 00:00:00 1970 UTC",                                                                                 
-                    'Unix Epoch' => '0000000000000'                                                                                                      
-                }, 
+            record_data => {
+                    'Time (America/New_York)' => "Wed Dec 31 19:00:00 1969 EST",
+                    'Time (UTC)' => "Thu Jan 01 00:00:00 1970 UTC",
+                    'Unix Epoch' => '0000000000000'
+                },
             record_keys => ["Unix Epoch", "Time (UTC)", "Time (America/New_York)"],
         },
         templates => {
@@ -28,16 +28,16 @@ my @zero  = (qr/Thu Jan 01 00:00:00 1970 UTC/,
         }
     }
 );
-my @zeroi  = (qr/Thu Jan 01 00:00:00 1970 UTC/, 
+my @zeroi  = (qr/Thu Jan 01 00:00:00 1970 UTC/,
     structured_answer => {
         id => 'unix_time',
         name => 'Answer',
         data => {
-            record_data => {                                                                                                                                 
-                    'Time (America/New_York)' => "Wed Dec 31 19:00:00 1969 EST",                                                                                 
-                    'Time (UTC)' => "Thu Jan 01 00:00:00 1970 UTC",                                                                                 
-                    'Unix Epoch' => 0                                                                                                     
-                }, 
+            record_data => {
+                    'Time (America/New_York)' => "Wed Dec 31 19:00:00 1969 EST",
+                    'Time (UTC)' => "Thu Jan 01 00:00:00 1970 UTC",
+                    'Unix Epoch' => 0
+                },
             record_keys => ["Unix Epoch", "Time (UTC)", "Time (America/New_York)"],
         },
         templates => {
@@ -49,7 +49,7 @@ my @zeroi  = (qr/Thu Jan 01 00:00:00 1970 UTC/,
     }
 );
 
-my @now   = (qr/Unix Epoch./,              
+my @now   = (qr/Unix Epoch./,
     structured_answer => {
         id => 'unix_time',
         name => 'Answer',
@@ -62,7 +62,7 @@ my @now   = (qr/Unix Epoch./,
         }
     }
 );
-my @then  = (qr/Tue Nov 18 00:28:30 1930 UTC/, 
+my @then  = (qr/Tue Nov 18 00:28:30 1930 UTC/,
     structured_answer => {
         id => 'unix_time',
         name => 'Answer',
@@ -75,7 +75,7 @@ my @then  = (qr/Tue Nov 18 00:28:30 1930 UTC/,
         }
     }
 );
-my @later = (qr/Tue Jan 19 03:14:07 2038 UTC/, 
+my @later = (qr/Tue Jan 19 03:14:07 2038 UTC/,
     structured_answer => {
         id => 'unix_time',
         name => 'Answer',

@@ -54,7 +54,7 @@ ddg_goodie_test(
     'volume of mars mi' => test_zci("Mars - Volume is 39,133,515,914 mi<sup>3</sup>",  structured_answer => $templateData),
     'area of saturn mi' => test_zci("Saturn - Surface Area is 16,452,636,641 mi<sup>2</sup>",  structured_answer => $templateData),
     'mass of neptune lbs' => test_zci("Neptune - Mass is 2.258 &times; 10<sup>26</sup> lbs",  structured_answer => $templateData),
-    
+
     # Unit type - imperial
     "size earth imperial" => test_zci("Earth - Radius is 3,958.8 mi", structured_answer => $templateData),
     "size earth in imperial" => test_zci("Earth - Radius is 3,958.8 mi", structured_answer => $templateData),
@@ -73,7 +73,7 @@ ddg_goodie_test(
     'radius of uranus' => test_zci("Uranus - Radius is 15,759.2 mi",  structured_answer => $templateData),
     'size of venus' => test_zci("Venus - Radius is 3,760.4 mi",  structured_answer => $templateData),
     'size of pluto' => test_zci("Pluto - Radius is 715.2 mi",  structured_answer => $templateData),
-    'size of moon' => test_zci("Moon - Radius is 1,079.6 mi",  structured_answer => $templateData),    
+    'size of moon' => test_zci("Moon - Radius is 1,079.6 mi",  structured_answer => $templateData),
 
 
 

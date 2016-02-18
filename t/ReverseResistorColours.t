@@ -29,7 +29,7 @@ ddg_goodie_test(
             },
             templates => {
                 group => 'text',
-                options => {          
+                options => {
                     moreAt => 1,
                 }
             }
@@ -50,7 +50,7 @@ ddg_goodie_test(
             },
             templates => {
                 group => 'text',
-                options => {          
+                options => {
                     moreAt => 1,
                 }
             }
@@ -71,7 +71,7 @@ ddg_goodie_test(
             },
             templates => {
                 group => 'text',
-                options => {          
+                options => {
                     moreAt => 1,
                 }
             }
@@ -96,7 +96,7 @@ ddg_goodie_test(
             },
             templates => {
                 group => 'text',
-                options => {          
+                options => {
                     moreAt => 1,
                 }
             }
@@ -117,7 +117,7 @@ ddg_goodie_test(
             },
             templates => {
                 group => 'text',
-                options => {          
+                options => {
                     moreAt => 1,
                 }
             }

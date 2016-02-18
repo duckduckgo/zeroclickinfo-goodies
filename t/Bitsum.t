@@ -33,7 +33,7 @@ ddg_goodie_test(
                 input     => ['0x1234 (Base 16, Hexadecimal)'],
                 operation => 'Hamming Weight Calculation',
                 result    => '5'
-        }), 
+        }),
     'hammingweight 1024' => test_zci('1',
             structured_answer => {
                 input     => ['1024 (Base 10, Decimal)'],

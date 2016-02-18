@@ -100,8 +100,8 @@
             },
             {
                 "key": "[⌘] [Shift] [\\{]",
-                    "val": "Align Left"
-                },
+                "val": "Align Left"
+            },
             {
                 "key": "[⌘] [Shift] [|]",
                 "val": "Align Center"

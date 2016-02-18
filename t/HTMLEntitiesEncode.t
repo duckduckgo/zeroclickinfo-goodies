@@ -80,7 +80,7 @@ ddg_goodie_test(
     # Better hash hits substitutions
     # 'right angle brackets' should work even though the defined key contains the singular 'bracket'
     'right angle brackets htmlencode' => test_zci(
-        "Encoded HTML Entity: &rsaquo;\nEncoded HTML Entity: &raquo;", 
+        "Encoded HTML Entity: &rsaquo;\nEncoded HTML Entity: &raquo;",
         structured_answer => make_record_answer({
             "Single right pointing angle quote (›)" => "&rsaquo;",
             "Double right pointing angle quote (»)" => "&raquo;"
@@ -92,7 +92,7 @@ ddg_goodie_test(
     # Should not work
     'html encode &#43;' => undef,
     'html entity &amp;' => undef,
-    'html encode is it magic' => undef, 
+    'html encode is it magic' => undef,
 
     # Natural querying
     'What is the html character code for pi' => test_zci("Encoded HTML Entity: &#960;", structured_answer => make_structured_answer(qr/#960/)),

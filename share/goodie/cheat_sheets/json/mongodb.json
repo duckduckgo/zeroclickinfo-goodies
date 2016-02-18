@@ -32,7 +32,7 @@
         "Basic Conceptes & Shell Commands": [
             {
                 "key": "db.collection.<command>",
-                "val": "Db – implicit handle to the used database, collection – name of the used collection"              
+                "val": "Db – implicit handle to the used database, collection – name of the used collection"
             },
             {
                 "key": "use <database>",
@@ -145,7 +145,7 @@
                 "val": "Sets / changes certain attributes of a given document"
             },
             {
-                "key": "db.collection.update(\\{key:value\\},\\{$unset : \\{operator : 1\\}\\})",               
+                "key": "db.collection.update(\\{key:value\\},\\{$unset : \\{operator : 1\\}\\})",
                 "val": "Sets / changes certain attributes of a given document"
             },
             {
@@ -160,7 +160,7 @@
             },
             {
                 "key": "db.collection.remove(\\{key:\\{$regex:’^USS\\sE’\\}\\})",
-                "val": "Removes using operator"                
+                "val": "Removes using operator"
             }
         ],
         "Working with Indexes": [

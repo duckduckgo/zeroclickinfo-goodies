@@ -11,9 +11,9 @@ triggers start      => "duckduckhack bitflipped";
 
 handle remainder    => sub {
 
-	return if $_; # Guard against "no answer"
+    return if $_; # Guard against "no answer"
 
-	return "bitflipped is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return "bitflipped is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;

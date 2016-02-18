@@ -18,7 +18,7 @@ handle remainder => sub {
 
     # Normal return text
     return "Ettienne Pitts is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
-    
+
 };
 
 1;

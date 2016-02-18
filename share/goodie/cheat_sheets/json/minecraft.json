@@ -1,9 +1,9 @@
 {
-    "id": "minecraft_cheat_sheet", 
+    "id": "minecraft_cheat_sheet",
     "name": "Minecraft Shortcuts",
     "description": "Minecraft is a sandbox video game developed and published by Mojang",
     "template_type": "keyboard",
-    "section_order": [  
+    "section_order": [
         "Movement",
         "Items",
         "Multiplayer",
@@ -13,7 +13,7 @@
     "sections": {
         "Movement": [
             {
-                "key": "W", 
+                "key": "W",
                 "val": "Move forward (double tap to sprint)"
             },
             {
@@ -21,7 +21,7 @@
                 "val": "Strafe left"
             },
             {
-                "key": "S", 
+                "key": "S",
                 "val": "Move backward"
             },
             {
@@ -33,7 +33,7 @@
                 "val": "Jump (ascend in Fly mode)"
             },
             {
-                "key": "Left Shift", 
+                "key": "Left Shift",
                 "val": "Sneak (descend in Fly mode)"
             },
             {
@@ -43,7 +43,7 @@
         ],
         "Items": [
             {
-                "key": "[1] to [9]", 
+                "key": "[1] to [9]",
                 "val": "Select associated hotbar item"
             },
             {
@@ -51,13 +51,13 @@
                 "val": "Open/close inventory"
             },
             {
-                "key": "Q", 
+                "key": "Q",
                 "val": "Drop/toss item"
             }
         ],
         "Multiplayer": [
             {
-                "key": "T", 
+                "key": "T",
                 "val": "Chat"
             },
             {
@@ -71,7 +71,7 @@
         ],
         "Debug": [
             {
-                "key": "[1] to [9]", 
+                "key": "[1] to [9]",
                 "val": "Increase/decrease graph detail"
             },
             {
@@ -79,11 +79,11 @@
                 "val": "Display profiler graph"
             },
             {
-                "key": "[S] [F3]", 
+                "key": "[S] [F3]",
                 "val": "Reload web-loaded client resources"
             },
             {
-                "key": "[A] [F3]", 
+                "key": "[A] [F3]",
                 "val": "Reload chunks"
             },
             {
@@ -91,11 +91,11 @@
                 "val": "Reload textures"
             },
             {
-                "key": "[P] [F3]", 
+                "key": "[P] [F3]",
                 "val": "Toggle auto-pause when window loses focus"
             },
             {
-                "key": "[H] [F3]", 
+                "key": "[H] [F3]",
                 "val": "Toggle detailed item descriptions"
             },
             {
@@ -103,21 +103,21 @@
                 "val": "Trigger manual debug crash (hold for six seconds)"
             },
             {
-                "key": "[B] [F3]", 
+                "key": "[B] [F3]",
                 "val": "Toggle hitbox around entities"
             },
             {
-                "key": "[D] [F3]", 
+                "key": "[D] [F3]",
                 "val": "Clear chat history"
             },
             {
-                "key": "F8", 
+                "key": "F8",
                 "val": "Slowly pan camera"
             }
         ],
         "General Toggles": [
             {
-                "key": "Esc", 
+                "key": "Esc",
                 "val": "Open menu"
             },
             {
@@ -125,11 +125,11 @@
                 "val": "Toggle Heads-Up Display"
             },
             {
-                "key": "F2", 
+                "key": "F2",
                 "val": "Take screenshot"
             },
             {
-                "key": "[F1] [F2]", 
+                "key": "[F1] [F2]",
                 "val": "Take screenshot without HUD"
             },
             {
@@ -137,19 +137,19 @@
                 "val": "Toggle shaders"
             },
             {
-                "key": "F5", 
+                "key": "F5",
                 "val": "Toggle perspective"
             },
             {
-                "key": "F6", 
+                "key": "F6",
                 "val": "Start/stop stream"
             },
             {
-                "key": "F7", 
+                "key": "F7",
                 "val": "Pause/unpause stream"
             },
             {
-                "key": "F11", 
+                "key": "F11",
                 "val": "Toggle fullscreen"
             }
         ]

@@ -47,7 +47,7 @@ ddg_goodie_test(
         }
     ),
     "How old is my grandma?" => undef,
-    "why?" => undef, 
+    "why?" => undef,
 );
 
 done_testing;

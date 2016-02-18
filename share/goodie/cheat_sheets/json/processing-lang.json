@@ -7,7 +7,9 @@
         "sourceUrl": "https://www.processing.org/reference/"
     },
     "template_type": "terminal",
-    "aliases": [ "processing" ],
+    "aliases": [
+        "processing"
+    ],
     "section_order": [
         "Basic Structure",
         "Basic Functions",

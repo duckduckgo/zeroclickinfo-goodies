@@ -1,5 +1,5 @@
 package DDG::Goodie::RIPEMD;
-# ABSTRACT: Computes the RIPEMD family of cryptographic hash functions. 
+# ABSTRACT: Computes the RIPEMD family of cryptographic hash functions.
 
 use strict;
 use DDG::Goodie;

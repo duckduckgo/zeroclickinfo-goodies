@@ -16,7 +16,7 @@ triggers startend => "rc4";
 
 # Handle statement
 
-handle remainder => sub { 
+handle remainder => sub {
 
     (my $type, my $key, my $plaintext) = split / /;
     my $operation;

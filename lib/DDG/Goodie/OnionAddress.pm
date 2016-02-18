@@ -25,14 +25,14 @@ handle query_lc => sub {
     my $plaintext = $2.'.onion';
     return $plaintext,
     structured_answer => {
-    	id => 'onion_address',
-    	name => 'OnionAddress',
-    	data => {
-    		title => $2.'.onion',
+        id => 'onion_address',
+        name => 'OnionAddress',
+        data => {
+            title => $2.'.onion',
             subtitle => 'Onion/Hidden service',
-    		description => 'You are trying to reach an onion/hidden service. To access '.$2.'.onion via web you will have to use the Tor Browser.'
-    	},
-    	meta => {
+            description => 'You are trying to reach an onion/hidden service. To access '.$2.'.onion via web you will have to use the Tor Browser.'
+        },
+        meta => {
             sourceName => "Tor Project",
             sourceUrl => "https://www.torproject.org/projects/torbrowser.html.en#downloads"
         },

@@ -81,7 +81,7 @@ ddg_goodie_test(
             "https://www.torproject.org/projects/torbrowser.html.en#downloads",
         )
     ),
-    
+
     'https://0123456789abcdef.onion' =>
     test_zci(
         '0123456789abcdef.onion',

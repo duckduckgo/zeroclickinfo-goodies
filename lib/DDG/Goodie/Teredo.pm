@@ -42,13 +42,13 @@ handle remainder => sub {
         $netip = new Net::IP (Net::IP::ip_bintoip(~(substr $binip, 96, 32),4));
         my $nat = $netip->ip();
         push @output, $netip->ip();
-        
-        my %output  =  ( 
+
+        my %output  =  (
             'Teredo Server IPv4:' => $teredo,
             'Nat Public IPv4:' => $nat,
-            'Client Port:' => $port,  
+            'Client Port:' => $port,
         );
-               
+
         return to_text(@output),
         structured_answer => {
             id => 'teredo',

@@ -38,9 +38,9 @@ my @ok_queries = (
 );
 
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::HelpLine
-	)],
+    [qw(
+        DDG::Goodie::HelpLine
+    )],
     (map {
         my $query = $queries[$_];
         map {

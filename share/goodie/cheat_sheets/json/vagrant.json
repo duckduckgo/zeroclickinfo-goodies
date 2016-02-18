@@ -6,7 +6,9 @@
         "sourceName": "VagrantUp",
         "sourceUrl": "https://docs.vagrantup.com/v2/cli/index.html"
     },
-    "aliases": [ "vagrantup" ],
+    "aliases": [
+        "vagrantup"
+    ],
     "template_type": "terminal",
     "section_order": [
         "Getting Started",

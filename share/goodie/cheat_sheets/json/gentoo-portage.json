@@ -7,13 +7,18 @@
         "sourceUrl": "https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet#Portage_package_management"
     },
     "aliases": [
-        "gentoo", "portage", "emerge", "gentoo package management"
+        "gentoo",
+        "portage",
+        "emerge",
+        "gentoo package management"
     ],
     "template_type": "terminal",
-    "section_order": ["Package Installation/Removal",
-                      "Package Upgrades",
-                      "Updating the Repositories",
-                      "Miscellaneous Operations"],
+    "section_order": [
+        "Package Installation/Removal",
+        "Package Upgrades",
+        "Updating the Repositories",
+        "Miscellaneous Operations"
+    ],
     "sections": {
         "Package Installation/Removal": [
             {

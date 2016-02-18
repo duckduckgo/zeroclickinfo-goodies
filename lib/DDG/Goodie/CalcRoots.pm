@@ -89,13 +89,13 @@ handle query  => sub {
 
             my $calc = $base ** (1/$exp) * -1;
             if($sign eq "-"){$calc = -$calc;}
-            
-            
+
+
             my $secondsign = "-"; #sign of the calcuated answer
             if($calc>0){$secondsign="";}
-            
+
             # Try and simplify the radical if answer is not a whole number
-            unless(($calc - int($calc))==0){ 
+            unless(($calc - int($calc))==0){
                 my $count = int(abs($calc));
                 while ($count > 1) {
 
@@ -107,7 +107,7 @@ handle query  => sub {
                     }
 
                     $count--;
-                }   
+                }
             }
             return structured($sign . $exp,"-$base","The $sign$exp-root of -$base is $calc.", qq|$sign<sup>$exp</sup>&radic;-$base = <a href="javascript:;" onclick="document.x.q.value='$calc';document.x.q.focus();">$calc</a>|);
         }
@@ -120,7 +120,7 @@ handle query  => sub {
         if ($base ne '') {
             my $calc = $base ** (1/$exp);
             if($sign eq "-"){$calc = -$calc;}
-            
+
             #If the answer is not a whole number, try to simplify the radical
             unless(($calc - int($calc))==0){
                 my $count = int(abs($calc));
@@ -145,8 +145,8 @@ handle query  => sub {
 
 sub structured{
     my($exp,$base,$text, $html) = @_;
-    return $text, 
-            heading => "Root Calculator", 
+    return $text,
+            heading => "Root Calculator",
             structured_answer => {
                     input     => ["$exp-root of $base"],
                     operation => 'Calculate',

@@ -39,14 +39,14 @@ ddg_goodie_test(
     'base64 ENCoDE foo'       => @foo_encoded,
     'base64 foo'              => @foo_encoded,
     "base64 encode this text" => @this_text_encoded,
-    
+
     # It decodes
     "base64 decode dGhpcyB0ZXh0" => @dGhpcyB0ZXh0_decoded,
     "base64 dECoDE dGhpcyB0ZXh0" => @dGhpcyB0ZXh0_decoded,
-    
+
     # It ignores 'base64' at end of query
     "python base64" => undef,
-    
+
     # It ignores incomplete requests to process
     "base64" => undef,
     "base64 encode" => undef,

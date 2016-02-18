@@ -1,5 +1,5 @@
 package DDG::Goodie::IsAwesome::rafacas;
-# ABSTRACT: rafacas' first Goodie 
+# ABSTRACT: rafacas' first Goodie
 
 use DDG::Goodie;
 use strict;
@@ -11,7 +11,7 @@ triggers start => "duckduckhack rafacas";
 
 handle remainder => sub {
         return if $_;
-	return "rafacas is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
+    return "rafacas is awesome and has successfully completed the DuckDuckHack Goodie tutorial!";
 };
 
 1;

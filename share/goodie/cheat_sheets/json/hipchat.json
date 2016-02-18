@@ -1,7 +1,7 @@
 {
     "id": "hipchat_cheat_sheet",
     "name": "HipChat",
-    "description":"Commands for HipChat, an online group and private chat service for teams",
+    "description": "Commands for HipChat, an online group and private chat service for teams",
     "metadata": {
         "sourceName": "Atlassian",
         "sourceUrl": "https://confluence.atlassian.com/hipchat/keyboard-shortcuts-and-slash-commands-749385232.html"

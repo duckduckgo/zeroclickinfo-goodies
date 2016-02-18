@@ -52,11 +52,11 @@ handle query => sub {
     $figlet = render_figlet($font, $text);
 
     return unless $figlet;
-    
+
     if ($font eq 'rot13' || $font eq 'mnemonic' || $font eq 'term') {
         $figlet = html_enc($figlet);
-    } 
-    
+    }
+
     return $figlet,
     structured_answer => {
         id => 'figlet',

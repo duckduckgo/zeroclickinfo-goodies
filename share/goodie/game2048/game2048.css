@@ -30,17 +30,17 @@
 }
 
 .zci--game2048 .val-{ background-color: #DDD; }
-.zci--game2048 .val-2, .val-4, .val-8, .val-16 { 
+.zci--game2048 .val-2, .val-4, .val-8, .val-16 {
     background-color: #FFF; color: #000;
     box-shadow: 0px 4px 0px 0px #A9CCE8;
 }
-.zci--game2048 .val-32, .val-64, .val-128, .val-256 { 
+.zci--game2048 .val-32, .val-64, .val-128, .val-256 {
     background-color: #F2A032;
     color: #FFF;
     box-shadow: 0px 4px 0px 0px #B1803D;
 }
-.zci--game2048 .val-512, .val-1024, .val-2048, .val-4096, .val-8192 { 
-    background-color:#DE5833; 
+.zci--game2048 .val-512, .val-1024, .val-2048, .val-4096, .val-8192 {
+    background-color:#DE5833;
     color: #FFF;
     box-shadow: 0px 4px 0px 0px #9B3B22;
  }

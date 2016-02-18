@@ -25,7 +25,7 @@ zci is_cached   => 0;
 
 triggers start => @triggers;
 
-my $operation = 'Scramble of';            
+my $operation = 'Scramble of';
 
 # Handle statement
 handle remainder_lc => sub {
@@ -34,10 +34,10 @@ handle remainder_lc => sub {
     $word =~ s/^"(.*)"$/$1/;
 
     return unless $word;    # Need a word.
-    
+
     my $match_word = $word;
     $match_word =~ s/[^a-z]//g;
-    return unless $match_word; 
+    return unless $match_word;
 
     my $response;
     do {

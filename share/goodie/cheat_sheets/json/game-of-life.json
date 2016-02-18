@@ -2,25 +2,23 @@
     "id": "game_of_life_cheat_sheet",
     "name": "Conway's Game of Life",
     "description": "Conway's Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.",
-
     "metadata": {
         "sourceName": "Wikipedia",
-        "sourceUrl" : "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+        "sourceUrl": "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
     },
-
     "aliases": [
-        "game of life", "gol", "conways game", "conway's game"
+        "game of life",
+        "gol",
+        "conways game",
+        "conway's game"
     ],
-
     "template_type": "reference",
-
     "section_order": [
         "Terms",
         "Transition Rules",
         "Live Cell Cheat Sheet",
         "Dead Cell Cheat Sheet"
     ],
-
     "sections": {
         "Terms": [
             {

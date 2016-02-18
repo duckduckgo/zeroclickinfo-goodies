@@ -10,12 +10,12 @@ zci answer_type => 'convertlatlon';
 zci is_cached => 1;
 
 ddg_goodie_test(
-	[qw(
+    [qw(
     DDG::Goodie::ConvertLatLon
-	)],
+    )],
 
     #Primary example
-	'71° 10\' 3" in decimal' => test_zci('71.1675°', 
+    '71° 10\' 3" in decimal' => test_zci('71.1675°',
         structured_answer => {
             input     => ["71° 10′ 3″"],
             operation => "Convert to decimal",
@@ -24,7 +24,7 @@ ddg_goodie_test(
     ),
 
     #Secondary examples
-    '71 degrees 10 minutes 3 seconds east in decimal' => test_zci('71.1675° E', 
+    '71 degrees 10 minutes 3 seconds east in decimal' => test_zci('71.1675° E',
         structured_answer => {
             input     => ["71° 10′ 3″ E"],
             operation => "Convert to decimal",
@@ -41,7 +41,7 @@ ddg_goodie_test(
     #Latitudes and longitudes of cities, various trigger combinations
     #Values from Wikipedia/GeoHack toolserver
     #Sydney
-    'convert 33.859972º S 151.2094° E to degrees minutes seconds' => test_zci('33° 51′ 36″ S 151° 12′ 34″ E', 
+    'convert 33.859972º S 151.2094° E to degrees minutes seconds' => test_zci('33° 51′ 36″ S 151° 12′ 34″ E',
         structured_answer => {
             input     => ["33.859972° S", "151.2094° E"],
             operation => "Convert to DMS",

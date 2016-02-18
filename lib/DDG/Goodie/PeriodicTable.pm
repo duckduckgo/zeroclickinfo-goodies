@@ -46,7 +46,7 @@ handle query_lc => sub {
     if ($symbol_length == 1) { $badge_class = "tx--25" }
     elsif ($symbol_length == 3) { $badge_class = "tx--14" }
 
-    return $raw, 
+    return $raw,
     structured_answer => {
         id => "periodic_table",
         name => "Periodic Table",
@@ -63,8 +63,8 @@ handle query_lc => sub {
         },
         meta => {
             sourceName => "Wikipedia",
-            sourceUrl => "https://en.wikipedia.org/wiki/$element_name" 
-        }, 
+            sourceUrl => "https://en.wikipedia.org/wiki/$element_name"
+        },
         templates => {
             group => "icon",
             elClass => {
@@ -75,19 +75,19 @@ handle query_lc => sub {
             },
             variants => {
                 iconBadge => "medium"
-            },           
+            },
             options => {
                 content => 'DDH.periodic_table.content',
                 moreAt => 1
             }
         }
-    };   
-    
+    };
+
 };
 
 # Decide on a color to use when displaying the element badge based on its group.
 sub get_badge_color {
-	my ($element_type) = @_;
+    my ($element_type) = @_;
 
     # metmetal–metalloid–nonmetal etc is currently split into only 5 color groups.
     # https://github.com/duckduckgo/zeroclickinfo-goodies/issues/927
@@ -104,7 +104,7 @@ sub get_badge_color {
     elsif ($element_type eq "Noble gas") { $badge_color = "bg-clr--blue-light" }
     elsif ($element_type eq "Unknown") { $badge_color = "bg-clr--red" }
 
-	return $badge_color;
+    return $badge_color;
 }
 
 1;

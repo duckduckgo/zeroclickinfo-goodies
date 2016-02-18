@@ -1,18 +1,18 @@
 {
-    "id":"kabaddi_terms_cheat_sheet",
-    "name":"Kabaddi Terms and Definitions",
+    "id": "kabaddi_terms_cheat_sheet",
+    "name": "Kabaddi Terms and Definitions",
     "description": "Common terms used in kabaddi and their definitions.",
     "metadata": {
         "sourceName": "ProKabaddi League",
         "sourceUrl": "http://www.prokabaddi.com/prokabaddi-rules"
     },
     "aliases": [
-		"kabaddi",
-		"kabaddi words",
-		"kabaddi definitions",
-		"words used in kabaddi",
-		"terms used in kabaddi"
-	],
+        "kabaddi",
+        "kabaddi words",
+        "kabaddi definitions",
+        "words used in kabaddi",
+        "terms used in kabaddi"
+    ],
     "template_type": "reference",
     "section_order": [
         "Court related terms",
@@ -57,7 +57,7 @@
                 "val": "The repeated chanting of the approved word “Kabaddi”. The chanting should be without break, at a stretch, and clear aloud sounding."
             }
         ],
-       "Play related terms": [
+        "Play related terms": [
             {
                 "key": "Raider",
                 "val": "The player that enters into the opponents’ half court with the cant. The raider must begin his cant before he crosses the mid line to enter the opponents’ half court."

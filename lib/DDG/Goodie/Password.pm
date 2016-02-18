@@ -43,13 +43,13 @@ my $strengths = join('|', keys %pw_strengths);
 handle remainder => sub {
 
     my $query = lc(shift);
-    
+
     # Remove stopwords from remainder before checking format
     my @stopwords = ('generate', 'generator', 'random', 'characters', 'create');
     for my $stopwd (@stopwords) {
         $query =~ s/$stopwd//;
     }
-    
+
     return if ($query && $query !~ /^(?<fw>\d+|$strengths|)\s*(?<sw>\d+|$strengths|)$/i);
 
     srand();                           # Reseed on each request.

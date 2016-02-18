@@ -5,7 +5,7 @@
     "metadata": {
         "sourceName": "Shortcut World",
         "sourceUrl": "http://www.shortcutworld.com/en/win/Eclipse.html"
-        },
+    },
     "template_type": "keyboard",
     "section_order": [
         "Manage Files and Projects",
@@ -63,56 +63,75 @@
                 "key": "F5",
                 "val": "Refresh content of selected element with local file system"
             }
-
         ],
         "Editor Window": [
             {
-                "key": "F12",
-                "val": "Jump to Editor Window"
+                "key": "[Ctrl] [X]",
+                "val": "Cut"
             },
             {
-                "key": "[Ctrl] [Page Down]",
-                "val": "Switch to next editor"
+                "key": "[Ctrl] [C]",
+                "val": "Copy"
             },
             {
-                "key": "[Ctrl] [Page Up]",
-                "val": "Switch to previous editor"
+                "key": "[Ctrl] [V]",
+                "val": "Paste"
             },
             {
-                "key": "[Ctrl] [M]",
-                "val": "Maximize or un-maximize current Editor Window (also works for other Windows)"
+                "key": "[Ctrl] [Z]",
+                "val": "Undo last action"
             },
             {
-                "key": "[Ctrl] [E]",
-                "val": "Show list of open Editors. Use arrow keys and enter to switch"
+                "key": "[Ctrl] [Y]",
+                "val": "Redo last (undone) action"
             },
             {
-                "key": "[Ctrl] [F6]",
-                "val": "Show list of open Editors and switches between them upon releasing [Ctrl]"
+                "key": "[Ctrl] [D]",
+                "val": "Delete Line"
             },
             {
-                "key": "[Alt] [←]",
-                "val": "Go to previous Editor Window"
+                "key": "[Alt] [↑]",
+                "val": "Move current line or selection Up"
             },
             {
-                "key": "[Alt] [→]",
-                "val": "Go to next Editor Window"
+                "key": "[Alt] [↓]",
+                "val": "Move current line or selection down"
             },
             {
-                "key": "[Alt] [-]",
-                "val": "Open Editor Window Option menu"
+                "key": "[Ctrl] [Alt] [↑]",
+                "val": "Duplicate current line or selection Up"
             },
             {
-                "key": "[Ctrl] [F10]",
-                "val": "Show view menu "
+                "key": "[Ctrl] [Alt] [↓]",
+                "val": "Duplicate current line or selection down"
             },
             {
-                "key": "[Ctrl] [F10], [n]",
-                "val": "Show or hide line numbers"
+                "key": "[Ctrl] [Delete]",
+                "val": "Delete next word"
             },
             {
-                "key": "[Ctrl] [Shift], [Q]",
-                "val": "Jump to Editor Window"
+                "key": "[Ctrl] [Backspace]",
+                "val": "Delete previous word"
+            },
+            {
+                "key": "[Shift] [Enter]",
+                "val": "Enter line below current line"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Enter]",
+                "val": "Enter line above current line"
+            },
+            {
+                "key": "Insert",
+                "val": "Switch between insert and overwrite mode"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Y]",
+                "val": "Change selection to all lower case"
+            },
+            {
+                "key": "[Shift] [Ctrl] [X]",
+                "val": "Change selection to all upper case"
             }
         ],
         "Navigate in Editor": [
@@ -263,77 +282,6 @@
                 "val": "Reduce previously expanded selection by one step"
             }
         ],
-        "Editor Window": [
-            {
-                "key": "[Ctrl] [X]",
-                "val": "Cut"
-            },
-            {
-                "key": "[Ctrl] [C]",
-                "val": "Copy"
-            },
-            {
-                "key": "[Ctrl] [V]",
-                "val": "Paste"
-            },
-            {
-                "key": "[Ctrl] [Z]",
-                "val": "Undo last action"
-            },
-            {
-                "key": "[Ctrl] [Y]",
-                "val": "Redo last (undone) action"
-            },
-            {
-                "key": "[Ctrl] [D]",
-                "val": "Delete Line"
-            },
-            {
-                "key": "[Alt] [↑]",
-                "val": "Move current line or selection Up"
-            },
-            {
-                "key": "[Alt] [↓]",
-                "val": "Move current line or selection down"
-            },
-            {
-                "key": "[Ctrl] [Alt] [↑]",
-                "val": "Duplicate current line or selection Up"
-            },
-            {
-                "key": "[Ctrl] [Alt] [↓]",
-                "val": "Duplicate current line or selection down"
-            },
-            {
-                "key": "[Ctrl] [Delete]",
-                "val": "Delete next word"
-            },
-            {
-                "key": "[Ctrl] [Backspace]",
-                "val": "Delete previous word"
-            },
-            {
-                "key": "[Shift] [Enter]",
-                "val": "Enter line below current line"
-            },
-            {
-                "key": "[Shift] [Ctrl] [Enter]",
-                "val": "Enter line above current line"
-            },
-            {
-                "key": "Insert",
-                "val": "Switch between insert and overwrite mode"
-            },
-            {
-                "key": "[Shift] [Ctrl] [Y]",
-                "val": "Change selection to all lower case"
-            },
-            {
-                "key": "[Shift] [Ctrl] [X]",
-                "val": "Change selection to all upper case"
-            }
-
-        ],
         "Search and Replace": [
             {
                 "key": "[Ctrl] [F]",
@@ -345,7 +293,7 @@
             },
             {
                 "key": "[Ctrl] [Shift] [K]",
-                "val":"Find previous occurence of search term"
+                "val": "Find previous occurence of search term"
             },
             {
                 "key": "[Ctrl] [H]",
@@ -356,8 +304,8 @@
                 "val": "Incremental search forward. Type search term after pressing [ctrl]+[j], there is now search window"
             },
             {
-                "key" : "[Ctrl] [Shift] [J]",
-                "val" : "Incremental search backwards"
+                "key": "[Ctrl] [Shift] [J]",
+                "val": "Incremental search backwards"
             },
             {
                 "key": "[Ctrl] [Shift] [O]",
@@ -370,8 +318,8 @@
                 "val": "Increase / decrease indent of selected text"
             },
             {
-                 "key": "[Shift] [Tab]",
-                 "val": "Decrease indent of selected text"
+                "key": "[Shift] [Tab]",
+                "val": "Decrease indent of selected text"
             },
             {
                 "key": "[Ctrl] [I]",
@@ -453,7 +401,7 @@
                 "key": "[Ctrl] move over method",
                 "val": "Open Declaration or Implementation"
             }
-          ],
+        ],
         "Refactoring": [
             {
                 "key": "[Alt] [Shift] [R]",
@@ -527,7 +475,8 @@
                 "key": "[Ctrl] [F7]",
                 "val": "Switch forward between views (panels). Useful for switching back and forth between Package Explorer and Editor"
             },
-            {   "key": "[Ctrl] [Shift] [F7]",
+            {
+                "key": "[Ctrl] [Shift] [F7]",
                 "val": "Switch backward between views"
             },
             {

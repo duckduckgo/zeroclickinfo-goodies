@@ -31,7 +31,7 @@
         "DB2 System Commands": [
             {
                 "key": "DB2LEVEL",
-                "val": "Check version of DB2 installed"              
+                "val": "Check version of DB2 installed"
             },
             {
                 "key": "DB2ILIST",
@@ -45,7 +45,7 @@
                 "key": "DB2CC",
                 "val": "Open db2 control center"
             },
-	    {
+            {
                 "key": "DB2LICM -l",
                 "val": "Get db2 type"
             }
@@ -97,18 +97,18 @@
                 "key": "DB2 GET DATABASE CONFIGURATION",
                 "val": "Get current database configuration"
             },
-	        {
-		        "key": "DB2 VALUES CURRENT USER",
+            {
+                "key": "DB2 VALUES CURRENT USER",
                 "val": "Get the current user"
-	        },
-	        {
-		        "key": "DB2 VALUES CURRENT SCHEMA",
+            },
+            {
+                "key": "DB2 VALUES CURRENT SCHEMA",
                 "val": "Get the current schema"
-	        },
-	        {
-		        "key": "DB2 VALUES CURRENT QUERY OPTIMIZATION",
+            },
+            {
+                "key": "DB2 VALUES CURRENT QUERY OPTIMIZATION",
                 "val": "Get query optimization level"
-	        }
+            }
         ],
         "Schemas": [
             {
@@ -163,11 +163,11 @@
             },
             {
                 "key": "SYSCAT.CHECKS",
-                "val": "Column checks"            
+                "val": "Column checks"
             },
             {
                 "key": "SYSCAT.COLCHECKS",
-                "val": "Column constraint"                
+                "val": "Column constraint"
             },
             {
                 "key": "SYSCAT.REFERENCES",

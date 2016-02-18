@@ -28,7 +28,7 @@ my @structured_answer = {
         list => $list_data
     },
     meta => {},
-    templates => {      
+    templates => {
         group => 'list',
         options => {
             list_content => "DDH.security_addons.list_content"
@@ -37,22 +37,22 @@ my @structured_answer = {
 };
 my $answer = test_zci($plaintext,structured_answer=>@structured_answer);
 ddg_goodie_test(
-	[
-		'DDG::Goodie::SecurityAddons'
-	],
-    
+    [
+        'DDG::Goodie::SecurityAddons'
+    ],
+
     'privacy extensions' => $answer,
     'privacy extension' => $answer,
     'privacy addons' => $answer,
     'privacy addon' => $answer,
-    
+
     'privacy extensions firefox' => $answer,
     'firefox privacy extension' => $answer,
-    
+
     'google chrome privacy addons' => $answer,
     'opera privacy addon' => $answer,
     'safari privacy extensions' => $answer,
-    
+
     'ie privacy extension' => undef,
     'internet explorer privacy addons' => undef,
 );

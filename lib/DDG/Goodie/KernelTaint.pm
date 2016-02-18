@@ -29,7 +29,7 @@ handle remainder => sub {
 
     s/description|error|\s+//g;
 
-	return unless /^\d+$/;
+    return unless /^\d+$/;
 
     my $mask = shift;
 

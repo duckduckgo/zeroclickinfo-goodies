@@ -3,10 +3,10 @@
     "name": "Windows Command Prompt",
     "description": "If you’re not sure whether a certain command exist or not, then type the command followed by a /? to find out more",
     "metadata": {
-      "sourceName": "Wikipedia",
-       "sourceUrl": "https://en.wikipedia.org/wiki/Windows_Command_Prompt"
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Windows_Command_Prompt"
     },
-	"aliases": [
+    "aliases": [
         "cmd",
         "windows cmd",
         "windows cmd prompt",
@@ -61,7 +61,7 @@
                 "val": "Run a specific command from the command history"
             },
             {
-                "key":"Esc",
+                "key": "Esc",
                 "val": "Clear command line"
             },
             {
@@ -85,7 +85,7 @@
                 "val": "Move one word to the right (forward)"
             },
             {
-                "key": "Backspace" ,
+                "key": "Backspace",
                 "val": "Erase character to the left"
             },
             {
@@ -116,7 +116,6 @@
                 "key": "[Ctrl]  [Z]",
                 "val": "Signal end-of-file"
             }
-
         ],
         "Basic Commands": [
             {
@@ -183,7 +182,7 @@
                 "key": "SYS",
                 "val": "The command to retrieve extensive information about your system"
             }
-       ],
+        ],
         "File Management Commands": [
             {
                 "key": "MKDIR",
@@ -213,6 +212,6 @@
                 "key": "RMDIR",
                 "val": "Removes a directory"
             }
-          ]
+        ]
     }
 }

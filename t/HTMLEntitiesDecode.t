@@ -9,11 +9,11 @@ zci answer_type => 'html_entity';
 zci is_cached   => 1;
 
 sub any_structured_answer {
-	return {
-		input => '-ANY-',
-		result => '-ANY-',
-		operation => "HTML Entity Decode"
-	};
+    return {
+        input => '-ANY-',
+        result => '-ANY-',
+        operation => "HTML Entity Decode"
+    };
 }
 
 ddg_goodie_test(

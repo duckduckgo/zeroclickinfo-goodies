@@ -1,5 +1,5 @@
 package DDG::Goodie::IsAwesome::rramyr;
-# ABSTRACT: GitHubrramyr's first Goodie		
+# ABSTRACT: GitHubrramyr's first Goodie
 
 use DDG::Goodie;
 use strict;

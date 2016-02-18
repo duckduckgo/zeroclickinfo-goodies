@@ -7,7 +7,9 @@
         "sourceUrl": "https://helpx.adobe.com/illustrator/using/default-keyboard-shortcuts.html"
     },
     "aliases": [
-        "adobe illustrator", "illustrator cc", "adobe illustrator cc"
+        "adobe illustrator",
+        "illustrator cc",
+        "adobe illustrator cc"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -19,7 +21,7 @@
         "Function Commands",
         "Editing Shapes",
         "Selection Commands",
-        "Moving Selections"        
+        "Moving Selections"
     ],
     "sections": {
         "Tools": [
@@ -425,7 +427,7 @@
             },
             {
                 "key": "[Ctrl] [F12]",
-                "val": "Scripts > Other Script" 
+                "val": "Scripts > Other Script"
             },
             {
                 "key": "[Alt] [Shift] [Ctrl] [I]",

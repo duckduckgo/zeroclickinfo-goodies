@@ -27,7 +27,7 @@ ddg_goodie_test(
                 input => ['Japan'],
                 operation => 'ISO 3166 Country code',
                 result => 'jpn'
-            } 
+            }
         ),
         "3 letter country code of China"         => test_zci(
              qq(ISO 3166: China - chn),
@@ -83,7 +83,7 @@ ddg_goodie_test(
                 input => ['Spain'],
                 operation => 'ISO 3166 Country code',
                 result => 'es'
-            } 
+            }
         ),
         "country code jp"                        => test_zci(
              qq(ISO 3166: Japan - jp),
@@ -110,7 +110,7 @@ ddg_goodie_test(
             }
         ),
         "3 letter iso code isle of man"          => test_zci(
-             qq(ISO 3166: Isle of man - imn), 
+             qq(ISO 3166: Isle of man - imn),
              structured_answer => {
                 input => ['Isle of man'],
                 operation => 'ISO 3166 Country code',

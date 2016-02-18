@@ -33,7 +33,7 @@ my @structured_answer = {
         list => $list_data
     },
     meta => {},
-    templates => {      
+    templates => {
         group => 'list',
         options => {
             list_content => "DDH.security_addons.list_content"
@@ -46,8 +46,8 @@ handle remainder => sub {
         my $remainder = $_;
         return unless grep { $remainder eq $_ } @triggerwords;
     }
-    
-	return $plaintext,
+
+    return $plaintext,
     structured_answer => @structured_answer;
 };
 

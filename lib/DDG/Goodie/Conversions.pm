@@ -68,39 +68,39 @@ handle query_lc => sub {
 
     # hack support for "degrees" prefix on temperatures
     $_ =~ s/ degree[s]? (celsius|fahrenheit|rankine)/ $1/;
-    
+
     # hack - convert "oz" to "fl oz" if "ml" contained in query
     s/\b(oz|ounces)/fl oz/ if(/(ml|cup[s]?)/ && not /fl oz/);
-    
+
     # guard the query from spurious matches
     return unless $_ =~ /$guard/;
-    
+
     my @matches = ($+{'left_unit'}, $+{'right_unit'});
     return if ("" ne $+{'left_num'} && "" ne $+{'right_num'});
     my $factor = $+{'left_num'};
 
     # Compare factors of both units to ensure proper order when ambiguous
-    # also, check the <connecting_word> of regex for possible user intentions 
+    # also, check the <connecting_word> of regex for possible user intentions
     my @factor1 = (); # conversion factors, not left_num or right_num values
     my @factor2 = ();
-        
+
     # gets factors for comparison
     foreach my $type (@types) {
         if($+{'left_unit'} eq $type->{'unit'}) {
             push(@factor1, $type->{'factor'});
         }
-        
+
         my @aliases1 = @{$type->{'aliases'}};
         foreach my $alias1 (@aliases1) {
             if($+{'left_unit'} eq $alias1) {
                 push(@factor1, $type->{'factor'});
             }
         }
-        
+
         if($+{'right_unit'} eq $type->{'unit'}) {
             push(@factor2, $type->{'factor'});
         }
-        
+
         my @aliases2 = @{$type->{'aliases'}};
         foreach my $alias2 (@aliases2) {
             if($+{'right_unit'} eq $alias2) {
@@ -129,7 +129,7 @@ handle query_lc => sub {
 
     my $styler = number_style_for($factor);
     return unless $styler;
-    
+
     my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
@@ -203,7 +203,7 @@ sub convert_temperatures {
     elsif ($from =~ /^r(?:ankine)?$/i)    { $kelvin = $in_temperature * 5/9; }
     elsif ($from =~ /^reaumur$/i)         { $kelvin = $in_temperature * 5/4 + 273.15 }
     else { die; }
-    
+
     my $out_temperature;
     # Convert to Target Unit
     if    ($to   =~ /^f(?:ahrenheit)?$/i) { $out_temperature = $kelvin * 9/5 - 459.67; }
@@ -238,7 +238,7 @@ sub convert {
     my ($conversion) = @_;
     my @matches = get_matches($conversion->{'from_unit'}, $conversion->{'to_unit'});
 
-    return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'}); 
+    return if $conversion->{'factor'} < 0 && !($matches[0]->{'can_be_negative'});
     # matches must be of the same type (e.g., can't convert mass to length):
     return if ($matches[0]->{'type'} ne $matches[1]->{'type'});
 

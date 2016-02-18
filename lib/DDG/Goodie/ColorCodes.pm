@@ -100,7 +100,7 @@ handle matches => sub {
             $type = 'rgb8';    # We asked for rgb8 from our dictionary, so make sure our type matches.
         };
     }
-    
+
     my $col = try  { Convert::Color->new("$type:$color") };    # Everything should be ready for conversion now.
     return unless $col;                                       # Guess not.
 
@@ -126,18 +126,18 @@ handle matches => sub {
     my $hslc = 'HSL(' . join(', ', @hsl) . ')';
     my $cmyb = 'CMYB(' . join(', ', @cmyk) . ')';
     my $rgb_pct = 'RGB(' . join(', ', @rgb_pct) . ')';
-    
+
     $complementary = uc($complementary);
-    
+
     #greyscale colours have no hue and saturation
     my $show_column_2 = !($hsl[0] eq 0 && $hsl[1] eq '0%');
-    
+
     my $column_2 = '';
-    
+
     if ($show_column_2) {
         $column_2 = "\n" . "Complementary: #$complementary" . "\n" . "Analogous: #$analogous[0], #$analogous[1]";
     }
-    
+
     return "$hexc ~ $rgb ~ $rgb_pct ~ $hslc ~ $cmyb$column_2",
     structured_answer => {
         id => 'color_codes',
@@ -159,7 +159,7 @@ handle matches => sub {
                 content => 'DDH.color_codes.content'
             }
         }
-    };      
+    };
 };
 
 1;
