@@ -39,16 +39,16 @@
 			"val": "Show/hide timeline"
 		}],
 		"Frame": [{
-			"key": "[F5]",
+			"key": "F5",
 			"val": "Add frame"
 		}, {
 			"key": "[Shift] [F5]",
 			"val": "Delete Frame"
 		}, {
-			"key": "[F6]",
+			"key": "F6",
 			"val": "Add keyframe"
 		}, {
-			"key": "[F7]",
+			"key": "F7",
 			"val": "Add blank keyframe"
 		}],
 		"Timeline": [{
@@ -58,16 +58,16 @@
 			"key": "[Ctrl] [0]",
 			"val": "Rewind"
 		}, {
-			"key": "[<]",
+			"key": "<",
 			"val": "Previous frame"
 		}, {
-			"key": "[>]",
+			"key": ">",
 			"val": "Next frame"
 		}, {
-			"key": "[Home]",
+			"key": "Home",
 			"val": "Goto first scene"
 		}, {
-			"key": "[End]",
+			"key": "End",
 			"val": "Goto last scene"
 		}],
 		"Editing": [{
@@ -108,64 +108,64 @@
 			"val": "Modify paragraph"
 		}],
 		"Tools": [{
-			"key": "[V]",
+			"key": "V",
 			"val": "Arrow"
 		}, {
-			"key": "[A]",
+			"key": "A",
 			"val": "Sub Select"
 		}, {
-			"key": "[L]",
+			"key": "L",
 			"val": "Lasso"
 		}, {
-			"key": "[N]",
+			"key": "N",
 			"val": "Line"
 		}, {
-			"key": "[P]",
+			"key": "P",
 			"val": "Pen"
 		}, {
-			"key": "[=]",
+			"key": "=",
 			"val": "Add anchor point"
 		}, {
-			"key": "[T]",
+			"key": "T",
 			"val": "Text"
 		}, {
-			"key": "[O]",
+			"key": "O",
 			"val": "Oval"
 		}, {
-			"key": "[Y]",
+			"key": "Y",
 			"val": "Pencil"
 		}, {
-			"key": "[B]",
+			"key": "B",
 			"val": "Brush"
 		}, {
-			"key": "[S]",
+			"key": "S",
 			"val": "Ink bottle"
 		}, {
-			"key": "[K]",
+			"key": "K",
 			"val": "Paint bucket"
 		}, {
-			"key": "[I]",
+			"key": "I",
 			"val": "Dropper"
 		}, {
-			"key": "[E]",
+			"key": "E",
 			"val": "Eraser"
 		}, {
-			"key": "[H]",
+			"key": "H",
 			"val": "Hand"
 		}, {
-			"key": "[Z]",
+			"key": "Z",
 			"val": "Magnifier"
 		},{
-            "key": "[Q]",
+            "key": "Q",
             "val": "Free transform"
         },{
-            "key": "[F]",
+            "key": "F",
             "val": "Fill transform"
         },{
-            "key": "[J]",
+            "key": "J",
             "val": "Object drawing"
         },{
-            "key": "[U]",
+            "key": "U",
             "val": "Deco tool"
         }]
 	}
