@@ -73,45 +73,42 @@
            },{
               "key":"[Ctrl] [0]",
               "val":"Hides the selected columns"
-           },{
-              "key":"[Ctrl] []",
-              "val":""
            }],
          "Function Keys":[{
-              "key":"[F1]",
+              "key":"F1",
               "val":"Displays the Excel Help task pane"
            },{
-              "key":"[F2]",
+              "key":"F2",
               "val":"Edits the active cell"
            },{
-              "key":"[F3]",
+              "key":"F3",
               "val":"Displays the Paste Name dialog box"
            },{
-              "key":"[F4]",
+              "key":"F4",
               "val":"Repeats the last command or action"
            },{
-              "key":"[F5]",
+              "key":"F5",
               "val":"Displays the Go To dialog box"
            },{
-              "key":"[F6]",
+              "key":"F6",
               "val":"Switches between the worksheet, ribbon, task pane, Zoom controls"
            },{
-              "key":"[F7]",
+              "key":"F7",
               "val":"Displays the Spelling dialog box to check spelling"
            },{
-              "key":"[F8]",
+              "key":"F8",
               "val":"Turns extend mode on or off"
            },{
-              "key":"[F9]",
+              "key":"F9",
               "val":"Calculates all worksheets in all open workbooks"
            },{
-              "key":"[F10]",
+              "key":"F10",
               "val":"Turns key tips on or off"
            },{
-              "key":"[F11]",
+              "key":"F11",
               "val":"Creates a chart of the data in the current range"
            },{
-              "key":"[F12]",
+              "key":"F12",
               "val":"Displays the Save As dialog box"
            }]
       }
