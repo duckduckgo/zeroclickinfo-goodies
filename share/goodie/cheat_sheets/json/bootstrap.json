@@ -24,25 +24,25 @@
     "sections": {
         "Bootstrap Grid System": [{
             "val": "Sets one fixed width for each screen size in bootstrap (xs,sm,md,lg)",
-            "key": ".container"  
-        }, {             
+            "key": ".container"
+        }, {
             "val": "Expands screen to fill the available widthe",
             "key": ".container-fluid"
         }, {
             "val": "Containers of columns",
-            "key": ".row"  
+            "key": ".row"
         }, {
             "val": "For extra small devices phones (<768px)" ,
-            "key": ".col-xs-"  
+            "key": ".col-xs-"
         }, {
             "val": "For small devices tablets (≥768px)",
-            "key": ".col-sm-"  
+            "key": ".col-sm-"
         }, {
             "val": "For medium devices desktops (≥992px)",
-            "key": ".col-md-"  
+            "key": ".col-md-"
         }, {
             "val": "For large devices desktops (≥1200px)",
-            "key": ".col-lg-"  
+            "key": ".col-lg-"
         }],
         "Navbars": [{
             "val": "Standard navigation bar",
@@ -93,7 +93,7 @@
         }, {
             "val": "Creates a responsive table.",
             "key": ".table-responsive"
-         
+
         }],
         "Buttons": [{
             "val": "Adds basic styling to any button",

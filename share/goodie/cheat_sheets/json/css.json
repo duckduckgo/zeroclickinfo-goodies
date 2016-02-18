@@ -7,7 +7,7 @@
         "sourceUrl": "http://www.w3schools.com/css/default.asp"
     },
     "aliases": [
-        "css", "cascading style sheets", "style sheet" 
+        "css", "cascading style sheets", "style sheet"
     ],
     "template_type": "code",
     "section_order": [
@@ -24,13 +24,13 @@
     "sections": {
         "Inserting Stylesheet": [{
             "val": "External stylesheet",
-            "key": "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />"  
-        }, {             
+            "key": "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />"
+        }, {
             "val": "Internal style",
             "key": "<style type=\"text/css\">selector \\{property: value;\\}</style>"
         }, {
             "val": "Inline style",
-            "key": "<tag style=\"property: value\">"  
+            "key": "<tag style=\"property: value\">"
         }, {
             "val": "Import CSS",
             "key": "@import url(\"style.css\");"
@@ -104,7 +104,7 @@
         }, {
             "val": "Increases or decreases the white space between words",
             "key": "word-spacing:"
-        
+
         }],
         "Box-Model Properties": [{
             "val": "Sets the height of an element",
@@ -125,7 +125,7 @@
         }, {
             "val": "Specifies whether or not an element should float",
             "key": "float:"
-        }, {       
+        }, {
             "val": "The left position of an element",
             "key": "left:"
         }, {
@@ -144,7 +144,7 @@
         }, {
             "val": "Specifies an image to use as the background of an element",
             "key": "background-image:"
-        }, {       
+        }, {
             "val": "Specify how image should be repeated (x or y axis)",
             "key": "background-repeat:"
         }, {
@@ -160,7 +160,7 @@
         }, {
             "val": "Specifies if the list-item markers should appear inside or outside the content flow",
             "key": "list-style-position:"
-        }, {       
+        }, {
             "val": "Replaces the list-item marker with an image",
             "key": "list-style-image:"
         }]

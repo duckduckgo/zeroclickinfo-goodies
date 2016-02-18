@@ -1,5 +1,5 @@
 package DDG::GoodieRole::Chess;
-# ABSTRACT: Helper function to parse a FEN string and draw a chessboard. 
+# ABSTRACT: Helper function to parse a FEN string and draw a chessboard.
 # We could in principle use Chess::PGN::EPD, but that module does not provide
 # the HTML output, so we just implement what we need and don't add a dependecny.
 
@@ -52,7 +52,7 @@ sub draw_chessboard_html {
         'K' => 'white king',
         'P' => 'white pawn',
     );
-    
+
     my (%unicode_dict) = (
         'r' => '&#9820;',
         'n' => '&#9822;',
@@ -68,7 +68,7 @@ sub draw_chessboard_html {
         'K' => '&#9812;',
         'P' => '&#9817;',
         );
-    
+
     my ($html_chessboard) = '<div class="zci--fenviewer"><table class="chess_board" cellpadding="0" cellspacing="0">';
     for ($i = 0; $i < 8; $i++){
         # Rows

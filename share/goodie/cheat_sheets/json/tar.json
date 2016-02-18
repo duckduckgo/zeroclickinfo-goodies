@@ -53,6 +53,6 @@
         }, {
             "val": "Append extra.tar to a .tar archive",
             "key": "tar -Avf \\[archive\\].tar extra.tar"
-        }]        
+        }]
     }
 }

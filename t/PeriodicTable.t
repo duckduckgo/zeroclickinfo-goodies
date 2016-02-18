@@ -51,13 +51,13 @@ ddg_goodie_test(
             "",
             "green"
         )
-    ),    
+    ),
     # Test nonsensical atomic weight.
-    "atomic weight for nitrogen and oxygen" => undef,  
-    "atomic weight of unobtainium" => undef,  
-    "atomic weight" => undef,    
+    "atomic weight for nitrogen and oxygen" => undef,
+    "atomic weight of unobtainium" => undef,
+    "atomic weight" => undef,
     "atomic mass" => undef,
-    
+
     # Atomic number tests
     "atomic number of nitrogen" => test_zci(
         "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
@@ -84,7 +84,7 @@ ddg_goodie_test(
             "1",
             "green"
         )
-    ),    
+    ),
     #Test for quieres with additional fluff
     "what is the proton number for the nitrogen element" => test_zci(
         "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
@@ -98,12 +98,12 @@ ddg_goodie_test(
             "1",
             "green"
         )
-    ),     
+    ),
     # Test nonsensical atomic numbers.
-    "atomic number for nitrogen and oxygen" => undef,  
-    "atomic number of unobtainium" => undef,         
+    "atomic number for nitrogen and oxygen" => undef,
+    "atomic number of unobtainium" => undef,
     "atomic number" => undef,
-    
+
     # Test for chemical sysmbols
     "chemical symbol for nitrogen" => test_zci(
         "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
@@ -117,7 +117,7 @@ ddg_goodie_test(
             "",
             "green"
         )
-    ),  
+    ),
     # Test for quieres with additional fluff
     "what is the chemical symbol for the nitrogen element" => test_zci(
         "Nitrogen (N), atomic number 7, atomic mass 14.007 u",
@@ -131,11 +131,11 @@ ddg_goodie_test(
             "",
             "green"
         )
-    ),  
-    "chemical symbol for nitrogen and oxygen" => undef,  
-    "chemical symbol of unobtainium" => undef,        
+    ),
+    "chemical symbol for nitrogen and oxygen" => undef,
+    "chemical symbol of unobtainium" => undef,
     "chemical symbol" => undef,
-    
+
     # Test for lookup of chemical names
     "chemical name for Au" => test_zci(
         "Gold (Au), atomic number 79, atomic mass 196.97 u",
@@ -149,7 +149,7 @@ ddg_goodie_test(
             "",
             "red"
         )
-    ),  
+    ),
     # Test for quieres with additional fluff
     "what is the chemical name for Ag" => test_zci(
         "Silver (Ag), atomic number 47, atomic mass 107.87 u",
@@ -163,11 +163,11 @@ ddg_goodie_test(
             "",
             "red"
         )
-    ),  
-    "chemical name for nitrogen and oxygen" => undef,  
-    "chemical name of unobtainium" => undef,        
+    ),
+    "chemical name for nitrogen and oxygen" => undef,
+    "chemical name of unobtainium" => undef,
     "chemical name" => undef,
-    
+
     # Test the color for each of the element subgroups
     # Diatomic nonmetal
     "oxygen" => test_zci(
@@ -238,7 +238,7 @@ ddg_goodie_test(
             "",
             "red"
         )
-    ), 
+    ),
     # Transition metal
     "scandium" => test_zci(
         "Scandium (Sc), atomic number 21, atomic mass 44.956 u",
@@ -308,7 +308,7 @@ ddg_goodie_test(
             "",
             "blue-light"
         )
-    ),    
+    ),
     # Unknown
     "meitnerium" => test_zci(
         "Meitnerium (Mt), atomic number 109, atomic mass [276.15] u",
@@ -322,8 +322,8 @@ ddg_goodie_test(
             "",
             "red"
         )
-    ),  
-    
+    ),
+
     # Tests for elements with double entries.
     "mercury" => test_zci(
         "Mercury (Hg), atomic number 80, atomic mass 200.59 u",
@@ -337,7 +337,7 @@ ddg_goodie_test(
             "",
             "red"
         )
-    ), 
+    ),
     "hydrargyrum" => test_zci(
         "Hydrargyrum (Hg), atomic number 80, atomic mass 200.59 u",
         make_structured_answer(
@@ -350,8 +350,8 @@ ddg_goodie_test(
             "",
             "red"
         )
-    ), 
-    
+    ),
+
     # Tests for symbol length
     "oxygen" => test_zci(
         "Oxygen (O), atomic number 8, atomic mass 15.999 u",
@@ -391,7 +391,7 @@ ddg_goodie_test(
             "",
             "red"
         )
-    ),    
+    ),
 );
 
 sub make_structured_answer {
@@ -415,11 +415,11 @@ sub make_structured_answer {
             is_mass_query => $is_mass_query,
             is_number_query => $is_number_query,
             url => "https://en.wikipedia.org/wiki/$element_name",
-        },        
+        },
         meta => {
             sourceName => "Wikipedia",
-            sourceUrl => "https://en.wikipedia.org/wiki/$element_name" 
-        }, 
+            sourceUrl => "https://en.wikipedia.org/wiki/$element_name"
+        },
         templates => {
             group => "icon",
             elClass => {
@@ -436,7 +436,7 @@ sub make_structured_answer {
                 moreAt => 1
             }
         }
-    };   
+    };
 };
 
 done_testing;

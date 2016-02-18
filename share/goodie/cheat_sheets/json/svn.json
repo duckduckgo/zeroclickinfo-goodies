@@ -1,8 +1,8 @@
 {
-    "id": "svn_cheat_sheet", 
+    "id": "svn_cheat_sheet",
     "name": "Subversion",
-    "description": "Useful commands for Subversion version control system", 
-    "metadata": { 
+    "description": "Useful commands for Subversion version control system",
+    "metadata": {
         "sourceName": "Red Bean",
         "sourceUrl": "http://svnbook.red-bean.com/"
     },
@@ -10,7 +10,7 @@
         "subversion"
     ],
     "template_type": "terminal",
-    "section_order": [  
+    "section_order": [
         "Basic Usage",
         "Advanced Usage"
     ],

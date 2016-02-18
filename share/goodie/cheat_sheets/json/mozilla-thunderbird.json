@@ -68,7 +68,7 @@
             {
                 "key": "[Ctrl]  [⇧]  [⏎]",
                 "val": "Send Message Later"
-            },            
+            },
             {
                 "key": "Esc",
                 "val": "Stop"
@@ -139,7 +139,7 @@
                 "key": "[Ctrl]  [N]",
                 "val": "New Message"
             }
-            
+
         ],
         "Navigation Shortcuts":[
             {
@@ -250,7 +250,7 @@
                 "key":"Del",
                 "val":"Delete"
             }
-            
+
         ],
         "Mouse Shortcuts":[
             {
@@ -277,7 +277,7 @@
                 "key":"[⇧]  [Forward]",
                 "val":"Plain Text Forward"
             }
-            
+
         ]
     }
 }

@@ -20,7 +20,7 @@ my $data =  {
             formatted_value => '4.7K'
         };
 
-    
+
 sub test_structured_answer {
     my %basic_answer = get_structured_answer($_[0]);
     delete($basic_answer{data});

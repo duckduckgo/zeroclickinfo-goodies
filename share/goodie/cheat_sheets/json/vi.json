@@ -1,13 +1,13 @@
 {
-    "id": "vi_cheat_sheet", 
+    "id": "vi_cheat_sheet",
     "name": "Vi",
-    "description": "Text Editor", 
-    "metadata": { 
+    "description": "Text Editor",
+    "metadata": {
         "sourceName": "LagMonster",
         "sourceUrl": "http://www.lagmonster.org/docs/vi.html"
     },
     "template_type" : "keyboard",
-    "section_order": [  
+    "section_order": [
         "Quitting",
         "Inserting Text",
         "Deleting Text",
@@ -23,7 +23,7 @@
     "sections": {
         "Quitting": [
             {
-                "key": ":x", 
+                "key": ":x",
                 "val": "Exit, saving changes"
             },
             {
@@ -38,36 +38,36 @@
                 "key": ":q!",
                 "val": "Exit and ignore any changes"
             }
-        ],        
+        ],
         "Inserting Text": [
             {
                 "key": "i",
-                "val": "insert before cursor"               
-            }, 
+                "val": "insert before cursor"
+            },
             {
                 "key": "I",
                 "val": "Insert before line"
-            }, 
+            },
             {
                 "key": "a",
                 "val": "Append after cursor"
-            }, 
+            },
             {
                 "key": "A",
                 "val": "Append after line"
-            }, 
+            },
             {
                 "key": "o",
                 "val": "Open a new line after current line"
-            }, 
+            },
             {
                 "key": "O",
                 "val": "Open a new line before current line"
-            }, 
+            },
             {
                 "key": "r",
                 "val": "Replace one character"
-            }, 
+            },
             {
                 "key": "R",
                 "val": "Replace many characters"
@@ -76,96 +76,96 @@
         "Motion": [
             {
                 "key": "h",
-                "val": "Move left"               
-            }, 
+                "val": "Move left"
+            },
             {
                 "key": "j",
                 "val": "Move down"
-            }, 
+            },
             {
                 "key": "k",
                 "val": "Move up"
-            }, 
+            },
             {
                 "key": "l",
                 "val": "Move right"
-            }, 
+            },
             {
                 "key": "w",
                 "val": "Move to next word"
-            }, 
+            },
             {
                 "key": "W",
                 "val": "Move to next blank delimited word"
-            }, 
+            },
             {
                 "key": "b",
                 "val": "Move to the beginning of the word"
-            }, 
+            },
             {
                 "key": "B",
                 "val": "Move to the beginning of blank delimted word"
             },
             {
                 "key": "e",
-                "val": "Move to the end of the word"               
-            }, 
+                "val": "Move to the end of the word"
+            },
             {
                 "key": "E",
                 "val": "Move to the end of Blank delimited word"
-            }, 
+            },
             {
                 "key": "(",
                 "val": "Move a sentence back"
-            }, 
+            },
             {
                 "key": ")",
                 "val": "Move a sentence forward"
-            }, 
+            },
             {
                 "key": "\\{",
                 "val": "Move a paragraph back"
-            }, 
+            },
             {
                 "key": "\\}",
                 "val": "Move a paragraph forward"
-            }, 
+            },
             {
                 "key": "0",
                 "val": "Move to the begining of the line"
-            }, 
+            },
             {
                 "key": "$",
                 "val": "Move to the end of the line"
-            }, 
+            },
             {
                 "key": "1G",
                 "val": "Move to the first line of the file"
-            }, 
+            },
             {
                 "key": "G",
                 "val": "Move to the last line of the file"
-            }, 
+            },
             {
                 "key": "nG",
                 "val": "Move to nth line of the file"
-            }, 
+            },
             {
                 "key": ":n",
                 "val": "Move to nth line of the file"
-            }, 
+            },
             {
                 "key": "H",
                 "val": "Move to top of screen"
-            }, 
+            },
             {
                 "key": "M",
                 "val": "Move to middle of screen"
-            }, 
+            },
             {
                 "key": "L",
                 "val": "Move to botton of screen"
-            }, 
+            },
             {
                 "key": "%",
                 "val": "Move to associated ( ), { }, [ ]"
@@ -173,7 +173,7 @@
         ],
         "Deleting Text": [
             {
-                "key": "x", 
+                "key": "x",
                 "val": "Delete character to the right of cursor"
             },
             {
@@ -195,7 +195,7 @@
         ],
         "Yanking Text": [
             {
-                "key": "yy", 
+                "key": "yy",
                 "val": "Yank the current line"
             },
             {
@@ -205,7 +205,7 @@
         ],
         "Changing Text": [
             {
-                "key": "C", 
+                "key": "C",
                 "val": "Change to the end of the line"
             },
             {
@@ -215,7 +215,7 @@
         ],
         "Putting Text": [
             {
-                "key": "p", 
+                "key": "p",
                 "val": "Put after the position or after the line"
             },
             {
@@ -225,7 +225,7 @@
         ],
         "Search for strings": [
             {
-                "key": "\/string", 
+                "key": "\/string",
                 "val": "Search forward for string"
             },
             {
@@ -233,7 +233,7 @@
                 "val": "Search back for string"
             },
             {
-                "key": "n", 
+                "key": "n",
                 "val": "Search for next instance of string"
             },
             {
@@ -243,7 +243,7 @@
         ],
         "Replace": [
             {
-                "key": ":s\/pattern\/string\/flags", 
+                "key": ":s\/pattern\/string\/flags",
                 "val": "Replace pattern with string according to flags"
             },
             {
@@ -251,7 +251,7 @@
                 "val": "Flag - Replace all occurences of pattern"
             },
             {
-                "key": "c", 
+                "key": "c",
                 "val": "Flag - Confirm replaces"
             },
             {
@@ -261,7 +261,7 @@
         ],
         "Other": [
             {
-                "key": "~", 
+                "key": "~",
                 "val": "Toggle upp and lower case"
             },
             {
@@ -269,7 +269,7 @@
                 "val": "Join lines"
             },
             {
-                "key": ".", 
+                "key": ".",
                 "val": "Repeat last text-changing command"
             },
             {

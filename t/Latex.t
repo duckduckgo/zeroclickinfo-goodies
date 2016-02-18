@@ -12,18 +12,18 @@ ddg_goodie_test(
         [qw(
                 DDG::Goodie::Latex
         )],
-	"latex integral" => test_zci('LaTeX command: \int_lowerbound^upperbound
+    "latex integral" => test_zci('LaTeX command: \int_lowerbound^upperbound
 Example: $\int_a^b f(x)dx$',
-    		html => qr/\\int_lowerbound\^upperbound/,
-		heading => 'Integral (LaTeX)'),
+            html => qr/\\int_lowerbound\^upperbound/,
+        heading => 'Integral (LaTeX)'),
 
-	"tex integral" => test_zci('LaTeX command: \int_lowerbound^upperbound
+    "tex integral" => test_zci('LaTeX command: \int_lowerbound^upperbound
 Example: $\int_a^b f(x)dx$',
-		html => qr/\\int_lowerbound\^upperbound/,
-		heading => 'Integral (LaTeX)'),
+        html => qr/\\int_lowerbound\^upperbound/,
+        heading => 'Integral (LaTeX)'),
     'latex summation' => test_zci('LaTeX command: \sum_{lower}^{upper}
 Example: $\sum_{i=0}^{10} x^{2}$',
-		html => qr/\\sum_\{lower\}\^\{upper\}/,
+        html => qr/\\sum_\{lower\}\^\{upper\}/,
         heading => 'Summation (LaTeX)'),
 );
 

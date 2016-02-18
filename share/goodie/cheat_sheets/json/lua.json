@@ -23,7 +23,7 @@
     "sections": {
         "Variables": [
             {
-                "key": "hello = \"Hello World\"", 
+                "key": "hello = \"Hello World\"",
                 "val": "Initialize a variable"
             },
             {
@@ -33,11 +33,11 @@
         ],
         "Operators": [
             {
-                "key": "==", 
+                "key": "==",
                 "val": "Equal"
             },
             {
-                "key": "~=", 
+                "key": "~=",
                 "val": "Not equal"
             },
             {
@@ -45,7 +45,7 @@
                 "val": "And"
             },
             {
-                "key": "or", 
+                "key": "or",
                 "val": "Or"
             }
         ],

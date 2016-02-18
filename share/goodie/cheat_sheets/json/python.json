@@ -7,7 +7,7 @@
         "sourceUrl": "http://overapi.com/python/"
     },
     "aliases": [
-        "python language", "py", "pycon" 
+        "python language", "py", "pycon"
     ],
     "template_type": "code",
     "section_order": [
@@ -20,49 +20,49 @@
     "sections": {
         "String Methods": [{
             "val": "Returns a string in all uppercase",
-            "key": "upper()"  
-        }, {             
+            "key": "upper()"
+        }, {
             "val": "Returns a string in all lowercase",
             "key": "lower()"
         }, {
             "val": "Returns a string with first character capitalized, the rest lower",
-            "key": "capitalize()"  
+            "key": "capitalize()"
         }, {
             "val": "Returns a string with the leading and trailing whitespace removed",
-            "key": "strip()"  
+            "key": "strip()"
         }, {
             "val": "Returns a string with the leading whitespace removed",
-            "key": "lstrip()"  
+            "key": "lstrip()"
         }, {
             "val": "Returns a string with the trailing whitespace removed",
-            "key": "rstrip()"  
+            "key": "rstrip()"
         }, {
             "val": "Returns the number of occurrences of item",
-            "key": "count()"  
+            "key": "count()"
         }, {
             "val": "Replaces all occurrences of old substring with new",
-            "key": "replace()"  
+            "key": "replace()"
         }, {
             "val": "Returns a string centered in a field of width spaces",
-            "key": "center()"  
+            "key": "center()"
         }, {
             "val": "Returns a string left justified in a field of width spaces",
-            "key": "ljust()"  
+            "key": "ljust()"
         }, {
             "val": "Returns a string right justified in a field of width spaces",
-            "key": "rjust()"  
+            "key": "rjust()"
         }, {
             "val": "Returns the leftmost index where the substring item is found",
-            "key": "find()" 
+            "key": "find()"
         }, {
             "val": "Returns the rightmost index where the substring item is found",
-            "key": "rfind()" 
+            "key": "rfind()"
         }, {
             "val": "Like find except causes a runtime error if item is not found",
-            "key": "index()" 
+            "key": "index()"
         }, {
             "val": "Like rfind except causes a runtime error if item is not found",
-            "key": "rindex()" 
+            "key": "rindex()"
         }],
         "Array Methods": [{
             "val": "Add an item to the end of the list",
@@ -134,7 +134,7 @@
         }, {
             "val": "Boolean that indicates whether a space character needs to be printed before another value when using the print statement",
             "key": "softspace"
-         
+
         }],
         "Date and Time Methods": [{
             "val": "Give new values by whichever keyword arguments are specified",

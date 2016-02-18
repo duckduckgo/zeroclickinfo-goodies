@@ -58,7 +58,7 @@
                 "val": "Return URL for field editing web page."
             }
         ],
-        "Core drush commands": [ 
+        "Core drush commands": [
             {
                 "key": "archive-dump",
                 "val": "Backup your code, files, and database into a single file."

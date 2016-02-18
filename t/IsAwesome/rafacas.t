@@ -9,7 +9,7 @@ zci answer_type => "is_awesome_rafacas";
 zci is_cached   => 1;
 
 ddg_goodie_test(
-    [qw( 
+    [qw(
         DDG::Goodie::IsAwesome::rafacas )
     ],
     'duckduckhack rafacas' => test_zci('rafacas is awesome and has successfully completed the DuckDuckHack Goodie tutorial!'),

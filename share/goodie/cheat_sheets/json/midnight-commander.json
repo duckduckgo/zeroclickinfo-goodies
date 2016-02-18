@@ -6,7 +6,7 @@
         "sourceName":"Midnight Commander Tutorial",
         "sourceUrl":"http://trembath.co.za/mctutorial.html"
     },
-    "aliases":[ 
+    "aliases":[
         "midnight comander", "mc"
     ],
     "template_type":"keyboard",

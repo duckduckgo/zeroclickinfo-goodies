@@ -6,7 +6,7 @@
         "sourceName": "CCU",
         "sourceUrl": "http://www.cs.ccu.edu.tw/~damon/oop/,c++refcard.pdf"
     },
-    "template_type": "reference", 
+    "template_type": "reference",
     "section_order": [
         "Fundamental Data Types",
         "Preprocessor Directives",
@@ -14,7 +14,7 @@
         "Relational Operators",
         "Class Member Protections",
         "Bitwise Operators",
-        "Logical Operators",     
+        "Logical Operators",
         "Namespaces"
     ],
     "aliases": [

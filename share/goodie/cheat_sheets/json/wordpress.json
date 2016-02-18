@@ -70,7 +70,7 @@
         "Editor Shortcuts": [{
             "val": "Cut",
             "key": "[Ctrl] [x]"
-        }, {    
+        }, {
             "val": "Copy",
             "key": "[Ctrl] [c]"
         }, {

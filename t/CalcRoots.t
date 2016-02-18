@@ -14,7 +14,7 @@ ddg_goodie_test(
     )],
     'square root of negative 9' => test_zci(
     "The 2-root of -9 is 3 i",
-        heading           => "Root Calculator", 
+        heading           => "Root Calculator",
         structured_answer => {
             input     => ["2-root of -9"],
             operation => 'Calculate',
@@ -23,7 +23,7 @@ ddg_goodie_test(
     ),
     'negative square root of negative 25' =>test_zci(
     "The -2-root of -25 is -5 i",
-        heading           => "Root Calculator", 
+        heading           => "Root Calculator",
         structured_answer => {
             input     => ["-2-root of -25"],
             operation => 'Calculate',
@@ -32,7 +32,7 @@ ddg_goodie_test(
     ),
     '2nd root of 100' => test_zci(
         "The 2-root of 100 is 10.",
-        heading           => "Root Calculator", 
+        heading           => "Root Calculator",
         structured_answer => {
             input     => ["2-root of 100"],
             operation => 'Calculate',
@@ -41,7 +41,7 @@ ddg_goodie_test(
     ),
     'cube root of 33' => test_zci(
         "The 3-root of 33 is 3.20753432999583.",
-        heading           => "Root Calculator", 
+        heading           => "Root Calculator",
         structured_answer => {
             input     => ["3-root of 33"],
             operation => 'Calculate',

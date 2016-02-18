@@ -1,15 +1,15 @@
 {
-    "id": "inkscape_cheat_sheet", 
+    "id": "inkscape_cheat_sheet",
     "name": "Inkscape",
-    "description": "Vector Graphics Editor", 
-    "metadata": { 
+    "description": "Vector Graphics Editor",
+    "metadata": {
         "sourceName": "Inkscape keyboard and mouse reference",
         "sourceUrl": "https://inkscape.org/en/doc/keys091.html"
     },
 
     "template_type": "keyboard",
 
-    "section_order": [  
+    "section_order": [
         "Tools",
         "Dialogs",
         "Object",
@@ -21,7 +21,7 @@
     "sections": {
         "Tools": [
             {
-                "key": "s", 
+                "key": "s",
                 "val": "Selector"
             },
             {
@@ -108,24 +108,24 @@
         "Dialogs": [
             {
                 "key": "[Shift] [Ctrl] [F]",
-                "val": "Fill and Stroke"               
-            }, 
+                "val": "Fill and Stroke"
+            },
             {
                 "key": "[Shift] [Ctrl] [T]",
                 "val": "Text and Font"
-            }, 
+            },
             {
                 "key": "[Shift] [Ctrl] [M]",
                 "val": "Transform"
-            }, 
+            },
             {
                 "key": "[Shift] [Ctrl] [L]",
                 "val": "Layers"
-            }, 
+            },
             {
                 "key": "[Shift] [Ctrl] [A]",
                 "val": "Align and Distribute"
-            }, 
+            },
             {
                 "key": "[Shift] [Ctrl] [O]",
                 "val": "Object Properties"
@@ -133,11 +133,11 @@
             {
                 "key": "[Shift] [Ctrl] [D]",
                 "val": "Document Preferences"
-            }, 
+            },
             {
                 "key": "[Shift] [Ctrl] [P]",
                 "val": "Inkscape Preferences"
-            }, 
+            },
             {
                 "key": "[Shift] [Ctrl] [E]",
                 "val": "Export to PNG"
@@ -146,40 +146,40 @@
         "Object" : [
             {
                 "key": "[Ctrl] [D]",
-                "val": "Duplicate selection"               
+                "val": "Duplicate selection"
             },
             {
                 "key": "[Alt] [D]",
-                "val": "Clone object"               
+                "val": "Clone object"
             },
             {
                 "key": "[Shift] [Alt] [B]",
-                "val": "Trace bitmap"               
+                "val": "Trace bitmap"
             },
             {
                 "key": "[Ctrl] [G]",
-                "val": "Group selected objects"               
-            }, 
+                "val": "Group selected objects"
+            },
             {
                 "key": "[Ctrl] [U]",
                 "val": "Ungroup selected group(s)"
-            }, 
+            },
             {
                 "key": "[Ctrl] [Mouse Click]",
                 "val": "Select object in group"
             },
             {
                 "key": "Home",
-                "val": "Raise selection to top"               
-            }, 
+                "val": "Raise selection to top"
+            },
             {
                 "key": "End",
                 "val": "Lower selection to bottom"
-            }, 
+            },
             {
                 "key": "PgUp",
                 "val": "Raise selection one step"
-            }, 
+            },
             {
                 "key": "PgDn",
                 "val": "Lower selection one step"
@@ -188,70 +188,70 @@
         "Nodes" : [
             {
                 "key": "Tab",
-                "val": "Select next node"               
+                "val": "Select next node"
             },
             {
                 "key": "[Shift] [Tab]",
-                "val": "Select previous node"               
+                "val": "Select previous node"
             },
             {
                 "key": "[Ctrl] [A]",
-                "val": "Select all nodes in subpath(s)"               
+                "val": "Select all nodes in subpath(s)"
             },
             {
                 "key": "[Ctrl] [Alt] [A]",
-                "val": "Select all nodes in path"               
-            }, 
+                "val": "Select all nodes in path"
+            },
             {
                 "key": "[Shift] [J]",
                 "val": "Join selected nodes"
-            }, 
+            },
             {
                 "key": "[Shift] [I]",
                 "val": "Insert new node(s)"
             },
             {
                 "key": "[Shift] [B]",
-                "val": "break selected node(s)"               
+                "val": "break selected node(s)"
             }
         ],
         "Path" : [
             {
                 "key": "[Shift] [Ctrl] [C]",
-                "val": "Convert selected object(s) to path"               
-            }, 
+                "val": "Convert selected object(s) to path"
+            },
             {
                 "key": "[Ctrl] [Alt] [C]",
                 "val": "Convert stroke to path"
-            }, 
+            },
             {
                 "key": "[Ctrl] [+]",
                 "val": "Union"
-            }, 
+            },
             {
                 "key": "[Ctrl] [-]",
                 "val": "Difference"
-            }, 
+            },
             {
                 "key": "[Ctrl] [*]",
                 "val": "Intersection"
-            }, 
+            },
             {
                 "key": "[Ctrl] [^]",
                 "val": "Exclusive OR (XOR)"
-            }, 
+            },
             {
                 "key": "[Ctrl] [/]",
                 "val": "Division (cut)"
-            }, 
+            },
             {
                 "key": "[Ctrl] [Alt] [/]",
                 "val": "Cut path"
-            }, 
+            },
             {
                 "key": "[Ctrl] [K]",
                 "val": "Combine paths"
-            }, 
+            },
             {
                 "key": "[Shift] [Ctrl] [K]",
                 "val": "Break paths apart"
@@ -260,16 +260,16 @@
         "Selections" : [
             {
                 "key": "[Shift] [Click]",
-                "val": "Toggle selection"               
-            }, 
+                "val": "Toggle selection"
+            },
             {
                 "key": "[Shift] [Drag]",
                 "val": "Rubberband"
-            }, 
+            },
             {
                 "key": "[Tab]",
                 "val": "Select next object"
-            }, 
+            },
             {
                 "key": "[Shift] [Tab]",
                 "val": "Select previous object"

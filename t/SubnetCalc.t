@@ -67,7 +67,7 @@ ddg_goodie_test(
                 "Broadcast" => "8.8.31.255",
             }, ["Network", "Netmask", "Specified", "Host Address Range", "Broadcast"])
     ),
-	
+
     '46.51.197.88/255.255.254.0' => test_zci(
         "Network: 46.51.196.0/23 (Class A)\nNetmask: 255.255.254.0\nSpecified: Host #344\nHost Address Range: 46.51.196.1-46.51.197.254 (510 hosts)\nBroadcast: 46.51.197.255",
             structured_answer => build_structure({
@@ -77,7 +77,7 @@ ddg_goodie_test(
                 "Host Address Range" => "46.51.196.1-46.51.197.254 (510 hosts)",
                 "Broadcast" => "46.51.197.255",
             }, ["Network", "Netmask", "Specified", "Host Address Range", "Broadcast"])
-	),
+    ),
 
     '176.34.131.233/32' => test_zci(
         "Network: 176.34.131.233/32 (Class B)\nNetmask: 255.255.255.255\nSpecified: Host Only",
@@ -87,7 +87,7 @@ ddg_goodie_test(
             "Specified" => "Host Only",
         }, ["Network", "Netmask", "Specified"])
     ),
-    
+
     '10.10.10.10/31' => test_zci(
         "Network: 10.10.10.10/31 (Class A)\nNetmask: 255.255.255.254\nSpecified: Point-To-Point (10.10.10.10, 10.10.10.11)",
             structured_answer => build_structure({
@@ -95,7 +95,7 @@ ddg_goodie_test(
                 "Netmask" => "255.255.255.254",
                 "Specified" => "Point-To-Point (10.10.10.10, 10.10.10.11)",
         }, ["Network", "Netmask", "Specified"])
-	),
+    ),
 );
 
 done_testing;

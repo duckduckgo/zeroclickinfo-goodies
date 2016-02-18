@@ -27,7 +27,7 @@ my %animal_to_language = (
 
 sub build_answer {
     my ($animal, $statement) = @_;
-    
+
     my $character = $animal_to_language{$animal}{'zh'};
     my $english = $animal_to_language{$animal}{'en'};
 
@@ -51,9 +51,9 @@ sub build_answer {
 }
 
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::ChineseZodiac
-	)],
+    [qw(
+        DDG::Goodie::ChineseZodiac
+    )],
 
   #Primary example
   'chinese zodiac for 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
@@ -62,7 +62,7 @@ ddg_goodie_test(
   '2004 chinese zodiac animal' => build_answer('monkey', 'Jan 22, 2004 – Feb 08, 2005'),
   'what was the chinese zodiac animal in 1992' => build_answer('monkey', 'Feb 04, 1992 – Jan 22, 1993'),
   'what will the chinese zodiac animal be for 2056' => build_answer('rat', 'Feb 15, 2056 – Feb 03, 2057'),
-  
+
   #Primary example with different query formats
   '1969 chinese zodiac animal' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
   'what was the chinese zodiac animal for 1969' => build_answer('fowl', 'Feb 17, 1969 – Feb 05, 1970'),
@@ -125,9 +125,9 @@ ddg_goodie_test(
 
 set_fixed_time("2014-12-01T00:00:00");
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::ChineseZodiac
-	)],
+    [qw(
+        DDG::Goodie::ChineseZodiac
+    )],
     "last year's chinese zodiac" => build_answer('snake', 'Feb 10, 2013 – Jan 30, 2014'),
     "last years chinese zodiac" => build_answer('snake', 'Feb 10, 2013 – Jan 30, 2014')
 );

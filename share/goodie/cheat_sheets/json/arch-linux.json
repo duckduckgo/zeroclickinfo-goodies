@@ -3,9 +3,9 @@
     "name": "Arch Linux",
     "description": "Arch Linux Commands For Pacman,Yaourt and Some Basic Linux Commands",
     "metadata": {
-		"sourceName": "ArchWiki",
-		"sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
-	},
+        "sourceName": "ArchWiki",
+        "sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
+    },
     "aliases": [
         "arch", "arch distro", "linux arch" , "pacman" , "yaourt"
     ],
@@ -99,7 +99,7 @@
                 "key": "yaourt -Q --backupfile",
                 "val": "Query backup file"
             }
-            
+
         ],
         "Linux Command": [
             {

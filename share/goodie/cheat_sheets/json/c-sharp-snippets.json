@@ -7,7 +7,7 @@
         "sourceUrl": "https://msdn.microsoft.com/en-us/library/z41h7fat.aspx"
     },
     "aliases": [
-        "c# snippets", "visual studio c# snippets", "visual c# snippets"  
+        "c# snippets", "visual studio c# snippets", "visual c# snippets"
     ],
     "template_type": "code",
     "section_order": ["Declarations", "Blocks", "Loops", "Directives", "Others"],

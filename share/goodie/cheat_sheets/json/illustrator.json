@@ -19,7 +19,7 @@
         "Function Commands",
         "Editing Shapes",
         "Selection Commands",
-        "Moving Selections"        
+        "Moving Selections"
     ],
     "sections": {
         "Tools": [
@@ -425,7 +425,7 @@
             },
             {
                 "key": "[Ctrl] [F12]",
-                "val": "Scripts > Other Script" 
+                "val": "Scripts > Other Script"
             },
             {
                 "key": "[Alt] [Shift] [Ctrl] [I]",

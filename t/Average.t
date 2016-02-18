@@ -9,10 +9,10 @@ zci answer_type => 'average';
 zci is_cached => 1;
 
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::Average
-	)],
-	'1 2 3 avg' => test_zci(
+    [qw(
+        DDG::Goodie::Average
+    )],
+    '1 2 3 avg' => test_zci(
         "Mean: 2",
         structured_answer => {
             input     => ['1 2 3'],
@@ -20,7 +20,7 @@ ddg_goodie_test(
             result    => '2',
         }
     ),
-	'mean 1, 2, 3' => test_zci(
+    'mean 1, 2, 3' => test_zci(
         "Mean: 2",
         structured_answer => {
             input     => ['1 2 3'],
@@ -28,8 +28,8 @@ ddg_goodie_test(
             result    => '2',
         }
     ),
-	'root mean square 1,2,3' => test_zci(
-        "Root Mean Square: 2.16024689946929", 
+    'root mean square 1,2,3' => test_zci(
+        "Root Mean Square: 2.16024689946929",
         structured_answer => {
             input     => ['1 2 3'],
             operation => "Root Mean Square of",
@@ -37,7 +37,7 @@ ddg_goodie_test(
         }
     ),
     'rms 1,2,3' => test_zci(
-        "Root Mean Square: 2.16024689946929", 
+        "Root Mean Square: 2.16024689946929",
         structured_answer => {
             input     => ['1 2 3'],
             operation => "Root Mean Square of",
@@ -45,7 +45,7 @@ ddg_goodie_test(
         }
     ),
     "average 12 45 78 1234.12" => test_zci(
-        "Mean: 342.28", 
+        "Mean: 342.28",
         structured_answer => {
             input     => ['12 45 78 1234.12'],
             operation => "Mean of",
@@ -53,7 +53,7 @@ ddg_goodie_test(
         }
     ),
     "average 12, 45, 78, 1234.12" => test_zci(
-        "Mean: 342.28", 
+        "Mean: 342.28",
         structured_answer => {
             input     => ['12 45 78 1234.12'],
             operation => "Mean of",
@@ -61,7 +61,7 @@ ddg_goodie_test(
         }
     ),
     "average 12;45;78;1234.12" => test_zci(
-        "Mean: 342.28", 
+        "Mean: 342.28",
         structured_answer => {
             input     => ['12 45 78 1234.12'],
             operation => "Mean of",
@@ -69,7 +69,7 @@ ddg_goodie_test(
         }
     ),
     'average 12, 45, 78, 1234' => test_zci(
-        'Mean: 342.25',  
+        'Mean: 342.25',
         structured_answer => {
             input     => ['12 45 78 1234'],
             operation => "Mean of",
@@ -77,7 +77,7 @@ ddg_goodie_test(
         }
     ),
     'median 1,2,3' => test_zci(
-        'Median: 2', 
+        'Median: 2',
         structured_answer => {
             input     => ['1 2 3'],
             operation => "Median of",

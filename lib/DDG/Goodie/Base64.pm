@@ -18,7 +18,7 @@ handle remainder => sub {
     return unless $input;
 
     my $output = perform_conversion($command, $input);
-    
+
     my $operation = 'Base64 ' . $command;
     my $text_output = $operation . 'd: ' . $output;
     return $text_output,
@@ -31,7 +31,7 @@ handle remainder => sub {
 
 
 # Parse the query into its two components:
-# an optional command (encode or decode), 
+# an optional command (encode or decode),
 # and an input string.
 sub query_components {
     my $query = shift;

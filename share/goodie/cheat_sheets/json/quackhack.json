@@ -22,7 +22,7 @@
         }, {
             "val": "http://www.meetup.com/pro/duckduckgo/",
             "key": "Meetup Groups"
-        }], 
+        }],
         "Communication": [{
             "val": "https://duckduckhack.slack.com/",
             "key": "Slack Team"
@@ -32,18 +32,18 @@
         }, {
             "val": "email: open@duckduckgo.com",
             "key": "Need help and nobody's around?"
-        }], 
+        }],
         "Examples": [{
             "val": "https://duck.co/ia?repo=goodies",
             "key": "Live Goodies Examples"
         }, {
-            "val": "https://duck.co/ia?repo=spice", 
+            "val": "https://duck.co/ia?repo=spice",
             "key": "Live Spice Examples"
         }, {
-            "val": "https://duck.co/ia?repo=fathead", 
-            "key": "Live Fathead Examples"   
+            "val": "https://duck.co/ia?repo=fathead",
+            "key": "Live Fathead Examples"
         }, {
-            "val": "https://duck.co/ia?repo=longtail", 
+            "val": "https://duck.co/ia?repo=longtail",
             "key": "Live Longtail Examples"
         }],
         "Repositories": [{

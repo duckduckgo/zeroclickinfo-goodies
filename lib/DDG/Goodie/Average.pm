@@ -12,7 +12,7 @@ zci answer_type => "average";
 handle remainder => sub {
 
     my $query = $req->query_lc;
-    
+
     my $type;
     if ($query =~ m/root mean square|rms/) {
         $type = "Root Mean Square";
@@ -48,7 +48,7 @@ handle remainder => sub {
     my $len = @nums;
 
     my $result;
-    
+
     if ($type eq "Mean") {
         # calculate the mean
         $result = $sum/$len;
@@ -66,16 +66,16 @@ handle remainder => sub {
     } else {
         $result += ($_ ** 2) for @nums;
         $result /= $len;
-        $result = sqrt $result;  
+        $result = sqrt $result;
     }
-    
+
     return "$type: $result",
     structured_answer => {
         input     => [html_enc($_)],
         operation => $type . ' of',
         result    => html_enc($result),
     };
-    
+
 };
 
 1;

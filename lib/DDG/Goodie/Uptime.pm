@@ -39,12 +39,12 @@ sub fix_just_now {
 sub format_text {
     my ($uptime_percentage, $downtime_year, $downtime_month, $downtime_day) = @_;
     my $text = "Implied downtimes for " . $uptime_percentage . " uptime\n";
-    
+
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
         $text .= "No downtime or less than a second during a year";
         return $text;
     }
-    
+
     $text .= "Daily: " . $downtime_day . "\n";
     $text .= "Monthly: " . $downtime_month . "\n";
     $text .= "Annually: " . $downtime_year;
@@ -55,7 +55,7 @@ sub format_text {
 # Format response as structured_answer
 sub format_answer {
     my ($uptime_percentage, $downtime_year, $downtime_month, $downtime_day) = @_;
-    
+
     my ($title, $subtitle, @record_data, @record_keys);
 
     if ($downtime_year eq $LESS_THAN_ONE_SECOND_MSG) {
@@ -71,9 +71,9 @@ sub format_answer {
             yearly => $downtime_year
         };
         @record_keys = ["daily", "monthly", "yearly"];
-        
+
     }
-    
+
     return structured_answer => {
         id => "uptime",
         name => "Answer",
@@ -109,14 +109,14 @@ handle remainder => sub {
     return unless $styler;  # might not be supported
     my $perl_number = $styler->for_computation($number_string);
     my $clean_query = $styler->for_display($perl_number) . '%';
-    
+
     # Query value must be btw 0 and 100
     return unless $perl_number >= 0 && $perl_number < 100;
-    
+
     my ($year, $month, $day) = compute_durations($perl_number / 100);
     my $plaintext = format_text($clean_query, $year, $month, $day);
     my @structured_answer = format_answer($clean_query, $year, $month, $day);
-    
+
     return $plaintext, @structured_answer;
 };
 

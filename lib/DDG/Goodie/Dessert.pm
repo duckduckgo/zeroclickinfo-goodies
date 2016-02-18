@@ -20,10 +20,10 @@ sub itemify {
 
     my $i = rand scalar @{$dessert_list};
     my $dessert = $dessert_list->[$i];
-    
+
     my $dessert_link = $dessert;
     $dessert_link =~ s/\s/+/g;
-    
+
     return $dessert . $end,
     structured_answer => {
         id => 'dessert',

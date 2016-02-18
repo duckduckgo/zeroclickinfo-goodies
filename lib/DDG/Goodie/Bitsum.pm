@@ -10,13 +10,13 @@ zci answer_type => "bitsum";
 zci is_cached   => 1;
 
 # Triggers
-triggers start => "bitsum", "hammingweight", "hw", 
+triggers start => "bitsum", "hammingweight", "hw",
                   "bitsum of", "hammingweight of", "hw of",
                   "bitsum for", "hammingweight for", "hw for";
 
 # Handle statement
 handle remainder => sub {
-    
+
     # Return if input is no hex or decimal number
     return unless $_ =~ /(^0x[0-9a-f]+$)|(^0b[0-1]+$)|(^\d+$)/i;
 
@@ -41,7 +41,7 @@ handle remainder => sub {
         $base = 10;
         $base_string = 'Decimal';
     }
-    
+
     # Count ones
     my $result = $binstring =~ tr/1/1/;
     $input_number .= ' (Base '.$base.', '.$base_string.')';

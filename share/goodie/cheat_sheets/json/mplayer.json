@@ -14,7 +14,7 @@
         "Audio control",
         "Subtitle control"
     ],
-    
+
     "sections": {
         "General": [
             {
@@ -102,7 +102,7 @@
                 "key": "8"
             }
         ],
-        
+
         "Audio control": [
             {
                 "val": "decrease / increase volume",
@@ -125,7 +125,7 @@
                 "key": "[(] / [)]"
             }
         ],
-        
+
         "Subtitle control": [
             {
                 "val": "subtitle visibility",

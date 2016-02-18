@@ -21,17 +21,17 @@ while (my $line = <FILE>) {
 
     unless ($amt eq '\'s'){
 
-	$lcline = lc($line);
+    $lcline = lc($line);
 
-	## Spliting the string with no delimeter.
-	$sorted_string = join("",sort(split("",$lcline)));
+    ## Spliting the string with no delimeter.
+    $sorted_string = join("",sort(split("",$lcline)));
 
-	if (exists $dict{$sorted_string}) {
-	    push @{$dict{$sorted_string}}, $line;
-	}
-	else {
-	    push @{$dict{$sorted_string}}, $line;
-	}
+    if (exists $dict{$sorted_string}) {
+        push @{$dict{$sorted_string}}, $line;
+    }
+    else {
+        push @{$dict{$sorted_string}}, $line;
+    }
     }
 }
 

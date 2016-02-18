@@ -1,13 +1,13 @@
 {
-    "id": "gimp_cheat_sheet", 
+    "id": "gimp_cheat_sheet",
     "name": "GIMP",
-    "description": "Keyboard shortcuts for GIMP (GNU Image Manipulation Program) graphics editor", 
-    "metadata": { 
+    "description": "Keyboard shortcuts for GIMP (GNU Image Manipulation Program) graphics editor",
+    "metadata": {
         "sourceName": "Jeffkayser",
         "sourceUrl": "https://jeffkayser.com/static/cheatsheets/cheatsheet_gimp.png"
     },
     "template_type": "keyboard",
-    "section_order": [  
+    "section_order": [
         "Tools",
         "File",
         "Dialogs",
@@ -22,7 +22,7 @@
     "sections": {
         "Help": [
             {
-                "key": "F1", 
+                "key": "F1",
                 "val": "Help"
             },
             {
@@ -33,8 +33,8 @@
         "Zoom Tool": [
             {
                 "key": "click",
-                "val": "Zoom in"               
-            }, 
+                "val": "Zoom in"
+            },
             {
                 "key": "[Ctrl] [click]",
                 "val": "Zoom out"

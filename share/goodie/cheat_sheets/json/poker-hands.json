@@ -1,17 +1,17 @@
 {
-    "id": "poker_hands_cheat_sheet", 
+    "id": "poker_hands_cheat_sheet",
     "name": "Poker",
-    "description": "Gambling Card Game", 
-    "metadata": { 
+    "description": "Gambling Card Game",
+    "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_poker_hands"
     },
     "template_type": "reference",
-    "section_order": [  
+    "section_order": [
         "Poker Hands in order of rank",
         "Poker Hands probabilities"
     ],
-    "sections": {       
+    "sections": {
         "Poker Hands in order of rank": [
             {
                 "key": "Royal flush",
@@ -35,7 +35,7 @@
             },
             {
                 "key": "Straight",
-                "val": "Five cards of sequential rank in at least two different suits" 
+                "val": "Five cards of sequential rank in at least two different suits"
             },
             {
                 "key": "Three of a kind",
@@ -51,7 +51,7 @@
             },
             {
                 "key": "High card",
-                "val": "No hand is made, and the only thing of any potential meaning in the hand is the highest card" 
+                "val": "No hand is made, and the only thing of any potential meaning in the hand is the highest card"
             }
         ],
         "Poker Hands probabilities": [

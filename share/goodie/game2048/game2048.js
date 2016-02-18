@@ -21,7 +21,7 @@ DDH.game2048.build = function(ops) {
 
         if (dir === 'a' || dir === 'd') {
             transpose_area();
-        } 
+        }
         if (dir === 's' || dir === 'd') {
             swap_rows_area();
         }
@@ -45,7 +45,7 @@ DDH.game2048.build = function(ops) {
 
                     for(var j = row + 1; j < SIZE && exit === false; ++j) {
                         // if numbers can be summed
-                        if(area[rc_to_index(row - moves, col)].val === area[rc_to_index(j, col)].val) { 
+                        if(area[rc_to_index(row - moves, col)].val === area[rc_to_index(j, col)].val) {
                             // sum numbers
                             area[rc_to_index(row - moves, col)].val *= 2;
                             // delete the old number
@@ -139,8 +139,8 @@ DDH.game2048.build = function(ops) {
             if(area[i].val === 0) {
                 free.push(i);
             }
-        } 
-        
+        }
+
         var rand_tile = free[Math.floor(Math.random() * free.length)];
         var rand_val = Math.floor(Math.random() * 11);
         rand_val = rand_val < 2 ? 4 : 2;

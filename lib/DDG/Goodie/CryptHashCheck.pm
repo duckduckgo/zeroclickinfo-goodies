@@ -2,7 +2,7 @@ package DDG::Goodie::CryptHashCheck;
 # ABSTRACT: Identifies cryptographic hash type.
 
 use strict;
-use DDG::Goodie; 
+use DDG::Goodie;
 
 zci is_cached => 1;
 
@@ -26,17 +26,17 @@ handle remainder => sub {
     my $matches = /^([0-9A-Fa-f]{32,128})$/ or return;
     my $chars = 4 * length($1);
     return unless defined $cryptohash{$chars};
- 
-    my $text = "This is a $chars bit " . $cryptohash{$chars} . " cryptographic hash."; 
-    
+
+    my $text = "This is a $chars bit " . $cryptohash{$chars} . " cryptographic hash.";
+
     my $moretext;
-    my $linkname = $cryptohash{$chars}; 
-    
+    my $linkname = $cryptohash{$chars};
+
     if ($cryptohash{$chars} eq "SHA-2/SHA-3") {
         $moretext = [{ text => "SHA-3", href => $wiki . "SHA-3" }];
         $linkname = "SHA-2";
     }
-    
+
     return $text,
     structured_answer => {
         id => 'crypt_hash_check',

@@ -85,7 +85,7 @@ sub format_result {
         push @week_day, {"day", " ", "today", ""};
     }
     my $weekDayNum = $first_day_num;
-    
+
     # Printing the month
     for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
         my $padded_date = sprintf('%2s', $dayNum);

@@ -43,7 +43,7 @@
         }, {
             "val": "output one or more string",
             "key": "echo"
-        }, {    
+        }, {
             "val": "position of first occurrence of case insensitive substring",
             "key": "strpos()"
         }, {
@@ -77,7 +77,7 @@
         }, {
             "val": "end of string",
             "key": "$"
-        }, {    
+        }, {
             "val": "any single character",
             "key": "."
         }, {

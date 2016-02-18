@@ -48,7 +48,7 @@ handle remainder => sub {
     my @results = map { _make_a_result($_) } @matches;
 
     my $html = scalar @results > 1 ?
-		'<ul>' . join('', map {"<li>$_</li>"} @results) . '</ul>' : $results[0];
+        '<ul>' . join('', map {"<li>$_</li>"} @results) . '</ul>' : $results[0];
 
     return join("\n", @results), html => $html;
 

@@ -82,7 +82,7 @@ handle query_clean => sub {
             subtitle => $prolog
         }
       };
-    
+
 };
 
 1;

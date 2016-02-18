@@ -1,8 +1,8 @@
 {
-    "id": "age_of_mythology_cheat_sheet", 
+    "id": "age_of_mythology_cheat_sheet",
     "name": "Age of Mythology Cheat Codes",
-    "description": "Full list of Age of Mythology Codes", 
-    "metadata": { 
+    "description": "Full list of Age of Mythology Codes",
+    "metadata": {
         "sourceName": "HeavenGames",
         "sourceUrl": "http://aom.heavengames.com/gameinfo/cheats"
     },
@@ -29,7 +29,7 @@
                 "key" : "MOUNT OLYMPUS",
                 "val" : "Full favor"
             }
-        ], 
+        ],
         "Myth units": [
             {
                 "key" : "O CANADA",
@@ -44,7 +44,7 @@
                 "key" : "TINES OF POWER",
                 "val" : "Gives you a forkboy"
             }
-        ], 
+        ],
         "Game features" : [
             {
                 "key" : "GOATUNHEIM",

@@ -22,10 +22,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => 'Teredo Address Details',
-                record_data => {                                                                                                                                 
-                    'Client Port:' => 40000,                                                                                                              
-                    'Nat Public IPv4:' => "192.0.2.45",                                                                                                       
-                    'Teredo Server IPv4:' => "65.54.227.120"                                                                                                     
+                record_data => {
+                    'Client Port:' => 40000,
+                    'Nat Public IPv4:' => "192.0.2.45",
+                    'Teredo Server IPv4:' => "65.54.227.120"
                 },
                 record_keys => ['Teredo Server IPv4:', 'Nat Public IPv4:', 'Client Port:'],
             },
@@ -45,10 +45,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => {
                 title => 'Teredo Address Details',
-                record_data => {                                                                                                                                 
-                    'Client Port:' => 5000,                                                                                                              
-                    'Nat Public IPv4:' => "131.107.0.1",                                                                                                       
-                    'Teredo Server IPv4:' => "65.54.227.120"                                                                                                     
+                record_data => {
+                    'Client Port:' => 5000,
+                    'Nat Public IPv4:' => "131.107.0.1",
+                    'Teredo Server IPv4:' => "65.54.227.120"
                 },
                 record_keys => ['Teredo Server IPv4:', 'Nat Public IPv4:', 'Client Port:'],
             },
@@ -62,16 +62,16 @@ ddg_goodie_test(
      ),
 
     'teredo 2001::CE49:7601:E866:EFFF:62C3:FFFE' => test_zci(
-        "Teredo Server IPv4: 206.73.118.1\nNAT Public IPv4: 157.60.0.1\nClient Port: 4096", 
+        "Teredo Server IPv4: 206.73.118.1\nNAT Public IPv4: 157.60.0.1\nClient Port: 4096",
         structured_answer => {
             id => 'teredo',
             name => 'Answer',
             data => {
                 title => 'Teredo Address Details',
-                record_data => {                                                                                                                                 
-                    'Client Port:' => 4096,                                                                                                              
-                    'Nat Public IPv4:' => "157.60.0.1",                                                                                                       
-                    'Teredo Server IPv4:' => "206.73.118.1"                                                                                                     
+                record_data => {
+                    'Client Port:' => 4096,
+                    'Nat Public IPv4:' => "157.60.0.1",
+                    'Teredo Server IPv4:' => "206.73.118.1"
                 },
                 record_keys => ['Teredo Server IPv4:', 'Nat Public IPv4:', 'Client Port:'],
             },

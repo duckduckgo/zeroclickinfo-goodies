@@ -9,9 +9,9 @@ zci answer_type => 'parsecron';
 zci is_cached => 0;
 
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::ParseCron
-	)],
+    [qw(
+        DDG::Goodie::ParseCron
+    )],
     # Time
     'cron * * * * *' => test_zci('every minute',
     structured_answer => {
@@ -103,7 +103,7 @@ ddg_goodie_test(
         operation => 'Crontab',
         result => 'every minute of every 3 hours'
     }),
-    
+
     # Dates
     'cron 0 9 */3 * *' => test_zci('at 9:00am every 3 days',
     structured_answer => {
@@ -255,7 +255,7 @@ ddg_goodie_test(
         operation => 'Crontab',
         result => 'every minute on Wednesday and Friday'
     }),
-    
+
     # Syntax errors
     'cron 0 0 * *' => undef,
     'cron 0 0 *' => undef,
@@ -267,7 +267,7 @@ ddg_goodie_test(
     'crontab examples' => undef,
     'cron 0/10 0/4 0/3 1/2 0/2' => undef,
     'cron 0/10 0/4 1/3 0/2 0/2' => undef,
-    
+
     # 'cron 96 4 * * *' => test_zci('Invalid minute 96',
     # structured_answer => {
     #     input => ['96 4 * * *'],
@@ -358,7 +358,7 @@ ddg_goodie_test(
     #     operation => 'Crontab',
     #     result => 'Invalid day 0'
     # }),
-    
+
     # Complex examples
     'crontab 42 12 3 Feb Sat' => test_zci('at 12:42pm on the 3rd and on Saturday in February',
     structured_answer => {

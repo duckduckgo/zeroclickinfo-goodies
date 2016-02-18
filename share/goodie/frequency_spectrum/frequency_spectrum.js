@@ -4,7 +4,7 @@ DDH.frequency_spectrum = DDH.frequency_spectrum || {};
     "use strict";
     // Get the marker label and tag
     var markerlabel, markertag, started;
-    
+
     function start() {
         markerlabel = document.getElementById("marker_label");
         markertag = document.getElementById("marker_tag");
@@ -12,7 +12,7 @@ DDH.frequency_spectrum = DDH.frequency_spectrum || {};
         // Firefox (and possbily other browers) have a problem with the
         // getBBox function. For now, I'll work around this by simply
         // hiding the marker tag if getBBox() is not available.
-        try { 
+        try {
             // Resize marker to fit text
             bbox = markerlabel.getBBox();
             markerlabel.setAttribute("x", bbox.x);
@@ -32,7 +32,7 @@ DDH.frequency_spectrum = DDH.frequency_spectrum || {};
             markerlabel.style.visibility = "hidden";
             markertag.style.visibility = "hidden";
         }
-    
+
         // When window is too small, remove marker label and tag
         // and abbreviate major range (y-axis) labels
         var wwidth, majrangelabels;
@@ -42,7 +42,7 @@ DDH.frequency_spectrum = DDH.frequency_spectrum || {};
             // Marker tag and label
             markerlabel.style.visibility = "hidden";
             markertag.style.visibility = "hidden";
-            
+
             var obj = { "Radio" : "Rad.", "Infrared" : "Inf.", "Visible light" : "Vis.", "Ultraviolet" : "UV", "X-ray" : "X-ray", "Gamma" : "Gam." };
             // Major range labels
             for (var i = majrangelabels.length - 1; i >= 0; i--) {
@@ -51,13 +51,13 @@ DDH.frequency_spectrum = DDH.frequency_spectrum || {};
         }
     }
     DDH.frequency_spectrum.build = function(ops) {
-    
+
         return {
             onShow: function() {
 
                 if (!started) {
                     started = true;
-                
+
                     start();
 
                 }

@@ -33,7 +33,7 @@ triggers query_raw => qr/$frequencySpectrumQR/i;
 my $nanometreLightSecond = 2.99792458 * (10 ** 17);
 
 #SI prefixes
-my %factors = ( 
+my %factors = (
     k => {
         multiplier => 1e3,
         cased => 'k'
@@ -53,7 +53,7 @@ my %factors = (
 );
 
 #Load electromagnetic frequency ranges
-# References: 
+# References:
 # https://en.wikipedia.org/wiki/Radio_spectrum
 # https://en.wikipedia.org/wiki/Ultraviolet
 # https://en.wikipedia.org/wiki/X-ray
@@ -73,7 +73,7 @@ foreach (split /\n/, share("electromagnetic.txt")->slurp) {
 # Hardcoded to control graphical layout
 my %emSpectrum = (
     'radio' => {
-        min => 0, 
+        min => 0,
         max => 3000000000000,
         track => 1
     },
@@ -83,22 +83,22 @@ my %emSpectrum = (
         track => 2
     },
     'visible light' => {
-        min => 400000000000000, 
+        min => 400000000000000,
         max => 800000000000000,
         track => 3
     },
     'ultraviolet' => {
-        min => 749500000000000, 
+        min => 749500000000000,
         max => 30000000000000000,
         track => 4
     },
     'x-ray' => {
-        min => 30000000000000000, 
+        min => 30000000000000000,
         max => 30000000000000000000,
         track => 5
     },
     'gamma' => {
-        min => 30000000000000000000, 
+        min => 30000000000000000000,
         max => 3000000000000000000000000,
         track => 6
     }
@@ -177,7 +177,7 @@ handle query => sub {
 
         #Add a minor range for the band (unless the band is the subspectrum)
         if (! ($emSpectrum{$subspectrum}{'min'} == $bandMin && $emSpectrum{$subspectrum}{'max'} == $bandMax)) {
-          # NOTE: Skipping this per @wtrsld's comp, but leaving code in 
+          # NOTE: Skipping this per @wtrsld's comp, but leaving code in
           # until design is finalised
           #$plot = add_minor_range($plot, $bandMin, $bandMax, $emSpectrum{$subspectrum}{'track'});
         }
@@ -242,9 +242,9 @@ handle query => sub {
         #Generate the SVG
         $html .= $plot->xmlify;
     }
-    
+
     $plot->{svg} = "";
-    $plot->{transform} = ""; 
+    $plot->{transform} = "";
 
     my @temp = $plot;
     return "$answer", #html => wrap_html($html) if $answer;
@@ -353,7 +353,7 @@ sub generate_plot {
 #        class => 'plot_background',
 #    )->rect(
 #        width => '100%',
-#        height => $plot->{height}, 
+#        height => $plot->{height},
 #        x => 0,
 #        y => 0
 #    );
@@ -362,8 +362,8 @@ sub generate_plot {
 #    $plot->{svg}->group(
 #        class => 'plot_panel',
 #    )->rect(
-#        width => ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) . '%', 
-#        height => $plot->{panelHeight}, 
+#        width => ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) . '%',
+#        height => $plot->{panelHeight},
 #        x => $plot->{leftGutter} . '%',
 #        y => $plot->{topGutter},
 #    );
@@ -378,7 +378,7 @@ sub generate_plot {
 
         #If we're using a linear scale, put a tick at every
         # integer multiple at the order of magnitude of
-        # range max 
+        # range max
     } else {
         my $order = 10 ** int(log10($plot->{rangeMax}));
         @ticks = map { $_ * $order } int($plot->{rangeMin} / $order) + 1 .. int($plot->{rangeMax} / $order);
@@ -406,23 +406,23 @@ sub generate_plot {
         #$tick->line(
         #x1 => $x . '%',
         #x2 => $x . '%',
-        #y1 => $plot->{panelHeight} + $plot->{topGutter}, 
-        #y2 => $plot->{panelHeight} + $plot->{topGutter} + 4, 
+        #y1 => $plot->{panelHeight} + $plot->{topGutter},
+        #y2 => $plot->{panelHeight} + $plot->{topGutter} + 4,
         #class => 'x_axis_tick'
         #);
 
         #Annotate tick
 #        my $text = $xAxis->text(
-#            dy => '1em', 
-#            x => $x . '%', 
-#            y => $plot->{panelHeight} + $plot->{topGutter} + 4, 
+#            dy => '1em',
+#            x => $x . '%',
+#            y => $plot->{panelHeight} + $plot->{topGutter} + 4,
 #            'text-anchor' => 'middle',
 #            class => 'x_axis_text'
 #        );
 #        if ($log10 && $_ > 10) {
 #            $text->tag('tspan', -cdata => '10');
 #            $text->tag(
-#                'tspan', 
+#                'tspan',
 #                'baseline-shift' => 'super',
 #                dy => '-0.2em', #Superscripts need an extra nudge
 #                dx => '-0.5em', #Bring superscript close to parent
@@ -433,7 +433,7 @@ sub generate_plot {
 #            $text->tag('tspan', -cdata => $_);
 #        }
 #    }
-    my @x_axis;    
+    my @x_axis;
     foreach (@ticks) {
         my $tspan_cdata;
         if ($log10 && $_ > 10) {
@@ -447,7 +447,7 @@ sub generate_plot {
         push @x_axis, $x_axis;
     }
     $plot->{x_axis} = \@x_axis;
-    
+
     #Add x-axis gridlines
     # NOTE: Currently skipping this per wtrsld's redesign
     #my $gridlines = $plot->{svg}->group (
@@ -459,21 +459,21 @@ sub generate_plot {
     #$line->line(
     #x1 => $x . '%',
     #x2 => $x . '%',
-    #y1 => $plot->{topGutter}, 
+    #y1 => $plot->{topGutter},
     #y2 => $plot->{panelHeight} + $plot->{topGutter}
     #);
     #}
 
     #Add a label to the x-axis
 #    my $xAxisLabel = $xAxis->text(
-#        dy => '1em', 
+#        dy => '1em',
 #        x => '50%',
-#        y => $plot->{panelHeight} + $plot->{topGutter} + 25, 
+#        y => $plot->{panelHeight} + $plot->{topGutter} + 25,
 #        'text-anchor' => 'middle',
 #        class => 'x_axis_label'
 #    );
 #    $xAxisLabel->tag('tspan', -cdata => 'Frequency (Hz)');
-    $plot->{axis_label_y} = $plot->{panelHeight} + $plot->{topGutter} + 25;     
+    $plot->{axis_label_y} = $plot->{panelHeight} + $plot->{topGutter} + 25;
 
     #Add axis lines
 #    my $axislines = $plot->{svg}->group (
@@ -483,29 +483,29 @@ sub generate_plot {
 #    $xaxisline->line(
 #        x1 => $plot->{transform}->(0) . '%',
 #        x2 => $plot->{transform}->($plot->{rangeMax}) . '%',
-#        y1 => $plot->{panelHeight} + $plot->{topGutter}, 
+#        y1 => $plot->{panelHeight} + $plot->{topGutter},
 #        y2 => $plot->{panelHeight} + $plot->{topGutter}
 #    );
 #    my $yaxisline = $axislines->group();
 #    $yaxisline->line(
 #        x1 => $plot->{transform}->(0) . '%',
 #        x2 => $plot->{transform}->(0) . '%',
-#        y1 => $plot->{topGutter}, 
+#        y1 => $plot->{topGutter},
 #        y2 => $plot->{topGutter} + $plot->{panelHeight}
 #    );
     $plot->{x_axis_line} = {
         x1 => $plot->{transform}->(0),
         x2 => $plot->{transform}->($plot->{rangeMax}),
-        y1 => $plot->{panelHeight} + $plot->{topGutter}, 
-        y2 => $plot->{panelHeight} + $plot->{topGutter}    
+        y1 => $plot->{panelHeight} + $plot->{topGutter},
+        y2 => $plot->{panelHeight} + $plot->{topGutter}
     };
     $plot->{y_axis_line} = {
         x1 => $plot->{transform}->(0),
         x2 => $plot->{transform}->(0),
-        y1 => $plot->{topGutter}, 
-        y2 => $plot->{topGutter} + $plot->{panelHeight}    
+        y1 => $plot->{topGutter},
+        y2 => $plot->{topGutter} + $plot->{panelHeight}
     };
-    
+
     return($plot);
 }
 
@@ -519,11 +519,11 @@ sub add_minor_range {
     my $minorRangeRect = $minorRange->group();
     $minorRangeRect->rect(
         class => 'minor_range',
-        x => $plot->{transform}->($rangeMin) . '%', 
+        x => $plot->{transform}->($rangeMin) . '%',
         width => $plot->{transform}->($rangeMax) - $plot->{transform}->($rangeMin) . '%',
         y => ($plot->{trackHeight} * ($track - 1)) + $plot->{bandGutter} + $plot->{topGutter},
         height => $plot->{bandHeight},
-    ); 
+    );
 
     return $plot;
 }
@@ -538,11 +538,11 @@ sub add_major_range {
     my $majorRangeRect = $majorRange->group();
     $majorRangeRect->rect(
         class => 'major_range',
-        x => $plot->{transform}->($rangeMin) . '%', 
+        x => $plot->{transform}->($rangeMin) . '%',
         width => $plot->{transform}->($rangeMax) - $plot->{transform}->($rangeMin) . '%',
         y => ($plot->{trackHeight} * ($track - 1)) + $plot->{bandGutter} + $plot->{topGutter},
         height => $plot->{bandHeight},
-    ); 
+    );
 
     #Add label for range on the y-axis
     my $x;
@@ -551,8 +551,8 @@ sub add_major_range {
     $anchor = 'end';
     my $majorRangeLabel = $majorRange->group();
     my $majorRangeLabelText = $majorRangeLabel->text(
-        x => $x . '%', 
-        y => ($plot->{trackHeight} * ($track - 1)) + (2 * $plot->{bandGutter}) + $plot->{topGutter}, 
+        x => $x . '%',
+        y => ($plot->{trackHeight} * ($track - 1)) + (2 * $plot->{bandGutter}) + $plot->{topGutter},
         dy => ($plot->{trackHeight} / 2) - 5,
         'text-anchor' => $anchor,
         class => 'major_range_label'
@@ -597,18 +597,18 @@ sub add_marker {
 #        class => 'marker'
 #    )->line(
 #        id => 'marker',
-#        x1 => $plot->{transform}->($markerValue) . '%', 
-#        x2 => $plot->{transform}->($markerValue) . '%', 
+#        x1 => $plot->{transform}->($markerValue) . '%',
+#        x2 => $plot->{transform}->($markerValue) . '%',
 #        y1 => $plot->{topGutter} - $markerGutter,
 #        y2 => $plot->{topGutter} + $plot->{panelHeight},
 #        style => { 'stroke' => $RGB },
 #    );
     $plot->{marker_line} = {
-        x1 => $plot->{transform}->($markerValue), 
-        x2 => $plot->{transform}->($markerValue), 
+        x1 => $plot->{transform}->($markerValue),
+        x2 => $plot->{transform}->($markerValue),
         y1 => $plot->{topGutter} - $markerGutter,
         y2 => $plot->{topGutter} + $plot->{panelHeight},
-        color => $RGB,    
+        color => $RGB,
     };
 
     return $plot;
@@ -617,7 +617,7 @@ sub add_marker {
 #Wrap html
 #sub wrap_html {
 #    return <<EOF;
-#<!--[if gte IE 9]><!-->        
+#<!--[if gte IE 9]><!-->
 #<div class='zci--conversions text--primary'>$_[0]</div>
 #<![endif]-->
 #$dynamicwidths

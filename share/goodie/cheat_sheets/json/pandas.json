@@ -7,7 +7,7 @@
         "sourceUrl": "http://www.analyticsvidhya.com/blog/2015/07/11-steps-perform-data-analysis-pandas-python/"
     },
     "aliases": [
-        "python pandas", "pandas" 
+        "python pandas", "pandas"
     ],
     "template_type": "terminal",
     "section_order": [
@@ -26,8 +26,8 @@
     "sections": {
         "Reading and Writing Methods": [{
             "val": "Reading a CSV file",
-            "key": "df=pd.read_csv('Anyname.csv')"  
-        }, {             
+            "key": "df=pd.read_csv('Anyname.csv')"
+        }, {
             "val": "Writing content of dataframe to CSV file",
             "key": "df.to_csv(Newfile.csv)"
         }, {
@@ -35,7 +35,7 @@
             "key": "df=pd.read_excel('File_Name.xlsx','sheet1')"
         }, {
             "val": "Writing content of dataframe to Excel file",
-            "key": "df.to_excel('Abc.xlsx',sheet_name='sheet2')"  
+            "key": "df.to_excel('Abc.xlsx',sheet_name='sheet2')"
         }],
         "Getting Preview of Dataframe": [{
             "val": "Looking at top n records",
@@ -52,7 +52,7 @@
             "key": "df2=df.rename(columns={'old_columnname':'new_columnname'})"
         }, {
             "val": "To rename the column of existing dataframe",
-            "key": "df.rename(columns={'old_columnname':'new_columnname',inplace=True}"         
+            "key": "df.rename(columns={'old_columnname':'new_columnname',inplace=True}"
         }],
         "Selecting Columns and Rows": [{
             "val": "Accessing sub dataframes",

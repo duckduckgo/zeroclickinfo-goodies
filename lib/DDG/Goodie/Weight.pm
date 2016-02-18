@@ -32,31 +32,31 @@ use constant g => 9.80665;
 
 # Handle statement
 handle query_lc => sub {
-    
+
     return unless m/^(what is the )?(earth )?weight (on earth )?(of )?(a )?(?<mass>\d+(\.\d+)?) ?(?<unit>\w+)( mass)?( on)?( earth)?\??$/;
     my $mass_input = $+{mass};
     my $default_unit = "kg";
     my $unit = $+{unit} // $default_unit;
-    
+
     my $mass = $mass_input;
-    
+
     if ($unit){
         return unless exists $units{$unit};
         $mass *= $units{$unit};
     }
-    
+
     # Weight = Mass (in kg) * Acceleration due to gravity (in m/s^2)
     my $weight = $mass*g;
-    
+
     # Text to be shown to indicate conversion done
     my $conversiontext = "($mass kg) ";
-    
+
     if ( $unit eq "kg" || $unit eq "kgs" ) {
         $conversiontext = "";
     }
-    
+
     my $massUnit = $mass_input.$unit;
-    
+
     return "Weight of a ".$massUnit." mass on Earth is ".$weight."N.",
         structured_answer => {
             input     => [],

@@ -1,7 +1,7 @@
 {
-    "id": "kde_cheat_sheet", 
+    "id": "kde_cheat_sheet",
     "name": "KDE",
-    "description": "List of useful keyboard commands for KDE", 
+    "description": "List of useful keyboard commands for KDE",
     "metadata": {
         "sourceName": "KDE Help",
         "sourceUrl": "http://community.linuxmint.com/tutorial/view/47"

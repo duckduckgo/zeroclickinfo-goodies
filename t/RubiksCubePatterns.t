@@ -18,7 +18,7 @@ ddg_goodie_test(
             data => {
                 title => "F U F R L2 B D' R D2 L D' B R2 L F U F",
                 subtitle => "Rubiks cube 'Stripes' pattern",
-                record_data => {},                    
+                record_data => {},
             },
             templates => {
                 group => 'list',
@@ -36,7 +36,7 @@ ddg_goodie_test(
             data => {
                 title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
                 subtitle => "Rubiks cube 'Cube in a Cube' pattern",
-                record_data => {},                   
+                record_data => {},
             },
             templates => {
                 group => 'list',
@@ -54,7 +54,7 @@ ddg_goodie_test(
             data => {
                 title => "U D' R L' F B' U D'",
                 subtitle => "Rubiks cube 'Swap Centers' pattern",
-                record_data => {},                    
+                record_data => {},
             },
             templates => {
                 group => 'list',
@@ -72,7 +72,7 @@ ddg_goodie_test(
             data => {
                 title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
                 subtitle => "Rubiks cube 'Cube in a Cube' pattern",
-                record_data => {},                   
+                record_data => {},
             },
             templates => {
                 group => 'list',
@@ -90,7 +90,7 @@ ddg_goodie_test(
             data => {
                 title => "U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'",
                 subtitle => "Rubiks cube 'Cube in a Cube in a Cube' pattern",
-                record_data => {},                   
+                record_data => {},
             },
             templates => {
                 group => 'list',
@@ -108,7 +108,7 @@ ddg_goodie_test(
             data => {
                 title => "F U F R L2 B D' R D2 L D' B R2 L F U F",
                 subtitle => "Rubiks cube 'Stripes' pattern",
-                record_data => {},                   
+                record_data => {},
             },
             templates => {
                 group => 'list',
@@ -126,7 +126,7 @@ ddg_goodie_test(
             data => {
                 title => "F L F U' R U F2 L2 U' L' B D' B' L2 U",
                 subtitle => "Rubiks cube 'Cube in a Cube' pattern",
-                record_data => {},                   
+                record_data => {},
             },
             templates => {
                 group => 'list',
@@ -144,7 +144,7 @@ ddg_goodie_test(
             data => {
                 title => "U D' R L' F B' U D'",
                 subtitle => "Rubiks cube 'Swap Centers' pattern",
-                record_data => {},                  
+                record_data => {},
             },
             templates => {
                 group => 'list',

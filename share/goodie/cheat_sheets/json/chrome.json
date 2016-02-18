@@ -1,25 +1,25 @@
 {
-    "id": "chrome_cheat_sheet", 
+    "id": "chrome_cheat_sheet",
 
     "name": "Google Chrome",
 
-    "description": "Google Chrome Keyboard shorcuts", 
+    "description": "Google Chrome Keyboard shorcuts",
 
-    "metadata": { 
+    "metadata": {
         "sourceName": "Chrome Help",
         "sourceUrl": "https://support.google.com/chrome/answer/157179?hl=en"
     },
-    
+
     "aliases": [
         "google chrome",
         "chrome keyboard shortcuts",
         "google chrome keyboard shortcuts",
         "chrome shortcuts"
     ],
-    
+
     "template_type": "keyboard",
 
-    "section_order": [  
+    "section_order": [
         "Tab and Window",
         "Chrome Features",
         "Webpage",
@@ -29,7 +29,7 @@
     "sections": {
         "Tab and Window": [
             {
-                "key": "[Ctrl] [N]", 
+                "key": "[Ctrl] [N]",
                 "val": "Open new window"
             },
             {

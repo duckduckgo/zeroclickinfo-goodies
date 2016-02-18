@@ -13,9 +13,9 @@ zci is_cached => 1;
 triggers startend => 'unicornify';
 
 handle remainder => sub {
-	if (Email::Valid->address($_)) {
-		s/[\s\t]+//g; # strip whitespace from the remainder, we just need the email address.
-		
+    if (Email::Valid->address($_)) {
+        s/[\s\t]+//g; # strip whitespace from the remainder, we just need the email address.
+
         return "This is a unique unicorn for $_",
         structured_answer => {
             id => "unicornify",
@@ -29,7 +29,7 @@ handle remainder => sub {
             meta => {
                 sourceName => "Unicornify",
                 sourceUrl => 'http://unicornify.appspot.com/'
-            }, 
+            },
             templates => {
                 group => "icon",
                 item => 0,
@@ -40,8 +40,8 @@ handle remainder => sub {
                 }
             }
         }
-	}
-	return;
+    }
+    return;
 };
 
 1;

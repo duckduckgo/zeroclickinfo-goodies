@@ -8,15 +8,15 @@
     },
     "aliases": [
         "js",
-        "java script" 
+        "java script"
     ],
     "template_type": "code",
     "section_order": [
-        "Array Methods", 
-        "String Methods", 
-        "Math Methods", 
+        "Array Methods",
+        "String Methods",
+        "Math Methods",
         "Number Methods",
-        "Boolean Methods", 
+        "Boolean Methods",
         "Global Methods"
     ],
     "sections": {
@@ -25,25 +25,25 @@
             "key": "concat()"
         }, {
             "val": "Searches array for an element, and returns element's position",
-            "key": "indexOf()"  
-        }, {             
+            "key": "indexOf()"
+        }, {
             "val": "Joins all elements of an array into a string",
             "key": "join()"
         }, {
             "val": "Searches array for an element, starting at the end, and returns element's position",
-            "key": "lastIndexOf()"  
+            "key": "lastIndexOf()"
         }, {
             "val": "Removes last element of an array, and returns that element",
             "key": "pop()"
-        }, {            
+        }, {
             "val": "Adds new element to the end of an array, and returns the new length",
             "key": "push()"
-        }, {      
+        }, {
             "val": "Reverses the order of elements in an array",
-            "key": "reverse()"       
+            "key": "reverse()"
         }, {
             "val": "Removes the first element of an array, and returns that element",
-            "key": "shift()"            
+            "key": "shift()"
         }, {
             "val": "Selects part of an array, and returns the new array",
             "key": "slice()"
@@ -55,7 +55,7 @@
             "key": "splice()"
         }, {
             "val": "Converts an array to a string, and returns result",
-            "key": "toString()"         
+            "key": "toString()"
         }, {
             "val": "Adds new elements to the beginning of an array, and returns the new length",
             "key": "unShift()"
@@ -90,7 +90,7 @@
             "key": "pow(x,y)"
         }, {
             "val": "Returns a random number between 0 (inclusive) and 1 (exclusive)",
-            "key": "random()"        
+            "key": "random()"
         }, {
             "val": "Rounds x to the nearest integer",
             "key": "round(x)"
@@ -169,7 +169,7 @@
         }, {
             "val": "Decodes a URI component",
             "key": "decodeURIComponent()"
-        }, {       
+        }, {
             "val": "Encodes a URI",
             "key": "encodeURI()"
         }, {

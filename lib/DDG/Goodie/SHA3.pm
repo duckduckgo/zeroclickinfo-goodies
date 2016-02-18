@@ -8,7 +8,7 @@ use Digest::SHA3;
 zci answer_type => "sha3";
 zci is_cached   => 1;
 
-my @triggers = qw(sha3 sha3sum sha3-224 sha3-256 sha3-384 sha3-512 
+my @triggers = qw(sha3 sha3sum sha3-224 sha3-256 sha3-384 sha3-512
                   shake128 shake-128 shake256 shake-256);
 triggers start => @triggers;
 
@@ -18,7 +18,7 @@ handle query => sub {
 
     my $alg = lc $+{'alg'};
     my $ver = $+{'ver'}    || '512';           # SHA3-512 by default
-    return if $alg eq 'sha3' && $ver eq '128'; # Special case to avoid the search 'sha3-128' 
+    return if $alg eq 'sha3' && $ver eq '128'; # Special case to avoid the search 'sha3-128'
                                                # (128 is only valid for SHAKE)
     my $enc = lc $+{'enc'} || 'hex';
     my $str = $+{'str'}    || '';

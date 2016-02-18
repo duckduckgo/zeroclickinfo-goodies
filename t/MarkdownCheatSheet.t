@@ -12,13 +12,13 @@ zci is_cached   => 1;
 sub test_success {
     return test_zci(
         qr/^$_[0]/s,
-	    heading => 'Markdown Cheat Sheet',
-		html => qr/Markdown:<pre>$_[0].*<\/pre>HTML:<pre>&lt;$_[1] ?.*&gt;.*<\/pre>/s,
+        heading => 'Markdown Cheat Sheet',
+        html => qr/Markdown:<pre>$_[0].*<\/pre>HTML:<pre>&lt;$_[1] ?.*&gt;.*<\/pre>/s,
     );
 }
 
 ddg_goodie_test(
-	[ 'DDG::Goodie::MarkdownCheatSheet' ],
+    [ 'DDG::Goodie::MarkdownCheatSheet' ],
     'md header' => test_success('#', 'h1'),
     'markdown header' => test_success('#', 'h1'),
     'markdown cheat sheet header' => test_success('#', 'h1'),

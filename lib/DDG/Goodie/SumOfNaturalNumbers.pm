@@ -28,10 +28,10 @@ handle remainder => sub {
     return unless $_ =~ /^(?:from )?(\d+)\s*(to|-)\s*(\d+)$/i;
 
     if ($1 > $3) {
-	return;
+    return;
     } else {
-	my $sum = ((($3 * ($3 + 1)) / 2)-(($1 * ($1 - 1)) / 2));
-	return 'Sum of natural numbers from ' . commify($1) . ' to ' . commify($3) . ' is ' . commify($sum) . '.';
+    my $sum = ((($3 * ($3 + 1)) / 2)-(($1 * ($1 - 1)) / 2));
+    return 'Sum of natural numbers from ' . commify($1) . ' to ' . commify($3) . ' is ' . commify($sum) . '.';
     }
 };
 

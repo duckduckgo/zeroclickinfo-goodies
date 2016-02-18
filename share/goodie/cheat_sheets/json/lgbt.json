@@ -1,8 +1,8 @@
 {
-    "id": "lgbt_cheat_sheet", 
+    "id": "lgbt_cheat_sheet",
     "name": "LGBT Terms",
-    "description": "Short comprehensive list of LGBT terms", 
-    "metadata": { 
+    "description": "Short comprehensive list of LGBT terms",
+    "metadata": {
         "sourceName": "LGBT Terms",
         "sourceUrl": "http://web.jhu.edu/LGBTQ/glossary.html"
     },
@@ -20,7 +20,7 @@
                 "key" : "Sex Reassignment Surgery / SRS",
                 "val" : "A term used by some medical professionals to refer to a group of surgical options that alter a person’s biological sex."
             }
-        ], 
+        ],
         "Gender": [
             {
                 "key" : "Gender Binary",
@@ -44,7 +44,7 @@
                 "key" : "Transgender",
                 "val" : "A person who lives as a member of a gender other than that expected based on anatomical sex"
             }
-        ], 
+        ],
         "Sexuality" :[
             {
                 "key" : "Sexual Orientation",

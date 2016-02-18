@@ -6,7 +6,7 @@
         "sourceName": "TypeScript",
         "sourceUrl": "http://www.typescriptlang.org/Handbook"
     },
-    "template_type": "terminal", 
+    "template_type": "terminal",
     "section_order": [
         "Primitive Types",
         "Named types",

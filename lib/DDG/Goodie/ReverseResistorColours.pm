@@ -80,7 +80,7 @@ handle query_raw => sub {
         },
         templates => {
             group => 'text',
-            options => {          
+            options => {
                 moreAt => 1,
             }
         }

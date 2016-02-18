@@ -224,7 +224,7 @@ sub make_text {
 sub make_structured_answer {
     my ($answer, $question) = @_;
     my @input = @$answer;
-    
+
     if (scalar(@input) == 1) {
         return {
             input       => [$input[0][0]],

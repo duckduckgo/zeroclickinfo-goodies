@@ -23,12 +23,12 @@ my %dates = (); # Days indexed by name
 
 sub load_days_file {
     my $file_name = shift();
-    
+
     my @lines = file($file_name)->slurp(iomode => '<:encoding(UTF-8)');
-    
+
     $file_name =~ s/\.txt$//;
     $file_name =~ s/_/ /g;
-    
+
     die "The text file $file_name must include 366 lines" unless scalar(@lines) == 366;
 
     my $day_of_year = 1;
@@ -41,7 +41,7 @@ sub load_days_file {
         for my $name (split(' ', $names_for_date)) {
             push(@{$dates{$name}}, $file_name . '|' . $day_of_year);
         }
-    
+
         # Remove the names after vertical bar (|)
         chomp;
         s/\s*\|.*$//;
@@ -50,7 +50,7 @@ sub load_days_file {
             $names[$day_of_year - 1] .= "; " if ($names[$day_of_year - 1]);
             $names[$day_of_year - 1] .= $file_name . ': ' . $_;
         }
-        
+
         # Advance to the next day
         $day_of_year++;
     }
@@ -59,7 +59,7 @@ sub load_days_file {
 sub prepare_dates {
     my @month_names = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
     my ($dates_by_country, $dates_by_country_and_month) = @_;
-    
+
     # Prepare the plain-text answer
     my $res = '';
     foreach (sort keys %{$dates_by_country}) {
@@ -97,13 +97,13 @@ sub finish_loading {
                 $dates_by_country{$1} .= ', ';
             }
             $dates_by_country{$1} .= $d->strftime('%e %b');
-            
+
             if ($dates_by_country_and_month{$1}[$d->month - 1]) {
                 $dates_by_country_and_month{$1}[$d->month - 1] .= ', ';
             }
             $dates_by_country_and_month{$1}[$d->month - 1] .= $d->day;
         }
-        
+
         $dates{$_} = prepare_dates(\%dates_by_country, \%dates_by_country_and_month);
     }
 }

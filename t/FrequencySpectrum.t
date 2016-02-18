@@ -275,7 +275,7 @@ ddg_goodie_test(
         }
     ),
 
-    #Only visible light wavelengths should trigger 
+    #Only visible light wavelengths should trigger
     '0.1 nm' => undef,
     '100 nm' => undef,
     '800 nm' => undef,

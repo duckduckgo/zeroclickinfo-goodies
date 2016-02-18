@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 sub build_structure {
     my ($title, $subtitle, $percentage, $data, $keys) = @_;
-    
+
     return {
         id => "uptime",
         name => "Answer",
@@ -53,7 +53,7 @@ sub build_text_structure {
 
 ddg_goodie_test(
     [qw( DDG::Goodie::Uptime )],
-    
+
     'uptime 99%' => test_zci("Implied downtimes for 99% uptime\n".
                             "Daily: 14 minutes and 24 seconds\n".
                             "Monthly: 7 hours and 18 minutes\n".
@@ -74,7 +74,7 @@ ddg_goodie_test(
                                 "monthly" => "7 hours and 18 minutes",
                                 "yearly" => "3 days and 16 hours"
                             })),
-    
+
     # Startend trigger
     '99% uptime' => test_zci("Implied downtimes for 99% uptime\n".
                             "Daily: 14 minutes and 24 seconds\n".
@@ -105,7 +105,7 @@ ddg_goodie_test(
                                 "monthly" => "4 minutes and 22 seconds",
                                 "yearly" => "52 minutes and 35 seconds"
                             })),
-    
+
     # Grouping allowed on input
     'uptime 99.999 999 999%' => test_zci("Implied downtimes for 99.999999999% uptime\n".
                             "No downtime or less than a second during a year",
@@ -135,7 +135,7 @@ ddg_goodie_test(
                                 "monthly" => "less than one second",
                                 "yearly" => "3 seconds"
                             })),
-                            
+
     # Lower limit
     'uptime 0%' => test_zci("Implied downtimes for 0% uptime\n".
                             "Daily: 1 day\n".

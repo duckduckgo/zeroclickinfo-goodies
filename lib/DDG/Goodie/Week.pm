@@ -69,8 +69,8 @@ handle query_lc => sub {
     elsif ($year eq 'current') {
         $year = $dt->year();
     }
-	return unless $year eq 'current' || is_valid_year($year);
-	
+    return unless $year eq 'current' || is_valid_year($year);
+
     # Asking about nth week of some year
     unless ($response){
         my (undef, $month, $day) = Monday_of_Week($week, $year);

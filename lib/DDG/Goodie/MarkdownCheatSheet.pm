@@ -67,7 +67,7 @@ my %snippets = (
 > > This is nested blockquote.
 >
 > Back to the first level.'
-    }    
+    }
 );
 
 my %synonyms = (

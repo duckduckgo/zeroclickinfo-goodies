@@ -13,7 +13,7 @@ ddg_goodie_test(
         DDG::Goodie::PercentError
     )],
     '%err 41 43' => test_zci(
-        'Accepted: 41 Experimental: 43 Error: 4.8780487804878%', 
+        'Accepted: 41 Experimental: 43 Error: 4.8780487804878%',
         structured_answer => {
             id => 'percent_error',
             name => 'Answer',
@@ -27,7 +27,7 @@ ddg_goodie_test(
         }
     ),
     'percent-error 34.5 35' => test_zci(
-        'Accepted: 34.5 Experimental: 35 Error: 1.44927536231884%', 
+        'Accepted: 34.5 Experimental: 35 Error: 1.44927536231884%',
         structured_answer => {
             id => 'percent_error',
             name => 'Answer',
@@ -55,7 +55,7 @@ ddg_goodie_test(
         }
     ),
     "% error 45.12 45.798" => test_zci(
-        "Accepted: 45.12 Experimental: 45.798 Error: 1.50265957446809%", 
+        "Accepted: 45.12 Experimental: 45.798 Error: 1.50265957446809%",
         structured_answer => {
             id => 'percent_error',
             name => 'Answer',
@@ -83,7 +83,7 @@ ddg_goodie_test(
         }
     ),
     "percent-error 1;1" => test_zci(
-        "Accepted: 1 Experimental: 1 Error: 0%", 
+        "Accepted: 1 Experimental: 1 Error: 0%",
         structured_answer => {
             id => 'percent_error',
             name => 'Answer',

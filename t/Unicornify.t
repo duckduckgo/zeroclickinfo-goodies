@@ -10,10 +10,10 @@ use Unicornify::URL;
 zci answer_type => 'unicornify';
 zci is_cached => 1;
 ddg_goodie_test(
-	[qw(
-		DDG::Goodie::Unicornify
-		)],
-	'unicornify example@example.com' =>
+    [qw(
+        DDG::Goodie::Unicornify
+        )],
+    'unicornify example@example.com' =>
         test_zci('This is a unique unicorn for example@example.com',
         structured_answer => {
             id => "unicornify",
@@ -26,8 +26,8 @@ ddg_goodie_test(
             },
             meta => {
                 sourceName => "Unicornify",
-                sourceUrl => 'http://unicornify.appspot.com/' 
-            }, 
+                sourceUrl => 'http://unicornify.appspot.com/'
+            },
             templates => {
                 group => "icon",
                 item => 0,

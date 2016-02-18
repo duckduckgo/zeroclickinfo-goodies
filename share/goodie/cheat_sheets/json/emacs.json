@@ -18,26 +18,26 @@
         "Command-Related Stuff",
         "Searching and Replacing",
         "Help",
-	"Misc"
+    "Misc"
     ],
     "sections": {
-    	"Lingo": [{
-	    "val": "control key (CTRL)",
-	    "key": "C"
-	}, {
-	    "val": "meta key (ALT or ESC)",
-	    "key": "M"
-	}],
+        "Lingo": [{
+        "val": "control key (CTRL)",
+        "key": "C"
+    }, {
+        "val": "meta key (ALT or ESC)",
+        "key": "M"
+    }],
         "Quick Answers": [{
-	    "val": "find file",
-	    "key": "[C-x], [C-f]"
-	}, {
-	    "val": "save file",
-	    "key": "[C-x], [C-s]"
-	}, {
-	    "val": "exit Emacs",
-	    "key": "[C-x], [C-c]"
-	}],
+        "val": "find file",
+        "key": "[C-x], [C-f]"
+    }, {
+        "val": "save file",
+        "key": "[C-x], [C-s]"
+    }, {
+        "val": "exit Emacs",
+        "key": "[C-x], [C-c]"
+    }],
         "Cursor Motion": [{
             "val": "Move forward by a character",
             "key": "C-f"

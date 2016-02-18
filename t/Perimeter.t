@@ -10,7 +10,7 @@ zci is_cached => 1;
 
 sub build_answer {
     my ($answer, $shape, $input) = @_;
-    
+
     return $answer, structured_answer => {
         id => 'perimeter',
         name => 'Answer',

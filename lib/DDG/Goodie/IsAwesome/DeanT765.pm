@@ -1,5 +1,5 @@
 package DDG::Goodie::IsAwesome::DeanT765;
-# ABSTRACT: DeanT765's first Goodie 
+# ABSTRACT: DeanT765's first Goodie
 
 use DDG::Goodie;
 use strict;

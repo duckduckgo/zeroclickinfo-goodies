@@ -131,7 +131,7 @@ ddg_goodie_test([qw(
             result    => '15 Jan 2014',
         },
     ),
-    
+
     'yesterday' => undef,
     'today' => undef,
     'five years' => undef,
