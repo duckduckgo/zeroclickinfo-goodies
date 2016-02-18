@@ -1,16 +1,16 @@
 {
 	"id": "aws_cli_cheat_sheet",
-	"name": "AWS CLI",
+	"name": "Amazon Web Services (AWS) CLI",
 	"template_type": "terminal",
 	"description": "It offers reliable, scalable, and inexpensive cloud computing services",
 	"metadata": {
-		"sourceName": "AWS CLI Cheat Sheet",
+		"sourceName": "Github",
 		"sourceUrl": "https://github.com/toddm92/aws/wiki/AWS-CLI-Cheat-Sheet"
 	},
 	"aliases": [
 		"aws basics",
 		"aws cmd",
-        "aws services"
+		"aws services"
 	],
 	"section_order": [
 		"Amazon S3",
@@ -126,7 +126,7 @@
 			"key": "aws elb describe-load-balancer-attributes --load-balancer-name <lb-name>",
 			"val": "Describe load balancer attributes"
 		}, {
-			"key": "aws elb describe-load-balancer-policies --policy-names [ <policy-name> | ELBSecurityPolicy-2014-10 ]",
+			"key": "aws elb describe-load-balancer-policies --policy-names \\[ <policy-name> | ELBSecurityPolicy-2014-10 \\]",
 			"val": "Describe load balancer policy"
 		}, {
 			"key": "aws elb register-instances-with-load-balancer --load-balancer-name <lb-name> --instances <instance-id>",
