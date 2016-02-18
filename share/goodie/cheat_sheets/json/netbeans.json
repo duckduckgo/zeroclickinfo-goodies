@@ -35,9 +35,6 @@
             "key": "[Ctrl] [,] ",
             "val": "Previous compile error"
         },{
-            "key": "[Ctrl] [[]",
-            "val": "Move caret to matching bracket"
-        },{
             "key": "[Ctrl] [K]",
             "val": "Next word match"
         },{
@@ -48,10 +45,10 @@
             "val": "Add/remove bookmark"
         }],
 		"Compiling & Running": [{
-            "key": "[F9]",
+            "key": "F9",
             "val": "Compile file"
         },{
-            "key": "[F11]",
+            "key": "F11",
             "val": "Build main project"
         },{
             "key": "[Ctrl] [Q]",
@@ -77,7 +74,7 @@
             "key": "[Shift] [F5]",
             "val": "Stop debugging session"
         },{
-            "key": "[F4]",
+            "key": "F4",
             "val": "Run to cursor location in file "
         },{
             "key": "[Ctrl] [F8]",
