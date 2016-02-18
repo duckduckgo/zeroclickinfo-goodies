@@ -40,13 +40,13 @@
             "val": "Calls method readRainbow when a click event is triggered on this button element (or its children) and passes in the event object"
         }, {
             "key": "<p>Hello \\{\\{greeting\\}\\}</p>",
-            "val": "Binds text content to an interpolated string, e.g. \"नमस्ते\""
+            "val": "Binds text content to an interpolated string, e.g. \"Hello World!\""
         }, {
             "key": "<my-cmp \\[(title)\\]=\"name\">",
             "val": "Sets up two-way data binding. Equivalent to: <my-cmp \\[title\\]=\"name\" (titleChange)=\"name=$event\">"
         }, {
             "key": "<p *myUnless=\"myExpression\">...</p>",
-            "val": "The * symbol means that the current element will be turned into an embedded template. Equivalent to: <template \\[myUnless\\]=\"myExpression\"><p>...</p></template>"
+            "val": "The * symbol means that the current element will be turned into an embedded template"
         }, {
             "key": "<p>Employer: \\{\\{employer?.companyName\\}\\}</p>",
             "val": "The Elvis operator (?) means that the employer field is optional and if undefined, the rest of the expression should be ignored"
