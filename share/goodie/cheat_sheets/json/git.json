@@ -123,8 +123,8 @@
             "key": "git reset --hard \\[commit\\]"
         }],
         "Synchronize Changes": [{
-            "val": "Downloads all history from the repository bookmark",
-            "key": "git fetch \\[bookmark\\]"
+            "val": "Downloads all history from the repository bookmark, optionally specifying branch",
+            "key": "git fetch \\[bookmark\\] \\[branch\\]"
 
         }, {
             "val": "Combines bookmark's branch into current local branches",
