@@ -7,7 +7,8 @@
         "sourceUrl": "https://github.com/vikashvverma/Goodies/blob/master/Shortcuts/Iterm2.md"
     },
     "aliases": [
-        "iterm"
+        "iterm",
+        "iterm 2"
     ],
     "template_type": "keyboard",
     "section_order": [
@@ -36,7 +37,7 @@
                 "val": "Go to Window"
             },
             {
-                "key": "[⌘] [Option] [←/↑/→/↓]",
+                "key": "[⌘] [Option] ([←] / [↑] / [→] / [↓])",
                 "val": "Go to Split Pane by Direction"
             },
             {
