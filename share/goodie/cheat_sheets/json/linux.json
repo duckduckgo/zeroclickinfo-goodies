@@ -345,11 +345,11 @@
         "Shortcuts":[
             {
                 "val":"backgrounds current command",
-                "key":"[ctrl] [c]"
+                "key":"[ctrl] [z]"
             },
             {
                 "val":"stops current command",
-                "key":"[ctrl] [z]"
+                "key":"[ctrl] [c]"
             },
             {
                 "val":"log out of current session",
