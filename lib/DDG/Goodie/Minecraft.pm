@@ -3,7 +3,7 @@ package DDG::Goodie::Minecraft;
 
 use strict;
 use DDG::Goodie;
-use JSON;
+use JSON::XS;
 
 zci answer_type => 'minecraft';
 zci is_cached => 1;
