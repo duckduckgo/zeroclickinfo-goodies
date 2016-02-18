@@ -51,6 +51,22 @@
             {
                 "key": "[Ctrl] [Tab]",
                 "val": "Navigate between tabs"
+            },
+            {
+                "key": "[Ctrl] [9]",
+                "val": "Switch to last tab"
+            },
+            {
+                "key": "[Alt] [F4]",
+                "val": "Close current window"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Open link in a new background tab"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Enter]",
+                "val": "Open link in a new foreground tab"
             }
         ],
         "Chrome Features": [
@@ -81,6 +97,10 @@
             {
                 "key": "[Shift] [Esc]",
                 "val": "Open Chrome task manager"
+            },
+            {
+                "key": "[Ctrl] [Shift] [C]",
+                "val": "Toggle Element Inspection mode"
             }
         ],
         "Webpage": [
