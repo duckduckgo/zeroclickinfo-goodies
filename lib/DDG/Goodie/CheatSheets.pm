@@ -1,7 +1,7 @@
 package DDG::Goodie::CheatSheets;
 # ABSTRACT: Load basic cheat sheets from JSON files
 
-use JSON::XS;
+use JSON::MaybeXS;
 use DDG::Goodie;
 use DDP;
 use File::Find::Rule;

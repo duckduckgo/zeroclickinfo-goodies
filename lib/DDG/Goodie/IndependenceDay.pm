@@ -3,7 +3,7 @@ package DDG::Goodie::IndependenceDay;
 
 use strict;
 use DDG::Goodie;
-use JSON::XS;
+use JSON::MaybeXS;
 use utf8;
 use Locale::Country;
 
