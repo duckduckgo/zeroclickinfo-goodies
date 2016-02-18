@@ -1,0 +1,87 @@
+{
+    "id":"hindu_gods_cheat_sheet",
+    "name":"Hindu Gods",
+    "description": "A brief description about Hindu Gods and Goddesses",
+    "metadata": {
+        "sourceName": "Dummies",
+        "sourceUrl": "http://www.dummies.com/how-to/content/hindu-gods-and-goddesses.html"
+    },
+    "aliases": [
+        "hinduism",
+        "hindu gods",
+        "hindu god",
+        "hindu goddesses",
+        "hindu goddess",
+        "hindu god and goddess"
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "God",
+        "God (continued)",
+        "Goddess"
+    ],
+    "sections": {
+        "God": [
+            {
+                "key": "Brahma, the Creator",
+                "val": "Brahma is the first member of the Hindu Trinity and is \" the Creator\" because he periodically creates everything in the universe"
+            },
+            {
+                "key": "Vishnu, the Preserver",
+                "val": "Vishnu is the second member of the Hindu Trinity. He maintains the order and harmony of the universe"
+            },
+            {
+                "key": "Shiva, the Destroyer",
+                "val": "Shiva is the third member of the Hindu Trinity, tasked with destroying the universe in order to prepare for its renewal at the end of each cycle of time"
+            },
+            {
+                "key": "Ganapati, the Remover of Obstacles",
+                "val": "Ganapati, also known as Ganesha, is Shiva’s first son"
+            },
+            {
+                "key": "Rama",
+                "val": "Rama is one of the most beloved Hindu gods and is the hero of the Hindu epic called the Ramayana"
+            },
+            {
+                "key": "Krishna",
+                "val": "If one Hindu god’s name is known and recognized throughout the world, it is Krishna"
+            }
+        ],
+        "God (continued)": [
+            {
+                "key": "Indra, the King of Heaven and lord of the gods",
+                "val": "Indra wields a thunderbolt and is a protector and provider of rain."
+            },
+            {
+                "key": "Surya, the sun",
+                "val": "Surya (or Soorya) is a golden warrior arriving on a chariot pulled by seven white horses"
+            },
+            {
+                "key": "Agni, the fire god",
+                "val": "Agni holds a special place in Hindu fire ritual to this day as the sacrificer"
+            },
+            {
+                "key": "Hanuman, the monkey king and devoted servant",
+                "val": "Hanuman is featured in the great Hindu epic the Ramayana as a servant of Rama"
+            }
+        ],
+        "Goddess": [
+            {
+                "key": "Saraswati, the Goddess of Learning",
+                "val": "Saraswati is the consort of Brahma the Creator and is worshipped as the goddess of learning, wisdom, speech, and music"
+            },
+            {
+                "key": "Lakshmi",
+                "val": "Lakshmi is the goddess of good fortune, wealth, and well-being"
+            },
+            {
+                "key": "Durga Devi",
+                "val": "Durga Devi is a powerful, even frightening goddess who fights fiercely in order to restore dharma (moral order)"
+            },
+            {
+                "key": "Parvati",
+                "val": "Parvati is the Hindu goddess of love, fertility and devotion"
+            }
+        ]
+    }
+}
