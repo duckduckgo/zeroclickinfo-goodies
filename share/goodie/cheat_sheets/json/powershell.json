@@ -12,7 +12,7 @@
         "power shell", "posh"
     ],
 
-    "template_type": "code",
+    "template_type": "terminal",
 
     "section_order": [
         "Arithmetic Operators",
