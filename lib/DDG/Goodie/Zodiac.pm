@@ -8,7 +8,7 @@ use DDG::Goodie;
 with 'DDG::GoodieRole::Dates';
 
 use DateTime;
-use JSON;
+use JSON::XS;
 
 zci is_cached   => 0;
 zci answer_type => "zodiac";
