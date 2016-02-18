@@ -45,7 +45,7 @@
                 "key": "DB2CC",
                 "val": "Open db2 control center"
             },
-        {
+            {
                 "key": "DB2LICM -l",
                 "val": "Get db2 type"
             }

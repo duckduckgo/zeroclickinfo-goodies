@@ -2,7 +2,7 @@
     "id": "github_atom_mac_cheat_sheet",
     "name": "Atom",
     "description": "Collection of keyboard shortcuts for atom text editor in mac",
-    "metadata":{
+    "metadata": {
         "sourceName": "Bugsnag",
         "sourceUrl": "https://bugsnag.com/blog/atom-editor-cheat-sheet"
     },
@@ -11,7 +11,7 @@
         "atom text editor mac"
     ],
     "template_type": "keyboard",
-    "section_order":[
+    "section_order": [
         "General",
         "File Navigation",
         "View/Window Manipulation",
@@ -22,8 +22,8 @@
         "GitHub Integration",
         "Selection"
     ],
-    "sections":{
-        "General":[
+    "sections": {
+        "General": [
             {
                 "key": "[Shift] [⌘] [P]",
                 "val": "Toggle command palette"
@@ -53,7 +53,7 @@
                 "val": "Close current window"
             }
         ],
-        "File Navigation":[
+        "File Navigation": [
             {
                 "key": "[⌘] [P]",
                 "val": "Toggle file finder"
@@ -95,7 +95,7 @@
                 "val": "Clear all bookmarks"
             }
         ],
-        "View/Window Manipulation":[
+        "View/Window Manipulation": [
             {
                 "key": "[⌘] [\\\\]",
                 "val": "Toggle tree-view sidebar"
@@ -109,7 +109,7 @@
                 "val": "Split pane left/right/up/down"
             }
         ],
-        "Find and Replace":[
+        "Find and Replace": [
             {
                 "key": "[Ctrl] [F]",
                 "val": "Find"
@@ -163,7 +163,7 @@
                 "val": "Previous result (find in files)"
             }
         ],
-        "Folding":[
+        "Folding": [
             {
                 "key": "[Ctrl] ( {\\[} / {\\]} )",
                 "val": "Fold/expand"
@@ -181,7 +181,7 @@
                 "val": "Fold level X"
             }
         ],
-        "Word Manipulation":[
+        "Word Manipulation": [
             {
                 "key": "[Ctrl] [T]",
                 "val": "Transpose characters either side of cursor"
@@ -195,7 +195,7 @@
                 "val": "Delete text to end of word"
             }
         ],
-        "Line Manipulation":[
+        "Line Manipulation": [
             {
                 "key": "[⌘] ( {\\[} / {\\]} )",
                 "val": "Indent/outdent current line"
@@ -225,7 +225,7 @@
                 "val": "Join current and next lines"
             }
         ],
-        "GitHub Integration":[
+        "GitHub Integration": [
             {
                 "key": "[Alt] [G] [B]",
                 "val": "Open on GitHub : blame"
@@ -251,7 +251,7 @@
                 "val": "Open on GitHub: branch-compare"
             }
         ],
-        "Selection":[
+        "Selection": [
             {
                 "key": "[⌘] [D]",
                 "val": "Select current word/token"

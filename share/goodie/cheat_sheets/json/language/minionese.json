@@ -4,10 +4,11 @@
     "description": "A list of Minion words and their English translations",
     "metadata": {
         "sourceName": "Wikia",
-        "sourceUrl" : "http://minionpedia.wikia.com/wiki/Dictionary"
+        "sourceUrl": "http://minionpedia.wikia.com/wiki/Dictionary"
     },
     "aliases": [
-        "minionese", "minion language"
+        "minionese",
+        "minion language"
     ],
     "template_type": "language",
     "section_order": [

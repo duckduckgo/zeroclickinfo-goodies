@@ -6,31 +6,43 @@
         "sourceName": "Cheatcc",
         "sourceUrl": "http://www.cheatcc.com/pc/roadrash.html"
     },
-    "aliases": [ "roadrash" ],
+    "aliases": [
+        "roadrash"
+    ],
     "template_type": "reference",
-    "section_order": ["Cheats"],
+    "section_order": [
+        "Cheats"
+    ],
     "sections": {
-        "Cheats": [{
-            "val": "No more cops",
-            "key": "bribe"
-        }, {
-            "val": "Refill nitros",
-            "key": "spoon!"
-        }, {
-            "val": "Get chain",
-            "key": "thwack!"
-        }, {
-            "val": "Overkill mode",
-            "key": "overkill"
-        }, {
-            "val": "Get club",
-            "key": "k'thunk!"
-        }, {
-            "val": "Eliminate police",
-            "key": "yes,occifer"
-        }, {
-            "val": "Disable all cheats",
-            "key": "plugh"
-        }]
+        "Cheats": [
+            {
+                "val": "No more cops",
+                "key": "bribe"
+            },
+            {
+                "val": "Refill nitros",
+                "key": "spoon!"
+            },
+            {
+                "val": "Get chain",
+                "key": "thwack!"
+            },
+            {
+                "val": "Overkill mode",
+                "key": "overkill"
+            },
+            {
+                "val": "Get club",
+                "key": "k'thunk!"
+            },
+            {
+                "val": "Eliminate police",
+                "key": "yes,occifer"
+            },
+            {
+                "val": "Disable all cheats",
+                "key": "plugh"
+            }
+        ]
     }
 }

@@ -564,8 +564,8 @@
         "currencies": [
             {
                 "shortcode": "CRC",
-                "currency": "Costa Rican Col\u00f3N",
-                "string": "Costa Rican Col\u00f3N (CRC)"
+                "currency": "Costa Rican ColóN",
+                "string": "Costa Rican ColóN (CRC)"
             }
         ]
     },
@@ -594,8 +594,8 @@
             }
         ]
     },
-    "cura\u00e7ao": {
-        "ucwords": "Cura\u00e7Ao",
+    "curaçao": {
+        "ucwords": "CuraçAo",
         "currencies": [
             {
                 "shortcode": "ANG",
@@ -624,8 +624,8 @@
             }
         ]
     },
-    "c\u00f4te d'ivoire": {
-        "ucwords": "C\u00f4Te D'Ivoire",
+    "côte d'ivoire": {
+        "ucwords": "CôTe D'Ivoire",
         "currencies": [
             {
                 "shortcode": "XOF",
@@ -719,8 +719,8 @@
         "currencies": [
             {
                 "shortcode": "SVC",
-                "currency": "Salvadoran Col\u00f3N",
-                "string": "Salvadoran Col\u00f3N (SVC)"
+                "currency": "Salvadoran ColóN",
+                "string": "Salvadoran ColóN (SVC)"
             },
             {
                 "shortcode": "USD",
@@ -789,8 +789,8 @@
             },
             {
                 "shortcode": "NON ISO 4217",
-                "currency": "Faroese Kr\u00f3Na",
-                "string": "Faroese Kr\u00f3Na (NON ISO 4217)"
+                "currency": "Faroese KróNa",
+                "string": "Faroese KróNa (NON ISO 4217)"
             }
         ]
     },
@@ -1014,8 +1014,8 @@
         "currencies": [
             {
                 "shortcode": "ISK",
-                "currency": "Icelandic Kr\u00f3Na",
-                "string": "Icelandic Kr\u00f3Na (ISK)"
+                "currency": "Icelandic KróNa",
+                "string": "Icelandic KróNa (ISK)"
             }
         ]
     },
@@ -1489,8 +1489,8 @@
         "currencies": [
             {
                 "shortcode": "MNT",
-                "currency": "Mongolian T\u00f6Gr\u00f6G",
-                "string": "Mongolian T\u00f6Gr\u00f6G (MNT)"
+                "currency": "Mongolian TöGröG",
+                "string": "Mongolian TöGröG (MNT)"
             }
         ]
     },
@@ -1624,8 +1624,8 @@
         "currencies": [
             {
                 "shortcode": "NIO",
-                "currency": "Nicaraguan C\u00f3Rdoba",
-                "string": "Nicaraguan C\u00f3Rdoba (NIO)"
+                "currency": "Nicaraguan CóRdoba",
+                "string": "Nicaraguan CóRdoba (NIO)"
             }
         ]
     },
@@ -1764,8 +1764,8 @@
         "currencies": [
             {
                 "shortcode": "PYG",
-                "currency": "Paraguayan Guaran\u00ed",
-                "string": "Paraguayan Guaran\u00ed (PYG)"
+                "currency": "Paraguayan Guaraní",
+                "string": "Paraguayan Guaraní (PYG)"
             }
         ]
     },
@@ -1809,8 +1809,8 @@
         "currencies": [
             {
                 "shortcode": "PLN",
-                "currency": "Polish Z\u0142oty",
-                "string": "Polish Z\u0142oty (PLN)"
+                "currency": "Polish Złoty",
+                "string": "Polish Złoty (PLN)"
             }
         ]
     },
@@ -1954,8 +1954,8 @@
         "currencies": [
             {
                 "shortcode": "WST",
-                "currency": "Samoan T\u0101L\u0101",
-                "string": "Samoan T\u0101L\u0101 (WST)"
+                "currency": "Samoan TāLā",
+                "string": "Samoan TāLā (WST)"
             }
         ]
     },
@@ -2229,13 +2229,13 @@
             }
         ]
     },
-    "s\u00e3o tom\u00e9 and pr\u00edncipe": {
-        "ucwords": "S\u00e3O Tom\u00e9 and Pr\u00edNcipe",
+    "são tomé and príncipe": {
+        "ucwords": "SãO Tomé and PríNcipe",
         "currencies": [
             {
                 "shortcode": "STD",
-                "currency": "S\u00e3O Tom\u00e9 and Pr\u00edNcipe Dobra",
-                "string": "S\u00e3O Tom\u00e9 and Pr\u00edNcipe Dobra (STD)"
+                "currency": "SãO Tomé and PríNcipe Dobra",
+                "string": "SãO Tomé and PríNcipe Dobra (STD)"
             }
         ]
     },
@@ -2294,8 +2294,8 @@
         "currencies": [
             {
                 "shortcode": "TOP",
-                "currency": "Tongan Pa\u02bbAnga",
-                "string": "Tongan Pa\u02bbAnga (TOP)"
+                "currency": "Tongan PaʻAnga",
+                "string": "Tongan PaʻAnga (TOP)"
             }
         ]
     },
@@ -2484,8 +2484,8 @@
         "currencies": [
             {
                 "shortcode": "VEF",
-                "currency": "Venezuelan Bol\u00edVar",
-                "string": "Venezuelan Bol\u00edVar (VEF)"
+                "currency": "Venezuelan BolíVar",
+                "string": "Venezuelan BolíVar (VEF)"
             }
         ]
     },
@@ -2494,8 +2494,8 @@
         "currencies": [
             {
                 "shortcode": "VND",
-                "currency": "Vietnamese \u0111\u1ed3Ng",
-                "string": "Vietnamese \u0111\u1ed3Ng (VND)"
+                "currency": "Vietnamese đồNg",
+                "string": "Vietnamese đồNg (VND)"
             }
         ]
     },

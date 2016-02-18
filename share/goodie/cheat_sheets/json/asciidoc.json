@@ -22,8 +22,8 @@
         "Horizontal Rule",
         "Special"
     ],
-    "sections" : {
-        "Headers" : [
+    "sections": {
+        "Headers": [
             {
                 "key": "= DOCTITLE",
                 "val": "Document Title"
@@ -45,7 +45,7 @@
                 "val": "H4. Can also be created by putting four or more pluses under Heading"
             }
         ],
-        "Emphasis" : [
+        "Emphasis": [
             {
                 "key": "__text__",
                 "val": "Displays the text in italics"
@@ -67,7 +67,7 @@
                 "val": "Adds strikethrough effect to the text and bolts it"
             }
         ],
-        "Lists" : [
+        "Lists": [
             {
                 "key": "1. item1",
                 "val": "First ordered list item"
@@ -93,7 +93,7 @@
                 "val": "Unordered sublist item"
             }
         ],
-        "Links" : [
+        "Links": [
             {
                 "key": "https://duckduckgo.com\\[link text\\]",
                 "val": "Inline-style link"
@@ -107,7 +107,7 @@
                 "val": "Inline-style anchor link"
             }
         ],
-        "Images" : [
+        "Images": [
             {
                 "key": "image:https://github.com/n48.png\\[Logo Title\\]",
                 "val": "Inline style"
@@ -123,29 +123,29 @@
         ],
         "Code and Syntax Highlighting": [
             {
-                "key":"{\\[source,perl\\]}{----}{die 'connect: '.$dbh->errstr;}{----}",
-                "val":"Source block with perl syntax highlighting"
+                "key": "{\\[source,perl\\]}{----}{die 'connect: '.$dbh->errstr;}{----}",
+                "val": "Source block with perl syntax highlighting"
             }
         ],
-        "Blockquotes" : [
+        "Blockquotes": [
             {
-                "key":"{\\[quote, cite author, cite source\\]}{____}{DuckDuckGo rocks}{____}",
+                "key": "{\\[quote, cite author, cite source\\]}{____}{DuckDuckGo rocks}{____}",
                 "val": "Blockquotes, with optional citation"
             }
         ],
-        "Inline HTML" : [
+        "Inline HTML": [
             {
                 "key": "pass:\\[<b>Duck</b>DuckGo\\]",
                 "val": "You can use raw HTML in your asciidoc"
             }
         ],
-        "Horizontal Rule" : [
+        "Horizontal Rule": [
             {
                 "key": "'''",
                 "val": "You can get a horizontal rule by typing three or more apostrophes (') on a line"
             }
         ],
-        "Special" : [
+        "Special": [
             {
                 "key": ":ATTRIBNAME: ATTRIBVAL",
                 "val": "Set attribute ATTRIBNAME to ATTRIBVAL"

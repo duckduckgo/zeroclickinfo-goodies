@@ -2,18 +2,16 @@
     "id": "perforce_cheat_sheet",
     "name": "Perforce",
     "description": "Perforce cheat sheet for the command line client.",
-
     "metadata": {
         "sourceName": "Perforce",
-        "sourceUrl" : "https://www.perforce.com"
+        "sourceUrl": "https://www.perforce.com"
     },
-
     "aliases": [
-        "p4", "perforce command line client", "p4 command line"
+        "p4",
+        "perforce command line client",
+        "p4 command line"
     ],
-
     "template_type": "terminal",
-
     "section_order": [
         "Develop",
         "Local Security",
@@ -21,7 +19,6 @@
         "Investigate",
         "Labels"
     ],
-
     "sections": {
         "Develop": [
             {

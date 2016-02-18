@@ -12,7 +12,7 @@
         "basic kubernetes"
     ],
     "section_order": [
-    "Physical Layout",
+        "Physical Layout",
         "Abstraction Overview",
         "Abstraction Details"
     ],
@@ -38,7 +38,7 @@
                 "key": "kubectl describe node123",
                 "val": "Get info about 'node123'"
             }
-            ],
+        ],
         "Abstraction Overview": [
             {
                 "key": "kubectl get pods",
@@ -80,8 +80,8 @@
                 "key": "kubectl delete svc nginx",
                 "val": "Remove a service named nginx"
             }
-            ],
-         "Abstraction Details": [
+        ],
+        "Abstraction Details": [
             {
                 "key": "kubectl run ubuntu --image=ubuntu",
                 "val": "To launch a pod and implicitly create a RC"
@@ -134,6 +134,6 @@
                 "key": "kubectl get quota",
                 "val": "To see the resource quotas of a namespace use"
             }
-            ]
-     }
+        ]
+    }
 }

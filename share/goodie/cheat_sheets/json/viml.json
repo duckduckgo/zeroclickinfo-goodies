@@ -7,7 +7,9 @@
         "sourceUrl": "http://vimdoc.sourceforge.net/htmldoc/usr_41.html"
     },
     "aliases": [
-        "vim language", "vim scripting", "vim script"
+        "vim language",
+        "vim scripting",
+        "vim script"
     ],
     "template_type": "code",
     "section_order": [
@@ -19,8 +21,8 @@
         "List Manipulation",
         "Cursor Manipulation"
     ],
-    "sections" : {
-        "Variable Scope" : [
+    "sections": {
+        "Variable Scope": [
             {
                 "key": "b:var",
                 "val": "Variable local to buffer"
@@ -50,7 +52,7 @@
                 "val": "Variable for function argument"
             }
         ],
-        "Data Types" : [
+        "Data Types": [
             {
                 "key": "'String'",
                 "val": "String with no keycode expansion"
@@ -68,7 +70,7 @@
                 "val": "List"
             }
         ],
-        "Buffer Interaction" : [
+        "Buffer Interaction": [
             {
                 "key": "getbufline(1, 1)",
                 "val": "Get the line 1 of the first buffer"
@@ -90,7 +92,7 @@
                 "val": "Search the current buffer for DuckDuckGo, no wrap around"
             }
         ],
-        "String Manipulation" : [
+        "String Manipulation": [
             {
                 "key": "printf('%03g', 17)",
                 "val": "Create a formatted string '017'"
@@ -116,12 +118,12 @@
                 "val": "Find the first number in a string increment it by one"
             }
         ],
-        "I/O" : [
+        "I/O": [
             {
                 "key": "system('echo DuckDuckGo')",
                 "val": "Get the output of the command echo"
             },
-                        {
+            {
                 "key": "systemlist('echo DuckDuckGo')",
                 "val": "Get the output of the command echo as a list of lines"
             },
@@ -134,7 +136,7 @@
                 "val": "Write two lines to a file"
             }
         ],
-        "List Manipulation" : [
+        "List Manipulation": [
             {
                 "key": "add(varlist, 3)",
                 "val": "Add an item to varlist"
@@ -156,7 +158,7 @@
                 "val": "Split a string at a list, with space as the delimiter"
             }
         ],
-        "Cursor Manipulation" : [
+        "Cursor Manipulation": [
             {
                 "key": "getpos('.')",
                 "val": "Get the position of mark . (the cursor)"

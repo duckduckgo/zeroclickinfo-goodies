@@ -30,7 +30,7 @@
                 "val": "Generate a makefile from the current Drupal site."
             }
         ],
-        "Runserver commands" : [
+        "Runserver commands": [
             {
                 "key": "runserver",
                 "val": "Runs a lightweight built in http server for development."
@@ -244,4 +244,3 @@
         ]
     }
 }
-

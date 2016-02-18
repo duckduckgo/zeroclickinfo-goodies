@@ -40,9 +40,8 @@
                 "key": "\\[color=\\{color\\}\\]\\{text\\}\\[/color\\]",
                 "val": "Changes the color of {text}"
             }
-
         ],
-        "Quoting and fixed-width text" : [
+        "Quoting and fixed-width text": [
             {
                 "key": "\\[center\\]\\{text\\}\\[/center\\]",
                 "val": "Centers {text} on screen"
@@ -52,7 +51,7 @@
                 "val": "Creates a quotation box containing {text}"
             },
             {
-               "key": "\\[quote=\\{name\\}\\]\\{text\\}\\[/quote\\]",
+                "key": "\\[quote=\\{name\\}\\]\\{text\\}\\[/quote\\]",
                 "val": "Creates a quotation box quoting {name} as saying {text}"
             },
             {
@@ -61,7 +60,6 @@
             }
         ],
         "Lists and Tables": [
-
             {
                 "key": "\\[list\\]\\{items\\}\\[/list\\]",
                 "val": "Common variant: List of {items}"
@@ -113,4 +111,3 @@
         ]
     }
 }
-

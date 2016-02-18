@@ -3,15 +3,15 @@
     "name": "Toontown",
     "description": "Commands For the Toontown Private Servers",
     "aliases": [
-        "toontown mod", "tto", "tto mod"
+        "toontown mod",
+        "tto",
+        "tto mod"
     ],
-    "metadata" : {
-      "sourceName" : "Wikipedia",
-      "sourceUrl" : "https://wikipedia.org/wiki/Toontown_Online"
-   },
-
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://wikipedia.org/wiki/Toontown_Online"
+    },
     "template_type": "terminal",
-
     "section_order": [
         "Toon",
         "Toontasks",
@@ -20,7 +20,6 @@
         "Games",
         "System"
     ],
-
     "sections": {
         "Toon": [
             {

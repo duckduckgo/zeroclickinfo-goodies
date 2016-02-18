@@ -6,7 +6,7 @@
         "sourceName": "LagMonster",
         "sourceUrl": "http://www.lagmonster.org/docs/vi.html"
     },
-    "template_type" : "keyboard",
+    "template_type": "keyboard",
     "section_order": [
         "Quitting",
         "Inserting Text",
@@ -19,7 +19,6 @@
         "Motion",
         "Other"
     ],
-
     "sections": {
         "Quitting": [
             {
@@ -225,7 +224,7 @@
         ],
         "Search for strings": [
             {
-                "key": "\/string",
+                "key": "/string",
                 "val": "Search forward for string"
             },
             {
@@ -243,7 +242,7 @@
         ],
         "Replace": [
             {
-                "key": ":s\/pattern\/string\/flags",
+                "key": ":s/pattern/string/flags",
                 "val": "Replace pattern with string according to flags"
             },
             {

@@ -4,7 +4,7 @@
     "description": "Gambling Card Game",
     "metadata": {
         "sourceName": "Wikipedia",
-        "sourceUrl" : "https://en.wikipedia.org/wiki/List_of_poker_hands"
+        "sourceUrl": "https://en.wikipedia.org/wiki/List_of_poker_hands"
     },
     "template_type": "reference",
     "section_order": [
@@ -77,7 +77,7 @@
             },
             {
                 "key": "Three of a kind",
-                "val" : "2.11%"
+                "val": "2.11%"
             },
             {
                 "key": "Two pair",
@@ -88,8 +88,8 @@
                 "val": "42.26%"
             },
             {
-               "key": "High card",
-               "val": "50.11%"
+                "key": "High card",
+                "val": "50.11%"
             }
         ]
     }

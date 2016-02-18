@@ -2,18 +2,15 @@
     "id": "powershell_cheat_sheet",
     "name": "PowerShell",
     "description": "Cheat sheet for syntax, operators, and operations in the PowerShell language",
-
     "metadata": {
         "sourceName": "TechNet",
-        "sourceUrl" : "https://technet.microsoft.com/en-us/library/hh847856.aspx"
+        "sourceUrl": "https://technet.microsoft.com/en-us/library/hh847856.aspx"
     },
-
     "aliases": [
-        "power shell", "posh"
+        "power shell",
+        "posh"
     ],
-
     "template_type": "terminal",
-
     "section_order": [
         "Arithmetic Operators",
         "Assignment Operators",
@@ -26,7 +23,6 @@
         "Strings",
         "Loops"
     ],
-
     "sections": {
         "Redirection Operators": [
             {

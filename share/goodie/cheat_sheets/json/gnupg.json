@@ -60,62 +60,59 @@
         ],
         "Key Management": [
             {
-                "val":"Export a public key to an ascii-armoured file",
+                "val": "Export a public key to an ascii-armoured file",
                 "key": "gpg -o \\[file.asc\\] --export -a \\[key\\]"
             },
             {
-                "val":"Export a secret key to an ascii-armoured file",
+                "val": "Export a secret key to an ascii-armoured file",
                 "key": "gpg -o \\[file.asc\\] --export-secret-key -a \\[key\\]"
             },
             {
-                "val":"Import key(s) into the local keychain",
+                "val": "Import key(s) into the local keychain",
                 "key": "gpg --import \\[file\\]"
             },
             {
-                "val":"Delete key(s) from the local keychain",
+                "val": "Delete key(s) from the local keychain",
                 "key": "gpg --delete-keys \\[key(s)\\]"
             },
             {
-                "val":"List keys in local keychain",
+                "val": "List keys in local keychain",
                 "key": "gpg --list \\[optional search\\]"
             },
             {
-                "val":"List key fingerprint(s)",
+                "val": "List key fingerprint(s)",
                 "key": "gpg --fingerprint \\[key(s)\\]"
             },
             {
-                "val":"Generate a new key pair",
+                "val": "Generate a new key pair",
                 "key": "gpg --gen-key"
             },
             {
-                "val":"Generate a revocation certificate for a key",
+                "val": "Generate a revocation certificate for a key",
                 "key": "gpg --gen-revoke \\[key\\]"
             },
             {
-                "val":"Sign or edit a key",
+                "val": "Sign or edit a key",
                 "key": "gpg --edit \\[key\\]"
             }
         ],
         "Key Server": [
             {
-                "val":"Send a key to a key server",
+                "val": "Send a key to a key server",
                 "key": "gpg --send-keys \\[key(s)\\]"
             },
             {
-                "val":"Retrieve a key from a key server",
+                "val": "Retrieve a key from a key server",
                 "key": "gpg --recv-keys \\[key(s)\\]"
             },
             {
-                "val":"Search for keys on a key server",
+                "val": "Search for keys on a key server",
                 "key": "gpg --search-keys \\[search\\]"
             },
             {
-                "val":"Refresh all keys in local keyring",
+                "val": "Refresh all keys in local keyring",
                 "key": "gpg --refresh-keys"
             }
         ]
     }
 }
-
-
-

@@ -14,7 +14,12 @@
         "sc2"
     ],
     "template_type": "reference",
-    "section_order": ["Resources and Research", "Game Modifications", "Units", "Wings of Liberty Only"],
+    "section_order": [
+        "Resources and Research",
+        "Game Modifications",
+        "Units",
+        "Wings of Liberty Only"
+    ],
     "sections": {
         "Units": [
             {

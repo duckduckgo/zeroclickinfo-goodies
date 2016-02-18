@@ -9,7 +9,7 @@
     "aliases": [
         "k-multimedia player"
     ],
-   "template_type": "keyboard",
+    "template_type": "keyboard",
     "section_order": [
         "Open",
         "Album",
@@ -54,7 +54,6 @@
                 "key": "F2",
                 "val": "Help"
             }
-
         ],
         "Capture": [
             {
@@ -82,7 +81,6 @@
                 "val": "Frame Extract"
             }
         ],
-
         "Audio": [
             {
                 "key": "Down",
@@ -354,7 +352,6 @@
             }
         ],
         "Open": [
-
             {
                 "key": "[Ctrl] [O]",
                 "val": "Open"

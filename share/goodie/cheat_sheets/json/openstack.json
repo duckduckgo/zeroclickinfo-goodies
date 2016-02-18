@@ -12,15 +12,15 @@
         "open stack cli",
         "open stack commands"
     ],
-    "template_type" : "terminal",
+    "template_type": "terminal",
     "section_order": [
-    "Identity (keystone)",
+        "Identity (keystone)",
         "Images (glance)",
         "Compute (nova)",
         "Networking (neutron)",
         "Block Storage (cinder)",
         "Volume Management inside Instance",
-    "Object Storage (swift)"
+        "Object Storage (swift)"
     ],
     "sections": {
         "Identity (keystone)": [
@@ -63,7 +63,7 @@
                 "val": "Register raw image"
             }
         ],
-         "Compute (nova)": [
+        "Compute (nova)": [
             {
                 "key": "nova list",
                 "val": "List instances, check status of instance"
@@ -187,16 +187,16 @@
                 "val": "Create a mountpoint"
             },
             {
-                "key":"mount /dev/vdb /myspace",
-                "val":"Mount the volume at the mountpoint"
+                "key": "mount /dev/vdb /myspace",
+                "val": "Mount the volume at the mountpoint"
             },
             {
-                "key":"touch /myspace/helloworld.txt",
-                "val":"Create a file on the volume"
+                "key": "touch /myspace/helloworld.txt",
+                "val": "Create a file on the volume"
             },
             {
-                "key":"umount /myspace",
-                "val":"Unmount the volume"
+                "key": "umount /myspace",
+                "val": "Unmount the volume"
             }
         ],
         "Object Storage (swift)": [
@@ -209,5 +209,5 @@
                 "val": "List containers"
             }
         ]
-     }
+    }
 }

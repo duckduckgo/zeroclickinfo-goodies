@@ -1,8 +1,8 @@
- {
+{
     "id": "typescript_cheat_sheet",
     "name": "TypeScript",
-    "description":"TypeScript is a typed superset of JavaScript that compiles to plain JavaScript",
-    "metadata":{
+    "description": "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript",
+    "metadata": {
         "sourceName": "TypeScript",
         "sourceUrl": "http://www.typescriptlang.org/Handbook"
     },

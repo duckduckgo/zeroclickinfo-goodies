@@ -12,7 +12,11 @@
         "chess movement"
     ],
     "template_type": "reference",
-    "section_order": ["Pieces", "Gameplay", "Special Movement"],
+    "section_order": [
+        "Pieces",
+        "Gameplay",
+        "Special Movement"
+    ],
     "sections": {
         "Pieces": [
             {

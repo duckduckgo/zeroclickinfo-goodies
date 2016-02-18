@@ -2,34 +2,29 @@
     "id": "perforce_workshop_cheat_sheet",
     "name": "Perforce Workshop",
     "description": "Cheat sheet for getting started with DVCS in the Perforce Workshop.",
-
     "metadata": {
         "sourceName": "Perforce Workshop",
-        "sourceUrl" : "https://swarm.workshop.perforce.com"
+        "sourceUrl": "https://swarm.workshop.perforce.com"
     },
-
     "aliases": [
         "p4workshop"
     ],
-
     "template_type": "terminal",
-
     "section_order": [
         "Create Repositories",
         "Making Changes",
         "Synchronize with the Workshop",
         "Setup"
     ],
-
     "sections": {
-         "Setup": [
+        "Setup": [
             {
                 "key": "export P4USER=<user_name>",
                 "val": "Sets the user name"
             },
             {
                 "key": "export P4PORT=workshop.perforce.com:1666",
-                 "val": "Sets the Workshop's server and port"
+                "val": "Sets the Workshop's server and port"
             },
             {
                 "key": "p4 login",

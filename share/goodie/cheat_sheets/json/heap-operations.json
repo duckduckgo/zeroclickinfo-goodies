@@ -18,103 +18,139 @@
         "Fibonacci Heap"
     ],
     "sections": {
-        "Linked List (sorted)": [{
-            "val": "O(1)",
-            "key": "Find Max"
-        }, {
-            "val": "O(1)",
-            "key": "Extract Max"
-        }, {
-            "val": "O(n)",
-            "key": "Increase Key"
-        }, {
-            "val": "O(n)",
-            "key": "Insert"
-        }, {
-            "val": "O(1)",
-            "key": "Delete"
-        }, {
-            "val": "O(m+n)",
-            "key": "Merge"
-        }],
-        "Linked List (unsorted)": [{
-            "val": "O(n)",
-            "key": "Find Max"
-        }, {
-            "val": "O(n)",
-            "key": "Extract Max"
-        }, {
-            "val": "O(1)",
-            "key": "Increase Key"
-        }, {
-            "val": "O(1)",
-            "key": "Insert"
-        }, {
-            "val": "O(1)",
-            "key": "Delete"
-        }, {
-            "val": "O(1)",
-            "key": "Merge"
-        }],
-        "Binary Heap": [{
-            "val": "O(n)",
-            "key": "Heapify"
-        }, {
-            "val": "O(1)",
-            "key": "Find Max"
-        }, {
-            "val": "O(log(n))",
-            "key": "Extract Max"
-        }, {
-            "val": "O(log(n))",
-            "key": "Increase Key"
-        }, {
-            "val": "O(log(n))",
-            "key": "Insert"
-        }, {
-            "val": "O(log(n))",
-            "key": "Delete"
-        }, {
-            "val": "O(m+n)",
-            "key": "Merge"
-        }],
-        "Binomial Heap": [{
-            "val": "O(1)",
-            "key": "Find Max"
-        }, {
-            "val": "O(log(n))",
-            "key": "Extract Max"
-        }, {
-            "val": "O(log(n))",
-            "key": "Increase Key"
-        }, {
-            "val": "O(1)",
-            "key": "Insert"
-        }, {
-            "val": "O(log(n))",
-            "key": "Delete"
-        }, {
-            "val": "O(log(n))",
-            "key": "Merge"
-        }],
-        "Fibonacci Heap": [{
-            "val": "O(1)",
-            "key": "Find Max"
-        }, {
-            "val": "O(log(n))",
-            "key": "Extract Max"
-        }, {
-            "val": "O(1)",
-            "key": "Increase Key"
-        }, {
-            "val": "O(1)",
-            "key": "Insert"
-        }, {
-            "val": "O(log(n))",
-            "key": "Delete"
-        }, {
-            "val": "O(1)",
-            "key": "Merge"
-        }]
+        "Linked List (sorted)": [
+            {
+                "val": "O(1)",
+                "key": "Find Max"
+            },
+            {
+                "val": "O(1)",
+                "key": "Extract Max"
+            },
+            {
+                "val": "O(n)",
+                "key": "Increase Key"
+            },
+            {
+                "val": "O(n)",
+                "key": "Insert"
+            },
+            {
+                "val": "O(1)",
+                "key": "Delete"
+            },
+            {
+                "val": "O(m+n)",
+                "key": "Merge"
+            }
+        ],
+        "Linked List (unsorted)": [
+            {
+                "val": "O(n)",
+                "key": "Find Max"
+            },
+            {
+                "val": "O(n)",
+                "key": "Extract Max"
+            },
+            {
+                "val": "O(1)",
+                "key": "Increase Key"
+            },
+            {
+                "val": "O(1)",
+                "key": "Insert"
+            },
+            {
+                "val": "O(1)",
+                "key": "Delete"
+            },
+            {
+                "val": "O(1)",
+                "key": "Merge"
+            }
+        ],
+        "Binary Heap": [
+            {
+                "val": "O(n)",
+                "key": "Heapify"
+            },
+            {
+                "val": "O(1)",
+                "key": "Find Max"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Extract Max"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Increase Key"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Insert"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Delete"
+            },
+            {
+                "val": "O(m+n)",
+                "key": "Merge"
+            }
+        ],
+        "Binomial Heap": [
+            {
+                "val": "O(1)",
+                "key": "Find Max"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Extract Max"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Increase Key"
+            },
+            {
+                "val": "O(1)",
+                "key": "Insert"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Delete"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Merge"
+            }
+        ],
+        "Fibonacci Heap": [
+            {
+                "val": "O(1)",
+                "key": "Find Max"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Extract Max"
+            },
+            {
+                "val": "O(1)",
+                "key": "Increase Key"
+            },
+            {
+                "val": "O(1)",
+                "key": "Insert"
+            },
+            {
+                "val": "O(log(n))",
+                "key": "Delete"
+            },
+            {
+                "val": "O(1)",
+                "key": "Merge"
+            }
+        ]
     }
 }

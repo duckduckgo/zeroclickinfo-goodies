@@ -2,23 +2,20 @@
     "id": "<: $ia_id :>_cheat_sheet",
     "name": "<: $ia_name_separated :>",
     "description": "displayed as subtitle of the AnswerBar; optional",
-
     "metadata": {
         "sourceName": "displayed at the bottom of the AnswerBar; optional",
-        "sourceUrl" : "https://url.to.the.source"
+        "sourceUrl": "https://url.to.the.source"
     },
-
     "aliases": [
-        "first alias", "second alias", "etc"
+        "first alias",
+        "second alias",
+        "etc"
     ],
-
     "template_type": "one of: keyboard, terminal, code, reference",
-
     "section_order": [
         "First Section",
         "Second Section"
     ],
-
     "sections": {
         "First Section": [
             {
