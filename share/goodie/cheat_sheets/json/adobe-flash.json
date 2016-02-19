@@ -52,7 +52,7 @@
 			"val": "Add blank keyframe"
 		}],
 		"Timeline": [{
-			"key": "[Enter]",
+			"key": "Enter",
 			"val": "Play"
 		}, {
 			"key": "[Ctrl] [0]",
@@ -155,16 +155,16 @@
 		}, {
 			"key": "Z",
 			"val": "Magnifier"
-		},{
+		}, {
             "key": "Q",
             "val": "Free transform"
-        },{
+        }, {
             "key": "F",
             "val": "Fill transform"
-        },{
+        }, {
             "key": "J",
             "val": "Object drawing"
-        },{
+        }, {
             "key": "U",
             "val": "Deco tool"
         }]
