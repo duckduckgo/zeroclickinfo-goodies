@@ -90,7 +90,7 @@ handle query_nowhitespace => sub {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
 
-    $tmp_expr =~ s/log(?!_)/log_10/xig;
+    $tmp_expr =~ s/log(?!(_|[0-9]))/log10/xig;
     $tmp_expr =~ s/ln/log/xig;
 
     $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
