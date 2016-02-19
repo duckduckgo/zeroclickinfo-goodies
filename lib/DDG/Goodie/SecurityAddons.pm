@@ -11,12 +11,13 @@ zci is_cached   => 1;
 # Triggers
 triggers startend => "privacy extensions", "privacy addons", "privacy extension", "privacy addon"; #if the keywords are at the beginning or end, then trigger
 
-my @triggerwords = ("firefox", "safari", "google chrome", "opera", "chrome");
+my @triggerwords = ("firefox", "safari", "google chrome", "opera", "chrome", "vivaldi");
 my $list_data = [
     { browser => "Firefox", link => "https://addons.mozilla.org/en-US/firefox/collections/mozilla/privacy/" },
     { browser => "Safari", link => "https://extensions.apple.com/?category=security" },
     { browser => "Google Chrome", link => "https://chrome.google.com/webstore/search/anonymous" },
-    { browser => "Opera", link => "https://addons.opera.com/en/extensions/category/privacy-security/" }
+    { browser => "Opera", link => "https://addons.opera.com/en/extensions/category/privacy-security/" },
+    { browser => "Vivaldi", link => "https://chrome.google.com/webstore/search/anonymous" }
 ];
 my $plaintext="";
 foreach(@$list_data){
