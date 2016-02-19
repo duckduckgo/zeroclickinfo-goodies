@@ -25,7 +25,7 @@
             },
             {
                 "val": "Quick Operations",
-                "key": ". "
+                "key": "."
             },
             {
                 "val": "Create Issue",
@@ -61,7 +61,7 @@
             },
             {
                 "val": "Submit Form",
-                "key": "[Ctrl] [s]"
+                "key": "[Alt] [s]"
             },
             {
                 "val": "Help",
