@@ -105,8 +105,8 @@
             "trn": "mera purse goom ho gaya"
         }, {
             "key": "Can I use your phone?",
-            "val": "फ़ोन कर सकता हूं ?",
-            "trn": "phone kar sakta hoon main ?"
+            "val": " क्या मैं आपका फोन इस्तेमाल कर सकता हूँ ?",
+            "trn": "kya main aapka phone istemaal kar sakta hoon ?"
         }, {
             "key": "Please write it down",
             "val": "कृपया इसे लिखें । ",
@@ -190,9 +190,9 @@
                 "val": ".... जाने को कितना लगता है?",
                 "trn": ".... jaane ko kitnaa lagtaa hai"
             }, {
-                "key": "Where is the pharmacy?",
-                "val": "फार्मेसी कहां है?",
-                "trn": "pharmacy kahaan hai?"
+                "key": "Where is medecine store?",
+                "val": "दवाई की दुकान कहाँ है ?",
+                "trn": "dawaai ki dukaan kahaan hai?"
             }
         ],
         "Going out for dinner": [
@@ -207,7 +207,7 @@
             }, {
                 "key": "I'm a vegetarian",
                 "val": "मैं शाकाहारी हूँ",
-                "trn": "main śākāhār hun"
+                "trn": "main śākāhāri hun"
             }, {
                 "key": "fixed-price meal",
                 "val": "एक दाम का खाना",
