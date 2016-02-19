@@ -1,7 +1,7 @@
 {
   "id": "multisim_cheat_sheet",
   "name": "Multisim",
-  "description": "NI Multisim (formerly MultiSIM) is an electronic schematic capture and simulation program which is part of a suite of circuit design programs",
+  "description": "NI Multisim (formerly MultiSIM) is an electronic schematic capture and simulation program , a suite of circuit design programs",
   "metadata": {
     "sourceName": "NI Multisim",
     "sourceUrl": "https://en.wikipedia.org/wiki/NI_Multisim"
@@ -16,23 +16,71 @@
     "Components"
   ],
      "sections": {
-    "General Informations": [
+    "Keyboard Shortcuts": [
       {
-        "key": "Developer",
-        "val": "National Instruments Electronics Workbench Group (formerly by Interactive Image Technologies)"
+        "key": "Select multiple objects",
+        "val": "Shift-Click"
       },
     
       {
-        "key": "Operating system",
-        "val": "Microsoft Windows"
+        "key": "Copy and drag selected object",
+        "val": "Ctrl-Drag"
       },
       {
-        "key": "Type",
-        "val": "Electronic design automation"
+        "key": "Delete all broken wires from the diagram",
+        "val": "Ctrl-B"
       },
       {
-        "key": "License",
-        "val": "Proprietary EULA"
+        "key": "Delete a wire you are in the process of creating",
+        "val": "Esc,Right-click,Ctrl-Z"
+      },
+         {
+        "key": "Distribute wires evenly",
+        "val": "Ctrl-U"
+      },
+         {
+        "key": "90 Degrees Clockwise",
+        "val": "Ctrl+R"
+      },
+         {
+        "key": "90 Degrees CounterCW",
+        "val": "Ctrl+Shift+R"
+      },
+         {
+        "key": "Flip Horizontal",
+        "val": "Alt+X"
+      }, 
+        {
+        "key": "Flip Vertical",
+        "val": "Alt+Y"
+      },
+         {
+        "key": "Undo",
+        "val": "Ctrl+Z"
+      },
+         {
+        "key": "Redo",
+        "val": "Ctrl+Y"
+      },
+         {
+        "key": "Contents",
+        "val": "F1"
+      },
+         {
+        "key": "Bus",
+        "val": "Ctrl+U"
+      },
+         {
+        "key": "Ellipse",
+        "val": "Ctrl+Shift+E"
+      },
+         {
+        "key": "Circuit Description Box",
+        "val": "Ctrl+D"
+      },
+         {
+        "key": "File Information",
+        "val": "Ctrl+Alt+I"
       }
     ],
        
