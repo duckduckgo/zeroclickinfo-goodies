@@ -15,8 +15,17 @@
     "template_type": "terminal",
 
     "section_order": [
-        "First Section",
-        "Second Section"
+        "General Structure",
+        "Control Structures",
+        "Comparison Operators",
+        "Boolean Operators",
+        "Bitwise Operators",
+        "Compound Operators",
+        "Constants",
+        "I/O",
+        "Math",
+        "Time",
+        "Comments"
     ],
 
     "sections": {
