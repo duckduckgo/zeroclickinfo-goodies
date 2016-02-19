@@ -1,7 +1,7 @@
 {
     "id": "express_cheat_sheet",
     "name": "Express",
-    "description": "Fast, unopinionated, minimalist web framework for NodeJS",
+    "description": "Displays a list of properties and methods of Express, a fast, unopinionated, minimalist web framework for NodeJS",
 
     "metadata": {
         "sourceName": "Express",
