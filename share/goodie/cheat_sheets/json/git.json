@@ -17,7 +17,8 @@
         "Save Fragments",
         "Review History",
         "Redo Commits",
-        "Synchronize Changes"
+        "Synchronize Changes",
+        "Rebasing"
     ],
     "sections": {
         "Configure Tooling": [{
@@ -131,7 +132,6 @@
         "Synchronize Changes": [{
             "val": "Downloads all history from the repository bookmark",
             "key": "git fetch \\[bookmark\\]"
-
         }, {
             "val": "Combines bookmark's branch into current local branches",
             "key": "git merge \\[bookmark\\]/\\[branch\\]"
@@ -145,6 +145,19 @@
             "val": "Downloads bookmark history and incorporates changes",
             "key": "git pull"
         }, {
+            "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
+            "key": "git pull --rebase"
+        }, {
+            "val": "Rebase the current HEAD onto branch",
+            "key": "git rebase \\[branch\\]"
+        }, {
+            "val": "Abort a rebase",
+            "key": "git rebase --abort"
+        }, {
+            "val": "Continue a rebase after resolving conflicts",
+            "key": "git rebase --continue"
+        }],
+        "Rebasing": [{
             "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
             "key": "git pull --rebase"
         }, {
