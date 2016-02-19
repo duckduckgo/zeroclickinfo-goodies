@@ -1,7 +1,7 @@
 {
     "id": "java_cheat_sheet",
     "name": "Java",
-    "description": "A set of java Syntax, functions, and expressions",
+    "description": "A set of java Syntax, functions and expressions",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/sschaub/cheat-sheets/java-fundamentals/"
@@ -10,15 +10,15 @@
     "section_order": [  "Program Compilation and Execution",
                         "Data Types",
                         "Statements",
-                        "Data Conver­sions",
+                        "Data Conversions",
                         "Text Formatting",
                         "String Methods",
-                        "Ar­rayList Methods",
-                        "Ha­shMap Methods"],
+                        "ArrayList Methods",
+                        "HashMap Methods"],
     "sections": {
         "Program Compilation and Execution" : [
             {
-                "key" : "javac Hello.j­ava",
+                "key" : "javac Hello.java",
                 "val" : "Compile Java File"
             },
             {
@@ -52,153 +52,139 @@
         "Statements": [
             {
                 "val" : "If Statement",
-                "key" : "if(expre­ssion)&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;else&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"
-                
+                "key" : "if(expression)\\{statements\\}else\\{statements\\}"
             },
             {
-                
                 "val" : "While Loop",
-                "key" : "while(expre­ssion)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}"
+                "key" : "while(expression)\\{statements\\}"
             },
             {
                 "val" : "Do While Loop ",
-                "key" : "do&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;st­ate­ments<br>\\}&nbsp;while(expre­ssion)"
-                
+                "key" : "do\\{statements\\}while(expression)"
             },
             {   "val" : "For Loop ",
-                "key" : "for(Initialization;&nbsp;Condition;&nbsp;Updation)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"                
+                "key" : "for(Initialization;Condition;Updation)\\{statements\\}"
             },
             {   "val" : "For Each Loop ",
-                "key" : "for(var&nbsp;:&nbsp;colle­ction)&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;­st­ate­ments<br>\\}"                
+                "key" : "for(var:collection)\\{statements\\}"
             },
             {
-                "val" : "Exce­ption Handling",
-                "key" : "try&nbsp;\\{­<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents<br>\\}&nbsp;catch(Exce­pti­onType&nbsp;e1)\\{<br>&nbsp;­&nbsp;&nbsp;&nbsp;­sta­tem­ents<br>\\}&nbsp;catch(Exception&nbsp;e2)&nbsp;\\{<br>­&nbsp;&nbsp;&nbsp;&nbsp;cat­ch-all&nbsp;statem­ents<br>\\}&nbsp;finally&nbsp;\\{<br>&nbsp;&nbsp;&nbsp;&nbsp;sta­tem­ents&nbsp;\\}"                
+                "val" : "Exception Handling",
+                "key" : "try\\{statements\\}catch(ExceptionTypee1)\\{statements\\}catch(Exceptione2)\\{catch-allstatements\\}finally\\{statements\\}"
             }
         ],
-        "Data Conver­sions": [
+        "Data Conversions": [
             {
                 "val" : "String to Number",
-                "key" : "int&nbsp;i&nbsp;=&nbsp;Intege­r.p­ars­eIn­t(­str);<br><br>double&nbsp;d&nbsp;=&nbsp;Double.pa­rse­Dou­ble­(s­tr);"
+                "key" : "inti=Integer.parseInt(str);doubled=Double.parseDouble(str);"
             },
             {
                 "val" : "Any Type to String",
-                "key" : "String&nbsps&nbsp=&nbspString.va­lue­Of(­va­lue);"
+                "key" : "String&nbsps;=String.valueOf(value);"
             },
             {
-                "val" : "Numeric Conver­sions",
-                "key" : "int&nbspi&nbsp=&nbsp(int)&nbspnumeric&nbspexpres­sion;"
+                "val" : "Numeric Conversions",
+                "key" : "int i=(int)numericexpression;"
             }
             ],
         "Text Formatting": [
             {
-                "val" : "printf style format­ting",
-                "key" : "System.ou­t.p­rin­tf(­\"­Count&nbsp;is&nbsp;%d\n\",&nbsp;count);<br><br>s&nbsp;=&nbsp;String.fo­rma­t(\"Count&nbsp;is&nbsp;%d\",&nbsp;count);"
+                "val" : "printf style formatting",
+                "key" : "System.out.printf(\"Countis%d\n\",count);s=String.format(\"Countis%d\",count);"
             },
             {
-                "val" : "Mess­age­Format style format­ting",
-                "key" : "Messag­eFo­rma­t.f­ormat(\"{0}&nbsp;rows.\",&nbsp;5);"
+                "val" : "MessageFormat style formatting",
+                "key" : "MessageFormat.format(\"{0}rows.\",5);"
             },
             {
-                "val" : "Indi­vidual Numbers and Dates",
-                "key" : "Number­For­mat.ge­tCu­rre­ncy­Ins­tance().fo­rma­t(x);<br><br>Simple­Dat­eFo­rma­t(\"\"h:mm&nbsp;a\"\").fo­rma­t(new&nbsp;Date());<br><br>Decima­lFo­rma­t(\"#­,##­0.0­0\").fo­rma­t(1­25.32);"
+                "val" : "Individual Numbers and Dates",
+                "key" : "NumberFormat.getCurrencyInstance().format(x);SimpleDateFormat(\"\"h:mma\"\").format(newDate());DecimalFormat(\"#,##0.00\").format(125.32);"
             }
         ],
         "String Methods": [
         {    
             
-            "key" : "s.le­ngth()",
+            "key" : "s.length()",
             "val" : "Length Of S"
         },
         {    
             
-            "key" : "s.ch­arA­t(i)",
+            "key" : "s.charAt(i)",
             "val" : "Extract ith Character"
         },
         {    
             
-            "key" : "s.su­bst­rin­g(­start, end)",
+            "key" : "s.substring(start, end)",
             "val" : "Substring From Start To End"
         },
         {    
             
-            "key" : "s.to­Upp­erC­ase()/lowerCase()",
+            "key" : "s.toUpperCase()/lowerCase()",
             "val" : "Returns Copy Of s In Caps/Lower Case"
         },
         {    
             
-            "key" : "s.in­dex­Of(x)",
+            "key" : "s.indexOf(x)",
             "val" : "Index Of First Occurence Of x"
         },
         {    
             
-            "key" : "s.re­pla­ce(­old, new)",
+            "key" : "s.replace(old, new)",
             "val" : "Search And Replace"
         },
         {    
             
-            "key" : "s.sp­lit­(r­egex)",
+            "key" : "s.split(regex)",
             "val" : "Splits Into Tokens"
         },
         {    
-            
             "key" : "s.trim()",
             "val" : "Trims Surrounding White Space"
         },
         {    
-            
-            "key" : "s.eq­ual­s(s2)",
+            "key" : "s.equals(s2)",
             "val" : "True If s Equals s2"
         },
         {    
-            
-            "key" : "s.co­mpa­reT­o(s2)",
-            "val" : "0 if Equal or +ve If s > s2 or-ve If s < s2"
+            "key" : "s.compareTo(s2)",
+            "val" : "0 if Equal or +ve If s > s2 or -ve If s < s2"
         }
         ],
-        "Ar­rayList Methods" : [
+        "ArrayList Methods" : [
             {    
-            
-            "key" : "l.ad­d(­item)",
+            "key" : "l.add(item)",
             "val" : "Add Item To List"
         },
         {    
-            
-            "key" : "l.ge­t(i)",
+            "key" : "l.get(i)",
             "val" : "Return ith Item"
         },
         {    
-            
             "key" : "l.size()",
             "val" : "Returns The Number Of Items"
         },
         {    
-            
-            "key" : "l.re­mov­e(i)",
+            "key" : "l.remove(i)",
             "val" : "Remove ith Item"
         },
-
         {    
-            
-            "key" : "l.se­t(i, value)",
+            "key" : "l.set(i, value)",
             "val" : "Put value At Position i"
         }
         ],
-    "Ha­shMap Methods" : [
+    "HashMap Methods" : [
         {
-            "key" : "m.pu­t(­key­,­value)",
+            "key" : "m.put(key,value)",
             "val" : "Inserts Value With Key"
         },
         {
-            "key" : "m.ge­t(­key)",
+            "key" : "m.get(key)",
             "val" : "Retrieves Value With Key"
         },
         {   
-            "key" : "m.co­nta­ins­Key­(key)",
+            "key" : "m.containsKey(key)",
             "val" : "True If m Contains Key"
         }
-
     ]
-
     }
 }
