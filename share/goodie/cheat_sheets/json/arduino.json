@@ -9,7 +9,7 @@
     },
 
     "aliases": [
-        "first alias", "second alias", "etc"
+        "arduino ide"
     ],
 
     "template_type": "terminal",
