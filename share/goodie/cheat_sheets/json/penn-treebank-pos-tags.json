@@ -1,14 +1,14 @@
 {
   "id": "penn_treebank_cheat_sheet",
   "name": "Penn Treebank Tagset",
-  "description": "The Penn Treebank Tagset consists of cluase, phrase and word level tags for part of speech processing.",
+  "description": "The Penn Treebank Tagset consists of clause, phrase and word level tags for part of speech processing.",
   "metadata": {
     "sourceName": "MIT",
     "sourceUrl": "http://web.mit.edu/6.863/www/PennTreebankTags.html"
   },
   "template_type": "reference",
   "sections": {
-    "Cluase Level": [
+    "Clause Level": [
       {
         "key": "S",
         "val": "Simple declarative clause."
