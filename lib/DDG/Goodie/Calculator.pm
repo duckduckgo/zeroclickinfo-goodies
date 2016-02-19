@@ -90,10 +90,8 @@ handle query_nowhitespace => sub {
         $query =~ s#$name#$operation#xig;    # We want these ones to show later.
     }
 
-    $tmp_expr =~ s/log/log10/xig;
+    $tmp_expr =~ s/log(?!_)/log_10/xig;
     $tmp_expr =~ s/ln/log/xig;
-    $query =~ s/log/log10/xig;
-    $query =~ s/ln/log/xig;
 
     $tmp_expr =~ s#log[_]?(\d{1,3})#(1/log($1))*log#xg;                # Arbitrary base logs.
     $tmp_expr =~ s/ (\d+?)E(-?\d+)([^\d]|\b) /\($1 * 10**$2\)$3/ixg;   # E == *10^n
@@ -160,7 +158,7 @@ sub prepare_for_display {
     return +{
         text       => spacing($query) . ' = ' . $result,
         structured => {
-            input     => [spacing(textlog10ln($query))],
+            input     => [spacing($query)],
             operation => 'Calculate',
             result => "<a href='javascript:;' onclick='document.x.q.value=\"$result\";document.x.q.focus();'>" . $style->with_html($result) . "</a>"
         },
@@ -178,18 +176,6 @@ sub spacing {
     $text =~ s/(\d+?)((?:dozen|pi|gross|squared|score))/$1 $2/ig;
     $text =~ s/([\(\)])/ $1 /g if ($space_for_parse);
     
-    return $text;
-}
-
-sub log10 {
-    my $n = shift;
-    return log($n)/log(10);
-}
-
-sub textlog10ln {
-    my $text = shift;
-    $text =~ s/log/ln/;
-    $text =~ s/ln10/log/;
     return $text;
 }
 
