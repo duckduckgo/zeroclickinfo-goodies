@@ -47,15 +47,15 @@
         ],
         "Emphasis" : [
             {
-                "key": "__text__",
+                "key": "_text_",
                 "val": "Displays the text in italics"
             },
             {
-                "key": "**text**",
+                "key": "*text*",
                 "val": "Displays the text in bold"
             },
             {
-                "key": "**__text__**",
+                "key": "*_text_*",
                 "val": "Displays the text in bold and italics"
             },
             {
@@ -63,8 +63,8 @@
                 "val": "Adds strikethrough effect to the text"
             },
             {
-                "key": "\\[line-through\\]**text**",
-                "val": "Adds strikethrough effect to the text and bolts it"
+                "key": "\\[line-through\\]*text*",
+                "val": "Adds strikethrough effect to the text and makes it bold"
             }
         ],
         "Lists" : [
