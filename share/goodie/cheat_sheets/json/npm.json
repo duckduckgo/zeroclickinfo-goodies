@@ -10,7 +10,9 @@
     "section_order": [
         "Getting Started",
         "Installing Packages",
-        "Package Details"
+        "Uninstalling Packages",
+        "Package Details",
+        "Utilities"
     ],
     "sections": {
         "Getting Started": [
@@ -29,6 +31,10 @@
             {
                 "val": "Updates all the packages to the latest version, respecting semver",
                 "key": "npm update -g <package_name>"
+            },
+            {
+                "val": "Displays all npm configuration flags",
+                "key": "npm config ls -l"
             },
             {
                 "val": "Show help for the especific command",
@@ -61,6 +67,20 @@
                 "key": "npm install --save-optional <package_name>"
             }
         ],
+        "Uninstalling Packages": [
+            {
+                "val": "Uninstall a package, does not update package.json",
+                "key": "npm uninstall <package_name>"
+            },
+            {
+                "val": "Uninstall a package and update package.json",
+                "key": "npm uninstall <package_name> --save"
+            },
+            {
+                "val": "Uninstall a global npm package",
+                "key": "npm uninstall -g <package_name>"
+            }
+        ],
         "Package Details": [
             {
                 "val": "Show the docs for a package in a web browser",
@@ -77,6 +97,24 @@
             {
                 "val": "Print all the versions of packages that are installed, as well as their dependencies",
                 "key": "npm ls"
+            }
+        ],
+        "Utilities": [
+            {
+                "val": "Locally edit a package",
+                "key": "npm edit <package_name>"
+            },
+            {
+                "val": "Setup sublime as default editor for 'npm edit'",
+                "key": "npm config set editor \"sublime\""
+            },
+            {
+                "val": "Publish a package with tag 'beta'",
+                "key": "npm publish --tag beta"
+            },
+            {
+                "val": "List outdated libraries compared to currently installed node_modules",
+                "key": "npm outdated"
             }
         ]
     }
