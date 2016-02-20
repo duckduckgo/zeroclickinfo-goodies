@@ -1,7 +1,7 @@
 {
     "id": "resharper_cheat_sheet",
     "name": "Resharper",
-    "description": "Resharper 2.x Keyboard Shortcuts ",
+    "description": "Resharper 10 Keyboard Shortcuts ",
     "metadata": {
         "sourceName": "Jetbrains",
         "sourceUrl": "https://www.jetbrains.com/resharper/docs/ReSharper_DefaultKeymap_IDEAscheme.pdf"
@@ -72,7 +72,7 @@
             "key":"[Ctrl] [Shift] [/]",
             "val":"Comment/uncomment block"
           }       
-          ],
+        ],
         "Generate": [{
             "key":"[Ctrl] [J]",
             "val":"Insert live template"
@@ -113,7 +113,7 @@
             "key":"[Ctrl] [Shift] [Numeric Key]",
             "val":"Set/remove bookmark"
           }
-          ],
+        ],
         "Explore": [{
             "key":"[Ctrl] [N]",
             "val":"Go to everything"
@@ -130,7 +130,7 @@
             "key":"[Ctrl] [F12]",
             "val":"Go to file member"
           }
-          ],
+        ],
           "Find": [{
             "key":"[Alt] [F7]",
             "val":"Find usages"
@@ -159,7 +159,7 @@
             "key":"[Ctrl] [Alt] [Y]",
             "val":"Analyze References window"
           }
-          ],
+        ],
         "Navigation": [{
             "key":"[Ctrl] [Shift] [G]",
             "val":"Navigate to"
@@ -188,7 +188,7 @@
             "key":"[Ctrl] [Alt] [F7]",
             "val":"Go to usage"
           }
-          ],
+        ],
         "File Structuring": [{
             "key":"[Alt] [F11]",
             "val":"File Structure"
@@ -213,7 +213,7 @@
             "key":"[Ctrl] [Alt] [L]",
             "val":"Locate in Solution Explorer"
           }
-          ],
+        ],
         "Improvement": [{
             "key":"[Alt] [Enter]",
             "val":"Show available quick-fixes and context actions"
@@ -242,7 +242,7 @@
             "key":"[Shift] [Alt] [F12]",
             "val":"Go to previous error "
           }
-          ],
+        ],
         "Refactoring": [{
             "key":"[Ctrl] [Shift] [R]",
             "val":"Refactor this"
