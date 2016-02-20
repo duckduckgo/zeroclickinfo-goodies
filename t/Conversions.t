@@ -1655,11 +1655,19 @@ ddg_goodie_test(
         }
     ),
     'how many megabytes in a gigabyte?' => test_zci(
-        '1 gigabyte = 1000 megabytes',
+        '1 gigabyte = 1,000 megabytes',
         structured_answer => {
             input => ['1 gigabyte'],
             operation => 'convert',
-            result => '1000 megabytes'
+            result => '1,000 megabytes'
+        }
+    ),
+    '1 gigabyte in megabytes' => test_zci(
+        '1 gigabyte = 1,000 megabytes',
+        structured_answer => {
+            input => ['1 gigabyte'],
+            operation => 'convert',
+            result => '1,000 megabytes'
         }
     ),
 
