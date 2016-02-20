@@ -7,7 +7,7 @@
         "sourceUrl": "https://support.apple.com/kb/PH21483"
     },
     "template_type": "keyboard",
-    "section_order" : ["Tab Management" , "Window Management" , "Bookmarks"],
+    "section_order" : ["Tab Management" , "Window Management", "Page Management", "Bookmarks"],
     "sections":{
         "Tab Management":[{
               "key":"[⌘] [T]",
@@ -49,6 +49,16 @@
            },{
               "key":"[⌘] [Shift] [N]",
               "val":"Open new Private window"
+           }],
+          "Page Management":[{
+              "key":"[⌘] [+]",
+              "val":"Zoom in"
+           },{
+              "key":"[⌘] [-]",
+              "val":"Zoom out"
+           },{
+              "key":"[⌘] [0]",
+              "val":"Default size"
            }],
          "Bookmarks":[{
               "key":"[Option] [⌘] [1]",
