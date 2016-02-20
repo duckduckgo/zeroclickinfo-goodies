@@ -9,8 +9,7 @@
     },
     "aliases": [
         "open stack",
-        "open stack cli",
-        "open stack commands"
+        "open stack cli"
     ],
     "template_type" : "terminal",
     "section_order": [

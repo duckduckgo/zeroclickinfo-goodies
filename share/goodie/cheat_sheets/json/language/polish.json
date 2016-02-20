@@ -5,7 +5,9 @@
         "sourceName": "Mówić po polsku",
         "sourceUrl": "http://mowicpopolsku.com"
     },
-    "aliases": ["polish phrases", "english to polish", "basic polish phrases", "basic polish"],
+    "aliases": [
+        "english to polish"
+    ],
     "template_type": "language",
     "section_order": ["Greeting & Farewell", "General Conversation", "Communication", "Introducing Yourself"],
     "description": "Basic Polish phrases",
