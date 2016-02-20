@@ -2,9 +2,7 @@
 	"id": "codio_cheat_sheet",
 	"name": "Codio Shortcuts",
 	"description": "The default set of keyboard shortcuts to use Codio efficiently. You can customise these by editing your User preferences, which can be found in Codio > Preferences -> User.",
-
 	"template_type": "keyboard",
-
 	"section_order": [
 		"Editor",
 		"Emmet",
@@ -16,7 +14,6 @@
 		"Guides",
 		"Search"
 	],
-
 	"sections": {
 		"Editor": [{
 			"key": "[Ctrl] [Space]",
