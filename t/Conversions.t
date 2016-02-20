@@ -2419,62 +2419,91 @@ ddg_goodie_test(
             physical_quantity => 'length'
         })
     ),
-    # Representation (scientific notation)
-    '30000 km to m' => test_zci(
+	# Representation (scientific notation)
+	'30000 km to m' => test_zci(
         '30,000 kilometers = 3 * 10^7 meters',
-        structured_answer => {
-            input => ['30,000 kilometers'],
-            operation => 'convert',
-            result => '3 * 10<sup>7</sup> meters'
-        }
-    ),
+        structured_answer => make_answer({
+            markup_input => '30,000',
+            raw_input => '30000',
+            from_unit => 'kilometers',
+            styled_output => '3 * 10<sup>7</sup>',
+            raw_answer => '3*10^7',
+            to_unit => 'meters',
+            physical_quantity => 'length'
+        })
+	),
+    
     '3000000000000000 km to m' => test_zci(
         '3 * 10^15 kilometers = 3 * 10^18 meters',
-        structured_answer => {
-            input => ['3 * 10<sup>15</sup> kilometers'],
-            operation => 'convert',
-            result => '3 * 10<sup>18</sup> meters'
-        }
+		structured_answer => make_answer({
+            markup_input => '3 * 10<sup>15</sup>',
+            raw_input => '3*10^15',
+            from_unit => 'kilometers',
+            styled_output => '3 * 10<sup>18</sup>',
+            raw_answer => '3*10^18',
+            to_unit => 'meters',
+            physical_quantity => 'length'
+        })
     ),
     '3000 km to m' => test_zci(
         '3,000 kilometers = 3 * 10^6 meters',
-        structured_answer => {
-            input => ['3,000 kilometers'],
-            operation => 'convert',
-            result => '3 * 10<sup>6</sup> meters'
-        }
+		structured_answer => make_answer({
+            markup_input => '3,000',
+            raw_input => '3000',
+            from_unit => 'kilometers',
+            styled_output => '3 * 10<sup>6</sup>',
+            raw_answer => '3*10^6',
+            to_unit => 'meters',
+            physical_quantity => 'length'
+        })
     ),
     '300000000000 km to m' => test_zci(
         '3 * 10^11 kilometers = 3 * 10^14 meters',
-        structured_answer => {
-            input => ['3 * 10<sup>11</sup> kilometers'],
-            operation => 'convert',
-            result => '3 * 10<sup>14</sup> meters'
-        }
+		structured_answer => make_answer({
+            markup_input => '3 * 10<sup>11</sup>',
+            raw_input => '3*10^11',
+            from_unit => 'kilometers',
+            styled_output => '3 * 10<sup>14</sup>',
+            raw_answer => '3*10^14',
+            to_unit => 'meters',
+            physical_quantity => 'length'
+        })
     ),
     '4e-15 km to mm' => test_zci(
         '4 * 10^-15 kilometers = 4 * 10^-9 millimeters',
-        structured_answer => {
-            input => ['4 * 10<sup>-15</sup> kilometers'],
-            operation => 'convert',
-            result => '4 * 10<sup>-9</sup> millimeters'
-        }
+		structured_answer => make_answer({
+            markup_input => '4 * 10<sup>-15</sup>',
+            raw_input => '4*10^-15',
+            from_unit => 'kilometers',
+            styled_output => '4 * 10<sup>-9</sup>',
+            raw_answer => '4*10^-9',
+            to_unit => 'millimeters',
+            physical_quantity => 'length'
+        })
     ),
     'how many megabytes in a gigabyte?' => test_zci(
         '1 gigabyte = 1,000 megabytes',
-        structured_answer => {
-            input => ['1 gigabyte'],
-            operation => 'convert',
-            result => '1,000 megabytes'
-        }
+		structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'gigabyte',
+            styled_output => '1,000',
+            raw_answer => '1000',
+            to_unit => 'megabytes',
+            physical_quantity => 'digital'
+        })
     ),
     '1 gigabyte in megabytes' => test_zci(
         '1 gigabyte = 1,000 megabytes',
-        structured_answer => {
-            input => ['1 gigabyte'],
-            operation => 'convert',
-            result => '1,000 megabytes'
-        }
+		structured_answer => make_answer({
+            markup_input => '1',
+            raw_input => '1',
+            from_unit => 'gigabyte',
+            styled_output => '1,000',
+            raw_answer => '1000',
+            to_unit => 'megabytes',
+            physical_quantity => 'digital'
+        })
     ),
 
     # Intentionally untriggered
