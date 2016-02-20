@@ -1,7 +1,7 @@
 {
     "id": "chrome_cheat_sheet", 
     "name": "Google Chrome",
-    "description": "Google Chrome Keyboard shorcuts", 
+    "description": "Google Chrome Keyboard shorcuts (Windows/Linux)", 
     "metadata": { 
         "sourceName": "Chrome Help",
         "sourceUrl": "https://support.google.com/chrome/answer/157179?hl=en"
