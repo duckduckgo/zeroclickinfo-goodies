@@ -1,0 +1,131 @@
+{
+	"id": "facebook_cheat_sheet",
+	"name": "Facebook",
+	"description": "Displays commands for Facebook News Feed, Facebook Web Messenger, and page keys across four different browsers on PC and MAC.",
+	"metadata": {
+		"sourceName": "Facebook",
+		"sourceURL": "https://www.facebook.com/help/156151771119453"
+	},
+	"template_type": "keyboard",
+	"section_order": [
+		"Browser Keys",
+		"Access Keys",
+		"News Feed",
+		"Web Messenger"
+	],
+	"aliases": [
+		"Messenger",
+		"Web Messenger",
+		"Facebook Messenger",
+		"Facebook Web Messenger"
+	],
+	"sections": {
+		"Browser Keys": [{
+			"val": "Internet Explorer for PC",
+			"key": "Alt + #, then Enter"
+		}, {
+			"val": "Firefox for PC",
+			"key": "Shift + Alt + #"
+		}, {
+			"val": "Chrome for PC",
+			"key": "Alt + #"
+		}, {
+			"val": "Safari for Mac",
+			"key": "Ctrl + Opt + #"
+		}, {
+			"val": "Firefox for Mac",
+			"key": "Ctrl + Opt + #"
+		}, {
+			"val": "Chome for Mac",
+			"key": "Ctrl + Opt + #"
+		}],
+		"Access Keys": [{
+			"val": "0",
+			"key": "Help"
+		}, {
+			"val": "1",
+			"key": "Home"
+		}, {
+			"val": "2",
+			"key": "Timeline"
+		}, {
+			"val": "3",
+			"key": "Friends"
+		}, {
+			"val": "4",
+			"key": "Inbox"
+		}, {
+			"val": "5",
+			"key": "Notifications"
+		}, {
+			"val": "6",
+			"key": "Settings"
+		}, {
+			"val": "7",
+			"key": "Activity Log"
+		}, {
+			"val": "8",
+			"key": "About"
+		}, {
+			"val": "9",
+			"key": "Terms"
+		}],
+		"News Feed": [{
+			"val": "j and k",
+			"key": "Scroll between News Feed stories"
+		}, {
+			"val": "enter/return",
+			"key": "See more of the selected story"
+		}, {
+			"val": "p",
+			"key": "Post a new status"
+		}, {
+			"val": "l",
+			"key": "Like or unlike the selected story"
+		}, {
+			"val": "c",
+			"key": "Comment on the selected story"
+		}, {
+			"val": "s",
+			"key": "Share the selected story"
+		}, {
+			"val": "o",
+			"key": "Open an attachment from the selected story"
+		}, {
+			"val": "/",
+			"key": "Search"
+		}, {
+			"val": "q",
+			"key": "Search chat contacts"
+		}, {
+			"val": "?",
+			"key": "Open a list of keyboard shortcuts while in the News Feed"
+		}],
+		"Web Messenger": [{
+				"val": "CTRL + g",
+				"key": "Search conversations"
+			}, {
+				"val": "CTRL + q",
+				"key": "Show/hide keyboard shortcuts"
+			}, {
+				"val": "CTRL + Delete - Archive",
+				"key": "Archive/unarchive"
+			}, {
+				"val": "CTRL + j",
+				"key": "Mark as spam"
+			}, {
+				"val": "CTRL + m",
+				"key": "Start a new message"
+			}, {
+				"val": "CTRL + i",
+				"key": "Go to inbox"
+			}, {
+				"val": "CTRL + u",
+				"key": "Go to other"
+			}
+
+		]
+
+	}
+
+}
