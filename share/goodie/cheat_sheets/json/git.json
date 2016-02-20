@@ -144,11 +144,11 @@
         }, {
             "val": "Downloads bookmark history and incorporates changes",
             "key": "git pull"
-        }],
-        "Rebasing": [{
+        }, {
             "val": "Downloads bookmark history and incorporates your changes on top of remote changes",
             "key": "git pull --rebase"
-        }, {
+        }],
+        "Rebasing": [{
             "val": "Rebase the current HEAD onto branch",
             "key": "git rebase \\[branch\\]"
         }, {
