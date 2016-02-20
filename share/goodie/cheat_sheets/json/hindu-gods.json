@@ -1,6 +1,6 @@
 {
     "id":"hindu_gods_cheat_sheet",
-    "name":"Hindu Gods",
+    "name":"Hindu Gods and Goddesses",
     "description": "A brief description about Hindu Gods and Goddesses",
     "metadata": {
         "sourceName": "Dummies",
@@ -8,11 +8,12 @@
     },
     "aliases": [
         "hinduism",
-        "hindu gods",
+        "hindu",
         "hindu god",
         "hindu goddesses",
         "hindu goddess",
-        "hindu god and goddess"
+        "hindu god and goddess",
+        "hindu gods and goddesses"
     ],
     "template_type": "reference",
     "section_order": [
@@ -40,7 +41,7 @@
             },
             {
                 "key": "Rama",
-                "val": "One of the most beloved Hindu gods and is the hero of the Hindu epic called the Ramayana"
+                "val": "One of the most beloved Hindu gods and hero of the Ramayana"
             },
             {
                 "key": "Krishna",
