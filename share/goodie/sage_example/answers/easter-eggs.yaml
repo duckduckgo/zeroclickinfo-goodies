@@ -1,0 +1,19 @@
+# We use the IDs as the indicators for this example.
+'meaning_of_life_sage_example':
+  # This Sage just supports turning individual queries into
+  # plain-text answers. A very basic example, I know, but this
+  # could easily be expanded to support regex triggers as well
+  # as other trigger methods.
+  queries:
+    - "What is the meaning of life, the Universe, and everything?"
+  response: "Forty-Two"
+
+'barrel_roll_sage_example':
+  queries:
+    - "Do a barrel roll."
+  response: "I'm not your pet."
+
+'shakespeare_sage_example':
+  queries:
+    - "To be, or not to be?"
+  response: "That is the question."
