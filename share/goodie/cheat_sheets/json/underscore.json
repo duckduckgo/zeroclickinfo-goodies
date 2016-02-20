@@ -1,7 +1,7 @@
 {
     "id": "underscore_cheat_sheet",
     "name": "Underscore",
-    "description": "Displays a list of Underscore functions and its usage",
+    "description": "Displays a list of Underscore methods and its usage",
     "metadata": {
         "sourceName": "Underscore.js",
         "sourceUrl" : "http://underscorejs.org/"
@@ -12,15 +12,15 @@
     ],
     "template_type": "terminal",
     "section_order": [
-        "Collection Functions",
-        "Array Functions",
-        "Function Functions",
-        "Object Functions",
-        "Utility Functions",
+        "Collection Methods",
+        "Array Methods",
+        "Function Methods",
+        "Object Methods",
+        "Utility Methods",
         "Chaining"
     ],
     "sections": {
-        "Collection Functions": [
+        "Collection Methods": [
             {
                 "key": "_.each(list, iteratee, \\[context\\])",
                 "val": "Iterates over a list of elements, yielding each in turn to an iteratee function"
@@ -90,7 +90,7 @@
                 "val": "Splits a collection into sets, grouped by the result of running each value through iteratee"
             }
         ],
-        "Array Functions": [
+        "Array Methods": [
             {
                 "key": "_.first(array, \\[n\\])",
                 "val": "Returns the first element of an array. Passing n will return the first n elements of the array"
@@ -160,7 +160,7 @@
                 "val": "A function to create flexibly-numbered lists of integers"
             }
         ],
-        "Function Functions": [
+        "Function Methods": [
             {
                 "key": "_.bind(function, object, *arguments)",
                 "val": "Bind a function to an object"
@@ -218,7 +218,7 @@
                 "val": "Returns the composition of a list of functions, where each function consumes the return value of the function that follows"
             }
         ],
-        "Object Functions": [
+        "Object Methods": [
             {
                 "key": "_.keys(object)",
                 "val": "Retrieve all the names of the object's own enumerable properties"
@@ -328,7 +328,7 @@
                 "val": "Returns true if the value of object is null"
             }
         ],
-        "Utility Functions": [
+        "Utility Methods": [
             {
                 "key": "_.noConflict()",
                 "val": "Returns a reference to the Underscore object"
