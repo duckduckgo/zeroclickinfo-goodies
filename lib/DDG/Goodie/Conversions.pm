@@ -60,6 +60,7 @@ sub magnitude_order {
     $to_check =~ /\d++\.?\d++e\+?(?<mag>-?\d++)/i;
     return 1 + $+{mag};
 }
+my $maximum_input = 10**100;
 
 handle query_lc => sub {
     # hack around issues with feet and inches for now
@@ -130,12 +131,13 @@ handle query_lc => sub {
     my $styler = number_style_for($factor);
     return unless $styler;
     
+    return unless $styler->for_computation($factor) < $maximum_input;
+    
     my $result = convert({
         'factor' => $styler->for_computation($factor),
         'from_unit' => $matches[0],
         'to_unit' => $matches[1],
     });
-
 
     return unless defined $result->{'result'};
 
@@ -181,9 +183,23 @@ handle query_lc => sub {
 
     return $factor . " $result->{'from_unit'} = $result->{'result'} $result->{'to_unit'}",
       structured_answer => {
-        input     => [$styler->with_html($factor) . ' ' . $result->{'from_unit'}],
-        operation => 'convert',
-        result    => $styler->with_html($result->{'result'}) . ' ' . $result->{'to_unit'},
+        id   => 'conversions',
+        name => 'conversions',
+        data => {
+            raw_input         => $styler->for_computation($factor),
+            raw_answer        => $styler->for_computation($result->{'result'}),
+            left_unit         => $result->{'from_unit'},
+            right_unit        => $result->{'to_unit'},
+            markup_input      => $styler->with_html($factor),
+            styled_output     => $styler->with_html($result->{'result'}),
+            physical_quantity => $result->{'type'}
+        },
+        templates => {
+            group => 'text',
+            options => {
+                content => 'DDH.conversions.content'
+            }
+        }
       };
 };
 
