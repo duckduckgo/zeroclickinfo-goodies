@@ -3,8 +3,8 @@
     "name": "Linux",
     "description": "An open-source Unix-like operating system dveloped by Linus Torvalds",
     "metadata": {
-        "sourceName": "Linux Stall",
-        "sourceUrl": "http://www.linuxstall.com/wp-content/uploads/2012/01/"
+        "sourceName": "Computer World",
+        "sourceUrl": "http://www.computerworld.com/article/2598082/linux/linux-linux-command-line-cheat-sheet.html"
     },
     "template_type": "terminal",
     "section_order": [
