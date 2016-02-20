@@ -1,14 +1,14 @@
 {  
     "id":"telugu_cheat_sheet",
-    "name":"Telegu",
-    "description":"Basic telegu words and phrases",
+    "name":"Telugu",
+    "description":"Basic telugu words and phrases",
     "metadata":{  
         "sourceName":"Wikitravel",
         "sourceUrl":"http://wikitravel.org/en/Telugu_phrasebook"
     },
     "aliases":[  
-        "english to telegu",
-        "basic telegu"
+        "english to telugu",
+        "basic telugu"
     ],
     "template_type":"language",
     "section_order":[  
