@@ -1,0 +1,279 @@
+{
+	"id": "codio_mac_cheat_sheet",
+	"name": "Codio Shortcuts (Mac)",
+	"description": "The default set of keyboard shortcuts to use Codio efficiently. You can customise these by editing your User preferences, which can be found in Codio > Preferences -> User.",
+	"template_type": "keyboard",
+    "aliases": [
+        "codio mac",
+        "codio osx",
+        "codio os x",
+        "codio mac os",
+        "codio apple",
+        "codio mac osx"
+    ],
+	"section_order": [
+		"Editor",
+		"Emmet",
+		"Codio Lexikon",
+		"Terminal",
+		"Deployment",
+		"IDE",
+		"Code-beautifier",
+		"Guides",
+		"Search"
+	],
+	"sections": {
+		"Editor": [{
+			"key": "[^] [Space]",
+			"val": "Show auto-completions"
+		}, {
+			"key": "[⌘] [/]",
+			"val": "Toggle comment"
+		}, {
+			"key": "[⌘] [←]",
+			"val": "Go to start of line"
+		}, {
+			"key": "[⌘] [→]",
+			"val": "Go to end of line"
+		}, {
+			"key": "[⌘] [A]",
+			"val": "Select all"
+		}, {
+			"key": "[⌘] [⇧] [K]",
+			"val": "Delete selected or active line"
+		}, {
+			"key": "[⌘] [Delete]",
+			"val": "Empty line"
+		}, {
+			"key": "[^] [Backspace]",
+			"val": "Delete word before caret"
+		}, {
+			"key": "[^] [Delete]",
+			"val": "Delete word after caret"
+		}, {
+			"key": "[⌘] [Backspace]",
+			"val": "Delete line before caret"
+		}, {
+			"key": "[^] [K]",
+			"val": "Delete line after caret"
+		}, {
+			"key": "[⌘] [End]",
+			"val": "Go to end of document"
+		}, {
+			"key": "[⌘] [F]",
+			"val": "Find"
+		}, {
+			"key": "[⌘] [G]",
+			"val": "Find next"
+		}, {
+			"key": "[⌘] [↑]",
+			"val": "Go to beginning of document"
+		}, {
+			"key": "[⌥] [←]",
+			"val": "Go left"
+		}, {
+			"key": "[⌥] [→]",
+			"val": "Go right"
+		}, {
+			"key": "[⌘] [Y]",
+			"val": "Redo"
+		}, {
+			"key": "[⌘] [Z]",
+			"val": "Undo"
+		}, {
+			"key": "[⌘] [\\[]",
+			"val": "Indent less"
+		}, {
+			"key": "[⌘] [\\]]",
+			"val": "Indent more"
+		}, {
+			"key": "[⌘] [⌥] [F]",
+			"val": "Replace"
+		}, {
+			"key": "[⇧] [⌘] [G]",
+			"val": "Find previous"
+		}, {
+			"key": "[⇧] [⌘] [⌥] [F]",
+			"val": "Replace all"
+		}, {
+			"key": "[⌘] [⇧] [⌥] [S]",
+			"val": "Save current file"
+		}, {
+			"key": "[⌘] [⇧] [S]",
+			"val": "Save all open files"
+		}, {
+			"key": "[⌘] [S]",
+			"val": "Save all open files"
+		}],
+		"Emmet": [{
+			"key": "[⌘] [E]",
+			"val": "Expand abbreviation"
+		}, {
+			"key": "Tab",
+			"val": "Expand abbreviation with tab"
+		}, {
+			"key": "[⌘] [D]",
+			"val": "Match pair outward"
+		}, {
+			"key": "[⇧] [⌘] [D]",
+			"val": "Match pair inward"
+		}, {
+			"key": "[⇧] [^] [T]",
+			"val": "Matching pair"
+		}, {
+			"key": "[⇧] [⌘] [A]",
+			"val": "Wrap with abbreviation"
+		}, {
+			"key": "[^] [⌥] [→]",
+			"val": "Next edit point"
+		}, {
+			"key": "[^] [⌥] [←]",
+			"val": "Prev edit point"
+		}, {
+			"key": "[⌘] [⌥] [L]",
+			"val": "Select line"
+		}, {
+			"key": "[⇧] [⌘] [M]",
+			"val": "Merge lines"
+		}, {
+			"key": "[⇧] [⌘] [J]",
+			"val": "Split/join tag"
+		}, {
+			"key": "[⌘] [K]",
+			"val": "Remove tag"
+		}, {
+			"key": "[⇧] [⌘] [Y]",
+			"val": "Evaluate math expression"
+		}, {
+			"key": "[^] [↑]",
+			"val": "Increment number by 1"
+		}, {
+			"key": "[^] [↓]",
+			"val": "Decrement number by 1"
+		}, {
+			"key": "[⌥] [↑]",
+			"val": "Increment number by 0.1"
+		}, {
+			"key": "[⌥] [↓]",
+			"val": "Decrement number by 0.1"
+		}, {
+			"key": "[^] [⌥] [↑]",
+			"val": "Increment number by 10"
+		}, {
+			"key": "[^] [⌥] [↓]",
+			"val": "Decrement number by 10"
+		}, {
+			"key": "[⇧] [⌘] [.]",
+			"val": "Select next item"
+		}, {
+			"key": "[⇧] [⌘] [,]",
+			"val": "Select previous item"
+		}, {
+			"key": "[⌘] [B]",
+			"val": "Reflect css value"
+		}],
+		"Codio Lexikon": [{
+			"key": "[⌘] [⌥] [L]",
+			"val": "Open Lexikon"
+		}],
+		"Terminal": [{
+			"key": "[⇧] [⌥] [T]",
+			"val": "Open a new terminal with a SSH connection to the box"
+		}],
+		"Deployment": [{
+			"key": "[⌘] [⌥] [D]",
+			"val": "Deploy current file to default deployment target"
+		}],
+		"Search": [{
+			"key": "[^] [H]",
+			"val": "Find in project"
+		}, {
+			"key": "[^] [⇧] [H]",
+			"val": "Replace in project"
+		}],
+		"IDE": [{
+			"key": "[⌥] [⇧] [N]",
+			"val": "New file"
+		}, {
+			"key": "[⌥] [^] [⇧] [N]",
+			"val": "New folder"
+		}, {
+			"key": "Del",
+			"val": "Delete item"
+		}, {
+			"key": "[^] [⌥] [E]",
+			"val": "Rename item"
+		}, {
+			"key": "[⌘] [⌥] [R]",
+			"val": "Reset to the default layout"
+		}, {
+			"key": "[⌘] [⌥] [H]",
+			"val": "Split the selected panel horizontally"
+		}, {
+			"key": "[⌘] [⌥] [V]",
+			"val": "Split the selected panel vertically"
+		}, {
+			"key": "[⌘] [⌥] [C]",
+			"val": "Close the selected panel"
+		}, {
+			"key": "[⌥] [W]",
+			"val": "Close the selected tab"
+		}, {
+			"key": "[⌥] [⇧] [W]",
+			"val": "Close the tabs in selected panel"
+		}, {
+			"key": "[⌘] [⌥] [W]",
+			"val": "Close others tabs in selected panel, except current"
+		}, {
+			"key": "[⌥] [⇧] [,]",
+			"val": "Cycle to the tab which is to the left of the current tab"
+		}, {
+			"key": "[⌥] [⇧] [.]",
+			"val": "Cycle to the tab which is to the right of the current tab"
+		}, {
+			"key": "[⌘] [⇧] [F]",
+			"val": "Go to fullscreen mode"
+		}, {
+			"key": "[⇧] [F9]",
+			"val": "Preview"
+		}, {
+			"key": "[⌥] [F9]",
+			"val": "Deploy"
+		}, {
+			"key": "[^] [F9]",
+			"val": "Run"
+		}, {
+			"key": "[⌘] [O]",
+			"val": "Open a file"
+		}, {
+			"key": "[⌘] [⇧] [P]",
+			"val": "Run an action"
+		}, {
+			"key": "Esc",
+			"val": "Escape button press"
+		}, {
+			"key": "[⌘] [J]",
+			"val": "Switch active tab view type"
+		}, {
+			"key": "[^] [⇧] [⌥] [←]",
+			"val": "Switch to panel to the left of the current panel"
+		}, {
+			"key": "[^] [⇧] [⌥] [→]",
+			"val": "Switch to panel to the right of the current panel"
+		}, {
+			"key": "[^] [⇧] [⌥] [↑]",
+			"val": "Switch to panel above the current panel"
+		}, {
+			"key": "[^] [⇧] [⌥] [↓]",
+			"val": "Switch to panel below the current panel"
+		}],
+		"Code-beautifier": [{
+			"key": "[⌘] [⇧] [B]",
+			"val": "Format the code"
+		}],
+		"Guides": [{
+			"key": "[⇧] [⌥] [G]",
+			"val": "Edit Guide"
+		}]
+	}
+}
