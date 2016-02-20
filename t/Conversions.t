@@ -1654,6 +1654,22 @@ ddg_goodie_test(
             result => '4 * 10<sup>-9</sup> millimeters'
         }
     ),
+    'how many megabytes in a gigabyte?' => test_zci(
+        '1 gigabyte = 1,000 megabytes',
+        structured_answer => {
+            input => ['1 gigabyte'],
+            operation => 'convert',
+            result => '1,000 megabytes'
+        }
+    ),
+    '1 gigabyte in megabytes' => test_zci(
+        '1 gigabyte = 1,000 megabytes',
+        structured_answer => {
+            input => ['1 gigabyte'],
+            operation => 'convert',
+            result => '1,000 megabytes'
+        }
+    ),
 
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
