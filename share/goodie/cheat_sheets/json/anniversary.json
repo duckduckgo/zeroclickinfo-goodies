@@ -6,6 +6,7 @@
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Anniversary"
     },
+    "aliases": ["anniversary"],
     "section_order": [
         "Common term",
         "Latin term"
