@@ -1,0 +1,86 @@
+{
+    "id": "go_tools_cheat_sheet",
+    "name": "Go Tools",
+    "description": "A list of Go Tools and their usage",
+
+    "metadata": {
+        "sourceName": "Golang",
+        "sourceUrl" : "https://golang.org/pkg/"
+    },
+
+    "aliases": [
+        "go tool",
+        "golang tool",
+        "golang tools"
+    ],
+
+    "template_type": "reference",
+
+    "section_order": [
+        "Tools",
+        "Tools (continued)"
+    ],
+
+    "sections": {
+        "Tools": [
+            {
+                "key": "gofmt",
+                "val": "It formats code according to the acceptable way of formatting"
+            },
+            {
+                "key": "go vet",
+                "val": "It analysis code and find common mistakes like 'useless assignments', 'composite literals without key', 'unreachable code'"
+            },
+            {
+                "key": "golint",
+                "val": "It checks code for style violation"
+            },
+            {
+                "key": "errcheck",
+                "val": "This tool reports all function calls that have unchecked errors"
+            },
+            {
+                "key": "go tool cover",
+                "val": "It provides code coverage reports and easy way of finding untested code"
+            },
+            {
+                "key": "benchcmp",
+                "val": "It provides benchmarking statistics of different versions of code"
+            },
+            {
+                "key": "prettybench",
+                "val": "This utility makes benchmarking statistics pretty"
+            },
+            {
+                "key": "benchviz",
+                "val": "It provides a beautiful visualization of benchmarking statistics"
+            }
+        ],
+        "Tools (continued)": [
+            {
+                "key": "go generate",
+                "val": "It generates new Go files and codes in it"
+            },
+            {
+                "key": "impl",
+                "val": "It creates method and stubs provied an interface"
+            },
+            {
+                "key": "goimports",
+                "val": "It removes unused imports and add missing imports"
+            },
+            {
+                "key": "goreturns",
+                "val": "It fills incomplete return statements wit zero values"
+            },
+            {
+                "key": "oracle",
+                "val": "It provides analysis of source code"
+            },
+            {
+                "key": "godepgraph",
+                "val": "It generates dependency graph of Go Packages"
+            }
+        ]
+    }
+}
