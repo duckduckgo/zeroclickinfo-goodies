@@ -12,13 +12,14 @@
         "Global Variables",
         "Site Variables",
         "Page Variables",
+        "Paginator Variables",
         "Liquid Template Filters",
         "Jekyll Filters"
     ],
     "sections": {
         "Jekyll Commands": [
             {
-                "key": "jekyll server",
+                "key": "jekyll server / serve",
                 "val": "Serve your site locally"
             },
             {
@@ -56,14 +57,6 @@
                 "val": "In layout files, the rendered content of the Post or Page being wrapped"
             },
             {
-                "key": "docker events",
-                "val": "gets events from container"
-            },
-            {
-                "key": "docker port",
-                "val": "shows public facing port of container"
-            },
-            {
                 "key": "paginator",
                 "val": "When the paginate configuration option is set variable becomes available"
             }
@@ -94,6 +87,18 @@
                 "val": "A list containing the data loaded from the files located in the _data folder"
             },
             {
+                "key": "site.documents",
+                "val": "A list of all the documents in every collection"
+            },
+            {
+                "key": "site.categories.CATEGORY",
+                "val": "The list of all Posts in category 'CATEGORY'"
+            },
+            {
+                "key": "site.related_posts",
+                "val": "This contains a list of up to ten related posts"
+            },
+            {
                 "key": "site.tags.TAG",
                 "val": "The list of all Posts with tag TAG"
             }
@@ -122,6 +127,64 @@
             {
                 "key": "page.date",
                 "val": "The Date assigned to the Post"
+            },
+            {
+                "key": "page.categories",
+                "val": "The list of categories to which this post belongs"
+            },
+            {
+                "key": "page.tags",
+                "val": "The list of tags to which this post belongs"
+            },
+            {
+                "key": "page.path",
+                "val": "The path to the raw post or page"
+            },
+            {
+                "key": "page.next",
+                "val": "The next post relative to the position of the current post in  'site.posts'"
+            },
+            {
+                "key": "page.previous",
+                "val": "The previous post relative to the position of the current post in  'site.posts'"
+            }
+        ],
+        "Paginator Variables": [
+            {
+                "key": "paginator.per_page",
+                "val": "Number of Posts per page"
+            },
+            {
+                "key": "paginator.posts",
+                "val": "Posts available for that page"
+            },
+            {
+                "key": "paginator.total_posts",
+                "val": "Total number of Posts"
+            },
+            {
+                "key": "paginator.total_pages",
+                "val": "Total number of pages"
+            },
+            {
+                "key": "paginator.page",
+                "val": "The number of the current page"
+            },
+            {
+                "key": "paginator.previous_page",
+                "val": "The number of the previous page"
+            },
+            {
+                "key": "paginator.previous_page_path",
+                "val": "The path to the previous page"
+            },
+            {
+                "key": "paginator.next_page",
+                "val": "The number of the next page"
+            },
+            {
+                "key": "paginator.next_page_path",
+                "val": "The path to the next page"
             }
         ],
         "Liquid Template Filters": [
