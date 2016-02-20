@@ -1,7 +1,7 @@
 {
     "id": "java_cheat_sheet",
     "name": "Java",
-    "description": "A set of java Syntax, functions and expressions",
+    "description": "A set of java Syntax, functions, and expressions",
     "metadata": {
         "sourceName": "Cheatography",
         "sourceUrl": "http://www.cheatography.com/sschaub/cheat-sheets/java-fundamentals/"
@@ -76,11 +76,11 @@
         "Data Conversions": [
             {
                 "val" : "String to Number",
-                "key" : "inti=Integer.parseInt(str);doubled=Double.parseDouble(str);"
+                "key" : "int i=Integer.parseInt(str);doubled=Double.parseDouble(str);"
             },
             {
                 "val" : "Any Type to String",
-                "key" : "String&nbsps;=String.valueOf(value);"
+                "key" : "String s=String.valueOf(value);"
             },
             {
                 "val" : "Numeric Conversions",
