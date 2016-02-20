@@ -1,0 +1,424 @@
+{
+    "id": "lodash_cheat_sheet",
+    "name": "Lodash",
+    "description": "Displays a list of lodash methods and it's usage",
+    "metadata": {
+        "sourceName": "lodash",
+        "sourceUrl" : "https://lodash.com/docs"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Array Methods",
+        "Collection Methods",
+        "Date Methods",
+        "Function Methods",
+        "Lang Methods",
+        "Math Methods",
+        "Number Methods",
+        "Object Methods",
+        "Seq Methods",
+        "String Methods",
+        "Util Methods"
+    ],
+
+    "sections": {
+        "Array Methods": [
+            {
+                "key": "_.chunk(array, \\[size=0\\])",
+                "val": "Creates an array of elements split into groups the length of size"
+            },
+            {
+                "key": "_.compact(array)",
+                "val": "Creates an array with all falsey values removed"
+            },
+            {
+                "key": "_.concat(array, \\[values\\])",
+                "val": "Creates a new array concatenating array with any additional arrays and\/or values"
+            },
+            {
+                "key": "_.difference(array, \\[values\\])",
+                "val": "Creates an array of unique array values not included in the other given arrays"
+            },
+            {
+                "key": "_.drop(array, \\[n=1\\])",
+                "val": "Creates a slice of array with n elements dropped from the beginning"
+            },
+            {
+                "key": "_.dropRight(array, \\[n=1\\])",
+                "val": "Creates a slice of array with n elements dropped from the end"
+            },
+            {
+                "key": "_.fill(array, value, \\[start=0\\], \\[end=array.length\\])",
+                "val": "Fills elements of array with value from start up to, but not including, end"
+            },
+            {
+                "key": "_.flatten(array)",
+                "val": "Flattens array a single level deep"
+            },
+            {
+                "key": "_.flattenDeep(array)",
+                "val": "Recursively flattens array"
+            },
+            {
+                "key": "_.flattenDepth(array, [depth=1])",
+                "val": "Recursively flatten array up to depth times"
+            },
+            {
+                "key": "_.fromPairs(pairs)",
+                "val": "This method returns an object composed from key-value pairs"
+            },
+            {
+                "key": "_.head(array)",
+                "val": "Gets the first element of array"
+            },
+            {
+                "key": "_.indexOf(array, value, \\[fromIndex=0\\])",
+                "val": "Gets the index at which the first occurrence of value is found in array"
+            },
+            {
+                "key": "_.initial(array)",
+                "val": "Gets all but the last element of array"
+            },
+            {
+                "key": "_.intersection(\\[arrays\\])",
+                "val": "Creates an array of unique values that are included in all given arrays"
+            },
+            {
+                "key": "_.join(array, \\[separator=','\\])",
+                "val": "Converts all elements in array into a string separated by separator"
+            },
+            {
+                "key": "_.last(array)",
+                "val": "Gets the last element of array"
+            },
+            {
+                "key": "_.pull(array, \\[values\\])",
+                "val": "Removes all given values from array"
+            },
+            {
+                "key": "_.remove(array, \\[predicate=_.identity\\])",
+                "val": "Removes all elements from array that predicate returns truthy for and returns an array of the removed elements"
+            },
+            {
+                "key": "_.reverse()",
+                "val": "Reverses array so that the first element becomes the last, the second element becomes the second to last, and so on"
+            },
+            {
+                "key": "_.slice(array, \\[start=0\\], \\[end=array.length\\])",
+                "val": "Creates a slice of array from start up to, but not including, end"
+            },
+            {
+                "key": "_.tail(array)",
+                "val": "Gets all but the first element of array"
+            },
+            {
+                "key": "_.take(array, \\[n=1\\])",
+                "val": "Creates a slice of array with n elements taken from the beginning"
+            },
+            {
+                "key": "_.union(\\[arrays\\])",
+                "val": "Creates an array of unique values, in order, from all given arrays"
+            }
+        ],
+        "Collection Methods": [
+            {
+                "key": "_.countBy(collection, \\[iteratee=_.identity\\])",
+                "val": "Creates an object composed of keys generated from the results of running each element of collection through iteratee"
+            },
+            {
+                "key": "_.every(collection, \\[predicate=_.identity\\])",
+                "val": "Checks if predicate returns truthy for all elements of collection. Iteration is stopped once predicate returns falsey"
+            },
+            {
+                "key": "_.filter(collection, \\[predicate=_.identity\\])",
+                "val": "Iterates over elements of collection, returning an array of all elements predicate returns truthy for"
+            },
+            {
+                "key": "_.find(collection, \\[predicate=_.identity\\])",
+                "val": "Iterates over elements of collection, returning the first element predicate returns truthy for"
+            },
+            {
+                "key": "_.flatMap(collection, \\[iteratee=_.identity\\])",
+                "val": "Creates an array of flattened values by running each element in collection through iteratee and concating its result to the other mapped values"
+            },
+            {
+                "key": "_.forEach(collection, \\[iteratee=_.identity\\])",
+                "val": "Iterates over elements of collection invoking iteratee for each element"
+            },
+            {
+                "key": "_.includes(collection, value, \\[fromIndex=0\\])",
+                "val": "Checks if value is in collection"
+            },
+            {
+                "key": "_.keyBy(collection, \\[iteratee=_.identity\\])",
+                "val": "Creates an object composed of keys generated from the results of running each element of collection through iteratee"
+            },
+            {
+                "key": "_.map(collection, \\[iteratee=_.identity\\])",
+                "val": "Creates an array of values by running each element in collection through iteratee"
+            },
+            {
+                "key": "_.partition(collection, \\[predicate=_.identity\\])",
+                "val": "Creates an array of elements split into two groups"
+            },
+            {
+                "key": "_.reduce(collection, \\[iteratee=_.identity\\], \\[accumulator\\])",
+                "val": "Reduces collection to a value which is the accumulated result of running each element in collection through iteratee, where each successive invocation is supplied the return value of the previous"
+            },
+            {
+                "key": "_.sample(collection)",
+                "val": "Gets a random element from collection"
+            },
+            {
+                "key": "_.shuffle(collection)",
+                "val": "Creates an array of shuffled values"
+            },
+            {
+                "key": "_.size(collection)",
+                "val": "Gets the size of collection by returning its length for array-like values or the number of own enumerable properties for objects"
+            },
+            {
+                "key": "_.some(collection, \\[predicate=_.identity\\])",
+                "val": "Checks if predicate returns truthy for any element of collection. Iteration is stopped once predicate returns truthy"
+            }
+        ],
+        "Date Methods": [
+            {
+                "key": "_.now()",
+                "val": "Gets the timestamp of the number of milliseconds that have elapsed since the Unix epoch"
+            }
+        ],
+        "Function Methods": [
+            {
+                "key": "_.after(n, func)",
+                "val": "This method creates a function that invokes func once it’s called n or more times"
+            },
+            {
+                "key": "_.ary(func, \\[n=func.length\\])",
+                "val": "Creates a function that accepts up to n arguments, ignoring any additional arguments"
+            },
+            {
+                "key": "_.before(n, func)",
+                "val": "Creates a function that invokes func, with the this binding and arguments of the created function, while it’s called less than n times"
+            },
+            {
+                "key": "_.bind(func, thisArg, \\[partials\\])",
+                "val": "Creates a function that invokes func with the 'this' binding of 'thisArg' and prepends any additional '_.bind' arguments to those provided to the bound function"
+            },
+            {
+                "key": "_.bindKey(object, key, \\[partials\\])",
+                "val": "Creates a function that invokes the method at 'object\\[key\\]' and prepends any additional '_.bindKey' arguments to those provided to the bound function"
+            },
+            {
+                "key": "_.curry(func, \\[arity=func.length\\])",
+                "val": "Creates a function that accepts arguments of func and either invokes func returning its result"
+            },
+            {
+                "key": "_.defer(func, \\[args\\])",
+                "val": "Defers invoking the func until the current call stack has cleared"
+            },
+            {
+                "key": "_.delay(func, wait, \\[args\\])",
+                "val": "Invokes func after wait milliseconds"
+            },
+            {
+                "key": "_.flip(func)",
+                "val": "Creates a function that invokes func with arguments reversed"
+            },
+            {
+                "key": "_.memoize(func, \\[resolver\\])",
+                "val": "Creates a function that memoizes the result of 'func'"
+            },
+            {
+                "key": "_.negate(predicate)",
+                "val": "Creates a function that negates the result of the predicate 'func'"
+            },
+            {
+                "key": "_.once(func)",
+                "val": "Creates a function that is restricted to invoking 'func' once"
+            },
+            {
+                "key": "_.spread(func, \\[start=0\\])",
+                "val": "Creates a function that invokes 'func' with the 'this' binding of the created function and an array of arguments"
+            },
+            {
+                "key": "_.throttle(func, \\[wait=0\\], \\[options\\])",
+                "val": "Creates a throttled function that only invokes func at most once per every wait milliseconds"
+            },
+            {
+                "key": "_.unary(func)",
+                "val": "Creates a function that accepts up to one argument, ignoring any additional arguments"
+            },
+            {
+                "key": "_.wrap(value, \\[wrapper=identity\\])",
+                "val": "Creates a function that provides value to the wrapper function as its first argument"
+            }
+        ],
+        "Lang Methods": [
+            {
+                "key": "_.castArray(value)",
+                "val": "Casts value as an array if it’s not one"
+            },
+            {
+                "key": "_.clone(value)",
+                "val": "Creates a shallow clone of value"
+            },
+            {
+                "key": "_.cloneDeep(value)",
+                "val": "This method is like '_.clone' except that it recursively clones value"
+            },
+            {
+                "key": "_.eq(value, other)",
+                "val": "Checks whether two values are equal or not"
+            },
+            {
+                "key": "_.gt(value, other)",
+                "val": "Checks if 'value' is greater than 'other'"
+            },
+            {
+                "key": "_.isEqual(value, other)",
+                "val": "Performs a deep comparison between two values to determine if they are equivalent"
+            },
+            {
+                "key": "_.isElement(value)",
+                "val": "Checks if value is likely a DOM element"
+            }
+        ],
+        "Math Methods": [
+            {
+                "key": "_.add(augend, addend)",
+                "val": "Adds two numbers"
+            },
+            {
+                "key": "_.ceil(number, \\[precision=0\\])",
+                "val": "Computes number rounded up to precision"
+            },
+            {
+                "key": "_.floor(number, \\[precision=0\\])",
+                "val": "Computes number rounded down to precision"
+            },
+            {
+                "key": "_.max(array)",
+                "val": "Computes the maximum value of array"
+            },
+            {
+                "key": "_.mean(array)",
+                "val": "Computes the mean of the values in array"
+            },
+            {
+                "key": "_.min(array)",
+                "val": "Computes the minimum value of 'array'"
+            },
+            {
+                "key": "_.round(number, \\[precision=0\\])",
+                "val": "Computes 'number' rounded to 'precision'"
+            }
+        ],
+        "Number Methods": [
+            {
+                "key": "_.clamp(number, \\[lower\\], upper)",
+                "val": "Clamps number within the inclusive lower and upper bounds"
+            },
+            {
+                "key": "_.inRange(number, \\[start=0\\], end)",
+                "val": "Checks if 'n' is between 'start' and up to but not including, 'end'"
+            },
+            {
+                "key": "_.random(\\[lower=0\\], \\[upper=1\\], \\[floating\\])",
+                "val": "Produces a random number between the inclusive lower and upper bounds"
+            }
+        ],
+        "Object Methods": [
+            {
+                "key": "_.assign(object, \\[sources\\])",
+                "val": "Assigns own enumerable properties of source objects to the destination object"
+            },
+            {
+                "key": "_.at(object, \\[paths\\])",
+                "val": "Creates an array of values corresponding to paths of object"
+            },
+            {
+                "key": "_.create(prototype, \\[properties\\])",
+                "val": "Creates an array of values corresponding to paths of object"
+            },
+            {
+                "key": "_.forIn(object, \\[iteratee=_.identity\\])",
+                "val": "Iterates over own and inherited enumerable properties of an object invoking iteratee for each property"
+            },
+            {
+                "key": "_.get(object, path, \\[defaultValue\\])",
+                "val": "Gets the value at 'path' of 'object'"
+            },
+            {
+                "key": "_.has(object, path)",
+                "val": "Checks if path is a direct property of object"
+            },
+            {
+                "key": "_.merge(object, \\[sources\\])",
+                "val": "Recursively merges own and inherited enumerable properties of source objects into the destination object"
+            },
+            {
+                "key": "_.pick(object, \\[props\\])",
+                "val": "Creates an object composed of the picked object properties"
+            }
+        ],
+        "Seq Methods": [
+            {
+                "key": "_.chain(value)",
+                "val": "Creates a lodash object that wraps value with explicit method chaining enabled"
+            },
+            {
+                "key": "_.tap(value, interceptor)",
+                "val": "This method invokes interceptor and returns value"
+            }
+        ],
+        "String Methods": [
+            {
+                "key": "_.camelCase(\\[string=''\\])",
+                "val": "Converts string to camel case"
+            },
+            {
+                "key": "_.capitalize(\\[string=''\\])",
+                "val": "Converts the first character of string to upper case and the remaining to lower case"
+            },
+            {
+                "key": "_.pad(\\[string=''\\], \\[length=0\\], \\[chars=' '\\])",
+                "val": "Pads 'string' on the left and right sides if it’s shorter than 'length'"
+            },
+            {
+                "key": "_.split(\\[string=''\\], separator, \\[limit\\])",
+                "val": "Splits 'string' by 'separator'"
+            },
+            {
+                "key": "_.toLower(\\[string=''\\])",
+                "val": "Converts string, as a whole, to lower case"
+            }
+        ],
+        "Util Methods": [
+            {
+                "key": "_.attempt(func)",
+                "val": "Attempts to invoke func, returning either the result or the caught error object"
+            },
+            {
+                "key": "_.bindAll(object, methodNames)",
+                "val": "Binds methods of an object to the object itself, overwriting the existing method"
+            },
+            {
+                "key": "_.method(path, \\[args\\])",
+                "val": "Creates a function that invokes the method at path of a given object"
+            },
+            {
+                "key": "_.noop()",
+                "val": "A no-operation function that returns undefined regardless of the arguments it receives"
+            },
+            {
+                "key": "_.property(path)",
+                "val": "Creates a function that returns the value at path of a given object"
+            },
+            {
+                "key": "_.propertyOf(object)",
+                "val": "Creates a function that returns the value at path of a given object"
+            }
+        ]
+    }
+}
