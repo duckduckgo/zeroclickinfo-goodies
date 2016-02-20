@@ -1,7 +1,7 @@
 {
   "id": "penn_treebank_cheat_sheet",
   "name": "Penn Treebank Tagset",
-  "description": "The Penn Treebank Tagset consists of clause, phrase and word level tags for part of speech processing.",
+  "description": "The Penn Treebank Tagset consists of clause, phrase and word level tags for part-of-speech annotation.",
   "metadata": {
     "sourceName": "MIT",
     "sourceUrl": "http://web.mit.edu/6.863/www/PennTreebankTags.html"
@@ -38,87 +38,87 @@
     "Phrase Level": [
       {
         "key": "ADJP",
-        "val": "Adjective Phrase."
+        "val": "Adjective Phrase"
       },
       {
         "key": "ADVP",
-        "val": "Adverb Phrase."
+        "val": "Adverb Phrase"
       },
       {
         "key": "CONJP",
-        "val": "Conjunction Phrase."
+        "val": "Conjunction Phrase"
       },
       {
         "key": "FRAG",
-        "val": "Fragment."
+        "val": "Fragment"
       },
       {
         "key": "INTJ",
-        "val": "Interjection. Corresponds approximately to the part-of-speech tag UH."
+        "val": "Interjection. Corresponds approximately to the part-of-speech tag UH"
       },
       {
         "key": "LST",
-        "val": "List marker. Includes surrounding punctuation."
+        "val": "List marker. Includes surrounding punctuation"
       },
       {
         "key": "NAC",
-        "val": "Not a Constituent; used to show the scope of certain prenominal modifiers within an NP."
+        "val": "Not a Constituent; used to show the scope of certain prenominal modifiers within an NP"
       },
       {
         "key": "NP",
-        "val": "Noun Phrase."
+        "val": "Noun Phrase"
       },
       {
         "key": "NX",
-        "val": "Used within certain complex NPs to mark the head of the NP. Corresponds very roughly to N-bar level but used quite differently."
+        "val": "Used within certain complex NPs to mark the head of the NP"
       },
       {
         "key": "PP",
-        "val": "Prepositional Phrase."
+        "val": "Prepositional Phrase"
       },
       {
         "key": "PRN",
-        "val": "Parenthetical."
+        "val": "Parenthetical"
       },
       {
         "key": "PRT",
-        "val": "Particle. Category for words that should be tagged RP."
+        "val": "Particle. Category for words that should be tagged RP"
       },
       {
         "key": "QP",
-        "val": "Quantifier Phrase (i.e. complex measure/amount phrase); used within NP."
+        "val": "Quantifier Phrase (i.e. complex measure/amount phrase); used within NP"
       },
       {
         "key": "RRC",
-        "val": "Reduced Relative Clause."
+        "val": "Reduced Relative Clause"
       },
       {
         "key": "UCP",
-        "val": "Unlike Coordinated Phrase."
+        "val": "Unlike Coordinated Phrase"
       },
       {
         "key": "VP",
-        "val": "Verb Phrase. "
+        "val": "Verb Phrase"
       },
       {
         "key": "WHADJP",
-        "val": "Wh-adjective Phrase. Adjectival phrase containing a wh-adverb, as in how hot."
+        "val": "Wh-adjective Phrase"
       },
       {
         "key": "WHAVP",
-        "val": "Wh-adverb Phrase. Introduces a clause with an NP gap. May be null (containing the 0 complementizer) or lexical, containing a wh-adverb such as how or why."
+        "val": "Wh-adverb Phrase"
       },
       {
         "key": "WHNP",
-        "val": "Wh-noun Phrase. Introduces a clause with an NP gap."
+        "val": "Wh-noun Phrase"
       },
       {
         "key": "WHPP",
-        "val": "Wh-prepositional Phrase. Prepositional phrase containing a wh-noun phrase (such as of which or by whose authority) that either introduces a PP gap or is contained by a WHNP."
+        "val": "Wh-prepositional Phrase"
       },
       {
         "key": "X",
-        "val": "Unknown, uncertain, or unbracketable. X is often used for bracketing typos and in bracketing the...the-constructions."
+        "val": "Unknown, uncertain, or unbracketable"
       }
     ],
     "Word Level": [
@@ -128,75 +128,75 @@
       },
       {
         "key": "CD",
-        "val": "Cardinal number."
+        "val": "Cardinal number"
       },
       {
         "key": "DT",
-        "val": "Determiner."
+        "val": "Determiner"
       },
       {
         "key": "EX",
-        "val": "Existential there."
+        "val": "Existential there"
       },
       {
         "key": "FW",
-        "val": "Foreign word."
+        "val": "Foreign word"
       },
       {
         "key": "IN",
-        "val": "Preposition or subordinating conjunction."
+        "val": "Preposition or subordinating conjunction"
       },
       {
         "key": "JJ",
-        "val": "Adjective."
+        "val": "Adjective"
       },
       {
         "key": "JJR",
-        "val": "Adjective, comparative."
+        "val": "Adjective, comparative"
       },
       {
         "key": "JJS",
-        "val": "Adjective, superlative."
+        "val": "Adjective, superlative"
       },
       {
         "key": "LS",
-        "val": "List item marker."
+        "val": "List item marker"
       },
       {
         "key": "MD",
-        "val": "Modal."
+        "val": "Modal"
       },
       {
         "key": "NN",
-        "val": "Noun, singular or mass."
+        "val": "Noun, singular or mass"
       },
       {
         "key": "NNS",
-        "val": "Noun, plural."
+        "val": "Noun, plural"
       },
       {
         "key": "NNP",
-        "val": "Proper noun, singular."
+        "val": "Proper noun, singular"
       },
       {
         "key": "NNPS",
-        "val": "Proper noun, plural."
+        "val": "Proper noun, plural"
       },
       {
         "key": "PDT",
-        "val": "Predeterminer."
+        "val": "Predeterminer"
       },
       {
         "key": "POS",
-        "val": "Possessive ending."
+        "val": "Possessive ending"
       },
       {
         "key": "PRP",
-        "val": "Personal pronoun."
+        "val": "Personal pronoun"
       },
       {
         "key": "PRP$",
-        "val": "Possessive pronoun (prolog version PRP-S)."
+        "val": "Possessive pronoun (prolog version PRP-S)"
       },
       {
         "key": "RB",
@@ -204,11 +204,11 @@
       },
       {
         "key": "RBR",
-        "val": "Adverb, comparative."
+        "val": "Adverb, comparative"
       },
       {
         "key": "RBS",
-        "val": "Adverb, superlative."
+        "val": "Adverb, superlative"
       },
       {
         "key": "RB",
@@ -228,31 +228,31 @@
       },
       {
         "key": "VB",
-        "val": "Verb, base form."
+        "val": "Verb, base form"
       },
       {
         "key": "VBD",
-        "val": "Verb, past tense."
+        "val": "Verb, past tense"
       },
       {
         "key": "VBG",
-        "val": "Verb, gerund or present participle."
+        "val": "Verb, gerund or present participle"
       },
       {
         "key": "VBN",
-        "val": "Verb, past participle."
+        "val": "Verb, past participle"
       },
       {
         "key": "VBP",
-        "val": "Verb, non-3rd person singular present."
+        "val": "Verb, non-3rd person singular present"
       },
       {
         "key": "VBZ",
-        "val": "Verb, 3rd person singular present."
+        "val": "Verb, 3rd person singular present"
       },
       {
         "key": "WDT",
-        "val": "Wh-determiner."
+        "val": "Wh-determiner"
       },
       {
         "key": "WP",
@@ -260,11 +260,11 @@
       },
       {
         "key": "WP$",
-        "val": "Possessive wh-pronoun (prolog version WP-S)."
+        "val": "Possessive wh-pronoun"
       },
       {
         "key": "WRB",
-        "val": "Wh-adverb."
+        "val": "Wh-adverb"
       }
     ]
   }
