@@ -543,7 +543,7 @@ aliases:
   - microseconds
   - microsec
   - microsecs
-  - us
+  - µs
 factor: 86400000000
 type: duration
 unit: microsecond
