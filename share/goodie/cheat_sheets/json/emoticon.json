@@ -27,9 +27,6 @@
         }, {
             "val": "Face with goggles",
             "key": "8-)"
-        }, {
-            "val": "Face with black goggles",
-            "key": "8|"
         }],
         "Sad": [{
             "val": "Classic sad face",
