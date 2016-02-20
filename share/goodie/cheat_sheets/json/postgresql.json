@@ -9,7 +9,9 @@
   },
   "section_order": [
     "Installation (Debian)",
+    "PostgreSql Commands",
     "User Access",
+    "Role",
     "New User and Database",
     "PostgreSQL Service Management",
     "Database Clusters"
@@ -33,6 +35,44 @@
         "val": "Installs PostgreSQL web-based administration tool"
       }
     ],
+    "PostgreSql Commands": [
+      {
+             "key": "\\du",
+             "value": "Lists roles"
+      },
+      {
+             "key": "\\l",
+             "value": "Lists all the databases"
+      },
+      {
+             "key": "\\dt",
+             "value": "List tables in connected database"
+      },
+      {
+             "key": "\\dn",
+             "value": "List schemas"
+      },
+      {
+             "key": "\\d table",
+             "value": "List columns on table"
+      },
+      {
+             "key": "\\df",
+             "value": "List functions"
+      },
+      {
+             "key": "\\q",
+             "value": "Quit"
+      },
+      {
+             "key": "\\dv",
+             "value": "List views"
+      },
+      {
+             "key": "\\x",
+             "value": "Pretty-format query results"
+      }
+    ],
     "User Access": [
       {
         "key": "psql",
@@ -41,6 +81,20 @@
       {
         "key": "psql -d mypgdatabase -U mypguser",
         "val": "Connect to localhost as mypguser"
+      }
+    ],
+    "Role":[
+      {
+        "key": "CREATE ROLE demorole1 WITH LOGIN ENCRYPTED PASSWORD 'password1' CREATEDB",
+        "val": "Create role"
+      },
+      {
+        "key": "ALTER ROLE demorole1 CREATEROLE CREATEDB REPLICATION SUPERUSER",
+        "val": "Alter role"
+      },
+      {
+        "key": "DROP ROLE demorole1",
+        "val": "Drop role"
       }
     ],
     "New User and Database": [
