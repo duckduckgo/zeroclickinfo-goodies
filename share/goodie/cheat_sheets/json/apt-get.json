@@ -45,6 +45,10 @@
                 "key": "apt-get check"
             },
             {
+                "val": "Download the archive file for <package_name> into the current directory",
+                "key": "apt-get download <package_name>"
+            },
+            {
                 "val": "Fix broken packages",
                 "key": "apt-get -f install"
             },
@@ -87,6 +91,14 @@
             {
                 "val": "Shows the description of package <package_name> and other relevant information including version, size, dependencies and conflicts",
                 "key": "apt-cache show <package_name>"
+            },
+            {
+                "val": "Shows all the available packages",
+                "key": "apt-cache pkgnames"
+            },
+            {
+                "val": "Shows the dependencies for <package_name>",
+                "key": "apt-cache showpkg <package_name>"
             }
         ]
     }
