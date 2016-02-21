@@ -6,7 +6,7 @@ use YAML::XS qw( LoadFile );
 zci answer_type => "constants";
 zci is_cached   => 1;
 
-my $constants = LoadFile(share("constants.yml"));
+my $constants = LoadFile('' . share("constants.yml"));
 
 #loop through constants
 foreach my $name (keys %$constants) {

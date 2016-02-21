@@ -10,7 +10,7 @@ use Text::Trim;
 zci answer_type => 'periodic_table';
 zci is_cached   => 1;
 
-my @elements = @{ LoadFile(share('elements.yml')) };
+my @elements = @{ LoadFile('' . share('elements.yml')) };
 
 # Triggers
 my @element_triggers = [map { lc($_->[2]) } @elements];

@@ -12,7 +12,7 @@ triggers any => @ddg_aliases, "zeroclickinfo", "private search";
 
 zci is_cached => 1;
 
-my $responses = LoadFile(share('responses.yml'));
+my $responses = LoadFile('' . share('responses.yml'));
 
 # The YAML is intended to be human-friendly.
 # Now we make something computer-friendly.

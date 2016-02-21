@@ -14,7 +14,7 @@ zci is_cached   => 1;
 
 use bignum;
 
-my @types = LoadFile(share('ratios.yml'));
+my @types = LoadFile('' . share('ratios.yml'));
 
 my @units = ();
 foreach my $type (@types) {
