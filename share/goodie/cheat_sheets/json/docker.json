@@ -39,6 +39,18 @@
                 "val": "restarts a container"
             },
             {
+                "key": "docker pause",
+                "val": "pauses a running container, \"freezing\" it in place"
+            },
+            {
+                "key": "docker unpause",
+                "val": "resumes a running container"
+            },
+            {
+                "key": "docker restart",
+                "val": "restarts a container"
+            },
+            {
                 "key": "docker rm",
                 "val": "deletes a container"
             },
