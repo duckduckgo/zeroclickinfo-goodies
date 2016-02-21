@@ -43,7 +43,7 @@
             "key": "%V"
         }, {
             "val": "week number of year, with Monday as first day of week (00..53)",
-            "key": "%w"
+            "key": "%W"
         }],
         "Month": [{
             "val": "locale's abbreviated month name (e.g., Jan)",
