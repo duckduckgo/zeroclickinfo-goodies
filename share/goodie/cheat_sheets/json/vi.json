@@ -169,6 +169,14 @@
             {
                 "key": "%",
                 "val": "Move to associated ( ), { }, [ ]"
+            },
+            {
+                "key": "fc",
+                "val": "Move forward to the next occurrence of the letter c on the current line"
+            },
+            {
+                "key": "Fc",
+                "val": "Move backward to the next occurrence of the letter c on the current line"
             }
         ],
         "Deleting Text": [
