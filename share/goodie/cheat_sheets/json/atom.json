@@ -7,7 +7,7 @@
 		"sourceUrl": "http://www.shortcutworld.com/en/linux/Atom-(text-editor)_1.0.html"
 	},
 	"aliases": [
-		"atom text editor", "atom for windows", "atom for linux", "linux atom", "windows atom"
+		"atom text editor", "atom for windows", "atom for linux", "linux atom", "windows atom", "atom text-editor"
 	],
 	"template_type": "keyboard",
 	"section_order": [
