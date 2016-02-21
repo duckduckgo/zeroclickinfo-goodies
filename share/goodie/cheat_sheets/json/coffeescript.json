@@ -124,6 +124,15 @@
         }, {
             "val": "find element in array (No JS equivalent)",
             "key": "in"
+        }, {
+            "val": "Math.pow(a, b)",
+            "key": "a ** b"
+        }, {
+            "val": "Math.floor(a / b)",
+            "key": "a // b"
+        }, {
+            "val": "(a % b + b) % b",
+            "key": "a %% b"
         }]
     }
 }
