@@ -26,7 +26,7 @@
             "val": "Sets one fixed width for each screen size in bootstrap (xs,sm,md,lg)",
             "key": ".container"  
         }, {             
-            "val": "Expands screen to fill the available widthe",
+            "val": "Expands screen to fill the available width",
             "key": ".container-fluid"
         }, {
             "val": "Containers of columns",
