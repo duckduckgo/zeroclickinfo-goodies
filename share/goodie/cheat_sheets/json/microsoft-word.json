@@ -76,11 +76,11 @@
                 "key": "[Ctrl] [U]"
             },
             {
-                "val": "Create a Nonbreaking Space",
+                "val": "Create a non-breaking Space",
                 "key": "[Ctrl] [Shift] [Space]"
             },
             {
-                "val": "Create a Nonbreaking Hyphen",
+                "val": "Create a non-breaking Hyphen",
                 "key": "[Ctrl] [Shift] [Hyphen]"
             },
             {
