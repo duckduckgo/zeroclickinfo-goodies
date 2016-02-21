@@ -1,9 +1,10 @@
 {
     "id": "photoshop_cheat_sheet",
     "name": "Photoshop",
-    "description": "Graphics Editor",
+    "description": "Adobe Photoshop is a graphics editor developed and published by Adobe",
     "metadata": {
-        "sourceName": "PhotoshopCheatSheet"
+        "sourceName": "Adobe",
+        "sourceUrl": "https://helpx.adobe.com/photoshop/using/default-keyboard-shortcuts.html"
     },
     "template_type": "keyboard",
     "section_order": [
@@ -343,6 +344,26 @@
                 "val": "Ungroup Layers"
             },
             {
+                "key": "[Alt] [.]",
+                "val": "Select top layer"
+            },
+            {
+                "key": "[Alt] [,]",
+                "val": "Select bottom layer"
+            },
+            {
+                "key": "[Shift] [Alt] ([\\[] / [\\]])",
+                "val": "Add to layer selection in Layers panel"
+            },
+            {
+                "key": "[Alt] ([\\[] / [\\]]",
+                "val": "Select next layer down/up"
+            },
+            {
+                "key": "[Ctrl] [Alt] [A]",
+                "val": "Select all layers"
+            },
+            {
                 "key": "[Shift] [Ctrl] [\\]]",
                 "val": "Arrange: Bring to Front"
             },
@@ -513,6 +534,14 @@
                 "val": "Close"
             },
             {
+                "key": "[Ctrl] [Tab]",
+                "val": "Cycle through open documents"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Tab]",
+                "val": "Switch to previous document"
+            },
+            {
                 "key": "[Alt] [Ctrl] [W]",
                 "val": "Close All"
             },
@@ -554,6 +583,10 @@
             }
         ],
         "Blend Mode": [
+            {
+                "key": "[Shift] ([++] / [--])",
+                "val": "Cycle through blending modes"
+            },
             {
                 "key": "[Shift] [Alt] [N]",
                 "val": "Normal"
