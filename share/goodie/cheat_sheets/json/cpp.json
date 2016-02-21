@@ -36,12 +36,20 @@
                 "val": "Floating point"
             },
             {
+                "key": "double",
+                "val": "Double floating point"
+            },
+            {
                 "key": "bool",
                 "val": "True or false"
             },
             {
                 "key": "void",
                 "val": "No value"
+            },
+            {
+                "key": "wchar_t",
+                "val": "Wide character"
             }
         ],
         "Preprocessor Directives": [
@@ -85,7 +93,7 @@
             },
             {
                 "key": "/",
-                "val": "Divides numerator by de-numerator"
+                "val": "Divides numerator by denominator"
             },
             {
                 "key": "%",
