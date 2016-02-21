@@ -15,23 +15,13 @@ specialist in a particular field - exactly what I hope Sages can cater for,
 any answer which requires the input of someone wise to that field (for
 example, cheat sheets are *'specialist'* knowledge).
 
-A Sage Instant Answer would consist of two parts:
-
-1. The Controller: the Controller would represent the *type* and *use* of
-the particular Instant Answer. The Controller determines how to read,
-interpret, and display the Answer Files - the `CheatSheets.pm` file, along
-with helper files is a prime example of a Controller.
-
-2. Answer Files: each Answer File represents a particular unit that is
-interpreted by the controller; for example, the `vim.json` cheat sheet
-would be an Answer File for the CheatSheets Controller.
-
 ### Rationale
 
 Cheat sheets, currently embedded in the `Goodies` repository, are very
 useful! But the amount of cheat sheets that come in compared to Perl-driven
 Goodies is rather high - making it harder to spend time reviewing and
-progressing Perl-backed Goodies.
+progressing Perl-backed Goodies. *Over a quarter of all Goodie PRs are
+cheat sheets - that's for* ***one*** *back-end file*.
 
 Providing a separate repository (`duckduckgo/zeroclickinfo-Sage`) for cheat
 sheets, as well as other Sage formats, would provide two immediate
@@ -54,6 +44,32 @@ with walkthroughs, complex questions (for when Stack Exchange hasn't got
 it covered), recommendations, and more!
 * It would provide a place for community-driven, static (though I don't see
 why we wouldn't be able to have dynamic!) responses to reside.
+
+### Components
+
+A Sage Instant Answer would consist of two parts:
+
+1. The Controller: the Controller would represent the *type* and *use* of
+the particular Instant Answer. The Controller determines how to read,
+interpret, and display the Answer Files - the `CheatSheets.pm` file, along
+with helper files is a prime example of a Controller.
+
+2. Answer Files: each Answer File represents a particular unit that is
+interpreted by the controller; for example, the `vim.json` cheat sheet
+would be an Answer File for the CheatSheets Controller.
+
+### Structure
+
+The structure of a Sage Instant Answer would not be dissimilar to the
+existing Instant Answer types.
+
+* The back-end Controller file would go under `lib/DDG/Sage/CONTROLLER.pm`
+* The front-end JavaScript files would go under `share/sage/SAGE_NAME/`
+* The Answer Files would go under `share/sage/SAGE_NAME/answers/`
+
+An alternative might be to have the front-end files go in another directory
+parallel to `answers/`, e.g., `front_end/`.
+
 
 ## The Examples
 
