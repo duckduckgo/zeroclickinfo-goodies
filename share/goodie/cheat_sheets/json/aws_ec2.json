@@ -21,7 +21,8 @@
         "Instance Metadata Categories",
         "Purchasing Options",
         "Instance Lifecycle States",
-        "Running Instance (Per-Region) Default Limits"
+        "Running Instance (Per-Region) Default Limits",
+        "Resource Default Limits"
     ],
     "sections": {
         "Resource Glossary": [
@@ -533,8 +534,32 @@
                 "key": "All Other Instance Types",
                 "val": "On-Demand Limit: 20 | Reserved Limit: 20"
             }
-        ]         
-        
-        
+        ],      
+        "Resource Default Limits": [
+            {
+                "key": "Elastic IP Addresses (EC2-Classic)",
+                "val": "5"
+            },
+            {
+                "key": "Security Groups Per Instance (EC2-Classic)",
+                "val": "500"
+            },
+            {
+                "key": "Rules per security group (EC2-Classic)",
+                "val": "100"
+            },
+            {
+                "key": "Key Pairs",
+                "val": "5000"
+            },
+            {
+                "key": "Reserved Instances",
+                "val": "20 instance reservations per AZ, per month"
+            },
+            {
+                "key": "AMI copies",
+                "val": "50 concurrent copies; 25 from a single source region"
+            }   
+        ]
     }
 }
