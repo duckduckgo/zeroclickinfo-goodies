@@ -1,7 +1,7 @@
 {
     "id": "emoticon_cheat_sheet",
     "name": "Emoticon",
-    "description": "Pictoral representation of an emotion via text",
+    "description": "Pictorial representation of an emotion via text",
     "aliases": [
         "emoticons"
     ],
@@ -24,6 +24,9 @@
         }, {
             "val": "Enamored",
             "key": ":3"
+        }, {
+            "val": "Face with goggles",
+            "key": "8-)"
         }],
         "Sad": [{
             "val": "Classic sad face",
