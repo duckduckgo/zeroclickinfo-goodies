@@ -125,6 +125,18 @@
         }, {
             "val": "Span buttons to the entire width of the screen",
             "key": ".btn-group-justified"
+        }, {
+            "val": "Makes green color success button",
+            "key": ".btn-success"
+        }, {
+            "val": "Makes yellow color warning button",
+            "key": ".btn-warning"
+        }, {
+            "val": "Makes red color danger button",
+            "key": ".btn-danger"
+        }, {
+            "val": "Makes light-blue color info button",
+            "key": ".btn-info"
         }],
         "Images": [{
             "val": "Adds rounded corners to an image",
