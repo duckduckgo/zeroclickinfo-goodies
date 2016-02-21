@@ -113,7 +113,7 @@
             "val": "Creates a constructor for the containing class",
             "key": "ctor"
         }, {
-            "val": "Creates a destructor for the containing class.",
+            "val": "Creates a destructor for the containing class",
             "key": "~"
         }, {
             "val": "Creates a call to WriteLine",
