@@ -2,7 +2,6 @@
     "id": "blender_cheat_sheet",
     "name": "Blender",
     "description": "3D computer graphics software",
-    "aliases": ["blender"],
     "metadata": {
         "sourceName": "OverAPI.com",
         "sourceUrl": "http://overapi.com/blender/"
