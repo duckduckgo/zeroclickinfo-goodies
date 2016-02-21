@@ -85,7 +85,7 @@
             "val": "list subtraction",
             "key": "--"
         }, {
-            "val": "checks membership",
+            "val": "test for membership",
             "key": "in"
         }, {
             "val": "no reassign",
