@@ -93,7 +93,6 @@
         }, {
             "val": "Creates a responsive table.",
             "key": ".table-responsive"
-         
         }],
         "Buttons": [{
             "val": "Adds basic styling to any button",
