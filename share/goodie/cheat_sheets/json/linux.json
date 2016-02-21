@@ -1,7 +1,7 @@
 {
     "id": "linux_cheat_sheet",
     "name": "Linux",
-    "description": "An open-source Unix-like operating system dveloped by Linus Torvalds",
+    "description": "An open-source Unix-like operating system developed by Linus Torvalds",
     "metadata": {
         "sourceName": "Computer World",
         "sourceUrl": "http://www.computerworld.com/article/2598082/linux/linux-linux-command-line-cheat-sheet.html"
