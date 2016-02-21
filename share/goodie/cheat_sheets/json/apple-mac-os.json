@@ -21,7 +21,7 @@
         "Spotlight",
         "Text Editing",
         "Screenshots (Hold Ctrl to copy screenshot to the clipboard)",
-        "Web Browsing (Works on most modern browsers)"
+        "Web Browsing (Works on most of the modern browsers)"
     ],
     "sections": {
         "General": [
@@ -230,7 +230,7 @@
                 "val": "Take picture of a specific window/object"
             }
         ],
-        "Web Browsing (Works on most modern browsers)": [
+        "Web Browsing (Works on most of the modern browsers)": [
             {
                 "key": "[⌘] [T]",
                 "val": "Open a new tab"
