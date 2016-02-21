@@ -1,6 +1,6 @@
 {
-    "id": "yum_commands_cheat_sheet",
-    "name": "YUM Commands",
+    "id": "redhat_cheat_sheet",
+    "name": "Redhat commands Commands",
     "description": "Yum Commands for Redhat Enterprise ",
     "metadata": {
         "sourceName": "Redhat",
