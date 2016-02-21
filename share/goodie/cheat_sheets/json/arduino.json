@@ -225,7 +225,7 @@
                 "val": "x = x | y"
             }
         ],
-        "I/O": [
+        "I\/O": [
             {
                 "key": "pinMode(pin, mode)",
                 "val": "Sets pin to either INPUT, OUTPUT, or INPUT_PULLUP"
