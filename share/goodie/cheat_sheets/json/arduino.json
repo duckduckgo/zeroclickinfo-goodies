@@ -22,7 +22,7 @@
         "Bitwise Operators",
         "Compound Operators",
         "Constants",
-        "I/O",
+        "I\/O",
         "Math",
         "Time",
         "Comments"
@@ -49,15 +49,15 @@
         ],
         "Constants": [
             {
-                "key": "HIGH / LOW",
+                "key": "HIGH \/ LOW",
                 "val": "Pin input or output voltage is high or low"
             },
             {
-                "key": "true/false",
+                "key": "true\/false",
                 "val": "Boolean values"
             },
             {
-                "key": "INPUT / INPUT_PULLUP / OUTPUT",
+                "key": "INPUT \/ INPUT_PULLUP \/ OUTPUT",
                 "val": "Configures pin to sample voltage or provide current to other circuits"
             },
             {
@@ -76,7 +76,7 @@
             },
             {
                 "key": "else {do thing C}",
-                "val": "Does thing C if all the above `if` and `else if` blocks are false"
+                "val": "Does thing C if all the above \"if\" and \"else if\" blocks are false"
             },
             {
                 "key": "for(int x = 0; x < 100; x++){println(x)}",
@@ -113,11 +113,11 @@
         ],
         "Comments": [
             {
-                "key": "// stuff",
+                "key": "\/\/ stuff",
                 "val": "Single-line comment"
             },
             {
-                "key": "/* many things */",
+                "key": "\/* many things *\/",
                 "val": "Multi-line comment"
             }
         ],
@@ -209,12 +209,12 @@
                 "val": "x = x * y"
             },
             {
-                "key": "x /= y",
-                "val": "x = x / y"
+                "key": "x \/= y",
+                "val": "x = x \/ y"
             },
             {
                 "key": "x %= y",
-                "val": "x = the remainder of x / y"
+                "val": "x = the remainder of x \/ y"
             },
             {
                 "key": "x &= y",
@@ -299,7 +299,7 @@
                 "val": "Square root of x"
             },
             {
-                "key": "sin(x) / cos(x) / tan(x)",
+                "key": "sin(x) \/ cos(x) \/ tan(x)",
                 "val": "Sine, cosine and tangent of x"
             },
             {
