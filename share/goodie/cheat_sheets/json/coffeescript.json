@@ -64,7 +64,7 @@
             "key": "myFunc = (param = 'default') -> console.log param"
         }, {
             "val": "Define function",
-            "key": "otherFunc = (first, other...) -> conole.log other"
+            "key": "otherFunc = (first, other...) -> console.log other"
         }, {
             "val": "call function with array as arguments",
             "key": "otherFunc myArray..."
