@@ -7,7 +7,15 @@
         "sourceUrl": "http://community.linuxmint.com/tutorial/view/47"
     },
     "template_type": "keyboard",
-    "section_order": ["Desktop Navigation", "Desktop Commands", "ScreenShot" , "Web Browser" , "Tab Management"],
+    "section_order": [
+        "Desktop Navigation",
+        "Desktop Commands",
+        "ScreenShot",
+        "Web Browser",
+        "Tab Management",
+        "Text Editing",
+        "Text Formatting"
+    ],
     "sections": {
         "Desktop Navigation": [{
             "val": "Start menu / Access applications",
@@ -32,15 +40,24 @@
             "val": "Edit menu",
             "key": "[Alt] [E]"
         }, {
+             "val": "View menu",
+             "key": "[Alt] [V]"
+        }, {
             "val": "Copy selected text or items to the clipboard",
             "key": "[Ctrl] [C]"
         }, {
-            "val": "View menu",
+             "val": "Select everything in focused control or window",
+             "key": "[Ctrl] [A]"
+         }, {
+            "val": "Paste contents of clipboard at cursor",
             "key": "[Ctrl] [V]"
         }, {
             "val": "Undo the last action",
             "key": "[Ctrl] [Z]"
         }, {
+             "val": "Redo the last action",
+             "key": "[Shift] [Ctrl] [Z]"
+         }, {
             "val": "Paste special",
             "key": "[Ctrl] [Shift] [V]"
         }],
@@ -54,6 +71,9 @@
         "Web Browser": [{
             "val": "Bookmarks menu",
             "key": "[Alt] [B]"
+        },{
+            "val": "Add a bookmark for the current location",
+            "key": "[Ctrl] [B]"
         },{
             "val": "Pop up new window",
             "key": "[Alt] [F2]"
@@ -72,6 +92,9 @@
         }, {
             "val": "Manage bookmarks",
             "key": "[Ctrl] [Shift] [R]"
+        }, {
+            "val": "Refresh a Webpage",
+            "key": "[Ctrl] [R]"
         }],
         "Tab Management": [{
             "val": "Create new tab",
@@ -85,6 +108,41 @@
         }, {
             "val": "Go to previous tab",
             "key": "[Ctrl] [.]"
+        }],
+        "Text Editing": [{
+            "val": "Start of line",
+            "key": "Home"
+        }, {
+            "val": "End of line",
+            "key": "End"
+        }, {
+            "val": "Start of document",
+            "key": "[Ctrl] [Home]"
+        }, {
+            "val": "End of document",
+            "key": "[Ctrl] [End]"
+        }, {
+            "val": "Previous word",
+            "key": "[Ctrl] [←]"
+        }, {
+            "val": "next word",
+            "key": "[Ctrl] [→]"
+        }, {
+            "val": "Previous line break",
+            "key": "[Ctrl] [↑]"
+        }, {
+            "val": "Next line break",
+            "key": "[Ctrl] [→]"
+        }],
+        "Text Formatting": [{
+            "val": "Make selected text bold/regular",
+            "key": "[Ctrl] [B]"
+        }, {
+            "val": "Toggle underlining of selected text",
+            "key": "[Ctrl] [U]"
+        }, {
+            "val": "Make selected text italic/regular",
+            "key": "[Ctrl] [I]"
         }]
     }
 }
