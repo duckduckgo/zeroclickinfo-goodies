@@ -48,7 +48,7 @@
         ],
         "Chrome Features": [
             {
-                "key": "[Alt] [F]",
+                "key": "[Alt] ([F] / [E]) / [F10]",
                 "val": "Open Chrome menu"
             },
             {
@@ -64,8 +64,16 @@
                 "val": "Open downloads page"
             },
             {
+                "key": "[Shift] [Esc]",
+                "val": "Open the Task Manager"
+            },
+            {
                 "key": "[Ctrl] [Shift] [M]",
                 "val": "Switch between users"
+            },
+            {
+                "key": "[Ctrl] [Shift] [Delete]",
+                "val": "Open the Clear Browsing Data dialog"
             },
             {
                 "key": "[Ctrl] [Shift] [J]",
@@ -74,12 +82,20 @@
             {
                 "key": "[Shift] [Esc]",
                 "val": "Open Chrome task manager"
+            },
+            {
+                "key": "[F1]",
+                "val": "Open the Help Center in a new tab "
             }
         ],
         "Webpage": [
             {
                 "key": "[Ctrl] [P]",
                 "val": "Print current page"
+            },
+            {
+                "key": "[Ctrl] [S]",
+                "val": "Save current page"
             },
             {
                 "key": "[Ctrl] [F]",
@@ -90,7 +106,15 @@
                 "val": "Bookmark current page"
             },
             {
-                "key": "[Ctrl] [R]",
+                "key": "[Ctrl] [G] / [F3]",
+                "val": "Find the next match for your input in the find bar"
+            },
+            {
+                "key": "[Ctrl] /[Shift] [G] / [Shift] [F3] / [Shift] [Enter]",
+                "val": "Finds the previous match for your input in the find bar"
+            },
+            {
+                "key": "[Ctrl] [R] / [F5]",
                 "val": "Reload current page"
             },
             {
@@ -104,6 +128,30 @@
             {
                 "key": "[Ctrl] [U]",
                 "val": "View source of current page"
+            },
+            {
+                "key": "[Ctrl] [-]",
+                "val": "Make everything on the page smaller"
+            },
+            {
+                "key": "[Ctrl] [+]",
+                "val": "Enlarge everything on the page"
+            },
+            {
+                "key": "[Ctrl] [0]",
+                "val": "Return everything on the page to normal size"
+            },
+            {
+                "key": "Space bar",
+                "val": "Scroll down the web page"
+            },
+            {
+                "key": "Home",
+                "val": "Go to the top of the page"
+            },
+            {
+                "key": "End",
+                "val": "Go to the bottom of the page"
             },
             {
                 "key": "F11",
