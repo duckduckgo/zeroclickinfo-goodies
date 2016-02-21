@@ -30,7 +30,7 @@
             },
             {
                 "key": "[F2] [Z]",
-                "val": "Repeat part of the pevious command, up to character z"
+                "val": "Repeat part of the previous command, up to character z"
             },
             {
                 "key": "[F3]",
