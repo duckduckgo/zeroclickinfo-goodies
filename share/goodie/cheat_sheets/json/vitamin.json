@@ -9,7 +9,8 @@
     "template_type": "reference",
     "section_order": [
         "Source",
-        "Benefits"
+        "Benefits",
+        "Deficiency Disease"
     ],
     "sections": {
         "Source": [{
@@ -25,8 +26,17 @@
                 "key": "Vitamin B3",
                 "val": "Mushrooms, peanut butter, meat, fish"
             },{
+                "key": "Vitamin B5",
+                "val": "Meat, broccoli, avocados"
+            },{
                 "key": "Vitamin B6",
                 "val": "Potatoes, bananas"
+            },{
+                "key": "Vitamin B7 / H",
+                "val": "Raw egg yolk, liver, peanuts, leafy green vegetables"
+            },{
+                "key": "Vitamin B9 / M",
+                "val": "Leafy vegetables, pasta, bread, cereal, liver"
             },{
                 "key": "Vitamin B12",
                 "val": "Milk, cheese, yogurt, fortified soy"
@@ -56,11 +66,20 @@
                 "key": "Vitamin B3",
                 "val": "Maintain properly functioning gastrointestinal tract"
             },{
+                "key": "Vitamin B5",
+                "val": "Provides carbohydrates, amino acids and antibiotics, while also stimulating adrenal hormones"
+            },{
                 "key": "Vitamin B6",
                 "val": "Helps in formation of haemoglobin"
             },{
+                "key": "Vitamin B7 / H",
+                "val": "Treatment of biotin deficiency"
+            },{
+                "key": "Vitamin B9 / M",
+                "val": "Prevents serious birth defects, produces healthy red blood cells, help digestion and strengthening of nervous system"
+            },{
                 "key": "Vitamin B12",
-                "val": "Works with folic acid to produce healthy red blood cells "
+                "val": "Works with folic acid to produce healthy red blood cells"
             },{
                 "key": "Vitamin C",
                 "val": "Helps to heal wounds, prevent cell damage"
@@ -73,6 +92,46 @@
             },{
                 "key": "Vitamin K",
                 "val": "Makes proteins that cause our blood to clot"
+            }],
+        "Deficiency Disease":[{
+                "key": "Vitamin A",
+                "val": "Night blindness, Hyperkeratosis, and Keratomalacia"
+            },{
+                "key": "Vitamin B1",
+                "val": "Beriberi, Wernicke-Korsakoff syndrome"
+            },{
+                "key": "Vitamin B2",
+                "val": "Ariboflavinosis, Glossitis, Angular stomatitis"
+            },{
+                "key": "Vitamin B3",
+                "val": "Pellagra"
+            },{
+                "key": "Vitamin B5",
+                "val": "Paresthesia"
+            },{
+                "key": "Vitamin B6",
+                "val": "Anemia peripheral neuropathy"
+            },{
+                "key": "Vitamin B7 / H",
+                "val": "Dermatitis, enteritis"
+            },{
+                "key": "Vitamin B9 / M",
+                "val": "Megaloblastic anemia, birth defects (neural tube)"
+            },{
+                "key": "Vitamin B12",
+                "val": "Megaloblastic anemia"
+            },{
+                "key": "Vitamin C",
+                "val": "Scurvy"
+            },{
+                "key": "Vitamin D",
+                "val": "Rickets and Osteomalacia"
+            },{
+                "key": "Vitamin E",
+                "val": "Sterility in males and abortions in females (very rare)"
+            },{
+                "key": "Vitamin K",
+                "val": "Bleeding diathesis"
             }]
     }
 }
