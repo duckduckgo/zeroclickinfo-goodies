@@ -189,7 +189,7 @@ molar gas constant:
 
 permeability of free space:
     name: The Magnetic Constant
-    symbol: \mu_0 \
+    symbol:
     wiki:
     value:
         plain: '1.25663706 × 10^-6 m kg s^-2 A^-2'
