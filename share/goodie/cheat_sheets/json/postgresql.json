@@ -9,7 +9,9 @@
   },
   "section_order": [
     "Installation (Debian)",
+    "PostgreSql Commands",
     "User Access",
+    "Role",
     "New User and Database",
     "PostgreSQL Service Management",
     "Database Clusters"
@@ -33,15 +35,63 @@
         "val": "Installs PostgreSQL web-based administration tool"
       }
     ],
+    "PostgreSQL Commands": [
+        {
+            "key": "\\l",
+            "value": "Lists all the databases"
+        },
+        {
+            "key": "\\dn",
+            "value": "List schemas"
+        },
+        {
+            "key": "\\df",
+            "value": "List functions"
+        },
+        {
+            "key": "\\q",
+            "value": "Quit/Exit"
+        },
+        {
+            "key": "\\c __database__",
+            "value": "Connect to the database"
+        },
+        {
+            "key": "\\d __table__",
+            "value": "Show table definition including triggers"
+        },
+        {
+            "key": "\\dv",
+            "value": "List views"
+        },
+        {
+            "key": "\\x",
+            "value": "Pretty-format query results instead of the not-so-useful ASCII tables"
+        }
+    ],
     "User Access": [
       {
         "key": "psql",
-        "val": "Connect to the database"
+        "val": "Start command line interface for PostgreSQL"
       },
       {
         "key": "psql -d mypgdatabase -U mypguser",
         "val": "Connect to localhost as mypguser"
       }
+    ],
+    "Role": [
+        {
+            "key": "CREATE ROLE demorole1 WITH LOGIN ENCRYPTED PASSWORD 'password1' CREATEDB",
+            "value": "Create role"
+        },
+        {
+            "key": "ALTER ROLE demorole1 CREATEROLE CREATEDB REPLICATION SUPERUSER",
+            "value": "Alter role"
+        },
+        {
+            "key": "DROP ROLE demorole1",
+            "value": "Drop role"
+        }
     ],
     "New User and Database": [
       {
@@ -54,6 +104,18 @@
       }
     ],
     "PostgreSQL Service Management": [
+      {
+        "key": "sudo service postgresql start",
+        "value": "Start postgresql"
+      },
+      {
+        "key": "sudo service postgresql restart",
+        "value": "Restart postgresql"
+      },
+      {
+        "key": "sudo service postgresql stop",
+        "value": "Stop postgresql"
+      },
       {
         "key": "sudo service postgresql reload",
         "val": "Reload postgresql"
