@@ -63,7 +63,7 @@ develop:
   subtitle: "Visit DuckDuckHack to learn more"
   url: http://duckduckhack.com/
 doodle:
-  title: "Sometimes Dax gets dressed up for special occassions"
+  title: "Sometimes Dax gets dressed up for special occasions"
   subtitle: "View our past holiday logos"
   url: https://duck.co/help/settings/holiday-logos
 duck:
@@ -167,8 +167,8 @@ short:
     - shorturl
     - shortdomain
   title: "Need a quicker way to visit DuckDuckGo?"
-  subtitle: "You can also find us at https://ddg.gg"
-  url: https://ddg.gg
+  subtitle: "You can also find us at http://ddg.gg"
+  url: http://ddg.gg
 spice:
   title: "Interested in creating a Spice Instant Answer?"
   subtitle: "Visit our documentation"
@@ -207,7 +207,7 @@ tor:
     - torhiddenservice
   title: "DuckDuckGo is available on Tor"
   subtitle: "Visit our onion address"
-  url: http://3g2upl4pq6kufc4m.onion
+  url: http://3g2upl4pq6kufc4m.onion.link
 traffic:
   title: "Looking for our traffic stats?"
   subtitle: "Visit the DuckDuckGo traffic page"
