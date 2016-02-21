@@ -104,7 +104,7 @@
             }, 
             {
                 "key": "B",
-                "val": "Move to the beginning of blank delimted word"
+                "val": "Move to the beginning of blank delimited word"
             },
             {
                 "key": "e",
@@ -132,7 +132,7 @@
             }, 
             {
                 "key": "0",
-                "val": "Move to the begining of the line"
+                "val": "Move to the beginning of the line"
             }, 
             {
                 "key": "$",
@@ -164,7 +164,7 @@
             }, 
             {
                 "key": "L",
-                "val": "Move to botton of screen"
+                "val": "Move to bottom of screen"
             }, 
             {
                 "key": "%",
@@ -228,7 +228,7 @@
             },
             {
                 "key": "P",
-                "val": "Put before the poition or before the line"
+                "val": "Put before the position or before the line"
             }
         ],
         "Search for strings": [
@@ -256,7 +256,7 @@
             },
             {
                 "key": "g",
-                "val": "Flag - Replace all occurences of pattern"
+                "val": "Flag - Replace all occurrences of pattern"
             },
             {
                 "key": "c", 
@@ -270,7 +270,7 @@
         "Other": [
             {
                 "key": "~", 
-                "val": "Toggle upp and lower case"
+                "val": "Toggle upper and lower case"
             },
             {
                 "key": "J",
