@@ -2,6 +2,7 @@
     "id": "git_cheat_sheet",
     "name": "Git",
     "description": "Git help",
+    "aliases": ["git", "github"],
     "metadata": {
         "sourceName": "GitHub",
         "sourceUrl": "https://training.github.com/kit/downloads/github-git-cheat-sheet"
