@@ -172,11 +172,11 @@
             },
             {
                 "key": "fc",
-                "val": "Move forward to the next occurrence of the letter c on the current line"
+                "val": "Move forward to the next occurrence of the letter c in the current line"
             },
             {
                 "key": "Fc",
-                "val": "Move backward to the next occurrence of the letter c on the current line"
+                "val": "Move backward to the next occurrence of the letter c in the current line"
             }
         ],
         "Deleting Text": [
