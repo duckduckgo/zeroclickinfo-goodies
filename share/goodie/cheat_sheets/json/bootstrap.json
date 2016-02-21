@@ -128,7 +128,7 @@
             "val": "Makes green color success button",
             "key": ".btn-success"
         }, {
-            "val": "Makes yellow color warning button",
+            "val": "Makes orange color warning button",
             "key": ".btn-warning"
         }, {
             "val": "Makes red color danger button",
