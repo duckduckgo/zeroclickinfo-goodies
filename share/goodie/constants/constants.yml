@@ -171,14 +171,6 @@ hbar:
         plain: '1.05457148 × 10^-34 m^2 kg / s'
         html: '1.05457148 × 10<sup>-34</sup> m<sup>2</sup> kg / s'
 
-magnetic constant (vacuum permeability):
-    name: Magnetic Constant
-    symbol: \mu_0 \,
-    wiki:
-    value:
-        plain: '1.256637061 × 10^−6 N A^−2'
-        html: '1.256637061 × 10<sup>−6</sup> N A<sup>−2</sup>'
-
 magnetic flux quantum:
     name: Magnetic Flux Quantum
     symbol:
@@ -197,7 +189,7 @@ molar gas constant:
 
 permeability of free space:
     name: The Magnetic Constant
-    symbol:
+    symbol: \mu_0 \
     wiki:
     value:
         plain: '1.25663706 × 10^-6 m kg s^-2 A^-2'
