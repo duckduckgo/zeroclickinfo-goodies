@@ -9,7 +9,7 @@
   },
   "section_order": [
     "Installation (Debian)",
-    "PostgreSql Commands",
+    "PostgreSQL",
     "User Access",
     "Role",
     "New User and Database",
@@ -35,7 +35,7 @@
         "val": "Installs PostgreSQL web-based administration tool"
       }
     ],
-    "PostgreSql Commands": [
+    "PostgreSQL": [
       {
              "key": "\\du",
              "value": "Lists roles"
