@@ -37,7 +37,7 @@
             },
             {
                 "val": "Begin debugging program and attach to process",
-                "key": "gdb --pid \\[process\\]"
+                "key": "gdb --pid \\[program\\] \\[process\\]"
             },
             {
                 "val": "Debug coredump core produced by program",
