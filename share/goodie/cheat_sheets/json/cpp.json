@@ -93,7 +93,7 @@
             },
             {
                 "key": "/",
-                "val": "Divides numerator by de-numerator"
+                "val": "Divides numerator by denominator"
             },
             {
                 "key": "%",
