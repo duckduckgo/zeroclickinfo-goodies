@@ -10,6 +10,11 @@ Sage is an idea for a new type of Instant Answer I've had that allows many
 people to contribute to DuckDuckHack in niche areas without needing much -
 if any - programming experience.
 
+I call them 'Sage' because someone who is 'sage' is well-versed, wise and
+specialist in a particular field - exactly what I hope Sages can cater for,
+any answer which requires the input of someone wise to that field (for
+example, cheat sheets are *'specialist'* knowledge).
+
 A Sage Instant Answer would consist of two parts:
 
 1. The Controller: the Controller would represent the *type* and *use* of
@@ -27,6 +32,28 @@ Cheat sheets, currently embedded in the `Goodies` repository, are very
 useful! But the amount of cheat sheets that come in compared to Perl-driven
 Goodies is rather high - making it harder to spend time reviewing and
 progressing Perl-backed Goodies.
+
+Providing a separate repository (`duckduckgo/zeroclickinfo-Sage`) for cheat
+sheets, as well as other Sage formats, would provide two immediate
+benefits:
+
+1. It would allow the Goodies repository to focus more on Perl and
+JavaScript driven Instant Answers.
+2. It would make it a lot easier for people who don't have time to write
+a fully-programmed Instant Answer to find areas in which they can
+contribute.
+
+Additional benefits may include:
+
+* Sages could provide a means of covering a much higher percentage of
+queries - through automatic trigger generation (see #2170) as well as
+community contributed triggers and answers.
+* Sages could open up a whole new area for Instant Answer contribution:
+specialists in many different fields could contribute to Sages that deal
+with walkthroughs, complex questions (for when Stack Exchange hasn't got
+it covered), recommendations, and more!
+* It would provide a place for community-driven, static (though I don't see
+why we wouldn't be able to have dynamic!) responses to reside.
 
 ## The Examples
 
