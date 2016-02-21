@@ -59,6 +59,16 @@ astronomical unit:
     value:
         plain: '149 598 000 kilometers'
 
+bohr magneton:
+    name: Bohr Magneton
+    aliases:
+        - bohr magneton
+    symbol:
+    wiki:
+    value:
+        plain: '9.27400968 × 10^−24 J T^−1'
+        html: '9.27400968 × 10<sup>−24</sup> J T<sup>−1</sup>'
+
 boltzmann constant:
     name: The Stefan Boltzmann Constant
     aliases:
