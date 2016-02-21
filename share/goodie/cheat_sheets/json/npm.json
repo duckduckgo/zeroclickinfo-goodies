@@ -50,7 +50,7 @@
                 "key": "npm install <package_name>@<version>"
             },
             {
-                "val": "Install a package globally, usualy for command line use (On *nix requires sudo)",
+                "val": "Install a package globally, usually for command line use (On *nix requires sudo)",
                 "key": "npm install -g <package_name>"
             },
             {
