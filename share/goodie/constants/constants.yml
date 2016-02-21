@@ -30,6 +30,16 @@ eulers constant:
     value:
         plain: '0.577215665'
 
+coulomb constant:
+    name: Coulomb's constant
+    aliases:
+        - coulomb's constant
+    symbol:
+    wiki:
+    value:
+        plain: '8.987551787 × 10^9 N m^2 C^−2'
+        html: '8.987551787 × 10<sup>9</sup> N m<sup>2</sup> C<sup>-2</sup>'
+
 plancks constant:
     name: Planck's Constant
     aliases:
@@ -181,6 +191,10 @@ magnetic flux quantum:
 
 molar gas constant:
     name: The Molar Gas Constant
+    aliases:
+        - ideal gas constant
+        - gas constant
+        - universal gas constant
     symbol:
     wiki:
     value:
