@@ -7,7 +7,7 @@
 		"sourceUrl": "http://www.shortcutworld.com/en/linux/Atom-(text-editor)_1.0.html"
 	},
 	"aliases": [
-		"atom text editor", "atom for windows", "atom for linux", "linux atom", "windows atom"
+		"atom text editor", "atom for windows", "atom for linux", "linux atom", "windows atom", "atom text-editor"
 	],
 	"template_type": "keyboard",
 	"section_order": [
@@ -31,7 +31,7 @@
 			"val": "Reload Atom",
 			"key": "[Ctrl] [Alt] [r]"
 		}, {
-			"val": "Change synatx highlighting",
+			"val": "Change syntax highlighting",
 			"key": "[Ctrl] [Shift] [i]"
 		}, {
 			"val": "Show available code snippets",
@@ -74,7 +74,6 @@
 			"val": "Close window",
 			"key": "[Ctrl] [Shift] [w]"
 		}],
-
 		"Editing Lines": [{
 			"val": "Go to line",
 			"key": "[Ctrl] [g]"
@@ -103,8 +102,6 @@
 			"val": "Join lines",
 			"key": "[Ctrl] [j]"
 		}],
-
-
 		"Github Integration": [{
 			"val": "Open on Github: blame",
 			"key": "[Alt] [g] then [b]"
@@ -127,7 +124,6 @@
 			"val": "Open on Github: branch-compare",
 			"key": "[Alt] [g] then [r]"
 		}],
-
 		"View": [{
 			"val": "Increase / decrease text size",
 			"key": "[Ctrl] [Shift] [=] / [-]"
@@ -135,9 +131,8 @@
 			"val": "Reset text size",
 			"key": "[Ctrl] [0]"
 		}, {
-			"val": "Toggle fullscreen",
+			"val": "Toggle full screen",
 			"key": "F11"
 		}]
-
 	}
 }
