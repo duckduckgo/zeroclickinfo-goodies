@@ -13,7 +13,7 @@
         "Europe",
         "North America",
         "South America",
-        "Antartica",
+        "Antarctica",
         "Oceania"
     ],
     "aliases": [
@@ -321,7 +321,7 @@
                 "val": "$ (Cook Islands Dollar)"
             }
         ],
-        "Antartica": [
+        "Antarctica": [
             {
                 "key": "French Southern Territories",
                 "val": "€ (Euro)"
