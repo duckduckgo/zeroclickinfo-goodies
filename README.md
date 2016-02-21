@@ -1,75 +1,70 @@
-# Welcome to DuckDuckHack's Goodies Instant Answers Repository
+# Sage Examples
 
 [![Build Status](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies.png?branch=master)](https://travis-ci.org/duckduckgo/zeroclickinfo-goodies)
 
-![](http://docs.duckduckhack.com/assets/hack search engine.png)
+Examples of what 'Sage' Instant Answers *might* look like.
 
-**Instant Answers are an opportunity for anyone to create their own search results.**
+## What is a Sage?
 
-Instant Answers appear on DuckDuckGo.com above ads and organic links, on [millions of searches](https://duckduckgo.com/traffic.html). Instant Answers are created by an open source community of developers [around the world](http://duckduckgo.meetup.com/) like you. Welcome!
+Sage is an idea for a new type of Instant Answer I've had that allows many
+people to contribute to DuckDuckHack in niche areas without needing much -
+if any - programming experience.
 
-You can find the [full documentation here](http://docs.duckduckhack.com). This is the repository for [one type of Instant Answers](http://docs.duckduckhack.com/welcome/determining-ia-type.html), called Goodies.
+A Sage Instant Answer would consist of two parts:
 
-## Create a New Instant Answer
+1. The Controller: the Controller would represent the *type* and *use* of
+the particular Instant Answer. The Controller determines how to read,
+interpret, and display the Answer Files - the `CheatSheets.pm` file, along
+with helper files is a prime example of a Controller.
 
-Learn to make an Instant Answer by starting with any of our quick tutorials. All of these are self-contained and will get you up and running. Pick whatever looks most interesting!
+2. Answer Files: each Answer File represents a particular unit that is
+interpreted by the controller; for example, the `vim.json` cheat sheet
+would be an Answer File for the CheatSheets Controller.
 
-- **[Create a programming syntax cheat sheet](http://docs.duckduckhack.com/walkthroughs/programming-syntax.html)**
-- **[Create a quick online calculation](http://docs.duckduckhack.com/walkthroughs/calculation.html)**
-- **[Build an API-based lookup](http://docs.duckduckhack.com/walkthroughs/forum-lookup.html)**
+### Rationale
 
-## Improve a Live Instant Answer
+Cheat sheets, currently embedded in the `Goodies` repository, are very
+useful! But the amount of cheat sheets that come in compared to Perl-driven
+Goodies is rather high - making it harder to spend time reviewing and
+progressing Perl-backed Goodies.
 
-We welcome new contributors to dive in and improve live Instant Answers. It's a great, hands-on way to learn how things work. Start by [setting up your development environment](http://docs.duckduckhack.com/welcome/setup-dev-environment.html).
+## The Examples
 
-You can see all "low-hanging fruit" issues neatly organized in one place on our [Live Issues Page](https://duck.co/ia/dev/issues?tag=lowhangingfruit), or get an overview of all [Instant Answers in development](https://duck.co/ia/dev/pipeline).
+Firstly, the most representative Instant Answer that would be considered
+Sage is the CheatSheets Goodie. It displays quite well the vision of a
+Sage I have - providing a full-featured, well-designed means of creating
+sound Instant Answers with little work.
 
-Have a [favorite Instant Answer](http://duck.co/ia) that you want to make even better? Feel free to dive in and make changes. 
+Obviously I don't have time to create examples on the scale of CheatSheets,
+so the provided examples are more basic.
 
-## Inspiration
+### The most basic - text response
 
-Instant Answers allow you to create your own search results. Here are some examples of what contributors have created. You can see [all live Instant Answers listed here](https://duck.co/ia).
+This Sage (named `SageExample`) represents the most basic kind of Sage you
+could have: the Controller simply accepts YAML files that specify queries
+and responses.
 
-Instant Answers can be quite dynamic...
+The example Answer File
+(`share/goodie/sage_example/answers/easter-eggs.yaml`) provides an example
+of what an Answer File for this Sage might look like. This would already
+reduce the need for some Goodies that only provide a static response to
+various queries, and with a bit of work regular expression queries, as well
+as other options, could be added to the Sage to provide much more power.
 
-![](http://docs.duckduckhack.com/assets/parking_ny.png)
+### Slightly more complex,  but not by much - lists of steps
 
-...or simply convenient:
+This Sage (named `SageExampleSteps`) allows the specification of queries,
+as well as a static list response that will be displayed on a successful
+match.
 
-![](http://docs.duckduckhack.com/assets/sales_tax.png)
+The main differences between this example and the previous example are:
 
-Some are just cool: 
+* It allows aliases to be specified (like `CheatSheets`)
+* It provides support for a custom title
+* It uses the Answer File name to produce an example query
+(like `CheatSheets`)
 
-![](http://docs.duckduckhack.com/assets/heads_tails.png)
-
-Many are absolutely delightful and unexpected:
-
-![](http://docs.duckduckhack.com/assets/bpm_ms.png)
-
-Many are super practical...
-
-![](http://docs.duckduckhack.com/assets/air_quality.png)
-
-...in ways we never imagined:
-
-![](http://docs.duckduckhack.com/assets/blue_pill.png)
-
-Some Instant Answers are built from pure code:
-
-![](http://docs.duckduckhack.com/assets/url_encode.png)
-
-Other Instant Answers channel external sources (API requests):
-
-![App search Instant Answer example](http://docs.duckduckhack.com/assets/app_search_example.png)
-
-The [possibilities are endless](https://duck.co/ia). **Our community's mission is to cover every topic with a community-generated Instant Answer.**
-
-## Discuss with Us
-
-Want help? Need to think out loud? 
-
-[![slack](http://docs.duckduckhack.com/assets/slack.png) Talk to us on Slack](mailto:QuackSlack@duckduckgo.com?subject=AddMe) or [email us](mailto:open@duckduckgo.com).
-
-We're a digital community, but real people - we frequently meet up to hack together. Check out our [global meetups](http://duckduckgo.meetup.com/).
-
-You can find the [full documentation here](http://docs.duckduckhack.com).
+The example Answer File
+(`share/goodie/sage_example_steps/answers/how-to-get-rich.yaml`) shows a
+simple example of this, as well as (apparently) satisfying a common query
+(I checked!).
