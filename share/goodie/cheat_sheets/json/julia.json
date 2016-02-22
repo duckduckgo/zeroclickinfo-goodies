@@ -9,14 +9,14 @@
     },
 
     "aliases": [
-        "julia cheatsheet", "julialang programming"
+        "julialang programming"
     ],
 
     "template_type": "code",
 
     "section_order": [
         "Basics",
-        "Defining\/Changing variables",
+        "Defining\/Changing Variables",
         "Simple Matrices",
         "Matrices and Vectors",
         "Arithmetic of Numbers",
@@ -56,7 +56,7 @@
             },
             {
                 "key": "x=\\[1,2,3\\]",
-                "val": ""
+                "val": "array\/\“column\”-vector (1,2,3)"
             },
             {
                 "key": "y=\\[1 2 3\\]",
@@ -173,7 +173,7 @@
             },
             {
                 "key": "A*y, A*B",
-                "val": "product of matrix A and vector y or matrix B (not defined for two vectors)"
+                "val": "Product of matrix A and vector y or matrix B (not defined for two vectors)"
             },
             {
                 "key": "x .* y",
@@ -189,7 +189,7 @@
             },
             {
                 "key": "exp(A), expm(A)",
-                "val": "exp of each element of A, matrix exp e^A"
+                "val": "Exp of each element of A, matrix exp e^A"
             },
             {
                 "key": "x′, A′",
