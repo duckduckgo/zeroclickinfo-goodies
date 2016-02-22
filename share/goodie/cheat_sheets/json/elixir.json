@@ -1,13 +1,13 @@
 {
     "id": "elixir_cheat_sheet",
     "name": "Elixir",
-    "description": "List of common Elixir constructs and syntax",
+    "description": "Overview of common Elixir constructs and syntax",
     "template_type": "code",
     "section_order": [
         "Operators",
         "Sigils",
-        "Types",
-        "Example Functions"
+        "Example Functions",
+        "Types"
     ],
 
     "sections": {
@@ -94,30 +94,33 @@
 
       "Types": [{
             "val": "Integer",
-            "key": "1, 2, 3 0xcafe, 0b100, 10_000"
+            "key": "2, 0xcafe, 0b100, 10_000"
         }, {
             "val": "Float",
             "key": "1.0, 3.1415, 6.02e23"
         }, {
-            "val": ":foo, :me@home :elixir",
-            "key": "Atom"
+            "val": "Atom",
+            "key": ":foo, :me@home :elixir"
         }, {
             "val": "Tuple",
             "key": "{:ok, 11, 'hi'}"
         }, {
             "val": "List",
-            "key": "[1, 2, 3], [head|tail], 'abc'"
+            "key": "[1, 2, 3], [head|tail]"
         }, {
+            "val": "Character List",
+            "key": "'abc'"
+        },  {
             "val": "Keyword List",
             "key": "[a: :foo, b: :bar]"
         }, {
             "val": "Map (no duplicates)",
-            "key": "%{ key => value }"
+            "key": "%\\{ key => value \\}"
         }, {
             "val": "Binary",
-            "key": "<< 1, 2 >>, \"string\", #{interpolation}"
+            "key": "<< 1, 2 >>, \"string\""
         }, {
-            "val": "Truth",
+            "val": "Boolean",
             "key": "true, false, nil"
         }, {
             "val": "Range",
@@ -125,9 +128,6 @@
         }],
 
      "Sigils": [{
-            "val": "Delimiters",
-            "key": "{}, [], (), //, ||, \"\", ''"
-        }, {
             "val": "string, no interpolation",
             "key": "~S"
         }, {
@@ -140,16 +140,16 @@
             "val": "character list, with interpolation",
             "key": "~c"
         }, {
-            "val": "regex, with interpolation",
+            "val": "regex, no interpolation",
             "key": "~R"
         }, {
-            "val": "regex",
+            "val": "regex, with interpolation",
             "key": "~r"
         }, {
-            "val": "word list, with interpolation",
+            "val": "word list, no interpolation",
             "key": "~W"
         }, {
-            "val": "word list, without interpolation",
+            "val": "word list, with interpolation",
             "key": "~w"
         }],
 
@@ -177,8 +177,20 @@
         }, {
             "val": "returns a random entry from a collection",
             "key": "Enum.random/1"
+        },{
+            "val": "reverses a string",
+            "key": "String.reverse/1"
+        },{
+            "val": "returns data and time tuple",
+            "key": ":erlang.localtime/0"
         }, {
-            "val": "calls erlangs timer module with milliseconds",
+            "val": "reverses a string",
+            "key": "String.reverse/1"
+        },{
+            "val": "returns a lists last element",
+            "key": "List.last/1"
+        },{
+            "val": "calls the Erlang timer module (milliseconds)",
             "key": ":timer.sleep/1"
         }]
 
