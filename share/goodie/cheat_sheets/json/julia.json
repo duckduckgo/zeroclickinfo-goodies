@@ -49,14 +49,14 @@
 
 
         ],
-        "Defining\/Changing variables": [
+        "Defining\/Changing Variables": [
             {
                 "key": "x=3",
                 "val": "Define variable x to be 3"
             },
             {
                 "key": "x=\\[1,2,3\\]",
-                "val": "array\/\"column\"-vector (1,2,3)"
+                "val": "Array\/\"Column\"-vector (1,2,3)"
             },
             {
                 "key": "y=\\[1 2 3\\]",
