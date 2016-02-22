@@ -10,7 +10,7 @@ zci is_cached   => 1;
 
 triggers any => 'paper size', 'dimensions', 'paper dimension', 'paper dimensions';
 
-my $sizes = LoadFile(share('sizes.yml'));
+my $sizes = LoadFile('' . share('sizes.yml'));
 
 handle query_lc => sub {
     return unless my ($s, $l, $n) = $_ =~ /^((?:(a|b|c)(\d{0,2}))|legal|letter|junior\s*legal|ledger|tabloid|hagaki)\s+paper\s+(?:size|dimm?ensions?)$/i;

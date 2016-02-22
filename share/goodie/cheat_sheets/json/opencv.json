@@ -138,21 +138,21 @@
       },
       {
         "key": "split(...)",
-        "val": "Split multi channel matrix into seperate channels"
+        "val": "Split multi channel matrix into separate channels"
       },
       {
         "key": "merge(...)",
-        "val": "Make a multi channel matrix from seperate channels"
+        "val": "Make a multi channel matrix from separate channels"
       }
     ],
     "Filtering": [
       {
         "key": "filter2D()",
-        "val": "Non-seperable linear filter"
+        "val": "Non-separable linear filter"
       },
       {
         "key": "sepFilter2D()",
-        "val": "Sperable linear filter"
+        "val": "Separable linear filter"
       },
       {
         "key": "Sobel()",
@@ -182,7 +182,7 @@
       },
       {
         "key": "setMouseCallback(...)",
-        "val": "Set callback on ouse clicks"
+        "val": "Set callback on mouse clicks"
       }
     ],
     "Camera": [
@@ -214,7 +214,7 @@
       },
       {
         "key": "CascadeClassifier",
-        "val": "Suits for detecting facial features and some other obects"
+        "val": "Suits for detecting facial features and some other objects"
       },
       {
         "key": "HOGDescriptor",

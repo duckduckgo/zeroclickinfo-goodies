@@ -29,19 +29,19 @@
                 "val": "Document Title"
             },
             {
-                "key": "== Heading",
+                "key": "= Heading",
                 "val": "H1. Can also be created by putting four or more dashes under Heading"
             },
             {
-                "key": "=== Heading",
+                "key": "== Heading",
                 "val": "H2. Can also be created by putting four or more tildes under Heading"
             },
             {
-                "key": "==== Heading",
+                "key": "=== Heading",
                 "val": "H3. Can also be created by putting four or more carets under Heading"
             },
             {
-                "key": "===== Heading",
+                "key": "==== Heading",
                 "val": "H4. Can also be created by putting four or more pluses under Heading"
             }
         ],

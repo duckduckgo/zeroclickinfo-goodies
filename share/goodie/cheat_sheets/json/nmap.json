@@ -31,7 +31,7 @@
             "key": "nmap -iL \\[list.txt\\]"
         }, {
             "val": "Scan a range of hosts",
-            "key": "nmap \\[range of IP adresses\\]"
+            "key": "nmap \\[range of IP addresses\\]"
         }, {
             "val": "Scan an entire subnet",
             "key": "nmap \\[ip address/cdir\\]"

@@ -44,6 +44,22 @@
             {
                 "key": "[Ctrl] [Tab]",
                 "val": "Navigate between tabs"
+            },
+            {
+                "key": "[Ctrl] [9]",
+                "val": "Switch to last tab"
+            },
+            {
+                "key": "[Alt] [F4]",
+                "val": "Close current window"
+            },
+            {
+                "key": "[Ctrl] [Enter]",
+                "val": "Open link in a new background tab"
+            },
+            {
+                "key": "[Shift] [Ctrl] [Enter]",
+                "val": "Open link in a new foreground tab"
             }
         ],
         "Chrome Features": [
@@ -86,6 +102,10 @@
             {
                 "key": "[F1]",
                 "val": "Open the Help Center in a new tab "
+	    },
+	    {
+                "key": "[Ctrl] [Shift] [C]",
+                "val": "Toggle Element Inspection mode"
             }
         ],
         "Webpage": [
