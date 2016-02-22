@@ -86,7 +86,7 @@
     ],
     "Role":[
       {
-        "key": "CREATE ROLE demorole1 WITH LOGIN ENCRYPTED PASSWORD 'password1' CREATEDB",
+        "key": "CREATE ROLE demorole1 WITH LOGIN PASSWORD 'password1' CREATEDB",
         "val": "Create role"
       },
       {
