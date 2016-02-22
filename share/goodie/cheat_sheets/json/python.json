@@ -13,6 +13,7 @@
     "section_order": [
         "String Methods",
         "Array Methods",
+        "Dictionary Methods",
         "File Methods and Constants",
         "Date and Time Methods",
         "Math Functions and Constants"
@@ -89,8 +90,24 @@
             "val": "Sort the items of the list in place",
             "key": "sort()"
         }, {
+            "val": "Sort the items of the list in place, in descending order",
+            "key": "sort(reverse=True)"
+        }, {
             "val": "Reverse the elements of the list, in place.",
             "key": "reverse()"
+        }],
+        "Dictionary Methods": [{
+            "val": "Returns list of dictionary keys",
+            "key": "keys()"
+        }, {
+            "val": "Returns list of dictionary values",
+            "key": "values()"
+        }, {
+            "val": "Removes all elements of dictionary",
+            "key": "clear()"
+        }, {
+            "val": "Returns a shallow copy of dictionary",
+            "key": "copy()"
         }],
         "File Methods and Constants": [{
             "val": "Close the file; a closed file cannot be read or written any more",
