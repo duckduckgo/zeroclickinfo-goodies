@@ -126,6 +126,12 @@
           }, {
             "key":"R",
             "val":"Random"
+          }, {
+            "key":"\\[",
+            "val":"Pause only"
+          }, {
+            "key":"\\]",
+            "val":"Play only"
           }],
         "Manage": [{
             "key":"[Ctrl] [H]",
