@@ -7,12 +7,19 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Counties_of_Ireland"
     },
     "aliases": [
-        "irish states"
+        "irish republic states",
+        "irish republic counties",
+        "counties of ireland",
+        "ireland counties",
+        "irish republic shires",
+        "shires of ireland",
+        "roi counties",
+        "roi states"
     ],
     "template_type": "reference",
     "section_order": [
-        "Connacht",
         "Leinster",
+        "Connacht",
         "Munster",
         "Ulster"
     ],
