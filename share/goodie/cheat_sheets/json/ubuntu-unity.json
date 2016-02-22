@@ -1,7 +1,11 @@
 {
     "id": "ubuntu_unity_cheat_sheet",
     "name": "Ubuntu Unity",
-    "description": "Linux Ubuntu Unity default keyboard shortcuts.",
+    "description": "Linux Ubuntu Unity default keyboard shortcuts",
+    "metadata": {
+        "sourceName": "Cheatography",
+        "sourceUrl": "http://www.cheatography.com/richardjh/cheat-sheets/ubuntu-unity/"
+    },
     "template_type": "keyboard",
     "section_order": [
         "Dash",
@@ -82,7 +86,7 @@
             },
             {
                 "key": "[Alt] [`]",
-                "val": "Switch between windows in applciation. (Tap ` or ←/→ to move)"
+                "val": "Switch between windows in application. (Tap ` or ←/→ to move)"
             }
         ],
         "Windows": [
@@ -104,7 +108,7 @@
             },
             {
                 "key": "[Alt] [Space]",
-                "val": "Opens the window accessability menu."
+                "val": "Opens the window accessibility menu."
             },
             {
                 "key": "[Ctrl] [Alt] [Num (numpad)]",
