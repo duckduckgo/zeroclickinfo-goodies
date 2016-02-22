@@ -106,7 +106,7 @@
             "key": "{:ok, 11, 'hi'}"
         }, {
             "val": "List",
-            "key": "[1, 2, 3], [head|tail]"
+            "key": "\\[1, 2, 3\\], \\[head|tail\\]"
         }, {
             "val": "Character List",
             "key": "'abc'"
