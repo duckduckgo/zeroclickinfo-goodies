@@ -11,7 +11,7 @@ triggers any => 'fxos', 'firefoxos', 'firefox os';
 zci answer_type => 'firefoxos';
 zci is_cached => 1;
 
-my $apis = LoadFile(share('apis.yml'));
+my $apis = LoadFile('' . share('apis.yml'));
 
 # Get the content of the YAML file and parse the keys and aliases
 foreach my $keyword (keys %$apis) {

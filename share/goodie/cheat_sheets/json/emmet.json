@@ -1,0 +1,85 @@
+{
+	"id": "emmet_cheat_sheet",
+	"name": "Emmet",
+	"description": "Cheat Sheet for Emmet",
+	"metadata": {
+		"sourceName": "Emmet Documentation",
+		"sourceUrl": "http://docs.emmet.io/cheat-sheet/"
+	},
+	"template_type": "code",
+	"section_order": ["General syntax", "HTML", "CSS"],
+	"sections": {
+		"General syntax": [{
+			"val": "Child",
+			"key": ">"
+		}, {
+			"val": "Sibling",
+			"key": "+"
+		}, {
+			"val": "Climb-up",
+			"key": "^"
+		}, {
+			"val": "Grouping",
+			"key": "()"
+		}, {
+			"val": "Item numbering",
+			"key": "$"
+		}, {
+			"val": "Custom attributes",
+			"key": "td[rowspan=2]"
+		}, {
+			"val": "Text",
+			"key": "{}"
+		}],
+		"HTML": [{
+			"val": "html5 template",
+			"key": "!"
+		}, {
+			"val": "link css file",
+			"key": "link:css"
+		}, {
+			"val": "add a js file",
+			"key": "script:src"
+		}, {
+			"val": "create a table",
+			"key": "table+"
+		}],
+		"CSS": [{
+			"val": "top",
+			"key": "t"
+		}, {
+			"val": "bottom",
+			"key": "b"
+		}, {
+			"val": "right",
+			"key": "r"
+		}, {
+			"val": "left",
+			"key": "l"
+		}, {
+			"val": "visibility",
+			"key": "v"
+		}, {
+			"val": "overflow",
+			"key": "ov"
+		}, {
+			"val": "margin",
+			"key": "m"
+		}, {
+			"val": "padding",
+			"key": "p"
+		}, {
+			"val": "background-color",
+			"key": "bgc"
+		}, {
+			"val": "color",
+			"key": "c"
+		}, {
+			"val": "list-style",
+			"key": "lis"
+		}, {
+			"val": "border",
+			"key": "bd"
+		}]
+	}
+}

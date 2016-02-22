@@ -21,8 +21,8 @@ my $unitsString = join('|', @unitTriggers);
 
 triggers any => 'earth', 'jupiter', 'mars', 'mercury', 'neptune', 'saturn', 'uranus', 'venus', 'pluto', 'sun', 'moon';
 
-# Load object data 
-my $objects = LoadFile(share('objects.yml'));
+# Load object data
+my $objects = LoadFile('' . share('objects.yml'));
 
 # Handle statement
 handle query_lc => sub {

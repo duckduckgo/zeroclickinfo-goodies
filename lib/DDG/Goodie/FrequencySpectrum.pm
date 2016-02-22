@@ -11,72 +11,7 @@ zci answer_type => "frequency_spectrum";
 zci is_cached   => 1;
 
 #Javascript to dynamically resize and/or hide elements
-my $dynamicwidths = <<EOF;
-<script type="text/javascript">
-
-    // Get the marker label and tag
-    var markerlabel, markertag
-    markerlabel = document.getElementById("marker_label")
-    markertag = document.getElementById("marker_tag")
-
-    // Firefox (and possbily other browers) have a problem with the
-    // getBBox function. For now, I'll work around this by simply
-    // hiding the marker tag if getBBox() is not available.
-    try { 
-
-        // Resize marker to fit text
-        bbox = markerlabel.getBBox()
-        markerlabel.setAttribute("x", bbox.x)
-        markertag.setAttribute("x", bbox.x - (bbox.width / 2))
-        markertag.setAttribute("y", bbox.y + 1)
-        markertag.setAttribute("width", bbox.width)
-        markertag.setAttribute("height", bbox.height)
-
-        // If the marker tag is wider than the window - 80 px, hide it
-        if (bbox.width > (wwidth - 80)) {
-          markerlabel.style.visibility = "hidden"
-          markertag.style.visibility = "hidden"
-        }
-
-    // If getBBox() not available, hide the tag and label
-    } catch(err) {
-        markerlabel.style.visibility = "hidden"
-        markertag.style.visibility = "hidden"
-    }
-    
-    // When window is too small, remove marker label and tag
-    // and abbreviate major range (y-axis) labels
-    var wwidth, majrangelabels
-    wwidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-    majrangelabels = document.getElementsByClassName("major_range_label")
-    if (wwidth < 500) {
-
-        // Marker tag and label
-        markerlabel.style.visibility = "hidden"
-        markertag.style.visibility = "hidden"
-
-        // Major range labels
-        for (var i = majrangelabels.length - 1; i >= 0; i--) {
-            var labeltext
-            labeltext = majrangelabels[i].childNodes[1].childNodes[0].textContent
-            if (labeltext === "Radio") {
-                majrangelabels[i].childNodes[1].childNodes[0].textContent = "Rad."
-            } else if (labeltext === "Infrared") {
-                majrangelabels[i].childNodes[1].childNodes[0].textContent = "Inf."
-            } else if (labeltext === "Visible light") {
-                majrangelabels[i].childNodes[1].childNodes[0].textContent = "Vis."
-            } else if (labeltext === "Ultraviolet") {
-                majrangelabels[i].childNodes[1].childNodes[0].textContent = "UV"
-            } else if (labeltext === "X-ray") {
-                majrangelabels[i].childNodes[1].childNodes[0].textContent = "X-ray"
-            } else if (labeltext === "Gamma") {
-                majrangelabels[i].childNodes[1].childNodes[0].textContent = "Gam."
-            }
-        }
-    }
-
-</script>
-EOF
+my $dynamicwidths = "";
 
 #Regex to match a valid query
 # Used for trigger and later for parsing
@@ -193,6 +128,7 @@ handle query => sub {
     my $freq_formatted;
     my $answer;
     my $html;
+    my $plot;
 
     #If wavelength provided, convert to frequency in hz
     if ($wavelength) {
@@ -232,7 +168,7 @@ handle query => sub {
         my $subspectrum = $emMatch->{subspectrum};
 
         #Set up the plot panel
-        my $plot = generate_plot($rangeMin, $rangeMax, scalar keys %emSpectrum);
+        $plot = generate_plot($rangeMin, $rangeMax, scalar keys %emSpectrum);
 
         #Add a major range for each subspectrum (e.g. radio or UV)
         foreach (sort {$emSpectrum{$a}{'track'} <=> $emSpectrum{$b}{'track'} } keys %emSpectrum) {
@@ -306,8 +242,27 @@ handle query => sub {
         #Generate the SVG
         $html .= $plot->xmlify;
     }
+    
+    $plot->{svg} = "";
+    $plot->{transform} = ""; 
 
-    return $answer, html => wrap_html($html) if $answer;
+    my @temp = $plot;
+    return "$answer", #html => wrap_html($html) if $answer;
+    structured_answer => {
+        id => 'frequency_spectrum',
+        name => 'Answer',
+        data => {
+            title => $answer,
+            plot => $plot,
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.frequency_spectrum.content'
+            }
+        }
+    };
     return;
 };
 
@@ -394,24 +349,25 @@ sub generate_plot {
     }
 
     #Add plot background
-    $plot->{svg}->group(
-        class => 'plot_background',
-    )->rect(
-        width => '100%',
-        height => $plot->{height}, 
-        x => 0,
-        y => 0
-    );
+#    $plot->{svg}->group(
+#        class => 'plot_background',
+#    )->rect(
+#        width => '100%',
+#        height => $plot->{height}, 
+#        x => 0,
+#        y => 0
+#    );
 
     #Add panel background
-    $plot->{svg}->group(
-        class => 'plot_panel',
-    )->rect(
-        width => ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) . '%', 
-        height => $plot->{panelHeight}, 
-        x => $plot->{leftGutter} . '%',
-        y => $plot->{topGutter},
-    );
+#    $plot->{svg}->group(
+#        class => 'plot_panel',
+#    )->rect(
+#        width => ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter}) . '%', 
+#        height => $plot->{panelHeight}, 
+#        x => $plot->{leftGutter} . '%',
+#        y => $plot->{topGutter},
+#    );
+    $plot->{plot_panel_width} = ($plot->{width} - $plot->{leftGutter} - $plot->{rightGutter});
 
     #Calculate x-axis tick locations
     my @ticks;
@@ -437,12 +393,12 @@ sub generate_plot {
     }
 
     #Draw ticks
-    my $xAxis = $plot->{svg}->group (
-        id => 'x_axis',
-    );
-    foreach (@ticks) {
+#    my $xAxis = $plot->{svg}->group (
+#        id => 'x_axis',
+#    );
+#    foreach (@ticks) {
 
-        my $x = $plot->{transform}->($_);
+#        my $x = $plot->{transform}->($_);
 
         #Draw tick line
         # NOTE: Currently skipping this per wtrsld's redesign
@@ -456,28 +412,42 @@ sub generate_plot {
         #);
 
         #Annotate tick
-        my $text = $xAxis->text(
-            dy => '1em', 
-            x => $x . '%', 
-            y => $plot->{panelHeight} + $plot->{topGutter} + 4, 
-            'text-anchor' => 'middle',
-            class => 'x_axis_text'
-        );
+#        my $text = $xAxis->text(
+#            dy => '1em', 
+#            x => $x . '%', 
+#            y => $plot->{panelHeight} + $plot->{topGutter} + 4, 
+#            'text-anchor' => 'middle',
+#            class => 'x_axis_text'
+#        );
+#        if ($log10 && $_ > 10) {
+#            $text->tag('tspan', -cdata => '10');
+#            $text->tag(
+#                'tspan', 
+#                'baseline-shift' => 'super',
+#                dy => '-0.2em', #Superscripts need an extra nudge
+#                dx => '-0.5em', #Bring superscript close to parent
+#                -cdata => log10($_),
+#                style => { 'font-size' => '0.5em' },
+#            );
+#        } else {
+#            $text->tag('tspan', -cdata => $_);
+#        }
+#    }
+    my @x_axis;    
+    foreach (@ticks) {
+        my $tspan_cdata;
         if ($log10 && $_ > 10) {
-            $text->tag('tspan', -cdata => '10');
-            $text->tag(
-                'tspan', 
-                'baseline-shift' => 'super',
-                dy => '-0.2em', #Superscripts need an extra nudge
-                dx => '-0.5em', #Bring superscript close to parent
-                -cdata => log10($_),
-                style => { 'font-size' => '0.5em' },
-            );
-        } else {
-            $text->tag('tspan', -cdata => $_);
+            $tspan_cdata = log10($_);
         }
+        my $x_axis = {
+            x => $plot->{transform}->($_),
+            y => $plot->{panelHeight} + $plot->{topGutter} + 4,
+            tspan_cdata => $tspan_cdata,
+        };
+        push @x_axis, $x_axis;
     }
-
+    $plot->{x_axis} = \@x_axis;
+    
     #Add x-axis gridlines
     # NOTE: Currently skipping this per wtrsld's redesign
     #my $gridlines = $plot->{svg}->group (
@@ -495,34 +465,47 @@ sub generate_plot {
     #}
 
     #Add a label to the x-axis
-    my $xAxisLabel = $xAxis->text(
-        dy => '1em', 
-        x => '50%',
-        y => $plot->{panelHeight} + $plot->{topGutter} + 25, 
-        'text-anchor' => 'middle',
-        class => 'x_axis_label'
-    );
-    $xAxisLabel->tag('tspan', -cdata => 'Frequency (Hz)');
+#    my $xAxisLabel = $xAxis->text(
+#        dy => '1em', 
+#        x => '50%',
+#        y => $plot->{panelHeight} + $plot->{topGutter} + 25, 
+#        'text-anchor' => 'middle',
+#        class => 'x_axis_label'
+#    );
+#    $xAxisLabel->tag('tspan', -cdata => 'Frequency (Hz)');
+    $plot->{axis_label_y} = $plot->{panelHeight} + $plot->{topGutter} + 25;     
 
     #Add axis lines
-    my $axislines = $plot->{svg}->group (
-        class => 'axis_line',
-    );
-    my $xaxisline = $axislines->group();
-    $xaxisline->line(
-        x1 => $plot->{transform}->(0) . '%',
-        x2 => $plot->{transform}->($plot->{rangeMax}) . '%',
+#    my $axislines = $plot->{svg}->group (
+#        class => 'axis_line',
+#    );
+#    my $xaxisline = $axislines->group();
+#    $xaxisline->line(
+#        x1 => $plot->{transform}->(0) . '%',
+#        x2 => $plot->{transform}->($plot->{rangeMax}) . '%',
+#        y1 => $plot->{panelHeight} + $plot->{topGutter}, 
+#        y2 => $plot->{panelHeight} + $plot->{topGutter}
+#    );
+#    my $yaxisline = $axislines->group();
+#    $yaxisline->line(
+#        x1 => $plot->{transform}->(0) . '%',
+#        x2 => $plot->{transform}->(0) . '%',
+#        y1 => $plot->{topGutter}, 
+#        y2 => $plot->{topGutter} + $plot->{panelHeight}
+#    );
+    $plot->{x_axis_line} = {
+        x1 => $plot->{transform}->(0),
+        x2 => $plot->{transform}->($plot->{rangeMax}),
         y1 => $plot->{panelHeight} + $plot->{topGutter}, 
-        y2 => $plot->{panelHeight} + $plot->{topGutter}
-    );
-    my $yaxisline = $axislines->group();
-    $yaxisline->line(
-        x1 => $plot->{transform}->(0) . '%',
-        x2 => $plot->{transform}->(0) . '%',
+        y2 => $plot->{panelHeight} + $plot->{topGutter}    
+    };
+    $plot->{y_axis_line} = {
+        x1 => $plot->{transform}->(0),
+        x2 => $plot->{transform}->(0),
         y1 => $plot->{topGutter}, 
-        y2 => $plot->{topGutter} + $plot->{panelHeight}
-    );
-
+        y2 => $plot->{topGutter} + $plot->{panelHeight}    
+    };
+    
     return($plot);
 }
 
@@ -588,51 +571,58 @@ sub add_marker {
     my $markerWidth = 1; #This is dynamically resized by $dynamicwidths
     my $markerHeight = 14;
     my $markerGutter = ($plot->{topGutter} - $markerHeight - 1) / 2;
-    $plot->{svg}->group(
-        class => 'marker_tag',
-    )->rect(
-        id => 'marker_tag',
-        width => $markerWidth,
-        height => $markerHeight,
-        x => $plot->{transform}->($markerValue) - ($markerWidth / 2) . '%',
-        y => $plot->{topGutter} - $markerGutter - $markerHeight + 1, #Extra pixel to account for plot border
-        style => { 'fill' => $RGB }
-    );
+#    $plot->{svg}->group(
+#        class => 'marker_tag',
+#    )->rect(
+#        id => 'marker_tag',
+#        width => $markerWidth,
+#        height => $markerHeight,
+#        x => $plot->{transform}->($markerValue) - ($markerWidth / 2) . '%',
+#        y => $plot->{topGutter} - $markerGutter - $markerHeight + 1, #Extra pixel to account for plot border
+#        style => { 'fill' => $RGB }
+#    );
 
     #Add marker label
-    my $markerLabel = $plot->{svg}->group();
-    my $markerLabelText = $markerLabel->text(
-        x => $plot->{transform}->($markerValue) . '%',
-        y => $plot->{topGutter} - $markerGutter - ($markerHeight / 2) + 4,
-        'text-anchor' => 'middle',
-        class => 'marker_label'
-    );
-    $markerLabelText->tag('tspan', id => 'marker_label', -cdata => ucfirst($freq_formatted));
+#    my $markerLabel = $plot->{svg}->group();
+#    my $markerLabelText = $markerLabel->text(
+#        x => $plot->{transform}->($markerValue) . '%',
+#        y => $plot->{topGutter} - $markerGutter - ($markerHeight / 2) + 4,
+#        'text-anchor' => 'middle',
+#        class => 'marker_label'
+#    );
+#    $markerLabelText->tag('tspan', id => 'marker_label', -cdata => ucfirst($freq_formatted));
 
     #Add marker line
-    $plot->{svg}->group(
-        class => 'marker'
-    )->line(
-        id => 'marker',
-        x1 => $plot->{transform}->($markerValue) . '%', 
-        x2 => $plot->{transform}->($markerValue) . '%', 
+#    $plot->{svg}->group(
+#        class => 'marker'
+#    )->line(
+#        id => 'marker',
+#        x1 => $plot->{transform}->($markerValue) . '%', 
+#        x2 => $plot->{transform}->($markerValue) . '%', 
+#        y1 => $plot->{topGutter} - $markerGutter,
+#        y2 => $plot->{topGutter} + $plot->{panelHeight},
+#        style => { 'stroke' => $RGB },
+#    );
+    $plot->{marker_line} = {
+        x1 => $plot->{transform}->($markerValue), 
+        x2 => $plot->{transform}->($markerValue), 
         y1 => $plot->{topGutter} - $markerGutter,
         y2 => $plot->{topGutter} + $plot->{panelHeight},
-        style => { 'stroke' => $RGB },
-    );
+        color => $RGB,    
+    };
 
     return $plot;
 }
 
 #Wrap html
-sub wrap_html {
-    return <<EOF;
-<!--[if gte IE 9]><!-->        
-<div class='zci--conversions text--primary'>$_[0]</div>
-<![endif]-->
-$dynamicwidths
-EOF
-}
+#sub wrap_html {
+#    return <<EOF;
+#<!--[if gte IE 9]><!-->        
+#<div class='zci--conversions text--primary'>$_[0]</div>
+#<![endif]-->
+#$dynamicwidths
+#EOF
+#}
 
 #Get log10 of a number
 sub log10 {

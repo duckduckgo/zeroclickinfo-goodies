@@ -153,6 +153,10 @@
             {
                 "key": "DIKU",
                 "val": "Do I Know You"
+            },
+            {
+                "key": "DIY",
+                "val": "Do It Yourself"
             }
         ],
         "E": [
@@ -349,6 +353,10 @@
             {
                 "key": "NVR",
                 "val": "Never"
+            },
+            {
+                "key": "NP",
+                "val": "No Problem"
             }
         ],
         "O": [
@@ -477,6 +485,10 @@
             {
                 "key": "TMB",
                 "val": "Text Me Back"
+            },
+            {
+                "key": "TC",
+                "val": "Take Care"
             }
         ],
         "U": [

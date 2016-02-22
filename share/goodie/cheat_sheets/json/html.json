@@ -15,11 +15,11 @@
         "Document Metadata",
         "Content Sectioning",
         "Text Content",
-        "Inline Text Semantics",
-        "Images and Multimedia",
-        "Table Content",
         "Forms",
+        "Images and Multimedia",
+        "Inline Text Semantics",
         "Embedded Content",
+        "Table Content",
         "Scripting"
     ],
     "sections": {
@@ -60,7 +60,7 @@
             },
             {
                 "key": "<h1>, <h2>, <h3>, <h4>, <h5>, <h6>",
-                "val": "A heading element briefly describes the topic of the section it introduces. <h1> is the most important and <h6> is the least. "
+                "val": "A heading element briefly describes the topic of the section it introduces. <h1> is the most important and <h6> is the least"
             },
             {
                 "key": "<nav>",

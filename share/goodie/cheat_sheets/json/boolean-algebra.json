@@ -18,9 +18,9 @@
     "Involution law",
     "Law of complementarity",
     "Commutative law",
-    "Assosiative law",
+    "Associative law",
     "Distributive law",
-    "DeMorgan’s law",
+    "De Morgan's law",
     "Duality",
     "Theorem for multiplying out and factoring",
     "Consensus theorem",
@@ -41,7 +41,6 @@
         "key": "¬"
       }
     ],
-	
     "Basic Principles": [
       {
         "key": "X + 0 = X"
@@ -51,141 +50,112 @@
       },
       {
         "key": "X • 1 = X"
-        
       },
       {
         "key": "X • 0 = 0"
-        
       }
     ],
     "Idempotent Law": [
       {
         "key": "X + X = X"
-        
       },
       {
         "key": "X • X = X"
-        
       }
     ],
     "Involution law": [
       {
         "key": "(X')' = X"
-        
       }
     ],
     "Law of complementarity": [
       {
         "key": "X + X' = 1"
-        
       },
       {
         "key": "X • X' = 0"
-        
       }
     ],
     "Commutative law": [
       {
         "key": "X + Y = Y + X"
-        
       },
       {
         "key": "X • Y = Y • X"
-        
       }
     ],
-    "Assosiative law": [
+    "Associative law": [
       {
         "key": "(X + Y) + Z = X + (Y + Z) = X + Y + Z"
-        
       },
       {
         "key": "(XY)Z = X(YZ) = XYZ"
-        
       }
     ],
     "Distributive law": [
       {
         "key": "X(Y + Z) = XY + XZ"
-        
       },
       {
         "key": "X + YZ = (X + Y)(X + Z)"
-        
       }
     ],
-    "DeMorgan’s law": [
+    "De Morgan's law": [
       {
         "key": "(X + Y + Z +…)' = X'Y'Z'…"
-        
       },
       {
         "key": "(XYZ…)' = X' + Y' + Z' +…"
-        
       },
       {
         "key": "[f( X,X,…X,0,1,+,•)]' = f( X',X', … X', 1, 0, •,+)"
-        
       }
     ],
     "Duality": [
       {
         "key": "(X + Y + Z +…)D = XYZ…"
-        
       },
       {
         "key": "(XYZ…)D = X + Y + Z +…"
-        
       },
       {
         "key": "[f(X1,X2,…XN,0,1,+,•)]D = f(X1,X2,…XN,1,0,•,+)"
-        
       }
     ],
     "Theorem for multiplying out and factoring": [
       {
         "key": "(X + Y)(X' + Z) = XZ + X'Y"
-        
       },
       {
         "key": "XY + X'Z  = (X + Z)(X' + Y)"
-        
       }
     ],
     "Consensus theorem": [
       {
         "key": "XY + YZ + X'Z = XY + X'Z"
-        
       },
       {
         "key": "(X + Y)(Y + Z)(X' + Z) = (X + Y)(X' + Z)"
-        
       }
     ],
     "Simplification Theorems": [
       {
         "key": "XY + XY'= X"
-        
       },
       {
         "key": "(X + Y)(X + Y') = X"
-        
       },
       {
         "key": "X + XY = X"
-        
       },
       {
         "key": "X(X + Y) = X"
-        
       },
       {
         "key": "(X + Y')Y = XY"
-        
       },
       {
         "key": "XY'+ Y = X + Y"
-        
       }
     ]
   }

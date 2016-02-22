@@ -29,33 +29,33 @@
                 "val": "Document Title"
             },
             {
-                "key": "== Heading",
+                "key": "= Heading",
                 "val": "H1. Can also be created by putting four or more dashes under Heading"
             },
             {
-                "key": "=== Heading",
+                "key": "== Heading",
                 "val": "H2. Can also be created by putting four or more tildes under Heading"
             },
             {
-                "key": "==== Heading",
+                "key": "=== Heading",
                 "val": "H3. Can also be created by putting four or more carets under Heading"
             },
             {
-                "key": "===== Heading",
+                "key": "==== Heading",
                 "val": "H4. Can also be created by putting four or more pluses under Heading"
             }
         ],
         "Emphasis" : [
             {
-                "key": "__text__",
+                "key": "_text_",
                 "val": "Displays the text in italics"
             },
             {
-                "key": "**text**",
+                "key": "*text*",
                 "val": "Displays the text in bold"
             },
             {
-                "key": "**__text__**",
+                "key": "*_text_*",
                 "val": "Displays the text in bold and italics"
             },
             {
@@ -63,8 +63,8 @@
                 "val": "Adds strikethrough effect to the text"
             },
             {
-                "key": "\\[line-through\\]**text**",
-                "val": "Adds strikethrough effect to the text and bolts it"
+                "key": "\\[line-through\\]*text*",
+                "val": "Adds strikethrough effect to the text and makes it bold"
             }
         ],
         "Lists" : [
