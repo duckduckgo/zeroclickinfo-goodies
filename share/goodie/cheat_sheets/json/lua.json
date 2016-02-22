@@ -47,6 +47,38 @@
             {
                 "key": "or", 
                 "val": "Or"
+            },
+            {
+                "key": ">",
+                "val": "Greater than"
+            },
+            {
+                "key": "<",
+                "val": "Less than"
+            },
+            {
+                "key": ">=",
+                "val": "Greater than or equal"
+            },
+            {
+                "key": "<=",
+                "val": "Less than or equal"
+            },
+            {
+                "key": "+",
+                "val": "Addition"
+            },
+            {
+                "key": "-",
+                "val": "Subtraction"
+            },
+            {
+                "key": "*",
+                "val": "Multiplication"
+            },
+            {
+                "key": "/",
+                "val": "Division"
             }
         ],
         "Functions": [
