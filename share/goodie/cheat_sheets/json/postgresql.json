@@ -3,7 +3,6 @@
   "name": "PostgreSQL",
   "description": "PostgreSQL is an object-relational database management system",
   "template_type": "terminal",
-  "aliases": ["postgresql"],
   "metadata": {
     "sourceName": "Debian wiki",
     "sourceUrl": "https://wiki.debian.org/PostgreSql"
