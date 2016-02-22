@@ -11,6 +11,8 @@
   "section_order": [
     "Basics",
     "Logical Operators",
+    "Arithmatic Operators",
+    "Comparision Operators",
     "Printing",
     "Dictionaries",
     "Conditionals",
@@ -39,11 +41,11 @@
     ],
     "Logical Operators": [
       {
-        "key": "&& ",
+        "key": "&&",
         "val": "AND"
       },
       {
-        "key": "|| ",
+        "key": "||",
         "val": "OR"
       },
       {
@@ -53,6 +55,62 @@
       {
         "key": "==",
         "val": "Equals"
+      }
+    ],
+    "Arithmatic Operators": [
+      {
+        "key": "+",
+        "val": "Addition"
+      },
+      {
+        "key": "-",
+        "val": "Subtraction"
+      },
+      {
+        "key": "*",
+        "val": "Multiplication"
+      },
+      {
+        "key": "/",
+        "val": "Division"
+      },
+      {
+        "key": "%",
+        "val": "Modulus"
+      },
+      {
+        "key": "++",
+        "val": "Increment by 1"
+      },
+      {
+        "key": "--",
+        "val": "Decrement by 1"
+      }
+    ],
+    "Comparision Operators": [
+      {
+        "key": "==",
+        "val": "Equal to"
+      },
+      {
+        "key": "!=",
+        "val": "Not equal to"
+      },
+      {
+        "key": ">",
+        "val": "Greater than"
+      },
+      {
+        "key": "<",
+        "val": "Less than"
+      },
+      {
+        "key": ">=",
+        "val": "Greater than or equal to"
+      },
+      {
+        "key": "<=",
+        "val": "Less than or equal to"
       }
     ],
     "Printing": [
