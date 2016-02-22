@@ -91,11 +91,7 @@
         "val": "Decrement by 1"
       }
     ],
-<<<<<<< 5240e5a2a40de8dc79eb47f824b58328653abab0
-    "Comparison Operators": [
-=======
     "Comparision Operators": [
->>>>>>> Swift cheat sheet: Added two sections - Arithmatic and Comparision Operators
       {
         "key": "==",
         "val": "Equal to"
