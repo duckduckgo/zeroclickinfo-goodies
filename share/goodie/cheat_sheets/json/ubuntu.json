@@ -194,7 +194,7 @@
             "val": "Block port",
             "key": "ufw deny port"
         }, {
-            "val": "Block ip adress",
+            "val": "Block ip address",
             "key": "ufw deny from ip"
         }],
         "Application Names": [{

@@ -79,6 +79,19 @@ sub replace_names {
     return $names->{lc($value)};
 }
 
+# Change x/y into  x,x+y,x+y+y ...
+sub fracted_field {
+    my ($start, $step, $end) = @_;
+    my $temp = "";
+    for (my $i = $start; $i < $end; $i += $step) {
+        if ($temp ne '') {
+            $temp .= ',';
+        }
+        $temp .= "$i";
+    }
+    return $temp;  
+}
+
 # Parse a field (minute, hour, day, month, or weekday), call format_value for each value, and compose a string
 sub parse_field {
     my ($field, $singular, $plural, $min, $max, $format_value, $names) = @_;
@@ -91,7 +104,7 @@ sub parse_field {
     
     my @components = ();
     my $i = 0;
-    
+   
     for (split ',', $field) {
         die "Invalid $singular $_\n" unless $_ =~ m!^(\d+|[a-z]{3})(?:-(\d+|[a-z]{3})(?:/(\d+))?)?$!i;
         my ($start, $stop, $freq) = ($1, $2, $3);
@@ -125,7 +138,7 @@ sub parse_field {
 # An alternative parser that returns an array of all possible values
 sub get_all_values {
     my ($field, $singular, $min, $max) = @_;
-    
+
     my @components = split ',', $field;
     
     if ($field =~ m!^\*(?:/(\d+))?$!) { # "every X days" ("*/X" or just "*")
@@ -137,7 +150,6 @@ sub get_all_values {
     }
     
     my @values = ();
-    
     for (@components) {
         die "Invalid $singular $_\n" unless $_ =~ m!^(\d+)(?:-(\d+)(?:/(\d+))?)?$!;
         
@@ -184,7 +196,17 @@ sub parse_time {
     
     # Particular cases
     return 'at midnight' if $minute eq '0' && $hour eq '0';
-        
+    
+    # x/y minute 
+    if ($minute =~ m!^([0-9]|[1-5][0-9])/([0-9]|[1-5][0-9])$!) {
+        $minute = fracted_field($1, $2, 60);
+    }
+    
+    # x/y hour 
+    if ($hour =~ m!^([0-9]|1[0-9]|2[0-3])/([0-9]|1[0-9]|2[0-3])$!) {
+        $hour = fracted_field($1, $2, 24);
+    } 
+    
     my $out = get_simple_time($minute, $hour);
     return $out if defined $out;
     
@@ -225,10 +247,20 @@ sub parse_date {
     
     return 'every day' if (is_every($day) && is_every($month) && is_every($weekday));
     
+    # x/y day
+    if ($day =~ m!^([1-31])/([1-31])$!) {
+        $day = fracted_field($1, $2, 32);
+    } 
+    
     my $dayres = parse_field($day, 'day', 'days', 1, 31, sub {
         return 'on the ' . get_ordinal($_[0]) if $_[1] eq 'single/0'; # insert the preposition for the first single value
         return get_ordinal($_[0]);
     });
+    
+    # x/y month
+    if ($month =~ m!^([1-12])/([1-12])$!) {
+        $month = fracted_field($1, $2, 13);
+    }
     
     my $monthres = parse_field($month, 'month', 'months', 1, 12, sub {
         return $month_names[$_[0] - 1];
@@ -237,6 +269,11 @@ sub parse_date {
     if (is_every($weekday)) { # No weekday is specified
         return $dayres if is_every($month) && $day =~ m!^\*/\d+$!; # every X days
         return "$dayres of $monthres";
+    }
+    
+    # x/y weekday
+    if ($weekday =~ m!^([0-6])/([0-6])$!) {
+        $weekday = fracted_field($1, $2, 7);
     }
     
     my $weekres = parse_field($weekday, 'day of the week', 'days of the week', 0, 7, sub {

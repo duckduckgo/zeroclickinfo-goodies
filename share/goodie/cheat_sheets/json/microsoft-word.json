@@ -52,6 +52,14 @@
             {
                 "val": "Redo",
                 "key": "[Ctrl] [Y]"
+            },
+            {
+                "val": "Moves the cursor to the end of the document",
+                "key": "[Ctrl] [End]"
+            },
+            {
+                "val": "Moves the cursor to the beginning of the document",
+                "key": "[Ctrl] [Home]"
             }
         ],
         "Formatting": [
@@ -68,11 +76,11 @@
                 "key": "[Ctrl] [U]"
             },
             {
-                "val": "Create a Nonbreaking Space",
+                "val": "Create a non-breaking Space",
                 "key": "[Ctrl] [Shift] [Space]"
             },
             {
-                "val": "Create a Nonbreaking Hyphen",
+                "val": "Create a non-breaking Hyphen",
                 "key": "[Ctrl] [Shift] [Hyphen]"
             },
             {
@@ -84,12 +92,28 @@
                 "key": "[Ctrl] [Shift] [>]"
             },
             {
+                "val": "Double Underline",
+                "key": "[Ctrl] [Shift] [D]"
+            },
+            {
                 "val": "Remove Paragraph or Character Formatting",
                 "key": "[Ctrl] [Space]"
             },
             {
                 "val": "Paste Special",
                 "key": "[Alt] [Ctrl] [V]"
+            },
+            {
+                "val": "Insert a hyperlink",
+                "key": "[Ctrl] [K]"
+            },
+            {
+                "val": "Insert current date",
+                "key": "[Alt] [Shift] [D]"
+            },
+            {
+                "val": "Insert current time",
+                "key": "[Alt] [Shift] [T]"
             }
         ]
     }

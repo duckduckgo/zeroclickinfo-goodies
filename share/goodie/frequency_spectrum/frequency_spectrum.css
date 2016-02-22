@@ -1,10 +1,3 @@
-.zci--answer .zci--conversions {
-    font-size: 1.5em;
-    font-weight: 300;
-    padding-top: .25em;
-    padding-bottom: .25em;
-}
-
 .zci--conversions {
     width: 90%;
     height: 50;
@@ -14,62 +7,62 @@
   margin-top: 1em;
 }
 
-.zci--conversions .plot_background {
+.zci--frequency_spectrum .plot_background {
     fill: #FFFFFF;
     stroke: #D1D1D1;
     stroke-width: 1px;
 }
 
-.zci--conversions .plot_panel {
+.zci--frequency_spectrum .plot_panel {
     fill: #F6F6F6;
 }
 
-.zci--conversions .axis_line {
+.zci--frequency_spectrum .axis_line {
     stroke: #DCDCDC;
 }
 
-.zci--conversions .x_axis_tick {
+.zci--frequency_spectrum .x_axis_tick {
     stroke: #DCDCDC;
 }
 
-.zci--conversions .x_axis_text {
+.zci--frequency_spectrum .x_axis_text {
     font-size: 0.7em;
     fill: #303030;
 }
 
-.zci--conversions .x_axis_label {
+.zci--frequency_spectrum .x_axis_label {
     font-size: 0.6em;
     fill: #ACACAC;
 }
 
-.zci--conversions .x_axis_gridline {
+.zci--frequency_spectrum .x_axis_gridline {
     stroke: #DCDCDC;
 }
 
-.zci--conversions .major_range {
+.zci--frequency_spectrum .major_range {
     fill: #9DCFE1;
     stroke: #9DCFE1;
 }
 
-.zci--conversions .major_range_label {
+.zci--frequency_spectrum .major_range_label {
     font-size: 0.7em;
     fill: #303030;
 }
 
-.zci--conversions .minor_range {
+.zci--frequency_spectrum .minor_range {
     fill: #80C4DE;
 }
 
-.zci--conversions .marker {
+.zci--frequency_spectrum .marker {
     stroke-width: 2px;
     stroke-opacity: 1;
 }
 
-.zci--conversions .marker_tag {
+.zci--frequency_spectrum .marker_tag {
     opacity: 1;
 }
 
-.zci--conversions .marker_label {
+.zci--frequency_spectrum .marker_label {
     font-size: 0.5em;
     fill: #FFFFFF;
 }

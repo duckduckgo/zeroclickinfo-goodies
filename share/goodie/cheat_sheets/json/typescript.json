@@ -1,0 +1,140 @@
+ {
+    "id": "typescript_cheat_sheet",
+    "name": "TypeScript",
+    "description":"TypeScript is a typed superset of JavaScript that compiles to plain JavaScript",
+    "metadata":{
+        "sourceName": "TypeScript",
+        "sourceUrl": "http://www.typescriptlang.org/Handbook"
+    },
+    "template_type": "terminal", 
+    "section_order": [
+        "Primitive Types",
+        "Named types",
+        "Object Type Literals",
+        "Arrays",
+        "Functions",
+        "Generics",
+        "Other"
+    ],
+    "aliases": [
+        "type script",
+        "typescript lang",
+        "type script lang"
+    ],
+    "sections": {
+        "Primitive Types": [
+            {
+                "key": "any",
+                "val": "Any type (explicitly untyped)"
+            },
+            {
+                "key": "void",
+                "val": "void type (null or undefined, use for function returns only)"
+            },
+            {
+                "key": "string",
+                "val": "String"
+            },
+            {
+                "key": "number",
+                "val": "Number"
+            },
+            {
+                "key": "boolean",
+                "val": "Boolean"
+            }
+        ],
+        "Named types": [
+            {
+                "key": "interface IChild extends IParent, SomeClass \\{ \\}",
+                "val": "Create interface IChild extending interface IParent and class SomeClass"
+            },
+            {
+                "key": "class Child extends Parent implements IChild, IOtherChild \\{ \\}",
+                "val": "Create class Child inheriting Parent class and implementing IChild and IOtherChild interfaces"
+            },
+            {
+                "key": "enum Options \\{FIRST, EXPLICIT=1\\}",
+                "val": "Create an Enum"
+            },
+            {
+                "key": "#define name(var) text",
+                "val": "Define a parameterized macro"
+            }
+        ],
+        "Object Type Literals": [
+            {
+                "key": "\\{ foo; bar; \\}",
+                "val": "Object with implicit Any properties"
+            },
+            {
+                "key": "\\{ required:Type; optional?:Type; \\}",
+                "val": "Object with optional property"
+            },
+            {
+                "key": "\\{ \\[key:string\\]:Type; \\}",
+                "val": "Hash map"
+            }
+        ],
+        "Arrays": [
+            {
+                "key": "string\\[\\] or Array<string>",
+                "val": "Array of strings"
+            },
+            {
+                "key": "\\{ ():string; \\}\\[\\] or Array<()=>string>",
+                "val": "Array of functions that return strings"
+            }
+        ],
+        "Functions": [
+            {
+                "key": "\\{ (arg1:Type, argN:Type):Type; \\} or (arg1:Type, argN:Type) => Type;",
+                "val": "Declare a function"
+            },
+            {
+                "key": "\\{ new ():ConstructedType; \\} or new () => ConstructedType;",
+                "val": "Create a new instance of ConstructedType"
+            },
+            {
+                "key": "(arg1:Type, optional?:Type) =>; ReturnType",
+                "val": "Function type with optional param"
+            },
+            {
+                "key": "(arg1:Type, ...allOtherArgs:Type\\[\\]) =>; ReturnType",
+                "val": "Function type with rest param"
+            },
+            {
+                "key": "\\{ ():Type; staticProp:Type; \\}",
+                "val": "Function type with static property"
+            },
+            {
+                "key": "function fn(arg1:Type = 'default'):ReturnType \\{\\}",
+                "val": "Default argument"
+            },
+            {
+                "key": "(arg1:Type):ReturnType =>; \\{\\} or (arg1:Type):ReturnType =>; Expression",
+                "val": "Arrow function"
+            }
+        ],
+        "Generics": [
+            {
+                "key": "<T>(items:T\\[\\], callback:(item:T) => T):T\\[\\]",
+                "val": "Function using type parameters"
+            },
+            {
+                "key": "interface Pair<T1, T2> \\{ first:T1; second:T2; \\}",
+                "val": "Interface with multiple types"
+            },
+            {
+                "key": "<T extends ConstrainedType>():T",
+                "val": "Constrained type parameter"
+            }
+        ],
+        "Other": [
+            {
+                "key": "typeof varName",
+                "val": "Returns type of a variable"
+            }
+        ]
+    }
+}

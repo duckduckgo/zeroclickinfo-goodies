@@ -31,6 +31,12 @@
         }, {
             "val": "Inline style",
             "key": "<tag style=\"property: value\">"  
+        }, {
+            "val": "Import CSS",
+            "key": "@import url(\"style.css\");"
+        }, {
+            "val": "Import CSS and apply only to the corresponding media type",
+            "key": "@import url(\"style.css\") list-of-media-queries;"
         }],
         "General Syntax": [{
             "val": "Basic syntax of css declaration block",

@@ -8,11 +8,7 @@ use DDG::Test::Goodie;
 use utf8;
 
 zci answer_type => 'conversions';
-
-# Match the promotion to BigInt in the IA
-use bignum;
 zci is_cached   => 1;
-no bignum;
 
 ddg_goodie_test(
     ['DDG::Goodie::Conversions'],
@@ -1617,7 +1613,64 @@ ddg_goodie_test(
             result => '3,000 inches'
         }
     ),
-    
+    # Representation (scientific notation)
+    '30000 km to m' => test_zci(
+        '30,000 kilometers = 3 * 10^7 meters',
+        structured_answer => {
+            input => ['30,000 kilometers'],
+            operation => 'convert',
+            result => '3 * 10<sup>7</sup> meters'
+        }
+    ),
+    '3000000000000000 km to m' => test_zci(
+        '3 * 10^15 kilometers = 3 * 10^18 meters',
+        structured_answer => {
+            input => ['3 * 10<sup>15</sup> kilometers'],
+            operation => 'convert',
+            result => '3 * 10<sup>18</sup> meters'
+        }
+    ),
+    '3000 km to m' => test_zci(
+        '3,000 kilometers = 3 * 10^6 meters',
+        structured_answer => {
+            input => ['3,000 kilometers'],
+            operation => 'convert',
+            result => '3 * 10<sup>6</sup> meters'
+        }
+    ),
+    '300000000000 km to m' => test_zci(
+        '3 * 10^11 kilometers = 3 * 10^14 meters',
+        structured_answer => {
+            input => ['3 * 10<sup>11</sup> kilometers'],
+            operation => 'convert',
+            result => '3 * 10<sup>14</sup> meters'
+        }
+    ),
+    '4e-15 km to mm' => test_zci(
+        '4 * 10^-15 kilometers = 4 * 10^-9 millimeters',
+        structured_answer => {
+            input => ['4 * 10<sup>-15</sup> kilometers'],
+            operation => 'convert',
+            result => '4 * 10<sup>-9</sup> millimeters'
+        }
+    ),
+    'how many megabytes in a gigabyte?' => test_zci(
+        '1 gigabyte = 1,000 megabytes',
+        structured_answer => {
+            input => ['1 gigabyte'],
+            operation => 'convert',
+            result => '1,000 megabytes'
+        }
+    ),
+    '1 gigabyte in megabytes' => test_zci(
+        '1 gigabyte = 1,000 megabytes',
+        structured_answer => {
+            input => ['1 gigabyte'],
+            operation => 'convert',
+            result => '1,000 megabytes'
+        }
+    ),
+
     # Intentionally untriggered
     '5 inches in 5 meters'            => undef,
     'convert 1 cm to 2 mm'            => undef,

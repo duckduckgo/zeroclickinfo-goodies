@@ -71,7 +71,7 @@ ddg_goodie_test(
         )
     ),
 
-    'http://3g2upl4pq6kufc4m.onion' =>
+    'http://3g2upl4pq6kufc4m.onion.link' =>
     test_zci(
         '3g2upl4pq6kufc4m.onion',
         make_structured_answer(

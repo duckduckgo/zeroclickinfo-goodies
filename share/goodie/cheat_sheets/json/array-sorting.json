@@ -1,0 +1,116 @@
+{
+    "id": "array_sorting_cheat_sheet",
+    "name": "Array Sorting Algorithms",
+    "description": "Summary of Big-O time complexities for Array Sorting Algorithms",
+    "metadata": {
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Sorting_algorithm"
+    },
+    "aliases": [
+        "array sorting algorithms", "array sorting algorithm" 
+    ],
+    "template_type": "reference",
+    "section_order": [
+        "Quicksort",
+        "Mergesort",
+        "Heapsort",
+        "Bubble Sort",
+        "Insertion Sort",
+        "Selection Sort",
+        "Shell Sort",
+        "Bucket Sort",
+        "Radix Sort"
+    ],
+    "sections": {
+        "Quicksort": [{
+                "val": "O(n log(n))",
+                "key": "Best"
+        }, {
+                "val": "O(n log(n))",
+                "key": "Average"
+        }, {
+                "val": "O(n²)",
+                "key": "Worst"
+        }],
+        "Mergesort": [{
+                "val": "O(n log(n))",
+                "key": "Best"
+        }, {
+                "val": "O(n log(n))",
+                "key": "Average"
+        }, {
+                "val": "O(n log(n))",
+                "key": "Worst"
+        }],
+        "Heapsort": [{
+                "val": "O(n log(n))",
+                "key": "Best"
+        }, {
+                "val": "O(n log(n))",
+                "key": "Average"
+        }, {
+                "val": "O(n log(n)))",
+                "key": "Worst"
+        }],
+        "Bubble Sort": [{
+                "val": "O(n)",
+                "key": "Best"
+        }, {
+                "val": "O(n²)",
+                "key": "Average"
+        }, {
+                "val": "O(n²)",
+                "key": "Worst"
+        }],
+        "Insertion Sort": [{
+                "val": "O(n)",
+                "key": "Best"
+        }, {
+                "val": "O(n²)",
+                "key": "Average"
+        }, {
+                "val": "O(n²)",
+                "key": "Worst"
+        }],
+        "Selection Sort": [{
+                "val": "O(n²)",
+                "key": "Best"
+        }, {
+                "val": "O(n²)",
+                "key": "Average"
+        }, {
+                "val": "O(n²)",
+                "key": "Worst"
+        }],
+        "Shell Sort": [{
+                "val": "O(n)",
+                "key": "Best"
+        }, {
+                "val": "O((nlog(n))²)",
+                "key": "Average"
+        }, {
+                "val": "O((nlog(n))²)",
+                "key": "Worst"
+        }],
+        "Bucket Sort": [{
+                "val": "O(n+k)",
+                "key": "Best"
+        }, {
+                "val": "O(n+k)",
+                "key": "Average"
+        }, {
+                "val": "O(n²)",
+                "key": "Worst"
+        }],
+        "Radix Sort": [{
+                "val": "O(nk)",
+                "key": "Best"
+        }, {
+                "val": "O(nk)",
+                "key": "Average"
+        }, {
+                "val": "O(nk)",
+                "key": "Worst"
+        }]
+    }
+}

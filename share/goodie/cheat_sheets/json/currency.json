@@ -13,7 +13,7 @@
         "Europe",
         "North America",
         "South America",
-        "Antartica",
+        "Antarctica",
         "Oceania"
     ],
     "aliases": [
@@ -93,6 +93,10 @@
                 "val": "৳ (Taka)"
             },
             {
+                "key": "Brunei",
+                "val": "$ (Darussalam Dollar)"
+            },
+            {
                 "key": "China",
                 "val": "¥ (Renminbi or Yuan)"
             },
@@ -103,6 +107,18 @@
             {
                 "key": "India",
                 "val": "₹ (Indian Rupee)"
+            },
+            {
+                "key": "Nepal",
+                "val": "रू (Nepalese Rupee)"
+            },
+            {
+                "key": "Sri Lanka",
+                "val": "රු (Sri Lankan Rupee)"
+            },
+            {
+                "key": "Iran",
+                "val": "﷼ (Iranian Rial)"
             },
             {
                 "key": "Japan",
@@ -121,6 +137,10 @@
             {
                 "key": "Austria",
                 "val": "€ (Euro)"
+            },
+            {
+                "key": "Azerbaijan",
+                "val": "ман (Manat)"
             },
             {
                 "key": "Belgium",
@@ -301,7 +321,7 @@
                 "val": "$ (Cook Islands Dollar)"
             }
         ],
-        "Antartica": [
+        "Antarctica": [
             {
                 "key": "French Southern Territories",
                 "val": "€ (Euro)"
