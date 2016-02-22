@@ -12,7 +12,7 @@
     "Basics",
     "Logical Operators",
     "Arithmatic Operators",
-    "Comparision Operators",
+    "Comparison Operators",
     "Printing",
     "Dictionaries",
     "Conditionals",
@@ -87,7 +87,7 @@
         "val": "Decrement by 1"
       }
     ],
-    "Comparision Operators": [
+    "Comparison Operators": [
       {
         "key": "==",
         "val": "Equal to"
