@@ -122,7 +122,7 @@
                 "val":"Calculates the exponential value of the right operand by the left operand"
             },
             {
-                "key":"//",
+                "key":"/",
                 "val":"Divides the left operand by the right operand."
             },
             {
