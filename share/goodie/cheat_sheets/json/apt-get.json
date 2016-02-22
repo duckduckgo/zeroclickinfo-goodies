@@ -7,7 +7,7 @@
         "sourceUrl": "https://help.ubuntu.com/community/AptGet/Howto"
     },
     "aliases": [
-        "aptget", "apt-get", "apt get"
+        "aptget", "apt-get"
     ],
     "template_type": "terminal",
     "section_order": [
