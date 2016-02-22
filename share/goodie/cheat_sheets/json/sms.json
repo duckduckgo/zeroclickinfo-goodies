@@ -61,6 +61,10 @@
             {
                 "key": "1DRFL",
                 "val": "Wonderful"
+            },
+            {
+                "key": "<3",
+                "val": "Love"
             }
         ],
         "A": [
@@ -137,6 +141,10 @@
                 "val": "Check"
             },
             {
+                "key": "CHX",
+                "val": "Chicks"
+            },
+            {
                 "key": "CYA",
                 "val": "See you"
             }
@@ -185,6 +193,10 @@
             {
                 "key": "FBFR",
                 "val": "Facebook Friend"
+            },
+            {
+                "key": "FTW",
+                "val": "For The Win"
             }
         ],
         "G": [
@@ -217,6 +229,10 @@
             {
                 "key": "HAND",
                 "val": "Have A Nice Day"
+            },
+            {
+                "key": "HAK, XOXO",
+                "val": "Hugs and Kisses"
             },
             {
                 "key": "HH",
@@ -278,7 +294,7 @@
             },
             {
                 "key": "KISS",
-                "val": "Keep It Simple Stupid"
+                "val": "Keep It Simple, Stupid"
             },
             {
                 "key": "KIA",
@@ -384,7 +400,7 @@
             },
             {
                 "key": "PIC",
-                "val": "Pictutre"
+                "val": "Picture"
             },
             {
                 "key": "PM",
