@@ -2,18 +2,14 @@
     "id": "mozilla_thunderbird_cheat_sheet",
     "name": "Mozilla Thunderbird",
     "description": "A free, open source, cross-platform email, news, and chat client developed by the Mozilla Foundation",
-
     "metadata": {
         "sourceName": "Mozilla Support",
         "sourceUrl" : "https://support.mozilla.org/en-US/kb/keyboard-shortcuts"
     },
-
     "aliases": [
         "thunderbird"
     ],
-
     "template_type": "keyboard",
-
     "section_order": [
         "General Shortcuts",
         "Message Shortcuts",
@@ -22,7 +18,6 @@
         "Text Shortcuts",
         "Mouse Shortcuts"
     ],
-
     "sections": {
         "General Shortcuts": [
             {
@@ -30,43 +25,43 @@
                 "val": "Caret Browsing"
             },
             {
-                "key": "[Ctrl]  [Q]",
+                "key": "[Ctrl] [Q]",
                 "val": "Quit"
             },
             {
-                "key": "[Ctrl]  [T]",
+                "key": "[F5]",
                 "val": "Get New Messages for Current Account"
             },
             {
-                "key": "[Ctrl]  [⇧]  [T]",
+                "key": "[Shift] [F5]",
                 "val": "Get New Messages for All Accounts"
             },
             {
-                "key": "[Ctrl]  [P]",
+                "key": "[Ctrl] [P]",
                 "val": "Print"
             },
             {
-                "key": "[Ctrl]  [R]",
+                "key": "[Ctrl] [R]",
                 "val": "Reply to Sender of Message"
             },
             {
-                "key": "[Ctrl] [⇧]  [R]",
+                "key": "[Ctrl] [⇧] [R]",
                 "val": "Reply to All Recipients of Message"
             },
             {
-                "key": "[Ctrl]  [S]",
+                "key": "[Ctrl] [S]",
                 "val": "Save Message as File"
             },
             {
-                "key": "[Ctrl]  [T]",
+                "key": "[Ctrl] [T]",
                 "val": "Send and Receive All Messages"
             },
             {
-                "key": "[Ctrl]  [⏎]",
+                "key": "[Ctrl] [⏎]",
                 "val": "Send Message Now"
             },
             {
-                "key": "[Ctrl]  [⇧]  [⏎]",
+                "key": "[Ctrl] [⇧] [⏎]",
                 "val": "Send Message Later"
             },            
             {
@@ -80,12 +75,16 @@
         ],
         "Message Shortcuts": [
             {
-                "key": "[Ctrl]  [E]",
+                "key": "[Ctrl] [E]",
                 "val": "Edit as New"
             },
             {
-                "key": "[Ctrl]  [L]",
+                "key": "[Ctrl] [L]",
                 "val": "Forward Message"
+            },
+            {
+                "key": "[Ctrl] [U]",
+                "val": "View Message Source"
             },
             {
                 "key": "0",
@@ -112,7 +111,7 @@
                 "val": "Label: Later"
             },
             {
-                "key": "[Ctrl]  [⇧]  [C]",
+                "key": "[Ctrl] [⇧] [C]",
                 "val": "Mark All Read"
             },
             {
@@ -124,7 +123,7 @@
                 "val": "Mark as Junk"
             },
             {
-                "key": "[⇧]  [J]",
+                "key": "[⇧] [J]",
                 "val": "Mark as Not Junk"
             },
             {
@@ -136,14 +135,21 @@
                 "val": "Mark Thread as Read"
             },
             {
-                "key": "[Ctrl]  [N]",
+                "key": "[Ctrl] [N]",
                 "val": "New Message"
+            },
+            {
+                "key": "[Ctrl] [Shift] [R]",
+                "val": "Reply to All in message"
+            },
+            {
+                "key": "[Ctrl] [Shift] [L]",
+                "val": "Reply to list"
             }
-            
         ],
         "Navigation Shortcuts":[
             {
-                "key": "[Ctrl]  [W]",
+                "key": "[Ctrl] [W]",
                 "val": "Close Window"
             },
             {
@@ -179,7 +185,7 @@
                 "val": "Move to Next Mail Pane"
             },
             {
-                "key": "[Ctrl]  [O]",
+                "key": "[Ctrl] [O]",
                 "val": "Open Message in New Window"
             }
         ],
@@ -193,91 +199,89 @@
                 "val":"Find Link As You Type"
             },
             {
-                "key":"[⇧]  [F3]",
+                "key":"[⇧] [F3]",
                 "val":"Find Previous"
             },
             {
-                "key":"[Ctrl]  [F]",
+                "key":"[Ctrl] [F]",
                 "val":"Find Text in This Message"
             },
             {
-                "key":"[Ctrl]  [K]",
+                "key":"[Ctrl] [K]",
                 "val":"Search Bar"
             },
             {
-                "key":"[Ctrl]  [⇧]  [F]",
+                "key":"[Ctrl] [⇧] [F]",
                 "val":"Search Messages"
             }
         ],
         "Text Shortcuts":[
             {
-                "key":"[Ctrl]  [-]",
+                "key":"[Ctrl] [-]",
                 "val":"Text Size Decrease"
             },
             {
-                "key":"[Ctrl]  [+]",
+                "key":"[Ctrl] [+]",
                 "val":"Text Size Increase"
             },
             {
-                "key":"[Ctrl]  [0]",
+                "key":"[Ctrl] [0]",
                 "val":"Text Size Default"
             },
             {
-                "key":"[Ctrl]  [Y]",
+                "key":"[Ctrl] [Y]",
                 "val":"Redo"
             },
             {
-                "key":"[Ctrl]  [U]",
+                "key":"[Ctrl] [Z]",
                 "val":"Undo"
             },
             {
-                "key":"[Ctrl]  [A]",
+                "key":"[Ctrl] [A]",
                 "val":"Select All"
             },
             {
-                "key":"[Ctrl]  [C]",
+                "key":"[Ctrl] [C]",
                 "val":"Copy"
             },
             {
-                "key":"[Ctrl]  [X]",
+                "key":"[Ctrl] [X]",
                 "val":"Cut"
             },
             {
-                "key":"[Ctrl]  [V]",
+                "key":"[Ctrl] [V]",
                 "val":"Paste"
             },
             {
                 "key":"Del",
                 "val":"Delete"
             }
-            
         ],
         "Mouse Shortcuts":[
             {
-                "key":"[Ctrl]  [Scroll Up]",
+                "key":"[Ctrl] [Scroll Up]",
                 "val":"Decrease Text Size"
             },
             {
-                "key":"[Ctrl]  [Scroll Down]",
+                "key":"[Ctrl] [Scroll Down]",
                 "val":"Increase Text Size"
             },
             {
-                "key":"[⇧]  [Create a New Message]",
+                "key":"[⇧] [Create a New Message]",
                 "val":"New Plain Text Message"
             },
             {
-                "key":"[⇧]  [Reply]",
+                "key":"[⇧] [Reply]",
                 "val":"Plain Text Reply"
             },
             {
-                "key":"[⇧]  [Reply All]",
+                "key":"[⇧] [Reply All]",
                 "val":"Plain Text Reply All"
             },
             {
-                "key":"[⇧]  [Forward]",
+                "key":"[⇧] [Forward]",
                 "val":"Plain Text Forward"
             }
-            
         ]
     }
 }
