@@ -132,6 +132,10 @@
                 "key": "LH"
             },
             {
+                "val": "Left twist",
+                "key": "LT"
+            },
+            {
                 "val": "Loop(s)",
                 "key": "lp(s)"
             },
@@ -238,6 +242,10 @@
                 "key": "sk2p"
             },
             {
+                "val": "-slip 1, k2tog, pass the slipped stitch over (a double decrease)",
+                "key": "s2kp"
+            },
+            {
                 "val": "Slip",
                 "key": "sl"
             },
@@ -258,11 +266,11 @@
                 "key": "ss"
             },
             {
-                "val": "Slip, Slip, Knit these 2 stiches together — a decrease",
+                "val": "Slip, Slip, Knit these 2 stitches together — a decrease",
                 "key": "ssk"
             },
             {
-                "val": "Slip, Slip, Slip, Knit 3 stiches together",
+                "val": "Slip, Slip, Slip, Knit 3 stitches together",
                 "key": "sssk"
             },
             {
