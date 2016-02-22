@@ -1,20 +1,26 @@
 {
     "id": "counties_of_ireland_cheat_sheet",
     "name": "Counties Of Ireland",
-    "description": "The 32 Irish counties along with their county town",
+    "description": "The 32 Irish counties (26/ROI, 6/NI) along with their county town",
     "metadata": {
         "sourceName": "Wikipedia",
         "sourceUrl": "https://en.wikipedia.org/wiki/Counties_of_Ireland"
     },
     "aliases": [
-        "irish states"
+        "irish states",
+        "states in ireland",
+        "ireland states",
+        "all ireland states",
+        "irish counties",
+        "counties of ireland",
+        "ireland counties"
     ],
     "template_type": "reference",
     "section_order": [
-        "Connacht",
         "Leinster",
-        "Munster",
-        "Ulster"
+        "Connacht",
+        "Ulster",
+        "Munster"
     ],
     "sections": {
         "Connacht": [
@@ -129,11 +135,11 @@
         ],
         "Ulster": [
             {
-                "key": "Antrim",
+                "key": "Antrim (NI)",
                 "val": "Ballymena"
             },
             {
-                "key": "Armagh",
+                "key": "Armagh (NI)",
                 "val": "Armagh"
             },
             {
@@ -145,15 +151,15 @@
                 "val": "Lifford"
             },
             {
-                "key": "Down",
+                "key": "Down (NI)",
                 "val": "Downpatrick"
             },
             {
-                "key": "Fermanagh",
+                "key": "Fermanagh (NI)",
                 "val": "Enniskillen"
             },
             {
-                "key": "Londonderry / Derry",
+                "key": "Londonderry / Derry (NI)",
                 "val": "Coleraine"
             },
             {
@@ -161,7 +167,7 @@
                 "val": "Monaghan"
             },
             {
-                "key": "Tyrone",
+                "key": "Tyrone (NI)",
                 "val": "Omagh"
             }
         ]
