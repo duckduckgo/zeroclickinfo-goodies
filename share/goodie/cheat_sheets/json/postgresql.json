@@ -7,6 +7,9 @@
     "sourceName": "Debian wiki",
     "sourceUrl": "https://wiki.debian.org/PostgreSql"
   },
+  "aliases": [
+      "postgres"
+  ],
   "section_order": [
     "Installation (Debian)",
     "User Access",
