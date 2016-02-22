@@ -69,7 +69,7 @@
                 "val": "Addition"
             },
             {
-                "key": "-",
+                "key": "- <binary>",
                 "val": "Subtraction"
             },
             {
@@ -79,6 +79,10 @@
             {
                 "key": "/",
                 "val": "Division"
+            },
+            {
+                "key": "- <unary>",
+                "val": "Negation"
             }
         ],
         "Functions": [
