@@ -22,260 +22,260 @@
           {
              "val" : "Καλημέρα",
              "key" : "Good morning",
-             "trn" : ""
+             "trn" : "KalimEra"
           },
           {
              "val" : "Καλησπέρα",
              "key" : "Good evening",
-             "trn" : ""
+             "trn" : "KalispEra"
           },
           {
              "val" : "Καληνύχτα",
              "key" : "Good night",
-             "trn" : ""
+             "trn" : "KalinIchta"
           },
           {
              "val" : "Συγγνώμη",
              "key" : "I'm sorry",
-             "trn" : ""
+             "trn" : "SighnOmi"
           },
           {
              "val" : "Ευχαριστώ",
              "key" : "Thank you",
-             "trn" : ""
+             "trn" : "EfcharistO"
           },
           {
              "val" : "Σε παρακαλώ",
              "key" : "Please",
-             "trn" : ""
+             "trn" : "Se parakalO"
           },
           {
              "val" : "Ευχαριστώ πάρα πολύ!",
              "key" : "Thank you very much!",
-             "trn" : ""
+             "trn" : "EfcharistO pAra polI!"
           },
           {
              "val" : "Παρακαλώ",
              "key" : "You're welcome",
-             "trn" : ""
+             "trn" : "ParakalO"
           }
        ],
        "Getting Help" : [
           {
               "val" : "Να ρωτήσω κάτι;",
               "key" : "Can I ask something?",
-              "trn" : ""
+              "trn" : "Na rotIso kAti?"
           },
           {
              "val" : "Κάλεσε την αστυνομία!",
              "key" : "Call the police!",
-             "trn" : ""
+             "trn" : "KAlese tin astinomIa!"
           },
           {
              "val" : "Μπορείς να μιλήσεις πιο αργά, παρακαλώ;",
              "key" : "Can you speak more slowly, please?",
-             "trn" : ""
+             "trn" : "MborIs na milIsis piO argA, parakalO?"
           },
           {
              "val" : "Είμαι αλλεργικός",
              "key" : "I am allergic",
-             "trn" : ""
+             "trn" : "Imme alergikOs"
           },
           {
              "val" : "Μπορείς να επαναλάβεις, παρακαλώ;",
              "key" : "Can you repeat, please?",
-             "trn" : ""
+             "trn" : "MborIs na epanalAvis, parakalO?"
           },
           {
              "val" : "Πώς λες \"X\" στα ελληνικά;",
              "key" : "How do you say \"X\" in Greek?",
-             "trn" : ""
+             "trn" : "Pos les \"X\" sta HellenicA?
           },
           {
              "val" : "Σταμάτα!",
              "key" : "Stop!",
-             "trn" : ""
+             "trn" : "StAmata!"
           },
           {
              "val" : "Μιλάς Αγγλικά;",
              "key" : "Do you speak English?",
-             "trn" : ""
+             "trn" : "MilAs AgglicA?"
           },
           {
              "val" : "Με συγχωρείς!",
              "key" : "Excuse me!",
-             "trn" : ""
+             "trn" : "Me SichorIs!"
           },
           {
              "val" : "Χρειάζομαι ένα γιατρό!",
              "key" : "I need a doctor!",
-             "trn" : ""
+             "trn" : "ChriAzomai Ena giatrO!"
           },
           {
              "val" : "Μπορείς να το γράψεις αυτό, σε παρακαλώ;",
              "key" : "Can you write that down, please?",
-             "trn" : ""
+             "trn" : "MborIs na to ghrApsis aftO se parakalO?"
           },
           {
              "val" : "Κάλεσε ένα ασθενοφόρο!",
              "key" : "Call an ambulance!",
-             "trn" : ""
+             "trn" : "KAlese Ena asthenofOro!"
           },
           {
              "val" : "Είμαι σε κίνδυνο!",
              "key" : "I am in danger!",
-             "trn" : ""
+             "trn" : "Imme se kYndino!"
           },
           {
              "val" : "Μπορείς να με βοηθήσεις;",
              "key" : "Can you help me?",
-             "trn" : ""
+             "trn" : "MborIs na me voithIsis?"
           },
           {
              "val" : "Φωτιά!",
              "key" : "Fire!",
-             "trn" : ""
+             "trn" : "FotiA!"
           }
        ],
        "Basics" : [
           {
              "val" : "Με λένε...",
              "key" : "My name is...",
-             "trn" : ""
+             "trn" : "Mee lEne..."
           },
           {
              "val" : "Είμαι καλά, ευχαριστώ!",
              "key" : "I'm fine, thanks!",
-             "trn" : ""
+             "trn" : "Imme kalA, efcharistO!"
           },
           {
              "val" : "Πώς είσαι;",
              "key" : "How are you?",
-             "trn" : ""
+             "trn" : "POs Isse?"
           },
           {
              "val" : "Γεια",
              "key" : "Hello",
-             "trn" : ""
+             "trn" : "YeeAh"
           },
           {
              "val" : "Καλωσήλθες",
              "key" : "Welcome",
-             "trn" : ""
+             "trn" : "KalosIrthes"
           },
           {
              "val" : "Πώς σε λένε;",
              "key" : "What's your name?",
-             "trn" : ""
+             "trn" : "POs se lEnne?"
           }
        ],
        "Travelling" : [
           {
              "val" : "Στρίψε αριστερά",
              "key" : "Turn left",
-             "trn" : ""
+             "trn" : "StrIpse aristerA"
           },
           {
              "val" : "Πού είναι η έξοδος;",
              "key" : "Where is the exit?",
-             "trn" : ""
+             "trn" : "POU Inne i Exodthos?"
           },
           {
              "val" : "Πού;",
              "key" : "Where?",
-             "trn" : ""
+             "trn" : "POU?"
           },
           {
              "val" : "Είναι μακριά;",
              "key" : "Is it far?",
-             "trn" : ""
+             "trn" : "Inne makriA?"
           },
           {
              "val" : "Πήγαινε όλο ευθεία",
              "key" : "Go straight ahead",
-             "trn" : ""
+             "trn" : "PEEghene Olo efthIa"
           },
           {
              "val" : "Έχεις χάρτη της πόλης;",
              "key" : "Do you have a city map?",
-             "trn" : ""
+             "trn" : "Echees chArti tis pOlis?"
           },
           {
              "val" : "Σε παρακαλώ, σταμάτα εδώ",
              "key" : "Please stop here",
-              "trn" : ""
+              "trn" : "Se parakalO, stamAta edhO"
           },
           {
              "val" : "Στρίψε δεξιά",
              "key" : "Turn right",
-              "trn" : ""
+              "trn" : "StrIpse dhexiA"
           },
           {
              "val" : "Πού μπορώ να βρω τα ταξί;",
              "key" : "Where can I find the taxis?",
-             "trn" : ""
+             "trn" : "POU mborO na vrO ta taxI?"
           },
           {
              "val" : "Πώς μπορώ να πάρω ένα ταξί;",
              "key" : "How can I get a taxi?",
-             "trn" : ""
+             "trn" : "Pos mborO na pAro Ena taxI?"
           }
        ],
        "Going out for dinner" : [
           {
              "val" : "Έχετε γεύματα για χορτοφάγους;",
              "key" : "Do you have vegetarian dishes?",
-             "trn" : ""
+             "trn" : "Echete ghEvmata gia chortofAgous?"
           },
           {
              "val" : "Κυρίως πιάτο",
              "key" : "Main dish",
-             "trn" : "" 
+             "trn" : "KyrIos piAto"
           },
           {
              "val" : "Ορεκτικό",
              "key" : "Entrée",
-             "trn" : "" 
+             "trn" : "orektikO" 
           },
           {
              "val" : "Επιδόρπιο",
              "key" : "Dessert",
-             "trn" : "" 
+             "trn" : "EpidhOrpio"
           },
           {
              "val" : "Το λογαριασμό, παρακαλώ!",
              "key" : "The check please!",
-             "trn" : ""
+             "trn" : "To logariasmO parakalO!"
           },
           {
              "val" : "Ένα φλιτζάνι καφέ, παρακαλώ",
              "key" : "A cup of coffee please",
-             "trn" : ""
+             "trn" : "Ena flitzAni kafE, parakalO"
           },
           {
              "val" : "Έχετε γεύματα χωρίς γλουτένη;",
              "key" : "Do you have gluten-free dishes?",
-             "trn" : ""
+             "trn" : "Echete ghEvmata chorIs ghloutEni?"
           },
           {
              "val" : "Πού βρίσκεται ένα καλό εστιατόριο;",
              "key" : "Where is a good restaurant?",
-             "trn" : ""
+             "trn" : "POU vrIskete Ena kalO estiatOrio?"
           },
           {
              "val" : "Ένα ποτήρι νερό, παρακαλώ",
              "key" : "A glass of water please",
-             "trn" : ""
+             "trn" : "Ena potIri nerO parakalO"
           },
           {
              "val" : "Τραπέζι για δύο, παρακαλώ!",
              "key" : "A table for two please!",
-             "trn" : ""
+             "trn" : "TrapEzi ghia dhIo parakalO!"
           },
           {
              "val" : "Μπορώ να έχω τον κατάλογο, παρακαλώ;",
              "key" : "Can I get a menu, please?",
-             "trn" : ""
+             "trn" : "MborO na Echho ton katAlogho, parakalO?"
           }
        ]
     }
