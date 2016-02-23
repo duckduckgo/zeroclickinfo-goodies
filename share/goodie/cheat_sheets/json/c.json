@@ -249,11 +249,11 @@
             },
             {
                 "val": "Hexadecimal character code 'nn'",
-                "key": "\xnn"
+                "key": "\\xnn"
             },
             {
                 "val": "Octal character code 'nn'",
-                "key": "\onn"
+                "key": "\\onn"
             }
         ],
         "Order of Precedence": [
