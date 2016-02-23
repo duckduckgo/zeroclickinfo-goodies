@@ -3,6 +3,10 @@
     "name": "Erlang",
     "description": "Overview of common Erlang constructs and syntax",
     "template_type": "code",
+    "metadata": {
+         "sourceName": "Erlang",
+         "sourceUrl": "http://erlang.org/"
+        },
     "section_order": [
         "Erlang Shell",
         "File Types",
