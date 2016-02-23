@@ -246,6 +246,14 @@
             {
                 "val": "The “null” byte (backslash-zero)",
                 "key": "\\0"
+            },
+            {
+                "val": "Hexadecimal character code 'nn'",
+                "key": "\xnn"
+            },
+            {
+                "val": "Octal character code 'nn'",
+                "key": "\onn"
             }
         ],
         "Order of Precedence": [
