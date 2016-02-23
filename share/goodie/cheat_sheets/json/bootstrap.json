@@ -98,6 +98,9 @@
             "val": "Adds basic styling to any button",
             "key": ".btn"
         }, {
+            "val": "Creates standard button",
+            "key": ".btn-default"
+        }, {
             "val": "Creates large button",
             "key": ".btn-lg"
         }, {
@@ -124,6 +127,9 @@
         }, {
             "val": "Span buttons to the entire width of the screen",
             "key": ".btn-group-justified"
+        }, {
+            "val": "Provides extra visual weight and identifies the primary action in a set of buttons",
+            "key": ".btn-primary"
         }, {
             "val": "Makes green color success button",
             "key": ".btn-success"
