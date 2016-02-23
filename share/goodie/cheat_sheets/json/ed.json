@@ -116,6 +116,10 @@
             {
                 "key": "[.,.]y",
                 "val": "Copy (yank) the specified range (GNU extension)"
+            },
+            {
+                "key": "[.]klc",
+                "val": "Mark a line with a  lower case letter lc"
             }
         ],
         "File Manipulation Commands": [
@@ -200,6 +204,14 @@
             {
                 "key": "[.+1]z{N}",
                 "val": "Display N lines of text"
+            },
+            {
+                "key": "[.,.]p",
+                "val": "Print the addressed lines"
+            },
+            {
+                "key": "[.,.]n",
+                "val": "Print the addressed lines along with their line numbers"
             }
         ],
         "Other Commands": [
