@@ -108,8 +108,8 @@
                 "val": "Complete"
             },
             {
-                "key": "[M-x]",
-                "val": "To start idris-repl"
+                "key": "[C-h] [m]",
+                "val": "Help for the current modes is available"
             }
         ],
         "Loading Keys": [
