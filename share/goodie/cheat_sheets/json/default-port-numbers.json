@@ -89,8 +89,26 @@
             "val": "MSSQL Server",
             "key": "1433"
         }, {
+            "val": "OrientDB database listening for HTTP client connections",
+            "key": "2480"
+        }, {
+            "val": "Oracle database listening for insecure client connections to the listener, replaces port 1521",
+            "key": "2483"
+        }, {
+            "val": "Oracle database listening for SSL client connections to the listener",
+            "key": "2484"
+        }, {
+            "val": "IBM WebSphere Application Server (WAS) rmi",
+            "key": "2809"
+        }, {
+            "val": "Ruby on Rails development default",
+            "key": "3000"
+        }, {
             "val": "MySQL database system",
             "key": "3306"
+        }, {
+            "val": "Docker implementations, redistributions, and setups defaul",
+            "key": "4243"
         }, {
             "val": "Real-time Transport Protocol media data (RTP)",
             "key": "5004"
