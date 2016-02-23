@@ -85,6 +85,21 @@
             "val": "Set an HTML attribute value on the selection",
             "key": "selection.attr()"
         }, {
+            "val": "Filter a selection based on data",
+            "key": "selection.filter()"
+        }, {
+            "val": "Sort elements in the document based on data",
+            "key": "selection.sort()"
+        }, {
+            "val": "Reorders elements in the document to match the selection",
+            "key": "selection.order()"
+        }, {
+            "val": "Add or remove event listeners for interaction",
+            "key": "selection.on()"
+        }, {
+            "val": "Call a function passing in the current selection",
+            "key": "selection.call()"
+        }, {
             "val": "Set an inline CSS style on the selection",
             "key": "selection.style()"
         }, {
