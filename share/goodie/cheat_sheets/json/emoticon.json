@@ -24,6 +24,15 @@
         }, {
             "val": "Enamored",
             "key": ":3"
+        }, {
+            "val": "Wink",
+            "key": ";)"
+        }, {
+            "val": "Kiss",
+            "key": ":*"
+        }, {
+            "val": "Kiki",
+            "key": "^_^"
         }],
         "Sad": [{
             "val": "Classic sad face",
@@ -37,6 +46,9 @@
         }, {
             "val": "Rivers of tears",
             "key": "T_T"
+        }, {
+            "val": "Grumpy",
+            "key": ">:("
         }],
         "Angry": [{
             "val": "Classic angry face",
