@@ -107,7 +107,7 @@
     ],
     "Message shortcuts": [
       {
-        "key": "[↑] in empty message field",
+        "key": "[↑] in empty messag field",
         "val": "Edit your last message in the current channel"
       },
       {
