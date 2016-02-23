@@ -3,8 +3,8 @@
     "name": "Blender",
     "description": "3D computer graphics software",
     "metadata": {
-        "sourceName": "OverAPI.com",
-        "sourceUrl": "http://overapi.com/blender/"
+        "sourceName": "Dummies",
+        "sourceUrl": "http://www.dummies.com/how-to/content/blender-for-dummies-cheat-sheet.html"
     },
     "template_type": "keyboard",
     "section_order": [
