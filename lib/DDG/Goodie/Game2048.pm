@@ -5,6 +5,7 @@ use DDG::Goodie;
 zci answer_type => "2048";
 zci is_cached   => 1;
 
+triggers any => "play 2048", "game 2048";
 
 handle query_lc => sub {
 
