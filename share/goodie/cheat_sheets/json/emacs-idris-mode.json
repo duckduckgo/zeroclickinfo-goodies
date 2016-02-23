@@ -108,7 +108,7 @@
                 "val": "Complete"
             },
             {
-                "key": "[C-h] [m]",
+                "key": "[C-h], [m]",
                 "val": "Help for the current modes is available"
             }
         ],
