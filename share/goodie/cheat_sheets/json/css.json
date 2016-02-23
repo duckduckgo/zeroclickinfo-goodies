@@ -99,7 +99,7 @@
             "val": "Increases or decreases the white space between words",
             "key": "word-spacing:"
         }, {
-            "val": "Changes the text direction of an element.",
+            "val": "Changes the text direction of an element",
             "key": "direction:"
         }],
         "Box-Model Properties": [{
