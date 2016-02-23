@@ -81,6 +81,12 @@
             "val": "Creates a switch block",
             "key": "switch"
         }, {
+            "val": "Creates a case for switch block",
+            "key": "case"
+        }, {
+            "val": "Creates default case for switch block",
+            "key": "default"
+        }, {
             "val": "Creates a try-catch block",
             "key": "try"
         }, {
