@@ -166,6 +166,9 @@
             "val": "Packages used to compile programs",
             "key": "xubuntu-restricted-extras"
         }, {
+            "val": "packages used to compile programs",
+            "key": "build-essential"
+        }, {
             "val": "Latest generic kernel image",
             "key": "linux-image-generic"
         }, {
