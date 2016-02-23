@@ -69,8 +69,8 @@
                 "val": "Addition"
             },
             {
-                "key": "- <binary>",
-                "val": "Subtraction"
+                "key": "-",
+                "val": "Subtraction (binary operator)"
             },
             {
                 "key": "*",
@@ -81,8 +81,8 @@
                 "val": "Division"
             },
             {
-                "key": "- <unary>",
-                "val": "Negation"
+                "key": "-",
+                "val": "Negation (unary operator)"
             }
         ],
         "Functions": [
