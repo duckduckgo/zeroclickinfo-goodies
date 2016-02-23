@@ -99,7 +99,7 @@
             "key": "selection.duration()"
         }, {
             "val": "Sets the transition delay, in milliseconds",
-            "key": "selection.delay()"
+            "key": "transition.delay()"
         }]
     }
 }
