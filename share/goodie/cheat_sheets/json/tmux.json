@@ -29,7 +29,7 @@
             "key": "[Ctrl-B] [M-y]"
         }, {
             "val": "Clear selection",
-            "key": "[Ctrl-B] [C-g]"
+            "key": "[Ctrl-B] [Ctrl-g]"
         }, {
             "val": "Cursor to top line",
             "key": "[Ctrl-B] [M-R]"
