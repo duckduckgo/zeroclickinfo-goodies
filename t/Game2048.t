@@ -13,9 +13,8 @@ ddg_goodie_test(
     [qw( DDG::Goodie::Game2048 )],
 
     'play 2048' => test_zci(
-        'Play 2048',
+        '',
         structured_answer => {
-
             data => '-ANY-',
             id => "game2048",
             name => 2048,
