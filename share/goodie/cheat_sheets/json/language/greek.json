@@ -35,8 +35,8 @@
              "trn" : ""
           },
           {
-             "val" : "Συγγνώμη.",
-             "key" : "I'm sorry.",
+             "val" : "Συγγνώμη",
+             "key" : "I'm sorry",
              "trn" : ""
           },
           {
@@ -77,8 +77,8 @@
              "trn" : ""
           },
           {
-             "val" : "Είμαι αλλεργικός.",
-             "key" : "I am allergic.",
+             "val" : "Είμαι αλλεργικός",
+             "key" : "I am allergic",
              "trn" : ""
           },
           {
@@ -171,8 +171,8 @@
        ],
        "Travelling" : [
           {
-             "val" : "Στρίψε αριστερά.",
-             "key" : "Turn left.",
+             "val" : "Στρίψε αριστερά",
+             "key" : "Turn left",
              "trn" : ""
           },
           {
@@ -191,8 +191,8 @@
              "trn" : ""
           },
           {
-             "val" : "Πήγαινε όλο ευθεία.",
-             "key" : "Go straight ahead.",
+             "val" : "Πήγαινε όλο ευθεία",
+             "key" : "Go straight ahead",
              "trn" : ""
           },
           {
@@ -201,13 +201,13 @@
              "trn" : ""
           },
           {
-             "val" : "Σε παρακαλώ, σταμάτα εδώ.",
-             "key" : "Please stop here.",
+             "val" : "Σε παρακαλώ, σταμάτα εδώ",
+             "key" : "Please stop here",
               "trn" : ""
           },
           {
-             "val" : "Στρίψε δεξιά.",
-             "key" : "Turn right.",
+             "val" : "Στρίψε δεξιά",
+             "key" : "Turn right",
               "trn" : ""
           },
           {
@@ -248,8 +248,8 @@
              "trn" : ""
           },
           {
-             "val" : "Ένα φλιτζάνι καφέ, παρακαλώ.",
-             "key" : "A cup of coffee please.",
+             "val" : "Ένα φλιτζάνι καφέ, παρακαλώ",
+             "key" : "A cup of coffee please",
              "trn" : ""
           },
           {
@@ -263,8 +263,8 @@
              "trn" : ""
           },
           {
-             "val" : "Ένα ποτήρι νερό, παρακαλώ.",
-             "key" : "A glass of water please.",
+             "val" : "Ένα ποτήρι νερό, παρακαλώ",
+             "key" : "A glass of water please",
              "trn" : ""
           },
           {
