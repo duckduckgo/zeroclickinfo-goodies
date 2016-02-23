@@ -63,7 +63,7 @@
         "Window Operations": [
             {
                 "val": "Toggle the Navigation Pane",
-                "key": "[F11]"
+                "key": "F11"
             },
             {
                 "val": "Cycle between open windows",
@@ -71,7 +71,7 @@
             },
             {
                 "val": "Restore the selected minimized window when all windows are minimized",
-                "key": "[Enter]"
+                "key": "Enter"
             },
             {
                 "val": "Display the control menu",
@@ -89,7 +89,7 @@
         "Wizard Operations":[
             {
                 "val": "Toggle the focus forward between controls in the wizard",
-                "key": "[Tab]"
+                "key": "Tab"
             },
             {
                 "val": "Move to the next page of the wizard",
@@ -107,11 +107,11 @@
         "Miscellaneous":[
             {
                 "val": "Display the complete hyperlink address for a selected hyperlink",
-                "key": "[F2]"
+                "key": "F2"
             },
             {
                 "val": "Check spelling",
-                "key": "[F7]"
+                "key": "F7"
             },
             {
                 "val": "Open the Zoom box to conveniently enter expressions and other text in small input areas",
