@@ -11,15 +11,11 @@ handle query_lc => sub {
 
     return unless $_;
 
-    my $text = 'Play 2048';
-
-    return $text,
+    return '',
     structured_answer => {
         id => 'game2048',
         name => '2048',
-        data => {
-            title => $text
-        },
+        data => { },
         templates => {
             group => 'text',
             item => 0,

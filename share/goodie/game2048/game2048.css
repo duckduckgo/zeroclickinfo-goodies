@@ -83,7 +83,6 @@
 .zci--game2048 .game2048__area .game2048__message {
     display: none;
     background-color: rgba(238, 228, 218, 0.5);
-    color: #737373;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -103,7 +102,7 @@
     color: #f9f6f2;
 }
 
-.zci--game2048 .game2048__area .game2048__message p{
+.zci--game2048 .game2048__area .game2048__message p {
     font-weight: bolder;
     font-size: xx-large;
     text-align: center;
@@ -144,7 +143,7 @@
     line-height: 15px;
 }
 
-.zci--game2048 .game2048__counter .game2048__points_addition .score-addition{
+.zci--game2048 .game2048__counter .game2048__points_addition .score-addition {
     position: absolute;
     width: 100%;
     text-align: center;
@@ -166,18 +165,22 @@
     background: #5DA4DC;
     color: #fff;
     text-decoration: none;
-    font-size: large;
+    font-size: 1.25em;
     padding: 10px 15px;
     border-radius: 4px;
     position: absolute;
-    bottom: 3px;
+    bottom: 0;
+    margin-bottom: .25em;
+    border: none;
 }
 
 .zci--game2048 .game2048__new_game:active {
     background: #4793D0;
 }
 
-.zci--game2048 .val-{ background-color: #EEE; }
+.zci--game2048 .val- {
+    background-color: #EEE;
+}
 .zci--game2048 .val-2 {
     background-color: #7CB5E2;
     box-shadow: 0px 3px 0px 0px #5FA5D9;
