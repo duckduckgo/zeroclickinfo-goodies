@@ -16,7 +16,6 @@
         "Selecting Files",
         "Pane Operations",
         "Miscellaneous"
-
     ],
     "sections":{
         "Movement":[
@@ -32,9 +31,13 @@
                 "key":"PgUp",
                 "val":"Move selection bar one page up"
             },
-              {
+            {
                 "key":"[Alt] [v]",
                 "val":"Move selection bar one page up (alternate)"
+            },
+            {
+                "key":"[Alt] [c]",
+                "val":"Quick cd"
             },
             {
                 "key":"PgDn",
@@ -48,7 +51,7 @@
                 "key":"Home",
                 "val":"Move selection bar to top of the panel"
             },
-             {
+            {
                 "key":"[Alt] [<]",
                 "val":"Move selection bar to top of the panel (alternate)"
             },
@@ -56,7 +59,7 @@
                 "key":"End",
                 "val":"Move selection bar to bottom of the panel"
             },
-               {
+            {
                 "key":"[Alt] [>]",
                 "val":"Move selection bar to bottom of the panel (alternate)"
             },
@@ -64,7 +67,7 @@
                 "key":"Tab",
                 "val":"Switch between panels"
             },
-              {
+            {
                 "key":"[Ctrl] [i]",
                 "val":"Switch between panels (alternate)"
             },
@@ -123,6 +126,10 @@
                 "val":"Show directory hotlist"
             },
             {
+                "key":"[Alt] [Shift], [?]",
+                "val":"Find file"
+            },
+            {
                 "key":"[Ctrl] [x], [d]",
                 "val":"Compare directories in panes"
             }
@@ -132,7 +139,7 @@
                 "key":"Insert",
                 "val":"Toggle tagging/marking on selected item"
             },
-             {
+            {
                 "key":"[Ctrl] [T]",
                 "val":"Toggle tagging/marking on selected item (alternate)"
             },

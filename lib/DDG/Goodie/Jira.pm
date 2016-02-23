@@ -10,7 +10,7 @@ zci answer_type => 'jira';
 
 use YAML::XS 'LoadFile';
 
-my $projects = LoadFile(share('projects.yml'));
+my $projects = LoadFile('' . share('projects.yml'));
 
 my @all_project_keys = sort keys %$projects;
 

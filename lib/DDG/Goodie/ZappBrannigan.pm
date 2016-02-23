@@ -11,7 +11,7 @@ triggers any => "zapp", "brannigan";
 zci answer_type => 'zapp_brannigan';
 zci is_cached   => 0;
 
-my $quotes = LoadFile(share('quotes.yml'));
+my $quotes = LoadFile('' . share('quotes.yml'));
 
 handle query => sub {
     return unless $_ =~ m/quotes?/;

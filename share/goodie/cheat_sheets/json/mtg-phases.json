@@ -23,11 +23,11 @@
         "Beginning Phase": [
             {
                 "key": "Untap Step",
-                "val": "The active player untaps the permanents they control. The active player doesn't recieve priority."
+                "val": "The active player untaps the permanents they control. The active player doesn't receive priority."
             },
             {
                 "key": "Upkeep Step",
-                "val": "Complete any actions or pay any costs that occur during upkeep. The active player recieves priority now."
+                "val": "Complete any actions or pay any costs that occur during upkeep. The active player receives priority now."
             },
             {
                 "key": "Draw Step",
@@ -59,7 +59,7 @@
             },
             {
                 "key": "End of Combat Step",
-                "val": "Triggers occuring at the end of combat are put on to the stack and the active player recieves priority."
+                "val": "Triggers occurring at the end of combat are put on to the stack and the active player receives priority."
             }
         ],
         "Postcombat Main Phase": [
@@ -71,11 +71,11 @@
         "Ending Phase": [
             {
                 "key": "End Step",
-                "val": "Triggers occuring during the end step are put on to the stack and the active player recieves priority for the last time in a turn."
+                "val": "Triggers occurring during the end step are put on to the stack and the active player receives priority for the last time in a turn."
             },
             {
                 "key": "Cleanup Step",
-                "val": "The active player reduces their hand to 7 cards or less, removes marked damage from all permanents, then passes the turn. No player recieves priority."
+                "val": "The active player reduces their hand to 7 cards or less, removes marked damage from all permanents, then passes the turn. No player receisves priority."
             }
         ]
     }

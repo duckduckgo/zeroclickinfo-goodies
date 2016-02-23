@@ -52,6 +52,10 @@
                 "val":"Starts saving the Command window text to a file"
             },
             {
+                "key":"exist <keyword>",
+                "val":"Checks whether a keyword or file is in use"
+            },
+            {
                 "key":"format compact",
                 "val":"Removes extraneous spaces from the Command window"
             },
@@ -118,8 +122,12 @@
                 "val":"Calculates the exponential value of the right operand by the left operand"
             },
             {
-                "key":"//",
+                "key":"/",
                 "val":"Divides the left operand by the right operand."
+            },
+            {
+                "key":"\\",
+                "val":"Divides the right operand by the left operand"
             },
             {
                 "key":"+",
@@ -336,6 +344,22 @@
             {
                 "key":"h",
                 "val":"6-point star"
+            },
+            {
+                "key":"-",
+                "val":"Solid"
+            },
+            {
+                "key":":",
+                "val":"Dotted"
+            },
+            {
+                "key":"-.",
+                "val":"Dash dot"
+            },
+            {
+                "key":"--",
+                "val":"Dashed"
             }
         ]
     }

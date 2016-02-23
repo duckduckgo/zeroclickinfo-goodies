@@ -97,14 +97,14 @@ my @merch_result = (
         }
     });
 my @tor_result = (
-    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion',
+    'DuckDuckGo is available on Tor http://3g2upl4pq6kufc4m.onion.link',
     structured_answer => {
         id => $id,
         data => {
             title => 'DuckDuckGo is available on Tor',
             subtitle_image => undef,
             subtitle_text => 'Visit our onion address',
-            subtitle_url => 'http://3g2upl4pq6kufc4m.onion'
+            subtitle_url => 'http://3g2upl4pq6kufc4m.onion.link'
         },
         templates => {
             group => 'text',
@@ -114,14 +114,14 @@ my @tor_result = (
         }
     });
 my @shorturl_result = (
-    'Need a quicker way to visit DuckDuckGo? https://ddg.gg',
+    'Need a quicker way to visit DuckDuckGo? http://ddg.gg',
     structured_answer => {
         id => $id,
         data => {
             title => 'Need a quicker way to visit DuckDuckGo?',
             subtitle_image => undef,
-            subtitle_text => 'You can also find us at https://ddg.gg',
-            subtitle_url => 'https://ddg.gg'
+            subtitle_text => 'You can also find us at http://ddg.gg',
+            subtitle_url => 'http://ddg.gg'
         },
         templates => {
             group => 'text',

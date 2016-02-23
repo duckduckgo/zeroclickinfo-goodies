@@ -9,7 +9,7 @@
     "aliases": [
         "vim language", "vim scripting", "vim script"
     ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "Variable Scope",
         "Data Types",
@@ -114,6 +114,18 @@
             {
                 "key": "substitute('999 abc', '\\d\\+', '\\=submatch(0) + 1', '')",
                 "val": "Find the first number in a string increment it by one"
+            },
+            {
+                "key": "str2nr(\"10\", 10)",
+                "val": "Converts string into corresponding decimal value"
+            },
+            {
+                "key": "str2nr(\"020\", 8)",
+                "val": "Converts string into corresponding octal value"
+            },
+            {
+                "key": "str2nr(\"0x10\", 8)",
+                "val": "Converts string into corresponding hexadecimal value"
             }
         ],
         "I/O" : [

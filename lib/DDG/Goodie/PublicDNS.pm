@@ -12,7 +12,7 @@ triggers end => "public dns", "dns server", "dns servers";
 zci is_cached   => 1;
 zci answer_type => "public_dns";
 
-my $providers = LoadFile(share('providers.yml'));
+my $providers = LoadFile('' . share('providers.yml'));
 
 my @ordered_servers;
 # Alphabetize the output while making the structure

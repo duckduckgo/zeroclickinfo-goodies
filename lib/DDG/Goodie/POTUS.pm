@@ -13,7 +13,7 @@ triggers any => 'president of the united states', 'president of the us';
 zci answer_type => 'potus';
 zci is_cached   => 1;
 
-my @presidents = @{LoadFile(share('presidents.yml'))};
+my @presidents = @{LoadFile('' . share('presidents.yml'))};
 my $prez_count = scalar @presidents;
 
 handle remainder => sub {

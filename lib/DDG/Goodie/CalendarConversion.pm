@@ -15,7 +15,7 @@ zci is_cached   => 0;
 
 triggers any => 'hijri', 'gregorian', 'jalali';
 
-my $calendars = LoadFile(share('calendars.yml'));
+my $calendars = LoadFile('' . share('calendars.yml'));
 
 my $datestring_regex = datestring_regex();
 

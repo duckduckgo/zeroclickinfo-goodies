@@ -55,6 +55,7 @@ aliases:
   - mcg
   - micrograms
   - mcgs
+  - µg
 factor: 1000000000000
 type: mass
 unit: microgram
@@ -542,7 +543,7 @@ aliases:
   - microseconds
   - microsec
   - microsecs
-  - us
+  - µs
 factor: 86400000000
 type: duration
 unit: microsecond

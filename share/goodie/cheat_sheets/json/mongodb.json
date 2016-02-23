@@ -12,7 +12,7 @@
         "mongo db shell"
     ],
     "section_order": [
-        "Basic Conceptes & Shell Commands",
+        "Basic Concepts & Shell Commands",
         "BSON Types",
         "Inserting Documents",
         "Finding Documents",
@@ -29,7 +29,7 @@
         "Durability of Writes"
     ],
     "sections": {
-        "Basic Conceptes & Shell Commands": [
+        "Basic Concepts & Shell Commands": [
             {
                 "key": "db.collection.<command>",
                 "val": "Db – implicit handle to the used database, collection – name of the used collection"              
@@ -73,7 +73,7 @@
                 "val": "6 (Deprecated)"
             },
             {
-                "key": "Obect Id",
+                "key": "Object Id",
                 "val": "7"
             },
             {

@@ -14,7 +14,6 @@
         "Audio control",
         "Subtitle control"
     ],
-    
     "sections": {
         "General": [
             {
@@ -32,20 +31,24 @@
         ],
         "Playback control": [
             {
-                "val": "seek backward / forward 10s",
+                "val": "seek backward / forward 10 s",
                 "key": "[←] / [→]"
             },
             {
-                "val": "seek forward / backward 1min",
+                "val": "seek forward / backward 1 min",
                 "key": "[↑] / [↓]"
             },
             {
-                "val": "seek forward / backward 10min",
+                "val": "seek forward / backward 10 min",
                 "key": "[Page up] / [Page down]"
             },
             {
                 "val": "halve / double current playback speed",
                 "key": "[\\{] / [\\}]"
+            },
+            {
+                "val": "decrease / increase current playback speed by 10%",
+                "key": "[\\[] / [\\]]"
             },
             {
                 "val": "reset playback speed",
@@ -58,7 +61,7 @@
                 "key": "[p] / [Space]"
             },
             {
-                "val": "toggle fullscreen",
+                "val": "toggle full screen",
                 "key": "f"
             },
             {
@@ -102,7 +105,6 @@
                 "key": "8"
             }
         ],
-        
         "Audio control": [
             {
                 "val": "decrease / increase volume",
@@ -117,15 +119,18 @@
                 "key": "#"
             },
             {
-                "val": "audio delay +/-0.1s",
+                "val": "audio delay +/-0.1 s",
                 "key": "[+] / [-]"
+            },
+            {
+                "val": "decrease / increase volume",
+                "key": "[/] / [*]"
             },
             {
                 "val": "audio balance left / right",
                 "key": "[(] / [)]"
             }
         ],
-        
         "Subtitle control": [
             {
                 "val": "subtitle visibility",
@@ -140,7 +145,7 @@
                 "key": "[y] / [g]"
             },
             {
-                "val": "subtitle delay +/-0.1s",
+                "val": "subtitle delay +/-0.1 s",
                 "key": "[x] / [z]"
             },
             {
@@ -148,6 +153,5 @@
                 "key": "a"
             }
         ]
-
     }
 }

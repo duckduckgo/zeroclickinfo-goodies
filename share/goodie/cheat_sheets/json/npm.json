@@ -10,6 +10,7 @@
     "section_order": [
         "Getting Started",
         "Installing Packages",
+        "Uninstalling Packages",
         "Package Details"
     ],
     "sections": {
@@ -31,8 +32,12 @@
                 "key": "npm update -g <package_name>"
             },
             {
-                "val": "Show help for the especific command",
+                "val": "Show help for the specific command",
                 "key": "npm help <command>"
+            },
+            {
+                "val": "Search for the package",
+                "key": "npm search <package_name>"
             }
         ],
         "Installing Packages": [
@@ -41,11 +46,11 @@
                 "key": "npm install <package_name>"
             },
             {
-                "val": "Install an especific version of a package",
+                "val": "Install specific version of a package",
                 "key": "npm install <package_name>@<version>"
             },
             {
-                "val": "Install a package globally, usualy for command line use (On *nix requires sudo)",
+                "val": "Install a package globally, usually for command line use (On *nix requires sudo)",
                 "key": "npm install -g <package_name>"
             },
             {
@@ -59,6 +64,32 @@
             {
                 "val": "Install a package and append it in the optionalDependencies section of your package.json",
                 "key": "npm install --save-optional <package_name>"
+            }
+        ],
+        "Uninstalling Packages": [
+            {
+                "val": "Uninstall the latest version of a package",
+                "key": "npm uninstall <package_name>"
+            },
+            {
+                "val": "Uninstall specific version of a package",
+                "key": "npm uninstall <package_name>@<version>"
+            },
+            {
+                "val": "Uninstall the package globally",
+                "key": "npm uninstall -g <package_name>"
+            },
+            {
+                "val": "Uninstall the package and append it in the dependencies section of your package.json",
+                "key": "npm uninstall --save <package_name>"
+            },
+            {
+                "val": "Uninstall the package and append it in the devDependencies section of your package.json",
+                "key": "npm uninstall --save-dev <package_name>"
+            },
+            {
+                "val": "Uninstall the package and append it in the optionalDependencies section of your package.json",
+                "key": "npm uninstall --save-optional <package_name>"
             }
         ],
         "Package Details": [
