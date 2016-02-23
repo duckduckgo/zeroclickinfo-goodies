@@ -3,6 +3,10 @@
     "name": "Elixir",
     "description": "Overview of common Elixir constructs and syntax",
     "template_type": "code",
+    "metadata": {
+        "sourceName": "Elixir",
+        "sourceUrl": "http://elixir-lang.org/"
+    },
     "section_order": [
         "Operators",
         "Sigils",
@@ -103,7 +107,7 @@
             "key": ":foo, :me@home :elixir"
         }, {
             "val": "Tuple",
-            "key": "{:ok, 11, 'hi'}"
+            "key": "\\{:ok, 11, 'hi'\\}"
         }, {
             "val": "List",
             "key": "\\[1, 2, 3\\], \\[head|tail\\]"
