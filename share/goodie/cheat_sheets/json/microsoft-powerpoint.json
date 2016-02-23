@@ -46,11 +46,11 @@
             },
             {
                 "val": "Select an object when the text inside the object is selected",
-                "key": "[Esc]"
+                "key": "Esc"
             },
             {
                 "val": "Select text within an object with an object selected",
-                "key": "[Enter]"
+                "key": "Enter"
             },
             {
                 "val": "Select all",
@@ -60,7 +60,7 @@
         "Deletion": [
             {
                 "val": "Delete one character to the left",
-                "key": "[Backspace]"
+                "key": "Backspace"
             },
             {
                 "val": "Delete one word to the left",
@@ -68,7 +68,7 @@
             },
             {
                 "val": "Delete one character to the right",
-                "key": "[Delete]"
+                "key": "Delete"
             },
             {
                 "val": "Delete one word to the right",
@@ -110,19 +110,19 @@
         "Movement": [
             {
                 "val": "Move one character to the left",
-                "key": "[←]"
+                "key": "←"
             },
             {
                 "val": "Move one character to the right",
-                "key": "[→]"
+                "key": "→"
             },
             {
                 "val": "Move one line up",
-                "key": "[↑] "
+                "key": "↑"
             },
             {
                 "val": "Move one line down",
-                "key": "[↓]"
+                "key": "↓"
             },
             {
                 "val": "Move one word to the left",
@@ -134,11 +134,11 @@
             },
             {
                 "val": "Move to the end of a line",
-                "key": "[End]"
+                "key": "End"
             },
             {
                 "val": "Move to the beginning of a line",
-                "key": "[Home]"
+                "key": "Home"
             },
             {
                 "val": "Move up one paragraph",
@@ -166,7 +166,7 @@
             },
             {
                 "val": "Move to the next cell",
-                "key": "[Tab]"
+                "key": "Tab"
             },
             {
                 "val": "Move to the preceding cell",
