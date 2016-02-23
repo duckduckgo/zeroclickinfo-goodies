@@ -137,6 +137,34 @@
 		}, {
 			"val": "Toggle full screen",
 			"key": "F11"
+		}],
+		"Find and Replace": [{
+			"val": "Find in current file",
+			"key": "[Ctrl] [f]"
+		}, {
+			"val": "Find in project",
+			"key": "[Ctrl] [Shift] [f]"
+		}, {
+			"val": "Find next",
+			"key": "F3"
+		}, {
+			"val": "Find previous",
+			"key": "[Shift] [F3]"
+		}, {
+			"val": "Replace all",
+			"key": "[Ctrl] [Enter]"
+		}, {
+			"val": "Use Regex in search",
+			"key": "[Ctrl] [Alt] [/]"
+		}, {
+			"val": "Match case in search",
+			"key": "[Ctrl] [Alt] [c]"
+		}, {
+			"val": "Search only in selection",
+			"key": "[Ctrl] [Alt] [s]"
+		}, {
+			"val": "Match whole world",
+			"key": "[Ctrl] [Alt] [w]"
 		}]
 	}
 }
