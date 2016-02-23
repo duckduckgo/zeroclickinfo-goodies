@@ -65,6 +65,10 @@
             {
                 "key": "<nav>",
                 "val": "Represents a section of a page that links to other pages or to parts within the page"
+            },
+            {
+                "key": "<article>",
+                "val": "Specifies independent, self-contained content"
             }
         ],
         "Text Content": [
@@ -95,10 +99,6 @@
             {
                 "key": "<ul>",
                 "val": "Represents an unordered list of items, typically displayed with a bullet"
-            },
-            {
-                "key": "<article>",
-                "val": "Specifies independent, self-contained content"
             },
             {
                 "key": "<address>",
