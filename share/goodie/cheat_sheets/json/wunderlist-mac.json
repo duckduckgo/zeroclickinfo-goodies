@@ -61,24 +61,6 @@
         }, {
             "val": "Open Inbox",
             "key": "[⌘] [i]"
-        }, {
-            "val": "Open 'Assigned to Me' Smart List",
-            "key": "[⌘] [1]"
-        }, {
-            "val": "Open 'Starred' Smart List",
-            "key": "[⌘] [2]"
-        }, {
-            "val": "Open 'Today' Smart List",
-            "key": "[⌘] [3]"
-        }, {
-            "val": "Open 'Week' Smart List",
-            "key": "[⌘] [4]"
-        }, {
-            "val": "Open 'All' Smart List",
-            "key": "[⌘] [5]"
-        }, {
-            "val": "Open 'Completed' Smart List",
-            "key": "[⌘] [6]"
         }],
         "Syncing": [{
             "val": "Sync",
