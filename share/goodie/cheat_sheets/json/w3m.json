@@ -76,7 +76,7 @@
             "key": "[G], [M->]"
         }, {
             "val": "Go to specified line",
-            "key": "[ESC] + [g]"
+            "key": "[ESC] [g]"
         }, {
             "val": "Move to the center line",
             "key": "Z"
@@ -101,7 +101,7 @@
             "key": "RET"
         }, {
             "val": "Save link to file",
-            "key": "[ESC] [RET]"
+            "key": "[a], [ESC] [RET]"
         }, {
             "val": "Peek link URL",
             "key": "u"
