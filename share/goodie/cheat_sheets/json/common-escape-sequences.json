@@ -2,22 +2,23 @@
   "id": "common_escape_sequences_cheat_sheet",
   "name": "Common Escape Sequences",
   "description": "Escape Sequences for common programming languages",
-
   "metadata": {
     "sourceName": "Wikipedia",
     "sourceUrl": "https://en.wikipedia.org/wiki/Escape_sequences_in_C"
   },
-
   "aliases": [
-    "common escape sequence", "common escape sequences", "common escape seq", "python escape sequences", "java escape sequences", "javascript escape sequences", "c escape sequences", "c++ escape sequences", "c# escape sequences"
+      "common escape sequence",
+      "common escape sequences",
+      "common escape seq",
+      "python escape sequences",
+      "java escape sequences",
+      "javascript escape sequences",
+      "c escape sequences",
+      "c++ escape sequences",
+      "c# escape sequences"
   ],
-
   "template_type": "keyboard",
-
   "section_order": ["Escape Sequences"],
-
-
-  "sections": {
     "Escape Sequences": [
       {
         "val": "Backslash(\\)",
@@ -28,6 +29,9 @@
       }, {
         "key": "\\\"",
         "val": "Double quote(\")"
+      }, {
+        "key": "\?",
+        "val": "Question mark"
       }, {
         "key": "\\a",
         "val": "ASCII Bell (BEL)"
@@ -58,7 +62,4 @@
       }
     ]
   }
-
-
-
 }
