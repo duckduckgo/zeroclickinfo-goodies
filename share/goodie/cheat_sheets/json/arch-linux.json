@@ -7,13 +7,18 @@
 		"sourceUrl": "https://wiki.archlinux.org/index.php/Pacman"
 	},
     "aliases": [
-        "arch", "arch distro", "linux arch" , "pacman" , "yaourt"
+        "arch",
+        "arch distro",
+        "linux arch",
+        "pacman",
+        "yaourt"
     ],
     "template_type" : "terminal",
     "section_order": [
        "Pacman - Arch Package Manager",
        "Yaourt - A Pacman Frontend" ,
-       "Linux Command"
+       "Linux Command",
+       "Removing Packages"
     ],
     "sections": {
         "Pacman - Arch Package Manager": [
@@ -141,6 +146,28 @@
             {
                 "key": "ls -a",
                 "val": "List hidden files"
+            }
+        ],
+        "Removing Packages": [
+            {
+                "key": "pacman -R xyz",
+                "val": "Remove package 'xyz', leaving all of its dependencies installed"
+            },
+            {
+                "key": "pacman -Rs xyz",
+                "val": " Remove package 'xyz' and its dependencies which are not required by any other installed package"
+            },
+            {
+                "key": "pacman -Rsc xyz",
+                "val": "Remove package 'xyz', its dependencies and all the packages that depend on the target package"
+            },
+            {
+                "key": "pacman -Rdd xyz",
+                "val": "Remove package 'xyz', which is required by another package, without removing the dependent package"
+            },
+            {
+                "key": "pacman -Rn xyz",
+                "val": "Prevent the creation of the backup configuration files use the -n option"
             }
         ]
     }
