@@ -87,6 +87,10 @@
             {
                 "key": "wp theme activate NAME",
                 "val": "Activates theme. Replace NAME with intended theme name."
+            },
+            {
+                "key": "wp theme status",
+                "val": "Shows the status of one or all themes"
             }
         ]
     }
