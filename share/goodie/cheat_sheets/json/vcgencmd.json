@@ -56,6 +56,10 @@
             {
                 "key": "vcgencmd mem_reloc_stats",
                 "val": "Reports statics on relocatable memory"
+            },
+            {
+                "key": "vcgencmd render_bar",
+                "val": "Debug function created by Dom"
             }
         ],
         "Sensors": [
