@@ -23,6 +23,10 @@
                 "key": "apt-get install <package_name>"
             },
             {
+                "val": "This command searches the repositories and installs the build dependencies for 'package_name'",
+                "key": "apt-get build-dep <package_name>"
+            },
+            {
                 "val": "Install multiple packages",
                 "key": "apt-get install <package1_name> <package2_name> <package3_name>"
             }
