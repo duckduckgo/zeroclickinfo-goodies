@@ -34,7 +34,7 @@
             },
             {
                 "val": "Declares a variable, optionally initializing it to a value",
-                "key": "var index = 0;"
+                "key": "\\[= value1 \\[, varname2 ... \\[, varnameN\\]\\]\\];"
             }
         ],
         "Template Strings": [
