@@ -213,6 +213,14 @@
                 "val":"kill a background meterpreter script",
                 "key":"bgkill"
             },
+            {
+                "val":"displays info about active channels",
+                "key":"channel"
+            },
+            {
+                "val":"close a channel",
+                "key":"close"
+            },
             {  
                 "val":"displays info about active channels",
                 "key":"disable_unicode_encoding"
