@@ -3,8 +3,8 @@
     "name":"Colorado 14ers",
     "description":"Colorado mountains over 14,000 feet",
     "metadata":{
-        "sourceName":"14ers.com",
-        "sourceUrl":"http://14ers.com"
+        "sourceName":"Wikipedia",
+        "sourceUrl":"https://en.wikipedia.org/wiki/List_of_Colorado_fourteeners"
     },
     "aliases":["colorado fourteeners", "co 14ers", "co fourteeners"],
     "template_type":"reference",
