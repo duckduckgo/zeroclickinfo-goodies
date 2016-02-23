@@ -98,10 +98,6 @@
             },
             {
                 "val": "Prepend track to play queue",
-                "key": "E"
-            },
-            {
-                "val": "Prepend track to play queue",
                 "key": "[Shift] [e]"
             },
             {
