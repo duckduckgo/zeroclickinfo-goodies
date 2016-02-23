@@ -1,9 +1,9 @@
 {
     "id": "svn_cheat_sheet", 
     "name": "Subversion",
-    "description": "Useful commands for working with Subversion version control system", 
+    "description": "Useful commands for Subversion version control system", 
     "metadata": { 
-        "sourceName": "Version Control with Subversion",
+        "sourceName": "Red Bean",
         "sourceUrl": "http://svnbook.red-bean.com/"
     },
     "aliases": [
@@ -11,19 +11,28 @@
     ],
     "template_type": "terminal",
     "section_order": [  
-        "Basic usage",
-        "Advanced usage"
+        "Basic Usage",
+        "Advanced Usage"
     ],
     "sections": {
-        "Basic usage": [{
-                "val": "Create a working copy",
+        "Basic Usage": [{
+                "val": "Create a working copy into current folder",
                 "key": "svn checkout http://svn.example.com/svn/repo/trunk"
+            }, {
+                "val": "Create a working copy into target folder",
+                "key": "svn checkout http://svn.example.com/svn/repo/trunk \"/path/to/targetfolder\""
             }, {
                 "val": "Update your working copy",
                 "key": "svn update"
             }, {
                 "val": "Add file",
                 "key": "svn add \\[file\\]"
+            }, {
+                "val": "Add all items, recursively",
+                "key": "svn add *"
+            }, {
+                "val": "Force recursion into versioned directories",
+                "key": "svn add * --force"
             }, {
                 "val": "Delete file",
                 "key": "svn delete \\[file\\]"
@@ -41,7 +50,7 @@
                 "key": "svn commit -m \"\\[descriptive commit message\\]\""
             }
         ],
-        "Advanced usage": [{
+        "Advanced Usage": [{
                 "val": "Fetch specific revision to working copy",
                 "key": "svn update -r \\[revision\\]"
             }, {

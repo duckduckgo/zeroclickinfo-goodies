@@ -1,0 +1,114 @@
+{
+    "id": "salt_cloud_cheat_sheet",
+     "name": "Salt Cloud",
+    "description": "Common commands for salt cloud CLI",
+    "metadata": {
+        "sourceName": "SaltStack",
+        "sourceUrl": "https://docs.saltstack.com/en/latest/ref/cli/"
+    },
+    "template_type": "terminal",
+    "section_order": [
+        "Options",
+        "Execution Options",
+        "Query Options",
+        "Cloud Providers Listings",
+        "Output Options"
+    ],
+    "sections": {
+        "Options": [{
+            "val": "Print the version of Salt that is running",
+            "key": "salt --version"
+        }, {
+            "val": "Show program's dependencies and version number, and then exit",
+            "key": "salt --versions-report"
+        }, {
+            "val": "Show the help message and exit",
+            "key": "salt -h"
+        }, {
+            "val": "The location of the Salt configuration directory. This directory contains the configuration files for Salt master and minions. The default location on most systems is /etc/salt",
+            "key": "salt -c"
+        }],
+        "Execution Options": [{
+            "val": "Specify which region to connect to",
+            "key": "salt-cloud -L"
+        }, {
+            "val": "Perform an action that may be specific to this cloud provider. This argument requires one or more instance names to be specified",
+            "key": "salt-cloud -a"
+        }, {
+            "val": "Perform a function that may be specific to this cloud provider, that does not apply to an instance. This argument requires a provider to be specified (i.e.: nova)",
+            "key": "salt-cloud -f <FUNC-NAME> <PROVIDER>"
+        }, {
+            "val": "Specify a map file to use. If used without any other options, this option will ensure that all of the mapped VMs are created. If the named VM already exists then it will be skipped",
+            "key": "salt-cloud-m MAP"
+        }, {
+            "val": "When specifying a map file, the default behavior is to ensure that all of the VMs specified in the map file are created. If the --hard option is set, then any VMs that exist on configured cloud providers that are not specified in the map file will be destroyed. Be advised that this can be a destructive operation and should be used with care",
+            "key": "salt-cloud -H"
+        }, {
+            "val": "Pass in the name(s) of VMs to destroy, salt-cloud will search the configured cloud providers for the specified names and destroy the VMs. Be advised that this is a destructive operation and should be used with care. Can be used in conjunction with the -m option to specify a map of VMs to be deleted",
+            "key": "salt-cloud -d"
+        }, {
+            "val": "Normally when building many cloud VMs they are executed serially. The -P option will run each cloud vm build in a separate process allowing for large groups of VMs to be build at once.  Be advised that some cloud provider's systems don't seem to be well suited for this influx of vm creation. When creating large groups of VMs watch the cloud provider carefully",
+            "key": "salt-cloud -P"
+        }, {
+            "val": "Update salt-bootstrap to the latest develop version on GitHub",
+            "key": "salt-cloud -u"
+        }, {
+            "val": "Default yes in answer to all confirmation questions",
+            "key": "salt-cloud -y"
+        }, {
+            "val": "Do not remove files from /tmp/ after deploy.sh finishes",
+            "key": "salt-cloud -k"
+        }, {
+            "val": "Include the options used to deploy the minion in the data returned",
+            "key": "salt-cloud --show-deploy-args"
+        }, {
+            "val": "Script arguments to be fed to the bootstrap script when deploying the VM",
+            "key": "salt-cloud --script-args"
+        }],
+
+         "Query Options": [{
+            "val": "Execute a query and return some information about the nodes running on configured cloud providers",
+            "key": "salt-cloud -Q"
+        }, {
+            "val": "Execute a query and print out all available information about all cloud VMs. Can be used in conjunction with -m to display only information about the specified map",
+            "key": "salt-cloud -F"
+        }, {
+            "val": "Execute a query and print out selected information about all cloud VMs. Can be used in conjunction with -m to display only information about the specified map",
+            "key": "salt-cloud -S"
+        }, {
+            "val": "Display a list of configured providers",
+            "key": "salt-cloud --list-providers"
+        }, {
+            "val": "New in version 2014.7.0. | Display a list of configured profiles. Pass in a cloud provider to view the provider's associated profiles, such as digital_ocean, or pass in all to list all the configured profiles",
+            "key": "salt-cloud --list-profiles"
+        }],
+
+        "Cloud Providers Listings": [{
+            "val": "Display a list of locations available in configured cloud providers. Pass the cloud provider that available locations are desired on, aka \"linode\", or pass \"all\" to list locations for all configured cloud providers",
+            "key": "salt-cloud --list-locations"
+        }, {
+            "val": "Display a list of images available in configured cloud providers. Pass the cloud provider that available images are desired on, aka \"linode\", or pass \"all\" to list images for all configured cloud providers",
+            "key": "salt-cloud --list-images"
+        }, {
+            "val": "Display a list of sizes available in configured cloud providers. Pass the cloud provider that available sizes are desired on, aka \"AWS\", or pass \"all\" to list sizes for all configured cloud providers",
+            "key": "salt-cloud --list-sizes"
+        }],
+
+        "Output Options": [{
+            "val": "Pass in an alternative outputter to display the return of data. This outputter can be any of the available outputters",
+            "key": "salt-cloud --out"
+        }, {
+            "val": "Print the output indented by the provided value in spaces. Negative values disable indentation. Only applicable in outputters that support indentation",
+            "key": "salt-cloud --out-indent"
+        }, {
+            "val": "Write the output to the specified file",
+            "key": "salt-cloud --out-file"
+        }, {
+            "val": "Disable all colored output",
+            "key": "salt-cloud --no-color"
+        }, {
+            "val": "Force colored output",
+            "key": "salt-cloud --force-color"
+        }]
+    }
+}

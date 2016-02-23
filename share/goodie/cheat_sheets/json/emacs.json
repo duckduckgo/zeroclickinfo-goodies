@@ -1,7 +1,7 @@
 {
     "id": "emacs_cheat_sheet",
     "name": "Emacs",
-    "description": "Text Editor",
+    "description": "Emacs and its derivatives are a family of text editors that are characterized by their extensibility",
     "metadata": {
         "sourceName": "EmacsCheatSheet",
         "sourceUrl": "http://www.rgrjr.com/emacs/emacs_cheat.html"

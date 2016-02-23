@@ -1,9 +1,10 @@
 {
     "id": "gimp_cheat_sheet", 
-    "name": "Gimp",
-    "description": "Graphics Editor", 
+    "name": "GIMP",
+    "description": "Keyboard shortcuts for GIMP (GNU Image Manipulation Program) graphics editor", 
     "metadata": { 
-        "sourceName": "GimpCheatSheet"
+        "sourceName": "Jeffkayser",
+        "sourceUrl": "https://jeffkayser.com/static/cheatsheets/cheatsheet_gimp.png"
     },
     "template_type": "keyboard",
     "section_order": [  

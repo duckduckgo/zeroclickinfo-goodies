@@ -1,9 +1,9 @@
 {
     "id": "perldoc_cheat_sheet",
     "name": "perldoc",
-    "description": "Perl Documentation",
+    "description": "Perl Programming Documentation",
     "metadata": {
-        "sourceName": "perldoc Manual",
+        "sourceName": "PERL",
         "sourceUrl": "http://perldoc.perl.org/perldoc.html"
     },
     "template_type": "terminal",
@@ -12,11 +12,11 @@
         "Usage": [
         {
             "key": "[perldoc <option>]",
-            "val": "start perldoc"
+            "val": "Start perldoc"
         },
         {
             "key": "[perldoc perldoc]",
-            "val": "perldoc help"
+            "val": "Perldoc help"
         }
         ],
         "Module Options": [

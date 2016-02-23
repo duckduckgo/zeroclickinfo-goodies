@@ -155,7 +155,7 @@
             "key": "[Shift] [f]"
         }],
         "Selection": [{
-            "val": "Select oblect",
+            "val": "Select object",
             "key": "Right click"
         }, {
             "val": "Select multiple",
@@ -294,7 +294,7 @@
             "val": "Extrude",
             "key": "e"
         }, {
-            "val": "Seperate",
+            "val": "Separate",
             "key": "p"
         }, {
             "val": "Rip",
@@ -303,7 +303,7 @@
             "val": "Create loop cut",
             "key": "[Ctrl] [r]"
         }, {
-            "val": "Propostional editing",
+            "val": "Propositional editing",
             "key": "o"
         }, {
             "val": "Select edge loop",
@@ -439,7 +439,7 @@
             "val": "Switch bone direction",
             "key": "[Alt] [f]"
         }, {
-            "val": "Scroll hierachy",
+            "val": "Scroll hierarchy",
             "key": "{\\]} / {\\[}"
         }, {
             "val": "Select hierarchy",
@@ -502,7 +502,7 @@
             "val": "Next strip",
             "key": "Page up"
         }, {
-            "val": "Pervious strip",
+            "val": "Previous strip",
             "key": "Page down"
         }, {
             "val": "Split strip",
@@ -514,13 +514,13 @@
             "val": "Unlock strip",
             "key": "[Shift] [Alt] [l]"
         }, {
-            "val": "Coyp strip",
+            "val": "Copy strip",
             "key": "[Ctrl] [c]"
         }, {
             "val": "Paste strip",
             "key": "[Ctrl] [v]"
         }, {
-            "val": "Seperate images",
+            "val": "Separate images",
             "key": "y"
         }, {
             "val": "Snap strip to scrubber",
@@ -530,10 +530,10 @@
             "val": "Append file",
             "key": "[Shift] [F1]"
         }, {
-            "val": "Fullscreen mode",
+            "val": "Full screen mode",
             "key": "[Alt] [F11]"
         }, {
-            "val": "Maximize subwindow",
+            "val": "Maximize sub window",
             "key": "[Ctrl] [↑]"
         }, {
             "val": "Change active camera",

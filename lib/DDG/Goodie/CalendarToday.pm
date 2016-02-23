@@ -12,20 +12,6 @@ with 'DDG::GoodieRole::Dates';
 zci answer_type => 'calendar';
 zci is_cached   => 0;
 
-primary_example_queries "calendar";
-secondary_example_queries "calendar november",
-                          "calendar next november",
-                          "calendar november 2015",
-                          "cal 29 nov 1980",
-                          "cal 29.11.1980",
-                          "cal 1980-11-29";
-
-description "Print calendar of current / given month and highlight (to)day";
-name "Calendar Today";
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/CalendarToday.pm';
-category "dates";
-topics "everyday";
-attribution email   => ['webmaster@quovadit.org', 'webmaster@quovadit.org'];
 triggers startend => 'calendar', 'cal';
 
 # define variables
@@ -84,46 +70,64 @@ sub format_result {
 
     # Print heading
     my $rText = "\n";
-    my $rHtml = '<table class="calendar"><tr><th colspan="7"><span class="circle t_left"><a href="/?q=' . encodeURIComponent('calendar ' . $previous->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-left"></span></a></span><span class="calendar__header"><b>';
-    $rHtml .= $firstDay->strftime("%B %Y").'</b></span><span class="circle t_right"><a href="/?q=' . encodeURIComponent('calendar ' . $next->strftime("%B %Y")) . '"><span class="ddgsi ddgsi-arrow-right"></span></a></span></th>';
-    $rHtml .= '</tr><tr>';
 
     for my $dayHeading (@weekDays) {
         $rText .= $dayHeading . ' ';
-        $rHtml .= '<th>' . $dayHeading . '</th>';
     }
     $rText .= "     ".$firstDay->strftime("%B %Y")."\n";
-    $rHtml .= "</tr><tr>";
 
     # Skip to the first day of the week
     $rText .= "    " x $first_day_num;
-    $rHtml .= "<td>&nbsp;</td>" x $first_day_num;
-    my $weekDayNum = $first_day_num;
 
+    my @weeks;
+    my @week_day;
+    for (my $t = 1; $t <= $first_day_num; $t++) {
+        push @week_day, {"day", " ", "today", ""};
+    }
+    my $weekDayNum = $first_day_num;
+    
     # Printing the month
     for (my $dayNum = 1; $dayNum <= $lastDay; $dayNum++) {
         my $padded_date = sprintf('%2s', $dayNum);
         if ($dayNum == $highlightDay) {
             $rText .= '|' . $padded_date . '|';
-            $rHtml .= '<td><span class="calendar__today circle">' . $dayNum . '</span></td>';
+            push @week_day, {"day", $dayNum, "today", "1"};
         } else {
             $rText .= ' ' . $padded_date . ' ';
-            $rHtml .= "<td>$dayNum</td>";
+            push @week_day, {"day", $dayNum, "today", ""};
         }
-
         # next row after 7 cells
         $weekDayNum++;
         if ($weekDayNum == 7) {
-          $weekDayNum = 0;
-          $rText .= "\n";
-          $rHtml .= "</tr><tr>";
+            push @weeks, [@week_day];
+            $weekDayNum = 0;
+            undef @week_day;
+            $rText .= "\n";
         }
     }
-
+    if (@week_day) {
+        push @weeks, [@week_day];
+    }
     $rText .= "\n";
-    $rHtml .="</tr></table>";
 
-    return $rText, html => $rHtml;
-}
+    return $rText,
+    structured_answer => {
+        id => 'calendar_today',
+        name => 'Answer',
+        data => {
+            month_year => $firstDay->strftime("%B %Y"),
+            previous_month => $previous->strftime("%B %Y"),
+            next_month => $next->strftime("%B %Y"),
+            weeks => \@weeks,
+        },
+        templates => {
+            group => 'text',
+            item => 0,
+            options => {
+                content => 'DDH.calendar_today.content'
+            }
+        }
+    };
+};
 
 1;

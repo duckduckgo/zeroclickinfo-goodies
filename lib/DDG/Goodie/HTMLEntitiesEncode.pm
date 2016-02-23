@@ -10,25 +10,8 @@ use utf8;
 
 triggers any =>             'html', 'entity', 'htmlencode','encodehtml','htmlescape','escapehtml', 'htmlentity';
 
-primary_example_queries     'html em dash', 'html entity A-acute', 'html escape &';
-secondary_example_queries   'html code em-dash', 'html entity for E grave', '$ sign htmlentity', 'pound sign html encode', 'html character code for trademark symbol',
-                            'what is the html entity for greater than sign', 'how to encode an apostrophe in html';
-
-name                        'HTMLEntitiesEncode';
-description                 'Displays the HTML entity code for the query name';
-category                    'cheat_sheets';
-topics                      'programming', 'web_design';
-code_url                    'https://github.com/duckduckgo/zeroclickinfo-spice/blob/master/lib/DDG/Goodie/HTMLEntitiesEncode.pm';
 zci answer_type =>          'html_entity';
 zci is_cached   =>          1;
-
-attribution web     =>      ["http://nishanths.github.io", "Nishanth Shanmugham"],
-            github  =>      ["https://github.com/nishanths", "Nishanth Shanmugham"],
-            twitter =>      ["https://twitter.com/nshanmugham", "Nishanth Shanmugham"],
-            twitter =>      ['crazedpsyc','crazedpsyc'],
-            cpan    =>      ['CRZEDPSYC','crazedpsyc'],
-            github  =>      ['https://github.com/mintsoft', "Rob Emery"];
-
 
 # '&' and ';' not included in the hash value -- they are added in make_text() and make_html()
 my %codes = (

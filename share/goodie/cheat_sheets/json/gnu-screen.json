@@ -63,6 +63,10 @@
             "val": "Shortcuts menu"
         },
         {
+            "key": "[Ctrl-a] [:]",
+            "val": "Enter command mode"
+        },
+        {
             "key": "[Ctrl-a] [d]",
             "val": "Detach session"
         },
@@ -91,6 +95,10 @@
         {
             "key": "[Ctrl-a] [0-9]",
             "val": "Jump to window #"
+        },
+        {
+            "key": "[Ctrl-a] [Ctrl-a]",
+            "val": "Jump to last-visited window"
         },
         {
             "key": "[Ctrl-a] [\"]",

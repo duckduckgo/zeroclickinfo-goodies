@@ -1,6 +1,7 @@
 {
     "id": "filezilla_cheat_sheet",
     "name": "FileZilla",
+    "description": "A powerful free FTP client for transferring files over the Internet",
     "metadata": {
         "sourceName": "FileZilla",
         "sourceUrl": "https://wiki.filezilla-project.org/Keyboard_shortcuts"

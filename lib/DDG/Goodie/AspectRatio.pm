@@ -9,14 +9,6 @@ triggers start => "aspect ratio";
 zci is_cached => 1;
 zci answer_type => "aspect_ratio";
 
-primary_example_queries 'aspect ratio 4:3 640:?';
-description 'complete the missing value with a given ratio';
-name 'AspectRatio';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/AspectRatio.pm';
-category 'calculations';
-topics 'math';
-attribution github => [ 'https://github.com/mrshu', 'mrshu' ];
-
 handle remainder => sub {
     my $input  = $_;
     my $result = 0;

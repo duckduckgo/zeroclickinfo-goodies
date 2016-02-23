@@ -7,15 +7,6 @@ use utf8;
 zci answer_type => "pi";
 zci is_cached   => 1;
 
-name "Pi";
-primary_example_queries "pi 7";
-description "Ex. returns 3.1415926";
-
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Pi.pm";
-attribution github => ["https://github.com/puskin94", "puskin94"],
-            github => ["https://github.com/jmvbxx", "jmvbxx"];
-
-
 triggers startend => "pi","π";
 
 

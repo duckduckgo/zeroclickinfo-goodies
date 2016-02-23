@@ -6,11 +6,12 @@ use DDG::Goodie;
 
 use Math::Prime::Util 'factor_exp', 'is_prime';
 
-use bignum;
 use utf8;
 
 zci answer_type => "prime_factors";
 zci is_cached => 1;
+
+use bignum;
 
 triggers startend => (
     'prime factors',
@@ -22,15 +23,6 @@ triggers startend => (
     'factorize',
     'prime factorize',
 );
-
-primary_example_queries 'prime factors of 30';
-secondary_example_queries '72 prime factors', 'factorize 128';
-description 'Returns the prime factors of the entered number';
-name 'PrimeFactors';
-topics 'math';
-category 'calculations';
-attribution github => [ 'austinheimark', 'Austin Heimark' ],
-            github => ['https://github.com/Sloff', 'Sloff'];
 
 sub convert_to_superscripts (_) {
     my $string = $_[0];

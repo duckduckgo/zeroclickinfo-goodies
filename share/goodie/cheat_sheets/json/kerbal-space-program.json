@@ -1,15 +1,16 @@
 {
     "id": "kerbal_space_program_cheat_sheet",
     "name": "Kerbal Space Program",
-    "description": "Space simulation game",
+    "description": "Keyboard shortcuts for Kerbal Space Program, a Space flight simulator game",
     "metadata": {
         "sourceName": "Kerbal Space Program Wiki",
         "sourceUrl": "http://wiki.kerbalspaceprogram.com/wiki/Key_bindings"
     },
+    "template_type": "keyboard",
     "section_order": [
         "System/UI Commands",
         "Flight Controls",
-        "Docking mode",
+        "Docking Mode",
         "EVA Commands",
         "VAB/SPH Commands"
     ],
@@ -181,7 +182,7 @@
             "key":"G",
             "val":"Toggle landing gear"
         }, {
-            "key":"[Alt] ([W]/[S]/[A]/[D]/[Q]/[E])",
+            "key":"[Alt] ([W] / [S] / [A] / [D] / [Q] / [E])",
             "val":"Trim pitch/yaw/roll"
         }, {
             "key":"[Alt] [X]",
@@ -211,7 +212,7 @@
             "key":"End",
             "val":"Scroll stage icons down"
         }],
-        "Docking mode": [{
+        "Docking Mode": [{
             "key":"W",
             "val":"Pitch adjustment (up/back) / Translate forward"
         }, {
@@ -285,10 +286,10 @@
             "key":"F",
             "val":"Use part"
         }, {
-            "key":"[Shift] ([W]/[S]/[A]/[D]) [Space]",
+            "key":"[Shift] ([W] / [S] / [A] / [D]) [Space]",
             "val":"Jump to different directions when on ladders"
         }, {
-            "key":"[Shift] ([W]/[S]/[A]/[D])",
+            "key":"[Shift] ([W] / [S] / [A] /[D])",
             "val":"Sprint"
         }, {
             "key":"L",

@@ -21,13 +21,6 @@ triggers startend =>
 zci answer_type => "chars";
 zci is_cached   => 1;
 
-name 'Character Counter';
-description 'Count the number of charaters in a query';
-primary_example_queries 'chars in "my string"';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Chars.pm';
-category 'computing_tools';
-topics 'programming';
-
 handle remainder => sub {
     my ($str) = @_;
     return if !$str;

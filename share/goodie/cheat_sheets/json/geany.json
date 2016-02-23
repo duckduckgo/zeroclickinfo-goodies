@@ -1,7 +1,7 @@
 {
     "id": "geany_cheat_sheet",
     "name": "Geany",
-    "description": "Lightweight code editor",
+    "description": "Keyboard shortcuts for Geany, a lightweight code editor",
     "metadata": {
         "sourceName": "Geany Wiki",
         "sourceUrl": "http://wiki.geany.org/howtos/sorted_keyboard_shortcuts"
@@ -22,281 +22,281 @@
     ],
     "sections": {
         "Moving around in the document": [{
-            "val": "Go to start of line.",
+            "val": "Go to start of line",
             "key": "Home"
         }, {
-            "val": "Go to end of line.",
+            "val": "Go to end of line",
             "key": "End"
         }, {
-            "val": "Go to start of display line. If the line is not wrapped, it behaves like Go to Start of Line.",
+            "val": "Go to start of display line. If the line is not wrapped, it behaves like Go to Start of Line",
             "key": "[Alt] [Home]"
         }, {
-            "val": "Go to end of display line. If the line is not wrapped, it behaves like Go to End of Line.",
+            "val": "Go to end of display line. If the line is not wrapped, it behaves like Go to End of Line",
             "key": "[Alt] [End]"
         }, {
-            "val": "Scroll up by one line.",
+            "val": "Scroll up by one line",
             "key": "[Alt] [Up]"
         }, {
-            "val": "Scroll down by one line.",
+            "val": "Scroll down by one line",
             "key": "[Alt] [Down]"
         }, {
-            "val": "Scroll to the current line.",
+            "val": "Scroll to the current line",
             "key": "[Ctrl] [Shift] [L]"
         }, {
-            "val": "Go to line. Focuses the Go to Line entry (if visible) or shows the Go to line dialog.",
+            "val": "Go to line. Focuses the Go to Line entry (if visible) or shows the Go to line dialog",
             "key": "[Ctrl] [L]"
         }, {
-            "val": "Go to matching brace.",
+            "val": "Go to matching brace",
             "key": "[Ctrl] [B]"
         }, {
-            "val": "Toggle marker.",
+            "val": "Toggle marker",
+            "key": "[Ctrl] [M]"
+        }, {
+            "val": "Go to the previous marker",
+            "key": "[Ctrl] [,]"
+        }, {
+            "val": "Go to the next marker",
+            "key": "[Ctrl] [.]"
+        }, {
+            "val": "Go to the previous part of the current word",
+            "key": "[Ctrl] [/]"
+        }, {
+            "val": "Go to the next part of the current word",
+            "key": "[Ctrl] [\\\\]"
+        }, {
+            "val": "Navigate forward a location",
+            "key": "[Alt] [Right]"
+        }, {
+            "val": "Navigate back a location",
+            "key": "[Alt] [Left]"
+        }],
+        "Moving the document": [{
+            "val": "Move the document right",
+            "key": "[Ctrl] [Shift] [PageDown]"
+        }, {
+            "val": "Move the document left",
+            "key": "[Ctrl] [Shift] [PageUp]"
+        }, {
+            "val": "Switch to the next open document",
+            "key": "[Ctrl] [PageDown]"
+        }, {
+            "val": "Switch to the previous open document",
+            "key": "[Ctrl] [PageUp]"
+        }, {
+            "val": "Zoom in",
+            "key": "[Ctrl] [+]"
+        }, {
+            "val": "Zoom out",
+            "key": "[Ctrl] [-]"
+        }, {
+            "val": "Zoom reset",
+            "key": "[Ctrl] [0]"
+        }, {
+            "val": "Fullscreen",
+            "key": "F11"
+        }],
+        "Finding text, selecting text": [{
+            "val": "Find",
+            "key": "[Ctrl] [F]"
+        }, {
+            "val": "Find next",
+            "key": "[Ctrl] [G]"
+        }, {
+            "val": "Find previous",
+            "key": "[Ctrl] [Shift] [G]"
+        }, {
+            "val": "Find in files",
+            "key": "[Ctrl] [Shift] [F]"
+        }, {
+            "val": "Switch to the search bar",
+            "key": "F7"
+        }, {
+            "val": "Find word occurrences in all open documents",
+            "key": "[Ctrl] [Shift] [E]"
+        }, {
+            "val": "Find word occurrences in the current document",
+            "key": "[Ctrl] [Shift] [D]"
+        }, {
+            "val": "Select current word.",
+            "key": "[Alt] [Shift] [W]"
+        }, {
+            "val": "Select current line(s)",
+            "key": "[Alt] [Shift] [L]"
+        }, {
+            "val": "Select current paragraph",
+            "key": "[Alt] [Shift] [P]"
+        }, {
+            "val": "Select all text",
+            "key": "[Ctrl] [A]"
+        }, {
+            "val": "Column mode editing (rectangular selections)",
+            "key": "[Control] [Shift]"
+        }, {
+            "val": "Column mode editing (rectangular selections)",
+            "key": "[Control] [Alt]"
+        }, {
+            "val": "Highlight all matches",
+            "key": "[Ctrl] [Shift] [M]"
+        }, {
+            "val": "Toggle marker",
             "key": "[Ctrl] [M]"
         }, {
             "val": "Go to the previous marker.",
             "key": "[Ctrl] [,]"
         }, {
-            "val": "Go to the next marker.",
-            "key": "[Ctrl] [.]"
-        }, {
-            "val": "Go to the previous part of the current word.",
-            "key": "[Ctrl] [/]"
-        }, {
-            "val": "Go to the next part of the current word.",
-            "key": "[Ctrl] [\\\\]"
-        }, {
-            "val": "Navigate forward a location.",
-            "key": "[Alt] [Right]"
-        }, {
-            "val": "Navigate back a location.",
-            "key": "[Alt] [Left]"
-        }],
-        "Moving the document": [{
-            "val": "Move the document right.",
-            "key": "[Ctrl] [Shift] [PageDown]"
-        }, {
-            "val": "Move the document left.",
-            "key": "[Ctrl] [Shift] [PageUp]"
-        }, {
-            "val": "Switch to the next open document.",
-            "key": "[Ctrl] [PageDown]"
-        }, {
-            "val": "Switch to the previous open document.",
-            "key": "[Ctrl] [PageUp]"
-        }, {
-            "val": "Zoom in.",
-            "key": "[Ctrl] [+]"
-        }, {
-            "val": "Zoom out.",
-            "key": "[Ctrl] [-]"
-        }, {
-            "val": "Zoom reset.",
-            "key": "[Ctrl] [0]"
-        }, {
-            "val": "Fullscreen.",
-            "key": "F11"
-        }],
-        "Finding text, selecting text": [{
-            "val": "Find.",
-            "key": "[Ctrl] [F]"
-        }, {
-            "val": "Find next.",
-            "key": "[Ctrl] [G]"
-        }, {
-            "val": "Find previous.",
-            "key": "[Ctrl] [Shift] [G]"
-        }, {
-            "val": "Find in files.",
-            "key": "[Ctrl] [Shift] [F]"
-        }, {
-            "val": "Switch to the search bar.",
-            "key": "F7"
-        }, {
-            "val": "Find word occurrences in all open documents.",
-            "key": "[Ctrl] [Shift] [E]"
-        }, {
-            "val": "Find word occurrences in the current document.",
-            "key": "[Ctrl] [Shift] [D]"
-        }, {
-            "val": "Select current word..",
-            "key": "[Alt] [Shift] [W]"
-        }, {
-            "val": "Select current line(s).",
-            "key": "[Alt] [Shift] [L]"
-        }, {
-            "val": "Select current paragraph.",
-            "key": "[Alt] [Shift] [P]"
-        }, {
-            "val": "Select all text.",
-            "key": "[Ctrl] [A]"
-        }, {
-            "val": "Column mode editing (rectangular selections).",
-            "key": "[Control] [Shift]"
-        }, {
-            "val": "Column mode editing (rectangular selections).",
-            "key": "[Control] [Alt]"
-        }, {
-            "val": "Highlight all matches.",
-            "key": "[Ctrl] [Shift] [M]"
-        }, {
-            "val": "Toggle marker.",
-            "key": "[Ctrl] [M]"
-        }, {
-            "val": "Go to the previous marker..",
-            "key": "[Ctrl] [,]"
-        }, {
-            "val": "Go to the next marker.",
+            "val": "Go to the next marker",
             "key": "[Ctrl] [.]"
         }],
         "Cut and paste": [{
-            "val": "Cut the current selection to the clipboard.",
+            "val": "Cut the current selection to the clipboard",
             "key": "[Ctrl] [X]"
         }, {
-            "val": "Cut the current line to the clipboard.",
+            "val": "Cut the current line to the clipboard",
             "key": "[Ctrl] [Shift] [X]"
         }, {
-            "val": "Copy the current selection to the clipboard.",
+            "val": "Copy the current selection to the clipboard",
             "key": "[Ctrl] [C]"
         }, {
-            "val": "Copy the current line to the clipboard.",
+            "val": "Copy the current line to the clipboard",
             "key": "[Ctrl] [Shift] [C]"
         }, {
-            "val": "Paste text from the clipboard.",
+            "val": "Paste text from the clipboard",
             "key": "[Ctrl] [V]"
         }, {
-            "val": "Duplicate the current line or selection.",
+            "val": "Duplicate the current line or selection",
             "key": "[Ctrl] [D]"
         }, {
-            "val": "Delete to line end.",
+            "val": "Delete to line end",
             "key": "[Ctrl] [Shift] [Delete]"
         }, {
-            "val": "Delete the current line.",
+            "val": "Delete the current line",
             "key": "[Ctrl] [K]"
         }],
         "Editing": [{
-            "val": "Insert a date.",
+            "val": "Insert a date",
             "key": "[Shift] [Alt] [D]"
         }, {
-            "val": "Toggle line commenting.",
+            "val": "Toggle line commenting",
             "key": "[Ctrl] [E]"
         }, {
-            "val": "Toggle case of the selection.",
+            "val": "Toggle case of the selection",
             "key": "[Ctrl] [Alt] [U]"
         }, {
-            "val": "Autocomplete the currently selected item up to the next word part.",
+            "val": "Autocomplete the currently selected item up to the next word part",
             "key": "Tab"
         }, {
-            "val": "Complete a snippet, e.g. a programming construct.",
+            "val": "Complete a snippet, e.g. a programming construct",
             "key": "Tab"
         }, {
-            "val": "Increase indent.",
+            "val": "Increase indent",
             "key": "[Ctrl] [I]"
         }, {
-            "val": "Decrease indent.",
+            "val": "Decrease indent",
             "key": "[Ctrl] [U]"
         }, {
-            "val": "Move line(s) up.",
+            "val": "Move line(s) up",
             "key": "[Alt] [PageUp]"
         }, {
-            "val": "Move line(s) down.",
+            "val": "Move line(s) down",
             "key": "[Alt] [PageDown]"
         }, {
-            "val": "Autocomplete the word.",
+            "val": "Autocomplete the word",
             "key": "[Ctrl] [Space]"
         }, {
-            "val": "Go to tag declaration.",
+            "val": "Go to tag declaration",
             "key": "[Ctrl] [Shift] [T]"
         }, {
-            "val": "Go to tag definition.",
+            "val": "Go to tag definition",
             "key": "[Ctrl] [T]"
         }, {
-            "val": "Undo the last action.",
+            "val": "Undo the last action",
             "key": "[Ctrl] [Z]"
         }, {
-            "val": "Redo the last action.",
+            "val": "Redo the last action",
             "key": "[Ctrl] [Y]"
         }, {
-            "val": "Replace.",
+            "val": "Replace",
             "key": "[Ctrl] [H]"
         }, {
-            "val": "Send the current selection to custom command 1 (2,3).",
+            "val": "Send the current selection to custom command 1 (2,3)",
             "key": "[Ctrl] [1 (2,3)]"
         }, {
-            "val": "Show a calltip for the current function or method.",
+            "val": "Show a calltip for the current function or method",
             "key": "[Ctrl] [Shift] [Space]"
         }],
         "Files": [{
-            "val": "Create a a new file.",
+            "val": "Create a a new file",
             "key": "[Ctrl] [N]"
         }, {
-            "val": "Open a file.",
+            "val": "Open a file",
             "key": "[Ctrl] [O]"
         }, {
-            "val": "Open the selected file.",
+            "val": "Open the selected file",
             "key": "[Ctrl] [Shift] [O]"
         }, {
-            "val": "Reload the current file.",
+            "val": "Reload the current file",
             "key": "[Ctrl] [R]"
         }, {
-            "val": "Switch to the last used document.",
+            "val": "Switch to the last used document",
             "key": "[Ctrl] [Tab]"
         }, {
-            "val": "Save the current file.",
+            "val": "Save the current file",
             "key": "[Ctrl] [S]"
         }, {
-            "val": "Save all open files.",
+            "val": "Save all open files",
             "key": "[Ctrl] [Shift] [S]"
         }, {
-            "val": "Close the current file.",
+            "val": "Close the current file",
             "key": "[Ctrl] [W]"
         }, {
-            "val": "Close all open files.",
+            "val": "Close all open files",
             "key": "[Ctrl] [Shift] [W]"
         }, {
-            "val": "Print the current file.",
+            "val": "Print the current file",
             "key": "[Ctrl] [P]"
         }, {
-            "val": "Quit Geany.",
+            "val": "Quit Geany",
             "key": "[Ctrl] [Q]"
         }],
         "Build, make and compile": [{
-            "val": "Preferences.",
+            "val": "Preferences",
             "key": "[Ctrl] [Alt] [P]"
         }, {
-            "val": "Build the current file.",
+            "val": "Build the current file",
             "key": "F9"
         }, {
-            "val": "Make: Compile the current file with the Make tool.",
+            "val": "Make: Compile the current file with the Make tool",
             "key": "[Shift] [F8]"
         }, {
-            "val": "Make All: Build the current file with the Make tool.",
+            "val": "Make All: Build the current file with the Make tool",
             "key": "[Shift] [F9]"
         }, {
-            "val": "Compile the current file.",
+            "val": "Compile the current file",
             "key": "F8"
         }, {
-            "val": "Run the current file.",
+            "val": "Run the current file",
             "key": "F5"
         }, {
-            "val": "Show macro list.",
+            "val": "Show macro list",
             "key": "[Ctrl] [Return]"
         }, {
-            "val": "Make custom target.",
+            "val": "Make custom target",
             "key": "[Ctrl] [Shift] [F9]"
         }, {
-            "val": "Reload symbol list.",
+            "val": "Reload symbol list",
             "key": "[Ctrl] [Shift] [R]"
         }],
         "Other": [{
-            "val": "Switch to Editor.",
+            "val": "Switch to Editor",
             "key": "F2"
         }, {
-            "val": "Switch to VTE.",
+            "val": "Switch to VTE",
             "key": "F4"
         }, {
-            "val": "Switch to Scribble.",
+            "val": "Switch to Scribble",
             "key": "F6"
         }, {
-            "val": "Help.",
+            "val": "Help",
             "key": "F1"
         }]
     }

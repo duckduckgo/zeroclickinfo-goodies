@@ -7,15 +7,6 @@ use strict;
 zci answer_type => "is_awesome_dronov";
 zci is_cached   => 1;
 
-name "Mikhail Dronov";
-description "http://dronov.net";
-primary_example_queries "duckduckhack dronov";
-category "programming";
-topics "geek", "programming";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Dronov.pm";
-attribution github => ["https://github.com/dronov", "dronov"],
-            twitter => "dronovmm";
-
 triggers start => "duckduckhack dronov";
 
 handle remainder => sub {

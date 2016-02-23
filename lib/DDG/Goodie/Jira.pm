@@ -10,17 +10,6 @@ zci answer_type => 'jira';
 
 use YAML::XS 'LoadFile';
 
-primary_example_queries 'SOLR-4530';
-secondary_example_queries 'IdentityHtmlMapper solr-4530';
-description 'Track Apache and Codehaus JIRA bug tickets';
-name 'Jira';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Jira.pm';
-category 'programming';
-topics 'programming';
-attribution
-  github  => ['https://github.com/arroway',       'Stéphanie Ouillon'],
-  twitter => ['http://twitter.com/steph_ouillon', 'Stéphanie Ouillon'];
-
 my $projects = LoadFile(share('projects.yml'));
 
 my @all_project_keys = sort keys %$projects;

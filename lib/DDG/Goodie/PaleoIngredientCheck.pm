@@ -8,16 +8,6 @@ triggers startend => share('triggers.txt')->slurp;
 zci answer_type => "paleo_ingredient_check";
 zci is_cached   => 1;
 
-name "PaleoIngredientCheck";
-description "Indicates if a given food item is known to be safe or unsafe on the paleo diet.";
-primary_example_queries "are apples paleo friendly", "Is dairy allowed on the paleo diet?";
-secondary_example_queries "Is sugar paleo friendly?", "beans paleo safe";
-category "food";
-topics "food_and_drink";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/PaleoIngredientCheck.pm";
-attribution github => ["murz", "Mike Murray"];
-attribution github => ["javathunderman", "Thomas Denizou"];
-
 my @safe_array = share('safe.txt')->slurp;
 my %safe_keywords = map { chomp; $_ => 1 } @safe_array;
 my @unsafe_array = share('unsafe.txt')->slurp;

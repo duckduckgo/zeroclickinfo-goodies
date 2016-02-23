@@ -7,15 +7,6 @@ use strict;
 zci answer_type => "is_awesome_lynbarry";
 zci is_cached   => 1;
 
-name "IsAwesome Lynbarry";
-description "My first Goodie, it lets the world know that Lynbarry is awesome.";
-primary_example_queries "duckduckhack Lynbarry";
-category "special";
-topics "special_interest", "geek";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/Lynbarry.pm";
-attribution github => ["https://github.com/Lynbarry", "Lynbarry"],
-            twitter => "quetzco";
-
 triggers start => "duckduckhack lynbarry";
 
 handle remainder => sub {

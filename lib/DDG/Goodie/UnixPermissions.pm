@@ -9,15 +9,6 @@ triggers any => 'chmod', 'permission', 'permissions';
 zci is_cached => 1;
 zci answer_type => 'unix_permissions';
 
-primary_example_queries 'chmod 755';
-secondary_example_queries 'permission 0644';
-description 'Returns the textual description of file modes in UNIX';
-attribution github => ['https://github.com/koosha--', 'Koosha K. M.'],
-            twitter => ['_koosha_', 'Koosha K. M.'];
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/UnixPermissions.pm';
-topics 'sysadmin';
-category 'computing_tools';
-
 handle query => sub {
     my $query = $_;
 

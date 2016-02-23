@@ -8,6 +8,20 @@ use DDG::Test::Goodie;
 zci answer_type => 'choice';
 zci is_cached   => 0;
 
+sub create_structured_answer
+{
+    my $data = shift;
+    return {
+        id => 'abc',
+        name => 'Answer',
+        data => $data, #'-ANY-',
+        templates => {
+            group => 'text',
+            moreAt => 0
+        }
+    };
+}
+
 ddg_goodie_test(
     [qw( DDG::Goodie::ABC )],
     'choose'                                      => undef,
@@ -19,67 +33,41 @@ ddg_goodie_test(
     'choose from products like turkey or venison' => undef,
     'choose pick or axe'                          => test_zci(
         qr/(pick|axe) \(Random\)/,
-        structured_answer => {
-            input     => ['pick or axe'],
-            operation => 'Random selection from',
-            result    => qr/^(?:pick|axe)$/,
-        }
+        structured_answer => create_structured_answer('-ANY-')
     ),
     'choose yes or no' => test_zci(
         qr/(yes|no) \(Random\)/,
-        structured_answer => {
-            input     => ['yes or no'],
-            operation => 'Random selection from',
-            result    => qr/^(?:yes|no)$/,
-        }
+        structured_answer => create_structured_answer('-ANY-')
     ),
     'choose this or that or none' => test_zci(
         qr/(this|that|none) \(Random\)/,
-        structured_answer => {
-            input     => ['this, that or none'],
-            operation => 'Random selection from',
-            result    => qr/^(?:this|that|none)$/,
-        }
+        structured_answer => create_structured_answer('-ANY-')
     ),
     'pick this or that or none' => test_zci(
         qr/(this|that|none) \(Random\)/,
-        structured_answer => {
-            input     => ['this, that or none'],
-            operation => 'Random selection from',
-            result    => qr/^(?:this|that|none)$/,
-        }
+        structured_answer => create_structured_answer('-ANY-')
     ),
     'select heads or tails' => test_zci(
         qr/(heads|tails) \(Random\)/,
-        structured_answer => {
-            input     => ['heads or tails'],
-            operation => 'Random selection from',
-            result    => qr/^(?:heads|tails)$/,
-        }
+        structured_answer => create_structured_answer('-ANY-')
     ),
     'choose heads or tails' => test_zci(
         qr/(heads|tails) \(Random\)/,
-        structured_answer => {
-            input     => ['heads or tails'],
-            operation => 'Random selection from',
-            result    => qr/^(?:heads|tails)$/,
-        }
+        structured_answer => create_structured_answer('-ANY-')
     ),
     'choose duckduckgo or google or bing or something' => test_zci(
         'duckduckgo (Non-random)',
-        structured_answer => {
-            input     => ['duckduckgo, google, bing or something'],
-            operation => 'Non-random selection from',
-            result    => 'duckduckgo',
-        }
+        structured_answer => create_structured_answer({
+            title => "duckduckgo",
+            subtitle => "Non-random selection from: duckduckgo, google, bing or something"
+        })
     ),
     'choose Google OR DuckDuckGo OR Bing OR SOMETHING' => test_zci(
         'DuckDuckGo (Non-random)',
-        structured_answer => {
-            input     => ['Google, DuckDuckGo, Bing or SOMETHING'],
-            operation => 'Non-random selection from',
-            result    => 'DuckDuckGo',
-        }
+        structured_answer => create_structured_answer({
+            title => "DuckDuckGo",
+            subtitle => "Non-random selection from: Google, DuckDuckGo, Bing or SOMETHING"
+        })
     ),
 );
 

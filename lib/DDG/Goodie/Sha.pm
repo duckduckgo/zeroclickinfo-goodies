@@ -8,18 +8,6 @@ use Digest::SHA;
 zci answer_type => "sha";
 zci is_cached   => 1;
 
-primary_example_queries 'SHA this';
-secondary_example_queries 'sha-512 that', 'sha512sum dim-dims', 'sha hash of "this and that"';
-description 'SHA hash cryptography';
-name 'SHA';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Sha.pm';
-category 'calculations';
-topics 'cryptography';
-attribution web => [ 'https://www.duckduckgo.com', 'DuckDuckGo' ],
-            github => [ 'duckduckgo', 'DuckDuckGo'],
-            twitter => ['duckduckgo', 'DuckDuckGo'];
-
-
 triggers query => qr/^
     sha\-?(?<ver>1|224|256|384|512|)?(?:sum|)\s*
     (?<enc>hex|base64|)\s+

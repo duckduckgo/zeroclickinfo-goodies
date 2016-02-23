@@ -10,16 +10,6 @@ triggers startend => qw/choose pick select/;
 zci answer_type => "choice";
 zci is_cached   => 0;
 
-primary_example_queries 'choose yes or no';
-secondary_example_queries 'choose heads or tails', 'pick this or that or none';
-description 'make a random choice';
-name 'ABC';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ABC.pm';
-category 'random';
-topics 'trivia';
-attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
-            github  => ['kablamo', 'Eric Johnson'];
-
 handle remainder => sub {
 
     my $query = $_;
@@ -52,11 +42,18 @@ handle remainder => sub {
     my $operation     = $selection_type . ' selection from';
 
     return $selection . " (" . $selection_type . ")",
-      structured_answer => {
-        input     => [html_enc($choice_string)],
-        operation => $operation,
-        result    => html_enc($selection),
-      };
+        structured_answer => {
+            id => 'abc',
+            name => 'Answer',
+            data => {
+                title => html_enc("$selection"),
+                subtitle => html_enc("$operation: $choice_string")
+            },
+            templates => {
+                group => 'text',
+                moreAt => 0
+            }
+        };
 };
 
 # The query must look like

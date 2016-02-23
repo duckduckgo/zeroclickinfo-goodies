@@ -12,18 +12,6 @@ triggers start => 'uppercase', 'upper case', 'allcaps', 'all caps', 'strtoupper'
 zci answer_type => "uppercase";
 zci is_cached   => 1;
 
-primary_example_queries   'uppercase this';
-secondary_example_queries 'upper case that';
-
-name        'Uppercase';
-description 'Make a string uppercase.';
-code_url    'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Uppercase.pm';
-category    'conversions';
-topics      'programming';
-
-attribution twitter => ['crazedpsyc', 'Michael Smith'],
-            cpan    => ['CRZEDPSYC', 'Michael Smith'];
-
 handle remainder => sub {
     my $input = shift;
 

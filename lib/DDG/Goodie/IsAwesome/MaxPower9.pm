@@ -7,15 +7,6 @@ use strict;
 zci answer_type => "is_awesome_max_power9";
 zci is_cached   => 1;
 
-name "IsAwesome MaxPower9";
-description "My first Goodie, it let's the world know that MaxPower9 is awesome";
-primary_example_queries "duckduckhack MaxPower9";
-category "special";
-topics "special_interest", "geek";
-code_url "https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/IsAwesome/MaxPower9.pm";
-attribution github => ["https://github.com/MaxPower9", "MaxPower9"],
-            twitter => "gtmurff";
-
 triggers start => "duckduckhack maxpower9";
 
 handle remainder => sub {

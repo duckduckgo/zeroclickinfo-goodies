@@ -7,15 +7,6 @@ use DDG::Goodie;
 zci is_cached => 1;
 zci answer_type => "hkdk";
 
-primary_example_queries 'CU123456789DK';
-secondary_example_queries 'EE123456789HK';
-description 'Track a package from Hongkong Post or Post Danmark';
-name 'HK/DK';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/HKDK.pm';
-category 'ids';
-topics 'special_interest';
-attribution github => [ 'https://github.com/duckduckgo', 'duckduckgo'];
-
 triggers query_nowhitespace_nodash => qr/([a-z]{2}\d{9}(?:hk|dk))/i;
 
 handle query_nowhitespace_nodash => sub {

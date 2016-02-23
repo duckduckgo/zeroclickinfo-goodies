@@ -10,17 +10,6 @@ triggers start => "roll", "throw";
 zci answer_type => "dice_roll";
 zci is_cached => 0;
 
-primary_example_queries 'throw dice';
-secondary_example_queries 'roll 5 dice', 'roll 3d12', 'roll 3d12 and 2d4', 'roll 2 dice and 3d5';
-description 'give the results of a random die throw';
-name 'Dice';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/Dice.pm';
-category 'random';
-topics 'math';
-attribution cpan    => ['CRZEDPSYC','crazedpsyc'],
-            twitter => [ 'loganmccamon', 'loganom'],
-            github => ['loganom', 'loganom'];
-
 my %utf8_dice = (
     1 => "\x{2680}",
     2 => "\x{2681}",

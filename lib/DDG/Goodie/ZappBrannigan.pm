@@ -11,16 +11,6 @@ triggers any => "zapp", "brannigan";
 zci answer_type => 'zapp_brannigan';
 zci is_cached   => 0;
 
-attribution github => ['nospampleasemam', 'Dylan Lloyd'],
-            web    => ['nospampleasemam', 'Dylan Lloyd'];
-
-primary_example_queries 'zapp brannigan quote';
-name 'Zapp Brannigan';
-description 'retrieve a quote from the famous Zapp Brannigan';
-code_url 'https://github.com/duckduckgo/zeroclickinfo-goodies/blob/master/lib/DDG/Goodie/ZappBrannigan.pm';
-category 'entertainment';
-topics 'entertainment';
-
 my $quotes = LoadFile(share('quotes.yml'));
 
 handle query => sub {
