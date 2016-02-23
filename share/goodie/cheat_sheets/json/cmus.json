@@ -98,11 +98,23 @@
             },
             {
                 "val": "Prepend track to play queue",
+                "key": "E"
+            },
+            {
+                "val": "Prepend track to play queue",
                 "key": "[Shift] [e]"
             },
             {
                 "val": "Add track to playlist",
                 "key": "y"
+            },
+            {
+                "val": "moves marked tracks to the position immediately after the selected track",
+                "key": "p"
+            },
+            {
+                "val": "moves marked tracks to the position immediately before the selected track",
+                "key": "P"
             },
             {
                 "val": "Remove track from current view (1-4)",
