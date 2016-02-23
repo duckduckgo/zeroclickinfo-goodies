@@ -9,7 +9,7 @@
     "aliases": [
         "vim language", "vim scripting", "vim script"
     ],
-    "template_type": "code",
+    "template_type": "terminal",
     "section_order": [
         "Variable Scope",
         "Data Types",
