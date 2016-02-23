@@ -19,11 +19,11 @@
     "sections": {
         "States (A-L)": [
             {
-                "key": "AndhraPradesh",
+                "key": "Andhra Pradesh",
                 "val": "Telugu"
             },
             {
-                "key": "ArunachalPradesh",
+                "key": "Arunachal Pradesh",
                 "val": "English"
             },
             {
@@ -48,14 +48,14 @@
             },
             {
                 "key": "Haryana",
+                "val": "Hindi, Punjabi"
+            },
+            {
+                "key": "Himachal Pradesh",
                 "val": "Hindi"
             },
             {
-                "key": "HimachalPradesh",
-                "val": "Hindi"
-            },
-            {
-                "key": "Jammu&Kashmir",
+                "key": "Jammu & Kashmir",
                 "val": "Urdu"
             },
             {
@@ -73,7 +73,7 @@
         ],
         "States (M-Z)": [
             {
-                "key": "MadhyaPradesh",
+                "key": "Madhya Pradesh",
                 "val": "Hindi"
             },
             {
@@ -97,7 +97,7 @@
                 "val": "English"
             },
             {
-                "key": "Orissa",
+                "key": "Odisha",
                 "val": "Odia"
             },
             {
@@ -118,18 +118,18 @@
             },
             {
                 "key": "Telangana",
-                "val": "Telugu"
+                "val": "Telugu, Urdu"
             },
             {
                 "key": "Tripura",
                 "val": "Bengali"
             },
             {
-                "key": "UttarPradesh",
+                "key": "Uttar Pradesh",
                 "val": "Hindi"
             },
             {
-                "key": "Uttaranchal",
+                "key": "Uttarakhand",
                 "val": "Hindi"
             },
             {
@@ -139,24 +139,24 @@
         ],
         "Union Territories": [
             {
-                "key": "Andaman&Nicobar Islands",
-                "val": "Hindi, English, Bangali"
+                "key": "Andaman and Nicobar Islands",
+                "val": "Hindi, English, Bengali"
             },
             {
                 "key": "Chandigarh",
                 "val": "English"
             },
             {
-                "key": "Dadra&Nagar Haveli",
+                "key": "Dadra and Nagar Haveli",
                 "val": "English"
             },
             {
-                "key": "Daman&Diu",
+                "key": "Daman and Diu",
                 "val": "Konkani, Marathi and Gujarati"
             },
             {
                 "key": "Lakshadweep",
-                "val": "English"
+                "val": "Malayalam, English"
             },
             {
                 "key": "Puducherry",
@@ -164,7 +164,7 @@
             },
             {
                 "key": "Delhi",
-                "val": "Hindi"
+                "val": "Hindi, English"
             }
         ]
     }
