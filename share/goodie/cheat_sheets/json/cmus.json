@@ -109,11 +109,11 @@
                 "key": "y"
             },
             {
-                "val": "moves marked tracks to the position immediately after the selected track",
+                "val": "Moves marked tracks to the position immediately after the selected track",
                 "key": "p"
             },
             {
-                "val": "moves marked tracks to the position immediately before the selected track",
+                "val": "Moves marked tracks to the position immediately before the selected track",
                 "key": "P"
             },
             {
