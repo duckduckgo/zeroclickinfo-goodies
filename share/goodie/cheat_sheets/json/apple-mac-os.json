@@ -161,7 +161,7 @@
             },
             {
                 "key": "[⌘] [O]",
-                "val": "	Open the selected item, or open a dialog to select a file to open"
+                "val": "Open the selected item, or open a dialog to select a file to open"
             },
             {
                 "key": "[⌘] [V]",
