@@ -227,7 +227,7 @@
             "val":"View type hierarchy"
           }, 
           {
-            "key":"[F12]",
+            "key":"F12",
             "val":"Go to next highlight"
           }, 
           {
@@ -248,11 +248,11 @@
             "val":"Refactor this"
           }, 
           {
-            "key":"[F2]",
+            "key":"F2",
             "val":"Rename"
           }, 
           {
-            "key":"[F6]",
+            "key":"F6",
             "val":"Move type or static member "
           }, 
           {
