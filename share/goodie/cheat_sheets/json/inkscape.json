@@ -6,9 +6,7 @@
         "sourceName": "Inkscape keyboard and mouse reference",
         "sourceUrl": "https://inkscape.org/en/doc/keys091.html"
     },
-
     "template_type": "keyboard",
-
     "section_order": [  
         "Tools",
         "Dialogs",
@@ -17,7 +15,6 @@
         "Path",
         "Selections"
     ],
-
     "sections": {
         "Tools": [
             {
