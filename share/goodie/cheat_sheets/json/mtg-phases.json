@@ -23,7 +23,7 @@
         "Beginning Phase": [
             {
                 "key": "Untap Step",
-                "val": "The active player untaps the permanents they control. The active player doesn't recieve priority."
+                "val": "The active player untaps the permanents they control. The active player doesn't receive priority."
             },
             {
                 "key": "Upkeep Step",
@@ -79,7 +79,7 @@
             },
             {
                 "key": "Cleanup Step",
-                "val": "The active player reduces their hand to 7 cards or less, removes marked damage from all permanents, then passes the turn. No player receives priority."
+                "val": "The active player reduces their hand to 7 cards or less, removes marked damage from all permanents, then passes the turn. No player receisves priority."
             }
         ]
     }
