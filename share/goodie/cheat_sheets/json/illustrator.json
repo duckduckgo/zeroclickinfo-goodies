@@ -24,6 +24,9 @@
     "sections": {
         "Tools": [
             {
+                "key": "[Shift] [O]",
+                "val": "Artboard"
+            },{
                 "key": "V",
                 "val": "Selection"
             },
@@ -81,7 +84,7 @@
             },
             {
                 "key": "[Shift] [B]",
-                "val": "Bold Brush"
+                "val": "Blob Brush"
             },
             {
                 "key": "[Shift] [E]",
@@ -140,12 +143,24 @@
                 "val": "Blend"
             },
             {
+                "key": "[Shift] [P]",
+                "val": "Perspective Grid"
+            },
+            {
+                "key": "[Shift] [V]",
+                "val": "Perspective Selection"
+            },
+            {
                 "key": "[Shift] [S]",
                 "val": "Symbol Sprayer"
             },
             {
                 "key": "J",
                 "val": "Column Graph"
+            },
+            {
+                "key": "[Shift] [L]",
+                "val": "Live Paint Selection"
             },
             {
                 "key": "[Shift] [K]",
