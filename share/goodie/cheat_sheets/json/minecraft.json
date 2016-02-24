@@ -2,6 +2,10 @@
     "id": "minecraft_cheat_sheet", 
     "name": "Minecraft Shortcuts",
     "description": "Minecraft is a sandbox video game developed and published by Mojang",
+    "metadata": {
+    "sourceName": "Gamepedia",
+    "sourceUrl": "http://minecraft.gamepedia.com/Controls"
+    },
     "template_type": "keyboard",
     "section_order": [  
         "Movement",
