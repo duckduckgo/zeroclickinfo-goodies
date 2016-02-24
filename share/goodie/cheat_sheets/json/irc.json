@@ -24,24 +24,30 @@
             "key":"/away <reason>",
             "val":"Setting yourself away"
           }, {  
+            "key":"/back",
+            "val":"Removing your away status"
+          }, {
+            "key":"/part <Message>",
+            "val":"Leaving a channel"
+          }, {
+            "key":"/quit <Message>",
+            "val":"Quitting IRC"
+          }, {
             "key":"/msg NickServ register PASSWORD email",
             "val":"Registering your Name"
-          }, {  
+          }, {
             "key":"/nick NAME",
             "val":"Changing Your Name"
-          }, {  
+          }, {
             "key":"/msg NickServ identify PASSWORD",
             "val":"Identifing to nickserv"
-          },
-             {  
+          }, {
             "key":"/msg NickServ set password PASSWORD",
             "val":"Changing your password (You have to repeat this for all of your linked nicks, which can be found with msg NickServ info YOUR NICK)"
-          }, 
-             {
+          }, {
               "key":"/topic NEW TOPIC",
               "val":"Changing the topic of the channel (some channels restrict this command to operators)"
-          },
-             {  
+          }, {
             "key":"/whois USERNAME",
             "val":"Get more information on another user"
           }, {  
@@ -51,41 +57,43 @@
         "Commands for channel operators": [{  
             "key":"/msg ChanServ op #channel",
             "val":"Opping yourself"
-          }, {  
+          }, {
             "key":"/msg chanserv op #channel NICKNAME",
             "val":"Opping another person"
-          }, {  
+          }, {
             "key":"/mode #channel +o NICKNAME",
             "val":"Opping another person (when opped)"
-          }, {  
+          }, {
             "key":"/kick NICKNAME (reason)",
             "val":"Kicking people"
-          },{  
+          }, {
             "key":"/quote remove #CHANNEL NICKNAME :REASON",
             "val":"Removing people (When opped)"
-          },{  
+          }, {
             "key":"/mode #channel +q NAME",
             "val":"Quieting another person (when opped)"
-          },{  
+          }, {
             "key":"/msg ChanServ clear #channel ops",
             "val":"Clearing ops"
-          },{  
+          }, {
             "key":"/msg ChanServ clear #channel voices",
             "val":"Clearing voices"
-          },{  
+          }, {
             "key":"/msg chanserv op #channel -NAME",
             "val":"Removing just one op"
-          },{  
+          }, {
             "key":"/mode -o NAME",
             "val":"Removing just one op (when opped)"
-          },{  
+          }, {
             "key":"/msg ChanServ voice #channel -NAME",
             "val":"Removing just one voice"
-          },{  
+          }, {
+            "key":"/mode #channel +b nick!realname@hostmask.com",
+            "val":"Banning a user"
+          }, {
             "key":"/msg nickserv ghost YourUsername yourpassword",
             "val":"Ghosting Yourself"
-          } 
-            ],
+          }],
         "Information": [{  
             "key":"/msg ChanServ access #channel list",
             "val":"To see who has what access"
@@ -95,16 +103,15 @@
           }, {
             "val": "Various flags",
             "key": "[None = default for anyone off the street]"
-        }, {
+          }, {
             "val": "Various flags (alternative)",
             "key": "[+votiA = ops]"
-        }, {
+          }, {
             "val": "Various flags (alternative)",
             "key": "[+votsriRfA - able to set access levels]"
-        }, {
+          }, {
             "val": "Various flags (alternative)",
             "key": "[+vVoOtsriRfAF = Channel founder]"
-        }
-          ]
+          }]
     }
 }
