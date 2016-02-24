@@ -24,6 +24,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -35,6 +38,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -46,6 +52,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -60,6 +69,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -73,6 +85,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -84,6 +99,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -95,6 +113,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -108,6 +129,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -119,6 +143,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -130,6 +157,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -142,7 +172,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -155,7 +188,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -168,7 +204,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -179,7 +218,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -190,7 +232,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -201,7 +246,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -212,7 +260,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -223,7 +274,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -249,6 +303,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -261,6 +318,9 @@ ddg_goodie_test(
             data => '-ANY-',
             templates => {
                 group => 'text',
+                options => {
+                    subtitle_content => 'DDH.dice.subtitle_content'
+                }
             }
        }
     ),
@@ -271,7 +331,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),
@@ -282,7 +345,10 @@ ddg_goodie_test(
             name => 'Answer',
             data => '-ANY-',
             templates => {
-                group => 'text',
+                group => 'list',
+                options => {
+                    list_content => 'DDH.dice.content'
+                }
             }
        }
     ),

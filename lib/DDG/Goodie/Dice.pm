@@ -53,8 +53,11 @@ sub shorthand_roll_output {
     my $sum = $_[1];
     my $out;
     if (@rolls > 1) { # if( sizeOf(rolls) > 1)
-        $out = join(' ', @rolls); # append current roll to output
-        $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1  
+        $out = join(' + ', @rolls); # append current roll to output
+        $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
+        if ($_[2] > 1) {
+            $out .= " = $sum"; # append sum of rolls to output
+        }
     } else {
         $out = $sum; # output is roll value if we have just one roll
     }
