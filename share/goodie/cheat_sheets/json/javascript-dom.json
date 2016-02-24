@@ -186,17 +186,32 @@
             "val": "Returns a live collection of child nodes",
             "key": "childNodes"
         }, {
+            "val": "Specify absolute base URI of the node",
+            "key": "baseURI"
+        }, {
             "val": "Returns the first child of a node",
             "key": "firstChild"
         }, {
             "val": "Returns the last child of a node",
             "key": "lastChild"
         }, {
+            "val": "Specify name of the local part of a node",
+            "key": "localName"
+        }, {
+            "val": "Specify the namespace URI of a node",
+            "key": "namespaceURI"
+        }, {
             "val": "Returns the node immediately following the specified one",
             "key": "nextSibling"
         }, {
             "val": "Returns the name of a node, depending on its type",
             "key": "nodeName"
+        }, {
+            "val": "Code representing the type of the underlying object",
+            "key": "nodeType"
+        }, {
+            "val": "Specify the value of a node depending on their types",
+            "key": "nodeValue"
         }, {
             "val": "Returns the parent node of a node",
             "key": "parentNode"
