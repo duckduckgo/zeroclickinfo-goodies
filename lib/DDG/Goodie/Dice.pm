@@ -53,11 +53,8 @@ sub shorthand_roll_output {
     my $sum = $_[1];
     my $out;
     if (@rolls > 1) { # if( sizeOf(rolls) > 1)
-        $out = join(' + ', @rolls); # append current roll to output
-        $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1
-        if ($_[2] > 1) {
-            $out .= " = $sum"; # append sum of rolls to output
-        }    
+        $out = join(' ', @rolls); # append current roll to output
+        $out =~ s/\+\s\-/\- /g; # rewrite + -1 as - 1  
     } else {
         $out = $sum; # output is roll value if we have just one roll
     }
@@ -90,10 +87,11 @@ handle remainder_lc => sub {
             $total += $sum; # track total of all rolls
             $out .= join(', ', @output);
             $diceroll = join(' ', @output);
-            if ($values > 1) {
-                $diceroll .= " = ". $sum;
-            }    
-            push @result, $diceroll;
+            push @result, {
+                'sum' => $sum,
+                'rolls' => $diceroll,
+                'isdice' => 1
+            };
         }
         elsif ($_ =~ /^(\d*)[d|w](\d+)\s?([+-])?\s?(\d+|[lh])?$/) {
             # ex. '2d8', '2w6 - l', '3d4 + 4', '3d4-l'
@@ -132,36 +130,53 @@ handle remainder_lc => sub {
             }
             my $roll_output = shorthand_roll_output( \@rolls, $sum, $values ); # initialize roll_output
             $out .= $roll_output; # add roll_output to our result
-            push @result, $roll_output;
+            push @result, {
+                'sum' => $sum,
+                'rolls' => [@rolls],
+                'isdice' => 0
+            };
             $total += $sum; # add the local sum to the total
         }else{
             # an element of @value was not valid
             return;
         }
     }
-    my $ismulti;
-    if($values > 1) {
+    my $group = 'text';
+    
+    my $data = {
+        title => $total,
+        list => \@result
+    };
+    
+    my $options = {
+        subtitle_content => 'DDH.dice.subtitle_content'
+    };
+    
+    if ($values > 1) {
         # display total sum if more than one value was specified
         $out .= 'Total: ' . $total;
-        $ismulti = 1;
+        $group = 'list';
+        $options = {
+            list_content => 'DDH.dice.content'
+        };
     }
     $out =~ s/<br\/>$//g; # remove trailing newline
-    if($out eq ''){
+    
+    if ($out eq '') {
         return; # nothing to return
-    }else{
-        return  $out,
-        structured_answer => {
-            id => 'dice',
-            name => 'Answer',
-            data => {
-                title => $total,
-                subtitle => \@result,
-            },
-            templates => {
-                group => 'text',
-            }
-       };
     }
+    
+    return  $out,
+    structured_answer => {
+        id => 'dice',
+        name => 'Answer',
+        data => $data,
+        templates => {
+            group => $group,
+            options => $options
+        }
+   };
+    
 };
 
 1;
