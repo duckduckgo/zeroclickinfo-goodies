@@ -28,12 +28,6 @@
             "key":"[Mod] [F12]",
             "val":"Open debug console"
         }, {
-            "key":"[Mod] [.]",
-            "val":"Physical time wrap increase"
-        }, {
-            "key":"[Mod] [,]",
-            "val":"Physical time wrap decrease"
-        }, {
             "key":"M",
             "val":"Orbital map toggle"
         }, {
@@ -58,10 +52,10 @@
             "key":",",
             "val":"Time warp (physical time warp in atmosphere) decrease"
         }, {
-            "key":"[Alt] [.]",
+            "key":"[Mod] [.]",
             "val":"Physical time warp increase (compulsory)"
         }, {
-            "key":"[Alt] [,]",
+            "key":"[Mod] [,]",
             "val":"Physical time warp decrease (compulsory)"
         }, {
             "key":".",
