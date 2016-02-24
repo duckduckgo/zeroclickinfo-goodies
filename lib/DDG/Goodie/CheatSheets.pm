@@ -81,8 +81,6 @@ sub get_aliases {
                                 ->in(share('json'));
     my %results;
 
-    my $cheat_dir = File::Basename::dirname($files[0]);
-
     foreach my $file (@files) {
         open my $fh, $file or warn "Error opening file: $file\n" and next;
         my $json = do { local $/;  <$fh> };
@@ -91,21 +89,15 @@ sub get_aliases {
             next;
         };
 
-        my $name = File::Basename::fileparse($file);
-        my $defaultName = $name =~ s/-/ /gr;
+        my $defaultName = File::Basename::fileparse($file);
+        $defaultName =~ s/-/ /g;
         $defaultName =~ s/.json//;
 
         $results{$defaultName} = $file;
 
         if ($data->{'aliases'}) {
             foreach my $alias (@{$data->{'aliases'}}) {
-                my $lc_alias = lc $alias;
-                if (defined $results{$lc_alias}
-                    && $results{$lc_alias} ne $file) {
-                    my $other_file = $results{$lc_alias} =~ s/$cheat_dir\///r;
-                    die "$name and $other_file both using alias '$lc_alias'";
-                }
-                $results{$lc_alias} = $file;
+                $results{lc $alias} = $file;
             }
         }
     }
