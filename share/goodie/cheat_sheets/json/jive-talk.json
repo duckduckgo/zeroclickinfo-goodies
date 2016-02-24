@@ -110,13 +110,13 @@
         }, {
             "key":"Chew",
             "val":"To Talk"
-        },{
+        }, {
             "key":"Choker",
             "val":"Tie or Collar"
-        },{
+        }, {
             "key":"Chops",
             "val":"Jaws"
-        },{
+        }, {
             "key":"Cogs",
             "val":"Sunglasses"
         },{
@@ -138,13 +138,13 @@
         }, {
             "key":"Digger",
             "val":"Undertaker"
-        },{
+        }, {
             "key":"Dingle",
             "val":"Good"
-        },{
+        }, {
             "key":"Drink",
             "val":"A body of water"
-        },{
+        }, {
             "key":"Duchess",
             "val":"Girlfriend"
         }],
@@ -160,7 +160,7 @@
         }, {
             "key":"Expense",
             "val":"Baby"
-        },{
+        }, {
             "key":"Eye",
             "val":"Detective"
         }],
@@ -176,7 +176,7 @@
         }, {
             "key":"Fog",
             "val":"To kill"
-        },{
+        }, {
             "key":"Frame",
             "val":"Your body"
         }],
@@ -192,7 +192,7 @@
         }, {
             "key":"GB",
             "val":"Goodbye"
-        },{
+        }, {
             "key":"Gutbox",
             "val":"Piano"
         }],
@@ -208,9 +208,30 @@
         }, {
             "key":"Hides",
             "val":"Drums"
-        },{
+        }, {
             "key":"Husk",
             "val":"Undress"
+        }, {
+            "key":"Handle",
+            "val":"Large proboscis"
+        }, {
+            "key":"Happify",
+            "val":"To make happy"
+        }, {
+            "key":"Hard",
+            "val":"One with excellent taste"
+        }, {
+            "key":"Heater",
+            "val":"A big cigar"
+        }, {
+            "key":"Hike",
+            "val":"To conceal"
+        }, {
+            "key":"Hog",
+            "val":"A train"
+        }, {
+            "key":"Hood",
+            "val":"A thief"
         }],
         "I": [{
             "key":"Iceberg",
