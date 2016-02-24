@@ -25,8 +25,14 @@
             "key":"-",
             "val":"Zoom view out"
         }, {
-            "key":"[Alt] [F12]",
+            "key":"[Mod] [F12]",
             "val":"Open debug console"
+        }, {
+            "key":"[Mod] [.]",
+            "val":"Physical time wrap increase"
+        }, {
+            "key":"[Mod] [,]",
+            "val":"Physical time wrap decrease"
         }, {
             "key":"M",
             "val":"Orbital map toggle"
@@ -82,13 +88,13 @@
             "key":"F5",
             "val":"Quicksave"
         }, {
-            "key":"[Alt] [F5]",
+            "key":"[Mod] [F5]",
             "val":"Make a specific, user-inputted quicksave"
         }, {
             "key":"[F9] (hold)",
             "val":"Load quicksave"
         }, {
-            "key":"[Alt] [F9]",
+            "key":"[Mod] [F9]",
             "val":"Load a specific quicksave"
         }, {
             "key":"[Ctrl] [F10]",
