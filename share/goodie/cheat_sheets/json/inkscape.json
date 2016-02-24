@@ -25,11 +25,19 @@
                 "val": "Selector"
             },
             {
+                "key": "F1",
+                "val": "Selector"
+            },
+            {
                 "key": "Space",
                 "val": "Selector (temporary)"
             },
             {
                 "key": "n",
+                "val": "Node tool"
+            },
+            {
+                "key": "F2",
                 "val": "Node tool"
             },
             {
@@ -41,11 +49,19 @@
                 "val": "Zoom tool"
             },
             {
+                "key": "F3",
+                "val": "Zoom tool"
+            },
+            {
                 "key": "n",
                 "val": "Measure tool"
             },
             {
                 "key": "r",
+                "val": "Rectangle tool"
+            },
+            {
+                "key": "F4",
                 "val": "Rectangle tool"
             },
             {
@@ -61,11 +77,19 @@
                 "val": "Star tool"
             },
             {
+                "key": "[Shift] [F9]",
+                "val": "Star tool"
+            },
+            {
                 "key": "i",
                 "val": "Spiral tool"
             },
             {
                 "key": "p",
+                "val": "Pencil (Freehand) tool"
+            },
+            {
+                "key": "F6",
                 "val": "Pencil (Freehand) tool"
             },
             {
